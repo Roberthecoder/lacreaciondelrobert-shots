@@ -1,0 +1,9 @@
+{
+  "nota": "Temas ya publicados o producidos. El generador no puede repetir ninguno, ni uno casi igual.",
+  "temas": [
+    { "id": "cepario", "titulo": "Cepario", "serie": "Shot Biotecnológico", "numero": 23, "estado": "publicado" },
+    { "id": "lab-comestibles", "titulo": "Cosas del laboratorio que te puedes comer", "serie": "Shot Lab", "numero": 25, "estado": "confirmar" },
+    { "id": "micelio", "titulo": "El micelio", "serie": "Shot Micológico", "numero": 1, "estado": "confirmar" },
+    { "id": "hormiga-zombi", "titulo": "El hongo que convierte hormigas en zombis (Ophiocordyceps)", "serie": "Shot", "numero": 1, "estado": "borrador", "versiones": ["sin-voz"] }
+  ]
+}
