@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Hormiga Zombi.dc.html",
   "salida": "Shot Hormiga Zombi narrado.dc.html",
-  "nota": "Una línea por subtítulo, en el mismo orden que los <Headline> del jsx (idx 0..14).",
+  "nota": "Una línea por subtítulo, en el mismo orden que los <Headline> del jsx (idx 0..14). Todo el texto se genera en UNA sola petición a ElevenLabs; evita '…' (provoca entonaciones raras).",
   "lineas": [
     {
       "escena": "Hook",
@@ -9,7 +9,7 @@
     },
     {
       "escena": "Espora",
-      "texto": "Una espora se pega a una hormiga carpintera…"
+      "texto": "Una espora se pega a una hormiga carpintera,"
     },
     {
       "escena": "Espora",
@@ -17,7 +17,7 @@
     },
     {
       "escena": "Invasion",
-      "texto": "Adentro, el hongo crece entre sus músculos…"
+      "texto": "Adentro, el hongo crece entre sus músculos,"
     },
     {
       "escena": "Invasion",
@@ -33,7 +33,7 @@
     },
     {
       "escena": "Mordida",
-      "texto": "Ahí muerde una hoja, cerca del mediodía…"
+      "texto": "Ahí muerde una hoja, cerca del mediodía,"
     },
     {
       "escena": "Mordida",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Hongo",
-      "texto": "Días después, de su cabeza brota el hongo…"
+      "texto": "Días después, de su cabeza brota el hongo,"
     },
     {
       "escena": "Hongo",
@@ -57,7 +57,7 @@
     },
     {
       "escena": "Humanos",
-      "texto": "No. Es especialista en hormigas, y casi ningún hongo aguanta tus treinta y siete grados."
+      "texto": "Tranquilo: este hongo es especialista en hormigas, y casi ningún hongo aguanta tus treinta y siete grados."
     },
     {
       "escena": "Cierre",
