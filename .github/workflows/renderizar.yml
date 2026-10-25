@@ -17,8 +17,8 @@ on:
       modelo:
         description: Modelo de voz de ElevenLabs
         type: choice
-        options: [eleven_multilingual_v2, eleven_v3, eleven_turbo_v2_5]
-        default: eleven_multilingual_v2
+        options: [eleven_v4, eleven_multilingual_v2, eleven_v3]
+        default: eleven_v4
 
 permissions:
   contents: write   # para guardar en el repositorio los clips de voz ya generados (caché)
