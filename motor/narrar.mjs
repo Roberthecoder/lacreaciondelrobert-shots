@@ -13,6 +13,10 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 
+// en GitHub Actions, que el error se vea en el resumen de la ejecución
+const toAnnot = (e) => { console.error(e); if (process.env.GITHUB_ACTIONS) console.log(`::error title=narrar.mjs::${String(e?.message || e).replace(/\r?\n/g, ' ').slice(0, 900)}`); process.exit(1); };
+process.on('uncaughtException', toAnnot); process.on('unhandledRejection', toAnnot);
+
 const VOICE_ID = process.env.ELEVENLABS_VOICE_ID || 'uiCk6APPfsjnw3oUQzVo';
 const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v4';
 const KEY = process.env.ELEVENLABS_API_KEY;
