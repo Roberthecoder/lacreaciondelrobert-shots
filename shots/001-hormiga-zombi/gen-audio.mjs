@@ -1,21 +1,26 @@
 // gen-audio.mjs — música + efectos sincronizados para el Shot Hormiga Zombi (sin voz).
 // Lee las duraciones de escena del .dc.html, así que si cambian los tiempos basta con volver a correrlo.
-// Salida: assets/mezcla.wav (48 kHz, estéreo).
+// Uso: node gen-audio.mjs [archivo.dc.html] [salida.wav]   (por defecto la versión sin voz → assets/mezcla.wav)
+// En la versión narrada las escenas se estiran (dur ≠ nat): los efectos se escriben en tiempo de autor y se convierten.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const html = fs.readFileSync(path.join(HERE, 'Shot Hormiga Zombi.dc.html'), 'utf8');
+const HTML = process.argv[2] || 'Shot Hormiga Zombi.dc.html', OUT = process.argv[3] || path.join('assets', 'mezcla.wav');
+const html = fs.readFileSync(path.join(HERE, HTML), 'utf8');
 const scenes = JSON.parse(html.match(/window\.OM_SCENES = '(.*?)';/)[1]);
-const K = {}; let acc = 0; for (const s of scenes) { K[s.name] = acc; acc += s.dur; }
+const K = {}, KA = {}, SEC = []; let acc = 0, accA = 0;
+for (const s of scenes) { const nat = s.nat || s.dur; K[s.name] = acc; KA[s.name] = accA; SEC.push({ p: acc, a: accA, dur: s.dur, nat }); acc += s.dur; accA += nat; }
+// tiempo de autor → tiempo real de reproducción
+const warp = (ta) => { for (let i = SEC.length - 1; i >= 0; i--) { const x = SEC[i]; if (ta >= x.a) return x.p + (ta - x.a) * x.dur / x.nat; } return ta; };
 const TOTAL = acc, SR = 48000, N = Math.ceil((TOTAL + 0.5) * SR);
 const L = new Float32Array(N), R = new Float32Array(N);
 const music = new Float32Array(N), sfx = new Float32Array(N);
 
 let seed = 7; const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
 const NOISE = Float32Array.from({ length: SR * 2 }, () => rnd() * 2 - 1);
-const add = (buf, t, fn, dur) => { const i0 = Math.max(0, Math.floor(t * SR)), n = Math.floor(dur * SR); for (let i = 0; i < n && i0 + i < N; i++) buf[i0 + i] += fn(i / SR, i); };
+const add = (buf, t, fn, dur) => { if (buf === sfx) t = warp(t); const i0 = Math.max(0, Math.floor(t * SR)), n = Math.floor(dur * SR); for (let i = 0; i < n && i0 + i < N; i++) buf[i0 + i] += fn(i / SR, i); };
 const env = (t, a, d) => (t < a ? t / a : Math.exp(-(t - a) / d));
 // filtro paso-bajo de un polo aplicado sobre la marcha
 const lp = () => { let y = 0; return (x, f) => { const k = 1 - Math.exp(-2 * Math.PI * f / SR); y += k * (x - y); return y; }; };
@@ -71,10 +76,10 @@ kick(K.Outro, 1); add(music, K.Outro, (u) => Math.sin(2 * Math.PI * 55 * u) * Ma
 [62, 65, 69, 74].forEach((m, i) => pluck(K.Outro + 0.2 + i * 0.12, m, 0.12, 1.2));
 
 /* ---------- efectos en los tiempos exactos del jsx ---------- */
-const H = K.Hook, E = K.Espora, I = K.Invasion, Su = K.Subida, M = K.Mordida, Ho = K.Hongo, F = K.Fosil, Hu = K.Humanos, Ci = K.Cierre;
+const H = KA.Hook, E = KA.Espora, I = KA.Invasion, Su = KA.Subida, M = KA.Mordida, Ho = KA.Hongo, F = KA.Fosil, Hu = KA.Humanos, Ci = KA.Cierre;
 [0, 0.2, 0.4].forEach((t) => { S.impact(t, 0.5); S.whoosh(t, 0.18, 0.3); });
 S.whoosh(H + 0.75, 0.5, 0.5, false); S.impact(H + 1.25, 1); S.pop(H + 1.27, 0.6, 300); S.warble(H + 1.7); S.boing(H + 1.8);
-for (const n of ['Espora', 'Invasion', 'Subida', 'Mordida', 'Hongo', 'Fosil', 'Humanos', 'Cierre']) { S.whoosh(K[n] - 0.45, 0.45, 0.4); S.cut(K[n]); }
+for (const n of ['Espora', 'Invasion', 'Subida', 'Mordida', 'Hongo', 'Fosil', 'Humanos', 'Cierre']) { S.whoosh(KA[n] - 0.45, 0.45, 0.4); S.cut(KA[n]); }
 S.whoosh(E + 0.15, 0.6, 0.4, false); S.impact(E + 0.75, 0.7); S.pop(E + 0.78, 0.4, 260);
 S.buzz(E + 2.9, 1.75); for (let t = E + 3.1; t < I - 0.3; t += 0.25) S.pop(t, 0.18, 700 + rnd() * 400);
 S.gliss(I + 0.6, 2.8, 200, 900, 0.12, 'tri'); S.ding(I + 3.2); S.stamp(I + 3.5); S.boing(I + 3.9);
@@ -83,7 +88,7 @@ S.whoosh(M + 0.05, 0.5, 0.35, false); S.gliss(M + 0.4, 1.7, 500, 1000, 0.08); S.
 S.gliss(Ho + 0.35, 2.25, 70, 160, 0.25, 'tri'); S.pop(Ho + 2.4, 0.5, 220); for (let i = 0; i < 18; i++) S.pop(Ho + 2.8 + rnd() * 2.6, 0.12, 900 + rnd() * 900);
 S.slam(F + 0.35, 0.7); [0.9, 1.15, 1.4].forEach((d) => S.pop(F + d, 0.35, 500)); S.stamp(F + 1.6);
 S.whoosh(Hu + 0.3, 0.4, 0.3, false); S.gliss(Hu + 0.8, 1.4, 300, 900, 0.1); S.pop(Hu + 1.6, 0.35, 400); S.stamp(Hu + 2.5); S.boing(Hu + 2.9);
-S.impact(Ci, 0.8); S.boing(Ci + 0.6); S.ding(K.Outro + 0.4, 0.3);
+S.impact(Ci, 0.8); S.boing(Ci + 0.6); S.ding(KA.Outro + 0.4, 0.3);
 
 /* ---------- mezcla ---------- */
 for (let i = 0; i < N; i++) {
@@ -96,5 +101,5 @@ buf.writeUInt16LE(1, 20); buf.writeUInt16LE(2, 22); buf.writeUInt32LE(SR, 24); b
 buf.write('data', 36); buf.writeUInt32LE(N * 4, 40);
 for (let i = 0; i < N; i++) { buf.writeInt16LE(Math.round(Math.max(-1, Math.min(1, L[i])) * 32767), 44 + i * 4); buf.writeInt16LE(Math.round(Math.max(-1, Math.min(1, R[i])) * 32767), 46 + i * 4); }
 fs.mkdirSync(path.join(HERE, 'assets'), { recursive: true });
-fs.writeFileSync(path.join(HERE, 'assets', 'mezcla.wav'), buf);
-console.log(`assets/mezcla.wav · ${TOTAL.toFixed(2)} s`);
+fs.writeFileSync(path.join(HERE, OUT), buf);
+console.log(`${OUT} · ${TOTAL.toFixed(2)} s`);

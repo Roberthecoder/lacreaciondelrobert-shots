@@ -1,0 +1,75 @@
+name: Renderizar shot
+
+# Se lanza a mano desde la pestaña Actions de GitHub (botón "Run workflow").
+# Genera el MP4 de un shot (narrado, sin voz o ambos) y lo deja para descargar en "Artifacts".
+on:
+  workflow_dispatch:
+    inputs:
+      shot:
+        description: Carpeta del shot
+        default: shots/001-hormiga-zombi
+        required: true
+      version:
+        description: Qué versión renderizar
+        type: choice
+        options: [ambas, narrada, sin-voz]
+        default: ambas
+
+permissions:
+  contents: write   # para guardar en el repositorio los clips de voz ya generados (caché)
+
+concurrency:
+  group: render-${{ inputs.shot }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      SHOT: ${{ inputs.shot }}
+      VERSION: ${{ inputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar ffmpeg y Chromium
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          cd motor && npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+
+      - name: Versión sin voz
+        if: inputs.version != 'narrada'
+        run: |
+          HTML=$(node -p "require('./$SHOT/narracion.json').dcHtml")
+          node "$SHOT/gen-audio.mjs"
+          mkdir -p salida
+          node motor/render.mjs "$SHOT" "$HTML" "salida/$(basename $SHOT)_sin_voz.mp4" --audio "$SHOT/assets/mezcla.wav"
+
+      - name: Versión narrada (voz clonada en ElevenLabs)
+        if: inputs.version != 'sin-voz'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          node motor/narrar.mjs "$SHOT"
+          HTML=$(node -p "require('./$SHOT/narracion.json').salida")
+          mkdir -p salida
+          node motor/render.mjs "$SHOT" "$HTML" "salida/$(basename $SHOT)_narrado.mp4" --audio "$SHOT/assets/mezcla_narrada.wav"
+
+      - name: Subir videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos
+          path: salida/*.mp4
+          retention-days: 14
+
+      - name: Guardar caché de voz
+        if: inputs.version != 'sin-voz'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$SHOT/voz/"*.mp3 "$SHOT/voz/"*.json "$SHOT/"*narrado.dc.html
+          git diff --cached --quiet || (git commit -m "Voz generada para $SHOT" && git push)
