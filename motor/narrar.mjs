@@ -42,7 +42,7 @@ if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
   const H = { 'xi-api-key': KEY };
   const fail = async (r, what) => { throw new Error(`ElevenLabs respondió ${r.status} (${what}): ${(await r.text()).slice(0, 300)}`); };
   let audio, alignment;
-  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}/with-timestamps?output_format=mp3_44100_192`, {
+  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}/with-timestamps?output_format=mp3_44100_128`, {
     method: 'POST', headers: { ...H, 'Content-Type': 'application/json' }, body: JSON.stringify({ text: texto, model_id: MODEL }),
   });
   if (res.ok) {
@@ -51,7 +51,7 @@ if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
   } else {
     // respaldo: audio normal + alineación forzada (por si el modelo no devuelve tiempos)
     console.log(`with-timestamps no disponible (${res.status}); uso audio + alineación forzada`);
-    const r2 = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}?output_format=mp3_44100_192`, {
+    const r2 = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}?output_format=mp3_44100_128`, {
       method: 'POST', headers: { ...H, 'Content-Type': 'application/json' }, body: JSON.stringify({ text: texto, model_id: MODEL }),
     });
     if (!r2.ok) await fail(r2, 'texto a voz');
