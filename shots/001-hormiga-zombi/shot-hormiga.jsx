@@ -430,7 +430,9 @@ function Avatar({ T, src, at, until, left, width, top }) {
   const w = wobble(T, at + 0.35, 6, 20) * 0.1;
   return <img src={src} alt="" style={{ position:'absolute', left, top:lerp(1960, top, inP) + outP * 700, width, height:'auto', transformOrigin:'50% 100%', transform:`scale(${1 - w}, ${1 + w})`, filter:'drop-shadow(0 26px 40px rgba(0,0,0,.55))' }} />;
 }
-function Headline({ T, at, until, y, lines, hi, tilt = 0 }) {
+function Headline({ T, idx, at, until, y, lines, hi, tilt = 0 }) {
+  // Versión narrada: los tiempos de cada subtítulo vienen de la voz generada (window.SUBS, en tiempo de autor).
+  const o = window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = prog(T, until - 0.25, until, MOTION.draw), c = hi;
   return (
@@ -521,27 +523,27 @@ function Piece() {
         <Avatar T={Tv} src={AV('avatar_04_bajando_lentes')} at={K.M + 2.6} until={K.Ho - 0.15} left={-30} width={380} top={1180} />
         <Avatar T={Tv} src={AV('avatar_13_senalando_arriba')} at={K.Hu + 2.9} until={K.Ci - 0.15} left={560} width={500} top={1180} />
         <Avatar T={Tv} src={AV('avatar_02_apuntando_camara')} at={K.Ci + 0.6} until={K.V + 0.2} left={20} width={1040} top={980} />
-        <Headline {...HP} hi={C.yellow} tilt={-2} at={K.H + 0.25} until={K.E - 0.05} y={560} lines={[{ t:'Este hongo convierte hormigas en', size:84 }, { t:'*zombis.*', size:150, d:0.25 }]} />
-        <Headline {...HP} hi={C.gold2} tilt={1.5} at={K.E + 0.3} until={K.E + 2.85} y={540} lines={[{ t:'Una espora se pega a una *hormiga carpintera.*', size:84 }, { t:'Camponotus · bosques tropicales', size:30, d:0.7, mono:true, it:true }]} />
-        <Headline {...HP} hi={C.yellow} tilt={-1.5} at={K.E + 2.9} until={K.I - 0.05} y={540} lines={[{ t:'Y entra *perforando* su armadura.', size:92 }, { t:'Enzimas + presión', size:30, d:0.7, mono:true }]} />
-        <Headline {...HP} hi={C.gold2} tilt={1.5} at={K.I + 0.3} until={K.I + 2.95} y={470} lines={[{ t:'Crece por dentro, *entre sus músculos.*', size:84 }]} />
-        <Headline {...HP} hi={C.mint} tilt={-2} at={K.I + 3.0} until={K.S - 0.05} y={470} lines={[{ t:'Pero su cerebro queda *intacto.*', size:92 }, { t:'Fredericksen et al., PNAS 2017', size:28, d:0.7, mono:true }]} />
-        <Headline {...HP} hi={C.pink} tilt={1.5} at={K.S + 0.3} until={K.S + 2.95} y={520} lines={[{ t:'Abandona su colonia y *trepa.*', size:96 }]} />
-        <Headline {...HP} hi={C.yellow} tilt={-1.5} at={K.S + 3.0} until={K.M - 0.05} y={520} lines={[{ t:'Siempre a la misma *altura.*', size:96 }, { t:'Con ≈ 95 % de humedad', size:30, d:0.7, mono:true }]} />
-        <Headline {...HP} hi={C.yellow} tilt={2} at={K.M + 0.3} until={K.M + 2.75} y={470} lines={[{ t:'Muerde una hoja… *al mediodía.*', size:92 }]} />
-        <Headline {...HP} hi={C.coral} tilt={-1.5} at={K.M + 2.8} until={K.Ho - 0.05} y={470} lines={[{ t:'Y ya no la *suelta.*', size:110 }, { t:'La «mordida de la muerte»', size:30, d:0.7, mono:true }]} />
-        <Headline {...HP} hi={C.gold2} tilt={1.5} at={K.Ho + 0.3} until={K.Ho + 2.95} y={470} lines={[{ t:'De su cabeza *brota* el hongo.', size:96 }, { t:'Ophiocordyceps unilateralis', size:30, d:0.7, mono:true, it:true }]} />
-        <Headline {...HP} hi={C.yellow} tilt={-2} at={K.Ho + 3.0} until={K.F - 0.05} y={470} lines={[{ t:'Y *llueven esporas* sobre la siguiente.', size:88 }]} />
-        <Headline {...HP} hi={C.yellow} tilt={1.5} at={K.F + 0.3} until={K.Hu - 0.05} y={470} lines={[{ t:'Hay mordidas así en hojas *fósiles.*', size:88 }, { t:'Messel, Alemania', size:30, d:0.7, mono:true }]} />
-        <Headline {...HP} hi={C.yellow} tilt={-1.5} at={K.Hu + 0.3} until={K.Hu + 2.45} y={470} lines={[{ t:'¿Y a ti te puede *pasar?*', size:104 }]} />
-        <Headline {...HP} hi={C.mint} tilt={1.5} at={K.Hu + 2.5} until={K.Ci - 0.05} y={470} lines={[{ t:'Este hongo es *especialista en hormigas.*', size:84 }, { t:'Y casi ningún hongo tolera tus 37 °C', size:28, d:0.8, mono:true }]} />
-        <Headline {...HP} hi={C.gold2} tilt={-2} at={K.Ci + 0.25} until={K.V - 0.05} y={560} lines={[{ t:'La naturaleza es', size:100 }, { t:'*más rara*', size:150, d:0.25 }, { t:'que la ficción', size:100, d:0.45 }]} />
+        <Headline {...HP} idx={0} hi={C.yellow} tilt={-2} at={K.H + 0.25} until={K.E - 0.05} y={560} lines={[{ t:'Este hongo convierte hormigas en', size:84 }, { t:'*zombis.*', size:150, d:0.25 }]} />
+        <Headline {...HP} idx={1} hi={C.gold2} tilt={1.5} at={K.E + 0.3} until={K.E + 2.85} y={540} lines={[{ t:'Una espora se pega a una *hormiga carpintera.*', size:84 }, { t:'Camponotus · bosques tropicales', size:30, d:0.7, mono:true, it:true }]} />
+        <Headline {...HP} idx={2} hi={C.yellow} tilt={-1.5} at={K.E + 2.9} until={K.I - 0.05} y={540} lines={[{ t:'Y entra *perforando* su armadura.', size:92 }, { t:'Enzimas + presión', size:30, d:0.7, mono:true }]} />
+        <Headline {...HP} idx={3} hi={C.gold2} tilt={1.5} at={K.I + 0.3} until={K.I + 2.95} y={470} lines={[{ t:'Crece por dentro, *entre sus músculos.*', size:84 }]} />
+        <Headline {...HP} idx={4} hi={C.mint} tilt={-2} at={K.I + 3.0} until={K.S - 0.05} y={470} lines={[{ t:'Pero su cerebro queda *intacto.*', size:92 }, { t:'Fredericksen et al., PNAS 2017', size:28, d:0.7, mono:true }]} />
+        <Headline {...HP} idx={5} hi={C.pink} tilt={1.5} at={K.S + 0.3} until={K.S + 2.95} y={520} lines={[{ t:'Abandona su colonia y *trepa.*', size:96 }]} />
+        <Headline {...HP} idx={6} hi={C.yellow} tilt={-1.5} at={K.S + 3.0} until={K.M - 0.05} y={520} lines={[{ t:'Casi siempre a la misma *altura.*', size:92 }, { t:'Con ≈ 95 % de humedad', size:30, d:0.7, mono:true }]} />
+        <Headline {...HP} idx={7} hi={C.yellow} tilt={2} at={K.M + 0.3} until={K.M + 2.75} y={470} lines={[{ t:'Muerde una hoja… *al mediodía.*', size:92 }]} />
+        <Headline {...HP} idx={8} hi={C.coral} tilt={-1.5} at={K.M + 2.8} until={K.Ho - 0.05} y={470} lines={[{ t:'Y ya no la *suelta.*', size:110 }, { t:'La «mordida de la muerte»', size:30, d:0.7, mono:true }]} />
+        <Headline {...HP} idx={9} hi={C.gold2} tilt={1.5} at={K.Ho + 0.3} until={K.Ho + 2.95} y={470} lines={[{ t:'De su cabeza *brota* el hongo.', size:96 }, { t:'Ophiocordyceps unilateralis', size:30, d:0.7, mono:true, it:true }]} />
+        <Headline {...HP} idx={10} hi={C.yellow} tilt={-2} at={K.Ho + 3.0} until={K.F - 0.05} y={470} lines={[{ t:'Y *llueven esporas* sobre la siguiente.', size:88 }]} />
+        <Headline {...HP} idx={11} hi={C.yellow} tilt={1.5} at={K.F + 0.3} until={K.Hu - 0.05} y={470} lines={[{ t:'Hay mordidas así en hojas *fósiles.*', size:88 }, { t:'Messel, Alemania', size:30, d:0.7, mono:true }]} />
+        <Headline {...HP} idx={12} hi={C.yellow} tilt={-1.5} at={K.Hu + 0.3} until={K.Hu + 2.45} y={470} lines={[{ t:'¿Y a ti te puede *pasar?*', size:104 }]} />
+        <Headline {...HP} idx={13} hi={C.mint} tilt={1.5} at={K.Hu + 2.5} until={K.Ci - 0.05} y={470} lines={[{ t:'Este hongo es *especialista en hormigas.*', size:84 }, { t:'Y casi ningún hongo tolera tus 37 °C', size:28, d:0.8, mono:true }]} />
+        <Headline {...HP} idx={14} hi={C.gold2} tilt={-2} at={K.Ci + 0.25} until={K.V - 0.05} y={560} lines={[{ t:'La naturaleza es', size:100 }, { t:'*más rara*', size:150, d:0.25 }, { t:'que la ficción', size:100, d:0.45 }]} />
         {bursts.map((b, i) => <Burst key={i} T={Tv} {...b} />)}
         <Watermark T={Tv} K={K} num={window.SHOT_NUM || '01'} />
       </div>
       {cutFlash > 0 && <div style={{ position:'absolute', inset:0, background:'#fff', opacity:cutFlash * 0.55, pointerEvents:'none' }}></div>}
       <OutroCard T={T} K={K} />
-      <AudioTrack src="assets/mezcla.wav" T={time} playing={playing} />
+      <AudioTrack src={window.AUDIO_SRC || 'assets/mezcla.wav'} T={time} playing={playing} />
     </div>
   );
 }

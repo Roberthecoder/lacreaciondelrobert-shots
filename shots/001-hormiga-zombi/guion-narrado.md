@@ -2,7 +2,7 @@
 
 Voice ID de ElevenLabs: `uiCk6APPfsjnw3oUQzVo`
 
-Cada línea es un clip. Las escenas se re-temporizan a la voz generada (alineación forzada de ElevenLabs), así que los tiempos de abajo son solo una guía.
+El texto que se envía a ElevenLabs está en `narracion.json` (versión recortada para durar menos de 60 s). Esta tabla es la referencia de contenido y fuentes.
 
 | Escena | Línea de voz | Subtítulo en pantalla |
 |---|---|---|
