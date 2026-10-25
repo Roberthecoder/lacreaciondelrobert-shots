@@ -18,7 +18,7 @@ El texto que se envía a ElevenLabs está en `narracion.json` (versión recortad
 | Hongo | Días después, de su cabeza brota el hongo… | De su cabeza *brota* el hongo. |
 | Hongo | y llueven esporas sobre las hormigas que pasan abajo. | Y *llueven esporas* sobre la siguiente. |
 | Fósil | Y esto no es nuevo: hay hojas fósiles con estas mordidas de hace cuarenta y ocho millones de años. | Hay mordidas así en hojas *fósiles.* |
-| Humanos | ¿Y a ti te puede pasar? No. Este hongo es especialista en hormigas, y casi ningún hongo aguanta tus treinta y siete grados. | Este hongo es *especialista en hormigas.* |
+| Humanos | ¿Y a ti te puede pasar? Tranquilo: este hongo es especialista en hormigas, y casi ningún hongo aguanta tus treinta y siete grados. | Este hongo es *especialista en hormigas.* |
 | Cierre | La naturaleza es más rara que la ficción. Sígueme para más. | La naturaleza es *más rara* que la ficción |
 
 ## Fuentes

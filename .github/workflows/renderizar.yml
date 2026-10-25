@@ -14,6 +14,11 @@ on:
         type: choice
         options: [ambas, narrada, sin-voz]
         default: ambas
+      modelo:
+        description: Modelo de voz de ElevenLabs
+        type: choice
+        options: [eleven_multilingual_v2, eleven_v3, eleven_turbo_v2_5]
+        default: eleven_multilingual_v2
 
 permissions:
   contents: write   # para guardar en el repositorio los clips de voz ya generados (caché)
@@ -53,6 +58,7 @@ jobs:
         if: inputs.version != 'sin-voz'
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_MODEL: ${{ inputs.modelo }}
         run: |
           node motor/narrar.mjs "$SHOT"
           HTML=$(node -p "require('./$SHOT/narracion.json').salida")
@@ -71,5 +77,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "$SHOT/voz/"*.mp3 "$SHOT/voz/"*.json "$SHOT/"*narrado.dc.html
+          git add -A "$SHOT/voz" "$SHOT/"*narrado.dc.html
           git diff --cached --quiet || (git commit -m "Voz generada para $SHOT" && git push)
