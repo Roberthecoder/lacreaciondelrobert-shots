@@ -1,0 +1,16 @@
+{
+  "name": "lacreaciondelrobert-motor",
+  "private": true,
+  "type": "module",
+  "description": "Renderiza shots de Claude Design (motor animations-v3) a MP4 vertical",
+  "scripts": {
+    "render": "node render.mjs",
+    "preview": "node preview.mjs"
+  },
+  "dependencies": {
+    "@babel/standalone": "7.29.0",
+    "playwright": "1.56.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

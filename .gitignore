@@ -1,0 +1,4 @@
+node_modules/
+salida/
+*.video.mp4
+.env
