@@ -14,6 +14,13 @@ function Etq({ T, at, until, x, y, texto, it = false, lado = 'der', color = KC.t
   </div>;
 }
 
+// Etiqueta PEGADA al dibujo: (wx, wy) en px del mundo micro; sigue a ese punto aunque la cámara se mueva.
+function EtqMundo({ T, cam, wx, wy, dx = 0, dy = 0, ...resto }) {
+  const p = mp(wx, wy), x = KW / 2 + (p.x - cam.x) * cam.z + dx, y = KH / 2 + (p.y - cam.y) * cam.z + dy;
+  if (x < -400 || x > KW + 400 || y < -100 || y > KH + 100) return null;
+  return <Etq T={T} x={x} y={y} {...resto} />;
+}
+
 // Mundo completo del moho con su cámara (macro ↔ micro).
 function MundoMoho({ T, keys, macro, micro }) {
   return <CamaraAnidada T={T} keys={keys} origen={PM} k={PAN.k}
@@ -74,4 +81,4 @@ function Nariz({ T, at }) {
   </svg>;
 }
 
-Object.assign(window, { mp, AVS, Etq, MundoMoho, QuesoZanahoria, Tempeh, Nariz });
+Object.assign(window, { mp, AVS, Etq, EtqMundo, MundoMoho, QuesoZanahoria, Tempeh, Nariz });

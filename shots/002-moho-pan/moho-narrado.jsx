@@ -15,9 +15,9 @@ function MohoNarrado() {
     mpk(K.H + 2.6, 0, -40, 900),
     mpk(K.H + 9.0, 0, 700, 110),
     mpk(K.P + 1.8, 0, 1400, 48),
-    mpk(K.Pu + 1.4, 300, -1050, 520),
-    mpk(K.V + 0.3, 300, -1050, 520),
-    mpk(K.V + 3.4, 250, -800, 110),
+    mpk(K.Pu + 1.4, 560, -1050, 520),
+    mpk(K.V + 0.3, 560, -1050, 520),
+    mpk(K.V + 3.4, 450, -800, 110),
     { t: K.U + 1.6, x: 560, y: 860, z: 1.15 },
     { t: K.Hu, x: 560, y: 860, z: 1.15 },
     { t: K.Hu + 3, x: 590, y: 820, z: 1.35 },
@@ -36,9 +36,10 @@ function MohoNarrado() {
   };
   const micro = {
     g: kprog(T, K.H + 2.4, K.H + 9.4) * 0.5 + kprog(T, K.P, K.P + 2.2) * 0.42,
-    tallos: kprog(T, K.P + 0.3, K.P + 2.2) * 0.4 + kprog(T, K.Pu, K.Pu + 1.6) * 0.6,
+    // 1) la red coloniza la miga (g) · 2) de esa red salen los rizoides · 3) luego estolones y tallitos (colonia)
+    colonia: kprog(T, K.P + 0.3, K.P + 2.2) * 0.4 + kprog(T, K.Pu, K.Pu + 1.6) * 0.6,
     capsulas: kprog(T, K.Pu + 1.6, K.Pu + 4.4),
-    revientan: [1.3, 1.6, 1.0, 0.4, 1.9, 2.2, 1.5].map((d) => K.V + d),
+    revientan: [1.0, 0.4, 1.3, 1.6, 1.9, 2.2, 1.5].map((d) => K.V + d),
     espora: T >= K.E + 1.4 ? { y: klerp(-330, -8, kprog(T, K.E + 1.4, K.E + 3.2, (p) => p * p)), germina: kprog(T, K.H + 0.2, K.H + 3.0) } : null,
     pelo: kprog(T, K.E + 2.6, K.E + 3.4) * (1 - kprog(T, K.H + 0.5, K.H + 1.5)),
   };
@@ -55,11 +56,11 @@ function MohoNarrado() {
       {T >= K.Te && T < K.C && <Tempeh T={T} at={K.Te} />}
 
       {/* etiquetas científicas */}
-      <Etq T={T} at={K.E + 3.0} until={K.H + 1.2} x={420} y={1090} texto="espora · ~10 µm" lado="izq" />
-      <Etq T={T} at={K.E + 3.3} until={K.H + 1.2} x={700} y={640} texto="un pelo · ~70 µm" />
-      <Etq T={T} at={K.H + 2.6} until={K.H + 6} x={620} y={1120} texto="hifa" />
-      <Etq T={T} at={K.H + 6} until={K.P} x={560} y={700} texto="almidón" color={KC.gold2} />
-      <Etq T={T} at={K.Pu + 2.0} until={K.V + 0.3} x={640} y={960} texto="cápsula de esporas" />
+      <EtqMundo T={T} cam={cam} at={K.E + 3.0} until={K.H + 1.2} wx={0} wy={-8} dx={-40} texto="espora · ~10 µm" lado="izq" />
+      <EtqMundo T={T} cam={cam} at={K.E + 3.3} until={K.H + 1.2} wx={120} wy={-200} dy={-20} texto="un pelo · ~70 µm" />
+      <EtqMundo T={T} cam={cam} at={K.H + 2.6} until={K.H + 6} wx={0} wy={90} dx={40} texto="hifa" />
+      <EtqMundo T={T} cam={cam} at={K.H + 6} until={K.P} wx={420} wy={500} texto="almidón" color={KC.gold2} />
+      <EtqMundo T={T} cam={cam} at={K.Pu + 2.0} until={K.V + 0.3} wx={560} wy={-1050} dx={100} texto="cápsula de esporas" />
       <Etq T={T} at={K.Pu + 2.6} until={K.V + 2.8} x={120} y={300} texto="Rhizopus stolonifer" it />
 
       {/* fuente */}
