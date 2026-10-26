@@ -1,0 +1,208 @@
+name: Decisión de Robert (aprobar, rehacer, descartar)
+
+# Llega aquí la decisión que Robert tomó desde Telegram (el worker de telegram/worker.js la convierte en un
+# repository_dispatch) o la etiqueta "aprobado" puesta a mano en el PR.
+#   aprobar   → se hace merge del PR, se genera la voz (ElevenLabs), se renderizan las dos versiones y se
+#               suben a un Release "shot-NNN" para descargar desde el celular.
+#   rehacer   → se comenta y etiqueta el PR; la tarea diaria de Claude Code lo retoma (ver AUTONOMO.md).
+#   descartar → se cierra el PR con la etiqueta "descartado" (el tema no se vuelve a proponer).
+on:
+  repository_dispatch:
+    types: [shot-aprobado, shot-rehacer, shot-descartar]
+  pull_request:
+    types: [labeled]
+
+permissions:
+  contents: write        # merge, caché de voz y Release
+  pull-requests: write   # comentar, etiquetar, cerrar
+
+jobs:
+  decidir:
+    if: github.event_name == 'repository_dispatch' || github.event.label.name == 'aprobado'
+    runs-on: ubuntu-latest
+    outputs:
+      accion: ${{ steps.d.outputs.accion }}
+      pr: ${{ steps.d.outputs.pr }}
+    steps:
+      - id: d
+        env:
+          EVENTO: ${{ github.event_name }}
+          TIPO: ${{ github.event.action }}
+          PR_DISPATCH: ${{ github.event.client_payload.pr }}
+          PR_LABEL: ${{ github.event.pull_request.number }}
+        run: |
+          if [ "$EVENTO" = "repository_dispatch" ]; then
+            ACCION="${TIPO#shot-}"      # aprobado | rehacer | descartar
+            PR="$PR_DISPATCH"
+          else
+            ACCION="aprobado"; PR="$PR_LABEL"
+          fi
+          [ "$ACCION" = "aprobado" ] && ACCION="aprobar"
+          case "$PR" in ''|*[!0-9]*) echo "::error title=PR::Número de PR inválido: '$PR'"; exit 1;; esac
+          echo "accion=$ACCION" >> "$GITHUB_OUTPUT"
+          echo "pr=$PR" >> "$GITHUB_OUTPUT"
+          echo "Acción: $ACCION · PR #$PR"
+
+  rehacer:
+    needs: decidir
+    if: needs.decidir.outputs.accion == 'rehacer'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ needs.decidir.outputs.pr }}
+      NOTA: ${{ github.event.client_payload.nota }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Marcar el PR para rehacer
+        run: |
+          gh label create rehacer --color D93F0B --description "Robert pidió rehacer este shot" 2>/dev/null || true
+          gh pr edit "$PR" --add-label rehacer
+          gh pr comment "$PR" --body "Robert pidió REHACER este shot desde Telegram. ${NOTA:+Nota: $NOTA. }La siguiente corrida de la tarea diaria (AUTONOMO.md) debe retomar esta rama, corregir y volver a subir."
+      - name: Avisar por Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          URL=$(gh pr view "$PR" --json url -q .url)
+          node motor/avisar.mjs --texto "Anotado: el shot del PR #$PR se va a rehacer. Si quieres decir qué cambiar, responde a este mensaje o escríbelo en el PR: $URL"
+
+  descartar:
+    needs: decidir
+    if: needs.decidir.outputs.accion == 'descartar'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ needs.decidir.outputs.pr }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cerrar el PR
+        run: |
+          gh label create descartado --color 6A737D --description "Robert descartó este shot" 2>/dev/null || true
+          gh pr edit "$PR" --add-label descartado
+          gh pr comment "$PR" --body "Robert DESCARTÓ este shot desde Telegram. No se publica y el tema no se vuelve a proponer (la tarea diaria lo anota en historial/temas.json)."
+          gh pr close "$PR" --delete-branch || gh pr close "$PR"
+      - name: Avisar por Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          node motor/avisar.mjs --texto "Listo: el shot del PR #$PR quedó descartado y el PR cerrado."
+
+  aprobar:
+    needs: decidir
+    if: needs.decidir.outputs.accion == 'aprobar'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency:
+      group: aprobar-${{ needs.decidir.outputs.pr }}
+      cancel-in-progress: false
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ needs.decidir.outputs.pr }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Merge del PR
+        id: merge
+        run: |
+          RAMA=$(gh pr view "$PR" --json headRefName -q .headRefName)
+          ESTADO=$(gh pr view "$PR" --json state -q .state)
+          echo "rama=$RAMA" >> "$GITHUB_OUTPUT"
+          case "$ESTADO" in
+            MERGED) echo "El PR ya estaba integrado.";;
+            OPEN)   gh pr merge "$PR" --merge --delete-branch --subject "Shot aprobado por Robert (PR #$PR)";;
+            *)      echo "::error title=PR::El PR #$PR está $ESTADO; no se puede aprobar."; exit 1;;
+          esac
+          git pull --ff-only origin main
+          SHOT="shots/${RAMA#shot/}"
+          test -f "$SHOT/narracion.json" || { echo "::error title=Shot::No encuentro $SHOT/narracion.json en main después del merge"; exit 1; }
+          echo "shot=$SHOT" >> "$GITHUB_OUTPUT"
+          node motor/ficha.mjs "$SHOT" --salidas "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar ffmpeg y Chromium
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          cd motor && npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+
+      - name: Voz clonada (ElevenLabs) y versión narrada
+        env:
+          SHOT: ${{ steps.merge.outputs.shot }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          node motor/narrar.mjs "$SHOT"
+          mkdir -p salida
+          node motor/render.mjs "$SHOT" "${{ steps.merge.outputs.narradaSalida }}" "salida/${{ steps.merge.outputs.carpeta }}_narrado.mp4" --audio "$SHOT/assets/mezcla_narrada.wav"
+
+      - name: Guardar caché de voz
+        env:
+          SHOT: ${{ steps.merge.outputs.shot }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A "$SHOT/voz" "$SHOT/"*narrado.dc.html
+          git diff --cached --quiet || (git commit -m "Voz generada para $SHOT" && git push origin HEAD:main)
+
+      - name: Versión sin voz
+        env:
+          SHOT: ${{ steps.merge.outputs.shot }}
+          HTML: ${{ steps.merge.outputs.sinVoz }}
+          AUDIO: ${{ steps.merge.outputs.sinVozAudio }}
+        run: |
+          node "$SHOT/gen-audio.mjs" "$HTML" "$AUDIO"
+          node motor/render.mjs "$SHOT" "$HTML" "salida/${{ steps.merge.outputs.carpeta }}_sin_voz.mp4" --audio "$SHOT/$AUDIO"
+
+      - name: Duraciones
+        id: dur
+        run: |
+          for v in narrado sin_voz; do
+            D=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "salida/${{ steps.merge.outputs.carpeta }}_$v.mp4")
+            printf '%s=%.1f\n' "$v" "$D" >> "$GITHUB_OUTPUT"
+            awk -v d="$D" 'BEGIN { exit !(d < 61.0 || d > 62.5) }' && echo "::warning title=Duración::La versión $v dura $D s (la regla es 61 a 62 s)." || true
+          done
+
+      - name: Subir también como artifact (respaldo)
+        uses: actions/upload-artifact@v4
+        with:
+          name: finales-${{ steps.merge.outputs.carpeta }}
+          path: salida/*.mp4
+          retention-days: 30
+
+      - name: Publicar en un Release
+        id: release
+        env:
+          TAG: shot-${{ steps.merge.outputs.numero }}
+          TITULO: ${{ steps.merge.outputs.titulo }}
+          CARPETA: ${{ steps.merge.outputs.carpeta }}
+        run: |
+          NOTAS=$(printf 'Shot aprobado desde Telegram (PR #%s).\nNarrada: %s s. Sin voz: %s s.\nGuion y fuentes: shots/%s/guion.md' "$PR" "${{ steps.dur.outputs.narrado }}" "${{ steps.dur.outputs.sin_voz }}" "$CARPETA")
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --title "Shot ${{ steps.merge.outputs.numero }}: $TITULO" --notes "$NOTAS"
+          gh release upload "$TAG" salida/*.mp4 --clobber
+          echo "url=https://github.com/${{ github.repository }}/releases/tag/$TAG" >> "$GITHUB_OUTPUT"
+          echo "narrado=https://github.com/${{ github.repository }}/releases/download/$TAG/${CARPETA}_narrado.mp4" >> "$GITHUB_OUTPUT"
+          echo "sinvoz=https://github.com/${{ github.repository }}/releases/download/$TAG/${CARPETA}_sin_voz.mp4" >> "$GITHUB_OUTPUT"
+
+      - name: Avisar por Telegram
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          OK: ${{ steps.release.outcome }}
+          TITULO: ${{ steps.merge.outputs.titulo }}
+          NUMERO: ${{ steps.merge.outputs.numero }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ "$OK" = "success" ]; then
+            MSG=$(printf 'Shot %s listo: %s\n\nNarrada (%s s): %s\nSin voz (%s s): %s\nRelease: %s' \
+              "$NUMERO" "$TITULO" "${{ steps.dur.outputs.narrado }}" "${{ steps.release.outputs.narrado }}" \
+              "${{ steps.dur.outputs.sin_voz }}" "${{ steps.release.outputs.sinvoz }}" "${{ steps.release.outputs.url }}")
+            node motor/avisar.mjs --texto "$MSG"
+          else
+            node motor/avisar.mjs --texto "Algo falló al producir el shot del PR #$PR. Revisa la corrida: $RUN_URL"
+          fi

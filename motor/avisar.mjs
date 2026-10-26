@@ -41,12 +41,17 @@ if (foto && fs.existsSync(foto)) {
   catch (e) { console.log(`No se pudo mandar la imagen (${e.message}); se manda solo el texto.`); }
 }
 if (!enviado) {
-  const fd = new FormData();
-  fd.append('chat_id', CHAT);
-  fd.append('text', texto.slice(0, 4096));
-  fd.append('parse_mode', 'HTML');
-  fd.append('disable_web_page_preview', 'true');
-  if (teclado) fd.append('reply_markup', teclado);
-  await enviar('sendMessage', fd);
+  const arma = (conHtml) => {
+    const fd = new FormData();
+    fd.append('chat_id', CHAT);
+    fd.append('text', texto.slice(0, 4096));
+    if (conHtml) fd.append('parse_mode', 'HTML');
+    fd.append('disable_web_page_preview', 'true');
+    if (teclado) fd.append('reply_markup', teclado);
+    return fd;
+  };
+  // si el texto trae algo que Telegram no entiende como HTML, se manda tal cual
+  try { await enviar('sendMessage', arma(true)); }
+  catch (e) { console.log(`Reintento sin formato (${e.message})`); await enviar('sendMessage', arma(false)); }
   console.log('Aviso enviado a Telegram.');
 }
