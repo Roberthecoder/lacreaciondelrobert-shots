@@ -77,7 +77,7 @@ function MohoNarrado() {
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.Pu - 0.1} texto="Lo que ves arriba es *apenas la punta.*" />
       <Subtitulo T={T} idx={5} at={K.Pu + 0.1} until={K.Pu + 1.5} texto="¿Y esos *puntitos negros?*" />
       <Subtitulo T={T} idx={6} at={K.Pu + 1.5} until={K.V - 0.1} texto="Son *cápsulas llenas de esporas.*" />
-      <Subtitulo T={T} idx={7} at={K.V + 0.1} until={K.U - 0.1} texto="Revientan y las esporas *vuelan al siguiente pan.*" />
+      <Subtitulo T={T} idx={7} at={K.V + 0.1} until={K.U - 0.1} texto="Se rompen y las esporas *vuelan con el aire.*" />
       <Subtitulo T={T} idx={8} at={K.U + 0.1} until={K.Q - 0.1} texto="Es poroso: el moho *llega por debajo.*" />
       <Subtitulo T={T} idx={9} at={K.Q + 0.1} until={K.Hu - 0.1} texto="Queso duro o zanahoria: *corta con margen.*" />
       <Subtitulo T={T} idx={10} at={K.Hu + 0.1} until={K.Te - 0.1} texto="Respirarlo puede *causarte problemas.*" />

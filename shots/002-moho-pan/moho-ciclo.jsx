@@ -58,7 +58,7 @@ function MohoCiclo() {
   const microF = kprog(Math.log(cam.z), Math.log(28), Math.log(45));
   const caps = [
     { at: K.L + 0.2, titulo: 'Llega una espora' }, { at: K.G, titulo: 'Germina' }, { at: K.I, titulo: 'Invade la miga' },
-    { at: K.S, titulo: 'Se ancla y sube' }, { at: K.C, titulo: 'Cápsulas de esporas' }, { at: K.R, titulo: 'Revientan' }, { at: K.O, titulo: 'Otro pan' },
+    { at: K.S, titulo: 'Se ancla y sube' }, { at: K.C, titulo: 'Cápsulas de esporas' }, { at: K.R, titulo: 'Se rompen' }, { at: K.O, titulo: 'Otro pan' },
   ];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
