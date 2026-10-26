@@ -50,6 +50,8 @@ for (const [i, t] of times.entries()) {
 await browser.close(); server.close();
 if (errs.length) console.error('Errores de página:\n' + [...new Set(errs)].join('\n'));
 const rows = Math.ceil(times.length / COLS);
+// En Windows ffmpeg no trae configuración de fuentes: se le indica Arial directamente.
+const FUENTE = process.platform === 'win32' ? "fontfile='C\\:/Windows/Fonts/arial.ttf':" : '';
 await new Promise((res) => spawn('ffmpeg', ['-y', '-loglevel', 'error', '-i', path.join(tmp, 'f%03d.png'),
-  '-vf', `scale=${TW}:-1,drawtext=text='%{eif\\:n\\:d}':x=8:y=8:fontsize=22:fontcolor=white:box=1:boxcolor=black@0.6,tile=${COLS}x${rows}:padding=4`, '-frames:v', '1', out], { stdio: 'inherit' }).on('close', res));
+  '-vf', `scale=${TW}:-1,drawtext=${FUENTE}text='%{eif\\:n\\:d}':x=8:y=8:fontsize=22:fontcolor=white:box=1:boxcolor=black@0.6,tile=${COLS}x${rows}:padding=4`, '-frames:v', '1', out], { stdio: 'inherit' }).on('close', res));
 console.log('Listo:', out, '· tiempos:', times.join(', '));

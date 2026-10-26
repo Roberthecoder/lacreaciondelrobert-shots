@@ -1,6 +1,8 @@
 node_modules
 salida/
 *.video.mp4
+motor/prueba.mp4
+shots/_demo-kit/*.mp4
 .env
 # derivados de la narración (se regeneran); los clips mp3 + json sí se guardan como caché
 shots/*/voz/*.wav

@@ -113,6 +113,23 @@ Lo que **adoptamos de la receta**:
 
 ---
 
+# Los otros 7 canales (25 oct 2026)
+
+| Canal | Video más visto | Vistas | Dur. | Voz | Lo que aporta |
+|---|---|---|---|---|---|
+| @justincase.lessons | Por qué levantarle las piernas a quien se desmaya | 1.5 M (46 K guardados) | 34 s | No | Pregunta fija arriba desde el cuadro 0, medidor 40 % → 100 %, lupas circulares. Utilidad = guardados |
+| @infinite.expressions | El color que nunca verás | 1.7 M (30 K guardados) | 102 s | No (texto) | Episodios numerados, "Parte 1/3", **participación** ("mira fijamente el punto") |
+| @watchthemath | Pelotas que cortan cuerdas | 1.4 M | 46 s | No | Simulación hipnótica con la regla escrita. Muchas vistas, 1.3 % de likes, 1,530 seguidores: no crea comunidad |
+| @belltake.social | ¿Quieres ganar dinero con la guerra? | 931 K (48 K guardados) | 165 s | — | Guía irónica en pasos ("Paso 1… Paso 12"), estética de periódico, lista enorme de fuentes |
+| @rarologia1 | El chapulín que se vuelve langosta | 859 K | 96 s | Sí (163 ppm) | Recrea el experimento con cronómetro, mapa de México como escala, subtítulos palabra por palabra, pregunta para comentarios |
+| @vino.grafit | Ciclo de vida del salmón | 91 K (21 % likes) | 30 s | No | Ciclo completo que termina donde empezó: loop perfecto |
+| @lil_bit_of_science | ¿Cómo se formó el Sol? | 67 K | 54 s | No | **Qué no hacer:** abre con tarjeta de título y sol quieto |
+
+Con todos los canales se armó el **recetario de formatos** (`RECETARIO.md`): 6 narrados, 5 mudos,
+sus parejas y el reparto por serie.
+
+---
+
 # Análisis a fondo de @1cell1life2 (el canal que Robert quiere replicar)
 
 Se revisaron sus 40 videos visibles (TikTok pide iniciar sesión para ver más) y se analizaron 8 a fondo:
