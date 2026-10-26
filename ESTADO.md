@@ -17,9 +17,9 @@
 
 ## Pendiente (en orden)
 1. **Estilo**: el usuario quiere estudiar canales de animación con IA que están funcionando muy bien y fusionar su receta (ritmo, gancho, texto, transiciones) con su marca (stickers, logo, voz). Falta que mande enlaces y 3–5 MP4 de esos canales. Extraer principios; no copiar personajes ni diseños.
-2. **Generador diario**: Claude API (`CLAUDE_API_KEY`) elige tema nuevo (`historial/temas.json`), escribe guion con fuentes, verifica datos, escribe el jsx, revisa capturas, narra, renderiza las dos versiones.
+2. **Generador diario**: DECISIÓN del usuario (26 oct): usar Claude Code con su suscripción, NO la API de pago, para no gastar créditos. Plan: tarea programada diaria de Claude Code en la máquina fija del usuario (o el Action oficial de Claude Code con token de suscripción). La clave `CLAUDE_API_KEY` queda solo como respaldo. Cada día: elegir tema nuevo (`historial/temas.json`), escribe guion con fuentes, verifica datos, escribe el jsx, revisa capturas, narra, renderiza las dos versiones.
 3. **Aprobación por Telegram**: bot con botones Publicar / Rehacer / Descartar (receptor gratis en Cloudflare Workers → repository_dispatch).
-4. **Publicación**: opción recomendada combinada, pendiente de que el usuario elija:
+4. **Publicación**: DECISIÓN (26 oct): por ahora Claude publica de forma asistida, controlando el navegador en la computadora del usuario y siempre con su aprobación; en paralelo se piden los permisos de API (Meta, YouTube, TikTok). Plan a futuro:
    - Instagram + Facebook por API oficial (cuenta Creator/Business ligada a página de Facebook).
    - YouTube + TikTok por API cuando aprueben sus auditorías; mientras tanto, desde una máquina fija del usuario con sesión iniciada (script de subida estable, Claude solo como respaldo). Avisado de los riesgos (términos de uso, captchas, seguridad).
 5. Cierre del video: se usa una tarjeta HTML con @lacreaciondelrobert (el `cierre.mp4` viejo dice "Shots biotecnológicos, cada miércoles").
