@@ -357,6 +357,51 @@ function kArbol(seed, n = 230) {
   const mx = Math.max(...segs.map((s) => s.b)) + 0.4; segs.forEach((s) => { s.b /= mx; s.e = s.b + 0.4 / mx * 2; });
   return (kArbol[key] = segs);
 }
+// Red de hifas RADIAL: crece desde el punto de germinación hacia todos lados (abanico bajo la superficie;
+// círculo completo con circ = true), con hifas que se curvan poco y se ramifican a 25–50°. Crece por frente:
+// cada segmento "nace" según su distancia de recorrido desde la espora. Una rejilla de densidad evita grumos.
+function kArbolRadial(seed, n = 420, circ = false) {
+  const key = 'rad' + seed + '_' + n + (circ ? 'c' : ''); if (kArbolRadial[key]) return kArbolRadial[key];
+  const g = krng(seed), segs = [], cola = [], celda = {};
+  const R0 = circ ? 9 : 7;
+  for (let i = 0; i < R0; i++) {
+    const a = circ ? (i / R0) * Math.PI * 2 + g() * 0.3 : Math.PI * (0.05 + 0.9 * i / (R0 - 1)) + (g() - 0.5) * 0.12;
+    cola.push({ x: 0, y: circ ? 0 : 8, a, d: 0 });
+  }
+  while (cola.length && segs.length < n) {
+    cola.sort((p, q) => p.d - q.d);
+    const p = cola.shift(), L = 120 + g() * 70;
+    let a = p.a + (g() - 0.5) * 0.4, x2 = p.x + Math.cos(a) * L, y2 = p.y + Math.sin(a) * L;
+    if (!circ && y2 < 24) { a = Math.cos(a) > 0 ? 0.06 : Math.PI - 0.06; x2 = p.x + Math.cos(a) * L; y2 = 24 + g() * 26; } // corre justo bajo la superficie
+    if (Math.hypot(x2, y2) > 3300 || (!circ && y2 > 3500)) continue;
+    const ck = Math.floor(x2 / 170) + ',' + Math.floor(y2 / 170); if ((celda[ck] || 0) >= 2) continue; celda[ck] = (celda[ck] || 0) + 1;
+    segs.push({ x1: p.x, y1: p.y, x2, y2, d: p.d, L, c: (g() - 0.5) * 0.22 * L });
+    cola.push({ x: x2, y: y2, a, d: p.d + L });
+    if (g() < 0.5) cola.push({ x: x2, y: y2, a: a + (g() < 0.5 ? -1 : 1) * (0.45 + g() * 0.42), d: p.d + L + 25 });
+  }
+  const mx = Math.max(...segs.map((s) => s.d + s.L));
+  segs.forEach((s) => { s.b = s.d / mx; s.e = (s.d + s.L) / mx; });
+  return (kArbolRadial[key] = segs);
+}
+// Nodos de la colonia: SOLO donde la red ya llegó a la superficie. Nodo 0 = donde germinó la espora.
+// b = momento (en g) en que la red alcanza ese punto · p = nodo del que sale su estolón · anillo = orden de aparición.
+function nodosPan(seed = 3) {
+  const key = 'nod' + seed; if (nodosPan[key]) return nodosPan[key];
+  const arb = kArbolRadial(seed);
+  // puntos donde una hifa ya está pegada a la superficie, del centro hacia afuera, separados ≥ 450 px
+  const cand = arb.filter((s) => s.y2 <= 110).map((s) => ({ x: Math.round(s.x2), b: s.e })).sort((a, b) => Math.abs(a.x) - Math.abs(b.x));
+  const ns = [{ x: 0, b: 0 }];
+  for (const c of cand) { if (ns.length >= 7) break; if (ns.every((n) => Math.abs(n.x - c.x) >= 450)) ns.push(c); }
+  const H = [950, 1050, 880, 1180, 1000, 900, 1100];
+  ns.forEach((n, i) => {
+    n.h = H[i % H.length];
+    // su estolón sale del punto más cercano que esté más hacia el centro (del mismo lado o el nodo 0)
+    const dentro = ns.filter((m) => m !== n && Math.abs(m.x) < Math.abs(n.x) && (m.x === 0 || Math.sign(m.x) === Math.sign(n.x)));
+    n.p = i === 0 ? -1 : ns.indexOf(dentro.sort((a, b) => Math.abs(n.x - a.x) - Math.abs(n.x - b.x))[0]);
+  });
+  ns.forEach((n) => { let k = 0, m = n; while (m.p >= 0) { k++; m = ns[m.p]; } n.anillo = k; });
+  return (nodosPan[key] = ns);
+}
 function kMiga(seed) {
   const key = 'miga' + seed; if (kMiga[key]) return kMiga[key];
   const g = krng(seed);
@@ -372,13 +417,13 @@ function MundoPanMacro({ T, moho = 1, rayosX = 0, soplo, fondo = KC.yellow, otra
   const M = MUNDO_PAN.mancha, g = krng(seed);
   moho = moho * (1 - kprog(zCam, 6, 16));          // muy de cerca, la mancha macro cede el lugar al mundo micro
   const hoyos = Array.from({ length: 60 }, () => ({ x: 230 + g() * 620, y: 470 + g() * 720, rx: 6 + g() * 22, ry: 4 + g() * 12, r: g() * 180 }));
-  const red = kArbol(5, 230);
+  const red = kArbolRadial(5, 380, true);
   const Reb = ({ ox, mh, rx }) => (
     <g transform={`translate(${ox},0)`}>
       <path d="M190 1240 L190 640 C150 470 260 360 420 380 C470 330 610 330 660 380 C820 360 930 470 890 640 L890 1240 Z" fill="#c9782f" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
       <path d="M222 1212 L222 650 C190 500 285 410 425 425 C480 380 600 380 655 425 C795 410 890 500 858 650 L858 1212 Z" fill="#f4dfb2" />
       {hoyos.map((h, i) => <ellipse key={i} cx={h.x} cy={h.y} rx={h.rx} ry={h.ry} transform={`rotate(${h.r} ${h.x} ${h.y})`} fill="#e3c68e" />)}
-      {rx > 0 && <g opacity={rx}>{red.map((s, i) => <line key={i} x1={M.x + s.x1 * 0.09} y1={M.y + s.y1 * 0.1} x2={M.x + s.x2 * 0.09} y2={M.y + s.y2 * 0.1} stroke="#ffffff" strokeWidth={3.6} strokeLinecap="round" opacity={0.9} />)}</g>}
+      {rx > 0 && <g opacity={rx}>{red.map((s, i) => <line key={i} x1={M.x + s.x1 * 0.07} y1={M.y + s.y1 * 0.07} x2={M.x + s.x2 * 0.07} y2={M.y + s.y2 * 0.07} stroke="#ffffff" strokeWidth={3} strokeLinecap="round" opacity={0.9 * kprog(rx, s.b * 0.8, s.b * 0.8 + 0.2)} />)}</g>}
       {mh > 0 && <g>
         <circle cx={M.x} cy={M.y} r={112 * mh} fill="#9a9a92" opacity={0.55} />
         <circle cx={M.x} cy={M.y} r={90 * mh} fill="#d8d8cf" opacity={0.75} />
@@ -401,44 +446,55 @@ function MundoPanMacro({ T, moho = 1, rayosX = 0, soplo, fondo = KC.yellow, otra
 }
 
 // Mundo micro (corte lateral bajo la mancha). Props (todas 0..1 salvo indicadas):
-// g = cuánto ha crecido la red de hifas dentro de la miga
-// colonia = 0..1, lo que pasa DESPUÉS de colonizar, todo conectado a la misma red:
-//   nodo 0 (donde germinó la espora y nace la red) echa rizoides → de ahí salen estolones a los nodos
-//   vecinos → en cada nodo donde el estolón toca el pan se forman rizoides y sube un tallito.
+// g = cuánto ha crecido la red de hifas (radial, desde donde germinó la espora)
+// colonia = 0..1, lo que pasa DESPUÉS, siempre sobre la red que ya existe:
+//   1) en los puntos donde la red llegó a la superficie salen rizoides (café, finos, como raicitas)
+//   2) estolones: arcos aéreos que conectan esos puntos · 3) en cada punto sube un tallito con su cápsula.
 // capsulas = cápsulas formadas · revientan = [T0, T1, …] por nodo · espora = { y, germina } · pelo = opacidad.
 // (tallos = nombre viejo de colonia; se acepta igual.)
-const PAN_TALLOS = [
-  { x: 0, h: 950, p: -1, a: 0 }, { x: 560, h: 1050, p: 0, a: 0.22 }, { x: -560, h: 880, p: 0, a: 0.22 },
-  { x: 1150, h: 1180, p: 1, a: 0.44 }, { x: -1150, h: 1000, p: 2, a: 0.44 }, { x: 1750, h: 900, p: 3, a: 0.66 }, { x: -1750, h: 1100, p: 4, a: 0.66 },
-];
+const PAN_TALLOS = nodosPan(3);
 function MundoPanMicro({ T, g = 0, colonia, tallos = 0, capsulas = 0, revientan = [], espora, pelo = 0, seed = 3 }) {
   if (colonia == null) colonia = tallos;
-  const arb = kArbol(seed), miga = kMiga(seed + 1);
+  const arb = kArbolRadial(seed), miga = kMiga(seed + 1), nodos = nodosPan(seed);
   const hifas = [];
   arb.forEach((s, i) => { const p = kclamp((g - s.b) / (s.e - s.b), 0, 1); if (p <= 0) return;
-    const x2 = klerp(s.x1, s.x2, p), y2 = klerp(s.y1, s.y2, p);
-    hifas.push(<line key={'h' + i} x1={s.x1} y1={s.y1} x2={x2} y2={y2} stroke="rgba(47,224,168,.28)" strokeWidth={34} strokeLinecap="round" />);
-    hifas.push(<line key={'c' + i} x1={s.x1} y1={s.y1} x2={x2} y2={y2} stroke="#eafff7" strokeWidth={13} strokeLinecap="round" />); });
-  const tal = PAN_TALLOS.map((t, i) => {
-    const riz = kprog(colonia, t.a, t.a + 0.1), sub = kprog(colonia, t.a + 0.08, t.a + 0.3), h = t.h * sub, cy = -h;
+    const nx = -(s.y2 - s.y1) / s.L, ny = (s.x2 - s.x1) / s.L;               // normal, para curvar la hifa
+    const cx = (s.x1 + s.x2) / 2 + nx * s.c, cy = (s.y1 + s.y2) / 2 + ny * s.c;
+    // punto final parcial sobre la curva (Bézier cuadrática)
+    const q = (t) => [(1 - t) * (1 - t) * s.x1 + 2 * (1 - t) * t * cx + t * t * s.x2, (1 - t) * (1 - t) * s.y1 + 2 * (1 - t) * t * cy + t * t * s.y2];
+    const [ex, ey] = q(p), [mx2, my2] = [(1 - p) * s.x1 + p * cx, (1 - p) * s.y1 + p * cy];
+    const d = `M${s.x1} ${s.y1} Q ${mx2} ${my2} ${ex} ${ey}`;
+    hifas.push(<path key={'h' + i} d={d} fill="none" stroke="rgba(47,224,168,.26)" strokeWidth={30} strokeLinecap="round" />);
+    hifas.push(<path key={'c' + i} d={d} fill="none" stroke="#eafff7" strokeWidth={12} strokeLinecap="round" />); });
+  const fases = nodos.map((t) => {
+    const hay = kprog(g, t.b, t.b + 0.04);                                     // sin micelio ahí, no hay nada
+    const rs = 0.06 * t.anillo, ss = 0.3 + 0.07 * (t.anillo - 1), ts = 0.55 + 0.06 * t.anillo;
+    return { riz: kprog(colonia, rs, rs + 0.14) * hay, est: t.p < 0 ? 0 : kprog(colonia, ss, ss + 0.14) * hay, sub: kprog(colonia, ts, ts + 0.22) * hay };
+  });
+  const tal = nodos.map((t, i) => {
+    const { riz, sub } = fases[i], h = t.h * sub, cy = -h;
     const tb = revientan[i], u = tb != null && T >= tb ? T - tb : -1;
-    const r = (55 + (i % 3) * 14) * kEase.sale(kclamp(capsulas * 1.3 - i * 0.04, 0, 1));
+    const r = sub > 0.95 ? (55 + (i % 3) * 14) * kEase.sale(kclamp(capsulas * 1.3 - i * 0.04, 0, 1)) : 0;
     const neg = kclamp(capsulas * 2 - 0.3 - i * 0.03, 0, 1), col = mixHex('#e8e6dc', '#141414', neg);
     const esp = u >= 0 ? Array.from({ length: 26 }, (_, j) => { const a = j * 2.4, v = 220 + (j % 5) * 90; return <ellipse key={j} cx={t.x + Math.cos(a) * v * u} cy={cy + Math.sin(a) * v * u - 60 * u} rx={8} ry={6} fill="#3b342c" opacity={Math.max(0, 1 - u / 3)} />; }) : null;
+    // rizoides: raicitas café que se abren hacia abajo, dentro de la miga, desde el punto de la red
+    const raices = riz > 0 ? Array.from({ length: 5 }, (_, j) => { const ang = Math.PI / 2 + (j - 2) * 0.42, L = riz * (130 + (j % 2) * 70);
+      const x2 = t.x + Math.cos(ang) * L, y2 = 6 + Math.sin(ang) * L, bx = t.x + Math.cos(ang) * L * 0.55, by = 6 + Math.sin(ang) * L * 0.55;
+      return <g key={j}><path d={`M${t.x} 6 Q ${t.x + Math.cos(ang) * L * 0.3 + 10} ${6 + Math.sin(ang) * L * 0.5} ${x2} ${y2}`} fill="none" stroke="#d6b183" strokeWidth={6} strokeLinecap="round" />
+        <path d={`M${bx} ${by} l ${(j % 2 ? 1 : -1) * 34 * riz} ${42 * riz}`} fill="none" stroke="#d6b183" strokeWidth={4} strokeLinecap="round" /></g>; }) : null;
     return <g key={'t' + i}>
+      {raices}
       {sub > 0 && <path d={`M${t.x} 0 C ${t.x + 30} ${cy * 0.4} ${t.x - 25} ${cy * 0.7} ${t.x} ${cy}`} fill="none" stroke="#eafff7" strokeWidth={14} strokeLinecap="round" />}
-      {riz > 0 && Array.from({ length: 6 }, (_, j) => { const L = riz * (150 + (j % 3) * 60), dx = (j - 2.5) * 34 * riz;
-        return <path key={j} d={`M${t.x} 4 q ${dx * 0.6} ${L * 0.55} ${dx * 1.6} ${L} m 0 0 l ${(j % 2 ? 1 : -1) * 26 * riz} ${30 * riz}`} fill="none" stroke="#eafff7" strokeWidth={8} strokeLinecap="round" />; })}
       {r > 1 && (u < 0 ? <g><circle cx={t.x} cy={cy} r={r} fill={col} stroke={KC.ink} strokeWidth={4} />
           {Array.from({ length: 10 }, (_, j) => <circle key={j} cx={t.x + Math.cos(j * 2.4) * r * 0.55 * Math.sqrt(j / 10)} cy={cy + Math.sin(j * 2.4) * r * 0.55 * Math.sqrt(j / 10)} r={5} fill={neg > 0.5 ? '#2c2a26' : '#cfcbbd'} />)}</g>
         : <path d={`M${t.x - r * 0.7} ${cy} A ${r * 0.7} ${r * 0.8} 0 0 1 ${t.x + r * 0.7} ${cy}`} fill="#cfcbbd" stroke={KC.ink} strokeWidth={4} />)}
       {esp}
     </g>;
   });
-  // estolón: arco aéreo que sale del nodo padre y baja a tocar el pan en el nodo nuevo
-  const estolones = colonia > 0 ? PAN_TALLOS.map((t, i) => { if (t.p < 0) return null; const o = PAN_TALLOS[t.p], p = kprog(colonia, t.a - 0.18, t.a); if (!p) return null;
-    const xe = klerp(o.x, t.x, p), alto = 150 * Math.sin(Math.PI * Math.min(1, p * 0.5 + 0.5)) + 40;
-    return <path key={'e' + i} d={`M${o.x} -4 Q ${(o.x + xe) / 2} ${-alto * 1.6} ${xe} ${-4 - (1 - p) * 70}`} fill="none" stroke="#eafff7" strokeWidth={11} strokeLinecap="round" />; }) : null;
+  // estolones: arcos aéreos que conectan dos puntos de la colonia que ya tienen rizoides (crecen desde el padre)
+  const estolones = nodos.map((t, i) => { const p = fases[i].est; if (!p) return null; const o = nodos[t.p];
+    const pts = []; for (let k = 0; k <= 24; k++) { const u = (k / 24) * p, x = (1 - u) * (1 - u) * o.x + 2 * (1 - u) * u * ((o.x + t.x) / 2) + u * u * t.x, y = (1 - u) * (1 - u) * -4 + 2 * (1 - u) * u * -330 + u * u * -4; pts.push(x.toFixed(1) + ' ' + y.toFixed(1)); }
+    return <path key={'e' + i} d={'M' + pts.join(' L ')} fill="none" stroke="#eafff7" strokeWidth={10} strokeLinecap="round" />; });
   let sp = null;
   if (espora && espora.y != null) {
     const gm = espora.germina || 0, s = 1 + 0.35 * kprog(gm, 0, 0.4), tubo = kprog(gm, 0.3, 1) * 120;
@@ -514,5 +570,5 @@ Object.assign(window, {
   Subtitulo, Chip, MitoTachado, NumeroGigante, Contador, TarjetaEstudio,
   Capitulo, Pasos, Medidor, Cronometro, Cuadricula, Comparativa,
   MarcaAgua, Sticker, CierreMarca, MundoPiel, MUNDO_PIEL, mixHex,
-  CamaraAnidada, MundoPanMacro, MundoPanMicro, MUNDO_PAN, PAN_TALLOS, kArbol,
+  CamaraAnidada, MundoPanMacro, MundoPanMicro, MUNDO_PAN, PAN_TALLOS, kArbol, kArbolRadial, nodosPan,
 });

@@ -14,16 +14,18 @@ function MohoCiclo() {
   const { T, CUES } = useComposition();
   const K = { L: CUES.Llega, G: CUES.Germina, I: CUES.Invade, S: CUES.Sube, C: CUES.Capsulas, R: CUES.Revientan, O: CUES.Otro, F: CUES.Outro };
   function mpk(t, x, y, z) { const p = mp(x, y); return { t, x: p.x, y: p.y, z }; }
+  // punto real de la colonia que protagoniza (el más cercano a +560) y su altura
+  const N = nodosPan(3), hI = N.reduce((b, n, i) => (Math.abs(n.x - 560) < Math.abs(N[b].x - 560) ? i : b), 0), HX = N[hI].x, HH = N[hI].h;
   const keys = [
     mpk(K.L, 0, -60, 900),
     mpk(K.G + 0.5, 0, -60, 900),
     mpk(K.I, 0, 300, 300),
     mpk(K.S, 0, 1300, 45),
     mpk(K.S + 1.8, 0, -60, 110),        // al nodo donde nació la red: ahí salen los rizoides
-    mpk(K.S + 5.5, 300, -300, 70),      // el estolón sale de ese nodo hacia el siguiente
-    mpk(K.C, 560, -700, 70),
-    mpk(K.C + 4, 560, -1050, 520),
-    mpk(K.R + 0.2, 560, -1050, 520),
+    mpk(K.S + 5.5, HX / 2, -300, 70),      // el estolón sale de ese nodo hacia el siguiente
+    mpk(K.C, HX, -700, 70),
+    mpk(K.C + 4, HX, -HH, 520),
+    mpk(K.R + 0.2, HX, -HH, 520),
     mpk(K.R + 2.5, 300, -600, 70),
     mpk(K.R + 7.5, 0, -400, 30),
     { t: K.O + 2, x: 700, y: 800, z: 1.2 },
@@ -50,7 +52,7 @@ function MohoCiclo() {
     g: kprog(T, K.G + 2.5, K.I) * 0.15 + kprog(T, K.I, K.S) * 0.75,
     colonia: kprog(T, K.S + 0.6, K.S + 8.6),
     capsulas: kprog(T, K.C + 0.5, K.C + 6),
-    revientan: [2.6, 0.6, 3.4, 4.2, 5.0, 5.8, 6.6].map((d) => K.R + d),
+    revientan: N.map((n, i) => K.R + (i === hI ? 0.6 : 1.8 + ((i + 6 - hI) % 6) * 0.8)),
     espora: esp,
   };
   const microF = kprog(Math.log(cam.z), Math.log(28), Math.log(45));
@@ -70,8 +72,8 @@ function MohoCiclo() {
       <Etq T={T} at={K.L + 1.8} until={K.G + 2} x={120} y={560} texto="Rhizopus stolonifer" it />
       <EtqMundo T={T} cam={cam} at={K.G + 3} until={K.I} wx={0} wy={90} dx={40} texto="hifa" />
       <EtqMundo T={T} cam={cam} at={K.S + 1.2} until={K.C} wx={-40} wy={170} dx={-30} texto="rizoides" lado="izq" />
-      <EtqMundo T={T} cam={cam} at={K.S + 3.6} until={K.C} wx={280} wy={-170} dy={-24} texto="estolón" />
-      <EtqMundo T={T} cam={cam} at={K.C + 4.2} until={K.R} wx={560} wy={-1050} dx={100} texto="cápsula de esporas" />
+      <EtqMundo T={T} cam={cam} at={K.S + 3.6} until={K.C} wx={HX / 2} wy={-170} dy={-24} texto="estolón" />
+      <EtqMundo T={T} cam={cam} at={K.C + 4.2} until={K.R} wx={HX} wy={-HH} dx={100} texto="cápsula de esporas" />
 
       <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.R + 0.7} until={K.R + 3} lado="arriba-der" />
 
