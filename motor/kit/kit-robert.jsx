@@ -476,7 +476,17 @@ function MundoPanMicro({ T, g = 0, colonia, tallos = 0, capsulas = 0, revientan 
     const tb = revientan[i], u = tb != null && T >= tb ? T - tb : -1;
     const r = sub > 0.95 ? (55 + (i % 3) * 14) * kEase.sale(kclamp(capsulas * 1.3 - i * 0.04, 0, 1)) : 0;
     const neg = kclamp(capsulas * 2 - 0.3 - i * 0.03, 0, 1), col = mixHex('#e8e6dc', '#141414', neg);
-    const esp = u >= 0 ? Array.from({ length: 26 }, (_, j) => { const a = j * 2.4, v = 220 + (j % 5) * 90; return <ellipse key={j} cx={t.x + Math.cos(a) * v * u} cy={cy + Math.sin(a) * v * u - 60 * u} rx={8} ry={6} fill="#3b342c" opacity={Math.max(0, 1 - u / 3)} />; }) : null;
+    // al madurar, la pared de la cápsula se seca y se rompe en pedazos; las esporas salen y se las lleva el aire
+    // (no es una explosión). Queda la columela, pequeña y colapsada.
+    const esp = u >= 0 ? <g>
+      {Array.from({ length: 7 }, (_, j) => { const a0 = j * 0.9, o = Math.max(0, 1 - u / 1.4);
+        return <path key={'w' + j} d={`M${t.x + Math.cos(a0) * r} ${cy + Math.sin(a0) * r} A ${r} ${r} 0 0 1 ${t.x + Math.cos(a0 + 0.7) * r} ${cy + Math.sin(a0 + 0.7) * r}`}
+          fill="none" stroke="#1c1b18" strokeWidth={7} strokeLinecap="round" opacity={o}
+          transform={`translate(${Math.cos(a0 + 0.35) * 40 * u} ${Math.sin(a0 + 0.35) * 30 * u + 90 * u * u})`} />; })}
+      {Array.from({ length: 40 }, (_, j) => { const a0 = j * 2.39, d0 = Math.sqrt(j / 40) * r * 0.9;
+        const x = t.x + Math.cos(a0) * d0 + u * (70 + (j % 5) * 30) + Math.sin(u * 1.3 + j) * 18, y = cy + Math.sin(a0) * d0 - u * (18 + (j % 4) * 10);
+        return <ellipse key={'s' + j} cx={x} cy={y} rx={7.5} ry={5.5} fill="#3b342c" opacity={Math.max(0, Math.min(1, 1.6 - u / 2.5))} />; })}
+    </g> : null;
     // rizoides: raicitas café que se abren hacia abajo, dentro de la miga, desde el punto de la red
     const raices = riz > 0 ? Array.from({ length: 5 }, (_, j) => { const ang = Math.PI / 2 + (j - 2) * 0.42, L = riz * (130 + (j % 2) * 70);
       const x2 = t.x + Math.cos(ang) * L, y2 = 6 + Math.sin(ang) * L, bx = t.x + Math.cos(ang) * L * 0.55, by = 6 + Math.sin(ang) * L * 0.55;
@@ -487,14 +497,17 @@ function MundoPanMicro({ T, g = 0, colonia, tallos = 0, capsulas = 0, revientan 
       {sub > 0 && <path d={`M${t.x} 0 C ${t.x + 30} ${cy * 0.4} ${t.x - 25} ${cy * 0.7} ${t.x} ${cy}`} fill="none" stroke="#eafff7" strokeWidth={14} strokeLinecap="round" />}
       {r > 1 && (u < 0 ? <g><circle cx={t.x} cy={cy} r={r} fill={col} stroke={KC.ink} strokeWidth={4} />
           {Array.from({ length: 10 }, (_, j) => <circle key={j} cx={t.x + Math.cos(j * 2.4) * r * 0.55 * Math.sqrt(j / 10)} cy={cy + Math.sin(j * 2.4) * r * 0.55 * Math.sqrt(j / 10)} r={5} fill={neg > 0.5 ? '#2c2a26' : '#cfcbbd'} />)}</g>
-        : <path d={`M${t.x - r * 0.7} ${cy} A ${r * 0.7} ${r * 0.8} 0 0 1 ${t.x + r * 0.7} ${cy}`} fill="#cfcbbd" stroke={KC.ink} strokeWidth={4} />)}
+        : <path d={`M${t.x - r * 0.32} ${cy + 4} Q ${t.x - r * 0.18} ${cy - r * 0.2} ${t.x} ${cy - r * 0.16} Q ${t.x + r * 0.2} ${cy - r * 0.22} ${t.x + r * 0.32} ${cy + 6}`} fill="#4a463e" stroke={KC.ink} strokeWidth={3} />)}
       {esp}
     </g>;
   });
-  // estolones: arcos aéreos que conectan dos puntos de la colonia que ya tienen rizoides (crecen desde el padre)
+  // estolones: hifas aéreas que salen de un punto de la colonia, corren bajas e irregulares sobre el pan
+  // y bajan a tocarlo en el punto siguiente (ahí ya hay micelio y salen rizoides). Nada de arcos perfectos.
   const estolones = nodos.map((t, i) => { const p = fases[i].est; if (!p) return null; const o = nodos[t.p];
-    const pts = []; for (let k = 0; k <= 24; k++) { const u = (k / 24) * p, x = (1 - u) * (1 - u) * o.x + 2 * (1 - u) * u * ((o.x + t.x) / 2) + u * u * t.x, y = (1 - u) * (1 - u) * -4 + 2 * (1 - u) * u * -330 + u * u * -4; pts.push(x.toFixed(1) + ' ' + y.toFixed(1)); }
-    return <path key={'e' + i} d={'M' + pts.join(' L ')} fill="none" stroke="#eafff7" strokeWidth={10} strokeLinecap="round" />; });
+    const pts = []; for (let k = 0; k <= 32; k++) { const u = (k / 32) * p, x = klerp(o.x, t.x, u);
+      const alto = 55 * Math.pow(Math.sin(Math.PI * u), 0.7) + 16 * Math.sin(u * 11 + i * 1.7) * Math.sin(Math.PI * u);
+      pts.push(x.toFixed(1) + ' ' + (-6 - Math.max(0, alto)).toFixed(1)); }
+    return <path key={'e' + i} d={'M' + pts.join(' L ')} fill="none" stroke="#eafff7" strokeWidth={9} strokeLinecap="round" strokeLinejoin="round" />; });
   let sp = null;
   if (espora && espora.y != null) {
     const gm = espora.germina || 0, s = 1 + 0.35 * kprog(gm, 0, 0.4), tubo = kprog(gm, 0.3, 1) * 120;

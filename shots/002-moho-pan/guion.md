@@ -20,7 +20,7 @@
 | 4 | 19–22 s | Lo que ves arriba es apenas la punta. | La cámara se aleja en corte lateral: arriba la mancha pequeña, abajo una red enorme de hifas. | `Camara`, `Sticker` (sorprendido) |
 | 5 | 22–24 s | ¿Y esos puntitos negros? | **Re-gancho.** Acercamiento a un puntito negro. | `Sticker` (pensativo) |
 | 6 | 24–28 s | Son cápsulas llenas de esporas, cada una en la punta de un tallito. | Tallitos que suben con su bolita negra en la punta. Etiqueta *Rhizopus stolonifer*. | `Escala` (~100 µm) |
-| 7 | 28–31 s | Cuando revientan, las esporas vuelan hasta el siguiente pan. | Una cápsula revienta en cámara lenta; nube de esporas que sale de cuadro. | `Ambiente` |
+| 7 | 28–31 s | Cuando se rompen, las esporas vuelan hasta el siguiente pan. | La pared seca de la cápsula se quiebra en pedazos y el aire se lleva las esporas (no es una explosión). | `Ambiente` |
 | 8 | 31–39 s | Por eso el Departamento de Agricultura de Estados Unidos dice: pan con moho, se tira entero. Es poroso y el moho llega por debajo. | Tarjeta de la fuente y la rebanada entera en "rayos X", con las hifas llegando a toda la miga. | `TarjetaEstudio` (USDA) |
 | 9 | 39–45 s | Al queso duro o a la zanahoria sí puedes cortarles la mancha, con al menos dos centímetros y medio de margen. | Queso duro y zanahoria en corte: las hifas apenas entran. Un cuchillo corta con una regla de 2.5 cm. | `Comparativa` o etiquetas, regla |
 | 10 | 45–48 s | Y no lo huelas: puede causarte problemas al respirar. | Una nariz que se acerca al pan y se detiene; esporas cerca. | `Sticker` (serio) |

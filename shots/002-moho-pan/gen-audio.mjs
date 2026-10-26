@@ -31,7 +31,8 @@ const nota = (t, m, g = 0.12, d = 0.6) => add(mus, t, (u) => { const f = hz(m); 
 const sube = (t, d, m0, m1, g = 0.1) => { let ph = 0; add(mus, t, (u) => { ph += 2 * Math.PI * hz(m0 + (m1 - m0) * (u / d)) / SR; return Math.sin(ph) * Math.sin(Math.PI * Math.min(1, u / d)) * g; }, d); };
 const bajo = (t, m, g = 0.2, d = 1.2) => { const f = lp(); add(mus, t, (u) => f(Math.sign(Math.sin(2 * Math.PI * hz(m) * u)), 380) * env(u, 0.01, d * 0.5) * g, d); };
 const tambor = (t, g = 0.5, f0 = 90) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * (f0 + 120 * Math.exp(-u * 35)) / SR; return Math.sin(ph) * Math.exp(-u * 9) * g; }, 0.5); };
-const estalla = (t, g = 0.7) => { tambor(t, g, 70); const h = hp(); add(sfx, t, (u, i) => h(NOISE[(i * 3) % NOISE.length], 1500) * Math.exp(-u * 14) * g * 0.7, 0.35); for (let k = 0; k < 6; k++) tic(t + 0.05 + k * 0.04 + rnd() * 0.05, 0.1); };
+// la cápsula no explota: su pared seca se quiebra → crujido suave de pedacitos + soplo de aire
+const estalla = (t, g = 0.7) => { for (let k = 0; k < 9; k++) tic(t + k * 0.035 + rnd() * 0.03, 0.12 * g + 0.04); const h = hp(), f = lp(); add(sfx, t + 0.1, (u, i) => h(f(NOISE[(i * 3) % NOISE.length], 900), 150) * Math.sin(Math.PI * Math.min(1, u / 1.2)) * g * 0.18, 1.2); };
 const whoosh = (t, d = 0.6, g = 0.25) => { const f = lp(), h = hp(); add(sfx, t, (u, i) => h(f(NOISE[i % NOISE.length], 300 + 3000 * (u / d)), 200) * Math.sin(Math.PI * u / d) * g, d); };
 const pad = (t0, t1, g = 0.07, notas = [45, 52, 57]) => { const f = lp(); const n0 = Math.floor(warp(t0) * SR), n1 = Math.min(N, Math.floor(warp(t1) * SR));
   for (let i = n0; i < n1; i++) { const t = i / SR, u = (i - n0) / (n1 - n0); const x = notas.reduce((a, m) => a + Math.sin(2 * Math.PI * hz(m) * t) + 0.3 * Math.sin(2 * Math.PI * hz(m + 12) * t * 1.003), 0) / notas.length;
