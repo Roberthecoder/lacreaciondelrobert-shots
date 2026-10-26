@@ -1,7 +1,9 @@
 # Proyecto: Shots Micológicos — La Creación del Robert / Fungi Mati
 
 Serie de divulgación científica en video corto (YouTube Shorts, TikTok, Reels,
-Facebook). Formato: animación HTML autocontenida, vertical 9:16, 30–45 s (máx 60).
+Facebook). Formato: animación HTML autocontenida, vertical 9:16. Duración, ritmo y
+color: ver la sección "Ritmo, duración y color" del `CLAUDE.md` principal (60.0 s
+exactos); manda sobre lo que diga este archivo.
 Serie hermana de los Shots Biotecnológicos: mismo narrador, mismo logo, misma
 esencia visual. Cada shot se vincula a la marca **Fungi Mati**.
 
@@ -55,9 +57,11 @@ hongo, una espora, una hifa, un mapa, un alimento fermentado, un objeto o foto r
 - **Ciclo de vida**: cada elemento tiene ventana de entrada y de salida; cruces con
   fundido (~0.3–0.5 s), no cortes secos; la escena saliente se desvanece por completo
   antes de que entre la nueva sobre el mismo espacio; ningún elemento vive < ~1.2 s.
-- **Movimiento**: algo cambia cada 2–4 s; nada estático > 4 s. Primeros 2–3 s = hook
-  ilustrado directo (sin saludos ni intro de marca). Cierre fijo:
-  "Esto fue un Shot Micológico. Sígueme." (sin alargarlo). **No hay video de cierre**
+- **Movimiento**: narrada = algo nuevo cada ~3 s atado a la frase de la voz (quietos
+  de máx. ~6 s mientras la voz avanza); sin voz = algo nuevo cada 1.5–3 s, nada
+  estático > 4 s. Primeros 2–3 s = hook ilustrado directo y voz desde el segundo 0
+  (sin saludos ni intro de marca). Cierre fijo:
+  "Esto fue un Shot Micológico. Sígueme." (1–2 s, sin alargarlo). **No hay video de cierre**
   en esta serie: el cierre es la tarjeta HTML de la plantilla.
 - **Fechas y hechos**: nunca "hoy/ahora/recientemente" para hechos con fecha; la
   fecha real va DICHA en el guion y subtítulo. Respeta fechas literales del guion.

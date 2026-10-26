@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
   fs.createReadStream(f).pipe(res);
 }).listen(0);
 
-const browser = await chromium.launch();
+const browser = await chromium.launch({ channel: process.env.NAVEGADOR || undefined });
 const p = await browser.newPage({ viewport: { width: 1080, height: 1990 } });
 await p.route(/unpkg\.com/, (r) => {
   const u = r.request().url();

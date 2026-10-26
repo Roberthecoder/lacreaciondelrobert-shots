@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
 }).listen(0);
 const port = server.address().port;
 
-const browser = await chromium.launch({ args: ['--autoplay-policy=no-user-gesture-required'] });
+const browser = await chromium.launch({ channel: process.env.NAVEGADOR || undefined, args: ['--autoplay-policy=no-user-gesture-required'] });
 const ctx = await browser.newContext({ viewport: { width: 1080, height: 1990 } });
 const p = await ctx.newPage();
 await p.route(/unpkg\.com/, (r) => {

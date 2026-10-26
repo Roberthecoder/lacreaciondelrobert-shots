@@ -21,11 +21,12 @@ toque, sin números mágicos.
 ---
 
 ## 1. Estructura narrativa (adáptala, no es fija)
-1. **Hook (0–~3 s)**: ilustración directa del tema. Sin saludos ni intro.
-2. **Desarrollo**: 1 idea por escena. Analogía → mecanismo → dato.
-3. **Conclusión**: la frase que resume el shot.
+1. **Hook (0–~3 s)**: ilustración directa del tema y la voz desde el segundo 0. Mito volteado o dato increíble, hablándole a "tú". Sin saludos ni intro.
+2. **Desarrollo**: 1 idea por frase. Analogía → mecanismo → dato + comparación a escala humana.
+   Re-gancho cada ~30 s ("pero lo increíble viene después", una pregunta).
+3. **Conclusión**: la frase que resume el shot y regresa al gancho del inicio.
 4. **Aclaración/matiz** (opcional): el "ojo, técnicamente…".
-5. **Cierre fijo**: tarjeta "ESTO FUE UN SHOT MICOLÓGICO / Sígueme". No la alargues.
+5. **Cierre fijo**: tarjeta "ESTO FUE UN SHOT MICOLÓGICO / Sígueme". 1–2 s, no la alargues.
 
 ---
 
@@ -34,7 +35,13 @@ toque, sin números mágicos.
 - **El subtítulo y su plano entran juntos.**
 - Cruces con **fundido ~0.3–0.5 s** (`fade` en `<Layer>`), nunca corte seco.
 - El plano saliente se desvanece por completo antes de que entre otro en su lugar.
-- Nada vive **< 1.2 s**. Nada estático **> 4 s**: algo cambia cada 2–4 s.
+- Nada vive **< 1.2 s**.
+- **Narrada**: algo nuevo cada ~3 s, atado a la frase de la voz. Preferir una escena continua
+  que viaja (la cámara acerca de lo grande a lo microscópico) sobre muchos cambios de escena.
+  Puede haber momentos quietos mientras la voz avanza, máximo ~6 s.
+- **Sin voz**: algo nuevo cada 1.5–3 s sobre el golpe de música; nada estático **> 4 s**.
+- **Color**: fondos brillantes de la marca. Solo las escenas microscópicas o internas usan
+  fondo oscuro (`#0E0F12` o azul noche) con los colores de la marca como acento.
 - Tiempos **pegados**: cada Sprite empieza donde termina el anterior (audio corrido).
 
 ---
@@ -93,11 +100,12 @@ el desfase** a todas las siguientes. Ancla a los cortes reales, no a estimacione
 ---
 
 ## 8. Checklist antes de entregar
-- [ ] Hook directo en los primeros 2–3 s (sin intro de marca).
+- [ ] Hook directo en los primeros 2–3 s y voz desde el segundo 0 (sin intro de marca).
+- [ ] Re-gancho cada ~30 s y cierre que regresa al gancho.
 - [ ] Cada subtítulo se lee completo y coincide con la voz.
 - [ ] Ningún avatar tapa información; sin poses 01/09 (salvo sabor).
 - [ ] Badge `#NN` con el número correcto.
 - [ ] Especies rotuladas (común + científico) si se muestran.
 - [ ] Subtítulos en zona segura (no los tapa la UI de redes).
-- [ ] Cierre fijo intacto. Duración total ≤ 60 s.
+- [ ] Cierre fijo intacto (1–2 s). Duración total exacta de 60.0 s (verificada con ffprobe).
 - [ ] Rigor científico: seta ≠ micelio; procesos no falseados.

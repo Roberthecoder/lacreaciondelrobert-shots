@@ -30,9 +30,10 @@ Serie de videos verticales de divulgación biotecnológica. Español (México), 
 - **Número del shot: preguntar/confirmar siempre.** El último publicado fue el **#23** (Cepario) → el siguiente es **#24**.
 
 ## 4. Narrativa y ritmo (retención)
-- Duración objetivo 45–60 s. Estructura: intro adaptado al tema (ver §0) → concepto → desarrollo en 2–4 bloques (con contador "MÉTODO 1/3" si aplica) → ejemplo real → cierre que involucra al espectador sin salirse del tema → "Esto fue un Shot Biotecnológico. Sígueme." → outro.
+- **Actualizado 25 oct 2026:** duración, ritmo y color los manda la sección "Ritmo, duración y color" del `CLAUDE.md` principal (60.0 s exactos; narrada con voz desde el segundo 0 y algo nuevo cada ~3 s atado a la frase; sin voz en loop). Lo de abajo sigue valiendo en lo que no la contradiga.
+- Estructura: intro adaptado al tema (ver §0) → concepto → desarrollo en 2–4 bloques (con contador "MÉTODO 1/3" si aplica) → ejemplo real → cierre que involucra al espectador sin salirse del tema → "Esto fue un Shot Biotecnológico. Sígueme." → outro.
 - UNA composición continua: un objeto protagonista persiste y se transforma entre escenas (no diapositivas).
-- Ritmo: micro-zoom/inclinación al beat cada 1.2 s, flash blanco + punch de zoom en cada cambio de escena, sacudida en impactos. Algo nuevo en pantalla cada 1–1.5 s.
+- Ritmo: micro-zoom/inclinación al beat cada 1.2 s, flash blanco + punch de zoom en cada cambio de escena, sacudida en impactos. Algo nuevo en pantalla cada ~3 s en la narrada (atado a la frase) y cada 1.5–3 s en la sin voz.
 - El narrador (avatar) aparece desde ~1 s y luego cada 8–10 s, solo como reacción (pop con rebote y squash). Avatares en `assets/stickers/`. Evitar 01 y 09 salvo que se pidan.
 - El tema central manda: los ejemplos (p. ej. insulina) son apoyo, no protagonistas.
 
