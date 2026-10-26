@@ -77,8 +77,8 @@ function MohoCiclo() {
 
       <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.R + 0.7} until={K.R + 3} lado="arriba-der" />
 
-      <MarcaAgua T={T} num="02" hasta={K.F} />
-      <CierreMarca T={T} at={K.F} frase="El ciclo del moho del pan" />
+      <MarcaAgua T={T} tema="biologia" num="02" hasta={K.F} />
+      <CierreMarca T={T} at={K.F} tema="biologia" frase="El ciclo del moho del pan" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_ciclo.wav'} />
     </div>
   );

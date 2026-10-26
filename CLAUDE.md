@@ -13,6 +13,7 @@ Videos verticales 1080×1920 de divulgación científica en español de México.
 
 ## Formato y piezas de cada shot
 - Antes de escribir un shot, elegir su formato narrado y su gemelo mudo en `referencias-externas/RECETARIO.md` (11 formatos, parejas y reparto por serie).
+- Logo: isotipo con el hexágono del TEMA en dorado, alineado a su celda (`motor/kit/logo.mjs` genera `logo_<tema>.svg`): biología → ADN · química → matraz · bioquímica → ADN + matraz · física → átomo · IA → brillitos. Copiar el SVG a `assets/` y pasar `tema` a `MarcaAgua` y `CierreMarca`.
 - Construirlo con el kit `motor/kit/kit-robert.jsx` (catálogo en `motor/kit/LEEME.md`, ejemplo en `shots/_demo-kit/`). Si un tema necesita un mundo nuevo (hoja, suelo, intestino…), agregarlo al kit para reutilizarlo.
 
 ## Ritmo, duración y color (decidido 25 oct 2026 — manda sobre las guías de `referencias/`)
