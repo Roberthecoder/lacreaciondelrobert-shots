@@ -16,12 +16,15 @@ Basado en el análisis de `referencias-externas/ANALISIS.md`. Si una guía vieja
 
 **Versión narrada**
 - Duración total **exacta de 60.0 s** (decisión de Robert, para monetizar). Voz de ~56–57 s (≈155–165 palabras a ~170 palabras/min) y la tarjeta de cierre completa hasta 60.0 s. Verificar la duración final con ffprobe. Avisar el costo de ElevenLabs antes de generar.
-- La voz arranca en el segundo 0: sin logo, saludo ni intro. Primera frase = mito volteado o dato increíble, hablándole a "tú".
-- Algo nuevo en pantalla cada ~3 s, atado a la frase que dice la voz (usar los tiempos de `nat`). Frases cortas de 2–3 s.
-- Preferir una escena continua que viaja (cámara que acerca, de lo grande a lo microscópico) sobre muchos cortes. Cambios de escena con movimiento de cámara o fundido, nunca corte seco.
+- Tema: de preferencia algo que el espectador ya vivió o tiene en su cuerpo/casa, explicado por dentro. Si es lejano, el gancho lo conecta con "tú".
+- La voz arranca en el segundo 0: sin logo, saludo ni intro. Primera frase con la forma **"X no es Y: es Z"** (corrige algo que el espectador cree), hablándole a "tú". Nunca un gancho que solo describe.
+- Algo se mueve o cambia **antes del segundo 1** (una acción, un toque, un time-lapse); nunca 2 s de imagen sin acción al inicio.
+- Viaje **macro → micro → macro**: abrir a escala real, bajar al microscopio y **cerrar en la misma imagen del inicio, ya transformada**. Barra de escala siempre visible.
+- Estructura para ~58 s de voz: gancho (0–4 s) → cómo empieza (4–15) → mecanismo, una idea por frase (15–40) → re-gancho con pregunta (~30) → un estudio real con año y lugar, dibujado como escena (35–50) → dato extra sorprendente o chistoso (50–55) → frase final que regresa al gancho (55–58).
+- Algo nuevo en pantalla cada ~3 s, atado a la frase que dice la voz (usar los tiempos de `nat`). Frases cortas de 2–4 s.
+- Preferir una escena continua que viaja sobre muchos cortes. Cambios de escena con movimiento de cámara o fundido, nunca corte seco.
 - Puede haber momentos quietos mientras la voz avanza, máximo ~6 s.
-- Re-gancho cada ~30 s ("pero lo increíble viene después", una pregunta).
-- Cierre que regresa al gancho del inicio + frase de marca. Tarjeta de cierre de 1–2 s como máximo.
+- Tarjeta de cierre con el logo sobre la imagen final oscurecida, completando la duración total.
 
 **Versión sin voz**
 - Duración total **exacta de 60.0 s**, pensada como loop: el final conecta con el inicio o trae un giro que invite a verlo otra vez.
