@@ -88,7 +88,7 @@ tu trazo grueso y tus colores, tus temas y tus fuentes científicas.
 Lo que **adoptamos de la receta**:
 
 1. **Voz desde el cuadro 0, sin intro.** Primera frase = mito volteado + "tú".
-   Ej. hormiga: "Esa hormiga no se volvió loca: un hongo la está manejando".
+   Fórmula afinada con @1cell1life2: ver "Receta final" abajo.
 2. **Una escena continua que viaja** (de la hormiga al micelio dentro de ella) en lugar de muchos
    cambios de escena. Algo nuevo cada ~3 s ligado a cada frase de la voz. El motor ya sabe en qué
    segundo dice cada palabra tu voz (campo `nat`), así que esto se puede automatizar.
@@ -106,18 +106,103 @@ Lo que **adoptamos de la receta**:
    La tarjeta de cierre, máximo 1–2 s.
 8. **Descripción:** guion completo + fuentes + "el dibujo es esquemático". Encaja perfecto con tu rigor.
 
-### Decisión pendiente: colores
-Los 5 usan fondo oscuro; tu shot 001 usa rosa y amarillo brillantes. Dos caminos:
-- **Mantener tus colores brillantes** (recomendado para probar primero): en un feed lleno de fondos
-  oscuros, tú resaltas. Se puede usar oscuro solo en las escenas microscópicas.
-- **Pasar a fondo oscuro con dorado** (tu `DARK #0E0F12` + `GOLD #E8A62A`), más parecido a lo que hoy
-  funciona.
+### Decisiones de Robert (25 oct 2026)
+- Colores: se mantienen los brillantes de la marca; fondo oscuro solo en escenas microscópicas/internas.
+- Duración: 60.0 s exactos en ambas versiones (ver la nota de monetización abajo).
+- Ritmo: aprobadas las reglas nuevas (ya están en `CLAUDE.md` y las guías).
 
-### Reglas de tu guía que habría que cambiar (solo si apruebas)
-- "Algo nuevo cada 1–1.5 s" → "algo nuevo cada ~3 s, ligado a la frase de la voz".
-- "Duración total ≤ 60 s" → 60.0 s exactos en ambas versiones (decidido).
-- "Nada estático más de 4 s" → se mantiene para la versión sin voz; en la narrada la voz lleva el ritmo.
+---
+
+# Análisis a fondo de @1cell1life2 (el canal que Robert quiere replicar)
+
+Se revisaron sus 40 videos visibles (TikTok pide iniciar sesión para ver más) y se analizaron 8 a fondo:
+los 6 más vistos y, para contrastar, 2 que fracasaron. Datos sacados de los subtítulos automáticos y de
+hojas de cuadros.
+
+| Video | Vistas | Likes | Duración | Palabras | Primera frase |
+|---|---|---|---|---|---|
+| [Mosquito: seis agujas](https://www.tiktok.com/@1cell1life2/video/7699878347932716308) | 3.3 M | 238 K | 141 s | 374 | "Ese mosquito no te picó con una aguja: te metió seis" |
+| [Una cana nace blanca](https://www.tiktok.com/@1cell1life2/video/7698072833104055573) | 2.4 M | 160 K | 133 s | 338 | "Una cana no es un pelo que se volvió blanco: ese pelo ya nació sin color" |
+| [La dormilona](https://www.tiktok.com/@1cell1life2/video/7698928072350960916) | 1.5 M | 272 K | 131 s | 327 | "Toca esta planta y en un segundo se desmaya" |
+| [Se te duerme el pie](https://www.tiktok.com/@1cell1life2/video/7697413962123726100) | 1.3 M | 145 K | **66 s** | 161 | "Ese hormigueo no es tu pie despertando: es un nervio que vuelve a encenderse" |
+| [Semilla que se taladra](https://www.tiktok.com/@1cell1life2/video/7695639266822540564) | 927 K | 69 K | **69 s** | 176 | "Esta semilla no espera a que alguien la entierre: se está taladrando sola" |
+| [Moretón](https://www.tiktok.com/@1cell1life2/video/7699503749936565525) | 767 K | 121 K | 136 s | 358 | "Ese moretón se va a poner verde y luego amarillo, y no se está despintando" |
+| [*Ophiocordyceps*](https://www.tiktok.com/@1cell1life2/video/7695466121553546517) ❌ | 87 K | 10 K | 78 s | 189 | "Esta hormiga está a punto de morir y ya no decide a dónde va" |
+| [Caries](https://www.tiktok.com/@1cell1life2/video/7699142668525243669) ❌ | 13 K | 1.3 K | 157 s | 404 | "Ahora mismo, pegadas a tus dientes, hay bacterias esperando tu próxima comida" |
+
+Otros fuertes del canal: calambres 499 K, cuscuta 353 K, piel quemada 340 K, hormigas agricultoras 311 K,
+fago T4 265 K. Débiles: medusa inmortal 9 K, olas que brillan 5 K, moco 12 K, plaquetas 12 K.
+
+## Lo que tienen los ganadores (y no los perdedores)
+
+1. **La primera frase corrige algo que crees.** 5 de 6 ganadores usan "X no es Y: es Z" ("no te picó con
+   una aguja", "no es un pelo que se volvió blanco", "no es tu pie despertando", "no se está despintando").
+   Los perdedores *describen* ("esta hormiga está a punto de morir", "hay bacterias en tus dientes": eso
+   ya lo sabías).
+2. **Algo que te pasó a ti.** Picadura, cana, pie dormido, moretón, tocar una planta. El tema es una
+   experiencia que el espectador ya vivió; el video le explica lo que no vio. La hormiga es lejana.
+3. **En el primer segundo algo pasa.** El mosquito aterriza y pica; un dedo toca la hoja a los 0.5 s y
+   se cierra a los 1.5 s; el sol se vuelve luna en 1 s (time-lapse). En los perdedores, 2 s de hormiga
+   caminando y dientes quietos.
+4. **Viaje macro → micro → macro.** Abre a escala real (tu brazo, tu cuero cabelludo, tu pie), baja al
+   microscopio (ahí sí fondo oscuro) y **cierra en la misma imagen del inicio, ya transformada**: todos
+   los pelos blancos, el moretón amarillo, el pie tranquilo. Ese "antes/después" cierra el ciclo y empuja
+   a verlo otra vez. La barra de escala (2 cm → 500 µm) está siempre visible.
+5. **Un estudio real con año y lugar, actuado como escena.** "En 2023 un equipo siguió esas células una
+   por una", "en 2022 en Japón pusieron saltamontes", "en 2014 en Australia dejaron caer macetas desde
+   15 cm" — se dibuja el experimento. A veces insertan una foto real ~6 s como prueba.
+6. **Un dato extra sorprendente en el último tercio:** "algunos van soltando gotitas por detrás", "sí, el
+   color de tu popó viene de la misma sangre reciclada", "la planta recuerda qué cosas no dan miedo",
+   "inspiró semillas que se plantan desde drones".
+7. **Ritmo:** 158–168 palabras/min, frases de 2–4 s, pocas o ninguna escena cortada en seco.
+8. **Texto mínimo:** etiquetas chicas, el año en grande cuando citan el estudio, nombre común
+   ("DORMILONA / VERGONZOSA") y barra de escala. El guion completo va en la descripción.
+9. **Cierre de marca:** la imagen final se oscurece y aparece "1Cell1Life — Síguenos para más biología"
+   unos 3 s.
+10. **Duración:** funcionan los dos formatos. Los de ~1 minuto (66 s y 69 s, ≈160–175 palabras) lograron
+   1.3 M y 927 K. **Ojo: los dos duran un poco más de 60 s** — la voz acaba ~60 s y la tarjeta de marca
+   los lleva a 66–69 s. Encaja con la regla de TikTok de pagar solo videos de *más* de un minuto.
+
+## Nota de monetización
+Varias guías de 2026 coinciden en que el programa de pagos de TikTok (Creator Rewards) solo cuenta videos
+de **más de 1 minuto** (no es la página oficial de TikTok; conviene confirmarlo ahí). Un video de 60.0 s
+exactos podría quedar fuera. Propuesta: voz de ~58 s + tarjeta de cierre → **61–62 s** totales, como hace
+@1cell1life2. Pendiente que Robert decida.
+
+---
+
+# Receta final (fusión con La Creación del Robert)
+
+**Tema:** algo que el espectador ya vivió o tiene en su cuerpo o su casa (o que puede tocar), explicado
+por dentro. Si el tema es lejano (como la hormiga zombi), el gancho tiene que conectarlo con "tú".
+
+**Guion (≈160–165 palabras para ~58 s de voz):**
+1. 0–4 s: "X no es Y: es Z" + "tú". Ej.: "Esa roncha que te dio comezón no la hizo el mosquito: la hiciste tú".
+2. 4–15 s: dónde y cómo empieza, a escala real.
+3. 15–40 s: el mecanismo, una idea por frase (2–4 s cada una), bajando al microscopio.
+4. ~30 s: re-gancho con pregunta ("¿y cómo sabe que llegó?").
+5. 35–50 s: un estudio real con año y lugar, dibujado como escena.
+6. 50–55 s: el dato extra sorprendente o chistoso.
+7. 55–58 s: frase final que regresa al gancho, sobre la misma imagen del inicio ya transformada.
+8. Tarjeta de cierre con tu logo.
+
+**Imagen (tu estilo, no el suyo):**
+- Escena macro inicial con tus colores brillantes y trazo grueso; algo se mueve antes del segundo 1.
+- Zoom continuo al microscopio: ahí fondo oscuro con tus colores de acento.
+- Barra de escala siempre visible (es rigor y es estética).
+- Última escena = primera escena transformada.
+- Tus stickers como reacción en la esquina en el re-gancho y en el dato sorprendente.
+- Tu logo y badge #NN arriba a la izquierda; subtítulo de una línea con palabra en dorado, fuera del
+  tercio inferior.
+
+**Lo que no se copia:** sus personajes, su letra tipo máquina de escribir, su paleta azul noche como
+fondo general, su logo y su frase de cierre.
+
+**Sobre tu shot 001 (hormiga zombi):** @1cell1life2 hizo el mismo tema y fue de sus peores (87 K). No
+por el tema, sino por el gancho descriptivo y 2 s sin acción. Para futuros temas "lejanos", el gancho
+debe voltear una idea y meter al espectador.
 
 ### Siguiente paso sugerido
-Hacer el shot 002 (tema nuevo) con esta receta y comparar sus números contra el 001. La voz nueva sí
-gasta créditos de ElevenLabs (≈1,500–1,900 caracteres para 80–100 s): avisar antes de generarla.
+Shot 002 con esta receta, sobre una experiencia cotidiana (p. ej., por qué te arden los ojos al picar
+cebolla, por qué se arruga la piel en el agua, de dónde sale una ampolla). Avisar el costo de ElevenLabs
+(≈1,000–1,100 caracteres para ~58 s de voz) antes de generar.
