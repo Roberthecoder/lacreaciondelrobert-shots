@@ -19,11 +19,12 @@ function MohoCiclo() {
     mpk(K.G + 0.5, 0, -60, 900),
     mpk(K.I, 0, 300, 300),
     mpk(K.S, 0, 1300, 45),
-    mpk(K.S + 3, 200, -300, 60),
-    mpk(K.C, 300, -700, 70),
-    mpk(K.C + 4, 300, -1050, 520),
-    mpk(K.R + 0.2, 300, -1050, 520),
-    mpk(K.R + 2.5, 200, -700, 70),
+    mpk(K.S + 1.8, 0, -60, 110),        // al nodo donde nació la red: ahí salen los rizoides
+    mpk(K.S + 5.5, 300, -300, 70),      // el estolón sale de ese nodo hacia el siguiente
+    mpk(K.C, 560, -700, 70),
+    mpk(K.C + 4, 560, -1050, 520),
+    mpk(K.R + 0.2, 560, -1050, 520),
+    mpk(K.R + 2.5, 300, -600, 70),
     mpk(K.R + 7.5, 0, -400, 30),
     { t: K.O + 2, x: 700, y: 800, z: 1.2 },
     { t: K.O + 6, x: 700 + 1200, y: 800, z: 1.2 },
@@ -44,11 +45,12 @@ function MohoCiclo() {
   if (T < K.O) esp = { y: klerp(yInicio, -8, kprog(T, K.L, K.L + 1.2, (p) => p * p)), germina: kprog(T, K.G + 0.3, K.G + 3.5) };
   else if (nueva) esp = { y: klerp(-1800, yInicio, kprog(T, K.O + 8, K.F, kEase.sale)), germina: 0 };
   else esp = null;
-  const micro = nueva ? { g: 0, tallos: 0, capsulas: 0, espora: esp } : {
+  // orden: 1) la red coloniza la miga · 2) de esa red salen los rizoides · 3) luego los estolones y los tallitos
+  const micro = nueva ? { g: 0, colonia: 0, capsulas: 0, espora: esp } : {
     g: kprog(T, K.G + 2.5, K.I) * 0.15 + kprog(T, K.I, K.S) * 0.75,
-    tallos: kprog(T, K.S, K.S + 6),
+    colonia: kprog(T, K.S + 0.6, K.S + 8.6),
     capsulas: kprog(T, K.C + 0.5, K.C + 6),
-    revientan: [2.6, 3.4, 4.2, 0.6, 5.0, 5.8, 6.6].map((d) => K.R + d),
+    revientan: [2.6, 0.6, 3.4, 4.2, 5.0, 5.8, 6.6].map((d) => K.R + d),
     espora: esp,
   };
   const microF = kprog(Math.log(cam.z), Math.log(28), Math.log(45));
@@ -64,12 +66,12 @@ function MohoCiclo() {
       <Capitulo T={T} caps={caps} hasta={K.F} />
       <DiaNoche T={T} hasta={K.F} />
 
-      <Etq T={T} at={K.L + 1.3} until={K.G + 2} x={500} y={1190} texto="espora" lado="izq" />
+      <EtqMundo T={T} cam={cam} at={K.L + 1.3} until={K.G + 2} wx={0} wy={-8} dx={-40} texto="espora" lado="izq" />
       <Etq T={T} at={K.L + 1.8} until={K.G + 2} x={120} y={560} texto="Rhizopus stolonifer" it />
-      <Etq T={T} at={K.G + 3} until={K.I} x={620} y={1300} texto="hifa" />
-      <Etq T={T} at={K.S + 3.5} until={K.C} x={120} y={1080} texto="rizoides" />
-      <Etq T={T} at={K.S + 4} until={K.C} x={620} y={930} texto="estolón" />
-      <Etq T={T} at={K.C + 4.2} until={K.R} x={680} y={960} texto="cápsula de esporas" />
+      <EtqMundo T={T} cam={cam} at={K.G + 3} until={K.I} wx={0} wy={90} dx={40} texto="hifa" />
+      <EtqMundo T={T} cam={cam} at={K.S + 1.2} until={K.C} wx={-40} wy={170} dx={-30} texto="rizoides" lado="izq" />
+      <EtqMundo T={T} cam={cam} at={K.S + 3.6} until={K.C} wx={280} wy={-170} dy={-24} texto="estolón" />
+      <EtqMundo T={T} cam={cam} at={K.C + 4.2} until={K.R} wx={560} wy={-1050} dx={100} texto="cápsula de esporas" />
 
       <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.R + 0.7} until={K.R + 3} lado="arriba-der" />
 

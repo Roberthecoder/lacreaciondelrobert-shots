@@ -401,11 +401,18 @@ function MundoPanMacro({ T, moho = 1, rayosX = 0, soplo, fondo = KC.yellow, otra
 }
 
 // Mundo micro (corte lateral bajo la mancha). Props (todas 0..1 salvo indicadas):
-// g = cuánto ha crecido la red de hifas · tallos = estolones y tallitos · capsulas = cápsulas formadas
-// revientan = [T0, T1, …] momento en que revienta cada cápsula · espora = { y, germina } (y en px; null = no se dibuja)
-// pelo = opacidad del pelo de comparación.
-const PAN_TALLOS = [{ x: -1500, h: 900 }, { x: -950, h: 1150 }, { x: -380, h: 820 }, { x: 300, h: 1050 }, { x: 820, h: 900 }, { x: 1400, h: 1180 }, { x: 1950, h: 860 }];
-function MundoPanMicro({ T, g = 0, tallos = 0, capsulas = 0, revientan = [], espora, pelo = 0, seed = 3 }) {
+// g = cuánto ha crecido la red de hifas dentro de la miga
+// colonia = 0..1, lo que pasa DESPUÉS de colonizar, todo conectado a la misma red:
+//   nodo 0 (donde germinó la espora y nace la red) echa rizoides → de ahí salen estolones a los nodos
+//   vecinos → en cada nodo donde el estolón toca el pan se forman rizoides y sube un tallito.
+// capsulas = cápsulas formadas · revientan = [T0, T1, …] por nodo · espora = { y, germina } · pelo = opacidad.
+// (tallos = nombre viejo de colonia; se acepta igual.)
+const PAN_TALLOS = [
+  { x: 0, h: 950, p: -1, a: 0 }, { x: 560, h: 1050, p: 0, a: 0.22 }, { x: -560, h: 880, p: 0, a: 0.22 },
+  { x: 1150, h: 1180, p: 1, a: 0.44 }, { x: -1150, h: 1000, p: 2, a: 0.44 }, { x: 1750, h: 900, p: 3, a: 0.66 }, { x: -1750, h: 1100, p: 4, a: 0.66 },
+];
+function MundoPanMicro({ T, g = 0, colonia, tallos = 0, capsulas = 0, revientan = [], espora, pelo = 0, seed = 3 }) {
+  if (colonia == null) colonia = tallos;
   const arb = kArbol(seed), miga = kMiga(seed + 1);
   const hifas = [];
   arb.forEach((s, i) => { const p = kclamp((g - s.b) / (s.e - s.b), 0, 1); if (p <= 0) return;
@@ -413,22 +420,25 @@ function MundoPanMicro({ T, g = 0, tallos = 0, capsulas = 0, revientan = [], esp
     hifas.push(<line key={'h' + i} x1={s.x1} y1={s.y1} x2={x2} y2={y2} stroke="rgba(47,224,168,.28)" strokeWidth={34} strokeLinecap="round" />);
     hifas.push(<line key={'c' + i} x1={s.x1} y1={s.y1} x2={x2} y2={y2} stroke="#eafff7" strokeWidth={13} strokeLinecap="round" />); });
   const tal = PAN_TALLOS.map((t, i) => {
-    const sub = kprog(tallos, i * 0.08, 0.45 + i * 0.08), h = t.h * sub, cy = -h;
+    const riz = kprog(colonia, t.a, t.a + 0.1), sub = kprog(colonia, t.a + 0.08, t.a + 0.3), h = t.h * sub, cy = -h;
     const tb = revientan[i], u = tb != null && T >= tb ? T - tb : -1;
     const r = (55 + (i % 3) * 14) * kEase.sale(kclamp(capsulas * 1.3 - i * 0.04, 0, 1));
     const neg = kclamp(capsulas * 2 - 0.3 - i * 0.03, 0, 1), col = mixHex('#e8e6dc', '#141414', neg);
     const esp = u >= 0 ? Array.from({ length: 26 }, (_, j) => { const a = j * 2.4, v = 220 + (j % 5) * 90; return <ellipse key={j} cx={t.x + Math.cos(a) * v * u} cy={cy + Math.sin(a) * v * u - 60 * u} rx={8} ry={6} fill="#3b342c" opacity={Math.max(0, 1 - u / 3)} />; }) : null;
     return <g key={'t' + i}>
       {sub > 0 && <path d={`M${t.x} 0 C ${t.x + 30} ${cy * 0.4} ${t.x - 25} ${cy * 0.7} ${t.x} ${cy}`} fill="none" stroke="#eafff7" strokeWidth={14} strokeLinecap="round" />}
-      {sub > 0.3 && Array.from({ length: 5 }, (_, j) => <path key={j} d={`M${t.x} 6 q ${(j - 2) * 40} 90 ${(j - 2) * 70} ${140 + (j % 2) * 60}`} fill="none" stroke="#eafff7" strokeWidth={8} strokeLinecap="round" opacity={kprog(sub, 0.3, 0.7)} />)}
+      {riz > 0 && Array.from({ length: 6 }, (_, j) => { const L = riz * (150 + (j % 3) * 60), dx = (j - 2.5) * 34 * riz;
+        return <path key={j} d={`M${t.x} 4 q ${dx * 0.6} ${L * 0.55} ${dx * 1.6} ${L} m 0 0 l ${(j % 2 ? 1 : -1) * 26 * riz} ${30 * riz}`} fill="none" stroke="#eafff7" strokeWidth={8} strokeLinecap="round" />; })}
       {r > 1 && (u < 0 ? <g><circle cx={t.x} cy={cy} r={r} fill={col} stroke={KC.ink} strokeWidth={4} />
           {Array.from({ length: 10 }, (_, j) => <circle key={j} cx={t.x + Math.cos(j * 2.4) * r * 0.55 * Math.sqrt(j / 10)} cy={cy + Math.sin(j * 2.4) * r * 0.55 * Math.sqrt(j / 10)} r={5} fill={neg > 0.5 ? '#2c2a26' : '#cfcbbd'} />)}</g>
         : <path d={`M${t.x - r * 0.7} ${cy} A ${r * 0.7} ${r * 0.8} 0 0 1 ${t.x + r * 0.7} ${cy}`} fill="#cfcbbd" stroke={KC.ink} strokeWidth={4} />)}
       {esp}
     </g>;
   });
-  const estolones = tallos > 0 ? PAN_TALLOS.slice(0, -1).map((t, i) => { const n = PAN_TALLOS[i + 1], p = kprog(tallos, 0.05 + i * 0.07, 0.3 + i * 0.07); if (!p) return null;
-    const xe = klerp(t.x, n.x, p); return <path key={'e' + i} d={`M${t.x} -4 Q ${(t.x + xe) / 2} -90 ${xe} -4`} fill="none" stroke="#eafff7" strokeWidth={11} strokeLinecap="round" />; }) : null;
+  // estolón: arco aéreo que sale del nodo padre y baja a tocar el pan en el nodo nuevo
+  const estolones = colonia > 0 ? PAN_TALLOS.map((t, i) => { if (t.p < 0) return null; const o = PAN_TALLOS[t.p], p = kprog(colonia, t.a - 0.18, t.a); if (!p) return null;
+    const xe = klerp(o.x, t.x, p), alto = 150 * Math.sin(Math.PI * Math.min(1, p * 0.5 + 0.5)) + 40;
+    return <path key={'e' + i} d={`M${o.x} -4 Q ${(o.x + xe) / 2} ${-alto * 1.6} ${xe} ${-4 - (1 - p) * 70}`} fill="none" stroke="#eafff7" strokeWidth={11} strokeLinecap="round" />; }) : null;
   let sp = null;
   if (espora && espora.y != null) {
     const gm = espora.germina || 0, s = 1 + 0.35 * kprog(gm, 0, 0.4), tubo = kprog(gm, 0.3, 1) * 120;
