@@ -1,6 +1,6 @@
 # Estado del proyecto (para continuar en otra sesión)
 
-Última actualización: 26 oct 2026. Esta sesión empezó en la nube (Claude Code web) y continúa en la computadora del usuario.
+Última actualización: 26 oct 2026 (rama `autonomia-diaria`: flujo autónomo con aprobación por Telegram). Esta sesión empezó en la nube (Claude Code web) y continúa en la computadora del usuario.
 
 ## Ya funciona
 - **Render**: `motor/render.mjs` convierte un shot (`.dc.html` + `.jsx` del motor de Claude Design) a MP4 1080×1920 con audio. `motor/preview.mjs` saca una hoja de contactos para revisar cuadros.
@@ -8,6 +8,17 @@
   - Sin voz: música + efectos generados por `gen-audio.mjs`. 49 s.
   - Narrada: `motor/narrar.mjs` pide TODO el guion (`narracion.json`) en una sola petición a ElevenLabs con **Eleven v4** (`eleven_v4`), voz "Robert Narrador" (`uiCk6APPfsjnw3oUQzVo`), usando los ajustes guardados en la voz. El video se adapta a la voz (campo `nat` del motor) y los subtítulos siguen los tiempos por carácter. 56 s. **El usuario la aprobó ("te quedó excelente").** La voz está en caché en `shots/001-hormiga-zombi/voz/` (no regenerar: gasta créditos).
 - **GitHub Actions**: `.github/workflows/renderizar.yml` (Actions → Renderizar shot → Run workflow) renderiza narrada, sin voz o ambas, y deja el MP4 en Artifacts. Secrets ya configurados: `ELEVENLABS_API_KEY`, `CLAUDE_API_KEY`.
+- **Shot 002** (`shots/002-moho-pan`, *Rhizopus stolonifer*): construido en dos versiones (narrada N1 "Por dentro" y muda M4 "Ciclo"); la voz ya está en caché en `shots/002-moho-pan/voz/`.
+
+## Flujo autónomo diario (armado el 26 oct 2026, rama `autonomia-diaria`, pendiente de probar de punta a punta)
+Decisión de Robert: la generación la hace una tarea programada de Claude Code con su suscripción (no la API de pago); GitHub Actions solo renderiza y avisa; Robert aprueba desde Telegram.
+1. **Tarea diaria de Claude Code** (en la nube, con este repositorio adjunto): sigue `AUTONOMO.md` al pie de la letra. Elige tema y formato, investiga con fuentes, escribe las dos versiones, las construye con el kit, revisa cuadros con `preview.mjs`, actualiza `historial/temas.json`, sube la rama `shot/NNN-tema` y abre un PR. No genera voz.
+2. **`shot-diario.yml`**: con cada PR de rama `shot/`, renderiza la versión sin voz, saca la hoja de cuadros de la narrada, las sube como artifact y manda a Telegram el guion resumido con botones Aprobar, Rehacer y Descartar (`motor/avisar.mjs`).
+3. **`telegram/worker.js`** (Cloudflare Worker gratuito): recibe el botón, comprueba que el chat sea el de Robert y manda un `repository_dispatch` a GitHub. Si Robert responde con texto al mensaje del bot, el texto se anota como comentario en el PR. Instalación paso a paso en `telegram/LEEME.md`.
+4. **`aprobado.yml`**: Aprobar hace el merge, genera la voz con `narrar.mjs`, renderiza las dos versiones, guarda la caché de voz en `main` y sube los MP4 a un Release `shot-NNN` (descargables desde el celular); avisa por Telegram. Rehacer etiqueta y comenta el PR para que la tarea diaria lo retome. Descartar cierra el PR con etiqueta `descartado`.
+- `motor/ficha.mjs` lee `narracion.json` (ahora con `titulo`, `numero`, `sinVoz`, `sinVozAudio`) y es lo que usan los workflows para encontrar los archivos de cada shot.
+- **Falta configurar a mano** (Robert): crear el bot con BotFather, obtener el chat id, desplegar el worker con `wrangler` y registrar el webhook (todo en `telegram/LEEME.md`); agregar en GitHub los secrets `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID`; crear la tarea programada de Claude Code con el repositorio adjunto y la instrucción "Sigue AUTONOMO.md". Opcional: proteger `main` no bloquea el merge porque lo hace el token de Actions, pero si se activan revisiones obligatorias habrá que permitirle al bot.
+- Último shot producido por la tarea diaria: ninguno todavía.
 
 ## Lecciones (no repetir errores)
 - Nunca generar la voz frase por frase ni meter pausas a mano: suena antinatural. Una sola petición, sin "…".
@@ -16,9 +27,9 @@
 - Claude no puede escuchar audio: el usuario es la prueba final. Pendiente: verificación con voz a texto (requiere permiso "De voz a texto" en la clave de ElevenLabs).
 
 ## Pendiente (en orden)
-1. **Piloto shot 002** (siguiente paso acordado con Robert): elegir tema y formato del `RECETARIO.md` (recomendado N1 "Por dentro" + gemelo mudo M4 "Ciclo"), construirlo con el kit, revisar cuadros, y avisar el costo de ElevenLabs antes de generar la voz. Estilo ya resuelto: ver "Estudio de estilo" abajo.
-2. **Generador diario**: DECISIÓN del usuario (26 oct): usar Claude Code con su suscripción, NO la API de pago, para no gastar créditos. Plan: tarea programada diaria de Claude Code en la máquina fija del usuario (o el Action oficial de Claude Code con token de suscripción). La clave `CLAUDE_API_KEY` queda solo como respaldo. Cada día: elegir tema nuevo (`historial/temas.json`), escribe guion con fuentes, verifica datos, escribe el jsx, revisa capturas, narra, renderiza las dos versiones.
-3. **Aprobación por Telegram**: bot con botones Publicar / Rehacer / Descartar (receptor gratis en Cloudflare Workers → repository_dispatch).
+1. **Piloto shot 002**: construido (ver arriba). Falta que Robert lo apruebe; puede servir como primera prueba del flujo nuevo abriendo un PR desde una rama `shot/002-moho-pan`.
+2. **Generador diario**: DECISIÓN del usuario (26 oct): usar Claude Code con su suscripción, NO la API de pago, para no gastar créditos. La clave `CLAUDE_API_KEY` queda solo como respaldo. Hecho: el procedimiento está en `AUTONOMO.md` y los workflows en `.github/workflows/`. Falta: crear la tarea programada y probar el ciclo completo con un shot real.
+3. **Aprobación por Telegram**: hecho el worker (`telegram/`) y los botones Aprobar / Rehacer / Descartar. Falta: que Robert cree el bot y despliegue el worker (`telegram/LEEME.md`).
 4. **Publicación**: DECISIÓN (26 oct): por ahora Claude publica de forma asistida, controlando el navegador en la computadora del usuario y siempre con su aprobación; en paralelo se piden los permisos de API (Meta, YouTube, TikTok). Plan a futuro:
    - Instagram + Facebook por API oficial (cuenta Creator/Business ligada a página de Facebook).
    - YouTube + TikTok por API cuando aprueben sus auditorías; mientras tanto, desde una máquina fija del usuario con sesión iniciada (script de subida estable, Claude solo como respaldo). Avisado de los riesgos (términos de uso, captchas, seguridad).

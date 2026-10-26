@@ -1,6 +1,6 @@
 # Shots de La Creación del Robert
 
-Lee primero `ESTADO.md` (qué está hecho y qué sigue).
+Lee primero `ESTADO.md` (qué está hecho y qué sigue). Si eres la tarea programada diaria, tu procedimiento completo está en `AUTONOMO.md`: nunca generes voz ni renders completos; solo abre el PR.
 
 Videos verticales 1080×1920 de divulgación científica en español de México. El usuario no programa: respuestas en español, breves y sin jerga.
 
