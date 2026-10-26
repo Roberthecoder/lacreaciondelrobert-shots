@@ -2,8 +2,8 @@
 
 Serie de divulgación científica en video corto (YouTube Shorts, TikTok, Reels,
 Facebook). Formato: animación HTML autocontenida, vertical 9:16. Duración, ritmo y
-color: ver la sección "Ritmo, duración y color" del `CLAUDE.md` principal (60.0 s
-exactos); manda sobre lo que diga este archivo.
+color: ver la sección "Ritmo, duración y color" del `CLAUDE.md` principal (61–62 s:
+voz de ~58 s + tarjeta de cierre); manda sobre lo que diga este archivo.
 Serie hermana de los Shots Biotecnológicos: mismo narrador, mismo logo, misma
 esencia visual. Cada shot se vincula a la marca **Fungi Mati**.
 
@@ -61,7 +61,7 @@ hongo, una espora, una hifa, un mapa, un alimento fermentado, un objeto o foto r
   de máx. ~6 s mientras la voz avanza); sin voz = algo nuevo cada 1.5–3 s, nada
   estático > 4 s. Primeros 2–3 s = hook ilustrado directo y voz desde el segundo 0
   (sin saludos ni intro de marca). Cierre fijo:
-  "Esto fue un Shot Micológico. Sígueme." (1–2 s, sin alargarlo). **No hay video de cierre**
+  "Esto fue un Shot Micológico. Sígueme." (3–4 s, completa la duración hasta 61–62 s). **No hay video de cierre**
   en esta serie: el cierre es la tarjeta HTML de la plantilla.
 - **Fechas y hechos**: nunca "hoy/ahora/recientemente" para hechos con fecha; la
   fecha real va DICHA en el guion y subtítulo. Respeta fechas literales del guion.

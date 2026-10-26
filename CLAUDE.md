@@ -12,10 +12,10 @@ Videos verticales 1080×1920 de divulgación científica en español de México.
 - Subtítulos siempre fuera del tercio inferior.
 
 ## Ritmo, duración y color (decidido 25 oct 2026 — manda sobre las guías de `referencias/`)
-Basado en el análisis de `referencias-externas/ANALISIS.md`. Si una guía vieja dice otra cosa (p. ej. "algo nuevo cada 1–1.5 s" o "≤ 60 s"), gana esta sección.
+Basado en el análisis de `referencias-externas/ANALISIS.md`. Si una guía vieja dice otra cosa (p. ej. "algo nuevo cada 1–1.5 s" o "≤ 60 s" o "60.0 s exactos"), gana esta sección.
 
 **Versión narrada**
-- Duración total **exacta de 60.0 s** (decisión de Robert, para monetizar). Voz de ~56–57 s (≈155–165 palabras a ~170 palabras/min) y la tarjeta de cierre completa hasta 60.0 s. Verificar la duración final con ffprobe. Avisar el costo de ElevenLabs antes de generar.
+- Duración total **de 61–62 s** (decisión de Robert: TikTok paga solo videos de *más* de 1 minuto; así lo hace @1cell1life2). Voz de ~58 s (≈160–165 palabras a ~170 palabras/min) + tarjeta de cierre de 3–4 s. Verificar con ffprobe que el total quede entre 61.0 y 62.0 s, nunca en 60 s o menos. Avisar el costo de ElevenLabs antes de generar.
 - Tema: de preferencia algo que el espectador ya vivió o tiene en su cuerpo/casa, explicado por dentro. Si es lejano, el gancho lo conecta con "tú".
 - La voz arranca en el segundo 0: sin logo, saludo ni intro. Primera frase con la forma **"X no es Y: es Z"** (corrige algo que el espectador cree), hablándole a "tú". Nunca un gancho que solo describe.
 - Algo se mueve o cambia **antes del segundo 1** (una acción, un toque, un time-lapse); nunca 2 s de imagen sin acción al inicio.
@@ -27,7 +27,7 @@ Basado en el análisis de `referencias-externas/ANALISIS.md`. Si una guía vieja
 - Tarjeta de cierre con el logo sobre la imagen final oscurecida, completando la duración total.
 
 **Versión sin voz**
-- Duración total **exacta de 60.0 s**, pensada como loop: el final conecta con el inicio o trae un giro que invite a verlo otra vez.
+- Duración total **de 61–62 s** (más de 1 minuto, para monetizar), pensada como loop: el final conecta con el inicio o trae un giro que invite a verlo otra vez.
 - Algo nuevo cada 1.5–3 s sobre un golpe de música; nada estático más de 4 s.
 - Cuando el tema lo permita, la música o los efectos salen de los datos (ritmos, conteos, tamaños).
 

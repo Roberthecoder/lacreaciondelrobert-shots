@@ -1,7 +1,7 @@
 # KIT MAESTRO · Shots Micológicos — La Creación del Robert / Fungi Mati
 
 Kit para producir **Shots Micológicos**: divulgación científica en video corto,
-vertical 9:16 (60.0 s exactos; ver CLAUDE.md principal), animación HTML autocontenida. Serie hermana de
+vertical 9:16 (61–62 s; ver CLAUDE.md principal), animación HTML autocontenida. Serie hermana de
 los Shots Biotecnológicos; comparte narrador, logo y esencia visual.
 
 ## Qué hay aquí
