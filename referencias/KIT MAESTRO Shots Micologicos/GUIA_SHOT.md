@@ -26,7 +26,7 @@ toque, sin números mágicos.
    Re-gancho cada ~30 s ("pero lo increíble viene después", una pregunta).
 3. **Conclusión**: la frase que resume el shot y regresa al gancho del inicio.
 4. **Aclaración/matiz** (opcional): el "ojo, técnicamente…".
-5. **Cierre fijo**: tarjeta "ESTO FUE UN SHOT MICOLÓGICO / Sígueme". 1–2 s, no la alargues.
+5. **Cierre fijo**: tarjeta "ESTO FUE UN SHOT MICOLÓGICO / Sígueme". 3–4 s: completa la duración hasta 61–62 s.
 
 ---
 
@@ -107,5 +107,5 @@ el desfase** a todas las siguientes. Ancla a los cortes reales, no a estimacione
 - [ ] Badge `#NN` con el número correcto.
 - [ ] Especies rotuladas (común + científico) si se muestran.
 - [ ] Subtítulos en zona segura (no los tapa la UI de redes).
-- [ ] Cierre fijo intacto (1–2 s). Duración total exacta de 60.0 s (verificada con ffprobe).
+- [ ] Cierre fijo intacto (3–4 s). Duración total entre 61.0 y 62.0 s (verificada con ffprobe).
 - [ ] Rigor científico: seta ≠ micelio; procesos no falseados.

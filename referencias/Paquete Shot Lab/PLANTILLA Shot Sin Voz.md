@@ -19,7 +19,7 @@ Referencia de formato: `Shot Lab Comestibles.dc.html` + `shot-lab.jsx`. Cada sho
 
 ## Reglas de ritmo sin voz
 - Subtítulo: ≥0.3 s por palabra, mínimo 1.8 s en pantalla, máximo 9 palabras por bloque.
-- Duración total exacta de 60.0 s, pensada como loop: el final conecta con el inicio o trae un giro que invite a verlo otra vez.
+- Duración total de 61–62 s (más de 1 minuto, para monetizar), pensada como loop: el final conecta con el inicio o trae un giro que invite a verlo otra vez.
 - Algo nuevo cada 1.5–3 s; nada estático más de 4 s; cambio de escena cada 5–6.5 s, siempre sobre un golpe de música.
 - Cada gag tiene un efecto de sonido; el sonido cuenta la acción. Si el tema lo permite, la música sale de los datos (ritmos, conteos, tamaños).
 - Paleta: cada escena usa un fondo saturado distinto (rosa, magenta, azul, amarillo, menta, violeta, cian…). Excepción: las escenas microscópicas o internas van en fondo oscuro (`#0E0F12` o azul noche) con colores de la marca como acento.

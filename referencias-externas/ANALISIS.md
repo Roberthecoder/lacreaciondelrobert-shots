@@ -100,15 +100,15 @@ Lo que **adoptamos de la receta**:
    inferior).
 5. **Capítulos numerados** pequeños arriba (debajo de tu logo) y **medidores reales** cuando el tema lo
    permita (tamaño en µm, tiempo en días, número de esporas).
-6. **Duración:** 60.0 s exactos en ambas versiones (decisión de Robert, para monetizar; ≈155–165 palabras en la narrada); la sin voz en loop, con la música
+6. **Duración:** 61–62 s en ambas versiones (decisión de Robert, para monetizar; voz de ~58 s ≈160–165 palabras + tarjeta de cierre); la sin voz en loop, con la música
    hecha de los datos del tema cuando se pueda, y un final con giro que invite a verlo otra vez.
 7. **Re-gancho cada ~30 s** y **cierre que retoma el gancho** + frase de marca fija (por definir contigo).
-   La tarjeta de cierre, máximo 1–2 s.
+   La tarjeta de cierre, 3–4 s.
 8. **Descripción:** guion completo + fuentes + "el dibujo es esquemático". Encaja perfecto con tu rigor.
 
 ### Decisiones de Robert (25 oct 2026)
 - Colores: se mantienen los brillantes de la marca; fondo oscuro solo en escenas microscópicas/internas.
-- Duración: 60.0 s exactos en ambas versiones (ver la nota de monetización abajo).
+- Duración: 61–62 s en ambas versiones (voz de ~58 s + tarjeta de cierre), para pasar del minuto que pide TikTok.
 - Ritmo: aprobadas las reglas nuevas (ya están en `CLAUDE.md` y las guías).
 
 ---
@@ -167,7 +167,7 @@ fago T4 265 K. Débiles: medusa inmortal 9 K, olas que brillan 5 K, moco 12 K, p
 Varias guías de 2026 coinciden en que el programa de pagos de TikTok (Creator Rewards) solo cuenta videos
 de **más de 1 minuto** (no es la página oficial de TikTok; conviene confirmarlo ahí). Un video de 60.0 s
 exactos podría quedar fuera. Propuesta: voz de ~58 s + tarjeta de cierre → **61–62 s** totales, como hace
-@1cell1life2. Pendiente que Robert decida.
+@1cell1life2. **Decidido por Robert: 61–62 s.**
 
 ---
 
@@ -184,7 +184,7 @@ por dentro. Si el tema es lejano (como la hormiga zombi), el gancho tiene que co
 5. 35–50 s: un estudio real con año y lugar, dibujado como escena.
 6. 50–55 s: el dato extra sorprendente o chistoso.
 7. 55–58 s: frase final que regresa al gancho, sobre la misma imagen del inicio ya transformada.
-8. Tarjeta de cierre con tu logo.
+8. 58–62 s: tarjeta de cierre con tu logo (total 61–62 s).
 
 **Imagen (tu estilo, no el suyo):**
 - Escena macro inicial con tus colores brillantes y trazo grueso; algo se mueve antes del segundo 1.
