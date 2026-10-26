@@ -1,6 +1,10 @@
 {
+  "titulo": "El moho del pan: por dentro y su ciclo",
+  "numero": 2,
   "dcHtml": "Shot Moho Pan base narrada.dc.html",
   "salida": "Shot Moho Pan narrado.dc.html",
+  "sinVoz": "Shot Moho Pan Ciclo.dc.html",
+  "sinVozAudio": "assets/mezcla_ciclo.wav",
   "nota": "Una línea por subtítulo (idx 0..12 del jsx). Todo se pide en UNA sola petición a ElevenLabs (~930 caracteres). Aprobado por Robert el 25 oct 2026; NO generar sin avisar el costo.",
   "lineas": [
     { "escena": "Gancho", "texto": "Esa mancha de moho no es todo el moho: tu pan ya está tomado por dentro." },
