@@ -124,7 +124,7 @@ jobs:
               `<i>${esc(e.GUION)}</i>`,
               "",
               `Guion: ${e.PALABRAS} palabras (${e.CARACTERES} caracteres de ElevenLabs). Sin voz: ${e.SINVOZ} s.`,
-              e.AVISO ? esc(e.AVISO) : "",
+              ...(e.AVISO ? [esc(e.AVISO)] : []),
               `PR: ${e.PR_URL}`,
               `Video sin voz y hoja de cuadros: ${e.ARTIFACT}`,
               "",
