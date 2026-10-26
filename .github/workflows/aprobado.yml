@@ -2,10 +2,10 @@ name: Decisión de Robert (aprobar, rehacer, descartar)
 
 # Llega aquí la decisión que Robert tomó desde Telegram (el worker de telegram/worker.js la convierte en un
 # repository_dispatch) o la etiqueta "aprobado" puesta a mano en el PR.
-#   aprobar   → se hace merge del PR, se genera la voz (ElevenLabs), se renderizan las dos versiones y se
+#   aprobar:   se hace merge del PR, se genera la voz (ElevenLabs), se renderizan las dos versiones y se
 #               suben a un Release "shot-NNN" para descargar desde el celular.
-#   rehacer   → se comenta y etiqueta el PR; la tarea diaria de Claude Code lo retoma (ver AUTONOMO.md).
-#   descartar → se cierra el PR con la etiqueta "descartado" (el tema no se vuelve a proponer).
+#   rehacer:   se comenta y etiqueta el PR; la tarea diaria de Claude Code lo retoma (ver AUTONOMO.md).
+#   descartar: se cierra el PR con la etiqueta "descartado" (el tema no se vuelve a proponer).
 on:
   repository_dispatch:
     types: [shot-aprobado, shot-rehacer, shot-descartar]

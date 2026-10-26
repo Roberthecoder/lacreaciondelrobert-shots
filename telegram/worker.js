@@ -1,4 +1,4 @@
-// worker.js — Cloudflare Worker que recibe lo que Robert toca o escribe en Telegram y se lo pasa a GitHub.
+// worker.js: Cloudflare Worker que recibe lo que Robert toca o escribe en Telegram y se lo pasa a GitHub.
 //
 // Qué hace:
 //   1. Telegram le manda cada botón tocado (callback_query) o mensaje (message) a este worker (webhook).

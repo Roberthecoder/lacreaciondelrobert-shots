@@ -1,4 +1,4 @@
-// avisar.mjs — manda un mensaje al Telegram de Robert desde GitHub Actions.
+// avisar.mjs: manda un mensaje al Telegram de Robert desde GitHub Actions.
 // Uso: TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=... node avisar.mjs --texto "mensaje" [--foto hoja.png] [--botones '[{"texto":"Aprobar","dato":"aprobar:12"}]']
 // - El texto admite HTML sencillo de Telegram (<b>, <i>, <a href>). Lo que venga de archivos se escapa con escapar().
 // - Si hay --foto, se manda como imagen con el texto de pie (máximo 1024 caracteres); si falla, se manda solo el texto.

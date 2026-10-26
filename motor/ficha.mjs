@@ -1,4 +1,4 @@
-// ficha.mjs — lee narracion.json de un shot y deja sus datos listos para los workflows.
+// ficha.mjs: lee narracion.json de un shot y deja sus datos listos para los workflows.
 // Uso: node ficha.mjs <carpeta-del-shot> [--salidas archivo]   (si se da --salidas, escribe clave=valor en ese archivo, p. ej. $GITHUB_OUTPUT)
 // Campos que lee de narracion.json (los dos primeros ya existían; los demás los agrega el procedimiento de AUTONOMO.md):
 //   dcHtml      .dc.html base de la versión narrada (escenas con duración estimada)

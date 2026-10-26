@@ -60,7 +60,7 @@ También se puede renderizar cualquier shot desde la pestaña Actions de GitHub 
 
 | Clave | Dónde va |
 |---|---|
-| ElevenLabs | GitHub → Settings → Secrets and variables → Actions → `ELEVENLABS_API_KEY`. Voice ID: `uiCk6APPfsjnw3oUQzVo` |
+| ElevenLabs | GitHub, Settings, Secrets and variables, Actions, `ELEVENLABS_API_KEY`. Voice ID: `uiCk6APPfsjnw3oUQzVo` |
 | Claude API (solo respaldo) | Igual, como `CLAUDE_API_KEY` |
 | Telegram | Igual, como `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID` (cómo obtenerlos: `telegram/LEEME.md`). Los mismos dos, más `GITHUB_TOKEN` y `WEBHOOK_SECRET`, van como secretos del worker en Cloudflare |
 | YouTube, Meta, TikTok | Se agregan igual cuando se configuren |
