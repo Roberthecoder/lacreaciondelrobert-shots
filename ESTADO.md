@@ -16,7 +16,7 @@
 - Claude no puede escuchar audio: el usuario es la prueba final. Pendiente: verificación con voz a texto (requiere permiso "De voz a texto" en la clave de ElevenLabs).
 
 ## Pendiente (en orden)
-1. **Estilo**: el usuario quiere estudiar canales de animación con IA que están funcionando muy bien y fusionar su receta (ritmo, gancho, texto, transiciones) con su marca (stickers, logo, voz). Falta que mande enlaces y 3–5 MP4 de esos canales. Extraer principios; no copiar personajes ni diseños.
+1. **Piloto shot 002** (siguiente paso acordado con Robert): elegir tema y formato del `RECETARIO.md` (recomendado N1 "Por dentro" + gemelo mudo M4 "Ciclo"), construirlo con el kit, revisar cuadros, y avisar el costo de ElevenLabs antes de generar la voz. Estilo ya resuelto: ver "Estudio de estilo" abajo.
 2. **Generador diario**: DECISIÓN del usuario (26 oct): usar Claude Code con su suscripción, NO la API de pago, para no gastar créditos. Plan: tarea programada diaria de Claude Code en la máquina fija del usuario (o el Action oficial de Claude Code con token de suscripción). La clave `CLAUDE_API_KEY` queda solo como respaldo. Cada día: elegir tema nuevo (`historial/temas.json`), escribe guion con fuentes, verifica datos, escribe el jsx, revisa capturas, narra, renderiza las dos versiones.
 3. **Aprobación por Telegram**: bot con botones Publicar / Rehacer / Descartar (receptor gratis en Cloudflare Workers → repository_dispatch).
 4. **Publicación**: DECISIÓN (26 oct): por ahora Claude publica de forma asistida, controlando el navegador en la computadora del usuario y siempre con su aprobación; en paralelo se piden los permisos de API (Meta, YouTube, TikTok). Plan a futuro:
@@ -40,3 +40,6 @@
 ## Estudio de estilo (25 oct 2026)
 Análisis de 5 videos virales y propuesta de fusión en `referencias-externas/ANALISIS.md`.
 DECISIÓN de Robert (25 oct): mantener sus colores brillantes; fondo oscuro solo en escenas microscópicas/internas. Duración: 61–62 s en ambas versiones (voz de ~58 s + tarjeta de cierre), porque TikTok paga solo videos de más de 1 minuto; así lo hace @1cell1life2. Receta final del canal que Robert quiere replicar: `referencias-externas/ANALISIS.md` y `CLAUDE.md`. Se aprobaron las nuevas reglas de ritmo: ya están en `CLAUDE.md` (sección "Ritmo, duración y color"), `GUIA_SHOT.md`, `PLANTILLA Shot Sin Voz.md` y los `CLAUDE.md` de las series. Siguiente: shot 002 con esta receta (avisar costo de ElevenLabs antes de generar la voz).
+- 12 canales analizados → `referencias-externas/RECETARIO.md`: 6 formatos narrados, 5 mudos, parejas narrado/mudo y reparto por serie (Micológico, Biotecnológico, Lab).
+- Kit de piezas → `motor/kit/kit-robert.jsx` (22 piezas + mundo "piel en corte"), manual en `motor/kit/LEEME.md`, demo probado en `shots/_demo-kit/` (no se publica).
+- `preview.mjs` en Windows: ffmpeg necesita la ruta de la fuente para numerar cuadros; ya se le pasa Arial automáticamente.

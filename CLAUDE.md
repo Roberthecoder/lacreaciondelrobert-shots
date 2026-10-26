@@ -11,6 +11,10 @@ Videos verticales 1080×1920 de divulgación científica en español de México.
 - Estilo y reglas detalladas: `referencias/*/CLAUDE.md`, `referencias/Paquete Shot Lab/PLANTILLA Shot Sin Voz.md` y `referencias/KIT MAESTRO Shots Micologicos/GUIA_SHOT.md`. Prohibidos los avatares 01 y 09 salvo tema de sabor.
 - Subtítulos siempre fuera del tercio inferior.
 
+## Formato y piezas de cada shot
+- Antes de escribir un shot, elegir su formato narrado y su gemelo mudo en `referencias-externas/RECETARIO.md` (11 formatos, parejas y reparto por serie).
+- Construirlo con el kit `motor/kit/kit-robert.jsx` (catálogo en `motor/kit/LEEME.md`, ejemplo en `shots/_demo-kit/`). Si un tema necesita un mundo nuevo (hoja, suelo, intestino…), agregarlo al kit para reutilizarlo.
+
 ## Ritmo, duración y color (decidido 25 oct 2026 — manda sobre las guías de `referencias/`)
 Basado en el análisis de `referencias-externas/ANALISIS.md`. Si una guía vieja dice otra cosa (p. ej. "algo nuevo cada 1–1.5 s" o "≤ 60 s" o "60.0 s exactos"), gana esta sección.
 

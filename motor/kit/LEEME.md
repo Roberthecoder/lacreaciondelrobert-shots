@@ -1,0 +1,55 @@
+# Kit de piezas — La Creación del Robert
+
+`kit-robert.jsx` reúne piezas reutilizables para que cada shot salga del mismo sistema, en cualquier
+formato del `referencias-externas/RECETARIO.md`. Todas son funciones del tiempo `T` (tiempo de autor),
+igual que el resto del motor, así que funcionan en la versión narrada (tiempos de la voz) y en la muda.
+
+## Cómo usarlo en un shot
+1. Copia `motor/kit/kit-robert.jsx` a la carpeta del shot (el render solo sirve esa carpeta).
+2. En el `.dc.html`, cárgalo entre el motor y el shot:
+   `from="./animations-v3.jsx ./kit-robert.jsx ./shot-xxx.jsx"`
+3. En el `.jsx` del shot usa las piezas directamente (`<Camara>`, `<Subtitulo>`…).
+4. Ejemplo completo y probado: `shots/_demo-kit/` (demo de 21 s, no se publica).
+   Revisar: `NAVEGADOR=chrome node preview.mjs ../shots/_demo-kit "Demo Kit.dc.html" hoja.png 2,6,12,16,20`
+
+## Piezas
+
+| Pieza | Para qué | Formatos |
+|---|---|---|
+| `Camara` + `camaraEn(T, keys)` | Viaje continuo con zoom (macro → micro → macro). `keys: [{t, x, y, z}]` | N1, N3, N5, M4 |
+| `Escala` | Barra con la medida real según el zoom (cm, mm, µm, nm). Necesita `z` y `pxPorMm` | N1, N3, N5, M4 |
+| `Ambiente` | Partículas que flotan: la imagen nunca queda quieta | todos |
+| `Brillo` | Resplandor alrededor de lo importante | todos |
+| `Aparece` | Entrada/salida estándar para cualquier cosa (`pop`, `sube`, `fundido`) | todos |
+| `Lupa` | Círculo que amplía un punto de la escena | N3, M2 |
+| `Subtitulo` | Una línea, palabra clave entre `*asteriscos*` en dorado; usa `window.SUBS[idx]` en la narrada | todos |
+| `Chip` | Píldora: encabezado, pregunta fija, regla escrita | N2, M2, M3, M5 |
+| `MitoTachado` | Creencia falsa que se tacha en rojo | N2, N1 |
+| `NumeroGigante` | Cifra enorme que cuenta hasta su valor | N2, N6, M1 |
+| `Contador` | Número que cuenta (conteos, carreras) | N4, M1, M5 |
+| `TarjetaEstudio` | Año grande + quién/dónde + revista | N1, N2, N5 |
+| `Capitulo` | Capítulos numerados bajo el logo | N3, M3 |
+| `Pasos` | "PASO 3 / 7" de la guía irónica | N6 |
+| `Medidor` | Barra que sube (40 % → 100 %) | N3, M2 |
+| `Cronometro` | Reloj de laboratorio, con time-lapse | N5 |
+| `Cuadricula` | Cuadrícula que se llena por tramos de color | N4 |
+| `Comparativa` | Dos barras: "Tú vs. el de al lado" | N2 |
+| `MarcaAgua` | Logo + badge `#NN` arriba a la izquierda | todos |
+| `Sticker` | Reacción del narrador: `arriba-der`, `abajo-der`, `abajo-izq` | todos |
+| `CierreMarca` | Oscurece la última imagen y muestra la marca (3–4 s) | todos |
+| `MundoPiel` + `MUNDO_PIEL` | Primer mundo reutilizable: piel en corte con vellos, células, capilar y glóbulos rojos | N1, M4 |
+
+Utilidades: `KC` (colores de la marca), `KF` (letras), `kprog`, `klerp`, `kEase`, `krng`, `mece(T, semilla)`
+(movimiento orgánico para vellos, hojas, hifas…), `kformato` (números en español de México).
+
+## Reglas aprendidas al probarlo
+- El sticker `arriba-der` tapa números gigantes y chips centrados en la parte alta: en el formato N2 usa
+  `abajo-izq` o `abajo-der`, y nunca encima de la `Comparativa`.
+- `Capitulo` va en y = 330 (bajo el logo); los medidores empiezan en y = 450.
+- `Escala` va en y = 1430, debajo del subtítulo (que vive en `bottom: 560`).
+- Los mundos se dibujan con el detalle microscópico chiquito y a escala real (`pxPorMm`); la cámara lo
+  revela. Dibujar solo la franja que se va a acercar para no cargar el render.
+
+## Siguientes mundos a construir (según los temas)
+Hoja en corte (estomas), suelo con micelio e hifas, intestino con bacterias, ojo (retina y conos),
+placa de Petri con colonias.
