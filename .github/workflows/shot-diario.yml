@@ -1,0 +1,136 @@
+name: Shot diario (vista previa y aviso)
+
+# Se dispara solo cuando la tarea diaria de Claude Code abre o actualiza un PR desde una rama "shot/NNN-tema"
+# (procedimiento en AUTONOMO.md). Aquí NO se genera voz (cuesta créditos): se renderiza la versión sin voz,
+# se saca una hoja de contactos de la narrada y se le avisa a Robert por Telegram con botones para decidir.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write   # para dejar un comentario con los enlaces en el PR
+
+concurrency:
+  group: shot-diario-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  vista-previa:
+    if: startsWith(github.head_ref, 'shot/')
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      PR: ${{ github.event.pull_request.number }}
+      PR_URL: ${{ github.event.pull_request.html_url }}
+      RAMA: ${{ github.head_ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar ffmpeg y Chromium
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          cd motor && npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+
+      - name: Ubicar el shot
+        id: shot
+        run: |
+          # La rama "shot/NNN-tema" corresponde a la carpeta "shots/NNN-tema".
+          SHOT="shots/${RAMA#shot/}"
+          if [ ! -f "$SHOT/narracion.json" ]; then
+            # Respaldo: la primera carpeta de shots/ que cambió en el PR.
+            git fetch --depth=1 origin "${{ github.event.pull_request.base.sha }}"
+            CARPETA=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD | grep '^shots/' | grep -v '^shots/_' | cut -d/ -f2 | sort -u | head -1)
+            SHOT="shots/$CARPETA"
+          fi
+          test -f "$SHOT/narracion.json" || { echo "::error title=Shot::No encuentro narracion.json en $SHOT"; exit 1; }
+          echo "shot=$SHOT" >> "$GITHUB_OUTPUT"
+          node motor/ficha.mjs "$SHOT" --salidas "$GITHUB_OUTPUT"
+
+      - name: Versión sin voz (sin ElevenLabs)
+        env:
+          SHOT: ${{ steps.shot.outputs.shot }}
+          HTML: ${{ steps.shot.outputs.sinVoz }}
+          AUDIO: ${{ steps.shot.outputs.sinVozAudio }}
+        run: |
+          mkdir -p salida
+          node "$SHOT/gen-audio.mjs" "$HTML" "$AUDIO"
+          node motor/render.mjs "$SHOT" "$HTML" "salida/${{ steps.shot.outputs.carpeta }}_sin_voz.mp4" --audio "$SHOT/$AUDIO"
+
+      - name: Duración de la sin voz
+        id: dur
+        run: |
+          D=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "salida/${{ steps.shot.outputs.carpeta }}_sin_voz.mp4")
+          D=$(printf '%.1f' "$D")
+          echo "sinvoz=$D" >> "$GITHUB_OUTPUT"
+          AVISO=""
+          if awk -v d="$D" 'BEGIN { exit !(d < 61.0 || d > 62.5) }'; then
+            AVISO="ATENCION: la version sin voz dura $D s; la regla es 61 a 62 s."
+            echo "::warning title=Duración::$AVISO"
+          fi
+          echo "aviso=$AVISO" >> "$GITHUB_OUTPUT"
+
+      - name: Hoja de contactos de la narrada (sin voz todavía)
+        env:
+          SHOT: ${{ steps.shot.outputs.shot }}
+          HTML: ${{ steps.shot.outputs.narradaBase }}
+        run: |
+          # Un cuadro cada ~5 s sobre la duración estimada de las escenas (la voz real la ajusta después).
+          DUR=$(node -p "JSON.parse(require('fs').readFileSync('$SHOT/$HTML','utf8').match(/window\.OM_SCENES = '(.*?)';/)[1]).reduce((a,s)=>a+s.dur,0)")
+          TIEMPOS=$(node -p "Array.from({length: Math.floor($DUR/5)+1}, (_,i)=>i*5).join(',')")
+          node motor/preview.mjs "$SHOT" "$HTML" salida/hoja_narrada.png "$TIEMPOS" --cols 4
+
+      - name: Subir vista previa
+        id: subir
+        uses: actions/upload-artifact@v4
+        with:
+          name: vista-previa-${{ steps.shot.outputs.carpeta }}
+          path: |
+            salida/*.mp4
+            salida/*.png
+          retention-days: 14
+
+      - name: Comentar en el PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment "$PR" --body "Vista previa lista: ${{ steps.subir.outputs.artifact-url }} (sin voz: ${{ steps.dur.outputs.sinvoz }} s). ${{ steps.dur.outputs.aviso }}"
+
+      - name: Avisar a Robert por Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TITULO: ${{ steps.shot.outputs.titulo }}
+          NUMERO: ${{ steps.shot.outputs.numero }}
+          GUION: ${{ steps.shot.outputs.guion }}
+          PALABRAS: ${{ steps.shot.outputs.palabras }}
+          CARACTERES: ${{ steps.shot.outputs.caracteres }}
+          SINVOZ: ${{ steps.dur.outputs.sinvoz }}
+          AVISO: ${{ steps.dur.outputs.aviso }}
+          ARTIFACT: ${{ steps.subir.outputs.artifact-url }}
+        run: |
+          node -e '
+            const esc = (s) => String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            const e = process.env;
+            const lineas = [
+              `<b>Shot ${e.NUMERO}: ${esc(e.TITULO)}</b>`,
+              "",
+              `<i>${esc(e.GUION)}</i>`,
+              "",
+              `Guion: ${e.PALABRAS} palabras (${e.CARACTERES} caracteres de ElevenLabs). Sin voz: ${e.SINVOZ} s.`,
+              e.AVISO ? esc(e.AVISO) : "",
+              `PR: ${e.PR_URL}`,
+              `Video sin voz y hoja de cuadros: ${e.ARTIFACT}`,
+              "",
+              "Aprobar genera la voz (gasta créditos de ElevenLabs), renderiza la narrada y publica los dos MP4 en un Release.",
+            ].filter((l, i, a) => l !== "" || a[i - 1] !== "");
+            require("fs").writeFileSync("salida/mensaje.txt", lineas.join("\n"));
+          '
+          node motor/avisar.mjs --texto "$(cat salida/mensaje.txt)" --foto salida/hoja_narrada.png \
+            --botones "[{\"texto\":\"Aprobar\",\"dato\":\"aprobar:$PR\"},{\"texto\":\"Rehacer\",\"dato\":\"rehacer:$PR\"},{\"texto\":\"Descartar\",\"dato\":\"descartar:$PR\"}]"
