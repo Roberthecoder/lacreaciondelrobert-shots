@@ -540,7 +540,11 @@ function MundoPanMicro({ T, g = 0, colonia, tallos = 0, capsulas = 0, revientan 
 function mixHex(a, b, t) { const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)); const A = p(a), B = p(b); return '#' + A.map((v, i) => Math.round(klerp(v, B[i], t)).toString(16).padStart(2, '0')).join(''); }
 
 /* ---------- MARCA ---------- */
-function MarcaAgua({ T, num, hasta, logo = 'assets/logo_iso_dna_gold.svg' }) {
+// tema: 'biologia' (ADN) · 'quimica' (matraz) · 'bioquimica' (los dos) · 'fisica' (átomo) · 'ia' (brillitos)
+// Los SVG se generan con motor/kit/logo.mjs y se copian a assets/ del shot.
+const klogo = (tema) => 'assets/logo_' + (tema || 'biologia') + '.svg';
+function MarcaAgua({ T, num, hasta, tema, logo }) {
+  logo = logo || klogo(tema);
   if (hasta != null && T >= hasta) return null;
   return <div style={{ position:'absolute', left:38, top:180, zIndex:50 }}>
     <div style={{ background:'#fff', borderRadius:20, padding:8, boxShadow:'0 12px 30px rgba(0,0,0,.45)' }}>
@@ -562,7 +566,8 @@ function Sticker({ T, src, at, until, lado = 'arriba-der' }) {
     transform:`translate(${tx}px, ${ty}px) scale(${1 - w}, ${1 + w})`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />;
 }
 // Tarjeta de cierre: oscurece la última imagen y muestra la marca. Dura 3–4 s (hasta llegar a 61–62 s).
-function CierreMarca({ T, at, frase = 'Sígueme para más ciencia', usuario = '@lacreaciondelrobert', logo = 'assets/logo_iso_dna_gold.svg' }) {
+function CierreMarca({ T, at, frase = 'Sígueme para más ciencia', usuario = '@lacreaciondelrobert', tema, logo }) {
+  logo = logo || klogo(tema);
   if (T < at) return null;
   const osc = kprog(T, at, at + 0.7, kEase.suave), s = klerp(0.5, 1, kprog(T, at + 0.2, at + 0.8, kEase.rebote)), t2 = kprog(T, at + 0.6, at + 1.1, kEase.sale);
   return <div style={{ position:'absolute', inset:0, zIndex:60, background:`rgba(8,9,12,${0.78 * osc})`, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:26 }}>
@@ -582,6 +587,6 @@ Object.assign(window, {
   Camara, Escala, Ambiente, Brillo, Aparece, Lupa,
   Subtitulo, Chip, MitoTachado, NumeroGigante, Contador, TarjetaEstudio,
   Capitulo, Pasos, Medidor, Cronometro, Cuadricula, Comparativa,
-  MarcaAgua, Sticker, CierreMarca, MundoPiel, MUNDO_PIEL, mixHex,
+  MarcaAgua, Sticker, CierreMarca, klogo, MundoPiel, MUNDO_PIEL, mixHex,
   CamaraAnidada, MundoPanMacro, MundoPanMicro, MUNDO_PAN, PAN_TALLOS, kArbol, kArbolRadial, nodosPan,
 });

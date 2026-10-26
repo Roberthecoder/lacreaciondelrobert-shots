@@ -90,8 +90,8 @@ function MohoNarrado() {
       <Sticker T={T} src={AVS('avatar_10_serio_molesto')} at={K.Hu + 0.4} until={K.Te - 0.2} lado="arriba-der" />
       <Sticker T={T} src={AVS('avatar_04_bajando_lentes')} at={K.Te + 0.6} until={K.C - 0.2} lado="arriba-der" />
 
-      <MarcaAgua T={T} num="02" hasta={K.O} />
-      <CierreMarca T={T} at={K.O} />
+      <MarcaAgua T={T} tema="biologia" num="02" hasta={K.O} />
+      <CierreMarca T={T} at={K.O} tema="biologia" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
