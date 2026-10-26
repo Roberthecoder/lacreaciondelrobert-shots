@@ -38,6 +38,8 @@ igual que el resto del motor, así que funcionan en la versión narrada (tiempos
 | `Sticker` | Reacción del narrador: `arriba-der`, `abajo-der`, `abajo-izq` | todos |
 | `CierreMarca` | Oscurece la última imagen y muestra la marca (3–4 s) | todos |
 | `MundoPiel` + `MUNDO_PIEL` | Primer mundo reutilizable: piel en corte con vellos, células, capilar y glóbulos rojos | N1, M4 |
+| `CamaraAnidada` | Zoom de ×1 a ×1000 sin perder nitidez: funde un mundo macro (cm) con uno micro (µm) y oscurece al "entrar al microscopio". Keys en coordenadas macro | N1, M4 |
+| `MundoPanMacro` + `MundoPanMicro` + `MUNDO_PAN` | Rebanada de frente (mancha de moho, rayos X, "puf" de esporas, segunda rebanada) y corte microscópico de la miga (alveolos, almidón, hifas que crecen, estolones, rizoides, tallos, cápsulas que revientan, espora, pelo de comparación). Usado en el shot 002 | N1, M4 |
 
 Utilidades: `KC` (colores de la marca), `KF` (letras), `kprog`, `klerp`, `kEase`, `krng`, `mece(T, semilla)`
 (movimiento orgánico para vellos, hojas, hifas…), `kformato` (números en español de México).
@@ -50,6 +52,9 @@ Utilidades: `KC` (colores de la marca), `KF` (letras), `kprog`, `klerp`, `kEase`
 - Los mundos se dibujan con el detalle microscópico chiquito y a escala real (`pxPorMm`); la cámara lo
   revela. Dibujar solo la franja que se va a acercar para no cargar el render.
 
+- Con zoom fuerte la cámara mueve la posición al ritmo del zoom, para que el punto de destino no se escape.
+- En el cambio macro → micro el detalle macro (la mancha) se desvanece solo (`zCam`) y la pantalla se oscurece.
+
 ## Siguientes mundos a construir (según los temas)
 Hoja en corte (estomas), suelo con micelio e hifas, intestino con bacterias, ojo (retina y conos),
-placa de Petri con colonias.
+placa de Petri con colonias. (Pan ✔ en el shot 002: sirve también para levadura y almidón.)

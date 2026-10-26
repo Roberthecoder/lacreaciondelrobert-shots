@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Moho Pan base narrada.dc.html",
+  "salida": "Shot Moho Pan narrado.dc.html",
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). Todo se pide en UNA sola petición a ElevenLabs (~930 caracteres). Aprobado por Robert el 25 oct 2026; NO generar sin avisar el costo.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa mancha de moho no es todo el moho: tu pan ya está tomado por dentro." },
+    { "escena": "Espora", "texto": "Todo empezó con una espora, más delgada que un pelo, que cayó del aire a tu pan." },
+    { "escena": "Hifa", "texto": "Encontró humedad, germinó, y de ella salió un hilo: una hifa." },
+    { "escena": "Hifa", "texto": "Se ramifica y se mete por los huequitos de la miga, como raíces que van digiriendo el almidón." },
+    { "escena": "Punta", "texto": "Lo que ves arriba es apenas la punta." },
+    { "escena": "Puntitos", "texto": "¿Y esos puntitos negros?" },
+    { "escena": "Puntitos", "texto": "Son cápsulas llenas de esporas, cada una en la punta de un tallito." },
+    { "escena": "Vuelan", "texto": "Cuando revientan, las esporas vuelan hasta el siguiente pan." },
+    { "escena": "USDA", "texto": "Por eso el Departamento de Agricultura de Estados Unidos dice: pan con moho, se tira entero. Es poroso y el moho llega por debajo." },
+    { "escena": "Queso", "texto": "Al queso duro o a la zanahoria sí puedes cortarles la mancha, con al menos dos centímetros y medio de margen." },
+    { "escena": "Huelas", "texto": "Y no lo huelas: puede causarte problemas al respirar." },
+    { "escena": "Tempeh", "texto": "Lo curioso: con sus primos se hace el tempeh, en Indonesia." },
+    { "escena": "Cierre", "texto": "Así que esa mancha no es el principio del moho. Es el final de su ciclo." }
+  ]
+}
