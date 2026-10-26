@@ -1,5 +1,7 @@
 # Shots de La Creación del Robert
 
+Lee primero `ESTADO.md` (qué está hecho y qué sigue).
+
 Videos verticales 1080×1920 de divulgación científica en español de México. El usuario no programa: respuestas en español, breves y sin jerga.
 
 ## Reglas de contenido
