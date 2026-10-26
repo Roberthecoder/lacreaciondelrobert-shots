@@ -1,0 +1,8 @@
+# Configuración del worker de Telegram (Cloudflare Workers, plan gratuito).
+# Los secretos NO van aquí: se cargan con "npx wrangler secret put NOMBRE" (ver LEEME.md).
+name = "robert-shots-telegram"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+GITHUB_REPO = "Roberthecoder/lacreaciondelrobert-shots"
