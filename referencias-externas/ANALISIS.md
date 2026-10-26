@@ -1,5 +1,7 @@
 # Ingeniería inversa: canales de animación con IA que están pegando
 
+> **Actualización 26 oct 2026:** el análisis a fondo de 120 videos (10 por canal, 60 s cada uno, ahora sí con la música medida) está en [`FORMULA_VIRAL.md`](FORMULA_VIRAL.md). Ese documento manda sobre lo de abajo cuando no coincidan.
+
 Revisado el 25 oct 2026. Se revisaron los 12 canales y se analizaron a fondo los 5 videos más vistos
 (uno por canal). **No se descargaron**: TikTok bloquea la descarga normal y saltarse ese bloqueo no
 está permitido. Se analizaron dentro del navegador: cada cuadro cada 0.25 s (cortes, movimiento,
