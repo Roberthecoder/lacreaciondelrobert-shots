@@ -217,7 +217,7 @@ Prohibido abrir con un año, con historia o con "cada vez que…".
 
 ---
 
-## Propuestas para tus reglas (pendientes de tu aprobación)
+## Propuestas para tus reglas (aprobadas y aplicadas el 26 oct 2026 en `CLAUDE.md`, `RECETARIO.md` y el kit)
 
 1. **Lista de ganchos aprobados** (los 7 de arriba) y **prohibidos** (abrir con fecha, con historia o con "cada vez que") en `CLAUDE.md`.
 2. **Mudos: la música sale de los datos siempre**, no solo "cuando se pueda", con 🎧 en el título.
