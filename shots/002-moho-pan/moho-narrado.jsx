@@ -8,6 +8,7 @@ function MohoNarrado() {
   const M = MUNDO_PAN.mancha;
 
   /* ---- cámara (coordenadas macro; mp() = punto del mundo micro) ---- */
+  const N = nodosPan(3), hI = N.reduce((b, n, i) => (Math.abs(n.x - 560) < Math.abs(N[b].x - 560) ? i : b), 0), HX = N[hI].x, HH = N[hI].h;
   const keys = [
     { t: K.G, x: 540, y: 900, z: 1 },
     { t: K.E + 0.2, x: 600, y: 800, z: 1.8 },
@@ -15,9 +16,9 @@ function MohoNarrado() {
     mpk(K.H + 2.6, 0, -40, 900),
     mpk(K.H + 9.0, 0, 700, 110),
     mpk(K.P + 1.8, 0, 1400, 48),
-    mpk(K.Pu + 1.4, 560, -1050, 520),
-    mpk(K.V + 0.3, 560, -1050, 520),
-    mpk(K.V + 3.4, 450, -800, 110),
+    mpk(K.Pu + 1.4, HX, -HH, 520),
+    mpk(K.V + 0.3, HX, -HH, 520),
+    mpk(K.V + 3.4, HX - 100, -800, 110),
     { t: K.U + 1.6, x: 560, y: 860, z: 1.15 },
     { t: K.Hu, x: 560, y: 860, z: 1.15 },
     { t: K.Hu + 3, x: 590, y: 820, z: 1.35 },
@@ -39,7 +40,7 @@ function MohoNarrado() {
     // 1) la red coloniza la miga (g) · 2) de esa red salen los rizoides · 3) luego estolones y tallitos (colonia)
     colonia: kprog(T, K.P + 0.3, K.P + 2.2) * 0.4 + kprog(T, K.Pu, K.Pu + 1.6) * 0.6,
     capsulas: kprog(T, K.Pu + 1.6, K.Pu + 4.4),
-    revientan: [1.0, 0.4, 1.3, 1.6, 1.9, 2.2, 1.5].map((d) => K.V + d),
+    revientan: N.map((n, i) => K.V + (i === hI ? 0.4 : 1.0 + ((i + 6 - hI) % 6) * 0.25)),
     espora: T >= K.E + 1.4 ? { y: klerp(-330, -8, kprog(T, K.E + 1.4, K.E + 3.2, (p) => p * p)), germina: kprog(T, K.H + 0.2, K.H + 3.0) } : null,
     pelo: kprog(T, K.E + 2.6, K.E + 3.4) * (1 - kprog(T, K.H + 0.5, K.H + 1.5)),
   };
@@ -60,7 +61,7 @@ function MohoNarrado() {
       <EtqMundo T={T} cam={cam} at={K.E + 3.3} until={K.H + 1.2} wx={120} wy={-200} dy={-20} texto="un pelo · ~70 µm" />
       <EtqMundo T={T} cam={cam} at={K.H + 2.6} until={K.H + 6} wx={0} wy={90} dx={40} texto="hifa" />
       <EtqMundo T={T} cam={cam} at={K.H + 6} until={K.P} wx={420} wy={500} texto="almidón" color={KC.gold2} />
-      <EtqMundo T={T} cam={cam} at={K.Pu + 2.0} until={K.V + 0.3} wx={560} wy={-1050} dx={100} texto="cápsula de esporas" />
+      <EtqMundo T={T} cam={cam} at={K.Pu + 2.0} until={K.V + 0.3} wx={HX} wy={-HH} dx={100} texto="cápsula de esporas" />
       <Etq T={T} at={K.Pu + 2.6} until={K.V + 2.8} x={120} y={300} texto="Rhizopus stolonifer" it />
 
       {/* fuente */}
