@@ -9,7 +9,7 @@ Sistema para producir un shot diario de divulgación científica (ciencia genera
 | Renderizador a MP4 (`motor/render.mjs`) | ✅ Funciona |
 | Vista previa en hoja de contactos (`motor/preview.mjs`) | ✅ Funciona |
 | Primer shot nuevo, versión sin voz (`shots/001-hormiga-zombi`) | ✅ Hecho |
-| Primer shot, versión narrada con voz clonada | ⏳ Falta conectar ElevenLabs |
+| Primer shot, versión narrada con voz clonada (Eleven v4) | ✅ Aprobada |
 | Generador automático (Claude API escribe cada shot) | ⏳ Pendiente |
 | Aprobación por Telegram | ⏳ Pendiente |
 | Publicación en redes | ⏳ Pendiente |
