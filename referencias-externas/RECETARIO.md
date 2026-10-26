@@ -1,6 +1,7 @@
 # Recetario de formatos — La Creación del Robert
 
-Hecho el 25 oct 2026 por ingeniería inversa de 12 canales (ver `ANALISIS.md`). Cada formato se adapta a
+Hecho el 25 oct 2026 por ingeniería inversa de 12 canales (ver `ANALISIS.md`) y ajustado el 26 oct con
+el análisis de 120 videos (`FORMULA_VIRAL.md`). Cada formato se adapta a
 **tu marca**: tus colores brillantes (fondo oscuro solo en lo microscópico), trazo grueso, stickers como
 reacción, logo + badge `#NN`, tu voz clonada y fuentes en la descripción. Nunca se copian sus personajes,
 letras, paletas ni logos.
@@ -10,6 +11,12 @@ letras, paletas ni logos.
 - Algo se mueve antes del segundo 1. Nunca abrir con una tarjeta de título quieta (es lo que hundió a
   @lil_bit_of_science: 67 K contra millones de sus vecinos).
 - Primera frase (o primer texto, en mudos) que **corrige algo que el espectador cree** o lo pone a prueba.
+  Usar uno de los **7 ganchos aprobados** de `CLAUDE.md`. Nunca abrir con un año, una lección de historia
+  o "cada vez que…" (ningún video así pasó de 130 K en los 120 analizados).
+- Narrados: la voz entra en el segundo 0 y le habla a "tú". Música = cama grave continua, sin golpe
+  marcado, debajo de la voz; cada cosa que pasa en pantalla tiene su efecto en el mismo cuadro.
+- Mudos: **la música sale siempre de los datos** (ritmos, conteos, una nota por evento) y el título lleva 🎧.
+- Descripción: mini artículo con la explicación completa + fuentes + **una pregunta para comentar**.
 - Barra de escala, año del estudio y fuentes: el rigor también es estética.
 - Cierre que regresa al inicio (la misma imagen transformada) → invita a verlo otra vez.
 
@@ -25,13 +32,15 @@ Algo que te pasó a ti, explicado desde el microscopio.
 - **Viaje:** macro (tu brazo) → micro (fondo oscuro) → la misma imagen macro, transformada.
 - **Estructura 61 s:** gancho 0–4 · cómo empieza 4–15 · mecanismo 15–40 · re-gancho con pregunta ~30 ·
   estudio con año y lugar 35–50 · dato extra chistoso 50–55 · frase que regresa al gancho 55–58 · cierre.
-- **Piezas:** `[Camara]` `[Escala]` `[Ambiente]` `[Brillo]` `[TarjetaEstudio]` `[Sticker]` `[CierreMarca]`.
+- **Piezas:** `[Camara]` `[Escala]` `[Ambiente]` `[Brillo]` `[TarjetaEstudio]` `[Sticker]` `[CierreMarca]`;
+  `[Lupa]` en modo rayos X cuando conviene ver lo de adentro sin dejar de ver lo de afuera.
 - **Ejemplos:** por qué te arden los ojos con la cebolla · de dónde sale una ampolla · por qué se te arruga
   la piel en el agua · el moho verde del pan (micológico).
 
 ### N2 · EL NÚMERO  *(de @as.pasa1: 3 M)*
 Una cifra gigante desde el cuadro 0, un mito tachado y un consejo útil.
-- **Gancho:** "[Número] veces/por ciento…" + comparación visual "Tú vs. el de al lado".
+- **Gancho:** "[Número] veces/por ciento…" + comparación visual "Tú vs. el de al lado" (el gancho de los
+  moscos, 3.1 M: "pueden preferirte 100 veces más que a la persona de al lado").
 - **Estructura:** número 0–3 · mito tachado ~5–8 · pregunta abierta "es algo que no puedes cambiar" ·
   cómo funciona · el estudio (quién, cuándo, cuántos) · "ahí salió el número del principio" · **qué sí
   sirve** (útil y concreto) · por qué importa · cierre que retoma el número.
@@ -79,7 +88,8 @@ Se recrea un experimento real, con cronómetro, como si lo vieras en el laborato
 ## Formatos sin voz (temáticos)
 
 ### M1 · LA MÚSICA SON LOS DATOS  *(de @bit_wonder: 1.5 M)*
-Loop donde cada elemento suena con su dato real; final que revela el truco.
+Loop donde cada elemento suena con su dato real; final que revela el truco. (Desde el 26 oct, **todos** los
+mudos usan este principio para su música; M1 es el formato donde la música es la protagonista.)
 - **Estructura:** título fijo arriba + número grande desde el cuadro 0 · cada ~3 s se suma un elemento que
   "toca" su dato · revelación final ("ESTE VIDEO DURÓ UN SOLO LATIDO") · conecta con el inicio.
 - **Piezas:** `[Pila]` `[Contador]` + audio generado desde los datos (`gen-audio.mjs`).
@@ -88,9 +98,11 @@ Loop donde cada elemento suena con su dato real; final que revela el truco.
 
 ### M2 · ¿POR QUÉ NO…?  *(de @justincase.lessons: 1.5 M y 46 K guardados)*
 La pregunta va fija arriba; un medidor muestra por qué la respuesta funciona.
-- **Estructura:** situación + pregunta 0–2 · acción · `[Medidor]` que sube 40 % → 100 % · lupa que
-  acerca el detalle · frase final que responde.
-- **Piezas:** `[Chip]` (pregunta fija) `[Medidor]` `[Lupa]`.
+- **Estructura:** situación + pregunta 0–2 · acción · `[Lupa]` **en modo rayos X** sobre el cuerpo o el
+  objeto (se ve el interior sin cortar) · `[Medidor]` que sube 40 % → 100 % · frase final que responde.
+- **Música que cuenta el estado:** tapada o tensa mientras dura el problema, libre cuando se resuelve
+  (@justincase: la música suena ahogada mientras la tráquea está tapada).
+- **Piezas:** `[Chip]` (pregunta fija) `[Lupa interior=…]` `[Medidor]`.
 - **Ejemplos (Shot Lab):** ¿por qué no se pipetea con la boca? · ¿por qué el agua va antes que el ácido? ·
   ¿por qué se flamea el asa?
 
@@ -104,6 +116,8 @@ Episodios numerados; el texto narra arriba y en un momento el espectador **hace*
 ### M4 · CICLO EN 61 s  *(de @vino.grafit: 21 % de likes)*
 Un ciclo de vida completo que termina exactamente donde empezó (loop perfecto).
 - **Estructura:** espora/huevo → crecimiento → reproducción → muerte que alimenta → espora otra vez.
+- **Música de datos:** cada etapa con su sonido calculado (germinar, crecer, reventar), como hace
+  @vino.grafit ("el sonido no se graba, se calcula").
 - **Piezas:** `[Camara]` `[Escala]` `[Ambiente]`.
 - **Ejemplos:** ciclo de una seta (micológico, ideal como gemelo mudo de N1) · ciclo de la levadura en el
   pan · la vida de un glóbulo rojo en 120 días.

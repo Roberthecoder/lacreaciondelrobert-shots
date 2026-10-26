@@ -2,6 +2,26 @@
 // Los textos son de ejemplo; los datos científicos de un shot real llevan fuente.
 const ST = (n) => 'assets/stickers/' + n + '.png';
 
+// Brazo de ejemplo (por fuera) y su interior para la Lupa en modo rayos X.
+function BrazoFuera({ T }) {
+  const m = mece(T, 3, 0.3) * 6;
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+    <path d={`M -40 ${1180 + m} C 260 ${1120 + m}, 560 ${1060 + m}, 820 ${1000 + m} L 860 1160 C 600 ${1220 + m}, 300 ${1290 + m}, -40 ${1330 + m} Z`} fill="#f1b48f" stroke={KC.ink} strokeWidth="8" />
+    <circle cx={900} cy={1080 + m} r={120} fill="#f1b48f" stroke={KC.ink} strokeWidth="8" />
+  </svg>;
+}
+function BrazoDentro({ T, r }) {
+  const D = r * 2;
+  const glob = Array.from({ length: 9 }, (_, i) => ((T * 140 + i * D / 9) % (D + 60)) - 30);
+  return <svg width={D} height={D}><g transform={`rotate(-12 ${r} ${r}) translate(${-D * 0.25} 0) scale(1.5 1)`}>
+    <rect x="0" y={D * 0.18} width={D} height={D * 0.64} fill="#d98f6b" opacity=".25" />
+    <rect x="-10" y={D * 0.33} width={D + 20} height={D * 0.12} rx={D * 0.06} fill="#eef6ff" opacity=".92" />
+    <rect x="-10" y={D * 0.53} width={D + 20} height={D * 0.09} rx={D * 0.045} fill="#eef6ff" opacity=".85" />
+    <rect x="-10" y={D * 0.66} width={D + 20} height={D * 0.07} fill="#e23b3b" opacity=".55" />
+    {glob.map((gx, i) => <ellipse key={i} cx={gx} cy={D * 0.695 + (i % 3 - 1) * 6} rx="16" ry="10" fill="#ff5a5a" />)}
+  </g></svg>;
+}
+
 function DemoPiece() {
   const { T } = useComposition();
   const P = MUNDO_PIEL;
@@ -40,11 +60,17 @@ function DemoPiece() {
       <Pasos T={T} pasos={[{ at: 14.1, texto: 'Consigue una placa de Petri' }, { at: 15.4, texto: 'Espera a que se llene' }]} total={2} hasta={17} y={250} />
       <Cronometro T={T} at={14.1} until={16.9} factor={3600} etiqueta="TIME-LAPSE" y={1520} />
 
-      {/* D (17–20.5 s): estudio + cierre */}
-      {T >= 17 && <div style={{ position:'absolute', inset:0, background:KC.mint }}></div>}
-      <TarjetaEstudio T={T} at={17.1} until={18.6} anio="2023" quien="Equipo de ejemplo · Ciudad" revista="Revista (demo del kit)" />
-      <MarcaAgua T={T} num="00" hasta={18.8} />
-      <CierreMarca T={T} at={18.8} />
+      {/* E (17–21 s): Lupa en modo rayos X — el brazo por fuera, el hueso y la sangre por dentro */}
+      {T >= 17 && T < 21 && <div style={{ position:'absolute', inset:0, background:KC.pink }}></div>}
+      {T >= 17 && T < 21 && <BrazoFuera T={T} />}
+      <Lupa T={T} at={17.6} until={20.4} x={600} y={560} r={240} fx={(t) => 420 + 6 * Math.sin(t * 2)} fy={1090} interior={(t, r) => <BrazoDentro T={t} r={r} />} etiqueta="RAYOS X (demo)" />
+      <Subtitulo T={T} at={17.4} until={20.5} texto="Por fuera no ves *el hueso* ni la sangre." />
+
+      {/* D (21–24.5 s): estudio + cierre */}
+      {T >= 21 && <div style={{ position:'absolute', inset:0, background:KC.mint }}></div>}
+      <TarjetaEstudio T={T} at={21.1} until={22.6} anio="2023" quien="Equipo de ejemplo · Ciudad" revista="Revista (demo del kit)" />
+      <MarcaAgua T={T} num="00" hasta={22.8} />
+      <CierreMarca T={T} at={22.8} />
     </div>
   );
 }

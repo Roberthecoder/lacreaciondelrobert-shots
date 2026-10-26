@@ -15,14 +15,27 @@ Videos verticales 1080×1920 de divulgación científica en español de México.
 - Antes de escribir un shot, elegir su formato narrado y su gemelo mudo en `referencias-externas/RECETARIO.md` (11 formatos, parejas y reparto por serie).
 - Logo: isotipo con el hexágono del TEMA en dorado, alineado a su celda (`motor/kit/logo.mjs` genera `logo_<tema>.svg`): biología → ADN · química → matraz · bioquímica → ADN + matraz · física → átomo · IA → brillitos. Copiar el SVG a `assets/` y pasar `tema` a `MarcaAgua` y `CierreMarca`.
 - Construirlo con el kit `motor/kit/kit-robert.jsx` (catálogo en `motor/kit/LEEME.md`, ejemplo en `shots/_demo-kit/`). Si un tema necesita un mundo nuevo (hoja, suelo, intestino…), agregarlo al kit para reutilizarlo.
+- Para mostrar lo de adentro sin dejar de ver lo de afuera (cuerpo, fruta, suelo), usar `Lupa` en modo rayos X (`interior=…`).
+
+## Ganchos (decidido 26 oct 2026, de 120 videos analizados en `referencias-externas/FORMULA_VIRAL.md`)
+La primera frase (o el primer texto, en mudos) usa uno de estos 7 ganchos:
+1. **"Esto no es X: es Y"** sobre algo que se ve en pantalla ("Ese mosquito no te picó con una aguja: te metió 6" — 3.5 M).
+2. **Tú contra el de al lado** ("Los moscos pueden preferirte 100 veces más que a la persona de al lado" — 3.1 M).
+3. **Tu vida o tu cuerpo en una imagen** ("Esto es una vida de 80 años dibujada en semanas" — 2.4 M, el más compartido).
+4. **Un número que contradice** ("Ir a 120 en vez de 100 te ahorra 5 minutos. Solo 5" — 2.2 M).
+5. **Reto "casi todos fallan"** (acertijo con respuesta al final — récord de comentarios).
+6. **Mito peligroso "¿Por qué NO…?"** (primeros auxilios, laboratorio — los más guardados).
+7. **Algo que tus ojos nunca van a ver** ("El color que nunca verás" — 1.7 M).
+
+**Prohibido abrir con:** un año o fecha ("En 1897…"), una lección de historia, una etimología ("Cada vez que dices…"), solo texto sin acción, o la voz entrando después del segundo 0.5. Ninguno de esos pasó de 130 K. La fecha y la historia van después, como "el estudio" (35–50 s).
 
 ## Ritmo, duración y color (decidido 25 oct 2026 — manda sobre las guías de `referencias/`)
-Basado en el análisis de `referencias-externas/ANALISIS.md`. Si una guía vieja dice otra cosa (p. ej. "algo nuevo cada 1–1.5 s" o "≤ 60 s" o "60.0 s exactos"), gana esta sección.
+Basado en el análisis de `referencias-externas/ANALISIS.md` y confirmado con `FORMULA_VIRAL.md` (en 9 de 12 canales, la mitad más vista es la más corta: los 61–62 s se quedan). Si una guía vieja dice otra cosa (p. ej. "algo nuevo cada 1–1.5 s" o "≤ 60 s" o "60.0 s exactos"), gana esta sección.
 
 **Versión narrada**
 - Duración total **de 61–62 s** (decisión de Robert: TikTok paga solo videos de *más* de 1 minuto; así lo hace @1cell1life2). Voz de ~58 s (≈160–165 palabras a ~170 palabras/min) + tarjeta de cierre de 3–4 s. Verificar con ffprobe que el total quede entre 61.0 y 62.0 s, nunca en 60 s o menos. Avisar el costo de ElevenLabs antes de generar.
 - Tema: de preferencia algo que el espectador ya vivió o tiene en su cuerpo/casa, explicado por dentro. Si es lejano, el gancho lo conecta con "tú".
-- La voz arranca en el segundo 0: sin logo, saludo ni intro. Primera frase con la forma **"X no es Y: es Z"** (corrige algo que el espectador cree), hablándole a "tú". Nunca un gancho que solo describe.
+- La voz arranca en el segundo 0: sin logo, saludo ni intro. Primera frase con uno de los **7 ganchos** de arriba (el preferido para "Por dentro": **"X no es Y: es Z"**), hablándole a "tú". Nunca un gancho que solo describe.
 - Algo se mueve o cambia **antes del segundo 1** (una acción, un toque, un time-lapse); nunca 2 s de imagen sin acción al inicio.
 - Viaje **macro → micro → macro**: abrir a escala real, bajar al microscopio y **cerrar en la misma imagen del inicio, ya transformada**. Barra de escala siempre visible.
 - Estructura para ~58 s de voz: gancho (0–4 s) → cómo empieza (4–15) → mecanismo, una idea por frase (15–40) → re-gancho con pregunta (~30) → un estudio real con año y lugar, dibujado como escena (35–50) → dato extra sorprendente o chistoso (50–55) → frase final que regresa al gancho (55–58).
@@ -30,18 +43,20 @@ Basado en el análisis de `referencias-externas/ANALISIS.md`. Si una guía vieja
 - Preferir una escena continua que viaja sobre muchos cortes. Cambios de escena con movimiento de cámara o fundido, nunca corte seco.
 - Puede haber momentos quietos mientras la voz avanza, máximo ~6 s.
 - Tarjeta de cierre con el logo sobre la imagen final oscurecida, completando la duración total.
+- Música: cama grave y continua, sin golpe marcado, siempre debajo de la voz (la voz manda). Nunca una canción conocida. Cada cosa que pasa en pantalla (golpe, gota, latido, ruptura) tiene su efecto en el mismo cuadro.
+- Opcional, para comparar: algún narrado de ~90 s cuando el mecanismo lo pida (siempre más de 61 s). Por defecto, 61–62 s.
 
 **Versión sin voz**
 - Duración total **de 61–62 s** (más de 1 minuto, para monetizar), pensada como loop: el final conecta con el inicio o trae un giro que invite a verlo otra vez.
 - Algo nuevo cada 1.5–3 s sobre un golpe de música; nada estático más de 4 s.
-- Cuando el tema lo permita, la música o los efectos salen de los datos (ritmos, conteos, tamaños).
+- **La música sale siempre de los datos** (ritmos reales, conteos, tamaños, una nota por evento) y además cuenta el estado de la historia (tapada/tensa mientras dura el problema, libre cuando se resuelve). Se genera con `gen-audio.mjs`; nada grabado ni de catálogo. El título del video lleva 🎧.
 
 **Ambas**
 - Colores: se mantienen los fondos brillantes y saturados de la marca (rosa, amarillo, menta, cian…). Solo las escenas microscópicas o internas (dentro de una célula, un tejido, el suelo) usan fondo oscuro (`#0E0F12` o azul noche) con los colores de la marca como acento.
 - Poco texto: un título o número grande, etiquetas chicas (nombre común + *científico*) y una línea de subtítulo con una palabra resaltada.
 - Capítulos numerados pequeños bajo el logo y medidores reales (µm, días, conteos) cuando ayuden.
 - Stickers: como reacción en la esquina, sobre todo en los re-ganchos.
-- Descripción del video: guion completo + fuentes + "el dibujo es esquemático" cuando aplique.
+- Descripción del video: mini artículo con la explicación completa (guion) + fuentes + "el dibujo es esquemático" cuando aplique + **una pregunta para comentar** al final (p. ej. "¿Cómo le dicen en tu región?", "¿A ti también te pasa?").
 
 ## Notas técnicas (aprendidas a la mala)
 - Motor: `animations-v3.jsx` + `support.js` de Claude Design. Un shot es un `.dc.html` con `window.OM_SCENES` y un `.jsx` que dibuja todo desde `T`.

@@ -120,17 +120,58 @@ function Aparece({ T, at, until, modo = 'pop', x, y, origen = '50% 50%', childre
   return <div style={{ position:'absolute', left:x, top:y, opacity:e.o, transform:`translateY(${modo === 'fundido' ? 0 : e.y}px) scale(${e.s})`, transformOrigin:origen, ...style }}>{children}</div>;
 }
 
-/* ---------- LUPA: círculo que acerca un punto de la escena ----------
-   render(Tl) dibuja la escena en coordenadas de pantalla; (fx, fy) es el punto a ampliar. */
-function Lupa({ T, at, until, x, y, r = 200, zoom = 3, fx, fy, borde = KC.white, render }) {
+/* ---------- LUPA: ventana circular hacia lo que no se ve ----------
+   Dos modos:
+   · Amplificar (como antes): render(Tl) dibuja la escena en coordenadas de pantalla y (fx, fy) es el punto a ampliar.
+   · Rayos X (formato @justincase): interior(Tl, r) dibuja lo de ADENTRO en un cuadro de 2r × 2r (centro = r, r).
+     El círculo se abre como iris desde el punto (fx, fy), queda unido a él con una línea, lleva una
+     cuadrícula de radiografía, una franja de escaneo y una etiqueta opcional.
+   x, y, fx, fy también aceptan funciones del tiempo (para seguir algo que se mueve). */
+function Lupa({ T, at, until, x, y, r = 200, zoom = 3, fx, fy, borde = KC.white, render, interior, tinte = KC.cyan, etiqueta, linea = true }) {
   if (!kvisible(T, at, until)) return null;
-  const e = kentrada(T, at, until, 'pop');
+  const v = (q) => (typeof q === 'function' ? q(T) : q);
+  const X = v(x), Y = v(y), FX = v(fx), FY = v(fy);
+  const rx = !!interior;
+  const e = kentrada(T, at, until, rx ? 'fundido' : 'pop');
+  const abre = rx ? kprog(T, at, at + 0.55, kEase.sale) : 1;              // iris que se abre
+  const sale = until == null ? 0 : kprog(T, until, until + 0.35, kEase.suave);
+  const k = rx ? abre * (1 - sale) : 1;
+  // el círculo viaja desde el punto señalado hasta su lugar mientras se abre
+  const cx = rx ? klerp(FX, X, abre) : X, cy = rx ? klerp(FY, Y, abre) : Y;
+  const rr = r * (rx ? Math.max(k, 0.001) : 1);
+  const dx = cx - FX, dy = cy - FY, d = Math.hypot(dx, dy) || 1;
+  const ex = cx - (dx / d) * rr, ey = cy - (dy / d) * rr;                  // punto del borde que mira al objetivo
+  const late = 1 + 0.25 * Math.max(0, Math.sin(T * 6.2));                  // pulso del aro en el objetivo
+  const scan = ((T - at) * 0.7) % 1;                                        // franja de escaneo (0 → 1)
   return (
-    <div style={{ position:'absolute', left:x - r, top:y - r, width:r * 2, height:r * 2, zIndex:35, opacity:e.o, transform:`scale(${e.s})` }}>
-      <div style={{ position:'absolute', inset:0, borderRadius:'50%', overflow:'hidden', background:KC.dark, boxShadow:`0 0 0 8px ${borde}, 0 0 0 14px rgba(0,0,0,.6), 0 20px 50px rgba(0,0,0,.6)` }}>
-        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transformOrigin:'0 0', transform:`translate(${r - fx * zoom}px, ${r - fy * zoom}px) scale(${zoom})` }}>{render(T)}</div>
+    <>
+      {rx && linea && (
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:34, pointerEvents:'none', opacity:e.o * (1 - sale) }}>
+          <circle cx={FX} cy={FY} r={22 * late} fill="none" stroke={tinte} strokeWidth="5" opacity=".9" />
+          <circle cx={FX} cy={FY} r={7} fill={tinte} />
+          {d > rr + 30 && <line x1={FX} y1={FY} x2={ex} y2={ey} stroke={tinte} strokeWidth="5" strokeDasharray="14 10" strokeDashoffset={-T * 40} strokeLinecap="round" />}
+        </svg>
+      )}
+      <div style={{ position:'absolute', left:cx - r, top:cy - r, width:r * 2, height:r * 2, zIndex:35, opacity:e.o, transform:`scale(${rx ? Math.max(k, 0.001) : e.s})` }}>
+        <div style={{ position:'absolute', inset:0, borderRadius:'50%', overflow:'hidden', background: rx ? '#06121c' : KC.dark,
+          boxShadow: rx ? `0 0 0 8px ${tinte}, 0 0 40px 10px ${tinte}88, 0 0 0 16px rgba(0,0,0,.55), 0 20px 50px rgba(0,0,0,.6)` : `0 0 0 8px ${borde}, 0 0 0 14px rgba(0,0,0,.6), 0 20px 50px rgba(0,0,0,.6)` }}>
+          {rx ? (
+            <>
+              <div style={{ position:'absolute', inset:0 }}>{interior(T, r)}</div>
+              <div style={{ position:'absolute', inset:0, backgroundImage:`linear-gradient(${tinte}22 2px, transparent 2px), linear-gradient(90deg, ${tinte}22 2px, transparent 2px)`, backgroundSize:'40px 40px', mixBlendMode:'screen' }}></div>
+              <div style={{ position:'absolute', left:0, right:0, top:`${scan * 120 - 20}%`, height:'16%', background:`linear-gradient(transparent, ${tinte}40, transparent)` }}></div>
+              <div style={{ position:'absolute', inset:0, borderRadius:'50%', boxShadow:'inset 0 0 60px 20px rgba(0,0,0,.65)' }}></div>
+            </>
+          ) : (
+            <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transformOrigin:'0 0', transform:`translate(${r - FX * zoom}px, ${r - FY * zoom}px) scale(${zoom})` }}>{render(T)}</div>
+          )}
+        </div>
+        {rx && etiqueta && (
+          <div style={{ position:'absolute', left:'50%', top:r * 2 + 26, transform:'translateX(-50%)', whiteSpace:'nowrap', padding:'8px 22px', borderRadius:40,
+            background:'rgba(14,15,18,.85)', border:`4px solid ${tinte}`, color:KC.texto, font:`700 34px ${KF.mono}`, letterSpacing:2, opacity:kprog(T, at + 0.4, at + 0.7) }}>{etiqueta}</div>
+        )}
       </div>
-    </div>
+    </>
   );
 }
 
