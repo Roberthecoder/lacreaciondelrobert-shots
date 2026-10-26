@@ -30,3 +30,13 @@
 2. `git clone https://github.com/Roberthecoder/lacreaciondelrobert-shots`
 3. `cd lacreaciondelrobert-shots/motor && npm install && npx playwright install chromium`
 4. Probar: `node render.mjs ../shots/001-hormiga-zombi "Shot Hormiga Zombi.dc.html" prueba.mp4 --hasta 5`
+
+### Notas de la computadora de Robert (Windows, 25 oct 2026)
+- Clonar con rutas largas: `git -c core.longpaths=true clone ...` (si no, faltan archivos).
+- `npx playwright install chromium` se atora al descomprimir (probablemente el antivirus). Solución: usar el Chrome instalado con `NAVEGADOR=chrome` (render.mjs y preview.mjs ya lo aceptan; sin esa variable se usa Chromium como antes, p. ej. en GitHub Actions).
+- El `ffmpeg` que aparece primero en el PATH es de 2013 (viene con un paquete de Python) y falla con "could not find codec parameters". Se instaló ffmpeg 9 con winget (`Gyan.FFmpeg`); hasta reiniciar la terminal hay que ponerlo primero en el PATH: `.../WinGet/Packages/Gyan.FFmpeg_.../ffmpeg-9.0.2-full_build/bin`.
+- Aquí el render va a ~30 s por segundo de video (5 s tardaron 148 s): usar `preview.mjs` antes de renderizar completo, o GitHub Actions para los MP4 largos.
+
+## Estudio de estilo (25 oct 2026)
+Análisis de 5 videos virales y propuesta de fusión en `referencias-externas/ANALISIS.md`.
+DECISIÓN de Robert (25 oct): mantener sus colores brillantes; fondo oscuro solo en escenas microscópicas/internas. Duración: 60.0 s exactos en ambas versiones (para monetizar; ojo: TikTok pide "más de 1 minuto", confirmar con Robert si conviene 61 s). Se aprobaron las nuevas reglas de ritmo: ya están en `CLAUDE.md` (sección "Ritmo, duración y color"), `GUIA_SHOT.md`, `PLANTILLA Shot Sin Voz.md` y los `CLAUDE.md` de las series. Siguiente: shot 002 con esta receta (avisar costo de ElevenLabs antes de generar la voz).
