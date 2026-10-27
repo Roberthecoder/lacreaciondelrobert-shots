@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Petunia base narrada.dc.html",
   "salida": "Shot Petunia narrado.dc.html",
-  "velocidad": 1.154,
+  "velocidad": 1.095,
   "mudo": { "dcHtml": "Shot Petunia mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
   "nota": "Biotecnológico #05. Una línea por subtítulo (idx 0..12 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~930 créditos).",
   "lineas": [
