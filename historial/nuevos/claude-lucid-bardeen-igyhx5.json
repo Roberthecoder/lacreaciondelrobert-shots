@@ -1,0 +1,126 @@
+{
+  "temas": [
+    {
+      "id": "vinazas-tequila",
+      "titulo": "Las vinazas del tequila: 12 L por litro y qué hace la biotecnología con ellas (y el bagazo para hongos)",
+      "serie": "Shot Ambiental",
+      "numero": 1,
+      "estado": "guion",
+      "carpeta": "shots/amb-01-vinazas",
+      "rama": "claude/lucid-bardeen-igyhx5",
+      "fuentes": [
+        "De la Torre-Anguiano, M. Á., Flores-Cosío, G. y Amaya-Delgado, L. (CIATEJ). \"Residuos líquidos provenientes de las bebidas espirituosas mexicanas: su tratamiento y valorización\". *Enfoques Transdisciplinarios: Ciencia y Sociedad* 3(2): 15–41 (21 jul 2025). revistaenfoques.ciatej.mx — 12 L de vinaza por litro de destilado (promedio); 1 L de vinaza puede contaminar 20 L de agua; productos: hidrógeno, biogás, proteína unicelular, enzimas.",
+        "*Ciencia y Tecnología del Tequila* (CIATEJ): \"entre 10 y 12 L de vinaza por cada litro de la bebida\". Otras fuentes dan 7–12 L (UNAM, *Ingeniería Investigación y Tecnología* 23(2), 2022) o 10–15 L (UdeG). Por eso la voz dice \"en promedio, doce\".",
+        "López-López, A. et al. (CIATEJ) \"Tequila vinasses: generation and full scale treatment processes\". *Reviews in Environmental Science and Bio/Technology* 9: 109–116 (2010): vinaza tequilera ácida (pH ≈ 3.4–4.5) y con DQO de 60,000–100,000 mg/L. Otras mediciones van de pH 3.4 a 4.7 según el proceso.",
+        "Larios-Ulloa, M. y Ramírez-Muñoz, D. \"Bagasse of *Agave tequilana*, *A. angustifolia* and *A. salmiana* for cultivation of the fungus *Pleurotus ostreatus*\". *Revista Mexicana de Ciencias Agrícolas* 15(7), 2024. doi:10.29312/remexca.v15i7.3394 (CU de los Lagos, UdeG).",
+        "pH del jugo de naranja ≈ 3.3–4.2 (dato de referencia general, FDA \"Approximate pH of foods\").",
+        "Mecanismo del río (bacterias que consumen la materia orgánica y agotan el oxígeno disuelto): concepto de demanda química/bioquímica de oxígeno, en cualquier texto de tratamiento de aguas."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "El bagazo del agave como cama para cultivar hongos",
+        "Biogás: microbios que convierten desechos en gas para cocinar",
+        "Cómo se hace el tequila por dentro: la levadura y el agave cocido"
+      ],
+      "remaster_de": "lista vieja #9"
+    },
+    {
+      "id": "resistencia-antibioticos",
+      "titulo": "Resistencia a antibióticos: el antibiótico escoge a las más duras (39 M de muertes 2025–2050)",
+      "serie": "Shot Ambiental",
+      "numero": 2,
+      "estado": "guion",
+      "carpeta": "shots/amb-02-resistencia",
+      "rama": "claude/lucid-bardeen-igyhx5",
+      "fuentes": [
+        "GBD 2021 Antimicrobial Resistance Collaborators (proyecto GRAM, IHME y Universidad de Oxford). \"Global burden of bacterial antimicrobial resistance 1990–2021: a systematic analysis with forecasts to 2050\". *The Lancet* 404(10459): 1199–1226 (2024). 39 millones de muertes atribuibles a RAM entre 2025 y 2050; 1.14 M (2021) → 1.91 M (2050) muertes directas al año; 4.71 M → 8.22 M asociadas. Nota de prensa de la Universidad de Oxford, 17 sep 2024.",
+        "O'Neill, J. (presidente). *Antimicrobial Resistance: Tackling a Crisis for the Health and Wealth of Nations* (Review on Antimicrobial Resistance, Reino Unido, dic 2014): 10 millones de muertes al año en 2050 si no se actúa.",
+        "Fleming, A. \"Penicillin\". Conferencia Nobel, 11 dic 1945 (nobelprize.org): la advertencia de que dosis insuficientes podían volver resistentes a los microbios.",
+        "OMS, nota descriptiva \"Resistencia a los antimicrobianos\" (qué puede hacer cada persona: solo con receta, seguir indicaciones, no compartir ni usar sobrantes).",
+        "Transferencia horizontal de genes de resistencia (conjugación, plásmidos) entre bacterias de especies distintas: CDC, \"About Antimicrobial Resistance\"; cualquier texto de microbiología.",
+        "Tiempo de duplicación de ~20 min de *E. coli* en medio rico de laboratorio: Sezonov, G. et al. *J. Bacteriol.* 189: 8746–8749 (2007). Es en el laboratorio; en el cuerpo es más lento (por eso el mudo dice \"regla\" y \"tiempo simulado\")."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "¿Por qué hay que terminarse el antibiótico? (lo que dicen los estudios nuevos)",
+        "Antibióticos en la ganadería y el agua de los ríos",
+        "Teixobactina: el antibiótico que salió de la tierra (iChip)"
+      ],
+      "remaster_de": "lista vieja #12"
+    },
+    {
+      "id": "bioplasticos-pla",
+      "titulo": "La verdad incómoda de los bioplásticos (PLA: compostaje industrial a 58 °C, reciclaje y costo)",
+      "serie": "Shot Ambiental",
+      "numero": 3,
+      "estado": "guion",
+      "carpeta": "shots/amb-03-bioplasticos",
+      "rama": "claude/lucid-bardeen-igyhx5",
+      "fuentes": [
+        "Bagheri, A. R., Laforsch, C., Greiner, A. y Agarwal, S. \"Fate of so-called biodegradable polymers in seawater and freshwater\". *Global Challenges* 1(4): 1700048 (2017). doi:10.1002/gch2.201700048 — un año a 25 °C en agua de mar y agua dulce artificiales: PLA, PCL y PET sin degradación medible.",
+        "Compostaje industrial a 58 °C: ISO 20200 (desintegración en condiciones de compostaje simuladas, 58 °C, 90 días); *Scientific Reports* (2025) prueba productos comerciales a 58 °C según ISO 20200; tesis de la Universidad de Manitoba: PLA mineralizado por completo a 58 °C en 45 días.",
+        "PLA en composta casera: *Environmental Science: Processes & Impacts* (RSC, 2024, doi:10.1039/d3em00534h): el PLA no se degrada en composta casera.",
+        "Temperatura de transición vítrea del PLA ≈ 55–65 °C: Farah, S., Anderson, D. G. y Langer, R. \"Physical and mechanical properties of PLA, and their functions in widespread applications\". *Advanced Drug Delivery Reviews* 107: 367–392 (2016).",
+        "Reciclaje: Petcore (2008) advirtió que el PLA en el PET reciclado lo daña; Wageningen Food & Biobased Research (con TotalEnergies Corbion) encontró efecto despreciable con ≤ 1 % de PLA. Por eso la voz dice \"si se cuela en mucha cantidad\".",
+        "Producción del PLA (fermentación del azúcar a ácido láctico y polimerización): NatureWorks / literatura general de PLA.",
+        "Costo: varias fuentes coinciden en que el PLA cuesta más que los plásticos de petróleo; las cifras van de ~1.5–2 veces (JRC, Comisión Europea, citado por terceros) a \"más de 3 veces\". **Por eso la voz y el dibujo no dan un número.**"
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Empaques de micelio: el unicel que se cultiva",
+        "Ideonella sakaiensis: la bacteria que come PET",
+        "Microplásticos en tu sangre: qué se sabe y qué no"
+      ],
+      "remaster_de": "lista vieja #13"
+    },
+    {
+      "id": "gusano-barrenador",
+      "titulo": "El gusano barrenador y las moscas estériles (Curazao 1954 → Chiapas 2024 → Metapa 2026)",
+      "serie": "Shot Ambiental",
+      "numero": 4,
+      "estado": "guion",
+      "carpeta": "shots/amb-04-barrenador",
+      "rama": "claude/lucid-bardeen-igyhx5",
+      "fuentes": [
+        "USDA APHIS, \"New World Screwworm\" y *Ready Reference Guide: Sterile Insect Technique* (aphis.usda.gov): biología (la hembra se aparea una vez; huevos en heridas; larvas en tejido vivo), Curazao 1954, EE. UU. libre en 1966, barrera en Panamá con COPEG.",
+        "USDA APHIS, \"New World Screwworm Outbreak in Central America and Mexico\", y Congressional Research Service R49124 (2026): la plaga rebasó la barrera desde 2023 por varios factores y llegó al sur de México en nov 2024.",
+        "SENASICA (Gobierno de México), informes del gusano barrenador del ganado (2025–2026): primer caso detectado el 21 nov 2024 en un bovino en el PVIF de Catazajá, Chiapas.",
+        "Inauguración de la planta de Metapa de Domínguez, Chiapas, el 27 jun 2026 (Expansión Política, UnoTV, Por Esto, N+, 27 jun 2026): meta de 100 millones de moscas estériles por semana para finales de 2026.",
+        "Knipling, E. F. \"Possibilities of insect control or eradication through the use of sexually sterile males\". *Journal of Economic Entomology* 48(4): 459–462 (1955): el modelo del mudo.",
+        "Baumhover, A. H. et al. \"Screw-worm control through release of sterilized flies\". *Journal of Economic Entomology* 48: 462–466 (1955): el experimento de Curazao.",
+        "CDC, \"Myiasis\" / \"New World Screwworm\": también infesta mascotas y personas."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Mosquitos con Wolbachia contra el dengue",
+        "Cómo se esteriliza una mosca (radiación por dentro)",
+        "La mosca del Mediterráneo y la barrera de Chiapas"
+      ],
+      "remaster_de": "lista vieja #21"
+    },
+    {
+      "id": "adn-viral",
+      "titulo": "Tu ADN no es completamente humano: retrovirus endógenos (~8 %) y la sincitina de la placenta",
+      "serie": "Shot Científico",
+      "numero": 3,
+      "estado": "guion",
+      "carpeta": "shots/cie-03-adn-viral",
+      "rama": "claude/lucid-bardeen-igyhx5",
+      "fuentes": [
+        "International Human Genome Sequencing Consortium (Lander et al.). \"Initial sequencing and analysis of the human genome\". *Nature* 409: 860–921 (2001): los elementos con LTR (retrovirus endógenos y parientes) son ~8 % del genoma.",
+        "Mi, S. et al. \"Syncytin is a captive retroviral envelope protein involved in human placental morphogenesis\". *Nature* 403: 785–789 (2000). Genetics Institute, Cambridge, Massachusetts.",
+        "Blond, J.-L. et al. *Journal of Virology* 74: 3321–3329 (2000): la envoltura de HERV-W es fusogénica (sincitina-1).",
+        "Dupressoir, A. et al. \"Syncytin-A knockout mice demonstrate the critical role in placentation of a fusogenic, endogenous retrovirus-derived, envelope gene\". *PNAS* 106(29): 12127–12132 (2009): embriones sin sincitina-A mueren entre los días 11.5 y 13.5.",
+        "Lavialle, C. et al. \"Paleovirology of 'syncytins', retroviral *env* genes exapted for a role in placentation\". *Philosophical Transactions of the Royal Society B* 368: 20120507 (2013): capturas independientes en primates, roedores, lagomorfos, carnívoros, rumiantes y otros.",
+        "Frecuencia cardiaca fetal normal 110–160 latidos por minuto (ACOG), para el latido del mudo."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Tus mitocondrias fueron bacterias (endosimbiosis)",
+        "El gen saltarín: transposones y el maíz de Barbara McClintock",
+        "Arc: el gen de la memoria que viene de un virus"
+      ],
+      "remaster_de": "lista vieja #8"
+    }
+  ]
+}

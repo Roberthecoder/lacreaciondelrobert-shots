@@ -1,6 +1,7 @@
 # Ambiental #01 · El caballito que deja 12 litros (vinazas del tequila)
 
 - **Serie:** Shot Ambiental · **Logo:** química (matraz) · **Badge:** #01 · remasteriza el viejo #9 (era improvisado).
+- **Estado (27 oct 2026):** Robert en pantalla y `publicacion.md` listos · borrador del mudo en el Release "Borradores · claude/lucid-bardeen-igyhx5" · voz narrada pendiente de aprobación de Robert.
 - **Formato:** N2 "El número" + un momento N1 "Por dentro" (Lupa de rayos X en el río). Gemelo mudo: M1 "La música son los datos".
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre un caballito que se ve en pantalla.
 - **Duración:** voz ≈ 949 caracteres (≈ 58 s con `velocidad` 1.065) + cierre 3.5 s → 61–62 s. **La voz no se ha generado:** espera tu aprobación (~950 créditos).

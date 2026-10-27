@@ -1,6 +1,7 @@
 # Ambiental #03 · El vaso "compostable" que sigue en tu jardín (bioplásticos)
 
 - **Serie:** Shot Ambiental · **Logo:** química (matraz) · **Badge:** #03 · remasteriza el viejo #13 (ordenado en 3 problemas, sin muletillas).
+- **Estado (27 oct 2026):** Robert en pantalla y `publicacion.md` listos · borrador del mudo en el Release "Borradores · claude/lucid-bardeen-igyhx5" · voz narrada pendiente de aprobación de Robert.
 - **Formato:** N3 "Capítulos y medidores" (3 problemas: calor, reciclaje, costo) con un momento N1 (Lupa de rayos X a la cadena de PLA). Gemelo mudo: M2 "¿Por qué no…?".
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y" sobre un vaso que cae en pantalla ("dice compostable… necesita una fábrica").
 - **Duración:** voz ≈ 938 caracteres (≈ 58 s con `velocidad` 1.065) + cierre 3.5 s → 61–62 s. **La voz no se ha generado** (~940 créditos).

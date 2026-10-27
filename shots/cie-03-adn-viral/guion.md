@@ -1,6 +1,7 @@
 # Científico #03 · Tu ADN no es completamente humano (retrovirus endógenos y la placenta)
 
 - **Serie:** Shot Científico · **Logo:** biología (ADN), porque el tema es genético (encaja mejor que física) · **Badge:** #03 · remasteriza el viejo #8.
+- **Estado (27 oct 2026):** Robert en pantalla y `publicacion.md` listos · borrador del mudo en el Release "Borradores · claude/lucid-bardeen-igyhx5" · voz narrada pendiente de aprobación de Robert.
 - **Formato:** N4 "La imagen que se llena" (tu genoma en 600 cuadritos) + N1 "Por dentro" (Lupa de rayos X a la placenta). Gemelo mudo: M4 "Ciclo".
 - **Gancho (de los 7 aprobados):** #3 "Tu cuerpo en una imagen" ("Esto es tu ADN en cuadritos…").
 - **Duración:** voz ≈ 945 caracteres (≈ 58 s con `velocidad` 1.065) + cierre 3.5 s → 61–62 s. **La voz no se ha generado** (~945 créditos).
