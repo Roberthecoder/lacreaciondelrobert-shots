@@ -1,4 +1,4 @@
-// Fungi Mati #02 · ¿Qué es un hongo? — versión NARRADA (N1 "Por dentro") y gemelo MUDO (M4 "Ciclo").
+// Fungi Mati #01 · ¿Qué es un hongo? — versión NARRADA (N1 "Por dentro") y gemelo MUDO (M4 "Ciclo").
 // Guion y fuentes: guion.md. El dibujo es esquemático (escala aproximada).
 const AVS = (n) => 'assets/stickers/' + n + '.png';
 const SOMBRA = KSOMBRA;
@@ -205,7 +205,7 @@ function HongoNarrado() {
       <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.O - 0.1} texto="Es *la única parte* que alcanzas a ver." />
 
       <Robert T={T} apariciones={[[0, 3.4, 'avatar_11_sorprendido', 'gancho'], [9, 12.2, 'avatar_13_senalando_arriba', 'bajo-der'], [18, 21.2, 'avatar_07_pensativo_puno', 'bajo-der'], [22.7, 25.2, 'avatar_06_pensativo_menton', 'arriba-der'], [27.5, 31, 'avatar_02_apuntando_camara', 'presentador-bajo'], [41.4, 43.4, 'avatar_11_sorprendido', 'bajo-der'], [44.5, 47.2, 'avatar_04_bajando_lentes', 'bajo-der'], [53.5, 57.4, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der']]} />
-      <MarcaAgua T={T} tema="biologia" num="02" hasta={K.O} />
+      <MarcaAgua T={T} tema="biologia" num="01" hasta={K.O} />
       <CierreMarca T={T} at={K.O} tema="biologia" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
@@ -277,7 +277,7 @@ function HongoCiclo() {
       <Chip T={T} at={K.S + 0.5} until={K.Ot - 0.2} texto="esporas" y={1530} x={400} borde={KC.gold} tam={44} />
       <Escala T={T} z={macro ? zC : 1} pxPorMm={macro ? PX_MACRO : PX_MICRO} />
       <Robert T={T} apariciones={[[0, 3.5, 'avatar_11_sorprendido', 'gancho'], [8, 11, 'avatar_13_senalando_arriba', 'bajo-der'], [16.5, 19.5, 'avatar_07_pensativo_puno', 'arriba-der'], [25, 28, 'avatar_11_sorprendido', 'arriba-der'], [31, 34, 'avatar_06_pensativo_menton', 'arriba-der'], [36.5, 40.5, 'avatar_02_apuntando_camara', 'presentador-bajo'], [48.2, 51.5, 'avatar_04_bajando_lentes', 'arriba-der'], [54.5, 57.8, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der']]} />
-      <MarcaAgua T={T} tema="biologia" num="02" hasta={K.F} />
+      <MarcaAgua T={T} tema="biologia" num="01" hasta={K.F} />
       <CierreMarca T={T} at={K.F} tema="biologia" robert="assets/stickers/avatar_02_apuntando_camara.png" frase="El ciclo de un champiñón" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>

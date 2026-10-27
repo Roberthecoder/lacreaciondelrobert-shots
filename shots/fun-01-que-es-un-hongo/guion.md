@@ -1,6 +1,6 @@
-# Fungi Mati #02 · ¿Qué es un hongo? (remasterizado del viejo #2, de 181 s a 58 s)
+# Fungi Mati #01 · ¿Qué es un hongo? (remasterizado del viejo #2, de 181 s a 58 s)
 
-- **Serie:** Shot Fungi Mati · **Logo:** `logo_biologia.svg` (ADN) · **Badge:** #02.
+- **Serie:** Shot Fungi Mati · **Logo:** `logo_biologia.svg` (ADN) · **Badge:** #01.
 - **Formato:** N1 "Por dentro" (macro → micro → macro). **Gemelo mudo:** M4 "Ciclo" (construido).
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el champiñón que se ve en pantalla.
 - **Duración:** voz ≈ 924 caracteres (~58 s con ×1.065) + cierre 3.5 s → 61–62 s. Base sin voz: 61.1 s. Mudo: 61.5 s.

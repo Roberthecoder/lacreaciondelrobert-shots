@@ -1,4 +1,4 @@
-# Publicación · Fungi Mati #02 ¿Qué es un hongo?
+# Publicación · Fungi Mati #01 ¿Qué es un hongo?
 
 Textos listos para copiar (botón de copiar en cada bloque). Plantilla y reglas: `motor/plantillas/publicacion.md`.
 

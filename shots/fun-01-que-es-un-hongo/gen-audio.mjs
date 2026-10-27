@@ -1,4 +1,4 @@
-// gen-audio.mjs — música y efectos de Fungi Mati #02 (¿Qué es un hongo?). Sin costo: todo se sintetiza.
+// gen-audio.mjs — música y efectos de Fungi Mati #01 (¿Qué es un hongo?). Sin costo: todo se sintetiza.
 // Uso: node gen-audio.mjs                      → assets/mezcla.wav (base narrada: cama grave + efectos, sin voz)
 //      node gen-audio.mjs <archivo.dc.html> <salida.wav>   (narrar.mjs y el workflow lo llaman así)
 // Narrada: cama grave continua SIN golpe (la voz manda) + un efecto por cada cosa que pasa en pantalla.
