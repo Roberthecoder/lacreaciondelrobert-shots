@@ -14,6 +14,7 @@ Cada serie lleva su numeración desde #01. Los videos viejos se quedan publicado
 | **Shot IA** | Inteligencia artificial: la defendemos y la criticamos con datos | IA (brillitos) | N2, N6, M5 |
 | **Shot Científico** *(propuesta: "¿Y eso por qué?")* | Ciencia general de lo cotidiano y lo increíble: el cuerpo, la casa, el espacio | física (átomo) o el del tema | N1, N5, M3 |
 | **Shot Químico** *(propuesta: "Reacción en cadena")* | Química de la cocina, la limpieza y el laboratorio, con demostraciones seguras | química (matraz) | N3, N5, M2 |
+| **Shot Robert** *(nueva, 27 oct 2026)* | Datos curiosos de Robert: su vida, su historia y su forma de ser, en primera persona. Guía y datos confirmados en `series/shot-robert/` | sin tema (`logo_color.svg`) o el del tema | N3, N4, N5, N6, M4, M5 |
 
 Asignación de lo ya hecho: shot 002 (moho del pan) → **Fungi Mati #01**; shot 003 (semillas que viajaron a la Luna) → **Científico #01**.
 

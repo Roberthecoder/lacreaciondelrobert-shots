@@ -4,6 +4,21 @@ Lee primero `ESTADO.md` (qué está hecho y qué sigue) y `CANAL.md` (series, nu
 
 Videos verticales 1080×1920 de divulgación científica en español de México. El usuario no programa: respuestas en español, breves y sin jerga.
 
+## Pedidos cortos (Robert escribe una línea en una sesión de nube)
+Robert abre una sesión en claude.ai/code con este repositorio y escribe algo corto. Interprétalo así, sin pedirle más datos:
+- **"Hazme un lote de <serie>"** (o "5 shots de <serie>", "un shot de <serie>"): sigue la plantilla de la sección 2 de
+  `PRODUCCION_NUBE.md` con 5 shots (o los que diga), numerados desde el siguiente número libre de esa serie
+  (búscalo en `shots/`, `historial/` y en las ramas remotas). Series: Biotecnológico, Fungi Mati, Ambiental, IA,
+  Científico, Químico y **Robert** (datos curiosos de Robert: lee antes `series/shot-robert/CLAUDE.md`).
+  Antes de empezar, revisa con `git branch -r` que no haya otra rama trabajando la misma serie; si la hay, avísale a Robert
+  y propón otra serie.
+- **"Continúa el lote A/B/C/D"**: haz merge de `origin/remaster/lote-<letra>` en tu rama, revisa qué falta en cada shot
+  (Robert en pantalla, `publicacion.md`, historial), termínalo y haz push.
+- **"Apruebo la voz de <shot>"**: pon `"voz_aprobada": true` en el `narracion.json` de ese shot y haz push.
+- **"Junta el lote X a main"**: sigue la sección 6 de `PRODUCCION_NUBE.md`.
+Siempre: no renderices MP4 completos (lo hace GitHub con cada push), no publiques nada en redes, no uses la API de Claude
+ni generes voz sin aprobación. Al terminar dale a Robert la lista de shots y el enlace a su Release de borradores.
+
 ## Reglas de contenido
 - Cada shot es un tema nuevo; nunca repetir un tema ni uno casi igual. **Banco de temas** (`historial/temas.json`):
   - **Antes de elegir tema:** `git fetch origin` y `node historial/consolidar.mjs --buscar "palabras del tema"` (busca en el banco y en lo que otras sesiones ya apartaron en sus ramas). Los `derivados` de cada tema son buenas ideas para el siguiente.
