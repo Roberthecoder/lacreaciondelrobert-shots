@@ -1,0 +1,304 @@
+<title>Sala de Shots</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  /* Sala de proyección: una tira de avance por serie arriba, luego la cuadrícula vertical 9:16 de los shots;
+     al tocar uno se abre el reproductor con su ficha y el botón de aprobar la voz. Colores de la marca: rosa, amarillo, menta, cian. */
+  :root {
+    --bg: #f3f6f7; --panel: #ffffff; --ink: #121417; --muted: #5d6870; --line: #dbe3e7;
+    --rosa: #e8458b; --amarillo: #f2b705; --menta: #12a88a; --cian: #1590c9;
+    --ok: #0e8a6f; --warn: #b26a00; --chip: #e9eff2;
+    --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+    --f-mono: "JetBrains Mono", ui-monospace, monospace;
+    --r: 14px;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0e0f12; --panel: #17191e; --ink: #f1f3f5; --muted: #9aa5ad; --line: #2a2e35;
+    --rosa: #ff5fa2; --amarillo: #ffc93c; --menta: #3dd6b3; --cian: #45b8ee;
+    --ok: #3dd6b3; --warn: #ffc93c; --chip: #22262d; color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #0e0f12; --panel: #17191e; --ink: #f1f3f5; --muted: #9aa5ad; --line: #2a2e35;
+    --rosa: #ff5fa2; --amarillo: #ffc93c; --menta: #3dd6b3; --cian: #45b8ee;
+    --ok: #3dd6b3; --warn: #ffc93c; --chip: #22262d; color-scheme: dark; }
+
+  body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 48px; display: grid; gap: 22px; }
+  h1, h2 { font-family: var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(28px, 4.2vw, 44px); font-weight: 800; }
+  h1 span { color: var(--rosa); }
+  .lead { margin: 6px 0 0; color: var(--muted); max-width: 62ch; }
+  .lead b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 10px; }
+  .serie { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; display: grid; gap: 8px; }
+  .serie-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .serie-top strong { font-family: var(--f-display); font-weight: 700; font-size: 15px; }
+  .serie-top span { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 13px; }
+  .track { height: 8px; border-radius: 4px; background: var(--chip); display: flex; overflow: hidden; }
+  .track i { display: block; height: 100%; }
+  .meta-note { color: var(--muted); font-size: 13px; margin: 0; }
+
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .chip { font: inherit; font-size: 13px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .chip:focus-visible, .card:focus-visible, button:focus-visible { outline: 3px solid var(--cian); outline-offset: 2px; }
+  .search { flex: 1 1 220px; min-width: 0; font: inherit; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(46%, 168px), 1fr)); gap: 14px; }
+  .card { all: unset; cursor: pointer; display: grid; gap: 8px; min-width: 0; }
+  .poster { position: relative; aspect-ratio: 9 / 16; max-width: 100%; border-radius: var(--r); overflow: hidden; background: var(--chip); border: 1px solid var(--line); }
+  .poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .poster .play { position: absolute; inset: auto 10px 10px auto; width: 34px; height: 34px; border-radius: 50%; background: rgba(0,0,0,.55); display: grid; place-items: center; }
+  .poster .play::after { content: ""; border-left: 11px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
+  .poster .dur { position: absolute; left: 8px; bottom: 10px; font: 12px var(--f-mono); color: #fff; background: rgba(0,0,0,.55); padding: 2px 6px; border-radius: 6px; }
+  .poster .none { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 13px; text-align: center; padding: 12px; }
+  .pill { position: absolute; top: 8px; left: 8px; font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 999px; background: var(--panel); color: var(--ink); }
+  .pill[data-e="Narrado listo"] { background: var(--menta); color: #0b1d18; }
+  .pill[data-e="Por revisar"] { background: var(--amarillo); color: #241a00; }
+  .pill[data-e="Voz aprobada"] { background: var(--cian); color: #04131c; }
+  .card h3 { font-family: var(--f-display); font-weight: 700; font-size: 15px; line-height: 1.2; margin: 0; overflow-wrap: anywhere; }
+  .card small { color: var(--muted); font-size: 12px; }
+  .empty { color: var(--muted); padding: 40px 0; text-align: center; grid-column: 1 / -1; }
+
+  dialog { border: 0; padding: 0; background: transparent; max-width: min(960px, 100vw - 24px); width: 100%; }
+  dialog::backdrop { background: rgba(6, 8, 10, .78); }
+  .player { background: var(--panel); color: var(--ink); border-radius: 18px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); }
+  .player video { width: 100%; aspect-ratio: 9 / 16; background: #000; display: block; max-height: calc(100vh - 40px); }
+  .info { padding: 20px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+  .info h2 { font-size: 24px; font-weight: 800; }
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; }
+  .kv dt { color: var(--muted); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .key { font-family: var(--f-mono); font-size: 13px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .btn { font: inherit; font-weight: 700; border: 0; border-radius: 10px; padding: 10px 16px; cursor: pointer; background: var(--chip); color: var(--ink); text-decoration: none; }
+  .btn.go { background: var(--rosa); color: #fff; }
+  .btn[disabled] { opacity: .5; cursor: default; }
+  .msg { font-size: 14px; color: var(--ok); min-height: 1.3em; margin: 0; }
+  .close { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(0,0,0,.55); color: #fff; font-size: 20px; cursor: pointer; }
+  .holder { position: relative; }
+  .pedir { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: grid; gap: 12px; }
+  .pedir h2 { font-size: 20px; font-weight: 800; }
+  .pedir-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pedir select, .pedir textarea { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 0; }
+  .pedir textarea { width: 100%; min-height: 84px; resize: vertical; box-sizing: border-box; }
+  .pedidos { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .pedidos li { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; align-items: baseline; font-size: 14px; padding: 8px 0; border-top: 1px solid var(--line); }
+  .pedidos .est { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--chip); white-space: nowrap; }
+  .pedidos .est[data-e="en proceso"] { background: var(--cian); color: #04131c; }
+  .pedidos .est[data-e="listo"] { background: var(--menta); color: #0b1d18; }
+  .pedidos .est[data-e="pregunta"] { background: var(--amarillo); color: #241a00; }
+  .pedidos .txt { overflow-wrap: anywhere; }
+  .pedidos .res { grid-column: 2; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+  @media (max-width: 720px) { .player { grid-template-columns: 1fr; } .player video { max-height: 62vh; } }
+  @media (prefers-reduced-motion: no-preference) { .card .poster { transition: transform .18s ease-out; } .card:hover .poster { transform: translateY(-3px); } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Sala de <span>Shots</span></h1>
+    <p class="lead" id="lead">Cargando tus shots…</p>
+  </header>
+
+  <section class="pedir" aria-label="Pedir un video">
+    <h2>Pedir un video</h2>
+    <div class="pedir-row">
+      <select id="p-tipo" aria-label="Tipo de video">
+        <option value="shot">Shot de una serie (61–62 s)</option>
+        <option value="largo">Video largo horizontal (8–15 min)</option>
+        <option value="libre">Video libre o experimental</option>
+        <option value="robert">Shot de Robert (sobre mí)</option>
+      </select>
+      <select id="p-serie" aria-label="Serie">
+        <option>Fungi Mati</option><option>Biotecnológico</option><option>Ambiental</option><option>Científico</option><option>Químico</option><option>IA</option>
+      </select>
+    </div>
+    <textarea id="p-idea" placeholder="Tu idea en tus palabras: el tema, el gancho, lo que quieres que se vea, fotos o datos que ya tienes…" aria-label="Tu idea"></textarea>
+    <div class="pedir-row"><button class="btn go" id="p-enviar" type="button">Pedir video</button></div>
+    <p class="msg" id="p-msg"></p>
+    <ul class="pedidos" id="p-lista"></ul>
+  </section>
+
+  <section aria-label="Avance hacia 365 por serie">
+    <div class="meta" id="meta"></div>
+    <p class="meta-note">Cada barra es una serie completa de 365 shots: menta, narrados; amarillo, por revisar o en producción. La serie Robert es manual y no cuenta para la meta.</p>
+  </section>
+
+  <section aria-label="Shots">
+    <div class="bar" id="filtros">
+      <button class="chip" data-f="" aria-pressed="true">Todos</button>
+      <button class="chip" data-f="Por revisar" aria-pressed="false">Por revisar</button>
+      <button class="chip" data-f="Voz aprobada" aria-pressed="false">Voz aprobada</button>
+      <button class="chip" data-f="Narrado listo" aria-pressed="false">Narrado listo</button>
+      <button class="chip" data-f="En producción" aria-pressed="false">En producción</button>
+      <input class="search" id="q" type="search" placeholder="Buscar tema, serie o clave" aria-label="Buscar shots">
+    </div>
+    <div class="grid" id="grid"><p class="empty">Aquí aparecen tus shots en cuanto cargan. Si no aparece ninguno, pide a Claude «actualiza el panel».</p></div>
+  </section>
+</div>
+
+<dialog id="dlg" aria-label="Reproductor">
+  <div class="player">
+    <div class="holder"><video id="vid" controls playsinline preload="metadata"></video><button class="close" id="cerrar" aria-label="Cerrar">×</button></div>
+    <div class="info">
+      <h2 id="d-titulo">—</h2>
+      <dl class="kv">
+        <dt>Serie</dt><dd id="d-serie">—</dd>
+        <dt>Estado</dt><dd id="d-estado">—</dd>
+        <dt>Versión</dt><dd id="d-version">—</dd>
+        <dt>Voz</dt><dd id="d-chars">—</dd>
+        <dt>Clave</dt><dd class="key" id="d-key">—</dd>
+      </dl>
+      <div class="actions">
+        <button class="btn go" id="aprobar" type="button">Aprobar voz</button>
+        <a class="btn" id="hd" target="_blank" rel="noopener" href="#">Video en calidad completa</a>
+      </div>
+      <p class="msg" id="msg"></p>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const SERIES = ['Fungi Mati', 'Biotecnológico', 'Ambiental', 'Científico', 'Químico', 'IA'];
+  const GOAL = 365;
+  const S = { shots: [], aprob: {}, filtro: '', q: '', actual: null, db: null };
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => new Intl.NumberFormat('es-MX').format(n);
+  const estadoDe = (s) => (S.aprob[s.id] && s.estado === 'Por revisar') ? 'Voz aprobada' : s.estado;
+  const mmss = (t) => { t = Math.round(t || 0); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
+
+  function render() {
+    const shots = S.shots;
+    const listos = shots.filter((s) => estadoDe(s) === 'Narrado listo').length;
+    const revisar = shots.filter((s) => estadoDe(s) === 'Por revisar').length;
+    $('lead').innerHTML = '';
+    if (!shots.length) { $('lead').textContent = 'Todavía no hay shots en el panel.'; }
+    else {
+      const p = $('lead');
+      const b = (t) => { const e = document.createElement('b'); e.textContent = t; return e; };
+      p.append('Tienes ', b(fmt(shots.length)), ' shots: ', b(fmt(listos)), ' ya narrados y ', b(fmt(revisar)), ' esperando que los veas para aprobar su voz.');
+    }
+    const meta = $('meta'); meta.replaceChildren();
+    SERIES.forEach((serie) => {
+      const mine = shots.filter((s) => s.serie === serie);
+      const ok = mine.filter((s) => estadoDe(s) === 'Narrado listo').length;
+      const card = document.createElement('div'); card.className = 'serie';
+      const top = document.createElement('div'); top.className = 'serie-top';
+      const n = document.createElement('strong'); n.textContent = serie;
+      const c = document.createElement('span'); c.textContent = `${fmt(mine.length)} / ${GOAL}`;
+      top.append(n, c);
+      const tr = document.createElement('div'); tr.className = 'track'; tr.setAttribute('role', 'img');
+      tr.setAttribute('aria-label', `${serie}: ${mine.length} de ${GOAL}, ${ok} narrados`);
+      const a = document.createElement('i'); a.style.width = `${100 * ok / GOAL}%`; a.style.background = 'var(--menta)';
+      const z = document.createElement('i'); z.style.width = `${100 * (mine.length - ok) / GOAL}%`; z.style.background = 'var(--amarillo)';
+      tr.append(a, z); card.append(top, tr); meta.append(card);
+    });
+    const grid = $('grid'); grid.replaceChildren();
+    const q = S.q.toLowerCase();
+    const vis = shots.filter((s) => (!S.filtro || estadoDe(s) === S.filtro) && (!q || `${s.id} ${s.serie} ${s.titulo}`.toLowerCase().includes(q)))
+      .sort((x, y) => (SERIES.indexOf(x.serie) - SERIES.indexOf(y.serie)) || ((x.numero ?? -1) - (y.numero ?? -1)));
+    if (!vis.length) { const e = document.createElement('p'); e.className = 'empty'; e.textContent = shots.length ? 'Ningún shot coincide con el filtro.' : 'Aquí aparecen tus shots en cuanto cargan.'; grid.append(e); return; }
+    vis.forEach((s) => {
+      const card = document.createElement('button'); card.className = 'card'; card.type = 'button';
+      const po = document.createElement('div'); po.className = 'poster';
+      if (s.poster) { const im = document.createElement('img'); im.loading = 'lazy'; im.alt = ''; im.src = '/_blob/' + s.poster; po.append(im); }
+      else { const no = document.createElement('div'); no.className = 'none'; no.textContent = 'Sin video todavía'; po.append(no); }
+      const pill = document.createElement('span'); pill.className = 'pill'; pill.dataset.e = estadoDe(s); pill.textContent = estadoDe(s); po.append(pill);
+      if (s.video) { const pl = document.createElement('span'); pl.className = 'play'; po.append(pl); const d = document.createElement('span'); d.className = 'dur'; d.textContent = mmss(s.dur); po.append(d); }
+      const h = document.createElement('h3'); h.textContent = s.titulo;
+      const sm = document.createElement('small'); sm.textContent = `${s.serie}${s.numero != null ? ' #' + String(s.numero).padStart(2, '0') : ''}`;
+      card.append(po, h, sm);
+      card.addEventListener('click', () => abrir(s));
+      grid.append(card);
+    });
+  }
+
+  function abrir(s) {
+    S.actual = s;
+    const v = $('vid');
+    if (s.video) { v.src = '/_blob/' + s.video; v.poster = s.poster ? '/_blob/' + s.poster : ''; } else { v.removeAttribute('src'); v.load(); }
+    $('d-titulo').textContent = s.titulo;
+    $('d-serie').textContent = `${s.serie}${s.numero != null ? ' #' + String(s.numero).padStart(2, '0') : ''}`;
+    $('d-estado').textContent = estadoDe(s);
+    $('d-version').textContent = s.kind === 'narrado' ? 'Narrada con tu voz' : (s.video ? 'Revisión sin voz (música y subtítulos)' : 'Sin video todavía');
+    $('d-chars').textContent = s.caracteres ? `${fmt(s.caracteres)} caracteres (~${fmt(s.caracteres)} créditos de ElevenLabs)` : '—';
+    $('d-key').textContent = s.id;
+    const hd = $('hd'); if (s.hd) { hd.href = s.hd; hd.hidden = false; } else { hd.hidden = true; }
+    pintarAprobar();
+    $('msg').textContent = '';
+    $('dlg').showModal();
+  }
+  function pintarAprobar() {
+    const s = S.actual; const b = $('aprobar'); if (!s) return;
+    const e = estadoDe(s);
+    b.hidden = !(e === 'Por revisar' || (S.aprob[s.id] && s.estado === 'Por revisar'));
+    b.disabled = !S.db;
+    b.textContent = S.aprob[s.id] ? 'Quitar aprobación' : 'Aprobar voz';
+    $('d-estado').textContent = e;
+  }
+  $('aprobar').addEventListener('click', async () => {
+    const s = S.actual; if (!s || !S.db) return;
+    const ref = S.db.doc('aprobaciones/' + s.id);
+    $('aprobar').disabled = true;
+    try {
+      if (S.aprob[s.id]) { await ref.delete(); $('msg').textContent = 'Aprobación quitada.'; }
+      else { await ref.set({ shot: s.id, aprobado: true, at: new Date().toISOString(), procesado: false }); $('msg').textContent = 'Aprobada. La próxima sesión de nube genera la voz y el narrado aparece aquí.'; }
+    } catch (e) { $('msg').textContent = 'No se pudo guardar. Inténtalo otra vez en un momento.'; }
+    $('aprobar').disabled = false;
+  });
+  $('cerrar').addEventListener('click', () => $('dlg').close());
+  $('dlg').addEventListener('close', () => { const v = $('vid'); v.pause(); });
+  $('dlg').addEventListener('click', (e) => { if (e.target === $('dlg')) $('dlg').close(); });
+  document.querySelectorAll('#filtros .chip').forEach((c) => c.addEventListener('click', () => {
+    S.filtro = c.dataset.f; document.querySelectorAll('#filtros .chip').forEach((x) => x.setAttribute('aria-pressed', String(x === c))); render();
+  }));
+  $('q').addEventListener('input', (e) => { S.q = e.target.value; render(); });
+
+  const TIPOS = { shot: 'Shot', largo: 'Largo', libre: 'Libre', robert: 'Robert' };
+  S.pedidos = [];
+  const pintarPedidos = () => {
+    const ul = $('p-lista'); ul.replaceChildren();
+    S.pedidos.slice(0, 20).forEach((p) => {
+      const li = document.createElement('li');
+      const e = document.createElement('span'); e.className = 'est'; e.dataset.e = p.estado || 'pendiente'; e.textContent = p.estado || 'pendiente';
+      const t = document.createElement('span'); t.className = 'txt'; t.textContent = `${TIPOS[p.tipo] || p.tipo}${p.tipo === 'shot' && p.serie ? ' · ' + p.serie : ''}: ${p.idea}`;
+      li.append(e, t);
+      if (p.resultado) { const r = document.createElement('span'); r.className = 'res'; r.textContent = p.resultado; li.append(r); }
+      ul.append(li);
+    });
+  };
+  $('p-tipo').addEventListener('change', () => { $('p-serie').hidden = $('p-tipo').value !== 'shot'; });
+  $('p-enviar').addEventListener('click', async () => {
+    const idea = $('p-idea').value.trim();
+    if (!idea) { $('p-msg').textContent = 'Escribe tu idea primero.'; return; }
+    if (!S.db) { $('p-msg').textContent = 'La base del panel no está disponible en esta vista.'; return; }
+    $('p-enviar').disabled = true;
+    try {
+      const tipo = $('p-tipo').value;
+      await S.db.collection('pedidos').add({ tipo, serie: tipo === 'shot' ? $('p-serie').value : null, idea, estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
+      $('p-idea').value = ''; $('p-msg').textContent = 'Pedido enviado. La próxima sesión de nube lo toma (cada 4 h, o al instante si abres una sesión y escribes «atiende mis pedidos»).';
+    } catch (e) { $('p-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
+    $('p-enviar').disabled = false;
+  });
+
+  render();
+  (async () => {
+    const db = await claude.use('db');
+    if (!db) { $('lead').textContent = 'No se pudo abrir la base del panel en esta vista.'; return; }
+    S.db = db;
+    db.collection('shots').limit(1000).onSnapshot((snap) => {
+      S.shots = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+      render(); if (S.actual) { S.actual = S.shots.find((x) => x.id === S.actual.id) || S.actual; pintarAprobar(); }
+    }, () => { $('lead').textContent = 'No se pudieron cargar los shots. Recarga la página.'; });
+    db.collection('aprobaciones').limit(1000).onSnapshot((snap) => {
+      S.aprob = {}; snap.docs.forEach((d) => { const x = d.data(); if (x && x.aprobado && !x.procesado) S.aprob[d.id] = x; });
+      render(); pintarAprobar();
+    }, () => {});
+    db.collection('pedidos').orderBy('creado', 'desc').limit(50).onSnapshot((snap) => {
+      S.pedidos = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarPedidos();
+    }, () => {});
+  })();
+})();
+</script>
