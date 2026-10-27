@@ -555,7 +555,7 @@ function E13({ T }) {
     </Svg>
     <Titulo T={T} at={L(28) + 0.4} until={L(29) - 0.3} x={960} y={50} tam={80} color={KC.ink}>DE BASURA A COMIDA</Titulo>
     <Pill T={T} at={t0 + 0.8} until={L(29) - 0.4} x={1340} y={300} fondo={KC.ink}>DÍA {dia} · menos de un mes</Pill>
-    {[[L(29) + 0.3, 'PLATINO', 'INFOMATRIX', '#e5e4e2'], [L(29) + 1.8, 'ORO', 'Feria de Ciencias de Jalisco', '#f4c430'], [L(29) + 3.6, 'FINALISTA', 'Rise', KC.pink]].map(([at, a, b, col], k) => {
+    {[[L(29) + 0.3, 'PLATINO', 'INFOMATRIX', '#e5e4e2'], [L(29) + 1.8, 'ORO', 'Feria de Ciencias de Jalisco', '#f4c430'], [L(29) + 3.6, 'FINALISTA', 'Rise 2023', KC.pink]].map(([at, a, b, col], k) => {
       const e = kentrada(T, at, f - 0.4, 'pop');
       return T >= at && <div key={k} style={{ position:'absolute', left:560 + k * 300, top:130, width:260, zIndex:14, opacity:e.o, transform:`scale(${e.s}) rotate(${(k - 1) * 4}deg)`, textAlign:'center' }}>
         <svg width="260" height="200"><Medalla x={130} y={130} s={1.1} color={col} cinta={[KC.blue, KC.red, KC.violet][k]} /></svg>
@@ -642,7 +642,7 @@ function E16({ T }) {
       <div style={{ font:`900 34px/1.15 ${KF.texto}`, color:KC.ink, marginTop:10 }}>{titulo}</div>
       <div style={{ font:`700 26px/1.25 ${KF.texto}`, color:'#444', marginTop:10 }}>{linea}</div></div>; };
   return <Escena T={T} n="E16" fondo={KC.yellow} patron="rayas" color2="rgba(255,255,255,.25)">
-    {tarjeta(L(34) - 0.1, '2026', 'Equitech Futures', 'Fungi Mati entre los 6 mejores de más de 100 proyectos', KC.pink, 470)}
+    {tarjeta(L(34) - 0.1, '2026', 'Rise Finalist Challenge × Equitech Futures', 'Fungi Mati entre los 6 mejores de más de 100 proyectos', KC.pink, 470)}
     {tarjeta(L(35) + 0.3, '2026', 'beVisioneers', 'La beca de Mercedes-Benz, entre unas 20,000 personas', KC.blue, 1010)}
     <Foto T={T} n="16_rise_spotlight" at={L(34) + 1.4} until={f - 0.4} x={230} y={160} w={300} rot={-4} desde="izq" seed={1} />
     <Foto T={T} n="16_bevisioneers" at={L(35) + 1.2} until={f - 0.4} x={1680} y={600} w={380} rot={3} desde="der" seed={2} />
