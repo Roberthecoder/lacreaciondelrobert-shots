@@ -3,8 +3,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-  /* Sala de proyección: una tira de avance por serie arriba, luego la cuadrícula vertical 9:16 de los shots;
-     al tocar uno se abre el reproductor con su ficha y el botón de aprobar la voz. Colores de la marca: rosa, amarillo, menta, cian. */
+  /* Sala de proyección: pedir videos arriba, avance hacia 365, y una sección por serie con su cuadrícula vertical 9:16
+     (10 visibles; "Ver todos" abre la sección con scroll propio). Al tocar un shot: reproductor, ficha, aprobar voz y textos por red. */
   :root {
     --bg: #f3f6f7; --panel: #ffffff; --ink: #121417; --muted: #5d6870; --line: #dbe3e7;
     --rosa: #e8458b; --amarillo: #f2b705; --menta: #12a88a; --cian: #1590c9;
@@ -25,11 +25,40 @@
 
   body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; }
   .wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 48px; display: grid; gap: 22px; }
-  h1, h2 { font-family: var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+  h1, h2, h3 { font-family: var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
   h1 { font-size: clamp(28px, 4.2vw, 44px); font-weight: 800; }
   h1 span { color: var(--rosa); }
   .lead { margin: 6px 0 0; color: var(--muted); max-width: 62ch; }
   .lead b { color: var(--ink); font-variant-numeric: tabular-nums; }
+  .card-box { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: grid; gap: 12px; min-width: 0; }
+  .card-box > h2 { font-size: 20px; font-weight: 800; }
+  .hint { color: var(--muted); font-size: 13px; margin: 0; }
+
+  .tipos { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font: inherit; font-size: 14px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 7px 13px; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .chip:focus-visible, .card:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid var(--cian); outline-offset: 2px; }
+  .series-sel { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; }
+  .series-sel label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+  .cant { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 14px; }
+  .cant input[type=number] { width: 6.5em; }
+  .cant input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--rosa); }
+  input[type=number], textarea, .search { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 0; box-sizing: border-box; }
+  textarea { width: 100%; min-height: 80px; resize: vertical; }
+  .btn { font: inherit; font-weight: 700; border: 0; border-radius: 10px; padding: 10px 16px; cursor: pointer; background: var(--chip); color: var(--ink); text-decoration: none; display: inline-block; }
+  .btn.go { background: var(--rosa); color: #fff; }
+  .btn.sm { padding: 6px 10px; font-size: 13px; }
+  .btn[disabled] { opacity: .5; cursor: default; }
+  .msg { font-size: 14px; color: var(--ok); min-height: 1.3em; margin: 0; }
+  .pedidos { display: grid; margin: 0; padding: 0; list-style: none; max-height: 16rem; overflow: auto; }
+  .pedidos li { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 10px; align-items: baseline; font-size: 14px; padding: 8px 0; border-top: 1px solid var(--line); }
+  .est { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--chip); white-space: nowrap; }
+  .est[data-e="en proceso"] { background: var(--cian); color: #04131c; }
+  .est[data-e="listo"] { background: var(--menta); color: #0b1d18; }
+  .est[data-e="pregunta"] { background: var(--amarillo); color: #241a00; }
+  .pedidos .txt { overflow-wrap: anywhere; min-width: 0; }
+  .pedidos .num { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .pedidos .res { grid-column: 2 / -1; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
 
   .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 10px; }
   .serie { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; display: grid; gap: 8px; }
@@ -38,16 +67,17 @@
   .serie-top span { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 13px; }
   .track { height: 8px; border-radius: 4px; background: var(--chip); display: flex; overflow: hidden; }
   .track i { display: block; height: 100%; }
-  .meta-note { color: var(--muted); font-size: 13px; margin: 0; }
 
   .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-  .chip { font: inherit; font-size: 13px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
-  .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .chip:focus-visible, .card:focus-visible, button:focus-visible { outline: 3px solid var(--cian); outline-offset: 2px; }
-  .search { flex: 1 1 220px; min-width: 0; font: inherit; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
+  .search { flex: 1 1 220px; border-radius: 999px; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(46%, 168px), 1fr)); gap: 14px; }
-  .card { all: unset; cursor: pointer; display: grid; gap: 8px; min-width: 0; }
+  .secciones { display: grid; gap: 28px; }
+  .sec-head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+  .sec-head h2 { font-size: 22px; font-weight: 800; }
+  .sec-head small { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(46%, 150px), 1fr)); gap: 14px; }
+  .grid.abierta { max-height: min(78vh, 900px); overflow: auto; padding-right: 4px; border-radius: var(--r); }
+  .card { all: unset; cursor: pointer; display: grid; gap: 8px; min-width: 0; align-content: start; }
   .poster { position: relative; aspect-ratio: 9 / 16; max-width: 100%; border-radius: var(--r); overflow: hidden; background: var(--chip); border: 1px solid var(--line); }
   .poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .poster .play { position: absolute; inset: auto 10px 10px auto; width: 34px; height: 34px; border-radius: 50%; background: rgba(0,0,0,.55); display: grid; place-items: center; }
@@ -58,40 +88,29 @@
   .pill[data-e="Narrado listo"] { background: var(--menta); color: #0b1d18; }
   .pill[data-e="Por revisar"] { background: var(--amarillo); color: #241a00; }
   .pill[data-e="Voz aprobada"] { background: var(--cian); color: #04131c; }
-  .card h3 { font-family: var(--f-display); font-weight: 700; font-size: 15px; line-height: 1.2; margin: 0; overflow-wrap: anywhere; }
+  .card h3 { font-weight: 700; font-size: 15px; line-height: 1.2; overflow-wrap: anywhere; }
   .card small { color: var(--muted); font-size: 12px; }
-  .empty { color: var(--muted); padding: 40px 0; text-align: center; grid-column: 1 / -1; }
+  .empty { color: var(--muted); padding: 32px 0; text-align: center; }
 
-  dialog { border: 0; padding: 0; background: transparent; max-width: min(960px, 100vw - 24px); width: 100%; }
+  dialog { border: 0; padding: 0; background: transparent; max-width: min(1000px, 100vw - 24px); width: 100%; }
   dialog::backdrop { background: rgba(6, 8, 10, .78); }
-  .player { background: var(--panel); color: var(--ink); border-radius: 18px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); }
-  .player video { width: 100%; aspect-ratio: 9 / 16; background: #000; display: block; max-height: calc(100vh - 40px); }
-  .info { padding: 20px; display: grid; gap: 12px; align-content: start; min-width: 0; }
-  .info h2 { font-size: 24px; font-weight: 800; }
-  .kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; }
+  .player { background: var(--panel); color: var(--ink); border-radius: 18px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 330px) minmax(0, 1fr); max-height: calc(100vh - 24px); }
+  .holder { position: relative; background: #000; }
+  .player video { width: 100%; aspect-ratio: 9 / 16; background: #000; display: block; max-height: calc(100vh - 24px); }
+  .info { padding: 20px; display: grid; gap: 12px; align-content: start; min-width: 0; overflow: auto; }
+  .info > h2 { font-size: 24px; font-weight: 800; }
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; margin: 0; }
   .kv dt { color: var(--muted); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
   .key { font-family: var(--f-mono); font-size: 13px; }
   .actions { display: flex; flex-wrap: wrap; gap: 8px; }
-  .btn { font: inherit; font-weight: 700; border: 0; border-radius: 10px; padding: 10px 16px; cursor: pointer; background: var(--chip); color: var(--ink); text-decoration: none; }
-  .btn.go { background: var(--rosa); color: #fff; }
-  .btn[disabled] { opacity: .5; cursor: default; }
-  .msg { font-size: 14px; color: var(--ok); min-height: 1.3em; margin: 0; }
+  .redes-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .redes-tabs .chip { font-size: 13px; padding: 5px 10px; }
+  .texto { display: grid; gap: 6px; }
+  .texto label { font-size: 12px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+  .texto pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 14px/1.45 var(--f-body); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; max-height: 14rem; overflow: auto; }
+  .texto .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
   .close { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(0,0,0,.55); color: #fff; font-size: 20px; cursor: pointer; }
-  .holder { position: relative; }
-  .pedir { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: grid; gap: 12px; }
-  .pedir h2 { font-size: 20px; font-weight: 800; }
-  .pedir-row { display: flex; flex-wrap: wrap; gap: 8px; }
-  .pedir select, .pedir textarea { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 0; }
-  .pedir textarea { width: 100%; min-height: 84px; resize: vertical; box-sizing: border-box; }
-  .pedidos { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
-  .pedidos li { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; align-items: baseline; font-size: 14px; padding: 8px 0; border-top: 1px solid var(--line); }
-  .pedidos .est { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--chip); white-space: nowrap; }
-  .pedidos .est[data-e="en proceso"] { background: var(--cian); color: #04131c; }
-  .pedidos .est[data-e="listo"] { background: var(--menta); color: #0b1d18; }
-  .pedidos .est[data-e="pregunta"] { background: var(--amarillo); color: #241a00; }
-  .pedidos .txt { overflow-wrap: anywhere; }
-  .pedidos .res { grid-column: 2; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
-  @media (max-width: 720px) { .player { grid-template-columns: 1fr; } .player video { max-height: 62vh; } }
+  @media (max-width: 760px) { .player { grid-template-columns: 1fr; overflow: auto; } .player video { max-height: 58vh; } }
   @media (prefers-reduced-motion: no-preference) { .card .poster { transition: transform .18s ease-out; } .card:hover .poster { transform: translateY(-3px); } }
 </style>
 
@@ -101,41 +120,54 @@
     <p class="lead" id="lead">Cargando tus shots…</p>
   </header>
 
-  <section class="pedir" aria-label="Pedir un video">
-    <h2>Pedir un video</h2>
-    <div class="pedir-row">
-      <select id="p-tipo" aria-label="Tipo de video">
-        <option value="shot">Shot de una serie (61–62 s)</option>
-        <option value="largo">Video largo horizontal (8–15 min)</option>
-        <option value="libre">Video libre o experimental</option>
-        <option value="robert">Shot de Robert (sobre mí)</option>
-      </select>
-      <select id="p-serie" aria-label="Serie">
-        <option>Fungi Mati</option><option>Biotecnológico</option><option>Ambiental</option><option>Científico</option><option>Químico</option><option>IA</option>
-      </select>
+  <section class="card-box" aria-label="Pedir videos">
+    <h2>Pedir videos</h2>
+    <div class="tipos" id="p-tipos" role="group" aria-label="Tipo de video">
+      <button class="chip" type="button" data-t="serie" aria-pressed="true">Shot de serie</button>
+      <button class="chip" type="button" data-t="robert" aria-pressed="false">Shot de Robert</button>
+      <button class="chip" type="button" data-t="documental" aria-pressed="false">Documental</button>
+      <button class="chip" type="button" data-t="libre" aria-pressed="false">Shot libre</button>
+      <button class="chip" type="button" data-t="formal" aria-pressed="false">Shot formal</button>
+      <button class="chip" type="button" data-t="otro" aria-pressed="false">Otro</button>
     </div>
-    <textarea id="p-idea" placeholder="Tu idea en tus palabras: el tema, el gancho, lo que quieres que se vea, fotos o datos que ya tienes…" aria-label="Tu idea"></textarea>
-    <div class="pedir-row"><button class="btn go" id="p-enviar" type="button">Pedir video</button></div>
+    <p class="hint" id="p-desc"></p>
+    <div class="series-sel" id="p-series" aria-label="Series">
+      <label><input type="checkbox" id="p-todas"> <b>Todas</b></label>
+      <label><input type="checkbox" value="Fungi Mati" checked> Fungi Mati</label>
+      <label><input type="checkbox" value="Biotecnológico"> Biotecnológico</label>
+      <label><input type="checkbox" value="Ambiental"> Ambiental</label>
+      <label><input type="checkbox" value="Científico"> Científico</label>
+      <label><input type="checkbox" value="Químico"> Químico</label>
+      <label><input type="checkbox" value="IA"> IA</label>
+    </div>
+    <div class="cant">
+      <label for="p-cant" id="p-cant-label">Cuántos de cada serie</label>
+      <input type="number" id="p-cant" min="1" max="1000" value="1">
+      <input type="range" id="p-rango" min="1" max="100" value="1" aria-label="Cantidad">
+    </div>
+    <textarea id="p-idea" aria-label="Tu idea" placeholder=""></textarea>
+    <div class="actions"><button class="btn go" id="p-enviar" type="button">Pedir 1 video</button></div>
     <p class="msg" id="p-msg"></p>
     <ul class="pedidos" id="p-lista"></ul>
   </section>
 
   <section aria-label="Avance hacia 365 por serie">
     <div class="meta" id="meta"></div>
-    <p class="meta-note">Cada barra es una serie completa de 365 shots: menta, narrados; amarillo, por revisar o en producción. La serie Robert es manual y no cuenta para la meta.</p>
+    <p class="hint" style="margin-top:8px">Cada barra es una serie completa de 365 shots: menta, narrados; amarillo, por revisar o en producción.</p>
   </section>
 
-  <section aria-label="Shots">
+  <section aria-label="Tus videos">
     <div class="bar" id="filtros">
       <button class="chip" data-f="" aria-pressed="true">Todos</button>
       <button class="chip" data-f="Por revisar" aria-pressed="false">Por revisar</button>
       <button class="chip" data-f="Voz aprobada" aria-pressed="false">Voz aprobada</button>
       <button class="chip" data-f="Narrado listo" aria-pressed="false">Narrado listo</button>
       <button class="chip" data-f="En producción" aria-pressed="false">En producción</button>
-      <input class="search" id="q" type="search" placeholder="Buscar tema, serie o clave" aria-label="Buscar shots">
+      <input class="search" id="q" type="search" placeholder="Buscar tema o clave" aria-label="Buscar videos">
     </div>
-    <div class="grid" id="grid"><p class="empty">Aquí aparecen tus shots en cuanto cargan. Si no aparece ninguno, pide a Claude «actualiza el panel».</p></div>
   </section>
+
+  <div class="secciones" id="secciones"><p class="empty">Aquí aparecen tus videos, por serie, en cuanto cargan.</p></div>
 </div>
 
 <dialog id="dlg" aria-label="Reproductor">
@@ -155,6 +187,9 @@
         <a class="btn" id="hd" target="_blank" rel="noopener" href="#">Video en calidad completa</a>
       </div>
       <p class="msg" id="msg"></p>
+      <h3 style="font-size:17px">Textos para redes</h3>
+      <div class="redes-tabs" id="redes-tabs" role="group" aria-label="Red social"></div>
+      <div id="redes-cuerpo"></div>
     </div>
   </div>
 </dialog>
@@ -162,86 +197,182 @@
 <script>
 (() => {
   const SERIES = ['Fungi Mati', 'Biotecnológico', 'Ambiental', 'Científico', 'Químico', 'IA'];
-  const GOAL = 365;
-  const S = { shots: [], aprob: {}, filtro: '', q: '', actual: null, db: null };
+  const SECCIONES = [...SERIES, 'Robert', 'Documental', 'Libre', 'Formal', 'Otro'];
+  const NOMBRE_SEC = { Robert: 'Shots de Robert', Documental: 'Documentales', Libre: 'Shots libres', Formal: 'Shots formales', Otro: 'Otros' };
+  const VISIBLES = 10, GOAL = 365;
+  const REDES = [['youtube', 'YouTube'], ['tiktok', 'TikTok'], ['instagram', 'Instagram'], ['facebook', 'Facebook'], ['linkedin', 'LinkedIn'], ['x', 'X'], ['threads', 'Threads'], ['comentario', 'Comentario fijado']];
+  const TIPOS = {
+    serie: { n: 'Shot de serie', d: 'Shots de 61–62 s de tus series. Marca una o varias series y cuántos de cada una; la nube elige temas nuevos sin repetir, o usa tu idea si la escribes.', ph: 'Opcional: un tema o idea. Vacío = la nube elige los temas.' },
+    robert: { n: 'Shot de Robert', d: 'Shots sobre ti, tu vida e historia, con tus datos confirmados. Si falta un dato, la nube te pregunta en vez de inventarlo.', ph: 'De qué parte de tu vida va (por ejemplo: mi recámara-laboratorio, el filtro UV)…' },
+    documental: { n: 'Documental', d: 'Video horizontal para YouTube (8–15 min) sobre el tema que dictes, más varios cortos verticales con sus momentos clave.', ph: 'El tema y lo que quieres contar; si tienes datos, fotos o una postura, escríbelos aquí…' },
+    libre: { n: 'Shot libre', d: 'Con el mismo estilo del canal, sobre lo que quieras (no entra a la numeración de las series).', ph: 'De qué va y para qué lo quieres…' },
+    formal: { n: 'Shot formal', d: 'Sin numerar, sobrio y profesional, para trabajos universitarios y convocatorias. Igual de verificado.', ph: 'Para qué es (materia, convocatoria), tema, duración y requisitos que te pidieron…' },
+    otro: { n: 'Otro', d: 'Cualquier formato nuevo para experimentar fuera de las series.', ph: 'Describe lo que imaginas…' },
+  };
+  const S = { shots: [], aprob: {}, pedidos: [], filtro: '', q: '', actual: null, db: null, abiertas: {}, tipo: 'serie', red: 'youtube' };
   const $ = (id) => document.getElementById(id);
   const fmt = (n) => new Intl.NumberFormat('es-MX').format(n);
-  const estadoDe = (s) => (S.aprob[s.id] && s.estado === 'Por revisar') ? 'Voz aprobada' : s.estado;
   const mmss = (t) => { t = Math.round(t || 0); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
+  const estadoDe = (s) => (S.aprob[s.id] && s.estado === 'Por revisar') ? 'Voz aprobada' : s.estado;
+  const seccionDe = (s) => SECCIONES.includes(s.serie) ? s.serie : 'Otro';
+  const etiqueta = (s) => `${s.serie}${s.numero != null && SERIES.includes(s.serie) ? ' #' + String(s.numero).padStart(2, '0') : ''}`;
+  const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+  const copiar = async (texto, boton) => {
+    const ok = () => { const t = boton.textContent; boton.textContent = 'Copiado'; setTimeout(() => { boton.textContent = t; }, 1400); };
+    try { await navigator.clipboard.writeText(texto); ok(); }
+    catch (e) { const pre = boton.closest('.texto')?.querySelector('pre'); if (pre) { const r = document.createRange(); r.selectNodeContents(pre); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); } boton.textContent = 'Selecciona y copia'; }
+  };
 
+  /* ---------- pedir ---------- */
+  const seriesMarcadas = () => [...document.querySelectorAll('#p-series input[value]')].filter((c) => c.checked).map((c) => c.value);
+  function pintarPedir() {
+    const t = TIPOS[S.tipo];
+    document.querySelectorAll('#p-tipos .chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.t === S.tipo)));
+    $('p-desc').textContent = t.d; $('p-idea').placeholder = t.ph;
+    $('p-series').hidden = S.tipo !== 'serie';
+    $('p-cant-label').textContent = S.tipo === 'serie' ? 'Cuántos de cada serie' : 'Cuántos';
+    const n = Math.max(1, Math.min(1000, +$('p-cant').value || 1));
+    const total = S.tipo === 'serie' ? n * seriesMarcadas().length : n;
+    $('p-enviar').textContent = total === 1 ? 'Pedir 1 video' : `Pedir ${fmt(total)} videos`;
+    $('p-enviar').disabled = total === 0;
+    $('p-todas').checked = seriesMarcadas().length === SERIES.length;
+  }
+  document.querySelectorAll('#p-tipos .chip').forEach((c) => c.addEventListener('click', () => { S.tipo = c.dataset.t; pintarPedir(); }));
+  $('p-todas').addEventListener('change', (e) => { document.querySelectorAll('#p-series input[value]').forEach((c) => { c.checked = e.target.checked; }); pintarPedir(); });
+  document.querySelectorAll('#p-series input[value]').forEach((c) => c.addEventListener('change', pintarPedir));
+  $('p-cant').addEventListener('input', () => { $('p-rango').value = Math.min(100, +$('p-cant').value || 1); pintarPedir(); });
+  $('p-rango').addEventListener('input', () => { $('p-cant').value = $('p-rango').value; pintarPedir(); });
+  $('p-enviar').addEventListener('click', async () => {
+    if (!S.db) { $('p-msg').textContent = 'La base del panel no está disponible en esta vista.'; return; }
+    const idea = $('p-idea').value.trim();
+    if (S.tipo !== 'serie' && !idea) { $('p-msg').textContent = 'Escribe tu idea primero.'; return; }
+    const cantidad = Math.max(1, Math.min(1000, +$('p-cant').value || 1));
+    const series = S.tipo === 'serie' ? seriesMarcadas() : [];
+    const total = S.tipo === 'serie' ? cantidad * series.length : cantidad;
+    $('p-enviar').disabled = true;
+    try {
+      await S.db.collection('pedidos').add({ tipo: S.tipo, series, cantidad, total, hechos: 0, idea, estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
+      $('p-idea').value = '';
+      $('p-msg').textContent = `Pedido enviado (${fmt(total)} ${total === 1 ? 'video' : 'videos'}). La nube lo toma en su siguiente ronda, cada 4 h, o al instante si en una sesión escribes «atiende mis pedidos».`;
+    } catch (e) { $('p-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
+    pintarPedir();
+  });
+  function pintarPedidos() {
+    const ul = $('p-lista'); ul.replaceChildren();
+    S.pedidos.forEach((p) => {
+      const li = el('li');
+      const e = el('span', 'est', p.estado || 'pendiente'); e.dataset.e = p.estado || 'pendiente';
+      const quien = p.tipo === 'serie' ? `${(p.series || []).join(', ') || 'serie'}` : (TIPOS[p.tipo]?.n || p.tipo);
+      const t = el('span', 'txt', `${quien}${p.idea ? ': ' + p.idea : ''}`);
+      const total = p.total || p.cantidad || 1;
+      li.append(e, t, el('span', 'num', `${fmt(p.hechos || 0)} / ${fmt(total)}`));
+      if (p.resultado) li.append(el('span', 'res', p.resultado));
+      ul.append(li);
+    });
+  }
+
+  /* ---------- avance y secciones ---------- */
   function render() {
     const shots = S.shots;
     const listos = shots.filter((s) => estadoDe(s) === 'Narrado listo').length;
     const revisar = shots.filter((s) => estadoDe(s) === 'Por revisar').length;
-    $('lead').innerHTML = '';
-    if (!shots.length) { $('lead').textContent = 'Todavía no hay shots en el panel.'; }
-    else {
-      const p = $('lead');
-      const b = (t) => { const e = document.createElement('b'); e.textContent = t; return e; };
-      p.append('Tienes ', b(fmt(shots.length)), ' shots: ', b(fmt(listos)), ' ya narrados y ', b(fmt(revisar)), ' esperando que los veas para aprobar su voz.');
-    }
+    const lead = $('lead'); lead.replaceChildren();
+    if (!shots.length) lead.textContent = 'Todavía no hay videos en la Sala.';
+    else lead.append('Tienes ', el('b', null, fmt(shots.length)), ' videos: ', el('b', null, fmt(listos)), ' ya narrados y ', el('b', null, fmt(revisar)), ' esperando que los veas para aprobar su voz.');
+
     const meta = $('meta'); meta.replaceChildren();
     SERIES.forEach((serie) => {
-      const mine = shots.filter((s) => s.serie === serie);
-      const ok = mine.filter((s) => estadoDe(s) === 'Narrado listo').length;
-      const card = document.createElement('div'); card.className = 'serie';
-      const top = document.createElement('div'); top.className = 'serie-top';
-      const n = document.createElement('strong'); n.textContent = serie;
-      const c = document.createElement('span'); c.textContent = `${fmt(mine.length)} / ${GOAL}`;
-      top.append(n, c);
-      const tr = document.createElement('div'); tr.className = 'track'; tr.setAttribute('role', 'img');
-      tr.setAttribute('aria-label', `${serie}: ${mine.length} de ${GOAL}, ${ok} narrados`);
-      const a = document.createElement('i'); a.style.width = `${100 * ok / GOAL}%`; a.style.background = 'var(--menta)';
-      const z = document.createElement('i'); z.style.width = `${100 * (mine.length - ok) / GOAL}%`; z.style.background = 'var(--amarillo)';
+      const mine = shots.filter((s) => s.serie === serie); const ok = mine.filter((s) => estadoDe(s) === 'Narrado listo').length;
+      const card = el('div', 'serie'); const top = el('div', 'serie-top');
+      top.append(el('strong', null, serie), el('span', null, `${fmt(mine.length)} / ${GOAL}`));
+      const tr = el('div', 'track'); tr.setAttribute('role', 'img'); tr.setAttribute('aria-label', `${serie}: ${mine.length} de ${GOAL}, ${ok} narrados`);
+      const a = el('i'); a.style.width = `${100 * ok / GOAL}%`; a.style.background = 'var(--menta)';
+      const z = el('i'); z.style.width = `${100 * (mine.length - ok) / GOAL}%`; z.style.background = 'var(--amarillo)';
       tr.append(a, z); card.append(top, tr); meta.append(card);
     });
-    const grid = $('grid'); grid.replaceChildren();
+
+    const cont = $('secciones'); cont.replaceChildren();
     const q = S.q.toLowerCase();
-    const vis = shots.filter((s) => (!S.filtro || estadoDe(s) === S.filtro) && (!q || `${s.id} ${s.serie} ${s.titulo}`.toLowerCase().includes(q)))
-      .sort((x, y) => (SERIES.indexOf(x.serie) - SERIES.indexOf(y.serie)) || ((x.numero ?? -1) - (y.numero ?? -1)));
-    if (!vis.length) { const e = document.createElement('p'); e.className = 'empty'; e.textContent = shots.length ? 'Ningún shot coincide con el filtro.' : 'Aquí aparecen tus shots en cuanto cargan.'; grid.append(e); return; }
-    vis.forEach((s) => {
-      const card = document.createElement('button'); card.className = 'card'; card.type = 'button';
-      const po = document.createElement('div'); po.className = 'poster';
-      if (s.poster) { const im = document.createElement('img'); im.loading = 'lazy'; im.alt = ''; im.src = '/_blob/' + s.poster; po.append(im); }
-      else { const no = document.createElement('div'); no.className = 'none'; no.textContent = 'Sin video todavía'; po.append(no); }
-      const pill = document.createElement('span'); pill.className = 'pill'; pill.dataset.e = estadoDe(s); pill.textContent = estadoDe(s); po.append(pill);
-      if (s.video) { const pl = document.createElement('span'); pl.className = 'play'; po.append(pl); const d = document.createElement('span'); d.className = 'dur'; d.textContent = mmss(s.dur); po.append(d); }
-      const h = document.createElement('h3'); h.textContent = s.titulo;
-      const sm = document.createElement('small'); sm.textContent = `${s.serie}${s.numero != null ? ' #' + String(s.numero).padStart(2, '0') : ''}`;
-      card.append(po, h, sm);
-      card.addEventListener('click', () => abrir(s));
-      grid.append(card);
+    const vis = shots.filter((s) => (!S.filtro || estadoDe(s) === S.filtro) && (!q || `${s.id} ${s.serie} ${s.titulo}`.toLowerCase().includes(q)));
+    let alguna = false;
+    SECCIONES.forEach((sec) => {
+      const lista = vis.filter((s) => seccionDe(s) === sec).sort((x, y) => (x.numero ?? -1) - (y.numero ?? -1) || String(x.id).localeCompare(String(y.id)));
+      if (!lista.length) return;
+      alguna = true;
+      const box = el('section'); box.setAttribute('aria-label', NOMBRE_SEC[sec] || sec);
+      const head = el('div', 'sec-head');
+      const izq = el('div'); izq.append(el('h2', null, NOMBRE_SEC[sec] || sec));
+      const pend = lista.filter((s) => estadoDe(s) === 'Por revisar').length;
+      izq.append(el('small', null, `${fmt(lista.length)} ${lista.length === 1 ? 'video' : 'videos'}${pend ? ` · ${fmt(pend)} por revisar` : ''}`));
+      head.append(izq);
+      const abierta = !!S.abiertas[sec];
+      if (lista.length > VISIBLES) {
+        const b = el('button', 'btn sm', abierta ? 'Mostrar menos' : `Ver los ${fmt(lista.length)}`); b.type = 'button';
+        b.setAttribute('aria-expanded', String(abierta));
+        b.addEventListener('click', () => { S.abiertas[sec] = !abierta; render(); });
+        head.append(b);
+      }
+      const grid = el('div', 'grid' + (abierta ? ' abierta' : ''));
+      (abierta ? lista : lista.slice(0, VISIBLES)).forEach((s) => grid.append(tarjeta(s)));
+      box.append(head, grid); cont.append(box);
     });
+    if (!alguna) cont.append(el('p', 'empty', shots.length ? 'Ningún video coincide con el filtro.' : 'Aquí aparecen tus videos, por serie, en cuanto cargan.'));
+  }
+  function tarjeta(s) {
+    const card = el('button', 'card'); card.type = 'button';
+    const po = el('div', 'poster');
+    if (s.poster) { const im = el('img'); im.loading = 'lazy'; im.alt = ''; im.src = '/_blob/' + s.poster; po.append(im); }
+    else po.append(el('div', 'none', 'Sin video todavía'));
+    const pill = el('span', 'pill', estadoDe(s)); pill.dataset.e = estadoDe(s); po.append(pill);
+    if (s.video) { po.append(el('span', 'play')); po.append(el('span', 'dur', mmss(s.dur))); }
+    card.append(po, el('h3', null, s.titulo), el('small', null, etiqueta(s)));
+    card.addEventListener('click', () => abrir(s));
+    return card;
   }
 
+  /* ---------- reproductor y textos ---------- */
   function abrir(s) {
     S.actual = s;
     const v = $('vid');
     if (s.video) { v.src = '/_blob/' + s.video; v.poster = s.poster ? '/_blob/' + s.poster : ''; } else { v.removeAttribute('src'); v.load(); }
     $('d-titulo').textContent = s.titulo;
-    $('d-serie').textContent = `${s.serie}${s.numero != null ? ' #' + String(s.numero).padStart(2, '0') : ''}`;
-    $('d-estado').textContent = estadoDe(s);
+    $('d-serie').textContent = etiqueta(s);
     $('d-version').textContent = s.kind === 'narrado' ? 'Narrada con tu voz' : (s.video ? 'Revisión sin voz (música y subtítulos)' : 'Sin video todavía');
     $('d-chars').textContent = s.caracteres ? `${fmt(s.caracteres)} caracteres (~${fmt(s.caracteres)} créditos de ElevenLabs)` : '—';
     $('d-key').textContent = s.id;
-    const hd = $('hd'); if (s.hd) { hd.href = s.hd; hd.hidden = false; } else { hd.hidden = true; }
-    pintarAprobar();
+    const hd = $('hd'); if (s.hd) { hd.href = s.hd; hd.hidden = false; } else hd.hidden = true;
     $('msg').textContent = '';
+    pintarAprobar(); pintarRedes();
     $('dlg').showModal();
   }
   function pintarAprobar() {
-    const s = S.actual; const b = $('aprobar'); if (!s) return;
-    const e = estadoDe(s);
-    b.hidden = !(e === 'Por revisar' || (S.aprob[s.id] && s.estado === 'Por revisar'));
+    const s = S.actual; if (!s) return; const b = $('aprobar');
+    b.hidden = !(s.estado === 'Por revisar');
     b.disabled = !S.db;
     b.textContent = S.aprob[s.id] ? 'Quitar aprobación' : 'Aprobar voz';
-    $('d-estado').textContent = e;
+    $('d-estado').textContent = estadoDe(s);
+  }
+  function pintarRedes() {
+    const s = S.actual; const redes = (s && s.redes) || {};
+    const tabs = $('redes-tabs'); tabs.replaceChildren();
+    REDES.forEach(([k, n]) => {
+      const c = el('button', 'chip', n); c.type = 'button'; c.setAttribute('aria-pressed', String(S.red === k));
+      c.addEventListener('click', () => { S.red = k; pintarRedes(); }); tabs.append(c);
+    });
+    const body = $('redes-cuerpo'); body.replaceChildren();
+    const r = redes[S.red];
+    if (!r) { body.append(el('p', 'hint', Object.keys(redes).length ? 'Este texto todavía no está. La nube lo agrega en su próxima ronda.' : 'Los textos de este video todavía no están. La nube los agrega en su próxima ronda.')); return; }
+    const bloque = (titulo, texto) => {
+      const t = el('div', 'texto'); const row = el('div', 'row');
+      const b = el('button', 'btn sm', 'Copiar'); b.type = 'button'; b.addEventListener('click', () => copiar(texto, b));
+      row.append(el('label', null, titulo), b); t.append(row, el('pre', null, texto)); return t;
+    };
+    if (r.titulo) body.append(bloque('Título', r.titulo));
+    body.append(bloque(r.titulo ? 'Descripción' : 'Texto completo', r.texto));
   }
   $('aprobar').addEventListener('click', async () => {
     const s = S.actual; if (!s || !S.db) return;
-    const ref = S.db.doc('aprobaciones/' + s.id);
-    $('aprobar').disabled = true;
+    const ref = S.db.doc('aprobaciones/' + s.id); $('aprobar').disabled = true;
     try {
       if (S.aprob[s.id]) { await ref.delete(); $('msg').textContent = 'Aprobación quitada.'; }
       else { await ref.set({ shot: s.id, aprobado: true, at: new Date().toISOString(), procesado: false }); $('msg').textContent = 'Aprobada. La próxima sesión de nube genera la voz y el narrado aparece aquí.'; }
@@ -249,49 +380,22 @@
     $('aprobar').disabled = false;
   });
   $('cerrar').addEventListener('click', () => $('dlg').close());
-  $('dlg').addEventListener('close', () => { const v = $('vid'); v.pause(); });
+  $('dlg').addEventListener('close', () => $('vid').pause());
   $('dlg').addEventListener('click', (e) => { if (e.target === $('dlg')) $('dlg').close(); });
   document.querySelectorAll('#filtros .chip').forEach((c) => c.addEventListener('click', () => {
     S.filtro = c.dataset.f; document.querySelectorAll('#filtros .chip').forEach((x) => x.setAttribute('aria-pressed', String(x === c))); render();
   }));
   $('q').addEventListener('input', (e) => { S.q = e.target.value; render(); });
 
-  const TIPOS = { shot: 'Shot', largo: 'Largo', libre: 'Libre', robert: 'Robert' };
-  S.pedidos = [];
-  const pintarPedidos = () => {
-    const ul = $('p-lista'); ul.replaceChildren();
-    S.pedidos.slice(0, 20).forEach((p) => {
-      const li = document.createElement('li');
-      const e = document.createElement('span'); e.className = 'est'; e.dataset.e = p.estado || 'pendiente'; e.textContent = p.estado || 'pendiente';
-      const t = document.createElement('span'); t.className = 'txt'; t.textContent = `${TIPOS[p.tipo] || p.tipo}${p.tipo === 'shot' && p.serie ? ' · ' + p.serie : ''}: ${p.idea}`;
-      li.append(e, t);
-      if (p.resultado) { const r = document.createElement('span'); r.className = 'res'; r.textContent = p.resultado; li.append(r); }
-      ul.append(li);
-    });
-  };
-  $('p-tipo').addEventListener('change', () => { $('p-serie').hidden = $('p-tipo').value !== 'shot'; });
-  $('p-enviar').addEventListener('click', async () => {
-    const idea = $('p-idea').value.trim();
-    if (!idea) { $('p-msg').textContent = 'Escribe tu idea primero.'; return; }
-    if (!S.db) { $('p-msg').textContent = 'La base del panel no está disponible en esta vista.'; return; }
-    $('p-enviar').disabled = true;
-    try {
-      const tipo = $('p-tipo').value;
-      await S.db.collection('pedidos').add({ tipo, serie: tipo === 'shot' ? $('p-serie').value : null, idea, estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
-      $('p-idea').value = ''; $('p-msg').textContent = 'Pedido enviado. La próxima sesión de nube lo toma (cada 4 h, o al instante si abres una sesión y escribes «atiende mis pedidos»).';
-    } catch (e) { $('p-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
-    $('p-enviar').disabled = false;
-  });
-
-  render();
+  pintarPedir(); render();
   (async () => {
     const db = await claude.use('db');
-    if (!db) { $('lead').textContent = 'No se pudo abrir la base del panel en esta vista.'; return; }
-    S.db = db;
+    if (!db) { $('lead').textContent = 'No se pudo abrir la base de la Sala en esta vista.'; return; }
+    S.db = db; pintarPedir();
     db.collection('shots').limit(1000).onSnapshot((snap) => {
-      S.shots = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
-      render(); if (S.actual) { S.actual = S.shots.find((x) => x.id === S.actual.id) || S.actual; pintarAprobar(); }
-    }, () => { $('lead').textContent = 'No se pudieron cargar los shots. Recarga la página.'; });
+      S.shots = snap.docs.map((d) => ({ id: d.id, ...d.data() })); render();
+      if (S.actual) { S.actual = S.shots.find((x) => x.id === S.actual.id) || S.actual; pintarAprobar(); pintarRedes(); }
+    }, () => { $('lead').textContent = 'No se pudieron cargar los videos. Recarga la página.'; });
     db.collection('aprobaciones').limit(1000).onSnapshot((snap) => {
       S.aprob = {}; snap.docs.forEach((d) => { const x = d.data(); if (x && x.aprobado && !x.procesado) S.aprob[d.id] = x; });
       render(); pintarAprobar();

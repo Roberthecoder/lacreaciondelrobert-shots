@@ -12,7 +12,33 @@ Después (lo hace Claude, no este script): subir los .mp4 y .jpg con la herramie
 import json, os, re, subprocess, sys
 
 SERIES = {'bio': 'Biotecnológico', 'fun': 'Fungi Mati', 'amb': 'Ambiental', 'cie': 'Científico',
-          'qui': 'Químico', 'ia': 'IA', 'robert': 'Robert'}
+          'qui': 'Químico', 'ia': 'IA', 'robert': 'Robert', 'libre': 'Libre', 'formal': 'Formal',
+          'doc': 'Documental', 'otro': 'Otro'}
+REDES = {'tiktok': 'tiktok', 'instagram': 'instagram', 'youtube': 'youtube', 'facebook': 'facebook',
+         'linkedin': 'linkedin', 'x': 'x', 'threads': 'threads', 'comentario fijado': 'comentario'}
+
+
+def redes_de(md_path):
+    """Lee publicacion.md y devuelve {red: {titulo?, texto}} con los bloques ```text de la versión narrada."""
+    try:
+        md = open(md_path, encoding='utf-8').read().replace('\r\n', '\n')
+    except OSError:
+        return {}
+    md = re.split(r'^## Versión sin voz', md, flags=re.M)[0] + '\n'.join(re.findall(r'^## Comentario fijado[\s\S]*', md, flags=re.M))
+    out = {}
+    for m in re.finditer(r'^#{2,3} (.+)\n([\s\S]*?)(?=^#{2,3} |\Z)', md, flags=re.M):
+        head = m.group(1).strip().lower()
+        red = next((v for k, v in REDES.items() if head.startswith(k)), None)
+        if not red:
+            continue
+        bloques = re.findall(r'```text\n([\s\S]*?)```', m.group(2))
+        if not bloques:
+            continue
+        if red == 'youtube' and len(bloques) >= 2:
+            out[red] = {'titulo': bloques[0].strip(), 'texto': bloques[1].strip()}
+        else:
+            out[red] = {'texto': bloques[0].strip()}
+    return out
 
 
 def titulo_de(shot_dir, clave):
@@ -66,6 +92,7 @@ def main(src, out):
             'rama': os.environ.get('RAMA', ''),
             'video': None,
             'poster': None,
+            'redes': redes_de(os.path.join(shot_dir, 'publicacion.md')),
         }
         json.dump(ficha, open(os.path.join(out, clave + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         print(f'{clave}: {kind}, {ficha["dur"]} s, {os.path.getsize(os.path.join(out, clave + ".mp4")) / 1048576:.1f} MB')

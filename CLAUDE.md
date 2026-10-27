@@ -54,25 +54,38 @@ Las sesiones de nube tienen las herramientas `Artifact` y `ArtifactData` (cárga
    narrado. Después marca el doc con `procesado: true` (update con su `version`). La voz solo se genera por aprobación de Robert
    (este botón o "apruebo la voz de…").
 3. Si algo falla al subir, no detengas el lote: dilo en tu resumen.
+4. **Textos por red:** `motor/sala.py` llena `redes` (YouTube con título y descripción, TikTok, Instagram, Facebook, LinkedIn, X,
+   Threads y comentario fijado) desde `publicacion.md`. Si al terminar tu lote te sobra tiempo, completa en `publicacion.md` las redes
+   que les falten a shots viejos (LinkedIn, X, Threads) y actualiza su `redes` en la Sala.
 
 ## Pedidos desde la Sala (Robert pide videos con un formulario)
-En la Sala de Shots hay una caja "Pedir un video" que guarda documentos en la collection `pedidos`
-(`tipo`: shot | largo | libre | robert, `serie`, `idea`, `estado`, `creado`, `resultado`).
+En la Sala de Shots hay una caja "Pedir videos" que guarda documentos en la collection `pedidos`:
+`{tipo, series, cantidad, total, hechos, idea, estado, creado, resultado}`. `tipo` es uno de:
+**serie · robert · documental · libre · formal · otro**. Un solo pedido puede ser de muchos videos (`total`, hasta miles):
+`hechos` cuenta los terminados.
 - **Toda sesión de nube que empiece** (rutinas y sesiones de Robert, sobre todo si escribe "atiende mis pedidos"): `ArtifactData`
-  action "query" en `pedidos` con `estado == pendiente`, del más viejo al más nuevo. Si hay, se atienden ANTES del lote normal
-  (y en vez de él si son largos). Al tomar uno: `estado: "en proceso"` (update con su `version`).
+  action "query" en `pedidos` con `estado` en ["pendiente", "en proceso"], del más viejo al más nuevo, y los atiende ANTES del lote
+  normal. Por corrida: hasta 5 shots, o 1 documental. Al tomarlo: `estado: "en proceso"`; al terminar cada video, suma a `hechos`
+  (update con su `version`); cuando `hechos == total`, `estado: "listo"`. En `resultado`, una línea con las claves hechas y lo que falta.
 - **Cómo se hace cada tipo:**
-  - `shot`: 1 shot de esa serie con todas las reglas de este archivo (61–62 s, ganchos, Robert en pantalla, verificación).
-  - `largo`: video horizontal en `largos/<NNN>-<tema>/`, 8–15 min, con `window.K_ANCHO = 1920; window.K_ALTO = 1080` en el
-    `.dc.html` (ejemplo completo: `largos/000-que-es-la-creacion/` en la rama `largo/000`, con su LEEME). GitHub lo renderiza igual
-    que un shot (hasta 120 min de render).
-  - `libre`: lo que pida, sin formato fijo, en `shots/libre-<NN>-<tema>/`; pon `"duracion_libre": true` en `narracion.json` si no
-    dura 61–62 s. La verificación de hechos y Robert en pantalla siguen siendo obligatorias.
-  - `robert`: serie Shot Robert (`series/shot-robert/CLAUDE.md`): solo datos ✅ de `datos.md`; si la idea necesita un dato que no
-    está confirmado, no lo inventes: `estado: "pregunta"` y en `resultado` la pregunta concreta para Robert.
-- Todo pasa por "Verificación de hechos" y la voz espera aprobación, como siempre.
-- **Al terminar:** súbelo a la Sala (como cualquier shot) y pon `estado: "listo"` y en `resultado` una línea: clave, qué hiciste y
-  qué falta (por ejemplo, aprobar la voz). Si no se pudo, `estado: "pregunta"` o `"pendiente"` con la razón en `resultado`.
+  - `serie`: shots normales (61–62 s, todas las reglas) de las `series` marcadas, `cantidad` de cada una. Con `idea` vacía, la nube
+    elige temas nuevos como en el lote normal; si hay idea, la usa.
+  - `robert`: serie Shot Robert (`series/shot-robert/CLAUDE.md`), carpeta `shots/robert-NN-<tema>/`. Solo datos ✅ de `datos.md`; si
+    falta un dato: `estado: "pregunta"` y en `resultado` la pregunta concreta. (Es manual: solo cuando Robert lo pide.)
+  - `documental`: el tema lo dicta Robert en `idea`. **Principal horizontal 16:9 para YouTube**, 8–15 min, en
+    `largos/doc-<NNN>-<tema>/` con `window.K_ANCHO = 1920; window.K_ALTO = 1080` en el `.dc.html` (modelo: `largos/000-que-es-la-creacion/`
+    en la rama `largo/000`). Además, **3 a 5 cortos verticales** de 61–62 s con sus momentos clave, en `shots/doc-<NNN>-corte-<K>-<tema>/`,
+    cada uno con gancho propio y un cierre que invite a ver el documental completo. Capítulos de YouTube en su `publicacion.md`.
+  - `libre`: mismo estilo del canal, cualquier tema, sin numeración de serie: `shots/libre-<NN>-<tema>/`. Si no dura 61–62 s,
+    `"duracion_libre": true`.
+  - `formal`: sin numerar, para trabajos universitarios y convocatorias: `shots/formal-<NN>-<tema>/`. Estética sobria y profesional:
+    fondo claro o gris neutro, máximo 2 colores de acento, tipografía limpia, sin stickers chistosos (Robert puede salir como
+    presentador serio o no salir, según la `idea`), sin emojis en los textos, gráficas y citas visibles en pantalla (aquí sí se
+    citan). Duración la que pida la `idea` (`"duracion_libre": true`). Calidad de 100: verificación igual de estricta.
+  - `otro`: lo que pida, para experimentar: `shots/otro-<NN>-<tema>/` (o `largos/otro-…` si es horizontal). Si la idea es ambigua,
+    `estado: "pregunta"` con la duda en `resultado`.
+- Todo pasa por "Verificación de hechos", todo lleva `publicacion.md` con las 7 redes (`motor/plantillas/publicacion.md`) y la voz
+  espera aprobación, como siempre. Todo se sube a la Sala al terminar.
 
 ## Verificación de hechos (obligatoria, ANTES de animar; regla de Robert, 27 oct 2026)
 Robert: "no me importa que el guion no siempre traiga citas, pero SIEMPRE, SIEMPRE tiene que ser verídico". Orden fijo para todo
