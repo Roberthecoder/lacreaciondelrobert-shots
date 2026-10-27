@@ -16,6 +16,7 @@ Fungi Mati #02 `shots/fun-02-que-es-un-hongo` · #03 `shots/fun-03-seta-rosa` (c
 #04 `shots/fun-04-metales-pesados` · Químico #01 `shots/qui-01-agar` · #02 `shots/qui-02-estriado` (el mudo es el protagonista).
 Cada uno trae `guion.md` (tabla voz/visual, fuentes, descripción, datos no verificados), `narracion.json` (velocidad 1.065 + campo `mudo`)
 y `gen-audio.mjs`, que ahora usa la librería compartida `motor/kit/audio-kit.mjs`. Piezas nuevas del kit: ver `motor/kit/LEEME.md`.
+Completos (27 oct): tabla "Robert en pantalla" (narrado y mudo) y `publicacion.md` en los 5; temas registrados en `historial/nuevos/remaster-lote-d.json` (estado "renderizado"). Continúa en la rama `claude/clever-mayer-197rx7` (Release "Borradores · claude/clever-mayer-197rx7"). Falta: que Robert revise los mudos y apruebe la voz.
 
 ## Lecciones (no repetir errores)
 - Nunca generar la voz frase por frase ni meter pausas a mano: suena antinatural. Una sola petición, sin "…".
