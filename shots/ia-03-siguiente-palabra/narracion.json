@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Siguiente Palabra base narrada.dc.html",
+  "salida": "Shot Siguiente Palabra narrado.dc.html",
+  "nota": "Shot IA #03. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno (~964 créditos de ElevenLabs en una sola petición).",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Lo que te contesta un chatbot no es una idea completa: es una apuesta, pedacito por pedacito."
+    },
+    {
+      "escena": "Corta",
+      "texto": "Primero corta tu pregunta en pedazos llamados tokens: palabras o trozos de palabra."
+    },
+    {
+      "escena": "Numeros",
+      "texto": "Cada token se vuelve una lista de números que pasa por capas y capas de cálculos."
+    },
+    {
+      "escena": "Perillas",
+      "texto": "En 2020, GPT-3 tenía ciento setenta y cinco mil millones de perillas, llamadas parámetros."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué sale del otro lado?"
+    },
+    {
+      "escena": "Lista",
+      "texto": "Solo una lista: qué tan probable es cada token de ser el siguiente."
+    },
+    {
+      "escena": "Lista",
+      "texto": "Llama 3, de 2024, escoge entre ciento veintiocho mil tokens posibles."
+    },
+    {
+      "escena": "Cielo",
+      "texto": "Si escribes «el cielo es», «azul» sale muy probable; «verde», poquito."
+    },
+    {
+      "escena": "Repite",
+      "texto": "Escoge uno, lo pega al final y repite todo, token por token."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2020, OpenAI mostró que, haciéndolo enorme, aprendía tareas nuevas con unos cuantos ejemplos."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Pero escoge lo probable, no lo verdadero: por eso a veces se equivoca muy seguro."
+    },
+    {
+      "escena": "Azar",
+      "texto": "Y con un poco de azar, si preguntas dos veces, puede contestar distinto."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no pensó tu respuesta: la apostó, pedacito por pedacito."
+    }
+  ]
+}
