@@ -51,7 +51,10 @@ Al final dame: lista de shots, enlace al Release de borradores y los caracteres 
 - **Releases del repositorio:** https://github.com/Roberthecoder/lacreaciondelrobert-shots/releases
   Hay un Release por rama, llamado **"Borradores · <rama>"**. Cada shot sube ahí:
   - `<shot>_mudo.mp4` (gemelo mudo) o `<shot>_sin_voz.mp4`,
-  - `<shot>_narrado.mp4` si la voz está aprobada.
+  - `<shot>_narrado.mp4` si la voz está aprobada,
+  - `<shot>_publicacion.md`: **los textos para copiar están junto a cada video en el Release**
+    (título y descripción para TikTok, Instagram, YouTube y Facebook). La tabla de las notas del
+    Release también enlaza cada `publicacion.md`. Si solo cambias ese texto, se actualiza sin volver a renderizar el video.
   Si el shot se vuelve a renderizar, el video se reemplaza por el nuevo.
 - También en **Actions → Render automático → el run → Artifacts** (solo 3 días).
 - Desde el celular: la app de GitHub abre los Releases y reproduce o descarga los MP4.

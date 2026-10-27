@@ -28,6 +28,7 @@ jobs:
     timeout-minutes: 5
     outputs:
       shots: ${{ steps.cambios.outputs.shots }}
+      textos: ${{ steps.cambios.outputs.textos }}
       tag: ${{ steps.cambios.outputs.tag }}
     env:
       GH_TOKEN: ${{ github.token }}
@@ -52,18 +53,26 @@ jobs:
           if [ -z "$BASE" ]; then BASE=$(git merge-base origin/main HEAD 2>/dev/null || git rev-list --max-parents=0 HEAD | tail -1); fi
           if [ "$BASE" = "$(git rev-parse HEAD)" ]; then BASE=$(git rev-parse HEAD~1); fi
           echo "Comparando $BASE..$GITHUB_SHA"
-          LISTA=()
-          for d in $(git diff --name-only "$BASE" HEAD -- shots/ | cut -d/ -f1,2 | sort -u); do
+          CAMBIOS=$(git diff --name-only "$BASE" HEAD -- shots/)
+          LISTA=(); TEXTOS=()
+          for d in $(echo "$CAMBIOS" | cut -d/ -f1,2 | sort -u); do
             case "$(basename "$d")" in _*) continue;; esac
+            [ -d "$d" ] || continue
+            # Textos para publicar: se suben siempre que el shot cambió y tiene publicacion.md
+            if [ -f "$d/publicacion.md" ]; then TEXTOS+=("$(basename "$d")"); fi
+            # Video: solo si cambió algo más que publicacion.md
+            OTROS=$(echo "$CAMBIOS" | grep "^$d/" | grep -vx "$d/publicacion.md" || true)
+            if [ -z "$OTROS" ]; then echo "· $d: solo cambió publicacion.md, no se renderiza el video"; continue; fi
             [ -f "$d/narracion.json" ] || { echo "· $d sin narracion.json, se salta"; continue; }
             LISTA+=("$(basename "$d")")
           done
-          JSON=$(printf '%s\n' "${LISTA[@]}" | node -e 'const l=require("fs").readFileSync(0,"utf8").split("\n").filter(Boolean);console.log(JSON.stringify(l))')
-          echo "Shots a renderizar: $JSON"
-          echo "shots=$JSON" >> "$GITHUB_OUTPUT"
+          aJSON() { printf '%s\n' "$@" | node -e 'const l=require("fs").readFileSync(0,"utf8").split("\n").filter(Boolean);console.log(JSON.stringify(l))'; }
+          echo "Shots a renderizar: $(aJSON "${LISTA[@]}") · textos: $(aJSON "${TEXTOS[@]}")"
+          echo "shots=$(aJSON "${LISTA[@]}")" >> "$GITHUB_OUTPUT"
+          echo "textos=$(aJSON "${TEXTOS[@]}")" >> "$GITHUB_OUTPUT"
 
       - name: Release de borradores de la rama
-        if: steps.cambios.outputs.shots != '[]'
+        if: steps.cambios.outputs.shots != '[]' || steps.cambios.outputs.textos != '[]'
         run: |
           TAG="${{ steps.cambios.outputs.tag }}"
           gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --target "$GITHUB_SHA" --prerelease \
@@ -156,18 +165,54 @@ jobs:
           for i in 1 2 3 4 5; do git pull --rebase -q origin "$RAMA" && git push -q origin "HEAD:$RAMA" && exit 0; sleep $((i * 5)); done
           exit 1
 
+  textos:
+    needs: detectar
+    if: needs.detectar.outputs.textos != '[]' && needs.detectar.outputs.textos != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TEXTOS: ${{ needs.detectar.outputs.textos }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Subir publicacion.md de cada shot al Release
+        run: |
+          mkdir -p textos
+          for n in $(node -p "JSON.parse(process.env.TEXTOS).join(' ')"); do cp "shots/$n/publicacion.md" "textos/${n}_publicacion.md"; done
+          ls textos
+          gh release upload "${{ needs.detectar.outputs.tag }}" textos/*.md --clobber
+
   anotar:
-    needs: [detectar, render]
-    if: success()
+    needs: [detectar, render, textos]
+    # Corre aunque falte uno de los dos (solo textos o solo video), pero no si algo falló.
+    if: ${{ always() && needs.detectar.result == 'success' && !contains(needs.*.result, 'failure') && !contains(needs.*.result, 'cancelled') && (needs.render.result == 'success' || needs.textos.result == 'success') }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Anotar el último commit renderizado
+      - name: Lista de shots y último commit renderizado en las notas del Release
         run: |
           TAG="${{ needs.detectar.outputs.tag }}"
-          gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "Videos de prueba de la rama \`$RAMA\` (se reemplazan en cada render). No publicar sin revisar.
-
-          Último run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
-          ultimo-render: $GITHUB_SHA"
+          R="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
+          ASSETS=$(gh release view "$TAG" -R "$GITHUB_REPOSITORY" --json assets -q '.assets[].name')
+          {
+            echo "Videos de prueba de la rama \`$RAMA\` (se reemplazan en cada render). No publicar sin revisar."
+            echo "Los textos para copiar (TikTok, Instagram, YouTube, Facebook) están junto a cada video: \`<shot>_publicacion.md\`."
+            echo
+            echo "| Shot | Videos | Textos para publicar |"
+            echo "|---|---|---|"
+            for n in $(echo "$ASSETS" | sed -nE 's/^(.*)_(mudo|sin_voz|narrado)\.mp4$/\1/p; s/^(.*)_publicacion\.md$/\1/p' | sort -u); do
+              V=""
+              for a in $(echo "$ASSETS" | grep -E "^${n}_(mudo|sin_voz|narrado)\.mp4$"); do V="$V [$a]($R/releases/download/$TAG/$a)"; done
+              T="—"
+              if echo "$ASSETS" | grep -qx "${n}_publicacion.md"; then T="[publicacion.md]($R/blob/$RAMA/shots/$n/publicacion.md)"; fi
+              echo "| $n |${V:- —} | $T |"
+            done
+            echo
+            echo "Último run: $R/actions/runs/$GITHUB_RUN_ID"
+            echo "ultimo-render: $GITHUB_SHA"
+          } > notas.md
+          cat notas.md
+          gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes-file notas.md
