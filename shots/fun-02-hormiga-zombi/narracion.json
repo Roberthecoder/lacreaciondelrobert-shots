@@ -1,0 +1,67 @@
+{
+  "dcHtml": "Shot Hormiga Zombi base narrada.dc.html",
+  "salida": "Shot Hormiga Zombi narrado.dc.html",
+  "nota": "Shot Fungi Mati #02 (remaster del shot 001). Una línea por subtítulo (idx 0..14 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert: el texto cambió respecto a la voz guardada en voz/, así que generarla gasta créditos nuevos.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa hormiga no está paseando: la maneja un hongo."
+    },
+    {
+      "escena": "Espora",
+      "texto": "Todo empieza cuando una espora se pega a una hormiga carpintera"
+    },
+    {
+      "escena": "Espora",
+      "texto": "y atraviesa su armadura."
+    },
+    {
+      "escena": "Invasion",
+      "texto": "Adentro, el hongo crece y envuelve sus músculos,"
+    },
+    {
+      "escena": "Invasion",
+      "texto": "pero no invade su cerebro. Una hipótesis: la maneja desde los músculos."
+    },
+    {
+      "escena": "Subida",
+      "texto": "La hormiga abandona su colonia y trepa."
+    },
+    {
+      "escena": "Subida",
+      "texto": "Casi siempre se detiene a unos veinticinco centímetros del suelo, donde hay mucha humedad."
+    },
+    {
+      "escena": "Mordida",
+      "texto": "Ahí muerde la vena de una hoja, cerca del mediodía,"
+    },
+    {
+      "escena": "Mordida",
+      "texto": "y ya no la suelta. Es la mordida de la muerte."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué tanto trabajo?"
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Días después, de su cabeza brota un tallo que suelta esporas sobre las hormigas de abajo."
+    },
+    {
+      "escena": "Fosil",
+      "texto": "En 2011, un equipo encontró estas mordidas en una hoja fósil de Messel, Alemania: tiene unos cuarenta y ocho millones de años."
+    },
+    {
+      "escena": "Humanos",
+      "texto": "¿Y a ti te puede pasar? Tranquilo: este hongo es especialista en hormigas."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Además, casi ningún hongo aguanta tus treinta y siete grados."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que si ves una hormiga quieta, mordiendo una hoja, no está descansando: la maneja un hongo."
+    }
+  ]
+}
