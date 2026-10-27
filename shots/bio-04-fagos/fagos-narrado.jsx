@@ -83,7 +83,7 @@ function FagosNarrado() {
       <Escena T={T} a={C.Pregunta} b={C.Selectivo} zoom={0.03}>
         <FondoMarca T={T} color={KC.coral} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Persona T={T} x={540} y={1160} s={1.1} /></svg>
-        <Lupa T={T} at={C.Pregunta + 0.1} until={C.Selectivo + 0.3} x={540} y={520} r={220} fx={540} fy={1020} interior={(t, r) => <Interior T={t} r={r} />} etiqueta="RAYOS X · tú" />
+        <Lupa T={T} at={C.Pregunta + 0.1} until={C.Selectivo + 0.3} x={540} y={520} r={220} fx={540} fy={1020} interior={(t, r) => <Interior T={t} r={r} />} etiqueta="POR DENTRO · tú" />
       </Escena>
 
       {/* SELECTIVO: solo ataca bacterias; superbacterias */}

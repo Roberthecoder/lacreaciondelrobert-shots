@@ -65,7 +65,7 @@ function VacasNarrado() {
           <path d={`M 540 1500 C ${520 + mece(T, 1, 0.2) * 20} 1100, 580 900, ${600 + mece(T, 2, 0.2) * 30} 640`} stroke={KC.ink} strokeWidth={70} fill="none" strokeLinecap="round" />
           <path d={`M 540 1500 C ${520 + mece(T, 1, 0.2) * 20} 1100, 580 900, ${600 + mece(T, 2, 0.2) * 30} 640`} stroke={PASTO} strokeWidth={56} fill="none" strokeLinecap="round" />
         </svg>
-        <Lupa T={T} at={C.Enzimas + 0.2} until={C.Rumen - 0.3} x={540} y={720} r={250} fx={575} fy={1000} interior={(t, r) => <Celulosa T={t} r={r} />} etiqueta="RAYOS X · hoja de pasto" tinte={KC.yellow} />
+        <Lupa T={T} at={C.Enzimas + 0.2} until={C.Rumen - 0.3} x={540} y={720} r={250} fx={575} fy={1000} interior={(t, r) => <Celulosa T={t} r={r} />} etiqueta="POR DENTRO · hoja de pasto" tinte={KC.yellow} />
         <Etq T={T} at={C.Enzimas + 0.8} until={C.Rumen - 0.3} x={800} y={600} texto="celulosa" color={KC.yellow} />
         <MitoTachado T={T} at={C.Enzimas + 2.0} tacharEn={C.Enzimas + 2.6} until={C.Rumen - 0.3} texto="enzimas de vaca" y={1110} />
       </Escena>
@@ -74,7 +74,7 @@ function VacasNarrado() {
       <Escena T={T} a={C.Rumen} b={C.Micro} zoom={0.03}>
         <Pastizal T={T} horizonte={1100} />
         {vacaGancho({ brillo: kprog(T, C.Rumen + 0.2, C.Rumen + 0.8) })}
-        <Lupa T={T} at={C.Rumen + 0.15} until={C.Micro - 0.2} x={560} y={450} r={220} fx={446} fy={889} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="RAYOS X · estómago" />
+        <Lupa T={T} at={C.Rumen + 0.15} until={C.Micro - 0.2} x={560} y={450} r={220} fx={446} fy={889} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="POR DENTRO · estómago" />
         <Etq T={T} at={C.Rumen + 0.8} until={C.Micro - 0.2} x={330} y={380} texto="rumen" lado="izq" color={KC.yellow} />
         <Chip T={T} at={C.Rumen + 1.8} until={C.Micro - 0.2} texto="tibio · sin oxígeno" x={330} y={1490} borde={KC.cyan} tam={38} />
       </Escena>

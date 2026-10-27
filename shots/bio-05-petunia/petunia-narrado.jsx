@@ -42,7 +42,7 @@ function PetuniaNarrado() {
         <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, C.Ciclo + 1.6, C.Ciclo + 2.4) }}>
           <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Petunia T={T} x={540} y={900} s={3.2} brillo={0.8} /></svg>
         </div>
-        <Lupa T={T} at={C.Ciclo + 0.2} until={C.Ciclo + 2.0} x={540} y={520} r={200} fx={600} fy={860} interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1a2b12" />{[[0.3, 0.35], [0.7, 0.3], [0.5, 0.7]].map(([a, b], i) => <g key={i}><rect x={a * r * 2 - 70} y={b * r * 2 - 50} width={140} height={100} rx={30} fill="#e9f7d9" stroke={KC.ink} strokeWidth={5} /><circle cx={a * r * 2} cy={b * r * 2} r={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /></g>)}</svg>} etiqueta="RAYOS X · pétalo" tinte={LUZ} />
+        <Lupa T={T} at={C.Ciclo + 0.2} until={C.Ciclo + 2.0} x={540} y={520} r={200} fx={600} fy={860} interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1a2b12" />{[[0.3, 0.35], [0.7, 0.3], [0.5, 0.7]].map(([a, b], i) => <g key={i}><rect x={a * r * 2 - 70} y={b * r * 2 - 50} width={140} height={100} rx={30} fill="#e9f7d9" stroke={KC.ink} strokeWidth={5} /><circle cx={a * r * 2} cy={b * r * 2} r={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /></g>)}</svg>} etiqueta="AL MICROSCOPIO · pétalo" tinte={LUZ} />
         <div style={{ position:'absolute', inset:0, opacity:kprog(T, C.Ciclo + 1.4, C.Ciclo + 2.2) }}>
           <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><CicloCafeico T={T} cx={540} cy={820} R={290} ver={ver} gira={gira} flash={flash} enzimaActiva={activa} /></svg>
         </div>

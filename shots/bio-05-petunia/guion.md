@@ -2,7 +2,7 @@
 
 - **Serie:** Shot Biotecnológico · **Logo:** `logo_bioquimica.svg` · **Badge:** #05.
 - **Remasteriza:** viejo #18 (UV4pDhgRA28). Ya no abre con "Hace 40 años" (prohibido abrir con fecha): la historia de 1986 pasa a ser "el estudio". Se corrige "le metieron genes hongos" y se aclara que el ciclo son 4 enzimas del hongo (más una enzima ayudante que no se narra).
-- **Formato (RECETARIO):** N1 "Por dentro" (maceta de noche → rayos X del pétalo → el ciclo → la misma maceta). Gemelo mudo: M4 "Ciclo" (un sonido por enzima).
+- **Formato (RECETARIO):** N1 "Por dentro" (maceta de noche → el pétalo al microscopio → el ciclo → la misma maceta). Gemelo mudo: M4 "Ciclo" (un sonido por enzima).
 - **Gancho:** #1 "Esto no es X: es Y" sobre la flor que se prende en pantalla ("no tiene pilas ni pintura").
 - **Duración:** voz estimada 57.4 s (929 caracteres) + cierre 3.5 s ≈ 60.9 s, con `"velocidad": 1.065`. Si al generar la voz queda en menos de 61.0 s, bajar la velocidad a 1.05 (no gasta créditos).
 - **Estado:** guion APROBADO por Robert (27 oct 2026); falta generar la voz (~930 créditos).
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | 0 | Gancho | Esta flor no tiene pilas ni pintura: brilla porque lleva genes de un hongo. | Maceta con petunias de día. **A los 0 s** el cielo se apaga y las 5 flores se prenden en verde, una tras otra. Mitos "pilas" y "pintura" tachados. |
 | 1 | Hongo | Es la petunia luciérnaga, y su luz viene de un hongo que brilla solo en el bosque. | Bosque de noche: dos hongos luminosos (*Neonothopanus nambi*, esquemático); una hebra de ADN viaja del hongo a una macetita que se prende. Chip "genes del hongo". |
-| 2 | Ciclo | Por dentro, la planta ya fabrica ácido cafeico, como todas. | Pétalo gigante y **Lupa de rayos X** (células del pétalo). Fondo oscuro: aparece el ácido cafeico arriba del círculo. |
+| 2 | Ciclo | Por dentro, la planta ya fabrica ácido cafeico, como todas. | Pétalo gigante y **Lupa "por dentro"** (células del pétalo). Fondo oscuro: aparece el ácido cafeico arriba del círculo. |
 | 3 | Ciclo | Los genes del hongo lo vuelven un ciclo de cuatro enzimas. | Se dibuja el círculo y aparecen 4 enzimas numeradas. Chip "4 enzimas del hongo". |
 | 4 | Ciclo | La primera lo convierte en hispidina; la segunda, en luciferina. | La molécula viaja: enzima 1 → hispidina; enzima 2 → luciferina. |
 | 5 | Ciclo | La tercera, la luciferasa, la quema con oxígeno… y suelta luz verde. | Enzima 3 activa: **destello verde**. Chip "+ O₂ → luz verde". |
@@ -92,4 +92,5 @@ La petunia "luciérnaga" (Firefly Petunia, de la empresa Light Bio) brilla sola 
 ## Estado (27 oct 2026)
 - Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
 - Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
-- Falta: que Robert escriba "apruebo la voz de <shot>" para que el render automático saque también el narrado al Release.
+- Voz aprobada por Robert el 27 oct 2026 ("Apruebo la voz tho, de TODO"): el render automático saca también el narrado.
+- Corrección de Robert (27 oct 2026): la flor parecía margarita (pétalos sueltos y centro amarillo). Ahora es petunia: corola en embudo de pétalos unidos con 5 lóbulos poco marcados, una vena por lóbulo, garganta honda verde-amarillenta pálida sin centro amarillo, y dos flores de lado para que se vea la trompeta y el cáliz.

@@ -2,7 +2,7 @@
 
 - **Serie:** Shot Biotecnológico · **Logo:** `logo_bioquimica.svg` · **Badge:** #04.
 - **Remasteriza:** viejo #14 (oj9BTyku-cs). Se quita lo de "flotilla de un ejército de virus… ya nos la fulminamos" y "solución indispensable"; en su lugar, el mecanismo dibujado y un caso real con fuente (Tom Patterson, 2016).
-- **Formato (RECETARIO):** N1 "Por dentro" (el fago aterriza, inyecta, la bacteria se vuelve fábrica y revienta; luego tu cuerpo con rayos X). Gemelo mudo: M4 "Ciclo" lítico con conteo (placa de Petri).
+- **Formato (RECETARIO):** N1 "Por dentro" (el fago aterriza, inyecta, la bacteria se vuelve fábrica y revienta; luego tu cuerpo visto por dentro). Gemelo mudo: M4 "Ciclo" lítico con conteo (placa de Petri).
 - **Gancho:** #1 "Esto no es X: es Y" sobre el fago gigante que cae en pantalla ("no es un robot de película").
 - **Duración:** voz estimada 57.9 s (940 caracteres) + cierre 3.5 s ≈ 61.4 s, con `"velocidad": 1.065`.
 - **Estado:** guion APROBADO por Robert (27 oct 2026); falta generar la voz (~940 créditos).
@@ -16,7 +16,7 @@
 | 2 | Inyecta | Contrae la cola como jeringa y le inyecta su ADN. | La vaina se encoge, el tubo perfora y el ADN rosa pasa de la cabeza a la bacteria. Arranca un cronómetro en time-lapse. |
 | 3 | Fábrica | Ese ADN toma el control de la fábrica de la bacteria: ahora solo hace fagos. | Dentro de la bacteria aparecen fagos nuevos, uno tras otro. Chip "la fábrica ahora hace fagos". |
 | 4 | Revienta | En menos de media hora la revienta, y salen cientos de fagos nuevos. | El cronómetro llega a ~25 min y la bacteria revienta: 30 fagos salen volando. Chip "cientos de fagos nuevos". |
-| 5 | Pregunta | ¿Y si eso pasa dentro de ti? | **Re-gancho.** Una persona en fondo coral; **Lupa de rayos X** en la panza: tus células (rosas) y bacterias (verdes). Sticker pensativo. |
+| 5 | Pregunta | ¿Y si eso pasa dentro de ti? | **Re-gancho.** Una persona en fondo coral; **Lupa "por dentro"** en la panza: tus células (rosas) y bacterias (verdes). Sticker pensativo. |
 | 6 | Selectivo | Cada fago ataca solo a ciertas bacterias: a tus células no les hace nada. | Un fago rebota de una célula tuya (✗) y aterriza en una bacteria. |
 | 7 | Selectivo | Por eso hoy se estudian contra las superbacterias. | La bacteria se pone dorada con corona: "SUPERBACTERIA". Tres cápsulas de antibiótico le rebotan; el fago sigue ahí. |
 | 8 | Estudio | En 2016, en San Diego, Tom Patterson estaba en coma por una bacteria resistente a todos los antibióticos. | Tarjeta "2016 · Tom Patterson · UC San Diego · Schooley et al., *Antimicrob. Agents Chemother.* 2017". Cama de hospital, monitor lento, etiqueta *Acinetobacter baumannii*, chip "0 antibióticos sirven". |
@@ -91,4 +91,4 @@ Los bacteriófagos (fagos) son virus que solo infectan bacterias. Un fago como T
 ## Estado (27 oct 2026)
 - Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
 - Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
-- Falta: que Robert escriba "apruebo la voz de <shot>" para que el render automático saque también el narrado al Release.
+- Voz aprobada por Robert el 27 oct 2026 ("Apruebo la voz tho, de TODO"): el render automático saca también el narrado.

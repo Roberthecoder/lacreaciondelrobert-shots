@@ -22,7 +22,7 @@ igual que el resto del motor, así que funcionan en la versión narrada (tiempos
 | `Ambiente` | Partículas que flotan: la imagen nunca queda quieta | todos |
 | `Brillo` | Resplandor alrededor de lo importante | todos |
 | `Aparece` | Entrada/salida estándar para cualquier cosa (`pop`, `sube`, `fundido`) | todos |
-| `Lupa` | Ventana circular. **Amplificar:** `render` + `fx, fy` acerca un punto de la escena. **Rayos X:** `interior={(T, r) => …}` dibuja lo de adentro en un cuadro de 2r × 2r; el círculo se abre desde `(fx, fy)`, queda unido con una línea punteada, lleva cuadrícula y franja de escaneo, `etiqueta` y `tinte` opcionales. `x, y, fx, fy` aceptan funciones de `T` para seguir algo que se mueve | N1, N3, M2 |
+| `Lupa` | Ventana circular. **Amplificar:** `render` + `fx, fy` acerca un punto de la escena. **Rayos X:** `interior={(T, r) => …}` dibuja lo de adentro en un cuadro de 2r × 2r; el círculo se abre desde `(fx, fy)`, queda unido con una línea punteada, lleva cuadrícula y franja de escaneo, `etiqueta` y `tinte` opcionales. **La etiqueta en pantalla nunca dice "RAYOS X"** (no lo son; corrección de Robert, 27 oct 2026): usar "POR DENTRO · …" o, si se ven células o bacterias, "AL MICROSCOPIO · …". `x, y, fx, fy` aceptan funciones de `T` para seguir algo que se mueve | N1, N3, M2 |
 | `Subtitulo` | Una línea, palabra clave entre `*asteriscos*` en dorado; usa `window.SUBS[idx]` en la narrada | todos |
 | `Chip` | Píldora: encabezado, pregunta fija, regla escrita | N2, M2, M3, M5 |
 | `MitoTachado` | Creencia falsa que se tacha en rojo | N2, N1 |

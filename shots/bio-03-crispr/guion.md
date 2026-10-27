@@ -11,7 +11,7 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Este yogur no solo tiene bacterias: tiene bacterias vacunadas contra virus. | Fondo rosa, vaso de yogur. **A los 0.1 s** entra la cuchara. Lupa de rayos X: cadena de *Streptococcus thermophilus* (cocos en cadena) y en cada uno se enciende una tirita dorada (su CRISPR). |
+| 0 | Gancho | Este yogur no solo tiene bacterias: tiene bacterias vacunadas contra virus. | Fondo rosa, vaso de yogur. **A los 0.1 s** entra la cuchara. Lupa "por dentro": cadena de *Streptococcus thermophilus* (cocos en cadena) y en cada uno se enciende una tirita dorada (su CRISPR). |
 | 1 | Ataque | Las bacterias de tu yogur viven bajo ataque de unos virus que las revientan desde adentro: los fagos. | Fondo oscuro (micro), barra de escala de 1 µm. Tres fagos de cola larga (sifovirus, como los de *S. thermophilus*) aterrizan, inyectan su ADN y una bacteria revienta soltando fagos nuevos. Chip "fagos agrandados ×5". |
 | 2 | Captura | Algunas sobreviven y le roban al virus un pedacito de su ADN. | Adentro de una bacteria: el ADN del virus (con un tramo rosa). Dos enzimas recortan el tramo. |
 | 3 | Captura | Lo pegan en su propio genoma, en una fila de recuerdos llamada CRISPR. | El pedazo rosa viaja y entra en la fila junto al "líder", empujando a los recuerdos viejos (cian, amarillo). Las repeticiones doradas son todas iguales. Chip "CRISPR". |
@@ -92,4 +92,4 @@ Las bacterias del yogur (*Streptococcus thermophilus*) viven bajo ataque de fago
 ## Estado (27 oct 2026)
 - Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
 - Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
-- Falta: que Robert escriba "apruebo la voz de <shot>" para que el render automático saque también el narrado al Release.
+- Voz aprobada por Robert el 27 oct 2026 ("Apruebo la voz tho, de TODO"): el render automático saca también el narrado.

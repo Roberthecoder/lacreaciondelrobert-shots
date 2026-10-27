@@ -9,25 +9,59 @@ const SOMBRA = '0 6px 0 rgba(0,0,0,.85), 0 0 30px rgba(0,0,0,.9)';
 const LUZ = '#9dff6a';            // verde de la luz (~530 nm, esquemático)
 const PETALO = '#f4f0ff';
 
-// Flor de petunia (trompeta de 5 lóbulos) vista de frente. brillo: 0..1. joven: más brillo.
-function Petunia({ x = 0, y = 0, s = 1, brillo = 0, rot = 0, T = 0, seed = 1 }) {
+// Flor de petunia (Petunia × hybrida): corola en EMBUDO de pétalos UNIDOS que se abre en 5 lóbulos poco marcados,
+// con una vena central por lóbulo y una garganta honda verde-amarillenta pálida (los estambres quedan adentro del tubo).
+// La petunia luciérnaga es blanca. Nada de pétalos sueltos ni centro amarillo (eso sería margarita).
+// perfil: false = de frente; true = de lado (se ve el tubo, el cáliz y la boca acampanada). brillo: 0..1.
+const VENA = '#d8cdf2', GARGANTA = '#dfe9b0', CALIZ = '#2f9a3a';
+function bordePetunia(R, n = 120) {
+  const pts = [];
+  for (let i = 0; i <= n; i++) {
+    const a = (i / n) * Math.PI * 2 - Math.PI / 2;
+    // 5 lóbulos redondeados unidos, con una muesca suave entre cada uno y el borde un poco ondulado
+    const r = R * (0.9 + 0.1 * Math.cos(5 * (a + Math.PI / 2)) - 0.03 * Math.pow(Math.abs(Math.sin(2.5 * (a + Math.PI / 2))), 30) + 0.012 * Math.sin(23 * a));
+    pts.push([r * Math.cos(a), r * Math.sin(a)]);
+  }
+  return 'M ' + pts.map(([x, y]) => x.toFixed(1) + ' ' + y.toFixed(1)).join(' L ') + ' Z';
+}
+function Petunia({ x = 0, y = 0, s = 1, brillo = 0, rot = 0, T = 0, seed = 1, perfil = false }) {
   const b = kclamp(brillo, 0, 1), late = 0.85 + 0.15 * Math.sin(T * 1.3 + seed);
-  const lob = Array.from({ length: 5 }, (_, i) => { const a = (i / 5) * Math.PI * 2 - Math.PI / 2; return [Math.cos(a), Math.sin(a), a]; });
+  const col = mixHex(PETALO, LUZ, 0.75 * b * late), vena = mixHex(VENA, '#5fd84a', b), garg = mixHex(GARGANTA, LUZ, b);
+  const gid = 'pg' + seed + (perfil ? 'p' : 'f');
+  const halo = b > 0 && <>{[150, 100].map((rr) => <circle key={rr} cy={perfil ? -70 : 0} r={rr} fill={LUZ} opacity={0.35 * b * late} />)}</>;
+  if (perfil) {
+    // De lado: cáliz verde de 5 sépalos angostos, tubo largo y boca que se abre en campana con el borde ondulado.
+    const ond = Array.from({ length: 41 }, (_, i) => { const u = i / 40, xx = -80 + 160 * u; return [xx, -150 + 7 * Math.sin(u * Math.PI * 5)]; });
+    return <g transform={`translate(${x} ${y}) rotate(${rot + mece(T, seed, 0.2) * 4}) scale(${s})`}>
+      {halo}
+      <path d="M -12 0 C -14 -50 -22 -95 -80 -150 L 80 -150 C 22 -95 14 -50 12 0 Z" fill={col} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+      {[-40, -14, 14, 40].map((vx, i) => <path key={i} d={`M ${vx * 0.12} -6 Q ${vx * 0.4} -100 ${vx * 1.6} -148`} stroke={vena} strokeWidth={4} fill="none" opacity=".8" />)}
+      <ellipse cx={0} cy={-150} rx={80} ry={26} fill={col} stroke={KC.ink} strokeWidth={6} />
+      <ellipse cx={0} cy={-150} rx={30} ry={10} fill={garg} />
+      <ellipse cx={0} cy={-150} rx={12} ry={5} fill={mixHex('#9bb86a', LUZ, b)} />
+      <path d={'M ' + ond.map(([a, c]) => a.toFixed(1) + ' ' + c.toFixed(1)).join(' L ')} stroke={KC.ink} strokeWidth={4} fill="none" opacity=".35" />
+      {[-26, -13, 0, 13, 26].map((sx, i) => <path key={'c' + i} d={`M 0 4 Q ${sx * 0.6} -14 ${sx} -34`} stroke={CALIZ} strokeWidth={9} strokeLinecap="round" fill="none" />)}
+    </g>;
+  }
+  const lob = Array.from({ length: 5 }, (_, i) => (i / 5) * Math.PI * 2 - Math.PI / 2);
   return <g transform={`translate(${x} ${y}) rotate(${rot + mece(T, seed, 0.2) * 4}) scale(${s})`}>
-    {b > 0 && <circle r={150} fill={LUZ} opacity={0.35 * b * late} />}
-    {b > 0 && <circle r={100} fill={LUZ} opacity={0.35 * b * late} />}
-    {lob.map(([c, sn, a], i) => <ellipse key={i} cx={c * 52} cy={sn * 52} rx={58} ry={50} transform={`rotate(${a * 57.3} ${c * 52} ${sn * 52})`} fill={mixHex(PETALO, LUZ, 0.75 * b * late)} stroke={KC.ink} strokeWidth={6} />)}
-    {lob.map(([c, sn], i) => <line key={'v' + i} x1={0} y1={0} x2={c * 80} y2={sn * 80} stroke={mixHex('#c9b8ff', '#5fd84a', b)} strokeWidth={4} opacity=".7" />)}
-    <circle r={26} fill={mixHex('#ffe7a8', LUZ, b)} stroke={KC.ink} strokeWidth={5} />
+    <defs><radialGradient id={gid}><stop offset="0" stopColor={garg} /><stop offset="0.28" stopColor={mixHex(garg, col, 0.6)} /><stop offset="0.45" stopColor={col} /><stop offset="1" stopColor={col} /></radialGradient></defs>
+    {halo}
+    <path d={bordePetunia(100)} fill={`url(#${gid})`} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    {lob.map((a, i) => <path key={'v' + i} d={`M ${Math.cos(a) * 14} ${Math.sin(a) * 14} L ${Math.cos(a) * 92} ${Math.sin(a) * 92}`} stroke={vena} strokeWidth={5} strokeLinecap="round" opacity=".9" />)}
+    {lob.flatMap((a, i) => [-0.22, 0.22].map((d) => <path key={'f' + i + d} d={`M ${Math.cos(a + d * 0.4) * 22} ${Math.sin(a + d * 0.4) * 22} Q ${Math.cos(a + d) * 55} ${Math.sin(a + d) * 55} ${Math.cos(a + d * 1.5) * 80} ${Math.sin(a + d * 1.5) * 80}`} stroke={vena} strokeWidth={3} fill="none" opacity=".6" />))}
+    {lob.map((a, i) => { const a2 = a + Math.PI / 5; return <path key={'p' + i} d={`M ${Math.cos(a2) * 70} ${Math.sin(a2) * 70} L ${Math.cos(a2) * 88} ${Math.sin(a2) * 88}`} stroke={KC.ink} strokeWidth={3} opacity=".3" />; })}
+    <circle r={16} fill={mixHex('#9bb86a', LUZ, b)} />
+    <circle r={8} fill={mixHex('#5e7a3c', LUZ, b * 0.6)} />
   </g>;
 }
 // Maceta con petunias. brillos: arreglo con el brillo de cada flor (5 flores).
 function Maceta({ x = 540, y = 1100, s = 1, brillos = [0, 0, 0, 0, 0], T = 0 }) {
-  const F = [[-170, -330, 0.85], [20, -420, 1], [190, -300, 0.8], [-60, -200, 0.7], [110, -170, 0.65]];
+  const F = [[-170, -330, 0.85, false, -18], [20, -420, 1, false, 0], [210, -280, 0.85, true, 28], [-60, -200, 0.7, false, 10], [-250, -170, 0.75, true, -35]];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {F.map(([fx, fy], i) => <path key={'t' + i} d={`M 0 0 Q ${fx * 0.4} ${fy * 0.5} ${fx} ${fy}`} stroke="#2a9a3c" strokeWidth={12} fill="none" strokeLinecap="round" />)}
     {[[-120, -120], [120, -110], [-200, -220], [200, -200], [0, -260]].map(([lx, ly], i) => <ellipse key={'h' + i} cx={lx} cy={ly} rx={60} ry={26} transform={`rotate(${i * 40 - 60} ${lx} ${ly})`} fill="#3fbf4a" stroke={KC.ink} strokeWidth={5} />)}
-    {F.map(([fx, fy, fs], i) => <Petunia key={i} x={fx} y={fy} s={fs} brillo={brillos[i] || 0} T={T} seed={i} />)}
+    {F.map(([fx, fy, fs, pf, r], i) => <Petunia key={i} x={fx} y={fy} s={fs} perfil={pf} rot={r} brillo={brillos[i] || 0} T={T} seed={i} />)}
     <path d="M -230 0 L 230 0 L 190 240 L -190 240 Z" fill="#d9744a" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
     <rect x={-250} y={-40} width={500} height={56} rx={12} fill="#e5865c" stroke={KC.ink} strokeWidth={9} />
   </g>;

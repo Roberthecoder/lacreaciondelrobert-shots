@@ -104,4 +104,4 @@ Edgar J. DaSilva (UNESCO) reunió este código de colores en 2004; la lista camb
 ## Estado (27 oct 2026)
 - Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
 - Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
-- Falta: que Robert escriba "apruebo la voz de <shot>" para que el render automático saque también el narrado al Release.
+- Voz aprobada por Robert el 27 oct 2026 ("Apruebo la voz tho, de TODO"): el render automático saca también el narrado.

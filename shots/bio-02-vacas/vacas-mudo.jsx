@@ -51,7 +51,7 @@ function VacasMudo() {
           <MundoRumen T={T} microbios={kprog(T, C.Rumen + 2.8, C.Rumen + 8)} romper={kprog(T, C.Rumen + 6.5, C.Energia)} agv={kprog(T, C.Rumen + 8, C.Energia + 1)} />
           <Escala T={T} z={1} pxPorMm={35000} y={1440} />
         </div>
-        <Lupa T={T} at={C.Rumen + 0.2} until={C.Rumen + 2.2} x={560} y={450} r={220} fx={406} fy={889} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="RAYOS X" />
+        <Lupa T={T} at={C.Rumen + 0.2} until={C.Rumen + 2.2} x={560} y={450} r={220} fx={406} fy={889} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="POR DENTRO · estómago" />
         {['bacterias', 'hongos', 'protozoarios', 'arqueas'].map((n, i) => <Etq key={n} T={T} at={pasos(i)} until={C.Energia - 0.3} x={[110, 600, 760, 300][i]} y={[470, 660, 440, 600][i]} lado={i === 2 ? 'izq' : 'der'} texto={n} color={[KC.mint, KC.gold2, KC.lilac, '#c9a6ff'][i]} />)}
       </Escena>
       {/* 4. energía: los ácidos cruzan la pared */}

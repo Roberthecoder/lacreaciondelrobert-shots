@@ -2,7 +2,7 @@
 
 - **Serie:** Shot Biotecnológico · **Logo:** `logo_bioquimica.svg` · **Badge:** #02.
 - **Remasteriza:** viejo #5 (YXuYRgrHY_M) y absorbe el #22 ("todo es un biorreactor"): aquí la vaca es "un biorreactor con patas".
-- **Formato (RECETARIO):** N1 "Por dentro" (vaca → rayos X del estómago → rumen al microscopio → la misma vaca, ya por dentro) con un momento N2 (tú contra la vaca: 70 % contra ~10 %). Gemelo mudo: M4 "Ciclo".
+- **Formato (RECETARIO):** N1 "Por dentro" (vaca → vista por dentro del estómago → rumen al microscopio → la misma vaca, ya por dentro) con un momento N2 (tú contra la vaca: 70 % contra ~10 %). Gemelo mudo: M4 "Ciclo".
 - **Gancho:** #1 "Esto no es X: es Y" sobre la vaca que está comiendo en pantalla. Habla a "tú" (en el estudio: "en ti, cerca de diez").
 - **Duración:** voz estimada 58.0 s (947 caracteres) + cierre 3.5 s ≈ 61.5 s, con `"velocidad": 1.065`.
 - **Estado:** guion APROBADO por Robert (27 oct 2026); falta generar la voz (~950 créditos).
@@ -12,8 +12,8 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa vaca no se alimenta de pasto: se alimenta de los microbios de su panza. | Pastizal brillante. **A los 0 s** la vaca baja la cabeza, arranca pasto y mastica (~1 vez por segundo). |
-| 1 | Enzimas | Ella no puede digerir la celulosa del pasto: no tiene las enzimas. | Hoja de pasto gigante en fondo menta. **Lupa de rayos X:** cadenas de celulosa (glucosas unidas). Mito "enzimas de vaca" que se tacha. |
-| 2 | Rumen | Así que lo manda al rumen: un tanque enorme, tibio y sin oxígeno. | Regreso a la vaca: la panza brilla y la **Lupa de rayos X** muestra el estómago de 4 cámaras; el rumen burbujea. Chip "tibio · sin oxígeno". |
+| 1 | Enzimas | Ella no puede digerir la celulosa del pasto: no tiene las enzimas. | Hoja de pasto gigante en fondo menta. **Lupa "por dentro":** cadenas de celulosa (glucosas unidas). Mito "enzimas de vaca" que se tacha. |
+| 2 | Rumen | Así que lo manda al rumen: un tanque enorme, tibio y sin oxígeno. | Regreso a la vaca: la panza brilla y la **Lupa "por dentro"** muestra el estómago de 4 cámaras; el rumen burbujea. Chip "tibio · sin oxígeno". |
 | 3 | Micro | Ahí viven bacterias, hongos, protozoarios y arqueas: miles de millones en cada mililitro. | **Adentro del rumen** (fondo oscuro, barra de escala de 5 µm): pedazos de pasto y llegan bacterias, hongos con raicitas metidas en la fibra, un protozoario ciliado y arqueas. Chip "miles de millones por mililitro". |
 | 4 | Micro | Los hongos rompen la fibra y las bacterias fermentan la celulosa. | La fibra se parte en trozos y empiezan a salir ácidos (bolitas con cadenas de 2, 3 y 4 carbonos). |
 | 5 | Pregunta | ¿Y la vaca qué gana? | **Re-gancho.** Chip "¿y la vaca?" y sticker pensativo. |
@@ -89,4 +89,5 @@ Las vacas comen pasto, pero no pueden digerir su celulosa: no tienen las enzimas
 ## Estado (27 oct 2026)
 - Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
 - Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
-- Falta: que Robert escriba "apruebo la voz de <shot>" para que el render automático saque también el narrado al Release.
+- Voz aprobada por Robert el 27 oct 2026 ("Apruebo la voz tho, de TODO"): el render automático saca también el narrado.
+- Corrección de Robert (27 oct 2026): la Lupa no son rayos X; las etiquetas ahora dicen "POR DENTRO · …" (y "AL MICROSCOPIO · …" en yogur y pétalo, en los shots #03 y #05).

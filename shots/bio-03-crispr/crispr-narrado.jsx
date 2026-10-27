@@ -28,7 +28,7 @@ function CrisprNarrado() {
       <Escena T={T} a={C.Gancho} b={C.Ataque} zoom={0.04}>
         <FondoMarca T={T} color={KC.pink} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Yogur T={T} x={540} y={900} cuchara={kprog(T, C.Gancho + 0.1, C.Gancho + 1.3)} /></svg>
-        <Lupa T={T} at={C.Gancho + 1.2} until={C.Ataque - 0.2} x={540} y={440} r={210} fx={540} fy={730} interior={(t, r) => <CadenaLupa T={t} r={r} brillo={kprog(t, C.Gancho + 2.2, C.Gancho + 2.8)} />} etiqueta="RAYOS X · yogur" tinte={KC.mint} />
+        <Lupa T={T} at={C.Gancho + 1.2} until={C.Ataque - 0.2} x={540} y={440} r={210} fx={540} fy={730} interior={(t, r) => <CadenaLupa T={t} r={r} brillo={kprog(t, C.Gancho + 2.2, C.Gancho + 2.8)} />} etiqueta="AL MICROSCOPIO · yogur" tinte={KC.mint} />
         <Etq T={T} at={C.Gancho + 1.9} until={C.Ataque - 0.2} x={40} y={1160} texto="Streptococcus thermophilus" it tam={26} lado="der" />
       </Escena>
 
