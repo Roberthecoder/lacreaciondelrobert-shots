@@ -9,11 +9,11 @@
     },
     {
       "escena": "Espora",
-      "texto": "Todo empieza cuando una espora se pega a una hormiga carpintera"
+      "texto": "Una espora del hongo se le pega a una hormiga carpintera"
     },
     {
       "escena": "Espora",
-      "texto": "y atraviesa su armadura."
+      "texto": "y se mete a su cuerpo."
     },
     {
       "escena": "Invasion",
@@ -25,11 +25,11 @@
     },
     {
       "escena": "Subida",
-      "texto": "La hormiga abandona su colonia y trepa."
+      "texto": "La hormiga deja su colonia y se va a una planta."
     },
     {
       "escena": "Subida",
-      "texto": "Casi siempre se detiene a unos veinticinco centímetros del suelo, donde hay mucha humedad."
+      "texto": "Suele detenerse a unos veinticinco centímetros del suelo, donde hay mucha humedad."
     },
     {
       "escena": "Mordida",
@@ -45,11 +45,11 @@
     },
     {
       "escena": "Hongo",
-      "texto": "Días después, de su cabeza brota un tallo que suelta esporas sobre las hormigas de abajo."
+      "texto": "Ya muerta, de su nuca brota un tallo que suelta esporas al suelo, por donde pasan otras."
     },
     {
       "escena": "Fosil",
-      "texto": "En 2011, un equipo encontró estas mordidas en una hoja fósil de Messel, Alemania: tiene unos cuarenta y ocho millones de años."
+      "texto": "En 2010 describieron estas mordidas en una hoja fósil de Messel, Alemania, de hace unos cuarenta y ocho millones de años."
     },
     {
       "escena": "Humanos",
@@ -57,11 +57,11 @@
     },
     {
       "escena": "Calor",
-      "texto": "Además, casi ningún hongo aguanta tus treinta y siete grados."
+      "texto": "Además, la mayoría de los hongos no aguanta tus treinta y siete grados."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que si ves una hormiga quieta, mordiendo una hoja, no está descansando: la maneja un hongo."
+      "texto": "Así que esa hormiga prendida de una hoja no estaba descansando: la manejó un hongo."
     }
   ]
 }
