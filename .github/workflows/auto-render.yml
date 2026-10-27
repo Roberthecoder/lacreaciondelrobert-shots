@@ -25,7 +25,7 @@ env:
 jobs:
   detectar:
     if: ${{ !contains(github.event.head_commit.message, '[sin render]') }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # ubuntu-latest (26.04) aún no lo soporta Playwright
     timeout-minutes: 5
     outputs:
       shots: ${{ steps.cambios.outputs.shots }}
@@ -73,7 +73,7 @@ jobs:
   render:
     needs: detectar
     if: needs.detectar.outputs.shots != '[]' && needs.detectar.outputs.shots != ''
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # ubuntu-latest (26.04) aún no lo soporta Playwright
     timeout-minutes: 120   # un largo de ~4.5 min tarda ~20–40 min
     strategy:
       fail-fast: false
@@ -161,7 +161,7 @@ jobs:
   anotar:
     needs: [detectar, render]
     if: success()
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # ubuntu-latest (26.04) aún no lo soporta Playwright
     timeout-minutes: 5
     env:
       GH_TOKEN: ${{ github.token }}

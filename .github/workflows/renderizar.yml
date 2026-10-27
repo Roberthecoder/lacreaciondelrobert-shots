@@ -29,7 +29,7 @@ concurrency:
 
 jobs:
   render:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # ubuntu-latest (26.04) aún no lo soporta Playwright
     timeout-minutes: 40
     env:
       SHOT: ${{ inputs.shot }}
