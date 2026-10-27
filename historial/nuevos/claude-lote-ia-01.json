@@ -1,0 +1,7 @@
+{ "temas": [
+  { "id": "ia-alphafold", "titulo": "AlphaFold: 200 millones de proteínas predichas por una IA", "serie": "Shot IA", "numero": 1, "estado": "idea", "carpeta": "shots/ia-01-alphafold", "rama": "claude/lote-ia-01", "fecha": "2026-10-27", "derivados": [] },
+  { "id": "ia-agua", "titulo": "El agua y la electricidad que gasta la IA (centros de datos)", "serie": "Shot IA", "numero": 2, "estado": "idea", "carpeta": "shots/ia-02-agua", "rama": "claude/lote-ia-01", "fecha": "2026-10-27", "derivados": [] },
+  { "id": "ia-siguiente-palabra", "titulo": "Un chatbot por dentro: adivina la siguiente palabra (tokens y probabilidades)", "serie": "Shot IA", "numero": 3, "estado": "idea", "carpeta": "shots/ia-03-siguiente-palabra", "rama": "claude/lote-ia-01", "fecha": "2026-10-27", "derivados": [] },
+  { "id": "ia-mamografias", "titulo": "IA que ayuda a leer mamografías (ensayo MASAI, Suecia)", "serie": "Shot IA", "numero": 4, "estado": "idea", "carpeta": "shots/ia-04-mamografias", "rama": "claude/lote-ia-01", "fecha": "2026-10-27", "derivados": [] },
+  { "id": "ia-alucinaciones", "titulo": "Alucinaciones de la IA: el abogado que citó casos inventados (Mata v. Avianca 2023)", "serie": "Shot IA", "numero": 5, "estado": "idea", "carpeta": "shots/ia-05-alucinaciones", "rama": "claude/lote-ia-01", "fecha": "2026-10-27", "derivados": [] }
+] }
