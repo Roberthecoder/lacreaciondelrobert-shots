@@ -21,6 +21,9 @@ Cada shot lleva en su carpeta un `publicacion.md` con los textos listos para cop
 - Cerrar con **una pregunta para comentar** y la firma: `Soy Robert, de La Creación del Robert 🌱` (vincula el video con Robert).
 - **YouTube (largos y documentales):** la descripción lleva **capítulos** con sus tiempos para que YouTube los cree solo: el primero en `0:00`, al menos 3, de 10 s o más, tomados de las escenas del `.dc.html` narrado (`OM_SCENES`, sumando `dur`). En Shorts los capítulos no aparecen: no los pongas. Los 3 primeros hashtags de YouTube salen arriba del título: elige los mejores.
 - **TikTok e Instagram** no separan título y descripción: la primera línea hace de título, así que es el gancho.
+- **Serie y número son parte del título** (regla de Robert): el título de YouTube termina en `| Shot <Serie> #NN`
+  (p. ej. `Esto no es estambre: es una proteína 🤖 | Shot IA #01`, máx. 100 caracteres) y en las demás redes va la línea
+  `Shot <Serie> #NN · La Creación del Robert` justo antes de la firma. Libres, formales y documentales no llevan número.
 - Hashtags: 1 de marca (`#LaCreacionDelRobert`), 1 de la serie (`#Biotecnologia`, `#FungiMati`, `#CienciaAmbiental`, `#InteligenciaArtificial`, `#Ciencia`, `#Quimica`) y el resto del tema. Nada de hashtags genéricos de relleno (#fyp, #viral).
 - **Comentario fijado** (todas las redes): las fuentes completas, una por línea.
 - Sin datos que no estén en el guion y sus fuentes.

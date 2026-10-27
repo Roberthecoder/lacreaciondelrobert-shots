@@ -190,6 +190,12 @@
       <h3 style="font-size:17px">Textos para redes</h3>
       <div class="redes-tabs" id="redes-tabs" role="group" aria-label="Red social"></div>
       <div id="redes-cuerpo"></div>
+      <h3 style="font-size:17px">Corregir este shot</h3>
+      <p class="hint">Escribe qué cambiar: un dato, una frase, una escena, el ritmo, el título, los textos… La nube lo corrige, lo vuelve a verificar y reemplaza este video. Si cambia lo que se narra, te pedirá aprobar la voz otra vez.</p>
+      <textarea id="c-texto" aria-label="Corrección" placeholder="Por ejemplo: en el segundo 20 la cifra es de 2023, no de 2021; quita el chiste del final; el título debe decir…"></textarea>
+      <div class="actions"><button class="btn" id="c-enviar" type="button">Enviar corrección</button></div>
+      <p class="msg" id="c-msg"></p>
+      <ul class="pedidos" id="c-lista"></ul>
     </div>
   </div>
 </dialog>
@@ -215,7 +221,9 @@
   const mmss = (t) => { t = Math.round(t || 0); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
   const estadoDe = (s) => (S.aprob[s.id] && s.estado === 'Por revisar') ? 'Voz aprobada' : s.estado;
   const seccionDe = (s) => SECCIONES.includes(s.serie) ? s.serie : 'Otro';
-  const etiqueta = (s) => `${s.serie}${s.numero != null && SERIES.includes(s.serie) ? ' #' + String(s.numero).padStart(2, '0') : ''}`;
+  const numerada = (s) => s.numero != null && (SERIES.includes(s.serie) || s.serie === 'Robert');
+  const etiqueta = (s) => `${s.serie}${numerada(s) ? ' #' + String(s.numero).padStart(2, '0') : ''}`;
+  const tituloCompleto = (s) => numerada(s) ? `Shot ${s.serie} #${String(s.numero).padStart(2, '0')}: ${s.titulo}` : s.titulo;
   const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
   const copiar = async (texto, boton) => {
     const ok = () => { const t = boton.textContent; boton.textContent = 'Copiado'; setTimeout(() => { boton.textContent = t; }, 1400); };
@@ -273,7 +281,7 @@
 
   /* ---------- avance y secciones ---------- */
   function render() {
-    const shots = S.shots;
+    const shots = S.shots.filter((s) => s.video);   // solo versiones terminadas
     const listos = shots.filter((s) => estadoDe(s) === 'Narrado listo').length;
     const revisar = shots.filter((s) => estadoDe(s) === 'Por revisar').length;
     const lead = $('lead'); lead.replaceChildren();
@@ -325,7 +333,7 @@
     else po.append(el('div', 'none', 'Sin video todavía'));
     const pill = el('span', 'pill', estadoDe(s)); pill.dataset.e = estadoDe(s); po.append(pill);
     if (s.video) { po.append(el('span', 'play')); po.append(el('span', 'dur', mmss(s.dur))); }
-    card.append(po, el('h3', null, s.titulo), el('small', null, etiqueta(s)));
+    card.append(po, el('h3', null, tituloCompleto(s)), el('small', null, s.id));
     card.addEventListener('click', () => abrir(s));
     return card;
   }
@@ -335,14 +343,15 @@
     S.actual = s;
     const v = $('vid');
     if (s.video) { v.src = '/_blob/' + s.video; v.poster = s.poster ? '/_blob/' + s.poster : ''; } else { v.removeAttribute('src'); v.load(); }
-    $('d-titulo').textContent = s.titulo;
+    $('d-titulo').textContent = tituloCompleto(s);
+    $('c-texto').value = ''; $('c-msg').textContent = '';
     $('d-serie').textContent = etiqueta(s);
     $('d-version').textContent = s.kind === 'narrado' ? 'Narrada con tu voz' : (s.video ? 'Revisión sin voz (música y subtítulos)' : 'Sin video todavía');
     $('d-chars').textContent = s.caracteres ? `${fmt(s.caracteres)} caracteres (~${fmt(s.caracteres)} créditos de ElevenLabs)` : '—';
     $('d-key').textContent = s.id;
     const hd = $('hd'); if (s.hd) { hd.href = s.hd; hd.hidden = false; } else hd.hidden = true;
     $('msg').textContent = '';
-    pintarAprobar(); pintarRedes();
+    pintarAprobar(); pintarRedes(); pintarCorrecciones();
     $('dlg').showModal();
   }
   function pintarAprobar() {
@@ -379,6 +388,27 @@
     } catch (e) { $('msg').textContent = 'No se pudo guardar. Inténtalo otra vez en un momento.'; }
     $('aprobar').disabled = false;
   });
+  S.corr = [];
+  function pintarCorrecciones() {
+    const ul = $('c-lista'); ul.replaceChildren(); const s = S.actual; if (!s) return;
+    S.corr.filter((c) => c.shot === s.id).forEach((c) => {
+      const li = el('li'); const e = el('span', 'est', c.estado || 'pendiente'); e.dataset.e = c.estado || 'pendiente';
+      li.append(e, el('span', 'txt', c.texto), el('span', 'num', (c.creado || '').slice(0, 10)));
+      if (c.resultado) li.append(el('span', 'res', c.resultado));
+      ul.append(li);
+    });
+  }
+  $('c-enviar').addEventListener('click', async () => {
+    const s = S.actual; const texto = $('c-texto').value.trim();
+    if (!s || !texto) { $('c-msg').textContent = 'Escribe la corrección primero.'; return; }
+    if (!S.db) { $('c-msg').textContent = 'La base de la Sala no está disponible en esta vista.'; return; }
+    $('c-enviar').disabled = true;
+    try {
+      await S.db.collection('correcciones').add({ shot: s.id, titulo: tituloCompleto(s), texto, estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
+      $('c-texto').value = ''; $('c-msg').textContent = 'Corrección enviada. La nube la aplica en su siguiente ronda (o al instante si en una sesión escribes «atiende mis correcciones»).';
+    } catch (e) { $('c-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
+    $('c-enviar').disabled = false;
+  });
   $('cerrar').addEventListener('click', () => $('dlg').close());
   $('dlg').addEventListener('close', () => $('vid').pause());
   $('dlg').addEventListener('click', (e) => { if (e.target === $('dlg')) $('dlg').close(); });
@@ -399,6 +429,9 @@
     db.collection('aprobaciones').limit(1000).onSnapshot((snap) => {
       S.aprob = {}; snap.docs.forEach((d) => { const x = d.data(); if (x && x.aprobado && !x.procesado) S.aprob[d.id] = x; });
       render(); pintarAprobar();
+    }, () => {});
+    db.collection('correcciones').orderBy('creado', 'desc').limit(300).onSnapshot((snap) => {
+      S.corr = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarCorrecciones();
     }, () => {});
     db.collection('pedidos').orderBy('creado', 'desc').limit(50).onSnapshot((snap) => {
       S.pedidos = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarPedidos();

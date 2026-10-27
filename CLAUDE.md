@@ -87,6 +87,26 @@ En la Sala de Shots hay una caja "Pedir videos" que guarda documentos en la coll
 - Todo pasa por "Verificación de hechos", todo lleva `publicacion.md` con las 7 redes (`motor/plantillas/publicacion.md`) y la voz
   espera aprobación, como siempre. Todo se sube a la Sala al terminar.
 
+## Correcciones desde la Sala (Robert corrige un shot)
+Al abrir un shot en la Sala, Robert puede escribir una corrección; se guarda en la collection `correcciones`
+(`{shot, titulo, texto, estado, creado, resultado}`).
+- **Toda sesión que empiece** (o si Robert escribe "atiende mis correcciones"): `ArtifactData` query en `correcciones` con
+  `estado == pendiente`; se atienden ANTES de los pedidos y del lote normal. Al tomar una: `estado: "en proceso"`.
+- Aplica la corrección en la carpeta de ese shot, **en la rama donde vive** (o en main). Vuelve a pasar por "Verificación de hechos"
+  todo lo que cambió. Haz push: GitHub vuelve a renderizar y copia el video.
+- **Si cambia el texto narrado de un shot con voz aprobada:** quita `"voz_aprobada"` de `narracion.json` (para no gastar créditos sin
+  permiso) y pon el shot en la Sala como `"Por revisar"`, para que Robert apruebe otra vez.
+- Cuando esté el video nuevo: **reemplaza** en la Sala el doc del MISMO shot (`video`, `poster`, `redes`, `estado`) y borra con
+  `Artifact` action "delete" los assets viejos que ya nadie usa. Luego `estado: "listo"` y en `resultado` una línea con lo que cambió.
+  Si la corrección es ambigua o pide un dato falso: `estado: "pregunta"` y la duda en `resultado`, sin aplicar nada.
+
+## En la Sala solo van versiones finales
+- Un doc por shot, con la clave de su carpeta. Si un shot se rehace, se **reemplaza** su doc y se borran sus assets viejos; nunca se
+  sube uno nuevo al lado.
+- Nunca se suben borradores, pruebas, renders fallidos ni shots sin video. Si un shot se descarta, se borra su doc y sus assets.
+- Antes de elegir tema, revisa también los títulos que ya están en la Sala (`ArtifactData` list `shots`) para no repetir un tema
+  ni hacer uno casi igual.
+
 ## Verificación de hechos (obligatoria, ANTES de animar; regla de Robert, 27 oct 2026)
 Robert: "no me importa que el guion no siempre traiga citas, pero SIEMPRE, SIEMPRE tiene que ser verídico". Orden fijo para todo
 video (shot, largo, libre o de Robert):
