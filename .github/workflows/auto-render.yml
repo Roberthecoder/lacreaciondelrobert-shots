@@ -1,6 +1,7 @@
 name: Render automático
 
-# Se lanza solo con cada push a cualquier rama. Renderiza en la nube los shots cuya carpeta cambió:
+# Se lanza solo con cada push a cualquier rama. Renderiza en la nube los shots (shots/**) y los videos largos
+# horizontales (largos/**) cuya carpeta cambió:
 #  - siempre la versión sin voz (o el gemelo mudo, si narracion.json trae "mudo");
 #  - la narrada solo si narracion.json trae "voz_aprobada": true (gasta créditos de ElevenLabs
 #    solo si el texto cambió; si no, usa la voz guardada en <shot>/voz/).
@@ -9,7 +10,7 @@ name: Render automático
 on:
   push:
     branches: ['**']
-    paths: ['shots/**']
+    paths: ['shots/**', 'largos/**']
 
 permissions:
   contents: write   # crear el Release de borradores y guardar la caché de voz
@@ -53,10 +54,10 @@ jobs:
           if [ "$BASE" = "$(git rev-parse HEAD)" ]; then BASE=$(git rev-parse HEAD~1); fi
           echo "Comparando $BASE..$GITHUB_SHA"
           LISTA=()
-          for d in $(git diff --name-only "$BASE" HEAD -- shots/ | cut -d/ -f1,2 | sort -u); do
+          for d in $(git diff --name-only "$BASE" HEAD -- shots/ largos/ | cut -d/ -f1,2 | sort -u); do
             case "$(basename "$d")" in _*) continue;; esac
             [ -f "$d/narracion.json" ] || { echo "· $d sin narracion.json, se salta"; continue; }
-            LISTA+=("$(basename "$d")")
+            LISTA+=("$d")
           done
           JSON=$(printf '%s\n' "${LISTA[@]}" | node -e 'const l=require("fs").readFileSync(0,"utf8").split("\n").filter(Boolean);console.log(JSON.stringify(l))')
           echo "Shots a renderizar: $JSON"
@@ -73,14 +74,14 @@ jobs:
     needs: detectar
     if: needs.detectar.outputs.shots != '[]' && needs.detectar.outputs.shots != ''
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120   # un largo de ~4.5 min tarda ~20–40 min
     strategy:
       fail-fast: false
       max-parallel: 20
       matrix:
         shot: ${{ fromJSON(needs.detectar.outputs.shots) }}
     env:
-      SHOT: shots/${{ matrix.shot }}
+      SHOT: ${{ matrix.shot }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
@@ -98,6 +99,7 @@ jobs:
         run: |
           mkdir -p salida
           N=$(basename "$SHOT")
+          echo "NOMBRE=$N" >> "$GITHUB_ENV"
           MUDO=$(node -p "JSON.stringify(require('./$SHOT/narracion.json').mudo || null)")
           if [ "$MUDO" != "null" ]; then
             HTML=$(node -p "require('./$SHOT/narracion.json').mudo.dcHtml")
@@ -141,7 +143,7 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.shot }}
+          name: ${{ env.NOMBRE }}
           path: salida/*.mp4
           retention-days: 3
 

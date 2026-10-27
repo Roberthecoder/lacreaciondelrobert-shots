@@ -5,7 +5,8 @@
 // Todas las piezas son funciones puras del tiempo T (tiempo de autor), como el resto del motor.
 // Catálogo y uso: motor/kit/LEEME.md · formatos: referencias-externas/RECETARIO.md
 
-const KW = 1080, KH = 1920;
+// Vertical 1080×1920 por defecto; los largos horizontales definen window.K_ANCHO = 1920, window.K_ALTO = 1080 en el .dc.html.
+const KW = +window.K_ANCHO || 1080, KH = +window.K_ALTO || 1920;
 const KC = {
   ink:'#16120f', paper:'#f4efe4', pink:'#ff2d78', yellow:'#ffe11a', cyan:'#00d2ff', red:'#ff3b2f',
   blue:'#2346ff', mint:'#2fe0a8', violet:'#2b0f63', orange:'#ff8a1f', lilac:'#b18cff', teal:'#11a39a',

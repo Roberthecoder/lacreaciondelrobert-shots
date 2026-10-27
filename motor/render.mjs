@@ -1,4 +1,5 @@
-// render.mjs — convierte un shot (.dc.html de Claude Design) en MP4 vertical 1080×1920.
+// render.mjs — convierte un shot (.dc.html de Claude Design) en MP4 vertical 1080×1920
+// (u horizontal 1920×1080 si el .dc.html define window.K_ANCHO = 1920; window.K_ALTO = 1080, como los largos).
 // Uso: node render.mjs <carpeta-del-shot> <archivo.dc.html> <salida.mp4> [--fps 30] [--audio mezcla.wav] [--outro cierre.mp4] [--hasta 12.5]
 // - React/Babel se sirven en local (no depende de unpkg).
 // - Cada cuadro se renderiza por "seek" determinista del motor animations-v3 (como el exportador de Claude Design).
@@ -18,7 +19,7 @@ const [dir, page, out] = args;
 if (!out) { console.error('Uso: node render.mjs <carpeta> <archivo.dc.html> <salida.mp4> [--fps 30] [--audio x.wav] [--outro x.mp4] [--hasta seg]'); process.exit(1); }
 const FPS = +opt('fps', 30);
 
-const MIME = { '.html': 'text/html', '.js': 'application/javascript', '.jsx': 'application/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.mp3': 'audio/mpeg', '.wav': 'audio/wav', '.mp4': 'video/mp4', '.css': 'text/css', '.json': 'application/json' };
+const MIME = { '.html': 'text/html', '.js': 'application/javascript', '.jsx': 'application/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.mp3': 'audio/mpeg', '.wav': 'audio/wav', '.mp4': 'video/mp4', '.css': 'text/css', '.json': 'application/json' };
 const server = http.createServer((req, res) => {
   const f = path.join(path.resolve(dir), decodeURIComponent(new URL(req.url, 'http://x').pathname));
   if (!f.startsWith(path.resolve(dir)) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { res.writeHead(404); return res.end(); }
@@ -28,7 +29,8 @@ const server = http.createServer((req, res) => {
 const port = server.address().port;
 
 const browser = await chromium.launch({ channel: process.env.NAVEGADOR || undefined, args: ['--autoplay-policy=no-user-gesture-required'] });
-const ctx = await browser.newContext({ viewport: { width: 1080, height: 1990 } });
+let W = 1080, H = 1920;
+const ctx = await browser.newContext({ viewport: { width: W, height: H + 70 } });
 const p = await ctx.newPage();
 await p.route(/unpkg\.com/, (r) => {
   const u = r.request().url();
@@ -44,6 +46,9 @@ await p.evaluate(() => document.fonts.ready);
 // Ocultar todo lo que no es parte del video (aviso de audio, paneles, barra).
 await p.addStyleTag({ content: '[style*="z-index: 9999"]{display:none!important}' });
 await p.waitForTimeout(1500);
+// Tamaño del video: lo define el .dc.html (window.K_ANCHO / K_ALTO); si no, vertical 1080×1920.
+[W, H] = await p.evaluate(() => [+window.K_ANCHO || 1080, +window.K_ALTO || 1920]);
+if (W !== 1080 || H !== 1920) { await p.setViewportSize({ width: W, height: H + 70 }); await p.waitForTimeout(1000); }
 
 const info = await p.evaluate((SEL) => {
   const e = document.querySelector(SEL), r = e.getBoundingClientRect();
@@ -54,17 +59,17 @@ const info = await p.evaluate((SEL) => {
 const outroFile = opt('outro');
 let end = +opt('hasta', 0) || (outroFile && info.outro ? info.outro : info.dur);
 const N = Math.round(end * FPS);
-console.log(`Duración ${info.dur}s · render hasta ${end.toFixed(2)}s · ${N} cuadros · escala ${(info.w / 1080).toFixed(3)}`);
+console.log(`Duración ${info.dur}s · render hasta ${end.toFixed(2)}s · ${N} cuadros · ${W}×${H} · escala ${(info.w / W).toFixed(3)}`);
 
-// Ajustar escala para que el escenario salga exactamente a 1080×1920.
-const dpr = 1080 / info.w;
+// Ajustar escala para que el escenario salga exactamente a W×H.
+const dpr = W / info.w;
 const clip = { x: info.x, y: info.y, width: info.w, height: info.h };
 const cdp = await ctx.newCDPSession(p);
-await cdp.send('Emulation.setDeviceMetricsOverride', { width: 1080, height: 1990, deviceScaleFactor: dpr, mobile: false });
+await cdp.send('Emulation.setDeviceMetricsOverride', { width: W, height: H + 70, deviceScaleFactor: dpr, mobile: false });
 
 const tmp = out.replace(/\.mp4$/, '') + '.video.mp4';
 const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-',
-  '-vf', 'scale=1080:1920:flags=lanczos,format=yuv420p', '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', tmp], { stdio: ['pipe', 'inherit', 'inherit'] });
+  '-vf', `scale=${W}:${H}:flags=lanczos,format=yuv420p`, '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', tmp], { stdio: ['pipe', 'inherit', 'inherit'] });
 
 const t0 = Date.now();
 for (let i = 0; i < N; i++) {
@@ -87,7 +92,7 @@ const inputs = ['-i', tmp], filters = [];
 let v = '[0:v]';
 if (outroFile) {
   inputs.push('-i', outroFile);
-  filters.push(`[1:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,fps=${FPS},format=yuv420p,setsar=1[o]`, `[0:v]setsar=1[m]`, `[m][o]concat=n=2:v=1:a=0[v]`);
+  filters.push(`[1:v]scale=${W}:${H}:force_original_aspect_ratio=decrease,pad=${W}:${H}:(ow-iw)/2:(oh-ih)/2,fps=${FPS},format=yuv420p,setsar=1[o]`, `[0:v]setsar=1[m]`, `[m][o]concat=n=2:v=1:a=0[v]`);
   v = '[v]';
 }
 if (audio) inputs.push('-i', audio);
