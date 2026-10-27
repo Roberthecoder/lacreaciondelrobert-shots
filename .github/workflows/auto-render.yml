@@ -1,0 +1,172 @@
+name: Render automático
+
+# Se lanza solo con cada push a cualquier rama. Renderiza en la nube los shots cuya carpeta cambió:
+#  - siempre la versión sin voz (o el gemelo mudo, si narracion.json trae "mudo");
+#  - la narrada solo si narracion.json trae "voz_aprobada": true (gasta créditos de ElevenLabs
+#    solo si el texto cambió; si no, usa la voz guardada en <shot>/voz/).
+# Los MP4 quedan como artifact (nombre del shot) y en el Release "borradores-<rama>".
+# Para saltarse el render en un push, poner [sin render] en el mensaje del commit.
+on:
+  push:
+    branches: ['**']
+    paths: ['shots/**']
+
+permissions:
+  contents: write   # crear el Release de borradores y guardar la caché de voz
+
+concurrency:
+  group: auto-render-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  RAMA: ${{ github.ref_name }}
+
+jobs:
+  detectar:
+    if: ${{ !contains(github.event.head_commit.message, '[sin render]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      shots: ${{ steps.cambios.outputs.shots }}
+      tag: ${{ steps.cambios.outputs.tag }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ANTES: ${{ github.event.before }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Qué shots cambiaron
+        id: cambios
+        run: |
+          TAG="borradores-${RAMA//\//-}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          # Punto de comparación: el último commit que se renderizó completo en esta rama (anotado en el
+          # Release), si no el commit anterior del push, y si la rama es nueva, main.
+          ULT=$(gh release view "$TAG" --json body -q .body 2>/dev/null | grep -oE 'ultimo-render: [0-9a-f]{40}' | cut -d' ' -f2 || true)
+          BASE=""
+          for c in "$ULT" "$ANTES"; do
+            if [ -n "$c" ] && [ "$c" != "0000000000000000000000000000000000000000" ] && git merge-base --is-ancestor "$c" HEAD 2>/dev/null; then BASE="$c"; break; fi
+          done
+          if [ -z "$BASE" ]; then BASE=$(git merge-base origin/main HEAD 2>/dev/null || git rev-list --max-parents=0 HEAD | tail -1); fi
+          if [ "$BASE" = "$(git rev-parse HEAD)" ]; then BASE=$(git rev-parse HEAD~1); fi
+          echo "Comparando $BASE..$GITHUB_SHA"
+          LISTA=()
+          for d in $(git diff --name-only "$BASE" HEAD -- shots/ | cut -d/ -f1,2 | sort -u); do
+            case "$(basename "$d")" in _*) continue;; esac
+            [ -f "$d/narracion.json" ] || { echo "· $d sin narracion.json, se salta"; continue; }
+            LISTA+=("$(basename "$d")")
+          done
+          JSON=$(printf '%s\n' "${LISTA[@]}" | node -e 'const l=require("fs").readFileSync(0,"utf8").split("\n").filter(Boolean);console.log(JSON.stringify(l))')
+          echo "Shots a renderizar: $JSON"
+          echo "shots=$JSON" >> "$GITHUB_OUTPUT"
+
+      - name: Release de borradores de la rama
+        if: steps.cambios.outputs.shots != '[]'
+        run: |
+          TAG="${{ steps.cambios.outputs.tag }}"
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --target "$GITHUB_SHA" --prerelease \
+            --title "Borradores · $RAMA" --notes "Videos de prueba de la rama \`$RAMA\` (se reemplazan en cada render). No publicar sin revisar."
+
+  render:
+    needs: detectar
+    if: needs.detectar.outputs.shots != '[]' && needs.detectar.outputs.shots != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shot: ${{ fromJSON(needs.detectar.outputs.shots) }}
+    env:
+      SHOT: shots/${{ matrix.shot }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar ffmpeg y Chromium
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          cd motor && npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+
+      - name: Versión sin voz
+        run: |
+          mkdir -p salida
+          N=$(basename "$SHOT")
+          MUDO=$(node -p "JSON.stringify(require('./$SHOT/narracion.json').mudo || null)")
+          if [ "$MUDO" != "null" ]; then
+            HTML=$(node -p "require('./$SHOT/narracion.json').mudo.dcHtml")
+            AUD=$(node -p "require('./$SHOT/narracion.json').mudo.audio || 'assets/mezcla_mudo.wav'")
+            (cd "$SHOT" && node gen-audio.mjs "$HTML" "$AUD")
+            node motor/render.mjs "$SHOT" "$HTML" "salida/${N}_mudo.mp4" --audio "$SHOT/$AUD"
+          else
+            HTML=$(node -p "require('./$SHOT/narracion.json').dcHtml")
+            node "$SHOT/gen-audio.mjs"
+            node motor/render.mjs "$SHOT" "$HTML" "salida/${N}_sin_voz.mp4" --audio "$SHOT/assets/mezcla.wav"
+          fi
+
+      - name: ¿Voz aprobada?
+        id: voz
+        run: |
+          V=$(node -p "require('./$SHOT/narracion.json').voz_aprobada === true")
+          # Modelo: el de narracion.json, si no el de la voz ya guardada (para no regenerarla), si no eleven_v4
+          M=$(node -e "const fs=require('fs');const c=require('./$SHOT/narracion.json');let m=c.modelo;try{m=m||JSON.parse(fs.readFileSync('$SHOT/voz/narracion.json','utf8')).modelo}catch{};console.log(m||'eleven_v4')")
+          echo "aprobada=$V" >> "$GITHUB_OUTPUT"
+          echo "modelo=$M" >> "$GITHUB_OUTPUT"
+          echo "Voz aprobada: $V · modelo: $M"
+
+      - name: Versión narrada (voz clonada en ElevenLabs)
+        if: steps.voz.outputs.aprobada == 'true'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_MODEL: ${{ steps.voz.outputs.modelo }}
+        run: |
+          node motor/narrar.mjs "$SHOT"
+          HTML=$(node -p "require('./$SHOT/narracion.json').salida")
+          node motor/render.mjs "$SHOT" "$HTML" "salida/$(basename $SHOT)_narrado.mp4" --audio "$SHOT/assets/mezcla_narrada.wav"
+
+      - name: Duraciones
+        run: |
+          for f in salida/*.mp4; do echo "$f: $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f") s"; done | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Subir como artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.shot }}
+          path: salida/*.mp4
+          retention-days: 14
+
+      - name: Subir al Release de borradores
+        run: gh release upload "${{ needs.detectar.outputs.tag }}" salida/*.mp4 --clobber
+
+      - name: Guardar caché de voz
+        if: steps.voz.outputs.aprobada == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A "$SHOT/voz" "$SHOT/"*narrado.dc.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Voz generada para $SHOT [sin render]"
+          for i in 1 2 3 4 5; do git pull --rebase -q origin "$RAMA" && git push -q origin "HEAD:$RAMA" && exit 0; sleep $((i * 5)); done
+          exit 1
+
+  anotar:
+    needs: [detectar, render]
+    if: success()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Anotar el último commit renderizado
+        run: |
+          TAG="${{ needs.detectar.outputs.tag }}"
+          gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "Videos de prueba de la rama \`$RAMA\` (se reemplazan en cada render). No publicar sin revisar.
+
+          Último run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+          ultimo-render: $GITHUB_SHA"

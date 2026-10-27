@@ -1,11 +1,638 @@
 {
-  "nota": "Temas ya publicados o producidos. El generador no puede repetir ninguno, ni uno casi igual.",
+  "nota": "Banco de temas del canal. Antes de elegir tema, revisar aquí (y en historial/nuevos/) que no exista ni uno casi igual. Las sesiones NO editan este archivo: anotan en historial/nuevos/<rama>.json y luego se corre `node historial/consolidar.mjs`.",
+  "estados": [
+    "idea",
+    "guion",
+    "renderizado",
+    "aprobado",
+    "publicado"
+  ],
+  "campos": {
+    "id": "corto, sin espacios",
+    "serie": "ver CANAL.md",
+    "numero": "número dentro de la serie",
+    "carpeta": "shots/<carpeta> o null",
+    "rama": "rama de git donde vive",
+    "fuentes": "lista de fuentes publicadas",
+    "fecha": "AAAA-MM-DD",
+    "derivados": "2–3 temas de continuidad (ideas para shots siguientes)"
+  },
   "temas": [
-    { "id": "cepario", "titulo": "Cepario", "serie": "Shot Biotecnológico", "numero": 23, "estado": "publicado" },
-    { "id": "lab-comestibles", "titulo": "Cosas del laboratorio que te puedes comer", "serie": "Shot Lab", "numero": 25, "estado": "confirmar" },
-    { "id": "micelio", "titulo": "El micelio", "serie": "Shot Micológico", "numero": 1, "estado": "confirmar" },
-    { "id": "hormiga-zombi", "titulo": "El hongo que convierte hormigas en zombis (Ophiocordyceps)", "serie": "Shot", "numero": 1, "estado": "borrador", "versiones": ["sin-voz"] },
-    { "id": "moho-pan", "titulo": "El moho del pan (Rhizopus stolonifer): por dentro y su ciclo", "serie": "Shot Micológico", "numero": 2, "estado": "construido, falta voz", "versiones": ["narrada (Por dentro)", "sin-voz (Ciclo)"], "nota": "Badge #02: confirmar numeración con Robert" },
-    { "id": "arboles-lunares", "titulo": "Las semillas que viajaron a la Luna (árboles lunares del Apolo 14)", "serie": "Shot", "numero": 3, "estado": "demo visual sin voz", "versiones": ["narrada (Por dentro + El experimento)"], "nota": "Gemelo mudo (Ciclo) propuesto, no construido. Voz pendiente de aprobación." }
+    {
+      "id": "hormiga-zombi",
+      "titulo": "El hongo que convierte hormigas en zombis (Ophiocordyceps)",
+      "serie": "Shot (sin serie, demo)",
+      "numero": null,
+      "estado": "renderizado",
+      "carpeta": "shots/001-hormiga-zombi",
+      "rama": "main",
+      "fuentes": [
+        "Fredericksen et al. (2017). *PNAS* 114(47): 12590–12595. Las células del hongo rodean e invaden los músculos; el cerebro no es invadido.",
+        "Andersen et al. (2009). *The American Naturalist* 174(3): 424–433. Mordida a ~25 cm del suelo, humedad de 94–95 %.",
+        "Hughes et al. (2011). *BMC Ecology* 11: 13. Mordidas sincronizadas cerca del mediodía solar.",
+        "Hughes, Wappler y Labandeira (2011). *Biology Letters* 7(1): 67–70. Cicatrices de mordida en hojas fósiles de Messel, Alemania (~48 millones de años).",
+        "Robert y Casadevall (2009). *J. Infect. Dis.* 200(10): 1623–1626. La mayoría de los hongos no crece a temperatura de mamífero."
+      ],
+      "fecha": "2026-10-25",
+      "derivados": [
+        "Cordyceps militaris: el pariente que sí se cultiva y se vende",
+        "Hongos que cazan gusanos con lazos (Arthrobotrys)",
+        "Parásitos que cambian la conducta: Toxoplasma y los ratones"
+      ]
+    },
+    {
+      "id": "moho-pan",
+      "titulo": "El moho del pan (Rhizopus stolonifer): por dentro y su ciclo",
+      "serie": "Shot Fungi Mati",
+      "numero": 1,
+      "estado": "guion",
+      "carpeta": "shots/002-moho-pan",
+      "rama": "main",
+      "fuentes": [
+        "USDA FSIS, *Molds on Food: Are They Dangerous?* (actualizada el 22 ago 2013): pan y horneados se tiran (\"los alimentos porosos pueden contaminarse por debajo de la superficie\"); queso duro y verduras firmes: cortar al menos 1 pulgada (2.5 cm) alrededor y por debajo; \"no huelas el alimento con moho: puede causar problemas respiratorios\"; las \"raíces\" pueden ir muy profundo y no se ven. https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/molds-food-are-they-dangerous",
+        "Estructura y ciclo de *Rhizopus*: hifas sobre la superficie, rizoides que penetran, esporangios negros en la punta de tallos, esporas por aire. Sadava et al., *Life* (Macmillan/Sinauer), animación 29.1; JGI Mycocosm, *Rhizopus stolonifer*. https://mycocosm.jgi.doe.gov/Rhisto1",
+        "Tamaños: esporas de ~4–18 µm y esporangios de ~40–350 µm (ephytia INRAE; estudios coreanos de pudrición blanda). Un pelo humano mide decenas de micras: la espora es \"más delgada que un pelo\".",
+        "Tempeh: alimento tradicional de Indonesia hecho con soya fermentada por *Rhizopus oligosporus* o *R. oryzae*; el micelio une los frijoles en un bloque. revisión \"Tempeh: a mold-modified indigenous fermented food made from soybeans and/or cereal grains\" (PubMed 8267862; confirmar autores antes de publicar). https://pubmed.ncbi.nlm.nih.gov/8267862/"
+      ],
+      "fecha": "2026-10-26",
+      "derivados": [
+        "¿Se puede quitar la parte con moho y comerse el resto? (micotoxinas)",
+        "Penicillium: del moho de la naranja a la penicilina",
+        "Por qué el pan de caja tarda más en enmohecerse (conservadores)"
+      ]
+    },
+    {
+      "id": "arboles-lunares",
+      "titulo": "Las semillas que viajaron a la Luna (árboles lunares del Apolo 14)",
+      "serie": "Shot Científico",
+      "numero": 1,
+      "estado": "renderizado",
+      "carpeta": "shots/003-semillas-luna",
+      "rama": "main",
+      "fuentes": [
+        "NASA NSSDC, D. R. Williams, *The \"Moon Trees\"* (nssdc.gsfc.nasa.gov/planetary/lunar/moon_tree.html): Roosa, exbombero forestal; especies; las bolsas reventaron durante la descontaminación y quedaron expuestas al vacío; Gulfport y Placerville; plantados en 1975–76 en unos 40 estados; sin lista sistemática; árboles de control \"sin diferencia discernible\" después de más de 40 años.",
+        "NASA, Apolo 14: 34 órbitas lunares; módulo de comando *Kitty Hawk* y módulo lunar *Antares*.",
+        "USDA Forest Service / NASA, Artemis I Moon Trees (2022–2024): segunda generación de semillas que orbitaron la Luna.",
+        "Tamaño de la semilla de *Pinus taeda* (~6 mm sin ala): USDA, *Woody Plant Seed Manual*. Es aproximado y la escala del dibujo es esquemática.",
+        "Número de semillas: las fuentes no coinciden (de ~500 a \"posiblemente 2,000 o más\"). Por eso el guion dice \"cientos\"."
+      ],
+      "fecha": "2026-10-26",
+      "derivados": [
+        "Semillas que germinan después de 2,000 años (palmera datilera de Masada)",
+        "Plantas en la Estación Espacial: lechuga Veggie",
+        "Bancos de semillas: la bóveda de Svalbard"
+      ]
+    },
+    {
+      "id": "bio-ramas-colores",
+      "titulo": "Las ramas de la biotecnología por colores",
+      "serie": "Shot Biotecnológico",
+      "numero": 1,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-01-ramas",
+      "rama": "remaster/lote-a",
+      "fuentes": [
+        "DaSilva, E. J. (2004). *The Colours of Biotechnology: Science, Development and Humankind*. Electronic Journal of Biotechnology 7(3). ejbiotechnology.info, artículo 1114. (Editorial de la UNESCO.)",
+        "Kafarski, P. (2012). *Rainbow Code of Biotechnology*. CHEMIK (Universidad de Wrocław). Lista con roja, verde, blanca, amarilla, azul, gris, café, dorada, violeta y oscura, citada así en Wikipedia, \"Biotechnology\", sección de colores.",
+        "Frazzetto, G. (2003). *White biotechnology*. EMBO Reports 4(9): 835–837 (enzimas industriales, incluidos detergentes).",
+        "Latido en reposo de 60–100 por minuto (pulso de la versión muda): American Heart Association."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Biotecnología azul: medicinas que salen del mar",
+        "Biotecnología blanca: las enzimas de tu detergente",
+        "Biotecnología gris: microbios que limpian suelos contaminados"
+      ],
+      "remaster_de": "lista vieja #1"
+    },
+    {
+      "id": "bio-vacas-microbios",
+      "titulo": "La vaca no vive del pasto: vive de sus microbios (rumen, biorreactor con patas)",
+      "serie": "Shot Biotecnológico",
+      "numero": 2,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-02-vacas",
+      "rama": "remaster/lote-a",
+      "fuentes": [
+        "Bergman, E. N. (1990). Energy contributions of volatile fatty acids from the gastrointestinal tract in various species. *Physiological Reviews* 70(2): 567–590. PubMed 2181501 (≈70 % en rumiantes como borregos y ganado; ≈10 % en humanos).",
+        "Clark, J. H., Klusmeyer, T. H. y Cameron, M. R. (1992). Microbial protein synthesis and flows of nitrogen fractions to the duodenum of dairy cows. *J. Dairy Sci.* 75: 2304–2323; y revisiones de proteína metabolizable (p. ej. Bach, Calsamiglia y Stern, 2005, *J. Dairy Sci.* 88 E. Suppl.): la proteína microbiana suele ser la principal fuente de aminoácidos absorbidos (se citan 50–80 %), salvo dietas con mucha proteína que escapa al rumen.",
+        "Microbiología del rumen (bacterias 10¹⁰–10¹¹ por mL, protozoarios ~10⁵–10⁶ por mL, hongos anaerobios y arqueas metanógenas): notas de nutrición de rumiantes, Universidad de Idaho (\"Rumen microbiology\").",
+        "Metano: ~95 % del metano del rumen sale por eructo (Murray, Bryant y Leng, 1976, *Br. J. Nutr.*, citado por Snopes y Scientific American).",
+        "Rumia: 50–80 masticadas por bolo, ~1 minuto por bolo (Beauchemin, 2018, \"Current perspectives on eating and rumination activity in dairy cows\", *J. Dairy Sci.* 101: 4762–4784, y estudio de 2019 en *Acta Univ. Agric. Mendelianae*: ~61 masticadas y ~54–58 s por bolo). Se usa 60 en el mudo."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "El metano de las vacas y las algas que lo reducen (Asparagopsis)",
+        "Las termitas tampoco digieren la madera: sus microbios sí",
+        "Tu intestino como biorreactor: la fibra y tus bacterias"
+      ],
+      "remaster_de": "lista vieja #5"
+    },
+    {
+      "id": "bio-crispr-yogur",
+      "titulo": "CRISPR lo inventaron las bacterias (S. thermophilus del yogur, Barrangou 2007)",
+      "serie": "Shot Biotecnológico",
+      "numero": 3,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-03-crispr",
+      "rama": "remaster/lote-a",
+      "fuentes": [
+        "Barrangou, R., Fremaux, C., Deveau, H., Richards, M., Boyaval, P., Moineau, S., Romero, D. A. y Horvath, P. (2007). CRISPR provides acquired resistance against viruses in prokaryotes. *Science* 315: 1709–1712. (Danisco y Université Laval; *S. thermophilus* DGCC7710, cultivo iniciador de yogur y queso.)",
+        "Jinek, M., Chylinski, K., Fonfara, I., Hauer, M., Doudna, J. A. y Charpentier, E. (2012). A programmable dual-RNA–guided DNA endonuclease in adaptive bacterial immunity. *Science* 337: 816–821.",
+        "Premio Nobel de Química 2020: Emmanuelle Charpentier y Jennifer A. Doudna, \"por el desarrollo de un método para editar genomas\" (nobelprize.org).",
+        "Pourcel, C. et al. (2020). CRISPRCasdb a successor of CRISPRdb containing CRISPR arrays and cas genes from complete genome sequences. *Nucleic Acids Research* 48: D535–D544 (CRISPR-Cas en ~36 % de las bacterias y ~75 % de las arqueas).",
+        "Mojica, F. J. M. et al. (2005). Intervening sequences of regularly spaced prokaryotic repeats derive from foreign genetic elements. *J. Mol. Evol.* 60: 174–182 (Universidad de Alicante: los espaciadores vienen de virus y plásmidos; contexto, no se narra).",
+        "Los nuevos espaciadores se agregan junto al líder: Deveau et al. (2008), *J. Bacteriol.* 190: 1390–1400."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Casgevy: la primera medicina CRISPR aprobada (anemia falciforme)",
+        "Cómo se hace el yogur por dentro (fermentación láctica)",
+        "Edición de bases: corregir una sola letra del ADN"
+      ],
+      "remaster_de": "lista vieja #7"
+    },
+    {
+      "id": "bio-fagos",
+      "titulo": "Virus que solo atacan bacterias: fagos y fagoterapia (caso Tom Patterson)",
+      "serie": "Shot Biotecnológico",
+      "numero": 4,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-04-fagos",
+      "rama": "remaster/lote-a",
+      "fuentes": [
+        "Schooley, R. T. et al. (2017). Development and use of personalized bacteriophage-based therapeutic cocktails to treat a patient with a disseminated resistant *Acinetobacter baumannii* infection. *Antimicrobial Agents and Chemotherapy* 61(10): e00954-17. Y UC San Diego Health (abril de 2017): salió del coma en los tres días siguientes a los fagos intravenosos.",
+        "Estructura de T4 (6 fibras largas, vaina contráctil, inyección): Leiman et al. y resumen en Wikipedia \"Escherichia virus T4\"; ciclo de ~22 min a 37 °C con cientos de fagos por bacteria (las cifras varían con la cepa y las condiciones; por eso \"menos de media hora\" y \"cientos\").",
+        "d'Hérelle, F. (1917). Sur un microbe invisible antagoniste des bacilles dysentériques. *Comptes Rendus de l'Académie des Sciences* 165: 373–375 (Instituto Pasteur, París). Penicilina: Fleming, 1928.",
+        "10³¹ fagos en la Tierra: estimación atribuida a Roger Hendrix (citada por *Science News*, \"All the World's a Phage\", y discutida en Mushegian, 2020, *J. Bacteriol.*). Es un orden de magnitud, no un conteo."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Fagos en la comida: el spray contra Listeria",
+        "Hay más fagos que estrellas en el universo (cuántos hay en el mar)",
+        "El instituto de fagos de Tiflis, Georgia"
+      ],
+      "remaster_de": "lista vieja #14"
+    },
+    {
+      "id": "bio-petunia-luz",
+      "titulo": "La petunia que brilla sola (ciclo del ácido cafeico, 4 enzimas)",
+      "serie": "Shot Biotecnológico",
+      "numero": 5,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-05-petunia",
+      "rama": "remaster/lote-a",
+      "fuentes": [
+        "Kotlobay, A. A. et al. (2018). Genetically encodable bioluminescent system from fungi. *PNAS* 115(50): 12728–12732 (ciclo del ácido cafeico: HispS, H3H, Luz y CPH; luz verde con máximo en 520 nm; la enzima NpgA activa a HispS).",
+        "Mitiouchkina, T. et al. (2020). Plants with genetically encoded autoluminescence. *Nature Biotechnology* 38: 944–946 (primeras plantas que brillan con genes del hongo).",
+        "USDA APHIS (6 sep 2023). Regulatory Status Review Response: Light Bio Petunia (genes de hispidina sintasa, hispidina-3-hidroxilasa, luciferasa, cafeoil piruvato hidrolasa y fosfopanteteinil transferasa; luz de ~530 nm, más fuerte en flores jóvenes).",
+        "Ow, D. W., Wood, K. V., DeLuca, M., de Wet, J. R., Helinski, D. R. y Howell, S. H. (1986). Transient and stable expression of the firefly luciferase gene in plant cells and transgenic plants. *Science* 234: 856–859 (UC San Diego).",
+        "NPR / Scientific American (abril de 2024): Keith Wood, cofundador y director de Light Bio, trabajó en la planta de tabaco de 1986, que necesitaba que le agregaran el sustrato para brillar; venta en EE. UU. desde 2024."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Hongos que brillan en la oscuridad (bioluminiscencia fúngica)",
+        "Luciferina y luciferasa: cómo brilla una luciérnaga",
+        "La proteína verde fluorescente (GFP) de la medusa"
+      ],
+      "remaster_de": "lista vieja #18"
+    },
+    {
+      "id": "bio-lactosa-virus",
+      "titulo": "El virus que te deja tomar leche (terapia génica de la lactasa; autoexperimento, no tratamiento)",
+      "serie": "Shot Biotecnológico",
+      "numero": 6,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-06-lactosa",
+      "rama": "remaster/lote-b",
+      "fuentes": [
+        "**During, M. J. et al., \"Peroral gene therapy of lactose intolerance using an adeno-associated virus vector\", *Nature Medicine* 4(10): 1131–1135 (octubre de 1998)**, Thomas Jefferson University: vector adeno-asociado por vía oral en ratas, expresión persistente en el epitelio intestinal y recuperación del fenotipo. La nota de prensa de la universidad reporta 4 meses (lo que duró el experimento); otra fuente que describe el artículo dice 6 meses. Por eso aquí se dice \"meses\". https://www.nature.com/articles/nm1098_1131",
+        "**The Thought Emporium (Justin Atkin), \"Developing a Permanent Treatment for Lactose Intolerance Using Gene Therapy\", febrero de 2018**, y la página del proyecto https://www.thethoughtemporium.com/lactose, que dice textualmente que el proyecto \"sigue en etapa de desarrollo y no está terminado\". Autoexperimento sin publicación revisada por pares.",
+        "**Cobertura independiente del intento:** Hackaday, \"Biohacking Lactose Intolerance\" (14 de febrero de 2018). https://hackaday.com/2018/02/14/biohacking-lactose-intolerance/",
+        "**Renovación del epitelio intestinal cada 4–5 días:** van der Flier, L. G. y Clevers, H., \"Stem cells, self-renewal, and differentiation in the intestinal epithelium\", *Annual Review of Physiology* 71 (2009). Tian, H. et al., *Nature* 478 (2011) da un rango de 2–5 días y describe las células madre del fondo de la cripta.",
+        "**Prevalencia:** no se cita cifra. El metaanálisis de Storhaug, Fosse y Fadnes (*Lancet Gastroenterology & Hepatology*, 2017), que daba 68 % mundial, **está retractado**; las revisiones sí sostienen que la persistencia de la lactasa es minoritaria en el mundo y muy variable por región.",
+        "El dibujo del virus, de las enzimas y de las moléculas es **esquemático**: no está a escala entre sí."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Por qué algunos adultos sí digieren la leche (persistencia de la lactasa)",
+        "La leche deslactosada por dentro: la enzima lactasa",
+        "Terapia génica aprobada: Luxturna y la ceguera"
+      ],
+      "remaster_de": "lista vieja #10"
+    },
+    {
+      "id": "bio-polio-sintetico",
+      "titulo": "El virus que se escribió desde una secuencia (poliovirus sintético, Cello, Paul y Wimmer 2002)",
+      "serie": "Shot Biotecnológico",
+      "numero": 7,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-07-polio",
+      "rama": "remaster/lote-b",
+      "fuentes": [
+        "**Cello, J., Paul, A. V. y Wimmer, E., \"Chemical synthesis of poliovirus cDNA: generation of infectious virus in the absence of natural template\", *Science* 297(5583): 1016–1018 (9 de agosto de 2002)**; primero en Science Express, julio de 2002. Equipo de la Universidad Estatal de Nueva York en Stony Brook, dirigido por **Eckard Wimmer**; financiado por DARPA.",
+        "**Congressional Research Service, \"Synthetic Poliovirus: Bioterrorism and Science Policy Implications\", informe RS21369 (diciembre de 2002)**: genoma del poliovirus de **~7,500 bases**; el equipo encargó **más de cien fragmentos de ADN por unos 100,000 dólares**; los ratones inoculados quedaron paralizados; y las respuestas de política discutidas entonces (revisión de pedidos por los proveedores de ADN, \"conoce a tu cliente\", control de la información y revisión previa a la publicación). El mismo informe señala que el poliovirus sería un arma débil y que otros agentes serían mucho más difíciles de sintetizar. https://www.everycrsreport.com/reports/RS21369.html",
+        "**Wimmer y colegas, entrevistas retrospectivas**, *Bulletin of the Atomic Scientists* 66(3) (2010), \"Reflections on the Synthetic Production of Poliovirus\": la reacción del gremio fue mayormente negativa y los autores explican que el objetivo era advertir de un riesgo que no se tomaba en serio.",
+        "**Informe Fink:** National Research Council, *Biotechnology Research in an Age of Terrorism* (2004): propone las \"categorías de experimentos de preocupación\", la autorregulación de científicos y revistas, y la creación de un consejo asesor.",
+        "**NSABB** (National Science Advisory Board for Biosecurity): creado por el Departamento de Salud de EE. UU. en 2004; sus primeros miembros tomaron posesión en junio de 2005.",
+        "El dibujo del genoma, de la cápside y de los documentos es **esquemático**."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Cómo se imprime ADN: síntesis de genes por pedido",
+        "Mycoplasma laboratorium: la primera célula con genoma sintético (2010)",
+        "La vacuna oral de polio y por qué se cambió a la inyectada"
+      ],
+      "remaster_de": "lista vieja #11"
+    },
+    {
+      "id": "bio-insulina",
+      "titulo": "La insulina sale de un tanque (E. coli y levadura; Humulin 1982)",
+      "serie": "Shot Biotecnológico",
+      "numero": 8,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-08-insulina",
+      "rama": "remaster/lote-b",
+      "fuentes": [
+        "**Humulin:** aprobada por la FDA el **30 de octubre de 1982**; primer producto terapéutico de proteína basado en ADN recombinante aprobado para uso humano. Desarrollada por Genentech y licenciada a Eli Lilly; el trabajo de 1978 se hizo con Genentech y el City of Hope National Medical Center, y el primer reporte se publicó en enero de 1979.",
+        "**Producción en levadura:** Novolin (Novo Nordisk), insulina humana producida en *Saccharomyces cerevisiae*, aprobada en EE. UU. en **1991**. Las revisiones de insulina recombinante coinciden en que se produce **en *E. coli* o en *S. cerevisiae***, y una de ellas llama a *S. cerevisiae* la levadura predominante para la producción comercial a gran escala. Diferencia de proceso: cuerpos de inclusión y replegado en *E. coli*; precursor soluble secretado al sobrenadante en levadura. (Revisiones recopiladas en *Equivalent Recombinant Human Insulin Preparations and their Place in Therapy*, PMC5819055, y en la literatura de factorías microbianas.)",
+        "**Diabetes:** Federación Internacional de Diabetes, *IDF Diabetes Atlas*, 11ª edición (abril de 2025): 589 millones de adultos de 20–79 años (casi 1 de cada 9), 252 millones sin diagnosticar, proyección de 853 millones para 2050 y 1.8 millones de menores de 20 años con diabetes tipo 1. https://idf.org/news-and-resources/news/idf-diabetes-atlas-11th-edition/",
+        "**Insulina humana: 51 aminoácidos** (cadena A de 21 y cadena B de 30), dato de libro de texto que se usa para la música del gemelo mudo.",
+        "El dibujo del tanque, de la célula, del plásmido y del ribosoma es **esquemático** y no está a escala entre sí."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Cuajo de tu queso: la quimosina hecha por microbios",
+        "Antes de 1982: la insulina de páncreas de cerdo",
+        "Insulinas de acción lenta: por qué cambiar dos letras cambia el tiempo"
+      ],
+      "remaster_de": "lista vieja #17"
+    },
+    {
+      "id": "bio-cepario",
+      "titulo": "Un cepario: vida en pausa (−80 °C, nitrógeno líquido y liofilización)",
+      "serie": "Shot Biotecnológico",
+      "numero": 9,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-09-cepario",
+      "rama": "remaster/lote-b",
+      "fuentes": [
+        "**Registro mundial:** World Data Centre for Microorganisms (WDCM). Las revisiones que citan sus cifras dan **802 colecciones registradas en 78 países y regiones** y alrededor de **3.28 millones de cepas** (un conteo anterior daba 3.16 millones). El WDCM también reporta que 79,224 cepas de 131 colecciones fueron citadas en 145,133 artículos entre 1953 y abril de 2020. https://academic.oup.com/nar/article/45/D1/D611/2770659",
+        "**Métodos de conservación:** revisiones en español de conservación de microorganismos. Liofilización: descrita como el método más adecuado para la preservación, con viabilidad reportada de al menos 10 años y, almacenada en oscuridad a 4 °C, de más de 20. Criopreservación: nitrógeno líquido a **−196 °C** (o fase gaseosa a −150 °C) con glicerol o DMSO como crioprotectores, viabilidad reportada de **10 a 30 años**. Congelación a −70 °C y −196 °C: 10 años o más. El **metabolismo celular se detiene por completo a partir de unos −130 °C**, de ahí que el ultracongelador de −80 °C sea una opción de corto a mediano plazo. Recomendación de conservar por criopreservación **y** liofilización (doble respaldo).",
+        "**Enlace con el shot #08:** el gen humano de la insulina se introdujo en *Escherichia coli* en 1978 (Genentech y City of Hope); Humulin fue aprobada por la FDA el 30 de octubre de 1982. Ver `shots/bio-08-insulina/guion.md`.",
+        "**No verificado y por eso tratado como experiencia personal:** el cepario del laboratorio del Tec de Monterrey que cuida Robert. No hay página pública del laboratorio ni de su colección; el guion solo dice \"yo cuido uno\".",
+        "El dibujo del vial, del congelador y de los cristales de hielo es **esquemático**."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Tardígrados: animales que sobreviven secos",
+        "Bacterias revividas de ámbar y de sal antigua (¿cuánto dura una espora?)",
+        "Cómo se congela un embrión (vitrificación)"
+      ],
+      "remaster_de": "lista vieja #23"
+    },
+    {
+      "id": "cie-proteina-iman",
+      "titulo": "La proteína que responde a un imán (MagLOV, par radical, Oxford 2026)",
+      "serie": "Shot Científico",
+      "numero": 2,
+      "estado": "renderizado",
+      "carpeta": "shots/cie-02-proteina-iman",
+      "rama": "remaster/lote-b",
+      "fuentes": [
+        "**Abrahams, G. et al., \"Quantum spin resonance in engineered proteins for multimodal sensing\", *Nature* (2026)**, doi 10.1038/s41586-025-09971-3. Equipo del Departamento de Ingeniería de la Universidad de Oxford. MagLOV presenta resonancia magnética detectada ópticamente en bacterias vivas a temperatura ambiente, con relación señal-ruido suficiente para detección en una sola célula; el efecto se explica por el **mecanismo de par radical** entre la cadena de la proteína y un cofactor de flavina; las variantes se obtuvieron por **evolución dirigida**. https://www.nature.com/articles/s41586-025-09971-3",
+        "**Números**, del preprint del mismo trabajo (bioRxiv 2024.11.25.625143): efecto magnético en células **Δℐ/ℐoff ≈ −50 %** conmutando el campo entre **0 y 10 mT**; **ODMR** con campo estático de **~21.6 mT** y radiofrecuencia resonante de **604 MHz** (B₁ ≈ 0.2 mT), con contraste de ~**10 %** en una sola célula; células *E. coli* MG1655; medidas a temperatura ambiente. La proteína madre es el dominio **LOV2 de la fototropina 1 de *Avena sativa*, variante C450A**.",
+        "**Cobertura:** *Genetic Engineering & Biotechnology News*, 21 de enero de 2026: \"las proteínas que dieron el punto de partida vienen de la avena común\"; evolución dirigida con varias rondas.",
+        "**Brújula de las aves:** el mecanismo de par radical en criptocromos es la **hipótesis** más trabajada para explicar la magnetorrecepción en aves migratorias. Se presenta como hipótesis.",
+        "El dibujo de la proteína, de la flavina y de los giros es **esquemático**: los electrones no son bolitas con flechas."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Cómo se orientan las aves migratorias (hipótesis del criptocromo)",
+        "Bacterias magnetotácticas: microbios con brújula de magnetita",
+        "La resonancia magnética del hospital por dentro"
+      ],
+      "remaster_de": "lista vieja #4"
+    },
+    {
+      "id": "vinazas-tequila",
+      "titulo": "Las vinazas del tequila: 12 L por litro y qué hace la biotecnología con ellas (y el bagazo para hongos)",
+      "serie": "Shot Ambiental",
+      "numero": 1,
+      "estado": "guion",
+      "carpeta": "shots/amb-01-vinazas",
+      "rama": "remaster/lote-c",
+      "fuentes": [
+        "De la Torre-Anguiano, M. Á., Flores-Cosío, G. y Amaya-Delgado, L. (CIATEJ). \"Residuos líquidos provenientes de las bebidas espirituosas mexicanas: su tratamiento y valorización\". *Enfoques Transdisciplinarios: Ciencia y Sociedad* 3(2): 15–41 (21 jul 2025). revistaenfoques.ciatej.mx — 12 L de vinaza por litro de destilado (promedio); 1 L de vinaza puede contaminar 20 L de agua; productos: hidrógeno, biogás, proteína unicelular, enzimas.",
+        "*Ciencia y Tecnología del Tequila* (CIATEJ): \"entre 10 y 12 L de vinaza por cada litro de la bebida\". Otras fuentes dan 7–12 L (UNAM, *Ingeniería Investigación y Tecnología* 23(2), 2022) o 10–15 L (UdeG). Por eso la voz dice \"en promedio, doce\".",
+        "López-López, A. et al. (CIATEJ) \"Tequila vinasses: generation and full scale treatment processes\". *Reviews in Environmental Science and Bio/Technology* 9: 109–116 (2010): vinaza tequilera ácida (pH ≈ 3.4–4.5) y con DQO de 60,000–100,000 mg/L. Otras mediciones van de pH 3.4 a 4.7 según el proceso.",
+        "Larios-Ulloa, M. y Ramírez-Muñoz, D. \"Bagasse of *Agave tequilana*, *A. angustifolia* and *A. salmiana* for cultivation of the fungus *Pleurotus ostreatus*\". *Revista Mexicana de Ciencias Agrícolas* 15(7), 2024. doi:10.29312/remexca.v15i7.3394 (CU de los Lagos, UdeG).",
+        "pH del jugo de naranja ≈ 3.3–4.2 (dato de referencia general, FDA \"Approximate pH of foods\").",
+        "Mecanismo del río (bacterias que consumen la materia orgánica y agotan el oxígeno disuelto): concepto de demanda química/bioquímica de oxígeno, en cualquier texto de tratamiento de aguas."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "El bagazo del agave como cama para cultivar hongos",
+        "Biogás: microbios que convierten desechos en gas para cocinar",
+        "Cómo se hace el tequila por dentro: la levadura y el agave cocido"
+      ],
+      "remaster_de": "lista vieja #9"
+    },
+    {
+      "id": "resistencia-antibioticos",
+      "titulo": "Resistencia a antibióticos: el antibiótico escoge a las más duras (39 M de muertes 2025–2050)",
+      "serie": "Shot Ambiental",
+      "numero": 2,
+      "estado": "guion",
+      "carpeta": "shots/amb-02-resistencia",
+      "rama": "remaster/lote-c",
+      "fuentes": [
+        "GBD 2021 Antimicrobial Resistance Collaborators (proyecto GRAM, IHME y Universidad de Oxford). \"Global burden of bacterial antimicrobial resistance 1990–2021: a systematic analysis with forecasts to 2050\". *The Lancet* 404(10459): 1199–1226 (2024). 39 millones de muertes atribuibles a RAM entre 2025 y 2050; 1.14 M (2021) → 1.91 M (2050) muertes directas al año; 4.71 M → 8.22 M asociadas. Nota de prensa de la Universidad de Oxford, 17 sep 2024.",
+        "O'Neill, J. (presidente). *Antimicrobial Resistance: Tackling a Crisis for the Health and Wealth of Nations* (Review on Antimicrobial Resistance, Reino Unido, dic 2014): 10 millones de muertes al año en 2050 si no se actúa.",
+        "Fleming, A. \"Penicillin\". Conferencia Nobel, 11 dic 1945 (nobelprize.org): la advertencia de que dosis insuficientes podían volver resistentes a los microbios.",
+        "OMS, nota descriptiva \"Resistencia a los antimicrobianos\" (qué puede hacer cada persona: solo con receta, seguir indicaciones, no compartir ni usar sobrantes).",
+        "Transferencia horizontal de genes de resistencia (conjugación, plásmidos) entre bacterias de especies distintas: CDC, \"About Antimicrobial Resistance\"; cualquier texto de microbiología.",
+        "Tiempo de duplicación de ~20 min de *E. coli* en medio rico de laboratorio: Sezonov, G. et al. *J. Bacteriol.* 189: 8746–8749 (2007). Es en el laboratorio; en el cuerpo es más lento (por eso el mudo dice \"regla\" y \"tiempo simulado\")."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "¿Por qué hay que terminarse el antibiótico? (lo que dicen los estudios nuevos)",
+        "Antibióticos en la ganadería y el agua de los ríos",
+        "Teixobactina: el antibiótico que salió de la tierra (iChip)"
+      ],
+      "remaster_de": "lista vieja #12"
+    },
+    {
+      "id": "bioplasticos-pla",
+      "titulo": "La verdad incómoda de los bioplásticos (PLA: compostaje industrial a 58 °C, reciclaje y costo)",
+      "serie": "Shot Ambiental",
+      "numero": 3,
+      "estado": "guion",
+      "carpeta": "shots/amb-03-bioplasticos",
+      "rama": "remaster/lote-c",
+      "fuentes": [
+        "Bagheri, A. R., Laforsch, C., Greiner, A. y Agarwal, S. \"Fate of so-called biodegradable polymers in seawater and freshwater\". *Global Challenges* 1(4): 1700048 (2017). doi:10.1002/gch2.201700048 — un año a 25 °C en agua de mar y agua dulce artificiales: PLA, PCL y PET sin degradación medible.",
+        "Compostaje industrial a 58 °C: ISO 20200 (desintegración en condiciones de compostaje simuladas, 58 °C, 90 días); *Scientific Reports* (2025) prueba productos comerciales a 58 °C según ISO 20200; tesis de la Universidad de Manitoba: PLA mineralizado por completo a 58 °C en 45 días.",
+        "PLA en composta casera: *Environmental Science: Processes & Impacts* (RSC, 2024, doi:10.1039/d3em00534h): el PLA no se degrada en composta casera.",
+        "Temperatura de transición vítrea del PLA ≈ 55–65 °C: Farah, S., Anderson, D. G. y Langer, R. \"Physical and mechanical properties of PLA, and their functions in widespread applications\". *Advanced Drug Delivery Reviews* 107: 367–392 (2016).",
+        "Reciclaje: Petcore (2008) advirtió que el PLA en el PET reciclado lo daña; Wageningen Food & Biobased Research (con TotalEnergies Corbion) encontró efecto despreciable con ≤ 1 % de PLA. Por eso la voz dice \"si se cuela en mucha cantidad\".",
+        "Producción del PLA (fermentación del azúcar a ácido láctico y polimerización): NatureWorks / literatura general de PLA.",
+        "Costo: varias fuentes coinciden en que el PLA cuesta más que los plásticos de petróleo; las cifras van de ~1.5–2 veces (JRC, Comisión Europea, citado por terceros) a \"más de 3 veces\". **Por eso la voz y el dibujo no dan un número.**"
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Empaques de micelio: el unicel que se cultiva",
+        "Ideonella sakaiensis: la bacteria que come PET",
+        "Microplásticos en tu sangre: qué se sabe y qué no"
+      ],
+      "remaster_de": "lista vieja #13"
+    },
+    {
+      "id": "gusano-barrenador",
+      "titulo": "El gusano barrenador y las moscas estériles (Curazao 1954 → Chiapas 2024 → Metapa 2026)",
+      "serie": "Shot Ambiental",
+      "numero": 4,
+      "estado": "guion",
+      "carpeta": "shots/amb-04-barrenador",
+      "rama": "remaster/lote-c",
+      "fuentes": [
+        "USDA APHIS, \"New World Screwworm\" y *Ready Reference Guide: Sterile Insect Technique* (aphis.usda.gov): biología (la hembra se aparea una vez; huevos en heridas; larvas en tejido vivo), Curazao 1954, EE. UU. libre en 1966, barrera en Panamá con COPEG.",
+        "USDA APHIS, \"New World Screwworm Outbreak in Central America and Mexico\", y Congressional Research Service R49124 (2026): la plaga rebasó la barrera desde 2023 por varios factores y llegó al sur de México en nov 2024.",
+        "SENASICA (Gobierno de México), informes del gusano barrenador del ganado (2025–2026): primer caso detectado el 21 nov 2024 en un bovino en el PVIF de Catazajá, Chiapas.",
+        "Inauguración de la planta de Metapa de Domínguez, Chiapas, el 27 jun 2026 (Expansión Política, UnoTV, Por Esto, N+, 27 jun 2026): meta de 100 millones de moscas estériles por semana para finales de 2026.",
+        "Knipling, E. F. \"Possibilities of insect control or eradication through the use of sexually sterile males\". *Journal of Economic Entomology* 48(4): 459–462 (1955): el modelo del mudo.",
+        "Baumhover, A. H. et al. \"Screw-worm control through release of sterilized flies\". *Journal of Economic Entomology* 48: 462–466 (1955): el experimento de Curazao.",
+        "CDC, \"Myiasis\" / \"New World Screwworm\": también infesta mascotas y personas."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Mosquitos con Wolbachia contra el dengue",
+        "Cómo se esteriliza una mosca (radiación por dentro)",
+        "La mosca del Mediterráneo y la barrera de Chiapas"
+      ],
+      "remaster_de": "lista vieja #21"
+    },
+    {
+      "id": "adn-viral",
+      "titulo": "Tu ADN no es completamente humano: retrovirus endógenos (~8 %) y la sincitina de la placenta",
+      "serie": "Shot Científico",
+      "numero": 3,
+      "estado": "guion",
+      "carpeta": "shots/cie-03-adn-viral",
+      "rama": "remaster/lote-c",
+      "fuentes": [
+        "International Human Genome Sequencing Consortium (Lander et al.). \"Initial sequencing and analysis of the human genome\". *Nature* 409: 860–921 (2001): los elementos con LTR (retrovirus endógenos y parientes) son ~8 % del genoma.",
+        "Mi, S. et al. \"Syncytin is a captive retroviral envelope protein involved in human placental morphogenesis\". *Nature* 403: 785–789 (2000). Genetics Institute, Cambridge, Massachusetts.",
+        "Blond, J.-L. et al. *Journal of Virology* 74: 3321–3329 (2000): la envoltura de HERV-W es fusogénica (sincitina-1).",
+        "Dupressoir, A. et al. \"Syncytin-A knockout mice demonstrate the critical role in placentation of a fusogenic, endogenous retrovirus-derived, envelope gene\". *PNAS* 106(29): 12127–12132 (2009): embriones sin sincitina-A mueren entre los días 11.5 y 13.5.",
+        "Lavialle, C. et al. \"Paleovirology of 'syncytins', retroviral *env* genes exapted for a role in placentation\". *Philosophical Transactions of the Royal Society B* 368: 20120507 (2013): capturas independientes en primates, roedores, lagomorfos, carnívoros, rumiantes y otros.",
+        "Frecuencia cardiaca fetal normal 110–160 latidos por minuto (ACOG), para el latido del mudo."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Tus mitocondrias fueron bacterias (endosimbiosis)",
+        "El gen saltarín: transposones y el maíz de Barbara McClintock",
+        "Arc: el gen de la memoria que viene de un virus"
+      ],
+      "remaster_de": "lista vieja #8"
+    },
+    {
+      "id": "que-es-un-hongo",
+      "titulo": "¿Qué es un hongo? (micelio, hifas, cuerpo fructífero, levaduras)",
+      "serie": "Shot Fungi Mati",
+      "numero": 2,
+      "estado": "guion",
+      "carpeta": "shots/fun-02-que-es-un-hongo",
+      "rama": "remaster/lote-d",
+      "fuentes": [
+        "Baldauf, S. L. y Palmer, J. D. (1993). *Animals and fungi are each other's closest relatives: congruent evidence from multiple proteins.* PNAS 90(24): 11558–11562. (25 proteínas; animales y hongos, grupos hermanos.)",
+        "Moore, D., Robson, G. D. y Trinci, A. P. J. *21st Century Guidebook to Fungi* (Cambridge University Press; davidmoore.org.uk): hifas, micelio, cuerpo fructífero (cap. 11), digestión externa, levaduras.",
+        "Diámetro de las hifas (~2–10 µm) frente a un pelo humano (~50–100 µm): valores de texto de micología; por eso el guion dice \"mucho más delgados que un pelo\" sin dar un número exacto.",
+        "Quitina en la pared de los hongos y en el exoesqueleto de los artrópodos: dato de libro de texto (Moore et al.).",
+        "Humedad y temperatura como señales para fructificar: Sakamoto, Y. (2018). *Fungal Biology Reviews* 32(4): 236–248."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "El ser vivo más grande del mundo: el Armillaria de Oregón",
+        "Los hongos están más cerca de ti que de las plantas",
+        "La red del bosque: micorrizas que conectan raíces"
+      ],
+      "remaster_de": "lista vieja #2"
+    },
+    {
+      "id": "seta-rosa",
+      "titulo": "Esto no es plástico: la seta rosa (Pleurotus djamor) y qué detona la fructificación",
+      "serie": "Shot Fungi Mati",
+      "numero": 3,
+      "estado": "guion",
+      "carpeta": "shots/fun-03-seta-rosa",
+      "rama": "remaster/lote-d",
+      "fuentes": [
+        "Salmones, D. (2017). *Pleurotus djamor, un hongo con potencial aplicación biotecnológica para el neotrópico.* Scientia Fungorum 46: 73–85 (INECOL, Xalapa). Pantropical; silvestre en México y otros 12 países de América; temperatura óptima 22–30 °C; la presencia del color rosa \"aún no concluyente\"; la var. *roseus* tiene primordios rosas que \"disminuyen notoriamente su coloración en estado adulto\".",
+        "Sakamoto, Y. (2018). *Influences of environmental factors on fruiting body induction, development and maturation in mushroom-forming fungi.* Fungal Biology Reviews 32(4): 236–248. La luz es esencial para la diferenciación del sombrero en muchas especies; el CO₂ alto suprime la diferenciación del sombrero.",
+        "Nwankwegu, A. S. et al. (2025). *Exploring the critical environmental optima… of fungal fruiting bodies.* Microbial Biotechnology (PMC12351640): CO₂ < 1,000 ppm durante la fructificación; humedad 80–95 %; la luz favorece la diferenciación del sombrero.",
+        "Fechas y fotos: video de Robert *Pink oyster (Pleurotus djamor) from spore print to fruiting in my bedroom* (publicado el 11 ago 2026) y el PDF *Pink_oyster_spore_to_harvest_2026*.",
+        "Forma de las esporas de *Pleurotus* (cilíndricas, lisas, ~7–10 × 3–4 µm): descripción estándar del género; el \"≈ 8 µm\" en pantalla es aproximado."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "El hongo ostra caza gusanos (toxina de Pleurotus)",
+        "Cultivar setas en posos de café",
+        "Por qué los hongos salen después de la lluvia"
+      ],
+      "remaster_de": "lista vieja #3"
+    },
+    {
+      "id": "metales-pesados-hongos",
+      "titulo": "¿Los hongos tienen metales pesados? (acumulación, hervir, digestión)",
+      "serie": "Shot Fungi Mati",
+      "numero": 4,
+      "estado": "guion",
+      "carpeta": "shots/fun-04-metales-pesados",
+      "rama": "remaster/lote-d",
+      "fuentes": [
+        "Falandysz, J. y Drewnowska, M. (2017). *Cooking can decrease mercury contamination of a mushroom meal: Cantharellus cibarius and Amanita fulva.* Environmental Science and Pollution Research 24(15): 13352–13357. Blanquear: ~15 % de Hg (fresco), hasta 35 % (congelado); hervir *A. fulva*: 56 ± 2 %.",
+        "Chiocchetti, G. M. et al. (2020). *Toxic trace elements in dried mushrooms: Effects of cooking and gastrointestinal digestion on food safety.* Food Chemistry 306: 125478. Cocinar redujo As 26–72 %, Hg/Cd/Pb \"mucho menos\"; bioaccesibilidad de los metales < 40 %.",
+        "Liu, S. et al. (2022). *Research Progress on Elements of Wild Edible Mushrooms.* Journal of Fungi 8(9): 964 (PMC9505289). ~400 especies silvestres: el contenido depende de la especie y del ambiente (carreteras, zonas industriales, fundidoras); los silvestres se enriquecen más que los cultivados.",
+        "Komárek, M., Chrastný, V. y Štíchová, J. (2007). *Metal/metalloid contamination and isotopic composition of lead in edible mushrooms and forest soils originating from a smelting area.* (boletos junto a una fundidora de plomo; suelos con hasta 36,234 mg Pb/kg).",
+        "Integrating Speciation Analysis and Bioaccessibility to Reassess Cadmium Exposure Risk from Six Mushrooms (2026, PMC12846066): el cadmio queda sobre todo en fracciones insolubles.",
+        "Kapahi, M. y Sachdeva, S. (2017). *Mycoremediation potential of Pleurotus species for heavy metals: a review.* Bioresources and Bioprocessing 4: 32."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Micorremediación: hongos que limpian suelos",
+        "Los hongos de Chernóbil y la radiación (hipótesis de la radiosíntesis)",
+        "Quitina: la pared de los hongos y el caparazón del camarón"
+      ],
+      "remaster_de": "lista vieja #15"
+    },
+    {
+      "id": "agar",
+      "titulo": "El agar: polisacárido de algas rojas que gelifica y casi nadie digiere",
+      "serie": "Shot Químico",
+      "numero": 1,
+      "estado": "guion",
+      "carpeta": "shots/qui-01-agar",
+      "rama": "remaster/lote-d",
+      "fuentes": [
+        "Science History Institute, *Fanny Angelina Hesse* (sciencehistory.org): aprendió a usar agar de vecinos holandeses que venían de Java; lo usaba para cuajar postres en verano; en 1881 lo sugirió; la gelatina se licuaba a temperaturas de incubación y varios microbios la digieren.",
+        "*Agarose* (Wikipedia, con referencias), hoja técnica de agar de Sigma-Aldrich y manual de la FAO sobre agar (fao.org/4/ag156e): agar = agarosa (~70 %) + agaropectina; gel de 1 % que se forma entre ~32–39 °C y no se funde hasta ~85 °C; los valores cambian con el alga y la pureza (FAO: gelifica 30–50 °C, funde 82–92 °C).",
+        "Chi, W.-J., Chang, Y.-K. y Hong, S.-K. (2012). *Agar degradation by microorganisms and agar-degrading enzymes.* Applied Microbiology and Biotechnology 94: 917–930: pocos organismos hidrolizan el agar; las agarasas están sobre todo en bacterias marinas.",
+        "Hehemann, J.-H. et al. (2010). *Transfer of carbohydrate-active enzymes from marine bacteria to Japanese gut microbiota.* Nature 464: 908–912: genes de porfiranasas y agarasas de *Zobellia galactanivorans* encontrados en *Bacteroides plebeius* de personas japonesas.",
+        "Arnott, S. et al. (1974). *The agarose double helix and its function in agarose gel structure.* J. Mol. Biol. 90: 269–284 (modelo de hélices que se agrupan en manojos; por eso el guion dice \"se enroscan y se amontonan\" sin afirmar más detalle)."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Por qué la gelatina no cuaja con piña (bromelina)",
+        "Alginato: la esferificación de la cocina molecular",
+        "Fanny Hesse: la cocina que cambió la microbiología"
+      ],
+      "remaster_de": "lista vieja #16"
+    },
+    {
+      "id": "estriado-agotamiento",
+      "titulo": "Estriado por agotamiento: 5 errores comunes",
+      "serie": "Shot Químico",
+      "numero": 2,
+      "estado": "guion",
+      "carpeta": "shots/qui-02-estriado",
+      "rama": "remaster/lote-d",
+      "fuentes": [
+        "Sanders, E. R. (2012). *Aseptic laboratory techniques: plating methods.* Journal of Visualized Experiments (63): e3064. doi:10.3791/3064 (texto completo en PMC4846335). Del protocolo: enfriar el asa tocando el agar en una zona sin sembrar; no presionar tanto que el asa \"se clave\" en el agar; reflamear el asa entre cuadrantes; girar la placa 90°; no entrar a la primera zona al estriar la cuarta; incubar boca abajo para que la condensación de la tapa no gotee sobre las colonias; en teoría cada colonia viene de una sola célula (no siempre: bacterias en pares o cadenas); *Serratia marcescens* con colonias aisladas en el cuarto cuadrante tras 24 h a 30 °C, que crece en las esquinas de tinas, regaderas y juntas de azulejo, con el pigmento rojo prodigiosina."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Por qué se flamea el asa (y por qué no se sopla)",
+        "Tinción de Gram: por qué unas bacterias se pintan de morado",
+        "Contar bacterias: diluciones en serie y UFC"
+      ],
+      "remaster_de": "lista vieja #20"
+    },
+    {
+      "id": "viejo-06-vacunas",
+      "titulo": "Vacunas (general)",
+      "serie": "Lista vieja (2023–2025)",
+      "numero": 6,
+      "estado": "publicado",
+      "carpeta": null,
+      "rama": null,
+      "fuentes": [
+        "referencias-externas/lista-vieja/transcripts.md"
+      ],
+      "fecha": null,
+      "derivados": [],
+      "nota": "En pausa: rehacer con un ángulo concreto (p. ej. la de sarampión)."
+    },
+    {
+      "id": "viejo-19-mimosa",
+      "titulo": "La mimosa que se mueve sin músculos",
+      "serie": "Lista vieja (2023–2025)",
+      "numero": 19,
+      "estado": "publicado",
+      "carpeta": null,
+      "rama": null,
+      "fuentes": [
+        "referencias-externas/lista-vieja/transcripts.md"
+      ],
+      "fecha": null,
+      "derivados": [],
+      "nota": "En pausa: @1cell1life ya lo hizo con 1.5 M; diferenciarlo."
+    },
+    {
+      "id": "viejo-22-crush-biorreactor",
+      "titulo": "Tu crush es un biorreactor",
+      "serie": "Lista vieja (2023–2025)",
+      "numero": 22,
+      "estado": "publicado",
+      "carpeta": null,
+      "rama": null,
+      "fuentes": [
+        "referencias-externas/lista-vieja/transcripts.md"
+      ],
+      "fecha": null,
+      "derivados": [],
+      "nota": "Fusionado dentro de bio-vacas-microbios."
+    },
+    {
+      "id": "viejo-24-anthurium",
+      "titulo": "Anthurium in vitro (proyecto de clase)",
+      "serie": "Lista vieja (2023–2025)",
+      "numero": 24,
+      "estado": "publicado",
+      "carpeta": null,
+      "rama": null,
+      "fuentes": [
+        "referencias-externas/lista-vieja/transcripts.md"
+      ],
+      "fecha": null,
+      "derivados": [],
+      "nota": "Pasa a video largo sobre cultivo in vitro."
+    },
+    {
+      "id": "lab-comestibles",
+      "titulo": "Cosas del laboratorio que te puedes comer",
+      "serie": "Shot Lab (viejo)",
+      "numero": 25,
+      "estado": "publicado",
+      "carpeta": null,
+      "rama": null,
+      "fuentes": [],
+      "fecha": null,
+      "derivados": [],
+      "nota": "Del historial anterior; confirmar con Robert si se publicó."
+    },
+    {
+      "id": "micelio",
+      "titulo": "El micelio",
+      "serie": "Shot Micológico (viejo)",
+      "numero": 1,
+      "estado": "publicado",
+      "carpeta": null,
+      "rama": null,
+      "fuentes": [],
+      "fecha": null,
+      "derivados": [],
+      "nota": "Del historial anterior; confirmar con Robert si se publicó. Cercano a que-es-un-hongo."
+    }
   ]
 }
