@@ -56,14 +56,14 @@ El dibujo es esquemático. **¿A ti te cae mal la leche o le aguantas todo? 👇
 
 ## Robert en pantalla
 
-Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtitulo (el kit lo dibuja por delante de el).
+Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtítulo (el kit lo dibuja por delante de él).
 
-### Version narrada: 7 apariciones, **24.5 s en pantalla** (de 61.5 s)
+### Versión narrada: 7 apariciones, **24.5 s en pantalla** (de 61.5 s)
 
 | Segundos | Pose | Lado | Reacciona a |
 |---|---|---|---|
 | 0,0 - 3,2 | sorprendido (11) | gancho | «Ese virus no viene a enfermarte» |
-| 9,6 - 13,2 | senalando (13) | arriba-der | «la mayoria baja esa produccion» (senala el medidor) |
+| 9,6 - 13,2 | señalando (13) | arriba-der | «la mayoria baja esa produccion» (senala el medidor) |
 | 18,5 - 20,9 | pensativo (06) | arriba-der | re-gancho: «¿y si le devolvieras la receta?» |
 | 26,8 - 30,2 | sonriendo (05) | arriba-der | «las ratas volvieron a digerir lactosa» |
 | 35,0 - 39,6 | serio (10) | **presentador** | «no es un tratamiento aprobado»: el matiz, en grande |
@@ -77,7 +77,7 @@ Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, 
 | 0,0 - 3,4 | sorprendido (11) | gancho | entra la lactosa |
 | 8,0 - 11,4 | pensativo (06) | arriba-der | nadie la corta |
 | 15,0 - 18,8 | serio (10) | **presentador** | el gas: el problema, en grande |
-| 22,0 - 25,4 | senalando (13) | arriba-der | llega el virus con el gen |
+| 22,0 - 25,4 | señalando (13) | arriba-der | llega el virus con el gen |
 | 29,5 - 33,0 | sonriendo (05) | arriba-der | la celula hace la enzima |
 | 36,5 - 40,0 | apuntando (02) | arriba-der | ahora si se parte |
 | 44,0 - 47,5 | bajando lentes (04) | abajo-izq | las celulas viejas se van |

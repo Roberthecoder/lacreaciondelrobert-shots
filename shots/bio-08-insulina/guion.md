@@ -55,27 +55,27 @@ El dibujo es esquemático. **¿Conoces a alguien que use insulina? ¿Sabía de d
 
 ## Robert en pantalla
 
-Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtitulo (el kit lo dibuja por delante de el).
+Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtítulo (el kit lo dibuja por delante de él).
 
-### Version narrada: 8 apariciones, **28.3 s en pantalla** (de 61.5 s)
+### Versión narrada: 8 apariciones, **28.3 s en pantalla** (de 61.5 s)
 
 | Segundos | Pose | Lado | Reacciona a |
 |---|---|---|---|
 | 0,0 - 3,4 | sorprendido (11) | gancho | «no salio de ningun animal: de un tanque» |
 | 9,2 - 12,8 | serio (10) | arriba-der | «a algunos pacientes les daba reacciones» |
-| 18,6 - 22,0 | senalando (13) | arriba-der | senala la proteina que sale de la bacteria |
+| 18,6 - 22,0 | señalando (13) | arriba-der | senala la proteina que sale de la bacteria |
 | 22,9 - 25,2 | pensativo (06) | arriba-der | re-gancho: «¿como cabe una fabrica ahi?» |
 | 34,9 - 38,2 | apuntando (02) | **presentador** | 1982, el primer farmaco de ADN recombinante, en grande |
 | 43,2 - 46,8 | sonriendo (05) | arriba-der | «la levadura la suelta al caldo» |
 | 48,2 - 51,8 | bajando lentes (04) | arriba-der | la diferencia entre las dos rutas |
-| 52,8 - 57,9 | senalando (13) | gancho | cierre: «viene de un tanque» |
+| 52,8 - 57,9 | señalando (13) | gancho | cierre: «viene de un tanque» |
 
 ### Gemelo mudo: 8 apariciones, **29.1 s en pantalla**
 
 | Segundos | Pose | Lado | Reacciona a |
 |---|---|---|---|
 | 0,0 - 3,6 | sorprendido (11) | gancho | el gen humano de la insulina |
-| 7,0 - 10,5 | senalando (13) | arriba-der | el plasmido se cierra |
+| 7,0 - 10,5 | señalando (13) | arriba-der | el plasmido se cierra |
 | 14,0 - 17,5 | pensativo (06) | arriba-der | entra a la celula |
 | 20,5 - 24,5 | bajando lentes (04) | **presentador** | la celula se divide y llena el tanque, en grande |
 | 28,0 - 31,5 | apuntando (02) | arriba-der | el tanque trabajando |

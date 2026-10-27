@@ -51,28 +51,28 @@ El dibujo es esquemático. **¿Qué guardarías tú en un cepario? 👇**"
 
 ## Robert en pantalla
 
-Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtitulo (el kit lo dibuja por delante de el).
+Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtítulo (el kit lo dibuja por delante de él).
 
-### Version narrada: 9 apariciones, **33.3 s en pantalla** (de 61.5 s)
+### Versión narrada: 9 apariciones, **33.3 s en pantalla** (de 61.5 s)
 
 | Segundos | Pose | Lado | Reacciona a |
 |---|---|---|---|
 | 0,0 - 3,4 | sorprendido (11) | gancho | «este frasco no esta vacio» |
-| 8,0 - 11,2 | senalando (13) | arriba-der | senala los cuatro tipos de cepa |
+| 8,0 - 11,2 | señalando (13) | arriba-der | senala los cuatro tipos de cepa |
 | 15,8 - 19,4 | sonriendo (05) | arriba-der | «yo cuido uno»: el cepario es suyo |
 | 19,7 - 22,0 | pensativo (06) | arriba-der | re-gancho: «¿como detienes la vida sin matarla?» |
 | 28,0 - 31,5 | bajando lentes (04) | arriba-der | el matiz: a -80 C no se detiene del todo |
 | 34,0 - 37,6 | perfil serio (12) | arriba-der | nitrogeno liquido: decadas |
 | 39,0 - 42,6 | pensativo puno (07) | arriba-der | liofilizar: quitarles el agua |
 | 47,0 - 51,6 | apuntando (02) | **presentador** | 3.28 millones de cepas en el mundo, en grande |
-| 52,4 - 57,9 | senalando (13) | gancho | cierre: «de un frasco asi salio tu insulina» |
+| 52,4 - 57,9 | señalando (13) | gancho | cierre: «de un frasco asi salio tu insulina» |
 
 ### Gemelo mudo: 8 apariciones, **28.9 s en pantalla**
 
 | Segundos | Pose | Lado | Reacciona a |
 |---|---|---|---|
 | 0,0 - 3,4 | sorprendido (11) | gancho | la gradilla vacia |
-| 6,0 - 9,5 | senalando (13) | arriba-der | -80 C: empieza a llenarse |
+| 6,0 - 9,5 | señalando (13) | arriba-der | -80 C: empieza a llenarse |
 | 12,0 - 15,5 | bajando lentes (04) | arriba-der | vial por vial |
 | 18,0 - 21,5 | pensativo (06) | arriba-der | nitrogeno liquido |
 | 24,0 - 27,5 | perfil serio (12) | arriba-der | decadas en pausa |

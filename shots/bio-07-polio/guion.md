@@ -49,15 +49,15 @@ Este video **no explica ningún procedimiento**: es historia de la ciencia y bio
 
 ## Robert en pantalla
 
-Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtitulo (el kit lo dibuja por delante de el).
+Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtítulo (el kit lo dibuja por delante de él).
 
-### Version narrada: 8 apariciones, **28.6 s en pantalla** (de 61.5 s)
+### Versión narrada: 8 apariciones, **28.6 s en pantalla** (de 61.5 s)
 
 | Segundos | Pose | Lado | Reacciona a |
 |---|---|---|---|
 | 0,0 - 3,4 | sorprendido (11) | gancho | «un virus entero: 7,500 letras» |
 | 9,8 - 13,4 | bajando lentes (04) | arriba-der | «no usaron el virus: su secuencia publicada» |
-| 19,2 - 22,8 | senalando (13) | arriba-der | senala el virus que se arma |
+| 19,2 - 22,8 | señalando (13) | arriba-der | senala el virus que se arma |
 | 27,3 - 29,4 | pensativo (06) | arriba-der | re-gancho: «¿para que hacer algo asi?» |
 | 34,8 - 38,2 | perfil serio (12) | arriba-der | Science, agosto de 2002 |
 | 38,6 - 43,2 | serio (10) | **presentador** | «irresponsable, dijeron»: el momento grave, en grande |
@@ -71,7 +71,7 @@ Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, 
 | 0,0 - 3,4 | sorprendido (11) | gancho | la pantalla vacia |
 | 8,5 - 12,0 | pensativo (06) | arriba-der | las letras se acumulan |
 | 17,0 - 20,5 | bajando lentes (04) | arriba-der | 7,500: el genoma completo |
-| 23,5 - 27,0 | senalando (13) | arriba-der | senala la capside que se forma |
+| 23,5 - 27,0 | señalando (13) | arriba-der | senala la capside que se forma |
 | 31,0 - 35,0 | serio (10) | **presentador** | el raton: el momento grave, en grande |
 | 36,2 - 39,6 | perfil serio (12) | arriba-der | el mundo se asusto |
 | 42,2 - 45,6 | pensativo puno (07) | arriba-der | y salieron reglas |
