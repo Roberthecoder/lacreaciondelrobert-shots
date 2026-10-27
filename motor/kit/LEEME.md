@@ -36,7 +36,9 @@ igual que el resto del motor, así que funcionan en la versión narrada (tiempos
 | `Cuadricula` | Cuadrícula que se llena por tramos de color | N4 |
 | `Comparativa` | Dos barras: "Tú vs. el de al lado" | N2 |
 | `MarcaAgua` | Logo + badge `#NN` arriba a la izquierda | todos |
-| `Sticker` | Reacción del narrador: `arriba-der`, `abajo-der`, `abajo-izq` | todos |
+| `Sticker` | Una aparición de Robert: `arriba-der`, `abajo-der`, `abajo-izq`, `gancho` (cuadro 0), `presentador` (medio cuerpo grande) | todos |
+| `Robert` | Todas las apariciones de Robert en una lista `[[at, until, pose, lado], …]` (ver regla en `CLAUDE.md`) | todos |
+| `CierreMarca robert=` | Robert junto al logo en la tarjeta final (obligatorio) | todos |
 | `CierreMarca` | Oscurece la última imagen y muestra la marca (3–4 s) | todos |
 | `MundoPiel` + `MUNDO_PIEL` | Primer mundo reutilizable: piel en corte con vellos, células, capilar y glóbulos rojos | N1, M4 |
 | `CamaraAnidada` | Zoom de ×1 a ×1000 sin perder nitidez: funde un mundo macro (cm) con uno micro (µm) y oscurece al "entrar al microscopio". Keys en coordenadas macro | N1, M4 |
