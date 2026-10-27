@@ -252,8 +252,8 @@ function CeparioNarrado() {
         <Gradilla T={T} cols={10} filas={11} encendidos={(t) => kprog(t, K.M + 0.3, K.C - 0.4)} x={150} y={700} ancho={780} alto={520} color={KC.gold2} />
       </EscenaFundido>
       {T >= K.M - 0.1 && T < K.C - 0.1 && <>
-        <NumeroGigante T={T} at={K.M + 0.3} until={K.C - 0.3} valor={3280000} dur={2.6} etiqueta="CEPAS GUARDADAS" y={420} tam={110} color={KC.yellow} />
-        <Chip T={T} at={K.M + 2.4} until={K.C - 0.3} texto="802 colecciones · 78 países" y={560} tam={38} />
+        <NumeroGigante T={T} at={K.M + 0.3} until={K.C - 0.3} valor={861} dur={2.6} etiqueta="COLECCIONES DE MICROBIOS" y={420} tam={110} color={KC.yellow} />
+        <Chip T={T} at={K.M + 2.4} until={K.C - 0.3} texto="en 80 países · WDCM 2024" y={560} tam={38} />
       </>}
 
       {/* 12 · CIERRE — el vial del inicio, ahora con nombre */}
@@ -284,7 +284,7 @@ function CeparioNarrado() {
       <Subtitulo T={T} idx={8} at={K.C2 + 0.1} until={K.C3 - 0.1} texto="Nitrógeno líquido: *−196 °C, décadas.*" />
       <Subtitulo T={T} idx={9} at={K.C3 + 0.1} until={K.D - 0.1} texto="O *liofilizar:* quitarles el agua." />
       <Subtitulo T={T} idx={10} at={K.D + 0.1} until={K.M - 0.1} texto="Siempre *dos copias.*" />
-      <Subtitulo T={T} idx={11} at={K.M + 0.1} until={K.C - 0.1} texto="En el mundo: *más de 3 millones de cepas.*" />
+      <Subtitulo T={T} idx={11} at={K.M + 0.1} until={K.C - 0.1} texto="En el mundo: *861 colecciones de microbios.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="De un frasco así salió *tu insulina.*" />
 
       {/* Robert en pantalla (tabla en guion.md) */}
@@ -296,7 +296,7 @@ function CeparioNarrado() {
         [28.0, 31.5, 'avatar_04_bajando_lentes',   'arriba-der'],  // el matiz: a −80 no se detiene del todo
         [34.0, 37.6, 'avatar_12_perfil_serio',     'arriba-der'],  // nitrógeno líquido: décadas
         [39.0, 42.6, 'avatar_07_pensativo_puno',   'arriba-der'],  // liofilizar: quitarles el agua
-        [47.0, 51.6, 'avatar_02_apuntando_camara', 'presentador'],  // GRANDE: 3.28 millones de cepas en el mundo
+        [47.0, 51.6, 'avatar_02_apuntando_camara', 'presentador'],  // GRANDE: 861 colecciones de microbios en 80 países
         [52.4, 57.9, 'avatar_13_senalando_arriba', 'gancho'],  // cierre: de un frasco así salió tu insulina
       ]} />
 
@@ -345,9 +345,9 @@ function CeparioDatos() {
       <Chip T={T} at={K.N + 0.3} until={K.L - 0.2} texto="−196 °C · décadas" x={330} y={430} borde={HIELO} tam={40} />
       <Chip T={T} at={K.L + 0.3} until={K.M - 0.2} texto="liofilizadas · sin agua" x={330} y={430} borde={KC.gold2} tam={40} />
       {T >= K.M - 0.2 && T < K.Ci - 0.1 && <>
-        <NumeroGigante T={T} at={K.M + 0.2} until={K.R + 0.4} valor={3280000} dur={2.8} etiqueta="CEPAS EN EL MUNDO" y={1540} tam={100} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.M + 0.2} until={K.R + 0.4} valor={861} dur={2.8} etiqueta="COLECCIONES EN EL MUNDO" y={1540} tam={100} color={KC.yellow} />
       </>}
-      <Chip T={T} at={K.R + 2.2} until={K.Ci + 0.4} texto="dos copias · 802 colecciones" x={330} y={430} borde={KC.gold} tam={40} />
+      <Chip T={T} at={K.R + 2.2} until={K.Ci + 0.4} texto="dos copias · 80 países" x={330} y={430} borde={KC.gold} tam={40} />
       <Chip T={T} at={K.Ci + 0.8} until={K.Ou - 0.1} texto="…y vuelve a empezar" x={330} y={430} borde={KC.gold} tam={44} />
 
       {/* Robert en pantalla (tabla en guion.md) */}
@@ -359,7 +359,7 @@ function CeparioDatos() {
         [24.0, 27.5, 'avatar_12_perfil_serio',     'arriba-der'],  // décadas en pausa
         [30.0, 33.5, 'avatar_07_pensativo_puno',   'arriba-der'],  // liofilizadas
         [37.5, 41.0, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],  // la gradilla llena
-        [47.0, 51.5, 'avatar_02_apuntando_camara', 'presentador'],  // GRANDE: dos copias, 802 colecciones
+        [47.0, 51.5, 'avatar_02_apuntando_camara', 'presentador'],  // GRANDE: dos copias, 861 colecciones en 80 países
       ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="09" hasta={K.Ou} />
