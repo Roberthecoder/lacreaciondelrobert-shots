@@ -5,6 +5,7 @@
 Reglas comunes (además de `CLAUDE.md`):
 - **Antes de elegir los 10 temas:** consulta `historial/temas.json` y las ramas `remaster/lote-*` y `ola01/*` ya subidas. Elige 10 temas de tu nicho que no estén.
 - **Registro:** anota tus temas y sus derivados en `historial/nuevos/<clave>.json`.
+- **Robert en pantalla en cada shot:** cumple la regla de `CLAUDE.md` (cuadro 0, cada 8–10 s, mínimo 6 apariciones y 18 s, una vez grande, cierre con Robert) y deja la tabla "Robert en pantalla" en `guion.md`.
 - **El kit no se toca:** no edites `motor/kit/kit-robert.jsx`, porque 28 sesiones en paralelo chocarían. Si necesitas una pieza o un mundo nuevo, ponlo en un `.jsx` dentro de la carpeta de tu shot y cárgalo en su `.dc.html`.
 - **Carpetas:** `shots/<prefijo>-<NN>-<tema>`, con estos prefijos: `bio`, `fun`, `amb`, `ia`, `cie`, `qui`.
 
