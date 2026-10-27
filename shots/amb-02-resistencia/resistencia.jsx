@@ -87,7 +87,7 @@ function ResistenciaNarrado() {
         <FondoLunares color={KC.pink} punto="rgba(255,255,255,.25)" />
         <Tu T={T} abre={kprog(T, K.G + 0.1, K.G + 0.6)} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Capsula x={klerp(800, 540, kprog(T, K.G, K.G + 1.1, kEase.suave))} y={klerp(420, 1030, kprog(T, K.G, K.G + 1.4, kEase.suave))} s={klerp(1.2, 0.5, kprog(T, K.G, K.G + 1.4))} rot={T * 200} />
+          <Capsula x={klerp(260, 540, kprog(T, K.G, K.G + 1.1, kEase.suave))} y={klerp(420, 1030, kprog(T, K.G, K.G + 1.4, kEase.suave))} s={klerp(1.2, 0.5, kprog(T, K.G, K.G + 1.4))} rot={T * 200} />
         </svg>
       </Escena>
       {/* micro: la colonia, de la gancho a "comparten" */}
@@ -103,7 +103,7 @@ function ResistenciaNarrado() {
       </Escena>
       <Escena T={T} a={K.P} b={K.E} zoom={0.06}>
         <FondoLunares color={KC.lilac} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Colonia T={T} y={900} s={0.8} kill={1} crece={1} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Colonia T={T} x={360} y={900} s={0.8} kill={1} crece={1} /></svg>
       </Escena>
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.yellow} />
@@ -135,12 +135,12 @@ function ResistenciaNarrado() {
       {/* datos y chips */}
       <Chip T={T} at={K.G + 2.6} until={K.Az - 0.2} texto="tus bacterias · por dentro" y={1520} tam={36} borde={SENS} mono />
       <Etq T={T} at={K.Az + 0.6} until={K.B - 0.2} x={540 + COL[17].x * 1.15 + 50} y={880 + COL[17].y * 1.15} texto="gen de resistencia" color={RES} />
-      <Chip T={T} at={K.Az + 0.3} until={K.B - 0.3} texto="unas pocas traen el gen" y={420} tam={44} borde={RES} />
+      <Chip T={T} at={K.Az + 0.3} until={K.B - 0.3} texto="unas pocas traen el gen" x={620} y={420} tam={44} borde={RES} />
       <Chip T={T} at={K.Cr + 2.6} until={K.Co - 0.3} texto="la misma pastilla: nada" y={420} tam={42} borde={RES} />
       <Etq T={T} at={K.Co + 1.2} until={K.P - 0.2} x={540 - 230 * 1.15 + 60} y={880 - 260 * 1.15 - 70} texto="otra especie" color={OTRA} />
       <Chip T={T} at={K.Co + 0.3} until={K.P - 0.3} texto="se pasan el gen" y={420} tam={42} borde={RES} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="2024" quien="GRAM · IHME y Oxford" revista="The Lancet 404: 1199–1226" y={640} />
-      <NumeroGigante T={T} at={K.E + 2.9} until={K.An - 0.3} valor={39} sufijo=" M" etiqueta="muertes 2025–2050 (pronóstico)" y={640} tam={230} color={KC.red} />
+      <NumeroGigante T={T} at={K.E + 2.9} until={K.An - 0.3} valor={39} sufijo=" M" etiqueta="muertes 2025–2050 (pronóstico)" y={800} tam={230} color={KC.red} />
       <Comparativa T={T} at={K.An + 0.2} until={K.R - 0.3} max={2} y={520} alto={460} izq={{ valor: 1.14, etiqueta: '2021', texto: '1.14 M', color: KC.orange }} der={{ valor: 1.91, etiqueta: '2050', texto: '1.91 M', color: KC.red }} />
       <Chip T={T} at={K.An + 0.5} until={K.R - 0.3} texto="muertes por año (directas)" y={420} tam={38} />
       <TarjetaRiesgo T={T} at={K.R + 0.6} until={K.F - 0.3} x={250} y={800} titulo="cesárea" dibujo={DIB.cesarea} />
@@ -167,11 +167,17 @@ function ResistenciaNarrado() {
       <Subtitulo T={T} idx={10} at={K.S + 0.1} until={K.C - 0.1} texto="Lo que *sí ayuda.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="No mata a las débiles: *entrena a las duras.*" />
 
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={K.P + 0.1} until={K.E - 0.2} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_13_senalando_arriba')} at={K.S + 3.2} until={K.C - 0.2} lado="arriba-der" />
-
+      <Robert T={T} apariciones={[
+        [CUES.Gancho - 0.45, CUES.Gancho + 3.5, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Azar + 0.6, CUES.Barre - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
+        [CUES.Comparten + 1.5, CUES.Pregunta - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
+        [CUES.Pregunta + 0.1, CUES.Estudio + 1.5, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Estudio + 3.2, CUES.Estudio + 6.5, 'avatar_10_serio_molesto', 'izq-alto'],
+        [CUES.Riesgo + 0.3, CUES.Riesgo + 3.2, 'avatar_12_perfil_serio', 'arriba-der'],
+        [CUES.Sirve + 0.6, CUES.Cierre - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [CUES.Cierre + 0.8, CUES.Outro - 0.1, 'avatar_04_bajando_lentes', 'arriba-der']]} />
       <MarcaAgua T={T} tema="biologia" num="02" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="biologia" />
+      <CierreMarca T={T} at={K.Ou} tema="biologia" robert={AVS('avatar_02_apuntando_camara')} />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -223,12 +229,21 @@ function ResistenciaMudo() {
       </svg>
       {/* la regla escrita y los contadores */}
       <Chip T={T} at={K.U + 0.3} until={FIN - 1.2} texto="regla: cada 20 min se duplican" y={1580} tam={36} borde={SENS} mono />
-      <Cronometro T={T} at={K.U + 0.3} until={FIN - 1.2} factor={1200 / 1.4} x={540} y={410} etiqueta="TIEMPO SIMULADO" />
+      <Cronometro T={T} at={K.U + 0.3} until={FIN - 1.2} factor={1200 / 1.4} x={540} y={1720} etiqueta="TIEMPO SIMULADO" />
       <div style={{ position:'absolute', left:0, right:0, top:1330, textAlign:'center', zIndex:41, font:`700 64px ${KF.mono}`, color: color === RES ? RES : SENS, textShadow:KSOMBRA }}>{T >= K.A && T < K.S ? (vivas === 1 ? 64 : Math.max(1, Math.round(64 * (1 - kprog(T, K.A + 1, K.A + 3))))) : Math.floor(n)} bacteria{n === 1 && !(T >= K.A && T < K.S) ? '' : 's'}</div>
       <Chip T={T} at={K.A + 0.3} until={K.S - 0.2} texto="antibiótico" y={1480} tam={44} borde="#fff" />
       <Chip T={T} at={K.O + 1.4} until={K.C - 0.2} texto="no les hace nada" y={1480} tam={44} borde={RES} />
       <Chip T={T} at={K.C + 1.0} until={K.L - 0.2} texto="el gen pasa a otra especie" y={1480} tam={34} borde={OTRA} />
 
+      <Robert T={T} apariciones={[
+        [CUES.Una - 1, CUES.Una + 3.5, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Duplica + 3.5, CUES.Antibiotico - 0.3, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [CUES.Antibiotico + 1.5, CUES.Sobrevive - 0.5, 'avatar_10_serio_molesto', 'izq-alto'],
+        [CUES.Sobrevive + 3, CUES.Sobrevive + 7, 'avatar_07_pensativo_puno', 'arriba-der'],
+        [CUES.Otra + 1.0, CUES.Comparte - 0.3, 'avatar_04_bajando_lentes', 'grande-izq'],
+        [CUES.Comparte + 1.5, CUES.Llena + 2, 'avatar_12_perfil_serio', 'izq-alto'],
+        [CUES.Llena + 4.5, CUES.Loop - 0.5, 'avatar_06_pensativo_menton', 'izq-alto'],
+        [CUES.Loop + 2, CUES.Loop + 12, 'avatar_11_sorprendido', 'gancho']]} />
       <MarcaAgua T={T} tema="biologia" num="02" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>

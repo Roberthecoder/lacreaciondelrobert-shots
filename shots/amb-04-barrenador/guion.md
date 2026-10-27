@@ -39,6 +39,39 @@
 7. **Mapa (46.5–54.5 s):** Chiapas nov 2024 · Metapa 2026 · "100 millones por semana".
 8. **Loop (54.5–61.5 s):** vuelven a juntarse las 100 moscas (100 notas) y el letrero "1,000,000": igual al primer cuadro.
 
+## Robert en pantalla
+
+Tiempos de la base narrada (antes de la voz; con la voz real se recorren solos porque están atados a cada escena).
+
+**Narrada:** 10 apariciones + cierre · **33.2 s** en pantalla · 8 poses distintas · grande en: «¿cómo acabas con una plaga…?» · cierre: `CierreMarca` con señalando.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.6 | sorprendido | `gancho` | «se comen la carne viva» |
+| 2 | 4.4 | 7.7 | serio / molesto | `izq-alto` | «los gusanos se meten barrenando» |
+| 3 | 11.9 | 14.8 | perfil serio | `izq-alto` | «también ataca a perros y personas» |
+| 4 | 20.6 | 23.3 | señalando | `arriba-der` | señala la avioneta |
+| 5 | 23.6 | 27.0 | pensativo (puño) | `grande` | «¿cómo acabas con una plaga…?» (grande) |
+| 6 | 34.6 | 36.3 | sorprendido | `arriba-der` | «la mosca desapareció» |
+| 7 | 36.8 | 40.1 | pensativo (mentón) | `izq-alto` | la barrera baja a Panamá |
+| 8 | 41.1 | 44.2 | serio / molesto | `izq-alto` | «apareció en Chiapas» |
+| 9 | 46.4 | 52.0 | apuntando a cámara | `arriba-der` | «cien millones por semana» |
+| 10 | 52.7 | 56.4 | sonriendo | `izq-alto` | «no es la plaga: es la cura» |
+| — | 56.5 | 60.0 | señalando | cierre | tarjeta final junto al logo |
+
+**Mudo:** 8 apariciones · **33.5 s** en pantalla · 7 poses distintas (la primera y la última son la misma para que el loop no brinque).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.5 | sorprendido | `gancho` | 1,000,000 de moscas |
+| 2 | 6.0 | 10.0 | serio / molesto | `abajo-der` | llegan 2,000,000 estériles |
+| 3 | 15.5 | 19.5 | pensativo (puño) | `presentador` | 333,333 (grande) |
+| 4 | 24.0 | 28.0 | señalando | `arriba-der` | 47,619 |
+| 5 | 32.5 | 36.5 | perfil serio | `abajo-izq` | 1,107 |
+| 6 | 39.5 | 44.5 | sonriendo | `arriba-der` | 0 silvestres |
+| 7 | 47.5 | 51.5 | apuntando a cámara | `abajo-der` | Chiapas y Metapa |
+| 8 | 56.5 | 61.5 | sorprendido | `gancho` | vuelve al primer cuadro |
+
 ## Descripción (borrador)
 "Esta no es una mosca cualquiera: es el gusano barrenador del ganado (*Cochliomyia hominivorax*). 🪰 La hembra pone cientos de huevos en heridas de animales de sangre caliente y las larvas se alimentan de tejido vivo; sin tratamiento, un animal puede morir en una o dos semanas, y también puede infestar perros y personas. Para combatirla no se usó veneno: se usó la técnica del insecto estéril, ideada por Edward Knipling y Raymond Bushland. Se crían millones de moscas, se esterilizan con radiación y se sueltan desde avionetas. Como la hembra se aparea una sola vez en la vida, si lo hace con un macho estéril no deja crías. En 1954 se probó en la isla de Curazao y en unos meses la mosca desapareció. Estados Unidos se declaró libre en 1966 y la barrera de moscas estériles fue bajando hasta Panamá (COPEG). Desde 2023 la plaga cruzó la barrera, avanzó por Centroamérica y el 21 de noviembre de 2024 se detectó en Catazajá, Chiapas. El 27 de junio de 2026 se inauguró en Metapa, Chiapas, una nueva planta de moscas estériles, con la meta de producir 100 millones por semana. El dibujo y el mapa son esquemáticos. Si ves un animal con una herida con gusanos, repórtalo a SENASICA. ¿En tu región ya hubo casos? 👇"
 

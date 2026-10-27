@@ -36,6 +36,37 @@
 6. **Comparte (35–43 s) y Llena (43–54.5 s):** el gen viaja a otra especie (nota que sube) y cada bacteria nueva de esa especie es una nota.
 7. **Loop (54.5–61.5 s):** el plato se apaga y vuelve a quedar 1 bacteria verde, como en el primer cuadro.
 
+## Robert en pantalla
+
+Tiempos de la base narrada (antes de la voz; con la voz real se recorren solos porque están atados a cada escena).
+
+**Narrada:** 8 apariciones + cierre · **28.8 s** en pantalla · 7 poses distintas · grande en: «¿qué tan grave es?» · cierre: `CierreMarca` con apuntando a cámara.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.5 | sorprendido | `gancho` | «escogió a las más duras» |
+| 2 | 5.6 | 8.8 | pensativo (mentón) | `izq-alto` | «un gen que las protege» |
+| 3 | 18.5 | 21.8 | serio / molesto | `arriba-der` | «se pasan ese gen» |
+| 4 | 22.1 | 25.8 | pensativo (puño) | `grande` | «¿qué tan grave es?» (grande) |
+| 5 | 27.5 | 30.8 | serio / molesto | `izq-alto` | «39 millones» |
+| 6 | 37.3 | 40.2 | perfil serio | `arriba-der` | cesárea, quimio, trasplante |
+| 7 | 48.1 | 53.2 | señalando | `arriba-der` | «lo que sí ayuda» |
+| 8 | 54.2 | 58.1 | bajando lentes | `arriba-der` | «entrena a las más duras» |
+| — | 58.2 | 61.7 | apuntando a cámara | cierre | tarjeta final junto al logo |
+
+**Mudo:** 8 apariciones · **42.4 s** en pantalla · 7 poses distintas (la primera y la última son la misma para que el loop no brinque).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.5 | sorprendido | `gancho` | 1 bacteria |
+| 2 | 7.5 | 12.7 | señalando | `arriba-der` | se duplican |
+| 3 | 14.5 | 19.5 | serio / molesto | `izq-alto` | el antibiótico las barre |
+| 4 | 23.0 | 27.0 | pensativo (puño) | `arriba-der` | la resistente crece |
+| 5 | 30.0 | 34.7 | bajando lentes | `grande-izq` | «no les hace nada» (grande) |
+| 6 | 36.5 | 45.0 | perfil serio | `izq-alto` | el gen pasa a otra especie |
+| 7 | 47.5 | 54.0 | pensativo (mentón) | `izq-alto` | el plato se llena |
+| 8 | 56.5 | 61.5 | sorprendido | `gancho` | vuelve al primer cuadro |
+
 ## Descripción (borrador)
 "Ese antibiótico no mató a todas tus bacterias: escogió a las más duras. 💊 Entre millones de bacterias, unas pocas traen por azar genes que las protegen. El antibiótico elimina a las sensibles y deja el espacio libre a las resistentes, que se multiplican. Además, las bacterias se pasan genes de resistencia (por ejemplo en plásmidos), incluso entre especies distintas. El estudio GRAM (IHME y Universidad de Oxford), publicado en *The Lancet* en 2024, calculó que entre 2025 y 2050 podrían morir 39 millones de personas por infecciones resistentes si no se hace nada más, y que las muertes directas por año pasarían de 1.14 millones (2021) a 1.91 millones (2050). Una estimación anterior, el informe O'Neill (2014), hablaba de 10 millones de muertes al año en 2050; el estudio de 2024 usa datos más completos. Sin antibióticos que funcionen, cirugías como una cesárea, la quimioterapia o un trasplante se vuelven más peligrosos. Alexander Fleming lo advirtió en su discurso del Nobel en 1945: usar dosis insuficientes podía hacer resistentes a los microbios. Qué sí ayuda (OMS): usar antibióticos solo con receta, seguir las indicaciones y nunca compartir ni usar los que sobraron. El dibujo es esquemático. ¿A ti te han recetado antibióticos para una gripa? 👇"
 

@@ -100,7 +100,7 @@ function BarrenadorNarrado() {
         <Pasto T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Vaca x={500} y={1000} s={1.15} T={T} herida={1} />
-          <Mosca x={klerp(1100, 470, llega) + (1 - llega) * Math.sin(T * 9) * 60} y={klerp(380, 805, llega)} s={klerp(2.6, 1.0, llega)} rot={klerp(-60, 10, llega)} T={T} alas={1 - kprog(T, K.G + 1.0, K.G + 1.2)} />
+          <Mosca x={klerp(-100, 470, llega) + (1 - llega) * Math.sin(T * 9) * 60} y={klerp(380, 805, llega)} s={klerp(2.6, 1.0, llega)} rot={klerp(-60, 10, llega)} T={T} alas={1 - kprog(T, K.G + 1.0, K.G + 1.2)} />
           {/* huevos: cientos, en capas como tejas a la orilla de la herida */}
           {T > K.H + 0.5 && Array.from({ length: 60 }, (_, i) => { const at = K.H + 0.5 + i * 0.03; if (T < at) return null; return <ellipse key={i} cx={420 + (i % 12) * 7} cy={828 - Math.floor(i / 12) * 5} rx={4} ry={9} transform={`rotate(-30 ${420 + (i % 12) * 7} ${828 - Math.floor(i / 12) * 5})`} fill="#fffbe8" stroke={KC.ink} strokeWidth={1.5} />; })}
         </svg>
@@ -177,7 +177,7 @@ function BarrenadorNarrado() {
       <Etq T={T} at={K.G + 1.4} until={K.H - 0.2} x={90} y={560} texto="Cochliomyia hominivorax" it tam={30} />
       <Chip T={T} at={K.H + 0.6} until={K.Mu - 0.3} texto="cientos de huevos" y={420} tam={42} borde={KC.red} />
       {T < K.Ma - 0.2 && <Contador T={T} at={K.Mu + 0.4} desde={0} hasta={14} dur={2.2} sufijo=" días" x={540} y={460} tam={90} color={KC.red} />}
-      <Chip T={T} at={K.Mu + 2.6} until={K.Ma - 0.3} texto="también perros y personas" y={600} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Mu + 2.6} until={K.Ma - 0.3} texto="también perros y personas" y={700} tam={40} borde={KC.red} />
       <MitoTachado T={T} at={K.Ma + 0.2} tacharEn={K.Ma + 1.2} until={K.F - 0.2} texto="veneno" y={480} tam={70} />
       <Chip T={T} at={K.Ma + 1.6} until={K.F - 0.2} texto="más moscas (estériles)" y={620} tam={44} borde={KC.leaf} />
       <Chip T={T} at={K.F + 0.2} until={K.F + 2.3} texto="planta · radiación" y={420} tam={42} mono />
@@ -187,8 +187,8 @@ function BarrenadorNarrado() {
       <Etq T={T} at={K.U + 1.2} until={K.E - 0.3} x={680} y={590} texto="macho estéril" color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="1954" quien="Curazao · USDA" revista="Knipling y Bushland · técnica del insecto estéril" y={600} />
       <Chip T={T} at={K.E + 2.8} until={K.B - 0.3} texto="en unos meses: 0 moscas" y={1480} tam={44} borde={KC.leaf} />
-      <Chip T={T} at={K.Me + 1.2} until={K.C - 0.3} texto="meta: 100 millones de moscas por semana" y={420} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="no es la plaga: es la cura" y={420} tam={46} borde={KC.leaf} />
+      <Chip T={T} at={K.Me + 1.2} until={K.C - 0.3} texto="meta: 100 millones de moscas por semana" y={1480} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="no es la plaga: es la cura" y={1480} tam={46} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="Sus larvas *se comen la carne viva.*" />
@@ -204,11 +204,19 @@ function BarrenadorNarrado() {
       <Subtitulo T={T} idx={10} at={K.Me + 0.1} until={K.C - 0.1} texto="Metapa, 2026: *100 millones por semana.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="No es la plaga: *es la cura.*" />
 
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={K.P + 0.1} until={K.U - 0.2} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.E + 3.0} until={K.B - 0.2} lado="arriba-der" />
-
+      <Robert T={T} apariciones={[
+        [CUES.Gancho - 0.45, CUES.Gancho + 3.6, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Huevos + 0.3, CUES.Huevos + 3.6, 'avatar_10_serio_molesto', 'izq-alto'],
+        [CUES.Muere + 2.8, CUES.Mas - 0.2, 'avatar_12_perfil_serio', 'izq-alto'],
+        [CUES.Fabrica + 2.4, CUES.Pregunta - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [CUES.Pregunta + 0.1, CUES.Una + 0.6, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Estudio + 3.0, CUES.Barrera - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
+        [CUES.Barrera + 0.3, CUES.Barrera + 3.6, 'avatar_06_pensativo_menton', 'izq-alto'],
+        [CUES.Chiapas + 0.3, CUES.Chiapas + 3.4, 'avatar_10_serio_molesto', 'izq-alto'],
+        [CUES.Metapa + 1.5, CUES.Cierre - 0.2, 'avatar_02_apuntando_camara', 'arriba-der'],
+        [CUES.Cierre + 0.5, CUES.Outro - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto']]} />
       <MarcaAgua T={T} tema="biologia" num="04" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="biologia" />
+      <CierreMarca T={T} at={K.Ou} tema="biologia" robert={AVS('avatar_13_senalando_arriba')} />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -251,15 +259,24 @@ function BarrenadorMudo() {
       <Escena T={T} a={K.L} b={FIN + 1} zoom={0}><Pasto T={T} /><svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{pos.slice(0, Math.round(100 * loopVuelve)).map(([x, y, r], i) => <Mosca key={i} x={x + mece(T, i + 3, 0.3) * 30} y={y + mece(T, i + 9, 0.3) * 30} s={0.34} rot={r + T * 70} T={T} seed={i} />)}</svg></Escena>
 
       {/* datos */}
-      {(T < K.M - 0.2 || loopVuelve > 0.9) && <div style={{ position:'absolute', left:0, right:0, top:340, opacity: T >= K.L ? kprog(loopVuelve, 0.9, 1) : 1, textAlign:'center', zIndex:41, textShadow:KSOMBRA }}>
+      {(T < K.M - 0.2 || loopVuelve > 0.9) && <div style={{ position:'absolute', left:30, width:600, top:340, opacity: T >= K.L ? kprog(loopVuelve, 0.9, 1) : 1, textAlign:'center', zIndex:41, textShadow:KSOMBRA }}>
         <div style={{ font:`700 30px ${KF.mono}`, color:KC.texto, letterSpacing:2 }}>{T < K.G1 || T >= K.L ? 'MOSCAS SILVESTRES' : T < K.Ce ? `GENERACIÓN ${gen + 1}` : 'GENERACIÓN 5'}</div>
         <div style={{ font:`400 120px/1 ${KF.titulo}`, color: T >= K.L || (N > 0 && T < K.Ce) ? KC.yellow : KC.leaf, WebkitTextStroke:`4px ${KC.ink}` }}>{kformato(T >= K.L ? KNIP[0] : T >= K.Ce ? 0 : N)}</div>
-        {conEst && <div style={{ font:`700 34px ${KF.mono}`, color:'#fff' }}>+ 2,000,000 estériles · {['2', '6', '42', '1,807'][gen]} : 1</div>}
+        {conEst && <div style={{ font:`700 26px ${KF.mono}`, color:'#fff' }}>+ 2,000,000 estériles · {['2', '6', '42', '1,807'][gen]} : 1</div>}
       </div>}
-      <Chip T={T} at={K.Ca + 0.4} until={K.M - 0.3} texto="1 punto = 10,000 moscas · 1 nota" y={1500} tam={34} mono />
-      <Chip T={T} at={K.Ce + 0.6} until={K.M - 0.3} texto="0 silvestres" y={620} tam={60} borde={KC.leaf} />
+      <Chip T={T} at={K.Ca + 0.4} until={K.Ce - 0.3} texto="1 punto = 10,000 moscas · 1 nota" x={330} y={600} tam={26} mono />
+      <Chip T={T} at={K.Ce + 0.6} until={K.M - 0.3} texto="0 silvestres" x={330} y={620} tam={60} borde={KC.leaf} />
       <Chip T={T} at={K.M + 3.4} until={K.L - 0.3} texto="100 millones por semana" y={420} tam={44} borde={KC.yellow} />
 
+      <Robert T={T} apariciones={[
+        [CUES.Campo - 1, CUES.Campo + 3.5, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.G1 + 2, CUES.G1 + 6, 'avatar_10_serio_molesto', 'abajo-der'],
+        [CUES.G2 + 2, CUES.G2 + 6, 'avatar_07_pensativo_puno', 'presentador'],
+        [CUES.G3 + 2, CUES.G3 + 6, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [CUES.G4 + 2, CUES.G4 + 6, 'avatar_12_perfil_serio', 'abajo-izq'],
+        [CUES.Cero + 1, CUES.Cero + 6, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
+        [CUES.Mapa + 1, CUES.Mapa + 5, 'avatar_02_apuntando_camara', 'abajo-der'],
+        [CUES.Loop + 2, CUES.Loop + 12, 'avatar_11_sorprendido', 'gancho']]} />
       <MarcaAgua T={T} tema="biologia" num="04" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>

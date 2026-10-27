@@ -243,12 +243,12 @@ function VinazasNarrado() {
       <Escena T={T} a={K.A} b={K.R}>
         <FondoLunares color={KC.cyan} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Naranja x={300} y={520} s={kentrada(T, K.A + 0.8, null, 'pop').s * (T > K.A + 0.8 ? 1 : 0)} />
+          <Naranja x={800} y={520} s={kentrada(T, K.A + 0.8, null, 'pop').s * (T > K.A + 0.8 ? 1 : 0)} />
           {/* 1 litro de vinaza que ensucia 20 litros de agua */}
-          {Array.from({ length: 20 }, (_, i) => { const at = K.A + 2.4 + i * 0.07; const c = kprog(T, at, at + 0.4); const x = 150 + (i % 10) * 82, y = 920 + Math.floor(i / 10) * 130;
+          {Array.from({ length: 20 }, (_, i) => { const at = K.A + 2.4 + i * 0.07; const c = kprog(T, at, at + 0.4); const x = 150 + (i % 10) * 82, y = 950 + Math.floor(i / 10) * 120;
             return T > K.A + 2.2 ? <g key={i} transform={`translate(${x} ${y})`}><rect x={-34} y={-55} width={68} height={110} rx={10} fill={mixHex('#2fb6ff', '#6b4a22', c * 0.9)} stroke={KC.ink} strokeWidth={5} /></g> : null; })}
         </svg>
-        <EscalaPH T={T} at={K.A + 0.1} y={640} marcas={[{ at: K.A + 0.5, ph: 4, rango: [3.4, 4.5], texto: 'vinaza 3.4–4.5', color: VIN }, { at: K.A + 0.9, ph: 3.6, arriba: true, texto: 'jugo de naranja', color: KC.ink }]} />
+        <EscalaPH T={T} at={K.A + 0.1} y={740} marcas={[{ at: K.A + 0.5, ph: 4, rango: [3.4, 4.5], texto: 'vinaza 3.4–4.5', color: VIN }, { at: K.A + 0.9, ph: 3.6, arriba: true, texto: 'jugo de naranja', color: KC.ink }]} />
       </Escena>
       <Escena T={T} a={K.R} b={K.P}>
         <Rio T={T} cafe={kprog(T, K.R + 0.3, K.R + 2)} o2={1 - kprog(T, K.R + 1.8, K.P - 0.6)} />
@@ -256,8 +256,8 @@ function VinazasNarrado() {
       <Escena T={T} a={K.P} b={K.Re} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`translate(540 1180) scale(${klerp(1.3, 1.9, kprog(T, K.P, K.Re))}) rotate(${mece(T, 2, 0.3) * 4})`}><Garrafa x={0} y={0} T={T} /></g>
-          <text x={540} y={760} textAnchor="middle" style={{ font:`400 220px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.P + 0.3, K.P + 0.7)}>?</text>
+          <g transform={`translate(300 1180) scale(${klerp(1.3, 1.9, kprog(T, K.P, K.Re))}) rotate(${mece(T, 2, 0.3) * 4})`}><Garrafa x={0} y={0} T={T} /></g>
+          <text x={300} y={760} textAnchor="middle" style={{ font:`400 220px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.P + 0.3, K.P + 0.7)}>?</text>
         </svg>
       </Escena>
       <Escena T={T} a={K.Re} b={K.E} zoom={0.03}><ReactorInterior T={T} a={K.Re} /></Escena>
@@ -296,10 +296,10 @@ function VinazasNarrado() {
       <Etq T={T} at={K.Al + 1.6} until={K.D - 0.3} x={140} y={1460} texto="vinaza" color={KC.ink} />
       <Etq T={T} at={K.Al + 0.8} until={K.D - 0.3} x={820} y={1520} texto="tequila" color={KC.ink} />
       <NumeroGigante T={T} at={K.D + 0.4} until={K.A - 0.3} valor={12} prefijo="×" etiqueta="litros de vinaza por litro" y={470} tam={190} />
-      <Chip T={T} at={K.A + 2.4} until={K.R - 0.3} texto="1 L de vinaza → 20 L de agua" y={1150} tam={40} borde={VIN2} />
+      <Chip T={T} at={K.A + 2.4} until={K.R - 0.3} texto="1 L de vinaza → 20 L de agua" y={1175} tam={40} borde={VIN2} />
       <Medidor T={T} at={K.R + 1.4} until={K.P - 0.3} etiqueta="OXÍGENO EN EL AGUA" valor={(t) => 1 - kprog(t, K.R + 1.8, K.P - 0.6)} y={400} color={KC.cyan} />
       <Lupa T={T} at={K.R + 0.9} until={K.P - 0.3} x={700} y={800} r={190} fx={330} fy={1000} interior={(t, r) => <RioMicro T={t} r={r} t0={K.R + 1} />} etiqueta="RAYOS X · bacterias" tinte={KC.mint} />
-      <Chip T={T} at={K.Re + 0.4} until={K.E - 0.3} texto="reactor anaerobio (sin aire)" y={400} tam={38} borde={KC.lilac} mono />
+      <Chip T={T} at={K.Re + 0.4} until={K.E - 0.3} texto="reactor anaerobio (sin aire)" x={620} y={400} tam={38} borde={KC.lilac} mono />
       <Etq T={T} at={K.Re + 1.8} until={K.E - 0.3} x={600} y={440} texto="biogás (metano)" color="#7fd3ff" />
       <Etq T={T} at={K.Re + 0.9} until={K.E - 0.3} x={560} y={1500} texto="microbios" color={KC.lilac} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.6} anio="2025" quien="CIATEJ · Jalisco" revista="De la Torre-Anguiano, Flores-Cosío y Amaya-Delgado" y={640} />
@@ -307,7 +307,7 @@ function VinazasNarrado() {
       <Etq T={T} at={K.B + 2.6} until={K.S - 0.3} x={700} y={1080} texto="bagazo" color={KC.ink} />
       <TarjetaEstudio T={T} at={K.S + 0.1} until={K.S + 2.6} anio="2024" quien="CU Lagos · UdeG" revista="Larios-Ulloa y Ramírez-Muñoz · Rev. Mex. Cienc. Agríc." y={520} />
       <Etq T={T} at={K.S + 2.4} until={K.Gr - 0.3} x={110} y={560} texto="Pleurotus ostreatus" it color={KC.ink} />
-      <Chip T={T} at={K.Gr + 0.6} until={K.C - 0.3} texto="la granja de Robert · próximamente" y={400} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.Gr + 0.6} until={K.C - 0.3} texto="la granja de Robert · próximamente" y={1480} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="materia prima" y={500} tam={56} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
@@ -324,12 +324,17 @@ function VinazasNarrado() {
       <Subtitulo T={T} idx={10} at={K.Gr + 0.1} until={K.C - 0.1} texto="Mi granja de hongos: *pronto.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="No es basura: *es materia prima.*" />
 
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.A + 2.6} until={K.R - 0.2} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={K.P + 0.1} until={K.Re - 0.2} lado="abajo-der" />
-      <Sticker T={T} src={AVS('avatar_02_apuntando_camara')} at={K.Gr + 1.0} until={K.C - 0.2} lado="abajo-izq" />
-
+      <Robert T={T} apariciones={[
+        [CUES.Gancho - 0.45, CUES.Gancho + 2.2, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Alambique + 2.5, CUES.Doce - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [CUES.Acida + 2.6, CUES.Rio - 0.2, 'avatar_10_serio_molesto', 'izq-alto'],
+        [CUES.Pregunta + 0.1, CUES.Reactor - 0.1, 'avatar_06_pensativo_menton', 'grande'],
+        [CUES.Reactor + 0.5, CUES.Reactor + 3.0, 'avatar_12_perfil_serio', 'izq-alto'],
+        [CUES.Bagazo + 0.3, CUES.Bagazo + 3.3, 'avatar_07_pensativo_puno', 'izq-alto'],
+        [CUES.Granja + 0.6, CUES.Cierre - 0.2, 'avatar_02_apuntando_camara', 'grande'],
+        [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der']]} />
       <MarcaAgua T={T} tema="quimica" num="01" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="quimica" />
+      <CierreMarca T={T} at={K.Ou} tema="quimica" robert={AVS('avatar_02_apuntando_camara')} />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -371,15 +376,23 @@ function VinazasMudo() {
       </Escena>
 
       {/* poco texto: título fijo + números */}
-      <Chip T={T} at={K.C + 0.6} until={K.D - 0.3} texto="1 L de tequila" y={430} tam={50} />
-      {T < K.A + 0.2 && <Contador T={T} at={K.D + 0.4} desde={0} hasta={12} dur={1.9} sufijo=" L de vinaza" x={540} y={560} tam={72} color={KC.yellow} />}
+      <Chip T={T} at={K.C + 0.6} until={K.D - 0.3} texto="1 L de tequila" y={1320} tam={50} />
+      {T < K.A + 0.2 && <Contador T={T} at={K.D + 0.4} desde={0} hasta={12} dur={1.9} sufijo=" L de vinaza" x={540} y={1320} tam={72} color={KC.yellow} />}
       <Chip T={T} at={K.A + 3} until={K.R - 0.3} texto="1 L de vinaza → 20 L de agua" y={1480} tam={40} borde={VIN2} />
-      <Medidor T={T} at={K.R + 1.8} until={K.Re - 0.3} etiqueta="O₂" valor={(t) => 1 - kprog(t, K.R + 2.5, K.Re - 1)} y={400} color={KC.cyan} />
+      <Medidor T={T} at={K.R + 1.8} until={K.Re - 0.3} etiqueta="O₂" valor={(t) => 1 - kprog(t, K.R + 2.5, K.Re - 1)} y={1560} color={KC.cyan} />
       <Chip T={T} at={K.Re + 1.2} until={K.B - 0.3} texto="biogás" y={360} tam={50} borde="#7fd3ff" />
       <Chip T={T} at={K.B + 2.5} until={K.S - 0.3} texto="bagazo de agave" y={430} tam={46} />
-      <Etq T={T} at={K.S + 2} until={K.L - 0.3} x={110} y={560} texto="Pleurotus ostreatus" it />
-      <Chip T={T} at={K.L + 1.4} until={FIN - 1.4} texto="♪ cada nota es un dato" y={430} tam={40} borde={KC.mint} />
+      <Etq T={T} at={K.S + 2} until={K.L - 0.3} x={110} y={515} texto="Pleurotus ostreatus" it />
+      <Chip T={T} at={K.L + 1.4} until={FIN - 1.4} texto="♪ cada nota es un dato" y={1320} tam={40} borde={KC.mint} />
 
+      <Robert T={T} apariciones={[
+        [CUES.Caballito - 1, CUES.Caballito + 3.5, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Doce + 3.2, CUES.Acido - 0.3, 'avatar_10_serio_molesto', 'arriba-der'],
+        [CUES.Rio + 3, CUES.Rio + 6.5, 'avatar_12_perfil_serio', 'izq-alto'],
+        [CUES.Reactor + 1.5, CUES.Reactor + 5, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [CUES.Bagazo + 3, CUES.Bagazo + 6.5, 'avatar_07_pensativo_puno', 'izq-alto'],
+        [CUES.Setas + 2.5, CUES.Loop - 0.5, 'avatar_02_apuntando_camara', 'grande'],
+        [CUES.Loop + 1.5, CUES.Loop + 11.5, 'avatar_11_sorprendido', 'gancho']]} />
       <MarcaAgua T={T} tema="quimica" num="01" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>

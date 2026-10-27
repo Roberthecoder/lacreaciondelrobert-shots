@@ -34,6 +34,37 @@
 6. **Respuesta (44–54.5 s):** "58 °C" + "humedad" + "semanas" (tres notas que se abren).
 7. **Loop (54.5–61.5 s):** los vasos vuelven a su lugar de arriba: el último cuadro es el primero.
 
+## Robert en pantalla
+
+Tiempos de la base narrada (antes de la voz; con la voz real se recorren solos porque están atados a cada escena).
+
+**Narrada:** 9 apariciones + cierre · **34.0 s** en pantalla · 9 poses distintas · grande en: «¿y si mejor lo reciclo?» · cierre: `CierreMarca` con señalando.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.8 | bajando lentes | `gancho` | «dice compostable, pero…» |
+| 2 | 6.1 | 10.9 | señalando | `izq-alto` | maíz → PLA |
+| 3 | 17.7 | 21.2 | serio / molesto | `arriba-der` | «no en tu jardín ni en el mar» |
+| 4 | 24.4 | 26.5 | sorprendido | `arriba-der` | «no se degradó» |
+| 5 | 26.7 | 30.1 | pensativo (puño) | `grande` | «¿y si mejor lo reciclo?» (grande) |
+| 6 | 32.4 | 35.3 | perfil serio | `arriba-der` | «puede arruinar el reciclado» |
+| 7 | 42.4 | 46.6 | aburrido (manos en mejillas) | `arriba-der` | el vaso que se deforma |
+| 8 | 47.1 | 50.8 | sonriendo | `arriba-der` | «¿estafa? No» |
+| 9 | 51.4 | 57.0 | apuntando a cámara | `arriba-der` | «¿compostable dónde?» |
+| — | 57.1 | 60.6 | señalando | cierre | tarjeta final junto al logo |
+
+**Mudo:** 7 apariciones · **33.2 s** en pantalla · 6 poses distintas (la primera y la última son la misma para que el loop no brinque).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.5 | pensativo (mentón) | `gancho` | la pregunta |
+| 2 | 11.0 | 15.0 | perfil serio | `izq-alto` | el vaso del jardín no cambia |
+| 3 | 19.0 | 24.0 | sorprendido | `arriba-der` | el vaso de la composta se rompe |
+| 4 | 28.0 | 32.0 | señalando | `izq-alto` | la cadena que se corta |
+| 5 | 36.0 | 41.0 | serio / molesto | `grande` | 365 días en el mar: 0 % (grande) |
+| 6 | 47.5 | 54.2 | apuntando a cámara | `arriba-der` | 58 °C + humedad + semanas |
+| 7 | 56.5 | 61.5 | pensativo (mentón) | `gancho` | vuelve al primer cuadro |
+
 ## Descripción (borrador)
 "Este vaso dice «compostable», pero en tu jardín no se va a deshacer. 🥤 La mayoría de estos vasos son de PLA (ácido poliláctico): un plástico hecho con ácido láctico que fermentan bacterias a partir del azúcar del maíz o de la caña. Para degradarse necesita compostaje industrial: humedad, aire y unos 58 °C sostenidos durante semanas (es la temperatura de las pruebas de laboratorio de compostaje, como la norma ISO 20200). En una composta casera o en el mar se queda casi igual: en 2017, investigadores de la Universidad de Bayreuth (Alemania) dejaron PLA un año en agua de mar artificial a 25 °C y no se degradó. Problema dos: se ve igual que el PET y en grandes cantidades puede afectar el reciclaje (en cantidades pequeñas, estudios recientes encuentran poco efecto). Problema tres: hoy cuesta más producirlo que un plástico de petróleo. Y se ablanda alrededor de 55–60 °C, por eso un vaso de PLA puro no es para café muy caliente (los vasos para bebidas calientes suelen ser de PLA modificado o mezclado). No es una estafa: es una tecnología que va a medio camino. El dibujo es esquemático. ¿En tu ciudad hay composta industrial? 👇"
 

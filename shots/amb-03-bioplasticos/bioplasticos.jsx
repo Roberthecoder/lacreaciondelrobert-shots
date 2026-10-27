@@ -150,8 +150,8 @@ function BioplasticosNarrado() {
       <Escena T={T} a={K.P} b={K.D2} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <VasoPLA x={540} y={1150} s={1.2} T={T} />
-          <g transform={`translate(540 600) rotate(${T * 40})`} opacity={kprog(T, K.P + 0.3, K.P + 0.7)}>{[0, 120, 240].map((r) => <path key={r} d="M 0 -110 L 60 -20 L 20 -20 L 20 30 L -20 30 L -20 -20 L -60 -20 Z" transform={`rotate(${r}) translate(0 -30)`} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />)}</g>
+          <VasoPLA x={330} y={1150} s={1.2} T={T} />
+          <g transform={`translate(330 600) rotate(${T * 40})`} opacity={kprog(T, K.P + 0.3, K.P + 0.7)}>{[0, 120, 240].map((r) => <path key={r} d="M 0 -110 L 60 -20 L 20 -20 L 20 30 L -20 30 L -20 -20 L -60 -20 Z" transform={`rotate(${r}) translate(0 -30)`} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />)}</g>
         </svg>
       </Escena>
       {/* problema 2: parece PET pero no lo es */}
@@ -179,9 +179,9 @@ function BioplasticosNarrado() {
 
       {/* capítulos y medidores */}
       <Capitulo T={T} caps={[{ at: K.U, titulo: 'Problema: calor' }, { at: K.D2, titulo: 'Problema: reciclaje' }, { at: K.Tr, titulo: 'Problema: costo' }]} hasta={K.Ca - 0.2} />
-      {T > K.G + 1.2 && T < K.Q - 0.2 && <Contador T={T} at={K.G + 1.2} desde={0} hasta={180} dur={K.Q - K.G - 1.8} sufijo=" días" x={540} y={440} tam={80} color={KC.yellow} />}
-      <Chip T={T} at={K.G + 0.6} until={K.Q - 0.3} texto="«compostable»" y={600} tam={44} borde={KC.leaf} />
-      <Etq T={T} at={K.Q + 0.3} until={K.U - 0.3} x={120} y={600} texto="maíz" color={KC.ink} />
+      {T > K.G + 1.2 && T < K.Q - 0.2 && <Contador T={T} at={K.G + 1.2} desde={0} hasta={180} dur={K.Q - K.G - 1.8} sufijo=" días" x={330} y={440} tam={80} color={KC.yellow} />}
+      <Chip T={T} at={K.G + 0.6} until={K.Q - 0.3} texto="«compostable»" x={330} y={560} tam={44} borde={KC.leaf} />
+      <Etq T={T} at={K.Q + 0.3} until={K.U - 0.3} x={120} y={930} texto="maíz" color={KC.ink} />
       <Etq T={T} at={K.Q + 1.0} until={K.U - 0.3} x={430} y={600} texto="azúcar" color={KC.ink} />
       <Etq T={T} at={K.Q + 1.8} until={K.U - 0.3} x={700} y={600} texto="bacterias" color={KC.ink} />
       <Chip T={T} at={K.Q + 2.6} until={K.U - 0.3} texto="ácido láctico → PLA" y={940} tam={42} />
@@ -194,10 +194,10 @@ function BioplasticosNarrado() {
       <Chip T={T} at={K.D2 + 3.2} until={K.Tr - 0.3} texto="mucho PLA = lote dañado" y={900} tam={40} borde={KC.red} />
       <Comparativa T={T} at={K.Tr + 0.4} until={K.Ca - 0.3} max={2} y={520} alto={420} izq={{ valor: 1, etiqueta: 'PET', texto: '$', color: '#7fc4ff' }} der={{ valor: 1.75, etiqueta: 'PLA', texto: '$$', color: KC.leaf }} />
       <Chip T={T} at={K.Tr + 1.2} until={K.Ca - 0.3} texto="fermentar · purificar · fabricar" y={1490} tam={36} mono />
-      <Medidor T={T} at={K.Ca + 0.6} until={K.Es - 0.3} etiqueta="SE ABLANDA DESDE" valor={0.55 / 0.9} texto={() => '~55–60 °C'} y={450} color={KC.red} />
+      <Medidor T={T} at={K.Ca + 0.6} until={K.Es - 0.3} etiqueta="SE ABLANDA DESDE" valor={0.55 / 0.9} texto={() => '~55–60 °C'} y={1440} color={KC.red} />
       <MitoTachado T={T} at={K.Es + 0.2} tacharEn={K.Es + 1.6} until={K.C - 0.3} texto="¿Estafa?" y={700} tam={80} />
       <Medidor T={T} at={K.Es + 1.9} until={K.C - 0.3} etiqueta="TECNOLOGÍA" valor={(t) => 0.5 * kprog(t, K.Es + 2, K.Es + 2.8)} texto={() => 'a medio camino'} y={1000} color={KC.yellow} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="¿compostable DÓNDE?" y={460} tam={52} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="¿compostable DÓNDE?" x={360} y={460} tam={52} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="En tu jardín no se deshace: *necesita una fábrica.*" />
@@ -212,12 +212,18 @@ function BioplasticosNarrado() {
       <Subtitulo T={T} idx={9} at={K.Es + 0.1} until={K.C - 0.1} texto="¿Estafa? No: *a medio camino.*" />
       <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="En tu jardín, *este vaso sigue aquí.*" />
 
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.E + 3.0} until={K.P - 0.2} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_07_pensativo_puno')} at={K.P + 0.1} until={K.D2 - 0.2} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_04_bajando_lentes')} at={K.Es + 0.4} until={K.C - 0.2} lado="arriba-der" />
-
+      <Robert T={T} apariciones={[
+        [CUES.Gancho - 0.45, CUES.Gancho + 3.8, 'avatar_04_bajando_lentes', 'gancho'],
+        [CUES.Que + 0.8, CUES.Uno - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
+        [CUES.Donde + 0.3, CUES.Estudio - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
+        [CUES.Estudio + 3.0, CUES.Pregunta - 0.1, 'avatar_11_sorprendido', 'arriba-der'],
+        [CUES.Pregunta + 0.1, CUES.Dos + 1.2, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Dos + 3.5, CUES.Tres - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
+        [CUES.Cafe + 1.0, CUES.Estafa - 0.2, 'avatar_03_aburrido_manos_mejillas', 'arriba-der'],
+        [CUES.Estafa + 0.3, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
+        [CUES.Cierre + 0.4, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="quimica" num="03" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="quimica" />
+      <CierreMarca T={T} at={K.Ou} tema="quimica" robert={AVS('avatar_13_senalando_arriba')} />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -244,15 +250,15 @@ function BioplasticosMudo() {
           <rect x={540} y={760} width={540} height={1160} fill="#2b1d12" />
           <PilaIndustrial x={810} y={1060} s={0.85} T={T} />
           <line x1={540} y1={600} x2={540} y2={1920} stroke={KC.ink} strokeWidth={10} />
-          <VasoPLA x={270} y={klerp(700, 1300, cae)} s={0.75} T={T} />
-          <VasoPLA x={810} y={klerp(700, 1300, cae)} s={0.75} T={T} roto={dias} />
+          <VasoPLA x={270} y={klerp(960, 1300, cae)} s={0.75} T={T} />
+          <VasoPLA x={810} y={klerp(960, 1300, cae)} s={0.75} T={T} roto={dias} />
         </svg>
       </Escena>
       <Escena T={T} a={K.M} b={K.R}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#7fc4ff, #2346ff 40%, #0d1424)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {Array.from({ length: 20 }, (_, i) => { const u = ((T * 0.15 + i / 20) % 1); return <circle key={i} cx={(i * 113) % KW} cy={klerp(1700, 600, u)} r={8 + (i % 3) * 4} fill="none" stroke="#fff" strokeWidth={3} opacity={0.5 * Math.sin(Math.PI * u)} />; })}
-          <g transform={`translate(${540 + mece(T, 3, 0.1) * 60} ${1050 + mece(T, 7, 0.1) * 40}) rotate(${mece(T, 2, 0.1) * 20})`}><VasoPLA x={0} y={150} s={0.9} T={T} /></g>
+          <g transform={`translate(${330 + mece(T, 3, 0.1) * 60} ${1050 + mece(T, 7, 0.1) * 40}) rotate(${mece(T, 2, 0.1) * 20})`}><VasoPLA x={0} y={150} s={0.9} T={T} /></g>
         </svg>
       </Escena>
       <Escena T={T} a={K.R} b={K.L}>
@@ -266,25 +272,33 @@ function BioplasticosMudo() {
           <rect x={540} y={760} width={540} height={1160} fill="#2b1d12" />
           <PilaIndustrial x={810} y={1060} s={0.85} T={T} />
           <line x1={540} y1={600} x2={540} y2={1920} stroke={KC.ink} strokeWidth={10} />
-          <VasoPLA x={270} y={klerp(1300, 700, vuelve)} s={0.75} T={T} />
-          <VasoPLA x={810} y={klerp(1300, 700, vuelve)} s={0.75} T={T} roto={1 - kprog(T, K.L + 0.5, K.L + 2)} />
+          <VasoPLA x={270} y={klerp(1300, 960, vuelve)} s={0.75} T={T} />
+          <VasoPLA x={810} y={klerp(1300, 960, vuelve)} s={0.75} T={T} roto={1 - kprog(T, K.L + 0.5, K.L + 2)} />
         </svg>
       </Escena>
 
       {/* la pregunta fija arriba */}
-      <Chip T={T} at={K.P + 0.1} until={FIN + 1} texto="¿Por qué no se deshace en tu jardín?" y={400} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.P - 1} until={FIN + 1} texto="¿Por qué no se deshace en tu jardín?" y={120} tam={40} borde={KC.leaf} />
       {T >= K.En && T < K.M - 0.2 && <>
-        <Medidor T={T} at={K.En + 0.4} until={K.M - 0.4} etiqueta="JARDÍN" valor={25 / 70} texto={() => '~25 °C'} x={40} y={500} ancho={460} color={KC.cyan} />
-        <Medidor T={T} at={K.En + 0.6} until={K.M - 0.4} etiqueta="INDUSTRIAL" valor={58 / 70} texto={() => '58 °C'} x={580} y={500} ancho={460} color={KC.red} />
+        <Medidor T={T} at={K.En + 0.4} until={K.M - 0.4} etiqueta="JARDÍN" valor={25 / 70} texto={() => '~25 °C'} x={40} y={1660} ancho={460} color={KC.cyan} />
+        <Medidor T={T} at={K.En + 0.6} until={K.M - 0.4} etiqueta="INDUSTRIAL" valor={58 / 70} texto={() => '58 °C'} x={580} y={1660} ancho={460} color={KC.red} />
       </>}
-      {T >= K.D && T < K.M - 0.2 && <div style={{ position:'absolute', left:0, right:0, top:640, textAlign:'center', zIndex:41, font:`700 72px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA }}>día {Math.round(45 * dias)}</div>}
+      {T >= K.D && T < K.M - 0.2 && <div style={{ position:'absolute', left:0, right:0, top:1520, textAlign:'center', zIndex:41, font:`700 72px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA }}>día {Math.round(45 * dias)}</div>}
       <Lupa T={T} at={K.X + 0.2} until={K.M - 0.4} x={540} y={1180} r={250} fx={810} fy={1150} interior={(t, r) => <CadenaPLA T={t} r={r} corte={kprog(t, K.X + 1, K.M - 1)} />} etiqueta="58 °C + agua: se corta" tinte={KC.red} />
-      {T >= K.M && T < K.R - 0.2 && <div style={{ position:'absolute', left:0, right:0, top:540, textAlign:'center', zIndex:41, font:`700 72px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA }}>día {Math.round(365 * kprog(T, K.M + 0.5, K.R - 1))}</div>}
-      <Medidor T={T} at={K.M + 1} until={K.R - 0.4} etiqueta="MAR · DEGRADADO" valor={0} texto={() => '0 %'} y={700} color={KC.mint} />
+      {T >= K.M && T < K.R - 0.2 && <div style={{ position:'absolute', left:0, right:0, top:1520, textAlign:'center', zIndex:41, font:`700 72px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA }}>día {Math.round(365 * kprog(T, K.M + 0.5, K.R - 1))}</div>}
+      <Medidor T={T} at={K.M + 1} until={K.R - 0.4} etiqueta="MAR · DEGRADADO" valor={0} texto={() => '0 %'} y={1660} color={KC.mint} />
       <Chip T={T} at={K.R + 0.4} until={K.L - 0.3} texto="58 °C" y={560} tam={70} borde={KC.red} />
       <Chip T={T} at={K.R + 1.6} until={K.L - 0.3} texto="+ humedad" y={700} tam={56} borde={KC.cyan} />
       <Chip T={T} at={K.R + 2.8} until={K.L - 0.3} texto="+ semanas" y={840} tam={56} borde={KC.yellow} />
 
+      <Robert T={T} apariciones={[
+        [CUES.Pregunta - 1, CUES.Pregunta + 3.5, 'avatar_06_pensativo_menton', 'gancho'],
+        [CUES.Dias + 1, CUES.Dias + 5, 'avatar_12_perfil_serio', 'izq-alto'],
+        [CUES.Dias + 9, CUES.Dias + 14, 'avatar_11_sorprendido', 'arriba-der'],
+        [CUES.RayosX + 2, CUES.RayosX + 6, 'avatar_13_senalando_arriba', 'izq-alto'],
+        [CUES.Mar + 2, CUES.Mar + 7, 'avatar_10_serio_molesto', 'grande'],
+        [CUES.Respuesta + 3.5, CUES.Loop - 0.3, 'avatar_02_apuntando_camara', 'arriba-der'],
+        [CUES.Loop + 2, CUES.Loop + 12, 'avatar_06_pensativo_menton', 'gancho']]} />
       <MarcaAgua T={T} tema="quimica" num="03" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>

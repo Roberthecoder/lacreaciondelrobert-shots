@@ -92,7 +92,7 @@ function Raton({ x, y, s = 1, T = 0 }) {
 /* ---------- versión narrada ---------- */
 const GR = { cols: 20, filas: 30 };   // 600 cuadritos = tu genoma (~5 millones de letras cada uno)
 const VIRALES = (() => { const g = krng(88), set = new Set(); while (set.size < 48) set.add(Math.floor(g() * 600)); return set; })();   // 48/600 = 8 %
-function GenomaCuadros({ T, llenado, resalta = 0, x = 140, y = 500, ancho = 800, alto = 690, pulso = 0 }) {
+function GenomaCuadros({ T, llenado, resalta = 0, x = 60, y = 500, ancho = 600, alto = 690, pulso = 0 }) {
   const N = GR.cols * GR.filas, k = Math.floor(llenado * N), cw = ancho / GR.cols, ch = alto / GR.filas;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     {Array.from({ length: N }, (_, i) => { const c = i % GR.cols, r = Math.floor(i / GR.cols), v = VIRALES.has(i), on = i < k;
@@ -175,22 +175,22 @@ function AdnViralNarrado() {
       </Escena>
 
       {/* datos y etiquetas */}
-      <NumeroGigante T={T} at={K.G + 2.6} until={K.R - 0.3} valor={8} prefijo="~" sufijo=" %" etiqueta="de tu ADN vino de virus" y={330} tam={150} color={VIR} />
-      <Chip T={T} at={K.G + 0.3} until={K.G + 2.4} texto="tu genoma · 600 cuadritos" y={360} tam={36} mono borde={HUM} />
+      <NumeroGigante T={T} at={K.G + 2.6} until={K.R - 0.3} valor={8} prefijo="~" sufijo=" %" etiqueta="de tu ADN vino de virus" x={330} y={330} tam={150} color={VIR} />
+      <Chip T={T} at={K.G + 0.3} until={K.G + 2.4} texto="tu genoma · 600 cuadritos" x={330} y={360} tam={36} mono borde={HUM} />
       <Etq T={T} at={K.R + 0.8} until={K.Ge - 0.3} x={640} y={560} texto="retrovirus" color={VIR} />
       <Etq T={T} at={K.R + 3.4} until={K.Ge - 0.3} x={620} y={1240} texto="se mete en tu ADN" color={VIR} />
       <Etq T={T} at={K.Ge + 0.6} until={K.H - 0.3} x={90} y={1050} texto="espermatozoide" color={KC.ink} />
       <Etq T={T} at={K.Ge + 0.3} until={K.H - 0.3} x={820} y={620} texto="óvulo" color={KC.ink} />
       <Chip T={T} at={K.H + 0.2} until={K.Ro - 0.3} texto="millones de años → hoy" y={420} tam={40} />
-      <Chip T={T} at={K.Ro + 0.3} until={K.P - 0.2} texto="retrovirus endógenos: rotos" y={420} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.P + 0.2} until={K.E - 0.3} texto="env: la envoltura" y={420} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.Ro + 0.3} until={K.P - 0.2} texto="retrovirus endógenos: rotos" y={1480} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.P + 0.2} until={K.E - 0.3} texto="env: la envoltura" y={1480} tam={44} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2000" quien="Mi et al. · Genetics Institute" revista="Nature 403: 785–789 · sincitina" y={520} />
-      <Lupa T={T} at={K.E + 3.6} until={K.Ra - 0.3} x={560} y={560} r={250} fx={700} fy={960} interior={(t, r) => <Sincitio T={t} r={r} funde={kprog(t, K.F + 0.6, K.F + 3.6)} />} etiqueta="RAYOS X · placenta" tinte={VIR2} />
-      <Etq T={T} at={K.F + 3.4} until={K.Ra - 0.3} x={170} y={1150} texto="una sola capa: sincitio" color={KC.ink} />
+      <Lupa T={T} at={K.E + 3.6} until={K.Ra - 0.3} x={760} y={560} r={230} fx={700} fy={960} interior={(t, r) => <Sincitio T={t} r={r} funde={kprog(t, K.F + 0.6, K.F + 3.6)} />} etiqueta="RAYOS X · placenta" tinte={VIR2} />
+      <Etq T={T} at={K.F + 3.4} until={K.Ra - 0.3} x={560} y={1150} texto="una sola capa: sincitio" color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Ra + 2.4} anio="2009" quien="Dupressoir et al. · Francia" revista="PNAS 106: 12127–12132 · ratones" y={540} />
       <Lupa T={T} at={K.Ra + 2.2} until={K.O - 0.3} x={540} y={560} r={200} fx={520} fy={1110} interior={(t, r) => <Sincitio T={t} r={r} sinSincitina />} etiqueta="sin sincitina" tinte={KC.red} />
       <Chip T={T} at={K.O + 0.2} until={K.C - 0.3} texto="cada grupo, su propio virus" y={1480} tam={40} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="parte de ti fue virus" y={330} tam={48} borde={VIR} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="parte de ti fue virus" x={360} y={330} tam={48} borde={VIR} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="1 de cada 12 *no es humano: es virus.*" />
@@ -205,11 +205,18 @@ function AdnViralNarrado() {
       <Subtitulo T={T} idx={9} at={K.O + 0.1} until={K.C - 0.1} texto="Otros mamíferos: *otros virus.*" />
       <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Una parte de ti *fue virus.*" />
 
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={K.P + 0.6} until={K.E - 0.2} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_04_bajando_lentes')} at={K.O + 2.6} until={K.C - 0.2} lado="arriba-der" />
-
+      <Robert T={T} apariciones={[
+        [CUES.Gancho - 0.45, CUES.Gancho + 4.6, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Retro + 1.8, CUES.Germen - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
+        [CUES.Germen + 2.6, CUES.Hereda - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
+        [CUES.Rotos + 1.0, CUES.Pregunta - 0.1, 'avatar_10_serio_molesto', 'arriba-der'],
+        [CUES.Pregunta + 0.1, CUES.Estudio + 0.6, 'avatar_07_pensativo_puno', 'arriba-der'],
+        [CUES.Estudio + 4.0, CUES.Funde + 3.5, 'avatar_13_senalando_arriba', 'grande-izq'],
+        [CUES.Ratones + 2.6, CUES.Otros + 0.3, 'avatar_12_perfil_serio', 'izq-alto'],
+        [CUES.Otros + 1.2, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
+        [CUES.Cierre + 0.4, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="biologia" num="03" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="biologia" />
+      <CierreMarca T={T} at={K.Ou} tema="biologia" robert={AVS('avatar_04_bajando_lentes')} />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -258,7 +265,7 @@ function AdnViralMudo() {
       <Escena T={T} a={K.Cu} b={K.L}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #1b2b3a 0%, #0E0F12 80%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          {Array.from({ length: 100 }, (_, i) => { const on = i < Math.floor(llena * 100), v = VIR100.has(i); const x = 150 + (i % 10) * 80, y = 560 + Math.floor(i / 10) * 80;
+          {Array.from({ length: 100 }, (_, i) => { const on = i < Math.floor(llena * 100), v = VIR100.has(i); const x = 150 + (i % 10) * 80, y = 650 + Math.floor(i / 10) * 80;
             return <rect key={i} x={x} y={y} width={66} height={66} rx={10} fill={!on ? 'rgba(255,255,255,.12)' : v ? VIR : HUM} stroke={v && on ? KC.ink : 'none'} strokeWidth={4} transform={v && on ? `translate(${(x + 33) * (1 - (1.1 + 0.1 * Math.sin(T * 5 + i)))} ${(y + 33) * (1 - (1.1 + 0.1 * Math.sin(T * 5 + i)))}) scale(${1.1 + 0.1 * Math.sin(T * 5 + i)})` : undefined} />; })}
         </svg>
       </Escena>
@@ -269,10 +276,19 @@ function AdnViralMudo() {
       </Escena>
 
       {T > K.Cu + 0.3 && T < K.L - 0.2 && <div style={{ position:'absolute', left:0, right:0, top:380, textAlign:'center', zIndex:41, font:`400 110px/1 ${KF.titulo}`, color:VIR, WebkitTextStroke:`4px ${KC.ink}`, textShadow:KSOMBRA }}>{[...VIR100].filter((i) => i < Math.floor(llena * 100)).length} %</div>}
-      <Chip T={T} at={K.Cu + 0.3} until={K.L - 0.3} texto="1 cuadrito = 1 % de tu ADN" y={1440} tam={36} mono borde={HUM} />
+      <Chip T={T} at={K.Cu + 0.3} until={K.L - 0.3} texto="1 cuadrito = 1 % de tu ADN" y={1520} tam={36} mono borde={HUM} />
       <Chip T={T} at={K.Pl + 0.4} until={K.Cu - 0.3} texto="sincitina: las células se funden" y={380} tam={36} borde={VIR2} />
       <Chip T={T} at={K.Gn + 0.3} until={K.Pl - 0.3} texto="generación tras generación" y={380} tam={38} />
 
+      <Robert T={T} apariciones={[
+        [CUES.Virus - 1, CUES.Virus + 3.5, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Entra + 2, CUES.Entra + 6, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [CUES.Germen + 1, CUES.Germen + 5, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
+        [CUES.Bebe + 1.5, CUES.Bebe + 6.5, 'avatar_06_pensativo_menton', 'presentador'],
+        [CUES.Generaciones + 3, CUES.Generaciones + 7, 'avatar_12_perfil_serio', 'abajo-izq'],
+        [CUES.Placenta + 3, CUES.Placenta + 7, 'avatar_04_bajando_lentes', 'abajo-der'],
+        [CUES.Cuadritos + 3, CUES.Loop - 0.5, 'avatar_02_apuntando_camara', 'arriba-der'],
+        [CUES.Loop + 2, CUES.Loop + 11.5, 'avatar_11_sorprendido', 'gancho']]} />
       <MarcaAgua T={T} tema="biologia" num="03" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>

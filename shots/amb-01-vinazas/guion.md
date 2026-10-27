@@ -37,6 +37,36 @@
 7. **Setas (45.5–55 s):** cada seta que sale suena en el cuadro en que aparece (72 notas que suben).
 8. **Loop (55–61.5 s):** el caballito se vacía y queda igual que el primer cuadro.
 
+## Robert en pantalla
+
+Tiempos de la base narrada (antes de la voz; con la voz real se recorren solos porque están atados a cada escena).
+
+**Narrada:** 8 apariciones + cierre · **23.3 s** en pantalla · 8 poses distintas · grande en: «¿y si la ponemos a trabajar?», «mi granja de hongos» · cierre: `CierreMarca` con apuntando a cámara.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 2.2 | sorprendido | `gancho` | «…deja doce litros» |
+| 2 | 8.1 | 10.2 | señalando | `arriba-der` | señala el chorro de vinaza |
+| 3 | 17.1 | 19.5 | serio / molesto | `izq-alto` | «un litro contamina veinte de agua» |
+| 4 | 25.1 | 27.8 | pensativo (mentón) | `grande` | «¿y si la ponemos a trabajar?» (grande) |
+| 5 | 28.4 | 30.9 | perfil serio | `izq-alto` | el reactor sin aire |
+| 6 | 38.7 | 41.7 | pensativo (puño) | `izq-alto` | el bagazo |
+| 7 | 47.8 | 51.5 | apuntando a cámara | `grande` | «mi granja de hongos» (grande) |
+| 8 | 52.0 | 56.9 | sonriendo | `arriba-der` | «materia prima» |
+| — | 57.0 | 60.5 | apuntando a cámara | cierre | tarjeta final junto al logo |
+
+**Mudo:** 7 apariciones · **30.5 s** en pantalla · 6 poses distintas (la primera y la última son la misma para que el loop no brinque).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.5 | sorprendido | `gancho` | se sirve el caballito |
+| 2 | 8.7 | 13.7 | serio / molesto | `arriba-der` | 12 garrafas |
+| 3 | 23.0 | 26.5 | perfil serio | `izq-alto` | baja el oxígeno |
+| 4 | 30.5 | 34.0 | señalando | `arriba-der` | la flama de biogás |
+| 5 | 41.0 | 44.5 | pensativo (puño) | `izq-alto` | el bagazo |
+| 6 | 48.0 | 54.5 | apuntando a cámara | `grande` | su granja de setas (grande) |
+| 7 | 56.5 | 61.5 | sorprendido | `gancho` | vuelve al primer cuadro |
+
 ## Descripción (borrador)
 "Este caballito de tequila no deja un vaso sucio: deja 12 litros de vinaza. 🥃 La vinaza es lo que queda en el alambique al destilar: un líquido café, ácido (pH de 3.4 a 4.5) y muy cargado de materia orgánica. Una revisión de investigadores del CIATEJ (2025) estima en promedio 12 litros de vinaza por cada litro de destilado y advierte que 1 litro puede llegar a contaminar 20 litros de agua. Si llega a un río, las bacterias se la comen y gastan el oxígeno disuelto. En un reactor anaerobio (sin aire), otros microbios la degradan y producen biogás; la misma revisión reúne otras salidas: hidrógeno, proteína unicelular y enzimas. El agave deja además bagazo, las fibras de la piña exprimida: en el Centro Universitario de los Lagos (UdeG) cultivaron hongo seta (*Pleurotus ostreatus*) sobre bagazo de agave. Yo estoy armando una granja de hongos sobre bagazo; pronto se las enseño. El dibujo es esquemático. ¿En tu región qué se hace con lo que sobra del tequila o del mezcal? 👇"
 

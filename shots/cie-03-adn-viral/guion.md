@@ -36,6 +36,38 @@
 7. **Cuadritos (46–55 s):** tu ADN en 100 cuadritos (1 % cada uno): 100 toques y **8 notas brillantes para los 8 virales** (contador hasta "8 %").
 8. **Loop (55–61.5 s):** vuelve a crecer el virus del primer cuadro.
 
+## Robert en pantalla
+
+Tiempos de la base narrada (antes de la voz; con la voz real se recorren solos porque están atados a cada escena).
+
+**Narrada:** 9 apariciones + cierre · **34.5 s** en pantalla · 9 poses distintas · grande en: señala la placenta en rayos X · cierre: `CierreMarca` con bajando lentes.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | sorprendido | `gancho` | «uno de cada doce no es humano» |
+| 2 | 6.7 | 9.9 | pensativo (mentón) | `izq-alto` | «meten su código en la célula» |
+| 3 | 12.7 | 15.4 | bajando lentes | `izq-alto` | «óvulos y espermatozoides» |
+| 4 | 21.5 | 25.6 | serio / molesto | `arriba-der` | «casi todos están rotos» |
+| 5 | 25.8 | 28.6 | pensativo (puño) | `arriba-der` | «¿y si alguno todavía sirve?» |
+| 6 | 32.0 | 39.5 | señalando | `grande-izq` | señala la placenta en rayos X (grande) |
+| 7 | 45.9 | 47.9 | perfil serio | `izq-alto` | «los embriones mueren» |
+| 8 | 48.8 | 52.8 | sonriendo | `arriba-der` | «otros mamíferos, otros virus» |
+| 9 | 53.4 | 57.1 | apuntando a cámara | `arriba-der` | «una parte de ti fue virus» |
+| — | 57.2 | 60.7 | bajando lentes | cierre | tarjeta final junto al logo |
+
+**Mudo:** 8 apariciones · **34.5 s** en pantalla · 7 poses distintas (la primera y la última son la misma para que el loop no brinque).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.5 | sorprendido | `gancho` | el virus |
+| 2 | 7.0 | 11.0 | señalando | `arriba-der` | se mete en el ADN |
+| 3 | 13.0 | 17.0 | sonriendo | `izq-alto` | óvulo y espermatozoide |
+| 4 | 20.5 | 25.5 | pensativo (mentón) | `presentador` | el bebé con rayos X (grande) |
+| 5 | 30.0 | 34.0 | perfil serio | `abajo-izq` | generación tras generación |
+| 6 | 39.0 | 43.0 | bajando lentes | `abajo-der` | las células se funden |
+| 7 | 49.0 | 54.5 | apuntando a cámara | `arriba-der` | los 8 cuadritos de virus |
+| 8 | 57.0 | 61.5 | sorprendido | `gancho` | vuelve al primer cuadro |
+
 ## Descripción (borrador)
 "Esto es tu ADN en cuadritos, y casi uno de cada doce no es humano: vino de virus. 🧬 Alrededor del 8 % de tu genoma son retrovirus endógenos: restos de virus que, hace millones de años, infectaron óvulos o espermatozoides de nuestros antepasados. Lo que se integra en esas células se hereda, así que esos pedazos llegaron hasta ti. Casi todos están rotos y ya no pueden fabricar virus. Pero algunos se volvieron útiles: en el año 2000, un equipo en Estados Unidos (Mi et al., *Nature*) descubrió que la sincitina-1, una proteína de la placenta humana, es la proteína de envoltura del retrovirus endógeno HERV-W. Los virus usan esa proteína para fusionarse con las células; la placenta la usa para fundir sus células en el sincitiotrofoblasto, la capa que separa la sangre de la mamá de la del bebé y por donde pasan nutrientes y oxígeno. En 2009, en Francia (Dupressoir et al., *PNAS*), ratones sin su sincitina-A murieron a mitad de la gestación porque esa capa no se formaba. Y distintos grupos de mamíferos (primates, roedores, conejos, carnívoros, rumiantes…) atraparon virus distintos para la misma función. Una hipótesis es que capturar estos genes ayudó a que la placenta evolucionara; por eso decimos "quizá". El dibujo es esquemático. ¿Sabías que llevabas virus en tu ADN? 👇"
 
