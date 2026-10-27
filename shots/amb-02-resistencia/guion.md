@@ -1,7 +1,7 @@
 # Ambiental #02 · El antibiótico que entrena a las más duras (resistencia)
 
 - **Serie:** Shot Ambiental · **Logo:** biología (ADN) · **Badge:** #02 · remasteriza el viejo #12.
-- **Estado (27 oct 2026):** Robert en pantalla y `publicacion.md` listos · borrador del mudo en el Release "Borradores · claude/lucid-bardeen-igyhx5" · voz narrada pendiente de aprobación de Robert.
+- **Estado (27 oct 2026):** Robert en pantalla y `publicacion.md` listos · voz aprobada por Robert y generada · mudo y narrado (61–62 s) en el Release "Borradores · claude/lucid-bardeen-igyhx5" · falta su visto bueno para publicar.
 - **Formato:** N2 "El número" (39 M, 1.14 → 1.91 M) con un viaje N1 "Por dentro" (la colonia). Gemelo mudo: M5 "La carrera", con la música hecha de los datos.
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y" ("no mató a todas: escogió a las más duras"), hablándole a "tú".
 - **Duración:** voz ≈ 951 caracteres (≈ 58 s con `velocidad` 1.065) + cierre 3.5 s → 61–62 s. **La voz no se ha generado** (~950 créditos).

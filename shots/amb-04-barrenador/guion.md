@@ -1,7 +1,7 @@
 # Ambiental #04 · La mosca que se combate con más moscas (gusano barrenador)
 
 - **Serie:** Shot Ambiental · **Logo:** biología (ADN) · **Badge:** #04 · remasteriza el viejo #21 (tema local y actual).
-- **Estado (27 oct 2026):** Robert en pantalla y `publicacion.md` listos · borrador del mudo en el Release "Borradores · claude/lucid-bardeen-igyhx5" · voz narrada pendiente de aprobación de Robert.
+- **Estado (27 oct 2026):** Robert en pantalla y `publicacion.md` listos · voz aprobada por Robert y generada · mudo y narrado (61–62 s) en el Release "Borradores · claude/lucid-bardeen-igyhx5" · falta su visto bueno para publicar.
 - **Formato:** N5 "El experimento" (Curazao 1954) con **mapa de México** como medida y un momento N1 (Lupa de rayos X a las larvas). Gemelo mudo: M1 "La música son los datos" (modelo de Knipling).
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y" sobre la mosca que llega volando ("no es una mosca cualquiera").
 - **Duración:** voz ≈ 942 caracteres (≈ 58 s con `velocidad` 1.065) + cierre 3.5 s → 61–62 s. **La voz no se ha generado** (~940 créditos).

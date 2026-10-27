@@ -5,7 +5,7 @@
       "titulo": "Las vinazas del tequila: 12 L por litro y qué hace la biotecnología con ellas (y el bagazo para hongos)",
       "serie": "Shot Ambiental",
       "numero": 1,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/amb-01-vinazas",
       "rama": "claude/lucid-bardeen-igyhx5",
       "fuentes": [
@@ -29,7 +29,7 @@
       "titulo": "Resistencia a antibióticos: el antibiótico escoge a las más duras (39 M de muertes 2025–2050)",
       "serie": "Shot Ambiental",
       "numero": 2,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/amb-02-resistencia",
       "rama": "claude/lucid-bardeen-igyhx5",
       "fuentes": [
@@ -53,7 +53,7 @@
       "titulo": "La verdad incómoda de los bioplásticos (PLA: compostaje industrial a 58 °C, reciclaje y costo)",
       "serie": "Shot Ambiental",
       "numero": 3,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/amb-03-bioplasticos",
       "rama": "claude/lucid-bardeen-igyhx5",
       "fuentes": [
@@ -78,7 +78,7 @@
       "titulo": "El gusano barrenador y las moscas estériles (Curazao 1954 → Chiapas 2024 → Metapa 2026)",
       "serie": "Shot Ambiental",
       "numero": 4,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/amb-04-barrenador",
       "rama": "claude/lucid-bardeen-igyhx5",
       "fuentes": [
@@ -103,7 +103,7 @@
       "titulo": "Tu ADN no es completamente humano: retrovirus endógenos (~8 %) y la sincitina de la placenta",
       "serie": "Shot Científico",
       "numero": 3,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/cie-03-adn-viral",
       "rama": "claude/lucid-bardeen-igyhx5",
       "fuentes": [
