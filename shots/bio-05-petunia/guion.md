@@ -88,3 +88,8 @@ La petunia "luciérnaga" (Firefly Petunia, de la empresa Light Bio) brilla sola 
 - La tarjeta del estudio pone 5 autores; la lista completa del artículo tiene 6 (incluye a de Wet). Revisar si se prefiere "Ow, Wood y equipo".
 - La "nota de la luz" es un juego (bajar la frecuencia 40 octavas), no un sonido real de la flor; se explica así en la descripción del mudo.
 - "Light Bio fue fundada en 2019" viene de notas de prensa; el número de años en pantalla (1986 → 2019) usa ese dato.
+
+## Estado (27 oct 2026)
+- Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
+- Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
+- Falta: que Robert escriba "apruebo la voz de <shot>" para que el render automático saque también el narrado al Release.

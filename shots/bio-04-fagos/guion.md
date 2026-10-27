@@ -87,3 +87,8 @@ Los bacteriófagos (fagos) son virus que solo infectan bacterias. Un fago como T
 - El número exacto de fagos por bacteria y los minutos del ciclo dependen de la cepa; en el mudo se usan ~200 fagos y ~25 min como valores redondos dentro de lo publicado.
 - 10³¹ es una estimación que algunos autores discuten; la voz dice "se estima".
 - No se leyó el artículo de Schooley completo; los detalles del caso vienen de comunicados de UC San Diego y notas de prensa.
+
+## Estado (27 oct 2026)
+- Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
+- Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
+- Falta: que Robert escriba "apruebo la voz de <shot>" para que el render automático saque también el narrado al Release.

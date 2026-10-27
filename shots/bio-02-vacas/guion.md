@@ -85,3 +85,8 @@ Las vacas comen pasto, pero no pueden digerir su celulosa: no tienen las enzimas
 - No se pudo leer el texto completo de Bach et al. (2005) para el rango 50–80 %; por eso la voz dice "su principal proteína" y no un porcentaje.
 - La cifra de 95 % del metano por la boca viene de fuentes secundarias que citan a Murray et al. (1976); la voz dice "casi todo".
 - No se encontró el lugar de trabajo de Bergman en la revisión; la escena del estudio usa la revista en lugar del lugar.
+
+## Estado (27 oct 2026)
+- Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
+- Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
+- Falta: que Robert escriba "apruebo la voz de <shot>" para que el render automático saque también el narrado al Release.

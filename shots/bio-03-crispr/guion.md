@@ -88,3 +88,8 @@ Las bacterias del yogur (*Streptococcus thermophilus*) viven bajo ataque de fago
 - "2,600 millones de años" del video viejo: quitado (sin fuente).
 - La tarjeta pone "Danisco (Francia)": el grupo de Horvath trabajaba en Dangé-Saint-Romain, Francia, y Barrangou en Madison, EE. UU.; confirmar si se prefiere "Danisco" sin país.
 - El porcentaje de bacterias y arqueas con CRISPR depende de la base de datos (CRISPRdb 2007 daba ~50 % y ~90 %); la voz dice "más o menos".
+
+## Estado (27 oct 2026)
+- Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
+- Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
+- Falta: que Robert escriba "apruebo la voz de <shot>" para que el render automático saque también el narrado al Release.

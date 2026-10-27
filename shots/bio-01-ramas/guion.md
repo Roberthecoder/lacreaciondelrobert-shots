@@ -100,3 +100,8 @@ Edgar J. DaSilva (UNESCO) reunió este código de colores en 2004; la lista camb
 ## Datos no verificados del todo
 - No se pudo abrir el texto completo de DaSilva (2004) ni de Kafarski (2012); los colores se verificaron con resúmenes y con Wikipedia, que los cita. Por eso la voz dice "juntó estos colores" y no "inventó".
 - "Naranja = divulgación" no apareció en ninguna fuente: se presenta como agregado del canal.
+
+## Estado (27 oct 2026)
+- Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
+- Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
+- Falta: que Robert escriba "apruebo la voz de <shot>" para que el render automático saque también el narrado al Release.
