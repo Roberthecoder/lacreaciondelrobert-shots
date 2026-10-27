@@ -1,0 +1,22 @@
+{
+  "dcHtml": "Shot Polio base narrada.dc.html",
+  "salida": "Shot Polio narrado.dc.html",
+  "velocidad": 1.065,
+  "mudo": { "dcHtml": "Shot Polio Datos.dc.html", "audio": "assets/mezcla_mudo.wav" },
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 905 caracteres, todo en UNA sola petición a ElevenLabs. PENDIENTE DE APROBACIÓN de Robert: no generar sin avisar el costo (~905 créditos).",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esto es un virus entero, escrito en una pantalla: siete mil quinientas letras." },
+    { "escena": "Equipo", "texto": "En 2002, un equipo de Nueva York hizo algo que nadie había hecho antes." },
+    { "escena": "Secuencia", "texto": "No usaron una muestra del virus: usaron su secuencia, que estaba publicada." },
+    { "escena": "Pedazos", "texto": "Pidieron por correo más de cien pedacitos de ADN, por unos cien mil dólares." },
+    { "escena": "Arman", "texto": "Los acomodaron en orden y armaron un poliovirus que sí funcionaba." },
+    { "escena": "Raton", "texto": "Lo probaron en ratones, y los ratones se paralizaron." },
+    { "escena": "Pregunta", "texto": "¿Para qué hacer algo así?" },
+    { "escena": "Porque", "texto": "Para demostrar que el código de la vida ya no solo se lee: también se escribe." },
+    { "escena": "Science", "texto": "Salió en Science en agosto de 2002 y el mundo se asustó." },
+    { "escena": "Critica", "texto": "Muchos colegas lo llamaron irresponsable; el equipo dijo que ese era el punto." },
+    { "escena": "Reglas", "texto": "De ahí salieron reglas: el informe Fink y un consejo de bioseguridad en Estados Unidos." },
+    { "escena": "Hoy", "texto": "Y hoy las empresas que venden ADN revisan qué les pides y quién lo pide." },
+    { "escena": "Cierre", "texto": "La misma herramienta que fabrica tu insulina pudo escribir un virus. Por eso hay reglas." }
+  ]
+}

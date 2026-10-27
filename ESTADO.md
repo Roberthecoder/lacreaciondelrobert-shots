@@ -43,3 +43,13 @@ DECISIÓN de Robert (25 oct): mantener sus colores brillantes; fondo oscuro solo
 - 12 canales analizados → `referencias-externas/RECETARIO.md`: 6 formatos narrados, 5 mudos, parejas narrado/mudo y reparto por serie (Micológico, Biotecnológico, Lab).
 - Kit de piezas → `motor/kit/kit-robert.jsx` (22 piezas + mundo "piel en corte"), manual en `motor/kit/LEEME.md`, demo probado en `shots/_demo-kit/` (no se publica).
 - `preview.mjs` en Windows: ffmpeg necesita la ruta de la fuente para numerar cuadros; ya se le pasa Arial automáticamente.
+
+## Lote B de la remasterización (27 oct 2026, rama `remaster/lote-b`)
+Cinco shots nuevos, con guion verificado, base narrada y gemelo mudo de 61.5 s, y su `gen-audio.mjs`:
+`shots/bio-06-lactosa` (Biotec #06), `shots/bio-07-polio` (#07), `shots/bio-08-insulina` (#08),
+`shots/bio-09-cepario` (#09) y `shots/cie-02-proteina-iman` (Científico #02, logo de física).
+- **Las voces NO están generadas**: los guiones esperan la aprobación de Robert por lote (~4,440 créditos en total).
+- Piezas nuevas en el kit: `EscenaFundido`, `Etiqueta`, `AudioPista`, `Molecula`, `MundoIntestino`,
+  `MundoBiorreactor`, `Vial` y `Gradilla` (ver `motor/kit/LEEME.md`).
+- Dato que NO se pudo verificar: cuánto duró el efecto del autoexperimento de lactosa de Justin Atkin.
+  El guion de `bio-06` no da ninguna duración para él (sí para el estudio en ratas de 1998: "meses").

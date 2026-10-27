@@ -1,0 +1,22 @@
+{
+  "dcHtml": "Shot Lactosa base narrada.dc.html",
+  "salida": "Shot Lactosa narrado.dc.html",
+  "velocidad": 1.065,
+  "mudo": { "dcHtml": "Shot Lactosa Ciclo.dc.html", "audio": "assets/mezcla_mudo.wav" },
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 945 caracteres, todo en UNA sola petición a ElevenLabs. PENDIENTE DE APROBACIÓN de Robert: no generar sin avisar el costo (~945 créditos).",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese virus no viene a enfermarte: trae el gen que te falta para digerir la leche." },
+    { "escena": "Bebe", "texto": "De bebé tu intestino hacía lactasa, la enzima que parte el azúcar de la leche." },
+    { "escena": "Adulto", "texto": "Al crecer, la mayoría de los adultos del mundo baja esa producción." },
+    { "escena": "Gas", "texto": "Sin lactasa, la lactosa sigue de largo y tus bacterias la fermentan: gas." },
+    { "escena": "Pregunta", "texto": "¿Y si le devolvieras la receta a tus células?" },
+    { "escena": "Estudio", "texto": "Eso probaron en 1998 en Filadelfia: un virus adeno-asociado, por la boca, cargando el gen." },
+    { "escena": "Ratas", "texto": "Las ratas volvieron a digerir lactosa, y el efecto duró meses." },
+    { "escena": "Auto", "texto": "En 2018 un divulgador, Justin Atkin, se lo hizo a sí mismo y lo grabó." },
+    { "escena": "Ojo", "texto": "Ojo: fue un autoexperimento. No es un tratamiento aprobado ni hay un artículo revisado." },
+    { "escena": "Renueva", "texto": "Y además tu intestino cambia su recubrimiento cada cuatro o cinco días." },
+    { "escena": "Cripta", "texto": "Si no tocas las células madre de la cripta, la receta se va con las células viejas." },
+    { "escena": "Pastilla", "texto": "Por eso lo que sí existe es la enzima en pastilla: la misma receta, pero por fuera." },
+    { "escena": "Cierre", "texto": "El virus no te enferma: te presta un gen. Un rato." }
+  ]
+}

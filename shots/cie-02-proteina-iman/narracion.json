@@ -1,0 +1,22 @@
+{
+  "dcHtml": "Shot Proteina Iman base narrada.dc.html",
+  "salida": "Shot Proteina Iman narrado.dc.html",
+  "velocidad": 1.065,
+  "mudo": { "dcHtml": "Shot Proteina Iman Ciclo.dc.html", "audio": "assets/mezcla_mudo.wav" },
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 878 caracteres, todo en UNA sola petición a ElevenLabs. PENDIENTE DE APROBACIÓN de Robert: no generar sin avisar el costo (~878 créditos).",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese imán no mueve la proteína: le cambia el giro a sus electrones." },
+    { "escena": "Brillan", "texto": "Mira: con luz azul, estas bacterias brillan." },
+    { "escena": "Iman", "texto": "Acercas un imán y el brillo baja a la mitad. Nada se movió." },
+    { "escena": "Nombre", "texto": "La proteína se llama MagLOV y la hicieron en Oxford." },
+    { "escena": "Avena", "texto": "Salió de un pedazo de avena: el dominio que la planta usa para sentir la luz." },
+    { "escena": "Pregunta", "texto": "¿Cómo puede un imán apagar una luz sin tocar nada?" },
+    { "escena": "Par", "texto": "La luz azul mueve un electrón y quedan dos desapareados: un par radical." },
+    { "escena": "Giro", "texto": "Esos dos giran, y de su giro depende si la proteína vuelve a emitir luz." },
+    { "escena": "Campo", "texto": "El campo magnético no los empuja: cambia la probabilidad de cada giro." },
+    { "escena": "Mitad", "texto": "Con diez milésimas de tesla, la fluorescencia cae cerca de la mitad." },
+    { "escena": "Radio", "texto": "Y con radio a seiscientos cuatro megahercios, la señal cambia otra vez: eso se ve célula por célula." },
+    { "escena": "Aves", "texto": "Es el mismo mecanismo que se propone, como hipótesis, para la brújula de las aves." },
+    { "escena": "Cierre", "texto": "Física cuántica, en bacterias vivas, a temperatura ambiente." }
+  ]
+}
