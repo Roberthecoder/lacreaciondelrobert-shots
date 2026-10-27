@@ -10,3 +10,7 @@ shots/*/assets/musica_narrada.wav
 shots/*/assets/mezcla_narrada.wav
 shots/*/assets/musica_demo.wav
 largos/*/fuentes/
+
+# Lote C: las mezclas se regeneran con gen-audio.mjs (el workflow las crea al renderizar)
+shots/amb-0*/assets/*.wav
+shots/cie-03-*/assets/*.wav

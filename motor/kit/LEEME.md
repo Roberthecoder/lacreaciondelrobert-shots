@@ -40,9 +40,16 @@ igual que el resto del motor, así que funcionan en la versión narrada (tiempos
 | `CierreMarca` | Oscurece la última imagen y muestra la marca (3–4 s) | todos |
 | `MundoPiel` + `MUNDO_PIEL` | Primer mundo reutilizable: piel en corte con vellos, células, capilar y glóbulos rojos | N1, M4 |
 | `CamaraAnidada` | Zoom de ×1 a ×1000 sin perder nitidez: funde un mundo macro (cm) con uno micro (µm) y oscurece al "entrar al microscopio". Keys en coordenadas macro | N1, M4 |
+| `Escena` | Escena con fundido cruzado (nunca corte seco) y un empujoncito de cámara: `<Escena T a b zoom>` | todos |
+| `Etq` | Etiqueta con línea que crece (nombre común o *científico* con `it`) | todos |
+| `AudioPista` | Audio sincronizado al tiempo (vista previa); ya no hay que copiarlo en cada shot | todos |
+| `FondoLunares` | Fondo de color de la marca con lunares blancos | todos |
+| `Bacteria` | Bacilo esquemático; `gen` = anillo rojo (plásmido de resistencia), `vida` 0..1 | N1, M5 |
+| `MapaMexico` + `mxProy(lon, lat)` | Mapa esquemático de México y Centroamérica; `mxProy` ubica puntos por coordenadas (Chiapas, Panamá…). Mapa de México como medida (N5) | N5, N2, M1 |
+| `Goteo` | Gotas que caen (alambique, chorros) | N1, N3 |
 | `MundoPanMacro` + `MundoPanMicro` + `MUNDO_PAN` | Rebanada de frente (mancha de moho, rayos X, "puf" de esporas, segunda rebanada) y corte microscópico de la miga (alveolos, almidón, hifas que crecen, estolones, rizoides, tallos, cápsulas que revientan, espora, pelo de comparación). Usado en el shot 002 | N1, M4 |
 
-Utilidades: `KC` (colores de la marca), `KF` (letras), `kprog`, `klerp`, `kEase`, `krng`, `mece(T, semilla)`
+Utilidades: `KC` (colores de la marca), `KF` (letras), `KSOMBRA` (sombra de texto), `kprog`, `klerp`, `kEase`, `krng`, `mece(T, semilla)`
 (movimiento orgánico para vellos, hojas, hifas…), `kformato` (números en español de México).
 
 ## Reglas aprendidas al probarlo
@@ -59,3 +66,11 @@ Utilidades: `KC` (colores de la marca), `KF` (letras), `kprog`, `klerp`, `kEase`
 ## Siguientes mundos a construir (según los temas)
 Hoja en corte (estomas), suelo con micelio e hifas, intestino con bacterias, ojo (retina y conos),
 placa de Petri con colonias. (Pan ✔ en el shot 002: sirve también para levadura y almidón.)
+
+## Sonido: `audio-kit.mjs` (27 oct 2026)
+Sintetizador compartido para los `gen-audio.mjs` (nada grabado). Desde un shot:
+`import { mezcla } from '../../motor/kit/audio-kit.mjs'; const m = mezcla(HERE, html);` y luego
+`m.pad`, `m.nota(t, midi, ganancia, duración, tapa)`, `m.bajo`, `m.tic`, `m.golpe`, `m.gota`, `m.burbuja`, `m.zumbido`,
+`m.motor`, `m.cruje`, `m.whoosh`, `m.latido`, `m.sube` y `m.guardar(salida, ganancia)`. Los tiempos van en tiempo de autor
+(`m.K.Escena + s`); en la narrada se convierten solos a los tiempos de la voz. `tapa` (0..1) ahoga el sonido: sirve para
+"la música cuenta el estado" (tapada mientras dura el problema, libre cuando se resuelve). Ejemplos: `shots/amb-0*/gen-audio.mjs`.

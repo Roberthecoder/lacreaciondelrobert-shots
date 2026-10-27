@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Resistencia base narrada.dc.html",
+  "salida": "Shot Resistencia narrado.dc.html",
+  "velocidad": 1.065,
+  "nota": "Ambiental #02. Una línea por subtítulo (idx 0..11 del jsx). Pendiente de aprobación de Robert: NO generar la voz sin su visto bueno (~951 créditos de ElevenLabs en una sola petición).",
+  "mudo": {
+    "dcHtml": "Shot Resistencia mudo.dc.html",
+    "audio": "assets/mezcla_mudo.wav"
+  },
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese antibiótico que tomaste no mató a todas tus bacterias: escogió a las más duras."
+    },
+    {
+      "escena": "Azar",
+      "texto": "Entre millones, unas pocas traen por azar un gen que las protege."
+    },
+    {
+      "escena": "Barre",
+      "texto": "El antibiótico barre a las demás y les deja todo el espacio."
+    },
+    {
+      "escena": "Crecen",
+      "texto": "Se multiplican, y la próxima vez la misma pastilla ya no les hace nada."
+    },
+    {
+      "escena": "Comparten",
+      "texto": "Y se pasan ese gen entre ellas, como una receta, incluso entre especies distintas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Qué tan grave es?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2024, un estudio en The Lancet calculó que entre 2025 y 2050 podrían morir treinta y nueve millones de personas por bacterias resistentes."
+    },
+    {
+      "escena": "Anual",
+      "texto": "Las muertes por año pasarían de un millón cien mil a casi dos millones."
+    },
+    {
+      "escena": "Riesgo",
+      "texto": "Sin antibióticos que sirvan, una cesárea, una quimio o un trasplante se vuelven peligrosos."
+    },
+    {
+      "escena": "Fleming",
+      "texto": "Lo curioso: Alexander Fleming, el de la penicilina, ya lo había advertido en 1945."
+    },
+    {
+      "escena": "Sirve",
+      "texto": "Lo que sí ayuda: tomarlos solo con receta, como te los indicaron, y nunca regalar los que sobran."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Porque cada pastilla mal tomada no mata a las débiles: entrena a las más duras."
+    }
+  ]
+}
