@@ -1,22 +1,64 @@
 {
   "dcHtml": "Shot Insulina base narrada.dc.html",
   "salida": "Shot Insulina narrado.dc.html",
-  "velocidad": 1.065,
-  "mudo": { "dcHtml": "Shot Insulina Ciclo.dc.html", "audio": "assets/mezcla_mudo.wav" },
-  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 896 caracteres, todo en UNA sola petición a ElevenLabs. PENDIENTE DE APROBACIÓN de Robert: no generar sin avisar el costo (~896 créditos).",
+  "velocidad": 1.0321,
+  "mudo": {
+    "dcHtml": "Shot Insulina Ciclo.dc.html",
+    "audio": "assets/mezcla_mudo.wav"
+  },
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 896 caracteres en UNA sola petición a ElevenLabs. Guion aprobado por Robert el 27 oct 2026; la voz YA está generada y en caché en voz/ (no regenerar: gasta créditos). La velocidad se ajustó con la duración real de la voz para que el total quede en 61.5 s.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esa insulina no salió de ningún animal: salió de un tanque lleno de microbios." },
-    { "escena": "Antes", "texto": "Antes de los ochenta venía del páncreas de cerdos y de reses." },
-    { "escena": "Reaccion", "texto": "Funcionaba, pero no era humana, y a algunos pacientes les daba reacciones." },
-    { "escena": "Gen", "texto": "En 1978 tomaron el gen humano de la insulina y lo metieron en una bacteria." },
-    { "escena": "Lee", "texto": "La bacteria no sabe de quién es ese gen: lo lee y fabrica la proteína." },
-    { "escena": "Pregunta", "texto": "¿Y cómo cabe una fábrica en algo que no ves?" },
-    { "escena": "Plasmido", "texto": "Por dentro, la bacteria tiene un anillito de ADN extra, el plásmido, con el gen." },
-    { "escena": "Ribosoma", "texto": "Sus ribosomas lo leen y arman la cadena, miles de veces por minuto." },
-    { "escena": "Humulin", "texto": "Así nació Humulin, aprobada en octubre de 1982: el primer medicamento de ADN recombinante." },
-    { "escena": "Hoy", "texto": "Pero hoy no todo se hace en bacterias." },
-    { "escena": "Levadura", "texto": "Mucha insulina se fabrica en levadura, la misma del pan, que la suelta al caldo." },
-    { "escena": "Diferencia", "texto": "En la bacteria se queda adentro y hay que sacarla y volverla a doblar." },
-    { "escena": "Cierre", "texto": "Por eso tu insulina no viene de un animal: viene de un tanque." }
+    {
+      "escena": "Gancho",
+      "texto": "Esa insulina no salió de ningún animal: salió de un tanque lleno de microbios."
+    },
+    {
+      "escena": "Antes",
+      "texto": "Antes de los ochenta venía del páncreas de cerdos y de reses."
+    },
+    {
+      "escena": "Reaccion",
+      "texto": "Funcionaba, pero no era humana, y a algunos pacientes les daba reacciones."
+    },
+    {
+      "escena": "Gen",
+      "texto": "En 1978 tomaron el gen humano de la insulina y lo metieron en una bacteria."
+    },
+    {
+      "escena": "Lee",
+      "texto": "La bacteria no sabe de quién es ese gen: lo lee y fabrica la proteína."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo cabe una fábrica en algo que no ves?"
+    },
+    {
+      "escena": "Plasmido",
+      "texto": "Por dentro, la bacteria tiene un anillito de ADN extra, el plásmido, con el gen."
+    },
+    {
+      "escena": "Ribosoma",
+      "texto": "Sus ribosomas lo leen y arman la cadena, miles de veces por minuto."
+    },
+    {
+      "escena": "Humulin",
+      "texto": "Así nació Humulin, aprobada en octubre de 1982: el primer medicamento de ADN recombinante."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "Pero hoy no todo se hace en bacterias."
+    },
+    {
+      "escena": "Levadura",
+      "texto": "Mucha insulina se fabrica en levadura, la misma del pan, que la suelta al caldo."
+    },
+    {
+      "escena": "Diferencia",
+      "texto": "En la bacteria se queda adentro y hay que sacarla y volverla a doblar."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso tu insulina no viene de un animal: viene de un tanque."
+    }
   ]
 }

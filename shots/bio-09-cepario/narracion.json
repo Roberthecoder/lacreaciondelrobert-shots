@@ -1,22 +1,64 @@
 {
   "dcHtml": "Shot Cepario base narrada.dc.html",
   "salida": "Shot Cepario narrado.dc.html",
-  "velocidad": 1.065,
-  "mudo": { "dcHtml": "Shot Cepario Datos.dc.html", "audio": "assets/mezcla_mudo.wav" },
-  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 885 caracteres, todo en UNA sola petición a ElevenLabs. PENDIENTE DE APROBACIÓN de Robert: no generar sin avisar el costo (~885 créditos).",
+  "velocidad": 1.0489,
+  "mudo": {
+    "dcHtml": "Shot Cepario Datos.dc.html",
+    "audio": "assets/mezcla_mudo.wav"
+  },
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 885 caracteres en UNA sola petición a ElevenLabs. Guion aprobado por Robert el 27 oct 2026; la voz YA está generada y en caché en voz/ (no regenerar: gasta créditos). La velocidad se ajustó con la duración real de la voz para que el total quede en 61.5 s.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Este frasco no está vacío: tiene vida en pausa." },
-    { "escena": "Cepa", "texto": "Adentro hay una cepa: un organismo aislado, con nombre y ficha." },
-    { "escena": "Tipos", "texto": "Una bacteria, una levadura, un moho, un alga." },
-    { "escena": "Cepario", "texto": "Un cepario es la colección de esas cepas: una biblioteca viva." },
-    { "escena": "Cuido", "texto": "Yo cuido uno, y la regla es que nada cambie mientras espera." },
-    { "escena": "Pregunta", "texto": "¿Cómo detienes la vida sin matarla?" },
-    { "escena": "Cap1", "texto": "Capítulo uno: el congelador de menos ochenta, con glicerol para que el hielo no rompa la célula." },
-    { "escena": "Cap1b", "texto": "Es la copia de trabajo: el metabolismo no se detiene del todo hasta los menos ciento treinta." },
-    { "escena": "Cap2", "texto": "Capítulo dos: nitrógeno líquido, menos ciento noventa y seis. Ahí sí, décadas." },
-    { "escena": "Cap3", "texto": "Capítulo tres: liofilizar. Se les quita el agua y se guardan secas, en frío y oscuridad." },
-    { "escena": "Dos", "texto": "Siempre dos copias, en lugares distintos." },
-    { "escena": "Mundo", "texto": "En el registro mundial hay unas ochocientas colecciones con más de tres millones de cepas." },
-    { "escena": "Cierre", "texto": "De un frasco así salió la bacteria a la que en 1978 le pusieron el gen de la insulina." }
+    {
+      "escena": "Gancho",
+      "texto": "Este frasco no está vacío: tiene vida en pausa."
+    },
+    {
+      "escena": "Cepa",
+      "texto": "Adentro hay una cepa: un organismo aislado, con nombre y ficha."
+    },
+    {
+      "escena": "Tipos",
+      "texto": "Una bacteria, una levadura, un moho, un alga."
+    },
+    {
+      "escena": "Cepario",
+      "texto": "Un cepario es la colección de esas cepas: una biblioteca viva."
+    },
+    {
+      "escena": "Cuido",
+      "texto": "Yo cuido uno, y la regla es que nada cambie mientras espera."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo detienes la vida sin matarla?"
+    },
+    {
+      "escena": "Cap1",
+      "texto": "Capítulo uno: el congelador de menos ochenta, con glicerol para que el hielo no rompa la célula."
+    },
+    {
+      "escena": "Cap1b",
+      "texto": "Es la copia de trabajo: el metabolismo no se detiene del todo hasta los menos ciento treinta."
+    },
+    {
+      "escena": "Cap2",
+      "texto": "Capítulo dos: nitrógeno líquido, menos ciento noventa y seis. Ahí sí, décadas."
+    },
+    {
+      "escena": "Cap3",
+      "texto": "Capítulo tres: liofilizar. Se les quita el agua y se guardan secas, en frío y oscuridad."
+    },
+    {
+      "escena": "Dos",
+      "texto": "Siempre dos copias, en lugares distintos."
+    },
+    {
+      "escena": "Mundo",
+      "texto": "En el registro mundial hay unas ochocientas colecciones con más de tres millones de cepas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "De un frasco así salió la bacteria a la que en 1978 le pusieron el gen de la insulina."
+    }
   ]
 }
