@@ -7,6 +7,7 @@
 - **Primer shot**: `shots/001-hormiga-zombi` (Ophiocordyceps), en dos versiones:
   - Sin voz: música + efectos generados por `gen-audio.mjs`. 49 s.
   - Narrada: `motor/narrar.mjs` pide TODO el guion (`narracion.json`) en una sola petición a ElevenLabs con **Eleven v4** (`eleven_v4`), voz "Robert Narrador" (`uiCk6APPfsjnw3oUQzVo`), usando los ajustes guardados en la voz. El video se adapta a la voz (campo `nat` del motor) y los subtítulos siguen los tiempos por carácter. 56 s. **El usuario la aprobó ("te quedó excelente").** La voz está en caché en `shots/001-hormiga-zombi/voz/` (no regenerar: gasta créditos).
+- **Render automático en la nube (27 oct 2026)**: cada push que toca `shots/**` renderiza solo los shots que cambiaron y sube los MP4 al Release "Borradores · <rama>" (guía: `PRODUCCION_NUBE.md`). Prueba superada: shot 003 sin voz, 61.5 s, en https://github.com/Roberthecoder/lacreaciondelrobert-shots/actions/runs/40531371441 . Banco de temas en `historial/temas.json` (+ `historial/nuevos/` y `consolidar.mjs`).
 - **GitHub Actions**: `.github/workflows/renderizar.yml` (Actions → Renderizar shot → Run workflow) renderiza narrada, sin voz o ambas, y deja el MP4 en Artifacts. Secrets ya configurados: `ELEVENLABS_API_KEY`, `CLAUDE_API_KEY`.
 
 ## Lote D de remasterización (27 oct 2026, rama `remaster/lote-d`, sin mergear)
