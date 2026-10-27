@@ -22,17 +22,18 @@ ni generes voz sin aprobación. Al terminar mándale a Robert los videos al chat
 
 ## Videos al chat (obligatorio, decidido por Robert el 27 oct 2026)
 Robert quiere ver los videos **dentro del chat**, no como enlaces a GitHub. Cuando termine el render automático de tu rama:
-1. Bájalos de la rama `videos/<tu-rama-con-guiones>` (GitHub la llena sola al terminar cada render; el repo es privado y desde
-   la nube solo funciona git):
+1. Bájalos de `refs/videos/<tu-rama-con-guiones>` (el workflow "Videos al chat" la llena sola al terminar cada render; el repo
+   es privado y desde la nube solo funciona git). No es una rama: `git fetch` normal no la baja, hay que pedirla así:
    ```
-   RV="videos/$(git branch --show-current | tr / -)"
+   RV="refs/videos/$(git branch --show-current | tr / -)"
    git fetch -q --depth 1 origin "$RV" && rm -rf /tmp/videos && mkdir -p /tmp/videos && git archive FETCH_HEAD | tar -x -C /tmp/videos && ls -la /tmp/videos
    ```
+   Para saber si ya está lista: `git ls-remote origin "$RV"`.
 2. Mándale cada MP4 nuevo con la herramienta **SendUserFile** (`display: "render"`), con una línea de contexto por video
    (shot, versión muda o narrada, duración). Si no está cargada: `ToolSearch` con `select:SendUserFile`. Los
    `<shot>_publicacion.md` también se mandan (`display: "attach"`).
 3. El enlace al Release va solo como respaldo, al final.
-Si la rama `videos/…` todavía no existe, el render no ha terminado: espera (`send_later` o vuelve a revisar el run) y repite.
+Si `refs/videos/…` todavía no existe, el render no ha terminado: espera (`send_later` o vuelve a revisar el run) y repite.
 
 ## Reglas de contenido
 - Cada shot es un tema nuevo; nunca repetir un tema ni uno casi igual. **Banco de temas** (`historial/temas.json`):

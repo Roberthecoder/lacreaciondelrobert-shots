@@ -1,6 +1,7 @@
 name: Videos al chat
 
-# Copia los MP4 y textos del Release "Borradores · <rama>" a la rama videos/<rama> (un solo commit que se reemplaza).
+# Copia los MP4 y textos del Release "Borradores · <rama>" a la referencia refs/videos/<rama> (un solo commit que se reemplaza;
+# no es una rama, así que git clone y git fetch normales no la bajan).
 # Así las sesiones de Claude en la nube, que no pueden bajar archivos del Release (repo privado), los bajan con git
 # y se los mandan a Robert dentro del chat. Corre solo al terminar cada "Render automático" (con la versión de main
 # de este archivo, sin importar la rama) o a mano: Actions → Videos al chat → Run workflow → nombre de la rama.
@@ -30,10 +31,10 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       RAMA: ${{ github.event.workflow_run.head_branch || inputs.rama }}
     steps:
-      - name: Bajar del Release y subir a videos/<rama>
+      - name: Bajar del Release y subir a refs/videos/<rama>
         run: |
           TAG="borradores-${RAMA//\//-}"
-          RV="videos/${RAMA//\//-}"
+          RV="refs/videos/${RAMA//\//-}"
           mkdir -p v && cd v
           gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p "*.mp4" -p "*_publicacion.md" --clobber || { echo "Sin Release $TAG"; exit 0; }
           find . -name "*.mp4" -size +95M -print -delete   # GitHub no acepta archivos de más de 100 MB
@@ -43,5 +44,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A && git commit -q -m "Videos de $RAMA"
-          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/$RV"
-          echo "Videos en la rama $RV" | tee -a "$GITHUB_STEP_SUMMARY"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:$RV"
+          echo "Videos en $RV" | tee -a "$GITHUB_STEP_SUMMARY"
