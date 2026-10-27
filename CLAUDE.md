@@ -40,7 +40,11 @@ Si `refs/videos/…` todavía no existe, el render no ha terminado: espera (`sen
   - **Antes de elegir tema:** `git fetch origin` y `node historial/consolidar.mjs --buscar "palabras del tema"` (busca en el banco y en lo que otras sesiones ya apartaron en sus ramas). Los `derivados` de cada tema son buenas ideas para el siguiente.
   - **Al terminar (o al apartar el tema):** registrar el tema y 2–3 derivados en un archivo propio `historial/nuevos/<clave>.json` (la clave de tu sesión en `historial/ola-01.md`, o tu rama con guiones; formato en `historial/nuevos/LEEME.md`). **Nunca editar `temas.json` directamente**: hay muchas sesiones en paralelo y chocarían. `node historial/consolidar.mjs` los junta sin duplicados (lo corre quien mezcla ramas a main).
 - Producción en la nube (renders automáticos al hacer push, Release de borradores, aprobar voz): ver `PRODUCCION_NUBE.md`. Nunca poner `"voz_aprobada": true` sin que Robert lo diga.
-- Cada shot se produce en dos versiones del mismo tema: narrada (voz clonada en ElevenLabs, Voice ID `uiCk6APPfsjnw3oUQzVo`) y sin voz (música + subtítulos + gags).
+- **Desde el 27 oct 2026 cada shot es solo NARRADO (decisión de Robert): ya no se hace gemelo mudo.** Flujo: el guion y la animación se
+  suben; GitHub renderiza solo una **versión de revisión sin voz** (la misma animación del narrado, con música y subtítulos, `<shot>_sin_voz.mp4`)
+  para que Robert la vea; **la voz clonada de ElevenLabs (Voice ID `uiCk6APPfsjnw3oUQzVo`) se genera únicamente cuando Robert la aprueba**
+  ("apruebo la voz de…"), y entonces sale el `<shot>_narrado.mp4` final. En `narracion.json` no se pone el campo `"mudo"`.
+  Las secciones de abajo sobre "versión sin voz" y "gemelo mudo" quedan solo como referencia para shots viejos.
 - **Números (regla de Robert, 27 oct 2026, tras el error del cepario):** cada cifra que sale en pantalla o en la voz se verifica
   **abriendo la fuente que se cita** y encontrando ahí la cifra exacta; se copia la frase textual en `## Fuentes` del guion, con el
   **año del dato**. Prohibido tomar cifras de "revisiones que citan" sin abrir el original, mezclar la cifra de una fuente con el
@@ -51,7 +55,7 @@ Si `refs/videos/…` todavía no existe, el render no ha terminado: espera (`sen
 - Subtítulos siempre fuera del tercio inferior.
 
 ## Formato y piezas de cada shot
-- Antes de escribir un shot, elegir su formato narrado y su gemelo mudo en `referencias-externas/RECETARIO.md` (11 formatos, parejas y reparto por serie).
+- Antes de escribir un shot, elegir su formato narrado en `referencias-externas/RECETARIO.md` (los 6 formatos N1–N6 y el reparto por serie; los mudos M1–M5 ya no se hacen).
 - Logo: **isotipo A COLOR** (versión oficial de Robert, 26 oct 2026; originales en `motor/kit/logos/fuente/`: color, negro sobre blanco y marca de agua con badge) con el hexágono del TEMA en dorado, alineado a su celda (`motor/kit/logo.mjs` genera `logo_<tema>.svg`): biología → ADN · química → matraz · bioquímica → ADN + matraz · física → átomo · IA → brillitos. Dentro de la celda dorada los íconos de color llevan un contorno negro fino para no perderse; sin tema: `logo_color.svg`. Copiar el SVG a `assets/` y pasar `tema` a `MarcaAgua` y `CierreMarca`.
 - Construirlo con el kit `motor/kit/kit-robert.jsx` (catálogo en `motor/kit/LEEME.md`, ejemplo en `shots/_demo-kit/`). Si un tema necesita un mundo nuevo (hoja, suelo, intestino…), agregarlo al kit para reutilizarlo.
 - Para mostrar lo de adentro sin dejar de ver lo de afuera (cuerpo, fruta, suelo), usar `Lupa` en modo rayos X (`interior=…`).

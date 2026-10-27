@@ -36,9 +36,9 @@ Para cada shot:
 1. Tema: corre `git fetch origin` y `node historial/consolidar.mjs --buscar "<palabras>"`;
    elige algo que no exista ni se parezca. <Ideas o temas que quiero, si tengo: ...>
 2. Aparta el tema en historial/nuevos/<tu-rama-con-guiones>.json con estado "idea" y haz push.
-3. Formato narrado + gemelo mudo del RECETARIO, gancho de los 7 de CLAUDE.md, fuentes verificadas.
+3. Formato narrado del RECETARIO (sin gemelo mudo), gancho de los 7 de CLAUDE.md, fuentes verificadas.
 4. Constrúyelo con el kit, revisa cuadros con preview.mjs (no renderices MP4 completos tú: lo hace GitHub).
-5. narracion.json con "mudo" y SIN "voz_aprobada" (la voz la apruebo yo).
+5. narracion.json SIN "mudo" y SIN "voz_aprobada": GitHub renderiza la versión de revisión sin voz; la voz la apruebo yo.
 6. Push. Revisa que el run de "Render automático" de tu rama termine bien; si falla, corrige y vuelve a hacer push.
 7. Actualiza tu archivo de historial/nuevos/ con estado "renderizado", fuentes y 2–3 derivados.
 
@@ -53,7 +53,7 @@ Al final dame: lista de shots, enlace al Release de borradores y los caracteres 
 
 - **Releases del repositorio:** https://github.com/Roberthecoder/lacreaciondelrobert-shots/releases
   Hay un Release por rama, llamado **"Borradores · <rama>"**. Cada shot sube ahí:
-  - `<shot>_mudo.mp4` (gemelo mudo) o `<shot>_sin_voz.mp4`,
+  - `<shot>_sin_voz.mp4` (versión de revisión: la animación del narrado con música y subtítulos; shots viejos traen `<shot>_mudo.mp4`),
   - `<shot>_narrado.mp4` si la voz está aprobada,
   - `<shot>_publicacion.md`: **los textos para copiar están junto a cada video en el Release**
     (título y descripción para TikTok, Instagram, YouTube y Facebook). La tabla de las notas del

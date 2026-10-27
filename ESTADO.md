@@ -2,6 +2,11 @@
 
 Última actualización: 26 oct 2026. Esta sesión empezó en la nube (Claude Code web) y continúa en la computadora del usuario.
 
+## Repositorios (27 oct 2026)
+- **`Roberthecoder/lacreaciondelrobert-shots`** (este): producción, historial limpio (sin fotos originales, fecha de nacimiento ni correo), pensado para ser público.
+- **`Roberthecoder/lacreaciondelrobert-archivo`** (privado): el repo anterior completo, con historial, fotos originales del largo (`largos/…/fuentes/`), la lista de fotos de Facebook y los Releases de borradores hasta el 27 oct. Para convocatorias y respaldo. **Nunca hacer push de su historial aquí.**
+- Desde el 27 oct cada shot es solo narrado, con versión de revisión sin voz (ver CLAUDE.md).
+
 ## Ya funciona
 - **Render**: `motor/render.mjs` convierte un shot (`.dc.html` + `.jsx` del motor de Claude Design) a MP4 1080×1920 con audio. `motor/preview.mjs` saca una hoja de contactos para revisar cuadros.
 - **Primer shot**: `shots/001-hormiga-zombi` (Ophiocordyceps), en dos versiones:
