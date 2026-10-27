@@ -9,7 +9,6 @@ shots/*/voz/*.wav
 shots/*/assets/musica_narrada.wav
 shots/*/assets/mezcla_narrada.wav
 shots/*/assets/musica_demo.wav
-largos/*/fuentes/
 # mezclas de los shots nuevos (las genera gen-audio.mjs; el workflow las vuelve a crear)
 shots/fun-*/assets/*.wav
 shots/qui-*/assets/*.wav
