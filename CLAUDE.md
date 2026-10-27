@@ -66,7 +66,7 @@ Basado en el análisis de `referencias-externas/ANALISIS.md` y confirmado con `F
   - **Cierre:** `CierreMarca` con `robert=` (Robert junto al logo, señalando o apuntando a cámara).
   - Nunca tapa el dato principal, las etiquetas ni el subtítulo: si estorba, cambia de lado o se espera un segundo.
   - En `guion.md`, una tabla **"Robert en pantalla"** con cada aparición (segundo de entrada y salida, pose, lado y la frase a la que reacciona) y el total de segundos. Sin esa tabla el shot no está terminado.
-- Descripción del video: mini artículo con la explicación completa (guion) + fuentes + "el dibujo es esquemático" cuando aplique + **una pregunta para comentar** al final (p. ej. "¿Cómo le dicen en tu región?", "¿A ti también te pasa?").
+- **Textos para publicar (obligatorio):** cada shot lleva en su carpeta un `publicacion.md` con título y descripción listos para copiar en **TikTok, Instagram Reels, YouTube Shorts y Facebook Reels**, para la versión narrada y la sin voz (🎧), más el comentario fijado con las fuentes. Plantilla, límites por red y ejemplo: `motor/plantillas/publicacion.md` y `shots/003-semillas-luna/publicacion.md`. La descripción es un mini artículo con la explicación completa (guion) + fuentes + "el dibujo es esquemático" cuando aplique + **una pregunta para comentar** (p. ej. "¿Cómo le dicen en tu región?", "¿A ti también te pasa?") + la firma "Soy Robert, de La Creación del Robert 🌱". Sin `publicacion.md` el shot no está terminado.
 
 ## Notas técnicas (aprendidas a la mala)
 - Motor: `animations-v3.jsx` + `support.js` de Claude Design. Un shot es un `.dc.html` con `window.OM_SCENES` y un `.jsx` que dibuja todo desde `T`.
