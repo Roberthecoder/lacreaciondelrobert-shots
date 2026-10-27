@@ -3,7 +3,7 @@
   "salida": "Shot Fagos narrado.dc.html",
   "velocidad": 1.065,
   "mudo": { "dcHtml": "Shot Fagos mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
-  "nota": "Biotecnológico #04. Una línea por subtítulo (idx 0..12 del jsx). PENDIENTE de aprobación de Robert: NO generar la voz sin avisar el costo (~900 créditos).",
+  "nota": "Biotecnológico #04. Una línea por subtítulo (idx 0..12 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~900 créditos).",
   "lineas": [
     { "escena": "Gancho", "texto": "Esto no es un robot de película: es un virus que solo ataca bacterias." },
     { "escena": "Aterriza", "texto": "Se llama fago. Aterriza sobre la bacteria con sus seis patas." },

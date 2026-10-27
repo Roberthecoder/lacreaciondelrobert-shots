@@ -5,7 +5,7 @@
 - **Formato (RECETARIO):** N1 "Por dentro" (vaca → rayos X del estómago → rumen al microscopio → la misma vaca, ya por dentro) con un momento N2 (tú contra la vaca: 70 % contra ~10 %). Gemelo mudo: M4 "Ciclo".
 - **Gancho:** #1 "Esto no es X: es Y" sobre la vaca que está comiendo en pantalla. Habla a "tú" (en el estudio: "en ti, cerca de diez").
 - **Duración:** voz estimada 58.0 s (947 caracteres) + cierre 3.5 s ≈ 61.5 s, con `"velocidad": 1.065`.
-- **Estado:** construido sin voz; la voz espera la aprobación de Robert (~950 créditos).
+- **Estado:** guion APROBADO por Robert (27 oct 2026); falta generar la voz (~950 créditos).
 
 ## Versión narrada (947 caracteres)
 

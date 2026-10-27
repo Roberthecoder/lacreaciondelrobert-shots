@@ -5,7 +5,7 @@
 - **Formato (RECETARIO):** N1 "Por dentro" (el fago aterriza, inyecta, la bacteria se vuelve fábrica y revienta; luego tu cuerpo con rayos X). Gemelo mudo: M4 "Ciclo" lítico con conteo (placa de Petri).
 - **Gancho:** #1 "Esto no es X: es Y" sobre el fago gigante que cae en pantalla ("no es un robot de película").
 - **Duración:** voz estimada 57.9 s (940 caracteres) + cierre 3.5 s ≈ 61.4 s, con `"velocidad": 1.065`.
-- **Estado:** construido sin voz; la voz espera la aprobación de Robert (~940 créditos).
+- **Estado:** guion APROBADO por Robert (27 oct 2026); falta generar la voz (~940 créditos).
 
 ## Versión narrada (940 caracteres)
 

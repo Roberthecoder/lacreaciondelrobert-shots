@@ -3,7 +3,7 @@
   "salida": "Shot Vacas narrado.dc.html",
   "velocidad": 1.065,
   "mudo": { "dcHtml": "Shot Vacas mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
-  "nota": "Biotecnológico #02. Una línea por subtítulo (idx 0..11 del jsx). PENDIENTE de aprobación de Robert: NO generar la voz sin avisar el costo (~920 créditos).",
+  "nota": "Biotecnológico #02. Una línea por subtítulo (idx 0..11 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~920 créditos).",
   "lineas": [
     { "escena": "Gancho", "texto": "Esa vaca no se alimenta de pasto: se alimenta de los microbios de su panza." },
     { "escena": "Enzimas", "texto": "Ella no puede digerir la celulosa del pasto: no tiene las enzimas." },

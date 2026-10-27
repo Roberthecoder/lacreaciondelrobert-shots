@@ -5,7 +5,7 @@
 - **Formato (RECETARIO):** N1 "Por dentro" (maceta de noche → rayos X del pétalo → el ciclo → la misma maceta). Gemelo mudo: M4 "Ciclo" (un sonido por enzima).
 - **Gancho:** #1 "Esto no es X: es Y" sobre la flor que se prende en pantalla ("no tiene pilas ni pintura").
 - **Duración:** voz estimada 57.4 s (929 caracteres) + cierre 3.5 s ≈ 60.9 s, con `"velocidad": 1.065`. Si al generar la voz queda en menos de 61.0 s, bajar la velocidad a 1.05 (no gasta créditos).
-- **Estado:** construido sin voz; la voz espera la aprobación de Robert (~930 créditos).
+- **Estado:** guion APROBADO por Robert (27 oct 2026); falta generar la voz (~930 créditos).
 
 ## Versión narrada (929 caracteres)
 

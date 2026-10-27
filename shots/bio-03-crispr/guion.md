@@ -5,7 +5,7 @@
 - **Formato (RECETARIO):** N1 "Por dentro" + N5 "El experimento" (se recrea el experimento de Danisco con dos tubos). Gemelo mudo: M4 "Ciclo" con la fila CRISPR como partitura (M1).
 - **Gancho:** #1 "Esto no es X: es Y" sobre el yogur que se ve en pantalla ("no solo tiene bacterias: tiene bacterias vacunadas").
 - **Duración:** voz estimada 57.7 s (941 caracteres) + cierre 3.5 s ≈ 61.2 s, con `"velocidad": 1.065`.
-- **Estado:** construido sin voz; la voz espera la aprobación de Robert (~940 créditos).
+- **Estado:** guion APROBADO por Robert (27 oct 2026); falta generar la voz (~940 créditos).
 
 ## Versión narrada (941 caracteres)
 

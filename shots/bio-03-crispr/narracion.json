@@ -3,7 +3,7 @@
   "salida": "Shot Crispr narrado.dc.html",
   "velocidad": 1.065,
   "mudo": { "dcHtml": "Shot Crispr mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
-  "nota": "Biotecnológico #03. Una línea por subtítulo (idx 0..11 del jsx). Se quitó '2,600 millones de años' (sin fuente sólida). PENDIENTE de aprobación de Robert: NO generar la voz sin avisar el costo (~920 créditos).",
+  "nota": "Biotecnológico #03. Una línea por subtítulo (idx 0..11 del jsx). Se quitó '2,600 millones de años' (sin fuente sólida). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~920 créditos).",
   "lineas": [
     { "escena": "Gancho", "texto": "Este yogur no solo tiene bacterias: tiene bacterias vacunadas contra virus." },
     { "escena": "Ataque", "texto": "Las bacterias de tu yogur viven bajo ataque de unos virus que las revientan desde adentro: los fagos." },

@@ -5,7 +5,7 @@
 - **Formato (RECETARIO):** N4 "La imagen que se llena" (un arcoíris que se pinta banda por banda). Gemelo mudo: M1 "La música son los datos".
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el arcoíris que se pinta en pantalla. Habla a "tú".
 - **Duración:** voz estimada 58.2 s (932 caracteres) + cierre 3.5 s ≈ 61.7 s. `"velocidad": 1.065` en `narracion.json`; verificar con ffprobe al generar la voz.
-- **Estado:** construido sin voz. La voz necesita la aprobación de Robert (~930 créditos de ElevenLabs).
+- **Estado:** guion APROBADO por Robert (27 oct 2026); falta generar la voz (~930 créditos de ElevenLabs).
 
 ## Versión narrada (932 caracteres)
 
