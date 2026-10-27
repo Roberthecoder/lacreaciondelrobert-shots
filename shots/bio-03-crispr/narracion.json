@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Crispr base narrada.dc.html",
   "salida": "Shot Crispr narrado.dc.html",
-  "velocidad": 1.168,
+  "velocidad": 1.089,
   "mudo": { "dcHtml": "Shot Crispr mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
   "nota": "Biotecnológico #03. Una línea por subtítulo (idx 0..11 del jsx). Se quitó '2,600 millones de años' (sin fuente sólida). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~920 créditos).",
   "lineas": [
