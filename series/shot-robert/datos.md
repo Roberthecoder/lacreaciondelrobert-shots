@@ -41,10 +41,10 @@ Para agregar un dato: escríbelo aquí con ❓, y solo Robert lo cambia a ✅.
 - ✅ Haciendo voluntariado en el Hospital Civil vio personas sin cinco pesos para entrar a un baño; construyó un baño seco de bajo costo.
   Ganó primer lugar nacional en PrepApps y primer lugar internacional en el Jacobs Teen Innovation Challenge (más de 4,700 estudiantes de 32 países).
 - ✅ "De basura a comida": hongos comestibles sobre residuos agrícolas en menos de un mes. Platino en INFOMATRIX y oro en la Feria de Ciencias de Jalisco.
-- ❓ Año de "finalista de Rise" (el guion dice 2023, pero la tarjeta encontrada es del Rise Innovation Fund Challenge 2026).
+- ✅ Finalista de Rise en 2023 (con "De basura a comida").
 - ✅ Con el fondo Ruta Azul convirtió un espacio abandonado de su prepa en una granja de setas y enseñó a 50 estudiantes a cultivarlas,
   con un tutor de IA que él entrenó. Así nació Fungi Mati.
-- ✅ Fungi Mati quedó entre los 6 mejores de más de 100 proyectos en el reto de Equitech Futures.
+- ✅ Fungi Mati quedó entre los 6 mejores de más de 100 proyectos en el Rise Finalist Challenge × Equitech Futures, en 2026.
 - ✅ Entró a beVisioneers (la beca de Mercedes-Benz) entre unas 20,000 personas.
 - ✅ Lo que viene: convertir una tonelada de bagazo de agave en hongos para comer (contarlo como futuro, no como hecho).
 
