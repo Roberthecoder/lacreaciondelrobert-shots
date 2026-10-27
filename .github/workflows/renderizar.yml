@@ -59,7 +59,7 @@ jobs:
             node motor/render.mjs "$SHOT" "$HTML" "salida/$(basename $SHOT)_mudo.mp4" --audio "$SHOT/$AUD"
           else
             HTML=$(node -p "require('./$SHOT/narracion.json').dcHtml")
-            node "$SHOT/gen-audio.mjs"
+            (cd "$SHOT" && node gen-audio.mjs "$HTML" assets/mezcla.wav)
             node motor/render.mjs "$SHOT" "$HTML" "salida/$(basename $SHOT)_sin_voz.mp4" --audio "$SHOT/assets/mezcla.wav"
           fi
 
