@@ -237,8 +237,8 @@ function LactosaNarrado() {
       <EscenaFundido T={T} a={K.Cr} b={K.Pa} zoom={0.05} fondo={KC.dark}>
         <CriptaCerca T={T} a={K.Cr} gen={kprog(T, K.Cr + 1.2, K.Cr + 2.2) * (1 - kprog(T, K.Pa - 1.4, K.Pa - 0.4))} />
       </EscenaFundido>
-      <Etiqueta T={T} at={K.Cr + 0.5} until={K.Pa - 0.3} x={700} y={1120} texto="células madre" color={KC.gold} tam={36} />
-      <Etiqueta T={T} at={K.Cr + 1.4} until={K.Pa - 0.3} x={620} y={420} texto="el gen se queda arriba" color={GEN} tam={34} />
+      <Etiqueta T={T} at={K.Cr + 0.5} until={K.Pa - 0.3} x={610} y={1120} texto="células madre" color={KC.gold} tam={36} />
+      <Etiqueta T={T} at={K.Cr + 1.4} until={K.Pa - 0.3} x={120} y={420} texto="el gen se queda arriba" color={GEN} tam={34} />
 
       {/* 11 · PASTILLA — lo que sí existe hoy */}
       <EscenaFundido T={T} a={K.Pa} b={K.C} zoom={0.05}>
