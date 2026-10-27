@@ -1,6 +1,6 @@
 # Temas nuevos por sesión
 
-Cada sesión anota aquí sus temas en un archivo propio: `historial/nuevos/<rama-con-guiones>.json` (p. ej. `lote-e-bio.json` para la rama `lotes/lote-e-bio`). Nunca se edita `historial/temas.json` a mano: después se corre `node historial/consolidar.mjs`.
+Cada sesión anota aquí sus temas en un archivo propio: `historial/nuevos/<clave>.json` (la clave de la ola, p. ej. `fun-a.json`, o el nombre de la rama con guiones). Nunca se edita `historial/temas.json` a mano: después se corre `node historial/consolidar.mjs`.
 
 Formato:
 
