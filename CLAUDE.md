@@ -1,6 +1,6 @@
 # Shots de La Creación del Robert
 
-Lee primero `ESTADO.md` (qué está hecho y qué sigue).
+Lee primero `ESTADO.md` (qué está hecho y qué sigue) y `CANAL.md` (series, numeración, video largo semanal y presupuesto de voz).
 
 Videos verticales 1080×1920 de divulgación científica en español de México. El usuario no programa: respuestas en español, breves y sin jerga.
 
