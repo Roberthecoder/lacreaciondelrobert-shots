@@ -8,6 +8,8 @@
 // 3. El video se adapta a la voz: cada escena dura lo que tarda su parte de la narración
 //    (campo "nat" del motor) y cada subtítulo aparece cuando se dice su línea.
 // 4. Mezcla la voz con música y efectos (la música baja cuando hablas).
+// Opcional: "velocidad" en narracion.json (p. ej. 1.065) acelera la voz ya generada SIN cambiar el tono
+// (ffmpeg atempo) para que el total quede en 61–62 s. No vuelve a pedir la voz: no gasta créditos.
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -73,6 +75,17 @@ if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
 // archivos viejos del sistema por línea
 for (const f of fs.readdirSync(vozDir)) if (/^linea_\d+\./.test(f)) fs.unlinkSync(path.join(vozDir, f));
 
+/* ---------- 1b. velocidad opcional (sin créditos) ---------- */
+const VEL = Number(cfg.velocidad) || 1;
+let vozMp3 = mp3;
+if (VEL !== 1) {
+  vozMp3 = path.join(vozDir, 'narracion_vel.wav');
+  ff(['-i', mp3, '-af', `atempo=${VEL}`, '-ar', '44100', vozMp3]);
+  const k = (a) => a.map((t) => t / VEL);
+  meta = { ...meta, alignment: { ...meta.alignment, character_start_times_seconds: k(meta.alignment.character_start_times_seconds), character_end_times_seconds: k(meta.alignment.character_end_times_seconds) } };
+  console.log(`Voz acelerada ×${VEL} (mismo tono)`);
+}
+
 /* ---------- 2. dónde cae cada línea ---------- */
 const al = meta.alignment, chars = al.characters.join('');
 let cursor = 0;
@@ -120,7 +133,7 @@ nh = nh.replace('</helmet>', `<script>window.SUBS = ${JSON.stringify(subs)}; win
 fs.writeFileSync(path.join(dir, cfg.salida), nh);
 
 const vozWav = path.join(vozDir, 'voz_completa.wav');
-ff(['-i', mp3, '-af', `adelay=${Math.round(OFF * 1000)}:all=1,apad=whole_dur=${play.toFixed(3)}`, '-ar', '48000', '-ac', '2', vozWav]);
+ff(['-i', vozMp3, '-af', `adelay=${Math.round(OFF * 1000)}:all=1,apad=whole_dur=${play.toFixed(3)}`, '-ar', '48000', '-ac', '2', vozWav]);
 execFileSync('node', [path.join(dir, 'gen-audio.mjs'), cfg.salida, path.join('assets', 'musica_narrada.wav')], { stdio: 'inherit', cwd: dir });
 // la voz va intacta; solo la música y los efectos bajan cuando hablas
 ff(['-i', path.join(dir, 'assets', 'musica_narrada.wav'), '-i', vozWav, '-filter_complex',
