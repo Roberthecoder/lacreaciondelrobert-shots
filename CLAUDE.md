@@ -5,7 +5,10 @@ Lee primero `ESTADO.md` (qué está hecho y qué sigue) y `CANAL.md` (series, nu
 Videos verticales 1080×1920 de divulgación científica en español de México. El usuario no programa: respuestas en español, breves y sin jerga.
 
 ## Reglas de contenido
-- Cada shot es un tema nuevo. Revisar y actualizar `historial/temas.json`; nunca repetir un tema ni uno casi igual.
+- Cada shot es un tema nuevo; nunca repetir un tema ni uno casi igual. **Banco de temas** (`historial/temas.json`):
+  - **Antes de elegir tema:** `git fetch origin` y `node historial/consolidar.mjs --buscar "palabras del tema"` (busca en el banco y en lo que otras sesiones ya apartaron en sus ramas). Los `derivados` de cada tema son buenas ideas para el siguiente.
+  - **Al terminar (o al apartar el tema):** registrar el tema y 2–3 derivados en un archivo propio `historial/nuevos/<rama-con-guiones>.json` (formato en `historial/nuevos/LEEME.md`). **Nunca editar `temas.json` directamente**: hay muchas sesiones en paralelo y chocarían. `node historial/consolidar.mjs` los junta sin duplicados (lo corre quien mezcla ramas a main).
+- Producción en la nube (renders automáticos al hacer push, Release de borradores, aprobar voz): ver `PRODUCCION_NUBE.md`. Nunca poner `"voz_aprobada": true` sin que Robert lo diga.
 - Cada shot se produce en dos versiones del mismo tema: narrada (voz clonada en ElevenLabs, Voice ID `uiCk6APPfsjnw3oUQzVo`) y sin voz (música + subtítulos + gags).
 - Rigor: cada dato con fuente publicada, listada en el guion. Si algo es hipótesis, decirlo como hipótesis. Especies en cursiva. Ilustrar bien la morfología real (ej. esporas de *Ophiocordyceps* alargadas, no redondas).
 - Estilo y reglas detalladas: `referencias/*/CLAUDE.md`, `referencias/Paquete Shot Lab/PLANTILLA Shot Sin Voz.md` y `referencias/KIT MAESTRO Shots Micologicos/GUIA_SHOT.md`. Prohibidos los avatares 01 y 09 salvo tema de sabor.

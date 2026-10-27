@@ -106,7 +106,7 @@ jobs:
             node motor/render.mjs "$SHOT" "$HTML" "salida/${N}_mudo.mp4" --audio "$SHOT/$AUD"
           else
             HTML=$(node -p "require('./$SHOT/narracion.json').dcHtml")
-            node "$SHOT/gen-audio.mjs"
+            (cd "$SHOT" && node gen-audio.mjs "$HTML" assets/mezcla.wav)
             node motor/render.mjs "$SHOT" "$HTML" "salida/${N}_sin_voz.mp4" --audio "$SHOT/assets/mezcla.wav"
           fi
 
@@ -134,15 +134,16 @@ jobs:
         run: |
           for f in salida/*.mp4; do echo "$f: $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f") s"; done | tee -a "$GITHUB_STEP_SUMMARY"
 
-      - name: Subir como artifact
+      - name: Subir al Release de borradores
+        run: gh release upload "${{ needs.detectar.outputs.tag }}" salida/*.mp4 --clobber
+
+      - name: Subir como artifact (copia de 3 días; el espacio de artifacts es chico)
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.shot }}
           path: salida/*.mp4
-          retention-days: 14
-
-      - name: Subir al Release de borradores
-        run: gh release upload "${{ needs.detectar.outputs.tag }}" salida/*.mp4 --clobber
+          retention-days: 3
 
       - name: Guardar caché de voz
         if: steps.voz.outputs.aprobada == 'true'
