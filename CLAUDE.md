@@ -15,6 +15,8 @@ Robert abre una sesión en claude.ai/code con este repositorio y escribe algo co
   y propón otra serie.
 - **"Continúa el lote A/B/C/D"**: haz merge de `origin/remaster/lote-<letra>` en tu rama, revisa qué falta en cada shot
   (Robert en pantalla, `publicacion.md`, historial), termínalo y haz push.
+- **"Atiende mis pedidos"**: sigue "Pedidos desde la Sala".
+- **"Hazme un video largo sobre <tema>"** / **"Hazme un video libre: <idea>"**: como un pedido de tipo `largo` / `libre` (ver "Pedidos desde la Sala").
 - **"Apruebo la voz de <shot>"**: pon `"voz_aprobada": true` en el `narracion.json` de ese shot y haz push.
 - **"Junta el lote X a main"**: sigue la sección 6 de `PRODUCCION_NUBE.md`.
 Siempre: no renderices MP4 completos (lo hace GitHub con cada push), no publiques nada en redes, no uses la API de Claude
@@ -52,6 +54,25 @@ Las sesiones de nube tienen las herramientas `Artifact` y `ArtifactData` (cárga
    narrado. Después marca el doc con `procesado: true` (update con su `version`). La voz solo se genera por aprobación de Robert
    (este botón o "apruebo la voz de…").
 3. Si algo falla al subir, no detengas el lote: dilo en tu resumen.
+
+## Pedidos desde la Sala (Robert pide videos con un formulario)
+En la Sala de Shots hay una caja "Pedir un video" que guarda documentos en la collection `pedidos`
+(`tipo`: shot | largo | libre | robert, `serie`, `idea`, `estado`, `creado`, `resultado`).
+- **Toda sesión de nube que empiece** (rutinas y sesiones de Robert, sobre todo si escribe "atiende mis pedidos"): `ArtifactData`
+  action "query" en `pedidos` con `estado == pendiente`, del más viejo al más nuevo. Si hay, se atienden ANTES del lote normal
+  (y en vez de él si son largos). Al tomar uno: `estado: "en proceso"` (update con su `version`).
+- **Cómo se hace cada tipo:**
+  - `shot`: 1 shot de esa serie con todas las reglas de este archivo (61–62 s, ganchos, Robert en pantalla, verificación).
+  - `largo`: video horizontal en `largos/<NNN>-<tema>/`, 8–15 min, con `window.K_ANCHO = 1920; window.K_ALTO = 1080` en el
+    `.dc.html` (ejemplo completo: `largos/000-que-es-la-creacion/` en la rama `largo/000`, con su LEEME). GitHub lo renderiza igual
+    que un shot (hasta 120 min de render).
+  - `libre`: lo que pida, sin formato fijo, en `shots/libre-<NN>-<tema>/`; pon `"duracion_libre": true` en `narracion.json` si no
+    dura 61–62 s. La verificación de hechos y Robert en pantalla siguen siendo obligatorias.
+  - `robert`: serie Shot Robert (`series/shot-robert/CLAUDE.md`): solo datos ✅ de `datos.md`; si la idea necesita un dato que no
+    está confirmado, no lo inventes: `estado: "pregunta"` y en `resultado` la pregunta concreta para Robert.
+- Todo pasa por "Verificación de hechos" y la voz espera aprobación, como siempre.
+- **Al terminar:** súbelo a la Sala (como cualquier shot) y pon `estado: "listo"` y en `resultado` una línea: clave, qué hiciste y
+  qué falta (por ejemplo, aprobar la voz). Si no se pudo, `estado: "pregunta"` o `"pendiente"` con la razón en `resultado`.
 
 ## Verificación de hechos (obligatoria, ANTES de animar; regla de Robert, 27 oct 2026)
 Robert: "no me importa que el guion no siempre traiga citas, pero SIEMPRE, SIEMPRE tiene que ser verídico". Orden fijo para todo
