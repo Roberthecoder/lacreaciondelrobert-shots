@@ -29,7 +29,11 @@ concurrency:
 
 jobs:
   render:
-    runs-on: ubuntu-latest
+    # Fijo a Ubuntu 24.04: desde el 19 de octubre de 2026 "ubuntu-latest" empezó a dar máquinas con
+    # Ubuntu 26.04, y ahí Playwright falla al instalar Chromium ("Playwright does not support chromium
+    # on ubuntu26.04-x64"). Como la migración es gradual, el render fallaba o no según la máquina que
+    # tocara. Cuando Playwright soporte Ubuntu 26 se puede volver a "ubuntu-latest".
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     env:
       SHOT: ${{ inputs.shot }}
