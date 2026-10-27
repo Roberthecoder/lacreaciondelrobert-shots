@@ -18,7 +18,21 @@ Robert abre una sesión en claude.ai/code con este repositorio y escribe algo co
 - **"Apruebo la voz de <shot>"**: pon `"voz_aprobada": true` en el `narracion.json` de ese shot y haz push.
 - **"Junta el lote X a main"**: sigue la sección 6 de `PRODUCCION_NUBE.md`.
 Siempre: no renderices MP4 completos (lo hace GitHub con cada push), no publiques nada en redes, no uses la API de Claude
-ni generes voz sin aprobación. Al terminar dale a Robert la lista de shots y el enlace a su Release de borradores.
+ni generes voz sin aprobación. Al terminar mándale a Robert los videos al chat (sección "Videos al chat") y la lista de shots.
+
+## Videos al chat (obligatorio, decidido por Robert el 27 oct 2026)
+Robert quiere ver los videos **dentro del chat**, no como enlaces a GitHub. Cuando termine el render automático de tu rama:
+1. Bájalos de la rama `videos/<tu-rama-con-guiones>` (GitHub la llena sola al terminar cada render; el repo es privado y desde
+   la nube solo funciona git):
+   ```
+   RV="videos/$(git branch --show-current | tr / -)"
+   git fetch -q --depth 1 origin "$RV" && rm -rf /tmp/videos && mkdir -p /tmp/videos && git archive FETCH_HEAD | tar -x -C /tmp/videos && ls -la /tmp/videos
+   ```
+2. Mándale cada MP4 nuevo con la herramienta **SendUserFile** (`display: "render"`), con una línea de contexto por video
+   (shot, versión muda o narrada, duración). Si no está cargada: `ToolSearch` con `select:SendUserFile`. Los
+   `<shot>_publicacion.md` también se mandan (`display: "attach"`).
+3. El enlace al Release va solo como respaldo, al final.
+Si la rama `videos/…` todavía no existe, el render no ha terminado: espera (`send_later` o vuelve a revisar el run) y repite.
 
 ## Reglas de contenido
 - Cada shot es un tema nuevo; nunca repetir un tema ni uno casi igual. **Banco de temas** (`historial/temas.json`):
