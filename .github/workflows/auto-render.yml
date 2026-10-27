@@ -66,6 +66,17 @@ jobs:
             [ -f "$d/narracion.json" ] || { echo "· $d sin narracion.json, se salta"; continue; }
             LISTA+=("$(basename "$d")")
           done
+          # Candado de verificación (regla de Robert, 27 oct 2026): ningún shot nuevo se renderiza sin
+          # shots/<clave>/verificacion.md con la línea "VEREDICTO: APROBADO". Los shots anteriores están en .github/verificacion-exentos.txt.
+          FALTAN=()
+          for n in "${LISTA[@]}"; do
+            grep -qx "$n" .github/verificacion-exentos.txt 2>/dev/null && continue
+            grep -qi "VEREDICTO: APROBADO" "shots/$n/verificacion.md" 2>/dev/null || FALTAN+=("$n")
+          done
+          if [ ${#FALTAN[@]} -gt 0 ]; then
+            for n in "${FALTAN[@]}"; do echo "::error title=Sin verificación::shots/$n no tiene verificacion.md con VEREDICTO: APROBADO. Verifica el guion antes de renderizar (CLAUDE.md, Verificación de hechos)."; done
+            exit 1
+          fi
           aJSON() { printf '%s\n' "$@" | node -e 'const l=require("fs").readFileSync(0,"utf8").split("\n").filter(Boolean);console.log(JSON.stringify(l))'; }
           echo "Shots a renderizar: $(aJSON "${LISTA[@]}") · textos: $(aJSON "${TEXTOS[@]}")"
           echo "shots=$(aJSON "${LISTA[@]}")" >> "$GITHUB_OUTPUT"
@@ -142,6 +153,15 @@ jobs:
       - name: Duraciones
         run: |
           for f in salida/*.mp4; do echo "$f: $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f") s"; done | tee -a "$GITHUB_STEP_SUMMARY"
+          # Candado de duración: los shots deben pasar de 60 s (TikTok paga solo más de 1 min), salvo "duracion_libre": true
+          LIBRE=$(node -p "require('./$SHOT/narracion.json').duracion_libre === true")
+          if [ "$LIBRE" != "true" ]; then
+            for f in salida/*.mp4; do
+              D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+              if awk "BEGIN{exit !($D < 60.5)}"; then echo "::error title=Muy corto::$f dura $D s; debe durar 61–62 s. Alarga el cierre o ajusta la velocidad de la voz."; FALLA=1; fi
+            done
+            [ -z "$FALLA" ] || exit 1
+          fi
 
       - name: Subir al Release de borradores
         run: gh release upload "${{ needs.detectar.outputs.tag }}" salida/*.mp4 --clobber

@@ -53,6 +53,24 @@ Las sesiones de nube tienen las herramientas `Artifact` y `ArtifactData` (cárga
    (este botón o "apruebo la voz de…").
 3. Si algo falla al subir, no detengas el lote: dilo en tu resumen.
 
+## Verificación de hechos (obligatoria, ANTES de animar; regla de Robert, 27 oct 2026)
+Robert: "no me importa que el guion no siempre traiga citas, pero SIEMPRE, SIEMPRE tiene que ser verídico". Orden fijo para todo
+video (shot, largo, libre o de Robert):
+1. **Primero el guion** (`guion.md` + `narracion.json`), sin animación.
+2. **Verificación independiente:** lanza un subagente (herramienta `Task`) que NO escribió el guion, con este encargo: "Eres
+   verificador de hechos. Lee shots/<clave>/guion.md y narracion.json. Haz una lista de TODAS las afirmaciones comprobables
+   (cifras, fechas, nombres, causas, comparaciones, superlativos como 'el más', 'el primero', 'nunca', y lo que se ve en pantalla
+   que afirme algo). Para cada una busca la fuente primaria o una revisión seria (WebSearch/WebFetch; abre la página, no te quedes
+   con el resumen del buscador) y da veredicto: ✅ verificada (con la frase textual y el año del dato), ❌ falsa, ⚠️ imprecisa,
+   exagerada o no verificable. Sé escéptico: si dudas, es ⚠️."
+3. Escribe `shots/<clave>/verificacion.md` con la tabla **afirmación · veredicto · fuente · frase textual · año**.
+4. Toda ❌ o ⚠️ se **corrige o se quita** del guion y se vuelve a verificar esa parte. Las hipótesis se dicen como hipótesis.
+5. Solo cuando todo es ✅, la última línea del archivo es `VEREDICTO: APROBADO` y se construye la animación.
+   **GitHub no renderiza ningún shot nuevo sin esa línea** (candado en `auto-render.yml`; los shots anteriores al 27 oct están en
+   `.github/verificacion-exentos.txt`). Tampoco publica videos de menos de 60 s salvo `"duracion_libre": true` en narracion.json.
+6. Las citas en pantalla o en el guion son opcionales; en `verificacion.md` son obligatorias. Datos personales de Robert se
+   verifican contra `series/shot-robert/datos.md` (solo ✅).
+
 ## Reglas de contenido
 - Cada shot es un tema nuevo; nunca repetir un tema ni uno casi igual. **Banco de temas** (`historial/temas.json`):
   - **Antes de elegir tema:** `git fetch origin` y `node historial/consolidar.mjs --buscar "palabras del tema"` (busca en el banco y en lo que otras sesiones ya apartaron en sus ramas). Los `derivados` de cada tema son buenas ideas para el siguiente.
@@ -68,7 +86,7 @@ Las sesiones de nube tienen las herramientas `Artifact` y `ArtifactData` (cárga
   **año del dato**. Prohibido tomar cifras de "revisiones que citan" sin abrir el original, mezclar la cifra de una fuente con el
   enlace de otra, o usar un conteo viejo si hay uno más nuevo. Toda cifra dice **de qué es** ("3 millones de cepas de microbios
   guardadas en colecciones") y, si es de hace más de 2 años, lo dice ("en 2020…"). Si no se puede verificar, no se usa.
-- Rigor: cada dato con fuente publicada, listada en el guion. Si algo es hipótesis, decirlo como hipótesis. Especies en cursiva. Ilustrar bien la morfología real (ej. esporas de *Ophiocordyceps* alargadas, no redondas).
+- Rigor: cada dato con fuente publicada, verificada en `verificacion.md` (ver "Verificación de hechos"); citarla en el guion es opcional. Si algo es hipótesis, decirlo como hipótesis. Especies en cursiva. Ilustrar bien la morfología real (ej. esporas de *Ophiocordyceps* alargadas, no redondas).
 - Estilo y reglas detalladas: `referencias/*/CLAUDE.md`, `referencias/Paquete Shot Lab/PLANTILLA Shot Sin Voz.md` y `referencias/KIT MAESTRO Shots Micologicos/GUIA_SHOT.md`. Prohibidos los avatares 01 y 09 salvo tema de sabor.
 - Subtítulos siempre fuera del tercio inferior.
 
