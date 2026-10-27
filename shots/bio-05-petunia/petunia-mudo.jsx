@@ -40,10 +40,19 @@ function PetuniaMudo() {
       {(T < C.Noche + 1 || T > C.Amanecer + 6) && <Chip T={T} at={T < C.Noche + 1 ? 0 : C.Amanecer + 6} until={T < C.Noche + 1 ? C.Noche + 0.6 : null} texto="Esta flor no tiene pilas" y={1300} tam={46} borde={KC.ink} />}
       <Chip T={T} at={C.Amanecer + 1.5} until={C.Amanecer + 5.8} texto="sigue brillando: el sol lo tapa" y={1300} tam={36} borde={KC.yellow} />
       <Etq T={T} at={C.Flores + 3.2} until={C.Amanecer} x={790} y={470} texto="joven: brilla más" color={LUZ} lado="izq" tam={28} />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={C.Noche + 2.4} until={C.Noche + 4.6} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} apariciones={[
+        [0, 3.5, 'avatar_11_sorprendido', 'gancho'],
+        [C.Noche + 1.6, C.Noche + 4.6, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [C.Ciclo1 + 2.0, C.Ciclo1 + 5.0, 'avatar_07_pensativo_puno', 'arriba-der'],
+        [C.Ciclo1 + 9.5, C.Ciclo1 + 12.5, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [C.Ciclo2 + 4.0, C.Ciclo2 + 7.0, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
+        [C.Flores + 2.5, C.Flores + 6.5, 'avatar_11_sorprendido', 'presentador'],
+        [C.Amanecer + 2.0, C.Amanecer + 5.0, 'avatar_06_pensativo_menton', 'arriba-der'],
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="05" hasta={C.Outro} />
-      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" />
+      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );

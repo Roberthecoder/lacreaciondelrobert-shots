@@ -19,7 +19,7 @@ function PetuniaNarrado() {
         <Cielo T={T} noche={noche(C.Gancho)} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Maceta T={T} x={540} y={970} s={1.0} brillos={brilla(C.Gancho)} /></svg>
         <MitoTachado T={T} at={C.Gancho + 1.2} tacharEn={C.Gancho + 1.8} until={C.Hongo - 0.2} texto="pilas" x={250} y={420} />
-        <MitoTachado T={T} at={C.Gancho + 1.6} tacharEn={C.Gancho + 2.2} until={C.Hongo - 0.2} texto="pintura" x={600} y={300} />
+        <MitoTachado T={T} at={C.Gancho + 1.6} tacharEn={C.Gancho + 2.2} until={C.Hongo - 0.2} texto="pintura" x={380} y={300} />
       </Escena>
 
       {/* HONGO: de dónde viene la luz */}
@@ -54,7 +54,7 @@ function PetuniaNarrado() {
       <Escena T={T} a={C.Pregunta} b={C.Estudio}>
         <Cielo T={T} noche={1} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Maceta T={T} x={540} y={970} brillos={[1, 1, 1, 1, 1]} /></svg>
-        <Chip T={T} at={C.Pregunta + 0.1} until={C.Estudio - 0.1} texto="¿por qué hasta ahora?" y={420} borde={KC.coral} tam={44} />
+        <Chip T={T} at={C.Pregunta + 0.1} until={C.Estudio - 0.1} texto="¿por qué hasta ahora?" x={300} y={420} borde={KC.coral} tam={44} />
       </Escena>
 
       {/* ESTUDIO: 1986, tabaco con gen de luciérnaga */}
@@ -131,11 +131,21 @@ function PetuniaNarrado() {
       <Subtitulo T={T} idx={11} at={C.Extra + 0.1} until={C.Cierre - 0.1} texto="No se carga con el sol: *la luz la fabrica ella.*" />
       <Subtitulo T={T} idx={12} at={C.Cierre + 0.1} until={C.Outro - 0.1} texto="Un hongo *dando vueltas por dentro.*" />
 
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={C.Pregunta + 0.05} until={C.Estudio + 0.2} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_04_bajando_lentes')} at={C.Wood + 3.4} until={C.Aprobada - 0.2} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} apariciones={[
+        [0, 3.6, 'avatar_11_sorprendido', 'gancho'],
+        [C.Hongo + 1.8, C.Ciclo - 0.2, 'avatar_13_senalando_arriba', 'abajo-der'],
+        [L[1], L[1] + 3.2, 'avatar_07_pensativo_puno', 'abajo-izq'],
+        [L[3] + 1.5, L[4] + 0.6, 'avatar_11_sorprendido', 'arriba-der'],
+        [C.Pregunta, C.Estudio + 0.4, 'avatar_06_pensativo_menton', 'arriba-der'],
+        [C.Estudio + 3.6, C.Wood - 0.2, 'avatar_12_perfil_serio', 'abajo-izq'],
+        [C.Wood + 3.2, C.Aprobada + 1.4, 'avatar_04_bajando_lentes', 'presentador'],
+        [C.Extra + 0.4, C.Extra + 3.4, 'avatar_05_sonriendo_dientes_uniformes', 'abajo-der'],
+        [C.Cierre + 0.3, C.Outro - 0.1, 'avatar_02_apuntando_camara', 'abajo-izq'],
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="05" hasta={C.Outro} />
-      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" />
+      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

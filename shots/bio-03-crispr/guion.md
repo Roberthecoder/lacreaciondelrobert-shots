@@ -25,6 +25,40 @@
 | 11 | Cierre | Así que las tijeras genéticas no las inventamos nosotros: las inventó lo que hay en tu yogur. | **El mismo yogur del inicio**, con la lupa "tijeras originales". |
 | — | Outro | (sin voz) | Cierre de marca. |
 
+## Robert en pantalla
+
+**Versión narrada (tiempos estimados; se ajustan a la voz)**
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 s | 3.6 s | sorprendido | gancho | "Este yogur… bacterias vacunadas" (gancho) |
+| 2 | 8.0 s | 10.6 s | serio | abajo-der | la bacteria que revienta |
+| 3 | 15.8 s | 18.6 s | bajando los lentes | abajo-izq | la fila de recuerdos |
+| 4 | 21.9 s | 24.9 s | pensativo (puño) | arriba-der | "¿Y si ese virus vuelve?" (re-gancho) |
+| 5 | 28.4 s | 31.8 s | señalando arriba | abajo-der | el corte: "Adiós" |
+| 6 | 38.2 s | 40.3 s | sorprendido | abajo-der | el tubo que resiste (experimento) |
+| 7 | 43.4 s | 46.4 s | sonriendo | presentador | el Nobel 2020 (dato fuerte) |
+| 8 | 49.3 s | 52.0 s | pensativo (mentón) | abajo-izq | 1 de cada 3 bacterias |
+| 9 | 52.4 s | 57.6 s | apuntando a cámara | abajo-der | "lo inventó lo que hay en tu yogur" |
+| — | 57.7 s | 61.2 s | apuntando a cámara | cierre | tarjeta de marca (`CierreMarca robert=`) |
+
+**Total:** 9 apariciones + cierre · **31.9 s en pantalla** (28.4 s + 3.5 s de cierre) · 8 poses distintas · grande (presentador) al menos 1 vez.
+
+**Gemelo mudo**
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 s | 3.5 s | sorprendido | gancho | "Esta bacteria se va a vacunar sola" (primer texto) |
+| 2 | 8.5 s | 11.5 s | señalando arriba | abajo-der | el recuerdo que entra a la fila |
+| 3 | 15.3 s | 18.0 s | serio | arriba-der | el virus que vuelve |
+| 4 | 24.0 s | 27.0 s | bajando los lentes | abajo-izq | el segundo virus |
+| 5 | 37.8 s | 40.6 s | sonriendo | abajo-der | el segundo corte |
+| 6 | 41.0 s | 45.0 s | sorprendido | presentador | la memoria como melodía (dato fuerte) |
+| 7 | 50.0 s | 53.5 s | pensativo (mentón) | abajo-izq | "esta todavía no" |
+| — | 58.0 s | 61.5 s | apuntando a cámara | cierre | tarjeta de marca (`CierreMarca robert=`) |
+
+**Total:** 7 apariciones + cierre · **26.0 s en pantalla** (22.5 s + 3.5 s de cierre) · 6 poses distintas · grande (presentador) al menos 1 vez.
+
 ## Música y sonido (`gen-audio.mjs`, sin costo)
 - **Fondo:** cama grave continua, sin golpe.
 - **Datos:** la fila CRISPR suena: cada repetición con la misma nota y cada espaciador con la nota de su virus (rosa = do, cian = sol, amarillo = re). Cuando entra un recuerdo nuevo, se toca la fila completa.

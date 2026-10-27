@@ -57,7 +57,7 @@ function FagosNarrado() {
             <Fago T={T} s={1.55} patas={kprog(T, C.Gancho + 0.4, C.Gancho + 0.8)} rot={mece(T, 3, 0.4) * 3} />
           </g>
         </svg>
-        <MitoTachado T={T} at={C.Gancho + 1.2} tacharEn={C.Gancho + 2.0} until={C.Aterriza - 0.2} texto="robot" x={830} y={420} />
+        <MitoTachado T={T} at={C.Gancho + 1.2} tacharEn={C.Gancho + 2.0} until={C.Aterriza - 0.2} texto="robot" x={250} y={420} />
         <Escala T={T} z={1} pxPorMm={3.3e6} y={1440} />
       </Escena>
 
@@ -112,7 +112,7 @@ function FagosNarrado() {
         <Etq T={T} at={C.Estudio + 3.4} until={E2} x={380} y={760} texto="Acinetobacter baumannii" it color={KC.ink} tam={30} />
         <Chip T={T} at={C.Estudio + 3.8} until={E2} texto="0 antibióticos sirven" y={430} borde={KC.red} tam={40} />
         {T > E2 + 1.2 && <Chip T={T} at={E2 + 1.2} until={C.Historia - 0.2} texto={'día ' + Math.min(3, 1 + Math.floor(kprog(T, E2 + 1.2, E2 + 3.6) * 3))} y={430} borde={KC.pink} tam={48} mono />}
-        <Chip T={T} at={E2 + 3.8} until={C.Historia - 0.2} texto="despertó" y={1100} borde={KC.leaf} tam={44} />
+        <Chip T={T} at={E2 + 3.8} until={C.Historia - 0.2} texto="despertó" x={300} y={1100} borde={KC.leaf} tam={44} />
       </Escena>
 
       {/* HISTORIA: d'Hérelle 1917, antes que la penicilina (1928) */}
@@ -171,11 +171,22 @@ function FagosNarrado() {
       <Subtitulo T={T} idx={11} at={C.Extra + 0.1} until={C.Cierre - 0.1} texto="Un 1 con *31 ceros.*" />
       <Subtitulo T={T} idx={12} at={C.Cierre + 0.1} until={C.Outro - 0.1} texto="La medicina *cuando ya no sirvan los antibióticos.*" />
 
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={C.Pregunta + 0.05} until={C.Selectivo + 0.3} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={E2 + 3.8} until={C.Historia - 0.2} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} apariciones={[
+        [0, 3.6, 'avatar_11_sorprendido', 'gancho'],
+        [C.Inyecta + 0.4, C.Fabrica - 0.1, 'avatar_13_senalando_arriba', 'abajo-der'],
+        [C.Revienta + 1.4, C.Pregunta - 0.1, 'avatar_11_sorprendido', 'abajo-der'],
+        [C.Pregunta, C.Selectivo + 1.0, 'avatar_07_pensativo_puno', 'abajo-izq'],
+        [S2 + 0.2, C.Estudio - 0.1, 'avatar_10_serio_molesto', 'abajo-izq'],
+        [C.Estudio + 3.6, E2 - 0.2, 'avatar_12_perfil_serio', 'abajo-izq'],
+        [E2 + 3.6, C.Historia + 1.0, 'avatar_05_sonriendo_dientes_uniformes', 'presentador'],
+        [C.Historia + 3.3, C.Extra + 0.9, 'avatar_08_recostado_mano', 'abajo-der'],
+        [C.Extra + 2.5, C.Cierre - 0.1, 'avatar_11_sorprendido', 'abajo-izq'],
+        [C.Cierre + 0.3, C.Outro - 0.1, 'avatar_02_apuntando_camara', 'abajo-izq'],
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="04" hasta={C.Outro} />
-      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" />
+      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

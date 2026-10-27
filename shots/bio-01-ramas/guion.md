@@ -28,6 +28,39 @@
 | 14 | Cierre | No es un arcoíris: es tu día, pintado por seres vivos. | **Regreso al arcoíris del inicio**, ahora con 11 bandas y cada medallón con su etiqueta. |
 | — | Outro | (sin voz) | Cierre de marca "Shot Biotecnológico". |
 
+## Robert en pantalla
+
+**Versión narrada (tiempos estimados; se ajustan a la voz)**
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 s | 3.4 s | sorprendido | gancho | "Esto no es un arcoíris…" (gancho) |
+| 2 | 9.5 s | 12.3 s | señalando arriba | abajo-izq | la insulina (rama roja) |
+| 3 | 19.6 s | 23.6 s | sonriendo | abajo-der | pan, queso y yogur |
+| 4 | 27.8 s | 31.0 s | pensativo (puño) | abajo-izq | "¿Y si la vida limpiara…?" (re-gancho) |
+| 5 | 37.9 s | 41.0 s | bajando los lentes | abajo-der | computadoras que leen ADN |
+| 6 | 43.3 s | 45.6 s | serio | abajo-izq | armas biológicas |
+| 7 | 48.6 s | 52.6 s | sorprendido | presentador | "insulina = roja + blanca + dorada" y la naranja (dato fuerte) |
+| 8 | 54.9 s | 58.1 s | apuntando a cámara | abajo-der | "es tu día, pintado por seres vivos" |
+| — | 58.2 s | 61.7 s | apuntando a cámara | cierre | tarjeta de marca (`CierreMarca robert=`) |
+
+**Total:** 8 apariciones + cierre · **29.5 s en pantalla** (26.0 s + 3.5 s de cierre) · 7 poses distintas · grande (presentador) al menos 1 vez.
+
+**Gemelo mudo**
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 s | 3.0 s | sorprendido | gancho | "ESTO NO ES UN ARCOÍRIS" (primer texto) |
+| 2 | 8.2 s | 11.2 s | señalando arriba | abajo-izq | la planta que crece |
+| 3 | 17.5 s | 20.5 s | sonriendo | abajo-der | pan y yogur |
+| 4 | 28.2 s | 31.5 s | pensativo (puño) | abajo-izq | el charco sucio (re-gancho) |
+| 5 | 38.2 s | 41.2 s | bajando los lentes | abajo-der | las letras del ADN |
+| 6 | 48.2 s | 51.2 s | serio | abajo-izq | armas biológicas |
+| 7 | 53.3 s | 56.6 s | sorprendido | presentador | todas las ramas juntas (dato fuerte) |
+| — | 58.0 s | 61.5 s | apuntando a cámara | cierre | tarjeta de marca (`CierreMarca robert=`) |
+
+**Total:** 7 apariciones + cierre · **25.1 s en pantalla** (21.6 s + 3.5 s de cierre) · 6 poses distintas · grande (presentador) al menos 1 vez.
+
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Fondo:** cama grave continua, sin golpe, debajo de la voz.
 - **Datos:** cada banda del arcoíris es una nota de la escala (10 ramas = 10 notas, de afuera hacia adentro; la naranja es la 11).

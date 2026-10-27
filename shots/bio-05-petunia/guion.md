@@ -26,6 +26,40 @@
 | 12 | Cierre | Así que no tiene pilas: tiene un hongo dando vueltas por dentro. | **La misma maceta del inicio**, con el ciclo girando chiquito sobre las flores. |
 | — | Outro | (sin voz) | Cierre de marca. |
 
+## Robert en pantalla
+
+**Versión narrada (tiempos estimados; se ajustan a la voz)**
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 s | 3.6 s | sorprendido | gancho | "Esta flor no tiene pilas…" (gancho) |
+| 2 | 6.4 s | 9.4 s | señalando arriba | abajo-der | los genes del hongo |
+| 3 | 13.3 s | 16.5 s | pensativo (puño) | abajo-izq | el ciclo de 4 enzimas |
+| 4 | 22.4 s | 25.7 s | sorprendido | arriba-der | la luz verde |
+| 5 | 29.4 s | 32.0 s | pensativo (mentón) | arriba-der | "¿Por qué nadie lo había logrado?" (re-gancho) |
+| 6 | 35.2 s | 37.8 s | de perfil, serio | abajo-izq | el tabaco de 1986 que se apaga |
+| 7 | 41.2 s | 44.8 s | bajando los lentes | presentador | Keith Wood cofundó la empresa (dato fuerte) |
+| 8 | 48.0 s | 51.0 s | sonriendo | abajo-der | "no se carga con el sol" |
+| 9 | 53.7 s | 57.3 s | apuntando a cámara | abajo-izq | "un hongo dando vueltas por dentro" |
+| — | 57.4 s | 60.9 s | apuntando a cámara | cierre | tarjeta de marca (`CierreMarca robert=`) |
+
+**Total:** 9 apariciones + cierre · **32.0 s en pantalla** (28.5 s + 3.5 s de cierre) · 8 poses distintas · grande (presentador) al menos 1 vez.
+
+**Gemelo mudo**
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 s | 3.5 s | sorprendido | gancho | "Esta flor no tiene pilas" (primer texto) |
+| 2 | 8.6 s | 11.6 s | bajando los lentes | arriba-der | las flores que se prenden |
+| 3 | 14.0 s | 17.0 s | pensativo (puño) | arriba-der | la primera enzima |
+| 4 | 21.5 s | 24.5 s | señalando arriba | arriba-der | la luz verde |
+| 5 | 30.0 s | 33.0 s | sonriendo | arriba-der | el ciclo que acelera |
+| 6 | 40.5 s | 44.5 s | sorprendido | presentador | la flor joven que brilla más (dato fuerte) |
+| 7 | 50.0 s | 53.0 s | pensativo (mentón) | arriba-der | el amanecer |
+| — | 58.0 s | 61.5 s | apuntando a cámara | cierre | tarjeta de marca (`CierreMarca robert=`) |
+
+**Total:** 7 apariciones + cierre · **26.0 s en pantalla** (22.5 s + 3.5 s de cierre) · 6 poses distintas · grande (presentador) al menos 1 vez.
+
 ## Música y sonido (`gen-audio.mjs`, sin costo)
 - **Fondo:** cama grave continua, sin golpe.
 - **Dato hecho sonido:** "la nota de la luz verde". La luz de ~530 nm vibra a ~5.66 × 10¹⁴ Hz; bajada 40 octavas queda en **~515 Hz**. Esa nota suena cada vez que algo brilla (flores, hongo, luciferasa, semáforo).

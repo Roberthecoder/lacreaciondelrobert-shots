@@ -25,6 +25,39 @@
 | 11 | Cierre | Esa vaca come pasto… pero vive de sus microbios. | **La misma vaca del inicio**, con la panza encendida y una lupa que muestra sus microbios. |
 | — | Outro | (sin voz) | Cierre de marca. |
 
+## Robert en pantalla
+
+**Versión narrada (tiempos estimados; se ajustan a la voz)**
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 s | 3.6 s | sorprendido | gancho | "Esa vaca no se alimenta de pasto…" (gancho) |
+| 2 | 9.1 s | 12.4 s | señalando arriba | abajo-der | la Lupa sobre el rumen |
+| 3 | 22.2 s | 25.5 s | pensativo (puño) | arriba-der | "¿Y la vaca qué gana?" (re-gancho) |
+| 4 | 30.7 s | 33.7 s | sonriendo | abajo-der | los microbios que se vuelven proteína |
+| 5 | 38.9 s | 43.1 s | bajando los lentes | abajo-izq | vaca 70 % contra tú 10 % |
+| 6 | 44.8 s | 48.0 s | sorprendido | presentador | el eructo con metano (dato chistoso) |
+| 7 | 51.2 s | 54.6 s | recostado | abajo-der | "biorreactor con patas" |
+| 8 | 55.1 s | 57.9 s | apuntando a cámara | abajo-izq | "vive de sus microbios" |
+| — | 58.0 s | 61.5 s | apuntando a cámara | cierre | tarjeta de marca (`CierreMarca robert=`) |
+
+**Total:** 8 apariciones + cierre · **30.3 s en pantalla** (26.8 s + 3.5 s de cierre) · 7 poses distintas · grande (presentador) al menos 1 vez.
+
+**Gemelo mudo**
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 s | 3.5 s | sorprendido | gancho | "Esta vaca no vive del pasto" (primer texto) |
+| 2 | 7.5 s | 10.5 s | sonriendo | abajo-der | el bocado que regresa |
+| 3 | 16.8 s | 19.8 s | señalando arriba | abajo-der | los microbios del rumen |
+| 4 | 25.5 s | 28.5 s | bajando los lentes | abajo-izq | la energía que sube a 70 % |
+| 5 | 34.0 s | 37.0 s | pensativo (puño) | abajo-der | microbios = proteína |
+| 6 | 42.4 s | 46.4 s | sorprendido | presentador | el eructo con metano (dato fuerte) |
+| 7 | 50.0 s | 53.0 s | recostado | abajo-der | el pasto que vuelve a crecer |
+| — | 58.0 s | 61.5 s | apuntando a cámara | cierre | tarjeta de marca (`CierreMarca robert=`) |
+
+**Total:** 7 apariciones + cierre · **26.0 s en pantalla** (22.5 s + 3.5 s de cierre) · 6 poses distintas · grande (presentador) al menos 1 vez.
+
 ## Música y sonido (`gen-audio.mjs`, sin costo)
 - **Fondo:** cama grave continua, sin golpe.
 - **Efectos en el mismo cuadro:** pasto que se arranca, masticadas (1 por segundo), barrido de la lupa, burbujas del rumen, 4 notas (4 tipos de microbio), crujido de la fibra, una nota por ácido que cruza la pared (según sus carbonos), aminoácidos, golpe de la tarjeta, **eructo sintetizado** y golpe del tache, clic metálico del biorreactor, acorde final.

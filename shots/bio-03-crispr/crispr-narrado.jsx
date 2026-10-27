@@ -29,7 +29,7 @@ function CrisprNarrado() {
         <FondoMarca T={T} color={KC.pink} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Yogur T={T} x={540} y={900} cuchara={kprog(T, C.Gancho + 0.1, C.Gancho + 1.3)} /></svg>
         <Lupa T={T} at={C.Gancho + 1.2} until={C.Ataque - 0.2} x={540} y={440} r={210} fx={540} fy={730} interior={(t, r) => <CadenaLupa T={t} r={r} brillo={kprog(t, C.Gancho + 2.2, C.Gancho + 2.8)} />} etiqueta="RAYOS X · yogur" tinte={KC.mint} />
-        <Etq T={T} at={C.Gancho + 1.9} until={C.Ataque - 0.2} x={760} y={300} texto="Streptococcus thermophilus" it tam={26} lado="der" />
+        <Etq T={T} at={C.Gancho + 1.9} until={C.Ataque - 0.2} x={40} y={1160} texto="Streptococcus thermophilus" it tam={26} lado="der" />
       </Escena>
 
       {/* ATAQUE: los fagos aterrizan, inyectan y una bacteria revienta */}
@@ -45,7 +45,7 @@ function CrisprNarrado() {
         </svg>
         <Etq T={T} at={C.Ataque + 1.4} until={C.Captura - 0.2} x={700} y={460} texto="fago" color={KC.pink} />
         <Escala T={T} z={1} pxPorMm={200000} y={1440} />
-        <Chip T={T} at={C.Ataque + 1.0} until={C.Captura - 0.2} texto="fagos agrandados ×5" x={780} y={1462} tam={26} mono borde={KC.pink} />
+        <Chip T={T} at={C.Ataque + 1.0} until={C.Captura - 0.2} texto="fagos agrandados ×5" x={780} y={1060} tam={26} mono borde={KC.pink} />
       </Escena>
 
       {/* CAPTURA + PREGUNTA + CORTE: adentro de una bacteria sobreviviente */}
@@ -100,7 +100,7 @@ function CrisprNarrado() {
             <Cas x={0} y={10} s={0.8} guia={KC.red} corta={0.3 + 0.3 * Math.sin(T * 4)} T={T} />
           </g>
         </svg>}
-        <Chip T={T} at={C.Nobel + 3.0} until={C.Extra - 0.2} texto="Nobel de Química 2020" y={1090} borde={KC.gold} tam={44} />
+        <Chip T={T} at={C.Nobel + 3.0} until={C.Extra - 0.2} texto="Nobel de Química 2020" y={470} borde={KC.gold} tam={44} />
       </Escena>
 
       {/* EXTRA: 1 de cada 3 bacterias, 3 de cada 4 arqueas */}
@@ -140,11 +140,21 @@ function CrisprNarrado() {
       <Subtitulo T={T} idx={10} at={C.Extra + 0.1} until={C.Cierre - 0.1} texto="Y no es raro: *lo traen muchísimas.*" />
       <Subtitulo T={T} idx={11} at={C.Cierre + 0.1} until={C.Outro - 0.1} texto="Las inventó *lo que hay en tu yogur.*" />
 
-      <Sticker T={T} src={AVS('avatar_10_serio_molesto')} at={C.Pregunta + 0.05} until={C.Corte + 1.0} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={C.Nobel + 3.2} until={C.Extra - 0.2} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} apariciones={[
+        [0, 3.6, 'avatar_11_sorprendido', 'gancho'],
+        [C.Ataque + 3.4, C.Ataque + 6.0, 'avatar_10_serio_molesto', 'abajo-der'],
+        [C.Captura + 5.1, C.Captura + 7.9, 'avatar_04_bajando_lentes', 'abajo-izq'],
+        [C.Pregunta, C.Corte + 1.3, 'avatar_07_pensativo_puno', 'arriba-der'],
+        [C.Corte + 4.8, C.Estudio - 0.5, 'avatar_13_senalando_arriba', 'abajo-der'],
+        [C.Estudio + 5.9, C.Nobel - 0.1, 'avatar_11_sorprendido', 'abajo-der'],
+        [C.Nobel + 3.0, C.Extra - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'presentador'],
+        [C.Extra + 2.8, C.Cierre - 0.1, 'avatar_06_pensativo_menton', 'abajo-izq'],
+        [C.Cierre + 0.3, C.Outro - 0.1, 'avatar_02_apuntando_camara', 'abajo-der'],
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="03" hasta={C.Outro} />
-      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" />
+      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

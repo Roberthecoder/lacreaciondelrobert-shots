@@ -79,15 +79,24 @@ function VacasMudo() {
 
       <Capitulo T={T} caps={caps} hasta={C.Outro} />
       {/* primer texto (gancho) y su regreso al final */}
-      {(T < C.Bocado - 0.3 || T > C.Suelo + 5.5) && <Chip T={T} at={T < C.Bocado ? 0 : C.Suelo + 5.5} until={T < C.Bocado ? C.Bocado - 0.6 : null} texto="Esta vaca no vive del pasto" y={470} tam={48} borde={KC.ink} />}
+      {(T < C.Bocado - 0.3 || T > C.Suelo + 5.5) && <Chip T={T} at={T < C.Bocado ? 0 : C.Suelo + 5.5} until={T < C.Bocado ? C.Bocado - 0.6 : null} texto="Esta vaca no vive del pasto" y={1250} tam={48} borde={KC.ink} />}
       <Subtitulo T={T} at={C.Bocado + 1.4} until={C.Rumen - 0.2} texto="Regresa el bocado *y lo mastica otra vez*" />
       <Subtitulo T={T} at={C.Rumen + 3} until={C.Energia - 0.2} texto="Lo que digiere el pasto *son sus microbios*" />
       <Subtitulo T={T} at={C.Energia + 0.4} until={C.Proteina - 0.2} texto="~70 % de su energía: *ácidos de microbios*" />
       <Subtitulo T={T} at={C.Proteina + 0.4} until={C.Eructo - 0.2} texto="Y se come *a sus microbios*" />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={C.Eructo + 2.2} until={C.Suelo - 0.4} lado="abajo-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} apariciones={[
+        [0, 3.5, 'avatar_11_sorprendido', 'gancho'],
+        [C.Bocado + 0.5, C.Bocado + 3.5, 'avatar_05_sonriendo_dientes_uniformes', 'abajo-der'],
+        [C.Rumen + 2.8, C.Rumen + 5.8, 'avatar_13_senalando_arriba', 'abajo-der'],
+        [C.Energia + 1.5, C.Energia + 4.5, 'avatar_04_bajando_lentes', 'abajo-izq'],
+        [C.Proteina + 1.0, C.Proteina + 4.0, 'avatar_07_pensativo_puno', 'abajo-der'],
+        [C.Eructo + 1.4, C.Eructo + 5.4, 'avatar_11_sorprendido', 'presentador'],
+        [C.Suelo + 3.0, C.Suelo + 6.0, 'avatar_08_recostado_mano', 'abajo-der'],
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="02" hasta={C.Outro} />
-      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" />
+      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );

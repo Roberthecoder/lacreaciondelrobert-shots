@@ -114,11 +114,20 @@ function RamasNarrado() {
       <Subtitulo T={T} idx={14} at={C.Cierre + 0.1} until={C.Outro - 0.1} texto="Es tu día, *pintado por seres vivos.*" />
 
       {/* stickers de reacción (re-ganchos) */}
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={C.Pregunta + 0.1} until={C.Gris + 0.4} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={C.Estudio + 3.4} until={C.Naranja - 0.2} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} apariciones={[
+        [0, C.Def - 1.2, 'avatar_11_sorprendido', 'gancho'],
+        [C.Rojo + 0.1, C.Verde - 0.2, 'avatar_13_senalando_arriba', 'abajo-izq'],
+        [C.Amarillo - 0.4, C.Azul - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'abajo-der'],
+        [C.Pregunta, C.Gris + 0.5, 'avatar_07_pensativo_puno', 'abajo-izq'],
+        [C.Dorado, C.Morado - 0.1, 'avatar_04_bajando_lentes', 'abajo-der'],
+        [C.Morado + 2.2, C.Estudio - 0.2, 'avatar_10_serio_molesto', 'abajo-izq'],
+        [C.Estudio + 2.8, C.Naranja + 1.8, 'avatar_11_sorprendido', 'presentador'],
+        [C.Cierre + 0.1, C.Outro - 0.1, 'avatar_02_apuntando_camara', 'abajo-der'],
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="01" hasta={C.Outro} />
-      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" />
+      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

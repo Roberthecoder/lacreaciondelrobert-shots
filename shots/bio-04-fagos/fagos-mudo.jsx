@@ -46,16 +46,25 @@ function FagosMudo() {
       </div>}
 
       <Capitulo T={T} caps={caps} hasta={C.Outro} />
-      {(T < C.Inyecta - 0.4 || T > C.Vuelta + 6) && <Chip T={T} at={T < C.Inyecta ? 0 : C.Vuelta + 6} until={T < C.Inyecta ? C.Inyecta - 0.8 : null} texto="Este virus solo come bacterias" y={520} tam={44} borde={KC.pink} />}
+      {(T < C.Inyecta - 0.4 || T > C.Vuelta + 6) && <Chip T={T} at={T < C.Inyecta ? 0 : C.Vuelta + 6} until={T < C.Inyecta ? C.Inyecta - 0.8 : null} texto="Este virus solo come bacterias" y={1340} tam={44} borde={KC.pink} />}
       <Etq T={T} at={0.4} until={C.Inyecta - 0.4} x={150} y={1290} texto="Escherichia coli" it color={ECOLI} />
       <Etq T={T} at={C.Vuelta + 6.4} until={C.Outro} x={150} y={1290} texto="Escherichia coli" it color={ECOLI} />
       <Subtitulo T={T} at={C.Inyecta + 0.4} until={C.Copias - 0.2} texto="Cola de jeringa: *inyecta su ADN*" />
       <Subtitulo T={T} at={C.Copias + 0.4} until={C.Revienta - 0.2} texto="La bacteria *solo hace fagos*" />
       <Subtitulo T={T} at={C.Revienta + 1.2} until={C.Placa - 0.2} texto="~25 minutos: *revienta*" />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={C.Revienta + 1.4} until={C.Placa - 0.3} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} apariciones={[
+        [0, 3.5, 'avatar_11_sorprendido', 'gancho'],
+        [C.Inyecta + 1.0, C.Inyecta + 4.0, 'avatar_13_senalando_arriba', 'abajo-der'],
+        [C.Copias + 3.0, C.Copias + 6.0, 'avatar_07_pensativo_puno', 'arriba-der'],
+        [C.Revienta + 1.4, C.Revienta + 5.0, 'avatar_11_sorprendido', 'presentador'],
+        [C.Placa + 3.0, C.Placa + 6.0, 'avatar_04_bajando_lentes', 'abajo-izq'],
+        [C.Placa + 10.0, C.Vuelta + 0.0, 'avatar_10_serio_molesto', 'abajo-izq'],
+        [C.Vuelta + 5.0, C.Vuelta + 8.0, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="04" hasta={C.Outro} />
-      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" />
+      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );

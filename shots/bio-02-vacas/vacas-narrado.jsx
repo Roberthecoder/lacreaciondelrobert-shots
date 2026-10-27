@@ -76,7 +76,7 @@ function VacasNarrado() {
         {vacaGancho({ brillo: kprog(T, C.Rumen + 0.2, C.Rumen + 0.8) })}
         <Lupa T={T} at={C.Rumen + 0.15} until={C.Micro - 0.2} x={560} y={450} r={220} fx={446} fy={889} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="RAYOS X · estómago" />
         <Etq T={T} at={C.Rumen + 0.8} until={C.Micro - 0.2} x={330} y={380} texto="rumen" lado="izq" color={KC.yellow} />
-        <Chip T={T} at={C.Rumen + 1.8} until={C.Micro - 0.2} texto="tibio · sin oxígeno" y={1480} borde={KC.cyan} tam={38} />
+        <Chip T={T} at={C.Rumen + 1.8} until={C.Micro - 0.2} texto="tibio · sin oxígeno" x={330} y={1490} borde={KC.cyan} tam={38} />
       </Escena>
 
       {/* MICRO + PREGUNTA: adentro del rumen */}
@@ -159,11 +159,20 @@ function VacasNarrado() {
       <Subtitulo T={T} idx={10} at={C.Biorreactor + 0.1} until={C.Cierre - 0.1} texto="El pasto es el medio; *los microbios, la fábrica.*" />
       <Subtitulo T={T} idx={11} at={C.Cierre + 0.1} until={C.Outro - 0.1} texto="Come pasto… *pero vive de sus microbios.*" />
 
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={C.Pregunta + 0.05} until={C.Acidos + 0.3} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_04_bajando_lentes')} at={C.Metano + 2.4} until={C.Biorreactor - 0.2} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} apariciones={[
+        [0, 3.6, 'avatar_11_sorprendido', 'gancho'],
+        [C.Rumen + 0.4, C.Micro - 0.3, 'avatar_13_senalando_arriba', 'abajo-der'],
+        [C.Pregunta, C.Acidos + 1.8, 'avatar_07_pensativo_puno', 'arriba-der'],
+        [C.Proteina + 0.5, C.Proteina + 3.5, 'avatar_05_sonriendo_dientes_uniformes', 'abajo-der'],
+        [C.Estudio + 3.2, C.Metano - 0.3, 'avatar_04_bajando_lentes', 'abajo-izq'],
+        [C.Metano + 1.4, C.Biorreactor - 0.2, 'avatar_11_sorprendido', 'presentador'],
+        [C.Biorreactor + 3.0, C.Cierre - 0.3, 'avatar_08_recostado_mano', 'abajo-der'],
+        [C.Cierre + 0.2, C.Outro - 0.1, 'avatar_02_apuntando_camara', 'abajo-izq'],
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="02" hasta={C.Outro} />
-      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" />
+      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

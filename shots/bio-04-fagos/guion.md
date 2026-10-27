@@ -26,6 +26,41 @@
 | 12 | Cierre | Así que ese robot no es de película: puede ser la medicina cuando ya no sirvan los antibióticos. | **El mismo fago gigante del inicio**, junto a un frasco "FAGOS"; "robot" tachado y chip "fagoterapia". |
 | — | Outro | (sin voz) | Cierre de marca. |
 
+## Robert en pantalla
+
+**Versión narrada (tiempos estimados; se ajustan a la voz)**
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 s | 3.6 s | sorprendido | gancho | "Esto no es un robot…" (gancho) |
+| 2 | 8.5 s | 11.1 s | señalando arriba | abajo-der | la inyección de ADN |
+| 3 | 17.3 s | 20.0 s | sorprendido | abajo-der | la bacteria que revienta |
+| 4 | 20.1 s | 23.0 s | pensativo (puño) | abajo-izq | "¿Y si eso pasa dentro de ti?" (re-gancho) |
+| 5 | 26.8 s | 29.6 s | serio | abajo-izq | la superbacteria |
+| 6 | 33.3 s | 35.8 s | de perfil, serio | abajo-izq | Tom Patterson en coma |
+| 7 | 39.6 s | 42.4 s | sonriendo | presentador | "…y despertó" (dato fuerte) |
+| 8 | 44.7 s | 47.4 s | recostado | abajo-der | 11 años antes que la penicilina |
+| 9 | 49.0 s | 52.0 s | sorprendido | abajo-izq | 10³¹ fagos |
+| 10 | 52.4 s | 57.8 s | apuntando a cámara | abajo-izq | "puede ser la medicina" |
+| — | 57.9 s | 61.4 s | apuntando a cámara | cierre | tarjeta de marca (`CierreMarca robert=`) |
+
+**Total:** 10 apariciones + cierre · **34.5 s en pantalla** (31.0 s + 3.5 s de cierre) · 8 poses distintas · grande (presentador) al menos 1 vez.
+
+**Gemelo mudo**
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 s | 3.5 s | sorprendido | gancho | "Este virus solo come bacterias" (primer texto) |
+| 2 | 8.0 s | 11.0 s | señalando arriba | abajo-der | la inyección |
+| 3 | 17.0 s | 20.0 s | pensativo (puño) | arriba-der | la fábrica de fagos |
+| 4 | 26.4 s | 30.0 s | sorprendido | presentador | la bacteria que revienta (dato fuerte) |
+| 5 | 35.0 s | 38.0 s | bajando los lentes | abajo-izq | las calvas de la placa |
+| 6 | 42.0 s | 45.0 s | serio | abajo-izq | 40 000 fagos |
+| 7 | 50.0 s | 53.0 s | sonriendo | arriba-der | otra bacteria, otro fago |
+| — | 58.0 s | 61.5 s | apuntando a cámara | cierre | tarjeta de marca (`CierreMarca robert=`) |
+
+**Total:** 7 apariciones + cierre · **25.6 s en pantalla** (22.1 s + 3.5 s de cierre) · 6 poses distintas · grande (presentador) al menos 1 vez.
+
 ## Música y sonido (`gen-audio.mjs`, sin costo)
 - **Fondo:** cama grave continua, sin golpe.
 - **Efectos en el mismo cuadro:** caída y rebote del fago, aterrizaje, inyección (ruido que baja), reloj del time-lapse, notas de los fagos que se arman, **estallido** con 30 "pops", rebote de la célula, cápsulas metálicas, monitor del hospital, nota que sube al despertar, 31 tics = 31 ceros.

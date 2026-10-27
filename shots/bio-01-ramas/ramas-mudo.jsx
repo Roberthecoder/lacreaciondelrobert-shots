@@ -47,15 +47,24 @@ function RamasMudo() {
       </div>}
 
       {/* primer texto (gancho) y su regreso al final: el loop */}
-      {enInicio && <div style={{ position:'absolute', left:0, right:0, top:430, zIndex:44, textAlign:'center', opacity:T < C.Rojo ? 1 - kprog(T, C.Rojo - 0.7, C.Rojo - 0.3) : kprog(T, C.Todo + 3.6, C.Todo + 4.0) }}>
+      {enInicio && <div style={{ position:'absolute', left:0, right:0, top:1250, zIndex:44, textAlign:'center', opacity:T < C.Rojo ? 1 - kprog(T, C.Rojo - 0.7, C.Rojo - 0.3) : kprog(T, C.Todo + 3.6, C.Todo + 4.0) }}>
         <span style={{ display:'inline-block', background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:24, padding:'8px 30px 12px', font:`400 78px/1 ${KF.titulo}`, color:KC.ink, boxShadow:`10px 10px 0 ${KC.ink}`, transform:`rotate(-2deg) scale(${1 + 0.03 * Math.sin(T * 7.54)})` }}>ESTO NO ES UN ARCOÍRIS</span>
       </div>}
       {orden.map((k, i) => <Subtitulo key={k} T={T} at={INI[k] + 0.6} until={(i < 9 ? INI[orden[i + 1]] : C.Todo) - 0.25} texto={MUDO_SUB[k]} />)}
       <Subtitulo T={T} at={C.Todo + 0.3} until={C.Todo + 3.3} texto="Es lo que la biotecnología *ya hizo por ti hoy*" />
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={INI.gris + 0.2} until={INI.gris + 1.6} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} apariciones={[
+        [0, 3.0, 'avatar_11_sorprendido', 'gancho'],
+        [C.Verde + 0.2, C.Verde + 3.2, 'avatar_13_senalando_arriba', 'abajo-izq'],
+        [C.Amarillo - 0.5, C.Amarillo + 2.5, 'avatar_05_sonriendo_dientes_uniformes', 'abajo-der'],
+        [C.Gris + 0.2, C.Gris + 3.5, 'avatar_07_pensativo_puno', 'abajo-izq'],
+        [C.Dorado + 0.2, C.Dorado + 3.2, 'avatar_04_bajando_lentes', 'abajo-der'],
+        [C.Negro + 0.2, C.Negro + 3.2, 'avatar_10_serio_molesto', 'abajo-izq'],
+        [C.Todo + 0.3, C.Todo + 3.6, 'avatar_11_sorprendido', 'presentador'],
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="01" hasta={C.Outro} />
-      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" />
+      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );

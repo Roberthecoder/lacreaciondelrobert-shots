@@ -72,7 +72,7 @@ function CrisprMudo() {
       </div>}
 
       <Capitulo T={T} caps={caps} hasta={C.Outro} />
-      {(T < C.Captura - 0.4 || T > C.Vecina + 5.2) && <Chip T={T} at={T < C.Captura ? 0 : C.Vecina + 5.2} until={T < C.Captura ? C.Captura - 0.8 : null} texto="Esta bacteria se va a vacunar sola" y={470} tam={42} borde={KC.mint} />}
+      {(T < C.Captura - 0.4 || T > C.Vecina + 5.2) && <Chip T={T} at={T < C.Captura ? 0 : C.Vecina + 5.2} until={T < C.Captura ? C.Captura - 0.8 : null} texto="Esta bacteria se va a vacunar sola" y={1390} tam={42} borde={KC.mint} />}
       <Etq T={T} at={1.6} until={C.Captura - 0.4} x={700} y={1130} texto="ADN del virus" color={KC.pink} />
       <Etq T={T} at={C.Captura + 3.4} until={C.Vuelve} x={760} y={650} texto="CRISPR" color={KC.gold2} />
       <Chip T={T} at={C.Vuelve + 4.8} until={C.Llega2} texto="CORTE" y={470} tam={52} borde={KC.red} />
@@ -81,11 +81,20 @@ function CrisprMudo() {
       <Subtitulo T={T} at={C.Vuelve + 0.5} until={C.Llega2 - 0.2} texto="Si vuelve, *lo reconoce y lo corta*" />
       <Subtitulo T={T} at={C.Memoria + 0.5} until={C.Vecina - 0.2} texto="Su memoria: *cada color, un virus*" />
       <Subtitulo T={T} at={C.Vecina + 0.5} until={C.Vecina + 5} texto="Así nació *CRISPR*" />
-      <Sticker T={T} src={AVS('avatar_10_serio_molesto')} at={C.Vuelve + 0.3} until={C.Vuelve + 2.5} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} apariciones={[
+        [0, 3.5, 'avatar_11_sorprendido', 'gancho'],
+        [C.Captura + 2.5, C.Captura + 5.5, 'avatar_13_senalando_arriba', 'abajo-der'],
+        [C.Vuelve + 0.3, C.Vuelve + 3.0, 'avatar_10_serio_molesto', 'arriba-der'],
+        [C.Llega2 + 2.0, C.Llega2 + 5.0, 'avatar_04_bajando_lentes', 'abajo-izq'],
+        [C.Vuelve2 + 3.8, C.Memoria + 0.6, 'avatar_05_sonriendo_dientes_uniformes', 'abajo-der'],
+        [C.Memoria + 1.0, C.Memoria + 5.0, 'avatar_11_sorprendido', 'presentador'],
+        [C.Vecina + 2.0, C.Vecina + 5.5, 'avatar_06_pensativo_menton', 'abajo-izq'],
+      ]} />
       <Etq T={T} at={0.2} until={C.Captura - 0.4} x={150} y={1500} texto="Streptococcus thermophilus" it tam={26} color={COCO} />
 
       <MarcaAgua T={T} tema="bioquimica" num="03" hasta={C.Outro} />
-      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" />
+      <CierreMarca T={T} at={C.Outro} tema="bioquimica" frase="Shot Biotecnológico" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );
