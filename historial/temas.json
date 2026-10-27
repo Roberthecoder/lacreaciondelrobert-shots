@@ -19,36 +19,6 @@
   },
   "temas": [
     {
-<<<<<<< HEAD
-      "id": "cepario",
-      "titulo": "Cepario",
-      "serie": "Shot Biotecnológico",
-      "numero": 23,
-      "estado": "publicado"
-    },
-    {
-      "id": "lab-comestibles",
-      "titulo": "Cosas del laboratorio que te puedes comer",
-      "serie": "Shot Lab",
-      "numero": 25,
-      "estado": "confirmar"
-    },
-    {
-      "id": "micelio",
-      "titulo": "El micelio",
-      "serie": "Shot Micológico",
-      "numero": 1,
-      "estado": "confirmar"
-    },
-    {
-      "id": "hormiga-zombi",
-      "titulo": "El hongo que convierte hormigas en zombis (Ophiocordyceps)",
-      "serie": "Shot",
-      "numero": 1,
-      "estado": "borrador",
-      "versiones": [
-        "sin-voz"
-=======
       "id": "hormiga-zombi",
       "titulo": "El hongo que convierte hormigas en zombis (Ophiocordyceps)",
       "serie": "Shot (sin serie, demo)",
@@ -68,22 +38,11 @@
         "Cordyceps militaris: el pariente que sí se cultiva y se vende",
         "Hongos que cazan gusanos con lazos (Arthrobotrys)",
         "Parásitos que cambian la conducta: Toxoplasma y los ratones"
->>>>>>> origin/main
       ]
     },
     {
       "id": "moho-pan",
       "titulo": "El moho del pan (Rhizopus stolonifer): por dentro y su ciclo",
-<<<<<<< HEAD
-      "serie": "Shot Micológico",
-      "numero": 2,
-      "estado": "construido, falta voz",
-      "versiones": [
-        "narrada (Por dentro)",
-        "sin-voz (Ciclo)"
-      ],
-      "nota": "Badge #02: confirmar numeración con Robert"
-=======
       "serie": "Shot Fungi Mati",
       "numero": 1,
       "estado": "guion",
@@ -101,20 +60,10 @@
         "Penicillium: del moho de la naranja a la penicilina",
         "Por qué el pan de caja tarda más en enmohecerse (conservadores)"
       ]
->>>>>>> origin/main
     },
     {
       "id": "arboles-lunares",
       "titulo": "Las semillas que viajaron a la Luna (árboles lunares del Apolo 14)",
-<<<<<<< HEAD
-      "serie": "Shot",
-      "numero": 3,
-      "estado": "demo visual sin voz",
-      "versiones": [
-        "narrada (Por dentro + El experimento)"
-      ],
-      "nota": "Gemelo mudo (Ciclo) propuesto, no construido. Voz pendiente de aprobación."
-=======
       "serie": "Shot Científico",
       "numero": 1,
       "estado": "renderizado",
@@ -486,21 +435,12 @@
         "Arc: el gen de la memoria que viene de un virus"
       ],
       "remaster_de": "lista vieja #8"
->>>>>>> origin/main
     },
     {
       "id": "que-es-un-hongo",
       "titulo": "¿Qué es un hongo? (micelio, hifas, cuerpo fructífero, levaduras)",
       "serie": "Shot Fungi Mati",
       "numero": 2,
-<<<<<<< HEAD
-      "estado": "construido, falta voz",
-      "versiones": [
-        "narrada (Por dentro)",
-        "sin-voz (Ciclo del champiñón)"
-      ],
-      "nota": "Remaster del viejo #2. Carpeta shots/fun-02-que-es-un-hongo"
-=======
       "estado": "guion",
       "carpeta": "shots/fun-02-que-es-un-hongo",
       "rama": "remaster/lote-d",
@@ -518,21 +458,12 @@
         "La red del bosque: micorrizas que conectan raíces"
       ],
       "remaster_de": "lista vieja #2"
->>>>>>> origin/main
     },
     {
       "id": "seta-rosa",
       "titulo": "Esto no es plástico: la seta rosa (Pleurotus djamor) y qué detona la fructificación",
       "serie": "Shot Fungi Mati",
       "numero": 3,
-<<<<<<< HEAD
-      "estado": "construido, falta voz",
-      "versiones": [
-        "narrada (Por dentro + Experimento)",
-        "sin-voz (77 días, de esporada a cosecha)"
-      ],
-      "nota": "Remaster del viejo #3, con fotos reales del cultivo de Robert. shots/fun-03-seta-rosa"
-=======
       "estado": "guion",
       "carpeta": "shots/fun-03-seta-rosa",
       "rama": "remaster/lote-d",
@@ -550,21 +481,12 @@
         "Por qué los hongos salen después de la lluvia"
       ],
       "remaster_de": "lista vieja #3"
->>>>>>> origin/main
     },
     {
       "id": "metales-pesados-hongos",
       "titulo": "¿Los hongos tienen metales pesados? (acumulación, hervir, digestión)",
       "serie": "Shot Fungi Mati",
       "numero": 4,
-<<<<<<< HEAD
-      "estado": "construido, falta voz",
-      "versiones": [
-        "narrada (Por dentro + Número)",
-        "sin-voz (¿Por qué NO recoger hongos junto a la carretera?)"
-      ],
-      "nota": "Remaster del viejo #15 con correcciones (quitina quitada). shots/fun-04-metales-pesados"
-=======
       "estado": "guion",
       "carpeta": "shots/fun-04-metales-pesados",
       "rama": "remaster/lote-d",
@@ -583,21 +505,12 @@
         "Quitina: la pared de los hongos y el caparazón del camarón"
       ],
       "remaster_de": "lista vieja #15"
->>>>>>> origin/main
     },
     {
       "id": "agar",
       "titulo": "El agar: polisacárido de algas rojas que gelifica y casi nadie digiere",
       "serie": "Shot Químico",
       "numero": 1,
-<<<<<<< HEAD
-      "estado": "construido, falta voz",
-      "versiones": [
-        "narrada (Capítulos y medidores)",
-        "sin-voz (¿Por qué NO usar gelatina?)"
-      ],
-      "nota": "Remaster del viejo #16. shots/qui-01-agar"
-=======
       "estado": "guion",
       "carpeta": "shots/qui-01-agar",
       "rama": "remaster/lote-d",
@@ -615,21 +528,12 @@
         "Fanny Hesse: la cocina que cambió la microbiología"
       ],
       "remaster_de": "lista vieja #16"
->>>>>>> origin/main
     },
     {
       "id": "estriado-agotamiento",
       "titulo": "Estriado por agotamiento: 5 errores comunes",
       "serie": "Shot Químico",
       "numero": 2,
-<<<<<<< HEAD
-      "estado": "construido, falta voz",
-      "versiones": [
-        "sin-voz protagonista (¿Por qué NO…? 5 errores)",
-        "narrada (4 zonas = 4 capítulos)"
-      ],
-      "nota": "Remaster del viejo #20. shots/qui-02-estriado"
-=======
       "estado": "guion",
       "carpeta": "shots/qui-02-estriado",
       "rama": "remaster/lote-d",
@@ -729,7 +633,13 @@
       "fecha": null,
       "derivados": [],
       "nota": "Del historial anterior; confirmar con Robert si se publicó. Cercano a que-es-un-hongo."
->>>>>>> origin/main
+    },
+    {
+      "id": "cepario",
+      "titulo": "Cepario",
+      "serie": "Shot Biotecnológico",
+      "numero": 23,
+      "estado": "publicado"
     }
   ]
 }
