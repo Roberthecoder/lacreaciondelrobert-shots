@@ -10,6 +10,7 @@ Robert abre una sesión en claude.ai/code con este repositorio y escribe algo co
   `PRODUCCION_NUBE.md` con 5 shots (o los que diga), numerados desde el siguiente número libre de esa serie
   (búscalo en `shots/`, `historial/` y en las ramas remotas). Series: Biotecnológico, Fungi Mati, Ambiental, IA,
   Científico, Químico y **Robert** (datos curiosos de Robert: lee antes `series/shot-robert/CLAUDE.md`).
+  **La serie Robert es solo manual:** únicamente cuando Robert la pide en persona. Las rutinas automáticas nunca la hacen.
   Antes de empezar, revisa con `git branch -r` que no haya otra rama trabajando la misma serie; si la hay, avísale a Robert
   y propón otra serie.
 - **"Continúa el lote A/B/C/D"**: haz merge de `origin/remaster/lote-<letra>` en tu rama, revisa qué falta en cada shot

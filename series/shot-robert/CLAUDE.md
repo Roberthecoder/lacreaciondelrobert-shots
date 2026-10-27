@@ -2,6 +2,9 @@
 
 Serie nueva (pedida por Robert el 27 oct 2026). Shots verticales de 61–62 s donde Robert cuenta, en primera persona,
 datos curiosos de su vida, su historia y su forma de ser. Para que la gente lo conozca y conecte la ciencia del canal con él.
+**Solo manual y orgánica (decisión de Robert, 27 oct 2026):** esta serie no entra en ningún lote automático ni rutina programada.
+Se hace únicamente cuando Robert la pide en una sesión, un shot a la vez, y con él revisando el tema y los datos antes de construirlo.
+
 Todo lo de `CLAUDE.md` raíz aplica (duración, ganchos, Robert en pantalla, `publicacion.md`, banco de temas), con estos cambios:
 
 ## Qué cambia en esta serie
