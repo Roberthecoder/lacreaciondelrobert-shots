@@ -36,7 +36,7 @@ igual que el resto del motor, así que funcionan en la versión narrada (tiempos
 | `Cuadricula` | Cuadrícula que se llena por tramos de color | N4 |
 | `Comparativa` | Dos barras: "Tú vs. el de al lado" | N2 |
 | `MarcaAgua` | Logo + badge `#NN` arriba a la izquierda | todos |
-| `Sticker` | Una aparición de Robert: `arriba-der`, `abajo-der`, `abajo-izq`, `gancho` (cuadro 0), `presentador` (medio cuerpo grande) | todos |
+| `Sticker` | Una aparición de Robert: `arriba-der`, `abajo-der`, `abajo-izq`, `gancho` (cuadro 0), `presentador` (medio cuerpo grande), `bajo-der` y `presentador-bajo` (debajo del subtítulo: nunca lo tapan) | todos |
 | `Robert` | Todas las apariciones de Robert en una lista `[[at, until, pose, lado], …]` (ver regla en `CLAUDE.md`) | todos |
 | `CierreMarca robert=` | Robert junto al logo en la tarjeta final (obligatorio) | todos |
 | `CierreMarca` | Oscurece la última imagen y muestra la marca (3–4 s) | todos |

@@ -25,6 +25,38 @@
 | 11 | Cierre | Así que ese champiñón no es el hongo: es la única parte de él que alcanzas a ver. | **Regreso a la imagen del inicio**, ahora con el micelio iluminado: "lo que ves: el fruto" / "el hongo: el micelio". |
 | — | Outro | (sin voz) | Cierre de marca. |
 
+## Robert en pantalla
+
+Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 apariciones y 18 s, una vez grande, 4 poses o más, y Robert junto al logo en el cierre. Nunca tapa el subtítulo: abajo usa los lados `bajo-der` y `presentador-bajo`, que quedan debajo de él.
+
+**Versión narrada:** 8 apariciones + cierre · **24.4 s** en pantalla · 7 poses.
+
+| Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|
+| 0.0 s | 3.4 s | sorprendido | `gancho` | “Ese champiñón no es el hongo: es su fruto. El hongo de verdad está escondido abajo.” |
+| 9.0 s | 12.2 s | señalando | `bajo-der` | “Bajo la tierra hay hilos blancos, mucho más delgados que un pelo: se llaman hifas.” |
+| 18.0 s | 21.2 s | pensativo (puño) | `bajo-der` | “No tiene raíces ni hojas, y no hace fotosíntesis.” |
+| 22.7 s | 25.2 s | pensativo (mentón) | `arriba-der` | “¿Entonces para qué sale un champiñón?” |
+| 27.5 s | 31.0 s | apuntando a cámara | `presentador-bajo` | “Con la humedad y la temperatura correctas, el micelio arma un cuerpo fructífero para soltar sus esporas.” |
+| 41.4 s | 43.4 s | sorprendido | `bajo-der` | “En 1993, Sandra Baldauf y Jeffrey Palmer compararon proteínas y vieron que los hongos son más parientes de los animales que de las plantas.” |
+| 44.5 s | 47.2 s | bajando los lentes | `bajo-der` | “Su pared es de quitina, como el caparazón de un escarabajo.” |
+| 53.5 s | 57.4 s | sonriendo | `bajo-der` | “Así que ese champiñón no es el hongo: es la única parte de él que alcanzas a ver.” |
+| cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
+
+**Gemelo mudo:** 8 apariciones + cierre · **26.1 s** en pantalla · 7 poses.
+
+| Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|
+| 0.0 s | 3.5 s | sorprendido | `gancho` | escena Espora |
+| 8.0 s | 11.0 s | señalando | `bajo-der` | escena Germina |
+| 16.5 s | 19.5 s | pensativo (puño) | `arriba-der` | escena Red |
+| 25.0 s | 28.0 s | sorprendido | `arriba-der` | escena Une |
+| 31.0 s | 34.0 s | pensativo (mentón) | `arriba-der` | escena Nudo |
+| 36.5 s | 40.5 s | apuntando a cámara | `presentador-bajo` | escena Crece |
+| 48.2 s | 51.5 s | bajando los lentes | `arriba-der` | escena Esporas |
+| 54.5 s | 57.8 s | sonriendo | `bajo-der` | escena Otro |
+| cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
+
 ## Música y sonido (`gen-audio.mjs`, sin costo)
 - **Narrada:** cama grave continua sin golpe, más grave bajo tierra. Efecto en el mismo cuadro: brote (pop), esporas (soplo), rayos X (nota que sube), tachones (raspado), enzimas (tic-tic), tarjeta (golpe), cada anillo de quitina (un toque), yemas de levadura (pops).
 - **Mudo (datos):** 1 nota por cada 8 hifas nuevas (320 tramos → 40 notas, al ritmo en que crece el dibujo); el segundo micelio suena en otra escala y al unirse forman un acorde; el champiñón crece con una nota que sube; 60 esporas = 60 toques; un bajo por cada una de las 8 etapas.

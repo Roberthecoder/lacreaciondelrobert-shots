@@ -25,6 +25,39 @@
 | 10 | Cierre | Así que esto no es plástico: es el fruto de un micelio que casi nunca ves, escondido en el sustrato. | **Regreso a la foto del inicio**, ahora con una lupa en la base que muestra el micelio. |
 | — | Outro | (sin voz) | Cierre de marca. |
 
+## Robert en pantalla
+
+Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 apariciones y 18 s, una vez grande, 4 poses o más, y Robert junto al logo en el cierre. Nunca tapa el subtítulo: abajo usa los lados `bajo-der` y `presentador-bajo`, que quedan debajo de él.
+
+**Versión narrada:** 9 apariciones + cierre · **32.3 s** en pantalla · 8 poses.
+
+| Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|
+| 0.0 s | 3.6 s | sorprendido | `gancho` | “Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto.” |
+| 6.5 s | 10.0 s | señalando | `bajo-der` | “Es la seta rosa, Pleurotus djamor, un hongo de clima cálido que también crece silvestre en México.” |
+| 14.0 s | 17.5 s | sonriendo | `bajo-der` | “Empezó con una esporada: las esporas que soltó una seta sobre papel aluminio.” |
+| 22.0 s | 25.6 s | bajando los lentes | `bajo-der` | “Pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas.” |
+| 26.3 s | 29.5 s | pensativo (mentón) | `bajo-der` | “Pero ¿qué le avisa al micelio que ya es hora de dar fruto?” |
+| 31.0 s | 34.5 s | pensativo (puño) | `bajo-der` | “Un cambio de ambiente. Primero, aire fresco: con mucho dióxido de carbono, el sombrero no se forma bien.” |
+| 41.5 s | 44.5 s | de perfil, serio | `arriba-der` | “Y como es tropical, le gusta el calor: de veintidós a treinta grados.” |
+| 48.5 s | 52.4 s | sorprendido | `presentador-bajo` | “¿Y el rosa? Una revisión mexicana de 2017 dice que su origen todavía no está claro, y que se aclara al madurar.” |
+| 53.5 s | 58.0 s | apuntando a cámara | `bajo-der` | “Así que esto no es plástico: es el fruto de un micelio que casi nunca ves, escondido en el sustrato.” |
+| cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
+
+**Gemelo mudo:** 8 apariciones + cierre · **28.0 s** en pantalla · 6 poses.
+
+| Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|
+| 0.0 s | 3.5 s | sorprendido | `gancho` | escena Racimo |
+| 8.0 s | 11.5 s | señalando | `bajo-der` | escena Esporada |
+| 16.0 s | 19.5 s | pensativo (mentón) | `bajo-der` | escena Placa |
+| 24.5 s | 28.0 s | bajando los lentes | `arriba-der` | escena Grano |
+| 33.0 s | 37.0 s | apuntando a cámara | `presentador-bajo` | escena Bolsa |
+| 41.0 s | 44.5 s | sorprendido | `arriba-der` | escena Primordios |
+| 50.0 s | 53.5 s | sonriendo | `arriba-der` | escena Cosecha |
+| 55.0 s | 58.0 s | señalando | `bajo-der` | escena Cosecha |
+| cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
+
 ## Música y sonido (`gen-audio.mjs`)
 - **Narrada:** cama grave continua sin golpe; efecto en el mismo cuadro (fotos que entran, tachones, esporas como gotitas, lupa, CO₂ que baja con una nota que baja, humedad con gotas, tarjeta con golpe).
 - **Mudo (datos reales):** 1 toque por día (77 toques, más agudos conforme pasan los días); un acorde por cada etapa con fecha; la música va **tapada** (filtrada) mientras el micelio crece a oscuras y **se abre** al salir los primordios.

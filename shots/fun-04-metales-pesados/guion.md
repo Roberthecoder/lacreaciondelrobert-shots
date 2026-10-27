@@ -28,6 +28,40 @@
 | 10 | Cierre | Así que el hongo no es veneno: es un espejo del suelo donde creció. | **Regreso al boleto del inicio**, con un aro dorado sobre el suelo: "un espejo del suelo". |
 | — | Outro | (sin voz) | Cierre de marca. |
 
+## Robert en pantalla
+
+Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 apariciones y 18 s, una vez grande, 4 poses o más, y Robert junto al logo en el cierre. Nunca tapa el subtítulo: abajo usa los lados `bajo-der` y `presentador-bajo`, que quedan debajo de él.
+
+**Versión narrada:** 10 apariciones + cierre · **33.8 s** en pantalla · 9 poses.
+
+| Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|
+| 0.0 s | 3.6 s | sorprendido | `gancho` | “Ese hongo del bosque no solo chupó agua: también pudo chupar cadmio, plomo y mercurio.” |
+| 6.5 s | 10.0 s | señalando | `bajo-der` | “Su micelio absorbe lo que hay en el suelo, y parte lo guarda en el fruto que cortas.” |
+| 12.0 s | 15.0 s | pensativo (puño) | `bajo-der` | “El riesgo depende de tres cosas: la especie, el lugar y cuánto comes.” |
+| 17.0 s | 20.5 s | serio | `bajo-der` | “Junto a minas, fundidoras o carreteras, un hongo silvestre puede tener muchísimo más.” |
+| 22.5 s | 26.0 s | sonriendo | `bajo-der` | “Los cultivados crecen en sustratos controlados, lejos de esa contaminación, y por eso suelen tener menos.” |
+| 27.3 s | 30.0 s | pensativo (mentón) | `arriba-der` | “¿Y si los hierves antes de comerlos?” |
+| 37.2 s | 40.6 s | apuntando a cámara | `presentador-bajo` | “En Polonia, en 2017, blanquear rebozuelos quitó cerca de un quince por ciento de su mercurio.” |
+| 43.5 s | 47.0 s | sorprendido | `bajo-der` | “Y en pruebas que imitan tu digestión, se libera menos del cuarenta por ciento del mercurio, el cadmio y el plomo.” |
+| 50.0 s | 53.5 s | bajando los lentes | `bajo-der` | “Lo curioso: esa misma esponja se estudia para limpiar suelos contaminados.” |
+| 54.6 s | 58.2 s | de perfil, serio | `bajo-der` | “Así que el hongo no es veneno: es un espejo del suelo donde creció.” |
+| cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
+
+**Gemelo mudo:** 8 apariciones + cierre · **28.1 s** en pantalla · 8 poses.
+
+| Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|
+| 0.0 s | 3.6 s | sorprendido | `bajo-der` | escena Pregunta |
+| 7.0 s | 10.5 s | serio | `bajo-der` | escena Carretera |
+| 13.0 s | 16.0 s | señalando | `bajo-der` | escena Carretera |
+| 18.7 s | 21.7 s | pensativo (puño) | `bajo-der` | escena Rayos |
+| 26.0 s | 29.5 s | sonriendo | `bajo-der` | escena Bosque |
+| 38.0 s | 41.5 s | bajando los lentes | `bajo-der` | escena Hervir |
+| 45.0 s | 49.0 s | apuntando a cámara | `presentador-bajo` | escena Respuesta |
+| 53.0 s | 57.0 s | de perfil, serio | `bajo-der` | escena Vuelta |
+| cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
+
 ## Música y sonido (`gen-audio.mjs`)
 - **Narrada:** cama grave continua sin golpe + efecto en el mismo cuadro (gota, átomos que llegan, tarjetas, carros, metales al agua, el agua que se tira).
 - **Mudo (datos y estado):** cada carro que pasa frente al hongo = golpe grave (misma fórmula del dibujo); cada átomo que llega al sombrero = toque agudo; música **tapada y tensa** (dos notas a medio tono) mientras el hongo se carga, **libre** lejos de la carretera; 12 metales que salen al hervir = 12 gotas.

@@ -594,8 +594,12 @@ function MarcaAgua({ T, num, hasta, tema, logo }) {
     <div style={{ position:'absolute', top:-14, right:-20, font:`900 26px ${KF.texto}`, color:KC.dark, background:KC.gold, padding:'3px 12px', borderRadius:11, boxShadow:'0 6px 16px rgba(0,0,0,.4)' }}>#{num}</div>
   </div>;
 }
-// Sticker de reacción. lado: 'arriba-der' (zona libre de la guía), 'abajo-der', 'abajo-izq'.
-const KLADOS = { 'arriba-der': { left:690, top:300, width:330 }, 'abajo-der': { left:640, top:1180, width:420 }, 'abajo-izq': { left:-20, top:1180, width:420 } };
+// Sticker de Robert. lado: 'arriba-der' (zona libre de la guía), 'abajo-der', 'abajo-izq',
+// 'gancho' (grande arriba a la derecha, para el cuadro 0) y 'presentador' (medio cuerpo grande abajo a la derecha).
+const KLADOS = { 'arriba-der': { left:690, top:300, width:330 }, 'abajo-der': { left:640, top:1180, width:420 }, 'abajo-izq': { left:-20, top:1180, width:420 },
+  'gancho': { left:600, top:230, width:460 }, 'presentador': { left:500, top:1000, width:620 },
+  // debajo del subtítulo (bottom 560): no lo tapan nunca. 'presentador-bajo' = medio cuerpo grande, cortado por el borde.
+  'bajo-der': { left:760, top:1400, width:330 }, 'presentador-bajo': { left:470, top:1360, width:620 } };
 function Sticker({ T, src, at, until, lado = 'arriba-der' }) {
   if (T < at || T > until + 0.45) return null;
   const L = KLADOS[lado] || KLADOS['arriba-der'];
@@ -607,7 +611,15 @@ function Sticker({ T, src, at, until, lado = 'arriba-der' }) {
     transform:`translate(${tx}px, ${ty}px) scale(${1 - w}, ${1 + w})`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />;
 }
 // Tarjeta de cierre: oscurece la última imagen y muestra la marca. Dura 3–4 s (hasta llegar a 61–62 s).
-function CierreMarca({ T, at, frase = 'Sígueme para más ciencia', usuario = '@lacreaciondelrobert', tema, logo }) {
+// Robert presentador: todas sus apariciones del shot en una lista.
+// apariciones: [[at, until, 'avatar_11_sorprendido', 'gancho'], ...]  ·  base: carpeta de los PNG.
+function Robert({ T, apariciones = [], base = 'assets/stickers/' }) {
+  // las poses se precargan desde el cuadro 0 para que ninguna salga en blanco en el render
+  return <><Precarga srcs={[...new Set(apariciones.map((a) => `${base}${a[2]}.png`))]} />{apariciones.map(([at, until, pose, lado], i) =>
+    <Sticker key={i} T={T} src={`${base}${pose}.png`} at={at} until={until} lado={lado} />)}</>;
+}
+// Tarjeta de cierre. robert: ruta de un sticker de Robert que sale junto al logo (obligatorio en los shots nuevos).
+function CierreMarca({ T, at, frase = 'Sígueme para más ciencia', usuario = '@lacreaciondelrobert', tema, logo, robert }) {
   logo = logo || klogo(tema);
   if (T < at) return null;
   const osc = kprog(T, at, at + 0.7, kEase.suave), s = klerp(0.5, 1, kprog(T, at + 0.2, at + 0.8, kEase.rebote)), t2 = kprog(T, at + 0.6, at + 1.1, kEase.sale);
@@ -620,6 +632,8 @@ function CierreMarca({ T, at, frase = 'Sígueme para más ciencia', usuario = '@
       <div style={{ font:`900 44px ${KF.texto}`, color:KC.gold2, marginTop:16 }}>{frase}</div>
       <div style={{ font:`700 32px ${KF.mono}`, color:'rgba(246,243,236,.75)', marginTop:12 }}>{usuario}</div>
     </div>
+    {robert && <img src={robert} alt="" style={{ position:'absolute', right:-10, bottom:-40, width:470, opacity:osc,
+      transform:`translateY(${(1 - kprog(T, at + 0.3, at + 0.9, kEase.rebote)) * 600}px)`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />}
   </div>;
 }
 
@@ -907,7 +921,7 @@ Object.assign(window, {
   Camara, Escala, Ambiente, Brillo, Aparece, Lupa,
   Subtitulo, Chip, MitoTachado, NumeroGigante, Contador, TarjetaEstudio,
   Capitulo, Pasos, Medidor, Cronometro, Cuadricula, Comparativa,
-  MarcaAgua, Sticker, CierreMarca, klogo, MundoPiel, MUNDO_PIEL, mixHex,
+  MarcaAgua, Sticker, Robert, CierreMarca, klogo, MundoPiel, MUNDO_PIEL, mixHex,
   CamaraAnidada, MundoPanMacro, MundoPanMicro, MUNDO_PAN, PAN_TALLOS, kArbol, kArbolRadial, nodosPan,
   Escena, Etq, AudioPista, kApp, FotoRecorte, Precarga, Champinon, MundoSuelo, MUNDO_SUELO, HifasMicro, Levadura,
   PlacaPetri, kEstriado, kParcial, Asa, Mechero, SetaOstra, RacimoOstra, BolsaCultivo, Termometro, CadenaAnillos,

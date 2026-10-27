@@ -74,7 +74,7 @@ function EstriadoMudo() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       <div style={fondoPuntos(act ? [KC.pink, KC.orange, KC.lilac, KC.cyan, KC.yellow][act.i] : KC.mint)}></div>
       <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-        <Mechero T={T} x={940} y={1560} s={0.9} />
+        <Mechero T={T} x={130} y={1560} s={0.9} />
         {/* intro y final: placa limpia, lista para estriar (mismo cuadro → loop) */}
         {!act && T < K.B && <PlacaEstriada T={T} trazo={[0, 0, 0, 0]} id="pi" />}
         {act && <PlacaEstriada T={T} trazo={trazoDe(act.a)} crecen={act.modo === 'muerta' ? [0, 0, 0, 0] : crecenDe(act.a, 4.3)} modo={act.modo} id={'p' + act.i}
@@ -100,10 +100,11 @@ function EstriadoMudo() {
       {act && <Chip T={T} at={act.a + 6.1} until={act.a + 8.8} texto={act.r} y={540} borde={KC.mint} tam={34} />}
       {act && <div style={{ position:'absolute', left:0, right:0, top:1560, zIndex:44, textAlign:'center' }}>
         <span style={{ display:'inline-block', background:KC.red, color:KC.paper, borderRadius:18, padding:'4px 26px 8px', font:`400 70px/1 ${KF.titulo}`, boxShadow:`8px 8px 0 ${KC.ink}`, transform:`scale(${klerp(1.3, 1, kprog(T, act.a, act.a + 0.4, kEase.rebote))})` }}>ERROR {act.i + 1}<span style={{ fontSize:40, opacity:.75 }}> / 5</span></span></div>}
-      <Medidor T={T} at={K.I + 0.5} until={K.F - 0.3} etiqueta="COLONIAS AISLADAS" valor={() => (act ? 0.02 : T >= K.B ? sana : 0)} texto={(v) => Math.round(v * 100) + ' %'} y={1420} x={120} ancho={680} color={act ? KC.red : KC.mint} />
+      <Medidor T={T} at={K.I + 0.5} until={K.B + 3.9} etiqueta="COLONIAS AISLADAS" valor={() => (act ? 0.02 : T >= K.B ? sana : 0)} texto={(v) => Math.round(v * 100) + ' %'} y={1420} x={260} ancho={480} color={act ? KC.red : KC.mint} />
       <Zonas T={T} o={act || T >= K.B ? 0.9 : 0} />
+      <Robert T={T} apariciones={[[0, 3.6, 'avatar_11_sorprendido', 'bajo-der'], [6.5, 10, 'avatar_10_serio_molesto', 'bajo-der'], [15, 18.5, 'avatar_12_perfil_serio', 'bajo-der'], [24.5, 28, 'avatar_07_pensativo_puno', 'bajo-der'], [33.5, 37, 'avatar_13_senalando_arriba', 'bajo-der'], [42.5, 46, 'avatar_04_bajando_lentes', 'bajo-der'], [53, 57.5, 'avatar_02_apuntando_camara', 'presentador-bajo']]} />
       <MarcaAgua T={T} tema="quimica" num="02" hasta={K.F} />
-      <CierreMarca T={T} at={K.F} tema="quimica" frase="Estriado por agotamiento: sin errores" />
+      <CierreMarca T={T} at={K.F} tema="quimica" robert="assets/stickers/avatar_02_apuntando_camara.png" frase="Estriado por agotamiento: sin errores" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );
@@ -124,7 +125,7 @@ function EstriadoNarrado() {
   const flamas = [K.C2 + 0.2, K.C3 + 0.1];
   const enFlama = flamas.some((t) => T >= t && T < t + 1.3);
   if (gancho) { const q = Math.max(0, trG.findIndex((v) => v < 1)); const [x, y] = puntaAsa(q < 0 ? 3 : q, (trG[q < 0 ? 3 : q]) || 0.001, 540, PY, PS); asa = { x, y, cal: 0 }; }
-  else if (enFlama) asa = { x: 900, y: 1290, cal: 1, ang: -70 };
+  else if (enFlama) asa = { x: 150, y: 1290, cal: 1, ang: -70 };
   else if (enPlaca && T < K.C4 + 2.3) { const q = tr.findIndex((v) => v > 0 && v < 1); if (q >= 0) { const [x, y] = puntaAsa(q, tr[q], 540, PY, PS); asa = { x, y, cal: Math.max(0, 1 - (T - (q === 1 ? flamas[0] + 1.3 : q === 2 ? flamas[1] + 1.3 : 0)) * 2) * (q > 0 ? 1 : 0) }; } }
   const caps = [{ at: K.C1, titulo: 'Zona 1: la muestra' }, { at: K.C2, titulo: 'Zona 2: un poquito' }, { at: K.C3, titulo: 'Zona 3: menos' }, { at: K.C4, titulo: 'Zona 4: una sola' }];
   return (
@@ -156,7 +157,7 @@ function EstriadoNarrado() {
       <Escena T={T} a={K.C1} b={K.Er} fondo={KC.cyan} zoom={0.02}>
         <div style={fondoPuntos(KC.cyan)}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Mechero T={T} x={900} y={1560} s={0.8} />
+          <Mechero T={T} x={150} y={1560} s={0.8} />
           <PlacaEstriada T={T} y={PY} s={PS} trazo={tr} crecen={cre} id="pz" />
           <Zonas T={T} y={PY} s={PS} o={kprog(T, K.C1 + 0.2, K.C1 + 0.6)} />
           {asa && !gancho && <Asa x={asa.x} y={asa.y} ang={asa.ang || -32} caliente={asa.cal} s={1.1} />}
@@ -166,7 +167,7 @@ function EstriadoNarrado() {
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a2633" />{Array.from({ length: 70 }, (_, i) => <rect key={i} x={(i * 53) % (r * 2)} y={(i * 37) % (r * 2)} width={26} height={12} rx={6} fill="#ff6b8a" transform={`rotate(${i * 29} ${(i * 53) % (r * 2)} ${(i * 37) % (r * 2)})`} />)}</svg>} />
         <Lupa T={T} at={K.C4 + 4.4} until={K.Er - 0.2} x={300} y={560} r={190} fx={540 + EST.colonias.find((c) => c.q === 3).x * PS} fy={PY + EST.colonias.find((c) => c.q === 3).y * PS} etiqueta="1 colonia = 1 célula" tinte={KC.mint}
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a2633" /><circle cx={r} cy={r} r={r * 0.7} fill="#f4efe4" opacity=".35" />{Array.from({ length: 40 }, (_, i) => { const a = i * 2.4, d = Math.sqrt(i / 40) * r * 0.6; return <rect key={i} x={r + Math.cos(a) * d - 12} y={r + Math.sin(a) * d - 6} width={24} height={12} rx={6} fill="#ff6b8a" />; })}</svg>} />
-        <Cronometro T={T} at={K.C4 + 2.4} until={K.C4 + 4.6} factor={24 * 3600 / 2.2} etiqueta="INCUBANDO" y={1640} />
+        <Cronometro T={T} at={K.C4 + 2.4} until={K.C4 + 4.6} factor={24 * 3600 / 2.2} etiqueta="INCUBANDO" x={260} y={1640} />
       </Escena>
       {/* errores comunes */}
       <Escena T={T} a={K.Er} b={K.E} fondo={KC.pink}>
@@ -187,7 +188,7 @@ function EstriadoNarrado() {
           <Zonas T={T} y={870} s={0.88} />
         </svg>}
         <Chip T={T} at={K.E + 3.4} until={K.X - 0.2} texto="24 h · 30 °C" y={460} borde={KC.gold} tam={44} mono />
-        <Etq T={T} at={K.E + 5.2} until={K.X - 0.2} x={980} y={1430} texto="Serratia marcescens" it lado="izq" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.E + 5.2} until={K.X - 0.2} x={1010} y={520} texto="Serratia marcescens" it lado="izq" tam={30} color={KC.ink} />
       </Escena>
       {/* la bacteria roja en la regadera */}
       <Escena T={T} a={K.X} b={K.Ci} fondo="#d9eef5">
@@ -215,7 +216,7 @@ function EstriadoNarrado() {
       </Escena>
 
       <Capitulo T={T} caps={caps} hasta={K.Er} />
-      <Chip T={T} at={K.P + 0.1} until={K.C4 + 2.2} texto="¿y en la última zona?" y={460} borde={KC.mint} tam={40} />
+      <Chip T={T} at={K.P + 0.1} until={K.C4 + 2.2} texto="¿y en la última zona?" x={400} y={460} borde={KC.mint} tam={40} />
       <Subtitulo T={T} idx={0} at={K.G + 0.2} until={K.M - 0.1} texto="No es un garabato: *separa una sola bacteria.*" />
       <Subtitulo T={T} idx={1} at={K.M + 0.1} until={K.C1 - 0.1} texto="Placa, asa *y una flama.*" />
       <Subtitulo T={T} idx={2} at={K.C1 + 0.1} until={K.C2 - 0.1} texto="La muestra en una orilla: *millones de células.*" />
@@ -227,10 +228,9 @@ function EstriadoNarrado() {
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.X - 0.1} texto="Colonias aisladas *en la cuarta zona.*" />
       <Subtitulo T={T} idx={9} at={K.X + 0.1} until={K.Ci - 0.1} texto="Esa bacteria roja *vive en tu regadera.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.O - 0.1} texto="Entra una multitud: *sale una sola.*" />
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={K.P + 0.1} until={K.C4 + 1} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.X + 2.4} until={K.Ci - 0.2} lado="arriba-der" />
+      <Robert T={T} apariciones={[[0, 3.6, 'avatar_11_sorprendido', 'bajo-der'], [6.5, 10, 'avatar_13_senalando_arriba', 'arriba-der'], [12.5, 16, 'avatar_07_pensativo_puno', 'bajo-der'], [18, 21.5, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der'], [26.3, 29, 'avatar_06_pensativo_menton', 'arriba-der'], [31, 35, 'avatar_02_apuntando_camara', 'presentador-bajo'], [37.5, 41, 'avatar_10_serio_molesto', 'bajo-der'], [44.5, 48, 'avatar_04_bajando_lentes', 'bajo-der'], [50, 53.5, 'avatar_11_sorprendido', 'bajo-der'], [54.5, 58.2, 'avatar_12_perfil_serio', 'bajo-der']]} />
       <MarcaAgua T={T} tema="quimica" num="02" hasta={K.O} />
-      <CierreMarca T={T} at={K.O} tema="quimica" />
+      <CierreMarca T={T} at={K.O} tema="quimica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

@@ -167,12 +167,12 @@ function MetalesNarrado() {
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.8} until={K.Mi - 0.2} texto="cadmio · plomo · mercurio" y={430} borde={KC.red} tam={40} />
+      <Chip T={T} at={K.G + 1.8} until={K.Mi - 0.2} texto="cadmio · plomo · mercurio" y={1530} x={400} borde={KC.red} tam={40} />
       <Chip T={T} at={K.Mi + 1.4} until={K.R - 0.2} texto="micelio → fruto" y={430} borde={KC.mint} tam={42} />
       <Chip T={T} at={K.R + 0.1} until={K.L - 0.2} texto="el riesgo depende de" y={330} borde={KC.red} tam={40} />
-      <Chip T={T} at={K.L + 1.2} until={K.Cu - 0.2} texto="minas · fundidoras · carreteras" y={1530} borde={KC.red} tam={36} />
-      <Chip T={T} at={K.Cu + 0.3} until={K.P - 0.2} texto="sustrato controlado" y={1530} borde={KC.mint} tam={42} />
-      <Chip T={T} at={K.E + 3} until={K.E + 6.8} texto="rebozuelos blanqueados" y={1530} borde={KC.yellow} tam={38} />
+      <Chip T={T} at={K.L + 1.2} until={K.Cu - 0.2} texto="minas · fundidoras · carreteras" y={1530} x={400} borde={KC.red} tam={36} />
+      <Chip T={T} at={K.Cu + 0.3} until={K.P - 0.2} texto="sustrato controlado" y={1530} x={400} borde={KC.mint} tam={42} />
+      <Chip T={T} at={K.E + 3} until={K.E + 6.8} texto="rebozuelos blanqueados" y={1530} x={400} borde={KC.yellow} tam={38} />
       <Etq T={T} at={K.E + 7.4} until={K.D - 0.2} x={100} y={1530} texto="Amanita fulva, hervida" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.D - 2.4} until={K.D - 0.2} texto="el agua se tira" x={300} y={760} borde={KC.red} tam={44} />
       <Etq T={T} at={K.D + 3.4} until={K.Li - 0.2} x={990} y={1300} texto="se absorbe" color={KC.pink} lado="izq" />
@@ -193,11 +193,9 @@ function MetalesNarrado() {
       <Subtitulo T={T} idx={9} at={K.Li + 0.1} until={K.Ci - 0.1} texto="Esa esponja *limpia suelos.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.O - 0.1} texto="No es veneno: *es un espejo del suelo.*" />
 
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={K.P + 0.1} until={K.E + 0.1} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_10_serio_molesto')} at={K.D - 2.4} until={K.D - 0.2} lado="abajo-der" />
-
+      <Robert T={T} apariciones={[[0, 3.6, 'avatar_11_sorprendido', 'gancho'], [6.5, 10, 'avatar_13_senalando_arriba', 'bajo-der'], [12, 15, 'avatar_07_pensativo_puno', 'bajo-der'], [17, 20.5, 'avatar_10_serio_molesto', 'bajo-der'], [22.5, 26, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der'], [27.3, 30, 'avatar_06_pensativo_menton', 'arriba-der'], [37.2, 40.6, 'avatar_02_apuntando_camara', 'presentador-bajo'], [43.5, 47, 'avatar_11_sorprendido', 'bajo-der'], [50, 53.5, 'avatar_04_bajando_lentes', 'bajo-der'], [54.6, 58.2, 'avatar_12_perfil_serio', 'bajo-der']]} />
       <MarcaAgua T={T} tema="biologia" num="04" hasta={K.O} />
-      <CierreMarca T={T} at={K.O} tema="biologia" />
+      <CierreMarca T={T} at={K.O} tema="biologia" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -268,16 +266,16 @@ function MetalesMudo() {
           ¿Por qué <span style={{ color:KC.red }}>NO</span> recoger hongos junto a la carretera?</div></div>}
       <Lupa T={T} at={K.R + 0.2} until={K.B - 0.4} x={360} y={760} r={210} fx={760} fy={sup - 320} etiqueta="RAYOS X · sombrero" tinte={KC.red}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#e9d9bf" />{Array.from({ length: 26 }, (_, i) => <Metal key={i} x={(i * 71 + 30) % (r * 2 - 30) + 15} y={(i * 113 + 40) % (r * 2 - 30) + 15 + mece(t, i, 0.5) * 6} k={i} r={18} o={kprog(t, K.R + 0.4 + i * 0.08, K.R + 0.7 + i * 0.08)} />)}</svg>} />
-      <Medidor T={T} at={K.C + 0.6} until={K.Re - 0.3} etiqueta="METALES EN EL HONGO" valor={nivel} texto={(v) => (v > 0.7 ? 'alto' : v > 0.35 ? 'medio' : 'bajo')} y={1460} color={nivel(T) > 0.7 ? KC.red : nivel(T) > 0.35 ? KC.orange : KC.mint} />
+      <Medidor T={T} at={K.C + 0.6} until={K.Re - 0.3} etiqueta="METALES EN EL HONGO" valor={nivel} texto={(v) => (v > 0.7 ? 'alto' : v > 0.35 ? 'medio' : 'bajo')} y={640} color={nivel(T) > 0.7 ? KC.red : nivel(T) > 0.35 ? KC.orange : KC.mint} />
       <Chip T={T} at={K.C + 0.4} until={K.R - 0.2} texto="polvo y humo caen al suelo" y={560} borde={KC.red} tam={36} />
       <Chip T={T} at={K.R + 1.2} until={K.B - 0.3} texto="Cd · Pb · Hg" x={360} y={1060} borde={KC.red} tam={40} mono />
       <Chip T={T} at={K.B + 0.4} until={K.H - 0.3} texto="lejos de la contaminación" y={560} borde={KC.mint} tam={38} />
       <Chip T={T} at={K.H + 0.4} until={K.Re - 3} texto="hervir quita una parte" y={560} borde={KC.yellow} tam={38} />
       <Chip T={T} at={K.Re - 2.8} until={K.Re - 0.2} texto="…y el agua se tira" y={560} borde={KC.red} tam={40} />
       <Chip T={T} at={K.Re + 0.5} until={K.V - 0.2} texto="porque el hongo es un espejo del suelo" y={560} borde={KC.gold} tam={34} />
-      <Sticker T={T} src={AVS('avatar_10_serio_molesto')} at={K.R + 2.5} until={K.R + 5.5} lado="abajo-der" />
+      <Robert T={T} apariciones={[[0, 3.6, 'avatar_11_sorprendido', 'bajo-der'], [7, 10.5, 'avatar_10_serio_molesto', 'bajo-der'], [13, 16, 'avatar_13_senalando_arriba', 'bajo-der'], [18.7, 21.7, 'avatar_07_pensativo_puno', 'bajo-der'], [26, 29.5, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der'], [38, 41.5, 'avatar_04_bajando_lentes', 'bajo-der'], [45, 49, 'avatar_02_apuntando_camara', 'presentador-bajo'], [53, 57, 'avatar_12_perfil_serio', 'bajo-der']]} />
       <MarcaAgua T={T} tema="biologia" num="04" hasta={K.F} />
-      <CierreMarca T={T} at={K.F} tema="biologia" frase="El hongo es un espejo del suelo" />
+      <CierreMarca T={T} at={K.F} tema="biologia" robert="assets/stickers/avatar_02_apuntando_camara.png" frase="El hongo es un espejo del suelo" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );

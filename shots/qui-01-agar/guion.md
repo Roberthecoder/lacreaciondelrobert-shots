@@ -24,6 +24,40 @@
 | 10 | Cierre | Así que no es gelatina: es el piso donde crece gran parte de la microbiología. | **Regreso a la placa del inicio**, ahora llena de colonias. |
 | — | Outro | (sin voz) | Cierre de marca. |
 
+## Robert en pantalla
+
+Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 apariciones y 18 s, una vez grande, 4 poses o más, y Robert junto al logo en el cierre. Nunca tapa el subtítulo: abajo usa los lados `bajo-der` y `presentador-bajo`, que quedan debajo de él.
+
+**Versión narrada:** 11 apariciones + cierre · **35.6 s** en pantalla · 9 poses.
+
+| Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|
+| 0.0 s | 3.6 s | sorprendido | `gancho` | “Esto no es gelatina: es un azúcar de alga que casi ninguna bacteria se puede comer.” |
+| 6.0 s | 9.5 s | señalando | `bajo-der` | “Se llama agar y sale de algas rojas: se hierven, se filtran y se secan.” |
+| 12.0 s | 15.0 s | pensativo (puño) | `bajo-der` | “Es un polisacárido, cadenas larguísimas de azúcares: la agarosa y la agaropectina.” |
+| 17.0 s | 20.5 s | sonriendo | `bajo-der` | “Al enfriarse, esas cadenas se enroscan y se amontonan en manojos: una red que atrapa el agua.” |
+| 22.0 s | 26.0 s | apuntando a cámara | `presentador-bajo` | “Lo raro es que se derrite cerca de ochenta y cinco grados, pero no cuaja hasta unos treinta y cinco.” |
+| 27.5 s | 30.5 s | pensativo (mentón) | `arriba-der` | “¿Y eso para qué sirve?” |
+| 31.5 s | 34.5 s | serio | `bajo-der` | “Las bacterias se incuban a treinta y siete grados: la gelatina ahí se derrite, el agar no.” |
+| 38.5 s | 41.0 s | bajando los lentes | `bajo-der` | “En 1881, Fanny Hesse, que lo usaba en sus postres, se lo sugirió a su esposo, que trabajaba con Robert Koch.” |
+| 43.5 s | 46.8 s | de perfil, serio | `bajo-der` | “Y como casi nadie tiene las enzimas para romperlo, las colonias crecen encima sin deshacerlo.” |
+| 51.5 s | 55.0 s | sorprendido | `arriba-der` | “Lo curioso: en Japón, bacterias del intestino tomaron genes de microbios del mar para digerir algas como el nori.” |
+| 55.5 s | 58.2 s | señalando | `bajo-der` | “Así que no es gelatina: es el piso donde crece gran parte de la microbiología.” |
+| cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
+
+**Gemelo mudo:** 7 apariciones + cierre · **26.6 s** en pantalla · 7 poses.
+
+| Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|
+| 0.0 s | 3.6 s | sorprendido | `bajo-der` | escena Pregunta |
+| 7.0 s | 10.5 s | señalando | `bajo-der` | escena Calienta |
+| 16.0 s | 19.5 s | serio | `bajo-der` | escena Comen |
+| 24.5 s | 28.0 s | sonriendo | `bajo-der` | escena Agar |
+| 34.0 s | 38.0 s | apuntando a cámara | `presentador-bajo` | escena Derrite |
+| 44.0 s | 47.5 s | pensativo (puño) | `bajo-der` | escena Cuaja |
+| 52.5 s | 57.5 s | bajando los lentes | `bajo-der` | escena Respuesta |
+| cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
+
 ## Música y sonido (`gen-audio.mjs`)
 - **Narrada:** cama grave continua sin golpe; más grave en las escenas moleculares; un toque por anillo de cada cadena; la nota sube y baja con la curva de temperatura; golpe en cada tarjeta.
 - **Mudo (datos):** la temperatura es la melodía (20 → 37 °C en la incubadora y 37 → 95 → 25 °C en la curva del agar); acorde justo al cruzar ~85 °C (se derrite) y ~35 °C (cuaja). Música **tapada** mientras la gelatina se derrite y se la comen; **libre** cuando el agar aguanta.

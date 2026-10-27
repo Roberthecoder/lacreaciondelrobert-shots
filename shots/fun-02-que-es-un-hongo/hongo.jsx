@@ -173,9 +173,9 @@ function HongoNarrado() {
       {/* etiquetas del gancho / cierre */}
       <Etq T={T} at={K.G + 1.0} until={K.R - 0.4} x={560} y={500} texto="fruto" color={KC.texto} lado="izq" />
       <Etq T={T} at={K.G + 1.4} until={K.R - 0.4} x={560} y={556} texto="Agaricus bisporus" it tam={28} lado="izq" />
-      <Chip T={T} at={K.G + 3.0} until={K.R - 0.4} texto="el hongo de verdad" y={1530} borde={KC.mint} tam={42} />
+      <Chip T={T} at={K.G + 3.0} until={K.R - 0.4} texto="el hongo de verdad" y={1530} x={400} borde={KC.mint} tam={42} />
       <Chip T={T} at={K.Ci + 0.4} until={K.O} texto="lo que ves: el fruto" y={430} borde={KC.red} tam={42} />
-      <Chip T={T} at={K.Ci + 1.4} until={K.O} texto="el hongo: el micelio" y={1530} borde={KC.mint} tam={42} />
+      <Chip T={T} at={K.Ci + 1.4} until={K.O} texto="el hongo: el micelio" y={1530} x={400} borde={KC.mint} tam={42} />
       {/* micro */}
       <Etq T={T} at={K.R + 2.0} until={K.R + 6.2} x={330} y={480} texto="hifa" color="#eafff7" />
       <Etq T={T} at={K.R + 2.8} until={K.R + 6.2} x={120} y={1600} texto="pelo humano (≈ 70 µm)" tam={28} />
@@ -204,11 +204,9 @@ function HongoNarrado() {
       <Subtitulo T={T} idx={10} at={K.L + 0.1} until={K.Ci - 0.1} texto="La levadura también es hongo: *una sola célula.*" />
       <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.O - 0.1} texto="Es *la única parte* que alcanzas a ver." />
 
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={K.P + 0.1} until={K.F + 0.2} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.E + 6.2} until={K.Q - 0.2} lado="abajo-der" />
-
+      <Robert T={T} apariciones={[[0, 3.4, 'avatar_11_sorprendido', 'gancho'], [9, 12.2, 'avatar_13_senalando_arriba', 'bajo-der'], [18, 21.2, 'avatar_07_pensativo_puno', 'bajo-der'], [22.7, 25.2, 'avatar_06_pensativo_menton', 'arriba-der'], [27.5, 31, 'avatar_02_apuntando_camara', 'presentador-bajo'], [41.4, 43.4, 'avatar_11_sorprendido', 'bajo-der'], [44.5, 47.2, 'avatar_04_bajando_lentes', 'bajo-der'], [53.5, 57.4, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der']]} />
       <MarcaAgua T={T} tema="biologia" num="02" hasta={K.O} />
-      <CierreMarca T={T} at={K.O} tema="biologia" />
+      <CierreMarca T={T} at={K.O} tema="biologia" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -272,15 +270,15 @@ function HongoCiclo() {
       <Capitulo T={T} caps={caps} hasta={K.F} />
       <Etq T={T} at={K.E + 1.4} until={K.G} x={620} y={700} texto="espora" />
       <Etq T={T} at={K.G + 1.6} until={K.R - 0.3} x={330} y={480} texto="hifa" color="#eafff7" />
-      <Chip T={T} at={K.R + 1} until={K.U - 0.2} texto="micelio" y={1530} borde={KC.mint} tam={44} />
-      <Chip T={T} at={K.U + 0.6} until={K.N - 0.2} texto="+  =  un micelio nuevo" y={1530} borde={KC.lilac} tam={40} />
-      <Chip T={T} at={K.N + 0.3} until={K.C - 0.2} texto="primordio" y={1530} borde={KC.yellow} tam={44} />
+      <Chip T={T} at={K.R + 1} until={K.U - 0.2} texto="micelio" y={1530} x={400} borde={KC.mint} tam={44} />
+      <Chip T={T} at={K.U + 0.6} until={K.N - 0.2} texto="+  =  un micelio nuevo" y={1530} x={400} borde={KC.lilac} tam={40} />
+      <Chip T={T} at={K.N + 0.3} until={K.C - 0.2} texto="primordio" y={1530} x={400} borde={KC.yellow} tam={44} />
       <Etq T={T} at={K.C + 5} until={K.S + 3} x={1010} y={560} texto="Agaricus bisporus" it tam={28} lado="izq" />
-      <Chip T={T} at={K.S + 0.5} until={K.Ot - 0.2} texto="esporas" y={1530} borde={KC.gold} tam={44} />
+      <Chip T={T} at={K.S + 0.5} until={K.Ot - 0.2} texto="esporas" y={1530} x={400} borde={KC.gold} tam={44} />
       <Escala T={T} z={macro ? zC : 1} pxPorMm={macro ? PX_MACRO : PX_MICRO} />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.U + 3.2} until={K.U + 6} lado="arriba-der" />
+      <Robert T={T} apariciones={[[0, 3.5, 'avatar_11_sorprendido', 'gancho'], [8, 11, 'avatar_13_senalando_arriba', 'bajo-der'], [16.5, 19.5, 'avatar_07_pensativo_puno', 'arriba-der'], [25, 28, 'avatar_11_sorprendido', 'arriba-der'], [31, 34, 'avatar_06_pensativo_menton', 'arriba-der'], [36.5, 40.5, 'avatar_02_apuntando_camara', 'presentador-bajo'], [48.2, 51.5, 'avatar_04_bajando_lentes', 'arriba-der'], [54.5, 57.8, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der']]} />
       <MarcaAgua T={T} tema="biologia" num="02" hasta={K.F} />
-      <CierreMarca T={T} at={K.F} tema="biologia" frase="El ciclo de un champiñón" />
+      <CierreMarca T={T} at={K.F} tema="biologia" robert="assets/stickers/avatar_02_apuntando_camara.png" frase="El ciclo de un champiñón" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );

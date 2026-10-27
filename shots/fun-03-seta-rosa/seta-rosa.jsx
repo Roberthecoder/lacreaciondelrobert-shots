@@ -41,7 +41,7 @@ function SetaNarrado() {
       {/* 0 · gancho: la foto real entra girando; "plástico" y "coral" se tachan */}
       <Escena T={T} a={K.G} b={K.Es} fondo={KC.pink} zoom={0.03}>
         <div style={fondoPuntos(KC.pink)}></div>
-        <FotoRecorte T={T} at={K.G + 0.02} src={FOTO('racimo1')} x={540} y={830} w={600} h={808} rot={-3} seed={1} zoom={0.1} />
+        <FotoRecorte T={T} at={K.G + 0.02} src={FOTO('racimo1')} x={400} y={860} w={520} h={700} rot={-3} seed={1} zoom={0.1} />
       </Escena>
       {/* 1 · la especie */}
       <Escena T={T} a={K.Es} b={K.Ep} fondo={KC.mint}>
@@ -109,29 +109,29 @@ function SetaNarrado() {
       {/* 10 · cierre: la misma foto del inicio, con la lupa en la base (micelio escondido) */}
       <Escena T={T} a={K.Ci} b={FIN} fondo={KC.pink}>
         <div style={fondoPuntos(KC.pink)}></div>
-        <FotoRecorte T={T} at={K.Ci - 0.5} src={FOTO('racimo1')} x={540} y={830} w={600} h={808} rot={-3} seed={1} zoom={0.04} />
+        <FotoRecorte T={T} at={K.Ci - 0.5} src={FOTO('racimo1')} x={400} y={860} w={520} h={700} rot={-3} seed={1} zoom={0.04} />
       </Escena>
 
       {/* textos sobre las escenas */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.Es - 0.3} texto="¿plástico?" x={300} y={330} tam={44} />
-      <MitoTachado T={T} at={K.G + 0.8} tacharEn={K.G + 2.0} until={K.Es - 0.3} texto="¿coral?" x={770} y={330} tam={44} />
-      <Chip T={T} at={K.G + 2.6} until={K.Es - 0.2} texto="un hongo vivo" y={1500} borde={KC.mint} tam={44} />
+      <MitoTachado T={T} at={K.G + 0.8} tacharEn={K.G + 2.0} until={K.Es - 0.3} texto="¿coral?" x={300} y={440} tam={44} />
+      <Chip T={T} at={K.G + 2.6} until={K.Es - 0.2} texto="un hongo vivo" y={1500} x={400} borde={KC.mint} tam={44} />
       <Etq T={T} at={K.Es + 0.6} until={K.Ep - 0.2} x={640} y={420} texto="Pleurotus djamor" it color={KC.ink} />
-      <Chip T={T} at={K.Es + 2.2} until={K.Ep - 0.2} texto="silvestre en México y el trópico" y={1500} borde={KC.gold} tam={38} />
+      <Chip T={T} at={K.Es + 2.2} until={K.Ep - 0.2} texto="silvestre en México y el trópico" y={1500} x={400} borde={KC.gold} tam={38} />
       <Etq T={T} at={K.Ep + 1.4} until={K.Pl - 0.2} x={700} y={620} texto="esporas (≈ 8 µm)" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ep + 0.3} until={K.Pl - 0.2} texto="esporada · 3 feb 2026" y={1500} borde={KC.pink} tam={38} />
+      <Chip T={T} at={K.Ep + 0.3} until={K.Pl - 0.2} texto="esporada · 3 feb 2026" y={1500} x={400} borde={KC.pink} tam={38} />
       <Lupa T={T} at={K.Pl + 0.7} until={K.Gr - 0.3} x={720} y={560} r={250} fx={360} fy={1000} etiqueta="RAYOS X · agar" tinte={KC.mint}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#e7cf8f" opacity=".25" /><MicelioRadial r={r} p={kprog(t, K.Pl + 1, K.Gr - 0.3)} /><g transform={`translate(${r} ${r})`}><EsporaPl x={0} y={0} s={1.6} /></g></svg>} />
-      <Chip T={T} at={K.Pl + 0.3} until={K.Gr - 0.2} texto="placa de agar · 4 feb" y={1500} borde={KC.mint} tam={38} />
+      <Chip T={T} at={K.Pl + 0.3} until={K.Gr - 0.2} texto="placa de agar · 4 feb" y={1500} x={400} borde={KC.mint} tam={38} />
       <Chip T={T} at={K.Gr + 0.3} until={K.P - 0.2} texto="grano → sustrato → semanas" y={420} borde={KC.gold} tam={38} />
-      <Chip T={T} at={K.A + 3.9} until={K.H - 0.2} texto="aire fresco = sombrero normal" y={1500} borde={KC.mint} tam={36} />
+      <Chip T={T} at={K.A + 3.9} until={K.H - 0.2} texto="aire fresco = sombrero normal" y={1500} x={400} borde={KC.mint} tam={36} />
       <MitoTachado T={T} at={K.A + 1.2} tacharEn={K.A + 3.6} until={K.A + 4} texto="mucho CO₂ = deforme" x={540} y={1500} tam={38} />
-      <Chip T={T} at={K.H + 2.8} until={K.C - 0.2} texto="la luz abre el sombrero" y={1500} borde={KC.yellow} tam={36} />
-      <Chip T={T} at={K.C + 1.8} until={K.R - 0.2} texto="tropical: 22–30 °C" y={1500} borde={KC.red} tam={44} />
+      <Chip T={T} at={K.H + 2.8} until={K.C - 0.2} texto="la luz abre el sombrero" y={1500} x={400} borde={KC.yellow} tam={36} />
+      <Chip T={T} at={K.C + 1.8} until={K.R - 0.2} texto="tropical: 22–30 °C" y={1500} x={400} borde={KC.red} tam={44} />
       <Etq T={T} at={K.R + 4.4} until={K.Ci - 0.2} x={300} y={1100} texto="primordio" lado="der" tam={30} color={KC.ink} />
       <Etq T={T} at={K.R + 5.4} until={K.Ci - 0.2} x={760} y={1120} texto="adulta" lado="der" tam={30} color={KC.ink} />
       <Chip T={T} at={K.R + 4} until={K.Ci - 0.2} texto="¿el rosa? sin resolver" y={420} borde={KC.pink} tam={42} />
-      <Lupa T={T} at={K.Ci + 0.8} until={K.O - 0.1} x={760} y={1500} r={170} fx={560} fy={1180} etiqueta="micelio" tinte={KC.mint}
+      <Lupa T={T} at={K.Ci + 0.8} until={K.O - 0.1} x={760} y={760} r={170} fx={480} fy={1180} etiqueta="micelio" tinte={KC.mint}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a2614" /><MicelioRadial r={r} p={1} seed={4} /></svg>} />
       <Chip T={T} at={K.Ci + 0.3} until={K.O} texto="no es plástico: es un fruto" y={330} borde={KC.mint} tam={40} />
 
@@ -147,11 +147,9 @@ function SetaNarrado() {
       <Subtitulo T={T} idx={9} at={K.R + 0.1} until={K.Ci - 0.1} texto="¿Y el rosa? *Aún no está claro.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.O - 0.1} texto="El fruto de un micelio *que casi nunca ves.*" />
 
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={K.P + 0.2} until={K.A - 0.1} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.R + 4.6} until={K.Ci - 0.2} lado="arriba-der" />
-
+      <Robert T={T} apariciones={[[0, 3.6, 'avatar_11_sorprendido', 'gancho'], [6.5, 10, 'avatar_13_senalando_arriba', 'bajo-der'], [14, 17.5, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der'], [22, 25.6, 'avatar_04_bajando_lentes', 'bajo-der'], [26.3, 29.5, 'avatar_06_pensativo_menton', 'bajo-der'], [31, 34.5, 'avatar_07_pensativo_puno', 'bajo-der'], [41.5, 44.5, 'avatar_12_perfil_serio', 'arriba-der'], [48.5, 52.4, 'avatar_11_sorprendido', 'presentador-bajo'], [53.5, 58, 'avatar_02_apuntando_camara', 'bajo-der']]} />
       <MarcaAgua T={T} tema="biologia" num="03" hasta={K.O} />
-      <CierreMarca T={T} at={K.O} tema="biologia" />
+      <CierreMarca T={T} at={K.O} tema="biologia" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -202,23 +200,22 @@ function SetaCiclo() {
       </Escena>
 
       {/* contador de días (dato real) */}
-      {T < K.C && <div style={{ position:'absolute', left:0, right:0, top:420, zIndex:44, textAlign:'center' }}>
+      {T < K.C && <div style={{ position:'absolute', left:40, top:420, zIndex:44 }}>
         <div style={{ display:'inline-block', background:'rgba(14,15,18,.85)', border:`5px solid ${KC.gold}`, borderRadius:30, padding:'10px 34px' }}>
           <span style={{ font:`700 34px ${KF.mono}`, color:KC.texto }}>DÍA </span>
           <span style={{ font:`400 84px/1 ${KF.titulo}`, color:KC.yellow }}>{Math.round(dia)}</span>
           <span style={{ font:`700 34px ${KF.mono}`, color:'rgba(246,243,236,.7)' }}> / 77</span>
         </div>
       </div>}
-      {Object.entries(fechas).map(([t, f]) => <Chip key={t} T={T} at={+t + 0.3} until={+t + 4} texto={f} x={880} y={560} borde={KC.pink} tam={36} mono />)}
+      {Object.entries(fechas).map(([t, f]) => <Chip key={t} T={T} at={+t + 0.3} until={+t + 4} texto={f} x={240} y={1320} borde={KC.pink} tam={36} mono />)}
       <Capitulo T={T} caps={caps} hasta={K.F} />
       <Etq T={T} at={K.Ra + 1} until={K.E - 0.2} x={160} y={1250} texto="Pleurotus djamor" it tam={32} />
-      <Chip T={T} at={K.Pl + 1} until={K.G - 0.3} texto="micelio" y={1540} borde={KC.mint} tam={44} />
-      <Chip T={T} at={K.B + 0.8} until={K.Pr - 0.3} texto="colonizado" y={1540} borde={KC.mint} tam={44} />
-      <Chip T={T} at={K.Pr + 1} until={K.C - 0.3} texto="¡aire, humedad y luz!" y={1540} borde={KC.yellow} tam={42} />
-      <Chip T={T} at={K.C + 2.4} until={K.F - 0.2} texto="y vuelve a empezar" y={1540} borde={KC.gold} tam={42} />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.Pr + 2} until={K.Pr + 5} lado="abajo-der" />
+      <Chip T={T} at={K.Pl + 1} until={K.G - 0.3} texto="micelio" y={1540} x={400} borde={KC.mint} tam={44} />
+      <Chip T={T} at={K.Pr + 1} until={K.C - 0.3} texto="¡aire, humedad y luz!" y={1540} x={400} borde={KC.yellow} tam={42} />
+      <Chip T={T} at={K.C + 2.4} until={K.F - 0.2} texto="y vuelve a empezar" y={1540} x={400} borde={KC.gold} tam={42} />
+      <Robert T={T} apariciones={[[0, 3.5, 'avatar_11_sorprendido', 'gancho'], [8, 11.5, 'avatar_13_senalando_arriba', 'bajo-der'], [16, 19.5, 'avatar_06_pensativo_menton', 'bajo-der'], [24.5, 28, 'avatar_04_bajando_lentes', 'arriba-der'], [33, 37, 'avatar_02_apuntando_camara', 'presentador-bajo'], [41, 44.5, 'avatar_11_sorprendido', 'arriba-der'], [50, 53.5, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'], [55, 58, 'avatar_13_senalando_arriba', 'bajo-der']]} />
       <MarcaAgua T={T} tema="biologia" num="03" hasta={K.F} />
-      <CierreMarca T={T} at={K.F} tema="biologia" frase="De esporada a cosecha: 77 días" />
+      <CierreMarca T={T} at={K.F} tema="biologia" robert="assets/stickers/avatar_02_apuntando_camara.png" frase="De esporada a cosecha: 77 días" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );

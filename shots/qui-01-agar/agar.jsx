@@ -83,8 +83,8 @@ function AgarNarrado() {
       <Escena T={T} a={K.G} b={K.Al} fondo={KC.yellow}>
         <div style={fondoPuntos(KC.yellow)}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`translate(540 900) scale(${1 + 0.04 * tembla(K.G + 0.05)}, ${1 - 0.04 * tembla(K.G + 0.05)})`}>
-            <PlacaPetri x={0} y={0} r={360} agar={AGAR} id="pg"><Colonias g={kprog(T, K.G + 2.2, K.G + 4.5)} n={16} /></PlacaPetri>
+          <g transform={`translate(520 1000) scale(${1 + 0.04 * tembla(K.G + 0.05)}, ${1 - 0.04 * tembla(K.G + 0.05)})`}>
+            <PlacaPetri x={0} y={0} r={320} agar={AGAR} id="pg"><Colonias g={kprog(T, K.G + 2.2, K.G + 4.5)} n={16} /></PlacaPetri>
           </g>
         </svg>
       </Escena>
@@ -140,7 +140,7 @@ function AgarNarrado() {
         </svg>
         <Chip T={T} at={K.I + 0.2} until={K.E - 0.2} texto="gelatina" x={300} y={1110} borde={KC.red} tam={38} />
         <Chip T={T} at={K.I + 0.4} until={K.E - 0.2} texto="agar" x={780} y={1110} borde={KC.mint} tam={38} />
-        <Chip T={T} at={K.P + 0.3} until={K.E - 0.2} texto="incubadora · 37 °C" y={400} borde={KC.gold} tam={42} mono />
+        <Chip T={T} at={K.P + 0.3} until={K.E - 0.2} texto="incubadora · 37 °C" x={400} y={1300} borde={KC.gold} tam={42} mono />
       </Escena>
       {/* 7 · el estudio: Fanny Hesse, 1881 */}
       <Escena T={T} a={K.E} b={K.C} fondo={KC.pink}>
@@ -181,7 +181,7 @@ function AgarNarrado() {
           {(() => { const u = kprog(T, K.X + 1.8, K.X + 4, kEase.suave), x = klerp(300, 760, u), y = klerp(980, 1120, u) - Math.sin(Math.PI * u) * 260;
             return T > K.X + 1.6 && <g transform={`translate(${x} ${y}) rotate(${T * 90})`}>{Array.from({ length: 6 }, (_, k) => <g key={k}><circle cx={-50 + k * 20} cy={Math.sin(k) * 14} r={7} fill={KC.red} /><circle cx={-50 + k * 20} cy={-Math.sin(k) * 14} r={7} fill={KC.blue} /></g>)}</g>; })()}
         </svg>
-        <Etq T={T} at={K.X + 0.6} until={K.Ci - 0.2} x={420} y={600} texto="nori (alga)" tam={28} color={KC.ink} />
+        <Etq T={T} at={K.X + 0.6} until={K.Ci - 0.2} x={420} y={970} texto="nori (alga)" tam={28} color={KC.ink} />
         <Etq T={T} at={K.X + 1.2} until={K.Ci - 0.2} x={150} y={1050} texto="Zobellia (del mar)" it tam={26} color={KC.ink} />
         <Etq T={T} at={K.X + 4.2} until={K.Ci - 0.2} x={1010} y={860} texto="Bacteroides plebeius" it tam={28} color={KC.ink} lado="izq" />
         <TarjetaEstudio T={T} at={K.X + 0.1} until={K.X + 1.6} anio="2010" quien="Hehemann et al." revista="Nature 464: 908" y={560} />
@@ -195,8 +195,8 @@ function AgarNarrado() {
       </Escena>
 
       <Capitulo T={T} caps={caps} hasta={K.Ci} />
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.4} until={K.Al - 0.3} texto="gelatina" y={420} />
-      <Chip T={T} at={K.G + 1.8} until={K.Al - 0.2} texto="azúcar de alga" y={1500} borde={KC.red} tam={44} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.4} until={K.Al - 0.3} texto="gelatina" x={330} y={420} />
+      <Chip T={T} at={K.G + 1.8} until={K.Al - 0.2} texto="azúcar de alga" y={1500} x={400} borde={KC.red} tam={44} />
       <Etq T={T} at={K.Al + 0.4} until={K.Q - 0.2} x={540} y={1180} texto="Gelidium (alga roja)" it tam={30} />
       <Chip T={T} at={K.Ci + 0.3} until={K.O} texto="el piso de la microbiología" y={430} borde={KC.gold} tam={42} />
 
@@ -212,11 +212,9 @@ function AgarNarrado() {
       <Subtitulo T={T} idx={9} at={K.X + 0.1} until={K.Ci - 0.1} texto="Genes del mar *en intestinos de Japón.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.O - 0.1} texto="Es *el piso* de la microbiología." />
 
-      <Sticker T={T} src={AVS('avatar_06_pensativo_menton')} at={K.P + 0.1} until={K.I + 0.4} lado="arriba-der" />
-      <Sticker T={T} src={AVS('avatar_11_sorprendido')} at={K.X + 4.4} until={K.Ci - 0.2} lado="arriba-der" />
-
+      <Robert T={T} apariciones={[[0, 3.6, 'avatar_11_sorprendido', 'gancho'], [6, 9.5, 'avatar_13_senalando_arriba', 'bajo-der'], [12, 15, 'avatar_07_pensativo_puno', 'bajo-der'], [17, 20.5, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der'], [22, 26, 'avatar_02_apuntando_camara', 'presentador-bajo'], [27.5, 30.5, 'avatar_06_pensativo_menton', 'arriba-der'], [31.5, 34.5, 'avatar_10_serio_molesto', 'bajo-der'], [38.5, 41, 'avatar_04_bajando_lentes', 'bajo-der'], [43.5, 46.8, 'avatar_12_perfil_serio', 'bajo-der'], [51.5, 55, 'avatar_11_sorprendido', 'arriba-der'], [55.5, 58.2, 'avatar_13_senalando_arriba', 'bajo-der']]} />
       <MarcaAgua T={T} tema="quimica" num="01" hasta={K.O} />
-      <CierreMarca T={T} at={K.O} tema="quimica" />
+      <CierreMarca T={T} at={K.O} tema="quimica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -252,7 +250,7 @@ function AgarMudo() {
         <div style={fondoPuntos(KC.lilac)}></div>
         <CurvaAgar T={T} temp={tAgar} fase={T < K.Cu ? 'sube' : 'baja'} y={560} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform="translate(540 1360)"><PlacaPetri x={0} y={0} r={150} agar={(T < K.Cu ? tAgar > 85 : tAgar > 35) ? '#ffe9b8' : AGAR} id="mcu">
+          <g transform="translate(300 1360)"><PlacaPetri x={0} y={0} r={150} agar={(T < K.Cu ? tAgar > 85 : tAgar > 35) ? '#ffe9b8' : AGAR} id="mcu">
             {(T < K.Cu ? tAgar > 85 : tAgar > 35) && Array.from({ length: 8 }, (_, i) => <circle key={i} cx={Math.cos(T * 3 + i) * 80} cy={Math.sin(T * 2 + i) * 60} r={10} fill="#fff" opacity=".7" />)}</PlacaPetri></g>
         </svg>
       </Escena>
@@ -278,10 +276,10 @@ function AgarMudo() {
       <Chip T={T} at={K.D + 2} until={K.Cu - 0.2} texto="se derrite hasta ~85 °C" y={548} borde={KC.red} tam={38} />
       <Chip T={T} at={K.Cu + 2} until={K.R - 0.2} texto="y cuaja hasta ~35 °C" y={548} borde={KC.cyan} tam={38} />
       <Chip T={T} at={K.R + 0.3} until={K.F - 0.2} texto="a 37 °C el agar no se mueve" y={548} borde={KC.gold} tam={38} />
-      <Medidor T={T} at={K.Ca + 0.6} until={K.D - 0.3} etiqueta="GELATINA SÓLIDA" valor={() => 1 - (T < K.Co ? gelLiq : T < K.A ? 0.15 + 0.85 * comen : 1)} texto={(v) => Math.round(v * 100) + ' %'} x={280} ancho={720} y={1420} color={KC.red} />
-      <Sticker T={T} src={AVS('avatar_04_bajando_lentes')} at={K.R + 0.5} until={K.F - 0.3} lado="abajo-der" />
+      <Medidor T={T} at={K.Ca + 0.6} until={K.D - 0.3} etiqueta="GELATINA SÓLIDA" valor={() => 1 - (T < K.Co ? gelLiq : T < K.A ? 0.15 + 0.85 * comen : 1)} texto={(v) => Math.round(v * 100) + ' %'} x={280} ancho={720} y={1250} color={KC.red} />
+      <Robert T={T} apariciones={[[0, 3.6, 'avatar_11_sorprendido', 'bajo-der'], [7, 10.5, 'avatar_13_senalando_arriba', 'bajo-der'], [16, 19.5, 'avatar_10_serio_molesto', 'bajo-der'], [24.5, 28, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der'], [34, 38, 'avatar_02_apuntando_camara', 'presentador-bajo'], [44, 47.5, 'avatar_07_pensativo_puno', 'bajo-der'], [52.5, 57.5, 'avatar_04_bajando_lentes', 'bajo-der']]} />
       <MarcaAgua T={T} tema="quimica" num="01" hasta={K.F} />
-      <CierreMarca T={T} at={K.F} tema="quimica" frase="Por qué el agar y no la gelatina" />
+      <CierreMarca T={T} at={K.F} tema="quimica" robert="assets/stickers/avatar_02_apuntando_camara.png" frase="Por qué el agar y no la gelatina" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );

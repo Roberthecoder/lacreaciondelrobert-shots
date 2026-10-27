@@ -597,7 +597,9 @@ function MarcaAgua({ T, num, hasta, tema, logo }) {
 // Sticker de Robert. lado: 'arriba-der' (zona libre de la guía), 'abajo-der', 'abajo-izq',
 // 'gancho' (grande arriba a la derecha, para el cuadro 0) y 'presentador' (medio cuerpo grande abajo a la derecha).
 const KLADOS = { 'arriba-der': { left:690, top:300, width:330 }, 'abajo-der': { left:640, top:1180, width:420 }, 'abajo-izq': { left:-20, top:1180, width:420 },
-  'gancho': { left:600, top:230, width:460 }, 'presentador': { left:500, top:1000, width:620 } };
+  'gancho': { left:600, top:230, width:460 }, 'presentador': { left:500, top:1000, width:620 },
+  // debajo del subtítulo (bottom 560): no lo tapan nunca. 'presentador-bajo' = medio cuerpo grande, cortado por el borde.
+  'bajo-der': { left:760, top:1400, width:330 }, 'presentador-bajo': { left:470, top:1360, width:620 } };
 function Sticker({ T, src, at, until, lado = 'arriba-der' }) {
   if (T < at || T > until + 0.45) return null;
   const L = KLADOS[lado] || KLADOS['arriba-der'];
@@ -612,7 +614,8 @@ function Sticker({ T, src, at, until, lado = 'arriba-der' }) {
 // Robert presentador: todas sus apariciones del shot en una lista.
 // apariciones: [[at, until, 'avatar_11_sorprendido', 'gancho'], ...]  ·  base: carpeta de los PNG.
 function Robert({ T, apariciones = [], base = 'assets/stickers/' }) {
-  return <>{apariciones.map(([at, until, pose, lado], i) =>
+  // las poses se precargan desde el cuadro 0 para que ninguna salga en blanco en el render
+  return <><Precarga srcs={[...new Set(apariciones.map((a) => `${base}${a[2]}.png`))]} />{apariciones.map(([at, until, pose, lado], i) =>
     <Sticker key={i} T={T} src={`${base}${pose}.png`} at={at} until={until} lado={lado} />)}</>;
 }
 // Tarjeta de cierre. robert: ruta de un sticker de Robert que sale junto al logo (obligatorio en los shots nuevos).

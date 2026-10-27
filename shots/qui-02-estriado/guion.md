@@ -49,3 +49,36 @@ Pregunta fija arriba, cambia en cada error. Cada error dura 9 s: se hace mal (0�
 ## Datos que no se pudieron verificar
 - "48 h · 37 °C" en el mudo es un ejemplo típico de incubación (en el estudio de Sanders el ejemplo es 24 h a 30 °C); no aplica igual a todas las bacterias.
 - Que "tus medicinas y tu yogur empiezan con una sola bacteria" (guion viejo): no lo usé.
+
+## Robert en pantalla
+
+Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 apariciones y 18 s, una vez grande, 4 poses o más, y Robert junto al logo en el cierre. Nunca tapa el subtítulo: abajo usa los lados `bajo-der` y `presentador-bajo`, que quedan debajo de él.
+
+**Versión narrada:** 10 apariciones + cierre · **35.0 s** en pantalla · 9 poses.
+
+| Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|
+| 0.0 s | 3.6 s | sorprendido | `bajo-der` | “Ese garabato no es un garabato: es cómo se separa una sola bacteria de entre millones.” |
+| 6.5 s | 10.0 s | señalando | `arriba-der` | “Necesitas una placa con agar, un asa de metal y una flama para esterilizarla entre pasada y pasada.” |
+| 12.5 s | 16.0 s | pensativo (puño) | `bajo-der` | “Primero dejas la muestra en una orilla: ahí hay millones de células encimadas.” |
+| 18.0 s | 21.5 s | sonriendo | `bajo-der` | “Flameas el asa, giras la placa y arrastras solo un poquito de la primera zona.” |
+| 26.3 s | 29.0 s | pensativo (mentón) | `arriba-der` | “¿Y qué pasa en la última?” |
+| 31.0 s | 35.0 s | apuntando a cámara | `presentador-bajo` | “Las células quedan tan separadas que cada una crece sola y forma una colonia: en teoría, millones de clones de una sola célula.” |
+| 37.5 s | 41.0 s | serio | `bajo-der` | “Errores comunes: tocar con el asa caliente, clavarla en el agar o regresar a la primera zona.” |
+| 44.5 s | 48.0 s | bajando los lentes | `bajo-der` | “El protocolo de Erin Sanders, de 2012, muestra colonias aisladas de Serratia en la cuarta zona tras un día a treinta grados.” |
+| 50.0 s | 53.5 s | sorprendido | `bajo-der` | “Lo curioso: esa bacteria roja también crece en las esquinas de tu regadera.” |
+| 54.5 s | 58.2 s | de perfil, serio | `bajo-der` | “Así que ese garabato es un filtro: entra una multitud y sale una sola.” |
+| cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
+
+**Gemelo mudo:** 7 apariciones + cierre · **25.6 s** en pantalla · 7 poses.
+
+| Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|
+| 0.0 s | 3.6 s | sorprendido | `bajo-der` | escena Intro |
+| 6.5 s | 10.0 s | serio | `bajo-der` | escena Caliente |
+| 15.0 s | 18.5 s | de perfil, serio | `bajo-der` | escena Clavar |
+| 24.5 s | 28.0 s | pensativo (puño) | `bajo-der` | escena Flamear |
+| 33.5 s | 37.0 s | señalando | `bajo-der` | escena Regresar |
+| 42.5 s | 46.0 s | bajando los lentes | `bajo-der` | escena Boca |
+| 53.0 s | 57.5 s | apuntando a cámara | `presentador-bajo` | escena Bien |
+| cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
