@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot Que Es Un Hongo base narrada.dc.html",
   "salida": "Shot Que Es Un Hongo narrado.dc.html",
-  "velocidad": 1.065,
+  "velocidad": 1.012,
   "mudo": { "dcHtml": "Shot Que Es Un Hongo mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
   "nota": "Fungi Mati #02. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. PENDIENTE de aprobación de Robert: NO generar la voz sin su visto bueno (gasta créditos).",
   "lineas": [

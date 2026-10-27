@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot Estriado base narrada.dc.html",
   "salida": "Shot Estriado narrado.dc.html",
-  "velocidad": 1.065,
+  "velocidad": 1.08,
   "mudo": { "dcHtml": "Shot Estriado mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
   "nota": "Químico #02. El protagonista es el gemelo MUDO (M2, 5 errores comunes). Base narrada: una línea por subtítulo (idx 0..10 del jsx), UNA sola petición a ElevenLabs. PENDIENTE de aprobación de Robert: NO generar la voz sin su visto bueno (gasta créditos).",
   "lineas": [

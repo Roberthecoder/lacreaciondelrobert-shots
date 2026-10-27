@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot Seta Rosa base narrada.dc.html",
   "salida": "Shot Seta Rosa narrado.dc.html",
-  "velocidad": 1.065,
+  "velocidad": 1.028,
   "mudo": { "dcHtml": "Shot Seta Rosa mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
   "nota": "Fungi Mati #03. Una línea por subtítulo (idx 0..10 del jsx). Todo en UNA sola petición a ElevenLabs. PENDIENTE de aprobación de Robert: NO generar la voz sin su visto bueno (gasta créditos).",
   "lineas": [
