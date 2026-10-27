@@ -40,6 +40,11 @@ Si la rama `videos/…` todavía no existe, el render no ha terminado: espera (`
   - **Al terminar (o al apartar el tema):** registrar el tema y 2–3 derivados en un archivo propio `historial/nuevos/<clave>.json` (la clave de tu sesión en `historial/ola-01.md`, o tu rama con guiones; formato en `historial/nuevos/LEEME.md`). **Nunca editar `temas.json` directamente**: hay muchas sesiones en paralelo y chocarían. `node historial/consolidar.mjs` los junta sin duplicados (lo corre quien mezcla ramas a main).
 - Producción en la nube (renders automáticos al hacer push, Release de borradores, aprobar voz): ver `PRODUCCION_NUBE.md`. Nunca poner `"voz_aprobada": true` sin que Robert lo diga.
 - Cada shot se produce en dos versiones del mismo tema: narrada (voz clonada en ElevenLabs, Voice ID `uiCk6APPfsjnw3oUQzVo`) y sin voz (música + subtítulos + gags).
+- **Números (regla de Robert, 27 oct 2026, tras el error del cepario):** cada cifra que sale en pantalla o en la voz se verifica
+  **abriendo la fuente que se cita** y encontrando ahí la cifra exacta; se copia la frase textual en `## Fuentes` del guion, con el
+  **año del dato**. Prohibido tomar cifras de "revisiones que citan" sin abrir el original, mezclar la cifra de una fuente con el
+  enlace de otra, o usar un conteo viejo si hay uno más nuevo. Toda cifra dice **de qué es** ("3 millones de cepas de microbios
+  guardadas en colecciones") y, si es de hace más de 2 años, lo dice ("en 2020…"). Si no se puede verificar, no se usa.
 - Rigor: cada dato con fuente publicada, listada en el guion. Si algo es hipótesis, decirlo como hipótesis. Especies en cursiva. Ilustrar bien la morfología real (ej. esporas de *Ophiocordyceps* alargadas, no redondas).
 - Estilo y reglas detalladas: `referencias/*/CLAUDE.md`, `referencias/Paquete Shot Lab/PLANTILLA Shot Sin Voz.md` y `referencias/KIT MAESTRO Shots Micologicos/GUIA_SHOT.md`. Prohibidos los avatares 01 y 09 salvo tema de sabor.
 - Subtítulos siempre fuera del tercio inferior.
