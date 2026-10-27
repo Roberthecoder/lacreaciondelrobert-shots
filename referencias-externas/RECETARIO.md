@@ -2,8 +2,8 @@
 
 Hecho el 25 oct 2026 por ingeniería inversa de 12 canales (ver `ANALISIS.md`) y ajustado el 26 oct con
 el análisis de 120 videos (`FORMULA_VIRAL.md`). Cada formato se adapta a
-**tu marca**: tus colores brillantes (fondo oscuro solo en lo microscópico), trazo grueso, stickers como
-reacción, logo + badge `#NN`, tu voz clonada y fuentes en la descripción. Nunca se copian sus personajes,
+**tu marca**: tus colores brillantes (fondo oscuro solo en lo microscópico), trazo grueso, Robert en pantalla
+desde el cuadro 0 y cada 8–10 s (regla en `CLAUDE.md`), logo + badge `#NN`, tu voz clonada y fuentes en la descripción. Nunca se copian sus personajes,
 letras, paletas ni logos.
 
 **Reglas que valen para todos** (detalle en `CLAUDE.md`):

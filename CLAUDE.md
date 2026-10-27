@@ -55,7 +55,14 @@ Basado en el análisis de `referencias-externas/ANALISIS.md` y confirmado con `F
 - Colores: se mantienen los fondos brillantes y saturados de la marca (rosa, amarillo, menta, cian…). Solo las escenas microscópicas o internas (dentro de una célula, un tejido, el suelo) usan fondo oscuro (`#0E0F12` o azul noche) con los colores de la marca como acento.
 - Poco texto: un título o número grande, etiquetas chicas (nombre común + *científico*) y una línea de subtítulo con una palabra resaltada.
 - Capítulos numerados pequeños bajo el logo y medidores reales (µm, días, conteos) cuando ayuden.
-- Stickers: como reacción en la esquina, sobre todo en los re-ganchos.
+- **Robert en pantalla (obligatorio, es la marca del canal).** Los shots existen también para que la gente asocie la ciencia con la cara de Robert. Sus stickers (13 poses en `shots/001-hormiga-zombi/assets/stickers/`; copia al shot las que uses) se usan con el componente `Robert` del kit y cumplen todo esto:
+  - **Cuadro 0:** Robert ya está en pantalla con el gancho (lado `gancho`), reaccionando a la primera frase. No es intro ni saludo: la voz y la imagen arrancan igual de rápido que en la receta.
+  - **Cada 8–10 s** vuelve a aparecer, en cada re-gancho y en el dato sorprendente: mínimo **6 apariciones** en 61–62 s y **al menos 18 s en pantalla** en total (~30 %).
+  - **Al menos una vez grande** (lado `presentador`, medio cuerpo) en el giro o el dato más fuerte, señalando o reaccionando a lo que pasa en la escena.
+  - **Pose según la frase:** sorprendido con el dato raro, pensativo con la pregunta, serio con lo grave, señalando cuando algo aparece, riendo con lo absurdo. Mínimo **4 poses distintas**; nunca la misma dos veces seguidas.
+  - **Cierre:** `CierreMarca` con `robert=` (Robert junto al logo, señalando o apuntando a cámara).
+  - Nunca tapa el dato principal, las etiquetas ni el subtítulo: si estorba, cambia de lado o se espera un segundo.
+  - En `guion.md`, una tabla **"Robert en pantalla"** con cada aparición (segundo de entrada y salida, pose, lado y la frase a la que reacciona) y el total de segundos. Sin esa tabla el shot no está terminado.
 - Descripción del video: mini artículo con la explicación completa (guion) + fuentes + "el dibujo es esquemático" cuando aplique + **una pregunta para comentar** al final (p. ej. "¿Cómo le dicen en tu región?", "¿A ti también te pasa?").
 
 ## Notas técnicas (aprendidas a la mala)
