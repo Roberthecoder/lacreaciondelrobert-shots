@@ -1,6 +1,6 @@
 // logo.mjs — genera el isotipo A COLOR de La Creación del Robert con el hexágono del TEMA iluminado en dorado.
-// El dorado rellena EXACTAMENTE la celda del ícono (mismo hexágono de la retícula, ligeramente adentro del
-// contorno para no taparlo). Temas:
+// El dorado rellena EXACTAMENTE la celda del ícono: mismo hexágono de la retícula (radio 55, punta plana),
+// dibujado DEBAJO del contorno grueso y de las divisiones finas, que tapan sus bordes. Temas:
 //   biologia → ADN · quimica → matraz · bioquimica → ADN + matraz · fisica → átomo · ia → brillitos
 // Uso: node logo.mjs [carpeta-salida]   (por defecto motor/kit/logos) → logo_<tema>.svg
 import fs from 'node:fs';
@@ -14,7 +14,7 @@ const GOLD = '#E8A62A', INK = '#0a0a0a';
 // centros de las 4 celdas (retícula de hexágonos "de punta plana", radio 55)
 const CELDA = { atomo: [0, -95.3], matraz: [-82.5, -47.6], adn: [-82.5, 47.6], brillos: [0, 95.3] };
 const TEMAS = { biologia: ['adn'], quimica: ['matraz'], bioquimica: ['adn', 'matraz'], fisica: ['atomo'], ia: ['brillos'] };
-const hex = ([cx, cy], R = 51.5) => 'M ' + [0, 60, 120, 180, 240, 300].map((a) => {
+const hex = ([cx, cy], R = 55) => 'M ' + [0, 60, 120, 180, 240, 300].map((a) => {
   const r = (a * Math.PI) / 180; return `${(cx + R * Math.cos(r)).toFixed(1)},${(cy + R * Math.sin(r)).toFixed(1)}`;
 }).join(' L ') + ' Z';
 
