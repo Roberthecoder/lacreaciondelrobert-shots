@@ -24,7 +24,7 @@ env:
 jobs:
   detectar:
     if: ${{ !contains(github.event.head_commit.message, '[sin render]') }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     outputs:
       shots: ${{ steps.cambios.outputs.shots }}
@@ -81,7 +81,7 @@ jobs:
   render:
     needs: detectar
     if: needs.detectar.outputs.shots != '[]' && needs.detectar.outputs.shots != ''
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 45
     strategy:
       fail-fast: false
@@ -168,7 +168,7 @@ jobs:
   textos:
     needs: detectar
     if: needs.detectar.outputs.textos != '[]' && needs.detectar.outputs.textos != ''
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     env:
       GH_TOKEN: ${{ github.token }}
@@ -187,7 +187,7 @@ jobs:
     needs: [detectar, render, textos]
     # Corre aunque falte uno de los dos (solo textos o solo video), pero no si algo falló.
     if: ${{ always() && needs.detectar.result == 'success' && !contains(needs.*.result, 'failure') && !contains(needs.*.result, 'cancelled') && (needs.render.result == 'success' || needs.textos.result == 'success') }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     env:
       GH_TOKEN: ${{ github.token }}
