@@ -252,7 +252,7 @@ function InsulinaNarrado() {
         <div style={{ position:'absolute', inset:0, background:KC.mint, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g opacity={kprog(T, K.H + 2.6, K.H + 3.2)}>
-            <Frasco T={T} x={540} y={960} s={1.25} etiqueta="Humulin" />
+            <Frasco T={T} x={300} y={960} s={1.25} etiqueta="Humulin" />
           </g>
         </svg>
         <TarjetaEstudio T={T} at={K.H + 0.3} until={K.H + 2.6} anio="1982" quien="30 de octubre · FDA" revista="el primer fármaco de ADN recombinante" y={820} />
@@ -296,7 +296,7 @@ function InsulinaNarrado() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Frasco T={T} x={880} y={1420} s={0.95} etiqueta="insulina" />
         </svg>
-        <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="de un tanque, no de un animal" y={420} borde={KC.gold} tam={42} />
+        <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="de un tanque, no de un animal" x={340} y={420} borde={KC.gold} tam={42} />
       </EscenaFundido>
 
       {/* subtítulos */}
@@ -314,11 +314,20 @@ function InsulinaNarrado() {
       <Subtitulo T={T} idx={11} at={K.D + 0.1} until={K.C - 0.1} texto="En la bacteria *hay que sacarla y doblarla.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Tu insulina viene *de un tanque.*" />
 
-      <Sticker T={T} src={IAVS('avatar_06_pensativo_menton')} at={K.Q + 0.1} until={K.P - 0.3} lado="arriba-der" />
-      <Sticker T={T} src={IAVS('avatar_11_sorprendido')} at={K.Ho + 0.3} until={K.Le - 0.3} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} base="assets/stickers/" apariciones={[
+        [0,    3.4,  'avatar_11_sorprendido',      'gancho'],  // el gancho: no salió de ningún animal
+        [9.2,  12.8, 'avatar_10_serio_molesto',    'arriba-der'],  // las reacciones de la insulina animal
+        [18.6, 22.0, 'avatar_13_senalando_arriba', 'arriba-der'],  // señala la proteína que sale
+        [22.9, 25.2, 'avatar_06_pensativo_menton', 'arriba-der'],  // re-gancho: ¿cómo cabe una fábrica ahí?
+        [34.9, 38.2, 'avatar_02_apuntando_camara', 'presentador'],  // GRANDE: 1982, el primer fármaco recombinante
+        [43.2, 46.8, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],  // la levadura la suelta al caldo
+        [48.2, 51.8, 'avatar_04_bajando_lentes',   'arriba-der'],  // la diferencia entre las dos rutas
+        [52.8, 57.9, 'avatar_13_senalando_arriba', 'gancho'],  // cierre: viene de un tanque
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="08" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="bioquimica" />
+      <CierreMarca T={T} at={K.Ou} tema="bioquimica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -397,8 +406,20 @@ function InsulinaCiclo() {
       {T < K.S + 1.2 && <Contador T={T} at={K.Ri + 0.4} desde={0} hasta={AMINOS} dur={K.S - 0.6 - K.Ri - 0.4} sufijo=" / 51" x={540} y={470} tam={110} color={INS} />}
       <Chip T={T} at={K.F + 4.6} until={K.Ou - 0.1} texto="…y vuelve a empezar" y={1480} borde={KC.gold} tam={44} />
 
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} base="assets/stickers/" apariciones={[
+        [0,    3.6,  'avatar_11_sorprendido',      'gancho'],  // el gen humano de la insulina
+        [7.0,  10.5, 'avatar_13_senalando_arriba', 'arriba-der'],  // señala el plásmido que se cierra
+        [14.0, 17.5, 'avatar_06_pensativo_menton', 'arriba-der'],  // entra a la célula
+        [20.5, 24.5, 'avatar_04_bajando_lentes',   'presentador'],  // GRANDE: la célula se divide y llena el tanque
+        [28.0, 31.5, 'avatar_02_apuntando_camara', 'arriba-der'],  // el tanque trabajando
+        [35.0, 38.5, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],  // 51 aminoácidos, uno por uno
+        [44.0, 47.5, 'avatar_10_serio_molesto',    'arriba-der'],  // sacarla cuesta: hay que abrir la bacteria
+        [51.5, 55.5, 'avatar_12_perfil_serio',     'arriba-der'],  // y llena el frasco
+      ]} />
+
       <MarcaAgua T={T} tema="bioquimica" num="08" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="bioquimica" />
+      <CierreMarca T={T} at={K.Ou} tema="bioquimica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

@@ -53,6 +53,38 @@ Hoy viven con diabetes unos **589 millones de adultos** de 20 a 79 años (Atlas 
 
 El dibujo es esquemático. **¿Conoces a alguien que use insulina? ¿Sabía de dónde sale? 👇**"
 
+## Robert en pantalla
+
+Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtitulo (el kit lo dibuja por delante de el).
+
+### Version narrada: 8 apariciones, **28.3 s en pantalla** (de 61.5 s)
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 3,4 | sorprendido (11) | gancho | «no salio de ningun animal: de un tanque» |
+| 9,2 - 12,8 | serio (10) | arriba-der | «a algunos pacientes les daba reacciones» |
+| 18,6 - 22,0 | senalando (13) | arriba-der | senala la proteina que sale de la bacteria |
+| 22,9 - 25,2 | pensativo (06) | arriba-der | re-gancho: «¿como cabe una fabrica ahi?» |
+| 34,9 - 38,2 | apuntando (02) | **presentador** | 1982, el primer farmaco de ADN recombinante, en grande |
+| 43,2 - 46,8 | sonriendo (05) | arriba-der | «la levadura la suelta al caldo» |
+| 48,2 - 51,8 | bajando lentes (04) | arriba-der | la diferencia entre las dos rutas |
+| 52,8 - 57,9 | senalando (13) | gancho | cierre: «viene de un tanque» |
+
+### Gemelo mudo: 8 apariciones, **29.1 s en pantalla**
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 3,6 | sorprendido (11) | gancho | el gen humano de la insulina |
+| 7,0 - 10,5 | senalando (13) | arriba-der | el plasmido se cierra |
+| 14,0 - 17,5 | pensativo (06) | arriba-der | entra a la celula |
+| 20,5 - 24,5 | bajando lentes (04) | **presentador** | la celula se divide y llena el tanque, en grande |
+| 28,0 - 31,5 | apuntando (02) | arriba-der | el tanque trabajando |
+| 35,0 - 38,5 | sonriendo (05) | arriba-der | 51 aminoacidos, uno por uno |
+| 44,0 - 47,5 | serio (10) | arriba-der | sacarla cuesta: hay que abrir la bacteria |
+| 51,5 - 55,5 | perfil serio (12) | arriba-der | y llena el frasco |
+
+En las dos versiones la tarjeta de cierre lleva a Robert junto al logo (`CierreMarca robert=`).
+
 ## Fuentes
 - **Humulin:** aprobada por la FDA el **30 de octubre de 1982**; primer producto terapéutico de proteína basado en ADN recombinante aprobado para uso humano. Desarrollada por Genentech y licenciada a Eli Lilly; el trabajo de 1978 se hizo con Genentech y el City of Hope National Medical Center, y el primer reporte se publicó en enero de 1979.
 - **Producción en levadura:** Novolin (Novo Nordisk), insulina humana producida en *Saccharomyces cerevisiae*, aprobada en EE. UU. en **1991**. Las revisiones de insulina recombinante coinciden en que se produce **en *E. coli* o en *S. cerevisiae***, y una de ellas llama a *S. cerevisiae* la levadura predominante para la producción comercial a gran escala. Diferencia de proceso: cuerpos de inclusión y replegado en *E. coli*; precursor soluble secretado al sobrenadante en levadura. (Revisiones recopiladas en *Equivalent Recombinant Human Insulin Preparations and their Place in Therapy*, PMC5819055, y en la literatura de factorías microbianas.)

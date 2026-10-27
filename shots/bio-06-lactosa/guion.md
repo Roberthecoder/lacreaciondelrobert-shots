@@ -54,6 +54,37 @@ Además hay una razón biológica para que un efecto así no sea permanente: el 
 
 El dibujo es esquemático. **¿A ti te cae mal la leche o le aguantas todo? 👇**"
 
+## Robert en pantalla
+
+Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtitulo (el kit lo dibuja por delante de el).
+
+### Version narrada: 7 apariciones, **24.5 s en pantalla** (de 61.5 s)
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 3,2 | sorprendido (11) | gancho | «Ese virus no viene a enfermarte» |
+| 9,6 - 13,2 | senalando (13) | arriba-der | «la mayoria baja esa produccion» (senala el medidor) |
+| 18,5 - 20,9 | pensativo (06) | arriba-der | re-gancho: «¿y si le devolvieras la receta?» |
+| 26,8 - 30,2 | sonriendo (05) | arriba-der | «las ratas volvieron a digerir lactosa» |
+| 35,0 - 39,6 | serio (10) | **presentador** | «no es un tratamiento aprobado»: el matiz, en grande |
+| 44,4 - 48,0 | bajando lentes (04) | arriba-der | «la receta se va con las celulas viejas» |
+| 54,2 - 57,9 | apuntando (02) | gancho | cierre: «te presta un gen. Un rato.» |
+
+### Gemelo mudo: 8 apariciones, **28.2 s en pantalla**
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 3,4 | sorprendido (11) | gancho | entra la lactosa |
+| 8,0 - 11,4 | pensativo (06) | arriba-der | nadie la corta |
+| 15,0 - 18,8 | serio (10) | **presentador** | el gas: el problema, en grande |
+| 22,0 - 25,4 | senalando (13) | arriba-der | llega el virus con el gen |
+| 29,5 - 33,0 | sonriendo (05) | arriba-der | la celula hace la enzima |
+| 36,5 - 40,0 | apuntando (02) | arriba-der | ahora si se parte |
+| 44,0 - 47,5 | bajando lentes (04) | abajo-izq | las celulas viejas se van |
+| 51,5 - 55,2 | pensativo puno (07) | arriba-der | la cripta empieza de nuevo |
+
+En las dos versiones la tarjeta de cierre lleva a Robert junto al logo (`CierreMarca robert=`).
+
 ## Fuentes
 - **During, M. J. et al., "Peroral gene therapy of lactose intolerance using an adeno-associated virus vector", *Nature Medicine* 4(10): 1131–1135 (octubre de 1998)**, Thomas Jefferson University: vector adeno-asociado por vía oral en ratas, expresión persistente en el epitelio intestinal y recuperación del fenotipo. La nota de prensa de la universidad reporta 4 meses (lo que duró el experimento); otra fuente que describe el artículo dice 6 meses. Por eso aquí se dice "meses". https://www.nature.com/articles/nm1098_1131
 - **The Thought Emporium (Justin Atkin), "Developing a Permanent Treatment for Lactose Intolerance Using Gene Therapy", febrero de 2018**, y la página del proyecto https://www.thethoughtemporium.com/lactose, que dice textualmente que el proyecto "sigue en etapa de desarrollo y no está terminado". Autoexperimento sin publicación revisada por pares.

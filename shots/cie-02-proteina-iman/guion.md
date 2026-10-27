@@ -61,6 +61,39 @@ Y un extra: el mecanismo de par radical es también la **hipótesis** principal 
 
 No es telequinesis ni control mental. El dibujo es esquemático. **¿Qué otra cosa crees que la vida hace con física cuántica? 👇**"
 
+## Robert en pantalla
+
+Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtitulo (el kit lo dibuja por delante de el).
+
+### Version narrada: 9 apariciones, **33.6 s en pantalla** (de 61.5 s)
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 3,4 | sorprendido (11) | gancho | «ese iman no mueve la proteina» |
+| 8,0 - 11,6 | senalando (13) | arriba-der | senala el iman que entra y el brillo que cae |
+| 16,0 - 19,8 | sonriendo (05) | arriba-der | «salio de un pedazo de avena» |
+| 20,7 - 23,4 | pensativo (06) | arriba-der | re-gancho: «¿apagar una luz sin tocar nada?» |
+| 29,0 - 32,8 | bajando lentes (04) | arriba-der | «de su giro depende si emite luz» |
+| 38,0 - 41,8 | serio (10) | **presentador** | -50 % de fluorescencia: el numero fuerte, en grande |
+| 42,4 - 46,0 | apuntando (02) | arriba-der | 604 MHz: celula por celula |
+| 48,4 - 52,8 | perfil serio (12) | arriba-der | la brujula de las aves, como hipotesis |
+| 53,4 - 57,9 | senalando (13) | gancho | cierre: «cuantica en bacterias vivas» |
+
+### Gemelo mudo: 8 apariciones, **28.9 s en pantalla**
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 3,4 | sorprendido (11) | gancho | la proteina en reposo |
+| 5,5 - 9,5 | senalando (13) | **presentador** | llega la luz azul, en grande |
+| 14,0 - 17,5 | sonriendo (05) | arriba-der | par radical: emite |
+| 22,0 - 25,5 | serio (10) | arriba-der | entra el iman |
+| 30,0 - 33,5 | pensativo (06) | arriba-der | los giros se desemparejan |
+| 38,0 - 41,5 | perfil serio (12) | arriba-der | la luz cae a la mitad |
+| 46,0 - 49,5 | bajando lentes (04) | arriba-der | se quita el iman |
+| 52,5 - 56,5 | apuntando (02) | arriba-der | vuelve a emitir: el loop |
+
+En las dos versiones la tarjeta de cierre lleva a Robert junto al logo (`CierreMarca robert=`).
+
 ## Fuentes
 - **Abrahams, G. et al., "Quantum spin resonance in engineered proteins for multimodal sensing", *Nature* (2026)**, doi 10.1038/s41586-025-09971-3. Equipo del Departamento de Ingeniería de la Universidad de Oxford. MagLOV presenta resonancia magnética detectada ópticamente en bacterias vivas a temperatura ambiente, con relación señal-ruido suficiente para detección en una sola célula; el efecto se explica por el **mecanismo de par radical** entre la cadena de la proteína y un cofactor de flavina; las variantes se obtuvieron por **evolución dirigida**. https://www.nature.com/articles/s41586-025-09971-3
 - **Números**, del preprint del mismo trabajo (bioRxiv 2024.11.25.625143): efecto magnético en células **Δℐ/ℐoff ≈ −50 %** conmutando el campo entre **0 y 10 mT**; **ODMR** con campo estático de **~21.6 mT** y radiofrecuencia resonante de **604 MHz** (B₁ ≈ 0.2 mT), con contraste de ~**10 %** en una sola célula; células *E. coli* MG1655; medidas a temperatura ambiente. La proteína madre es el dominio **LOV2 de la fototropina 1 de *Avena sativa*, variante C450A**.

@@ -150,7 +150,7 @@ function ImanNarrado() {
             <Iman T={T} s={1.4} activo={entraIman(K.I + 0.4)} />
           </g>
         </svg>
-        <Chip T={T} at={K.I + 1.4} until={K.N - 0.3} texto="10 mT · nada se movió" y={420} borde={IMANR} tam={42} />
+        <Chip T={T} at={K.I + 1.4} until={K.N - 0.3} texto="10 mT · nada se movió" x={360} y={420} borde={IMANR} tam={42} />
       </EscenaFundido>
 
       {/* el medidor acompaña las tres primeras escenas */}
@@ -274,7 +274,7 @@ function ImanNarrado() {
               {sola && <ellipse rx={104} ry={58} fill="none" stroke={KC.gold} strokeWidth={6} strokeDasharray="14 10" strokeDashoffset={-T * 40} />}
             </g>; })}
         </svg>
-        <Chip T={T} at={K.R + 0.4} until={K.Av - 0.3} texto="604 MHz · 21.6 mT" y={400} borde={IMANR} tam={42} mono />
+        <Chip T={T} at={K.R + 0.4} until={K.Av - 0.3} texto="604 MHz · 21.6 mT" x={340} y={400} borde={IMANR} tam={42} mono />
         <Chip T={T} at={K.R + 2.6} until={K.Av - 0.3} texto="ODMR · célula por célula" y={820} borde={KC.gold} tam={40} />
       </EscenaFundido>
 
@@ -297,7 +297,7 @@ function ImanNarrado() {
             <text y={-128} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>N</text>
           </g>
         </svg>
-        <Chip T={T} at={K.Av + 0.3} until={K.C - 0.3} texto="HIPÓTESIS" y={400} borde={IMANR} tam={52} mono />
+        <Chip T={T} at={K.Av + 0.3} until={K.C - 0.3} texto="HIPÓTESIS" x={330} y={400} borde={IMANR} tam={52} mono />
       </EscenaFundido>
 
       {/* 12 · CIERRE — vuelve el campo de bacterias con el imán */}
@@ -309,7 +309,7 @@ function ImanNarrado() {
             <Iman T={T} s={1.35} activo={0.8} />
           </g>
         </svg>
-        <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="cuántica en bacterias vivas" y={420} borde={VERDE} tam={42} />
+        <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="cuántica en bacterias vivas" x={350} y={420} borde={VERDE} tam={42} />
       </EscenaFundido>
 
       {/* subtítulos */}
@@ -327,11 +327,21 @@ function ImanNarrado() {
       <Subtitulo T={T} idx={11} at={K.Av + 0.1} until={K.C - 0.1} texto="La misma idea, como *hipótesis,* en las aves." />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Cuántica *a temperatura ambiente.*" />
 
-      <Sticker T={T} src={QAVS('avatar_06_pensativo_menton')} at={K.Q + 0.1} until={K.P - 0.3} lado="arriba-der" />
-      <Sticker T={T} src={QAVS('avatar_11_sorprendido')} at={K.M + 1.6} until={K.R - 0.3} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} base="assets/stickers/" apariciones={[
+        [0,    3.4,  'avatar_11_sorprendido',      'gancho'],  // el gancho: el imán no la mueve
+        [8.0,  11.6, 'avatar_13_senalando_arriba', 'arriba-der'],  // señala el imán que entra y el brillo que cae
+        [16.0, 19.8, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],  // salió de un pedazo de avena
+        [20.7, 23.4, 'avatar_06_pensativo_menton', 'arriba-der'],  // re-gancho: ¿apagar una luz sin tocar nada?
+        [29.0, 32.8, 'avatar_04_bajando_lentes',   'arriba-der'],  // de su giro depende si emite luz
+        [38.0, 41.8, 'avatar_10_serio_molesto',    'presentador'],  // GRANDE: −50 % de fluorescencia
+        [42.4, 46.0, 'avatar_02_apuntando_camara', 'arriba-der'],  // 604 MHz: célula por célula
+        [48.4, 52.8, 'avatar_12_perfil_serio',     'arriba-der'],  // la brújula de las aves, como hipótesis
+        [53.4, 57.9, 'avatar_13_senalando_arriba', 'gancho'],  // cierre: cuántica en bacterias vivas
+      ]} />
 
       <MarcaAgua T={T} tema="fisica" num="02" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="fisica" />
+      <CierreMarca T={T} at={K.Ou} tema="fisica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -383,8 +393,20 @@ function ImanCiclo() {
       <Chip T={T} at={K.I + 1.2} until={K.Q + 0.4} texto="10 mT" y={400} borde={IMANR} tam={46} mono />
       <Chip T={T} at={K.V + 2.0} until={K.Ou - 0.1} texto="…y vuelve a empezar" y={400} borde={KC.gold} tam={44} />
 
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} base="assets/stickers/" apariciones={[
+        [0,    3.4,  'avatar_11_sorprendido',      'gancho'],  // la proteína en reposo
+        [5.5,  9.5,  'avatar_13_senalando_arriba', 'presentador'],  // GRANDE: llega la luz azul
+        [14.0, 17.5, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],  // par radical: emite
+        [22.0, 25.5, 'avatar_10_serio_molesto',    'arriba-der'],  // entra el imán
+        [30.0, 33.5, 'avatar_06_pensativo_menton', 'arriba-der'],  // los giros se desemparejan
+        [38.0, 41.5, 'avatar_12_perfil_serio',     'arriba-der'],  // la luz cae a la mitad
+        [46.0, 49.5, 'avatar_04_bajando_lentes',   'arriba-der'],  // se quita el imán
+        [52.5, 56.5, 'avatar_02_apuntando_camara', 'arriba-der'],  // vuelve a emitir: el loop
+      ]} />
+
       <MarcaAgua T={T} tema="fisica" num="02" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="fisica" />
+      <CierreMarca T={T} at={K.Ou} tema="fisica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

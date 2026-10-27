@@ -266,7 +266,7 @@ function CeparioNarrado() {
           <Vaho T={T} x={430} y={560} w={280} n={10} o={0.7} />
         </svg>
         <Etiqueta T={T} at={K.C + 1.0} until={K.Ou} x={600} y={740} texto="Escherichia coli" it color={KC.ink} tam={34} />
-        <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="1978 · el gen de la insulina" y={430} borde={KC.gold} tam={42} />
+        <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="1978 · el gen de la insulina" x={330} y={430} borde={KC.gold} tam={42} />
       </EscenaFundido>
 
       <Capitulo T={T} caps={caps} hasta={K.D - 0.2} />
@@ -287,10 +287,21 @@ function CeparioNarrado() {
       <Subtitulo T={T} idx={11} at={K.M + 0.1} until={K.C - 0.1} texto="En el mundo: *más de 3 millones de cepas.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="De un frasco así salió *tu insulina.*" />
 
-      <Sticker T={T} src={CAVS('avatar_06_pensativo_menton')} at={K.Q + 0.1} until={K.C1 - 0.3} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} base="assets/stickers/" apariciones={[
+        [0,    3.4,  'avatar_11_sorprendido',      'gancho'],  // el gancho: el frasco no está vacío
+        [8.0,  11.2, 'avatar_13_senalando_arriba', 'arriba-der'],  // señala los cuatro tipos de cepa
+        [15.8, 19.4, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],  // «yo cuido uno»: el cepario es suyo
+        [19.7, 22.0, 'avatar_06_pensativo_menton', 'arriba-der'],  // re-gancho: ¿cómo detienes la vida?
+        [28.0, 31.5, 'avatar_04_bajando_lentes',   'arriba-der'],  // el matiz: a −80 no se detiene del todo
+        [34.0, 37.6, 'avatar_12_perfil_serio',     'arriba-der'],  // nitrógeno líquido: décadas
+        [39.0, 42.6, 'avatar_07_pensativo_puno',   'arriba-der'],  // liofilizar: quitarles el agua
+        [47.0, 51.6, 'avatar_02_apuntando_camara', 'presentador'],  // GRANDE: 3.28 millones de cepas en el mundo
+        [52.4, 57.9, 'avatar_13_senalando_arriba', 'gancho'],  // cierre: de un frasco así salió tu insulina
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="09" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="bioquimica" />
+      <CierreMarca T={T} at={K.Ou} tema="bioquimica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -329,18 +340,30 @@ function CeparioDatos() {
         font:`700 96px ${KF.mono}`, color:col, textShadow:KSOMBRA }}>{k} / {NV}</div>
 
       <Termometro T={T} at={K.F - 0.3} until={K.L - 0.4} temp={temp} x={930} y={560} alto={560} />
-      <Chip T={T} at={K.V + 0.4} until={K.F - 0.2} texto="un cepario, vial por vial" y={1500} tam={40} />
-      <Chip T={T} at={K.F + 0.3} until={K.N - 0.2} texto="−80 °C · copia de trabajo" y={1500} borde={KC.cyan} tam={40} />
-      <Chip T={T} at={K.N + 0.3} until={K.L - 0.2} texto="−196 °C · décadas" y={1500} borde={HIELO} tam={40} />
-      <Chip T={T} at={K.L + 0.3} until={K.M - 0.2} texto="liofilizadas · sin agua" y={1500} borde={KC.gold2} tam={40} />
+      <Chip T={T} at={K.V + 0.4} until={K.F - 0.2} texto="un cepario, vial por vial" x={330} y={430} tam={40} />
+      <Chip T={T} at={K.F + 0.3} until={K.N - 0.2} texto="−80 °C · copia de trabajo" x={330} y={430} borde={KC.cyan} tam={40} />
+      <Chip T={T} at={K.N + 0.3} until={K.L - 0.2} texto="−196 °C · décadas" x={330} y={430} borde={HIELO} tam={40} />
+      <Chip T={T} at={K.L + 0.3} until={K.M - 0.2} texto="liofilizadas · sin agua" x={330} y={430} borde={KC.gold2} tam={40} />
       {T >= K.M - 0.2 && T < K.Ci - 0.1 && <>
-        <NumeroGigante T={T} at={K.M + 0.2} until={K.R + 2.6} valor={3280000} dur={2.8} etiqueta="CEPAS EN EL MUNDO" y={1540} tam={100} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.M + 0.2} until={K.R + 0.4} valor={3280000} dur={2.8} etiqueta="CEPAS EN EL MUNDO" y={1540} tam={100} color={KC.yellow} />
       </>}
-      <Chip T={T} at={K.R + 2.2} until={K.Ci + 0.4} texto="dos copias · 802 colecciones" y={1500} borde={KC.gold} tam={40} />
-      <Chip T={T} at={K.Ci + 0.8} until={K.Ou - 0.1} texto="…y vuelve a empezar" y={1500} borde={KC.gold} tam={44} />
+      <Chip T={T} at={K.R + 2.2} until={K.Ci + 0.4} texto="dos copias · 802 colecciones" x={330} y={430} borde={KC.gold} tam={40} />
+      <Chip T={T} at={K.Ci + 0.8} until={K.Ou - 0.1} texto="…y vuelve a empezar" x={330} y={430} borde={KC.gold} tam={44} />
+
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} base="assets/stickers/" apariciones={[
+        [0,    3.4,  'avatar_11_sorprendido',      'gancho'],  // la gradilla vacía
+        [6.0,  9.5,  'avatar_13_senalando_arriba', 'arriba-der'],  // −80 °C: empieza a llenarse
+        [12.0, 15.5, 'avatar_04_bajando_lentes',   'arriba-der'],  // vial por vial
+        [18.0, 21.5, 'avatar_06_pensativo_menton', 'arriba-der'],  // nitrógeno líquido
+        [24.0, 27.5, 'avatar_12_perfil_serio',     'arriba-der'],  // décadas en pausa
+        [30.0, 33.5, 'avatar_07_pensativo_puno',   'arriba-der'],  // liofilizadas
+        [37.5, 41.0, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],  // la gradilla llena
+        [47.0, 51.5, 'avatar_02_apuntando_camara', 'presentador'],  // GRANDE: dos copias, 802 colecciones
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="09" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="bioquimica" />
+      <CierreMarca T={T} at={K.Ou} tema="bioquimica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

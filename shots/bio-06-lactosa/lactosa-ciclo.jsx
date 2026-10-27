@@ -88,13 +88,25 @@ function LactosaCiclo() {
       <Capitulo T={T} caps={caps} hasta={K.Ou - 0.1} />
       <Escala T={T} z={cam.z} pxPorMm={MUNDO_INTESTINO.pxPorMm} />
       <Chip T={T} at={K.Ga + 0.4} until={K.Co + 0.2} texto="GAS" y={470} borde={KC.red} tam={54} mono />
-      <Chip T={T} at={K.Co + 1.2} until={K.Mu + 1.0} texto="GLUCOSA + GALACTOSA" y={470} borde={KC.mint} tam={46} mono />
-      <Chip T={T} at={K.Cr + 3.4} until={K.Ou - 0.1} texto="…y vuelve a empezar" y={470} borde={KC.gold} tam={46} />
+      <Chip T={T} at={K.Co + 1.2} until={K.Mu + 1.0} texto="GLUCOSA + GALACTOSA" x={380} y={470} borde={KC.mint} tam={46} mono />
+      <Chip T={T} at={K.Cr + 3.4} until={K.Ou - 0.1} texto="…y vuelve a empezar" x={380} y={470} borde={KC.gold} tam={46} />
       <NumeroGigante T={T} at={K.Mu + 0.2} until={K.Cr - 0.2} valor={5} prefijo="cada " sufijo=" días"
         etiqueta="SE CAMBIA TODO EL BORDE" y={640} tam={110} color={KC.yellow} />
 
+      {/* Robert en pantalla: la tabla de apariciones está en guion.md */}
+      <Robert T={T} base="assets/stickers/" apariciones={[
+        [0,    3.4,  'avatar_11_sorprendido',   'gancho'],        // entra la lactosa
+        [8.0,  11.4, 'avatar_06_pensativo_menton', 'arriba-der'], // nadie la corta
+        [15.0, 18.8, 'avatar_10_serio_molesto', 'presentador'],   // GRANDE: el gas, el problema
+        [22.0, 25.4, 'avatar_13_senalando_arriba', 'arriba-der'], // señala el virus que baja
+        [29.5, 33.0, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'], // la célula hace la enzima
+        [36.5, 40.0, 'avatar_02_apuntando_camara', 'arriba-der'], // ahora sí se parte
+        [44.0, 47.5, 'avatar_04_bajando_lentes', 'abajo-izq'],    // las células viejas se van (abajo: no tapa el número)
+        [51.5, 55.2, 'avatar_07_pensativo_puno', 'arriba-der'],   // la cripta empieza de nuevo
+      ]} />
+
       <MarcaAgua T={T} tema="bioquimica" num="06" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="bioquimica" />
+      <CierreMarca T={T} at={K.Ou} tema="bioquimica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

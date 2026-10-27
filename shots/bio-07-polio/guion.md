@@ -47,6 +47,38 @@ Hoy ese experimento es **el ejemplo clásico de la investigación de doble uso**
 
 Este video **no explica ningún procedimiento**: es historia de la ciencia y bioseguridad. El dibujo es esquemático. **¿Qué opinas: se debió publicar o no? 👇**"
 
+## Robert en pantalla
+
+Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, vuelve cada 8-10 s y nunca tapa el subtitulo (el kit lo dibuja por delante de el).
+
+### Version narrada: 8 apariciones, **28.6 s en pantalla** (de 61.5 s)
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 3,4 | sorprendido (11) | gancho | «un virus entero: 7,500 letras» |
+| 9,8 - 13,4 | bajando lentes (04) | arriba-der | «no usaron el virus: su secuencia publicada» |
+| 19,2 - 22,8 | senalando (13) | arriba-der | senala el virus que se arma |
+| 27,3 - 29,4 | pensativo (06) | arriba-der | re-gancho: «¿para que hacer algo asi?» |
+| 34,8 - 38,2 | perfil serio (12) | arriba-der | Science, agosto de 2002 |
+| 38,6 - 43,2 | serio (10) | **presentador** | «irresponsable, dijeron»: el momento grave, en grande |
+| 48,9 - 52,5 | apuntando (02) | abajo-izq | «hoy se revisa que pides y quien eres» |
+| 53,6 - 57,9 | sonriendo (05) | gancho | cierre: «por eso hay reglas» |
+
+### Gemelo mudo: 8 apariciones, **28.5 s en pantalla**
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 3,4 | sorprendido (11) | gancho | la pantalla vacia |
+| 8,5 - 12,0 | pensativo (06) | arriba-der | las letras se acumulan |
+| 17,0 - 20,5 | bajando lentes (04) | arriba-der | 7,500: el genoma completo |
+| 23,5 - 27,0 | senalando (13) | arriba-der | senala la capside que se forma |
+| 31,0 - 35,0 | serio (10) | **presentador** | el raton: el momento grave, en grande |
+| 36,2 - 39,6 | perfil serio (12) | arriba-der | el mundo se asusto |
+| 42,2 - 45,6 | pensativo puno (07) | arriba-der | y salieron reglas |
+| 50,2 - 54,0 | apuntando (02) | arriba-der | se lee... y se escribe |
+
+En las dos versiones la tarjeta de cierre lleva a Robert junto al logo (`CierreMarca robert=`).
+
 ## Fuentes
 - **Cello, J., Paul, A. V. y Wimmer, E., "Chemical synthesis of poliovirus cDNA: generation of infectious virus in the absence of natural template", *Science* 297(5583): 1016–1018 (9 de agosto de 2002)**; primero en Science Express, julio de 2002. Equipo de la Universidad Estatal de Nueva York en Stony Brook, dirigido por **Eckard Wimmer**; financiado por DARPA.
 - **Congressional Research Service, "Synthetic Poliovirus: Bioterrorism and Science Policy Implications", informe RS21369 (diciembre de 2002)**: genoma del poliovirus de **~7,500 bases**; el equipo encargó **más de cien fragmentos de ADN por unos 100,000 dólares**; los ratones inoculados quedaron paralizados; y las respuestas de política discutidas entonces (revisión de pedidos por los proveedores de ADN, "conoce a tu cliente", control de la información y revisión previa a la publicación). El mismo informe señala que el poliovirus sería un arma débil y que otros agentes serían mucho más difíciles de sintetizar. https://www.everycrsreport.com/reports/RS21369.html

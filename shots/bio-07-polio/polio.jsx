@@ -228,9 +228,9 @@ function PolioNarrado() {
         <div style={{ position:'absolute', inset:0, background:KC.coral, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.26) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         <Ambiente T={T} n={16} seed={23} color="rgba(255,255,255,.4)" tam={[5, 14]} vel={12} />
       </EscenaFundido>
-      <Chip T={T} at={K.Cr + 0.4} until={K.Re - 0.3} texto="«irresponsable»" x={400} y={700} borde={KC.red} tam={48} />
-      <Chip T={T} at={K.Cr + 1.9} until={K.Re - 0.3} texto="«de eso se trataba:" x={620} y={960} borde={KC.gold} tam={44} />
-      <Chip T={T} at={K.Cr + 2.3} until={K.Re - 0.3} texto="advertir del riesgo»" x={620} y={1080} borde={KC.gold} tam={44} />
+      <Chip T={T} at={K.Cr + 0.4} until={K.Re - 0.3} texto="«irresponsable»" x={400} y={560} borde={KC.red} tam={48} />
+      <Chip T={T} at={K.Cr + 1.9} until={K.Re - 0.3} texto="«de eso se trataba:" x={560} y={740} borde={KC.gold} tam={44} />
+      <Chip T={T} at={K.Cr + 2.3} until={K.Re - 0.3} texto="advertir del riesgo»" x={560} y={870} borde={KC.gold} tam={44} />
 
       {/* 10 · REGLAS */}
       <EscenaFundido T={T} a={K.Re} b={K.H} zoom={0.04} fondo="#0a0d14">
@@ -287,11 +287,20 @@ function PolioNarrado() {
       <Subtitulo T={T} idx={11} at={K.H + 0.1} until={K.C - 0.1} texto="Hoy se revisa *qué pides y quién eres.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="La misma herramienta. *Por eso hay reglas.*" />
 
-      <Sticker T={T} src={PAVS('avatar_06_pensativo_menton')} at={K.Q + 0.1} until={K.Po - 0.3} lado="arriba-der" />
-      <Sticker T={T} src={PAVS('avatar_04_bajando_lentes')} at={K.H + 1.4} until={K.C - 0.3} lado="arriba-der" />
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} base="assets/stickers/" apariciones={[
+        [0,    3.4,  'avatar_11_sorprendido',      'gancho'],  // el gancho: un virus entero en una pantalla
+        [9.8,  13.4, 'avatar_04_bajando_lentes',   'arriba-der'],  // no usaron el virus: su secuencia
+        [19.2, 22.8, 'avatar_13_senalando_arriba', 'arriba-der'],  // señala el virus que se arma
+        [27.3, 29.4, 'avatar_06_pensativo_menton', 'arriba-der'],  // re-gancho: ¿para qué hacer algo así?
+        [34.8, 38.2, 'avatar_12_perfil_serio',     'arriba-der'],  // Science, agosto de 2002
+        [38.6, 43.2, 'avatar_10_serio_molesto',    'presentador'],  // GRANDE: «irresponsable», el momento grave
+        [48.9, 52.5, 'avatar_02_apuntando_camara', 'abajo-izq'],  // hoy se revisa qué pides y quién eres
+        [53.6, 57.9, 'avatar_05_sonriendo_dientes_uniformes', 'gancho'],  // cierre: por eso hay reglas
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="07" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="bioquimica" />
+      <CierreMarca T={T} at={K.Ou} tema="bioquimica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
@@ -351,8 +360,20 @@ function PolioDatos() {
       <Chip T={T} at={K.Re + 0.4} until={K.Ci + 2.2} texto="y salieron reglas" y={1480} borde={KC.mint} tam={44} />
       <Chip T={T} at={K.Ci + 2.6} until={K.Ou - 0.1} texto="se lee… y se escribe" y={1480} borde={KC.gold} tam={44} />
 
+      {/* Robert en pantalla (tabla en guion.md) */}
+      <Robert T={T} base="assets/stickers/" apariciones={[
+        [0,    3.4,  'avatar_11_sorprendido',      'gancho'],  // la pantalla vacía empieza a llenarse
+        [8.5,  12.0, 'avatar_06_pensativo_menton', 'arriba-der'],  // las letras suben
+        [17.0, 20.5, 'avatar_04_bajando_lentes',   'arriba-der'],  // 7,500: el genoma completo
+        [23.5, 27.0, 'avatar_13_senalando_arriba', 'arriba-der'],  // señala la cápside que se forma
+        [31.0, 35.0, 'avatar_10_serio_molesto',    'presentador'],  // GRANDE: el ratón, el momento grave
+        [36.2, 39.6, 'avatar_12_perfil_serio',     'arriba-der'],  // el mundo se asustó
+        [42.2, 45.6, 'avatar_07_pensativo_puno',   'arriba-der'],  // y salieron reglas
+        [50.2, 54.0, 'avatar_02_apuntando_camara', 'arriba-der'],  // se lee… y se escribe
+      ]} />
+
       <MarcaAgua T={T} tema="bioquimica" num="07" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="bioquimica" />
+      <CierreMarca T={T} at={K.Ou} tema="bioquimica" robert="assets/stickers/avatar_02_apuntando_camara.png" />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

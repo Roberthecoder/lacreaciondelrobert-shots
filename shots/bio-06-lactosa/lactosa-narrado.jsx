@@ -112,7 +112,7 @@ function LactosaNarrado() {
             <VirusAAV T={T} s={klerp(0.8, 1.25, kprog(T, K.G, K.G + 2.4, kEase.sale))} rot={(T - K.G) * 95} r={120} />
           </g>
         </svg>
-        <Chip T={T} at={K.G + 0.9} until={K.B - 0.3} texto="virus adeno-asociado" y={430} borde={KC.cyan} tam={42} />
+        <Chip T={T} at={K.G + 0.9} until={K.B - 0.3} texto="virus adeno-asociado" x={330} y={430} borde={KC.cyan} tam={42} />
         <Etiqueta T={T} at={K.G + 2.1} until={K.B - 0.3} x={250} y={1140} texto="no te enferma" color={KC.texto} tam={36} />
       </EscenaFundido>
 
@@ -217,10 +217,10 @@ function LactosaNarrado() {
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#3a1414, #0E0F12)' }}></div>
         <Ambiente T={T} n={18} seed={21} color="rgba(255,120,110,.3)" tam={[4, 11]} />
       </EscenaFundido>
-      <MitoTachado T={T} at={K.O + 0.3} tacharEn={K.O + 1.6} until={K.Re - 0.3} texto="¿cura aprobada?" x={430} y={660} tam={56} />
-      <Chip T={T} at={K.O + 2.1} until={K.Re - 0.3} texto="autoexperimento" x={430} y={830} borde={KC.red} tam={44} />
-      <Chip T={T} at={K.O + 3.0} until={K.Re - 0.3} texto="sin revisión por pares" x={430} y={960} borde={KC.red} tam={44} />
-      <Chip T={T} at={K.O + 3.8} until={K.Re - 0.3} texto="no lo intentes" x={430} y={1090} borde={KC.gold} tam={44} mono />
+      <MitoTachado T={T} at={K.O + 0.3} tacharEn={K.O + 1.6} until={K.Re - 0.3} texto="¿cura aprobada?" x={430} y={520} tam={56} />
+      <Chip T={T} at={K.O + 2.1} until={K.Re - 0.3} texto="autoexperimento" x={430} y={660} borde={KC.red} tam={44} />
+      <Chip T={T} at={K.O + 3.0} until={K.Re - 0.3} texto="sin revisión por pares" x={430} y={800} borde={KC.red} tam={44} />
+      <Chip T={T} at={K.O + 3.8} until={K.Re - 0.3} texto="no lo intentes" x={430} y={940} borde={KC.gold} tam={44} mono />
 
       {/* 9 · RENUEVA — el intestino se cambia solo */}
       <EscenaFundido T={T} a={K.Re} b={K.Cr} zoom={0.03} fondo={KC.dark}>
@@ -272,7 +272,7 @@ function LactosaNarrado() {
             <VirusAAV T={T} s={1.25} rot={(T - K.C) * 95} r={120} gen={0.55 + 0.45 * Math.sin(T * 2)} />
           </g>
         </svg>
-        <Chip T={T} at={K.C + 0.7} until={K.Ou} texto="te presta un gen · un rato" y={430} borde={KC.gold} tam={44} />
+        <Chip T={T} at={K.C + 0.7} until={K.Ou} texto="te presta un gen · un rato" x={340} y={430} borde={KC.gold} tam={44} />
       </EscenaFundido>
 
       {/* subtítulos (idx = línea de narracion.json) */}
@@ -290,12 +290,20 @@ function LactosaNarrado() {
       <Subtitulo T={T} idx={11} at={K.Pa + 0.1} until={K.C - 0.1} texto="Lo que sí existe: *la enzima en pastilla.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="No te enferma: *te presta un gen.*" />
 
-      {/* stickers de reacción (en los re-ganchos) */}
-      <Sticker T={T} src={LAVS('avatar_06_pensativo_menton')} at={K.P + 0.1} until={K.E - 0.3} lado="arriba-der" />
-      <Sticker T={T} src={LAVS('avatar_10_serio_molesto')} at={K.O + 1.7} until={K.Re - 0.3} lado="arriba-der" />
+      {/* Robert en pantalla (regla de CLAUDE.md): desde el cuadro 0, cada 8-10 s, una vez grande.
+          La tabla con cada aparición está en guion.md. */}
+      <Robert T={T} base="assets/stickers/" apariciones={[
+        [0,    3.2,  'avatar_11_sorprendido',   'gancho'],       // el gancho: "ese virus no viene a enfermarte"
+        [9.6,  13.2, 'avatar_13_senalando_arriba', 'arriba-der'], // señala el medidor de lactasa que cae
+        [18.5, 20.9, 'avatar_06_pensativo_menton', 'arriba-der'], // el re-gancho: "¿y si le devolvieras la receta?"
+        [26.8, 30.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'], // las ratas volvieron a digerir
+        [35.0, 39.6, 'avatar_10_serio_molesto',  'presentador'],  // GRANDE: el matiz, no es tratamiento aprobado
+        [44.4, 48.0, 'avatar_04_bajando_lentes', 'arriba-der'],   // la cripta: el gen se va con las células viejas
+        [54.2, 57.9, 'avatar_02_apuntando_camara', 'gancho'],     // cierre: regresa al gancho
+      ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="06" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="bioquimica" />
+      <CierreMarca T={T} at={K.Ou} tema="bioquimica" robert={LAVS('avatar_02_apuntando_camara')} />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );
