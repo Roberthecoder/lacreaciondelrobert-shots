@@ -94,7 +94,7 @@ Lo que **adoptamos de la receta**:
 2. **Una escena continua que viaja** (de la hormiga al micelio dentro de ella) en lugar de muchos
    cambios de escena. Algo nuevo cada ~3 s ligado a cada frase de la voz. El motor ya sabe en qué
    segundo dice cada palabra tu voz (campo `nat`), así que esto se puede automatizar.
-3. **Tus stickers como "reacción"**, no como personaje dentro de la escena: aparecen chiquitos en la
+3. **Tus stickers como presentador** *(actualizado el 27 oct 2026: Robert sale desde el cuadro 0 y cada 8–10 s; ver `CLAUDE.md`)*. Antes decía: aparecen chiquitos en la
    esquina en los re-ganchos (sorprendido, pensativo, señalando). Eso ninguno de ellos lo tiene: es tu
    sello.
 4. **Texto:** título o número grande arriba + etiquetas chicas con nombre común y *científico* + una
@@ -210,7 +210,7 @@ por dentro. Si el tema es lejano (como la hormiga zombi), el gancho tiene que co
 - Zoom continuo al microscopio: ahí fondo oscuro con tus colores de acento.
 - Barra de escala siempre visible (es rigor y es estética).
 - Última escena = primera escena transformada.
-- Tus stickers como reacción en la esquina en el re-gancho y en el dato sorprendente.
+- Robert en pantalla desde el cuadro 0 y cada 8–10 s (mínimo 6 apariciones, ~30 % del tiempo, una vez grande); ver la regla en `CLAUDE.md`. *(Actualizado el 27 oct 2026: antes decía "solo en la esquina, en los re-ganchos" y Robert casi no salía.)*
 - Tu logo y badge #NN arriba a la izquierda; subtítulo de una línea con palabra en dorado, fuera del
   tercio inferior.
 

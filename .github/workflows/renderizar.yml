@@ -31,8 +31,7 @@ jobs:
   render:
     # Fijo a Ubuntu 24.04: desde el 19 de octubre de 2026 "ubuntu-latest" empezó a dar máquinas con
     # Ubuntu 26.04, y ahí Playwright falla al instalar Chromium ("Playwright does not support chromium
-    # on ubuntu26.04-x64"). Como la migración es gradual, el render fallaba o no según la máquina que
-    # tocara. Cuando Playwright soporte Ubuntu 26 se puede volver a "ubuntu-latest".
+    # on ubuntu26.04-x64"). Cuando Playwright soporte Ubuntu 26 se puede volver a "ubuntu-latest".
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     env:
@@ -63,7 +62,7 @@ jobs:
             node motor/render.mjs "$SHOT" "$HTML" "salida/$(basename $SHOT)_mudo.mp4" --audio "$SHOT/$AUD"
           else
             HTML=$(node -p "require('./$SHOT/narracion.json').dcHtml")
-            node "$SHOT/gen-audio.mjs"
+            (cd "$SHOT" && node gen-audio.mjs "$HTML" assets/mezcla.wav)
             node motor/render.mjs "$SHOT" "$HTML" "salida/$(basename $SHOT)_sin_voz.mp4" --audio "$SHOT/assets/mezcla.wav"
           fi
 
