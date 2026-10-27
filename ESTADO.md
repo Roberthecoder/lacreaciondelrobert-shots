@@ -60,3 +60,4 @@ Cinco shots nuevos, con guion verificado, base narrada y gemelo mudo de 61.5 s, 
   `MundoBiorreactor`, `Vial` y `Gradilla` (ver `motor/kit/LEEME.md`).
 - Dato que NO se pudo verificar: cuánto duró el efecto del autoexperimento de lactosa de Justin Atkin.
   El guion de `bio-06` no da ninguna duración para él (sí para el estudio en ratas de 1998: "meses").
+- **27 oct 2026 (rama `claude/clever-heisenberg-pspnud`)**: Robert aprobó las 5 voces. Los 5 narrados y los 5 mudos (61.4–61.5 s) están en el Release "Borradores · claude/clever-heisenberg-pspnud". El cepario cambió una frase (861 colecciones, 80 países) y su voz se regeneró (~900 créditos, autorizado por Robert); las otras 4 salieron de la caché.
