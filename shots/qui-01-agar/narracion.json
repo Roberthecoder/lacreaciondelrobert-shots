@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Agar base narrada.dc.html",
+  "salida": "Shot Agar narrado.dc.html",
+  "velocidad": 1.065,
+  "mudo": { "dcHtml": "Shot Agar mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
+  "nota": "Químico #01. Una línea por subtítulo (idx 0..10 del jsx). Todo en UNA sola petición a ElevenLabs. PENDIENTE de aprobación de Robert: NO generar la voz sin su visto bueno (gasta créditos).",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esto no es gelatina: es un azúcar de alga que casi ninguna bacteria se puede comer." },
+    { "escena": "Alga", "texto": "Se llama agar y sale de algas rojas: se hierven, se filtran y se secan." },
+    { "escena": "Quimica", "texto": "Es un polisacárido, cadenas larguísimas de azúcares: la agarosa y la agaropectina." },
+    { "escena": "Red", "texto": "Al enfriarse, esas cadenas se enroscan y se amontonan en manojos: una red que atrapa el agua." },
+    { "escena": "Temp", "texto": "Lo raro es que se derrite cerca de ochenta y cinco grados, pero no cuaja hasta unos treinta y cinco." },
+    { "escena": "Pregunta", "texto": "¿Y eso para qué sirve?" },
+    { "escena": "Incuba", "texto": "Las bacterias se incuban a treinta y siete grados: la gelatina ahí se derrite, el agar no." },
+    { "escena": "Estudio", "texto": "En 1881, Fanny Hesse, que lo usaba en sus postres, se lo sugirió a su esposo, que trabajaba con Robert Koch." },
+    { "escena": "Come", "texto": "Y como casi nadie tiene las enzimas para romperlo, las colonias crecen encima sin deshacerlo." },
+    { "escena": "Extra", "texto": "Lo curioso: en Japón, bacterias del intestino tomaron genes de microbios del mar para digerir algas como el nori." },
+    { "escena": "Cierre", "texto": "Así que no es gelatina: es el piso donde crece gran parte de la microbiología." }
+  ]
+}

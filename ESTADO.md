@@ -9,6 +9,13 @@
   - Narrada: `motor/narrar.mjs` pide TODO el guion (`narracion.json`) en una sola petición a ElevenLabs con **Eleven v4** (`eleven_v4`), voz "Robert Narrador" (`uiCk6APPfsjnw3oUQzVo`), usando los ajustes guardados en la voz. El video se adapta a la voz (campo `nat` del motor) y los subtítulos siguen los tiempos por carácter. 56 s. **El usuario la aprobó ("te quedó excelente").** La voz está en caché en `shots/001-hormiga-zombi/voz/` (no regenerar: gasta créditos).
 - **GitHub Actions**: `.github/workflows/renderizar.yml` (Actions → Renderizar shot → Run workflow) renderiza narrada, sin voz o ambas, y deja el MP4 en Artifacts. Secrets ya configurados: `ELEVENLABS_API_KEY`, `CLAUDE_API_KEY`.
 
+## Lote D de remasterización (27 oct 2026, rama `remaster/lote-d`, sin mergear)
+Cinco shots construidos (base narrada + gemelo mudo de 61.5 s) y **pendientes de que Robert apruebe la voz**:
+Fungi Mati #02 `shots/fun-02-que-es-un-hongo` · #03 `shots/fun-03-seta-rosa` (con fotos reales de su cultivo) ·
+#04 `shots/fun-04-metales-pesados` · Químico #01 `shots/qui-01-agar` · #02 `shots/qui-02-estriado` (el mudo es el protagonista).
+Cada uno trae `guion.md` (tabla voz/visual, fuentes, descripción, datos no verificados), `narracion.json` (velocidad 1.065 + campo `mudo`)
+y `gen-audio.mjs`, que ahora usa la librería compartida `motor/kit/audio-kit.mjs`. Piezas nuevas del kit: ver `motor/kit/LEEME.md`.
+
 ## Lecciones (no repetir errores)
 - Nunca generar la voz frase por frase ni meter pausas a mano: suena antinatural. Una sola petición, sin "…".
 - No tocar voice_settings: usar los guardados en la voz.

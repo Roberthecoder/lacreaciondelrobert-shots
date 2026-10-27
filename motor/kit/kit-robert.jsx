@@ -623,11 +623,292 @@ function CierreMarca({ T, at, frase = 'Sígueme para más ciencia', usuario = '@
   </div>;
 }
 
+/* ---------- ESTRUCTURA DE UN SHOT (añadido en el lote D, 27 oct 2026) ---------- */
+// Escena con fundido cruzado (nunca corte seco) y un empujoncito de cámara. a..b = tiempo de autor.
+function Escena({ T, a, b, fondo, children, zoom = 0.05, origen = '50% 45%' }) {
+  if (T < a - 0.45 || T > b + 0.45) return null;
+  const o = kprog(T, a - 0.45, a + 0.05) * (1 - kprog(T, b - 0.05, b + 0.45));
+  const s = 1 + zoom * kprog(T, a - 0.45, b + 0.45, kEase.suave);
+  return <div style={{ position:'absolute', inset:0, opacity:o, background:fondo, overflow:'hidden' }}>
+    <div style={{ position:'absolute', inset:0, transform:`scale(${s})`, transformOrigin:origen }}>{children}</div>
+  </div>;
+}
+// Etiqueta con línea (nombre común o *científico* con it). lado: 'der' | 'izq'.
+function Etq({ T, at, until, x, y, texto, it = false, lado = 'der', color = KC.texto, tam = 34 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:12, flexDirection: lado === 'der' ? 'row' : 'row-reverse', transform:`translate(${lado === 'der' ? 0 : '-100%'}, -50%)` }}>
+    <div style={{ width:70 * kprog(T, at, at + 0.4, kEase.sale), height:4, background:color, borderRadius:2 }}></div>
+    <div style={{ font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color, textShadow:'0 3px 0 rgba(0,0,0,.8), 0 0 18px rgba(0,0,0,.9)', whiteSpace:'nowrap' }}>{texto}</div>
+  </div>;
+}
+// Audio sincronizado al tiempo de reproducción (en el render se usa --audio; esto es para verlo en el navegador).
+function AudioPista({ src }) {
+  const { time, playing } = useComposition();
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const a = ref.current; if (!a || !src) return;
+    if (playing) { if (a.paused) { const pr = a.play(); if (pr && pr.catch) pr.catch(() => {}); } if (Math.abs(a.currentTime - time) > 0.25) a.currentTime = time; }
+    else { if (!a.paused) a.pause(); if (Math.abs(a.currentTime - time) > 0.05) a.currentTime = time; }
+  });
+  return src ? <audio ref={ref} src={src} preload="auto" style={{ display:'none' }} /> : null;
+}
+// Envuelve un componente de shot en el escenario 1080×1920: window.MiApp = kApp(MiShot)
+function kApp(Comp) {
+  return function () {
+    return <div style={{ position:'fixed', inset:0, background:'#000' }}>
+      <CompositionStage width={1080} height={1920} scenes={window.OM_SCENES} playback={window.OM_PLAYBACK} bg="#0E0F12"><Comp /></CompositionStage>
+    </div>;
+  };
+}
+// Foto real recortada como tarjeta (polaroid) que entra girando y "respira". src en assets/. w×h = tamaño de la foto.
+function FotoRecorte({ T, at, until, src, x, y, w = 520, h = 520, rot = -3, pie, seed = 1, borde = KC.paper, zoom = 0.06 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'pop'), k = kprog(T, at, at + 6), r = rot + mece(T, seed, 0.12) * 1.5;
+  return <div style={{ position:'absolute', left:x - w / 2 - 18, top:y - h / 2 - 18, zIndex:38, opacity:e.o, transform:`translateY(${e.y}px) scale(${e.s}) rotate(${r}deg)`,
+    background:borde, padding:'18px 18px ' + (pie ? 70 : 18) + 'px', borderRadius:18, boxShadow:`12px 14px 0 ${KC.ink}, 0 20px 50px rgba(0,0,0,.5)`, border:`5px solid ${KC.ink}` }}>
+    <div style={{ width:w, height:h, overflow:'hidden', borderRadius:8, border:`4px solid ${KC.ink}` }}>
+      <img src={src} alt="" style={{ width:'100%', height:'100%', objectFit:'cover', display:'block', transform:`scale(${1 + zoom * k})` }} />
+    </div>
+    {pie && <div style={{ position:'absolute', left:0, right:0, bottom:14, textAlign:'center', font:`700 32px ${KF.mono}`, color:KC.ink }}>{pie}</div>}
+  </div>;
+}
+
+// Precarga: deja montadas (invisibles) todas las fotos desde el cuadro 0, para que nunca salga una tarjeta en blanco
+// mientras el navegador decodifica la imagen (el render toma cada cuadro en cuanto se pide).
+function Precarga({ srcs }) {
+  return <div style={{ position:'absolute', left:0, top:0, width:2, height:2, overflow:'hidden', opacity:0.01, pointerEvents:'none' }}>
+    {srcs.map((s) => <img key={s} src={s} alt="" style={{ width:2, height:2 }} />)}
+  </div>;
+}
+
+/* ---------- HONGOS: champiñón, suelo con micelio, hifas de cerca, levadura ---------- */
+// Champiñón (Agaricus): base del pie en (x, y). crece 0..1 (primordio → adulto), abre 0..1 (botón cerrado → sombrero
+// abierto con laminillas y anillo). corte = true dibuja el corte longitudinal (carne y laminillas en sección).
+function Champinon({ x = 0, y = 0, s = 1, crece = 1, abre = 1, rot = 0, sombrero = '#efe2cc', sombra = '#cdb795', lam = '#7a4a3a', pie = '#f6eedf', borde = 7 }) {
+  if (crece <= 0) return null;
+  const c = kclamp(crece, 0, 1), a = kclamp(abre, 0, 1);
+  const hPie = klerp(18, 150, c), wPie = klerp(16, 54, c);
+  const rC = klerp(16, 150, c) * klerp(0.72, 1, a), alto = rC * klerp(0.95, 0.56, a);
+  const yC = -hPie;
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <path d={`M ${-wPie * 0.62} 0 C ${-wPie * 0.5} ${-hPie * 0.5}, ${-wPie * 0.45} ${-hPie * 0.8}, ${-wPie * 0.42} ${yC} L ${wPie * 0.42} ${yC} C ${wPie * 0.45} ${-hPie * 0.8}, ${wPie * 0.5} ${-hPie * 0.5}, ${wPie * 0.62} 0 Z`} fill={pie} stroke={KC.ink} strokeWidth={borde} strokeLinejoin="round" />
+    {a > 0.35 && <path d={`M ${-wPie * 0.5} ${yC + hPie * 0.22} q ${wPie * 0.5} ${12 * a} ${wPie} 0 l ${4} ${16 * a} q ${-wPie * 0.55} ${10 * a} ${-wPie - 8} 0 Z`} fill="#fbf6ec" stroke={KC.ink} strokeWidth={borde * 0.6} opacity={kprog(a, 0.35, 0.6)} />}
+    {a > 0.15 && <g opacity={kprog(a, 0.15, 0.45)}>
+      <path d={`M ${-rC * 0.96} ${yC - 2} Q 0 ${yC + alto * 0.28} ${rC * 0.96} ${yC - 2}`} fill={lam} stroke={KC.ink} strokeWidth={borde * 0.7} />
+      {Array.from({ length: 13 }, (_, i) => { const u = (i + 0.5) / 13 * 2 - 1; return <line key={i} x1={u * rC * 0.9} y1={yC - 2} x2={u * wPie * 0.45} y2={yC + alto * 0.1} stroke="#4d2c22" strokeWidth={2.5} />; })}
+    </g>}
+    <path d={`M ${-rC} ${yC} C ${-rC} ${yC - alto * 1.25}, ${rC} ${yC - alto * 1.25}, ${rC} ${yC} Q 0 ${yC + alto * 0.12} ${-rC} ${yC} Z`} fill={sombrero} stroke={KC.ink} strokeWidth={borde} strokeLinejoin="round" />
+    <path d={`M ${-rC * 0.55} ${yC - alto * 0.75} Q ${-rC * 0.1} ${yC - alto * 0.95} ${rC * 0.25} ${yC - alto * 0.8}`} fill="none" stroke="#fff" strokeWidth={borde * 1.2} strokeLinecap="round" opacity=".55" />
+    {[[-0.4, -0.45], [0.3, -0.55], [0.05, -0.3]].map(([u, v], i) => <ellipse key={i} cx={u * rC} cy={yC + v * alto} rx={rC * 0.07} ry={alto * 0.05} fill={sombra} opacity=".7" />)}
+  </g>;
+}
+// Suelo en corte con hojarasca y la red de micelio (vista lateral). Superficie en y = sup.
+// red 0..1 = cuánto ha crecido el micelio (desde ox), brillo 0..1 = el micelio se ilumina (rayos X).
+const MUNDO_SUELO = { sup: 1180 };
+function MundoSuelo({ T, red = 1, brillo = 0, ox = 540, sup = MUNDO_SUELO.sup, cielo = KC.mint, seed = 8, escala = 0.15, hojas = true, children }) {
+  const g = krng(seed), arb = kArbolRadial(seed, 320);
+  const piedras = Array.from({ length: 26 }, () => ({ x: g() * KW, y: sup + 40 + g() * 700, r: 8 + g() * 26, c: g() < 0.5 ? '#7a5a40' : '#8f6d4f' }));
+  const hoja = Array.from({ length: 16 }, () => ({ x: g() * KW, r: g() * 360, s: 0.7 + g() * 0.6, c: ['#d9822b', '#b5651d', '#e0a43a', '#8a5a2b'][Math.floor(g() * 4)] }));
+  const H = arb.map((sg, i) => { const p = kclamp((red - sg.b) / (sg.e - sg.b), 0, 1); if (p <= 0) return null;
+    const x1 = ox + sg.x1 * escala, y1 = sup + 8 + sg.y1 * escala, x2 = ox + (sg.x1 + (sg.x2 - sg.x1) * p) * escala, y2 = sup + 8 + (sg.y1 + (sg.y2 - sg.y1) * p) * escala;
+    return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={brillo > 0 ? mixHex('#f4ecd8', '#eafff7', brillo) : '#f4ecd8'} strokeWidth={2.6 + brillo * 1.4} strokeLinecap="round" opacity={0.7 + 0.3 * brillo} />; });
+  return <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH }}>
+    <div style={{ position:'absolute', left:-2000, top:-2000, width:KW + 4000, height:sup + 2000, background:cielo, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+    <div style={{ position:'absolute', left:-2000, top:sup, width:KW + 4000, height:KH + 2000 - sup, background:'linear-gradient(#6b4a32, #3e2a1c 60%)', borderTop:`10px solid ${KC.ink}` }}></div>
+    <svg style={{ position:'absolute', left:0, top:0, overflow:'visible' }} width={KW} height={KH}>
+      {piedras.map((p, i) => <ellipse key={i} cx={p.x} cy={p.y} rx={p.r} ry={p.r * 0.7} fill={p.c} opacity=".8" />)}
+      {brillo > 0 && <rect x={-2000} y={sup + 6} width={KW + 4000} height={KH} fill="#0E0F12" opacity={0.55 * brillo} />}
+      <g style={{ filter: brillo > 0 ? `drop-shadow(0 0 ${6 * brillo}px #2fe0a8)` : 'none' }}>{H}</g>
+      {hojas && hoja.map((h, i) => <ellipse key={i} cx={h.x} cy={sup - 4} rx={34 * h.s} ry={11 * h.s} transform={`rotate(${(h.r % 30) - 15} ${h.x} ${sup - 4})`} fill={h.c} stroke={KC.ink} strokeWidth={4} />)}
+      {children}
+    </svg>
+  </div>;
+}
+// Hifas de cerca (fondo oscuro): tubos con septos y núcleos que crecen por la punta. En pantalla (no en mundo).
+// g 0..1 = crecimiento. enzimas 0..1 = la punta suelta enzimas (puntitos) que deshacen un pedazo de hoja (comida).
+function HifasMicro({ T, g = 1, enzimas = 0, comida = { x: 820, y: 760 }, ancho = 34, seed = 6, color = '#eafff7' }) {
+  const rutas = [
+    [[60, 1250], [300, 1120], [520, 980], [700, 860], [790, 790]],
+    [[300, 1120], [330, 900], [280, 700], [300, 520]],
+    [[520, 980], [640, 1080], [860, 1120], [1020, 1060]],
+    [[60, 1250], [160, 1450], [420, 1560], [640, 1520]],
+  ];
+  const tramo = (pts, p) => { const L = []; let tot = 0; for (let i = 1; i < pts.length; i++) { const d = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); L.push(d); tot += d; }
+    let rest = tot * p; const out = [pts[0]]; for (let i = 1; i < pts.length; i++) { if (rest >= L[i - 1]) { out.push(pts[i]); rest -= L[i - 1]; } else { const u = rest / L[i - 1]; out.push([klerp(pts[i - 1][0], pts[i][0], u), klerp(pts[i - 1][1], pts[i][1], u)]); break; } } return out; };
+  const comidaQ = 1 - 0.75 * kprog(enzimas, 0.15, 1);
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+    <g transform={`translate(${comida.x} ${comida.y}) rotate(${mece(T, 2, 0.1) * 4})`} opacity={0.4 + 0.6 * comidaQ}>
+      <path d={`M ${-140 * comidaQ} 0 C ${-80 * comidaQ} ${-90 * comidaQ}, ${90 * comidaQ} ${-90 * comidaQ}, ${150 * comidaQ} 0 C ${90 * comidaQ} ${80 * comidaQ}, ${-80 * comidaQ} ${80 * comidaQ}, ${-140 * comidaQ} 0 Z`} fill="#c9822f" stroke="#5a3a1c" strokeWidth={6} />
+      <path d={`M ${-120 * comidaQ} 0 L ${130 * comidaQ} 0`} stroke="#8a5a2b" strokeWidth={5} />
+    </g>
+    {rutas.map((r, i) => { const p = kclamp(g * 1.25 - i * 0.12, 0, 1); if (p <= 0) return null; const pts = tramo(r, p), d = 'M' + pts.map((q) => q.join(' ')).join(' L ');
+      const tip = pts[pts.length - 1];
+      return <g key={i}>
+        <path d={d} fill="none" stroke="rgba(47,224,168,.22)" strokeWidth={ancho * 2} strokeLinecap="round" strokeLinejoin="round" />
+        <path d={d} fill="none" stroke={KC.ink} strokeWidth={ancho + 8} strokeLinecap="round" strokeLinejoin="round" />
+        <path d={d} fill="none" stroke={color} strokeWidth={ancho} strokeLinecap="round" strokeLinejoin="round" />
+        {pts.slice(1).map((q, k) => { const a = pts[k], mx = (a[0] + q[0]) / 2, my = (a[1] + q[1]) / 2, an = Math.atan2(q[1] - a[1], q[0] - a[0]);
+          return <g key={k}><line x1={mx - Math.sin(an) * ancho * 0.5} y1={my + Math.cos(an) * ancho * 0.5} x2={mx + Math.sin(an) * ancho * 0.5} y2={my - Math.cos(an) * ancho * 0.5} stroke="#8fbfb0" strokeWidth={4} />
+            <circle cx={klerp(a[0], q[0], 0.25)} cy={klerp(a[1], q[1], 0.25) + mece(T, i * 7 + k, 0.3) * 3} r={6} fill="#b18cff" /></g>; })}
+        {p < 1 && <circle cx={tip[0]} cy={tip[1]} r={ancho * 0.62} fill="#fff" opacity={0.5 + 0.5 * Math.sin(T * 5 + i)} />}
+      </g>; })}
+    {enzimas > 0 && Array.from({ length: 60 }, (_, k) => { const u = ((T * 0.45 + k / 60) % 1), ida = k % 2 === 0;
+      const sx = 790, sy = 790, x = ida ? klerp(sx, comida.x + Math.cos(k) * 90, u) : klerp(comida.x + Math.cos(k) * 70, sx, u), y = ida ? klerp(sy, comida.y + Math.sin(k) * 50, u) : klerp(comida.y + Math.sin(k) * 50, sy, u);
+      return <circle key={k} cx={x + mece(T, k, 0.4) * 10} cy={y + mece(T, k + 9, 0.4) * 10} r={ida ? 11 : 8} fill={ida ? KC.yellow : KC.mint} opacity={enzimas * Math.sin(Math.PI * u)} />; })}
+  </svg>;
+}
+// Levadura (Saccharomyces): célula ovalada con núcleo y vacuola; brote 0..1 = la yema que crece a un lado.
+function Levadura({ x = 0, y = 0, r = 60, brote = 0, rot = 0, T = 0, seed = 1 }) {
+  const b = kclamp(brote, 0, 1);
+  return <g transform={`translate(${x} ${y}) rotate(${rot + mece(T, seed, 0.15) * 5})`}>
+    {b > 0 && <g><ellipse cx={r * 0.95 + r * 0.32 * b} cy={-r * 0.35} rx={r * 0.55 * b} ry={r * 0.48 * b} fill="#f4dc9a" stroke={KC.ink} strokeWidth={5} />
+      <circle cx={r * 0.95 + r * 0.36 * b} cy={-r * 0.35} r={r * 0.15 * b} fill="#b18cff" /></g>}
+    <ellipse cx={0} cy={0} rx={r} ry={r * 0.82} fill="#f4dc9a" stroke={KC.ink} strokeWidth={6} />
+    <ellipse cx={-r * 0.2} cy={r * 0.1} rx={r * 0.34} ry={r * 0.3} fill="#9fd8f0" opacity=".85" />
+    <circle cx={r * 0.32} cy={-r * 0.18} r={r * 0.2} fill="#b18cff" stroke="#6b4fb5" strokeWidth={3} />
+    <circle cx={-r * 0.55} cy={-r * 0.4} r={r * 0.08} fill="#d9b26a" /><circle cx={r * 0.5} cy={r * 0.45} r={r * 0.07} fill="#d9b26a" />
+  </g>;
+}
+
+/* ---------- LABORATORIO: placa de Petri, estriado, asa y mechero ---------- */
+// Placa de Petri vista desde arriba (svg). agar = color del medio. children se dibujan dentro del círculo (recortados).
+function PlacaPetri({ x, y, r = 380, agar = '#f1d27a', tapa = 0, id = 'pp', children, gota = 0 }) {
+  return <g transform={`translate(${x} ${y})`}>
+    <defs><clipPath id={id + 'c'}><circle r={r - 14} /></clipPath>
+      <radialGradient id={id + 'g'} cx="40%" cy="35%" r="75%"><stop offset="0" stopColor={mixHex(agar, '#ffffff', 0.35)} /><stop offset="1" stopColor={agar} /></radialGradient></defs>
+    <circle r={r + 10} fill="rgba(0,0,0,.25)" transform="translate(16 18)" />
+    <circle r={r} fill="#dfeef2" stroke={KC.ink} strokeWidth={9} />
+    <circle r={r - 14} fill={`url(#${id}g)`} />
+    <g clipPath={`url(#${id}c)`}>{children}</g>
+    <circle r={r - 14} fill="none" stroke="rgba(255,255,255,.6)" strokeWidth={6} />
+    <path d={`M ${-r * 0.62} ${-r * 0.55} A ${r * 0.85} ${r * 0.85} 0 0 1 ${r * 0.1} ${-r * 0.82}`} fill="none" stroke="#fff" strokeWidth={14} strokeLinecap="round" opacity=".55" />
+    {tapa > 0 && <g opacity={tapa}><circle r={r + 6} fill="rgba(220,240,246,.35)" stroke={KC.ink} strokeWidth={7} />
+      {gota > 0 && Array.from({ length: 22 }, (_, i) => { const a = i * 2.4, d = Math.sqrt((i + 1) / 22) * r * 0.85; return <circle key={i} cx={Math.cos(a) * d} cy={Math.sin(a) * d} r={(6 + (i % 4) * 4) * gota} fill="rgba(255,255,255,.75)" stroke="rgba(0,80,120,.35)" strokeWidth={2} />; })}</g>}
+  </g>;
+}
+// Trazo del estriado por agotamiento en 4 cuadrantes (coordenadas de la placa, radio R).
+// Devuelve { trazos: [[x,y]...] × 4, colonias: [{ x, y, r, q }] } — muchas colonias juntas en el 1, pocas y sueltas en el 4.
+function kEstriado(R = 360, seed = 4) {
+  const key = 'est' + R + '_' + seed; if (kEstriado[key]) return kEstriado[key];
+  const g = krng(seed), trazos = [], colonias = [];
+  const base = [-135, -45, 45, 135].map((a) => a * Math.PI / 180);       // cuadrante 1 arriba-izq, luego gira 90°
+  base.forEach((th, q) => {
+    const pts = [], n = [9, 7, 6, 6][q], ux = Math.cos(th), uy = Math.sin(th), vx = -uy, vy = ux;
+    // entra cruzando el final del trazo anterior (salvo el 1) y zigzaguea hacia afuera
+    if (q > 0) { const prev = trazos[q - 1].at(-1); pts.push([prev[0] * 0.92, prev[1] * 0.92]); }
+    // zigzag dentro de su cuadrante: |v| ≤ 0.78·u (no invade la zona vecina) y dentro del círculo
+    for (let i = 0; i < n; i++) { const u = (0.3 + 0.56 * (i / (n - 1))) * R, w = Math.min(0.78 * u, Math.sqrt(Math.max(0, R * R * 0.9 - u * u))) * (i % 2 ? 1 : -1);
+      pts.push([ux * u + vx * w + (g() - 0.5) * 10, uy * u + vy * w + (g() - 0.5) * 10]); }
+    trazos.push(pts);
+    const cuantas = [260, 70, 22, 7][q];
+    for (let k = 0; k < cuantas; k++) { const s = Math.floor(g() * (pts.length - 1)), u = g(), a = pts[s], b = pts[s + 1];
+      const j = (g() - 0.5) * [26, 18, 12, 8][q];
+      colonias.push({ x: klerp(a[0], b[0], u) + j, y: klerp(a[1], b[1], u) + j * 0.7, r: [9, 11, 15, 22][q] * (0.75 + g() * 0.5), q, o: g() }); }
+  });
+  return (kEstriado[key] = { trazos, colonias });
+}
+// Polilínea parcial: los primeros p (0..1) de un trazo, para "dibujarlo" en vivo.
+function kParcial(pts, p) {
+  const L = [0]; for (let i = 1; i < pts.length; i++) L.push(L[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  const meta = L.at(-1) * kclamp(p, 0, 1), out = [pts[0]];
+  for (let i = 1; i < pts.length; i++) { if (L[i] <= meta) out.push(pts[i]); else { const u = (meta - L[i - 1]) / (L[i] - L[i - 1] || 1); out.push([klerp(pts[i - 1][0], pts[i][0], u), klerp(pts[i - 1][1], pts[i][1], u)]); break; } }
+  return out;
+}
+// Asa de siembra (vista de lado): punta del aro en (x, y). caliente 0..1 = rojo vivo.
+function Asa({ x, y, ang = -35, caliente = 0, s = 1 }) {
+  const rojo = mixHex('#c9ccd2', '#ff5a1f', kclamp(caliente, 0, 1));
+  return <g transform={`translate(${x} ${y}) rotate(${ang}) scale(${s})`}>
+    {caliente > 0.05 && <circle cx={0} cy={0} r={34} fill="#ff8a1f" opacity={0.35 * caliente} />}
+    <circle cx={0} cy={0} r={16} fill="none" stroke={KC.ink} strokeWidth={10} /><circle cx={0} cy={0} r={16} fill="none" stroke={rojo} strokeWidth={5} />
+    <line x1={16} y1={0} x2={330} y2={0} stroke={KC.ink} strokeWidth={10} /><line x1={16} y1={0} x2={330} y2={0} stroke={rojo} strokeWidth={5} />
+    <rect x={330} y={-17} width={260} height={34} rx={14} fill={KC.blue} stroke={KC.ink} strokeWidth={6} />
+    <rect x={350} y={-9} width={200} height={8} rx={4} fill="#7f95ff" />
+  </g>;
+}
+// Mechero con llama que tiembla. Base en (x, y).
+function Mechero({ T, x, y, s = 1, llama = 1 }) {
+  const f = 1 + 0.08 * Math.sin(T * 23) + 0.05 * Math.sin(T * 37);
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <rect x={-80} y={-26} width={160} height={30} rx={10} fill="#5a5f6b" stroke={KC.ink} strokeWidth={6} />
+    <rect x={-22} y={-210} width={44} height={190} rx={8} fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />
+    {llama > 0 && <g transform={`translate(0 -210) scale(${llama} ${llama * f})`}>
+      <path d="M 0 -170 C 40 -110, 44 -40, 0 0 C -44 -40, -40 -110, 0 -170 Z" fill="#5aa8ff" opacity=".55" />
+      <path d="M 0 -110 C 22 -70, 24 -26, 0 0 C -24 -26, -22 -70, 0 -110 Z" fill="#2346ff" opacity=".9" />
+    </g>}
+  </g>;
+}
+
+/* ---------- SETAS OSTRA (Pleurotus) y BOLSA DE CULTIVO ---------- */
+// Seta ostra vista de lado: sombrero en abanico con laminillas que bajan por el pie corto y lateral.
+// Base del pie en (x, y). abre 0..1 (primordio → abanico abierto). pie: factor de largo del pie (con CO₂ alto, pie largo y sombrero chico).
+function SetaOstra({ x = 0, y = 0, s = 1, abre = 1, rot = 0, color = '#f59ab0', oscuro = '#d9668a', pie = 1, borde = 6 }) {
+  const a = kclamp(abre, 0, 1), w = klerp(18, 150, a), h = klerp(16, 60, a), L = 40 * pie + 10;
+  const cx = L * 0.9, cy = -L * 0.55;
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <path d={`M -10 4 Q ${L * 0.4} ${-L * 0.1} ${cx} ${cy + 10} L ${cx + 10} ${cy + 22} Q ${L * 0.45} ${L * 0.1} 10 8 Z`} fill={mixHex(color, '#ffffff', 0.35)} stroke={KC.ink} strokeWidth={borde * 0.8} strokeLinejoin="round" />
+    <path d={`M ${cx - w * 0.15} ${cy + 8} Q ${cx + w * 0.45} ${cy + h * 1.15} ${cx + w} ${cy + h * 0.25} L ${cx + w * 0.92} ${cy - h * 0.1} Q ${cx + w * 0.4} ${cy + h * 0.2} ${cx - w * 0.15} ${cy + 8} Z`} fill={oscuro} stroke={KC.ink} strokeWidth={borde * 0.7} />
+    {a > 0.2 && Array.from({ length: 9 }, (_, i) => { const u = (i + 1) / 10; return <line key={i} x1={cx + 4} y1={cy + 12} x2={cx + w * (0.1 + u * 0.85)} y2={cy + h * (0.95 - u * 0.65)} stroke={mixHex(oscuro, KC.ink, 0.35)} strokeWidth={2.5} opacity={kprog(a, 0.2, 0.5)} />; })}
+    <path d={`M ${cx - w * 0.2} ${cy + 6} C ${cx - w * 0.1} ${cy - h * 1.2}, ${cx + w * 0.9} ${cy - h * 1.3}, ${cx + w * 1.05} ${cy + h * 0.22} Q ${cx + w * 0.5} ${cy - h * 0.05} ${cx - w * 0.2} ${cy + 6} Z`} fill={color} stroke={KC.ink} strokeWidth={borde} strokeLinejoin="round" />
+    <path d={`M ${cx + w * 0.1} ${cy - h * 0.55} Q ${cx + w * 0.45} ${cy - h * 0.85} ${cx + w * 0.8} ${cy - h * 0.4}`} fill="none" stroke="#fff" strokeWidth={borde} strokeLinecap="round" opacity=".45" />
+  </g>;
+}
+// Racimo de setas ostra que sale de un punto (x, y), en abanico hacia la derecha y la izquierda.
+function RacimoOstra({ T = 0, x, y, s = 1, abre = 1, n = 7, color, oscuro, pie = 1, seed = 3 }) {
+  const g = krng(seed), hs = Array.from({ length: n }, (_, i) => ({ r: -70 + (i / (n - 1)) * 120 + (g() - 0.5) * 14, k: 0.7 + g() * 0.45, d: (i % 3) * 0.08, lado: i % 2 ? 1 : -1 }));
+  return <g transform={`translate(${x} ${y})`}>{hs.map((h, i) => <g key={i} transform={`scale(${h.lado} 1)`}>
+    <SetaOstra s={s * h.k} rot={h.r * h.lado * 0.5 - 20 + mece(T, seed + i, 0.2) * 3} abre={kclamp(abre * 1.2 - h.d, 0, 1)} color={color} oscuro={oscuro} pie={pie} /></g>)}</g>;
+}
+// Bolsa de cultivo (vista de frente): plástico translúcido con sustrato y micelio blanco. col 0..1 = colonizado.
+function BolsaCultivo({ T = 0, x, y, w = 420, h = 620, col = 1, seed = 5, rayos = 0 }) {
+  const g = krng(seed), trozos = Array.from({ length: 90 }, () => ({ x: (g() - 0.5) * w * 0.86, y: -h * 0.4 + g() * h * 0.82, r: 6 + g() * 14, a: g() * 180, c: g() < 0.5 ? '#c98a3e' : '#a86d2c' }));
+  const blanco = Array.from({ length: 70 }, () => ({ x: (g() - 0.5) * w * 0.86, y: -h * 0.4 + g() * h * 0.82, r: 16 + g() * 34, u: g() }));
+  return <g transform={`translate(${x} ${y}) rotate(${mece(T, seed, 0.1) * 1.2})`}>
+    <path d={`M ${-w / 2} ${-h * 0.42} Q ${-w / 2 - 10} ${h * 0.45} ${-w * 0.42} ${h / 2} L ${w * 0.42} ${h / 2} Q ${w / 2 + 10} ${h * 0.45} ${w / 2} ${-h * 0.42} Z`} fill="#8a5a2b" />
+    {trozos.map((t, i) => <rect key={i} x={t.x - t.r} y={t.y - t.r * 0.4} width={t.r * 2} height={t.r * 0.8} rx={3} transform={`rotate(${t.a} ${t.x} ${t.y})`} fill={t.c} />)}
+    {blanco.map((b, i) => b.u < col ? <circle key={i} cx={b.x} cy={b.y} r={b.r * kclamp((col - b.u) * 4, 0, 1)} fill="#fbf7ee" opacity={0.85} /> : null)}
+    {rayos > 0 && <rect x={-w / 2} y={-h * 0.42} width={w} height={h * 0.92} fill="#0E0F12" opacity={0.5 * rayos} />}
+    <path d={`M ${-w / 2 - 6} ${-h / 2} L ${w / 2 + 6} ${-h / 2} Q ${w / 2 + 22} ${h * 0.45} ${w * 0.44} ${h / 2 + 6} L ${-w * 0.44} ${h / 2 + 6} Q ${-w / 2 - 22} ${h * 0.45} ${-w / 2 - 6} ${-h / 2} Z`} fill="rgba(230,245,255,.22)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d={`M ${-w * 0.36} ${-h * 0.4} L ${-w * 0.3} ${h * 0.36}`} stroke="#fff" strokeWidth={12} strokeLinecap="round" opacity=".35" />
+    <rect x={-w * 0.2} y={-h / 2 - 50} width={w * 0.4} height={56} rx={14} fill="rgba(230,245,255,.4)" stroke={KC.ink} strokeWidth={7} />
+  </g>;
+}
+
+/* ---------- QUÍMICA: termómetro y cadena de anillos ---------- */
+// Termómetro vertical (svg a pantalla completa). valor en °C, max = tope de la escala, rango = [a, b] franja resaltada.
+function Termometro({ x, y, valor = 20, max = 100, alto = 620, rango, marcas = [0, 25, 50, 75, 100], color = KC.red }) {
+  const t2y = (c) => y + alto - (kclamp(c, 0, max) / max) * alto;
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30 }}>
+    <rect x={x - 40} y={y} width={80} height={alto} rx={40} fill="#fff" stroke={KC.ink} strokeWidth={8} />
+    {rango && <rect x={x - 70} y={t2y(rango[1])} width={140} height={t2y(rango[0]) - t2y(rango[1])} rx={12} fill={KC.yellow} opacity=".55" stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />}
+    <rect x={x - 20} y={t2y(valor)} width={40} height={y + alto - t2y(valor)} rx={20} fill={color} />
+    <circle cx={x} cy={y + alto + 40} r={70} fill={color} stroke={KC.ink} strokeWidth={8} />
+    {marcas.map((c) => <g key={c}><line x1={x + 40} y1={t2y(c)} x2={x + 70} y2={t2y(c)} stroke={KC.ink} strokeWidth={5} /><text x={x + 82} y={t2y(c) + 12} style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{c}°</text></g>)}
+  </svg>;
+}
+// Cadena de anillos de azúcar (hexágonos unidos), para polisacáridos: agarosa, quitina, almidón, celulosa…
+// p 0..1 = cuántos anillos ya se armaron (de izquierda a derecha). marca(i) opcional = color de un anillo (p. ej. sulfato).
+function CadenaAnillos({ x, y, n = 7, p = 1, s = 1, color = KC.gold2, paso = 118, marca, ondula = 0, T = 0 }) {
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {Array.from({ length: n }, (_, i) => { const q = kclamp(p * n - i, 0, 1); if (q <= 0) return null; const cx = i * paso, cy = (i % 2 ? 18 : -18) + ondula * Math.sin(T * 2 + i * 0.8) * 30;
+      const col = (marca && marca(i)) || color;
+      const hex = [0, 60, 120, 180, 240, 300].map((a) => `${cx + 44 * Math.cos((a + 30) * Math.PI / 180)},${cy + 44 * Math.sin((a + 30) * Math.PI / 180)}`).join(' ');
+      const py = (i - 1) % 2 ? 18 : -18, pcy = py + ondula * Math.sin(T * 2 + (i - 1) * 0.8) * 30;
+      return <g key={i} opacity={q} transform={`translate(0 ${(1 - q) * 30})`}>
+        {i > 0 && <line x1={cx - paso + 40} y1={pcy} x2={cx - 40} y2={cy} stroke={color} strokeWidth={8} />}
+        <polygon points={hex} fill={col + '33'} stroke={col} strokeWidth={8} strokeLinejoin="round" />
+        <circle cx={cx + 20} cy={cy - 8} r={7} fill={col} />
+      </g>; })}
+  </g>;
+}
+
 Object.assign(window, {
-  KC, KF, KW, KH, kclamp, klerp, kprog, kEase, krng, mece, kentrada, kvisible, kformato, camaraEn,
+  KC, KF, KW, KH, KSOMBRA, kclamp, klerp, kprog, kEase, krng, mece, kentrada, kvisible, kformato, camaraEn,
   Camara, Escala, Ambiente, Brillo, Aparece, Lupa,
   Subtitulo, Chip, MitoTachado, NumeroGigante, Contador, TarjetaEstudio,
   Capitulo, Pasos, Medidor, Cronometro, Cuadricula, Comparativa,
   MarcaAgua, Sticker, CierreMarca, klogo, MundoPiel, MUNDO_PIEL, mixHex,
   CamaraAnidada, MundoPanMacro, MundoPanMicro, MUNDO_PAN, PAN_TALLOS, kArbol, kArbolRadial, nodosPan,
+  Escena, Etq, AudioPista, kApp, FotoRecorte, Precarga, Champinon, MundoSuelo, MUNDO_SUELO, HifasMicro, Levadura,
+  PlacaPetri, kEstriado, kParcial, Asa, Mechero, SetaOstra, RacimoOstra, BolsaCultivo, Termometro, CadenaAnillos,
 });

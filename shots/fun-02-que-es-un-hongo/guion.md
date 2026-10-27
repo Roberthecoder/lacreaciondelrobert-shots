@@ -1,0 +1,46 @@
+# Fungi Mati #02 · ¿Qué es un hongo? (remasterizado del viejo #2, de 181 s a 58 s)
+
+- **Serie:** Shot Fungi Mati · **Logo:** `logo_biologia.svg` (ADN) · **Badge:** #02.
+- **Formato:** N1 "Por dentro" (macro → micro → macro). **Gemelo mudo:** M4 "Ciclo" (construido).
+- **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el champiñón que se ve en pantalla.
+- **Duración:** voz ≈ 924 caracteres (~58 s con ×1.065) + cierre 3.5 s → 61–62 s. Base sin voz: 61.1 s. Mudo: 61.5 s.
+- **Estado:** animación lista (narrada base + mudo). **La voz espera tu aprobación** (≈ 924 créditos de ElevenLabs).
+- **Qué cambió del viejo:** de 181 s a 58 s; fuera las muletillas y el "talo"; se queda lo esencial (hifa → micelio → cuerpo fructífero → esporas, digestión externa, levaduras) y se agrega un estudio real (1993) y la quitina.
+
+## Versión narrada
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Ese champiñón no es el hongo: es su fruto. El hongo de verdad está escondido abajo. | Fondo menta, suelo en corte. **A los 0.05 s el champiñón brota de golpe** y suelta esporas. Etiqueta "fruto · *Agaricus bisporus*". A los 2.4 s el suelo se oscurece (rayos X) y brilla la red blanca: "el hongo de verdad". Barra de escala (2 cm). |
+| 1 | Red | Bajo la tierra hay hilos blancos, mucho más delgados que un pelo: se llaman hifas. | La cámara baja dentro del suelo y se funde al microscopio (fondo oscuro): las hifas crecen por la punta, con septos y núcleos. Un pelo humano (~70 µm) pasa abajo para comparar. Escala 20 µm. |
+| 2 | Red | Juntas forman el micelio, y ese sí es el organismo completo. | Las hifas se ramifican. Chip "micelio = el organismo". |
+| 3 | Come | No tiene raíces ni hojas, y no hace fotosíntesis. | Se tachan "raíces", "hojas" y "fotosíntesis". |
+| 4 | Come | Come por fuera: suelta enzimas, deshace la hoja o la madera y absorbe lo que queda. | La punta suelta enzimas (puntos amarillos) hacia un pedazo de hoja que se encoge; regresan nutrientes (puntos menta). Chip "digiere por fuera". |
+| 5 | Pregunta | ¿Entonces para qué sale un champiñón? | **Re-gancho.** La cámara sube de vuelta a la superficie. Sticker pensativo. |
+| 6 | Fruto | Con la humedad y la temperatura correctas, el micelio arma un cuerpo fructífero para soltar sus esporas. | Time-lapse: brota un primordio, crece y abre el sombrero; caen esporas. Chip "humedad ✓ temperatura ✓", etiquetas "cuerpo fructífero" y "esporas". |
+| 7 | Manzana | Es como el manzano: tú te comes la manzana, no el árbol. | Fondo amarillo: manzano = champiñón con su micelio. "fruto/fruto", "árbol/micelio". |
+| 8 | Estudio | En 1993, Sandra Baldauf y Jeffrey Palmer compararon proteínas y vieron que los hongos son más parientes de los animales que de las plantas. | Tarjeta "1993 · Baldauf y Palmer · PNAS · 25 proteínas". Se dibuja el árbol: plantas aparte; hongos y animales unidos. Sticker sorprendido. |
+| 9 | Quitina | Su pared es de quitina, como el caparazón de un escarabajo. | Microscopio: pared de la hifa con la cadena de quitina que se arma anillo por anillo; un escarabajo con el mismo material. |
+| 10 | Levadura | Y la levadura del pan también es un hongo, pero de una sola célula, sin micelio. | Fondo rosa, tazón con masa que sube. **Lupa de rayos X**: células de *Saccharomyces cerevisiae* que echan yemas. Chip "1 célula · sin micelio". |
+| 11 | Cierre | Así que ese champiñón no es el hongo: es la única parte de él que alcanzas a ver. | **Regreso a la imagen del inicio**, ahora con el micelio iluminado: "lo que ves: el fruto" / "el hongo: el micelio". |
+| — | Outro | (sin voz) | Cierre de marca. |
+
+## Música y sonido (`gen-audio.mjs`, sin costo)
+- **Narrada:** cama grave continua sin golpe, más grave bajo tierra. Efecto en el mismo cuadro: brote (pop), esporas (soplo), rayos X (nota que sube), tachones (raspado), enzimas (tic-tic), tarjeta (golpe), cada anillo de quitina (un toque), yemas de levadura (pops).
+- **Mudo (datos):** 1 nota por cada 8 hifas nuevas (320 tramos → 40 notas, al ritmo en que crece el dibujo); el segundo micelio suena en otra escala y al unirse forman un acorde; el champiñón crece con una nota que sube; 60 esporas = 60 toques; un bajo por cada una de las 8 etapas.
+
+## Gemelo mudo (M4 "Ciclo", 61.5 s en loop) — `Shot Que Es Un Hongo mudo.dc.html`
+Cae una espora → germina (hifa de cerca) → crece el micelio → llega un segundo micelio compatible y se unen → nudo de hifas (primordio) con acercamiento → crece y abre el champiñón → suelta esporas → una espora vuela y vuelve a caer igual que en el primer cuadro. Capítulos numerados bajo el logo. **Título:** "El ciclo de un champiñón 🎧".
+
+## Descripción (borrador)
+"Ese champiñón no es el hongo: es su fruto. 🍄 El hongo de verdad es el micelio, una red de hilos microscópicos (hifas) que vive dentro del suelo, la madera o la hoja. No tiene raíces ni hojas y no hace fotosíntesis: suelta enzimas, digiere por fuera y absorbe los nutrientes. Cuando la humedad y la temperatura son las correctas, arma un cuerpo fructífero (la seta o el champiñón) para soltar sus esporas, como un manzano da manzanas. En 1993, Sandra Baldauf y Jeffrey Palmer compararon proteínas de muchos organismos (PNAS) y encontraron que hongos y animales son grupos hermanos, más cercanos entre sí que con las plantas. Su pared celular es de quitina, el mismo material del caparazón de los insectos, y la levadura del pan también es un hongo, pero unicelular. El dibujo es esquemático. ¿Sabías que eres más pariente de un champiñón que de una lechuga? 👇"
+
+## Fuentes
+- Baldauf, S. L. y Palmer, J. D. (1993). *Animals and fungi are each other's closest relatives: congruent evidence from multiple proteins.* PNAS 90(24): 11558–11562. (25 proteínas; animales y hongos, grupos hermanos.)
+- Moore, D., Robson, G. D. y Trinci, A. P. J. *21st Century Guidebook to Fungi* (Cambridge University Press; davidmoore.org.uk): hifas, micelio, cuerpo fructífero (cap. 11), digestión externa, levaduras.
+- Diámetro de las hifas (~2–10 µm) frente a un pelo humano (~50–100 µm): valores de texto de micología; por eso el guion dice "mucho más delgados que un pelo" sin dar un número exacto.
+- Quitina en la pared de los hongos y en el exoesqueleto de los artrópodos: dato de libro de texto (Moore et al.).
+- Humedad y temperatura como señales para fructificar: Sakamoto, Y. (2018). *Fungal Biology Reviews* 32(4): 236–248.
+
+## Datos que no se pudieron verificar con precisión
+- No encontré la cifra exacta del diámetro de hifa en la guía de Moore (sí en varios textos de curso): se evitó dar el número en voz.
