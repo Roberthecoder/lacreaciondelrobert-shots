@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Semillas Luna base narrada.dc.html",
   "salida": "Shot Semillas Luna narrado.dc.html",
-  "nota": "Una línea por subtítulo (idx 0..12 del jsx). DEMO: la voz NO se ha generado; gasta créditos de ElevenLabs, pedir aprobación a Robert antes.",
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). Voz aprobada por Robert el 26 oct 2026 (~937 caracteres en una sola petición a ElevenLabs).",
   "lineas": [
     { "escena": "Gancho", "texto": "Este no es un árbol cualquiera: su semilla le dio treinta y cuatro vueltas a la Luna." },
     { "escena": "Viaje", "texto": "En 1971 se la llevó el astronauta Stuart Roosa, que antes fue bombero forestal." },
