@@ -1,11 +1,119 @@
 {
   "nota": "Temas ya publicados o producidos. El generador no puede repetir ninguno, ni uno casi igual.",
   "temas": [
-    { "id": "cepario", "titulo": "Cepario", "serie": "Shot Biotecnológico", "numero": 23, "estado": "publicado" },
-    { "id": "lab-comestibles", "titulo": "Cosas del laboratorio que te puedes comer", "serie": "Shot Lab", "numero": 25, "estado": "confirmar" },
-    { "id": "micelio", "titulo": "El micelio", "serie": "Shot Micológico", "numero": 1, "estado": "confirmar" },
-    { "id": "hormiga-zombi", "titulo": "El hongo que convierte hormigas en zombis (Ophiocordyceps)", "serie": "Shot", "numero": 1, "estado": "borrador", "versiones": ["sin-voz"] },
-    { "id": "moho-pan", "titulo": "El moho del pan (Rhizopus stolonifer): por dentro y su ciclo", "serie": "Shot Micológico", "numero": 2, "estado": "construido, falta voz", "versiones": ["narrada (Por dentro)", "sin-voz (Ciclo)"], "nota": "Badge #02: confirmar numeración con Robert" },
-    { "id": "arboles-lunares", "titulo": "Las semillas que viajaron a la Luna (árboles lunares del Apolo 14)", "serie": "Shot", "numero": 3, "estado": "demo visual sin voz", "versiones": ["narrada (Por dentro + El experimento)"], "nota": "Gemelo mudo (Ciclo) propuesto, no construido. Voz pendiente de aprobación." }
+    {
+      "id": "cepario",
+      "titulo": "Cepario",
+      "serie": "Shot Biotecnológico",
+      "numero": 23,
+      "estado": "publicado"
+    },
+    {
+      "id": "lab-comestibles",
+      "titulo": "Cosas del laboratorio que te puedes comer",
+      "serie": "Shot Lab",
+      "numero": 25,
+      "estado": "confirmar"
+    },
+    {
+      "id": "micelio",
+      "titulo": "El micelio",
+      "serie": "Shot Micológico",
+      "numero": 1,
+      "estado": "confirmar"
+    },
+    {
+      "id": "hormiga-zombi",
+      "titulo": "El hongo que convierte hormigas en zombis (Ophiocordyceps)",
+      "serie": "Shot",
+      "numero": 1,
+      "estado": "borrador",
+      "versiones": [
+        "sin-voz"
+      ]
+    },
+    {
+      "id": "moho-pan",
+      "titulo": "El moho del pan (Rhizopus stolonifer): por dentro y su ciclo",
+      "serie": "Shot Micológico",
+      "numero": 2,
+      "estado": "construido, falta voz",
+      "versiones": [
+        "narrada (Por dentro)",
+        "sin-voz (Ciclo)"
+      ],
+      "nota": "Badge #02: confirmar numeración con Robert"
+    },
+    {
+      "id": "arboles-lunares",
+      "titulo": "Las semillas que viajaron a la Luna (árboles lunares del Apolo 14)",
+      "serie": "Shot",
+      "numero": 3,
+      "estado": "demo visual sin voz",
+      "versiones": [
+        "narrada (Por dentro + El experimento)"
+      ],
+      "nota": "Gemelo mudo (Ciclo) propuesto, no construido. Voz pendiente de aprobación."
+    },
+    {
+      "id": "bio-ramas-colores",
+      "titulo": "Las ramas de la biotecnología por colores",
+      "serie": "Shot Biotecnológico",
+      "numero": 1,
+      "estado": "construido sin voz (guion por aprobar)",
+      "versiones": [
+        "narrada (base)",
+        "sin-voz (gemelo mudo)"
+      ],
+      "nota": "Remasterizado del viejo #1. Rama remaster/lote-a."
+    },
+    {
+      "id": "bio-vacas-microbios",
+      "titulo": "La vaca no vive del pasto: vive de sus microbios (rumen, biorreactor con patas)",
+      "serie": "Shot Biotecnológico",
+      "numero": 2,
+      "estado": "construido sin voz (guion por aprobar)",
+      "versiones": [
+        "narrada (base)",
+        "sin-voz (gemelo mudo)"
+      ],
+      "nota": "Remasterizado del viejo #5 + #22. Rama remaster/lote-a."
+    },
+    {
+      "id": "bio-crispr-yogur",
+      "titulo": "CRISPR lo inventaron las bacterias (S. thermophilus del yogur, Barrangou 2007)",
+      "serie": "Shot Biotecnológico",
+      "numero": 3,
+      "estado": "construido sin voz (guion por aprobar)",
+      "versiones": [
+        "narrada (base)",
+        "sin-voz (gemelo mudo)"
+      ],
+      "nota": "Remasterizado del viejo #7. Rama remaster/lote-a."
+    },
+    {
+      "id": "bio-fagos",
+      "titulo": "Virus que solo atacan bacterias: fagos y fagoterapia (caso Tom Patterson)",
+      "serie": "Shot Biotecnológico",
+      "numero": 4,
+      "estado": "construido sin voz (guion por aprobar)",
+      "versiones": [
+        "narrada (base)",
+        "sin-voz (gemelo mudo)"
+      ],
+      "nota": "Remasterizado del viejo #14. Rama remaster/lote-a."
+    },
+    {
+      "id": "bio-petunia-luz",
+      "titulo": "La petunia que brilla sola (ciclo del ácido cafeico, 4 enzimas)",
+      "serie": "Shot Biotecnológico",
+      "numero": 5,
+      "estado": "construido sin voz (guion por aprobar)",
+      "versiones": [
+        "narrada (base)",
+        "sin-voz (gemelo mudo)"
+      ],
+      "nota": "Remasterizado del viejo #18. Rama remaster/lote-a."
+    }
   ]
 }

@@ -42,6 +42,32 @@ igual que el resto del motor, así que funcionan en la versión narrada (tiempos
 | `CamaraAnidada` | Zoom de ×1 a ×1000 sin perder nitidez: funde un mundo macro (cm) con uno micro (µm) y oscurece al "entrar al microscopio". Keys en coordenadas macro | N1, M4 |
 | `MundoPanMacro` + `MundoPanMicro` + `MUNDO_PAN` | Rebanada de frente (mancha de moho, rayos X, "puf" de esporas, segunda rebanada) y corte microscópico de la miga (alveolos, almidón, hifas que crecen, estolones, rizoides, tallos, cápsulas que revientan, espora, pelo de comparación). Usado en el shot 002 | N1, M4 |
 
+### Piezas v2 (27 oct 2026, serie Biotecnológico)
+| Pieza | Para qué |
+|---|---|
+| `Escena` | Escena con fundido cruzado y empujoncito de cámara (nunca corte seco). `a`, `b`, `zoom`, `origen` |
+| `Etq` | Etiqueta con línea (nombre común o *científico* con `it`) |
+| `AudioPista` | Audio sincronizado con la línea de tiempo (ya no hay que copiarlo en cada shot) |
+| `FondoMarca` | Fondo brillante con puntos o rayas, u `oscuro` para lo microscópico |
+| `Bacteria` | Bacteria en bastón con flagelo, nucleoide, `adentro(L, W)` y `reventar` (0..1) |
+| `Fago` | Bacteriófago T4: cabeza, vaina que se contrae (`contraida`), 6 fibras (`patas`), ADN (`adn`). Origen = placa basal |
+| `ADNHebra` | Doble hélice que gira; `resalta(u)` pinta tramos en dorado |
+| `FlechaCurva` | Flecha curva punteada que se dibuja (`p` 0..1) |
+| `Molecula` | Anillos hexagonales + cola, con halo (`brillo`) |
+
+Mundos nuevos (en la carpeta de cada shot, listos para copiar): **rumen y vaca** (`shots/bio-02-vacas/vacas-comun.jsx`:
+`Vaca`, `Pastizal`, `Estomago` de 4 cámaras para la Lupa, `MundoRumen` con fibra, bacterias, hongos, ciliados y arqueas,
+`AGV`), **CRISPR** (`shots/bio-03-crispr/crispr-comun.jsx`: `FagoSifo` de cola larga, `Cadena` de cocos, `Arreglo` CRISPR
+que crece, `Cas`, `ADNVirus` que se corta, `Yogur`), **ciclo lítico** (`shots/bio-04-fagos/fagos-comun.jsx`: `EColiGrande`,
+`Estallido`, `Petri` con calvas) y **plantas que brillan** (`shots/bio-05-petunia/petunia-comun.jsx`: `Petunia`, `Maceta`,
+`Cielo` día/noche, `HongoLuz`, `CicloCafeico`, `Tabaco`).
+
+### Herramientas (en `motor/kit/`)
+- `audio-kit.mjs`: síntesis para `gen-audio.mjs` (`crearMezcla(html)` → `pad`, `nota`, `campana`, `pluck`, `latido`,
+  `golpe`, `burbuja`, `pop`, `eructo`, `whoosh`, `ruido`…, `guardar(wav)`). Respeta los tiempos `nat` de la narrada.
+- `estimar-escenas.mjs <shot>`: duración estimada de cada escena desde `narracion.json` (calibrado con la voz del 003).
+- `escribir-dc.mjs <salida.dc.html> <Componente> '<escenas>' a.jsx b.jsx`: escribe el `.dc.html` del shot.
+
 Utilidades: `KC` (colores de la marca), `KF` (letras), `kprog`, `klerp`, `kEase`, `krng`, `mece(T, semilla)`
 (movimiento orgánico para vellos, hojas, hifas…), `kformato` (números en español de México).
 
