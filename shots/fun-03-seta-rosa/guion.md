@@ -6,7 +6,7 @@
 - **Duración:** voz ≈ 931 caracteres (~58 s con ×1.065) + cierre 3.5 s. Base sin voz: 61.9 s. Mudo: 61.5 s.
 - **Fotos reales (recortes animados):** cuadros de tu video y fotos del PDF *Pink_oyster_spore_to_harvest_2026* copiadas a `assets/foto_*.png` (racimos, laminillas, esporada en aluminio, placa con micelio, grano colonizado, primordios en la bolsa). Recorté el logo viejo y las fechas sobreimpresas.
 - **Qué se corrigió del viejo:** "oxígeno, humedad y temperatura" → con fuente: **aire fresco (CO₂ bajo), humedad alta, algo de luz y calor**. El viejo decía "el color viene de pigmentos naturales": la revisión de 2017 dice que **el origen del rosa aún no es concluyente**, así que se dice tal cual.
-- **Estado:** animación lista. **La voz espera tu aprobación** (≈ 931 créditos).
+- **Estado:** animación lista. **La voz espera tu aprobación** (≈ 931 créditos). Videos en el Release "Borradores · claude/clever-mayer-197rx7"; textos para redes en `publicacion.md`; tema registrado en `historial/nuevos/remaster-lote-d.json`.
 
 ## Versión narrada
 

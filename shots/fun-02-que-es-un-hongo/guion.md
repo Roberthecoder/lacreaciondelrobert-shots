@@ -4,7 +4,7 @@
 - **Formato:** N1 "Por dentro" (macro → micro → macro). **Gemelo mudo:** M4 "Ciclo" (construido).
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el champiñón que se ve en pantalla.
 - **Duración:** voz ≈ 924 caracteres (~58 s con ×1.065) + cierre 3.5 s → 61–62 s. Base sin voz: 61.1 s. Mudo: 61.5 s.
-- **Estado:** animación lista (narrada base + mudo). **La voz espera tu aprobación** (≈ 924 créditos de ElevenLabs).
+- **Estado:** animación lista (narrada base + mudo). **La voz espera tu aprobación** (≈ 924 créditos de ElevenLabs). Videos en el Release "Borradores · claude/clever-mayer-197rx7"; textos para redes en `publicacion.md`; tema registrado en `historial/nuevos/remaster-lote-d.json`.
 - **Qué cambió del viejo:** de 181 s a 58 s; fuera las muletillas y el "talo"; se queda lo esencial (hifa → micelio → cuerpo fructífero → esporas, digestión externa, levaduras) y se agrega un estudio real (1993) y la quitina.
 
 ## Versión narrada

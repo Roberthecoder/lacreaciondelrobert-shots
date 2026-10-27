@@ -4,7 +4,7 @@
 - **Formato:** N3 "Capítulos y medidores" (4 capítulos bajo el logo + medidor de temperatura y curva). **Gemelo mudo:** M2 "¿Por qué NO…?" (construido).
 - **Gancho:** #1 "Esto no es X: es Y", sobre la placa que tiembla en pantalla.
 - **Duración:** voz ≈ 943 caracteres (~58 s con ×1.065) + cierre 3.5 s. Base sin voz: 61.7 s. Mudo: 61.5 s. Si al narrar pasa de 62 s, se acorta la línea del estudio.
-- **Estado:** animación lista. **La voz espera tu aprobación** (≈ 943 créditos).
+- **Estado:** animación lista. **La voz espera tu aprobación** (≈ 943 créditos). Videos en el Release "Borradores · claude/clever-mayer-197rx7"; textos para redes en `publicacion.md`; tema registrado en `historial/nuevos/remaster-lote-d.json`.
 - **Qué cambió del viejo:** ya no es una lista de tipos de agar (sangre, MacConkey, PDA); ahora es **su química**: polisacárido de algas rojas (agarosa + agaropectina) que gelifica con histéresis y que casi nadie puede digerir. Los medios selectivos quedan para otro shot.
 
 ## Versión narrada

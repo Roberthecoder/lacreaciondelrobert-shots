@@ -4,7 +4,7 @@
 - **Formato:** N1 "Por dentro" + N2 "El número" (−15 %, −56 %, < 40 %). **Gemelo mudo:** M2 "¿Por qué NO…?" (construido).
 - **Gancho:** #1 "Esto no es X: es Y" sobre el hongo que se ve ("no solo chupó agua: también… metales").
 - **Duración:** voz ≈ 928 caracteres (~58 s con ×1.065) + cierre 3.5 s. Base sin voz: 61.9 s. Mudo: 61.5 s.
-- **Estado:** animación lista. **La voz espera tu aprobación** (≈ 928 créditos).
+- **Estado:** animación lista. **La voz espera tu aprobación** (≈ 928 créditos). Videos en el Release "Borradores · claude/clever-mayer-197rx7"; textos para redes en `publicacion.md`; tema registrado en `historial/nuevos/remaster-lote-d.json`.
 
 ## Qué se verificó del viejo (y qué cambió)
 - **Hervir: SÍ se sostiene, con matices.** Falandysz y Drewnowska (2017, Polonia): blanquear rebozuelos frescos quitó ~15 % del mercurio (hasta 35 % si estaban congelados) y hervir *Amanita fulva* quitó 56 %. Chiocchetti et al. (2020): cocinar hongos secos bajó mucho el arsénico (26–72 %), pero el mercurio, cadmio y plomo bajaron "mucho menos". Por eso el guion da los números del estudio y no promete que hervir "limpie" el hongo. Lo de tirar el agua sí se queda.

@@ -4,7 +4,7 @@
 - **Protagonista: el gemelo MUDO**, formato M2 "¿Por qué NO…?" con 5 errores comunes (61.5 s en loop). **Base narrada:** N3 "Capítulos y medidores" (las 4 zonas son 4 capítulos).
 - **Gancho:** mudo → "5 errores que arruinan un estriado" + la pregunta de cada error; narrado → #1 "Esto no es X: es Y" sobre el garabato que se dibuja en pantalla.
 - **Duración:** voz ≈ 933 caracteres (~58 s con ×1.065) + cierre 3.5 s. Base sin voz: 61.7 s. Mudo: 61.5 s.
-- **Estado:** animación lista. **La voz espera tu aprobación** (≈ 933 créditos).
+- **Estado:** animación lista. **La voz espera tu aprobación** (≈ 933 créditos). Videos en el Release "Borradores · claude/clever-mayer-197rx7"; textos para redes en `publicacion.md`; tema registrado en `historial/nuevos/remaster-lote-d.json`.
 - **Qué cambió del viejo:** el viejo decía que tus medicinas y tu yogur "empiezan con una bacteria" (no lo pude sostener con una fuente para cada caso, así que salió). Los errores y los pasos ahora siguen el protocolo publicado de Sanders (2012), que además trae el ejemplo de *Serratia* y la regadera. En la descripción del viejo decías que lo trazaste "a dedazo": ahora el trazo y las colonias por zona salen del mismo cálculo (260 → 70 → 22 → 7).
 
 ## Gemelo mudo (protagonista) — `Shot Estriado mudo.dc.html`
