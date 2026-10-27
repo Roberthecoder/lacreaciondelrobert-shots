@@ -16,7 +16,7 @@ const [dir, page, out, ts] = args;
 const times = ts.split(',').map(Number);
 const COLS = +opt('cols', 4), TW = +opt('ancho', 270);
 
-const MIME = { '.html': 'text/html', '.js': 'application/javascript', '.jsx': 'application/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.wav': 'audio/wav', '.mp4': 'video/mp4' };
+const MIME = { '.html': 'text/html', '.js': 'application/javascript', '.jsx': 'application/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.wav': 'audio/wav', '.mp4': 'video/mp4' };
 const root = path.resolve(dir);
 const server = http.createServer((req, res) => {
   const f = path.join(root, decodeURIComponent(new URL(req.url, 'http://x').pathname));
@@ -40,6 +40,9 @@ const SEL = '[data-om-exportable-video-with-duration-secs]';
 try { await p.waitForSelector(SEL, { timeout: 30000 }); } catch { console.error('No cargó el escenario. Errores:\n' + errs.join('\n')); process.exit(1); }
 await p.evaluate(() => document.fonts.ready);
 await p.waitForTimeout(800);
+// Largos horizontales: el .dc.html define window.K_ANCHO / K_ALTO.
+const [W, H] = await p.evaluate(() => [+window.K_ANCHO || 1080, +window.K_ALTO || 1920]);
+if (W !== 1080 || H !== 1920) { await p.setViewportSize({ width: W, height: H + 70 }); await p.waitForTimeout(800); }
 const clip = await p.evaluate((SEL) => { const r = document.querySelector(SEL).getBoundingClientRect(); return { x: r.x, y: r.y, width: r.width, height: r.height }; }, SEL);
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'prev-'));
 for (const [i, t] of times.entries()) {

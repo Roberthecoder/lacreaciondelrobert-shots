@@ -9,7 +9,7 @@ name: Render automático
 on:
   push:
     branches: ['**', '!videos/**']   # videos/** solo guarda MP4 para mandarlos al chat
-    paths: ['shots/**']
+    paths: ['shots/**', 'largos/**']   # largos/ = videos largos horizontales
 
 permissions:
   contents: write   # crear el Release de borradores y guardar la caché de voz
@@ -53,28 +53,28 @@ jobs:
           if [ -z "$BASE" ]; then BASE=$(git merge-base origin/main HEAD 2>/dev/null || git rev-list --max-parents=0 HEAD | tail -1); fi
           if [ "$BASE" = "$(git rev-parse HEAD)" ]; then BASE=$(git rev-parse HEAD~1); fi
           echo "Comparando $BASE..$GITHUB_SHA"
-          CAMBIOS=$(git diff --name-only "$BASE" HEAD -- shots/)
+          CAMBIOS=$(git diff --name-only "$BASE" HEAD -- shots/ largos/)
           LISTA=(); TEXTOS=()
           for d in $(echo "$CAMBIOS" | cut -d/ -f1,2 | sort -u); do
             case "$(basename "$d")" in _*) continue;; esac
             [ -d "$d" ] || continue
             # Textos para publicar: se suben siempre que el shot cambió y tiene publicacion.md
-            if [ -f "$d/publicacion.md" ]; then TEXTOS+=("$(basename "$d")"); fi
+            if [ "${d%%/*}" = shots ] && [ -f "$d/publicacion.md" ]; then TEXTOS+=("$(basename "$d")"); fi
             # Video: solo si cambió algo más que publicacion.md
             OTROS=$(echo "$CAMBIOS" | grep "^$d/" | grep -vx "$d/publicacion.md" || true)
             if [ -z "$OTROS" ]; then echo "· $d: solo cambió publicacion.md, no se renderiza el video"; continue; fi
             [ -f "$d/narracion.json" ] || { echo "· $d sin narracion.json, se salta"; continue; }
-            LISTA+=("$(basename "$d")")
+            LISTA+=("$d")   # ruta completa: shots/xxx o largos/xxx
           done
           # Candado de verificación (regla de Robert, 27 oct 2026): ningún shot nuevo se renderiza sin
           # shots/<clave>/verificacion.md con la línea "VEREDICTO: APROBADO". Los shots anteriores están en .github/verificacion-exentos.txt.
           FALTAN=()
-          for n in "${LISTA[@]}"; do
-            grep -qx "$n" .github/verificacion-exentos.txt 2>/dev/null && continue
-            grep -qi "VEREDICTO: APROBADO" "shots/$n/verificacion.md" 2>/dev/null || FALTAN+=("$n")
+          for d in "${LISTA[@]}"; do
+            grep -qx "$(basename "$d")" .github/verificacion-exentos.txt 2>/dev/null && continue
+            grep -qi "VEREDICTO: APROBADO" "$d/verificacion.md" 2>/dev/null || FALTAN+=("$d")
           done
           if [ ${#FALTAN[@]} -gt 0 ]; then
-            for n in "${FALTAN[@]}"; do echo "::error title=Sin verificación::shots/$n no tiene verificacion.md con VEREDICTO: APROBADO. Verifica el guion antes de renderizar (CLAUDE.md, Verificación de hechos)."; done
+            for n in "${FALTAN[@]}"; do echo "::error title=Sin verificación::$n no tiene verificacion.md con VEREDICTO: APROBADO. Verifica el guion antes de renderizar (CLAUDE.md, Verificación de hechos)."; done
             exit 1
           fi
           aJSON() { printf '%s\n' "$@" | node -e 'const l=require("fs").readFileSync(0,"utf8").split("\n").filter(Boolean);console.log(JSON.stringify(l))'; }
@@ -93,14 +93,14 @@ jobs:
     needs: detectar
     if: needs.detectar.outputs.shots != '[]' && needs.detectar.outputs.shots != ''
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 120   # un largo de ~4.5 min tarda ~35 min
     strategy:
       fail-fast: false
       max-parallel: 20
       matrix:
         shot: ${{ fromJSON(needs.detectar.outputs.shots) }}
     env:
-      SHOT: shots/${{ matrix.shot }}
+      SHOT: ${{ matrix.shot }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
@@ -118,6 +118,7 @@ jobs:
         run: |
           mkdir -p salida
           N=$(basename "$SHOT")
+          echo "NOMBRE=$N" >> "$GITHUB_ENV"
           MUDO=$(node -p "JSON.stringify(require('./$SHOT/narracion.json').mudo || null)")
           if [ "$MUDO" != "null" ]; then
             HTML=$(node -p "require('./$SHOT/narracion.json').mudo.dcHtml")
@@ -155,7 +156,7 @@ jobs:
           for f in salida/*.mp4; do echo "$f: $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f") s"; done | tee -a "$GITHUB_STEP_SUMMARY"
           # Candado de duración: los shots deben pasar de 60 s (TikTok paga solo más de 1 min), salvo "duracion_libre": true
           LIBRE=$(node -p "require('./$SHOT/narracion.json').duracion_libre === true")
-          if [ "$LIBRE" != "true" ]; then
+          if [ "$LIBRE" != "true" ] && [ "${SHOT%%/*}" = shots ]; then
             for f in salida/*.mp4; do
               D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
               if awk "BEGIN{exit !($D < 60.5)}"; then echo "::error title=Muy corto::$f dura $D s; debe durar 61–62 s. Alarga el cierre o ajusta la velocidad de la voz."; FALLA=1; fi
@@ -170,7 +171,7 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.shot }}
+          name: ${{ env.NOMBRE }}
           path: salida/*.mp4
           retention-days: 3
 
