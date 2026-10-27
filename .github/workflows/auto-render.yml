@@ -217,21 +217,3 @@ jobs:
           cat notas.md
           gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes-file notas.md
 
-      - name: Copia de los videos en la rama videos/<rama> (para que las sesiones de nube los manden al chat)
-        # Las sesiones de Claude en la nube no pueden bajar archivos del Release (repo privado), pero sí usar git.
-        # Esta rama tiene un solo commit (se reemplaza en cada render) con los MP4 y textos actuales del Release.
-        continue-on-error: true
-        run: |
-          TAG="${{ needs.detectar.outputs.tag }}"
-          RV="videos/${RAMA//\//-}"
-          mkdir -p v && cd v
-          gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p "*.mp4" -p "*_publicacion.md" --clobber
-          find . -name "*.mp4" -size +95M -print -delete   # GitHub no acepta archivos de más de 100 MB
-          ls -la
-          git init -q -b main
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          echo "Videos de la rama $RAMA (copia del Release $TAG, run $GITHUB_RUN_ID). Rama automática: no editar." > LEEME.md
-          git add -A && git commit -q -m "Videos de $RAMA ($GITHUB_SHA)"
-          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/$RV"
-          echo "Videos en la rama $RV" | tee -a "$GITHUB_STEP_SUMMARY"
