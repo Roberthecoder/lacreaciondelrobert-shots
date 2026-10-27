@@ -29,7 +29,7 @@ concurrency:
 
 jobs:
   render:
-    runs-on: ubuntu-24.04   # Playwright 1.56 no instala Chromium en Ubuntu 26 (ubuntu-latest migra desde oct 2026)
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     env:
       SHOT: ${{ inputs.shot }}
