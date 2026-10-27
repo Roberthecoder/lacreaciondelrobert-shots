@@ -1,0 +1,67 @@
+{
+  "dcHtml": "Shot Espanol IA base narrada.dc.html",
+  "salida": "Shot Espanol IA narrado.dc.html",
+  "nota": "Shot IA #02. Una línea por subtítulo (idx 0..14 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno (~965 créditos de ElevenLabs en una sola petición).",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto es todo lo que leyó la inteligencia artificial GPT-3, dibujado en cien cuadritos."
+    },
+    {
+      "escena": "Cuadritos",
+      "texto": "Cada cuadrito es una de cada cien palabras con las que la entrenaron."
+    },
+    {
+      "escena": "Reto",
+      "texto": "Antes de seguir, adivina: ¿cuántos son en español?"
+    },
+    {
+      "escena": "Ingles",
+      "texto": "Inglés: casi noventa y tres cuadritos."
+    },
+    {
+      "escena": "Otros",
+      "texto": "Francés, casi dos. Alemán, uno y medio."
+    },
+    {
+      "escena": "Espanol",
+      "texto": "¿Y el español? Ni un cuadrito completo: 0.77 por ciento."
+    },
+    {
+      "escena": "Mucho",
+      "texto": "Suena a mucho: más de mil quinientos millones de palabras en español."
+    },
+    {
+      "escena": "Mucho",
+      "texto": "Pero de inglés fueron ciento ochenta y un mil millones: casi ciento veinte veces más."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Por qué tan poquito?"
+    },
+    {
+      "escena": "Internet",
+      "texto": "Porque su texto salió de internet y de libros, y en esa mezcla el inglés aplastó a todos."
+    },
+    {
+      "escena": "Ficha",
+      "texto": "En 2020, sus propios creadores, OpenAI, lo escribieron en su ficha:"
+    },
+    {
+      "escena": "Ficha",
+      "texto": "sus respuestas representan más a la gente conectada, y sobre todo a Estados Unidos."
+    },
+    {
+      "escena": "Fuera",
+      "texto": "Y las comunidades con menos internet quedan subrepresentadas."
+    },
+    {
+      "escena": "Consejo",
+      "texto": "Así que cuando una IA te conteste en español, pregúntate en qué idioma aprendió."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Porque en estos cien cuadritos, tu idioma no llenó ni uno."
+    }
+  ]
+}

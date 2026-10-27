@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot AlphaFold base narrada.dc.html",
+  "salida": "Shot AlphaFold narrado.dc.html",
+  "nota": "Shot IA #01. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno (~955 créditos de ElevenLabs en una sola petición).",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es un estambre enredado: es una proteína, y su forma la adivinó una inteligencia artificial."
+    },
+    {
+      "escena": "Collar",
+      "texto": "Una proteína es una cadena de piezas, los aminoácidos, como un collar de cuentas."
+    },
+    {
+      "escena": "Dobla",
+      "texto": "La cadena se dobla sola en una forma exacta, y esa forma es su trabajo."
+    },
+    {
+      "escena": "Llave",
+      "texto": "Si la forma cambia, la llave ya no entra."
+    },
+    {
+      "escena": "Rayos",
+      "texto": "Antes, la forma se veía haciendo cristales de la proteína y bombardeándolos con rayos X."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si en vez de verla, la adivinas?"
+    },
+    {
+      "escena": "Red",
+      "texto": "AlphaFold, de Google DeepMind, aprendió a predecir la forma leyendo solo la cadena de letras."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2021, el equipo de John Jumper explicó en la revista Nature cómo funciona, y liberó el programa."
+    },
+    {
+      "escena": "Base",
+      "texto": "Luego le dieron el catálogo mundial de proteínas: en 2022 ya eran 214 millones de formas, gratis."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: son predicciones. Cada una trae su nivel de confianza, y las dudosas se revisan en el laboratorio."
+    },
+    {
+      "escena": "Pesa",
+      "texto": "Bajarlas todas pesa 23 tebibytes: no te caben en el celular."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese estambre no es un enredo: es una llave, y ya conocemos su forma."
+    }
+  ]
+}

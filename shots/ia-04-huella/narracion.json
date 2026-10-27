@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Huella IA base narrada.dc.html",
+  "salida": "Shot Huella IA narrado.dc.html",
+  "nota": "Shot IA #04. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno (~963 créditos de ElevenLabs en una sola petición).",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Si a esta inteligencia artificial la hubiera entrenado una sola tarjeta de video, habría tardado casi ochocientos ochenta años."
+    },
+    {
+      "escena": "Llama",
+      "texto": "Es Llama 3, de Meta, y salió en abril de 2024."
+    },
+    {
+      "escena": "Horas",
+      "texto": "Entrenarla sumó 7.7 millones de horas de tarjetas H100."
+    },
+    {
+      "escena": "Muchas",
+      "texto": "Por eso no se usa una: se usan muchísimas al mismo tiempo."
+    },
+    {
+      "escena": "Watts",
+      "texto": "Y cada una puede jalar hasta setecientos watts."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánta contaminación deja eso?"
+    },
+    {
+      "escena": "CO2",
+      "texto": "Meta lo calculó en su propia ficha: unas dos mil doscientas noventa toneladas de CO2."
+    },
+    {
+      "escena": "Grande",
+      "texto": "El modelo grande se llevó mil novecientas; el chico, trescientas noventa."
+    },
+    {
+      "escena": "Compensa",
+      "texto": "Y dice que compensó el cien por ciento con su programa de sustentabilidad."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: compensar no es no emitir. El gas ya salió; se paga para quitar o evitar otro tanto en otro lado."
+    },
+    {
+      "escena": "Leyo",
+      "texto": "¿Y qué hizo en todo ese tiempo? Leer más de quince billones de tokens."
+    },
+    {
+      "escena": "Extra",
+      "texto": "Y eso es solo entrenarla: cada pregunta que le haces después también gasta energía."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa respuesta rápida tiene detrás casi ochocientos ochenta años de una tarjeta trabajando."
+    }
+  ]
+}

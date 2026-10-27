@@ -1,0 +1,97 @@
+{
+ "temas": [
+  {
+   "id": "ia-alphafold",
+   "titulo": "AlphaFold: una IA predijo la forma de 214 millones de proteínas (AlphaFold DB 2022, CASP14 2020)",
+   "serie": "Shot IA",
+   "numero": 1,
+   "estado": "guion",
+   "carpeta": "shots/ia-01-alphafold",
+   "rama": "claude/lote-ia-01",
+   "fecha": "2026-10-27",
+   "derivados": [
+    "AlphaFold 3 y las proteínas que se pegan al ADN y a medicinas",
+    "Proteínas diseñadas desde cero (David Baker)",
+    "Cristalografía de rayos X: cómo se ve una molécula"
+   ],
+   "fuentes": [
+    "Google DeepMind, afdb/README.md (2022): 214M predictions, 23 TiB",
+    "Jumper et al., Nature 596:583–589 (2021)"
+   ]
+  },
+  {
+   "id": "ia-espanol-gpt3",
+   "titulo": "Lo que leyó GPT-3: 92.6 % inglés y 0.77 % español (sesgo de idioma, 2020)",
+   "serie": "Shot IA",
+   "numero": 2,
+   "estado": "guion",
+   "carpeta": "shots/ia-02-espanol",
+   "rama": "claude/lote-ia-01",
+   "fecha": "2026-10-27",
+   "derivados": [
+    "Whisper: 680,000 horas de audio y cuánto español escuchó (openai/whisper)",
+    "Lenguas indígenas de México y la IA: quién las incluye",
+    "Por qué una IA entiende peor los acentos regionales"
+   ],
+   "fuentes": [
+    "OpenAI, gpt-3/dataset_statistics/languages_by_word_count.csv (2020)",
+    "OpenAI, GPT-3 Model Card (sept 2020)"
+   ]
+  },
+  {
+   "id": "ia-siguiente-palabra",
+   "titulo": "Un chatbot por dentro: adivina la siguiente pieza de palabra (tokens, probabilidades; GPT-3 175 mil millones de parámetros)",
+   "serie": "Shot IA",
+   "numero": 3,
+   "estado": "guion",
+   "carpeta": "shots/ia-03-siguiente-palabra",
+   "rama": "claude/lote-ia-01",
+   "fecha": "2026-10-27",
+   "derivados": [
+    "La temperatura: el botón de azar de un chatbot",
+    "Por qué las IA cuentan mal las letras de una palabra (tokens)",
+    "Cómo una IA convierte palabras en números (embeddings)"
+   ],
+   "fuentes": [
+    "OpenAI, repositorio gpt-3 (Brown et al. 2020): 175 billion parameters",
+    "Meta, Llama 3 Model Card (2024): vocabulary of 128K tokens"
+   ]
+  },
+  {
+   "id": "ia-huella-llama",
+   "titulo": "Lo que costó entrenar una IA: Llama 3, 7.7 millones de horas de GPU y 2,290 t de CO2 (2024)",
+   "serie": "Shot IA",
+   "numero": 4,
+   "estado": "guion",
+   "carpeta": "shots/ia-04-huella",
+   "rama": "claude/lote-ia-01",
+   "fecha": "2026-10-27",
+   "derivados": [
+    "El agua que usan los centros de datos para enfriarse",
+    "Cuánta energía gasta una sola pregunta a una IA (cuando haya fuente abierta)",
+    "Compensar carbono: qué es y qué no es"
+   ],
+   "fuentes": [
+    "Meta, Llama 3 Model Card (abril 2024): 7.7M GPU hours, 2290 tCO2eq, over 15 trillion tokens"
+   ]
+  },
+  {
+   "id": "ia-alucinaciones",
+   "titulo": "Alucinaciones: la IA repite mitos humanos (TruthfulQA 2021: 58 % vs 94 %)",
+   "serie": "Shot IA",
+   "numero": 5,
+   "estado": "guion",
+   "carpeta": "shots/ia-05-alucinaciones",
+   "rama": "claude/lote-ia-01",
+   "fecha": "2026-10-27",
+   "derivados": [
+    "El abogado que citó casos inventados por un chatbot (Mata v. Avianca, 2023)",
+    "Mitos de salud que más repite internet (y su fuente)",
+    "Cómo revisar si un dato de una IA es real"
+   ],
+   "fuentes": [
+    "Lin, Hilton y Evans, TruthfulQA (2021): repositorio sylinrl/TruthfulQA y TruthfulQA.csv"
+   ]
+  }
+ ]
+}
