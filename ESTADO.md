@@ -48,7 +48,13 @@ DECISIÓN de Robert (25 oct): mantener sus colores brillantes; fondo oscuro solo
 Cinco shots nuevos, con guion verificado, base narrada y gemelo mudo de 61.5 s, y su `gen-audio.mjs`:
 `shots/bio-06-lactosa` (Biotec #06), `shots/bio-07-polio` (#07), `shots/bio-08-insulina` (#08),
 `shots/bio-09-cepario` (#09) y `shots/cie-02-proteina-iman` (Científico #02, logo de física).
-- **Las voces NO están generadas**: los guiones esperan la aprobación de Robert por lote (~4,440 créditos en total).
+- **Voces generadas el 27 oct 2026**, con los 5 guiones aprobados por Robert: ~4,509 créditos
+  (quedaban 18,884 el 26 oct → unos 14,375). Están en caché en `shots/<shot>/voz/`: **no regenerar**.
+- Las velocidades de `narracion.json` NO son 1.065: se calcularon con la duración real de cada voz
+  (1.1008, 1.0096, 1.0321, 1.0489 y 0.9802) para que los cinco narrados midan **61.50 s exactos**.
+- **El workflow ahora corre en `ubuntu-24.04`**, no en `ubuntu-latest`: desde el 19 oct 2026 GitHub
+  migra `ubuntu-latest` a Ubuntu 26.04 y ahí Playwright no instala Chromium, así que los renders
+  fallaban al azar según la máquina que tocara. El mismo cambio hace falta en las otras ramas de lotes.
 - Piezas nuevas en el kit: `EscenaFundido`, `Etiqueta`, `AudioPista`, `Molecula`, `MundoIntestino`,
   `MundoBiorreactor`, `Vial` y `Gradilla` (ver `motor/kit/LEEME.md`).
 - Dato que NO se pudo verificar: cuánto duró el efecto del autoexperimento de lactosa de Justin Atkin.
