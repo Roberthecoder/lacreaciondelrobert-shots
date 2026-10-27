@@ -642,7 +642,7 @@ function E16({ T }) {
       <div style={{ font:`900 34px/1.15 ${KF.texto}`, color:KC.ink, marginTop:10 }}>{titulo}</div>
       <div style={{ font:`700 26px/1.25 ${KF.texto}`, color:'#444', marginTop:10 }}>{linea}</div></div>; };
   return <Escena T={T} n="E16" fondo={KC.yellow} patron="rayas" color2="rgba(255,255,255,.25)">
-    {tarjeta(L(34) + 0.5, '2026', 'Equitech Futures', 'Fungi Mati entre los 6 mejores de más de 100 proyectos', KC.pink, 470)}
+    {tarjeta(L(34) - 0.1, '2026', 'Equitech Futures', 'Fungi Mati entre los 6 mejores de más de 100 proyectos', KC.pink, 470)}
     {tarjeta(L(35) + 0.3, '2026', 'beVisioneers', 'La beca de Mercedes-Benz, entre unas 20,000 personas', KC.blue, 1010)}
     <Foto T={T} n="16_rise_spotlight" at={L(34) + 1.4} until={f - 0.4} x={230} y={160} w={300} rot={-4} desde="izq" seed={1} />
     <Foto T={T} n="16_bevisioneers" at={L(35) + 1.2} until={f - 0.4} x={1680} y={600} w={380} rot={3} desde="der" seed={2} />
