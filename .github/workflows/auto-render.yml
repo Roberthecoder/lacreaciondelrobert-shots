@@ -8,7 +8,7 @@ name: Render automático
 # Para saltarse el render en un push, poner [sin render] en el mensaje del commit.
 on:
   push:
-    branches: ['**']
+    branches: ['**', '!videos/**']   # videos/** solo guarda MP4 para mandarlos al chat
     paths: ['shots/**']
 
 permissions:
@@ -216,3 +216,4 @@ jobs:
           } > notas.md
           cat notas.md
           gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes-file notas.md
+

@@ -48,6 +48,9 @@ Al final dame: lista de shots, enlace al Release de borradores y los caracteres 
 
 ## 3. Dónde ver los videos
 
+- **En el chat de la sesión:** al terminar cada render, la sesión de nube te manda los MP4 ahí mismo (los baja de la
+  rama automática `videos/<rama>`, que llena el workflow "Videos al chat" al terminar cada render). Ver "Videos al chat" en `CLAUDE.md`.
+
 - **Releases del repositorio:** https://github.com/Roberthecoder/lacreaciondelrobert-shots/releases
   Hay un Release por rama, llamado **"Borradores · <rama>"**. Cada shot sube ahí:
   - `<shot>_mudo.mp4` (gemelo mudo) o `<shot>_sin_voz.mp4`,

@@ -4,6 +4,36 @@ Lee primero `ESTADO.md` (qué está hecho y qué sigue) y `CANAL.md` (series, nu
 
 Videos verticales 1080×1920 de divulgación científica en español de México. El usuario no programa: respuestas en español, breves y sin jerga.
 
+## Pedidos cortos (Robert escribe una línea en una sesión de nube)
+Robert abre una sesión en claude.ai/code con este repositorio y escribe algo corto. Interprétalo así, sin pedirle más datos:
+- **"Hazme un lote de <serie>"** (o "5 shots de <serie>", "un shot de <serie>"): sigue la plantilla de la sección 2 de
+  `PRODUCCION_NUBE.md` con 5 shots (o los que diga), numerados desde el siguiente número libre de esa serie
+  (búscalo en `shots/`, `historial/` y en las ramas remotas). Series: Biotecnológico, Fungi Mati, Ambiental, IA,
+  Científico, Químico y **Robert** (datos curiosos de Robert: lee antes `series/shot-robert/CLAUDE.md`).
+  **La serie Robert es solo manual:** únicamente cuando Robert la pide en persona. Las rutinas automáticas nunca la hacen.
+  Antes de empezar, revisa con `git branch -r` que no haya otra rama trabajando la misma serie; si la hay, avísale a Robert
+  y propón otra serie.
+- **"Continúa el lote A/B/C/D"**: haz merge de `origin/remaster/lote-<letra>` en tu rama, revisa qué falta en cada shot
+  (Robert en pantalla, `publicacion.md`, historial), termínalo y haz push.
+- **"Apruebo la voz de <shot>"**: pon `"voz_aprobada": true` en el `narracion.json` de ese shot y haz push.
+- **"Junta el lote X a main"**: sigue la sección 6 de `PRODUCCION_NUBE.md`.
+Siempre: no renderices MP4 completos (lo hace GitHub con cada push), no publiques nada en redes, no uses la API de Claude
+ni generes voz sin aprobación. Al terminar mándale a Robert los videos al chat (sección "Videos al chat") y la lista de shots.
+
+## Videos al chat (obligatorio, decidido por Robert el 27 oct 2026)
+Robert quiere ver los videos **dentro del chat**, no como enlaces a GitHub. Cuando termine el render automático de tu rama:
+1. Bájalos de la rama `videos/<tu-rama-con-guiones>` (GitHub la llena sola al terminar cada render; el repo es privado y desde
+   la nube solo funciona git):
+   ```
+   RV="videos/$(git branch --show-current | tr / -)"
+   git fetch -q --depth 1 origin "$RV" && rm -rf /tmp/videos && mkdir -p /tmp/videos && git archive FETCH_HEAD | tar -x -C /tmp/videos && ls -la /tmp/videos
+   ```
+2. Mándale cada MP4 nuevo con la herramienta **SendUserFile** (`display: "render"`), con una línea de contexto por video
+   (shot, versión muda o narrada, duración). Si no está cargada: `ToolSearch` con `select:SendUserFile`. Los
+   `<shot>_publicacion.md` también se mandan (`display: "attach"`).
+3. El enlace al Release va solo como respaldo, al final.
+Si la rama `videos/…` todavía no existe, el render no ha terminado: espera (`send_later` o vuelve a revisar el run) y repite.
+
 ## Reglas de contenido
 - Cada shot es un tema nuevo; nunca repetir un tema ni uno casi igual. **Banco de temas** (`historial/temas.json`):
   - **Antes de elegir tema:** `git fetch origin` y `node historial/consolidar.mjs --buscar "palabras del tema"` (busca en el banco y en lo que otras sesiones ya apartaron en sus ramas). Los `derivados` de cada tema son buenas ideas para el siguiente.
