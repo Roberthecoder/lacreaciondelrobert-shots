@@ -49,10 +49,19 @@ jobs:
       - name: Versión sin voz
         if: inputs.version != 'narrada'
         run: |
-          HTML=$(node -p "require('./$SHOT/narracion.json').dcHtml")
-          node "$SHOT/gen-audio.mjs"
           mkdir -p salida
-          node motor/render.mjs "$SHOT" "$HTML" "salida/$(basename $SHOT)_sin_voz.mp4" --audio "$SHOT/assets/mezcla.wav"
+          # Gemelo mudo propio: narracion.json → "mudo": { "dcHtml": "...", "audio": "assets/mezcla_mudo.wav" }
+          MUDO=$(node -p "JSON.stringify(require('./$SHOT/narracion.json').mudo || null)")
+          if [ "$MUDO" != "null" ]; then
+            HTML=$(node -p "require('./$SHOT/narracion.json').mudo.dcHtml")
+            AUD=$(node -p "require('./$SHOT/narracion.json').mudo.audio || 'assets/mezcla_mudo.wav'")
+            (cd "$SHOT" && node gen-audio.mjs "$HTML" "$AUD")
+            node motor/render.mjs "$SHOT" "$HTML" "salida/$(basename $SHOT)_mudo.mp4" --audio "$SHOT/$AUD"
+          else
+            HTML=$(node -p "require('./$SHOT/narracion.json').dcHtml")
+            node "$SHOT/gen-audio.mjs"
+            node motor/render.mjs "$SHOT" "$HTML" "salida/$(basename $SHOT)_sin_voz.mp4" --audio "$SHOT/assets/mezcla.wav"
+          fi
 
       - name: Versión narrada (voz clonada en ElevenLabs)
         if: inputs.version != 'sin-voz'
