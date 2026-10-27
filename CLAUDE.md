@@ -18,7 +18,7 @@ Robert abre una sesión en claude.ai/code con este repositorio y escribe algo co
 - **"Apruebo la voz de <shot>"**: pon `"voz_aprobada": true` en el `narracion.json` de ese shot y haz push.
 - **"Junta el lote X a main"**: sigue la sección 6 de `PRODUCCION_NUBE.md`.
 Siempre: no renderices MP4 completos (lo hace GitHub con cada push), no publiques nada en redes, no uses la API de Claude
-ni generes voz sin aprobación. Al terminar mándale a Robert los videos al chat (sección "Videos al chat") y la lista de shots.
+ni generes voz sin aprobación. Al terminar mándale a Robert los videos al chat (sección "Videos al chat"), súbelos a la Sala de Shots y la lista de shots.
 
 ## Videos al chat (obligatorio, decidido por Robert el 27 oct 2026)
 Robert quiere ver los videos **dentro del chat**, no como enlaces a GitHub. Cuando termine el render automático de tu rama:
@@ -34,6 +34,24 @@ Robert quiere ver los videos **dentro del chat**, no como enlaces a GitHub. Cuan
    `<shot>_publicacion.md` también se mandan (`display: "attach"`).
 3. El enlace al Release va solo como respaldo, al final.
 Si `refs/videos/…` todavía no existe, el render no ha terminado: espera (`send_later` o vuelve a revisar el run) y repite.
+
+## Sala de Shots (el panel de Robert) — obligatorio al terminar cada lote
+Robert ve y aprueba todo en **https://claude.ai/artifact/KBt7kaF2DPUjT5HBiQZMBv** (página con base de datos y videos).
+Las sesiones de nube tienen las herramientas `Artifact` y `ArtifactData` (cárgalas con `ToolSearch` "select:Artifact,ArtifactData").
+1. **Subir tus shots** (cuando ya bajaste tus videos a `/tmp/videos`, ver "Videos al chat"):
+   ```
+   RAMA=$(git branch --show-current) RAMA_GUIONES=$(git branch --show-current | tr / -) python3 motor/sala.py /tmp/videos /tmp/sala
+   ```
+   Sube los `/tmp/sala/*.mp4` y `/tmp/sala/*.jpg` con `Artifact` (action "publish", `url` de la Sala, `asset: true`, `file_paths`,
+   hasta 25 por llamada; si dice que necesitan aprobación propia, cópialos primero a una carpeta dentro de tu repo y sube desde ahí).
+   Luego escribe cada ficha con `ArtifactData` action "batch" (`set` en collection `shots`, doc_id = clave del shot), con los datos
+   de `/tmp/sala/<clave>.json` y `"video"`/`"poster"` = los ids que devolvió la subida. Si el doc ya existe, léelo y usa su `version`.
+2. **Procesar aprobaciones de voz:** `ArtifactData` action "list" en collection `aprobaciones`. Por cada doc con `aprobado: true` y
+   `procesado: false`: busca en qué rama vive `shots/<clave>/` (`git branch -r --contains`/`git ls-tree`), pon `"voz_aprobada": true`
+   en su `narracion.json` **en esa rama** (es el único cambio permitido en ramas ajenas o en main) y haz push: GitHub genera la voz y el
+   narrado. Después marca el doc con `procesado: true` (update con su `version`). La voz solo se genera por aprobación de Robert
+   (este botón o "apruebo la voz de…").
+3. Si algo falla al subir, no detengas el lote: dilo en tu resumen.
 
 ## Reglas de contenido
 - Cada shot es un tema nuevo; nunca repetir un tema ni uno casi igual. **Banco de temas** (`historial/temas.json`):
