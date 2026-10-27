@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot Barrenador base narrada.dc.html",
   "salida": "Shot Barrenador narrado.dc.html",
-  "velocidad": 1.065,
+  "velocidad": 1.103,
   "nota": "Ambiental #04. Una línea por subtítulo (idx 0..11 del jsx). Pendiente de aprobación de Robert: NO generar la voz sin su visto bueno (~942 créditos de ElevenLabs en una sola petición).",
   "mudo": {
     "dcHtml": "Shot Barrenador mudo.dc.html",

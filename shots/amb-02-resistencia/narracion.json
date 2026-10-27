@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot Resistencia base narrada.dc.html",
   "salida": "Shot Resistencia narrado.dc.html",
-  "velocidad": 1.065,
+  "velocidad": 1.088,
   "nota": "Ambiental #02. Una línea por subtítulo (idx 0..11 del jsx). Pendiente de aprobación de Robert: NO generar la voz sin su visto bueno (~951 créditos de ElevenLabs en una sola petición).",
   "mudo": {
     "dcHtml": "Shot Resistencia mudo.dc.html",

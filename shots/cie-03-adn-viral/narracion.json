@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot ADN Viral base narrada.dc.html",
   "salida": "Shot ADN Viral narrado.dc.html",
-  "velocidad": 1.065,
+  "velocidad": 1.040,
   "nota": "Científico #03. Una línea por subtítulo (idx 0..10 del jsx). Pendiente de aprobación de Robert: NO generar la voz sin su visto bueno (~945 créditos de ElevenLabs en una sola petición).",
   "mudo": {
     "dcHtml": "Shot ADN Viral mudo.dc.html",
