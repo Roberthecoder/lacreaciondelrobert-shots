@@ -62,8 +62,12 @@ function Proteina({ T, x = 0, y = 0, s = 1, excita = 0, emite = 0, rot = 0 }) {
 }
 
 /* ---------- los dos espines del par radical ----------
-   alineado: 1 = los dos giran igual (vuelve y emite) · 0 = al revés (no emite). */
+   emite: 1 = los espines quedan OPUESTOS (estado singlete: se recombina y emite luz) ·
+          0 = quedan PARALELOS (triplete: no emite).
+   Corregido el 28 oct 2026: antes el dibujo ponía "igual → emite", al revés de la física
+   (Nature 2026: "mixing into the recombining singlet state is impeded" con ~10 mT). */
 function Espines({ T, x = 0, y = 0, s = 1, alineado = 1, sep = 180 }) {
+  const emite = alineado;   // 1 = opuestos (emite) · 0 = paralelos (no emite)
   const flecha = (dir, col) => <g>
     <circle r={34} fill={col} stroke={KC.ink} strokeWidth={7} />
     <line x1={0} y1={dir * 54} x2={0} y2={-dir * 54} stroke={KC.texto} strokeWidth={10} strokeLinecap="round" />
@@ -73,8 +77,8 @@ function Espines({ T, x = 0, y = 0, s = 1, alineado = 1, sep = 180 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <line x1={-sep} y1={0} x2={sep} y2={0} stroke="rgba(255,255,255,.25)" strokeWidth={6} strokeDasharray="14 12" />
     <g transform={`translate(${-sep} 0) rotate(${Math.sin(giro * Math.PI / 180) * 16})`}>{flecha(1, '#5a8dff')}</g>
-    <g transform={`translate(${sep} 0) rotate(${Math.sin(giro * Math.PI / 180 + (alineado > 0.5 ? 0 : Math.PI)) * 16})`}>
-      {flecha(alineado > 0.5 ? 1 : -1, '#ff6b9a')}
+    <g transform={`translate(${sep} 0) rotate(${Math.sin(giro * Math.PI / 180 + (emite > 0.5 ? Math.PI : 0)) * 16})`}>
+      {flecha(emite > 0.5 ? -1 : 1, '#ff6b9a')}
     </g>
   </g>;
 }
@@ -222,11 +226,11 @@ function ImanNarrado() {
             <Espines T={T} x={540} y={680} s={1.15} alineado={1} sep={180} />
           </g>
           <g opacity={kprog(T, K.Gi + 1.4, K.Gi + 2.0)}>
-            <Espines T={T} x={540} y={1060} s={1.15} alineado={0} sep={180} />
+            <Espines T={T} x={540} y={1000} s={1.15} alineado={0} sep={180} />
           </g>
         </svg>
-        <Chip T={T} at={K.Gi + 0.6} until={K.Ca - 0.3} texto="igual → emite" x={540} y={840} borde={VERDE} tam={40} />
-        <Chip T={T} at={K.Gi + 1.8} until={K.Ca - 0.3} texto="al revés → no emite" x={540} y={1210} borde="#5a6678" tam={40} />
+        <Chip T={T} at={K.Gi + 0.6} until={K.Ca - 0.3} texto="opuestos → emite" x={540} y={840} borde={VERDE} tam={40} />
+        <Chip T={T} at={K.Gi + 1.8} until={K.Ca - 0.3} texto="paralelos → no emite" x={540} y={1140} borde="#5a6678" tam={40} />
       </EscenaFundido>
 
       {/* 8 · CAMPO — inclina la probabilidad, no empuja */}
@@ -251,8 +255,8 @@ function ImanNarrado() {
         <CampoBacterias T={T} brillo={klerp(1, 0.5, kprog(T, K.M + 0.4, K.M + 2.0, kEase.suave))} luz={1} n={16} seed={9} />
       </EscenaFundido>
       {T >= K.M - 0.1 && T < K.R - 0.1 && <>
-        <NumeroGigante T={T} at={K.M + 0.4} until={K.R - 0.3} valor={-50} sufijo=" %" dur={1.6} etiqueta="FLUORESCENCIA" y={430} tam={150} color={IMANR} />
-        <Chip T={T} at={K.M + 2.2} until={K.R - 0.3} texto="0 → 10 mT" y={620} borde={AZUL} tam={42} mono />
+        <NumeroGigante T={T} at={K.M + 0.4} until={K.R - 0.3} valor={-50} sufijo=" %" dur={1.6} etiqueta="FLUORESCENCIA · 1 CÉLULA" y={430} tam={150} color={IMANR} />
+        <Chip T={T} at={K.M + 2.2} until={K.R - 0.3} texto="MagLOV 2 · 0 → 10 mT" y={620} borde={AZUL} tam={42} mono />
       </>}
 
       {/* 10 · RADIO — ODMR, célula por célula */}
@@ -354,8 +358,8 @@ function ImanCiclo() {
     B: CUES.Baja, Q: CUES.Quita, V: CUES.Vuelve, Ou: CUES.Outro };
   const caps = [
     { at: K.O, titulo: 'en reposo' }, { at: K.L, titulo: 'llega luz azul' },
-    { at: K.E, titulo: 'par radical: emite' }, { at: K.I, titulo: 'entra el imán' },
-    { at: K.Tr, titulo: 'los giros se desemparejan' }, { at: K.B, titulo: 'la luz cae a la mitad' },
+    { at: K.E, titulo: 'par radical: giros opuestos' }, { at: K.I, titulo: 'entra el imán' },
+    { at: K.Tr, titulo: 'los giros se quedan paralelos' }, { at: K.B, titulo: 'la luz cae a la mitad' },
     { at: K.Q, titulo: 'se quita el imán' }, { at: K.V, titulo: 'vuelve a emitir' },
   ];
   const excita = kprog(T, K.L + 0.6, K.L + 2.0);

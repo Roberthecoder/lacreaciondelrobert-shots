@@ -1,17 +1,12 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Lactosa base narrada.dc.html",
   "salida": "Shot Lactosa narrado.dc.html",
   "velocidad": 1.1008,
-  "mudo": {
-    "dcHtml": "Shot Lactosa Ciclo.dc.html",
-    "audio": "assets/mezcla_mudo.wav"
-  },
-  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 945 caracteres en UNA sola petición a ElevenLabs. Guion aprobado por Robert el 27 oct 2026; la voz YA está generada y en caché en voz/ (no regenerar: gasta créditos). La velocidad se ajustó con la duración real de la voz para que el total quede en 61.5 s.",
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 945 caracteres en UNA sola petición a ElevenLabs. Corregido el 28 oct 2026 tras la verificación de hechos independiente (ver verificacion.md): cambió el texto narrado, así que la voz guardada en voz/ ya no corresponde y se quitó \"voz_aprobada\" hasta que Robert la vuelva a aprobar. Ya no lleva gemelo mudo: GitHub renderiza la revisión sin voz de la misma animación. \"velocidad\" se ajustó con la voz anterior: revisarla con la duración de la voz nueva para que el total quede en 61–62 s.",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese virus no viene a enfermarte: trae el gen que te falta para digerir la leche."
+      "texto": "Ese virus no viene a enfermarte: trae un gen que te hace digerir la leche."
     },
     {
       "escena": "Bebe",

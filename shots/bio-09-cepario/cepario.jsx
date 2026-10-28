@@ -203,7 +203,7 @@ function CeparioNarrado() {
         <Medidor T={T} at={K.C1b + 0.3} until={K.C2 - 0.3} etiqueta="ACTIVIDAD DE LA CÉLULA"
           valor={(t) => klerp(1, 0.12, kprog(t, K.C1b + 0.4, K.C1b + 2.4, kEase.suave))}
           texto={(v) => (v > 0.3 ? 'bajando…' : 'baja, pero no cero')} y={1560} color={KC.cyan} />
-        <Chip T={T} at={K.C1b + 2.6} until={K.C2 - 0.3} texto="se detiene del todo a −130 °C" y={440} borde={KC.cyan} tam={38} />
+        <Chip T={T} at={K.C1b + 2.6} until={K.C2 - 0.3} texto="se detiene a unos −130 °C" x={420} y={400} borde={KC.cyan} tam={34} />
       </EscenaFundido>
 
       {/* 8 · CAPÍTULO 2 — nitrógeno líquido */}
@@ -266,7 +266,7 @@ function CeparioNarrado() {
           <Vaho T={T} x={430} y={560} w={280} n={10} o={0.7} />
         </svg>
         <Etiqueta T={T} at={K.C + 1.0} until={K.Ou} x={600} y={740} texto="Escherichia coli" it color={KC.ink} tam={34} />
-        <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="1978 · el gen de la insulina" x={330} y={430} borde={KC.gold} tam={42} />
+        <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="1978 · la insulina" x={330} y={430} borde={KC.gold} tam={42} />
       </EscenaFundido>
 
       <Capitulo T={T} caps={caps} hasta={K.D - 0.2} />
@@ -283,9 +283,9 @@ function CeparioNarrado() {
       <Subtitulo T={T} idx={7} at={K.C1b + 0.1} until={K.C2 - 0.1} texto="Es la *copia de trabajo.*" />
       <Subtitulo T={T} idx={8} at={K.C2 + 0.1} until={K.C3 - 0.1} texto="Nitrógeno líquido: *−196 °C, décadas.*" />
       <Subtitulo T={T} idx={9} at={K.C3 + 0.1} until={K.D - 0.1} texto="O *liofilizar:* quitarles el agua." />
-      <Subtitulo T={T} idx={10} at={K.D + 0.1} until={K.M - 0.1} texto="Siempre *dos copias.*" />
+      <Subtitulo T={T} idx={10} at={K.D + 0.1} until={K.M - 0.1} texto="Lo recomendado: *dos copias.*" />
       <Subtitulo T={T} idx={11} at={K.M + 0.1} until={K.C - 0.1} texto="En el mundo: *861 colecciones de microbios.*" />
-      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="De un frasco así salió *tu insulina.*" />
+      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="En un frasco así vive *esa E. coli.*" />
 
       {/* Robert en pantalla (tabla en guion.md) */}
       <Robert T={T} base="assets/stickers/" apariciones={[
@@ -297,7 +297,7 @@ function CeparioNarrado() {
         [34.0, 37.6, 'avatar_12_perfil_serio',     'arriba-der'],  // nitrógeno líquido: décadas
         [39.0, 42.6, 'avatar_07_pensativo_puno',   'arriba-der'],  // liofilizar: quitarles el agua
         [47.0, 51.6, 'avatar_02_apuntando_camara', 'presentador'],  // GRANDE: 861 colecciones de microbios en 80 países
-        [52.4, 57.9, 'avatar_13_senalando_arriba', 'gancho'],  // cierre: de un frasco así salió tu insulina
+        [52.4, 57.9, 'avatar_13_senalando_arriba', 'gancho'],  // cierre: en un frasco así vive esa E. coli
       ]} />
 
       <MarcaAgua T={T} tema="bioquimica" num="09" hasta={K.Ou} />

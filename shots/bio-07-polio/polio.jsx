@@ -229,8 +229,8 @@ function PolioNarrado() {
         <Ambiente T={T} n={16} seed={23} color="rgba(255,255,255,.4)" tam={[5, 14]} vel={12} />
       </EscenaFundido>
       <Chip T={T} at={K.Cr + 0.4} until={K.Re - 0.3} texto="«irresponsable»" x={400} y={560} borde={KC.red} tam={48} />
-      <Chip T={T} at={K.Cr + 1.9} until={K.Re - 0.3} texto="«de eso se trataba:" x={560} y={740} borde={KC.gold} tam={44} />
-      <Chip T={T} at={K.Cr + 2.3} until={K.Re - 0.3} texto="advertir del riesgo»" x={560} y={870} borde={KC.gold} tam={44} />
+      <Chip T={T} at={K.Cr + 1.9} until={K.Re - 0.3} texto="de eso se trataba:" x={560} y={740} borde={KC.gold} tam={44} />
+      <Chip T={T} at={K.Cr + 2.3} until={K.Re - 0.3} texto="advertir del riesgo" x={560} y={870} borde={KC.gold} tam={44} />
 
       {/* 10 · REGLAS */}
       <EscenaFundido T={T} a={K.Re} b={K.H} zoom={0.04} fondo="#0a0d14">
@@ -282,8 +282,8 @@ function PolioNarrado() {
       <Subtitulo T={T} idx={6} at={K.Q + 0.1} until={K.Po - 0.1} texto="¿Para qué *hacer algo así?*" />
       <Subtitulo T={T} idx={7} at={K.Po + 0.1} until={K.Sc - 0.1} texto="El código ya no solo se lee: *se escribe.*" />
       <Subtitulo T={T} idx={8} at={K.Sc + 0.1} until={K.Cr - 0.1} texto="Science, agosto de 2002: *el mundo se asustó.*" />
-      <Subtitulo T={T} idx={9} at={K.Cr + 0.1} until={K.Re - 0.1} texto="«Irresponsable», dijeron. *«Ese era el punto.»*" />
-      <Subtitulo T={T} idx={10} at={K.Re + 0.1} until={K.H - 0.1} texto="De ahí salieron *las reglas.*" />
+      <Subtitulo T={T} idx={9} at={K.Cr + 0.1} until={K.Re - 0.1} texto="«Irresponsable», dijeron. *Ese era el punto.*" />
+      <Subtitulo T={T} idx={10} at={K.Re + 0.1} until={K.H - 0.1} texto="Después vinieron *las reglas.*" />
       <Subtitulo T={T} idx={11} at={K.H + 0.1} until={K.C - 0.1} texto="Hoy se revisa *qué pides y quién eres.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="La misma herramienta. *Por eso hay reglas.*" />
 

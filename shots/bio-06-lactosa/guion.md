@@ -12,17 +12,23 @@
 3. Lo que sí está publicado y revisado es el experimento **en ratas**: During et al., *Nature Medicine*, 1998. Ahí la duración reportada es de **meses** (la nota de prensa de la universidad dice 4 meses, lo que duró el experimento; otra fuente que describe el artículo dice 6). El guion dice "meses".
 4. No se da ninguna cifra de cuántos adultos del mundo son intolerantes: **el metaanálisis que daba el 68 % está retractado.** Se dice "la mayoría de los adultos del mundo", que sí sostienen las revisiones.
 
-## Versión narrada (945 caracteres, ~160 palabras, ~58 s de voz)
+## Corrección del 28 oct 2026 (verificación de hechos independiente, ver `verificacion.md`)
+1. **Gancho:** decía "trae el gen que te falta". Los adultos con intolerancia no *carecen* del gen de la lactasa (bajan su expresión) y el estudio de 1998 usó el gen de **una β-galactosidasa**, no el gen humano de la lactasa. Ahora: «Ese virus no viene a enfermarte: trae un gen que te hace digerir la leche.»
+2. **Ratas:** la intolerancia de las ratas era **provocada en el laboratorio** («experimentally induced»); los textos lo dicen.
+3. En pantalla, el medidor de la escena de las ratas decía "LACTASA EN EL BORDE"; ahora dice "ENZIMA QUE PARTE LA LACTOSA".
+4. La voz cambió: se quitó `voz_aprobada` y el shot vuelve a "Por revisar" en la Sala.
+
+## Versión narrada (945 caracteres, ~159 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese virus no viene a enfermarte: trae el gen que te falta para digerir la leche. | Fondo rosa. Un vaso de leche y, **girando desde el cuadro 0**, un virus icosaédrico con un hilito de ADN adentro, que se acerca. Chip "virus adeno-asociado". |
+| 0 | Gancho | Ese virus no viene a enfermarte: trae un gen que te hace digerir la leche. | Fondo rosa. Un vaso de leche y, **girando desde el cuadro 0**, un virus icosaédrico con un hilito de ADN adentro, que se acerca. Chip "virus adeno-asociado". |
 | 1 | Bebé | De bebé tu intestino hacía lactasa, la enzima que parte el azúcar de la leche. | Biberón; **Lupa de rayos X** sobre él: el borde del intestino lleno de enzimas en forma de tijera. Medidor "LACTASA" al 100 %. |
 | 2 | Adulto | Al crecer, la mayoría de los adultos del mundo baja esa producción. | El medidor cae; las tijeras se apagan una por una. Vaso de leche con interrogación. |
 | 3 | Gas | Sin lactasa, la lactosa sigue de largo y tus bacterias la fermentan: gas. | **Fondo oscuro.** `MundoIntestino`: moléculas de lactosa enteras que pasan de largo, bacterias abajo y burbujas que suben. Barra de escala. |
 | 4 | Pregunta | ¿Y si le devolvieras la receta a tus células? | **Re-gancho.** Una molécula de lactosa gigante y una tijera que no la alcanza. Sticker pensativo. |
 | 5 | Estudio | Eso probaron en 1998 en Filadelfia: un virus adeno-asociado, por la boca, cargando el gen. | `TarjetaEstudio` "1998 · During y colegas · *Nature Medicine*". Luego el virus baja por el lumen y toca el borde. |
-| 6 | Ratas | Las ratas volvieron a digerir lactosa, y el efecto duró meses. | Dos ratas esquemáticas; el medidor "LACTASA" sube otra vez. Chip "en ratas · duró meses". |
+| 6 | Ratas | Las ratas volvieron a digerir lactosa, y el efecto duró meses. | Dos ratas esquemáticas (su intolerancia era provocada en el laboratorio); el medidor "ENZIMA QUE PARTE LA LACTOSA" sube. Chip "en ratas · duró meses". |
 | 7 | Auto | En 2018 un divulgador, Justin Atkin, se lo hizo a sí mismo y lo grabó. | Marco de video con "▶" y el chip "The Thought Emporium · 2018". |
 | 8 | Ojo | Ojo: fue un autoexperimento. No es un tratamiento aprobado ni hay un artículo revisado. | `MitoTachado` "¿cura aprobada?" que se tacha. Chips "autoexperimento" y "sin revisión por pares". Sticker serio. |
 | 9 | Renueva | Y además tu intestino cambia su recubrimiento cada cuatro o cinco días. | Las células del borde se desprenden y salen nuevas. Contador "día 1 → 5". Chip "4–5 días". |
@@ -48,7 +54,7 @@ El ciclo de la renovación del intestino, que termina donde empezó:
 ## Descripción (para publicar)
 "Ese virus no viene a enfermarte: trae un gen. 🥛🧬 De bebés todos hacemos **lactasa**, la enzima que parte la lactosa en glucosa y galactosa. Al crecer, la mayoría de los adultos del mundo baja esa producción: la lactosa llega entera al intestino grueso, las bacterias la fermentan y aparecen el gas y las molestias.
 
-En 1998, el equipo de During publicó en *Nature Medicine* que un **virus adeno-asociado** dado por la boca, cargando el gen de la enzima, devolvió la capacidad de digerir lactosa a ratas, y la expresión se mantuvo meses. En febrero de 2018, el divulgador **Justin Atkin** (canal The Thought Emporium) intentó algo parecido en sí mismo y lo grabó. **Importante: fue un autoexperimento, no un tratamiento aprobado, y no existe un artículo revisado por pares con sus resultados.** Su propia página del proyecto dice que sigue en desarrollo. No intentes nada de esto.
+En 1998, el equipo de During publicó en *Nature Medicine* que un **virus adeno-asociado** dado por la boca, cargando el gen de una enzima que parte la lactosa (β-galactosidasa), devolvió la capacidad de digerir lactosa a unas ratas a las que se la habían quitado en el laboratorio, y el efecto duró meses. En febrero de 2018, el divulgador **Justin Atkin** (canal The Thought Emporium) intentó algo parecido en sí mismo y lo grabó. **Importante: fue un autoexperimento, no un tratamiento aprobado, y no existe un artículo revisado por pares con sus resultados.** Su propia página del proyecto dice que sigue en desarrollo. No intentes nada de esto.
 
 Además hay una razón biológica para que un efecto así no sea permanente: el recubrimiento del intestino se renueva **cada 4 o 5 días**, así que si no se modifican las células madre del fondo de las criptas, el gen se va con las células viejas. Lo que sí existe hoy es la misma enzima en pastilla o la leche deslactosada.
 
@@ -86,9 +92,10 @@ Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, 
 En las dos versiones la tarjeta de cierre lleva a Robert junto al logo (`CierreMarca robert=`).
 
 ## Fuentes
-- **During, M. J. et al., "Peroral gene therapy of lactose intolerance using an adeno-associated virus vector", *Nature Medicine* 4(10): 1131–1135 (octubre de 1998)**, Thomas Jefferson University: vector adeno-asociado por vía oral en ratas, expresión persistente en el epitelio intestinal y recuperación del fenotipo. La nota de prensa de la universidad reporta 4 meses (lo que duró el experimento); otra fuente que describe el artículo dice 6 meses. Por eso aquí se dice "meses". https://www.nature.com/articles/nm1098_1131
+- **During, M. J. et al., "Peroral gene therapy of lactose intolerance using an adeno-associated virus vector", *Nature Medicine* 4(10): 1131–1135 (octubre de 1998)**, Thomas Jefferson University: vector adeno-asociado por vía oral con un transgén de β-galactosidasa, expresión persistente en el epitelio intestinal y recuperación del fenotipo en un modelo animal de intolerancia. https://doi.org/10.1038/2625
+- **Nota de prensa de Thomas Jefferson University (29 sep 1998):** «inserted a beta-galactosidase gene--which encodes for an enzyme that breaks down lactose--into an adeno-associated virus vector»; «enough, he says, to correct the experimentally induced lactose intolerance in the animals. The effect lasted four months, the length of the experiment». Por eso aquí se dice "meses". https://www.sciencedaily.com/releases/1998/09/980929072756.htm
 - **The Thought Emporium (Justin Atkin), "Developing a Permanent Treatment for Lactose Intolerance Using Gene Therapy", febrero de 2018**, y la página del proyecto https://www.thethoughtemporium.com/lactose, que dice textualmente que el proyecto "sigue en etapa de desarrollo y no está terminado". Autoexperimento sin publicación revisada por pares.
 - **Cobertura independiente del intento:** Hackaday, "Biohacking Lactose Intolerance" (14 de febrero de 2018). https://hackaday.com/2018/02/14/biohacking-lactose-intolerance/
-- **Renovación del epitelio intestinal cada 4–5 días:** van der Flier, L. G. y Clevers, H., "Stem cells, self-renewal, and differentiation in the intestinal epithelium", *Annual Review of Physiology* 71 (2009). Tian, H. et al., *Nature* 478 (2011) da un rango de 2–5 días y describe las células madre del fondo de la cripta.
-- **Prevalencia:** no se cita cifra. El metaanálisis de Storhaug, Fosse y Fadnes (*Lancet Gastroenterology & Hepatology*, 2017), que daba 68 % mundial, **está retractado**; las revisiones sí sostienen que la persistencia de la lactasa es minoritaria en el mundo y muy variable por región.
+- **Renovación del epitelio intestinal cada 4–5 días:** "Cellular Plasticity in Gut and Liver Regeneration" (2024, PMC11565004): «stem cells exist and keep differentiating into enteroendocrine cells, goblet cells, and enterocytes, thus replenishing the diverse types of IECs every 4 to 5 days». (Antes se citaba a van der Flier y Clevers 2009; se cambió por la fuente que sí se abrió y verificó.)
+- **Prevalencia:** no se cita cifra. El metaanálisis de Storhaug, Fosse y Fadnes (*Lancet Gastroenterology & Hepatology*, 2017), que daba 68 % mundial, **está retractado**; las revisiones sí sostienen que la persistencia de la lactasa es minoritaria en el mundo y muy variable por región («Lactase non-persistence is extremely common», PMC12995986, 2026).
 - El dibujo del virus, de las enzimas y de las moléculas es **esquemático**: no está a escala entre sí.

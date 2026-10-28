@@ -1,13 +1,8 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Insulina base narrada.dc.html",
   "salida": "Shot Insulina narrado.dc.html",
   "velocidad": 1.0321,
-  "mudo": {
-    "dcHtml": "Shot Insulina Ciclo.dc.html",
-    "audio": "assets/mezcla_mudo.wav"
-  },
-  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 896 caracteres en UNA sola petición a ElevenLabs. Guion aprobado por Robert el 27 oct 2026; la voz YA está generada y en caché en voz/ (no regenerar: gasta créditos). La velocidad se ajustó con la duración real de la voz para que el total quede en 61.5 s.",
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 905 caracteres en UNA sola petición a ElevenLabs. Corregido el 28 oct 2026 tras la verificación de hechos independiente (ver verificacion.md): cambió el texto narrado, así que la voz guardada en voz/ ya no corresponde y se quitó \"voz_aprobada\" hasta que Robert la vuelva a aprobar. Ya no lleva gemelo mudo: GitHub renderiza la revisión sin voz de la misma animación. \"velocidad\" se ajustó con la voz anterior: revisarla con la duración de la voz nueva para que el total quede en 61–62 s.",
   "lineas": [
     {
       "escena": "Gancho",
@@ -23,7 +18,7 @@
     },
     {
       "escena": "Gen",
-      "texto": "En 1978 tomaron el gen humano de la insulina y lo metieron en una bacteria."
+      "texto": "En 1978 escribieron el gen de la insulina humana y lo metieron en una bacteria."
     },
     {
       "escena": "Lee",
@@ -39,7 +34,7 @@
     },
     {
       "escena": "Ribosoma",
-      "texto": "Sus ribosomas lo leen y arman la cadena, miles de veces por minuto."
+      "texto": "Sus ribosomas lo leen y arman la cadena, una y otra vez, sin parar."
     },
     {
       "escena": "Humulin",

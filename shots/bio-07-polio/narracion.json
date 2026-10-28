@@ -1,13 +1,8 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Polio base narrada.dc.html",
   "salida": "Shot Polio narrado.dc.html",
   "velocidad": 1.0096,
-  "mudo": {
-    "dcHtml": "Shot Polio Datos.dc.html",
-    "audio": "assets/mezcla_mudo.wav"
-  },
-  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 905 caracteres en UNA sola petición a ElevenLabs. Guion aprobado por Robert el 27 oct 2026; la voz YA está generada y en caché en voz/ (no regenerar: gasta créditos). La velocidad se ajustó con la duración real de la voz para que el total quede en 61.5 s.",
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 917 caracteres en UNA sola petición a ElevenLabs. Corregido el 28 oct 2026 tras la verificación de hechos independiente (ver verificacion.md): cambió el texto narrado, así que la voz guardada en voz/ ya no corresponde y se quitó \"voz_aprobada\" hasta que Robert la vuelva a aprobar. Ya no lleva gemelo mudo: GitHub renderiza la revisión sin voz de la misma animación. \"velocidad\" se ajustó con la voz anterior: revisarla con la duración de la voz nueva para que el total quede en 61–62 s.",
   "lineas": [
     {
       "escena": "Gancho",
@@ -51,11 +46,11 @@
     },
     {
       "escena": "Reglas",
-      "texto": "De ahí salieron reglas: el informe Fink y un consejo de bioseguridad en Estados Unidos."
+      "texto": "Después vinieron reglas: el informe Fink y un consejo de bioseguridad en Estados Unidos."
     },
     {
       "escena": "Hoy",
-      "texto": "Y hoy las empresas que venden ADN revisan qué les pides y quién lo pide."
+      "texto": "Y hoy las grandes empresas que venden ADN revisan qué pides y quién eres."
     },
     {
       "escena": "Cierre",

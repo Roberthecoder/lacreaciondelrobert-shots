@@ -51,7 +51,7 @@ function LactosaCiclo() {
     { at: K.En, titulo: 'entra la lactosa' },
     { at: K.Pa, titulo: 'nadie la corta' },
     { at: K.Ga, titulo: 'las bacterias la fermentan' },
-    { at: K.Ll, titulo: 'llega el virus con el gen' },
+    { at: K.Ll, titulo: 'llega el virus con un gen' },
     { at: K.Ha, titulo: 'la célula hace la enzima' },
     { at: K.Co, titulo: 'ahora sí se parte' },
     { at: K.Mu, titulo: 'las células viejas se van' },

@@ -6,7 +6,7 @@ const IAVS = (n) => 'assets/stickers/' + n + '.png';
 const ADN1 = '#2563a8', ADN2 = '#d1477a', PLAS = '#ffd43b', INS = '#2fe0a8', BACT = '#7ee787';
 const AMINOS = 51;   // la insulina humana tiene 51 aminoácidos (21 de la cadena A + 30 de la cadena B)
 
-/* ---------- doble hélice horizontal (el ADN humano) ----------
+/* ---------- doble hélice horizontal ----------
    corte: 0..1 — se abre un hueco donde estaba el gen. */
 function Helice({ T, x = 0, y = 0, largo = 900, alto = 70, n = 26, corte = 0, desde = 0.42, hasta = 0.58 }) {
   const paso = largo / n;
@@ -20,6 +20,27 @@ function Helice({ T, x = 0, y = 0, largo = 900, alto = 70, n = 26, corte = 0, de
         <circle cx={xx} cy={yy} r={11} fill={ADN1} /><circle cx={xx} cy={-yy} r={11} fill={ADN2} />
       </g>;
     })}
+  </g>;
+}
+
+/* ---------- gen escrito: en 1978 los genes de las cadenas A y B de la insulina humana
+   se diseñaron con el código genético y se SINTETIZARON químicamente (no se tomaron de ADN humano).
+   p: 0..1 las letras se van escribiendo · h: 0..1 de las letras se forma la doble hélice.
+   Letras esquemáticas: no es la secuencia real. */
+const LETRAS_GEN = 'ATGGCTTTCGTTAACCAGCACCTGTGCGGT';
+function GenEscrito({ T, x = 0, y = 0, p = 1, h = 0, etiqueta = '', letras = LETRAS_GEN, largo = 720 }) {
+  const n = Math.floor(kclamp(p, 0, 1) * letras.length), paso = largo / letras.length;
+  const cursor = p < 1 && Math.floor(T * 3) % 2 === 0;
+  return <g transform={`translate(${x} ${y})`}>
+    {etiqueta && <text x={-16} y={-58} textAnchor="end" style={{ font:`900 34px ${KF.texto}` }} fill={PLAS}>{etiqueta}</text>}
+    <g opacity={1 - h * 0.75}>
+      {letras.slice(0, n).split('').map((c, i) => <text key={i} x={i * paso} y={0} style={{ font:`700 34px ${KF.mono}` }}
+        fill={{ A:'#7ee787', T:'#ff6b5a', G:'#ffd43b', C:'#5ec8ff' }[c]}>{c}</text>)}
+      {cursor && <rect x={n * paso + 2} y={-30} width={6} height={36} fill="#ffffff" />}
+    </g>
+    {h > 0 && <g opacity={h} transform={`translate(0 ${klerp(-10, 70, h)})`}>
+      <Helice T={T} largo={largo} alto={36} n={14} desde={0} hasta={1} />
+    </g>}
   </g>;
 }
 
@@ -161,7 +182,7 @@ function InsulinaNarrado() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g opacity={kprog(T, K.A + 0.2, K.A + 0.8)}><Animal x={300} y={760} s={0.95} tipo="cerdo" color="#d98fa4" /></g>
           <g opacity={kprog(T, K.A + 0.7, K.A + 1.3)}><Animal x={720} y={1060} s={0.9} tipo="res" color="#8e7c72" /></g>
-          <g opacity={kprog(T, K.A + 1.6, K.A + 2.2)}><Frasco T={T} x={250} y={1230} s={0.75} etiqueta="1922–1982" tapa="#b7a98f" lleno={0.6} /></g>
+          <g opacity={kprog(T, K.A + 1.6, K.A + 2.2)}><Frasco T={T} x={250} y={1230} s={0.75} etiqueta="desde 1922" tapa="#b7a98f" lleno={0.6} /></g>
         </svg>
         <Chip T={T} at={K.A + 0.4} until={K.R - 0.3} texto="del páncreas de un animal" y={420} borde={KC.red} tam={42} />
       </EscenaFundido>
@@ -181,19 +202,20 @@ function InsulinaNarrado() {
       </EscenaFundido>
       <MitoTachado T={T} at={K.R + 0.3} tacharEn={K.R + 2.2} until={K.Ge - 0.3} texto="¿insulina humana?" y={600} tam={52} />
 
-      {/* 3 · GEN — se recorta y entra al plásmido y a la bacteria */}
+      {/* 3 · GEN — se ESCRIBE (síntesis química, cadenas A y B) y entra al plásmido */}
       <EscenaFundido T={T} a={K.Ge} b={K.L} zoom={0.04} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 46%, #1d2433 0%, #0E0F12 76%)' }}></div>
         <Ambiente T={T} n={24} seed={5} color="rgba(190,220,255,.3)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Helice T={T} x={90} y={620} largo={900} corte={kprog(T, K.Ge + 1.1, K.Ge + 1.7, kEase.sale)} />
-          <g opacity={kprog(T, K.Ge + 1.5, K.Ge + 2.1)}>
+          <GenEscrito T={T} x={250} y={560} etiqueta="A" p={kprog(T, K.Ge + 0.2, K.Ge + 1.5)} h={kprog(T, K.Ge + 1.5, K.Ge + 2.1, kEase.sale)} />
+          <GenEscrito T={T} x={250} y={760} etiqueta="B" p={kprog(T, K.Ge + 0.5, K.Ge + 1.8)} h={kprog(T, K.Ge + 1.7, K.Ge + 2.3, kEase.sale)} letras="TTCGTGAATCAACACCTTTGTGGCTCACAT" />
+          <g opacity={kprog(T, K.Ge + 2.0, K.Ge + 2.6)}>
             <Plasmido T={T} x={540} y={1060} r={160} gen={1} rot={T * 14}
-              cierra={kprog(T, K.Ge + 2.4, K.Ge + 3.2, kEase.sale)} />
+              cierra={kprog(T, K.Ge + 2.7, K.Ge + 3.5, kEase.sale)} />
           </g>
         </svg>
-        <Etiqueta T={T} at={K.Ge + 1.8} until={K.L - 0.3} x={720} y={1060} texto="plásmido" color={PLAS} tam={36} />
-        <Chip T={T} at={K.Ge + 0.3} until={K.L - 0.3} texto="1978 · el gen humano" y={420} borde={KC.gold} tam={42} />
+        <Etiqueta T={T} at={K.Ge + 2.3} until={K.L - 0.3} x={720} y={1060} texto="plásmido" color={PLAS} tam={36} />
+        <Chip T={T} at={K.Ge + 0.3} until={K.L - 0.3} texto="1978 · el gen, escrito" y={400} borde={KC.gold} tam={42} />
       </EscenaFundido>
 
       {/* 4 · LEE — la bacteria fabrica la proteína */}
@@ -255,7 +277,7 @@ function InsulinaNarrado() {
             <Frasco T={T} x={300} y={960} s={1.25} etiqueta="Humulin" />
           </g>
         </svg>
-        <TarjetaEstudio T={T} at={K.H + 0.3} until={K.H + 2.6} anio="1982" quien="30 de octubre · FDA" revista="el primer fármaco de ADN recombinante" y={820} />
+        <TarjetaEstudio T={T} at={K.H + 0.3} until={K.H + 2.6} anio="1982" quien="octubre · FDA" revista="el primer fármaco de ADN recombinante" y={820} />
       </EscenaFundido>
 
       {/* 9 · HOY — no todo es bacteria */}
@@ -303,7 +325,7 @@ function InsulinaNarrado() {
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.A - 0.1} texto="Esa insulina salió *de un tanque.*" />
       <Subtitulo T={T} idx={1} at={K.A + 0.1} until={K.R - 0.1} texto="Antes venía del *páncreas de un animal.*" />
       <Subtitulo T={T} idx={2} at={K.R + 0.1} until={K.Ge - 0.1} texto="No era humana: *daba reacciones.*" />
-      <Subtitulo T={T} idx={3} at={K.Ge + 0.1} until={K.L - 0.1} texto="1978: el *gen humano* dentro de una bacteria." />
+      <Subtitulo T={T} idx={3} at={K.Ge + 0.1} until={K.L - 0.1} texto="1978: escriben *el gen* y lo meten a una bacteria." />
       <Subtitulo T={T} idx={4} at={K.L + 0.1} until={K.Q - 0.1} texto="Lo lee *y fabrica la proteína.*" />
       <Subtitulo T={T} idx={5} at={K.Q + 0.1} until={K.P - 0.1} texto="¿Cómo cabe una fábrica *ahí dentro?*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Ri - 0.1} texto="Un anillito de ADN extra: *el plásmido.*" />
@@ -339,7 +361,7 @@ function InsulinaCiclo() {
   const K = { Ge: CUES.Gen, P: CUES.Plasmido, E: CUES.Entra, D: CUES.Divide, Ta: CUES.Tanque,
     Ri: CUES.Ribosoma, S: CUES.Sale, F: CUES.Frasco, Ou: CUES.Outro };
   const caps = [
-    { at: K.Ge, titulo: 'el gen humano' }, { at: K.P, titulo: 'entra al plásmido' },
+    { at: K.Ge, titulo: 'el gen, escrito' }, { at: K.P, titulo: 'entra al plásmido' },
     { at: K.E, titulo: 'entra a la célula' }, { at: K.D, titulo: 'la célula se divide' },
     { at: K.Ta, titulo: 'el tanque' }, { at: K.Ri, titulo: '51 aminoácidos' },
     { at: K.S, titulo: 'la insulina sale' }, { at: K.F, titulo: 'y llena el frasco' },
@@ -357,7 +379,8 @@ function InsulinaCiclo() {
       {/* 1-2 · el gen y el plásmido */}
       {(T < K.E + 1.2 || vuelve > 0.05) && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
         <g opacity={Math.max(1 - kprog(T, K.E + 0.2, K.E + 1.2), vuelve)}>
-          <Helice T={T} x={90} y={560} largo={900} corte={Math.max(kprog(T, K.P + 0.3, K.P + 1.1, kEase.sale) * (1 - vuelve), 0)} />
+          <GenEscrito T={T} x={250} y={480} etiqueta="A" p={Math.max(kprog(T, K.Ge + 0.3, K.Ge + 3.0), vuelve)} h={Math.max(kprog(T, K.P + 0.2, K.P + 1.0, kEase.sale) * (1 - vuelve), 0)} />
+          <GenEscrito T={T} x={250} y={660} etiqueta="B" p={Math.max(kprog(T, K.Ge + 1.0, K.Ge + 3.7), vuelve)} h={Math.max(kprog(T, K.P + 0.4, K.P + 1.2, kEase.sale) * (1 - vuelve), 0)} letras="TTCGTGAATCAACACCTTTGTGGCTCACAT" />
           <g opacity={Math.max(kprog(T, K.P + 0.8, K.P + 1.6) * (1 - vuelve), 0)}>
             <Plasmido T={T} x={540} y={1020} r={170} gen={1} rot={T * 14} cierra={kprog(T, K.P + 2.4, K.P + 3.4, kEase.sale)} />
           </g>
@@ -408,7 +431,7 @@ function InsulinaCiclo() {
 
       {/* Robert en pantalla (tabla en guion.md) */}
       <Robert T={T} base="assets/stickers/" apariciones={[
-        [0,    3.6,  'avatar_11_sorprendido',      'gancho'],  // el gen humano de la insulina
+        [0,    3.6,  'avatar_11_sorprendido',      'gancho'],  // el gen de la insulina, escrito letra por letra
         [7.0,  10.5, 'avatar_13_senalando_arriba', 'arriba-der'],  // señala el plásmido que se cierra
         [14.0, 17.5, 'avatar_06_pensativo_menton', 'arriba-der'],  // entra a la célula
         [20.5, 24.5, 'avatar_04_bajando_lentes',   'presentador'],  // GRANDE: la célula se divide y llena el tanque
