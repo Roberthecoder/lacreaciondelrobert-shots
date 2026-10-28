@@ -27,7 +27,7 @@ function Escarabajo({ T, x, y, s = 1 }) {
     <ellipse cx={-30} cy={-20} rx={14} ry={50} fill="#7ff0c8" opacity=".5" />
   </g>;
 }
-// Cadena de quitina: anillos (N-acetilglucosamina) unidos en fila. Se dibuja de izquierda a derecha según p.
+// Cadena de quitina: anillos (N-acetilglucosamina) unidos en fila; cada anillo lleva un O (el N va en el grupo lateral, no en el anillo). Se dibuja de izquierda a derecha según p.
 function CadenaQuitina({ x, y, n = 7, p = 1, s = 1, color = KC.gold2 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {Array.from({ length: n }, (_, i) => { const q = kclamp(p * n - i, 0, 1); if (q <= 0) return null; const cx = i * 118, cy = (i % 2 ? 18 : -18);
@@ -35,7 +35,7 @@ function CadenaQuitina({ x, y, n = 7, p = 1, s = 1, color = KC.gold2 }) {
       return <g key={i} opacity={q} transform={`translate(0 ${(1 - q) * 30})`}>
         {i > 0 && <line x1={cx - 118 + 40} y1={(i - 1) % 2 ? 18 : -18} x2={cx - 40} y2={cy} stroke={color} strokeWidth={8} />}
         <polygon points={hex} fill="rgba(244,194,90,.18)" stroke={color} strokeWidth={8} strokeLinejoin="round" />
-        <text x={cx} y={cy + (i % 2 ? 78 : -60)} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.texto}>{i % 2 ? 'N' : 'O'}</text>
+        <text x={cx} y={cy + (i % 2 ? 78 : -60)} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.texto}>O</text>
       </g>; })}
   </g>;
 }
@@ -59,7 +59,7 @@ function SueloChampi({ T, red = 1, brillo = 0, crece = 1, abre = 1, x = 540, s =
     {esp}
   </MundoSuelo>;
 }
-// Pelo humano para comparar (≈ 70 µm), banda café con escamas.
+// Pelo humano para comparar (≈ 60–80 µm; de 17 a 181 µm según la persona, Ley 1999), banda café con escamas.
 function Pelo({ y = 1500, alto = 476, o = 1 }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:o }}>
     <rect x={-20} y={y} width={KW + 40} height={alto} fill="#3b2418" stroke={KC.ink} strokeWidth={6} />
@@ -178,8 +178,8 @@ function HongoNarrado() {
       <Chip T={T} at={K.Ci + 1.4} until={K.O} texto="el hongo: el micelio" y={1530} x={400} borde={KC.mint} tam={42} />
       {/* micro */}
       <Etq T={T} at={K.R + 2.0} until={K.R + 6.2} x={330} y={480} texto="hifa" color="#eafff7" />
-      <Etq T={T} at={K.R + 2.8} until={K.R + 6.2} x={120} y={1600} texto="pelo humano (≈ 70 µm)" tam={28} />
-      <Chip T={T} at={K.R + 6.4} until={K.C - 0.2} texto="micelio = el organismo" y={430} borde={KC.mint} tam={42} />
+      <Etq T={T} at={K.R + 2.8} until={K.R + 6.2} x={120} y={1600} texto="pelo humano (≈ 60–80 µm)" tam={28} />
+      <Chip T={T} at={K.R + 6.4} until={K.C - 0.2} texto="micelio = el cuerpo del hongo" y={430} borde={KC.mint} tam={42} />
       <MitoTachado T={T} at={K.C + 0.1} tacharEn={K.C + 0.7} until={K.C + 3.3} texto="raíces" x={250} y={420} tam={40} />
       <MitoTachado T={T} at={K.C + 0.5} tacharEn={K.C + 1.1} until={K.C + 3.3} texto="hojas" x={540} y={420} tam={40} />
       <MitoTachado T={T} at={K.C + 0.9} tacharEn={K.C + 1.6} until={K.C + 3.3} texto="fotosíntesis" x={820} y={520} tam={40} />
@@ -202,7 +202,7 @@ function HongoNarrado() {
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.Q - 0.1} texto="Más parientes *de los animales* que de las plantas." />
       <Subtitulo T={T} idx={9} at={K.Q + 0.1} until={K.L - 0.1} texto="Pared de *quitina,* como un escarabajo." />
       <Subtitulo T={T} idx={10} at={K.L + 0.1} until={K.Ci - 0.1} texto="La levadura también es hongo: *una sola célula.*" />
-      <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.O - 0.1} texto="Es *la única parte* que alcanzas a ver." />
+      <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.O - 0.1} texto="Es *la parte* que sí alcanzas a ver." />
 
       <Robert T={T} apariciones={[[0, 3.4, 'avatar_11_sorprendido', 'gancho'], [9, 12.2, 'avatar_13_senalando_arriba', 'bajo-der'], [18, 21.2, 'avatar_07_pensativo_puno', 'bajo-der'], [22.7, 25.2, 'avatar_06_pensativo_menton', 'arriba-der'], [27.5, 31, 'avatar_02_apuntando_camara', 'presentador-bajo'], [41.4, 43.4, 'avatar_11_sorprendido', 'bajo-der'], [44.5, 47.2, 'avatar_04_bajando_lentes', 'bajo-der'], [53.5, 57.4, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der']]} />
       <MarcaAgua T={T} tema="biologia" num="01" hasta={K.O} />
@@ -220,7 +220,7 @@ function HongoCiclo() {
   // espora que cae (inicio) — y la del final, que cae igual y empata con el cuadro 0
   const caida = (t0, t1) => klerp(380, sup - 10, kprog(T, t0, t1, (p) => p * p));
   const caps = [{ at: K.E + 0.2, titulo: 'Cae una espora' }, { at: K.G, titulo: 'Germina: sale una hifa' }, { at: K.R, titulo: 'Crece el micelio' },
-    { at: K.U, titulo: 'Dos micelios se unen' }, { at: K.N, titulo: 'Un nudo de hifas' }, { at: K.C, titulo: 'Crece el champiñón' }, { at: K.S, titulo: 'Suelta esporas' }, { at: K.Ot, titulo: 'Otra vez' }];
+    { at: K.U, titulo: 'En muchos hongos, dos se unen' }, { at: K.N, titulo: 'Un nudo de hifas' }, { at: K.C, titulo: 'Crece el champiñón' }, { at: K.S, titulo: 'Suelta esporas' }, { at: K.Ot, titulo: 'Otra vez' }];
   const crece = kprog(T, K.N + 2.5, K.C + 5, kEase.suave), abre = kprog(T, K.C + 4.2, K.C + 8, kEase.sale);
   const red = kprog(T, K.R, K.U + 2, kEase.suave);
   const macro = T < K.G + 0.3 || T > K.R - 0.3;
@@ -273,7 +273,6 @@ function HongoCiclo() {
       <Chip T={T} at={K.R + 1} until={K.U - 0.2} texto="micelio" y={1530} x={400} borde={KC.mint} tam={44} />
       <Chip T={T} at={K.U + 0.6} until={K.N - 0.2} texto="+  =  un micelio nuevo" y={1530} x={400} borde={KC.lilac} tam={40} />
       <Chip T={T} at={K.N + 0.3} until={K.C - 0.2} texto="primordio" y={1530} x={400} borde={KC.yellow} tam={44} />
-      <Etq T={T} at={K.C + 5} until={K.S + 3} x={1010} y={560} texto="Agaricus bisporus" it tam={28} lado="izq" />
       <Chip T={T} at={K.S + 0.5} until={K.Ot - 0.2} texto="esporas" y={1530} x={400} borde={KC.gold} tam={44} />
       <Escala T={T} z={macro ? zC : 1} pxPorMm={macro ? PX_MACRO : PX_MICRO} />
       <Robert T={T} apariciones={[[0, 3.5, 'avatar_11_sorprendido', 'gancho'], [8, 11, 'avatar_13_senalando_arriba', 'bajo-der'], [16.5, 19.5, 'avatar_07_pensativo_puno', 'arriba-der'], [25, 28, 'avatar_11_sorprendido', 'arriba-der'], [31, 34, 'avatar_06_pensativo_menton', 'arriba-der'], [36.5, 40.5, 'avatar_02_apuntando_camara', 'presentador-bajo'], [48.2, 51.5, 'avatar_04_bajando_lentes', 'arriba-der'], [54.5, 57.8, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der']]} />

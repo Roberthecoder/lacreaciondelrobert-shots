@@ -1,14 +1,12 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Que Es Un Hongo base narrada.dc.html",
   "salida": "Shot Que Es Un Hongo narrado.dc.html",
   "velocidad": 1.012,
-  "mudo": { "dcHtml": "Shot Que Es Un Hongo mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
-  "nota": "Fungi Mati #01. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. PENDIENTE de aprobación de Robert: NO generar la voz sin su visto bueno (gasta créditos).",
+  "nota": "Fungi Mati #01. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. 28 oct 2026: corregido tras la verificación de hechos (idx 2 y 11); la voz anterior ya no corresponde y espera nueva aprobación de Robert. NO generar la voz sin su visto bueno (gasta créditos). Ya no se hace gemelo mudo: la revisión es la versión sin voz.",
   "lineas": [
     { "escena": "Gancho", "texto": "Ese champiñón no es el hongo: es su fruto. El hongo de verdad está escondido abajo." },
     { "escena": "Red", "texto": "Bajo la tierra hay hilos blancos, mucho más delgados que un pelo: se llaman hifas." },
-    { "escena": "Red", "texto": "Juntas forman el micelio, y ese sí es el organismo completo." },
+    { "escena": "Red", "texto": "Juntas forman el micelio: ese es el cuerpo principal del hongo." },
     { "escena": "Come", "texto": "No tiene raíces ni hojas, y no hace fotosíntesis." },
     { "escena": "Come", "texto": "Come por fuera: suelta enzimas, deshace la hoja o la madera y absorbe lo que queda." },
     { "escena": "Pregunta", "texto": "¿Entonces para qué sale un champiñón?" },
@@ -17,6 +15,6 @@
     { "escena": "Estudio", "texto": "En 1993, Sandra Baldauf y Jeffrey Palmer compararon proteínas y vieron que los hongos son más parientes de los animales que de las plantas." },
     { "escena": "Quitina", "texto": "Su pared es de quitina, como el caparazón de un escarabajo." },
     { "escena": "Levadura", "texto": "Y la levadura del pan también es un hongo, pero de una sola célula, sin micelio." },
-    { "escena": "Cierre", "texto": "Así que ese champiñón no es el hongo: es la única parte de él que alcanzas a ver." }
+    { "escena": "Cierre", "texto": "Así que ese champiñón no es el hongo: es la parte de él que sí alcanzas a ver." }
   ]
 }

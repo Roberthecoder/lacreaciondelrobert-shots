@@ -56,12 +56,37 @@ Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati
 ```
 
+### LinkedIn
+```text
+Ese champiñón no es el hongo: es su fruto.
+El cuerpo principal del hongo es el micelio, una red de hifas (hilos casi siempre de 5 a 10 µm de grosor) que vive dentro del suelo, la madera o la hoja. No hace fotosíntesis: suelta enzimas, digiere por fuera y absorbe lo que queda. Cuando la humedad y la temperatura son las correctas, arma un cuerpo fructífero para soltar sus esporas; el champiñón es la parte que sí alcanzas a ver.
+Por qué importa: entender que el hongo es sobre todo micelio cambia cómo pensamos el cultivo de hongos, el compostaje y la salud del suelo.
+Y un dato que sorprende: en 1993, Sandra Baldauf y Jeffrey Palmer compararon 25 proteínas y encontraron que hongos y animales son grupos hermanos, más cercanos entre sí que con las plantas.
+Fuentes: Baldauf y Palmer, PNAS 1993; Moore et al., 21st Century Guidebook to Fungi; Deacon, Fungal Biology.
+¿Sabías que eres más pariente de un champiñón que de una lechuga?
+Soy Robert, de La Creación del Robert 🌱
+#LaCreacionDelRobert #FungiMati #micologia #biologia
+```
+
+### X
+```text
+Ese champiñón no es el hongo: es su fruto 🍄 El cuerpo principal del hongo es el micelio, una red de hilos bajo tierra mucho más delgados que un pelo. Y ojo: los hongos son más parientes de los animales que de las plantas (PNAS, 1993). #FungiMati #hongos
+```
+
+### Threads
+```text
+Ese champiñón no es el hongo: es su fruto 🍄
+El cuerpo principal del hongo es el micelio: una red de hifas, hilos mucho más delgados que un pelo, que vive en el suelo y come por fuera con enzimas. Con la humedad y la temperatura correctas, arma un champiñón para soltar esporas.
+¿Sabías que eres más pariente de un champiñón que de una lechuga? 👇
+#hongos
+```
+
 ## Versión sin voz 🎧
 
 ### TikTok
 ```text
 🎧 Así nace un champiñón: cada nota de la música son 8 hifas nuevas y cada toque agudo, una espora. 🍄
-Cae una espora, germina y saca una hifa. La hifa se ramifica y forma el micelio, el hongo de verdad. Cuando dos micelios compatibles se encuentran, se unen; luego un nudo de hifas (el primordio) sube a la superficie y crece hasta ser el champiñón, que suelta sus esporas… y una de ellas vuelve a empezar.
+Cae una espora, germina y saca una hifa. La hifa se ramifica y forma el micelio, el hongo de verdad. En muchos hongos, dos micelios compatibles se unen al encontrarse; luego un nudo de hifas (el primordio) sube a la superficie y crece hasta ser el champiñón, que suelta sus esporas… y una de ellas vuelve a empezar.
 El dibujo es esquemático.
 Fuentes: Moore et al., 21st Century Guidebook to Fungi; Baldauf y Palmer, PNAS 1993.
 ¿Cuántas esporas contaste? 👇
@@ -72,7 +97,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 🎧 Así nace un champiñón: cada nota son 8 hifas nuevas y cada toque agudo, una espora. 🍄
-Espora → hifa → micelio → dos micelios se unen → primordio → champiñón → esporas… y otra vez.
+Espora → hifa → micelio → en muchos hongos, dos micelios compatibles se unen → primordio → champiñón → esporas… y otra vez.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuántas esporas contaste? 👇
 Soy Robert, de La Creación del Robert 🌱
@@ -87,7 +112,7 @@ Título:
 Descripción:
 ```text
 Así nace un champiñón, y la música sale del dibujo: cada nota son 8 hifas nuevas (la red tiene 320 tramos), el segundo micelio suena en otra escala y al unirse forman un acorde, y cada una de las 60 esporas es un toque agudo.
-Cae una espora, germina y saca una hifa. La hifa se ramifica y forma el micelio, que es el hongo de verdad. Dos micelios compatibles se unen, un nudo de hifas (primordio) sube a la superficie y crece hasta ser el champiñón, que suelta sus esporas… y una vuelve a caer.
+Cae una espora, germina y saca una hifa. La hifa se ramifica y forma el micelio, que es el hongo de verdad. En muchos hongos, dos micelios compatibles se unen; un nudo de hifas (primordio) sube a la superficie y crece hasta ser el champiñón, que suelta sus esporas… y una vuelve a caer.
 El dibujo es esquemático.
 
 Fuentes:
@@ -112,5 +137,5 @@ Fuentes:
 1. Baldauf, S. L. y Palmer, J. D. (1993). Animals and fungi are each other's closest relatives: congruent evidence from multiple proteins. PNAS 90(24): 11558–11562.
 2. Moore, D., Robson, G. D. y Trinci, A. P. J. 21st Century Guidebook to Fungi. Cambridge University Press.
 3. Sakamoto, Y. (2018). Influences of environmental factors on fruiting body induction, development and maturation in mushroom-forming fungi. Fungal Biology Reviews 32(4): 236–248.
-El grosor de una hifa (~2–10 µm) varía según la especie; por eso digo "mucho más delgados que un pelo".
+El grosor de una hifa (casi siempre 5–10 µm; de 2 a 30 µm según la especie) es mucho menor que el de un pelo humano (de 17 a 181 µm); por eso digo "mucho más delgados que un pelo".
 ```

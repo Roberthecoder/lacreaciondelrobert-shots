@@ -20,7 +20,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Ese garabato no es un garabato: es cómo se separa una sola bacteria de entre millones. 🧫
-Muestra en una orilla, flameas, giras y arrastras un poquito… cada zona lleva menos, hasta que en la última cada célula forma su propia colonia. Así lo muestra el protocolo de Erin Sanders (2012) con Serratia, la bacteria roja de tu regadera.
+Muestra en una orilla, flameas, giras y arrastras un poquito… cada zona lleva menos, hasta que en la última cada célula forma su propia colonia. Así lo muestra el protocolo de Erin Sanders (2012) con Serratia, la bacteria roja que puede crecer en tu regadera.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuál fue tu primera técnica de laboratorio? 👇
 Soy Robert, de La Creación del Robert 🌱
@@ -36,7 +36,7 @@ Descripción:
 ```text
 Ese garabato no es un garabato: es cómo se separa una sola bacteria de entre millones.
 El estriado por agotamiento separa bacterias por pura mecánica: con un asa de metal esterilizada en la flama, dejas la muestra en una orilla de la placa de agar, flameas, giras la placa y arrastras un poquito de la primera zona, y repites. Cada zona lleva menos células, hasta que en la cuarta quedan tan separadas que cada una forma su propia colonia (en teoría, un clon de una sola célula; no siempre en bacterias que viven en pares o cadenas).
-Errores comunes: tocar la muestra con el asa caliente, clavarla en el agar o regresar a la primera zona. El protocolo de Erin R. Sanders muestra colonias aisladas de Serratia marcescens, la bacteria roja que crece en las esquinas de la regadera, tras 24 h a 30 °C.
+Errores comunes: tocar la muestra con el asa caliente, clavarla en el agar o regresar a la primera zona. El protocolo de Erin R. Sanders muestra colonias aisladas de Serratia marcescens, la bacteria roja que puede crecer en las esquinas de la regadera, tras 24 h a 30 °C.
 El dibujo es esquemático.
 
 Fuente:
@@ -52,6 +52,31 @@ Soy Robert, de La Creación del Robert 🌱
 Ese garabato no es un garabato: es cómo se separa una sola bacteria de entre millones. 🧫 Cada zona lleva menos células, hasta que en la última cada una forma su propia colonia. ¿Cuál fue tu primera técnica de laboratorio? 👇
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica
+```
+
+### LinkedIn
+```text
+Ese garabato no es un garabato: es cómo se separa una sola bacteria de entre millones.
+El estriado por agotamiento separa células por pura mecánica: dejas la muestra en una orilla de la placa, flameas el asa, giras la placa 90° y arrastras solo un poquito de la zona anterior. Cada pasada lleva menos células, hasta que en la cuarta zona quedan tan separadas que cada una forma su propia colonia: en teoría, un clon de una sola célula (no se cumple con bacterias que viven en pares o cadenas).
+Errores comunes: tocar la muestra con el asa caliente, clavarla en el agar o regresar a la primera zona.
+El protocolo de Erin R. Sanders (JoVE, 2012) muestra colonias aisladas de Serratia marcescens tras 24 h a 30 °C; esa bacteria roja puede crecer en las esquinas de la regadera.
+Fuente: Sanders, JoVE 63: e3064 (2012).
+¿Cuál fue tu primera técnica de laboratorio?
+Soy Robert, de La Creación del Robert 🌱
+#LaCreacionDelRobert #Quimica #microbiologia #laboratorio
+```
+
+### X
+```text
+Ese garabato no es un garabato: es cómo se separa una sola bacteria de entre millones 🧫 Cada zona lleva menos células, hasta que en la última cada una forma su propia colonia. #Quimica #microbiologia
+```
+
+### Threads
+```text
+Ese garabato no es un garabato: es cómo se separa una sola bacteria de entre millones 🧫
+Flameas el asa, giras la placa y arrastras un poquito de la zona anterior. Cada pasada lleva menos células, hasta que en la última cada una forma su propia colonia: en teoría, un clon de una sola célula.
+¿Cuál fue tu primera técnica de laboratorio? 👇
+#microbiologia
 ```
 
 ## Versión sin voz 🎧 (principal)
@@ -117,5 +142,6 @@ Soy Robert, de La Creación del Robert 🌱
 Fuente:
 1. Sanders, E. R. (2012). Aseptic laboratory techniques: plating methods. Journal of Visualized Experiments (63): e3064. doi:10.3791/3064 (texto completo en PubMed Central, PMC4846335).
 Del protocolo: enfriar el asa en el agar, no clavarla, reflamear entre cuadrantes, no entrar a la zona 1 con la 4, incubar boca abajo; ejemplo de Serratia marcescens con colonias aisladas en el cuarto cuadrante tras 24 h a 30 °C.
-"48 h · 37 °C" en el video es un ejemplo típico de incubación; no aplica igual a todas las bacterias.
+"24 h · 30 °C" en el video es el ejemplo del protocolo con Serratia; otras bacterias se incuban a otra temperatura y otro tiempo.
+En teoría, cada colonia viene de una sola célula; no se cumple con bacterias que viven en pares, cadenas o racimos.
 ```

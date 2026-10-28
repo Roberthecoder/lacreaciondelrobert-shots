@@ -1,10 +1,8 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Metales Pesados base narrada.dc.html",
   "salida": "Shot Metales Pesados narrado.dc.html",
   "velocidad": 1.032,
-  "mudo": { "dcHtml": "Shot Metales Pesados mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
-  "nota": "Fungi Mati #04. Una línea por subtítulo (idx 0..10 del jsx). Todo en UNA sola petición a ElevenLabs. PENDIENTE de aprobación de Robert: NO generar la voz sin su visto bueno (gasta créditos).",
+  "nota": "Fungi Mati #04. Una línea por subtítulo (idx 0..10 del jsx). Todo en UNA sola petición a ElevenLabs. 28 oct 2026: corregido tras la verificación de hechos (idx 10: 'no es veneno' era falso y peligroso); la voz anterior ya no corresponde y espera nueva aprobación de Robert. NO generar la voz sin su visto bueno (gasta créditos). Ya no se hace gemelo mudo: la revisión es la versión sin voz.",
   "lineas": [
     { "escena": "Gancho", "texto": "Ese hongo del bosque no solo chupó agua: también pudo chupar cadmio, plomo y mercurio." },
     { "escena": "Micelio", "texto": "Su micelio absorbe lo que hay en el suelo, y parte lo guarda en el fruto que cortas." },
@@ -16,6 +14,6 @@
     { "escena": "Estudio", "texto": "En otra especie, hervirla quitó más de la mitad. Pero el agua se tira: si no, te tomas la sopa de metales." },
     { "escena": "Digestion", "texto": "Y en pruebas que imitan tu digestión, se libera menos del cuarenta por ciento del mercurio, el cadmio y el plomo." },
     { "escena": "Limpia", "texto": "Lo curioso: esa misma esponja se estudia para limpiar suelos contaminados." },
-    { "escena": "Cierre", "texto": "Así que el hongo no es veneno: es un espejo del suelo donde creció." }
+    { "escena": "Cierre", "texto": "Así que el hongo no crea el metal: es un espejo del suelo donde creció." }
   ]
 }

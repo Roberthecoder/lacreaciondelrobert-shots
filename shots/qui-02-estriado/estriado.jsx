@@ -86,7 +86,7 @@ function EstriadoMudo() {
         {asa && <Asa x={asa.x} y={asa.y + (asa.clava ? 10 : 0)} ang={asa.clava ? -60 : -32} caliente={asa.cal} s={1.15} />}
         {act && T > act.a + 4.3 && T < act.a + 6 && <g opacity={kprog(T, act.a + 4.3, act.a + 4.6) * (1 - kprog(T, act.a + 5.7, act.a + 6))}>
           <rect x={300} y={600} width={480} height={90} rx={45} fill="rgba(14,15,18,.85)" stroke={KC.gold} strokeWidth={5} />
-          <text x={540} y={660} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.texto}>{Math.round(kprog(T, act.a + 4.3, act.a + 5.8) * 48)} h · 37 °C</text></g>}
+          <text x={540} y={660} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.texto}>{Math.round(kprog(T, act.a + 4.3, act.a + 5.8) * 24)} h · 30 °C</text></g>}
         {act && <Tache x={540} y={960} s={2.4} p={kprog(T, act.a + 6, act.a + 6.5) * (1 - kprog(T, act.a + 8.6, act.a + 9))} />}
       </svg>
 
@@ -165,7 +165,7 @@ function EstriadoNarrado() {
         </svg>
         <Lupa T={T} at={K.C1 + 2.4} until={K.C2 - 0.2} x={760} y={560} r={190} fx={540 + EST.trazos[0][3][0] * PS} fy={PY + EST.trazos[0][3][1] * PS} etiqueta="millones de células" tinte={KC.red}
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a2633" />{Array.from({ length: 70 }, (_, i) => <rect key={i} x={(i * 53) % (r * 2)} y={(i * 37) % (r * 2)} width={26} height={12} rx={6} fill="#ff6b8a" transform={`rotate(${i * 29} ${(i * 53) % (r * 2)} ${(i * 37) % (r * 2)})`} />)}</svg>} />
-        <Lupa T={T} at={K.C4 + 4.4} until={K.Er - 0.2} x={300} y={560} r={190} fx={540 + EST.colonias.find((c) => c.q === 3).x * PS} fy={PY + EST.colonias.find((c) => c.q === 3).y * PS} etiqueta="1 colonia = 1 célula" tinte={KC.mint}
+        <Lupa T={T} at={K.C4 + 4.4} until={K.Er - 0.2} x={420} y={560} r={190} fx={540 + EST.colonias.find((c) => c.q === 3).x * PS} fy={PY + EST.colonias.find((c) => c.q === 3).y * PS} etiqueta="1 colonia ≈ 1 célula (en teoría)" tinte={KC.mint}
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a2633" /><circle cx={r} cy={r} r={r * 0.7} fill="#f4efe4" opacity=".35" />{Array.from({ length: 40 }, (_, i) => { const a = i * 2.4, d = Math.sqrt(i / 40) * r * 0.6; return <rect key={i} x={r + Math.cos(a) * d - 12} y={r + Math.sin(a) * d - 6} width={24} height={12} rx={6} fill="#ff6b8a" />; })}</svg>} />
         <Cronometro T={T} at={K.C4 + 2.4} until={K.C4 + 4.6} factor={24 * 3600 / 2.2} etiqueta="INCUBANDO" x={260} y={1640} />
       </Escena>
@@ -226,7 +226,7 @@ function EstriadoNarrado() {
       <Subtitulo T={T} idx={6} at={K.C4 + 0.1} until={K.Er - 0.1} texto="Cada célula forma *una colonia.*" />
       <Subtitulo T={T} idx={7} at={K.Er + 0.1} until={K.E - 0.1} texto="Errores: *caliente, clavada, de regreso.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.X - 0.1} texto="Colonias aisladas *en la cuarta zona.*" />
-      <Subtitulo T={T} idx={9} at={K.X + 0.1} until={K.Ci - 0.1} texto="Esa bacteria roja *vive en tu regadera.*" />
+      <Subtitulo T={T} idx={9} at={K.X + 0.1} until={K.Ci - 0.1} texto="Esa bacteria roja *puede crecer en tu regadera.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.O - 0.1} texto="Entra una multitud: *sale una sola.*" />
       <Robert T={T} apariciones={[[0, 3.6, 'avatar_11_sorprendido', 'bajo-der'], [6.5, 10, 'avatar_13_senalando_arriba', 'arriba-der'], [12.5, 16, 'avatar_07_pensativo_puno', 'bajo-der'], [18, 21.5, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der'], [26.3, 29, 'avatar_06_pensativo_menton', 'arriba-der'], [31, 35, 'avatar_02_apuntando_camara', 'presentador-bajo'], [37.5, 41, 'avatar_10_serio_molesto', 'bajo-der'], [44.5, 48, 'avatar_04_bajando_lentes', 'bajo-der'], [50, 53.5, 'avatar_11_sorprendido', 'bajo-der'], [54.5, 58.2, 'avatar_12_perfil_serio', 'bajo-der']]} />
       <MarcaAgua T={T} tema="quimica" num="02" hasta={K.O} />

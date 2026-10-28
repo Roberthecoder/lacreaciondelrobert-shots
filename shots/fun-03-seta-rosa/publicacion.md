@@ -9,7 +9,7 @@ Textos listos para copiar (botón de copiar en cada bloque). Plantilla y reglas:
 Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto. 🍄💗
 Es la seta rosa, Pleurotus djamor, un hongo pantropical que también crece silvestre en México. Empecé el 3 de febrero de 2026 con una esporada sobre papel aluminio; las esporas germinaron en agar y formaron micelio, que pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas.
 ¿Qué le avisa al micelio que ya es hora de dar fruto? Un cambio de ambiente: aire fresco (con mucho dióxido de carbono el sombrero no se forma bien), humedad muy alta y algo de luz, que el sombrero necesita para abrirse. Como es tropical, crece mejor entre 22 y 30 °C.
-¿Y el rosa? Según una revisión mexicana de 2017 (Dulce Salmones, INECOL), el origen del color todavía no está claro, y los primordios rosas pierden color al madurar.
+¿Y el rosa? Según una revisión mexicana de 2017 (Dulce Salmones, INECOL), todavía no se sabe bien por qué el rosa se mantiene o se pierde, y los primordios rosas pierden color al madurar.
 El dibujo es esquemático; las fotos son de mi cultivo.
 Fuentes: Salmones, Scientia Fungorum 2017; Sakamoto, Fungal Biology Reviews 2018.
 ¿Tú qué hongo cultivarías en tu casa? 👇
@@ -20,7 +20,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto. 🍄💗
-Es la seta rosa (Pleurotus djamor), que también crece silvestre en México. Empezó con una esporada, pasó por agar, grano y sustrato… y dio fruto cuando le cambié el ambiente: aire fresco, humedad muy alta, algo de luz y calor (22–30 °C). ¿Y el rosa? Ni la ciencia lo tiene claro todavía (Salmones, 2017).
+Es la seta rosa (Pleurotus djamor), que también crece silvestre en México. Empezó con una esporada, pasó por agar, grano y sustrato… y dio fruto cuando le cambié el ambiente: aire fresco, humedad muy alta, algo de luz y calor (22–30 °C). ¿Y el rosa? Se aclara al madurar, y todavía no se sabe bien por qué (Salmones, 2017).
 El dibujo es esquemático; las fotos son de mi cultivo. Fuentes en el primer comentario.
 ¿Tú qué hongo cultivarías en tu casa? 👇
 Soy Robert, de La Creación del Robert 🌱
@@ -36,7 +36,7 @@ Descripción:
 ```text
 Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto.
 Es la seta rosa (Pleurotus djamor), una especie pantropical que también crece silvestre en México. Empecé el 3 de febrero de 2026 con una esporada sobre papel aluminio; las esporas germinaron en agar y formaron micelio, que pasó a grano (15 de marzo) y a sustrato (29 de marzo), hasta los primordios del 19 de abril.
-¿Qué le avisa al micelio que ya es hora de dar fruto? Un cambio de ambiente: aire fresco (con mucho CO₂ el sombrero no se diferencia bien), humedad muy alta y algo de luz, que el sombrero necesita para abrirse. Como es tropical, crece mejor entre 22 y 30 °C. ¿Y el rosa? Según la revisión de Dulce Salmones (INECOL, 2017), su origen todavía no es concluyente y los primordios rosas pierden color al madurar.
+¿Qué le avisa al micelio que ya es hora de dar fruto? Un cambio de ambiente: aire fresco (con mucho CO₂ el sombrero no se diferencia bien), humedad muy alta y algo de luz, que el sombrero necesita para abrirse. Como es tropical, crece mejor entre 22 y 30 °C. ¿Y el rosa? Según la revisión de Dulce Salmones (INECOL, 2017), todavía no se sabe bien por qué el rosa se mantiene o se pierde, y los primordios rosas pierden color al madurar.
 El dibujo es esquemático; las fotos son de mi cultivo. Video completo (44 min): https://youtu.be/CbMcdFRs62Y
 
 Fuentes:
@@ -54,6 +54,32 @@ Soy Robert, de La Creación del Robert 🌱
 Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto. 💗🍄 Es la seta rosa, Pleurotus djamor, y da fruto cuando le cambias el ambiente. ¿Tú qué hongo cultivarías en tu casa? 👇
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati
+```
+
+### LinkedIn
+```text
+Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto.
+Es la seta rosa, Pleurotus djamor, una especie pantropical que también crece silvestre en México. La cultivé desde una esporada: las esporas germinaron en agar, formaron micelio, pasó a grano y luego a sustrato.
+Lo interesante es qué le avisa al micelio que es hora de dar fruto: un cambio de ambiente. Aire fresco (con mucho CO₂ el sombrero no se forma bien), humedad muy alta, algo de luz y calor: entre 22 y 30 °C.
+¿Y el rosa? Según una revisión mexicana de 2017 (Dulce Salmones, INECOL), se aclara al madurar, y todavía no se sabe bien por qué el rosa se mantiene o se pierde.
+Por qué importa: esa misma revisión la presenta como un hongo con potencial biotecnológico para el neotrópico.
+Fuentes: Salmones, Scientia Fungorum 46: 73–85 (2017); Nwankwegu et al. 2025.
+¿Tú qué hongo cultivarías en tu casa?
+Soy Robert, de La Creación del Robert 🌱
+#LaCreacionDelRobert #FungiMati #micologia #cultivodehongos
+```
+
+### X
+```text
+Esto no es plástico: es una seta rosa viva y la cultivé en mi cuarto 🍄💗 Da fruto con aire fresco, humedad muy alta, algo de luz y 22–30 °C. ¿Y el rosa? Se aclara al madurar y aún no se sabe bien por qué. #FungiMati #setarosa
+```
+
+### Threads
+```text
+Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto 🍄💗
+Es la seta rosa (Pleurotus djamor). Empezó con una esporada y dio fruto cuando le cambié el ambiente: aire fresco, humedad muy alta, algo de luz y calor. ¿Y el rosa? Se aclara al madurar, y todavía no se sabe bien por qué (Salmones, 2017).
+¿Tú qué hongo cultivarías en tu casa? 👇
+#hongos
 ```
 
 ## Versión sin voz 🎧

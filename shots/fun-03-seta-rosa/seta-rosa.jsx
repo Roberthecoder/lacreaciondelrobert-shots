@@ -130,7 +130,7 @@ function SetaNarrado() {
       <Chip T={T} at={K.C + 1.8} until={K.R - 0.2} texto="tropical: 22–30 °C" y={1500} x={400} borde={KC.red} tam={44} />
       <Etq T={T} at={K.R + 4.4} until={K.Ci - 0.2} x={300} y={1100} texto="primordio" lado="der" tam={30} color={KC.ink} />
       <Etq T={T} at={K.R + 5.4} until={K.Ci - 0.2} x={760} y={1120} texto="adulta" lado="der" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.R + 4} until={K.Ci - 0.2} texto="¿el rosa? sin resolver" y={420} borde={KC.pink} tam={42} />
+      <Chip T={T} at={K.R + 4} until={K.Ci - 0.2} texto="¿por qué se pierde el rosa? sin resolver" y={420} borde={KC.pink} tam={36} />
       <Lupa T={T} at={K.Ci + 0.8} until={K.O - 0.1} x={760} y={760} r={170} fx={480} fy={1180} etiqueta="micelio" tinte={KC.mint}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a2614" /><MicelioRadial r={r} p={1} seed={4} /></svg>} />
       <Chip T={T} at={K.Ci + 0.3} until={K.O} texto="no es plástico: es un fruto" y={330} borde={KC.mint} tam={40} />
@@ -144,7 +144,7 @@ function SetaNarrado() {
       <Subtitulo T={T} idx={6} at={K.A + 0.1} until={K.H - 0.1} texto="Aire fresco: con mucho CO₂ *se deforma.*" />
       <Subtitulo T={T} idx={7} at={K.H + 0.1} until={K.C - 0.1} texto="Humedad muy alta *y algo de luz.*" />
       <Subtitulo T={T} idx={8} at={K.C + 0.1} until={K.R - 0.1} texto="Le gusta el calor: *22 a 30 °C.*" />
-      <Subtitulo T={T} idx={9} at={K.R + 0.1} until={K.Ci - 0.1} texto="¿Y el rosa? *Aún no está claro.*" />
+      <Subtitulo T={T} idx={9} at={K.R + 0.1} until={K.Ci - 0.1} texto="¿Y el rosa? *Se pierde al madurar.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.O - 0.1} texto="El fruto de un micelio *que casi nunca ves.*" />
 
       <Robert T={T} apariciones={[[0, 3.6, 'avatar_11_sorprendido', 'gancho'], [6.5, 10, 'avatar_13_senalando_arriba', 'bajo-der'], [14, 17.5, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der'], [22, 25.6, 'avatar_04_bajando_lentes', 'bajo-der'], [26.3, 29.5, 'avatar_06_pensativo_menton', 'bajo-der'], [31, 34.5, 'avatar_07_pensativo_puno', 'bajo-der'], [41.5, 44.5, 'avatar_12_perfil_serio', 'arriba-der'], [48.5, 52.4, 'avatar_11_sorprendido', 'presentador-bajo'], [53.5, 58, 'avatar_02_apuntando_camara', 'bajo-der']]} />
@@ -155,7 +155,7 @@ function SetaNarrado() {
   );
 }
 
-/* ---------- gemelo MUDO: de esporada a cosecha, 77 días en 61.5 s (loop con fotos reales) ---------- */
+/* ---------- gemelo MUDO: de esporada a primordios, 77 días en 61.5 s (loop con fotos reales) ---------- */
 // Fechas reales (sobreimpresas en el video de Robert): 3 feb esporada · 4 feb placas · 15 mar grano · 29 mar bolsa · 19–21 abr primordios.
 const DIAS = { Racimo: 0, Esporada: 0, Placa: 1, Grano: 40, Bolsa: 54, Primordios: 75, Cosecha: 77 };
 function SetaCiclo() {
@@ -215,7 +215,7 @@ function SetaCiclo() {
       <Chip T={T} at={K.C + 2.4} until={K.F - 0.2} texto="y vuelve a empezar" y={1540} x={400} borde={KC.gold} tam={42} />
       <Robert T={T} apariciones={[[0, 3.5, 'avatar_11_sorprendido', 'gancho'], [8, 11.5, 'avatar_13_senalando_arriba', 'bajo-der'], [16, 19.5, 'avatar_06_pensativo_menton', 'bajo-der'], [24.5, 28, 'avatar_04_bajando_lentes', 'arriba-der'], [33, 37, 'avatar_02_apuntando_camara', 'presentador-bajo'], [41, 44.5, 'avatar_11_sorprendido', 'arriba-der'], [50, 53.5, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'], [55, 58, 'avatar_13_senalando_arriba', 'bajo-der']]} />
       <MarcaAgua T={T} tema="biologia" num="03" hasta={K.F} />
-      <CierreMarca T={T} at={K.F} tema="biologia" robert="assets/stickers/avatar_02_apuntando_camara.png" frase="De esporada a cosecha: 77 días" />
+      <CierreMarca T={T} at={K.F} tema="biologia" robert="assets/stickers/avatar_02_apuntando_camara.png" frase="De esporada a primordios: 77 días" />
       <AudioPista src={window.AUDIO_SRC || 'assets/mezcla_mudo.wav'} />
     </div>
   );

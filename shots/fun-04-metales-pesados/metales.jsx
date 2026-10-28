@@ -148,7 +148,7 @@ function MetalesNarrado() {
         <TarjetaEstudio T={T} at={K.D + 0.1} until={K.D + 1.2} anio="2020" quien="Chiocchetti et al." revista="Food Chemistry 306" y={420} />
         <Medidor T={T} at={K.D + 1.2} until={K.Li - 0.2} etiqueta="SE LIBERA EN LA DIGESTIÓN" valor={(t) => 0.4 * kprog(t, K.D + 1.4, K.D + 3.4)} texto={(v) => (v < 0.39 ? Math.round(v * 100) + ' %' : '< 40 %')} y={330} color={KC.pink} />
       </Escena>
-      {/* 8 · esa esponja limpia suelos */}
+      {/* 8 · esa esponja se estudia para limpiar suelos */}
       <Escena T={T} a={K.Li} b={K.Ci} zoom={0.03}>
         <MundoSuelo T={T} red={kprog(T, K.Li, K.Li + 3)} brillo={0.7} ox={540} cielo={KC.mint}>
           {Array.from({ length: 34 }, (_, i) => { const u = kprog(T, K.Li + 0.5 + i * 0.07, K.Li + 2.5 + i * 0.07, kEase.suave), x0 = 80 + (i * 97) % 920, y0 = sup + 80 + (i * 61) % 480;
@@ -175,8 +175,8 @@ function MetalesNarrado() {
       <Chip T={T} at={K.E + 3} until={K.E + 6.8} texto="rebozuelos blanqueados" y={1530} x={400} borde={KC.yellow} tam={38} />
       <Etq T={T} at={K.E + 7.4} until={K.D - 0.2} x={100} y={1530} texto="Amanita fulva, hervida" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.D - 2.4} until={K.D - 0.2} texto="el agua se tira" x={300} y={760} borde={KC.red} tam={44} />
-      <Etq T={T} at={K.D + 3.4} until={K.Li - 0.2} x={990} y={1300} texto="se absorbe" color={KC.pink} lado="izq" />
-      <Etq T={T} at={K.D + 3.8} until={K.Li - 0.2} x={990} y={560} texto="se queda en el hongo" lado="izq" tam={28} />
+      <Etq T={T} at={K.D + 3.4} until={K.Li - 0.2} x={990} y={1135} texto="se libera" color={KC.pink} lado="izq" />
+      <Etq T={T} at={K.D + 3.8} until={K.Li - 0.2} x={990} y={560} texto="no se libera" lado="izq" tam={28} />
       <Chip T={T} at={K.Li + 1} until={K.Ci - 0.2} texto="micorremediación" y={430} borde={KC.mint} tam={44} />
       <Etq T={T} at={K.Li + 2} until={K.Ci - 0.2} x={200} y={760} texto="Pleurotus" it lado="der" />
       <Chip T={T} at={K.Ci + 0.6} until={K.O} texto="un espejo del suelo" y={430} borde={KC.gold} tam={46} />
@@ -190,8 +190,8 @@ function MetalesNarrado() {
       <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.E + 6.8} texto="Blanquear rebozuelos: *−15 % de mercurio.*" />
       <Subtitulo T={T} idx={7} at={K.E + 6.9} until={K.D - 0.1} texto="Hervir quitó más de la mitad… *y el agua se tira.*" />
       <Subtitulo T={T} idx={8} at={K.D + 0.1} until={K.Li - 0.1} texto="En la digestión se libera *menos del 40 %.*" />
-      <Subtitulo T={T} idx={9} at={K.Li + 0.1} until={K.Ci - 0.1} texto="Esa esponja *limpia suelos.*" />
-      <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.O - 0.1} texto="No es veneno: *es un espejo del suelo.*" />
+      <Subtitulo T={T} idx={9} at={K.Li + 0.1} until={K.Ci - 0.1} texto="Esa esponja *se estudia para limpiar suelos.*" />
+      <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.O - 0.1} texto="No crea el metal: *es un espejo del suelo.*" />
 
       <Robert T={T} apariciones={[[0, 3.6, 'avatar_11_sorprendido', 'gancho'], [6.5, 10, 'avatar_13_senalando_arriba', 'bajo-der'], [12, 15, 'avatar_07_pensativo_puno', 'bajo-der'], [17, 20.5, 'avatar_10_serio_molesto', 'bajo-der'], [22.5, 26, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der'], [27.3, 30, 'avatar_06_pensativo_menton', 'arriba-der'], [37.2, 40.6, 'avatar_02_apuntando_camara', 'presentador-bajo'], [43.5, 47, 'avatar_11_sorprendido', 'bajo-der'], [50, 53.5, 'avatar_04_bajando_lentes', 'bajo-der'], [54.6, 58.2, 'avatar_12_perfil_serio', 'bajo-der']]} />
       <MarcaAgua T={T} tema="biologia" num="04" hasta={K.O} />
@@ -269,7 +269,7 @@ function MetalesMudo() {
       <Medidor T={T} at={K.C + 0.6} until={K.Re - 0.3} etiqueta="METALES EN EL HONGO" valor={nivel} texto={(v) => (v > 0.7 ? 'alto' : v > 0.35 ? 'medio' : 'bajo')} y={640} color={nivel(T) > 0.7 ? KC.red : nivel(T) > 0.35 ? KC.orange : KC.mint} />
       <Chip T={T} at={K.C + 0.4} until={K.R - 0.2} texto="polvo y humo caen al suelo" y={560} borde={KC.red} tam={36} />
       <Chip T={T} at={K.R + 1.2} until={K.B - 0.3} texto="Cd · Pb · Hg" x={360} y={1060} borde={KC.red} tam={40} mono />
-      <Chip T={T} at={K.B + 0.4} until={K.H - 0.3} texto="lejos de la contaminación" y={560} borde={KC.mint} tam={38} />
+      <Chip T={T} at={K.B + 0.4} until={K.H - 0.3} texto="lejos: suele tener menos (según la especie)" y={560} borde={KC.mint} tam={32} />
       <Chip T={T} at={K.H + 0.4} until={K.Re - 3} texto="hervir quita una parte" y={560} borde={KC.yellow} tam={38} />
       <Chip T={T} at={K.Re - 2.8} until={K.Re - 0.2} texto="…y el agua se tira" y={560} borde={KC.red} tam={40} />
       <Chip T={T} at={K.Re + 0.5} until={K.V - 0.2} texto="porque el hongo es un espejo del suelo" y={560} borde={KC.gold} tam={34} />

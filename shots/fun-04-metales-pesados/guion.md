@@ -3,7 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** `logo_biologia.svg` (ADN) · **Badge:** #04.
 - **Formato:** N1 "Por dentro" + N2 "El número" (−15 %, −56 %, < 40 %). **Gemelo mudo:** M2 "¿Por qué NO…?" (construido).
 - **Gancho:** #1 "Esto no es X: es Y" sobre el hongo que se ve ("no solo chupó agua: también… metales").
-- **Duración:** voz ≈ 928 caracteres (~58 s con ×1.065) + cierre 3.5 s. Base sin voz: 61.9 s. Mudo: 61.5 s.
+- **Duración:** voz ≈ 932 caracteres (~58 s con ×1.065) + cierre 3.5 s. Base sin voz: 61.9 s. Mudo: 61.5 s.
+- **28 oct 2026 (verificación de hechos):** se corrigió la voz y la pantalla (ver `verificacion.md`). La voz guardada ya no corresponde al texto: **la voz nueva espera tu aprobación** (≈ 932 caracteres = créditos de ElevenLabs). Mientras, la revisión es la versión sin voz (ya no se renderiza el gemelo mudo; su archivo queda corregido como referencia).
 - **Estado:** animación lista. **La voz espera tu aprobación** (≈ 928 créditos). Videos en el Release "Borradores · claude/clever-mayer-197rx7"; textos para redes en `publicacion.md`; tema registrado en `historial/nuevos/remaster-lote-d.json`.
 
 ## Qué se verificó del viejo (y qué cambió)
@@ -23,9 +24,9 @@
 | 5 | Pregunta | ¿Y si los hierves antes de comerlos? | **Re-gancho.** Olla hirviendo. Sticker pensativo. |
 | 6 | Estudio | En Polonia, en 2017, blanquear rebozuelos quitó cerca de un quince por ciento de su mercurio. | Tarjeta "2017 · Falandysz y Drewnowska · Polonia". Rebozuelos en la olla; salen átomos de Hg al agua. Medidor "mercurio · rebozuelo" −15 %. |
 | 7 | Estudio | En otra especie, hervirla quitó más de la mitad. Pero el agua se tira: si no, te tomas la sopa de metales. | Medidor "mercurio · *Amanita fulva*" −56 %. La olla se inclina y se tira el agua turbia. Chip "el agua se tira". Sticker serio. |
-| 8 | Digestion | Y en pruebas que imitan tu digestión, se libera menos del cuarenta por ciento del mercurio, el cadmio y el plomo. | Estómago esquemático (fondo oscuro): de los metales, menos de 4 de cada 10 salen hacia la pared; el resto se queda en el hongo. Tarjeta "2020 · Chiocchetti et al.". Medidor "se libera" < 40 %. |
+| 8 | Digestion | Y en pruebas que imitan tu digestión, se libera menos del cuarenta por ciento del mercurio, el cadmio y el plomo. | Estómago esquemático (fondo oscuro): de los metales, menos de 4 de cada 10 salen hacia la pared ("se libera"); el resto no se libera. Tarjeta "2020 · Chiocchetti et al.". Medidor "se libera" < 40 %. |
 | 9 | Limpia | Lo curioso: esa misma esponja se estudia para limpiar suelos contaminados. | Suelo con metales que el micelio va juntando; brotan setas *Pleurotus*. Chip "micorremediación". |
-| 10 | Cierre | Así que el hongo no es veneno: es un espejo del suelo donde creció. | **Regreso al boleto del inicio**, con un aro dorado sobre el suelo: "un espejo del suelo". |
+| 10 | Cierre | Así que el hongo no crea el metal: es un espejo del suelo donde creció. | **Regreso al boleto del inicio**, con un aro dorado sobre el suelo: "un espejo del suelo". |
 | — | Outro | (sin voz) | Cierre de marca. |
 
 ## Robert en pantalla
@@ -45,7 +46,7 @@ Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 
 | 37.2 s | 40.6 s | apuntando a cámara | `presentador-bajo` | “En Polonia, en 2017, blanquear rebozuelos quitó cerca de un quince por ciento de su mercurio.” |
 | 43.5 s | 47.0 s | sorprendido | `bajo-der` | “Y en pruebas que imitan tu digestión, se libera menos del cuarenta por ciento del mercurio, el cadmio y el plomo.” |
 | 50.0 s | 53.5 s | bajando los lentes | `bajo-der` | “Lo curioso: esa misma esponja se estudia para limpiar suelos contaminados.” |
-| 54.6 s | 58.2 s | de perfil, serio | `bajo-der` | “Así que el hongo no es veneno: es un espejo del suelo donde creció.” |
+| 54.6 s | 58.2 s | de perfil, serio | `bajo-der` | “Así que el hongo no crea el metal: es un espejo del suelo donde creció.” |
 | cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
 
 **Gemelo mudo:** 8 apariciones + cierre · **28.1 s** en pantalla · 8 poses.
@@ -67,14 +68,14 @@ Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 
 - **Mudo (datos y estado):** cada carro que pasa frente al hongo = golpe grave (misma fórmula del dibujo); cada átomo que llega al sombrero = toque agudo; música **tapada y tensa** (dos notas a medio tono) mientras el hongo se carga, **libre** lejos de la carretera; 12 metales que salen al hervir = 12 gotas.
 
 ## Gemelo mudo (M2 "¿Por qué NO…?", 61.5 s en loop) — `Shot Metales Pesados mudo.dc.html`
-Pregunta fija arriba: **"¿Por qué NO recoger hongos junto a la carretera?"** → carros, polvo y humo caen; el micelio sube metales al sombrero (medidor de bajo a alto) → Lupa de rayos X en el sombrero: Cd · Pb · Hg → lejos, en el bosque, el medidor baja → hervir quita una parte… y el agua se tira → respuesta: "porque el hongo es un espejo del suelo" → regreso a la carretera (mismo cuadro del inicio). **Título:** "¿Por qué NO recoger hongos junto a la carretera? 🎧".
+Pregunta fija arriba: **"¿Por qué NO recoger hongos junto a la carretera?"** → carros, polvo y humo caen; el micelio sube metales al sombrero (medidor de bajo a alto) → Lupa de rayos X en el sombrero: Cd · Pb · Hg → lejos, en el bosque, el medidor baja (chip "lejos: suele tener menos (según la especie)") → hervir quita una parte… y el agua se tira → respuesta: "porque el hongo es un espejo del suelo" → regreso a la carretera (mismo cuadro del inicio). **Título:** "¿Por qué NO recoger hongos junto a la carretera? 🎧".
 
 ## Descripción (borrador)
-"Ese hongo del bosque no solo chupó agua: también pudo chupar cadmio, plomo y mercurio. 🍄 El micelio absorbe lo que hay en el suelo y parte lo acumula en el cuerpo fructífero. El riesgo depende de la especie, del lugar (junto a minas, fundidoras o carreteras los niveles pueden ser muchísimo más altos) y de cuánto comes. Los hongos cultivados crecen en sustratos controlados y suelen tener menos. ¿Hervirlos sirve? En parte: en Polonia (2017), blanquear rebozuelos quitó ~15 % del mercurio y hervir *Amanita fulva* quitó 56 %, pero el agua se tira. Al cocinar hongos secos, el arsénico baja mucho más que el mercurio, el cadmio y el plomo (2020), y en digestiones simuladas se libera menos del 40 % de esos metales. Hipótesis (no probada): que la pared del hongo (quitina y otros azúcares que no digerimos) retenga parte. Esa misma capacidad se estudia para limpiar suelos (micorremediación con *Pleurotus*). El dibujo es esquemático. ¿En tu región se recolectan hongos silvestres? ¿Dónde? 👇"
+"Ese hongo del bosque no solo chupó agua: también pudo chupar cadmio, plomo y mercurio. 🍄 El micelio absorbe lo que hay en el suelo y parte lo acumula en el cuerpo fructífero. El riesgo depende de la especie, del lugar (junto a minas, fundidoras o carreteras los niveles pueden ser muchísimo más altos) y de cuánto comes. Los hongos cultivados crecen en sustratos controlados y suelen tener menos. ¿Hervirlos sirve? En parte: en Polonia (2017), blanquear rebozuelos quitó ~15 % del mercurio y hervir *Amanita fulva* quitó 56 %, pero el agua se tira. Al cocinar hongos secos, el arsénico baja mucho más que el mercurio, el cadmio y el plomo (2020), y en digestiones simuladas se libera menos del 40 % de esos metales. Hipótesis (no probada): que la pared del hongo (quitina y otros azúcares que no digerimos) retenga parte. Esa misma capacidad se estudia para limpiar suelos (micorremediación con *Pleurotus*). En ese estudio de 2020, el mercurio de algunos hongos silvestres (como el *Boletus edulis*) pasaba el límite legal; que se libere menos del 40 % no quiere decir que sea seguro. Y nunca comas un hongo silvestre que no esté identificado por un experto. El dibujo es esquemático. ¿En tu región se recolectan hongos silvestres? ¿Dónde? 👇"
 
 ## Fuentes
 - Falandysz, J. y Drewnowska, M. (2017). *Cooking can decrease mercury contamination of a mushroom meal: Cantharellus cibarius and Amanita fulva.* Environmental Science and Pollution Research 24(15): 13352–13357. Blanquear: ~15 % de Hg (fresco), hasta 35 % (congelado); hervir *A. fulva*: 56 ± 2 %.
-- Chiocchetti, G. M. et al. (2020). *Toxic trace elements in dried mushrooms: Effects of cooking and gastrointestinal digestion on food safety.* Food Chemistry 306: 125478. Cocinar redujo As 26–72 %, Hg/Cd/Pb "mucho menos"; bioaccesibilidad de los metales < 40 %.
+- Chiocchetti, G. M. et al. (2020). *Toxic trace elements in dried mushrooms: Effects of cooking and gastrointestinal digestion on food safety.* Food Chemistry 306: 125478. Cocinar redujo As 26–72 %, Hg/Cd/Pb "mucho menos"; bioaccesibilidad de los metales < 40 %; el Hg de *Amanita ponderosa*, *Boletus edulis* y otras pasaba el límite legal.
 - Liu, S. et al. (2022). *Research Progress on Elements of Wild Edible Mushrooms.* Journal of Fungi 8(9): 964 (PMC9505289). ~400 especies silvestres: el contenido depende de la especie y del ambiente (carreteras, zonas industriales, fundidoras); los silvestres se enriquecen más que los cultivados.
 - Komárek, M., Chrastný, V. y Štíchová, J. (2007). *Metal/metalloid contamination and isotopic composition of lead in edible mushrooms and forest soils originating from a smelting area.* (boletos junto a una fundidora de plomo; suelos con hasta 36,234 mg Pb/kg).
 - Integrating Speciation Analysis and Bioaccessibility to Reassess Cadmium Exposure Risk from Six Mushrooms (2026, PMC12846066): el cadmio queda sobre todo en fracciones insolubles.

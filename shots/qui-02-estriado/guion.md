@@ -8,7 +8,7 @@
 - **Qué cambió del viejo:** el viejo decía que tus medicinas y tu yogur "empiezan con una bacteria" (no lo pude sostener con una fuente para cada caso, así que salió). Los errores y los pasos ahora siguen el protocolo publicado de Sanders (2012), que además trae el ejemplo de *Serratia* y la regadera. En la descripción del viejo decías que lo trazaste "a dedazo": ahora el trazo y las colonias por zona salen del mismo cálculo (260 → 70 → 22 → 7).
 
 ## Gemelo mudo (protagonista) — `Shot Estriado mudo.dc.html`
-Pregunta fija arriba, cambia en cada error. Cada error dura 9 s: se hace mal (0–4 s) → incuba "48 h · 37 °C" → X roja + respuesta. Medidor "COLONIAS AISLADAS" en rojo (≈ 0 %) durante los errores y en verde al final. **Título:** "5 errores que arruinan un estriado 🎧".
+Pregunta fija arriba, cambia en cada error. Cada error dura 9 s: se hace mal (0–4 s) → incuba "24 h · 30 °C" (el ejemplo de Sanders 2012 con *Serratia*) → X roja + respuesta. Medidor "COLONIAS AISLADAS" en rojo (≈ 0 %) durante los errores y en verde al final. **Título:** "5 errores que arruinan un estriado 🎧".
 
 | Tiempo | Pantalla | Respuesta en pantalla |
 |---|---|---|
@@ -33,10 +33,10 @@ Pregunta fija arriba, cambia en cada error. Cada error dura 9 s: se hace mal (0�
 | 3 | Cuad2 | Flameas el asa, giras la placa y arrastras solo un poquito de la primera zona. | El asa va al mechero (al rojo) y regresa a la zona 2, cruzando el final de la 1. |
 | 4 | Cuad3 | Flameas otra vez y repites: cada pasada lleva menos y menos células. | Otra vez flama y zona 3. |
 | 5 | Pregunta | ¿Y qué pasa en la última? | **Re-gancho.** Chip "¿y en la última zona?". Sticker pensativo. |
-| 6 | Cuad4 | Las células quedan tan separadas que cada una crece sola y forma una colonia: en teoría, millones de clones de una sola célula. | Zona 4; cronómetro "incubando" corre 24 h en 2 s; salen las colonias (racimo en la 1, sueltas en la 4). Lupa "1 colonia = 1 célula". |
+| 6 | Cuad4 | Las células quedan tan separadas que cada una crece sola y forma una colonia: en teoría, millones de clones de una sola célula. | Zona 4; cronómetro "incubando" corre 24 h en 2 s; salen las colonias (racimo en la 1, sueltas en la 4). Lupa "1 colonia ≈ 1 célula (en teoría)". |
 | 7 | Errores | Errores comunes: tocar con el asa caliente, clavarla en el agar o regresar a la primera zona. | Tres placas pequeñas con su error y su X: asa caliente, clavarla, regresar a la 1. |
 | 8 | Estudio | El protocolo de Erin Sanders, de 2012, muestra colonias aisladas de Serratia en la cuarta zona tras un día a treinta grados. | Tarjeta "2012 · Erin R. Sanders · JoVE". Placa con colonias **rojas** de *Serratia marcescens*, aisladas en la zona 4. Chip "24 h · 30 °C". |
-| 9 | Extra | Lo curioso: esa bacteria roja también crece en las esquinas de tu regadera. | Regadera con la mancha rosa-roja en la esquina; Lupa con bacilos rojos. Sticker sorprendido. |
+| 9 | Extra | Lo curioso: esa bacteria roja también crece en las esquinas de tu regadera. | Regadera con la mancha rosa-roja en la esquina; Lupa con bacilos rojos. Subtítulo "Esa bacteria roja *puede crecer en tu regadera.*" Sticker sorprendido. |
 | 10 | Cierre | Así que ese garabato es un filtro: entra una multitud y sale una sola. | **Regreso a la placa del inicio**, con un montón de puntitos que entran y la colonia sola de la zona 4. |
 | — | Outro | (sin voz) | Cierre de marca. |
 
@@ -47,7 +47,7 @@ Pregunta fija arriba, cambia en cada error. Cada error dura 9 s: se hace mal (0�
 - Sanders, E. R. (2012). *Aseptic laboratory techniques: plating methods.* Journal of Visualized Experiments (63): e3064. doi:10.3791/3064 (texto completo en PMC4846335). Del protocolo: enfriar el asa tocando el agar en una zona sin sembrar; no presionar tanto que el asa "se clave" en el agar; reflamear el asa entre cuadrantes; girar la placa 90°; no entrar a la primera zona al estriar la cuarta; incubar boca abajo para que la condensación de la tapa no gotee sobre las colonias; en teoría cada colonia viene de una sola célula (no siempre: bacterias en pares o cadenas); *Serratia marcescens* con colonias aisladas en el cuarto cuadrante tras 24 h a 30 °C, que crece en las esquinas de tinas, regaderas y juntas de azulejo, con el pigmento rojo prodigiosina.
 
 ## Datos que no se pudieron verificar
-- "48 h · 37 °C" en el mudo es un ejemplo típico de incubación (en el estudio de Sanders el ejemplo es 24 h a 30 °C); no aplica igual a todas las bacterias.
+- "24 h · 30 °C" en el mudo es el ejemplo del protocolo de Sanders (2012) con *Serratia marcescens* (antes decía "48 h · 37 °C", sin fuente; se corrigió el 28 oct 2026); otras bacterias se incuban distinto.
 - Que "tus medicinas y tu yogur empiezan con una sola bacteria" (guion viejo): no lo usé.
 
 ## Robert en pantalla
