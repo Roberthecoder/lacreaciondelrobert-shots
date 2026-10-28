@@ -77,7 +77,8 @@ Tiempos de la base narrada (antes de la voz; con la voz real se recorren solos p
 - Fleming, A. "Penicillin". Conferencia Nobel, 11 dic 1945 (nobelprize.org): la advertencia de que dosis insuficientes podían volver resistentes a los microbios.
 - OMS, nota descriptiva "Resistencia a los antimicrobianos" (qué puede hacer cada persona: solo con receta, seguir indicaciones, no compartir ni usar sobrantes).
 - Transferencia horizontal de genes de resistencia (conjugación, plásmidos) entre bacterias de especies distintas: CDC, "About Antimicrobial Resistance"; cualquier texto de microbiología.
-- Tiempo de duplicación de ~20 min de *E. coli* en medio rico de laboratorio: Sezonov, G. et al. *J. Bacteriol.* 189: 8746–8749 (2007). Es en el laboratorio; en el cuerpo es más lento (por eso el mudo dice "regla" y "tiempo simulado").
+- Tiempo de duplicación de ~20 min de *E. coli* en medio rico de laboratorio: Son, M. S. y Taylor, R. K. *Current Protocols* 1: e20 (2021), doi:10.1002/cpz1.20: «a doubling time of ∼20 min should occur when E. coli is grown in a rich liquid broth medium». Es en condiciones ideales de laboratorio (por eso el mudo dice "regla" y "tiempo simulado"). (Antes se citaba Sezonov 2007, que no se pudo abrir.)
+- Verificación de hechos independiente (28 oct 2026): ver `verificacion.md`.
 
 ## Por verificar / notas
 - En el dibujo hay 4 resistentes de 46 para que se vean; en una población real la proporción suele ser mucho menor (por eso el chip dice "unas pocas").
