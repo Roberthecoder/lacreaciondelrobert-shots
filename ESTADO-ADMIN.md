@@ -47,6 +47,11 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - ia-04-huella (64 s) y bio-01-ramas (63.7 s): recortar guion y regenerar voz cuando haya créditos.
 
 ## Pendientes de Robert (él tiene que hacerlos)
+- **RECORDARLE al terminar la configuración de las API de redes:** cancelar la prueba gratuita de un mes de Meta Verified
+  (verificación de Instagram/Facebook) antes de que se renueve y cobre. Lo pidió el 28 oct.
+- API de Meta en curso (28 oct): app "La Creación del Robert" (id 1845140663182541) con casos de uso Threads, Instagram y Página.
+  Instagram ya es profesional (Creador). Sitio con privacidad y términos: https://roberthecoder.github.io/lacreaciondelrobert-shots/
+  Tokens y claves: SIEMPRE como secretos de GitHub, nunca en el chat.
 - Comprar créditos de ElevenLabs.
 - Pedir acceso a las API de redes (se le dio un PDF con instrucciones el 28 oct).
 - Borrar o no publicar los narrados viejos con errores que siguen en los Releases y en lacreaciondelrobert-archivo.
