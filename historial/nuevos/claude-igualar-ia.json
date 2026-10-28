@@ -1,0 +1,16 @@
+{
+ "temas": [
+  {
+   "id": "ia-panda-adversario",
+   "titulo": "Ejemplos adversarios: un ruido invisible convierte un panda en gibón para la IA (Goodfellow 2014) y estampas en un alto (Eykholt 2018)",
+   "serie": "Shot IA",
+   "numero": 6,
+   "estado": "idea",
+   "carpeta": "shots/ia-06-panda",
+   "rama": "claude/igualar-ia",
+   "fecha": "2026-10-28",
+   "fuentes": [],
+   "derivados": []
+  }
+ ]
+}
