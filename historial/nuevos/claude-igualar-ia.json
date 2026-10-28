@@ -24,7 +24,7 @@
    "titulo": "La prueba de Turing: la gente creyó que GPT-4.5 (con personaje) era el humano 73 % de las veces (Jones y Bergen, PNAS 2026)",
    "serie": "Shot IA",
    "numero": 7,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/ia-07-turing",
    "rama": "claude/igualar-ia",
    "fecha": "2026-10-28",
@@ -36,6 +36,27 @@
     "ELIZA (1966): el primer chatbot y el efecto ELIZA",
     "Cómo saber si chateas con una IA: estrategias que sí funcionan",
     "Las voces clonadas y las llamadas falsas"
+   ]
+  },
+  {
+   "id": "ia-mamografias-masai",
+   "titulo": "IA en las mamografías: 44 % menos lecturas y más cáncer encontrado (ensayo MASAI, Suecia: 6.4 vs 5.0 por mil; Lancet 2026)",
+   "serie": "Shot IA",
+   "numero": 8,
+   "estado": "guion",
+   "carpeta": "shots/ia-08-mamografias",
+   "rama": "claude/igualar-ia",
+   "fecha": "2026-10-28",
+   "fuentes": [
+    "Lång et al., Lancet Oncol 24:936–944 (2023): escala 1–10, lectura simple 1–9 y doble 10",
+    "Hernström et al., Lancet Digit Health 7:e175–e183 (2025): 105,934 mujeres, 6.4 vs 5.0 por mil, −44.2 % lecturas",
+    "Gommers et al., Lancet 407:505–514 (2026): cánceres de intervalo 1.55 vs 1.76 por mil",
+    "MedlinePlus: Mamografía"
+   ],
+   "derivados": [
+    "La IA que lee radiografías de tórax para tuberculosis (OMS)",
+    "Retinopatía diabética: la IA que revisa el fondo de ojo",
+    "¿Quién es responsable si la IA médica se equivoca?"
    ]
   }
  ]

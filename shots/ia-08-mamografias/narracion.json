@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Mamografias base narrada.dc.html",
+  "salida": "Shot Mamografias narrado.dc.html",
+  "nota": "Shot IA #08. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Con ayuda de una IA, los radiólogos leyeron cuarenta y cuatro por ciento menos mamografías. Y encontraron más cáncer, no menos."
+    },
+    {
+      "escena": "Mamo",
+      "texto": "Una mamografía es una radiografía de la mama para buscar cáncer a tiempo."
+    },
+    {
+      "escena": "Doble",
+      "texto": "En Suecia, cada una la revisan dos radiólogos."
+    },
+    {
+      "escena": "Triage",
+      "texto": "Aquí, una IA calificó cada estudio del uno al diez: del uno al nueve lo leyó un radiólogo; los de diez, dos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿No se les escaparía más cáncer?"
+    },
+    {
+      "escena": "Numero",
+      "texto": "Al revés: con IA encontraron seis punto cuatro cánceres por cada mil mujeres; sin IA, cinco."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Fueron más de cien mil mujeres en el sur de Suecia, y lo dirigió Kristina Lång, de la Universidad de Lund."
+    },
+    {
+      "escena": "Chicos",
+      "texto": "Los de más eran sobre todo pequeños, sin llegar a los ganglios. Y las falsas alarmas quedaron casi iguales."
+    },
+    {
+      "escena": "Intervalo",
+      "texto": "En 2026 salió el dato principal: los cánceres que aparecen entre una revisión y la siguiente no aumentaron con IA."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: se probó en cuatro centros de Suecia y con un solo programa de IA."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "La IA no reemplazó a nadie: menos lecturas para los médicos y más cánceres hallados a tiempo."
+    }
+  ]
+}
