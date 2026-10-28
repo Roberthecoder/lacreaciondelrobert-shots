@@ -1,0 +1,19 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Monarca base narrada.dc.html",
+  "salida": "Shot Monarca narrado.dc.html",
+  "nota": "Shot Ambiental #07. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Todas las colonias de mariposa monarca del invierno pasado en México caben en unas cuatro canchas de fútbol." },
+    { "escena": "Viaje", "texto": "Vuelan desde el sur de Canadá y Estados Unidos hasta los bosques de Michoacán y el Estado de México." },
+    { "escena": "Racimos", "texto": "Ahí se amontonan en los árboles: en cada hectárea caben unos veinte millones." },
+    { "escena": "Cifra", "texto": "Ocuparon 2.93 hectáreas: sesenta y cuatro por ciento más que el invierno anterior." },
+    { "escena": "Antes", "texto": "Suena bien, pero en el invierno de 1996 ocupaban más de dieciocho." },
+    { "escena": "Pregunta", "texto": "¿Qué les pasó?" },
+    { "escena": "Algodoncillo", "texto": "Sus orugas comen algodoncillo, y en sus zonas de cría los herbicidas lo han ido acabando." },
+    { "escena": "Clima", "texto": "Además les pega el cambio climático, y en su bosque, en un año, la tala, un incendio y la sequía dañaron 2.55 hectáreas." },
+    { "escena": "Estudio", "texto": "Esto lo mide cada invierno, desde 2004, la CONANP junto con WWF, colonia por colonia." },
+    { "escena": "Meta", "texto": "Los científicos calculan que para estar estables necesitan unas seis hectáreas: el doble de hoy." },
+    { "escena": "Cierre", "texto": "Así que cuatro canchas suena a mucho, hasta que recuerdas que antes eran veinticinco." }
+  ]
+}

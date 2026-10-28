@@ -5,7 +5,7 @@
    "titulo": "El agujero de ozono se está cerrando: Mario Molina, los CFC y el Protocolo de Montreal (99 % eliminado, recuperación 2040/2066)",
    "serie": "Shot Ambiental",
    "numero": 5,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/amb-05-ozono",
    "rama": "claude/igualar-ambiental",
    "fuentes": [
@@ -16,7 +16,11 @@
     "UNEP Ozone Secretariat, Montreal Protocol"
    ],
    "fecha": "2026-10-28",
-   "derivados": []
+   "derivados": [
+    "El aerosol de los HFC: el reemplazo de los CFC que calienta el planeta (Enmienda de Kigali)",
+    "Mario Molina y el aire de la Ciudad de México (su trabajo en calidad del aire)",
+    "Por qué los rayos UV-B sí llegan y cómo te protege el ozono (índice UV)"
+   ]
   },
   {
    "id": "hundimiento-cdmx-nisar",
@@ -29,6 +33,23 @@
    "fuentes": [
     "NASA JPL 29 abr 2026, US-Indian Space Mission Maps Extreme Subsidence in Mexico City",
     "Yaemsiri et al. 2010, PMID 19744178"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": []
+  },
+  {
+   "id": "monarca-canchas-2025-2026",
+   "titulo": "Todas las colonias de mariposa monarca caben en unas 4 canchas de fútbol: 2.93 ha en 2025-2026 contra 18.19 ha en 1996-1997",
+   "serie": "Shot Ambiental",
+   "numero": 7,
+   "estado": "guion",
+   "carpeta": "shots/amb-07-monarca",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "WWF/CONANP Monitoreo Mariposa Monarca 2025-2026",
+    "WWF/UNAM cambio forestal RBMM 2024-2025",
+    "PMC13027080 (2026)",
+    "FIFA Stadium Guidelines 5.3"
    ],
    "fecha": "2026-10-28",
    "derivados": []
