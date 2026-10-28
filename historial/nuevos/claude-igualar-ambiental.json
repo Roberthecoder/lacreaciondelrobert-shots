@@ -27,7 +27,7 @@
    "titulo": "La Ciudad de México se hunde: 14 escalones del Ángel y más de 2 cm por mes (NISAR, NASA-ISRO, 2026)",
    "serie": "Shot Ambiental",
    "numero": 6,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/amb-06-hundimiento",
    "rama": "claude/igualar-ambiental",
    "fuentes": [
@@ -35,7 +35,11 @@
     "Yaemsiri et al. 2010, PMID 19744178"
    ],
    "fecha": "2026-10-28",
-   "derivados": []
+   "derivados": [
+    "El Metro de la CDMX y el hundimiento: por qué la Línea 12 y otras se deforman",
+    "Recarga de acuíferos: cómo meter agua de lluvia al subsuelo",
+    "Otras ciudades de México que se hunden por bombeo (Aguascalientes, Celaya, Morelia)"
+   ]
   },
   {
    "id": "monarca-canchas-2025-2026",
@@ -50,6 +54,22 @@
     "WWF/UNAM cambio forestal RBMM 2024-2025",
     "PMC13027080 (2026)",
     "FIFA Stadium Guidelines 5.3"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": []
+  },
+  {
+   "id": "vaquita-dedos-2025",
+   "titulo": "Las vaquitas que se vieron en 2025 caben en tus dedos: entre 7 y 10, con crías (Frida); 567 en 1997 y 59 en 2015",
+   "serie": "Shot Ambiental",
+   "numero": 8,
+   "estado": "guion",
+   "carpeta": "shots/amb-08-vaquita",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "Informe del Crucero de Observación Vaquita Marina 2025 (IUCN-CSG, feb 2026)",
+    "NOAA Fisheries, Vaquita",
+    "NOAA SWFSC Abundance and Trends"
    ],
    "fecha": "2026-10-28",
    "derivados": []
