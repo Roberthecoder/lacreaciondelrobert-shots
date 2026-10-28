@@ -51,7 +51,12 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   (verificación de Instagram/Facebook) antes de que se renueve y cobre. Lo pidió el 28 oct.
 - API de Meta en curso (28 oct): app "La Creación del Robert" (id 1845140663182541) con casos de uso Threads, Instagram y Página.
   Instagram ya es profesional (Creador). Página de Facebook creada: «La Creación del Robert» (id 61595680034985,
-  categoría Ciencia, tecnología e ingeniería). Siguiente: vincular Instagram a la página y sacar los tokens. Sitio con privacidad y términos: https://roberthecoder.github.io/lacreaciondelrobert-shots/
+  categoría Ciencia, tecnología e ingeniería), vinculada a Instagram @lacreaciondelrobert. Portfolio comercial
+  Roberto_Carlos_Navarro_Félix (business_id 1887909712212294) con la app conectada. Usuario del sistema "Publicator"
+  (id 61595818058996, admin) con la página asignada (acceso total). Faltaba (28 oct, noche): dar control total de Instagram y de
+  la app a Publicator, generar su token sin caducidad → secreto de GitHub META_SYSTEM_TOKEN, y correr el workflow
+  "Probar conexión con Meta (solo lectura)". Luego Threads (token propio de 60 días), YouTube, LinkedIn y TikTok.
+  Robert lo va a continuar con el Claude de su computadora (prompt entregado el 28 oct). Sitio con privacidad y términos: https://roberthecoder.github.io/lacreaciondelrobert-shots/
   Tokens y claves: SIEMPRE como secretos de GitHub, nunca en el chat.
 - Comprar créditos de ElevenLabs.
 - Pedir acceso a las API de redes (se le dio un PDF con instrucciones el 28 oct).
