@@ -42,4 +42,27 @@ Verificador independiente (subagente que no escribió el guion), 28 oct 2026. sc
 
 Afirmaciones revisadas: 18 · corregidas: 9 · quitadas: 0.
 
+## Verificación independiente (28 oct 2026)
+
+Un segundo verificador (otro agente, que no escribió el guion) abrió las fuentes. Resultado: **NO PASA** por la frase del carbón.
+
+**Lo que se marcó:**
+- ❌ «O sea: parte del carbón más antiguo podría ser plantas que ningún hongo se comió.» — "más antiguo" es falso (hay carbón más viejo que el Carbonífero, del Devónico) y la idea contradice a Nelsen et al. 2016 (PNAS), que rechaza que el carbón se deba a que los hongos aún no rompían la lignina.
+- ⚠️ Subtítulo del cierre «Todo regresa a la tierra: gracias a un hongo.» — con la madera también ayudan bacterias e insectos; la voz ya decía «quien más ayuda es un hongo».
+- ⚠️ `publicacion.md` (Facebook y X): la fecha de ~290 millones de años se daba sin decir que se discute.
+
+**Cómo se corrigió:**
+- Voz: «O sea: el carbón se formó en pantanos tan empapados que las plantas casi no se pudrían.» · chip «pantanos empapados: casi no se pudren» · subtítulo «Pantanos empapados: *casi no se pudren.*».
+- Subtítulo del cierre: «Con la madera, *quien más ayuda es un hongo.*».
+- Facebook y X: «…hace unos 290 millones de años (fecha que otros estudios discuten)».
+
+**Re-verificación de las frases nuevas** (abiertas por la sesión que corrigió):
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| "el carbón se formó en pantanos tan empapados…" | ✅ | Nelsen MP, DiMichele WA, Peters SE, Boyce CK. *PNAS* 113(9):2442–2447 (resumen en Europe PMC, PMID 26787881) | "Paleozoic coal abundance was likely the result of a unique combination of everwet tropical conditions and extensive depositional systems during the assembly of Pangea." | 2016 |
+| "…que las plantas casi no se pudrían" | ✅ | Comunicado de la Universidad de Stanford sobre Nelsen et al. (ScienceDaily, 20 ene 2016): https://www.sciencedaily.com/releases/2016/01/160120143005.htm | "massive amounts of organic debris accumulated in warm, humid equatorial wetlands." / "you also need some way to prevent that plant matter from decaying. Where that happens is in wet environments" (C. Kevin Boyce) | 2016 |
+| "Con la madera, quien más ayuda es un hongo" (subtítulo, igual que la voz) | ✅ | Floudas et al. 2012, *Science* (resumen) | "The only organisms capable of substantial lignin decay are white rot fungi in the Agaricomycetes" | 2012 |
+| "(fecha que otros estudios discuten)" | ✅ | Nelsen et al. 2016 (resumen) | "Lignin-degrading Agaricomycetes may have been present before the Carboniferous" | 2016 |
+
 VEREDICTO: APROBADO

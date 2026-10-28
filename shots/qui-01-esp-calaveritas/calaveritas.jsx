@@ -314,17 +314,28 @@ function Calaveritas() {
           <g opacity={1 - kprog(T, K.E + 1.4, K.E + 2.0)}><Microscopio x={540} y={1000} s={1.4} /></g>
         </>)}
       </Escena>
-      {/* 10 · grumos: si se mueve muy caliente, cristales grandes */}
+      {/* 10 · espumado: el artesano bate la miel en su punto para que cristalice y la vacía al molde (México Desconocido) */}
       <Escena T={T} a={K.Gr} b={K.Da}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
-          <rect x={40} y={760} width={480} height={420} rx={30} fill="rgba(255,255,255,.5)" stroke={KC.ink} strokeWidth={7} />
-          <rect x={560} y={760} width={480} height={420} rx={30} fill="rgba(255,255,255,.5)" stroke={KC.ink} strokeWidth={7} />
-          <rect x={60} y={790} width={440} height={370} rx={22} fill={AMBAR} opacity=".7" /><rect x={580} y={790} width={440} height={370} rx={22} fill={AMBAR} opacity=".7" />
-          <Grano T={T} x={280} y={975} k={0} crece={kprog(T, K.Gr + 0.6, K.Gr + 2.0)} />
-          <Grano T={T} x={800} y={975} k={1} crece={kprog(T, K.Gr + 1.6, K.Gr + 4.0)} />
-          <Cuchara T={T} x={860} y={980} gira={1 - kprog(T, K.Gr + 4.4, K.Gr + 5.0)} />
-        </>)}
+        {svg((() => {
+          const bate = 1 - kprog(T, K.Gr + 2.8, K.Gr + 3.2), vac = kprog(T, K.Gr + 3.0, K.Gr + 3.8, kEase.suave);
+          const cristaliza = kprog(T, K.Gr + 1.0, K.Gr + 3.0), espuma = kprog(T, K.Gr + 0.5, K.Gr + 1.3) * bate, g = krng(21);
+          return <>
+            <g opacity={kprog(T, K.Gr + 2.9, K.Gr + 3.3)}><Molde x={280} y={900} s={0.5} /></g>
+            {vac > 0.6 && <path d={`M 420 690 Q 360 700 ${klerp(330, 300, vac)} ${klerp(730, 790, kprog(T, K.Gr + 3.4, K.Gr + 3.9))}`} stroke="#f6e3b8" strokeWidth={22} fill="none" strokeLinecap="round" />}
+            <g transform={`translate(${klerp(620, 640, vac)} ${klerp(820, 700, vac)}) rotate(${klerp(0, -35, vac)}) scale(0.9)`}>
+              <rect x={190} y={-30} width={210} height={30} rx={14} fill="#6b4226" stroke={KC.ink} strokeWidth={6} />
+              <path d="M -210 -60 L 210 -60 L 180 150 Q 0 190 -180 150 Z" fill={COBRE} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+              <path d="M -180 -20 L 170 -20" stroke="#e08b57" strokeWidth={8} opacity=".7" />
+              <ellipse cx={0} cy={-60} rx={210} ry={40} fill={AMBAR} stroke={KC.ink} strokeWidth={8} />
+              {/* al batirla, la miel se pone opaca y blanquecina: empieza a cristalizar */}
+              <ellipse cx={0} cy={-60} rx={204} ry={36} fill={AZUCAR} opacity={0.75 * cristaliza} />
+              {Array.from({ length: 16 }, (_, i) => { const bx = (g() - 0.5) * 360, by = -60 + (g() - 0.5) * 44, r0 = 8 + g() * 12;
+                return <circle key={i} cx={bx + Math.sin(T * 9 + i) * 6} cy={by} r={r0 * (0.8 + 0.2 * Math.sin(T * 7 + i))} fill="#fffaf0" stroke={KC.ink} strokeWidth={2} opacity={espuma} />; })}
+              {bate > 0 && <g opacity={bate}><Cuchara T={T} x={0} y={-50} gira={1.6 * bate} /></g>}
+            </g>
+          </>;
+        })())}
       </Escena>
       {/* 11 · reposa un día y se decora */}
       <Escena T={T} a={K.Da} b={K.Ci}>
@@ -364,15 +375,14 @@ function Calaveritas() {
       <Chip T={T} at={K.Co + 4.0} until={K.E - 0.3} texto="queda hueca" x={540} y={1600} tam={48} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="1747" quien="Andreas Marggraf · Berlín" revista="azúcar de remolacha al microscopio" x={360} y={560} />
       <Chip T={T} at={K.E + 3.2} until={K.Gr - 0.3} texto="los mismos cristales" x={400} y={560} tam={44} borde={KC.ink} />
-      <Etq T={T} at={K.Gr + 0.5} until={K.Da - 0.3} x={60} y={720} texto="quieto: liso" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Gr + 1.4} until={K.Da - 0.3} x={580} y={720} texto="se mueve muy caliente" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Gr + 3.4} until={K.Da - 0.3} texto="cristales grandes = grumos" x={540} y={1520} tam={44} borde={KC.red} />
+      <Etq T={T} at={K.Gr + 3.2} until={K.Da - 0.3} x={60} y={680} texto="al molde" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Gr + 0.8} until={K.Da - 0.3} texto="espumado: se bate para que cristalice" x={540} y={1520} tam={38} borde={KC.ink} />
       <Cronometro T={T} at={K.Da + 0.2} until={K.Da + 2.7} factor={86400 / 2.3} x={360} y={500} etiqueta="REPOSO" />
       <Chip T={T} at={K.Da + 2.8} until={K.Ci - 0.3} texto="betún + papel brillante" x={540} y={1540} tam={44} borde={KC.pink} />
       <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="no es yeso: es cristal" x={400} y={500} tam={44} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Hi - 0.1} texto="No es yeso: *es azúcar en cristales.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Hi - 0.1} texto="No es yeso: *es azúcar acomodada en cristales.*" />
       <Subtitulo T={T} idx={1} at={K.Hi + 0.1} until={K.Ca - 0.1} texto="Azúcar y agua *hasta que espesa.*" />
       <Subtitulo T={T} idx={2} at={K.Ca + 0.1} until={K.Mo - 0.1} texto="Hirviendo se disuelve *más del doble.*" />
       <Subtitulo T={T} idx={3} at={K.Mo + 0.1} until={K.So - 0.1} texto="A moldes de *barro fríos.*" />
@@ -381,7 +391,7 @@ function Calaveritas() {
       <Subtitulo T={T} idx={6} at={K.Cr + 0.1} until={K.Co - 0.1} texto="Se acomoda en filas: *un cristal.*" />
       <Subtitulo T={T} idx={7} at={K.Co + 0.1} until={K.E - 0.1} texto="Cuaja en la orilla: *queda hueca.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.Gr - 0.1} texto="1747: remolacha y caña, *el mismo cristal.*" />
-      <Subtitulo T={T} idx={9} at={K.Gr + 0.1} until={K.Da - 0.1} texto="Si se mueve caliente: *grumos.*" />
+      <Subtitulo T={T} idx={9} at={K.Gr + 0.1} until={K.Da - 0.1} texto="La bate en su punto: *cristaliza.*" />
       <Subtitulo T={T} idx={10} at={K.Da + 0.1} until={K.Ci - 0.1} texto="Reposa un día *y se decora.*" />
       <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Azúcar ordenada, *molécula por molécula.*" />
 
@@ -392,7 +402,7 @@ function Calaveritas() {
         [CUES.Pregunta + 0.05, CUES.Cristal + 1.2, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Costra + 3.2, CUES.Estudio - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Estudio + 0.8, CUES.Grumos - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [CUES.Grumos + 0.5, CUES.Dato - 0.2, 'avatar_10_serio_molesto', 'izq-alto'],
+        [CUES.Grumos + 0.5, CUES.Dato - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Dato + 0.4, CUES.Dato + 3.6, 'avatar_03_aburrido_manos_mejillas', 'arriba-der'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="quimica" num="01" hasta={K.Ou} />

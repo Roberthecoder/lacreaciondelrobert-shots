@@ -310,7 +310,7 @@ function Podredumbre() {
       <Chip T={T} at={K.C + 0.3} until={K.D - 0.2} texto="HIPÓTESIS" y={420} tam={46} borde={KC.yellow} />
       <Etq T={T} at={K.C + 3.8} until={K.D - 0.2} x={60} y={1150} texto="carbón" tam={34} color={KC.texto} />
       <Chip T={T} at={K.C + 4.6} until={K.D - 0.2} texto="2016: en duda" x={360} y={560} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.D + 0.6} until={K.Ci - 0.2} texto="¿plantas que nadie se comió?" y={420} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.D + 0.6} until={K.Ci - 0.2} texto="pantanos empapados: casi no se pudren" y={420} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.D + 1.4} until={K.Ci - 0.2} x={40} y={1170} texto="huella de planta (esquemática)" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Ci + 3.4} until={K.Ou} texto="todo regresa a la tierra" x={370} y={470} tam={38} borde={KC.orange} />
 
@@ -325,8 +325,8 @@ function Podredumbre() {
       <Subtitulo T={T} idx={7} at={K.Es + 0.1} until={K.R - 0.1} texto="2012: *31 hongos* en Science." />
       <Subtitulo T={T} idx={8} at={K.R + 0.1} until={K.C - 0.1} texto="Hace unos *290 millones de años.*" />
       <Subtitulo T={T} idx={9} at={K.C + 0.1} until={K.D - 0.1} texto="Hipótesis: *troncos que se volvieron carbón.*" />
-      <Subtitulo T={T} idx={10} at={K.D + 0.1} until={K.Ci - 0.1} texto="¿Carbón de plantas *que nadie se comió?*" />
-      <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Todo regresa a la tierra: *gracias a un hongo.*" />
+      <Subtitulo T={T} idx={10} at={K.D + 0.1} until={K.Ci - 0.1} texto="Pantanos empapados: *casi no se pudren.*" />
+      <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Con la madera, *quien más ayuda es un hongo.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.0, 'avatar_11_sorprendido', 'gancho'],

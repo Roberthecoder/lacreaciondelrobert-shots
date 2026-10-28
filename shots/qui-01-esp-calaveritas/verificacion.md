@@ -30,4 +30,26 @@ Nota: las cifras de solubilidad (204 g y 487 g por 100 mL) son datos de manual; 
 
 Afirmaciones revisadas: 12 · corregidas: 4 · quitadas: 0.
 
+## Verificación independiente (28 oct 2026)
+
+Un segundo verificador (otro agente, que no escribió el guion) abrió las fuentes. Resultado: **NO PASA** por la frase de los grumos.
+
+**Lo que se marcó:**
+- ❌ «Si el jarabe se mueve cuando todavía está muy caliente, los cristales crecen grandes y queda grumoso.» — viene de una receta de *fudge* (Exploratorium), no de calaveritas, y contradice la fuente del propio shot: en las calaveritas el artesano **bate** la miel a propósito para que cristalice (el "espumado", México Desconocido).
+- ⚠️ Gancho «es azúcar que se acomodó **sola** en cristales» — "sola" choca con que el artesano la bate para que cristalice.
+
+**Cómo se corrigió:**
+- Voz: «El artesano bate la miel en el punto justo para que cristalice, y luego la vacía al molde.» · se quitaron los paneles «quieto: liso» / «se mueve muy caliente» y el chip «cristales grandes = grumos»; ahora una cuchara bate la miel en el cazo, sale espuma, la miel se pone blanquecina y se vacía al molde · chip «espumado: se bate para que cristalice» · subtítulo «La bate en su punto: *cristaliza.*».
+- Gancho y su subtítulo: «Esta calavera no es de yeso: es azúcar acomodada en cristales.» (el cierre «se ordenó, molécula por molécula» se queda).
+- `publicacion.md`: fuera los grumos y la fuente del Exploratorium en todas las redes y en el comentario fijado; el espumado entra en TikTok, Instagram, YouTube, LinkedIn y el comentario fijado.
+
+**Re-verificación de las frases nuevas** (abiertas por la sesión que corrigió):
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| "El artesano bate la miel en el punto justo para que cristalice, y luego la vacía al molde." | ✅ | México Desconocido, "Calaveras de azúcar": https://www.mexicodesconocido.com.mx/calaveras-de-azucar.html | "El artesano sabe calcular muy bien el punto en que la miel está lista para ser “espumada” —es decir, batida rápidamente para que logre cristalizar— y vaciada en los moldes que son generalmente de barro" | s/f (consulta 28 oct 2026) |
+| "Esta calavera no es de yeso: es azúcar acomodada en cristales." | ✅ | ídem · Wikipedia, "Sucrose" (ya verificada arriba) | "batida rápidamente para que logre cristalizar" / "Sucrose crystallizes in the monoclinic space group P21." | s/f |
+
+Se quitó del shot la fuente del Exploratorium (receta de fudge).
+
 VEREDICTO: APROBADO

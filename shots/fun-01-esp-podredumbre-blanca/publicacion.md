@@ -54,7 +54,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Este tronco está muerto, pero no está solo: un hongo se lo está comiendo. 🍄🕯️ Los hongos de podredumbre blanca rompen la lignina de la madera y la regresan a la tierra como suelo, agua y CO₂. Un estudio de 2012 sugiere que aprendieron a hacerlo hace unos 290 millones de años.
+Este tronco está muerto, pero no está solo: un hongo se lo está comiendo. 🍄🕯️ Los hongos de podredumbre blanca rompen la lignina de la madera y la regresan a la tierra como suelo, agua y CO₂. Un estudio de 2012 sugiere que aprendieron a hacerlo hace unos 290 millones de años (fecha que otros estudios discuten).
 ¿Qué pones tú en tu ofrenda? 👇
 Shot Fungi Mati #01 · Especial Día de Muertos · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -74,7 +74,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Este tronco está muerto, pero no está solo: un hongo se lo está comiendo. 🍄 Los hongos de podredumbre blanca rompen la lignina de la madera; un estudio de 2012 sugiere que aprendieron hace ~290 millones de años. Shot Fungi Mati #01 #DiaDeMuertos #FungiMati
+Este tronco está muerto, pero no está solo: un hongo se lo está comiendo. 🍄 Los hongos de podredumbre blanca rompen la lignina; un estudio de 2012 sugiere que aprendieron hace ~290 millones de años (fecha que otros estudios discuten). Shot Fungi Mati #01 #DiaDeMuertos #FungiMati
 ```
 
 ### Threads

@@ -125,7 +125,7 @@ function Chispas({ T, x, y, o = 1 }) {
 }
 
 // Caras de StyleGAN (la IA en la que se apoya PULSE): casi siempre de piel clara. Esquemático.
-const PIELES = ['#f1c6a6', '#efc09c', '#f3cdb2', '#eab894', '#f0c4a2', '#8a5a3c', '#f2c8a8', '#ecbd99', '#f4d0b6', '#e9b690', '#6b4430', '#f0c3a0'];
+const PIELES = ['#f1c6a6', '#efc09c', '#9a6646', '#eab894', '#f0c4a2', '#8a5a3c', '#f2c8a8', '#ecbd99', '#f4d0b6', '#e9b690', '#6b4430', '#f0c3a0'];
 const PELOS = ['#3a2a1c', '#c9a050', '#1d1410', '#7a4a22', '#3a2a1c', '#1d1410', '#d8b060', '#5a3a1c', '#3a2a1c', '#1d1410', '#1d1410', '#a06030'];
 
 function FotosOfrenda() {
@@ -196,7 +196,7 @@ function FotosOfrenda() {
           <g opacity={kprog(T, K.Ob + 2.2, K.Ob + 2.8)}><CaraSimple x={820} y={900} s={1.0} piel="#f3cdb2" pelo="#7a4a22" ojos="#2f6dff" fondo="#9cc7d9" sonrisa={0.3} /></g>
         </>)}
       </Escena>
-      {/* 9 · se apoyaba en otra IA que casi siempre generaba caras blancas */}
+      {/* 9 · se apoyaba en otra IA que generaba sobre todo caras blancas (unas 9 de 12 claras) */}
       <Escena T={T} a={K.Se} b={K.Da}>
         <FondoCircuito T={T} color={KC.lilac} />
         {svg(PIELES.map((p, i) => { const at = K.Se + 0.6 + i * 0.22, e = kprog(T, at, at + 0.3, kEase.rebote); const c = i % 4, r = Math.floor(i / 4);
@@ -246,7 +246,7 @@ function FotosOfrenda() {
       <Etq T={T} at={K.Ob + 2.6} until={K.Se - 0.3} x={1040} y={1065} texto="cara inventada" lado="izq" tam={28} color={KC.yellow} />
       <Chip T={T} at={K.Ob + 3.0} until={K.Se - 0.3} texto="2020: le devolvió un hombre blanco" y={1140} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Se + 0.2} until={K.Da - 0.3} texto="la IA de apoyo (StyleGAN)" y={470} tam={38} borde={KC.lilac} />
-      <Etq T={T} at={K.Se + 3.4} until={K.Da - 0.3} x={60} y={1170} texto="casi siempre: caras blancas" tam={32} color={KC.yellow} />
+      <Etq T={T} at={K.Se + 3.4} until={K.Da - 0.3} x={60} y={1170} texto="sobre todo: caras blancas" tam={32} color={KC.yellow} />
       <Chip T={T} at={K.Da + 0.2} until={K.Or - 0.3} texto="menos información = más relleno" x={660} y={470} tam={34} borde={KC.cyan} />
       <Etq T={T} at={K.Da + 3.0} until={K.Or - 0.3} x={545} y={1060} texto="la misma foto borrosa" lado="izq" tam={28} />
       <Etq T={T} at={K.Or + 0.8} until={K.C - 0.3} x={120} y={1130} texto="original" tam={30} color={KC.ink} />
@@ -263,7 +263,7 @@ function FotosOfrenda() {
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.E - 0.1} texto="¿Y si *adivina mal?*" />
       <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.Ob - 0.1} texto="PULSE *inventa una cara.*" />
       <Subtitulo T={T} idx={7} at={K.Ob + 0.1} until={K.Se - 0.1} texto="Obama → *un hombre blanco.*" />
-      <Subtitulo T={T} idx={8} at={K.Se + 0.1} until={K.Da - 0.1} texto="Su IA de apoyo: *casi siempre caras blancas.*" />
+      <Subtitulo T={T} idx={8} at={K.Se + 0.1} until={K.Da - 0.1} texto="Su IA de apoyo: *sobre todo caras blancas.*" />
       <Subtitulo T={T} idx={9} at={K.Da + 0.1} until={K.Or - 0.1} texto="Más daño: *más relleno.*" />
       <Subtitulo T={T} idx={10} at={K.Or + 0.1} until={K.C - 0.1} texto="Guarda *la original.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Es lo que la IA *cree que era.*" />
