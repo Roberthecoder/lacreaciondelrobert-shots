@@ -10,6 +10,16 @@ Fecha: 28 oct 2026. **Quién verificó:** en esta sesión no había herramienta 
 | "Por un pez de su mismo tamaño" | ⚠️ | NOAA dice "similar in size". Se cambió a "de tamaño parecido". |
 | "El conteo más reciente fue en septiembre de 2025" | ⚠️ | En mayo de 2026 hubo una campaña de capacitación con avistamientos (no es un conteo) y la estimación de abundancia prometida para 2026 no se encontró publicada. Se cambió a "El último conteo completo publicado". |
 
+
+## Verificación independiente (28 oct 2026)
+
+Otro agente que no escribió el guion revisó este shot abriendo las fuentes primarias. Lo que marcó y cómo se corrigió (las filas de la tabla final ya tienen la versión corregida, con su fuente, frase textual y año):
+
+| Afirmación (versión anterior) | Veredicto | Qué se hizo |
+|---|---|---|
+| "y los científicos no ven razón para que no puedan recuperarse" | ⚠️ | El informe pone una condición: "si se elimina la mortalidad en redes agalleras". Se cambió a "creen que pueden recuperarse si se quitan las redes". |
+| "Casi siempre están donde pusieron bloques…" | ⚠️ | El informe dice "la mayor parte de su tiempo" y en mayo de 2025 el 80 % de los avistamientos fue dentro de la zona de bloques; en mayo de 2026 los 3 avistamientos fueron fuera (porpoise.org, oct 2026). Se cambió a "En 2025, casi todas estaban donde pusieron bloques…". |
+
 ## Versión final
 
 | Afirmación | Veredicto | Fuente | Frase textual | Año del dato |
@@ -28,8 +38,8 @@ Fecha: 28 oct 2026. **Quién verificó:** en esta sesión no había herramienta 
 | Binoculares gigantes (pantalla: 25 aumentos) | ✅ | Informe 2025 | "tres pares de binoculares de 25 aumentos (bigeyes)" | 2025 |
 | Micrófonos bajo el agua (pantalla: detectores acústicos) | ✅ | Informe 2025 | "se registraron 93 encuentros acústicos de vaquitas en 24 de los 66 sitios" (detectores acústicos) | 2025 |
 | Vieron crías; una es de Frida, con la aleta doblada | ✅ | Informe 2025 | "se observaron al menos una o dos crías. La madre de una de ellas es conocida como Frida; tiene la aleta dorsal doblada" | 2025 |
-| Casi siempre están donde pusieron bloques de concreto con ganchos que atrapan las redes | ✅ | Informe 2025 | "bloques de concreto con ganchos diseñados para atrapar las redes agalleras" · "la investigación de 2025 confirma que las vaquitas pasan la mayor parte de su tiempo dentro de esta [ZTC]" | 2025 |
-| Siguen teniendo crías, y los científicos no ven razón para que no puedan recuperarse | ✅ | Informe 2025 | "no hay razón para creer que las vaquitas no podrían recuperarse" | 2025 |
+| En 2025, casi todas estaban donde pusieron bloques de concreto con ganchos que atrapan las redes (subtítulo: "En 2025: casi todas junto a los bloques") | ✅ | Informe 2025 | "bloques de concreto con ganchos diseñados para atrapar las redes agalleras" · (mayo 2025) "Los avistamientos … se ubicaron en un 80 % dentro del AE más la ZTA y en un 20 % fuera del área protegida por los bloques con ganchos" · "la investigación de 2025 confirma que las vaquitas pasan la mayor parte de su tiempo dentro de esta" | 2025 |
+| Siguen teniendo crías, y los científicos creen que pueden recuperarse si se quitan las redes (pantalla: "pueden recuperarse si se quitan las redes") | ✅ | Informe 2025 | "no hay razón para creer que las vaquitas no podrían recuperarse si se elimina la mortalidad en redes agalleras" · "recuperación incluso a partir de una población tan pequeña como diez individuos, pero solo si se elimina la mortalidad en redes agalleras" | 2025 |
 | Pantalla: regla "≈ 1.5 m" y escala "50 cm" (vaquita dibujada de 355 px por s) | ✅ | NOAA (5 pies) | 1.5 m = 355·s px → 50 cm = 118·s px | — |
 
 Dibujos esquemáticos (no afirman datos): manos, vaquitas, totoaba con su vejiga, red, barcos, detectores y bloques.

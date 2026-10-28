@@ -172,10 +172,10 @@ function MonarcaShot() {
       <Subtitulo T={T} idx={4} at={K.A + 0.1} until={K.P - 0.1} texto="En 1996: *más de 18.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.05} until={K.Al - 0.1} texto="¿Qué *les pasó?*" />
       <Subtitulo T={T} idx={6} at={K.Al + 0.1} until={K.Cl - 0.1} texto="Sus orugas comen *algodoncillo.*" />
-      <Subtitulo T={T} idx={7} at={K.Cl + 0.1} until={K.E - 0.1} texto="Clima, tala, incendio: *2.55 hectáreas.*" />
+      <Subtitulo T={T} idx={7} at={K.Cl + 0.1} until={K.E - 0.1} texto="Tala, incendio, sequía: *2.55 hectáreas.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.M - 0.1} texto="Lo miden *cada invierno desde 2004.*" />
-      <Subtitulo T={T} idx={9} at={K.M + 0.1} until={K.C - 0.1} texto="Para estar estables: *unas 6 hectáreas.*" />
-      <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Hoy 4 canchas; *antes, 25.*" />
+      <Subtitulo T={T} idx={9} at={K.M + 0.1} until={K.C - 0.1} texto="La meta: *unas 6 hectáreas.*" />
+      <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Hoy 4 canchas; *en 1996, 25.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.6, 'avatar_11_sorprendido', 'gancho'],
@@ -184,7 +184,7 @@ function MonarcaShot() {
         [CUES.Pregunta + 0.05, CUES.Algodoncillo + 1.8, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Clima + 0.3, CUES.Clima + 2.1, 'avatar_12_perfil_serio', 'izq-alto'],
         [CUES.Estudio + 0.4, CUES.Meta - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
-        [CUES.Meta + 2.4, CUES.Cierre - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
+        [CUES.Meta + 1.4, CUES.Cierre - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
         [CUES.Cierre + 1.0, CUES.Outro - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der']]} />
       <MarcaAgua T={T} tema="biologia" num="07" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="biologia" robert={'assets/stickers/avatar_02_apuntando_camara.png'} />

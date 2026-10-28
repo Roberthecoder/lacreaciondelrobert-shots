@@ -11,9 +11,9 @@
     { "escena": "Suben", "texto": "Suben, el sol los rompe y sueltan cloro." },
     { "escena": "Pregunta", "texto": "¿Y qué daño hace un poquito de cloro?" },
     { "escena": "Cloro", "texto": "Un solo átomo de cloro puede destruir más de cien mil moléculas de ozono." },
-    { "escena": "Estudio", "texto": "Lo publicó con Sherwood Rowland en 1974; después ganaron el Nobel de Química." },
-    { "escena": "Montreal", "texto": "En 1987 se firmó en Montreal un acuerdo para dejar de fabricarlos." },
-    { "escena": "Noventa", "texto": "Y funcionó: en 2023 ya se había eliminado casi el noventa y nueve por ciento de esos gases." },
+    { "escena": "Estudio", "texto": "Lo publicó con Sherwood Rowland en 1974, y ganaron el Nobel." },
+    { "escena": "Montreal", "texto": "En 1987 se firmó en Montreal un acuerdo para recortarlos, y luego, prohibirlos." },
+    { "escena": "Noventa", "texto": "Y funcionó: para 2023 se había dejado de usar casi el noventa y nueve por ciento de esos gases." },
     { "escena": "Fechas", "texto": "Si seguimos así, volvería a como antes del agujero hacia 2040 en casi todo el mundo, y hacia 2066 en la Antártida." },
     { "escena": "Cierre", "texto": "Ese agujero es la prueba: si le hacemos caso a la ciencia, se arregla." }
   ]

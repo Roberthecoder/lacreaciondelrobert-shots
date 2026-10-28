@@ -5,7 +5,8 @@
 - **Formato:** N4 "La imagen que se llena" (canchas de fútbol que se llenan de mariposas) + N2 "El número" (2.93 ha contra 18.19 ha). Cierre en la misma imagen del inicio, transformada: las 4 canchas de hoy dentro de las 25 de 1996-1997.
 - **Gancho (de los 7):** #3 "Tu vida o tu cuerpo en una imagen" en versión mariposa + #4 "un número que contradice": "Todas las colonias de mariposa monarca del invierno pasado en México caben en unas cuatro canchas de fútbol."
 - **Local:** Michoacán y Estado de México (Reserva de la Biosfera Mariposa Monarca).
-- **Duración:** voz 922 caracteres escritos (≈ 990 hablados) ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → **61.5 s** en la base.
+- **Corrección del 28 oct (verificación independiente):** "meta" de 6 ha en vez de "estables", y el cierre dice "en 1996" (es el récord, no lo normal).
+- **Duración:** voz 900 caracteres escritos (≈ 990 hablados) ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → **61.5 s** en la base.
 - **Cuentas:** cancha FIFA de 105 × 68 m = 0.714 ha → 2.93 ha ≈ 4.1 canchas; 18.19 ha ≈ 25.5 canchas; 6 ÷ 2.93 ≈ 2.05 ("el doble").
 
 ## Versión narrada
@@ -21,8 +22,8 @@
 | 6 | Algodoncillo | Sus orugas comen algodoncillo, y en sus zonas de cría los herbicidas lo han ido acabando. | Planta de algodoncillo (*Asclepias*) con una oruga de rayas; llega un rociador y la planta se marchita. |
 | 7 | Clima | Además les pega el cambio climático, y en su bosque, en un año, la tala, un incendio y la sequía dañaron 2.55 hectáreas. | Termómetro que sube; bosque con tocones cortados y un árbol quemado. "2.55 ha · bosque dañado (feb 2024–feb 2025)"; chip "tala · incendio · sequía". |
 | 8 | Estudio | Esto lo mide cada invierno, desde 2004, la CONANP junto con WWF, colonia por colonia. | Tarjeta "2004 · CONANP + WWF · monitoreo cada invierno, colonia por colonia" junto a un oyamel con mariposas. |
-| 9 | Meta | Los científicos calculan que para estar estables necesitan unas seis hectáreas: el doble de hoy. | Medidor "hoy: 2.93 ha" que llega a la mitad de "meta ≈ 6 ha"; chip "el doble de hoy". |
-| 10 | Cierre | Así que cuatro canchas suena a mucho, hasta que recuerdas que antes eran veinticinco. | **Regreso a las canchas del inicio**: ahora son 25 (lo de 1996-1997) y solo las primeras tienen mariposas. Chip "1996-97: ≈ 25 canchas · hoy: ≈ 4". |
+| 9 | Meta | Los científicos proponen como meta unas seis hectáreas: el doble de hoy. | Medidor "hoy: 2.93 ha" que llega a la mitad de "meta ≈ 6 ha"; chip "el doble de hoy". |
+| 10 | Cierre | Así que cuatro canchas suena a mucho, hasta que recuerdas que en 1996 eran veinticinco. | **Regreso a las canchas del inicio**: ahora son 25 (lo de 1996-1997) y solo las primeras tienen mariposas. Chip "1996-97: ≈ 25 canchas · hoy: ≈ 4". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert apuntando a cámara. |
 
 **Música:** cama grave continua. Efectos: una nota por cada cancha que se llena (4), aleteos, el viaje y la llegada, las barras, el herbicida, el crujido de la tala, el termómetro y un tic por cada cancha vacía que aparece al final.
@@ -34,16 +35,16 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Qué les p
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «caben en unas cuatro canchas» (cuadro 0) |
-| 2 | 12.8 | 16.7 | 13_senalando_arriba | `izq-alto` | señala los racimos del oyamel |
-| 3 | 23.6 | 27.7 | 10_serio_molesto | `arriba-der` | «en 1996 ocupaban más de dieciocho» |
-| 4 | 27.9 | 31.2 | 07_pensativo_puno | `grande` | «¿Qué les pasó?» (grande) |
-| 5 | 35.0 | 36.8 | 12_perfil_serio | `izq-alto` | «el cambio climático» |
-| 6 | 42.0 | 47.1 | 04_bajando_lentes | `izq-alto` | «lo mide cada invierno desde 2004» |
-| 7 | 49.7 | 52.8 | 06_pensativo_menton | `izq-alto` | «el doble de hoy» |
-| 8 | 54.0 | 57.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «antes eran veinticinco» |
+| 2 | 12.7 | 16.7 | 13_senalando_arriba | `izq-alto` | señala los racimos del oyamel |
+| 3 | 23.5 | 27.6 | 10_serio_molesto | `arriba-der` | «en 1996 ocupaban más de dieciocho» |
+| 4 | 27.8 | 31.1 | 07_pensativo_puno | `grande` | «¿Qué les pasó?» (grande) |
+| 5 | 34.9 | 36.7 | 12_perfil_serio | `izq-alto` | «el cambio climático» |
+| 6 | 41.8 | 46.9 | 04_bajando_lentes | `izq-alto` | «lo mide cada invierno desde 2004» |
+| 7 | 48.5 | 51.1 | 06_pensativo_menton | `izq-alto` | «como meta unas seis hectáreas: el doble de hoy» |
+| 8 | 52.3 | 57.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «en 1996 eran veinticinco» |
 | — | 58.0 | 61.5 | 02_apuntando_camara | cierre | `CierreMarca robert=` |
 
-**Total:** 8 apariciones + cierre · **30.0 s** en pantalla (+ 3.5 s de cierre) · 8 poses distintas · grande una vez.
+**Total:** 8 apariciones + cierre · **31.1 s** en pantalla (+ 3.5 s de cierre) · 8 poses distintas · grande una vez.
 
 ## Fuentes (cada cifra se abrió en la fuente el 28 oct 2026)
 

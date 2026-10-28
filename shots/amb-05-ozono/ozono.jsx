@@ -152,7 +152,7 @@ function OzonoShot() {
         <FondoLunares color={KC.cyan} />
         {svg(<Protocolo T={T} a={K.Mo} />)}
       </Escena>
-      {/* 10 · casi el 99 % eliminado */}
+      {/* 10 · casi el 99 % ya no se usa (CFC tachados = dejan de usarse, no que el gas ya se fue) */}
       <Escena T={T} a={K.N} b={K.F}>
         <FondoLunares color={KC.mint} />
         {svg(<g transform="translate(540 960)">{Array.from({ length: 10 }, (_, i) => { const tachado = T > K.N + 1.2 + i * 0.25;
@@ -180,9 +180,9 @@ function OzonoShot() {
       <Chip T={T} at={K.Cl + 0.3} until={K.E - 0.2} texto="1 átomo de cloro" y={430} tam={40} borde={KC.leaf} />
       <NumeroGigante T={T} at={K.Cl + 0.8} until={K.E - 0.2} valor={100000} dur={2.4} prefijo="+" etiqueta="moléculas de ozono destruidas" y={1075} tam={120} color={KC.cyan} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Mo - 0.3} anio="1974" quien="Molina y Rowland" revista="Nature 249: 810–812" x={640} y={640} />
-      <Chip T={T} at={K.E + 3.2} until={K.Mo - 0.3} texto="Nobel de Química 1995" y={1300} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Mo + 2.4} until={K.N - 0.2} texto="dejar de fabricar los CFC" y={1320} tam={38} borde={KC.red} />
-      <NumeroGigante T={T} at={K.N + 0.3} until={K.F - 0.2} valor={99} dur={1.6} sufijo=" %" etiqueta="gases prohibidos eliminados (2023)" x={420} y={620} tam={200} color={KC.yellow} />
+      <Chip T={T} at={K.E + 3.2} until={K.Mo - 0.3} texto="Nobel de Química 1995" y={1440} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Mo + 2.4} until={K.N - 0.2} texto="recortar y luego prohibir los CFC" y={1440} tam={34} borde={KC.red} />
+      <NumeroGigante T={T} at={K.N + 0.3} until={K.F - 0.2} valor={99} dur={1.6} sufijo=" %" etiqueta="gases prohibidos que ya no se usan (2023)" x={420} y={620} tam={200} color={KC.yellow} />
       <Chip T={T} at={K.F + 0.4} until={K.C - 0.2} texto="como antes del agujero (1980)" x={650} y={420} tam={32} borde={KC.mint} />
       <Chip T={T} at={K.F + 2.2} until={K.C - 0.2} texto="2040 · casi todo el mundo" x={660} y={1440} tam={34} borde={KC.cyan} />
       <Chip T={T} at={K.F + 4.6} until={K.C - 0.2} texto="2066 · la Antártida" x={660} y={1530} tam={34} borde={KC.lilac} />
@@ -197,8 +197,8 @@ function OzonoShot() {
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.Cl - 0.1} texto="¿Qué daño hace *un poquito de cloro?*" />
       <Subtitulo T={T} idx={6} at={K.Cl + 0.1} until={K.E - 0.1} texto="1 cloro: *más de 100 mil ozonos.*" />
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.Mo - 0.1} texto="Nature, 1974: *luego, el Nobel.*" />
-      <Subtitulo T={T} idx={8} at={K.Mo + 0.1} until={K.N - 0.1} texto="Montreal, 1987: *dejar de fabricarlos.*" />
-      <Subtitulo T={T} idx={9} at={K.N + 0.1} until={K.F - 0.1} texto="Y funcionó: *casi 99 % eliminado.*" />
+      <Subtitulo T={T} idx={8} at={K.Mo + 0.1} until={K.N - 0.1} texto="Montreal, 1987: *recortarlos y prohibirlos.*" />
+      <Subtitulo T={T} idx={9} at={K.N + 0.1} until={K.F - 0.1} texto="Y funcionó: *casi 99 % ya no se usa.*" />
       <Subtitulo T={T} idx={10} at={K.F + 0.1} until={K.C - 0.1} texto="Hacia 2040 el mundo, *2066 la Antártida.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Si le hacemos caso a la ciencia, *se arregla.*" />
 

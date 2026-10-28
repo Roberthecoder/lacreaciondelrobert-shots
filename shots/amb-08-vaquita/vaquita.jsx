@@ -146,7 +146,7 @@ function VaquitaShot() {
       <Chip T={T} at={K.Cr + 0.4} until={K.B - 0.2} texto="Frida: aleta doblada" y={600} x={640} tam={36} borde={KC.pink} />
       <Etq T={T} at={K.Cr + 1.4} until={K.B - 0.2} x={760} y={1010} texto="cría" tam={32} />
       <Chip T={T} at={K.B + 0.3} until={K.C - 0.2} texto="bloques con ganchos: atrapan las redes" y={430} x={660} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="pocas, pero siguen teniendo crías" y={460} x={430} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="pueden recuperarse si se quitan las redes" y={460} x={420} tam={26} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="Se cuentan con los dedos: *entre 7 y 10.*" />
@@ -157,7 +157,7 @@ function VaquitaShot() {
       <Subtitulo T={T} idx={5} at={K.Ca + 0.1} until={K.E - 0.1} texto="1997: 567. *2015: 59.*" />
       <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.Cr - 0.1} texto="Septiembre de 2025: *barcos y micrófonos.*" />
       <Subtitulo T={T} idx={7} at={K.Cr + 0.1} until={K.B - 0.1} texto="Vieron crías: *una es de Frida.*" />
-      <Subtitulo T={T} idx={8} at={K.B + 0.1} until={K.C - 0.1} texto="Donde hay *bloques que atrapan las redes.*" />
+      <Subtitulo T={T} idx={8} at={K.B + 0.1} until={K.C - 0.1} texto="En 2025: *casi todas junto a los bloques.*" />
       <Subtitulo T={T} idx={9} at={K.C + 0.1} until={K.Ou - 0.1} texto="Pocas, pero *siguen teniendo crías.*" />
 
       <Robert T={T} apariciones={[
