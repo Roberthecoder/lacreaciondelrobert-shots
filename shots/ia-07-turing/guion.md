@@ -1,10 +1,10 @@
 # Shot IA #07 · ¿Quién es el humano? La IA que pasó la prueba de Turing
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #07 · rama `claude/igualar-ia`.
-- **Estado (28 oct 2026):** guion verificado, animación, Robert en pantalla y `publicacion.md` listos · versión de revisión sin voz en el Release "Borradores · claude/igualar-ia" · **voz pendiente de aprobación de Robert** (~978 créditos).
+- **Estado (28 oct 2026):** guion verificado, animación, Robert en pantalla y `publicacion.md` listos · versión de revisión sin voz en el Release "Borradores · claude/igualar-ia" · **voz pendiente de aprobación de Robert** (~968 créditos).
 - **Formato:** N2 "El número" (73 contra 27) con "Tú contra el de al lado".
 - **Gancho (de los 7):** #2 "Tú contra el de al lado": la IA le ganó al humano real en parecer humana.
-- **Duración:** voz 978 caracteres / 178 palabras (≈ 58 s) + cierre 3.5 s → **61.6 s** en la base.
+- **Duración:** voz 968 caracteres / 175 palabras (≈ 58 s) + cierre 3.5 s → **61.6 s** en la base.
 - **Postura de la serie:** ni susto ni aplauso: el dato, el truco (el personaje), cómo cacharla y el riesgo que señalan los propios autores. Estudio publicado en PNAS en mayo de **2026** (preprint de 2025).
 
 ## Versión narrada
@@ -15,13 +15,13 @@
 | 1 | Juego | Así funciona: chateas a la vez con dos desconocidos. Uno es persona; el otro, máquina. | Pantalla dividida con dos chats y un reloj de 5:00 que corre hacia atrás. |
 | 2 | Turing | Es la prueba que propuso Alan Turing en 1950: si no los distingues, la máquina pasa. | Tarjeta "1950 · Alan Turing · «el juego de imitación»". Chip "si no los distingues: pasa". |
 | 3 | Pregunta | ¿Y cuál fue el truco? | **Re-gancho.** "?" gigante; Robert grande. |
-| 4 | Personaje | Le pidieron actuar como un joven tímido, que sabe de internet y habla con jerga. | El robotito se pone gorra y audífonos; chips: "joven", "tímido", "sabe de internet", "habla con jerga". |
+| 4 | Personaje | Le pidieron actuar como un joven reservado, que sabe de internet y habla con jerga. | El robotito se pone gorra y audífonos; chips: "joven", "reservado", "sabe de internet", "habla con jerga". |
 | 5 | Sin | Sin ese personaje, la misma IA, GPT-4.5, convenció solo treinta y seis de cada cien. | Barras "GPT-4.5 con personaje 73 %" y "sin personaje 36 %". |
 | 6 | Estudio | Lo publicaron en 2026 Cameron Jones y Benjamin Bergen, en San Diego: más de mil partidas. | Tarjeta "2026 · UC San Diego · Jones y Bergen · PNAS"; contador "1,023 partidas". |
 | 7 | Eliza | Para comparar, ELIZA, un chatbot de los sesenta, convenció veintitrés de cada cien. | Monitor viejo con letras verdes "ELIZA"; barra "23 %". |
 | 8 | Pista | ¿Qué sirvió para cacharla? Decir algo muy raro. Preguntar por el clima fue de lo que menos sirvió. | Burbuja con algo raro ("¿pato? ¿qwerty?") con palomita; burbuja "¿cómo está el clima?" con "de lo que menos sirvió". |
-| 9 | Riesgo | Y en chats de quince minutos, GPT-5 también pasó. Los autores advierten: esto puede usarse para engañar y desinformar. | Reloj "15:00"; chip "GPT-5 con personaje: 59 %"; señales de alerta "engaños" y "desinformación". |
-| 10 | Cierre | Así que antes de confiar en un desconocido del chat, piénsalo: quizá el humano era el de al lado. | **Regreso a la imagen del inicio**: las mismas dos tarjetas; ahora se revela "Testigo B: humano ✔" y la flecha "el de al lado". |
+| 9 | Riesgo | Y en chats de quince minutos, GPT-5 también pasó. Los autores advierten: puede usarse para engañar y desinformar. | Reloj "15:00"; chip "GPT-5 con personaje: 59 %"; señales de alerta "engaños" y "desinformación". |
+| 10 | Cierre | Antes de confiar en un desconocido del chat, piénsalo: quizá el humano era el de al lado. | **Regreso a la imagen del inicio**: las mismas dos tarjetas; ahora se revela "Testigo B: humano ✔" y la flecha "el de al lado". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua; las barras suben con dos notas, tecleo de los chats, tic-tac del reloj, zumbido de monitor viejo con ELIZA, alerta suave en el riesgo.

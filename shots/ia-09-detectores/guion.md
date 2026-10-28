@@ -1,25 +1,25 @@
 # Shot IA #09 · El detector de IA que acusa a quien escribe sencillo
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #09 · rama `claude/igualar-ia`.
-- **Estado (28 oct 2026):** guion verificado, animación, Robert en pantalla y `publicacion.md` listos · versión de revisión sin voz en el Release "Borradores · claude/igualar-ia" · **voz pendiente de aprobación de Robert** (~975 créditos).
+- **Estado (28 oct 2026):** guion verificado, animación, Robert en pantalla y `publicacion.md` listos · versión de revisión sin voz en el Release "Borradores · claude/igualar-ia" · **voz pendiente de aprobación de Robert** (~964 créditos).
 - **Formato:** N2 "El número" (6 de cada 10) + N4 "La imagen que se llena" (91 ensayos que se marcan).
 - **Gancho (de los 7):** #2 "Tú contra el de al lado": tu ensayo contra el del estudiante nativo.
-- **Duración:** voz 975 caracteres / 173 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 964 caracteres / 170 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Postura de la serie:** crítica con datos (a herramientas que se venden como "anti-IA") y un consejo útil. El estudio es de **2023** y se dice; no se afirma nada de los detectores de hoy.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Escribiste tu ensayo en inglés tú solo, y un detector dice que lo hizo una IA. Si el inglés no es tu idioma, pasó seis de cada diez veces. | Fondo amarillo; desde el cuadro 0 una hoja "My essay" y un sello rojo "IA" que cae encima. Número "61.3 %" (promedio de 7 detectores). |
+| 0 | Gancho | Escribiste tu ensayo en inglés tú solo y un detector dice que lo hizo una IA. En una prueba con no nativos, pasó seis de cada diez veces. | Fondo amarillo; desde el cuadro 0 una hoja "My essay" y un sello rojo "IA" que cae encima. Número "61.3 %" (promedio de 7 detectores). |
 | 1 | Nativos | Con ensayos de estudiantes de secundaria de Estados Unidos, casi no se equivocaron. | Barras: "no nativos (TOEFL) 61.3 %" contra "nativos (8.º grado, EE. UU.): casi nunca". |
 | 2 | Estudio | Lo midieron en Stanford en 2023: siete detectores populares y noventa y un ensayos del examen TOEFL. | Tarjeta "2023 · Stanford · Liang, Yuksekgonul, Mao, Wu y Zou · Patterns"; siete escáneres y "91 ensayos TOEFL". |
 | 3 | Marcas | Al menos un detector marcó como IA casi todos: noventa y ocho por ciento. Los siete a la vez, uno de cada cinco. | Cuadrícula de 91 hojas: se ponen rojas 89 (97.8 %); luego 18 se oscurecen (19.8 %, los siete a la vez). |
 | 4 | Pregunta | ¿Por qué se equivocan justo contigo? | **Re-gancho.** "?" gigante; Robert grande. |
-| 5 | Predecible | Muchos detectores miden qué tan predecible es un texto: si usas palabras comunes y frases sencillas, pareces IA. | Fondo de circuito; medidor "predecible ↔ sorprendente" con dos frases de ejemplo (ilustrativas). |
+| 5 | Predecible | Muchos detectores medían qué tan predecible es un texto: si usabas palabras comunes y frases sencillas, parecías IA. | Fondo de circuito; medidor "predecible ↔ sorprendente" con dos frases de ejemplo (ilustrativas). |
 | 6 | Prueba | Lo comprobaron: con palabras más rebuscadas, esos ensayos bajaron de sesenta y uno a doce por ciento de errores. | Barras "ensayos originales 61.3 %" y "con palabras más rebuscadas (las cambió ChatGPT) 11.6 %". |
 | 7 | Trampa | Y al revés: textos de ChatGPT con lenguaje más literario casi nunca fueron detectados. | El robotito con sombrero de copa escribe "lenguaje literario"; el detector dice "humano ✔"; chip "detección: casi cero". |
-| 8 | Riesgo | Los autores piden no usar estos detectores para evaluar estudiantes, sobre todo si el inglés no es su idioma. | Chip con la recomendación; un birrete y la balanza. |
+| 8 | Riesgo | Los autores piden no usarlos para evaluar estudiantes, sobre todo si el inglés no es su idioma. | Chip con la recomendación; un birrete y la balanza. |
 | 9 | Cierre | Así que si un detector acusa tu ensayo, recuerda: escribir sencillo no es hacer trampa. | **Regreso a la imagen del inicio**: la misma hoja; el sello "IA" se tacha y aparece "escrito por ti ✔". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
@@ -38,7 +38,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Por qué s
 | 5 | 25.8 | 28.9 | 07_pensativo_puno | `grande` | «¿Por qué se equivocan justo contigo?» |
 | 6 | 36.1 | 41.0 | 06_pensativo_menton | `izq-alto` | «bajaron de sesenta y uno a doce» |
 | 7 | 41.7 | 46.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «casi nunca fueron detectados» |
-| 8 | 46.9 | 52.6 | 10_serio_molesto | `izq-alto` | «no usar estos detectores para evaluar estudiantes» |
+| 8 | 46.9 | 52.6 | 10_serio_molesto | `izq-alto` | «no usarlos para evaluar estudiantes» |
 | 9 | 53.1 | 57.9 | 13_senalando_arriba | `arriba-der` | «escribir sencillo no es hacer trampa» |
 | — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | cierre |
 

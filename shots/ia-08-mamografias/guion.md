@@ -1,27 +1,27 @@
 # Shot IA #08 · Menos lecturas, más cáncer encontrado: la IA en las mamografías
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #08 · rama `claude/igualar-ia`.
-- **Estado (28 oct 2026):** guion verificado, animación, Robert en pantalla y `publicacion.md` listos · versión de revisión sin voz en el Release "Borradores · claude/igualar-ia" · **voz pendiente de aprobación de Robert** (~969 créditos).
+- **Estado (28 oct 2026):** guion verificado, animación, Robert en pantalla y `publicacion.md` listos · versión de revisión sin voz en el Release "Borradores · claude/igualar-ia" · **voz pendiente de aprobación de Robert** (~958 créditos).
 - **Formato:** N2 "El número" (−44 % de lecturas, 6.4 contra 5.0 por cada mil) con capítulos del ensayo.
 - **Gancho (de los 7):** #4 "Un número que contradice": menos trabajo… y más cáncer encontrado.
-- **Duración:** voz 969 caracteres / 178 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 958 caracteres / 175 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Postura de la serie:** aquí la defendemos con datos (un ensayo aleatorizado de verdad), y decimos su límite (un país, un programa de IA). Datos de 2021–2022, publicados en 2023, 2025 y 2026.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Con ayuda de una IA, los radiólogos leyeron cuarenta y cuatro por ciento menos mamografías. Y encontraron más cáncer, no menos. | Fondo rosa; desde el cuadro 0 una pila de mamografías que se encoge (−44 % lecturas) y un medidor que sube (más cánceres encontrados ✔). |
+| 0 | Gancho | Con una IA, los radiólogos hicieron cuarenta y cuatro por ciento menos lecturas de mamografías. Y encontraron más cáncer, no menos. | Fondo rosa; desde el cuadro 0 una pila de mamografías que se encoge (−44 % lecturas) y un medidor que sube (más cánceres encontrados ✔). |
 | 1 | Mamo | Una mamografía es una radiografía de la mama para buscar cáncer a tiempo. | Una mamografía esquemática (imagen de rayos X en grises). Etiqueta "rayos X". |
 | 2 | Doble | En Suecia, cada una la revisan dos radiólogos. | Dos radiólogos (dibujo) frente a la imagen: "2 lecturas". |
 | 3 | Triage | Aquí, una IA calificó cada estudio del uno al diez: del uno al nueve lo leyó un radiólogo; los de diez, dos. | Banda con mamografías; el robotito les pone calificación 1–10; las de 1–9 van a "1 radiólogo" y las de 10 a "2 radiólogos". |
 | 4 | Pregunta | ¿No se les escaparía más cáncer? | **Re-gancho.** "?" gigante; Robert grande. |
 | 5 | Numero | Al revés: con IA encontraron seis punto cuatro cánceres por cada mil mujeres; sin IA, cinco. | Barras "con IA 6.4" y "sin IA 5.0" (por cada 1,000 mujeres). |
-| 6 | Estudio | Fueron más de cien mil mujeres en el sur de Suecia, y lo dirigió Kristina Lång, de la Universidad de Lund. | Tarjeta "MASAI · Suecia · Lång et al. · Universidad de Lund"; contador "105,934 mujeres". |
+| 6 | Estudio | Fueron más de cien mil mujeres en el sur de Suecia; lo dirigió Kristina Lång, de la Universidad de Lund. | Tarjeta "MASAI · Suecia · Lång et al. · Universidad de Lund"; contador "105,934 mujeres". |
 | 7 | Chicos | Los de más eran sobre todo pequeños, sin llegar a los ganglios. Y las falsas alarmas quedaron casi iguales. | `Lupa` de rayos X sobre la mamografía: un punto chiquito; chips "pequeños · sin ganglios" y "falsas alarmas: casi iguales". |
-| 8 | Intervalo | En 2026 salió el dato principal: los cánceres que aparecen entre una revisión y la siguiente no aumentaron con IA. | Línea de tiempo "revisión → 2 años → revisión"; barras "con IA 1.55" y "sin IA 1.76" por cada 1,000. |
+| 8 | Intervalo | En 2026 salió el dato principal: los cánceres que aparecen entre una revisión y otra no aumentaron con IA. | Línea de tiempo "revisión → 2 años → revisión"; barras "con IA 1.55" y "sin IA 1.76" por cada 1,000. |
 | 9 | Ojo | Ojo: se probó en cuatro centros de Suecia y con un solo programa de IA. | Cuatro pines "Malmö · Lund · Landskrona · Trelleborg"; chip "1 programa de IA". |
-| 10 | Cierre | La IA no reemplazó a nadie: menos lecturas para los médicos y más cánceres hallados a tiempo. | **Regreso a la imagen del inicio**: la pila más chica (−44 %) y el medidor arriba, con los dos radiólogos al lado. |
+| 10 | Cierre | La IA no trabajó sola: menos lecturas para los médicos y más cánceres hallados a tiempo. | **Regreso a la imagen del inicio**: la pila más chica (−44 %) y el medidor arriba, con los dos radiólogos al lado. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave y tranquila (tema de salud); hojas que se apilan, el sello de la calificación, la banda que corre, un "bip" de escáner en la lupa, pasos de tiempo en la línea de dos años.
@@ -32,7 +32,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿No se les 
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «leyeron cuarenta y cuatro por ciento menos» (cuadro 0) |
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «hicieron cuarenta y cuatro por ciento menos lecturas» (cuadro 0) |
 | 2 | 8.6 | 11.7 | 13_senalando_arriba | `arriba-der` | señala la mamografía |
 | 3 | 18.3 | 21.1 | 06_pensativo_menton | `izq-alto` | «del uno al nueve lo leyó un radiólogo» |
 | 4 | 21.3 | 24.2 | 07_pensativo_puno | `grande` | «¿No se les escaparía más cáncer?» |

@@ -21,7 +21,7 @@
     },
     {
       "escena": "Personaje",
-      "texto": "Le pidieron actuar como un joven tímido, que sabe de internet y habla con jerga."
+      "texto": "Le pidieron actuar como un joven reservado, que sabe de internet y habla con jerga."
     },
     {
       "escena": "Sin",
@@ -41,11 +41,11 @@
     },
     {
       "escena": "Riesgo",
-      "texto": "Y en chats de quince minutos, GPT-5 también pasó. Los autores advierten: esto puede usarse para engañar y desinformar."
+      "texto": "Y en chats de quince minutos, GPT-5 también pasó. Los autores advierten: puede usarse para engañar y desinformar."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que antes de confiar en un desconocido del chat, piénsalo: quizá el humano era el de al lado."
+      "texto": "Antes de confiar en un desconocido del chat, piénsalo: quizá el humano era el de al lado."
     }
   ]
 }

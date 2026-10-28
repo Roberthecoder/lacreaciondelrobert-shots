@@ -1,11 +1,11 @@
 {
   "dcHtml": "Shot Mamografias base narrada.dc.html",
   "salida": "Shot Mamografias narrado.dc.html",
-  "nota": "Shot IA #08. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "nota": "Shot IA #08. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Con ayuda de una IA, los radiólogos leyeron cuarenta y cuatro por ciento menos mamografías. Y encontraron más cáncer, no menos."
+      "texto": "Con una IA, los radiólogos hicieron cuarenta y cuatro por ciento menos lecturas de mamografías. Y encontraron más cáncer, no menos."
     },
     {
       "escena": "Mamo",
@@ -29,7 +29,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "Fueron más de cien mil mujeres en el sur de Suecia, y lo dirigió Kristina Lång, de la Universidad de Lund."
+      "texto": "Fueron más de cien mil mujeres en el sur de Suecia; lo dirigió Kristina Lång, de la Universidad de Lund."
     },
     {
       "escena": "Chicos",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Intervalo",
-      "texto": "En 2026 salió el dato principal: los cánceres que aparecen entre una revisión y la siguiente no aumentaron con IA."
+      "texto": "En 2026 salió el dato principal: los cánceres que aparecen entre una revisión y otra no aumentaron con IA."
     },
     {
       "escena": "Ojo",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "La IA no reemplazó a nadie: menos lecturas para los médicos y más cánceres hallados a tiempo."
+      "texto": "La IA no trabajó sola: menos lecturas para los médicos y más cánceres hallados a tiempo."
     }
   ]
 }

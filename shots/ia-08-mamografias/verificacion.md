@@ -3,10 +3,11 @@
 - **Fecha:** 28 oct 2026 · **Quién verificó:** la sesión de producción de la rama `claude/igualar-ia`. En esta sesión no había herramienta para lanzar un subagente verificador (Task/Agent), así que se verificó a mano con el encargo de CLAUDE.md ("sé escéptico: si dudas, es ⚠️"), abriendo los resúmenes oficiales de los tres artículos del ensayo MASAI (Europe PMC / PubMed), la página de MedlinePlus y la nota de la Universidad de Lund.
 - **Regla de "el conteo más nuevo":** el ensayo publicó tres veces (2023 con 80,033 mujeres; 2025 con las 105,934; 2026 con el resultado principal). Se usan las cifras de 2025 (detección y trabajo, ya con todas las participantes) y de 2026 (cánceres de intervalo); de 2023 solo el diseño (escala del 1 al 10), que no cambió.
 - **Revisado:** `guion.md`, `narracion.json` y lo que se ve en pantalla (`mamografias.jsx`).
+- **Verificación independiente (28 oct 2026):** otro agente que no escribió el guion abrió las fuentes completas y revisó todo. No encontró cifras falsas; pidió las correcciones de redacción de abajo ("Segunda ronda"), que ya están aplicadas en la voz, el guion, la pantalla y `publicacion.md`.
 
 | # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
 |---|---|---|---|---|---|
-| 1 | Con IA, los radiólogos leyeron 44 % menos mamografías (pantalla: −44 %, 61,248 contra 109,692 lecturas) | ✅ | Hernström et al., *Lancet Digit Health* 2025 | "There were 61 248 screen readings in the intervention group and 109 692 in the control group, resulting in a 44·2% reduction in the screen-reading workload." | 2025 |
+| 1 | Con una IA, los radiólogos hicieron 44 % menos lecturas de mamografías (pantalla: −44 %, 61,248 contra 109,692 lecturas) | ✅ | Hernström et al., *Lancet Digit Health* 2025 | "There were 61 248 screen readings in the intervention group and 109 692 in the control group, resulting in a 44·2% reduction in the screen-reading workload." | 2025 |
 | 2 | …y encontraron más cáncer, no menos | ✅ | Hernström et al. 2025 | "AI-supported screening among 53 043 participants resulted in 338 detected cancers… Standard screening among 52 872 participants resulted in 262 detected cancers" | 2025 |
 | 3 | Una mamografía es una radiografía de la mama para buscar cáncer a tiempo | ✅ | MedlinePlus en español | "Una mamografía es una imagen de rayos X del seno. Los profesionales de la salud usan mamografías para buscar signos tempranos de cáncer de mama" | vigente |
 | 4 | En Suecia, cada mamografía la revisan dos radiólogos | ✅ | Nota de la Universidad de Lund (Nordic Life Science, 2026); Hernström 2025 ("standard double reading") | "In traditional screening, the mammograms are read by two breast radiologists" | 2026 |
@@ -21,15 +22,23 @@
 | 13 | En 2026 salió el dato principal: los cánceres que aparecen entre una revisión y la siguiente | ✅ | Gommers et al., *Lancet* 2026 | "the primary outcome, interval cancer rate"; "interval cancers (primary breast cancers diagnosed between two screening rounds or within 2 years after the last scheduled screening…)" | 2026 |
 | 14 | …no aumentaron con IA (pantalla: 1.55 contra 1.76 por cada mil) | ✅ | Gommers et al. 2026 | "Interval cancer rates were 1·55… and 1·76… per 1000 participants in the intervention and control group respectively, a non-inferior proportion ratio of 0·88" | 2026 |
 | 15 | Se probó con un solo programa de IA (pantalla: Transpara) | ✅ | Hernström et al. 2025 | "The AI system (Transpara version 1.7.0 ScreenPoint Medical, Nijmegen, Netherlands)" | 2025 |
-| 16 | La IA no reemplazó a nadie (cada estudio lo leyó al menos un radiólogo) | ✅ | Lång et al. 2023; Hernström 2025 | "triage screening examinations to single reading… or double reading" (siempre con radiólogo) | 2023/2025 |
+| 16 | La IA no trabajó sola (pantalla: "la IA no trabajó sola ✔"): repartía los estudios entre una y dos lecturas, marcaba lo sospechoso y cada estudio lo leyó al menos un radiólogo | ✅ | Lång et al. 2023; Hernström 2025 | "used to triage screening examinations to single reading (score 1-9) or double reading (score 10), with AI risk scores… and computer-aided detection marks… available to the radiologists doing the screen reading" | 2023/2025 |
 | 17 | …más cánceres hallados a tiempo | ✅ | Hernström et al. 2025, Interpretación | "The findings suggest that AI contributes to the early detection of clinically relevant breast cancer and reduces screen-reading workload without increasing false positives." | 2025 |
 | 18 | (solo en `publicacion.md`, LinkedIn) Los radiólogos de mama son especialistas escasos | ✅ | Nota de la Universidad de Lund (2026) | "read by two breast radiologists, a medical speciality that is in short supply" | 2026 |
+| 19 | (segunda ronda) Lo que bajó fueron las lecturas, no las mamografías | ✅ | Hernström et al., *Lancet Digit Health* 2025 (PMID 39904652) | "There were 61 248 screen readings in the intervention group and 109 692 in the control group, resulting in a 44·2% reduction in the screen-reading workload." | 2025 |
+| 20 | (segunda ronda) En el grupo con IA, la IA sí ocupó el lugar de la segunda lectura en los estudios de calificación 1–9; por eso no se dice "no reemplazó a nadie" | ✅ | Lång et al. 2023 (PMID 37541274); Gommers et al. 2026 (PMID 41620232) | "AI was used to triage examinations to single or double reading by radiologists and for detection support" | 2023/2026 |
 
 ## Correcciones hechas antes de aprobar
 - ⚠️ → corregido: "En 2026 midieron…" se cambió a "En 2026 salió el dato principal…": el seguimiento se hizo antes; en 2026 se publicó.
 - ⚠️ → evitado: no se dice que los cánceres de intervalo "bajaron" (1.55 contra 1.76 no es una diferencia significativa); la voz dice "no aumentaron".
 - ⚠️ → evitado: no se usa el "20 % más" de 2023 (80,033 mujeres) porque hay un conteo más nuevo (2025, 105,934 mujeres: 6.4 contra 5.0 por cada mil).
 - ⚠️ → corregido: "a la mitad" se descartó; la cifra exacta es 44.2 % y la voz dice "cuarenta y cuatro por ciento".
+
+## Segunda ronda (verificación independiente, 28 oct 2026)
+- ⚠️ → corregido: «leyeron cuarenta y cuatro por ciento menos mamografías» → «hicieron cuarenta y cuatro por ciento menos lecturas de mamografías» (bajaron las lecturas, no las mamografías).
+- ⚠️ → corregido: «La IA no reemplazó a nadie» → «La IA no trabajó sola» (en los estudios de 1 a 9 la IA ocupó el lugar del segundo lector). En pantalla, el chip «y siempre con radiólogos» pasó a «la IA no trabajó sola ✔». En `publicacion.md` (LinkedIn) se quitó «no sustituyó al radiólogo».
+- Nota de `narracion.json` corregida: las líneas son idx 0..10.
+- Recorte sin perder datos: «Con ayuda de una IA» → «Con una IA»; «y la siguiente» → «y otra».
 
 ## Notas
 - Las mamografías dibujadas son esquemáticas; no son imágenes del estudio.

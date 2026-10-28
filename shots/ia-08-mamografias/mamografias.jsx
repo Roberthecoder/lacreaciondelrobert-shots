@@ -170,7 +170,7 @@ function Mamografias() {
       <BarrasDec T={T} at={K.I + 2.4} until={K.O - 0.2} top={830} max={2.2} dec={2} filas={[{ valor: 1.55, etiqueta: 'con IA', color: VERDE, tinta: KC.ink }, { valor: 1.76, etiqueta: 'sin IA', color: AZUL, tinta: KC.ink, at: K.I + 3.2 }]} />
       <Chip T={T} at={K.I + 4.4} until={K.O - 0.2} texto="por cada 1,000 · no aumentaron ✔" x={650} y={585} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.O + 1.8} until={K.C - 0.2} texto="1 programa de IA (Transpara)" x={540} y={460} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="y siempre con radiólogos ✔" x={650} y={470} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="la IA no trabajó sola ✔" x={650} y={470} tam={40} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.M - 0.1} texto="44 % menos lecturas… *y más cáncer encontrado.*" />

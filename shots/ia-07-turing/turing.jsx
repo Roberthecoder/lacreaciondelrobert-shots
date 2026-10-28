@@ -145,7 +145,7 @@ function Turing() {
       <Chip T={T} at={K.G + 0.4} until={K.J - 0.2} texto="¿quién es el humano?" x={330} y={430} tam={44} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.Tu + 0.2} until={K.P - 0.2} anio="1950" quien="Alan Turing" revista="«el juego de imitación»" y={760} />
       <Chip T={T} at={K.Tu + 2.2} until={K.P - 0.2} texto="si no los distingues: la máquina pasa" y={1070} tam={38} borde={KC.ink} />
-      {[['joven', 600], ['tímido', 740], ['sabe de internet', 880], ['habla con jerga', 1020]].map(([t, y], i) =>
+      {[['joven', 600], ['reservado', 740], ['sabe de internet', 880], ['habla con jerga', 1020]].map(([t, y], i) =>
         <Chip key={t} T={T} at={K.Pe + 2.2 + i * 0.4} until={K.S - 0.2} texto={t} x={790} y={y} tam={40} borde={KC.pink} />)}
       <BarrasH T={T} at={K.S + 0.3} until={K.E - 0.2} filas={[{ valor: 73, etiqueta: 'GPT-4.5 con personaje', color: KC.orange }, { valor: 36, etiqueta: 'GPT-4.5 sin personaje', color: AZUL, at: K.S + 1.6 }]} />
       <Chip T={T} at={K.S + 0.6} until={K.E - 0.2} texto="la misma IA" x={640} y={500} tam={40} borde={KC.ink} />
@@ -163,7 +163,7 @@ function Turing() {
       <Subtitulo T={T} idx={1} at={K.J + 0.1} until={K.Tu - 0.1} texto="Dos chats: *uno es máquina.*" />
       <Subtitulo T={T} idx={2} at={K.Tu + 0.1} until={K.P - 0.1} texto="Turing, 1950: *si no los distingues, pasa.*" />
       <Subtitulo T={T} idx={3} at={K.P + 0.1} until={K.Pe - 0.1} texto="¿Cuál fue *el truco?*" />
-      <Subtitulo T={T} idx={4} at={K.Pe + 0.1} until={K.S - 0.1} texto="Un personaje: *joven, tímido y con jerga.*" />
+      <Subtitulo T={T} idx={4} at={K.Pe + 0.1} until={K.S - 0.1} texto="Un personaje: *joven, reservado y con jerga.*" />
       <Subtitulo T={T} idx={5} at={K.S + 0.1} until={K.E - 0.1} texto="Sin personaje: *36 de 100.*" />
       <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.El - 0.1} texto="San Diego, 2026: *más de mil partidas.*" />
       <Subtitulo T={T} idx={7} at={K.El + 0.1} until={K.Pi - 0.1} texto="ELIZA, de los sesenta: *23 de 100.*" />

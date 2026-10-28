@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Escribiste tu ensayo en inglés tú solo, y un detector dice que lo hizo una IA. Si el inglés no es tu idioma, pasó seis de cada diez veces."
+      "texto": "Escribiste tu ensayo en inglés tú solo y un detector dice que lo hizo una IA. En una prueba con no nativos, pasó seis de cada diez veces."
     },
     {
       "escena": "Nativos",
@@ -25,7 +25,7 @@
     },
     {
       "escena": "Predecible",
-      "texto": "Muchos detectores miden qué tan predecible es un texto: si usas palabras comunes y frases sencillas, pareces IA."
+      "texto": "Muchos detectores medían qué tan predecible es un texto: si usabas palabras comunes y frases sencillas, parecías IA."
     },
     {
       "escena": "Prueba",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Riesgo",
-      "texto": "Los autores piden no usar estos detectores para evaluar estudiantes, sobre todo si el inglés no es su idioma."
+      "texto": "Los autores piden no usarlos para evaluar estudiantes, sobre todo si el inglés no es su idioma."
     },
     {
       "escena": "Cierre",
