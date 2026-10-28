@@ -172,10 +172,10 @@ function Col() {
           <rect x={150} y={900} width={780} height={300} rx={30} fill="#f4efe4" stroke={KC.ink} strokeWidth={8} />
           <Pescado x={540} y={1050} s={1.25} T={T} />
           <rect x={170} y={920} width={740} height={260} rx={24} fill="rgba(255,255,255,.25)" stroke="rgba(0,0,0,.35)" strokeWidth={4} opacity={kprog(T, K.Et + 1.5, K.Et + 2.5)} />
-          <rect x={740} y={950} width={130} height={90} rx={14} fill={colorPH(klerp(2.5, 9.5, dias))} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Et + 2.2, K.Et + 2.8)} />
+          <rect x={740} y={950} width={130} height={90} rx={14} fill={colorPH(klerp(2.5, 8, dias))} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Et + 2.2, K.Et + 2.8)} />
           {dias > 0 && [0, 1, 2, 3].map((i) => <path key={i} d={`M ${330 + i * 90} ${880 - ((T * 60 + i * 30) % 120)} q 18 -20 0 -40 q -18 -20 0 -40`} stroke="#7a8f3a" strokeWidth={8} fill="none" opacity={dias * 0.8} />)}
         </SvgCapa>
-        <Contador T={T} at={K.Pe + 0.3} desde={0} hasta={6} dur={5.5} sufijo=" días" x={540} y={1620} tam={72} color={KC.ink} />
+        <Contador T={T} at={K.Pe + 0.3} desde={0} hasta={9} dur={5.5} sufijo=" días · 4 °C" x={540} y={1620} tam={72} color={KC.ink} />
       </Escena>
       {/* 9 · lo curioso: jamaica y pollo */}
       <Escena T={T} a={K.Ja} b={K.Ca}>
@@ -217,7 +217,7 @@ function Col() {
       <Chip T={T} at={K.Fo + 0.3} until={K.Es - 0.3} texto="cambia la forma → cambia el color" y={1650} tam={38} borde={KC.pink} />
       <Chip T={T} at={K.Es + 0.2} until={K.Pr - 0.3} texto="la escala del jugo de col" y={470} tam={42} borde={KC.ink} />
       <Etq T={T} at={K.Es + 0.5} until={K.Pr - 0.3} x={110} y={1480} texto="ácido ← · → básico" tam={36} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.Pe - 0.2} anio="2026" quien="Dong et al. · Ningbo, China" revista="Food Chemistry: X · película para pescado" y={620} />
+      <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.Pe - 0.2} anio="2026" quien="Dong et al. · Ningbo, China" revista="Food Chemistry: X · película de empaque" y={620} />
       <Chip T={T} at={K.Pe + 0.4} until={K.Ja - 0.3} texto="se echa a perder → compuestos básicos" y={470} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Pe + 2.0} until={K.Ja - 0.3} x={1000} y={1480} texto="la etiqueta cambia de color" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ja + 0.4} until={K.Ca - 0.3} texto="jamaica · Hibiscus sabdariffa" x={540} y={1640} tam={38} borde="#9e0f2a" />
@@ -233,7 +233,7 @@ function Col() {
       <Subtitulo T={T} idx={4} at={K.Fo + 0.1} until={K.Es - 0.1} texto="Otra forma: *otro color.*" />
       <Subtitulo T={T} idx={5} at={K.Es + 0.1} until={K.Pr - 0.1} texto="Rojo, violeta, azul, *verde, amarillo.*" />
       <Subtitulo T={T} idx={6} at={K.Pr + 0.1} until={K.Et - 0.1} texto="¿Y eso *de qué sirve?*" />
-      <Subtitulo T={T} idx={7} at={K.Et + 0.1} until={K.Pe - 0.1} texto="Una película *para pescado.*" />
+      <Subtitulo T={T} idx={7} at={K.Et + 0.1} until={K.Pe - 0.1} texto="Película de empaque *para pescado.*" />
       <Subtitulo T={T} idx={8} at={K.Pe + 0.1} until={K.Ja - 0.1} texto="Si se echa a perder, *cambia de color.*" />
       <Subtitulo T={T} idx={9} at={K.Ja + 0.1} until={K.Ca - 0.1} texto="La jamaica *también.*" />
       <Subtitulo T={T} idx={10} at={K.Ca + 0.1} until={K.Ci - 0.1} texto="*Pruébalo* en tu cocina." />

@@ -14,7 +14,7 @@ textual en la fuente se cambió o se quitó.
 | 6 | Con bicarbonato se pone azul | ✅ | Huțuțui et al. · Dong et al. (PMC13253147) | "blue tones at pH 7–8" · "As the pH elevated from 7 to 10, the solution color further transitioned from purple to blue" | 2026 |
 | 7 | La molécula cambia de forma según la acidez y cada forma tiene otro color | ✅ | Huțuțui et al. · Dong et al. | "reversible changes in structure and color" · "The color variation of ATH in different pH solutions primarily stems from alterations in its chemical structure" | 2026 |
 | 8 | Muy ácido rojo · neutro violeta · un poco básico azul · más básico verde · al final amarillo | ✅ | Huțuțui et al. · Dong et al. | "quinonoid base (violet) at pH 6–7 … (blue) at pH 7–8" · "green in an alkaline environment (pH 9–11)" · "When the pH exceeded 11, the solution turned from green to yellow" | 2026 |
-| 9 | En 2026, en Ningbo, China, metieron este pigmento en una película para envolver pescado (pantalla: Dong et al., Food Chemistry: X) | ✅ | Dong et al., Food Chem X 36:104058 (PMID 42291809) | "incorporating anthocyanins (ATH) extracted from red cabbage as a natural pH-sensitive indicator" · "Application of the film to fish preservation" · "Zhejiang Pharmaceutical University, Ningbo, China" | 2026 |
+| 9 | En 2026, en Ningbo, China, metieron este pigmento en una película de empaque para pescado (pantalla: Dong et al., Food Chemistry: X) | ✅ | Dong et al., Food Chem X 36:104058 (PMID 42291809) | "incorporating anthocyanins (ATH) extracted from red cabbage as a natural pH-sensitive indicator" · "Application of the film to fish preservation" · "Zhejiang Pharmaceutical University, Ningbo, China" | 2026 |
 | 10 | Al echarse a perder, el pescado suelta compuestos básicos | ✅ | Dong et al. | "the spoilage of protein-based foods often releases volatile alkaline compounds, leading to increased pH levels" | 2026 |
 | 11 | La película cambia de color y avisa a simple vista (pantalla: rojo → morado → azul) | ✅ | Dong et al. | "it allowed freshness to be monitored via observable color shifts" · (prueba con amoniaco) "evolving from red to purple and eventually to blue over time" | 2026 |
 | 12 | La flor de jamaica también tiene antocianinas | ✅ | Nguyen et al., J Food Sci (PMID 41891571) | "Anthocyanin-Rich Roselle (Hibiscus sabdariffa L.) Extracts" | 2026 |
@@ -26,5 +26,18 @@ textual en la fuente se cambió o se quitó.
 - ⚠️ "col picada en agua caliente": la fuente extrae con agua sin decir temperatura → "licúa col morada con agua, cuélala".
 - ⚠️ "con bicarbonato se pone azul verdoso": el bicarbonato da pH ≈ 8.3, que en las fuentes es azul (el verde es de pH 9–11) → "se pone azul".
 - ⚠️ "la película le alarga la vida al pescado 2 días": eso viene del óxido de zinc y el quitosano, no del pigmento → no se dice.
+
+## Verificación independiente (28 oct 2026)
+Otro agente, que no escribió el guion, abrió Dong et al. (Food Chem X 2026, PMC13253147) y marcó la escena del pescado como NO PASA. Se corrigió y se re-verificó:
+
+| # | Afirmación corregida | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 9b | Voz: «una película de empaque para pescado» (antes «para envolver pescado»); en la prueba iba en el espacio de aire de la caja | ✅ | Dong et al. (PMC13253147), citado por el verificador independiente | "packaging film … in the headspace" | 2026 |
+| 11b | Pantalla: la etiqueta pasa de rojo a morado y termina en azul (antes llegaba a verde azulado) | ✅ | Dong et al., citado por el verificador independiente | "…finally shifted to blue when the fish was spoiled." | 2026 |
+| 11c | Pantalla: «9 días · 4 °C» (antes un contador inventado de 0 a 6 días) | ✅ | Dong et al., citado por el verificador independiente | "9 days (4 °C)" | 2026 |
+
+- ❌→✅ Contador «0 → 6 días»: inventado → ahora cuenta hasta «9 días · 4 °C», lo que duró el ensayo.
+- ⚠️→✅ Color final verde azulado → azul (colorPH 8).
+- ⚠️→✅ «película para envolver pescado» → «película de empaque para pescado».
 
 VEREDICTO: APROBADO

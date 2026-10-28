@@ -2,23 +2,23 @@
 
 - **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #09 · rama `claude/igualar-quimico` (pedido de la Sala `igualar-quimico`).
 - **Formato:** N1 "Por dentro" (la rodilla raspada con espuma → la molécula y la catalasa → la misma rodilla, lavada con agua) + N5 "El experimento" (Takahara, 1948).
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" (con espíritu de #6 mito de primeros auxilios): "Esa espuma no es tu herida sanando: es tu propio cuerpo rompiendo el agua oxigenada."
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" (con espíritu de #6 mito de primeros auxilios): "Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agua oxigenada."
 - **Seguridad:** no se recomienda ningún antiséptico; lo único práctico que se dice es lo que trae la fuente (agua de la llave vs. suero).
-- **Duración:** voz 923 caracteres / 169 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base sin voz.
-- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~923 créditos).
+- **Duración:** voz 931 caracteres / 170 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base sin voz.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~931 créditos).
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa espuma no es tu herida sanando: es tu propio cuerpo rompiendo el agua oxigenada. | Fondo cian. Desde el cuadro 0 una botella café vierte un chorro sobre una rodilla raspada y brota espuma blanca. "¿está sanando?" se tacha. |
+| 0 | Gancho | Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agua oxigenada. | Fondo cian. Desde el cuadro 0 una botella café vierte un chorro sobre una rodilla raspada y brota espuma blanca. "¿está sanando?" se tacha. |
 | 1 | Que | El agua oxigenada es peróxido de hidrógeno: como agua, pero con un oxígeno de más. | Una molécula de agua (H₂O) y a su lado H₂O₂ con un oxígeno extra que brilla. |
 | 2 | Catalasa | Tus células, como los glóbulos rojos, traen catalasa, una enzima que la parte en agua y oxígeno. | Fondo noche: glóbulos rojos; de ellos sale la catalasa (pac-man morado) que muerde H₂O₂ y deja H₂O + O₂. |
 | 3 | Burbujas | Ese oxígeno es gas: son las burbujas que ves. | Los O₂ se juntan en burbujas que suben y salen a la superficie como espuma. |
 | 4 | Mito | Así que la espuma no prueba que esté curando: solo prueba que hay catalasa. | Chip "espuma = catalasa" y "espuma ≠ curación" (tachado). |
 | 5 | Pregunta | ¿Y entonces sirve para las heridas? | **Re-gancho.** "?" gigante; Robert grande pensativo. |
 | 6 | Estudio | En 1985, un estudio la puso al 3 por ciento sobre fibroblastos humanos en cultivo, células que ayudan a reparar la piel: murieron todos. | Tarjeta "1985 · Lineaweaver et al. · fibroblastos en cultivo"; caja de Petri con células que se apagan; "100 %". |
-| 7 | Revision | Una revisión de 2026 la desaconseja en heridas de cirugía de piel, y en 12 ensayos, lavar con agua de la llave no dio más infecciones que con suero. | Botella café con ✗ "2026"; luego dos barras iguales "agua de la llave" y "suero" con "12 ensayos". |
+| 7 | Revision | Una revisión de 2026 la desaconseja tras cirugías de piel; y en 12 ensayos, lavar con agua potable de la llave no dio más infecciones que con suero. | Botella café con ✗ "2026"; luego dos barras iguales "agua potable" y "suero" con "2025 · 12 ensayos". |
 | 8 | Takahara | Lo curioso: en 1948, el médico japonés Takahara la puso en la llaga de un paciente, no hizo espuma, y así descubrió personas sin catalasa. | Tarjeta "1948 · Takahara · Japón"; una boca con una llaga, gotero, y nada de espuma; chip "acatalasemia". |
 | 9 | Cierre | Así que esa espuma no es tu herida sanando: es química de tu propio cuerpo. | **Regreso a la rodilla del inicio**: la espuma, ahora con la etiqueta "catalasa + H₂O₂ → agua + oxígeno". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
@@ -31,7 +31,7 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y entonces sirv
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «no es tu herida sanando» |
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «es la catalasa de tu sangre» |
 | 2 | 6.5 | 10.2 | 13_senalando_arriba | `izq-alto` | «con un oxígeno de más» |
 | 3 | 12.0 | 16.4 | 06_pensativo_menton | `arriba-der` | «catalasa… la parte en agua y oxígeno» |
 | 4 | 19.9 | 24.2 | 05_sonriendo_dientes_uniformes | `izq-alto` | «solo prueba que hay catalasa» |

@@ -42,6 +42,7 @@ function DentroLiquido({ T, a, acido = 0, x0 = 0 }) {
         {i % 2 === 0 ? (sube > 0.05 ? <Mol tipo="cl2" x={xx} y={yy} s={0.9} rot={T * 60 + p * 40} /> : <Mol tipo="hipoclorito" x={xx} y={yy} s={0.9} rot={T * 30 + p * 40} />)
           : <g opacity={1 - sube}><Atomo x={xx} y={yy} r={30} color={QA.Na} letra="Na⁺" tam={22} /></g>}
         {acido > 0 && i % 2 === 0 && T > t0 - 0.6 && sube < 0.1 && <Atomo x={klerp(xx - 160, xx - 40, kprog(T, t0 - 0.6, t0))} y={yy - 40} r={20} color={KC.coral} letra="H⁺" tam={16} />}
+        {acido > 0 && i % 2 === 0 && T > t0 - 0.6 && sube < 0.1 && <Atomo x={klerp(xx + 170, xx + 50, kprog(T, t0 - 0.6, t0))} y={yy + 30} r={26} color={QA.Cl} letra="Cl⁻" tam={16} />}
       </g>; })}
     {acido > 0 && <Nube T={T} x={540} y={440} f={kprog(T, a + 2.0, a + 4.5)} r={240} color={VERDE} seed={8} n={10} />}
   </SvgCapa>;
@@ -186,7 +187,7 @@ function Cloro() {
       <Chip T={T} at={K.Am + 1.0} until={K.P - 0.3} texto="cloraminas (NH₂Cl)" y={1500} tam={44} borde={KC.lilac} />
       <Chip T={T} at={K.P + 0.2} until={K.Pr - 0.3} texto="tus vías respiratorias" y={330} x={600} tam={40} borde={KC.pink} />
       <Etq T={T} at={K.P + 2.5} until={K.Pr - 0.3} x={60} y={1640} texto="Cl₂ + humedad → HOCl + HCl" tam={34} />
-      <Medidor T={T} at={K.E} until={K.Pr - 0.2} valor={(t) => 1 - 0.6 * kprog(t, K.E, K.E + 1.6)} etiqueta="aire" texto={(v) => Math.round(v * 100) + ' %'} y={1480} color={KC.coral} />
+      <Medidor T={T} at={K.E} until={K.Pr - 0.2} valor={(t) => 1 - 0.6 * kprog(t, K.E, K.E + 1.6)} etiqueta="aire" texto={() => ""} y={1480} color={KC.coral} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={mitad} anio="2024" quien="Atalla et al. · U. de Maryland y Pittsburgh" revista="Clinical Toxicology · centros de toxicología de EE. UU." y={900} />
       <NumeroGigante T={T} at={mitad + 0.2} until={K.Ca - 0.3} valor={85104} dur={1.6} etiqueta="exposiciones a cloro y cloraminas" y={850} tam={190} />
       <Chip T={T} at={mitad + 0.8} until={K.Ca - 0.3} texto="EE. UU. · 2015–2022" y={1080} tam={40} borde={KC.yellow} />
@@ -195,7 +196,7 @@ function Cloro() {
       <NumeroGigante T={T} at={K.En + 1.4} until={K.Gu - 0.3} valor={35} dur={2.1} sufijo=" de 100" etiqueta="sabían que NO se mezclan" y={1500} tam={120} color={KC.mint} />
       <Chip T={T} at={K.Gu + 0.4} until={K.Ay - 0.3} texto="Primera Guerra Mundial" y={1500} tam={48} borde={KC.ink} fondo="rgba(60,40,20,.85)" />
       <Chip T={T} at={K.Ay + 1.0} until={K.Ci - 0.3} texto="1 · sal al aire libre" x={540} y={470} tam={42} borde={KC.mint} />
-      <Chip T={T} at={K.Ay + 2.6} until={K.Ci - 0.3} texto="2 · ¿te cuesta respirar? → médico" y={1500} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Ay + 2.6} until={K.Ci - 0.3} texto="2 · pide ayuda · 911" y={1500} tam={38} borde={KC.red} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="cloro + agua ✓ · un producto a la vez" y={1500} tam={36} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
@@ -205,12 +206,12 @@ function Cloro() {
       <Subtitulo T={T} idx={3} at={K.Am + 0.1} until={K.P - 0.1} texto="Con amoniaco: *cloraminas.*" />
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.E - 0.1} texto="Con tu humedad forma *dos ácidos.*" />
       <Subtitulo T={T} idx={5} at={K.E + 0.1} until={K.Pr - 0.1} texto="Tos y *falta de aire.*" />
-      <Subtitulo T={T} idx={6} at={K.Pr + 0.1} until={K.Es - 0.1} texto="¿Cuántos *se equivocan?*" />
+      <Subtitulo T={T} idx={6} at={K.Pr + 0.1} until={K.Es - 0.1} texto="¿Cuánta gente *se intoxica?*" />
       <Subtitulo T={T} idx={7} at={K.Es + 0.1} until={K.Ca - 0.1} texto="Más de *85 mil exposiciones.*" />
       <Subtitulo T={T} idx={8} at={K.Ca + 0.1} until={K.En - 0.1} texto="Casi 85 de cada 100: *en casa.*" />
       <Subtitulo T={T} idx={9} at={K.En + 0.1} until={K.Gu - 0.1} texto="Solo *35 de cada 100* lo sabían." />
       <Subtitulo T={T} idx={10} at={K.Gu + 0.1} until={K.Ay - 0.1} texto="El mismo gas *de la guerra.*" />
-      <Subtitulo T={T} idx={11} at={K.Ay + 0.1} until={K.Ci - 0.1} texto="Sal *al aire libre.*" />
+      <Subtitulo T={T} idx={11} at={K.Ay + 0.1} until={K.Ci - 0.1} texto="Aire libre *y pide ayuda.*" />
       <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Cloro con agua: *sí.*" />
 
       <Robert T={T} apariciones={[

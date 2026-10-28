@@ -20,7 +20,10 @@ Criterio escéptico: lo que no se encontró textual en la fuente se quitó del g
 | 12 | Encuesta de 2020 en EE. UU.: 35 de cada 100 adultos sabían que no se mezcla con vinagre (pantalla: 502 adultos) | ✅ | Gharpure et al. (PMID 32525852 · PMC7315790) | "survey of 502 U.S. adults was conducted in May 2020" · "35% that bleach should not be mixed with vinegar" | 2020 |
 | 13 | Es el mismo gas que se usó como arma en la Primera Guerra Mundial | ✅ | Das & Blanc, Toxicol Ind Health (PMID 8367885) | "the heaviest mass inhalational exposures to chlorine resulted from World War I gassing" | 1993 (revisión) |
 | 14 | Si ya lo mezclaste, sal al aire libre | ✅ | PMC9477020 | "Immediate relocation to an open area with fresh air" | 2022 |
-| 15 | Si te cuesta respirar, busca atención médica | ✅ | Mrvos et al. | "All patients with respiratory embarrassment … were referred to a medical facility." | 1993 |
+| 15 | Si ya lo mezclaste, pide ayuda médica o llama al 911 (pantalla: «2 · pide ayuda · 911») | ✅ | CDC, Chlorine Fact Sheet (act. 11 jun 2026), abierta por el verificador independiente | "Get help right away by calling 911 … or calling the Poison Control Center" | 2026 |
+| 15b | Los síntomas pueden tardar | ✅ | CDC, Chlorine Fact Sheet (verificador independiente) | "If low amounts are breathed in, symptoms may show up later." | 2026 |
+| 15c | Re-gancho «¿Y cuánta gente se intoxica?» (las 85,104 son exposiciones reportadas, no todas por mezclar) | ✅ | Atalla et al. | "85,104 total exposures to chlorine and chloramine gas were reported" · "Most reported exposures were unintentional" | 2024 |
+| 15d | Pantalla: el Cl₂ sale cuando el ClO⁻ toma un H⁺ (HOCl) y se junta con un Cl⁻ (esquemático) | ✅ | Corrección del verificador independiente (química de la reacción) | HOCl + Cl⁻ + H⁺ → Cl₂ + H₂O | — |
 | 16 | Cloro con agua, sí (se diluye en agua) | ✅ | Gharpure et al. | "only room temperature water should be used for preparation of dilute bleach solutions" | 2020 |
 | 17 | (Solo en LinkedIn) Aumento del 61 % de 2015 a 2022 | ✅ | Atalla et al. | "Total exposures increased by 61% from 8,385 in 2015 to 13,503 in 2022" | 2015–2022 |
 
@@ -29,5 +32,13 @@ Criterio escéptico: lo que no se encontró textual en la fuente se quitó del g
 - ⚠️ "algunos limpiavidrios tienen amoniaco": no se abrió una fuente con la composición → se quitó.
 - ⚠️ Fecha y lugar del primer ataque con cloro (1915, Ypres): no se verificó en una fuente abierta → solo se dice "Primera Guerra Mundial".
 - ⚠️ Los limpiadores de baño ácidos: la fuente es de productos de China → no se menciona; se dice "un ácido, como el vinagre".
+
+## Verificación independiente (28 oct 2026)
+Otro agente, que no escribió el guion, abrió las fuentes primarias y marcó como NO PASA (seguridad). Se corrigió y se re-verificó:
+- ❌→✅ «si te cuesta respirar, busca atención médica» → «pide ayuda médica o llama al 911: los síntomas pueden tardar» (CDC Chlorine Fact Sheet, act. 11 jun 2026: "If low amounts are breathed in, symptoms may show up later." · "Get help right away by calling 911 … or calling the Poison Control Center"). Chip: «2 · pide ayuda · 911». La página de CDC no abre desde esta sesión (bloqueo anti-bots): la cita la trajo el verificador independiente.
+- ⚠️→✅ Medidor «aire» de 100 % a 40 %: cifra sin fuente → se quitó el número; queda solo la barra.
+- ⚠️→✅ «¿Y cuánta gente se equivoca?» → «¿Y cuánta gente se intoxica?» (Atalla 2024: "Most reported exposures were unintentional"; no todas son por mezclar).
+- ⚠️→✅ Pantalla: dos ClO⁻ que se juntan en Cl₂ no es la química real → ahora cada ClO⁻ toma un H⁺ y un Cl⁻ y sale el Cl₂ (esquemático).
+- Sin cambio de cifras. Voz nueva: 971 caracteres.
 
 VEREDICTO: APROBADO

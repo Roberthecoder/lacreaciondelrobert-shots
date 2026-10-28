@@ -116,9 +116,9 @@ function Oxigenada() {
             : <g>
               <path d="M 220 640 L 220 700 L 300 700" stroke="#9aa3b5" strokeWidth={30} fill="none" strokeLinecap="round" />
               <Goteo T={T} x={300} y0={720} y1={900} cada={0.3} color="#7fc8ff" desde={mitadRe} hasta={K.Ta} />
-              {[['agua de la llave', '#7fc8ff', 300], ['suero', '#cfe9ff', 760]].map(([t, c, x], i) => { const h = 380 * kprog(T, mitadRe + 0.3, mitadRe + 1.3, kEase.sale); return <g key={i}>
+              {[['agua potable', '#7fc8ff', 300], ['suero', '#cfe9ff', 760]].map(([t, c, x], i) => { const h = 380 * kprog(T, mitadRe + 0.3, mitadRe + 1.3, kEase.sale); return <g key={i}>
                 <rect x={x - 100} y={1180 - h} width={200} height={h} fill={c} stroke={KC.ink} strokeWidth={7} />
-                <text x={x} y={1230} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{t}</text></g>; })}
+                <text x={x} y={1150} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{t}</text></g>; })}
             </g>}
         </SvgCapa>
       </Escena>
@@ -140,7 +140,7 @@ function Oxigenada() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿está sanando?" x={330} y={470} tam={46} />
-      <Chip T={T} at={K.G + 3.1} until={K.Q - 0.3} texto="tu cuerpo rompe el H₂O₂" x={360} y={470} tam={40} borde={ENZ} />
+      <Chip T={T} at={K.G + 3.1} until={K.Q - 0.3} texto="la catalasa rompe el H₂O₂" x={360} y={470} tam={40} borde={ENZ} />
       <Chip T={T} at={K.Q + 0.3} until={K.Ca - 0.3} texto="peróxido de hidrógeno" x={540} y={1500} tam={46} borde={KC.orange} />
       <Etq T={T} at={K.Q + 2.4} until={K.Ca - 0.3} x={1030} y={1640} texto="un oxígeno de más" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.6} until={K.Bu - 0.2} texto="catalasa: H₂O₂ → agua + oxígeno" x={540} y={1500} tam={38} borde={ENZ} />
@@ -149,21 +149,21 @@ function Oxigenada() {
       <MitoTachado T={T} at={K.Mi + 0.3} tacharEn={K.Mi + 1.8} until={K.Pr - 0.2} texto="espuma = curación" x={540} y={480} tam={44} />
       <Chip T={T} at={K.Mi + 2.4} until={K.Pr - 0.2} texto="espuma = hay catalasa" x={540} y={1500} tam={46} borde={ENZ} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.8} anio="1985" quien="Lineaweaver et al." revista="Plast Reconstr Surg · H₂O₂ al 3 % en cultivo" x={620} y={760} />
-      <Chip T={T} at={K.Re + 0.3} until={mitadRe - 0.2} texto="2026: desaconsejada en heridas de cirugía de piel" y={1500} tam={30} borde={KC.red} />
-      <Chip T={T} at={mitadRe + 0.3} until={K.Ta - 0.3} texto="12 ensayos · mismas infecciones" y={1500} tam={40} borde="#7fc8ff" />
+      <Chip T={T} at={K.Re + 0.3} until={mitadRe - 0.2} texto="2026: desaconsejada tras cirugías de piel" y={1500} tam={30} borde={KC.red} />
+      <Chip T={T} at={mitadRe + 0.3} until={K.Ta - 0.3} texto="2025 · 12 ensayos · mismas infecciones" y={1500} tam={38} borde="#7fc8ff" />
       <TarjetaEstudio T={T} at={K.Ta + 0.2} until={K.Ta + 2.4} anio="1948" quien="Takahara · Japón" revista="sin burbujas = sin catalasa" y={1580} />
       <Chip T={T} at={K.Ta + 4.6} until={K.Ci - 0.3} texto="ni una burbuja → acatalasemia" y={1500} tam={40} borde={ENZ} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="catalasa + H₂O₂ → agua + oxígeno" y={1500} tam={38} borde={ENZ} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="No es tu herida sanando: *es tu cuerpo.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="No es tu herida: *es catalasa.*" />
       <Subtitulo T={T} idx={1} at={K.Q + 0.1} until={K.Ca - 0.1} texto="Agua con *un oxígeno de más.*" />
       <Subtitulo T={T} idx={2} at={K.Ca + 0.1} until={K.Bu - 0.1} texto="La catalasa *la parte.*" />
       <Subtitulo T={T} idx={3} at={K.Bu + 0.1} until={K.Mi - 0.1} texto="El oxígeno: *las burbujas.*" />
       <Subtitulo T={T} idx={4} at={K.Mi + 0.1} until={K.Pr - 0.1} texto="Espuma = *hay catalasa.*" />
       <Subtitulo T={T} idx={5} at={K.Pr + 0.1} until={K.Es - 0.1} texto="¿Y sirve *para las heridas?*" />
       <Subtitulo T={T} idx={6} at={K.Es + 0.1} until={K.Re - 0.1} texto="En cultivo: *murieron todos.*" />
-      <Subtitulo T={T} idx={7} at={K.Re + 0.1} until={K.Ta - 0.1} texto="Agua de la llave: *igual que suero.*" />
+      <Subtitulo T={T} idx={7} at={K.Re + 0.1} until={K.Ta - 0.1} texto="Agua potable: *igual que suero.*" />
       <Subtitulo T={T} idx={8} at={K.Ta + 0.1} until={K.Ci - 0.1} texto="1948: *no hizo espuma.*" />
       <Subtitulo T={T} idx={9} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Es química *de tu propio cuerpo.*" />
 

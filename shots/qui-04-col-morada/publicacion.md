@@ -9,7 +9,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 Esto no es agua de jamaica: es jugo de col morada, y es un detector de ácidos. 🥬🧪
 Su color viene de las antocianinas: la col morada tiene más de treinta distintas. Si le exprimes limón, que es ácido, se pone roja. Si le echas bicarbonato, que es básico, se pone azul.
 No es magia: la molécula cambia de forma según qué tan ácido esté el líquido, y cada forma tiene otro color. Muy ácido, rojo; neutro, violeta; un poco básico, azul; más básico, verde; y al final, amarillo.
-¿Y eso de qué sirve fuera de tu cocina? En 2026, un equipo de Ningbo, China, metió este pigmento en una película para envolver pescado: al echarse a perder, el pescado suelta compuestos básicos y la película cambia de color, así se ve a simple vista.
+¿Y eso de qué sirve fuera de tu cocina? En 2026, un equipo de Ningbo, China, metió este pigmento en una película de empaque para pescado (iba dentro de la caja, en el aire sobre el pescado): al echarse a perder, el pescado suelta compuestos básicos y la película cambia de color, así se ve a simple vista.
 Lo curioso: la flor de jamaica (Hibiscus sabdariffa) también tiene antocianinas, y ya la probaron igual para vigilar pollo.
 Pruébalo: licúa col morada con agua, cuélala y ponle limón o bicarbonato.
 El dibujo es esquemático.
@@ -23,7 +23,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esto no es agua de jamaica: es jugo de col morada, y es un detector de ácidos. 🥬🧪
-Su color son las antocianinas (la col tiene más de 30). Con limón, que es ácido, se pone roja; con bicarbonato, que es básico, azul. La molécula cambia de forma según la acidez y cada forma tiene otro color: rojo, violeta, azul, verde y amarillo. En 2026 lo metieron en una película para pescado que cambia de color cuando se echa a perder (Dong et al.). Y la jamaica también tiene antocianinas.
+Su color son las antocianinas (la col tiene más de 30). Con limón, que es ácido, se pone roja; con bicarbonato, que es básico, azul. La molécula cambia de forma según la acidez y cada forma tiene otro color: rojo, violeta, azul, verde y amarillo. En 2026 lo metieron en una película de empaque para pescado que cambia de color cuando se echa a perder (Dong et al.). Y la jamaica también tiene antocianinas.
 Pruébalo: licúa col morada con agua, cuélala y ponle limón o bicarbonato.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué otra cosa de tu cocina le pondrías? 👇
@@ -40,7 +40,7 @@ Esto no es agua de jamaica: es un medidor de pH 🥬 | Shot Químico #04
 Descripción:
 ```text
 Esto no es agua de jamaica: es jugo de col morada, y es un detector de ácidos.
-Su color viene de las antocianinas: la col morada tiene más de treinta distintas. Con limón (ácido) se pone roja; con bicarbonato (básico), azul. La molécula cambia de forma según qué tan ácido esté el líquido y cada forma tiene otro color: muy ácido, rojo; neutro, violeta; un poco básico, azul; más básico, verde; y al final, amarillo. En 2026, un equipo de Ningbo, China, metió este pigmento en una película para envolver pescado: al echarse a perder, el pescado suelta compuestos básicos y la película cambia de color. La flor de jamaica también tiene antocianinas y ya la probaron para vigilar pollo.
+Su color viene de las antocianinas: la col morada tiene más de treinta distintas. Con limón (ácido) se pone roja; con bicarbonato (básico), azul. La molécula cambia de forma según qué tan ácido esté el líquido y cada forma tiene otro color: muy ácido, rojo; neutro, violeta; un poco básico, azul; más básico, verde; y al final, amarillo. En 2026, un equipo de Ningbo, China, metió este pigmento en una película de empaque para pescado (iba dentro de la caja, en el aire sobre el pescado): al echarse a perder, el pescado suelta compuestos básicos y la película cambia de color. La flor de jamaica también tiene antocianinas y ya la probaron para vigilar pollo.
 Pruébalo: licúa col morada con agua, cuélala y ponle limón o bicarbonato.
 El dibujo es esquemático.
 Fuentes:
@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es agua de jamaica: es jugo de col morada, y es un detector de ácidos.
 Las antocianinas de la col morada (más de 30 distintas) cambian de estructura según el pH: catión flavilio rojo en medio ácido, base quinoidal violeta y azul cerca de neutro, verde en medio básico y chalcona amarilla en medio muy básico.
-Esa química de cocina ya se está llevando a empaques inteligentes. En 2026, Dong et al. (Food Chemistry: X) incorporaron antocianinas de col morada a una película de colágeno y quitosano para pescado: al descomponerse, el pescado libera compuestos alcalinos y la película cambia de color, lo que permite vigilar la frescura a simple vista. Nguyen et al. (J Food Sci, 2026) probaron lo mismo con jamaica (Hibiscus sabdariffa) en pollo.
+Esa química de cocina ya se está llevando a empaques inteligentes. En 2026, Dong et al. (Food Chemistry: X) incorporaron antocianinas de col morada a una película de empaque de colágeno y quitosano, colocada en el espacio de aire de una caja con pescado (guardado 9 días a 4 °C): al descomponerse, el pescado libera compuestos alcalinos y la película cambia de color, lo que permite vigilar la frescura a simple vista. Nguyen et al. (J Food Sci, 2026) probaron lo mismo con jamaica (Hibiscus sabdariffa) en pollo.
 Indicadores naturales, baratos y sin colorantes sintéticos: ¿los ves llegando al súper?
 Shot Químico #04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

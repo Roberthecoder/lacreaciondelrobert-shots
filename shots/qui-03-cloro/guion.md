@@ -3,9 +3,9 @@
 - **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #03 · rama `claude/igualar-quimico` (pedido de la Sala `igualar-quimico`).
 - **Formato:** N3 "Capítulos y medidores" (cubeta → dentro del líquido → dentro de tus pulmones → los números → la misma cubeta, bien hecha), con espíritu de M2 "¿Por qué NO…?".
 - **Gancho (de los 7):** #6 Mito peligroso "¿Por qué NO…?": "¿Por qué NO se mezcla el cloro con vinagre? Porque tu cubeta se vuelve una fábrica de gas."
-- **Duración:** voz 968 caracteres / 178 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base sin voz.
+- **Duración:** voz 971 caracteres / 180 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base sin voz.
 - **Seguridad:** el video NO enseña a hacer la mezcla; solo la explica y dice qué hacer si ya pasó. Nada de cantidades ni recetas.
-- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~968 créditos).
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~971 créditos).
 
 ## Versión narrada
 
@@ -13,16 +13,16 @@
 |---|---|---|---|
 | 0 | Gancho | ¿Por qué NO se mezcla el cloro con vinagre? Porque tu cubeta se vuelve una fábrica de gas. | Fondo amarillo. Desde el cuadro 0 dos botellas ("CLORO" y "VINAGRE") vierten en una cubeta; a los 1.5 s sube una nube amarillo verdosa. Chip "¿Por qué NO?". |
 | 1 | Cloro | El cloro de tu casa es hipoclorito de sodio disuelto en agua. | Fondo cian: la botella de cloro grande; Lupa en rayos X sobre el líquido: iones Na⁺ y ClO⁻ entre moléculas de agua. Etiqueta "hipoclorito de sodio · NaClO". |
-| 2 | Acido | Con un ácido, como el vinagre, el hipoclorito suelta cloro gaseoso, amarillo verdoso. | Fondo oscuro (por dentro del líquido): llegan los H⁺ del vinagre, los ClO⁻ se juntan en pares verdes Cl₂ que suben como burbujas y salen como nube. Chip "Cl₂ · gas". |
+| 2 | Acido | Con un ácido, como el vinagre, el hipoclorito suelta cloro gaseoso, amarillo verdoso. | Fondo oscuro (por dentro del líquido): llegan los H⁺ del vinagre; cada ClO⁻ toma un H⁺ (queda HOCl) y un Cl⁻, y sale un Cl₂ verde que sube como burbuja y forma la nube (esquemático). Chip "Cl₂ · gas". |
 | 3 | Amoniaco | Y con amoniaco forma otros gases irritantes: las cloraminas. | Fondo lila: botella "AMONIACO" vierte; molécula NH₂Cl dibujada. Chip "cloraminas (NH₂Cl)". |
 | 4 | Pulmon | Al respirarlo, reacciona con la humedad de tus vías respiratorias y forma ácido hipocloroso y ácido clorhídrico. | Fondo noche: tráquea y pulmones esquemáticos con pared húmeda (gotitas); los Cl₂ chocan con el agua y salen etiquetas "HOCl" y "HCl"; la pared se enrojece. |
 | 5 | Efecto | Por eso te da tos y te falta el aire. | Los pulmones laten en rojo; "¡cof!" brinca; medidor "aire" que baja. |
-| 6 | Pregunta | ¿Y cuánta gente se equivoca? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
+| 6 | Pregunta | ¿Y cuánta gente se intoxica? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
 | 7 | Estudio | Un estudio de 2024 contó los reportes a centros de toxicología de Estados Unidos: de 2015 a 2022, más de 85 mil exposiciones. | Tarjeta "2024 · Atalla et al. · U. de Maryland y Pittsburgh · Clinical Toxicology"; luego número gigante 85,104 "exposiciones a cloro y cloraminas · EE. UU. 2015–2022". |
 | 8 | Casa | Casi 85 de cada 100 pasaron en casa. | Cuadrícula de 100 cuadritos: 85 se pintan con una casita. "84.9 %". |
-| 9 | Encuesta | Y en una encuesta de 2020 allá mismo, solo 35 de cada 100 adultos sabían que no se mezcla con vinagre. | 100 personitas; solo 35 se encienden. Chip "encuesta · 502 adultos · 2020". |
+| 9 | Encuesta | En una encuesta de 2020 allá, solo 35 de cada 100 adultos sabían que no se mezcla con vinagre. | 100 personitas; solo 35 se encienden. Chip "encuesta · 502 adultos · 2020". |
 | 10 | Guerra | Lo curioso: es el mismo gas que se usó como arma en la Primera Guerra Mundial. | Fondo sepia: trinchera y una nube amarillo verdosa que avanza. Etiqueta "Primera Guerra Mundial". |
-| 11 | Ayuda | Si ya lo mezclaste, sal al aire libre; si te cuesta respirar, busca atención médica. | Una figura sale por la puerta al aire libre (fondo menta); chips "aire libre" y "¿te cuesta respirar? → médico". |
+| 11 | Ayuda | Si ya lo mezclaste, sal al aire libre y pide ayuda médica o llama al 911: los síntomas pueden tardar. | Una figura sale por la puerta al aire libre (fondo menta); chips "1 · sal al aire libre" y "2 · pide ayuda · 911". |
 | 12 | Cierre | Así que cloro con agua, sí. Con vinagre o amoniaco, nunca. | **Regreso a la cubeta del inicio:** ahora solo cloro + agua (azul, ✓); las botellas de vinagre y amoniaco se apartan con ✗. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
@@ -30,18 +30,18 @@
 
 ## Robert en pantalla
 
-Tiempos de la base sin voz (con la voz real se recorren solos porque están atados a cada escena). Grande en «¿Y cuánta gente se equivoca?».
+Tiempos de la base sin voz (con la voz real se recorren solos porque están atados a cada escena). Grande en «¿Y cuánta gente se intoxica?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 4.9 | 11_sorprendido | `gancho` | «tu cubeta se vuelve una fábrica de gas» |
 | 2 | 6.4 | 8.9 | 13_senalando_arriba | `izq-alto` | señala la botella: «hipoclorito de sodio» |
 | 3 | 14.6 | 19.0 | 10_serio_molesto | `arriba-der` | «gases irritantes: las cloraminas» |
-| 4 | 27.0 | 29.6 | 07_pensativo_puno | `grande` | «¿Y cuánta gente se equivoca?» |
+| 4 | 27.0 | 29.6 | 07_pensativo_puno | `grande` | «¿Y cuánta gente se intoxica?» |
 | 5 | 29.8 | 35.8 | 04_bajando_lentes | `izq-alto` | «un estudio de 2024… 85 mil exposiciones» |
 | 6 | 39.3 | 44.2 | 11_sorprendido | `arriba-der` | «solo 35 de cada 100» |
 | 7 | 45.3 | 49.0 | 12_perfil_serio | `izq-alto` | «el mismo gas… Primera Guerra Mundial» |
-| 8 | 50.3 | 54.2 | 02_apuntando_camara | `arriba-der` | «sal al aire libre» |
+| 8 | 50.3 | 54.2 | 02_apuntando_camara | `arriba-der` | «sal al aire libre y pide ayuda» |
 | 9 | 54.8 | 57.9 | 05_sonriendo_dientes_uniformes | `izq-alto` | «cloro con agua, sí» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
 
@@ -62,6 +62,8 @@ Tiempos de la base sin voz (con la voz real se recorren solos porque están atad
    > "These gases are strong irritants" · "All patients with respiratory embarrassment either at the initial contact or on follow-up were referred to a medical facility."
 6. **Primera Guerra Mundial** — Das R, Blanc PD. "Chlorine gas exposure and the lung: a review." *Toxicol Ind Health* 9(3):439–55 (1993). PMID 8367885.
    > "Historically, the heaviest mass inhalational exposures to chlorine resulted from World War I gassing."
+7. **Pide ayuda / 911; los síntomas pueden tardar** — CDC, Chlorine Fact Sheet (actualizada el 11 jun 2026; cita traída por la verificación independiente del 28 oct 2026).
+   > "If low amounts are breathed in, symptoms may show up later." · "Get help right away by calling 911 … or calling the Poison Control Center"
 
 ## Notas
 - El dibujo es esquemático (moléculas, pulmones, trinchera).

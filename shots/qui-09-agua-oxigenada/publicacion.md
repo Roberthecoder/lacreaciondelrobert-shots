@@ -6,9 +6,9 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 
 ### TikTok
 ```text
-Esa espuma no es tu herida sanando: es tu propio cuerpo rompiendo el agua oxigenada. 🫧🩹
+Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agua oxigenada. 🫧🩹
 El agua oxigenada es peróxido de hidrógeno: como agua, pero con un oxígeno de más. Tus células, como los glóbulos rojos, traen catalasa, una enzima que la parte en agua y oxígeno. Ese oxígeno es gas: son las burbujas que ves. Así que la espuma no prueba que esté curando: solo prueba que hay catalasa.
-¿Y entonces sirve para las heridas? En 1985, un estudio la puso al 3 % sobre fibroblastos humanos en cultivo, células que ayudan a reparar la piel, y murieron todos (en ese mismo trabajo, en animales no empeoró la cicatrización). Una revisión de 2026 la desaconseja en heridas de cirugía de piel, y en 12 ensayos, lavar con agua potable de la llave no dio más infecciones que con suero.
+¿Y entonces sirve para las heridas? En 1985, un estudio la puso al 3 % sobre fibroblastos humanos en cultivo, células que ayudan a reparar la piel, y murieron todos (en ese mismo trabajo, en animales no empeoró la cicatrización). Una revisión de 2026 la desaconseja tras cirugías de piel; y en un metaanálisis de 2025 con 12 ensayos, lavar con agua potable de la llave no dio más infecciones que con suero.
 Lo curioso: en 1948, el médico japonés Takahara la puso en la llaga de un paciente, no hizo espuma, y así descubrió personas sin catalasa (acatalasemia).
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes: Nandi et al. 2019 · Lineaweaver et al. 1985 · Hengy et al. 2026 · Shih et al. 2025.
@@ -20,8 +20,8 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Instagram Reels
 ```text
-Esa espuma no es tu herida sanando: es tu propio cuerpo rompiendo el agua oxigenada. 🫧🩹
-La catalasa de tus células la parte en agua y oxígeno; el oxígeno es la espuma. En cultivo, al 3 % mató al 100 % de los fibroblastos (1985); una revisión de 2026 la desaconseja en heridas de cirugía de piel, y en 12 ensayos el agua potable de la llave igualó al suero. Y en 1948 Takahara descubrió la acatalasemia porque en un paciente no hizo espuma.
+Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agua oxigenada. 🫧🩹
+La catalasa de tus células la parte en agua y oxígeno; el oxígeno es la espuma. En cultivo, al 3 % mató al 100 % de los fibroblastos (1985); una revisión de 2026 la desaconseja tras cirugías de piel, y en un metaanálisis de 2025 con 12 ensayos el agua potable de la llave igualó al suero. Y en 1948 Takahara descubrió la acatalasemia porque en un paciente no hizo espuma.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa también la usaban? 👇
 Shot Químico #09 · La Creación del Robert
@@ -36,7 +36,7 @@ Esa espuma no es tu herida sanando 🫧 | Shot Químico #09
 ```
 Descripción:
 ```text
-Esa espuma no es tu herida sanando: es tu propio cuerpo rompiendo el agua oxigenada.
+Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agua oxigenada.
 El agua oxigenada es peróxido de hidrógeno (H₂O₂). La catalasa, una enzima de tus células (por ejemplo, de los glóbulos rojos), lo descompone en agua y oxígeno; ese oxígeno es el gas de las burbujas. Por eso la espuma solo indica que hay catalasa, no que la herida esté sanando. En 1985, H₂O₂ al 3 % aplicado a fibroblastos humanos en cultivo mató al 100 % de las células (en el mismo trabajo, en un modelo animal no empeoró la cicatrización). Una revisión de 2026 sobre heridas de cirugía de piel desaconseja los antisépticos citotóxicos como el agua oxigenada, y un metaanálisis de 12 ensayos (2025) no encontró más infecciones al lavar con agua potable de la llave que con suero. Dato curioso: en 1948, el médico japonés Takahara puso agua oxigenada en la llaga de un paciente, no hizo espuma, y así describió la acatalasemia.
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes:
@@ -52,7 +52,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Esa espuma no es tu herida sanando: es tu propio cuerpo rompiendo el agua oxigenada. 🫧 Una enzima de tus células, la catalasa, la parte en agua y oxígeno: el oxígeno son las burbujas. La espuma solo dice que hay catalasa.
+Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agua oxigenada. 🫧 Una enzima de tus células, la catalasa, la parte en agua y oxígeno: el oxígeno son las burbujas. La espuma solo dice que hay catalasa.
 ¿En tu casa también la usaban? 👇
 Shot Químico #09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -77,8 +77,8 @@ Esa espuma no es tu herida sanando: es la catalasa de tus células partiendo el 
 
 ### Threads
 ```text
-Esa espuma no es tu herida sanando: es tu propio cuerpo rompiendo el agua oxigenada. 🫧
-La catalasa de tus células la parte en agua y oxígeno: las burbujas son oxígeno. Y en 12 ensayos, lavar con agua potable de la llave igualó al suero.
+Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agua oxigenada. 🫧
+La catalasa de tus células la parte en agua y oxígeno: las burbujas son oxígeno. Y en un metaanálisis de 2025 con 12 ensayos, lavar con agua potable de la llave igualó al suero.
 ¿En tu casa también la usaban?
 Shot Químico #09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

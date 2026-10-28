@@ -4,8 +4,8 @@
 - **Formato:** N5 "El experimento" (limón y bicarbonato en el vaso, con su explicación por dentro) + N3 (escala de pH como medidor).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Esto no es agua de jamaica: es jugo de col morada, y es un detector de ácidos."
 - **Demostración segura:** solo col morada, agua, limón y bicarbonato (cosas de cocina).
-- **Duración:** voz 957 caracteres / 175 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base sin voz.
-- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~957 créditos).
+- **Duración:** voz 959 caracteres / 176 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base sin voz.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~959 créditos).
 
 ## Versión narrada
 
@@ -18,8 +18,8 @@
 | 4 | Forma | No es magia: la molécula cambia de forma según qué tan ácido esté el líquido, y cada forma tiene otro color. | Fondo noche: la molécula de anillos cambia (gana/pierde un H⁺, se abre el anillo) y cambia de color. |
 | 5 | Escala | Muy ácido, rojo. Neutro, violeta. Un poco básico, azul. Más básico, verde, y al final, amarillo. | Fila de tubos rojo → violeta → azul → verde → amarillo, con barra de pH 1–14 y un marcador que la recorre. |
 | 6 | Pregunta | ¿Y eso de qué sirve fuera de tu cocina? | **Re-gancho.** "?" gigante; Robert grande pensativo. |
-| 7 | Estudio | En 2026, en Ningbo, China, metieron este pigmento en una película para envolver pescado. | Tarjeta "2026 · Dong et al. · Ningbo, China · Food Chemistry: X". Un pescado se envuelve en una película rosada. |
-| 8 | Pescado | Al echarse a perder, el pescado suelta compuestos básicos, y la película cambia de color: te avisa a simple vista. | Contador de días; del pescado salen "aminas" (rayitas de olor) y la película pasa de rojo a morado y a azul. |
+| 7 | Estudio | En 2026, en Ningbo, China, metieron este pigmento en una película de empaque para pescado. | Tarjeta "2026 · Dong et al. · Ningbo, China · Food Chemistry: X". Un pescado en una caja con una película de empaque rosada. |
+| 8 | Pescado | Al echarse a perder, el pescado suelta compuestos básicos, y la película cambia de color: te avisa a simple vista. | Contador «9 días · 4 °C»; del pescado salen "aminas" (rayitas de olor) y la película pasa de rojo a morado y a azul. |
 | 9 | Jamaica | Lo curioso: la flor de jamaica también tiene antocianinas, y ya la probaron igual para vigilar pollo. | Flor (cáliz) de jamaica y un vaso de agua de jamaica; una pierna de pollo con su parche que pasa de rojo a morado azulado. Tarjeta "2026 · Vietnam · J Food Sci". |
 | 10 | Casa | Pruébalo: licúa col morada con agua, cuélala y ponle limón o bicarbonato. | Licuadora → colador → dos vasos: uno rojo (limón) y uno azul (bicarbonato). |
 | 11 | Cierre | Así que no es agua de jamaica: es un laboratorio de pH en un vaso. | **Regreso al vaso del inicio**, que se reparte en el arcoíris de la escala. |
