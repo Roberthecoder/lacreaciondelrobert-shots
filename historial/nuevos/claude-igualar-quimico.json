@@ -1,6 +1,6 @@
 { "temas": [
   { "id": "qui-cloro-mezclas", "titulo": "¿Por qué NO mezclar cloro con vinagre o amoniaco? (gas cloro y cloraminas)", "serie": "Shot Químico", "numero": 3,
-    "estado": "idea", "carpeta": "shots/qui-03-cloro", "rama": "claude/igualar-quimico", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+    "estado": "guion", "carpeta": "shots/qui-03-cloro", "rama": "claude/igualar-quimico", "fuentes": ["Atalla et al. 2024, Clin Toxicol 62:589 (PMID 39263698)", "Gharpure et al. 2020, MMWR 69:705 (PMID 32525852)", "World J Clin Cases 2022 (PMC9477020)", "Das y Blanc 1993, Toxicol Ind Health (PMID 8367885)"], "fecha": "2026-10-28", "derivados": ["Por qué el cloro quita manchas: oxidación de los colorantes", "El olor a alberca no es cloro: son cloraminas", "Agua potable: cuánto cloro lleva y por qué"] },
   { "id": "qui-col-morada-ph", "titulo": "El jugo de col morada es un medidor de pH (antocianinas que cambian de color)", "serie": "Shot Químico", "numero": 4,
     "estado": "idea", "carpeta": "shots/qui-04-col-morada", "rama": "claude/igualar-quimico", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
   { "id": "qui-nixtamal", "titulo": "La nixtamalización: la cal que hace tortilla al maíz (y libera la niacina)", "serie": "Shot Químico", "numero": 5,
