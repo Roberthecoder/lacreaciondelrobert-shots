@@ -50,3 +50,10 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - Comprar créditos de ElevenLabs.
 - Pedir acceso a las API de redes (se le dio un PDF con instrucciones el 28 oct).
 - Borrar o no publicar los narrados viejos con errores que siguen en los Releases y en lacreaciondelrobert-archivo.
+
+## Voz pendiente (28 oct, tarde)
+- En main, a los 29 shots aprobados SIN voz guardada válida se les quitó `voz_aprobada` para que ningún push los mande a
+  ElevenLabs todos a la vez. La aprobación de Robert sigue en la Sala (`aprobaciones/<clave>`, procesado false).
+  El trabajador (o el admin) vuelve a poner `voz_aprobada` en main solo a los que alcancen los créditos, en tandas pequeñas
+  (máx. 3 por push) y esperando cada render. Lista: ver `git log` del commit "Voz pendiente: quito voz_aprobada…".
+- Todo vive ya en main (las ramas viejas se juntaron). Los cambios de shots se hacen en main o en una rama nueva que se junta después.

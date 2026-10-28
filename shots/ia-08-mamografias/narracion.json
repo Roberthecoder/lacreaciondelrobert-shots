@@ -1,5 +1,4 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Mamografias base narrada.dc.html",
   "salida": "Shot Mamografias narrado.dc.html",
   "nota": "Shot IA #08. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",

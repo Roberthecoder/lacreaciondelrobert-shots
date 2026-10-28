@@ -1,5 +1,4 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Col base narrada.dc.html",
   "salida": "Shot Col narrado.dc.html",
   "nota": "Shot Químico #04. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",

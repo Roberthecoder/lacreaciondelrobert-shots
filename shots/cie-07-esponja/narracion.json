@@ -1,5 +1,4 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Esponja base narrada.dc.html",
   "salida": "Shot Esponja narrado.dc.html",
   "nota": "Shot Científico #07. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
