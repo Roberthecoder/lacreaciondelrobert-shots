@@ -18,6 +18,18 @@
     "Lentes 'adversarios' que engañan al reconocimiento facial",
     "Envenenar los datos de entrenamiento: cuántas imágenes falsas bastan"
    ]
+  },
+  {
+   "id": "ia-prueba-turing",
+   "titulo": "La prueba de Turing: la gente creyó que GPT-4.5 (con personaje) era el humano 73 % de las veces (Jones y Bergen, PNAS 2026)",
+   "serie": "Shot IA",
+   "numero": 7,
+   "estado": "idea",
+   "carpeta": "shots/ia-07-turing",
+   "rama": "claude/igualar-ia",
+   "fecha": "2026-10-28",
+   "fuentes": [],
+   "derivados": []
   }
  ]
 }
