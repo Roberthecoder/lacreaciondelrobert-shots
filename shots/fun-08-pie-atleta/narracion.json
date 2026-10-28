@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Pie de Atleta base narrada.dc.html",
   "salida": "Shot Pie de Atleta narrado.dc.html",
   "nota": "Shot Fungi Mati #08. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
