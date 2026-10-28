@@ -603,8 +603,8 @@ function Sticker({ T, src, at, until, lado = 'arriba-der' }) {
   const L = KLADOS[lado] || KLADOS['arriba-der'];
   const i = kprog(T, at, at + 0.5, kEase.rebote), o = kprog(T, until - 0.05, until + 0.4, kEase.suave);
   const w = Math.exp(-(T - at - 0.35) * 6) * Math.cos((T - at - 0.35) * 20) * 0.08 * (T > at + 0.35 ? 1 : 0);
-  const desdeAbajo = lado !== 'arriba-der';
-  const ty = desdeAbajo ? (1 - i) * 800 + o * 800 : 0, tx = desdeAbajo ? 0 : (1 - i) * 420 + o * 420;
+  const desdeAbajo = lado !== 'arriba-der' && lado !== 'izq-alto', izq = lado === 'izq-alto' ? -1 : 1; // los lados altos entran de lado: nunca cruzan el subtítulo
+  const ty = desdeAbajo ? (1 - i) * 800 + o * 800 : 0, tx = desdeAbajo ? 0 : izq * ((1 - i) * 420 + o * 420);
   return <img src={src} alt="" style={{ position:'absolute', left:L.left, top:L.top, width:L.width, zIndex:46, transformOrigin:'50% 100%',
     transform:`translate(${tx}px, ${ty}px) scale(${1 - w}, ${1 + w})`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />;
 }
