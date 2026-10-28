@@ -5,7 +5,7 @@
   versión de revisión sin voz en el Release "Borradores · claude/igualar-cientifico" · **voz pendiente de aprobación de Robert**.
 - **Formato:** N5 "El experimento" (los dos robots de Londres) con N1 (dentro del cerebro: el cerebelo).
 - **Gancho (de los 7):** #5 reto "casi todos fallan": "Intenta hacerte cosquillas. No puedes, y no es falta de técnica: tu cerebro te está ganando."
-- **Duración:** voz 966 caracteres / 173 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 971 caracteres / 174 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 
 ## Versión narrada
 
@@ -21,7 +21,7 @@
 | 7 | Copia | Si el robot copiaba tu movimiento al instante, se sentía como tu propio toque. | Los dos brazos se mueven igual; chip "retraso: 0"; medidor bajo ("como tu propio toque"). |
 | 8 | Retraso | Pero con un retraso o un desvío, las cosquillas regresaban: más retraso, más cosquillas. | El robot 2 se atrasa; chip "retraso o desvío ↑"; el medidor sube ("regresan"). |
 | 9 | Cerebelo | Y en un escáner cerebral, el cerebelo parecía ser el que hace esa predicción y apaga la sensación. | Fondo oscuro: el cerebro y el cerebelo que se ilumina; chip "predice y apaga la sensación". |
-| 10 | Ratas | Hasta las ratas: chillan en ultrasonido cuando les haces cosquillas, pero cuando se tocan solas, no. | Una rata con ondas de chillido cuando una mano le hace cosquillas; después, una X: "se tocan solas: silencio". |
+| 10 | Ratas | Hasta las ratas: chillan en ultrasonido cuando les haces cosquillas, pero cuando se tocan solas, casi no. | Una rata con ondas de chillido cuando una mano le hace cosquillas; después, una flecha hacia abajo y ondas casi apagadas: "se tocan solas: casi silencio". |
 | 11 | Cierre | Así que no es falta de técnica: tu cerebro conoce tu mano demasiado bien. Para las cosquillas, necesitas a alguien más. | **Regreso a la imagen del inicio**: el mismo pie; tu mano no sube el medidor, luego entra la mano de otra persona y el medidor sube ("otra persona"). |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert apuntando a cámara. |
 

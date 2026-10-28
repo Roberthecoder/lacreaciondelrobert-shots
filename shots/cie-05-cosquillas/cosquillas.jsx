@@ -145,8 +145,8 @@ function Cosquillas() {
       <Escena T={T} a={K.Ra} b={K.C}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Rata x={600} y={900} s={1} ondas={T < K.Ra + 3.2 ? 1 : 0} T={T} />
-          {T < K.Ra + 3.2 ? <ManoCosq x={600} y={640} s={0.6} T={T} rot={0} /> : <g transform="translate(860 640)"><circle r={60} fill="#fff" stroke={KC.ink} strokeWidth={7} /><path d="M -30 -30 L 30 30 M 30 -30 L -30 30" stroke={KC.red} strokeWidth={12} strokeLinecap="round" /></g>}
+          <Rata x={600} y={900} s={1} ondas={T < K.Ra + 3.2 ? 1 : 0.18} T={T} />
+          {T < K.Ra + 3.2 ? <ManoCosq x={600} y={640} s={0.6} T={T} rot={0} /> : <g transform="translate(860 640)"><circle r={60} fill="#fff" stroke={KC.ink} strokeWidth={7} /><path d="M 0 -32 L 0 30 M -24 8 L 0 32 L 24 8" stroke={KC.red} strokeWidth={12} strokeLinecap="round" strokeLinejoin="round" fill="none" /></g>}
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo pie; tu mano no sube el medidor, otra mano sí */}
@@ -172,7 +172,7 @@ function Cosquillas() {
       <Chip T={T} at={K.Re + 0.2} until={K.Ce - 0.3} texto="retraso o desvío ↑" x={540} y={440} tam={42} borde={KC.red} mono />
       <Chip T={T} at={K.Ce + 2.6} until={K.Ra - 0.3} texto="predice y apaga la sensación" x={540} y={460} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.Ra + 0.4} until={K.Ra + 3.1} texto="cosquillas: chillan (ultrasonido)" x={540} y={1100} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Ra + 3.3} until={K.C - 0.3} texto="se tocan solas: silencio" x={540} y={1100} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ra + 3.3} until={K.C - 0.3} texto="se tocan solas: casi silencio" x={540} y={1100} tam={40} borde={KC.red} />
       <Medidor T={T} at={K.C + 0.4} until={K.Ou - 0.1} valor={0.1 + 0.03 * Math.sin(T * 7) + 0.75 * otra} etiqueta="cosquillas" texto={() => (otra > 0.5 ? 'otra persona' : 'tu mano')} y={1500} color={KC.pink} />
       <Chip T={T} at={K.C + 3.2} until={K.Ou - 0.1} texto="necesitas a alguien más" x={400} y={440} tam={40} borde={KC.gold} />
 
@@ -187,7 +187,7 @@ function Cosquillas() {
       <Subtitulo T={T} idx={7} at={K.Co + 0.1} until={K.Re - 0.1} texto="Al instante: *como tu propio toque.*" />
       <Subtitulo T={T} idx={8} at={K.Re + 0.1} until={K.Ce - 0.1} texto="Con retraso: *regresan las cosquillas.*" />
       <Subtitulo T={T} idx={9} at={K.Ce + 0.1} until={K.Ra - 0.1} texto="El cerebelo *predice y apaga.*" />
-      <Subtitulo T={T} idx={10} at={K.Ra + 0.1} until={K.C - 0.1} texto="Ratas: *solas, no chillan.*" />
+      <Subtitulo T={T} idx={10} at={K.Ra + 0.1} until={K.C - 0.1} texto="Ratas: *solas, casi no chillan.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Necesitas *a alguien más.*" />
 
       <Robert T={T} apariciones={[

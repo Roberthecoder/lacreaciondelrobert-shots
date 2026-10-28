@@ -10,7 +10,7 @@
 
 | # | Afirmación | Veredicto | Fuente | Frase textual | Año del dato |
 |---|---|---|---|---|---|
-| 1 | Marte tiene atardeceres azules (y tus ojos nunca lo van a ver en persona) | ✅ | NASA/JPL Photojournal **PIA19400** "Sunset in Mars' Gale Crater" | "That causes the blue colors in the mixed light coming from the sun to stay closer to sun's part of the sky… The effect is most pronounced near sunset" | 2015 |
+| 1 | Marte tiene atardeceres azules **cerca del Sol**, y nadie los ha visto en persona (solo con cámaras de rovers; ningún humano ha ido a Marte) | ✅ | NASA/JPL Photojournal **PIA19400** "Sunset in Mars' Gale Crater" | "That causes the blue colors in the mixed light coming from the sun to stay closer to sun's part of the sky… The effect is most pronounced near sunset" | 2015 |
 | 2 | En la Tierra, de día el cielo es azul y el atardecer es rojo | ✅ | NASA Space Place, "Why Is the Sky Blue?" | "This is why we see a blue sky most of the time." · "What makes a red sunset?" | página vigente (consultada 28 oct 2026) |
 | 3 | El aire desvía más la luz azul y de día la reparte por todo el cielo | ✅ | NASA Space Place | "Sunlight reaches Earth's atmosphere and is scattered in all directions by all the gases and particles in the air. Blue light is scattered more than the other colors because it travels as shorter, smaller waves." | idem |
 | 4 | Al atardecer la luz cruza más aire: el azul se pierde y llegan el rojo y el amarillo | ✅ | NASA Space Place | "As the Sun gets lower in the sky, its light is passing through more of the atmosphere to reach you. Even more of the blue light is scattered, allowing the reds and yellows to pass straight through to your eyes." | idem |
@@ -30,5 +30,16 @@
 
 ## Re-verificación
 Las dos frases corregidas se revisaron otra vez contra PIA19400: ✅.
+
+## Verificación independiente (28 oct 2026)
+Otro agente, que no escribió el guion, abrió las fuentes (commit 416613c) y marcó el shot como **NO PASA** por 2 puntos. Corregidos en voz,
+guion, pantalla y publicación:
+| # | Antes | Problema | Ahora | Fuente y frase textual |
+|---|---|---|---|---|
+| a | «Hay un atardecer azul que tus ojos **nunca van a ver**: el de Marte.» | "Nunca" es una predicción, no se puede verificar | «Hay un atardecer azul que **nadie ha visto en persona**: el de Marte.» (también en el título de YouTube y en todas las redes) | Las imágenes son de rovers (PIA19400, Curiosity 2015; APOD 2009/2014, Spirit 2005): "NASA's Curiosity Mars rover recorded this view of the sun setting". No hay misiones tripuladas a Marte hasta hoy. |
+| b | Cierre «…piensa que en Marte, **a esa hora, el cielo se pone azul**.» y chip «a la misma hora» | Solo se azula el cielo **cerca del Sol**; y las horas de la Tierra y de Marte no coinciden | «Así que en tu próximo atardecer rojo, piensa que en Marte, **junto al Sol, el atardecer es azul**.»; chip «junto al Sol»; subtítulo «Marte: azul junto al Sol» | APOD 2009: "creating a bluish sky glow near the setting Sun"; PIA19400 (2015): "That causes the blue colors in the mixed light coming from the sun to stay closer to sun's part of the sky" |
+
+Re-verificación de ambas frases contra PIA19400 y APOD: ✅. Voz nueva: 950 caracteres (195 palabras cortas, ≈ 57–58 s estimados) +
+cierre 3.5 s = 61.5 s en la base. Al generar la voz hay que confirmar con ffprobe que el narrado quede entre 61 y 62 s.
 
 VEREDICTO: APROBADO

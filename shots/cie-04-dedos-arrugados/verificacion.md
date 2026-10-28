@@ -29,6 +29,12 @@
   línea; solo se pudo leer a través de la revisión de 2026. Por la regla de los números (abrir la fuente original), se quitó el año:
   ahora dice "los médicos vieron algo raro". El hecho (sin nervio no hay arrugas) sí está en la revisión abierta. ✅
 
+## Verificación independiente (28 oct 2026)
+Otro agente, que no escribió el guion, abrió las fuentes primarias (commit 416613c): **PASA sin cambios**. Nota del verificador: el texto
+completo de Kareklas 2013 no se pudo releer (captcha), pero las cifras usadas (20 personas, 12 %) cuadran con su resumen y con lo que
+cita Haseleu 2014 ("In a behavioral study with 20 participants, they showed that subjects transferred submerged objects faster with
+wrinkled fingers"); en esta sesión sí se leyó el texto completo en PMC3639753 (ver filas 8 y 9).
+
 ## Re-verificación
 Las dos frases corregidas se revisaron otra vez contra Haseleu 2014 (frase 2) y Fustes 2026 (frase 4): ✅.
 

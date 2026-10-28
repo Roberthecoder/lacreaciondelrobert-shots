@@ -36,6 +36,13 @@
   descripción.
 - El dato tiene más de 2 años (2016) y la voz lo dice ("en 2016").
 
+## Verificación independiente (28 oct 2026)
+Otro agente, que no escribió el guion, abrió las fuentes primarias (commit 416613c): **PASA sin cambios**. Como respaldo, un conteo más
+nuevo coincide con la idea de "casi 1 a 1":
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Unos 30 billones de células humanas y una cantidad parecida de bacterias | ✅ (respaldo) | Hatton et al., *PNAS* (PMC10523466) | "we estimate total body counts of ≈36 trillion cells in the male" · "total counts converging on values of 30 to 37 trillion human cells, with an approximately equal number of bacteria cells" | 2023 |
+
 ## Re-verificación
 Las dos partes corregidas (líneas 9 y 10 del guion) se revisaron otra vez contra PMC4991899: ✅.
 

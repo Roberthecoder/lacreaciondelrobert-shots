@@ -6,7 +6,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 
 ### TikTok
 ```text
-Hoy en la noche vas a medir casi dos centímetros menos que cuando te levantaste. 📏🌙
+Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantaste. 📏🌙
 No te encoges tú: se aplastan los discos, los cojines que hay entre tus vértebras. Con tu peso encima todo el día se adelgazan y, muy probablemente, pierden agua. En 1985 midieron a ocho jóvenes al milímetro: en promedio perdían 19 mm al día, y más de la mitad en la primera hora después de levantarse. En la noche, acostado, los discos se vuelven a inflar: en Liverpool, con resonancia magnética, vieron que los de la espalda baja ganan volumen mientras duermes.
 ¿Y si no hubiera peso? En la Estación Espacial, los astronautas crecen hasta 3 %, según la NASA: en alguien de 1.70 m, unos 5 cm. Al volver a la Tierra regresan a su estatura normal. Y el dolor de espalda es una queja común allá arriba.
 Así que si quieres saber tu estatura más alta, mídete en la mañana. 🚀
@@ -20,7 +20,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Instagram Reels
 ```text
-Hoy en la noche vas a medir casi dos centímetros menos que cuando te levantaste. 📏🌙
+Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantaste. 📏🌙
 Los discos entre tus vértebras se aplastan con tu peso durante el día (en 1985, en promedio 19 mm, más de la mitad en la primera hora) y se vuelven a inflar mientras duermes. Sin gravedad que los aplaste, en la Estación Espacial los astronautas crecen hasta 3 % (NASA), y al volver regresan a su estatura normal.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya te habías medido en la mañana y en la noche? 👇
@@ -32,11 +32,11 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-En la noche mides 2 cm menos (y en el espacio, más) 📏 | Shot Científico #08
+En la noche puedes medir 2 cm menos (y en el espacio, más) 📏 | Shot Científico #08
 ```
 Descripción:
 ```text
-Hoy en la noche vas a medir casi dos centímetros menos que cuando te levantaste.
+Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantaste.
 No te encoges tú: se aplastan los discos que hay entre tus vértebras. Con tu peso encima todo el día se adelgazan y, muy probablemente, pierden agua. En 1985 midieron a ocho jóvenes con precisión de un milímetro: en promedio perdían 19.3 mm al día, el 54 % en la primera hora después de levantarse, y de noche recuperaban la mayor parte. En 1998, en la Universidad de Liverpool, con resonancia magnética, vieron que los discos de la espalda baja ganan volumen durante la noche.
 Sin peso que los aplaste, en la Estación Espacial los astronautas crecen hasta 3 % (NASA): en alguien de 1.70 m, unos 5 cm. Al volver a la Tierra regresan a su estatura normal, y el dolor de espalda es una queja común en el espacio.
 Tu estatura más alta del día es en la mañana.
@@ -54,7 +54,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Hoy en la noche vas a medir casi dos centímetros menos que cuando te levantaste. 📏 Los discos entre tus vértebras se aplastan con tu peso y se recuperan mientras duermes. Y en la Estación Espacial, sin peso, los astronautas crecen hasta 3 %.
+Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantaste. 📏 Los discos entre tus vértebras se aplastan con tu peso y se recuperan mientras duermes. Y en la Estación Espacial, sin peso, los astronautas crecen hasta 3 %.
 ¿Ya te habías medido en la mañana y en la noche? 👇
 Shot Científico #08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -74,12 +74,12 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-En la noche mides casi 2 cm menos que en la mañana: los discos de tu columna se aplastan con tu peso. Y en la Estación Espacial, sin peso, los astronautas crecen hasta 3 % (NASA). 📏🚀 #Ciencia #Espacio
+En la noche puedes medir casi 2 cm menos que en la mañana: los discos de tu columna se aplastan con tu peso. Y en la Estación Espacial, sin peso, los astronautas crecen hasta 3 % (NASA). 📏🚀 #Ciencia #Espacio
 ```
 
 ### Threads
 ```text
-Hoy en la noche vas a medir casi dos centímetros menos que cuando te levantaste. 📏 Los discos entre tus vértebras se aplastan con tu peso y se vuelven a inflar mientras duermes. En el espacio, sin peso, los astronautas crecen hasta 3 %. ¿Ya te habías medido en la mañana y en la noche? 👇
+Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantaste. 📏 Los discos entre tus vértebras se aplastan con tu peso y se vuelven a inflar mientras duermes. En el espacio, sin peso, los astronautas crecen hasta 3 %. ¿Ya te habías medido en la mañana y en la noche? 👇
 #Ciencia
 ```
 

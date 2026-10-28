@@ -3,7 +3,7 @@
   "salida": "Shot Estatura narrado.dc.html",
   "nota": "Shot Científico #08. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Hoy en la noche vas a medir casi dos centímetros menos que cuando te levantaste." },
+    { "escena": "Gancho", "texto": "Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantaste." },
     { "escena": "Discos", "texto": "No te encoges tú: se aplastan los cojines que hay entre tus vértebras." },
     { "escena": "Agua", "texto": "Con tu peso encima todo el día, se adelgazan y, muy probablemente, pierden agua." },
     { "escena": "Estudio", "texto": "En 1985 midieron a ocho jóvenes, al milímetro: en promedio, perdían diecinueve milímetros al día." },

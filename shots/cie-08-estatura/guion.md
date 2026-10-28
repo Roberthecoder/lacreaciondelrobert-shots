@@ -4,14 +4,14 @@
 - **Estado (28 oct 2026):** guion verificado (`verificacion.md`, APROBADO), animación, Robert en pantalla y `publicacion.md` listos ·
   versión de revisión sin voz en el Release "Borradores · claude/igualar-cientifico" · **voz pendiente de aprobación de Robert**.
 - **Formato:** N2 "El número" (−2 cm, +3 %) + N1 "Por dentro" (la columna y sus discos).
-- **Gancho (de los 7):** #4 "Un número que contradice": "Hoy en la noche vas a medir casi dos centímetros menos que cuando te levantaste."
-- **Duración:** voz 955 caracteres / 171 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Gancho (de los 7):** #4 "Un número que contradice": "Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantaste."
+- **Duración:** voz 956 caracteres / 170 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Hoy en la noche vas a medir casi dos centímetros menos que cuando te levantaste. | Desde el cuadro 0 el sol cruza el cielo y se hace de noche; la persona junto a la regla baja un poco (exagerado); "≈ −2 cm · mañana → noche". |
+| 0 | Gancho | Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantaste. | Desde el cuadro 0 el sol cruza el cielo y se hace de noche; la persona junto a la regla baja un poco (exagerado); "≈ −2 cm · mañana → noche". |
 | 1 | Discos | No te encoges tú: se aplastan los cojines que hay entre tus vértebras. | Fondo oscuro: columna de vértebras con discos azules que se aplastan. Etiquetas "disco (cojín)" y "vértebra". |
 | 2 | Agua | Con tu peso encima todo el día, se adelgazan y, muy probablemente, pierden agua. | **Lupa de rayos X** sobre un disco: se adelgaza y salen gotitas. Chip con la frase. |
 | 3 | Estudio | En 1985 midieron a ocho jóvenes, al milímetro: en promedio, perdían diecinueve milímetros al día. | Tarjeta "1985 · 8 jóvenes · al milímetro · Tyrrell, Reilly y Troup"; luego "19 mm · perdidos al día (promedio)". |

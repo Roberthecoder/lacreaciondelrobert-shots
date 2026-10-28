@@ -10,7 +10,7 @@
 
 | # | Afirmación | Veredicto | Fuente | Frase textual | Año del dato |
 |---|---|---|---|---|---|
-| 1 | En la noche mides casi 2 cm menos que al levantarte (en promedio) | ✅ | Tyrrell, Reilly y Troup, *Spine* 10(2): 161–164 (PMID 4002039) | "stature was measured with an accuracy of 1 mm in eight young adults. The mean circadian variation was 19.3 mm (1.1% of stature)." | 1985 |
+| 1 | En la noche **puedes** medir casi 2 cm menos que al levantarte (es el promedio; varía entre personas: 8–26 mm en Roberts 1998) | ✅ | Tyrrell, Reilly y Troup, *Spine* 10(2): 161–164 (PMID 4002039) | "stature was measured with an accuracy of 1 mm in eight young adults. The mean circadian variation was 19.3 mm (1.1% of stature)." | 1985 |
 | 2 | No te encoges tú: se aplastan los discos ("cojines") entre las vértebras | ✅ | Roberts et al., *Clin. Anat.* 11: 1–8 (PMID 9445091); Paajanen et al., *J. Orthop. Res.* 12: 509–514 (PMID 8064481) | "the mean overnight increase in volume of lumbar discs was 1300 mm3" · "The diurnal height loss of the subjects ranged from 13 to 21 mm. The disc signal… increased as much as 25% after overnight bed rest" | 1998 / 1994 |
 | 3 | Con tu peso encima todo el día se adelgazan y, **muy probablemente**, pierden agua | ✅ (dicho con la cautela de la fuente) | PMID 4002039; PMID 9445091; PMID 8064481 | "With static shoulder loads… increases in the rate of shrinkage" · "the change in disc volume is most probably caused by a preferential increase in the water content of the nucleus pulposus" · "presumably due to the enhanced influx of water" | 1985 / 1998 / 1994 |
 | 4 | En 1985 midieron a 8 jóvenes al milímetro: en promedio perdían 19 mm al día | ✅ | PMID 4002039 | "measured with an accuracy of 1 mm in eight young adults. The mean circadian variation was 19.3 mm" | 1985 |
@@ -35,5 +35,12 @@
 
 ## Re-verificación
 Las partes corregidas (línea 3 del guion y la escena del regreso) se revisaron otra vez contra PMID 9445091, 8064481 y la página de la NASA: ✅.
+
+## Verificación independiente (28 oct 2026)
+Otro agente, que no escribió el guion, abrió las fuentes primarias (commit 416613c) y pidió un ajuste:
+- ⚠️ «Hoy en la noche **vas a medir** casi dos centímetros menos…» → 19.3 mm es el **promedio** de 8 personas (Tyrrell 1985:
+  "The mean circadian variation was 19.3 mm") y varía entre personas (Roberts 1998, Liverpool: "19.3 mm (range 8-26 mm)"; Paajanen 1994:
+  "ranged from 13 to 21 mm"). Corregido en voz, guion y publicación: «Hoy en la noche **puedes** medir casi dos centímetros menos que cuando
+  te levantaste.» (también en el título de YouTube y en X). Re-verificado contra PMID 4002039 y 9445091: ✅. Voz nueva: 956 caracteres.
 
 VEREDICTO: APROBADO

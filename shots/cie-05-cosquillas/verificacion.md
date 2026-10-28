@@ -19,7 +19,7 @@
 | 8 | Con un retraso o un desvío, las cosquillas regresaban; más retraso, más cosquillas | ✅ | PMID 10511643 | "The tickliness rating increased significantly with increasing delay and trajectory perturbation." | 1999 |
 | 9 | En un escáner cerebral, el cerebelo **parecía** ser el que hace esa predicción y apaga la sensación | ✅ (dicho como hipótesis) | Blakemore, Wolpert y Frith, *Nat. Neurosci.* 1: 635–640 (PMID 10196573, fMRI) | "This difference suggests that the cerebellum is involved in predicting the specific sensory consequences of movements, providing the signal that is used to cancel the sensory response to self-generated stimulation." | 1998 |
 | 10 | Las ratas chillan en ultrasonido cuando les haces cosquillas | ✅ | Ishiyama y Brecht, *Science* 354: 757–760 (PMID 27846607) | "Rats emit ultrasonic vocalizations in response to tickling by humans." | 2016 |
-| 11 | Cuando las ratas se tocan solas, no chillan | ✅ | Ishiyama, Kaufmann y Brecht 2019 (PMID 31564493) | "Self-touch induced wide-ranging inhibition and vocalization suppression." | 2019 |
+| 11 | Cuando las ratas se tocan solas, **casi** no chillan (corregido el 28 oct: antes decía "no") | ✅ | Ishiyama, Kaufmann y Brecht 2019 (PMID 31564493) | "Self-touch induced wide-ranging inhibition and vocalization suppression." | 2019 |
 | 12 | Para las cosquillas necesitas a alguien más (el toque de otro sí da cosquillas) | ✅ | PMID 10511643; PMID 10943682 | "self-produced tactile stimulation is perceived as less intense than the same stimulus produced externally" | 1999 |
 | 13 | En pantalla: medidor "cosquillas" (bajo con tu mano, alto con la de otro o con retraso) | ✅ | las mismas fuentes | Es esquemático: los estudios usan escalas de calificación, no un porcentaje; el medidor no muestra números. | — |
 
@@ -31,5 +31,12 @@
 
 ## Re-verificación
 Las tres partes corregidas se revisaron otra vez contra PMID 10511643 y 10196573: ✅.
+
+## Verificación independiente (28 oct 2026)
+Otro agente, que no escribió el guion, abrió las fuentes primarias (commit 416613c) y pidió un ajuste:
+- ⚠️ «…pero cuando se tocan solas, **no**» → la fuente dice que el autotoque **suprime** los chillidos, no que los quite del todo
+  ("Self-touch induced wide-ranging inhibition and vocalization suppression", Ishiyama, Kaufmann y Brecht, *Curr. Biol.* 2019, PMID 31564493).
+  Corregido en voz, guion, publicación y pantalla: «…pero cuando se tocan solas, casi no.», chip «se tocan solas: casi silencio»,
+  subtítulo «Ratas: solas, casi no chillan». Re-verificado contra PMID 31564493: ✅.
 
 VEREDICTO: APROBADO

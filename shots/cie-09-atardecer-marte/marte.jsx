@@ -1,4 +1,4 @@
-// Shot Científico #09 · El atardecer azul de Marte — NARRADO (N1 "Por dentro" de la luz + N2; gancho #7 "algo que tus ojos nunca van a ver").
+// Shot Científico #09 · El atardecer azul de Marte — NARRADO (N1 "Por dentro" de la luz + N2; gancho #7 "algo que tus ojos nunca van a ver": nadie lo ha visto en persona).
 // Datos: NASA/JPL PIA19400 (Curiosity, sol 956, 15 abr 2015), NASA Space Place "Why Is the Sky Blue?", NASA APOD "Martian Sunset"
 // (10 ene 2009 y 2 mar 2014). Ver guion.md y verificacion.md.
 const OXIDO = '#b5532a', OXIDO2 = '#7e3418', CIELO_MARTE = '#d9a066', AZUL_HALO = '#7fb8ff';
@@ -123,7 +123,7 @@ function Marte() {
           <text x={790} y={1120} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>desde Marte</text>
         </>)}
       </Escena>
-      {/* 12 · cierre: tu atardecer rojo y, a la misma hora, el azul de Marte (regresa la imagen del inicio) */}
+      {/* 12 · cierre: tu atardecer rojo y el de Marte, azul junto al Sol (regresa la imagen del inicio) */}
       <Escena T={T} a={K.C} b={FIN}>
         <Paisaje tipo="tierra" sol={0.85} x={0} w={540} rSol={50} />
         <Paisaje tipo="marte" sol={0.85} halo={kprog(T, K.C + 0.8, K.C + 2.4)} x={540} w={540} rSol={34} />
@@ -142,7 +142,7 @@ function Marte() {
       <TarjetaEstudio T={T} at={K.E + 0.3} until={K.Ca - 0.3} anio="2015" quien="15 abr · cráter Gale · Curiosity" revista="NASA/JPL · PIA19400 · sol 956" x={600} y={560} />
       <Chip T={T} at={K.Ca + 1.4} until={K.S - 0.2} texto="un poco menos sensible al azul" x={540} y={1500} tam={38} borde={KC.blue} />
       <NumeroGigante T={T} at={K.S + 1.6} until={K.C - 0.2} valor={2} sufijo="/3" etiqueta="del tamaño" x={790} y={500} tam={110} color={KC.yellow} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="a la misma hora" x={380} y={440} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="junto al Sol" x={380} y={440} tam={40} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ti - 0.1} texto="Un atardecer *azul:* el de Marte." />
@@ -156,7 +156,7 @@ function Marte() {
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.Ca - 0.1} texto="Curiosity, *15 de abril de 2015.*" />
       <Subtitulo T={T} idx={9} at={K.Ca + 0.1} until={K.S - 0.1} texto="Ve casi *como tus ojos.*" />
       <Subtitulo T={T} idx={10} at={K.S + 0.1} until={K.C - 0.1} texto="Desde Marte: *el Sol, 2/3.*" />
-      <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Tu atardecer rojo, *su atardecer azul.*" />
+      <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Marte: *azul junto al Sol.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 3.7, 'avatar_11_sorprendido', 'gancho'],

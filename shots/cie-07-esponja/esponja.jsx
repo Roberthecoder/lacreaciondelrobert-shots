@@ -117,7 +117,7 @@ function EsponjaShot() {
       <Escena T={T} a={K.R} b={K.Cs}>
         <FondoLunares color={KC.cyan} />
         {svg(<Micro x={360} y={960} s={1} T={T} on={T > K.R + 0.4 && T < K.R + 1.8 ? 1 : 0} />)}
-        <Medidor T={T} at={K.R + 0.2} until={K.Cs - 0.2} valor={carga} etiqueta="bacterias en la esponja" texto={() => (T < K.R + 2.4 ? 'bajan' : 'vuelven a crecer')} x={90} y={1460} ancho={900} color={KC.red} />
+        <Medidor T={T} at={K.R + 0.2} until={K.Cs - 0.2} valor={carga} etiqueta="bacterias en la esponja" texto={() => (T < K.R + 2.4 ? 'bajan' : '¿vuelven a crecer?')} x={90} y={1460} ancho={900} color={KC.red} />
       </Escena>
       {/* 11 · consejo: cámbiala cada semana */}
       <Escena T={T} a={K.Cs} b={K.C}>
@@ -138,7 +138,7 @@ function EsponjaShot() {
       <Chip T={T} at={K.Q + 0.3} until={K.I - 0.2} texto="¿agua caliente o micro?" x={540} y={1500} tam={38} borde={KC.ink} />
       <Comparativa T={T} at={K.I + 0.3} until={K.M - 0.2} max={10} y={720} alto={300}
         izq={{ valor: 8, etiqueta: 'limpiadas seguido', color: KC.blue, texto: '≈' }} der={{ valor: 8.3, etiqueta: 'sin limpiar', color: KC.orange, texto: '≈' }} />
-      <Chip T={T} at={K.I + 1.6} until={K.M - 0.2} texto="no tenían menos bacterias" x={540} y={1500} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.I + 1.6} until={K.M - 0.2} texto="de 4 comparadas: no tenían menos" x={540} y={1500} tam={40} borde={KC.red} />
       <Chip T={T} at={K.O + 0.4} until={K.R - 0.2} texto="sospecha: culpable del olor" x={380} y={440} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="dale fecha de caducidad" x={360} y={440} tam={40} borde={KC.gold} />
 
@@ -149,10 +149,10 @@ function EsponjaShot() {
       <Subtitulo T={T} idx={3} at={K.A + 0.1} until={K.H - 0.1} texto="Por su ADN: *362 grupos.*" />
       <Subtitulo T={T} idx={4} at={K.H + 0.1} until={K.Q - 0.1} texto="En los huecos, *en capas.*" />
       <Subtitulo T={T} idx={5} at={K.Q + 0.1} until={K.I - 0.1} texto="¿Agua caliente *o micro?*" />
-      <Subtitulo T={T} idx={6} at={K.I + 0.1} until={K.M - 0.1} texto="Limpiadas seguido: *no tenían menos.*" />
+      <Subtitulo T={T} idx={6} at={K.I + 0.1} until={K.M - 0.1} texto="De 4: las limpiadas *no tenían menos.*" />
       <Subtitulo T={T} idx={7} at={K.M + 0.1} until={K.O - 0.1} texto="Más *Moraxella:* ropa que huele feo." />
       <Subtitulo T={T} idx={8} at={K.O + 0.1} until={K.R - 0.1} texto="¿La culpable *del olor?*" />
-      <Subtitulo T={T} idx={9} at={K.R + 0.1} until={K.Cs - 0.1} texto="Bajan, pero *vuelven a crecer.*" />
+      <Subtitulo T={T} idx={9} at={K.R + 0.1} until={K.Cs - 0.1} texto="Bajan, pero *quizá vuelven.*" />
       <Subtitulo T={T} idx={10} at={K.Cs + 0.1} until={K.C - 0.1} texto="Cámbiala *cada semana.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Dale *fecha de caducidad.*" />
 
