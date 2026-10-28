@@ -1,5 +1,6 @@
 {
   "voz_aprobada": true,
+  "velocidad": 1.121,
   "dcHtml": "Shot Siguiente Palabra base narrada.dc.html",
   "salida": "Shot Siguiente Palabra narrado.dc.html",
   "nota": "Shot IA #03. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno (~964 créditos de ElevenLabs en una sola petición).",
