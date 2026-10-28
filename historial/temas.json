@@ -753,14 +753,15 @@
         "Wilcox 1968, USDA FPL 70"
       ],
       "id": "podredumbre-blanca-muertos",
-      "titulo": "Especial Día de Muertos: Los hongos que regresan los árboles a la tierra",
-      "serie": "Shot Fungi Mati",
-      "numero": 1,
+      "titulo": "Día de Muertos · Fungi Mati: Los hongos que regresan los árboles a la tierra",
+      "serie": "Shot Festivo",
+      "numero": 3,
       "especial": "Día de Muertos",
       "estado": "renderizado",
-      "carpeta": "shots/fun-01-esp-podredumbre-blanca",
+      "carpeta": "shots/fes-03-podredumbre-blanca",
       "rama": "claude/especiales-muertos",
-      "fecha": "2026-10-28"
+      "fecha": "2026-10-28",
+      "serie_vinculada": "Fungi Mati"
     },
     {
       "derivados": [
@@ -774,14 +775,15 @@
         "Gorgus et al. 2016, J Anal Toxicol 40:537"
       ],
       "id": "pan-de-muerto-muertos",
-      "titulo": "Especial Día de Muertos: El hongo que infla el pan de muerto",
-      "serie": "Shot Biotecnológico",
-      "numero": 1,
+      "titulo": "Día de Muertos · Biotecnológico: El hongo que infla el pan de muerto",
+      "serie": "Shot Festivo",
+      "numero": 2,
       "especial": "Día de Muertos",
       "estado": "renderizado",
-      "carpeta": "shots/bio-01-esp-pan-de-muerto",
+      "carpeta": "shots/fes-02-pan-de-muerto",
       "rama": "claude/especiales-muertos",
-      "fecha": "2026-10-28"
+      "fecha": "2026-10-28",
+      "serie_vinculada": "Biotecnológico"
     },
     {
       "derivados": [
@@ -795,14 +797,15 @@
         "Journey North"
       ],
       "id": "monarcas-muertos",
-      "titulo": "Especial Día de Muertos: Las mariposas que llegan en Día de Muertos",
-      "serie": "Shot Ambiental",
+      "titulo": "Día de Muertos · Ambiental: Las mariposas que llegan en Día de Muertos",
+      "serie": "Shot Festivo",
       "numero": 1,
       "especial": "Día de Muertos",
       "estado": "renderizado",
-      "carpeta": "shots/amb-01-esp-monarcas",
+      "carpeta": "shots/fes-01-monarcas",
       "rama": "claude/especiales-muertos",
-      "fecha": "2026-10-28"
+      "fecha": "2026-10-28",
+      "serie_vinculada": "Ambiental"
     },
     {
       "derivados": [
@@ -816,14 +819,15 @@
         "Cleveland Clinic: osteoblasts and osteoclasts"
       ],
       "id": "esqueleto-muertos",
-      "titulo": "Especial Día de Muertos: Tu calavera se está reconstruyendo",
-      "serie": "Shot Científico",
-      "numero": 1,
+      "titulo": "Día de Muertos · Científico: Tu calavera se está reconstruyendo",
+      "serie": "Shot Festivo",
+      "numero": 4,
       "especial": "Día de Muertos",
       "estado": "renderizado",
-      "carpeta": "shots/cie-01-esp-esqueleto",
+      "carpeta": "shots/fes-04-esqueleto",
       "rama": "claude/especiales-muertos",
-      "fecha": "2026-10-28"
+      "fecha": "2026-10-28",
+      "serie_vinculada": "Científico"
     },
     {
       "derivados": [
@@ -837,14 +841,15 @@
         "Marggraf 1747 (EBSCO Research Starters)"
       ],
       "id": "calaveritas-muertos",
-      "titulo": "Especial Día de Muertos: Las calaveritas de azúcar se arman solas",
-      "serie": "Shot Químico",
-      "numero": 1,
+      "titulo": "Día de Muertos · Químico: Las calaveritas de azúcar se arman solas",
+      "serie": "Shot Festivo",
+      "numero": 6,
       "especial": "Día de Muertos",
       "estado": "renderizado",
-      "carpeta": "shots/qui-01-esp-calaveritas",
+      "carpeta": "shots/fes-06-calaveritas",
       "rama": "claude/especiales-muertos",
-      "fecha": "2026-10-28"
+      "fecha": "2026-10-28",
+      "serie_vinculada": "Químico"
     },
     {
       "derivados": [
@@ -858,14 +863,15 @@
         "Zhang, Isola y Efros 2016, Colorful Image Colorization"
       ],
       "id": "fotos-ofrenda-muertos",
-      "titulo": "Especial Día de Muertos: La IA que restaura las fotos de tu ofrenda",
-      "serie": "Shot IA",
-      "numero": 1,
+      "titulo": "Día de Muertos · IA: La IA que restaura las fotos de tu ofrenda",
+      "serie": "Shot Festivo",
+      "numero": 5,
       "especial": "Día de Muertos",
       "estado": "renderizado",
-      "carpeta": "shots/ia-01-esp-fotos-ofrenda",
+      "carpeta": "shots/fes-05-fotos-ofrenda",
       "rama": "claude/especiales-muertos",
-      "fecha": "2026-10-28"
+      "fecha": "2026-10-28",
+      "serie_vinculada": "IA"
     },
     {
       "derivados": [
