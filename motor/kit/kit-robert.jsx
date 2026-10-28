@@ -350,7 +350,7 @@ function AudioPista({ src }) {
    Anillos de hexágono estilo libro de texto, con etiqueta opcional. r = radio del anillo.
    tipo: 'glucosa' | 'galactosa' | 'lactosa' (las dos unidas) | 'generica'. El dibujo es esquemático. */
 const KAZUCAR = { glucosa:'#ffd43b', galactosa:'#4dd4ff', generica:'#b18cff' };
-function Molecula({ tipo = 'glucosa', x = 0, y = 0, r = 26, rot = 0, s = 1, etiqueta, borde = KC.ink, gw = 3 }) {
+function MoleculaAzucar({ tipo = 'glucosa', x = 0, y = 0, r = 26, rot = 0, s = 1, etiqueta, borde = KC.ink, gw = 3 }) {
   const anillo = (cx, col) => {
     const p = [0, 60, 120, 180, 240, 300].map((a) => { const t = (a - 30) * Math.PI / 180; return `${(cx + r * Math.cos(t)).toFixed(1)},${(r * Math.sin(t)).toFixed(1)}`; });
     return <g><polygon points={p.join(' ')} fill={col} stroke={borde} strokeWidth={gw} strokeLinejoin="round" />
@@ -697,10 +697,10 @@ function MundoIntestino({ T, lactasa = 0, lactosa = 0, corta = 0, cripta = 0, ga
     const x = ax + mece(T, i + 1, 0.16) * 34, y = ay + mece(T, i + 21, 0.13) * 28;
     const abre = corta * (0.3 + r2() * 0.7);
     if (abre > 0.05) return <g key={'m' + i}>
-      <Molecula tipo="galactosa" x={x - 30 - abre * 56} y={y} r={24} rot={-abre * 70} gw={3} />
-      <Molecula tipo="glucosa" x={x + 30 + abre * 56} y={y} r={24} rot={abre * 70} gw={3} />
+      <MoleculaAzucar tipo="galactosa" x={x - 30 - abre * 56} y={y} r={24} rot={-abre * 70} gw={3} />
+      <MoleculaAzucar tipo="glucosa" x={x + 30 + abre * 56} y={y} r={24} rot={abre * 70} gw={3} />
     </g>;
-    return <Molecula key={'m' + i} tipo="lactosa" x={x} y={y} r={24} rot={mece(T, i + 5, 0.1) * 18} gw={3} />;
+    return <MoleculaAzucar key={'m' + i} tipo="lactosa" x={x} y={y} r={24} rot={mece(T, i + 5, 0.1) * 18} gw={3} />;
   });
   // enzimas lactasa pegadas al borde: tijeritas en forma de cuña
   const enz = [];
@@ -888,6 +888,79 @@ function CierreMarca({ T, at, frase = 'Sígueme para más ciencia', usuario = '@
   </div>;
 }
 
+/* ---------- PIEZAS v2 (27 oct 2026, lote C) ---------- */
+// Lados extra de Robert que NO tapan el subtítulo (que vive entre y ≈ 1230 y 1360):
+// 'izq-alto' = espejo de 'arriba-der' · 'grande' / 'grande-izq' = medio cuerpo grande arriba del subtítulo (presentador en narrados).
+Object.assign(KLADOS, { 'izq-alto': { left:-10, top:300, width:330 }, 'grande': { left:520, top:560, width:580 }, 'grande-izq': { left:-20, top:560, width:580 } });
+// EscenaC con fundido cruzado (nunca corte seco) y un empujoncito de cámara. a..b en tiempo de autor.
+function EscenaC({ T, a, b, fondo, children, zoom = 0.05, origen = '50% 45%' }) {
+  if (T < a - 0.45 || T > b + 0.45) return null;
+  const o = kprog(T, a - 0.45, a + 0.05) * (1 - kprog(T, b - 0.05, b + 0.45));
+  const s = 1 + zoom * kprog(T, a - 0.45, b + 0.45, kEase.suave);
+  return <div style={{ position:'absolute', inset:0, opacity:o, background:fondo, overflow:'hidden' }}>
+    <div style={{ position:'absolute', inset:0, transform:`scale(${s})`, transformOrigin:origen }}>{children}</div>
+  </div>;
+}
+// Etiqueta con línea que crece (nombre común o *científico* con it).
+function EtqC({ T, at, until, x, y, texto, it = false, lado = 'der', color = KC.texto, tam = 34 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:12, flexDirection: lado === 'der' ? 'row' : 'row-reverse', transform:`translate(${lado === 'der' ? 0 : '-100%'}, -50%)` }}>
+    <div style={{ width:70 * kprog(T, at, at + 0.4, kEase.sale), height:4, background:color, borderRadius:2 }}></div>
+    <div style={{ font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color, textShadow:'0 3px 0 rgba(0,0,0,.8), 0 0 18px rgba(0,0,0,.9)', whiteSpace:'nowrap' }}>{texto}</div>
+  </div>;
+}
+// Audio sincronizado al tiempo de reproducción (en el render se pega con ffmpeg; aquí sirve para la vista previa).
+function AudioPistaC({ src }) {
+  const { time, playing } = useComposition();
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const a = ref.current; if (!a || !src) return;
+    if (playing) { if (a.paused) { const pr = a.play(); if (pr && pr.catch) pr.catch(() => {}); } if (Math.abs(a.currentTime - time) > 0.25) a.currentTime = time; }
+    else { if (!a.paused) a.pause(); if (Math.abs(a.currentTime - time) > 0.05) a.currentTime = time; }
+  });
+  return src ? <audio ref={ref} src={src} preload="auto" style={{ display:'none' }} /> : null;
+}
+// Fondo de color de la marca con lunares (los fondos brillantes del canal).
+function FondoLunares({ color = KC.yellow, punto = 'rgba(255,255,255,.33)', paso = 52 }) {
+  return <div style={{ position:'absolute', inset:0, background:color, backgroundImage:`radial-gradient(circle, ${punto} 7px, transparent 8px)`, backgroundSize:`${paso}px ${paso}px` }}></div>;
+}
+// BacteriaC esquemática (bacilo). gen = gen de resistencia (plásmido en anillo), vida 0..1 (0 = muerta, se encoge y se apaga).
+function BacteriaC({ x = 0, y = 0, rot = 0, s = 1, color = KC.mint, gen = false, vida = 1, T = 0, seed = 1, flagelo = true }) {
+  const k = 0.35 + 0.65 * vida, ond = Math.sin(T * 9 + seed) * 6;
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s * k})`} opacity={0.25 + 0.75 * vida}>
+    {flagelo && <path d={`M -58 0 q -14 ${-10 + ond} -28 0 t -28 0`} stroke={KC.ink} strokeWidth={4} fill="none" strokeLinecap="round" />}
+    <rect x={-58} y={-24} width={116} height={48} rx={24} fill={vida > 0.5 ? color : '#8a8f99'} stroke={KC.ink} strokeWidth={6} />
+    <rect x={-44} y={-14} width={50} height={9} rx={4} fill="#fff" opacity=".35" />
+    <path d="M -26 6 q 12 -12 24 0 t 24 0" stroke="rgba(0,0,0,.35)" strokeWidth={4} fill="none" />
+    {gen && <circle cx={30} cy={4} r={11} fill="none" stroke={KC.red} strokeWidth={6} />}
+  </g>;
+}
+// Mapa esquemático de México y Centroamérica (contorno simplificado a mano; el dibujo es esquemático).
+// mxProy(lon, lat) → coordenadas dentro del mapa (ancho 1000 px). Úsalo para poner puntos (Chiapas, Panamá…).
+const MX_K = 1000 / 42, MX_LON0 = -118, MX_LAT0 = 33;
+function mxProy(lon, lat) { return [(lon - MX_LON0) * MX_K, (MX_LAT0 - lat) * MX_K * 1.08]; }
+const MX_CONT = [[-117.1,32.5],[-115,32.7],[-114.8,32.5],[-111,31.3],[-108.2,31.3],[-108.2,31.8],[-106.5,31.8],[-104.5,29.6],[-103,29],[-102.4,29.8],[-101,29.4],[-99.5,27.5],[-99.1,26.4],[-97.5,25.9],[-97.7,24],[-97.8,22.3],[-97.2,20.6],[-96.1,19.2],[-94.5,18.2],[-92.6,18.6],[-91.8,18.6],[-90.7,19.6],[-90.4,21],[-89.6,21.3],[-87,21.5],[-86.8,20.6],[-87.5,19],[-88.3,18.5],[-89.1,17.95],[-91,17.8],[-91,17.25],[-91.4,17.25],[-90.4,16.1],[-91.7,16.1],[-92.2,15.3],[-92.2,14.5],[-93.9,16],[-94.8,16.2],[-96.5,15.7],[-98.5,16.3],[-99.9,16.85],[-101.5,17.6],[-103.5,18.3],[-104.3,19.1],[-105.3,20.4],[-105.7,22],[-106.4,23.2],[-107.4,24.5],[-108.9,25.6],[-109.4,26.6],[-110.6,27.9],[-112.2,29],[-113.1,30.8],[-114.8,31.8],[-114.8,32.5]];
+const MX_BAJA = [[-117.1,32.5],[-116.6,31.7],[-116,30.4],[-115,29.5],[-114.2,28],[-114.1,27.6],[-112.1,24.8],[-111.6,24.3],[-110,22.9],[-109.4,23.2],[-110.3,24.2],[-111.4,25.8],[-112.4,27.2],[-112.9,28.5],[-114.6,30.2],[-114.8,31.6],[-114.8,32.5]];
+const CA_CONT = [[-88.3,18.5],[-89.1,17.95],[-91,17.8],[-91,17.25],[-91.4,17.25],[-90.4,16.1],[-91.7,16.1],[-92.2,15.3],[-92.2,14.5],[-91.4,13.9],[-89.5,13.4],[-87.8,13.2],[-86.8,12.2],[-85.7,11],[-85.8,10],[-84.8,9.6],[-83.6,8.5],[-82.9,8.2],[-81.5,7.7],[-80.4,7.3],[-80,7.6],[-79.6,8.9],[-78.4,8.3],[-77.4,7.6],[-77.2,8.6],[-77.9,9.2],[-79,9.6],[-79.9,9.4],[-81.2,8.8],[-82.6,9.5],[-83.6,10.9],[-83.7,11.9],[-83.4,14],[-83.2,15],[-84.5,15.9],[-86,16],[-87.6,15.8],[-88.6,15.9],[-88.3,16.5],[-88.3,18.5]];
+const mxPath = (pts) => 'M ' + pts.map(([a, b]) => mxProy(a, b).map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z';
+function MapaMexico({ x = 40, y = 600, ancho = 1000, color = '#ffe9a8', centro = '#bfe3b4', borde = KC.ink, conCA = true, children }) {
+  const s = ancho / 1000;
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {conCA && <path d={mxPath(CA_CONT)} fill={centro} stroke={borde} strokeWidth={5 / s} strokeLinejoin="round" />}
+    <path d={mxPath(MX_CONT)} fill={color} stroke={borde} strokeWidth={6 / s} strokeLinejoin="round" />
+    <path d={mxPath(MX_BAJA)} fill={color} stroke={borde} strokeWidth={6 / s} strokeLinejoin="round" />
+    {children}
+  </g>;
+}
+// Gotas que caen (lluvia de líquido, goteo de un alambique…). Devuelve <g>.
+function Goteo({ T, x, y0, y1, cada = 0.5, color = '#7a4a22', desde = 0, hasta = Infinity, r = 12 }) {
+  const gs = [];
+  for (let k = Math.max(0, Math.floor((T - desde - 1) / cada)); ; k++) { const t0 = desde + k * cada; if (t0 > T || t0 > hasta) break; const u = (T - t0) / 0.6; if (u > 1) continue;
+    gs.push(<path key={k} d={`M 0 ${-r * 1.6} Q ${r} 0 0 ${r} Q ${-r} 0 0 ${-r * 1.6} Z`} transform={`translate(${x} ${klerp(y0, y1, u * u)})`} fill={color} stroke={KC.ink} strokeWidth={3} />); }
+  return <g>{gs}</g>;
+}
+
 Object.assign(window, {
   KC, KF, KW, KH, KSOMBRA, kclamp, klerp, kprog, kEase, krng, mece, kentrada, kvisible, kformato, camaraEn,
   Camara, Escala, Ambiente, Brillo, Aparece, Lupa,
@@ -895,8 +968,9 @@ Object.assign(window, {
   Capitulo, Pasos, Medidor, Cronometro, Cuadricula, Comparativa,
   MarcaAgua, Sticker, Robert, CierreMarca, klogo, MundoPiel, MUNDO_PIEL, mixHex,
   CamaraAnidada, MundoPanMacro, MundoPanMicro, MUNDO_PAN, PAN_TALLOS, kArbol, kArbolRadial, nodosPan,
-  EscenaFundido, Etiqueta, AudioPista, Molecula, KAZUCAR,
+  EscenaFundido, Etiqueta, AudioPista, MoleculaAzucar, KAZUCAR,
   MundoIntestino, MUNDO_INTESTINO, MundoBiorreactor, MUNDO_BIORREACTOR, Vial, Gradilla,
+  EscenaC, EtqC, AudioPistaC, BacteriaC, FondoLunares, MapaMexico, mxProy, Goteo, MX_CONT, CA_CONT,
 });
 
 /* ---------- PIEZAS v2 (27 oct 2026, serie Biotecnológico) ----------
@@ -920,17 +994,6 @@ function Etq({ T, at, until, x, y, texto, it = false, lado = 'der', color = KC.t
     <div style={{ width:70 * kprog(T, at, at + 0.4, kEase.sale), height:4, background:color, borderRadius:2 }}></div>
     <div style={{ font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color, textShadow:'0 3px 0 rgba(0,0,0,.8), 0 0 18px rgba(0,0,0,.9)', whiteSpace:'nowrap' }}>{texto}</div>
   </div>;
-}
-// Audio sincronizado al tiempo de reproducción (en el render el audio se pega con ffmpeg).
-function AudioPista({ src }) {
-  const { time, playing } = useComposition();
-  const ref = React.useRef(null);
-  React.useEffect(() => {
-    const a = ref.current; if (!a || !src) return;
-    if (playing) { if (a.paused) { const pr = a.play(); if (pr && pr.catch) pr.catch(() => {}); } if (Math.abs(a.currentTime - time) > 0.25) a.currentTime = time; }
-    else { if (!a.paused) a.pause(); if (Math.abs(a.currentTime - time) > 0.05) a.currentTime = time; }
-  });
-  return src ? <audio ref={ref} src={src} preload="auto" style={{ display:'none' }} /> : null;
 }
 // Fondo de marca: color brillante con patrón ('puntos' | 'rayas' | 'nada'), u 'oscuro' (escenas micro).
 function FondoMarca({ color = KC.yellow, patron = 'puntos', T = 0 }) {

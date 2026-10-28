@@ -16,3 +16,6 @@ shots/*/assets/mezcla.wav
 shots/*/assets/mezcla_mudo.wav
 shots/*/revision/
 largos/*/fuentes/
+# Lote C: las mezclas se regeneran con gen-audio.mjs (el workflow las crea al renderizar)
+shots/amb-0*/assets/*.wav
+shots/cie-03-*/assets/*.wav

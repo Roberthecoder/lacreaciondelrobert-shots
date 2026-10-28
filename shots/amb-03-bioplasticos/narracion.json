@@ -1,0 +1,57 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Bioplasticos base narrada.dc.html",
+  "salida": "Shot Bioplasticos narrado.dc.html",
+  "velocidad": 1.083,
+  "nota": "Ambiental #03. Una línea por subtítulo (idx 0..10 del jsx). Pendiente de aprobación de Robert: NO generar la voz sin su visto bueno (~938 créditos de ElevenLabs en una sola petición).",
+  "mudo": {
+    "dcHtml": "Shot Bioplasticos mudo.dc.html",
+    "audio": "assets/mezcla_mudo.wav"
+  },
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este vaso dice compostable, pero en tu jardín no se va a deshacer: necesita una fábrica."
+    },
+    {
+      "escena": "Que",
+      "texto": "Es PLA, un plástico hecho con ácido láctico que fermentan bacterias a partir del azúcar del maíz."
+    },
+    {
+      "escena": "Uno",
+      "texto": "Problema uno: para romper sus cadenas necesita humedad y unos cincuenta y ocho grados durante semanas."
+    },
+    {
+      "escena": "Donde",
+      "texto": "Eso pasa en una composta industrial, no en tu jardín ni en el mar."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2017, en Alemania, dejaron PLA un año en agua de mar de laboratorio. No se degradó."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si mejor lo reciclo?"
+    },
+    {
+      "escena": "Dos",
+      "texto": "Problema dos: parece PET, pero no lo es. Si se cuela en mucha cantidad, puede arruinar el plástico reciclado."
+    },
+    {
+      "escena": "Tres",
+      "texto": "Problema tres: cuesta más. Fermentar, purificar y fabricar sale más caro que sacarlo del petróleo."
+    },
+    {
+      "escena": "Cafe",
+      "texto": "Y se ablanda con el calor: un vaso de PLA puro se puede deformar con un café muy caliente."
+    },
+    {
+      "escena": "Estafa",
+      "texto": "¿Entonces es una estafa? No: es una tecnología que va a medio camino."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que si ves compostable, pregunta: ¿compostable dónde? Porque en tu jardín, este vaso sigue aquí."
+    }
+  ]
+}

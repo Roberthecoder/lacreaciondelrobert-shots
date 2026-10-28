@@ -1,0 +1,57 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Vinazas base narrada.dc.html",
+  "salida": "Shot Vinazas narrado.dc.html",
+  "velocidad": 1.065,
+  "nota": "Ambiental #01. Una línea por subtítulo (idx 0..11 del jsx). Texto corregido el 28 oct 2026 tras la verificación de hechos: la voz anterior ya no corresponde y espera otra vez la aprobación de Robert (no generarla sin su visto bueno).",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Un litro de tequila no deja solo una botella vacía: deja doce litros de un líquido café y ácido."
+    },
+    {
+      "escena": "Alambique",
+      "texto": "Se llama vinaza: es lo que queda en el alambique cuando se destila el tequila."
+    },
+    {
+      "escena": "Doce",
+      "texto": "Por cada litro de tequila salen, en promedio, doce litros de vinaza."
+    },
+    {
+      "escena": "Acida",
+      "texto": "Es ácida como jugo de naranja, y un solo litro puede contaminar veinte litros de agua."
+    },
+    {
+      "escena": "Rio",
+      "texto": "Si llega a un río, las bacterias se la comen, gastan el oxígeno y los peces se asfixian."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si en vez de tirarla la ponemos a trabajar?"
+    },
+    {
+      "escena": "Reactor",
+      "texto": "En un reactor sin aire, otros microbios se la comen y sueltan biogás, un combustible."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2025, el CIATEJ, en Jalisco, revisó qué más se le saca: hidrógeno, proteína y enzimas."
+    },
+    {
+      "escena": "Bagazo",
+      "texto": "Y el agave deja otro residuo: el bagazo, las fibras que sobran al exprimirlo."
+    },
+    {
+      "escena": "Setas",
+      "texto": "En Lagos de Moreno, un estudio cultivó hongos seta sobre ese bagazo."
+    },
+    {
+      "escena": "Granja",
+      "texto": "Yo estoy armando una granja de hongos sobre bagazo. Pronto se las enseño."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que cada litro de tequila no deja doce litros de basura: deja doce de materia prima."
+    }
+  ]
+}

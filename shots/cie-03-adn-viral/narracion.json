@@ -1,0 +1,57 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot ADN Viral base narrada.dc.html",
+  "salida": "Shot ADN Viral narrado.dc.html",
+  "velocidad": 1.065,
+  "nota": "Científico #03. Una línea por subtítulo (idx 0..10 del jsx). Pendiente de aprobación de Robert: NO generar la voz sin su visto bueno (~945 créditos de ElevenLabs en una sola petición).",
+  "mudo": {
+    "dcHtml": "Shot ADN Viral mudo.dc.html",
+    "audio": "assets/mezcla_mudo.wav"
+  },
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto es tu ADN en cuadritos, y casi uno de cada doce no es humano: vino de virus."
+    },
+    {
+      "escena": "Retro",
+      "texto": "Son restos de retrovirus, virus que meten su propio código en la célula que infectan."
+    },
+    {
+      "escena": "Germen",
+      "texto": "Hace millones de años, algunos infectaron óvulos y espermatozoides de nuestros antepasados."
+    },
+    {
+      "escena": "Hereda",
+      "texto": "Y lo que se queda en esas células se hereda, generación tras generación, hasta ti."
+    },
+    {
+      "escena": "Rotos",
+      "texto": "Se llaman retrovirus endógenos, y casi todos están rotos: ya no pueden fabricar virus."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si alguno todavía sirve?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En el año 2000, en Estados Unidos, descubrieron que la sincitina, una proteína de tu placenta, era la envoltura de un virus antiguo."
+    },
+    {
+      "escena": "Funde",
+      "texto": "El virus la usaba para fundirse con las células. La placenta la usa para fundir las suyas en la capa que alimenta al bebé."
+    },
+    {
+      "escena": "Ratones",
+      "texto": "En ratones sin su sincitina, la placenta falla y los embriones mueren."
+    },
+    {
+      "escena": "Otros",
+      "texto": "Y lo curioso: otros mamíferos, como los ratones, atraparon virus distintos para lo mismo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que una parte de ti fue virus. Y sin ella, quizá no estarías aquí."
+    }
+  ]
+}

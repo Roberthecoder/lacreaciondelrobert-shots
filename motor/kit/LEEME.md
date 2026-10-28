@@ -37,11 +37,19 @@ igual que el resto del motor, así que funcionan en la versión narrada (tiempos
 | `Comparativa` | Dos barras: "Tú vs. el de al lado" | N2 |
 | `MarcaAgua` | Logo + badge `#NN` arriba a la izquierda | todos |
 | `Sticker` | Una aparición de Robert: `arriba-der`, `abajo-der`, `abajo-izq`, `gancho` (cuadro 0), `presentador` (medio cuerpo grande) | todos |
+| Lados extra (lote C) | `izq-alto` (espejo de `arriba-der`), `grande` y `grande-izq` (medio cuerpo grande, y 560–1170): **no tapan el subtítulo**, a diferencia de `presentador`, `abajo-der` y `abajo-izq`, que sirven mejor en los mudos | todos |
 | `Robert` | Todas las apariciones de Robert en una lista `[[at, until, pose, lado], …]` (ver regla en `CLAUDE.md`) | todos |
 | `CierreMarca robert=` | Robert junto al logo en la tarjeta final (obligatorio) | todos |
 | `CierreMarca` | Oscurece la última imagen y muestra la marca (3–4 s) | todos |
 | `MundoPiel` + `MUNDO_PIEL` | Primer mundo reutilizable: piel en corte con vellos, células, capilar y glóbulos rojos | N1, M4 |
 | `CamaraAnidada` | Zoom de ×1 a ×1000 sin perder nitidez: funde un mundo macro (cm) con uno micro (µm) y oscurece al "entrar al microscopio". Keys en coordenadas macro | N1, M4 |
+| `Escena` | Escena con fundido cruzado (nunca corte seco) y un empujoncito de cámara: `<Escena T a b zoom>` | todos |
+| `Etq` | Etiqueta con línea que crece (nombre común o *científico* con `it`) | todos |
+| `AudioPista` | Audio sincronizado al tiempo (vista previa); ya no hay que copiarlo en cada shot | todos |
+| `FondoLunares` | Fondo de color de la marca con lunares blancos | todos |
+| `Bacteria` | Bacilo esquemático; `gen` = anillo rojo (plásmido de resistencia), `vida` 0..1 | N1, M5 |
+| `MapaMexico` + `mxProy(lon, lat)` | Mapa esquemático de México y Centroamérica; `mxProy` ubica puntos por coordenadas (Chiapas, Panamá…). Mapa de México como medida (N5) | N5, N2, M1 |
+| `Goteo` | Gotas que caen (alambique, chorros) | N1, N3 |
 | `MundoPanMacro` + `MundoPanMicro` + `MUNDO_PAN` | Rebanada de frente (mancha de moho, rayos X, "puf" de esporas, segunda rebanada) y corte microscópico de la miga (alveolos, almidón, hifas que crecen, estolones, rizoides, tallos, cápsulas que revientan, espora, pelo de comparación). Usado en el shot 002 | N1, M4 |
 | `EscenaFundido` | Encadena escenas con fundido cruzado y empujoncito de cámara (nunca corte seco). Antes cada shot la copiaba | todos |
 | `Etiqueta` | Texto con línea que señala una parte del dibujo (`lado`: `der` / `izq`) | todos |
@@ -77,7 +85,7 @@ que crece, `Cas`, `ADNVirus` que se corta, `Yogur`), **ciclo lítico** (`shots/b
 - `estimar-escenas.mjs <shot>`: duración estimada de cada escena desde `narracion.json` (calibrado con la voz del 003).
 - `escribir-dc.mjs <salida.dc.html> <Componente> '<escenas>' a.jsx b.jsx`: escribe el `.dc.html` del shot.
 
-Utilidades: `KC` (colores de la marca), `KF` (letras), `kprog`, `klerp`, `kEase`, `krng`, `mece(T, semilla)`
+Utilidades: `KC` (colores de la marca), `KF` (letras), `KSOMBRA` (sombra de texto), `kprog`, `klerp`, `kEase`, `krng`, `mece(T, semilla)`
 (movimiento orgánico para vellos, hojas, hifas…), `kformato` (números en español de México).
 
 ## Reglas aprendidas al probarlo
@@ -95,3 +103,14 @@ Utilidades: `KC` (colores de la marca), `KF` (letras), `kprog`, `klerp`, `kEase`
 Hoja en corte (estomas), suelo con micelio e hifas, ojo (retina y conos), placa de Petri con colonias.
 (Pan ✔ en el shot 002: sirve también para levadura y almidón. Intestino ✔ en `bio-06-lactosa`.
 Biorreactor ✔ en `bio-08-insulina`: sirve para cualquier fermentación. Viales y gradilla ✔ en `bio-09-cepario`.)
+
+## Sonido del lote C: `audio-kit-lote-c.mjs` (27 oct 2026)
+Al juntar ramas a main (28 oct) había dos `audio-kit.mjs` distintos: el de `crearMezcla` se quedó como `audio-kit.mjs` y este como
+`audio-kit-lote-c.mjs`. En `kit-robert.jsx`, las piezas del lote C que chocaban de nombre quedaron como `EscenaC`, `EtqC`,
+`BacteriaC`, `AudioPistaC`, y la `Molecula` de azúcares como `MoleculaAzucar` (cada shot trae su propia copia del kit).
+Sintetizador compartido para los `gen-audio.mjs` (nada grabado). Desde un shot:
+`import { mezcla } from '../../motor/kit/audio-kit-lote-c.mjs'; const m = mezcla(HERE, html);` y luego
+`m.pad`, `m.nota(t, midi, ganancia, duración, tapa)`, `m.bajo`, `m.tic`, `m.golpe`, `m.gota`, `m.burbuja`, `m.zumbido`,
+`m.motor`, `m.cruje`, `m.whoosh`, `m.latido`, `m.sube` y `m.guardar(salida, ganancia)`. Los tiempos van en tiempo de autor
+(`m.K.Escena + s`); en la narrada se convierten solos a los tiempos de la voz. `tapa` (0..1) ahoga el sonido: sirve para
+"la música cuenta el estado" (tapada mientras dura el problema, libre cuando se resuelve). Ejemplos: `shots/amb-0*/gen-audio.mjs`.
