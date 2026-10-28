@@ -1,0 +1,57 @@
+{
+  "especial": "Día de Muertos",
+  "velocidad": 1.0,
+  "dcHtml": "Shot PodredumbreBlanca base narrada.dc.html",
+  "salida": "Shot PodredumbreBlanca narrado.dc.html",
+  "nota": "Shot Fungi Mati #01 · Especial Día de Muertos. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este tronco está muerto, pero no está solo: un hongo se lo está comiendo."
+    },
+    {
+      "escena": "Lignina",
+      "texto": "La lignina la hace más rígida: un pegamento que casi ningún ser vivo puede digerir."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "El hongo mete hilos finísimos, las hifas, que perforan las paredes de la madera."
+    },
+    {
+      "escena": "Enzimas",
+      "texto": "Ahí suelta enzimas que rompen la lignina, como tijeras químicas."
+    },
+    {
+      "escena": "Blanca",
+      "texto": "La madera queda blanda y blanquecina: es la podredumbre blanca."
+    },
+    {
+      "escena": "Suelo",
+      "texto": "Lo que fue árbol se vuelve suelo, agua y dióxido de carbono."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y antes de que los hongos aprendieran a romper la lignina?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2012, un equipo dirigido desde la Universidad Clark comparó el ADN de 31 hongos, en Science."
+    },
+    {
+      "escena": "Reloj",
+      "texto": "Su reloj molecular sugiere que esas enzimas nacieron al final del Carbonífero, hace unos 290 millones de años."
+    },
+    {
+      "escena": "Carbon",
+      "texto": "Su hipótesis: antes, muchos troncos se enterraban sin pudrirse y se volvieron carbón. En 2016 la pusieron en duda."
+    },
+    {
+      "escena": "Dato",
+      "texto": "O sea: parte del carbón más antiguo podría ser plantas que ningún hongo se comió."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Como dice el Día de Muertos, todo regresa a la tierra. Y con la madera, quien más ayuda es un hongo."
+    }
+  ]
+}

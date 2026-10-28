@@ -1,0 +1,57 @@
+{
+  "especial": "Día de Muertos",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Monarcas base narrada.dc.html",
+  "salida": "Shot Monarcas narrado.dc.html",
+  "nota": "Shot Ambiental #01 · Especial Día de Muertos. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta nube naranja no son hojas: son mariposas monarca, y llegan a México por Día de Muertos."
+    },
+    {
+      "escena": "Viaje",
+      "texto": "Vuelan desde Canadá y Estados Unidos hasta los bosques de oyamel de Michoacán y el Estado de México."
+    },
+    {
+      "escena": "Almas",
+      "texto": "En algunos pueblos se dice que traen las almas de los difuntos."
+    },
+    {
+      "escena": "Bisnieta",
+      "texto": "Ninguna ha hecho el viaje antes: es tataranieta de las que se fueron en primavera."
+    },
+    {
+      "escena": "Sol",
+      "texto": "Se orientan con el Sol y con un reloj interno que traen en las antenas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuántas llegan?"
+    },
+    {
+      "escena": "Bosque",
+      "texto": "Son tantas que no se cuentan: se mide cuánto bosque cubren."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En el invierno de 2025 a 2026, WWF y la CONANP midieron 2.93 hectáreas, 64 % más que el año anterior."
+    },
+    {
+      "escena": "Antes",
+      "texto": "Suena bien, pero en el invierno de 1996 a 1997 cubrieron más de 18 hectáreas: seis veces más."
+    },
+    {
+      "escena": "Amenazas",
+      "texto": "Las amenazan la tala ilegal, la pérdida del algodoncillo, donde ponen sus huevos, y el clima extremo."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Sus orugas solo comen algodoncillo, y el veneno de la planta se les queda: las vuelve amargas para los pájaros."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esta nube naranja no son hojas: es una visita que hay que cuidar cada año."
+    }
+  ]
+}

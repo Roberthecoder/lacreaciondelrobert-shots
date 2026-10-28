@@ -1,0 +1,57 @@
+{
+  "especial": "Día de Muertos",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Esqueleto base narrada.dc.html",
+  "salida": "Shot Esqueleto narrado.dc.html",
+  "nota": "Shot Científico #01 · Especial Día de Muertos. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta calavera no es un adorno: eres tú por dentro, y se está reconstruyendo ahora mismo."
+    },
+    {
+      "escena": "Vivo",
+      "texto": "Tus huesos no son piedra: son tejido vivo, con vasos sanguíneos, nervios y células."
+    },
+    {
+      "escena": "Clastos",
+      "texto": "Unas células, los osteoclastos, disuelven el hueso viejo."
+    },
+    {
+      "escena": "Blastos",
+      "texto": "Otras, los osteoblastos, rellenan el hueco con hueso nuevo."
+    },
+    {
+      "escena": "Obra",
+      "texto": "Es una obra que nunca termina: en cualquier momento, cerca del 10 % de tu esqueleto está en obra."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "Entonces, ¿cada cuánto estrenas esqueleto nuevo?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2013, una revisión publicada en una revista médica de Australia dio la cuenta:"
+    },
+    {
+      "escena": "Diez",
+      "texto": "cerca de cada 10 años, casi todo tu esqueleto adulto se renueva."
+    },
+    {
+      "escena": "Calcio",
+      "texto": "Ahí guardas tu reserva de calcio: cerca del 99 % del calcio de tu cuerpo está en tus huesos y dientes."
+    },
+    {
+      "escena": "Ejercicio",
+      "texto": "Y el hueso que más trabaja se refuerza: por eso el ejercicio con peso lo hace más fuerte."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Dato: al nacer tenías unos 300 huesos; muchos se sueldan al crecer, y de adulto te quedan 206."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esta calavera no es un adorno: es una obra viva que se reconstruye casi entera cada década."
+    }
+  ]
+}
