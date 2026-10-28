@@ -57,3 +57,8 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   El trabajador (o el admin) vuelve a poner `voz_aprobada` en main solo a los que alcancen los créditos, en tandas pequeñas
   (máx. 3 por push) y esperando cada render. Lista: ver `git log` del commit "Voz pendiente: quito voz_aprobada…".
 - Todo vive ya en main (las ramas viejas se juntaron). Los cambios de shots se hacen en main o en una rama nueva que se junta después.
+
+## Propuestas para Robert (del trabajador horario)
+- 28 oct: festividades en los próximos 60 días SIN Shot Festivo (siguiente libre: fes-07): Día Mundial de la Ciencia para la Paz
+  (10 nov), Revolución Mexicana (20 nov), Virgen de Guadalupe (12 dic), Posadas (16 dic), Navidad (24 dic). Año Nuevo (31 dic)
+  entra en 64 días. El trabajador no los hace sin que Robert los pida (pedido "Festivo" en la Sala).
