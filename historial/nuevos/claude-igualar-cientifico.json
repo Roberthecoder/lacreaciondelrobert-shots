@@ -1,10 +1,77 @@
 {
  "temas": [
-  { "id": "cie-dedos-arrugados", "titulo": "Los dedos arrugados en el agua: no es piel hinchada, es tu sistema nervioso", "serie": "Shot Científico", "numero": 4, "estado": "idea", "carpeta": "shots/cie-04-dedos-arrugados", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] },
-  { "id": "cie-cosquillas", "titulo": "Por qué no te puedes hacer cosquillas (el cerebelo predice tu propio toque)", "serie": "Shot Científico", "numero": 5, "estado": "idea", "carpeta": "shots/cie-05-cosquillas", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] },
-  { "id": "cie-bacterias-uno-a-uno", "titulo": "No eres 10 bacterias por cada célula tuya: es casi 1 a 1 (Sender, Fuchs y Milo 2016)", "serie": "Shot Científico", "numero": 6, "estado": "idea", "carpeta": "shots/cie-06-bacterias-1a1", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] },
-  { "id": "cie-esponja-cocina", "titulo": "La esponja de tu cocina por dentro (Cardinale et al. 2017)", "serie": "Shot Científico", "numero": 7, "estado": "idea", "carpeta": "shots/cie-07-esponja", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] },
-  { "id": "cie-estatura-noche", "titulo": "En la noche mides menos que en la mañana (y en el espacio, más)", "serie": "Shot Científico", "numero": 8, "estado": "idea", "carpeta": "shots/cie-08-estatura", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] },
-  { "id": "cie-atardecer-marte", "titulo": "El atardecer azul de Marte (Curiosity, 2015)", "serie": "Shot Científico", "numero": 9, "estado": "idea", "carpeta": "shots/cie-09-atardecer-marte", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] }
+  {
+   "id": "cie-dedos-arrugados",
+   "titulo": "Los dedos arrugados en el agua: no es piel hinchada, es tu sistema nervioso (vasoconstricción; Newcastle 2013 vs. Berlín 2014)",
+   "serie": "Shot Científico", "numero": 4, "estado": "renderizado",
+   "carpeta": "shots/cie-04-dedos-arrugados", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28",
+   "fuentes": [
+    "Kareklas, Nettle y Smulders (2013). Biology Letters 9: 20120999 (PMC3639753): 20 personas, 12 % menos tiempo con objetos bajo el agua.",
+    "Haseleu et al. (2014). PLoS One 9: e84949 (PMC3885627): 40 personas, sin ventaja.",
+    "Wilder-Smith y Chow (2003). Muscle & Nerve 27: 307–311 (PMID 12635117): vasoconstricción.",
+    "Fustes et al. (2026). Arq. Neuropsiquiatr. 84(7) (PMC13472706): revisión de la prueba de arrugamiento."
+   ],
+   "derivados": ["Por qué se te duerme la pierna (nervios comprimidos)", "La piel de gallina: músculos diminutos en cada pelo", "Por qué las huellas digitales no se borran con el agua"]
+  },
+  {
+   "id": "cie-cosquillas",
+   "titulo": "Por qué no te puedes hacer cosquillas (predicción del cerebro; robots de Blakemore 1999; ratas 2016/2019)",
+   "serie": "Shot Científico", "numero": 5, "estado": "renderizado",
+   "carpeta": "shots/cie-05-cosquillas", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28",
+   "fuentes": [
+    "Blakemore, Frith y Wolpert (1999). J. Cogn. Neurosci. 11: 551–559 (PMID 10511643).",
+    "Blakemore, Wolpert y Frith (1998). Nature Neuroscience 1: 635–640 (PMID 10196573).",
+    "Blakemore, Wolpert y Frith (2000). NeuroReport 11: R11–R16 (PMID 10943682).",
+    "Ishiyama y Brecht (2016). Science 354: 757–760; Ishiyama, Kaufmann y Brecht (2019). Current Biology 29: 3153–3164."
+   ],
+   "derivados": ["Por qué no oyes tu propia voz como la oyen los demás (conducción ósea)", "Las ratas se ríen: ultrasonidos del juego", "El punto ciego: el hoyo que tu cerebro rellena"]
+  },
+  {
+   "id": "cie-bacterias-uno-a-uno",
+   "titulo": "No eres 10 bacterias por cada célula tuya: es casi 1 a 1 (Sender, Fuchs y Milo 2016)",
+   "serie": "Shot Científico", "numero": 6, "estado": "renderizado",
+   "carpeta": "shots/cie-06-bacterias-1a1", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28",
+   "fuentes": [
+    "Sender, Fuchs y Milo (2016). PLoS Biology 14(8): e1002533 (PMC4991899): 3.8·10^13 bacterias, 3.0·10^13 células humanas, 84 % glóbulos rojos, ~0.2 kg.",
+    "Sender, Fuchs y Milo (2016). Cell 164(3): 337–340 (PMID 26824647)."
+   ],
+   "derivados": ["Cuántos glóbulos rojos fabricas por segundo", "Tu cuerpo por masa: grasa y músculo contra número de células", "Cuánto de tu excremento son bacterias"]
+  },
+  {
+   "id": "cie-esponja-cocina",
+   "titulo": "La esponja de tu cocina por dentro: hasta 54 mil millones de bacterias por cm³ y por qué limpiarla no basta (Cardinale et al. 2017)",
+   "serie": "Shot Científico", "numero": 7, "estado": "renderizado",
+   "carpeta": "shots/cie-07-esponja", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28",
+   "fuentes": [
+    "Cardinale, Kaiser, Lueders, Schnell y Egert (2017). Scientific Reports 7: 5791 (PMC5517580)."
+   ],
+   "derivados": ["La regla de los 5 segundos: qué dice el experimento", "Por qué huele la ropa que se secó adentro (Moraxella)", "El celular y sus bacterias: qué se ha medido"]
+  },
+  {
+   "id": "cie-estatura-noche",
+   "titulo": "En la noche mides casi 2 cm menos (discos de la columna) y en el espacio hasta 3 % más (Tyrrell 1985, NASA)",
+   "serie": "Shot Científico", "numero": 8, "estado": "renderizado",
+   "carpeta": "shots/cie-08-estatura", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28",
+   "fuentes": [
+    "Tyrrell, Reilly y Troup (1985). Spine 10(2): 161–164 (PMID 4002039): 19.3 mm, 54 % en la primera hora.",
+    "Roberts et al. (1998). Clinical Anatomy 11(1): 1–8 (PMID 9445091), Universidad de Liverpool.",
+    "Paajanen et al. (1994). J. Orthop. Res. 12(4): 509–514 (PMID 8064481).",
+    "NASA, Spinal Ultrasound Investigation (ISS): hasta 3 % más altos.",
+    "Green y Scott (2018). Frontiers in Physiology 8: 1126 (PMC5778142)."
+   ],
+   "derivados": ["Qué le pasa a tus huesos en el espacio (pérdida de densidad)", "Por qué los astronautas ven distinto (ojos en microgravedad)", "Por qué te truena la espalda (burbujas en las articulaciones)"]
+  },
+  {
+   "id": "cie-atardecer-marte",
+   "titulo": "El atardecer azul de Marte (polvo fino, Curiosity sol 956, 15 abr 2015) contra el cielo azul y el atardecer rojo de la Tierra",
+   "serie": "Shot Científico", "numero": 9, "estado": "renderizado",
+   "carpeta": "shots/cie-09-atardecer-marte", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28",
+   "fuentes": [
+    "NASA/JPL PIA19400, Sunset in Mars' Gale Crater (2015).",
+    "NASA Space Place, Why Is the Sky Blue?",
+    "NASA APOD, Martian Sunset (2009, 2014)."
+   ],
+   "derivados": ["Por qué la Luna se ve roja en un eclipse", "Cuánto pesarías en Marte (y qué pasaría con tu salto)", "Las nubes de Marte que brillan de noche"]
+  }
  ]
 }
