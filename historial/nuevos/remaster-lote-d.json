@@ -1,0 +1,121 @@
+{
+  "temas": [
+    {
+      "id": "que-es-un-hongo",
+      "titulo": "¿Qué es un hongo? (micelio, hifas, cuerpo fructífero, levaduras)",
+      "serie": "Shot Fungi Mati",
+      "numero": 1,
+      "estado": "renderizado",
+      "carpeta": "shots/fun-01-que-es-un-hongo",
+      "rama": "remaster/lote-d",
+      "fuentes": [
+        "Baldauf, S. L. y Palmer, J. D. (1993). *Animals and fungi are each other's closest relatives: congruent evidence from multiple proteins.* PNAS 90(24): 11558–11562. (25 proteínas; animales y hongos, grupos hermanos.)",
+        "Moore, D., Robson, G. D. y Trinci, A. P. J. *21st Century Guidebook to Fungi* (Cambridge University Press; davidmoore.org.uk): hifas, micelio, cuerpo fructífero (cap. 11), digestión externa, levaduras.",
+        "Diámetro de las hifas (~2–10 µm) frente a un pelo humano (~50–100 µm): valores de texto de micología; por eso el guion dice \"mucho más delgados que un pelo\" sin dar un número exacto.",
+        "Quitina en la pared de los hongos y en el exoesqueleto de los artrópodos: dato de libro de texto (Moore et al.).",
+        "Humedad y temperatura como señales para fructificar: Sakamoto, Y. (2018). *Fungal Biology Reviews* 32(4): 236–248."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "El ser vivo más grande del mundo: el Armillaria de Oregón",
+        "Los hongos están más cerca de ti que de las plantas",
+        "La red del bosque: micorrizas que conectan raíces"
+      ],
+      "remaster_de": "lista vieja #2",
+      "nota": "Gemelo mudo en el Release Borradores; narrado pendiente de aprobar voz."
+    },
+    {
+      "id": "seta-rosa",
+      "titulo": "Esto no es plástico: la seta rosa (Pleurotus djamor) y qué detona la fructificación",
+      "serie": "Shot Fungi Mati",
+      "numero": 3,
+      "estado": "renderizado",
+      "carpeta": "shots/fun-03-seta-rosa",
+      "rama": "remaster/lote-d",
+      "fuentes": [
+        "Salmones, D. (2017). *Pleurotus djamor, un hongo con potencial aplicación biotecnológica para el neotrópico.* Scientia Fungorum 46: 73–85 (INECOL, Xalapa). Pantropical; silvestre en México y otros 12 países de América; temperatura óptima 22–30 °C; la presencia del color rosa \"aún no concluyente\"; la var. *roseus* tiene primordios rosas que \"disminuyen notoriamente su coloración en estado adulto\".",
+        "Sakamoto, Y. (2018). *Influences of environmental factors on fruiting body induction, development and maturation in mushroom-forming fungi.* Fungal Biology Reviews 32(4): 236–248. La luz es esencial para la diferenciación del sombrero en muchas especies; el CO₂ alto suprime la diferenciación del sombrero.",
+        "Nwankwegu, A. S. et al. (2025). *Exploring the critical environmental optima… of fungal fruiting bodies.* Microbial Biotechnology (PMC12351640): CO₂ < 1,000 ppm durante la fructificación; humedad 80–95 %; la luz favorece la diferenciación del sombrero.",
+        "Fechas y fotos: video de Robert *Pink oyster (Pleurotus djamor) from spore print to fruiting in my bedroom* (publicado el 11 ago 2026) y el PDF *Pink_oyster_spore_to_harvest_2026*.",
+        "Forma de las esporas de *Pleurotus* (cilíndricas, lisas, ~7–10 × 3–4 µm): descripción estándar del género; el \"≈ 8 µm\" en pantalla es aproximado."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "El hongo ostra caza gusanos (toxina de Pleurotus)",
+        "Cultivar setas en posos de café",
+        "Por qué los hongos salen después de la lluvia"
+      ],
+      "remaster_de": "lista vieja #3",
+      "nota": "Gemelo mudo en el Release Borradores; narrado pendiente de aprobar voz."
+    },
+    {
+      "id": "metales-pesados-hongos",
+      "titulo": "¿Los hongos tienen metales pesados? (acumulación, hervir, digestión)",
+      "serie": "Shot Fungi Mati",
+      "numero": 4,
+      "estado": "renderizado",
+      "carpeta": "shots/fun-04-metales-pesados",
+      "rama": "remaster/lote-d",
+      "fuentes": [
+        "Falandysz, J. y Drewnowska, M. (2017). *Cooking can decrease mercury contamination of a mushroom meal: Cantharellus cibarius and Amanita fulva.* Environmental Science and Pollution Research 24(15): 13352–13357. Blanquear: ~15 % de Hg (fresco), hasta 35 % (congelado); hervir *A. fulva*: 56 ± 2 %.",
+        "Chiocchetti, G. M. et al. (2020). *Toxic trace elements in dried mushrooms: Effects of cooking and gastrointestinal digestion on food safety.* Food Chemistry 306: 125478. Cocinar redujo As 26–72 %, Hg/Cd/Pb \"mucho menos\"; bioaccesibilidad de los metales < 40 %.",
+        "Liu, S. et al. (2022). *Research Progress on Elements of Wild Edible Mushrooms.* Journal of Fungi 8(9): 964 (PMC9505289). ~400 especies silvestres: el contenido depende de la especie y del ambiente (carreteras, zonas industriales, fundidoras); los silvestres se enriquecen más que los cultivados.",
+        "Komárek, M., Chrastný, V. y Štíchová, J. (2007). *Metal/metalloid contamination and isotopic composition of lead in edible mushrooms and forest soils originating from a smelting area.* (boletos junto a una fundidora de plomo; suelos con hasta 36,234 mg Pb/kg).",
+        "Integrating Speciation Analysis and Bioaccessibility to Reassess Cadmium Exposure Risk from Six Mushrooms (2026, PMC12846066): el cadmio queda sobre todo en fracciones insolubles.",
+        "Kapahi, M. y Sachdeva, S. (2017). *Mycoremediation potential of Pleurotus species for heavy metals: a review.* Bioresources and Bioprocessing 4: 32."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Micorremediación: hongos que limpian suelos",
+        "Los hongos de Chernóbil y la radiación (hipótesis de la radiosíntesis)",
+        "Quitina: la pared de los hongos y el caparazón del camarón"
+      ],
+      "remaster_de": "lista vieja #15",
+      "nota": "Gemelo mudo en el Release Borradores; narrado pendiente de aprobar voz."
+    },
+    {
+      "id": "agar",
+      "titulo": "El agar: polisacárido de algas rojas que gelifica y casi nadie digiere",
+      "serie": "Shot Químico",
+      "numero": 1,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-01-agar",
+      "rama": "remaster/lote-d",
+      "fuentes": [
+        "Science History Institute, *Fanny Angelina Hesse* (sciencehistory.org): aprendió a usar agar de vecinos holandeses que venían de Java; lo usaba para cuajar postres en verano; en 1881 lo sugirió; la gelatina se licuaba a temperaturas de incubación y varios microbios la digieren.",
+        "*Agarose* (Wikipedia, con referencias), hoja técnica de agar de Sigma-Aldrich y manual de la FAO sobre agar (fao.org/4/ag156e): agar = agarosa (~70 %) + agaropectina; gel de 1 % que se forma entre ~32–39 °C y no se funde hasta ~85 °C; los valores cambian con el alga y la pureza (FAO: gelifica 30–50 °C, funde 82–92 °C).",
+        "Chi, W.-J., Chang, Y.-K. y Hong, S.-K. (2012). *Agar degradation by microorganisms and agar-degrading enzymes.* Applied Microbiology and Biotechnology 94: 917–930: pocos organismos hidrolizan el agar; las agarasas están sobre todo en bacterias marinas.",
+        "Hehemann, J.-H. et al. (2010). *Transfer of carbohydrate-active enzymes from marine bacteria to Japanese gut microbiota.* Nature 464: 908–912: genes de porfiranasas y agarasas de *Zobellia galactanivorans* encontrados en *Bacteroides plebeius* de personas japonesas.",
+        "Arnott, S. et al. (1974). *The agarose double helix and its function in agarose gel structure.* J. Mol. Biol. 90: 269–284 (modelo de hélices que se agrupan en manojos; por eso el guion dice \"se enroscan y se amontonan\" sin afirmar más detalle)."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Por qué la gelatina no cuaja con piña (bromelina)",
+        "Alginato: la esferificación de la cocina molecular",
+        "Fanny Hesse: la cocina que cambió la microbiología"
+      ],
+      "remaster_de": "lista vieja #16",
+      "nota": "Gemelo mudo en el Release Borradores; narrado pendiente de aprobar voz."
+    },
+    {
+      "id": "estriado-agotamiento",
+      "titulo": "Estriado por agotamiento: 5 errores comunes",
+      "serie": "Shot Químico",
+      "numero": 2,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-02-estriado",
+      "rama": "remaster/lote-d",
+      "fuentes": [
+        "Sanders, E. R. (2012). *Aseptic laboratory techniques: plating methods.* Journal of Visualized Experiments (63): e3064. doi:10.3791/3064 (texto completo en PMC4846335). Del protocolo: enfriar el asa tocando el agar en una zona sin sembrar; no presionar tanto que el asa \"se clave\" en el agar; reflamear el asa entre cuadrantes; girar la placa 90°; no entrar a la primera zona al estriar la cuarta; incubar boca abajo para que la condensación de la tapa no gotee sobre las colonias; en teoría cada colonia viene de una sola célula (no siempre: bacterias en pares o cadenas); *Serratia marcescens* con colonias aisladas en el cuarto cuadrante tras 24 h a 30 °C, que crece en las esquinas de tinas, regaderas y juntas de azulejo, con el pigmento rojo prodigiosina."
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Por qué se flamea el asa (y por qué no se sopla)",
+        "Tinción de Gram: por qué unas bacterias se pintan de morado",
+        "Contar bacterias: diluciones en serie y UFC"
+      ],
+      "remaster_de": "lista vieja #20",
+      "nota": "Gemelo mudo en el Release Borradores; narrado pendiente de aprobar voz."
+    }
+  ]
+}

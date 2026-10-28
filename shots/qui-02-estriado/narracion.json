@@ -1,0 +1,21 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Estriado base narrada.dc.html",
+  "salida": "Shot Estriado narrado.dc.html",
+  "velocidad": 1.08,
+  "mudo": { "dcHtml": "Shot Estriado mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
+  "nota": "Químico #02. El protagonista es el gemelo MUDO (M2, 5 errores comunes). Base narrada: una línea por subtítulo (idx 0..10 del jsx), UNA sola petición a ElevenLabs. PENDIENTE de aprobación de Robert: NO generar la voz sin su visto bueno (gasta créditos).",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese garabato no es un garabato: es cómo se separa una sola bacteria de entre millones." },
+    { "escena": "Material", "texto": "Necesitas una placa con agar, un asa de metal y una flama para esterilizarla entre pasada y pasada." },
+    { "escena": "Cuad1", "texto": "Primero dejas la muestra en una orilla: ahí hay millones de células encimadas." },
+    { "escena": "Cuad2", "texto": "Flameas el asa, giras la placa y arrastras solo un poquito de la primera zona." },
+    { "escena": "Cuad3", "texto": "Flameas otra vez y repites: cada pasada lleva menos y menos células." },
+    { "escena": "Pregunta", "texto": "¿Y qué pasa en la última?" },
+    { "escena": "Cuad4", "texto": "Las células quedan tan separadas que cada una crece sola y forma una colonia: en teoría, millones de clones de una sola célula." },
+    { "escena": "Errores", "texto": "Errores comunes: tocar con el asa caliente, clavarla en el agar o regresar a la primera zona." },
+    { "escena": "Estudio", "texto": "El protocolo de Erin Sanders, de 2012, muestra colonias aisladas de Serratia en la cuarta zona tras un día a treinta grados." },
+    { "escena": "Extra", "texto": "Lo curioso: esa bacteria roja también crece en las esquinas de tu regadera." },
+    { "escena": "Cierre", "texto": "Así que ese garabato es un filtro: entra una multitud y sale una sola." }
+  ]
+}

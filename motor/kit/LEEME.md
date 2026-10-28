@@ -36,7 +36,7 @@ igual que el resto del motor, así que funcionan en la versión narrada (tiempos
 | `Cuadricula` | Cuadrícula que se llena por tramos de color | N4 |
 | `Comparativa` | Dos barras: "Tú vs. el de al lado" | N2 |
 | `MarcaAgua` | Logo + badge `#NN` arriba a la izquierda | todos |
-| `Sticker` | Una aparición de Robert: `arriba-der`, `abajo-der`, `abajo-izq`, `gancho` (cuadro 0), `presentador` (medio cuerpo grande) | todos |
+| `Sticker` | Una aparición de Robert: `arriba-der`, `abajo-der`, `abajo-izq`, `gancho` (cuadro 0), `presentador` (medio cuerpo grande), `bajo-der` y `presentador-bajo` (debajo del subtítulo: nunca lo tapan) | todos |
 | Lados extra (lote C) | `izq-alto` (espejo de `arriba-der`), `grande` y `grande-izq` (medio cuerpo grande, y 560–1170): **no tapan el subtítulo**, a diferencia de `presentador`, `abajo-der` y `abajo-izq`, que sirven mejor en los mudos | todos |
 | `Robert` | Todas las apariciones de Robert en una lista `[[at, until, pose, lado], …]` (ver regla en `CLAUDE.md`) | todos |
 | `CierreMarca robert=` | Robert junto al logo en la tarjeta final (obligatorio) | todos |
@@ -84,6 +84,23 @@ que crece, `Cas`, `ADNVirus` que se corta, `Yogur`), **ciclo lítico** (`shots/b
   `golpe`, `burbuja`, `pop`, `eructo`, `whoosh`, `ruido`…, `guardar(wav)`). Respeta los tiempos `nat` de la narrada.
 - `estimar-escenas.mjs <shot>`: duración estimada de cada escena desde `narracion.json` (calibrado con la voz del 003).
 - `escribir-dc.mjs <salida.dc.html> <Componente> '<escenas>' a.jsx b.jsx`: escribe el `.dc.html` del shot.
+
+### Piezas del lote D (27 oct 2026, Fungi Mati y Químico; renombradas con D al juntar a main)
+| Pieza | Para qué | Formatos |
+|---|---|---|
+| `EscenaD` | Fundido cruzado entre escenas con empujoncito de cámara (nunca corte seco) | todos |
+| `EtqD` | Etiqueta con línea (nombre común o *científico* con `it`) | todos |
+| `kApp(Comp)` + `AudioPistaD` | Envuelve el componente del shot en el escenario 1080×1920: `window.MiApp = kApp(MiShot)` | todos |
+| `FotoRecorte` + `Precarga` | Foto real como polaroid que entra girando y respira. **Siempre** poner `<Precarga srcs={[...]}/>` con todas las fotos, o el render saca tarjetas en blanco | N1, N5, M4 |
+| `Champinon` | Champiñón (*Agaricus*): `crece` (primordio → adulto) y `abre` (botón → sombrero con laminillas y anillo) | N1, M4 |
+| `MundoSuelo` + `MUNDO_SUELO` | Suelo en corte con hojarasca y red de micelio que crece (`red`) y brilla en rayos X (`brillo`); acepta hijos SVG (hongos, partículas) | N1, M4, M2 |
+| `HifasMicro` | Hifas de cerca (fondo oscuro): crecen por la punta, septos, núcleos; `enzimas` = digestión externa de un pedazo de hoja | N1, M4 |
+| `Levadura` | Célula de *Saccharomyces* con yema (`brote`) | N1 |
+| `SetaOstra`, `RacimoOstra`, `BolsaCultivo` | Setas *Pleurotus* (con `pie` largo = CO₂ alto) y bolsa de sustrato que se coloniza (`col`) | N1, M4 |
+| `PlacaPetri`, `kEstriado`, `kParcial`, `Asa`, `Mechero` | Laboratorio: placa vista desde arriba (con tapa y gotas), trazo del estriado en 4 zonas con sus colonias (260 → 70 → 22 → 7), polilínea parcial para dibujar en vivo, asa que se pone al rojo, mechero | M2, N3, N5 |
+| `Termometro`, `CadenaAnillos` | Termómetro con franja resaltada; cadena de anillos de azúcar para polisacáridos (agarosa, quitina, almidón…) | N3, M2 |
+
+El sonido del lote D vive en `audio-kit-lote-d.mjs` (`crearAudio(HERE, html)`).
 
 Utilidades: `KC` (colores de la marca), `KF` (letras), `KSOMBRA` (sombra de texto), `kprog`, `klerp`, `kEase`, `krng`, `mece(T, semilla)`
 (movimiento orgánico para vellos, hojas, hifas…), `kformato` (números en español de México).
