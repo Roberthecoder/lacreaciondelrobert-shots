@@ -1,0 +1,58 @@
+{
+  "especial": "Día de Muertos",
+  "serie_vinculada": "Fungi Mati",
+  "velocidad": 1.0,
+  "dcHtml": "Shot PodredumbreBlanca base narrada.dc.html",
+  "salida": "Shot PodredumbreBlanca narrado.dc.html",
+  "nota": "Shot Festivo #03 · Día de Muertos · Fungi Mati (antes Fungi Mati #01 especial; texto corregido por Robert: su voz guardada ya no sirve, espera nueva aprobación). Una línea por subtítulo (idx 0..11 del jsx). Texto corregido por Robert el 28 oct 2026 (lignina y enzimas): la voz anterior ya no sirve; voz pendiente de NUEVA aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este tronco está muerto, pero no está solo: un hongo se lo está comiendo."
+    },
+    {
+      "escena": "Lignina",
+      "texto": "La lignina endurece la pared de sus células y casi ningún ser vivo la digiere."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "El hongo mete hilos finísimos, las hifas, que perforan las paredes de la madera."
+    },
+    {
+      "escena": "Enzimas",
+      "texto": "Ahí suelta peroxidasas y lacasas, enzimas que oxidan la lignina."
+    },
+    {
+      "escena": "Blanca",
+      "texto": "La madera queda blanda y blanquecina: es la podredumbre blanca."
+    },
+    {
+      "escena": "Suelo",
+      "texto": "Lo que fue árbol se vuelve suelo, agua y dióxido de carbono."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y antes de que los hongos aprendieran a romper la lignina?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2012, un equipo dirigido desde la Universidad Clark comparó el ADN de 31 hongos, en Science."
+    },
+    {
+      "escena": "Reloj",
+      "texto": "Su reloj molecular sugiere que esas enzimas nacieron al final del Carbonífero, hace unos 290 millones de años."
+    },
+    {
+      "escena": "Carbon",
+      "texto": "Su hipótesis: antes, muchos troncos se enterraban sin pudrirse y se volvieron carbón. En 2016 la pusieron en duda."
+    },
+    {
+      "escena": "Dato",
+      "texto": "O sea: el carbón se formó en pantanos tan empapados que las plantas casi no se pudrían."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Como dice el Día de Muertos, todo regresa a la tierra. Y con la madera, quien más ayuda es un hongo."
+    }
+  ]
+}

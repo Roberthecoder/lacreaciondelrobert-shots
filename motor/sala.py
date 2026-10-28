@@ -13,7 +13,7 @@ import json, os, re, subprocess, sys
 
 SERIES = {'bio': 'Biotecnológico', 'fun': 'Fungi Mati', 'amb': 'Ambiental', 'cie': 'Científico',
           'qui': 'Químico', 'ia': 'IA', 'robert': 'Robert', 'libre': 'Libre', 'formal': 'Formal',
-          'doc': 'Documental', 'otro': 'Otro'}
+          'doc': 'Documental', 'otro': 'Otro', 'fes': 'Festivo'}
 REDES = {'tiktok': 'tiktok', 'instagram': 'instagram', 'youtube': 'youtube', 'facebook': 'facebook',
          'linkedin': 'linkedin', 'x': 'x', 'threads': 'threads', 'comentario fijado': 'comentario'}
 
@@ -94,6 +94,9 @@ def main(src, out):
             'poster': None,
             'redes': redes_de(os.path.join(shot_dir, 'publicacion.md')),
         }
+        for k in ('especial', 'serie_vinculada'):   # Shot Festivo (CLAUDE.md, "Numeración")
+            if cfg.get(k):
+                ficha[k] = cfg[k]
         json.dump(ficha, open(os.path.join(out, clave + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         print(f'{clave}: {kind}, {ficha["dur"]} s, {os.path.getsize(os.path.join(out, clave + ".mp4")) / 1048576:.1f} MB')
 

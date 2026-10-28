@@ -1,0 +1,59 @@
+{
+  "voz_aprobada": true,
+  "especial": "Día de Muertos",
+  "serie_vinculada": "IA",
+  "velocidad": 1.0,
+  "dcHtml": "Shot FotosOfrenda base narrada.dc.html",
+  "salida": "Shot FotosOfrenda narrado.dc.html",
+  "nota": "Shot Festivo #05 · Día de Muertos · IA (antes IA #01 especial; texto narrado sin cambios: la voz guardada se reutiliza). Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Si una IA restauró la foto de tu bisabuela, una parte no es real: la inventó."
+    },
+    {
+      "escena": "Pierde",
+      "texto": "Una foto vieja pierde información con los años: rayones, manchas, polvo y grano."
+    },
+    {
+      "escena": "Adivina",
+      "texto": "Lo que se borró ya no está en la foto, así que la IA no lo recupera: lo adivina."
+    },
+    {
+      "escena": "Aprendio",
+      "texto": "Aprendió viendo muchísimas fotos, y rellena con lo más probable."
+    },
+    {
+      "escena": "Color",
+      "texto": "Y el color: una foto en blanco y negro no guarda colores, así que la IA los elige."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si adivina mal?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2020, en la Universidad Duke, presentaron PULSE, una IA que inventa una cara nítida que encaje con una foto pixeleada."
+    },
+    {
+      "escena": "Obama",
+      "texto": "Alguien le dio una foto pixeleada de Barack Obama, y la IA devolvió la cara de un hombre blanco."
+    },
+    {
+      "escena": "Sesgo",
+      "texto": "No fue a propósito: la IA en la que se apoyaba generaba sobre todo caras blancas."
+    },
+    {
+      "escena": "Danada",
+      "texto": "Cuanto más dañada está la foto, menos información queda, y más tiene que rellenar la IA."
+    },
+    {
+      "escena": "Original",
+      "texto": "Por eso, si restauras las fotos de tu ofrenda, guarda siempre también la original."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que la foto restaurada no es tu bisabuela tal cual: es lo que una IA cree que era."
+    }
+  ]
+}

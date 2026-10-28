@@ -9,7 +9,7 @@ Robert abre una sesión en claude.ai/code con este repositorio y escribe algo co
 - **"Hazme un lote de <serie>"** (o "5 shots de <serie>", "un shot de <serie>"): sigue la plantilla de la sección 2 de
   `PRODUCCION_NUBE.md` con 5 shots (o los que diga), numerados desde el siguiente número libre de esa serie
   (búscalo en `shots/`, `historial/` y en las ramas remotas). Series: Biotecnológico, Fungi Mati, Ambiental, IA,
-  Científico, Químico y **Robert** (datos curiosos de Robert: lee antes `series/shot-robert/CLAUDE.md`).
+  Científico, Químico, **Festivo** (especiales de festividades, ver "Numeración") y **Robert** (datos curiosos de Robert: lee antes `series/shot-robert/CLAUDE.md`).
   **La serie Robert es solo manual:** únicamente cuando Robert la pide en persona. Las rutinas automáticas nunca la hacen.
   Antes de empezar, revisa con `git branch -r` que no haya otra rama trabajando la misma serie; si la hay, avísale a Robert
   y propón otra serie.
@@ -61,7 +61,7 @@ Las sesiones de nube tienen las herramientas `Artifact` y `ArtifactData` (cárga
 ## Pedidos desde la Sala (Robert pide videos con un formulario)
 En la Sala de Shots hay una caja "Pedir videos" que guarda documentos en la collection `pedidos`:
 `{tipo, series, cantidad, total, hechos, idea, estado, creado, resultado}`. `tipo` es uno de:
-**serie · robert · documental · libre · formal · otro**. Un solo pedido puede ser de muchos videos (`total`, hasta miles):
+**serie · festivo · robert · documental · libre · formal · otro**. Un solo pedido puede ser de muchos videos (`total`, hasta miles):
 `hechos` cuenta los terminados.
 - **Toda sesión de nube que empiece** (rutinas y sesiones de Robert, sobre todo si escribe "atiende mis pedidos"): `ArtifactData`
   action "query" en `pedidos` con `estado` en ["pendiente", "en proceso"], del más viejo al más nuevo, y los atiende ANTES del lote
@@ -70,6 +70,8 @@ En la Sala de Shots hay una caja "Pedir videos" que guarda documentos en la coll
 - **Cómo se hace cada tipo:**
   - `serie`: shots normales (61–62 s, todas las reglas) de las `series` marcadas, `cantidad` de cada una. Con `idea` vacía, la nube
     elige temas nuevos como en el lote normal; si hay idea, la usa.
+  - `festivo`: Shot Festivo (sección "Numeración") de la `festividad` y la `serie_vinculada` del pedido (con `idea` vacía, elige una de
+    `calendario/festividades.json`). Siguiente número de festivo, 61–75 s.
   - `robert`: serie Shot Robert (`series/shot-robert/CLAUDE.md`), carpeta `shots/robert-NN-<tema>/`. Solo datos ✅ de `datos.md`; si
     falta un dato: `estado: "pregunta"` y en `resultado` la pregunta concreta. (Es manual: solo cuando Robert lo pide.)
   - `documental`: el tema lo dicta Robert en `idea`. **Principal horizontal 16:9 para YouTube**, 8–15 min, en
@@ -87,18 +89,24 @@ En la Sala de Shots hay una caja "Pedir videos" que guarda documentos en la coll
 - Todo pasa por "Verificación de hechos", todo lleva `publicacion.md` con las 7 redes (`motor/plantillas/publicacion.md`) y la voz
   espera aprobación, como siempre. Todo se sube a la Sala al terminar.
 
-## Numeración = fecha de publicación, y especiales de temporada (regla de Robert, 28 oct 2026)
-- **Numeración perfecta, sin saltos:** el número de un shot ES su día de publicación. Publicación desde el **1 nov 2026**, 3 series por
-  día alternando: **grupo A** (Fungi Mati, Biotecnológico, Ambiental) publica el #01 el 1 nov y luego cada 2 días; **grupo B**
-  (Científico, Químico, IA) el #01 el 2 nov y luego cada 2 días. `python3 calendario/fecha.py "<Serie>" <N>` da la fecha de un número;
-  `python3 calendario/fecha.py fecha AAAA-MM-DD` dice qué sale ese día.
-- **Especiales:** `calendario/festividades.json` tiene las festividades del año con ideas. Los números que caen en una festividad están
-  **reservados** (`calendario/especiales.json`, o `python3 calendario/fecha.py especiales`). Ahí va un shot especial de esa festividad:
-  carpeta `<prefijo>-<NN>-esp-<tema>/`, título `Shot <Serie> #NN · Especial <Festividad>: <título>`, con `"especial": "<Festividad>"`
-  en `narracion.json` y en su ficha de la Sala. Todas las demás reglas aplican igual (verificación, 61–62 s, Robert en pantalla).
-- **Siguiente número libre** = el siguiente que no esté usado NI reservado. Nunca pongas un shot normal en un número reservado.
-- **Prioridad:** antes del lote normal, toda corrida revisa si hay números reservados con fecha en los próximos 60 días sin especial
-  hecho, y los hace primero (por corrida hasta 5).
+## Numeración = fecha de publicación, y serie Shot Festivo (reglas de Robert, 28 oct 2026)
+- **Series normales: numeración seguida, sin saltos y sin reservar números.** El número de un shot ES su día de publicación.
+  Publicación desde el **1 nov 2026**, 3 series por día alternando: **grupo A** (Fungi Mati, Biotecnológico, Ambiental) publica el #01
+  el 1 nov y luego cada 2 días; **grupo B** (Científico, Químico, IA) el #01 el 2 nov y luego cada 2 días.
+  `python3 calendario/fecha.py "<Serie>" <N>` da la fecha de un número; `python3 calendario/fecha.py fecha AAAA-MM-DD` dice qué sale
+  ese día. **Siguiente número libre** = el siguiente que no esté usado en esa serie (las festividades ya NO reservan números).
+- **Serie Shot Festivo** (especiales de festividades): numeración propia (#01, #02…) en orden de publicación; cada festivo sale el día
+  de su festividad y va **vinculado a una serie/temática**: Fungi Mati, Biotecnológico, Ambiental, Científico, Químico, IA o Robert
+  (Robert solo si él lo pide en persona).
+  - Carpeta `shots/fes-<NN>-<tema>/`; título `Shot Festivo #NN · <Festividad> · <Serie vinculada>: <título>`.
+  - En `narracion.json` y en su ficha de la Sala: `"especial": "<Festividad>"` y `"serie_vinculada": "<Serie>"` (ficha con
+    `serie: "Festivo"`). `MarcaAgua` con `serie="Festivo"` y `num="NN"`, y el logo (`tema`) de su serie vinculada.
+  - **Duración: 61–75 s** (las series normales siguen en 61–62 s). Todas las demás reglas aplican igual (verificación, Robert en
+    pantalla, `publicacion.md` con las 7 redes, voz solo con aprobación).
+  - Al hacer uno, agrégalo a `calendario/especiales.json` (lista de festivos hechos, con su número, fecha y serie vinculada).
+- **Festividades = lista de ideas:** `calendario/festividades.json`. **Prioridad:** antes del lote normal, toda corrida revisa
+  `python3 calendario/fecha.py festivos` (próximos ~60 días); si una festividad no tiene festivo hecho, lo propone o lo hace primero
+  (por corrida hasta 5), con el siguiente número de Shot Festivo.
 
 ## Correcciones desde la Sala (Robert corrige un shot)
 Al abrir un shot en la Sala, Robert puede escribir una corrección; se guarda en la collection `correcciones`

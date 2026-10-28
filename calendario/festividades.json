@@ -1,5 +1,5 @@
 {
- "nota": "Fechas MM-DD (las móviles van con su fecha de 2027). Ideas de ciencia para cualquier serie; la sesión elige la que mejor encaja con su serie y verifica todo como siempre.",
+ "nota": "Lista de ideas para la serie Shot Festivo (ya no reserva números de las series normales). Fechas MM-DD (las móviles van con su fecha de 2027). Cada festivo se vincula a una serie (Fungi Mati, Biotecnológico, Ambiental, Científico, Químico, IA o Robert); la sesión elige la idea que mejor encaje y verifica todo como siempre. ~60 días antes de cada festividad sin festivo hecho, se propone/hace primero (python3 calendario/fecha.py festivos).",
  "festividades": [
   {"nombre": "Día de Muertos", "fechas": ["11-01", "11-02"], "ideas": ["El cempasúchil: por qué es tan naranja (luteína) y cómo se cultiva", "Los hongos y bacterias que reciclan la ofrenda y la vida", "La química del copal y del incienso", "Calaveritas de azúcar: cristalización", "El pan de muerto y sus levaduras", "IA que restaura fotos antiguas: qué hace y qué inventa"]},
   {"nombre": "Día Mundial de la Ciencia para la Paz", "fechas": ["11-10"], "ideas": ["Un descubrimiento hecho entre países rivales", "Cómo se revisa un artículo científico"]},
