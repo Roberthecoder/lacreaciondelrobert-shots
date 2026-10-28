@@ -5,12 +5,19 @@
    "titulo": "Ejemplos adversarios: un ruido invisible convierte un panda en gibón para la IA (Goodfellow 2014) y estampas en un alto (Eykholt 2018)",
    "serie": "Shot IA",
    "numero": 6,
-   "estado": "idea",
+   "estado": "guion",
    "carpeta": "shots/ia-06-panda",
    "rama": "claude/igualar-ia",
    "fecha": "2026-10-28",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Goodfellow, Shlens y Szegedy, arXiv:1412.6572 (2014; ICLR 2015): panda 57.7% → gibbon 99.3%, ε .007; error 89.4% → 17.9% con entrenamiento adversario",
+    "Eykholt et al., arXiv:1707.08945 (2017; CVPR 2018): estampas en un alto, 100% en laboratorio y 84.8% de cuadros desde un auto en marcha"
+   ],
+   "derivados": [
+    "La tortuga impresa en 3D que una IA ve como rifle (Athalye et al., 2018)",
+    "Lentes 'adversarios' que engañan al reconocimiento facial",
+    "Envenenar los datos de entrenamiento: cuántas imágenes falsas bastan"
+   ]
   }
  ]
 }
