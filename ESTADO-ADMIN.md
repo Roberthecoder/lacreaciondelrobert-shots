@@ -44,6 +44,7 @@ y 2) (reemplazado por la serie Shot Festivo, ver abajo: ya no se renumera).
 - Los 6 especiales de Día de Muertos pasan a Festivo #01 monarcas (Ambiental), #02 pan de muerto (Biotecnológico),
   #03 podredumbre blanca (Fungi Mati), #04 esqueleto (Científico), #05 fotos de la ofrenda (IA), #06 calaveritas (Químico).
   La voz no cambia (se reutiliza la guardada).
+- **Duración de los festivos: 61–75 s** (Robert, 28 oct). Las series normales siguen en 61–62 s.
 - Las series normales se quedan #01–#09 sin huecos: ya NO hace falta renumerarlas.
 - Hay que actualizar CLAUDE.md (sección de numeración), CANAL.md, calendario/ (festividades = lista de ideas; antes de cada
   festividad se hacen sus festivos), la Sala (sección "Shots festivos" y tipo de pedido "Festivo") y el prompt del trabajador.
