@@ -1,0 +1,69 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Hormiga Zombi base narrada.dc.html",
+  "salida": "Shot Hormiga Zombi narrado.dc.html",
+  "velocidad": 1.03,
+  "nota": "Shot Fungi Mati #02 (remaster del shot 001). Una línea por subtítulo (idx 0..14 del jsx). Todo en UNA sola petición a ElevenLabs. Voz aprobada por Robert en la Sala (~950 créditos); el texto ya está verificado (verificacion.md). Si la narrada pasa de 62 s, agregar \"velocidad\" (sin gastar créditos).",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa hormiga no está paseando: la maneja un hongo."
+    },
+    {
+      "escena": "Espora",
+      "texto": "Una espora del hongo se le pega a una hormiga carpintera"
+    },
+    {
+      "escena": "Espora",
+      "texto": "y se mete a su cuerpo."
+    },
+    {
+      "escena": "Invasion",
+      "texto": "Adentro, el hongo crece y envuelve sus músculos,"
+    },
+    {
+      "escena": "Invasion",
+      "texto": "pero no invade su cerebro. Una hipótesis: la maneja desde los músculos."
+    },
+    {
+      "escena": "Subida",
+      "texto": "La hormiga deja su colonia y se va a una planta."
+    },
+    {
+      "escena": "Subida",
+      "texto": "Suele detenerse a unos veinticinco centímetros del suelo, donde hay mucha humedad."
+    },
+    {
+      "escena": "Mordida",
+      "texto": "Ahí muerde la vena de una hoja, cerca del mediodía,"
+    },
+    {
+      "escena": "Mordida",
+      "texto": "y ya no la suelta. Es la mordida de la muerte."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué tanto trabajo?"
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Ya muerta, de su nuca brota un tallo que suelta esporas al suelo, por donde pasan otras."
+    },
+    {
+      "escena": "Fosil",
+      "texto": "En 2010 describieron estas mordidas en una hoja fósil de Messel, Alemania, de hace unos cuarenta y ocho millones de años."
+    },
+    {
+      "escena": "Humanos",
+      "texto": "¿Y a ti te puede pasar? Tranquilo: este hongo es especialista en hormigas."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Además, la mayoría de los hongos no aguanta tus treinta y siete grados."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa hormiga prendida de una hoja no estaba descansando: la manejó un hongo."
+    }
+  ]
+}
