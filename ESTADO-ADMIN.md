@@ -28,8 +28,7 @@ claude/especiales-muertos, claude/verif-main, claude/clever-mayer-197rx7, claude
 claude/eager-archimedes-mf5ln4, claude/clever-heisenberg-pspnud, claude/igualar-ambiental, claude/igualar-cientifico,
 claude/igualar-fungi-mati, claude/igualar-ia, claude/igualar-quimico, claude/fun-02-hormiga-zombi.
 Robert ya autorizó (28 oct): 1) juntarlas a main (sección 6 de PRODUCCION_NUBE.md) cuando terminen sus renders,
-y 2) renumerar por calendario (ADMIN.md, "Renumerar"): los especiales se quedan en #01; los normales que están en números
-reservados (#01, #05 de Científico/Químico/IA, etc.) se mueven a los libres. Esto sigue pendiente.
+y 2) (reemplazado por la serie Shot Festivo, ver abajo: ya no se renumera).
 
 ## Decisiones de Robert que no están en otros archivos
 - 28 oct: verificación estricta e independiente para TODO video, también los viejos. "No me importa el costo: arréglalos todos."
@@ -37,6 +36,18 @@ reservados (#01, #05 de Científico/Químico/IA, etc.) se mueven a los libres. E
 - 28 oct: quiere ver los créditos de ElevenLabs siempre actualizados en la Sala (doc `estado/creditos`).
 - 28 oct: quiere un sistema que funcione indefinidamente: trabajador horario + este archivo + respuestas cortas.
 - Especiales de Día de Muertos: se quedan en el #01 de cada serie (regla de calendario de CLAUDE.md).
+
+## Decisión de Robert, 28 oct (pendiente de aplicar): serie "Shot Festivo"
+- Las festividades ya NO reservan números en las series normales. Nueva serie **Shot Festivo** con numeración propia (#01, #02…)
+  en orden de publicación; cada festivo va vinculado a una serie/temática (Fungi Mati, IA, Químico, Robert…).
+  Carpeta `fes-NN-<tema>/`, título «Shot Festivo #NN · <Festividad> · <Serie vinculada>: <título>», campos `especial` y `serie_vinculada`.
+- Los 6 especiales de Día de Muertos pasan a Festivo #01 monarcas (Ambiental), #02 pan de muerto (Biotecnológico),
+  #03 podredumbre blanca (Fungi Mati), #04 esqueleto (Científico), #05 fotos de la ofrenda (IA), #06 calaveritas (Químico).
+  La voz no cambia (se reutiliza la guardada).
+- Las series normales se quedan #01–#09 sin huecos: ya NO hace falta renumerarlas.
+- Hay que actualizar CLAUDE.md (sección de numeración), CANAL.md, calendario/ (festividades = lista de ideas; antes de cada
+  festividad se hacen sus festivos), la Sala (sección "Shots festivos" y tipo de pedido "Festivo") y el prompt del trabajador.
+- Orden acordado: primero terminar la subida de narrados, luego juntar ramas a main, luego aplicar esto en main.
 
 ## Pendientes de Robert (él tiene que hacerlos)
 - Comprar créditos de ElevenLabs.
