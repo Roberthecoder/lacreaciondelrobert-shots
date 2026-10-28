@@ -73,9 +73,9 @@ function FagosNarrado() {
         <Etq T={T} at={C.Aterriza + 1.6} until={C.Inyecta} x={640} y={760} texto="6 patas (fibras)" color={KC.texto} />
         <Etq T={T} at={C.Aterriza + 0.5} until={C.Revienta} x={150} y={1290} texto="Escherichia coli" it color={ECOLI} />
         <Etq T={T} at={C.Inyecta + 0.9} until={C.Fabrica} x={640} y={900} texto="ADN del fago" color={KC.pink} />
-        <Cronometro T={T} at={C.Inyecta + 0.4} until={C.Revienta + 1.0} factor={60 * 25 / Math.max(1, C.Revienta + 1.0 - C.Inyecta - 0.4)} x={540} y={420} etiqueta="TIME-LAPSE" />
+        <Cronometro T={T} at={C.Inyecta + 0.4} until={C.Revienta + 1.0} factor={60 * 30 / Math.max(1, C.Revienta + 1.0 - C.Inyecta - 0.4)} x={540} y={420} etiqueta="TIME-LAPSE" />
         <Chip T={T} at={C.Fabrica + 1.2} until={C.Revienta} texto="la fábrica ahora hace fagos" y={1520} borde={KC.pink} tam={34} />
-        <Chip T={T} at={C.Revienta + 1.4} until={C.Pregunta - 0.2} texto="cientos de fagos nuevos" y={560} borde={KC.pink} tam={40} />
+        <Chip T={T} at={C.Revienta + 1.4} until={C.Pregunta - 0.2} texto="montones de fagos nuevos" y={560} borde={KC.pink} tam={40} />
         <Escala T={T} z={1} pxPorMm={450000} y={1440} />
       </Escena>
 
@@ -110,7 +110,7 @@ function FagosNarrado() {
         {T > C.Estudio + 2.8 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, C.Estudio + 2.8, C.Estudio + 3.3) }}><Cama T={T} iv={kprog(T, E2, E2 + 1.0)} despierta={kprog(T, E2 + 3.6, E2 + 4.0)} /></div>}
         <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.8} anio="2016" quien="Tom Patterson · UC San Diego" revista="Schooley et al., Antimicrob. Agents Chemother. 2017" y={700} />
         <Etq T={T} at={C.Estudio + 3.4} until={E2} x={380} y={760} texto="Acinetobacter baumannii" it color={KC.ink} tam={30} />
-        <Chip T={T} at={C.Estudio + 3.8} until={E2} texto="0 antibióticos sirven" y={430} borde={KC.red} tam={40} />
+        <Chip T={T} at={C.Estudio + 3.8} until={E2} texto="ningún antibiótico funcionaba" y={430} borde={KC.red} tam={40} />
         {T > E2 + 1.2 && <Chip T={T} at={E2 + 1.2} until={C.Historia - 0.2} texto={'día ' + Math.min(3, 1 + Math.floor(kprog(T, E2 + 1.2, E2 + 3.6) * 3))} y={430} borde={KC.pink} tam={48} mono />}
         <Chip T={T} at={E2 + 3.8} until={C.Historia - 0.2} texto="despertó" x={300} y={1100} borde={KC.leaf} tam={44} />
       </Escena>
@@ -161,11 +161,11 @@ function FagosNarrado() {
       <Subtitulo T={T} idx={1} at={C.Aterriza + 0.1} until={C.Inyecta - 0.1} texto="Un fago: *aterriza con seis patas.*" />
       <Subtitulo T={T} idx={2} at={C.Inyecta + 0.1} until={C.Fabrica - 0.1} texto="Cola de jeringa: *inyecta su ADN.*" />
       <Subtitulo T={T} idx={3} at={C.Fabrica + 0.1} until={C.Revienta - 0.1} texto="La bacteria *ahora solo hace fagos.*" />
-      <Subtitulo T={T} idx={4} at={C.Revienta + 0.1} until={C.Pregunta - 0.1} texto="En menos de media hora: *revienta.*" />
+      <Subtitulo T={T} idx={4} at={C.Revienta + 0.1} until={C.Pregunta - 0.1} texto="En cerca de media hora: *revienta.*" />
       <Subtitulo T={T} idx={5} at={C.Pregunta + 0.05} until={C.Selectivo - 0.1} texto="¿Y si pasa *dentro de ti?*" />
       <Subtitulo T={T} idx={6} at={C.Selectivo + 0.1} until={S2 - 0.1} texto="A tus células *no les hace nada.*" />
       <Subtitulo T={T} idx={7} at={S2 + 0.1} until={C.Estudio - 0.1} texto="Contra *las superbacterias.*" />
-      <Subtitulo T={T} idx={8} at={C.Estudio + 0.1} until={E2 - 0.1} texto="En coma por una bacteria *que nada mataba.*" />
+      <Subtitulo T={T} idx={8} at={C.Estudio + 0.1} until={E2 - 0.1} texto="En coma por una bacteria *que ningún antibiótico frenaba.*" />
       <Subtitulo T={T} idx={9} at={E2 + 0.1} until={C.Historia - 0.1} texto="Cócteles de fagos… *y despertó.*" />
       <Subtitulo T={T} idx={10} at={C.Historia + 0.1} until={C.Extra - 0.1} texto="Antes que *la penicilina.*" />
       <Subtitulo T={T} idx={11} at={C.Extra + 0.1} until={C.Cierre - 0.1} texto="Un 1 con *31 ceros.*" />

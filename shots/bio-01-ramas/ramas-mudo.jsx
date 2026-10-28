@@ -5,7 +5,7 @@
 const MUDO_SUB = {
   rojo: 'Insulina, vacunas y *antibióticos*', verde: 'Plantas que aguantan *plagas y sequía*', blanco: 'Enzimas que quitan *manchas en frío*',
   amarillo: 'Pan, queso y yogur: *microbios*', azul: 'Medicinas *del mar*', gris: 'Microbios que *limpian*',
-  cafe: 'Cultivar *en el desierto*', dorado: 'Computadoras que *leen ADN*', morado: 'Leyes *y ética*', negro: 'Armas biológicas *y cómo frenarlas*',
+  cafe: 'Cultivar *en el desierto*', dorado: 'Computadoras que *leen ADN*', morado: 'Leyes *y ética*', negro: 'Armas biológicas *y bioterrorismo*',
 };
 
 function RamasMudo() {

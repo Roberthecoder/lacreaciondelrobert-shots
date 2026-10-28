@@ -5,7 +5,7 @@
 - **Formato (RECETARIO):** N1 "Por dentro" (vaca → vista por dentro del estómago → rumen al microscopio → la misma vaca, ya por dentro) con un momento N2 (tú contra la vaca: 70 % contra ~10 %). Gemelo mudo: M4 "Ciclo".
 - **Gancho:** #1 "Esto no es X: es Y" sobre la vaca que está comiendo en pantalla. Habla a "tú" (en el estudio: "en ti, cerca de diez").
 - **Duración:** voz estimada 58.0 s (947 caracteres) + cierre 3.5 s ≈ 61.5 s, con `"velocidad": 1.065`.
-- **Estado:** guion APROBADO por Robert (27 oct 2026); falta generar la voz (~950 créditos).
+- **Estado:** guion verificado el 28 oct 2026 sin cambios en la voz; voz aprobada y guardada en `voz/` (el narrado se re-renderiza sin gastar créditos).
 
 ## Versión narrada (947 caracteres)
 
@@ -63,6 +63,7 @@
 - **Efectos en el mismo cuadro:** pasto que se arranca, masticadas (1 por segundo), barrido de la lupa, burbujas del rumen, 4 notas (4 tipos de microbio), crujido de la fibra, una nota por ácido que cruza la pared (según sus carbonos), aminoácidos, golpe de la tarjeta, **eructo sintetizado** y golpe del tache, clic metálico del biorreactor, acorde final.
 
 ## Gemelo mudo (M4 "Ciclo", construido: `Shot Vacas mudo.dc.html`)
+> Desde el 27 oct 2026 ya no se hace gemelo mudo: este archivo queda solo como referencia y ya no se renderiza (se le quitaron las cifras sin fuente).
 Loop de 61.5 s en 7 capítulos: come pasto → rumia → fermenta → energía → proteína → metano → abono. Primer texto: **"Esta vaca no vive del pasto"**; el último cuadro antes del cierre es la misma vaca pastando el pasto que volvió a crecer.
 - **Música hecha de datos:** 1 masticada por segundo al pastar; al rumiar, **60 masticadas por bolo** en time-lapse ×10 (cronómetro en pantalla); cada microbio suma su capa (bacterias rápidas, hongos bajo, protozoarios, burbujitas de arqueas); **cada ácido toca la nota de sus carbonos** (2 acetato, 3 propionato, 4 butirato); la cama suena tapada mientras el pasto no se digiere y se abre cuando fermenta; eructo; el pasto que crece sube de nota.
 - Título: **¿De qué vive una vaca? 🎧 | Shot Biotecnológico 02**
@@ -70,24 +71,23 @@ Loop de 61.5 s en 7 capítulos: come pasto → rumia → fermenta → energía �
 ## Título (narrado)
 ¿De qué vive una vaca? No es del pasto 🐄 | Shot Biotecnológico 02
 
-## Descripción (borrador, sin emojis)
-Las vacas comen pasto, pero no pueden digerir su celulosa: no tienen las enzimas. Lo mandan al rumen, un tanque tibio y sin oxígeno donde viven bacterias, hongos, protozoarios y arqueas (miles de millones por mililitro). Ese ecosistema fermenta la fibra y produce ácidos grasos volátiles (acetato, propionato y butirato), que la pared del rumen absorbe: según la revisión de Edward Bergman (1990), dan cerca del 70 % de la energía de vacas y borregos; en humanos, alrededor del 10 %. Además, los microbios que pasan al intestino se digieren y en la mayoría de las dietas son la principal fuente de proteína de la vaca. El precio: las arqueas producen metano, y casi todo sale por la boca, en eructos. Por eso una vaca es un biorreactor con patas: el pasto es el medio de cultivo y los microbios, la fábrica. El dibujo es esquemático.
-¿Sabías que la vaca rumia? ¿Cómo le dicen en tu región a "rumiar"?
+## Descripción
+Ver `publicacion.md` (textos por red, corregidos el 28 oct 2026).
 
 ## Fuentes
-- Bergman, E. N. (1990). Energy contributions of volatile fatty acids from the gastrointestinal tract in various species. *Physiological Reviews* 70(2): 567–590. PubMed 2181501 (≈70 % en rumiantes como borregos y ganado; ≈10 % en humanos).
-- Clark, J. H., Klusmeyer, T. H. y Cameron, M. R. (1992). Microbial protein synthesis and flows of nitrogen fractions to the duodenum of dairy cows. *J. Dairy Sci.* 75: 2304–2323; y revisiones de proteína metabolizable (p. ej. Bach, Calsamiglia y Stern, 2005, *J. Dairy Sci.* 88 E. Suppl.): la proteína microbiana suele ser la principal fuente de aminoácidos absorbidos (se citan 50–80 %), salvo dietas con mucha proteína que escapa al rumen.
-- Microbiología del rumen (bacterias 10¹⁰–10¹¹ por mL, protozoarios ~10⁵–10⁶ por mL, hongos anaerobios y arqueas metanógenas): notas de nutrición de rumiantes, Universidad de Idaho ("Rumen microbiology").
-- Metano: ~95 % del metano del rumen sale por eructo (Murray, Bryant y Leng, 1976, *Br. J. Nutr.*, citado por Snopes y Scientific American).
-- Rumia: 50–80 masticadas por bolo, ~1 minuto por bolo (Beauchemin, 2018, "Current perspectives on eating and rumination activity in dairy cows", *J. Dairy Sci.* 101: 4762–4784, y estudio de 2019 en *Acta Univ. Agric. Mendelianae*: ~61 masticadas y ~54–58 s por bolo). Se usa 60 en el mudo.
+- Bergman, E. N. (1990). Energy contributions of volatile fatty acids from the gastrointestinal tract in various species. *Physiological Reviews* 70(2): 567–590. PubMed 2181501 ("VFA contribute approximately 70% to the caloric requirements of ruminants, such as sheep and cattle, approximately 10% for humans").
+- Santos, E. et al. (2026). Effects of microwave or infrared radiation on protein ruminal degradation and in vitro intestinal digestibility in feedstuffs. *PLOS ONE* (PMC13649000): "Microbial crude protein (MCP) is considered the main source of amino acids (AA) in the small intestine, which may represent 50–80% of total absorbed AA in ruminants".
+- Matthews, C. et al. (2019). The rumen microbiome: a crucial consideration when optimising milk and meat production and nitrogen utilisation efficiency. *Gut Microbes* 10(2): 115–132 (PMC6546327): bacterias, arqueas, protozoarios y hongos; "approximately 10^10 – 10^11 cells/ml"; solo las arqueas hacen metano.
+- Xu, Q. et al. (2021). Gut microbiota and their role in health and metabolic disease of dairy cow. *Front. Nutr.* (PMC8371392): rumen a 38–41 °C.
+- Murray, R. M., Bryant, A. M. y Leng, R. A. (1976). *Br. J. Nutr.* 36: 1–14 (en borregos): "95% of the methane produced in the rumen was excreted by eructation".
+- Mississippi State University Extension, P2503 (2024): "The rumen is the largest stomach compartment, holding up to 40 gallons in a mature cow".
 
-## Datos no verificados del todo
-- No se pudo leer el texto completo de Bach et al. (2005) para el rango 50–80 %; por eso la voz dice "su principal proteína" y no un porcentaje.
-- La cifra de 95 % del metano por la boca viene de fuentes secundarias que citan a Murray et al. (1976); la voz dice "casi todo".
-- No se encontró el lugar de trabajo de Bergman en la revisión; la escena del estudio usa la revista en lugar del lugar.
+## Verificación de hechos (28 oct 2026)
+Verificación independiente (un verificador que no escribió el guion abrió las fuentes). Tabla completa en `verificacion.md`. Cambios:
+- Voz y pantalla sin cambios.
+- Fuente de "principal proteína": Clark et al. 1992 no lo dice en su resumen; se usa Santos et al. 2026 (50–80 % de los aminoácidos absorbidos).
+- El dato del metano por eructo viene de borregos (Murray et al. 1976): se aclara en los textos.
+- Se quitó la "Versión sin voz" de `publicacion.md` y la cita de Beauchemin 2018 (rumia: 60 masticadas), que ya no se usa; el gemelo mudo ya no muestra ese contador.
 
-## Estado (27 oct 2026)
-- Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
-- Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
-- Voz aprobada por Robert el 27 oct 2026 ("Apruebo la voz tho, de TODO"): el render automático saca también el narrado.
-- Corrección de Robert (27 oct 2026): la Lupa no son rayos X; las etiquetas ahora dicen "POR DENTRO · …" (y "AL MICROSCOPIO · …" en yogur y pétalo, en los shots #03 y #05).
+## Estado (28 oct 2026)
+- guion verificado el 28 oct 2026 sin cambios en la voz; voz aprobada y guardada en `voz/` (el narrado se re-renderiza sin gastar créditos).

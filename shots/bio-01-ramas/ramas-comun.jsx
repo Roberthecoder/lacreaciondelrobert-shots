@@ -4,7 +4,7 @@
 const AVS = (n) => 'assets/stickers/' + n + '.png';
 const SOMBRA = '0 6px 0 rgba(0,0,0,.85), 0 0 30px rgba(0,0,0,.9)';
 
-// Las ramas, de la banda de afuera a la de adentro. La naranja (divulgación) es la que agrega el canal.
+// Las ramas, de la banda de afuera a la de adentro. La naranja (divulgación) no está en DaSilva 2004; sale en Thieman y Palladino 2010 y aquí la sumamos.
 const RAMAS = [
   { k: 'rojo', c: '#ff3b2f', fondo: '#ff7a8f', n: 'ROJA', t: 'salud' },
   { k: 'verde', c: '#3fbf4a', fondo: KC.mint, n: 'VERDE', t: 'campo' },

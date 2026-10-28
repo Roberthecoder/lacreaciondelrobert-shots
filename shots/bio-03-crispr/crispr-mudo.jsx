@@ -79,7 +79,7 @@ function CrisprMudo() {
       <Chip T={T} at={C.Vuelve2 + 4.0} until={C.Memoria} texto="CORTE" y={470} tam={52} borde={KC.red} />
       <Subtitulo T={T} at={C.Captura + 0.5} until={C.Vuelve - 0.2} texto="Le roba un pedazo *y lo guarda*" />
       <Subtitulo T={T} at={C.Vuelve + 0.5} until={C.Llega2 - 0.2} texto="Si vuelve, *lo reconoce y lo corta*" />
-      <Subtitulo T={T} at={C.Memoria + 0.5} until={C.Vecina - 0.2} texto="Su memoria: *cada color, un virus*" />
+      <Subtitulo T={T} at={C.Memoria + 0.5} until={C.Vecina - 0.2} texto="Su memoria: *casi todo, de virus*" />
       <Subtitulo T={T} at={C.Vecina + 0.5} until={C.Vecina + 5} texto="Así nació *CRISPR*" />
       {/* Robert en pantalla (tabla en guion.md) */}
       <Robert T={T} apariciones={[

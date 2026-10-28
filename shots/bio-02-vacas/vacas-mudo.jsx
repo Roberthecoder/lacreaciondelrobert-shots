@@ -1,5 +1,5 @@
 // Biotecnológico #02 · Las vacas viven de microbios — gemelo MUDO (M4 "Ciclo", loop de 61.5 s).
-// Pasto → bocado → rumiar (60 masticadas por bolo) → rumen → energía → proteína → eructo → abono → pasto otra vez.
+// Pasto → bocado → rumiar → rumen → energía → proteína → eructo → abono → pasto otra vez.
 // El último cuadro antes del cierre es igual al primero: la vaca pastando en el mismo pasto.
 
 function Bosta({ x, y, p = 1, T = 0 }) {
@@ -42,7 +42,6 @@ function VacasMudo() {
           {bolo < 1 && <circle cx={klerp(420, 760, bolo)} cy={klerp(880, 800, bolo)} r={22} fill={FIBRA} stroke={KC.ink} strokeWidth={5} />}
         </svg>
         <Cronometro T={T} at={C.Bocado + 1.2} until={C.Rumen - 0.3} factor={10} x={540} y={450} etiqueta="TIME-LAPSE ×10" />
-        <NumeroGigante T={T} at={C.Bocado + 1.2} until={C.Rumen - 0.3} valor={masticadas} dur={0.01} etiqueta="masticadas por bolo" y={1500} tam={160} />
       </Escena>
       {/* 3. rumen: llegan bacterias, hongos, protozoarios y arqueas */}
       <Escena T={T} a={C.Rumen} b={C.Energia} zoom={0.05}>

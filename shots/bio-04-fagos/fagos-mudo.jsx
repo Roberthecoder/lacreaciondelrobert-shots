@@ -1,5 +1,5 @@
 // Biotecnológico #04 · Fagos — gemelo MUDO (M4 "Ciclo" lítico + conteo, loop de 61.5 s).
-// Llega → inyecta → la bacteria arma ~200 fagos (≈25 min en time-lapse) → revienta → en la placa de Petri cada
+// Llega → inyecta → la bacteria arma montones de fagos (cerca de media hora, en time-lapse) → revienta → en la placa de Petri cada
 // ciclo abre un claro ("calva") → zoom a la orilla de una calva: otra bacteria y otro fago llegando (= primer cuadro).
 
 function FagosMudo() {
@@ -28,8 +28,7 @@ function FagosMudo() {
           {(segunda || T < C.Revienta + 1.0) && <Fago T={T} x={540} y={klerp(300, 814, y0)} s={0.75} patas={segunda ? kprog(T, C.Vuelta + 12.2, C.Vuelta + 13.6) : kprog(T, 0.2, 1.2)} contraida={segunda ? 0 : kprog(T, C.Inyecta + 0.3, C.Inyecta + 0.9, kEase.sale)} adn={segunda ? 1 : 1 - kprog(T, C.Inyecta + 0.8, C.Inyecta + 2.2)} />}
           {!segunda && <Estallido T={T} x={540} y={1000} p={kprog(T, C.Revienta + 0.9, C.Revienta + 3.4)} n={34} rad={620} />}
         </svg>
-        {!segunda && <Cronometro T={T} at={C.Inyecta + 0.2} until={C.Revienta + 2.4} factor={25 * 60 / (C.Revienta + 1.0 - C.Inyecta - 0.2)} x={540} y={430} etiqueta="TIME-LAPSE" />}
-        {!segunda && T > C.Copias + 0.6 && T < C.Revienta + 1.0 && <NumeroGigante T={T} at={C.Copias + 0.6} until={C.Revienta + 0.9} valor={copias} dur={0.01} prefijo="~" etiqueta="fagos adentro" y={1520} tam={140} color={KC.pink} />}
+        {!segunda && <Cronometro T={T} at={C.Inyecta + 0.2} until={C.Revienta + 2.4} factor={30 * 60 / (C.Revienta + 1.0 - C.Inyecta - 0.2)} x={540} y={430} etiqueta="TIME-LAPSE" />}
         <Escala T={T} z={1} pxPorMm={450000} y={1440} />
       </div>}
       {/* la placa de Petri: cada ciclo abre una calva */}
@@ -38,10 +37,6 @@ function FagosMudo() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`translate(540 860) scale(${zoomPlaca}) translate(${-540 - 0.16 * 420 * kprog(T, C.Vuelta + 3, C.Vuelta + 5.4)} -860)`}><Petri x={540} y={860} R={420} calvas={calvas} T={T} /></g>
         </svg>
-        <div style={{ position:'absolute', left:0, right:0, top:1380, textAlign:'center', zIndex:41, opacity:kprog(T, C.Placa + 1, C.Placa + 1.4) * (1 - kprog(T, C.Vuelta + 2.6, C.Vuelta + 3)) }}>
-          <span style={{ font:`400 120px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`6px 6px 0 ${KC.ink}` }}>{kformato(gen)}</span>
-          <div style={{ font:`900 40px ${KF.texto}`, color:KC.texto, textShadow:SOMBRA }}>{gen === 1 ? 'fago' : 'fagos'}</div>
-        </div>
         <Chip T={T} at={C.Placa + 1.6} until={C.Vuelta + 2.6} texto="cada claro = bacterias que ya no están" y={430} tam={32} borde={KC.ink} />
       </div>}
 
@@ -51,7 +46,7 @@ function FagosMudo() {
       <Etq T={T} at={C.Vuelta + 6.4} until={C.Outro} x={150} y={1290} texto="Escherichia coli" it color={ECOLI} />
       <Subtitulo T={T} at={C.Inyecta + 0.4} until={C.Copias - 0.2} texto="Cola de jeringa: *inyecta su ADN*" />
       <Subtitulo T={T} at={C.Copias + 0.4} until={C.Revienta - 0.2} texto="La bacteria *solo hace fagos*" />
-      <Subtitulo T={T} at={C.Revienta + 1.2} until={C.Placa - 0.2} texto="~25 minutos: *revienta*" />
+      <Subtitulo T={T} at={C.Revienta + 1.2} until={C.Placa - 0.2} texto="Cerca de media hora: *revienta*" />
       {/* Robert en pantalla (tabla en guion.md) */}
       <Robert T={T} apariciones={[
         [0, 3.5, 'avatar_11_sorprendido', 'gancho'],

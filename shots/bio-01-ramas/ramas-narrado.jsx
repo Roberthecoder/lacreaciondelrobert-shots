@@ -66,13 +66,13 @@ function RamasNarrado() {
         <FondoMarca T={T} color={KC.lilac} patron="rayas" />
         <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.6} anio="2004" quien="Edgar J. DaSilva · UNESCO" revista="Electronic Journal of Biotechnology" y={760} />
         {T > C.Estudio + 2.7 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          {[['rojo', -1], ['blanco', 0], ['dorado', 1]].map(([k, l], i) => {
+          {[['rojo', -1], ['blanco', 1]].map(([k, l], i) => {
             const R = RAMAS.find((q) => q.k === k), junta = kprog(T, C.Estudio + 3.0, C.Estudio + 4.2, kEase.suave), e = kprog(T, C.Estudio + 2.7 + i * 0.15, C.Estudio + 3.1 + i * 0.15, kEase.rebote);
             const x = 540 + l * klerp(300, 110, junta), y = 820 + (l === 0 ? -klerp(0, 90, junta) : 0);
             return <g key={k} transform={`translate(${x} ${y}) scale(${e})`}><circle r={170} fill={R.c} fillOpacity=".72" stroke={KC.ink} strokeWidth={8} /><text y={-110} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>{R.n}</text></g>;
           })}
         </svg>}
-        <Chip T={T} at={C.Estudio + 3.6} until={C.Naranja - 0.2} texto="insulina = roja + blanca + dorada" y={1090} tam={36} borde={KC.ink} />
+        <Chip T={T} at={C.Estudio + 3.6} until={C.Naranja - 0.2} texto="insulina = roja + blanca" x={290} y={1090} tam={36} borde={KC.ink} />
       </Escena>
 
       {/* NARANJA: la que sumamos */}
@@ -98,7 +98,7 @@ function RamasNarrado() {
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={C.Gancho + 0.1} until={C.Def - 0.1} texto="No es un arcoíris: *es lo que la biotecnología ya hizo por ti.*" />
-      <Subtitulo T={T} idx={1} at={C.Def + 0.1} until={C.Rojo - 0.1} texto="Poner a trabajar *a seres vivos.*" />
+      <Subtitulo T={T} idx={1} at={C.Def + 0.1} until={C.Rojo - 0.1} texto="Poner a trabajar *a la vida.*" />
       <Subtitulo T={T} idx={2} at={C.Rojo + 0.1} until={C.Verde - 0.1} texto="Insulina, vacunas *y antibióticos.*" />
       <Subtitulo T={T} idx={3} at={C.Verde + 0.1} until={C.Blanco - 0.1} texto="Plantas que aguantan *plagas o sequía.*" />
       <Subtitulo T={T} idx={4} at={C.Blanco + 0.1} until={C.Amarillo - 0.1} texto="Enzimas que quitan manchas *en agua fría.*" />

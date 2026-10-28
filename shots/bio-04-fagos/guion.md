@@ -5,9 +5,9 @@
 - **Formato (RECETARIO):** N1 "Por dentro" (el fago aterriza, inyecta, la bacteria se vuelve fábrica y revienta; luego tu cuerpo visto por dentro). Gemelo mudo: M4 "Ciclo" lítico con conteo (placa de Petri).
 - **Gancho:** #1 "Esto no es X: es Y" sobre el fago gigante que cae en pantalla ("no es un robot de película").
 - **Duración:** voz estimada 57.9 s (940 caracteres) + cierre 3.5 s ≈ 61.4 s, con `"velocidad": 1.065`.
-- **Estado:** guion APROBADO por Robert (27 oct 2026); falta generar la voz (~940 créditos).
+- **Estado:** guion corregido tras la verificación de hechos del 28 oct 2026; **cambió el texto narrado: la voz espera otra vez la aprobación de Robert** (se quitó `voz_aprobada`).
 
-## Versión narrada (940 caracteres)
+## Versión narrada (939 caracteres)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -15,13 +15,13 @@
 | 1 | Aterriza | Se llama fago. Aterriza sobre la bacteria con sus seis patas. | Fondo oscuro (micro, barra de 200 nm). El fago baja y abre sus 6 fibras largas sobre una *Escherichia coli*. |
 | 2 | Inyecta | Contrae la cola como jeringa y le inyecta su ADN. | La vaina se encoge, el tubo perfora y el ADN rosa pasa de la cabeza a la bacteria. Arranca un cronómetro en time-lapse. |
 | 3 | Fábrica | Ese ADN toma el control de la fábrica de la bacteria: ahora solo hace fagos. | Dentro de la bacteria aparecen fagos nuevos, uno tras otro. Chip "la fábrica ahora hace fagos". |
-| 4 | Revienta | En menos de media hora la revienta, y salen cientos de fagos nuevos. | El cronómetro llega a ~25 min y la bacteria revienta: 30 fagos salen volando. Chip "cientos de fagos nuevos". |
+| 4 | Revienta | En cerca de media hora la revienta, y salen montones de fagos nuevos. | El cronómetro llega a ~30 min y la bacteria revienta: 30 fagos salen volando (esquemático). Chip "montones de fagos nuevos". |
 | 5 | Pregunta | ¿Y si eso pasa dentro de ti? | **Re-gancho.** Una persona en fondo coral; **Lupa "por dentro"** en la panza: tus células (rosas) y bacterias (verdes). Sticker pensativo. |
 | 6 | Selectivo | Cada fago ataca solo a ciertas bacterias: a tus células no les hace nada. | Un fago rebota de una célula tuya (✗) y aterriza en una bacteria. |
 | 7 | Selectivo | Por eso hoy se estudian contra las superbacterias. | La bacteria se pone dorada con corona: "SUPERBACTERIA". Tres cápsulas de antibiótico le rebotan; el fago sigue ahí. |
-| 8 | Estudio | En 2016, en San Diego, Tom Patterson estaba en coma por una bacteria resistente a todos los antibióticos. | Tarjeta "2016 · Tom Patterson · UC San Diego · Schooley et al., *Antimicrob. Agents Chemother.* 2017". Cama de hospital, monitor lento, etiqueta *Acinetobacter baumannii*, chip "0 antibióticos sirven". |
+| 8 | Estudio | En 2016, en San Diego, Tom Patterson estaba en coma por una bacteria que ya ningún antibiótico frenaba. | Tarjeta "2016 · Tom Patterson · UC San Diego · Schooley et al., *Antimicrob. Agents Chemother.* 2017". Cama de hospital, monitor lento, etiqueta *Acinetobacter baumannii*, chip "0 antibióticos sirven". |
 | 9 | Estudio | Sus médicos le pusieron cócteles de fagos buscados a toda prisa… y en tres días despertó. | La bolsa de suero se llena de fagos y corre por la línea. Contador "día 1 → 3"; abre los ojos. Chip "despertó". Sticker sorprendido. |
-| 10 | Historia | Los descubrió Félix d'Hérelle en 1917, en París, once años antes que la penicilina. | Tarjeta "1917 · Félix d'Hérelle · Instituto Pasteur · París". Línea de tiempo 1917 fagos → 1928 penicilina: "11 años antes". |
+| 10 | Historia | Félix d'Hérelle los describió en 1917, en París, once años antes que la penicilina. | Tarjeta "1917 · Félix d'Hérelle · Instituto Pasteur · París". Línea de tiempo 1917 fagos → 1928 penicilina: "11 años antes". |
 | 11 | Extra | Y se estima que hay diez quintillones de fagos en el planeta: un uno con treinta y un ceros. | Espacio: la Tierra rodeada de fagos. "10³¹" gigante y se escriben los 31 ceros. Chip "se estima". |
 | 12 | Cierre | Así que ese robot no es de película: puede ser la medicina cuando ya no sirvan los antibióticos. | **El mismo fago gigante del inicio**, junto a un frasco "FAGOS"; "robot" tachado y chip "fagoterapia". |
 | — | Outro | (sin voz) | Cierre de marca. |
@@ -66,6 +66,7 @@
 - **Efectos en el mismo cuadro:** caída y rebote del fago, aterrizaje, inyección (ruido que baja), reloj del time-lapse, notas de los fagos que se arman, **estallido** con 30 "pops", rebote de la célula, cápsulas metálicas, monitor del hospital, nota que sube al despertar, 31 tics = 31 ceros.
 
 ## Gemelo mudo (construido: `Shot Fagos mudo.dc.html`)
+> Desde el 27 oct 2026 ya no se hace gemelo mudo: este archivo queda solo como referencia y ya no se renderiza (se le quitaron las cifras sin fuente).
 Loop de 61.5 s en 6 capítulos: llega → inyecta → fábrica de fagos (contador "~200 fagos adentro", cronómetro hasta ~25 min) → revienta → en la placa de Petri cada ciclo abre un claro ("calva"; contador 1 → 200 → 40 000 fagos) → zoom a la orilla de una calva: otra *E. coli* y otro fago llegando (= primer cuadro). Primer texto: **"Este virus solo come bacterias"**.
 - **Música hecha de datos:** un tic por cada minuto simulado de la infección (~25 hasta reventar); cada fago que se arma es una nota (200 notas que suben); la cama va tensa mientras la bacteria es fábrica y se abre al reventar; un "pop" por fago que sale; en la placa, una nota grave por calva y golpes cada vez más fuertes para 1 → 200 → 40 000.
 - Título: **¿Cuántos fagos salen de una bacteria? 🎧 | Shot Biotecnológico 04**
@@ -73,22 +74,22 @@ Loop de 61.5 s en 6 capítulos: llega → inyecta → fábrica de fagos (contado
 ## Título (narrado)
 ¿Virus que curan infecciones? Sí existen 🦠 | Shot Biotecnológico 04
 
-## Descripción (borrador, sin emojis)
-Los bacteriófagos (fagos) son virus que solo infectan bacterias. Un fago como T4 se posa sobre *Escherichia coli* con sus seis fibras de la cola, contrae la cola como jeringa e inyecta su ADN. Ese ADN toma el control de la bacteria, que deja de hacer sus cosas y fabrica fagos nuevos; en menos de media hora la revienta y salen cientos. Como cada fago reconoce solo ciertas bacterias, no infecta tus células, y por eso se estudian contra superbacterias resistentes a los antibióticos. En 2016, en la Universidad de California en San Diego, Tom Patterson estaba en coma por una infección de *Acinetobacter baumannii* resistente a todos los antibióticos; sus médicos, con permiso de emergencia de la FDA, le aplicaron cócteles de fagos buscados a toda prisa y salió del coma a los pocos días (Schooley et al., 2017). No es un tratamiento aprobado de uso general: se usa en casos compasivos y en ensayos. Los fagos los describió Félix d'Hérelle en 1917 en el Instituto Pasteur de París (Frederick Twort vio el efecto en 1915), once años antes del descubrimiento de la penicilina. Se estima que hay unos 10³¹ fagos en la Tierra. El dibujo es esquemático y el fago está agrandado.
-¿Habías escuchado de la fagoterapia? ¿Te la pondrías?
+## Descripción
+Ver `publicacion.md` (textos por red, corregidos el 28 oct 2026).
 
 ## Fuentes
-- Schooley, R. T. et al. (2017). Development and use of personalized bacteriophage-based therapeutic cocktails to treat a patient with a disseminated resistant *Acinetobacter baumannii* infection. *Antimicrobial Agents and Chemotherapy* 61(10): e00954-17. Y UC San Diego Health (abril de 2017): salió del coma en los tres días siguientes a los fagos intravenosos.
-- Estructura de T4 (6 fibras largas, vaina contráctil, inyección): Leiman et al. y resumen en Wikipedia "Escherichia virus T4"; ciclo de ~22 min a 37 °C con cientos de fagos por bacteria (las cifras varían con la cepa y las condiciones; por eso "menos de media hora" y "cientos").
-- d'Hérelle, F. (1917). Sur un microbe invisible antagoniste des bacilles dysentériques. *Comptes Rendus de l'Académie des Sciences* 165: 373–375 (Instituto Pasteur, París). Penicilina: Fleming, 1928.
-- 10³¹ fagos en la Tierra: estimación atribuida a Roger Hendrix (citada por *Science News*, "All the World's a Phage", y discutida en Mushegian, 2020, *J. Bacteriol.*). Es un orden de magnitud, no un conteo.
+- Schooley, R. T. et al. (2017). Development and use of personalized bacteriophage-based therapeutic cocktails to treat a patient with a disseminated resistant *Acinetobacter baumannii* infection. *Antimicrobial Agents and Chemotherapy* 61(10): e00954-17.
+- UC San Diego Health (25 abr 2017), "Novel phage therapy saves patient with multidrug-resistant bacterial infection" (copia en ScienceDaily): "his bacterial isolate had become resistant to all of these antibiotics"; "He emerged from his coma within three days of the start of IV phage therapy"; "With emergency approval from the Food and Drug Administration…"; "It's estimated there are more than 10^31 bacteriophages on the planet".
+- Criscuolo, E. et al. (2017). Bacteriophages and their immunological applications against infectious threats. *J. Immunol. Res.* (PMC5412166): "bacteriophage discovery is independently attributed to both F.W. Twort (1915) and to F. H. d'Herelle (1917)"; "In 1917, at Pasteur Institute in Paris, researcher d'Herelle discovered an infective agent able to selectively destroy cultures of Shigella dysenteriae bacteria".
+- Eigenfeld, M. et al. (2026). Phage-functionalized magnetic separation for rapid and selective detection of *Escherichia coli*. *ACS Omega* (PMC13325175): "previous reports of T4 phage dynamics, which show latent periods of 20–45 min".
+- Estructura de T4 (fibras largas, cola contráctil): Wikipedia, "Escherichia virus T4". Penicilina: Fleming, 1928.
 
-## Datos no verificados del todo
-- El número exacto de fagos por bacteria y los minutos del ciclo dependen de la cepa; en el mudo se usan ~200 fagos y ~25 min como valores redondos dentro de lo publicado.
-- 10³¹ es una estimación que algunos autores discuten; la voz dice "se estima".
-- No se leyó el artículo de Schooley completo; los detalles del caso vienen de comunicados de UC San Diego y notas de prensa.
+## Verificación de hechos (28 oct 2026)
+Verificación independiente (un verificador que no escribió el guion abrió las fuentes). Tabla completa en `verificacion.md`. Cambios:
+- Voz: "En menos de media hora… salen cientos" → "En cerca de media hora… salen montones" (latencia de T4: 20–45 min; no hay fuente abierta para "cientos"). Chip "montones de fagos nuevos"; cronómetro a ~30 min; subtítulo "En cerca de media hora".
+- Voz: "resistente a todos los antibióticos" → "que ya ningún antibiótico frenaba" (la fuente se refiere a los antibióticos que le quedaban). Chip "ningún antibiótico funcionaba"; subtítulo corregido.
+- Voz: "Los descubrió Félix d'Hérelle" → "Félix d'Hérelle los describió" (el descubrimiento se atribuye también a Twort, 1915).
+- Gemelo mudo: se quitaron las cifras sin fuente (~200 fagos, 1 → 200 → 40 000, ~25 min).
 
-## Estado (27 oct 2026)
-- Guion aprobado por Robert; voz ya generada y guardada en `voz/` (coincide con el texto actual: volver a renderizar el narrado **no gasta créditos**).
-- Gemelo mudo y `publicacion.md` en el Release "Borradores" de la rama del lote.
-- Voz aprobada por Robert el 27 oct 2026 ("Apruebo la voz tho, de TODO"): el render automático saca también el narrado.
+## Estado (28 oct 2026)
+- guion corregido tras la verificación de hechos del 28 oct 2026; **cambió el texto narrado: la voz espera otra vez la aprobación de Robert** (se quitó `voz_aprobada`).

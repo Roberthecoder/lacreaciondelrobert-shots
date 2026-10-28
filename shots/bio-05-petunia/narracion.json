@@ -1,12 +1,10 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Petunia base narrada.dc.html",
   "salida": "Shot Petunia narrado.dc.html",
   "velocidad": 1.095,
-  "mudo": { "dcHtml": "Shot Petunia mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
-  "nota": "Biotecnológico #05. Una línea por subtítulo (idx 0..12 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~930 créditos).",
+  "nota": "Biotecnológico #05. Una línea por subtítulo (idx 0..12 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~930 créditos). 28 oct 2026: verificación de hechos independiente; cambió el texto narrado, así que se quitó voz_aprobada (y el gemelo mudo ya no se renderiza). Falta que Robert apruebe la voz otra vez.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esta flor no tiene pilas ni pintura: brilla porque lleva genes de un hongo." },
+    { "escena": "Gancho", "texto": "Esta flor no tiene pilas ni pintura: brilla porque lleva genes de hongos." },
     { "escena": "Hongo", "texto": "Es la petunia luciérnaga, y su luz viene de un hongo que brilla solo en el bosque." },
     { "escena": "Ciclo", "texto": "Por dentro, la planta ya fabrica ácido cafeico, como todas." },
     { "escena": "Ciclo", "texto": "Los genes del hongo lo vuelven un ciclo de cuatro enzimas." },

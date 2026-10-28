@@ -73,7 +73,7 @@ function CrisprNarrado() {
       {/* ESTUDIO: Danisco + U. Laval (2007): con recuerdo, resiste */}
       <Escena T={T} a={C.Estudio} b={C.Nobel}>
         <FondoMarca T={T} color={KC.yellow} />
-        <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 3.0} anio="2007" quien="Barrangou, Horvath, Moineau y equipo" revista="Danisco (Francia) · U. Laval (Quebec) · Science 315" y={720} />
+        <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 3.0} anio="2007" quien="Barrangou, Horvath, Moineau y equipo" revista="Danisco (Francia y EE. UU.) · U. Laval (Quebec) · Science 315" y={720} />
         {T > C.Estudio + 3.0 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:kprog(T, C.Estudio + 3.0, C.Estudio + 3.4) }}>
           {[[320, false], [760, true]].map(([x, mem], i) => { const muere = mem ? 0 : kprog(T, C.Estudio + 4.4, C.Estudio + 6.0);
             return <g key={i} transform={`translate(${x} 820)`}>
@@ -115,8 +115,8 @@ function CrisprNarrado() {
             {on && <rect x={-40} y={-8} width={80} height={16} rx={6} fill={REP} stroke={KC.ink} strokeWidth={4} />}
           </g>; })}
         </svg>
-        <Chip T={T} at={C.Extra + 1.2} until={C.Cierre - 0.2} texto="bacterias: ~1 de cada 3" y={480} tam={38} borde={KC.ink} />
-        <Chip T={T} at={C.Extra + 2.8} until={C.Cierre - 0.2} texto="arqueas: ~3 de cada 4" y={1100} tam={38} borde={KC.ink} />
+        <Chip T={T} at={C.Extra + 1.2} until={C.Cierre - 0.2} texto="bacterias: ~1 de cada 3 (genomas, 2020)" y={480} tam={38} borde={KC.ink} />
+        <Chip T={T} at={C.Extra + 2.8} until={C.Cierre - 0.2} texto="arqueas: ~3 de cada 4 (genomas, 2020)" y={1100} tam={38} borde={KC.ink} />
       </Escena>
 
       {/* CIERRE: el mismo yogur */}
@@ -131,13 +131,13 @@ function CrisprNarrado() {
       <Subtitulo T={T} idx={1} at={C.Ataque + 0.1} until={C.Captura - 0.1} texto="Virus que las revientan: *los fagos.*" />
       <Subtitulo T={T} idx={2} at={L1 + 0.1} until={L2 - 0.1} texto="Le roban al virus *un pedacito de ADN.*" />
       <Subtitulo T={T} idx={3} at={L2 + 0.1} until={L3 - 0.1} texto="Una fila de recuerdos: *CRISPR.*" />
-      <Subtitulo T={T} idx={4} at={L3 + 0.1} until={C.Pregunta - 0.1} texto="Cada pedazo es *un virus que ya intentó matarla.*" />
+      <Subtitulo T={T} idx={4} at={L3 + 0.1} until={C.Pregunta - 0.1} texto="Casi todos son *de virus que ya intentaron matarla.*" />
       <Subtitulo T={T} idx={5} at={C.Pregunta + 0.05} until={C.Corte - 0.1} texto="¿Y si *ese virus vuelve?*" />
       <Subtitulo T={T} idx={6} at={C.Corte + 0.1} until={C2 - 0.1} texto="Copia el recuerdo y *las tijeras Cas buscan.*" />
       <Subtitulo T={T} idx={7} at={C2 + 0.1} until={C.Estudio - 0.1} texto="Mismo pedazo: *corte. Adiós.*" />
       <Subtitulo T={T} idx={8} at={C.Estudio + 0.1} until={C.Nobel - 0.1} texto="Cada recuerdo nuevo *las volvía resistentes.*" />
       <Subtitulo T={T} idx={9} at={C.Nobel + 0.1} until={C.Extra - 0.1} texto="Tijeras para *cortar el ADN que quisieran.*" />
-      <Subtitulo T={T} idx={10} at={C.Extra + 0.1} until={C.Cierre - 0.1} texto="Y no es raro: *lo traen muchísimas.*" />
+      <Subtitulo T={T} idx={10} at={C.Extra + 0.1} until={C.Cierre - 0.1} texto="En 2020: *lo traen muchísimas.*" />
       <Subtitulo T={T} idx={11} at={C.Cierre + 0.1} until={C.Outro - 0.1} texto="Las inventó *lo que hay en tu yogur.*" />
 
       {/* Robert en pantalla (tabla en guion.md) */}

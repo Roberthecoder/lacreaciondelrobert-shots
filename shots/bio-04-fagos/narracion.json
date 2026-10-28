@@ -1,22 +1,20 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Fagos base narrada.dc.html",
   "salida": "Shot Fagos narrado.dc.html",
   "velocidad": 1.114,
-  "mudo": { "dcHtml": "Shot Fagos mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
-  "nota": "Biotecnológico #04. Una línea por subtítulo (idx 0..12 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~900 créditos).",
+  "nota": "Biotecnológico #04. Una línea por subtítulo (idx 0..12 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~900 créditos). 28 oct 2026: verificación de hechos independiente; cambió el texto narrado, así que se quitó voz_aprobada (y el gemelo mudo ya no se renderiza). Falta que Robert apruebe la voz otra vez.",
   "lineas": [
     { "escena": "Gancho", "texto": "Esto no es un robot de película: es un virus que solo ataca bacterias." },
     { "escena": "Aterriza", "texto": "Se llama fago. Aterriza sobre la bacteria con sus seis patas." },
     { "escena": "Inyecta", "texto": "Contrae la cola como jeringa y le inyecta su ADN." },
     { "escena": "Fabrica", "texto": "Ese ADN toma el control de la fábrica de la bacteria: ahora solo hace fagos." },
-    { "escena": "Revienta", "texto": "En menos de media hora la revienta, y salen cientos de fagos nuevos." },
+    { "escena": "Revienta", "texto": "En cerca de media hora la revienta, y salen montones de fagos nuevos." },
     { "escena": "Pregunta", "texto": "¿Y si eso pasa dentro de ti?" },
     { "escena": "Selectivo", "texto": "Cada fago ataca solo a ciertas bacterias: a tus células no les hace nada." },
     { "escena": "Selectivo", "texto": "Por eso hoy se estudian contra las superbacterias." },
-    { "escena": "Estudio", "texto": "En 2016, en San Diego, Tom Patterson estaba en coma por una bacteria resistente a todos los antibióticos." },
+    { "escena": "Estudio", "texto": "En 2016, en San Diego, Tom Patterson estaba en coma por una bacteria que ya ningún antibiótico frenaba." },
     { "escena": "Estudio", "texto": "Sus médicos le pusieron cócteles de fagos buscados a toda prisa… y en tres días despertó." },
-    { "escena": "Historia", "texto": "Los descubrió Félix d'Hérelle en 1917, en París, once años antes que la penicilina." },
+    { "escena": "Historia", "texto": "Félix d'Hérelle los describió en 1917, en París, once años antes que la penicilina." },
     { "escena": "Extra", "texto": "Y se estima que hay diez quintillones de fagos en el planeta: un uno con treinta y un ceros." },
     { "escena": "Cierre", "texto": "Así que ese robot no es de película: puede ser la medicina cuando ya no sirvan los antibióticos." }
   ]

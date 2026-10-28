@@ -33,7 +33,7 @@ function PetuniaNarrado() {
           <g opacity={kprog(T, C.Hongo + 1.4, C.Hongo + 1.8)}><ADNHebra T={T} x={360 + 0} y={760} largo={380 * kprog(T, C.Hongo + 1.4, C.Hongo + 2.6)} alto={50} vueltas={2} colores={[LUZ, KC.cyan]} /></g>
         </svg>
         <Etq T={T} at={C.Hongo + 0.8} until={C.Ciclo - 0.2} x={300} y={1180} texto="Neonothopanus nambi" it color={LUZ} tam={30} />
-        <Chip T={T} at={C.Hongo + 1.6} until={C.Ciclo - 0.2} texto="genes del hongo" y={660} borde={LUZ} tam={36} />
+        <Chip T={T} at={C.Hongo + 1.6} until={C.Ciclo - 0.2} texto="genes de hongos" y={660} borde={LUZ} tam={36} />
       </Escena>
 
       {/* CICLO: adentro de un pétalo */}
@@ -67,7 +67,7 @@ function PetuniaNarrado() {
             {T > C.Estudio + 3.6 && T < C.Estudio + 4.6 && [0, 1, 2, 3].map((i) => <circle key={i} cx={-160 - i * 18} cy={-70 + ((T * 400 + i * 30) % 120)} r={6} fill={LUZ} />)}
           </g>
         </svg>
-        <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.6} anio="1986" quien="Ow, Wood, DeLuca, Helinski y Howell" revista="UC San Diego · Science 234: 856" y={720} />
+        <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.6} anio="1986" quien="Ow, de Wet, Helinski, Howell, Wood y DeLuca" revista="UC San Diego · Science 234: 856" y={720} />
         <Etq T={T} at={C.Estudio + 3.2} until={C.Wood - 0.2} x={640} y={420} texto="luciferina de luciérnaga" color={LUZ} tam={28} />
         <Chip T={T} at={C.Estudio + 5.0} until={C.Wood - 0.2} texto="se apaga" x={300} y={420} borde={KC.coral} tam={36} />
       </Escena>
@@ -76,7 +76,7 @@ function PetuniaNarrado() {
       <Escena T={T} a={C.Wood} b={C.Aprobada}>
         <FondoMarca T={T} color={KC.lilac} patron="rayas" />
         <div style={{ position:'absolute', left:0, right:0, top:560, zIndex:41, textAlign:'center' }}>
-          <div style={{ font:`400 220px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`7px ${KC.ink}`, textShadow:`9px 9px 0 ${KC.ink}` }}>{Math.round(klerp(1986, 2019, kprog(T, C.Wood + 0.8, C.Wood + 3.4, kEase.suave)))}</div>
+          <div style={{ font:`400 220px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`7px ${KC.ink}`, textShadow:`9px 9px 0 ${KC.ink}` }}>{Math.round(klerp(1986, 2024, kprog(T, C.Wood + 0.8, C.Wood + 3.4, kEase.suave)))}</div>
           <div style={{ font:`900 54px ${KF.texto}`, color:KC.texto, textShadow:SOMBRA, marginTop:10 }}>Keith Wood</div>
           <div style={{ font:`700 34px ${KF.mono}`, color:KC.ink, marginTop:16, opacity:kprog(T, C.Wood + 3.4, C.Wood + 3.8) }}>cofundador de Light Bio</div>
         </div>
@@ -117,7 +117,7 @@ function PetuniaNarrado() {
       </Escena>
 
       {/* subtítulos */}
-      <Subtitulo T={T} idx={0} at={C.Gancho + 0.1} until={C.Hongo - 0.1} texto="Sin pilas ni pintura: *genes de un hongo.*" />
+      <Subtitulo T={T} idx={0} at={C.Gancho + 0.1} until={C.Hongo - 0.1} texto="Sin pilas ni pintura: *genes de hongos.*" />
       <Subtitulo T={T} idx={1} at={C.Hongo + 0.1} until={C.Ciclo - 0.1} texto="La petunia luciérnaga: *luz de hongo.*" />
       <Subtitulo T={T} idx={2} at={L[0] + 0.1} until={L[1] - 0.1} texto="La planta ya hace *ácido cafeico.*" />
       <Subtitulo T={T} idx={3} at={L[1] + 0.1} until={L[2] - 0.1} texto="Un ciclo de *cuatro enzimas.*" />
