@@ -28,6 +28,23 @@ de hechos antes de animar, voz solo con su aprobación, nunca publicar en redes 
 | Fotos y archivos personales de Robert | Repo privado `Roberthecoder/lacreaciondelrobert-archivo` (si esta sesión lo tiene como fuente: `/home/user/lacreaciondelrobert-archivo`; si no, pídele a Robert que abra el chat con los dos repos). Ahí están las fotos originales del largo, el video de 2023 y `personal/basis_fellowship/` (fotos, videos y documentos personales de Robert). Nunca copies nada personal al repo público. |
 | OneDrive / documentos de Robert | Con el conector de Microsoft 365 o Google Drive si Robert los conectó en claude.ai; si no, pídele que los conecte. |
 
+## Video largo #00 "¿Qué es La Creación del Robert?" (el video core de su historia)
+Vive en la rama `largo/000`, carpeta `largos/000-que-es-la-creacion/` (lee su `LEEME.md` y `guion.md`). Flujo:
+1. **Guion:** Robert lo está corrigiendo a mano (dijo que había datos mezclados). No cambies su historia por tu cuenta: pídele sus
+   correcciones (o su versión del guion) y aplícalas tal cual. Sus datos confirmados están en `series/shot-robert/datos.md` (solo ✅);
+   su currículum y fotos, en el archivo privado `personal/basis_fellowship/`.
+2. **Verificación:** todo dato de su vida se contrasta con `datos.md` y sus documentos del archivo; lo que no esté confirmado se le
+   pregunta. Luego `verificacion.md` con `VEREDICTO: APROBADO` (el largo hoy está exento del candado, pero aplica la regla igual).
+3. **Fotos:** elige del archivo privado (`personal/basis_fellowship/`, `largos/000-que-es-la-creacion/fuentes/`), restaura y recorta
+   como dice el `LEEME.md` del largo y copia a `assets/fotos/` SOLO las que salen en el video (el repo es público). Las de Facebook
+   llegarán cuando Robert baje su archivo de Facebook y lo suba al archivo privado.
+4. **Animación:** `node escenas.mjs` recalcula tiempos desde `narracion.json`; revisa cuadros con `motor/preview.mjs`. Horizontal
+   1920×1080 (ya soportado en main).
+5. **Render:** push a `largo/000`; GitHub lo renderiza (hasta 120 min). Antes, junta `origin/main` a `largo/000` para tener los
+   workflows nuevos. La versión ligera para la Sala: `motor/sala.py` (sale en la sección Documentales/Otros).
+6. **Voz (~4,300 créditos):** SOLO cuando Robert diga que el guion quedó y apruebe la voz.
+7. Al terminar: súbelo a la Sala, mándale el video al chat y junta `largo/000` a main.
+
 ## Lo que sigue siendo de Robert (no lo hagas tú)
 - Iniciar sesión en Facebook, OneDrive, redes o pagar algo; escribir contraseñas o claves (ni en el repo ni en el chat).
 - Cambiar ajustes del repositorio en GitHub (nombre, público/privado, protecciones, secretos): si hace falta, dile exactamente
