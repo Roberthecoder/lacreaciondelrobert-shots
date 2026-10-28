@@ -1,0 +1,19 @@
+{
+  "dcHtml": "Shot Cazador base narrada.dc.html",
+  "salida": "Shot Cazador narrado.dc.html",
+  "nota": "Shot Fungi Mati #06. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese anillo de hilos no es moho cualquiera: es una trampa pegajosa para gusanos." },
+    { "escena": "Tierra", "texto": "Es el hongo Arthrobotrys oligospora. Vive en la tierra comiendo restos, sin molestar a nadie." },
+    { "escena": "Hambre", "texto": "Pero si le falta comida y detecta nematodos, gusanos diminutos, cambia de plan." },
+    { "escena": "Red", "texto": "Sus hilos se enroscan y forman redes pegajosas." },
+    { "escena": "Pregunta", "texto": "¿Y cómo sabe que hay gusanos cerca?" },
+    { "escena": "Estudio", "texto": "En Caltech, Yen-Ping Hsueh y su equipo le dieron solo las moléculas que sueltan los gusanos." },
+    { "escena": "Espia", "texto": "Sin un solo gusano, el hongo armó sus trampas: los estaba espiando." },
+    { "escena": "Olor", "texto": "En 2017 vieron algo peor: el hongo suelta olores que imitan comida, y quizá señales de pareja, y los gusanos van hacia él." },
+    { "escena": "Pega", "texto": "Se quedan pegados, y el hongo atraviesa su cutícula y crece por dentro." },
+    { "escena": "Digiere", "texto": "Con enzimas lo digiere: se lo come desde adentro." },
+    { "escena": "Dato", "texto": "Y no es el único: ya en 2013 se contaban más de doscientas especies de hongos que atacan gusanos." },
+    { "escena": "Cierre", "texto": "Así que ese anillo no era moho: era la boca de un cazador." }
+  ]
+}
