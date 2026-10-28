@@ -2,6 +2,43 @@
 
 Última actualización: 26 oct 2026. Esta sesión empezó en la nube (Claude Code web) y continúa en la computadora del usuario.
 
+## Traspaso completo a la nube (28 oct 2026) — LEER PRIMERO
+Todo el sistema vive en la nube. Nada depende de la computadora de Robert salvo iniciar sesión en sus cuentas. El chat
+administrador sigue `ADMIN.md`. Lo decidido el 27–28 oct con Robert:
+
+**Dónde vive cada cosa**
+- Repo público de producción: este (`Roberthecoder/lacreaciondelrobert-shots`). Renders en GitHub Actions (minutos ilimitados por
+  ser público). Secretos `ELEVENLABS_API_KEY` y `CLAUDE_API_KEY` ya configurados. Ramas protegidas (sin force-push ni borrado).
+- Repo privado `Roberthecoder/lacreaciondelrobert-archivo`: historial viejo completo, fotos originales del largo (`largos/…/fuentes/`)
+  y **los archivos personales de Robert** en `personal/basis_fellowship/` (fotos, videos, PDFs y documentos de Instagram, LinkedIn,
+  YouTube, Drive de la prepa y experimentos caseros; los `.zip` de más de 95 MB no se subieron). Nunca copiar nada personal a este repo.
+- **Sala de Shots** (panel de Robert, fijado en su barra de claude.ai): https://claude.ai/artifact/KBt7kaF2DPUjT5HBiQZMBv · código en
+  `sala/index.html` · datos y uso en `sala/LEEME.md` y `CLAUDE.md`.
+- Rutinas en claude.ai (https://claude.ai/code/routines): **Producción intensiva** `trig_01URKCb81JFPMa9CtCnnjBN7` (cada 4 h; atiende
+  aprobaciones, correcciones y pedidos de la Sala antes del lote normal) y **Lote diario** `trig_01VKwBbqWsjm5xKahYsA7RLd` (apagada; es
+  el modo para cuando Robert vuelva al plan Pro). La red del entorno de nube "Personal" está en acceso completo (necesario para verificar).
+
+**Decisiones de Robert (mandan sobre cualquier documento viejo)**
+- Solo narrado (sin gemelo mudo); GitHub renderiza una versión de revisión sin voz y la voz se genera solo cuando Robert la aprueba.
+- Verificación de hechos obligatoria antes de animar, con fuentes abiertas de verdad (candado en GitHub). "SIEMPRE verídico".
+- Numeración = fecha de publicación desde el 1 nov 2026, 3 series por día alternando; especiales de temporada en números reservados
+  (`calendario/`). Sin saltos.
+- La serie Shot Robert es solo manual. El título lleva "Shot <Serie> #NN". Textos para 7 redes en cada `publicacion.md`.
+- Nada se publica en redes sin Robert. Meta: reserva de 365 por serie.
+
+**Pendiente (en orden)**
+1. **Renumerar** según `calendario/` (ver la fila "Renumerar" de `ADMIN.md`): los 6 especiales de Día de Muertos ya son los #01; todos
+   los shots normales se recorren a los números libres no reservados (ej. ¿Qué es un hongo? → Fungi Mati #02, la hormiga zombi → #03;
+   en Científico, Químico e IA el #05 está reservado para el Día de la Ciencia). Hacerlo cuando ninguna sesión esté escribiendo esas
+   series. Después, volver a encender la Producción intensiva (se pausó para no chocar).
+2. Juntar a main las ramas de lotes que falten (`claude/eager-archimedes-*` A, `claude/clever-heisenberg-*` B, `claude/lucid-bardeen-*` C,
+   `claude/clever-mayer-*` D, `claude/fun-02-hormiga-zombi`, `claude/igualar-*`) y borrar las que ya estén en main.
+3. Hormiga zombi (pedido en la Sala): terminar verificación y render; voz aprobada por Robert.
+4. Largo #00 (rama `largo/000`): Robert está corrigiendo el guion a mano; no generar voz hasta que él lo diga. Fotos: usar
+   `personal/basis_fellowship/` del archivo; las de Facebook llegarán cuando Robert baje su archivo de Facebook.
+5. Publicación: por ahora Robert publica a mano con los textos de la Sala; después, API oficiales o un programador (Metricool/Buffer).
+6. Créditos de ElevenLabs: Robert compra más si se acaban; avisarle cuando queden pocos.
+
 ## Repositorios (27 oct 2026)
 - **`Roberthecoder/lacreaciondelrobert-shots`** (este): producción, historial limpio (sin fotos originales, fecha de nacimiento ni correo), pensado para ser público.
 - **`Roberthecoder/lacreaciondelrobert-archivo`** (privado): el repo anterior completo, con historial, fotos originales del largo (`largos/…/fuentes/`), la lista de fotos de Facebook y los Releases de borradores hasta el 27 oct. Para convocatorias y respaldo. **Nunca hacer push de su historial aquí.**

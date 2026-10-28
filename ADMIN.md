@@ -7,7 +7,7 @@ de hechos antes de animar, voz solo con su aprobación, nunca publicar en redes 
 ## Al empezar cada conversación
 1. Carga las herramientas: `ToolSearch` con `select:Artifact,ArtifactData,RemoteTrigger,WebFetch,WebSearch` (y prueba
    `ToolSearch` "github" para las del conector de GitHub). Si alguna no aparece, dilo en una línea y sigue con lo demás.
-2. `git fetch origin` y lee `CLAUDE.md`, `sala/LEEME.md`, `ESTADO.md`, `CANAL.md`, `calendario/` y este archivo.
+2. `git fetch origin` y lee `ESTADO.md` (sección "Traspaso completo a la nube": lo pendiente y lo decidido), `CLAUDE.md`, `sala/LEEME.md`, `ESTADO.md`, `CANAL.md`, `calendario/` y este archivo.
 3. Resumen corto para Robert: videos por sección en la Sala, cuántos "Por revisar", pedidos y correcciones pendientes,
    aprobaciones sin procesar, sesiones o ramas trabajando ahora (`git for-each-ref --sort=-committerdate refs/remotes/origin`),
    y el estado de las rutinas (si tienes `RemoteTrigger`).
@@ -24,7 +24,7 @@ de hechos antes de animar, voz solo con su aprobación, nunca publicar en redes 
 | Ver renders, errores, Releases | Conector de GitHub (actions, releases, logs). Los videos también están en `refs/videos/<rama>` (ver "Videos al chat"). |
 | Mandarle videos | `SendUserFile` con los MP4 de `refs/videos/<rama>`. |
 | Investigar o verificar | `WebSearch` / `WebFetch` (la red del entorno es completa: abre las fuentes de verdad). |
-| Fotos y archivos personales de Robert | Repo privado `Roberthecoder/lacreaciondelrobert-archivo` (si esta sesión lo tiene como fuente: `/home/user/lacreaciondelrobert-archivo`; si no, pídele a Robert que abra el chat con los dos repos). Ahí van las fotos originales, el video de 2023 y sus datos. Nunca copies nada personal al repo público. |
+| Fotos y archivos personales de Robert | Repo privado `Roberthecoder/lacreaciondelrobert-archivo` (si esta sesión lo tiene como fuente: `/home/user/lacreaciondelrobert-archivo`; si no, pídele a Robert que abra el chat con los dos repos). Ahí están las fotos originales del largo, el video de 2023 y `personal/basis_fellowship/` (fotos, videos y documentos personales de Robert). Nunca copies nada personal al repo público. |
 | OneDrive / documentos de Robert | Con el conector de Microsoft 365 o Google Drive si Robert los conectó en claude.ai; si no, pídele que los conecte. |
 
 ## Lo que sigue siendo de Robert (no lo hagas tú)
