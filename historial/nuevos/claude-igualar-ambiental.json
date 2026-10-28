@@ -46,7 +46,7 @@
    "titulo": "Todas las colonias de mariposa monarca caben en unas 4 canchas de fútbol: 2.93 ha en 2025-2026 contra 18.19 ha en 1996-1997",
    "serie": "Shot Ambiental",
    "numero": 7,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/amb-07-monarca",
    "rama": "claude/igualar-ambiental",
    "fuentes": [
@@ -56,7 +56,11 @@
     "FIFA Stadium Guidelines 5.3"
    ],
    "fecha": "2026-10-28",
-   "derivados": []
+   "derivados": [
+    "El algodoncillo: la única comida de la oruga monarca y por qué no cualquier especie sirve",
+    "Cómo se mide una colonia de monarcas (hectáreas, no mariposas)",
+    "Los oyameles: el bosque que funciona como cobija para las monarcas"
+   ]
   },
   {
    "id": "vaquita-dedos-2025",
@@ -70,6 +74,21 @@
     "Informe del Crucero de Observación Vaquita Marina 2025 (IUCN-CSG, feb 2026)",
     "NOAA Fisheries, Vaquita",
     "NOAA SWFSC Abundance and Trends"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": []
+  },
+  {
+   "id": "chapala-60-por-ciento",
+   "titulo": "Seis de cada diez litros de Guadalajara salen de un lago de 8 m: Chapala (79 × 28 km; mínimo de 1955; Ciénega 1902-1910; 70 % el 27 oct 2026)",
+   "serie": "Shot Ambiental",
+   "numero": 9,
+   "estado": "guion",
+   "carpeta": "shots/amb-09-chapala",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "CEA Jalisco, Lago de Chapala",
+    "CEA Jalisco, nivel diario 27 oct 2026"
    ],
    "fecha": "2026-10-28",
    "derivados": []
@@ -105,6 +124,24 @@
    "fecha": "2026-10-28",
    "derivados": [
     "Retomarlo solo diciendo que parte del aumento es por contar mejor"
+   ]
+  },
+  {
+   "id": "arsenico-fluor-altos-jalisco",
+   "titulo": "IDEA PENDIENTE: arsénico y flúor en pozos de Los Altos de Jalisco — solo hay datos primarios de 2002-2003 (Hurtado-Jiménez y Gardea-Torresdey)",
+   "serie": "Shot Ambiental",
+   "numero": null,
+   "estado": "idea",
+   "carpeta": "",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "PMID 17316482 (2006)",
+    "PMID 15759914 (2005)",
+    "PMID 15371213 (2004)"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "Hacerlo solo si aparece un muestreo reciente (CONAGUA o universidad)"
    ]
   }
  ]
