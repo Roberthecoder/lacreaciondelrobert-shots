@@ -1,0 +1,5 @@
+{ "temas": [
+  { "id": "nanoplasticos-agua-embotellada", "titulo": "Nanoplásticos en el agua embotellada: ~240 mil partículas por litro, 90 % nano (Columbia, PNAS 2024; estimación debatida)",
+    "serie": "Shot Ambiental", "numero": 5, "estado": "idea", "carpeta": "shots/amb-05-nanoplasticos", "rama": "claude/igualar-ambiental",
+    "fuentes": ["Qian et al. 2024, PNAS 121(3):e2300582121, PMC10801917"], "fecha": "2026-10-28", "derivados": [] }
+] }
