@@ -3,15 +3,15 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #08 · rama `claude/igualar-fungi-mati`.
 - **Formato:** N1 "Por dentro" (tu pie → lupa de rayos X → corte de piel → el clima del zapato → el mismo pie) con el "qué sí sirve" del N2.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve, hablándole a "tú": "Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina".
-- **Duración:** voz 951 caracteres / 176 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
+- **Duración:** voz 959 caracteres / 176 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~960 créditos de ElevenLabs).
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina. | Fondo rosa: un pie visto desde arriba; entre el 4.º y 5.º dedo aparece piel blanca que se pela. "¿solo humedad?" se tacha. A los 2.4 s se abre una lupa de rayos X: hifas doradas en la piel. |
-| 1 | Nombre | Es el pie de atleta, casi siempre causado por hongos del género *Trichophyton*. | Etiquetas "pie de atleta (tinea pedis)", *Trichophyton rubrum*, *Trichophyton interdigitale*. |
+| 1 | Nombre | Es el pie de atleta, causado sobre todo por hongos del género *Trichophyton*. | Etiquetas "pie de atleta (tinea pedis)", *Trichophyton rubrum*, *Trichophyton interdigitale*. |
 | 2 | Queratina | La capa de afuera de tu piel está llena de queratina, una proteína dura. | Corte de piel (fondo oscuro): capa córnea en tejas de queratina sobre la piel viva. |
 | 3 | Enzimas | El hongo la digiere con enzimas, y sus hilos avanzan hacia afuera. | Hifas doradas avanzan entre las tejas; puntos de enzimas; las tejas cercanas se deshacen. |
 | 4 | Lugar | Su lugar favorito: entre el cuarto y el quinto dedo. | El pie otra vez, con un aro en el hueco del 4.º y 5.º dedo. |
@@ -20,9 +20,9 @@
 | 7 | Humedad | Entre los dedos de diez hombres, en verano, la humedad promedió ochenta por ciento. | Medidor "humedad entre los dedos" hasta 80 %; gotitas que suben. "verano · 10 hombres". |
 | 8 | Resultado | Y con zapatos más calientes y húmedos por dentro, había más pie de atleta. | Dos zapatos: "caliente y húmedo" (rojo, con más hongos) contra "fresco y seco" (azul). |
 | 9 | Contagio | Se pega en regaderas, albercas, vestidores y en casa. | Cuatro íconos: regaderas, albercas, vestidores, en casa. Chip "esporas y pedacitos de piel". |
-| 10 | Sirve | Lo que sí sirve: secarte bien entre los dedos y usar calzado que respire. | Una toalla seca entre los dedos y la piel blanca desaparece. Chips "✓ seca entre los dedos", "✓ calzado que respire". |
+| 10 | Sirve | Para prevenirlo: sécate bien entre los dedos y usa calzado que respire. | Una toalla seca entre los dedos (la piel blanca NO desaparece: secar previene, no cura). Chips "prevenir: ✓ seca entre los dedos", "¿ya lo tienes? antimicótico; si no mejora, al médico", "✓ calzado que respire". |
 | 11 | Dato | ¿Te suena? En esa clínica, casi la mitad de los pacientes tenía hongos en los pies o en las uñas. | "49 %" y cuadrícula de 100 que se llena; Robert grande. |
-| 12 | Cierre | Así que esa piel blanca no era solo humedad: era un hongo cenando entre tus dedos. | **Regreso a la imagen del inicio:** el mismo pie y la misma lupa: el hongo en la queratina. Chip "un hongo cenando". |
+| 12 | Cierre | Así que esa piel blanca puede no ser solo humedad: puede ser un hongo cenando entre tus dedos. | **Regreso a la imagen del inicio:** el mismo pie y la misma lupa: el hongo en la queratina. Chip "¿un hongo cenando?". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua sin golpe; efectos en el mismo cuadro (tics de la piel que se pela, crujido del tache, zumbido de la lupa, motor de las hifas, burbujas de enzimas, tics del contador, gotas de humedad, golpes de los íconos, toalla, tics de la cuadrícula).
@@ -41,9 +41,9 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué
 | 4 | 22.1 | 23.7 | 07_pensativo_puno | `grande` | «¿y por qué justo ahí?» |
 | 5 | 30.5 | 37.5 | 03_aburrido_manos_mejillas | `arriba-der` | el calor y la humedad del zapato |
 | 6 | 39.7 | 42.5 | 04_bajando_lentes | `arriba-der` | «regaderas, albercas, vestidores» |
-| 7 | 43.3 | 46.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «lo que sí sirve» |
+| 7 | 43.3 | 46.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «para prevenirlo» |
 | 8 | 47.7 | 52.8 | 06_pensativo_menton | `grande` | «casi la mitad de los pacientes» |
-| 9 | 53.4 | 57.9 | 02_apuntando_camara | `arriba-der` | «un hongo cenando entre tus dedos» |
+| 9 | 53.4 | 57.9 | 02_apuntando_camara | `arriba-der` | «puede ser un hongo cenando entre tus dedos» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
 Apariciones 9 · **34.9 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.

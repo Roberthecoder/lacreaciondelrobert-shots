@@ -117,7 +117,7 @@ function AmanitaShot() {
             <line x1={120} y1={1120} x2={960} y2={1120} stroke={KC.ink} strokeWidth={6} /><line x1={120} y1={1120} x2={120} y2={640} stroke={KC.ink} strokeWidth={6} />
             {(() => { const pts = [[120, 700], [300, 1000], [420, 980], [560, 760], [700, 760], [960, 1100]]; const u = kprog(T, K.Tr, K.Tr + 2.6); const n = Math.max(2, Math.ceil(u * pts.length)); return <path d={'M ' + pts.slice(0, n).map((p) => p.join(' ')).join(' L ')} stroke={KC.red} strokeWidth={12} fill="none" strokeLinejoin="round" strokeLinecap="round" />; })()}
             <text x={300} y={1170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>horas</text>
-            <text x={630} y={1170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>1–2 días</text>
+            <text x={630} y={1170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>24–36 h</text>
             <text x={900} y={1170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>3–5 días</text>
           </g>}
           {T >= K.Ts - 0.2 && Array.from({ length: 14 }, (_, i) => { const t3 = i < 3; return <g key={i} opacity={kprog(T, K.Ts - 0.2, K.Ts + 0.3)}><Persona x={150 + (i % 7) * 130} y={900 + Math.floor(i / 7) * 190} color={t3 ? KC.red : '#8fb6ff'} />
@@ -151,6 +151,7 @@ function AmanitaShot() {
       <Etq T={T} at={K.A + 1.8} until={K.M - 0.3} x={60} y={580} texto="“sombrero de la muerte”" tam={32} color={KC.ink} />
       <Etq T={T} at={K.A + 2.4} until={K.M - 0.3} x={640} y={900} texto="anillo" tam={28} color={KC.ink} />
       <Etq T={T} at={K.A + 2.8} until={K.M - 0.3} x={520} y={1150} texto="copa (volva)" tam={28} />
+      <Chip T={T} at={K.A + 2.2} until={K.M - 0.3} texto="ojo: su color varía, y el anillo y la copa pueden no verse" x={480} y={790} tam={26} borde={KC.red} />
       {MITOS.map((t, i) => <MitoTachado key={i} T={T} at={K.M + 0.2 + i * 0.6} tacharEn={K.M + 2.6 + i * 0.4} until={K.Co - 0.3} texto={t} x={480} y={600 + i * 150} tam={50} />)}
       <Chip T={T} at={K.Co + 0.4} until={K.Cg - 0.3} texto="100 °C: el veneno sigue" x={400} y={480} tam={40} borde={KC.red} />
       <Etq T={T} at={K.Co + 2.0} until={K.Cg - 0.3} x={60} y={1150} texto="amatoxinas" tam={32} color={KC.ink} />

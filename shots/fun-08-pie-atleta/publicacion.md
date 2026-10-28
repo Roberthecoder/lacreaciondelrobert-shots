@@ -7,9 +7,9 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ### TikTok
 ```text
 Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina. 🦶🍄
-Es el pie de atleta, casi siempre causado por hongos del género Trichophyton (sobre todo Trichophyton rubrum y Trichophyton interdigitale). La capa de afuera de tu piel está llena de queratina, una proteína dura; el hongo la digiere con enzimas y sus hilos avanzan hacia afuera. Su lugar favorito: entre el cuarto y el quinto dedo, donde la piel se pone blanca y blanda.
+Es el pie de atleta, causado sobre todo por hongos del género Trichophyton (en especial Trichophyton rubrum y Trichophyton interdigitale; con menos frecuencia, otros hongos). La capa de afuera de tu piel está llena de queratina, una proteína dura; el hongo la digiere con enzimas y sus hilos avanzan hacia afuera. Su lugar favorito: entre el cuarto y el quinto dedo, donde la piel se pone blanca y blanda.
 ¿Por qué ahí? En un estudio publicado en 2019 en Japón (Osaka, datos de 2011 a 2014), midieron el clima dentro de los zapatos de 420 pacientes. Entre los dedos de diez hombres, en verano, la humedad promedió 80 %, y quienes usaban zapatos más calientes y húmedos por dentro tenían más pie de atleta. En esa clínica, casi la mitad de los pacientes tenía hongos en los pies o en las uñas.
-Se pega con esporas y pedacitos de piel en regaderas, albercas, vestidores y en casa. Lo que sí sirve: secarte bien entre los dedos y usar calcetines de algodón y calzado que respire. Si no mejora, ve al médico.
+Se pega con esporas y pedacitos de piel en regaderas, albercas, vestidores y en casa. Para prevenirlo: sécate bien entre los dedos y usa calcetines de algodón y calzado que respire. ¿Ya lo tienes? El tratamiento principal es un antimicótico en crema; si no mejora, ve al médico.
 El dibujo es esquemático.
 Fuentes: Leung et al. 2023 (Drugs in Context); Sasagawa 2019 (J. Dermatol.).
 ¿Te ha pasado? 👇
@@ -21,7 +21,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina. 🦶🍄
-El pie de atleta lo causan casi siempre hongos Trichophyton: digieren la queratina con enzimas y les encanta el hueco entre el 4.º y 5.º dedo. Un estudio japonés (2019) midió 80 % de humedad entre los dedos en verano, y más pie de atleta con zapatos calientes y húmedos. Se pega en regaderas, albercas, vestidores y en casa. Lo que sí sirve: secarte bien entre los dedos y calzado que respire.
+El pie de atleta lo causan sobre todo hongos Trichophyton: digieren la queratina con enzimas y les encanta el hueco entre el 4.º y 5.º dedo. Un estudio japonés (2019) midió 80 % de humedad entre los dedos en verano, y más pie de atleta con zapatos calientes y húmedos. Se pega en regaderas, albercas, vestidores y en casa. Para prevenirlo: secarte bien entre los dedos y calzado que respire. Si ya lo tienes: antimicótico, y si no mejora, al médico.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te ha pasado? 👇
 Shot Fungi Mati #08 · La Creación del Robert
@@ -37,9 +37,9 @@ Esa piel blanca entre tus dedos puede ser un hongo 🦶 | Shot Fungi Mati #08
 Descripción:
 ```text
 Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina.
-El pie de atleta (tinea pedis) lo causan casi siempre Trichophyton rubrum y Trichophyton interdigitale. La capa de afuera de la piel está llena de queratina; el hongo suelta enzimas que la digieren y sus hilos avanzan hacia afuera. La forma más común aparece entre el cuarto y el quinto dedo, donde la piel se pone blanca y blanda.
+El pie de atleta (tinea pedis) lo causan sobre todo Trichophyton rubrum y Trichophyton interdigitale. La capa de afuera de la piel está llena de queratina; el hongo suelta enzimas que la digieren y sus hilos avanzan hacia afuera. La forma más común aparece entre el cuarto y el quinto dedo, donde la piel se pone blanca y blanda.
 En un estudio publicado en 2019 (Clínica Dermatológica Sasagawa, Osaka, Japón; datos de 2011 a 2014) se midió la temperatura y la humedad dentro de los zapatos de 420 pacientes: en verano, entre los dedos de diez hombres, la humedad promedió 80 %, y quienes usaban calzado más caliente y húmedo por dentro tenían más pie de atleta. En esa clínica, 49 % de los pacientes tenía hongos en pies o uñas.
-Se pega por esporas y pedacitos de piel, en regaderas, albercas, vestidores y en casa. Lo que sí sirve: secarte bien entre los dedos y usar calcetines de algodón y calzado que respire. No es consejo médico: si no mejora, ve al médico.
+Se pega por esporas y pedacitos de piel, en regaderas, albercas, vestidores y en casa. Para prevenirlo: secarte bien entre los dedos y usar calcetines de algodón y calzado que respire. Si ya lo tienes, el tratamiento principal es un antimicótico tópico (de 1 a 6 semanas, según la revisión de 2023); no es consejo médico: si no mejora, ve al médico.
 El dibujo es esquemático.
 Fuentes:
 - Leung, A. K. C. et al. (2023). Tinea pedis: an updated review. Drugs in Context 12: 2023-5-1. https://pmc.ncbi.nlm.nih.gov/articles/PMC10321471/
@@ -52,7 +52,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina. 🦶 El pie de atleta ama el calor y la humedad del zapato: sécate bien entre los dedos y usa calzado que respire.
+Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina. 🦶 El pie de atleta ama el calor y la humedad del zapato. Para prevenirlo: sécate bien entre los dedos y usa calzado que respire; si ya lo tienes y no mejora, al médico.
 ¿Te ha pasado? 👇
 Shot Fungi Mati #08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -72,12 +72,12 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina. En Japón midieron 80 % de humedad entre los dedos en verano. Sécate bien y usa calzado que respire. 🦶 #FungiMati #PieDeAtleta
+Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina. En Japón midieron 80 % de humedad entre los dedos en verano. Para prevenirlo: sécate bien y usa calzado que respire. 🦶 #FungiMati #PieDeAtleta
 ```
 
 ### Threads
 ```text
-Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina. 🦶 El pie de atleta (Trichophyton) ama el hueco entre el 4.º y 5.º dedo: en un estudio japonés, ahí la humedad llegó a 80 % en verano. Sécate bien y usa calzado que respire. ¿Te ha pasado?
+Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina. 🦶 El pie de atleta (Trichophyton) ama el hueco entre el 4.º y 5.º dedo: en un estudio japonés, ahí la humedad promedió 80 % en verano. Para prevenirlo: sécate bien y usa calzado que respire. ¿Te ha pasado?
 Shot Fungi Mati #08 · La Creación del Robert
 #Hongos
 ```

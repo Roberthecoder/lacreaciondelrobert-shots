@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #06 · rama `claude/igualar-fungi-mati`.
 - **Formato:** N5 "El experimento" (el hongo arma trampas sin gusanos, solo con sus moléculas) con viaje N1 (microscopio → tierra → caja de cultivo → la misma trampa, ya con su presa digerida).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Ese anillo de hilos no es moho cualquiera: es una trampa pegajosa para gusanos".
-- **Duración:** voz 889 caracteres / 162 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 891 caracteres / 162 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~890 créditos de ElevenLabs).
 
 ## Versión narrada
@@ -15,7 +15,7 @@
 | 2 | Hambre | Pero si le falta comida y detecta nematodos, gusanos diminutos, cambia de plan. | Medidor "comida" que baja; aparecen nematodos en la tierra. |
 | 3 | Red | Sus hilos se enroscan y forman redes pegajosas. | Microscopio: una hifa se enrosca en anillos que se cierran; brillan las gotas de pegamento. |
 | 4 | Pregunta | ¿Y cómo sabe que hay gusanos cerca? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
-| 5 | Estudio | En Caltech, Yen-Ping Hsueh y su equipo le dieron solo las moléculas que sueltan los gusanos. | Tarjeta "2013 · Hsueh et al. · Caltech · Current Biology"; caen ascarósidos (dibujo esquemático) a una caja de Petri con el hongo, sin gusanos. |
+| 5 | Estudio | En Caltech, Yen-Ping Hsueh y sus colegas le dieron solo las moléculas que sueltan los gusanos. | Tarjeta "2013 · Hsueh et al. · Caltech · Current Biology"; caen ascarósidos (dibujo esquemático) a una caja de Petri con el hongo, sin gusanos. |
 | 6 | Espia | Sin un solo gusano, el hongo armó sus trampas: los estaba espiando. | En la caja brotan trampas una tras otra. Chip "0 gusanos → trampas". |
 | 7 | Olor | En 2017 vieron algo peor: el hongo suelta olores que imitan comida, y quizá señales de pareja, y los gusanos van hacia él. | Ondas de olor salen de la colonia; íconos "olor a comida" y "¿pareja?"; tres gusanos se acercan. Chip "2017 · eLife". |
 | 8 | Pega | Se quedan pegados, y el hongo atraviesa su cutícula y crece por dentro. | Microscopio: el gusano pegado; un bulbo dorado atraviesa la cutícula y las hifas doradas avanzan por dentro. |

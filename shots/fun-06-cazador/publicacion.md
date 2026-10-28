@@ -8,7 +8,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ```text
 Ese anillo de hilos no es moho cualquiera: es una trampa pegajosa para gusanos. 🍄🪱
 Es el hongo Arthrobotrys oligospora. Vive en la tierra comiendo restos. Pero si le falta comida y detecta nematodos (gusanos diminutos, de alrededor de un milímetro), cambia de plan: sus hilos se enroscan y forman redes pegajosas.
-¿Y cómo sabe que hay gusanos cerca? En Caltech, Yen-Ping Hsueh y su equipo le dieron solo las moléculas que sueltan los gusanos (ascarósidos). Sin un solo gusano, el hongo armó sus trampas: los estaba espiando (Current Biology, 2013).
+¿Y cómo sabe que hay gusanos cerca? En Caltech, Yen-Ping Hsueh y sus colegas le dieron solo las moléculas que sueltan los gusanos (ascarósidos). Sin un solo gusano, el hongo armó sus trampas: los estaba espiando (Current Biology, 2013).
 En 2017 encontraron algo peor: el hongo suelta olores que imitan la comida de los gusanos, y quizá también sus señales de pareja, y los gusanos van hacia él (eLife).
 Ya pegados, el hongo atraviesa su cutícula, crece por dentro y lo digiere con enzimas: se lo come desde adentro. Y no es el único: ya en 2013 se contaban más de 200 especies de hongos que atacan gusanos.
 El dibujo es esquemático.
@@ -39,7 +39,7 @@ Descripción:
 ```text
 Ese anillo de hilos no es moho cualquiera: es una trampa pegajosa para gusanos.
 Arthrobotrys oligospora es un hongo de la tierra que normalmente come restos. Pero si le falta comida y detecta nematodos (gusanos diminutos), cambia de plan: sus hilos se enroscan y forman redes pegajosas.
-¿Cómo sabe que hay gusanos cerca? Yen-Ping Hsueh y su equipo, en Caltech, le dieron solo las moléculas que sueltan los gusanos (ascarósidos) y el hongo armó sus trampas sin un solo gusano: los estaba espiando (Current Biology, 2013). En 2017 encontraron que el hongo suelta olores que imitan comida, y quizá señales de pareja, que atraen a los gusanos (eLife). Ya pegados, el hongo atraviesa su cutícula, crece por dentro y lo digiere con enzimas. Ya en 2013 se contaban más de 200 especies de hongos que atacan gusanos.
+¿Cómo sabe que hay gusanos cerca? Yen-Ping Hsueh y sus colegas, en Caltech, le dieron solo las moléculas que sueltan los gusanos (ascarósidos) y el hongo armó sus trampas sin un solo gusano: los estaba espiando (Current Biology, 2013). En 2017 encontraron que el hongo suelta olores que imitan comida, y quizá señales de pareja, que atraen a los gusanos (eLife). Ya pegados, el hongo atraviesa su cutícula, crece por dentro y lo digiere con enzimas. Ya en 2013 se contaban más de 200 especies de hongos que atacan gusanos.
 El dibujo es esquemático.
 Fuentes:
 - Hsueh, Y.-P., Mahanti, P., Schroeder, F. C. y Sternberg, P. W. (2013). Nematode-trapping fungi eavesdrop on nematode pheromones. Current Biology 23(1): 83–86. https://pmc.ncbi.nlm.nih.gov/articles/PMC4047969/

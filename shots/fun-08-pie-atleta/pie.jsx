@@ -110,7 +110,7 @@ function PieDeAtleta() {
       {/* 11 · lo que sí sirve */}
       <Escena T={T} a={K.S} b={K.D}>
         <FondoLunares color={KC.mint} />
-        <Pie T={T} parche={1 - kprog(T, K.S + 1.0, K.D - 0.5)} />
+        <Pie T={T} parche={1} />
         {fsvg(<g transform={`translate(${klerp(1100, HUECO.x + 30, kprog(T, K.S + 0.2, K.S + 1.0, kEase.sale)) + Math.sin(T * 10) * 18 * kprog(T, K.S + 1, K.S + 1.2)} ${HUECO.y - 40})`}>
           <rect x={0} y={-60} width={300} height={120} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={7} />
           {[0, 1, 2, 3, 4].map((k) => <line key={k} x1={20 + k * 60} y1={-50} x2={20 + k * 60} y2={50} stroke={KC.cyan} strokeWidth={8} />)}
@@ -145,11 +145,12 @@ function PieDeAtleta() {
       <Chip T={T} at={K.R + 0.4} until={K.Co - 0.3} texto="fresco y seco" x={800} y={1170} tam={32} borde={KC.cyan} />
       <Chip T={T} at={K.R + 1.4} until={K.Co - 0.3} texto="más pie de atleta" x={330} y={560} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Co + 2.4} until={K.S - 0.2} texto="esporas y pedacitos de piel" x={540} y={560} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.S + 0.3} until={K.D - 0.3} texto="✓ seca entre los dedos" x={360} y={470} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 0.3} until={K.D - 0.3} texto="prevenir: ✓ seca entre los dedos" x={360} y={470} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.S + 1.8} until={K.D - 0.3} texto="✓ calzado que respire" x={360} y={560} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 2.8} until={K.D - 0.3} texto="¿ya lo tienes? antimicótico; si no mejora, al médico" x={420} y={1120} tam={28} borde={KC.orange} />
       <NumeroGigante T={T} at={K.D + 0.3} until={K.C - 0.3} valor={49} dur={1.4} sufijo="%" etiqueta="pacientes de esa clínica" x={330} y={500} tam={160} />
       <Etq T={T} at={K.D + 2.4} until={K.C - 0.3} x={60} y={1140} texto="con hongos en pies o uñas" tam={30} />
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="un hongo cenando" x={340} y={480} tam={42} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="¿un hongo cenando?" x={340} y={480} tam={42} borde={KC.yellow} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Q} texto="2 cm" largo={180} />
@@ -160,7 +161,7 @@ function PieDeAtleta() {
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="Puede ser un hongo *comiendo queratina.*" />
-      <Subtitulo T={T} idx={1} at={K.N + 0.1} until={K.Q - 0.1} texto="Pie de atleta: *Trichophyton.*" />
+      <Subtitulo T={T} idx={1} at={K.N + 0.1} until={K.Q - 0.1} texto="Pie de atleta: *sobre todo Trichophyton.*" />
       <Subtitulo T={T} idx={2} at={K.Q + 0.1} until={K.En - 0.1} texto="Tu piel de afuera: *queratina.*" />
       <Subtitulo T={T} idx={3} at={K.En + 0.1} until={K.L - 0.1} texto="La digiere *con enzimas.*" />
       <Subtitulo T={T} idx={4} at={K.L + 0.1} until={K.P - 0.1} texto="Entre el *4.º y el 5.º dedo.*" />
@@ -169,9 +170,9 @@ function PieDeAtleta() {
       <Subtitulo T={T} idx={7} at={K.Hu + 0.1} until={K.R - 0.1} texto="Entre los dedos: *80 % de humedad.*" />
       <Subtitulo T={T} idx={8} at={K.R + 0.1} until={K.Co - 0.1} texto="Más calor y humedad: *más hongo.*" />
       <Subtitulo T={T} idx={9} at={K.Co + 0.1} until={K.S - 0.1} texto="Se pega *en lugares húmedos.*" />
-      <Subtitulo T={T} idx={10} at={K.S + 0.1} until={K.D - 0.1} texto="Sécate bien *entre los dedos.*" />
+      <Subtitulo T={T} idx={10} at={K.S + 0.1} until={K.D - 0.1} texto="Para prevenirlo: *sécate entre los dedos.*" />
       <Subtitulo T={T} idx={11} at={K.D + 0.1} until={K.C - 0.1} texto="Casi la mitad *de esos pacientes.*" />
-      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Un hongo *cenando entre tus dedos.*" />
+      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Puede ser un hongo *cenando entre tus dedos.*" />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 4.2, 'avatar_11_sorprendido', 'gancho'],

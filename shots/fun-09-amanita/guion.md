@@ -12,7 +12,7 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | ¿Por qué no sirve la cuchara de plata para saber si un hongo es venenoso? Porque es un mito. | Fondo amarillo: una olla hierve con hongos; cuadro 0.3: sale una cuchara de plata, brillante. Chip "¿se pone negra = veneno?" y cae el sello "MITO". |
-| 1 | Amanita | Y el hongo que más muertes causa, *Amanita phalloides*, no avisa. | Brotan dos *Amanita phalloides* (sombrero liso verde amarillento, anillo arriba del pie, copa en la base). Etiquetas *Amanita phalloides*, "sombrero de la muerte", "anillo", "copa (volva)". |
+| 1 | Amanita | Y el hongo que más muertes causa, *Amanita phalloides*, no avisa. | Brotan dos *Amanita phalloides* (sombrero liso verde amarillento, anillo arriba del pie, copa en la base). Etiquetas *Amanita phalloides*, "sombrero de la muerte", "anillo", "copa (volva)", y el chip "ojo: su color varía, y el anillo y la copa pueden no verse". |
 | 2 | Mitos | La plata, el ajo, la cebolla, que lo haya mordido un animal o que sepa feo: puros mitos. | Cuatro tarjetas que se tachan una por una: "cuchara de plata", "ajo o cebolla", "lo mordió un animal", "sabe feo". |
 | 3 | Cocinar | Cocinarlo tampoco ayuda: su veneno, las amatoxinas, no se destruye al cocinarlo ni al secarlo. | La olla hierve; moléculas de amatoxina (anillos rojos) siguen ahí. Chip "100 °C: el veneno sigue". |
 | 4 | Congelar | Hasta hubo una intoxicación con hongos congelados por siete u ocho meses. | Congelador con escarcha y hongos; las moléculas siguen. Chip "7–8 meses congelados". |
@@ -20,7 +20,7 @@
 | 6 | Higado | En tu hígado, frena la máquina con la que tus células fabrican proteínas, y las células mueren. | Célula del hígado (fondo oscuro): la ARN polimerasa II ("la máquina") copia una tira; llega la α-amanitina, la tira se detiene ✗ y la célula se vuelve gris. |
 | 7 | Estudio | En diciembre de 2016, en el norte de California, catorce personas se intoxicaron con hongos silvestres. | Tarjeta "2016 · norte de California · 14 casos · MMWR (CDC), 2017"; aparecen 14 personas. |
 | 8 | Retraso | Los síntomas tardaron horas en llegar: vómito y diarrea. | Cronómetro "después de comer" que corre horas; las personas se ponen verdes. Chip "vómito y diarrea". |
-| 9 | Trampa | Luego parece que mejoras, y días después falla el hígado. | Gráfica: baja (horas), sube (1–2 días), se desploma (3–5 días). Chip "¿mejora? es una trampa". |
+| 9 | Trampa | Luego parece que mejoras, y días después falla el hígado. | Gráfica: baja (horas), sube (24–36 h), se desploma (3–5 días). Chip "¿mejora? es una trampa". |
 | 10 | Trasplante | Tres de esas catorce personas necesitaron un trasplante de hígado. | "3 de 14"; tres personas en rojo con un hígado encima. |
 | 11 | Sirve | Lo que sí sirve: no comas hongos silvestres sin que los identifique un experto. | Una lupa sobre la amanita. Chips "✓ que lo identifique un experto" y "¿mal? al médico y lleva el hongo". |
 | 12 | Cierre | Así que la cuchara de plata no te salva: te salva saber exactamente qué hongo es. | **Regreso a la imagen del inicio:** la misma olla y la misma cuchara, ahora tachada. Chip "te salva saber qué hongo es". |
@@ -60,5 +60,6 @@ Detalle completo, con la frase textual de cada afirmación, en `verificacion.md`
 2. Kayes, T. y Ho, V. (2024). *Amanita phalloides*-Associated Liver Failure: Molecular Mechanisms and Management. *Int. J. Mol. Sci.* 25(23): 13028. https://pmc.ncbi.nlm.nih.gov/articles/PMC11640968/
    > "Amatoxins have good heat stability and are not destroyed by cooking or drying"; "mushrooms that had been frozen for 7–8 months"
 3. Instituto Nacional de Toxicología y Ciencias Forenses (España), "Prevención de intoxicaciones · Por setas": mitos de la cucharilla de plata, el ajo o la cebolla, las setas mordidas por animales y el sabor desagradable.
+4. Kuo, M. (2013). *Amanita phalloides*. MushroomExpert.Com: el color varía (hay formas blancas), el anillo a veces se pierde y la copa puede quedar bajo tierra o romperse.
 
 El dibujo es esquemático. No es consejo médico: ante cualquier malestar después de comer hongos silvestres, ve a urgencias y lleva el hongo o los restos.

@@ -3,6 +3,8 @@
 28 oct 2026. **Nota de proceso:** en esta sesión no hay herramienta para lanzar un subagente verificador, así que la verificación la
 hizo la misma sesión, con actitud escéptica y **abriendo el texto completo** de cada fuente (no el resumen del buscador).
 
+**Verificación independiente (28 oct 2026):** otro agente, que no escribió el guion, abrió las fuentes en texto completo: el shot PASA. Solo se corrigió la documentación de la fila 11 (el alcance de 2.5 m lo midió Buller y Yafetto 2008 lo cita); la voz no cambia.
+
 Fuentes abiertas:
 - **[Y]** Yafetto, L., Carroll, L., Cui, Y., Davis, D. J., Fischer, M. W. F., Henterly, A. C., Kessler, J. D., Kilroy, H. A., Shidler, J. B., Stolze-Rybczynski, J. L., Sugawara, Z. y Money, N. P. (2008). The fastest flights in nature: high-speed spore discharge mechanisms among fungi. *PLoS ONE* 3(9): e3237. https://pmc.ncbi.nlm.nih.gov/articles/PMC2528943/
 - **[V]** Viriato, A. (2008). *Pilobolus* species found on herbivore dung from the São Paulo Zoological Park, Brazil. *Acta Botanica Brasilica* 22(3). https://www.scielo.br/j/abb/a/BbrVqB7KmL3G9dDGyyCsy7Q/?lang=en
@@ -22,7 +24,7 @@ Fuentes abiertas:
 | 8 | La bolsita salió hasta a 13 m/s | ✅ | [Y] | Tabla 1, *Pilobolus kleinii*: "Measured launch speed (range, median, sample size) … 2–13, 9 (14)" | 2008 |
 | 9 | Unos 47 km/h | ✅ (cálculo) | [Y] | 13 m/s × 3.6 = 46.8 km/h | — |
 | 10 | Aceleró más de 20,000 veces la gravedad | ✅ | [Y], [E] | [Y] Tabla 1: "Measured maximum acceleration (m s−2) … 210,000" (= 21,400 g); [E]: "peak accelerations of up to 21,407 g" | 2008 / 2024 |
-| 11 | Vuela hasta 2.5 m | ✅ | [Y], [E] | [Y] Tabla 1, "Measured maximum range (m)" de *P. kleinii*: 2.5; [E]: "resulting in a launch distance of 2.5 m" | 2008 / 2024 |
+| 11 | Vuela hasta 2.5 m | ✅ | [Y] (dato de Buller), [E] | [Y] Tabla 1, "Measured maximum range (m)" de *P. kleinii*: 2.5, con la nota: "Maximum range measurements by authors with exception of P. klenii data published by Buller [19]" (A. H. R. Buller, *Researches on Fungi*, medición antigua citada por Yafetto); [E]: "resulting in a launch distance of 2.5 m" | Buller (citado en 2008) / 2024 |
 | 12 | Lejos de la caca, al pasto limpio, donde lo come el animal | ✅ | [Y] | "propel spores over distances of many centimeters or even meters onto fresh vegetation where they may be consumed by their host animals" | 2008 |
 | 13 | Sus esporas necesitan pasar por la panza para despertar | ✅ | [S] | "The obligate coprophilous have spores that require the action of gastric enzymes to break their dormancy"; "Among the Mucorales, only Pilobolus species are considered obligate coprophilous" | 2017 |
 | 14 | A veces lleva polizones: larvas del gusano del pulmón de las vacas | ✅ | [R], [D] | "mechanically assist the dispersion of infective larvae of the trichostrongylid lungworm Dictyocaulus viviparus"; título [D]: "dispersal of Dictyocaulus viviparus in sporangia of Pilobolus species" | 2024 / 1991 |

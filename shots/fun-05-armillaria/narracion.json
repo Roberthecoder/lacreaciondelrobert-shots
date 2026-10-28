@@ -5,7 +5,7 @@
   "lineas": [
     { "escena": "Gancho", "texto": "Esos hongos no son cientos de hongos: pueden ser uno solo, de casi diez kilómetros cuadrados." },
     { "escena": "Fruto", "texto": "Cada seta es solo un fruto: el hongo, Armillaria, vive bajo tierra." },
-    { "escena": "Cordones", "texto": "Avanza con cordones negros, como agujetas, y entra al árbol por la raíz." },
+    { "escena": "Cordones", "texto": "Avanza de raíz en raíz, y a veces con cordones negros, como agujetas." },
     { "escena": "Raiz", "texto": "Mata la raíz, se la come, y el árbol se muere." },
     { "escena": "Pregunta", "texto": "¿Y cómo sabes que es uno solo y no miles?" },
     { "escena": "Estudio", "texto": "En 2003, un equipo lo mapeó en un bosque de Oregón, Estados Unidos." },
@@ -13,7 +13,7 @@
     { "escena": "Fusion", "texto": "Si los micelios se fusionaban, eran el mismo individuo." },
     { "escena": "Numero", "texto": "Uno ocupaba novecientas sesenta y cinco hectáreas: más de mil trescientas canchas de fútbol." },
     { "escena": "Edad", "texto": "Por lo lento que crece, tendría entre mil novecientos y ocho mil seiscientos cincuenta años." },
-    { "escena": "Ojo", "texto": "Ojo: no se sabe si sigue unido, pero en sus genes es uno solo." },
+    { "escena": "Ojo", "texto": "Ojo: no se sabe si sigue unido, pero las pruebas dicen que es uno solo." },
     { "escena": "Brillo", "texto": "Y lo más raro: sus hilos pueden brillar en la oscuridad." },
     { "escena": "Cierre", "texto": "Así que esos hongos no son cientos: son frutos de un gigante escondido bajo el bosque." }
   ]

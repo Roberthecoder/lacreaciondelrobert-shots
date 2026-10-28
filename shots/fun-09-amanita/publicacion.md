@@ -10,7 +10,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 El hongo que más muertes causa, Amanita phalloides (el "sombrero de la muerte"), no avisa. La cuchara de plata, el ajo, la cebolla, que lo haya mordido un animal o que sepa feo: puros mitos. Y cocinarlo tampoco ayuda: su veneno, las amatoxinas, no se destruye al cocinarlo ni al secarlo; hasta hubo una intoxicación con hongos congelados por 7 u 8 meses.
 En el hígado, la amatoxina frena la ARN polimerasa II, la "máquina" con la que las células fabrican proteínas, y las células mueren.
 En diciembre de 2016, en el norte de California, 14 personas se intoxicaron con hongos silvestres. Los síntomas tardaron horas en llegar (vómito y diarrea); luego parece que mejoras, y días después falla el hígado. Tres de esas 14 personas necesitaron un trasplante de hígado.
-Lo que sí sirve: no comas hongos silvestres sin que los identifique un experto. Y si te sientes mal después de comerlos, ve a urgencias y lleva el hongo o los restos.
+Ningún truco casero sirve: solo un experto puede identificar un hongo. Y ojo: el color de Amanita phalloides varía (hay formas blancas) y el anillo o la copa de la base pueden no verse. Lo que sí sirve: no comas hongos silvestres sin que los identifique un experto. Y si te sientes mal después de comerlos, ve a urgencias y lleva el hongo o los restos.
 El dibujo es esquemático. No es consejo médico.
 Fuentes: MMWR 2017 (CDC); Kayes y Ho 2024 (Int. J. Mol. Sci.); Instituto Nacional de Toxicología de España.
 ¿Qué truco te enseñaron a ti? 👇
@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 ¿Por qué no sirve la cuchara de plata para saber si un hongo es venenoso? Porque es un mito. 🍄⚠️
-Plata, ajo, cebolla, que lo haya mordido un animal o que sepa feo: mitos. El hongo que más muertes causa, Amanita phalloides, ni se cocina ni se congela para quitarle el veneno. En 2016, en California, 14 personas se intoxicaron con hongos silvestres y 3 necesitaron trasplante de hígado. Lo que sí sirve: no comas hongos silvestres sin que los identifique un experto.
+Plata, ajo, cebolla, que lo haya mordido un animal o que sepa feo: mitos. El hongo que más muertes causa, Amanita phalloides, ni se cocina ni se congela para quitarle el veneno. En 2016, en California, 14 personas se intoxicaron con hongos silvestres y 3 necesitaron trasplante de hígado. Ningún truco casero sirve: solo un experto puede identificar un hongo (su color varía y el anillo o la copa pueden no verse).
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Qué truco te enseñaron a ti? 👇
 Shot Fungi Mati #09 · La Creación del Robert
@@ -40,12 +40,13 @@ Descripción:
 ¿Por qué no sirve la cuchara de plata para saber si un hongo es venenoso? Porque es un mito.
 Amanita phalloides, el "sombrero de la muerte", es el hongo responsable de la mayoría de las muertes por comer hongos silvestres en el mundo. La cuchara de plata, el ajo, la cebolla, que lo haya mordido un animal o que sepa feo son mitos (Instituto Nacional de Toxicología de España). Su veneno, las amatoxinas, no se destruye al cocinarlo ni al secarlo, y se reportó una intoxicación con hongos congelados por 7–8 meses. En el hígado, la amatoxina bloquea la ARN polimerasa II, la "máquina" con la que las células fabrican proteínas, y las células mueren.
 En diciembre de 2016, el Sistema de Control de Envenenamientos de California identificó 14 intoxicaciones por Amanita phalloides en el norte del estado, todas por hongos silvestres. Los síntomas llegaron horas después (vómito y diarrea); luego viene una mejoría engañosa y, días después, falla el hígado. Tres personas necesitaron trasplante de hígado.
-Lo que sí sirve: no comer hongos silvestres que no haya identificado un experto, y ante cualquier malestar, ir a urgencias con el hongo o los restos.
+Ningún truco casero sirve: solo un experto puede identificar un hongo. Su color varía (hay formas blancas "albinas", y otras amanitas blancas, como Amanita virosa, también son mortales) y el anillo o la copa de la base pueden perderse o quedar bajo tierra. Lo que sí sirve: no comer hongos silvestres que no haya identificado un experto, y ante cualquier malestar, ir a urgencias con el hongo o los restos.
 El dibujo es esquemático. No es consejo médico.
 Fuentes:
 - Vo, K. T. et al. (2017). Amanita phalloides Mushroom Poisonings — Northern California, December 2016. MMWR 66(21): 549–553. https://pmc.ncbi.nlm.nih.gov/articles/PMC5657817/
 - Kayes, T. y Ho, V. (2024). Amanita phalloides-Associated Liver Failure: Molecular Mechanisms and Management. Int. J. Mol. Sci. 25(23): 13028. https://pmc.ncbi.nlm.nih.gov/articles/PMC11640968/
 - Instituto Nacional de Toxicología y Ciencias Forenses (España). Prevención de intoxicaciones por setas. https://www.mjusticia.gob.es/es/institucional/organismos/instituto-nacional/servicios/servicio-informacion/prevencion-intoxicaciones/setas1
+- Kuo, M. (2013). Amanita phalloides. MushroomExpert.Com. https://www.mushroomexpert.com/amanita_phalloides.html
 ¿Qué truco te enseñaron a ti? 👇
 Shot Fungi Mati #09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -54,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-¿Por qué no sirve la cuchara de plata para saber si un hongo es venenoso? Porque es un mito. ⚠️ El hongo que más muertes causa, Amanita phalloides, no se detecta con plata ni ajo, y su veneno no se va al cocinarlo. No comas hongos silvestres sin que los identifique un experto.
+¿Por qué no sirve la cuchara de plata para saber si un hongo es venenoso? Porque es un mito. ⚠️ El hongo que más muertes causa, Amanita phalloides, no se detecta con plata ni ajo, y su veneno no se va al cocinarlo. Ningún truco casero sirve: solo un experto puede identificar un hongo.
 ¿Qué truco te enseñaron a ti? 👇
 Shot Fungi Mati #09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -79,7 +80,7 @@ La cuchara de plata no detecta hongos venenosos: es un mito. El veneno de Amanit
 
 ### Threads
 ```text
-¿Por qué no sirve la cuchara de plata para saber si un hongo es venenoso? Porque es un mito. ⚠️ Amanita phalloides, el hongo que más muertes causa, no se detecta con plata ni ajo y su veneno no se destruye al cocinarlo. Que lo identifique un experto. ¿Qué truco te enseñaron a ti?
+¿Por qué no sirve la cuchara de plata para saber si un hongo es venenoso? Porque es un mito. ⚠️ Amanita phalloides, el hongo que más muertes causa, no se detecta con plata ni ajo y su veneno no se destruye al cocinarlo. Ningún truco casero sirve: solo un experto puede identificarlo. ¿Qué truco te enseñaron a ti?
 Shot Fungi Mati #09 · La Creación del Robert
 #Hongos
 ```
@@ -90,5 +91,6 @@ Fuentes:
 Vo, K. T. et al. (2017). Amanita phalloides Mushroom Poisonings — Northern California, December 2016. MMWR 66(21): 549–553. https://pmc.ncbi.nlm.nih.gov/articles/PMC5657817/
 Kayes, T. y Ho, V. (2024). Amanita phalloides-Associated Liver Failure: Molecular Mechanisms and Management. Int. J. Mol. Sci. 25(23): 13028. https://pmc.ncbi.nlm.nih.gov/articles/PMC11640968/
 Instituto Nacional de Toxicología y Ciencias Forenses (España). Prevención de intoxicaciones por setas. https://www.mjusticia.gob.es/es/institucional/organismos/instituto-nacional/servicios/servicio-informacion/prevencion-intoxicaciones/setas1
+Kuo, M. (2013). Amanita phalloides. MushroomExpert.Com. https://www.mushroomexpert.com/amanita_phalloides.html
 El dibujo es esquemático. No es consejo médico.
 ```

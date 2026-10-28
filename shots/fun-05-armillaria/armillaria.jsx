@@ -57,6 +57,7 @@ function Armillaria() {
       {/* 1–4 · el bosque en corte: setas → red → cordón → raíz que muere */}
       <Escena T={T} a={K.G} b={K.P} zoom={0.04} origen="40% 50%">
         <Bosque T={T} at={K.G} rayos={rayos} red={red} cordon={kprog(T, K.Co + 0.3, K.Co + 3.2, kEase.suave)} raizMala={kprog(T, K.R, K.R + 1.2)} muere={kprog(T, K.R + 0.6, K.P - 0.2)} />
+        {T > K.Co && fsvg(<path d="M 400 1070 Q 460 1075 530 1030" stroke={KC.yellow} strokeWidth={14} fill="none" strokeLinecap="round" strokeDasharray={`${180 * kprog(T, K.Co, K.Co + 1.2)} 999`} opacity={1 - kprog(T, K.P - 0.6, K.P)} style={{ filter:`drop-shadow(0 0 8px ${KC.yellow})` }} />, 21)}
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
@@ -121,6 +122,7 @@ function Armillaria() {
       <Etq T={T} at={K.F + 1.4} until={K.Co - 0.3} x={600} y={1130} texto="micelio (el hongo)" tam={32} color={KC.yellow} />
       <Etq T={T} at={K.F + 1.0} until={K.Co - 0.3} x={60} y={1540} texto="Armillaria ostoyae" it tam={36} color={KC.texto} />
       <Etq T={T} at={K.Co + 1.2} until={K.R - 0.2} x={720} y={1080} texto="cordón negro" tam={32} />
+      <Etq T={T} at={K.Co + 0.4} until={K.R - 0.2} x={380} y={1020} texto="raíz con raíz" tam={30} color={KC.yellow} />
       <Etq T={T} at={K.R + 0.6} until={K.P - 0.2} x={700} y={1080} texto="raíz muerta" tam={32} color={KC.coral} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ca - 0.3} anio="2003" quien="Ferguson et al. · Oregón, EE. UU." revista="Can. J. For. Res. · bosque Malheur" y={830} />
       <Chip T={T} at={K.Ca + 0.3} until={K.N - 0.3} texto="muestra contra muestra" y={500} x={360} tam={38} borde={KC.ink} />
@@ -135,7 +137,7 @@ function Armillaria() {
         <div style={{ font:`900 40px ${KF.texto}`, color:KC.texto, textShadow:KSOMBRA }}>años (estimado)</div>
       </div>
       <Chip T={T} at={K.O + 0.5} until={K.B - 0.3} texto="¿sigue unido? no se sabe" y={1110} tam={40} borde={KC.coral} />
-      <Chip T={T} at={K.O + 1.6} until={K.B - 0.3} texto="genes: 1 individuo" y={470} x={420} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.O + 1.6} until={K.B - 0.3} texto="pruebas: 1 individuo" y={470} x={420} tam={40} borde={KC.yellow} />
       <Etq T={T} at={K.B + 1.2} until={K.C - 0.3} x={150} y={1110} texto="hilos de Armillaria que brillan" tam={32} color="#b6ff8f" />
       <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="un solo gigante" y={470} x={330} tam={40} borde={KC.yellow} />
 
@@ -148,7 +150,7 @@ function Armillaria() {
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.F - 0.1} texto="No son cientos: *puede ser uno solo.*" />
       <Subtitulo T={T} idx={1} at={K.F + 0.1} until={K.Co - 0.1} texto="La seta es el fruto: *el hongo vive abajo.*" />
-      <Subtitulo T={T} idx={2} at={K.Co + 0.1} until={K.R - 0.1} texto="Cordones negros *entran por la raíz.*" />
+      <Subtitulo T={T} idx={2} at={K.Co + 0.1} until={K.R - 0.1} texto="De raíz en raíz *y con cordones negros.*" />
       <Subtitulo T={T} idx={3} at={K.R + 0.1} until={K.P - 0.1} texto="Se come la raíz: *el árbol muere.*" />
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.E - 0.1} texto="¿Cómo sabes que *es uno solo?*" />
       <Subtitulo T={T} idx={5} at={K.E + 0.1} until={K.Ca - 0.1} texto="2003: *un bosque de Oregón.*" />
@@ -156,7 +158,7 @@ function Armillaria() {
       <Subtitulo T={T} idx={7} at={K.Fu + 0.1} until={K.N - 0.1} texto="Si se fusionan, *es el mismo.*" />
       <Subtitulo T={T} idx={8} at={K.N + 0.1} until={K.Ed - 0.1} texto="965 hectáreas: *+1,300 canchas.*" />
       <Subtitulo T={T} idx={9} at={K.Ed + 0.1} until={K.O - 0.1} texto="Entre *1,900 y 8,650 años.*" />
-      <Subtitulo T={T} idx={10} at={K.O + 0.1} until={K.B - 0.1} texto="¿Unido? No se sabe. *Genes: uno.*" />
+      <Subtitulo T={T} idx={10} at={K.O + 0.1} until={K.B - 0.1} texto="¿Unido? No se sabe. *Las pruebas: uno.*" />
       <Subtitulo T={T} idx={11} at={K.B + 0.1} until={K.C - 0.1} texto="Sus hilos *brillan en la oscuridad.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Frutos de *un gigante escondido.*" />
 

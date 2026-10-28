@@ -3,6 +3,8 @@
 28 oct 2026. **Nota de proceso:** en esta sesión no hay herramienta para lanzar un subagente verificador, así que la verificación la
 hizo la misma sesión, con actitud escéptica y **abriendo el texto completo** de cada artículo en PMC (no el resumen del buscador).
 
+**Verificación independiente (28 oct 2026):** otro agente, que no escribió el guion, abrió las fuentes en texto completo: el shot PASA. Solo pidió cambiar "Yen-Ping Hsueh y su equipo" por "y sus colegas" (fila 7), ya aplicado.
+
 Fuentes abiertas:
 - **[H13]** Hsueh, Y.-P., Mahanti, P., Schroeder, F. C. y Sternberg, P. W. (2013). Nematode-trapping fungi eavesdrop on nematode pheromones. *Current Biology* 23(1): 83–86 (en línea el 13 dic 2012). https://pmc.ncbi.nlm.nih.gov/articles/PMC4047969/
 - **[H17]** Hsueh, Y.-P. et al. (2017). Nematophagous fungus *Arthrobotrys oligospora* mimics olfactory cues of sex and food to lure its nematode prey. *eLife* 6: e20023. https://pmc.ncbi.nlm.nih.gov/articles/PMC5243009/
@@ -17,7 +19,7 @@ Fuentes abiertas:
 | 4 | Si le falta comida y detecta nematodos, cambia de plan | ✅ | [L23], [H13] | "nutritional starvation and the presence of nematodes trigger a switch towards predation, resulting in the formation of traps"; "occurs only under nutrient-deprived condition" | 2023 / 2013 |
 | 5 | Nematodos = gusanos diminutos (dibujo: *C. elegans* de ~1 mm) | ✅ | [C24] | "a microscopic (about 1 mm in length and 100 µm in diameter) worm" | 2024 |
 | 6 | Sus hilos se enroscan y forman redes pegajosas | ✅ | [H13], [L23] | "coil-like adhesive networks"; "adhesive nets are the most effective in capturing nematodes … and are most well studied in … Arthrobotrys oligospora" | 2013 / 2023 |
-| 7 | En Caltech, Yen-Ping Hsueh y su equipo | ✅ | [H13] | Autores: "Yen-Ping Hsueh … Howard Hughes Medical Institute and Division of Biology, California Institute of Technology, Pasadena" | 2013 |
+| 7 | En Caltech, Yen-Ping Hsueh y sus colegas (corregido; antes: "y su equipo": en 2013 era primera autora en el laboratorio de Paul W. Sternberg) | ✅ | [H13] | Autores: "Yen-Ping Hsueh, Parag Mahanti, Frank C Schroeder, Paul W Sternberg"; "Howard Hughes Medical Institute and Division of Biology, California Institute of Technology, Pasadena"; autor de correspondencia: Paul W Sternberg | 2013 |
 | 8 | Le dieron solo las moléculas que sueltan los gusanos (ascarósidos) | ✅ | [H13] | "we tested whether synthetic samples of ascarosides can induce trap morphogenesis"; "ascarosides, which are constitutively secreted by many species of soil-dwelling nematodes" | 2013 |
 | 9 | Sin gusanos, el hongo armó sus trampas: "los estaba espiando" | ✅ | [H13] | "several of the tested ascarosides had strong trap-inducing activity"; título: "Nematode-trapping fungi eavesdrop on nematode pheromones" (eavesdrop = espiar, escuchar a escondidas) | 2013 |
 | 9b | Pantalla: tarjeta "2013 · Current Biology" | ✅ | [H13] | *Current Biology* 23(1): 83–86, número de enero de 2013 (en línea desde dic 2012) | 2013 |
