@@ -157,7 +157,7 @@ function Orbita({ T, a, b }) {
     <path d="M 6 -16 L 40 0 L 6 16 Z" fill="#f2f5f8" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
     <path d="M -40 -10 L -54 -16 L -54 16 L -40 10 Z" fill="#9aa4ae" stroke={KC.ink} strokeWidth={4} />
   </g>;
-  const vuelta = Math.round(klerp(1, 34, kprog(T, a + 0.6, b - 0.4, kEase.suave)));
+  const vuelta = Math.round(klerp(12, 34, kprog(T, a + 0.6, b - 0.4, kEase.suave)));
   return <>
     <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1424, #1d1150)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
@@ -348,7 +348,7 @@ function LunaNarrado() {
       <Etq T={T} at={K.D + 1.7} until={K.Va - 0.3} x={650} y={760} texto="embrión" color="#b8e986" />
       <Medidor T={T} at={K.D + 3.6} until={K.Va - 0.3} etiqueta="AGUA EN LA SEMILLA" valor={(t) => 0.08 * kprog(t, K.D + 3.8, K.D + 4.6)} texto={() => 'muy poca'} y={1560} color={KC.cyan} />
       {/* vacío → germinaron */}
-      <MitoTachado T={T} at={K.Va + 3.6} tacharEn={K.I - 1.4} until={K.I - 0.3} texto="¿Muertas?" y={1560} />
+      <MitoTachado T={T} at={K.Va + 3.6} tacharEn={K.I - 1.4} until={K.I - 0.3} texto="¿Ya no sirven?" y={1560} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.2} until={K.V - 0.1} texto="No es un árbol cualquiera: *34 vueltas a la Luna.*" />
@@ -359,7 +359,7 @@ function LunaNarrado() {
       <Subtitulo T={T} idx={5} at={K.D + 0.1} until={K.D + 3.5} texto="Un *embrión dormido* con su comida y su cubierta." />
       <Subtitulo T={T} idx={6} at={K.D + 3.6} until={K.Va - 0.1} texto="Casi seca, *no gasta casi nada.*" />
       <Subtitulo T={T} idx={7} at={K.Va + 0.1} until={K.Va + 3.5} texto="Las bolsas reventaron: *al vacío.*" />
-      <Subtitulo T={T} idx={8} at={K.Va + 3.6} until={K.Es - 0.1} texto="Creyeron que *estaban muertas.*" />
+      <Subtitulo T={T} idx={8} at={K.Va + 3.6} until={K.Es - 0.1} texto="Temieron que *ya no germinaran.*" />
       <Subtitulo T={T} idx={9} at={K.Es + 0.1} until={K.I - 0.1} texto="Junto a semillas terrestres… *germinaron.*" />
       <Subtitulo T={T} idx={10} at={K.I + 0.1} until={K.L - 0.1} texto="40 años después: *ninguna diferencia.*" />
       <Subtitulo T={T} idx={11} at={K.L + 0.1} until={K.C - 0.1} texto="Unos 40 estados… *y nadie hizo la lista.*" />

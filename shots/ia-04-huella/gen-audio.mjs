@@ -1,7 +1,7 @@
 // gen-audio.mjs — cama grave + efectos del Shot IA #04 (lo que costó entrenar Llama 3). Sin costo: todo se calcula (audio-kit.mjs).
 // Uso: node gen-audio.mjs                               → assets/mezcla.wav (versión de revisión sin voz)
 //      node gen-audio.mjs <archivo.dc.html> <salida.wav>   (narrar.mjs: versión narrada)
-// El calendario suena con un tic por cada 50 años (878 años ≈ 18 tics); cada tarjeta que aparece suena al entrar.
+// El calendario suena con un tic por cada 50 años (730 años del modelo 70B ≈ 15 tics); cada tarjeta que aparece suena al entrar.
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mezcla } from './audio-kit.mjs';
@@ -15,7 +15,7 @@ const suave = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2)
 
 m.pad(0, Ou + 3.5, 0.05, [45, 52, 57]);
 m.motor(G + 0.2, 5.0, 0.04);                                                     // los ventiladores
-for (let a = 50; a < 878; a += 50) { let lo = 0, hi = 1; for (let i = 0; i < 25; i++) { const md = (lo + hi) / 2; if (suave(md) < a / 878.4) lo = md; else hi = md; } m.tic(G + 0.1 + lo * 5.4, 0.08, 1600 + a); }
+for (let a = 50; a < 730; a += 50) { let lo = 0, hi = 1; for (let i = 0; i < 25; i++) { const md = (lo + hi) / 2; if (suave(md) < a / 730.1) lo = md; else hi = md; } m.tic(G + 0.1 + lo * 5.4, 0.08, 1600 + a); }
 m.golpe(G + 5.5, 0.35, 70);
 m.nota(Ll + 0.3, 64, 0.07, 0.8); m.nota(Ll + 0.3, 69, 0.05, 0.8);
 m.sube(H + 0.2, 1.0, 45, 64, 0.05); m.golpe(H + 1.2, 0.3, 80);

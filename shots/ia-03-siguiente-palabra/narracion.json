@@ -3,11 +3,11 @@
   "velocidad": 1.121,
   "dcHtml": "Shot Siguiente Palabra base narrada.dc.html",
   "salida": "Shot Siguiente Palabra narrado.dc.html",
-  "nota": "Shot IA #03. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno (~964 créditos de ElevenLabs en una sola petición).",
+  "nota": "Shot IA #03. Una línea por subtítulo (idx 0..12 del jsx). 28 oct 2026: gancho y cierre corregidos por la verificación de hechos; la voz espera nueva aprobación de Robert (NO generar sin su visto bueno).",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Lo que te contesta un chatbot no es una idea completa: es una apuesta, pedacito por pedacito."
+      "texto": "Lo que te contesta un chatbot no sale de golpe: es una apuesta, pedacito por pedacito."
     },
     {
       "escena": "Corta",
@@ -55,7 +55,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que no pensó tu respuesta: la apostó, pedacito por pedacito."
+      "texto": "Así que no la escribió de golpe: la apostó, pedacito por pedacito."
     }
   ]
 }

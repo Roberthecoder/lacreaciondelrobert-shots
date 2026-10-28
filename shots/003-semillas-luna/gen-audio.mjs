@@ -51,13 +51,13 @@ metal(V + 0.45, 0.22); [0, 1, 2, 3].forEach((i) => nota(V + 0.95 + i * 0.18, ESC
 for (let i = 0; i < 5; i++) { nota(E + 0.42 + i * 0.62, ESC[2 + i * 2], 0.08, 0.9); tic(E + 0.4 + i * 0.62, 0.12, 3000); }
 // órbita: cada vuelta del contador, un toque; la nave pasa con un soplo
 whoosh(O, 0.9, 0.2);
-for (let k = 2; k <= 34; k++) tic(O + 0.6 + (P - 0.4 - O - 0.6) * cruce((k - 1.5) / 33), 0.07, 3200);
+for (let k = 13; k <= 34; k++) tic(O + 0.6 + (P - 0.4 - O - 0.6) * cruce((k - 12.5) / 22), 0.07, 3200);   // el contador va de la vuelta 12 (separación) a la 34
 for (let t = O + 0.4; t < P - 0.3; t += 2.62) whoosh(t, 1.0, 0.1);
 // pregunta y por dentro: la Lupa se abre; el embrión "late" lento (dormido)
 sube(P + 0.1, 1.6, 52, 64, 0.05);
 sube(D + 0.1, 0.6, 64, 79, 0.07); whoosh(D + 0.1, 0.6, 0.15);
 for (let t = D + 1.2; t < Va - 0.4; t += 2.4) latido(t, 0.2);
-// vacío: las bolsas revientan; "¿muertas?"
+// vacío: las bolsas revientan; "¿ya no sirven?"
 whoosh(Va, 0.8, 0.18); cruje(Va + 1.0, 0.7); golpe(Va + 3.6, 0.35, 60);
 // estudio: tarjeta, macetas, brotan las dos (misma nota a la vez: no hay diferencia)
 golpe(Es + 0.3, 0.4, 80); tic(Es + 3.3, 0.2, 1500); sube(I - 2.4, 1.8, 57, 69, 0.07); nota(I - 0.6, 69, 0.08, 1.2); nota(I - 0.6, 76, 0.06, 1.2);

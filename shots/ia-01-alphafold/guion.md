@@ -2,9 +2,10 @@
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #01 · rama `claude/lote-ia-01`.
 - **Estado (27 oct 2026):** guion, animación, Robert en pantalla y `publicacion.md` listos · versión de revisión sin voz en el Release "Borradores · claude/lote-ia-01" · **voz pendiente de aprobación de Robert** (~955 créditos).
+- **Verificación de hechos (28 oct 2026):** verificador independiente; ver `verificacion.md`. Cambios: líneas 2 y 9 corregidas (forma y función; "hay que comprobarlas") y línea 7 acortada. La voz aprobada antes ya no corresponde al texto: **espera nueva aprobación de Robert** (versión de revisión sin voz en la rama `claude/verif-main`).
 - **Formato:** N2 "El número" (214 millones) con viaje N1 (estambre → cuentas → forma → cerradura → el mismo estambre, ya entendido).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Esto no es un estambre enredado: es una proteína".
-- **Duración:** voz 955 caracteres / 173 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 957 caracteres (corregida el 28 oct 2026) (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Postura de la serie:** defendemos la IA con datos (y decimos su límite: son predicciones con nivel de confianza).
 
 ## Versión narrada
@@ -13,14 +14,14 @@
 |---|---|---|---|
 | 0 | Gancho | Esto no es un estambre enredado: es una proteína, y su forma la adivinó una inteligencia artificial. | Fondo rosa. Desde el cuadro 0 un "estambre" llega girando; a los 2.4 s se revela: son cuentas de colores (proteína). |
 | 1 | Collar | Una proteína es una cadena de piezas, los aminoácidos, como un collar de cuentas. | La madeja se estira en un collar de 40 cuentas con letras. |
-| 2 | Dobla | La cadena se dobla sola en una forma exacta, y esa forma es su trabajo. | Las cuentas se doblan una tras otra hasta la forma compacta. Chip "la forma = el trabajo". |
+| 2 | Dobla | La cadena se dobla en una forma precisa, y de esa forma depende su trabajo. | Las cuentas se doblan una tras otra hasta la forma compacta. Chip "de la forma depende el trabajo". |
 | 3 | Llave | Si la forma cambia, la llave ya no entra. | Llave (la proteína) que entra en su cerradura; luego cambia la punta y choca: ✗ roja. |
 | 4 | Rayos | Antes, la forma se veía haciendo cristales de la proteína y bombardeándolos con rayos X. | Fondo noche: rayo X que cruza un cristal y deja un patrón de puntos en la pantalla. |
 | 5 | Pregunta | ¿Y si en vez de verla, la adivinas? | **Re-gancho.** Signo "?" gigante; Robert grande, pensativo. |
 | 6 | Red | AlphaFold, de Google DeepMind, aprendió a predecir la forma leyendo solo la cadena de letras. | Fondo de circuito: las letras entran a una red neuronal; una onda la cruza y sale la forma doblada. |
-| 7 | Estudio | En 2021, el equipo de John Jumper explicó en la revista Nature cómo funciona, y liberó el programa. | Tarjeta "2021 · Jumper et al. · Google DeepMind · Nature". |
+| 7 | Estudio | En 2021, el equipo de John Jumper lo explicó en la revista Nature y liberó el programa. | Tarjeta "2021 · Jumper et al. · Google DeepMind · Nature". |
 | 8 | Base | Luego le dieron el catálogo mundial de proteínas: en 2022 ya eran 214 millones de formas, gratis. | Número gigante 214,000,000 ("formas predichas · 2022") y una cuadrícula que se llena de proteínas. |
-| 9 | Ojo | Ojo: son predicciones. Cada una trae su nivel de confianza, y las dudosas se revisan en el laboratorio. | La proteína se colorea: azul confiable, naranja dudosa. Chip "predicción ≠ medición". |
+| 9 | Ojo | Ojo: son predicciones. Cada una trae su nivel de confianza, y las dudosas hay que comprobarlas en el laboratorio. | La proteína se colorea: azul confiable, naranja dudosa. Chip "predicción ≠ medición". |
 | 10 | Pesa | Bajarlas todas pesa 23 tebibytes: no te caben en el celular. | "23 TiB": 23 discos duros se apilan; un celular parpadea "LLENO". |
 | 11 | Cierre | Así que ese estambre no es un enredo: es una llave, y ya conocemos su forma. | **Regreso a la imagen del inicio** (fondo rosa, la misma madeja) que vuelve a ser proteína y encaja en su cerradura. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert señalando. |
@@ -69,6 +70,10 @@ La red de esta sesión solo deja abrir GitHub; por eso cada cifra se verificó e
    - Artículo: Jumper, J. et al. "Highly accurate protein structure prediction with AlphaFold". *Nature* 596, 583–589 (2021).
 4. **Nivel de confianza de cada predicción** — mismo README:
    > "To rank model confidence, we use predicted LDDT (pLDDT) scores"
+
+5. **De su forma depende su trabajo (corregido el 28 oct 2026)** — Hartl, F. U., Bracher, A. y Hayer-Hartl, M. "Molecular chaperones in protein folding and proteostasis". *Nature* 475, 324–332 (2011), resumen en PubMed 21776078:
+   > "Most proteins must fold into defined three-dimensional structures to gain functional activity… cells invest in a complex network of molecular chaperones…"
+   - Por eso la voz ya no dice "se dobla sola" ni "esa forma es su trabajo".
 
 Sin cifras: que la forma de la proteína determina su función (llave–cerradura) y que antes se veía con cristalografía de rayos X son conceptos de libro de texto; se dicen sin números.
 

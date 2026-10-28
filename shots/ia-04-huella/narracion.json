@@ -3,11 +3,11 @@
   "velocidad": 1.093,
   "dcHtml": "Shot Huella IA base narrada.dc.html",
   "salida": "Shot Huella IA narrado.dc.html",
-  "nota": "Shot IA #04. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno (~963 créditos de ElevenLabs en una sola petición).",
+  "nota": "Shot IA #04. Una línea por subtítulo (idx 0..12 del jsx). 28 oct 2026: líneas 0, 2 y 12 corregidas por la verificación de hechos (730 años = solo el modelo 70B); la voz espera nueva aprobación de Robert (NO generar sin su visto bueno).",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Si a esta inteligencia artificial la hubiera entrenado una sola tarjeta de video, habría tardado casi ochocientos ochenta años."
+      "texto": "Si a esta inteligencia artificial la hubiera entrenado una sola tarjeta de video, habría tardado más de setecientos años."
     },
     {
       "escena": "Llama",
@@ -15,7 +15,7 @@
     },
     {
       "escena": "Horas",
-      "texto": "Entrenarla sumó 7.7 millones de horas de tarjetas H100."
+      "texto": "Sus dos versiones sumaron 7.7 millones de horas de tarjetas H100."
     },
     {
       "escena": "Muchas",
@@ -55,7 +55,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esa respuesta rápida tiene detrás casi ochocientos ochenta años de una tarjeta trabajando."
+      "texto": "Así que esa respuesta rápida tiene detrás más de setecientos años de una tarjeta trabajando."
     }
   ]
 }
