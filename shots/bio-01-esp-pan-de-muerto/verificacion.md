@@ -33,4 +33,8 @@ Verificador independiente (subagente que no escribió el guion), 28 oct 2026.
 
 Afirmaciones revisadas: 16 · corregidas: 3 · quitadas: 0.
 
+## Verificación independiente (28 oct 2026)
+
+Un segundo verificador (otro agente, que no escribió el guion) volvió a abrir las fuentes de todas las afirmaciones de la voz, la pantalla y `publicacion.md`. Resultado: **PASA**. No se marcó ninguna ❌ ni ⚠️ y no se cambió nada del shot.
+
 VEREDICTO: APROBADO

@@ -52,8 +52,9 @@ Apariciones: 8 · 35.1 s en pantalla (+ cierre 3.3 s) · 8 poses distintas.
    > "la más alta ocurrió entre 1996 y 1997 con 18.19 hectáreas" · "bosques de oyamel del Estado de México y Michoacán"
 3. **Llegan por Día de Muertos, desde Canadá y EUA; creencia de las almas** — Expansión, 20 oct 2025: https://expansion.mx/tendencias/2025/10/20/por-que-mariposas-monarca-son-almas-regresan-dia-de-muertos
    > "entre finales de octubre y principios de noviembre" · "tras recorrer miles de kilómetros desde Canadá y Estados Unidos" · "Las mariposas monarca fueron consideradas por los purépechas como portadoras del espíritu de quienes murieron"
-4. **Tataranieta; ninguna conoce el camino** — Journey North: https://archive.journeynorth.org/jnorth/tm/monarch/GenerationDevelopmentTime.html
-   > "The monarchs that migrate to Mexico this fall will be the great-great-grandchildren of those who left Mexico this spring."
+4. **Tataranieta; ninguna conoce el camino** — EarthDate (Bureau of Economic Geology, Universidad de Texas en Austin), "The Amazing Monarch Relay", ficha del episodio ED 153 (2019): https://www.earthdate.org/files/000/002/059/EarthDate_153_C.pdf
+   > "the returning butterflies are the great-great-grandchildren of the butterflies that left." · "It takes four or more generations of monarchs to fulfill their annual migration." (2019)
+   - Hasta el 27 oct aquí se citaba una página de Journey North; la verificación independiente del 28 oct encontró que esa frase no estaba en la página citada (es una hoja de ejercicios) y se cambió la fuente.
 5. **Brújula de sol y reloj en las antenas** — Merlin, Gegear y Reppert, *Science* (2009): https://pmc.ncbi.nlm.nih.gov/articles/PMC2754321/
    > "they likely provide the primary timing mechanism for sun compass orientation"
 6. **Se mide el bosque que cubren; tala ilegal; clima extremo** — Expansión, 17 mar 2026: https://politica.expansion.mx/mexico/2026/03/17/ocupacion-de-la-mariposa-monarca-en-mexico-crece-64-en-la-temporada-2025-2026

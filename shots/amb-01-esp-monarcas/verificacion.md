@@ -8,7 +8,7 @@ Verificador independiente (subagente que no escribió el guion), 28 oct 2026. wo
 | Vienen de Canadá y Estados Unidos | ✅ | ídem | "tras recorrer miles de kilómetros desde Canadá y Estados Unidos" | 2025 |
 | Bosques de oyamel de Michoacán y Estado de México | ✅ | excelsior.com.mx/nacional/mariposa-monarca-ocupo-mas-hectareas-ano-pasado-mexico | "bosques de oyamel del Estado de México y Michoacán" | 2026 |
 | En algunos pueblos se dice que traen las almas de los difuntos | ✅ (creencia, dicha como tal) | Expansión 2025 | "Las mariposas monarca fueron consideradas por los purépechas como portadoras del espíritu de quienes murieron" | 2025 |
-| Ninguna ha hecho el viaje antes | ✅ | archive.journeynorth.org/jnorth/tm/monarch/GenerationDevelopmentTime.html | "it's the final generation that migrates to Mexico in the fall." | s/f |
+| Ninguna ha hecho el viaje antes | ✅ (fuente cambiada el 28 oct, ver abajo) | EarthDate ED 153, Univ. de Texas en Austin: earthdate.org/files/000/002/059/EarthDate_153_C.pdf | "they'll make the entire 3,000-mile journey to Mexico—where they'll seek out the same mountaintops as their great-great-grandparents." | 2019 |
 | "Bisnieta o tataranieta" | ⚠️ → corregida | ídem | — | — |
 | Se orientan con el Sol | ✅ | pmc.ncbi.nlm.nih.gov/articles/PMC2754321/ (Merlin, Gegear y Reppert, Science) | "time-compensated sun compass orientation in migratory monarch butterflies" | 2009 |
 | Reloj interno en las antenas | ✅ | ídem | "they likely provide the primary timing mechanism for sun compass orientation" | 2009 |
@@ -24,10 +24,32 @@ Verificador independiente (subagente que no escribió el guion), 28 oct 2026. wo
 
 | Afirmación corregida | Veredicto | Fuente | Frase textual | Año |
 |---|---|---|---|---|
-| "Ninguna ha hecho el viaje antes: es tataranieta de las que se fueron en primavera." | ✅ | Journey North | "will be the great-great-grandchildren of those who left Mexico this spring." | s/f |
+| "Ninguna ha hecho el viaje antes: es tataranieta de las que se fueron en primavera." | ✅ (fuente cambiada el 28 oct, ver abajo) | EarthDate ED 153 (Bureau of Economic Geology, Univ. de Texas en Austin) | "the returning butterflies are the great-great-grandchildren of the butterflies that left." | 2019 |
 | "…en el invierno de 1996 a 1997 cubrieron más de 18 hectáreas: seis veces más." | ✅ | Excélsior 2026 | "18.19 hectáreas" | 1996–1997 |
 | "…el veneno de la planta se les queda: las vuelve amargas para los pájaros." | ✅ | Science Friday 2013 | "cardiac glycosides that the insects absorb" | 2013 |
 
 Afirmaciones revisadas: 15 · corregidas: 3 · quitadas: 0.
+
+## Verificación independiente (28 oct 2026)
+
+Un segundo verificador (otro agente, que no escribió el guion) abrió las fuentes. Resultado: **PASA en la voz**; hubo que arreglar una fuente y una frase de LinkedIn.
+
+**Lo que se marcó:**
+- ⚠️ La cita "The monarchs that migrate to Mexico this fall will be the great-great-grandchildren…" **no está** en la página de Journey North que se citaba (es una hoja de ejercicios). La afirmación es correcta, pero la fuente no la decía.
+- ⚠️ LinkedIn: "(la única planta que comen sus orugas)" — el algodoncillo son varias especies (*Asclepias*).
+- Nota del verificador: el número de generaciones varía de año en año («normalmente» tataranieta). La fuente nueva lo dice así: "four or more generations". La voz se deja igual (es lo que dice la fuente y no hace falta volver a renderizar); si Robert quiere el matiz, la frase sería «…normalmente es tataranieta de las que se fueron en primavera.».
+
+**Cómo se corrigió:**
+- Fuente cambiada en `guion.md`, en esta tabla y en `publicacion.md` (TikTok, YouTube y comentario fijado) por EarthDate.
+- LinkedIn: "(el único tipo de planta que comen sus orugas)".
+
+**Re-verificación** (la sesión que corrigió abrió el PDF de EarthDate):
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| "es tataranieta de las que se fueron en primavera" | ✅ | EarthDate (Bureau of Economic Geology, Universidad de Texas en Austin), "The Amazing Monarch Relay", ficha ED 153: https://www.earthdate.org/files/000/002/059/EarthDate_153_C.pdf | "the returning butterflies are the great-great-grandchildren of the butterflies that left." | 2019 |
+| "Ninguna ha hecho el viaje antes" | ✅ | ídem | "Before winter arrives, they'll make the entire 3,000-mile journey to Mexico—where they'll seek out the same mountaintops as their great-great-grandparents." | 2019 |
+| (matiz) el número de generaciones varía | ✅ | ídem | "It takes four or more generations of monarchs to fulfill their annual migration." | 2019 |
+| LinkedIn: "el único tipo de planta que comen sus orugas" (algodoncillo, varias especies de *Asclepias*) | ✅ | sciencefriday.com/articles/the-case-of-the-barfing-blue-jay/ (fila de las orugas, arriba) | "Monarchs feed on milkweeds" (en plural: varias especies) | ver arriba |
 
 VEREDICTO: APROBADO
