@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #01 · Especial Día de Muertos: Las calaveritas de azúcar se arman solas
+# Publicación · Shot Químico #01 · Especial Día de Muertos: Las calaveritas de azúcar son cristales
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 2 nov 2026.
 

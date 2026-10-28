@@ -1,4 +1,4 @@
-# Shot Químico #01 · Especial Día de Muertos: Las calaveritas de azúcar se arman solas
+# Shot Químico #01 · Especial Día de Muertos: Las calaveritas de azúcar son cristales
 
 - **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #01 · **Especial:** Día de Muertos (se publica el 2 nov 2026) · rama `claude/especiales-muertos`.
 - **Estado (28 oct 2026):** guion verificado (`verificacion.md`: APROBADO), animación, Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert** (~949 créditos).
