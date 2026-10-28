@@ -1,0 +1,19 @@
+name: Probar conexión con Meta (solo lectura)
+on: workflow_dispatch
+permissions: {}
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Revisar el token META_SYSTEM_TOKEN (no publica nada)
+        env:
+          T: ${{ secrets.META_SYSTEM_TOKEN }}
+        run: |
+          if [ -z "$T" ]; then echo "::error::Falta el secreto META_SYSTEM_TOKEN"; exit 1; fi
+          G=https://graph.facebook.com/v23.0
+          echo "== Quién soy"; curl -s "$G/me?fields=id,name&access_token=$T" | jq '{id,name,error:.error.message}'
+          echo "== Permisos del token"
+          curl -s "$G/me/permissions?access_token=$T" | jq -r '.data[]? | "\(.permission): \(.status)"'
+          echo "== Páginas e Instagram vinculados"
+          curl -s "$G/me/accounts?fields=id,name,instagram_business_account%7Bid,username%7D&access_token=$T" \
+            | jq '[.data[]? | {pagina:.name, pagina_id:.id, instagram:.instagram_business_account.username, instagram_id:.instagram_business_account.id}], .error.message'
