@@ -50,7 +50,8 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - **RECORDARLE al terminar la configuración de las API de redes:** cancelar la prueba gratuita de un mes de Meta Verified
   (verificación de Instagram/Facebook) antes de que se renueve y cobre. Lo pidió el 28 oct.
 - API de Meta en curso (28 oct): app "La Creación del Robert" (id 1845140663182541) con casos de uso Threads, Instagram y Página.
-  Instagram ya es profesional (Creador). Sitio con privacidad y términos: https://roberthecoder.github.io/lacreaciondelrobert-shots/
+  Instagram ya es profesional (Creador). Página de Facebook creada: «La Creación del Robert» (id 61595680034985,
+  categoría Ciencia, tecnología e ingeniería). Siguiente: vincular Instagram a la página y sacar los tokens. Sitio con privacidad y términos: https://roberthecoder.github.io/lacreaciondelrobert-shots/
   Tokens y claves: SIEMPRE como secretos de GitHub, nunca en el chat.
 - Comprar créditos de ElevenLabs.
 - Pedir acceso a las API de redes (se le dio un PDF con instrucciones el 28 oct).
