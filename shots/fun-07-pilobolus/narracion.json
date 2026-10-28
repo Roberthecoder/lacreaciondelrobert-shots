@@ -1,0 +1,21 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Pilobolus base narrada.dc.html",
+  "salida": "Shot Pilobolus narrado.dc.html",
+  "nota": "Shot Fungi Mati #07. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa gotita sobre la caca de vaca no es rocío: es un cañón que dispara esporas." },
+    { "escena": "Hongo", "texto": "Es el hongo Pilobolus: vive en el estiércol de animales que comen pasto." },
+    { "escena": "Apunta", "texto": "Capítulo uno: apunta. Su ampolla funciona como lente, y lo voltea hacia la luz más brillante." },
+    { "escena": "Carga", "texto": "Capítulo dos: carga. La ampolla se llena de líquido, y la presión sube." },
+    { "escena": "Dispara", "texto": "Capítulo tres: ¡dispara! Revienta y lanza su bolsita negra llena de esporas." },
+    { "escena": "Pregunta", "texto": "¿Y qué tan rápido sale esa bolsita?" },
+    { "escena": "Estudio", "texto": "En 2008, en Estados Unidos, lo filmaron a cincuenta mil cuadros por segundo." },
+    { "escena": "Velocidad", "texto": "La bolsita salió hasta a trece metros por segundo: unos cuarenta y siete kilómetros por hora." },
+    { "escena": "Gravedad", "texto": "Y al despegar aceleró más de veinte mil veces la gravedad." },
+    { "escena": "Distancia", "texto": "Vuela hasta dos metros y medio, lejos de la caca, al pasto limpio." },
+    { "escena": "Vaca", "texto": "Ahí una vaca se la come, y sus esporas necesitan pasar por la panza para despertar." },
+    { "escena": "Polizon", "texto": "Y a veces lleva polizones: larvas del gusano del pulmón de las vacas." },
+    { "escena": "Cierre", "texto": "Así que esa gotita no era rocío: era un cañón apuntando al sol." }
+  ]
+}

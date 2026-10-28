@@ -1,0 +1,22 @@
+{ "temas": [
+  { "id": "armillaria-gigante", "titulo": "El hongo gigante escondido bajo el bosque: un solo Armillaria ostoyae de 965 ha (Oregón, 2003)", "serie": "Shot Fungi Mati", "numero": 5,
+    "estado": "renderizado", "carpeta": "shots/fun-05-armillaria", "rama": "claude/igualar-fungi-mati",
+    "fuentes": ["Ferguson et al. 2003, Can. J. For. Res. 33: 612–623 (https://zenodo.org/record/1235905)", "Baumgartner et al. 2011, Mol. Plant Pathol. 12(6): 515–534 (PMC6640247)"],
+    "fecha": "2026-10-28", "derivados": ["Madera que brilla de noche: la bioluminiscencia de Armillaria y Mycena", "Pando: el álamo que es un solo individuo (clones gigantes de plantas)", "Cómo se pudre la madera: hongos de pudrición blanca y café"] },
+  { "id": "hongo-cazador-gusanos", "titulo": "El hongo que caza gusanos con redes pegajosas (Arthrobotrys oligospora, ascarósidos 2013 y olores 2017)", "serie": "Shot Fungi Mati", "numero": 6,
+    "estado": "renderizado", "carpeta": "shots/fun-06-cazador", "rama": "claude/igualar-fungi-mati",
+    "fuentes": ["Hsueh et al. 2013, Curr. Biol. 23: 83–86 (PMC4047969)", "Hsueh et al. 2017, eLife 6: e20023 (PMC5243009)", "Lin et al. 2023, PLoS Biol. 21: e3002400 (PMC10662756)"],
+    "fecha": "2026-10-28", "derivados": ["El anillo que estrangula: Drechslerella y su trampa que se cierra", "El hongo ostra también caza gusanos (Pleurotus y su toxina)", "C. elegans: el gusano de 1 mm que ganó varios premios Nobel"] },
+  { "id": "pilobolus-canon", "titulo": "El cañón de esporas que vive en la caca de vaca (Pilobolus: 13 m/s, +20,000 g, 2.5 m)", "serie": "Shot Fungi Mati", "numero": 7,
+    "estado": "renderizado", "carpeta": "shots/fun-07-pilobolus", "rama": "claude/igualar-fungi-mati",
+    "fuentes": ["Yafetto et al. 2008, PLoS ONE 3: e3237 (PMC2528943)", "Viriato 2008, Acta Bot. Bras. 22(3)", "Souza et al. 2017, Braz. J. Microbiol. 48: 79–86 (PMC5220632)", "Eysker 1991, Res. Vet. Sci. 50: 29–32"],
+    "fecha": "2026-10-28", "derivados": ["Cómo sale disparada la espora de un champiñón (la gota de Buller)", "El hongo artillero (Sphaerobolus) que mancha coches y casas", "Hongos que solo germinan después de pasar por un animal (coprófilos)"] },
+  { "id": "pie-de-atleta", "titulo": "Pie de atleta: el hongo que se come tu queratina (Trichophyton; zapatos húmedos, Osaka 2019)", "serie": "Shot Fungi Mati", "numero": 8,
+    "estado": "renderizado", "carpeta": "shots/fun-08-pie-atleta", "rama": "claude/igualar-fungi-mati",
+    "fuentes": ["Leung et al. 2023, Drugs Context 12: 2023-5-1 (PMC10321471)", "Sasagawa 2019, J. Dermatol. 46(11): 940–946 (PMC6900014)"],
+    "fecha": "2026-10-28", "derivados": ["Hongos en las uñas: por qué tardan tanto en quitarse", "La caspa y Malassezia: el hongo que vive en tu cabeza", "Candida: la levadura que vive en tu boca y tu intestino"] },
+  { "id": "amanita-mortal", "titulo": "La cuchara de plata no te salva: Amanita phalloides y las amatoxinas (California 2016)", "serie": "Shot Fungi Mati", "numero": 9,
+    "estado": "renderizado", "carpeta": "shots/fun-09-amanita", "rama": "claude/igualar-fungi-mati",
+    "fuentes": ["Vo et al. 2017, MMWR 66(21): 549–553 (PMC5657817)", "Kayes y Ho 2024, Int. J. Mol. Sci. 25(23): 13028 (PMC11640968)", "Instituto Nacional de Toxicología y Ciencias Forenses (España), Prevención de intoxicaciones por setas"],
+    "fecha": "2026-10-28", "derivados": ["El hongo de paja y su gemelo mortal: por qué se confunden", "Amanita muscaria: el hongo de los cuentos (rojo con puntos blancos)", "Cómo trabaja un micólogo para identificar un hongo"] }
+] }
