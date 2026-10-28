@@ -57,3 +57,18 @@ Para agregar un dato: escríbelo aquí con ❓, y solo Robert lo cambia a ✅.
 - ❓ Comida favorita, manías, qué hace cuando un experimento falla, a qué le tiene miedo, su frase de cierre
   ("Que tengas un magnífico día, una magnífica semana…": ✅ ya la usa).
 - ❓ Cosas que nadie sabe de él, la peor contaminación que ha tenido, el experimento del que más se ríe.
+
+## Contados por Robert el 28 oct 2026 (para el video core)
+- ✅ Empezó vendiendo plantas que cultivaba desde semilla afuera de un ciber que tenían sus papás.
+- ✅ Cuando lo vieron (de unos 5–6 años, ❓ edad exacta) cargando una planta de papaya en un bote reusado de detergente de 20 L,
+  lo guiaron (❓ quién) y desde ahí vendió cactus, suculentas y plantas carnívoras en los tianguis por muchos años, hasta que la
+  pandemia lo detuvo.
+- ✅ Ganó una tablet en un concurso de Gandhi (❓ qué concurso y año); con ella, en tercero de primaria, abrió un canal de YouTube.
+  Hizo 2 videos: uno de jitomate (aún visible) y uno de maíz pozolero morado (perdido al pasar el canal de la cuenta de su papá a la
+  suya). Su inspiración era "la Huertina de Toni" (❓ escritura exacta del nombre del canal).
+- ✅ La buena preparación de su mamá en kínder y primaria baja lo llevó a destacar en matemáticas.
+- ✅ Oro en la ONMAPS regional de Jalisco 2017 y 2018; en la OMMEB nacional 2017 quedó a un punto del oro.
+- ✅ En prepa: intentó el grupo estudiantil PAS (❓ qué era y qué pasó), atletismo de 1.º a 4.º semestre y natación en 6.º.
+- ✅ Hoy: intenta emprender con los hongos sobre bagazo de agave, quiere crecer como creador de contenido ("delirios de influencer",
+  en sus palabras), se esfuerza mucho por su promedio, forma parte de fellowships internacionales y dirige un grupo estudiantil
+  (❓ cuál).
