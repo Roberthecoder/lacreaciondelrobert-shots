@@ -1,0 +1,20 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Atardecer Marte base narrada.dc.html",
+  "salida": "Shot Atardecer Marte narrado.dc.html",
+  "nota": "Shot Científico #09. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Hay un atardecer azul que nadie ha visto en persona: el de Marte." },
+    { "escena": "Tierra", "texto": "Aquí en la Tierra, de día el cielo es azul y el atardecer es rojo." },
+    { "escena": "Dispersa", "texto": "Porque el aire desvía más la luz azul, y de día la reparte por todo el cielo." },
+    { "escena": "Rojo", "texto": "Al atardecer, la luz cruza más aire: el azul se pierde en el camino y te llegan el rojo y el amarillo." },
+    { "escena": "Pregunta", "texto": "¿Y en Marte?" },
+    { "escena": "Polvo", "texto": "Allá, un polvo finísimo que flota en el aire pinta el cielo de rojizo." },
+    { "escena": "Pasa", "texto": "Pero ese mismo polvo deja pasar mejor la luz azul y la mantiene cerca del Sol." },
+    { "escena": "Halo", "texto": "Por eso, al atardecer, alrededor del Sol aparece un halo azul, y el resto del cielo sigue rojizo." },
+    { "escena": "Estudio", "texto": "El quince de abril de 2015, el rover Curiosity de la NASA lo fotografió en el cráter Gale: su primer atardecer a color." },
+    { "escena": "Camara", "texto": "Su cámara ve los colores casi como tus ojos, aunque es un poco menos sensible al azul." },
+    { "escena": "Sol", "texto": "Y desde Marte, el Sol se ve más chico: como dos tercios de lo que lo ves desde aquí." },
+    { "escena": "Cierre", "texto": "Así que en tu próximo atardecer rojo, piensa que en Marte, junto al Sol, el atardecer es azul." }
+  ]
+}

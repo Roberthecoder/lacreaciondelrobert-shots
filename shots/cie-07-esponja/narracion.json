@@ -1,0 +1,20 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Esponja base narrada.dc.html",
+  "salida": "Shot Esponja narrado.dc.html",
+  "nota": "Shot Científico #07. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esto no es una esponja: es un edificio de departamentos para bacterias." },
+    { "escena": "Cubito", "texto": "En un cubito de un centímetro, en algunas zonas, calcularon hasta cincuenta y cuatro mil millones." },
+    { "escena": "Estudio", "texto": "Lo vieron en Alemania, en un estudio publicado en 2017, con catorce esponjas usadas de casas de verdad." },
+    { "escena": "Adn", "texto": "Leyeron su ADN y encontraron trescientos sesenta y dos grupos de bacterias." },
+    { "escena": "Huecos", "texto": "Viven en los huecos y en la superficie, pegadas en capas, como una película." },
+    { "escena": "Pregunta", "texto": "¿Y si la lavas con agua caliente o la metes al micro?" },
+    { "escena": "Igual", "texto": "En las cuatro que compararon, las que limpiaban así no tenían menos bacterias." },
+    { "escena": "Moraxella", "texto": "Y en ellas había más Moraxella osloensis, famosa por dejar oliendo feo la ropa lavada." },
+    { "escena": "Olor", "texto": "Los autores sospechan que también es culpable del olor de tu esponja." },
+    { "escena": "Regresan", "texto": "Hervirla o el micro sí bajan las bacterias, pero creen que las que sobreviven vuelven a llenarla." },
+    { "escena": "Consejo", "texto": "Su consejo: cámbiala seguido, por ejemplo, cada semana." },
+    { "escena": "Cierre", "texto": "Así que esa esponja que se ve limpia es un edificio lleno. Dale fecha de caducidad." }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Cosquillas base narrada.dc.html",
+  "salida": "Shot Cosquillas narrado.dc.html",
+  "nota": "Shot Científico #05. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Intenta hacerte cosquillas. No puedes, y no es falta de técnica: tu cerebro te está ganando." },
+    { "escena": "Prediccion", "texto": "Cada vez que mueves la mano, tu cerebro predice qué vas a sentir." },
+    { "escena": "Volumen", "texto": "Si el toque llega justo como lo predijo, le baja el volumen." },
+    { "escena": "Menos", "texto": "Por eso tu propio toque se siente menos intenso, menos cosquilludo y menos agradable." },
+    { "escena": "Pregunta", "texto": "¿Y si engañas a tu cerebro?" },
+    { "escena": "Estudio", "texto": "En 1999, en Londres, Sarah-Jayne Blakemore lo probó con dos robots." },
+    { "escena": "Robots", "texto": "Con una mano movías un brazo robótico, y otro robot te rozaba la palma de la otra mano." },
+    { "escena": "Copia", "texto": "Si el robot copiaba tu movimiento al instante, se sentía como tu propio toque." },
+    { "escena": "Retraso", "texto": "Pero con un retraso o un desvío, las cosquillas regresaban: más retraso, más cosquillas." },
+    { "escena": "Cerebelo", "texto": "Y en un escáner cerebral, el cerebelo parecía ser el que hace esa predicción y apaga la sensación." },
+    { "escena": "Ratas", "texto": "Hasta las ratas: chillan en ultrasonido cuando les haces cosquillas, pero cuando se tocan solas, casi no." },
+    { "escena": "Cierre", "texto": "Así que no es falta de técnica: tu cerebro conoce tu mano demasiado bien. Para las cosquillas, necesitas a alguien más." }
+  ]
+}

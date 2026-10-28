@@ -1,0 +1,20 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Estatura base narrada.dc.html",
+  "salida": "Shot Estatura narrado.dc.html",
+  "nota": "Shot Científico #08. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantaste." },
+    { "escena": "Discos", "texto": "No te encoges tú: se aplastan los cojines que hay entre tus vértebras." },
+    { "escena": "Agua", "texto": "Con tu peso encima todo el día, se adelgazan y, muy probablemente, pierden agua." },
+    { "escena": "Estudio", "texto": "En 1985 midieron a ocho jóvenes, al milímetro: en promedio, perdían diecinueve milímetros al día." },
+    { "escena": "Hora", "texto": "Y más de la mitad se iba en la primera hora después de levantarse." },
+    { "escena": "Noche", "texto": "En la noche, acostado, los discos se vuelven a inflar." },
+    { "escena": "Liverpool", "texto": "En Liverpool, con resonancia magnética, vieron que los de la espalda baja ganan volumen mientras duermes." },
+    { "escena": "Pregunta", "texto": "¿Y si no hubiera peso?" },
+    { "escena": "Espacio", "texto": "En la Estación Espacial, los astronautas crecen hasta tres por ciento: nada aplasta su columna." },
+    { "escena": "Cuenta", "texto": "En alguien de un metro setenta, eso son unos cinco centímetros." },
+    { "escena": "Regreso", "texto": "Al volver a la Tierra, regresan a su estatura normal. Y el dolor de espalda es una queja común allá arriba." },
+    { "escena": "Cierre", "texto": "Así que si quieres saber tu estatura más alta, mídete en la mañana. Y si quieres crecer más, bueno, vete al espacio." }
+  ]
+}
