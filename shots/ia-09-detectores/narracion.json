@@ -1,0 +1,48 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Detectores base narrada.dc.html",
+  "salida": "Shot Detectores narrado.dc.html",
+  "nota": "Shot IA #09. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Escribiste tu ensayo en inglés tú solo y un detector dice que lo hizo una IA. En una prueba con no nativos, pasó seis de cada diez veces."
+    },
+    {
+      "escena": "Nativos",
+      "texto": "Con ensayos de estudiantes de secundaria de Estados Unidos, casi no se equivocaron."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo midieron en Stanford en 2023: siete detectores populares y noventa y un ensayos del examen TOEFL."
+    },
+    {
+      "escena": "Marcas",
+      "texto": "Al menos un detector marcó como IA casi todos: noventa y ocho por ciento. Los siete a la vez, uno de cada cinco."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Por qué se equivocan justo contigo?"
+    },
+    {
+      "escena": "Predecible",
+      "texto": "Muchos detectores medían qué tan predecible es un texto: si usabas palabras comunes y frases sencillas, parecías IA."
+    },
+    {
+      "escena": "Prueba",
+      "texto": "Lo comprobaron: con palabras más rebuscadas, esos ensayos bajaron de sesenta y uno a doce por ciento de errores."
+    },
+    {
+      "escena": "Trampa",
+      "texto": "Y al revés: textos de ChatGPT con lenguaje más literario casi nunca fueron detectados."
+    },
+    {
+      "escena": "Riesgo",
+      "texto": "Los autores piden no usarlos para evaluar estudiantes, sobre todo si el inglés no es su idioma."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que si un detector acusa tu ensayo, recuerda: escribir sencillo no es hacer trampa."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+ "temas": [
+  {
+   "id": "ia-panda-adversario",
+   "titulo": "Ejemplos adversarios: un ruido invisible convierte un panda en gibón para la IA (Goodfellow 2014) y estampas en un alto (Eykholt 2017)",
+   "serie": "Shot IA",
+   "numero": 6,
+   "estado": "renderizado",
+   "carpeta": "shots/ia-06-panda",
+   "rama": "claude/igualar-ia",
+   "fecha": "2026-10-28",
+   "fuentes": [
+    "Goodfellow, Shlens y Szegedy, arXiv:1412.6572 (2014; ICLR 2015): panda 57.7% → gibbon 99.3%, ε .007; error 89.4% → 17.9% con entrenamiento adversario",
+    "Eykholt et al., arXiv:1707.08945 (2017; CVPR 2018): estampas en un alto, 100% en laboratorio y 84.8% de cuadros desde un auto en marcha"
+   ],
+   "derivados": [
+    "La tortuga impresa en 3D que una IA ve como rifle (Athalye et al., 2018)",
+    "Lentes 'adversarios' que engañan al reconocimiento facial",
+    "Envenenar los datos de entrenamiento: cuántas imágenes falsas bastan"
+   ]
+  },
+  {
+   "id": "ia-prueba-turing",
+   "titulo": "La prueba de Turing: la gente creyó que GPT-4.5 (con personaje) era el humano 73 % de las veces (Jones y Bergen, PNAS 2026)",
+   "serie": "Shot IA",
+   "numero": 7,
+   "estado": "renderizado",
+   "carpeta": "shots/ia-07-turing",
+   "rama": "claude/igualar-ia",
+   "fecha": "2026-10-28",
+   "fuentes": [
+    "Jones y Bergen, PNAS 123(21) e2524472123 (mayo 2026), PMC13214042: GPT-4.5 con personaje 73%, sin personaje 36%, ELIZA 23%, 1,023 partidas, GPT-5 59% en 15 min",
+    "Jones y Bergen, arXiv:2503.23674 (2025): Turing (1950), juego de imitación"
+   ],
+   "derivados": [
+    "ELIZA (1966): el primer chatbot y el efecto ELIZA",
+    "Cómo saber si chateas con una IA: estrategias que sí funcionan",
+    "Las voces clonadas y las llamadas falsas"
+   ]
+  },
+  {
+   "id": "ia-mamografias-masai",
+   "titulo": "IA en las mamografías: 44 % menos lecturas y más cáncer encontrado (ensayo MASAI, Suecia: 6.4 vs 5.0 por mil; Lancet 2026)",
+   "serie": "Shot IA",
+   "numero": 8,
+   "estado": "renderizado",
+   "carpeta": "shots/ia-08-mamografias",
+   "rama": "claude/igualar-ia",
+   "fecha": "2026-10-28",
+   "fuentes": [
+    "Lång et al., Lancet Oncol 24:936–944 (2023): escala 1–10, lectura simple 1–9 y doble 10",
+    "Hernström et al., Lancet Digit Health 7:e175–e183 (2025): 105,934 mujeres, 6.4 vs 5.0 por mil, −44.2 % lecturas",
+    "Gommers et al., Lancet 407:505–514 (2026): cánceres de intervalo 1.55 vs 1.76 por mil",
+    "MedlinePlus: Mamografía"
+   ],
+   "derivados": [
+    "La IA que lee radiografías de tórax para tuberculosis (OMS)",
+    "Retinopatía diabética: la IA que revisa el fondo de ojo",
+    "¿Quién es responsable si la IA médica se equivoca?"
+   ]
+  },
+  {
+   "id": "ia-detectores-no-nativos",
+   "titulo": "Detectores de IA que acusan a quien escribe en inglés como segunda lengua: 61.3 % de falsos positivos con ensayos TOEFL (Liang et al., Stanford, 2023)",
+   "serie": "Shot IA",
+   "numero": 9,
+   "estado": "renderizado",
+   "carpeta": "shots/ia-09-detectores",
+   "rama": "claude/igualar-ia",
+   "fecha": "2026-10-28",
+   "fuentes": [
+    "Liang, Yuksekgonul, Mao, Wu y Zou, Patterns 4(7):100779 (2023), PMC10382961: 7 detectores, 91 ensayos TOEFL, FPR promedio 61.3 %, 97.8 % al menos uno, 19.8 % los siete, 61.3 → 11.6 % con vocabulario enriquecido"
+   ],
+   "derivados": [
+    "Perplejidad: cómo mide una IA qué tan sorprendente es un texto",
+    "Marcas de agua en texto de IA: ¿se pueden detectar de verdad?",
+    "¿Usar IA para mejorar tu inglés es trampa? Lo que dicen las universidades"
+   ]
+  }
+ ]
+}

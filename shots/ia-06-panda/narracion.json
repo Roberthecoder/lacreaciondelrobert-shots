@@ -1,0 +1,48 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Panda base narrada.dc.html",
+  "salida": "Shot Panda narrado.dc.html",
+  "nota": "Shot IA #06. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Para una IA de Google, esto no es un panda: es un gibón. Y está noventa y nueve por ciento segura."
+    },
+    {
+      "escena": "Antes",
+      "texto": "Antes del truco decía «panda», con apenas cincuenta y ocho por ciento."
+    },
+    {
+      "escena": "Ruido",
+      "texto": "Solo le sumaron este ruido, tan tenue que tus ojos nunca lo van a ver."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo se equivoca con algo que ni se ve?"
+    },
+    {
+      "escena": "Suma",
+      "texto": "Porque la IA no ve un animal: suma miles de números. Muchos empujoncitos al mismo lado hacen un brinco enorme."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo explicaron en 2014 Ian Goodfellow y dos colegas de Google: se llaman ejemplos adversarios."
+    },
+    {
+      "escena": "Alto",
+      "texto": "Y funcionan fuera de la pantalla: en 2017, otro equipo pegó estampas blancas y negras en un alto."
+    },
+    {
+      "escena": "Auto",
+      "texto": "Una IA de señales lo leyó como «límite cuarenta y cinco» en todas las fotos de laboratorio, y en casi ochenta y cinco de cada cien cuadros desde un auto en marcha."
+    },
+    {
+      "escena": "Defensa",
+      "texto": "¿La defensa? Entrenarla con engaños: en una prueba, sus errores bajaron de ochenta y nueve a dieciocho por ciento. Pero no llegan a cero."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que si una IA te dice que está segurísima, recuerda: tú sigues viendo un panda."
+    }
+  ]
+}

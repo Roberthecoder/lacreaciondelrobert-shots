@@ -1,0 +1,52 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Turing base narrada.dc.html",
+  "salida": "Shot Turing narrado.dc.html",
+  "nota": "Shot IA #07. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "En un chat de cinco minutos, la gente creyó que esta IA era la humana setenta y tres de cada cien veces. Al humano real, solo veintisiete."
+    },
+    {
+      "escena": "Juego",
+      "texto": "Así funciona: chateas a la vez con dos desconocidos. Uno es persona; el otro, máquina."
+    },
+    {
+      "escena": "Turing",
+      "texto": "Es la prueba que propuso Alan Turing en 1950: si no los distingues, la máquina pasa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuál fue el truco?"
+    },
+    {
+      "escena": "Personaje",
+      "texto": "Le pidieron actuar como un joven reservado, que sabe de internet y habla con jerga."
+    },
+    {
+      "escena": "Sin",
+      "texto": "Sin ese personaje, la misma IA, GPT-4.5, convenció solo treinta y seis de cada cien."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo publicaron en 2026 Cameron Jones y Benjamin Bergen, en San Diego: más de mil partidas."
+    },
+    {
+      "escena": "Eliza",
+      "texto": "Para comparar, ELIZA, un chatbot de los sesenta, convenció veintitrés de cada cien."
+    },
+    {
+      "escena": "Pista",
+      "texto": "¿Qué sirvió para cacharla? Decir algo muy raro. Preguntar por el clima fue de lo que menos sirvió."
+    },
+    {
+      "escena": "Riesgo",
+      "texto": "Y en chats de quince minutos, GPT-5 también pasó. Los autores advierten: puede usarse para engañar y desinformar."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Antes de confiar en un desconocido del chat, piénsalo: quizá el humano era el de al lado."
+    }
+  ]
+}
