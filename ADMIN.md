@@ -36,3 +36,15 @@ de hechos antes de animar, voz solo con su aprobación, nunca publicar en redes 
 
 ## Al terminar algo
 Dile a Robert en 2–4 líneas qué cambió, dónde verlo (la Sala o el chat) y qué le toca a él, si algo.
+
+## Para que el sistema dure indefinidamente (reglas de continuidad, 28 oct 2026)
+- **Nada importante vive solo en el chat.** Cada vez que termines algo importante o Robert decida algo, actualiza `ESTADO-ADMIN.md`
+  (corto: estado y pendientes) y haz commit en main con `[sin render]`. Antes de que el contexto pase de ~70 %, actualízalo.
+- **Respuestas cortas de los subagentes:** pídeles máximo 5 líneas y que el detalle lo escriban en un archivo (scratchpad o el repo).
+  Nunca pegues informes largos en el chat.
+- **En cada mensaje de Robert** revisa rápido la Sala: `correcciones` pendientes y `aprobaciones` sin procesar; si hay, atiéndelas o
+  mándalas al trabajador. Así nada se queda "ignorado".
+- **Voz:** antes de aprobar, compara los `caracteres` con `estado/creditos`; manda solo lo que alcance y UNA RAMA A LA VEZ
+  (ElevenLabs rechaza voces simultáneas: error 429 concurrent_limit_exceeded).
+- **Trabajador horario:** sesión de nube "Mantenimiento de la Sala" despertada cada hora por una tarea programada; atiende
+  correcciones, aprobaciones y pedidos. Si no existe o no responde, créala de nuevo (ver ESTADO-ADMIN.md).
