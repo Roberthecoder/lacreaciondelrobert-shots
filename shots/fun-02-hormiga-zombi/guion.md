@@ -4,7 +4,7 @@
 - **Origen:** remaster del shot 001 (pedido de Robert en la Sala, 27 oct 2026). Se conserva la historia que Robert aprobó y se lleva a las reglas actuales: gancho de los 7, 61–62 s, re-gancho, estudio con año y lugar, cierre que regresa al gancho, Robert en pantalla.
 - **Formato:** N1 "Por dentro" (hormiga → rayos X → hoja → la misma hormiga del inicio, ya entendida).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Esa hormiga no está paseando: la maneja un hongo". La voz arranca en 0.25 s y la hormiga ya camina en el cuadro 0.
-- **Duración:** voz 950 caracteres / 174 palabras (≈ 58–60 s) + tarjeta de cierre 3.6 s. Base sin voz: **61.6 s**. La narrada se ajusta a la voz real; si pasa de 62 s se usa `"velocidad"` en `narracion.json` (sin gastar créditos).
+- **Duración:** voz 950 caracteres / 174 palabras (≈ 58–60 s) + tarjeta de cierre 3.6 s. Base sin voz: **61.6 s**. La voz real salió de 58.56 s (narrada 63.1 s), así que se puso `"velocidad": 1.03` en `narracion.json` (mismo tono, sin gastar créditos) → narrada ≈ 61.4 s.
 - **Voz:** aprobada por Robert en la Sala (`"voz_aprobada": true`, ~950 créditos).
 - **Archivos:** `Shot Hormiga Zombi base narrada.dc.html` + `shot-hormiga.jsx` (usa `kit-robert.jsx`: `MarcaAgua num="02"`, `Robert`, `CierreMarca`), `gen-audio.mjs` (cama grave con `audio-kit.mjs`).
 
