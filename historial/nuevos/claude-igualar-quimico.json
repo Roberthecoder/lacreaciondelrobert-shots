@@ -1,0 +1,16 @@
+{ "temas": [
+  { "id": "qui-cloro-mezclas", "titulo": "¿Por qué NO mezclar cloro con vinagre o amoniaco? (gas cloro y cloraminas)", "serie": "Shot Químico", "numero": 3,
+    "estado": "idea", "carpeta": "shots/qui-03-cloro", "rama": "claude/igualar-quimico", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+  { "id": "qui-col-morada-ph", "titulo": "El jugo de col morada es un medidor de pH (antocianinas que cambian de color)", "serie": "Shot Químico", "numero": 4,
+    "estado": "idea", "carpeta": "shots/qui-04-col-morada", "rama": "claude/igualar-quimico", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+  { "id": "qui-nixtamal", "titulo": "La nixtamalización: la cal que hace tortilla al maíz (y libera la niacina)", "serie": "Shot Químico", "numero": 5,
+    "estado": "idea", "carpeta": "shots/qui-05-nixtamal", "rama": "claude/igualar-quimico", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+  { "id": "qui-maillard", "titulo": "Ese dorado no es quemado: la reacción de Maillard", "serie": "Shot Químico", "numero": 6,
+    "estado": "idea", "carpeta": "shots/qui-06-maillard", "rama": "claude/igualar-quimico", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+  { "id": "qui-jabon-micelas", "titulo": "El jabón no borra la grasa: la encierra (micelas)", "serie": "Shot Químico", "numero": 7,
+    "estado": "idea", "carpeta": "shots/qui-07-jabon", "rama": "claude/igualar-quimico", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+  { "id": "qui-cebolla-lagrimas", "titulo": "Por qué lloras con la cebolla (factor lacrimógeno)", "serie": "Shot Químico", "numero": 8,
+    "estado": "idea", "carpeta": "shots/qui-08-cebolla", "rama": "claude/igualar-quimico", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+  { "id": "qui-agua-oxigenada", "titulo": "La espuma del agua oxigenada no es la herida sanando (catalasa)", "serie": "Shot Químico", "numero": 9,
+    "estado": "idea", "carpeta": "shots/qui-09-agua-oxigenada", "rama": "claude/igualar-quimico", "fuentes": [], "fecha": "2026-10-28", "derivados": [] }
+] }
