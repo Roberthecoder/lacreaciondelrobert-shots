@@ -1,0 +1,10 @@
+{
+ "temas": [
+  { "id": "cie-dedos-arrugados", "titulo": "Los dedos arrugados en el agua: no es piel hinchada, es tu sistema nervioso", "serie": "Shot Científico", "numero": 4, "estado": "idea", "carpeta": "shots/cie-04-dedos-arrugados", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] },
+  { "id": "cie-cosquillas", "titulo": "Por qué no te puedes hacer cosquillas (el cerebelo predice tu propio toque)", "serie": "Shot Científico", "numero": 5, "estado": "idea", "carpeta": "shots/cie-05-cosquillas", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] },
+  { "id": "cie-bacterias-uno-a-uno", "titulo": "No eres 10 bacterias por cada célula tuya: es casi 1 a 1 (Sender, Fuchs y Milo 2016)", "serie": "Shot Científico", "numero": 6, "estado": "idea", "carpeta": "shots/cie-06-bacterias-1a1", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] },
+  { "id": "cie-esponja-cocina", "titulo": "La esponja de tu cocina por dentro (Cardinale et al. 2017)", "serie": "Shot Científico", "numero": 7, "estado": "idea", "carpeta": "shots/cie-07-esponja", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] },
+  { "id": "cie-estatura-noche", "titulo": "En la noche mides menos que en la mañana (y en el espacio, más)", "serie": "Shot Científico", "numero": 8, "estado": "idea", "carpeta": "shots/cie-08-estatura", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] },
+  { "id": "cie-atardecer-marte", "titulo": "El atardecer azul de Marte (Curiosity, 2015)", "serie": "Shot Científico", "numero": 9, "estado": "idea", "carpeta": "shots/cie-09-atardecer-marte", "rama": "claude/igualar-cientifico", "fecha": "2026-10-28", "fuentes": [], "derivados": [] }
+ ]
+}
