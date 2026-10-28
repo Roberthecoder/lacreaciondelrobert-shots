@@ -1,0 +1,19 @@
+{
+  "dcHtml": "Shot Dedos Arrugados base narrada.dc.html",
+  "salida": "Shot Dedos Arrugados narrado.dc.html",
+  "nota": "Shot Científico #04. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esas arrugas en tus dedos no son piel aguada: son tus nervios cerrando tus vasos sanguíneos." },
+    { "escena": "Piel", "texto": "Fíjate: se arruga la piel sin pelo: palmas, yemas y plantas." },
+    { "escena": "Mito", "texto": "Durante años se creyó que el agua entraba en la piel y la hinchaba." },
+    { "escena": "Nervio", "texto": "Pero los médicos vieron algo raro: si el nervio de un dedo estaba dañado o anestesiado, ese dedo no se arrugaba." },
+    { "escena": "Pregunta", "texto": "¿Entonces quién arruga tu dedo?" },
+    { "escena": "Vasos", "texto": "Tu sistema nervioso: en el agua, cierra los vasitos de la yema." },
+    { "escena": "Pliegue", "texto": "Llega menos sangre, la yema pierde volumen y la piel de encima se pliega." },
+    { "escena": "Prueba", "texto": "Por eso los médicos lo usan para revisar los nervios." },
+    { "escena": "Estudio", "texto": "¿Y para qué sirve? En 2013, en Newcastle, Inglaterra, veinte personas pasaron canicas y pesas debajo del agua." },
+    { "escena": "Rapido", "texto": "Con los dedos arrugados tardaron doce por ciento menos; con objetos secos, igual." },
+    { "escena": "Berlin", "texto": "Pero en 2014, en Berlín, cuarenta personas hicieron una prueba parecida y no encontraron ventaja." },
+    { "escena": "Cierre", "texto": "Así que al salir de la alberca, mira tus dedos: es tu sistema nervioso trabajando, y para qué lo hace sigue en debate." }
+  ]
+}
