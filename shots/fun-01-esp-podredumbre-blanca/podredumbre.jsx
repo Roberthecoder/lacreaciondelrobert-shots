@@ -84,7 +84,7 @@ function caminoHifa(pts, seed) {
     if (!i) d = `M ${x} ${y + j}`; else { const [px, py] = celdaC(pts[i - 1][0], pts[i - 1][1]); d += ` Q ${(x + px) / 2 + (g() - 0.5) * 20} ${(y + py) / 2 + (g() - 0.5) * 20} ${x} ${y + j}`; } });
   return d;
 }
-function MundoMadera({ T, lignina = 1, hifas = 0, tijeras = [], blanco = 0 }) {
+function MundoMadera({ T, lignina = 1, hifas = 0, enzimas = [], blanco = 0 }) {
   const { x0, y0, n, m, t } = CEL;
   const amb = mixHex(MADERA.ambar, MADERA.blanca, 1 - lignina);
   const pared = mixHex(MADERA.celulosa, '#fbf8f0', blanco);
@@ -112,18 +112,22 @@ function MundoMadera({ T, lignina = 1, hifas = 0, tijeras = [], blanco = 0 }) {
         <path d={d} pathLength={1} strokeDasharray={`${k} 1`} stroke={KC.ink} strokeWidth={15} fill="none" strokeLinecap="round" />
         <path d={d} pathLength={1} strokeDasharray={`${k} 1`} stroke="#f7f5ec" strokeWidth={9} fill="none" strokeLinecap="round" />
       </g>; })}
-    {tijeras.map((tj, i) => <Tijera key={i} T={T} {...tj} />)}
+    {enzimas.map((tj, i) => <Enzima key={i} T={T} {...tj} />)}
   </>);
 }
-// Enzima dibujada como tijerita que corta (esquemático).
-function Tijera({ T, x, y, at, s = 1 }) {
+// Enzima (peroxidasa o lacasa) dibujada como una proteína en bolita con su "boca" (sitio activo) que oxida la lignina:
+// chispitas de oxidación y pedacitos de lignina que se desprenden (esquemático, sin escala).
+function Enzima({ T, x, y, at, s = 1 }) {
   const e = kprog(T, at, at + 0.3, kEase.rebote); if (e <= 0) return null;
-  const ab = 18 + Math.sin((T - at) * 16) * 16;
+  const ab = 14 + Math.sin((T - at) * 10) * 12;
+  const r = 34, a1 = ab * Math.PI / 180;
+  const boca = `M 0 0 L ${r * Math.cos(a1)} ${-r * Math.sin(a1)} A ${r} ${r} 0 1 0 ${r * Math.cos(a1)} ${r * Math.sin(a1)} Z`;
   return <g transform={`translate(${x} ${y}) scale(${s * e})`}>
-    <g transform={`rotate(${-ab / 2})`}><path d="M 0 0 L 70 -8 L 70 6 Z" fill="#cfd6e2" stroke={KC.ink} strokeWidth={4} /><circle cx={-18} cy={-10} r={14} fill="none" stroke={KC.pink} strokeWidth={8} /></g>
-    <g transform={`rotate(${ab / 2})`}><path d="M 0 0 L 70 8 L 70 -6 Z" fill="#cfd6e2" stroke={KC.ink} strokeWidth={4} /><circle cx={-18} cy={10} r={14} fill="none" stroke={KC.pink} strokeWidth={8} /></g>
-    <circle r={5} fill={KC.ink} />
-    {[0, 1, 2].map((k) => { const u = ((T - at) * 1.4 + k / 3) % 1; return <rect key={k} x={60 + u * 60} y={-30 + k * 22 + u * 20} width={12} height={8} fill={MADERA.ambar} stroke={KC.ink} strokeWidth={2} opacity={1 - u} transform={`rotate(${u * 200})`} />; })}
+    <path d={boca} fill={KC.pink} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
+    <circle cx={-10} cy={-14} r={7} fill="#ffd1e6" />
+    {[0, 1, 2].map((k) => { const u = ((T - at) * 1.6 + k / 3) % 1; return <g key={'o' + k} opacity={1 - u}>
+      <path d={`M ${46 + u * 30} ${-34 + k * 34} l 6 -14 l 6 14 l -6 14 Z`} fill={KC.yellow} stroke={KC.ink} strokeWidth={2} /></g>; })}
+    {[0, 1, 2].map((k) => { const u = ((T - at) * 1.2 + k / 3) % 1; return <rect key={k} x={50 + u * 70} y={-26 + k * 20 + u * 24} width={12} height={8} fill={MADERA.ambar} stroke={KC.ink} strokeWidth={2} opacity={1 - u} transform={`rotate(${u * 160})`} />; })}
   </g>;
 }
 
@@ -188,14 +192,14 @@ function Podredumbre() {
           </>)}
         </div>
       </Escena>
-      {/* 2–4 · por dentro de la madera: lignina (pegamento), hifas que cruzan por los poros, enzimas-tijera */}
+      {/* 2–4 · por dentro de la madera: lignina (endurece la pared), hifas que cruzan por los poros, enzimas que oxidan la lignina */}
       <Escena T={T} a={K.L} b={K.B} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
         <MundoMadera T={T}
           lignina={1 - 0.85 * kprog(T, K.E + 0.4, K.B - 0.2)}
           hifas={kprog(T, K.H + 0.1, K.E + 1.0)}
           blanco={kprog(T, K.E + 1.2, K.B)}
-          tijeras={[{ x: 315, y: 645, at: K.E + 0.1 }, { x: 615, y: 795, at: K.E + 0.5, s: 0.9 }, { x: 765, y: 495, at: K.E + 0.9, s: 0.8 }, { x: 465, y: 945, at: K.E + 1.3, s: 0.9 }]} />
+          enzimas={[{ x: 315, y: 645, at: K.E + 0.1 }, { x: 615, y: 795, at: K.E + 0.5, s: 0.9 }, { x: 765, y: 495, at: K.E + 0.9, s: 0.8 }, { x: 465, y: 945, at: K.E + 1.3, s: 0.9 }]} />
       </Escena>
       {/* 5 · de vuelta afuera: el corte del tronco blanco y blando (un dedo lo hunde) */}
       <Escena T={T} a={K.B} b={K.S} zoom={0.05}>
@@ -228,7 +232,7 @@ function Podredumbre() {
         <FondoLunares color={KC.lilac} />
         {svgF(<>
           <text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>
-          <g opacity={kprog(T, K.P + 0.3, K.P + 0.8)}><Tijera T={T} x={230} y={1160} at={K.P + 0.3} s={1.4} />
+          <g opacity={kprog(T, K.P + 0.3, K.P + 0.8)}><Enzima T={T} x={230} y={1160} at={K.P + 0.3} s={1.4} />
             <line x1={160} y1={1100} x2={330} y2={1220} stroke={KC.red} strokeWidth={18} strokeLinecap="round" opacity={kprog(T, K.P + 1.0, K.P + 1.3)} /></g>
         </>)}
       </Escena>
@@ -247,7 +251,7 @@ function Podredumbre() {
           <text x={980} y={1090} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>hoy</text>
           <text x={100} y={1090} style={{ font:`700 34px ${KF.mono}` }} fill={KC.gold2}>Carbonífero</text>
           <circle cx={klerp(980, 160, u)} cy={1010} r={30} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
-          <g transform={`translate(${klerp(980, 160, u)} 940)`} opacity={kprog(T, K.R + 3.2, K.R + 3.6)}><Tijera T={T} x={0} y={0} at={K.R + 3.2} s={0.9} /></g>
+          <g transform={`translate(${klerp(980, 160, u)} 940)`} opacity={kprog(T, K.R + 3.2, K.R + 3.6)}><Enzima T={T} x={0} y={0} at={K.R + 3.2} s={0.9} /></g>
           <g transform={`translate(540 700) rotate(${-u * 1440})`}><circle r={90} fill="none" stroke={KC.cyan} strokeWidth={10} /><line x1={0} y1={0} x2={0} y2={-70} stroke={KC.cyan} strokeWidth={10} strokeLinecap="round" /></g>
           <g transform="translate(540 700) rotate(0)"><line x1={0} y1={0} x2={50} y2={0} stroke={KC.cyan} strokeWidth={10} strokeLinecap="round" /><circle r={12} fill={KC.cyan} /></g>
         </>; })())}
@@ -294,11 +298,11 @@ function Podredumbre() {
       {/* textos */}
       <Chip T={T} at={K.G + 0.2} until={K.L - 1.2} texto="Especial Día de Muertos" y={470} tam={34} borde={KC.orange} />
       <Etq T={T} at={K.G + 1.4} until={K.L - 1.1} x={560} y={650} texto="hongo (micelio)" tam={32} />
-      <Chip T={T} at={K.L + 0.6} until={K.H - 0.2} texto="lignina = pegamento" y={330} x={640} tam={40} borde={MADERA.ambar} />
+      <Chip T={T} at={K.L + 0.6} until={K.H - 0.2} texto="lignina: endurece la pared" y={330} x={640} tam={40} borde={MADERA.ambar} />
       <Etq T={T} at={K.L + 1.4} until={K.H - 0.2} x={1000} y={1205} texto="celulosa (pared)" lado="izq" tam={28} />
       <Etq T={T} at={K.H + 0.6} until={K.E - 0.2} x={1000} y={330} texto="hifas" lado="izq" tam={38} color={KC.texto} />
       <Etq T={T} at={K.H + 1.6} until={K.E - 0.2} x={1000} y={1205} texto="poros en la pared" lado="izq" tam={28} />
-      <Chip T={T} at={K.E + 0.3} until={K.B - 0.2} texto="enzimas: tijeras químicas" y={330} x={640} tam={36} borde={KC.pink} />
+      <Chip T={T} at={K.E + 0.3} until={K.B - 0.2} texto="peroxidasas y lacasas" y={330} x={640} tam={36} borde={KC.pink} />
       <Chip T={T} at={K.B + 0.4} until={K.S - 0.2} texto="podredumbre blanca" y={420} tam={48} borde={KC.ink} fondo={KC.paper} color={KC.ink} />
       <Etq T={T} at={K.B + 2.0} until={K.S - 0.2} x={760} y={1120} texto="blanda" tam={34} />
       <Etq T={T} at={K.S + 1.6} until={K.P - 0.2} x={60} y={1040} texto="suelo" tam={36} color={KC.ink} />
@@ -310,23 +314,23 @@ function Podredumbre() {
       <Chip T={T} at={K.C + 0.3} until={K.D - 0.2} texto="HIPÓTESIS" y={420} tam={46} borde={KC.yellow} />
       <Etq T={T} at={K.C + 3.8} until={K.D - 0.2} x={60} y={1150} texto="carbón" tam={34} color={KC.texto} />
       <Chip T={T} at={K.C + 4.6} until={K.D - 0.2} texto="2016: en duda" x={360} y={560} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.D + 0.6} until={K.Ci - 0.2} texto="¿plantas que nadie se comió?" y={420} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.D + 1.4} until={K.Ci - 0.2} x={40} y={1170} texto="huella de planta (esquemática)" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.D + 0.6} until={K.Ci - 0.2} texto="pantanos empapados: casi no se pudren" y={420} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.D + 1.4} until={K.Ci - 0.2} x={40} y={680} texto="huella de planta (esquemática)" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Ci + 3.4} until={K.Ou} texto="todo regresa a la tierra" x={370} y={470} tam={38} borde={KC.orange} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="Muerto, pero no solo: *lo come un hongo.*" />
-      <Subtitulo T={T} idx={1} at={K.L + 0.1} until={K.H - 0.1} texto="La lignina: *un pegamento difícil.*" />
+      <Subtitulo T={T} idx={1} at={K.L + 0.1} until={K.H - 0.1} texto="La lignina *endurece la pared.*" />
       <Subtitulo T={T} idx={2} at={K.H + 0.1} until={K.E - 0.1} texto="Las hifas *perforan la madera.*" />
-      <Subtitulo T={T} idx={3} at={K.E + 0.1} until={K.B - 0.1} texto="Enzimas: *tijeras químicas.*" />
+      <Subtitulo T={T} idx={3} at={K.E + 0.1} until={K.B - 0.1} texto="Enzimas que *oxidan la lignina.*" />
       <Subtitulo T={T} idx={4} at={K.B + 0.1} until={K.S - 0.1} texto="Blanda y blanca: *podredumbre blanca.*" />
       <Subtitulo T={T} idx={5} at={K.S + 0.1} until={K.P - 0.1} texto="Se vuelve *suelo, agua y CO₂.*" />
-      <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Es - 0.1} texto="¿Y antes de *esas tijeras?*" />
+      <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Es - 0.1} texto="¿Y antes de *esas enzimas?*" />
       <Subtitulo T={T} idx={7} at={K.Es + 0.1} until={K.R - 0.1} texto="2012: *31 hongos* en Science." />
       <Subtitulo T={T} idx={8} at={K.R + 0.1} until={K.C - 0.1} texto="Hace unos *290 millones de años.*" />
       <Subtitulo T={T} idx={9} at={K.C + 0.1} until={K.D - 0.1} texto="Hipótesis: *troncos que se volvieron carbón.*" />
-      <Subtitulo T={T} idx={10} at={K.D + 0.1} until={K.Ci - 0.1} texto="¿Carbón de plantas *que nadie se comió?*" />
-      <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Todo regresa a la tierra: *gracias a un hongo.*" />
+      <Subtitulo T={T} idx={10} at={K.D + 0.1} until={K.Ci - 0.1} texto="Pantanos empapados: *casi no se pudren.*" />
+      <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Con la madera, *quien más ayuda es un hongo.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.0, 'avatar_11_sorprendido', 'gancho'],

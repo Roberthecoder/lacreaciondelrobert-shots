@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Día de Muertos",
   "velocidad": 1.0,
   "dcHtml": "Shot Esqueleto base narrada.dc.html",
@@ -23,7 +24,7 @@
     },
     {
       "escena": "Obra",
-      "texto": "Es una obra que nunca termina: en cualquier momento, cerca del 10 % de tu esqueleto está en obra."
+      "texto": "Es una obra que nunca termina: siempre hay partes de tu esqueleto en obra."
     },
     {
       "escena": "Pregunta",
@@ -31,11 +32,11 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2013, una revisión publicada en una revista médica de Australia dio la cuenta:"
+      "texto": "En 2017, una revisión de la Universidad de Sheffield, en Inglaterra, dio la cuenta:"
     },
     {
       "escena": "Diez",
-      "texto": "cerca de cada 10 años, casi todo tu esqueleto adulto se renueva."
+      "texto": "cada año se renueva entre el 5 y el 10 % de tu esqueleto adulto."
     },
     {
       "escena": "Calcio",
@@ -51,7 +52,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esta calavera no es un adorno: es una obra viva que se reconstruye casi entera cada década."
+      "texto": "Así que esta calavera no es un adorno: es una obra viva que se renueva un poco cada año."
     }
   ]
 }

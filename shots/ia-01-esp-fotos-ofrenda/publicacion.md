@@ -8,7 +8,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ```text
 Si una IA restauró la foto de tu bisabuela, una parte no es real: la inventó. 🕯️🤖
 Una foto vieja pierde información con los años: rayones, manchas, polvo y grano. Lo que se borró ya no está en la foto, así que la IA no lo recupera: lo adivina. Aprendió viendo muchísimas fotos y rellena con lo más probable. Con el color pasa igual: una foto en blanco y negro no guarda colores, así que la IA los elige.
-¿Y si adivina mal? En 2020, en la Universidad Duke, presentaron PULSE, una IA que inventa una cara nítida que encaje con una foto pixeleada. Alguien le dio una foto pixeleada de Barack Obama y la IA devolvió la cara de un hombre blanco. No fue a propósito: la IA en la que se apoyaba (StyleGAN) casi siempre generaba caras blancas. Sus propios autores lo advierten: PULSE inventa caras de personas que no existen y no reconstruye la imagen original.
+¿Y si adivina mal? En 2020, en la Universidad Duke, presentaron PULSE, una IA que inventa una cara nítida que encaje con una foto pixeleada. Alguien le dio una foto pixeleada de Barack Obama y la IA devolvió la cara de un hombre blanco. No fue a propósito: la IA en la que se apoyaba (StyleGAN) generaba sobre todo caras blancas. Sus propios autores lo advierten: PULSE inventa caras de personas que no existen y no reconstruye la imagen original.
 Cuanto más dañada está la foto, menos información queda y más tiene que rellenar la IA. Por eso, si restauras las fotos de tu ofrenda, guarda siempre también la original.
 El dibujo es esquemático.
 Fuentes: Menon et al., PULSE (CVPR 2020) · The Register (2020) · Wan et al., CVPR 2020 · Zhang et al., 2016.
@@ -21,7 +21,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Si una IA restauró la foto de tu bisabuela, una parte no es real: la inventó. 🕯️🤖
-Lo que se borró de una foto vieja ya no está: la IA no lo recupera, lo adivina con lo más probable que aprendió de muchísimas fotos. El color también lo elige. En 2020, PULSE (Universidad Duke) recibió una foto pixeleada de Barack Obama y devolvió la cara de un hombre blanco: la IA en la que se apoyaba casi siempre generaba caras blancas. Cuanto más dañada la foto, más inventa. Guarda siempre la original.
+Lo que se borró de una foto vieja ya no está: la IA no lo recupera, lo adivina con lo más probable que aprendió de muchísimas fotos. El color también lo elige. En 2020, PULSE (Universidad Duke) recibió una foto pixeleada de Barack Obama y devolvió la cara de un hombre blanco: la IA en la que se apoyaba generaba sobre todo caras blancas. Cuanto más dañada la foto, más inventa. Guarda siempre la original.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú ya restauraste alguna foto de tu familia con IA? 👇
 Shot IA #01 · Especial Día de Muertos · La Creación del Robert
@@ -32,13 +32,13 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA no restaura la foto de tu bisabuela: la inventa 🕯️ | Shot IA #01
+La IA no solo restaura la foto de tu bisabuela: inventa una parte 🕯️ | Shot IA #01
 ```
 Descripción:
 ```text
 Si una IA restauró la foto de tu bisabuela, una parte no es real: la inventó.
 Una foto vieja pierde información con los años: rayones, manchas, polvo y grano. Lo que se borró ya no está, así que la IA no lo recupera: lo adivina, rellenando con lo más probable según las muchísimas fotos que vio al aprender. El color también: una foto en blanco y negro no guarda colores, así que la IA los elige.
-En 2020, en la Universidad Duke, presentaron PULSE, una IA que inventa una cara nítida que encaje con una foto pixeleada. Alguien le dio una foto pixeleada de Barack Obama y devolvió la cara de un hombre blanco. No fue a propósito: la IA en la que se apoyaba, StyleGAN, casi siempre generaba caras blancas. Los autores lo dicen claro: PULSE inventa caras de personas que no existen y no reconstruye la imagen original.
+En 2020, en la Universidad Duke, presentaron PULSE, una IA que inventa una cara nítida que encaje con una foto pixeleada. Alguien le dio una foto pixeleada de Barack Obama y devolvió la cara de un hombre blanco. No fue a propósito: la IA en la que se apoyaba, StyleGAN, generaba sobre todo caras blancas. Los autores lo dicen claro: PULSE inventa caras de personas que no existen y no reconstruye la imagen original.
 Cuanto más dañada está la foto, menos información queda y más tiene que rellenar la IA. Si restauras las fotos de tu ofrenda, guarda siempre también la original.
 El dibujo es esquemático.
 Fuentes:

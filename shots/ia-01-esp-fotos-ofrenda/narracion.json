@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Día de Muertos",
   "velocidad": 1.0,
   "dcHtml": "Shot FotosOfrenda base narrada.dc.html",
@@ -39,7 +40,7 @@
     },
     {
       "escena": "Sesgo",
-      "texto": "No fue a propósito: la IA en la que se apoyaba casi siempre generaba caras blancas."
+      "texto": "No fue a propósito: la IA en la que se apoyaba generaba sobre todo caras blancas."
     },
     {
       "escena": "Danada",

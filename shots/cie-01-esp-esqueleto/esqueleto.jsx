@@ -152,7 +152,7 @@ function Esqueleto() {
       <Escena T={T} a={K.Cl} b={K.O} zoom={0.04}>
         <Superficie T={T} a={K.Cl} b={K.Bl} />
       </Escena>
-      {/* 5 · la obra que nunca termina: ~10 % en obra */}
+      {/* 5 · la obra que nunca termina: siempre hay partes en obra */}
       <Escena T={T} a={K.O} b={K.P}>
         <FondoLunares color={KC.mint} />
         {svg(<>
@@ -162,31 +162,28 @@ function Esqueleto() {
           <g transform={`rotate(-12 300 1020)`}><rect x={180} y={kprog(T, K.O + 0.8, K.O + 1.4) > 0 ? 940 : -999} width={240 * kprog(T, K.O + 0.8, K.O + 1.4)} height={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${190 + i * 40} 940 l 20 0 l -20 40 l -20 0 z`} fill={KC.ink} opacity={kprog(T, K.O + 0.8, K.O + 1.4)} />)}</g>
         </>)}
-        <Cuadricula T={T} cols={10} filas={10} llenado={(t) => 1} tramos={[{ desde: 0, hasta: 0.1 * kprog(T, K.O + 1.5, K.O + 3.0), color: KC.orange }]} lleno={HUESO} x={600} y={900} ancho={400} alto={400} />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
       </Escena>
-      {/* 7 · el estudio (revisión de 2013) */}
+      {/* 7 · el estudio (revisión de 2017, Univ. de Sheffield) */}
       <Escena T={T} a={K.E} b={K.D}>
         <FondoLunares color={KC.orange} />
         {svg(<g opacity=".9"><Calavera T={T} x={540} y={1560} s={0.45} /></g>)}
       </Escena>
-      {/* 8 · cada ~10 años: el esqueleto se pinta de nuevo */}
+      {/* 8 · cada año se renueva entre el 5 y el 10 % del esqueleto adulto (Walsh 2017) */}
       <Escena T={T} a={K.D} b={K.Ca} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
-          {Array.from({ length: 10 }, (_, i) => { const on = kprog(T, K.D + 0.4 + i * 0.28, K.D + 0.6 + i * 0.28);
-            return <g key={i} transform={`translate(${110 + (i % 5) * 215} ${800 + Math.floor(i / 5) * 290})`}>
-              <rect x={-80} y={-100} width={160} height={200} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-              <rect x={-80} y={-100} width={160} height={50} rx={18} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
-              <text x={0} y={50} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text>
-              <path d="M -50 70 L 50 -60" stroke={KC.mint} strokeWidth={14} strokeLinecap="round" opacity={on} />
-            </g>; })}
-        </>)}
-        <Chip T={T} at={K.D + 3.0} until={K.Ca - 0.3} texto="años" x={540} y={1520} tam={40} borde={KC.ink} />
+        {svg(<g transform={`translate(230 900) scale(${kprog(T, K.D + 0.2, K.D + 0.6, kEase.rebote)})`}>
+          <rect x={-130} y={-160} width={260} height={320} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={7} />
+          <rect x={-130} y={-160} width={260} height={80} rx={24} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
+          <text x={0} y={50} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.ink}>1</text>
+          <text x={0} y={125} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink}>AÑO</text>
+        </g>)}
+        <Cuadricula T={T} cols={10} filas={10} llenado={(t) => 1} tramos={[{ desde: 0, hasta: 0.05 * kprog(T, K.D + 0.8, K.D + 1.8), color: KC.orange }, { desde: 0.05, hasta: 0.05 + 0.05 * kprog(T, K.D + 1.8, K.D + 2.8), color: KC.yellow }]} lleno={HUESO} x={470} y={700} ancho={420} alto={420} />
+        <Chip T={T} at={K.D + 2.4} until={K.Ca - 0.3} texto="hueso nuevo en un año" x={540} y={1520} tam={40} borde={KC.ink} />
       </Escena>
       {/* 9 · 99 % del calcio en huesos y dientes */}
       <Escena T={T} a={K.Ca} b={K.Ej}>
@@ -237,10 +234,9 @@ function Esqueleto() {
       <Etq T={T} at={K.V + 3.0} until={K.Cl - 0.3} x={60} y={1580} texto="células del hueso" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cl + 0.6} until={K.Bl - 0.1} x={60} y={700} texto="osteoclasto (disuelve)" tam={32} color={KC.lilac} />
       <Etq T={T} at={K.Bl + 0.5} until={K.O - 0.3} x={60} y={700} texto="osteoblastos (rellenan)" tam={32} color={KC.cyan} />
-      <Medidor T={T} at={K.O + 1.4} until={K.P - 0.3} valor={(t) => 0.1 * kprog(t, K.O + 1.5, K.O + 3.0)} etiqueta="en obra ahora" texto={(v) => '~' + Math.round(v * 100) + ' %'} x={90} y={470} ancho={900} color={KC.orange} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.3} anio="2013" quien="Coates · revisión médica" revista="Australian Family Physician · Australia" y={820} />
-      <NumeroGigante T={T} at={K.D + 0.2} until={K.Ca - 0.3} valor={10} dur={2.8} etiqueta="cada ~10 años" sufijo="" y={470} tam={150} />
-      <Chip T={T} at={K.D + 2.4} until={K.Ca - 0.3} texto="casi todo renovado" x={540} y={1600} tam={40} borde={KC.mint} />
+      <Chip T={T} at={K.O + 1.4} until={K.P - 0.3} texto="siempre hay partes en obra" x={540} y={1520} tam={40} borde={KC.orange} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.3} anio="2017" quien="Walsh · Univ. de Sheffield" revista="revista Surgery · Inglaterra" y={820} />
+      <NumeroGigante T={T} at={K.D + 0.2} until={K.Ca - 0.3} prefijo="5–" valor={10} desde={10} dur={0.1} etiqueta="de tu esqueleto, cada año" sufijo=" %" x={400} y={500} tam={150} />
       <NumeroGigante T={T} at={K.Ca + 0.3} until={K.Ej - 0.3} valor={99} dur={1.4} sufijo=" %" etiqueta="del calcio de tu cuerpo" y={500} tam={170} />
       <Etq T={T} at={K.Ca + 1.6} until={K.Ej - 0.3} x={140} y={1490} texto="huesos" tam={32} />
       <Etq T={T} at={K.Ca + 1.9} until={K.Ej - 0.3} x={700} y={1490} texto="dientes" tam={32} />
@@ -252,10 +248,10 @@ function Esqueleto() {
       <Subtitulo T={T} idx={1} at={K.V + 0.1} until={K.Cl - 0.1} texto="Hueso: *tejido vivo.*" />
       <Subtitulo T={T} idx={2} at={K.Cl + 0.1} until={K.Bl - 0.1} texto="Osteoclastos: *disuelven.*" />
       <Subtitulo T={T} idx={3} at={K.Bl + 0.1} until={K.O - 0.1} texto="Osteoblastos: *rellenan.*" />
-      <Subtitulo T={T} idx={4} at={K.O + 0.1} until={K.P - 0.1} texto="Siempre hay *~10 % en obra.*" />
+      <Subtitulo T={T} idx={4} at={K.O + 0.1} until={K.P - 0.1} texto="Siempre hay *partes en obra.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.E - 0.1} texto="¿Cada cuánto *estrenas esqueleto?*" />
-      <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.D - 0.1} texto="Una revisión de *2013* dio la cuenta:" />
-      <Subtitulo T={T} idx={7} at={K.D + 0.1} until={K.Ca - 0.1} texto="Cada ~10 años: *casi todo nuevo.*" />
+      <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.D - 0.1} texto="Una revisión de *2017* dio la cuenta:" />
+      <Subtitulo T={T} idx={7} at={K.D + 0.1} until={K.Ca - 0.1} texto="Cada año: *del 5 al 10 % es nuevo.*" />
       <Subtitulo T={T} idx={8} at={K.Ca + 0.1} until={K.Ej - 0.1} texto="*99 % del calcio:* huesos y dientes." />
       <Subtitulo T={T} idx={9} at={K.Ej + 0.1} until={K.Da - 0.1} texto="El hueso que trabaja *se refuerza.*" />
       <Subtitulo T={T} idx={10} at={K.Da + 0.1} until={K.C - 0.1} texto="Unos 300 al nacer, *206 de adulto.*" />

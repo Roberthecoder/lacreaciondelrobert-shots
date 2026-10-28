@@ -31,4 +31,28 @@ Verificador independiente (subagente que no escribió el guion), 28 oct 2026. NC
 
 Afirmaciones revisadas: 13 · corregidas: 5 · quitadas: 0 (se quitó la atribución al informe de 2004).
 
+## Verificación independiente (28 oct 2026)
+
+Un segundo verificador (otro agente, que no escribió el guion) abrió las fuentes. Resultado: **NO PASA** por la cifra de renovación.
+
+**Lo que se marcó:** "cerca de cada 10 años, casi todo tu esqueleto adulto se renueva" y "en cualquier momento, cerca del 10 % de tu esqueleto está en obra" ⚠️ — venían de un resumen de 2 frases (Coates 2013, *Australian Family Physician*), sin el desarrollo del artículo. Una revisión seria y abierta da otra cifra: entre el 5 y el 10 % del esqueleto adulto se renueva cada año (a ese ritmo no se llega a "casi todo en 10 años"). El cierre "se reconstruye casi entera cada década" arrastraba el mismo error.
+
+**Cómo se corrigió** (voz, pantalla, guion y las 7 redes de `publicacion.md`):
+- Obra: «Es una obra que nunca termina: siempre hay partes de tu esqueleto en obra.» (se quitaron el medidor «en obra ahora ~10 %» y la cuadrícula del 10 %; queda el chip «siempre hay partes en obra»).
+- Estudio: «En 2017, una revisión de la Universidad de Sheffield, en Inglaterra, dio la cuenta:» · tarjeta «2017 · Walsh · Univ. de Sheffield · revista Surgery».
+- Diez: «cada año se renueva entre el 5 y el 10 % de tu esqueleto adulto.» · número «5–10 %» con «de tu esqueleto, cada año»; calendario de «1 AÑO» y cuadrícula de 100 con 5 + 5 cuadritos; se quitaron «cada ~10 años», «casi todo renovado» y las 10 hojas de calendario.
+- Cierre: «Así que esta calavera no es un adorno: es una obra viva que se renueva un poco cada año.»
+- Subtítulos: «Siempre hay *partes en obra.*», «Una revisión de *2017* dio la cuenta:», «Cada año: *del 5 al 10 % es nuevo.*».
+
+**Re-verificación de las frases nuevas** (la sesión que corrigió abrió el PDF de la versión aceptada en White Rose, Univ. de Sheffield):
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| "cada año se renueva entre el 5 y el 10 % de tu esqueleto adulto" | ✅ | Walsh JS. "Normal bone physiology, remodelling and its hormonal regulation". *Surgery* 36(1):1–6. https://eprints.whiterose.ac.uk/id/eprint/130926/ (PDF de la versión aceptada) | "About 5 to 10% of the adult skeleton is replaced by remodelling each year." | 2017 |
+| "En 2017, una revisión de la Universidad de Sheffield, en Inglaterra" | ✅ | ídem (ficha de White Rose) | "Published (online): 26 November 2017" · "Institution: The University of Sheffield" | 2017 |
+| "siempre hay partes de tu esqueleto en obra" | ✅ | ídem | "Bone turnover by osteoclasts and osteoblasts is a lifelong process that renews bone to repair microdamage and maintain strength." | 2017 |
+| "una obra viva que se renueva un poco cada año" | ✅ | ídem | "About 5 to 10% of the adult skeleton is replaced by remodelling each year." | 2017 |
+
+Se quitó de todo el shot la fuente Coates (2013). El resto de las afirmaciones (tejido vivo, osteoclastos/osteoblastos, 99 % del calcio, ejercicio con peso, 300 → 206 huesos) siguen ✅ como arriba.
+
 VEREDICTO: APROBADO

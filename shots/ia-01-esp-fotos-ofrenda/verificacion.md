@@ -32,4 +32,25 @@ Verificador independiente (subagente que no escribió el guion), 28 oct 2026. Fu
 
 Afirmaciones revisadas: 12 · corregidas: 6 · quitadas: 0.
 
+## Verificación independiente (28 oct 2026)
+
+Un segundo verificador (otro agente, que no escribió el guion) abrió las fuentes. Resultado: **NO PASA** por una exageración y el título.
+
+**Lo que se marcó:**
+- ⚠️ «la IA en la que se apoyaba casi siempre generaba caras blancas» — exagerado. El artículo de PULSE dice "much more frequently" y la cifra medida es 72.6 % (no "casi siempre"). En pantalla salían 10 de 12 caras claras.
+- ⚠️ Título de YouTube «La IA no restaura la foto de tu bisabuela: la inventa» — exagerado: sí restaura, y además inventa una parte (como dice la voz).
+
+**Cómo se corrigió:**
+- Voz: «No fue a propósito: la IA en la que se apoyaba generaba sobre todo caras blancas.» · etiqueta «sobre todo: caras blancas» · subtítulo «Su IA de apoyo: *sobre todo caras blancas.*» · ahora son 9 caras claras de 12 (≈ 75 %, cerca del 72.6 %).
+- TikTok, Instagram y YouTube: «generaba sobre todo caras blancas».
+- Título de YouTube: «La IA no solo restaura la foto de tu bisabuela: inventa una parte 🕯️ | Shot IA #01».
+
+**Re-verificación de las frases nuevas** (abiertas por la sesión que corrigió: PDF de arXiv v3 y la nota de The Register):
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| "la IA en la que se apoyaba generaba sobre todo caras blancas" | ✅ | Menon et al., PULSE, arXiv 2003.03808v3, secc. 6 (PDF) | "Overall, it seems that sampling from StyleGAN yields white faces much more frequently than faces of people of color" | 2020 |
+| ídem (la proporción; 9 de 12 caras claras en pantalla) | ✅ | The Register, 24 jun 2020: https://www.theregister.com/2020/06/24/ai_image_tool/ | "it spat out images of white people 72.6 per cent of the time, compared to just 10.1 per cent for black people, and 3.4 per cent for Indian people." | 2020 |
+| Título: "no solo restaura… inventa una parte" | ✅ | Repositorio oficial de PULSE (model card) | "PULSE makes imaginary faces of people who do not exist" | 2020 |
+
 VEREDICTO: APROBADO

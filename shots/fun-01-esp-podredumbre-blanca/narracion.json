@@ -3,7 +3,7 @@
   "velocidad": 1.0,
   "dcHtml": "Shot PodredumbreBlanca base narrada.dc.html",
   "salida": "Shot PodredumbreBlanca narrado.dc.html",
-  "nota": "Shot Fungi Mati #01 · Especial Día de Muertos. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "nota": "Shot Fungi Mati #01 · Especial Día de Muertos. Una línea por subtítulo (idx 0..11 del jsx). Texto corregido por Robert el 28 oct 2026 (lignina y enzimas): la voz anterior ya no sirve; voz pendiente de NUEVA aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
     {
       "escena": "Gancho",
@@ -11,7 +11,7 @@
     },
     {
       "escena": "Lignina",
-      "texto": "La lignina la hace más rígida: un pegamento que casi ningún ser vivo puede digerir."
+      "texto": "La lignina endurece la pared de sus células y casi ningún ser vivo la digiere."
     },
     {
       "escena": "Hifas",
@@ -19,7 +19,7 @@
     },
     {
       "escena": "Enzimas",
-      "texto": "Ahí suelta enzimas que rompen la lignina, como tijeras químicas."
+      "texto": "Ahí suelta peroxidasas y lacasas, enzimas que oxidan la lignina."
     },
     {
       "escena": "Blanca",
@@ -47,7 +47,7 @@
     },
     {
       "escena": "Dato",
-      "texto": "O sea: parte del carbón más antiguo podría ser plantas que ningún hongo se comió."
+      "texto": "O sea: el carbón se formó en pantanos tan empapados que las plantas casi no se pudrían."
     },
     {
       "escena": "Cierre",

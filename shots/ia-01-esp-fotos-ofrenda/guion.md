@@ -1,10 +1,10 @@
 # Shot IA #01 · Especial Día de Muertos: La IA que restaura las fotos de tu ofrenda
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #01 · **Especial:** Día de Muertos (se publica el 2 nov 2026) · rama `claude/especiales-muertos`.
-- **Estado (28 oct 2026):** guion verificado (`verificacion.md`, VEREDICTO: APROBADO), animación, Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert** (957 caracteres ≈ 957 créditos).
+- **Estado (28 oct 2026):** guion verificado (`verificacion.md`, VEREDICTO: APROBADO), animación, Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert** (955 caracteres ≈ 955 créditos).
 - **Formato:** N1 "Por dentro" (la foto de la ofrenda → por dentro de la IA → la misma foto, ya entendida) con el error famoso de PULSE como estudio.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Si una IA restauró la foto de tu bisabuela, una parte no es real: la inventó".
-- **Duración:** voz 957 caracteres / 185 palabras (≈ 58 s en la base) + cierre 3.59 s → **61.5 s** en la base.
+- **Duración:** voz 955 caracteres / 185 palabras (≈ 57.8 s en la base) + cierre 3.59 s → **61.39 s** en la base (corregido el 28 oct 2026 tras la verificación independiente: «sobre todo caras blancas»).
 - **Postura de la serie:** defendemos la IA con datos y decimos su límite: rellena con lo más probable, no recupera lo perdido.
 
 ## Versión narrada
@@ -19,7 +19,7 @@
 | 5 | Pregunta | ¿Y si adivina mal? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
 | 6 | Estudio | En 2020, en la Universidad Duke, presentaron PULSE, una IA que inventa una cara nítida que encaje con una foto pixeleada. | Tarjeta "2020 · Universidad Duke · PULSE · CVPR 2020"; una cara pixeleada → flecha → una cara nítida inventada con chispas. |
 | 7 | Obama | Alguien le dio una foto pixeleada de Barack Obama, y la IA devolvió la cara de un hombre blanco. | Fondo de circuito rojo: pixeleado esquemático de piel oscura ("foto pixeleada de Obama") → cara inventada de piel clara y ojos azules. Chip "2020: le devolvió un hombre blanco". No se dibuja a nadie reconocible. |
-| 8 | Sesgo | No fue a propósito: la IA en la que se apoyaba casi siempre generaba caras blancas. | "La IA de apoyo (StyleGAN)": salen 12 caras una por una, casi todas de piel clara. |
+| 8 | Sesgo | No fue a propósito: la IA en la que se apoyaba generaba sobre todo caras blancas. | "La IA de apoyo (StyleGAN)": salen 12 caras una por una, unas 9 de piel clara y 3 morenas (≈ el 72.6 % de caras blancas que midió un estudio de StyleGAN); etiqueta «sobre todo: caras blancas». |
 | 9 | Danada | Cuanto más dañada está la foto, menos información queda, y más tiene que rellenar la IA. | Cuatro caras distintas → flechas → el mismo pixeleado (como la figura 3 de PULSE). Chip "menos información = más relleno". |
 | 10 | Original | Por eso, si restauras las fotos de tu ofrenda, guarda siempre también la original. | Ofrenda rosa: la original (sepia, dañada) junto a la restaurada (a color, con lo inventado marcado). Chip "guarda la original". |
 | 11 | Cierre | Así que la foto restaurada no es tu bisabuela tal cual: es lo que una IA cree que era. | **Regreso a la imagen del inicio**: el mismo portarretratos en la ofrenda naranja, con la parte inventada marcada. Chip "lo que la IA cree que era". |
@@ -38,12 +38,12 @@ Tiempos de la base (con la voz real se recorren solos porque están atados a cad
 | 3 | 18.8 | 23.2 | 06_pensativo_menton | `izq-alto` |
 | 4 | 23.3 | 26.4 | 07_pensativo_puno | `grande` |
 | 5 | 32.6 | 37.9 | 10_serio_molesto | `arriba-der` |
-| 6 | 43.1 | 47.6 | 04_bajando_lentes | `izq-alto` |
-| 7 | 48.3 | 52.6 | 05_sonriendo_dientes_uniformes | `arriba-der` |
-| 8 | 53.1 | 57.8 | 02_apuntando_camara | `arriba-der` |
-| — | 57.9 | 61.5 | 13_senalando_arriba (cierre) | CierreMarca |
+| 6 | 43.0 | 47.5 | 04_bajando_lentes | `izq-alto` |
+| 7 | 48.2 | 52.5 | 05_sonriendo_dientes_uniformes | `arriba-der` |
+| 8 | 53.0 | 57.7 | 02_apuntando_camara | `arriba-der` |
+| — | 57.8 | 61.39 | 13_senalando_arriba (cierre) | CierreMarca |
 
-apariciones 8 · 34.6 s (+ cierre 3.6 s) · poses 8 · total 61.5 s
+apariciones 8 · 34.6 s (+ cierre 3.6 s) · poses 8 · total 61.39 s
 
 | # | Reacciona a |
 |---|---|
@@ -63,7 +63,7 @@ apariciones 8 · 34.6 s (+ cierre 3.6 s) · poses 8 · total 61.5 s
    > "PULSE traverses the high-resolution natural image manifold, searching for images that downscale to the original LR image." (2020)
 2. **Inventa caras; no recupera la original** — repositorio oficial de PULSE (model card): https://github.com/adamian98/pulse
    > "PULSE makes imaginary faces of people who do not exist, which should not be confused for real people." · "It will not help identify or reconstruct the original image." (2020)
-3. **La IA de apoyo casi siempre generaba caras blancas** — arXiv 2003.03808v3, sección 6:
+3. **La IA de apoyo generaba sobre todo caras blancas** — arXiv 2003.03808v3, sección 6 (y The Register, 2020: "72.6 per cent of the time"):
    > "it seems that sampling from StyleGAN yields white faces much more frequently than faces of people of color" (2020)
 4. **Obama → hombre blanco** — The Register, 24 jun 2020: https://www.theregister.com/2020/06/24/ai_image_tool/
    > "the result is, instead, someone that has white skin, blue eyes, and brown hair." (2020)
