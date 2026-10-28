@@ -2,10 +2,10 @@
  "temas": [
   {
    "id": "ia-panda-adversario",
-   "titulo": "Ejemplos adversarios: un ruido invisible convierte un panda en gibón para la IA (Goodfellow 2014) y estampas en un alto (Eykholt 2018)",
+   "titulo": "Ejemplos adversarios: un ruido invisible convierte un panda en gibón para la IA (Goodfellow 2014) y estampas en un alto (Eykholt 2017)",
    "serie": "Shot IA",
    "numero": 6,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/ia-06-panda",
    "rama": "claude/igualar-ia",
    "fecha": "2026-10-28",
@@ -24,12 +24,19 @@
    "titulo": "La prueba de Turing: la gente creyó que GPT-4.5 (con personaje) era el humano 73 % de las veces (Jones y Bergen, PNAS 2026)",
    "serie": "Shot IA",
    "numero": 7,
-   "estado": "idea",
+   "estado": "guion",
    "carpeta": "shots/ia-07-turing",
    "rama": "claude/igualar-ia",
    "fecha": "2026-10-28",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Jones y Bergen, PNAS 123(21) e2524472123 (mayo 2026), PMC13214042: GPT-4.5 con personaje 73%, sin personaje 36%, ELIZA 23%, 1,023 partidas, GPT-5 59% en 15 min",
+    "Jones y Bergen, arXiv:2503.23674 (2025): Turing (1950), juego de imitación"
+   ],
+   "derivados": [
+    "ELIZA (1966): el primer chatbot y el efecto ELIZA",
+    "Cómo saber si chateas con una IA: estrategias que sí funcionan",
+    "Las voces clonadas y las llamadas falsas"
+   ]
   }
  ]
 }
