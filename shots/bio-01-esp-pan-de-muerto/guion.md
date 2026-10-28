@@ -58,3 +58,5 @@ apariciones 8 · 31.1 s (+ cierre 3.9 s) · poses distintas 7 (nunca la misma do
 ## Notas
 - El dibujo es esquemático: tamaños, número de levaduras, burbujas, cromosomas y genes no son reales; los 600 puntitos representan a los científicos.
 - La voz no dice que el alcohol se va todo: "muy poquito" (se midió de 0.03 a más de 1.2 g por 100 g según el pan).
+
+- Versión de revisión sin voz: Release "Borradores · claude/especiales-muertos" (28 oct 2026). Voz pendiente de aprobación de Robert.

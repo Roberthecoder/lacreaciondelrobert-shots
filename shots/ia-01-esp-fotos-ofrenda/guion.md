@@ -80,3 +80,5 @@ apariciones 8 · 34.6 s (+ cierre 3.6 s) · poses 8 · total 61.5 s
 - El dibujo es esquemático: la bisabuela, las caras y los pixeleados son ilustraciones; no se retrata a Barack Obama ni a nadie real.
 - "Cuanto más dañada, más rellena" se dice como deducción (menos información), no como dato medido.
 - Las cifras de este shot son solo años (2016, 2018, 2020): todos con más de 2 años se dicen con su año.
+
+- Versión de revisión sin voz: Release "Borradores · claude/especiales-muertos" (28 oct 2026). Voz pendiente de aprobación de Robert.
