@@ -49,6 +49,15 @@
   .btn.go { background: var(--rosa); color: #fff; }
   .btn.sm { padding: 6px 10px; font-size: 13px; }
   .btn[disabled] { opacity: .5; cursor: default; }
+  .cred { margin-top: 12px; max-width: 62ch; background: var(--panel); border: 1px solid var(--line); border-left: 6px solid var(--menta); border-radius: var(--r); padding: 12px 14px; display: grid; gap: 4px; }
+  .cred[data-n="bajo"] { border-left-color: var(--warn); background: color-mix(in srgb, var(--warn) 10%, var(--panel)); }
+  .cred[data-n="error"] { border-left-color: var(--rosa); }
+  .cred strong { font-family: var(--f-display); font-size: 15px; font-weight: 800; }
+  .cred p { margin: 0; font-size: 14px; }
+  .cred b { font-variant-numeric: tabular-nums; }
+  .cred[data-n="bajo"] b { color: var(--warn); }
+  .costo { margin: 0; font-size: 13px; color: var(--muted); }
+  .costo[data-n="bajo"] { color: var(--warn); font-weight: 700; }
   .msg { font-size: 14px; color: var(--ok); min-height: 1.3em; margin: 0; }
   .pedidos { display: grid; margin: 0; padding: 0; list-style: none; max-height: 16rem; overflow: auto; }
   .pedidos li { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 10px; align-items: baseline; font-size: 14px; padding: 8px 0; border-top: 1px solid var(--line); }
@@ -110,6 +119,37 @@
   .texto pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 14px/1.45 var(--f-body); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; max-height: 14rem; overflow: auto; }
   .texto .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
   .close { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(0,0,0,.55); color: #fff; font-size: 20px; cursor: pointer; }
+  /* Mis archivos: subir con etiquetas, editar etiquetas, elegir para un pedido */
+  .campo { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 0; width: 100%; box-sizing: border-box; }
+  .lbl { font-size: 13px; font-weight: 700; color: var(--muted); }
+  .sug { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sug .chip, .tags .chip { font-size: 12px; padding: 4px 10px; }
+  .drop { display: grid; place-items: center; gap: 4px; text-align: center; padding: 22px 14px; border: 2px dashed var(--line); border-radius: var(--r); cursor: pointer; background: var(--bg); }
+  .drop.over { border-color: var(--rosa); background: color-mix(in srgb, var(--rosa) 8%, var(--bg)); }
+  .drop b { font-family: var(--f-display); font-size: 17px; color: var(--rosa); }
+  .drop span { color: var(--muted); font-size: 13px; }
+  .drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+  .drop:focus-within { outline: 3px solid var(--cian); outline-offset: 2px; }
+  .subiendo { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+  .subiendo li[data-e="error"] { color: var(--warn); }
+  .agrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 12px; max-height: min(80vh, 900px); overflow: auto; }
+  .arch { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; display: grid; align-content: start; background: var(--bg); min-width: 0; }
+  .arch[data-sel="true"] { border-color: var(--rosa); box-shadow: 0 0 0 2px var(--rosa); }
+  .arch .vista { aspect-ratio: 4 / 3; background: var(--chip); display: grid; place-items: center; overflow: hidden; }
+  .arch .vista img, .arch .vista video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .arch .vista span { font: 700 13px var(--f-mono); color: var(--muted); }
+  .arch .cuerpo { padding: 10px; display: grid; gap: 8px; min-width: 0; }
+  .arch .nombre { font-size: 13px; font-weight: 700; overflow-wrap: anywhere; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+  .tag { display: inline-flex; align-items: center; gap: 2px; font-size: 12px; background: var(--chip); border-radius: 999px; padding: 2px 4px 2px 9px; }
+  .tag button { all: unset; cursor: pointer; padding: 0 5px; border-radius: 50%; font-size: 14px; line-height: 1; color: var(--muted); }
+  .tag button:focus-visible { outline: 2px solid var(--cian); }
+  .tags input { font: inherit; font-size: 12px; border: 1px dashed var(--line); background: transparent; color: var(--ink); border-radius: 999px; padding: 3px 9px; width: 9em; min-width: 0; }
+  .arch .pie { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 13px; }
+  .arch .pie label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+  .borrar { all: unset; cursor: pointer; color: var(--muted); font-size: 12px; text-decoration: underline; }
+  .adj-pedido { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 14px; }
+  .adj-pedido .tag { background: color-mix(in srgb, var(--rosa) 16%, var(--chip)); }
   @media (max-width: 760px) { .player { grid-template-columns: 1fr; overflow: auto; } .player video { max-height: 58vh; } }
   @media (prefers-reduced-motion: no-preference) { .card .poster { transition: transform .18s ease-out; } .card:hover .poster { transform: translateY(-3px); } }
 </style>
@@ -118,6 +158,7 @@
   <header>
     <h1>Sala de <span>Shots</span></h1>
     <p class="lead" id="lead">Cargando tus shots…</p>
+    <div class="cred" id="cred" aria-live="polite"><strong>Créditos de voz</strong><p id="cred-txt">Cargando tus créditos de ElevenLabs…</p><p class="hint" id="cred-nota"></p></div>
   </header>
 
   <section class="card-box" aria-label="Pedir videos">
@@ -128,6 +169,7 @@
       <button class="chip" type="button" data-t="documental" aria-pressed="false">Documental</button>
       <button class="chip" type="button" data-t="libre" aria-pressed="false">Shot libre</button>
       <button class="chip" type="button" data-t="formal" aria-pressed="false">Shot formal</button>
+      <button class="chip" type="button" data-t="organico" aria-pressed="false">Shot orgánico</button>
       <button class="chip" type="button" data-t="otro" aria-pressed="false">Otro</button>
     </div>
     <p class="hint" id="p-desc"></p>
@@ -146,9 +188,25 @@
       <input type="range" id="p-rango" min="1" max="100" value="1" aria-label="Cantidad">
     </div>
     <textarea id="p-idea" aria-label="Tu idea" placeholder=""></textarea>
+    <div class="adj-pedido" id="p-adj"></div>
     <div class="actions"><button class="btn go" id="p-enviar" type="button">Pedir 1 video</button></div>
     <p class="msg" id="p-msg"></p>
     <ul class="pedidos" id="p-lista"></ul>
+  </section>
+
+  <section class="card-box" aria-label="Mis archivos" id="a-box">
+    <h2>Mis archivos</h2>
+    <p class="hint">Tus fotos, videos y documentos para hacer shots más orgánicos. Escribe las etiquetas antes de adjuntar y se ponen a todo lo que subas; después puedes cambiarlas en cada archivo. Marca «Usar en mi pedido» y el archivo viaja con tu siguiente pedido. Hasta 20 MB por archivo: fotos, MP4 o WebM, PDF y texto.</p>
+    <div style="display:grid;gap:6px">
+      <label class="lbl" for="a-tags">Etiquetas para lo que adjuntes (sepáralas con comas)</label>
+      <input class="campo" id="a-tags" type="text" placeholder="Por ejemplo: laboratorio, Fungi Mati, B-Eco" autocomplete="off">
+      <div class="sug" id="a-sug" role="group" aria-label="Etiquetas sugeridas"></div>
+    </div>
+    <label class="drop" id="a-drop"><input type="file" id="a-file" multiple accept="image/png,image/jpeg,image/gif,image/webp,video/mp4,video/webm,application/pdf,text/plain,text/markdown,text/csv,.md,.txt,.csv"><b>Adjuntar archivos</b><span>Toca para elegir o arrástralos aquí</span></label>
+    <p class="hint" id="a-sinpermiso" hidden>Solo quien puede editar la Sala puede adjuntar archivos.</p>
+    <ul class="subiendo" id="a-subiendo"></ul>
+    <div class="bar" id="a-filtros"></div>
+    <div class="agrid" id="a-grid"></div>
   </section>
 
   <section aria-label="Avance hacia 365 por serie">
@@ -186,6 +244,7 @@
         <button class="btn go" id="aprobar" type="button">Aprobar voz</button>
         <a class="btn" id="hd" target="_blank" rel="noopener" href="#">Video en calidad completa</a>
       </div>
+      <p class="costo" id="d-costo" hidden></p>
       <p class="msg" id="msg"></p>
       <h3 style="font-size:17px">Textos para redes</h3>
       <div class="redes-tabs" id="redes-tabs" role="group" aria-label="Red social"></div>
@@ -213,9 +272,10 @@
     documental: { n: 'Documental', d: 'Video horizontal para YouTube (8–15 min) sobre el tema que dictes, más varios cortos verticales con sus momentos clave.', ph: 'El tema y lo que quieres contar; si tienes datos, fotos o una postura, escríbelos aquí…' },
     libre: { n: 'Shot libre', d: 'Con el mismo estilo del canal, sobre lo que quieras (no entra a la numeración de las series).', ph: 'De qué va y para qué lo quieres…' },
     formal: { n: 'Shot formal', d: 'Sin numerar, sobrio y profesional, para trabajos universitarios y convocatorias. Igual de verificado.', ph: 'Para qué es (materia, convocatoria), tema, duración y requisitos que te pidieron…' },
+    organico: { n: 'Shot orgánico', d: 'Hecho con tus propias fotos y videos, más natural y menos animado. Adjúntalos en «Mis archivos» (abajo), etiquétalos y marca «Usar en mi pedido».', ph: 'Qué quieres contar con tus archivos y en qué orden van…' },
     otro: { n: 'Otro', d: 'Cualquier formato nuevo para experimentar fuera de las series.', ph: 'Describe lo que imaginas…' },
   };
-  const S = { shots: [], aprob: {}, pedidos: [], filtro: '', q: '', actual: null, db: null, abiertas: {}, tipo: 'serie', red: 'youtube' };
+  const S = { shots: [], aprob: {}, pedidos: [], filtro: '', q: '', actual: null, db: null, abiertas: {}, tipo: 'serie', red: 'youtube', archivos: [], sel: new Set(), assets: null, filtroTag: '' };
   const $ = (id) => document.getElementById(id);
   const fmt = (n) => new Intl.NumberFormat('es-MX').format(n);
   const mmss = (t) => { t = Math.round(t || 0); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
@@ -253,14 +313,16 @@
   $('p-enviar').addEventListener('click', async () => {
     if (!S.db) { $('p-msg').textContent = 'La base del panel no está disponible en esta vista.'; return; }
     const idea = $('p-idea').value.trim();
+    const archivos = S.archivos.filter((a) => S.sel.has(a.id)).map((a) => ({ id: a.id, asset: a.asset, nombre: a.nombre || '', tipo: a.tipo || '', etiquetas: a.etiquetas || [] }));
     if (S.tipo !== 'serie' && !idea) { $('p-msg').textContent = 'Escribe tu idea primero.'; return; }
+    if (S.tipo === 'organico' && !archivos.length) { $('p-msg').textContent = 'Para un shot orgánico marca al menos un archivo en «Mis archivos».'; return; }
     const cantidad = Math.max(1, Math.min(1000, +$('p-cant').value || 1));
     const series = S.tipo === 'serie' ? seriesMarcadas() : [];
     const total = S.tipo === 'serie' ? cantidad * series.length : cantidad;
     $('p-enviar').disabled = true;
     try {
-      await S.db.collection('pedidos').add({ tipo: S.tipo, series, cantidad, total, hechos: 0, idea, estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
-      $('p-idea').value = '';
+      await S.db.collection('pedidos').add({ tipo: S.tipo, series, cantidad, total, hechos: 0, idea, archivos, estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
+      $('p-idea').value = ''; S.sel.clear(); pintarArchivos();
       $('p-msg').textContent = `Pedido enviado (${fmt(total)} ${total === 1 ? 'video' : 'videos'}). La nube lo toma en su siguiente ronda, cada 4 h, o al instante si en una sesión escribes «atiende mis pedidos».`;
     } catch (e) { $('p-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
     pintarPedir();
@@ -271,7 +333,10 @@
       const li = el('li');
       const e = el('span', 'est', p.estado || 'pendiente'); e.dataset.e = p.estado || 'pendiente';
       const quien = p.tipo === 'serie' ? `${(p.series || []).join(', ') || 'serie'}` : (TIPOS[p.tipo]?.n || p.tipo);
-      const t = el('span', 'txt', `${quien}${p.idea ? ': ' + p.idea : ''}`);
+      const nA = (p.archivos || []).length;
+      const idea = (p.idea || '').length > 140 ? p.idea.slice(0, 137).trimEnd() + '…' : (p.idea || '');
+      const t = el('span', 'txt', `${quien}${idea ? ': ' + idea : ''}${nA ? ` (${nA} ${nA === 1 ? 'archivo' : 'archivos'})` : ''}`);
+      if (idea !== (p.idea || '')) t.title = p.idea;
       const total = p.total || p.cantidad || 1;
       li.append(e, t, el('span', 'num', `${fmt(p.hechos || 0)} / ${fmt(total)}`));
       if (p.resultado) li.append(el('span', 'res', p.resultado));
@@ -360,6 +425,40 @@
     b.disabled = !S.db;
     b.textContent = S.aprob[s.id] ? 'Quitar aprobación' : 'Aprobar voz';
     $('d-estado').textContent = estadoDe(s);
+    pintarCosto();
+  }
+  /* ---------- créditos de voz (doc estado/creditos, lo llena la nube desde refs/estado/creditos) ---------- */
+  const VOZ_MEDIA = 950;
+  const credN = () => (S.cred && typeof S.cred.restantes === 'number') ? S.cred.restantes : null;
+  function fechaRenov(c) {
+    const d = c.renovacion_unix ? new Date(c.renovacion_unix * 1000) : (c.renovacion ? new Date(c.renovacion) : null);
+    return d && !isNaN(d) ? d.toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
+  }
+  function pintarCreditos() {
+    const c = S.cred, box = $('cred'), txt = $('cred-txt'), nota = $('cred-nota');
+    txt.replaceChildren(); nota.textContent = '';
+    if (!c) { box.dataset.n = 'error'; txt.textContent = 'Todavía no hay datos de tus créditos. La nube los anota en su siguiente revisión.'; return; }
+    const n = credN();
+    if (n == null) { box.dataset.n = 'error'; txt.textContent = 'No se pudo leer cuántos créditos te quedan.'; }
+    else {
+      box.dataset.n = n < 2000 ? 'bajo' : 'ok';
+      const renov = fechaRenov(c), k = Math.floor(n / VOZ_MEDIA);
+      txt.append('Te quedan ', el('b', null, fmt(n)), c.limite ? ` de ${fmt(c.limite)} créditos` : ' créditos');
+      if (renov) txt.append(' · se renuevan el ', el('b', null, renov));
+      txt.append(' · alcanzan para ', el('b', null, `~${fmt(k)} ${k === 1 ? 'voz' : 'voces'}`));
+      if (n < 2000) txt.append(el('br'), n < VOZ_MEDIA ? 'Ya no alcanza ni para una voz: las aprobadas esperan a que recargues.' : 'Quedan pocos: recarga pronto para no dejar voces a medias.');
+    }
+    const extra = [c.nota, c.error ? `Aviso: ${c.error}` : '', c.actualizado ? `Actualizado: ${new Date(c.actualizado).toLocaleString('es-MX', { dateStyle: 'medium', timeStyle: 'short' })}` : ''].filter(Boolean);
+    nota.textContent = extra.join(' · ');
+  }
+  function pintarCosto() {
+    const s = S.actual, p = $('d-costo'); if (!s) return;
+    const x = s.caracteres || 0;
+    if (!x || s.kind === 'narrado') { p.hidden = true; return; }
+    p.hidden = false; const n = credN();
+    const falta = n != null && n < x;
+    p.dataset.n = falta ? 'bajo' : 'ok';
+    p.textContent = `Esta voz cuesta ~${fmt(x)} créditos.` + (falta ? ' No te alcanzan los créditos: se generará cuando recargues.' : '');
   }
   function pintarRedes() {
     const s = S.actual; const redes = (s && s.redes) || {};
@@ -376,8 +475,10 @@
       const b = el('button', 'btn sm', 'Copiar'); b.type = 'button'; b.addEventListener('click', () => copiar(texto, b));
       row.append(el('label', null, titulo), b); t.append(row, el('pre', null, texto)); return t;
     };
-    if (r.titulo) body.append(bloque('Título', r.titulo));
-    body.append(bloque(r.titulo ? 'Descripción' : 'Texto completo', r.texto));
+    // El título de YouTube es siempre el mismo que se ve en la Sala.
+    const tit = S.red === 'youtube' ? tituloCompleto(s) : r.titulo;
+    if (tit) body.append(bloque('Título', tit));
+    body.append(bloque(tit ? 'Descripción' : 'Texto completo', r.texto));
   }
   $('aprobar').addEventListener('click', async () => {
     const s = S.actual; if (!s || !S.db) return;
@@ -409,6 +510,138 @@
     } catch (e) { $('c-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
     $('c-enviar').disabled = false;
   });
+  /* ---------- mis archivos ---------- */
+  const SUGERIDAS = ['orgánico', ...SERIES, 'Robert', 'laboratorio', 'B-Eco', 'campo', 'detrás de cámaras'];
+  const TIPO_EXT = { png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', gif: 'image/gif', webp: 'image/webp', mp4: 'video/mp4', m4v: 'video/mp4', webm: 'video/webm', pdf: 'application/pdf', txt: 'text/plain', md: 'text/markdown', csv: 'text/csv' };
+  const ACEPTADOS = new Set(Object.values(TIPO_EXT));
+  const limpiaTags = (txt) => [...new Set(String(txt).split(',').map((t) => t.trim()).filter(Boolean).map((t) => t.slice(0, 40)))];
+  const tagsEntrada = () => limpiaTags($('a-tags').value);
+  const todasTags = () => { const m = new Map(); S.archivos.forEach((a) => (a.etiquetas || []).forEach((t) => m.set(t.toLowerCase(), t))); return [...m.values()].sort((x, y) => x.localeCompare(y, 'es')); };
+  const pesoTxt = (b) => b > 1048576 ? `${(b / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round((b || 0) / 1024))} KB`;
+
+  function pintarSugeridas() {
+    const box = $('a-sug'); box.replaceChildren();
+    const actuales = tagsEntrada().map((t) => t.toLowerCase());
+    const lista = [...new Map([...SUGERIDAS, ...todasTags()].map((t) => [t.toLowerCase(), t])).values()];
+    lista.forEach((t) => {
+      const on = actuales.includes(t.toLowerCase());
+      const c = el('button', 'chip', t); c.type = 'button'; c.setAttribute('aria-pressed', String(on));
+      c.addEventListener('click', () => {
+        const cur = tagsEntrada();
+        $('a-tags').value = (on ? cur.filter((x) => x.toLowerCase() !== t.toLowerCase()) : [...cur, t]).join(', ');
+        pintarSugeridas();
+      });
+      box.append(c);
+    });
+  }
+  $('a-tags').addEventListener('input', pintarSugeridas);
+
+  async function subir(files) {
+    if (!S.assets || !S.db) return;
+    const etiquetas = tagsEntrada();
+    const ul = $('a-subiendo');
+    for (const f of files) {
+      const li = el('li', null, `Subiendo ${f.name}…`); ul.append(li);
+      const ext = (f.name.split('.').pop() || '').toLowerCase();
+      const tipo = ACEPTADOS.has(f.type) ? f.type : TIPO_EXT[ext];
+      if (!tipo) { li.dataset.e = 'error'; li.textContent = `${f.name}: ese tipo de archivo no se puede subir (usa foto, MP4/WebM, PDF o texto).`; continue; }
+      if (f.size > 20 * 1048576) { li.dataset.e = 'error'; li.textContent = `${f.name}: pesa ${pesoTxt(f.size)}, el máximo es 20 MB. Recórtalo o comprímelo.`; continue; }
+      try {
+        const r = await S.assets.upload(f, { type: tipo });
+        const ref = await S.db.collection('archivos').add({ asset: r.id, nombre: f.name, tipo: r.contentType, bytes: r.sizeBytes, etiquetas, nota: '', creado: new Date().toISOString() });
+        if (S.adjuntarAlPedido && ref && ref.id) S.sel.add(ref.id);
+        li.remove();
+      } catch (e) {
+        li.dataset.e = 'error';
+        const c = e && e.code;
+        li.textContent = `${f.name}: ` + (c === 'too_large' ? 'pesa más de 20 MB.' : c === 'unsupported_type' ? 'ese tipo de archivo no se acepta.' : c === 'quota_or_state' ? 'la Sala se quedó sin espacio para archivos.' : 'no se pudo subir. Inténtalo otra vez en un momento.');
+      }
+    }
+    S.adjuntarAlPedido = false; pintarArchivos();
+  }
+  $('a-file').addEventListener('change', (e) => { const fs = [...e.target.files]; e.target.value = ''; subir(fs); });
+  const drop = $('a-drop');
+  ['dragenter', 'dragover'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('over'); }));
+  ['dragleave', 'drop'].forEach((ev) => drop.addEventListener(ev, () => drop.classList.remove('over')));
+  drop.addEventListener('drop', (e) => { e.preventDefault(); subir([...(e.dataTransfer?.files || [])]); });
+
+  async function guardarTags(a, etiquetas) {
+    try { await S.db.doc('archivos/' + a.id).update({ etiquetas }); }
+    catch (e) { $('p-msg').textContent = 'No se pudieron guardar las etiquetas. Inténtalo otra vez.'; }
+  }
+  function tarjetaArchivo(a) {
+    const box = el('article', 'arch'); box.dataset.sel = String(S.sel.has(a.id));
+    const vista = el('div', 'vista'); const src = '/_blob/' + a.asset;
+    if ((a.tipo || '').startsWith('image/')) { const im = el('img'); im.loading = 'lazy'; im.alt = a.nombre || ''; im.src = src; im.onerror = () => vista.replaceChildren(el('span', null, 'No disponible')); vista.append(im); }
+    else if ((a.tipo || '').startsWith('video/')) { const v = el('video'); v.src = src; v.controls = true; v.preload = 'metadata'; v.playsInline = true; vista.append(v); }
+    else { const l = el('a', null); l.href = src; l.target = '_blank'; l.rel = 'noopener'; l.append(el('span', null, (a.tipo || '').includes('pdf') ? 'PDF · abrir' : 'Texto · abrir')); vista.append(l); }
+    const cuerpo = el('div', 'cuerpo');
+    cuerpo.append(el('div', 'nombre', a.nombre || 'Archivo'));
+    const tags = el('div', 'tags');
+    (a.etiquetas || []).forEach((t) => {
+      const chip = el('span', 'tag', t); const x = el('button', null, '×'); x.type = 'button'; x.setAttribute('aria-label', `Quitar etiqueta ${t}`);
+      x.addEventListener('click', () => guardarTags(a, (a.etiquetas || []).filter((y) => y !== t)));
+      chip.append(x); tags.append(chip);
+    });
+    if (S.puedeEditar) {
+      const inp = el('input'); inp.type = 'text'; inp.placeholder = '+ etiqueta'; inp.setAttribute('aria-label', `Agregar etiqueta a ${a.nombre || 'archivo'}`);
+      inp.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter' && e.key !== ',') return; e.preventDefault();
+        const nuevas = limpiaTags(inp.value); if (!nuevas.length) return;
+        guardarTags(a, [...new Set([...(a.etiquetas || []), ...nuevas])]);
+      });
+      tags.append(inp);
+    }
+    cuerpo.append(tags);
+    const pie = el('div', 'pie');
+    const lab = el('label'); const cb = el('input'); cb.type = 'checkbox'; cb.checked = S.sel.has(a.id);
+    cb.addEventListener('change', () => { cb.checked ? S.sel.add(a.id) : S.sel.delete(a.id); pintarArchivos(); });
+    lab.append(cb, document.createTextNode('Usar en mi pedido')); pie.append(lab);
+    if (S.assets) {
+      const del = el('button', 'borrar', 'Borrar'); del.type = 'button';
+      del.addEventListener('click', async () => {
+        if (!confirm(`¿Borrar «${a.nombre || 'este archivo'}» para siempre?`)) return;
+        try { await S.assets.delete(a.asset); await S.db.doc('archivos/' + a.id).delete(); S.sel.delete(a.id); }
+        catch (e) { $('p-msg').textContent = 'No se pudo borrar el archivo.'; }
+      });
+      pie.append(del);
+    }
+    cuerpo.append(pie, el('small', 'hint', `${pesoTxt(a.bytes)} · ${(a.creado || '').slice(0, 10)}`));
+    box.append(vista, cuerpo);
+    return box;
+  }
+  function pintarArchivos() {
+    // filtros por etiqueta
+    const fbar = $('a-filtros'); fbar.replaceChildren();
+    const tags = todasTags();
+    if (S.filtroTag && !tags.includes(S.filtroTag)) S.filtroTag = '';
+    if (tags.length) {
+      [['', 'Todos'], ...tags.map((t) => [t, t])].forEach(([v, n]) => {
+        const c = el('button', 'chip', n); c.type = 'button'; c.setAttribute('aria-pressed', String(S.filtroTag === v));
+        c.addEventListener('click', () => { S.filtroTag = v; pintarArchivos(); }); fbar.append(c);
+      });
+    }
+    const grid = $('a-grid'); grid.replaceChildren();
+    const lista = S.archivos.filter((a) => !S.filtroTag || (a.etiquetas || []).includes(S.filtroTag));
+    if (!S.archivos.length) grid.append(el('p', 'hint', 'Todavía no adjuntas archivos.'));
+    lista.forEach((a) => grid.append(tarjetaArchivo(a)));
+    // resumen dentro del pedido
+    const adj = $('p-adj'); adj.replaceChildren();
+    const sel = S.archivos.filter((a) => S.sel.has(a.id));
+    S.sel.forEach((id) => { if (!S.archivos.some((a) => a.id === id)) S.sel.delete(id); });
+    adj.append(el('span', 'lbl', sel.length ? `Archivos en este pedido (${sel.length}):` : 'Sin archivos adjuntos.'));
+    sel.forEach((a) => {
+      const chip = el('span', 'tag', a.nombre || 'Archivo'); const x = el('button', null, '×'); x.type = 'button'; x.setAttribute('aria-label', `Quitar ${a.nombre} del pedido`);
+      x.addEventListener('click', () => { S.sel.delete(a.id); pintarArchivos(); }); chip.append(x); adj.append(chip);
+    });
+    if (S.assets) {
+      const b = el('button', 'btn sm', 'Adjuntar aquí'); b.type = 'button';
+      b.addEventListener('click', () => { S.adjuntarAlPedido = true; $('a-file').click(); });
+      adj.append(b);
+    }
+    pintarSugeridas();
+  }
+
   $('cerrar').addEventListener('click', () => $('dlg').close());
   $('dlg').addEventListener('close', () => $('vid').pause());
   $('dlg').addEventListener('click', (e) => { if (e.target === $('dlg')) $('dlg').close(); });
@@ -422,6 +655,9 @@
     const db = await claude.use('db');
     if (!db) { $('lead').textContent = 'No se pudo abrir la base de la Sala en esta vista.'; return; }
     S.db = db; pintarPedir();
+    db.collection('estado').limit(20).onSnapshot((snap) => {
+      const d = snap.docs.find((x) => x.id === 'creditos'); S.cred = d ? d.data() : null; pintarCreditos(); pintarCosto();
+    }, () => { $('cred-txt').textContent = 'No se pudieron leer tus créditos.'; });
     db.collection('shots').limit(1000).onSnapshot((snap) => {
       S.shots = snap.docs.map((d) => ({ id: d.id, ...d.data() })); render();
       if (S.actual) { S.actual = S.shots.find((x) => x.id === S.actual.id) || S.actual; pintarAprobar(); pintarRedes(); }
@@ -436,6 +672,18 @@
     db.collection('pedidos').orderBy('creado', 'desc').limit(50).onSnapshot((snap) => {
       S.pedidos = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarPedidos();
     }, () => {});
+    db.collection('archivos').orderBy('creado', 'desc').limit(1000).onSnapshot((snap) => {
+      S.archivos = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarArchivos();
+    }, () => {});
   })();
+  (async () => {
+    const [assets, user] = await Promise.all([claude.use('assets'), claude.use('user')]);
+    S.assets = assets;
+    let edita = false; try { edita = user ? await user.canEdit() : false; } catch (e) {}
+    S.puedeEditar = edita || !!assets;
+    $('a-drop').hidden = !assets; $('a-sinpermiso').hidden = !!assets;
+    pintarArchivos();
+  })();
+  $('a-drop').hidden = true; pintarArchivos();
 })();
 </script>
