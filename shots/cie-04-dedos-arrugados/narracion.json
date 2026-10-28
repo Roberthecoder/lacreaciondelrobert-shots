@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Dedos Arrugados base narrada.dc.html",
   "salida": "Shot Dedos Arrugados narrado.dc.html",
   "nota": "Shot Científico #04. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
