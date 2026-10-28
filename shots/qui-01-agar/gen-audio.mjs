@@ -7,7 +7,7 @@
 //   Cada bacteria que mastica la gelatina = un "ñam" (toques rápidos).
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { crearAudio } from '../../motor/kit/audio-kit.mjs';
+import { crearAudio } from '../../motor/kit/audio-kit-lote-d.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const HTML = process.argv[2] || 'Shot Agar base narrada.dc.html', OUT = process.argv[3] || path.join('assets', 'mezcla.wav');

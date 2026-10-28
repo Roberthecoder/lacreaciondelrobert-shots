@@ -8,7 +8,7 @@
 //   · el champiñón crece con una nota que sube · 60 esporas = 60 toques agudos · 8 etapas = 8 bajos
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { crearAudio } from '../../motor/kit/audio-kit.mjs';
+import { crearAudio } from '../../motor/kit/audio-kit-lote-d.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const HTML = process.argv[2] || 'Shot Que Es Un Hongo base narrada.dc.html', OUT = process.argv[3] || path.join('assets', 'mezcla.wav');
