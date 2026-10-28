@@ -1,10 +1,70 @@
-{ "temas": [
-  { "id": "ozono-molina-montreal", "titulo": "El agujero de ozono se está cerrando: Mario Molina, los CFC y el Protocolo de Montreal (99 % eliminado, recuperación 2040/2066)",
-    "serie": "Shot Ambiental", "numero": 5, "estado": "guion", "carpeta": "shots/amb-05-ozono", "rama": "claude/igualar-ambiental",
-    "fuentes": ["WMO/UNEP comunicado 9 ene 2023 (evaluación 2022)", "EPA Basic Ozone Layer Science", "NobelPrize.org 1995 y autobiografía de Molina", "Molina y Rowland, Nature 249:810 (1974)", "UNEP Ozone Secretariat, Montreal Protocol"],
-    "fecha": "2026-10-28", "derivados": [] },
-  { "id": "nanoplasticos-agua-embotellada", "titulo": "DESCARTADO: nanoplásticos en agua embotellada (~240 mil por litro, Qian et al. PNAS 2024) — cifra en disputa (Materić, PNAS 2024)",
-    "serie": "Shot Ambiental", "numero": null, "estado": "idea", "carpeta": "", "rama": "claude/igualar-ambiental",
-    "fuentes": ["Qian et al. 2024, PNAS, PMC10801917", "Materić 2024, PNAS e2411099121"], "fecha": "2026-10-28",
-    "derivados": ["Solo retomarlo como historia de cómo la ciencia se corrige (la cifra y su crítica)"] }
-] }
+{
+ "temas": [
+  {
+   "id": "ozono-molina-montreal",
+   "titulo": "El agujero de ozono se está cerrando: Mario Molina, los CFC y el Protocolo de Montreal (99 % eliminado, recuperación 2040/2066)",
+   "serie": "Shot Ambiental",
+   "numero": 5,
+   "estado": "guion",
+   "carpeta": "shots/amb-05-ozono",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "WMO/UNEP comunicado 9 ene 2023 (evaluación 2022)",
+    "EPA Basic Ozone Layer Science",
+    "NobelPrize.org 1995 y autobiografía de Molina",
+    "Molina y Rowland, Nature 249:810 (1974)",
+    "UNEP Ozone Secretariat, Montreal Protocol"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": []
+  },
+  {
+   "id": "hundimiento-cdmx-nisar",
+   "titulo": "La Ciudad de México se hunde: 14 escalones del Ángel y más de 2 cm por mes (NISAR, NASA-ISRO, 2026)",
+   "serie": "Shot Ambiental",
+   "numero": 6,
+   "estado": "guion",
+   "carpeta": "shots/amb-06-hundimiento",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "NASA JPL 29 abr 2026, US-Indian Space Mission Maps Extreme Subsidence in Mexico City",
+    "Yaemsiri et al. 2010, PMID 19744178"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": []
+  },
+  {
+   "id": "nanoplasticos-agua-embotellada",
+   "titulo": "DESCARTADO: nanoplásticos en agua embotellada (~240 mil por litro, Qian et al. PNAS 2024) — cifra en disputa (Materić, PNAS 2024)",
+   "serie": "Shot Ambiental",
+   "numero": null,
+   "estado": "idea",
+   "carpeta": "",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "Qian et al. 2024, PNAS, PMC10801917",
+    "Materić 2024, PNAS e2411099121"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "Solo retomarlo como historia de cómo la ciencia se corrige (la cifra y su crítica)"
+   ]
+  },
+  {
+   "id": "murcielago-magueyero-descartado",
+   "titulo": "DESCARTADO: murciélago magueyero sale de la lista de EE. UU. (1,000 → 200,000) — la regla federal dice que el aumento refleja en buena parte mejores conteos",
+   "serie": "Shot Ambiental",
+   "numero": null,
+   "estado": "idea",
+   "carpeta": "",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "Federal Register 83 FR 17093 (2018)"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "Retomarlo solo diciendo que parte del aumento es por contar mejor"
+   ]
+  }
+ ]
+}
