@@ -64,7 +64,7 @@
    "titulo": "Detectores de IA que acusan a quien escribe en inglés como segunda lengua: 61.3 % de falsos positivos con ensayos TOEFL (Liang et al., Stanford, 2023)",
    "serie": "Shot IA",
    "numero": 9,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/ia-09-detectores",
    "rama": "claude/igualar-ia",
    "fecha": "2026-10-28",
