@@ -21,23 +21,32 @@
     {
       "id": "hormiga-zombi",
       "titulo": "El hongo que convierte hormigas en zombis (Ophiocordyceps)",
-      "serie": "Shot (sin serie, demo)",
-      "numero": null,
+      "serie": "Shot Fungi Mati",
+      "numero": 2,
       "estado": "renderizado",
-      "carpeta": "shots/001-hormiga-zombi",
-      "rama": "main",
+      "carpeta": "shots/fun-02-hormiga-zombi",
+      "rama": "claude/fun-02-hormiga-zombi",
       "fuentes": [
         "Fredericksen et al. (2017). *PNAS* 114(47): 12590–12595. Las células del hongo rodean e invaden los músculos; el cerebro no es invadido.",
         "Andersen et al. (2009). *The American Naturalist* 174(3): 424–433. Mordida a ~25 cm del suelo, humedad de 94–95 %.",
         "Hughes et al. (2011). *BMC Ecology* 11: 13. Mordidas sincronizadas cerca del mediodía solar.",
         "Hughes, Wappler y Labandeira (2011). *Biology Letters* 7(1): 67–70. Cicatrices de mordida en hojas fósiles de Messel, Alemania (~48 millones de años).",
-        "Robert y Casadevall (2009). *J. Infect. Dis.* 200(10): 1623–1626. La mayoría de los hongos no crece a temperatura de mamífero."
+        "Robert y Casadevall (2009). *J. Infect. Dis.* 200(10): 1623–1626. La mayoría de los hongos no crece a temperatura de mamífero.",
+        "Fredericksen et al. (2017). PNAS 114(47): 12590–12595.",
+        "Andersen et al. (2009). The American Naturalist 174(3): 424–433.",
+        "Hughes et al. (2011). BMC Ecology 11: 13.",
+        "Pontoppidan et al. (2009). PLoS ONE 4(3): e4835.",
+        "Evans, Elliot y Hughes (2011). PLoS ONE 6(3): e17024.",
+        "Hughes, Wappler y Labandeira (2011; en línea 2010). Biology Letters 7(1): 67–70.",
+        "Robert y Casadevall (2009). J. Infect. Dis. 200(10): 1623–1626.",
+        "Bergman y Casadevall (2010). mBio 1(5): e00212-10."
       ],
-      "fecha": "2026-10-25",
+      "fecha": "2026-10-28",
       "derivados": [
         "Cordyceps militaris: el pariente que sí se cultiva y se vende",
         "Hongos que cazan gusanos con lazos (Arthrobotrys)",
-        "Parásitos que cambian la conducta: Toxoplasma y los ratones"
+        "Parásitos que cambian la conducta: Toxoplasma y los ratones",
+        "Cementerios de hormigas zombi: por qué el hongo elige el mismo lugar"
       ]
     },
     {
@@ -319,9 +328,9 @@
       "titulo": "Las vinazas del tequila: 12 L por litro y qué hace la biotecnología con ellas (y el bagazo para hongos)",
       "serie": "Shot Ambiental",
       "numero": 1,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/amb-01-vinazas",
-      "rama": "remaster/lote-c",
+      "rama": "claude/lucid-bardeen-igyhx5",
       "fuentes": [
         "De la Torre-Anguiano, M. Á., Flores-Cosío, G. y Amaya-Delgado, L. (CIATEJ). \"Residuos líquidos provenientes de las bebidas espirituosas mexicanas: su tratamiento y valorización\". *Enfoques Transdisciplinarios: Ciencia y Sociedad* 3(2): 15–41 (21 jul 2025). revistaenfoques.ciatej.mx — 12 L de vinaza por litro de destilado (promedio); 1 L de vinaza puede contaminar 20 L de agua; productos: hidrógeno, biogás, proteína unicelular, enzimas.",
         "*Ciencia y Tecnología del Tequila* (CIATEJ): \"entre 10 y 12 L de vinaza por cada litro de la bebida\". Otras fuentes dan 7–12 L (UNAM, *Ingeniería Investigación y Tecnología* 23(2), 2022) o 10–15 L (UdeG). Por eso la voz dice \"en promedio, doce\".",
@@ -343,9 +352,9 @@
       "titulo": "Resistencia a antibióticos: el antibiótico escoge a las más duras (39 M de muertes 2025–2050)",
       "serie": "Shot Ambiental",
       "numero": 2,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/amb-02-resistencia",
-      "rama": "remaster/lote-c",
+      "rama": "claude/lucid-bardeen-igyhx5",
       "fuentes": [
         "GBD 2021 Antimicrobial Resistance Collaborators (proyecto GRAM, IHME y Universidad de Oxford). \"Global burden of bacterial antimicrobial resistance 1990–2021: a systematic analysis with forecasts to 2050\". *The Lancet* 404(10459): 1199–1226 (2024). 39 millones de muertes atribuibles a RAM entre 2025 y 2050; 1.14 M (2021) → 1.91 M (2050) muertes directas al año; 4.71 M → 8.22 M asociadas. Nota de prensa de la Universidad de Oxford, 17 sep 2024.",
         "O'Neill, J. (presidente). *Antimicrobial Resistance: Tackling a Crisis for the Health and Wealth of Nations* (Review on Antimicrobial Resistance, Reino Unido, dic 2014): 10 millones de muertes al año en 2050 si no se actúa.",
@@ -367,9 +376,9 @@
       "titulo": "La verdad incómoda de los bioplásticos (PLA: compostaje industrial a 58 °C, reciclaje y costo)",
       "serie": "Shot Ambiental",
       "numero": 3,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/amb-03-bioplasticos",
-      "rama": "remaster/lote-c",
+      "rama": "claude/lucid-bardeen-igyhx5",
       "fuentes": [
         "Bagheri, A. R., Laforsch, C., Greiner, A. y Agarwal, S. \"Fate of so-called biodegradable polymers in seawater and freshwater\". *Global Challenges* 1(4): 1700048 (2017). doi:10.1002/gch2.201700048 — un año a 25 °C en agua de mar y agua dulce artificiales: PLA, PCL y PET sin degradación medible.",
         "Compostaje industrial a 58 °C: ISO 20200 (desintegración en condiciones de compostaje simuladas, 58 °C, 90 días); *Scientific Reports* (2025) prueba productos comerciales a 58 °C según ISO 20200; tesis de la Universidad de Manitoba: PLA mineralizado por completo a 58 °C en 45 días.",
@@ -392,9 +401,9 @@
       "titulo": "El gusano barrenador y las moscas estériles (Curazao 1954 → Chiapas 2024 → Metapa 2026)",
       "serie": "Shot Ambiental",
       "numero": 4,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/amb-04-barrenador",
-      "rama": "remaster/lote-c",
+      "rama": "claude/lucid-bardeen-igyhx5",
       "fuentes": [
         "USDA APHIS, \"New World Screwworm\" y *Ready Reference Guide: Sterile Insect Technique* (aphis.usda.gov): biología (la hembra se aparea una vez; huevos en heridas; larvas en tejido vivo), Curazao 1954, EE. UU. libre en 1966, barrera en Panamá con COPEG.",
         "USDA APHIS, \"New World Screwworm Outbreak in Central America and Mexico\", y Congressional Research Service R49124 (2026): la plaga rebasó la barrera desde 2023 por varios factores y llegó al sur de México en nov 2024.",
@@ -417,9 +426,9 @@
       "titulo": "Tu ADN no es completamente humano: retrovirus endógenos (~8 %) y la sincitina de la placenta",
       "serie": "Shot Científico",
       "numero": 3,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/cie-03-adn-viral",
-      "rama": "remaster/lote-c",
+      "rama": "claude/lucid-bardeen-igyhx5",
       "fuentes": [
         "International Human Genome Sequencing Consortium (Lander et al.). \"Initial sequencing and analysis of the human genome\". *Nature* 409: 860–921 (2001): los elementos con LTR (retrovirus endógenos y parientes) son ~8 % del genoma.",
         "Mi, S. et al. \"Syncytin is a captive retroviral envelope protein involved in human placental morphogenesis\". *Nature* 403: 785–789 (2000). Genetics Institute, Cambridge, Massachusetts.",
@@ -440,9 +449,9 @@
       "id": "que-es-un-hongo",
       "titulo": "¿Qué es un hongo? (micelio, hifas, cuerpo fructífero, levaduras)",
       "serie": "Shot Fungi Mati",
-      "numero": 2,
-      "estado": "guion",
-      "carpeta": "shots/fun-02-que-es-un-hongo",
+      "numero": 1,
+      "estado": "renderizado",
+      "carpeta": "shots/fun-01-que-es-un-hongo",
       "rama": "remaster/lote-d",
       "fuentes": [
         "Baldauf, S. L. y Palmer, J. D. (1993). *Animals and fungi are each other's closest relatives: congruent evidence from multiple proteins.* PNAS 90(24): 11558–11562. (25 proteínas; animales y hongos, grupos hermanos.)",
@@ -457,14 +466,15 @@
         "Los hongos están más cerca de ti que de las plantas",
         "La red del bosque: micorrizas que conectan raíces"
       ],
-      "remaster_de": "lista vieja #2"
+      "remaster_de": "lista vieja #2",
+      "nota": "Gemelo mudo en el Release Borradores; narrado pendiente de aprobar voz."
     },
     {
       "id": "seta-rosa",
       "titulo": "Esto no es plástico: la seta rosa (Pleurotus djamor) y qué detona la fructificación",
       "serie": "Shot Fungi Mati",
       "numero": 3,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/fun-03-seta-rosa",
       "rama": "remaster/lote-d",
       "fuentes": [
@@ -480,14 +490,15 @@
         "Cultivar setas en posos de café",
         "Por qué los hongos salen después de la lluvia"
       ],
-      "remaster_de": "lista vieja #3"
+      "remaster_de": "lista vieja #3",
+      "nota": "Gemelo mudo en el Release Borradores; narrado pendiente de aprobar voz."
     },
     {
       "id": "metales-pesados-hongos",
       "titulo": "¿Los hongos tienen metales pesados? (acumulación, hervir, digestión)",
       "serie": "Shot Fungi Mati",
       "numero": 4,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/fun-04-metales-pesados",
       "rama": "remaster/lote-d",
       "fuentes": [
@@ -504,14 +515,15 @@
         "Los hongos de Chernóbil y la radiación (hipótesis de la radiosíntesis)",
         "Quitina: la pared de los hongos y el caparazón del camarón"
       ],
-      "remaster_de": "lista vieja #15"
+      "remaster_de": "lista vieja #15",
+      "nota": "Gemelo mudo en el Release Borradores; narrado pendiente de aprobar voz."
     },
     {
       "id": "agar",
       "titulo": "El agar: polisacárido de algas rojas que gelifica y casi nadie digiere",
       "serie": "Shot Químico",
       "numero": 1,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/qui-01-agar",
       "rama": "remaster/lote-d",
       "fuentes": [
@@ -527,14 +539,15 @@
         "Alginato: la esferificación de la cocina molecular",
         "Fanny Hesse: la cocina que cambió la microbiología"
       ],
-      "remaster_de": "lista vieja #16"
+      "remaster_de": "lista vieja #16",
+      "nota": "Gemelo mudo en el Release Borradores; narrado pendiente de aprobar voz."
     },
     {
       "id": "estriado-agotamiento",
       "titulo": "Estriado por agotamiento: 5 errores comunes",
       "serie": "Shot Químico",
       "numero": 2,
-      "estado": "guion",
+      "estado": "renderizado",
       "carpeta": "shots/qui-02-estriado",
       "rama": "remaster/lote-d",
       "fuentes": [
@@ -546,7 +559,8 @@
         "Tinción de Gram: por qué unas bacterias se pintan de morado",
         "Contar bacterias: diluciones en serie y UFC"
       ],
-      "remaster_de": "lista vieja #20"
+      "remaster_de": "lista vieja #20",
+      "nota": "Gemelo mudo en el Release Borradores; narrado pendiente de aprobar voz."
     },
     {
       "id": "viejo-06-vacunas",
@@ -852,6 +866,702 @@
       "carpeta": "shots/ia-01-esp-fotos-ofrenda",
       "rama": "claude/especiales-muertos",
       "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "El aerosol de los HFC: el reemplazo de los CFC que calienta el planeta (Enmienda de Kigali)",
+        "Mario Molina y el aire de la Ciudad de México (su trabajo en calidad del aire)",
+        "Por qué los rayos UV-B sí llegan y cómo te protege el ozono (índice UV)"
+      ],
+      "fuentes": [
+        "WMO/UNEP comunicado 9 ene 2023 (evaluación 2022)",
+        "EPA Basic Ozone Layer Science",
+        "NobelPrize.org 1995 y autobiografía de Molina",
+        "Molina y Rowland, Nature 249:810 (1974)",
+        "UNEP Ozone Secretariat, Montreal Protocol"
+      ],
+      "id": "ozono-molina-montreal",
+      "titulo": "El agujero de ozono se está cerrando: Mario Molina, los CFC y el Protocolo de Montreal (99 % eliminado, recuperación 2040/2066)",
+      "serie": "Shot Ambiental",
+      "numero": 5,
+      "estado": "renderizado",
+      "carpeta": "shots/amb-05-ozono",
+      "rama": "claude/igualar-ambiental",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "El Metro de la CDMX y el hundimiento: por qué la Línea 12 y otras se deforman",
+        "Recarga de acuíferos: cómo meter agua de lluvia al subsuelo",
+        "Otras ciudades de México que se hunden por bombeo (Aguascalientes, Celaya, Morelia)"
+      ],
+      "fuentes": [
+        "NASA JPL 29 abr 2026, US-Indian Space Mission Maps Extreme Subsidence in Mexico City",
+        "Yaemsiri et al. 2010, PMID 19744178"
+      ],
+      "id": "hundimiento-cdmx-nisar",
+      "titulo": "La Ciudad de México se hunde: 14 escalones del Ángel y más de 2 cm por mes (NISAR, NASA-ISRO, 2026)",
+      "serie": "Shot Ambiental",
+      "numero": 6,
+      "estado": "renderizado",
+      "carpeta": "shots/amb-06-hundimiento",
+      "rama": "claude/igualar-ambiental",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "El algodoncillo: la única comida de la oruga monarca y por qué no cualquier especie sirve",
+        "Cómo se mide una colonia de monarcas (hectáreas, no mariposas)",
+        "Los oyameles: el bosque que funciona como cobija para las monarcas"
+      ],
+      "fuentes": [
+        "WWF/CONANP Monitoreo Mariposa Monarca 2025-2026",
+        "WWF/UNAM cambio forestal RBMM 2024-2025",
+        "PMC13027080 (2026)",
+        "FIFA Stadium Guidelines 5.3"
+      ],
+      "id": "monarca-canchas-2025-2026",
+      "titulo": "Todas las colonias de mariposa monarca caben en unas 4 canchas de fútbol: 2.93 ha en 2025-2026 contra 18.19 ha en 1996-1997",
+      "serie": "Shot Ambiental",
+      "numero": 7,
+      "estado": "renderizado",
+      "carpeta": "shots/amb-07-monarca",
+      "rama": "claude/igualar-ambiental",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "La totoaba: el pez cuya vejiga vale más que su carne",
+        "Cómo se cuenta a un animal casi invisible: detectores acústicos y elicitación de expertos",
+        "Otros cetáceos en peligro: el baiji, el primero extinto por humanos"
+      ],
+      "fuentes": [
+        "Informe del Crucero de Observación Vaquita Marina 2025 (IUCN-CSG, feb 2026)",
+        "NOAA Fisheries, Vaquita",
+        "NOAA SWFSC Abundance and Trends"
+      ],
+      "id": "vaquita-dedos-2025",
+      "titulo": "Las vaquitas que se vieron en 2025 caben en tus dedos: entre 7 y 10, con crías (Frida); 567 en 1997 y 59 en 2015",
+      "serie": "Shot Ambiental",
+      "numero": 8,
+      "estado": "renderizado",
+      "carpeta": "shots/amb-08-vaquita",
+      "rama": "claude/igualar-ambiental",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "La Ciénega de Chapala: cómo se secó media parte del lago en 1902-1910",
+        "De dónde sale el otro 40 % del agua de Guadalajara",
+        "El río Lerma: el viaje del agua desde Toluca hasta Chapala"
+      ],
+      "fuentes": [
+        "CEA Jalisco, Lago de Chapala",
+        "CEA Jalisco, nivel diario 27 oct 2026"
+      ],
+      "id": "chapala-60-por-ciento",
+      "titulo": "Seis de cada diez litros de Guadalajara salen de un lago de 8 m: Chapala (79 × 28 km; mínimo de 1955; Ciénega 1902-1910; 70 % el 27 oct 2026)",
+      "serie": "Shot Ambiental",
+      "numero": 9,
+      "estado": "renderizado",
+      "carpeta": "shots/amb-09-chapala",
+      "rama": "claude/igualar-ambiental",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Solo retomarlo como historia de cómo la ciencia se corrige (la cifra y su crítica)"
+      ],
+      "fuentes": [
+        "Qian et al. 2024, PNAS, PMC10801917",
+        "Materić 2024, PNAS e2411099121"
+      ],
+      "id": "nanoplasticos-agua-embotellada",
+      "titulo": "DESCARTADO: nanoplásticos en agua embotellada (~240 mil por litro, Qian et al. PNAS 2024) — cifra en disputa (Materić, PNAS 2024)",
+      "serie": "Shot Ambiental",
+      "numero": null,
+      "estado": "idea",
+      "carpeta": "",
+      "rama": "claude/igualar-ambiental",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Retomarlo solo diciendo que parte del aumento es por contar mejor"
+      ],
+      "fuentes": [
+        "Federal Register 83 FR 17093 (2018)"
+      ],
+      "id": "murcielago-magueyero-descartado",
+      "titulo": "DESCARTADO: murciélago magueyero sale de la lista de EE. UU. (1,000 → 200,000) — la regla federal dice que el aumento refleja en buena parte mejores conteos",
+      "serie": "Shot Ambiental",
+      "numero": null,
+      "estado": "idea",
+      "carpeta": "",
+      "rama": "claude/igualar-ambiental",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Hacerlo solo si aparece un muestreo reciente (CONAGUA o universidad)"
+      ],
+      "fuentes": [
+        "PMID 17316482 (2006)",
+        "PMID 15759914 (2005)",
+        "PMID 15371213 (2004)"
+      ],
+      "id": "arsenico-fluor-altos-jalisco",
+      "titulo": "IDEA PENDIENTE: arsénico y flúor en pozos de Los Altos de Jalisco — solo hay datos primarios de 2002-2003 (Hurtado-Jiménez y Gardea-Torresdey)",
+      "serie": "Shot Ambiental",
+      "numero": null,
+      "estado": "idea",
+      "carpeta": "",
+      "rama": "claude/igualar-ambiental",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Por qué se te duerme la pierna (nervios comprimidos)",
+        "La piel de gallina: músculos diminutos en cada pelo",
+        "Por qué las huellas digitales no se borran con el agua"
+      ],
+      "fuentes": [
+        "Kareklas, Nettle y Smulders (2013). Biology Letters 9: 20120999 (PMC3639753): 20 personas, 12 % menos tiempo con objetos bajo el agua.",
+        "Haseleu et al. (2014). PLoS One 9: e84949 (PMC3885627): 40 personas, sin ventaja.",
+        "Wilder-Smith y Chow (2003). Muscle & Nerve 27: 307–311 (PMID 12635117): vasoconstricción.",
+        "Fustes et al. (2026). Arq. Neuropsiquiatr. 84(7) (PMC13472706): revisión de la prueba de arrugamiento."
+      ],
+      "id": "cie-dedos-arrugados",
+      "titulo": "Los dedos arrugados en el agua: no es piel hinchada, es tu sistema nervioso (vasoconstricción; Newcastle 2013 vs. Berlín 2014)",
+      "serie": "Shot Científico",
+      "numero": 4,
+      "estado": "renderizado",
+      "carpeta": "shots/cie-04-dedos-arrugados",
+      "rama": "claude/igualar-cientifico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Por qué no oyes tu propia voz como la oyen los demás (conducción ósea)",
+        "Las ratas se ríen: ultrasonidos del juego",
+        "El punto ciego: el hoyo que tu cerebro rellena"
+      ],
+      "fuentes": [
+        "Blakemore, Frith y Wolpert (1999). J. Cogn. Neurosci. 11: 551–559 (PMID 10511643).",
+        "Blakemore, Wolpert y Frith (1998). Nature Neuroscience 1: 635–640 (PMID 10196573).",
+        "Blakemore, Wolpert y Frith (2000). NeuroReport 11: R11–R16 (PMID 10943682).",
+        "Ishiyama y Brecht (2016). Science 354: 757–760; Ishiyama, Kaufmann y Brecht (2019). Current Biology 29: 3153–3164."
+      ],
+      "id": "cie-cosquillas",
+      "titulo": "Por qué no te puedes hacer cosquillas (predicción del cerebro; robots de Blakemore 1999; ratas 2016/2019)",
+      "serie": "Shot Científico",
+      "numero": 5,
+      "estado": "renderizado",
+      "carpeta": "shots/cie-05-cosquillas",
+      "rama": "claude/igualar-cientifico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Cuántos glóbulos rojos fabricas por segundo",
+        "Tu cuerpo por masa: grasa y músculo contra número de células",
+        "Cuánto de tu excremento son bacterias"
+      ],
+      "fuentes": [
+        "Sender, Fuchs y Milo (2016). PLoS Biology 14(8): e1002533 (PMC4991899): 3.8·10^13 bacterias, 3.0·10^13 células humanas, 84 % glóbulos rojos, ~0.2 kg.",
+        "Sender, Fuchs y Milo (2016). Cell 164(3): 337–340 (PMID 26824647)."
+      ],
+      "id": "cie-bacterias-uno-a-uno",
+      "titulo": "No eres 10 bacterias por cada célula tuya: es casi 1 a 1 (Sender, Fuchs y Milo 2016)",
+      "serie": "Shot Científico",
+      "numero": 6,
+      "estado": "renderizado",
+      "carpeta": "shots/cie-06-bacterias-1a1",
+      "rama": "claude/igualar-cientifico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "La regla de los 5 segundos: qué dice el experimento",
+        "Por qué huele la ropa que se secó adentro (Moraxella)",
+        "El celular y sus bacterias: qué se ha medido"
+      ],
+      "fuentes": [
+        "Cardinale, Kaiser, Lueders, Schnell y Egert (2017). Scientific Reports 7: 5791 (PMC5517580)."
+      ],
+      "id": "cie-esponja-cocina",
+      "titulo": "La esponja de tu cocina por dentro: hasta 54 mil millones de bacterias por cm³ y por qué limpiarla no basta (Cardinale et al. 2017)",
+      "serie": "Shot Científico",
+      "numero": 7,
+      "estado": "renderizado",
+      "carpeta": "shots/cie-07-esponja",
+      "rama": "claude/igualar-cientifico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Qué le pasa a tus huesos en el espacio (pérdida de densidad)",
+        "Por qué los astronautas ven distinto (ojos en microgravedad)",
+        "Por qué te truena la espalda (burbujas en las articulaciones)"
+      ],
+      "fuentes": [
+        "Tyrrell, Reilly y Troup (1985). Spine 10(2): 161–164 (PMID 4002039): 19.3 mm, 54 % en la primera hora.",
+        "Roberts et al. (1998). Clinical Anatomy 11(1): 1–8 (PMID 9445091), Universidad de Liverpool.",
+        "Paajanen et al. (1994). J. Orthop. Res. 12(4): 509–514 (PMID 8064481).",
+        "NASA, Spinal Ultrasound Investigation (ISS): hasta 3 % más altos.",
+        "Green y Scott (2018). Frontiers in Physiology 8: 1126 (PMC5778142)."
+      ],
+      "id": "cie-estatura-noche",
+      "titulo": "En la noche mides casi 2 cm menos (discos de la columna) y en el espacio hasta 3 % más (Tyrrell 1985, NASA)",
+      "serie": "Shot Científico",
+      "numero": 8,
+      "estado": "renderizado",
+      "carpeta": "shots/cie-08-estatura",
+      "rama": "claude/igualar-cientifico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Por qué la Luna se ve roja en un eclipse",
+        "Cuánto pesarías en Marte (y qué pasaría con tu salto)",
+        "Las nubes de Marte que brillan de noche"
+      ],
+      "fuentes": [
+        "NASA/JPL PIA19400, Sunset in Mars' Gale Crater (2015).",
+        "NASA Space Place, Why Is the Sky Blue?",
+        "NASA APOD, Martian Sunset (2009, 2014)."
+      ],
+      "id": "cie-atardecer-marte",
+      "titulo": "El atardecer azul de Marte (polvo fino, Curiosity sol 956, 15 abr 2015) contra el cielo azul y el atardecer rojo de la Tierra",
+      "serie": "Shot Científico",
+      "numero": 9,
+      "estado": "renderizado",
+      "carpeta": "shots/cie-09-atardecer-marte",
+      "rama": "claude/igualar-cientifico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Madera que brilla de noche: la bioluminiscencia de Armillaria y Mycena",
+        "Pando: el álamo que es un solo individuo (clones gigantes de plantas)",
+        "Cómo se pudre la madera: hongos de pudrición blanca y café"
+      ],
+      "fuentes": [
+        "Ferguson et al. 2003, Can. J. For. Res. 33: 612–623 (https://zenodo.org/record/1235905)",
+        "Baumgartner et al. 2011, Mol. Plant Pathol. 12(6): 515–534 (PMC6640247)"
+      ],
+      "id": "armillaria-gigante",
+      "titulo": "El hongo gigante escondido bajo el bosque: un solo Armillaria ostoyae de 965 ha (Oregón, 2003)",
+      "serie": "Shot Fungi Mati",
+      "numero": 5,
+      "estado": "renderizado",
+      "carpeta": "shots/fun-05-armillaria",
+      "rama": "claude/igualar-fungi-mati",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "El anillo que estrangula: Drechslerella y su trampa que se cierra",
+        "El hongo ostra también caza gusanos (Pleurotus y su toxina)",
+        "C. elegans: el gusano de 1 mm que ganó varios premios Nobel"
+      ],
+      "fuentes": [
+        "Hsueh et al. 2013, Curr. Biol. 23: 83–86 (PMC4047969)",
+        "Hsueh et al. 2017, eLife 6: e20023 (PMC5243009)",
+        "Lin et al. 2023, PLoS Biol. 21: e3002400 (PMC10662756)"
+      ],
+      "id": "hongo-cazador-gusanos",
+      "titulo": "El hongo que caza gusanos con redes pegajosas (Arthrobotrys oligospora, ascarósidos 2013 y olores 2017)",
+      "serie": "Shot Fungi Mati",
+      "numero": 6,
+      "estado": "renderizado",
+      "carpeta": "shots/fun-06-cazador",
+      "rama": "claude/igualar-fungi-mati",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Cómo sale disparada la espora de un champiñón (la gota de Buller)",
+        "El hongo artillero (Sphaerobolus) que mancha coches y casas",
+        "Hongos que solo germinan después de pasar por un animal (coprófilos)"
+      ],
+      "fuentes": [
+        "Yafetto et al. 2008, PLoS ONE 3: e3237 (PMC2528943)",
+        "Viriato 2008, Acta Bot. Bras. 22(3)",
+        "Souza et al. 2017, Braz. J. Microbiol. 48: 79–86 (PMC5220632)",
+        "Eysker 1991, Res. Vet. Sci. 50: 29–32"
+      ],
+      "id": "pilobolus-canon",
+      "titulo": "El cañón de esporas que vive en la caca de vaca (Pilobolus: 13 m/s, +20,000 g, 2.5 m)",
+      "serie": "Shot Fungi Mati",
+      "numero": 7,
+      "estado": "renderizado",
+      "carpeta": "shots/fun-07-pilobolus",
+      "rama": "claude/igualar-fungi-mati",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Hongos en las uñas: por qué tardan tanto en quitarse",
+        "La caspa y Malassezia: el hongo que vive en tu cabeza",
+        "Candida: la levadura que vive en tu boca y tu intestino"
+      ],
+      "fuentes": [
+        "Leung et al. 2023, Drugs Context 12: 2023-5-1 (PMC10321471)",
+        "Sasagawa 2019, J. Dermatol. 46(11): 940–946 (PMC6900014)"
+      ],
+      "id": "pie-de-atleta",
+      "titulo": "Pie de atleta: el hongo que se come tu queratina (Trichophyton; zapatos húmedos, Osaka 2019)",
+      "serie": "Shot Fungi Mati",
+      "numero": 8,
+      "estado": "renderizado",
+      "carpeta": "shots/fun-08-pie-atleta",
+      "rama": "claude/igualar-fungi-mati",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "El hongo de paja y su gemelo mortal: por qué se confunden",
+        "Amanita muscaria: el hongo de los cuentos (rojo con puntos blancos)",
+        "Cómo trabaja un micólogo para identificar un hongo"
+      ],
+      "fuentes": [
+        "Vo et al. 2017, MMWR 66(21): 549–553 (PMC5657817)",
+        "Kayes y Ho 2024, Int. J. Mol. Sci. 25(23): 13028 (PMC11640968)",
+        "Instituto Nacional de Toxicología y Ciencias Forenses (España), Prevención de intoxicaciones por setas"
+      ],
+      "id": "amanita-mortal",
+      "titulo": "La cuchara de plata no te salva: Amanita phalloides y las amatoxinas (California 2016)",
+      "serie": "Shot Fungi Mati",
+      "numero": 9,
+      "estado": "renderizado",
+      "carpeta": "shots/fun-09-amanita",
+      "rama": "claude/igualar-fungi-mati",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "La tortuga impresa en 3D que una IA ve como rifle (Athalye et al., 2018)",
+        "Lentes 'adversarios' que engañan al reconocimiento facial",
+        "Envenenar los datos de entrenamiento: cuántas imágenes falsas bastan"
+      ],
+      "fuentes": [
+        "Goodfellow, Shlens y Szegedy, arXiv:1412.6572 (2014; ICLR 2015): panda 57.7% → gibbon 99.3%, ε .007; error 89.4% → 17.9% con entrenamiento adversario",
+        "Eykholt et al., arXiv:1707.08945 (2017; CVPR 2018): estampas en un alto, 100% en laboratorio y 84.8% de cuadros desde un auto en marcha"
+      ],
+      "id": "ia-panda-adversario",
+      "titulo": "Ejemplos adversarios: un ruido invisible convierte un panda en gibón para la IA (Goodfellow 2014) y estampas en un alto (Eykholt 2017)",
+      "serie": "Shot IA",
+      "numero": 6,
+      "estado": "renderizado",
+      "carpeta": "shots/ia-06-panda",
+      "rama": "claude/igualar-ia",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "ELIZA (1966): el primer chatbot y el efecto ELIZA",
+        "Cómo saber si chateas con una IA: estrategias que sí funcionan",
+        "Las voces clonadas y las llamadas falsas"
+      ],
+      "fuentes": [
+        "Jones y Bergen, PNAS 123(21) e2524472123 (mayo 2026), PMC13214042: GPT-4.5 con personaje 73%, sin personaje 36%, ELIZA 23%, 1,023 partidas, GPT-5 59% en 15 min",
+        "Jones y Bergen, arXiv:2503.23674 (2025): Turing (1950), juego de imitación"
+      ],
+      "id": "ia-prueba-turing",
+      "titulo": "La prueba de Turing: la gente creyó que GPT-4.5 (con personaje) era el humano 73 % de las veces (Jones y Bergen, PNAS 2026)",
+      "serie": "Shot IA",
+      "numero": 7,
+      "estado": "renderizado",
+      "carpeta": "shots/ia-07-turing",
+      "rama": "claude/igualar-ia",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "La IA que lee radiografías de tórax para tuberculosis (OMS)",
+        "Retinopatía diabética: la IA que revisa el fondo de ojo",
+        "¿Quién es responsable si la IA médica se equivoca?"
+      ],
+      "fuentes": [
+        "Lång et al., Lancet Oncol 24:936–944 (2023): escala 1–10, lectura simple 1–9 y doble 10",
+        "Hernström et al., Lancet Digit Health 7:e175–e183 (2025): 105,934 mujeres, 6.4 vs 5.0 por mil, −44.2 % lecturas",
+        "Gommers et al., Lancet 407:505–514 (2026): cánceres de intervalo 1.55 vs 1.76 por mil",
+        "MedlinePlus: Mamografía"
+      ],
+      "id": "ia-mamografias-masai",
+      "titulo": "IA en las mamografías: 44 % menos lecturas y más cáncer encontrado (ensayo MASAI, Suecia: 6.4 vs 5.0 por mil; Lancet 2026)",
+      "serie": "Shot IA",
+      "numero": 8,
+      "estado": "renderizado",
+      "carpeta": "shots/ia-08-mamografias",
+      "rama": "claude/igualar-ia",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Perplejidad: cómo mide una IA qué tan sorprendente es un texto",
+        "Marcas de agua en texto de IA: ¿se pueden detectar de verdad?",
+        "¿Usar IA para mejorar tu inglés es trampa? Lo que dicen las universidades"
+      ],
+      "fuentes": [
+        "Liang, Yuksekgonul, Mao, Wu y Zou, Patterns 4(7):100779 (2023), PMC10382961: 7 detectores, 91 ensayos TOEFL, FPR promedio 61.3 %, 97.8 % al menos uno, 19.8 % los siete, 61.3 → 11.6 % con vocabulario enriquecido"
+      ],
+      "id": "ia-detectores-no-nativos",
+      "titulo": "Detectores de IA que acusan a quien escribe en inglés como segunda lengua: 61.3 % de falsos positivos con ensayos TOEFL (Liang et al., Stanford, 2023)",
+      "serie": "Shot IA",
+      "numero": 9,
+      "estado": "renderizado",
+      "carpeta": "shots/ia-09-detectores",
+      "rama": "claude/igualar-ia",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Por qué el cloro quita manchas: oxidación de los colorantes",
+        "El olor a alberca no es cloro: son cloraminas",
+        "Agua potable: cuánto cloro lleva y por qué"
+      ],
+      "fuentes": [
+        "Atalla et al. 2024, Clin Toxicol 62:589 (PMID 39263698)",
+        "Gharpure et al. 2020, MMWR 69:705 (PMID 32525852)",
+        "World J Clin Cases 2022 (PMC9477020)",
+        "Das y Blanc 1993, Toxicol Ind Health (PMID 8367885)"
+      ],
+      "id": "qui-cloro-mezclas",
+      "titulo": "¿Por qué NO mezclar cloro con vinagre o amoniaco? (gas cloro y cloraminas)",
+      "serie": "Shot Químico",
+      "numero": 3,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-03-cloro",
+      "rama": "claude/igualar-quimico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Empaques que cambian de color si la comida se echa a perder",
+        "Por qué la jamaica se aclara con limón",
+        "Las hortensias azules y rosas: el suelo como indicador"
+      ],
+      "fuentes": [
+        "Huțuțui et al. 2026, Molecules (PMC13609543)",
+        "Dong et al. 2026, Food Chem X 36:104058 (PMID 42291809)",
+        "Nguyen et al. 2026, J Food Sci (PMID 41891571)"
+      ],
+      "id": "qui-col-morada-ph",
+      "titulo": "El jugo de col morada es un medidor de pH (antocianinas que cambian de color)",
+      "serie": "Shot Químico",
+      "numero": 4,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-04-col-morada",
+      "rama": "claude/igualar-quimico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "El nejayote: qué hacer con el agua de desecho del nixtamal",
+        "Las micotoxinas del maíz (fumonisinas y aflatoxinas)",
+        "Por qué la tortilla se infla en el comal"
+      ],
+      "fuentes": [
+        "Kamau et al. 2020, Food Sci Nutr (PMC7174222)",
+        "Bressani et al. 2004, J Agric Food Chem (PMID 14995114)",
+        "Suri y Tanumihardjo 2016 (PMID 33401800)",
+        "Front Nutr 2021 (PMC8780548)",
+        "Maris et al. 2025, Toxins (PMID 41295842)"
+      ],
+      "id": "qui-nixtamal",
+      "titulo": "La nixtamalización: la cal que hace tortilla al maíz (y libera la niacina)",
+      "serie": "Shot Químico",
+      "numero": 5,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-05-nixtamal",
+      "rama": "claude/igualar-quimico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Caramelo: cuando el azúcar se dora solo",
+        "Por qué el café tostado huele así (pirazinas)",
+        "Acrilamida en papas fritas: cómo se mide"
+      ],
+      "fuentes": [
+        "El Hosry et al. 2025, Foods (PMC12154226)",
+        "Mottram et al. 2002, Nature 419:448 (PMID 12368844)"
+      ],
+      "id": "qui-maillard",
+      "titulo": "Ese dorado no es quemado: la reacción de Maillard",
+      "serie": "Shot Químico",
+      "numero": 6,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-06-maillard",
+      "rama": "claude/igualar-quimico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Cómo se hace el jabón: saponificación de grasa con sosa",
+        "Gel antibacterial contra jabón: qué hace cada uno",
+        "Agua dura: por qué el jabón no hace espuma"
+      ],
+      "fuentes": [
+        "Ijaz et al. 2021, PeerJ 9:e12041 (PMC8451441)",
+        "Ejemot-Nwadiaro et al. 2021, Cochrane (PMID 33539552)"
+      ],
+      "id": "qui-jabon-micelas",
+      "titulo": "El jabón no borra la grasa: la encierra (micelas)",
+      "serie": "Shot Químico",
+      "numero": 7,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-07-jabon",
+      "rama": "claude/igualar-quimico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Por qué el ajo picado se pone verde",
+        "La alicina del ajo: química que aparece al machacar",
+        "Cebollas dulces: menos azufre en el suelo"
+      ],
+      "fuentes": [
+        "Yoshimoto y Saito 2019, J Exp Bot (PMID 31106832)",
+        "Imai et al. 2002, Nature 419:685 (PMID 12384686)",
+        "Kato et al. 2016, Sci Rep 6:23779 (PMC4822150)",
+        "Tamaru et al. 2026, Front Plant Sci (PMID 42877233)"
+      ],
+      "id": "qui-cebolla-lagrimas",
+      "titulo": "Por qué lloras con la cebolla (factor lacrimógeno)",
+      "serie": "Shot Químico",
+      "numero": 8,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-08-cebolla",
+      "rama": "claude/igualar-quimico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Acatalasemia: las personas sin catalasa",
+        "Pasta de dientes de elefante con levadura (catalasa en vivo)",
+        "Por qué la papa cruda también hace espuma con agua oxigenada"
+      ],
+      "fuentes": [
+        "Nandi et al. 2019, Oxid Med Cell Longev (PMC6885225)",
+        "Lineaweaver et al. 1985, Plast Reconstr Surg (PMID 3975287)",
+        "Hengy et al. 2026, Int J Dermatol (PMID 42873063)",
+        "Shih et al. 2025, World J Surg (PMID 40890906)"
+      ],
+      "id": "qui-agua-oxigenada",
+      "titulo": "La espuma del agua oxigenada no es la herida sanando (catalasa)",
+      "serie": "Shot Químico",
+      "numero": 9,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-09-agua-oxigenada",
+      "rama": "claude/igualar-quimico",
+      "fecha": "2026-10-28"
+    },
+    {
+      "derivados": [
+        "Por que la leche deslactosada sabe mas dulce sin tener mas azucar (glucosa y galactosa son mas dulces que la lactosa)",
+        "La persistencia de la lactasa: la mutacion que se extendio con la ganaderia, y por que no es igual en todo el mundo",
+        "Los virus adeno-asociados como vehiculo: que terapias genicas con AAV si estan aprobadas hoy"
+      ],
+      "fuentes": [
+        "During, M. J. et al., Nature Medicine 4(10): 1131-1135 (1998): https://www.nature.com/articles/nm1098_1131",
+        "The Thought Emporium (Justin Atkin), proyecto de lactosa, feb 2018: https://www.thethoughtemporium.com/lactose",
+        "van der Flier, L. G. y Clevers, H., Annual Review of Physiology 71 (2009): el epitelio intestinal se renueva cada 4-5 dias"
+      ],
+      "id": "lactosa-virus-gen-lactasa",
+      "titulo": "El virus que te deja tomar leche: terapia génica para la intolerancia a la lactosa",
+      "serie": "Shot Biotecnológico",
+      "numero": 6,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-06-lactosa",
+      "rama": "remaster/lote-b",
+      "fecha": "2026-10-27",
+      "nota": "Remasterizacion del video viejo #10. Matiz obligatorio: fue un autoexperimento de un divulgador, no un tratamiento aprobado. La duracion de su efecto NO se pudo verificar y el guion no la afirma."
+    },
+    {
+      "derivados": [
+        "Como se revisa hoy un pedido de ADN sintetico: el 'conoce a tu cliente' de las empresas que lo venden",
+        "Que es la investigacion de doble uso y quien decide si algo se publica",
+        "La erradicacion de la polio: por que sigue habiendo casos si hay vacuna desde 1955"
+      ],
+      "fuentes": [
+        "Cello, J., Paul, A. V. y Wimmer, E., Science 297(5583): 1016-1018 (9 ago 2002)",
+        "Congressional Research Service, RS21369 (2002): https://www.everycrsreport.com/reports/RS21369.html",
+        "National Research Council, informe Fink (2004); NSABB creado en 2004"
+      ],
+      "id": "poliovirus-sintetico-2002-bioseguridad",
+      "titulo": "El virus que se escribio desde su secuencia: el poliovirus sintetico de 2002 y las reglas que dejo",
+      "serie": "Shot Biotecnológico",
+      "numero": 7,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-07-polio",
+      "rama": "remaster/lote-b",
+      "fecha": "2026-10-27",
+      "nota": "Remasterizacion del video viejo #11, corrigiendo el nombre (Eckard Wimmer). Tono de bioseguridad: cuenta que significo y que reglas dejo, sin ningun procedimiento."
+    },
+    {
+      "derivados": [
+        "Por que la insulina es cara si se fabrica en tanques: patentes, biosimilares y el costo real de produccion",
+        "Cuerpos de inclusion: por que la bacteria guarda la proteina en grumos y hay que volver a doblarla",
+        "Otras proteinas recombinantes de tu botiquin: hormona de crecimiento, factor VIII, vacunas"
+      ],
+      "fuentes": [
+        "Humulin (Eli Lilly con Genentech), aprobada por la FDA el 30 de octubre de 1982",
+        "Novolin (Novo Nordisk), insulina humana producida en Saccharomyces cerevisiae, aprobada en EE. UU. en 1991",
+        "Federacion Internacional de Diabetes, IDF Diabetes Atlas, 11a edicion (2025): https://idf.org/news-and-resources/news/idf-diabetes-atlas-11th-edition/"
+      ],
+      "id": "insulina-recombinante-bacteria-levadura",
+      "titulo": "La insulina sale de un tanque: de E. coli a la levadura",
+      "serie": "Shot Biotecnológico",
+      "numero": 8,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-08-insulina",
+      "rama": "remaster/lote-b",
+      "fecha": "2026-10-27",
+      "nota": "Remasterizacion del video viejo #17. Matiz obligatorio: hoy tambien se produce en levadura, no solo en bacterias. No existe cifra publica del reparto de mercado por hospedero."
+    },
+    {
+      "derivados": [
+        "Que es una cepa tipo y por que cada especie tiene una bacteria 'oficial' de referencia",
+        "Como se revive una cepa liofilizada, paso a paso y sin contaminarla",
+        "Por que se guardan dos copias en lugares distintos: casos reales de colecciones perdidas"
+      ],
+      "fuentes": [
+        "World Data Centre for Microorganisms (WDCM): unas 802 colecciones en 78 paises y ~3.28 millones de cepas: https://academic.oup.com/nar/article/45/D1/D611/2770659",
+        "Revisiones de conservacion de microorganismos: liofilizacion, criopreservacion a -196 C y el umbral de -130 C"
+      ],
+      "id": "cepario-vida-en-pausa",
+      "titulo": "Un cepario: vida en pausa a -80, a -196 o sin agua",
+      "serie": "Shot Biotecnológico",
+      "numero": 9,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-09-cepario",
+      "rama": "remaster/lote-b",
+      "fecha": "2026-10-27",
+      "nota": "Remasterizacion del video viejo #23. El cepario del laboratorio donde estudia Robert se menciona como experiencia propia, no como dato con fuente."
+    },
+    {
+      "derivados": [
+        "Como se orientan las aves migratorias: la hipotesis del par radical en los criptocromos (decirlo como hipotesis)",
+        "Evolucion dirigida: como se 'crian' proteinas en el laboratorio, ronda tras ronda",
+        "Las proteinas fluorescentes: de la medusa a la caja de herramientas de todo laboratorio"
+      ],
+      "fuentes": [
+        "Abrahams, G. et al., 'Quantum spin resonance in engineered proteins for multimodal sensing', Nature (2026): https://www.nature.com/articles/s41586-025-09971-3",
+        "Preprint del mismo trabajo, bioRxiv 2024.11.25.625143: -50 % entre 0 y 10 mT; ODMR con 21.6 mT y 604 MHz",
+        "Genetic Engineering & Biotechnology News, 21 de enero de 2026"
+      ],
+      "id": "maglov-proteina-campo-magnetico",
+      "titulo": "La proteina que responde a un iman: MagLOV y la biologia cuantica",
+      "serie": "Shot Científico",
+      "numero": 2,
+      "estado": "renderizado",
+      "carpeta": "shots/cie-02-proteina-iman",
+      "rama": "remaster/lote-b",
+      "fecha": "2026-10-27",
+      "nota": "Remasterizacion del video viejo #4. Correcciones: se llama MagLOV (no 'Maglob') y viene del dominio LOV2 de Avena sativa (no de un dominio 'LP'); equipo de Oxford, Nature 2026."
     }
   ]
 }
