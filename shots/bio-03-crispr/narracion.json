@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot Crispr base narrada.dc.html",
   "salida": "Shot Crispr narrado.dc.html",
-  "velocidad": 1.089,
+  "velocidad": 1.1,
   "nota": "Biotecnológico #03. Una línea por subtítulo (idx 0..11 del jsx). Se quitó '2,600 millones de años' (sin fuente sólida). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~920 créditos). 28 oct 2026: verificación de hechos independiente; cambió el texto narrado, así que se quitó voz_aprobada (y el gemelo mudo ya no se renderiza). Falta que Robert apruebe la voz otra vez.",
   "lineas": [
     { "escena": "Gancho", "texto": "Este yogur no solo tiene bacterias: tiene bacterias vacunadas contra virus." },

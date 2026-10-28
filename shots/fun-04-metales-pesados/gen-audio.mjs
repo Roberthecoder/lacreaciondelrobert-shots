@@ -8,7 +8,7 @@
 //   · hervir: 12 metales que salen al agua = 12 gotas
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { crearAudio } from '../../motor/kit/audio-kit-lote-d.mjs';
+import { crearAudio } from '../../motor/kit/audio-kit.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const HTML = process.argv[2] || 'Shot Metales Pesados base narrada.dc.html', OUT = process.argv[3] || path.join('assets', 'mezcla.wav');

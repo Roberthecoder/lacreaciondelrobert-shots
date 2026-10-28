@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot Metales Pesados base narrada.dc.html",
   "salida": "Shot Metales Pesados narrado.dc.html",
-  "velocidad": 1.032,
+  "velocidad": 1.005,
   "nota": "Fungi Mati #04. Una línea por subtítulo (idx 0..10 del jsx). Todo en UNA sola petición a ElevenLabs. 28 oct 2026: corregido tras la verificación de hechos (idx 10: 'no es veneno' era falso y peligroso); la voz anterior ya no corresponde y espera nueva aprobación de Robert. NO generar la voz sin su visto bueno (gasta créditos). Ya no se hace gemelo mudo: la revisión es la versión sin voz.",
   "lineas": [
     { "escena": "Gancho", "texto": "Ese hongo del bosque no solo chupó agua: también pudo chupar cadmio, plomo y mercurio." },

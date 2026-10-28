@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot Que Es Un Hongo base narrada.dc.html",
   "salida": "Shot Que Es Un Hongo narrado.dc.html",
-  "velocidad": 1.012,
+  "velocidad": 1.029,
   "nota": "Fungi Mati #01. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. 28 oct 2026: corregido tras la verificación de hechos (idx 2 y 11); la voz anterior ya no corresponde y espera nueva aprobación de Robert. NO generar la voz sin su visto bueno (gasta créditos). Ya no se hace gemelo mudo: la revisión es la versión sin voz.",
   "lineas": [
     { "escena": "Gancho", "texto": "Ese champiñón no es el hongo: es su fruto. El hongo de verdad está escondido abajo." },

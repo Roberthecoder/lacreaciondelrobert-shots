@@ -1,5 +1,6 @@
 {
   "voz_aprobada": true,
+  "velocidad": 1.08,
   "dcHtml": "Shot Atardecer Marte base narrada.dc.html",
   "salida": "Shot Atardecer Marte narrado.dc.html",
   "nota": "Shot Científico #09. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",

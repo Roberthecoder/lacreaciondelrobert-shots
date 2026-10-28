@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot Fagos base narrada.dc.html",
   "salida": "Shot Fagos narrado.dc.html",
-  "velocidad": 1.114,
+  "velocidad": 1.098,
   "nota": "Biotecnológico #04. Una línea por subtítulo (idx 0..12 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~900 créditos). 28 oct 2026: verificación de hechos independiente; cambió el texto narrado, así que se quitó voz_aprobada (y el gemelo mudo ya no se renderiza). Falta que Robert apruebe la voz otra vez.",
   "lineas": [
     { "escena": "Gancho", "texto": "Esto no es un robot de película: es un virus que solo ataca bacterias." },
