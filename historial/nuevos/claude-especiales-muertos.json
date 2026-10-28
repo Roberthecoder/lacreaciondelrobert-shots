@@ -1,0 +1,82 @@
+{
+ "temas": [
+  {
+   "id": "podredumbre-blanca-muertos",
+   "titulo": "Especial Día de Muertos: Los hongos que regresan los árboles a la tierra",
+   "serie": "Shot Fungi Mati",
+   "numero": 1,
+   "especial": "Día de Muertos",
+   "estado": "guion",
+   "carpeta": "shots/fun-01-esp-podredumbre-blanca",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [],
+   "fecha": "2026-10-28",
+   "derivados": []
+  },
+  {
+   "id": "pan-de-muerto-muertos",
+   "titulo": "Especial Día de Muertos: El hongo que infla el pan de muerto",
+   "serie": "Shot Biotecnológico",
+   "numero": 1,
+   "especial": "Día de Muertos",
+   "estado": "guion",
+   "carpeta": "shots/bio-01-esp-pan-de-muerto",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [],
+   "fecha": "2026-10-28",
+   "derivados": []
+  },
+  {
+   "id": "monarcas-muertos",
+   "titulo": "Especial Día de Muertos: Las mariposas que llegan en Día de Muertos",
+   "serie": "Shot Ambiental",
+   "numero": 1,
+   "especial": "Día de Muertos",
+   "estado": "guion",
+   "carpeta": "shots/amb-01-esp-monarcas",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [],
+   "fecha": "2026-10-28",
+   "derivados": []
+  },
+  {
+   "id": "esqueleto-muertos",
+   "titulo": "Especial Día de Muertos: Tu calavera se está reconstruyendo",
+   "serie": "Shot Científico",
+   "numero": 1,
+   "especial": "Día de Muertos",
+   "estado": "guion",
+   "carpeta": "shots/cie-01-esp-esqueleto",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [],
+   "fecha": "2026-10-28",
+   "derivados": []
+  },
+  {
+   "id": "calaveritas-muertos",
+   "titulo": "Especial Día de Muertos: Las calaveritas de azúcar se arman solas",
+   "serie": "Shot Químico",
+   "numero": 1,
+   "especial": "Día de Muertos",
+   "estado": "guion",
+   "carpeta": "shots/qui-01-esp-calaveritas",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [],
+   "fecha": "2026-10-28",
+   "derivados": []
+  },
+  {
+   "id": "fotos-ofrenda-muertos",
+   "titulo": "Especial Día de Muertos: La IA que restaura las fotos de tu ofrenda",
+   "serie": "Shot IA",
+   "numero": 1,
+   "especial": "Día de Muertos",
+   "estado": "guion",
+   "carpeta": "shots/ia-01-esp-fotos-ofrenda",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [],
+   "fecha": "2026-10-28",
+   "derivados": []
+  }
+ ]
+}

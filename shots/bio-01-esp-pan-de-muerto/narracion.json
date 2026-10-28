@@ -1,0 +1,57 @@
+{
+  "especial": "Día de Muertos",
+  "velocidad": 1.0,
+  "dcHtml": "Shot PanDeMuerto base narrada.dc.html",
+  "salida": "Shot PanDeMuerto narrado.dc.html",
+  "nota": "Shot Biotecnológico #01 · Especial Día de Muertos. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este pan de muerto no se infló con aire: lo infló un hongo vivo de una sola célula."
+    },
+    {
+      "escena": "Levadura",
+      "texto": "Es la levadura Saccharomyces cerevisiae, y en una cucharadita hay miles de millones."
+    },
+    {
+      "escena": "Come",
+      "texto": "En la masa, cada levadura se come los azúcares que salen de la harina."
+    },
+    {
+      "escena": "Suelta",
+      "texto": "Y a cambio suelta dos cosas: dióxido de carbono y alcohol."
+    },
+    {
+      "escena": "Gluten",
+      "texto": "El gas queda atrapado en la red elástica del gluten, y la masa se infla como globo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces el pan de muerto tiene alcohol?"
+    },
+    {
+      "escena": "Horno",
+      "texto": "Casi nada: en el horno, el alcohol se evapora y el calor mata a las levaduras."
+    },
+    {
+      "escena": "Miga",
+      "texto": "Las burbujas se quedan fijas: son los hoyitos que ves en la miga cuando lo partes."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1996, más de 600 científicos de Europa, Norteamérica y Japón publicaron todo el ADN de esta levadura."
+    },
+    {
+      "escena": "Genoma",
+      "texto": "Fue el primer ser vivo con núcleo, como tú, con su genoma leído completo: unos 6,000 genes."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Tú tienes unos 20,000, y hay genes humanos que funcionan si los pones en la levadura en lugar de los suyos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que este pan no se infló solo: cada hoyito es el suspiro de un hongo."
+    }
+  ]
+}
