@@ -67,7 +67,7 @@
    "titulo": "Las vaquitas que se vieron en 2025 caben en tus dedos: entre 7 y 10, con crías (Frida); 567 en 1997 y 59 en 2015",
    "serie": "Shot Ambiental",
    "numero": 8,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/amb-08-vaquita",
    "rama": "claude/igualar-ambiental",
    "fuentes": [
@@ -76,14 +76,18 @@
     "NOAA SWFSC Abundance and Trends"
    ],
    "fecha": "2026-10-28",
-   "derivados": []
+   "derivados": [
+    "La totoaba: el pez cuya vejiga vale más que su carne",
+    "Cómo se cuenta a un animal casi invisible: detectores acústicos y elicitación de expertos",
+    "Otros cetáceos en peligro: el baiji, el primero extinto por humanos"
+   ]
   },
   {
    "id": "chapala-60-por-ciento",
    "titulo": "Seis de cada diez litros de Guadalajara salen de un lago de 8 m: Chapala (79 × 28 km; mínimo de 1955; Ciénega 1902-1910; 70 % el 27 oct 2026)",
    "serie": "Shot Ambiental",
    "numero": 9,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/amb-09-chapala",
    "rama": "claude/igualar-ambiental",
    "fuentes": [
@@ -91,7 +95,11 @@
     "CEA Jalisco, nivel diario 27 oct 2026"
    ],
    "fecha": "2026-10-28",
-   "derivados": []
+   "derivados": [
+    "La Ciénega de Chapala: cómo se secó media parte del lago en 1902-1910",
+    "De dónde sale el otro 40 % del agua de Guadalajara",
+    "El río Lerma: el viaje del agua desde Toluca hasta Chapala"
+   ]
   },
   {
    "id": "nanoplasticos-agua-embotellada",
