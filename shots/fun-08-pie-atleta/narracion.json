@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Pie de Atleta base narrada.dc.html",
+  "salida": "Shot Pie de Atleta narrado.dc.html",
+  "nota": "Shot Fungi Mati #08. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa piel blanca entre tus dedos no es solo humedad: puede ser un hongo comiéndose tu queratina." },
+    { "escena": "Nombre", "texto": "Es el pie de atleta, casi siempre causado por hongos del género Trichophyton." },
+    { "escena": "Queratina", "texto": "La capa de afuera de tu piel está llena de queratina, una proteína dura." },
+    { "escena": "Enzimas", "texto": "El hongo la digiere con enzimas, y sus hilos avanzan hacia afuera." },
+    { "escena": "Lugar", "texto": "Su lugar favorito: entre el cuarto y el quinto dedo." },
+    { "escena": "Pregunta", "texto": "¿Y por qué justo ahí?" },
+    { "escena": "Estudio", "texto": "En un estudio de 2019 en Japón, midieron el clima dentro de los zapatos de cuatrocientos veinte pacientes." },
+    { "escena": "Humedad", "texto": "Entre los dedos de diez hombres, en verano, la humedad promedió ochenta por ciento." },
+    { "escena": "Resultado", "texto": "Y con zapatos más calientes y húmedos por dentro, había más pie de atleta." },
+    { "escena": "Contagio", "texto": "Se pega en regaderas, albercas, vestidores y en casa." },
+    { "escena": "Sirve", "texto": "Lo que sí sirve: secarte bien entre los dedos y usar calzado que respire." },
+    { "escena": "Dato", "texto": "¿Te suena? En esa clínica, casi la mitad de los pacientes tenía hongos en los pies o en las uñas." },
+    { "escena": "Cierre", "texto": "Así que esa piel blanca no era solo humedad: era un hongo cenando entre tus dedos." }
+  ]
+}
