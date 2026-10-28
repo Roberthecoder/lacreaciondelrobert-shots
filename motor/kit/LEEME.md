@@ -43,6 +43,13 @@ igual que el resto del motor, así que funcionan en la versión narrada (tiempos
 | `MundoPiel` + `MUNDO_PIEL` | Primer mundo reutilizable: piel en corte con vellos, células, capilar y glóbulos rojos | N1, M4 |
 | `CamaraAnidada` | Zoom de ×1 a ×1000 sin perder nitidez: funde un mundo macro (cm) con uno micro (µm) y oscurece al "entrar al microscopio". Keys en coordenadas macro | N1, M4 |
 | `MundoPanMacro` + `MundoPanMicro` + `MUNDO_PAN` | Rebanada de frente (mancha de moho, rayos X, "puf" de esporas, segunda rebanada) y corte microscópico de la miga (alveolos, almidón, hifas que crecen, estolones, rizoides, tallos, cápsulas que revientan, espora, pelo de comparación). Usado en el shot 002 | N1, M4 |
+| `EscenaFundido` | Encadena escenas con fundido cruzado y empujoncito de cámara (nunca corte seco). Antes cada shot la copiaba | todos |
+| `Etiqueta` | Texto con línea que señala una parte del dibujo (`lado`: `der` / `izq`) | todos |
+| `AudioPista` | Pega el `.wav` de música/voz al tiempo de reproducción | todos |
+| `Molecula` | Azúcares esquemáticos de hexágono: `glucosa`, `galactosa`, `lactosa` (las dos unidas) | N1, N3, M2 |
+| `MundoIntestino` + `MUNDO_INTESTINO` | Corte del intestino delgado: lumen oscuro, vellosidades que se mecen con sus células de borde, criptas con células madre, enzimas en el borde, moléculas que se parten y burbujas de gas. 1 mm ≈ 600 px. Usado en `bio-06-lactosa` | N1, M4 |
+| `MundoBiorreactor` + `MUNDO_BIORREACTOR` | Tanque de acero de frente: caldo que se pone turbio, agitador que gira, burbujas, tubos y ventana de inspección (punto para la `Lupa`). Usado en `bio-08-insulina` | N1, N3, M4 |
+| `Vial` + `Gradilla` | Vial criogénico de rosca (con escarcha y tapa que se abre) y rejilla de viales que se van encendiendo para contar cepas. Usado en `bio-09-cepario` | N4, M1 |
 
 ### Piezas v2 (27 oct 2026, serie Biotecnológico)
 | Pieza | Para qué |
@@ -85,5 +92,6 @@ Utilidades: `KC` (colores de la marca), `KF` (letras), `kprog`, `klerp`, `kEase`
 - En el cambio macro → micro el detalle macro (la mancha) se desvanece solo (`zCam`) y la pantalla se oscurece.
 
 ## Siguientes mundos a construir (según los temas)
-Hoja en corte (estomas), suelo con micelio e hifas, intestino con bacterias, ojo (retina y conos),
-placa de Petri con colonias. (Pan ✔ en el shot 002: sirve también para levadura y almidón.)
+Hoja en corte (estomas), suelo con micelio e hifas, ojo (retina y conos), placa de Petri con colonias.
+(Pan ✔ en el shot 002: sirve también para levadura y almidón. Intestino ✔ en `bio-06-lactosa`.
+Biorreactor ✔ en `bio-08-insulina`: sirve para cualquier fermentación. Viales y gradilla ✔ en `bio-09-cepario`.)

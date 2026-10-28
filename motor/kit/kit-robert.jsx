@@ -313,6 +313,62 @@ function Comparativa({ T, at, until, izq, der, max, y = 1000, alto = 360 }) {
   </div>;
 }
 
+/* ---------- ESCENAS Y ETIQUETAS (lo que repetía cada shot) ---------- */
+// Escena con fundido cruzado (nunca corte seco) y un empujoncito de cámara. Úsala para encadenar escenas:
+//   <EscenaFundido T={T} a={K.Gancho} b={K.Viaje} fondo={KC.yellow}> … </EscenaFundido>
+function EscenaFundido({ T, a, b, fondo, children, zoom = 0.05, colchon = 0.45, origen = '50% 45%' }) {
+  if (T < a - colchon || T > b + colchon) return null;
+  const o = kprog(T, a - colchon, a + 0.05) * (1 - kprog(T, b - 0.05, b + colchon));
+  const s = 1 + zoom * kprog(T, a - colchon, b + colchon, kEase.suave);
+  return <div style={{ position:'absolute', inset:0, opacity:o, background:fondo, overflow:'hidden' }}>
+    <div style={{ position:'absolute', inset:0, transform:`scale(${s})`, transformOrigin:origen }}>{children}</div>
+  </div>;
+}
+// Etiqueta con línea que señala algo del dibujo. lado: 'der' (el texto va a la derecha) o 'izq'.
+function Etiqueta({ T, at, until, x, y, texto, it = false, lado = 'der', color = KC.texto, tam = 34 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:12,
+    flexDirection: lado === 'der' ? 'row' : 'row-reverse', transform:`translate(${lado === 'der' ? 0 : '-100%'}, -50%)` }}>
+    <div style={{ width:70 * kprog(T, at, at + 0.4, kEase.sale), height:4, background:color, borderRadius:2 }}></div>
+    <div style={{ font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color, textShadow:KSOMBRA, whiteSpace:'nowrap' }}>{texto}</div>
+  </div>;
+}
+// Pista de audio pegada al tiempo de reproducción (música/voz ya mezcladas en un .wav).
+function AudioPista({ src }) {
+  const { time, playing } = useComposition();
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const a = ref.current; if (!a || !src) return;
+    if (playing) { if (a.paused) { const pr = a.play(); if (pr && pr.catch) pr.catch(() => {}); } if (Math.abs(a.currentTime - time) > 0.25) a.currentTime = time; }
+    else { if (!a.paused) a.pause(); if (Math.abs(a.currentTime - time) > 0.05) a.currentTime = time; }
+  });
+  return src ? <audio ref={ref} src={src} preload="auto" style={{ display:'none' }} /> : null;
+}
+
+/* ---------- MOLÉCULAS ESQUEMÁTICAS (azúcares, dentro de <svg>) ----------
+   Anillos de hexágono estilo libro de texto, con etiqueta opcional. r = radio del anillo.
+   tipo: 'glucosa' | 'galactosa' | 'lactosa' (las dos unidas) | 'generica'. El dibujo es esquemático. */
+const KAZUCAR = { glucosa:'#ffd43b', galactosa:'#4dd4ff', generica:'#b18cff' };
+function Molecula({ tipo = 'glucosa', x = 0, y = 0, r = 26, rot = 0, s = 1, etiqueta, borde = KC.ink, gw = 3 }) {
+  const anillo = (cx, col) => {
+    const p = [0, 60, 120, 180, 240, 300].map((a) => { const t = (a - 30) * Math.PI / 180; return `${(cx + r * Math.cos(t)).toFixed(1)},${(r * Math.sin(t)).toFixed(1)}`; });
+    return <g><polygon points={p.join(' ')} fill={col} stroke={borde} strokeWidth={gw} strokeLinejoin="round" />
+      <circle cx={cx} cy={-r * 0.1} r={r * 0.22} fill="rgba(255,255,255,.55)" /></g>;
+  };
+  if (tipo === 'lactosa') {
+    return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+      <line x1={-r * 0.1} y1={0} x2={r * 0.1} y2={0} stroke={borde} strokeWidth={gw} />
+      {anillo(-r * 1.0, KAZUCAR.galactosa)}{anillo(r * 1.0, KAZUCAR.glucosa)}
+      {etiqueta && <text y={r * 1.9} textAnchor="middle" style={{ font:`700 ${r * 0.62}px ${KF.mono}` }} fill={KC.texto}>{etiqueta}</text>}
+    </g>;
+  }
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    {anillo(0, KAZUCAR[tipo] || KAZUCAR.generica)}
+    {etiqueta && <text y={r * 1.9} textAnchor="middle" style={{ font:`700 ${r * 0.62}px ${KF.mono}` }} fill={KC.texto}>{etiqueta}</text>}
+  </g>;
+}
+
 /* ---------- MUNDOS REUTILIZABLES ----------
    Se dibujan en coordenadas del mundo (1080×1920 a z = 1) y se meten dentro de <Camara>.
    El detalle microscópico está dibujado chiquito y aparece al acercar la cámara. */
@@ -581,6 +637,203 @@ function MundoPanMicro({ T, g = 0, colonia, tallos = 0, capsulas = 0, revientan 
 
 function mixHex(a, b, t) { const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)); const A = p(a), B = p(b); return '#' + A.map((v, i) => Math.round(klerp(v, B[i], t)).toString(16).padStart(2, '0')).join(''); }
 
+/* ---------- MUNDO INTESTINO (lactosa, microbiota, absorción) ----------
+   Corte del intestino delgado: el hueco (lumen) arriba y la pared abajo, con vellosidades que apuntan
+   hacia arriba y criptas entre ellas. 1 mm ≈ 600 px, así que una célula del borde (~20 µm) mide ~12 px.
+   Props: lactasa 0..1 (cuántas enzimas hay en el borde) · lactosa (cuántas moléculas flotan) ·
+   corta 0..1 (las moléculas se parten) · cripta 0..1 (resalta las células madre) · gas 0..1 (burbujas). */
+const MUNDO_INTESTINO = { baseY: 1210, pxPorMm: 600, altoVello: 430, pasoVello: 176, nVellos: 7 };
+function MundoIntestino({ T, lactasa = 0, lactosa = 0, corta = 0, cripta = 0, gas = 0, seed = 6,
+  tejido = '#f2a6a0', tejidoOsc = '#d2726f', borde = '#8e3b3b' }) {
+  const { baseY, altoVello, pasoVello, nVellos } = MUNDO_INTESTINO;
+  const g = krng(seed);
+  const vellos = Array.from({ length: nVellos }, (_, i) => ({ x: 70 + i * pasoVello, h: altoVello * (0.8 + g() * 0.36), s: g() * 9, w: 46 + g() * 12 }));
+  // Contorno de una vellosidad: dedo recto con la punta redonda. bx(t) inclina la punta (se mece).
+  const perfil = (v, w, b) => {
+    const pta = baseY - v.h + (v.w - w);
+    return `M ${v.x - w} ${baseY} L ${v.x + b - w} ${pta + w}` +
+           ` A ${w} ${w} 0 0 1 ${v.x + b + w} ${pta + w} L ${v.x + w} ${baseY} Z`;
+  };
+  // una vellosidad: contorno (capa de células) + núcleo con el capilar + rayitas que separan las células
+  const vello = (v, i) => {
+    const b = mece(T, v.s, 0.3) * 18, w2 = v.w - 15, pta = baseY - v.h;
+    const ticks = [];
+    for (let k = 1; k < 13; k++) {                        // paredes entre células, a los dos lados
+      const t = k / 13, yy = klerp(baseY - 6, pta + v.w + 6, t), bx = b * t;
+      [-1, 1].forEach((s2) => ticks.push(<line key={i + 't' + k + s2} x1={v.x + bx + s2 * v.w} y1={yy} x2={v.x + bx + s2 * w2} y2={yy}
+        stroke={borde} strokeWidth={2.2} opacity={0.65} />));
+    }
+    for (let k = 1; k < 7; k++) {                         // y alrededor de la punta
+      const a = Math.PI * (0.08 + 0.84 * k / 7), cx = v.x + b, cy = pta + v.w;
+      ticks.push(<line key={i + 'p' + k} x1={cx - v.w * Math.cos(a)} y1={cy - v.w * Math.sin(a)}
+        x2={cx - w2 * Math.cos(a)} y2={cy - w2 * Math.sin(a)} stroke={borde} strokeWidth={2.2} opacity={0.65} />);
+    }
+    return <g key={'v' + i}>
+      <path d={perfil(v, v.w, b)} fill="#ffd0c8" stroke={borde} strokeWidth={5} strokeLinejoin="round" />
+      <path d={perfil(v, w2, b)} fill="#e8837f" stroke={borde} strokeWidth={2.5} opacity={0.95} />
+      <path d={`M ${v.x + b} ${pta + v.w + 16} C ${v.x + b * 0.5} ${pta + v.h * 0.55}, ${v.x} ${baseY - v.h * 0.3}, ${v.x} ${baseY}`}
+        fill="none" stroke="#d4383a" strokeWidth={11} strokeLinecap="round" opacity={0.85} />
+      {/* borde de cepillo: pelusa fina hacia el lumen (esquemática) */}
+      {Array.from({ length: 11 }, (_, k) => { const t = (k + 0.5) / 11, yy = klerp(baseY - 10, pta + v.w, t), bx = b * t;
+        return [-1, 1].map((s2) => <line key={i + 'c' + k + s2} x1={v.x + bx + s2 * v.w} y1={yy} x2={v.x + bx + s2 * (v.w + 9)} y2={yy}
+          stroke="#ffb0a4" strokeWidth={3} opacity={0.8} />); })}
+      {ticks}
+    </g>;
+  };
+  // criptas: hueco entre dos vellosidades con dos células madre al fondo
+  const criptas = Array.from({ length: nVellos - 1 }, (_, i) => {
+    const cx = 70 + i * pasoVello + pasoVello / 2, prof = 150;
+    return <g key={'c' + i}>
+      <path d={`M ${cx - 26} ${baseY - 6} L ${cx - 20} ${baseY + prof} Q ${cx} ${baseY + prof + 26} ${cx + 20} ${baseY + prof} L ${cx + 26} ${baseY - 6} Z`}
+        fill="#7e2e2e" stroke={borde} strokeWidth={4} />
+      {[-1, 1].map((s2) => <circle key={s2} cx={cx + s2 * 11} cy={baseY + prof - 6} r={13}
+        fill={cripta > 0 ? KC.gold : '#c76a66'} stroke={KC.ink} strokeWidth={3}
+        opacity={cripta > 0 ? 0.55 + 0.45 * (0.5 + 0.5 * Math.sin(T * 3 + s2)) : 1} />)}
+    </g>;
+  });
+  // moléculas de lactosa que flotan en el lumen; con `corta` se separan en dos azúcares
+  const mols = Array.from({ length: lactosa }, (_, i) => {
+    const r2 = krng(i * 17 + 3), ax = 60 + r2() * 960, ay = baseY - altoVello - 60 - r2() * 420;
+    const x = ax + mece(T, i + 1, 0.16) * 34, y = ay + mece(T, i + 21, 0.13) * 28;
+    const abre = corta * (0.3 + r2() * 0.7);
+    if (abre > 0.05) return <g key={'m' + i}>
+      <Molecula tipo="galactosa" x={x - 30 - abre * 56} y={y} r={24} rot={-abre * 70} gw={3} />
+      <Molecula tipo="glucosa" x={x + 30 + abre * 56} y={y} r={24} rot={abre * 70} gw={3} />
+    </g>;
+    return <Molecula key={'m' + i} tipo="lactosa" x={x} y={y} r={24} rot={mece(T, i + 5, 0.1) * 18} gw={3} />;
+  });
+  // enzimas lactasa pegadas al borde: tijeritas en forma de cuña
+  const enz = [];
+  if (lactasa > 0) for (let i = 0; i < Math.round(lactasa * 18); i++) {
+    const r2 = krng(i * 29 + 7), v = vellos[i % nVellos], p = 0.15 + r2() * 0.7;
+    const yy = klerp(baseY - 20, baseY - v.h + v.w * 0.9, p), sx = r2() < 0.5 ? -1 : 1;
+    const xx = v.x + mece(T, v.s, 0.3) * 18 * p + sx * (v.w + 6);
+    const ab = 14 + 10 * Math.max(0, Math.sin(T * 5 + i));
+    enz.push(<g key={'e' + i} transform={`translate(${xx} ${yy}) rotate(${sx > 0 ? 0 : 180})`}>
+      <path d={`M 0 0 L 22 ${-ab} L 26 ${-ab + 7} L 9 0 L 26 ${ab - 7} L 22 ${ab} Z`} fill={KC.mint} stroke={KC.ink} strokeWidth={2.4} strokeLinejoin="round" />
+    </g>);
+  }
+  // burbujas de gas (fermentación de las bacterias)
+  const burb = Array.from({ length: Math.round(gas * 26) }, (_, i) => {
+    const r2 = krng(i * 13 + 11), x = 50 + r2() * 980, r = 10 + r2() * 26;
+    const y = baseY - altoVello - 40 - ((r2() * 700 + T * 70) % 760);
+    return <g key={'b' + i}>
+      <circle cx={x + mece(T, i, 0.3) * 18} cy={y} r={r} fill="rgba(190,240,255,.14)" stroke="rgba(205,245,255,.62)" strokeWidth={3} />
+      <circle cx={x + mece(T, i, 0.3) * 18 - r * 0.35} cy={y - r * 0.38} r={r * 0.2} fill="rgba(255,255,255,.55)" />
+    </g>;
+  });
+  return (
+    <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH }}>
+      <div style={{ position:'absolute', left:-2000, top:-2000, width:KW + 4000, height:baseY + 2000,
+        background:'radial-gradient(circle at 50% 40%, #1d2433 0%, #0E0F12 72%)' }}></div>
+      <div style={{ position:'absolute', left:-2000, top:baseY, width:KW + 4000, height:KH + 2000 - baseY,
+        background:`linear-gradient(${tejido}, ${tejidoOsc})` }}></div>
+      <svg style={{ position:'absolute', left:0, top:0, overflow:'visible' }} width={KW} height={KH}>
+        <defs>
+          <linearGradient id="kgVello" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#ffb3ab" /><stop offset="100%" stopColor={tejido} />
+          </linearGradient>
+        </defs>
+        {criptas}
+        {vellos.map(vello)}
+        <path d={`M -2000 ${baseY} L ${KW + 2000} ${baseY}`} stroke={borde} strokeWidth={6} opacity={0.5} />
+        {/* capa de músculo bajo la mucosa */}
+        <path d={`M -2000 ${baseY + 320} L ${KW + 2000} ${baseY + 320}`} stroke="#b8534f" strokeWidth={26} opacity={0.8} />
+        {enz}{mols}{burb}
+      </svg>
+    </div>
+  );
+}
+
+/* ---------- MUNDO BIORREACTOR (fermentación, insulina, cultivo) ----------
+   Tanque de acero de frente con ventana, agitador que gira y burbujas de aire.
+   Props: turbio 0..1 (qué tan denso está el cultivo) · burbujas 0..1 · rpm · etiquetaTanque.
+   La ventana (VENTANA) es el punto para acercar con la cámara o abrir una Lupa de rayos X. */
+const MUNDO_BIORREACTOR = { tanque: { x: 250, y: 520, w: 580, h: 980 }, ventana: { x: 540, y: 1010, r: 150 } };
+function MundoBiorreactor({ T, turbio = 0.5, burbujas = 1, rpm = 90, fondo = KC.cyan, etiquetaTanque }) {
+  const { tanque: K2, ventana } = MUNDO_BIORREACTOR;
+  const nivel = K2.y + 170, caldo = mixHex('#f6e7b8', '#c98a3a', kclamp(turbio, 0, 1));
+  const th = T * rpm / 60 * 2 * Math.PI;
+  const burb = Array.from({ length: Math.round(burbujas * 46) }, (_, i) => {
+    const g = krng(i * 19 + 5), x = K2.x + 40 + g() * (K2.w - 80), r = 5 + g() * 14;
+    const y = K2.y + K2.h - 40 - ((g() * (K2.h - 220) + T * 150) % (K2.h - 200));
+    return <circle key={i} cx={x + mece(T, i, 0.5) * 10} cy={y} r={r} fill="rgba(255,255,255,.3)" stroke="rgba(255,255,255,.8)" strokeWidth={2} />;
+  });
+  return (
+    <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH }}>
+      <div style={{ position:'absolute', left:-2000, top:-2000, width:KW + 4000, height:KH + 4000, background:fondo,
+        backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+      <svg style={{ position:'absolute', left:0, top:0, overflow:'visible' }} width={KW} height={KH}>
+        {/* patas y piso */}
+        <g stroke={KC.ink} strokeWidth={12} strokeLinecap="round">
+          <line x1={K2.x + 90} y1={K2.y + K2.h - 20} x2={K2.x + 40} y2={K2.y + K2.h + 110} />
+          <line x1={K2.x + K2.w - 90} y1={K2.y + K2.h - 20} x2={K2.x + K2.w - 40} y2={K2.y + K2.h + 110} />
+        </g>
+        {/* cuerpo */}
+        <rect x={K2.x} y={K2.y} width={K2.w} height={K2.h} rx={70} fill="#cfd8e0" stroke={KC.ink} strokeWidth={12} />
+        <rect x={K2.x + 36} y={K2.y + 40} width={70} height={K2.h - 160} rx={34} fill="#eef3f7" opacity={0.75} />
+        {/* caldo */}
+        <clipPath id="kbCuerpo"><rect x={K2.x + 8} y={K2.y + 8} width={K2.w - 16} height={K2.h - 16} rx={64} /></clipPath>
+        <g clipPath="url(#kbCuerpo)">
+          <rect x={K2.x} y={nivel} width={K2.w} height={K2.h} fill={caldo} />
+          <path d={`M ${K2.x} ${nivel} Q ${K2.x + K2.w * 0.25} ${nivel - 14 + mece(T, 2, 0.8) * 10} ${K2.x + K2.w * 0.5} ${nivel}` +
+                   ` T ${K2.x + K2.w} ${nivel}`} fill={caldo} stroke="rgba(255,255,255,.6)" strokeWidth={5} />
+          {burb}
+          {/* eje y aspas del agitador */}
+          <line x1={K2.x + K2.w / 2} y1={K2.y - 60} x2={K2.x + K2.w / 2} y2={K2.y + K2.h - 110} stroke="#9aa4ae" strokeWidth={16} />
+          {[0, 1, 2].map((k) => { const yy = K2.y + K2.h - 150 - k * 190, w = 150 * Math.abs(Math.cos(th + k));
+            return <g key={k}><ellipse cx={K2.x + K2.w / 2} cy={yy} rx={w} ry={16} fill="#b7c2cc" stroke={KC.ink} strokeWidth={4} /></g>; })}
+        </g>
+        {/* ventana de inspección */}
+        <circle cx={ventana.x} cy={ventana.y} r={ventana.r} fill="none" stroke="#8b96a0" strokeWidth={16} />
+        <circle cx={ventana.x} cy={ventana.y} r={ventana.r} fill="none" stroke={KC.ink} strokeWidth={6} />
+        <path d={`M ${ventana.x - ventana.r * 0.55} ${ventana.y - ventana.r * 0.6} A ${ventana.r * 0.8} ${ventana.r * 0.8} 0 0 1 ${ventana.x + ventana.r * 0.1} ${ventana.y - ventana.r * 0.78}`}
+          fill="none" stroke="rgba(255,255,255,.7)" strokeWidth={14} strokeLinecap="round" />
+        {/* tapa, motor y tubos */}
+        <rect x={K2.x + 60} y={K2.y - 76} width={K2.w - 120} height={76} rx={20} fill="#9aa4ae" stroke={KC.ink} strokeWidth={10} />
+        <rect x={K2.x + K2.w / 2 - 70} y={K2.y - 168} width={140} height={100} rx={22} fill="#6f7a84" stroke={KC.ink} strokeWidth={10} />
+        {[0, 1, 2].map((k) => <circle key={k} cx={K2.x + K2.w / 2 - 44 + k * 44} cy={K2.y - 118} r={10}
+          fill={k === Math.floor(T * 3) % 3 ? KC.mint : '#47525c'} />)}
+        <path d={`M ${K2.x} ${K2.y + 300} q -110 0 -110 120`} fill="none" stroke="#9aa4ae" strokeWidth={18} strokeLinecap="round" />
+        <path d={`M ${K2.x + K2.w} ${K2.y + 520} q 120 0 120 -140`} fill="none" stroke="#9aa4ae" strokeWidth={18} strokeLinecap="round" />
+      </svg>
+      {etiquetaTanque && <div style={{ position:'absolute', left:K2.x + K2.w / 2, top:K2.y + K2.h + 150, transform:'translateX(-50%)',
+        font:`700 34px ${KF.mono}`, color:KC.ink, background:'rgba(255,255,255,.8)', borderRadius:16, padding:'8px 22px', whiteSpace:'nowrap' }}>{etiquetaTanque}</div>}
+    </div>
+  );
+}
+
+/* ---------- VIALES Y GRADILLA (cepario, laboratorio) ----------
+   Vial criogénico de rosca visto de frente. Dentro, el cultivo congelado o liofilizado.
+   Gradilla: rejilla de viales que se van encendiendo (sirve para contar cepas con la música). */
+function Vial({ x = 0, y = 0, s = 1, etiqueta, contenido = '#e9c46a', escarcha = 0, tapa = KC.cyan, abierto = 0 }) {
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <rect x={-34} y={-120} width={68} height={240} rx={18} fill="rgba(240,248,255,.35)" stroke={KC.ink} strokeWidth={6} />
+    <rect x={-26} y={-30} width={52} height={142} rx={12} fill={contenido} />
+    {escarcha > 0 && Array.from({ length: 14 }, (_, i) => { const g = krng(i * 7 + 2);
+      return <circle key={i} cx={-28 + g() * 56} cy={-110 + g() * 228} r={2 + g() * 5} fill="#fff" opacity={0.35 + 0.5 * escarcha} />; })}
+    <rect x={-40} y={-156 - abierto * 60} width={80} height={46} rx={14} fill={tapa} stroke={KC.ink} strokeWidth={6} />
+    <rect x={-34} y={-14} width={68} height={54} rx={8} fill={KC.paper} stroke={KC.ink} strokeWidth={4} />
+    {etiqueta && <text y={22} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>{etiqueta}</text>}
+  </g>;
+}
+function Gradilla({ T, at = 0, cols = 8, filas = 10, encendidos, x = 90, y = 420, ancho = 900, alto = 1040, color = KC.cyan, vacio = 'rgba(255,255,255,.14)', o = 1 }) {
+  const N = cols * filas, k = Math.round(kclamp(typeof encendidos === 'function' ? encendidos(T) : encendidos, 0, 1) * N);
+  const cw = ancho / cols, ch = alto / filas;
+  const g = krng(97);
+  const tonos = Array.from({ length: N }, () => g());
+  // `color` puede ser una función (i) => color, para que cada bloque guarde su propio color
+  const colorDe = (i) => (typeof color === 'function' ? color(i) : color);
+  return <svg style={{ position:'absolute', left:x, top:y, zIndex:30, opacity:o }} width={ancho} height={alto}>
+    {Array.from({ length: N }, (_, i) => { const c = i % cols, r = Math.floor(i / cols), on = i < k;
+      return <g key={i} transform={`translate(${c * cw + cw / 2} ${r * ch + ch / 2})`}>
+        <rect x={-cw * 0.3} y={-ch * 0.34} width={cw * 0.6} height={ch * 0.68} rx={cw * 0.14}
+          fill={on ? mixHex(colorDe(i), KC.gold2, tonos[i] * 0.45) : vacio} stroke={on ? KC.ink : 'rgba(255,255,255,.2)'} strokeWidth={on ? 3 : 2} />
+        {on && <rect x={-cw * 0.33} y={-ch * 0.44} width={cw * 0.66} height={ch * 0.14} rx={cw * 0.06} fill={KC.ink} opacity={0.75} />}
+      </g>; })}
+  </svg>;
+}
+
 /* ---------- MARCA ---------- */
 // tema: 'biologia' (ADN) · 'quimica' (matraz) · 'bioquimica' (los dos) · 'fisica' (átomo) · 'ia' (brillitos)
 // Los SVG se generan con motor/kit/logo.mjs y se copian a assets/ del shot.
@@ -636,12 +889,14 @@ function CierreMarca({ T, at, frase = 'Sígueme para más ciencia', usuario = '@
 }
 
 Object.assign(window, {
-  KC, KF, KW, KH, kclamp, klerp, kprog, kEase, krng, mece, kentrada, kvisible, kformato, camaraEn,
+  KC, KF, KW, KH, KSOMBRA, kclamp, klerp, kprog, kEase, krng, mece, kentrada, kvisible, kformato, camaraEn,
   Camara, Escala, Ambiente, Brillo, Aparece, Lupa,
   Subtitulo, Chip, MitoTachado, NumeroGigante, Contador, TarjetaEstudio,
   Capitulo, Pasos, Medidor, Cronometro, Cuadricula, Comparativa,
   MarcaAgua, Sticker, Robert, CierreMarca, klogo, MundoPiel, MUNDO_PIEL, mixHex,
   CamaraAnidada, MundoPanMacro, MundoPanMicro, MUNDO_PAN, PAN_TALLOS, kArbol, kArbolRadial, nodosPan,
+  EscenaFundido, Etiqueta, AudioPista, Molecula, KAZUCAR,
+  MundoIntestino, MUNDO_INTESTINO, MundoBiorreactor, MUNDO_BIORREACTOR, Vial, Gradilla,
 });
 
 /* ---------- PIEZAS v2 (27 oct 2026, serie Biotecnológico) ----------
