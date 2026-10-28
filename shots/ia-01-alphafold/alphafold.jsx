@@ -170,7 +170,7 @@ function AlphaFold() {
       <Etq T={T} at={K.G + 0.6} until={K.G + 2.3} x={110} y={620} texto="¿estambre?" tam={40} />
       <Etq T={T} at={K.G + 3.0} until={K.Co - 0.3} x={110} y={620} texto="proteína" tam={44} color={KC.yellow} />
       <Etq T={T} at={K.Co + 1.6} until={K.D - 0.2} x={80} y={740} texto="aminoácidos (cuentas)" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.D + 1.0} until={K.L - 0.3} texto="la forma = el trabajo" y={600} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.D + 1.0} until={K.L - 0.3} texto="de la forma depende el trabajo" y={600} tam={46} borde={KC.ink} />
       <Chip T={T} at={K.L + 1.7} until={K.R - 0.3} texto="otra forma: no entra" y={1500} tam={44} borde={KC.red} />
       <Chip T={T} at={K.R + 0.3} until={K.P - 0.3} texto="cristal + rayos X" y={560} tam={44} borde={KC.yellow} />
       <Etq T={T} at={K.R + 2.0} until={K.P - 0.3} x={1000} y={600} texto="patrón de puntos" lado="izq" tam={28} />
@@ -188,14 +188,14 @@ function AlphaFold() {
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Co - 0.1} texto="No es estambre: *es una proteína.*" />
       <Subtitulo T={T} idx={1} at={K.Co + 0.1} until={K.D - 0.1} texto="Una cadena de *aminoácidos.*" />
-      <Subtitulo T={T} idx={2} at={K.D + 0.1} until={K.L - 0.1} texto="Se dobla sola: *la forma es su trabajo.*" />
+      <Subtitulo T={T} idx={2} at={K.D + 0.1} until={K.L - 0.1} texto="Se dobla: *de su forma depende su trabajo.*" />
       <Subtitulo T={T} idx={3} at={K.L + 0.1} until={K.R - 0.1} texto="Otra forma: *la llave no entra.*" />
       <Subtitulo T={T} idx={4} at={K.R + 0.1} until={K.P - 0.1} texto="Para verla: *cristales y rayos X.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.Re - 0.1} texto="¿Y si *la adivinas?*" />
       <Subtitulo T={T} idx={6} at={K.Re + 0.1} until={K.E - 0.1} texto="AlphaFold lee *la cadena de letras.*" />
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.B - 0.1} texto="2021: *Nature* y programa libre." />
       <Subtitulo T={T} idx={8} at={K.B + 0.1} until={K.O - 0.1} texto="214 millones *de formas, gratis.*" />
-      <Subtitulo T={T} idx={9} at={K.O + 0.1} until={K.Pe - 0.1} texto="Son predicciones: *se revisan.*" />
+      <Subtitulo T={T} idx={9} at={K.O + 0.1} until={K.Pe - 0.1} texto="Son predicciones: *hay que comprobarlas.*" />
       <Subtitulo T={T} idx={10} at={K.Pe + 0.1} until={K.C - 0.1} texto="23 tebibytes: *no caben en tu celular.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="No es un enredo: *es una llave.*" />
 

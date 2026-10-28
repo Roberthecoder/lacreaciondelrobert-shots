@@ -75,7 +75,7 @@ function Siguiente() {
       {/* 6–8 · la lista de probabilidades y el ejemplo "el cielo es…" */}
       <Escena T={T} a={K.L} b={K.R}>
         <FondoCircuito T={T} color={KC.mint} />
-        {T < K.L + 4.0 && svg(Array.from({ length: 30 }, (_, i) => { const y = 560 + ((i * 64 + (T - K.L) * 260) % 640); return <text key={i} x={120 + (i % 3) * 300} y={y} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto} opacity={0.25 + 0.5 * ((i * 7) % 3) / 3}>{['casa', 'gato', '##ción', 'azul', 'run', 'el', 'cielo', '##mente', 'sol', 'des'][i % 10]}</text>; }))}
+        {T < K.L + 4.0 && svg(Array.from({ length: 30 }, (_, i) => { const y = 560 + ((i * 64 + (T - K.L) * 260) % 640); return <text key={i} x={120 + (i % 3) * 300} y={y} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto} opacity={0.25 + 0.5 * ((i * 7) % 3) / 3}>{['casa', 'gato', 'ción', 'azul', 'run', 'el', 'cielo', 'mente', 'sol', 'des'][i % 10]}</text>; }))}
         {T >= K.L + 4.0 && <Probas T={T} y={700} u={kprog(T, K.L + 4.2, K.L + 5.4, kEase.sale)} elegido={T > K.Ci + 2.2 ? 0 : -1} />}
       </Escena>
       {/* 9 · repite: el token elegido se pega al final y vuelve a entrar */}
@@ -133,10 +133,10 @@ function Siguiente() {
       <Chip T={T} at={K.E + 2.6} until={K.O - 0.3} texto="más grande → aprende con pocos ejemplos" y={1120} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.O + 0.3} until={K.A - 0.2} texto="probable ≠ verdadero" x={620} y={460} tam={52} borde={KC.red} />
       <Chip T={T} at={K.A + 0.2} until={K.C - 0.2} texto="un poco de azar" x={540} y={430} tam={46} borde={KC.ink} />
-      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="no la pensó: la apostó" x={540} y={1540} tam={48} borde={KC.red} />
+      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="no salió de golpe: la apostó" x={540} y={1540} tam={48} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Co - 0.1} texto="No es una idea: *es una apuesta.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Co - 0.1} texto="No sale de golpe: *es una apuesta.*" />
       <Subtitulo T={T} idx={1} at={K.Co + 0.1} until={K.N - 0.1} texto="Corta tu pregunta *en tokens.*" />
       <Subtitulo T={T} idx={2} at={K.N + 0.1} until={K.Pe - 0.1} texto="Números que pasan *por capas de cálculos.*" />
       <Subtitulo T={T} idx={3} at={K.Pe + 0.1} until={K.P - 0.1} texto="GPT-3: *175 mil millones de perillas.*" />
@@ -148,7 +148,7 @@ function Siguiente() {
       <Subtitulo T={T} idx={9} at={K.E + 0.1} until={K.O - 0.1} texto="Más grande: *tareas nuevas con pocos ejemplos.*" />
       <Subtitulo T={T} idx={10} at={K.O + 0.1} until={K.A - 0.1} texto="Lo probable *no es lo verdadero.*" />
       <Subtitulo T={T} idx={11} at={K.A + 0.1} until={K.C - 0.1} texto="Un poco de azar: *otra respuesta.*" />
-      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="No la pensó: *la apostó.*" />
+      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="No salió de golpe: *la apostó.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.4, 'avatar_11_sorprendido', 'gancho'],

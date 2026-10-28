@@ -1,28 +1,29 @@
-# Shot IA #03 · Un chatbot por dentro: no piensa la respuesta, la apuesta
+# Shot IA #03 · Un chatbot por dentro: no escribe de golpe, apuesta
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #03 · rama `claude/lote-ia-01`.
 - **Estado (27 oct 2026):** guion, animación, Robert en pantalla y `publicacion.md` listos · versión de revisión sin voz en el Release "Borradores · claude/lote-ia-01" · **voz pendiente de aprobación de Robert** (~964 créditos).
+- **Verificación de hechos (28 oct 2026):** verificador independiente; ver `verificacion.md`. Cambios: gancho y cierre corregidos ("no sale de golpe", ya no "no pensó"). La voz aprobada antes ya no corresponde al texto: **espera nueva aprobación de Robert** (versión de revisión sin voz en la rama `claude/verif-main`).
 - **Formato:** N1 "Por dentro": el chat en el celular (macro) → por dentro (tokens, números, capas, perillas, lista de probabilidades) → el mismo chat, ya entendido.
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre la respuesta que se escribe en pantalla: "no es una idea completa: es una apuesta, pedacito por pedacito".
-- **Duración:** voz 964 caracteres / 166 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre la respuesta que se escribe en pantalla: "no sale de golpe: es una apuesta, pedacito por pedacito".
+- **Duración:** voz 959 caracteres (corregida el 28 oct 2026) (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Postura de la serie:** explicar cómo funciona por dentro, sin magia: es útil, pero escoge lo probable, no lo verdadero.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Lo que te contesta un chatbot no es una idea completa: es una apuesta, pedacito por pedacito. | Fondo amarillo, un celular. Desde 0.3 s la respuesta "El cielo es azul." sale pedacito por pedacito. La cámara se mete al celular. |
+| 0 | Gancho | Lo que te contesta un chatbot no sale de golpe: es una apuesta, pedacito por pedacito. | Fondo amarillo, un celular. Desde 0.3 s la respuesta "El cielo es azul." sale pedacito por pedacito. La cámara se mete al celular. |
 | 1 | Corta | Primero corta tu pregunta en pedazos llamados tokens: palabras o trozos de palabra. | Por dentro (fondo de circuito): la pregunta se corta en fichas de colores. Chip "tokens = pedacitos". |
 | 2 | Numeros | Cada token se vuelve una lista de números que pasa por capas y capas de cálculos. | Debajo de cada ficha, una columna de números (cuadritos de color); una red neuronal se ilumina por capas. |
 | 3 | Perillas | En 2020, GPT-3 tenía ciento setenta y cinco mil millones de perillas, llamadas parámetros. | 96 perillas girando y "175,000,000,000 · perillas (parámetros) · GPT-3, 2020". |
 | 4 | Pregunta | ¿Y qué sale del otro lado? | **Re-gancho.** "?" gigante; Robert grande. |
-| 5 | Lista | Solo una lista: qué tan probable es cada token de ser el siguiente. Llama 3, de 2024, escoge entre ciento veintiocho mil tokens posibles. | Corre una lista de tokens ("casa", "##ción", "cielo"…) y luego "128 mil · tokens posibles · Llama 3, 2024" con barras de probabilidad. |
+| 5 | Lista | Solo una lista: qué tan probable es cada token de ser el siguiente. Llama 3, de 2024, escoge entre ciento veintiocho mil tokens posibles. | Corre una lista de tokens ("casa", "ción", "cielo"…) y luego "128 mil · tokens posibles · Llama 3, 2024" con barras de probabilidad. |
 | 6 | Cielo | Si escribes «el cielo es», «azul» sale muy probable; «verde», poquito. | Chip "el cielo es ___": la barra "azul" larga, "verde" casi nada; se elige "azul". Etiqueta "ejemplo ilustrativo". |
 | 7 | Repite | Escoge uno, lo pega al final y repite todo, token por token. | "el cielo es" + "azul" + "." con una flecha que regresa a la red. |
 | 8 | Estudio | En 2020, OpenAI mostró que, haciéndolo enorme, aprendía tareas nuevas con unos cuantos ejemplos. | Tarjeta "2020 · OpenAI · GPT-3 · Brown et al.". |
 | 9 | Ojo | Pero escoge lo probable, no lo verdadero: por eso a veces se equivoca muy seguro. | Robotito con cara de seguro y una ✗ roja. Chip "probable ≠ verdadero". |
 | 10 | Azar | Y con un poco de azar, si preguntas dos veces, puede contestar distinto. | Un dado rueda; dos respuestas distintas ("intento 1", "intento 2"). |
-| 11 | Cierre | Así que no pensó tu respuesta: la apostó, pedacito por pedacito. | **Regreso al celular del inicio**: la misma respuesta sale otra vez, ahora con un dadito sobre cada pedacito. |
+| 11 | Cierre | Así que no la escribió de golpe: la apostó, pedacito por pedacito. | **Regreso al celular del inicio**: la misma respuesta sale otra vez, ahora con un dadito sobre cada pedacito. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert señalando. |
 
 **Música:** cama grave continua; una nota por cada token que aparece, tijeretazos al cortar, tics de perillas, el dado que rueda.
@@ -67,6 +68,10 @@ La red de esta sesión solo deja abrir GitHub; los datos vienen de los **reposit
 2. **128 mil tokens (2024)** — Meta, `MODEL_CARD.md` de Llama 3 ("Model Release Date April 18, 2024"): https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md
    > "Llama 3 uses a tokenizer with a vocabulary of 128K tokens"
 3. **Un poco de azar** — el mismo repositorio de GPT-3 publica sus muestras generadas "with p=.85, t=1" (muestreo con temperatura 1, es decir, al azar entre los tokens probables): https://github.com/openai/gpt-3
+
+4. **No sale de golpe: se escribe token por token (aunque puede planear adelante)** — Anthropic, "Tracing the thoughts of a large language model" (27 mar 2025): https://www.anthropic.com/research/tracing-thoughts-language-model
+   > "Claude writes text one word at a time." · "Claude will plan what it will say many words ahead, and write to get to that destination." · "we had set out to show that the model didn't plan ahead, and found instead that it did."
+   - Por eso el guion ya no dice "no pensó tu respuesta" ni "no es una idea completa" (corrección de la verificación del 28 oct 2026): sí puede planear, pero escribe pedacito por pedacito.
 
 ## Por verificar / notas
 - El ejemplo "el cielo es… azul / gris / despejado / bonito / verde" es **ilustrativo**: las barras no traen números y la pantalla dice "ejemplo ilustrativo".

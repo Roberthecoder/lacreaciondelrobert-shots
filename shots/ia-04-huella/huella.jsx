@@ -1,6 +1,6 @@
 // Shot IA #04 · Lo que costó entrenar una IA: Llama 3 — NARRADO (N2 "El número").
 // Cifras de la ficha oficial de Llama 3 (Meta, abril 2024): 7.7 M horas de GPU H100 (TDP 700 W), 2,290 t CO2eq (70B: 1,900 · 8B: 390),
-// 100 % compensado por Meta, más de 15 billones (trillion) de tokens. 7,700,000 h ÷ 8,766 h/año = 878 años ("casi 880"). Ver guion.md.
+// 100 % compensado por Meta, más de 15 billones (trillion) de tokens. Gancho = solo el modelo 70B: 6,400,000 h ÷ 8,766 h/año = 730 años ("más de 700"); las dos versiones juntas, 7.7 M h. Ver guion.md.
 // La llama del dibujo es solo un guiño al nombre del modelo (no es el logo de Meta).
 const H_ANIO = 24 * 365.25;
 
@@ -47,10 +47,10 @@ function Huella() {
   const K = { G: CUES.Gancho, Ll: CUES.Llama, H: CUES.Horas, Mu: CUES.Muchas, W: CUES.Watts, P: CUES.Pregunta, Co: CUES.CO2, Gr: CUES.Grande, Cm: CUES.Compensa, O: CUES.Ojo, Le: CUES.Leyo, Ex: CUES.Extra, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
-  const anios = 7.7e6 / H_ANIO;   // 878.4
+  const anios = 6.4e6 / H_ANIO;   // 730.1 (modelo 70B)
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 1 · gancho: una sola tarjeta y el calendario que corre hasta ~880 años */}
+      {/* 1 · gancho: una sola tarjeta y el calendario que corre hasta ~730 años (modelo 70B) */}
       <Escena T={T} a={K.G} b={K.Ll} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {svg(<>
@@ -125,21 +125,21 @@ function Huella() {
       {/* textos */}
       <Chip T={T} at={K.G + 0.3} until={K.Ll - 0.2} texto="1 sola tarjeta de video" x={380} y={430} tam={42} borde={KC.ink} />
       <Chip T={T} at={K.Ll + 0.3} until={K.H - 0.2} texto="Llama 3 · Meta · abril 2024" y={470} tam={44} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.H + 0.2} until={K.Mu - 0.2} valor={7.7} dec={1} dur={1.0} sufijo=" millones" etiqueta="horas de tarjetas H100" y={720} tam={120} color={KC.orange} />
+      <NumeroGigante T={T} at={K.H + 0.2} until={K.Mu - 0.2} valor={7.7} dec={1} dur={1.0} sufijo=" millones" etiqueta="horas H100 · 2 versiones" y={720} tam={120} color={KC.orange} />
       <Chip T={T} at={K.Mu + 0.4} until={K.W - 0.2} texto="muchísimas al mismo tiempo" x={380} y={460} tam={42} borde={KC.orange} />
       <Medidor T={T} at={K.W + 0.2} until={K.P - 0.2} valor={(t) => kprog(t, K.W + 0.3, K.W + 1.6)} etiqueta="cada tarjeta, hasta" texto={(v) => Math.round(v * 700) + ' W'} y={440} color={KC.red} />
-      <NumeroGigante T={T} at={K.Co + 0.3} until={K.Gr - 0.2} valor={2290} dur={1.6} sufijo=" t" etiqueta="de CO₂ equivalente (Meta, 2024)" y={500} tam={150} color={KC.texto} />
+      <NumeroGigante T={T} at={K.Co + 0.3} until={K.Gr - 0.2} valor={2290} dur={1.6} sufijo=" t" etiqueta="de CO₂ eq · 2 versiones (Meta)" y={500} tam={150} color={KC.texto} />
       <Comparativa T={T} at={K.Gr + 0.2} until={K.Cm - 0.2} izq={{ valor: 1900, etiqueta: 'grande (70B)', color: KC.red, texto: '1,900 t' }} der={{ valor: 390, etiqueta: 'chico (8B)', color: KC.yellow, texto: '390 t' }} max={1900} y={560} alto={480} />
       <Chip T={T} at={K.Cm + 0.4} until={K.O - 0.2} texto="«100 % compensado» (según Meta)" y={460} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.O + 0.4} until={K.Le - 0.2} texto="compensar ≠ no emitir" x={420} y={460} tam={48} borde={KC.red} />
       <NumeroGigante T={T} at={K.Le + 1.6} until={K.Ex - 0.2} valor={15} dur={1.0} prefijo="+" sufijo=" billones" etiqueta="de tokens leídos" y={460} tam={110} color={KC.mint} />
       <Chip T={T} at={K.Ex + 2.4} until={K.C - 0.2} texto="usarla también gasta energía" x={540} y={460} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="≈ 880 años de 1 tarjeta" x={380} y={430} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="más de 700 años de 1 tarjeta" x={380} y={430} tam={42} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ll - 0.1} texto="Una sola tarjeta: *casi 880 años.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ll - 0.1} texto="Una sola tarjeta: *más de 700 años.*" />
       <Subtitulo T={T} idx={1} at={K.Ll + 0.1} until={K.H - 0.1} texto="Llama 3, de Meta: *abril de 2024.*" />
-      <Subtitulo T={T} idx={2} at={K.H + 0.1} until={K.Mu - 0.1} texto="7.7 millones *de horas de tarjeta.*" />
+      <Subtitulo T={T} idx={2} at={K.H + 0.1} until={K.Mu - 0.1} texto="Dos versiones: *7.7 millones de horas.*" />
       <Subtitulo T={T} idx={3} at={K.Mu + 0.1} until={K.W - 0.1} texto="No una: *muchísimas a la vez.*" />
       <Subtitulo T={T} idx={4} at={K.W + 0.1} until={K.P - 0.1} texto="Cada una: *hasta 700 watts.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.Co - 0.1} texto="¿Cuánta *contaminación?*" />
@@ -149,7 +149,7 @@ function Huella() {
       <Subtitulo T={T} idx={9} at={K.O + 0.1} until={K.Le - 0.1} texto="Compensar *no es no emitir.*" />
       <Subtitulo T={T} idx={10} at={K.Le + 0.1} until={K.Ex - 0.1} texto="Leyó *más de 15 billones de tokens.*" />
       <Subtitulo T={T} idx={11} at={K.Ex + 0.1} until={K.C - 0.1} texto="Cada pregunta *también gasta.*" />
-      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Detrás: *casi 880 años de una tarjeta.*" />
+      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Detrás: *más de 700 años de una tarjeta.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 5.0, 'avatar_11_sorprendido', 'gancho'],

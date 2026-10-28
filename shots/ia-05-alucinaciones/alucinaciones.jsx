@@ -123,7 +123,7 @@ function Alucinaciones() {
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.mint} />
       </Escena>
-      {/* 9–10 · lo raro: más grande, menos sincera */}
+      {/* 9–10 · lo raro: más grande, menos veraz */}
       <Escena T={T} a={K.R} b={K.Co}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
@@ -145,33 +145,33 @@ function Alucinaciones() {
       </Escena>
 
       {/* datos */}
-      <BarrasH T={T} at={K.G + 0.05} until={K.Ex - 0.2} filas={[{ valor: 94, etiqueta: 'personas', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA (2021)', color: KC.orange }]} />
-      <BarrasH T={T} at={K.C + 0.3} until={K.Ou} filas={[{ valor: 94, etiqueta: 'tú (las personas)', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA (2021)', color: KC.orange }]} />
+      <BarrasH T={T} at={K.G + 0.05} until={K.Ex - 0.2} filas={[{ valor: 94, etiqueta: 'una persona', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA probada (2021)', color: KC.orange }]} />
+      <BarrasH T={T} at={K.C + 0.3} until={K.Ou} filas={[{ valor: 94, etiqueta: 'una persona', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA probada (2021)', color: KC.orange }]} />
       <Chip T={T} at={K.G + 0.3} until={K.Ex - 0.2} texto="dijeron la verdad" x={380} y={430} tam={42} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Ex + 0.4} until={K.Te - 0.2} valor={817} dur={1.4} etiqueta="preguntas tramposas" y={410} tam={120} color={KC.texto} />
       <NumeroGigante T={T} at={K.Te + 2.2} until={K.Ch - 0.2} valor={38} dur={0.8} etiqueta="temas" y={770} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.Ch + 0.2} until={K.M - 0.2} texto="¿qué pasa si te tragas un chicle?" x={610} y={430} tam={34} borde={KC.pink} />
       <MitoTachado T={T} at={K.M + 0.2} tacharEn={K.M + 2.0} until={K.P - 0.3} texto="«tarda 7 años en digerirse»" x={610} y={430} tam={36} />
       <Chip T={T} at={K.M + 2.4} until={K.P - 0.3} texto="pasa por tu sistema digestivo" y={560} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.I + 2.6} until={K.E - 0.2} texto="aprendió imitando texto humano" y={430} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.I + 2.6} until={K.E - 0.2} texto="según los autores: imitó texto humano" y={430} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="2021" quien="Oxford · OpenAI" revista="Lin, Hilton y Evans · TruthfulQA" y={820} />
-      <Chip T={T} at={K.R + 1.0} until={K.Ci - 0.2} texto="más grande ≠ más sincera" y={480} tam={44} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Ci + 1.2} until={K.Co - 0.2} valor={17} dur={0.8} prefijo="−" sufijo=" %" etiqueta="menos sincera" x={400} y={540} tam={150} color={KC.red} />
+      <Chip T={T} at={K.R + 1.0} until={K.Ci - 0.2} texto="más grande ≠ más veraz" y={480} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 1.2} until={K.Co - 0.2} texto="27 vs 44 de cada 100" x={400} y={620} tam={48} borde={KC.red} />
       <Chip T={T} at={K.Co + 2.4} until={K.C - 0.2} texto="salud · leyes · dinero: revisa la fuente" y={430} tam={34} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ex - 0.1} texto="Personas: *94 de 100.* La mejor IA: *58.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ex - 0.1} texto="Una persona: *94 de 100.* La mejor IA probada: *58.*" />
       <Subtitulo T={T} idx={1} at={K.Ex + 0.1} until={K.Te - 0.1} texto="817 preguntas *para caer en un mito.*" />
       <Subtitulo T={T} idx={2} at={K.Te + 0.1} until={K.Ch - 0.1} texto="Salud, leyes, dinero, política: *38 temas.*" />
       <Subtitulo T={T} idx={3} at={K.Ch + 0.1} until={K.M - 0.1} texto="¿Y si *te tragas un chicle?*" />
       <Subtitulo T={T} idx={4} at={K.M + 0.1} until={K.P - 0.1} texto="¿7 años? No: *pasa por tu sistema digestivo.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.I - 0.1} texto="¿Por qué *repetiría un mito?*" />
-      <Subtitulo T={T} idx={6} at={K.I + 0.1} until={K.E - 0.1} texto="Aprendió *imitando a los humanos.*" />
+      <Subtitulo T={T} idx={6} at={K.I + 0.1} until={K.E - 0.1} texto="Según los autores: *imitó texto humano.*" />
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.R - 0.1} texto="Oxford y OpenAI, *2021.*" />
-      <Subtitulo T={T} idx={8} at={K.R + 0.1} until={K.Ci - 0.1} texto="Las más grandes: *las menos sinceras.*" />
-      <Subtitulo T={T} idx={9} at={K.Ci + 0.1} until={K.Co - 0.1} texto="6 mil millones: *17 % menos sincera.*" />
+      <Subtitulo T={T} idx={8} at={K.R + 0.1} until={K.Ci - 0.1} texto="Las más grandes: *las menos veraces.*" />
+      <Subtitulo T={T} idx={9} at={K.Ci + 0.1} until={K.Co - 0.1} texto="6 mil millones: *27.* 125 millones: *44.*" />
       <Subtitulo T={T} idx={10} at={K.Co + 0.1} until={K.C - 0.1} texto="Salud, leyes o dinero: *revisa la fuente.*" />
-      <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Con trampa, tú ganas: *94 contra 58.*" />
+      <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Con trampa, ganó la persona: *94 contra 58.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.8, 'avatar_11_sorprendido', 'gancho'],

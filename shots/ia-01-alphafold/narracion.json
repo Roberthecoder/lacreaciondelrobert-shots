@@ -1,9 +1,8 @@
 {
-  "voz_aprobada": true,
   "velocidad": 1.117,
   "dcHtml": "Shot AlphaFold base narrada.dc.html",
   "salida": "Shot AlphaFold narrado.dc.html",
-  "nota": "Shot IA #01. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno (~955 créditos de ElevenLabs en una sola petición).",
+  "nota": "Shot IA #01. Una línea por subtítulo (idx 0..11 del jsx). 28 oct 2026: líneas 2 y 9 corregidas por la verificación de hechos; la voz espera nueva aprobación de Robert (NO generar sin su visto bueno).",
   "lineas": [
     {
       "escena": "Gancho",
@@ -15,7 +14,7 @@
     },
     {
       "escena": "Dobla",
-      "texto": "La cadena se dobla sola en una forma exacta, y esa forma es su trabajo."
+      "texto": "La cadena se dobla en una forma precisa, y de esa forma depende su trabajo."
     },
     {
       "escena": "Llave",
@@ -35,7 +34,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2021, el equipo de John Jumper explicó en la revista Nature cómo funciona, y liberó el programa."
+      "texto": "En 2021, el equipo de John Jumper lo explicó en la revista Nature y liberó el programa."
     },
     {
       "escena": "Base",
@@ -43,7 +42,7 @@
     },
     {
       "escena": "Ojo",
-      "texto": "Ojo: son predicciones. Cada una trae su nivel de confianza, y las dudosas se revisan en el laboratorio."
+      "texto": "Ojo: son predicciones. Cada una trae su nivel de confianza, y las dudosas hay que comprobarlas en el laboratorio."
     },
     {
       "escena": "Pesa",

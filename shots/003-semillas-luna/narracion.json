@@ -1,9 +1,8 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Semillas Luna base narrada.dc.html",
   "salida": "Shot Semillas Luna narrado.dc.html",
   "velocidad": 1.065,
-  "nota": "Una línea por subtítulo (idx 0..12 del jsx). Voz aprobada por Robert el 26 oct 2026 (~937 caracteres en una sola petición a ElevenLabs).",
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). Voz aprobada por Robert el 26 oct 2026; el 28 oct 2026 cambió la línea 8 por la verificación de hechos y la voz espera nueva aprobación.",
   "lineas": [
     { "escena": "Gancho", "texto": "Este no es un árbol cualquiera: su semilla le dio treinta y cuatro vueltas a la Luna." },
     { "escena": "Viaje", "texto": "En 1971 se la llevó el astronauta Stuart Roosa, que antes fue bombero forestal." },
@@ -13,7 +12,7 @@
     { "escena": "Dentro", "texto": "Por dentro hay un embrión dormido, con su comida guardada y una cubierta dura." },
     { "escena": "Dentro", "texto": "Casi seca, espera sin gastar casi nada." },
     { "escena": "Vacio", "texto": "Al volver, las bolsas reventaron en la limpieza y quedaron expuestas al vacío." },
-    { "escena": "Vacio", "texto": "Creyeron que estaban muertas." },
+    { "escena": "Vacio", "texto": "Temieron que ya no germinaran." },
     { "escena": "Estudio", "texto": "Aun así, el Servicio Forestal las sembró junto a semillas que nunca salieron. Germinaron." },
     { "escena": "Igual", "texto": "Cuarenta años después, no hay diferencia entre los árboles lunares y sus gemelos terrestres." },
     { "escena": "Lista", "texto": "Se plantaron en unos cuarenta estados y nadie hizo la lista completa." },

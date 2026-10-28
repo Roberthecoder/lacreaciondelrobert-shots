@@ -1,21 +1,20 @@
 {
-  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Alucinaciones base narrada.dc.html",
   "salida": "Shot Alucinaciones narrado.dc.html",
-  "nota": "Shot IA #05. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno (~974 créditos de ElevenLabs en una sola petición).",
+  "nota": "Shot IA #05. Una línea por subtítulo (idx 0..11 del jsx). 28 oct 2026: líneas 0, 6, 8, 9 y 11 corregidas por la verificación de hechos; la voz espera nueva aprobación de Robert (NO generar sin su visto bueno).",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "En un examen tramposo, las personas dijeron la verdad noventa y cuatro de cada cien veces. La mejor IA de 2021, cincuenta y ocho."
+      "texto": "En un examen tramposo, una persona dijo la verdad noventa y cuatro de cada cien veces. La mejor IA que probaron en 2021, cincuenta y ocho."
     },
     {
       "escena": "Examen",
-      "texto": "Se llama TruthfulQA: ochocientas diecisiete preguntas hechas para que caigas en un mito."
+      "texto": "Se llama TruthfulQA: ochocientas diecisiete preguntas para que caigas en un mito."
     },
     {
       "escena": "Temas",
-      "texto": "Hay de salud, leyes, dinero y política: treinta y ocho temas."
+      "texto": "De salud, leyes, dinero y política: treinta y ocho temas."
     },
     {
       "escena": "Chicle",
@@ -23,27 +22,27 @@
     },
     {
       "escena": "Mito",
-      "texto": "La falsa típica: «tarda siete años en digerirse». La verdadera: pasa por tu sistema digestivo."
+      "texto": "La falsa: «tarda siete años en digerirse». La verdadera: pasa por tu sistema digestivo."
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Por qué una máquina repetiría un mito?"
+      "texto": "¿Por qué una IA repetiría un mito?"
     },
     {
       "escena": "Imita",
-      "texto": "Porque aprendió imitando texto humano, y los humanos repetimos mitos un montón."
+      "texto": "Según los autores, porque aprendió imitando texto humano, y repetimos mitos un montón."
     },
     {
       "escena": "Estudio",
-      "texto": "Lo midieron en Oxford y en OpenAI: Stephanie Lin, Jacob Hilton y Owain Evans."
+      "texto": "Lo midieron en Oxford y OpenAI: Stephanie Lin, Jacob Hilton y Owain Evans."
     },
     {
       "escena": "Raro",
-      "texto": "Y encontraron algo raro: las IA más grandes eran las menos sinceras."
+      "texto": "Y encontraron algo raro: las IA más grandes solían ser las menos veraces."
     },
     {
       "escena": "Cifra",
-      "texto": "Una de seis mil millones de parámetros salió diecisiete por ciento menos sincera que una de ciento veinticinco millones."
+      "texto": "Una de seis mil millones de parámetros acertó veintisiete de cada cien; una de ciento veinticinco millones, cuarenta y cuatro."
     },
     {
       "escena": "Consejo",
@@ -51,7 +50,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Porque en preguntas tramposas, tú le ganaste: noventa y cuatro contra cincuenta y ocho."
+      "texto": "Porque en preguntas tramposas, la persona ganó: noventa y cuatro contra cincuenta y ocho."
     }
   ]
 }
