@@ -23,23 +23,23 @@
     },
     {
       "escena": "Obra",
-      "texto": "Es una obra en construcción que nunca termina, en todo tu cuerpo, todo el tiempo."
+      "texto": "Es una obra que nunca termina: en cualquier momento, cerca del 10 % de tu esqueleto está en obra."
     },
     {
       "escena": "Pregunta",
-      "texto": "Entonces, ¿cada cuánto estrenas esqueleto?"
+      "texto": "Entonces, ¿cada cuánto estrenas esqueleto nuevo?"
     },
     {
       "escena": "Estudio",
-      "texto": "En 2004, un informe del Cirujano General de Estados Unidos sobre la salud de los huesos dio la cuenta:"
+      "texto": "En 2013, una revisión publicada en una revista médica de Australia dio la cuenta:"
     },
     {
       "escena": "Diez",
-      "texto": "cerca de cada 10 años, tu esqueleto adulto se renueva completo."
+      "texto": "cerca de cada 10 años, casi todo tu esqueleto adulto se renueva."
     },
     {
       "escena": "Calcio",
-      "texto": "Ahí guardas tu reserva de calcio: el 99 % del calcio de tu cuerpo está en huesos y dientes."
+      "texto": "Ahí guardas tu reserva de calcio: cerca del 99 % del calcio de tu cuerpo está en tus huesos y dientes."
     },
     {
       "escena": "Ejercicio",
@@ -51,7 +51,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esta calavera no es un adorno: es una obra viva que se vuelve a construir cada década."
+      "texto": "Así que esta calavera no es un adorno: es una obra viva que se reconstruye casi entera cada década."
     }
   ]
 }

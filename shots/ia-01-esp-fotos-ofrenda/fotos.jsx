@@ -200,7 +200,7 @@ function FotosOfrenda() {
       <Escena T={T} a={K.Se} b={K.Da}>
         <FondoCircuito T={T} color={KC.lilac} />
         {svg(PIELES.map((p, i) => { const at = K.Se + 0.6 + i * 0.22, e = kprog(T, at, at + 0.3, kEase.rebote); const c = i % 4, r = Math.floor(i / 4);
-          return e > 0 ? <g key={i} transform={`translate(${210 + c * 220} ${700 + r * 215}) scale(${e})`}><CaraSimple x={0} y={0} s={0.62} piel={p} pelo={PELOS[i]} peinado={i % 3} fondo={[KC.cyan, KC.pink, KC.yellow, KC.mint][(i + r) % 4]} /></g> : null; }))}
+          return e > 0 ? <g key={i} transform={`translate(${210 + c * 220} ${650 + r * 190}) scale(${e})`}><CaraSimple x={0} y={0} s={0.55} piel={p} pelo={PELOS[i]} peinado={i % 3} fondo={[KC.cyan, KC.pink, KC.yellow, KC.mint][(i + r) % 4]} /></g> : null; }))}
       </Escena>
       {/* 10 · más daño, más relleno: muchas caras distintas dan la misma foto pixeleada (fig. 3 de PULSE) */}
       <Escena T={T} a={K.Da} b={K.Or}>
@@ -229,10 +229,10 @@ function FotosOfrenda() {
       {/* textos */}
       <Chip T={T} at={K.G + 0.3} until={K.Pi - 0.3} texto="Especial Día de Muertos" x={300} y={420} tam={30} borde={KC.pink} />
       <Etq T={T} at={K.G + 3.0} until={K.Pi - 0.3} x={40} y={1150} texto="inventado por la IA" tam={30} color={KC.cyan} />
-      <Etq T={T} at={K.Pi + 0.6} until={K.Ad - 0.3} x={700} y={820} texto="rayones" tam={30} />
-      <Etq T={T} at={K.Pi + 1.2} until={K.Ad - 0.3} x={700} y={890} texto="manchas" tam={30} />
-      <Etq T={T} at={K.Pi + 1.8} until={K.Ad - 0.3} x={700} y={960} texto="polvo" tam={30} />
-      <Etq T={T} at={K.Pi + 2.4} until={K.Ad - 0.3} x={700} y={1030} texto="grano" tam={30} />
+      <Etq T={T} at={K.Pi + 0.6} until={K.Ad - 0.3} x={700} y={820} texto="rayones" tam={38} />
+      <Etq T={T} at={K.Pi + 1.2} until={K.Ad - 0.3} x={700} y={890} texto="manchas" tam={38} />
+      <Etq T={T} at={K.Pi + 1.8} until={K.Ad - 0.3} x={700} y={960} texto="polvo" tam={38} />
+      <Etq T={T} at={K.Pi + 2.4} until={K.Ad - 0.3} x={700} y={1030} texto="grano" tam={38} />
       <Chip T={T} at={K.Ad + 0.3} until={K.Ap - 0.3} texto="lo borrado ya no está" y={470} tam={42} borde={KC.yellow} />
       <Etq T={T} at={K.Ad + 3.2} until={K.Ap - 0.3} x={760} y={1150} texto="adivinado" tam={32} color={KC.cyan} />
       <Chip T={T} at={K.Ap + 0.2} until={K.Co - 0.3} texto="aprende de muchísimas fotos" y={470} tam={40} borde={KC.orange} />
@@ -243,12 +243,12 @@ function FotosOfrenda() {
       <Etq T={T} at={K.E + 3.6} until={K.Ob - 0.3} x={110} y={820} texto="foto pixeleada" tam={28} />
       <Etq T={T} at={K.E + 5.0} until={K.Ob - 0.3} x={1040} y={820} texto="cara inventada" lado="izq" tam={28} color={KC.yellow} />
       <Etq T={T} at={K.Ob + 0.4} until={K.Se - 0.3} x={110} y={700} texto="foto pixeleada de Obama" tam={28} />
-      <Etq T={T} at={K.Ob + 2.6} until={K.Se - 0.3} x={1040} y={1090} texto="cara inventada" lado="izq" tam={28} color={KC.yellow} />
+      <Etq T={T} at={K.Ob + 2.6} until={K.Se - 0.3} x={1040} y={1065} texto="cara inventada" lado="izq" tam={28} color={KC.yellow} />
       <Chip T={T} at={K.Ob + 3.0} until={K.Se - 0.3} texto="2020: le devolvió un hombre blanco" y={1140} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Se + 0.2} until={K.Da - 0.3} texto="la IA de apoyo (StyleGAN)" y={470} tam={38} borde={KC.lilac} />
-      <Etq T={T} at={K.Se + 3.4} until={K.Da - 0.3} x={60} y={1170} texto="casi siempre: caras blancas" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Se + 3.4} until={K.Da - 0.3} x={60} y={1170} texto="casi siempre: caras blancas" tam={32} color={KC.yellow} />
       <Chip T={T} at={K.Da + 0.2} until={K.Or - 0.3} texto="menos información = más relleno" x={660} y={470} tam={34} borde={KC.cyan} />
-      <Etq T={T} at={K.Da + 3.0} until={K.Or - 0.3} x={820} y={1060} texto="la misma foto borrosa" tam={26} />
+      <Etq T={T} at={K.Da + 3.0} until={K.Or - 0.3} x={545} y={1060} texto="la misma foto borrosa" lado="izq" tam={28} />
       <Etq T={T} at={K.Or + 0.8} until={K.C - 0.3} x={120} y={1130} texto="original" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Or + 1.0} until={K.C - 0.3} x={990} y={1160} texto="restaurada (IA)" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Or + 1.8} until={K.C - 0.3} texto="guarda la original" y={420} x={420} tam={40} borde={KC.yellow} />
@@ -261,7 +261,7 @@ function FotosOfrenda() {
       <Subtitulo T={T} idx={3} at={K.Ap + 0.1} until={K.Co - 0.1} texto="Rellena con *lo más probable.*" />
       <Subtitulo T={T} idx={4} at={K.Co + 0.1} until={K.P - 0.1} texto="El color: *la IA lo elige.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.E - 0.1} texto="¿Y si *adivina mal?*" />
-      <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.Ob - 0.1} texto="PULSE *inventa una cara* que encaje." />
+      <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.Ob - 0.1} texto="PULSE *inventa una cara.*" />
       <Subtitulo T={T} idx={7} at={K.Ob + 0.1} until={K.Se - 0.1} texto="Obama → *un hombre blanco.*" />
       <Subtitulo T={T} idx={8} at={K.Se + 0.1} until={K.Da - 0.1} texto="Su IA de apoyo: *casi siempre caras blancas.*" />
       <Subtitulo T={T} idx={9} at={K.Da + 0.1} until={K.Or - 0.1} texto="Más daño: *más relleno.*" />
@@ -272,7 +272,7 @@ function FotosOfrenda() {
         [CUES.Gancho - 0.45, CUES.Gancho + 4.3, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Pierde + 0.6, CUES.Adivina - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Color + 0.5, CUES.Pregunta - 0.1, 'avatar_06_pensativo_menton', 'izq-alto'],
-        [CUES.Pregunta + 0.05, CUES.Estudio + 2.2, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Estudio + 1.7, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Obama + 0.8, CUES.Sesgo + 0.4, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Danada + 0.6, CUES.Original - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
         [CUES.Original + 0.5, CUES.Cierre - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
