@@ -1,0 +1,156 @@
+{
+ "temas": [
+  {
+   "id": "ozono-molina-montreal",
+   "titulo": "El agujero de ozono se está cerrando: Mario Molina, los CFC y el Protocolo de Montreal (99 % eliminado, recuperación 2040/2066)",
+   "serie": "Shot Ambiental",
+   "numero": 5,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-05-ozono",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "WMO/UNEP comunicado 9 ene 2023 (evaluación 2022)",
+    "EPA Basic Ozone Layer Science",
+    "NobelPrize.org 1995 y autobiografía de Molina",
+    "Molina y Rowland, Nature 249:810 (1974)",
+    "UNEP Ozone Secretariat, Montreal Protocol"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "El aerosol de los HFC: el reemplazo de los CFC que calienta el planeta (Enmienda de Kigali)",
+    "Mario Molina y el aire de la Ciudad de México (su trabajo en calidad del aire)",
+    "Por qué los rayos UV-B sí llegan y cómo te protege el ozono (índice UV)"
+   ]
+  },
+  {
+   "id": "hundimiento-cdmx-nisar",
+   "titulo": "La Ciudad de México se hunde: 14 escalones del Ángel y más de 2 cm por mes (NISAR, NASA-ISRO, 2026)",
+   "serie": "Shot Ambiental",
+   "numero": 6,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-06-hundimiento",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "NASA JPL 29 abr 2026, US-Indian Space Mission Maps Extreme Subsidence in Mexico City",
+    "Yaemsiri et al. 2010, PMID 19744178"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "El Metro de la CDMX y el hundimiento: por qué la Línea 12 y otras se deforman",
+    "Recarga de acuíferos: cómo meter agua de lluvia al subsuelo",
+    "Otras ciudades de México que se hunden por bombeo (Aguascalientes, Celaya, Morelia)"
+   ]
+  },
+  {
+   "id": "monarca-canchas-2025-2026",
+   "titulo": "Todas las colonias de mariposa monarca caben en unas 4 canchas de fútbol: 2.93 ha en 2025-2026 contra 18.19 ha en 1996-1997",
+   "serie": "Shot Ambiental",
+   "numero": 7,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-07-monarca",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "WWF/CONANP Monitoreo Mariposa Monarca 2025-2026",
+    "WWF/UNAM cambio forestal RBMM 2024-2025",
+    "PMC13027080 (2026)",
+    "FIFA Stadium Guidelines 5.3"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "El algodoncillo: la única comida de la oruga monarca y por qué no cualquier especie sirve",
+    "Cómo se mide una colonia de monarcas (hectáreas, no mariposas)",
+    "Los oyameles: el bosque que funciona como cobija para las monarcas"
+   ]
+  },
+  {
+   "id": "vaquita-dedos-2025",
+   "titulo": "Las vaquitas que se vieron en 2025 caben en tus dedos: entre 7 y 10, con crías (Frida); 567 en 1997 y 59 en 2015",
+   "serie": "Shot Ambiental",
+   "numero": 8,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-08-vaquita",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "Informe del Crucero de Observación Vaquita Marina 2025 (IUCN-CSG, feb 2026)",
+    "NOAA Fisheries, Vaquita",
+    "NOAA SWFSC Abundance and Trends"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "La totoaba: el pez cuya vejiga vale más que su carne",
+    "Cómo se cuenta a un animal casi invisible: detectores acústicos y elicitación de expertos",
+    "Otros cetáceos en peligro: el baiji, el primero extinto por humanos"
+   ]
+  },
+  {
+   "id": "chapala-60-por-ciento",
+   "titulo": "Seis de cada diez litros de Guadalajara salen de un lago de 8 m: Chapala (79 × 28 km; mínimo de 1955; Ciénega 1902-1910; 70 % el 27 oct 2026)",
+   "serie": "Shot Ambiental",
+   "numero": 9,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-09-chapala",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "CEA Jalisco, Lago de Chapala",
+    "CEA Jalisco, nivel diario 27 oct 2026"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "La Ciénega de Chapala: cómo se secó media parte del lago en 1902-1910",
+    "De dónde sale el otro 40 % del agua de Guadalajara",
+    "El río Lerma: el viaje del agua desde Toluca hasta Chapala"
+   ]
+  },
+  {
+   "id": "nanoplasticos-agua-embotellada",
+   "titulo": "DESCARTADO: nanoplásticos en agua embotellada (~240 mil por litro, Qian et al. PNAS 2024) — cifra en disputa (Materić, PNAS 2024)",
+   "serie": "Shot Ambiental",
+   "numero": null,
+   "estado": "idea",
+   "carpeta": "",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "Qian et al. 2024, PNAS, PMC10801917",
+    "Materić 2024, PNAS e2411099121"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "Solo retomarlo como historia de cómo la ciencia se corrige (la cifra y su crítica)"
+   ]
+  },
+  {
+   "id": "murcielago-magueyero-descartado",
+   "titulo": "DESCARTADO: murciélago magueyero sale de la lista de EE. UU. (1,000 → 200,000) — la regla federal dice que el aumento refleja en buena parte mejores conteos",
+   "serie": "Shot Ambiental",
+   "numero": null,
+   "estado": "idea",
+   "carpeta": "",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "Federal Register 83 FR 17093 (2018)"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "Retomarlo solo diciendo que parte del aumento es por contar mejor"
+   ]
+  },
+  {
+   "id": "arsenico-fluor-altos-jalisco",
+   "titulo": "IDEA PENDIENTE: arsénico y flúor en pozos de Los Altos de Jalisco — solo hay datos primarios de 2002-2003 (Hurtado-Jiménez y Gardea-Torresdey)",
+   "serie": "Shot Ambiental",
+   "numero": null,
+   "estado": "idea",
+   "carpeta": "",
+   "rama": "claude/igualar-ambiental",
+   "fuentes": [
+    "PMID 17316482 (2006)",
+    "PMID 15759914 (2005)",
+    "PMID 15371213 (2004)"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "Hacerlo solo si aparece un muestreo reciente (CONAGUA o universidad)"
+   ]
+  }
+ ]
+}
