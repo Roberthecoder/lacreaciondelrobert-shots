@@ -146,7 +146,7 @@ function Monarcas() {
   const [mx, my] = pm(-100.3, 19.6), [ex, ey] = pm(-99.7, 19.35);
   const vuelo = kprog(T, K.Vi + 0.6, K.Vi + 4.4, kEase.suave);
   // generaciones
-  const gens = ['sale de México', '2ª generación', '3ª generación', 'tataranieta'];
+  const gens = ['sale de México', 'hija', 'nieta', 'bisnieta', 'tataranieta'];
   // barras de la comparación (propias, en la mitad izquierda: Robert grande a la derecha)
   const g = kprog(T, K.An + 0.5, K.An + 1.6, kEase.sale), g2 = kprog(T, K.An + 1.4, K.An + 2.2, kEase.sale);
   const H = 560, base = 1080;
@@ -180,17 +180,17 @@ function Monarcas() {
           {Array.from({ length: 6 }, (_, i) => <Cempa key={i} T={T} x={120 + i * 170} y={1640} s={1} />)}
         </>)}
       </Escena>
-      {/* 4 · cuatro generaciones: la que viaja es la tataranieta */}
+      {/* 4 · cinco generaciones: la que viaja es la tataranieta */}
       <Escena T={T} a={K.Bi} b={K.S}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          {gens.map((t, i) => { const at = K.Bi + 0.3 + i * 0.7, e = kprog(T, at, at + 0.4, kEase.rebote), x = 150 + i * 260, y = 880 + (i % 2) * 50;
-            const vuela = i === 3 ? kprog(T, K.Bi + 3.4, K.S + 0.4, kEase.suave) : 0;
+          {gens.map((t, i) => { const at = K.Bi + 0.3 + i * 0.55, e = kprog(T, at, at + 0.4, kEase.rebote), x = 150 + i * 195, y = 880 + (i % 2) * 50;
+            const vuela = i === 4 ? kprog(T, K.Bi + 3.4, K.S + 0.4, kEase.suave) : 0;
             return <g key={i}>
-              {i < 3 && <path d={`M ${x + 70} ${y} L ${x + 175} ${y + (i % 2 ? -40 : 40)}`} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, at + 0.3, at + 0.6)} markerEnd="" />}
-              {i < 3 && <path d={`M ${x + 160} ${y + (i % 2 ? -50 : 30)} l 18 12 l -20 8`} stroke={KC.ink} strokeWidth={7} fill="none" opacity={kprog(T, at + 0.3, at + 0.6)} />}
-              <g transform={`translate(${vuela * 200} ${-vuela * 700})`}><Monarca x={x} y={y} s={1.0 * e} ala={Math.abs(Math.cos(T * 7 + i))} rot={vuela * -20} /></g>
-              <text x={x} y={y + 120} textAnchor="middle" style={{ font:`700 ${i === 3 ? 38 : 30}px ${KF.mono}` }} fill={i === 3 ? KC.ink : '#1d4b3a'} opacity={e * (1 - vuela)}>{t}</text>
+              {i < 4 && <path d={`M ${x + 55} ${y} L ${x + 135} ${y + (i % 2 ? -40 : 40)}`} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, at + 0.3, at + 0.6)} markerEnd="" />}
+              {i < 4 && <path d={`M ${x + 120} ${y + (i % 2 ? -50 : 30)} l 18 12 l -20 8`} stroke={KC.ink} strokeWidth={7} fill="none" opacity={kprog(T, at + 0.3, at + 0.6)} />}
+              <g transform={`translate(${vuela * 200} ${-vuela * 700})`}><Monarca x={x} y={y} s={0.85 * e} ala={Math.abs(Math.cos(T * 7 + i))} rot={vuela * -20} /></g>
+              <text x={x} y={y + 120} textAnchor="middle" style={{ font:`700 ${i === 4 ? 36 : 28}px ${KF.mono}` }} fill={i === 4 ? KC.ink : '#1d4b3a'} opacity={e * (1 - vuela)}>{t}</text>
             </g>; })}
         </>)}
       </Escena>

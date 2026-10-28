@@ -13,7 +13,7 @@
 | 0 | Gancho | Esta nube naranja no son hojas: son mariposas monarca, y llegan a México por Día de Muertos. | Fondo cian, bosque de oyameles con cempasúchil. Desde el cuadro 0 cae una nube de "hojas secas" naranjas; a los 2.2 s se revelan: son monarcas (*Danaus plexippus*) aleteando. Chip "Especial Día de Muertos". |
 | 1 | Viaje | Vuelan desde Canadá y Estados Unidos hasta los bosques de oyamel de Michoacán y el Estado de México. | Mapa de México; flecha punteada desde "Canadá y EUA"; cinco mariposas bajan por la ruta; se encienden los puntos de Michoacán y Edomex. |
 | 2 | Almas | En algunos pueblos se dice que traen las almas de los difuntos. | Fondo magenta con papel picado, cuatro veladoras y cempasúchil; mariposas suben desde las velas. Chip "creencia: traen a los difuntos". |
-| 3 | Bisnieta | Ninguna ha hecho el viaje antes: es tataranieta de las que se fueron en primavera. | Cuatro generaciones de mariposas en fila con flechas ("sale de México", 2ª, 3ª, "tataranieta"); la última despega. |
+| 3 | Bisnieta | Ninguna ha hecho el viaje antes: es tataranieta de las que se fueron en primavera. | Cinco generaciones de mariposas en fila con flechas ("sale de México", hija, nieta, bisnieta, "tataranieta"); la última despega. |
 | 4 | Sol | Se orientan con el Sol y con un reloj interno que traen en las antenas. | Sol con rayos que giran y una monarca grande; `Lupa` de rayos X en la antena: un reloj. |
 | 5 | Pregunta | ¿Y cuántas llegan? | **Re-gancho.** "?" gigante con mariposas; Robert grande, pensativo. |
 | 6 | Bosque | Son tantas que no se cuentan: se mide cuánto bosque cubren. | El bosque cubierto de mariposas y un marco punteado que mide el área. |

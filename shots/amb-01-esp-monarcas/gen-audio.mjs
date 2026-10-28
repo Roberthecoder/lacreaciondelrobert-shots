@@ -18,7 +18,7 @@ m.sube(G + 2.2, 1.0, 57, 69, 0.06); m.nota(G + 3.1, 69, 0.08, 1.0); aleteo(G + 2
 for (let i = 0; i < 5; i++) m.whoosh(Vi + 0.6 + i * 0.7, 0.5, 0.06);           // vuelan por el mapa
 m.golpe(Vi + 3.6, 0.3, 90); m.nota(Vi + 3.6, 64, 0.06, 0.6); m.golpe(Vi + 4.0, 0.3, 90); m.nota(Vi + 4.0, 69, 0.06, 0.6); // Michoacán y Edomex
 m.pad(A, Bi, 0.03, [52, 59]); for (let i = 0; i < 6; i++) m.nota(A + 0.3 + i * 0.35, E[5 + (i % 3)], 0.035, 0.9); // las almas (velas)
-for (let i = 0; i < 4; i++) m.nota(Bi + 0.3 + i * 0.7, E[2 + i * 2], 0.06, 0.5);   // cuatro generaciones
+for (let i = 0; i < 5; i++) m.nota(Bi + 0.3 + i * 0.55, E[2 + i * 2], 0.06, 0.5);   // cinco generaciones
 m.whoosh(Bi + 3.4, 1.0, 0.12);                                                 // la tataranieta despega
 m.sube(S + 0.2, 1.2, 57, 64, 0.04); for (let i = 0; i < 16; i++) m.tic(S + 1.6 + i * 0.16, 0.05, 3000); // reloj en las antenas
 m.sube(P + 0.05, 1.2, 52, 64, 0.05);
