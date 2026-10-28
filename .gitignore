@@ -12,3 +12,5 @@ shots/*/assets/musica_demo.wav
 
 # audio de revisión: lo genera GitHub en cada render
 shots/*-esp-*/assets/mezcla.wav
+shots/*/assets/mezcla.wav
+shots/*/assets/mezcla_mudo.wav

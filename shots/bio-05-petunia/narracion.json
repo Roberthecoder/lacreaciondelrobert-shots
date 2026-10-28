@@ -1,0 +1,22 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Petunia base narrada.dc.html",
+  "salida": "Shot Petunia narrado.dc.html",
+  "velocidad": 1.095,
+  "nota": "Biotecnológico #05. Una línea por subtítulo (idx 0..12 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~930 créditos). 28 oct 2026: verificación de hechos independiente; cambió el texto narrado, así que se quitó voz_aprobada (y el gemelo mudo ya no se renderiza). Falta que Robert apruebe la voz otra vez.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esta flor no tiene pilas ni pintura: brilla porque lleva genes de hongos." },
+    { "escena": "Hongo", "texto": "Es la petunia luciérnaga, y su luz viene de un hongo que brilla solo en el bosque." },
+    { "escena": "Ciclo", "texto": "Por dentro, la planta ya fabrica ácido cafeico, como todas." },
+    { "escena": "Ciclo", "texto": "Los genes del hongo lo vuelven un ciclo de cuatro enzimas." },
+    { "escena": "Ciclo", "texto": "La primera lo convierte en hispidina; la segunda, en luciferina." },
+    { "escena": "Ciclo", "texto": "La tercera, la luciferasa, la quema con oxígeno… y suelta luz verde." },
+    { "escena": "Ciclo", "texto": "Y la cuarta recicla lo que sobra en ácido cafeico, y vuelta otra vez." },
+    { "escena": "Pregunta", "texto": "¿Por qué nadie lo había logrado?" },
+    { "escena": "Estudio", "texto": "En 1986, en San Diego, metieron un gen de luciérnaga en tabaco: brillaba, pero había que darle luciferina." },
+    { "escena": "Wood", "texto": "Uno de esos estudiantes, Keith Wood, cofundó décadas después la empresa de esta petunia." },
+    { "escena": "Aprobada", "texto": "Estados Unidos le dio luz verde en 2023, y salió a la venta en 2024." },
+    { "escena": "Extra", "texto": "Lo chistoso: brilla más en las flores jóvenes, y no se carga con el sol: la luz la fabrica ella." },
+    { "escena": "Cierre", "texto": "Así que no tiene pilas: tiene un hongo dando vueltas por dentro." }
+  ]
+}

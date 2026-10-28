@@ -643,3 +643,140 @@ Object.assign(window, {
   MarcaAgua, Sticker, Robert, CierreMarca, klogo, MundoPiel, MUNDO_PIEL, mixHex,
   CamaraAnidada, MundoPanMacro, MundoPanMicro, MUNDO_PAN, PAN_TALLOS, kArbol, kArbolRadial, nodosPan,
 });
+
+/* ---------- PIEZAS v2 (27 oct 2026, serie Biotecnológico) ----------
+   Escena con fundido, etiquetas, audio sincronizado, fondos de marca y el "mundo microbio":
+   bacteria, fago (T4), hebra de ADN, flecha curva y molécula. Todas son funciones de T. */
+
+// Escena con fundido cruzado (nunca corte seco) y un empujoncito de cámara.
+function Escena({ T, a, b, fondo, children, zoom = 0.05, origen = '50% 45%' }) {
+  if (T < a - 0.45 || T > b + 0.45) return null;
+  const o = kprog(T, a - 0.45, a + 0.05) * (1 - kprog(T, b - 0.05, b + 0.45));
+  const s = 1 + zoom * kprog(T, a - 0.45, b + 0.45, kEase.suave);
+  return <div style={{ position:'absolute', inset:0, opacity:o, background:fondo, overflow:'hidden' }}>
+    <div style={{ position:'absolute', inset:0, transform:`scale(${s})`, transformOrigin:origen }}>{children}</div>
+  </div>;
+}
+// Etiqueta con línea: nombre común o científico (it = cursiva). lado: 'der' | 'izq'.
+function Etq({ T, at, until, x, y, texto, it = false, lado = 'der', color = KC.texto, tam = 34 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:12, flexDirection: lado === 'der' ? 'row' : 'row-reverse', transform:`translate(${lado === 'der' ? 0 : '-100%'}, -50%)` }}>
+    <div style={{ width:70 * kprog(T, at, at + 0.4, kEase.sale), height:4, background:color, borderRadius:2 }}></div>
+    <div style={{ font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color, textShadow:'0 3px 0 rgba(0,0,0,.8), 0 0 18px rgba(0,0,0,.9)', whiteSpace:'nowrap' }}>{texto}</div>
+  </div>;
+}
+// Audio sincronizado al tiempo de reproducción (en el render el audio se pega con ffmpeg).
+function AudioPista({ src }) {
+  const { time, playing } = useComposition();
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const a = ref.current; if (!a || !src) return;
+    if (playing) { if (a.paused) { const pr = a.play(); if (pr && pr.catch) pr.catch(() => {}); } if (Math.abs(a.currentTime - time) > 0.25) a.currentTime = time; }
+    else { if (!a.paused) a.pause(); if (Math.abs(a.currentTime - time) > 0.05) a.currentTime = time; }
+  });
+  return src ? <audio ref={ref} src={src} preload="auto" style={{ display:'none' }} /> : null;
+}
+// Fondo de marca: color brillante con patrón ('puntos' | 'rayas' | 'nada'), u 'oscuro' (escenas micro).
+function FondoMarca({ color = KC.yellow, patron = 'puntos', T = 0 }) {
+  if (patron === 'oscuro') return <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, #1b2333 0%, ${KC.dark} 72%)` }}></div>;
+  const bg = patron === 'rayas' ? 'repeating-linear-gradient(45deg, rgba(255,255,255,.14) 0 24px, transparent 24px 48px)'
+    : patron === 'puntos' ? 'radial-gradient(circle, rgba(255,255,255,.32) 7px, transparent 8px)' : 'none';
+  return <div style={{ position:'absolute', inset:0, background:color, backgroundImage:bg, backgroundSize: patron === 'puntos' ? '52px 52px' : undefined, backgroundPosition: patron === 'puntos' ? `${(T * 6) % 52}px ${(T * 10) % 52}px` : undefined }}></div>;
+}
+
+// Bacteria en bastón (vista al microscopio), dentro de un <svg>. (x, y) = centro; largo y ancho en px.
+// reventar: 0..1 (la pared se rompe en pedazos que salen volando). adentro(L, W): dibuja algo dentro.
+function Bacteria({ T = 0, x = 0, y = 0, largo = 220, ancho = 90, rot = 0, color = '#7fd88a', borde = KC.ink, seed = 1, flagelo = true, nucleoide = true, reventar = 0, adentro, opacidad = 1 }) {
+  const g = krng(seed), L = largo, W = ancho, r = W / 2;
+  const granos = Array.from({ length: 9 }, () => [(g() - 0.5) * (L - W), (g() - 0.5) * W * 0.55, 3 + g() * 5]);
+  if (reventar > 0) {
+    const k = kEase.sale(kclamp(reventar, 0, 1));
+    return <g transform={`translate(${x} ${y}) rotate(${rot})`} opacity={opacidad * (1 - kprog(reventar, 0.55, 1))}>
+      {Array.from({ length: 8 }, (_, i) => { const a = (i / 8) * Math.PI * 2 + 0.3, d = 30 + 150 * k;
+        return <path key={i} d={`M ${-L * 0.15} ${-r * 0.4} q ${L * 0.15} ${-r * 0.5} ${L * 0.3} 0`}
+          transform={`translate(${Math.cos(a) * d} ${Math.sin(a) * d * 0.7}) rotate(${a * 57 + k * 90 * (i % 2 ? 1 : -1)})`} stroke={borde} strokeWidth={7} fill={color} fillOpacity=".5" strokeLinecap="round" />; })}
+    </g>;
+  }
+  const ola = (i) => mece(T, seed + i, 0.9) * 14;
+  return <g transform={`translate(${x} ${y}) rotate(${rot})`} opacity={opacidad}>
+    {flagelo && <path d={`M ${-L / 2} 0 c -30 ${ola(1)}, -50 ${-ola(2)}, -80 ${ola(3)} s -50 ${-ola(4)}, -80 ${ola(5)}`} stroke={borde} strokeWidth={5} fill="none" strokeLinecap="round" />}
+    <rect x={-L / 2} y={-r} width={L} height={W} rx={r} fill={color} stroke={borde} strokeWidth={7} />
+    <rect x={-L / 2 + r * 0.5} y={-r + 10} width={L - r} height={W * 0.2} rx={W * 0.1} fill="#fff" opacity=".28" />
+    {granos.map(([gx, gy, gr], i) => <circle key={i} cx={gx} cy={gy} r={gr} fill={borde} opacity=".16" />)}
+    {nucleoide && <path d={`M ${-L * 0.28} 0 C ${-L * 0.18} ${-r * 0.6}, ${-L * 0.06} ${r * 0.6}, 0 0 S ${L * 0.18} ${-r * 0.6}, ${L * 0.28} 0`} stroke="#2a6d3a" strokeWidth={5} fill="none" opacity=".55" />}
+    {adentro && adentro(L, W)}
+  </g>;
+}
+
+// Fago T4 (bacteriófago): cabeza de icosaedro alargado, collar, cola con vaina, placa basal y fibras largas.
+// Origen (0, 0) = placa basal (punta de la cola). Mide ~420 px de alto con s = 1 (≈ 200 nm reales).
+// contraida: 0..1 (la vaina se encoge y el tubo sale: inyección). patas: 0..1 (fibras dobladas → abiertas).
+function Fago({ T = 0, x = 0, y = 0, s = 1, rot = 0, contraida = 0, patas = 1, color = '#c9d3ff', adn = 1, borde = KC.ink, seed = 1 }) {
+  const c = kclamp(contraida, 0, 1), vainaH = klerp(150, 70, c), tubo = klerp(0, 44, c);
+  const sway = mece(T, seed, 0.6) * 4;
+  const fibra = (lado, k) => { const sp = klerp(0.45, 1, patas);
+    return <path key={lado + '_' + k} d={`M ${lado * 22} -8 L ${lado * (40 + k * 26) * sp} ${-64 + k * 16} L ${lado * (66 + k * 36) * sp} ${klerp(-36, 22, patas)}`} stroke={borde} strokeWidth={6} fill="none" strokeLinejoin="round" strokeLinecap="round" transform={`rotate(${sway * lado * 0.5})`} />; };
+  const top = -(vainaH + 16) - 12;
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    {[-1, 1].map((l) => [0, 1, 2].map((k) => fibra(l, k)))}
+    <rect x={-8} y={-10} width={16} height={tubo + 10} fill="#e9eefc" stroke={borde} strokeWidth={5} />
+    <path d="M -34 0 L 34 0 L 24 -16 L -24 -16 Z" fill="#9fb0e8" stroke={borde} strokeWidth={6} strokeLinejoin="round" />
+    <g transform="translate(0 -16)">
+      <rect x={klerp(-20, -28, c)} y={-vainaH} width={klerp(40, 56, c)} height={vainaH} rx={8} fill={color} stroke={borde} strokeWidth={6} />
+      {Array.from({ length: 7 }, (_, i) => <line key={i} x1={klerp(-20, -28, c)} x2={klerp(20, 28, c)} y1={-vainaH * (i + 1) / 8} y2={-vainaH * (i + 1) / 8} stroke={borde} strokeWidth={3} opacity=".55" />)}
+    </g>
+    <rect x={-26} y={top} width={52} height={14} rx={5} fill="#9fb0e8" stroke={borde} strokeWidth={5} />
+    <g transform={`translate(0 ${top - 94})`}>
+      <path d="M 0 -96 L 62 -60 L 62 60 L 0 96 L -62 60 L -62 -60 Z" fill={color} stroke={borde} strokeWidth={7} strokeLinejoin="round" />
+      <path d="M 0 -96 L 0 -40 M -62 -60 L 0 -40 L 62 -60 M 0 96 L 0 40 M -62 60 L 0 40 L 62 60 M 0 -40 L 0 40" stroke={borde} strokeWidth={3} opacity=".3" fill="none" />
+      {adn > 0 && <path d="M -30 -50 C 30 -40, -40 -10, 20 0 S -30 30, 25 50 S -20 70, 10 74" stroke={KC.pink} strokeWidth={7} fill="none" strokeLinecap="round" opacity={adn} />}
+      <path d="M -50 -52 L -14 -74" stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity=".5" />
+    </g>
+  </g>;
+}
+
+// Hebra de ADN doble (vista de lado) de (x, y) a (x + largo, y); gira con T.
+// resalta(u): true para los escalones (0..1 a lo largo) que van en dorado.
+function ADNHebra({ T = 0, x = 0, y = 0, largo = 600, alto = 60, vueltas = 3, colores = [KC.pink, KC.cyan, KC.yellow, KC.mint], grosor = 7, vel = 1, resalta, hebra = '#e8f0ff' }) {
+  const n = Math.max(6, Math.round(vueltas * 10)), pts = [];
+  for (let i = 0; i <= n; i++) { const u = i / n, a = u * vueltas * Math.PI * 2 + T * 2 * vel; pts.push({ x: x + u * largo, y1: y + Math.sin(a) * alto / 2, y2: y - Math.sin(a) * alto / 2, z: Math.cos(a), u }); }
+  const lin = (k) => pts.map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${(k ? p.y2 : p.y1).toFixed(1)}`).join(' ');
+  return <g>
+    {pts.map((p, i) => { const r = resalta && resalta(p.u); return <line key={i} x1={p.x} x2={p.x} y1={p.y1} y2={p.y2} stroke={r ? KC.gold2 : colores[i % colores.length]} strokeWidth={grosor * (r ? 1.5 : 0.85)} strokeLinecap="round" opacity={0.55 + 0.45 * Math.abs(p.z)} />; })}
+    <path d={lin(0)} stroke={KC.ink} strokeWidth={grosor + 5} fill="none" strokeLinecap="round" />
+    <path d={lin(0)} stroke={hebra} strokeWidth={grosor} fill="none" strokeLinecap="round" />
+    <path d={lin(1)} stroke={KC.ink} strokeWidth={grosor + 5} fill="none" strokeLinecap="round" />
+    <path d={lin(1)} stroke={hebra} strokeWidth={grosor} fill="none" strokeLinecap="round" opacity=".85" />
+  </g>;
+}
+
+// Flecha curva animada de (x1, y1) a (x2, y2); p = 0..1 cuánto se ha dibujado; curva = desvío del centro.
+function FlechaCurva({ x1, y1, x2, y2, p = 1, curva = 80, color = KC.texto, grosor = 9, T = 0 }) {
+  if (p <= 0.01) return null;
+  const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, dx = x2 - x1, dy = y2 - y1, d = Math.hypot(dx, dy) || 1;
+  const cx = mx - (dy / d) * curva, cy = my + (dx / d) * curva;
+  const q = (t) => ({ x: (1 - t) * (1 - t) * x1 + 2 * (1 - t) * t * cx + t * t * x2, y: (1 - t) * (1 - t) * y1 + 2 * (1 - t) * t * cy + t * t * y2 });
+  const NN = 24, pts = Array.from({ length: NN + 1 }, (_, i) => q((i / NN) * kclamp(p, 0, 1)));
+  const e = pts[NN], e0 = pts[NN - 1], ang = Math.atan2(e.y - e0.y, e.x - e0.x) * 180 / Math.PI;
+  const dd = pts.map((pt, i) => `${i ? 'L' : 'M'} ${pt.x.toFixed(1)} ${pt.y.toFixed(1)}`).join(' ');
+  return <g>
+    <path d={dd} stroke={KC.ink} strokeWidth={grosor + 6} fill="none" strokeLinecap="round" />
+    <path d={dd} stroke={color} strokeWidth={grosor} fill="none" strokeLinecap="round" strokeDasharray="18 12" strokeDashoffset={-T * 40} />
+    <g transform={`translate(${e.x} ${e.y}) rotate(${ang})`}><path d="M 8 0 L -22 -17 L -22 17 Z" fill={color} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" /></g>
+  </g>;
+}
+
+// Molécula esquemática: anillos hexagonales (+ cola opcional). brillo: 0..1 (halo del color).
+function Molecula({ x = 0, y = 0, s = 1, rot = 0, color = KC.yellow, anillos = 1, cola = 0, brillo = 0, borde = KC.ink }) {
+  const hexP = (cx) => [0, 1, 2, 3, 4, 5].map((i) => { const a = Math.PI / 6 + i * Math.PI / 3; return `${(cx + 30 * Math.cos(a)).toFixed(1)},${(30 * Math.sin(a)).toFixed(1)}`; }).join(' ');
+  const fx = (anillos - 1) * 52 + 26;
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    {brillo > 0 && <circle cx={fx / 2} r={80} fill={color} opacity={0.4 * brillo} />}
+    {Array.from({ length: anillos }, (_, i) => <polygon key={i} points={hexP(i * 52)} fill={color} stroke={borde} strokeWidth={6} strokeLinejoin="round" />)}
+    {cola > 0 && <path d={`M ${fx} -15 l 26 -15 l 26 15${cola > 1 ? ' l 26 -15' : ''}`} stroke={borde} strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
+    {cola > 0 && <circle cx={fx + (cola > 1 ? 78 : 52)} cy={cola > 1 ? -30 : -15} r={9} fill={KC.red} stroke={borde} strokeWidth={4} />}
+  </g>;
+}
+
+Object.assign(window, { KSOMBRA, Escena, Etq, AudioPista, FondoMarca, Bacteria, Fago, ADNHebra, FlechaCurva, Molecula });
