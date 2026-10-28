@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Oxigenada base narrada.dc.html",
   "salida": "Shot Oxigenada narrado.dc.html",
   "nota": "Shot Químico #09. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
