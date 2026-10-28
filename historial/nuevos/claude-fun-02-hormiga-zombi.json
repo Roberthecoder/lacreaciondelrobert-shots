@@ -1,13 +1,16 @@
 { "temas": [ { "id": "hormiga-zombi", "titulo": "El hongo que convierte hormigas en zombis (Ophiocordyceps)", "serie": "Shot Fungi Mati", "numero": 2,
-  "estado": "guion", "carpeta": "shots/fun-02-hormiga-zombi", "rama": "claude/fun-02-hormiga-zombi",
+  "estado": "renderizado", "carpeta": "shots/fun-02-hormiga-zombi", "rama": "claude/fun-02-hormiga-zombi",
   "fuentes": [
     "Fredericksen et al. (2017). PNAS 114(47): 12590–12595.",
     "Andersen et al. (2009). The American Naturalist 174(3): 424–433.",
     "Hughes et al. (2011). BMC Ecology 11: 13.",
-    "Hughes, Wappler y Labandeira (2011). Biology Letters 7(1): 67–70.",
-    "Robert y Casadevall (2009). J. Infect. Dis. 200(10): 1623–1626."
+    "Pontoppidan et al. (2009). PLoS ONE 4(3): e4835.",
+    "Evans, Elliot y Hughes (2011). PLoS ONE 6(3): e17024.",
+    "Hughes, Wappler y Labandeira (2011; en línea 2010). Biology Letters 7(1): 67–70.",
+    "Robert y Casadevall (2009). J. Infect. Dis. 200(10): 1623–1626.",
+    "Bergman y Casadevall (2010). mBio 1(5): e00212-10."
   ],
-  "fecha": "2026-10-27",
+  "fecha": "2026-10-28",
   "derivados": [
     "Cordyceps militaris: el pariente que sí se cultiva y se vende",
     "Hongos que cazan gusanos con lazos (Arthrobotrys)",

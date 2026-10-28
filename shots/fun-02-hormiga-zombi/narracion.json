@@ -2,7 +2,7 @@
   "voz_aprobada": true,
   "dcHtml": "Shot Hormiga Zombi base narrada.dc.html",
   "salida": "Shot Hormiga Zombi narrado.dc.html",
-  "nota": "Shot Fungi Mati #02 (remaster del shot 001). Una línea por subtítulo (idx 0..14 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert: el texto cambió respecto a la voz guardada en voz/, así que generarla gasta créditos nuevos.",
+  "nota": "Shot Fungi Mati #02 (remaster del shot 001). Una línea por subtítulo (idx 0..14 del jsx). Todo en UNA sola petición a ElevenLabs. Voz aprobada por Robert en la Sala (~950 créditos); el texto ya está verificado (verificacion.md). Si la narrada pasa de 62 s, agregar \"velocidad\" (sin gastar créditos).",
   "lineas": [
     {
       "escena": "Gancho",
