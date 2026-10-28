@@ -43,8 +43,8 @@ Para agregar un dato: escríbelo aquí con ❓, y solo Robert lo cambia a ✅.
 - ✅ "De basura a comida": hongos comestibles sobre residuos agrícolas en menos de un mes. Platino en INFOMATRIX y oro en la Feria de Ciencias de Jalisco.
 - ✅ Finalista de Rise en 2023 (con "De basura a comida").
 - ✅ Con el fondo Ruta Azul convirtió un espacio abandonado de su prepa en una granja de setas y enseñó a 50 estudiantes a cultivarlas,
-  con un tutor de IA que él entrenó. Así nació Fungi Mati.
-- ✅ Fungi Mati quedó entre los 6 mejores de más de 100 proyectos en el Rise Finalist Challenge × Equitech Futures, en 2026.
+  con un tutor de IA que él entrenó (feb–jun 2026). El nombre Fungi Mati nació después, en el verano de 2026, para el reto Rise × Equitech Futures.
+- ✅ Fungi Mati quedó 2.º lugar (top 6 de más de 100 proyectos) en el Rise Innovation Fund Challenge × Equitech Futures, julio 2026.
 - ✅ Entró a beVisioneers (la beca de Mercedes-Benz) entre unas 20,000 personas.
 - ✅ Lo que viene: convertir una tonelada de bagazo de agave en hongos para comer (contarlo como futuro, no como hecho).
 
@@ -59,7 +59,7 @@ Para agregar un dato: escríbelo aquí con ❓, y solo Robert lo cambia a ✅.
 - ❓ Cosas que nadie sabe de él, la peor contaminación que ha tenido, el experimento del que más se ríe.
 
 ## Contados por Robert el 28 oct 2026 (para el video core)
-- ✅ Empezó vendiendo plantas que cultivaba desde semilla afuera de un ciber que tenían sus papás.
+- ✅ Empezó vendiendo plantas que cultivaba desde semilla afuera del negocio de sus papás (no llamarlo "ciber café").
 - ✅ Cuando lo vieron (de unos 5–6 años, ❓ edad exacta) cargando una planta de papaya en un bote reusado de detergente de 20 L,
   lo guiaron (❓ quién) y desde ahí vendió cactus, suculentas y plantas carnívoras en los tianguis por muchos años, hasta que la
   pandemia lo detuvo.
@@ -67,8 +67,24 @@ Para agregar un dato: escríbelo aquí con ❓, y solo Robert lo cambia a ✅.
   Hizo 2 videos: uno de jitomate (aún visible) y uno de maíz pozolero morado (perdido al pasar el canal de la cuenta de su papá a la
   suya). Su inspiración era "la Huertina de Toni" (❓ escritura exacta del nombre del canal).
 - ✅ La buena preparación de su mamá en kínder y primaria baja lo llevó a destacar en matemáticas.
-- ✅ Oro en la ONMAPS regional de Jalisco 2017 y 2018; en la OMMEB nacional 2017 quedó a un punto del oro.
+- ✅ Oro estatal en la 17.ª ONMAPS (2016, 5.º de primaria) y en la 18.ª (6.º de primaria). En la 1.ª OMMEB nacional (junio 2017) quedó a un punto del oro: plata (2.º lugar), con entrenamiento en Monterrey como preselección para Bulgaria.
 - ✅ En prepa: intentó el grupo estudiantil PAS (❓ qué era y qué pasó), atletismo de 1.º a 4.º semestre y natación en 6.º.
 - ✅ Hoy: intenta emprender con los hongos sobre bagazo de agave, quiere crecer como creador de contenido ("delirios de influencer",
   en sus palabras), se esfuerza mucho por su promedio, forma parte de fellowships internacionales y dirige un grupo estudiantil
   (❓ cuál).
+
+## Confirmados por Robert el 28 oct 2026 (2.ª ronda, con su CV de oct 2026)
+- ✅ Papaya a los 5–6 años; tianguis por El Fortín desde 6.º de primaria hasta mitad de 2.º de secundaria (≥2.5 años, hasta la pandemia).
+- ✅ Tablet: concurso de escritura de Gandhi en 2.º de primaria. Primaria y secundaria en el CEDI.
+- ✅ Hongos a los 10 años (5.º de primaria): tutorial fallido de champiñón, sustrato de café fallido, luego 2 kits (seta rosa y seta "azul", que salió gris).
+  Gelatina en vez de agar: "reverenda porquería".
+- ✅ SASMO: bronce (1.º sec, lo llevó a Vietnam, mención honorífica), plata (2.º), oro (3.º; lo habría llevado a Singapur sin la pandemia).
+  VANDA en 3.º de secundaria: bronce en la 1.ª etapa y plata internacional en la 2.ª.
+- ✅ Prepa: PrepaTec GDL bicultural 2021–2024, beca completa; mejor promedio de su generación bicultural. PAS = Personal Ambiental Social (ago 2022–jun 2023), no funcionó como esperaba.
+  Atletismo 1.º–4.º semestre (se enfermaba seguido), natación en 6.º ("entraba en un carril y salía por otro"). Voluntariado con Cómplices A.C.
+- ✅ Bioluminiscencia en su recámara: Panellus stipticus (cultivos recibidos 31 ago 2024) y después la bacteria Aliivibrio fischeri
+  (primera siembra 1 oct 2025, brillando 17 ene 2026).
+- ✅ Universidad: Ing. en Biotecnología, Tec GDL, 5.º semestre (oct 2026), beca completa. Carrillo Biorefinery Lab desde oct 2024 (1.er semestre);
+  a cargo del cepario desde el verano 2026. Presidente de B-Eco desde ago 2025. beVisioneers (cohorte 4, 1 de 250 entre ~20,000). MIT.nano jul 2025.
+- ✅ El canal es el mismo desde hace más de 10 años. Inspiraciones (puede nombrarlas): The Thought Emporium, NileRed, Mark Rober, Biología desde Cero.
+- ✅ Aprueba mencionar a su mamá y el negocio de sus papás, sin nombres. Evitar nombres de personas y temas familiares; preguntar si aparecen.
