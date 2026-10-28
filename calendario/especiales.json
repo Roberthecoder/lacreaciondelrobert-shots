@@ -1,0 +1,824 @@
+{
+ "nota": "Generado con python3 calendario/fecha.py especiales; números reservados para especiales (no los uses para shots normales).",
+ "reservados": [
+  {
+   "fecha": "2026-11-01",
+   "festividad": "Día de Muertos",
+   "serie": "Ambiental",
+   "numero": 1,
+   "clave": "amb-01"
+  },
+  {
+   "fecha": "2026-11-01",
+   "festividad": "Día de Muertos",
+   "serie": "Biotecnológico",
+   "numero": 1,
+   "clave": "bio-01"
+  },
+  {
+   "fecha": "2026-11-01",
+   "festividad": "Día de Muertos",
+   "serie": "Fungi Mati",
+   "numero": 1,
+   "clave": "fun-01"
+  },
+  {
+   "fecha": "2026-11-02",
+   "festividad": "Día de Muertos",
+   "serie": "Científico",
+   "numero": 1,
+   "clave": "cie-01"
+  },
+  {
+   "fecha": "2026-11-02",
+   "festividad": "Día de Muertos",
+   "serie": "IA",
+   "numero": 1,
+   "clave": "ia-01"
+  },
+  {
+   "fecha": "2026-11-02",
+   "festividad": "Día de Muertos",
+   "serie": "Químico",
+   "numero": 1,
+   "clave": "qui-01"
+  },
+  {
+   "fecha": "2026-11-10",
+   "festividad": "Día Mundial de la Ciencia para la Paz",
+   "serie": "Científico",
+   "numero": 5,
+   "clave": "cie-05"
+  },
+  {
+   "fecha": "2026-11-10",
+   "festividad": "Día Mundial de la Ciencia para la Paz",
+   "serie": "IA",
+   "numero": 5,
+   "clave": "ia-05"
+  },
+  {
+   "fecha": "2026-11-10",
+   "festividad": "Día Mundial de la Ciencia para la Paz",
+   "serie": "Químico",
+   "numero": 5,
+   "clave": "qui-05"
+  },
+  {
+   "fecha": "2026-11-20",
+   "festividad": "Revolución Mexicana",
+   "serie": "Científico",
+   "numero": 10,
+   "clave": "cie-10"
+  },
+  {
+   "fecha": "2026-11-20",
+   "festividad": "Revolución Mexicana",
+   "serie": "IA",
+   "numero": 10,
+   "clave": "ia-10"
+  },
+  {
+   "fecha": "2026-11-20",
+   "festividad": "Revolución Mexicana",
+   "serie": "Químico",
+   "numero": 10,
+   "clave": "qui-10"
+  },
+  {
+   "fecha": "2026-12-12",
+   "festividad": "Día de la Virgen de Guadalupe",
+   "serie": "Científico",
+   "numero": 21,
+   "clave": "cie-21"
+  },
+  {
+   "fecha": "2026-12-12",
+   "festividad": "Día de la Virgen de Guadalupe",
+   "serie": "IA",
+   "numero": 21,
+   "clave": "ia-21"
+  },
+  {
+   "fecha": "2026-12-12",
+   "festividad": "Día de la Virgen de Guadalupe",
+   "serie": "Químico",
+   "numero": 21,
+   "clave": "qui-21"
+  },
+  {
+   "fecha": "2026-12-16",
+   "festividad": "Posadas",
+   "serie": "Científico",
+   "numero": 23,
+   "clave": "cie-23"
+  },
+  {
+   "fecha": "2026-12-16",
+   "festividad": "Posadas",
+   "serie": "IA",
+   "numero": 23,
+   "clave": "ia-23"
+  },
+  {
+   "fecha": "2026-12-16",
+   "festividad": "Posadas",
+   "serie": "Químico",
+   "numero": 23,
+   "clave": "qui-23"
+  },
+  {
+   "fecha": "2026-12-24",
+   "festividad": "Navidad",
+   "serie": "Científico",
+   "numero": 27,
+   "clave": "cie-27"
+  },
+  {
+   "fecha": "2026-12-24",
+   "festividad": "Navidad",
+   "serie": "IA",
+   "numero": 27,
+   "clave": "ia-27"
+  },
+  {
+   "fecha": "2026-12-24",
+   "festividad": "Navidad",
+   "serie": "Químico",
+   "numero": 27,
+   "clave": "qui-27"
+  },
+  {
+   "fecha": "2026-12-25",
+   "festividad": "Navidad",
+   "serie": "Ambiental",
+   "numero": 28,
+   "clave": "amb-28"
+  },
+  {
+   "fecha": "2026-12-25",
+   "festividad": "Navidad",
+   "serie": "Biotecnológico",
+   "numero": 28,
+   "clave": "bio-28"
+  },
+  {
+   "fecha": "2026-12-25",
+   "festividad": "Navidad",
+   "serie": "Fungi Mati",
+   "numero": 28,
+   "clave": "fun-28"
+  },
+  {
+   "fecha": "2026-12-31",
+   "festividad": "Año Nuevo",
+   "serie": "Ambiental",
+   "numero": 31,
+   "clave": "amb-31"
+  },
+  {
+   "fecha": "2026-12-31",
+   "festividad": "Año Nuevo",
+   "serie": "Biotecnológico",
+   "numero": 31,
+   "clave": "bio-31"
+  },
+  {
+   "fecha": "2026-12-31",
+   "festividad": "Año Nuevo",
+   "serie": "Fungi Mati",
+   "numero": 31,
+   "clave": "fun-31"
+  },
+  {
+   "fecha": "2027-01-01",
+   "festividad": "Año Nuevo",
+   "serie": "Científico",
+   "numero": 31,
+   "clave": "cie-31"
+  },
+  {
+   "fecha": "2027-01-01",
+   "festividad": "Año Nuevo",
+   "serie": "IA",
+   "numero": 31,
+   "clave": "ia-31"
+  },
+  {
+   "fecha": "2027-01-01",
+   "festividad": "Año Nuevo",
+   "serie": "Químico",
+   "numero": 31,
+   "clave": "qui-31"
+  },
+  {
+   "fecha": "2027-01-06",
+   "festividad": "Día de Reyes",
+   "serie": "Ambiental",
+   "numero": 34,
+   "clave": "amb-34"
+  },
+  {
+   "fecha": "2027-01-06",
+   "festividad": "Día de Reyes",
+   "serie": "Biotecnológico",
+   "numero": 34,
+   "clave": "bio-34"
+  },
+  {
+   "fecha": "2027-01-06",
+   "festividad": "Día de Reyes",
+   "serie": "Fungi Mati",
+   "numero": 34,
+   "clave": "fun-34"
+  },
+  {
+   "fecha": "2027-02-02",
+   "festividad": "Candelaria",
+   "serie": "Científico",
+   "numero": 47,
+   "clave": "cie-47"
+  },
+  {
+   "fecha": "2027-02-02",
+   "festividad": "Candelaria",
+   "serie": "IA",
+   "numero": 47,
+   "clave": "ia-47"
+  },
+  {
+   "fecha": "2027-02-02",
+   "festividad": "Candelaria",
+   "serie": "Químico",
+   "numero": 47,
+   "clave": "qui-47"
+  },
+  {
+   "fecha": "2027-02-11",
+   "festividad": "Día de la Mujer y la Niña en la Ciencia",
+   "serie": "Ambiental",
+   "numero": 52,
+   "clave": "amb-52"
+  },
+  {
+   "fecha": "2027-02-11",
+   "festividad": "Día de la Mujer y la Niña en la Ciencia",
+   "serie": "Biotecnológico",
+   "numero": 52,
+   "clave": "bio-52"
+  },
+  {
+   "fecha": "2027-02-11",
+   "festividad": "Día de la Mujer y la Niña en la Ciencia",
+   "serie": "Fungi Mati",
+   "numero": 52,
+   "clave": "fun-52"
+  },
+  {
+   "fecha": "2027-02-14",
+   "festividad": "San Valentín",
+   "serie": "Científico",
+   "numero": 53,
+   "clave": "cie-53"
+  },
+  {
+   "fecha": "2027-02-14",
+   "festividad": "San Valentín",
+   "serie": "IA",
+   "numero": 53,
+   "clave": "ia-53"
+  },
+  {
+   "fecha": "2027-02-14",
+   "festividad": "San Valentín",
+   "serie": "Químico",
+   "numero": 53,
+   "clave": "qui-53"
+  },
+  {
+   "fecha": "2027-03-08",
+   "festividad": "Día Internacional de la Mujer",
+   "serie": "Científico",
+   "numero": 64,
+   "clave": "cie-64"
+  },
+  {
+   "fecha": "2027-03-08",
+   "festividad": "Día Internacional de la Mujer",
+   "serie": "IA",
+   "numero": 64,
+   "clave": "ia-64"
+  },
+  {
+   "fecha": "2027-03-08",
+   "festividad": "Día Internacional de la Mujer",
+   "serie": "Químico",
+   "numero": 64,
+   "clave": "qui-64"
+  },
+  {
+   "fecha": "2027-03-20",
+   "festividad": "Equinoccio de primavera",
+   "serie": "Científico",
+   "numero": 70,
+   "clave": "cie-70"
+  },
+  {
+   "fecha": "2027-03-20",
+   "festividad": "Equinoccio de primavera",
+   "serie": "IA",
+   "numero": 70,
+   "clave": "ia-70"
+  },
+  {
+   "fecha": "2027-03-20",
+   "festividad": "Equinoccio de primavera",
+   "serie": "Químico",
+   "numero": 70,
+   "clave": "qui-70"
+  },
+  {
+   "fecha": "2027-03-22",
+   "festividad": "Día Mundial del Agua",
+   "serie": "Científico",
+   "numero": 71,
+   "clave": "cie-71"
+  },
+  {
+   "fecha": "2027-03-22",
+   "festividad": "Día Mundial del Agua",
+   "serie": "IA",
+   "numero": 71,
+   "clave": "ia-71"
+  },
+  {
+   "fecha": "2027-03-22",
+   "festividad": "Día Mundial del Agua",
+   "serie": "Químico",
+   "numero": 71,
+   "clave": "qui-71"
+  },
+  {
+   "fecha": "2027-03-25",
+   "festividad": "Semana Santa",
+   "serie": "Ambiental",
+   "numero": 73,
+   "clave": "amb-73"
+  },
+  {
+   "fecha": "2027-03-25",
+   "festividad": "Semana Santa",
+   "serie": "Biotecnológico",
+   "numero": 73,
+   "clave": "bio-73"
+  },
+  {
+   "fecha": "2027-03-25",
+   "festividad": "Semana Santa",
+   "serie": "Fungi Mati",
+   "numero": 73,
+   "clave": "fun-73"
+  },
+  {
+   "fecha": "2027-03-26",
+   "festividad": "Semana Santa",
+   "serie": "Científico",
+   "numero": 73,
+   "clave": "cie-73"
+  },
+  {
+   "fecha": "2027-03-26",
+   "festividad": "Semana Santa",
+   "serie": "IA",
+   "numero": 73,
+   "clave": "ia-73"
+  },
+  {
+   "fecha": "2027-03-26",
+   "festividad": "Semana Santa",
+   "serie": "Químico",
+   "numero": 73,
+   "clave": "qui-73"
+  },
+  {
+   "fecha": "2027-04-22",
+   "festividad": "Día de la Tierra",
+   "serie": "Ambiental",
+   "numero": 87,
+   "clave": "amb-87"
+  },
+  {
+   "fecha": "2027-04-22",
+   "festividad": "Día de la Tierra",
+   "serie": "Biotecnológico",
+   "numero": 87,
+   "clave": "bio-87"
+  },
+  {
+   "fecha": "2027-04-22",
+   "festividad": "Día de la Tierra",
+   "serie": "Fungi Mati",
+   "numero": 87,
+   "clave": "fun-87"
+  },
+  {
+   "fecha": "2027-04-30",
+   "festividad": "Día del Niño",
+   "serie": "Ambiental",
+   "numero": 91,
+   "clave": "amb-91"
+  },
+  {
+   "fecha": "2027-04-30",
+   "festividad": "Día del Niño",
+   "serie": "Biotecnológico",
+   "numero": 91,
+   "clave": "bio-91"
+  },
+  {
+   "fecha": "2027-04-30",
+   "festividad": "Día del Niño",
+   "serie": "Fungi Mati",
+   "numero": 91,
+   "clave": "fun-91"
+  },
+  {
+   "fecha": "2027-05-05",
+   "festividad": "Batalla de Puebla",
+   "serie": "Científico",
+   "numero": 93,
+   "clave": "cie-93"
+  },
+  {
+   "fecha": "2027-05-05",
+   "festividad": "Batalla de Puebla",
+   "serie": "IA",
+   "numero": 93,
+   "clave": "ia-93"
+  },
+  {
+   "fecha": "2027-05-05",
+   "festividad": "Batalla de Puebla",
+   "serie": "Químico",
+   "numero": 93,
+   "clave": "qui-93"
+  },
+  {
+   "fecha": "2027-05-10",
+   "festividad": "Día de las Madres",
+   "serie": "Ambiental",
+   "numero": 96,
+   "clave": "amb-96"
+  },
+  {
+   "fecha": "2027-05-10",
+   "festividad": "Día de las Madres",
+   "serie": "Biotecnológico",
+   "numero": 96,
+   "clave": "bio-96"
+  },
+  {
+   "fecha": "2027-05-10",
+   "festividad": "Día de las Madres",
+   "serie": "Fungi Mati",
+   "numero": 96,
+   "clave": "fun-96"
+  },
+  {
+   "fecha": "2027-05-15",
+   "festividad": "Día del Maestro",
+   "serie": "Científico",
+   "numero": 98,
+   "clave": "cie-98"
+  },
+  {
+   "fecha": "2027-05-15",
+   "festividad": "Día del Maestro",
+   "serie": "IA",
+   "numero": 98,
+   "clave": "ia-98"
+  },
+  {
+   "fecha": "2027-05-15",
+   "festividad": "Día del Maestro",
+   "serie": "Químico",
+   "numero": 98,
+   "clave": "qui-98"
+  },
+  {
+   "fecha": "2027-05-22",
+   "festividad": "Día de la Biodiversidad",
+   "serie": "Ambiental",
+   "numero": 102,
+   "clave": "amb-102"
+  },
+  {
+   "fecha": "2027-05-22",
+   "festividad": "Día de la Biodiversidad",
+   "serie": "Biotecnológico",
+   "numero": 102,
+   "clave": "bio-102"
+  },
+  {
+   "fecha": "2027-05-22",
+   "festividad": "Día de la Biodiversidad",
+   "serie": "Fungi Mati",
+   "numero": 102,
+   "clave": "fun-102"
+  },
+  {
+   "fecha": "2027-06-05",
+   "festividad": "Día del Medio Ambiente",
+   "serie": "Ambiental",
+   "numero": 109,
+   "clave": "amb-109"
+  },
+  {
+   "fecha": "2027-06-05",
+   "festividad": "Día del Medio Ambiente",
+   "serie": "Biotecnológico",
+   "numero": 109,
+   "clave": "bio-109"
+  },
+  {
+   "fecha": "2027-06-05",
+   "festividad": "Día del Medio Ambiente",
+   "serie": "Fungi Mati",
+   "numero": 109,
+   "clave": "fun-109"
+  },
+  {
+   "fecha": "2027-06-08",
+   "festividad": "Día de los Océanos",
+   "serie": "Científico",
+   "numero": 110,
+   "clave": "cie-110"
+  },
+  {
+   "fecha": "2027-06-08",
+   "festividad": "Día de los Océanos",
+   "serie": "IA",
+   "numero": 110,
+   "clave": "ia-110"
+  },
+  {
+   "fecha": "2027-06-08",
+   "festividad": "Día de los Océanos",
+   "serie": "Químico",
+   "numero": 110,
+   "clave": "qui-110"
+  },
+  {
+   "fecha": "2027-06-20",
+   "festividad": "Día del Padre",
+   "serie": "Científico",
+   "numero": 116,
+   "clave": "cie-116"
+  },
+  {
+   "fecha": "2027-06-20",
+   "festividad": "Día del Padre",
+   "serie": "IA",
+   "numero": 116,
+   "clave": "ia-116"
+  },
+  {
+   "fecha": "2027-06-20",
+   "festividad": "Día del Padre",
+   "serie": "Químico",
+   "numero": 116,
+   "clave": "qui-116"
+  },
+  {
+   "fecha": "2027-06-21",
+   "festividad": "Solsticio de verano",
+   "serie": "Ambiental",
+   "numero": 117,
+   "clave": "amb-117"
+  },
+  {
+   "fecha": "2027-06-21",
+   "festividad": "Solsticio de verano",
+   "serie": "Biotecnológico",
+   "numero": 117,
+   "clave": "bio-117"
+  },
+  {
+   "fecha": "2027-06-21",
+   "festividad": "Solsticio de verano",
+   "serie": "Fungi Mati",
+   "numero": 117,
+   "clave": "fun-117"
+  },
+  {
+   "fecha": "2027-08-12",
+   "festividad": "Día de la Juventud",
+   "serie": "Ambiental",
+   "numero": 143,
+   "clave": "amb-143"
+  },
+  {
+   "fecha": "2027-08-12",
+   "festividad": "Día de la Juventud",
+   "serie": "Biotecnológico",
+   "numero": 143,
+   "clave": "bio-143"
+  },
+  {
+   "fecha": "2027-08-12",
+   "festividad": "Día de la Juventud",
+   "serie": "Fungi Mati",
+   "numero": 143,
+   "clave": "fun-143"
+  },
+  {
+   "fecha": "2027-09-15",
+   "festividad": "Fiestas Patrias",
+   "serie": "Ambiental",
+   "numero": 160,
+   "clave": "amb-160"
+  },
+  {
+   "fecha": "2027-09-15",
+   "festividad": "Fiestas Patrias",
+   "serie": "Biotecnológico",
+   "numero": 160,
+   "clave": "bio-160"
+  },
+  {
+   "fecha": "2027-09-15",
+   "festividad": "Fiestas Patrias",
+   "serie": "Fungi Mati",
+   "numero": 160,
+   "clave": "fun-160"
+  },
+  {
+   "fecha": "2027-09-16",
+   "festividad": "Fiestas Patrias",
+   "serie": "Científico",
+   "numero": 160,
+   "clave": "cie-160"
+  },
+  {
+   "fecha": "2027-09-16",
+   "festividad": "Fiestas Patrias",
+   "serie": "IA",
+   "numero": 160,
+   "clave": "ia-160"
+  },
+  {
+   "fecha": "2027-09-16",
+   "festividad": "Fiestas Patrias",
+   "serie": "Químico",
+   "numero": 160,
+   "clave": "qui-160"
+  },
+  {
+   "fecha": "2027-09-22",
+   "festividad": "Equinoccio de otoño",
+   "serie": "Científico",
+   "numero": 163,
+   "clave": "cie-163"
+  },
+  {
+   "fecha": "2027-09-22",
+   "festividad": "Equinoccio de otoño",
+   "serie": "IA",
+   "numero": 163,
+   "clave": "ia-163"
+  },
+  {
+   "fecha": "2027-09-22",
+   "festividad": "Equinoccio de otoño",
+   "serie": "Químico",
+   "numero": 163,
+   "clave": "qui-163"
+  },
+  {
+   "fecha": "2027-10-16",
+   "festividad": "Día Mundial de la Alimentación",
+   "serie": "Científico",
+   "numero": 175,
+   "clave": "cie-175"
+  },
+  {
+   "fecha": "2027-10-16",
+   "festividad": "Día Mundial de la Alimentación",
+   "serie": "IA",
+   "numero": 175,
+   "clave": "ia-175"
+  },
+  {
+   "fecha": "2027-10-16",
+   "festividad": "Día Mundial de la Alimentación",
+   "serie": "Químico",
+   "numero": 175,
+   "clave": "qui-175"
+  },
+  {
+   "fecha": "2027-10-31",
+   "festividad": "Halloween",
+   "serie": "Ambiental",
+   "numero": 183,
+   "clave": "amb-183"
+  },
+  {
+   "fecha": "2027-10-31",
+   "festividad": "Halloween",
+   "serie": "Biotecnológico",
+   "numero": 183,
+   "clave": "bio-183"
+  },
+  {
+   "fecha": "2027-10-31",
+   "festividad": "Halloween",
+   "serie": "Fungi Mati",
+   "numero": 183,
+   "clave": "fun-183"
+  },
+  {
+   "fecha": "2027-11-01",
+   "festividad": "Día de Muertos",
+   "serie": "Científico",
+   "numero": 183,
+   "clave": "cie-183"
+  },
+  {
+   "fecha": "2027-11-01",
+   "festividad": "Día de Muertos",
+   "serie": "IA",
+   "numero": 183,
+   "clave": "ia-183"
+  },
+  {
+   "fecha": "2027-11-01",
+   "festividad": "Día de Muertos",
+   "serie": "Químico",
+   "numero": 183,
+   "clave": "qui-183"
+  },
+  {
+   "fecha": "2027-11-02",
+   "festividad": "Día de Muertos",
+   "serie": "Ambiental",
+   "numero": 184,
+   "clave": "amb-184"
+  },
+  {
+   "fecha": "2027-11-02",
+   "festividad": "Día de Muertos",
+   "serie": "Biotecnológico",
+   "numero": 184,
+   "clave": "bio-184"
+  },
+  {
+   "fecha": "2027-11-02",
+   "festividad": "Día de Muertos",
+   "serie": "Fungi Mati",
+   "numero": 184,
+   "clave": "fun-184"
+  },
+  {
+   "fecha": "2027-11-10",
+   "festividad": "Día Mundial de la Ciencia para la Paz",
+   "serie": "Ambiental",
+   "numero": 188,
+   "clave": "amb-188"
+  },
+  {
+   "fecha": "2027-11-10",
+   "festividad": "Día Mundial de la Ciencia para la Paz",
+   "serie": "Biotecnológico",
+   "numero": 188,
+   "clave": "bio-188"
+  },
+  {
+   "fecha": "2027-11-10",
+   "festividad": "Día Mundial de la Ciencia para la Paz",
+   "serie": "Fungi Mati",
+   "numero": 188,
+   "clave": "fun-188"
+  },
+  {
+   "fecha": "2027-11-20",
+   "festividad": "Revolución Mexicana",
+   "serie": "Ambiental",
+   "numero": 193,
+   "clave": "amb-193"
+  },
+  {
+   "fecha": "2027-11-20",
+   "festividad": "Revolución Mexicana",
+   "serie": "Biotecnológico",
+   "numero": 193,
+   "clave": "bio-193"
+  },
+  {
+   "fecha": "2027-11-20",
+   "festividad": "Revolución Mexicana",
+   "serie": "Fungi Mati",
+   "numero": 193,
+   "clave": "fun-193"
+  }
+ ]
+}

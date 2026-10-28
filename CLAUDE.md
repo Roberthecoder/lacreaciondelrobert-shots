@@ -87,6 +87,19 @@ En la Sala de Shots hay una caja "Pedir videos" que guarda documentos en la coll
 - Todo pasa por "Verificación de hechos", todo lleva `publicacion.md` con las 7 redes (`motor/plantillas/publicacion.md`) y la voz
   espera aprobación, como siempre. Todo se sube a la Sala al terminar.
 
+## Numeración = fecha de publicación, y especiales de temporada (regla de Robert, 28 oct 2026)
+- **Numeración perfecta, sin saltos:** el número de un shot ES su día de publicación. Publicación desde el **1 nov 2026**, 3 series por
+  día alternando: **grupo A** (Fungi Mati, Biotecnológico, Ambiental) publica el #01 el 1 nov y luego cada 2 días; **grupo B**
+  (Científico, Químico, IA) el #01 el 2 nov y luego cada 2 días. `python3 calendario/fecha.py "<Serie>" <N>` da la fecha de un número;
+  `python3 calendario/fecha.py fecha AAAA-MM-DD` dice qué sale ese día.
+- **Especiales:** `calendario/festividades.json` tiene las festividades del año con ideas. Los números que caen en una festividad están
+  **reservados** (`calendario/especiales.json`, o `python3 calendario/fecha.py especiales`). Ahí va un shot especial de esa festividad:
+  carpeta `<prefijo>-<NN>-esp-<tema>/`, título `Shot <Serie> #NN · Especial <Festividad>: <título>`, con `"especial": "<Festividad>"`
+  en `narracion.json` y en su ficha de la Sala. Todas las demás reglas aplican igual (verificación, 61–62 s, Robert en pantalla).
+- **Siguiente número libre** = el siguiente que no esté usado NI reservado. Nunca pongas un shot normal en un número reservado.
+- **Prioridad:** antes del lote normal, toda corrida revisa si hay números reservados con fecha en los próximos 60 días sin especial
+  hecho, y los hace primero (por corrida hasta 5).
+
 ## Correcciones desde la Sala (Robert corrige un shot)
 Al abrir un shot en la Sala, Robert puede escribir una corrección; se guarda en la collection `correcciones`
 (`{shot, titulo, texto, estado, creado, resultado}`).
