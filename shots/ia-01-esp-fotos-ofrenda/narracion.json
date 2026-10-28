@@ -7,11 +7,11 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esta foto de tu bisabuela no está restaurada: una parte la inventó una inteligencia artificial."
+      "texto": "Si una IA restauró la foto de tu bisabuela, una parte no es real: la inventó."
     },
     {
       "escena": "Pierde",
-      "texto": "Una foto vieja pierde información con los años: rayones, manchas, grano y partes borradas."
+      "texto": "Una foto vieja pierde información con los años: rayones, manchas, polvo y grano."
     },
     {
       "escena": "Adivina",
@@ -31,7 +31,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2020, en la Universidad Duke, presentaron PULSE, una IA que convierte caras pixeleadas en caras nítidas."
+      "texto": "En 2020, en la Universidad Duke, presentaron PULSE, una IA que inventa una cara nítida que encaje con una foto pixeleada."
     },
     {
       "escena": "Obama",
@@ -39,11 +39,11 @@
     },
     {
       "escena": "Sesgo",
-      "texto": "No fue a propósito: rellenó con el tipo de caras que más había visto al aprender."
+      "texto": "No fue a propósito: la IA en la que se apoyaba casi siempre generaba caras blancas."
     },
     {
       "escena": "Danada",
-      "texto": "Cuanto más dañada está la foto, más tiene que inventar la IA."
+      "texto": "Cuanto más dañada está la foto, menos información queda, y más tiene que rellenar la IA."
     },
     {
       "escena": "Original",
@@ -51,7 +51,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esta foto no es tu bisabuela tal cual: es lo que una IA cree que era."
+      "texto": "Así que la foto restaurada no es tu bisabuela tal cual: es lo que una IA cree que era."
     }
   ]
 }

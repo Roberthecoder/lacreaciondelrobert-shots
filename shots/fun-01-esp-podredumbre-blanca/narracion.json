@@ -7,15 +7,15 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Este tronco no está muerto: un hongo se lo está comiendo para regresarlo a la tierra."
+      "texto": "Este tronco está muerto, pero no está solo: un hongo se lo está comiendo."
     },
     {
       "escena": "Lignina",
-      "texto": "La madera es dura por la lignina, un pegamento que casi ningún ser vivo puede digerir."
+      "texto": "La lignina la hace más rígida: un pegamento que casi ningún ser vivo puede digerir."
     },
     {
       "escena": "Hifas",
-      "texto": "El hongo mete hilos finísimos, las hifas, entre las fibras de la madera."
+      "texto": "El hongo mete hilos finísimos, las hifas, que perforan las paredes de la madera."
     },
     {
       "escena": "Enzimas",
@@ -23,7 +23,7 @@
     },
     {
       "escena": "Blanca",
-      "texto": "La madera se pone blanda y blanquecina: por eso se llama podredumbre blanca."
+      "texto": "La madera queda blanda y blanquecina: es la podredumbre blanca."
     },
     {
       "escena": "Suelo",
@@ -31,27 +31,27 @@
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y qué pasaba cuando ningún hongo podía comer madera?"
+      "texto": "¿Y antes de que los hongos aprendieran a romper la lignina?"
     },
     {
       "escena": "Estudio",
-      "texto": "En 2012, un equipo de la Universidad Clark comparó el ADN de 31 hongos en la revista Science."
+      "texto": "En 2012, un equipo dirigido desde la Universidad Clark comparó el ADN de 31 hongos, en Science."
     },
     {
       "escena": "Reloj",
-      "texto": "Su reloj molecular sugiere que estas enzimas aparecieron hacia el final del Carbonífero, hace unos 300 millones de años."
+      "texto": "Su reloj molecular sugiere que esas enzimas nacieron al final del Carbonífero, hace unos 290 millones de años."
     },
     {
       "escena": "Carbon",
-      "texto": "Su hipótesis: antes, muchos troncos se enterraban sin pudrirse y se volvieron carbón. Aún se discute."
+      "texto": "Su hipótesis: antes, muchos troncos se enterraban sin pudrirse y se volvieron carbón. En 2016 la pusieron en duda."
     },
     {
       "escena": "Dato",
-      "texto": "O sea: parte del carbón de hoy podría ser madera que ningún hongo se comió."
+      "texto": "O sea: parte del carbón más antiguo podría ser plantas que ningún hongo se comió."
     },
     {
       "escena": "Cierre",
-      "texto": "Como dice el Día de Muertos, todo regresa a la tierra. Y quien lo regresa es un hongo."
+      "texto": "Como dice el Día de Muertos, todo regresa a la tierra. Y con la madera, quien más ayuda es un hongo."
     }
   ]
 }
