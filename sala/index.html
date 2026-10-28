@@ -40,6 +40,10 @@
   .chip:focus-visible, .card:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid var(--cian); outline-offset: 2px; }
   .series-sel { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; }
   .series-sel label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+  .fest-sel { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; font-size: 14px; }
+  .fest-sel label { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .fest-sel select { font: inherit; padding: 7px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); max-width: 100%; min-width: 0; }
+  .card .vinc { color: var(--ink); font-size: 12px; font-weight: 700; }
   .cant { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 14px; }
   .cant input[type=number] { width: 6.5em; }
   .cant input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--rosa); }
@@ -165,6 +169,7 @@
     <h2>Pedir videos</h2>
     <div class="tipos" id="p-tipos" role="group" aria-label="Tipo de video">
       <button class="chip" type="button" data-t="serie" aria-pressed="true">Shot de serie</button>
+      <button class="chip" type="button" data-t="festivo" aria-pressed="false">Festivo</button>
       <button class="chip" type="button" data-t="robert" aria-pressed="false">Shot de Robert</button>
       <button class="chip" type="button" data-t="documental" aria-pressed="false">Documental</button>
       <button class="chip" type="button" data-t="libre" aria-pressed="false">Shot libre</button>
@@ -181,6 +186,12 @@
       <label><input type="checkbox" value="Científico"> Científico</label>
       <label><input type="checkbox" value="Químico"> Químico</label>
       <label><input type="checkbox" value="IA"> IA</label>
+    </div>
+    <div class="fest-sel" id="p-fest" hidden>
+      <label>Festividad <select id="p-festividad" aria-label="Festividad"></select></label>
+      <label>Serie vinculada <select id="p-vinculada" aria-label="Serie vinculada">
+        <option>Fungi Mati</option><option>Biotecnológico</option><option>Ambiental</option><option>Científico</option><option>Químico</option><option>IA</option><option>Robert</option>
+      </select></label>
     </div>
     <div class="cant">
       <label for="p-cant" id="p-cant-label">Cuántos de cada serie</label>
@@ -209,7 +220,7 @@
     <div class="agrid" id="a-grid"></div>
   </section>
 
-  <section aria-label="Avance hacia 365 por serie">
+  <section aria-label="Avance hacia 365 por serie (los festivos no cuentan aquí)">
     <div class="meta" id="meta"></div>
     <p class="hint" style="margin-top:8px">Cada barra es una serie completa de 365 shots: menta, narrados; amarillo, por revisar o en producción.</p>
   </section>
@@ -262,11 +273,16 @@
 <script>
 (() => {
   const SERIES = ['Fungi Mati', 'Biotecnológico', 'Ambiental', 'Científico', 'Químico', 'IA'];
-  const SECCIONES = [...SERIES, 'Robert', 'Documental', 'Libre', 'Formal', 'Otro'];
-  const NOMBRE_SEC = { Robert: 'Shots de Robert', Documental: 'Documentales', Libre: 'Shots libres', Formal: 'Shots formales', Otro: 'Otros' };
+  const SECCIONES = [...SERIES, 'Festivo', 'Robert', 'Documental', 'Libre', 'Formal', 'Otro'];
+  const NOMBRE_SEC = { Festivo: 'Shots festivos', Robert: 'Shots de Robert', Documental: 'Documentales', Libre: 'Shots libres', Formal: 'Shots formales', Otro: 'Otros' };
   const VISIBLES = 10, GOAL = 365;
+  // Festividades de calendario/festividades.json (fechas MM-DD). Los festivos tienen numeración propia y van vinculados a una serie.
+  const FESTIVIDADES = [{"n": "Día de Muertos", "f": ["11-01", "11-02"]}, {"n": "Día Mundial de la Ciencia para la Paz", "f": ["11-10"]}, {"n": "Revolución Mexicana", "f": ["11-20"]}, {"n": "Día de la Virgen de Guadalupe", "f": ["12-12"]}, {"n": "Posadas", "f": ["12-16"]}, {"n": "Navidad", "f": ["12-24", "12-25"]}, {"n": "Año Nuevo", "f": ["12-31", "01-01"]}, {"n": "Día de Reyes", "f": ["01-06"]}, {"n": "Candelaria", "f": ["02-02"]}, {"n": "Día de la Mujer y la Niña en la Ciencia", "f": ["02-11"]}, {"n": "San Valentín", "f": ["02-14"]}, {"n": "Día Internacional de la Mujer", "f": ["03-08"]}, {"n": "Equinoccio de primavera", "f": ["03-20"]}, {"n": "Día Mundial del Agua", "f": ["03-22"]}, {"n": "Semana Santa", "f": ["03-25", "03-26"]}, {"n": "Día de la Tierra", "f": ["04-22"]}, {"n": "Día del Niño", "f": ["04-30"]}, {"n": "Batalla de Puebla", "f": ["05-05"]}, {"n": "Día de las Madres", "f": ["05-10"]}, {"n": "Día del Maestro", "f": ["05-15"]}, {"n": "Día de la Biodiversidad", "f": ["05-22"]}, {"n": "Día del Medio Ambiente", "f": ["06-05"]}, {"n": "Día de los Océanos", "f": ["06-08"]}, {"n": "Día del Padre", "f": ["06-20"]}, {"n": "Solsticio de verano", "f": ["06-21"]}, {"n": "Día de la Juventud", "f": ["08-12"]}, {"n": "Fiestas Patrias", "f": ["09-15", "09-16"]}, {"n": "Equinoccio de otoño", "f": ["09-22"]}, {"n": "Día Mundial de la Alimentación", "f": ["10-16"]}, {"n": "Halloween", "f": ["10-31"]}];
+  const MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  const proxima = (md) => { const h = new Date(); h.setHours(0, 0, 0, 0); let d = new Date(h.getFullYear(), +md.slice(0, 2) - 1, +md.slice(3)); if (d < h) d = new Date(h.getFullYear() + 1, d.getMonth(), d.getDate()); return d; };
   const REDES = [['youtube', 'YouTube'], ['tiktok', 'TikTok'], ['instagram', 'Instagram'], ['facebook', 'Facebook'], ['linkedin', 'LinkedIn'], ['x', 'X'], ['threads', 'Threads'], ['comentario', 'Comentario fijado']];
   const TIPOS = {
+    festivo: { n: 'Festivo', d: 'Shot especial de una festividad (61–75 s), con numeración propia de Shot Festivo y vinculado a una de tus series. Elige la festividad y la serie; si dejas la idea vacía, la nube elige una de la lista de ideas.', ph: 'Opcional: la idea. Vacío = la nube elige una idea de esa festividad.' },
     serie: { n: 'Shot de serie', d: 'Shots de 61–62 s de tus series. Marca una o varias series y cuántos de cada una; la nube elige temas nuevos sin repetir, o usa tu idea si la escribes.', ph: 'Opcional: un tema o idea. Vacío = la nube elige los temas.' },
     robert: { n: 'Shot de Robert', d: 'Shots sobre ti, tu vida e historia, con tus datos confirmados. Si falta un dato, la nube te pregunta en vez de inventarlo.', ph: 'De qué parte de tu vida va (por ejemplo: mi recámara-laboratorio, el filtro UV)…' },
     documental: { n: 'Documental', d: 'Video horizontal para YouTube (8–15 min) sobre el tema que dictes, más varios cortos verticales con sus momentos clave.', ph: 'El tema y lo que quieres contar; si tienes datos, fotos o una postura, escríbelos aquí…' },
@@ -281,9 +297,10 @@
   const mmss = (t) => { t = Math.round(t || 0); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
   const estadoDe = (s) => (S.aprob[s.id] && s.estado === 'Por revisar') ? 'Voz aprobada' : s.estado;
   const seccionDe = (s) => SECCIONES.includes(s.serie) ? s.serie : 'Otro';
-  const numerada = (s) => s.numero != null && (SERIES.includes(s.serie) || s.serie === 'Robert');
-  const etiqueta = (s) => `${s.serie}${numerada(s) ? ' #' + String(s.numero).padStart(2, '0') : ''}`;
-  const tituloCompleto = (s) => numerada(s) ? `Shot ${s.serie} #${String(s.numero).padStart(2, '0')}: ${s.titulo}` : s.titulo;
+  const numerada = (s) => s.numero != null && (SERIES.includes(s.serie) || s.serie === 'Robert' || s.serie === 'Festivo');
+  const etiqueta = (s) => `${s.serie}${numerada(s) ? ' #' + String(s.numero).padStart(2, '0') : ''}${s.serie === 'Festivo' && s.serie_vinculada ? ` · vinculado a ${s.serie_vinculada}` : ''}${s.especial ? ` · ${s.especial}` : ''}`;
+  // Festivo: el título guardado ya trae «<Festividad> · <Serie vinculada>: …», así queda «Shot Festivo #NN · <Festividad> · <Serie>: <título>».
+  const tituloCompleto = (s) => numerada(s) ? `Shot ${s.serie} #${String(s.numero).padStart(2, '0')}${s.serie === 'Festivo' ? ' · ' : ': '}${s.titulo}` : s.titulo;
   const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
   const copiar = async (texto, boton) => {
     const ok = () => { const t = boton.textContent; boton.textContent = 'Copiado'; setTimeout(() => { boton.textContent = t; }, 1400); };
@@ -298,6 +315,7 @@
     document.querySelectorAll('#p-tipos .chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.t === S.tipo)));
     $('p-desc').textContent = t.d; $('p-idea').placeholder = t.ph;
     $('p-series').hidden = S.tipo !== 'serie';
+    $('p-fest').hidden = S.tipo !== 'festivo';
     $('p-cant-label').textContent = S.tipo === 'serie' ? 'Cuántos de cada serie' : 'Cuántos';
     const n = Math.max(1, Math.min(1000, +$('p-cant').value || 1));
     const total = S.tipo === 'serie' ? n * seriesMarcadas().length : n;
@@ -314,14 +332,16 @@
     if (!S.db) { $('p-msg').textContent = 'La base del panel no está disponible en esta vista.'; return; }
     const idea = $('p-idea').value.trim();
     const archivos = S.archivos.filter((a) => S.sel.has(a.id)).map((a) => ({ id: a.id, asset: a.asset, nombre: a.nombre || '', tipo: a.tipo || '', etiquetas: a.etiquetas || [] }));
-    if (S.tipo !== 'serie' && !idea) { $('p-msg').textContent = 'Escribe tu idea primero.'; return; }
+    if (S.tipo !== 'serie' && S.tipo !== 'festivo' && !idea) { $('p-msg').textContent = 'Escribe tu idea primero.'; return; }
     if (S.tipo === 'organico' && !archivos.length) { $('p-msg').textContent = 'Para un shot orgánico marca al menos un archivo en «Mis archivos».'; return; }
     const cantidad = Math.max(1, Math.min(1000, +$('p-cant').value || 1));
-    const series = S.tipo === 'serie' ? seriesMarcadas() : [];
+    const vinculada = $('p-vinculada').value, festividad = $('p-festividad').value;
+    const series = S.tipo === 'serie' ? seriesMarcadas() : (S.tipo === 'festivo' ? [vinculada] : []);
+    const extra = S.tipo === 'festivo' ? { festividad, serie_vinculada: vinculada } : {};
     const total = S.tipo === 'serie' ? cantidad * series.length : cantidad;
     $('p-enviar').disabled = true;
     try {
-      await S.db.collection('pedidos').add({ tipo: S.tipo, series, cantidad, total, hechos: 0, idea, archivos, estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
+      await S.db.collection('pedidos').add({ tipo: S.tipo, series, ...extra, cantidad, total, hechos: 0, idea, archivos, estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
       $('p-idea').value = ''; S.sel.clear(); pintarArchivos();
       $('p-msg').textContent = `Pedido enviado (${fmt(total)} ${total === 1 ? 'video' : 'videos'}). La nube lo toma en su siguiente ronda, cada 4 h, o al instante si en una sesión escribes «atiende mis pedidos».`;
     } catch (e) { $('p-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
@@ -332,7 +352,7 @@
     S.pedidos.forEach((p) => {
       const li = el('li');
       const e = el('span', 'est', p.estado || 'pendiente'); e.dataset.e = p.estado || 'pendiente';
-      const quien = p.tipo === 'serie' ? `${(p.series || []).join(', ') || 'serie'}` : (TIPOS[p.tipo]?.n || p.tipo);
+      const quien = p.tipo === 'serie' ? `${(p.series || []).join(', ') || 'serie'}` : p.tipo === 'festivo' ? `Festivo · ${p.festividad || '¿festividad?'} · ${p.serie_vinculada || (p.series || [])[0] || ''}` : (TIPOS[p.tipo]?.n || p.tipo);
       const nA = (p.archivos || []).length;
       const idea = (p.idea || '').length > 140 ? p.idea.slice(0, 137).trimEnd() + '…' : (p.idea || '');
       const t = el('span', 'txt', `${quien}${idea ? ': ' + idea : ''}${nA ? ` (${nA} ${nA === 1 ? 'archivo' : 'archivos'})` : ''}`);
@@ -398,7 +418,9 @@
     else po.append(el('div', 'none', 'Sin video todavía'));
     const pill = el('span', 'pill', estadoDe(s)); pill.dataset.e = estadoDe(s); po.append(pill);
     if (s.video) { po.append(el('span', 'play')); po.append(el('span', 'dur', mmss(s.dur))); }
-    card.append(po, el('h3', null, tituloCompleto(s)), el('small', null, s.id));
+    card.append(po, el('h3', null, tituloCompleto(s)));
+    if (s.serie === 'Festivo') card.append(el('small', 'vinc', `Serie vinculada: ${s.serie_vinculada || '—'}${s.especial ? ' · ' + s.especial : ''}`));
+    card.append(el('small', null, s.id));
     card.addEventListener('click', () => abrir(s));
     return card;
   }
@@ -650,6 +672,9 @@
   }));
   $('q').addEventListener('input', (e) => { S.q = e.target.value; render(); });
 
+  FESTIVIDADES.map((f) => ({ ...f, d: proxima(f.f[0]) })).sort((a, b) => a.d - b.d).forEach((f) => {
+    const o = el('option', null, `${f.n} (${f.f.map((md) => `${+md.slice(3)} ${MESES[+md.slice(0, 2) - 1]}`).join(' y ')})`); o.value = f.n; $('p-festividad').append(o);
+  });
   pintarPedir(); render();
   (async () => {
     const db = await claude.use('db');
@@ -687,3 +712,4 @@
   $('a-drop').hidden = true; pintarArchivos();
 })();
 </script>
+
