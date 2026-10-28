@@ -1,0 +1,12 @@
+{ "temas": [
+  { "id": "armillaria-gigante", "titulo": "El ser vivo más grande es un hongo: Armillaria del bosque de Malheur, Oregón", "serie": "Shot Fungi Mati", "numero": 5,
+    "estado": "idea", "carpeta": "shots/fun-05-armillaria", "rama": "claude/igualar-fungi-mati", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+  { "id": "hongo-cazador-gusanos", "titulo": "El hongo que caza gusanos con lazos (Arthrobotrys oligospora)", "serie": "Shot Fungi Mati", "numero": 6,
+    "estado": "idea", "carpeta": "shots/fun-06-cazador", "rama": "claude/igualar-fungi-mati", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+  { "id": "pilobolus-canon", "titulo": "El cañón de esporas del hongo del estiércol (Pilobolus)", "serie": "Shot Fungi Mati", "numero": 7,
+    "estado": "idea", "carpeta": "shots/fun-07-pilobolus", "rama": "claude/igualar-fungi-mati", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+  { "id": "pie-de-atleta", "titulo": "Pie de atleta: el hongo que come queratina (Trichophyton)", "serie": "Shot Fungi Mati", "numero": 8,
+    "estado": "idea", "carpeta": "shots/fun-08-pie-atleta", "rama": "claude/igualar-fungi-mati", "fuentes": [], "fecha": "2026-10-28", "derivados": [] },
+  { "id": "amanita-mortal", "titulo": "Los trucos para saber si un hongo es venenoso no sirven (Amanita phalloides y las amatoxinas)", "serie": "Shot Fungi Mati", "numero": 9,
+    "estado": "idea", "carpeta": "shots/fun-09-amanita", "rama": "claude/igualar-fungi-mati", "fuentes": [], "fecha": "2026-10-28", "derivados": [] }
+] }
