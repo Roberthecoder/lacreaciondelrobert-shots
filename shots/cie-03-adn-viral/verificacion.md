@@ -17,5 +17,12 @@
 | (pantalla) Primates, roedores, conejos, carnívoros y rumiantes | ✅ | Lavialle et al., *Phil. Trans. R. Soc. B* 368: 20120507 (y Heidmann 2009, Cornelis 2012, syncytin-Rum1 2017) | «captured and domesticated on multiple occasions and independently in diverse mammalian species» | 2013 |
 | (voz 10) «Quizá no estarías aquí» (dicho como hipótesis) | ✅ | Lavialle et al. 2013 | «may have been pivotal in the emergence of mammalian ancestors with a placenta» | 2013 |
 | (mudo) Latido fetal de 140 lpm, normal entre 110 y 160 | ✅ | *Intermittent Auscultation…* (PMC13655190) | «Normal FHR baseline between 110 and 160 bpm» | 2026 |
+| (publicación) La envoltura de HERV-W funde células (Blond 2000) | ✅ | Blond, J.-L. et al. *J. Virol.* 74: 3321–3329 (PMC111833, abierto con NCBI) | «the product of the HERV-W env gene is a highly fusogenic membrane glycoprotein» | 2000 |
+| (voz 2, publicación) Hace millones de años | ✅ | Renard, M. et al. *J. Mol. Biol.* 352: 1029–1034 (PubMed 16140326) | «human syncytin-2, a 40 million years old endogenous retrovirus fusogenic envelope gene captured by primates» | 2005 |
+| (publicación) ~8 % del genoma: cita de Lander 2001 | ❌→ corregida | Lander 2001 no tiene texto abierto (PubMed 11237011, sin acceso libre): se cambió por Lyu et al. 2026 (PMC13709493), ya ✅ arriba | «approximately 8% of the human genome» | 2026 |
+| (publicación) «El porcentaje varía según cómo se cuente (6–9 %)» | ⚠️→ quitado | sin fuente abierta con esa cifra | — | — |
+| (publicación) Latido fetal normal 110–160: cita de ACOG | ⚠️→ corregida | ACOG no se pudo abrir: se cambió por Ostrem-Niemcewicz et al. 2026 (PMC13655190), ya ✅ arriba | «Normal FHR baseline between 110 and 160 bpm» | 2026 |
+
+Segunda revisión (28 oct 2026, pedida por Robert): se abrieron también las fuentes citadas en `publicacion.md`; lo no comprobable se cambió o se quitó. Todo lo que queda publicado es ✅.
 
 VEREDICTO: APROBADO

@@ -11,7 +11,7 @@ Alrededor del 8 % de tu genoma son retrovirus endógenos: restos de virus que, h
 Pero algunos se volvieron útiles. En el año 2000, un equipo en Estados Unidos (Mi et al., Nature) descubrió que la sincitina-1, una proteína de la placenta, es la envoltura de un retrovirus antiguo (HERV-W). El virus la usaba para fundirse con las células; la placenta la usa para fundir las suyas en la capa que alimenta al bebé. En 2009, en Francia, ratones sin su sincitina murieron a mitad de la gestación porque esa capa no se formaba. Y otros mamíferos atraparon virus distintos para lo mismo.
 Una hipótesis es que capturar estos genes ayudó a que la placenta evolucionara; por eso digo "quizá".
 El dibujo es esquemático.
-Fuentes: Lander et al. 2001 (Nature), Mi et al. 2000 (Nature), Dupressoir et al. 2009 (PNAS), Lavialle et al. 2013.
+Fuentes: Lyu et al. 2026 (Viruses), Mi et al. 2000 (Nature), Dupressoir et al. 2009 (PNAS), Lavialle et al. 2013.
 ¿Sabías que llevabas virus en tu ADN? 👇
 Shot Científico #03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -41,7 +41,7 @@ Alrededor del 8 % del genoma humano son retrovirus endógenos: restos de virus q
 El dibujo es esquemático.
 
 Fuentes:
-- Lander, E. S. et al. Initial sequencing and analysis of the human genome. Nature 409: 860–921 (2001).
+- Lyu, Harding et al. Structural Insights into Endogenous Retroviruses: Evolution and Co-Opted Functions. Viruses (2026), PMC13709493.
 - Mi, S. et al. Syncytin is a captive retroviral envelope protein involved in human placental morphogenesis. Nature 403: 785–789 (2000).
 - Dupressoir, A. et al. Syncytin-A knockout mice demonstrate the critical role in placentation of a fusogenic, endogenous retrovirus-derived, envelope gene. PNAS 106(29): 12127–12132 (2009).
 - Lavialle, C. et al. Paleovirology of "syncytins", retroviral env genes exapted for a role in placentation. Phil. Trans. R. Soc. B 368: 20120507 (2013).
@@ -92,7 +92,7 @@ Son retrovirus endógenos: infectaron óvulos y espermatozoides de nuestros ante
 🎧 100 cuadritos = tu ADN; 8 suenan distinto, porque 8 % vino de virus. 🧬
 Un retrovirus se mete en el ADN de una célula, llega a un óvulo y pasa de generación en generación. En el bebé suena su latido a 140 por minuto (la frecuencia fetal típica va de 110 a 160), y 7 células de la placenta, una nota cada una, se funden en un solo acorde gracias a la sincitina, una proteína que antes fue de un virus.
 El dibujo es esquemático.
-Fuentes: Lander et al. 2001, Mi et al. 2000, ACOG.
+Fuentes: Lyu et al. 2026, Mi et al. 2000, Ostrem-Niemcewicz et al. 2026.
 ¿Contaste las 8 notas? 👇
 Shot Científico #03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -122,9 +122,9 @@ El ciclo: un retrovirus se mete en el ADN de una célula, llega a un óvulo y se
 El dibujo es esquemático.
 
 Fuentes:
-- Lander, E. S. et al. Nature 409: 860–921 (2001).
+- Lyu, Harding et al. Structural Insights into Endogenous Retroviruses: Evolution and Co-Opted Functions. Viruses (2026), PMC13709493.
 - Mi, S. et al. Nature 403: 785–789 (2000).
-- ACOG: frecuencia cardiaca fetal normal, 110–160 latidos por minuto.
+- Ostrem-Niemcewicz et al. Intermittent Auscultation for Intrapartum Fetal Heart Rate Surveillance. J. Midwifery Womens Health (2026), PMC13655190: frecuencia cardiaca fetal normal, 110–160 latidos por minuto.
 
 ¿Contaste las 8 notas? 👇
 Shot Científico #03 · La Creación del Robert
@@ -143,10 +143,11 @@ Soy Robert, de La Creación del Robert 🌱
 ## Comentario fijado (fuentes)
 ```text
 Fuentes:
-1. International Human Genome Sequencing Consortium (Lander et al.). Initial sequencing and analysis of the human genome. Nature 409: 860–921 (2001). ~8 % del genoma son retrovirus endógenos y parientes.
+1. Lyu, Harding et al. Structural Insights into Endogenous Retroviruses: Evolution and Co-Opted Functions. Viruses (2026), PMC13709493. Los retrovirus endógenos son ~8 % del genoma humano.
 2. Mi, S. et al. Syncytin is a captive retroviral envelope protein involved in human placental morphogenesis. Nature 403: 785–789 (2000).
 3. Blond, J.-L. et al. J. Virol. 74: 3321–3329 (2000) (la envoltura de HERV-W es fusogénica).
 4. Dupressoir, A. et al. PNAS 106(29): 12127–12132 (2009) (ratones sin sincitina-A).
 5. Lavialle, C. et al. Phil. Trans. R. Soc. B 368: 20120507 (2013) (cada grupo de mamíferos capturó sincitinas distintas).
-El porcentaje varía un poco según cómo se cuente (6–9 %). Que la placenta exista gracias a estos virus es una hipótesis.
+6. Renard, M. et al. J. Mol. Biol. 352: 1029–1034 (2005): la sincitina-2 viene de un retrovirus de hace 40 millones de años.
+Que la placenta exista gracias a estos virus es una hipótesis.
 ```
