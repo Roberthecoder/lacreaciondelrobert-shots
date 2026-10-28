@@ -1,0 +1,19 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Cebolla base narrada.dc.html",
+  "salida": "Shot Cebolla narrado.dc.html",
+  "nota": "Shot Químico #08. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esas lágrimas no son de tristeza: la cebolla te lanza un gas en cuanto la cortas." },
+    { "escena": "Celula", "texto": "En sus células, un compuesto con azufre y una enzima viven separados." },
+    { "escena": "Corte", "texto": "El cuchillo rompe las células, y la enzima, la aliinasa, por fin lo alcanza." },
+    { "escena": "Acido", "texto": "Lo parte y sale un ácido sulfénico." },
+    { "escena": "Gas", "texto": "Una segunda enzima lo convierte en el factor lacrimógeno: un gas irritante que flota hasta tus ojos y te hace llorar." },
+    { "escena": "Defensa", "texto": "Para la cebolla, toda esta química de azufre es parte de su defensa." },
+    { "escena": "Pregunta", "texto": "¿Y se puede tener una cebolla que no haga llorar?" },
+    { "escena": "Japon", "texto": "En 2002, en Japón, un equipo de la empresa House Foods describió esa segunda enzima en la revista Nature." },
+    { "escena": "Sinlagrimas", "texto": "En 2016, irradiando semillas, lograron cebollas con unas 7.5 veces menos de ese gas: 20 catadores no lloraron." },
+    { "escena": "Crispr", "texto": "Lo curioso: en 2026 lo intentaron con CRISPR; la enzima bajó, pero las plantas crecieron mal y no dieron semilla." },
+    { "escena": "Cierre", "texto": "Así que esas lágrimas no son tristeza: son la defensa química de la cebolla." }
+  ]
+}

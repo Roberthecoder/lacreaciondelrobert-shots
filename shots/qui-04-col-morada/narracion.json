@@ -1,0 +1,20 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Col base narrada.dc.html",
+  "salida": "Shot Col narrado.dc.html",
+  "nota": "Shot Químico #04. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esto no es agua de jamaica: es jugo de col morada, y es un detector de ácidos." },
+    { "escena": "Pigmento", "texto": "Su color viene de las antocianinas: la col morada tiene más de treinta distintas." },
+    { "escena": "Limon", "texto": "Si le exprimes limón, que es ácido, se pone roja." },
+    { "escena": "Bicarbonato", "texto": "Si le echas bicarbonato, que es básico, se pone azul." },
+    { "escena": "Forma", "texto": "No es magia: la molécula cambia de forma según qué tan ácido esté el líquido, y cada forma tiene otro color." },
+    { "escena": "Escala", "texto": "Muy ácido, rojo. Neutro, violeta. Un poco básico, azul. Más básico, verde, y al final, amarillo." },
+    { "escena": "Pregunta", "texto": "¿Y eso de qué sirve fuera de tu cocina?" },
+    { "escena": "Estudio", "texto": "En 2026, en Ningbo, China, metieron este pigmento en una película de empaque para pescado." },
+    { "escena": "Pescado", "texto": "Al echarse a perder, el pescado suelta compuestos básicos, y la película cambia de color: te avisa a simple vista." },
+    { "escena": "Jamaica", "texto": "Lo curioso: la flor de jamaica también tiene antocianinas, y ya la probaron igual para vigilar pollo." },
+    { "escena": "Casa", "texto": "Pruébalo: licúa col morada con agua, cuélala y ponle limón o bicarbonato." },
+    { "escena": "Cierre", "texto": "Así que no es agua de jamaica: es un laboratorio de pH en un vaso." }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Nixtamal base narrada.dc.html",
+  "salida": "Shot Nixtamal narrado.dc.html",
+  "nota": "Shot Químico #05. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa masa no es solo maíz molido: es maíz cocido con cal, y sin esa química tu tortilla se desmoronaría." },
+    { "escena": "Proceso", "texto": "Se llama nixtamalización: el maíz hierve en agua con cal, hidróxido de calcio, y reposa toda la noche." },
+    { "escena": "Cascara", "texto": "La cal afloja la cascarita del grano, el pericarpio, que se va con el agua al lavarlo." },
+    { "escena": "Nejayote", "texto": "Esa agua de desecho tiene nombre: nejayote." },
+    { "escena": "Calcio", "texto": "Y el grano se queda con calcio de la cal." },
+    { "escena": "Niacina", "texto": "Además, la cal ayuda a que tu cuerpo aproveche la niacina, una vitamina B que el maíz trae amarrada." },
+    { "escena": "Pregunta", "texto": "¿Y qué pasó donde no usaron cal?" },
+    { "escena": "Europa", "texto": "Cuando el maíz llegó a Europa, lo comieron sin nixtamalizar, y apareció la pelagra: piel inflamada, diarrea y demencia." },
+    { "escena": "Estudio", "texto": "Y en 2025, en Soweto, Sudáfrica, nixtamalizaron maíz con moho: una toxina de hongos, la fumonisina, bajó 95 por ciento." },
+    { "escena": "Mesoamerica", "texto": "Lo curioso: no salió de un laboratorio; lo hacían los pueblos de Mesoamérica." },
+    { "escena": "Cierre", "texto": "Así que esa masa no es solo maíz: es química con cal, y por eso tu tortilla sí amarra." }
+  ]
+}

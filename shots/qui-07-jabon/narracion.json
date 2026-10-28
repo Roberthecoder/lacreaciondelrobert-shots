@@ -1,0 +1,19 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Jabon base narrada.dc.html",
+  "salida": "Shot Jabon narrado.dc.html",
+  "nota": "Shot Químico #07. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "El jabón no desaparece la grasa de tus manos: la encierra en bolitas diminutas." },
+    { "escena": "Molecula", "texto": "Cada molécula de jabón tiene una cabeza que se lleva bien con el agua y una cola larga que la evita." },
+    { "escena": "Sal", "texto": "Es una sal hecha con un ácido graso de cadena larga." },
+    { "escena": "Micela", "texto": "En el agua, las colas se esconden juntas hacia adentro y las cabezas quedan afuera: eso es una micela." },
+    { "escena": "Grasa", "texto": "La grasa se mete al centro de esas bolitas, y el agua se las lleva." },
+    { "escena": "Virus", "texto": "A algunos virus les va peor: el jabón les desarma su envoltura de grasa." },
+    { "escena": "Pregunta", "texto": "¿Y de verdad cambia algo lavarte las manos?" },
+    { "escena": "Estudio", "texto": "En 2021, una revisión Cochrane de 29 ensayos concluyó que promover el lavado de manos probablemente reduce los episodios de diarrea cerca de 30 por ciento, en guarderías y comunidades." },
+    { "escena": "Tallar", "texto": "Y tallar importa: la espuma y el frote son los que arrancan la mugre." },
+    { "escena": "Historia", "texto": "Lo curioso: que las manos sucias contagian se entendió apenas en el siglo diecinueve." },
+    { "escena": "Cierre", "texto": "Así que el jabón no desaparece la grasa: la encierra, y el agua se la lleva." }
+  ]
+}

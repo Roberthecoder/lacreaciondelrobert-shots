@@ -1,0 +1,20 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Maillard base narrada.dc.html",
+  "salida": "Shot Maillard narrado.dc.html",
+  "nota": "Shot Químico #06. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese dorado no es quemado: es química entre los azúcares y las proteínas de tu comida." },
+    { "escena": "Union", "texto": "Con el calor, un azúcar se pega a un aminoácido, una de las piezas de las proteínas." },
+    { "escena": "Cadena", "texto": "Esa unión se reacomoda, se rompe y se vuelve a juntar en un montón de moléculas nuevas." },
+    { "escena": "Aroma", "texto": "Unas huelen: las pirazinas dan el olor a tostado." },
+    { "escena": "Color", "texto": "Otras se juntan en cadenas cafés gigantes, las melanoidinas: ese es el dorado." },
+    { "escena": "Agua", "texto": "Va más rápido con más calor, y el exceso de agua la frena." },
+    { "escena": "Pregunta", "texto": "¿Y quién se dio cuenta?" },
+    { "escena": "Maillard", "texto": "En 1912, el químico francés Louis Camille Maillard calentó un azúcar con un aminoácido y vio que se ponía café." },
+    { "escena": "Acrilamida", "texto": "Y en 2002, en Inglaterra, mostraron que esta misma reacción forma acrilamida, a partir de la asparagina de la papa y los cereales." },
+    { "escena": "Riesgo", "texto": "Está clasificada como probablemente cancerígena." },
+    { "escena": "Congelador", "texto": "Lo curioso: también pasa en el congelador, pero lentísimo, en meses." },
+    { "escena": "Cierre", "texto": "Así que ese dorado no es quemado: es la química que hace oler tu carne asada." }
+  ]
+}

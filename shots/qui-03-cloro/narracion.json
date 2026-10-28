@@ -1,0 +1,21 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Cloro base narrada.dc.html",
+  "salida": "Shot Cloro narrado.dc.html",
+  "nota": "Shot Químico #03. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "¿Por qué NO se mezcla el cloro con vinagre? Porque tu cubeta se vuelve una fábrica de gas." },
+    { "escena": "Cloro", "texto": "El cloro de tu casa es hipoclorito de sodio disuelto en agua." },
+    { "escena": "Acido", "texto": "Con un ácido, como el vinagre, el hipoclorito suelta cloro gaseoso, amarillo verdoso." },
+    { "escena": "Amoniaco", "texto": "Y con amoniaco forma otros gases irritantes: las cloraminas." },
+    { "escena": "Pulmon", "texto": "Al respirarlo, reacciona con la humedad de tus vías respiratorias y forma ácido hipocloroso y clorhídrico." },
+    { "escena": "Efecto", "texto": "Por eso te da tos y te falta el aire." },
+    { "escena": "Pregunta", "texto": "¿Y cuánta gente se intoxica?" },
+    { "escena": "Estudio", "texto": "Un estudio de 2024 contó los reportes a centros de toxicología de Estados Unidos: de 2015 a 2022, más de 85 mil exposiciones." },
+    { "escena": "Casa", "texto": "Casi 85 de cada 100 pasaron en casa." },
+    { "escena": "Encuesta", "texto": "En una encuesta de 2020 allá, solo 35 de cada 100 adultos sabían que no se mezcla con vinagre." },
+    { "escena": "Guerra", "texto": "Lo curioso: es el mismo gas que se usó como arma en la Primera Guerra Mundial." },
+    { "escena": "Ayuda", "texto": "Si ya lo mezclaste, sal al aire libre y pide ayuda médica o llama al 911: los síntomas pueden tardar." },
+    { "escena": "Cierre", "texto": "Así que cloro con agua, sí. Con vinagre o amoniaco, nunca." }
+  ]
+}

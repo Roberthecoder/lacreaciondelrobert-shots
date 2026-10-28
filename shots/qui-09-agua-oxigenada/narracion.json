@@ -1,0 +1,18 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Oxigenada base narrada.dc.html",
+  "salida": "Shot Oxigenada narrado.dc.html",
+  "nota": "Shot Químico #09. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agua oxigenada." },
+    { "escena": "Que", "texto": "El agua oxigenada es peróxido de hidrógeno: como agua, pero con un oxígeno de más." },
+    { "escena": "Catalasa", "texto": "Tus células, como los glóbulos rojos, traen catalasa, una enzima que la parte en agua y oxígeno." },
+    { "escena": "Burbujas", "texto": "Ese oxígeno es gas: son las burbujas que ves." },
+    { "escena": "Mito", "texto": "Así que la espuma no prueba que esté curando: solo prueba que hay catalasa." },
+    { "escena": "Pregunta", "texto": "¿Y entonces sirve para las heridas?" },
+    { "escena": "Estudio", "texto": "En 1985, un estudio la puso al 3 por ciento sobre fibroblastos humanos en cultivo, células que ayudan a reparar la piel: murieron todos." },
+    { "escena": "Revision", "texto": "Una revisión de 2026 la desaconseja tras cirugías de piel; y en 12 ensayos, lavar con agua potable de la llave no dio más infecciones que con suero." },
+    { "escena": "Takahara", "texto": "Lo curioso: en 1948, el médico japonés Takahara la puso en la llaga de un paciente, no hizo espuma, y así descubrió personas sin catalasa." },
+    { "escena": "Cierre", "texto": "Así que esa espuma no es tu herida sanando: es química de tu propio cuerpo." }
+  ]
+}
