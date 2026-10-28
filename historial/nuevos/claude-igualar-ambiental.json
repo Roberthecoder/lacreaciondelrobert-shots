@@ -1,5 +1,10 @@
 { "temas": [
-  { "id": "nanoplasticos-agua-embotellada", "titulo": "Nanoplásticos en el agua embotellada: ~240 mil partículas por litro, 90 % nano (Columbia, PNAS 2024; estimación debatida)",
-    "serie": "Shot Ambiental", "numero": 5, "estado": "idea", "carpeta": "shots/amb-05-nanoplasticos", "rama": "claude/igualar-ambiental",
-    "fuentes": ["Qian et al. 2024, PNAS 121(3):e2300582121, PMC10801917"], "fecha": "2026-10-28", "derivados": [] }
+  { "id": "ozono-molina-montreal", "titulo": "El agujero de ozono se está cerrando: Mario Molina, los CFC y el Protocolo de Montreal (99 % eliminado, recuperación 2040/2066)",
+    "serie": "Shot Ambiental", "numero": 5, "estado": "guion", "carpeta": "shots/amb-05-ozono", "rama": "claude/igualar-ambiental",
+    "fuentes": ["WMO/UNEP comunicado 9 ene 2023 (evaluación 2022)", "EPA Basic Ozone Layer Science", "NobelPrize.org 1995 y autobiografía de Molina", "Molina y Rowland, Nature 249:810 (1974)", "UNEP Ozone Secretariat, Montreal Protocol"],
+    "fecha": "2026-10-28", "derivados": [] },
+  { "id": "nanoplasticos-agua-embotellada", "titulo": "DESCARTADO: nanoplásticos en agua embotellada (~240 mil por litro, Qian et al. PNAS 2024) — cifra en disputa (Materić, PNAS 2024)",
+    "serie": "Shot Ambiental", "numero": null, "estado": "idea", "carpeta": "", "rama": "claude/igualar-ambiental",
+    "fuentes": ["Qian et al. 2024, PNAS, PMC10801917", "Materić 2024, PNAS e2411099121"], "fecha": "2026-10-28",
+    "derivados": ["Solo retomarlo como historia de cómo la ciencia se corrige (la cifra y su crítica)"] }
 ] }
