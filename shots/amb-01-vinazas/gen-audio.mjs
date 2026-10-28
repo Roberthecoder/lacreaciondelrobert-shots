@@ -2,7 +2,7 @@
 // Uso: node gen-audio.mjs                       → assets/mezcla.wav (base narrada, sin voz)
 //      node gen-audio.mjs <archivo.dc.html> <salida.wav>   (narrar.mjs la llama con la versión narrada; el workflow, con el mudo)
 // Narrada: cama grave continua sin golpe + un efecto en el mismo cuadro de cada cosa que pasa.
-// Mudo (M1): la música son los datos → 12 notas = 12 L de vinaza · pH 3.4–4.5 como notas · 20 toques = 20 L de agua
+// Mudo (M1): la música son los datos → 12 notas = 12 L de vinaza · pH 3–5 como notas · 20 toques = 20 L de agua
 //   · la música se ahoga mientras baja el oxígeno · cada burbuja de biogás y cada seta que sale es una nota libre.
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -16,7 +16,7 @@ const K = m.K, E = m.ESC;
 if (K.Caballito != null) {
   /* ---------- gemelo mudo ---------- */
   const C = K.Caballito, D = K.Doce, A = K.Acido, R = K.Rio, Re = K.Reactor, B = K.Bagazo, S = K.Setas, L = K.Loop, FIN = L + 6.5;
-  // se sirve el caballito: 1 litro = 1 nota clara
+  // se sirve la jarra: 1 litro de tequila = 1 nota clara
   m.whoosh(C + 0.05, 0.9, 0.15); for (let k = 0; k < 6; k++) m.gota(C + 0.1 + k * 0.15, 0.12, 700 + k * 60);
   m.nota(C + 1.0, 69, 0.12, 1.6); m.nota(C + 1.0, 76, 0.07, 1.6);
   m.pad(C, D + 0.2, 0.04, [57, 64]);
@@ -24,8 +24,8 @@ if (K.Caballito != null) {
   for (let i = 0; i < 12; i++) { const t = D + 0.4 + i * 0.16; m.tic(t, 0.12, 1500); m.nota(t, E[11 - Math.min(11, i)] - 12, 0.11, 0.7, i / 12); }
   for (let i = 0; i < 12; i++) m.bajo(D + 3 + i * 0.45, 33, 0.14, 0.5);                     // 12 pulsos graves = 12 L
   m.pad(D, A + 0.3, 0.05, [33, 40], 0.5);
-  // pH: 3.4, 4.0, 4.5 (vinaza) y 3.6 (naranja) → notas = 40 + 3·pH
-  [3.4, 4.0, 4.5].forEach((ph, i) => m.nota(A + 0.8 + i * 0.25, Math.round(40 + 3 * ph), 0.12, 0.9, 0.4));
+  // pH: 3, 4, 5 (vinaza, CIATEJ 2025) y 3.6 (naranja) → notas = 40 + 3·pH
+  [3, 4, 5].forEach((ph, i) => m.nota(A + 0.8 + i * 0.25, Math.round(40 + 3 * ph), 0.12, 0.9, 0.4));
   m.nota(A + 1.6, Math.round(40 + 3 * 3.6) + 12, 0.1, 0.8);
   m.pad(A, R + 0.3, 0.045, [40, 47], 0.4);
   // río: la vinaza entra; cada burbuja de oxígeno es una nota y se van acabando; la música se ahoga
@@ -48,14 +48,14 @@ if (K.Caballito != null) {
     m.nota(c0 + c * (c1 - c0) + 0.05, E[Math.min(14, 4 + Math.round(c * 9) + (j % 2))], 0.05, 0.6);
   }
   m.pad(S, L + 0.3, 0.045, [45, 52, 57, 64]);
-  // loop: el caballito se vacía y vuelve a ser el primer cuadro
+  // loop: la jarra se vacía y vuelve a ser el primer cuadro
   m.sube(L + 0.2, 1.4, 64, 57, 0.06); m.pad(L, FIN, 0.04, [57, 64]); m.nota(FIN - 0.9, 69, 0.08, 0.9);
 } else {
   /* ---------- narrada ---------- */
   const G = K.Gancho, Al = K.Alambique, D = K.Doce, A = K.Acida, R = K.Rio, P = K.Pregunta, Re = K.Reactor, Es = K.Estudio, B = K.Bagazo, S = K.Setas, Gr = K.Granja, C = K.Cierre, Ou = K.Outro;
   m.pad(0, Ou + 3.5, 0.05, [45, 52, 57]);
   m.pad(Re, Es, 0.03, [40, 47]);                                                             // dentro del reactor: más grave
-  // gancho: se sirve el caballito; aparecen las 12 garrafas
+  // gancho: se sirve la jarra de 1 L; aparecen las 12 garrafas
   m.whoosh(G + 0.05, 0.9, 0.15); for (let k = 0; k < 5; k++) m.gota(G + 0.1 + k * 0.16, 0.1, 700 + k * 70);
   for (let i = 0; i < 12; i++) { m.tic(G + 2.4 + i * 0.16, 0.1, 1400); m.nota(G + 2.4 + i * 0.16, E[11 - i] - 12, 0.05, 0.4); }
   // alambique: fuego, gotas de tequila y chorro de vinaza

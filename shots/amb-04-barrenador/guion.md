@@ -1,7 +1,7 @@
 # Ambiental #04 · La mosca que se combate con más moscas (gusano barrenador)
 
 - **Serie:** Shot Ambiental · **Logo:** biología (ADN) · **Badge:** #04 · remasteriza el viejo #21 (tema local y actual).
-- **Estado (27 oct 2026):** Robert en pantalla y `publicacion.md` listos · voz aprobada por Robert y generada · mudo y narrado (61–62 s) en el Release "Borradores · claude/lucid-bardeen-igyhx5" · falta su visto bueno para publicar.
+- **Estado (28 oct 2026):** corregido tras la verificación de hechos (`verificacion.md`). El texto narrado cambió: la voz anterior ya no sirve y se quitó `voz_aprobada`; GitHub renderiza solo la versión de revisión sin voz hasta que Robert apruebe la voz nueva. Ya no se renderiza el gemelo mudo.
 - **Formato:** N5 "El experimento" (Curazao 1954) con **mapa de México** como medida y un momento N1 (Lupa de rayos X a las larvas). Gemelo mudo: M1 "La música son los datos" (modelo de Knipling).
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y" sobre la mosca que llega volando ("no es una mosca cualquiera").
 - **Duración:** voz ≈ 942 caracteres (≈ 58 s con `velocidad` 1.065) + cierre 3.5 s → 61–62 s. **La voz no se ha generado** (~940 créditos).
@@ -14,9 +14,9 @@
 |---|---|---|---|
 | 0 | Gancho | Esta no es una mosca cualquiera: sus larvas se comen la carne viva. | **Desde el cuadro 0 la mosca llega volando** (grande, a cámara) y se posa en la herida de una vaca en el potrero. Etiqueta *Cochliomyia hominivorax*. Barra de escala (cm). |
 | 1 | Huevos | La hembra pone cientos de huevos en una herida, y los gusanos se meten barrenando. | Los huevitos blancos aparecen en capas a la orilla de la herida. **Lupa de rayos X**: larvas con anillos de espinas que bajan dentro de la carne. |
-| 2 | Muere | Sin tratamiento, una vaca puede morir en una o dos semanas, y también ataca a perros y a personas. | La vaca baja la cabeza; contador "0 → 14 días". Chip "también perros y personas". |
-| 3 | Más | Para frenarla no se usó veneno: se usaron más moscas. | "veneno" tachado; chip "más moscas (estériles)" y una nube de moscas con su marca blanca. |
-| 4 | Fábrica | Se crían millones de machos, se esterilizan con radiación y se sueltan desde avionetas. | Charolas de pupas bajo rayos; luego una avioneta cruza y suelta moscas estériles. |
+| 2 | Muere | Sin tratamiento, una vaca puede morir en cinco a diez días, y también ataca a perros y a personas. | La vaca baja la cabeza; contador "0 → 10 días". Chip "también perros y personas". |
+| 3 | Más | Para erradicarla no bastó el veneno: se usaron más moscas. | "solo veneno" tachado; chip "+ moscas estériles" y una nube de moscas con su marca blanca. |
+| 4 | Fábrica | Se crían millones de moscas, se esterilizan con radiación y se sueltan desde avionetas. | Charolas de pupas bajo rayos; luego una avioneta cruza y suelta moscas estériles. |
 | 5 | Pregunta | ¿Cómo acabas con una plaga soltando más moscas? | **Re-gancho.** Fondo lila lleno de moscas girando. Sticker pensativo. |
 | 6 | Una | La hembra se aparea una sola vez en la vida. Si es con un macho estéril, no hay crías. | Hembra silvestre y macho estéril con un corazón; los huevos se tachan uno por uno. Chip "se aparea 1 sola vez". |
 | 7 | Estudio | En 1954 lo probaron en la isla de Curazao, y en unos meses la mosca desapareció. | Tarjeta "1954 · Curazao · USDA · Knipling y Bushland". Isla con moscas; pasa la avioneta y las moscas se apagan. Chip "en unos meses: 0 moscas". Sticker sorprendido. |
@@ -74,7 +74,7 @@ Tiempos de la base narrada (antes de la voz; con la voz real se recorren solos p
 | 8 | 56.5 | 61.5 | sorprendido | `gancho` | vuelve al primer cuadro |
 
 ## Descripción (borrador)
-"Esta no es una mosca cualquiera: es el gusano barrenador del ganado (*Cochliomyia hominivorax*). 🪰 La hembra pone cientos de huevos en heridas de animales de sangre caliente y las larvas se alimentan de tejido vivo; sin tratamiento, un animal puede morir en una o dos semanas, y también puede infestar perros y personas. Para combatirla no se usó veneno: se usó la técnica del insecto estéril, ideada por Edward Knipling y Raymond Bushland. Se crían millones de moscas, se esterilizan con radiación y se sueltan desde avionetas. Como la hembra se aparea una sola vez en la vida, si lo hace con un macho estéril no deja crías. En 1954 se probó en la isla de Curazao y en unos meses la mosca desapareció. Estados Unidos se declaró libre en 1966 y la barrera de moscas estériles fue bajando hasta Panamá (COPEG). Desde 2023 la plaga cruzó la barrera, avanzó por Centroamérica y el 21 de noviembre de 2024 se detectó en Catazajá, Chiapas. El 27 de junio de 2026 se inauguró en Metapa, Chiapas, una nueva planta de moscas estériles, con la meta de producir 100 millones por semana. El dibujo y el mapa son esquemáticos. Si ves un animal con una herida con gusanos, repórtalo a SENASICA. ¿En tu región ya hubo casos? 👇"
+"Esta no es una mosca cualquiera: es el gusano barrenador del ganado (*Cochliomyia hominivorax*). 🪰 La hembra pone cientos de huevos en heridas de animales de sangre caliente y las larvas se alimentan de tejido vivo; sin tratamiento, un animal puede morir en cinco a diez días, y también puede infestar perros y personas. Para erradicarla no bastó el veneno (sí se usaron larvicidas en las heridas): se usó la técnica del insecto estéril, ideada por Edward Knipling y Raymond Bushland. Se crían millones de moscas, se esterilizan con radiación y se sueltan desde avionetas. Como la hembra se aparea una sola vez en la vida, si lo hace con un macho estéril no deja crías. En 1954 se probó en la isla de Curazao y en unos meses la mosca desapareció. Estados Unidos se declaró libre en 1966 y la barrera de moscas estériles fue bajando hasta Panamá (COPEG). Desde 2023 la plaga cruzó la barrera, avanzó por Centroamérica y el 21 de noviembre de 2024 se detectó en Catazajá, Chiapas. El 27 de junio de 2026 se inauguró en Metapa, Chiapas, una nueva planta de moscas estériles, con la meta de producir 100 millones por semana. El dibujo y el mapa son esquemáticos. Si ves un animal con una herida con gusanos, repórtalo a SENASICA. ¿En tu región ya hubo casos? 👇"
 
 ## Fuentes
 - USDA APHIS, "New World Screwworm" y *Ready Reference Guide: Sterile Insect Technique* (aphis.usda.gov): biología (la hembra se aparea una vez; huevos en heridas; larvas en tejido vivo), Curazao 1954, EE. UU. libre en 1966, barrera en Panamá con COPEG.
@@ -86,5 +86,8 @@ Tiempos de la base narrada (antes de la voz; con la voz real se recorren solos p
 - CDC, "Myiasis" / "New World Screwworm": también infesta mascotas y personas.
 
 ## Por verificar / notas
-- "Puede morir en una o dos semanas": lo dicen fichas de USDA y de extensión agropecuaria; no lo encontré en una publicación revisada por pares.
+- "Puede morir en cinco a diez días": FAO (programa de erradicación, U4220T): «If unabated, the process continues until the animal dies within five to ten days.» (Antes decía "una o dos semanas"; corregido el 28 oct 2026.)
+- Se crían y sueltan moscas estériles de AMBOS sexos (FAO: «both sexes of screwworm flies could be made sexually sterile»), por eso la voz dice "moscas" y no "machos".
+- Sí se usaron larvicidas en las heridas (FAO): la voz dice "no bastó el veneno", no "no se usó".
+- Verificación de hechos independiente (28 oct 2026): ver `verificacion.md`.
 - El mudo es un **modelo** (Knipling, población sin crecimiento), no datos de campo; el chip "1 punto = 10,000 moscas" lo aclara y la descripción también.

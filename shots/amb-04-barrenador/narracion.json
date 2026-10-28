@@ -1,13 +1,8 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Barrenador base narrada.dc.html",
   "salida": "Shot Barrenador narrado.dc.html",
   "velocidad": 1.103,
-  "nota": "Ambiental #04. Una línea por subtítulo (idx 0..11 del jsx). Pendiente de aprobación de Robert: NO generar la voz sin su visto bueno (~942 créditos de ElevenLabs en una sola petición).",
-  "mudo": {
-    "dcHtml": "Shot Barrenador mudo.dc.html",
-    "audio": "assets/mezcla_mudo.wav"
-  },
+  "nota": "Ambiental #04. Una línea por subtítulo (idx 0..11 del jsx). Texto corregido el 28 oct 2026 tras la verificación de hechos: la voz anterior ya no corresponde y espera otra vez la aprobación de Robert (no generarla sin su visto bueno).",
   "lineas": [
     {
       "escena": "Gancho",
@@ -19,15 +14,15 @@
     },
     {
       "escena": "Muere",
-      "texto": "Sin tratamiento, una vaca puede morir en una o dos semanas, y también ataca a perros y a personas."
+      "texto": "Sin tratamiento, una vaca puede morir en cinco a diez días, y también ataca a perros y a personas."
     },
     {
       "escena": "Mas",
-      "texto": "Para frenarla no se usó veneno: se usaron más moscas."
+      "texto": "Para erradicarla no bastó el veneno: se usaron más moscas."
     },
     {
       "escena": "Fabrica",
-      "texto": "Se crían millones de machos, se esterilizan con radiación y se sueltan desde avionetas."
+      "texto": "Se crían millones de moscas, se esterilizan con radiación y se sueltan desde avionetas."
     },
     {
       "escena": "Pregunta",

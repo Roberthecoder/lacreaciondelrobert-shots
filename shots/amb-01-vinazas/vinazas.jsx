@@ -4,15 +4,22 @@ const AVS = (n) => 'assets/stickers/' + n + '.png';
 const VIN = '#6b3d1c', VIN2 = '#8a5228', TEQ = '#ffd36b', AGUA = '#2fb6ff', AGAVE = '#4f9d8b', AGAVE2 = '#7cc3a9', SETA = '#efe6d2', SETA2 = '#cbbd9e';
 
 /* ---------- dibujos ---------- */
-// Caballito (vaso tequilero). Base en (x, y). lleno 0..1.
-function Caballito({ x, y, s = 1, lleno = 1, T = 0, color = TEQ }) {
-  const h = 260, wb = 70, wt = 100, lv = h * 0.85 * lleno, ola = Math.sin(T * 4) * 4;
+// Jarra medidora de 1 litro (gancho y cierre: la cifra de 12 L es POR LITRO de tequila, no por caballito).
+// Base en (x, y). lleno 0..1 = hasta la marca de 1 L.
+function JarraLitro({ x, y, s = 1, lleno = 1, T = 0, color = TEQ }) {
+  const h = 300, wb = 88, wt = 104, marca = h * 0.8, lv = marca * lleno, ola = Math.sin(T * 4) * 4;
   const wAt = (yy) => klerp(wb, wt, yy / h);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {/* asa */}
+    <path d={`M ${wt - 4} ${-h + 50} Q ${wt + 80} ${-h + 70} ${wt + 60} ${-h * 0.5} Q ${wt + 44} ${-h * 0.28} ${wb + 4} ${-h * 0.22}`} fill="none" stroke={KC.ink} strokeWidth={30} strokeLinecap="round" />
+    <path d={`M ${wt - 4} ${-h + 50} Q ${wt + 80} ${-h + 70} ${wt + 60} ${-h * 0.5} Q ${wt + 44} ${-h * 0.28} ${wb + 4} ${-h * 0.22}`} fill="none" stroke="rgba(255,255,255,.75)" strokeWidth={14} strokeLinecap="round" />
     {lleno > 0.01 && <path d={`M ${-wb + 8} -10 L ${-wAt(lv) + 8} ${-lv + ola} Q 0 ${-lv - ola} ${wAt(lv) - 8} ${-lv + ola} L ${wb - 8} -10 Z`} fill={color} />}
-    <path d={`M ${-wb} 0 L ${-wt} ${-h} L ${wt} ${-h} L ${wb} 0 Z`} fill="rgba(255,255,255,.28)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-    <rect x={-wb - 6} y={-14} width={(wb + 6) * 2} height={22} rx={8} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={7} />
-    <path d={`M ${-wt + 22} ${-h + 20} L ${-wb + 18} -30`} stroke="#fff" strokeWidth={10} strokeLinecap="round" opacity=".6" />
+    <path d={`M ${-wb} 0 L ${-wt} ${-h + 20} L ${-wt - 34} ${-h - 6} L ${-wt + 10} ${-h} L ${wt} ${-h} L ${wb} 0 Z`} fill="rgba(255,255,255,.28)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    {/* marcas de medida */}
+    {[0.2, 0.4, 0.6].map((f) => <line key={f} x1={-wAt(marca * f / 0.8 * 0.8) + 16} y1={-marca * f / 0.8} x2={-wAt(marca * f / 0.8 * 0.8) + 50} y2={-marca * f / 0.8} stroke={KC.ink} strokeWidth={5} />)}
+    <line x1={-wAt(marca) + 14} y1={-marca} x2={wAt(marca) - 14} y2={-marca} stroke={KC.red} strokeWidth={7} strokeDasharray="14 8" />
+    <text x={wAt(marca) - 18} y={-marca - 14} textAnchor="end" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} stroke="#fff" strokeWidth={2}>1 L</text>
+    <path d={`M ${-wt + 26} ${-h + 30} L ${-wb + 20} -30`} stroke="#fff" strokeWidth={10} strokeLinecap="round" opacity=".6" />
   </g>;
 }
 // Garrafa de 1 L. nivel 0..1. icono opcional (lo que se saca de la vinaza).
@@ -49,7 +56,7 @@ function Alambique({ T, a }) {
     {/* vapor (lo que sí se vuelve tequila) */}
     {vap.map(([p, q], i) => { const u = ((T * 0.4 + p) % 1); return <circle key={i} cx={klerp(390, 690, u) + q * 18} cy={klerp(820, 750, u) - Math.sin(u * 3) * 50} r={9 + q * 8} fill="#fff" opacity={0.6 * Math.sin(Math.PI * u)} />; })}
     <Goteo T={T} x={770} y0={1160} y1={1560} cada={0.7} color={TEQ} desde={a + 0.3} />
-    <Caballito x={770} y={1720} s={0.55} lleno={0.3 + 0.5 * kprog(T, a, a + 5)} T={T} />
+    <JarraLitro x={770} y={1720} s={0.55} lleno={0.3 + 0.5 * kprog(T, a, a + 5)} T={T} />
     {/* llave de la vinaza */}
     <path d="M 200 1200 L 120 1200" stroke={KC.ink} strokeWidth={30} strokeLinecap="round" /><path d="M 200 1200 L 120 1200" stroke="#d07a3a" strokeWidth={18} strokeLinecap="round" />
     <Goteo T={T} x={110} y0={1220} y1={1700} cada={0.25} color={VIN} desde={a + 1.4} r={14} />
@@ -191,7 +198,7 @@ const ICONOS = {
   prot: <text y={14} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={2}>PROT</text>,
 };
 
-// Bar con el caballito y las 12 garrafas (gancho y cierre). n = garrafas visibles (0..12), conIconos al final.
+// Bar con la jarra de 1 L y las 12 garrafas (gancho y cierre). n = garrafas visibles (0..12), conIconos al final.
 function Barra({ T, n = 12, a = 0, conIconos = false, lleno = 1 }) {
   const ic = ['flama', 'h2', 'prot', 'agua', 'seta', 'flama', 'h2', 'agua', 'prot', 'seta', 'flama', 'h2'];
   return <>
@@ -206,7 +213,7 @@ function Barra({ T, n = 12, a = 0, conIconos = false, lleno = 1 }) {
         const x = 140 + col * 160, y = fila ? 1180 : 940;
         return <g key={i} transform={`translate(0 ${(1 - p) * 60})`} opacity={kprog(T, at, at + 0.15)}><Garrafa x={x} y={y} s={0.82} T={T} nivel={1} icono={conIconos ? ICONOS[ic[i]] : null} /></g>;
       })}
-      {n === 0 && <Caballito x={540} y={1180} s={1.5} lleno={lleno} T={T} />}
+      {n === 0 && <JarraLitro x={540} y={1180} s={1.5} lleno={lleno} T={T} />}
     </svg>
   </>;
 }
@@ -216,7 +223,7 @@ function VinazasNarrado() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Al: CUES.Alambique, D: CUES.Doce, A: CUES.Acida, R: CUES.Rio, P: CUES.Pregunta, Re: CUES.Reactor, E: CUES.Estudio, B: CUES.Bagazo, S: CUES.Setas, Gr: CUES.Granja, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  // gancho: el caballito se sirve (acción en 0.1 s) y se aleja; detrás aparecen las 12 garrafas
+  // gancho: la jarra de 1 L de tequila se sirve (acción en 0.1 s) y se aleja; detrás aparecen las 12 garrafas
   const sirve = kprog(T, K.G + 0.05, K.G + 0.9, kEase.sale);
   const aleja = kprog(T, K.G + 1.6, K.G + 2.6, kEase.suave);
   return (
@@ -225,7 +232,7 @@ function VinazasNarrado() {
         <Barra T={T} n={12} a={K.G + 2.4} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`translate(540 1180) scale(${klerp(1.6, 0.0001, aleja)})`} opacity={1 - aleja}>
-            <Caballito x={0} y={0} lleno={sirve} T={T} />
+            <JarraLitro x={0} y={0} lleno={sirve} T={T} />
             {sirve < 1 && <path d={`M 160 -560 Q 60 -400 0 ${-260 * sirve - 20}`} stroke={TEQ} strokeWidth={22} fill="none" strokeLinecap="round" />}
           </g>
         </svg>
@@ -234,8 +241,8 @@ function VinazasNarrado() {
       <Escena T={T} a={K.D} b={K.A}>
         <FondoLunares color={KC.mint} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Caballito x={190} y={1060} s={0.9} T={T} />
-          <text x={190} y={1135} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>1 L</text>
+          <JarraLitro x={190} y={1060} s={0.9} T={T} />
+          <text x={190} y={1135} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>tequila</text>
           {Array.from({ length: 12 }, (_, i) => { const at = K.D + 0.6 + i * 0.22; if (T < at) return null; const p = kprog(T, at, at + 0.35, kEase.rebote);
             return <g key={i} transform={`translate(${430 + (i % 4) * 160} ${740 + Math.floor(i / 4) * 200}) scale(${0.62 * p})`}><Garrafa x={0} y={0} T={T} /></g>; })}
         </svg>
@@ -248,7 +255,7 @@ function VinazasNarrado() {
           {Array.from({ length: 20 }, (_, i) => { const at = K.A + 2.4 + i * 0.07; const c = kprog(T, at, at + 0.4); const x = 150 + (i % 10) * 82, y = 950 + Math.floor(i / 10) * 120;
             return T > K.A + 2.2 ? <g key={i} transform={`translate(${x} ${y})`}><rect x={-34} y={-55} width={68} height={110} rx={10} fill={mixHex('#2fb6ff', '#6b4a22', c * 0.9)} stroke={KC.ink} strokeWidth={5} /></g> : null; })}
         </svg>
-        <EscalaPH T={T} at={K.A + 0.1} y={740} marcas={[{ at: K.A + 0.5, ph: 4, rango: [3.4, 4.5], texto: 'vinaza 3.4–4.5', color: VIN }, { at: K.A + 0.9, ph: 3.6, arriba: true, texto: 'jugo de naranja', color: KC.ink }]} />
+        <EscalaPH T={T} at={K.A + 0.1} y={740} marcas={[{ at: K.A + 0.5, ph: 4, rango: [3, 5], texto: 'vinaza 3–5', color: VIN }, { at: K.A + 0.9, ph: 3.6, arriba: true, texto: 'jugo de naranja', color: KC.ink }]} />
       </Escena>
       <Escena T={T} a={K.R} b={K.P}>
         <Rio T={T} cafe={kprog(T, K.R + 0.3, K.R + 2)} o2={1 - kprog(T, K.R + 1.8, K.P - 0.6)} />
@@ -291,7 +298,7 @@ function VinazasNarrado() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}><Barra T={T} n={12} a={K.C - 1} conIconos={T > K.C + 2.2} /></Escena>
 
       {/* número y chips */}
-      {T > K.G + 2.3 && T < K.Al - 0.2 && <NumeroGigante T={T} at={K.G + 2.3} until={K.Al - 0.4} valor={12} sufijo=" L" etiqueta="por cada caballito… de vinaza" y={600} tam={240} />}
+      {T > K.G + 2.3 && T < K.Al - 0.2 && <NumeroGigante T={T} at={K.G + 2.3} until={K.Al - 0.4} valor={12} sufijo=" L" etiqueta="por cada litro de tequila… de vinaza" y={600} tam={240} />}
       <Chip T={T} at={K.Al + 0.3} until={K.D - 0.3} texto="alambique · destilación" y={420} tam={40} />
       <Etq T={T} at={K.Al + 1.6} until={K.D - 0.3} x={140} y={1460} texto="vinaza" color={KC.ink} />
       <Etq T={T} at={K.Al + 0.8} until={K.D - 0.3} x={820} y={1520} texto="tequila" color={KC.ink} />
@@ -311,7 +318,7 @@ function VinazasNarrado() {
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="materia prima" y={500} tam={56} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Al - 0.1} texto="No deja un vaso sucio: *deja 12 litros.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Al - 0.1} texto="1 litro de tequila *deja 12 de vinaza.*" />
       <Subtitulo T={T} idx={1} at={K.Al + 0.1} until={K.D - 0.1} texto="Lo que queda en el alambique: *vinaza.*" />
       <Subtitulo T={T} idx={2} at={K.D + 0.1} until={K.A - 0.1} texto="Por cada litro de tequila, *12 de vinaza.*" />
       <Subtitulo T={T} idx={3} at={K.A + 0.1} until={K.R - 0.1} texto="Ácida, y 1 litro *ensucia 20 de agua.*" />
@@ -341,8 +348,8 @@ function VinazasNarrado() {
 }
 
 /* ---------- gemelo mudo (M1: la música son los datos) ---------- */
-// 1 caballito → 12 garrafas (12 notas graves y tapadas) → pH 3.4–4.5 → río sin oxígeno (la música se ahoga)
-// → reactor (cada burbuja de biogás, una nota libre) → bagazo → setas (cada seta, una nota que sube) → caballito otra vez.
+// 1 litro de tequila → 12 garrafas (12 notas graves y tapadas) → pH 3–5 (CIATEJ 2025) → río sin oxígeno (la música se ahoga)
+// → reactor (cada burbuja de biogás, una nota libre) → bagazo → setas (cada seta, una nota que sube) → la jarra de 1 L otra vez.
 function VinazasMudo() {
   const { T, CUES } = useComposition();
   const K = { C: CUES.Caballito, D: CUES.Doce, A: CUES.Acido, R: CUES.Rio, Re: CUES.Reactor, B: CUES.Bagazo, S: CUES.Setas, L: CUES.Loop };
@@ -359,7 +366,7 @@ function VinazasMudo() {
       <Escena T={T} a={K.A} b={K.R}>
         <FondoLunares color={KC.cyan} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Naranja x={300} y={520} s={T > K.A + 1.6 ? kentrada(T, K.A + 1.6, null, 'pop').s : 0} /><g transform="translate(540 1150) scale(1.3)"><Garrafa x={0} y={0} T={T} /></g></svg>
-        <EscalaPH T={T} at={K.A + 0.2} y={640} marcas={[{ at: K.A + 0.8, ph: 4, rango: [3.4, 4.5], texto: 'pH 3.4–4.5', color: VIN }, { at: K.A + 1.6, ph: 3.6, arriba: true, texto: 'naranja', color: KC.ink }]} />
+        <EscalaPH T={T} at={K.A + 0.2} y={640} marcas={[{ at: K.A + 0.8, ph: 4, rango: [3, 5], texto: 'pH 3–5', color: VIN }, { at: K.A + 1.6, ph: 3.6, arriba: true, texto: 'naranja', color: KC.ink }]} />
       </Escena>
       <Escena T={T} a={K.R} b={K.Re}><Rio T={T} cafe={kprog(T, K.R + 0.5, K.R + 3)} o2={1 - kprog(T, K.R + 2.5, K.Re - 1)} /></Escena>
       <Escena T={T} a={K.Re} b={K.B} zoom={0.03}><ReactorInterior T={T} a={K.Re} /></Escena>

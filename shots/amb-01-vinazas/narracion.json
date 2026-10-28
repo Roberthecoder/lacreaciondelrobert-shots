@@ -1,17 +1,12 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Vinazas base narrada.dc.html",
   "salida": "Shot Vinazas narrado.dc.html",
   "velocidad": 1.065,
-  "nota": "Ambiental #01. Una línea por subtítulo (idx 0..11 del jsx). Pendiente de aprobación de Robert: NO generar la voz sin su visto bueno (~949 créditos de ElevenLabs en una sola petición).",
-  "mudo": {
-    "dcHtml": "Shot Vinazas mudo.dc.html",
-    "audio": "assets/mezcla_mudo.wav"
-  },
+  "nota": "Ambiental #01. Una línea por subtítulo (idx 0..11 del jsx). Texto corregido el 28 oct 2026 tras la verificación de hechos: la voz anterior ya no corresponde y espera otra vez la aprobación de Robert (no generarla sin su visto bueno).",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Este caballito de tequila no deja un vaso sucio: deja doce litros de un líquido café y ácido."
+      "texto": "Un litro de tequila no deja solo una botella vacía: deja doce litros de un líquido café y ácido."
     },
     {
       "escena": "Alambique",
@@ -55,7 +50,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese caballito no deja doce litros de basura: deja doce litros de materia prima."
+      "texto": "Así que cada litro de tequila no deja doce litros de basura: deja doce de materia prima."
     }
   ]
 }

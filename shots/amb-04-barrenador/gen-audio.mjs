@@ -40,7 +40,7 @@ if (K.Campo != null) {
   m.zumbido(G, 1.2, 0.08, 210);                                                    // la mosca llega
   for (let i = 0; i < 60; i++) m.tic(H + 0.5 + i * 0.03, 0.03, 3200);                  // cientos de huevos
   m.sube(H + 2.2, 0.6, 64, 79, 0.06); m.pad(H + 2.2, Mu, 0.03, [40, 47]);             // lupa: por dentro
-  for (let d = 0; d < 14; d++) m.tic(Mu + 0.4 + (d / 14) * 2.2, 0.08, 1300);          // 14 días
+  for (let d = 0; d < 10; d++) m.tic(Mu + 0.4 + (d / 10) * 2.2, 0.08, 1300);          // 10 días (FAO: de 5 a 10)
   m.cruje(Ma + 1.2, 0.5); m.nota(Ma + 1.6, 64, 0.07, 0.8);                           // "veneno" tachado; más moscas
   m.zumbido(Ma, 2, 0.05, 230);
   for (let k = 0; k < 6; k++) m.metal(F + 0.8 + k * 0.22, 0.06, 1800);                 // radiación

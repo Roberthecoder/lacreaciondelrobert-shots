@@ -176,10 +176,10 @@ function BarrenadorNarrado() {
       {T < K.Mu - 0.3 && <Escala T={T} z={1} pxPorMm={9} y={1460} />}
       <Etq T={T} at={K.G + 1.4} until={K.H - 0.2} x={90} y={560} texto="Cochliomyia hominivorax" it tam={30} />
       <Chip T={T} at={K.H + 0.6} until={K.Mu - 0.3} texto="cientos de huevos" y={420} tam={42} borde={KC.red} />
-      {T < K.Ma - 0.2 && <Contador T={T} at={K.Mu + 0.4} desde={0} hasta={14} dur={2.2} sufijo=" días" x={540} y={460} tam={90} color={KC.red} />}
+      {T < K.Ma - 0.2 && <Contador T={T} at={K.Mu + 0.4} desde={0} hasta={10} dur={2.2} sufijo=" días" x={540} y={460} tam={90} color={KC.red} />}
       <Chip T={T} at={K.Mu + 2.6} until={K.Ma - 0.3} texto="también perros y personas" y={700} tam={40} borde={KC.red} />
-      <MitoTachado T={T} at={K.Ma + 0.2} tacharEn={K.Ma + 1.2} until={K.F - 0.2} texto="veneno" y={480} tam={70} />
-      <Chip T={T} at={K.Ma + 1.6} until={K.F - 0.2} texto="más moscas (estériles)" y={620} tam={44} borde={KC.leaf} />
+      <MitoTachado T={T} at={K.Ma + 0.2} tacharEn={K.Ma + 1.2} until={K.F - 0.2} texto="solo veneno" y={480} tam={70} />
+      <Chip T={T} at={K.Ma + 1.6} until={K.F - 0.2} texto="+ moscas estériles" y={620} tam={44} borde={KC.leaf} />
       <Chip T={T} at={K.F + 0.2} until={K.F + 2.3} texto="planta · radiación" y={420} tam={42} mono />
       <Etq T={T} at={K.F + 0.5} until={K.F + 2.2} x={120} y={1030} texto="pupas" color={KC.ink} />
       <Chip T={T} at={K.U + 0.3} until={K.E - 0.3} texto="se aparea 1 sola vez" y={420} tam={46} borde={KC.red} />
@@ -193,9 +193,9 @@ function BarrenadorNarrado() {
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="Sus larvas *se comen la carne viva.*" />
       <Subtitulo T={T} idx={1} at={K.H + 0.1} until={K.Mu - 0.1} texto="Cientos de huevos *en una herida.*" />
-      <Subtitulo T={T} idx={2} at={K.Mu + 0.1} until={K.Ma - 0.1} texto="Una vaca puede morir *en 1 o 2 semanas.*" />
-      <Subtitulo T={T} idx={3} at={K.Ma + 0.1} until={K.F - 0.1} texto="No se usó veneno: *más moscas.*" />
-      <Subtitulo T={T} idx={4} at={K.F + 0.1} until={K.P - 0.1} texto="Machos estériles *desde avionetas.*" />
+      <Subtitulo T={T} idx={2} at={K.Mu + 0.1} until={K.Ma - 0.1} texto="Una vaca puede morir *en 5 a 10 días.*" />
+      <Subtitulo T={T} idx={3} at={K.Ma + 0.1} until={K.F - 0.1} texto="No bastó el veneno: *más moscas.*" />
+      <Subtitulo T={T} idx={4} at={K.F + 0.1} until={K.P - 0.1} texto="Moscas estériles *desde avionetas.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.U - 0.1} texto="¿Más moscas *para acabar con moscas?*" />
       <Subtitulo T={T} idx={6} at={K.U + 0.1} until={K.E - 0.1} texto="Una sola vez: *con estéril, no hay crías.*" />
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.B - 0.1} texto="Curazao, 1954: *la mosca desapareció.*" />
