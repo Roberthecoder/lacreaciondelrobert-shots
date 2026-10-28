@@ -6,6 +6,13 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 
 Última actualización: 28 oct 2026, 16:10 UTC.
 
+## Trabajador y tareas programadas
+- Trabajador horario: sesión `session_0157fpgzNLGBRTM1nZnM7iLe` ("Mantenimiento de la Sala (trabajador horario)", modo auto,
+  con el repo shots). La despierta cada hora la tarea `trig_01SiG3xGhgHwCiG4zpgKvWQS` (minuto 56). Para encargos inmediatos,
+  el chat administrador le escribe con send_message. Si deja de responder: créala otra vez con el mismo encargo y re-apunta la tarea.
+- Apagadas: "Producción intensiva" (trig_01URKCb81JFPMa9CtCnnjBN7) y "Lote diario" (trig_01VKwBbqWsjm5xKahYsA7RLd); se crearon
+  fuera del chat, así que solo Robert puede lanzarlas ya desde claude.ai/code/routines.
+
 ## Estado de la Sala
 - 60 shots: 10 por serie (9 normales + 1 especial de Día de Muertos en el #01). Todos con verificación de hechos independiente
   (28 oct) y `verificacion.md` con `VEREDICTO: APROBADO`.
