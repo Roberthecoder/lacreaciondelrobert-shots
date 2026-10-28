@@ -43,7 +43,7 @@
    "titulo": "IA en las mamografías: 44 % menos lecturas y más cáncer encontrado (ensayo MASAI, Suecia: 6.4 vs 5.0 por mil; Lancet 2026)",
    "serie": "Shot IA",
    "numero": 8,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/ia-08-mamografias",
    "rama": "claude/igualar-ia",
    "fecha": "2026-10-28",
@@ -57,6 +57,24 @@
     "La IA que lee radiografías de tórax para tuberculosis (OMS)",
     "Retinopatía diabética: la IA que revisa el fondo de ojo",
     "¿Quién es responsable si la IA médica se equivoca?"
+   ]
+  },
+  {
+   "id": "ia-detectores-no-nativos",
+   "titulo": "Detectores de IA que acusan a quien escribe en inglés como segunda lengua: 61.3 % de falsos positivos con ensayos TOEFL (Liang et al., Stanford, 2023)",
+   "serie": "Shot IA",
+   "numero": 9,
+   "estado": "guion",
+   "carpeta": "shots/ia-09-detectores",
+   "rama": "claude/igualar-ia",
+   "fecha": "2026-10-28",
+   "fuentes": [
+    "Liang, Yuksekgonul, Mao, Wu y Zou, Patterns 4(7):100779 (2023), PMC10382961: 7 detectores, 91 ensayos TOEFL, FPR promedio 61.3 %, 97.8 % al menos uno, 19.8 % los siete, 61.3 → 11.6 % con vocabulario enriquecido"
+   ],
+   "derivados": [
+    "Perplejidad: cómo mide una IA qué tan sorprendente es un texto",
+    "Marcas de agua en texto de IA: ¿se pueden detectar de verdad?",
+    "¿Usar IA para mejorar tu inglés es trampa? Lo que dicen las universidades"
    ]
   }
  ]
