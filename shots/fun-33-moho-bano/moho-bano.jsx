@@ -258,8 +258,8 @@ function MohoBanoShot() {
       <Escena T={T} a={K.Mi} b={K.Al} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          {[[200, MB.moho, 1], [540, MB.stachy, 2], [880, '#6b7378', 3]].map(([x, c, sd], i) => <Mancha key={i} x={x} y={1080} r={78} color={c} seed={sd} s={kprog(T, K.Mi + 2.6 + i * 0.25, K.Mi + 3.0 + i * 0.25, kEase.rebote)} />)}
-          {[370, 710].map((x, i) => <text key={i} x={x} y={1110} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Mi + 3.4 + i * 0.2, K.Mi + 3.7 + i * 0.2)}>=</text>)}
+          {[[200, MB.moho, 1], [540, MB.stachy, 2], [880, '#6b7378', 3]].map(([x, c, sd], i) => <Mancha key={i} x={x} y={1110} r={78} color={c} seed={sd} s={kprog(T, K.Mi + 2.6 + i * 0.25, K.Mi + 3.0 + i * 0.25, kEase.rebote)} />)}
+          {[370, 710].map((x, i) => <text key={i} x={x} y={1140} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Mi + 3.4 + i * 0.2, K.Mi + 3.7 + i * 0.2)}>=</text>)}
         </>)}
       </Escena>
       {/* 8 · alergia y asma */}
@@ -336,7 +336,7 @@ function MohoBanoShot() {
       <Etq T={T} at={K.St + 2.6} until={K.Mi - 0.3} x={480} y={1060} texto="papel mojado" tam={26} color={KC.ink} />
       <MitoTachado T={T} at={K.Mi + 0.2} tacharEn={K.Mi + 1.6} until={K.Al - 0.3} texto="MÁS PELIGROSO QUE LOS DEMÁS" x={540} y={800} tam={40} />
       <Chip T={T} at={K.Mi + 1.4} until={K.Al - 0.3} texto="no hay prueba que lo ligue a síntomas (CDC)" x={540} y={900} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.Mi + 3.6} until={K.Al - 0.3} texto="todo moho se trata igual" x={540} y={1190} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.Mi + 3.6} until={K.Al - 0.3} texto="todo moho se trata igual" x={540} y={985} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.Al + 0.6} until={K.Es - 0.3} texto="alergia (si eres sensible)" x={340} y={480} tam={30} borde={KC.yellow} />
       <Chip T={T} at={K.Al + 3.0} until={K.Es - 0.3} texto="asma (si tienes asma y alergia)" x={340} y={570} tam={30} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.3} anio="2010" quien="Osaka, Japón" revista="Hamada y Abe · Biocontrol Science" y={560} />

@@ -295,7 +295,7 @@ function ChernobilShot() {
       <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.2} until={K.R - 0.3} texto="¿hollín?" x={300} y={440} tam={52} />
       <Chip T={T} at={K.G + 3.2} until={K.R - 0.3} texto="Chernóbil · reactor 4" x={400} y={1110} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.R + 0.4} until={K.E - 0.3} texto="1997–1998" x={300} y={440} tam={44} borde={KC.ink} />
-      <Etq T={T} at={K.R + 1.2} until={K.E - 0.3} x={60} y={540} texto="edificio que cubre el reactor 4" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.R + 1.2} until={K.E - 0.3} x={60} y={540} texto="edificio que cubre el reactor 4" tam={25} color={KC.texto} />
       <NumeroGigante T={T} at={K.E + 0.1} until={K.O - 0.3} valor={37} dur={1.7} etiqueta="especies de hongos" x={380} y={470} tam={170} color={KC.yellow} />
       <Etq T={T} at={K.E + 1.4} until={K.O - 0.3} x={620} y={470} texto="de 19 géneros" tam={30} color={KC.ink} />
       <Chip T={T} at={K.O + 0.6} until={K.Pi - 0.3} texto="más radiación" x={380} y={460} tam={42} borde={KC.red} />
@@ -323,7 +323,7 @@ function ChernobilShot() {
       <Chip T={T} at={K.Sp + 0.3} until={K.C - 0.3} texto="2018 · Estación Espacial" x={400} y={440} tam={38} borde={KC.cyan} />
       <Etq T={T} at={K.Sp + 2.4} until={K.C - 0.3} x={60} y={950} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
       <Chip T={T} at={K.Sp + 3.8} until={K.C - 0.3} texto="un poquito menos" x={540} y={1140} tam={36} borde={KC.orange} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="hongo blindado con melanina" x={420} y={440} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="hongo blindado con melanina" x={360} y={440} tam={34} borde={KC.gold} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.R} texto="50 cm" largo={180} />

@@ -12,14 +12,14 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Un champiñón de campo grande suelta unos dieciséis mil millones de esporas: casi el doble de personas en la Tierra. | Fondo amarillo. Cuadro 0.3: un champiñón de campo (*Agaricus campestris*, sombrero blanco, laminillas rosa-café, anillo) suelta una nube de puntitos que cae. Contador gigante que corre a "16,000,000,000". A un lado, una barra "personas en la Tierra · 8,200 millones (ONU, 2024)" y la de esporas, casi el doble de alta. |
+| 0 | Gancho | Un champiñón de campo grande suelta unos dieciséis mil millones de esporas: casi el doble de personas en la Tierra. | Fondo amarillo. Cuadro 0.3: un champiñón de campo (*Agaricus campestris*, sombrero blanco, laminillas rosa-café, anillo) suelta una nube de puntitos que cae. Contador gigante que corre a "16,000,000,000". A un lado, una barra "personas en la Tierra · 8,200 millones (ONU, 2024)" y la de esporas, casi el doble de alta; junto a la barra de personas, "≈ la mitad". |
 | 1 | Sombrero | Puedes verlas: pon boca abajo sobre un papel el sombrero de un champiñón del súper ya abierto. | Cocina (fondo menta): una mano corta el pie de un champiñón blanco del súper (*Agaricus bisporus*) **ya abierto** (el velo roto y las laminillas café a la vista) y pone el sombrero, laminillas abajo, sobre una hoja blanca. Chip "1 · uno abierto · laminillas abajo". |
 | 2 | Vaso | Tápalo con un vaso y espera una noche. | Baja un vaso de vidrio volteado; reloj que corre de noche (luna) a mañana (sol). Chip "2 · tápalo · espera una noche". |
 | 3 | Huella | Si funcionó, verás el dibujo de sus laminillas en café oscuro: su huella de esporas. | Sube el vaso y el sombrero: la hoja muestra rayos café oscuro como un sol. Etiqueta "huella de esporas". Chip pequeño "a veces no sale con champiñones del súper". |
 | 4 | Polvo | Cada grano mide unas siete milésimas de milímetro. | **Zoom al microscopio** (fondo oscuro): el polvo café se vuelve cientos de esporas ovaladas, lisas, cafés. Barra de escala 10 µm. Chip "≈ 7 µm cada una". |
 | 5 | Color | Su color ayuda a identificar hongos, pero nunca basta para saber si se come. | Regreso a la mesa: tres huellas (blanca, café, rosada) con etiqueta "color de esporas = una pista". Sello rojo "NO dice si se come". |
 | 6 | Pregunta | ¿Y para qué tantas? | **Re-gancho.** "?" gigante sobre la nube de esporas; Robert grande, pensativo. |
-| 7 | Buller | En 1922, desde Canadá, el micólogo Reginald Buller publicó sus cuentas. | `TarjetaEstudio`: "A. H. R. Buller · Universidad de Manitoba, Canadá · *Researches on Fungi*, vol. II, 1922". Un microscopio y una libreta con números. |
+| 7 | Buller | En 1922, desde Canadá, el micólogo Reginald Buller publicó sus cuentas. | `TarjetaEstudio`: "A. H. R. Buller · Universidad de Manitoba, Canadá · *Researches on Fungi*, vol. II, 1922". Un microscopio y una libreta donde se van sumando rayitas hasta "≈ 16,000,000,000". |
 | 8 | Repisa | Un hongo de repisa, Ganoderma applanatum, soltaba unos treinta mil millones al día, por seis meses. | Tronco con un hongo de repisa (*Ganoderma applanatum*, "hongo del artista": repisa café con borde blanco, poros abajo) soltando humo de esporas. Contador "30,000,000,000 / día" y calendario mayo→octubre que avanza. Chip "medido por J. H. White, Toronto". |
 | 9 | Bejin | Y un bejín gigante de cuarenta centímetros tenía unos siete billones. | Un bejín gigante (*Calvatia gigantea*, bola blanca) de 40 cm junto a la barra de escala; contador "7,000,000,000,000". Chip "billón = un millón de millones". |
 | 10 | Razon | La razón: casi ninguna cae donde pueda crecer. | La nube de esporas cae sobre un mapa de cosas: asfalto, agua, piedra, techo… casi todas se apagan (gris). |
@@ -31,6 +31,25 @@
 **Música:** cama grave y continua, algo de suspenso tranquilo, sin golpe; efectos en el mismo cuadro: lluvia fina de esporas (siseo suave), tic-tac del contador, cuchillo al cortar el pie, "clinc" del vaso, grillos de noche y pajarito de mañana, ruido al levantar el vaso, zoom del microscopio, golpe del sello "NO", papel de la tarjeta de estudio, nube de esporas del hongo de repisa, calendario que pasa hojas, "pof" del bejín, apagones grises de las esporas que caen mal, una campanita para la única que brota.
 
 Barras de escala: 10 cm (champiñón), 10 µm (esporas), 30 cm (hongo de repisa), 40 cm (bejín).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y para qué tantas?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.8 | 11_sorprendido | `gancho` | «dieciséis mil millones de esporas» (cuadro 0) |
+| 2 | 7.3 | 11.6 | 13_senalando_arriba | `arriba-der` | «pon el sombrero… boca abajo» |
+| 3 | 15.5 | 18.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | aparece la huella de esporas |
+| 4 | 22.4 | 26.2 | 12_perfil_serio | `arriba-der` | «nunca basta para saber si se come» |
+| 5 | 26.5 | 28.2 | 07_pensativo_puno | `grande` | «¿Y para qué tantas?» |
+| 6 | 32.0 | 34.2 | 04_bajando_lentes | `arriba-der` | «treinta mil millones al día» |
+| 7 | 38.1 | 41.4 | 11_sorprendido | `arriba-der` | «siete billones» |
+| 8 | 44.9 | 49.4 | 06_pensativo_menton | `arriba-der` | «quizá solo una forma un hongo nuevo» |
+| 9 | 53.3 | 57.9 | 02_apuntando_camara | `arriba-der` | «esa mancha café es una lotería» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **31.4 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas en el texto completo el 29 oct 2026)
 
