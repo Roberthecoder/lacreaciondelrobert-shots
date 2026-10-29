@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Helio Voz base narrada.dc.html",
+  "salida": "Shot Helio Voz narrado.dc.html",
+  "nota": "Shot Científico #23. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "El helio no hace que tus cuerdas vocales vibren más rápido: lo que cambia es el tubo por donde sale tu voz."
+    },
+    {
+      "escena": "Cuerdas",
+      "texto": "El tono de tu voz lo ponen tus cuerdas vocales, vibrando cierto número de veces por segundo."
+    },
+    {
+      "escena": "Tubo",
+      "texto": "Ese sonido pasa por tu garganta y tu boca, que funcionan como un tubo que refuerza ciertas frecuencias."
+    },
+    {
+      "escena": "Timbre",
+      "texto": "Esas frecuencias reforzadas le dan el timbre a tu voz: su color, parte de lo que hace que suenes a ti."
+    },
+    {
+      "escena": "Helio",
+      "texto": "En el helio, el sonido viaja casi tres veces más rápido que en el aire."
+    },
+    {
+      "escena": "Sube",
+      "texto": "Así que las frecuencias que refuerza el tubo se suben, y tu voz suena chillona, como de caricatura."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y la nota que cantas?"
+    },
+    {
+      "escena": "Igual",
+      "texto": "Casi no cambia: tus cuerdas siguen vibrando parecido. Lo que cambia es el color del sonido."
+    },
+    {
+      "escena": "Pesado",
+      "texto": "Con un gas mucho más pesado, el hexafluoruro de azufre, pasa al revés: el sonido va más lento y tu voz suena grave."
+    },
+    {
+      "escena": "Peligro",
+      "texto": "Ojo: no respires helio de globos ni de tanques: desplaza el oxígeno de tus pulmones y puede ser peligroso."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que con helio no cambias de nota: cambias de timbre."
+    }
+  ]
+}

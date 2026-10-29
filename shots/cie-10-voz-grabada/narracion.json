@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Voz Grabada base narrada.dc.html",
+  "salida": "Shot Voz Grabada narrado.dc.html",
+  "nota": "Shot Científico #10. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa voz rara que oyes en tus grabaciones no es de otra persona: es la tuya, sin tus huesos."
+    },
+    {
+      "escena": "Caminos",
+      "texto": "Cuando hablas, tu voz te llega por dos caminos."
+    },
+    {
+      "escena": "Aire",
+      "texto": "Uno es el aire: sale de tu boca, da la vuelta y entra por tus oídos, igual que a los demás."
+    },
+    {
+      "escena": "Hueso",
+      "texto": "El otro va por dentro: tu voz hace vibrar tu cabeza, y esa vibración viaja por el hueso hasta tu oído interno."
+    },
+    {
+      "escena": "Graves",
+      "texto": "Ese camino interno apaga parte de los agudos, así que en tu cabeza tu voz suena más grave y más llena."
+    },
+    {
+      "escena": "Micro",
+      "texto": "El micrófono solo capta el aire: se parece a la voz que los demás oyen siempre."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces de verdad odias tu voz?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2013, en Pensilvania, ochenta personas calificaron qué tan atractivas sonaban unas voces grabadas. Entre ellas, sin avisarles, venía la suya."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Le pusieron a su propia voz mejor calificación que la que le dieron los demás."
+    },
+    {
+      "escena": "Prueba",
+      "texto": "Haz esto: tápate los oídos y habla. Te vas a oír más fuerte y más grave: es el camino del hueso."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que la voz del audio no está mal: es la que todos conocen. La que oyes tú viene con tu cabeza incluida."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Pupila Piensa base narrada.dc.html",
+  "salida": "Shot Pupila Piensa narrado.dc.html",
+  "nota": "Shot Científico #40. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tus pupilas se agrandan cuando piensas fuerte, aunque la luz no cambie."
+    },
+    {
+      "escena": "Pupila",
+      "texto": "La pupila es el círculo negro de tu ojo: el hoyo por donde entra la luz."
+    },
+    {
+      "escena": "Luz",
+      "texto": "Normalmente se cierra con mucha luz y se abre en la oscuridad."
+    },
+    {
+      "escena": "Mente",
+      "texto": "Pero también responde a lo que pasa dentro de tu cabeza."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1966, los psicólogos Daniel Kahneman y Jackson Beatty pidieron a unos voluntarios memorizar listas de números."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Mientras más números tenían que recordar, más se les abría la pupila, y al decirlos en voz alta se iba cerrando."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué pasa?"
+    },
+    {
+      "escena": "Locus",
+      "texto": "Se cree que tiene que ver con una zona pequeñita del tallo cerebral que se activa cuando haces un esfuerzo mental."
+    },
+    {
+      "escena": "Pequeno",
+      "texto": "El cambio es pequeño, pero una cámara lo puede medir."
+    },
+    {
+      "escena": "Uso",
+      "texto": "Por eso hoy hay científicos que miden la pupila para saber cuánto esfuerzo le cuesta a alguien una tarea."
+    },
+    {
+      "escena": "Nobel",
+      "texto": "Por cierto, años después Kahneman ganó el Premio Nobel de Economía."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que si una cámara te mira a los ojos mientras resuelves algo difícil, puede medir tu esfuerzo."
+    }
+  ]
+}

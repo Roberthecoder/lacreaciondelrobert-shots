@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Dolor Tarde base narrada.dc.html",
+  "salida": "Shot Dolor Tarde narrado.dc.html",
+  "nota": "Shot Científico #32. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Cuando te pegas en el dedo chiquito del pie, sientes dos dolores, uno detrás del otro, y tiene explicación."
+    },
+    {
+      "escena": "Dos",
+      "texto": "Primero llega un piquete agudo, casi al instante."
+    },
+    {
+      "escena": "Fibras",
+      "texto": "Ese aviso viaja por fibras nerviosas forradas de una capa de grasa que las hace rápidas."
+    },
+    {
+      "escena": "Dolor",
+      "texto": "Después llega el dolor sordo, el que arde y se queda: viaja por otras fibras más delgadas y sin esa capa, mucho más lentas."
+    },
+    {
+      "escena": "Velocidad",
+      "texto": "Las rápidas mandan señales hasta a decenas de metros por segundo; las lentas, a un par de metros por segundo o menos."
+    },
+    {
+      "escena": "Distancia",
+      "texto": "Y del dedo de tu pie a tu cerebro hay más de un metro de camino, así que la diferencia se nota."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces por qué no sientes todo junto?"
+    },
+    {
+      "escena": "Primer",
+      "texto": "Porque primero te llega el aviso rápido, y el dolor lento llega después, como el trueno después del rayo."
+    },
+    {
+      "escena": "Sobar",
+      "texto": "Y sobarte sí ayuda un poco: según una teoría de 1965, las señales del tacto pueden bajarle el volumen al dolor en tu médula espinal."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese dolor que llega tarde no es tu imaginación: es la velocidad de tus nervios."
+    }
+  ]
+}

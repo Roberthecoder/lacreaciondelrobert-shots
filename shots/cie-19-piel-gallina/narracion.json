@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Piel Gallina base narrada.dc.html",
+  "salida": "Shot Piel Gallina narrado.dc.html",
+  "nota": "Shot Científico #19. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa piel de gallina no es tu piel encogiéndose: son músculos diminutos jalando tus pelos, muchos al mismo tiempo."
+    },
+    {
+      "escena": "Musculo",
+      "texto": "Pegado a casi cada pelo de tu cuerpo hay un músculo chiquito: el músculo erector del pelo."
+    },
+    {
+      "escena": "Frio",
+      "texto": "Cuando tienes frío o te emocionas, tus nervios le mandan una señal y se contrae."
+    },
+    {
+      "escena": "Bolita",
+      "texto": "El pelo se para y la piel de alrededor se levanta en una bolita."
+    },
+    {
+      "escena": "Animales",
+      "texto": "En animales con pelaje, como los gatos, ese pelo parado atrapa una capa de aire caliente que los abriga."
+    },
+    {
+      "escena": "Grande",
+      "texto": "Y cuando tienen miedo, el pelo erizado los hace verse más grandes."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y a ti de qué te sirve, si casi no tienes pelaje?"
+    },
+    {
+      "escena": "Inutil",
+      "texto": "Para abrigarte, casi de nada: es una herencia de tus ancestros peludos."
+    },
+    {
+      "escena": "Harvard",
+      "texto": "Pero en 2020, en Harvard, vieron en ratones que el mismo nervio que eriza el pelo también despierta a las células madre que lo hacen crecer."
+    },
+    {
+      "escena": "Pelo",
+      "texto": "Con frío por mucho tiempo, ese nervio ayuda a que crezca pelo nuevo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa piel de gallina no es solo un susto: es tu cuerpo, todavía, tratando de abrigarte como si tuvieras pelaje."
+    }
+  ]
+}

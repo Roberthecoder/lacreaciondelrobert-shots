@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Tierra Gira base narrada.dc.html",
+  "salida": "Shot Tierra Gira narrado.dc.html",
+  "nota": "Shot Científico #33. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Si estás en el centro de México, ahora mismo vas a más de mil quinientos kilómetros por hora, y no lo sientes."
+    },
+    {
+      "escena": "Giro",
+      "texto": "La Tierra da una vuelta completa sobre sí misma cada día, y te lleva con ella."
+    },
+    {
+      "escena": "Ecuador",
+      "texto": "En el ecuador, el suelo va a unos mil seiscientos setenta kilómetros por hora."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En Guadalajara, como estás más lejos del ecuador, vas un poco más lento: unos mil quinientos sesenta. En la Ciudad de México, unos mil quinientos setenta."
+    },
+    {
+      "escena": "Polos",
+      "texto": "Y en los polos, casi nada: solo das vueltas en tu lugar."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces por qué no te mareas?"
+    },
+    {
+      "escena": "Constante",
+      "texto": "Porque tu cuerpo no siente la velocidad: siente los cambios de velocidad, los frenones y los arrancones."
+    },
+    {
+      "escena": "Avion",
+      "texto": "Como en un avión que va derechito: si no te asomas, no sabes que vas a cientos de kilómetros por hora."
+    },
+    {
+      "escena": "Lento",
+      "texto": "Y la Tierra cambia de dirección muy despacio: tarda un día entero en dar la vuelta."
+    },
+    {
+      "escena": "Pendulo",
+      "texto": "En 1851, Léon Foucault lo demostró en París con un péndulo enorme: el piso giraba debajo de él."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que hoy, sin levantarte de la silla, en Guadalajara o en la Ciudad de México vas a recorrer más de treinta y siete mil kilómetros."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Microondas base narrada.dc.html",
+  "salida": "Shot Microondas narrado.dc.html",
+  "nota": "Shot Científico #26. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu microondas no calienta la comida de adentro hacia afuera: la calienta por fuera, unos cuantos centímetros."
+    },
+    {
+      "escena": "Ondas",
+      "texto": "El horno llena su caja de microondas: ondas invisibles, primas de la luz."
+    },
+    {
+      "escena": "Agua",
+      "texto": "Esas ondas hacen que las moléculas de agua de la comida se muevan sin parar, y ese movimiento es calor."
+    },
+    {
+      "escena": "Profundidad",
+      "texto": "Pero esas ondas solo alcanzan a entrar unos pocos centímetros, o menos, en la comida."
+    },
+    {
+      "escena": "Centro",
+      "texto": "El centro se calienta después, porque el calor viaja hacia adentro poco a poco, como en una estufa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces por qué a veces queda frío en medio?"
+    },
+    {
+      "escena": "Frio",
+      "texto": "Justo por eso: si la pieza es gruesa, al centro todavía no le llega el calor."
+    },
+    {
+      "escena": "Reposo",
+      "texto": "Por eso las instrucciones dicen que la dejes reposar: en ese rato, el calor sigue avanzando hacia adentro."
+    },
+    {
+      "escena": "Plato",
+      "texto": "Y el plato gira porque adentro hay puntos con más ondas y puntos con menos."
+    },
+    {
+      "escena": "Wifi",
+      "texto": "Dato raro: tu microondas trabaja con casi la misma frecuencia que muchas redes de wifi."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no calienta de adentro hacia afuera: calienta por fuera, y lo demás lo hace la paciencia."
+    }
+  ]
+}

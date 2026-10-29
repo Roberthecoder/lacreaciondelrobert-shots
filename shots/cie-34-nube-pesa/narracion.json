@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Nube Pesa base narrada.dc.html",
+  "salida": "Shot Nube Pesa narrado.dc.html",
+  "nota": "Shot Científico #34. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa nube esponjosa que ves pesa cientos de toneladas, y aun así flota."
+    },
+    {
+      "escena": "Agua",
+      "texto": "Las nubes están hechas de billones y billones de gotitas de agua, tan diminutas que no podrías ver una sola a simple vista."
+    },
+    {
+      "escena": "Cuenta",
+      "texto": "En 2013, la meteoróloga Peggy LeMone hizo la cuenta: una nube cúmulo típica tiene unas quinientas toneladas de agua."
+    },
+    {
+      "escena": "Elefantes",
+      "texto": "Eso es como cien elefantes flotando sobre tu cabeza."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces por qué no se cae?"
+    },
+    {
+      "escena": "Gotitas",
+      "texto": "Porque cada gotita es tan pequeña que cae lentísimo, y las corrientes de aire que suben bastan para sostenerla."
+    },
+    {
+      "escena": "Repartida",
+      "texto": "Y ese peso está repartido en un espacio gigantesco, como un cubo de un kilómetro por lado."
+    },
+    {
+      "escena": "Aire",
+      "texto": "El aire que llena ese mismo espacio pesa muchísimo más que el agua de la nube."
+    },
+    {
+      "escena": "Lluvia",
+      "texto": "Cuando las gotitas chocan y se juntan, se vuelven más grandes y pesadas, el aire ya no las sostiene, y caen: eso es la lluvia."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa nube no es algodón: es el agua de cien elefantes, flotando sobre ti en pedacitos chiquitos."
+    }
+  ]
+}

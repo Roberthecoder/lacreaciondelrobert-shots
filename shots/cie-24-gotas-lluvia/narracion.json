@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Gotas Lluvia base narrada.dc.html",
+  "salida": "Shot Gotas Lluvia narrado.dc.html",
+  "nota": "Shot Científico #24. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Las gotas de lluvia no tienen forma de lágrima: las chiquitas son bolitas y las grandes parecen pan de hamburguesa."
+    },
+    {
+      "escena": "Pequenas",
+      "texto": "Cuando una gota es pequeña, la tensión superficial la jala hacia adentro y la mantiene redonda."
+    },
+    {
+      "escena": "Caen",
+      "texto": "Al caer, el aire la empuja desde abajo y la va aplanando."
+    },
+    {
+      "escena": "Pan",
+      "texto": "Por eso las más grandes quedan planas abajo y redondas arriba, como un pan de hamburguesa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si siguen creciendo?"
+    },
+    {
+      "escena": "Paracaidas",
+      "texto": "Cuando llegan a unos ocho milímetros de ancho, el aire las hunde por debajo y se inflan como un paracaídas."
+    },
+    {
+      "escena": "Rompe",
+      "texto": "Y se rompen en muchas gotitas más pequeñas, que vuelven a empezar el viaje."
+    },
+    {
+      "escena": "Lagrima",
+      "texto": "¿Y la forma de lágrima? Esa la ves en las gotas que escurren de una llave, cuando se están despegando."
+    },
+    {
+      "escena": "Velocidad",
+      "texto": "Una gota grande de lluvia cae a unos nueve metros por segundo: más de treinta kilómetros por hora."
+    },
+    {
+      "escena": "Chica",
+      "texto": "Y las más pequeñitas, las de la llovizna, caen mucho más despacio."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que la próxima vez que dibujes lluvia, olvídate de las lágrimas: mejor dibuja panes de hamburguesa."
+    }
+  ]
+}

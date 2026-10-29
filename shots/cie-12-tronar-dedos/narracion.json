@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Tronar Dedos base narrada.dc.html",
+  "salida": "Shot Tronar Dedos narrado.dc.html",
+  "nota": "Shot Científico #12. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese tronido de tus dedos no es un hueso que se rompe: es una burbuja de gas."
+    },
+    {
+      "escena": "Liquido",
+      "texto": "Entre los huesos de tus dedos hay un líquido que los lubrica: el líquido sinovial."
+    },
+    {
+      "escena": "Jalas",
+      "texto": "Cuando jalas el dedo, las superficies se separan de golpe y la presión del líquido cae."
+    },
+    {
+      "escena": "Cavidad",
+      "texto": "El gas que estaba disuelto forma un hueco: ¡crac!"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2015, en Canadá, metieron el dedo de un voluntario en una resonancia magnética y lo jalaron hasta que tronó."
+    },
+    {
+      "escena": "Video",
+      "texto": "En el video aparece el hueco oscuro justo en el tronido."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué no lo puedes tronar otra vez enseguida?"
+    },
+    {
+      "escena": "Espera",
+      "texto": "Se cree que el gas tarda en volver a disolverse: hay que esperar unos veinte minutos."
+    },
+    {
+      "escena": "Debate",
+      "texto": "Ojo: en 2018, un modelo matemático propuso que el ruido sale cuando la burbuja se colapsa en parte. Se sigue discutiendo."
+    },
+    {
+      "escena": "Unger",
+      "texto": "¿Y da artritis? Un médico de California se tronó solo los dedos de la mano izquierda durante décadas."
+    },
+    {
+      "escena": "Manos",
+      "texto": "Décadas después, ninguna de sus manos tenía artritis. Le dieron un premio Ig Nobel."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que cuando truenes tus dedos, no se rompe nada: es una burbuja de gas."
+    }
+  ]
+}

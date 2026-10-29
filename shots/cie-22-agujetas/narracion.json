@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Agujetas base narrada.dc.html",
+  "salida": "Shot Agujetas narrado.dc.html",
+  "nota": "Shot Científico #22. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese dolor del día después del ejercicio no es ácido láctico acumulado en tus músculos."
+    },
+    {
+      "escena": "Lactato",
+      "texto": "El lactato sí sube cuando haces ejercicio intenso, pero baja otra vez en cuestión de horas."
+    },
+    {
+      "escena": "Tarde",
+      "texto": "Las agujetas, en cambio, empiezan horas después, y duelen más entre uno y tres días después."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1983 pusieron a voluntarios a correr en caminadora, en plano y en bajada."
+    },
+    {
+      "escena": "Bajada",
+      "texto": "En bajada, el lactato ni siquiera subió, y aun así fue lo que más dolor dio en los días siguientes."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces qué te duele?"
+    },
+    {
+      "escena": "Fibras",
+      "texto": "Lo más aceptado: el ejercicio al que no estás acostumbrado deja daños microscópicos en tus fibras musculares."
+    },
+    {
+      "escena": "Excentrico",
+      "texto": "Sobre todo cuando el músculo trabaja mientras se estira, como al bajar escaleras o un cerro."
+    },
+    {
+      "escena": "Inflamacion",
+      "texto": "Tu cuerpo responde con inflamación, y los nervios del músculo se vuelven más sensibles."
+    },
+    {
+      "escena": "Repetida",
+      "texto": "La buena noticia: la siguiente vez que haces el mismo ejercicio, duele mucho menos, porque tu músculo se adapta."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese dolor no es veneno acumulado: es tu músculo reparándose."
+    }
+  ]
+}

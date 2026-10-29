@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Tripa Ruge base narrada.dc.html",
+  "salida": "Shot Tripa Ruge narrado.dc.html",
+  "nota": "Shot Científico #43. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese rugido de tu panza no siempre es hambre: tu intestino puede hacer ruido a cualquier hora."
+    },
+    {
+      "escena": "Musculos",
+      "texto": "Tu estómago y tus intestinos son tubos de músculo que se aprietan en ondas para mover lo que comes."
+    },
+    {
+      "escena": "Ruido",
+      "texto": "Al apretar, revuelven líquido y gas, y ese burbujeo hace ruido. Tiene nombre: borborigmo."
+    },
+    {
+      "escena": "Lleno",
+      "texto": "Cuando hay comida adentro, ese ruido queda más apagado."
+    },
+    {
+      "escena": "Vacio",
+      "texto": "Pero con el estómago vacío no hay comida que lo apague, y el ruido suena más fuerte, como un tambor hueco."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué ruge justo cuando tienes hambre?"
+    },
+    {
+      "escena": "Limpieza",
+      "texto": "Cuando pasan horas sin comer, empieza una onda de limpieza que recorre tu estómago y tu intestino."
+    },
+    {
+      "escena": "Barre",
+      "texto": "Barre los restos de comida hacia adelante, y se repite más o menos cada hora y media o dos horas."
+    },
+    {
+      "escena": "Hambre",
+      "texto": "Y una hormona de tu intestino, la motilina, la pone en marcha, y además te avisa que tienes hambre."
+    },
+    {
+      "escena": "Lugar",
+      "texto": "Y aunque le digamos tripa que ruge, gran parte del ruido viene del intestino delgado, no solo del estómago."
+    },
+    {
+      "escena": "Normal",
+      "texto": "Que tu panza haga ruido es normal y señal de que está trabajando."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu panza no te está regañando: está haciendo la limpieza."
+    }
+  ]
+}

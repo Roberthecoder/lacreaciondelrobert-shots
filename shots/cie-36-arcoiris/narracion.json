@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Arcoiris base narrada.dc.html",
+  "salida": "Shot Arcoiris narrado.dc.html",
+  "nota": "Shot Científico #36. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Nadie ve el mismo arcoíris que tú: aunque esté a tu lado, la otra persona ve otro."
+    },
+    {
+      "escena": "Gotas",
+      "texto": "Un arcoíris aparece cuando el Sol está detrás de ti y hay gotas de lluvia enfrente."
+    },
+    {
+      "escena": "Rebote",
+      "texto": "La luz entra a cada gota, se dobla, rebota en el fondo y sale otra vez, separada en colores."
+    },
+    {
+      "escena": "Angulo",
+      "texto": "Cada color sale en un ángulo distinto: el rojo, a unos cuarenta y dos grados de la sombra de tu cabeza."
+    },
+    {
+      "escena": "Cono",
+      "texto": "Así que solo ves de rojo las gotas que están justo en ese ángulo, formando un círculo alrededor de tu sombra."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y la persona de al lado?"
+    },
+    {
+      "escena": "Otras",
+      "texto": "Su cabeza está en otro lugar, así que su círculo de cuarenta y dos grados pasa por otras gotas."
+    },
+    {
+      "escena": "Propio",
+      "texto": "Cada quien ve su propio arcoíris, hecho con su propia luz."
+    },
+    {
+      "escena": "Circulo",
+      "texto": "Y en realidad es un círculo completo: desde el suelo solo ves la parte de arriba, pero desde un avión a veces se ve redondo."
+    },
+    {
+      "escena": "Doble",
+      "texto": "Y si la luz rebota dos veces dentro de la gota, sale un segundo arcoíris, más arriba y con los colores al revés."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese arcoíris no está allá afuera, esperando a todos: está hecho para tus ojos."
+    }
+  ]
+}

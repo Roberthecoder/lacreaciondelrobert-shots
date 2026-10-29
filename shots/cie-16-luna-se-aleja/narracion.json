@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Luna Se Aleja base narrada.dc.html",
+  "salida": "Shot Luna Se Aleja narrado.dc.html",
+  "nota": "Shot Científico #16. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "La Luna se está alejando de ti: en promedio, casi cuatro centímetros cada año."
+    },
+    {
+      "escena": "Espejos",
+      "texto": "En 1969, los astronautas del Apolo 11 dejaron en la Luna un panel lleno de pequeños espejos."
+    },
+    {
+      "escena": "Laser",
+      "texto": "Desde la Tierra le disparan rayos láser, y la luz rebota de regreso."
+    },
+    {
+      "escena": "Tiempo",
+      "texto": "Midiendo cuánto tarda en ir y volver, unos dos segundos y medio, se calcula la distancia con muchísima precisión."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Con más de cuarenta años de disparos se midió que la Luna se aleja unos tres punto ocho centímetros cada año."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué se va?"
+    },
+    {
+      "escena": "Mareas",
+      "texto": "Por las mareas: la Luna jala los océanos y forma bultos de agua."
+    },
+    {
+      "escena": "Giro",
+      "texto": "La Tierra gira más rápido de lo que la Luna le da la vuelta, así que esos bultos se adelantan y jalan a la Luna hacia adelante."
+    },
+    {
+      "escena": "Empuje",
+      "texto": "Ese jalón le da energía y la Luna sube a una órbita más lejana. A cambio, el giro de la Tierra se frena muy poquito."
+    },
+    {
+      "escena": "Unas",
+      "texto": "¿Cuánto es tres punto ocho centímetros al año? Más o menos lo que crecen las uñas de tus manos en un año."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que cada vez que te cortas las uñas, acuérdate: la Luna también se alejó un poquito."
+    }
+  ]
+}

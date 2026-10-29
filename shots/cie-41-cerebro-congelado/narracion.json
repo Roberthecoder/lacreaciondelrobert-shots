@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Cerebro Congelado base narrada.dc.html",
+  "salida": "Shot Cerebro Congelado narrado.dc.html",
+  "nota": "Shot Científico #41. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese dolor de cabeza por comer helado muy rápido no es tu cerebro congelándose: el frío está en tu paladar, pero lo sientes en la frente."
+    },
+    {
+      "escena": "Paladar",
+      "texto": "La idea más aceptada: cuando algo muy frío toca tu paladar o tu garganta, los vasos de esa zona reaccionan."
+    },
+    {
+      "escena": "Nervio",
+      "texto": "Esa señal la manda el nervio trigémino, el que siente casi toda tu cara."
+    },
+    {
+      "escena": "Frente",
+      "texto": "Y tu cerebro la ubica en la frente: es un dolor que se siente lejos de donde empieza."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2012, en Harvard, Jorge Serrador puso a voluntarios a tomar agua helada con un popote pegado al paladar."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Midió que una arteria del cerebro se ensanchaba justo cuando empezaba el dolor, y volvía a cerrarse cuando se quitaba."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo se quita?"
+    },
+    {
+      "escena": "Lengua",
+      "texto": "Lo que se recomienda: calentar tu paladar, pegando la lengua al techo de tu boca, o tomar algo tibio."
+    },
+    {
+      "escena": "Rapido",
+      "texto": "Casi siempre se quita solo en menos de dos minutos."
+    },
+    {
+      "escena": "Despacio",
+      "texto": "Y un estudio de 2002 en Canadá encontró que comer el helado despacio ayuda a evitarlo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no se congela tu cerebro: es tu paladar mandando la alarma a tu frente."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Caracol Mar base narrada.dc.html",
+  "salida": "Shot Caracol Mar narrado.dc.html",
+  "nota": "Shot Científico #28. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese mar que oyes dentro de un caracol no es el mar: es el ruido de donde estás, rebotando adentro."
+    },
+    {
+      "escena": "Ruido",
+      "texto": "A tu alrededor casi siempre hay ruido, aunque no lo notes: voces lejanas, el refri, el viento, los coches de la calle."
+    },
+    {
+      "escena": "Cavidad",
+      "texto": "La concha es un hueco curvo, y dentro de él algunos tonos de ese ruido rebotan y se refuerzan."
+    },
+    {
+      "escena": "Mar",
+      "texto": "Ese zumbido reforzado, como un shhh suave y continuo, suena muy parecido a las olas del mar."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si es tu sangre, como dicen?"
+    },
+    {
+      "escena": "Mito",
+      "texto": "Mucha gente cree que lo que se oye es el ruido de su propia sangre corriendo cerca del oído."
+    },
+    {
+      "escena": "Sangre",
+      "texto": "No es lo principal: si fuera tu sangre, el caracol sonaría igual en cualquier lugar, y en un cuarto muy silencioso casi no suena."
+    },
+    {
+      "escena": "Vaso",
+      "texto": "Haz la prueba: pon un vaso o tu mano ahuecada sobre tu oreja. También vas a oír tu propio mar."
+    },
+    {
+      "escena": "Tamano",
+      "texto": "Y cambia con el tamaño: un hueco más grande refuerza tonos más graves; uno chico, más agudos."
+    },
+    {
+      "escena": "Lugar",
+      "texto": "Y también cambia con el lugar: en una calle con tráfico tu mar se oye más bravo que en tu recámara."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que el mar del caracol lo traes tú: es el ruido de tu cuarto, con eco. Y aun así, suena bonito."
+    }
+  ]
+}

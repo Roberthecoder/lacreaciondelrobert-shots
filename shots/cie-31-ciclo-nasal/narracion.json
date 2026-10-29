@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Ciclo Nasal base narrada.dc.html",
+  "salida": "Shot Ciclo Nasal narrado.dc.html",
+  "nota": "Shot Científico #31. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Lo más seguro es que ahora mismo respires más por un lado de la nariz que por el otro, y que cada cierto tiempo se turnen."
+    },
+    {
+      "escena": "Prueba",
+      "texto": "Haz esto: tápate un lado y respira, y luego el otro. Seguramente uno deja pasar más aire."
+    },
+    {
+      "escena": "Cornetes",
+      "texto": "Dentro de tu nariz, los cornetes están forrados de un tejido que se llena y se vacía de sangre."
+    },
+    {
+      "escena": "Turno",
+      "texto": "Tu sistema nervioso hincha los de un lado mientras deshincha los del otro, y luego cambian."
+    },
+    {
+      "escena": "Ciclo",
+      "texto": "A eso se le llama ciclo nasal, y cada turno puede durar desde media hora hasta varias horas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué no lo notas?"
+    },
+    {
+      "escena": "Total",
+      "texto": "Porque el aire total que entra casi no cambia: lo que pierde un lado, lo va ganando el otro, poco a poco."
+    },
+    {
+      "escena": "Para",
+      "texto": "¿Para qué sirve? Se cree que deja descansar a cada lado, para que se humedezca y se limpie."
+    },
+    {
+      "escena": "Acostado",
+      "texto": "Por eso, cuando te acuestas de lado, a veces se te tapa el lado que queda abajo."
+    },
+    {
+      "escena": "Gripa",
+      "texto": "Y cuando tienes gripa lo notas mucho más: parece que lo tapado se cambia de un lado al otro durante el día."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu nariz casi nunca trabaja pareja: tiene turnos, como si fueran dos narices."
+    }
+  ]
+}

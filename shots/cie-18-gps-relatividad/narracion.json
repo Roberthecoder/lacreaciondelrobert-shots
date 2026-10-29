@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot GPS Relatividad base narrada.dc.html",
+  "salida": "Shot GPS Relatividad narrado.dc.html",
+  "nota": "Shot Científico #18. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "El GPS de tu celular no funciona solo con satélites: funciona gracias a la teoría de Einstein."
+    },
+    {
+      "escena": "Satelites",
+      "texto": "Allá arriba hay decenas de satélites GPS, a unos veinte mil kilómetros de altura."
+    },
+    {
+      "escena": "Relojes",
+      "texto": "Cada uno lleva relojes atómicos y manda la hora exacta en que envió su señal."
+    },
+    {
+      "escena": "Distancia",
+      "texto": "Tu celular compara a qué hora salió cada señal y a qué hora llegó, y así calcula su distancia a cada satélite."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué tiene que ver Einstein?"
+    },
+    {
+      "escena": "Gravedad",
+      "texto": "Allá arriba la gravedad es más débil y, según la relatividad, el tiempo corre más rápido: unos cuarenta y cinco microsegundos más al día."
+    },
+    {
+      "escena": "Velocidad",
+      "texto": "Pero los satélites van a casi catorce mil kilómetros por hora, y eso los atrasa unos siete."
+    },
+    {
+      "escena": "Neto",
+      "texto": "En total, sus relojes se adelantan unos treinta y ocho microsegundos cada día."
+    },
+    {
+      "escena": "Error",
+      "texto": "Parece nada, pero la señal viaja a la velocidad de la luz: sin corregirlo, el error crecería más de diez kilómetros cada día."
+    },
+    {
+      "escena": "Correccion",
+      "texto": "Por eso sus relojes se ajustan desde antes del lanzamiento, para que en órbita marquen igual que en la Tierra."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que cada vez que buscas una dirección, estás usando la relatividad."
+    }
+  ]
+}
