@@ -364,7 +364,7 @@ function Dolly() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 2.6} texto="¿un espermatozoide?" x={330} y={470} tam={42} />
-      <Etiqueta T={T} at={K.G + 2.6} until={K.D - 0.3} x={60} y={520} texto="célula de ubre" tam={32} color={KC.ink} />
+      <Etiqueta T={T} at={K.G + 2.95} until={K.D - 0.3} x={60} y={520} texto="célula de ubre" tam={32} color={KC.ink} />
       <Chip T={T} at={K.D + 0.6} until={K.U - 0.2} texto="Dolly · Instituto Roslin, Escocia" x={540} y={1500} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.U + 0.2} until={K.U + 2.6} texto="oveja Finn Dorset · cara blanca" x={540} y={1500} tam={36} borde={KC.pink} />
       <Chip T={T} at={K.U + 4.8} until={K.Ov - 0.2} texto="células quietas: ya no se dividen" x={540} y={1500} tam={34} borde={KC.yellow} />
