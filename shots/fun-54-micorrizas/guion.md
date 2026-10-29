@@ -1,4 +1,4 @@
-# Shot Fungi Mati #54 · Ese hilito blanco no es el internet del bosque: es un mercado
+# Shot Fungi Mati #54 · Ese hilito blanco no es el internet del bosque que te contaron: es un mercado
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #54 · rama `pedido300/fun`.
 - **Formato:** N6 "mito vs dato" mezclado con N1 (macro → micro → macro): cada afirmación sale con su sello de evidencia
@@ -12,7 +12,7 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es un mercado. | Fondo menta: pie de un árbol de cerca, raíces en el suelo; desde el cuadro 0 crece el micelio blanco en las puntas («hilitos de hongo»). Sale un ícono de wifi («¿internet del bosque?»), se tacha y en su lugar cae un toldo de mercado («es un mercado»). |
+| 0 | Gancho | Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es un mercado. | Fondo menta: pie de un árbol de cerca, raíces en el suelo; desde el cuadro 0 crece el micelio blanco en las puntas («hilitos de hongo»). Sale un ícono de wifi («¿el «internet del bosque»?»), se tacha y en su lugar cae un toldo de mercado («es un mercado»). |
 | 1 | Viral | Seguro oíste que un árbol madre alimenta a sus hijos por una red de hongos. | Teléfono vertical con un "video viral": árbol grande con corona y arbolitos, flechas brillantes por una red de cables. Chip "lo que se hizo viral". |
 | 2 | Micorriza | Lo comprobado: esos hongos, las micorrizas, se meten en las raíces. | Fondo oscuro, raicita por dentro (esquemática): estela, corteza, epidermis; el hongo forma el **manto** por fuera y la **red de Hartig** entre las células; hifas hacia el suelo. Sello verde **COMPROBADO**. Etiquetas «manto de hongo», «red de Hartig (entre células)», «micorriza = hongo + raíz». Barra 100 µm. |
 | 3 | Trato | Le dan a la planta fósforo y nitrógeno, y ella les paga con carbono: sobre todo azúcares. | Mismo corte: bolitas P y N entran del suelo a la raíz; cubitos de azúcar salen de la raíz al hongo. Chips «hongo → planta: fósforo · nitrógeno» y «planta → hongo: carbono, sobre todo azúcares». |
@@ -28,7 +28,7 @@
 
 **Música:** cama grave y continua, curiosa, sin golpe marcado. Efectos en el mismo cuadro: tierra al escarbar, "bip" del wifi que se apaga, toque de pantalla del teléfono, tres golpes de sello (verde, amarillo, rojo), tintineo de cada bolita P/N y cada cubito de azúcar, encendido de las plantitas, pings al encenderse los 19 árboles, siseo de la bolsa del experimento, "¿?" suave en el debate, barras que suben.
 
-Barras de escala: 10 cm (pie del árbol y raíces), 100 µm (raicita por dentro), 10 cm (plantitas), 1 m (re-gancho), 10 m (parcela de 30 × 30 m), 10 cm (árboles jóvenes del experimento), 1 m (árbol madre), 10 cm (cierre).
+Barras de escala: 10 cm (pie del árbol y raíces), 100 µm (raicita por dentro), 10 cm (plantitas), 1 m (re-gancho), 10 m (parcela de 30 × 30 m), 10 cm (árboles jóvenes del experimento), 5 m (árbol madre), 10 cm (cierre).
 
 ## Robert en pantalla
 

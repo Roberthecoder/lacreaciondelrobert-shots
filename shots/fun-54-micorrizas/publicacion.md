@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #54 · Ese hilito blanco no es el internet del bosque: es un mercado
+# Publicación · Shot Fungi Mati #54 · Ese hilito blanco no es el internet del bosque que te contaron: es un mercado
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -43,9 +43,9 @@ Descripción:
 ```text
 Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es un mercado.
 Las micorrizas son la unión de un hongo con la raíz de una planta. En las ectomicorrizas (como las de abetos de Douglas y abedules) el hongo forma un manto alrededor de la raicita y una red entre sus células, la red de Hartig. Ahí ocurre el intercambio: el hongo entrega nutrientes como fósforo y nitrógeno, y la planta le paga con carbono que fabricó con la luz, sobre todo azúcares (en otro tipo de micorrizas, las arbusculares, también grasas). Es muy común: 72 % de las plantas vasculares tienen micorrizas arbusculares, 2 % ectomicorrizas, 1.5 % ericoides y 10 % de orquídea; solo 8 % nunca tienen (Brundrett y Tedersoo, 2018).
-¿Un mismo hongo puede estar en varios árboles? Sí: en un bosque de abeto de Douglas de Columbia Británica, Canadá, en una parcela de 30 × 30 m, cada individuo de los hongos Rhizopogon (identificado por su ADN) estaba en raíces de hasta 19 árboles (Beiler et al., 2010).
+¿Un mismo hongo puede estar en varios árboles? Sí: en un bosque de abeto de Douglas de Columbia Británica, Canadá, en una parcela de 30 × 30 m, un mismo individuo de los hongos Rhizopogon (identificado por su ADN) llegaba a estar en raíces de hasta 19 árboles (Beiler et al., 2010).
 Lo que está en debate: en 1997, Suzanne Simard y su equipo marcaron con carbono 13 y carbono 14 a abedules de papel y abetos de Douglas jóvenes en el campo, y encontraron carbono que pasó de unos a otros. La revisión de Karst, Jones y Hoeksema (2023) dice que esos resultados de campo tienen otras explicaciones, como que el carbono haya viajado por el suelo y no por el hongo; otra revisión de 2023 (Henriksson et al.) concluye que aún falta evidencia de una transferencia neta importante que beneficie al árbol que la recibe. Simard y colegas respondieron en 2025 y defienden su trabajo.
-Lo que no tiene evidencia publicada: que los árboles maduros manden recursos o señales de preferencia a sus "hijos" por la red. Además, Karst y su equipo encontraron que las citas que afirman más de lo que muestran los estudios se duplicaron en 25 años.
+Lo que no tiene evidencia (según Karst et al., 2023): que los árboles maduros manden de preferencia recursos o señales a sus "hijos" por la red; esa revisión no encontró ni un estudio revisado por científicos, hecho en bosques, que lo demuestre. Además, Karst y su equipo encontraron que las citas a estudios sobre estas redes que afirman más de lo que muestran los estudios se duplicaron en 25 años.
 Así que ese hilito blanco, seguro, es un mercado. Lo del internet del bosque, todavía se investiga.
 El dibujo es esquemático.
 Fuentes:
@@ -76,7 +76,7 @@ Soy Robert, de La Creación del Robert 🌱
 El "internet del bosque" es una gran historia, pero la evidencia es más modesta, y vale la pena distinguir niveles.
 Comprobado: las micorrizas intercambian nutrientes (fósforo, nitrógeno) por carbono de la planta, y unas 85 de cada 100 especies de plantas vasculares las tienen (Brundrett y Tedersoo, 2018). Un mismo hongo puede colonizar las raíces de varios árboles: hasta 19 en una parcela de Canadá (Beiler et al., 2010).
 En debate: la transferencia de recursos entre árboles a través de esas redes. La revisión de Karst, Jones y Hoeksema (Nature Ecology & Evolution, 2023) concluye que los resultados de campo tienen explicaciones alternativas, como el paso por el suelo.
-Sin evidencia publicada: que los árboles maduros favorezcan a su descendencia por la red. Los autores además encontraron que las afirmaciones sin sustento se duplicaron en 25 años en la literatura científica. Simard y colegas respondieron en 2025.
+Sin evidencia según esa revisión: que los árboles maduros favorezcan a su descendencia por la red (no hallaron estudios revisados por pares, hechos en bosques, que lo demuestren). Los autores además encontraron que las citas sin sustento a estudios sobre estas redes se duplicaron en 25 años. Simard y colegas respondieron en 2025.
 Lección para comunicar ciencia: decir el grado exacto de evidencia también es parte del dato.
 ¿Cómo comunicas tú una idea que todavía está en debate?
 Shot Fungi Mati #54 · La Creación del Robert
@@ -91,7 +91,7 @@ Las micorrizas cambian fósforo y nitrógeno por azúcares: comprobado. ¿Un "á
 
 ### Threads
 ```text
-Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es un mercado. 🍄 Hongo y raíz cambian fósforo y nitrógeno por azúcares (comprobado). Que un árbol madre alimente a sus hijos por la red: sin evidencia publicada, según una revisión de 2023. ¿Tú habías escuchado lo del "árbol madre"?
+Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es un mercado. 🍄 Hongo y raíz cambian fósforo y nitrógeno por azúcares (comprobado). Que un árbol madre alimente a sus hijos por la red: ni un estudio revisado en bosques que lo demuestre, según una revisión de 2023. ¿Tú habías escuchado lo del "árbol madre"?
 Shot Fungi Mati #54 · La Creación del Robert
 #Hongos
 ```

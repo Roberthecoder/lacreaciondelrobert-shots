@@ -1,4 +1,4 @@
-# Verificación · Shot Fungi Mati #54 · Ese hilito blanco no es el internet del bosque: es un mercado
+# Verificación · Shot Fungi Mati #54 · Ese hilito blanco no es el internet del bosque que te contaron: es un mercado
 
 29 oct 2026. **Verificación independiente (subagente que no escribió el guion).** Se abrieron los textos completos cuando
 estuvieron disponibles: Karst et al. 2023 (PDF completo del laboratorio de Hoeksema), Simard et al. 2025 (Frontiers, texto

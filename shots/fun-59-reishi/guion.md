@@ -12,25 +12,25 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese frasco de reishi no siempre trae lo que dice: de diecinueve, solo cinco cumplían su etiqueta. | Fondo amarillo de lunares: un frasco genérico "REISHI" (sin marca real) gira y cae una cápsula (cuadro 0.3). Junto a él, 19 frascos chiquitos en fila; 5 se encienden en verde ✓ y 14 quedan grises. Número grande "5 de 19". |
-| 1 | Hongo | El reishi es un hongo, Ganoderma; en China le dicen lingzhi. | Del frasco sale el hongo real: repisa en forma de riñón, rojiza y brillante como barniz, con borde claro, pegada a un tronco. Etiquetas "reishi · lingzhi" y *Ganoderma*. |
-| 2 | Contiene | Trae triterpenos y polisacáridos, como los betaglucanos, que sí se estudian. | Zoom al hongo (fondo oscuro, "AL MICROSCOPIO · LO QUE TRAE"): moléculas esquemáticas de triterpeno (anillos) y una cadena de betaglucano (cuentas en rama). Chip "sí se estudian". |
+| 1 | Hongo | El reishi es un hongo, Ganoderma; en China le dicen lingzhi. | Del frasco sale el hongo real: sombrero en forma de riñón, rojizo y brillante (lacado), con un **pie lateral** también brillante que sale de la madera de un tronco (sin borde claro). Etiquetas "reishi · lingzhi" y *Ganoderma*. Barra de escala 10 cm. |
+| 2 | Contiene | Trae triterpenos y polisacáridos que sí se estudian. | Zoom al hongo (fondo oscuro, "POR DENTRO · LO QUE TRAE"): moléculas esquemáticas de triterpeno (anillos, etiqueta "triterpenos · ácidos ganodéricos") y una cadena de betaglucano (cuentas en rama, etiqueta "polisacáridos · betaglucanos"). Chip "sí se estudian". |
 | 3 | MitoCancer | Mito: que cura el cáncer. En 2016, una revisión Cochrane juntó cinco ensayos chicos. | Tarjeta "cura el cáncer" con sello rojo **MITO**. TarjetaEstudio "Cochrane · 2016 · 5 ensayos · 373 personas". |
-| 4 | DatoCancer | Dato: no alcanzó para usarlo solo como tratamiento, y ninguno midió si alarga la vida. | Sello verde **DATO**. Dos chips: "solo, como tratamiento: no hay pruebas suficientes" y "¿alarga la vida? ningún ensayo lo midió". |
-| 5 | Junto | Con quimio o radioterapia respondieron algo mejor, en estudios de baja calidad. | Balanza: de un lado "quimio o radio + reishi" sube un poquito; encima un chip amarillo "calidad de los estudios: baja". |
+| 4 | DatoCancer | Dato: no alcanzó para usarlo solo como tratamiento; ninguno midió si alarga la vida. | Sello verde **DATO**. Dos chips: "solo, como tratamiento: no hay pruebas suficientes" y "¿alarga la vida? ningún ensayo lo midió". |
+| 5 | Junto | Con quimio o radio respondieron algo mejor, en estudios de baja calidad. | Balanza: de un lado "quimio o radioterapia + reishi" sube un poquito; encima un chip amarillo "calidad de los estudios: baja". |
 | 6 | Pregunta | ¿Y qué hay dentro del frasco? | **Re-gancho.** El frasco gigante con un "?" — Robert grande, pensativo. |
 | 7 | Estudio | En 2017, un equipo de Macao y la Farmacopea de Estados Unidos analizó diecinueve suplementos. | TarjetaEstudio "Sci. Reports 2017 · U. de Macao + USP · 19 suplementos comprados en línea en 2015". Los 19 frascos en fila. |
-| 8 | Almidon | Trece traían almidón, que el cuerpo del hongo no tiene: suele ser relleno. | 13 frascos se pintan de morado (prueba de yodo); granos de almidón esquemáticos. Chip "el cuerpo del hongo no tiene almidón". Contador "13 de 19". |
+| 8 | Almidon | Trece traían almidón, que el cuerpo del hongo no tiene: suele ser relleno. | 13 frascos se pintan de morado (prueba de yodo); granos esquemáticos. Chip "tipo almidón: el cuerpo del hongo no lo tiene". Contador "13 de 19". |
 | 9 | Betaglucano | El betaglucano del reishi apareció solo en cinco. | La cadena de betaglucano se enciende solo sobre 5 frascos. Contador "5 de 19". |
-| 10 | MitoEspecie | Mito: la etiqueta acierta la especie. En 2018, con ADN, ninguno de veinte era Ganoderma lucidum. | Etiqueta "*Ganoderma lucidum*" con sello **MITO**. Hebra de ADN que se lee; 20 productos (cápsulas, té, polvo) con ✗ en "*G. lucidum*". TarjetaEstudio "Front. Microbiol. 2018 · ADN de 20 productos". |
-| 11 | Lingzhi | La mayoría eran Ganoderma lingzhi, el de la medicina china: falla el nombre, no el hongo. | Sello **DATO**. Se reetiquetan: "*G. lingzhi*" (Asia oriental). Mapa chiquito: *G. lucidum* → Europa; *G. lingzhi* → Asia oriental. |
-| 12 | Cierre | Así que ese frasco no siempre trae lo que dice, y lo que promete aún no está probado. | **Regreso a la imagen del inicio:** el mismo frasco, ahora con su etiqueta corregida a mano ("¿especie? ¿relleno? ¿pruebas?") y los sellos pegados. |
+| 10 | MitoEspecie | Mito: la etiqueta acierta la especie. En 2018 leyeron el ADN de veinte productos: en ninguno había Ganoderma lucidum. | Etiqueta "*Ganoderma lucidum*" con sello **MITO**. Hebra de ADN que se lee; 20 productos (cápsulas, té, polvo) con ✗ en "*G. lucidum*". TarjetaEstudio "Front. Microbiol. 2018 · ADN de 20 productos". |
+| 11 | Lingzhi | La mayoría eran Ganoderma lingzhi, el más usado en la medicina china: en esos falla el nombre, no el hongo. | Sello **DATO**. La mayoría de los productos se reetiquetan "*G. lingzhi*" (sin porcentaje en pantalla). Mapa chiquito: "*G. lucidum*: Europa (y partes de China)" y "*G. lingzhi*: Asia". |
+| 12 | Cierre | Así que ese frasco no siempre trae lo que dice, ni lo que promete está probado. | **Regreso a la imagen del inicio:** el mismo frasco, ahora con su etiqueta corregida a mano ("¿especie? ¿relleno? ¿pruebas?") y los sellos pegados. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y continua, un poco tensa (de investigación), sin golpe; se abre un poco en «falla el nombre, no el hongo». Efectos en el mismo cuadro: cápsula que cae y rebota, clic de cada frasco que se enciende (5) o se apaga, golpe de cada sello (MITO grave, DATO brillante), burbujeo de moléculas, gotas de yodo (13), lectura de ADN (tics rápidos), papel de la etiqueta que se corrige.
 
-Barra de escala: 5 cm (frasco), 10 cm (hongo en el tronco), 1 nm (moléculas, esquemáticas), 5 µm (granos de almidón).
+Barra de escala: 5 cm (frasco), 10 cm (hongo en el tronco), 1 nm (moléculas, esquemáticas), 5 µm (granos tipo almidón).
 
-Aviso en pantalla (pequeño, al final): «No es consejo médico. Si tomas medicamentos o estás en tratamiento, platícalo con tu médico.»
+Aviso en pantalla (pequeño, al final): «No es consejo médico. Si tomas medicamentos o estás en tratamiento, platícalo con tu médico.» (respaldo: NCI PDQ y MSD/Merck Manual sobre suplementos e interacciones).
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 

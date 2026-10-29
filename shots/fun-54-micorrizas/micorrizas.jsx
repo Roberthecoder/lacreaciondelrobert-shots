@@ -339,7 +339,7 @@ function MicorrizasShot() {
       <BarraEscala T={T} at={K.P} until={K.R} texto="1 m" largo={140} />
       <BarraEscala T={T} at={K.R} until={K.Si} texto="10 m" largo={200} />
       <BarraEscala T={T} at={K.Si} until={K.Ma} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.Ma} until={K.Ci} texto="1 m" largo={120} />
+      <BarraEscala T={T} at={K.Ma} until={K.Ci} texto="5 m" largo={120} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={170} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

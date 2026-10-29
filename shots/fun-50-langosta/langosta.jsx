@@ -435,7 +435,7 @@ function LangostaShot() {
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.R - 0.1} texto="2005, norte de Níger: *una avioneta.*" />
       <Subtitulo T={T} idx={8} at={K.R + 0.1} until={K.L - 0.1} texto="Día 5 empiezan a morir; *80 % a las 3 semanas.*" />
       <Subtitulo T={T} idx={9} at={K.L + 0.1} until={K.C - 0.1} texto="Más lento, pero *no dañó hormigas ni aves.*" />
-      <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.M - 0.1} texto="Llegaron más aves: *sobre todo, hembras.*" />
+      <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.M - 0.1} texto="Más aves; los cernícalos, *sobre todo hembras.*" />
       <Subtitulo T={T} idx={11} at={K.M + 0.1} until={K.Ci - 0.1} texto="SENASICA desarrolló cómo usarlo; *en 2020, cepa a Costa Rica.*" />
       <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Pelea con un hongo *que suele ganar.*" />
 
