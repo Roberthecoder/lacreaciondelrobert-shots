@@ -57,13 +57,13 @@ function Persona({ x, y, s = 1, color = AZUL, extra = null, T = 0, ph = 0 }) {
   </g>;
 }
 // Barra vertical con su propio momento de entrada.
-function BarraV({ T, at, until, valor, max, texto, etiqueta, color, cx, base = 1130, alto = 340 }) {
+function BarraV({ T, at, until, valor, max, texto, etiqueta, color, cx, base = 1080, alto = 330 }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube'), g = kprog(T, at + 0.1, at + 1.1, kEase.sale), h = alto * (valor / max) * g;
   return <div style={{ position:'absolute', left:cx - 140, top:base - h - 90, width:280, zIndex:40, opacity:e.o, textAlign:'center' }}>
     <div style={{ font:`400 76px ${KF.titulo}`, color, WebkitTextStroke:`3px ${KC.ink}`, height:84 }}>{texto}</div>
     <div style={{ height:h, background:color, border:`7px solid ${KC.ink}`, borderRadius:'20px 20px 0 0', marginTop:6, boxShadow:`10px 0 0 ${KC.ink}` }}></div>
-    <div style={{ marginTop:12, font:`900 38px/1.1 ${KF.texto}`, color:KC.ink }}>{etiqueta}</div>
+    <div style={{ marginTop:12, font:`900 34px/1.1 ${KF.texto}`, color:KC.ink }}>{etiqueta}</div>
   </div>;
 }
 // Tarjeta con la frase de prueba de Stanovsky et al. (inglés → español, el "El" tachado).
@@ -87,6 +87,7 @@ function Traduccion() {
   const K = { G: CUES.Gancho, P: CUES.Prueba, E: CUES.Estudio, R: CUES.Resultado, Q: CUES.Pregunta, Re: CUES.Realidad, Go: CUES.Google, Es: CUES.Espanol, S: CUES.Seattle, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
+  const svgZ = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:25 }}>{c}</svg>;
   // gancho: el dedo intenta borrar «he» y vuelve a salir
   const borra = kprog(T, K.G + 0.95, K.G + 1.25) * (1 - kprog(T, K.G + 1.8, K.G + 2.1, kEase.sale));
   const dedoX = klerp(150, 330, kprog(T, K.G + 0.25, K.G + 0.9, kEase.sale)) + 120 * kprog(T, K.G + 0.95, K.G + 1.3, kEase.suave);
@@ -110,7 +111,7 @@ function Traduccion() {
       <Escena T={T} a={K.G} b={K.P}>
         <FondoLunares color={KC.cyan} />
         <Traductor T={T} x={340} y={860} texto="ő egy mérnök" salidas={[{ at: -5, partes: heGancho }]} />
-        {svg(<Dedo x={dedoX} y={1070 + 40 * Math.sin(T * 6) * (1 - kprog(T, K.G + 0.9, K.G + 1.0))} s={0.85} o={1 - kprog(T, K.G + 1.4, K.G + 1.7)} />)}
+        {svgZ(<Dedo x={dedoX} y={1000 + 30 * Math.sin(T * 6) * (1 - kprog(T, K.G + 0.9, K.G + 1.0))} s={0.85} o={1 - kprog(T, K.G + 1.4, K.G + 1.7)} />)}
       </Escena>
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.P - 0.2} texto="¿error de dedo?" x={800} y={880} tam={42} />
       <Chip T={T} at={K.G + 2.0} until={K.P - 0.2} texto="lo aprendió" x={800} y={1000} tam={46} borde={KC.red} />
@@ -125,29 +126,29 @@ function Traduccion() {
         </g>)}
         <Traductor T={T} x={330} y={880} o={kprog(T, K.P + 2.4, K.P + 2.8)} dx={-200 * (1 - kprog(T, K.P + 2.4, K.P + 2.9, kEase.sale))} texto={pruebaTexto} escrito={pruebaEscrito} salidas={pruebaSal} parpadea={false} />
         {svg(<>
-          <g opacity={kprog(T, K.P + 4.9, K.P + 5.3)}><Persona x={830} y={820} s={0.75} color={AZUL} extra="casco" T={T} /></g>
-          <g opacity={kprog(T, K.P + 8.7, K.P + 9.1)}><Persona x={830} y={1080} s={0.65} color={KC.pink} extra="cofia" T={T} ph={2} /></g>
+          <g opacity={kprog(T, K.P + 4.9, K.P + 5.3)}><Persona x={830} y={770} s={0.6} color={AZUL} extra="casco" T={T} /></g>
+          <g opacity={kprog(T, K.P + 8.7, K.P + 9.1)}><Persona x={830} y={1000} s={0.6} color={KC.pink} extra="cofia" T={T} ph={2} /></g>
         </>)}
       </Escena>
       <Chip T={T} at={K.P + 0.6} until={K.P + 2.4} texto="húngaro: ő = él o ella" y={560} tam={42} borde={KC.ink} />
       <Chip T={T} at={K.P + 2.6} until={K.E - 0.2} texto="así salía en 2018" x={330} y={500} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.P + 5.0} until={K.E - 0.2} texto="ingeniero → he" x={830} y={960} tam={32} borde={AZUL} />
-      <Chip T={T} at={K.P + 8.8} until={K.E - 0.2} texto="enfermera → she" x={830} y={1180} tam={32} borde={KC.pink} />
+      <Chip T={T} at={K.P + 5.0} until={K.E - 0.2} texto="ingeniero → he" x={830} y={880} tam={32} borde={AZUL} />
+      <Chip T={T} at={K.P + 8.8} until={K.E - 0.2} texto="enfermera → she" x={830} y={1110} tam={32} borde={KC.pink} />
       {/* 3 · el estudio */}
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.lilac} />
         {svg(<>{PROF.map((p, i) => { const t0 = K.E + 0.6 + i * 0.16, u = kprog(T, t0, t0 + 1.2, kEase.sale), col = i % 4, fila = Math.floor(i / 4);
-          return <Ficha key={i} x={160 + col * 250 + (fila % 2) * 60} y={klerp(-80, 880 + fila * 78, u)} texto={p} tam={30} color={COLS[i % COLS.length]} rot={(i % 3 - 1) * 5} o={u > 0 ? 1 : 0} />; })}</>)}
+          return <Ficha key={i} x={160 + col * 250 + (fila % 2) * 60} y={klerp(-80, 840 + fila * 64, u)} texto={p} tam={30} color={COLS[i % COLS.length]} rot={(i % 3 - 1) * 5} o={u > 0 ? 1 : 0} />; })}</>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="2018" quien="experimentos · UFRGS, Brasil" revista="Prates, Avelar y Lamb · publicado en 2019" y={600} />
-      <Chip T={T} at={K.E + 1.8} until={K.R - 0.3} texto="1,019 profesiones · 12 idiomas sin género" y={1170} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 1.8} until={K.R - 0.3} texto="1,019 profesiones · 12 idiomas sin género" y={1110} tam={36} borde={KC.ink} />
       {/* 4 · resultado en ciencia y tecnología */}
       <Escena T={T} a={K.R} b={K.Q}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
       </Escena>
       <Chip T={T} at={K.R + 0.2} until={K.Q - 0.2} texto="ciencia y tecnología (STEM)" x={600} y={700} tam={38} borde={KC.ink} />
       <BarrasHT T={T} at={K.R + 0.4} until={K.Q - 0.2} top={790} filas={[{ valor: 71.6, texto:'72 %', etiqueta:'salió «él»', color: AZUL }, { valor: 4.2, texto:'4 %', etiqueta:'salió «ella»', color: KC.pink, at: K.R + 2.9 }]} />
-      <Chip T={T} at={K.R + 3.5} until={K.Q - 0.2} texto="el resto: neutro o sin pronombre" y={1170} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.R + 3.5} until={K.Q - 0.2} texto="el resto: neutro o sin pronombre" y={1120} tam={26} borde={KC.ink} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Q} b={K.Re} zoom={0.1}>
         <FondoLunares color={KC.coral} />
@@ -160,7 +161,7 @@ function Traduccion() {
       <BarraV T={T} at={K.Re + 0.4} until={K.Go - 0.2} valor={11.76} max={40} texto="12 %" etiqueta="«ella» en el traductor" color={KC.pink} cx={330} />
       <Chip T={T} at={K.Re + 1.2} until={K.Go - 0.2} texto="(todas las profesiones)" x={330} y={700} tam={30} borde={KC.pink} />
       <BarraV T={T} at={K.Re + 3.9} until={K.Go - 0.2} valor={35.94} max={40} texto="36 %" etiqueta="mujeres en esos trabajos" color={KC.blue} cx={760} />
-      <Chip T={T} at={K.Re + 4.6} until={K.Go - 0.2} texto="EE. UU., 2017" x={760} y={1225} tam={30} borde={KC.blue} />
+      <Chip T={T} at={K.Re + 4.6} until={K.Go - 0.2} texto="EE. UU., 2017" x={760} y={640} tam={30} borde={KC.blue} />
       {/* 7 · la respuesta de Google */}
       <Escena T={T} a={K.Go} b={K.Es}>
         <FondoLunares color={KC.orange} />
@@ -191,8 +192,8 @@ function Traduccion() {
         <FondoLunares color={KC.pink} />
       </Escena>
       <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 2.5} anio="2019" quien="Universidad de Washington, Seattle" revista="Stanovsky, Smith y Zettlemoyer · ACL" y={760} />
-      <FrasePrueba T={T} at={K.S + 2.7} until={K.C - 0.2} y={790} />
-      <NumeroGigante T={T} at={K.S + 4.7} until={K.C - 0.2} valor={53} dur={0.9} sufijo=" %" etiqueta="género correcto al español" x={540} y={1090} tam={150} color={KC.yellow} />
+      <FrasePrueba T={T} at={K.S + 2.7} until={K.C - 0.2} y={810} />
+      <NumeroGigante T={T} at={K.S + 4.7} until={K.C - 0.2} valor={53} dur={0.9} sufijo=" %" etiqueta="género correcto al español" x={540} y={1050} tam={130} color={KC.yellow} />
       {/* 10 · cierre: el mismo traductor */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
@@ -206,12 +207,12 @@ function Traduccion() {
       <Subtitulo T={T} idx={1} at={K.P + 0.1} until={K.P + 6.0} texto="Húngaro: *una palabra para él y ella.*" />
       <Subtitulo T={T} idx={2} at={K.P + 6.1} until={K.E - 0.1} texto="Salía *«he»*… y con enfermera, *«she».*" />
       <Subtitulo T={T} idx={3} at={K.E + 0.1} until={K.R - 0.1} texto="Brasil: *1,019 profesiones, 12 idiomas.*" />
-      <Subtitulo T={T} idx={4} at={K.R + 0.1} until={K.Q - 0.1} texto="Ciencia y tecnología: *«él» 72 %*, «ella» 4 %." />
+      <Subtitulo T={T} idx={4} at={K.R + 0.1} until={K.Q - 0.1} texto="Ciencia y tecnología: *«él» 72 %*, «ella» 4 %." />
       <Subtitulo T={T} idx={5} at={K.Q + 0.1} until={K.Re - 0.1} texto="¿Solo *copia la realidad?*" />
-      <Subtitulo T={T} idx={6} at={K.Re + 0.1} until={K.Go - 0.1} texto="«Ella»: *12 %.* Mujeres en esos trabajos: *36 %.*" />
+      <Subtitulo T={T} idx={6} at={K.Re + 0.1} until={K.Go - 0.1} texto="«Ella»: *12 %.* Mujeres en esos trabajos: *36 %.*" />
       <Subtitulo T={T} idx={7} at={K.Go + 0.1} until={K.Es - 0.1} texto="2018: *las dos versiones.* 2020: *húngaro.*" />
       <Subtitulo T={T} idx={8} at={K.Es + 0.1} until={K.S - 0.1} texto="En español: *el doctor o la doctora.*" />
-      <Subtitulo T={T} idx={9} at={K.S + 0.1} until={K.C - 0.1} texto="Seattle, 2019: *acertó solo 53 %.*" />
+      <Subtitulo T={T} idx={9} at={K.S + 0.1} until={K.C - 0.1} texto="Seattle, 2019: *acertó solo 53 %.*" />
       <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="¿Lo dijo la frase *o lo aprendió?*" />
 
       <Robert T={T} apariciones={[

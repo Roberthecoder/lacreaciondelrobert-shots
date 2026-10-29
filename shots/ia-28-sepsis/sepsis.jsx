@@ -93,7 +93,7 @@ function Regla({ T, at, until, aguja, banda }) {
     <rect x={X(0.5)} y={Y - 18} width={840} height={36} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={6} />
     {banda && <g opacity={bo}>
       <rect x={X(banda.de)} y={Y - 30} width={X(banda.a) - X(banda.de)} height={60} rx={10} fill={KC.mint} stroke={KC.ink} strokeWidth={6} />
-      <text x={(X(banda.de) + X(banda.a)) / 2} y={Y - 96} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>lo que decía el fabricante</text>
+      <text x={(X(banda.de) + X(banda.a)) / 2} y={Y - 124} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>lo que decía el fabricante</text>
       <text x={(X(banda.de) + X(banda.a)) / 2} y={Y - 48} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.teal} stroke={KC.ink} strokeWidth={1.5}>0.76–0.83</text>
     </g>}
     {[0.5, 0.6, 0.7, 0.8, 0.9, 1.0].map((v) => <g key={v}><line x1={X(v)} y1={Y + 22} x2={X(v)} y2={Y + 44} stroke={KC.ink} strokeWidth={5} />
@@ -154,9 +154,10 @@ function LupaIcono({ x, y, s = 1, rot = -30 }) {
   </g>;
 }
 // Sello.
-function Sello({ x, y, texto, color = KC.leaf, p = 1, rot = -10, tam = 54 }) {
-  if (p <= 0) return null;
-  return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) rotate(${rot}deg) scale(${klerp(2.0, 1, p)})`, opacity:Math.min(1, p * 2),
+function Sello({ T, x, y, texto, color = KC.leaf, p = 1, rot = -10, tam = 54, until = Infinity }) {
+  if (p <= 0 || T > until + 0.4) return null;
+  const fuera = 1 - kprog(T, until, until + 0.4);
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) rotate(${rot}deg) scale(${klerp(2.0, 1, p)})`, opacity:Math.min(1, p * 2) * fuera,
     border:`8px solid ${color}`, color, borderRadius:20, padding:'8px 28px', font:`400 ${tam}px ${KF.titulo}`, background:'rgba(255,255,255,.88)', whiteSpace:'nowrap', boxShadow:'0 10px 26px rgba(0,0,0,.3)' }}>{texto}</div>;
 }
 // Texto grande "2 de 3".
@@ -193,30 +194,30 @@ function Sepsis() {
       <Escena T={T} a={K.G} b={K.S}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Cama x={300} y={760} s={0.78} T={T} alarma={T > K.G + 0.4 ? 1 : 0} />
+          <Cama x={250} y={780} s={0.7} T={T} alarma={T > K.G + 0.4 ? 1 : 0} />
           {T > K.G + 3.6 && tres(K.G + 3.6, false)}
         </>)}
       </Escena>
       <Chip T={T} at={K.G + 0.5} until={K.G + 3.4} texto="IA en cientos de hospitales" x={330} y={430} tam={36} borde={KC.ink} />
-      <DosDeTres T={T} at={K.G + 4.7} until={K.S - 0.2} x={760} y={560} />
+      <DosDeTres T={T} at={K.G + 4.7} until={K.S - 0.2} x={805} y={760} />
       {/* 2 · qué es la sepsis (por dentro del cuerpo) */}
       <Escena T={T} a={K.S} b={K.E}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svg(<Cuerpo T={T} bact={kprog(T, K.S + 0.2, K.S + 1.2)} glob={kprog(T, K.S + 1.4, K.S + 3.4, kEase.suave)} inflama={kprog(T, K.S + 3.0, K.S + 4.2)} />)}
       </Escena>
-      <Etq T={T} at={K.S + 0.6} until={K.E - 0.2} x={150} y={990} texto="infección" lado="izq" color={KC.lilac} />
-      <Etq T={T} at={K.S + 1.8} until={K.E - 0.2} x={600} y={760} texto="tu defensa se desborda" tam={30} />
-      <Etq T={T} at={K.S + 3.2} until={K.E - 0.2} x={600} y={900} texto="daña tus órganos" color={KC.coral} tam={30} />
+      <Etq T={T} at={K.S + 0.6} until={K.E - 0.2} x={70} y={1050} texto="infección" color={KC.lilac} />
+      <Etq T={T} at={K.S + 1.8} until={K.E - 0.2} x={560} y={760} texto="tu defensa se desborda" tam={27} />
+      <Etq T={T} at={K.S + 3.2} until={K.E - 0.2} x={560} y={900} texto="daña tus órganos" color={KC.coral} tam={27} />
       <Chip T={T} at={K.S + 4.6} until={K.E - 0.2} texto="tratarla pronto es clave" x={540} y={1130} tam={38} borde={KC.mint} />
       {/* 3 · el estudio por fuera */}
       <Escena T={T} a={K.E} b={K.C}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{Array.from({ length: 12 }, (_, i) => <g key={i} opacity={kprog(T, K.E + 2.2 + i * 0.12, K.E + 2.5 + i * 0.12)}><Camita x={150 + (i % 6) * 156} y={1010 + Math.floor(i / 6) * 70} T={T} /></g>)}</>)}
+        {svg(<>{Array.from({ length: 12 }, (_, i) => <g key={i} opacity={kprog(T, K.E + 2.2 + i * 0.12, K.E + 2.5 + i * 0.12)}><Camita x={150 + (i % 6) * 156} y={1080 + Math.floor(i / 6) * 56} T={T} /></g>)}</>)}
       </Escena>
-      <Chip T={T} at={K.E + 0.3} until={K.C - 0.2} texto="prueba por fuera" x={330} y={430} tam={38} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.E + 0.5} until={K.C - 0.3} anio="2021" quien="Universidad de Michigan" revista="Wong et al. · JAMA Internal Medicine" y={700} />
-      <Contador T={T} at={K.E + 2.2} hasta={38455} dur={1.8} x={540} y={900} tam={76} color={KC.ink} />
-      {T > K.E + 2.2 && T < K.C + 0.3 && <div style={{ position:'absolute', left:0, right:0, top:1150, textAlign:'center', zIndex:41, opacity:kprog(T, K.E + 2.4, K.E + 2.8) * (1 - kprog(T, K.C - 0.2, K.C + 0.3)), font:`900 38px ${KF.texto}`, color:KC.ink }}>hospitalizaciones revisadas</div>}
+      <Chip T={T} at={K.E + 0.3} until={K.C - 0.2} texto="prueba por fuera" x={330} y={400} tam={38} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.E + 0.5} until={K.C - 0.3} anio="2021" quien="Universidad de Michigan" revista="Wong et al. · JAMA Internal Medicine" x={400} y={660} />
+      {T < K.C + 0.3 && <div style={{ opacity:1 - kprog(T, K.C - 0.2, K.C + 0.3) }}><Contador T={T} at={K.E + 2.2} hasta={38455} dur={1.8} x={540} y={940} tam={76} color={KC.ink} /></div>}
+      {T > K.E + 2.2 && T < K.C + 0.3 && <div style={{ position:'absolute', left:0, right:0, top:985, textAlign:'center', zIndex:41, opacity:kprog(T, K.E + 2.4, K.E + 2.8) * (1 - kprog(T, K.C - 0.2, K.C + 0.3)), font:`900 38px ${KF.texto}`, color:KC.ink }}>hospitalizaciones revisadas</div>}
       {/* 4 · la calificación */}
       <Escena T={T} a={K.C} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
@@ -260,7 +261,7 @@ function Sepsis() {
       </Escena>
       <TarjetaEstudio T={T} at={K.Co + 0.3} until={K.L - 0.3} anio="2022" quien="Johns Hopkins · TREWS" revista="Adams et al. · Nature Medicine" x={380} y={560} />
       <Chip T={T} at={K.Co + 4.8} until={K.L - 0.2} texto="menos muertes (asociación)" x={760} y={1150} tam={30} borde={KC.leaf} />
-      <Sello x={400} y={760} texto="estudio de sus creadores" color={KC.red} tam={46} p={kprog(T, K.Co + 6.6, K.Co + 7.0, kEase.sale)} rot={-4} />
+      <Sello T={T} until={K.L - 0.2} x={380} y={770} texto="estudio de sus creadores" color={KC.red} tam={46} p={kprog(T, K.Co + 6.6, K.Co + 7.0, kEase.sale)} rot={-4} />
       {/* 9 · la lección */}
       <Escena T={T} a={K.L} b={K.Ci}>
         <FondoLunares color={KC.yellow} />
@@ -270,12 +271,12 @@ function Sepsis() {
         </>)}
       </Escena>
       <Chip T={T} at={K.L + 0.3} until={K.Ci - 0.2} texto="«según quien la vende»" x={600} y={1110} tam={34} borde={KC.ink} />
-      <Sello x={600} y={640} texto="probada por fuera ✔" p={kprog(T, K.L + 2.4, K.L + 2.8, kEase.sale)} />
+      <Sello T={T} until={K.Ci - 0.2} x={600} y={640} texto="probada por fuera ✔" p={kprog(T, K.L + 2.4, K.L + 2.8, kEase.sale)} />
       {/* 10 · cierre: la misma cama y los mismos tres */}
       <Escena T={T} a={K.Ci} b={FIN}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Cama x={300} y={760} s={0.78} T={T} alarma={1} />
+          <Cama x={250} y={780} s={0.7} T={T} alarma={1} />
           {tres(K.Ci - 1, true)}
         </>)}
       </Escena>
@@ -289,7 +290,7 @@ function Sepsis() {
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.A - 0.1} texto="¿Avisar de más *es mejor?*" />
       <Subtitulo T={T} idx={5} at={K.A + 0.1} until={K.Ta - 0.1} texto="Tantas alarmas *cansan*" />
       <Subtitulo T={T} idx={6} at={K.Ta + 0.1} until={K.Co - 0.1} texto="Solo *7 de cada 100*" />
-      <Subtitulo T={T} idx={7} at={K.Co + 0.1} until={K.L - 0.1} texto="Menos muertes… *¿quién lo midió?*" />
+      <Subtitulo T={T} idx={7} at={K.Co + 0.1} until={K.L - 0.1} texto="¿Quién *lo midió?*" />
       <Subtitulo T={T} idx={8} at={K.L + 0.1} until={K.Ci - 0.1} texto="Pruébala *por fuera*" />
       <Subtitulo T={T} idx={9} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Así *no te cuida*" />
 
