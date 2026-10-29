@@ -173,11 +173,11 @@ function TareaChatGPT() {
           {fase > 0 && <g opacity={fase}><Hoja x={330} y={klerp(1060, 920, fase)} s={klerp(0.76, 0.9, fase)} T={T} titulo="EXAMEN" colorTitulo={KC.red} marcas={marcasExamen} rot={-2} /></g>}
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.G + 2.6} until={K.G + 4.8} prefijo="+" valor={48} dur={0.9} sufijo=" %" x={790} y={950} tam={180} color={KC.mint} />
-      <Chip T={T} at={K.G + 2.9} until={K.G + 4.8} texto="en la práctica, con IA" x={790} y={1110} tam={34} borde={KC.leaf} />
-      <NumeroGigante T={T} at={K.G + 5.1} until={K.Mi - 0.1} prefijo="−" valor={17} dur={0.7} sufijo=" %" x={800} y={950} tam={180} color={KC.red} />
-      <Chip T={T} at={K.G + 5.4} until={K.Mi - 0.1} texto="en el examen, sin IA" x={800} y={1110} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.G + 6.2} until={K.Mi - 0.1} texto="vs. quienes no usaron IA" x={800} y={1180} tam={26} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 2.6} until={K.G + 4.8} prefijo="+" valor={48} dur={0.9} sufijo=" %" x={790} y={900} tam={160} color={KC.mint} />
+      <Chip T={T} at={K.G + 2.9} until={K.G + 4.8} texto="en la práctica, con IA" x={790} y={1040} tam={34} borde={KC.leaf} />
+      <NumeroGigante T={T} at={K.G + 5.1} until={K.Mi - 0.1} prefijo="−" valor={17} dur={0.7} sufijo=" %" x={800} y={900} tam={160} color={KC.red} />
+      <Chip T={T} at={K.G + 5.4} until={K.Mi - 0.1} texto="en el examen, sin IA" x={800} y={1040} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.G + 6.2} until={K.Mi - 0.1} texto="vs. quienes no usaron IA" x={800} y={1110} tam={26} borde={KC.ink} />
 
       {/* 2 · el mito */}
       <Escena T={T} a={K.Mi} b={K.E}>
@@ -253,11 +253,11 @@ function TareaChatGPT() {
       <Escena T={T} a={K.Mu} b={K.Er}>
         <FondoLunares color={KC.pink} punto="rgba(255,255,255,.22)" />
         {svg(<>
-          <g opacity={kprog(T, K.Mu + 1.3, K.Mu + 1.7)}>
+          <g opacity={kprog(T, K.Mu + 1.3, K.Mu + 1.7) * (1 - kprog(T, K.Mu + 4.1, K.Mu + 4.5))}>
             <Hoja x={800} y={800} s={0.5} T={T} marcas={[0, 1, 2, 3].map((i) => ({ at: K.Mu + 1.9 + i * 0.5, tipo: 'ok' }))} rot={4} />
             <text x={800} y={1000} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>copiado…</text>
           </g>
-          {(() => { const e = kprog(T, K.Mu + 4.3, K.Mu + 4.8, kEase.rebote); return e > 0 && <g opacity={Math.min(1, e * 2)}><Muleta x={800 + (1 - e) * 300} y={760} s={0.95} rot={10 - e * 4} /></g>; })()}
+          {(() => { const e = kprog(T, K.Mu + 4.3, K.Mu + 4.8, kEase.rebote); return e > 0 && <g opacity={Math.min(1, e * 2)}><Muleta x={790 + (1 - e) * 300} y={800} s={0.95} rot={10 - e * 4} /></g>; })()}
         </>)}
       </Escena>
       {T > K.Mu - 0.45 && T < K.Er + 0.45 && <div style={{ opacity: kprog(T, K.Mu - 0.45, K.Mu + 0.05) * (1 - kprog(T, K.Er - 0.05, K.Er + 0.45)) }}>
@@ -268,7 +268,7 @@ function TareaChatGPT() {
           { at: K.Mu + 4.0, yo: true, texto: '¿Cuál es la respuesta?' }]} />
       </div>}
       <Chip T={T} at={K.Mu + 0.6} until={K.Er - 0.15} texto="el mensaje más común" x={760} y={470} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Mu + 4.6} until={K.Er - 0.15} texto="«muleta»" x={800} y={1150} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Mu + 4.6} until={K.Er - 0.15} texto="«muleta»" x={790} y={1150} tam={44} borde={KC.ink} />
 
       {/* 8 · errores y percepción */}
       <Escena T={T} a={K.Er} b={K.Tu}>
@@ -314,14 +314,14 @@ function TareaChatGPT() {
       <Chip T={T} at={K.C + 3.2} until={K.Ou} texto="pistas, no respuestas ✔" x={790} y={1090} tam={36} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mi - 0.1} texto="Práctica *+48 %*… examen *−17 %*" />
-      <Subtitulo T={T} idx={1} at={K.Mi + 0.1} until={K.E - 0.1} texto="Terminar *no es aprender.*" />
-      <Subtitulo T={T} idx={2} at={K.E + 0.1} until={K.Gr - 0.1} texto="Turquía, 2023: *casi mil* alumnos" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mi - 0.1} texto="*+48 %*… y luego *−17 %*" />
+      <Subtitulo T={T} idx={1} at={K.Mi + 0.1} until={K.E - 0.1} texto="Terminar *no es* aprender." />
+      <Subtitulo T={T} idx={2} at={K.E + 0.1} until={K.Gr - 0.1} texto="*Casi mil* alumnos, 2023" />
       <Subtitulo T={T} idx={3} at={K.Gr + 0.1} until={K.Ex - 0.1} texto="Chat, tutor *o puro libro*" />
       <Subtitulo T={T} idx={4} at={K.Ex + 0.1} until={exA - 0.05} texto="Examen *sin nada.*" />
-      <Subtitulo T={T} idx={5} at={exA} until={K.P - 0.1} texto="Chat tipo ChatGPT: *−17 %*" />
+      <Subtitulo T={T} idx={5} at={exA} until={K.P - 0.1} texto="Con el chat: *−17 %*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Mu - 0.1} texto="¿Cómo te *quita puntos?*" />
-      <Subtitulo T={T} idx={7} at={K.Mu + 0.1} until={K.Er - 0.1} texto="Pedían la respuesta *y copiaban.*" />
+      <Subtitulo T={T} idx={7} at={K.Mu + 0.1} until={K.Er - 0.1} texto="*Copiaban* la respuesta." />
       <Subtitulo T={T} idx={8} at={K.Er + 0.1} until={erB - 0.05} texto="Acertaba *la mitad.*" />
       <Subtitulo T={T} idx={9} at={erB} until={K.Tu - 0.1} texto="Y ellos *ni lo notaron.*" />
       <Subtitulo T={T} idx={10} at={K.Tu + 0.1} until={K.C - 0.1} texto="Pistas, *no respuestas.*" />
