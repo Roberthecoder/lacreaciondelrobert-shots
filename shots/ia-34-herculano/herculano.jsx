@@ -375,7 +375,7 @@ function Herculano() {
       <Escena T={T} a={K.M} b={K.Pl}>
         <FondoLunares color={KC.mint} />
       </Escena>
-      <Tarjeta T={T} at={K.M + 0.3} until={K.Pl - 0.2} x={70} y={680} titulo="la IA: dónde hay tinta ✔" color={KC.cyan}>
+      <Tarjeta T={T} at={K.M + 0.6} until={K.Pl - 0.2} x={70} y={680} titulo="la IA: dónde hay tinta ✔" color={KC.cyan}>
         <Robotito x={220} y={190} s={0.8} T={T} cara="feliz" />
       </Tarjeta>
       <Tarjeta T={T} at={K.M + 1.6} until={K.Pl - 0.2} x={570} y={680} titulo="papirólogos: qué dice ✔" color={KC.yellow}>
@@ -436,8 +436,8 @@ function Herculano() {
         [CUES.Abrir + 1.0, CUES.RayosX - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Pregunta + 0.05, CUES.IA + 1.0, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Palabra + 0.4, CUES.Palabra + 2.9, 'avatar_13_senalando_arriba', 'arriba-der'],
-        [CUES.Premio + 3.0, CUES.Matiz - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
-        [CUES.Matiz + 0.5, CUES.Placeres - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
+        [CUES.Premio + 3.0, CUES.Matiz - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [CUES.Matiz + 0.05, CUES.Placeres - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
         [CUES.Placeres + 0.5, CUES.Titulo - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Titulo + 1.0, CUES.Cierre - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_13_senalando_arriba', 'arriba-der']]} />
