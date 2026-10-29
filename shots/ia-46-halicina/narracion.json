@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Halicina base narrada.dc.html",
+  "salida": "Shot Halicina narrado.dc.html",
+  "nota": "Shot IA #46. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta molécula no se inventó para infecciones: se estudiaba para la diabetes. Y una IA predijo que mata bacterias."
+    },
+    {
+      "escena": "Aprende",
+      "texto": "En el MIT entrenaron una red neuronal con dos mil trescientas treinta y cinco moléculas: cuáles frenan a la bacteria E. coli."
+    },
+    {
+      "escena": "Busca",
+      "texto": "Luego revisó seis mil ciento once moléculas que ya se estudiaban para otras enfermedades."
+    },
+    {
+      "escena": "Halicina",
+      "texto": "La elegida: halicina, por HAL, la computadora de dos mil uno: odisea del espacio."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo mata a bacterias que resisten a casi todo?"
+    },
+    {
+      "escena": "Bateria",
+      "texto": "Deshace la diferencia de acidez entre adentro y afuera de la bacteria: una batería que necesita para vivir."
+    },
+    {
+      "escena": "Ratones",
+      "texto": "Salió en la revista Cell en 2020: en ratones funcionó contra Acinetobacter baumannii y Clostridioides difficile."
+    },
+    {
+      "escena": "Treinta",
+      "texto": "Y en treinta días, E. coli no logró volverse resistente."
+    },
+    {
+      "escena": "Abaucina",
+      "texto": "En 2023, otra red encontró la abaucina, que ataca casi solo a Acinetobacter."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: ninguna es todavía medicina aprobada para personas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Una molécula pensada para la diabetes podría volverse antibiótico. Y la encontró una IA."
+    }
+  ]
+}

@@ -35,3 +35,10 @@
 
 Notas (sin corrección): todas las cifras dicen de qué son; el año 2020 se dice en la voz antes de los datos de ratones y de 30 días
 (datos de hace más de 2 años, correcto); no encontré un dato más nuevo que contradiga (ningún ensayo en humanos registrado al 29 oct 2026).
+
+## Re-verificación (29 oct 2026, coordinador)
+- Gancho «…Y una IA predijo que mata bacterias.» (la IA lo predijo; el laboratorio lo comprobó, Stokes et al., Cell 2020) ✅
+- Pantalla de la abaucina: chip «espectro estrecho: casi solo A. baumannii» y otra bacteria apenas afectada (Liu et al., Nat Chem Biol 2023) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
