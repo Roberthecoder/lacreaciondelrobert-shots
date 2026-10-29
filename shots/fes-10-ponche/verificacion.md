@@ -33,8 +33,18 @@ Verificador independiente (subagente que no escribió el guion), 29 oct 2026. La
 5. **El hervor rompe la lámina media:** confirmado en Głuchowski 2026 y Daher y Braybrook 2015 (más Heaney 2025 para la depolimerización).
 6. **Gancho «se despega, célula por célula»:** es fiel como metáfora de la separación celular.
 
-VEREDICTO: PENDIENTE (correcciones abajo)
+Estado previo: PENDIENTE (correcciones abajo)
 
 ## Correcciones propuestas
 1. **Voz, línea 9 (Setas):** cambiar a «Las rebanadas con la mejor mezcla perdieron menos peso y firmeza en veinte días de refrigeración.» (o «Con la mezcla más cargada, las rebanadas perdieron menos peso y firmeza…»). Fuente: Lozano-Grande et al. 2016, «aquéllas con 2 % HP y 1 % CW redujeron las pérdidas de peso, firmeza…».
 2. **Pantalla, escena 9:** la charola «con capa» no debe verse intacta. Que se arrugue y oscurezca menos que la de «sin capa» (por ejemplo, etiqueta «con capa: pierde menos»). Opcional: en la `TarjetaEstudio` o en una etiqueta chica, «2 % pectina + 1 % cera».
+
+## Correcciones aplicadas (texto final)
+Revisé de nuevo el texto final completo de `guion.md` y `narracion.json` (12 líneas). Solo cambiaron la línea 9 y la escena 9 de pantalla; las demás siguen como en la tabla de arriba, todas ✅.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz, línea 9: «Las rebanadas con la mejor mezcla perdieron menos peso y firmeza en veinte días de refrigeración.» | ✅ | Lozano-Grande et al. 2016, *Agrociencia* 50(7) | "aquéllas con 2 % HP y 1 % CW redujeron las pérdidas de peso, firmeza y luminosidad, respecto a rebanadas de hongo no tratadas durante un almacenamiento de 20 d a 4 °C" | 2016 |
+| Pantalla, escena 9: la charola «con capa» también se arruga y oscurece, pero menos; etiquetas «con capa: pierde menos» y «2 % pectina + 1 % cera»; 20 días a 4 °C | ✅ | ídem | ídem ("redujeron las pérdidas"; "2 % HP y 1 % CW"; "20 d a 4 °C") | 2016 |
+
+VEREDICTO: APROBADO
