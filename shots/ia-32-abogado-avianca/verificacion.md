@@ -44,3 +44,12 @@ Revisiones adicionales:
    - Voz 6: "Uno de ellos lo hizo: le dijo que Varghese sí existía y que aparecía en buscadores legales."
    (Alternativa mínima, solo voz 6: "El abogado que los buscó lo hizo: ChatGPT le dijo que Varghese sí existía y que aparecía en buscadores legales.")
 2. **⚠️ Fila 9 — en pantalla, "Carta de los abogados de Avianca".** Fue un escrito de respuesta presentado al tribunal (reply memorandum), no una carta. Propuesta: rotular "Escrito de Avianca · 15 mar 2023: «no hemos podido encontrar la mayoría de los casos citados»".
+
+## Re-verificación (29 oct 2026, coordinador)
+- Voz 0: «Y unos abogados se los presentaron a un juez de Nueva York.» ✅
+- Voz 6: «Uno de ellos lo hizo: le dijo que Varghese sí existía y que aparecía en buscadores legales.» ✅
+- Voz 9 (recorte sin datos nuevos): «A octubre de 2026, una base de datos reúne más de dos mil doscientos casos así en tribunales.» ✅
+- Pantalla: «Escrito de Avianca · 15 mar 2023» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

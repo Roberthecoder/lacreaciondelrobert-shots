@@ -132,8 +132,8 @@ function Hojuelas({ cx, cy, c }) {
   const r = krng(41);
   return <g>{Array.from({ length: 46 }, (_, i) => {
     const x0 = cx + (r() * 2 - 1) * 250, y0 = cy + (r() * 2 - 1) * 80, vx = (r() * 2 - 1) * 160, rot = r() * 360, w = 18 + r() * 26;
-    const xx = x0 + vx * c, yy = y0 + 520 * c * c + 40 * c;
-    return <path key={i} d={`M ${-w / 2} 0 L 0 ${-w / 3} L ${w / 2} ${w / 6} L ${-w / 6} ${w / 3} Z`} transform={`translate(${xx} ${yy}) rotate(${rot + c * 300})`} fill={i % 3 ? CARBON : CARBON2} stroke={KC.ink} strokeWidth={3} opacity={1 - kclamp((c - 0.75) * 4, 0, 1)} />;
+    const xx = x0 + vx * c, yy = Math.min(1560 + (i % 5) * 14, y0 + 900 * c * c + 40 * c);
+    return <path key={i} d={`M ${-w / 2} 0 L 0 ${-w / 3} L ${w / 2} ${w / 6} L ${-w / 6} ${w / 3} Z`} transform={`translate(${xx} ${yy}) rotate(${rot + c * 300})`} fill={i % 3 ? CARBON : CARBON2} stroke={KC.ink} strokeWidth={3} />;
   })}</g>;
 }
 
@@ -153,7 +153,7 @@ function Tomografo({ T, x = 540, y = 680, R = 270 }) {
 }
 
 // Hoja "desenrollada" en la computadora; un recuadro la recorre y la tinta aparece en puntitos (p 0..1). solido 0..1 = letras llenas.
-function HojaVirtual({ T, x = 110, y = 430, w = 860, h = 360, p = 0, solido = 0, palabra = 'ΠΟΡΦΥΡΑϹ', tam = 150 }) {
+function HojaVirtual({ T, x = 110, y = 430, w = 860, h = 360, p = 0, solido = 0, palabra = 'ΠΟΡΦΥΡΑϹ', tam = 118 }) {
   const r = krng(9), barrido = x + 40 + (w - 80) * p;
   const fibras = Array.from({ length: 26 }, (_, i) => ({ y: y + 10 + i * (h / 26), o: 0.15 + r() * 0.2 }));
   const fv = Array.from({ length: 14 }, (_, i) => ({ x: x + 20 + i * (w / 14) + r() * 20, o: 0.08 + r() * 0.1 }));
@@ -283,12 +283,12 @@ function Herculano() {
       <Escena T={T} a={K.G} b={K.V}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Rollo x={470} y={980} rot={-8 + gira(K.G)} seed={7} T={T} />
-          <Mano x={540} y={1080} s={0.9} rot={-6 + Math.sin(T * 1.3) * 3} />
+          <Rollo x={470} y={1520} rot={-8 + gira(K.G)} seed={7} T={T} />
+          <Mano x={540} y={1620} s={0.9} rot={-6 + Math.sin(T * 1.3) * 3} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.G + 1.0} until={K.V - 0.3} x={330} y={560} r={210} fx={240} fy={950} interior={interiorRollo(0)} tinte={KC.cyan} etiqueta="POR DENTRO · capas" />
-      <Chip T={T} at={K.G + 2.4} until={K.V - 0.2} texto="papiro carbonizado" x={720} y={1170} tam={36} borde={KC.ink} />
+      <Lupa T={T} at={K.G + 1.0} until={K.V - 0.3} x={330} y={720} r={230} fx={240} fy={1490} interior={interiorRollo(0)} tinte={KC.cyan} etiqueta="POR DENTRO · capas" />
+      <Chip T={T} at={K.G + 2.4} until={K.V - 0.2} texto="papiro carbonizado" x={770} y={1120} tam={36} borde={KC.ink} />
 
       {/* 2 · el volcán y los cientos de rollos */}
       <Escena T={T} a={K.V} b={K.A}>
@@ -375,13 +375,13 @@ function Herculano() {
       <Escena T={T} a={K.M} b={K.Pl}>
         <FondoLunares color={KC.mint} />
       </Escena>
-      <Tarjeta T={T} at={K.M + 0.3} until={K.Pl - 0.2} x={70} y={740} titulo="la IA: dónde hay tinta ✔" color={KC.cyan}>
+      <Tarjeta T={T} at={K.M + 0.3} until={K.Pl - 0.2} x={70} y={680} titulo="la IA: dónde hay tinta ✔" color={KC.cyan}>
         <Robotito x={220} y={190} s={0.8} T={T} cara="feliz" />
       </Tarjeta>
-      <Tarjeta T={T} at={K.M + 1.6} until={K.Pl - 0.2} x={570} y={740} titulo="papirólogos: qué dice ✔" color={KC.yellow}>
+      <Tarjeta T={T} at={K.M + 1.6} until={K.Pl - 0.2} x={570} y={680} titulo="papirólogos: qué dice ✔" color={KC.yellow}>
         <Papirologo x={200} y={130} s={0.95} T={T} />
       </Tarjeta>
-      <Chip T={T} at={K.M + 0.2} until={K.Pl - 0.2} texto="¿quién lee?" x={680} y={560} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.M + 0.2} until={K.Pl - 0.2} texto="¿quién lee?" x={680} y={540} tam={44} borde={KC.ink} />
 
       {/* 10 · qué decía: placeres */}
       <Escena T={T} a={K.Pl} b={K.Ti}>
@@ -390,13 +390,13 @@ function Herculano() {
           <Filosofo x={300} y={900} s={1.05} T={T} />
           <g opacity={kprog(T, K.Pl + 1.2, K.Pl + 1.5)}><Lira x={790} y={640} s={0.9} T={T} /></g>
           <g opacity={kprog(T, K.Pl + 2.0, K.Pl + 2.3)}><Comida x={790} y={890} s={0.85} /></g>
-          <g opacity={kprog(T, K.Pl + 2.8, K.Pl + 3.1)}><SolFeliz x={640} y={1080} s={0.75} T={T} /></g>
+          <g opacity={kprog(T, K.Pl + 2.8, K.Pl + 3.1)}><SolFeliz x={880} y={1090} s={0.75} T={T} /></g>
         </>)}
       </Escena>
       <Chip T={T} at={K.Pl + 0.3} until={K.Ti - 0.2} texto="el primer rollo leído" x={700} y={420} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Pl + 1.4} until={K.Ti - 0.2} x={900} y={760} texto="música" lado="izq" />
       <Etq T={T} at={K.Pl + 2.2} until={K.Ti - 0.2} x={960} y={990} texto="comida" lado="izq" />
-      <Etq T={T} at={K.Pl + 3.0} until={K.Ti - 0.2} x={730} y={1080} texto="disfrutar la vida" lado="der" />
+      <Etq T={T} at={K.Pl + 3.0} until={K.Ti - 0.2} x={790} y={1090} texto="disfrutar la vida" lado="izq" />
 
       {/* 11 · 2025: el título de otro rollo */}
       <Escena T={T} a={K.Ti} b={K.C}>
@@ -411,11 +411,11 @@ function Herculano() {
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Rollo x={470} y={980} rot={-8 + gira(K.C)} seed={7} T={T} brillo={kprog(T, K.C + 0.8, K.C + 1.6)} />
-          <Mano x={540} y={1080} s={0.9} rot={-6 + Math.sin(T * 1.3) * 3} />
+          <Rollo x={470} y={1520} rot={-8 + gira(K.C)} seed={7} T={T} brillo={kprog(T, K.C + 0.8, K.C + 1.6)} />
+          <Mano x={540} y={1620} s={0.9} rot={-6 + Math.sin(T * 1.3) * 3} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.C + 0.2} until={K.Ou + 0.2} x={330} y={560} r={210} fx={240} fy={950} interior={interiorRollo(kprog(T, K.C + 0.6, K.C + 2.2))} tinte={KC.gold} etiqueta="POR DENTRO · letras" />
+      <Lupa T={T} at={K.C + 0.2} until={K.Ou + 0.2} x={330} y={720} r={230} fx={240} fy={1490} interior={interiorRollo(kprog(T, K.C + 0.6, K.C + 2.2))} tinte={KC.gold} etiqueta="POR DENTRO · letras" />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="Este carbón es *un libro enrollado.*" />

@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Olor base narrada.dc.html",
+  "salida": "Shot Olor narrado.dc.html",
+  "nota": "Shot IA #33. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tú hueles con la nariz. Esta IA nunca ha olido nada: ve una molécula dibujada y dice a qué huele."
+    },
+    {
+      "escena": "Espejo",
+      "texto": "Es difícil: esta molécula y su reflejo tienen los mismos átomos, pero una huele a hierbabuena y otra a alcaravea."
+    },
+    {
+      "escena": "Catalogo",
+      "texto": "La entrenaron con unas cinco mil moléculas de catálogos de aromas, con etiquetas como cremoso o a ajo."
+    },
+    {
+      "escena": "Red",
+      "texto": "Ve cada molécula como una red de átomos y enlaces, y la ubica en un mapa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero describe mejor que una persona?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2023, Google y el Centro Monell de Filadelfia publicaron la prueba: quince personas entrenadas describieron cuatrocientas moléculas nuevas con cincuenta y cinco palabras."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "En cincuenta y tres de cada cien, la IA se acercó más al promedio que el catador típico."
+    },
+    {
+      "escena": "Almizcle",
+      "texto": "Donde más falló: el almizcle, un olor que dan al menos cinco familias de moléculas."
+    },
+    {
+      "escena": "Mapa",
+      "texto": "Y ubicó en su mapa medio millón de moléculas de olor desconocido: olerlas le tomaría a una persona setenta años sin parar."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese olor que sientes, una IA ya lo lee en un dibujo… sin olerlo nunca."
+    }
+  ]
+}

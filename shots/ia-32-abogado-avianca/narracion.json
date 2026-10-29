@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot Avianca base narrada.dc.html",
+  "salida": "Shot Avianca narrado.dc.html",
+  "nota": "Shot IA #32. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Estos seis casos no existen: los inventó ChatGPT. Y unos abogados se los presentaron a un juez de Nueva York." },
+    { "escena": "Gancho", "texto": "¿Quieres que te multen? Sigue estos pasos." },
+    { "escena": "Paso1", "texto": "Paso uno: toma una demanda contra Avianca, la aerolínea colombiana, por un carrito que golpeó una rodilla." },
+    { "escena": "Paso2", "texto": "Paso dos: pídele casos a ChatGPT y cítalos sin leerlos completos. Así llegó «Varghese contra China Southern»." },
+    { "escena": "Paso3", "texto": "Paso tres: si la aerolínea dice que no los encuentra, no retires nada." },
+    { "escena": "Pregunta", "texto": "¿Y si le preguntas a ChatGPT si son reales?" },
+    { "escena": "Respuesta", "texto": "Uno de ellos lo hizo: le dijo que Varghese sí existía y que aparecía en buscadores legales." },
+    { "escena": "Multa", "texto": "Paso cuatro: espera. En junio de 2023, el juez Kevin Castel multó a los abogados y a su despacho con cinco mil dólares." },
+    { "escena": "Multa", "texto": "Y les ordenó escribirles a los jueces puestos como autores falsos." },
+    { "escena": "Conteo", "texto": "A octubre de 2026, una base de datos reúne más de dos mil doscientos casos así en tribunales." },
+    { "escena": "Cierre", "texto": "Usar IA no es el problema: revisar te toca a ti. Busca cada caso en la fuente. Porque estos seis no existen." }
+  ]
+}

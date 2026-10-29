@@ -33,3 +33,11 @@ Notas: no encontré un dato más nuevo que contradiga las cifras. Cada cifra dic
 2. **#14 (⚠️, falta "sin parar" en la voz).** Cambiar "olerlas le tomaría a una persona setenta años." por
    **"olerlas le tomaría a una persona setenta años sin parar."** (+2 palabras; revisar que el total siga en 61–62 s).
 3. **#17 (solo para `publicacion.md`/descripción).** Decir "tres de los autores se unieron a Osmo, una empresa que comercializa parte de esta tecnología", no "fundaron".
+
+## Re-verificación (29 oct 2026, coordinador)
+- Estudio: «En 2023, Google y el Centro Monell de Filadelfia publicaron la prueba: quince personas entrenadas describieron cuatrocientas moléculas nuevas con cincuenta y cinco palabras.» (redacción alternativa del verificador: 2023 = publicación) ✅
+- Mapa: «…olerlas le tomaría a una persona setenta años sin parar.» ✅ ("70 person-years of continuous smelling time")
+- Recortes sin datos nuevos (Espejo, Red, Cierre) ✅; publicacion.md: tres autores se unieron a Osmo ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
