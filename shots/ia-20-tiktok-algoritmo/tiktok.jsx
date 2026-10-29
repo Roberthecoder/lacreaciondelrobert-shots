@@ -284,7 +284,7 @@ function TikTok() {
         <FondoLunares color={KC.mint} />
         {svg(<>
           <Embudo x={540} y={980} s={0.9} T={T} />
-          {[['visto', KC.yellow, 0.3, 220, 560], ['terminado ✔', KC.leaf, 0.9, 420, 470], ['saltado ✖', KC.coral, 1.5, 300, 650], ['sigues a…', KC.cyan, 2.4, 560, 560], ['audio ♪', KC.lilac, 3.4, 360, 740], ['#hashtags', KC.orange, 4.0, 600, 690]].map(([tx, c, d, xx, yy], i) => {
+          {[['visto', KC.yellow, 0.3, 200, 560], ['terminado ✔', KC.leaf, 0.9, 470, 490], ['saltado ✖', KC.coral, 1.5, 250, 660], ['sigues a…', KC.cyan, 2.4, 540, 620], ['audio ♪', KC.lilac, 3.4, 210, 770], ['#hashtags', KC.orange, 4.0, 500, 750]].map(([tx, c, d, xx, yy], i) => {
             const a = K.S + d, p = kprog(T, a, a + 0.5, kEase.rebote), cae = kprog(T, a + 2.2, a + 2.9, kEase.suave);
             return <Ficha key={i} x={klerp(xx, 540, cae)} y={klerp(yy + 60 - 120 * (1 - p), 980, cae)} texto={tx} color={c} s={p * (1 - 0.6 * cae)} o={p * (1 - cae)} rot={(i % 2 ? 6 : -6) * (1 - cae)} tam={50} />; })}
         </>)}
@@ -374,8 +374,8 @@ function TikTok() {
       </Escena>
       <Chip T={T} at={K.X + 0.3} until={K.C - 0.2} texto="de cada 100 de sus primeros mil videos" x={600} y={430} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.X + 2.0} until={K.C - 0.2} texto="30–50 % · estimado del estudio" x={640} y={545} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.X + 3.2} until={K.C - 0.2} x={360} y={635} texto="♥ tus gustos" color={KC.ink} tam={34} />
-      <Etq T={T} at={K.X + 3.8} until={K.C - 0.2} x={930} y={635} texto="explorar" lado="izq" color={KC.teal} tam={34} />
+      <Etq T={T} at={K.X + 3.2} until={K.C - 0.2} x={330} y={635} texto="♥ tus gustos" color={KC.ink} tam={28} />
+      <Etq T={T} at={K.X + 3.8} until={K.C - 0.2} x={930} y={635} texto="explorar" lado="izq" color={KC.teal} tam={28} />
 
       {/* 11 · cierre: la misma imagen del inicio, transformada */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -411,7 +411,7 @@ function TikTok() {
         [CUES.Ranking + 2.2, CUES.Pregunta - 0.15, 'avatar_04_bajando_lentes', 'bajo-der'],
         [CUES.Pregunta + 0.05, CUES.Paso1 + 0.6, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Paso2 + 0.1, CUES.Estudio - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'grande-izq'],
-        [E2 + 1.8, CUES.Explora - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
+        [E2 + 1.0, CUES.Explora - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Explora + 3.2, CUES.Cierre - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_13_senalando_arriba', 'arriba-der']]} />
       <MarcaAgua T={T} tema="ia" num="20" hasta={K.Ou} />

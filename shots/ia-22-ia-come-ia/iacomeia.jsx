@@ -321,7 +321,7 @@ function IAComeIA() {
       <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Una IA que aprendió *de copias de copias.*" />
 
       <Robert T={T} apariciones={[
-        [CUES.Gancho - 0.45, CUES.Gancho + 4.6, 'avatar_11_sorprendido', 'arriba-der'],
+        [CUES.Gancho - 0.45, CUES.Gancho + 4.6, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Fotocopia + 0.4, CUES.Estudio - 0.1, 'avatar_06_pensativo_menton', 'arriba-der'],
         [S4 + 0.3, CUES.Generaciones - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Generaciones + 0.8, CUES.Liebres - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
