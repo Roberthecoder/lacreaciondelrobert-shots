@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Luna Horizonte base narrada.dc.html",
+  "salida": "Shot Luna Horizonte narrado.dc.html",
+  "nota": "Shot Científico #37. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa Luna gigante que ves salir en el horizonte no es más grande: es un engaño de tu cerebro."
+    },
+    {
+      "escena": "Medida",
+      "texto": "Si la midieras con una regla en el horizonte y luego más arriba, verías que ocupa casi el mismo tamaño."
+    },
+    {
+      "escena": "Foto",
+      "texto": "Las fotos lo demuestran: con la misma cámara y el mismo zoom, la Luna sale del mismo ancho abajo que arriba."
+    },
+    {
+      "escena": "Dedo",
+      "texto": "Haz la prueba: estira el brazo y tápala con la uña del meñique, cuando sale y cuando ya está arriba."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces por qué la ves enorme?"
+    },
+    {
+      "escena": "Nadie",
+      "texto": "Nadie lo sabe con certeza, aunque esta ilusión se conoce desde hace más de dos mil años."
+    },
+    {
+      "escena": "Hipotesis",
+      "texto": "Una explicación: tu cerebro siente el cielo como un techo aplanado, y cree que lo que está en el horizonte está más lejos."
+    },
+    {
+      "escena": "Lejos",
+      "texto": "Y algo que parece más lejos pero ocupa el mismo espacio en tu vista, tu cerebro lo agranda."
+    },
+    {
+      "escena": "Cerca",
+      "texto": "Otra idea: junto a árboles y edificios, la Luna se compara con cosas conocidas y parece enorme."
+    },
+    {
+      "escena": "Real",
+      "texto": "De hecho, en el horizonte está un poquito más lejos de ti que cuando está arriba."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa Luna gigante es real en tu cabeza, pero no en el cielo."
+    }
+  ]
+}
