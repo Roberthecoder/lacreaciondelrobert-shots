@@ -178,11 +178,11 @@ function BarraV({ T, at, until, cx, base, alto, desde, hasta, max, color, etique
   const e = kentrada(T, at, until, 'sube'), g = kprog(T, at + 0.2, at + 1.2, kEase.sale);
   const hH = alto * hasta / max * g, hD = alto * desde / max * g;
   return <div style={{ position:'absolute', left:cx - 110, top:base - alto - 90, width:220, height:alto + 160, zIndex:42, opacity:e.o }}>
-    <div style={{ position:'absolute', left:0, right:0, top:alto + 90 - hH - 66, textAlign:'center', font:`400 54px ${KF.titulo}`, color, WebkitTextStroke:`2px ${KC.ink}` }}>{valor}</div>
+    <div style={{ position:'absolute', left:-80, right:-80, top:alto + 90 - hH - 66, textAlign:'center', whiteSpace:'nowrap', font:`400 54px ${KF.titulo}`, color, WebkitTextStroke:`2px ${KC.ink}` }}>{valor}</div>
     <div style={{ position:'absolute', left:40, width:140, top:alto + 90 - Math.max(8, hH), height:Math.max(8, hH), background:color, border:`6px solid ${KC.ink}`, borderRadius:'14px 14px 0 0', boxSizing:'border-box' }}>
       {hD > 0 && <div style={{ position:'absolute', left:0, right:0, bottom:0, height:hD, background:'rgba(255,255,255,.35)' }}></div>}
     </div>
-    <div style={{ position:'absolute', left:-20, right:-20, top:alto + 102, textAlign:'center', font:`900 36px ${KF.texto}`, color:KC.texto, textShadow:KSOMBRA }}>{etiqueta}</div>
+    <div style={{ position:'absolute', left:-20, right:-20, top:alto + 102, textAlign:'center', whiteSpace:'nowrap', font:`900 34px ${KF.texto}`, color:KC.texto, textShadow:KSOMBRA }}>{etiqueta}</div>
   </div>;
 }
 // Texto pequeño de fuente.
@@ -243,8 +243,8 @@ function MicelioShot() {
           {PARTS.map((p, i) => <Particula key={i} pts={p} color={['#8a6330', '#9a7038', '#7d5a2c', '#94693a'][i]} />)}
           <g style={{ filter:`drop-shadow(0 0 6px ${FK.hifa})` }}>
             {PUENTES.map((h, i) => <Hifa key={i} {...h} p={kprog(gH, h.t0, h.t0 + 0.3)} />)}
-            <RedHifas T={T} x={430} y={600} g={kprog(gH, 0, 0.8)} seed={5} n={160} escala={0.55} ancho={4} />
-            <RedHifas T={T} x={520} y={900} g={kprog(gH, 0.15, 0.95)} seed={9} n={160} escala={0.55} ancho={4} />
+            <RedHifas T={T} x={430} y={600} g={kprog(gH, 0, 0.8)} seed={5} n={140} escala={0.32} ancho={4} />
+            <RedHifas T={T} x={520} y={900} g={kprog(gH, 0.15, 0.95)} seed={9} n={140} escala={0.32} ancho={4} />
           </g>
         </>)}
       </Escena>
@@ -335,9 +335,9 @@ function MicelioShot() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.6} until={K.R - 0.3} texto="¿unicel?" x={330} y={470} tam={60} />
       <Etq T={T} at={K.G + 2.0} until={K.R - 0.3} x={600} y={940} texto="empaque de micelio" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.R + 0.8} until={K.M - 0.3} x={300} y={760} texto="rastrojo de maíz" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.6} until={K.M - 0.3} x={60} y={1180} texto="cascarilla" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.R + 2.8} until={K.M - 0.3} x={60} y={1240 - 0} texto="micelio de hongo" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.R + 0.8} until={K.M - 0.3} x={300} y={690} texto="rastrojo de maíz" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.6} until={K.M - 0.3} x={960} y={790} texto="cascarilla" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.R + 2.8} until={K.M - 0.3} x={960} y={850} texto="micelio de hongo" lado="izq" tam={32} color={KC.ink} />
       <Chip T={T} at={K.R + 1.0} until={K.M - 0.3} texto="lo que sobra de la cosecha" x={420} y={480} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.M + 0.3} until={K.H - 0.3} texto="la forma que quieras" x={420} y={520} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.H + 0.2} until={K.B - 0.3} texto="AL MICROSCOPIO · hifas" x={430} y={480} tam={36} borde={KC.gold} mono />
@@ -345,22 +345,22 @@ function MicelioShot() {
       <Etq T={T} at={K.H + 0.8} until={K.B - 0.3} x={60} y={1260 - 20} texto="pedacito de rastrojo" tam={28} color={KC.gold2} />
       <Chip T={T} at={K.B + 0.2} until={K.O - 0.3} texto={`día ${dia}`} x={540} y={600} tam={56} borde={KC.ink} mono />
       <Chip T={T} at={K.B + 2.5} until={K.O - 0.3} texto="pieza sólida" x={300} y={480} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.O + 0.6} until={K.P - 0.3} texto="ya no crece" x={340} y={500} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.O + 1.2} until={K.P - 0.3} texto="en un estudio de 2019: horno a 70 °C" x={480} y={1180} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.O + 0.6} until={K.P - 0.3} texto="ya no crece" x={300} y={580} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.O + 1.2} until={K.P - 0.3} texto="en un estudio de 2019: horno a 70 °C" x={440} y={470} tam={28} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.To + 0.2} until={K.To + 2.5} anio="2014" quien="Hy-Fi · MoMA PS1, Nueva York" revista="The Living · Arup · Holcim Foundation" y={640} />
       <NumeroGigante T={T} at={K.To + 2.8} until={K.Cp - 0.3} valor={10000} dur={3.4} etiqueta="ladrillos" x={830} y={900} tam={96} color={KC.yellow} />
       <Chip T={T} at={K.To + 4.0} until={K.Cp - 0.3} texto="hongo + tallos de maíz" x={800} y={740} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Cp + 0.4} until={K.D - 0.3} texto="verano de 2014 → composta" x={540} y={480} tam={38} borde={KC.leaf} />
-      <Etq T={T} at={K.Cp + 2.4} until={K.D - 0.3} x={690} y={1100} texto="jardines comunitarios" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Cp + 2.4} until={K.D - 0.3} x={500} y={1000} texto="jardines comunitarios" tam={30} color={KC.ink} />
       <Chip T={T} at={K.D + 0.2} until={K.A - 0.3} texto="aguante a la compresión (MPa)" x={420} y={470} tam={34} borde={KC.ink} />
       <BarraV T={T} at={K.D + 0.6} until={K.A - 0.3} cx={180} base={1100} alto={480} desde={0.03} hasta={4.44} max={43} color={KC.paper} etiqueta="micelio" valor="0.03–4.44" />
       <BarraV T={T} at={K.D + 1.0} until={K.A - 0.3} cx={460} base={1100} alto={480} desde={35} hasta={43} max={43} color="#c98b4a" etiqueta="madera blanda" valor="35–43" />
       <Chip T={T} at={K.D + 2.6} until={K.A - 0.3} texto="no estructural" x={820} y={760} tam={36} borde={KC.red} />
-      <Fuente T={T} at={K.D + 1.2} until={K.A - 0.3} texto="Aiduang et al., 2022 (revisión)" x={60} y={1180} />
-      <Chip T={T} at={K.A + 0.6} until={K.U - 0.3} texto="agua que absorbe (% de su peso)" x={480} y={850} tam={34} borde={KC.ink} />
-      <BarraRango T={T} at={K.A + 1.0} until={K.U - 0.3} desde={24.45} hasta={560} max={560} etiqueta="micelio" valor="24–560 %" color={KC.paper} y={910} />
-      <BarraRango T={T} at={K.A + 1.6} until={K.U - 0.3} desde={0.03} hasta={9} max={560} etiqueta="unicel" valor="0.03–9 %" color={KC.yellow} y={1030} />
-      <Fuente T={T} at={K.A + 1.6} until={K.U - 0.3} texto="Aiduang et al., 2022 (revisión)" x={90} y={1160} />
+      <Fuente T={T} at={K.D + 1.2} until={K.A - 0.3} texto="Aiduang et al., 2022 (revisión)" x={60} y={530} />
+      <Chip T={T} at={K.A + 0.6} until={K.U - 0.3} texto="agua que absorbe (% de su peso)" x={480} y={800} tam={34} borde={KC.ink} />
+      <BarraRango T={T} at={K.A + 1.0} until={K.U - 0.3} desde={24.45} hasta={560} max={560} etiqueta="micelio" valor="24–560 %" color={KC.paper} y={850} />
+      <BarraRango T={T} at={K.A + 1.6} until={K.U - 0.3} desde={0.03} hasta={9} max={560} etiqueta="unicel" valor="0.03–9 %" color={KC.yellow} y={960} />
+      <Fuente T={T} at={K.A + 1.6} until={K.U - 0.3} texto="Aiduang et al., 2022 (revisión)" x={90} y={1090} />
       <Uso T={T} at={K.U + 0.5} until={K.C - 0.3} texto="empaques" x={110} y={480} />
       <Uso T={T} at={K.U + 1.2} until={K.C - 0.3} texto="aislantes" x={110} y={620} />
       <Uso T={T} at={K.U + 1.9} until={K.C - 0.3} texto="paneles de interior" x={110} y={760} />

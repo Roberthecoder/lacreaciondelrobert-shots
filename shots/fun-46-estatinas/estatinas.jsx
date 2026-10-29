@@ -102,11 +102,11 @@ function Pincel({ x, y, s = 1, crece = 1, color = VERDEAZUL }) {
 // Aspergillus terreus: pie liso, vesícula, biseriado en la mitad de arriba, y cabezuela compacta en COLUMNA (cadenas paralelas).
 function ColumnaTerreus({ x, y, s = 1, crece = 1, color = CANELA }) {
   if (crece <= 0) return null;
-  const pie = 300 * kprog(crece, 0, 0.35), col = kprog(crece, 0.4, 1);
+  const pie = 200 * kprog(crece, 0, 0.35), col = kprog(crece, 0.4, 1);
   const vy = -pie;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d={`M 0 0 L 0 ${vy}`} stroke={KC.ink} strokeWidth={20} strokeLinecap="round" /><path d={`M 0 0 L 0 ${vy}`} stroke="#f7f1e6" strokeWidth={10} strokeLinecap="round" />
-    {pie > 280 && <>
+    {pie > 190 && <>
       {Array.from({ length: 7 }, (_, i) => { const xx = -36 + i * 12; const n = Math.floor(14 * col); return <g key={i}>
         <line x1={xx * 0.7} y1={vy - 24} x2={xx} y2={vy - 44} stroke={KC.ink} strokeWidth={9} strokeLinecap="round" />
         {Array.from({ length: n }, (_, k) => <circle key={k} cx={xx} cy={vy - 52 - k * 13} r={6.5} fill={color} stroke={KC.ink} strokeWidth={2} />)}
@@ -185,11 +185,11 @@ function EstatinasShot() {
         <Ambiente T={T} n={18} />
         {fsvg(<>
           {Array.from({ length: 30 }, (_, i) => { const on = kprog(T, K.E + 0.2 + i * 0.07, K.E + 0.4 + i * 0.07); const clave = i === 2; const big = clave ? kprog(T, K.E + 2.4, K.E + 3.0, kEase.rebote) : 0;
-            const cx = 150 + (i % 6) * 156, cy = 640 + Math.floor(i / 6) * 90;
+            const cx = 150 + (i % 6) * 156, cy = 730 + Math.floor(i / 6) * 76;
             return <g key={i} opacity={0.25 + 0.75 * on}><rect x={cx - 60} y={cy - 36} width={120} height={72} rx={14} fill={clave && big > 0 ? KC.lilac : on > 0.5 ? '#2fe0a8' : '#33405a'} stroke={KC.ink} strokeWidth={5} />
               <text x={cx} y={cy + 14} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{i + 1}</text></g>; })}
           {kprog(T, K.E + 2.4, K.E + 3.0) > 0 && <g opacity={kprog(T, K.E + 2.4, K.E + 2.8)}>
-            <Enzima T={T} x={800} y={1080} s={0.5 * kprog(T, K.E + 2.4, K.E + 3.0, kEase.rebote)} />
+            <Enzima T={T} x={860} y={1110} s={0.45 * kprog(T, K.E + 2.4, K.E + 3.0, kEase.rebote)} />
           </g>}
         </>)}
       </Escena>
@@ -212,8 +212,8 @@ function EstatinasShot() {
             return on > 0 ? <g key={i} transform={`translate(${110 + (i % 8) * 123} ${720 + Math.floor(i / 8) * 82}) scale(${on})`}><MiniPetri x={0} y={0} color={hit && br > 0 ? KC.yellow : ['#fff4d6', '#cfe8a9', '#f4c1a1', '#d9d0f2'][i % 4]} brilla={br} /></g> : null; })}
           {kprog(T, K.B + 2.7, K.B + 3.1) > 0 && <g opacity={kprog(T, K.B + 2.7, K.B + 3.0)}>
             <rect x={560} y={830} width={420} height={210} rx={30} fill="rgba(14,15,18,.82)" stroke={KC.red} strokeWidth={6} />
-            <Rinon x={680} y={935} s={1.1 * kprog(T, K.B + 2.7, K.B + 3.1, kEase.rebote)} />
-            <path d="M 620 880 L 740 990 M 740 880 L 620 990" stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={kprog(T, K.B + 3.1, K.B + 3.3)} />
+            <Rinon x={680} y={915} s={1.1 * kprog(T, K.B + 2.7, K.B + 3.1, kEase.rebote)} />
+            <path d="M 620 860 L 740 970 M 740 860 L 620 970" stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={kprog(T, K.B + 3.1, K.B + 3.3)} />
           </g>}
         </>)}
       </Escena>
@@ -314,15 +314,15 @@ function EstatinasShot() {
       <Etq T={T} at={K.H + 0.9} until={K.E - 0.3} x={60} y={520} texto="colesterol" tam={32} color={KC.ink} />
       <Chip T={T} at={K.H + 1.6} until={K.E - 0.3} texto="hecho en tu hígado > de la comida" x={540} y={470} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.E + 0.2} until={K.I - 0.3} texto="AL MICROSCOPIO · célula del hígado" x={460} y={480} tam={30} borde={KC.lilac} mono />
-      <Etq T={T} at={K.E + 1.2} until={K.I - 0.3} x={60} y={570} texto="30 pasos para armar colesterol" tam={30} />
-      <Etq T={T} at={K.E + 2.8} until={K.I - 0.3} x={60} y={1080} texto="HMG-CoA reductasa" tam={30} color={KC.lilac} />
+      <Etq T={T} at={K.E + 1.2} until={K.I - 0.3} x={60} y={660} texto="30 pasos para armar colesterol" tam={30} />
+      <Etq T={T} at={K.E + 2.8} until={K.I - 0.3} x={60} y={1110} texto="HMG-CoA reductasa" tam={30} color={KC.lilac} />
       <Chip T={T} at={K.I + 0.4} until={K.B - 0.3} texto="Akira Endo · Sankyo, Tokio" x={400} y={480} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.I + 0.8} until={K.B - 0.3} x={60} y={1220} texto="silueta esquemática" tam={24} color={KC.ink} />
       <Chip T={T} at={K.I + 2.4} until={K.B - 0.3} texto="¿algún hongo la frena?" x={420} y={600} tam={36} borde={KC.yellow} />
       <Chip T={T} at={K.B + 0.2} until={K.A - 0.3} texto="miles de hongos probados" x={400} y={480} tam={36} borde={KC.ink} />
       <NumeroGigante T={T} at={K.B + 0.4} until={K.A - 0.3} valor={3800} dur={1.6} etiqueta="hongos" x={380} y={600} tam={120} color={KC.yellow} />
       <Etq T={T} at={K.B + 2.4} until={K.A - 0.3} x={560} y={790} texto="citrinina" lado="der" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.B + 3.0} until={K.A - 0.3} x={760} y={940} texto="tóxica para el riñón" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.B + 3.0} until={K.A - 0.3} x={1000} y={1010} lado="izq" texto="tóxica para el riñón" tam={26} color={KC.texto} />
       <Chip T={T} at={K.A + 0.4} until={AM - 0.2} texto="arroz de una tienda de Kioto" x={420} y={480} tam={34} borde={KC.ink} />
       <Chip T={T} at={AM + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · su “pincel”" x={420} y={480} tam={30} borde={VERDEAZUL} mono />
       <Etq T={T} at={AM + 0.4} until={K.P - 0.3} x={60} y={1010} texto="Penicillium citrinum" it tam={36} color={VERDEAZUL2} />
@@ -348,7 +348,7 @@ function EstatinasShot() {
       <Etq T={T} at={K.Ig + 0.1} until={K.C - 0.3} x={1040} y={1000} texto="lovastatina" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ig + 1.4} until={K.C - 0.2} texto="= misma molécula" x={540} y={460} tam={44} borde={KC.yellow} />
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="la primera estatina nació en un moho" x={540} y={720} tam={34} borde={VERDEAZUL} />
-      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="no es consejo médico" x={540} y={1120} tam={24} borde={KC.ink} mono />
+      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="no es consejo médico" x={540} y={800} tam={24} borde={KC.ink} mono />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={170} />
