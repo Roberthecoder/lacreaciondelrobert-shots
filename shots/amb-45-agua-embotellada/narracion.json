@@ -1,0 +1,48 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Agua Embotellada base narrada.dc.html",
+  "salida": "Shot Agua Embotellada narrado.dc.html",
+  "nota": "Shot Ambiental #45. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tú y cuatro vecinos: menos de uno de ustedes cinco cree que el agua de la llave se puede beber sin enfermarse."
+    },
+    {
+      "escena": "Encuesta",
+      "texto": "Lo midió el INEGI a fines de 2025 en ciudades grandes: diecinueve por ciento. En Jalisco, ni nueve."
+    },
+    {
+      "escena": "Mapa",
+      "texto": "Y cambia: en Tlaxcala, cuarenta y cuatro por ciento; en Tabasco, menos de cuatro."
+    },
+    {
+      "escena": "Garrafon",
+      "texto": "Ya en 2017, tres de cada cuatro hogares bebían agua de garrafón o de botella; la mayoría, porque la creía más saludable."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y de dónde salió tanta desconfianza?"
+    },
+    {
+      "escena": "Historia",
+      "texto": "Algunos estudios la ligan al sismo de 1985 y al cólera, que llegó en 1991."
+    },
+    {
+      "escena": "Gasto",
+      "texto": "Y cuesta: en 2017, los hogares que la compraban gastaban unos cincuenta y dos pesos por semana."
+    },
+    {
+      "escena": "QueSirve",
+      "texto": "¿Qué sí sirve? Un garrafón retornable: diecinueve litros, casi treinta y dos botellas de seiscientos."
+    },
+    {
+      "escena": "Hervir",
+      "texto": "Hervirla a borbotones mata bacterias, virus y protozoarios, dice la OMS. Y un filtro con certificado de Cofepris quita bacterias."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Tu llave depende de tu ciudad; pero tú y tus cuatro vecinos pueden tomar agua segura con menos botellas."
+    }
+  ]
+}
