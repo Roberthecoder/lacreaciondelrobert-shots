@@ -1,0 +1,61 @@
+# Verificación de hechos · bio-42-carne-cultivada
+
+- **Verificación independiente:** 29 de octubre de 2026, por un verificador que no escribió el guion y que abrió cada fuente.
+- **Resultado inicial:** 21 ✅, 4 ⚠️, 0 ❌. Las 4 ⚠️ se corrigieron en la voz, la pantalla y la descripción con el texto que propuso el verificador:
+  1. Gancho: "no salió de un animal sacrificado" → **"no se cortó de un animal"** (el suero fetal sí viene de animales sacrificados).
+  2. Grasa: la voz decía que las mismas células se volvían grasa → **"esas se unen en fibras de músculo, y otras células del pedacito se vuelven grasa"** (la grasa sale de los FAP, otro tipo de célula de la misma muestra). En pantalla la grasa sale de células en estrella que ya venían en la biopsia.
+  3. Suero: "sangre de fetos" → **"sale de la sangre de fetos"** (el suero es la parte líquida de esa sangre).
+  4. Prohibiciones: "Italia, Florida y Alabama" → **"Italia y siete estados de Estados Unidos"** (pantalla: Italia 2023 · 7 estados de EE. UU. 2024–25).
+- Ajustes de longitud sin cambio de sentido: "desde unas cuantas células" → "desde pocas células"; "Las metes a un biorreactor" → "En un biorreactor"; orden de la frase de Mark Post; "que es lo más caro" → "lo más caro".
+- Voz final: 955 caracteres. El coordinador confirmó que con estas correcciones todo queda ✅.
+
+## Tabla del verificador (veredictos originales)
+
+| # | Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| 0a | "Esta carne **no salió de un animal sacrificado**" (gancho) | ⚠️ | Univ. de Maastricht (Post), https://www.maastrichtuniversity.nl/node/41960 ; Lee et al. 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9478980 | "serum that comes from cows has been used. A cow must be slaughtered to obtain that serum. 'That is therefore still not animal-friendly.'" · "FBS is obtained from the fetus of slaughtered pregnant cows" | 2019 / 2022 |
+| 0b | Creció en un tanque desde unas cuantas células | ✅ (esquemático) | Univ. de Maastricht, node/41960 | "This way you can grow billions of cells from a single biopsy" | 2019 |
+| 1 | Se puede empezar con una biopsia de músculo de un animal vivo | ✅ | Melzener, …, Post, Flack, *J Sci Food Agric* 2021, https://pmc.ncbi.nlm.nih.gov/articles/PMC7689697 ; NBC 2013 | "repeated collection of tissue samples via biopsies of living donor animals" · "the cells can be extracted from live cattle during a biopsy" | 2021 / 2013 |
+| 2 | Ahí vienen células madre del músculo (células satélite), que se multiplican; en pantalla, pegadas a la orilla de las fibras | ✅ | Melzener 2021 (misma); Khan et al., *Foods* 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC12469421 | "muscle-specific stem cells (also known as … 'satellite cells')" · "satellite cells are a form of ASCs situated on the outer edges of muscle fibers" | 2021 / 2025 |
+| 3 | Biorreactor con caldo de nutrientes; se dividen una y otra vez (medidor 1→2→4→8) | ✅ | Khan 2025; Univ. de Maastricht node/41960 | "isolated from living animals through biopsy, expanded in vitro" · "After a day, a cell has split into two. A day later there are four, again a day later eight" | 2025 / 2019 |
+| 4 | Cambias el caldo: **unas** se unen en fibras de músculo y **otras** se vuelven grasa (implica que las mismas células madre del músculo dan la grasa) | ⚠️ | Dohmen, …, Post, Flack, *NPJ Sci Food* 2022, https://doi.org/10.1038/s41538-021-00122-2 (PMC8786866) ; Khan 2025 | "fibro-adipogenic progenitor cells (FAPs) are present in bovine muscle, and are … distinct from satellite cells. These two cell types can be purified from a single muscle sample" · "directed to differentiate into muscle or fat cells" | 2022 / 2025 |
+| 4b | En pantalla: se fusionan en miotubo con muchos núcleos | ✅ | Benny et al. 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9385919 | "These satellite cells mature into myotubes and mature myofibrils" | 2022 |
+| 6a | Por años el caldo llevó suero fetal bovino | ✅ | Univ. de Maastricht node/41960 ; Lee 2022 | "Since growing cells outside the body was started 130 years ago, serum that comes from cows has been used." · "FBS is the most commonly used supplement in animal cell culture media" | 2019 / 2022 |
+| 6b | Suero fetal bovino = "**sangre** de fetos de vacas preñadas que van al rastro" | ⚠️ (leve) | Lee 2022 | "the source is the fetus of an individual slaughtered without knowledge of pregnancy … blood is collected by inserting a needle into the fetus … refrigerated to promote coagulation" (el suero es la parte líquida de esa sangre, no la sangre) | 2022 |
+| 7 | Singapur aprobó el primer caldo sin suero en 2023 | ✅ | FoodNavigator, 18 ene 2023, https://www.foodnavigator.com/Article/2023/01/18/World-first-Singapore-gives-GOOD-Meat-approval-to-to-commercialise-serum-free-media-for-cultivated-meat/ | "Singapore Food Agency (SFA) has granted a world-first regulatory approval to GOOD Meat for the use of serum-free media" | 2023 |
+| 8a | La primera hamburguesa la presentó Mark Post (Univ. de Maastricht) en Londres, 5 ago 2013 | ✅ | NBC News 5 ago 2013, https://www.nbcnews.com/technolog/intense-flavor-330-000-burger-was-built-lab-hits-spot-6c10835460 ; Univ. de Maastricht node/41960 | "developed by University of Maastricht physiologist Mark Post" · "Monday's high-profile tasting at West London's Riverside Studios" · "Mark Post presented the first lab-grown hamburger in 2013 at a press conference in London" | 2013 / 2019 |
+| 8b | Unas 20 mil tiritas de músculo | ✅ (con nota) | NBC 2013; CNN 5 ago 2013, https://edition.cnn.com/2013/08/05/world/europe/europe-stem-cell-burger-ott/index.html ; Al Jazeera 2013 | "It takes about 20,000 of such strands to create one hamburger" · "the burger was made of 20,000 small strands of meat grown from a cow's muscle cells". Nota: en 2026 Post dijo de memoria "10,000 strands" (FoodNavigator, 12 jun 2026); todas las fuentes de 2013 dicen 20 000. | 2013 |
+| 9 | Costó unos 250 mil euros | ✅ (con nota) | Univ. de Maastricht, https://www.maastrichtuniversity.nl/node/44666 ; NBC 2013 | "they presented the first hamburger made from cultured meat in London: a snack worth 250,000 Euros" · "Aided by a €250,000 ($330,000) donation from … Sergey Brin". Nota: otra página de la misma universidad dice "200 grand"; "unos" cubre la variación. | 2013 |
+| 10a | Singapur aprobó su venta en 2020 (primer país) | ✅ | FoodNavigator, 2 dic 2020, https://www.foodnavigator.com/Article/2020/12/02/World-first-Eat-Just-gets-regulatory-approval-for-cell-based-chicken-ingredient-in-Singapore/ | "Eat Just has been granted the world's first regulatory approval for cultured chicken" | 2020 |
+| 10b | Estados Unidos en 2023 | ✅ | FoodNavigator, 22 jun 2023, https://www.foodnavigator.com/Article/2023/06/22/usda-greenlights-cell-cultured-meat-from-upside-foods-good-meat-for-sale-in-us/ | "the USDA on Wednesday gave the greenlight for UPSIDE Foods and GOOD Meat to sell their 'cell-cultured chicken' in the US" · "announced June 21 that they received a grant of inspection" | 2023 |
+| 10c | Italia la prohibió (2023) | ✅ | Osborne Clarke, https://www.osborneclarke.com/insights/italy-bans-lab-grown-meat-violating-eu-procedure | "In December 2023, the Italian government implemented a ban on cultivated meats" · "Law 172/2023" · "prohibits the production, sale and importation of cultivated meat" | 2023 |
+| 10d | Florida la prohibió (2024) | ✅ | Senado de Florida, https://www.flsenate.gov/Session/Bill/2024/1084 | "prohibiting the manufacture for sale, sale, holding or offering for sale, or distribution of cultivated meat" · "Approved by Governor 5/1/2024" · "Chapter No. 2024-137" | 2024 |
+| 10e | Alabama la prohibió (2024) | ✅ | CBS News 2024, https://www.cbsnews.com/news/florida-alabama-lab-grown-mean-ban-2024 | "the manufacture, sale, or distribution of food products made from cultured animal cells" · "signed into of law on May 7 by Gov. Kay Ivy" | 2024 |
+| 10f | La lista "Italia, Florida y Alabama" como **los** que la prohibieron | ⚠️ (incompleta / desactualizada) | Food Safety Magazine, jun 2025, https://www.food-safety.com/articles/10473-texas-becomes-seventh-state-to-ban-cultivated-meat | "Other states that have enacted statewide bans include Florida, Alabama, Mississippi, Montana, Indiana, and Nebraska." (Texas: veto temporal del 1 sep 2025 al 7 sep 2027) | 2025 |
+| 11 | Hoy el caldo es lo más caro | ✅ | Khan 2025 ; Benny 2022 (preprint, https://www.researchsquare.com/article/rs-1400697/latest.pdf) | "the culture medium—supplemented with expensive growth factors—representing the greatest expense" · "The culture medium, which accounts for 55% to 95% of the total production cost, is the most major cost driver" | 2025 / 2022 |
+| 11b | El otro reto: llevarla a tanques gigantes | ✅ | FoodNavigator 12 jun 2026 (Post) | "Producing cultivated meat is an expensive and complex process" · "even scaling up the technology…" (reto de escalado) | 2026 |
+| 12 | "esta carne sí es de animal" (células animales) | ✅ | FoodNavigator 12 jun 2026 | "except for the starter cells, which are by nature animal-derived" | 2026 |
+| D1 | Descripción: el suero "es caro y varía de lote a lote" | ✅ | Lee 2022 ; Kolkmann, …, Post 2020, https://pmc.ncbi.nlm.nih.gov/articles/PMC7002633 | "not only expensive" · "The qualitative and quantitative effect of batch variation of animal sera on cell culture has been well documented." | 2022 / 2020 |
+| D2 | Descripción: "el caldo puede ser del 55 al 95 % del costo" (revisión de 2022) | ✅ | Benny 2022 | "accounts for 55% to 95% of the total production cost" | 2022 |
+
+
+## Estado después de las correcciones
+
+| Afirmación (texto final) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| "Esta carne no se cortó de un animal: creció en un tanque, desde pocas células" | ✅ | Univ. de Maastricht, https://www.maastrichtuniversity.nl/node/41960 | "This way you can grow billions of cells from a single biopsy" | 2019 |
+| "esas [células satélite] se unen en fibras de músculo, y otras células del pedacito se vuelven grasa" | ✅ | Dohmen et al., *npj Sci Food* 2022, https://doi.org/10.1038/s41538-021-00122-2 | "fibro-adipogenic progenitor cells (FAPs) are present in bovine muscle, and are … distinct from satellite cells. These two cell types can be purified from a single muscle sample" | 2022 |
+| "suero fetal bovino: sale de la sangre de fetos de vacas preñadas que van al rastro" | ✅ | Lee et al. 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9478980 | "FBS is obtained from the fetus of slaughtered pregnant cows" · "blood is collected by inserting a needle into the fetus" | 2022 |
+| "Italia y siete estados de Estados Unidos la prohibieron" | ✅ | Osborne Clarke (Ley 172/2023); Food Safety Magazine, jun 2025, https://www.food-safety.com/articles/10473-texas-becomes-seventh-state-to-ban-cultivated-meat | "In December 2023, the Italian government implemented a ban on cultivated meats" · "Other states that have enacted statewide bans include Florida, Alabama, Mississippi, Montana, Indiana, and Nebraska." (Texas, el séptimo) | 2023 / 2025 |
+| Los dibujos (filete, vaca, células, tanque, tablero) son esquemáticos | ✅ | Declarado en el guion, en el `.jsx` y en los textos de publicación | "El dibujo es esquemático." | 2026 |
+
+Sin ❌ ni ⚠️ pendientes.
+
+
+## Re-verificación (29 oct 2026, verificador independiente, a pedido del administrador)
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Italia, Hungría y varios estados de Estados Unidos la prohibieron» (antes «Italia y siete estados»; ya son 8 estados) | ✅ | Hungría: Ley LXXXIX de 2025, notificación a la UE — https://technical-regulation-information-system.ec.europa.eu/de/notification/26066/text/F/EN ; Dakota del Sur: Green Queen, 13 mar 2026; RFD-TV, 29 may 2026 | Ley aprobada por el Parlamento húngaro el 18 nov 2025 · RFD-TV: "8 states have passed restrictions on the sale or manufacture of cell-cultured proteins" | 2025 / 2026 |
+| Tarjetas: "Italia · Hungría 2023–25" y "8 estados de EE. UU. 2024–26" (RFD-TV may 2026: 8 estados) | ✅ | Italia dic 2023 (Ley 172/2023); Florida y Alabama may 2024; Mississippi, Montana, Indiana, Nebraska y Texas 2025; Dakota del Sur 2026 (moratoria 1 jul 2026–30 jun 2031) | (ver arriba) | 2023–2026 |
+
+VEREDICTO: APROBADO

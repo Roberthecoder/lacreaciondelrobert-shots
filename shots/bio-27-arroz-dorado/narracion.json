@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot ArrozDorado base narrada.dc.html",
+  "salida": "Shot ArrozDorado narrado.dc.html",
+  "nota": "Shot Biotecnológico #27. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese arroz no está pintado: fabrica algo que tu arroz blanco no tiene."
+    },
+    {
+      "escena": "Hojas",
+      "texto": "La planta del arroz hace betacaroteno, el pigmento de la zanahoria, en sus hojas, no en el grano."
+    },
+    {
+      "escena": "Grano",
+      "texto": "En el grano que comes, esa fábrica está apagada."
+    },
+    {
+      "escena": "Genes",
+      "texto": "En 2000, Ingo Potrykus y Peter Beyer presentaron un arroz con genes de narciso y de una bacteria."
+    },
+    {
+      "escena": "Camino",
+      "texto": "Así, el grano arma betacaroteno y se pinta de amarillo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y de qué te sirve un arroz amarillo?"
+    },
+    {
+      "escena": "Intestino",
+      "texto": "Tu cuerpo lo vuelve vitamina A, solo la que necesita."
+    },
+    {
+      "escena": "Ojos",
+      "texto": "Sin vitamina A, primero no ves de noche y luego puedes quedar ciego."
+    },
+    {
+      "escena": "Ninos",
+      "texto": "Con datos de 1995 a 2005, la OMS calculó 190 millones de niños pequeños con poca vitamina A."
+    },
+    {
+      "escena": "Maiz",
+      "texto": "Un arroz de 2005 cambió el gen de narciso por uno de maíz: hasta 23 veces más pigmento que el primero."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de 2009, en Boston: cinco voluntarios lo comieron y su cuerpo sí lo volvió vitamina A."
+    },
+    {
+      "escena": "Filipinas",
+      "texto": "Filipinas aprobó sembrarlo en 2021, pero en 2024 un tribunal lo frenó."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "No está pintado: es el mismo grano con la fábrica encendida."
+    }
+  ],
+  "tanda": 4
+}

@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Fecal base narrada.dc.html",
+  "salida": "Shot Fecal narrado.dc.html",
+  "nota": "Shot Biotecnológico #49. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Estas cápsulas no son vitaminas: están hechas a partir de caca humana, y son medicina."
+    },
+    {
+      "escena": "Bosque",
+      "texto": "Tu intestino tiene billones de bacterias, como un bosque."
+    },
+    {
+      "escena": "Antibiotico",
+      "texto": "Un antibiótico, al curarte de otra cosa, puede desordenar ese bosque."
+    },
+    {
+      "escena": "Difficile",
+      "texto": "Y en el hueco crece Clostridioides difficile: suelta toxinas y da diarrea."
+    },
+    {
+      "escena": "Regresa",
+      "texto": "Sus esporas se quedan, y muchos recaen una y otra vez."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si en vez de otro antibiótico le devuelves el bosque?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2013, en Ámsterdam, dieron caca de donantes sanos con sonda por la nariz."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Con una infusión se curó el 81 % sin recaer; con solo vancomicina, el 31 %."
+    },
+    {
+      "escena": "Parado",
+      "texto": "Funcionó tan bien que pararon el estudio antes de tiempo."
+    },
+    {
+      "escena": "Bilis",
+      "texto": "Se cree que las bacterias sanas cambian los ácidos biliares y eso frena las esporas."
+    },
+    {
+      "escena": "Rebyota",
+      "texto": "En 2022, la FDA aprobó Rebyota, el primer producto de microbiota fecal aprobado."
+    },
+    {
+      "escena": "Vowst",
+      "texto": "En 2023, Vowst: esporas de bacterias purificadas de caca, en cápsulas."
+    },
+    {
+      "escena": "Dosis",
+      "texto": "Cuatro al día, tres días. Sin sonda."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso esas cápsulas no son vitaminas: son semillas de un bosque nuevo."
+    }
+  ],
+  "tanda": 8
+}

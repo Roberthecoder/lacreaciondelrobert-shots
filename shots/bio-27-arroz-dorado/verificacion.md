@@ -1,0 +1,45 @@
+# Verificación de hechos · bio-27-arroz-dorado
+
+- **Verificación independiente:** 29 de octubre de 2026, por un verificador que no escribió el guion y que abrió cada fuente (25 afirmaciones: 21 ✅, 4 ⚠️, 0 ❌).
+- **Correcciones aplicadas (las 4 ⚠️):**
+  1. «solo en lo verde» → «en sus hojas, no en el grano» (IRRI solo dice que no está en el grano; la raíz también usa betacaroteno). Voz y descripción.
+  2. «En el 2000… le pusieron genes» → «En 2000… presentaron un arroz con genes» (2000 es el año de publicación). Por lo mismo, «En 2005 cambiaron» → «Un arroz de 2005 cambió».
+  3. «En 2009… lo comieron» → «Un estudio de 2009, en Boston» (el estudio empezó en 2004 y se publicó en 2009). Tarjeta: «Publicado en 2009 · Boston · Universidad Tufts · 5 voluntarios». Descripción: «En un estudio publicado en 2009…».
+  4. Recortes de estilo para quedar en 957 caracteres, sin agregar datos.
+- Lo corregido quedó ✅ según confirmación del coordinador (29 oct 2026).
+- No se usa la cifra «250 000–500 000 niños ciegos al año» (la OMS no da el año del dato).
+- La voz no afirma el estado actual del caso en Filipinas (la Corte Suprema no había resuelto hasta lo encontrado en oct 2026).
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | El grano blanco (endospermo) no tiene betacaroteno / "la fábrica está apagada" | ✅ | Ye et al., Science 287:303 (Europe PMC, PMID 10634784) https://doi.org/10.1126/science.287.5451.303 | "The remaining edible part of rice grains, the endosperm, lacks several essential nutrients, such as provitamin A." (título: "…into (carotenoid-free) rice endosperm") | 2000 |
+| 2 | La planta del arroz hace betacaroteno en sus hojas, no en el grano (corregido: antes decía "solo en lo verde") | ✅ (corregida) | IRRI vía EdgeDavao https://edgedavao.net/agri-trends/2021/07/agritrends-golden-rice-now-ready-for-commercial-planting ; Ye et al. 2000 | "While ordinary rice does produce beta-carotene, it is not found in the grain." | 2021 |
+| 3 | Betacaroteno = el pigmento de la zanahoria | ✅ | Etymonline "carotene" https://www.etymonline.com/word/carotene | "coined 1831 by German chemist H.W.F. Wackenroder … from Latin carota 'carrot'" | 1831 / s.f. |
+| 4 | 2000 · Ingo Potrykus y Peter Beyer | ✅ (nombres, artículo) | Ye et al. 2000, afiliaciones (Europe PMC) | "Institute for Plant Sciences, Swiss Federal Institute of Technology, CH-8092 Zurich… University of Freiburg, Center for Applied Biosciences" | 2000 |
+| 4b | "En 2000… **presentaron** un arroz con genes…" (corregido: antes "le pusieron"; 2000 es el año de publicación) | ✅ (corregida) | Ye et al., *Science* 287:303, 14 ene 2000 | "A combination of transgenes enabled biosynthesis of provitamin A in the endosperm." | 2000 |
+| 5 | Genes de narciso y de una bacteria | ✅ | Beyer et al., J Nutr 132:506S (Europe PMC, PMID 11880581) | "phytoene synthase (psy) and lycopene beta-cyclase (beta-lcy) both from Narcissus pseudonarcissus … together with a bacterial phytoene desaturase (crtI, from Erwinia uredovora…)" | 2002 |
+| 6 | Pantalla: *Erwinia*, hoy *Pantoea* | ✅ | LPSN https://lpsn.dsmz.de/species/erwinia-uredovora | *E. uredovora* = sinónimo de *Pantoea ananatis* (Mergaert et al. 1993) | 1993 |
+| 7 | Con esos genes el grano arma betacaroteno y se pinta de amarillo | ✅ | Beyer et al. 2002 | "yellow beta-carotene-bearing rice endosperm was obtained in the T(0)-generation" | 2002 |
+| 8 | Pantalla: betacaroteno = cadena larga con un anillo en cada punta; las "tijeras" lo cortan por la mitad → vitamina A | ✅ | Lobo et al. 2010 (PMID 20061533) | "BCMO1 … converts absorbed beta,beta-carotene to the retinoic acid precursor, retinaldehyde" (corte central = 2 retinal) | 2010 |
+| 9 | "Escala: grano ≈ 6 mm" | ✅ (aprox.) | IRRI SES 2014 (citado en journal.ugm.ac.id) | grano medio 5.51–6.60 mm, largo 6.61–7.5 mm | 2014 |
+| 10 | Tu cuerpo lo convierte en vitamina A, solo la que necesita | ✅ (simplificado) | PhilRice FAQ https://www.philrice.gov.ph/golden-rice/qa/ ; Lobo et al. 2010 | PhilRice: "it is converted to vitamin A as needed by the body." Lobo: "controls beta,beta-carotene absorption and vitamin A production by negative feedback regulation" | 2010 / 2025 |
+| 11 | Sin vitamina A primero no ves de noche, luego puedes quedarte ciego | ✅ | OMS NLIS https://www.who.int/data/nutrition/nlis/info/vitamin-a-deficiency | "Night blindness is one of the first signs of vitamin A deficiency. In its more severe forms, vitamin A deficiency contributes to blindness by making the cornea very dry" | s.f. |
+| 12 | OMS, datos 1995–2005: 190 millones de niños pequeños (preescolares) con poca vitamina A | ✅ | OMS 2009, Global prevalence of VAD 1995–2005 (PDF leído, sec. 3.1.2) | "Low serum retinol concentration (<0.70 µmol/l) affects an estimated 190 million preschool-age children (95% CI: 178–202 million) … globally." | datos 1995–2005, publ. 2009 |
+| 13 | "Un arroz de 2005 cambió el gen de narciso por uno de maíz: hasta 23 veces más pigmento que el primero" (redacción ajustada al año de publicación) | ✅ | Paine et al., Nat Biotechnol 23:482 (PubMed 15793573) | "identified a psy from maize that substantially increased carotenoid accumulation"; "increase in total carotenoids of up to 23-fold … compared to the original Golden Rice". Primera autora: "Syngenta, Jealott's Hill International Research Centre" | 2005 |
+| 14 | Pantalla: "Golden Rice 2 · 2005" | ✅ | Paine et al. 2005 | "Golden Rice 2" | 2005 |
+| 15 | Cinco voluntarios lo comieron y su cuerpo lo volvió vitamina A; Boston, Tufts | ✅ | Tang et al., Am J Clin Nutr 89:1776 (Europe PMC, PMID 19369372) | "fed to 5 healthy adult volunteers (3 women and 2 men)"; "Beta-Carotene derived from Golden Rice is effectively converted to vitamin A in humans."; afiliación "…HNRCA at Tufts University, Boston, MA" | 2009 |
+| 15b | "Un estudio **de 2009**, en Boston: cinco voluntarios lo comieron" y tarjeta "Publicado en 2009 · Boston · Universidad Tufts · 5 voluntarios" (corregido: antes "En 2009… lo comieron") | ✅ (corregida) | Tang et al., Am J Clin Nutr 89:1776 (PMID 19369372); ClinicalTrials.gov NCT00680355 | "fed to 5 healthy adult volunteers (3 women and 2 men)"; el artículo se publicó en 2009 (estudio iniciado en 2004-08) | 2009 |
+| 16 | Filipinas aprobó sembrarlo en 2021 (primer país del mundo) | ✅ | Danforth Center https://www.danforthcenter.org/news/golden-rice-approved-for-commercial-propagation-in-the-philippines/ ; phys.org/AFP 2024 ; Zamora et al., Sci Rep 2026 (PMC13328446) | "a biosafety permit for propagating the Golden Rice was issued on July 21, 2021"; phys.org: "The Philippines was the first country in the world to approve golden rice"; Sci Rep: "Biosafety Permit No. 21-012Propa, issued on July 21, 2021 … The Philippines is the first country in the world to approve Malusog Rice for propagation" | 2021 / 2026 |
+| 17 | En 2024 un tribunal lo frenó | ✅ | Philstar 24 abr 2024 https://www.philstar.com/headlines/2024/04/24/2350079/ca-halts-planting-golden-rice-bt-eggplant ; PhilRice 20 abr 2024 | "In a 143-page decision … promulgated on April 17, the CA's Fourth Division…"; PhilRice: "The decision revokes the biosafety permit… DA-PhilRice must stop the commercial propagation" | 2024 |
+| 18 | Estado actual (oct 2026) | ✅ para lo que dice la voz (no afirma estado actual) | PhilRice Q&A https://www.philrice.gov.ph/golden-rice/qa/ (FAQ ~feb 2025); búsqueda oct 2026 sin fallo de la Corte Suprema | PhilRice apeló a la Corte Suprema el 24 oct 2024; "The Malusog Rice Program's operation is currently put on hold, in compliance with this ruling"; "awaiting the result of the appeal filed before the Supreme Court". No encontré ninguna resolución de la Corte Suprema en 2025–2026 | 2024–2025 |
+| 19 | Desc.: Potrykus (ETH Zúrich), Beyer (U. de Friburgo), publicado en *Science* | ✅ | Ye et al. 2000 (afiliaciones) | ver fila 4 | 2000 |
+| 20 | Desc.: "un equipo de Syngenta" (Golden Rice 2) | ✅ | Paine et al. 2005 | "Syngenta, Jealott's Hill International Research Centre, Bracknell" | 2005 |
+| 21 | Desc.: "Filipinas dio el primer permiso del mundo para su siembra comercial" (julio 2021) | ✅ | ver fila 16 | ídem | 2021 |
+| 22 | Desc.: el tribunal revocó el permiso porque no estaban los mecanismos para vigilar su seguridad; el gobierno apeló ante la Corte Suprema | ✅ | Philstar 2024; Down To Earth 2024; PhilRice Q&A | "until strengthened risk assessment and monitoring procedures are in place"; PhilRice "filed … to the Supreme Court (SC) seeking to overturn the decision of the CA" (24 oct 2024) | 2024 |
+| 23 | Desc.: falta de vitamina A = principal causa prevenible de ceguera infantil | ✅ | OMS NLIS | "is the world's leading preventable cause of childhood blindness" | s.f. |
+| 24 | Desc.: "en sus hojas, pero no en el grano" (corregido) | ✅ (corregida) | ver fila 2 | ídem | 2021 |
+| 25 | Desc.: "En un estudio publicado en 2009 por la Universidad Tufts (Boston)…" (corregido) | ✅ (corregida) | ver fila 15b | ídem | 2009 |
+
+Sin ❌ ni ⚠️ pendientes.
+
+VEREDICTO: APROBADO
