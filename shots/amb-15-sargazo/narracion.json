@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Sargazo base narrada.dc.html",
+  "salida": "Shot Sargazo narrado.dc.html",
+  "nota": "Shot Ambiental #15. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto que apesta en las playas de Quintana Roo no es basura: es un alga que viajó miles de kilómetros."
+    },
+    {
+      "escena": "Alga",
+      "texto": "Es el sargazo: flota con bolitas llenas de gas."
+    },
+    {
+      "escena": "Cinturon",
+      "texto": "Desde 2011, los satélites ven un cinturón de sargazo que suele ir de África Occidental al Golfo de México."
+    },
+    {
+      "escena": "Cifra",
+      "texto": "En junio de 2018 medía ocho mil ochocientos cincuenta kilómetros y tenía más de veinte millones de toneladas."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "En julio de 2025, en todo el Atlántico, eran unos treinta y ocho millones de toneladas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Qué lo hace crecer tanto?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de 2025 con corales del Caribe propone: fósforo que sube de lo hondo del Atlántico ecuatorial."
+    },
+    {
+      "escena": "Nitrogeno",
+      "texto": "Con él, microbios del alga le fabrican nitrógeno, su otro alimento."
+    },
+    {
+      "escena": "Playa",
+      "texto": "En la playa, tras unas cuarenta y ocho horas pudriéndose, suelta ácido sulfhídrico: olor a huevo podrido."
+    },
+    {
+      "escena": "Muertes",
+      "texto": "En 2018, ese caldo con poco oxígeno mató animales de setenta y ocho especies en el Caribe mexicano."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Pero en mar abierto es casa de cientos de especies. No es basura: es un refugio que se pudre en tu playa."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Plantas base narrada.dc.html",
+  "salida": "Shot Plantas narrado.dc.html",
+  "nota": "Shot Ambiental #12. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa planta no es un purificador de aire: para igualar la ventilación normal, harían falta hasta mil por metro cuadrado." },
+    { "escena": "Mito", "texto": "El mito viene de un experimento de la NASA de 1989, pensado para espacios sellados, como futuras bases espaciales." },
+    { "escena": "Caja", "texto": "Metían una planta en una caja sellada de menos de un metro cúbico, con benceno o formaldehído, por veinticuatro horas." },
+    { "escena": "Pregunta", "texto": "Y en la cajita el químico bajaba. ¿Por qué no pasa en tu sala?" },
+    { "escena": "Sala", "texto": "Porque tu casa no está sellada: el aire de afuera se cuela por puertas, ventanas y rendijas." },
+    { "escena": "Estudio", "texto": "En 2019, en la Universidad Drexel, en Filadelfia, revisaron doce estudios con ciento noventa y seis resultados." },
+    { "escena": "Litros", "texto": "La planta típica limpiaba lo equivalente a veintitrés litros de aire por hora." },
+    { "escena": "Cuenta", "texto": "Para igualar al aire que entra solo, harían falta de diez a mil plantas por metro cuadrado de piso." },
+    { "escena": "Sirve", "texto": "Lo que sí sirve: quitar lo que contamina, abrir ventanas y prender la campana si saca el aire a la calle." },
+    { "escena": "Cierre", "texto": "Así que quiere a tu planta porque es bonita; pero para el aire, abre la ventana." }
+  ]
+}
