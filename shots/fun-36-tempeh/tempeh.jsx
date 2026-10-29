@@ -230,7 +230,7 @@ function TempehShot() {
         {fsvg(<>
           <SuperficieGrano y0={1060} />
           {SPO.map(([sx, sy], i) => { const t0 = K.H + 0.7 + i * 0.35; const g = kprog(T, t0 + 0.4, K.A - 0.2); return <g key={i}>
-            {g > 0 && <RedHifas T={T} x={sx} y={sy} g={g} seed={4 + i * 3} n={140} escala={0.3} ancho={24} color={FK.hifa} circ={true} brillo={0.4} />}
+            {g > 0 && <RedHifas T={T} x={sx} y={sy} g={g} seed={4 + i * 3} n={140} escala={0.3} ancho={16} color={FK.hifa} circ={true} brillo={0.4} />}
             <Espora x={sx} y={sy} r={17} hincha={kprog(T, t0, t0 + 0.5)} />
           </g>; })}
         </>)}

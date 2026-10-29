@@ -39,4 +39,3 @@ Fuentes abiertas:
 Revisión de las correcciones (29 oct 2026): se leyó `narracion.json` completo; las filas 1, 4, 9, 13b y 16 se corrigieron y los recortes (3, 6, 8, 10, 12, 13) conservan el sentido. Se confirmaron en su página la cita del NHS 2024 ("The infection is cured when you see healthy nail growing back at the base.") y las de AFP 2021 que agrega el guion ("Oral terbinafine is preferred over topical therapy because of better effectiveness and shorter treatment duration."; "terbinafine is likely more effective than itraconazole in achieving complete cure"). Referencias del guion con doi correctas (Yaemsiri: 10.1111/j.1468-3083.2009.03426.x; Leung: 10.2174/1872213X13666191026090713, *Recent Pat Inflamm Allergy Drug Discov* 14(1): 32–45 según PubMed).
 
 Resumen: todas las afirmaciones de voz y pantalla quedan ✅. El dibujo es esquemático. No es consejo médico.
-VEREDICTO: APROBADO
