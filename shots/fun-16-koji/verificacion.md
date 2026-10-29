@@ -43,4 +43,44 @@ Notas: todas las cifras dicen de qué son (días, °C, % de sal, meses, cepas). 
 
 **Re-verificación (29 oct 2026):** se releyeron guion.md y narracion.json completos; solo cambiaron las filas 9, 18 y 24, ahora fieles a sus fuentes (Ito 2021, Tominaga 2006, Yamashita 2021). "Ese año" (fila 23) sigue refiriéndose a 2006. Las 25 afirmaciones quedan ✅.
 
-VEREDICTO: APROBADO
+## Revisión final (animación y publicación) · 29 oct 2026
+
+Se revisaron todos los textos en pantalla de `koji.jsx` (chips, etiquetas, tarjeta, subtítulos, sello), las 11 barras de escala contra los tamaños dibujados, `publicacion.md` completo (7 redes + comentario fijado) y las citas de `## Fuentes` del guion. La voz no cambió.
+
+Fuentes nuevas abiertas:
+- **[KLI]** Klich, M. A. (2002). *Identification of Common Aspergillus Species*. Centraalbureau voor Schimmelcultures, Utrecht. Ficha *Aspergillus oryzae*. https://wi.knaw.nl/images/publications/AspergillusSpecies.pdf
+- **[JUS]** Justé, A., Lievens, B., Rediers, H. y Willems, K. A. (2014). Genus *Tetragenococcus*. En *Lactic Acid Bacteria: Biodiversity and Taxonomy* (cap. 16). https://lirias.kuleuven.be/retrieve/193914
+- **[NCYC]** National Collection of Yeast Cultures, ficha *Zygosaccharomyces rouxii* NCYC 583 (consultada 29 oct 2026). https://www.ncyc.co.uk/catalogue/zygosaccharomyces-rouxii-583
+- **[BN]** BioNumbers ID 110368, tamaño de la molécula de glucosa (anillo), dato de Lourvand 1995. https://bionumbers.hms.harvard.edu/bionumber.aspx?id=110368
+- **[MAC08]** Machida, M., Yamada, O. y Gomi, K. (2008). Genomics of *Aspergillus oryzae*. *DNA Research* 15(4): 173–183. https://pmc.ncbi.nlm.nih.gov/articles/PMC2575883/
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Chips "soya cocida al vapor", "trigo tostado" | ✅ | [ITO] | "cooked under steam pressure"; "the wheat is roasted at 160–180 °C and crushed" | 2021 |
+| F2 | Chip "mitad y mitad" (y "más o menos mitad y mitad" en TikTok) | ✅ | [ITO] | "Approximately equal amounts of soybean and wheat components are then mixed"; "Japanese-style soy sauce uses equal amounts of soybeans and wheat" | 2021 |
+| F3 | Etiquetas "koji", *Aspergillus oryzae*, "o *Aspergillus sojae*"; chip "2–3 días · 30 °C" | ✅ | [ITO] | ver filas 4 y 6 | 2021 |
+| F4 | Lupa "AL MICROSCOPIO · HIFAS Y ESPORAS"; "enzimas = tijeras" (metáfora) | ✅ | [ITO] | "produce various hydrolyzing enzymes" | 2021 |
+| F5 | Etiquetas "proteína", "proteasas (las tijeras)", "aminoácidos", chip "glutamato → umami" | ✅ | [ITO] | "proteolytic … enzymes"; "l-glutamate is the main component of umami in soy sauce" | 2021 |
+| F6 | Etiquetas "almidón del trigo", "amilasas → glucosa" | ✅ | [ITO] | "glucose, which is produced by the breakdown of wheat starch by amylolytic enzymes derived from koji mold" | 2021 |
+| F7 | Chips "salmuera: 22–23 % de sal", "el koji muere" | ✅ | [ITO] | "concentrated (22–23%) saline solution"; "the koji mold dies off" | 2021 |
+| F8 | "enzimas (siguen)", *Tetragenococcus halophilus*, *Zygosaccharomyces rouxii*, "6–8 meses (método tradicional)" | ✅ | [ITO] | ver filas 13–15 | 2021 |
+| F9 | Chips "azúcar + aminoácido = color", "reacción de Maillard" | ✅ | [ITO] | "Maillard reactions between sugars, such as glucose, and amino acids" | 2021 |
+| F10 | Tarjeta "2006 · Higashi-Hiroshima, Japón · 210 cepas · Tominaga et al., Appl. Environ. Microbiol." | ✅ | [TOM] | ver filas 17–18 | 2006 |
+| F11 | Chip "primos: misma sección Flavi"; etiquetas *Aspergillus flavus*, "A. oryzae (koji)" | ✅ | [MAC05], [KLI] | "both A. oryzae and Aspergillus flavus belong to the section Flavi"; [KLI]: "Subgenus: Circumdati Section: Flavi" | 2005 / 2002 |
+| F12 | Etiqueta "aflatoxinas" sobre *A. flavus*; sello "0" + "aflatoxinas"; chip "genes apagados o incompletos" | ✅ | [TOM] | ver filas 20–21 | 2006 |
+| F13 | Etiquetas "sake", "miso", "soya"; chip "Brewing Society of Japan" | ✅ | [KIT], [YAM] | ver filas 22–24 | 2015 / 2021 |
+| F14 | Subtítulos (13): "¿Solo soya? Un hongo." … "Lo cocinó un hongo." | ✅ | — | resumen fiel de cada frase de la voz ya verificada | — |
+| F15 | Barra "lupa: 50 µm" (200 px → 4 px/µm): vesícula dibujada ≈ 18 µm, conidios ≈ 3.5 µm | ✅ | [KLI] | "vesicles pyriform, clavate to subglobose, (8) 22-50 (90) µm wide"; "Conidia … globose to ovoid … (3.5) 4-8.5 (10) µm in length" (dibujo en el extremo chico del rango; esquemático) | 2002 |
+| F16 | Barra "50 µm" en la escena de los primos: vesícula ≈ 20 µm, conidios ≈ 3.5 µm | ✅ | [KLI], [ASP] | [KLI] como arriba; [ASP] *A. flavus*: "vesicles spherical, 20-45 µm diam"; "conidia … 3.5-5.0 µm diam" | 2002 / 2026 |
+| F17 | Barra "5 µm" (180 px): cocos de *Tetragenococcus* ≈ 0.8 µm en tétradas; levadura ≈ 4.3 × 3.4 µm, ovalada | ✅ | [JUS], [NCYC] | "spherical cells (0.5–0.8 µm), which divide in two planes at right angles to form tetrads"; NCYC: "Round-oval", caldo 3–7 × 3–10 µm | 2014 / 2026 |
+| F18 | Barra **"5 nm (moléculas)"** (200 px → 40 px/nm): cada aminoácido dibujado mide ≈ 1.6 nm y cada glucosa ≈ 1.5 nm | ⚠️ | [BN] | Glucosa (anillo): "Long axis 8.6Å short axis 8.4Å" (≈ 0.86 nm). Las moléculas quedan ~1.7–2 veces más grandes de lo que dice la barra. Corregir la barra a **"3 nm (moléculas)"** (mismo largo 200 px → glucosa ≈ 0.9 nm, aminoácido ≈ 1 nm). | 1995 |
+| F19 | Barras macro "5 cm", "1 cm", "20 cm", "10 cm" (botella, sushi, charola, cuba, frascos) | ✅ | — | tamaños cotidianos coherentes con lo dibujado (esquemático) | — |
+| F20 | publicacion.md, TikTok, Instagram, YouTube, Facebook, X, Threads, comentario fijado | ✅ | [ITO], [TOM], [MAC05], [YAM], [KIT] | mismas afirmaciones de la voz; "Honjozo" ✅ ([ITO]: "The most typical method of manufacturing soy sauce in Japan is called the "Honjozo" method"); "péptidos y aminoácidos" ✅ ([ITO]: "amino acids and peptides, which are degradation products of raw material proteins") | 2021 |
+| F21 | LinkedIn: "el hongo que la hace es **un microorganismo domesticado** muy estudiado" | ⚠️ | [MAC08] | "It is said that A. oryzae is a domesticated species" — la fuente lo dice con reserva ("se dice"); el texto lo afirma como hecho. Corregir a "es un microorganismo que se considera domesticado y está muy estudiado". | 2008 |
+| F22 | LinkedIn: "el análisis de su genoma (Machida et al., Nature, 2005) **respalda que es ideal para fermentar**" | ⚠️ | [MAC05] | La fuente dice: "A. oryzae, unlike A. flavus, does not produce aflatoxin, and its long history of use in the food industry has proved its safety." No dice "ideal para fermentar". Corregir a "y el análisis de su genoma (Machida et al., Nature, 2005) recuerda que, a diferencia de A. flavus, no produce aflatoxinas y que su largo uso en alimentos ha probado su seguridad." | 2005 |
+| F23 | `## Fuentes` del guion (6 referencias con frases textuales) | ✅ | todas | referencias completas, enlaces correctos y frases textuales coinciden con el original abierto | 2005–2021 |
+
+Nota (no se publica): en `guion.md` la línea "Barras de escala: 5 cm (botella y sushi), 1 cm (charola/grano), 10 µm (hifas, conidios, bacterias y levaduras)" ya no coincide con la animación (50 µm, 5 µm, 3 nm, 20 cm, 10 cm); conviene actualizarla.
+
+**Pendiente:** 3 ⚠️ (F18, F21, F22). Se quitó el veredicto hasta que se corrijan.
+

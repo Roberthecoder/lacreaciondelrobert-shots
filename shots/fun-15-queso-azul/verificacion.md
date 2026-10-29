@@ -43,4 +43,34 @@ Notas:
 - Las cifras con año (2020, 2024) lo dicen en la voz; el dato de USDA (2005) solo respalda afirmaciones generales, sin cifra en pantalla.
 
 Resumen (29 oct 2026, segunda pasada sobre el texto final de narracion.json y guion.md): las 2 ⚠️ (Pan y Poblaciones) se corrigieron y se volvieron a verificar abriendo las fuentes; los recortes no cambian datos. Todas las afirmaciones de voz y pantalla quedan ✅. El dibujo es esquemático.
-VEREDICTO: APROBADO
+
+## Revisión final (animación y publicación) · 29 oct 2026
+
+Revisados: todos los textos en pantalla de `queso-azul.jsx` (Etq, Chip, MitoTachado, TarjetaEstudio, subtítulos, rótulos de quesos y de colores), las barras de escala contra lo dibujado, `publicacion.md` completo (7 redes + comentario fijado) y `## Fuentes` del guion. Fuente nueva abierta: **[Attaie 2000]** Attaie, R. y Richter, R. L. (2000). Size distribution of fat globules in goat milk. *Journal of Dairy Science* 83(5): 940–944. https://pubmed.ncbi.nlm.nih.gov/10821568/
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Chips/etiquetas: "¿echado a perder?" tachado, "sembrado a propósito", "moho azul", "esporas de P. roqueforti", "leche", "necesita oxígeno (O₂)", "esporas: solo en los huecos", "pasta del queso", "agujas de acero", "entra el aire", "el color está en las esporas", "túnel con aire", "grasa de la leche", "metilcetonas", "= olor a queso azul", "2-heptanona", "✓ cepas escogidas y vigiladas", "moho del pan: no sabes cuál es", "algunos mohos: toxinas", "sembrado a propósito ✓", "túneles de aire + esporas" | ✅ | ver filas 1–8 y 13 | — | — |
+| F2 | "molécula: no a escala"; dibujo de la 2-heptanona: 7 carbonos en zigzag con C=O en el carbono 2 | ✅ | [Cotton 2010] | heptan-2-one = CH3CO(CH2)4CH3 (cetona en el carbono 2) | 2010 |
+| F3 | Tarjeta "2020 · Francia · 34 genomas · Dumas et al., Molecular Ecology"; chip "domesticado 2 veces"; "1 · Roquefort", "cuevas del Combalou, Francia", "2 · quesos azules del mundo" | ✅ | [Dumas 2020], [AOP Roquefort] | ver filas 9–11b | 2020 / 2026 |
+| F4 | "U. de Nottingham · 2024"; "mutantes de color (luz UV)"; rebanadas "azul (clásico) / blanco / café / verde" | ✅ | [Cleere 2024] | "UV-induced colour mutants, allowed in food production, were then generated."; quesos con "B20-14 (green), … B20-10 (fawn), … B20-4 (albino/white)" | 2024 |
+| F5 | Rótulos "ROQUEFORT · Francia · oveja", "GORGONZOLA · Italia · vaca" | ✅ | [AOP Roquefort], [Gorgonzola DOP] | « lait de brebis cru et entier »; « latte di vacca intero » | 2026 / 2017 |
+| F6 | Subtítulo idx 10: "Roquefort… *y el resto del mundo.*" | ⚠️ (vuelve a sonar exclusivo, como la fila 11 antes de corregirla: la población del Roquefort también se usa en otros quesos, p. ej. Gorgonzola) | [Dumas 2020] | "The 'Roquefort' population also included 13 strains used to inoculate other types of blue cheese (e.g., Gorgonzola or Bleu d'Auvergne)" | 2020 |
+| F7 | Otros subtítulos (idx 0–9, 11, 12) | ✅ | filas 1–13 | — | — |
+| F8 | Barra 5 cm (cuña ≈ 12 cm; pan ≈ 10 cm); 10 cm en "Nombre" (Roquefort ≈ 20 cm de diámetro, Gorgonzola ≈ 25 cm); 50 cm (tina ≈ 1.7 m); 1 cm (corte, huecos ≈ 1 cm); 10 cm al picar (rueda ≈ 27 cm) | ✅ coherentes con lo dibujado (esquemático) | — | — | — |
+| F9 | Barra 10 µm en "Venas" (100 px): penicilio grande s=1.15 → esporas de ≈ 3.5 µm | ✅ | [Chávez 2023] | "(3 to 4.5 μm diameter)" | 2023 |
+| F9b | Mismo cuadro: penicilios chicos con s=0.55 y s=0.6 → esporas de ≈ 1.7–1.8 µm con la misma barra | ⚠️ (más chicas que el tamaño real con la barra a la vista) | [Chávez 2023] | "(3 to 4.5 μm diameter)" | 2023 |
+| F10 | Barra 10 µm en "Grasa" (120 px): gotas de ≈ 7–12 µm | ✅ (dentro del rango; del lado grande) | [Attaie 2000] | "fat globules ranged from 0.92 to 15.75 microm in diameter" (leche de vaca) | 2000 |
+| F11 | Barra "10 cm" (90 px) en "Poblaciones": la cueva mide ≈ 49 cm y las ruedas ≈ 8 cm (un Roquefort mide ≈ 20 cm); el globo terráqueo no tiene escala | ⚠️ (la barra dice algo falso del dibujo) | — | — | — |
+| F12 | publicacion.md · TikTok, Instagram, X, Threads | ✅ | filas 1–13 | — | — |
+| F13 | publicacion.md · YouTube: «la otra se usa en todos los demás tipos de queso azul del mundo» | ⚠️ (exclusivo; mismo problema que F6) | [Dumas 2020] | ver F6 | 2020 |
+| F14 | publicacion.md · LinkedIn: «otra usada en los demás quesos azules del mundo» | ⚠️ (mismo problema) | [Dumas 2020] | ver F6 | 2020 |
+| F15 | publicacion.md · Facebook: «Su olor viene de la 2-heptanona» | ⚠️ (dice más que la fuente: la nota de queso azul se debe a dos metilcetonas, 2-heptanona y 2-nonanona) | [Cotton 2010] | "The 'blue cheese' note is due to two methyl ketones (alkan-2-ones), heptan-2-one and nonan-2-one." | 2010 |
+| F16 | publicacion.md · YouTube: resto (Roquefort leche cruda de oveja, esporas en los huecos, agujas, ácidos grasos → metilcetonas 2-heptanona y 2-nonanona, USDA, 34 genomas, Combalou, UV, quesos de colores) y lista de fuentes | ✅ | filas 1–13 | — | — |
+| F17 | Comentario fijado: 7 fuentes con enlace correcto | ✅ (le falta Chávez 2023, que sí está en YouTube; opcional) | — | — | — |
+| F18 | guion.md `## Fuentes` #1: equipo CNRS / Université Paris-Saclay, coautores de Bélgica y Alemania | ✅ | [Dumas 2020] | afiliaciones: "Université Paris‐Saclay … Orsay, France"; "Ghent, Belgium"; "Max Planck Institute for Evolutionary Biology, Plön, Germany" | 2020 |
+| F19 | guion.md `## Fuentes` #2: "BO Agri n°2026-07" | ✅ | [AOP Roquefort] | « Bulletin officiel du Ministère de l'Agriculture … n°2026-07 du 12 février 2026 » | 2026 |
+| F20 | guion.md `## Fuentes` #7: «Mutantes por UV: 74-88-1 (brown) … B20-1 (white/albino); con ellas se hicieron quesos» | ❌ (los quesos se hicieron con otras mutantes: B20-4, B20-10, B20-14 y A22-26) | [Cleere 2024] | "The same strains (B20–4, B20–10, B20–14, A22–26) were then chosen for the production of 'non-blue' cheese" | 2024 |
+
+Estado: hay 6 ⚠️ y 1 ❌ por corregir (F6, F9b, F11, F13, F14, F15, F20). El veredicto se quitó hasta corregirlos.
+
