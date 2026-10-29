@@ -38,3 +38,19 @@ Nota sobre el n.º 5: en el ceviche de Lima el pH del total bajó solo a 5.0–5
 2. **#4 (voz 1 + etiqueta "miosina"):** la miosina no es una bolita, es una varilla larga enrollada en doble hélice. Propuesta de voz: "Las proteínas de la carne son cadenas largas, dobladas y enrolladas como estambre." Y en pantalla: dibujar la miosina como cordón enrollado (dos hebras trenzadas con cabecitas), o quitar la etiqueta "miosina" y dejar solo "proteína".
 3. **#8 (pantalla 3, luz):** propuesta: que las cadenas abiertas se amontonen en grumitos en la superficie de la fibra y que la luz rebote en esos grumos (no en cada cadena suelta).
 4. **#18 (tarjeta "Nantes, Francia"):** el artículo no dice que el caso ocurrió en Nantes. Propuesta: tarjeta "2025 · Francia · Robert et al." (o "Hospital Universitario de Nantes" como autores del reporte, no como lugar del caso).
+
+## Re-verificación (29 oct 2026)
+
+Revisé lo que cambió en guion.md y narracion.json (los dos dicen lo mismo en la voz).
+
+| # | Cambio | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 3 | (pantalla 0) Cámara rápida con chip "⏩ 15 min" mientras los cubos se blanquean | ✅ | Zakrzewski et al. 2022, PMC8950590 | "marinated in citrus juices for up to 30 min … texture similar to cooking" (15 min queda dentro de ese rango y se marca como cámara rápida) | 2022 |
+| 4 | (voz Que) «Las proteínas de la carne son cadenas largas, dobladas y enrolladas como estambre.» + cordón de dos hebras trenzadas con cabecitas, etiqueta solo "proteína" | ✅ | Kristinsson & Hultin 2003, PMID 14611192 | "the myosin rod … coiled coil" · "globular head fraction of the myosin heavy chains" | 2003 |
+| 5 | (voz Acido) «…se empujan entre sí, y el estambre se abre.» + el cordón se desenrolla | ✅ | Kristinsson & Hultin 2003 | "on acid unfolding, the myosin rod may fully dissociate due to electrostatic repulsion within the coiled coil" | 2003 |
+| 8 | (pantalla 3) Las cadenas abiertas se juntan en grumitos en la superficie de la fibra y la luz rebota en los grumitos | ✅ | Wang et al. 2026, PMC12939022 | "acidic conditions can induce surface protein denaturation and enhance light scattering at the muscle fiber surface" | 2026 |
+| 18 | (pantalla 8) Tarjeta "2025 · Francia · Robert et al." | ✅ | Robert et al. 2025, PMC12421590 | "observations from a cluster of two cases in France" · "a 70-year-old French woman" | 2025 |
+
+Las 4 correcciones quedaron bien. Con esto, las 23 afirmaciones están ✅.
+
+VEREDICTO: APROBADO

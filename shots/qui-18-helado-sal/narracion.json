@@ -4,15 +4,15 @@
   "nota": "Shot Químico #18. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
     { "escena": "Gancho", "texto": "Esa sal no derrite el hielo con calor: lo obliga a robarle el calor a tu helado." },
-    { "escena": "Termometro", "texto": "Mete un termómetro en hielo con agua: marca cero grados. Échale sal y empieza a bajar." },
+    { "escena": "Termometro", "texto": "Mete un termómetro en hielo con agua: marca cero. Échale sal y empieza a bajar." },
     { "escena": "Sal", "texto": "La sal disuelta le estorba al agua para congelarse: ahora se congela bajo cero, y el hielo se derrite." },
     { "escena": "Calor", "texto": "Pero derretir hielo cuesta calor, y lo roba de lo más cercano: el bote y tu crema." },
     { "escena": "Crema", "texto": "La crema, con su azúcar, no se congela a cero grados; con puro hielo no alcanza. Con sal, sí." },
     { "escena": "Pregunta", "texto": "¿Y hasta dónde puede bajar?" },
     { "escena": "Limite", "texto": "Con suficiente sal, hasta unos menos 21 grados: más frío que el congelador de tu casa." },
-    { "escena": "Estudio", "texto": "En 1788, en Londres, Charles Blagden midió agua con más y más sal: el punto de congelación bajaba casi en proporción a la sal." },
+    { "escena": "Estudio", "texto": "En 1788, el médico Charles Blagden midió agua con más y más sal: el punto de congelación bajaba casi en proporción a la sal." },
     { "escena": "Carretera", "texto": "Por eso le echan sal a las carreteras con hielo; pero abajo de unos menos 9 grados, casi no derrite." },
-    { "escena": "Fahrenheit", "texto": "Lo curioso: en 1724, el cero de los grados Fahrenheit salió de una mezcla de hielo, agua y sal." },
+    { "escena": "Fahrenheit", "texto": "Lo curioso: Fahrenheit contó en 1724 que el cero de su escala salía de una mezcla de hielo, agua y sal." },
     { "escena": "Cierre", "texto": "Así que esa sal no calienta nada: hace que el hielo le robe el calor a tu helado." }
   ]
 }

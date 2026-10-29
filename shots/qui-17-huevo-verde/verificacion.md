@@ -34,3 +34,15 @@ Fuentes abiertas: **[TS]** Tinkler C.K. y Soar M.C. (1920) "The Formation of Fer
 - **#13 (voz, escena Frio):** proponer **"El frío frena la salida del gas y lo aleja de la yema: por eso, no lo cuezas de más y enfríalo rápido."** (el frío frena la descomposición de la clara que suelta el gas, no la reacción con el hierro). Animación: que se vea que la clara deja de soltar H₂S y el gas sale hacia afuera.
 - **#19 (pantalla, escena 2):** quitar el número del termómetro o poner **"hirviendo"** / **"≈ 100 °C"**, para no afirmar 100 °C exactos (en buena parte de México el agua hierve más abajo).
 - Nota (no bloquea): el consejo "agua caliente, no hirviendo" de la American Egg Board solo se pudo ver citado por la extensión de Arkansas; no está en la voz, así que no afecta.
+
+## Re-verificación (29 oct 2026)
+
+| # | Cambio | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 12 | Pantalla escena 7: "anillo verde mucho más intenso (más oscuro)" a los 30 min | ✅ | TS p. 116 | "a much more intense coloration was produced round the yolks of these eggs than round the yolks of those heated only for 15 minutes" | 1920 |
+| 13 | Voz Frío: "El frío frena la salida del gas y lo aleja de la yema"; pantalla: la clara deja de soltar H₂S y el gas sale hacia afuera | ✅ | TS p. 116–117 | "on cooling the egg quickly, the preliminary decomposition necessary for the formation of ferrous sulphide is checked" · "the rapid cooling on the outside of the egg will lead to the diffusion of the hydrogen sulphide from the white away from the yolk" | 1920 |
+| 19 | Pantalla escena 2: termómetro "hirviendo · ≈ 100 °C" | ✅ | — (dato físico general) | Aproximado: 100 °C al nivel del mar, algo menos en la altura; "≈" lo deja correcto. | — |
+
+Las 3 correcciones quedaron bien aplicadas en `guion.md` y en `narracion.json` (voz de la escena Frío). No quedan ⚠️ ni ❌.
+
+VEREDICTO: APROBADO

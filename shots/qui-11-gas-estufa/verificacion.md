@@ -36,3 +36,24 @@
 3. **#9 – Neurona (escena 3):** que los propanos "apenas" la enciendan o pasen de largo con un chip "solo se huele si hay muchísimo"; o mantener el dibujo con la nota de esquema en la descripción. Leve.
 4. **#14 – Lijadora:** la causa aceptada pero "se cree". Propuesta de voz: "…se fugó bajo el edificio, la chispa de una lijadora eléctrica lo encendió, según la investigación…" o más corto: "…y una chispa, al parecer de una lijadora eléctrica, lo encendió…". (Alternativa mínima: mantener la voz, que NOAA lo afirma tal cual, y en la descripción decir "se cree que fue el interruptor de una lijadora".)
 5. **#16 – Escuela de ladrillo:** cambiar a "silueta de una escuela grande de acero y concreto" (o silueta neutra sin material).
+
+## Re-verificación (29 oct 2026)
+
+Revisé contra las mismas fuentes todo lo que cambió en `guion.md` y `narracion.json` (voz y "Lo que se ve").
+
+| # | Cambio (voz o pantalla) | Veredicto | Fuente | Frase textual / comprobación | Año del dato |
+|---|---|---|---|---|---|
+| R1 | Escena 1: nariz con "casi nada" (ya no "0") | ✅ | Nagata, Tabla 2 | "Propane 1500" · "n-Butane 1200" (ppm): se huele solo a concentración muy alta; "casi nada" es fiel. | 1976–1988 (publ. 2003) |
+| R2 | Escena 2: una sola molécula amarilla entre muchas, chip "≈ 1 por cada 50 000 (esquema)" | ✅ | 49 CFR 173.315(b)(1) + cálculo | "1.0 pound of ethyl mercaptan per 10,000 gallons of liquefied petroleum gas is considered sufficient". 10,000 gal de propano ≈ 18,700 kg ≈ 423,000 mol; 1 lb de etanotiol ≈ 7.3 mol → 1 por cada ~58,000 (con 1.5 lb, ~1 por 39,000). "≈ 1 por cada 50 000" es correcto como orden de magnitud y va marcado "esquema". (La dosis es la de referencia de EE. UU.; la norma mexicana remite a NFPA 58.) | regla vigente |
+| R3 | Voz: "Tu nariz es buenísima para esas moléculas: las nota en cantidades diminutas." | ✅ | Nagata | "Sulfur compounds with the exception of sulfur dioxide and carbon disulfide have the comparatively low threshold." · Tabla 2: "Ethyl mercaptane 0.0000087" (ppm) | 1976–1988 (publ. 2003) |
+| R4 | Escena 3: los propanos "apenas" encienden la neurona; chip "solo se huele si hay muchísimo" | ✅ | Nagata | "propane exhibited the highest threshold (1500ppm)" | 1976–1988 |
+| R5 | Voz: "Y el gas pesa más que el aire: si se escapa, se junta en el piso sin que lo veas." | ✅ | Guía Alcaldía Coyoacán | "Más pesado que el aire: en caso de fuga tiende a acumularse en las partes bajas como el piso…" · "Incoloro" | 2019 |
+| R6 | Voz: "…una chispa, al parecer de una lijadora eléctrica, lo encendió y murieron casi 300 personas." + chip "al parecer" | ✅ | NOAA; Wikipedia | NOAA: "when a maintenance employee turned on an electric sander, the odorless gas ignited." · Wikipedia: "It is believed that the sander's switch caused a spark…" · "estimated killed … is 294" | 1937 |
+| R7 | Escena 6: "silueta de una escuela grande de acero y concreto" | ✅ | Wikipedia | "a large structure of steel and concrete" | 1932–1937 |
+| R8 | Voz: "Ese año, Texas aprobó una ley para ponerle olor al gas." | ✅ | Railroad Commission of Texas | "In 1937, following a large natural gas explosion in a school in New London, Texas, the 45th Legislature passed legislation giving the Railroad Commission the authority to adopt rules and regulations pertaining to the odorization of natural gas or liquefied petroleum gases" | 1937 |
+| R9 | Voz: "Increíble: en mediciones japonesas publicadas en 2003, el etil mercaptano se notó en dosis unas 170 millones de veces menores que el propano." | ✅ | Nagata, Tabla 2 (ppm v/v) | "Ethyl mercaptane 0.0000087" · "Propane 1500" → 1500 ÷ 0.0000087 = 1.72 × 10⁸. "Dosis" se entiende como concentración en el aire; correcto. | 1976–1988 (publ. 2003) |
+| R10 | Voz: "Ese olor no es el gas: es una alarma, y el detector es tu nariz." | ✅ | NOM-016-CRE-2016 (3.28) | "…se añade deliberadamente a gases esencialmente inodoros, como en el caso del GLP, para advertir su presencia en caso de fuga." | 2016 |
+
+Las 5 ⚠️ de la primera ronda (#4, #7, #9, #14, #16) quedaron corregidas (R1, R2, R4, R6, R7). Sin pendientes ⚠️ ni ❌ en lo revisado.
+
+VEREDICTO: APROBADO

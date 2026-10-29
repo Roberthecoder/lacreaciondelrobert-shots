@@ -42,3 +42,21 @@ Fuentes: **[V]** Virot E., Ponomarenko A. "Popcorn: critical temperature, jump a
 3. **#13 horno + filmación.** Propuesta: "En 2015, dos investigadores en Francia las calentaron en un horno y en una placa caliente, y las filmaron a casi 3 mil cuadros por segundo." (o dejar solo "las calentaron y las filmaron…"). En pantalla, mostrar la placa caliente en la parte de la cámara.
 4. **#18 "marometa".** Quitar el giro o dejarlo como salto simple con flecha (no verificado).
 5. **#21 "chorro de vapor".** En pantalla usar "vapor (hipótesis)" o "salida de vapor" sin chorro tipo cohete.
+
+## Re-verificación (29 oct 2026)
+
+Se revisó lo que cambió en guion.md y narracion.json después de las correcciones (gancho, espuma, estudio, brinco, sonido y cierre), contra las mismas fuentes [V] y [T].
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| R1 | Voz 0: "Esa palomita no revienta porque se queme: revienta porque trae agua adentro." | ✅ La explicación del estudio es la de una olla a presión: el agua de adentro se vuelve vapor, la presión sube y la cáscara se rompe. Quemarse no es la causa: el calor solo hace hervir el agua. Que pierda agua deja más granos sin reventar (refuerza [T]). | [V], [T] | "consistent with an elementary pressure vessel scenario" · "its water content (moisture) boils and reaches a thermodynamic equilibrium at the vapour pressure" · "Above a critical vapour pressure, the hull breaks." · [T] "Since moisture loss of popcorn can cause an increase in the number of unpopped kernels" | 2015 / 2005 |
+| R2 | Pantalla 0: "¿se quemó?" tachado → "agua adentro"; nubecita de vapor al estallar | ✅ (esquemático, coincide con R1) | [V] | ídem R1 | 2015 |
+| R3 | Voz 4: "el doble de ancho y ocho veces menos denso"; pantalla "ancho ×2", "densidad ÷8" | ✅ El radio pasa de 3.1 a 6.5 mm; la densidad, de 1300 a 160 kg/m³. | [V] Fig. 2, Tabla 1 | "popcorn becomes two times larger and eight times less dense" | 2015 |
+| R4 | Voz 6: "las calentaron y las filmaron a casi 3 mil cuadros por segundo"; pantalla con el horno (para el termómetro) y aparte la placa caliente con la cámara | ✅ | [V] | "placed in an oven at temperatures increasing by increments of 10°C" · "a piece of popcorn laid on a hot plate is recorded with a high-speed camera Phantom v9 at 2900 frames per second" | 2015 |
+| R5 | Pantalla 8: salto simple, sin giro | ✅ | [V] | "This leg bounces and the popcorn jumps (at 20.7 ms)" | 2015 |
+| R6 | Voz 9: "los autores proponen que el pop es el vapor al salir"; pantalla "vapor (hipótesis)", sin chorro | ✅ Se dice como propuesta de los autores, igual que en el artículo. | [V] | "we propose that the familiar 'pop' sound of the popcorn is caused by the release of water vapour" · "no rocket effect" | 2015 |
+| R7 | Voz 11: "tu palomita no revienta por quemarse: revienta por el agua que trae adentro"; pantalla "agua → vapor → presión → ¡revienta!" | ✅ (igual que R1) | [V] | "Above a critical vapour pressure, the hull breaks." | 2015 |
+
+Con estos cambios, las 6 ⚠️ de la primera revisión quedan resueltas (las 5 correcciones de la lista de arriba). No queda ninguna ⚠️ ni ❌.
+
+VEREDICTO: APROBADO
