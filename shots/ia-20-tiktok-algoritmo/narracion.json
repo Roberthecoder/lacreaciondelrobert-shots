@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot TikTok base narrada.dc.html",
+  "salida": "Shot TikTok narrado.dc.html",
+  "nota": "Shot IA #20. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "No es que TikTok te lea la mente: es que te mide. Cada video que terminas o saltas es un voto."
+    },
+    {
+      "escena": "Senales",
+      "texto": "Según TikTok, usa lo que ves, terminas o saltas, a quién sigues, el audio y los hashtags."
+    },
+    {
+      "escena": "Peso",
+      "texto": "En 2020, TikTok dijo que acabar un video largo pesa más que estar en el mismo país que su autor."
+    },
+    {
+      "escena": "Ranking",
+      "texto": "Calcula qué tan probable es que le des like o lo saltes, y arriba pone el de más puntos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si ya te atrapó en videos que no quieres?"
+    },
+    {
+      "escena": "Paso1",
+      "texto": "Paso uno: deja presionado el video y elige «No me interesa»."
+    },
+    {
+      "escena": "Paso2",
+      "texto": "Paso dos: filtra palabras o hashtags."
+    },
+    {
+      "escena": "Paso3",
+      "texto": "Paso tres: refresca tu Para ti, para que te muestre temas nuevos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2024, un equipo de Europa y Estados Unidos analizó datos donados por trescientos cuarenta y siete usuarios."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo que más personalizaba su Para ti: dar like y seguir cuentas."
+    },
+    {
+      "escena": "Explora",
+      "texto": "Calcularon que en sus primeros mil videos, entre treinta y cincuenta de cada cien seguían sus gustos; muchos de los demás eran para explorar."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no te lee la mente: tú se la enseñas con cada dedazo."
+    }
+  ]
+}

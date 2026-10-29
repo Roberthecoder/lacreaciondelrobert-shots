@@ -49,3 +49,11 @@ Resumen: 20 ✅ · 3 ⚠️ · 0 ❌
 2. **#21 (Explora, voz)** — decirlo como estimación y quitar lo tajante.
    - Propuesta: «Calcularon que, en sus primeros mil videos, entre treinta y cincuenta de cada cien seguían sus gustos; muchos de los demás eran para explorar.»
 3. **#22 (Explora, pantalla)** — en la cuadrícula, rotular el rango 30–50 como "estimado" (p. ej. "30–50 % · estimado del estudio").
+
+## Re-verificación (29 oct 2026, coordinador)
+- Paso3: «Paso tres: refresca tu Para ti, para que te muestre temas nuevos.» + pantalla «temas nuevos» ✅ (texto del verificador)
+- Explora: «Calcularon que en sus primeros mil videos, entre treinta y cincuenta de cada cien seguían sus gustos; muchos de los demás eran para explorar.» + chip «30–50 % · estimado del estudio» ✅
+- Recortes sin datos nuevos: «Según TikTok, usa lo que ves, terminas o saltas, a quién sigues, el audio y los hashtags.» (página oficial de TikTok) y «En 2020, TikTok dijo que acabar un video largo pesa más que estar en el mismo país que su autor.» (Newsroom 2020) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
