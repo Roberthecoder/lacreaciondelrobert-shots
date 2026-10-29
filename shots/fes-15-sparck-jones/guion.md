@@ -1,7 +1,7 @@
 # Shot Festivo #15 · Mujer y Niña en la Ciencia · IA: La idea de una mujer de 1972 que usa tu buscador
 
 - **Serie:** Shot Festivo · **Serie vinculada:** IA · **Logo:** ia (brillitos) · **Badge:** Festivo #15 · **Especial:** Día Internacional de la Mujer y la Niña en la Ciencia (se publica el 11 feb 2027).
-- **Estado (29 oct 2026):** guion y `narracion.json` corregidos tras la verificación independiente (4 ⚠️ atendidas; falta que el verificador revise los cambios) · falta animación, tabla "Robert en pantalla" y `publicacion.md` · **voz pendiente de aprobación de Robert**.
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`: APROBADO), animación (`sparck-jones.jsx` + `Shot SparckJones base narrada.dc.html`), música (`gen-audio.mjs`), Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert**.
 - **Formato:** N4 "La imagen que se llena" (la barra de búsqueda y las páginas que se llenan de palabras y pesos) con un poco de N2 "El número" (el peso de cada palabra como medidor).
 - **Gancho (de los 7):** #3 "Tu vida en una imagen" / #7 "algo que tus ojos nunca ven": "Cuando buscas algo en internet, muy probablemente usas una idea de esta mujer", sobre la barra de búsqueda del celular y el retrato dibujado de Karen.
 - **Duración:** voz 1,069 caracteres (≈ 65.4 s) + cierre 3.8 s → **≈ 69.2 s** estimados (festivo: 61–75 s).
@@ -27,6 +27,30 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert señalando. |
 
 **Música:** cama grave continua sin golpe (sintetizador suave, tipo terminal vieja); efectos en el mismo cuadro: toque de la lupa con chispitas, tecleo de cada letra, un "blip" por cada página que se ilumina (muchos y bajitos para «de», pocos y brillantes para «rajas»), la balanza que se inclina, la lista que se reacomoda, el apagón del celular y el zumbido de la computadora vieja, pesitas que caen en las fichas, barritas que suben, ramitas que se encienden, la lupita de la IA, y destellos al final.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos porque están atados a cada escena). Grande en «¿Quién pensó en esto antes de que existiera la web?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «usas una idea de esta mujer» (cuadro 0) |
+| 2 | 11.7 | 15.0 | 13_senalando_arriba | `arriba-der` | señala las pocas páginas con «rajas» |
+| 3 | 15.7 | 19.3 | 06_pensativo_menton | `arriba-der` | la balanza: «más vale» |
+| 4 | 23.8 | 27.4 | 07_pensativo_puno | `grande` | «¿Quién pensó en esto antes de que existiera la web?» |
+| 5 | 27.7 | 29.8 | 04_bajando_lentes | `arriba-der` | la tarjeta «1972 · Karen Spärck Jones» |
+| 6 | 33.6 | 37.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | «las búsquedas mejoraron bastante» |
+| 7 | 40.5 | 44.1 | 12_perfil_serio | `arriba-der` | IDF y sus herederas (TF-IDF, BM25) |
+| 8 | 47.5 | 50.5 | 13_senalando_arriba | `arriba-der` | señala la lupita «BM25» del asistente de IA |
+| 9 | 51.1 | 53.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «animaba a niñas y jóvenes» |
+| 10 | 59.4 | 65.3 | 02_apuntando_camara | `arriba-der` | «muy probablemente Karen te ayuda» |
+| — | 65.4 | 69.2 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones: 10 · **36.6 s en pantalla** (+ cierre 3.8 s) · 8 poses distintas, ninguna repetida seguida. Durante la cita del lema (54–59 s) Robert no sale para no tapar la cita.
+
+## Notas de animación
+- Base: 69.2 s (estimar-escenas, 1,069 caracteres). Sin barra de `Escala`: ninguna escena es microscópica (las de fondo noche son "por dentro del buscador", no tienen tamaño físico).
+- El tamal es de rajas (hoja de maíz, masa y rajas de chile poblano). La pared de páginas, las pesitas, la balanza, las barras de las 3 colecciones y el asistente de IA son esquemáticos (no hay conteos reales).
 
 ## Fuentes
 

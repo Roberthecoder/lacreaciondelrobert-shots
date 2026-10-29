@@ -230,7 +230,7 @@ function Fuegos() {
       {/* 2 · dentro del cohete: sales de metales */}
       <Escena T={T} a={K.Co} b={K.Cl}>
         <FondoLunares color={KC.yellow} />
-        {svg(<CorteCohete T={T} x={620} y={760} abre={kprog(T, K.Co + 0.3, K.Co + 1.6)} />)}
+        {svg(<CorteCohete T={T} x={520} y={760} abre={kprog(T, K.Co + 0.3, K.Co + 1.6)} />)}
       </Escena>
       {/* 3 · cinco metales, cinco colores */}
       <Escena T={T} a={K.Cl} b={K.Ca} zoom={0.03}>
@@ -243,7 +243,7 @@ function Fuegos() {
             <text y={4} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={c}>{s}</text>
             <text y={36} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.texto}>{nom}</text></g>}
         </g>)}</>)}
-        <Ciudad T={T} y={1500} />
+        <Ciudad T={T} y={1640} />
       </Escena>
       {/* 4 · por dentro: el calor empuja a los electrones (Sr–Cl, escala ~1 nm) */}
       <Escena T={T} a={K.Ca} b={K.Es} zoom={0.04}>
@@ -377,9 +377,9 @@ function Fuegos() {
       <Chip T={T} at={K.G + 0.3} until={K.Co - 0.2} texto="Especial Año Nuevo" x={540} y={1500} tam={40} borde={KC.yellow} />
       <MitoTachado T={T} at={K.G + 0.7} tacharEn={K.G + 1.7} until={K.G + 2.6} texto="¿pintura?" x={300} y={1120} tam={52} />
       <Etq T={T} at={K.G + 2.4} until={K.Co - 0.3} x={60} y={1120} texto="Sr · estroncio" tam={44} color={KC.texto} />
-      <Etq T={T} at={K.Co + 0.9} until={K.Cl - 0.3} x={470} y={580} texto="bolitas de color" tam={30} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.Co + 1.3} until={K.Cl - 0.3} x={470} y={930} texto="pólvora" tam={30} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.Co + 1.7} until={K.Cl - 0.3} x={660} y={1180} texto="mecha" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Co + 0.9} until={K.Cl - 0.3} x={380} y={580} texto="bolitas de color" tam={26} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.Co + 1.3} until={K.Cl - 0.3} x={380} y={930} texto="pólvora" tam={26} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.Co + 1.7} until={K.Cl - 0.3} x={560} y={1140} texto="mecha" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Co + 1.4} until={K.Cl - 0.2} texto="sales de metales" x={540} y={1520} tam={44} borde={KC.ink} />
       <Etq T={T} at={K.Cl + 4.2} until={K.Ca - 0.3} x={70} y={1460} texto="a veces brilla el metal unido a un cloro:" tam={26} />
       <Etq T={T} at={K.Cl + 4.2} until={K.Ca - 0.3} x={70} y={1510} texto="SrCl · BaCl · CuCl" tam={34} color={KC.gold2} />
@@ -389,8 +389,8 @@ function Fuegos() {
       <Etq T={T} at={K.Es + 0.6} until={K.Es + 1.9} x={820} y={660} texto="sube" tam={38} color={KC.yellow} />
       <Chip T={T} at={K.Es + 2.2} until={K.H - 0.2} texto="baja = luz" x={540} y={1520} tam={50} borde={ROJO} />
       <Etq T={T} at={K.Es + 0.2} until={K.H - 0.3} x={70} y={480} texto="niveles de energía (esquema)" tam={26} />
-      <Etq T={T} at={K.H + 0.6} until={K.P - 0.3} x={70} y={480} texto="escalón más grande → luz más azul" tam={26} />
-      <Chip T={T} at={K.H + 2.8} until={K.P - 0.2} texto="cada metal, su color" x={540} y={1520} tam={46} borde={KC.gold} />
+      <Etq T={T} at={K.H + 0.6} until={K.P - 0.3} x={70} y={1480} texto="escalón más grande → luz más azul" tam={26} />
+      <Chip T={T} at={K.H + 2.8} until={K.P - 0.2} texto="cada metal, su color" x={540} y={1580} tam={46} borde={KC.gold} />
       <Etq T={T} at={K.A + 0.6} until={K.A + 4.6} x={70} y={1460} texto="cobre + cloro = CuCl" tam={36} color={KC.cyan} />
       <Etq T={T} at={K.A + 2.8} until={K.A + 4.8} x={900} y={680} texto="más calor" tam={30} color={KC.red} lado="izq" />
       <Chip T={T} at={K.A + 5.1} until={K.E - 0.2} texto="se rompe: el azul se deslava" x={540} y={1520} tam={42} borde={DESLAVA} />
@@ -420,9 +420,9 @@ function Fuegos() {
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 3.8, 'avatar_11_sorprendido', 'gancho'],
-        [CUES.Cohete + 0.5, CUES.Colores - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
+        [CUES.Cohete + 0.5, CUES.Colores - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Calor + 0.4, CUES.Escalon - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [CUES.Huella + 0.5, CUES.Pregunta - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
+        [CUES.Huella + 0.5, CUES.Pregunta - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Pregunta + 0.05, CUES.Azul + 1.2, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Azul + 4.4, CUES.Estudio - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Estudio + 3.0, CUES.Cesio - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],

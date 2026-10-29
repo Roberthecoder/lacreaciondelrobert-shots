@@ -67,16 +67,16 @@ function Telefono({ T, x, y, s = 1, letras = 0, pesos = 0, toque = -9, resultado
     {n === 0 && letras <= 0 && <text x={-182} y={160} style={{ font: `700 30px ${KF.texto}` }} fill="#9a95a8">Buscar…</text>}
     <text x={-182} y={160} style={{ font: `800 31px ${KF.texto}` }} fill={TINTA}>{txt}{cursor ? '|' : ''}</text>
     {/* fichas + pesitas */}
-    {pesos > 0 && PALABRAS.map((p, i) => { const w = anchos[i], x0 = cx; cx += w + 10; const e = kprog(pesos, i * 0.12, i * 0.12 + 0.4, kEase.rebote), h = 150 * p.p * kprog(pesos, 0.3 + i * 0.1, 0.8 + i * 0.1, kEase.sale);
+    {pesos > 0 && PALABRAS.map((p, i) => { const w = anchos[i], x0 = cx; cx += w + 10; const e = kprog(pesos, i * 0.12, i * 0.12 + 0.4, kEase.rebote), h = 120 * p.p * kprog(pesos, 0.3 + i * 0.1, 0.8 + i * 0.1, kEase.sale);
       return <g key={i} opacity={kprog(pesos, i * 0.12, i * 0.12 + 0.15)}>
         <g transform={`translate(${x0 + w / 2} 252) scale(${klerp(0.6, 1, e)})`}>
           <rect x={-w / 2} y={-26} width={w} height={52} rx={26} fill={p.c} stroke={TINTA} strokeWidth={4} />
           <text x={0} y={10} textAnchor="middle" style={T28} fill={TINTA}>{p.w}</text>
         </g>
-        <rect x={x0 + w / 2 - 22} y={430 - h} width={44} height={h} rx={8} fill={p.c} stroke={TINTA} strokeWidth={4} />
-        <rect x={x0 + w / 2 - 34} y={430} width={68} height={10} rx={5} fill={TINTA} />
+        <rect x={x0 + w / 2 - 22} y={400 - h} width={44} height={h} rx={8} fill={p.c} stroke={TINTA} strokeWidth={4} />
+        <rect x={x0 + w / 2 - 34} y={400} width={68} height={10} rx={5} fill={TINTA} />
       </g>; })}
-    {pesos > 0 && <text x={-272} y={478} style={{ font: `700 24px ${KF.mono}` }} fill="#6b6578" opacity={kprog(pesos, 0.6, 0.9)}>peso de cada palabra</text>}
+    {pesos > 0 && <text x={-272} y={446} style={{ font: `700 24px ${KF.mono}` }} fill="#6b6578" opacity={kprog(pesos, 0.6, 0.9)}>peso de cada palabra</text>}
     {/* resultados (abajo del subtítulo) */}
     <g opacity={resultados}>{[0, 1, 2, 3].map((i) => <g key={i} transform={`translate(-262 ${560 + i * 170})`}>
       <rect x={0} y={0} width={524} height={140} rx={22} fill="#fff" stroke="#d8d2e6" strokeWidth={4} />
@@ -201,7 +201,7 @@ function Ficha({ T, x, y, palabra, cae, peso, color }) {
 
 /* ---------- tres colecciones de prueba ---------- */
 function Fichero({ T, x, y, k, at, sube }) {
-  const h0 = [90, 75, 105][k], h1 = [170, 150, 195][k];
+  const h0 = [90, 75, 105][k], h1 = [125, 100, 140][k];
   return <g transform={`translate(${x} ${y})`}>
     {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={-110 + i * 6} y={-60 - i * 10 + Math.sin(T * 2 + i + k) * 3} width={200} height={110} rx={8} fill={['#fffaf0', '#f3e6b8', '#ffe2ec'][k]} stroke={TINTA} strokeWidth={4} transform={`rotate(${-6 + i * 3})`} />)}
     <path d="M -140 0 L 140 0 L 120 170 L -120 170 Z" fill={['#b4643a', KC.blue, KC.teal][k]} stroke={TINTA} strokeWidth={7} strokeLinejoin="round" />
@@ -225,7 +225,7 @@ function Herencia({ T, at }) {
         <path d={`M 0 0 Q ${dx * 0.2} ${dy * 0.6} ${dx * u} ${dy * u}`} stroke={KC.gold2} strokeWidth={nom ? 8 : 5} fill="none" opacity={0.85} strokeDasharray={nom ? '0' : '12 10'} strokeDashoffset={-T * 30} />
         {u > 0.98 && <g transform={`translate(${dx} ${dy}) scale(${kprog(T, t0 + 0.5, t0 + 0.8, kEase.rebote)})`}>
           <circle r={nom ? 88 : 44} fill={nom ? '#1f2a48' : '#17203a'} stroke={nom ? KC.cyan : KC.gold2} strokeWidth={nom ? 7 : 4} opacity={nom ? 1 : br} />
-          <text x={0} y={nom ? 14 : 12} textAnchor="middle" style={{ font: nom ? `900 40px ${KF.texto}` : `italic 700 34px ${KF.mono}` }} fill={nom ? KC.texto : KC.gold2}>{nom || 'ƒ'}</text>
+          <text x={0} y={nom ? 14 : 12} textAnchor="middle" style={{ font: nom ? `900 40px ${KF.texto}` : `700 22px ${KF.mono}` }} fill={nom ? KC.texto : KC.gold2}>{nom || 'f(x)'}</text>
         </g>}
       </g>; })}
     <g transform={`scale(${kprog(T, at + 0.1, at + 0.6, kEase.rebote)})`}>
@@ -303,9 +303,9 @@ function SparckJones() {
       <Escena T={T} a={K.G} b={K.De} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Telefono T={T} x={540} y={klerp(1000, 760, kprog(T, K.G, K.G + 0.5, kEase.sale))} toque={TOQUE} letras={letras} resultados={kprog(T, K.G + 0.6, K.G + 1.2)} />
-          <g opacity={kprog(T, K.G + 1.0, K.G + 1.3)}><Karen T={T} x={250} y={klerp(380, 520, kprog(T, K.G + 1.0, K.G + 1.6, kEase.rebote))} s={0.82} rot={-4} sonrie={0.7} /></g>
-          {T > K.Bu + 1.4 && <Tamal T={T} x={850} y={klerp(1150, 620, kprog(T, K.Bu + 1.4, K.Bu + 1.9, kEase.rebote))} s={0.75} rot={10 + Math.sin(T * 3) * 6} />}
+          <Telefono T={T} x={540} y={klerp(1000, 700, kprog(T, K.G, K.G + 0.5, kEase.sale))} toque={TOQUE} letras={letras} resultados={kprog(T, K.G + 0.6, K.G + 1.2)} />
+          <g opacity={kprog(T, K.G + 1.0, K.G + 1.3)}><Karen T={T} x={240} y={klerp(330, 470, kprog(T, K.G + 1.0, K.G + 1.6, kEase.rebote))} s={0.74} rot={-4} sonrie={0.7} /></g>
+          {T > K.Bu + 1.4 && <Tamal T={T} x={860} y={klerp(1150, 540, kprog(T, K.Bu + 1.4, K.Bu + 1.9, kEase.rebote))} s={0.75} rot={10 + Math.sin(T * 3) * 6} />}
         </>)}
       </Escena>
       {/* 3-4 · la pared de páginas: «de» en casi todas, «rajas» en pocas */}
@@ -330,9 +330,9 @@ function SparckJones() {
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <text x={260} y={760} textAnchor="middle" style={{ font: `400 400px ${KF.titulo}` }} fill={KC.yellow} stroke={TINTA} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 260 620)`} opacity={kprog(T, K.P, K.P + 0.3)}>?</text>
+          <text x={260} y={680} textAnchor="middle" style={{ font: `400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={TINTA} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 260 560)`} opacity={kprog(T, K.P, K.P + 0.3)}>?</text>
           <g opacity={1 - kprog(T, K.P + 0.6, K.P + 1.0)}><Telefono T={T} x={300} y={klerp(560, 640, kprog(T, K.P, K.P + 1))} s={klerp(0.42, 0.2, kprog(T, K.P + 0.2, K.P + 1.0))} apagado={kprog(T, K.P + 0.1, K.P + 0.5)} resultados={1} /></g>
-          <g opacity={kprog(T, K.P + 0.7, K.P + 1.1)}><Computadora T={T} x={290} y={klerp(1000, 930, kprog(T, K.P + 0.7, K.P + 1.3, kEase.sale))} s={0.82} /></g>
+          <g opacity={kprog(T, K.P + 0.7, K.P + 1.1)}><Computadora T={T} x={290} y={klerp(1020, 960, kprog(T, K.P + 0.7, K.P + 1.3, kEase.sale))} s={0.72} /></g>
         </>)}
       </Escena>
       {/* 8 · el estudio: 1972, Cambridge */}
@@ -378,8 +378,8 @@ function SparckJones() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Telefono T={T} x={540} y={760} letras={BUSCA.length + 1} pesos={kprog(T, K.Ci + 0.4, K.Ci + 2.6)} resultados={1} />
-          <Karen T={T} x={250} y={520} s={0.82} rot={-4} sonrie={1} />
+          <Telefono T={T} x={540} y={700} letras={BUSCA.length + 1} pesos={kprog(T, K.Ci + 0.4, K.Ci + 2.6)} resultados={1} />
+          <Karen T={T} x={240} y={470} s={0.74} rot={-4} sonrie={1} />
           {Array.from({ length: 6 }, (_, i) => <Destello key={i} x={120 + i * 170} y={440 + (i % 2) * 60 + Math.sin(T * 2 + i) * 10} r={18 * kprog(T, K.Ci + 2.6 + i * 0.1, K.Ci + 3.0 + i * 0.1, kEase.rebote)} color={KC.gold2} rot={T * 40} />)}
         </>)}
       </Escena>
@@ -388,9 +388,9 @@ function SparckJones() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.3} until={K.Bu - 0.2} texto="Día de la Mujer y la Niña en la Ciencia" x={540} y={1460} tam={36} borde={KC.yellow} />
-      <Etq T={T} at={K.Bu + 1.9} until={K.De - 0.3} x={640} y={500} texto="tamal de rajas" tam={30} color={TINTA} />
+      <Etq T={T} at={K.Bu + 1.9} until={K.De - 0.3} x={660} y={728} texto="tamal de rajas" tam={30} color={TINTA} />
       <Medidor T={T} at={K.De + 1.2} until={K.Ra - 0.3} y={1420} ancho={900} etiqueta="peso de «de»" valor={(t) => 0.06 * kprog(t, K.De + 1.4, K.De + 2.4)} texto={() => 'casi nada'} color={KC.yellow} />
-      <Chip T={T} at={K.De + 2.6} until={K.Ra - 0.3} texto="sale en casi todas = pesa poco" x={540} y={1610} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.De + 2.6} until={K.Ra - 0.3} texto="ejemplo: sale en casi todas = pesa poco" x={540} y={1610} tam={38} borde={KC.yellow} />
       <Medidor T={T} at={K.Ra + 1.6} until={K.Rr - 0.3} y={1420} ancho={900} etiqueta="peso de «rajas»" valor={(t) => 0.95 * kprog(t, K.Ra + 1.8, K.Ra + 2.8, kEase.sale)} texto={() => 'mucho'} color={KC.mint} />
       <Chip T={T} at={K.Ra + 2.4} until={K.Rr - 0.3} texto="sale en pocas = pesa mucho" x={540} y={1610} tam={38} borde={KC.mint} />
       <Chip T={T} at={K.Rr + 2.4} until={K.Re - 0.3} texto="la palabra rara pesa más" x={540} y={1480} tam={42} borde={KC.ink} />
@@ -400,7 +400,7 @@ function SparckJones() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.7} anio="1972" quien="Karen Spärck Jones" revista="Cambridge, Inglaterra · Journal of Documentation" x={540} y={880} />
       <Chip T={T} at={K.E + 3.2} until={K.Pr - 0.3} texto="más rara = más peso" x={540} y={1460} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Pr + 0.6} until={K.H - 0.3} texto="3 colecciones de prueba" x={540} y={1460} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Pr + 2.0} until={K.H - 0.3} x={60} y={1580} texto="gris: sin pesos · dorado: con pesos" tam={28} color={TINTA} />
+      <Etq T={T} at={K.Pr + 2.0} until={K.H - 0.3} x={60} y={1580} texto="gris: sin pesos · dorado: con pesos" tam={30} color={TINTA} />
       <Chip T={T} at={K.H + 0.7} until={K.IA - 0.3} texto="frecuencia inversa de documento" x={540} y={1460} tam={38} borde={KC.gold} />
       <Chip T={T} at={K.IA + 0.6} until={K.Da - 0.3} texto="buscar antes de responder" x={540} y={1460} tam={40} borde={KC.cyan} />
       <Etq T={T} at={K.IA + 2.2} until={K.Da - 0.3} x={60} y={1580} texto="BM25: heredera de TF-IDF" tam={30} />
@@ -424,9 +424,9 @@ function SparckJones() {
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.Pr - 0.1} texto="1972: *pesar cada palabra.*" />
       <Subtitulo T={T} idx={8} at={K.Pr + 0.1} until={K.H - 0.1} texto="3 colecciones: *mejoraron.*" />
       <Subtitulo T={T} idx={9} at={K.H + 0.1} until={K.IA - 0.1} texto="En *casi todas las fórmulas.*" />
-      <Subtitulo T={T} idx={10} at={K.IA + 0.1} until={K.Da - 0.1} texto="La IA busca con *BM25.*" />
+      <Subtitulo T={T} idx={10} at={K.IA + 0.1} until={K.Da - 0.1} texto="Hay IA que busca con *BM25.*" />
       <Subtitulo T={T} idx={11} at={K.Da + 0.1} until={K.Ci - 0.1} texto="Niñas a la computación: *su lema.*" />
-      <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Medir *qué palabras importan.*" />
+      <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="*Qué palabras importan.*" />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 4.4, 'avatar_11_sorprendido', 'gancho'],

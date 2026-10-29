@@ -1,16 +1,16 @@
 # Shot Festivo #08 · Revolución Mexicana · Químico: Las películas de la Revolución eran de algodón con ácido nítrico
 
 - **Serie:** Shot Festivo · **Serie vinculada:** Químico · **Logo:** química (matraz) · **Badge:** Festivo #08 · **Especial:** Revolución Mexicana (se publica el 20 nov 2026) · rama `pedido300/festivos`.
-- **Estado (29 oct 2026):** guion corregido tras la verificación independiente (`verificacion.md`: 18 ✅, 2 ⚠️ corregidas en líneas 9 y 11; pendiente re-verificar) · sin animación todavía · voz pendiente de aprobación de Robert.
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`: APROBADO), animación (`pelicula-nitrato.jsx`), sonido (`gen-audio.mjs`), Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert**.
 - **Formato:** N3 "Capítulos y medidores" (capítulos: El rollo · La receta · La molécula · El fuego · Lo que quedó; medidores de % de nitrógeno y termómetro de autoignición) con un poco de N5 "El experimento" (la tira que arde sin aire).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Este rollo de la Revolución no es solo cine: es algodón tratado con ácido nítrico."
-- **Duración:** voz 1,083 caracteres (≈ 66.1 s, `estimar-escenas`) + cierre 3.8 s → **≈ 69.9 s** (festivo: 61–75 s).
+- **Duración:** voz 1,083 caracteres (≈ 66.1 s, `estimar-escenas`) + cierre 3.8 s → **≈ 69.9 s** en la base (festivo: 61–75 s).
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Este rollo de la Revolución no es solo cine: es algodón tratado con ácido nítrico. | Fondo rojo/verde con papel picado tricolor. Desde el cuadro 0 un rollo de película se desenrolla hacia cámara; en los cuadritos, siluetas de jinetes con sombrero y carrillera. «¿plástico?» → «algodón + ácido nítrico». Chip «Especial Revolución Mexicana». Capítulo 1 «El rollo». |
+| 0 | Gancho | Este rollo de la Revolución no es solo cine: es algodón tratado con ácido nítrico. | Fondo rojo/verde con papel picado tricolor. Desde el cuadro 0 Robert (sorprendido) y un carrete de película que gira y se desenrolla; en los cuadritos, siluetas de jinetes con sombrero y carrillera. «¿solo cine?» se tacha → «algodón + ácido nítrico». Chip «Especial Revolución Mexicana». Capítulo 1 «El rollo». |
 | 1 | Villa | En 1914, Pancho Villa firmó con una empresa de cine estadounidense para que filmara sus batallas. | Fondo amarillo. Hoja de contrato con pluma que firma; a un lado una cámara de manivela sobre tripié que gira y «filma» jinetes a caballo. Tarjeta «1914 · contrato con Mutual Film». |
 | 2 | Nitrato | Y el cine de entonces se grababa en nitrato. | Fondo cian. Lata de película con etiqueta «NITRATE FILM» (como las latas de época); la tira sale con sus perforaciones. |
 | 3 | Receta | Se hacía bañando fibras de algodón en ácido nítrico y sulfúrico. | Fondo menta. Una mota de algodón cae a un vaso con mezcla de ácidos (etiquetas HNO₃ y H₂SO₄); burbujas; sale una lámina transparente. Capítulo 2 «La receta». |
@@ -19,13 +19,32 @@
 | 6 | Oxigeno | Y trae su propio oxígeno: encendida, arde sin que le llegue aire. | Fondo noche. Una tira encendida dentro de un frasco tapado: la flama sigue; en la molécula, los O de los nitratos brillan («el oxígeno ya viene adentro»). Capítulo 4 «El fuego». |
 | 7 | Pregunta | ¿Y si nadie la enciende? ¿Se puede prender sola? | **Re-gancho.** Fondo naranja, «?» gigante con un cerillo apagado; Robert grande, pensativo. |
 | 8 | Gases | Al envejecer suelta gases de nitrógeno que la deshacen cada vez más rápido. | Fondo noche. La cadena suelta burbujas café de NO₂ que regresan y rompen más enlaces; flecha circular «más gas → más daño → más gas». Chip «círculo vicioso». |
-| 9 | Calor | Nueva, se prende sola a ciento cincuenta grados; muy descompuesta, con apenas cincuenta, o menos. | Fondo cian. Termómetro con dos marcas: rollo sano «150 °C», rollo hecho polvo café «50 °C o menos»; la tira vieja humea. |
+| 9 | Calor | Nueva, se prende sola a ciento cincuenta grados; muy descompuesta, con apenas cincuenta, o menos. | Fondo cian. Termómetro que sube a 150 °C (se prende el rollo nuevo) y baja a 50 °C (se prende el rollo viejo, hecho polvo café, que humea). Chips «nueva: 150 °C» y «muy descompuesta: 50 °C o menos». |
 | 10 | Estudio | En 1982, el fuego en la Cineteca Nacional llegó a sus bóvedas de nitrato: según cifras oficiales, se perdieron más de seis mil películas. | Fondo amarillo. Tarjeta «24 mar 1982 · Cineteca Nacional · Ciudad de México»; edificio esquemático con bóveda y latas; llamas que avanzan hacia las latas; contador «+6,000 películas» («cifra oficial»). |
 | 11 | Dato | Y mucho cine de la Revolución sí sobrevivió: con los rollos que juntó Salvador Toscano, su hija Carmen armó «Memorias de un mexicano» en 1950. | Fondo menta con papel picado. Latas a salvo en un estante frío; una moviola (mesa de edición) une tiras; cartel «Memorias de un mexicano · 1950». Capítulo 5 «Lo que quedó». |
-| 12 | Cierre | Así que este rollo no es solo cine: es algodón con ácido nítrico que hay que cuidar del calor. | **Regreso a la imagen del inicio** (mismo rollo y papel picado), ahora guardado en una lata dentro de una bóveda fría con termómetro bajo; una lupa de rayos X muestra adentro la cadena con nitratos. Chip «no es solo cine: es química». |
+| 12 | Cierre | Así que este rollo no es solo cine: es algodón con ácido nítrico que hay que cuidar del calor. | **Regreso a la imagen del inicio** (mismo rollo y papel picado), ahora quieto, con escarcha de bóveda fría («guardar en frío»); una lupa «POR DENTRO · nitrato de celulosa» muestra la cadena con sus nitratos. Chip «no es solo cine: es química». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave continua sin golpe (con un aire lejano de corrido en notas largas, sin melodía conocida); efectos en el mismo cuadro: traqueteo del proyector/cámara de manivela, rasgueo de la pluma al firmar, lata que se abre, algodón que cae y burbujas del ácido, un «clic» por cada grupo nitrato que se pega, siseo de la flama en el frasco tapado, burbujeo grave de los gases, notas que suben con el termómetro, crepitar de las llamas en la Cineteca (contenido, sin dramatizar), carrete de moviola, y un acorde frío y tranquilo en la bóveda del cierre.
+
+## Robert en pantalla
+
+Tiempos de la base narrada (`Shot Pelicula Nitrato base narrada.dc.html`, total 69.9 s).
+
+| # | Entra | Sale | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11 sorprendido | gancho | "no es solo cine: es algodón tratado con ácido nítrico" (cuadro 0) |
+| 2 | 11.2 | 14.8 | 13 señalando arriba | izq-alto | la lata de nitrato y la receta |
+| 3 | 19.2 | 23.5 | 04 bajando lentes | arriba-der | los grupos nitrato y "prima del algodón pólvora" |
+| 4 | 26.9 | 30.2 | 11 sorprendido | izq-alto | "trae su propio oxígeno: arde sin aire" |
+| 5 | 30.35 | 34.4 | 07 pensativo puño | **grande** | re-gancho "¿Se puede prender sola?" (el giro) |
+| 6 | 38.4 | 42.4 | 10 serio molesto | arriba-der | "se prende sola… con apenas cincuenta, o menos" |
+| 7 | 47.5 | 51.8 | 12 perfil serio | izq-alto | el incendio de la Cineteca (+6,000 películas) |
+| 8 | 52.6 | 55.8 | 05 sonriendo | arriba-der | "mucho cine de la Revolución sí sobrevivió" |
+| 9 | 60.7 | 66.0 | 02 apuntando a cámara | arriba-der | frase final "hay que cuidarlo del calor" |
+| — | 66.1 | 69.9 | 13 señalando arriba | `CierreMarca` | tarjeta de cierre |
+
+**Total:** ≈ 36.7 s en pantalla (sin contar el cierre) · 9 apariciones · 8 poses distintas (nunca la misma dos veces seguidas) · 1 vez grande.
 
 ## Fuentes
 

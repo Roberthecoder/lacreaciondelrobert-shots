@@ -273,7 +273,7 @@ function Cartel({ x, y, rot = 3 }) {
 
 // Ciclo: gas → daño → más gas (flechas que giran)
 function Ciclo({ T, x, y, p = 1 }) {
-  const R = 170, nodos = [['gas NO₂', -90], ['se rompe', 30], ['más gas', 150]];
+  const R = 150, nodos = [['gas NO₂', -90], ['se rompe', 30], ['más gas', 150]];
   return <g transform={`translate(${x} ${y})`} opacity={p}>
     <g transform={`rotate(${T * 60})`}>
       {[0, 120, 240].map((a) => <path key={a} transform={`rotate(${a})`} d={`M ${R} 0 A ${R} ${R} 0 0 1 ${Math.cos(1.4) * R} ${Math.sin(1.4) * R}`} stroke={NO2} strokeWidth={14} fill="none" strokeLinecap="round" />)}
@@ -314,8 +314,6 @@ function PeliculaNitrato() {
         {svg(<>
           <Tira T={T} x={300} y={820} largo={900 * desenrolla} rot={16} corre={-T * 220} alto={170} />
           <Rollo x={300} y={760} r={250} rot={T * 220} lleno={0.95 - desenrolla * 0.08} />
-          {/* lupa sutil sobre la fibra: ¿de qué está hecha? */}
-          <g opacity={kprog(T, K.G + 2.4, K.G + 3.0)}><Algodon x={880} y={1100} s={0.7} /></g>
         </>)}
       </Escena>
       {/* 2 · Villa firma con una empresa de cine estadounidense para que filme sus batallas */}
@@ -326,7 +324,7 @@ function PeliculaNitrato() {
           {T < K.V + 2.3 && (() => { const u = kprog(T, K.V + 0.6, K.V + 2.0); return <Pluma x={150 + u * 300} y={1080 - Math.sin(u * 20) * 20} />; })()}
           <g opacity={kprog(T, K.V + 2.2, K.V + 2.8)}>
             <CamaraManivela T={T} x={790} y={800} s={0.78} gira={kprog(T, K.V + 2.6, K.V + 3.0)} />
-            {[0, 1, 2].map((i) => <Jinete key={i} x={((T - K.V) * 160 + i * 230) % 900 + 100} y={1110 + i * 14} s={1.1} fase={T * 10 + i} />)}
+            {[0, 1, 2].map((i) => <Jinete key={i} x={((T - K.V) * 160 + i * 230) % 900 + 100} y={1050 + i * 14} s={1.1} fase={T * 10 + i} />)}
           </g>
         </>)}
       </Escena>
@@ -359,11 +357,11 @@ function PeliculaNitrato() {
       <Escena T={T} a={K.P} b={K.O}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <g transform="translate(290 860)"><Tira T={T} x={-170} y={0} largo={340} rot={-90} corre={-T * 60} alto={150} /></g>
-          <text x={290} y={1130} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>película</text>
-          <Algodon x={790} y={850} s={1.25} />
+          <g transform="translate(290 1010)"><Tira T={T} x={0} y={0} largo={360} rot={-90} corre={-T * 60} alto={150} /></g>
+          <text x={290} y={1080} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>película</text>
+          <Algodon x={790} y={830} s={1.25} />
           {(() => { const u = (T * 1.4) % 1; return <path d={`M 700 760 l 30 -40 l 10 30 l 30 -50`} stroke={KC.red} strokeWidth={8} fill="none" opacity={kprog(T, K.P + 1.4, K.P + 1.8) * (0.5 + 0.5 * Math.sin(T * 12))} />; })()}
-          <text x={790} y={1130} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>algodón pólvora</text>
+          <text x={790} y={1080} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>algodón pólvora</text>
         </>)}
       </Escena>
       {/* 7 · trae su propio oxígeno: arde en un frasco tapado */}
@@ -371,7 +369,7 @@ function PeliculaNitrato() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} color="rgba(255,170,90,.18)" />
         {svg(<>
-          <Frasco T={T} x={540} y={960} arde={kprog(T, K.O + 0.3, K.O + 0.7)} />
+          <g transform="translate(540 870) scale(.82) translate(-540 -870)"><Frasco T={T} x={540} y={870} arde={kprog(T, K.O + 0.3, K.O + 0.7)} /></g>
           {/* el aire de afuera rebota en la tapa */}
           {[0, 1, 2].map((i) => { const u = ((T - K.O) * 0.8 + i / 3) % 1; return <g key={i} opacity={kprog(T, K.O + 1.0, K.O + 1.4) * (1 - u)}>
             <text x={250 + i * 290} y={klerp(470, 590, u < 0.5 ? u * 2 : 2 - u * 2)} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#9fd8ff">O₂</text></g>; })}
@@ -395,28 +393,28 @@ function PeliculaNitrato() {
         {svg(<>
           <GasNO2 T={T} x0={120} x1={960} y={700} desde={K.Ga + 0.3} n={10} />
           <Cadena T={T} y={700} nitro={() => 1} rompe={(i) => kprog(T, K.Ga + 1.0 + [1.6, 0.4, 2.4, 1.0][i] * 0.6, K.Ga + 1.4 + [1.6, 0.4, 2.4, 1.0][i] * 0.6)} />
-          <Ciclo T={T} x={540} y={1060} p={kprog(T, K.Ga + 1.6, K.Ga + 2.2)} />
+          <Ciclo T={T} x={540} y={980} p={kprog(T, K.Ga + 1.6, K.Ga + 2.2)} />
         </>)}
       </Escena>
       {/* 10 · se prende sola: nueva a 150 °C; muy descompuesta, con 50 °C o menos */}
       <Escena T={T} a={K.C} b={K.E}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <TermoAlto x={860} y={1130} temp={temp} marcas={[[150, kprog(T, K.C + 2.0, K.C + 2.3), KC.orange], [50, kprog(T, K.C + 3.4, K.C + 3.7), NO2]]} />
-          <Rollo x={470} y={700} r={150} rot={T * 30} />
-          {T > K.C + 2.2 && <Flama T={T} x={470} y={560} s={kprog(T, K.C + 2.2, K.C + 2.6) * 0.9} seed={1} />}
-          <Rollo x={470} y={1060} r={150} rot={0} polvo={1} />
-          <Humo T={T} x={470} y={950} desde={K.C + 0.6} n={5} />
-          {T > K.C + 3.8 && <Flama T={T} x={470} y={920} s={kprog(T, K.C + 3.8, K.C + 4.2) * 0.9} seed={4} />}
+          <TermoAlto x={170} y={1020} temp={temp} marcas={[[150, kprog(T, K.C + 2.0, K.C + 2.3), KC.orange], [50, kprog(T, K.C + 3.4, K.C + 3.7), NO2]]} />
+          <Rollo x={540} y={640} r={150} rot={T * 30} />
+          {T > K.C + 2.2 && <Flama T={T} x={540} y={500} s={kprog(T, K.C + 2.2, K.C + 2.6) * 0.9} seed={1} />}
+          <Rollo x={540} y={970} r={140} rot={0} polvo={1} />
+          <Humo T={T} x={540} y={870} desde={K.C + 0.6} n={5} />
+          {T > K.C + 3.8 && <Flama T={T} x={540} y={840} s={kprog(T, K.C + 3.8, K.C + 4.2) * 0.9} seed={4} />}
         </>)}
       </Escena>
       {/* 11 · el estudio: el incendio de la Cineteca Nacional, 1982 */}
       <Escena T={T} a={K.E} b={K.D}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Cineteca T={T} x={540} y={1000} fuego={kprog(T, K.E + 2.0, K.E + 5.5)} />
-          <Humo T={T} x={760} y={760} desde={K.E + 2.6} n={6} />
-          <Humo T={T} x={380} y={760} desde={K.E + 4.0} n={5} />
+          <g transform="translate(540 930) scale(.85) translate(-540 -1000)"><Cineteca T={T} x={540} y={1000} fuego={kprog(T, K.E + 2.0, K.E + 5.5)} /></g>
+          <Humo T={T} x={760} y={720} desde={K.E + 2.6} n={6} />
+          <Humo T={T} x={380} y={720} desde={K.E + 4.0} n={5} />
         </>)}
       </Escena>
       {/* 12 · mucho cine de la Revolución sí sobrevivió: Toscano y «Memorias de un mexicano» (1950) */}
@@ -443,7 +441,7 @@ function PeliculaNitrato() {
           <Rollo x={300} y={760} r={250} rot={T * 40} />
           {Array.from({ length: 12 }, (_, i) => { const g = krng(i + 90); return <path key={i} transform={`translate(${g() * 1000 + 40} ${520 + g() * 700}) scale(${0.6 + g() * 0.6})`} d="M 0 -18 L 0 18 M -16 -9 L 16 9 M -16 9 L 16 -9" stroke="#e8f6ff" strokeWidth={4} strokeLinecap="round" opacity={kprog(T, K.Ci + 1.4, K.Ci + 2.0) * (0.5 + 0.5 * Math.sin(T * 3 + i))} />; })}
         </>)}
-        <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={800} y={1530} r={190} fx={300} fy={760} tinte={KC.orange} etiqueta="POR DENTRO · nitrato de celulosa"
+        <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={600} y={1560} r={190} fx={300} fy={760} tinte={KC.orange} etiqueta="POR DENTRO · nitrato de celulosa"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={KC.noche} /><g transform={`translate(${r} ${r}) scale(.5) translate(-540 -900)`}><Cadena T={Tl} y={900} nitro={() => 1} brillaO={1} /></g></svg>} />
       </Escena>
 
@@ -460,25 +458,23 @@ function PeliculaNitrato() {
       <Chip T={T} at={K.R + 1.0} until={K.M - 0.3} texto="HNO₃ + H₂SO₄" x={540} y={1500} tam={44} borde={KC.ink} mono />
       <Etq T={T} at={K.R + 1.2} until={K.M - 0.3} x={120} y={1590} texto="ácido nítrico + ácido sulfúrico" tam={30} color={KC.ink} />
       {T > K.M - 0.3 && T < K.P + 0.2 && <Escala T={T} z={1} pxPorMm={3.4e8} x={60} y={1440} />}
-      <Etq T={T} at={K.M + 0.3} until={K.P - 0.3} x={80} y={560} texto="celulosa = cadena de glucosas" tam={30} />
+      <Etq T={T} at={K.M + 0.3} until={K.M + 1.4} x={80} y={560} texto="celulosa = cadena de glucosas" tam={30} />
       <Chip T={T} at={K.M + 1.8} until={K.P - 0.3} texto="–OH → –ONO₂ (nitrato)" x={540} y={1560} tam={40} borde={KC.orange} />
       <Medidor T={T} at={K.P + 0.6} until={K.O - 0.3} y={1440} ancho={900} etiqueta="película de nitrato" valor={(t) => (12 / 14) * kprog(t, K.P + 0.7, K.P + 1.5)} texto={() => '≈ 12 % N'} color={KC.yellow} />
       <Medidor T={T} at={K.P + 1.2} until={K.O - 0.3} y={1560} ancho={900} etiqueta="algodón pólvora" valor={(t) => (13.4 / 14) * kprog(t, K.P + 1.3, K.P + 2.1)} texto={() => '> 13 % N'} color={KC.red} />
       <Chip T={T} at={K.P + 2.4} until={K.O - 0.3} texto="primas, no gemelas" x={540} y={520} tam={46} borde={KC.yellow} />
-      <Etq T={T} at={K.O + 1.2} until={K.Q - 0.3} x={280} y={680} texto="tapado: sin aire" tam={32} color="#9fd8ff" />
+      <Etq T={T} at={K.O + 1.2} until={K.Q - 0.3} x={720} y={720} texto="sin aire" tam={34} color="#9fd8ff" />
       <Chip T={T} at={K.O + 1.8} until={K.Q - 0.3} texto="el oxígeno ya viene adentro" x={540} y={1520} tam={40} borde={KC.orange} />
       <Chip T={T} at={K.Ga + 2.4} until={K.C - 0.3} texto="círculo vicioso" x={540} y={1540} tam={48} borde={NO2} />
-      <Etq T={T} at={K.C + 0.8} until={K.E - 0.3} x={640} y={700} lado="izq" texto="nueva" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.C + 2.2} until={K.E - 0.3} texto="150 °C" x={250} y={560} tam={48} borde={KC.orange} />
-      <Etq T={T} at={K.C + 2.9} until={K.E - 0.3} x={640} y={1060} lado="izq" texto="muy descompuesta" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.C + 3.6} until={K.E - 0.3} texto="50 °C o menos" x={540} y={1540} tam={48} borde={NO2} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="1982" quien="Cineteca Nacional · CDMX" revista="24 de marzo" x={540} y={560} />
-      <NumeroGigante T={T} at={K.E + 3.8} until={K.D - 0.3} valor={6000} prefijo="+" etiqueta="películas perdidas" x={540} y={540} tam={190} color={KC.red} />
+      <Chip T={T} at={K.C + 2.2} until={K.E - 0.3} texto="nueva: 150 °C" x={850} y={760} tam={40} borde={KC.orange} />
+      <Chip T={T} at={K.C + 3.6} until={K.E - 0.3} texto="muy descompuesta: 50 °C o menos" x={540} y={1540} tam={40} borde={NO2} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="1982" quien="Cineteca Nacional · CDMX" revista="24 de marzo" x={540} y={480} />
+      <NumeroGigante T={T} at={K.E + 3.8} until={K.D - 0.3} valor={6000} prefijo="+" etiqueta="películas perdidas" x={690} y={500} tam={190} color={KC.red} />
       <Chip T={T} at={K.E + 4.6} until={K.D - 0.3} texto="cifra oficial: 6,506" x={540} y={1540} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.D + 1.6} until={K.D + 3.6} x={80} y={1460} texto="acervo de Salvador Toscano" tam={34} color={KC.ink} />
       <Chip T={T} at={K.D + 4.4} until={K.Ci - 0.3} texto="de Carmen Toscano, su hija" x={540} y={1540} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Ci + 2.4} until={K.Ou} texto="no es solo cine: es química" x={360} y={500} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.Ci + 2.0} until={K.Ou - 0.2} x={80} y={1300} texto="guardar en frío" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 2.0} until={K.Ou - 0.2} x={560} y={1090} texto="guardar en frío" tam={32} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="No es solo cine: *es algodón con ácido nítrico.*" />
@@ -501,7 +497,7 @@ function PeliculaNitrato() {
         [CUES.Molecula + 1.4, CUES.Prima + 2.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Oxigeno + 0.6, CUES.Pregunta - 0.1, 'avatar_11_sorprendido', 'izq-alto'],
         [CUES.Pregunta + 0.05, CUES.Gases + 1.0, 'avatar_07_pensativo_puno', 'grande'],
-        [CUES.Calor + 0.4, CUES.Calor + 4.4, 'avatar_10_serio_molesto', 'izq-alto'],
+        [CUES.Calor + 0.4, CUES.Calor + 4.4, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Estudio + 3.6, CUES.Dato - 0.2, 'avatar_12_perfil_serio', 'izq-alto'],
         [CUES.Dato + 0.6, CUES.Dato + 3.8, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />

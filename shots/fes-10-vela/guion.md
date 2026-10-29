@@ -1,16 +1,16 @@
 # Shot Festivo #10 · Posadas · Científico: Tu velita no quema cera: quema cera hecha gas
 
 - **Serie:** Shot Festivo · **Serie vinculada:** Científico · **Logo:** física (átomo, `logo_fisica.svg`) · **Badge:** Festivo #10 · **Especial:** Posadas (se publica el 16 dic 2026, primera posada) · rama `pedido300/festivos`.
-- **Estado (29 oct 2026):** fase A — guion y `narracion.json` escritos, **pendientes de verificación independiente** (`verificacion.md` lo escribe el verificador). Sin animación todavía · **voz pendiente de aprobación de Robert**.
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`: APROBADO, 24/24 ✅), animación (`vela.jsx`), música (`gen-audio.mjs`), Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert** (~1,085 caracteres).
 - **Formato:** N1 "Por dentro" (de la velita de la posada al interior de la flama y de regreso) con un poco de N5 "El experimento" (el truco de Faraday de volver a prender la vela por el humo).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Esa velita de la posada no está quemando cera: está quemando cera hecha gas."
-- **Duración:** voz 1,085 caracteres (≈ 65.7 s) + cierre 3.8 s → **≈ 69.5 s** estimados (`estimar-escenas.mjs`), dentro de 61–75 s de los festivos.
+- **Duración:** voz 1,085 caracteres (≈ 65.7 s) + cierre 3.8 s → **69.5 s** en la base (`estimar-escenas.mjs`), dentro de 61–75 s de los festivos.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa velita de la posada no está quemando cera: está quemando cera hecha gas. | Fondo azul noche de diciembre con papel picado y faroles. Desde el cuadro 0 una mano con su velita de posada (vela delgada blanca con su protector de papel) entra y la flama se aviva con un parpadeo. «¿cera?» se tacha; «cera hecha gas». Chip «Especial Posadas». |
+| 0 | Gancho | Esa velita de la posada no está quemando cera: está quemando cera hecha gas. | Fondo azul rey con papel picado de estrellas de posada. Desde el cuadro 0 una mano con su velita de posada (vela delgada blanca con su protector de papel) entra y la flama se aviva con un parpadeo. «¿cera?» se tacha; «cera hecha gas». Chip «Especial Posadas». |
 | 1 | Copita | El calor derrite la cera y el aire que sube enfría la orilla: se forma una copita de cera líquida. | Fondo amarillo. Acercamiento a la punta de la vela: la cera de arriba se vuelve brillante y líquida; flechitas de aire frío suben por los lados y la orilla queda sólida: una copita. Capítulo 1 «La copita». |
 | 2 | Pabilo | El pabilo la sube como el agua que trepa por una servilleta: capilaridad. | Fondo cian. A un lado, una servilleta con la punta en un vaso de agua de color que trepa; al otro, el pabilo trenzado con la cera líquida subiendo entre sus hilos. Chip «capilaridad». |
 | 3 | Vapor | Junto a la flama, la cera se vuelve vapor, y lo que arde es el vapor con el oxígeno del aire. | Fondo noche (por dentro de la flama, barra de escala de 5 mm). La punta del pabilo suelta vapor (nubecita gris); por fuera llegan moléculas de oxígeno; donde se encuentran aparece la capa de fuego. Etiquetas «vapor de cera» · «oxígeno». Capítulo 2 «Por dentro de la flama». |
@@ -18,13 +18,32 @@
 | 5 | Pregunta | ¿Y por qué la parte de arriba es amarilla? | **Re-gancho.** Fondo naranja, «?» gigante junto a la flama, con la parte amarilla resaltada. |
 | 6 | Hollin | Ahí falta oxígeno y se forman granitos de hollín, de carbón, tan calientes que brillan. | Fondo noche. Dentro de la zona amarilla: granitos negros de hollín que se ponen al rojo y luego amarillo brillante. Etiqueta «hollín (carbón)». |
 | 7 | Gota | El aire caliente sube, estira la flama como una gota y se lleva el hollín hasta la punta. | Fondo menta. La flama completa con flechas de aire caliente que suben y la estiran en forma de gota; los granitos de hollín viajan hacia la punta. Chip «convección». Capítulo 3 «La forma». |
-| 8 | Espacio | En los noventa, la NASA prendió velas en el espacio, sin aire que suba: la flama salió redondita, chiquita y azul. | Fondo azul noche con estrellas. Comparación lado a lado «En la Tierra» (gota amarilla) vs «En el espacio» (media esfera azul tenue, chiquita). Tarjeta «NASA · transbordador espacial · años 90». |
-| 9 | Estudio | En la Navidad de 1860, en Londres, Michael Faraday explicó la flama de una vela a un público de niños y jóvenes. | Fondo amarillo. `TarjetaEstudio` «Navidad de 1860 · Michael Faraday · Royal Institution, Londres». Faraday en su mesa con una vela; niños en las gradas. Capítulo 4 «El experimento». |
+| 8 | Espacio | En los noventa, la NASA prendió velas en el espacio, sin aire que suba: la flama salió redondita, chiquita y azul. | Fondo azul noche con estrellas. Comparación lado a lado «En la Tierra» (gota amarilla) vs «En el espacio» (la flama se encoge en una media esfera azul tenue sobre el pabilo, «≈ 1.5 cm · azul tenue»). Chips «NASA · transbordador y Mir · años 90» y «sin aire que suba». |
+| 9 | Estudio | En la Navidad de 1860, en Londres, Michael Faraday explicó la flama de una vela a un público de niños y jóvenes. | Fondo amarillo. `TarjetaEstudio` «1860 · Michael Faraday · Londres · Royal Institution · 1860-61». Faraday en su mesa con una vela; niños en las gradas. Capítulo 4 «El experimento». |
 | 10 | Dato | Su truco: apagas la vela, sube un humito blanco, le acercas una flama y el fuego baja por el humo y la vuelve a prender. | Fondo lila. Se sopla la vela: sube un hilo de humo blanco; una segunda flama se acerca a unos centímetros y un hilo de fuego baja por el humo hasta el pabilo: ¡se vuelve a prender! Chip «el humo es cera». |
-| 11 | Cierre | Así que, cuando pidas posada, mira tu velita. Lo que arde no es cera sólida: es cera hecha gas. | **Regreso a la imagen del inicio** (fondo azul noche, papel picado, la misma velita en la mano); una `Lupa` de rayos X sobre la flama muestra el vapor de cera ardiendo. Chip «no es cera: es gas». |
+| 11 | Cierre | Así que, cuando pidas posada, mira tu velita. Lo que arde no es cera sólida: es cera hecha gas. | **Regreso a la imagen del inicio** (fondo azul rey, papel picado, la misma velita en la mano); una `Lupa` de rayos X sobre la flama muestra el vapor de cera ardiendo. Chip «no es cera: es gas». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de física (átomo) y Robert señalando. |
 
 **Música:** cama grave y cálida continua (sin golpe), siempre debajo de la voz; efectos en el mismo cuadro: chispazo del cerillo y parpadeo de la flama al inicio, goteo suave de la cera que se derrite, tics que suben con la capilaridad, siseo del vapor, destellos agudos del azul, crepitar del hollín que brilla, soplido ascendente del aire caliente, silencio casi total y tono flotante en el espacio, murmullo de aplausos en la Royal Institution, el soplido que apaga y el «fuump» del fuego que baja por el humo, y destellos al final.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos porque están atados a cada escena). Grande en «¿Y por qué la parte de arriba es amarilla?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «no está quemando cera: está quemando cera hecha gas» (cuadro 0) |
+| 2 | 5.3 | 9.3 | 13_senalando_arriba | `izq-alto` | señala la flama que derrite la copita |
+| 3 | 15.6 | 19.9 | 04_bajando_lentes | `arriba-der` | «lo que arde es el vapor» |
+| 4 | 26.0 | 28.8 | 07_pensativo_puno | `grande` | «¿Y por qué la parte de arriba es amarilla?» |
+| 5 | 34.4 | 38.5 | 05_sonriendo_dientes_uniformes | `izq-alto` | el aire caliente estira la flama como gota |
+| 6 | 39.9 | 45.3 | 11_sorprendido | `arriba-der` | en el espacio la flama sale redondita y azul |
+| 7 | 46.7 | 51.7 | 08_recostado_mano | `arriba-der` | escucha a Faraday como uno de los niños (1860) |
+| 8 | 53.3 | 58.3 | 13_senalando_arriba | `izq-alto` | señala el humo por el que baja el fuego |
+| 9 | 60.3 | 65.6 | 02_apuntando_camara | `arriba-der` | «cuando pidas posada, mira tu velita» |
+| — | 65.7 | 69.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones: 9 · **40.4 s en pantalla** (+ cierre 3.8 s) · 7 poses distintas, ninguna repetida seguida · huecos de 6.3 s como máximo. Nunca tapa el subtítulo (`izq-alto` y `arriba-der` entran de lado; `grande` sale durante el fundido a la escena del hollín).
 
 ## Fuentes (abiertas el 29 oct 2026; verificadas en `verificacion.md`: APROBADO, 24/24 ✅)
 

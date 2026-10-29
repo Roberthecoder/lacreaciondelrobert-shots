@@ -257,7 +257,6 @@ function Vela() {
           return <g>
             <path d="M -60 1050 C 100 1220 980 1220 1140 1050 C 900 1150 180 1150 -60 1050 Z" fill={AZULF} opacity={0.25 + 0.1 * Math.sin(T * 5)} />
             <path d="M -60 1050 C 100 1220 980 1220 1140 1050" stroke="#9fd0ff" strokeWidth={10} fill="none" opacity=".7" />
-            <ellipse cx={540} cy={560} rx={520} ry={260} fill="rgba(255,190,60,.18)" /><ellipse cx={540} cy={600} rx={340} ry={150} fill="rgba(255,210,80,.16)" />
             {Array.from({ length: 12 }, (_, i) => { const px = 100 + g() * 880, py = 820 + g() * 300, at = K.Az + 0.4 + i * 0.32, f = Math.max(0, 1 - Math.abs(((T - at) % 2.2 + 2.2) % 2.2 - 0.3) * 2.5) * kprog(T, at, at + 0.1);
               return <Fragmento key={i} x={px + Math.sin(T * 1.5 + i) * 14} y={py + Math.cos(T * 1.2 + i) * 10} tipo={i % 3 ? 'CH' : 'C2'} flash={f} s={1.15} />; })}
           </g>; })())}
@@ -324,7 +323,7 @@ function Vela() {
       <Escena T={T} a={K.Da} b={K.Ci}>
         <FondoLunares color={KC.lilac} />
         {svg((() => { const hum = T > sopla ? kprog(T, sopla, sopla + 1.2) * (reprende ? 1 - kprog(T, K.Da + 4.3, K.Da + 5.0) : 1) : 0;
-          const tipX = klerp(1150, 640, acerca), tipY = klerp(560, 600, acerca);
+          const vuelve = kprog(T, K.Da + 4.8, K.Da + 5.6, kEase.suave), tipX = klerp(1150, 640, acerca * (1 - vuelve)), tipY = klerp(560, 600, acerca * (1 - vuelve));
           const humoD = `M 540 940 C ${540 + Math.sin(T * 2) * 20} 860 ${560 - Math.sin(T * 1.7) * 30} 780 ${540 + Math.sin(T * 1.3) * 26} 700 C ${520 - Math.sin(T * 1.5) * 30} 620 ${560 + Math.sin(T * 1.1) * 30} 540 ${545} 440`;
           return <g>
             {/* soplido */}
@@ -386,8 +385,8 @@ function Vela() {
       <Chip T={T} at={K.Es + 3.6} until={K.E - 0.3} texto="sin aire que suba" x={540} y={1640} tam={40} borde={KC.white} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 5.6} anio="1860" quien="Michael Faraday · Londres" revista="Royal Institution · 1860-61" x={360} y={560} />
       <Chip T={T} at={K.E + 2.6} until={K.Da - 0.3} texto="para niños y jóvenes" x={540} y={1450} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Da + 1.4} until={K.Da + 4.0} x={600} y={560} texto="humo blanco = cera" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Da + 2.8} until={K.Da + 4.6} x={640} y={820} texto="a unos cm" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Da + 1.4} until={K.Da + 4.0} x={600} y={880} texto="humo blanco = cera" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Da + 2.8} until={K.Da + 4.6} x={700} y={690} texto="a unos cm" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Da + 4.6} until={K.Ci - 0.3} texto="¡se vuelve a prender!" x={680} y={520} tam={46} borde={KC.yellow} />
       <Chip T={T} at={K.Ci + 2.8} until={K.Ou} texto="no es cera: es gas" x={760} y={980} tam={44} borde={KC.yellow} />
 
