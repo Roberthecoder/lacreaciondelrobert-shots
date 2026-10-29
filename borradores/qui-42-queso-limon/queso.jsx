@@ -282,11 +282,11 @@ function Queso() {
       <Escena T={T} a={K.Hi} b={K.Da} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <ellipse cx={540} cy={1230} rx={320} ry={70} fill={SUERO} stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 5 }, (_, i) => <Lactosa key={i} x={330 + i * 105} y={1230 + Math.sin(T * 2 + i) * 10} s={0.8} rot={T * 30 + i * 40} o={kprog(T, K.Hi + 1.5 + i * 0.2, K.Hi + 2.0 + i * 0.2)} />)}
-          {[-90, -30, 30, 90].map((dx, i) => <Goteo key={i} T={T} x={540 + dx} y0={1000} y1={1200} cada={0.5} color={SUERO} desde={K.Hi + 0.3 + i * 0.12} hasta={K.Da} r={11} />)}
-          <VasijaColadera T={T} x={540} y={850} s={1.05} />
-          {[[-80, -60, 60], [10, -80, 70], [90, -55, 55]].map(([dx, dy, r], i) => <circle key={i} cx={540 + dx} cy={850 - 160 + dy * 0.4 + Math.sin(T * 2 + i) * 2} r={r * kprog(T, K.Hi + 0.2, K.Hi + 0.8, kEase.rebote)} fill="#fffdf4" stroke="#bdb79a" strokeWidth={4} />)}
+          <ellipse cx={540} cy={1130} rx={320} ry={70} fill={SUERO} stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 5 }, (_, i) => <Lactosa key={i} x={330 + i * 105} y={1130 + Math.sin(T * 2 + i) * 10} s={0.8} rot={T * 30 + i * 40} o={kprog(T, K.Hi + 1.5 + i * 0.2, K.Hi + 2.0 + i * 0.2)} />)}
+          {[-90, -30, 30, 90].map((dx, i) => <Goteo key={i} T={T} x={540 + dx} y0={950} y1={1100} cada={0.5} color={SUERO} desde={K.Hi + 0.3 + i * 0.12} hasta={K.Da} r={11} />)}
+          <VasijaColadera T={T} x={540} y={800} s={1.05} />
+          {[[-80, -60, 60], [10, -80, 70], [90, -55, 55]].map(([dx, dy, r], i) => <circle key={i} cx={540 + dx} cy={800 - 160 + dy * 0.4 + Math.sin(T * 2 + i) * 2} r={r * kprog(T, K.Hi + 0.2, K.Hi + 0.8, kEase.rebote)} fill="#fffdf4" stroke="#bdb79a" strokeWidth={4} />)}
         </SvgCapa>
       </Escena>
       {/* 10 · 1 kg de leche → ≈ 170 g de paneer */}
@@ -315,14 +315,14 @@ function Queso() {
       <Cronometro T={T} at={K.G + 0.05} until={K.Q - 0.3} x={540} y={1500} etiqueta="EXPERIMENTO · LECHE + LIMÓN" />
       <Medidor T={T} at={K.Q + 1.6} until={K.Ca - 0.3} valor={(t) => 0.8 * kprog(t, K.Q + 1.8, K.Q + 3.0, kEase.sale)} etiqueta="proteínas de la leche de vaca" texto={(v) => 'caseína ' + Math.round(v * 100) + ' %'} x={90} y={1460} color={KC.gold2} />
       <Etq T={T} at={K.Q + 3.4} until={K.Ca - 0.3} x={600} y={740} texto="micelas de caseína" tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Ca + 0.4} until={K.Ac - 0.2} x={360} y={640} lado="izq" texto="κ-caseína («pelitos»)" tam={32} color="#ffe7a6" />
+      <Etq T={T} at={K.Ca + 0.4} until={K.Ac - 0.2} x={60} y={560} texto="κ-caseína («pelitos»)" tam={32} color="#ffe7a6" />
       <Chip T={T} at={K.Ca + 1.2} until={K.Ac - 0.2} texto="carga − · se repelen" y={1500} tam={44} borde={AZUL_NEG} />
       <Etq T={T} at={K.Ac + 0.4} until={K.Cu - 0.2} x={40} y={430} texto="ácido cítrico · limón" tam={32} color={KC.orange} />
       <Etq T={T} at={K.Ac + 2.2} until={K.Cu - 0.2} x={40} y={490} texto="ácido acético · vinagre" tam={32} color={KC.orange} />
       <MedidorPH T={T} at={K.Ac + 0.3} until={K.Su - 0.3} valor={ph} y={1500} />
       <Etq T={T} at={K.Cu + 3.8} until={K.Su - 0.3} x={680} y={1240} texto="cuajos" tam={40} color={KC.gold2} />
       <Etq T={T} at={K.Su + 0.6} until={K.Pr - 0.2} x={880} y={690} texto="cuajo" lado="izq" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Su + 1.4} until={K.Pr - 0.2} x={880} y={1130} texto="suero + lactosa" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Su + 1.4} until={K.Pr - 0.2} x={1050} y={1010} texto="suero + lactosa" lado="izq" tam={36} color={KC.texto} />
       <Onomato T={T} at={K.Pr + 0.1} until={K.Cl - 0.2} x={300} y={1080} texto="¡fssh!" color={KC.cyan} tam={80} />
       <Chip T={T} at={K.Cl + 1.6} until={K.Cl + 3.0} texto="¡cuidado: quema!" x={400} y={680} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Cl + 2.4} until={K.Es - 0.3} texto="frío: pH ≈ 4.6 · caliente: desde 5.2" y={1500} tam={36} borde={KC.gold} />
@@ -332,8 +332,8 @@ function Queso() {
       <Chip T={T} at={K.Es + 3.2} until={K.Hi - 0.3} texto="coladeras de barro · ≈ 7 000 años" y={1500} tam={38} borde={BARRO} />
       <Etq T={T} at={K.Es + 5.6} until={K.Hi - 0.3} x={640} y={760} texto="grasa de leche" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Hi + 0.6} until={K.Da - 0.3} texto="hipótesis de los autores" y={1500} tam={40} borde={KC.lilac} />
-      <Etq T={T} at={K.Hi + 0.9} until={K.Da - 0.3} x={680} y={560} texto="cuajo" tam={38} color={KC.ink} />
-      <Etq T={T} at={K.Hi + 1.6} until={K.Da - 0.3} x={880} y={1150} texto="suero con lactosa" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Hi + 0.9} until={K.Da - 0.3} x={680} y={520} texto="cuajo" tam={38} color={KC.ink} />
+      <Etq T={T} at={K.Hi + 1.6} until={K.Da - 0.3} x={1050} y={1040} texto="suero con lactosa" lado="izq" tam={34} color={KC.texto} />
       <Chip T={T} at={K.Da + 2.0} until={K.Ci - 0.3} texto="1 kg de leche de vaca → ≈ 170 g de paneer" y={1500} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="caseína + ácido + calor → queso" y={1500} tam={40} borde={KC.mint} />
 

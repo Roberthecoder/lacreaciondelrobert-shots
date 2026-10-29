@@ -6,7 +6,7 @@
 - **No repite:** el #16 (ceviche: el ácido desnaturaliza proteínas del pescado) ni el #15 (chile y leche: la caseína y la capsaicina). Aquí el tema es la carga de las micelas de caseína y el punto isoeléctrico; la quimosina (cuajo de Biotecnológico) no aparece.
 - **Seguridad:** la leche va muy caliente; en pantalla, la olla se maneja con guante/agarradera y el chip "¡quema!" aparece al calentar. No se da ningún consejo médico.
 - **Duración:** voz 944 caracteres / ≈ 170 palabras (≈ 57.9 s) + cierre 3.5 s → **≈ 61.4 s** (`node motor/kit/estimar-escenas.mjs borradores/qui-42-queso-limon --outro 3.5`).
-- **Estado:** guion escrito, pendiente de verificación independiente (`verificacion.md`). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`queso.jsx`, revisión en `revision/hoja.png`), voz pendiente de aprobación de Robert (~944 créditos).
 
 ## Versión narrada
 
@@ -23,10 +23,30 @@
 | 8 | Estudio | En 2012, químicos de Bristol analizaron coladeras de barro de unos 7 mil años halladas en Polonia: tenían grasa de leche. | Tarjeta "2012 · Universidad de Bristol · *Nature*". Mapa de Polonia con un punto; una vasija de barro con agujeritos (coladera) de la que sale un brillo "grasa de leche". Contador "≈ 7 000 años". |
 | 9 | Hipotesis | Su interpretación: ahí separaban cuajo y suero para hacer quesos con menos lactosa. | La coladera antigua escurre: arriba queda el cuajo, abajo cae el suero con bolitas de lactosa. Chip "hipótesis de los autores". |
 | 10 | Dato | Y ojo: un kilo de leche de vaca da apenas unos 170 gramos de paneer. | Báscula: 1 kg de leche de un lado; del otro, un cubito de queso "≈ 170 g" y una jarra enorme de suero. |
-| 11 | Cierre | Así que esa leche no se echó a perder: el limón la convirtió en queso. | **Regreso a la olla del inicio**: la misma olla, ahora con la manta de cielo y un bloque de queso blanco; etiqueta "caseína + ácido + calor → queso". Cronómetro detenido. |
+| 11 | Cierre | Así que esa leche no se echó a perder: el limón la convirtió en queso. | **Regreso a la olla del inicio**: la misma olla, ahora con la manta de cielo y un bloque de queso blanco; etiqueta "caseína + ácido + calor → queso". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
-**Música:** cama grave y continua, cálida (de cocina), siempre debajo de la voz. Efectos en el mismo cuadro: exprimir el limón, burbujeo de la leche, "boing" de las micelas que rebotan, "tic" de cada carga que se apaga, "plop" de las micelas que se pegan, chorro del suero, "fssh" de la flama, golpe de la tarjeta del estudio, báscula que se inclina.
+**Música:** cama grave y continua, cálida (de cocina), siempre debajo de la voz. Efectos en el mismo cuadro: exprimir el limón, burbujeo de la leche, "boing" de las micelas que rebotan, "tic" de cada carga que se apaga, "plop" de las micelas que se pegan, chorro del suero, "fssh" de la flama, golpe de la tarjeta del estudio, cartón → cubito y conteo hasta 170 g.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y entonces para qué calentarla?» y en el dato de los 170 g.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.3 | 11_sorprendido | `gancho` | «la convertiste en queso» |
+| 2 | 5.6 | 9.3 | 13_senalando_arriba | `izq-alto` | «en bolitas: las micelas» |
+| 3 | 14.8 | 18.8 | 06_pensativo_menton | `arriba-der` | «les va quitando esa carga» |
+| 4 | 20.6 | 27.6 | 05_sonriendo_dientes_uniformes | `izq-alto` | «forman cuajos blancos» / el suero |
+| 5 | 28.5 | 31.8 | 07_pensativo_puno | `grande` | «¿Y entonces para qué calentarla?» |
+| 6 | 32.6 | 36.8 | 13_senalando_arriba | `izq-alto` | «atrapa proteínas que se irían al suero» |
+| 7 | 40.5 | 44.0 | 04_bajando_lentes | `arriba-der` | «tenían grasa de leche» |
+| 8 | 44.7 | 49.1 | 06_pensativo_menton | `izq-alto` | «su interpretación» |
+| 9 | 49.6 | 53.3 | 11_sorprendido | `grande-izq` | «apenas unos 170 gramos» |
+| 10 | 53.9 | 57.8 | 02_apuntando_camara | `arriba-der` | «el limón la convirtió en queso» |
+| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 42 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
 

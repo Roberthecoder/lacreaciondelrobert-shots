@@ -40,7 +40,7 @@
    > "Ripening in a bowl or paper bag can be enhanced by placing one ripe apple with every 5 to 7 pieces of fruit to be ripened. Apples produce ethylene that speeds ripening. (Fuji and Granny Smith apples do not produce much ethylene and do not enhance ripening.)" · "Do not place produce in sealed plastic bags on the counter because this slows ripening and may increase off-odors and decay"
 5. **1901, Neljubov, San Petersburgo, chícharos que crecen de lado por el etileno del gas de alumbrado** — Hao, Li y Guo (2025), fuente 1:
    > "In 1901, Dimitry Nikolayevich Neljubov … a young researcher at the Botanical Institute of St Petersburg, identified atypical growth in pea seedlings near greenhouse gas pipes: stems reoriented horizontally" · "he established that illuminating gas components caused this response"
-   Y Keunen E. et al. "Ethylene and Metal Stress: Small Molecule, Big Impact." *Front Plant Sci* 7:23 (2016). PMC4735362:
+   Y Keunen E. et al. "Ethylene and Metal Stress: Small Molecule, Big Impact." *Front Plant Sci* 7:23 (2016). PMID 26870052 · PMC4735362:
    > "In 1901, the Russian plant physiologist Neljubov reported that etiolated pea plants grew horizontally in the laboratory and upright in outside air (Neljubov, 1901). He attributed this abnormal growth response to ethylene in illuminating gas"
    (Original: Neljubov D. "Ueber die horizontale Nutation der Stengel von *Pisum sativum* und einiger anderen Pflanzen." *Beih. Bot. Centralbl.* 10:128–139, 1901.)
 6. **1934, Gane, Cambridge, gas de ~60 libras (≈ 27 kg) de manzanas; primera prueba química de que las plantas producen etileno** — Hao, Li y Guo (2025), fuente 1:

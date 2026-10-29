@@ -261,9 +261,9 @@ function Monoxido() {
           <Hemoglobina T={T} x={540} y={900} s={1.25} ocup={ocup} />
           {T > K.D && [0, 1, 2].map((i) => { const u = kprog(T, K.D + 0.4 + i * 0.6, K.D + 2.4 + i * 0.6); return <Mol key={i} tipo="o2" x={klerp(540, i === 1 ? 980 : (i ? 920 : 140), u)} y={klerp(900, 620 + i * 60, u)} s={0.6} rot={T * 50} o={u > 0 ? 0.8 : 0} />; })}
         </SvgCapa>
-        <Etq T={T} at={K.H + 0.3} until={K.D - 0.2} x={60} y={1200} texto="hemoglobina" color="#ffa24c" />
-        <NumeroGigante T={T} at={K.H + 3.0} until={K.D - 0.2} valor={200} dur={1.0} prefijo="×" sufijo="+" etiqueta="más fuerte que el oxígeno" x={680} y={470} tam={170} color={KC.red} />
-        <Medidor T={T} at={K.D + 0.3} until={K.Pr - 0.2} valor={(t) => 1 - 0.7 * kprog(t, K.D + 0.3, K.D + 3.2)} etiqueta="oxígeno que llega" texto={(v) => (v > 0.75 ? 'normal' : 'baja')} x={90} y={470} ancho={900} color={KC.mint} />
+        <Etq T={T} at={K.H + 0.3} until={K.D - 0.2} x={1040} y={470} lado="izq" texto="hemoglobina" color="#ffa24c" />
+        <NumeroGigante T={T} at={K.H + 3.0} until={K.D - 0.2} valor={200} dur={1.0} prefijo="×" sufijo="+" etiqueta="más fuerte que el oxígeno" x={540} y={1520} tam={150} color={KC.red} />
+        <Medidor T={T} at={K.D + 0.3} until={K.Pr - 0.2} valor={(t) => 1 - 0.7 * kprog(t, K.D + 0.3, K.D + 3.2)} etiqueta="oxígeno que llega" texto={(v) => (v > 0.75 ? 'normal' : 'baja')} x={90} y={1460} ancho={900} color={KC.mint} />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.S} zoom={0.1}>
@@ -275,15 +275,15 @@ function Monoxido() {
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           {T < K.S + 3.3 ? <g>
-            <Busto T={T} x={560} y={830} s={1} dolor={kprog(T, K.S + 0.1, K.S + 0.5, kEase.rebote)} mareo={kprog(T, K.S + 0.8, K.S + 1.2, kEase.rebote)} nausea={kprog(T, K.S + 1.4, K.S + 1.8)} />
+            <Busto T={T} x={560} y={770} s={1} dolor={kprog(T, K.S + 0.1, K.S + 0.5, kEase.rebote)} mareo={kprog(T, K.S + 0.8, K.S + 1.2, kEase.rebote)} nausea={kprog(T, K.S + 1.4, K.S + 1.8)} />
           </g> : <g>
             <rect x={0} y={1120} width={KW} height={KH - 1120} fill="#2a8f6e" />
             <CamaDormida T={T} x={560} y={1020} s={1.3} zzz={1 - kprog(T, K.S + 4.0, K.S + 5.2)} />
           </g>}
         </SvgCapa>
-        <Etq T={T} at={K.S + 0.2} until={K.S + 3.2} x={760} y={640} texto="dolor de cabeza" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.S + 0.2} until={K.S + 3.2} x={1050} y={560} lado="izq" texto="dolor de cabeza" color={KC.ink} tam={32} />
         <Etq T={T} at={K.S + 0.9} until={K.S + 3.2} x={300} y={560} lado="izq" texto="mareo" color={KC.ink} tam={32} />
-        <Etq T={T} at={K.S + 1.5} until={K.S + 3.2} x={760} y={1080} texto="náuseas" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.S + 1.5} until={K.S + 3.2} x={790} y={1010} texto="náuseas" color={KC.ink} tam={32} />
         <Chip T={T} at={K.S + 2.0} until={K.S + 3.2} texto="¿gripa?" y={1500} tam={52} borde={KC.blue} />
         <Chip T={T} at={K.S + 3.5} until={K.E - 0.2} texto="dormido, no te das cuenta" y={1500} tam={44} borde={KC.red} />
       </Escena>
@@ -294,13 +294,12 @@ function Monoxido() {
           <rect x={700} y={420} width={300} height={220} fill="#cfe6ff" stroke={KC.ink} strokeWidth={9} />
           {Array.from({ length: 14 }, (_, i) => { const u = (T * 0.25 + i / 14) % 1; return <circle key={i} cx={712 + ((i * 53) % 276)} cy={430 + u * 200} r={7} fill="#fff" />; })}
           <line x1={850} y1={420} x2={850} y2={640} stroke={KC.ink} strokeWidth={6} />
-          <g transform="translate(160 520)"><rect x={-60} y={-60} width={120} height={120} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={7} /><rect x={-14} y={-42} width={28} height={84} fill={KC.red} /><rect x={-42} y={-14} width={84} height={28} fill={KC.red} /></g>
-          {(() => { const rojos = [3, 10, 17, 21, 26, 30, 35]; return Array.from({ length: 37 }, (_, i) => { const c = i % 8, r = Math.floor(i / 8), k = rojos.indexOf(i);
+                    {(() => { const rojos = [3, 10, 17, 21, 26, 30, 35]; return Array.from({ length: 37 }, (_, i) => { const c = i % 8, r = Math.floor(i / 8), k = rojos.indexOf(i);
             const on = k >= 0 ? kprog(T, K.E + 4.0 + k * 0.25, K.E + 4.3 + k * 0.25) : 0;
             const ap = kprog(T, K.E + 0.6 + i * 0.03, K.E + 0.9 + i * 0.03);
-            return <Personita key={i} x={150 + c * 112} y={790 + r * 100} s={1.5 * klerp(0.6, 1, ap)} o={ap} color={mixHex('#f6f3ec', KC.red, on)} />; }); })()}
+            return <Personita key={i} x={150 + c * 112} y={760 + r * 88} s={1.4 * klerp(0.6, 1, ap)} o={ap} color={mixHex('#f6f3ec', KC.red, on)} />; }); })()}
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.5} anio="1987" quien="Heckerling · Chicago" revista="Am J Emerg Med · urgencias en invierno" x={540} y={560} />
+        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.5} anio="1987" quien="Heckerling · Chicago" revista="Am J Emerg Med · urgencias en invierno" x={400} y={560} />
         <Chip T={T} at={K.E + 1.0} until={K.E + 3.9} texto="37 personas con dolor de cabeza" y={1500} tam={40} borde={KC.blue} />
         <Chip T={T} at={K.E + 4.2} until={K.E + 6.3} texto="7: más del 10 % de su hemoglobina con CO" y={1500} tam={32} borde={KC.red} />
         <MitoTachado T={T} at={K.E + 6.4} tacharEn={K.E + 7.2} until={K.L - 0.2} texto="¿será monóxido?" x={540} y={1500} tam={42} />
@@ -326,13 +325,13 @@ function Monoxido() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <Cuarto T={T} abierta={0} />
-          <Detector T={T} x={800} y={520} s={1.2} alarma={kprog(T, K.A + 1.6, K.A + 1.8)} />
+          <Detector T={T} x={560} y={500} s={1.1} alarma={kprog(T, K.A + 1.6, K.A + 1.8)} />
           {[[260, 1060], [470, 1080], [640, 1060]].map(([x, y], i) => <g key={i}>
             <Personita x={x} y={y} s={3} color={[KC.orange, KC.blue, KC.mint][i]} />
             {kprog(T, K.A + 0.2 + i * 0.3, K.A + 0.5 + i * 0.3) > 0 && <path d="M 0 0 l 14 -18 l -10 -4 l 14 -20" transform={`translate(${x + 40} ${y - 170})`} stroke={KC.red} strokeWidth={8} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
           </g>)}
         </SvgCapa>
-        <Onomato T={T} at={K.A + 1.7} until={avisoB} x={800} y={720} texto="¡pip pip!" color={KC.red} tam={70} />
+        <Onomato T={T} at={K.A + 1.7} until={avisoB} x={600} y={700} texto="¡pip pip!" color={KC.red} tam={70} />
       </Escena>
       <Escena T={T} a={avisoB} b={K.C} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#8fd8ff' }}></div>
@@ -355,7 +354,7 @@ function Monoxido() {
           <g opacity={1 - kprog(T, K.C + 0.2, K.C + 1.0)}><Anafre T={T} x={760} y={980} s={1} encendido={1} /></g>
           <g opacity={kprog(T, K.C + 0.6, K.C + 1.2)}><Marca x={760} y={960} ok={false} s={1.3} o={1 - kprog(T, K.C + 2.6, K.C + 3.0)} /></g>
           <NubeCO T={T} x={600} y={820} f={1 - kprog(T, K.C + 0.2, K.C + 2.2)} r={420} />
-          <Detector T={T} x={800} y={520} s={1.2} ok />
+          <Detector T={T} x={560} y={500} s={1.1} ok />
         </SvgCapa>
         <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="anafre: solo al aire libre" y={1500} tam={46} borde={KC.mint} />
       </Escena>
@@ -364,7 +363,7 @@ function Monoxido() {
       <Chip T={T} at={K.Q + 0.4} until={K.Q + 2.3} texto="con mucho oxígeno" x={540} y={620} tam={34} borde={KC.mint} />
       <Chip T={T} at={K.Q + 2.5} until={K.F - 0.2} texto="sin suficiente oxígeno: monóxido" y={1500} tam={40} borde={KC.red} />
       <Etq T={T} at={K.F + 0.3} until={K.Pu - 0.2} x={140} y={720} texto="anafre" color={KC.ink} tam={36} />
-      <Etq T={T} at={K.F + 0.9} until={K.Pu - 0.2} x={1040} y={720} lado="izq" texto="boiler" color={KC.ink} tam={36} />
+      <Etq T={T} at={K.F + 0.9} until={K.Pu - 0.2} x={670} y={900} lado="izq" texto="boiler" color={KC.ink} tam={36} />
       <Chip T={T} at={K.F + 1.4} until={K.Pu - 0.2} texto="cuarto cerrado" y={1500} tam={48} borde={KC.red} />
       <Chip T={T} at={K.G + 0.3} until={K.G + 2.4} texto="monóxido de carbono · CO" y={1500} tam={42} borde={GRIS_CO} />
 
@@ -387,7 +386,7 @@ function Monoxido() {
         [CUES.Que + 0.9, CUES.Fuentes - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Pulmon + 0.3, CUES.Hemoglobina - 0.3, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Hemoglobina + 2.0, CUES.Pregunta - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
-        [CUES.Pregunta + 0.05, CUES.Sintomas + 1.5, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Sintomas - 0.05, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Sintomas + 3.4, CUES.Estudio - 0.3, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Estudio + 3.7, CUES.Lento - 0.3, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Lento + 0.5, CUES.Aviso - 0.3, 'avatar_12_perfil_serio', 'izq-alto'],

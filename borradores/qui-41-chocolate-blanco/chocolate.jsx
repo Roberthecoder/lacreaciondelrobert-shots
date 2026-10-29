@@ -165,12 +165,12 @@ function Chocolate() {
       <Escena T={T} a={K.Q} b={K.M}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Tableta T={T} x={TX} y={1000} s={0.8} bloom={1} id="q0" />
+          <Tableta T={T} x={TX} y={960} s={0.65} bloom={1} id="q0" />
           <text x={TX} y={720} textAnchor="middle" transform={`translate(${TX} 720) scale(${kprog(T, K.Q, K.Q + 0.5, kEase.rebote)}) translate(${-TX} -720)`}
             style={{ font:`400 190px ${KF.titulo}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={10} paintOrder="stroke">BLOOM</text>
-          <g opacity={kprog(T, K.Q + 1.2, K.Q + 1.6)}><circle cx={230} cy={1060} r={0} />
-            <path d="M 200 1170 Q 160 1110 200 1060 Q 240 1110 200 1170 Z" transform="translate(0 -40) scale(1)" fill={MANTECA} stroke={KC.ink} strokeWidth={7} /></g>
-          <g opacity={kprog(T, K.Q + 1.8, K.Q + 2.2)}><rect x={830} y={1040} width={80} height={80} fill={AZUCAR} stroke={KC.ink} strokeWidth={7} transform={`rotate(${Math.sin(T * 2) * 8} 870 1080)`} /></g>
+          <g opacity={kprog(T, K.Q + 1.2, K.Q + 1.6)} transform={`translate(170 ${1150 + Math.sin(T * 3) * 6})`}>
+            <path d="M 0 -70 Q -60 10 -40 40 Q 0 80 40 40 Q 60 10 0 -70 Z" fill={MANTECA} stroke={KC.ink} strokeWidth={7} /></g>
+          <g opacity={kprog(T, K.Q + 1.8, K.Q + 2.2)}><rect x={870} y={1100} width={90} height={90} fill={AZUCAR} stroke={KC.ink} strokeWidth={7} transform={`rotate(${Math.sin(T * 2) * 8} 915 1145)`} /></g>
         </SvgCapa>
       </Escena>
       {/* 2 · 30 % es manteca de cacao */}
@@ -307,7 +307,7 @@ function Chocolate() {
           </g>}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.La + 0.2} until={K.La + 2.0} anio="2020" quien="Univ. del Sur de Florida" revista="Scientific Reports" x={540} y={760} />
-        <Etq T={T} at={K.La + 2.3} until={K.Co - 0.2} x={110} y={640} texto="láser infrarrojo · invisible" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.La + 2.3} until={K.Co - 0.2} x={1040} y={780} lado="izq" texto="láser infrarrojo · invisible" tam={30} color={KC.ink} />
         <Chip T={T} at={K.La + 3.0} until={K.Co - 0.2} texto="borró parte del bloom de grasa" y={1500} tam={38} borde={KC.texto} />
       </Escena>
       {/* 9 · se puede comer */}
@@ -335,9 +335,9 @@ function Chocolate() {
 
       {/* textos del gancho */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.G + 3.0} texto="¿moho?" x={300} y={500} tam={60} />
-      <Etq T={T} at={K.G + 3.3} until={K.Q - 0.2} x={40} y={680} texto="grasa o azúcar, en cristales" lado="der" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Q + 1.3} until={K.M - 0.2} x={260} y={1180} texto="de grasa" lado="der" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Q + 1.9} until={K.M - 0.2} x={820} y={1180} texto="de azúcar" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.3} until={K.Q - 0.2} x={40} y={680} texto="grasa o azúcar, en cristales" lado="der" tam={24} color={KC.texto} />
+      <Etq T={T} at={K.Q + 1.3} until={K.M - 0.2} x={60} y={1040} texto="de grasa" lado="der" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Q + 1.9} until={K.M - 0.2} x={1020} y={1040} texto="de azúcar" lado="izq" tam={32} color={KC.ink} />
       <Chip T={T} at={K.F + 0.3} until={fCrack - 0.1} texto="forma V: brillo y crack" y={1500} tam={42} borde={KC.gold2} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
@@ -361,7 +361,7 @@ function Chocolate() {
         [CUES.Pregunta + 0.05, CUES.Azucar + 0.8, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Azucar + 2.4, CUES.Estudio - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Estudio + 3.4, CUES.Laser - 0.3, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [CUES.Laser + 0.4, CUES.Comer - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
+        [CUES.Laser + 0.4, CUES.Comer - 0.2, 'avatar_11_sorprendido', 'izq-alto'],
         [CUES.Comer + 0.4, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="quimica" num="41" hasta={K.Ou} />
