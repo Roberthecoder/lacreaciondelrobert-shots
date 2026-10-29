@@ -236,8 +236,9 @@ function FaloShot() {
           {T < K.B + 1.4 && <g opacity={1 - kprog(T, K.B + 1.0, K.B + 1.4)}><Huevo T={T} x={380} y={1150} s={1} abre={kprog(T, K.B + 0.2, K.B + 0.9)} cordon={0} temblor={kprog(T, K.B, K.B + 0.4)} /></g>}
           <Falo T={T} id="b" x={380} y={1160} h={8 + 532 * crece} baba={1} />
           <g opacity={kprog(T, K.B + 1.0, K.B + 1.5)}>
-            <line x1={560} y1={1160} x2={560} y2={560} stroke={KC.ink} strokeWidth={8} />
-            {Array.from({ length: 7 }, (_, i) => <line key={i} x1={560} y1={1160 - i * 100} x2={i % 2 ? 584 : 600} y2={1160 - i * 100} stroke={KC.ink} strokeWidth={6} />)}
+            <line x1={220} y1={1160} x2={220} y2={560} stroke={KC.ink} strokeWidth={8} />
+            {Array.from({ length: 7 }, (_, i) => <line key={i} x1={220} y1={1160 - i * 100} x2={i % 2 ? 196 : 180} y2={1160 - i * 100} stroke={KC.ink} strokeWidth={6} />)}
+            <text x={220} y={535} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.B + 4.0, K.B + 4.4)}>30 cm</text>
           </g>
         </>)}
       </Escena>
@@ -257,7 +258,7 @@ function FaloShot() {
         <Ambiente T={T} n={24} color="rgba(159,220,74,.35)" />
         {fsvg(<>
           <path d={`M -40 1260 Q 200 ${1200 + Math.sin(T * 2) * 10} 540 1230 Q 860 ${1260 + Math.cos(T * 2) * 10} 1120 1210 L 1120 1960 L -40 1960 Z`} fill={FL.gleba} stroke={KC.ink} strokeWidth={8} />
-          {[0, 1, 2].map((i) => { const t0 = K.Az + 0.3 + i * 0.7, u = kprog(T, t0, t0 + 3.2); return u > 0 ? <Trisulfuro key={i} x={[330, 640, 420][i] + Math.sin(T + i) * 20} y={klerp(1200, [620, 860, 1040][i], kEase.sale(u))} s={0.62} rot={Math.sin(T * 0.8 + i) * 18} o={kprog(T, t0, t0 + 0.3)} /> : null; })}
+          {[0, 1, 2].map((i) => { const t0 = K.Az + 0.3 + i * 0.7, u = kprog(T, t0, t0 + 3.2); return u > 0 ? <Trisulfuro key={i} x={[300, 600, 420][i] + Math.sin(T + i) * 20} y={klerp(1200, [620, 860, 1040][i], kEase.sale(u))} s={0.9} rot={Math.sin(T * 0.8 + i) * 18} o={kprog(T, t0, t0 + 0.3)} /> : null; })}
         </>)}
       </Escena>
       {/* 7 · pregunta */}
@@ -350,11 +351,10 @@ function FaloShot() {
       <Etq T={T} at={K.Hu + 2.8} until={K.B - 0.3} x={860} y={1430} texto="madera enterrada" lado="izq" tam={26} />
       <Chip T={T} at={K.So + 0.4} until={K.B - 0.2} texto="huevo: sin olor feo ✓" x={360} y={480} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.B + 0.8} until={K.Ba - 0.3} texto="⏩ cámara rápida: unas horas" x={380} y={440} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.B + 4.0} until={K.Ba - 0.3} x={620} y={560} texto="30 cm" tam={34} color={KC.ink} />
       <Etq T={T} at={K.B + 3.2} until={K.Ba - 0.3} x={440} y={1000} texto="tallo hueco y esponjoso" tam={28} color={KC.ink} />
       <Etq T={T} at={K.B + 4.2} until={K.Ba - 0.3} x={440} y={640} texto="sombrero con baba" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ba + 0.2} until={K.Ba + 1.4} x={440} y={600} texto="gleba (la baba)" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Az + 0.6} until={K.P - 0.3} texto="gases con azufre: lo que más apesta" x={480} y={440} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.Ba + 0.2} until={K.Ba + 1.4} x={310} y={600} texto="gleba" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Az + 0.6} until={K.P - 0.3} texto="gases con azufre: lo que más apesta" x={390} y={440} tam={28} borde={KC.yellow} />
       <Etq T={T} at={K.Az + 1.0} until={K.P - 0.3} x={60} y={540} texto="trisulfuro de dimetilo" tam={28} color={KC.yellow} />
       <Chip T={T} at={K.En + 2.9} until={K.E - 0.3} texto="¡caíste! solo hay baba" x={420} y={440} tam={38} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="1997" quien="University College Cork, Irlanda" revista="Sleeman y col., J. Nat. Hist." y={600} />
@@ -371,7 +371,7 @@ function FaloShot() {
       <BarraEscala T={T} at={K.G} until={K.Hu} texto="10 cm" largo={270} />
       <BarraEscala T={T} at={K.Hu} until={K.B} texto="5 cm" largo={250} />
       <BarraEscala T={T} at={K.B} until={K.Az} texto="10 cm" largo={200} />
-      <BarraEscala T={T} at={K.Az} until={K.P} texto="1 nm" largo={250} />
+      <BarraEscala T={T} at={K.Az} until={K.P} texto="1 nm" largo={400} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="10 cm" largo={200} />
       <BarraEscala T={T} at={K.E} until={K.Si} texto="5 cm" largo={180} />
       <BarraEscala T={T} at={K.Si} until={K.He} texto="1 m" largo={260} />

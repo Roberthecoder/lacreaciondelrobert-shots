@@ -40,4 +40,3 @@ Fuentes abiertas:
 
 Resumen: 21 afirmaciones revisadas; la única ⚠️ (especie del hongo en Hy-Fi, fila 17) se corrigió quitando la especie y re-verificando el chip nuevo. Todas quedan ✅. La voz no cambió.
 
-VEREDICTO: APROBADO
