@@ -101,3 +101,5 @@ Apariciones: 9 · **39.8 s en pantalla** (+ cierre 3.8 s) · 8 poses distintas, 
   - Recetas.
 - El estudio de Chapingo probó varias mezclas; la que funcionó mejor fue 2 % de pectina y 1 % de cera de candelilla. La voz dice «las rebanadas con capa» de forma general.
 - El dato de la FDA es sobre suplementos que se venden como **raíz** de tejocote y no traían tejocote. No habla de la fruta del ponche. En pantalla el chip dice «no era tejocote: era adelfa» (la FDA: «instead of the labeled ingredients»).
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.

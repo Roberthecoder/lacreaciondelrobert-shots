@@ -407,9 +407,9 @@ function Ponche() {
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.De - 0.1} texto="¿Y qué le hace *el hervor?*" />
       <Subtitulo T={T} idx={5} at={K.De + 0.1} until={K.Pc - 0.1} texto="Se disuelve: *las células se separan.*" />
       <Subtitulo T={T} idx={6} at={K.Pc + 0.1} until={K.Na - 0.1} texto="El tejocote: *cargado de pectina.*" />
-      <Subtitulo T={T} idx={7} at={K.Na + 0.1} until={K.E - 0.1} texto="Nativo, y *da fruto en diciembre.*" />
+      <Subtitulo T={T} idx={7} at={K.Na + 0.1} until={K.E - 0.1} texto="Nativo: *da fruto en nov. y dic.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.Se - 0.1} texto="Chapingo, 2016: *capa comestible.*" />
-      <Subtitulo T={T} idx={9} at={K.Se + 0.1} until={K.Da - 0.1} texto="Con capa *pierden menos.*" />
+      <Subtitulo T={T} idx={9} at={K.Se + 0.1} until={K.Da - 0.1} texto="La mejor mezcla: *pierden menos.*" />
       <Subtitulo T={T} idx={10} at={K.Da + 0.1} until={K.Ci - 0.1} texto="«Raíz de tejocote»: *era adelfa.*" />
       <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="El hervor *le disolvió el pegamento.*" />
 

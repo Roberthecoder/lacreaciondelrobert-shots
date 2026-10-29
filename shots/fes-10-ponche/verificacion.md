@@ -47,4 +47,25 @@ Revisé de nuevo el texto final completo de `guion.md` y `narracion.json` (12 l�
 | Voz, línea 9: «Las rebanadas con la mejor mezcla perdieron menos peso y firmeza en veinte días de refrigeración.» | ✅ | Lozano-Grande et al. 2016, *Agrociencia* 50(7) | "aquéllas con 2 % HP y 1 % CW redujeron las pérdidas de peso, firmeza y luminosidad, respecto a rebanadas de hongo no tratadas durante un almacenamiento de 20 d a 4 °C" | 2016 |
 | Pantalla, escena 9: la charola «con capa» también se arruga y oscurece, pero menos; etiquetas «con capa: pierde menos» y «2 % pectina + 1 % cera»; 20 días a 4 °C | ✅ | ídem | ídem ("redujeron las pérdidas"; "2 % HP y 1 % CW"; "20 d a 4 °C") | 2016 |
 
+## Revisión de pantalla y publicación (29 oct 2026)
+Revisé todos los textos de `ponche.jsx` (Chip, Etq, Subtitulo, Capitulo, Medidor, TarjetaEstudio, Lupa, `<text>` de SVG) y lo que afirman los dibujos. También revisé `publicacion.md` completo (7 redes y comentario fijado).
+
+| Elemento en pantalla | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Mapa de México con el «Eje Neovolcánico» resaltado (de Jalisco y Nayarit a Veracruz) | ✅ (el tejocote es común ahí. La voz dice «nativo de México» y la etiqueta solo nombra la zona) | CONAFOR | "es muy común encontrarlo en zonas montañosas, principalmente en el Eje Neovolcánico, en un rango altitudinal de 2,000 a" [3,000 m] | s/f |
+| Tejocote amarillo-naranja, «cáliz seco» (corona de sépalos) | ✅ (el color está en CONABIO. El cáliz que queda en la punta es el rasgo típico de los frutos de *Crataegus*) | CONABIO | "Semejante a una pequeña manzana, amarillaanaranjada, de 1 a 2 cm de diámetro." | s/f |
+| Ponche con tejocote, caña, guayaba y canela | ✅ | CONAFOR · Excélsior, «¿Qué ingredientes lleva el ponche?» (vía búsqueda) · TV Azteca, con receta del Gobierno de México (vía búsqueda) | "ingrediente principal en la elaboración del tradicional ponche de frutas navideño" / lista habitual: piloncillo, caña, ciruela pasa, manzana, canela, tejocote, guayaba | s/f |
+| Piñata de estrella junto al calendario «nov – dic» | ✅ (la piñata es parte de las posadas, y el tejocote también va de relleno de piñatas) | CONAFOR | "y como relleno de piñatas" | s/f |
+| TarjetaEstudio «2016 · U. A. Chapingo · Texcoco · Agrociencia», etiqueta «pectina + cera de candelilla», setas *Pleurotus ostreatus* | ✅ (sí eran *P. ostreatus*, en rebanadas) | Lozano-Grande et al. 2016 | "Las emulsiones de HP y CW fueron aplicadas sobre *Pleurotus ostreatus*" | 2016 |
+| Refrigerador «día 0 → 20 · 4 °C». Las dos charolas se arrugan; la de capa, menos. «con capa: pierde menos» · «2 % pectina + 1 % cera» | ✅ | Lozano-Grande et al. 2016 | "aquéllas con 2 % HP y 1 % CW redujeron las pérdidas de peso, firmeza y luminosidad […] durante un almacenamiento de 20 d a 4 °C" | 2016 |
+| Frasco «RAÍZ DE TEJOCOTE · suplemento» que adentro trae adelfa amarilla (*Thevetia peruviana*, flor amarilla de trompeta); chips «FDA · alerta desde 2024» y «no era tejocote: era adelfa» | ✅ | FDA | "products labeled as tejocote (Crataegus mexicana) root […] contain yellow oleander (Thevetia peruviana) instead of the labeled ingredients" | 2024–2026 |
+| Lupa «POR DENTRO · crudo» y «POR DENTRO · sin pegamento»; chips «células infladas de agua», «se desinflan», «lámina media», «pegamento rico en pectina», «la pectina se rompe», «se despega», medidor «pectina: alta», «cuaja jaleas y mermeladas», «nativo de México», «fruto: nov – dic» | ✅ (todo ya verificado arriba. El medidor dice «alta», sin cifra) | Głuchowski 2026 · Daher y Braybrook 2015 · CONABIO · CONAFOR | ver la tabla principal | 2015–2026 |
+
+**Corregido:**
+- `ponche.jsx`, subtítulo 7: decía «Nativo, y *da fruto en diciembre.*» y ahora dice «Nativo: *da fruto en nov. y dic.*», como la fuente («fructifica de noviembre a diciembre»).
+- `ponche.jsx`, subtítulo 9: decía «Con capa *pierden menos.*» y ahora dice «La mejor mezcla: *pierden menos.*». Es la misma corrección que se hizo en la voz: solo la mezcla de 2 % de pectina y 1 % de cera funcionó.
+- `publicacion.md`: el enlace de la FDA (YouTube y comentario fijado) apuntaba a una URL vieja que redirige. Ahora va a la vigente, …/fda-issues-warning-about-certain-products-containing-toxic-yellow-oleander.
+
+En `publicacion.md` no hay datos fuera de lo verificado: las cifras de 2 %, 1 %, 20 días y 4 °C ya llevan «la mejor mezcla», y lo de 2016 y 2024 dice su año. No encontré errores de ortografía ni de especie.
+
 VEREDICTO: APROBADO

@@ -51,7 +51,7 @@ Fuentes:
 - Daher y Braybrook (2015), Frontiers in Plant Science 6: 523: https://doi.org/10.3389/fpls.2015.00523
 - Heaney y Padilla-Zakour (2025), Foods 14: 3267: https://doi.org/10.3390/foods14183267
 - Lozano-Grande et al. (2016), Agrociencia 50(7): https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-31952016000700849
-- FDA, alerta por adelfa amarilla: https://www.fda.gov/food/alerts-advisories-safety-information/fda-issues-warning-about-certain-supplements-substituted-toxic-yellow-oleander-january-2024
+- FDA, alerta por adelfa amarilla: https://www.fda.gov/food/alerts-advisories-safety-information/fda-issues-warning-about-certain-products-containing-toxic-yellow-oleander
 ¿En tu casa el ponche lleva tejocote, caña y guayaba? ¿Qué más le ponen? 👇
 Shot Festivo #10 · Posadas · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -101,6 +101,6 @@ Fuentes:
 4. Daher y Braybrook (2015), Frontiers in Plant Science 6: 523 ("the pectin-rich middle lamella"). https://doi.org/10.3389/fpls.2015.00523
 5. Heaney y Padilla-Zakour (2025), Foods 14: 3267 (cómo se rompe la pectina con el calor). https://doi.org/10.3390/foods14183267
 6. Lozano-Grande et al. (2016), Agrociencia 50(7), Universidad Autónoma Chapingo: películas de pectina de tejocote y cera de candelilla en Pleurotus ostreatus; 2 % de pectina y 1 % de cera redujeron las pérdidas de peso y firmeza en 20 d a 4 °C. https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-31952016000700849
-7. FDA: productos etiquetados como raíz de tejocote que contenían adelfa amarilla (Thevetia peruviana). https://www.fda.gov/food/alerts-advisories-safety-information/fda-issues-warning-about-certain-supplements-substituted-toxic-yellow-oleander-january-2024
+7. FDA: productos etiquetados como raíz de tejocote que contenían adelfa amarilla (Thevetia peruviana). https://www.fda.gov/food/alerts-advisories-safety-information/fda-issues-warning-about-certain-products-containing-toxic-yellow-oleander
 El dibujo es esquemático.
 ```
