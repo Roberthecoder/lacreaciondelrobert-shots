@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Pez Diablo base narrada.dc.html",
+  "salida": "Shot Pez Diablo narrado.dc.html",
+  "nota": "Shot Ambiental #34. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este limpiapeceras no es tu ayudante: es una de las mayores amenazas de los ríos de México."
+    },
+    {
+      "escena": "Origen",
+      "texto": "Es el pez diablo, o pleco: un bagre acorazado del Amazonas."
+    },
+    {
+      "escena": "Suelta",
+      "texto": "Algunos miden medio metro. Muchos escapan de granjas; a otros los sueltan."
+    },
+    {
+      "escena": "Armadura",
+      "texto": "Y aquí tienen pocos depredadores: están cubiertos de placas de hueso y espinas."
+    },
+    {
+      "escena": "Aire",
+      "texto": "Si falta oxígeno, respiran aire con el estómago y resisten varios días cuando el agua se seca."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si llegan a una presa de pescadores?"
+    },
+    {
+      "escena": "Infiernillo",
+      "texto": "La presa El Infiernillo, en Michoacán y Guerrero, llegó a dar en los ochenta casi veinte mil toneladas de tilapia y carpa al año."
+    },
+    {
+      "escena": "Redes",
+      "texto": "En 2007, CONABIO reportó que del setenta al ochenta por ciento de la pesca de tilapia ya eran plecos, que dañan las redes."
+    },
+    {
+      "escena": "Tuneles",
+      "texto": "Y al anidar cavan túneles de hasta metro y medio que erosionan las orillas."
+    },
+    {
+      "escena": "Harina",
+      "texto": "Lo bueno: en 2021, un estudio en Tabasco mostró que su harina puede sustituir a la de sardina para criar tilapias."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Si tu limpiapeceras ya no cabe, no lo sueltes: busca un acuario que lo cambie."
+    }
+  ]
+}
