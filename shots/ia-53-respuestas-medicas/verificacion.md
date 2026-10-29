@@ -37,3 +37,11 @@
    - La `TarjetaEstudio` puede quedarse igual.
 
 Nota menor, no hace falta cambiar nada: en #14, si en `publicacion.md` se explica la limitación, conviene agregar que la exactitud contó dentro de la calificación de calidad aunque no se midió por separado. Así queda igual que la corrección oficial del artículo.
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Lo publicaron en 2023 investigadores de la Universidad de California, San Diego.» (Ayers et al., JAMA Intern Med 2023; autor principal en UC San Diego) ✅
+- «…y según los autores eso pudo parecer empatía.» ("could have been erroneously associated with greater empathy") ✅
+- Cierre «El chatbot sonó más amable, pero la última palabra la tiene tu médico.» (consejo, sin dato nuevo) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

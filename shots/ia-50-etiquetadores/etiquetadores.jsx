@@ -207,9 +207,10 @@ function Toxico({ x, y, o = 1, rot = 0 }) {
   </g>;
 }
 // Calendario 2022 con meses tachados.
-function Calendario({ T, at, x = 620, y = 640 }) {
+function Calendario({ T, at, until, x = 620, y = 640 }) {
+  if (!kvisible(T, at, until)) return null;
   const M = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
-  return <div style={{ position:'absolute', left:x, top:y, width:400, zIndex:40, opacity:kprog(T, at, at + 0.3), background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:22, padding:'16px 18px', boxShadow:`10px 10px 0 ${KC.ink}` }}>
+  return <div style={{ position:'absolute', left:x, top:y, width:400, zIndex:40, opacity:kprog(T, at, at + 0.3) * (1 - kprog(T, until, until + 0.35)), background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:22, padding:'16px 18px', boxShadow:`10px 10px 0 ${KC.ink}` }}>
     <div style={{ font:`400 54px ${KF.titulo}`, color:KC.ink, textAlign:'center', marginBottom:8 }}>2022</div>
     <div style={{ display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:10 }}>
       {M.map((m, i) => { const tach = i >= 2 && i <= 9 ? kprog(T, at + 0.6 + (i - 2) * 0.18, at + 0.75 + (i - 2) * 0.18) : 0, corte = i === 1;
@@ -265,22 +266,21 @@ function Etiquetadores() {
       <Escena T={T} a={K.G} b={K.E}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <g opacity={kprog(T, K.G + 1.6, K.G + 2.2)}><Persona x={760} y={1010} s={0.85} T={T} saluda={0} /></g>
+          <g opacity={kprog(T, K.G + 1.6, K.G + 2.2)}><Persona x={800} y={880} s={0.85} T={T} saluda={0} /></g>
           <FotoGato x={330} y={800} s={1} T={T} caja={kprog(T, K.G + 0.1, K.G + 1.3, kEase.suave)} etq={kprog(T, K.G + 1.3, K.G + 1.6, kEase.sale)} marcador />
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 2.4} until={K.E - 0.2} texto="una persona ✍" x={760} y={1170} tam={34} borde={KC.cyan} />
       {/* 2 · aprender con ejemplos etiquetados */}
       <Escena T={T} a={K.E} b={K.I}>
         <FondoLunares color={KC.mint} />
-        <RedNeuronal T={T} x={470} y={720} ancho={480} alto={420} capas={[4, 5, 5, 3]} onda={((T - K.E) * 0.6) % 1} color={KC.ink} acento={KC.yellow} />
-        {svg(<>{ejemplos.map((e) => e.o > 0 && <g key={e.i} transform={`translate(${klerp(170, 470, e.u)} ${klerp(760 + (e.i % 3) * 150, 930, e.u)}) scale(${klerp(1, 0.4, e.u)})`} opacity={e.o}>
+        <RedNeuronal T={T} x={440} y={640} ancho={560} alto={440} capas={[4, 5, 5, 3]} onda={((T - K.E) * 0.6) % 1} color={KC.ink} acento={KC.yellow} />
+        {svg(<>{ejemplos.map((e) => e.o > 0 && <g key={e.i} transform={`translate(${klerp(160, 440, e.u)} ${klerp(700 + (e.i % 3) * 150, 860, e.u)}) scale(${klerp(1, 0.4, e.u)})`} opacity={e.o}>
           <rect x={-110} y={-60} width={220} height={120} rx={14} fill="#fffdf6" stroke={KC.ink} strokeWidth={6} />
           <g transform="translate(-55 0)"><Icono tipo={e.gato ? 0 : [1, 4, 2][e.i % 3]} s={1.4} /></g>
           <text x={45} y={14} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={e.gato ? KC.leaf : KC.red}>{e.gato ? 'gato' : 'no'}</text>
         </g>)}</>)}
       </Escena>
-      <Chip T={T} at={K.E + 0.3} until={K.I - 0.2} texto="miles de ejemplos etiquetados" x={400} y={560} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 0.3} until={K.I - 0.2} texto="miles de ejemplos etiquetados" x={540} y={1120} tam={36} borde={KC.ink} />
       {/* 3 · ImageNet: más de 14 millones */}
       <Escena T={T} a={K.I} b={K.V}>
         <FondoLunares color={KC.cyan} />
@@ -292,11 +292,11 @@ function Etiquetadores() {
       <Escena T={T} a={K.V} b={V2}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <FotoGato x={360} y={760} s={0.85} T={T} tipo="birmano" caja={kprog(T, K.V + 0.2, K.V + 1.0, kEase.suave)} etq={sube(K.V + 1.0, 0.3)} texto="gato birmano" rot={2} />
-          {[0, 1, 2, 3, 4].map((i) => <Voto key={i} x={150 + i * 190} y={1110} e={sube(K.V + 1.6 + i * 0.5, 0.35)} playera={[KC.pink, KC.orange, KC.cyan, KC.yellow, KC.mint][i]} seed={i + 2} />)}
+          <FotoGato x={320} y={720} s={0.8} T={T} tipo="birmano" caja={kprog(T, K.V + 0.2, K.V + 1.0, kEase.suave)} etq={sube(K.V + 1.0, 0.3)} texto="gato birmano" rot={2} />
+          {[0, 1, 2, 3, 4].map((i) => <Voto key={i} x={140 + i * 180} y={1040} e={sube(K.V + 1.6 + i * 0.5, 0.35)} playera={[KC.pink, KC.orange, KC.cyan, KC.yellow, KC.mint][i]} seed={i + 2} />)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.V + 1.6} until={V2 - 0.2} texto={`votos: ${Math.min(5, Math.max(0, Math.floor((T - K.V - 1.6) / 0.5) + 1))}`} x={820} y={860} tam={44} borde={KC.leaf} />
+      <Chip T={T} at={K.V + 1.6} until={V2 - 0.2} texto={`votos: ${Math.min(5, Math.max(0, Math.floor((T - K.V - 1.6) / 0.5) + 1))}`} x={800} y={820} tam={44} borde={KC.leaf} />
       {/* 4b · al dibujar cuadritos: foca o nutria marina */}
       <Escena T={T} a={V2} b={K.P}>
         <FondoLunares color={KC.teal} />
@@ -325,7 +325,7 @@ function Etiquetadores() {
       {/* 7 · el detector dentro de ChatGPT (por dentro de la máquina) */}
       <Escena T={T} a={K.D} b={K.Pa}>
         <FondoCircuito T={T} />
-        <CelularChat T={T} x={540} y={830} s={0.6} tam={34} mensajes={[{ at: K.D + 0.4, yo: true, texto: 'Hola 👋' }, { at: K.D + 1.0, yo: false, texto: '¡Hola! ¿En qué te ayudo?' }]} />
+        <CelularChat T={T} x={520} y={800} s={0.62} tam={46} mensajes={[{ at: K.D + 0.4, yo: true, texto: 'Hola 👋' }, { at: K.D + 1.0, yo: false, texto: '¡Hola! ¿En qué te ayudo?' }]} />
         {svg(<>
           <Escudo x={860} y={800} s={0.9} T={T} golpe={ultimoGolpe} />
           {tox.map((t) => t.o > 0 && <Toxico key={t.i} x={t.x} y={t.y} o={t.o} rot={t.rot} />)}
@@ -347,8 +347,8 @@ function Etiquetadores() {
       <Escena T={T} a={K.To} b={K.B}>
         <FondoLunares color={KC.coral} punto="rgba(255,255,255,.25)" />
       </Escena>
-      <Cita T={T} at={K.To + 0.2} until={K.B - 0.2} y={430} texto="«That was torture.» (Eso fue tortura)" quien="un trabajador de Sama, a TIME (2023)" />
-      <Calendario T={T} at={K.To + 1.4} x={600} y={620} />
+      <Cita T={T} at={K.To + 0.2} until={K.B - 0.2} y={430} texto="«That was torture.»" quien="«Eso fue tortura», dijo un trabajador de Sama a TIME (2023)" />
+      <Calendario T={T} at={K.To + 1.4} until={K.B - 0.2} x={600} y={620} />
       <Chip T={T} at={K.To + 2.6} until={K.B - 0.2} texto="se canceló en feb. · 8 meses antes" x={800} y={1150} tam={30} borde={KC.ink} />
       {/* 10 · balance */}
       <Escena T={T} a={K.B} b={K.C}>
@@ -360,7 +360,7 @@ function Etiquetadores() {
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Persona x={770} y={1010} s={0.85} T={T} saluda={kprog(T, K.C + 1.0, K.C + 1.5, kEase.sale)} />
+          <Persona x={800} y={880} s={0.85} T={T} saluda={kprog(T, K.C + 1.0, K.C + 1.5, kEase.sale)} />
           <FotoGato x={330} y={800} s={1} T={T} caja={1} etq={1} />
         </>)}
       </Escena>
@@ -384,7 +384,7 @@ function Etiquetadores() {
         [CUES.Gancho - 0.45, CUES.Gancho + 4.3, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Ejemplos + 0.3, CUES.ImageNet + 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Votos + 0.8, CUES.Votos + 4.8, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [CUES.Pregunta + 0.05, CUES.Kenia + 1.0, 'avatar_10_serio_molesto', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Kenia - 0.2, 'avatar_10_serio_molesto', 'grande'],
         [CUES.Detector + 0.8, CUES.Paga - 0.2, 'avatar_07_pensativo_puno', 'izq-alto'],
         [CUES.Paga + 2.6, CUES.Tortura - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Tortura + 0.3, CUES.Balance - 0.2, 'avatar_12_perfil_serio', 'grande-izq'],

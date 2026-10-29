@@ -146,7 +146,7 @@ function NobelFisica() {
   const bx = T < rotaEn ? 580 : klerp(410, 580, kEase.suave(1 - nMalos / 25));
   // 7 · Boltzmann: gas que se vuelve red (nodos ocultos y visibles).
   const mB = kprog(T, K.B + 2.8, K.B + 4.4, kEase.suave);
-  const NODOS = [...Array.from({ length: 6 }, (_, k) => [180 + k * 100, 620]), ...Array.from({ length: 8 }, (_, k) => [150 + k * 95, 840])];
+  const NODOS = [...Array.from({ length: 6 }, (_, k) => [230 + k * 90, 620]), ...Array.from({ length: 8 }, (_, k) => [150 + k * 95, 840])];
   const bolas = Array.from({ length: 22 }, (_, k) => { const u = T * (0.35 + hash(k, 1) * 0.5), v = T * (0.3 + hash(k, 2) * 0.5);
     const tri = (q) => Math.abs(((q % 2) + 2) % 2 - 1); const gx = 160 + tri(u + hash(k, 3) * 2) * 680, gy = 540 + tri(v + hash(k, 4) * 2) * 440;
     const n = NODOS[k]; return n ? [klerp(gx, n[0], mB), klerp(gy, n[1], mB), 1] : [gx, gy, 1 - mB]; });
@@ -237,7 +237,7 @@ function NobelFisica() {
             return <g key={k} opacity={p}><Gato x={klerp(-80, 330 + k * 210, p)} y={960} s={0.85} color={[KC.orange, KC.paper, KC.gold2][k]} /></g>; })}
         </>)}
       </Escena>
-      <Etq T={T} at={K.B + 4.4} until={K.Ta - 0.2} x={145} y={620} texto="ocultos" tam={24} lado="izq" />
+      <Etq T={T} at={K.B + 4.4} until={K.Ta - 0.2} x={205} y={620} texto="ocultos" tam={22} lado="izq" />
       <Etq T={T} at={K.B + 4.6} until={K.Ta - 0.2} x={860} y={840} texto="visibles" tam={24} />
       <Chip T={T} at={K.B + 0.4} until={K.B + 4.3} texto="física estadística" x={400} y={450} tam={38} borde={KC.lilac} />
       <Chip T={T} at={K.B + 1.8} until={K.B + 4.8} texto="distribución de Boltzmann · siglo XIX" x={540} y={1090} tam={32} borde={KC.gold} />

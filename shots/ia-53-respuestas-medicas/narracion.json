@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Respuestas base narrada.dc.html",
+  "salida": "Shot Respuestas narrado.dc.html",
+  "nota": "Shot IA #53. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu duda de salud la responde un médico y, al lado, un chatbot. Los evaluadores eligieron al chatbot casi ocho de cada diez veces."
+    },
+    {
+      "escena": "Foro",
+      "texto": "Eran ciento noventa y cinco preguntas reales de un foro de Reddit con médicos verificados."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo publicaron en 2023 investigadores de la Universidad de California, San Diego."
+    },
+    {
+      "escena": "Ciegas",
+      "texto": "Profesionales de salud leyeron ambas respuestas sin saber cuál era cuál."
+    },
+    {
+      "escena": "Calidad",
+      "texto": "Calidad buena o muy buena: casi ochenta por ciento del chatbot contra veintidós de los médicos."
+    },
+    {
+      "escena": "Empatia",
+      "texto": "Empáticas o muy empáticas: cuarenta y cinco por ciento contra menos de cinco."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Ya no necesitas al médico? Calma."
+    },
+    {
+      "escena": "Largo",
+      "texto": "Pero eran unas cuatro veces más largas, y según los autores eso pudo parecer empatía."
+    },
+    {
+      "escena": "Foro2",
+      "texto": "Era un foro, no una consulta: nadie conocía tu historial."
+    },
+    {
+      "escena": "Limites",
+      "texto": "No midieron aparte si cada respuesta era correcta, y los evaluadores eran autores del estudio."
+    },
+    {
+      "escena": "Borrador",
+      "texto": "Sugieren probar que la IA haga un borrador y el médico lo corrija."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "El chatbot sonó más amable, pero la última palabra la tiene tu médico."
+    }
+  ]
+}

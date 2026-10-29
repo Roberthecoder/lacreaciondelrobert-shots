@@ -35,7 +35,7 @@ for (let i = 0; i < 3; i++) m.nota(est + i * 0.35, 64 + i * 3, 0.05, 0.6);      
 m.whoosh(O, 0.5, 0.12); m.sube(O + 3.7, 1.0, 50, 60, 0.035); m.sube(O + 4.5, 1.0, 50, 67, 0.04);
 m.nota(O + 5.0, 72, 0.05, 0.5);
 for (let i = 0; i < 16; i++) m.tic(O + 7.0 + i * 0.075, 0.06, 2200);            // 16 de cada 100
-m.burbuja(Ce + 0.25, 0.1, 900); m.golpe(Ce + 1.1, 0.4, 55); m.latido(Ce + 1.6, 0.15);
+m.burbuja(Ce + 0.25, 0.1, 900); m.golpe(Ce + 0.7, 0.4, 55); m.latido(Ce + 1.2, 0.15);
 m.nota(C + 0.4, 67, 0.05, 0.8); m.nota(C + 0.9, 71, 0.05, 0.8);
 m.nota(Ou + 0.3, 53, 0.08, 2.8); m.nota(Ou + 0.3, 60, 0.06, 2.8); m.nota(Ou + 0.3, 65, 0.05, 2.8);
 m.guardar(OUT, 1);

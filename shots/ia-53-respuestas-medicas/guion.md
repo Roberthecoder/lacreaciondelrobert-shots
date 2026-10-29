@@ -1,10 +1,10 @@
 # Shot IA #53 · ¿Un chatbot contesta mejor que tu médico? Lo que sí y lo que no dice el estudio
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #53 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, pendiente de verificación independiente. Sin animación todavía. **Voz pendiente de aprobación de Robert.**
+- **Estado (29 oct 2026):** guion verificado (19 ✅ y 1 ⚠️ corregido: quién publicó el estudio), animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert** (~949 créditos).
 - **Formato:** N5 "El experimento" (la prueba a ciegas: dos respuestas, sin saber cuál es cuál) + N2 "El número" (casi 8 de cada 10).
 - **Gancho (de los 7):** #2 "Tú contra el de al lado": tu duda contestada por un médico y, al lado, por un chatbot.
-- **Duración:** voz 951 caracteres (≈ 58.2 s) + cierre 3.5 s → **61.7 s** estimados.
+- **Duración:** voz 949 caracteres (≈ 58.1 s) + cierre 3.5 s → **61.6 s** en la base.
 - **Postura de la serie:** defiende y critica con datos. El resultado es llamativo, pero la mitad del shot son sus límites: foro público, evaluadores coautores, respuestas más largas, no se midió la exactitud aparte, no es una consulta real y no reemplaza al médico. El estudio es de **2023** (con el ChatGPT de diciembre de 2022) y se dice.
 
 ## Versión narrada
@@ -13,19 +13,38 @@
 |---|---|---|---|
 | 0 | Gancho | Tu duda de salud la responde un médico y, al lado, un chatbot. Los evaluadores eligieron al chatbot casi ocho de cada diez veces. | Fondo menta; desde el cuadro 0 un celular con una duda ("me duele…") y dos globos de respuesta que aparecen lado a lado: uno con estetoscopio, otro con el robotito. Una palomita cae sobre el del robotito; número "78.6 %" (de 585 evaluaciones). |
 | 1 | Foro | Eran ciento noventa y cinco preguntas reales de un foro de Reddit con médicos verificados. | Pantalla tipo foro "r/AskDocs" (esquemática, sin logos reales); contador que sube a "195 preguntas"; insignia "médico verificado" junto a las respuestas. |
-| 2 | Estudio | Lo publicó en 2023 la Universidad de California, San Diego. | `TarjetaEstudio`: "2023 · UC San Diego · Ayers et al. · JAMA Internal Medicine"; chip chico "ChatGPT (GPT-3.5), dic 2022". |
+| 2 | Estudio | Lo publicaron en 2023 investigadores de la Universidad de California, San Diego. | `TarjetaEstudio`: "2023 · UC San Diego · Ayers et al. · JAMA Internal Medicine"; chip chico "ChatGPT (GPT-3.5), dic 2022". |
 | 3 | Ciegas | Profesionales de salud leyeron ambas respuestas sin saber cuál era cuál. | Tres evaluadores con antifaz; las dos respuestas se barajan como cartas "A" y "B". |
 | 4 | Calidad | Calidad buena o muy buena: casi ochenta por ciento del chatbot contra veintidós de los médicos. | Barras: "chatbot 78.5 %" contra "médicos 22.1 %" (respuestas calificadas de buena o muy buena calidad). |
 | 5 | Empatia | Empáticas o muy empáticas: cuarenta y cinco por ciento contra menos de cinco. | Barras con corazones: "chatbot 45.1 %" contra "médicos 4.6 %". |
 | 6 | Pregunta | ¿Ya no necesitas al médico? Calma. | **Re-gancho.** "?" gigante; Robert grande; una mano dice "alto". |
-| 7 | Largo | Pero eran unas cuatro veces más largas, y los autores advierten que eso pudo parecer empatía. | Dos tiras de papel: la del médico corta "52 palabras", la del chatbot se desenrolla "211 palabras" (promedios). Chip: "¿más largo = más amable?". |
+| 7 | Largo | Pero eran unas cuatro veces más largas, y según los autores eso pudo parecer empatía. | Dos tiras de papel: la del médico corta "52 palabras", la del chatbot se desenrolla "211 palabras" (promedios). Chip: "¿más largo = más amable?". |
 | 8 | Foro2 | Era un foro, no una consulta: nadie conocía tu historial. | El foro contra un consultorio; un expediente con candado "tu historial" queda fuera del foro. |
 | 9 | Limites | No midieron aparte si cada respuesta era correcta, y los evaluadores eran autores del estudio. | Lista de límites con `MitoTachado`-estilo: "¿exacta? no se midió aparte" · "evaluadores = coautores". |
 | 10 | Borrador | Sugieren probar que la IA haga un borrador y el médico lo corrija. | El robotito escribe un borrador; una mano con estetoscopio lo corrige con pluma roja. |
-| 11 | Cierre | El chatbot sonó más amable. Pero la última palabra sobre tu salud la tiene tu médico. | **Regreso a la imagen del inicio**: el mismo celular con las dos respuestas; el globo del robotito queda como "borrador" y encima el sello "revisado por tu médico ✔". |
+| 11 | Cierre | El chatbot sonó más amable, pero la última palabra la tiene tu médico. | **Regreso a la imagen del inicio**: el mismo celular con las dos respuestas; el globo del robotito queda como "borrador" y encima el sello "revisado por tu médico ✔". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua y cálida (tono de consultorio); "ding" de mensaje cuando llegan las respuestas, la palomita cae con un clic, tecleo cuando sube el contador del foro, barajeo de cartas en la prueba a ciegas, las barras suben con un barrido, latido suave en las barras de empatía, el papel largo se desenrolla con un frrrr, la pluma roja raya, el sello final cae con un golpe seco.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Ya no necesitas al médico?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «eligieron al chatbot casi ocho de cada diez veces» (cuadro 0) |
+| 2 | 8.7 | 13.0 | 04_bajando_lentes | `arriba-der` | «ciento noventa y cinco preguntas reales» |
+| 3 | 15.4 | 18.0 | 13_senalando_arriba | `izq-alto` | señala la tarjeta del estudio |
+| 4 | 25.0 | 28.05 | 11_sorprendido | `arriba-der` | «casi ochenta por ciento … contra veintidós» |
+| 5 | 32.95 | 36.0 | 07_pensativo_puno | `grande` | «¿Ya no necesitas al médico? Calma.» |
+| 6 | 37.7 | 40.25 | 06_pensativo_menton | `izq-alto` | «eso pudo parecer empatía» |
+| 7 | 44.5 | 49.5 | 10_serio_molesto | `arriba-der` | «los evaluadores eran autores del estudio» |
+| 8 | 51.5 | 53.7 | 05_sonriendo_dientes_uniformes | `izq-alto` | «el médico lo corrija» |
+| 9 | 54.2 | 58.0 | 13_senalando_arriba | `arriba-der` | «la última palabra la tiene tu médico» |
+| — | 58.1 | 61.6 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 31.6 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.6 s
 
 ## Fuentes (abiertas el 29 oct 2026)
 
@@ -39,12 +58,13 @@
    > "The proportion of responses rated empathetic or very empathetic (≥4) was higher for chatbot than for physicians (physicians: 4.6% …; chatbot: 45.1% …)"
    > "Further exploration of this technology is warranted in clinical settings, such as using chatbot to draft responses that physicians could then edit."
    > Texto completo (jamanetwork.com/journals/jamainternalmedicine/fullarticle/2804309): "version GPT-3.5, OpenAI" · "subreddit moderators verify health care professionals' credentials" · evaluadores de "pediatrics, geriatrics, internal medicine, oncology, infectious disease, and preventive medicine" · responses "stripped of revealing information".
+   > Corrección (8 may 2023): "though accuracy of responses were not specifically and independently evaluated in the study, this was considered as a subcomponent of the quality evaluations".
    > Limitaciones (Discusión): "The main study limitation was the use of the online forum question and answer exchanges." · "Such messages may not reflect typical patient-physician questions." · "the additional length of the chatbot responses could have been erroneously associated with greater empathy" · "did not independently and specifically assess the physician or chatbot responses for accuracy" · "this study's evaluators despite being blinded to the source of a response and any initial results were also coauthors" · "the summary measures of quality and empathy were not pilot tested or validated" · el chatbot "augments, rather than replaces, existing processes for message-based care delivery" · "the need for human review of AI-generated content for accuracy and potential false or fabricated information." Los autores también señalan que las preguntas se evaluaron aisladas, sin la relación médico-paciente ni el expediente clínico.
 
 ## Notas
 - "Casi ocho de cada diez veces" = 78.6 % de las 585 evaluaciones (195 pares × 3 evaluadores). "Casi ochenta por ciento" = 78.5 % de respuestas del chatbot calificadas buena o muy buena; "veintidós" = 22.1 % de los médicos. "Cuarenta y cinco contra menos de cinco" = 45.1 % contra 4.6 % (empáticas o muy empáticas).
 - "Unas cuatro veces más largas" = 211 contra 52 palabras en promedio (211 / 52 ≈ 4.06).
-- "Lo publicó en 2023 la Universidad de California, San Diego": autor principal y la mayoría de los coautores son de UC San Diego (también Bryn Mawr, Johns Hopkins y otros).
+- "Lo publicaron en 2023 investigadores de la Universidad de California, San Diego" (corregido tras la verificación: lo publicó la revista *JAMA Internal Medicine*): autor principal y la mayoría de los coautores son de UC San Diego (también Bryn Mawr, Johns Hopkins y otros).
 - "Nadie conocía tu historial": paráfrasis del límite que señalan los autores (preguntas aisladas, sin relación previa ni expediente).
 - "La última palabra la tiene tu médico" es el consejo del canal, coherente con lo que dicen los autores ("augments, rather than replaces" y la revisión humana).
 - El ChatGPT evaluado es el de diciembre de 2022 (GPT-3.5); no se afirma nada de los chatbots de hoy. El foro y los globos se dibujan esquemáticos, sin logos.
