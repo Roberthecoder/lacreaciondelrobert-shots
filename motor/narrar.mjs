@@ -13,7 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { execFileSync } from 'node:child_process';
+import { execFileSync, spawnSync } from 'node:child_process';
 
 // en GitHub Actions, que el error se vea en el resumen de la ejecución
 const toAnnot = (e) => { console.error(e); if (process.env.GITHUB_ACTIONS) console.log(`::error title=narrar.mjs::${String(e?.message || e).replace(/\r?\n/g, ' ').slice(0, 900)}`); process.exit(1); };
@@ -35,7 +35,33 @@ const ff = (args) => execFileSync('ffmpeg', ['-y', '-loglevel', 'error', ...args
 /* ---------- 1. voz: una sola petición ---------- */
 const lines = cfg.lineas;
 const texto = lines.map((l) => l.texto.trim()).join(' ');
-const hash = crypto.createHash('sha1').update(`${VOICE_ID}|${MODEL}|${texto}`).digest('hex').slice(0, 12);
+// Pronunciación: a ElevenLabs le mandamos el texto con arreglos (p. ej. «IA» → «Ía», para que no diga «ey-ay» en inglés);
+// los subtítulos usan el texto original. mapa[j] = índice en el texto original del carácter j del texto enviado.
+const PRON = JSON.parse(fs.readFileSync(new URL('./pronunciacion.json', import.meta.url), 'utf8')).reglas;
+let enviado = '', mapa = [];
+{
+  const marcas = [];
+  for (const r of PRON) for (const m of texto.matchAll(new RegExp(r.de, 'g')))
+    if (!marcas.some((x) => m.index < x.i + x.n && x.i < m.index + m[0].length)) marcas.push({ i: m.index, n: m[0].length, a: r.a });
+  marcas.sort((x, y) => x.i - y.i);
+  let k = 0;
+  for (const x of marcas) {
+    for (; k < x.i; k++) { enviado += texto[k]; mapa.push(k); }
+    for (let j = 0; j < x.a.length; j++) { enviado += x.a[j]; mapa.push(x.i + Math.min(x.n - 1, Math.floor((j * x.n) / x.a.length))); }
+    k = x.i + x.n;
+  }
+  for (; k < texto.length; k++) { enviado += texto[k]; mapa.push(k); }
+}
+// regresa los tiempos por carácter del texto enviado al texto original
+const aOriginal = (al) => {
+  const n = texto.length, ini = Array(n).fill(null), fin = Array(n).fill(null);
+  al.characters.forEach((_, j) => { const i = mapa[j] ?? n - 1; const a = al.character_start_times_seconds[j], b = al.character_end_times_seconds[j];
+    ini[i] = ini[i] == null ? a : Math.min(ini[i], a); fin[i] = fin[i] == null ? b : Math.max(fin[i], b); });
+  for (let i = 0; i < n; i++) { if (ini[i] == null) ini[i] = i ? fin[i - 1] : 0; if (fin[i] == null) fin[i] = ini[i]; }
+  return { characters: [...texto], character_start_times_seconds: ini, character_end_times_seconds: fin };
+};
+if (enviado !== texto) console.log(`Pronunciación ajustada para ElevenLabs: ${PRON.filter((r) => new RegExp(r.de).test(texto)).map((r) => r.a).join(', ')}`);
+const hash = crypto.createHash('sha1').update(`${VOICE_ID}|${MODEL}|${enviado}`).digest('hex').slice(0, 12);
 const mp3 = path.join(vozDir, 'narracion.mp3'), metaF = path.join(vozDir, 'narracion.json');
 let meta = fs.existsSync(metaF) ? JSON.parse(fs.readFileSync(metaF, 'utf8')) : null;
 if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
@@ -55,7 +81,7 @@ if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
   const fail = async (r, what) => { throw new Error(`ElevenLabs respondió ${r.status} (${what}): ${(await r.text()).slice(0, 300)}`); };
   let audio, alignment;
   const res = await pedir(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}/with-timestamps?output_format=mp3_44100_128`, {
-    method: 'POST', headers: { ...H, 'Content-Type': 'application/json' }, body: JSON.stringify({ text: texto, model_id: MODEL }),
+    method: 'POST', headers: { ...H, 'Content-Type': 'application/json' }, body: JSON.stringify({ text: enviado, model_id: MODEL }),
   });
   if (res.ok) {
     const j = await res.json();
@@ -64,13 +90,13 @@ if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
     // respaldo: audio normal + alineación forzada (por si el modelo no devuelve tiempos)
     console.log(`with-timestamps no disponible (${res.status}); uso audio + alineación forzada`);
     const r2 = await pedir(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}?output_format=mp3_44100_128`, {
-      method: 'POST', headers: { ...H, 'Content-Type': 'application/json' }, body: JSON.stringify({ text: texto, model_id: MODEL }),
+      method: 'POST', headers: { ...H, 'Content-Type': 'application/json' }, body: JSON.stringify({ text: enviado, model_id: MODEL }),
     });
     if (!r2.ok) await fail(r2, 'texto a voz');
     audio = Buffer.from(await r2.arrayBuffer());
     const fd = new FormData();
     fd.append('file', new Blob([audio], { type: 'audio/mpeg' }), 'narracion.mp3');
-    fd.append('text', texto);
+    fd.append('text', enviado);
     const r3 = await pedir('https://api.elevenlabs.io/v1/forced-alignment', { method: 'POST', headers: H, body: fd });
     if (!r3.ok) await fail(r3, 'alineación forzada');
     const fa = await r3.json();
@@ -78,7 +104,7 @@ if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
   }
   const j = { audio, alignment };
   fs.writeFileSync(mp3, j.audio);
-  meta = { hash, modelo: MODEL, texto, alignment: j.alignment };
+  meta = { hash, modelo: MODEL, texto, enviado, alignment: aOriginal(j.alignment) };
   fs.writeFileSync(metaF, JSON.stringify(meta));
   console.log(`Voz generada (${texto.length} caracteres, modelo ${MODEL})`);
 } else console.log('Voz en caché, no se gastaron créditos');
@@ -145,8 +171,20 @@ fs.writeFileSync(path.join(dir, cfg.salida), nh);
 const vozWav = path.join(vozDir, 'voz_completa.wav');
 ff(['-i', vozMp3, '-af', `adelay=${Math.round(OFF * 1000)}:all=1,apad=whole_dur=${play.toFixed(3)}`, '-ar', '48000', '-ac', '2', vozWav]);
 execFileSync('node', [path.join(dir, 'gen-audio.mjs'), cfg.salida, path.join('assets', 'musica_narrada.wav')], { stdio: 'inherit', cwd: dir });
-// la voz va intacta; solo la música y los efectos bajan cuando hablas
-ff(['-i', path.join(dir, 'assets', 'musica_narrada.wav'), '-i', vozWav, '-filter_complex',
-  '[1:a]asplit=2[sc][vz];[0:a]volume=0.5[m];[m][sc]sidechaincompress=threshold=0.05:ratio=3:attack=20:release=350[duck];[duck][vz]amix=inputs=2:normalize=0,alimiter=limit=0.95[o]',
+// Mezcla profesional (29 oct 2026, pedido de Robert: "el video se oye bajo y la música casi no se escucha"):
+// 1) voz limpia y pareja, a −16 LUFS;  2) música a −16 LUFS y luego cama a −7 dB (≈ −23 LUFS en las pausas);
+// 3) la música baja ~4 dB cuando hablas (queda ~11 dB debajo de la voz: se oye clara pero no estorba);
+// 4) el volumen final (−13 LUFS, pico −1 dB) lo pone motor/render.mjs para todas las versiones.
+const medir = (f) => { const r = spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-i', f, '-af', 'ebur128', '-f', 'null', '-'], { encoding: 'utf8' });
+  const m = [...(r.stderr || '').matchAll(/I:\s+(-?[\d.]+) LUFS/g)].at(-1); return m ? +m[1] : -23; };
+const musWav = path.join(dir, 'assets', 'musica_narrada.wav');
+const vozProc = path.join(vozDir, 'voz_procesada.wav');
+ff(['-i', vozWav, '-af', 'highpass=f=70,acompressor=threshold=-22dB:ratio=2.5:attack=8:release=150:makeup=1', '-ar', '48000', vozProc]);
+const gVoz = -16 - medir(vozProc), gMus = -16 - medir(musWav) - 7;
+console.log(`Mezcla: voz ${gVoz >= 0 ? '+' : ''}${gVoz.toFixed(1)} dB · música ${gMus >= 0 ? '+' : ''}${gMus.toFixed(1)} dB (cama a −7 dB de la voz; al hablar queda ~11 dB abajo)`);
+ff(['-i', musWav, '-i', vozProc, '-filter_complex',
+  `[1:a]volume=${gVoz.toFixed(2)}dB,asplit=2[sc][vz];[0:a]volume=${gMus.toFixed(2)}dB[m];` +
+  '[m][sc]sidechaincompress=threshold=0.03:ratio=1.8:knee=4:attack=60:release=600[duck];' +
+  '[duck][vz]amix=inputs=2:normalize=0,alimiter=limit=0.95:level=false[o]',
   '-map', '[o]', '-ar', '48000', path.join(dir, 'assets', 'mezcla_narrada.wav')]);
 console.log(`Listo: ${cfg.salida} + assets/mezcla_narrada.wav`);

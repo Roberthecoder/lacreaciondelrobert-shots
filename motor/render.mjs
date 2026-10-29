@@ -97,7 +97,17 @@ if (outroFile) {
 }
 if (audio) inputs.push('-i', audio);
 const map = ['-map', v.startsWith('[0') ? '0:v' : v];
-if (audio) map.push('-map', `${outroFile ? 2 : 1}:a`, '-c:a', 'aac', '-b:a', '192k', '-shortest');
+// Volumen final de TODAS las versiones (29 oct 2026): −13 LUFS y pico −1 dB, como se escucha en redes con el cel al 60–70 %.
+// loudnorm en dos pasadas: primero mide, luego ajusta con esas medidas (más preciso que una sola pasada).
+let master = [];
+if (audio) {
+  const { spawnSync } = await import('node:child_process');
+  const r = spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-i', audio, '-af', 'loudnorm=I=-13:TP=-1:LRA=11:print_format=json', '-f', 'null', '-'], { encoding: 'utf8' });
+  const j = JSON.parse((r.stderr || '').slice((r.stderr || '').lastIndexOf('{')));
+  master = ['-af', `loudnorm=I=-13:TP=-1:LRA=11:measured_I=${j.input_i}:measured_TP=${j.input_tp}:measured_LRA=${j.input_lra}:measured_thresh=${j.input_thresh}:offset=${j.target_offset}:linear=true,aresample=48000`];
+  console.log(`Volumen: ${j.input_i} LUFS → −13 LUFS`);
+}
+if (audio) map.push('-map', `${outroFile ? 2 : 1}:a`, ...master, '-c:a', 'aac', '-b:a', '192k', '-shortest');
 await run([...inputs, ...(filters.length ? ['-filter_complex', filters.join(';')] : []), ...map, '-c:v', 'libx264', '-crf', '18', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', out]);
 fs.unlinkSync(tmp);
 console.log(`Listo: ${out}  (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
