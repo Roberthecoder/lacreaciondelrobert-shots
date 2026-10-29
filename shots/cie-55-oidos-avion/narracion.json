@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Oidos Avion base narrada.dc.html",
+  "salida": "Shot Oidos Avion narrado.dc.html",
+  "nota": "Shot Científico #55. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Cuando se te tapan los oídos en el avión, no es por el ruido: es aire atrapado detrás de tu tímpano."
+    },
+    {
+      "escena": "Oido",
+      "texto": "Detrás del tímpano hay una cajita llena de aire: el oído medio."
+    },
+    {
+      "escena": "Trompa",
+      "texto": "Se conecta con tu garganta por un tubito, la trompa de Eustaquio, que casi siempre está cerrado."
+    },
+    {
+      "escena": "Cabina",
+      "texto": "En el avión, la cabina va presurizada, pero con menos presión que a nivel del mar."
+    },
+    {
+      "escena": "Bajada",
+      "texto": "Al bajar, la presión de la cabina vuelve a subir, y empuja tu tímpano hacia adentro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué truena al destaparse?"
+    },
+    {
+      "escena": "Trago",
+      "texto": "Cuando tragas o bostezas, el tubito se abre un instante, pasa aire y la presión se iguala: ese es el pop."
+    },
+    {
+      "escena": "Consejos",
+      "texto": "Por eso ayuda masticar chicle, tragar seguido o bostezar, sobre todo cuando el avión empieza a bajar."
+    },
+    {
+      "escena": "Bebes",
+      "texto": "A los bebés les ayuda tomar pecho o biberón durante el aterrizaje, porque así tragan seguido."
+    },
+    {
+      "escena": "Gripa",
+      "texto": "Y si vas con gripa o alergia, el tubito se inflama y cuesta más destaparlo."
+    },
+    {
+      "escena": "Montana",
+      "texto": "Lo mismo te puede pasar al bajar una montaña en carro."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese oído tapado no es el ruido: es tu tímpano esperando que el aire se iguale."
+    }
+  ]
+}

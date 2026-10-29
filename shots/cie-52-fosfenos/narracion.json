@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Fosfenos base narrada.dc.html",
+  "salida": "Shot Fosfenos narrado.dc.html",
+  "nota": "Shot Científico #52. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas luces de colores que ves cuando te tallas los ojos cerrados no vienen de afuera: las fabrica tu propio ojo."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Se llaman fosfenos, y los más comunes salen justo así: apretando el ojo."
+    },
+    {
+      "escena": "Retina",
+      "texto": "Tu retina convierte la luz en señales eléctricas que viajan a tu cerebro."
+    },
+    {
+      "escena": "Presion",
+      "texto": "Pero si aprietas el ojo, la presión también estimula a esas células, aunque no haya nada de luz."
+    },
+    {
+      "escena": "Cerebro",
+      "texto": "Y tu cerebro no nota la diferencia: si le llega una señal de la retina, la interpreta como luz."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Hay otras formas de verlos?"
+    },
+    {
+      "escena": "Golpe",
+      "texto": "Un golpe en la cabeza también los puede producir: las famosas estrellitas de las caricaturas."
+    },
+    {
+      "escena": "Astronautas",
+      "texto": "Y muchos astronautas han visto destellos con los ojos cerrados, cuando partículas del espacio atraviesan sus ojos."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Eso sí: no te talles los ojos fuerte ni seguido, porque los puedes lastimar."
+    },
+    {
+      "escena": "Destellos",
+      "texto": "Y si de pronto ves destellos de luz sin tocarte los ojos, sobre todo con manchas nuevas, ve al oftalmólogo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esas luces no vienen de afuera: son tu ojo hablándole a tu cerebro sin luz."
+    }
+  ]
+}

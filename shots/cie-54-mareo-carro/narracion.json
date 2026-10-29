@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Mareo Carro base narrada.dc.html",
+  "salida": "Shot Mareo Carro narrado.dc.html",
+  "nota": "Shot Científico #54. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Si te mareas en el carro cuando vas leyendo, no es tu estómago: es tu cerebro recibiendo dos mensajes que no cuadran."
+    },
+    {
+      "escena": "Oido",
+      "texto": "Dentro de tu oído hay un sistema que siente el movimiento: el sistema vestibular."
+    },
+    {
+      "escena": "Ojos",
+      "texto": "Tus ojos, en cambio, ven el libro o el celular quietos frente a ti."
+    },
+    {
+      "escena": "Choque",
+      "texto": "Tu oído dice \"nos movemos\", y tus ojos dicen \"estamos quietos\"."
+    },
+    {
+      "escena": "Teoria",
+      "texto": "La explicación más aceptada es justo ese choque entre lo que sienten tus oídos y lo que ven tus ojos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué da náuseas?"
+    },
+    {
+      "escena": "Veneno",
+      "texto": "Nadie lo sabe con certeza. Una hipótesis dice que tu cerebro lo confunde con un envenenamiento, y por eso quiere vomitar."
+    },
+    {
+      "escena": "Conductor",
+      "texto": "Por eso quien maneja casi nunca se marea: controla el carro y sabe cuándo viene cada curva y cada frenón."
+    },
+    {
+      "escena": "Consejo",
+      "texto": "Ayuda mirar al horizonte por la ventana, ir en el asiento de adelante y soltar el celular."
+    },
+    {
+      "escena": "Barco",
+      "texto": "Y lo mismo pasa en barcos, en aviones y hasta con algunos videojuegos y lentes de realidad virtual."
+    },
+    {
+      "escena": "Ninos",
+      "texto": "Y los niños, sobre todo de siete a doce años, son de los que más se marean."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que el mareo no está en tu panza: es una pelea entre tus ojos y tus oídos."
+    }
+  ]
+}

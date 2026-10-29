@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Pararte Rapido base narrada.dc.html",
+  "salida": "Shot Pararte Rapido narrado.dc.html",
+  "nota": "Shot Científico #51. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Cuando te paras de golpe y ves estrellitas, es porque tu sangre se fue hacia abajo por un momento."
+    },
+    {
+      "escena": "Gravedad",
+      "texto": "Al ponerte de pie, la gravedad jala parte de tu sangre hacia las piernas y la panza."
+    },
+    {
+      "escena": "Cantidad",
+      "texto": "En segundos, se acumula ahí más de medio litro."
+    },
+    {
+      "escena": "Presion",
+      "texto": "Por un instante llega menos sangre a tu cabeza, y tu presión baja."
+    },
+    {
+      "escena": "Ojos",
+      "texto": "Tu cerebro y tus ojos lo resienten: la vista se nubla, aparecen puntitos y te mareas."
+    },
+    {
+      "escena": "Corrige",
+      "texto": "Tu cuerpo lo corrige rápido: unos sensores en tu cuello detectan la baja, aceleran tu corazón y aprietan tus vasos sanguíneos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué a veces es peor?"
+    },
+    {
+      "escena": "Factores",
+      "texto": "Si estás deshidratado, tienes mucho calor o llevas mucho rato acostado, a tu cuerpo le cuesta más corregirlo."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Cuando la presión baja de más al pararte, los médicos le llaman hipotensión ortostática."
+    },
+    {
+      "escena": "Medico",
+      "texto": "Si te pasa muy seguido o llegas a desmayarte, ve al médico."
+    },
+    {
+      "escena": "Consejo",
+      "texto": "Un truco: si estás acostado, primero siéntate unos veinte segundos, y luego párate despacio."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esas estrellitas no son del cielo: son tu sangre bajando en elevador."
+    }
+  ]
+}
