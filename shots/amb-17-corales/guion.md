@@ -4,7 +4,7 @@
 - **Formato:** N1 "Por dentro": arrecife de colores (macro) → un pólipo → una célula del pólipo con zooxantelas (micro, fondo oscuro) → el mismo arrecife, ahora blanco (macro transformado).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Esto no es una roca ni una planta: es un animal, con algas viviendo adentro."
 - **Local:** Arrecife Mesoamericano (México, Belice, Guatemala y Honduras).
-- **Duración:** voz 955 caracteres escritos (11 líneas) ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 954 caracteres escritos (11 líneas) ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → **61.5 s** en la base.
 - **Cuentas:** ninguna cifra calculada; todas se copian tal cual de la fuente (90 %, 84 %, 21 %, 2023–mediados de 2025, 1998, 2023).
 
 ## Versión narrada
