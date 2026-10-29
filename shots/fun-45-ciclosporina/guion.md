@@ -19,7 +19,7 @@
 | 5 | Calcineurina | La ciclosporina entra a tus linfocitos T y apaga un interruptor: la calcineurina. | AL MICROSCOPIO (fondo noche): un linfocito T grande; entra la ciclosporina, se pega a su "pareja" (ciclofilina) y juntas bajan un interruptor rotulado "calcineurina" a OFF. |
 | 6 | Alarma | Sin él, el linfocito no enciende las señales que arman el ataque. | El núcleo del linfocito queda apagado: las señales (destellos que iban a salir) no salen. Chip "señales de ataque: apagadas". |
 | 7 | Ratones | En 1976, el equipo de Borel y Stähelin publicó que retrasaba el rechazo de piel en ratones. | `TarjetaEstudio` "1976 · Sandoz, Basilea · Borel, Feurer, Gubler y Stähelin · *Agents and Actions*"; un ratón con un parche de piel que se mantiene (chip "injerto de piel: tarda en rechazarse") y dos siluetas sin cara con bata: "Borel" y "Stähelin". |
-| 8 | Canada | En 1983, en Canadá, en 209 trasplantes de riñón, se estimó que al año funcionaban 80 de cada 100, contra 64 con el tratamiento de antes. | `TarjetaEstudio` "1983 · Canadá · 209 trasplantes de riñón · *NEJM*"; dos cuadrículas de 100 riñoncitos que se encienden: "con ciclosporina · 80 de 100" contra "tratamiento de antes · 64 de 100". Chip "funcionan al año (estimado)". |
+| 8 | Canada | En 1983, en Canadá, en 209 trasplantes de riñón, se estimó que al año funcionaban 80 de cada 100, contra 64 con el tratamiento de antes. | `TarjetaEstudio` "1983 · Canadá · 209 trasplantes de riñón · *NEJM*"; dos cuadrículas de 100 riñoncitos que se encienden: "con ciclosporina · 80 de 100" contra "tratamiento de antes · 64 de 100". Chip "riñones funcionando al año (estimado)". |
 | 9 | Escarabajo | Lo más raro: en la naturaleza, este moho es un parásito de larvas de escarabajo. | Fondo rosa: una larva de escarabajo (blanca, curvada en C) en la tierra; el moho blanco la cubre. Etiqueta "larva de escarabajo". |
 | 10 | Hipotesis | Y se sospecha que la ciclosporina le ayuda a desarmar las defensas del insecto. | Dentro de la larva (fondo oscuro): sus células de defensa se apagan como los linfocitos de antes. Chip "hipótesis". |
 | 11 | Cierre | Así que este puñado de tierra no es solo tierra: es un riñón que sí siguió funcionando. | **Regreso a la imagen del inicio:** el mismo puñado de tierra en la mano, fondo amarillo; ahora encima un riñón sano que brilla. Chip "tierra → trasplante". |
@@ -27,7 +27,7 @@
 
 **Música:** cama grave continua, con un aire de misterio al inicio que se abre (más luminosa) en los resultados; efectos en el mismo cuadro: tierra que cae, brillo del frasco, burbujas del matraz, el anillo que se cierra, pasos/zumbido de los linfocitos, alarma del rechazo, "clic" del interruptor, silencio de las señales, papel de las tarjetas, barras que suben, tierra que se remueve y la larva, latido del riñón final.
 
-Barras de escala: 5 cm (puñado de tierra), 10 µm (hifas y fiálides), 10 µm (linfocito), 1 cm (larva).
+Barras de escala: 5 cm (puñado de tierra), 200 km (mapa), 10 µm (hifas, fiálides y esporas), 5 cm (matraz), 10 cm (silueta), 2 µm (linfocito), 1 cm (larva), 10 µm (células de defensa del insecto), 5 cm (cierre). Sin barra en la escena de 1976.
 
 ## Robert en pantalla
 

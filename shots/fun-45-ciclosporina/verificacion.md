@@ -38,3 +38,26 @@ Fuentes abiertas:
 
 **Resumen:** 18 afirmaciones revisadas; todas ✅. Única corrección: la larva del dibujo ahora está en la tierra (no en madera), fila 14b. Sin consejo médico.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `ciclosporina.jsx`, el `.dc.html`, la columna «Lo que se ve», la tabla Robert de `guion.md` y `publicacion.md`, y saqué cuadros con `preview.mjs` (0.3–60 s más cuadros extra). La voz no cambió.
+
+| # | Pantalla / publicación | Veredicto | Fuente | Nota | Año |
+|---|---|---|---|---|---|
+| R1 | Pin de "muestra de suelo" en el sur de Noruega | ✅ corregido | [PAT] | La fuente solo dice "a soil sample found in Norway", sin región. El pin se movió a un punto genérico del centro del mapa (65° N), sin insinuar un lugar concreto. | 1980 |
+| R2 | Subtítulo «1983: 80 de cada 100 contra 64.» | ✅ corregido | [CAN] | No decía de qué era la cifra ni que es estimada. Ahora: «1983: 80 de 100 riñones contra 64 (estimado).» ("Predicted graft survival at one year was 80.4 per cent … 64.0 per cent") | 1983 |
+| R3 | Chip «funcionan al año (estimado)» | ✅ corregido | [CAN] | Ahora «riñones funcionando al año (estimado)», para que diga de qué es la cifra; además se movió para que no se corte en el borde. Contadores «80 de 100» / «64 de 100» ✅. | 1983 |
+| R4 | Esporas al microscopio con barra de «10 µm» | ✅ corregido | [PAT] | Las esporas medían ~1 µm en la escala; la patente da para la cepa NRRL 8044 conidios de "2.0-3.1 x 1.5-2.0" µ. Esporas agrandadas (r 8→11 px) y barra de 10 µm = 100 px: esporas ≈ 2.2 µm, hifa ≈ 1.6 µm. Fiálides de base inflada con cuello y esporas en cabezuela ✅ ([BUS] Fig. 1). Proporciones de la fiálide aproximadas (dibujo esquemático). | 1980 / 2013 |
+| R5 | Barra «5 cm» en la escena de 1976 (ratón + siluetas de Borel y Stähelin) | ✅ corregido | — | Las siluetas de personas no pueden estar a la misma escala que el ratón: se quitó esa barra. | — |
+| R6 | Etiquetas «esporas» y «fiálides de base inflada» tapadas por el dibujo | ✅ corregido | — | Se movieron para que se lean. | — |
+| R7 | Chips «tierra → medicina», «Sandoz · Basilea, Suiza», «rechazo», «señales de ataque: apagadas», «injerto de piel: tarda en rechazarse», «hipótesis», «tierra → trasplante»; etiquetas «anillo de 11 piezas», «ciclofilina (su pareja)», interruptor ON→OFF en «calcineurina», «linfocitos T», «riñón nuevo», «larva de escarabajo», «células de defensa del insecto» | ✅ | [BUS], [SMW], [BOR], [LIU], [MAT], [PUB], [COR] | Coinciden con las filas 1–16. La larva es blanca, en C, con 3 pares de patas y cabeza oscura, en la tierra (escarabeido). | 1976–2013 |
+| R8 | Tarjetas 1976 (Borel, Feurer, Gubler y Stähelin · Sandoz · *Agents and Actions*) y 1983 (Canadá · 209 trasplantes de riñón · *N Engl J Med*, 1983) | ✅ | [BOR], [CAN] | Coinciden con PubMed. | 1976 / 1983 |
+| R9 | Otras barras de escala: puñado 5 cm (~8 cm de tierra), mapa 200 km (1° lat ≈ 111 km), matraz 5 cm (~22 cm), silueta 10 cm (riñón ~12 cm), linfocito 2 µm (célula ~7 µm), larva 1 cm (~2.7 cm), hemocitos 10 µm (~9 µm) | ✅ | — | Tamaños plausibles; las moléculas (ciclosporina, ciclofilina) están agrandadas a propósito, dibujo esquemático. | — |
+| R10 | Subtítulos restantes | ✅ | — | Todos coinciden con la voz verificada; «Se sospecha: desarma sus defensas» va con chip «hipótesis». | — |
+| R11 | `publicacion.md`: 7 redes + comentario fijado, «el dibujo es esquemático», «no es consejo médico», pregunta y firma | ✅ | todas | Cifras con su año y "estimó"; hipótesis dicha como hipótesis. Corregido: «Hartmann Stähelin» → «H. F. Stähelin» (el nombre "Hartmann" no aparece en las fuentes abiertas; "Jean-François Borel" sí, en la ref. 8 de [SMW]). | 2026 |
+| R12 | Robert en pantalla | ✅ | — | 10 apariciones, ~40.8 s, 8 poses, una grande en la pregunta, cierre con `CierreMarca`; no tapa datos en los cuadros revisados. | — |
+
+**Resumen:** voz 18/18 ✅; animación y publicación revisadas, 7 detalles corregidos (pin genérico en Noruega, cifra de 1983 con "riñones" y "estimado", tamaño de esporas, barra de escala de 1976, etiquetas legibles, nombre de Stähelin). Todo queda ✅. Sin consejo médico.
+
+VEREDICTO: APROBADO

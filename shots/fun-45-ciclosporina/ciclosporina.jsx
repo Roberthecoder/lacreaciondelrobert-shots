@@ -56,7 +56,7 @@ const NOR = [[5,58],[5.5,59],[5,60],[5,61],[5.2,62],[6.5,62.6],[8,63.3],[10,64],
 const norP = ([lon, lat]) => [150 + (lon - 5) * 26, 420 + (71.2 - lat) * 59.3];
 function MapaNoruega({ T, at }) {
   const d = 'M ' + NOR.map((q) => norP(q).map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z';
-  const [px, py] = norP([7.6, 60.2]);
+  const [px, py] = norP([13, 65]);
   const pin = kprog(T, at + 0.5, at + 0.9, kEase.rebote);
   return <g>
     <path d={d} fill="#bfe3b4" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
@@ -76,7 +76,7 @@ function Fialide({ ang, g = 1, esporas = 1 }) {
     <ellipse cx={0} cy={-26 * g} rx={18 * g} ry={26 * g} fill="#fffaf0" stroke={KC.ink} strokeWidth={4} />
     <path d={`M 0 ${-50 * g} L 0 ${-50 * g - L}`} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
     <path d={`M 0 ${-50 * g} L 0 ${-50 * g - L}`} stroke="#fffaf0" strokeWidth={5} strokeLinecap="round" />
-    {esporas > 0 && [[0, 0], [-12, -6], [12, -6], [-7, -18], [7, -18], [0, -28]].map(([a, b], i) => i < esporas * 6 ? <circle key={i} cx={a} cy={-50 * g - L - 6 + b} r={8} fill="#e9f4ff" stroke={KC.ink} strokeWidth={3} /> : null)}
+    {esporas > 0 && [[0, 0], [-12, -6], [12, -6], [-7, -18], [7, -18], [0, -28]].map(([a, b], i) => i < esporas * 6 ? <circle key={i} cx={a} cy={-50 * g - L - 6 + b} r={11} fill="#e9f4ff" stroke={KC.ink} strokeWidth={3} /> : null)}
   </g>;
 }
 function Tolypo({ T, g = 1, y = 900 }) {
@@ -328,12 +328,12 @@ function CiclosporinaShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 3.6} until={K.N - 0.3} texto="tierra → medicina" x={330} y={500} tam={42} borde={KC.ink} />
-      <Etq T={T} at={K.N + 0.9} until={NM - 0.2} x={norP([7.6, 60.2])[0] + 40} y={norP([7.6, 60.2])[1] - 50} texto="muestra de suelo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.N + 0.9} until={NM - 0.2} x={norP([13, 65])[0] + 40} y={norP([13, 65])[1] - 50} texto="muestra de suelo" tam={30} color={KC.ink} />
       <Etq T={T} at={K.N + 0.4} until={NM - 0.2} x={500} y={1160} texto="NORUEGA" tam={44} color={KC.ink} />
       <Chip T={T} at={NM + 0.2} until={K.S - 0.3} texto="AL MICROSCOPIO · moho del suelo" x={540} y={520} tam={32} borde={KC.cyan} />
       <Etq T={T} at={NM + 0.6} until={K.S - 0.3} x={60} y={620} texto="Tolypocladium inflatum" it tam={40} />
-      <Etq T={T} at={NM + 1.4} until={K.S - 0.3} x={540} y={1110} texto="fiálides de base inflada" tam={28} color={KC.gold2} />
-      <Etq T={T} at={NM + 1.8} until={K.S - 0.3} x={60} y={700} texto="esporas" tam={28} color="#bfe3ff" />
+      <Etq T={T} at={NM + 1.4} until={K.S - 0.3} x={540} y={1150} texto="fiálides de base inflada" tam={28} color={KC.gold2} />
+      <Etq T={T} at={NM + 1.8} until={K.S - 0.3} x={760} y={620} texto="esporas" tam={28} color="#bfe3ff" />
       <Chip T={T} at={K.S + 0.3} until={K.R - 0.3} texto="Sandoz · Basilea, Suiza" x={420} y={480} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.S + 2.0} until={K.R - 0.3} x={600} y={620} texto="ciclosporina" tam={36} color={KC.ink} />
       <Etq T={T} at={K.S + 2.6} until={K.R - 0.3} x={600} y={900} texto="anillo de 11 piezas" tam={28} color={KC.ink} />
@@ -350,7 +350,7 @@ function CiclosporinaShot() {
       <Etq T={T} at={K.Ra + 1.4} until={K.Cn - 0.3} x={1010} y={1140} texto="Stähelin" lado="izq" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Ra + 3.0} until={K.Cn - 0.3} texto="injerto de piel: tarda en rechazarse" x={540} y={930} tam={28} borde={KC.leaf} />
       <TarjetaEstudio T={T} at={K.Cn + 0.2} until={K.Cn + 2.3} anio="1983" quien="Canadá · 209 trasplantes de riñón" revista="N Engl J Med, 1983" y={760} />
-      <Chip T={T} at={K.Cn + 2.6} until={K.Es - 0.3} texto="funcionan al año (estimado)" x={330} y={540} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Cn + 2.6} until={K.Es - 0.3} texto="riñones funcionando al año (estimado)" x={420} y={540} tam={28} borde={KC.ink} />
       <Etq T={T} at={K.Cn + 2.7} until={K.Es - 0.3} x={70} y={695} texto="con ciclosporina" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cn + 2.9} until={K.Es - 0.3} x={600} y={695} texto="tratamiento de antes" tam={30} color={KC.ink} />
       {T < K.Es - 0.3 && <Contador T={T} at={K.Cn + 2.8} hasta={80} dur={2.2} sufijo=" de 100" x={290} y={1145} tam={46} color={KC.ink} />}
@@ -364,11 +364,10 @@ function CiclosporinaShot() {
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={260} />
       <BarraEscala T={T} at={K.N} until={NM} texto="200 km" largo={107} color={KC.ink} />
-      <BarraEscala T={T} at={NM} until={K.S} texto="10 µm" largo={150} />
+      <BarraEscala T={T} at={NM} until={K.S} texto="10 µm" largo={100} />
       <BarraEscala T={T} at={K.S} until={K.R} texto="5 cm" largo={120} />
       <BarraEscala T={T} at={K.R} until={K.P} texto="10 cm" largo={100} />
       <BarraEscala T={T} at={K.Ca} until={K.Ra} texto="2 µm" largo={170} />
-      <BarraEscala T={T} at={K.Ra} until={K.Cn} texto="5 cm" largo={110} />
       <BarraEscala T={T} at={K.Es} until={K.H} texto="1 cm" largo={150} />
       <BarraEscala T={T} at={K.H} until={K.C} texto="10 µm" largo={140} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={260} />
@@ -382,7 +381,7 @@ function CiclosporinaShot() {
       <Subtitulo T={T} idx={5} at={K.Ca + 0.1} until={K.Al - 0.1} texto="Apaga la *calcineurina.*" />
       <Subtitulo T={T} idx={6} at={K.Al + 0.1} until={K.Ra - 0.1} texto="Sin señales, *no se arma el ataque.*" />
       <Subtitulo T={T} idx={7} at={K.Ra + 0.1} until={K.Cn - 0.1} texto="1976: *retrasaba el rechazo* en ratones." />
-      <Subtitulo T={T} idx={8} at={K.Cn + 0.1} until={K.Es - 0.1} texto="1983: *80 de cada 100* contra 64." />
+      <Subtitulo T={T} idx={8} at={K.Cn + 0.1} until={K.Es - 0.1} texto="1983: *80 de 100 riñones* contra 64 (estimado)." />
       <Subtitulo T={T} idx={9} at={K.Es + 0.1} until={K.H - 0.1} texto="Parásito de *larvas de escarabajo.*" />
       <Subtitulo T={T} idx={10} at={K.H + 0.1} until={K.C - 0.1} texto="Se sospecha: *desarma sus defensas.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Un riñón que *sí siguió funcionando.*" />
