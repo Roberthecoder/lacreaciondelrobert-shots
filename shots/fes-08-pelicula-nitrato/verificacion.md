@@ -32,9 +32,27 @@ Notas sobre las dudas del productor:
 4. Cineteca: "más de seis mil según cifras oficiales" está respaldado (6,506 oficiales; México Desconocido dice que las reales serían más).
 5. Villa/Mutual: hay contrato (Katz encontró la única copia; HistoryNet dice que Villa firmó; se subastó un contrato firmado). La leyenda de los 25,000 dólares y de las batallas "actuadas" no se usa: bien. El guion debe citar Smithsonian/HistoryNet además del blog de Dash, y quitar Wikipedia como fuente única del algodón pólvora y del "arde sin aire" (usar RNCF y *British Kinematography* 1952).
 
-VEREDICTO: PENDIENTE (correcciones abajo)
+Estado previo: PENDIENTE (correcciones abajo; ya aplicadas, ver la última sección)
 
 ## Correcciones
 1. **Línea 9 (Calor):** cambiar "muy descompuesta, desde unos cincuenta." por **"muy descompuesta, con apenas unos cincuenta, o menos."** Termómetro en pantalla: «50 °C o menos». Fuentes: CCI Notes 15/3 ("as low as 50°C") y Kodak ("only slightly above 38°C"). (Ojo: revisar duración, +2 palabras.)
 2. **Línea 11 (Dato):** cambiar "Mucho se salvó:" por **"Y mucho cine de la Revolución sí sobrevivió:"** (no implica que se salvara del incendio de 1982). Fuente: *El Ojo que Piensa* 12 (2016).
 3. **Fuentes del guion:** añadir HistoryNet (Barra 2011) y Smithsonian (Dash 2012) para Villa; RNCF ("over 13%") para el algodón pólvora; *British Kinematography* 1952 para "arde sin aire".
+
+## Correcciones aplicadas (texto final)
+
+Revisión del texto final de `narracion.json` y de la columna "Lo que se ve" de `guion.md` (29 oct 2026). Los recortes de las líneas 1, 2, 3, 6, 10 y 12 no cambian el sentido.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| L1 "Villa firmó con una empresa de cine estadounidense para que filmara sus batallas" | ✅ | HistoryNet (Barra) · Smithsonian (Dash/Katz) | "signed a contract with Griffith's Mutual Film" · "exclusive rights to film Villa's troops in battle" | 2011 / 2012 (hecho de 1914) |
+| L2 "el cine de entonces se grababa en nitrato" | ✅ | NFPF · Smithsonian | "in commercial use through the early 1950s" · "from the birth of cinema in the late 1800s" | s/f · 2018 |
+| L3 "bañando fibras de algodón en ácido nítrico y sulfúrico" | ✅ | Amor (BKS) | "a mixture of nitric and sulphuric acids" | 1938 |
+| L6 "encendida, arde sin que le llegue aire" | ✅ | *British Kinematography* · Smithsonian | "the decomposing film supplies oxygen from its own material" · "it produces its own oxygen" | 1952 · 2018 |
+| L9 "muy descompuesta, con apenas cincuenta, o menos" · pantalla «50 °C o menos» | ✅ | CCI Notes 15/3 · Kodak | "as low as 50°C" · "only slightly above 38°C (100°F)" | 1994 · s/f |
+| L10 "el fuego en la Cineteca Nacional llegó a sus bóvedas de nitrato: según cifras oficiales, … más de seis mil películas" | ✅ | México Desconocido · El Financiero | "La lumbre se extendió a las bóvedas…" · "De acuerdo con datos oficiales … seis mil 506 películas" | 2019 (dato de 1982) |
+| L11 "Y mucho cine de la Revolución sí sobrevivió: … Salvador Toscano, su hija Carmen armó «Memorias de un mexicano» en 1950" | ✅ (ya no da a entender que se salvó del incendio) | *El Ojo que Piensa* 12 (Velazco) | "fue aprovechado por su hija Carmen Toscano para elaborar un documental de compilación en 1950" | 2016 |
+| L12 "este rollo no es solo cine: es algodón con ácido nítrico que hay que cuidar del calor" | ✅ | Amor · CCI | "cotton … linters" · "auto-ignites at 150°C" | 1938 · 1994 |
+| Líneas 0, 4, 5, 7, 8 (sin cambios) y lo que se ve en pantalla | ✅ | ver tabla de arriba | — | — |
+
+VEREDICTO: APROBADO
