@@ -27,7 +27,34 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` |
+| 2 | 7.6 | 12.2 | 13_senalando_arriba | `bajo-der` |
+| 3 | 18.8 | 23.2 | 12_perfil_serio | `bajo-der` |
+| 4 | 28.8 | 31.3 | 07_pensativo_puno | `grande` |
+| 5 | 32.0 | 36.4 | 04_bajando_lentes | `bajo-der` |
+| 6 | 37.0 | 41.8 | 06_pensativo_menton | `bajo-der` |
+| 7 | 42.3 | 46.6 | 08_recostado_mano | `izq-alto` |
+| 8 | 47.7 | 52.8 | 10_serio_molesto | `bajo-der` |
+| 9 | 53.3 | 57.9 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 9 · 39.1 s (+ cierre 3.5 s) · poses 9 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «respires más por un lado de la nariz» (sorprendido) |
+| 2 | «tápate un lado y respira» (señalando) |
+| 3 | «tu sistema nervioso hincha los de un lado» (serio de perfil) |
+| 4 | «¿Y por qué no lo notas?» (pensativo, grande) |
+| 5 | «el aire total casi no cambia» (bajando lentes) |
+| 6 | «se cree que deja descansar a cada lado» (pensativo) |
+| 7 | «cuando te acuestas de lado» (recostado) |
+| 8 | «cuando tienes gripa lo notas mucho más» (serio molesto) |
+| 9 | «tiene turnos, como si fueran dos narices» (sonriendo) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 
