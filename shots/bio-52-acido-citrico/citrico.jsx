@@ -107,7 +107,7 @@ function Cebolla({ T, x, y, s = 1, piel = 0, moho = 1 }) {
     <path d="M -40 -330 Q 0 -400 40 -330" fill="none" stroke={CEB_OSC} strokeWidth={14} strokeLinecap="round" />
     <path d="M 0 250 q -30 30 -50 50 M 0 250 q 0 40 0 60 M 0 250 q 30 30 50 50" stroke="#c9b48a" strokeWidth={6} fill="none" />
     {/* cáscara seca: tapa la mitad derecha y se levanta girando desde la izquierda */}
-    <g transform={`rotate(${-piel * 62} -10 240)`}>
+    <g transform={`rotate(${-piel * 38} -10 240)`}>
       <path d="M 0 -330 Q 30 -250 120 -200 Q 280 -110 270 40 Q 260 220 0 250 Q -40 50 -10 -150 Q -6 -250 0 -330 Z" fill={CEBOLLA} stroke={KC.ink} strokeWidth={9} />
       {[40, 100, 160].map((v, i) => <path key={i} d={`M ${v * 0.2} -300 Q ${v * 1.5} -40 ${v * 0.5} 240`} fill="none" stroke={CEB_OSC} strokeWidth={5} />)}
     </g>
@@ -181,10 +181,10 @@ function Citrico() {
       <Escena T={T} a={K.G} b={K.An} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <CapaC>
-          <Limon x={790} y={1120} s={0.95} rot={-12} gris={kprog(T, K.G + 1.6, K.G + 2.2) * 0.6} />
-          <Gomita x={380} y={klerp(560, 1060, cae)} s={1} rot={klerp(-30, -8, cae)} />
-          <Polvito T={T} x={380} y={1030} desde={K.G + 0.45} />
-          <ColoniaNegra T={T} x={780} y={1340} s={0.75} crece={kprog(T, K.G + 2.4, K.G + 3.2, kEase.rebote)} />
+          <Limon x={790} y={960} s={0.95} rot={-12} gris={kprog(T, K.G + 1.6, K.G + 2.2) * 0.6} />
+          <Gomita x={340} y={klerp(420, 880, cae)} s={1} rot={klerp(-30, -8, cae)} />
+          <Polvito T={T} x={340} y={850} desde={K.G + 0.45} />
+          <ColoniaNegra T={T} x={560} y={1120} s={0.7} crece={kprog(T, K.G + 2.4, K.G + 3.2, kEase.rebote)} />
         </CapaC>
       </Escena>
       {/* 1 · antes: limones de Italia en barco */}
@@ -199,13 +199,13 @@ function Citrico() {
       <Escena T={T} a={K.Mo} b={K.Ce} zoom={0.06} origen="45% 40%">
         <FondoLunares color={KC.pink} />
         <CapaC>
-          <Conidioforo T={T} x={430} y={1420} s={1} alto={560} cadenas={kprog(T, K.Mo + 0.3, K.Mo + 2.4)} />
+          <Conidioforo T={T} x={430} y={1520} s={1} alto={580} cadenas={kprog(T, K.Mo + 0.3, K.Mo + 2.4)} />
         </CapaC>
       </Escena>
       {/* 3 · la cebolla: la cáscara se levanta; la Lupa muestra cabezas casi iguales */}
       <Escena T={T} a={K.Ce} b={K.Ta} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
-        <CapaC><Cebolla T={T} x={520} y={1120} s={1.15} piel={kprog(T, K.Ce + 0.3, K.Ce + 1.3, kEase.sale)} moho={1} /></CapaC>
+        <CapaC><Cebolla T={T} x={480} y={1060} s={0.9} piel={kprog(T, K.Ce + 0.3, K.Ce + 1.3, kEase.sale)} moho={1} /></CapaC>
       </Escena>
       {/* 4 · el tanque con agua y mucha azúcar; bolitas de moho */}
       <Escena T={T} a={K.Ta} b={K.Pr} zoom={0.04}>
@@ -268,8 +268,8 @@ function Citrico() {
       <Escena T={T} a={K.Cu} b={K.Pf} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <CapaC>
-          {[0, 1, 2, 3].map((i) => <Matraz key={i} T={T} x={190 + i * 235} y={1080} s={0.82} nata={kprog(T, K.Cu + 1.6 + i * 0.35, K.Cu + 2.4 + i * 0.35)} seed={i + 3} />)}
-          <g transform="translate(830 1300)">
+          {[0, 1, 2, 3].map((i) => <Matraz key={i} T={T} x={190 + i * 235} y={1040} s={0.82} nata={kprog(T, K.Cu + 1.6 + i * 0.35, K.Cu + 2.4 + i * 0.35)} seed={i + 3} />)}
+          <g transform="translate(540 1480)">
             <rect x={-130} y={-50} width={260} height={100} rx={18} fill={KC.dark} stroke={KC.ink} strokeWidth={7} />
             <text x={0} y={18} textAnchor="middle" style={{ font:`700 52px ${KF.mono}` }} fill={KC.mint}>pH 3.5</text>
           </g>
@@ -279,15 +279,15 @@ function Citrico() {
       <Escena T={T} a={K.Pf} b={K.Ho} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <CapaC>
-          {T < pfMitad + 0.3 && <g opacity={1 - kprog(T, pfMitad, pfMitad + 0.3)}><Planta T={T} x={540} y={1100} s={1.15} /></g>}
+          {T < pfMitad + 0.3 && <g opacity={1 - kprog(T, pfMitad, pfMitad + 0.3)}><Planta T={T} x={540} y={1000} s={1.1} /></g>}
           {T > pfMitad - 0.1 && <g opacity={kprog(T, pfMitad - 0.1, pfMitad + 0.3)}>
-            {(() => { const u = kprog(T, pfMitad, K.Ho - 0.4, kEase.suave), hL = klerp(560, 60, u), hM = klerp(60, 600, u);
+            {(() => { const u = kprog(T, pfMitad, K.Ho - 0.4, kEase.suave), hL = klerp(440, 50, u), hM = klerp(50, 470, u);
               return <g>
-                <rect x={230} y={1260 - hL} width={240} height={hL} fill={LIMON} stroke={KC.ink} strokeWidth={8} />
-                <rect x={610} y={1260 - hM} width={240} height={hM} fill={ESPORA} stroke={KC.ink} strokeWidth={8} />
-                <Limon x={350} y={1340} s={0.42} />
-                <ColoniaNegra T={T} x={730} y={1340} s={0.55} />
-                <line x1={180} y1={1260} x2={900} y2={1260} stroke={KC.ink} strokeWidth={8} />
+                <rect x={230} y={1080 - hL} width={240} height={hL} fill={LIMON} stroke={KC.ink} strokeWidth={8} />
+                <rect x={610} y={1080 - hM} width={240} height={hM} fill={ESPORA} stroke={KC.ink} strokeWidth={8} />
+                <Limon x={350} y={1160} s={0.38} />
+                <ColoniaNegra T={T} x={730} y={1160} s={0.45} />
+                <line x1={180} y1={1080} x2={900} y2={1080} stroke={KC.ink} strokeWidth={8} />
               </g>; })()}
           </g>}
         </CapaC>
@@ -301,13 +301,13 @@ function Citrico() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <CapaC>
-          <Gomita x={380} y={1060} s={1} rot={-8} brillo={0.6 + 0.4 * Math.sin(T * 4)} />
-          <ColoniaNegra T={T} x={790} y={1180} s={0.95} />
+          <Gomita x={360} y={880} s={1} rot={-8} brillo={0.6 + 0.4 * Math.sin(T * 4)} />
+          <ColoniaNegra T={T} x={780} y={1060} s={0.9} />
         </CapaC>
       </Escena>
 
       {/* piezas fuera de las escenas */}
-      {T > K.Ce - 0.3 && T < K.Ta + 0.4 && <Lupa T={T} at={K.Ce + 1.4} until={K.Ta - 0.2} x={760} y={620} r={190} fx={600} fy={1000} tinte={KC.yellow}
+      {T > K.Ce - 0.3 && T < K.Ta + 0.4 && <Lupa T={T} at={K.Ce + 1.4} until={K.Ta - 0.2} x={640} y={450} r={160} fx={520} fy={900} tinte={KC.yellow}
         etiqueta="AL MICROSCOPIO · Aspergillus negros" interior={(t, r) => <svg width={r * 2} height={r * 2}>
           <rect width={r * 2} height={r * 2} fill="#1a1410" />
           <Conidioforo T={t} x={r * 0.62} y={r * 2.1} s={0.42} alto={520} cadenas={1} n={5} seed={4} />
@@ -319,21 +319,21 @@ function Citrico() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.6} until={K.An - 0.3} texto="¿de limón?" x={300} y={470} tam={52} />
       <Chip T={T} at={K.An + 0.4} until={K.Mo - 0.2} texto="limones de Italia" y={1490} tam={44} borde={KC.red} />
-      <Etiqueta T={T} at={K.G + 2.8} until={K.An - 0.3} x={640} y={1480} texto="moho negro" lado="izq" tam={36} color={KC.ink} />
-      <Etiqueta T={T} at={K.Mo + 1.0} until={K.Ce - 0.2} x={540} y={850} texto="moho negro" tam={34} color={KC.ink} />
-      <Etiqueta T={T} at={K.Mo + 1.4} until={K.Ce - 0.2} x={540} y={905} texto="Aspergillus niger" it tam={34} color={KC.ink} />
-      <Etiqueta T={T} at={K.Mo + 2.0} until={K.Ce - 0.2} x={290} y={1210} texto="esporas pardo-negras" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ce + 2.0} until={K.Ta - 0.2} texto="él o un primo muy cercano" y={1490} tam={40} borde={ESPORA} />
+      <Etiqueta T={T} at={K.G + 2.8} until={K.An - 0.3} x={660} y={1120} texto="moho negro" tam={36} color={KC.texto} />
+      <Etiqueta T={T} at={K.Mo + 1.0} until={K.Ce - 0.2} x={40} y={520} texto="moho negro" tam={36} color={KC.texto} />
+      <Etiqueta T={T} at={K.Mo + 1.4} until={K.Ce - 0.2} x={40} y={575} texto="Aspergillus niger" it tam={36} color={KC.texto} />
+      <Etiqueta T={T} at={K.Mo + 2.0} until={K.Ce - 0.2} x={1050} y={1100} texto="esporas pardo-negras" lado="izq" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Ce + 2.0} until={K.Ta - 0.2} texto="él o un primo muy cercano" x={420} y={1490} tam={40} borde={ESPORA} />
       <Chip T={T} at={K.Ta + 0.4} until={K.Pr - 0.2} texto="agua + mucha azúcar" y={1490} tam={44} borde={KC.white} />
-      <Etiqueta T={T} at={K.Ta + 1.6} until={K.Pr - 0.2} x={820} y={1300} texto="bolitas de moho" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ta + 1.6} until={K.Pr - 0.2} texto="bolitas de moho" y={1600} tam={36} borde={ESPORA} />
       <Chip T={T} at={K.Kr + 0.2} until={K.Mn - 0.2} texto="POR DENTRO · una hifa" y={470} tam={38} borde={KC.mint} mono />
       <Etiqueta T={T} at={K.Kr + 1.6} until={K.Mn - 0.2} x={760} y={1215} texto="mitocondria: ciclo de Krebs" lado="izq" tam={30} color="#ffb199" />
-      <Etiqueta T={T} at={K.Kr + 2.0} until={K.Bo - 0.2} x={700} y={760} texto="citrato" lado="izq" tam={34} color={CITRATO} />
+      <Etiqueta T={T} at={K.Kr + 2.0} until={K.Bo - 0.2} x={840} y={960} texto="citrato" tam={34} color={CITRATO} />
       <Chip T={T} at={K.Bo + 0.1} until={K.Cu - 0.3} texto="bomba de salida (CexA)" y={470} tam={38} borde={KC.mint} />
       <TarjetaEstudio T={T} at={K.Cu + 0.2} until={K.Cu + 3.2} anio="1917" quien="James Currie" revista="J. Biol. Chem. · ~20 cepas" x={420} y={560} />
-      <Chip T={T} at={K.Cu + 3.4} until={K.Pf - 0.2} texto="agua azucarada y muy ácida" y={470} tam={40} borde={KC.mint} />
-      <Chip T={T} at={K.Pf + 0.3} until={pfMitad - 0.1} texto="1919 · planta piloto" y={470} tam={46} borde={KC.gold} />
-      <Chip T={T} at={pfMitad + 0.2} until={K.Ho - 0.2} texto="con los años: moho vs. limón" y={470} tam={40} borde={ESPORA} />
+      <Chip T={T} at={K.Cu + 3.4} until={K.Pf - 0.2} texto="agua azucarada y muy ácida" y={1620} tam={40} borde={KC.mint} />
+      <Chip T={T} at={K.Pf + 0.3} until={pfMitad - 0.1} texto="1919 · planta piloto" y={1490} tam={46} borde={KC.gold} />
+      <Chip T={T} at={pfMitad + 0.2} until={K.Ho - 0.2} texto="con los años: moho vs. limón" y={1490} tam={40} borde={ESPORA} />
       <NumeroGigante T={T} at={K.Ho + 0.3} until={K.Ci - 0.2} valor={99} dur={2.4} prefijo="≈" sufijo=" %" x={790} y={480} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.Ho + 1.4} until={K.Ci - 0.2} texto="microbios (sobre todo moho)" x={790} y={1140} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Ho + 2.0} until={K.Ci - 0.2} texto="revisión de 2010" y={1490} tam={40} borde={KC.gold} />
@@ -358,13 +358,13 @@ function Citrico() {
         [K.G - 0.45, K.G + 4.8, 'avatar_11_sorprendido', 'gancho'],
         [K.An + 0.3, K.Mo - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.Mo + 0.8, K.Ce - 0.3, 'avatar_13_senalando_arriba', 'arriba-der'],
-        [K.Ce + 0.6, K.Ta - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
+        [K.Ce + 0.6, K.Ta - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der'],
         [K.Pr + 0.05, K.Kr - 0.1, 'avatar_06_pensativo_menton', 'grande'],
         [K.Kr + 0.8, K.Mn - 0.2, 'avatar_07_pensativo_puno', 'izq-alto'],
         [K.Mn + 0.5, K.Bo - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [K.Bo + 0.3, K.Cu - 0.2, 'avatar_11_sorprendido', 'izq-alto'],
         [K.Cu + 1.4, K.Pf - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [K.Pf + 0.8, K.Ho - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
+        [pfMitad + 0.2, K.Ho - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [K.Ho + 0.8, K.Ci - 0.3, 'avatar_02_apuntando_camara', 'grande-izq'],
         [K.Ci + 0.3, K.Ou - 0.1, 'avatar_13_senalando_arriba', 'gancho']]} />
       <MarcaAgua T={T} tema="bioquimica" num="52" hasta={K.Ou} />

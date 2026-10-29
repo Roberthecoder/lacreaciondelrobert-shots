@@ -1,4 +1,4 @@
-# Shot Biotecnológico #40 · El ácido hialurónico de tu suero lo hizo una bacteria
+# Shot Biotecnológico #40 · El ácido hialurónico de tu suero probablemente lo hizo una bacteria
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #40 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (el gotero de suero y, con la `Lupa`, el tanque y la bacteria por dentro).

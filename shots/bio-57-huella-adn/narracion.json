@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Tu ADN es 99.9 % igual al de la persona de al lado. Y aun así, te delata."
+      "texto": "Tu ADN es 99.6 % igual al de la persona de al lado. Y aun así, te delata."
     },
     {
       "escena": "Clave",
@@ -13,15 +13,15 @@
     },
     {
       "escena": "Placa",
-      "texto": "En 1984, en Leicester, Alec Jeffreys reveló una radiografía de ADN."
+      "texto": "En 1984, en Leicester, Alec Jeffreys reveló una placa con el ADN de una familia."
     },
     {
       "escena": "Bandas",
-      "texto": "Vio bandas oscuras, como un código de barras, distintas en cada persona."
+      "texto": "Vio bandas oscuras, como un código de barras, distintas en cada uno."
     },
     {
       "escena": "Minisatelite",
-      "texto": "Eran minisatélites: tramos de ADN que repiten la misma frase una y otra vez."
+      "texto": "Eran minisatélites: tramos de ADN que repiten una frase una y otra vez."
     },
     {
       "escena": "Repeticiones",
@@ -45,11 +45,11 @@
     },
     {
       "escena": "Pitchfork",
-      "texto": "En 1988, Colin Pitchfork fue el primer asesino condenado con ADN: mandó a un amigo a dar sangre por él."
+      "texto": "En 1988, Colin Pitchfork fue el primer asesino condenado con ADN: convenció a un amigo de dar sangre por él."
     },
     {
       "escena": "STR",
-      "texto": "Hoy se usan con PCR marcadores más cortos, los STR, que sirven hasta con rastros."
+      "texto": "Hoy se usan con PCR marcadores cortos, los STR, que sirven hasta con rastros."
     },
     {
       "escena": "Gemelos",
@@ -57,7 +57,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Eres 99.9 % igual al de al lado, pero ese 0.1 % lleva tu nombre."
+      "texto": "Eres 99.6 % igual al de al lado, pero ese 0.4 % lleva tu nombre."
     }
   ]
 }

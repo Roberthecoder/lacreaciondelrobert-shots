@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #41 · Tus jeans los deslavó un hongo (celulasas en la mezclilla)
+# Publicación · Shot Biotecnológico #41 · Tus jeans quizá los deslavó un hongo (celulasas en la mezclilla)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tus jeans los deslavó un hongo 👖🍄 | Shot Biotecnológico #41
+Tus jeans quizá los deslavó un hongo 👖🍄 | Shot Biotecnológico #41
 ```
 Descripción:
 ```text

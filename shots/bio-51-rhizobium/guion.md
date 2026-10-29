@@ -23,13 +23,34 @@
 | 9 | Fabrica | Las fábricas de abono lo hacen a 350 grados o más; ella, a la del suelo. | Fondo rosa: comparativa. Izquierda, una fábrica con chimenea y termómetro que sube a 350–500 °C (y "150–300 veces la presión del aire"); derecha, el nódulo en la tierra con termómetro a temperatura ambiente. |
 | 10 | Inoculante | En Brasil, Mariangela Hungria desarrolló inoculantes: bacterias para la semilla de soya. | Fondo menta: mapa de Brasil; una bolsita "inoculante" se vacía sobre semillas de soya que quedan cubiertas. Etiqueta *Bradyrhizobium*. `TarjetaEstudio` "Brasil · Mariangela Hungria · Embrapa Soja". |
 | 11 | Brasil | Hoy van en 85 % de los campos de soya; en 2025 ganó el Premio Mundial de la Alimentación. | `Medidor` que se llena al 85 % sobre los campos de soya ("más de 30 millones de hectáreas"); medalla "Premio Mundial de la Alimentación 2025". Costal de urea tachado. |
-| 12 | Etli | Y una bacteria de tu frijol tiene nombre náhuatl: Rhizobium etli, de etl, frijol. | Una bacteria con sombrerito y un letrero "*Rhizobium etli*"; la palabra "etl" se ilumina junto a un frijol. Chip "náhuatl: etl = frijol". |
+| 12 | Etli | Y una bacteria de tu frijol tiene nombre náhuatl: Rhizobium etli, de etl, frijol. | Una bacteria sonriente con su letrero "*Rhizobium etli*"; la palabra "etl" se ilumina junto a un frijol. Chip "náhuatl: etl = frijol". |
 | 13 | Cierre | Esas bolitas no son plaga: son tu frijol haciendo su abono. | **Regreso a la mata del inicio**, ya con vainas, las bolitas brillando y el aire de N≡N entrando a ellas. |
 | — | Outro | (sin voz) | `CierreMarca` con Robert. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - Cama grave continua, sin golpe, siempre debajo de la voz.
 - **Efectos en el mismo cuadro:** la mata que sale de la tierra (tierra que cae), un "tic" por cada flavonoide que suelta la raíz, el pelito que se enrosca (barrido suave), la Lupa que se abre, **tres "clac" cuando se rompen los tres enlaces del N≡N**, dos "pops" de amoníaco, el silbido de la fábrica, la bolsita del inoculante que se vacía (arena), la barra que se llena.
+
+## Robert en pantalla
+
+Es la marca del canal: entra desde el cuadro 0, vuelve cada 8–10 s y nunca tapa el subtítulo, las etiquetas ni el dato (en las Lupas sale abajo o al lado).
+
+### Versión narrada: 10 apariciones, **34.7 s en pantalla** (de 61.5 s), 6 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 4,9 | sorprendido (11) | gancho | «no son plaga: son fábricas de abono» |
+| 6,0 - 9,1 | serio (10) | izq-alto | «la planta sola no puede usarlo» |
+| 13,5 - 16,7 | sonriendo (05) | bajo-der | el pelito se enrosca y atrapa a la bacteria |
+| 20,9 - 23,4 | señalando (13) | izq-alto | señala el nódulo: «se vuelve bacteroide» |
+| 23,7 - 26,0 | pensativo (06) | **grande** | re-gancho: «¿y cómo rompe una molécula tan dura?» |
+| 27,7 - 30,5 | sorprendido (11) | arriba-der | ¡clac!: se rompe el triple enlace |
+| 34,6 - 38,4 | bajando lentes (04) | arriba-der | la fábrica a 350 °C o más; la bacteria, a la del suelo |
+| 44,3 - 49,2 | apuntando (02) | **grande-izq** | 85 % de los campos de soya y el Premio Mundial de la Alimentación |
+| 50,2 - 54,1 | sonriendo (05) | arriba-der | «etl, frijol», en náhuatl |
+| 54,5 - 57,9 | señalando (13) | gancho | cierre: «tu frijol haciendo su abono» |
+
+La tarjeta de cierre lleva a Robert junto al logo (`CierreMarca robert=` apuntando a cámara, 02).
 
 ## Descripción (para publicar)
 "Esas bolitas que se despegan de la raíz de tu frijol no son plaga: son fábricas de abono. 🌱🦠 El aire es **78 % nitrógeno**, pero las plantas no pueden usarlo en esa forma. El frijol, la soya, el haba y las demás leguminosas tienen un trato con bacterias del suelo llamadas **rizobios**.

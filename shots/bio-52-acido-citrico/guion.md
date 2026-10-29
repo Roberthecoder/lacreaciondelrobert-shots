@@ -25,9 +25,32 @@
 | 12 | Cierre | Esa chispa ácida en tu lengua no es limón: es moho. | **Regreso a la gomita del inicio**: el polvito blanco brilla y lleva la etiqueta "hecho por un moho"; la silueta del moho negro saluda al lado. |
 | — | Outro | (sin voz) | Cierre de marca. |
 
+## Robert en pantalla
+
+Es la marca del canal. Entra desde el cuadro 0, vuelve cada 8–10 s como máximo y nunca tapa el dato, las etiquetas ni el subtítulo.
+Tiempos calculados con las escenas de `Shot Citrico base narrada.dc.html` (total 61.5 s).
+
+### 12 apariciones, **42.2 s en pantalla** (de 61.5 s) · 8 poses distintas · grandes: 22.0 s (`grande`) y 49.7 s (`grande-izq`)
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.8 | sorprendido (11) | gancho | «no salió de un limón: salió de un moho» |
+| 5.5 – 8.0 | bajando lentes (04) | arriba-der | «limones traídos de Italia» (el barco) |
+| 9.0 – 12.4 | señalando (13) | arriba-der | señala el conidióforo de *Aspergillus niger* |
+| 13.3 – 17.6 | sonriendo (05) | bajo-der | «el polvito negro de la cebolla» |
+| 22.0 – 24.6 | pensativo (06) | **grande** | re-gancho: «¿por qué un moho regalaría su ácido?» |
+| 25.5 – 29.5 | pensativo puño (07) | izq-alto | dentro de la hifa: arma citrato |
+| 30.2 – 34.0 | serio (10) | arriba-der | «le quitas casi todo el manganeso» |
+| 34.5 – 36.7 | sorprendido (11) | izq-alto | la bomba se prende y saca el citrato |
+| 38.3 – 42.9 | bajando lentes (04) | arriba-der | Currie, 1917: «todas sus cepas» |
+| 46.3 – 48.6 | sonriendo (05) | izq-alto | la barra: el moho le gana al limón |
+| 49.7 – 54.4 | apuntando a cámara (02) | **grande-izq** | «cerca del 99 %… de microbios» |
+| 55.0 – 57.9 | señalando (13) | gancho | cierre: «no es limón: es moho» |
+| Cierre | apuntando a cámara (02) | `CierreMarca robert=` | tarjeta final junto al logo |
+
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Cama grave continua**, sin golpe marcado, siempre debajo de la voz.
-- **Efectos en el mismo cuadro:** la gomita que cae (golpecito blando) y el polvito (siseo corto); la tachadura del limón (rayón); el barco (bocina grave lejana); el exprimido (chorro); la cáscara de la cebolla que se levanta (crujido seco); la Lupa que se abre (barrido); el agitador del tanque (pulso lento) y un "blub" por burbuja; cada cucharada de azúcar (lluvia fina); cada pieza de citrato que sale de la rueda (pluc agudo, cada vez más seguido cuando baja el manganeso); la bomba que se prende (clic + zumbido); el sello de la tarjeta de 1917 (golpe); la barra moho vs. limón (subida); 99 cuadritos que se llenan (99 notas rápidas) y uno distinto para el amarillo.
+- **Efectos en el mismo cuadro:** la gomita que cae (golpecito blando) y el polvito (siseo corto); la tachadura del limón (rayón); el barco (bocina grave lejana); el exprimido (chorro); la cáscara de la cebolla que se levanta (crujido seco); la Lupa que se abre (barrido); el agitador del tanque (pulso lento) y un "blub" por burbuja; cada cucharada de azúcar (lluvia fina); cada pieza de citrato que sale de la rueda (pluc agudo, cada vez más seguido cuando baja el manganeso); la bomba que se prende (clic + zumbido); el sello de la tarjeta de 1917 (golpe) y una nota por cada matraz que se cubre de moho; el motor de la planta y la barra moho vs. limón (subida); 99 cuadritos que se llenan (99 notas rápidas) y uno distinto para el amarillo.
 
 ## Descripción (borrador para publicar)
 "El ácido cítrico de tu gomita casi seguro no salió de un limón: salió de un moho. 🍬🍄‍🟫 Antes se sacaba de limones, muchos traídos de Italia. Hoy lo hace *Aspergillus niger*, del mismo grupo de mohos negros que a veces aparece bajo la cáscara seca de la cebolla (ahí suele ser su primo *A. welwitschiae*).

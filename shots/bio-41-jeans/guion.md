@@ -1,4 +1,4 @@
-# Shot Biotecnológico #41 · Tus jeans los deslavó un hongo
+# Shot Biotecnológico #41 · Tus jeans quizá los deslavó un hongo
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #41 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (los jeans y, con la `Lupa`, el hilo por dentro: anillo azul y centro blanco) + N3 "Capítulos y medidores"

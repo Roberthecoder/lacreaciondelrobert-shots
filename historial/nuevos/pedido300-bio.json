@@ -661,60 +661,134 @@
       "titulo": "El ácido hialurónico de tu crema lo fabrican bacterias",
       "serie": "Shot Biotecnológico",
       "numero": 40,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-40-hialuronico",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3239841/",
+        "https://doi.org/10.1186/1475-2859-10-99",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10004376/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3583886/",
+        "https://pubmed.ncbi.nlm.nih.gov/11212314/",
+        "https://pubmed.ncbi.nlm.nih.gov/1656437/",
+        "https://pubmed.ncbi.nlm.nih.gov/16000785/",
+        "https://doi.org/10.1128/AEM.71.7.3747-3752.2005",
+        "https://pubmed.ncbi.nlm.nih.gov/25877232/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5567178/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Colágeno vegano hecho por levaduras o bacterias",
+        "La cápsula como disfraz: estreptococos con una molécula igual a la nuestra",
+        "Por qué el hialurónico grande no cruza la piel"
+      ]
     },
     {
       "id": "bio-41-jeans",
       "titulo": "Tus jeans deslavados con enzimas, no con piedras: celulasas",
       "serie": "Shot Biotecnológico",
       "numero": 41,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-41-jeans",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9738703/",
+        "https://patentimages.storage.googleapis.com/de/a3/10/98a2a9e86ba1f3/US5514187.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9909807/",
+        "https://publications.vtt.fi/pdf/publications/2002/P483.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/11500206/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10170752/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Biopulido: por qué tu playera ya no hace bolitas",
+        "Bioíndigo: índigo hecho por bacterias",
+        "Trichoderma reesei, el hongo de la Segunda Guerra Mundial que fabrica enzimas"
+      ]
     },
     {
       "id": "bio-42-carne-cultivada",
       "titulo": "Carne cultivada: de células en un tanque al plato (Singapur 2020)",
       "serie": "Shot Biotecnológico",
       "numero": 42,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-42-carne-cultivada",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://www.nbcnews.com/technolog/intense-flavor-330-000-burger-was-built-lab-hits-spot-6c10835460",
+        "https://www.aljazeera.com/economy/2013/8/5/lab-grown-burger-eaten-in-london",
+        "https://www.volkskrant.nl/wetenschap/wereldprimeur-universiteit-maastricht-maakt-hamburger-van-kweekvlees~a3080421/",
+        "https://www.foodnavigator.com/Article/2020/12/02/World-first-Eat-Just-gets-regulatory-approval-for-cell-based-chicken-ingredient-in-Singapore/",
+        "https://www.foodnavigator.com/Article/2023/01/18/World-first-Singapore-gives-GOOD-Meat-approval-to-to-commercialise-serum-free-media-for-cultivated-meat/",
+        "https://www.mondaq.com/unitedstates/food-and-drugs-law/1345128/cell-cultivated-chicken-approved-for-sale-in-the-us-market-for-the-first-time",
+        "https://www.foodnavigator.com/Article/2023/06/22/usda-greenlights-cell-cultured-meat-from-upside-foods-good-meat-for-sale-in-us/",
+        "https://gfieurope.org/blog/italy-ban-on-cultivated-meat-cuts-itself-off-from-innovation-and-blocks-sustainable-development/",
+        "https://www.osborneclarke.com/insights/italy-bans-lab-grown-meat-violating-eu-procedure",
+        "https://www.flsenate.gov/Session/Bill/2024/1084",
+        "https://www.cbsnews.com/news/florida-alabama-lab-grown-mean-ban-2024",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9478980",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12469421/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9385919",
+        "https://www.foodnavigator.com/Article/2026/02/18/cultivated-meat-regulation-where-countries-stand-in-2026/",
+        "https://doi.org/10.1038/s41538-021-00122-2",
+        "https://www.food-safety.com/articles/10473-texas-becomes-seventh-state-to-ban-cultivated-meat"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "El suero fetal bovino y los caldos sin animales",
+        "Micoproteína (Fusarium venenatum) contra carne cultivada",
+        "Cómo se vuelve grasa una célula"
+      ]
     },
     {
       "id": "bio-43-hemo",
       "titulo": "La hamburguesa vegetal que sangra: leghemoglobina hecha en levadura",
       "serie": "Shot Biotecnológico",
       "numero": 43,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-43-hemo",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://www.govinfo.gov/content/pkg/FR-2019-08-01/pdf/2019-16374.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5956568/",
+        "https://pubs.nmsu.edu/_a/A129.pdf",
+        "https://www.umass.edu/microbio/chime/hemoglob/heme.htm",
+        "https://pubmed.ncbi.nlm.nih.gov/19760441/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10215292/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10144233/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9265346/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Fermentación de precisión: proteínas de leche o huevo hechas por levaduras",
+        "Por qué la carne pasa de roja a café al cocinarse",
+        "Komagataella phaffii, la levadura fábrica"
+      ]
     },
     {
       "id": "bio-44-artemisinina",
       "titulo": "Medicina contra la malaria hecha en levadura: artemisinina semisintética (Keasling)",
       "serie": "Shot Biotecnológico",
       "numero": 44,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-44-artemisinina",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://www.nobelprize.org/uploads/2018/06/tu-lecture.pdf",
+        "https://www.nobelprize.org/prizes/medicine/2015/press-release/",
+        "https://doi.org/10.1038/nature12051",
+        "https://doi.org/10.1038/nature04640",
+        "https://www.path.org/our-impact/media-center/sanofi-and-path-announce-the-launch-of-large-scale-production-of-semisynthetic-artemisinin-against-malaria/",
+        "https://www.scientificamerican.com/article/synthetic-biology-s-first-malaria-drug-meets-market-resistance/",
+        "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+        "https://www.who.int/news-room/fact-sheets/detail/malaria"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Opioides hechos en levadura (Smolke 2015)",
+        "Resistencia a la artemisinina en África y Asia",
+        "Tu Youyou y el Proyecto 523"
+      ]
     },
     {
       "id": "bio-45-taxol",
