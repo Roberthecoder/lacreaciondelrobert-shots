@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" (con espíritu de #6 mito peligroso): "Esas bolitas de «no comer» no son veneno: son una trampa para el agua, llena de túneles."
 - **Seguridad:** no se invita a comerla; se dice claro el riesgo de atragantamiento en niños y que las azules llevan cloruro de cobalto (tóxico, en baja concentración). En la descripción: qué hacer si un niño se la come (según Poison Control: enjuagar la boca y llamar al centro de toxicología).
 - **Duración:** voz 958 caracteres (≈ 58.3 s) + cierre 3.5 s → **61.8 s** estimados (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion listo para verificación independiente. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`silica.jsx`, hoja en `revision/hoja.png`), voz pendiente de aprobación de Robert (~958 créditos).
 
 ## Versión narrada
 
@@ -25,6 +25,27 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave continua; efectos en el mismo cuadro (rasgar el sobre, bolitas que rebotan, "clic" de cada molécula que se pega, cambio de color azul→rosa con un tintineo, teléfono que suena, golpe de la tarjeta del estudio).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y entonces por qué dice «no comer»?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «no son veneno: son una trampa para el agua» |
+| 2 | 6.4 | 10.3 | 13_senalando_arriba | `izq-alto` | «dióxido de silicio… poros diminutos» |
+| 3 | 11.8 | 15.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «más superficie que una cancha de básquetbol» |
+| 4 | 17.1 | 20.4 | 06_pensativo_menton | `izq-alto` | «el vapor de agua se les pega» |
+| 5 | 21.5 | 25.1 | 04_bajando_lentes | `arriba-der` | «adsorción, con d» |
+| 6 | 25.35 | 28.5 | 07_pensativo_puno | `grande` | «¿Y entonces por qué dice «no comer»?» |
+| 7 | 29.2 | 36.4 | 10_serio_molesto | `izq-alto` | «se puede atragantar… cloruro de cobalto» |
+| 8 | 37.7 | 44.9 | 12_perfil_serio | `izq-alto` | «546 casos… niños menores de 6 años» |
+| 9 | 45.7 | 49.3 | 11_sorprendido | `arriba-der` | «menos de 3 de cada 100» |
+| 10 | 49.8 | 53.2 | 13_senalando_arriba | `arriba-der` | «el mes con más casos fue abril» |
+| 11 | 53.7 | 58.2 | 02_apuntando_camara | `izq-alto` | «son arena llena de túneles» |
+| — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 11 apariciones · ≈ 48 s en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 
