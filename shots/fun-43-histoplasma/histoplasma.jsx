@@ -274,8 +274,8 @@ function HistoplasmaShot() {
       <Escena T={T} a={K.N} b={K.C} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<Macrofago T={T} cx={540} cy={960} r={170} seed={4}>
-          {LEV.slice(0, 9).map(([dx, dy], i) => <LevaduraH key={i} x={540 + dx} y={960 + dy} rot={i * 37} halo={kprog(T, K.N + 0.4, K.N + 1.0)} />)}
+        {fsvg(<Macrofago T={T} cx={540} cy={900} r={230} seed={4}>
+          {LEV.slice(0, 11).map(([dx, dy], i) => <LevaduraH key={i} x={540 + dx * 1.45} y={900 + dy * 1.45} rot={i * 37} halo={kprog(T, K.N + 0.4, K.N + 1.0)} />)}
         </Macrofago>)}
       </Escena>
       {/* 13 · cierre: la misma cueva y la misma bota; el polvo lleva esporas rumbo a una nariz */}
@@ -310,14 +310,14 @@ function HistoplasmaShot() {
       <Chip T={T} at={K.S + 0.4} until={K.E - 0.2} texto="casi todos: nada o algo leve" x={400} y={470} tam={34} borde={KC.leaf} />
       <Chip T={T} at={K.S + 2.0} until={K.E - 0.2} texto="fiebre · tos · cansancio" x={400} y={570} tam={32} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.6} anio="2024" quien="abril · cenote de la península de Yucatán" revista="4 turistas · CCDR (Canadá), 2025" y={470} />
-      <Etq T={T} at={K.E + 3.8} until={K.En - 0.2} x={40} y={560} texto="murciélagos en el techo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.8} until={K.En - 0.2} x={1000} y={690} lado="izq" texto="murciélagos en el techo" tam={30} color={KC.ink} />
       <Chip T={T} at={K.E + 4.2} until={K.En - 0.2} texto="4 turistas nadaron aquí" x={380} y={470} tam={34} borde={KC.cyan} />
       <Chip T={T} at={K.En + 0.2} until={K.Ce - 0.2} texto="2–3 semanas después" x={380} y={460} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Ce + 2.0} until={K.N - 0.2} texto="CERRADO desde 2019 · CCDR 2025" x={380} y={470} tam={30} fondo={KC.yellow} color={KC.ink} borde={KC.ink} />
       <Etq T={T} at={K.Ce + 0.6} until={K.Ce + 1.9} x={40} y={470} texto="otro cenote de la zona" tam={30} color={KC.ink} />
       <Chip T={T} at={K.N + 0.2} until={K.C - 0.2} texto="capsulatum = “con cápsula”" x={400} y={440} tam={34} borde={KC.gold} />
       <MitoTachado T={T} at={K.N + 0.8} tacharEn={K.N + 1.7} until={K.C - 0.2} texto="cápsula" x={300} y={560} tam={46} />
-      <Etq T={T} at={K.N + 1.9} until={K.C - 0.2} x={760} y={720} lado="izq" texto="solo un halo claro" tam={30} color="#e8f4ff" />
+      <Etq T={T} at={K.N + 1.9} until={K.C - 0.2} x={1040} y={1100} lado="izq" texto="solo un halo claro" tam={30} color="#e8f4ff" />
       <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no es solo tierra: puede ser guano" x={400} y={1040} tam={34} borde={KC.gold} />
 
       {/* barras de escala */}
