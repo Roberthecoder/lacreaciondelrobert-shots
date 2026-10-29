@@ -36,4 +36,11 @@
 
 Sin ❌ ni ⚠️ pendientes.
 
+
+## Re-verificación (29 oct 2026, verificador independiente, a pedido del administrador)
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Su intestino es muy alcalino, no ácido como tu estómago» (antes «lo contrario del tuyo»: tu intestino no es ácido, tu estómago sí) | ✅ | PMC8785469; Evans et al., Gut 1988 (PMID 3410329) | "The lepidopteran midgut lumen is comprised of a highly alkaline pH. In some species this reaches upwards of pH 12" · "Gastric pH was highly acidic (range 1.0-2.5) in all subjects." | 2022 / 1988 |
+| «ahí la proteína se activa» | ✅ | PMC13453240 | "Cry protoxins are solubilized under alkaline conditions and activated by proteases" | 2026 |
+
 VEREDICTO: APROBADO

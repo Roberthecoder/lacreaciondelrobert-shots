@@ -289,7 +289,7 @@ function Carne() {
         <Tarjeta T={T} at={K.Le + 1.8} ok nombre="Estados Unidos" anio="2023" y={710} />
         <Titulo T={T} at={K.Le + 3.3} until={K.Re} texto="LA PROHIBIERON" y={880} color={KC.red} />
         <Tarjeta T={T} at={K.Le + 3.6} nombre="Italia · Hungría" anio="2023–25" y={980} />
-        <Tarjeta T={T} at={K.Le + 4.6} nombre="varios estados de EE. UU." anio="2024–26" y={1120} chico />
+        <Tarjeta T={T} at={K.Le + 4.6} nombre="8 estados de EE. UU." anio="2024–26" y={1120} chico />
       </div>}
       {/* 11 · el reto: el caldo y los tanques gigantes */}
       <EscenaFundido T={T} a={K.Re} b={K.Ci} zoom={0.02}>

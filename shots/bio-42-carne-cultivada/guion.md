@@ -29,7 +29,7 @@
 | 7 | SinSuero | Ahora hay caldos sin suero: Singapur aprobó el primero en 2023. | `MitoTachado` "suero fetal"; el tubo se apaga y entra un matraz "sin suero". Chip "Singapur · 2023 · primer caldo sin suero". |
 | 8 | Hamburguesa | Mark Post presentó la primera hamburguesa en Londres, en 2013: unas 20 mil tiritas de músculo. | Fondo lila. `TarjetaEstudio` "2013 · Mark Post · Londres · 5 ago · Universidad de Maastricht". Llueven tiritas rosas sobre un plato y forman la torta; contador hasta "20,000 tiritas". |
 | 9 | Costo | Costó unos 250 mil euros. | `NumeroGigante` "250,000 €" sobre la torta. |
-| 10 | Leyes | Singapur aprobó su venta en 2020 y Estados Unidos en 2023; Italia, Hungría y varios estados de Estados Unidos la prohibieron. | Fondo cian, tablero: "APROBARON SU VENTA" ✓ Singapur 2020, ✓ Estados Unidos 2023 · "LA PROHIBIERON" ✕ Italia · Hungría 2023–25, ✕ varios estados de EE. UU. 2024–26. |
+| 10 | Leyes | Singapur aprobó su venta en 2020 y Estados Unidos en 2023; Italia, Hungría y varios estados de Estados Unidos la prohibieron. | Fondo cian, tablero: "APROBARON SU VENTA" ✓ Singapur 2020, ✓ Estados Unidos 2023 · "LA PROHIBIERON" ✕ Italia · Hungría 2023–25, ✕ 8 estados de EE. UU. 2024–26. |
 | 11 | Reto | Hoy el reto es el caldo, lo más caro, y llevarla a tanques gigantes. | Fondo amarillo: caen monedas en un biorreactor chico que crece hasta llenar la pantalla. Chips "el caldo: lo más caro" → "falta: tanques gigantes". |
 | 12 | Cierre | Así que esta carne sí es de animal, pero creció en un tanque. | **Regreso al filete del inicio** en la tabla, con una flecha desde el tanque del que salió. Chip "células de animal · crecidas en tanque". |
 | — | Outro | (sin voz) | `CierreMarca` con Robert señalando. |

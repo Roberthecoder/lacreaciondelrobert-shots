@@ -51,4 +51,11 @@
 
 Sin ❌ ni ⚠️ pendientes.
 
+
+## Re-verificación (29 oct 2026, verificador independiente, a pedido del administrador)
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Italia, Hungría y varios estados de Estados Unidos la prohibieron» (antes «Italia y siete estados»; ya son 8 estados) | ✅ | Hungría: Ley LXXXIX de 2025, notificación a la UE — https://technical-regulation-information-system.ec.europa.eu/de/notification/26066/text/F/EN ; Dakota del Sur: Green Queen, 13 mar 2026; RFD-TV, 29 may 2026 | Ley aprobada por el Parlamento húngaro el 18 nov 2025 · RFD-TV: "8 states have passed restrictions on the sale or manufacture of cell-cultured proteins" | 2025 / 2026 |
+| Tarjetas: "Italia · Hungría 2023–25" y "8 estados de EE. UU. 2024–26" (RFD-TV may 2026: 8 estados) | ✅ | Italia dic 2023 (Ley 172/2023); Florida y Alabama may 2024; Mississippi, Montana, Indiana, Nebraska y Texas 2025; Dakota del Sur 2026 (moratoria 1 jul 2026–30 jun 2031) | (ver arriba) | 2023–2026 |
+
 VEREDICTO: APROBADO

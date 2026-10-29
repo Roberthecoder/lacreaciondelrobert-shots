@@ -33,4 +33,10 @@
 
 Sin ❌ ni ⚠️ pendientes.
 
+
+## Re-verificación (29 oct 2026, verificador independiente, a pedido del administrador)
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Gancho corregido: «Tu helado de vainilla quizá nunca tocó una vaina: menos del 1 % de la vainillina sale de ahí.» (antes «casi seguro no tocó») | ✅ | Schmid et al., Food Technol Biotechnol 64(1) — https://hrcak.srce.hr/clanak/499466 | "Currently, less than 1 % of the globally produced vanillin is harvested from the vanilla plant itself" | 2026 |
+
 VEREDICTO: APROBADO

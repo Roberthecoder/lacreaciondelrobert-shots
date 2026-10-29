@@ -1,4 +1,4 @@
-# Shot Biotecnológico #23 · La vainilla de tu helado casi nunca salió de una vaina
+# Shot Biotecnológico #23 · La vainilla de tu helado quizá nunca salió de una vaina
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #23 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N2 "El número" (el **1 %** gigante desde el cuadro 0, el mito "la vainilla sale de la vaina" tachado) + N1 "Por dentro" (la `Lupa` baja a la vaina y luego a la bacteria que convierte ácido ferúlico en vainillina).
