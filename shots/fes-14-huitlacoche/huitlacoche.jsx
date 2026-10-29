@@ -293,7 +293,7 @@ function Huitlacoche() {
           <Teliospora x={500} y={klerp(780, 900, kprog(T, K.Es + 1.6, K.Es + 3.0, kEase.suave))} r={200} rot={T * 6} />
           {kprog(T, K.Es + 2.9, K.Es + 3.2) > 0 && kprog(T, K.Es + 2.9, K.Es + 3.6) < 1 && <circle cx={540} cy={1110} r={klerp(40, 300, kprog(T, K.Es + 2.9, K.Es + 3.6))} fill="none" stroke="#c8f5b0" strokeWidth={6} opacity={1 - kprog(T, K.Es + 2.9, K.Es + 3.6)} />}
         </>)}
-        {T > K.Es - 0.3 && T < K.L + 0.3 && <Escala T={T} z={1} pxPorMm={40000} x={60} y={1440} />}
+        {T > K.Es - 0.3 && T < K.L + 0.3 && <Escala T={T} z={1} pxPorMm={40000} x={60} y={1610} />}
       </Escena>
       {/* 4 · al germinar suelta esporidias que crecen como levaduras */}
       <Escena T={T} a={K.L} b={K.F} zoom={0.04}>
@@ -307,7 +307,7 @@ function Huitlacoche() {
               const x0 = 490, y0 = 790, yema = kprog(T, c.t + 0.6, c.t + 1.4);
               return <Esporidia key={i} x={klerp(x0, c.x, v)} y={klerp(y0, c.y, v)} rot={c.rot + Math.sin(T + i) * 8} s={1.1} yema={yema} nucleo={KC.mint} />; })}
           </>; })())}
-        {T > K.L - 0.3 && T < K.F + 0.3 && <Escala T={T} z={1} pxPorMm={10000} x={60} y={1440} />}
+        {T > K.L - 0.3 && T < K.F + 0.3 && <Escala T={T} z={1} pxPorMm={10000} x={60} y={1610} />}
       </Escena>
       {/* 5 · dos compatibles se fusionan: filamento que perfora la planta */}
       <Escena T={T} a={K.F} b={K.P} zoom={0.04}>
@@ -356,7 +356,7 @@ function Huitlacoche() {
           const hif = Array.from({ length: 40 }, (_, i) => { const q = i / 39; return [80 + q * 920, cy - 60 + Math.sin(q * 7 + 1) * 90]; });
           out.push(<polyline key="h" points={hif.slice(0, Math.max(2, Math.ceil(kprog(T, K.Tu, K.Tu + 1.2) * 40))).map((p) => p.join(',')).join(' ')} fill="none" stroke={PIEL} strokeWidth={12} strokeLinecap="round" />);
           return out; })())}
-        {T > K.Tu - 0.3 && T < K.A + 0.3 && <Escala T={T} z={1} pxPorMm={3000} x={60} y={1440} />}
+        {T > K.Tu - 0.3 && T < K.A + 0.3 && <Escala T={T} z={1} pxPorMm={3000} x={60} y={1610} />}
       </Escena>
       {/* 8 · en una semana o menos: agallas en hoja, tallo, espiga y granos */}
       <Escena T={T} a={K.A} b={K.Ep} zoom={0.03}>
