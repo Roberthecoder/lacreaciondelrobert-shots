@@ -188,11 +188,11 @@ function Ergolina({ x, y, s = 1, p = 1 }) {
   const hexa = (cx, cy, r = 60) => Array.from({ length: 6 }, (_, i) => { const a = Math.PI / 6 + i * Math.PI / 3; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; });
   const pol = (pts) => 'M ' + pts.map((q) => q.join(' ')).join(' L ') + ' Z';
   const PENTA = [[52, -30], [52, 30], [110, 40], [130, -15], [104, -60]];
-  const anillos = [hexa(0, 0), PENTA, hexa(52, -90), hexa(156, -90)];
+  const anillos = [hexa(0, 0), PENTA, hexa(52, -90), hexa(0, -180)];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {anillos.map((a, i) => { const q = kprog(p, i * 0.22, i * 0.22 + 0.3); return q > 0 ? <path key={i} d={pol(a)} fill="rgba(255,255,255,.15)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" opacity={q} /> : null; })}
     {p > 0.5 && <><circle cx={110} cy={40} r={22} fill={KC.blue} stroke={KC.ink} strokeWidth={4} /><text x={110} y={48} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#fff">NH</text></>}
-    {p > 0.9 && <><circle cx={208} cy={-60} r={16} fill={KC.blue} stroke={KC.ink} strokeWidth={4} /><text x={208} y={-52} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#fff">N</text></>}
+    {p > 0.9 && <><circle cx={52} cy={-210} r={16} fill={KC.blue} stroke={KC.ink} strokeWidth={4} /><text x={52} y={-202} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#fff">N</text></>}
   </g>;
 }
 

@@ -28,7 +28,7 @@
 
 **Música:** cama grave y cálida, continua, sin golpe; efectos en el mismo cuadro: chorro de salsa, silbido del vapor, crujido del trigo tostado, lluvia de esporas, tic del cronómetro, "tijeritas" en cada corte de proteína y almidón, chapuzón en la salmuera y un "puf" cuando muere el hongo, burbujas de las levaduras, hojas del calendario, 210 tics del estudio, interruptor que se apaga, campanita de la medalla.
 
-Barras de escala: 5 cm (botella y sushi), 1 cm (charola/grano), 10 µm (hifas, conidios, bacterias y levaduras).
+Barras de escala: 5 cm (botella y sushi), 1 cm (charola/grano), 10 cm y 20 cm (tanques y escenas macro), 50 µm (hifas y conidióforo), 5 µm (bacterias y levaduras), 3 nm (moléculas, esquemáticas).
 
 ## Robert en pantalla
 

@@ -64,9 +64,9 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-La salsa de soya es biotecnología de enzimas, y el hongo que la hace es un microorganismo domesticado muy estudiado.
+La salsa de soya es biotecnología de enzimas, y el hongo que la hace es un microorganismo que se considera domesticado y está muy estudiado.
 En la elaboración japonesa (honjozo), el moho koji (Aspergillus oryzae o A. sojae) crece 2–3 días a 30 °C sobre soya cocida y trigo tostado y produce proteasas y amilasas. En la salmuera (22–23 % de sal) el moho muere, pero sus enzimas siguen liberando aminoácidos —el glutamato da el umami— y azúcares, que bacterias lácticas halófilas y levaduras tolerantes a la sal fermentan durante meses (Ito y Matsuyama, J. Fungi, 2021).
-Por qué importa la seguridad: A. oryzae es pariente cercano de A. flavus, productor de aflatoxinas, pero no las produce. Un análisis de 210 cepas (Tominaga et al., 2006) encontró los genes de la aflatoxina inactivos o incompletos, y el análisis de su genoma (Machida et al., Nature, 2005) respalda que es ideal para fermentar. En 2006 la Brewing Society of Japan lo nombró hongo nacional.
+Por qué importa la seguridad: A. oryzae es pariente cercano de A. flavus, productor de aflatoxinas, pero no las produce. Un análisis de 210 cepas (Tominaga et al., 2006) encontró los genes de la aflatoxina inactivos o incompletos, y el análisis de su genoma (Machida et al., Nature, 2005) recuerda que, a diferencia de A. flavus, no produce aflatoxinas y que su largo uso en alimentos ha probado su seguridad. En 2006 la Brewing Society of Japan lo nombró hongo nacional.
 ¿Qué otro alimento fermentado te gustaría ver por dentro?
 Shot Fungi Mati #16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

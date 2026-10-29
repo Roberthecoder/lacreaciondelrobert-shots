@@ -79,7 +79,7 @@ Detalle con la frase textual de cada afirmación en `verificacion.md` (lo escrib
    > Liberación de ácidos grasos por la lipasa del moho → metilcetonas (orden habitual 2-heptanona > 2-nonanona > 2-pentanona > 2-undecanona); "The largest peaks were 2-heptanone and 2-nonanone."
 7. **[Cleere 2024]** Cleere, M. M. et al. (2024). New colours for old in the blue-cheese fungus *Penicillium roqueforti*. *npj Science of Food* (publicado en enero de 2024; University of Nottingham, Inglaterra). https://pmc.ncbi.nlm.nih.gov/articles/PMC10774375/
    > "The blue-green colour derives from pigmented spores formed by fungal growth."
-   > Mutantes por UV: "74-88-1 (brown), 74-88-2 (olive brown), 74-88-5 (green), 74-88-12 (mustard fawn) and B20-1 (white/albino)"; con ellas se hicieron quesos con los colores nuevos.
+   > Mutantes por UV: "74-88-1 (brown), 74-88-2 (olive brown), 74-88-5 (green), 74-88-12 (mustard fawn) and B20-1 (white/albino)"; los quesos se hicieron con otras mutantes UV: "The same strains (B20–4, B20–10, B20–14, A22–26) were then chosen for the production of 'non-blue' cheese" (B20-4 blanca, B20-10 fawn = café claro, B20-14 verde).
 8. **[Chávez 2023 / morfología]** Chávez, R., Vaca, I. y García-Estrada, C. (2023). Secondary metabolites produced by the blue-cheese ripening mold *Penicillium roqueforti*; biosynthesis and regulation mechanisms. *Journal of Fungi* 9(4): 459 (acceso abierto). https://doi.org/10.3390/jof9040459 · https://pmc.ncbi.nlm.nih.gov/articles/PMC10144355/
    > "spherical, smooth, and dark green conidia (3 to 4.5 μm diameter)" — solo para el dibujo.
 

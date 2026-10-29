@@ -43,7 +43,7 @@ Esas venas azules no son queso echado a perder: son un moho sembrado a propósit
 El moho del queso azul es Penicillium roqueforti. Con él se hacen el Roquefort (leche cruda de oveja, Francia) y el Gorgonzola (leche de vaca, Italia), entre otros quesos azules. A la leche se le agregan esporas del moho. Pero P. roqueforti necesita oxígeno y solo puede hacer esporas en los huecos del queso; por eso el queso se pica con agujas: los hoyitos dejan entrar el aire. El color azul verdoso viene de las esporas pigmentadas que forma el moho al crecer.
 Mientras madura, el moho libera ácidos grasos de la grasa de la leche y los convierte en metilcetonas; la 2-heptanona y la 2-nonanona son las que dan la nota típica de "queso azul".
 ¿Por qué este moho sí y el del pan no? Las cepas del queso se escogen y se controlan para que el queso sea seguro (el USDA dice que los mohos con los que se hacen estos quesos son seguros para comer). El moho que le sale al pan llega solo, no sabes cuál es, y algunos mohos producen micotoxinas.
-En 2020, un equipo en Francia secuenció el genoma de 34 cepas de P. roqueforti y encontró que se domesticó dos veces: una población es la que se usa en el Roquefort, cuyo afinado se hace en las cuevas del Combalou, en Roquefort-sur-Soulzon; la otra se usa en todos los demás tipos de queso azul del mundo.
+En 2020, un equipo en Francia secuenció el genoma de 34 cepas de P. roqueforti y encontró que se domesticó dos veces: una población es la que se usa en el Roquefort, cuyo afinado se hace en las cuevas del Combalou, en Roquefort-sur-Soulzon; la otra se usa en quesos azules de todo el mundo (la del Roquefort también se usa en algunos otros, como el Gorgonzola).
 Y en 2024, en la Universidad de Nottingham (Inglaterra), obtuvieron con luz ultravioleta versiones del moho de otros colores (blanco, café, verde…) y con ellas hicieron quesos.
 El dibujo es esquemático.
 Fuentes:
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Esas venas azules no son queso echado a perder: son un moho sembrado a propósito. 🧀 Penicillium roqueforti se le echa a la leche, luego pican el queso con agujas para que entre el aire, y sus esporas pintan el queso de azul verdoso. Su olor viene de la 2-heptanona, que el moho saca de la grasa de la leche.
+Esas venas azules no son queso echado a perder: son un moho sembrado a propósito. 🧀 Penicillium roqueforti se le echa a la leche, luego pican el queso con agujas para que entre el aire, y sus esporas pintan el queso de azul verdoso. Su olor típico viene de metilcetonas como la 2-heptanona, que el moho saca de la grasa de la leche.
 ¿Te gusta el queso azul o no lo soportas? 👇
 Shot Fungi Mati #15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -74,7 +74,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 El queso azul es un ejemplo de domesticación de un microorganismo.
 Penicillium roqueforti se inocula en la leche; como necesita oxígeno para esporular, el queso se pica para airear la pasta, y el color azul verdoso proviene de sus esporas pigmentadas. Su metabolismo de la grasa produce metilcetonas, como la 2-heptanona, responsables del aroma típico.
-En 2020, un estudio de genómica de poblaciones (34 genomas secuenciados, Molecular Ecology) mostró que este hongo se domesticó dos veces: una población asociada al Roquefort y otra usada en los demás quesos azules del mundo. En 2024, la Universidad de Nottingham obtuvo por mutagénesis UV cepas de otros colores y elaboró quesos con ellas.
+En 2020, un estudio de genómica de poblaciones (34 genomas secuenciados, Molecular Ecology) mostró que este hongo se domesticó dos veces: una población asociada al Roquefort y otra usada en quesos azules de todo el mundo. En 2024, la Universidad de Nottingham obtuvo por mutagénesis UV cepas de otros colores y elaboró quesos con ellas.
 ¿Qué otro alimento conoces que dependa de un microorganismo domesticado?
 Shot Fungi Mati #15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -103,5 +103,6 @@ Disciplinare DOP « Gorgonzola » (2017). https://gorgonzola.com/wp-content/uplo
 Walker y Mills (2014). The Scientific World Journal: 215783. https://pmc.ncbi.nlm.nih.gov/articles/PMC3985342/
 Cotton (2010). Heptan-2-one: the Stilton cheese molecule. https://www.chm.bris.ac.uk/motm/heptanone/heptanoneh.htm
 USDA FSIS. Molds on Food: Are They Dangerous? https://ucfoodsafety.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/26438.pdf
+Chávez, R., Vaca, I. y García-Estrada, C. (2023). J. Fungi 9(4): 459. https://pmc.ncbi.nlm.nih.gov/articles/PMC10144355/
 El dibujo es esquemático.
 ```

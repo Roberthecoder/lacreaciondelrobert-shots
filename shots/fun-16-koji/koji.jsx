@@ -392,7 +392,7 @@ function KojiShot() {
       <BarraEscala T={T} at={K.G} until={K.Si} texto="5 cm" largo={200} />
       <BarraEscala T={T} at={K.Si} until={K.Cr + 2.0} texto="1 cm" largo={110} />
       <BarraEscala T={T} at={K.Cr + 2.0} until={K.Pr} texto="lupa: 50 µm" largo={200} />
-      <BarraEscala T={T} at={K.Pr} until={K.Sa} texto="5 nm (moléculas)" largo={200} />
+      <BarraEscala T={T} at={K.Pr} until={K.Sa} texto="3 nm (moléculas)" largo={200} />
       <BarraEscala T={T} at={K.Sa} until={K.Mo} texto="20 cm" largo={140} />
       <BarraEscala T={T} at={K.Mo} until={K.Co} texto="5 µm" largo={180} />
       <BarraEscala T={T} at={K.Co} until={K.E} texto="5 cm" largo={170} />

@@ -244,8 +244,6 @@ function QuesoAzulShot() {
           <RedHifas T={T} x={910} y={900} g={kprog(T, K.Ve - 0.3, K.Ve + 2.0)} seed={9} n={140} escala={0.36} color={FK.hifa} ancho={3} rot={-120} />
           <path d="M 150 1200 Q 400 1180 540 1200 Q 700 1220 930 1190" stroke={FK.hifa} strokeWidth={14} fill="none" opacity=".8" />
           <Penicilio T={T} x={560} y={1190} s={1.15} p={kprog(T, K.Ve - 0.4, K.Ve + 2.2)} />
-          <Penicilio T={T} x={280} y={1195} s={0.55} p={kprog(T, K.Ve + 0.6, K.Ve + 3.0)} seed={3} />
-          <Penicilio T={T} x={800} y={1195} s={0.6} p={kprog(T, K.Ve + 0.9, K.Ve + 3.2)} seed={5} />
         </>)}
       </Escena>
       {/* 7 · rompe la grasa → metilcetonas (2-heptanona): el olor */}
@@ -388,7 +386,7 @@ function QuesoAzulShot() {
       <BarraEscala T={T} at={K.Ve} until={K.Gr} texto="10 µm" largo={100} />
       <BarraEscala T={T} at={K.Gr} until={K.P} texto="10 µm" largo={120} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={160} />
-      <BarraEscala T={T} at={K.Po} until={K.Co} texto="10 cm" largo={90} />
+      <BarraEscala T={T} at={K.Po} until={K.Co} texto="no a escala" largo={90} />
       <BarraEscala T={T} at={K.Co} until={K.C} texto="5 cm" largo={120} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={300} />
 
@@ -403,7 +401,7 @@ function QuesoAzulShot() {
       <Subtitulo T={T} idx={7} at={K.P + 0.1} until={K.Pa - 0.1} texto="¿Por qué este sí *y el del pan no?*" />
       <Subtitulo T={T} idx={8} at={K.Pa + 0.1} until={K.E - 0.1} texto="Este se escoge y se vigila. *El del pan, no.*" />
       <Subtitulo T={T} idx={9} at={K.E + 0.1} until={K.Po - 0.1} texto="2020: se domesticó *dos veces.*" />
-      <Subtitulo T={T} idx={10} at={K.Po + 0.1} until={K.Co - 0.1} texto="Roquefort… *y el resto del mundo.*" />
+      <Subtitulo T={T} idx={10} at={K.Po + 0.1} until={K.Co - 0.1} texto="Roquefort… *y quesos de todo el mundo.*" />
       <Subtitulo T={T} idx={11} at={K.Co + 0.1} until={K.C - 0.1} texto="2024: *blanco, café o verde.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="No está echado a perder: *túneles de aire.*" />
 
