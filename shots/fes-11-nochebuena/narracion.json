@@ -1,0 +1,62 @@
+{
+  "especial": "Navidad",
+  "serie_vinculada": "Biotecnológico",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Nochebuena base narrada.dc.html",
+  "salida": "Shot Nochebuena narrado.dc.html",
+  "nota": "Shot Festivo #11 · Navidad · Biotecnológico. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Eso rojo de tu nochebuena no son pétalos: son hojas."
+    },
+    {
+      "escena": "Bracteas",
+      "texto": "Se llaman brácteas: hojas que cambiaron de color."
+    },
+    {
+      "escena": "Ciatios",
+      "texto": "Las flores de verdad son estas bolitas amarillas del centro: los ciatios."
+    },
+    {
+      "escena": "Noches",
+      "texto": "Y se pintan de rojo con noches largas: unas catorce horas de oscuridad, de siete a diez semanas."
+    },
+    {
+      "escena": "Foco",
+      "texto": "Si un foco interrumpe esa oscuridad, puede no pintarse a tiempo para Navidad."
+    },
+    {
+      "escena": "Silvestre",
+      "texto": "En el monte de México, la cuetlaxóchitl silvestre mide unos tres metros y tiene pocas ramas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces por qué la de tu casa está tan llena de ramas?"
+    },
+    {
+      "escena": "Fitoplasma",
+      "texto": "Porque, casi seguro, está infectada: en sus tubos de savia vive un fitoplasma, una bacteria sin pared."
+    },
+    {
+      "escena": "Hormonas",
+      "texto": "Esa bacteria le desequilibra las hormonas, y la planta saca ramas por todos lados."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1997, en Maryland, el equipo de Ing-Ming Lee la aisló pasándola a plantas sanas con una planta parásita de puente."
+    },
+    {
+      "escena": "Injerto",
+      "texto": "Con un injerto de una rama infectada, una nochebuena de pocas ramas se vuelve frondosa para siempre."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Dato: con tratamiento de calor la planta pierde la infección… y deja de ramificarse."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu nochebuena no tiene pétalos rojos: tiene hojas rojas, y una bacteria que la hizo frondosa."
+    }
+  ]
+}
