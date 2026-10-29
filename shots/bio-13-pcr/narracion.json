@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot PCR base narrada.dc.html",
+  "salida": "Shot PCR narrado.dc.html",
+  "nota": "Shot Biotecnológico #13. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Una sola molécula de ADN se puede volver más de mil millones de copias en unas horas."
+    },
+    {
+      "escena": "Tu",
+      "texto": "Eso hace la prueba PCR de COVID: convierte un pedacito del virus en ADN y lo copia hasta que brilla."
+    },
+    {
+      "escena": "Separar",
+      "texto": "Capítulo uno: calientas a 95 grados y la doble hélice se abre en dos."
+    },
+    {
+      "escena": "Pegar",
+      "texto": "Capítulo dos: bajas a unos 55 y dos pedacitos guía se pegan a los extremos."
+    },
+    {
+      "escena": "Copiar",
+      "texto": "Capítulo tres: subes a 72 y una enzima copia cada hebra, letra por letra."
+    },
+    {
+      "escena": "Duplica",
+      "texto": "Cada ciclo duplica: dos, cuatro, ocho… Treinta ciclos, más de mil millones, en teoría."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero qué enzima aguanta 95 grados una y otra vez?"
+    },
+    {
+      "escena": "Problema",
+      "texto": "Al principio, el calor de cada ciclo la iba destruyendo."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1969, Thomas Brock y Hudson Freeze describieron una bacteria de las aguas termales de Yellowstone que crece mejor a 70 grados."
+    },
+    {
+      "escena": "Taq",
+      "texto": "De ella sale la Taq, la enzima que sí aguanta el calor."
+    },
+    {
+      "escena": "Mullis",
+      "texto": "A Kary Mullis se le ocurrió la PCR manejando de noche en 1983, y le dio el Nobel."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso, en un tubito, una sola molécula se puede volver más de mil millones."
+    }
+  ],
+  "tanda": 1
+}

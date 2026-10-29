@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Hormona base narrada.dc.html",
+  "salida": "Shot Hormona narrado.dc.html",
+  "nota": "Shot Biotecnológico #30. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta hormona de crecimiento no salió de un cadáver: salió de una bacteria."
+    },
+    {
+      "escena": "Hipofisis",
+      "texto": "Tu hipófisis, del tamaño de un chícharo, fabrica la hormona que te hace crecer."
+    },
+    {
+      "escena": "Antes",
+      "texto": "Desde 1958, a quienes casi no la producían se les inyectaba la de hipófisis de personas fallecidas."
+    },
+    {
+      "escena": "Lote",
+      "texto": "En 1985, los CDC contaron unas dieciséis mil glándulas por lote."
+    },
+    {
+      "escena": "Escondido",
+      "texto": "Y en alguna podía venir algo escondido."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Qué puede enfermarte sin ser virus ni bacteria?"
+    },
+    {
+      "escena": "Prion",
+      "texto": "Un prión: una proteína mal doblada que hace que las normales también se doblen mal."
+    },
+    {
+      "escena": "Cerebro",
+      "texto": "En el cerebro causa Creutzfeldt-Jakob, una enfermedad siempre mortal."
+    },
+    {
+      "escena": "Alerta",
+      "texto": "En 1985 se supo que tres pacientes tratados en Estados Unidos murieron de eso, y se suspendió."
+    },
+    {
+      "escena": "Bacteria",
+      "texto": "En octubre de ese año, la FDA aprobó una hecha por bacterias con un gen humano."
+    },
+    {
+      "escena": "Sin tejido",
+      "texto": "Sin glándulas humanas, ya no había de dónde llegara el prión."
+    },
+    {
+      "escena": "Latencia",
+      "texto": "Hasta 2024 había 36 casos en ese país; uno tardó más de cincuenta años en dar síntomas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso esta hormona sale de una bacteria: para crecer sin ese riesgo."
+    }
+  ]
+}

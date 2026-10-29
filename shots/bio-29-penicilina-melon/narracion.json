@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Penicilina base narrada.dc.html",
+  "salida": "Shot Penicilina narrado.dc.html",
+  "nota": "Shot Biotecnológico #29. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa penicilina no salió del moho de Fleming: salió de un melón podrido."
+    },
+    {
+      "escena": "Poquita",
+      "texto": "El moho de Fleming hacía muy poca: en 1941, Estados Unidos no tenía ni para un paciente."
+    },
+    {
+      "escena": "Peoria",
+      "texto": "Un laboratorio del gobierno en Peoria, Illinois, buscó mohos mejores."
+    },
+    {
+      "escena": "Melon",
+      "texto": "En 1943 lo halló en un melón cantalupo mohoso de Peoria."
+    },
+    {
+      "escena": "Seis",
+      "texto": "Ese moho hacía más del doble de penicilina que el de Fleming."
+    },
+    {
+      "escena": "Tanque",
+      "texto": "Y creció hundido en tanques, con aire burbujeando y licor de maíz, un desecho de la fécula."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si el moho ya no da más? Lo obligas a mutar."
+    },
+    {
+      "escena": "Mutantes",
+      "texto": "Con rayos X y luz ultravioleta escogieron a los mutantes más productivos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En los años cuarenta, cada mililitro de caldo pasó de 150 microgramos de penicilina o menos, a 300 con rayos X, y a 550 con ultravioleta en Wisconsin."
+    },
+    {
+      "escena": "DiaD",
+      "texto": "Para el Día D, en 1944, ya había 2.3 millones de dosis."
+    },
+    {
+      "escena": "Mary",
+      "texto": "Lo curioso: a quien halló el melón le dicen Mary la Mohosa, pero nadie sabe bien quién fue."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Las cepas industriales aún descienden de él: tu penicilina salió de un melón podrido."
+    }
+  ]
+}
