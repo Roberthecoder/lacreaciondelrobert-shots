@@ -192,12 +192,13 @@ function Refrescar({ x, y, s = 1, ang = 0 }) {
 }
 
 // Cajita de datos donados (para los 347).
-function Datos347({ T, at, x = 115, y = 800 }) {
-  const n = Math.round(347 * kprog(T, at, at + 2.4, kEase.suave)); if (T < at) return null;
+function Datos347({ T, at, until, x = 115, y = 800 }) {
+  const n = Math.round(347 * kprog(T, at, at + 2.4, kEase.suave)); if (T < at || T > until + 0.4) return null;
+  const o = 1 - kprog(T, until, until + 0.4);
   const cols = 25, out = [];
   for (let i = 0; i < n; i++) { const c = i % cols, r = Math.floor(i / cols);
     out.push(<rect key={i} x={x + c * 34} y={y + r * 26} width={28} height={20} rx={4} fill={i % 7 === 0 ? KC.yellow : '#fffdf6'} stroke={KC.ink} strokeWidth={3} />); }
-  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30 }}>{out}</svg>;
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30, opacity:o }}>{out}</svg>;
 }
 
 // Cuadrícula de 100 videos: n1 "tus gustos" (seguro), n2 hasta donde llega el rango (estimado), el resto "explorar".
@@ -230,6 +231,9 @@ function Impacto({ T, at, until, y = 640 }) {
       </div>; })}
   </div>;
 }
+
+// Lado extra de Robert debajo del subtítulo (no tapa datos ni subtítulo).
+Object.assign(KLADOS, { 'bajo-der': { left:650, top:1380, width:400 } });
 
 function TikTok() {
   const { T, CUES } = useComposition();
@@ -285,7 +289,7 @@ function TikTok() {
           <Embudo x={540} y={980} s={0.9} T={T} />
           {[['visto', KC.yellow, 0.3, 220, 560], ['terminado ✔', KC.leaf, 0.9, 420, 470], ['saltado ✖', KC.coral, 1.5, 300, 650], ['sigues a…', KC.cyan, 2.4, 560, 560], ['audio ♪', KC.lilac, 3.4, 360, 740], ['#hashtags', KC.orange, 4.0, 600, 690]].map(([tx, c, d, xx, yy], i) => {
             const a = K.S + d, p = kprog(T, a, a + 0.5, kEase.rebote), cae = kprog(T, a + 2.2, a + 2.9, kEase.suave);
-            return <Ficha key={i} x={klerp(xx, 540, cae)} y={klerp(yy - 120 * (1 - p), 980, cae)} texto={tx} color={c} s={p * (1 - 0.6 * cae)} o={p * (1 - cae)} rot={(i % 2 ? 6 : -6) * (1 - cae)} tam={38} />; })}
+            return <Ficha key={i} x={klerp(xx, 540, cae)} y={klerp(yy - 120 * (1 - p), 980, cae)} texto={tx} color={c} s={p * (1 - 0.6 * cae)} o={p * (1 - cae)} rot={(i % 2 ? 6 : -6) * (1 - cae)} tam={50} />; })}
         </>)}
       </Escena>
       <Chip T={T} at={K.S + 0.2} until={K.Pe - 0.2} texto="página oficial de TikTok" x={420} y={400} tam={34} borde={KC.ink} />
@@ -293,13 +297,13 @@ function TikTok() {
       {/* 3 · peso: la balanza */}
       <Escena T={T} a={K.Pe} b={K.R}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Balanza x={540} y={640} s={0.95} incl={kprog(T, K.Pe + 1.4, K.Pe + 2.6, kEase.rebote)}
+        {svg(<Balanza x={540} y={700} s={0.95} incl={kprog(T, K.Pe + 1.4, K.Pe + 2.6, kEase.rebote)}
           izq={<Mini x={0} y={-130} w={150} h={220} tipo={2} prog={kprog(T, K.Pe + 0.5, K.Pe + 1.5)} T={T} />}
           der={<Globo s={0.9} />} />)}
       </Escena>
       <Chip T={T} at={K.Pe + 0.6} until={K.R - 0.2} texto="video largo visto completo" x={330} y={1150} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.Pe + 1.2} until={K.R - 0.2} texto="mismo país" x={830} y={1150} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Pe + 0.3} until={K.R - 0.2} texto="TikTok Newsroom · 2020" x={540} y={470} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Pe + 0.3} until={K.R - 0.2} texto="TikTok Newsroom · 2020" x={640} y={470} tam={34} borde={KC.gold} />
 
       {/* 4 · ranking: por dentro de la máquina */}
       <Escena T={T} a={K.R} b={K.Q}>
@@ -360,7 +364,7 @@ function TikTok() {
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2024" quien="EE. UU. · Alemania · Países Bajos" revista="Vombatkere et al. · The Web Conference (Singapur)" y={600} />
       <Chip T={T} at={K.E + 3.6} until={E2 - 0.2} texto="347 usuarios donaron sus datos" x={540} y={680} tam={40} borde={KC.ink} />
-      <Datos347 T={T} at={K.E + 3.7} x={120} y={780} />
+      <Datos347 T={T} at={K.E + 3.7} until={E2 - 0.3} x={120} y={780} />
       {T > E2 - 0.3 && T < K.X + 0.3 && <div style={{ position:'absolute', inset:0, background:KC.cyan, opacity:kprog(T, E2 - 0.3, E2) * (1 - kprog(T, K.X - 0.1, K.X + 0.3)), zIndex:35,
         backgroundImage:'radial-gradient(circle, rgba(255,255,255,.33) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>}
       <Chip T={T} at={E2 + 0.1} until={K.X - 0.2} texto="lo que más personalizaba" x={430} y={540} tam={38} borde={KC.ink} />
@@ -396,7 +400,7 @@ function TikTok() {
       <Subtitulo T={T} idx={3} at={K.R + 0.1} until={K.Q - 0.1} texto="Arriba, *el de más puntos.*" />
       <Subtitulo T={T} idx={4} at={K.Q + 0.1} until={K.P1 - 0.1} texto="¿Y si ya *te atrapó?*" />
       <Subtitulo T={T} idx={5} at={K.P1 + 0.1} until={K.P2 - 0.1} texto="Deja presionado: *«No me interesa».*" />
-      <Subtitulo T={T} idx={6} at={K.P2 + 0.1} until={K.P3 - 0.1} texto="Filtra *palabras o hashtags.*" />
+      <Subtitulo T={T} idx={6} at={K.P2 + 0.1} until={K.P3 - 0.1} texto="Filtra *palabras o #.*" />
       <Subtitulo T={T} idx={7} at={K.P3 + 0.1} until={K.E - 0.1} texto="Refresca: *temas nuevos.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={E2 - 0.1} texto="2024: *347 usuarios* donaron sus datos." />
       <Subtitulo T={T} idx={9} at={E2 + 0.1} until={K.X - 0.1} texto="Lo que más pesó: *like y seguir.*" />
@@ -407,7 +411,7 @@ function TikTok() {
         [CUES.Gancho - 0.45, CUES.Gancho + 4.6, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Senales + 1.8, CUES.Peso - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Peso + 2.0, CUES.Ranking - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
-        [CUES.Ranking + 2.2, CUES.Pregunta - 0.15, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [CUES.Ranking + 2.2, CUES.Pregunta - 0.15, 'avatar_04_bajando_lentes', 'bajo-der'],
         [CUES.Pregunta + 0.05, CUES.Paso1 + 0.6, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Paso2 + 0.1, CUES.Estudio - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'grande-izq'],
         [E2 + 1.8, CUES.Explora - 0.2, 'avatar_11_sorprendido', 'arriba-der'],

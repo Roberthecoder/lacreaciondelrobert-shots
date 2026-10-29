@@ -237,13 +237,13 @@ function LeeLabios() {
       {/* 1 · gancho: unos labios sin sonido, ¿peso o beso? */}
       <Escena T={T} a={K.G} b={K.V}>
         <FondoLunares color={KC.pink} />
-        {svg(<VideoBoca x={400} y={820} s={0.8} T={T} abre={silaba(T + 1.2)} id="g" />)}
+        {svg(<VideoBoca x={360} y={820} s={0.76} T={T} abre={silaba(T + 1.2)} id="g" />)}
       </Escena>
       <Tarjeta T={T} at={K.G + 0.5} x={280} y={1110} texto="PESO" color={KC.yellow} until={K.V - 0.3} />
       <Tarjeta T={T} at={K.G + 0.9} x={800} y={1110} texto="BESO" color={KC.cyan} until={K.V - 0.3} />
       {T >= K.G + 1.3 && T < K.V + 0.3 && <div style={{ position:'absolute', left:540, top:1110 - Math.abs(Math.sin(T * 5)) * 40, zIndex:41, transform:'translate(-50%,-50%)',
         font:`400 120px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`5px ${KC.ink}`, opacity:kprog(T, K.G + 1.3, K.G + 1.5) * (1 - kprog(T, K.V - 0.2, K.V + 0.3)) }}>?</div>}
-      <Chip T={T} at={K.G + 3.4} until={K.V - 0.2} texto="P y B: la misma boca" x={400} y={560} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.4} until={K.V - 0.2} texto="P y B: la misma boca" x={360} y={560} tam={36} borde={KC.ink} />
 
       {/* 2 · visemas: P, B y M caen en el mismo molde */}
       <Escena T={T} a={K.V} b={K.E}>
@@ -288,7 +288,7 @@ function LeeLabios() {
         <RedNeuronal T={T} x={170} y={560} ancho={760} alto={400} onda={(T * 0.7) % 1} o={kprog(T, K.S + 2.6, K.S + 3.2)} />
       </Escena>
       <TarjetaEstudio T={T} at={K.S + 0.5} until={K.S + 2.5} anio="2018" quien="DeepMind y Google" revista="Shillingford et al. · arXiv:1807.05162" y={700} />
-      <NumeroGigante T={T} at={K.S + 2.8} until={K.D - 0.2} valor={3886} dur={1.6} sufijo=" h" etiqueta="de video de YouTube" x={660} y={430} tam={150} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.S + 2.8} until={K.D - 0.2} valor={3886} dur={1.6} sufijo=" h" etiqueta="horas de YouTube" x={600} y={430} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.S + 3.6} until={K.D - 0.2} texto="caras hablando · en inglés" y={1190} tam={32} borde={KC.cyan} />
 
       {/* 6 · el duelo: lectores profesionales contra la IA */}
@@ -303,7 +303,7 @@ function LeeLabios() {
       </Escena>
       <Chip T={T} at={K.D + 1.2} until={D2 - 0.4} texto={`▶ ver otra vez: ${Math.min(10, 1 + Math.floor(kprog(T, K.D + 1.4, K.D + 4.2) * 9.99))} / 10`} x={300} y={1090} tam={34} mono borde={KC.ink} />
       <Chip T={T} at={K.D + 2.0} until={D2 - 0.4} texto="solo la boca" x={790} y={1090} tam={34} borde={KC.ink} />
-      <Chip T={T} at={D2} until={K.Vz - 0.2} texto="error de palabras · menos es mejor" y={670} tam={32} borde={KC.ink} />
+      <Chip T={T} at={D2} until={K.Vz - 0.2} texto="error de palabras · menos es mejor" x={380} y={680} tam={32} borde={KC.ink} />
       <BarrasError T={T} at={D2 + 0.2} until={K.Vz - 0.2} top={740} filas={[
         { valor: 92.9, etiqueta: 'profesionales sin contexto', color: KC.orange, at: D2 + 0.3 },
         { valor: 86.4, etiqueta: 'profesionales con contexto', color: KC.coral, at: D2 + 1.0 },
@@ -339,7 +339,7 @@ function LeeLabios() {
       {/* 9 · cierre: los mismos labios; el contexto decide */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.pink} />
-        {svg(<VideoBoca x={400} y={820} s={0.8} T={T} abre={silaba(T + 1.2)} id="c" />)}
+        {svg(<VideoBoca x={360} y={820} s={0.76} T={T} abre={silaba(T + 1.2)} id="c" />)}
       </Escena>
       <Tarjeta T={T} at={K.C + 0.3} x={280} y={1110} texto="PESO" color={KC.yellow} luz={luzPeso} />
       <Tarjeta T={T} at={K.C + 0.5} x={800} y={1110} texto="BESO" color={KC.cyan} apaga={luzPeso} />

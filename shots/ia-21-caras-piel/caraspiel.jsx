@@ -163,10 +163,10 @@ function CarasPiel() {
     <defs><filter id="borroso"><feGaussianBlur stdDeviation="9" /></filter></defs>{c}</svg>;
   const horas = 30 * kprog(T, K.W + 2.6, K.W + 5.4, kEase.suave);
   const duo = (t0, final) => <>
-    <Cara x={290} y={930} s={1.0} piel={PIEL_CLARA} pelo="#5a3b22" tipo="h" camisa={KC.blue} T={T} seed={1} />
-    <Cara x={790} y={930} s={1.0} piel={PIEL_OSCURA} pelo="#1d140e" tipo="m" camisa={KC.orange} T={T} seed={2} />
-    <Escaneo x={290} y={900} w={300} h={380} T={T} at={t0} ok={T > t0 + 1.6 ? true : null} etiqueta={T > t0 + 1.6 ? (final ? 'error: 0.3 %' : '✔ hombre') : null} />
-    <Escaneo x={790} y={900} w={330} h={400} T={T} at={t0 + 0.2} ok={T > t0 + 2.6 ? false : null} etiqueta={T > t0 + 2.6 ? (final ? 'error: 34.7 %' : '✘ «hombre»') : null} />
+    <Cara x={290} y={880} s={0.9} piel={PIEL_CLARA} pelo="#5a3b22" tipo="h" camisa={KC.blue} T={T} seed={1} />
+    <Cara x={790} y={880} s={0.9} piel={PIEL_OSCURA} pelo="#1d140e" tipo="m" camisa={KC.orange} T={T} seed={2} />
+    <Escaneo x={290} y={855} w={280} h={350} T={T} at={t0} ok={T > t0 + 1.6 ? true : null} etiqueta={T > t0 + 1.6 ? (final ? 'error: 0.3 %' : '✔ hombre') : null} />
+    <Escaneo x={790} y={855} w={310} h={370} T={T} at={t0 + 0.2} ok={T > t0 + 2.6 ? false : null} etiqueta={T > t0 + 2.6 ? (final ? 'error: 34.7 %' : '✘ «hombre»') : null} />
   </>;
 
   return (
@@ -183,10 +183,10 @@ function CarasPiel() {
       <Escena T={T} a={K.E} b={K.N}>
         <FondoLunares color={KC.lilac} />
         {svg(<>{['IBM', 'Microsoft', 'Face++'].map((n, i) => <g key={n} opacity={kprog(T, K.E + 2.2 + i * 0.2, K.E + 2.5 + i * 0.2)}>
-          <Programa x={200 + i * 340} y={980} s={0.85} T={T + i} pantalla="¿H o M?" nombre={n} /></g>)}</>)}
+          <Programa x={200 + i * 340} y={930} s={0.85} T={T + i} pantalla="¿H o M?" nombre={n} /></g>)}</>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.N - 0.3} anio="2018" quien="«Gender Shades»" revista="Buolamwini y Gebru · PMLR 81" x={600} y={640} />
-      <Chip T={T} at={K.E + 3.6} until={K.N - 0.3} texto="1,270 fotos de parlamentarios · 6 países" y={1175} tam={34} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.N - 0.3} anio="2018" quien="«Gender Shades»" revista="Buolamwini y Gebru · PMLR 81" x={420} y={600} />
+      <Chip T={T} at={K.E + 3.6} until={K.N - 0.3} texto="1,270 fotos de parlamentarios · 6 países" y={1150} tam={34} borde={KC.ink} />
 
       {/* 3 · los números */}
       <Escena T={T} a={K.N} b={K.P}>
@@ -221,9 +221,9 @@ function CarasPiel() {
       <Escena T={T} a={K.M} b={K.Ni}>
         <FondoLunares color={KC.cyan} />
       </Escena>
-      <Chip T={T} at={K.M + 0.2} until={K.Ni - 0.2} texto="mujeres de piel oscura · error" x={600} y={420} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.M + 0.5} until={K.Ni - 0.2} texto="2017 → agosto de 2018" x={600} y={510} tam={30} borde={KC.ink} />
-      <Barras T={T} at={K.M + 0.6} until={K.Ni - 0.2} top={600} max={40} alto={56} filas={[
+      <Chip T={T} at={K.M + 0.2} until={K.Ni - 0.2} texto="mujeres de piel oscura · error" x={360} y={420} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.M + 0.5} until={K.Ni - 0.2} texto="2017 → agosto de 2018" x={360} y={510} tam={30} borde={KC.ink} />
+      <Barras T={T} at={K.M + 0.6} until={K.Ni - 0.2} top={680} max={40} alto={56} filas={[
         { valor: 16.97, desde: 34.7, baja: K.M + 1.6, etiqueta: 'IBM', color: KC.red, tam: 34, num: 58, alto: 56 },
         { valor: 4.1, desde: 34.5, baja: K.M + 1.9, etiqueta: 'Face++', color: KC.orange, tam: 34, num: 58, alto: 56 },
         { valor: 1.52, desde: 20.8, baja: K.M + 2.2, etiqueta: 'Microsoft', color: KC.blue, tam: 34, num: 58, alto: 56 }]} />
@@ -232,17 +232,17 @@ function CarasPiel() {
       <Escena T={T} a={K.Ni} b={K.W}>
         <FondoLunares color={KC.yellow} />
         {svg(<g opacity={kprog(T, K.Ni + 4.6, K.Ni + 5.0)}>
-          <Cara x={260} y={720} s={0.62} piel={PIEL_OSCURA} pelo="#1d140e" tipo="m" camisa={KC.teal} T={T} seed={3} />
-          <Cara x={820} y={720} s={0.62} piel={PIEL_MEDIA} pelo="#2a1a10" tipo="m" camisa={KC.pink} T={T} seed={4} />
+          <Cara x={260} y={590} s={0.55} piel={PIEL_OSCURA} pelo="#1d140e" tipo="m" camisa={KC.teal} T={T} seed={3} />
+          <Cara x={820} y={590} s={0.55} piel={PIEL_MEDIA} pelo="#2a1a10" tipo="m" camisa={KC.pink} T={T} seed={4} />
           <g opacity={kprog(T, K.Ni + 5.3, K.Ni + 5.6)}>
-            <line x1={400} y1={720} x2={680} y2={720} stroke={KC.red} strokeWidth={10} strokeDasharray="22 14" />
-            <rect x={455} y={680} width={170} height={80} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
-            <text x={540} y={735} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill="#fff">= ✔</text>
+            <line x1={390} y1={590} x2={690} y2={590} stroke={KC.red} strokeWidth={10} strokeDasharray="22 14" />
+            <rect x={455} y={550} width={170} height={80} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
+            <text x={540} y={605} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill="#fff">= ✔</text>
           </g>
         </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Ni + 0.2} until={K.Ni + 4.4} anio="2019" quien="NIST (EE. UU.)" revista="189 algoritmos · 18.27 millones de fotos" y={720} />
-      <Chip T={T} at={K.Ni + 5.6} until={K.W - 0.2} texto="«la misma persona»… y no" x={540} y={470} tam={38} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Ni + 0.2} until={K.Ni + 4.4} anio="2019" quien="NIST (EE. UU.)" revista="189 algoritmos · 18.27 millones de fotos" x={420} y={720} />
+      <Chip T={T} at={K.Ni + 5.6} until={K.W - 0.2} texto="«la misma persona»… y no" x={540} y={380} tam={38} borde={KC.red} />
       <Veces T={T} at={K.Ni + 6.4} until={K.W - 0.2} y={790} />
 
       {/* 8 · Robert Williams */}
@@ -261,9 +261,9 @@ function CarasPiel() {
           <g opacity={kprog(T, K.W + 2.5, K.W + 2.9)}><Reloj x={300} y={1060} s={0.75} horas={horas} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.W + 0.2} until={K.C - 0.2} texto="Detroit · enero de 2020" x={700} y={470} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.W + 0.2} until={K.C - 0.2} texto="Detroit · enero de 2020" x={330} y={470} tam={36} borde={KC.ink} />
       {T >= K.W + 2.5 && T < K.C + 0.3 && <div style={{ position:'absolute', left:470, top:1010, zIndex:41, font:`400 110px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, opacity:kprog(T, K.W + 2.5, K.W + 2.9) * (1 - kprog(T, K.C - 0.1, K.C + 0.3)) }}>{Math.round(horas)} horas</div>}
-      <Chip T={T} at={K.W + 5.2} until={K.C - 0.2} texto="2024: ya no pueden arrestar solo por esto" x={540} y={600} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.W + 5.2} until={K.C - 0.2} texto="2024: prohibido arrestar solo por esto" x={540} y={905} tam={30} borde={KC.leaf} />
 
       {/* 9 · cierre: las mismas dos caras */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -284,15 +284,15 @@ function CarasPiel() {
       <Subtitulo T={T} idx={8} at={K.C + 0.1} until={K.Ou - 0.1} texto="Quizá *no te ve igual.*" />
 
       <Robert T={T} apariciones={[
-        [CUES.Gancho - 0.45, CUES.Gancho + 3.5, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Gancho - 0.45, CUES.Gancho + 2.7, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Estudio + 3.4, CUES.Numeros - 0.1, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Numeros + 3.8, CUES.Pregunta - 0.15, 'avatar_11_sorprendido', 'arriba-der'],
-        [CUES.Pregunta + 0.05, CUES.Datos + 1.2, 'avatar_07_pensativo_puno', 'grande'],
-        [CUES.Datos + 3.0, CUES.Mejora - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [CUES.Mejora + 2.4, CUES.Nist - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
-        [CUES.Nist + 6.6, CUES.Williams - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [CUES.Pregunta + 0.05, CUES.Datos - 0.1, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Datos + 0.3, CUES.Datos + 2.4, 'avatar_06_pensativo_menton', 'arriba-der'],
+        [CUES.Mejora + 2.4, CUES.Nist - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
+        [CUES.Nist + 1.0, CUES.Nist + 4.4, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Williams + 3.0, CUES.Cierre - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
-        [CUES.Cierre + 0.4, CUES.Outro - 0.1, 'avatar_13_senalando_arriba', 'arriba-der']]} />
+        [CUES.Cierre + 0.3, CUES.Cierre + 2.4, 'avatar_13_senalando_arriba', 'arriba-der']]} />
       <MarcaAgua T={T} tema="ia" num="21" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="ia" robert={'assets/stickers/avatar_02_apuntando_camara.png'} />
       <AudioPista src={window.AUDIO_SRC} />
