@@ -49,4 +49,20 @@ Respuestas a las dudas del productor: (1) ✅ "la subió" es correcto (Pr en 201
 6. **Cierre (voz):** "Así que ese cuadrito no es fruta: es un cactus de 25 años o más. Si tu rosca trae ate o papaya, esa biznaga sigue en el desierto." (Tesis 2008.)
 7. **Fuentes del guion:** cambiar la fuente 5 (Wikipedia) por Nobel et al. 1992 y agregar el texto de la NOM-059-2010 (PROFEPA) como respaldo de "Pr".
 
-VEREDICTO: PENDIENTE (correcciones arriba)
+Estado previo: PENDIENTE (6 ⚠️, 0 ❌), 29 oct 2026. El productor aplicó las 7 correcciones y recortó la línea "Corte"; se revisó de nuevo todo el texto final (voz de `narracion.json` y tabla de pantalla de `guion.md`).
+
+## Correcciones aplicadas (texto final)
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| "Sale sobre todo de la biznaga de dulce, un cactus en forma de barril que solo vive en México." | ✅ | Tesis 2008 · Acta 2016 | "Its main use is in the preparation of the traditional candy known as acitrón" / "Esta especie es endémica de México" | 2008 / 2016 |
+| "Se escogen biznagas de más de medio metro: se les quitan las costillas y se corta la pulpa." | ✅ | Tesis 2008 · Ciencias 2018 | "individuals taller than 50 cm are chosen. The pulp from the stem is separated from the roots and the ribs" / "se le eliminan las costillas y se fracciona el tallo" | 2008 / 2018 |
+| "Luego se remoja en almíbar cada vez más espeso; el proceso puede tardar una semana." | ✅ | Ciencias 2018 | "remojar el tejido en jarabes cada vez más concentrados" · "Este proceso puede durar una semana" | 2018 |
+| "En 2008, una tesis de la UNAM hecha en Tehuacán estimó que tarda cerca de 25 años en medir medio metro." (contador «≈ 25 años») | ✅ | Tesis 2008 | Portada: "ZAPOTITLAN DE LAS SALINAS, PUEBLA … ENERO, 2008"; resumen: "poblaciones de E. platyacanthus en Tehuacán (Puebla), donde se realizaron observaciones" (Zapotitlán está en el Valle de Tehuacán) · "(≈ 25 years; Jiménez, in prep.)" · "close to 25 years to achieve such a size" | 2008 |
+| "Y en 2019, México la subió de categoría en su lista oficial de especies en riesgo." | ✅ | DOF 2019 · NOM 2010 | "Las especies que cambiaron de categoría fueron: Echinocactus platyacanthus (A)…" (tabla: P); en 2010: "endémica Pr" | 2019 / 2010 |
+| "Dato: una receta tradicional lleva kilo y medio de azúcar por cada kilo de biznaga." | ✅ | Tesis 2008 | "1.5 kg of sugar for every kilogram of cactus" · "family recipes" | 2008 |
+| "Así que ese cuadrito no es fruta: es un cactus de 25 años o más. Si tu rosca trae ate o papaya, esa biznaga sigue en el desierto." | ✅ | Tesis 2008 · Ciencias 2018 | ">50 cm" y "45 to 50 cm (≈ 25 years)" / "imitaciones a base de papaya o ate en tiras para sustituirlo en la rosca de reyes" | 2008 / 2018 |
+| Fuente 5 del guion: Wikipedia → Nobel et al. 1992; fuente 6 nueva: NOM-059-2010 (PROFEPA) | ✅ | Nobel 1992 · NOM 2010 | "The relative capacitance of the water-storage parenchyma averaged 1.04 MPa-1" / "endémica Pr" | 1992 / 2010 |
+
+Las demás líneas (gancho, desierto, pulpa, ósmosis, pregunta, muere) y la pantalla no cambiaron y siguen ✅ según la tabla de arriba.
+
+VEREDICTO: APROBADO

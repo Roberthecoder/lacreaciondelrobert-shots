@@ -255,7 +255,7 @@ function Chocolate() {
   const CORTE = K.Mz + 0.7;            // el machete abre la mazorca
   const salta = kprog(T, K.G + 0.35, K.G + 0.95, kEase.sale);
   const temp = klerp(26, 45, kprog(T, K.Ca + 0.3, K.Ca + 2.6, kEase.suave));
-  const levs = Array.from({ length: 7 }, (_, i) => { const g = krng(i + 50); return { x: 160 + g() * 760, y: 520 + g() * 640, r: g() * 360, b: g() }; });
+  const levs = Array.from({ length: 7 }, (_, i) => { const g = krng(i + 50); return { x: 160 + g() * 760, y: 720 + g() * 420, r: g() * 360, b: g() }; });
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la caja de corazón se abre, un bombón brinca y aparece una levadura con moñito */}
@@ -264,8 +264,8 @@ function Chocolate() {
         {svg(<>
           <Corazones T={T} />
           <CajaCorazon x={380} y={1010} s={klerp(0.85, 1.05, kprog(T, K.G, K.G + 0.5, kEase.rebote))} abre={kprog(T, K.G + 0.1, K.G + 0.5, kEase.sale)} conBombon={[true, salta < 0.05, true]} />
-          {salta > 0.05 && <Bombon x={klerp(380, 400, salta)} y={klerp(1060, 690, salta) + Math.abs(Math.sin((T - K.G) * 4)) * -16 * salta} s={klerp(0.65, 1.15, salta)} rot={Math.sin(T * 3) * 6} />}
-          <g opacity={kprog(T, K.G + 1.8, K.G + 2.2)}><Levadura T={T} x={820} y={1020} s={klerp(0.3, 1.25, kprog(T, K.G + 1.8, K.G + 2.3, kEase.rebote))} brote={0.6} mono cara /></g>
+          {salta > 0.05 && <Bombon x={klerp(380, 400, salta)} y={klerp(1060, 690, salta) + Math.abs(Math.sin((T - K.G) * 4)) * -16 * salta} s={klerp(0.65, 1.5, salta)} rot={Math.sin(T * 3) * 6} />}
+          <g opacity={kprog(T, K.G + 1.8, K.G + 2.2)}><Levadura T={T} x={840} y={1000} s={klerp(0.3, 1.8, kprog(T, K.G + 1.8, K.G + 2.3, kEase.rebote))} brote={0.6} mono cara /></g>
         </>)}
       </Escena>
       {/* 2 · la mazorca se abre: semillas en pulpa blanca llena de azúcares */}
@@ -275,9 +275,9 @@ function Chocolate() {
           const ab = kprog(T, CORTE, CORTE + 0.6, kEase.sale);
           const ang = T < CORTE ? klerp(-70, 0, kprog(T, K.Mz + 0.2, CORTE, (p) => p * p)) : klerp(0, 30, kprog(T, CORTE, CORTE + 0.5));
           return <>
-            {ab < 0.5 ? <Mazorca x={640} y={930} s={1} rot={8} /> : <>
-              <MitadMazorca T={T} x={klerp(640, 430, ab)} y={950} s={0.95} rot={klerp(8, -8, ab)} brilla={kprog(T, K.Mz + 2.4, K.Mz + 3.0)} />
-              <MitadMazorca T={T} x={klerp(640, 850, ab)} y={960} s={0.95} rot={klerp(8, 10, ab)} brilla={kprog(T, K.Mz + 2.4, K.Mz + 3.0)} />
+            {ab < 0.5 ? <Mazorca x={640} y={860} s={0.9} rot={8} /> : <>
+              <MitadMazorca T={T} x={klerp(640, 400, ab)} y={860} s={0.88} rot={klerp(8, -8, ab)} brilla={kprog(T, K.Mz + 2.4, K.Mz + 3.0)} />
+              <MitadMazorca T={T} x={klerp(640, 860, ab)} y={870} s={0.88} rot={klerp(8, 10, ab)} brilla={kprog(T, K.Mz + 2.4, K.Mz + 3.0)} />
             </>}
             {T < CORTE + 0.9 && <g opacity={1 - kprog(T, CORTE + 0.4, CORTE + 0.9)}><Machete x={900} y={600} ang={ang} /></g>}
             {T > CORTE - 0.05 && T < CORTE + 0.35 && <rect x={0} y={0} width={KW} height={KH} fill="#fff" opacity={0.5 * (1 - kprog(T, CORTE, CORTE + 0.35))} />}
@@ -288,9 +288,9 @@ function Chocolate() {
       <Escena T={T} a={K.Am} b={K.Mo}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Semilla x={290} y={980} s={klerp(0.6, 1.5, kprog(T, K.Am, K.Am + 0.6, kEase.rebote))} rot={-10} color={MORADO2} />
-          <text x={560} y={1030} textAnchor="middle" style={{ font:`400 160px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Am + 1.4, K.Am + 1.8)}>≠</text>
-          <g opacity={kprog(T, K.Am + 1.6, K.Am + 2.1)}><Bombon x={810} y={990} s={1.3} rot={Math.sin(T * 2) * 4} /></g>
+          <Semilla x={300} y={940} s={klerp(0.6, 1.9, kprog(T, K.Am, K.Am + 0.6, kEase.rebote))} rot={-10} color={MORADO2} />
+          <text x={590} y={990} textAnchor="middle" style={{ font:`400 160px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Am + 1.4, K.Am + 1.8)}>≠</text>
+          <g opacity={kprog(T, K.Am + 1.6, K.Am + 2.1)}><Bombon x={850} y={950} s={1.6} rot={Math.sin(T * 2) * 4} /></g>
         </>)}
       </Escena>
       {/* 4 · se apilan con su pulpa sobre hojas de plátano y se tapan: 2 a 10 días */}
@@ -310,14 +310,14 @@ function Chocolate() {
           {Array.from({ length: 22 }, (_, i) => { const g = krng(i + 80), cx = 120 + g() * 840, cy = 560 + g() * 600, comido = kprog(T, K.Le + 1.6 + g() * 2.4, K.Le + 2.4 + g() * 2.4);
             return <Cubo key={i} x={cx + Math.sin(T + i) * 8} y={cy} s={1.2 * (1 - comido)} rot={T * 30 + i * 20} o={1 - comido} />; })}
           {levs.map((l, i) => { const e = kprog(T, K.Le + 0.2 + i * 0.12, K.Le + 1.2 + i * 0.12, kEase.sale); const ox = l.x < 540 ? -500 : 500;
-            return <Levadura key={i} T={T} seed={i} x={l.x + ox * (1 - e) + Math.sin(T * 1.3 + i) * 14} y={l.y + Math.cos(T * 1.1 + i) * 12} s={0.9} rot={l.r} brote={0.3 + 0.5 * kprog(T, K.Le + 2.5, K.Le + 4.6) * l.b} />; })}
+            return <Levadura key={i} T={T} seed={i} x={l.x + ox * (1 - e) + Math.sin(T * 1.3 + i) * 14} y={l.y + Math.cos(T * 1.1 + i) * 12} s={1.25} rot={l.r} brote={0.3 + 0.5 * kprog(T, K.Le + 2.5, K.Le + 4.6) * l.b} />; })}
         </>)}
       </Escena>
       {/* 6a · hacen alcohol (burbujas de CO2 y gotitas) */}
       <Escena T={T} a={K.Al} b={K.Al + 1.8} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svg(<>
-          {levs.map((l, i) => <Levadura key={i} T={T} seed={i} x={l.x + Math.sin(T * 1.3 + i) * 14} y={l.y + Math.cos(T * 1.1 + i) * 12} s={0.9} rot={l.r} brote={0.6} />)}
+          {levs.map((l, i) => <Levadura key={i} T={T} seed={i} x={l.x + Math.sin(T * 1.3 + i) * 14} y={l.y + Math.cos(T * 1.1 + i) * 12} s={1.25} rot={l.r} brote={0.6} />)}
           {levs.map((l, i) => Array.from({ length: 3 }, (_, k) => { const u = ((T - K.Al) * 0.9 + k * 0.33 + i * 0.1) % 1;
             return <circle key={i + '-' + k} cx={l.x + 40 + Math.sin(T * 4 + k) * 10} cy={l.y - 60 - u * 220} r={8 + 6 * u} fill="none" stroke="#cfe9ff" strokeWidth={4} opacity={(1 - u) * kprog(T, K.Al, K.Al + 0.3)} />; }))}
           {levs.map((l, i) => <GotaQ key={'g' + i} x={l.x - 70} y={l.y + 40 + kprog(T, K.Al + 0.3, K.Al + 1.4) * 60} s={1.2} o={kprog(T, K.Al + 0.2, K.Al + 0.5)} />)}
@@ -338,11 +338,11 @@ function Chocolate() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={24} color="rgba(120,255,200,.15)" />
         {svg(<>
-          {levs.map((l, i) => <Levadura key={i} T={T} seed={i} x={l.x} y={l.y} s={0.7} rot={l.r} brote={0.6} gris={0.6} />)}
-          {Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.Ba + 0.2 + i * 0.1, K.Ba + 1.0 + i * 0.1, kEase.sale), bx = 160 + i * 150, by = 640 + (i % 2) * 120;
+          <g opacity=".35">{levs.map((l, i) => <Levadura key={i} T={T} seed={i} x={l.x} y={l.y} s={0.7} rot={l.r} brote={0.6} gris={0.6} />)}</g>
+          {Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.Ba + 0.2 + i * 0.1, K.Ba + 1.0 + i * 0.1, kEase.sale), bx = 160 + i * 150, by = 800 + (i % 2) * 110;
             return <g key={'l' + i}><Bacteria T={T} seed={i} x={bx - (1 - e) * 900} y={by} rot={-10 + i * 7} s={0.9} color={KC.mint} />
               <GotaQ x={bx + 30} y={by + 70 + kprog(T, K.Ba + 1.2, K.Ba + 2.0) * 40} color={KC.mint} s={1} o={kprog(T, K.Ba + 1.1, K.Ba + 1.4)} /></g>; })}
-          {Array.from({ length: 5 }, (_, i) => { const e = kprog(T, K.Ba + 2.2 + i * 0.1, K.Ba + 3.0 + i * 0.1, kEase.sale), bx = 200 + i * 160, by = 1030 + (i % 2) * 90;
+          {Array.from({ length: 5 }, (_, i) => { const e = kprog(T, K.Ba + 2.2 + i * 0.1, K.Ba + 3.0 + i * 0.1, kEase.sale), bx = 200 + i * 160, by = 1040 + (i % 2) * 80;
             const traga = kprog(T, K.Ba + 3.0, K.Ba + 3.6);
             return <g key={'a' + i}><GotaQ x={bx - 90 + traga * 70} y={by - 10} color="#9fe0ff" s={1.1} o={1 - traga} />
               <Bacteria T={T} seed={i + 9} x={bx + (1 - e) * 900} y={by} rot={8 - i * 6} s={0.9} color={KC.lilac} />
@@ -402,27 +402,27 @@ function Chocolate() {
             <Cajon T={T} x={290} y={1010} etiqueta={T > K.E + 2.9 ? 'normal' : ''} />
             <Cajon T={T} x={790} y={1010} tachadas={kprog(T, K.E + 3.6, K.E + 4.8)} etiqueta={T > K.E + 2.9 ? 'con antifúngico' : ''} />
           </g>
-          <g opacity={kprog(T, K.E + 3.0, K.E + 3.3) * (1 - kprog(T, K.E + 5.2, K.E + 5.6))}><Atomizador T={T} x={990} y={830} rocia={kprog(T, K.E + 3.2, K.E + 3.5)} /></g>
+          <g opacity={kprog(T, K.E + 3.0, K.E + 3.3) * (1 - kprog(T, K.E + 5.2, K.E + 5.6))}><Atomizador T={T} x={960} y={650} rocia={kprog(T, K.E + 3.2, K.E + 3.5)} /></g>
         </>)}
       </Escena>
       {/* 12 · resultado: más ácido y sin su sabor característico */}
       <Escena T={T} a={K.R} b={K.Da}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <g opacity={kprog(T, K.R + 0.1, K.R + 0.5)}><Barra x={290} y={940} s={0.85} /></g>
-          <g opacity={kprog(T, K.R + 0.5, K.R + 0.9)} transform={`translate(${Math.sin(T * 30) * 4 * kprog(T, K.R + 0.9, K.R + 1.3)} 0)`}><Barra x={790} y={940} s={0.85} agria color="#6e4a33" /></g>
-          <text x={290} y={680} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.R + 0.2, K.R + 0.5)}>con levaduras</text>
-          <text x={790} y={680} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.R + 0.6, K.R + 0.9)}>sin levaduras</text>
+          <g opacity={kprog(T, K.R + 0.1, K.R + 0.5)}><Barra x={290} y={1000} s={0.85} /></g>
+          <g opacity={kprog(T, K.R + 0.5, K.R + 0.9)} transform={`translate(${Math.sin(T * 30) * 4 * kprog(T, K.R + 0.9, K.R + 1.3)} 0)`}><Barra x={790} y={1000} s={0.85} agria color="#6e4a33" /></g>
+          <text x={290} y={765} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.R + 0.2, K.R + 0.5)}>con levaduras</text>
+          <text x={790} y={765} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.R + 0.6, K.R + 0.9)}>sin levaduras</text>
         </>)}
       </Escena>
       {/* 13 · dato: las semillas sin levaduras quedaron morado violeta, no bien cafés */}
       <Escena T={T} a={K.Da} b={K.Ci}>
         <FondoLunares color={ROSA} />
         {svg(<>
-          <g opacity={kprog(T, K.Da + 0.2, K.Da + 0.6)}><Semilla x={290} y={980} s={klerp(0.7, 1.35, kprog(T, K.Da + 0.2, K.Da + 0.8, kEase.rebote))} rot={-8} color="#6a3a22" /></g>
-          <g opacity={kprog(T, K.Da + 1.4, K.Da + 1.8)}><Semilla x={790} y={980} s={klerp(0.7, 1.35, kprog(T, K.Da + 1.4, K.Da + 2.0, kEase.rebote))} rot={8} color={MORADO} /></g>
-          <text x={290} y={1170} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Da + 0.5, K.Da + 0.8)}>con levaduras</text>
-          <text x={790} y={1170} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Da + 1.7, K.Da + 2.0)}>sin levaduras</text>
+          <g opacity={kprog(T, K.Da + 0.2, K.Da + 0.6)}><Semilla x={290} y={900} s={klerp(0.7, 1.45, kprog(T, K.Da + 0.2, K.Da + 0.8, kEase.rebote))} rot={-8} color="#6a3a22" /></g>
+          <g opacity={kprog(T, K.Da + 1.4, K.Da + 1.8)}><Semilla x={790} y={900} s={klerp(0.7, 1.45, kprog(T, K.Da + 1.4, K.Da + 2.0, kEase.rebote))} rot={8} color={MORADO} /></g>
+          <text x={290} y={1110} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Da + 0.5, K.Da + 0.8)}>con levaduras</text>
+          <text x={790} y={1110} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Da + 1.7, K.Da + 2.0)}>sin levaduras</text>
         </>)}
       </Escena>
       {/* 14 · cierre: la misma caja del inicio; la levadura con moñito presenta el bombón; burbuja con el montón */}
@@ -431,8 +431,8 @@ function Chocolate() {
         {svg(<>
           <Corazones T={T} />
           <CajaCorazon x={380} y={1010} s={1.05} abre={1} conBombon={[true, false, true]} />
-          <Bombon x={400} y={690 + Math.sin(T * 3) * 8} s={1.15} rot={Math.sin(T * 3) * 6} />
-          <Levadura T={T} x={820} y={1020} s={1.25} brote={0.6} mono cara />
+          <Bombon x={400} y={690 + Math.sin(T * 3) * 8} s={1.5} rot={Math.sin(T * 3) * 6} />
+          <Levadura T={T} x={840} y={1000} s={1.8} brote={0.6} mono cara />
           <g opacity={kprog(T, K.Ci + 1.6, K.Ci + 2.2)} transform={`translate(0 ${(1 - kprog(T, K.Ci + 1.6, K.Ci + 2.2, kEase.sale)) * 40})`}>
             <circle cx={520} cy={575} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} /><circle cx={500} cy={540} r={20} fill="#fff" stroke={KC.ink} strokeWidth={4} />
             <ellipse cx={330} cy={430} rx={230} ry={120} fill="#fff" stroke={KC.ink} strokeWidth={6} />
@@ -442,7 +442,7 @@ function Chocolate() {
         </>)}
       </Escena>
 
-      <Capitulo T={T} x={190} y={210} hasta={K.Ou} caps={[{ at: K.Mo, titulo: 'La fermentación' }, { at: K.Le, titulo: 'Las levaduras' }, { at: K.Ba, titulo: 'Las bacterias' }, { at: K.Pi, titulo: 'El sabor' }]} />
+      <Capitulo T={T} x={190} y={210} hasta={K.E - 0.2} caps={[{ at: K.Mo, titulo: 'La fermentación' }, { at: K.Le, titulo: 'Las levaduras' }, { at: K.Ba, titulo: 'Las bacterias' }, { at: K.Pi, titulo: 'El sabor' }]} />
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.2} until={K.Mz - 0.2} texto="Especial San Valentín" x={540} y={1500} tam={40} borde={KC.yellow} />
@@ -462,11 +462,11 @@ function Chocolate() {
       <Chip T={T} at={K.Le + 2.0} until={K.Al - 0.3} texto="hongos de una sola célula" x={540} y={1580} tam={40} borde={KC.mint} />
       <Chip T={T} at={K.Al + 0.3} until={K.Al + 1.7} texto="azúcar → alcohol + CO₂" x={540} y={1580} tam={40} borde={KC.cyan} />
       <Chip T={T} at={K.Al + 2.1} until={K.Ba - 0.3} texto="la pulpa escurre" x={540} y={1500} tam={44} borde={KC.yellow} />
-      <Etq T={T} at={K.Ba + 1.1} until={K.Ca - 0.3} x={600} y={490} texto="ácido láctico" tam={32} color={KC.mint} lado="izq" />
+      <Etq T={T} at={K.Ba + 1.1} until={K.Ca - 0.3} x={380} y={560} texto="ácido láctico" tam={32} color={KC.mint} />
       <Etq T={T} at={K.Ba + 3.6} until={K.Ca - 0.3} x={60} y={1470} texto="alcohol → ácido acético" tam={32} color={KC.yellow} />
       <Chip T={T} at={K.Ba + 4.0} until={K.Ca - 0.3} texto="el del vinagre" x={540} y={1590} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Ca + 1.4} until={K.Ca + 2.4} texto="más de 40 °C" x={640} y={560} tam={52} borde={KC.red} />
-      <Etq T={T} at={K.Ca + 2.9} until={K.P - 0.3} x={600} y={560} texto="germen" tam={34} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.Ca + 2.9} until={K.P - 0.3} x={200} y={740} texto="germen" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ca + 3.9} until={K.P - 0.2} texto="la semilla muere" x={600} y={1500} tam={46} borde={KC.ink} />
       {T > K.Pi - 0.3 && T < K.Pi + 4.4 && <Escala T={T} z={1} pxPorMm={1e8} x={60} y={1440} />}
       <Etq T={T} at={K.Pi + 0.4} until={K.Pi + 4.0} x={60} y={590} texto="proteína" tam={32} />
@@ -504,8 +504,8 @@ function Chocolate() {
         [CUES.Amarga + 0.5, CUES.Monton - 0.3, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Levadura + 0.6, CUES.Alcohol - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Bacterias + 0.6, CUES.Calor - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
-        [CUES.Pregunta + 0.05, CUES.Piezas + 1.2, 'avatar_07_pensativo_puno', 'grande'],
-        [CUES.Estudio + 0.8, CUES.Resultado - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
+        [CUES.Pregunta + 0.05, CUES.Piezas + 0.3, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Estudio + 0.8, CUES.Estudio + 2.9, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Resultado + 0.3, CUES.Dato - 0.2, 'avatar_10_serio_molesto', 'izq-alto'],
         [CUES.Dato + 0.3, CUES.Cierre - 0.3, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />

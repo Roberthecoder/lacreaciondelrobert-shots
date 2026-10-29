@@ -165,22 +165,23 @@ function VasoAcido({ T, x, y, burbujas = 0, color = 'rgba(255,236,150,.75)' }) {
 }
 
 // Unidad de glucosa (anillo de 6 con su O) + 3 sustituyentes. nitro 0..1 por sustituyente → –OH se vuelve –ONO₂.
-function Anillo({ x, y, nitros = [0, 0, 0], brillaO = 0, rompe = 0, T = 0, k = 0 }) {
-  const vol = k % 2 ? -1 : 1; // en la celulosa, cada glucosa va volteada respecto a la anterior
-  const R = 46, pts = Array.from({ length: 6 }, (_, i) => { const a = (i / 6) * Math.PI * 2 - Math.PI / 2; return [Math.cos(a) * R, Math.sin(a) * R]; });
-  const sus = [[0, -1, 0], [-0.9, 1, 4], [0.9, 1, 2]]; // dirección y vértice
-  return <g transform={`translate(${x} ${y + Math.sin(T * 2 + k) * 4}) scale(1 ${vol})`}>
+// En la celulosa cada glucosa va volteada respecto a la anterior (k impar → espejo vertical).
+function Anillo({ x, y, nitros = [0, 0, 0], brillaO = 0, T = 0, k = 0 }) {
+  const vol = k % 2 ? -1 : 1, R = 46;
+  const pts = Array.from({ length: 6 }, (_, i) => { const a = (i / 6) * Math.PI * 2 - Math.PI / 2; return [Math.cos(a) * R, Math.sin(a) * R * vol]; });
+  const sus = [[0, -1, 0], [-0.55, 1, 4], [0.55, 1, 2]]; // dirección (x, y) y vértice
+  return <g transform={`translate(${x} ${y + Math.sin(T * 2 + k) * 4})`}>
     <polygon points={pts.map((p) => p.join(',')).join(' ')} fill="rgba(255,255,255,.06)" stroke={KC.texto} strokeWidth={6} strokeLinejoin="round" />
     <circle cx={pts[1][0]} cy={pts[1][1]} r={11} fill={KC.red} stroke={KC.ink} strokeWidth={2} />
-    {sus.map(([dx, dy, v], i) => {
-      const n = nitros[i], px = pts[v][0], py = pts[v][1], ex = px + dx * 44, ey = py + dy * 50;
+    {sus.map(([dx, dy0, v], i) => {
+      const dy = dy0 * vol, n = nitros[i], px = pts[v][0], py = pts[v][1], ex = px + dx * 40, ey = py + dy * 46, ty = ey + (dy < 0 ? -12 : 34);
       return <g key={i}>
         <line x1={px} y1={py} x2={ex} y2={ey} stroke={KC.texto} strokeWidth={5} />
         {n < 0.5
-          ? <text x={ex} y={ey + (dy < 0 ? -8 : 30)} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#cfd6e4" opacity={1 - n * 2}>OH</text>
+          ? <text x={ex} y={ty} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#cfd6e4" opacity={1 - n * 2}>OH</text>
           : <g opacity={(n - 0.5) * 2}>
-              <circle cx={ex} cy={ey + (dy < 0 ? -18 : 20)} r={44} fill={KC.orange} opacity={0.18 + 0.25 * brillaO * (0.6 + 0.4 * Math.sin(T * 6 + i + k))} />
-              <text x={ex} y={ey + (dy < 0 ? -8 : 30)} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.orange}>ONO₂</text>
+              <circle cx={ex} cy={ty - 10} r={30} fill={KC.orange} opacity={0.15 + 0.3 * brillaO * (0.6 + 0.4 * Math.sin(T * 6 + i + k))} />
+              <text x={ex} y={ty} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.orange}>ONO₂</text>
             </g>}
       </g>;
     })}
@@ -196,7 +197,7 @@ function Cadena({ T, x0 = 110, y = 860, n = 5, paso = 215, nitro = () => 0, bril
         <circle cx={xm} cy={y + 14} r={12} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={1 - r} />
         {r > 0.05 && <path d={`M ${xm - 22} ${y - 10} l 10 12 l -8 8 l 12 14`} stroke={KC.yellow} strokeWidth={5} fill="none" opacity={r} />}
       </g>; })}
-    {Array.from({ length: n }, (_, i) => <Anillo key={i} T={T} k={i} x={x0 + i * paso + rompe(i) * 0} y={y} nitros={[nitro(i, 0), nitro(i, 1), nitro(i, 2)]} brillaO={brillaO} />)}
+    {Array.from({ length: n }, (_, i) => <Anillo key={i} T={T} k={i} x={x0 + i * paso} y={y} nitros={[nitro(i, 0), nitro(i, 1), nitro(i, 2)]} brillaO={brillaO} />)}
   </g>;
 }
 

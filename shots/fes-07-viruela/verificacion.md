@@ -39,7 +39,7 @@ Verificador independiente (subagente que no escribió el guion), 29 oct 2026. El
 | Chip: Día Mundial de la Ciencia para la Paz y el Desarrollo, 10 de noviembre | ✅ | UNESCO (unesco.org/en/days/science-peace-development) | "Celebrated every 10 November" / "Since its proclamation by UNESCO in 2001" | 2001 |
 | Cierre: "Esa marquita es la firma de dos rivales que, con ciencia, se pusieron de acuerdo." | ⚠️ | Fenner 1988, cap. 8, p. 333 · tesis UNAM 2015 | México eliminó la viruela en 1951, antes de la propuesta de 1958, y vacunaba con vacuna propia del Instituto Nacional de Higiene: la cicatriz de una abuela mexicana NO viene del programa EE.UU.–URSS. Como metáfora literal ("es la firma") es inexacta. | 1951 / 1958 |
 
-VEREDICTO: PENDIENTE (correcciones abajo)
+Estado previo: PENDIENTE (correcciones abajo)
 
 ## Correcciones
 
@@ -53,3 +53,16 @@ VEREDICTO: PENDIENTE (correcciones abajo)
 Observaciones sin corrección (opcionales):
 - La cicatriz de la BCG (tuberculosis) también queda en el brazo en México; si se quiere evitar confusión, en pantalla puede ir una etiqueta chica «si se vacunó antes de ~1975». La tesis UNAM (Aguirre Bolaños, 2015) documenta vacunación antivariolosa en México hasta 1975.
 - Al dibujar la escena micro, el virus debe medir ~250 nm de largo contra la barra de 300 nm (ViralZone).
+
+## Correcciones aplicadas (texto final)
+
+Revisión del texto final completo (voz de `narracion.json` y pantalla de `guion.md`), 29 oct 2026. Las otras 13 líneas de voz y el resto de la pantalla no cambiaron y siguen ✅ según la tabla de arriba.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Cierre (voz): "Esa marquita es el recuerdo de una enfermedad que dos rivales, con ciencia, borraron juntos." | ✅ | OMS, History of smallpox vaccination · Fenner 1988, lámina 9.1 y p. 469–470 | "Epidemiologists from the Soviet Union and the United States of America worked side by side in the middle of a cold war." | 1958–1980 |
+| Gancho (pantalla): etiqueta «si se vacunó antes de ~1975» | ✅ | Aguirre Bolaños, tesis UNAM 2015 | "la vacuna contra la viruela continuó aplicándose hasta mediados de los setentas" / "En noviembre de 1975 … 5 658 vacunaciones" | 1972–1975 |
+| Escena 1 (pantalla): «3 de 10» con «en promedio» | ✅ | CDC, History of Smallpox | "On average, 3 out of every 10 people who got it died." | consulta 2026 |
+| Escena 2 (pantalla): viriones ~250 × 200 nm, a escala con la barra de 300 nm | ✅ | ViralZone (SIB), Orthopoxvirus | "Enveloped, brick-shaped virion, 250nm long and 200nm wide." | consulta 2026 |
+
+VEREDICTO: APROBADO

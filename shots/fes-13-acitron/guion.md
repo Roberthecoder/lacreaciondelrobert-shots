@@ -59,6 +59,6 @@
 - El dibujo es esquemático: la biznaga, el mapa, las células de parénquima y la ósmosis están simplificados.
 - No se dice que comprar o vender acitrón sea delito ni se acusa a ninguna panadería: solo que la especie está en la lista oficial de especies en riesgo y que la receta mata a la planta (fuente 1). La frase "si tu rosca trae ate o papaya" se apoya en la fuente 4 (imitaciones de papaya o ate en tiras para la rosca).
 - La NOM-059 de 2010 decía "sujeta a protección especial" (Pr). Muchas notas de prensa siguen repitiendo "Pr"; la modificación de 2019 la cambió de categoría (fuente 3). El DOF 2019 no da la causa del cambio: por eso la voz ya no dice "Por eso". En pantalla no se pone la nueva sigla: el considerando dice A y la tabla dice P (las dos arriba de Pr; resuelto en `verificacion.md`).
-- Los "25 años" son una estimación de una tesis de 2008 ("Jiménez, in prep."), para 45–50 cm de altura; se dicen como cálculo y con su año.
+- Los "25 años" son una estimación de una tesis de 2008 ("Jiménez, in prep."), para 45–50 cm de altura; se dicen como estimación y con su año.
 - Descartados por no verificables o inferidos: "500–600 años", "14 a 40 años para 40 cm" (solo en notas de prensa que citan a la UNAM sin fuente abierta), "1–2 cm por año" (Excélsior 2026 citando a CONABIO sin enlace).
 - La UICN la tenía como "casi amenazada" (Hernández et al. 2013, citado en fuente 2); no se menciona en la voz.

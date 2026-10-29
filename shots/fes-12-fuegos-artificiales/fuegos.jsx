@@ -37,7 +37,7 @@ function Estallido({ T, at, x, y, color, r = 260, n = 38, vida = 2.6, seed = 1, 
   const col = palido ? mixHex(color, DESLAVA, palido) : color;
   return <g opacity={o}>
     {u < 0.35 && <circle cx={x} cy={y} r={30 + 200 * u} fill="#fff" opacity={1 - u / 0.35} />}
-    <circle cx={x} cy={y + cae * 0.5} r={r * e * 0.9} fill={col} opacity={0.12} />
+    <circle cx={x} cy={y + cae * 0.5} r={r * e * 0.9} fill={col} opacity={0.07} />
     {Array.from({ length: n }, (_, i) => {
       const a = (i / n) * Math.PI * 2 + g() * 0.12, rr = r * (0.78 + 0.22 * g());
       const px = x + Math.cos(a) * rr * e, py = y + Math.sin(a) * rr * e + cae;
@@ -155,17 +155,17 @@ function Prisma({ x, y, s = 1 }) {
   </g>;
 }
 // Franja de espectro: fondo negro con arcoíris tenue y líneas brillantes (nm). Líneas ilustrativas.
-const nm2x = (nm, w) => ((nm - 400) / 300) * w;
+const nm2x = (nm, w, a = 400, b = 700) => ((nm - a) / (b - a)) * w;
 const nmColor = (nm) => nm < 440 ? '#7a5cff' : nm < 490 ? '#3d8bff' : nm < 530 ? '#2fe0a8' : nm < 570 ? '#9cff3d' : nm < 595 ? '#ffd21a' : nm < 620 ? '#ff8a1f' : '#ff3348';
-function Espectro({ T, x, y, w = 420, h = 74, lineas = [], at = 0, etiqueta }) {
+function Espectro({ T, x, y, w = 420, h = 74, lineas = [], at = 0, etiqueta, desde = 400, hasta = 700 }) {
   const e = kprog(T, at, at + 0.6, kEase.sale);
   return <g transform={`translate(${x} ${y})`} opacity={kprog(T, at - 0.1, at + 0.2)}>
     <defs><linearGradient id={'arc' + x + y} x1="0" x2="1"><stop offset="0" stopColor="#7a5cff" /><stop offset=".3" stopColor="#3d8bff" /><stop offset=".45" stopColor="#2fe0a8" /><stop offset=".6" stopColor="#9cff3d" /><stop offset=".7" stopColor="#ffd21a" /><stop offset=".8" stopColor="#ff8a1f" /><stop offset="1" stopColor="#ff3348" /></linearGradient></defs>
     <rect x={0} y={0} width={w} height={h} rx={10} fill="#05060a" stroke={KC.ink} strokeWidth={6} />
     <rect x={6} y={h - 12} width={w - 12} height={6} rx={3} fill={`url(#arc${x}${y})`} opacity={0.6} />
     {lineas.map((nm, i) => <g key={i} opacity={kclamp(e * lineas.length - i, 0, 1)}>
-      <rect x={nm2x(nm, w) - 7} y={6} width={14} height={h - 22} fill={nmColor(nm)} opacity={0.35} />
-      <rect x={nm2x(nm, w) - 3} y={6} width={6} height={h - 22} fill={nmColor(nm)} /></g>)}
+      <rect x={nm2x(nm, w, desde, hasta) - 7} y={6} width={14} height={h - 22} fill={nmColor(nm)} opacity={0.35} />
+      <rect x={nm2x(nm, w, desde, hasta) - 3} y={6} width={6} height={h - 22} fill={nmColor(nm)} /></g>)}
     {etiqueta && <text x={-18} y={h / 2 + 14} textAnchor="end" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>{etiqueta}</text>}
   </g>;
 }
@@ -320,13 +320,13 @@ function Fuegos() {
         {svg((() => {
           const vac = kprog(T, K.Cs + 0.2, K.Cs + 0.9, kEase.suave), ev = kprog(T, K.Cs + 0.9, K.Cs + 2.4);
           return <>
-            <Botella x={klerp(230, 330, vac)} y={klerp(1000, 820, vac)} rot={klerp(0, 70, vac)} s={0.85} />
-            {vac > 0.8 && ev < 0.6 && <path d="M 470 860 Q 500 900 520 960" stroke="#9fdcff" strokeWidth={16} fill="none" strokeLinecap="round" />}
+            <g opacity={1 - kprog(T, K.Cs + 2.0, K.Cs + 2.4)}><Botella x={klerp(230, 330, vac)} y={klerp(1000, 860, vac)} rot={klerp(0, 115, vac)} s={0.85} /></g>
+            {vac > 0.8 && ev < 0.6 && <path d="M 500 950 Q 515 965 525 975" stroke="#9fdcff" strokeWidth={16} fill="none" strokeLinecap="round" />}
             <Mechero T={T} x={560} y={1200} color="#7fb4ff" s={0.7} />
             <path d="M 430 980 Q 560 1060 690 980 Z" fill="#e8ecf2" stroke={KC.ink} strokeWidth={7} />
             <ellipse cx={560} cy={985} rx={118 * (1 - ev * 0.7)} ry={12} fill="#9fdcff" />
             {ev > 0 && ev < 1 && [0, 1, 2].map((k) => <path key={k} d={`M ${520 + k * 40} 950 q 14 -24 0 -48 q -14 -24 0 -48`} stroke="#fff" strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.6} transform={`translate(0 ${-((T * 50 + k * 18) % 40)})`} />)}
-            <Espectro T={T} x={250} y={700} w={600} h={90} at={K.Cs + 2.3} lineas={[455.5, 459.3]} etiqueta="Cs" />
+            <Espectro T={T} x={250} y={700} w={600} h={90} at={K.Cs + 2.3} lineas={[455.5, 459.3]} etiqueta="Cs" desde={430} hasta={490} />
           </>;
         })())}
       </Escena>
@@ -361,7 +361,7 @@ function Fuegos() {
             <Estallido key={i} T={T} at={K.Ci + d} x={x} y={y} color={c} r={140} n={24} seed={30 + i} queda />)}
         </>)}
         <Ciudad T={T} luz={1} />
-        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={800} y={1540} r={180} fx={380} fy={700} tinte={ROJO} etiqueta="átomos de estroncio"
+        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={800} y={1540} r={180} fx={380} fy={700} tinte={ROJO} etiqueta="estroncio + cloro"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}>
             <rect width={r * 2} height={r * 2} fill="#140616" />
             {[[r - 70, r - 50], [r + 70, r + 40], [r - 40, r + 90]].map(([ax, ay], i) => <g key={i}>
@@ -371,7 +371,7 @@ function Fuegos() {
           </svg>} />
       </Escena>
 
-      <Capitulo T={T} x={190} y={210} hasta={K.Ou} caps={[{ at: K.Ca, titulo: 'El empujón' }, { at: K.H, titulo: 'La huella' }, { at: K.A, titulo: 'El azul' }, { at: K.E, titulo: 'El prisma' }]} />
+      <Capitulo T={T} x={190} y={210} hasta={K.D} caps={[{ at: K.Ca, titulo: 'El empujón' }, { at: K.H, titulo: 'La huella' }, { at: K.A, titulo: 'El azul' }, { at: K.E, titulo: 'El prisma' }]} />
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.3} until={K.Co - 0.2} texto="Especial Año Nuevo" x={540} y={1500} tam={40} borde={KC.yellow} />
@@ -394,14 +394,14 @@ function Fuegos() {
       <Etq T={T} at={K.A + 0.6} until={K.A + 4.6} x={70} y={1460} texto="cobre + cloro = CuCl" tam={36} color={KC.cyan} />
       <Etq T={T} at={K.A + 2.8} until={K.A + 4.8} x={900} y={680} texto="más calor" tam={30} color={KC.red} lado="izq" />
       <Chip T={T} at={K.A + 5.1} until={K.E - 0.2} texto="se rompe: el azul se deslava" x={540} y={1520} tam={42} borde={DESLAVA} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="1859–1860" quien="Bunsen y Kirchhoff · Heidelberg" revista="la luz de flamas, por un prisma" x={540} y={760} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="1860" quien="Bunsen y Kirchhoff · Heidelberg" revista="espectroscopio (1859): flama + prisma" x={540} y={760} />
       <Chip T={T} at={K.E + 6.4} until={K.Cs - 0.2} texto="cada elemento, su huella" x={540} y={1520} tam={44} borde={KC.ink} />
       <Etq T={T} at={K.E + 3.3} until={K.Cs - 0.3} x={650} y={1170} texto="líneas ilustrativas" tam={22} color={KC.ink} />
       <Chip T={T} at={K.Cs + 2.7} until={K.D - 0.2} texto="Cs · cesio (1860)" x={380} y={560} tam={52} borde={AZUL} />
       <Etq T={T} at={K.Cs + 3.4} until={K.D - 0.3} x={70} y={1480} texto="del latín caesius: «gris azulado»" tam={30} />
       <Etq T={T} at={K.Cs + 2.6} until={K.D - 0.3} x={560} y={830} texto="dos líneas azules" tam={28} color={KC.ink} />
       <Chip T={T} at={K.D + 3.8} until={K.Ci - 0.2} texto="segundos ÷ 3 = km" x={540} y={1520} tam={48} borde={KC.ink} />
-      <Etq T={T} at={K.D + 0.6} until={K.D + 3.3} x={560} y={1480} texto="la luz llega casi al instante" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.D + 0.6} until={K.D + 3.3} x={70} y={1460} texto="la luz llega casi al instante" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="no es pintura: es estroncio" x={350} y={480} tam={36} borde={ROJO} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

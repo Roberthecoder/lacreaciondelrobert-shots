@@ -43,9 +43,9 @@ function Flama({ T, x, y, H = 260, W = 70, id, esp = 0, luz = 1, amarillo = 1, r
     {/* zona amarilla luminosa */}
     <path d={formaFlama(Hh, Ww, esp)} fill={`url(#${id}a)`} opacity={luz * amar} />
     {/* llama azul tenue (espacio) */}
-    <path d={formaFlama(Hh, Ww, esp)} fill={`url(#${id}b)`} opacity={luz * (1 - amar) * 0.85} />
+    <path d={formaFlama(Hh, Ww, esp)} fill={`url(#${id}b)`} opacity={luz * (1 - amar) * 0.55} stroke="#9fd0ff" strokeWidth={esp * 3} strokeOpacity={0.5} />
     {/* cono oscuro con el vapor, junto al pabilo */}
-    <path d={formaFlama(Hh * 0.42, Ww * 0.5, esp)} transform={`translate(0 ${-Hh * 0.02})`} fill="#5a3c78" opacity={0.5 * luz * amar} />
+    <path d={formaFlama(Hh * 0.42, Ww * 0.5, esp)} transform={`translate(0 ${-Hh * 0.02})`} fill="#4a3a6a" opacity={0.3 * luz * amar} />
     {/* base azul */}
     <path d={`M ${-Ww * 0.98} ${-Hh * 0.17} C ${-Ww * 0.95} ${Hh * 0.08} ${-Ww * 0.5} ${Hh * 0.145} 0 ${Hh * 0.145} C ${Ww * 0.5} ${Hh * 0.145} ${Ww * 0.95} ${Hh * 0.08} ${Ww * 0.98} ${-Hh * 0.17} C ${Ww * 0.6} ${-Hh * 0.02} ${-Ww * 0.6} ${-Hh * 0.02} ${-Ww * 0.98} ${-Hh * 0.17} Z`} fill={AZULF} opacity={0.85 * luz * amar} />
     {resalta > 0 && <path d={formaFlama(Hh * 1.06, Ww * 1.15, 0)} fill="none" stroke={KC.white} strokeWidth={7} strokeDasharray="18 12" strokeDashoffset={-T * 50} opacity={resalta} />}
@@ -59,7 +59,8 @@ function Pabilo({ T, x, y, s = 1, brasa = 1 }) {
   </g>;
 }
 // Velita de posada: vela delgada de cera con su protector de papel de colores. (x, y) = centro de la cara de arriba.
-function Velita({ T, x, y, cw = 70, alto = 700, protector = true, charco = 0.6, mano = true, s = 1 }) {
+function Velita({ T, x, y, cw = 70, alto = 700, protector = true, charco = 0.6, mano = true, s = 1, protY, manoY }) {
+  protY = protY == null ? alto * 0.42 : protY; manoY = manoY == null ? alto * 0.62 : manoY;
   const g = krng(4);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-cw / 2} y={0} width={cw} height={alto} fill={CERA} stroke={KC.ink} strokeWidth={6} />
@@ -68,12 +69,12 @@ function Velita({ T, x, y, cw = 70, alto = 700, protector = true, charco = 0.6, 
     <path d={`M ${-cw / 2} 6 q 10 40 2 70 q -6 16 6 22`} stroke={CERA2} strokeWidth={7} fill="none" />
     <ellipse cx={0} cy={0} rx={cw / 2} ry={cw * 0.16} fill={CERA} stroke={KC.ink} strokeWidth={6} />
     <ellipse cx={0} cy={0} rx={cw * 0.4 * charco} ry={cw * 0.12 * charco} fill={CERAL} opacity={0.9 * Math.min(1, charco * 2)} />
-    {protector && <g transform={`translate(0 ${alto * 0.42})`}>
+    {protector && <g transform={`translate(0 ${protY})`}>
       <path d={`M ${-cw * 2.1} -60 L ${cw * 2.1} -60 L ${cw * 0.7} 40 L ${-cw * 0.7} 40 Z`} fill={KC.pink} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
       <path d={`M ${-cw * 2.1} -60 ${Array.from({ length: 12 }, (_, k) => `Q ${-cw * 2.1 + (k + 0.5) * cw * 4.2 / 12} ${-84} ${-cw * 2.1 + (k + 1) * cw * 4.2 / 12} -60`).join(' ')}`} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
       {[-1, 0, 1].map((k) => <circle key={k} cx={k * cw * 1.05} cy={-18} r={10} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />)}
     </g>}
-    {mano && <g transform={`translate(0 ${alto * 0.62})`}>
+    {mano && <g transform={`translate(0 ${manoY})`}>
       <path d={`M ${-cw * 1.4} 30 C ${-cw * 1.6} 200 ${cw * 1.6} 200 ${cw * 1.5} 40 Z`} fill={PIEL2} stroke={KC.ink} strokeWidth={6} />
       {[0, 1, 2, 3].map((k) => <rect key={k} x={-cw * 0.95} y={k * 40 - 10} width={cw * 1.9} height={44} rx={22} fill={PIEL} stroke={KC.ink} strokeWidth={5} />)}
       <ellipse cx={-cw * 0.85} cy={-30} rx={cw * 0.42} ry={30} fill={PIEL} stroke={KC.ink} strokeWidth={5} transform={`rotate(-30 ${-cw * 0.85} -30)`} />
@@ -191,10 +192,10 @@ function Vela() {
         <PapelPicado T={T} />
         <Ambiente T={T} n={26} color="rgba(255,225,26,.45)" tam={[3, 8]} vel={10} />
         {svg(<g transform={`translate(0 ${(1 - entra) * 500})`}>
-          <Velita T={T} x={330} y={860} cw={74} alto={900} charco={0.7} />
-          <Pabilo T={T} x={327} y={860} />
-          <Flama T={T} x={335} y={813} H={250} W={62} id="g" luz={prende} />
-          {T > K.G + 0.25 && T < K.G + 0.9 && Array.from({ length: 8 }, (_, i) => { const u = (T - K.G - 0.25) / 0.65, an = i * 0.785; return <circle key={i} cx={335 + Math.cos(an) * 120 * u} cy={760 + Math.sin(an) * 120 * u} r={7} fill={KC.yellow} opacity={1 - u} />; })}
+          <Velita T={T} x={330} y={760} cw={74} alto={1300} charco={0.7} protY={330} manoY={760} />
+          <Pabilo T={T} x={327} y={760} />
+          <Flama T={T} x={335} y={713} H={250} W={62} id="g" luz={prende} />
+          {T > K.G + 0.25 && T < K.G + 0.9 && Array.from({ length: 8 }, (_, i) => { const u = (T - K.G - 0.25) / 0.65, an = i * 0.785; return <circle key={i} cx={335 + Math.cos(an) * 120 * u} cy={660 + Math.sin(an) * 120 * u} r={7} fill={KC.yellow} opacity={1 - u} />; })}
         </g>)}
       </Escena>
       {/* 2 · el calor derrite la cera; el aire que sube enfría la orilla: la copita */}
@@ -256,7 +257,7 @@ function Vela() {
           return <g>
             <path d="M -60 1050 C 100 1220 980 1220 1140 1050 C 900 1150 180 1150 -60 1050 Z" fill={AZULF} opacity={0.25 + 0.1 * Math.sin(T * 5)} />
             <path d="M -60 1050 C 100 1220 980 1220 1140 1050" stroke="#9fd0ff" strokeWidth={10} fill="none" opacity=".7" />
-            <path d="M 160 760 Q 540 500 920 760" stroke="rgba(255,210,58,.35)" strokeWidth={60} fill="none" />
+            <ellipse cx={540} cy={560} rx={520} ry={260} fill="rgba(255,190,60,.18)" /><ellipse cx={540} cy={600} rx={340} ry={150} fill="rgba(255,210,80,.16)" />
             {Array.from({ length: 12 }, (_, i) => { const px = 100 + g() * 880, py = 820 + g() * 300, at = K.Az + 0.4 + i * 0.32, f = Math.max(0, 1 - Math.abs(((T - at) % 2.2 + 2.2) % 2.2 - 0.3) * 2.5) * kprog(T, at, at + 0.1);
               return <Fragmento key={i} x={px + Math.sin(T * 1.5 + i) * 14} y={py + Math.cos(T * 1.2 + i) * 10} tipo={i % 3 ? 'CH' : 'C2'} flash={f} s={1.15} />; })}
           </g>; })())}
@@ -273,7 +274,7 @@ function Vela() {
       </Escena>
       {/* 7 · hollín: granitos de carbón tan calientes que brillan (poco oxígeno) */}
       <Escena T={T} a={K.Ho} b={K.Go} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #3a2a10 0%, #0d1424 70%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 45%, #7a5216 0%, #3a2408 45%, #0d1424 85%)' }}></div>
         {svg((() => { const g = krng(12), forma = kprog(T, K.Ho + 0.3, K.Ho + 1.6), calor = kprog(T, K.Ho + 1.8, K.Ho + 4.2, kEase.suave);
           return <g>
             {Array.from({ length: 16 }, (_, i) => { const px = 120 + g() * 840, py = 560 + g() * 700, d = g() * 0.6;
@@ -328,12 +329,12 @@ function Vela() {
           return <g>
             {/* soplido */}
             {T > sopla - 0.4 && T < sopla + 0.5 && [0, 1, 2].map((k) => { const u = kprog(T, sopla - 0.4 + k * 0.08, sopla + 0.3 + k * 0.08); return <path key={k} d={`M ${klerp(80, 420, u)} ${900 + k * 30} q 40 -20 80 0 q 40 20 80 0`} stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" opacity={Math.sin(Math.PI * u)} />; })}
-            <Velita T={T} x={540} y={1010} cw={100} alto={800} charco={0.7} />
+            <Velita T={T} x={540} y={1010} cw={100} alto={1000} charco={0.7} protY={150} manoY={520} />
             <Pabilo T={T} x={536} y={1010} s={1.4} brasa={T < sopla + 1 ? 1 : 0.4} />
             <path d={humoD} stroke={HUMO} strokeWidth={26} fill="none" strokeLinecap="round" opacity={hum * 0.85} strokeDasharray={`${hum * 700} 2000`} />
             <path d={humoD} stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" opacity={hum * 0.6} strokeDasharray={`${hum * 700} 2000`} />
             {/* el fuego que baja por el humo */}
-            {baja > 0 && baja < 1 && <path d={humoD} stroke={AMAR} strokeWidth={30} fill="none" strokeLinecap="round" strokeDasharray={`${baja * 560} 2000`} strokeDashoffset={-(1 - baja) * 0} opacity={0.95} style={{ filter:'drop-shadow(0 0 16px #ff8a1f)' }} transform="" />}
+            {baja > 0 && baja < 1 && <path d={humoD} stroke={AMAR} strokeWidth={30} fill="none" strokeLinecap="round" strokeDasharray="130 3000" strokeDashoffset={-(1 - baja) * 420} opacity={0.95} style={{ filter:'drop-shadow(0 0 16px #ff8a1f)' }} />}
             <Flama T={T} x={548} y={955} H={330} W={80} id="da" luz={luzDato} />
             {/* otra flama (cerillo largo) que se acerca */}
             {acerca > 0 && <g transform={`translate(${tipX} ${tipY}) rotate(-20)`}>
@@ -349,20 +350,20 @@ function Vela() {
         <PapelPicado T={T} />
         <Ambiente T={T} n={26} color="rgba(255,225,26,.45)" tam={[3, 8]} vel={10} />
         {svg(<g>
-          <Velita T={T} x={330} y={860} cw={74} alto={900} charco={0.7} />
-          <Pabilo T={T} x={327} y={860} />
-          <Flama T={T} x={335} y={813} H={klerp(250, 290, kprog(T, K.Ci, K.Ci + 0.8, kEase.rebote))} W={66} id="ci" />
+          <Velita T={T} x={330} y={760} cw={74} alto={1300} charco={0.7} protY={330} manoY={760} />
+          <Pabilo T={T} x={327} y={760} />
+          <Flama T={T} x={335} y={713} H={klerp(250, 290, kprog(T, K.Ci, K.Ci + 0.8, kEase.rebote))} W={66} id="ci" />
         </g>)}
-        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={800} y={1590} r={190} fx={335} fy={700} tinte={KC.yellow} etiqueta="POR DENTRO · vapor de cera"
+        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={800} y={1590} r={190} fx={335} fy={600} tinte={KC.yellow} etiqueta="POR DENTRO · vapor de cera"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r}) scale(.42) translate(-540 -800)`}><FlamaPorDentro T={Tl} oxN={10} /></g></svg>} />
       </Escena>
 
       <Capitulo T={T} x={190} y={210} hasta={K.Ou} caps={[{ at: K.Co, titulo: 'La copita' }, { at: K.Va, titulo: 'Por dentro de la flama' }, { at: K.Go, titulo: 'La forma' }, { at: K.E, titulo: 'El experimento' }]} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.2} until={K.Co - 0.2} texto="Especial Posadas" x={540} y={1500} tam={40} borde={KC.yellow} />
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.8} until={K.G + 2.7} texto="¿cera?" x={330} y={470} tam={52} />
-      <Etq T={T} at={K.G + 2.6} until={K.Co - 0.3} x={60} y={470} texto="cera hecha gas" tam={44} color={KC.yellow} />
+      <Chip T={T} at={K.G + 0.2} until={K.Co - 0.2} texto="Especial Posadas" x={760} y={900} tam={40} borde={KC.yellow} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.8} until={K.G + 2.7} texto="¿cera?" x={720} y={1060} tam={52} />
+      <Etq T={T} at={K.G + 2.6} until={K.Co - 0.3} x={450} y={1060} texto="cera hecha gas" tam={44} color={KC.yellow} />
       <Etq T={T} at={K.Co + 1.2} until={K.Pa - 0.3} x={720} y={1080} texto="cera líquida" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Co + 2.8} until={K.Pa - 0.3} x={60} y={1460} texto="aire que sube: orilla fría" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Co + 3.2} until={K.Pa - 0.3} texto="una copita de cera" x={540} y={1580} tam={44} borde={KC.cyan} />
@@ -380,15 +381,15 @@ function Vela() {
       <Chip T={T} at={K.Ho + 2.8} until={K.Go - 0.3} texto="tan calientes que brillan" x={540} y={1580} tam={44} borde={AMAR} />
       <Chip T={T} at={K.Go + 1.0} until={K.Es - 0.3} texto="convección" x={540} y={1580} tam={52} borde={NAR} />
       <Etq T={T} at={K.Go + 2.2} until={K.Es - 0.3} x={640} y={600} texto="hollín a la punta" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Es + 3.4} until={K.E - 0.3} x={690} y={1150} texto="≈ 1.5 cm · azul tenue" tam={30} lado="izq" color="#bfe3ff" />
+      <Etq T={T} at={K.Es + 3.4} until={K.E - 0.3} x={1040} y={800} texto="≈ 1.5 cm · azul tenue" tam={30} lado="izq" color="#bfe3ff" />
       <Chip T={T} at={K.Es + 0.4} until={K.E - 0.3} texto="NASA · transbordador y Mir · años 90" x={540} y={1530} tam={34} borde={KC.cyan} />
       <Chip T={T} at={K.Es + 3.6} until={K.E - 0.3} texto="sin aire que suba" x={540} y={1640} tam={40} borde={KC.white} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 5.6} anio="1860" quien="Michael Faraday · Londres" revista="Royal Institution · Navidad de 1860-61" x={400} y={560} />
-      <Chip T={T} at={K.E + 2.6} until={K.Da - 0.3} texto="para niños y jóvenes" x={540} y={1400} tam={40} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 5.6} anio="1860" quien="Michael Faraday · Londres" revista="Royal Institution · 1860-61" x={360} y={560} />
+      <Chip T={T} at={K.E + 2.6} until={K.Da - 0.3} texto="para niños y jóvenes" x={540} y={1450} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.Da + 1.4} until={K.Da + 4.0} x={600} y={560} texto="humo blanco = cera" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Da + 2.8} until={K.Da + 4.6} x={700} y={760} texto="a unos centímetros" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Da + 4.6} until={K.Ci - 0.3} texto="¡se vuelve a prender!" x={540} y={1580} tam={46} borde={KC.yellow} />
-      <Chip T={T} at={K.Ci + 2.8} until={K.Ou} texto="no es cera: es gas" x={400} y={500} tam={44} borde={KC.yellow} />
+      <Etq T={T} at={K.Da + 2.8} until={K.Da + 4.6} x={640} y={820} texto="a unos cm" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Da + 4.6} until={K.Ci - 0.3} texto="¡se vuelve a prender!" x={680} y={520} tam={46} borde={KC.yellow} />
+      <Chip T={T} at={K.Ci + 2.8} until={K.Ou} texto="no es cera: es gas" x={760} y={980} tam={44} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Co - 0.1} texto="No quema cera: *quema cera hecha gas.*" />
@@ -408,7 +409,7 @@ function Vela() {
         [CUES.Gancho - 0.45, CUES.Gancho + 4.0, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Copita + 0.6, CUES.Copita + 4.6, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Vapor + 0.5, CUES.Vapor + 4.8, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [CUES.Pregunta + 0.05, CUES.Hollin + 1.2, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Hollin + 0.2, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Gota + 0.5, CUES.Gota + 4.6, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Espacio + 0.6, CUES.Espacio + 6.0, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Estudio + 0.6, CUES.Estudio + 5.6, 'avatar_08_recostado_mano', 'arriba-der'],
