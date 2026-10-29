@@ -708,63 +708,125 @@
   },
   {
    "id": "fun-40-coprinus",
-   "titulo": "El hongo que se derrite en tinta (Coprinus comatus)",
+   "titulo": "El hongo que se derrite en tinta: *Coprinus comatus*",
    "serie": "Shot Fungi Mati",
    "numero": 40,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-40-coprinus",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://botit.botany.wisc.edu/toms_fungi/may2004.html",
+    "https://mushroomexpert.com/fungionwood/gilled%20fungi/species%20pages/Coprinus%20comatus.html",
+    "https://www.mushroomexpert.com/coprinus_comatus.html",
+    "https://pubmed.ncbi.nlm.nih.gov/21148944/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1932715/",
+    "https://www.fungipedia.org/hongos/coprinus-comatus.html",
+    "https://www.newforestnpa.gov.uk/discover/plants-fungi/fungi/shaggy-inkcap/",
+    "https://www.nies.go.jp/chiiki1/protoz/toxicity/nematoda/panagrel.htm"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Hongos que cazan gusanos con lazos (Arthrobotrys)",
+    "Coprinopsis atramentaria y el alcohol",
+    "Tinta de hongo: cómo se hacía"
+   ]
   },
   {
    "id": "fun-41-pollo-bosque",
-   "titulo": "El hongo que sabe a pollo (Laetiporus)",
+   "titulo": "Esto no es pollo: el hongo que se come un árbol (*Laetiporus*)",
    "serie": "Shot Fungi Mati",
    "numero": 41,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-41-pollo-bosque",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://doi.org/10.32473/EDIS-pp358-2020",
+    "https://edis.ifas.ufl.edu/publication/PP358/pdf",
+    "https://www.mushroomexpert.com/laetiporus_sulphureus.html",
+    "https://www.fungiflora.no/intro-poroide-fungi-decay",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2876446/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1267987/",
+    "https://doi.org/10.24326/asphc.2018.1.8",
+    "https://pubmed.ncbi.nlm.nih.gov/15797608/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Pudrición blanca contra pudrición café",
+    "Hongos de repisa y la seguridad de los árboles",
+    "Pigmentos de hongos como colorantes"
+   ]
   },
   {
    "id": "fun-42-fiebre-valle",
-   "titulo": "La fiebre del valle: el hongo del polvo del desierto (Coccidioides, Sonora)",
+   "titulo": "Ese polvo no es solo tierra: la fiebre del valle",
    "serie": "Shot Fungi Mati",
    "numero": 42,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-42-fiebre-valle",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC545195/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8340492/",
+    "https://wwwn.cdc.gov/phil/Details.aspx?pid=12197",
+    "https://pubmed.ncbi.nlm.nih.gov/9062329/",
+    "https://www.cdc.gov/valley-fever/about/index.html",
+    "https://www.cdc.gov/valley-fever/hcp/clinical-overview/index.html"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Coccidioides en perros",
+    "Cómo el cambio de clima mueve a los hongos del suelo",
+    "El polvo del desierto y la salud"
+   ]
   },
   {
    "id": "fun-43-histoplasma",
-   "titulo": "La enfermedad de las cuevas: Histoplasma y el guano de murciélago",
+   "titulo": "La enfermedad de las cuevas: *Histoplasma capsulatum*",
    "serie": "Shot Fungi Mati",
    "numero": 43,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-43-histoplasma",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://www.cdc.gov/histoplasmosis/about/index.html",
+    "https://www.cdc.gov/histoplasmosis/causes/index.html",
+    "https://www.cdc.gov/histoplasmosis/prevention/index.html",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1797635/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7596272/",
+    "https://www.canada.ca/en/public-health/services/reports-publications/canada-communicable-disease-report-ccdr/monthly-issue/2025-51/issue-5-may-2025/acute-histoplasmosis-four-immunocompetent-canadian-travellers-cenote-yucatan.html",
+    "https://wwwnc.cdc.gov/eid/article/27/3/ET-2703_article.htm"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Hongos dimórficos: moho afuera, levadura adentro",
+    "Los macrófagos: cómo se comen a los microbios",
+    "El guano de murciélago como fertilizante"
+   ]
   },
   {
    "id": "fun-44-nariz-blanca",
-   "titulo": "El hongo que despierta a los murciélagos en invierno (síndrome de nariz blanca)",
+   "titulo": "El hongo que no deja dormir a los murciélagos: síndrome de nariz blanca",
    "serie": "Shot Fungi Mati",
    "numero": 44,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-44-nariz-blanca",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://science.umd.edu/faculty/wilkinson/SFT/Blehert09Science.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3380050/",
+    "https://pubs.usgs.gov/publication/cir1560/full",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8518069/",
+    "https://wwwnc.cdc.gov/eid/article/16/8/10-0002_article",
+    "https://www.usgs.gov/publications/phylogenetics-a-fungal-invasion-origins-and-widespread-dispersal-white-nose-syndrome",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12088370/",
+    "https://www.pnas.org/doi/10.1073/pnas.1200374109"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Cómo hibernan los murciélagos",
+    "Murciélagos de México que comen insectos de cultivo",
+    "Hongos que viven en el frío"
+   ]
   },
   {
    "id": "fun-45-ciclosporina",

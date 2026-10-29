@@ -30,7 +30,7 @@
 
 Barras de escala: 10 cm (pieza de empaque), 100 µm (hifas), 2 m (torre, con persona de referencia), 10 cm (ladrillo).
 
-Etiquetas de especie: en la escena de la torre, chip chico "hongo de Hy-Fi: *Ganoderma lucidum*" (según la tabla de la revisión de 2022).
+En la escena de la torre, chip chico "hongo + tallos de maíz" (Holcim: "Organic brick made of corn stalks and mushroom roots"). No se nombra la especie del hongo: las fuentes del proyecto no la dan.
 
 ## Fuentes (abiertas el 29 oct 2026)
 
@@ -45,7 +45,6 @@ Etiquetas de especie: en la escena de la torre, chip chico "hongo de Hy-Fi: *Gan
    > "MBC have a variety of uses, including in the insulation and materials used in interior design, whereby the majority of applications are for interior or dry locations that are not exposed to weather"
    > "Mycelium based packaging is a rapidly growing area of product line development"
    > "they are fully biodegradable and can simply be composted in soil over the course of a few months at the end of their life"
-   > Tabla 7: "HY-FI (2014) Outside Brick Wood and Steel Ganoderma lucidum Corn stalks Heat treated The Living Studio"
 2. Holcim Foundation (2014/2015). Hy-fi in USA. https://holcimfoundation.org/Projects/hy-fi
    > "10,000 low energy and compostable bricks were manufactured"; "standing over 12 meters tall"; "from June until September 2014"
    > "the brick composted and the resulting soil was returned to local community gardens"
@@ -58,7 +57,9 @@ Etiquetas de especie: en la escena de la torre, chip chico "hongo de Hy-Fi: *Gan
 5. Elsacker, E. et al. (2019). Mechanical, physical and chemical characterisation of mycelium-based composites with different types of lignocellulosic substrates. *PLoS ONE* 14(7): e0213954. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0213954 (Vrije Universiteit Brussel, Bélgica)
    > "All samples were dried in a convection oven at a temperature of 70 °C for 5 to 10 hours, until their weight stabilised."
    > "The moulds were filled by layers, while compressing each layer with a spoon."
-6. Ecovative · Mushroom Packaging (página de la empresa, consultada 2026). https://mushroompackaging.com/
+6. Autodesk Research, página del equipo The Living (creadores de Hy-Fi).
+   > "composted the bricks, and returned the resulting soil to local community gardens"
+7. Ecovative · Mushroom Packaging (página de la empresa, consultada 2026). https://mushroompackaging.com/
    > "only two simple ingredients — hemp hurd and mycelium"; "Kiln drying then removes water and renders the mycelium inert"; "a sustainable and home-compostable alternative to the plastic foam"
 
 El dibujo es esquemático.

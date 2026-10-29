@@ -36,6 +36,8 @@ Fuentes abiertas:
 | 14b | Pantalla: "unicel: 0.03–9 %" | ✅ | [A] | "…which is much higher than polystyrene (0.03–9.00 wt%)" | 2022 |
 | 15 | Se usa donde no se moja ni carga peso: empaques, aislantes y paneles de interior | ✅ | [A] | "MBC have a variety of uses, including in the insulation and materials used in interior design, whereby the majority of applications are for interior or dry locations that are not exposed to weather"; "better suited … cores and panels of doors"; "Mycelium based packaging is a rapidly growing area" | 2022 |
 | 16 | Cierre: puede volver a la tierra (chip "compostable") | ✅ | [A], [EC] | [A] "fully biodegradable and can simply be composted in soil over the course of a few months at the end of their life"; [EC] "fully home compostable and will return to the soil in 45 days" | 2022 / 2026 |
-| 17 | Chip: "hongo de Hy-Fi: *Ganoderma lucidum*" | ⚠️ | [A] (solo) | [A] Tabla 7: "HY-FI (2014) … Ganoderma lucidum … Corn stalks … The Living Studio". Ninguna fuente primaria del proyecto (Holcim, Arup, Autodesk/The Living, Wired, Metalocus, ArchDaily/Ecovative) nombra la especie; solo dicen "mycelium"/"mushroom roots". Dato de segunda mano sin cita verificable | 2022 |
+| 17 | Chip: "hongo + tallos de maíz" (corregido; antes: "hongo de Hy-Fi: *Ganoderma lucidum*", ⚠️ porque ninguna fuente del proyecto da la especie; se quitó) | ✅ | [H], [W] | [H] "Organic brick made of corn stalks and mushroom roots"; [W] "made from a combination of chopped up corn stalks and mycelium" | 2014 |
 
-Pendiente: fila 17 (⚠️).
+Resumen: 21 afirmaciones revisadas; la única ⚠️ (especie del hongo en Hy-Fi, fila 17) se corrigió quitando la especie y re-verificando el chip nuevo. Todas quedan ✅. La voz no cambió.
+
+VEREDICTO: APROBADO

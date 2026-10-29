@@ -22,7 +22,7 @@
 | 7 | Pelusa | Y la pudre: esa pelusa son tallitos con sus esporas en racimitos, como de uvas. | La fresa se ablanda y se cubre de pelusa gris. **Al microscopio** (fondo oscuro, barra 10 µm / 1 mm): tallitos oscuros ramificados (conidióforos) con racimitos de esporas ovaladas en las puntas; a un lado, un racimo de uvas de comparación. Etiquetas "conidióforo", "esporas (conidios)". |
 | 8 | Vecinas | Por eso contagia a las fresas vecinas: pasa por contacto y suelta esporas al aire. | De vuelta a la cajita: los hilos pasan de la fresa enferma a la que la toca (chip "contacto") y una nubecita de esporas sale hacia arriba (chip "esporas al aire"); las vecinas empiezan a ponerse grises. |
 | 9 | Estudio | En Florida, entre 1999 y 2001, vieron que la flor es más vulnerable que la fresa verde. | `TarjetaEstudio` "1999–2001 · Florida, EE. UU. · Univ. de Florida · Mertely, MacKenzie y Legard · *Plant Disease*, 2002". Comparativa: flor (más vulnerable) vs. fresa verde. |
-| 10 | Estambres2 | Y en una temporada, quitarles los estambres a las flores redujo la pudrición. | Una flor con sus estambres quitados (tijeritas) junto a una flor normal; barras "con estambres" vs. "sin estambres": menos fresas podridas. Chip "temporada 2000–2001". |
+| 10 | Estambres2 | Y en una temporada, quitarles los estambres a las flores redujo la pudrición. | Una flor con sus estambres quitados (tijeritas) junto a una flor normal; barras "con estambres" vs. "sin estambres" (sin números): menos fresas podridas. Chip "temporada 2000–2001". |
 | 11 | Noble | En uvas, con noches húmedas y días secos, el mismo hongo da la podredumbre noble de vinos dulces como Sauternes y Tokaji. | Fondo amarillo: un racimo de uvas blancas; luna con neblina → sol seco, y las uvas se arrugan y oscurecen. Etiquetas "podredumbre noble", y dos botellitas "Sauternes (Francia)" y "Tokaji (Hungría)". Chip "el mismo *Botrytis cinerea*". |
 | 12 | Cierre | Así que esa pelusa no es de anoche: es un hongo que pudo esperar desde la flor. | **Regreso a la imagen del inicio:** la misma cajita de fresas con la pelusa; en la fresa aparece, como fantasma, la flor de la que salió. Chip "esperó desde la flor". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
@@ -41,7 +41,7 @@ Barras de escala: 3 cm (fresa), 1 cm (flor), 1 mm y 10 µm (pelusa al microscopi
    > "Induction of the necrotrophic phase in ripe strawberries could be triggered by changes in biochemical composition of the host tissues associated with the ripening process, such as increased sugar content, volatile production and alteration of plant defences" (→ por eso se dice "se cree")
    > "Secondary infections can also result from nesting, which corresponds to direct penetration of mycelia growing on neighbouring plant organs such as infected leaves and fruit"
    > "B. cinerea has no apparent host specificity and can infect more than 1000 plant species"
-   > "It has been estimated that more than 64% of the strawberry infections result from organic fragments that are in contact with the fruit, such as petals and stamens" (apoya el "muchas veces" del gancho)
+   > "In strawberry, most B. cinerea infections in fruit appear to originate from primary infections of flowers or secondary infections caused by direct contact with infected flower parts" (apoya el "muchas veces" del gancho)
 2. Williamson, B., Tudzynski, B., Tudzynski, P. y van Kan, J. A. L. (2007). *Botrytis cinerea*: the cause of grey mould disease. *Molecular Plant Pathology* 8(5): 561–580. https://doi.org/10.1111/j.1364-3703.2007.00417.x (resumen)
    > "an airborne plant pathogen with a necrotrophic lifestyle attacking over 200 crop hosts worldwide"
    > "Over 200 mainly dicotyledonous plant species … are affected" ; "rotting of vegetables, fruits and flowers post-harvest to produce prolific grey conidiophores and (macro)conidia typical of the disease"
@@ -63,5 +63,7 @@ Barras de escala: 3 cm (fresa), 1 cm (flor), 1 mm y 10 µm (pelusa al microscopi
    > "This phenomenon is utilised to produce world-renowned wines such as the Sauternes AOC and Tokaji Aszú in France and Hungary respectively"
    > "can result in the formation of either the preferred noble rot (NR) or the loss-making grey rot (GR), depending on the prevailing climatic conditions"
    > "cracks in the cuticle layers leading to dehydration and an increase in sugar concentration"
+8. Rienth, M. et al. (2021). Modifications of Grapevine Berry Composition Induced by Main Viral and Fungal Pathogens in a Climate Change Scenario. *Frontiers in Plant Science* 12: 717223. https://pmc.ncbi.nlm.nih.gov/articles/PMC8693719/
+   > "Noble rot is used to produce highly valued sweet dessert wines, such as Sauternes, Tokaji Aszu, and Amarone."
 
 El dibujo es esquemático.
