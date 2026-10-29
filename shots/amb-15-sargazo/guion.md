@@ -5,7 +5,7 @@
 - **Formato:** N2 "El número" (8,850 km; más de 20 millones de toneladas en 2018; ~38 millones en julio de 2025) + N1 "Por dentro" (bajamos al alga: vesículas de gas, microbios que fijan nitrógeno, el gas de la pudrición). Viaje macro → micro → macro: abre y cierra en la misma playa con sargazo, transformada (al final se ve también el mar abierto con peces y tortugas bajo el sargazo).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: "Esto que apesta en las playas de Quintana Roo no es basura: es un alga que viajó miles de kilómetros."
 - **Duración:** voz 957 caracteres escritos ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → objetivo **61.5 s** en la base.
-- **Cuentas:** 8,850 km (Wang 2019) es más de 2 veces el ancho de México de Tijuana a Cancún (~3,000 km en línea recta; no se usa en la voz, solo como idea visual si se verifica) · 38 ÷ 20 ≈ 1.9 (no se dice "casi el doble" en voz porque 2018 mide el cinturón y 2025 todo el Atlántico con el Caribe y el Golfo: son áreas distintas).
+- **Cuentas:** 38 ÷ 20 ≈ 1.9 (no se dice "casi el doble" en voz porque 2018 mide el cinturón y 2025 todo el Atlántico con el Caribe y el Golfo: son áreas distintas).
 
 ## Versión narrada
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | 0 | Gancho | Esto que apesta en las playas de Quintana Roo no es basura: es un alga que viajó miles de kilómetros. | Cuadro 0: playa caribeña (arena blanca, mar turquesa) y una ola deja un montón café-dorado de sargazo; líneas verdes de "olor" suben. Un sello "BASURA" se tacha y aparece "ALGA". |
 | 1 | Alga | Es el sargazo: flota con bolitas llenas de gas. | `Lupa` sobre una rama: tallo ramificado, hojitas alargadas con borde dentado y vesículas redondas de gas (neumatocistos). Etiquetas "*Sargassum natans*" y "*S. fluitans*", chip "vesículas de gas". Barra de escala "1 cm". |
-| 2 | Cinturon | Desde 2011 los satélites ven un cinturón de sargazo que suele ir de África Occidental al Golfo de México. | Mapa esquemático del Atlántico: un satélite pasa y dibuja una franja café de África Occidental al Caribe y el Golfo. Chip "desde 2011". |
+| 2 | Cinturon | Desde 2011, los satélites ven un cinturón de sargazo que suele ir de África Occidental al Golfo de México. | Mapa esquemático del Atlántico: un satélite pasa y dibuja una franja café de África Occidental al Caribe y el Golfo. Chip "desde 2011". |
 | 3 | Cifra | En junio de 2018 medía ocho mil ochocientos cincuenta kilómetros y tenía más de veinte millones de toneladas. | Número gigante "8,850 km" con una regla sobre la franja; luego "+20 millones de toneladas · jun 2018". |
 | 4 | Hoy | En julio de 2025, en todo el Atlántico, eran unos treinta y ocho millones de toneladas. | Barra que crece al lado de la de 2018: "~38 millones t · jul 2025 · todo el Atlántico". |
 | 5 | Pregunta | ¿Qué lo hace crecer tanto? | **Re-gancho.** "?" gigante sobre la franja; Robert grande pensativo. |

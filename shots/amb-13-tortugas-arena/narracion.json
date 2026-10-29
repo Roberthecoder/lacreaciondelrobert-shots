@@ -1,0 +1,19 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Tortugas base narrada.dc.html",
+  "salida": "Shot Tortugas narrado.dc.html",
+  "nota": "Shot Ambiental #13. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Si naciste niño o niña, lo decidieron tus cromosomas. A esta tortuga la está decidiendo la arena." },
+    { "escena": "Nido", "texto": "Su mamá cavó un hoyo en la playa, dejó los huevos y regresó al mar." },
+    { "escena": "Embrion", "texto": "Adentro, el embrión no trae cromosomas sexuales que decidan por él." },
+    { "escena": "Tercio", "texto": "Decide el calor, sobre todo en el tercio de en medio de la incubación." },
+    { "escena": "Pivote", "texto": "Cerca de veintinueve grados nacen mitad machos y mitad hembras. Más fresco, más machos; más caliente, más hembras." },
+    { "escena": "Pregunta", "texto": "¿Y si la playa se calienta un poquito más cada año?" },
+    { "escena": "Estudio", "texto": "En 2018, un equipo de la NOAA estudió tortugas verdes de la Gran Barrera de Coral, en Australia." },
+    { "escena": "Hembras", "texto": "De las que nacieron en las playas calientes del norte, el noventa y nueve por ciento de las jóvenes eran hembras." },
+    { "escena": "Oaxaca", "texto": "Y en Oaxaca, en dos criaderos de tortuga laúd, el calor de los nidos dio un cálculo de noventa y seis por ciento de hembras." },
+    { "escena": "Sombra", "texto": "Por eso ya se prueba enfriar nidos con sombra o con agua." },
+    { "escena": "Cierre", "texto": "A ti te decidieron tus cromosomas. A la próxima tortuguita que veas salir del nido, la decidieron unos grados de arena." }
+  ]
+}
