@@ -99,7 +99,7 @@ function Alucinaciones() {
           {traga < 1 && <Chicle x={klerp(820, 470, traga)} y={klerp(700, 780, traga)} s={klerp(1.2, 0.5, traga)} />}
         </>)}
       </Escena>
-      <Lupa T={T} at={K.M + 2.6} until={K.P - 0.3} x={800} y={1000} r={200} fx={430} fy={1200} tinte={KC.mint} etiqueta="RAYOS X · intestino"
+      <Lupa T={T} at={K.M + 2.6} until={K.P - 0.3} x={800} y={1000} r={200} fx={430} fy={1200} tinte={KC.mint} etiqueta="POR DENTRO · intestino"
         interior={(t, r) => { const u = kprog(t, K.M + 2.8, K.P - 0.4); const pts = [[40, 60], [340, 60], [340, 160], [60, 160], [60, 260], [340, 260], [340, 360]];
           const seg = u * (pts.length - 1), i = Math.min(pts.length - 2, Math.floor(seg)), f = seg - i, cx = klerp(pts[i][0], pts[i + 1][0], f), cy = klerp(pts[i][1], pts[i + 1][1], f);
           return <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#5a1a2e" /><polyline points={pts.map((p) => p.join(',')).join(' ')} fill="none" stroke="#e07a8f" strokeWidth={50} strokeLinejoin="round" strokeLinecap="round" /><Chicle x={cx} y={cy} s={0.35} /></svg>; }} />

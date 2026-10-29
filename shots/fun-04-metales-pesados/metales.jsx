@@ -264,7 +264,7 @@ function MetalesMudo() {
       {T < K.F && <div style={{ position:'absolute', left:60, right:60, top:330, zIndex:44, textAlign:'center', opacity:kprog(T, K.P, K.P + 0.3) }}>
         <div style={{ display:'inline-block', background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:26, padding:'14px 30px', boxShadow:`10px 10px 0 ${KC.ink}`, font:`900 50px/1.1 ${KF.texto}`, color:KC.ink }}>
           ¿Por qué <span style={{ color:KC.red }}>NO</span> recoger hongos junto a la carretera?</div></div>}
-      <Lupa T={T} at={K.R + 0.2} until={K.B - 0.4} x={360} y={760} r={210} fx={760} fy={sup - 320} etiqueta="RAYOS X · sombrero" tinte={KC.red}
+      <Lupa T={T} at={K.R + 0.2} until={K.B - 0.4} x={360} y={760} r={210} fx={760} fy={sup - 320} etiqueta="POR DENTRO · sombrero" tinte={KC.red}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#e9d9bf" />{Array.from({ length: 26 }, (_, i) => <Metal key={i} x={(i * 71 + 30) % (r * 2 - 30) + 15} y={(i * 113 + 40) % (r * 2 - 30) + 15 + mece(t, i, 0.5) * 6} k={i} r={18} o={kprog(t, K.R + 0.4 + i * 0.08, K.R + 0.7 + i * 0.08)} />)}</svg>} />
       <Medidor T={T} at={K.C + 0.6} until={K.Re - 0.3} etiqueta="METALES EN EL HONGO" valor={nivel} texto={(v) => (v > 0.7 ? 'alto' : v > 0.35 ? 'medio' : 'bajo')} y={640} color={nivel(T) > 0.7 ? KC.red : nivel(T) > 0.35 ? KC.orange : KC.mint} />
       <Chip T={T} at={K.C + 0.4} until={K.R - 0.2} texto="polvo y humo caen al suelo" y={560} borde={KC.red} tam={36} />

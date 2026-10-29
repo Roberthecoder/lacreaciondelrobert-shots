@@ -264,7 +264,7 @@ function Eliza() {
       {kvisible(T, K.G + 1.6, K.D - 0.3) && (() => { const e = kentrada(T, K.G + 1.6, K.D - 0.3, 'pop');
         return <div style={{ position:'absolute', left:60, top:470, width:500, zIndex:35, opacity:e.o, transform:`scale(${e.s})`, transformOrigin:'90% 100%' }}>
           <div style={{ background:KC.noche, border:`7px solid ${KC.white}`, borderRadius:30, padding:'18px 22px', boxShadow:`10px 10px 0 ${KC.ink}` }}>
-            <div style={{ font:`900 28px ${KF.texto}`, color:KC.cyan, marginBottom:10 }}>RAYOS X · ADENTRO:</div>
+            <div style={{ font:`900 28px ${KF.texto}`, color:KC.cyan, marginBottom:10 }}>POR DENTRO:</div>
             {['SI «mi» → «tu»', 'SI «triste» → «SIENTO…»', 'SI nada → «SIGA»'].map((t, i) => <div key={i} style={{ opacity:kprog(T, K.G + 2.0 + i * 0.35, K.G + 2.3 + i * 0.35), font:`700 30px ${KF.mono}`, color:TINTA, background:PAPEL, borderRadius:10, padding:'6px 14px', marginBottom:10, border:`4px solid ${KC.ink}` }}>{t}</div>)}
           </div>
         </div>; })()}

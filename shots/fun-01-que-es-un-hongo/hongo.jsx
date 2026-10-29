@@ -158,7 +158,7 @@ function HongoNarrado() {
           <path d={`M 170 1600 Q 540 ${1600 - klerp(150, 300, kprog(T, K.L, K.L + 4.5))} 910 1600 Z`} fill="#f2dcae" stroke={KC.ink} strokeWidth={9} />
           <path d="M 160 1600 Q 200 1780 540 1790 Q 880 1780 920 1600" fill="#d9e1e8" stroke={KC.ink} strokeWidth={9} />
         </svg>
-        <Lupa T={T} at={K.L + 0.5} until={K.Ci - 0.3} x={540} y={680} r={280} fx={540} fy={1480} etiqueta="RAYOS X · masa de pan" tinte={KC.yellow}
+        <Lupa T={T} at={K.L + 0.5} until={K.Ci - 0.3} x={540} y={680} r={280} fx={540} fy={1480} etiqueta="AL MICROSCOPIO · masa de pan" tinte={KC.yellow}
           interior={(t, r) => <svg width={r * 2} height={r * 2}>{[[r * 0.6, r * 0.7, 0], [r * 1.35, r * 0.6, 1], [r * 0.9, r * 1.35, 2], [r * 1.55, r * 1.4, 3]].map(([cx, cy, i]) =>
             <Levadura key={i} x={cx} y={cy} r={r * 0.2} brote={kprog(t, K.L + 1 + i * 0.5, K.L + 3 + i * 0.5)} T={t} seed={i} rot={i * 40} />)}</svg>} />
         <Etq T={T} at={K.L + 1.6} until={K.Ci - 0.3} x={190} y={1080} texto="Saccharomyces cerevisiae" it lado="der" tam={30} />
