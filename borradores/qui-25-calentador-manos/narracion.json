@@ -9,11 +9,11 @@
     },
     {
       "escena": "Relleno",
-      "texto": "En una marca común, la mitad o más del relleno es hierro en polvo, con agua, sal, carbón activado y vermiculita."
+      "texto": "Según la hoja de seguridad de una marca, de 2021, la mitad o más del relleno es hierro en polvo; luego agua, sal, carbón activado y vermiculita."
     },
     {
       "escena": "Empaque",
-      "texto": "En su empaque cerrado no le llega aire. Al abrirlo, el oxígeno entra por la bolsita."
+      "texto": "Cerrado, no le llega aire. Al abrirlo, el oxígeno entra por la bolsita."
     },
     {
       "escena": "Oxido",
@@ -21,11 +21,11 @@
     },
     {
       "escena": "Polvo",
-      "texto": "Aquí va rapidísimo: en polvo, el hierro se oxida mucho más rápido que un clavo."
+      "texto": "Aquí va rapidísimo: con sal y hecho polvo, el hierro se oxida mucho más rápido que un clavo."
     },
     {
       "escena": "Ayudantes",
-      "texto": "La sal y el agua aceleran el óxido, el carbón atrapa oxígeno y la vermiculita guarda el agua."
+      "texto": "El agua ayuda, el carbón atrapa oxígeno y la vermiculita guarda el agua."
     },
     {
       "escena": "Pregunta",
@@ -33,7 +33,7 @@
     },
     {
       "escena": "Patente",
-      "texto": "En 1973, en Japón, Asahi Kasei pidió patente para una bolsita así: en una prueba se mantuvo entre 45 y 50 grados por 22 horas."
+      "texto": "Una patente de Asahi Kasei, de los años 70, probó una bolsita así: se mantuvo entre 45 y 50 grados por 22 horas."
     },
     {
       "escena": "Cuidado",

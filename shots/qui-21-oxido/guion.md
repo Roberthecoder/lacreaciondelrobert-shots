@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esa reja no se está ensuciando: está regresando a ser óxido, como la piedra de donde salió."
 - **Seguridad:** nada que hacer en casa; no se recomienda ningún producto.
 - **Duración:** voz 950 caracteres / 177 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** estimados (`estimar-escenas.mjs`).
-- **Estado:** guion corregido según `verificacion.md` (tierra → rocas, "explicó", "el hierro" junto al mar, "más de 1600 años", gancho y cierre literales); falta re-verificar esas líneas, animación y tabla "Robert en pantalla". Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`, VEREDICTO: APROBADO), animación lista (`oxido.jsx`, revisión en `revision/hoja.png`), voz pendiente de aprobación de Robert (~950 créditos).
 
 ## Versión narrada
 
@@ -20,13 +20,31 @@ Tiempos estimados: Gancho 0–5.5 · Mina 5.5–12.6 · Receta 12.6–17.6 · Sa
 | 4 | Poroso | El óxido tiene grietas y poros: se descarapela, deja hierro nuevo al aire y se lo sigue comiendo. | Corte transversal del barrote: la capa naranja "Fe₂O₃·nH₂O" crece esponjosa, con grietas; una escama se desprende y cae; el frente de óxido avanza hacia adentro, capa tras capa. Contador "metal que queda" baja. |
 | 5 | Aluminio | El aluminio también se oxida, pero su capa es delgadísima, pegada, y lo protege. | Pantalla dividida: izquierda hierro (capa naranja gruesa, rota); derecha lata/marco de aluminio plateado con una línea fina azul "Al₂O₃" bien pegada; los O₂ rebotan contra ella. Chip "pasivación". |
 | 6 | Pregunta | ¿Y el hierro nunca puede hacer eso? | **Re-gancho.** "?" gigante sobre el barrote oxidado. |
-| 7 | Pilar | En Delhi, India, un pilar de hierro de más de 1600 años resiste la corrosión. | Fondo menta. Mapa pequeño de India con punto en Delhi; aparece el pilar de hierro (columna oscura con capitel, rodeada de reja). Contador "1600 años" corre. |
+| 7 | Pilar | En Delhi, India, un pilar de hierro de más de 1600 años resiste la corrosión. | Fondo menta. Chip "📍 Delhi, India"; aparece el pilar de hierro (columna oscura con capitel, rodeada de reja). Número "+1600 años". |
 | 8 | Estudio | En 2002, Balasubramaniam, en Kanpur, explicó que su fósforo ayuda a formar una capa compacta protectora. | `TarjetaEstudio` "2002 · R. Balasubramaniam · IIT Kanpur · *Current Science*". Zoom (rayos X) a la superficie del pilar: átomos "P" amarillos en el borde metal–óxido; se forma una capa lisa y compacta "δ-FeOOH + fosfatos" que los O₂ no atraviesan (contraste con la capa porosa de la escena 4). |
 | 9 | Costo | Y en 2016 se calculó que la corrosión cuesta al mundo 2.5 billones de dólares al año. | Número gigante "2.5 billones USD/año" (subtexto "estimación NACE IMPACT, 2016"); llueven escamas de óxido sobre un globo terráqueo. |
 | 10 | Cierre | Así que esa reja no está sucia: poco a poco regresa a ser óxido, como en la mina. | **Regreso a la reja del inicio**, ahora más naranja; junto a ella, en transparencia, la roca de hematita del principio; flecha "Fe → Fe₂O₃" cerrando el ciclo mina → reja → mina. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave continua, metálica y lenta; efectos en el mismo cuadro (roce del dedo en el barrote, rugido del alto horno, gota, chispitas eléctricas de la sal, olas, crujido y caída de la escama, "ping" del O₂ rebotando en el aluminio, golpe de la tarjeta, lluvia de escamas).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y el hierro nunca puede hacer eso?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` | «no se está ensuciando: está regresando a ser óxido» |
+| 2 | 6.5 | 12.3 | 13_senalando_arriba | `izq-alto` | «un alto horno le quita el oxígeno» |
+| 3 | 18.4 | 23.4 | 06_pensativo_menton | `arriba-der` | «la sal lo acelera… junto al mar» |
+| 4 | 24.7 | 29.3 | 10_serio_molesto | `izq-alto` | «se lo sigue comiendo» |
+| 5 | 34.6 | 37.8 | 07_pensativo_puno | `grande` | «¿Y el hierro nunca puede hacer eso?» |
+| 6 | 44.1 | 47.5 | 04_bajando_lentes | `izq-alto` | «su fósforo ayuda a formar una capa compacta» |
+| 7 | 48.6 | 52.7 | 11_sorprendido | `arriba-der` | «2.5 billones de dólares al año» |
+| 8 | 53.3 | 57.9 | 02_apuntando_camara | `arriba-der` | «regresa a ser óxido, como en la mina» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 8 apariciones · ≈ 35.6 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato abierto en la fuente original el 29 oct 2026)
 
