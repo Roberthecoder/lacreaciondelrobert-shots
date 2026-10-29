@@ -37,3 +37,18 @@
 2. **#12 ⚠️ "En 2008… midieron"** (el artículo se recibió el 7 jun 2007; 2008 es el año de publicación). Propuesta: "En un estudio publicado en 2008, estudiantes de física de la Universidad Estatal Apalache, en Estados Unidos, midieron el pH: 3 antes y 3 después. No hubo reacción ácido-base." En la tarjeta de pantalla: "Publicado en 2008 · Coffey · …".
 3. **#18 ⚠️ "el benzoato del refresco de dieta"** (generaliza a todos los refrescos de dieta; el estudio usó Diet Coke de EE. UU. con benzoato de potasio). Propuesta: "El aspartamo y el benzoato de ese refresco de dieta hacen más fácil formar burbujas; la cafeína casi no influyó." (y en la descripción: "el refresco de dieta del estudio; las fórmulas cambian por país").
 4. Matices sin cambiar la voz: en pantalla, el cronómetro de caída (0.7 s) no debe decir "en refresco" (se midió en agua); las barras 15.3 vs 11.6 pies son distancia horizontal promedio con ±10 % de incertidumbre.
+
+## Re-verificación (29 oct 2026)
+
+Revisé los cambios en guion.md y narracion.json (la voz es igual en los dos), comparándolos con el PDF de Coffey 2008.
+
+| # | Cambio | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| R1 | Voz 4: "Esas burbujas suben y jalan más gas: en unos 4 segundos, sale disparado más de un litro." + chip "> 1 litro" | ✅ | Coffey 2008, Tabla I y p. 555 | "Diet Coke · Mint Mentos · 1410" g de masa perdida ("Average mass lost during the reaction", ±10 %; el refresco pesa ≈ 1 g/ml, así que son ≈ 1.4 l; aun con −10 % siguen siendo más de 1 l) · "reaction lasted ≈3.8 s" | 2008 |
+| R2 | Voz 6: "En un estudio publicado en 2008, estudiantes de física… midieron el pH: 3 antes y 3 después. No fue ácido-base." + tarjeta "Publicado en 2008" | ✅ | Coffey 2008, pp. 551–552 | "accepted 5 February 2008" (Am. J. Phys. 76(6), June 2008) · "not an acid-base reaction" | 2008 |
+| R3 | Voz 7: "El aspartamo y el benzoato de ese refresco de dieta facilitan las burbujas; la cafeína casi no influyó." | ✅ | Coffey 2008, p. 556 | "these ingredients reduce the work required for bubble formation" · "contributes little to the reaction" | 2008 |
+| R4 | Voz 10: "Así que esa fuente no es química: es el gas de tu refresco, que encontró por dónde salir." | ✅ | Coffey 2008, título y p. 552 | "…this physical reaction?" · "not products of a chemical reaction but are already present in the Diet Coke" | 2008 |
+| R5 | Pantalla 8: "0.7 s en agua" | ✅ | Coffey 2008, p. 555 | "to fall through water… The average times were 0.7 s for the Mentos" | 2008 |
+| R6 | Pantalla 7: barras "distancia horizontal promedio (±10 %)": 15.3 vs 11.6 pies | ✅ | Coffey 2008, Tabla II | "Average horizontal distance traveled by the spray during the reaction. The uncertainties are approximately 10%." | 2008 |
+
+Las tres ⚠️ (#10, #12 y #18) ya quedaron corregidas. Ya no queda ninguna ❌ ni ⚠️ pendiente.

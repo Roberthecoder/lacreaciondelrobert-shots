@@ -75,7 +75,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Ese ceviche no está cocido: el limón solo desdobla sus proteínas. En Croacia (2019), larvas de Anisakis aguantaron unos 5 días en jugo de limón. La FDA pide congelar a −20 °C por 7 días. 🍋 Shot Químico #16 #Quimica
+Ese ceviche no está cocido: el limón solo desdobla sus proteínas. En Croacia (2019), larvas de Anisakis aguantaron unos 5 días en jugo de limón. La FDA recomienda congelar a −20 °C por 7 días. 🍋 Shot Químico #16 #Quimica
 ```
 
 ### Threads
