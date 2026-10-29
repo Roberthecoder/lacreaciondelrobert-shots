@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Mapa Lengua base narrada.dc.html",
+  "salida": "Shot Mapa Lengua narrado.dc.html",
+  "nota": "Shot Científico #17. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese mapa de la lengua de la escuela, con lo dulce en la punta y lo amargo atrás, está mal."
+    },
+    {
+      "escena": "Prueba",
+      "texto": "Pruébalo: pon un poco de azúcar en un lado de tu lengua. Lo vas a sentir dulce."
+    },
+    {
+      "escena": "Papilas",
+      "texto": "Las células que detectan sabores están repartidas por toda la lengua, en las papilas gustativas."
+    },
+    {
+      "escena": "Todos",
+      "texto": "Y las zonas con papilas pueden detectar los cinco sabores básicos: dulce, salado, ácido, amargo y umami."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces de dónde salió el mapa?"
+    },
+    {
+      "escena": "Hanig",
+      "texto": "En 1901, el alemán David Hänig midió que algunas zonas eran apenas un poco más sensibles a ciertos sabores."
+    },
+    {
+      "escena": "Boring",
+      "texto": "En 1942, el psicólogo Edwin Boring, de Harvard, pasó esos datos a una gráfica que hacía ver las diferencias más grandes."
+    },
+    {
+      "escena": "Libros",
+      "texto": "Y de ahí, los libros dibujaron zonas separadas, como si cada sabor tuviera su territorio."
+    },
+    {
+      "escena": "Umami",
+      "texto": "Ese mapa ni siquiera incluía el umami, el sabor de los caldos y del jitomate maduro."
+    },
+    {
+      "escena": "Diferencias",
+      "texto": "Las diferencias que midió Hänig sí existen, pero son pequeñitas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu lengua no es un mapa con fronteras: toda ella prueba de todo."
+    }
+  ]
+}

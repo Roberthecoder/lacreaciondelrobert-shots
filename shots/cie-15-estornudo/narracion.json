@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Estornudo base narrada.dc.html",
+  "salida": "Shot Estornudo narrado.dc.html",
+  "nota": "Shot Científico #15. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu estornudo no sale disparado como bala: cuando lo filmaron, iba a lo mucho a dieciséis kilómetros por hora."
+    },
+    {
+      "escena": "Mito",
+      "texto": "Durante años se repitió que un estornudo podía salir a cien metros por segundo."
+    },
+    {
+      "escena": "Calculo",
+      "texto": "Pero ese número no se midió: salió de cálculos viejos y muy simplificados."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2013, un equipo de investigadores les dio pimienta a seis voluntarios para hacerlos estornudar."
+    },
+    {
+      "escena": "Sombras",
+      "texto": "Los filmaron con una técnica de sombras que hace visible el aire que sale de tu nariz y tu boca."
+    },
+    {
+      "escena": "Medida",
+      "texto": "La nube se alcanzó a ver hasta sesenta centímetros, y lo más rápido fue cuatro metros y medio por segundo."
+    },
+    {
+      "escena": "Tos",
+      "texto": "Más o menos como la de una tos: rápida, pero no extrema."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces ya no importa taparte?"
+    },
+    {
+      "escena": "Mano",
+      "texto": "Al contrario: en otro estudio del mismo equipo, taparte con la mano no contuvo bien ni la tos ni el estornudo."
+    },
+    {
+      "escena": "Codo",
+      "texto": "Las autoridades de salud recomiendan un pañuelo o, si no tienes, la parte de adentro del codo."
+    },
+    {
+      "escena": "Nariz",
+      "texto": "Y cuando respiras tranquilo por la nariz, tu aire sale, a lo mucho, a un metro y medio por segundo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu estornudo no es una bala. Pero igual tápalo bien."
+    }
+  ]
+}
