@@ -176,7 +176,7 @@ function DesperdicioShot() {
       <Escena T={T} a={K.P} b={K.Cs} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {svg(<>{['súper', 'restaurante', 'casa'].map((n, i) => { const e = kprog(T, K.P + 0.2 + i * 0.3, K.P + 0.6 + i * 0.3, kEase.rebote);
-            return <g key={n} transform={`translate(${220 + i * 320} ${560}) scale(${0.6 * e})`}><Bote x={0} y={0} s={1} /><text y={70} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}
+            return <g key={n} transform={`translate(${220 + i * 320} ${430}) scale(${0.6 * e})`}><Bote x={0} y={0} s={1} /><text y={70} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}
           <text x={280} y={1150} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 980)`}>?</text></>)}
       </Escena>
       {/* 5 · seis de cada diez kilos, en casa */}
@@ -206,15 +206,15 @@ function DesperdicioShot() {
       {/* 8 · el estudio: PNUMA 2024, hogares de 93 países */}
       <Escena T={T} a={K.E} b={K.Ri}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<Globo T={T} x={600} y={560} r={210} p={kprog(T, K.E + 3.0, K.E + 5.6)} />)}
+        {svg(<Globo T={T} x={620} y={520} r={190} p={kprog(T, K.E + 3.0, K.E + 5.6)} />)}
       </Escena>
       {/* 9 · no es cosa de países ricos: 81 · 88 · 86 kg */}
       <Escena T={T} a={K.Ri} b={K.Ga}>
         <FondoLunares color={KC.orange} />
         {svg(<>{barras.map(([n, v], i) => { const h = 4.2 * v * kprog(T, K.Ri + 2.4 + i * 0.25, K.Ri + 3.3 + i * 0.25, kEase.sale);
-            return <g key={n}><rect x={110 + i * 200} y={1150 - h} width={150} height={h} rx={12} fill={[KC.cyan, KC.mint, KC.yellow][i]} stroke={KC.ink} strokeWidth={7} />
-              {h > 40 && <text x={185 + i * 200} y={1130 - h} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{v}</text>}
-              <text x={185 + i * 200} y={1195} textAnchor="middle" style={{ font:`900 27px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}</>)}
+            return <g key={n}><rect x={110 + i * 200} y={1080 - h} width={150} height={h} rx={12} fill={[KC.cyan, KC.mint, KC.yellow][i]} stroke={KC.ink} strokeWidth={7} />
+              {h > 40 && <text x={185 + i * 200} y={1060 - h} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{v}</text>}
+              <text x={185 + i * 200} y={1122} textAnchor="middle" style={{ font:`900 27px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}</>)}
       </Escena>
       {/* 10 · gases: 8–10 % (2010–2016) */}
       <Escena T={T} a={K.Ga} b={K.C}>
@@ -249,15 +249,15 @@ function DesperdicioShot() {
       <Chip T={T} at={K.Ki + 1.2} until={K.Mx - 0.2} texto="promedio mundial · 2022" y={1440} x={540} tam={34} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Mx + 0.6} until={K.E - 0.2} valor={105} desde={79} dur={1.4} sufijo=" kg" etiqueta="México: por persona al año, en casa" x={540} y={1060} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.Mx + 1.4} until={K.E - 0.2} texto="estimación · confianza media" y={1440} x={540} tam={32} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.4} until={K.Ri - 0.2} anio="2024" quien="Programa de la ONU para el Medio Ambiente" revista="Food Waste Index Report 2024 · Nairobi" x={540} y={990} />
+      <TarjetaEstudio T={T} at={K.E + 0.4} until={K.Ri - 0.2} anio="2024" quien="Programa de la ONU para el Medio Ambiente" revista="Food Waste Index Report 2024 · Nairobi" x={540} y={940} />
       <Chip T={T} at={K.E + 3.0} until={K.Ri - 0.2} texto="datos de hogares de 93 países" y={1440} x={540} tam={34} borde={KC.ink} />
-      <MitoTachado T={T} at={K.Ri + 0.2} tacharEn={K.Ri + 1.4} until={K.Ga - 0.2} texto="«solo pasa en países ricos»" x={380} y={470} tam={38} />
+      <MitoTachado T={T} at={K.Ri + 0.2} tacharEn={K.Ri + 1.4} until={K.Ga - 0.2} texto="«solo pasa en países ricos»" x={400} y={470} tam={46} />
       <Chip T={T} at={K.Ri + 3.4} until={K.Ga - 0.2} texto="kg por persona al año, en casa" y={1440} x={540} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Ri + 4.0} until={K.Ga - 0.2} x={760} y={760} texto="± 7 kg" tam={44} color={KC.ink} />
       <Chip T={T} at={K.Ga + 0.6} until={K.C - 0.2} texto="2010–2016" y={500} x={640} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Ga + 2.0} until={K.C - 0.2} texto="de los gases de efecto invernadero del mundo" y={1080} x={540} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Ga + 2.0} until={K.C - 0.2} texto="de los gases de efecto invernadero del mundo" y={1045} x={650} tam={24} borde={KC.ink} />
       <Chip T={T} at={K.Ga + 2.6} until={K.C - 0.2} texto="comida perdida + tirada" y={1440} x={540} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.C + 0.8} until={K.Ou - 0.1} x={530} y={1000} texto="60 % se tira en casas" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.C + 0.8} until={K.Ou - 0.1} x={525} y={955} texto="60 % se tira en casas" tam={34} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.To - 0.1} texto="Casi *1 de cada 5* partes, a la basura." />
