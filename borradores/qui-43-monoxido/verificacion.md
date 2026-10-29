@@ -34,3 +34,25 @@
 - **C3 (#22, cierre):** cambiar a: "Nunca prendas el anafre adentro: ese peligro no huele, pero se puede evitar." (coincide con la CDC y con la imagen final del anafre afuera). El gancho puede quedarse igual.
 - **C4 (#4, pantalla):** escribir la ecuación balanceada "2C + O₂ → 2CO" o poner la etiqueta "esquema" junto a "C + poco O₂ → CO".
 - Recomendación (no es error): en `## Fuentes` de guion.md la frase de UKHSA sobre vida media debería acompañarse de la de la revisión 2020 (~4 h) para que quede claro que el valor varía.
+
+## Re-verificación (29 oct 2026)
+
+Revisé las líneas que cambiaron en guion.md y narracion.json después de las correcciones C1–C4, con las mismas fuentes de arriba.
+
+| # | Afirmación nueva (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| R1 | Gancho: "¿Por qué NO prender el anafre dentro de tu casa? Porque lo que mata no huele ni se ve." | ✅ | CDC | "Never burn charcoal indoors." · "an odorless, colorless gas that kills without warning" | 2026 |
+| R2 | Pantalla: "C + O₂ → CO₂" vs. "2C + O₂ → 2CO" (corrige C4) | ✅ | Estequiometría estándar; Santé publique France (combustión incompleta) | Ecuaciones balanceadas · "incomplete combustion of carbon-containing materials" | — |
+| R3 | "Lo respiras y pasa de tu pulmón a tus glóbulos rojos." | ✅ | UKHSA 2022 | "diffuses rapidly across the alveolar and capillary membranes of the lungs … enters the red blood cells" | 2022 |
+| R4 | "la hemoglobina, que carga oxígeno, se pega al monóxido más de 200 veces más fuerte" | ✅ | UKHSA 2022; revisión PMC7014120 (2020) | "245-fold higher than that for oxygen" · "around 210 times greater" | 2020–2022 |
+| R5 | "Le quita el lugar al oxígeno y a tu cuerpo le llega menos." | ✅ | UKHSA 2022 | "preferentially bind carbon monoxide over oxygen … This decreases the oxygen carrying capacity of the blood" | 2022 |
+| R6 | "En 1987, en Chicago, midieron a 37 personas con dolor de cabeza en urgencias en invierno: 7 traían mucho monóxido en la sangre y nadie lo sospechó." | ✅ | Heckerling, *Am J Emerg Med* 1987 (PMID 3580051) | "We investigated 37 patients presenting to an emergency department during the winter-heating season with a complaint of headache" · "Seven of the 37 patients (18.9%) had COHb levels in excess of 10%" · "In none of these patients had the diagnosis of CO poisoning been suspected" | 1987 |
+| R7 | "con aire normal, tu cuerpo tarda horas en sacar apenas la mitad"; reloj "≈ 4–5 h" (corrige C1) | ✅ | UKHSA 2022; revisión PMC7014120 (2020) | "320 minutes when breathing air" · Ernst y Zibrak: "approximately 4 h on air" (el "≈" cubre la variación entre estudios) | 2020–2022 |
+| R8 | "Si a varios en casa les duele la cabeza a la vez, o suena el detector, salgan al aire libre y pidan ayuda" (corrige C2) | ✅ | Heckerling et al., *Am J Med* 1988; NHS | "the presence of similarly affected cohabitants was the most reliable marker for a carbon monoxide-mediated illness." · "Go outside." · "Get medical advice as soon as possible" | 1988; 2025 |
+| R9 | "en México, al 911" | ✅ | gob.mx/911 (Secretariado Ejecutivo del SNSP) | "Número Único de Emergencias 911" · "llamadas de emergencia al 9-1-1 a nivel nacional" | 2026 |
+| R10 | Cierre: "Nunca prendas el anafre adentro: ese peligro no huele, pero se puede evitar." (corrige C3) | ✅ | CDC | "Never burn charcoal indoors. Burning charcoal - red, gray, black, or white - gives off CO." | 2026 |
+| R11 | Se quitó "Y pon un detector" de la voz; el detector sigue en pantalla | ✅ | CDC | "Install battery-operated or battery back-up CO detectors near every sleeping area in your home." | 2026 |
+
+Las correcciones C1–C4 quedaron aplicadas. No quedan ❌ ni ⚠️ en lo que cambió; las líneas que no cambiaron siguen en ✅ como en la tabla de arriba.
+
+VEREDICTO: APROBADO
