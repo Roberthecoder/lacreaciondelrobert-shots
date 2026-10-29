@@ -26,7 +26,30 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 4.5 | 11_sorprendido | `gancho` |
+| 2 | 7.4 | 10.5 | 13_senalando_arriba | `bajo-der` |
+| 3 | 18.1 | 21.4 | 04_bajando_lentes | `bajo-der` |
+| 4 | 21.6 | 25.6 | 07_pensativo_puno | `grande` |
+| 5 | 29.6 | 33.0 | 06_pensativo_menton | `bajo-der` |
+| 6 | 40.8 | 44.1 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 7 | 52.5 | 57.9 | 13_senalando_arriba | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 7 · 27.1 s (+ cierre 3.5 s) · poses 6 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «El espejo no te invierte izquierda y derecha» (11 sorprendido) |
+| 2 | «tu reflejo levanta la mano que está de ese mismo lado» (13 señalando) |
+| 3 | «la nariz de tu reflejo apunta hacia ti» (04 bajando lentes) |
+| 4 | «¿Entonces por qué parece que cambian la izquierda y la derecha?» (07 pensativo, grande) |
+| 5 | «al voltearse, su derecha quedaría del otro lado» (06 pensativo) |
+| 6 | «para que se lea bien en el retrovisor» (05 sonriendo) |
+| 7 | «eres tú quien se da la vuelta en tu cabeza» (13 señalando) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 

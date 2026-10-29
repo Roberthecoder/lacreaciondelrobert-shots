@@ -163,28 +163,28 @@ function Pajaros() {
         <FondoLunares color={KC.cyan} />
         <Lienzo>
           <CieloCables T={T} />
-          <Pajarito x={bx} y={by} s={1.1} T={T} vuela={T < ATERRIZA - 0.05} aleteo={T < ATERRIZA ? 0.5 + 0.5 * Math.sin(T * 40) : 0} ojos={T > 3.2 && T < 5 ? 'cerrados' : 'normal'} />
+          <Pajarito x={bx} y={by} s={1.5} T={T} vuela={T < ATERRIZA - 0.05} aleteo={T < ATERRIZA ? 0.5 + 0.5 * Math.sin(T * 40) : 0} ojos={T > 3.2 && T < 5 ? 'cerrados' : 'normal'} />
           <Pajarito x={700} y={cableY(700, 930)} s={0.8} T={T + 3} />
           <Onomato T={T} at={ATERRIZA} dur={0.9} x={420} y={760} texto="¡TAC!" tam={90} color={KC.yellow} />
         </Lienzo>
-        <MitoTachado T={T} at={1.6} tacharEn={3.0} until={K.Corriente - 0.2} texto="¿magia?" x={300} y={560} tam={60} />
+        <MitoTachado T={T} at={1.6} tacharEn={3.0} until={K.Corriente - 0.2} texto="¿magia?" x={330} y={760} tam={64} />
         <Etq T={T} at={1.2} until={K.Corriente - 0.2} x={460} y={1150} texto="cable de luz" color={KC.ink} />
       </Escena>
       {/* 1 · corriente: dos puntos con distinto voltaje y un camino */}
       <Escena T={T} a={K.Corriente} b={K.Patas} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          {(() => { const c = kprog(T, K.Corriente + 1.4, K.Corriente + 2.2, kEase.sale), A = [230, 700], B = [850, 1000];
+          {(() => { const c = kprog(T, K.Corriente + 1.4, K.Corriente + 2.2, kEase.sale), A = [230, 700], B = [780, 1000];
             const pts = [A, [230, 1000], B];
             return <g>
               <rect x={150} y={480} width={160} height={220} rx={24} fill={KC.pink} stroke={KC.ink} strokeWidth={9} />
-              <rect x={770} y={880} width={160} height={120} rx={24} fill={KC.cyan} stroke={KC.ink} strokeWidth={9} />
+              <rect x={700} y={880} width={160} height={120} rx={24} fill={KC.cyan} stroke={KC.ink} strokeWidth={9} />
               {Array.from({ length: 10 }, (_, i) => <circle key={i} cx={190 + (i % 4) * 28 + Math.sin(T * 9 + i) * 6} cy={530 + Math.floor(i / 4) * 40 + Math.cos(T * 8 + i) * 6} r={10} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />)}
               <line x1={230} y1={700} x2={230} y2={klerp(700, 1000, c)} stroke={KC.ink} strokeWidth={20} strokeLinecap="round" />
               {c > 0.5 && <line x1={230} y1={1000} x2={klerp(230, 850, (c - 0.5) * 2)} y2={1000} stroke={KC.ink} strokeWidth={20} strokeLinecap="round" />}
               <CaminoBrilla pts={pts} T={T} p={c} o={kprog(T, K.Corriente + 2.2, K.Corriente + 2.5)} />
               <TextoSvg x={230} y={460} tam={56} fuente="texto" color={KC.texto}>más voltaje</TextoSvg>
-              <TextoSvg x={850} y={860} tam={56} fuente="texto" color={KC.texto}>menos voltaje</TextoSvg>
+              <TextoSvg x={780} y={860} tam={56} fuente="texto" color={KC.texto}>menos voltaje</TextoSvg>
             </g>; })()}
         </Lienzo>
         <Chip T={T} at={K.Corriente + 2.4} until={K.Patas - 0.15} texto="camino = corriente" x={620} y={600} tam={46} borde={KC.ink} />
@@ -201,10 +201,10 @@ function Pajaros() {
           {T > K.Patas + 1.2 && T < K.Nada + 1.6 && [487, 593].map((fx, i) => { const e = kprog(T, K.Patas + 1.2 + i * 0.5, K.Patas + 1.6 + i * 0.5, kEase.rebote);
             return <g key={i} transform={`translate(${fx} ${CY}) scale(${e})`}>
               <circle r={44 + 8 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={10} />
-              <rect x={-58} y={52} width={116} height={56} rx={16} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
-              <text x={0} y={92} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>pata {i + 1}</text>
+              <g transform={`translate(${i ? 80 : -80} 0)`}><rect x={-58} y={52} width={116} height={56} rx={16} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
+              <text x={0} y={92} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>pata {i + 1}</text></g>
             </g>; })}
-          {T > K.Patas + 2.4 && T < K.Nada + 1.6 && <TextoSvg x={540} y={1130} tam={110} color={KC.yellow} s={klerp(0.3, 1, kprog(T, K.Patas + 2.4, K.Patas + 2.8, kEase.rebote))}>≈</TextoSvg>}
+          {T > K.Patas + 2.4 && T < K.Nada + 1.6 && <TextoSvg x={540} y={1150} tam={110} color={KC.yellow} s={klerp(0.3, 1, kprog(T, K.Patas + 2.4, K.Patas + 2.8, kEase.rebote))}>≈</TextoSvg>}
           {T > K.Nada + 0.3 && <g opacity={kprog(T, K.Nada + 0.3, K.Nada + 0.7) * (1 - kprog(T, K.Nada + 1.6, K.Nada + 2))}>
             <FlechaRecta x1={120} y1={CY + 110} x2={960} y2={CY + 110} p={kprog(T, K.Nada + 0.3, K.Nada + 1.2)} color={KC.yellow} />
           </g>}
@@ -214,13 +214,13 @@ function Pajaros() {
         <Lupa T={T} at={K.Nada + 1.8} until={K.Pregunta - 0.3} x={540} y={600} r={240} fx={540} fy={CY} tinte={KC.yellow} etiqueta="POR DENTRO · EL CABLE"
           interior={(t, r) => <svg width={r * 2} height={r * 2} viewBox="0 0 480 480">
             <rect width={480} height={480} fill="#0E0F12" />
-            <rect x={-10} y={250} width={500} height={150} fill={PJ_COBRE} stroke="#7a4512" strokeWidth={6} />
-            {Array.from({ length: 30 }, (_, i) => { const g = krng(60 + i), yy = 270 + g() * 110, x = ((g() * 480 + t * (380 + g() * 120)) % 520) - 20;
+            <rect x={-10} y={250} width={500} height={130} fill={PJ_COBRE} stroke="#7a4512" strokeWidth={6} />
+            {Array.from({ length: 30 }, (_, i) => { const g = krng(60 + i), yy = 268 + g() * 94, x = ((g() * 480 + t * (380 + g() * 120)) % 520) - 20;
               return <circle key={i} cx={x} cy={yy} r={9} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />; })}
             {[160, 320].map((lx, i) => <g key={i}><rect x={lx - 16} y={40} width={32} height={214} rx={14} fill="#c79a5b" stroke={KC.ink} strokeWidth={6} />
               <path d={`M ${lx - 60} 254 Q ${lx} 220 ${lx + 60} 254`} fill="none" stroke="#c79a5b" strokeWidth={22} strokeLinecap="round" /></g>)}
             <text x={240} y={150} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>patas</text>
-            <text x={240} y={460} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.yellow}>metal del cable</text>
+            <text x={240} y={425} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.yellow}>metal del cable</text>
           </svg>} />
         <Chip T={T} at={K.Nada + 3.4} until={K.Pregunta - 0.2} texto="el cable conduce mucho mejor" x={540} y={1150} tam={40} borde={KC.yellow} />
       </Escena>
@@ -242,20 +242,20 @@ function Pajaros() {
           {/* ave 1: estira el ala hasta el otro cable */}
           {(() => { const up = kprog(T, D + 0.6, D + 1.4, kEase.suave), o1 = 1 - kprog(T, D + 3.8, D + 4.2);
             return <g opacity={o1}>
-              <CaminoBrilla pts={[[300, Y1], [330, Y2 - 230], [330, Y2 - 90], [330, Y2]]} T={T} p={kprog(T, D + 1.4, D + 1.9)} />
               <Pajarito x={330} y={Y2} s={1.5} T={T} alaLargo={190} alaArriba={up} ojos={T > D + 1.4 ? 'grandes' : 'normal'} />
+              <CaminoBrilla pts={[[300, Y1], [330, Y2 - 230], [330, Y2 - 90], [330, Y2]]} T={T} o={0.85} p={kprog(T, D + 1.4, D + 1.9)} />
               {T > D + 1.4 && <Alerta x={520} y={Y2 - 150} s={klerp(0.3, 0.9, kprog(T, D + 1.5, D + 1.8, kEase.rebote))} />}
             </g>; })()}
           {/* ave 2: toca el poste conectado a tierra */}
           {(() => { const e = kprog(T, D + 3.9, D + 4.4), up = kprog(T, D + 4.3, D + 5.0, kEase.suave);
             return e > 0 && <g opacity={e}>
-              <CaminoBrilla pts={[[620, Y2], [640, Y2 - 120], [PX - 30, Y2 - 120], [PX - 30, 1170]]} T={T} p={kprog(T, D + 5.0, D + 5.6)} />
               <Pajarito x={600} y={Y2} s={1.5} T={T} alaLargo={190} alaArriba={up * 0.15} rot={0} ojos={T > D + 5 ? 'grandes' : 'normal'} />
+              <CaminoBrilla pts={[[620, Y2], [640, Y2 - 120], [PX - 30, Y2 - 120], [PX - 30, 1170]]} T={T} o={0.85} p={kprog(T, D + 5.0, D + 5.6)} />
               <Tierra x={PX - 30} y={1250} color={KC.ink} />
             </g>; })()}
         </Lienzo>
         <Chip T={T} at={D + 1.6} until={D + 3.7} texto="¡le abre un camino!" x={420} y={420} tam={48} borde={KC.red} />
-        <Etq T={T} at={D + 5.2} until={K.Aguilas - 0.1} x={PX - 60} y={760} texto="poste a tierra" lado="izq" color={KC.ink} />
+        <Etq T={T} at={D + 5.2} until={K.Aguilas - 0.1} x={PX - 60} y={1110} texto="poste a tierra" lado="izq" color={KC.ink} />
         <Chip T={T} at={D + 5.4} until={K.Aguilas - 0.1} texto="dibujo de advertencia" x={360} y={420} tam={36} borde={KC.ink} mono />
       </Escena>
       {/* 6 · águilas y aguilillas: las alas abiertas alcanzan dos cosas */}
@@ -307,8 +307,8 @@ function Pajaros() {
           {pasos > 0 && Array.from({ length: Math.min(pasoN, 13) }, (_, i) => <ellipse key={i} cx={600 + 22 * i} cy={1158} rx={10} ry={4} fill="rgba(0,0,0,.25)" />)}
         </Lienzo>
         <Chip T={T} at={K.Tu + 0.5} until={K.Cierre - 0.1} texto="nunca te acerques" x={540} y={420} tam={52} borde={KC.red} />
-        <Etq T={T} at={K.Tu + 1.8} until={K.Cierre - 0.1} x={560} y={700} texto="pies juntos, pasos cortos" lado="der" color={KC.ink} tam={30} />
-        <Etq T={T} at={K.Tu + 3.6} until={K.Cierre - 0.1} x={520} y={1200} texto="tú, en el suelo" lado="der" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Tu + 1.8} until={K.Cierre - 0.1} x={1050} y={640} texto="pies juntos, pasos cortos" lado="izq" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Tu + 3.6} until={K.Cierre - 0.1} x={1060} y={760} texto="tú, en el suelo" lado="izq" color={KC.ink} tam={30} />
       </Escena>
       {/* 9 · cierre: el mismo pajarito, tranquilo al atardecer */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.cyan}>

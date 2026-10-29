@@ -26,7 +26,34 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 6.1 | 11_sorprendido | `gancho` |
+| 2 | 7.7 | 11.5 | 13_senalando_arriba | `bajo-der` |
+| 3 | 19.7 | 23.6 | 04_bajando_lentes | `bajo-der` |
+| 4 | 23.8 | 27.0 | 07_pensativo_puno | `grande` |
+| 5 | 27.8 | 33.4 | 10_serio_molesto | `bajo-der` |
+| 6 | 35.8 | 40.6 | 13_senalando_arriba | `bajo-der` |
+| 7 | 42.8 | 46.6 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 8 | 47.2 | 53.1 | 12_perfil_serio | `bajo-der` |
+| 9 | 53.7 | 57.9 | 08_recostado_mano | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 9 · 41.2 s (+ cierre 3.5 s) · poses 8 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «…no se electrocuta, y no es magia» (sorprendido) |
+| 2 | «…dos puntos con distinto voltaje» (señalando) |
+| 3 | «…el cable, que conduce mucho mejor» (bajando lentes) |
+| 4 | «¿Y entonces cuándo sí le pasa algo?» (pensativo, grande) |
+| 5 | «…le abre un camino a la corriente» (serio) |
+| 6 | «…como águilas y aguilillas» (señalando) |
+| 7 | «…los cubren para proteger a las aves» (sonriendo) |
+| 8 | «…nunca te acerques a un cable caído» (perfil serio) |
+| 9 | «…solo no le da a la electricidad por dónde pasar» (recostado) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 
