@@ -308,7 +308,7 @@ function QuitridioShot() {
       <Etq T={T} at={K.Z + 1.0} until={K.Q - 0.3} x={60} y={440} texto="Batrachochytrium dendrobatidis (Bd)" it tam={32} color={KC.cyan} />
       <Chip T={T} at={K.Z + 2.0} until={K.Q - 0.3} texto="3–5 µm cada espora" x={540} y={1110} tam={36} borde={KC.cyan} />
       <Etq T={T} at={K.Q + 0.4} until={K.Pr - 0.3} x={60} y={T < K.E ? 690 : 600} texto="capa de queratina" tam={32} color={QT.queratina} />
-      <Etq T={T} at={K.Q + 2.4} until={K.E - 0.2} x={480} y={690} texto="zoosporangio" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Q + 2.4} until={K.E - 0.2} x={560} y={690} texto="zoosporangio" tam={30} color={KC.texto} />
       <Medidor T={T} at={K.E + 0.3} until={K.Pr - 0.3} valor={(t) => 1 - 0.55 * kprog(t, K.E + 0.9, K.E + 2.6, kEase.suave)} etiqueta="paso de sales" texto={(v) => (v > 0.5 ? Math.round(v * 100) + ' %' : '< 50 %')} x={90} y={360} ancho={900} color={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.C - 0.3} anio="2009" quien="Australia" revista="Voyles et al., Science 2009" y={560} />
       <Etq T={T} at={K.Es + 1.0} until={K.C - 0.3} x={60} y={790} texto="rana arborícola verde" tam={30} color={KC.ink} />
@@ -324,10 +324,10 @@ function QuitridioShot() {
       <Etq T={T} at={K.M + 1.5} until={K.Sa - 0.3} x={60} y={a1[1] - 80} texto="sur de México · inicios de los 70" tam={26} color={KC.ink} />
       <Etq T={T} at={K.M + 2.7} until={K.Sa - 0.3} x={a2[0] + 14} y={a2[1] + 46} texto="Guatemala · 80s–90s" tam={24} color={KC.ink} />
       <Etq T={T} at={K.M + 4.0} until={K.Sa - 0.3} x={a3[0] - 26} y={a3[1] + 6} texto="Costa Rica · 1987" lado="izq" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 0.8} until={K.Sa + 2.5} x={60} y={650} texto="Batrachochytrium salamandrivorans (Bsal)" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 1.0} until={K.Ci - 0.3} x={500} y={560} texto="salamandra de fuego" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 1.2} until={K.Ci - 0.3} x={500} y={600} texto="Salamandra salamandra" it tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Sa + 2.6} until={K.Ci - 0.3} texto="Países Bajos · 2010 → 2013" x={330} y={650} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Sa + 0.8} until={K.Sa + 2.5} x={60} y={660} texto="Batrachochytrium salamandrivorans (Bsal)" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 1.0} until={K.Ci - 0.3} x={60} y={570} texto="salamandra de fuego" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 1.2} until={K.Ci - 0.3} x={60} y={606} texto="Salamandra salamandra" it tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Sa + 2.6} until={K.Ci - 0.3} texto="Países Bajos · 2010 → 2013" x={330} y={670} tam={30} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Sa + 4.3} until={K.Ci - 0.3} valor={4} dur={0.5} sufijo=" %" x={540} y={1000} tam={220} color={KC.yellow} />
 
       {/* barras de escala */}
@@ -349,7 +349,7 @@ function QuitridioShot() {
       <Subtitulo T={T} idx={5} at={K.Pr + 0.1} until={K.Es - 0.1} texto="¿Cómo mata *a una rana entera?*" />
       <Subtitulo T={T} idx={6} at={K.Es + 0.1} until={K.C - 0.1} texto="2009, Australia: *sangre de ranas infectadas.*" />
       <Subtitulo T={T} idx={7} at={K.C + 0.1} until={K.Sp - 0.1} texto="Menos sodio y potasio: *el corazón se detuvo.*" />
-      <Subtitulo T={T} idx={8} at={K.Sp + 0.1} until={K.M - 0.1} texto="Al menos *501 especies* (2019)." />
+      <Subtitulo T={T} idx={8} at={K.Sp + 0.1} until={K.M - 0.1} texto="*501 especies* en declive." />
       <Subtitulo T={T} idx={9} at={K.M + 0.1} until={K.Sa - 0.1} texto="La ola salió *del sur de México.*" />
       <Subtitulo T={T} idx={10} at={K.Sa + 0.1} until={K.Ci - 0.1} texto="Su primo: quedó *el 4 %* de las salamandras." />
       <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="No está dormida: *algo que nunca verás.*" />
@@ -358,7 +358,7 @@ function QuitridioShot() {
         [K.G - 0.45, K.G + 4.6, 'avatar_11_sorprendido', 'gancho'],
         [K.P + 0.5, K.Z - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.Q + 0.4, K.E - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [K.Pr + 0.05, K.Es + 0.4, 'avatar_07_pensativo_puno', 'grande'],
+        [K.Pr + 0.05, K.Es - 0.1, 'avatar_07_pensativo_puno', 'grande'],
         [K.C + 0.5, K.Sp - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [K.Sp + 0.4, K.Sp + 4.3, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.M + 0.5, K.Sa - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
