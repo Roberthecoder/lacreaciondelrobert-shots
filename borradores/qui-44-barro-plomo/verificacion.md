@@ -40,5 +40,6 @@ Notas (no son errores):
 
 ## Correcciones aplicadas (29 oct 2026)
 Se aplica tal cual la propuesta del verificador: «En 2025, en un laboratorio, una pieza curada así siguió soltando plomo arriba de la norma» (sin «Puebla» en voz ni tarjeta) y «usaban seguido». Si hace falta cuadrar el tiempo, solo se quita relleno.
+- Revisión final del verificador (29 oct 2026): ✅ publicacion.md · «17.2 % … 1.38 millones de niños de 1 a 4 años (≥5 µg/dL)», textual en Téllez-Rojo 2024 (2022-2023): "1.38 millones de niñas y niños de 1 a 4 años (17.2% del total de la población) presentan intoxicación por plomo … (plomo en sangre ≥5 µg/dL)" · ✅ Torres-Sánchez 1999 (INSP): "In 27 ceramic ware pieces from four states in Mexico … Traditional acidic curing of glazed ceramic ware is not a useful preventive measure for reducing lead exposure" · ✅ nueva línea de voz del curado = resumen de Rodríguez-Hernández 2025 ("garlic/boiling vinegar (2.6 ppm) … exceeding the Mexican Normativity for leaching (0.5 ppm)") · ✅ «usaban seguido» = patrón de uso "Frecuentemente" (Cuadro II, 44.3 %).
 
 VEREDICTO: APROBADO
