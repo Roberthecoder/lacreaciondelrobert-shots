@@ -23,6 +23,8 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   les pidió seguir (Robert: "reanuda absolutamente todo"). Iban 8/300 en la Sala. Si vuelve a pasar: esperar al reinicio y reanudar.
 - 29 oct 05:12–07:00 UTC: segunda parada, ahora por el límite SEMANAL de uso; reanudadas a las 07:58 con 84/300. Al ritmo de 7
   sesiones en paralelo el límite se agota en ~3 h; si se repite, conviene preguntarle a Robert si baja a menos sesiones.
+- 29 oct 09:59: sesión de festivos TERMINADA (fes-07…fes-16 en pedido300/festivos, los 10 con VEREDICTO: APROBADO y en la Sala;
+  fes-14 cambió a razas de maíz). Ya no hay que despertarla; falta juntar su rama a main.
 - 29 oct 07:58: el aviso falló al instante (límite de 5 h otra vez, reinicio 09:30). Reanudadas de nuevo a las 09:58; siguen en 84/300.
 - Espacio de la Sala: 1 GB; con 60 shots iba en 118 MB (~2 MB por shot) → caben los 310. Revisar si pasa de 900 MB.
 
