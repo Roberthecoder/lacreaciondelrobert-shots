@@ -15,7 +15,7 @@
 | 1 | Apodo | Le dijeron «hongo negro», pero dentro del cuerpo sus hifas son transparentes. | Titular de periódico dibujado "HONGO NEGRO" con comillas; sello "APODO" encima. Junto, una hifa transparente (sin color) dentro de un corte de tejido, con etiqueta "en el tejido: hifas transparentes (hialinas)". |
 | 2 | Mucorales | Son mohos mucorales, como Rhizopus y Mucor, de la tierra y las hojas podridas. | Fondo amarillo: suelo con hojas podridas; brota el moho joven, blanco y algodonoso; si se dibujan esporangios (bolitas en la punta de tallos), van en gris oscuro, nunca negro brillante. Etiquetas *Rhizopus* y *Mucor* (orden Mucorales). |
 | 3 | Esporas | Sus esporas se respiran, pero casi solo enferman personas con defensas bajas o diabetes sin control. | Los esporangios se abren y sueltan esporas que flotan hacia la nariz de la cara del inicio. Dos chips: "defensas bajas" y "diabetes sin control"; en una persona sana las esporas entran y las células de defensa (macrófagos) se las comen (✓). |
-| 4 | Hifas | Si germinan, sacan hifas anchas, casi sin divisiones, como listones. | **Al microscopio** (fondo noche): una espora germina y saca una hifa ancha como listón, con ramas en ángulo casi recto; comparación junto a una hifa delgada con tabiques ("otros mohos"). Barra de escala 10 µm. |
+| 4 | Hifas | Si germinan, sacan hifas anchas, casi sin divisiones, como listones. | **Al microscopio** (fondo noche): una espora germina y saca una hifa ancha como listón, con ramas en ángulo casi recto; comparación junto a una hifa delgada con tabiques ("*Aspergillus*: delgadas y con tabiques", Gupta 2022; Kim 2020). Barra de escala 10 µm = 75 px (hifa ancha ≈ 9–10 µm, delgada ≈ 3 µm). |
 | 5 | Vasos | Se meten en los vasos sanguíneos y los tapan. Sin sangre, el tejido muere y se pone negro. | Un vaso sanguíneo con glóbulos rojos que corren; la hifa atraviesa la pared, se forma un coágulo y la sangre se detiene; las células alrededor pasan de rosa a gris y luego a negro. Chip "sin sangre → necrosis". |
 | 6 | Pregunta | ¿Y por qué hubo tantos casos en India con el COVID? | **Re-gancho.** Signo "?" grande sobre el mapa de India; Robert grande, pensativo. |
 | 7 | Estudio | En hospitales de India hubo más del doble de casos a finales de 2020 que un año antes. | `TarjetaEstudio` "10 centros de India · sept–dic 2019 vs. sept–dic 2020 · 112 → 231 casos · Patel et al., *Emerging Infectious Diseases*, 2021". Dos barras: 112 y 231. |
@@ -50,7 +50,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué
 
 Apariciones 10 · **≈ 35 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas. Hueco más largo: 7.4 s (Cosmic, donde la cuadrícula y los números ocupan la derecha).
 
-Textos de pantalla agregados al animar (todos salen de las fuentes ya verificadas): «ASÍ LE DECÍAN · “HONGO NEGRO”», «×2.1» en la tarjeta de Patel, «orden Mucorales», «macrófago: la traga y la espora no germina», «otros mohos: delgadas y con tabiques», «transferrina (guarda el hierro)», «hierro libre → moho», «esto no es consejo médico».
+Textos de pantalla agregados al animar (todos salen de las fuentes ya verificadas): «ASÍ LE DECÍAN · “HONGO NEGRO”», «×2.1» en la tarjeta de Patel, «orden Mucorales», «macrófago: la traga y la espora no germina», «Aspergillus: delgadas y con tabiques» (antes «otros mohos…»; la fuente compara con *Aspergillus*), «transferrina (guarda el hierro)», «hierro libre → moho», «esto no es consejo médico».
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 

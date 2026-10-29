@@ -253,7 +253,7 @@ function MucorShot() {
           <Celulas x0={0} y0={420} w={1080} h={300} n={12} seed={6} muerte={vMuere} foco={[560, 760]} radio={700} />
           <Celulas x0={0} y0={1020} w={1080} h={200} n={10} seed={7} muerte={vMuere} foco={[560, 860]} radio={700} />
           <Vaso y={870} alto={250} flujo={flujoV} coagulo={vCoag} xc={600} />
-          <Liston d="M 330 380 C 380 560 470 700 560 820 S 700 900 860 880" p={vEntra} ancho={58} />
+          <Liston d="M 330 380 C 380 560 470 700 560 820 S 700 900 860 880" p={vEntra} ancho={80} />
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿por qué tantos casos en India? */}
@@ -334,7 +334,7 @@ function MucorShot() {
       <Etq T={T} at={K.Es + 3.8} until={K.Hi - 0.3} x={40} y={660} texto="macrófago: la traga y la espora no germina" tam={24} color={KC.texto} />
       <Etq T={T} at={K.Hi + 0.4} until={K.V - 0.3} x={60} y={700} texto="espora que germina" tam={28} />
       <Etq T={T} at={K.Hi + 1.6} until={K.V - 0.3} x={520} y={500} texto="ancha, casi sin tabiques" tam={30} color={KC.hifa} />
-      <Etq T={T} at={K.Hi + 2.2} until={K.V - 0.3} x={60} y={1050} texto="otros mohos: delgadas y con tabiques" tam={26} color="#9fd0a6" />
+      <Etq T={T} at={K.Hi + 2.2} until={K.V - 0.3} x={60} y={1050} texto="Aspergillus: delgadas y con tabiques" tam={26} color="#9fd0a6" />
       <Etq T={T} at={K.V + 0.6} until={K.P - 0.3} x={60} y={530} texto="hifa" tam={30} color={KC.hifa} />
       <Etq T={T} at={K.V + 1.0} until={K.P - 0.3} x={60} y={1060} texto="vaso sanguíneo" tam={28} color="#ffb3bd" />
       <Chip T={T} at={K.V + 2.4} until={K.P - 0.3} texto="se tapa el vaso" x={300} y={330} tam={34} borde={KC.red} />
@@ -357,12 +357,12 @@ function MucorShot() {
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Ap} texto="5 cm" largo={130} />
-      <BarraEscala T={T} at={K.Ap} until={K.Mu} texto="10 µm" largo={150} />
+      <BarraEscala T={T} at={K.Ap} until={K.Mu} texto="10 µm" largo={75} />
       <BarraEscala T={T} at={K.Mu} until={K.Es} texto="1 cm" largo={120} />
       <BarraEscala T={T} at={K.Es} until={K.Hi} texto="5 cm" largo={100} />
-      <BarraEscala T={T} at={K.Hi} until={K.V} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.V} until={K.P} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.P} until={K.E} texto="500 km" largo={95} />
+      <BarraEscala T={T} at={K.Hi} until={K.V} texto="10 µm" largo={75} />
+      <BarraEscala T={T} at={K.V} until={K.P} texto="10 µm" largo={110} />
+      <BarraEscala T={T} at={K.P} until={K.E} texto="500 km" largo={77} />
       <BarraEscala T={T} at={K.Ma} until={K.Cn} texto="5 cm" largo={110} />
       <BarraEscala T={T} at={K.Cn} until={K.C} texto="50 cm" largo={140} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={130} />

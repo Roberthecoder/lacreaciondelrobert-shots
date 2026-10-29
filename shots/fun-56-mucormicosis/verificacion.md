@@ -50,3 +50,33 @@ Fuentes abiertas:
 Notas para el guion (corregidas el 29 oct 2026): la cita del CDC ya dice "a serious but rare fungal infection"; el autor ya es "Vinay, K."; la tarjeta de Patel ya dice "10 centros" y 112 → 231.
 
 Resumen (29 oct 2026, segunda vuelta): se volvieron a abrir las fuentes de todo lo que cambió (apodo, moho joven, macrófagos, tarjeta de 10 centros, frase de COSMIC con "de qué", recortes de voz y fuentes del guion). Las 29 filas quedan ✅.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé los textos de pantalla de `mucormicosis.jsx` y `guion.md` y la `publicacion.md` completa. Saqué cuadros con `preview.mjs` en 0.3, 3, 5, 8, 10, 12.5, 14, 17, 20, 26, 32, 34, 38, 44, 50, 53, 56 y 60 s.
+
+| # | Texto o dibujo (pantalla / publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | «ASÍ LE DECÍAN · "HONGO NEGRO"» + sello "APODO" | ✅ | [VIN], [GUP] | "The term "Black fungus" is a misnomer…"; "The Black fungus, a clinical terminology of mucormycosis, is not an appropriate synonym" | 2021 / 2022 |
+| F2 | «×2.1» en la tarjeta de Patel; barras 112 y 231 a escala (el número sube contando hasta 231) | ✅ | [PAT] | "We noted a 2.1-fold rise in mucormycosis during the study period compared with September–December 2019." · Fig. 2: 112 → 231 | 2021 |
+| F3 | «orden Mucorales» | ✅ | [CDC-C] | "molds belonging to the order Mucorales" | 2025 |
+| F4 | «macrófago: la traga y la espora no germina»; dibujo: macrófago con la espora entera adentro | ✅ | [ALQ] | "efficient in phagocytizing Mucorales spores and preventing their germination"; "unable to kill phagocytized Mucorales spores" (por eso la espora va entera) | 2023 |
+| F5 | (corregido; antes «otros mohos: delgadas y con tabiques») «Aspergillus: delgadas y con tabiques» | ✅ | [GUP], [KIM] | "Thin, septate, regular acute angle dichotomous branched hyaline hyphae of Aspergillus are observed in clinical samples." · Aspergillus "thin, relatively consistent diameters (2 to 3 μm)". La fuente compara con *Aspergillus*, no con "otros mohos" en general. | 2022 / 2020 |
+| F6 | «ancha, casi sin tabiques» | ✅ | [GUP] | "broad aseptate/sparsely septate hyphae with right-angle branching resembling ribbon-like appearance" | 2022 |
+| F7 | «transferrina (guarda el hierro)» · «hierro libre → moho» | ✅ | [ALQ] | "acidosis impairs transferrin's ability to efficiently chelate iron"; "Increased availability of serum free iron levels in the host can enhance the ability of Mucorales to produce a rapidly invasive infection" | 2023 |
+| F8 | «los autores piden usarlos solo / en COVID moderado o grave» · «esto no es consejo médico» | ✅ | [COS] | "must be used judiciously in only patients with moderate to severe disease as per the dose and duration recommended" | 2021 |
+| F9 | «2,826 pacientes con mucormicosis asociada a COVID · COSMIC · Indian J. Ophthalmol. · 2021»; cuadrícula 78 y 87 | ✅ | [COS] | "Of the 2826 patients…"; "Diabetes mellitus (DM) was present in 78%"; "87% of the patients were treated with corticosteroids" | 2021 |
+| F10 | Morfología: hifas hialinas (borde claro, interior transparente); esporangios gris oscuro (#4a4852) sobre moho blanco algodonoso; ramas casi en ángulo recto | ✅ | [GUP], [ADL], [DNZ] | "hyaline"; "at first white"; sporangia "greyish black"; "usually approaches 90°" | 2022 / 2013 |
+| F11 | (corregido) Barras de escala de µm. Antes: 10 µm = 150 px, con lo que la hifa ancha medía ≈ 5 µm (muy delgada). Ahora: hifas 10 µm = 75 px (ancha ≈ 10 µm, la de *Aspergillus* ≈ 3 µm); apodo 10 µm = 75 px (hifa ≈ 8 µm); vaso 10 µm = 110 px y la hifa del vaso pasó de 58 a 80 px (hifa ≈ 8 µm, glóbulo rojo ≈ 8 µm) | ✅ | [KIM] | "broad, ribbon-like hyphae of variable diameters (6 to 15 μm)" vs. Aspergillus "(2 to 3 μm)" | 2020 |
+| F12 | (corregido) Mapa de India esquemático (contorno con coordenadas reales, 1° ≈ 16 px); barra "500 km" pasó de 95 a 77 px. Sin cifras sobre el mapa. | ✅ | — | 500 km ≈ 4.8° de longitud a ~22° N ≈ 77 px a k = 16 | — |
+| F13 | Subtítulos: «No es el hongo: es tejido muerto.», «Sus hifas son transparentes.», «Más del doble de casos», «Es rara y no se contagia», etc. | ✅ | (filas 1–19) | Coinciden con la voz verificada. | — |
+| F14 | Esporas dibujadas visibles junto a la cara (escala 5 cm) | ✅ (esquemático) | — | La publicación dice "El dibujo es esquemático". | — |
+| P1 | publicacion.md (YouTube): (corregido; antes «En 2021 se le llamó "hongo negro"») «Durante la pandemia de COVID-19 se le llamó "hongo negro"» | ✅ | [VIN] | El artículo de 2021 sobre la mucormicosis en la pandemia pide no usar "Black fungus". | 2021 |
+| P2 | publicacion.md: COSMIC pide corticoides «solo en COVID moderado o grave y en la dosis y el tiempo recomendados» | ✅ | [COS] | "as per the dose and duration recommended" | 2021 |
+| P3 | publicacion.md (Instagram): (corregido) «2,826 pacientes con mucormicosis asociada a COVID» (antes no decía de qué) | ✅ | [COS] | título de COSMIC | 2021 |
+| P4 | publicacion.md (LinkedIn): (corregido; antes «el nombre confundió más de lo que explicó», opinión no verificable) «el nombre es equivocado» | ✅ | [VIN], [GUP] | "misnomer"; "not an appropriate synonym" | 2021 / 2022 |
+| P5 | publicacion.md: 10 hospitales, 112 → 231, 2.1 veces, diabetes como enfermedad de fondo más común, costras negras, trombos, hierro, "no se contagia", "rara", "casi siempre…" | ✅ | [PAT], [CDC-C], [CDC-A], [ALQ] | (mismas frases de la tabla principal) | 2021–2025 |
+| P6 | Tono: nada de consejo médico. Todas las redes dicen "No es consejo médico" (Instagram, X y Threads son textos cortos sin recomendaciones). | ✅ | — | — | — |
+
+Resumen de la revisión final: corregí en `mucormicosis.jsx` la etiqueta de *Aspergillus*, tres barras de escala de µm, la de 500 km del mapa y el ancho de la hifa del vaso; en `guion.md` la nota de esos textos; en `publicacion.md` la fecha del apodo, el "de qué" de los 2,826 y una opinión de LinkedIn. No toqué la voz. Todo queda ✅.
+VEREDICTO: APROBADO

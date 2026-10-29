@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esa mancha negra no es el hongo: es tejido muerto. 🍄
-Le dijeron "hongo negro", pero las hifas de los Mucorales (Rhizopus, Mucor) son transparentes. Se meten en los vasos sanguíneos, los tapan y el tejido sin sangre se muere y se pone negro. En India, en la pandemia, los casos se dispararon: en 10 hospitales pasaron de 112 (sept–dic 2019) a 231 (sept–dic 2020), y en un estudio de 2,826 pacientes, 78 % tenía diabetes y 87 % recibió corticoides. Es rara y no se contagia de persona a persona.
+Le dijeron "hongo negro", pero las hifas de los Mucorales (Rhizopus, Mucor) son transparentes. Se meten en los vasos sanguíneos, los tapan y el tejido sin sangre se muere y se pone negro. En India, en la pandemia, los casos se dispararon: en 10 hospitales pasaron de 112 (sept–dic 2019) a 231 (sept–dic 2020), y en un estudio de 2,826 pacientes con mucormicosis asociada a COVID, 78 % tenía diabetes y 87 % recibió corticoides. Es rara y no se contagia de persona a persona.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Tú también creías que el hongo era negro? 👇
 Shot Fungi Mati #56 · La Creación del Robert
@@ -38,7 +38,7 @@ El "hongo negro" NO es negro: es tejido muerto | Shot Fungi Mati #56
 Descripción:
 ```text
 Esa mancha negra no es el hongo: es tejido muerto.
-La mucormicosis es una infección por hongos rara pero grave, causada por mohos del orden Mucorales, sobre todo Rhizopus, y también Mucor (CDC). Viven en la tierra y en la materia orgánica que se pudre. En 2021 se le llamó "hongo negro", pero el nombre es equivocado: los hongos que la causan son hialinos (transparentes); lo negro es el tejido muerto (Gupta et al., 2022; Vinay et al., 2021).
+La mucormicosis es una infección por hongos rara pero grave, causada por mohos del orden Mucorales, sobre todo Rhizopus, y también Mucor (CDC). Viven en la tierra y en la materia orgánica que se pudre. Durante la pandemia de COVID-19 se le llamó "hongo negro", pero el nombre es equivocado: los hongos que la causan son hialinos (transparentes); lo negro es el tejido muerto (Gupta et al., 2022; Vinay et al., 2021).
 Sus esporas entran al respirar. Casi siempre enferman personas con las defensas bajas o con diabetes sin control (CDC). Si germinan, forman hifas anchas, casi sin tabiques, con ramas en ángulo recto, como listones. Invaden los vasos sanguíneos, se forma un coágulo y el tejido muere: aparecen costras negras (CDC).
 ¿Por qué tantos casos en India durante el COVID? Un estudio en hospitales de India encontró 2.1 veces más casos entre septiembre y diciembre de 2020 que en los mismos meses de 2019 (en 10 centros: 112 → 231 casos); la diabetes sin control fue la enfermedad de fondo más común (Patel et al., 2021). El estudio COSMIC (2021), con 2,826 pacientes con mucormicosis asociada a COVID, encontró diabetes en 78 % y uso de corticoides en 87 %. Con glucosa alta y sangre ácida, las proteínas que guardan el hierro lo sueltan, y el hierro libre favorece la invasión del moho (Alqarihi et al., 2023). Los autores de COSMIC piden usar los corticoides con juicio, solo en COVID moderado o grave y en la dosis y el tiempo recomendados.
 La mucormicosis no se contagia de persona a persona (CDC).
@@ -69,7 +69,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-El "hongo negro" de la pandemia no era negro, y el nombre confundió más de lo que explicó.
+El "hongo negro" de la pandemia no era negro: el nombre es equivocado.
 La mucormicosis la causan mohos del orden Mucorales (Rhizopus, Mucor), cuyas hifas son hialinas. Lo negro es la necrosis: las hifas invaden los vasos sanguíneos, se forman trombos y el tejido muere (CDC). En India, un estudio multicéntrico encontró 2.1 veces más casos en septiembre–diciembre de 2020 que en el mismo periodo de 2019 (Patel et al., Emerg. Infect. Dis., 2021), y el estudio COSMIC, con 2,826 pacientes con mucormicosis asociada a COVID, reportó diabetes en 78 % y corticoides en 87 % (Sen et al., 2021).
 Por qué importa: el control de la glucosa y el uso de corticoides con juicio, en la dosis y el tiempo recomendados, fueron las lecciones que señalaron los autores. Y un dato clave contra el pánico: no se contagia de persona a persona.
 ¿Recuerdas cómo se habló de esto en las noticias?
