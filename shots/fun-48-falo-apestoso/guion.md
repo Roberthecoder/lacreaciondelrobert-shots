@@ -54,7 +54,7 @@ Barras de escala: 10 cm (bosque y hongo), 1 cm (huevo), 10 µm (esporas), 1 nm (
    > "Flies feeding on the spore-laden mucilage on the gleba defaecated more rapidly than when feeding on dung or sucrose, thereby rapidly depositing large numbers of spores."
    > "The number of female flies at stinkhorns was significantly higher than that of males."
    > "The odour from the spore-covered gleba of the fruiting body attracted several species of fly, principally Polietes lardaria, Phaonia subventa, Calliphora vomitoria, Calliphora vicina, Lucilia caesar and Lucilia sericata. The latter four, all blowflies, were also among the dominant species attracted to and reared from, badger carcases."
-   → Usado en: estudio de 1997 en Irlanda (popó más rápido que con estiércol o azúcar); montones de esporas; más hembras que machos; las moscas que llegan son de las que también van a cadáveres.
+   → Usado en: estudio de 1997 de científicos de Irlanda (popó más rápido que cuando comían estiércol o azúcar); montones de esporas; más hembras que machos; las moscas que llegan son de las que también van a cadáveres.
 5. Guzmán, G., Montoya, L. y Bandala, V. M. (1990). Las especies y formas de *Dictyophora* (Fungi, Basidiomycetes, Phallales) en México y observaciones sobre su distribución en América Latina. *Acta Botánica Mexicana* 9: 1–11. https://doi.org/10.21829/abm9.1990.587 (resumen: https://publicaciones.inecol.mx/Record/oai:oai.abm.ojs.inecol.mx:article-587/Details)
    > "Se presenta una clave de las especies y formas mexicanas del género Dictyophora, el análisis de su distribución en el país (en 10 entidades federativas)…"
    > (resumen en inglés) "…their distributional analysis in the country (through 10 States)…"
