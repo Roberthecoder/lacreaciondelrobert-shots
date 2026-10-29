@@ -300,7 +300,7 @@ function CandidaShot() {
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2016" quien="Londres y Jena (Alemania)" revista="Moyes et al., Nature" x={540} y={480} />
       <Etq T={T} at={K.Es + 3.0} until={K.Pl - 0.3} x={700} y={960} texto="candidalisina" tam={32} color={KC.red} />
       <Chip T={T} at={K.Tx + 0.4} until={K.Tx + 2.1} texto="daña la membrana" x={400} y={560} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Tx + 2.9} until={K.Pl - 0.3} texto="en ratones, sin toxina: no enfermaba la boca" x={350} y={385} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.Tx + 2.9} until={K.Pl - 0.3} texto="en ratones, sin toxina: no enfermaba la boca" x={420} y={385} tam={28} borde={KC.leaf} />
       <Etq T={T} at={K.Pl + 1.0} until={K.Q - 0.3} x={60} y={470} texto="algodoncillo" tam={44} color={KC.ink} />
       <Etq T={T} at={K.Pl + 1.4} until={K.Q - 0.3} x={60} y={530} texto="(candidiasis oral)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Pl + 3.0} until={K.Q - 0.3} x={60} y={590} texto="placas blancas" tam={30} color={KC.ink} />
