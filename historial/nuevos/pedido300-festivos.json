@@ -1,0 +1,194 @@
+{
+ "temas": [
+  {
+   "id": "fes-07-viruela",
+   "titulo": "Shot Festivo #07 · Ciencia para la Paz · Biotecnológico: La viruela, la enfermedad que EE.UU. y la URSS borraron juntos",
+   "serie": "Shot Festivo",
+   "numero": 7,
+   "festividad": "Día Mundial de la Ciencia para la Paz",
+   "serie_vinculada": "Biotecnológico",
+   "fecha_publicacion": "2026-11-10",
+   "estado": "idea",
+   "carpeta": "shots/fes-07-viruela",
+   "rama": "pedido300/festivos",
+   "fuentes": [],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "La aguja bifurcada: cómo una aguja más simple vacunó a millones",
+    "Las muestras de viruela que todavía se guardan (Atlanta y Koltsovo)",
+    "La peste bovina: la segunda enfermedad erradicada"
+   ]
+  },
+  {
+   "id": "fes-08-pelicula-nitrato",
+   "titulo": "Shot Festivo #08 · Revolución Mexicana · Químico: Las películas de la Revolución eran de algodón explosivo (nitrato de celulosa)",
+   "serie": "Shot Festivo",
+   "numero": 8,
+   "festividad": "Revolución Mexicana",
+   "serie_vinculada": "Químico",
+   "fecha_publicacion": "2026-11-20",
+   "estado": "idea",
+   "carpeta": "shots/fes-08-pelicula-nitrato",
+   "rama": "pedido300/festivos",
+   "fuentes": [],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El incendio de la Cineteca Nacional de 1982",
+    "Cómo se restaura una película vieja",
+    "El celuloide de las pelotas de ping-pong"
+   ]
+  },
+  {
+   "id": "fes-09-rosas-diciembre",
+   "titulo": "Shot Festivo #09 · Virgen de Guadalupe · Científico: Rosas en diciembre: cómo florece una planta fuera de temporada",
+   "serie": "Shot Festivo",
+   "numero": 9,
+   "festividad": "Día de la Virgen de Guadalupe",
+   "serie_vinculada": "Científico",
+   "fecha_publicacion": "2026-12-12",
+   "estado": "idea",
+   "carpeta": "shots/fes-09-rosas-diciembre",
+   "rama": "pedido300/festivos",
+   "fuentes": [],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Por qué las rosas tienen espinas (aguijones)",
+    "El olor de la rosa: geraniol y feniletanol",
+    "Cuánto dura una flor cortada y por qué se marchita"
+   ]
+  },
+  {
+   "id": "fes-10-vela",
+   "titulo": "Shot Festivo #10 · Posadas · Científico: La vela no quema cera sólida: quema cera hecha gas (y en el espacio la flama es redonda)",
+   "serie": "Shot Festivo",
+   "numero": 10,
+   "festividad": "Posadas",
+   "serie_vinculada": "Científico",
+   "fecha_publicacion": "2026-12-16",
+   "estado": "idea",
+   "carpeta": "shots/fes-10-vela",
+   "rama": "pedido300/festivos",
+   "fuentes": [],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Por qué la flama es amarilla: hollín que brilla",
+    "Las conferencias de Navidad de Faraday",
+    "Cómo apaga el fuego un extintor"
+   ]
+  },
+  {
+   "id": "fes-11-nochebuena",
+   "titulo": "Shot Festivo #11 · Navidad · Biotecnológico: La nochebuena: hojas rojas que no son pétalos y la bacteria que la hace frondosa",
+   "serie": "Shot Festivo",
+   "numero": 11,
+   "festividad": "Navidad",
+   "serie_vinculada": "Biotecnológico",
+   "fecha_publicacion": "2026-12-24",
+   "estado": "idea",
+   "carpeta": "shots/fes-11-nochebuena",
+   "rama": "pedido300/festivos",
+   "fuentes": [],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cuetlaxóchitl: la nochebuena silvestre de Guerrero",
+    "Plantas que miden la noche (fotoperiodo)",
+    "Fitoplasmas: bacterias sin pared que viven en la savia"
+   ]
+  },
+  {
+   "id": "fes-12-fuegos-artificiales",
+   "titulo": "Shot Festivo #12 · Año Nuevo · Químico: Fuegos artificiales: un color por cada metal",
+   "serie": "Shot Festivo",
+   "numero": 12,
+   "festividad": "Año Nuevo",
+   "serie_vinculada": "Químico",
+   "fecha_publicacion": "2026-12-31",
+   "estado": "idea",
+   "carpeta": "shots/fes-12-fuegos-artificiales",
+   "rama": "pedido300/festivos",
+   "fuentes": [],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Por qué el azul es el color más difícil",
+    "La prueba de la flama en el laboratorio",
+    "Las luces de neón: un color por gas"
+   ]
+  },
+  {
+   "id": "fes-13-acitron",
+   "titulo": "Shot Festivo #13 · Día de Reyes · Ambiental: El acitrón de la rosca sale de un cactus protegido (biznaga)",
+   "serie": "Shot Festivo",
+   "numero": 13,
+   "festividad": "Día de Reyes",
+   "serie_vinculada": "Ambiental",
+   "fecha_publicacion": "2027-01-06",
+   "estado": "idea",
+   "carpeta": "shots/fes-13-acitron",
+   "rama": "pedido300/festivos",
+   "fuentes": [],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cuántos años tarda en crecer una biznaga",
+    "Cactáceas mexicanas en peligro",
+    "Qué fruta cristalizada lleva la rosca hoy"
+   ]
+  },
+  {
+   "id": "fes-14-huitlacoche",
+   "titulo": "Shot Festivo #14 · Candelaria · Fungi Mati: El huitlacoche: el hongo que infecta el maíz y se vuelve tamal",
+   "serie": "Shot Festivo",
+   "numero": 14,
+   "festividad": "Candelaria",
+   "serie_vinculada": "Fungi Mati",
+   "fecha_publicacion": "2027-02-02",
+   "estado": "idea",
+   "carpeta": "shots/fes-14-huitlacoche",
+   "rama": "pedido300/festivos",
+   "fuentes": [],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Ustilago maydis en el laboratorio: un modelo para estudiar infecciones",
+    "Por qué en otros países el huitlacoche se tira",
+    "Las esporas negras del carbón del maíz"
+   ]
+  },
+  {
+   "id": "fes-15-sparck-jones",
+   "titulo": "Shot Festivo #15 · Mujer y Niña en la Ciencia · IA: Karen Spärck Jones y la idea de 1972 que usan los buscadores",
+   "serie": "Shot Festivo",
+   "numero": 15,
+   "festividad": "Día Internacional de la Mujer y la Niña en la Ciencia",
+   "serie_vinculada": "IA",
+   "fecha_publicacion": "2027-02-11",
+   "estado": "idea",
+   "carpeta": "shots/fes-15-sparck-jones",
+   "rama": "pedido300/festivos",
+   "fuentes": [],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cómo un buscador ordena los resultados",
+    "Las primeras traducciones por computadora",
+    "Mujeres pioneras de la computación"
+   ]
+  },
+  {
+   "id": "fes-16-chocolate",
+   "titulo": "Shot Festivo #16 · San Valentín · Fungi Mati: Sin levaduras no hay chocolate (la fermentación del cacao)",
+   "serie": "Shot Festivo",
+   "numero": 16,
+   "festividad": "San Valentín",
+   "serie_vinculada": "Fungi Mati",
+   "fecha_publicacion": "2027-02-14",
+   "estado": "idea",
+   "carpeta": "shots/fes-16-chocolate",
+   "rama": "pedido300/festivos",
+   "fuentes": [],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Las bacterias del vinagre en el cacao",
+    "Por qué el chocolate se pone blanco",
+    "El cacao en Mesoamérica: el pozol"
+   ]
+  }
+ ]
+}
