@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Aflatoxinas base narrada.dc.html",
+  "salida": "Shot Aflatoxinas narrado.dc.html",
+  "nota": "Shot Fungi Mati #18. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "¿Por qué no debes comer el cacahuate arrugado del fondo de la bolsa?" },
+    { "escena": "Invisible", "texto": "Porque puede traer aflatoxinas: veneno sin olor, sabor ni color." },
+    { "escena": "Moho", "texto": "Las hacen mohos como Aspergillus flavus en maíz, cacahuate, nueces o chiles guardados con calor y humedad." },
+    { "escena": "Cocinar", "texto": "Y tostarlas o freírlas no las quita del todo." },
+    { "escena": "Pregunta", "texto": "¿Y adentro de ti, qué hacen?" },
+    { "escena": "ADN", "texto": "Tu cuerpo las vuelve una molécula que se pega a tu ADN." },
+    { "escena": "Cancer", "texto": "Por eso la agencia contra el cáncer de la OMS las declara cancerígenas para humanos: ligadas al cáncer de hígado." },
+    { "escena": "Estudio", "texto": "En 2004, en Kenia, cosecharon maíz en plenas lluvias y lo guardaron húmedo." },
+    { "escena": "Numero", "texto": "En comida de algunas casas había hasta ocho mil partes por mil millones; el límite: veinte." },
+    { "escena": "Brote", "texto": "Para julio: trescientos diecisiete enfermos con piel amarilla, ciento veinticinco muertos." },
+    { "escena": "Pavos", "texto": "Se descubrieron hacia 1960: murieron cien mil pavitos en Inglaterra que comieron harina de cacahuate mohosa." },
+    { "escena": "Sirve", "texto": "Lo que sí sirve: secar y guardar el grano seco y fresco; tirar lo mohoso, arrugado o descolorido." },
+    { "escena": "Cierre", "texto": "Así que ese cacahuate arrugado del fondo: a la basura." }
+  ]
+}

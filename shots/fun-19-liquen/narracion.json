@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Liquen base narrada.dc.html",
+  "salida": "Shot Liquen narrado.dc.html",
+  "nota": "Shot Fungi Mati #19. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio." },
+    { "escena": "Donde", "texto": "Es un liquen: vive en piedras, troncos y bardas." },
+    { "escena": "Corte", "texto": "Al microscopio, tiene pisos." },
+    { "escena": "Corteza", "texto": "Arriba, una piel de hilos apretados del hongo: lo protege del sol." },
+    { "escena": "Algas", "texto": "Debajo, una capa verde: algas o cianobacterias que hacen fotosíntesis y dan azúcar al hongo." },
+    { "escena": "Medula", "texto": "Abajo, una maraña suelta de hilos del hongo: la médula." },
+    { "escena": "Trato", "texto": "El hongo pone la casa; el socio, la comida." },
+    { "escena": "Pregunta", "texto": "¿Y si en ese trato hubiera alguien más?" },
+    { "escena": "Historia", "texto": "Cuando Simon Schwendener propuso en 1867 que un liquen eran dos seres, muchos no le creyeron." },
+    { "escena": "Estudio", "texto": "En 2016, en Montana, Estados Unidos, hallaron levaduras en la piel de dos líquenes." },
+    { "escena": "Continentes", "texto": "Encontraron parientes de esas levaduras en líquenes de seis continentes. Qué hacen ahí, aún se estudia." },
+    { "escena": "Espacio", "texto": "Y algunos son durísimos: en 2005, dos especies pasaron casi quince días expuestos al espacio, por fuera de un satélite, y al volver hacían fotosíntesis casi igual." },
+    { "escena": "Cierre", "texto": "Así que esa mancha en la piedra no es una planta: es un equipo, como los dos que aguantaron el espacio." }
+  ]
+}
