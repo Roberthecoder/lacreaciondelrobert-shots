@@ -103,7 +103,7 @@ en `resultado`, en palabras sencillas) y en el doc del shot `publicado: {<red>: 
 Si en el chat Robert dice «publica <shot> en <redes>», es lo mismo.
 
 **Lo que Robert ve y hace después:** TikTok: sale publicado con su descripción y la privacidad que eligió (si eligió
-«borrador», le llega a la bandeja y lo termina él). Mientras TikTok no apruebe la app, solo funciona con la cuenta en privada. YouTube: queda **privado** hasta que Google apruebe la auditoría (ver abajo); mientras,
+«borrador», le llega a la bandeja y lo termina él). Mientras TikTok no apruebe la publicación directa, el publicador lo manda SOLO como borrador a su bandeja (plan B automático; la fila de la bitácora lleva `borrador: true` y no cuenta como publicado, para poder publicarlo directo después). YouTube: queda **privado** hasta que Google apruebe la auditoría (ver abajo); mientras,
 Robert puede cambiarlo a público a mano en YouTube Studio si quiere.
 
 **Renovar tokens:**

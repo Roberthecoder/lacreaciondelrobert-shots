@@ -21,7 +21,8 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   Google apruebe la auditoría (ENVIADA el 29 oct; documentos en `docs/revisiones/youtube/`).
 - TikTok: PUBLICA DIRECTO (video.publish) con su descripción y las opciones que Robert elige en la Sala (privacidad sin valor
   por defecto, comentarios/dúo/stitch, etiqueta IA, contenido de marca). Opción «borrador» para mandarlo a su bandeja.
-  Mientras TikTok no apruebe la app: solo publica si la CUENTA está en privada (si no, falla con aviso claro).
+  Mientras TikTok no apruebe la app: plan B automático = BORRADOR a la bandeja de Robert (él pega el texto y publica).
+  Plan B sin probar aún con la cuenta pública (la cuenta seguía privada al terminar el demo).
   Revisión de Producción REENVIADA el 29 oct 16:47 con Direct Post y demo nuevo (en la PC de Robert:
   `C:\Users\winusr\lacreacion-lotes\revision-tiktok\demo-tiktok-directo.mp4`). Al aprobarse: Robert cambia
   TIKTOK_CLIENT_KEY/SECRET por los de Producción y se conecta otra vez (docs/tiktok.html, borrando la llave guardada).
