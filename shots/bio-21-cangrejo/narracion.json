@@ -33,7 +33,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 1977, la FDA aceptó su prueba, la LAL, en lugar de la de conejos."
+      "texto": "En 1977, la FDA aceptó su prueba, la LAL, como alternativa a la de conejos."
     },
     {
       "escena": "Pregunta",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Mortalidad",
-      "texto": "Pero se calcula que el 15 % de los que regresan se muere."
+      "texto": "Pero en 2023 se calculaba que el 15 % de los que regresan se muere."
     },
     {
       "escena": "FactorC",
@@ -53,11 +53,11 @@
     },
     {
       "escena": "Farmacopea",
-      "texto": "Europa acepta esa prueba desde 2021, y Estados Unidos desde 2025."
+      "texto": "La farmacopea europea la incluye desde 2020, y la de Estados Unidos desde 2025."
     },
     {
       "escena": "Cierre",
-      "texto": "Esa sangre azul cuida tus vacunas, y cada vez más, sin cangrejos."
+      "texto": "Esa sangre azul cuida tus vacunas, y ya hay una forma de hacerlo sin cangrejos."
     }
   ]
 }

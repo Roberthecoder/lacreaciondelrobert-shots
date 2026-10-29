@@ -5,15 +5,15 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esas células no son de un laboratorio: son de una mujer que nunca dio permiso."
+      "texto": "Esas células no son de un laboratorio: son de una mujer a la que nunca le pidieron permiso."
     },
     {
       "escena": "Henrietta",
-      "texto": "Henrietta Lacks tenía 31 años y cáncer de cuello uterino."
+      "texto": "Henrietta Lacks tenía 30 años y cáncer de cuello uterino."
     },
     {
       "escena": "Biopsia",
-      "texto": "En 1951, en el hospital Johns Hopkins, le tomaron un pedazo del tumor sin pedírselo."
+      "texto": "En 1951, en el hospital Johns Hopkins, le tomaron un pedazo del tumor."
     },
     {
       "escena": "Gey",
@@ -21,7 +21,7 @@
     },
     {
       "escena": "Limite",
-      "texto": "Una célula normal en cultivo se detiene tras unas 50 divisiones. ¿Y estas por qué no?"
+      "texto": "Una célula humana normal en cultivo se detiene tras unas 50 divisiones. ¿Y estas por qué no?"
     },
     {
       "escena": "Virus",
@@ -49,7 +49,7 @@
     },
     {
       "escena": "Demanda",
-      "texto": "En 2023 su familia llegó a un acuerdo con Thermo Fisher, a quien demandó."
+      "texto": "En 2023, su familia llegó a un acuerdo con Thermo Fisher, a quien demandó."
     },
     {
       "escena": "Cierre",
