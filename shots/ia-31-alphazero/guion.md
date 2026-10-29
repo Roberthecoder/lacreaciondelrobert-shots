@@ -20,7 +20,7 @@
 | 3 | Horas | A las cuatro horas de entrenar ya superaba a Stockfish; entrenó nueve en total. | Medidor de nivel (Elo, esquemático) que sube; línea punteada "nivel de Stockfish"; reloj de entrenamiento: en "4 h" la curva cruza la línea (destello); el reloj sigue hasta "9 h". |
 | 4 | Pregunta | ¿Pero cómo gana alguien que revisa mil veces menos? | **Re-gancho.** "?" gigante sobre el tablero; Robert grande. |
 | 5 | Medidor | Stockfish revisaba unos sesenta millones de posiciones por segundo. AlphaZero, solo sesenta mil. | Fondo oscuro (por dentro de la máquina): un árbol de jugadas que se abre por todos lados para Stockfish (miles de ramitas) contra pocas ramas para AlphaZero. Medidor doble: "60 000 000 /s" vs "60 000 /s". |
-| 6 | Medidor | Sus autores creen que su red neuronal le señala qué jugadas mirar. | La red neuronal ilumina solo 3 ramas del árbol de AlphaZero (las "prometedoras"); chip "hipótesis de los autores". |
+| 6 | Medidor | Sus autores proponen que su red neuronal le señala qué jugadas mirar. | La red neuronal ilumina solo 3 ramas del árbol de AlphaZero (las "prometedoras"); chip "hipótesis de los autores". |
 | 7 | Duelo | En Londres, DeepMind lo publicó en Science en 2018: en mil partidas, ganó ciento cincuenta y cinco, perdió seis y empató las demás. | **Cap. 3 · El duelo.** Tarjeta "2018 · DeepMind (Londres) · Silver et al. · *Science*"; cuadrícula de 1 000 cuadritos que se llena: 155 verdes (ganó), 6 rojos (perdió), 839 grises (empates). Chip "3 h por partida + 15 s por jugada". |
 | 8 | Aperturas | Lo más raro: sin ver a ningún humano, descubrió sola aperturas que las personas usamos mucho. | El tablero muestra una apertura humana común (p. ej. 1. d4, flechas); globos "¡como los humanos!"; contador "veces que la jugaba" que sube con las horas. |
 | 9 | Chips | Eso sí: para entrenar usó cinco mil chips de Google. | Crítica con datos: pared de chips (TPU) que se encienden; chip "5 000 TPU para generar partidas (solo en el entrenamiento)". |
@@ -68,5 +68,5 @@ toques (verde agudo, rojo grave), zumbido de servidores al encenderse los chips,
   sola máquina con 4 TPU y Stockfish 44 núcleos de CPU (no se menciona en la voz).
 - "Aprendía qué jugadas la llevaban a ganar" simplifica el aprendizaje por refuerzo (ajusta la red para predecir el resultado y
   las jugadas de su propia búsqueda).
-- "Sus autores creen…" traduce el "may compensate" del artículo: es una explicación propuesta, no demostrada.
+- "Sus autores proponen…" traduce el "may compensate" del artículo: es una explicación propuesta, no demostrada.
 - La gráfica de nivel es esquemática; el dibujo es esquemático. El estudio es de 2018 y así se dice.
