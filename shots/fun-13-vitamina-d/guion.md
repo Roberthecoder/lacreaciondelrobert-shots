@@ -25,7 +25,7 @@
 | 7 | Resultado | En solo quince minutos: 17.6 microgramos de vitamina D por cada 100 gramos de champiñón. | Cronómetro llega a 15:00; el medidor se llena: "17.6 µg de vitamina D2 por 100 g de champiñón fresco". |
 | 8 | Salmon | Comparable al salmón, y más de lo recomendado al día para la mayoría de los adultos. | Junto a la charola aparece un filete de salmón ("comparable"); barra "adulto de 19 a 70 años: 15 µg al día" (letra chica: "mayores de 70: 20 µg") que la de los champiñones rebasa. |
 | 9 | Hora | Subió una hora, se estancó y, con horas de más, bajó. | Gráfica: sube recto la 1.ª hora, se aplana, y con 2 h extra cae. Chip "más sol ≠ más vitamina". |
-| 10 | Cuerpo | Y sí la aprovechas: en un estudio con 30 adultos, llegó a la sangre igual que un suplemento de D2. | Tarjeta "estudio con 30 adultos · Keegan et al., 2013"; dos tubos de sangre que se llenan igual: "D2 de champiñón" y "suplemento de D2". |
+| 10 | Cuerpo | Y sí la aprovechas: en un estudio pequeño de 2013, la D2 del champiñón llegó a la sangre igual que un suplemento de D2. | Tarjeta "estudio con 30 adultos · Keegan et al., 2013"; dos tubos de sangre que se llenan igual: "D2 de champiñón" y "suplemento de D2". |
 | 11 | Truco | Rebanados hacen más que enteros, y en el refri la guardan hasta una semana. | Champiñón entero vs. rebanado al sol (el rebanado brilla más); luego un refri con un calendario de 7 días. |
 | 12 | Cierre | Así que no es solo comida: quince minutos de sol del mediodía y es tu fábrica de vitamina D. | **Regreso a la imagen del inicio:** la misma tabla y el mismo champiñón, ahora rebanado, al sol y con todos los "focos" encendidos. Chip "15 min de sol de mediodía". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
