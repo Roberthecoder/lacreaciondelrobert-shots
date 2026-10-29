@@ -23,12 +23,12 @@
 | 9 | Edad | Así, uno de sesenta metros tendría unos doscientos cincuenta años. | **La imagen que se llena:** el anillo crece anillo por anillo, contador de años 0 → 250 y diámetro 0 → 60 m (con una persona a escala). Chip "estimación". |
 | 10 | Japon | Y en 2010, en Japón, hallaron que un hongo de anillo suelta una sustancia que hace crecer el pasto. | Tarjeta "2010 · Universidad de Shizuoka, Japón · *ChemBioChem*"; *Lepista sordida* (seta morada) junto a un matraz; la molécula "AHX" (2-azahipoxantina) cae al pasto y este crece. |
 | 11 | Folclor | Antes lo explicaban con hadas, el diablo batiendo mantequilla o un dragón descansando. | Tres viñetas tipo cuento que aparecen una por una: "hadas bailando", "el diablo · mantequera · Holanda", "un dragón · Alemania"; al final cae el sello "HONGO". Chip "folclor europeo". |
-| 12 | Cierre | Así que ese círculo no es de hadas: es un hongo que lleva años, o siglos, creciendo bajo tus pies. | **Regreso a la imagen del inicio:** el mismo pasto de parque, ahora con el anillo enorme, el micelio dibujado por dentro debajo (`Lupa`) y unos pies parados encima. Chip "años, o siglos". |
+| 12 | Cierre | Así que ese círculo no es de hadas: es un hongo que lleva años, o siglos, creciendo bajo tus pies. | **Regreso a la imagen del inicio:** el mismo pasto de parque, ahora con el anillo enorme, el micelio dibujado por dentro debajo (`Lupa`) y una persona de pie, a escala, junto al anillo. Chip "años, o siglos". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave, suave y de asombro (pasto al aire libre, sin golpe); efectos en el mismo cuadro: tintineo de "hadas" que se corta, la espora que cae, crujidos finos de las hifas al crecer, pulso que avanza con el borde, burbujitas del nitrógeno, gotas que rebotan, "pop" de cada seta, tics del contador de años, campanita de la tarjeta de Japón, tres golpes de libro de cuentos en el folclor.
 
-Barras de escala: 1 m (parque), 10 µm (espora), 1 cm (micelio), 10 cm (corte del suelo), 5 cm (setas y Japón), 10 m (pradera y anillo de 60 m).
+Barras de escala: 20 cm (parque del gancho y la pregunta), 10 µm (espora), 1 cm (micelio), 1 m (borde vivo), 10 cm (corte del suelo), 5 cm (setas y Japón), "10 m · cinta no a escala" (pradera de 1917), 10 m (anillo de 60 m y cierre).
 
 ## Robert en pantalla
 

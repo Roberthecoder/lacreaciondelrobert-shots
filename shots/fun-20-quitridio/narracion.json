@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Quitridio base narrada.dc.html",
+  "salida": "Shot Quitridio narrado.dc.html",
+  "nota": "Shot Fungi Mati #20. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta rana no está dormida: un hongo que tus ojos nunca van a ver le está parando el corazón."
+    },
+    {
+      "escena": "Piel",
+      "texto": "Las ranas respiran en parte por la piel y por ahí controlan agua y sales."
+    },
+    {
+      "escena": "Zoosporas",
+      "texto": "En el agua nadan las esporas del quitridio, Batrachochytrium dendrobatidis, con colita."
+    },
+    {
+      "escena": "Queratina",
+      "texto": "Se meten en la queratina de la piel y crecen como bolsitas llenas de esporas."
+    },
+    {
+      "escena": "Engrosa",
+      "texto": "La piel se engruesa y el paso de sales cae a menos de la mitad."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo una piel enferma mata a una rana entera?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2009, en Australia, Jamie Voyles midió la sangre de ranas infectadas."
+    },
+    {
+      "escena": "Corazon",
+      "texto": "El sodio bajó como un veinte por ciento; el potasio, la mitad, y el corazón se detuvo."
+    },
+    {
+      "escena": "Especies",
+      "texto": "En 2019 lo culparon del declive de al menos 501 especies de anfibios y 90 presuntas extinciones; cifras debatidas."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En museos se vio que una ola del hongo salió del sur de México a inicios de los setenta."
+    },
+    {
+      "escena": "Salamandras",
+      "texto": "Su primo, el devorador de salamandras, dejó solo el cuatro por ciento de las salamandras de fuego de un bosque holandés."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa rana no está dormida: la mató algo que tus ojos nunca van a ver."
+    }
+  ]
+}

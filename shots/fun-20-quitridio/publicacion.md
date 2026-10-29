@@ -67,7 +67,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-Un hongo microscópico está detrás del declive de cientos de especies de anfibios, y el mecanismo es fisiológico, no "misterioso".
+Un hongo microscópico se asocia al declive de cientos de especies de anfibios (la cifra exacta está en debate), y el mecanismo propuesto es fisiológico, no "misterioso".
 Batrachochytrium dendrobatidis infecta las capas con queratina de la piel de los anfibios, que usan para respirar en parte y para regular agua y sales. En ranas infectadas, el transporte de electrolitos a través de la piel cayó más de 50 %, el sodio de la sangre bajó ~20 % y el potasio ~50 %, y murieron por paro cardiaco (Voyles et al., Science 2009).
 Scheele et al. (Science, 2019) atribuyeron a la quitridiomicosis el declive de al menos 501 especies y 90 presuntas extinciones; Lambert et al. (2020) cuestionaron los datos, y el tamaño exacto del impacto sigue en debate. Muestras de museo indican que una ola del hongo salió del sur de México a inicios de los setenta (Cheng et al., PNAS 2011).
 Por qué importa: las colecciones de museo y la fisiología básica permitieron reconstruir y explicar esta epidemia.

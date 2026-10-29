@@ -71,10 +71,12 @@ Fuente extra abierta: Kuo 2013, esporas de *M. oreades*: "Spores 7-10 x 4-6 µ; 
 | R15 | Publicación: grupo de Hirokazu Kawagishi (Shizuoka) aisló AHX en 2010, "químico de hada"; LinkedIn: "hoy se estudia en cultivos" | ✅ | [CHOI], [KAW] | Kawagishi es autor del artículo de 2010; "named as fairy chemicals (FCs)"; "FCs increased the yield of rice, wheat, and other crops in the greenhouse and/or field experiments" | 2010 / 2019 |
 | R16 | Publicación: "puede ser un organismo de siglos" (LinkedIn) | ✅ | [SP], [RHS] | "approximately 600 years"; "may exist for hundreds of years" | 1917 |
 | R17 | Citas de `## Fuentes` (NCSU "release of nitrogen…", "Most cases of Type I…"; Kuo "in troops, arcs, or rings") | ✅ | [NCSU], [KUO] | Aparecen textuales en las páginas | 2017 / 2013 |
-| R18 | Escena del estudio (1917): barra "10 m" (140 px) y la cinta amarilla "+12 cm por año" mide 160 px (≈ 11 m con esa barra) | ⚠️ | — | La barra dice que la cinta mide unos 11 m, pero el dato es de 12 cm. | — |
-| R19 | Escena de la edad: barra "10 m" = 140 px, pero el anillo final de 60 m mide unos 700 px de diámetro (10 m ≈ 117 px); la persona "a escala" (`Personita s=1.6`, ≈ 41 px) mide ≈ 3.5 m | ⚠️ | — | La escala no cuadra con el anillo y la persona sale del doble de alta. | — |
-| R20 | Cierre: barra "1 m" = 120 px, pero las suelas de los zapatos (`Pies s=0.75`) miden ≈ 160 px (≈ 1.3 m) y las setas vistas desde arriba ≈ 49 px (≈ 40 cm); el anillo (≈ 8 m) no llega a "siglos" con 12 cm/año (≈ 33 años) | ⚠️ | [SP], [KUO] | Zapatos y setas fuera de escala; el anillo dibujado es de décadas. | — |
-| R21 | Gancho y pregunta: barra "1 m" = 120 px con setas desde arriba de 40 px (≈ 33 cm; reales 1–5 cm) | ⚠️ | [KUO] | "1-5 cm across" | 2013 |
-| R22 | Escena "comida agotada / borde vivo" (anillo con centro gris de ≈ 5–7 cm) bajo la barra "1 cm" | ⚠️ | [SP] | "During the first year or two there would be no differentiation into zones": un anillo con centro agotado no mide centímetros. | 1917 |
+| R18 | Escena del estudio (1917): barra "10 m · cinta no a escala" (corregido; antes "10 m" con una cinta de ≈ 11 m) | ✅ corregido | [SP] | La cinta queda marcada como fuera de escala; el dato sigue en el chip "≈ 12 cm por año (promedio estimado)". | 1917 |
+| R19 | Escena de la edad: barra "10 m" = 117 px (anillo final de 60 m ≈ 700 px) y persona `s=0.8` ≈ 20 px ≈ 1.7 m (corregido) | ✅ corregido | [SP] | "A ring 60 meters in diameter would be approximately 250 years old." | 1917 |
+| R20 | Cierre: barra "10 m" = 120 px, anillo de ≈ 78 m (≈ 325 años a 12 cm/año → "siglos"), persona `s=0.8` ≈ 1.7 m en lugar de los zapatos, sin setas (corregido) | ✅ corregido | [SP] | "approximately 12 cm. a year on an average"; "approximately 600 years" | 1917 |
+| R21 | Gancho y pregunta: barra "20 cm" = 120 px; setas desde arriba de radio 14 (≈ 4.7–5 cm); anillo de ≈ 0.8–1 m (corregido) | ✅ corregido | [KUO], [NCSU] | "1-5 cm across"; anillos "initially 1 foot or less in diameter" | 2013 / 2017 |
+| R22 | Micelio: barra "1 cm" solo mientras sale de la espora; "comida agotada / borde vivo" con barra "1 m" = 190 px (anillo ≈ 4 m) (corregido) | ✅ corregido | [SP] | "subsequent gradual outward growth would result in the separation of the zones" | 1917 |
 
-Pendiente: R18–R22 (escalas de la animación). La voz, los textos en pantalla y `publicacion.md` están ✅.
+Resumen: 29 oct 2026, re-verificadas en `anillo.jsx` las 5 correcciones de escala (R18–R22). Voz, textos en pantalla, escalas, `publicacion.md` (7 redes + comentario fijado) y citas de Fuentes: todo ✅.
+
+VEREDICTO: APROBADO

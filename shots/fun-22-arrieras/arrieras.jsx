@@ -178,13 +178,14 @@ function ArrierasShot() {
       <Escena T={T} a={K.Pa} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <defs><mask id="ar-corte"><rect x={0} y={0} width={KW} height={KH} fill="#fff" /><circle cx={392} cy={858} r={10 + 140 * corte} fill="#000" /></mask></defs>
+          <defs><mask id="ar-corte"><rect x={0} y={0} width={KW} height={KH} fill="#fff" /><circle cx={392} cy={858} r={corte >= 0.97 ? 140 : 0} fill="#000" /></mask></defs>
           <path d="M 730 600 Q 750 760 700 1010" stroke="#5a7a2a" strokeWidth={16} fill="none" />
           <g mask="url(#ar-corte)"><g transform="translate(90 0)">
             <path d="M 620 640 Q 380 560 190 760 Q 260 960 620 900 Q 660 760 620 640 Z" fill={AR.hoja} stroke={KC.ink} strokeWidth={7} />
             <path d="M 620 650 Q 420 760 220 770" stroke="rgba(255,255,255,.45)" strokeWidth={6} fill="none" />
           </g></g>
-          {corte > 0.95 && <g transform={`translate(${klerp(392, 470, pasta)} ${klerp(858, 1010, pasta)}) scale(${klerp(1, 0.25, pasta)})`}>
+          {corte > 0 && corte < 0.97 && <circle cx={392} cy={858} r={140} fill="none" stroke={KC.ink} strokeWidth={7} strokeDasharray={`${corte * 880} 999`} transform="rotate(-90 392 858)" />}
+          {corte >= 0.97 && <g transform={`translate(${klerp(392, 470, pasta)} ${klerp(858, 1010, pasta)}) scale(${klerp(1, 0.25, pasta)})`}>
             <circle r={140} fill={AR.hoja} stroke={KC.ink} strokeWidth={7} opacity={1 - pasta * 0.6} />
           </g>}
           <Hormiga T={T} x={215} y={900} s={1.75} paso={0.15} fase={1} />
@@ -280,7 +281,7 @@ function ArrierasShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           {[[230, 820, 0.95, '#a8451c', 1, 1], [560, 820, 0.75, '#6b3b1e', 1.4, 0.9], [880, 820, 0.85, '#c9772e', 0.6, 1.1], [380, 1080, 0.7, '#4a2c1a', 0.3, 0.85], [740, 1080, 1.0, '#8e5a2b', 1.2, 1.2]].map(([x, y, s, c, es, gs], i) => {
-            const k = kprog(T, K.To + 0.3 + i * 0.35, K.To + 0.6 + i * 0.35, kEase.rebote), ok = kprog(T, K.To + 0.7 + i * 0.35, K.To + 1.0 + i * 0.35, kEase.rebote);
+            const k = kprog(T, K.To - 0.2 + i * 0.35, K.To + 0.1 + i * 0.35, kEase.rebote), ok = kprog(T, K.To + 0.4 + i * 0.35, K.To + 0.7 + i * 0.35, kEase.rebote);
             return <g key={i}>
               {k > 0 && <g transform={`translate(${x} ${y}) scale(${k}) translate(${-x} ${-y})`}><Hormiga T={T} x={x - 20} y={y} s={s} color={c} espinas={es} gaster={gs} paso={0.4} fase={i * 2} /></g>}
               {ok > 0 && <g transform={`translate(${x + 10} ${y - 150}) scale(${ok})`}><circle r={36} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M -16 2 L -4 14 L 18 -12" stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>}
@@ -296,8 +297,8 @@ function ArrierasShot() {
           <path d="M 170 1112 Q 300 1020 430 1112 Z" fill="#8a6440" stroke={KC.ink} strokeWidth={6} />
           <ellipse cx={300} cy={1080} rx={34} ry={14} fill="#2a1a10" />
           {Array.from({ length: 4 }, (_, i) => { const u = kprog(T, K.Ch + 0.3 + i * 0.7, K.Ch + 3.0 + i * 0.7); if (u <= 0) return null;
-            const px = 300 + Math.sin(u * 4 + i) * 60 + (i - 1.5) * 120 * u, py = 1060 - u * (420 + i * 50);
-            return <Hormiga key={i} T={T} x={px} y={py} s={0.8} alas={1} gaster={1.45} cabeza={1.1} paso={0.3} fase={i * 3} dir={i % 2 ? -1 : 1} />; })}
+            const px = 300 + Math.sin(u * 4 + i) * 40 + u * (60 + i * 75), py = 1060 - u * (380 + i * 45);
+            return <Hormiga key={i} T={T} x={px} y={py} s={0.8} alas={1} gaster={1.45} cabeza={1.1} paso={0.3} fase={i * 3} />; })}
           <Molcajete T={T} x={790} y={1010} s={0.95} llena={kprog(T, K.Ch + 2.4, K.Ch + 3.4, kEase.sale)} />
         </>)}
       </Escena>
@@ -359,13 +360,13 @@ function ArrierasShot() {
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Ba - 0.2} anio="1999" quien="Univ. de Toronto · Panamá" revista="Currie et al. · Nature, 1999" y={430} />
       <Rotulo T={T} at={K.Ba + 0.6} until={K.To - 0.2} x={40} y={1530} partes={[['Acromyrmex', true], [', otra arriera', false]]} tam={32} linea={false} />
       <Rotulo T={T} at={K.Ba + 1.0} until={K.To - 0.2} x={40} y={1580} partes={[['bacterias ', false], ['Pseudonocardia', true]]} tam={32} linea={false} />
-      <Chip T={T} at={K.Ba + 2.2} until={K.To - 0.2} texto="antibiótico vs. parásito" x={360} y={890} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.Ba + 2.2} until={K.To - 0.2} texto="antibiótico vs. parásito" x={540} y={1660} tam={30} borde={KC.cyan} />
       <Chip T={T} at={K.To + 0.3} until={K.Ch - 0.2} texto="22 especies revisadas en Panamá (1999)" x={540} y={480} tam={34} borde={KC.leaf} />
       <Rotulo T={T} at={K.Ch + 1.0} until={K.R - 0.2} x={40} y={430} partes={[['chicatana', false]]} tam={34} color={KC.ink} linea={false} />
       <Rotulo T={T} at={K.Ch + 1.4} until={K.R - 0.2} x={40} y={480} partes={[['Atta mexicana', true], [' (con alas)', false]]} tam={30} color={KC.ink} linea={false} />
       <Chip T={T} at={K.Ch + 2.6} until={K.R - 0.2} texto="en salsa" x={790} y={880} tam={34} borde={KC.red} />
       <Rotulo T={T} at={K.R + 0.3} until={K.C - 0.2} x={40} y={1530} partes={[['futura reina', false]]} tam={32} linea={false} />
-      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="la hoja = abono" x={330} y={470} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="la hoja = abono" x={330} y={400} tam={40} borde={KC.leaf} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="5 mm" largo={150} />
@@ -380,7 +381,7 @@ function ArrierasShot() {
       <BarraEscala T={T} at={K.To} until={K.Ch} texto="5 mm" largo={120} />
       <BarraEscala T={T} at={K.Ch} until={K.R} texto="1 cm" largo={80} />
       <BarraEscala T={T} at={K.R} until={K.C} texto="2 mm" largo={60} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 mm" largo={150} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 mm" largo={150} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No las cargan para comérselas: *son granjeras.*" />

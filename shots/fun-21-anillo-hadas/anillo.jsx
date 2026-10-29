@@ -34,8 +34,8 @@ function Cesped({ T, cx = 540, cy = 880, R = 250, W = 60, cafe = 0, setas = 0, b
 // Seta de Marasmius oreades vista desde arriba: sombrero crema/tostado con un bultito más oscuro al centro.
 function SetaArriba({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <circle r={20} fill="#e3c08c" stroke={KC.ink} strokeWidth={4} />
-    <circle r={8} fill="#b9895a" />
+    <circle r={14} fill="#e3c08c" stroke={KC.ink} strokeWidth={4} />
+    <circle r={6} fill="#b9895a" />
   </g>;
 }
 // Marasmius oreades de perfil (dibujo esquemático): pie delgado y correoso, sombrero acampanado-convexo con bultito,
@@ -265,7 +265,7 @@ function AnilloShot() {
       <Escena T={T} a={K.Ed} b={K.J} zoom={0.02}>
         {fsvg(<>
           <Cesped T={T} cx={470} cy={950} R={20 + 330 * uEd} W={20 + 30 * uEd} anillos={uEd * 25} base={AN.pradera} claro="#a8bf4e" />
-          <Personita x={470 + 20 + 330 * uEd + 40} y={950} s={1.6} />
+          <Personita x={470 + 20 + 330 * uEd + 40} y={950} s={0.8} />
         </>)}
       </Escena>
       {/* 11 · Japón, 2010: Lepista sordida suelta una sustancia que hace crecer el pasto */}
@@ -297,8 +297,8 @@ function AnilloShot() {
       {/* 13 · cierre: el mismo pasto del inicio, ahora con un anillo enorme y tú parado encima */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         {fsvg(<>
-          <Cesped T={T} cx={540} cy={880} R={klerp(290, 470, kprog(T, K.C, K.C + 2.0, kEase.suave))} W={74} setas={1} anillos={18} />
-          <Pies x={540} y={1110} s={0.75} o={kprog(T, K.C + 1.4, K.C + 1.9)} />
+          <Cesped T={T} cx={540} cy={880} R={klerp(290, 470, kprog(T, K.C, K.C + 2.0, kEase.suave))} W={74} setas={0} anillos={18} />
+          <g opacity={kprog(T, K.C + 1.4, K.C + 1.9)}><Personita x={540} y={1110} s={0.8} /></g>
         </>)}
       </Escena>
       <Lupa T={T} at={K.C + 0.6} until={K.Ou - 0.2} x={350} y={640} r={190} fx={170} fy={1180} etiqueta="POR DENTRO · bajo el pasto" tinte={KC.yellow}
@@ -330,16 +330,17 @@ function AnilloShot() {
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="años, o siglos" x={540} y={1520} tam={40} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Es} texto="1 m" largo={120} />
+      <BarraEscala T={T} at={K.G} until={K.Es} texto="20 cm" largo={120} />
       <BarraEscala T={T} at={K.Es} until={K.Mi} texto="10 µm" largo={110} />
-      <BarraEscala T={T} at={K.Mi} until={K.V} texto="1 cm" largo={150} />
+      <BarraEscala T={T} at={K.Mi} until={K.Ce} texto="1 cm" largo={150} />
+      <BarraEscala T={T} at={K.Ce} until={K.V} texto="1 m" largo={190} />
       <BarraEscala T={T} at={K.V} until={K.S} texto="10 cm" largo={160} />
       <BarraEscala T={T} at={K.S} until={K.P} texto="5 cm" largo={190} />
-      <BarraEscala T={T} at={K.P} until={K.E} texto="1 m" largo={120} />
-      <BarraEscala T={T} at={K.E} until={K.Ed} texto="10 m" largo={140} />
-      <BarraEscala T={T} at={K.Ed} until={K.J} texto="10 m" largo={140} />
+      <BarraEscala T={T} at={K.P} until={K.E} texto="20 cm" largo={120} />
+      <BarraEscala T={T} at={K.E} until={K.Ed} texto="10 m · cinta no a escala" largo={140} />
+      <BarraEscala T={T} at={K.Ed} until={K.J} texto="10 m" largo={117} />
       <BarraEscala T={T} at={K.J} until={K.F} texto="5 cm" largo={190} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={120} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 m" largo={120} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Es - 0.1} texto="No es de hadas: *es un hongo.*" />

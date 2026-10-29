@@ -14,7 +14,7 @@
 | 0 | Gancho | Esas arrieras no cargan las hojas para comérselas: son granjeras. | Fondo verde menta: una hilera de arrieras (*Atta*) cruza la pantalla, cada una con un pedazo de hoja en alto (cuadro 0.3: ya caminan). Chip "¿las cargan para comérselas?" y sello "NO". Etiqueta "hormiga arriera · *Atta mexicana*". |
 | 1 | Hongo | Las hojas son abono para un hongo que cultivan bajo tierra. | La cámara baja por el hoyo del hormiguero a una cámara con una esponja blanca (el jardín de hongo). Etiqueta "hongo cultivado · *Leucoagaricus gongylophorus*". |
 | 2 | Pasta | Las grandes cortan; las chiquitas las hacen pasta con saliva y la meten al jardín. | Dos tamaños de obrera, con regla: una grande corta un pedazo de hoja; una chiquita la pellizca con las mandíbulas, gota de saliva, y la pasta verde se pega a la esponja. Chips "cortadora" / "jardinera". |
-| 3 | Bolitas | El hongo les da bolitas nutritivas: de eso comen las larvas y casi todas las adultas. | Lupa en modo rayos X sobre la esponja (fondo oscuro): hifas con las puntas hinchadas en racimos (gongilidios). Etiqueta "gongilidios: puntas hinchadas del hongo". Barra de 10 µm: cada bolita dibujada mide 3–5 veces la barra (~30–50 µm). Una larva y una obrera comen. |
+| 3 | Bolitas | El hongo les da bolitas nutritivas: de eso comen las larvas y casi todas las adultas. | Al microscopio, a pantalla completa (fondo oscuro): hifas con las puntas hinchadas en racimos (gongilidios). Etiqueta "gongilidios: puntas hinchadas del hongo". Barra de 10 µm: cada bolita dibujada mide 3–5 veces la barra (~30–50 µm). Luego, de regreso a la cámara (escala 1 mm): una obrera le lleva un racimo a una larva y otra obrera camina por el jardín. |
 | 4 | Edad | Sus ancestros ya cultivaban hongos hace unos sesenta y seis millones de años: mucho antes que los humanos. | `NumeroGigante` "~66 millones de años · hormigas jardineras"; línea de tiempo: hormigas jardineras (ancestros) al principio, las arrieras mucho después, los humanos como un punto al final. |
 | 5 | Pregunta | Si todo el nido come de un solo cultivo, ¿qué pasa si le cae una plaga? | **Re-gancho.** "?" gigante sobre el jardín; Robert grande, pensativo. |
 | 6 | Plaga | Hay un hongo parásito, *Escovopsis*, que ataca justo esos jardines. | Manchas oscuras de *Escovopsis* que avanzan sobre la esponja blanca. Etiqueta "hongo parásito · *Escovopsis*". |
@@ -26,9 +26,30 @@
 | 12 | Cierre | Así que esa hojita no la cargan para comérsela: es abono para su granja de hongos. | **Regreso a la imagen del inicio:** la misma hilera con sus hojas, ahora con el corte del suelo mostrando el jardín de hongo debajo. Chip "la hoja = abono". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
+**Textos en pantalla además de las etiquetas de la tabla:** subtítulos condensados (uno por línea de voz), chip «AL MICROSCOPIO» y rótulo «larva» (fila 3), línea del tiempo con «hormigas jardineras», «arrieras», «humanos» y «hoy» (fila 4), «Panamá» en el mapa (fila 7), lupa «AL MICROSCOPIO · bacterias» y chip «antibiótico vs. parásito» (fila 8), chip «en salsa» (fila 10), rótulo «futura reina» y lupa «POR DENTRO · bolsa infrabucal» (fila 11). Tarjeta del estudio: «1999 · Univ. de Toronto · Panamá · Currie et al. · Nature, 1999».
+
 **Música:** cama grave continua, terrosa, sin golpe; efectos en el mismo cuadro (pasitos de la hilera, tijeretazo de la hoja, chasquido de mandíbulas y gota de saliva, pop de las bolitas, zumbido al bajar por el túnel, mancha del parásito que avanza, "fsss" del antibiótico, ✓ de cada especie, aleteo de las chicatanas y lluvia, bolita guardada en la boca).
 
-Barras de escala: 1 cm (hilera y hormigas), 1 mm (jardín de hongo), 10 µm (gongilidios de ~30–50 µm y bacterias).
+Barras de escala (siempre visibles): 5 mm (hilera, cortadora y jardinera, cierre), 5 cm (cámara del hongo), 10 µm (gongilidios de ~30–50 µm), 1 mm (larvas; obrera de *Acromyrmex*), 10 millones de años (línea del tiempo), 1 cm (jardín y parásito; chicatanas), 500 km (mapa), 2 mm (reina).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿qué pasa si le cae una plaga?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.5 | 11_sorprendido | `gancho` | «no cargan las hojas para comérselas» (cuadro 0) |
+| 2 | 7.8 | 11.7 | 13_senalando_arriba | `arriba-der` | «las grandes cortan; las chiquitas hacen pasta» |
+| 3 | 17.5 | 22.7 | 04_bajando_lentes | `arriba-der` | «hace unos sesenta y seis millones de años» |
+| 4 | 23.0 | 27.0 | 07_pensativo_puno | `grande` | «¿qué pasa si le cae una plaga?» |
+| 5 | 27.7 | 30.6 | 12_perfil_serio | `arriba-der` | «un hongo parásito, *Escovopsis*» |
+| 6 | 36.6 | 39.5 | 11_sorprendido | `arriba-der` | «bacterias que fabrican antibióticos» |
+| 7 | 44.1 | 48.1 | 05_sonriendo_dientes_uniformes | `arriba-der` | «hay quien se las come en salsa» |
+| 8 | 48.9 | 53.0 | 06_pensativo_menton | `arriba-der` | «un pedacito del hongo en una bolsita de la boca» |
+| 9 | 53.7 | 57.9 | 02_apuntando_camara | `arriba-der` | «es abono para su granja de hongos» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **34.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes
 

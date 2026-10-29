@@ -38,4 +38,38 @@ Fuentes abiertas:
 
 **Resumen:** 21 afirmaciones revisadas, todas ✅. La única ⚠️ (fila 1d: piel "en jirones") se corrigió a "escamitas sueltas" y se volvió a verificar con la ficha OIE/WOAH 2008.
 
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisados todos los textos en pantalla de `quitridio.jsx` (etiquetas, chips, tarjetas, medidores, números, subtítulos), las barras de escala contra el tamaño dibujado, `publicacion.md` (7 redes + comentario fijado) y las citas de `## Fuentes` del guion.
+
+Fuentes extra abiertas:
+- **[AM]** Australian Museum, "Green Tree Frog" (consultada 29 oct 2026). https://australian.museum/learn/animals/frogs/green-tree-frog/
+- **[CC]** Citizen Conservation (2023). Breeding Guidelines *Salamandra salamandra* (Central Europe). https://citizen-conservation.org/wp-content/uploads/2024/04/CC-Breeding-Guidelines_Salamandra-salamandra-Central-Europe_02-2023.pdf (vía buscador: adultos ~14–17 cm, hasta 20–22 cm)
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Chip "¿dormida?" tachado; subtítulos 0–11 (resumen de la voz, sin datos nuevos) | ✅ | filas 1–11 | — | — |
+| F2 | Etiquetas "quitridio", "*Batrachochytrium dendrobatidis* (Bd)", chip "3–5 µm cada espora" | ✅ | [OIE] | "Zoospores are roughly spherical (diameter 3-5 µm)" | 2008 |
+| F3 | Etiquetas "capa de queratina", "zoosporangio(s)" (lupa del cierre) | ✅ | [OIE], [VR15] | "the zoospore develops into a zoosporangium"; "only colonizes keratinized, stratified epidermis" | 2008 / 2015 |
+| F4 | Medidor "paso de sales" 100 % → "< 50 %" | ✅ | [V09] | "electrolyte transport across the epidermis was inhibited by >50%" | 2009 |
+| F5 | Tarjeta "2009 · Australia · Voyles et al., Science 2009"; "rana arborícola verde · *Litoria caerulea*" | ✅ | [V09] | "green tree frogs (Litoria caerulea)"; "James Cook University, Townsville… Australia" | 2009 |
+| F6 | Medidores "sodio (Na⁺) ≈ −20 %" y "potasio (K⁺) ≈ −50 %"; chip "el corazón se detuvo" | ✅ | [V09] | "reduced by approximately 20% and approximately 50%, and asystolic cardiac arrest resulted in death" | 2009 |
+| F7 | "al menos 501 especies en declive", "y 90 presuntas extinciones"; cuadrícula de 501 íconos con 90 apagados; chips "Scheele et al., Science 2019" y "cifras debatidas (Lambert et al. 2020)" | ✅ | [S19], [L20] | "at least 501 amphibian species… including 90 presumed extinctions"; "…in 501 amphibian species declines are deficient" | 2019 / 2020 |
+| F8 | "frascos de museo"; mapa "sur de México · inicios de los 70" → "Guatemala · 80s–90s" → "Costa Rica · 1987" (puntos: Oaxaca/Chiapas, occidente de Guatemala, Monteverde 10.3° N 84.8° O) | ✅ | [C11] | "formalin-preserved museum specimens"; "southern Mexico in the early 1970s to western Guatemala in the 1980s/1990s and to Monteverde, Costa Rica by 1987" | 2011 |
+| F9 | "*Batrachochytrium salamandrivorans* (Bsal)", "salamandra de fuego · *Salamandra salamandra*", chip "Países Bajos · 2010 → 2013", "4 %", 100 salamandras de las que quedan 4 | ✅ | [M13] | "Since 2010, the species has declined, with only 4% of the population remaining in 2013" | 2013 |
+| F10 | Barra 5 µm con zoosporas de ~3–3.8 µm de diámetro dibujado | ✅ | [OIE] | "diameter 3-5 µm" | 2008 |
+| F11 | Barra 50 µm con zoosporangios de ~21 µm | ✅ | [OIE] | "zoosporangium (diameter 5-40 µm)" | 2008 |
+| F12 | Barra 5 cm con ranas de ~6–7 cm (*L. caerulea* en el estudio) | ✅ | [AM] | "A large species of frog reaching up to 11 cm in body length" | consultada 2026 |
+| F13 | Barra 10 cm con salamandra de ~18 cm | ✅ | [CC] | adultos ~14–17 cm, ocasionalmente 20 cm (resumen del buscador; tamaño solo ilustrativo) | 2023 |
+| F14 | Barra 500 km = 113 px; en el mapa 1° de longitud = 23.8 px y a ~16° N 1° ≈ 107 km → 500 km ≈ 111 px | ✅ | cálculo | — | — |
+| F15 | publicacion.md: "se enquistan, absorben el flagelo", "un solo flagelo", "tubo de descarga", "hiperqueratosis" | ✅ | [VR15], [OIE] | "the zoospores encyst; the flagellum is absorbed and a cell wall is formed"; "single posteriorly directed flagellum"; "Discharge papillae or tubes"; "irregular thickening (hyperkeratosis)" | 2015 / 2008 |
+| F16 | publicacion.md: Voyles y colegas (James Cook University, Australia), transporte de sales > 50 %, Na ~20 %, K ~50 %, paro cardiaco | ✅ | [V09] | ver F4–F6 | 2009 |
+| F17 | publicacion.md: 501 especies "en medio siglo", 90 presuntas extinciones; Lambert 2020 cuestionó y los autores reafirmaron | ✅ | [S19], [L20] | "over the past half-century"; "We reaffirm that our study provides unambiguous evidence…" | 2019 / 2020 |
+| F18 | publicacion.md: ejemplares "conservados en formol"; ola del sur de México a inicios de los setenta → Guatemala 80–90 → Costa Rica 1987 | ✅ | [C11] | "formalin-preserved museum specimens"; ver F8 | 2011 |
+| F19 | publicacion.md: *B. salamandrivorans* "devorador de salamandras", descrito en 2013; Bunderbos, 4 % en 2013 tras el declive desde 2010; "bosque de Países Bajos" | ✅ | [M13], [SD13] | "sp. nov."; "refers to the extensive skin destruction and rapid mortality"; "found dead in the country's forests since 2010" | 2013 |
+| F20 | publicacion.md (LinkedIn), primera línea (corregido; antes: "está detrás… el mecanismo es fisiológico"): "Un hongo microscópico se asocia al declive de cientos de especies de anfibios (la cifra exacta está en debate), y el mecanismo propuesto es fisiológico, no 'misterioso'." | ✅ | [S19], [L20], [V09], [VR15] | "its role in the decline of at least 501 amphibian species"; "Which species are affected, and how many, remains a critical unanswered question"; "may be the mechanism"; "are thought to be the proximate cause of death" | 2019 / 2020 / 2009 / 2015 |
+| F21 | Resto de publicacion.md (TikTok, Instagram, YouTube, Facebook, X, Threads, comentario fijado) y citas de `## Fuentes` del guion: mismas cifras y referencias completas; enlaces correctos para cada cita | ✅ | todas | — | — |
+
+**Resumen de la revisión final:** todos los textos en pantalla, barras de escala, publicacion.md (7 redes + comentario fijado) y citas quedan ✅; F20 (LinkedIn) se corrigió y se volvió a verificar.
+
 VEREDICTO: APROBADO
