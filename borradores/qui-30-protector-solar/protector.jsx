@@ -294,7 +294,7 @@ function Protector() {
         <SvgCapa>
           <Sol T={T} x={560} y={420} r={60} />
           {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${i * 200 - 40 + (T * 30) % 200} 800 q 50 -24 100 0`} stroke="#bfe8ff" strokeWidth={6} fill="none" />)}
-          {Array.from({ length: 42 }, (_, i) => { const c = i % 7, r = Math.floor(i / 7), on = kprog(T, K.Pl + 0.8 + i * 0.05, K.Pl + 1.0 + i * 0.05, kEase.rebote), fuera = 1 - kprog(T, K.Pl + 3.4, K.Pl + 3.8);
+          {Array.from({ length: 42 }, (_, i) => { const c = i % 7, r = Math.floor(i / 7), on = kprog(T, K.Pl + 0.8 + i * 0.05, K.Pl + 1.0 + i * 0.05, kEase.rebote), fuera = 1 - kprog(T, K.Pl + 3.2, K.Pl + 3.5);
             return on > 0 ? <Personita key={i} x={110 + c * 80} y={930 + r * 50} s={0.9 * on} o={fuera} color={[KC.pink, KC.orange, KC.mint, KC.lilac, KC.cyan][i % 5]} /> : null; })}
           {(() => { const o2 = kprog(T, K.Pl + 3.6, K.Pl + 4.1), pie = kprog(T, K.Pl + 4.3, K.Pl + 5.2, kEase.sale);
             if (o2 <= 0) return null;
@@ -308,7 +308,7 @@ function Protector() {
               <text x={790} y={880} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>¼</text>
             </g>; })()}
         </SvgCapa>
-        <div style={{ position:'absolute', left:850, top:1030, transform:'translate(-50%,-50%)', zIndex:41, textAlign:'center', opacity:kprog(T, K.Pl + 0.8, K.Pl + 1.1) * (1 - kprog(T, K.Pl + 3.4, K.Pl + 3.8)) }}>
+        <div style={{ position:'absolute', left:850, top:1030, transform:'translate(-50%,-50%)', zIndex:41, textAlign:'center', opacity:kprog(T, K.Pl + 0.8, K.Pl + 1.1) * (1 - kprog(T, K.Pl + 3.2, K.Pl + 3.5)) }}>
           <div style={{ font:`400 150px/1 ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`5px ${KC.ink}` }}>{Math.min(42, Math.max(0, Math.floor((T - K.Pl - 0.8) / 0.05) + 1))}</div>
           <div style={{ font:`900 36px ${KF.texto}`, color:KC.ink }}>personas</div>
         </div>
@@ -356,7 +356,7 @@ function Protector() {
       <Chip T={T} at={K.Ca + 0.4} until={K.Pr - 0.2} texto="energía → un poquito de calor" y={1500} tam={40} borde={CALOR} />
       <Chip T={T} at={K.Pr + 0.3} until={K.Es - 0.2} texto="óxido de zinc · dióxido de titanio" y={1500} tam={36} borde={KC.texto} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="2016" quien="Cole, Shyr y Ou-Yang" revista="Nueva Jersey, EUA · esfera integradora" y={1590} />
-      <MitoTachado T={T} at={K.Es + 3.7} tacharEn={K.Es + 5.0} until={K.Fp - 0.2} texto="minerales = espejitos" y={1700} tam={40} />
+      <MitoTachado T={T} at={K.Es + 3.7} tacharEn={K.Es + 5.0} until={K.Fp - 0.2} texto="minerales = espejitos" y={1780} tam={40} />
       <Chip T={T} at={K.La + 3.6} until={K.Pl - 0.2} texto="así se mide la etiqueta (FDA)" y={1500} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.La + 0.6} until={K.La + 3.4} texto="2 mg en cada cm² de piel" y={1500} tam={42} borde={KC.gold} />
       <TarjetaEstudio T={T} at={K.Pl + 0.2} until={K.Pl + 3.1} anio="1992" quien="Bech-Thomsen y Wulf" revista="investigadores de Copenhague, Dinamarca" y={1590} />
@@ -374,8 +374,8 @@ function Protector() {
       <Subtitulo T={T} idx={6} at={K.Fp + 0.1} until={K.La - 0.1} texto="FPS 30: *filtra 97 %.*" />
       <Subtitulo T={T} idx={7} at={K.La + 0.1} until={K.Pl - 0.1} texto="En laboratorio: *2 mg/cm².*" />
       <Subtitulo T={T} idx={8} at={K.Pl + 0.1} until={K.Me - 0.1} texto="Playa: *la cuarta parte.*" />
-      <Subtitulo T={T} idx={9} at={K.Me + 0.1} until={K.Ci - 0.1} texto="Con menos: *protege menos.*" />
-      <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Esponja: *ponle suficiente.*" />
+      <Subtitulo T={T} idx={9} at={K.Me + 0.1} until={K.Ci - 0.1} texto="Menos crema, *menos FPS.*" />
+      <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="*Esponja:* ponle suficiente." />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 5.0, 'avatar_11_sorprendido', 'gancho'],

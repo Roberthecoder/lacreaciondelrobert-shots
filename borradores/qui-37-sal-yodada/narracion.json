@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot SalYodada base narrada.dc.html",
+  "salida": "Shot SalYodada narrado.dc.html",
+  "nota": "Shot Químico #37. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese «yodada» en tu sal no es adorno: es lo que tu cuello necesita para fabricar hormonas." },
+    { "escena": "Tiroides", "texto": "Ahí está tu tiroides, una glándula con forma de mariposa que atrapa el yodo de tu sangre." },
+    { "escena": "Tiroxina", "texto": "Con él arma la tiroxina, una hormona que lleva 4 átomos de yodo." },
+    { "escena": "Bocio", "texto": "Si falta yodo, la hipófisis manda más señal, y la tiroides crece para atrapar más: eso es el bocio." },
+    { "escena": "Embarazo", "texto": "Y en el embarazo, según la OMS, el yodo es clave para que se desarrolle bien el cerebro del bebé." },
+    { "escena": "Pregunta", "texto": "¿Y cómo supieron que un poquito bastaba?" },
+    { "escena": "Estudio", "texto": "Entre 1917 y 1919, en Akron, Ohio, a miles de niñas de escuela les dieron yodo dos veces al año." },
+    { "escena": "Resultado", "texto": "De las que tenían la tiroides normal, a más de 1 de cada 4 que no lo tomaron se les agrandó; de las que sí, a 2 de cada mil." },
+    { "escena": "Mexico", "texto": "En México la norma pide de 20 a 40 miligramos de yodo por kilo de sal, y la fluorurada trae flúor contra la caries." },
+    { "escena": "Dato", "texto": "Lo curioso: casi dos terceras partes del peso de la tiroxina son puro yodo." },
+    { "escena": "Cierre", "texto": "Así que ese «yodada» no es adorno: es química para tu cuello." }
+  ]
+}

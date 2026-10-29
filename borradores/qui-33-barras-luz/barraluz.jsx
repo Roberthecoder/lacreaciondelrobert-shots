@@ -255,18 +255,18 @@ function BarraLuzShot() {
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           <g opacity={kprog(T, K.Da + 4.6, K.Da + 5.0)}>
-            <line x1={80} y1={1160} x2={500} y2={1160} stroke={KC.ink} strokeWidth={8} />
-            <rect x={110} y={1160 - 80} width={150} height={80} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
-            <rect x={320} y={1160 - 80 - 270 * barraDic} width={150} height={80 + 270 * barraDic} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
-            <text x={185} y={1205} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>otro mes</text>
-            <text x={395} y={1205} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>diciembre</text>
-            {barraDic > 0.9 && <g transform={`translate(395 ${1160 - 350}) rotate(-12)`}>
+            <line x1={80} y1={1080} x2={500} y2={1080} stroke={KC.ink} strokeWidth={8} />
+            <rect x={110} y={1080 - 80} width={150} height={80} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
+            <rect x={320} y={1080 - 80 - 270 * barraDic} width={150} height={80 + 270 * barraDic} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
+            <text x={185} y={1125} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>otro mes</text>
+            <text x={395} y={1125} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>diciembre</text>
+            {barraDic > 0.9 && <g transform={`translate(395 ${1080 - 350}) rotate(-12)`}>
               <path d="M -60 0 L 0 -90 L 60 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-66} y={-6} width={132} height={24} rx={12} fill="#fff" stroke={KC.ink} strokeWidth={5} /><circle cx={0} cy={-92} r={16} fill="#fff" stroke={KC.ink} strokeWidth={5} /></g>}
-            {barraDic > 0.9 && <text x={395} y={1160 - 140} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={4}>× 4.4</text>}
+            {barraDic > 0.9 && <text x={395} y={1080 - 140} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={4}>× 4.4</text>}
           </g>
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Da + 0.2} until={K.Da + 3.2} anio="2018" quien="Centro toxicológico · Sídney, Australia" revista="Cairns et al. · Med J Aust · datos 2013–2017" y={760} />
-        <NumeroGigante T={T} at={K.Da + 3.3} until={K.Se - 0.3} valor={2918} dur={1.2} etiqueta="casos con barras de luz · 4 años" x={540} y={470} tam={180} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Da + 3.3} until={K.Se - 0.3} valor={2918} dur={1.2} etiqueta="casos en 4 años" x={540} y={470} tam={180} color={KC.yellow} />
         <Chip T={T} at={K.Da + 6.0} until={K.Se - 0.3} texto="94 % niños de 14 años o menos" x={540} y={1500} tam={36} borde={KC.yellow} />
       </Escena>
       {/* 8 · seguridad: irrita, lávate con agua */}
@@ -323,7 +323,7 @@ function BarraLuzShot() {
         [CUES.Que + 0.8, CUES.Mezcla - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Energia + 0.8, CUES.Experimento - 0.3, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Experimento + 1.0, CUES.Resultado + 1.5, 'avatar_07_pensativo_puno', 'arriba-der'],
-        [CUES.Resultado + 3.0, CUES.Estudio - 0.3, 'avatar_04_bajando_lentes', 'izq-alto'],
+        [CUES.Resultado + 3.0, CUES.Estudio - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Estudio + 3.6, CUES.Dato - 0.3, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Dato + 4.0, CUES.Seguridad - 0.2, 'avatar_11_sorprendido', 'grande'],
         [CUES.Seguridad + 0.4, CUES.Cierre - 0.2, 'avatar_10_serio_molesto', 'izq-alto'],
