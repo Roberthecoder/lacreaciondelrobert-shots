@@ -4,8 +4,8 @@
 - **Formato:** N1 "Por dentro" (macro → micro → macro): del olor en el bosque, al huevo, a la baba por dentro (gases con azufre, esporas), a la mosca que la come, y de regreso al mismo hongo ya limpio.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" — «Ese olor a carne podrida no viene de un animal muerto: viene de este hongo.»
 - **Especie:** *Phallus impudicus* (falo hediondo, "stinkhorn"), la mejor documentada (química del olor por etapas y estudio de moscas). En México se nombran sus parientes con velo (*Dictyophora*, hoy *Phallus* sección con velo).
-- **Duración:** voz 985 caracteres / 186 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~985 créditos de ElevenLabs).
+- **Duración:** voz 983 caracteres / 185 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~983 créditos de ElevenLabs).
 - **Tono:** divertido pero exacto, apto para todo público (el nombre se dice en latín; nada de chistes con la forma).
 
 ## Versión narrada
@@ -17,10 +17,10 @@
 | 2 | SinOlor | Y ese huevo todavía no huele feo. | Nariz de caricatura olfatea el huevo: medidor de olor en cero ✓. |
 | 3 | Brota | Un día se rompe y, en unas cuantas horas, sale un tallo blanco y hueco de hasta treinta centímetros. | Time-lapse: el huevo se rasga, el tallo esponjoso y hueco sube; cronómetro "horas" corre; regla "hasta 30 cm". Restos gelatinosos del huevo en la base (volva). |
 | 4 | Baba | Arriba trae una baba oscura, llena de esporas. | Zoom a la cabeza: baba café olivo oscura y brillante. Lupa: "AL MICROSCOPIO · esporas" (fondo noche), esporas diminutas alargadas en la baba. Barra 10 µm. |
-| 5 | Azufre | Esa baba suelta gases con azufre, que son los que más apestan. | Fondo oscuro: moléculas con átomos de azufre amarillos (trisulfuro de dimetilo, CH₃–S–S–S–CH₃) salen flotando. Chip "gases con azufre = el peor olor". |
+| 5 | Azufre | Esa baba suelta gases con azufre, que son los que más apestan. | Fondo oscuro: moléculas con átomos de azufre amarillos (trisulfuro de dimetilo, CH₃–S–S–S–CH₃) salen flotando. Chip "gases con azufre: lo que más apesta". |
 | 6 | Pregunta | ¿Y para qué querría un hongo oler tan feo? | **Re-gancho.** "?" gigante; Robert grande, pensativo, tapándose la nariz. |
 | 7 | Engano | Para engañar a las moscas: llegan buscando carne podrida y se encuentran con la baba. | Globo de pensamiento de la mosca con un filete podrido; aterriza y encuentra baba. Chip "¡caíste!". |
-| 8 | Estudio | En 1997, en Irlanda, unos científicos vieron que las moscas que comían esa baba hacían popó más rápido que las que comían estiércol o azúcar. | Tarjeta "1997 · Irlanda · Sleeman y col., *J. Nat. Hist.*". Tres platitos (baba · estiércol · azúcar) con una mosca cada uno; contadores de gotitas de popó: la de la baba gana. |
+| 8 | Estudio | En 1997, unos científicos de Irlanda vieron que las moscas que comían esa baba hacían popó más rápido que cuando comían estiércol o azúcar. | Tarjeta "1997 · University College Cork, Irlanda · Sleeman y col., *J. Nat. Hist.*". Tres platitos (baba · estiércol · azúcar) con una mosca cada uno; contadores de gotitas de popó: la de la baba gana. |
 | 9 | Siembra | Así van soltando montones de esporas, y otras se les pegan en las patas. | Mosca volando sobre el bosque deja gotitas con esporas (puntitos); zoom a la pata con esporas pegadas. |
 | 10 | Hembras | Y llegan más moscas hembras que machos. | Marcador ♀ vs ♂ junto al hongo; la barra ♀ crece más. |
 | 11 | Limpio | En unas horas, la baba desaparece. | Time-lapse: la baba se va; queda la cabeza blanca con su red de huecos. |

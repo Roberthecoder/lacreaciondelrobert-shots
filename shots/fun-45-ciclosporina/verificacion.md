@@ -38,4 +38,3 @@ Fuentes abiertas:
 
 **Resumen:** 18 afirmaciones revisadas; todas ✅. Única corrección: la larva del dibujo ahora está en la tierra (no en madera), fila 14b. Sin consejo médico.
 
-VEREDICTO: APROBADO
