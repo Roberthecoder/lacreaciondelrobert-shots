@@ -232,7 +232,7 @@ function LapizShot() {
           <Montoncito x={klerp(400, 250, parte)} y={klerp(720, 1080, parte)} color={GRAF} f={parte} seed={4} brillo borde="#0d0f12" />
           <Montoncito x={klerp(400, 600, parte)} y={klerp(720, 1080, parte)} color="#d9a77a" f={parte} seed={9} />
           {salePb < 1 && <Teselita x={klerp(850, 1320, salePb)} y={klerp(-120, 960, caePb) - salePb * 200} rot={salePb * 140 + (1 - caePb) * -20} s={0.95} />}
-          {[[250, 'grafito', K.Mi + 1.9], [600, 'arcilla', K.Mi + 2.1]].map(([x, t, at]) => <text key={t} x={x} y={1185} textAnchor="middle" opacity={kprog(T, at, at + 0.3)} style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>{t}</text>)}
+          {[[120, 'grafito', K.Mi + 1.9, 'start'], [700, 'arcilla', K.Mi + 2.1, 'end']].map(([x, t, at, an]) => <text key={t} x={x} y={1000} textAnchor={an} opacity={kprog(T, at, at + 0.3)} style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>{t}</text>)}
           <Marca x={850} y={960} ok={false} s={0.9} o={kprog(T, K.Mi + 1.6, K.Mi + 1.9) * (1 - salePb)} />
         </SvgCapa>
       </Escena>
@@ -240,10 +240,10 @@ function LapizShot() {
       <Escena T={T} a={K.Ca} b={K.De}>
         <Noche />
         <SvgCapa>
-          <Pila T={T} cx={560} base={1150} gap={130} n={5} H={180} aparece={(i) => kprog(T, K.Ca + 0.3 + i * 0.75, K.Ca + 0.9 + i * 0.75, kEase.sale)} />
+          <Pila T={T} cx={560} base={1170} gap={150} n={5} H={180} aparece={(i) => kprog(T, K.Ca + 0.3 + i * 0.75, K.Ca + 0.9 + i * 0.75, kEase.sale)} />
           {T > K.Ca + 4.0 && <g opacity={kprog(T, K.Ca + 4.0, K.Ca + 4.4)}>
-            <path d="M 905 630 L 925 630 L 925 760 L 905 760" fill="none" stroke={KC.gold2} strokeWidth={6} />
-            <text x={1000} y={600} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.gold2}>≈ 0.33 nm</text>
+            <path d="M 905 570 L 925 570 L 925 720 L 905 720" fill="none" stroke={KC.gold2} strokeWidth={6} />
+            <text x={1000} y={556} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.gold2}>≈ 0.33 nm</text>
           </g>}
         </SvgCapa>
       </Escena>
@@ -340,7 +340,7 @@ function LapizShot() {
       <Chip T={T} at={K.Mi + 0.2} until={K.Mi + 1.5} texto="corte de la punta" y={1500} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Mi + 2.2} until={K.Ca - 0.2} texto="la mina: grafito + arcilla" y={1500} tam={42} borde={KC.yellow} />
       <BarraEscala T={T} at={K.Mi + 0.3} until={K.Mi + 1.4} texto="1 mm" largo={75} x={60} y={1640} />
-      <Chip T={T} at={K.Ca + 0.6} until={K.De - 0.2} texto="carbono en hojas de hexágonos" x={620} y={470} tam={36} borde={KC.gold2} />
+      <Chip T={T} at={K.Ca + 0.6} until={K.De - 0.2} texto="carbono en hojas de hexágonos" x={620} y={420} tam={36} borde={KC.gold2} />
       <Chip T={T} at={K.De + 0.6} until={K.De + 3.2} texto="unión débil entre hojas" x={620} y={470} tam={38} borde="#7fd6ff" />
       <Chip T={T} at={K.De + 3.4} until={K.Di - 0.2} texto="una hoja queda en el papel" x={620} y={470} tam={36} borde="#7fd6ff" />
       <Chip T={T} at={K.Di + 0.4} until={K.Du - 0.2} texto="diamante: red en 3D" x={620} y={470} tam={40} borde={DIAM} />
