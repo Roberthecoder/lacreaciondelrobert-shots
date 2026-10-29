@@ -38,4 +38,18 @@ Notas (sin bloquear):
 2. **Escena 11 (Dato), voz:** «Dato: con mucho calor, la planta puede perder la bacteria… y deja de ramificarse.» Fuentes: Greenhouse Grower 2011 (heat stress "can actually eliminate phytoplasm, resulting in poor branching") y ARS 1998 ("heat treatment of plants eliminated both the virus and the free-branching growth habit").
 3. **Escena 11, pantalla:** la planta nueva crece «con pocas ramas», no «con un solo tallo».
 
-VEREDICTO: PENDIENTE (correcciones abajo)
+Estado previo: PENDIENTE (3 ⚠️, correcciones propuestas arriba).
+
+## Correcciones aplicadas (texto final)
+
+Revisión del texto final completo de `narracion.json` y `guion.md` (29 oct 2026). Las otras 10 líneas de voz no cambiaron y siguen ✅.
+
+| Escena | Texto final | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 10 · Injerto (voz) | «Con un injerto de una rama infectada, una nochebuena de pocas ramas también se vuelve frondosa.» | ✅ | ishs.org/ishs-article/226_34 (Dole y Wilkins) | "can be repeatedly transmitted to an 'uninfected' poinsettia by grafting" | 1988 |
+| 10 · Injerto (pantalla) | Chip «se contagia por injerto» | ✅ | ídem | ídem | 1988 |
+| 11 · Dato (voz) | «Dato: con mucho calor, la planta puede perder la bacteria… y deja de ramificarse.» | ✅ | greenhousegrower.com/?p=46010 · agresearchmag.ars.usda.gov/1998/dec/poin · CPVO 2001 | heat stress "can actually eliminate phytoplasm, resulting in poor branching" · "heat treatment of plants eliminated both the virus and the free-branching growth habit." · phytoplasmas "are generally heat labile" | 2011 / 1998 / 2001 |
+| 11 · Dato (pantalla) | La planta nueva crece «con pocas ramas» | ✅ | Greenhouse Grower 2011 | "resulting in poor branching" | 2011 |
+| Fuente 9 de `guion.md` | URL completa del informe CPVO (Nicolaisen 2001) | ✅ | https://cpvo.europa.eu/sites/default/files/documents/techreports/report_literature_study_phytoplasma.pdf | "present in probably all commercial poinsettias" | 2001 |
+
+VEREDICTO: APROBADO
