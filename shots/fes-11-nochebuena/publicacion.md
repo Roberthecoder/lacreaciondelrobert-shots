@@ -99,7 +99,7 @@ Fuentes:
 6. USDA-ARS, Agricultural Research (dic. 1998): bacteria sin pared, desequilibrio hormonal, cuscuta como puente, calor. https://agresearchmag.ars.usda.gov/1998/dec/poin
 7. Dole y Wilkins (1988), Acta Horticulturae 226: la ramificación se transmite por injerto. https://www.ishs.org/ishs-article/226_34
 8. Greenhouse Grower (2011): el calor fuerte puede eliminar el fitoplasma y la planta ramifica poco. https://www.greenhousegrower.com/?p=46010
-9. Nicolaisen (2001), informe para la Oficina Comunitaria de Variedades Vegetales (CPVO): fitoplasma "present in probably all commercial poinsettias".
+9. Nicolaisen (2001), informe para la Oficina Comunitaria de Variedades Vegetales (CPVO): fitoplasma "present in probably all commercial poinsettias". https://cpvo.europa.eu/sites/default/files/documents/techreports/report_literature_study_phytoplasma.pdf
 10. Bendix y Lewis (2018), Molecular Plant Pathology, "The enemy within: phloem-limited pathogens". https://pmc.ncbi.nlm.nih.gov/articles/PMC6638166
 El dibujo es esquemático.
 ```

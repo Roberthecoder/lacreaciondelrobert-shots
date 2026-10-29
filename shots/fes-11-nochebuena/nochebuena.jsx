@@ -420,14 +420,14 @@ function Nochebuena() {
       <Subtitulo T={T} idx={1} at={K.Br + 0.1} until={K.Ct - 0.1} texto="Brácteas: *hojas de color.*" />
       <Subtitulo T={T} idx={2} at={K.Ct + 0.1} until={K.No - 0.1} texto="Las flores: *los ciatios.*" />
       <Subtitulo T={T} idx={3} at={K.No + 0.1} until={K.Fo - 0.1} texto="14 horas de noche, *de 7 a 10 semanas.*" />
-      <Subtitulo T={T} idx={4} at={K.Fo + 0.1} until={K.Si - 0.1} texto="Un foco y *no se pinta.*" />
+      <Subtitulo T={T} idx={4} at={K.Fo + 0.1} until={K.Si - 0.1} texto="Un foco y *puede no pintarse.*" />
       <Subtitulo T={T} idx={5} at={K.Si + 0.1} until={K.P - 0.1} texto="Silvestre: *3 metros, pocas ramas.*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Fi - 0.1} texto="¿Por qué la tuya *tiene tantas ramas?*" />
       <Subtitulo T={T} idx={7} at={K.Fi + 0.1} until={K.Ho - 0.1} texto="En su savia: *un fitoplasma.*" />
       <Subtitulo T={T} idx={8} at={K.Ho + 0.1} until={K.E - 0.1} texto="Hormonas revueltas: *más ramas.*" />
       <Subtitulo T={T} idx={9} at={K.E + 0.1} until={K.In - 0.1} texto="1997: la pasaron *por un puente parásito.*" />
       <Subtitulo T={T} idx={10} at={K.In + 0.1} until={K.Da - 0.1} texto="Con un injerto *se contagia.*" />
-      <Subtitulo T={T} idx={11} at={K.Da + 0.1} until={K.Ci - 0.1} texto="Con calor *pierde la bacteria.*" />
+      <Subtitulo T={T} idx={11} at={K.Da + 0.1} until={K.Ci - 0.1} texto="Con calor *puede perder la bacteria.*" />
       <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Hojas rojas *y una bacteria.*" />
 
       <Robert T={T} apariciones={[

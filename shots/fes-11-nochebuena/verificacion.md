@@ -52,4 +52,23 @@ Revisión del texto final completo de `narracion.json` y `guion.md` (29 oct 2026
 | 11 · Dato (pantalla) | La planta nueva crece «con pocas ramas» | ✅ | Greenhouse Grower 2011 | "resulting in poor branching" | 2011 |
 | Fuente 9 de `guion.md` | URL completa del informe CPVO (Nicolaisen 2001) | ✅ | https://cpvo.europa.eu/sites/default/files/documents/techreports/report_literature_study_phytoplasma.pdf | "present in probably all commercial poinsettias" | 2001 |
 
+## Revisión de pantalla y publicación (29 oct 2026)
+
+Revisé todos los textos de `nochebuena.jsx` (Chip, Etq, MitoTachado, TarjetaEstudio, Medidor, Capitulo, Lupa, Subtitulo, `<text>` del reloj, del calendario y de la regla) y las escalas de los dibujos. También revisé `publicacion.md` completo (7 redes y comentario fijado).
+
+| Elemento | Veredicto | Nota / fuente |
+|---|---|---|
+| Tarjeta «1997 · Ing-Ming Lee y equipo · Maryland · Nature Biotechnology» | ✅ | PubMed 9035146: "USDA ARS, Beltsville, MD" · Nat Biotechnol 1997 Feb |
+| Regla 0–3 m (350 px/m), silvestre de 1050 px = 3 m, persona de 595 px = 1.7 m (etiqueta «1.7 m») | ✅ | Oxford: "about three metres tall"; la persona solo sirve de escala |
+| Ciatios: se dibujan 5 por grupo (sin texto que diga un número) | ✅ | SNICS: "formando grupos de tres hasta cinco ciatios" |
+| Lupa «ciatio: ♀ al centro, ♂ alrededor» | ✅ | SNICS 2018 |
+| Reloj «14 h de noche», Chip «de 7 a 10 semanas», medidor de semanas que llega a 10 | ✅ | MSU P2573 |
+| Escala micro: `pxPorMm` 90 000 → barra de 2 µm (180 px); fitoplasmas de 48–72 px de ancho ≈ 0.5–0.8 µm | ✅ tamaño real | Oshima et al. 2013, *Front. Microbiol.* 4: 230: phytoplasmas "are spherical or pleiomorphic with sizes similar to those of mycoplasmas (80–800 nm" (2013) |
+| Etiquetas «vinca · Catharanthus roseus», «cuscuta (enredadera parásita)», «infectada» / «sana», Chip «¡se ramificó!» (la nochebuena sana se ramifica) | ✅ | CPVO 2001: "From C. roseus it was transmitted back into restricted-braching poinsettias and subsequently causing branching" |
+| «Euphorbia pulcherrima», «cuetlaxóchitl», «silvestre: ≈ 3 m», «floema (tubo de savia)», «fitoplasma», «bacteria sin pared», «hormonas», «ramas por todos lados», «se contagia por injerto», «mucho calor», «ramifica poco», «hojas rojas + una bacteria», capítulos | ✅ | Igual que lo ya verificado arriba |
+| Subtítulo 4 «Un foco y *no se pinta.*» | ⚠️ → corregido | Más absoluto que la voz. Ahora: «Un foco y *puede no pintarse.*» |
+| Subtítulo 11 «Con calor *pierde la bacteria.*» | ⚠️ → corregido | Sin el "puede" de la voz. Ahora: «Con calor *puede perder la bacteria.*» (Greenhouse Grower 2011: 10–20 % de las plantas) |
+| `publicacion.md`: textos de las 7 redes | ✅ | Solo datos ya verificados (LinkedIn: USDA + Ball FloraPlant y "first reported example…" están en PubMed y en ARS 74439) |
+| `publicacion.md`: comentario fijado, fuente 9 | corregido | Se agregó la URL completa del informe CPVO (Nicolaisen 2001) |
+
 VEREDICTO: APROBADO

@@ -477,7 +477,7 @@ function Rosas() {
       <Capitulo T={T} x={190} y={210} hasta={K.Ou} caps={[{ at: K.Te, titulo: 'La tradición' }, { at: K.Fr, titulo: 'El freno' }, { at: K.Sa, titulo: 'El freno roto' }, { at: K.In, titulo: 'Diciembre' }]} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.2} until={K.Te - 0.2} texto="Especial Virgen de Guadalupe" x={330} y={1470} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 0.2} until={K.Te - 0.2} texto="Especial Virgen de Guadalupe" x={335} y={1470} tam={33} borde={KC.yellow} />
       <Etq T={T} at={K.Te + 0.3} until={K.Si - 0.3} x={70} y={540} texto="según la tradición" tam={40} color={KC.ink} />
       <Etq T={T} at={K.Te + 1.0} until={K.Si - 0.3} x={480} y={720} texto="cerro del Tepeyac" tam={34} color={KC.ink} lado="izq" />
       <Chip T={T} at={K.Te + 2.0} until={K.Si - 0.3} texto="diciembre: rosas de Castilla" x={540} y={1500} tam={40} borde={KC.cyan} />

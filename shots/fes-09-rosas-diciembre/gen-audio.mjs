@@ -23,7 +23,7 @@ for (let i = 0; i < 8; i++) m.tic(Te + 0.4 + i * 0.35, 0.03, 4200);             
 for (let i = 0; i < 5; i++) m.nota(Te + 1.4 + i * 0.44, E[4 + i], 0.05, 0.9);    // una nota por rosa
 // la silvestre: los meses de primavera se encienden, flores
 for (let i = 0; i < 3; i++) m.nota(Si + 0.8 + i * 0.25, E[5 + i], 0.05, 0.6);
-for (let i = 0; i < 7; i++) m.pop ? m.pop(Si + 0.8 + i * 0.17) : m.tic(Si + 0.8 + i * 0.17, 0.06, 1800);
+for (let i = 0; i < 7; i++) m.tic(Si + 0.8 + i * 0.17, 0.06, 1800);            // cada flor que se abre
 // el freno: el gen se ilumina y cae la señal de ALTO
 m.zumbido(Fr + 0.4, 0.8, 0.03, 220);
 m.golpe(Fr + 1.35, 0.3, 90); m.metal(Fr + 1.4, 0.08, 900);
@@ -50,7 +50,6 @@ m.golpe(Es + 0.2, 0.3, 80); m.metal(Es + 0.25, 0.08, 1500);
 for (let i = 0; i < 6; i++) { m.tic(Es + 0.7 + i * 0.32, 0.08, 1600); m.tic(Es + 0.75 + i * 0.32, 0.06, 2400); }
 for (let i = 0; i < 6; i++) m.nota(Es + 3.4 + i * 0.06, 76, 0.03, 0.4);
 // China → Europa: olas y el barco; el cruce; las rosas modernas se abren
-m.motor ? null : null;
 for (let i = 0; i < 6; i++) m.whoosh(Ch + 0.3 + i * 0.35, 0.5, 0.05);
 m.golpe(Ch + 2.5, 0.25, 100); m.nota(Ch + 2.6, 64, 0.06, 0.9); m.nota(Ch + 2.6, 69, 0.05, 0.9);
 for (let i = 0; i < 3; i++) m.nota(Ch + 4.2 + i * 0.3, E[6 + i * 2], 0.05, 0.8);
