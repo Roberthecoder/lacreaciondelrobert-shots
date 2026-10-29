@@ -1,0 +1,43 @@
+{
+  "dcHtml": "Shot CarasPiel base narrada.dc.html",
+  "salida": "Shot CarasPiel narrado.dc.html",
+  "nota": "Shot IA #21. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tú y el de al lado enseñaron su cara al mismo programa. A él casi nunca lo confundió; a ti, una de cada tres veces."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo publicaron en 2018 Joy Buolamwini y Timnit Gebru: tres programas que adivinan si una cara es de hombre o mujer."
+    },
+    {
+      "escena": "Numeros",
+      "texto": "Al adivinar el género, en hombres de piel clara fallaron menos del uno por ciento. En mujeres de piel oscura, casi treinta y cinco por ciento."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Por qué una máquina tendría favoritos?"
+    },
+    {
+      "escena": "Datos",
+      "texto": "Una hipótesis: aprenden de ejemplos, y las colecciones de caras de prueba eran en su gran mayoría de piel clara."
+    },
+    {
+      "escena": "Mejora",
+      "texto": "Lo bueno: en siete meses, las tres empresas sacaron versiones que fallaban menos."
+    },
+    {
+      "escena": "Nist",
+      "texto": "En 2019 el NIST probó ciento ochenta y nueve programas que reconocen quién eres: confundir a dos personas podía ser de diez a más de cien veces más frecuente según el grupo."
+    },
+    {
+      "escena": "Williams",
+      "texto": "A Robert Williams le tocó: en 2020, en Detroit, una coincidencia facial equivocada lo dejó treinta horas detenido."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Si una app te reconoce, recuerda: quizá no te ve igual que al de al lado."
+    }
+  ]
+}

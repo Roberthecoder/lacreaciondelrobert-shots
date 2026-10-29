@@ -8,7 +8,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ```text
 Tú y el de al lado le enseñaron su cara al mismo programa. A él casi nunca lo confundió; a ti, una de cada tres veces. 🤖👀
 El estudio "Gender Shades" (Joy Buolamwini y Timnit Gebru, publicado en 2018) probó tres programas comerciales que adivinan si una cara es de hombre o de mujer, con fotos de 1,270 parlamentarios de 3 países de África y 3 de Europa. Al adivinar el género, con hombres de piel clara el peor error fue de 0.8 %; con mujeres de piel oscura, hasta 34.7 %.
-¿Por qué una máquina tendría favoritos? Una hipótesis probable: aprenden de ejemplos, y las colecciones de caras de prueba más usadas eran en su gran mayoría de piel clara (79.6 % y 86.2 %).
+¿Por qué una máquina tendría favoritos? Una hipótesis probable: aprenden de ejemplos, y dos colecciones de caras de prueba muy usadas eran en su gran mayoría de piel clara (79.6 % y 86.2 %).
 Lo bueno: en siete meses, las tres empresas sacaron versiones que fallaban menos.
 Pero en 2019 el NIST de Estados Unidos probó 189 algoritmos que reconocen quién eres: confundir a dos personas distintas podía ser de 10 a más de 100 veces más frecuente según el grupo de la persona.
 Y le pasó a Robert Williams: en 2020, en Detroit, una coincidencia facial equivocada lo dejó 30 horas detenido.

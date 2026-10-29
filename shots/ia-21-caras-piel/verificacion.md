@@ -58,3 +58,11 @@
 3. **R12** `publicacion.md` (TikTok) → "y dos colecciones de caras de prueba muy usadas eran en su gran mayoría de piel clara (79.6 % y 86.2 %)." (como ya dice YouTube; quitar "más usadas").
 
 Con esos tres cambios hechos tal cual, todo lo demás queda ✅.
+
+## Re-verificación final (29 oct 2026, coordinador)
+- Subtítulo idx 0: «Mismo programa… *a ti te falló más.*» ✅
+- Subtítulo idx 4: «Caras de prueba: *la mayoría, piel clara.*» ✅
+- publicacion.md (TikTok): «dos colecciones de caras de prueba muy usadas» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
