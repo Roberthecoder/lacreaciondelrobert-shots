@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio. 🍄🪨
-Un liquen es un hongo que vive con algas o cianobacterias. Por dentro tiene pisos: una piel de hilos del hongo que lo protege del sol, una capa verde que hace fotosíntesis y le pasa azúcar al hongo, y una médula de hilos sueltos. En 1867, Simon Schwendener propuso que eran dos seres y muchos no le creyeron; en 2016 se hallaron levaduras en la piel de líquenes de seis continentes (qué hacen ahí, aún se estudia). Y en 2005, dos especies aguantaron casi 15 días expuestas al espacio.
+Un liquen es un hongo que vive con algas o cianobacterias. Por dentro tiene pisos: una piel de hilos del hongo que lo protege del sol, una capa verde que hace fotosíntesis y le pasa azúcar al hongo, y una médula de hilos sueltos. En 1867, Simon Schwendener propuso que eran dos seres y muchos no le creyeron; en 2016 se hallaron levaduras en la piel de dos líquenes de Montana, y parientes de ellas en líquenes de seis continentes (qué hacen ahí, aún se estudia). Y en 2005, dos especies aguantaron casi 15 días expuestas al espacio.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué color de liquen has visto cerca de tu casa? 👇
 Shot Fungi Mati #19 · La Creación del Robert
@@ -85,7 +85,7 @@ Esa mancha en la piedra no es una planta: es un liquen, un hongo que vive con al
 
 ### Threads
 ```text
-Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio. 🍄 El hongo pone la casa y el alga o cianobacteria, la comida. En 2016 se hallaron levaduras en su piel, y en 2005 dos especies aguantaron casi 15 días expuestas al espacio. ¿Qué color de liquen has visto cerca de tu casa?
+Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio. 🍄 El hongo pone la casa y el alga o cianobacteria, la comida. En 2016 se hallaron levaduras en la piel de algunos líquenes, y en 2005 dos especies aguantaron casi 15 días expuestas al espacio. ¿Qué color de liquen has visto cerca de tu casa?
 Shot Fungi Mati #19 · La Creación del Robert
 #Liquen
 ```

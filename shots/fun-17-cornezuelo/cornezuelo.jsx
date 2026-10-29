@@ -183,14 +183,16 @@ function Matraz({ T, x, y, s = 1 }) {
   </g>;
 }
 
-// Núcleo de ergolina (esquemático): anillos fusionados, base del ácido lisérgico.
+// Núcleo de ergolina (esquemático): anillo A (benceno), pirrol con NH (pentágono), anillos C y D; N en el anillo D.
 function Ergolina({ x, y, s = 1, p = 1 }) {
   const hexa = (cx, cy, r = 60) => Array.from({ length: 6 }, (_, i) => { const a = Math.PI / 6 + i * Math.PI / 3; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; });
   const pol = (pts) => 'M ' + pts.map((q) => q.join(' ')).join(' L ') + ' Z';
-  const anillos = [hexa(0, 0), hexa(104, 0), hexa(52, 90), hexa(156, 90)];
+  const PENTA = [[52, -30], [52, 30], [110, 40], [130, -15], [104, -60]];
+  const anillos = [hexa(0, 0), PENTA, hexa(52, -90), hexa(156, -90)];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {anillos.map((a, i) => { const q = kprog(p, i * 0.22, i * 0.22 + 0.3); return q > 0 ? <path key={i} d={pol(a)} fill="rgba(255,255,255,.15)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" opacity={q} /> : null; })}
-    {p > 0.9 && <><circle cx={208} cy={60} r={14} fill={KC.blue} stroke={KC.ink} strokeWidth={4} /><text x={208} y={70} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#fff">N</text></>}
+    {p > 0.5 && <><circle cx={110} cy={40} r={22} fill={KC.blue} stroke={KC.ink} strokeWidth={4} /><text x={110} y={48} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#fff">NH</text></>}
+    {p > 0.9 && <><circle cx={208} cy={-60} r={16} fill={KC.blue} stroke={KC.ink} strokeWidth={4} /><text x={208} y={-52} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#fff">N</text></>}
   </g>;
 }
 
@@ -361,7 +363,7 @@ function CornezueloShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           <Matraz T={T} x={280} y={980} s={1.0} />
-          <Ergolina x={470} y={760} s={1.0} p={kprog(T, K.H + 0.5, K.H + 1.8)} />
+          <Ergolina x={520} y={860} s={1.1} p={kprog(T, K.H + 0.5, K.H + 1.8)} />
         </>)}
       </Escena>
       {/* 12 · hoy: el molino lo separa */}
@@ -406,7 +408,7 @@ function CornezueloShot() {
       <Chip T={T} at={K.M + 1.4} until={K.H - 0.3} texto="migraña · dihidroergotamina" x={470} y={990} tam={32} borde={KC.cyan} />
       <Chip T={T} at={K.M + 2.4} until={K.H - 0.3} texto="sangrado después del parto · ergometrina" x={500} y={1075} tam={28} borde={KC.cyan} />
       <Chip T={T} at={K.H + 0.2} until={K.Mo - 0.3} texto="1938 · Albert Hofmann" x={330} y={470} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.H + 1.2} until={K.Mo - 0.3} x={520} y={1010} texto="ácido lisérgico → LSD" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.2} until={K.Mo - 0.3} x={1040} y={1110} texto="ácido lisérgico → LSD (esquema)" lado="izq" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Mo + 0.6} until={K.C - 0.3} texto="UE: límite de cornezuelo en el grano" x={640} y={470} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.Mo + 1.4} until={K.C - 0.3} x={600} y={1090} texto="cornezuelo fuera" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="veneno → medicina" x={330} y={440} tam={40} borde={KC.yellow} />

@@ -38,7 +38,7 @@ Ese grano negro NO es centeno quemado: es un hongo 🌾 | Shot Fungi Mati #17
 Descripción:
 ```text
 Ese grano negro no es centeno quemado: es un hongo venenoso, el cornezuelo (Claviceps purpurea).
-El hongo solo infecta los ovarios de las flores de pastos y cereales; el centeno es el cereal más afectado. Sus esporas se pegan a los estigmas de la flor y la hifa crece por el tejido que usaría el tubo del polen hasta la base del ovario. Ahí lo coloniza todo y, una semana después, suelta la "mielecilla": un jarabe pegajoso de azúcar y esporas que los insectos llevan a otras flores. Unas dos semanas después de la infección se forma el esclerocio: un cuerpo oscuro, duro y alargado que ocupa el lugar del grano y que contiene los alcaloides del cornezuelo (ergotamina, ergometrina y otros).
+El hongo solo infecta los ovarios de las flores de pastos y cereales; el centeno es uno de los cereales más afectados. Sus esporas se pegan a los estigmas de la flor y la hifa crece por el tejido que usaría el tubo del polen hasta la base del ovario. Ahí lo coloniza todo y, una semana después, suelta la "mielecilla": un jarabe pegajoso de azúcar y esporas que los insectos llevan a otras flores. Unas dos semanas después de la infección se forma el esclerocio: un cuerpo oscuro, duro y alargado que ocupa el lugar del grano y que contiene los alcaloides del cornezuelo (ergotamina, ergometrina y otros).
 Si el cornezuelo se muele con el grano, sus alcaloides estrechan los vasos sanguíneos; en las extremidades falta la sangre y aparece la gangrena. En la Edad Media hubo grandes epidemias por comer pan de centeno contaminado; a la enfermedad le decían "fuego sagrado" o "fuego de San Antonio" por el ardor en las extremidades. También existe una forma convulsiva.
 No es solo historia: entre febrero y junio de 2001, en la zona de Arsi (Etiopía), 18 personas de 5 a 30 años tuvieron ergotismo gangrenoso y 3 murieron; el análisis atribuyó el brote a cebada mezclada con avena silvestre con cornezuelo.
 De esos alcaloides también salen medicinas: la dihidroergotamina para la migraña y la ergometrina para prevenir el sangrado después del parto. En 1938, Albert Hofmann sintetizó la dietilamida del ácido lisérgico (LSD), un derivado semisintético de esos alcaloides. Hoy los molinos retiran el cornezuelo con varias técnicas, y la Unión Europea fija límites máximos de cornezuelo en el cereal sin procesar y de sus alcaloides en las harinas.
@@ -49,6 +49,7 @@ Fuentes:
 - BfR (2024). Questions and answers on ergot alkaloids in cereal products. https://www.bfr.bund.de/cm/349/questions-and-answers-on-ergot-alkaloids-in-cereal-products.pdf
 - Smakosz, A. et al. (2021). The Usage of Ergot in Obstetrics and Gynecology: A Historical Perspective. Toxins 13(7): 492. https://pmc.ncbi.nlm.nih.gov/articles/PMC8309974/
 - Alderman, S. (USDA-ARS). Ergot: Biology and Control. https://www.ars.usda.gov/ARSUserFiles/81/ErgotDVDtranscript.pdf
+- Vogel, J. P. et al. (2019). WHO recommendations on uterotonics for postpartum haemorrhage prevention. BMJ Global Health 4(2): e001466. https://pmc.ncbi.nlm.nih.gov/articles/PMC6509591
 ¿Habías visto un cornezuelo en una espiga? 👇
 Shot Fungi Mati #17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -95,5 +96,6 @@ Urga, K. et al. (2002). Laboratory studies on the outbreak of gangrenous ergotis
 BfR (2024). Questions and answers on ergot alkaloids in cereal products. https://www.bfr.bund.de/cm/349/questions-and-answers-on-ergot-alkaloids-in-cereal-products.pdf
 Smakosz, A. et al. (2021). The Usage of Ergot in Obstetrics and Gynecology: A Historical Perspective. Toxins 13(7): 492. https://pmc.ncbi.nlm.nih.gov/articles/PMC8309974/
 Alderman, S. (USDA-ARS). Ergot: Biology and Control. https://www.ars.usda.gov/ARSUserFiles/81/ErgotDVDtranscript.pdf
+Vogel, J. P. et al. (2019). WHO recommendations on uterotonics for postpartum haemorrhage prevention. BMJ Global Health 4(2): e001466. https://pmc.ncbi.nlm.nih.gov/articles/PMC6509591
 El dibujo es esquemático.
 ```

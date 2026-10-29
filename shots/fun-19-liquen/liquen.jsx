@@ -272,7 +272,7 @@ function LiquenShot() {
             return <g key={i} transform={`translate(${bx} ${by}) scale(${e})`}>
               <line x1={0} y1={0} x2={-Math.cos(a) * 80} y2={-Math.sin(a) * 70} stroke={KC.ink} strokeWidth={4} strokeDasharray="8 6" />
               <circle r={58} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
-              <ManchaLiquen x={0} y={4} r={36} tipo={['naranja', 'gris', 'mapa'][i % 3]} seed={40 + i} />
+              <ManchaLiquen x={0} y={4} r={36} tipo="gris" seed={40 + i} />
               <circle cx={24} cy={-26} r={13} fill={LQ.levadura} stroke={KC.ink} strokeWidth={3} />
               {T > K.Cn + 3.0 && <text x={40} y={-36} style={{ font:`400 ${40 * kprog(T, K.Cn + 3.0 + i * 0.1, K.Cn + 3.4 + i * 0.1, kEase.rebote)}px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={2}>?</text>}
             </g>; })}

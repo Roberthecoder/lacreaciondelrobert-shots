@@ -157,12 +157,12 @@
    "derivados": []
   },
   {
-   "id": "fun-23-platano",
-   "titulo": "Tu plátano es un clon y un hongo lo amenaza (Fusarium TR4)",
+   "id": "fun-23-brillan",
+   "titulo": "Hongos que brillan en la oscuridad (bioluminiscencia: Mycena, Neonothopanus)",
    "serie": "Shot Fungi Mati",
    "numero": 23,
    "estado": "idea",
-   "carpeta": "shots/fun-23-platano",
+   "carpeta": "shots/fun-23-brillan",
    "rama": "pedido300/fun",
    "fuentes": [],
    "fecha": "2026-10-29",
@@ -205,12 +205,12 @@
    "derivados": []
   },
   {
-   "id": "fun-27-vainilla",
-   "titulo": "Sin un hongo no nace una orquídea (semillas de polvo y micorrizas)",
+   "id": "fun-27-maceta",
+   "titulo": "El hongo amarillo que sale en tu maceta (Leucocoprinus birnbaumii)",
    "serie": "Shot Fungi Mati",
    "numero": 27,
    "estado": "idea",
-   "carpeta": "shots/fun-27-vainilla",
+   "carpeta": "shots/fun-27-maceta",
    "rama": "pedido300/fun",
    "fuentes": [],
    "fecha": "2026-10-29",
