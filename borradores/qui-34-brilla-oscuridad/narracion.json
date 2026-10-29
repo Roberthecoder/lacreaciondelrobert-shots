@@ -3,16 +3,49 @@
   "salida": "Shot Estrellitas narrado.dc.html",
   "nota": "Shot Químico #34. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esas estrellitas de tu techo no son radiactivas: están soltando la luz que les diste en el día." },
-    { "escena": "Que", "texto": "Si brillan verde, lo más probable es que sean aluminato de estroncio: un cristal con un poquito de europio y de disprosio." },
-    { "escena": "Carga", "texto": "Cuando les da la luz, esa energía mueve cargas eléctricas dentro del cristal." },
-    { "escena": "Trampas", "texto": "Y muchas se quedan atoradas en trampas, que el disprosio ayuda a formar." },
-    { "escena": "Suelta", "texto": "Ya a oscuras, el calorcito del cuarto las va soltando poco a poco; regresan al europio, y él da un destello verde." },
-    { "escena": "Pregunta", "texto": "¿Y entonces por qué creemos que son radiactivas?" },
-    { "escena": "Radio", "texto": "Porque hace 100 años, los relojes brillaban con radio mezclado con sulfuro de zinc: su radiación lo hacía brillar sin parar." },
-    { "escena": "Pintoras", "texto": "En Nueva Jersey, hasta 250 jóvenes los pintaban afilando el pincel con los labios, y se tragaban el radio." },
-    { "escena": "Estudio", "texto": "En 1996, en Japón, la empresa Nemoto publicó su cristal con disprosio: más de 10 veces más brillante que el sulfuro de zinc, y aún se medía al día siguiente." },
-    { "escena": "Curioso", "texto": "Lo chistoso: se hornea a unos 1300 grados, y tú lo recargas con un foco." },
-    { "escena": "Cierre", "texto": "Así que esas estrellitas no son radiactivas: son la luz de tu día, guardada en trampas." }
+    {
+      "escena": "Gancho",
+      "texto": "Esas estrellitas de tu techo no son radiactivas: sueltan la luz que les diste de día."
+    },
+    {
+      "escena": "Que",
+      "texto": "Si brillan verde, lo más probable es que sean aluminato de estroncio, con algo de europio y disprosio."
+    },
+    {
+      "escena": "Carga",
+      "texto": "La luz que reciben mueve cargas eléctricas dentro del cristal."
+    },
+    {
+      "escena": "Trampas",
+      "texto": "Muchas quedan atoradas en trampas que forma el disprosio."
+    },
+    {
+      "escena": "Suelta",
+      "texto": "A oscuras, el calorcito del cuarto las suelta poco a poco; regresan al europio y este brilla verde."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué creemos que son radiactivas?"
+    },
+    {
+      "escena": "Radio",
+      "texto": "Porque hace 100 años los relojes brillaban con radio y sulfuro de zinc: su radiación lo hacía brillar sin parar."
+    },
+    {
+      "escena": "Pintoras",
+      "texto": "En Nueva Jersey, hasta 250 jóvenes los pintaban afinando el pincel con los labios: tragaban radio."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1996, en Japón, la empresa Nemoto publicó este cristal: más de 10 veces más brillante que el sulfuro de zinc, y aún se medía al día siguiente."
+    },
+    {
+      "escena": "Curioso",
+      "texto": "Lo chistoso: se hornea a unos 1300 grados, y tú lo recargas con un foco."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esas estrellitas no son radiactivas: son luz de tu día, guardada en trampas."
+    }
   ]
 }
