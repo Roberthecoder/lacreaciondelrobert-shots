@@ -298,7 +298,7 @@ function PlasticoShot() {
       <Chip T={T} at={K.Pk + 3.6} until={K.R - 0.3} texto="+ 2 % de glucosa" x={480} y={1130} tam={36} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.R + 0.2} until={K.R + 3.4} valor={664} dur={1.2} etiqueta="reportes de microbios" x={380} y={540} tam={220} color={KC.yellow} />
       <Chip T={T} at={K.R + 4.0} until={K.Pe - 0.3} texto="polietileno (PE), el plástico de las bolsas" x={540} y={700} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.R + 5.0} until={K.Pe - 0.3} texto="sin pruebas de que se lo coman mucho" x={500} y={1100} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.R + 5.0} until={K.Pe - 0.3} texto="sin pruebas de que se lo coman mucho" x={500} y={1430} tam={30} borde={KC.red} />
       <Etq T={T} at={K.R + 5.4} until={K.Pe - 0.3} x={60} y={470} texto="Lear et al., 2022" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Pe + 0.3} until={K.S - 0.3} texto="pesa menos ≠ se lo comieron" x={400} y={470} tam={34} borde={KC.red} />
       <Etq T={T} at={K.Pe + 1.2} until={K.S - 0.3} x={660} y={760} texto="aditivos" tam={32} color={KC.ink} />

@@ -68,7 +68,7 @@ Barras de escala: 10 cm (hongo y botón), 50 µm (hifas en la raíz), 10 µm (ne
    > "an MMS mycologist examined the mushroom and identified it as Amanita muscaria var. guessowii"
    > "A. muscaria mushrooms can contain ibotenic acid and muscimol, which are structurally similar to glutamate and gamma-Aminobutyric acid"; "A. muscaria toxins might not be deactivated by cooking"
    (Líneas 8, 9 y 10.)
-8. Rampolli, F. I., Kamler, P., Carnevale Carlino, C. y Bedussi, F. (2021). The Deceptive Mushroom: Accidental *Amanita muscaria* Poisoning. *European Journal of Case Reports in Internal Medicine* 8(3): 002212. https://pmc.ncbi.nlm.nih.gov/articles/PMC7977045/
+8. Rampolli, F. I., Kamler, P., Carnevale Carlino, C. y Bedussi, F. (2021). The Deceptive Mushroom: Accidental *Amanita muscaria* Poisoning. *European Journal of Case Reports in Internal Medicine* 8(2): 002212 (doi 10.12890/2021_002212). https://pmc.ncbi.nlm.nih.gov/articles/PMC7977045/
    > "During heavy rain, its characteristic white plaques may wash off and Amanita muscaria can appear similar to – and be mistaken for – Amanita caesarea, an edible mushroom."
    > Pie de la figura 1: "White plaques were lost and the mushrooms looked like Amanita caesarea"
    (Línea 4 y chip "ojo: sin puntos se confunde con otros hongos".)
