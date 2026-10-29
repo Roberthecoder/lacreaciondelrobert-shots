@@ -1,0 +1,44 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Mezclilla base narrada.dc.html",
+  "salida": "Shot Mezclilla narrado.dc.html",
+  "nota": "Shot Ambiental #33. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este es tu pantalón de mezclilla, lleno con el agua que gasta en toda su vida: tres mil setecientos ochenta y un litros."
+    },
+    {
+      "escena": "Garrafones",
+      "texto": "Son como ciento ochenta y nueve garrafones. Lo calculó la propia Levi Strauss en 2015, para sus jeans 501."
+    },
+    {
+      "escena": "Algodon",
+      "texto": "Casi siete de cada diez litros se van antes de que exista la tela: en el campo, cultivando el algodón."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y el resto? Casi una cuarta parte la pones tú, en la lavadora."
+    },
+    {
+      "escena": "Carbono",
+      "texto": "Y en gases de efecto invernadero, lavar y secar en casa es la parte más grande: treinta y siete por ciento."
+    },
+    {
+      "escena": "Contraste",
+      "texto": "Un cálculo de la UNESCO-IHE, en 2006, sumó la lluvia y el agua para diluir la contaminación: casi once mil litros por jeans de un kilo."
+    },
+    {
+      "escena": "Lavar",
+      "texto": "¿Qué sí sirve? Lavarlo cada diez puestas, no cada dos, baja hasta ochenta por ciento el agua y la energía del lavado."
+    },
+    {
+      "escena": "Secar",
+      "texto": "Secarlo al aire y no en secadora le quita dos tercios al carbono de cuidarlo, según ese estudio en Estados Unidos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Y úsalo muchos años: esos litros ya se gastaron, y entre más lo uses, más vale cada uno."
+    }
+  ]
+}
