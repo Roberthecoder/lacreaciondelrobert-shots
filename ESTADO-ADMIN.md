@@ -26,6 +26,8 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - 29 oct 09:59: sesión de festivos TERMINADA (fes-07…fes-16 en pedido300/festivos, los 10 con VEREDICTO: APROBADO y en la Sala;
   fes-14 cambió a razas de maíz). Ya no hay que despertarla; falta juntar su rama a main.
 - 29 oct 10:57: Químico TERMINADO (50/50). En ramas con VEREDICTO: amb 50, cie 50, qui 50, ia 50, bio 45, fun 35 (=280); Sala hechos=250.
+- 29 oct 15:03: las 300 carpetas tienen VEREDICTO en sus ramas; en la Sala están 290 (faltan fun-50…fun-59, ya en la rama). La sesión fun
+  se paró por el límite de 5 h (reinicio 14:50) y se reanudó a las 15:03. Las otras 5 series y festivos están completas en la Sala.
 - 29 oct 07:58: el aviso falló al instante (límite de 5 h otra vez, reinicio 09:30). Reanudadas de nuevo a las 09:58; siguen en 84/300.
 - Espacio de la Sala: 1 GB; con 60 shots iba en 118 MB (~2 MB por shot) → caben los 310. Revisar si pasa de 900 MB.
 
