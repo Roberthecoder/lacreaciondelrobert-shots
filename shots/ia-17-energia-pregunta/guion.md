@@ -42,7 +42,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces l
 | 9 | 52.0 | 57.8 | 13_senalando_arriba | `arriba-der` | «hacemos miles de millones» |
 | — | 57.9 | 61.4 | 02_apuntando_camara | CierreMarca | cierre |
 
-apariciones 9 · ≈ 35.6 s (+ cierre 3.5 s) · poses distintas 8 (nunca la misma dos veces seguidas) · total 61.4 s
+apariciones 9 · ≈ 35 s (+ cierre 3.5 s) · poses distintas 8 (nunca la misma dos veces seguidas) · total 61.4 s
 
 ## Fuentes (abiertas en el original el 29 oct 2026)
 
