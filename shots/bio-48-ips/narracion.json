@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Ips base narrada.dc.html",
+  "salida": "Shot Ips narrado.dc.html",
+  "nota": "Shot Biotecnológico #48. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta célula de tu piel no es solo piel: puede volverse neurona, retina o músculo de corazón."
+    },
+    {
+      "escena": "Piel",
+      "texto": "Casi todas tus células traen el mismo ADN; la de piel solo usa su parte."
+    },
+    {
+      "escena": "Genes",
+      "texto": "En 2006, en Kioto, Shinya Yamanaka le metió solo cuatro genes a células de ratón como las de tu piel."
+    },
+    {
+      "escena": "Olvida",
+      "texto": "Y la célula olvidó que era piel: volvió a ser como de embrión."
+    },
+    {
+      "escena": "Interruptores",
+      "texto": "Esos genes hacen interruptores que prenden el programa de embrión."
+    },
+    {
+      "escena": "Humana",
+      "texto": "Las llamó iPS; un año después lo hizo con piel humana."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué regresar una célula al inicio?"
+    },
+    {
+      "escena": "Destino",
+      "texto": "Porque de ahí la vuelves lo que necesites."
+    },
+    {
+      "escena": "Retina",
+      "texto": "En 2014, en Kobe, a una mujer le pusieron en el ojo células de retina hechas de su propia piel."
+    },
+    {
+      "escena": "Parkinson",
+      "texto": "En Kioto, siete pacientes con párkinson recibieron neuronas bebé de iPS: hicieron dopamina y no dieron tumores."
+    },
+    {
+      "escena": "Plato",
+      "texto": "Y hay enfermedades en un plato para probar medicinas."
+    },
+    {
+      "escena": "Veinticuatro",
+      "texto": "Lo chistoso: empezó con veinticuatro genes y quitó hasta dejar cuatro."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa célula de tu piel no es solo piel: es una célula madre a cuatro genes de distancia."
+    }
+  ],
+  "tanda": 8
+}

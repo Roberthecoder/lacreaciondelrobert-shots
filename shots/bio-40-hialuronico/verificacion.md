@@ -35,4 +35,10 @@ Cambios de texto menores tras la verificación, sin cambiar el sentido (para que
 
 Sin ❌ ni ⚠️ pendientes.
 
+
+## Re-verificación (29 oct 2026, a pedido del administrador)
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Hoy el hialurónico comercial sale sobre todo de fermentación (fuente reciente) | ✅ | Soundiraraj et al., Microb Cell Fact, doi:10.1186/s12934-026-02945-8 — https://europepmc.org/article/PMC/PMC12934015 | "Commercial HA is predominantly produced through microbial fermentation of Streptococcus species" | 2026 |
+
 VEREDICTO: APROBADO
