@@ -223,20 +223,19 @@ function Cangrejo21() {
             <circle r={70} fill={KC.lilac} stroke={KC.ink} strokeWidth={7} /><ellipse rx={120} ry={26} fill="none" stroke={KC.ink} strokeWidth={7} transform="rotate(-15)" />
             <text y={26} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink}>?</text></g>
         </SvgCapa>
-        <Escala T={T} z={1} pxPorMm={4.4} y={1440} color={KC.ink} />
       </Escena>
       {/* 1 · el animal: no es cangrejo */}
       <Escena T={T} a={K.A} b={K.Az} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <rect x={0} y={1180} width={KW} height={740} fill="#f2d48a" />
-          <Cangrejo T={T} x={klerp(-200, 560, kprog(T, K.A - 0.3, K.A + 1.6, kEase.sale))} y={780} s={0.55} rot={8 * Math.sin(T * 2)} patas={1 - kprog(T, K.A + 1.4, K.A + 1.8)} />
+          <Cangrejo T={T} x={klerp(-200, 560, kprog(T, K.A - 0.3, K.A + 1.6, kEase.sale))} y={720} s={0.46} rot={8 * Math.sin(T * 2)} patas={1 - kprog(T, K.A + 1.4, K.A + 1.8)} />
           <g opacity={kprog(T, K.A + 1.8, K.A + 2.3)}>
             <Arana T={T} x={190} y={1080} s={0.85} />
             <Escorpion T={T} x={900} y={1050} s={0.75} />
           </g>
         </SvgCapa>
-        <Escala T={T} z={1} pxPorMm={1.1} y={1440} color={KC.ink} />
+        <Escala T={T} z={1} pxPorMm={0.92} y={1440} color={KC.ink} />
       </Escena>
       {/* 2 · azul: cobre en vez de hierro */}
       <Escena T={T} a={K.Az} b={K.En} zoom={0.04}>
@@ -257,6 +256,7 @@ function Cangrejo21() {
       <Escena T={T} a={K.En} b={K.Pe} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa><Vacuna x={540} y={1180} s={0.9} jeringa={false} /></SvgCapa>
+        {T > K.En + 0.8 && <Escala T={T} z={1} pxPorMm={210000} y={1440} color={KC.ink} />}
       </Escena>
       <Lupa T={T} at={K.En + 0.3} until={K.Pe - 0.25} x={540} y={720} r={330} fx={540} fy={1200} tinte={KC.mint} etiqueta="AL MICROSCOPIO · BACTERIA"
         interior={(Tl, r) => <svg width={r * 2} height={r * 2}>
@@ -312,7 +312,7 @@ function Cangrejo21() {
       <Escena T={T} a={K.Pr} b={K.Sa} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Cangrejo T={T} x={300} y={880} s={0.45} rot={-10} patas={0.6} />
+          <Cangrejo T={T} x={300} y={840} s={0.4} rot={-10} patas={0.6} />
           <text x={300} y={640} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 540)`}>?</text>
         </SvgCapa>
       </Escena>
@@ -370,7 +370,7 @@ function Cangrejo21() {
           <Vacuna x={560} y={1050} s={0.9} jeringa={false} />
           <g opacity={kprog(T, K.Ci + 0.8, K.Ci + 1.3)}><Tubo x={820} y={1000} s={0.55} color="#ffe9a8" />
             <text x={820} y={1200} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>rFC</text></g>
-          <Cangrejo T={T} x={klerp(560, 1250, kprog(T, K.Ci + 1.0, K.Ou + 2))} y={1330} s={0.22} rot={80} patas={1} />
+          <Cangrejo T={T} x={klerp(560, 1250, kprog(T, K.Ci + 1.0, K.Ou + 2))} y={1560} s={0.22} rot={80} patas={1} />
         </SvgCapa>
       </Escena>
 
@@ -378,7 +378,7 @@ function Cangrejo21() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 2.6} texto="¿de otro planeta?" x={300} y={470} tam={44} />
       <Chip T={T} at={K.G + 2.7} until={K.A - 0.3} texto="sangre de cangrejo herradura" x={540} y={1530} tam={38} borde={AZUL_CL} />
       <MitoTachado T={T} at={K.A + 0.6} tacharEn={K.A + 1.6} until={K.Az - 0.3} texto="¿cangrejo?" x={700} y={470} tam={44} />
-      <Etq T={T} at={K.A + 1.0} until={K.Az - 0.3} x={720} y={760} texto="Limulus polyphemus" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.0} until={K.Az - 0.3} x={300} y={1620} texto="Limulus polyphemus" it tam={38} color={KC.ink} />
       <Chip T={T} at={K.A + 2.0} until={K.Az - 0.3} texto="parientes: arañas y escorpiones" x={540} y={1530} tam={36} borde={KC.lilac} />
       <Chip T={T} at={K.Az + 1.2} until={K.En - 0.2} texto="hemocianina: cobre → azul" x={540} y={1530} tam={40} borde={AZUL_CL} />
       <Chip T={T} at={K.En + 1.6} until={K.Pe - 0.3} texto="endotoxina = restos de la pared" x={540} y={1530} tam={36} borde={ENDO} />
@@ -386,7 +386,7 @@ function Cangrejo21() {
       <Chip T={T} at={K.Co + 0.2} until={K.Es - 0.3} texto="AL MICROSCOPIO · AMEBOCITOS" x={540} y={430} tam={32} mono borde={KC.cyan} />
       <Etq T={T} at={K.Co + 0.6} until={K.Co + 2.0} x={640} y={560} texto="amebocito" tam={34} color={KC.texto} />
       <Chip T={T} at={K.Co + 2.6} until={K.Es - 0.3} texto="¡coágulo!" x={540} y={1530} tam={50} borde={GEL} />
-      <TarjetaEstudio T={T} at={K.Es + 0.3} until={ES2 - 0.3} anio="WOODS HOLE" quien="Frederik Bang (años 50) · Jack Levin (años 60)" revista="Massachusetts, EE. UU. · laboratorio junto al mar" y={980} />
+      <TarjetaEstudio T={T} at={K.Es + 0.3} until={ES2 - 0.3} anio="WOODS HOLE" quien="Bang (años 50) y Levin (años 60)" revista="Massachusetts, EE. UU. · junto al mar" y={960} />
       <Chip T={T} at={ES2 + 1.7} until={K.Pr - 0.3} texto="antes: prueba con conejos" x={300} y={1530} tam={34} borde={KC.paper} />
       <Chip T={T} at={ES2 + 2.9} until={K.Pr - 0.3} texto="gel = hay endotoxina" x={540} y={430} tam={38} borde={ENDO} />
       <Chip T={T} at={K.Sa + 2.6} until={K.Mo - 0.2} texto="de regreso al mar" x={540} y={1530} tam={42} borde={KC.cyan} />

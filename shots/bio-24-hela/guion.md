@@ -1,49 +1,77 @@
 # Shot Biotecnológico #24 · Esas células no son de un laboratorio: son de Henrietta Lacks (células HeLa)
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #24 · **Tema del logo:** bioquímica (ADN + matraz) · rama `pedido300/bio`.
-- **Formato:** N1 "Por dentro" (el frasco de cultivo del laboratorio → con la `Lupa`, una célula HeLa por dentro: el ADN del VPH 18 en el cromosoma 8, los frenos quitados, la telomerasa → el mismo frasco, ahora con el nombre de Henrietta) + un toque de N5 "El experimento" (Tuskegee y la vacuna contra la polio).
-- **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre el frasco de cultivo que se ve en pantalla: "Esas células no son de un laboratorio: son de una mujer que nunca dio permiso." No abre con año: la fecha (1951) entra en la tercera frase.
-- **Tono:** respetuoso. Henrietta se dibuja como silueta/retrato esquemático digno (nada caricaturesco, nada de su cuerpo ni de la enfermedad en detalle). Robert reacciona serio en la parte ética; nada de poses de risa en las frases de Henrietta, del consentimiento o de la familia.
-- **Duración:** voz 951 caracteres / 176 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s**.
-- **Viaje:** macro (un frasco de cultivo en la mesa del laboratorio, con la etiqueta "HeLa") → micro (fondo noche: células HeLa dividiéndose; dentro, el cromosoma 8 con el ADN del virus) → el mismo frasco, ahora con la etiqueta "HeLa = Henrietta Lacks".
+- **Formato:** N1 "Por dentro" (el frasco de cultivo → con la `Lupa`, una célula HeLa al microscopio: el ADN del VPH 18 en el cromosoma 8, los frenos que se sueltan, la telomerasa → el mismo frasco, ahora con el nombre de Henrietta) + un toque de N5 "El experimento" (Tuskegee y la vacuna contra la polio).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre el frasco de cultivo que se ve en pantalla: "Esas células no son de un laboratorio: son de una mujer a la que nunca le pidieron permiso." No abre con año: la fecha (1951) entra en la tercera frase.
+- **Tono:** respetuoso. Henrietta se dibuja como retrato esquemático digno (nada caricaturesco, nada de la enfermedad en detalle). En las escenas de Henrietta no sale Robert; en la parte ética reacciona serio.
+- **Duración:** voz 958 caracteres / 178 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** (base narrada: 58.0 s de escenas + 3.5 s de Outro).
+- **Viaje:** macro (un frasco de cultivo con la etiqueta "HeLa") → micro (fondo noche: células HeLa que se duplican; al microscopio, el cromosoma 8 con el ADN del virus) → el mismo frasco, ahora con la etiqueta "HeLa = Henrietta Lacks".
+- **Estado:** guion verificado (`verificacion.md`, 28–29 oct 2026), animación lista, voz pendiente de aprobación de Robert (~958 créditos).
 
-## Versión narrada (951 caracteres)
+## Correcciones de la verificación independiente (29 oct 2026)
+- **Edad:** la muestra es de febrero de 1951 y Henrietta nació el 1 de agosto de 1920: tenía **30 años** (murió a los 31). Voz, chip y subtítulo dicen 30.
+- **Límite de ~50 divisiones:** el dato es de células **humanas** (fibroblastos en cultivo): la voz y la pantalla dicen "célula humana normal".
+- **Escala:** se quitó el tamaño de la célula; en pantalla solo "esquemático · no a escala".
+- **Gancho más preciso:** firmó el permiso de la operación, pero nadie le pidió permiso para investigar con sus células: "…una mujer a la que nunca le pidieron permiso". La frase de la biopsia ya no repite "sin pedírselo".
+
+## Versión narrada (958 caracteres)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esas células no son de un laboratorio: son de una mujer que nunca dio permiso. | Fondo menta. **Desde el cuadro 0** una pipeta deja caer medio de cultivo rosa en un frasco de cultivo con la etiqueta "HeLa"; dentro se ve una capa de células que crece. Chip tachado "¿de un laboratorio?". |
-| 1 | Henrietta | Henrietta Lacks tenía 31 años y cáncer de cuello uterino. | Fondo amarillo: retrato esquemático y digno de Henrietta (silueta con su nombre). Chip "31 años". Las letras **He**nrietta **La**cks se iluminan: "He + La = HeLa". |
-| 2 | Biopsia | En 1951, en el hospital Johns Hopkins, le tomaron un pedazo del tumor sin pedírselo. | Edificio esquemático del hospital (sin logotipos) y un tubito con la muestra. Chip "1951 · Baltimore". `MitoTachado` sobre una hoja "consentimiento" vacía: "nadie le pidió permiso". |
-| 3 | Gey | Con George Gey fueron las primeras células humanas que crecen sin fin. | Laboratorio de los cincuenta: frasco con tapón, el cultivo se multiplica (1 → 2 → 4 → 8…). Etiqueta "laboratorio de George Gey". Chip "primera línea humana que crece sin fin en cultivo". |
-| 4 | Limite | Una célula normal en cultivo se detiene tras unas 50 divisiones. ¿Y estas por qué no? | **Re-gancho.** Comparación: a la izquierda una célula normal con contador que sube hasta ~50 y se apaga (gris); a la derecha la HeLa con contador que sigue y sigue. "?" grande. |
-| 5 | Virus | Por dentro: el virus del papiloma tipo 18 metió su ADN en el cromosoma 8. | **Lupa** "POR DENTRO · CÉLULA HeLa" sobre el frasco: fondo noche, núcleo, un cromosoma 8 con un tramo de otro color (ADN del VPH 18). Etiqueta "VPH 18 · virus del papiloma humano". Barra de escala (célula ~20 µm, esquemática). |
-| 6 | Frenos | Sus genes le quitan los frenos y dejan prendida la telomerasa. | Del tramo viral salen dos proteínas (E6 y E7) que sueltan dos "frenos" (p53 y Rb). Las puntas de los cromosomas (telómeros) se mantienen gracias a la telomerasa, que brilla. |
-| 7 | Apagar | Si los apagas, las HeLa dejan de dividirse. | Un interruptor apaga los genes del virus: la célula se queda quieta (gris). Chip "si se apagan E6 y E7 → se detienen". |
-| 8 | Polio | Hasta 1955, Tuskegee envió unos 600 mil tubos de HeLa para evaluar la vacuna contra la polio. | `TarjetaEstudio` "Instituto Tuskegee · hasta 1955 · vacuna de Salk". Gradillas de tubos que se multiplican; `Contador` hasta "≈ 600 000 tubos de cultivo". |
-| 9 | Nobel | En ellas, el equipo de Harald zur Hausen halló el VPH 18; él ganó el Nobel en 2008. | Tarjeta "1984 · VPH 18 en células HeLa" → medalla esquemática "Nobel 2008 · Harald zur Hausen". |
-| 10 | Acuerdo | En 2013, dos familiares entraron al comité que revisa quién usa su genoma. | Mesa de comité; dos sillas se iluminan con "familia Lacks". Hoja "genoma de HeLa · acceso controlado · NIH 2013". |
-| 11 | Demanda | En 2023 su familia llegó a un acuerdo con Thermo Fisher, a quien demandó. | Una balanza esquemática y chip "2023 · acuerdo (términos confidenciales)". Sin logotipos de empresas: solo el nombre en texto. |
-| 12 | Cierre | Por eso esas células no son de un laboratorio: son de Henrietta. | **Regreso al frasco del inicio**: la etiqueta "HeLa" se completa a "HeLa = Henrietta Lacks". |
-| — | Outro | (sin voz) | `CierreMarca` con el logo de bioquímica y Robert. |
+| 0 | Gancho | Esas células no son de un laboratorio: son de una mujer a la que nunca le pidieron permiso. | Fondo menta. **Desde el cuadro 0** una pipeta gotea medio de cultivo rosa en un frasco de cultivo con la etiqueta "HeLa"; en el fondo del frasco crece una capa de células. `MitoTachado` "¿de un laboratorio?". Etiqueta "frasco de cultivo · células HeLa". |
+| 1 | Henrietta | Henrietta Lacks tenía 30 años y cáncer de cuello uterino. | Fondo amarillo: retrato esquemático y digno de Henrietta en un marco dorado, con su nombre; **He** y **La** se pintan de dorado y sale el chip "He + La = HeLa". Chip "30 años · cáncer de cuello uterino". |
+| 2 | Biopsia | En 1951, en el hospital Johns Hopkins, le tomaron un pedazo del tumor. | Fondo lila: edificio esquemático del hospital (sin logotipos), un tubito con la muestra y una hoja "PERMISO PARA INVESTIGAR" con la firma vacía que se tacha. Chips "1951 · Baltimore" y "nadie le pidió permiso para investigar". |
+| 3 | Gey | Con George Gey fueron las primeras células humanas que crecen sin fin. | Fondo noche: el cultivo se duplica 1 → 2 → 4 → 8 → 16 → 32 células (con el número). Etiqueta "laboratorio de George Gey". Chip "1ª línea humana que crece sin fin". |
+| 4 | Limite | Una célula humana normal en cultivo se detiene tras unas 50 divisiones. ¿Y estas por qué no? | **Re-gancho.** Chip "en cultivo". Izquierda: "célula humana normal", contador hasta 50 divisiones, se pone gris: "se detiene". Derecha: la HeLa, rosa: "no se detiene". Luego "?" gigante y Robert grande, pensativo. |
+| 5 | Virus | Por dentro: el virus del papiloma tipo 18 metió su ADN en el cromosoma 8. | Regreso al frasco; la **Lupa** "AL MICROSCOPIO · CÉLULA HeLa" se abre desde las células: núcleo con cromosomas y el cromosoma 8, al que se le pinta un tramo dorado (ADN del VPH 18). Chip "VPH 18 = virus del papiloma humano tipo 18". "esquemático · no a escala". |
+| 6 | Frenos | Sus genes le quitan los frenos y dejan prendida la telomerasa. | Fondo noche: el cromosoma grande con el tramo dorado ("ADN del VPH 18"); salen E6 y E7 y empujan fuera de la pantalla dos señales de alto, "p53" y "Rb". Las puntas del cromosoma brillan y la telomerasa (pac-man lila) trabaja en una de ellas. Chip "E6 y E7 sueltan los frenos p53 y Rb". |
+| 7 | Apagar | Si los apagas, las HeLa dejan de dividirse. | Un interruptor "VPH: ON → OFF": el tramo viral y el cromosoma se ponen grises, E6 y E7 desaparecen y los frenos regresan. Chip "sin E6 y E7 → dejan de dividirse". |
+| 8 | Polio | Hasta 1955, Tuskegee envió unos 600 mil tubos de HeLa para evaluar la vacuna contra la polio. | Fondo naranja: `TarjetaEstudio` "1955 · Instituto Tuskegee · HeLa para evaluar la vacuna de Salk". Una gradilla de 48 tubos que se llenan de medio rosa; `Contador` hasta "600,000 tubos". |
+| 9 | Nobel | En ellas, el equipo de Harald zur Hausen halló el VPH 18; él ganó el Nobel en 2008. | Fondo rosa: tarjeta "1984 · equipo de Harald zur Hausen · EMBO J · VPH 18 en células HeLa" sobre el frasco ("VPH 18 ✓") → medalla esquemática "NOBEL 2008". Chip "el VPH causa cáncer cervicouterino". |
+| 10 | Acuerdo | En 2013, dos familiares entraron al comité que revisa quién usa su genoma. | Fondo cian: carpeta "GENOMA DE HeLa" con candado; dos siluetas se encienden en dorado. Chips "NIH 2013 · acceso controlado" y "2 integrantes de la familia Lacks". |
+| 11 | Demanda | En 2023, su familia llegó a un acuerdo con Thermo Fisher, a quien demandó. | Fondo lila: una balanza que se equilibra. Chips "demanda presentada en 2021" → "2023 · acuerdo confidencial". Sin logotipos de empresas. |
+| 12 | Cierre | Por eso esas células no son de un laboratorio: son de Henrietta. | **Regreso al frasco del inicio**: la etiqueta dice ahora "HeLa = Henrietta Lacks" y aparece su retrato pequeño. Chip "HeLa = Henrietta Lacks". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de bioquímica y Robert señalando. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
-- Cama grave continua, sin golpe, siempre debajo de la voz; más sobria y cálida en la parte de Henrietta y la familia.
-- **Datos hechos sonido:** en "Gey" una nota por cada duplicación del cultivo (1, 2, 4, 8…); en "Limite", la célula normal con notas que se apagan al llegar a ~50 y la HeLa que sigue.
-- **Efectos en el mismo cuadro:** gota de la pipeta, tubito que se cierra, la Lupa que se abre (barrido), el tramo viral que entra al cromosoma (clic), los frenos que se sueltan, el interruptor, tubos de vidrio que tintinean, el golpe suave de la tarjeta, sillas que se encienden.
+- Cama grave continua, sin golpe, siempre debajo de la voz; más grave y sobria en Henrietta y la biopsia.
+- **Datos hechos sonido:** en "Gey", una nota por cada duplicación del cultivo (1, 2, 4, 8, 16, 32); en "Limite", un tic por división y la nota de la célula normal que se apaga.
+- **Efectos en el mismo cuadro:** gotas de la pipeta, "He + La" (dos notas), el tubito que se cierra, el tache de la hoja, la Lupa que se abre (barrido), el clic del tramo viral, E6 y E7 que salen, los frenos que se sueltan, la telomerasa, el clic del interruptor, tubos de vidrio que tintinean, la tarjeta, la medalla, el candado, las dos siluetas, la balanza.
 
-## Descripción (borrador, solo datos verificados después del veredicto)
-"Esas células no son de un laboratorio: son de una mujer que nunca dio permiso. 🔬 Henrietta Lacks tenía 31 años y un cáncer de cuello uterino agresivo cuando, en 1951, médicos del hospital Johns Hopkins, en Baltimore, le tomaron una biopsia sin su permiso ni su conocimiento. Con esas células, el laboratorio de George Gey obtuvo la primera línea de células humanas de cáncer que podía crecer sin fin en cultivo: las HeLa (de **He**nrietta **La**cks). Henrietta murió ese mismo año.
+## Robert en pantalla
+
+Tiempos de la base narrada (escenas: Gancho 0 · Henrietta 5.46 · Biopsia 9.04 · Gey 13.31 · Limite 17.58 · Virus 23.14 · Frenos 27.61 · Apagar 31.48 · Polio 34.26 · Nobel 39.82 · Acuerdo 44.89 · Demanda 49.46 · Cierre 54.03 · Outro 58.0). No sale en la escena de Henrietta, por respeto.
+
+### 9 apariciones, **36.9 s en pantalla** (de 61.5 s), 8 poses distintas
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.9 | 11_sorprendido | `gancho` | «son de una mujer a la que nunca le pidieron permiso» |
+| 2 | 9.4 | 13.1 | 10_serio_molesto | `arriba-der` | la biopsia y la hoja de permiso tachada |
+| 3 | 14.1 | 17.4 | 13_senalando_arriba | `arriba-der` | señala el cultivo que se duplica |
+| 4 | 20.6 | 23.4 | 06_pensativo_menton | **`grande`** | re-gancho: «¿Y estas por qué no?» |
+| 5 | 28.2 | 33.9 | 04_bajando_lentes | `arriba-der` | los frenos que se sueltan y el interruptor |
+| 6 | 36.9 | 39.6 | 02_apuntando_camara | `bajo-der` | 600 mil tubos para la vacuna de la polio |
+| 7 | 42.6 | 44.7 | 11_sorprendido | `arriba-der` | el Nobel de 2008 |
+| 8 | 45.5 | 53.7 | 12_perfil_serio | `izq-alto` | el comité con la familia y la demanda |
+| 9 | 54.3 | 57.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | cierre: «son de Henrietta» |
+
+La tarjeta de cierre lleva a Robert junto al logo (`CierreMarca robert=` avatar_13 señalando).
+
+## Descripción
+"Esas células no son de un laboratorio: son de una mujer a la que nunca le pidieron permiso. 🔬 Henrietta Lacks tenía 30 años y un cáncer de cuello uterino agresivo cuando, en 1951, médicos del hospital Johns Hopkins, en Baltimore, le tomaron una biopsia sin su permiso ni su conocimiento; en esa época no había reglas que exigieran ese consentimiento. Con esas células, el laboratorio de George Gey obtuvo la primera línea de células humanas de cáncer que podía crecer sin fin en cultivo: las HeLa (de **He**nrietta **La**cks). Henrietta murió ese mismo año, a los 31.
 
 ¿Por qué no se mueren? Una célula humana normal en cultivo se detiene tras unas 50 divisiones. Las HeLa llevan el ADN del virus del papiloma humano tipo 18 insertado en su cromosoma 8; dos genes del virus (E6 y E7) desactivan los frenos de la célula (p53 y Rb) y mantienen activa la telomerasa. Si se apagan, las células dejan de dividirse.
 
 Sirvieron para evaluar la vacuna de Salk contra la polio: hasta junio de 1955, el Instituto Tuskegee envió unos 600 mil cultivos. En 1984, el equipo de Harald zur Hausen encontró en ellas el VPH 18; él ganó el Nobel en 2008 por descubrir que el virus del papiloma causa cáncer cervicouterino. Para 2013 ya había más de 70 mil publicaciones con estas células.
 
-En 2013 los NIH acordaron con la familia que el acceso al genoma de HeLa lo revisara un comité con dos de sus integrantes, y en 2023 la familia llegó a un acuerdo confidencial en su demanda contra Thermo Fisher.
+En 2013 los NIH acordaron con la familia que el acceso al genoma de HeLa lo revisara un grupo con dos de sus integrantes, y en 2023 la familia llegó a un acuerdo confidencial en la demanda que presentó en 2021 contra Thermo Fisher.
 
 El dibujo es esquemático. **¿Sabías de dónde salen las células que se usan en los laboratorios? 👇**"
 
 ## Fuentes
 - **Biopsia, edad, permiso, primera línea que crece sin fin, acuerdo de 2013:** Hudson KL, Collins FS, "Biospecimen policy: Family matters", *Nature* 500: 141–142 (8 ago 2013), PMC5101952. «In 1951, physicians at Johns Hopkins Hospital in Baltimore, Maryland, took a biopsy from Henrietta Lacks, a 31-year-old African American woman who had an aggressive form of cervical cancer.» «This biospecimen was taken without her permission or knowledge; US regulations requiring consent were still decades away.» «The tissue sample gave rise to the first human cancer-cell line that could grow endlessly in culture, called HeLa.» «Henrietta died later that year, but her cells live on.» Comité: las solicitudes de acceso las revisa un grupo de los NIH «on which two members of the Lacks family will serve». https://pmc.ncbi.nlm.nih.gov/articles/PMC5101952/
+- **Edad al tomar la muestra (30 años):** ASU Embryo Project, "Henrietta Lacks (1920–1951)" (2020): «Lacks was born on 1 August 1920»; la muestra es de febrero de 1951 (Scherer, Syverton y Gey 1953) → tenía 30; murió el 4 de octubre de 1951 a los 31 (Smithsonian 2023). https://embryo.asu.edu/pages/henrietta-lacks-1920-1951
 - **Gey y el origen (feb 1951):** Scherer WF, Syverton JT, Gey GO, "Studies on the propagation in vitro of poliomyelitis viruses. IV…", *J Exp Med* 97(5): 695–710 (1953), PMC2136303: células «maintained in vitro since their derivation from an epidermoid carcinoma of the cervix in February, 1951»; «support the multiplication of all three types of poliomyelitis virus». Gey, del «Department of Surgery, Johns Hopkins Hospital». https://pmc.ncbi.nlm.nih.gov/articles/PMC2136303/
 - **Primera línea humana, VPH 18 en el cromosoma 8, cromosomas, publicaciones:** Landry JJM et al., "The Genomic and Transcriptomic Landscape of a HeLa Cell Line", *G3* 3(8): 1213–1224 (2013), PMC3737162: «HeLa was the first human cell line established in culture»; «…Henrietta Lacks, who later died of her cancer in 1951»; «found an insertion of HPV18 on chromosome 8»; «more than 70,000 publications» (2013); «hypertriploid (3n+), with a variable total number of chromosomes (76−80)». https://pmc.ncbi.nlm.nih.gov/articles/PMC3737162/
 - **Límite de ~50 divisiones:** Rubin H, "The disparity between human cell senescence in vitro and lifelong replication in vivo", *Nature Biotechnology* 20(7): 675–681 (2002): «Cultured human fibroblasts undergo senescence (a loss of replicative capacity) after a uniform, fixed number of approximately 50 population doublings». https://pubmed.ncbi.nlm.nih.gov/12089551/
