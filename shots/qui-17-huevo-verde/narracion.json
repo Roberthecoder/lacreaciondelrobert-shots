@@ -11,7 +11,7 @@
     { "escena": "Pregunta", "texto": "¿Y por qué a veces sale y a veces no?" },
     { "escena": "Estudio", "texto": "En 1920, en Londres, Tinkler y Soar hirvieron huevos 15 minutos: el que pasaron a agua fría casi no se pintó; el que se enfrió lento, sí." },
     { "escena": "Treinta", "texto": "Con 30 minutos, el anillo salió mucho más fuerte, y el agua fría ya casi no ayudó." },
-    { "escena": "Frio", "texto": "El frío frena la reacción y aleja el gas de la yema: por eso, no lo cuezas de más y enfríalo rápido." },
+    { "escena": "Frio", "texto": "El frío frena la salida del gas y lo aleja de la yema: por eso, no lo cuezas de más y enfríalo rápido." },
     { "escena": "Dato", "texto": "Lo curioso: un huevo hervido 7 horas quedó con una capa verde de hasta un milímetro." },
     { "escena": "Cierre", "texto": "Y tranquilo: ese anillo verde no hace daño. Es química en tu olla, no un huevo echado a perder." }
   ]

@@ -4,12 +4,12 @@
 - **Formato:** N1 "Por dentro" (la estufa de tu cocina con el cilindro de gas LP → las moléculas de propano, butano y etil mercaptano y tu nariz → la misma estufa, ahora con la "alarma" etiquetada) + N5 "El experimento/estudio" (New London, Texas, 1937).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" (con espíritu de #6, seguridad en casa): "Ese olor no es el gas de tu estufa: es una alarma que le agregan a propósito."
 - **Seguridad:** lo único práctico que se dice es lo que trae la guía oficial de la Alcaldía Coyoacán (CDMX): cerrar la llave de paso, abrir puertas y ventanas, no prender ni apagar la luz; 911. Nada que invite a "probar" el gas.
-- **Duración:** voz 956 caracteres / ≈180 palabras (≈ 58.1 s estimados) + cierre 3.5 s → **≈ 61.6 s** (`estimar-escenas.mjs`).
+- **Duración:** voz 952 caracteres / ≈180 palabras (≈ 58.1 s estimados) + cierre 3.5 s → **≈ 61.6 s** (`estimar-escenas.mjs`).
 - **Estado:** guion (fase 1). Falta verificación independiente, animación y tabla "Robert en pantalla". Voz pendiente de aprobación de Robert.
 
 ## Versión narrada
 
-Tiempos estimados: Gancho 0–4.7 · Que 4.7–9.7 · Aviso 9.7–14.6 · Nariz 14.6–19.4 · Piso 19.4–24.8 · Pregunta 24.8–27.3 · Estudio 27.3–36.3 · Ley 36.3–40.1 · Japon 40.1–48.9 · Aviso2 48.9–53.7 · Cierre 53.7–58.1 · Outro 58.1–61.6.
+Tiempos estimados: Gancho 0–4.7 · Que 4.7–9.7 · Aviso 9.7–14.6 · Nariz 14.6–19.3 · Piso 19.3–24.3 · Pregunta 24.3–26.8 · Estudio 26.8–37.4 · Ley 37.4–40.9 · Japon 40.9–49.3 · Aviso2 49.3–54.1 · Cierre 54.1–58.1 · Outro 58.1–61.6.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|

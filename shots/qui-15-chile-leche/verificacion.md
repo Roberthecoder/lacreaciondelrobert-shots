@@ -51,3 +51,5 @@ Revisé las líneas cambiadas en `guion.md` y `narracion.json` (escenas Que, Agu
 | R7 | (voz 9) Lo curioso: con capsaicina, David Julius descubrió ese sensor en 1997, y en 2021 compartió el Nobel de Medicina | ✅ | Nobel Assembly 2021; Caterina…Julius, *Nature* 1997 | "David Julius utilized capsaicin … to identify a sensor in the nerve endings of the skin that responds to heat" · "jointly to David Julius and Ardem Patapoutian" · "Nature 1997:389:816-824" | 1997 / 2021 |
 
 No queda ningún ⚠️ ni ❌ en lo que cambió. Las cifras de capsaicina de R2 y R3 sirven solo para comprobar el dato: la voz no dice esos números.
+
+VEREDICTO: APROBADO
