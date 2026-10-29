@@ -5,14 +5,14 @@
   "lineas": [
     { "escena": "Gancho", "texto": "Ese piquete del agua mineral no viene de las burbujas: es un ácido que se forma en tu lengua." },
     { "escena": "Acido", "texto": "El gas disuelto, dióxido de carbono, se junta con el agua y forma ácido carbónico, un ácido débil." },
-    { "escena": "Ph", "texto": "En 2016, en Estados Unidos, midieron aguas minerales con gas: pH de casi 5; el agua de la llave, 7.2." },
+    { "escena": "Ph", "texto": "En 2016, en Estados Unidos, midieron aguas con gas: pH cerca de 5; el agua de la llave, 7.2." },
     { "escena": "Enzima", "texto": "En tu boca, una enzima, la anhidrasa carbónica, convierte ese gas en ácido dentro de tu lengua." },
     { "escena": "Nervios", "texto": "Ese ácido despierta nervios del dolor: por eso pica." },
-    { "escena": "Agrio", "texto": "Y en 2009, en San Diego, el equipo de Charles Zuker vio en ratones que también lo detectan las células del sabor agrio." },
+    { "escena": "Agrio", "texto": "En 2009, en San Diego, el equipo de Zuker vio en ratones que también lo detectan las células del sabor agrio." },
     { "escena": "Pregunta", "texto": "¿Y sin burbujas, deja de picar?" },
-    { "escena": "Camara", "texto": "En 2013, en Filadelfia, metieron voluntarios a una cámara a presión donde no se forman burbujas: picó casi igual." },
-    { "escena": "Dientes", "texto": "¿Y tus dientes? En 2001, en la Universidad de Birmingham, Inglaterra, disolvió dientes unas 100 veces menos que los refrescos." },
-    { "escena": "Sabor", "texto": "Ojo: las de sabor salieron tan erosivas como el jugo de naranja." },
+    { "escena": "Camara", "texto": "En 2013, en Filadelfia, metieron gente a una cámara a presión donde no se forman burbujas: picó casi igual." },
+    { "escena": "Dientes", "texto": "¿Y tus dientes? En 2001, en Birmingham, Inglaterra, el agua con gas disolvió dientes unas 100 veces menos que los refrescos." },
+    { "escena": "Sabor", "texto": "Ojo: en 2007, las de sabor salieron tan erosivas como el jugo de naranja, o más." },
     { "escena": "Cierre", "texto": "Así que ese piquete no son las burbujas: es tu lengua haciendo química." }
   ]
 }

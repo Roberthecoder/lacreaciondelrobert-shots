@@ -186,8 +186,8 @@ function Chocolate() {
       {/* 2–3 · las 6 formas de cristal; la V se ilumina */}
       <Escena T={T} a={mCr} b={fCrack}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
+        <Ambiente T={T} />
         <SvgCapa>
-          <Ambiente T={T} />
           {[1, 2, 3, 4, 5, 6].map((n, i) => { const cx = 250 + (i % 3) * 290, cy = 760 + Math.floor(i / 3) * 300, t0 = mCr + 0.2 + i * 0.35;
             return <g key={n}>
               <CristalForma n={n} x={cx} y={cy + Math.sin(T * 2 + i) * 6} s={1.3} o={kprog(T, t0, t0 + 0.4, kEase.rebote)} glow={n === 5 ? kprog(T, K.F, K.F + 0.4) : 0} T={T} />
@@ -266,8 +266,8 @@ function Chocolate() {
       {/* 6 · micro: la gota disuelve el azúcar y al secarse deja polvito */}
       <Escena T={T} a={azMicro} b={K.Es}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
+        <Ambiente T={T} />
         <SvgCapa>
-          <Ambiente T={T} />
           <rect x={0} y={1060} width={KW} height={200} fill={CHOC} />
           {(() => { const dis = kprog(T, azMicro + 0.3, azMicro + 1.6), seca = kprog(T, azMicro + 1.7, K.Es - 0.5, kEase.suave);
             return <g>
@@ -300,9 +300,9 @@ function Chocolate() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           <Tableta T={T} x={600} y={1000} s={0.75} bloom={1} borrado={{ x: 60, y: 0, r: 110 * kprog(T, K.La + 2.4, K.La + 4.4, kEase.suave) }} id="l0" />
-          <Aparato x={200} y={680} s={0.9} />
+          <Aparato x={230} y={780} s={0.9} />
           {T > K.La + 2.2 && <g>
-            <line x1={355} y1={680} x2={645} y2={1000} stroke="#fff" strokeWidth={30} opacity={0.10 + 0.04 * Math.sin(T * 9)} strokeLinecap="round" />
+            <line x1={385} y1={780} x2={645} y2={1000} stroke="#fff" strokeWidth={30} opacity={0.10 + 0.04 * Math.sin(T * 9)} strokeLinecap="round" />
             <circle cx={645} cy={1000} r={60 + Math.sin(T * 8) * 6} fill="#fff" opacity={0.12} />
           </g>}
         </SvgCapa>
@@ -361,7 +361,7 @@ function Chocolate() {
         [CUES.Pregunta + 0.05, CUES.Azucar + 0.8, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Azucar + 2.4, CUES.Estudio - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Estudio + 3.4, CUES.Laser - 0.3, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [CUES.Laser + 0.4, CUES.Comer - 0.2, 'avatar_11_sorprendido', 'grande-izq'],
+        [CUES.Laser + 0.4, CUES.Comer - 0.2, 'avatar_11_sorprendido', 'izq-alto'],
         [CUES.Comer + 0.4, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="quimica" num="41" hasta={K.Ou} />
