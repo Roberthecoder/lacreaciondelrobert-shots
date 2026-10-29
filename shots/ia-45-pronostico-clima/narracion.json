@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Pronostico base narrada.dc.html",
+  "salida": "Shot Pronostico narrado.dc.html",
+  "nota": "Shot IA #45. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Para el pronóstico de diez días, una supercomputadora usa más de once mil núcleos casi una hora."
+    },
+    {
+      "escena": "Gancho",
+      "texto": "Esta IA, con un solo chip: menos de un minuto."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Es GraphCast, de Google DeepMind, en Science, 2023."
+    },
+    {
+      "escena": "Aprende",
+      "texto": "Aprendió de treinta y nueve años de mapas del tiempo pasado, reconstruidos por el centro europeo."
+    },
+    {
+      "escena": "Cuadritos",
+      "texto": "Divide el planeta en cuadritos de unos veintiocho kilómetros, más grandes que los de la supercomputadora, y avanza de seis en seis horas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Solo es rápida, o le atina?"
+    },
+    {
+      "escena": "Prueba",
+      "texto": "Contra el mejor pronóstico europeo ganó claramente en el noventa por ciento de mil trescientas ochenta pruebas."
+    },
+    {
+      "escena": "Ciclones",
+      "texto": "Y siguió mejor el camino de los ciclones. A México le pegan unos cinco al año."
+    },
+    {
+      "escena": "Europa",
+      "texto": "En 2025, el centro europeo estrenó su propia IA, junto a su modelo de física."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: aprenden de mapas que juntan mediciones, como de satélites, con modelos de física, y cada pronóstico arranca de mediciones. No las reemplazan."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tras tu app del clima puede haber una hora de supercomputadora… o un minuto de IA."
+    }
+  ]
+}

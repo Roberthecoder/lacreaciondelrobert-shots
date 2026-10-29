@@ -43,3 +43,15 @@ Así como está, el gancho insinúa "hace lo mismo, 60 veces más rápido". Mien
 3. **#14 "aprenden de datos de satélites y de modelos físicos"**, ⚠️ impreciso. Propuesta: *"Ojo: estas IA aprenden de mapas que juntan mediciones, como las de satélites, con modelos de física, y cada pronóstico arranca de esas mediciones. No las reemplazan."*
 4. **#11 mapa del ciclón sobre México**, ⚠️ el estudio evaluó ciclones de todo el mundo, no un caso de México. Poner "esquemático" en pantalla o usar un ciclón genérico; no presentarlo como una trayectoria real.
 5. Opcional, recomendable: en `publicacion.md` y en Notas, decir que el minuto no incluye el entrenamiento (≈ 4 semanas en 32 TPU v4) ni la preparación de las condiciones iniciales, y que la ventaja en ciclones fue entre 18 h y 4.75 días.
+
+## Re-verificación (29 oct 2026, coordinador)
+- Gancho «Para el pronóstico de diez días, una supercomputadora usa más de once mil núcleos casi una hora. / Esta IA, con un solo chip: menos de un minuto.» y chip "usando 11,664 núcleos" (Lam et al., Science 2023) ✅
+- «Aprendió de treinta y nueve años de mapas del tiempo pasado, reconstruidos por el centro europeo.» (ERA5, reanálisis) ✅
+- «…cuadritos de unos veintiocho kilómetros, más grandes que los de la supercomputadora, y avanza de seis en seis horas.» (0.25° vs 0.1° de HRES; ≈ 11 km = 0.1° en el ecuador, cálculo) ✅
+- «Contra el mejor pronóstico europeo ganó claramente en el noventa por ciento de mil trescientas ochenta pruebas.» ("significantly outperforms HRES on 90% of 1380 verification targets") ✅
+- «En 2025, el centro europeo estrenó su propia IA, junto a su modelo de física.» (AIFS operativo el 25 feb 2025) ✅
+- «Ojo: aprenden de mapas que juntan mediciones, como de satélites, con modelos de física, y cada pronóstico arranca de mediciones. No las reemplazan.» ✅
+- Ciclón genérico "esquemático · ciclones de todo el mundo" ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

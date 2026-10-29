@@ -68,7 +68,7 @@ function Psicologo({ x, y, s = 1, T = 0, traje = 1, reglas = 0 }) {
       <Teletipo x={0} y={-236} s={0.34} T={T} papel={150} barras={4} ancho={340} />
     </g>
     {reglas > 0 && [
-      ['SI «mi» → «tu»', -150, -200, -6], ['SI «triste» → «SIENTO…»', -20, -60, 4], ['SI nada → «SIGA, POR FAVOR»', -170, 80, -3]].map(([t, cx, cy, rot], i) => {
+      ['SI «mi» → «tu»', -330, -260, -6], ['SI «triste» → «SIENTO…»', -300, -130, 4], ['SI nada → «SIGA, POR FAVOR»', -400, 0, -3]].map(([t, cx, cy, rot], i) => {
       const e = kprog(reglas, i * 0.2, i * 0.2 + 0.5, kEase.sale);
       return <g key={i} transform={`translate(${cx} ${cy + (1 - e) * 60}) rotate(${rot})`} opacity={e}>
         <rect x={0} y={-36} width={t.length * 17 + 40} height={64} rx={12} fill={PAPEL} stroke={KC.ink} strokeWidth={6} />
@@ -111,7 +111,7 @@ function HojaDialogo({ T, at, until, lineas, x = 150, y = 650, ancho = 780, tam 
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
   return <div style={{ position:'absolute', left:x, top:y, width:ancho, zIndex:30, opacity:e.o, transform:`translateY(${e.y}px)`,
-    background:PAPEL, border:`6px solid ${KC.ink}`, borderRadius:6, padding:'22px 64px 26px', boxShadow:`12px 12px 0 ${KC.ink}`,
+    boxSizing:'border-box', background:PAPEL, border:`6px solid ${KC.ink}`, borderRadius:6, padding:'22px 64px 26px', boxShadow:`12px 12px 0 ${KC.ink}`,
     backgroundImage:'radial-gradient(circle, #d9d0bb 7px, transparent 8px), radial-gradient(circle, #d9d0bb 7px, transparent 8px)',
     backgroundSize:'34px 34px, 34px 34px', backgroundPosition:'6px 10px, calc(100% - 6px) 10px', backgroundRepeat:'repeat-y, repeat-y' }}>
     {lineas.map((l, i) => { if (T < l.at) return null;
@@ -233,10 +233,10 @@ function CajaArchivo({ T, K }) {
 }
 
 // Sello rojo.
-function Sello({ T, at, texto, x, y, rot = -10, tam = 64 }) {
-  if (T < at) return null;
+function Sello({ T, at, until, texto, x, y, rot = -10, tam = 64 }) {
+  if (T < at || (until != null && T > until + 0.4)) return null;
   const e = kprog(T, at, at + 0.35, kEase.sale);
-  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, transform:`translate(-50%,-50%) rotate(${rot}deg) scale(${klerp(2.2, 1, e)})`, opacity:Math.min(1, e * 2),
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, transform:`translate(-50%,-50%) rotate(${rot}deg) scale(${klerp(2.2, 1, e)})`, opacity:Math.min(1, e * 2) * (until != null ? 1 - kprog(T, until, until + 0.35) : 1),
     border:`9px solid ${KC.red}`, borderRadius:18, padding:'6px 26px', font:`400 ${tam}px ${KF.titulo}`, color:KC.red, background:'rgba(255,59,47,.1)', whiteSpace:'nowrap' }}>{texto}</div>;
 }
 
@@ -272,10 +272,10 @@ function Eliza() {
       {/* 1 · diálogo real (1966, traducido) en papel de teletipo */}
       <Escena T={T} a={K.D} b={K.R}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Teletipo x={540} y={1110} s={1.15} T={T} papel={0} ancho={640} />)}
+        {svg(<Teletipo x={540} y={1100} s={0.8} T={T} papel={0} ancho={640} />)}
       </Escena>
-      <Chip T={T} at={K.D + 0.2} until={K.R - 0.2} texto="diálogo real · artículo de 1966 (traducido)" x={600} y={560} tam={30} borde={KC.ink} />
-      <HojaDialogo T={T} at={K.D} until={K.R - 0.2} x={150} y={650} tam={31} resalta={[4, 5]} lineas={[
+      <Chip T={T} at={K.D + 0.2} until={K.R - 0.2} texto="diálogo real · artículo de 1966 (traducido)" x={650} y={600} tam={30} borde={KC.ink} />
+      <HojaDialogo T={T} at={K.D} until={K.R - 0.2} x={170} y={670} ancho={800} tam={31} resalta={[4, 5]} lineas={[
         { at: K.D + 0.2, t: 'Los hombres son todos iguales.' },
         { at: K.D + 0.9, t: 'EN QUÉ SENTIDO' },
         { at: K.D + 1.4, t: 'Siempre nos andan molestando por algo.' },
@@ -378,7 +378,7 @@ function Eliza() {
       </Escena>
       <NumeroGigante T={T} at={K.C + 0.6} until={K.H - 0.2} valor={50} dur={1.2} sufijo="+" etiqueta="" x={250} y={500} tam={190} color={KC.orange} />
       <Chip T={T} at={K.C + 1.0} until={K.H - 0.2} texto="años sin verse" x={250} y={640} tam={32} borde={KC.ink} />
-      <Sello T={T} at={K.C + 3.3} texto="2021 · ENCONTRADO" x={600} y={800} rot={-9} tam={58} />
+      <Sello T={T} at={K.C + 3.3} texto="2021 · ENCONTRADO" until={K.H - 0.2} x={600} y={800} rot={-9} tam={58} />
 
       {/* 9 · hoy */}
       <Escena T={T} a={K.H} b={K.Ci}>
@@ -386,7 +386,7 @@ function Eliza() {
         {svg(<Secretos T={T} x0={520} y0={900} x1={900} y1={780} n={5} alto={160} />)}
       </Escena>
       {T > K.H - 0.4 && T < K.Ci + 0.4 && <div style={{ opacity:kprog(T, K.H - 0.4, K.H + 0.05) * (1 - kprog(T, K.Ci - 0.05, K.Ci + 0.4)) }}>
-        <CelularChat T={T} x={380} y={910} s={0.64} tam={34} mensajes={[{ at: K.H + 0.3, yo: true, texto: 'Tuve un día horrible.' }, { at: K.H + 1.3, texto: 'Lamento que te sientas así. ¿Quieres contarme qué pasó?' }]} escribe={[K.H + 0.7, K.H + 1.3]} />
+        <CelularChat T={T} x={380} y={870} s={0.7} tam={36} mensajes={[{ at: K.H + 0.3, yo: true, texto: 'Tuve un día horrible.' }, { at: K.H + 1.3, texto: 'Lamento que te sientas así. ¿Quieres contarme qué pasó?' }]} escribe={[K.H + 0.7, K.H + 1.3]} />
       </div>}
       <Chip T={T} at={K.H + 1.8} until={K.Ci - 0.2} texto="chat ilustrativo" x={830} y={1120} tam={28} borde={KC.ink} />
 
@@ -395,7 +395,7 @@ function Eliza() {
         <FondoLunares color={KC.mint} />
         <Consultorio T={T} traje={1 - kprog(T, K.Ci + 1.6, K.Ci + 2.4, kEase.suave)} reglas={kprog(T, K.Ci + 2.0, K.Ci + 3.4)} secretos={1 - kprog(T, K.Ci + 1.6, K.Ci + 2.4)} />
       </Escena>
-      <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="unas cuantas reglas" x={330} y={800} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="unas cuantas reglas" x={330} y={620} tam={44} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.D - 0.1} texto="No es un psicólogo: *son reglas.*" />
