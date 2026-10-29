@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Acidificacion base narrada.dc.html",
+  "salida": "Shot Acidificacion narrado.dc.html",
+  "nota": "Shot Ambiental #29. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "El mar no se está volviendo ácido: sigue siendo básico. Pero cada vez menos, y en algunos mares ya deshace conchas."
+    },
+    {
+      "escena": "Absorbe",
+      "texto": "El mar se traga cerca de la cuarta parte del dióxido de carbono que emitimos."
+    },
+    {
+      "escena": "Acido",
+      "texto": "Ahí, ese gas forma ácido carbónico, que suelta iones de hidrógeno."
+    },
+    {
+      "escena": "Escala",
+      "texto": "Siete es neutro y arriba, básico. Antes de la Revolución Industrial andaba en ocho punto dos."
+    },
+    {
+      "escena": "Medicion",
+      "texto": "En 1985 iba en ocho punto once; en 2024, ocho punto cero cuatro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Siete centésimas? Parece nada, pero cada punto de pH es diez veces más acidez."
+    },
+    {
+      "escena": "Porcentaje",
+      "texto": "Esa bajadita es dieciocho por ciento más acidez."
+    },
+    {
+      "escena": "Carbonato",
+      "texto": "El hidrógeno de más atrapa el carbonato que ostiones y corales usan para su concha o su esqueleto."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de 2012 sacó vivas mariposas de mar junto a la Antártida; al microscopio, sus conchas estaban muy disueltas."
+    },
+    {
+      "escena": "Experimento",
+      "texto": "En el laboratorio, en agua como la esperada para 2100, una concha de mariposa de mar se fue disolviendo en cuarenta y cinco días."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Sigue siendo básico, pero para una concha, ese poquito ya se nota."
+    }
+  ]
+}
