@@ -40,7 +40,7 @@ m.whoosh(M + 0.4, 0.9, 0.08); m.metal(M + 1.2, 0.15, 1800);                    /
 m.nota(M + 1.4, 69, 0.06, 0.8); m.nota(M + 2.4, 72, 0.06, 0.8);                // las dos medicinas
 for (let i = 0; i < 5; i++) m.burbuja(H + 0.3 + i * 0.4, 0.08, 380 + i * 40);  // burbujas del matraz
 for (let i = 0; i < 4; i++) m.tic(H + 0.5 + i * 0.22, 0.12, 900);              // anillos de la molécula
-m.motor(Mo, Mo - Mo + 4.2, 0.05);                                              // banda del molino
+m.motor(Mo, 4.2, 0.05);                                                 // banda del molino
 for (let i = 0; i < 4; i++) m.tic(Mo + 0.8 + i * 1.0, 0.18, 700);              // los cuernos caen fuera
 m.whoosh(C + 0.2, 0.8, 0.06); m.nota(C + 1.0, 69, 0.06, 1.0); m.nota(C + 1.4, 76, 0.05, 1.0);
 m.nota(Ou + 0.3, 57, 0.08, 2.8); m.nota(Ou + 0.3, 64, 0.06, 2.8); m.nota(Ou + 0.3, 69, 0.05, 2.8);

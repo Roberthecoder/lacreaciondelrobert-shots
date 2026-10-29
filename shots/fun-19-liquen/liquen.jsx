@@ -153,7 +153,7 @@ function Bryoria({ T, crece = 1 }) {
 // Satélite Foton con la caja BIOPAN arriba (esquemático). tapa 0..1 = abierta.
 function Satelite({ T, x, y, s = 1, tapa = 0, para = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    {para > 0 && <g opacity={para}><path d="M -170 -300 Q 0 -460 170 -300 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={6} />{[-160, -60, 60, 160].map((dx, i) => <line key={i} x1={dx} y1={-300} x2={0} y2={-150} stroke={KC.ink} strokeWidth={3} />)}</g>}
+    {para > 0 && <g opacity={para}><path d="M -170 -260 Q 0 -420 170 -260 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={6} />{[-160, -60, 60, 160].map((dx, i) => <line key={i} x1={dx} y1={-260} x2={0} y2={-175} stroke={KC.ink} strokeWidth={3} />)}</g>}
     <rect x={-120} y={60} width={240} height={150} rx={16} fill="#c9ced6" stroke={KC.ink} strokeWidth={7} />
     {[-230, 130].map((dx, i) => <g key={i}><rect x={dx} y={95} width={100} height={70} fill="#2346ff" stroke={KC.ink} strokeWidth={5} /><line x1={dx + 50} y1={95} x2={dx + 50} y2={165} stroke="#9ad7ff" strokeWidth={3} /></g>)}
     <circle cx={0} cy={0} r={135} fill="#dfe3ea" stroke={KC.ink} strokeWidth={8} />
@@ -350,7 +350,7 @@ function LiquenShot() {
       {T < K.Es + 5.0 && <Contador T={T} at={K.Es + 1.0} hasta={14.6} dur={3.4} dec={1} sufijo=" días" x={330} y={530} tam={64} color={KC.yellow} />}
       <Etq T={T} at={K.Es + 1.8} until={K.Es + 5.0} x={520} y={600} texto="Xanthoria elegans" it tam={28} color={LQ.naranja} />
       <Etq T={T} at={K.Es + 2.3} until={K.Es + 5.0} x={520} y={660} texto="Rhizocarpon geographicum" it tam={26} color={LQ.mapa} />
-      <Chip T={T} at={K.Es + 5.2} until={K.Es + 6.4} texto="de regreso a la Tierra" x={540} y={470} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.Es + 5.2} until={K.Es + 6.4} texto="de regreso a la Tierra" x={360} y={470} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.Es + 7.8} until={K.C - 0.2} texto="casi igual" x={540} y={640} tam={40} borde={KC.leaf} />
       <Chip T={T} at={K.C + 1.9} until={K.Ou} texto="es un equipo" x={300} y={385} tam={46} borde={KC.ink} />
 

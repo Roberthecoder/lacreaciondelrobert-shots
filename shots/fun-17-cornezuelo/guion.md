@@ -29,7 +29,27 @@
 
 **Música:** cama grave continua, tapada y tensa en la parte del ergotismo, que se abre en "medicinas"; sin golpe marcado. Efectos en el mismo cuadro: viento en la espiga, tic de la espora al caer, crecimiento de la hifa (zumbido suave), gota pegajosa, aleteo del insecto, crujido del cuernito al endurecerse, piedra del molino, latido que se apaga en los dedos, chisporroteo del "fuego", 18 tics de las personas y 3 golpes graves, lupa, tintineo del frasco, burbuja del matraz, banda del molino.
 
-Barras de escala (esquemáticas): 2 cm (espiga y cuernito; el cornezuelo de centeno mide hasta ~2.5–4 cm, curvo "como espolón", según [K]), 1 mm (flor y ovario), 10 µm (hifa), 2 cm (dedo).
+Barras de escala (esquemáticas, siempre visibles): 2 cm (espiga y cuernito; el cornezuelo de centeno mide hasta ~2.5–4 cm, curvo "como espolón", según [K]), 1 mm (flor y corte del ovario), 1 cm (cuernito de cerca, avena, frasco y banda del molino), 10 cm (pan y matraz), 2 cm (mano), 50 cm (figura), 500 km (mapa de Etiopía).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si se muele con el centeno y acaba en tu pan?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.4 | 11_sorprendido | `gancho` | «ese grano negro… es un hongo venenoso» (cuadro 0) |
+| 2 | 9.0 | 12.5 | 06_pensativo_menton | `arriba-der` | «el mismo camino que usaría el polen» |
+| 3 | 15.6 | 18.5 | 13_senalando_arriba | `arriba-der` | señala el cuernito que crece en lugar del grano |
+| 4 | 18.8 | 21.6 | 07_pensativo_puno | `grande` | «¿y si acaba en tu pan?» |
+| 5 | 23.5 | 29.5 | 10_serio_molesto | `arriba-der` | gangrena y «fuego de San Antonio» |
+| 6 | 33.5 | 39.5 | 04_bajando_lentes | `arriba-der` | el brote de Arsi (2001) y «¿el culpable?» |
+| 7 | 41.2 | 45.5 | 05_sonriendo_dientes_uniformes | `arriba-der` | «de esos alcaloides salen medicinas» |
+| 8 | 46.0 | 48.6 | 12_perfil_serio | `arriba-der` | 1938, Albert Hofmann y el LSD |
+| 9 | 49.2 | 53.1 | 13_senalando_arriba | `izq-alto` | «hoy los molinos lo separan» |
+| 10 | 53.6 | 57.9 | 02_apuntando_camara | `arriba-der` | «hoy también es medicina» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **39.8 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada fuente se abrió en texto completo el 29 oct 2026)
 

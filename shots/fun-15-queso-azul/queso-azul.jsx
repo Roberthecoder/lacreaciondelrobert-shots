@@ -91,7 +91,7 @@ function Penicilio({ T, x, y, s = 1, p = 1, seed = 1 }) {
     const [x1, y1] = pol(0, -tallo, a1, 80 * rama); partes.push([0, -tallo, x1, y1, 14]);
     [-0.2, 0.2].forEach((d2, j) => { const a2 = a1 + d2, [x2, y2] = pol(x1, y1, a2, 70 * rama); partes.push([x1, y1, x2, y2, 12]);
       [-0.14, 0.14].forEach((d3, k) => { const a3 = a2 + d3, [x3, y3] = pol(x2, y2, a3, 52 * rama); partes.push([x2, y2, x3, y3, 9]);
-        const n = Math.floor(cad * 5 + 0.001);
+        const n = Math.floor(cad * 4 + 0.001);
         for (let q = 0; q < n; q++) { const [ex, ey] = pol(x3, y3, a3, 18 + q * 30); esporas.push([ex + Math.sin(T * 2 + q + i + seed) * 1.5, ey, i * 4 + j * 2 + k, q]); }
       }); });
   });
@@ -163,10 +163,10 @@ function QuesoAzulShot() {
       <Escena T={T} a={K.G} b={K.N} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <ellipse cx={500} cy={1150} rx={470} ry={70} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
-          <ellipse cx={500} cy={1140} rx={380} ry={44} fill="#f2f2f2" />
-          <Cuna T={T} x={470} y={1000} s={1.08} id="cunaG" venas={klerp(0.55, 1, corte)} />
-          <g transform={`translate(${klerp(560, 470, corte)} ${klerp(380, 1000, corte)}) rotate(${klerp(-35, -8, corte)})`} opacity={1 - kprog(T, K.G + 1.0, K.G + 1.4)}>
+          <ellipse cx={500} cy={1040} rx={470} ry={70} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
+          <ellipse cx={500} cy={1030} rx={380} ry={44} fill="#f2f2f2" />
+          <Cuna T={T} x={470} y={890} s={1.08} id="cunaG" venas={klerp(0.55, 1, corte)} />
+          <g transform={`translate(${klerp(560, 470, corte)} ${klerp(300, 890, corte)}) rotate(${klerp(-35, -8, corte)})`} opacity={1 - kprog(T, K.G + 1.0, K.G + 1.4)}>
             <rect x={-30} y={-420} width={60} height={170} rx={20} fill="#3b2a20" stroke={KC.ink} strokeWidth={7} />
             <path d="M -26 -260 L 26 -260 L 30 120 Q 0 150 -40 110 Z" fill={QZ.acero} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
           </g>
@@ -176,14 +176,14 @@ function QuesoAzulShot() {
       <Escena T={T} a={K.N} b={K.In} zoom={0.06}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <g opacity={kprog(T, K.N + 0.6, K.N + 1.0)}><Rueda x={270} y={980} r={150} h={150} id="ruedaR" seed={11} s={kprog(T, K.N + 0.6, K.N + 1.1, kEase.rebote)} /></g>
-          <g opacity={kprog(T, K.N + 1.4, K.N + 1.8)}><Rueda x={770} y={960} r={190} h={170} id="ruedaG" seed={23} s={kprog(T, K.N + 1.4, K.N + 1.9, kEase.rebote)} /></g>
+          <g opacity={kprog(T, K.N + 0.6, K.N + 1.0)}><Rueda x={270} y={880} r={150} h={150} id="ruedaR" seed={11} s={kprog(T, K.N + 0.6, K.N + 1.1, kEase.rebote)} /></g>
+          <g opacity={kprog(T, K.N + 1.4, K.N + 1.8)}><Rueda x={770} y={870} r={190} h={170} id="ruedaG" seed={23} s={kprog(T, K.N + 1.4, K.N + 1.9, kEase.rebote)} /></g>
           {T > K.N + 1.0 && <g opacity={kprog(T, K.N + 1.0, K.N + 1.4)}>
-            <text x={270} y={1150} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={10} paintOrder="stroke">ROQUEFORT</text>
-            <text x={270} y={1196} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>Francia · oveja</text></g>}
+            <text x={270} y={1050} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={10} paintOrder="stroke">ROQUEFORT</text>
+            <text x={270} y={1096} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>Francia · oveja</text></g>}
           {T > K.N + 1.8 && <g opacity={kprog(T, K.N + 1.8, K.N + 2.2)}>
-            <text x={770} y={1150} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={10} paintOrder="stroke">GORGONZOLA</text>
-            <text x={770} y={1196} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>Italia · vaca</text></g>}
+            <text x={770} y={1050} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={10} paintOrder="stroke">GORGONZOLA</text>
+            <text x={770} y={1096} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>Italia · vaca</text></g>}
         </>)}
       </Escena>
       {/* 3 · Cap. 1: inocular la leche */}
@@ -243,7 +243,7 @@ function QuesoAzulShot() {
           <RedHifas T={T} x={170} y={1000} g={kprog(T, K.Ve - 0.3, K.Ve + 2.0)} seed={8} n={140} escala={0.36} color={FK.hifa} ancho={3} rot={60} />
           <RedHifas T={T} x={910} y={900} g={kprog(T, K.Ve - 0.3, K.Ve + 2.0)} seed={9} n={140} escala={0.36} color={FK.hifa} ancho={3} rot={-120} />
           <path d="M 150 1200 Q 400 1180 540 1200 Q 700 1220 930 1190" stroke={FK.hifa} strokeWidth={14} fill="none" opacity=".8" />
-          <Penicilio T={T} x={540} y={1200} s={1.0} p={kprog(T, K.Ve, K.Ve + 2.6)} />
+          <Penicilio T={T} x={560} y={1190} s={1.15} p={kprog(T, K.Ve, K.Ve + 2.6)} />
           <Penicilio T={T} x={280} y={1195} s={0.55} p={kprog(T, K.Ve + 0.6, K.Ve + 3.0)} seed={3} />
           <Penicilio T={T} x={800} y={1195} s={0.6} p={kprog(T, K.Ve + 0.9, K.Ve + 3.2)} seed={5} />
         </>)}
@@ -260,7 +260,7 @@ function QuesoAzulShot() {
           </g>; })}
           {Array.from({ length: 6 }, (_, i) => { const t0 = K.Gr + 2.0 + i * 0.3, u = T - t0; if (u < 0) return null;
             const yy = 1060 - u * 110 - (i % 3) * 60, xx = 640 + (i % 3) * 120 + Math.sin(T * 1.5 + i) * 20;
-            return <Heptanona key={i} x={xx} y={Math.max(yy, 720 + (i % 2) * 70)} s={0.85} rot={Math.sin(T + i) * 15} o={kprog(T, t0, t0 + 0.3)} />; })}
+            return <Heptanona key={i} x={xx} y={Math.max(yy, 740 + (i % 2) * 80)} s={1.2} rot={Math.sin(T + i) * 15} o={kprog(T, t0, t0 + 0.3)} />; })}
           {Array.from({ length: 3 }, (_, i) => { const f = (T * 0.5 + i / 3) % 1; return <path key={i} d={`M ${700 + i * 100} ${880 - f * 160} q 20 -20 0 -40 q -20 -20 0 -40 q 20 -20 0 -40`} stroke={QZ.esporaLuz} strokeWidth={6} fill="none" strokeLinecap="round" opacity={kprog(T, K.Gr + 2.8, K.Gr + 3.2) * Math.sin(Math.PI * f) * 0.8} />; })}
         </>)}
       </Escena>
@@ -291,13 +291,13 @@ function QuesoAzulShot() {
       <Escena T={T} a={K.E} b={K.Po} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {Array.from({ length: 34 }, (_, i) => { const on = kprog(T, K.E + 0.9 + i * 0.04, K.E + 1.2 + i * 0.04, kEase.rebote); return on > 0 ? <Tubo key={i} x={120 + (i % 17) * 52} y={830 + Math.floor(i / 17) * 120} s={on} /> : null; })}
+          {Array.from({ length: 34 }, (_, i) => { const on = kprog(T, K.E + 0.9 + i * 0.04, K.E + 1.2 + i * 0.04, kEase.rebote); return on > 0 ? <Tubo key={i} x={120 + (i % 17) * 52} y={780 + Math.floor(i / 17) * 110} s={on} /> : null; })}
           {(() => { const u = kprog(T, K.E + 2.6, K.E + 3.8, kEase.sale); if (u <= 0) return null; return <g>
-            <path d={`M 540 1190 L 540 ${klerp(1190, 1090, kclamp(u * 2, 0, 1))}`} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
-            {u > 0.5 && <><path d={`M 540 1090 Q 420 1070 ${klerp(540, 330, (u - 0.5) * 2)} ${klerp(1090, 1040, (u - 0.5) * 2)}`} stroke={QZ.vena} strokeWidth={16} fill="none" strokeLinecap="round" />
-              <path d={`M 540 1090 Q 660 1070 ${klerp(540, 750, (u - 0.5) * 2)} ${klerp(1090, 1040, (u - 0.5) * 2)}`} stroke={KC.pink} strokeWidth={16} fill="none" strokeLinecap="round" /></>}
-            {u > 0.95 && <><circle cx={330} cy={1040} r={34} fill={QZ.vena} stroke={KC.ink} strokeWidth={6} /><text x={330} y={1054} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#fff">1</text>
-              <circle cx={750} cy={1040} r={34} fill={KC.pink} stroke={KC.ink} strokeWidth={6} /><text x={750} y={1054} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#fff">2</text></>}
+            <path d={`M 540 1080 L 540 ${klerp(1080, 1000, kclamp(u * 2, 0, 1))}`} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
+            {u > 0.5 && <><path d={`M 540 1000 Q 420 980 ${klerp(540, 330, (u - 0.5) * 2)} ${klerp(1000, 950, (u - 0.5) * 2)}`} stroke={QZ.vena} strokeWidth={16} fill="none" strokeLinecap="round" />
+              <path d={`M 540 1000 Q 660 980 ${klerp(540, 750, (u - 0.5) * 2)} ${klerp(1000, 950, (u - 0.5) * 2)}`} stroke={KC.pink} strokeWidth={16} fill="none" strokeLinecap="round" /></>}
+            {u > 0.95 && <><circle cx={330} cy={950} r={34} fill={QZ.vena} stroke={KC.ink} strokeWidth={6} /><text x={330} y={964} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#fff">1</text>
+              <circle cx={750} cy={950} r={34} fill={KC.pink} stroke={KC.ink} strokeWidth={6} /><text x={750} y={964} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#fff">2</text></>}
           </g>; })()}
         </>)}
       </Escena>
@@ -319,7 +319,7 @@ function QuesoAzulShot() {
             {Array.from({ length: 8 }, (_, i) => { const a = i / 8 * Math.PI * 2; return <g key={i} transform={`translate(${Math.cos(a) * 225} ${Math.sin(a) * 225}) rotate(${-(T - K.Po) * 6})`} opacity={kprog(T, K.Po + 2.0 + i * 0.1, K.Po + 2.3 + i * 0.1)}>
               <Rueda x={0} y={0} r={30} h={36} id={'gl' + i} seed={60 + i} /></g>; })}
           </g>
-          {T > K.Po + 2.0 && <g opacity={kprog(T, K.Po + 2.0, K.Po + 2.4)}><circle cx={780} cy={730} r={34} fill={KC.pink} stroke={KC.ink} strokeWidth={6} /><text x={780} y={744} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#fff">2</text></g>}
+          
         </>)}
       </Escena>
       {/* 12 · 2024: versiones del moho de otros colores */}
@@ -335,9 +335,9 @@ function QuesoAzulShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <ellipse cx={500} cy={1150} rx={470} ry={70} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
-          <ellipse cx={500} cy={1140} rx={380} ry={44} fill="#f2f2f2" />
-          <Cuna T={T} x={470} y={1000} s={1.08} id="cunaC" tuneles={kprog(T, K.C + 0.4, K.C + 2.2)} />
+          <ellipse cx={500} cy={1040} rx={470} ry={70} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
+          <ellipse cx={500} cy={1030} rx={380} ry={44} fill="#f2f2f2" />
+          <Cuna T={T} x={470} y={890} s={1.08} id="cunaC" tuneles={kprog(T, K.C + 0.4, K.C + 2.2)} />
         </>)}
       </Escena>
 
@@ -345,8 +345,8 @@ function QuesoAzulShot() {
       <Capitulo T={T} caps={[{ at:K.In, titulo:'inocular' }, { at:K.Pi, titulo:'picar' }, { at:K.Ve, titulo:'madurar' }]} hasta={K.P - 0.2} />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.4} until={K.N - 0.3} texto="¿echado a perder?" x={320} y={520} tam={46} />
-      <Chip T={T} at={K.G + 2.9} until={K.N - 0.3} texto="sembrado a propósito" x={320} y={650} tam={40} borde={KC.leaf} />
+      <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.4} until={K.N - 0.3} texto="¿echado a perder?" x={320} y={460} tam={46} />
+      <Chip T={T} at={K.G + 2.9} until={K.N - 0.3} texto="sembrado a propósito" x={320} y={570} tam={40} borde={KC.leaf} />
       <Etq T={T} at={K.N + 0.2} until={K.In - 0.3} x={60} y={480} texto="Penicillium roqueforti" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.N + 0.5} until={K.In - 0.3} x={60} y={540} texto="moho azul" tam={32} color={KC.ink} />
       <Etq T={T} at={K.In + 0.8} until={K.Ai - 0.3} x={60} y={480} texto="esporas de" tam={32} color={KC.ink} />
@@ -354,29 +354,29 @@ function QuesoAzulShot() {
       <Etq T={T} at={K.In + 1.2} until={K.Ai - 0.3} x={60} y={830} texto="leche" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ai + 0.3} until={K.Pi - 0.3} texto="necesita oxígeno (O₂)" x={360} y={480} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Ai + 1.6} until={K.Pi - 0.3} texto="esporas: solo en los huecos" x={360} y={580} tam={32} borde={QZ.esporaLuz} />
-      <Etq T={T} at={K.Ai + 0.8} until={K.Pi - 0.3} x={1040} y={1220} lado="izq" texto="pasta del queso" tam={26} />
+      <Etq T={T} at={K.Ai + 0.8} until={K.Pi - 0.3} x={1040} y={680} lado="izq" texto="pasta del queso" tam={26} />
       <Etq T={T} at={K.Pi + 0.6} until={K.Ve - 0.3} x={1040} y={760} lado="izq" texto="agujas de acero" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Pi + 1.4} until={K.Ve - 0.3} x={1040} y={880} lado="izq" texto="entra el aire" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ve + 0.6} until={K.Gr - 0.3} texto="el color está en las esporas" x={540} y={470} tam={34} borde={QZ.esporaLuz} />
+      <Chip T={T} at={K.Ve + 0.6} until={K.Gr - 0.3} texto="el color está en las esporas" x={620} y={385} tam={34} borde={QZ.esporaLuz} />
       <Etq T={T} at={K.Ve + 1.8} until={K.Gr - 0.3} x={60} y={560} texto="esporas" tam={30} color={QZ.esporaLuz} />
       <Etq T={T} at={K.Ve + 1.0} until={K.Gr - 0.3} x={60} y={1150} texto="túnel con aire" tam={26} />
       <Etq T={T} at={K.Gr + 0.3} until={K.P - 0.3} x={60} y={700} texto="grasa de la leche" tam={30} color={QZ.grasa} />
-      <Etq T={T} at={K.Gr + 2.3} until={K.P - 0.3} x={1040} y={1170} lado="izq" texto="2-heptanona" tam={32} color={KC.white} />
+      <Etq T={T} at={K.Gr + 2.3} until={K.P - 0.3} x={1040} y={1100} lado="izq" texto="2-heptanona" tam={32} color={KC.white} />
       <Chip T={T} at={K.Gr + 1.2} until={K.P - 0.3} texto="metilcetonas" x={330} y={480} tam={38} borde={QZ.grasa} />
       <Chip T={T} at={K.Gr + 3.0} until={K.P - 0.3} texto="= olor a queso azul" x={330} y={580} tam={36} borde={QZ.esporaLuz} />
-      <Etq T={T} at={K.Gr + 2.3} until={K.P - 0.3} x={1040} y={1220} lado="izq" texto="molécula: no a escala" tam={22} />
+      <Etq T={T} at={K.Gr + 2.3} until={K.P - 0.3} x={1040} y={1160} lado="izq" texto="molécula: no a escala" tam={22} />
       <Chip T={T} at={K.Pa + 0.4} until={K.E - 0.3} texto="✓ cepas escogidas y vigiladas" x={350} y={470} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.Pa + 3.0} until={K.E - 0.3} texto="moho del pan: no sabes cuál es" x={350} y={560} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Pa + 5.0} until={K.E - 0.3} texto="algunos mohos: toxinas" x={350} y={650} tam={30} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Po - 0.3} anio="2020" quien="Francia · 34 genomas" revista="Dumas et al., Molecular Ecology" y={540} />
-      <Chip T={T} at={K.E + 3.0} until={K.Po - 0.3} texto="domesticado 2 veces" x={540} y={1000} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.E + 3.0} until={K.Po - 0.3} texto="domesticado 2 veces" x={540} y={1130} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Po + 0.5} until={K.Co - 0.3} texto="1 · Roquefort" x={250} y={470} tam={36} borde={QZ.vena} />
       <Etq T={T} at={K.Po + 0.8} until={K.Co - 0.3} x={60} y={550} texto="cuevas del Combalou, Francia" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Po + 2.0} until={K.Co - 0.3} texto="2 · quesos azules del mundo" x={540} y={1180} tam={30} borde={KC.pink} />
+      <Chip T={T} at={K.Po + 2.0} until={K.Co - 0.3} texto="2 · quesos azules del mundo" x={760} y={700} tam={30} borde={KC.pink} />
       <Chip T={T} at={K.Co + 0.2} until={K.C - 0.3} texto="U. de Nottingham · 2024" x={350} y={480} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Co + 0.6} until={K.C - 0.3} x={60} y={570} texto="mutantes de color (luz UV)" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="sembrado a propósito ✓" x={330} y={520} tam={38} borde={KC.leaf} />
-      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={630} texto="túneles de aire + esporas" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="sembrado a propósito ✓" x={330} y={460} tam={38} borde={KC.leaf} />
+      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={560} texto="túneles de aire + esporas" tam={28} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={300} />
