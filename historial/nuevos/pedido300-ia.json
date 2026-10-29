@@ -204,123 +204,207 @@
   },
   {
    "id": "ia-tiktok-algoritmo",
-   "titulo": "Cómo decide TikTok qué ver: las señales del 'Para ti' (explicación oficial de TikTok, 2020) y el tiempo de visualización",
+   "titulo": "TikTok no te lee la mente: te mide (señales del Para ti, Newsroom 2020; Vombatkere et al., WWW 2024)",
    "serie": "Shot IA",
    "numero": 20,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-20-tiktok-algoritmo",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "TikTok, página 'recommendation system' (2025)",
+    "TikTok Newsroom, 18 jun 2020 y 16 mar 2023",
+    "Vombatkere et al., WWW 2024 (347 usuarios; 30–50 % explotación)"
+   ],
+   "derivados": [
+    "YouTube y el tiempo de visualización",
+    "Burbujas de filtro: qué dice la evidencia",
+    "Cómo funciona 'No me interesa' por dentro"
+   ]
   },
   {
    "id": "ia-caras-piel",
-   "titulo": "El reconocimiento facial falla más con mujeres de piel oscura (Gender Shades 2018; NIST 2019; caso Robert Williams 2020)",
+   "titulo": "La misma app de caras falla más con unas que con otras (Gender Shades 2018, Raji 2019, NIST 2019, caso Williams)",
    "serie": "Shot IA",
    "numero": 21,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-21-caras-piel",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Buolamwini y Gebru, PMLR 81 (2018)",
+    "Raji y Buolamwini, AIES 2019",
+    "NIST IR 8280 (2019)",
+    "ACLU, caso Robert Williams (2020, acuerdo 2024)"
+   ],
+   "derivados": [
+    "Reconocimiento facial en estadios y aeropuertos",
+    "Datos diversos: cómo se arma un conjunto de prueba justo",
+    "Oxímetros que fallan más en piel oscura"
+   ]
   },
   {
    "id": "ia-ia-come-ia",
-   "titulo": "Una IA entrenada con textos de IA se degrada: colapso del modelo (Shumailov et al., Nature 2024)",
+   "titulo": "La IA que aprendió de otra IA y terminó hablando de liebres (colapso del modelo, Shumailov et al., Nature 2024)",
    "serie": "Shot IA",
    "numero": 22,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-22-ia-come-ia",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Shumailov et al., Nature 631 (2024)",
+    "Gerstgrasser et al., arXiv:2404.01413 (2024)"
+   ],
+   "derivados": [
+    "Cuánto texto de internet ya escribió una IA",
+    "Datos sintéticos: cuándo sí ayudan",
+    "Marcas de agua en texto de IA"
+   ]
   },
   {
    "id": "ia-lee-labios",
-   "titulo": "Una IA lee labios mejor que expertos humanos (Shillingford et al., DeepMind 2018)",
+   "titulo": "La IA que lee labios mejor que los expertos (Shillingford et al. 2018; Chung et al. 2017)",
    "serie": "Shot IA",
    "numero": 23,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-23-lee-labios",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Shillingford et al., arXiv:1807.05162 (2018)",
+    "Chung et al., CVPR 2017",
+    "Fernandez-Lopez y Sukno, arXiv:1704.08035 (2017)"
+   ],
+   "derivados": [
+    "Subtítulos automáticos para personas sordas",
+    "El efecto McGurk: cuando los ojos cambian lo que oyes",
+    "Lectura de labios en español: por qué es distinta"
+   ]
   },
   {
    "id": "ia-cerebro-watts",
-   "titulo": "Tu cerebro piensa con unos 20 watts; una GPU de IA usa cientos",
+   "titulo": "Tu cerebro piensa con 20 watts; una tarjeta de IA, con 700 (Balasubramanian 2021; H100; Levy y Calvert 2021; Hala Point 2024)",
    "serie": "Shot IA",
    "numero": 24,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-24-cerebro-watts",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Balasubramanian, PNAS 2021",
+    "Azevedo et al., J Comp Neurol 2009",
+    "Ficha NVIDIA H100",
+    "Levy y Calvert, PNAS 2021",
+    "Intel Newsroom, abr 2024"
+   ],
+   "derivados": [
+    "Chips neuromórficos: imitar neuronas en silicio",
+    "Por qué tu cerebro se cansa (energía y glucosa)",
+    "Cuánta energía usa tu celular para una foto"
+   ]
   },
   {
    "id": "ia-turco-mecanico",
-   "titulo": "El 'robot' ajedrecista de 1770 era un humano escondido (el Turco mecánico) y el trabajo humano detrás de la IA",
+   "titulo": "El 'robot' que jugaba ajedrez era una persona escondida (el Turco, 1770) y Amazon Mechanical Turk (2005–2026)",
    "serie": "Shot IA",
    "numero": 25,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-25-turco-mecanico",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "IEEE Spectrum 2019",
+    "Stephens, Cultural Studies 2022",
+    "Blog de AWS, 2005 y 2006",
+    "mturk.com (cierre 30 sep 2026)"
+   ],
+   "derivados": [
+    "Robots de demostración manejados a control remoto",
+    "Asistentes 'automáticos' que en realidad revisan personas",
+    "Historia de los autómatas del siglo XVIII"
+   ]
   },
   {
    "id": "ia-nazca",
-   "titulo": "Una IA ayudó a encontrar 303 geoglifos nuevos en Nazca en 6 meses (Sakai et al., PNAS 2024)",
+   "titulo": "La IA que encontró 303 figuras escondidas en Nazca (Sakai et al., PNAS 2024) y 160 más anunciadas en 2025",
    "serie": "Shot IA",
    "numero": 26,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-26-nazca",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Sakai et al., PNAS 121(40) e2407652121 (2024)",
+    "Universidad de Yamagata, comunicado 28 jul 2025"
+   ],
+   "derivados": [
+    "IA y LiDAR para hallar ciudades mayas en la selva",
+    "Arqueología desde el espacio",
+    "Cómo se protegen las líneas de Nazca"
+   ]
   },
   {
    "id": "ia-voz-devuelta",
-   "titulo": "Implantes cerebrales + IA devolvieron el habla a personas con parálisis (Willett 2023; Metzger 2023, Nature)",
+   "titulo": "Implantes cerebrales + IA devolvieron el habla a Ann, Pat y Casey (Metzger 2023; Willett 2023; Card 2024)",
    "serie": "Shot IA",
    "numero": 27,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-27-voz-devuelta",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Metzger et al., Nature 2023",
+    "Willett et al., Nature 2023",
+    "Card et al., NEJM 2024",
+    "UC Berkeley News 2025"
+   ],
+   "derivados": [
+    "Neuralink y otras interfaces cerebro-computadora",
+    "Cómo funciona el ELA",
+    "Voces sintéticas personalizadas para quien va a perder la voz"
+   ]
   },
   {
    "id": "ia-sepsis",
-   "titulo": "El algoritmo de sepsis que se usaba en cientos de hospitales no detectó 2 de cada 3 casos (Wong et al., JAMA Intern Med 2021)",
+   "titulo": "La IA de sepsis que no vio 2 de cada 3 casos (Wong et al., JAMA Intern Med 2021) y TREWS (2022)",
    "serie": "Shot IA",
    "numero": 28,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-28-sepsis",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Wong et al., JAMA Intern Med 181(8) (2021)",
+    "Adams et al., Nature Medicine 2022",
+    "OMS, hoja informativa Sepsis"
+   ],
+   "derivados": [
+    "Fatiga de alertas en hospitales",
+    "Cómo la FDA aprueba software médico con IA",
+    "Validación externa: por qué importa en medicina"
+   ]
   },
   {
    "id": "ia-traductor-genero",
-   "titulo": "El traductor que vuelve 'ella es ingeniera' en 'él': sesgo de género en traducción automática (Prates et al. 2019)",
+   "titulo": "El traductor que convierte a la ingeniera en 'él' (Prates et al. 2019; Google 2018 y 2020; Stanovsky et al. 2019)",
    "serie": "Shot IA",
    "numero": 29,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-29-traductor-genero",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Prates, Avelar y Lamb, Neural Comput & Applic (2019)",
+    "Google, blog 6 dic 2018",
+    "Google Research, 22 abr 2020",
+    "Stanovsky et al., ACL 2019"
+   ],
+   "derivados": [
+    "Lenguaje inclusivo y traducción automática",
+    "Estereotipos en imágenes generadas por IA",
+    "Cómo traduce una IA lenguas indígenas"
+   ]
   },
   {
    "id": "ia-conspiraciones",
