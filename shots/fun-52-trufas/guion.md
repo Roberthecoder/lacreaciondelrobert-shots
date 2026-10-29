@@ -3,7 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #52 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro" + N5 "El experimento" (a la mitad se recrean la prueba de Francia y el estudio de Italia). Viaje macro (trufa en la mano / bosque de encinos) → micro (micorriza, esporas dentro del asca, tripa del cerdo) → macro (la misma trufa del inicio, ya entendida).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Esto no es una piedra: es una trufa, un hongo que da su fruto bajo tierra.»
-- **Duración:** voz 973 caracteres / 184 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 982 caracteres / 185 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Pantalla:** no se muestran porcentajes del estudio de 2014 ni el número de esporas por asca.
 - **Voz:** pendiente de aprobación de Robert (~975 créditos de ElevenLabs).
 - **Tono:** curioso y divertido (la popó, el cerdo), sin exagerar. Las cifras de precio se evitan a propósito.
 
@@ -13,19 +14,19 @@
 |---|---|---|---|
 | 0 | Gancho | Esto no es una piedra: es una trufa, un hongo que da su fruto bajo tierra. | Fondo amarillo: una mano saca de la tierra algo negro, rugoso y verrugoso como una piedra (cuadro 0.3: cae tierra). Sello "¿PIEDRA?" tachado → etiqueta "trufa · *Tuber*". Corte de la trufa: por dentro, carne jaspeada con vetas blancas. |
 | 1 | Raices | Vive pegada a las raíces de árboles como encinos y avellanos: les ayuda a sacar minerales del suelo, y ellos le dan azúcar. | Corte del suelo bajo un encino y un avellano; hifas que envuelven las puntas de las raíces (micorriza). Flechas: "minerales →" hacia el árbol, "← azúcar" hacia el hongo. Etiquetas "encino · *Quercus*", "avellano · *Corylus avellana*". |
-| 2 | Problema | Pero sus esporas quedan encerradas bajo el suelo, y ahí no hay viento que se las lleve. | AL MICROSCOPIO (fondo oscuro): sacos (ascas) con 1–4 esporas ornamentadas, encerrados en la carne de la trufa. Arriba, un hongo de sombrero suelta esporas al viento; abajo, la trufa: "sin viento" ✗. |
+| 2 | Problema | Pero sus esporas quedan encerradas bajo el suelo, y ahí no hay viento que se las lleve. | AL MICROSCOPIO (fondo oscuro): sacos (ascas) con esporas ornamentadas (sin rotular cuántas), encerrados en la carne de la trufa. Arriba, un hongo de sombrero suelta esporas al viento; abajo, la trufa: "sin viento" ✗. |
 | 3 | Olor | Su solución es oler. Suelta decenas de sustancias, como el sulfuro de dimetilo. | Ondas de olor suben desde la trufa por los poros del suelo. Molécula del sulfuro de dimetilo (S con dos CH₃) en grande, con chip "sulfuro de dimetilo · (CH₃)₂S". Chip "decenas de sustancias". |
 | 4 | Pregunta | ¿Y quién sigue ese olor bajo tierra? | **Re-gancho.** "?" gigante sobre la nube de olor; Robert grande, pensativo. |
 | 5 | Animales | Animales que comen hongos: la desentierran, se la comen y dejan sus esporas en su popó. | Un jabalí husmea, escarba y muerde la trufa; camina; deja popó con esporas en otro punto del bosque (línea punteada de viaje). Chip "esporas de viaje". |
-| 6 | Hipotesis | Una vieja hipótesis: a los cerdos los atrae porque huele a una hormona de cerdo macho. | Tarjeta "HIPÓTESIS (1981)": cerdo macho con nube "androstenol"; flecha punteada a la trufa; signo "¿?". |
-| 7 | Prueba | Pero en un experimento en Francia, publicado en 1990, perros y cerdos fueron al sulfuro de dimetilo. | Recreación: tres hoyos en el suelo — "hormona", "aroma con sulfuro de dimetilo", "trufa". Un perro y un cerdo pasan de largo la hormona y escarban en los otros. Tarjeta "Francia · publicado en 1990 · *Mycological Research*". La hipótesis queda tachada. |
+| 6 | Hipotesis | Una vieja hipótesis: a los cerdos los atrae porque huele a una feromona del cerdo macho. | Tarjeta "HIPÓTESIS (1981)": cerdo macho con nube "androstenol"; flecha punteada a la trufa; signo "¿?". |
+| 7 | Prueba | Pero un experimento en Francia, publicado en 1990, reportó que perros y cerdos iban al sulfuro de dimetilo. | Recreación: tres hoyos en el suelo — "feromona", "aroma con sulfuro de dimetilo", "trufa". El cerdo pasa de largo el hoyo de la feromona y escarba en los otros; el perro va directo al aroma y a la trufa. Tarjeta "Francia · publicado en 1990 · *Mycological Research*". La hipótesis NO se tacha: le cae el sello «EN DUDA». |
 | 8 | Estudio | En 2014, en Italia, vieron que las esporas que pasan por la tripa de un cerdo salen vivas. | TarjetaEstudio "2014 · Italia · *Fungal Ecology*". POR DENTRO · la tripa del cerdo (tubo esquemático): las ascas se rompen, las esporas salen sueltas, con la pared gastada, y llevan una ✓ "vivas". |
 | 9 | Encino | Y hasta se unían más fácil a raíces de encino. | Las esporas que salieron del cerdo germinan junto a una raíz de encino y forman micorriza; chip "más micorrizas que las esporas sin pasar por la tripa". |
 | 10 | Mexico | En México, en 2018, ya se contaban unas veinte especies de trufas silvestres. | Mapa de México; puntitos en encinares del centro y noreste; contador "≈ 20 especies de *Tuber* (2018)". Etiqueta "*Tuber incognitum* · Eje Neovolcánico, bajo encinos". |
 | 11 | Cierre | Así que no es una piedra: es un hongo que, para viajar, se deja encontrar por el olfato. | **Regreso a la imagen del inicio:** la misma mano con la misma "piedra", ahora con ondas de olor saliendo y un hocico de cerdo y una nariz de perro asomando. Chip "se deja encontrar". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave, terrosa y continua (subterránea), que se abre un poco cuando aparece el olor. Efectos en el mismo cuadro: tierra que cae, cuchillo que corta la trufa, crujido de raíces, "pop" de cada espora, soplo de viento que no llega (sordo), ondas de olor (shimmer suave), olfateos del perro y del cerdo, escarbado, mordida, "plop" de la popó, golpe del sello de hipótesis tachada, tic por cada punto del mapa.
+**Música:** cama grave, terrosa y continua (subterránea), que se abre un poco cuando aparece el olor. Efectos en el mismo cuadro: tierra que cae, cuchillo que corta la trufa, crujido de raíces, "pop" de cada espora, soplo de viento que no llega (sordo), ondas de olor (shimmer suave), olfateos del perro y del cerdo, escarbado, mordida, "plop" de la popó, golpe del sello «EN DUDA» sobre la hipótesis, tic por cada punto del mapa.
 
 Barra de escala: 5 cm (trufa), 1 mm (raíz con micorriza), 50 µm (ascas y esporas), 1 m (jabalí / perro en el bosque), 500 km (mapa).
 

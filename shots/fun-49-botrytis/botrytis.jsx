@@ -395,11 +395,11 @@ function BotrytisShot() {
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={98} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No llegó anoche: *entró por la flor.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="Muchas veces *entró por la flor.*" />
       <Subtitulo T={T} idx={1} at={K.H + 0.1} until={K.Es - 0.1} texto="*Botrytis cinerea:* el moho gris." />
       <Subtitulo T={T} idx={2} at={K.Es + 0.1} until={K.Et - 0.1} texto="Sus esporas *germinan en la flor.*" />
-      <Subtitulo T={T} idx={3} at={K.Et + 0.1} until={K.Sp - 0.1} texto="Bajan por *los estambres.*" />
-      <Subtitulo T={T} idx={4} at={K.Sp + 0.1} until={K.P - 0.1} texto="Y se queda *quieto.*" />
+      <Subtitulo T={T} idx={3} at={K.Et + 0.1} until={K.Sp - 0.1} texto="Pueden bajar por *los estambres.*" />
+      <Subtitulo T={T} idx={4} at={K.Sp + 0.1} until={K.P - 0.1} texto="Y suele quedarse *quieto.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.M - 0.1} texto="¿Qué *lo despierta?*" />
       <Subtitulo T={T} idx={6} at={K.M + 0.1} until={K.Pe - 0.1} texto="Que la fresa *madure.*" />
       <Subtitulo T={T} idx={7} at={K.Pe + 0.1} until={K.V - 0.1} texto="Tallitos con esporas *en racimitos.*" />

@@ -1,4 +1,4 @@
-# Shot Fungi Mati #46 · La medicina del colesterol la hizo un moho: Akira Endo y las estatinas
+# Shot Fungi Mati #46 · La primera estatina la hizo un moho: Akira Endo y las estatinas
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #46 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro" (tu hígado → la enzima al microscopio → la búsqueda entre miles de hongos → cómo frena la enzima → el estudio → dato extra) con cierre en la misma imagen del inicio (la pastilla y el plato de arroz), ya transformada.

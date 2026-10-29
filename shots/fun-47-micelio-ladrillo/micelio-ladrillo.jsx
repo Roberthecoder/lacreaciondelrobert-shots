@@ -324,7 +324,7 @@ function MicelioShot() {
         {fsvg((() => { const baja = kprog(T, K.C + 1.8, K.C + 3.2, kEase.suave), maceta = kprog(T, K.C + 1.2, K.C + 1.9, kEase.sale), deshace = kprog(T, K.C + 3.0, K.C + 4.0);
           return <g transform={`translate(0 ${-150 * kprog(T, K.C + 1.0, K.C + 1.9, kEase.suave)})`}>
             <g opacity={1 - maceta}><Caja x={400} y={1100} s={1.1} abre={1} /></g>
-            {maceta > 0 && <g transform={`translate(0 ${(1 - maceta) * 400})`}><Maceta x={400} y={1100} s={1.1} tierra={deshace} /></g>}
+            {maceta > 0 && <g opacity={maceta} transform={`translate(0 ${(1 - maceta) * 60})`}><Maceta x={400} y={1100} s={1.1} tierra={deshace} /></g>}
             <g clipPath={baja > 0 ? 'url(#cpMac)' : undefined}><Esquinera x={380} y={klerp(760, 1080, baja)} s={1.15 * (1 - deshace * 0.5)} rot={-8 + baja * 8} blanco={1 - deshace * 0.6} op={1 - deshace} /></g>
             <clipPath id="cpMac"><rect x={0} y={0} width={KW} height={1100 - 150 * 1.1 + 4} /></clipPath>
             {deshace > 0 && <ellipse cx={400} cy={1100 - 165} rx={185} ry={20 + 10 * deshace} fill={ML.tierra} opacity={deshace} />}

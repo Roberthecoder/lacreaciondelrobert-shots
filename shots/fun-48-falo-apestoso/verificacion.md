@@ -41,4 +41,33 @@ Fuentes abiertas:
 | 18 | Título: "apesta a muerto a propósito" | ✅ (lenguaje figurado) | [VOLK], [SLE] | El olor sirve para atraer moscas que dispersan esporas: "This attracts flies…"; "thereby rapidly depositing large numbers of spores". | 1999 / 1997 |
 
 Resumen: las filas 7b, 9b y 10 se corrigieron y se volvieron a verificar con las fuentes abiertas; las 23 afirmaciones quedan ✅.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `falo.jsx`, `Shot Falo Apestoso base narrada.dc.html`, la columna «Lo que se ve», la tabla de Robert y `publicacion.md`, y saqué 24 cuadros con `motor/preview.mjs` (0.3–60 s).
+
+| # | Texto o dibujo en pantalla | Veredicto | Fuente / nota |
+|---|---|---|---|
+| R1 | «¿un animal muerto? ✗», «falo hediondo», *Phallus impudicus* | ✅ | filas 1 y 1b |
+| R2 | «hasta 6 cm» (huevo de unos 6 cm con la barra de 5 cm) | ✅ | fila 2 |
+| R3 | «cordón de micelio» y «madera enterrada» | ✅ | [DEA]: "grows on buried wood beneath leaf litter in humus-rich soils, where it is attached to the wood by a thick mycelial cord" (2005) |
+| R4 | «huevo: sin olor feo ✓» | ✅ | fila 3 |
+| R5 | «⏩ cámara rápida: unas horas», regla de 30 cm, «tallo hueco y esponjoso», «sombrero con baba» | ✅ | filas 4 y 5 (el hongo dibujado mide unos 19 cm según la barra de 10 cm, dentro de 10–30 cm) |
+| R6 | «gleba», lupa con esporas alargadas y barra de 10 µm | ✅ | fila 6b |
+| R7 | «gases con azufre: lo que más apesta», «trisulfuro de dimetilo», molécula CH₃–S–S–S–CH₃ con barra de 1 nm | ✅ | fila 7b; el largo de la molécula dibujada (~0.8 nm) es razonable para un esquema |
+| R8 | «¡caíste! solo hay baba» | ✅ | fila 8 |
+| R9 | Tarjeta «1997 · University College Cork, Irlanda · Sleeman y col., J. Nat. Hist.» | ✅ | fila 9b |
+| R10 | Platitos baba/estiércol/azúcar, sin cifras (solo gotitas que dicen que gana la baba) y «con la baba: popó más rápido» | ✅ | fila 10 |
+| R11 | «gotitas con esporas», «DE CERCA · pata de mosca» | ✅ | filas 11 y 12 |
+| R12 | Balanza ♀/♂ que se inclina hacia ♀ y «llegan más hembras» | ✅ | fila 13 (esquema sin escala) |
+| R13 | «queda su red de huecos» | ✅ | fila 14 |
+| R14 | «10 estados · Guzmán y col., 1990», «velo de encaje», «Phallus (antes Dictyophora)», barra de 500 km | ✅ | filas 15 y 16; la barra coincide con la proyección del mapa del kit (≈ 93 px a ~20° N) |
+| R15 | «lo sembraron las moscas» y huevos nuevos en el cierre | ✅ | fila 17 (esquemático) |
+| R16 | Barra «1 m» en el vuelo de la mosca | ❌ → corregido | Con ese dibujo, el hongo habría medido ~1 m. Se cambió a «10 cm» (120 px), así el hongo mide ~23 cm. |
+| R17 | Subtítulos (14): resumen fiel de cada frase verificada | ✅ | — |
+| R18 | Morfología: huevo blanco medio enterrado, volva gelatinosa, tallo blanco poroso, sombrero con baba café olivo y red de huecos al limpiarse | ✅ | [PUD], [DEA] |
+| R19 | Tono apto para todo público (la forma no se comenta; «popó» es lenguaje familiar) | ✅ | — |
+| R20 | `publicacion.md`: Instagram y X decían «en 1997, en Irlanda»; LinkedIn decía «un tema mucho menos estudiado que en las plantas» (no verificado); Instagram decía «huevo que no huele» | ⚠️ → corregido | Ahora: «unos científicos de Irlanda… que cuando comían estiércol o azúcar»; se quitó la comparación con plantas; «huevo que todavía no huele feo». Lo demás coincide con las filas verificadas. X: 235 caracteres. |
+
+Resumen: se corrigió la barra de escala del vuelo de la mosca (1 m → 10 cm) y tres frases de `publicacion.md`; todo lo de pantalla y publicación queda ✅.
 VEREDICTO: APROBADO

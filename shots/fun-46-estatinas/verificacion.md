@@ -1,4 +1,4 @@
-# Verificación · Shot Fungi Mati #46 · La medicina del colesterol la hizo un moho: Akira Endo y las estatinas
+# Verificación · Shot Fungi Mati #46 · La primera estatina la hizo un moho: Akira Endo y las estatinas
 
 29 oct 2026. **Verificación independiente (subagente que no escribió el guion).** Se abrió el texto completo de cada fuente
 (no el resumen del buscador). No es consejo médico: el shot no recomienda tomar nada ni cambiar tratamientos.
@@ -38,3 +38,33 @@ Fuentes abiertas:
 Fuente [LF] confirmada en `guion.md` con su título exacto: "*Aspergillus terreus* Species Complex", *Clin. Microbiol. Rev.* 34(4): e00311-20 (2021).
 
 Resumen: 21 filas de voz y pantalla revisadas contra fuentes abiertas en texto completo; la ❌ (morfología de *A. terreus*) y la ⚠️ (cierre) quedaron corregidas y vueltas a verificar; los recortes no cambian datos. Todo ✅. No es consejo médico.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `estatinas.jsx`, el `.dc.html`, la columna «Lo que se ve», la tabla de Robert y `publicacion.md`, y se revisaron 24 cuadros con `motor/preview.mjs` (0.3–60 s).
+
+| # | Elemento | Veredicto | Fuente / nota |
+|---|---|---|---|
+| R1 | Rejilla de 30 casillas con la **casilla 3** resaltada como HMG-CoA reductasa | ✅ | [E] "The third reaction in the first stages is the committed and rate-limiting step: reduction of HMG-CoA to mevalonate" (2010); "involving 30 enzymatic reactions" |
+| R2 | Gancho: "lo inventó un químico" tachado, "✓ la hizo un moho", etiqueta "estatina" | ✅ | filas 1 |
+| R3 | Chip "hecho en tu hígado > de la comida" | ✅ | fila 2 |
+| R4 | Chip "Akira Endo · Sankyo, Tokio"; etiqueta "silueta esquemática" (sin rostro real) | ✅ | fila 5b |
+| R5 | "miles de hongos probados", contador hasta "3,800", "citrinina", "tóxica para el riñón" | ✅ | fila 7 (3,800 cepas de hongos) |
+| R6 | "arroz de una tienda de Kioto", bolsa de arroz y colonia en el grano | ✅ | fila 8 |
+| R7 | *P. citrinum*: pincel biverticilado (pie, 3 métulas, fiálides) con cadenas de esporas redondas, "moho azul verdoso" | ✅ | [H] "predominant symmetrically biverticillate"; "conidia … globose to subglobose" (2010) |
+| R8 | *A. terreus*: pie liso, vesícula y cabezuela compacta en columna con cadenas paralelas de esporas redondas | ✅ | [LF] "compact, columnar … and biseriate" (2021) |
+| R9 | "compactina (del moho)" entra al hueco antes que "HMG-CoA (su pieza)"; chip "se parece y le gana el lugar" | ✅ | fila 9 |
+| R10 | "célula del hígado", "receptores LDL" jalando LDL de la sangre | ✅ | fila 10 |
+| R11 | Tarjeta "1973 · Tokio · compactina · Endo, 2010"; chips "1973 · Tokio · compactina" y "Merck · lovastatina"; "moléculas primas" | ✅ | filas 11–12 ("6-demethylmevinolin") |
+| R12 | "arroz de levadura roja · moho *Monascus*", "monacolina K", "= misma molécula", subtítulo "Monacolina K = lovastatina" | ✅ | filas 13–15 |
+| R13 | Moléculas dibujadas con anillos: esquemáticas (barra "1 nm · esquemático") | ✅ | dibujo, no estructura exacta |
+| R14 | Barras de escala: 10 cm plato, 20 cm cuerpo (esquemático), 10 µm célula y pincel, 50 cm Endo, 5 mm grano y gota, 1 nm molécula (esquemático), 5 µm receptores (esquemático), 100 µm conidióforos | ✅ | órdenes de magnitud correctos ([H] métulas 12–16 µm; [LF] columnas de hasta 500 µm) |
+| R15 | Cierre: chip "la primera estatina nació en un moho" + "no es consejo médico" | ✅ | fila 16 |
+| R16 | Los 13 subtítulos resumen la voz verificada sin datos nuevos | ✅ | — |
+| R17 | `publicacion.md`: título de YouTube decía "La medicina del colesterol salió de un MOHO de arroz" (la lovastatina, primera vendida, salió de *A. terreus*) | ✅ corregido | ahora "La primera estatina salió de un MOHO escondido en arroz"; título de `guion.md` también cambiado a "La primera estatina la hizo un moho" |
+| R18 | `publicacion.md` (TikTok): "el arroz de levadura roja no es una medicina segura" (frase no textual de la fuente) | ✅ corregido | ahora: "su contenido varía, pueden tener los mismos efectos secundarios que una estatina y algunos traen citrinina" — [N] "can have the same potential side effects as statin drugs, including muscle, kidney, and liver damage"; "the quantity ranged more than 60-fold"; citrinin "toxic and can damage the kidneys" (2022) |
+| R19 | Resto de `publicacion.md` (7 redes + comentario fijado): Sankyo de Tokio, 1971/1972/julio 1973, 3,800 cepas, ML-236B, Merck/mevinolina = lovastatina, FDA 1987, avisos médicos | ✅ | filas 1–17; [N] "discuss any decisions about treatment or care with your health care provider" |
+| R20 | Tabla "Robert en pantalla": 9 apariciones, ~33 s, 8 poses distintas, sin repetir seguidas, grande en el re-gancho | ✅ | — |
+
+Resumen de la revisión final: animación, textos de pantalla y publicación coinciden con la voz verificada; dos frases de `publicacion.md` y el título del guion se corrigieron. Todo ✅. No es consejo médico.
+VEREDICTO: APROBADO

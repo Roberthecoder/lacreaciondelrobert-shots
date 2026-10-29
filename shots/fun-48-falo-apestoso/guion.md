@@ -30,7 +30,7 @@
 
 **Música:** cama grave continua, algo "pegajosa" y misteriosa, sin golpe marcado, siempre debajo de la voz. Efectos en el mismo cuadro: zumbido de mosca, olfateo, rasgado del huevo y crujido del tallo al subir, burbujeo de la baba, "pop" de cada molécula de azufre, aterrizaje de la mosca, gotitas (plic) de cada popó, tic del cronómetro, "fiu" al irse la baba, golpecitos en el mapa.
 
-Barras de escala: 10 cm (bosque y hongo; regla de 30 cm al crecer), 5 cm (huevo de 6 cm y platitos), 10 µm (esporas en la lupa), 1 nm (molécula, esquemática), 1 m (vuelo de la mosca), 500 km (mapa de México). La balanza ♀/♂ es un esquema sin escala.
+Barras de escala: 10 cm (bosque y hongo; regla de 30 cm al crecer), 5 cm (huevo de 6 cm y platitos), 10 µm (esporas en la lupa), 1 nm (molécula, esquemática), 10 cm también en el vuelo de la mosca (medida del hongo; la mosca está agrandada), 500 km (mapa de México). La balanza ♀/♂ es un esquema sin escala.
 
 ## Robert en pantalla
 

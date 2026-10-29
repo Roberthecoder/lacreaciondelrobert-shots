@@ -375,7 +375,7 @@ function FaloShot() {
       <BarraEscala T={T} at={K.Az} until={K.P} texto="1 nm" largo={400} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="10 cm" largo={200} />
       <BarraEscala T={T} at={K.E} until={K.Si} texto="5 cm" largo={180} />
-      <BarraEscala T={T} at={K.Si} until={K.He} texto="1 m" largo={260} />
+      <BarraEscala T={T} at={K.Si} until={K.He} texto="10 cm" largo={120} />
       <BarraEscala T={T} at={K.L} until={K.Mx} texto="10 cm" largo={200} />
       <BarraEscala T={T} at={K.Mx} until={K.C} texto="500 km" largo={93} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={270} />

@@ -12,7 +12,7 @@ El bioquímico japonés Akira Endo, inspirado en la penicilina de Fleming, sospe
 ¿Cómo baja el colesterol de la sangre? Su molécula se parece a la pieza que usa la enzima (la HMG-CoA) y le gana el lugar: el hígado fabrica menos colesterol, y sus células ponen más receptores de LDL que lo jalan de la sangre.
 Después, Merck halló una molécula prima en el hongo Aspergillus terreus: la lovastatina, la primera estatina que se vendió (aprobada en EUA en 1987).
 Y lo raro: el arroz de levadura roja, fermentado con el moho Monascus, puede traer monacolina K… que es la misma molécula que la lovastatina.
-El dibujo es esquemático. No es consejo médico: no cambies ni dejes tu tratamiento sin hablar con tu médico, y el arroz de levadura roja no es una medicina segura (su contenido varía y algunos productos traen citrinina).
+El dibujo es esquemático. No es consejo médico: no cambies ni dejes tu tratamiento sin hablar con tu médico, y los productos de arroz de levadura roja no son inocentes: su contenido varía, pueden tener los mismos efectos secundarios que una estatina y algunos traen citrinina.
 Fuentes: Endo 2010 (Proc. Jpn. Acad.); Goldstein y Brown 2015 (Cell); Alberts et al. 1980 (PNAS); NCCIH (NIH) 2022.
 ¿Sabías que esta medicina había salido de un moho? 👇
 Shot Fungi Mati #46 · La Creación del Robert
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La medicina del colesterol salió de un MOHO de arroz 🍄 | Shot Fungi Mati #46
+La primera estatina salió de un MOHO escondido en arroz 🍄 | Shot Fungi Mati #46
 ```
 Descripción:
 ```text

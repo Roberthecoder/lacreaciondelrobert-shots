@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esa pelusa gris de tus fresas no llegó anoche: muchas veces entró cuando la fresa era flor. 🍓🍄
-Botrytis cinerea, el moho gris, entra por la flor (sobre todo por los estambres), se queda quieto mientras la fresa está verde y despierta cuando madura. La pelusa son tallitos con esporas en racimitos, y por contacto y por el aire contagia a las fresas vecinas. En uvas, con noches húmedas y días secos, el mismo hongo da la "podredumbre noble" de vinos dulces como Sauternes y Tokaji.
+Botrytis cinerea, el moho gris, puede entrar por la flor (un estudio apunta a los estambres como entrada principal), se queda quieto mientras la fresa está verde y despierta cuando madura. La pelusa son tallitos con esporas en racimitos, y por contacto y por el aire contagia a las fresas vecinas. En uvas, con noches húmedas y días secos, el mismo hongo da la "podredumbre noble" de vinos dulces como Sauternes y Tokaji.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti también se te echan a perder las fresas en el refri? 👇
 Shot Fungi Mati #49 · La Creación del Robert
@@ -86,7 +86,7 @@ La pelusa gris de tus fresas no llegó anoche: muchas veces Botrytis cinerea ent
 
 ### Threads
 ```text
-Esa pelusa gris de tus fresas no llegó anoche: muchas veces entró cuando la fresa era flor. 🍓 Botrytis cinerea se mete por los estambres, espera sin síntomas mientras la fresa está verde y despierta cuando madura. ¿A ti también se te echan a perder las fresas en el refri?
+Esa pelusa gris de tus fresas no llegó anoche: muchas veces entró cuando la fresa era flor. 🍓 Botrytis cinerea puede meterse por los estambres, espera sin síntomas mientras la fresa está verde y despierta cuando madura. ¿A ti también se te echan a perder las fresas en el refri?
 Shot Fungi Mati #49 · La Creación del Robert
 #Hongos
 ```

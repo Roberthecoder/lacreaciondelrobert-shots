@@ -50,3 +50,37 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026):** 29 afirmaciones revisadas. La voz no cambió (narracion.json sin cambios). Los dos ⚠️ eran notas de Fuentes (la cifra del 64 % usada como apoyo del gancho y la falta de fuente para «vinos dulces») y quedaron corregidos y vueltos a verificar. Las barras con/sin estambres van sin números. Todas las filas quedan ✅.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026, mismo verificador independiente. Se leyeron `botrytis.jsx`, `Shot Botrytis base narrada.dc.html`, la columna «Lo que se ve» y la tabla de Robert de `guion.md`, y `publicacion.md`. Se revisaron 12 cuadros (0.3, 6, 12, 18, 24, 30, 36, 42, 48, 54, 58 y 60 s) con `motor/preview.mjs`. La voz (`narracion.json`) no se tocó.
+
+| # | Texto o dibujo | Veredicto | Fuente / nota |
+|---|---|---|---|
+| R1 | Subtítulo 0 «No llegó anoche: *entró por la flor.*» decía que siempre entra por la flor | ✅ corregido | Ahora dice «Muchas veces *entró por la flor.*», como la voz (fila 1) |
+| R2 | Subtítulo 3 «Bajan por *los estambres.*» lo decía como algo seguro, y la voz dice «pueden» | ✅ corregido | Ahora dice «Pueden bajar por *los estambres.*» ([B] "in some cultivars") |
+| R3 | Subtítulo 4 «Y se queda *quieto.*», y la voz dice «suele» | ✅ corregido | Ahora dice «Y suele quedarse *quieto.*» ([P] "usually arrested") |
+| R4 | Los demás subtítulos (moho gris, germinan en la flor, ¿qué lo despierta?, madure, racimitos, vecinas, la flor más vulnerable, sin estambres menos pudrición, podredumbre noble, pudo esperar desde la flor) | ✅ | Filas 2–20 |
+| R5 | Chips «¿llegó anoche?», «desde la flor», «moho gris», *Botrytis cinerea*, «cientos de plantas», «viento», «salpicaduras», «esporas que germinan», «estambre», «hifas del hongo», «receptáculo → la fresa», «esquemático», «sin síntomas», «fresa verde», «hipótesis: se cree», «contacto», «esporas al aire», «esperó desde la flor» | ✅ | Filas 1–14 y 20 |
+| R6 | Medidor «azúcar ▲» sin cifras y escudo «defensas» | ✅ | Fila 9 (sin números, como hipótesis) |
+| R7 | «conidióforo (tallito)» y «esporas (conidios)». Tallo oscuro ramificado con racimitos de conidios ovoides en las puntas. El conidio grande mide ~42 × 53 px con la barra «20 µm» = 87 px, o sea ~10 × 12 µm; los de las ramas, ~8 × 10 µm | ✅ | [E] "10-12 x 8-10 µm"; [G] "6-9 x 8-14 μm"; [G] "thin black hairs". Alto del tallo esquemático, con chip «esquemático» |
+| R8 | Tarjeta «1999–2001 · Florida, EE. UU. · Universidad de Florida · Mertely y cols. · Plant Disease, 2002» | ✅ | Filas 15 y 15b |
+| R9 | Flor «>» fresa verde, chip «más vulnerable» | ✅ | Fila 16 |
+| R10 | Barras «con estambres» / «sin estambres» sin números, con «temporada 2000–2001 · esquemático» | ✅ | Fila 17 |
+| R11 | «noches húmedas», «días secos», «podredumbre noble», «el mismo Botrytis cinerea», botellas «Sauternes (Francia)» y «Tokaji (Hungría)» | ✅ | Filas 18–19b |
+| R12 | Barras de escala de 1 cm, 1 mm y 20 µm en todas las escenas | ✅ | Esquemáticas, del tamaño correcto según el guion |
+| R13 | publicacion.md: «conidios ovoides de unas 10–12 × 8–10 micras» | ✅ | [E] "10-12 x 8-10 µm" (2021) |
+| R14 | publicacion.md: «noches húmedas, mañanas de niebla y días secos y soleados» | ✅ | [V] "humid nights, foggy mornings, and dry sunny days" (2024) |
+| R15 | publicacion.md: «Con clima húmedo seguido … causa la podredumbre gris» | ✅ | [V] "under conditions of continuous mild wet weather, which are more common, this necrotrophic pathogen can cause grey rot" (2024) |
+| R16 | publicacion.md (LinkedIn): «Los autores recomiendan concentrar la protección en la floración» y «propuso los estambres como la principal puerta de entrada» | ✅ | [M] "Fungicide applications should focus on peak bloom periods"; "suggest that stamens are the principal infection court" (2002) |
+| R17 | publicacion.md: «las uvas se deshidratan y concentran su azúcar» | ✅ | [V] "dehydration and an increase in sugar concentration" (2024) |
+| R18 | publicacion.md: «se vuelve agresivo y la pudre rápido» y «también se pueden infectar después, por contacto con frutas o pétalos enfermos» | ✅ | [P] "causes rapid decay"; "nesting … neighbouring plant organs such as infected leaves and fruit" (2019) |
+| R19 | publicacion.md (Instagram): «entra por la flor (sobre todo por los estambres)» lo afirmaba como seguro | ✅ corregido | Ahora dice «puede entrar por la flor (un estudio apunta a los estambres como entrada principal)» ([M] "suggest") |
+| R20 | publicacion.md (Threads): «se mete por los estambres» | ✅ corregido | Ahora dice «puede meterse por los estambres» ([B], [P] "in some cultivars") |
+| R21 | publicacion.md: fuentes y comentario fijado con las 8 referencias, "El dibujo es esquemático", pregunta y firma | ✅ | Coinciden con las fuentes de arriba |
+
+Nota de diseño, sin efecto en los hechos: en el cuadro de 12 s la etiqueta «esporas que germinan» queda encima del tallo de la flor, y en el de 30 s Robert tapa un poco el conidióforo de la derecha.
+
+**Resumen final:** voz, pantalla y publicación verificadas. Se corrigieron 3 subtítulos para que digan lo mismo que la voz («muchas veces», «pueden», «suele») y 2 frases de publicacion.md que sonaban más seguras que la fuente. Todo queda ✅.
+
+VEREDICTO: APROBADO

@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Ese olor a carne podrida no viene de un animal muerto: viene de este hongo. 🍄🪰
-El falo hediondo (Phallus impudicus) sale de un huevo que no huele, crece en horas hasta 30 cm y se cubre de una baba con esporas que suelta gases con azufre. Las moscas llegan buscando carne podrida, comen la baba y riegan las esporas. En 1997, en Irlanda, vieron que con esa baba las moscas hacen popó más rápido que con estiércol o azúcar. En México hay parientes con velo de encaje.
+El falo hediondo (Phallus impudicus) sale de un huevo que todavía no huele feo, crece en horas hasta 30 cm y se cubre de una baba con esporas que suelta gases con azufre. Las moscas llegan buscando carne podrida, comen la baba y riegan las esporas. En 1997, unos científicos de Irlanda vieron que con esa baba las moscas hacían popó más rápido que cuando comían estiércol o azúcar. En México hay parientes con velo de encaje.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya te tocó olerlo en el bosque o en un jardín? 👇
 Shot Fungi Mati #48 · La Creación del Robert
@@ -67,8 +67,8 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Un hongo que "contrata" moscas como repartidoras de esporas.
-Phallus impudicus produce, al madurar, oligosulfuros de dimetilo (sobre todo trisulfuro de dimetilo), los compuestos que más aportan a su olor fétido; en la etapa de huevo no aparecen (Pudil y col., 2014, HS-SPME/GC-MS). El olor atrae moscardas: en un estudio de University College Cork (Sleeman y col., 1997), las moscas que comían la gleba con esporas defecaban más rápido que con estiércol o sacarosa, y así depositaban muchas esporas; además, en los hongos había significativamente más hembras que machos.
-Por qué importa: es un ejemplo claro de dispersión por animales en hongos, un tema mucho menos estudiado que en las plantas, y de cómo la química del olor sirve para eso.
+Phallus impudicus produce, al madurar, oligosulfuros de dimetilo (sobre todo trisulfuro de dimetilo), los compuestos que más aportan a su olor fétido; en la etapa de huevo no aparecen (Pudil y col., 2014, HS-SPME/GC-MS). El olor atrae moscardas: en un estudio de University College Cork (Sleeman y col., 1997), las moscas que comían la gleba con esporas defecaban más rápido que cuando comían estiércol o sacarosa, y así depositaban muchas esporas; además, en los hongos había significativamente más hembras que machos.
+Por qué importa: es un ejemplo claro de dispersión de esporas por animales en hongos y de cómo la química del olor sirve para eso.
 ¿Conoces otro organismo que use el engaño para que lo dispersen?
 Shot Fungi Mati #48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -77,7 +77,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Ese olor a carne podrida puede ser un hongo: Phallus impudicus suelta gases con azufre que atraen moscas. En 1997, en Irlanda, vieron que con su baba las moscas hacen popó más rápido y riegan esporas. 🪰🍄 #FungiMati #Hongos
+Ese olor a carne podrida puede ser un hongo: Phallus impudicus suelta gases con azufre que atraen moscas. En 1997, científicos de Irlanda vieron que con su baba las moscas hacían popó más rápido y regaban esporas. 🪰🍄 #FungiMati #Hongos
 ```
 
 ### Threads
