@@ -42,3 +42,5 @@ Todo lo demás: sin cambios.
 | 3 | Voz 1: "Mete un termómetro en hielo con agua: marca cero." (pantalla: 0 °C) | ✅ | Fahrenheit 1724 (hielo + agua sin sal = 32 °F = 0 °C); OpenStax Chem 2e 10.3 | "si aqua & glacies absque memoratis salibus commiscentur … tricesimum secundum occupat gradum" · "warm to 0 °C" | 1724 / 2019 |
 
 Las 2 ⚠️ quedan resueltas. Detalle menor fuera de la voz: el encabezado de la fuente 7 en `guion.md` todavía dice "1788, Londres"; conviene cambiarlo a "1788, Real Sociedad de Londres" para que sea coherente (no afecta lo que se ve ni lo que se oye).
+
+VEREDICTO: APROBADO

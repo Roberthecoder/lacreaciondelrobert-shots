@@ -1,10 +1,10 @@
 # Shot Químico #10 · Esta gelatina no se echó a perder (la piña fresca y la bromelina)
 
 - **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #10 · rama `pedido300/qui`.
-- **Formato:** N5 "El experimento" (dos moldes de gelatina lado a lado: piña fresca vs. piña de lata, con cronómetro; a la mitad se recrea el experimento de calentar bromelina, Tailandia 2010) + N1 "Por dentro" (el molde → la red de colágeno y la enzima-tijera → el mismo molde).
+- **Formato:** N5 "El experimento" (dos moldes de gelatina lado a lado: piña fresca vs. piña de lata, con cronómetro; a la mitad se recrea el experimento de calentar bromelina, Tailandia 2010) + N1 "Por dentro" (el molde → la red de colágeno y las enzimas-tijera → el mismo molde).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esta gelatina no se echó a perder: la piña fresca la está cortando en pedacitos."
 - **Seguridad:** nada peligroso; el único consejo práctico (usar piña de lata o cocer la fresca antes) sale de las fuentes.
-- **Duración:** voz 958 caracteres (estimador) / 184 palabras (≈ 57.9 s) + cierre 3.5 s → **61.4 s** estimados.
+- **Duración:** voz 956 caracteres (estimador) / 184 palabras (≈ 57.8 s) + cierre 3.5 s → **61.3 s** estimados.
 - **Estado:** guion escrito; falta verificación independiente (`verificacion.md`), animación y tabla "Robert en pantalla" (fase 2). Voz pendiente de aprobación de Robert.
 
 ## Versión narrada
@@ -16,12 +16,12 @@ Tiempos estimados por `estimar-escenas.mjs`: Gancho 0–4.9 · Que –10.8 · Re
 | 0 | Gancho | Esta gelatina no se echó a perder: la piña fresca la está cortando en pedacitos. | Fondo amarillo. Desde el cuadro 0 una cuchara empuja un molde de gelatina roja con trozos de piña fresca y la gelatina se desparrama líquida (ola que tiembla). Chip "¿echada a perder?" que se tacha. Cronómetro arriba "2 h en el refri". Barra de escala "5 cm". |
 | 1 | Que | La gelatina sale del colágeno de la piel y los huesos de animales: son cadenas largas de proteína. | Lupa (rayos X) sobre el molde; a la izquierda iconos de piel y hueso con flecha → sobre de gelatina en polvo; dentro de la lupa, hilos largos (cadenas) flotando en agua, etiqueta "colágeno → gelatina". |
 | 2 | Red | Al enfriarse, esas cadenas se enroscan en hélices y se amarran en una red que atrapa el agua: eso es cuajar. | Fondo azul noche (micro). Termómetro baja de 60 a 10 °C; las cadenas se enroscan en hélices de tres hilos que se unen en nudos y forman una malla; gotitas de agua (H₂O) quedan atrapadas en los huecos. Barra de escala "nm". |
-| 3 | Bromelina | Pero la piña fresca trae bromelina, una enzima que corta proteínas como unas tijeras. | Entra un trozo de piña (corte transversal) a la escena; de él salen enzimas dibujadas como tijeras amarillas, etiqueta "bromelina (enzima)". |
+| 3 | Bromelina | Pero la piña fresca trae bromelina, enzimas que cortan proteínas como unas tijeras. | Entra un trozo de piña (corte transversal) a la escena; de él salen enzimas dibujadas como tijeras amarillas, etiqueta "bromelina (enzimas)". |
 | 4 | Corta | Corta la gelatina en pedazos tan cortos que ya no alcanzan a amarrarse, y se queda líquida. | Las tijeras hacen "clic" sobre las cadenas: la malla se rompe en pedacitos cortos que flotan sueltos; las gotitas de agua se escapan. Medidor "largo de cadena" que baja. |
 | 5 | Pregunta | ¿Y por qué con piña de lata sí cuaja bien? | **Re-gancho.** Regreso al macro: al lado del molde líquido aparece otro molde firme con piña de lata (rebota al tocarlo); lata con etiqueta "piña en almíbar"; "?" gigante. |
 | 6 | Estudio | En 2010, en Tailandia, calentaron bromelina de piña: a 40 grados aguantó una hora sin perder nada; a 80, en 8 minutos se apagó casi toda. | Tarjeta "2010 · Jutamongkon y Charoenrein · Universidad Kasetsart, Bangkok". Dos tubos en baños de agua con termómetro: "40 °C" con cronómetro corriendo a 60 min y barra de actividad llena (100 %); "80 °C" con cronómetro a 8 min y barra que cae casi a 0; las tijeras del tubo de 80 °C se desarman (se "apagan"). |
 | 7 | Lata | Y la piña de lata se calienta para enlatarla: por eso su bromelina ya no corta la gelatina. | Una lata pasa por una olla/autoclave con vapor y un "🔥"; adentro, las tijeras quedan desarmadas; la red de gelatina se mantiene entera. Chip "calor = enzima apagada". |
-| 8 | Kiwi | Lo curioso: en 2002, en Japón, el jugo de la mayoría de 13 variedades de kiwi también deshizo la gelatina. | Tarjeta "2002 · Nishiyama · Japón"; fila de 13 kivis partidos; sobre 11 de ellos una gelatina que se derrite, y 2 con gelatina firme (✓ "Hort16A" y "Kosui"). Etiqueta pequeña "actinidina". |
+| 8 | Kiwi | Lo curioso: en 2002, en Japón, el jugo de la mayoría de 13 variedades de kiwi también deshizo la gelatina. | Tarjeta "2002 · Nishiyama · Japón"; fila de kiwis partidos con etiqueta "la mayoría de 13" sobre gelatinas que se derriten (sin contar cuántas), y solo 2 marcados con gelatina firme (✓ "Hort16A" y "Kosui"). Etiqueta pequeña "actinidina". |
 | 9 | Cierre | Así que esta gelatina no se echó a perder: la piña fresca la cortó. Si la quieres con piña, usa de lata o cuécela antes. | **Regreso al molde del inicio**: la misma gelatina líquida con piña fresca, ahora con etiqueta "bromelina cortó la red"; al lado, el molde firme con piña de lata y una olla con piña hirviendo. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
@@ -44,12 +44,14 @@ Tiempos estimados por `estimar-escenas.mjs`: Gancho 0–4.9 · Que –10.8 · Re
    > "Fruit bromelain was extracted from the fruit of pineapples. Crude enzyme extract was subjected to heat treatment at 40-80°C for 0-60 min. … Incubation at 40°C showed no loss of fruit bromelain activity up to 60 min, whereas at 50°C almost 83% of activity remained. Incubation at 80°C for 8 min caused almost complete activity loss."
 7. **La piña de lata se procesa con calor** — FDA, 21 CFR § 145.180 "Canned pineapple" (eCFR, vigente 2026).
    > "The food is sealed in a container and, before or after sealing, is so processed by heat as to prevent spoilage."
-8. **Con piña de lata sí cuaja; las proteasas cortan la gelatina en pedazos muy cortos; el calor las desnaturaliza** — The Naked Scientists (Universidad de Cambridge), "Science of fruit jellies" (2009). https://www.thenakedscientists.com/get-naked/experiments/science-fruit-jellies
+8. **Con piña de lata sí cuaja porque el calor desnaturalizó la enzima; la piña cruda licúa la gelatina** — Harold McGee, *On Food and Cooking: The Science and Lore of the Kitchen*, ed. revisada (Scribner, 2004), secc. "Cooking Accelerates Enzyme Action Before Stopping It".
+   > "If raw pineapple is combined with gelatin to make a jelly, the enzyme digests the gelatin molecules and liquifies the jelly. But canned pineapple has been heated enough to denature the enzyme, and makes a firm gelatin jelly."
+   Apoyo: The Naked Scientists (Universidad de Cambridge), "Science of fruit jellies" (2009). https://www.thenakedscientists.com/get-naked/experiments/science-fruit-jellies
    > "the proteases chop the gelatin protein up into pieces which are far too short to tangle, so the jelly doesn't set." · "But if you use tinned pineapple it will set fine." · "This heat causes the enzymes to 'denature', meaning they lose their structure"
 
 ## Notas
 - El dibujo es esquemático: la bromelina como tijeras, las hélices de tres hilos y la malla; las gotitas de agua no están a escala.
-- La bromelina de verdad es una mezcla de varias proteasas (fuente 3); en la voz se dice "una enzima" para simplificar. Es una proteasa de cisteína (fuente 4).
+- La bromelina de verdad es una mezcla de varias proteasas (fuente 3); por eso la voz dice "enzimas". Es una proteasa de cisteína (fuente 4).
 - El estudio de 2010 calentó **extracto crudo** de bromelina de la fruta, no rebanadas de piña ni gelatina; la voz dice "calentaron bromelina de piña". La pieza que une ese dato con la lata es la norma de la FDA (la lata se procesa con calor); el reglamento no dice la temperatura exacta.
 - La norma citada es de EE. UU.; en la descripción se puede aclarar que la piña enlatada se esteriliza con calor para que no se eche a perder.
 - Kiwi: de 13 variedades probadas en Japón, la mayoría deshizo la gelatina; Hort16A (kiwi dorado) y Kosui casi no. La enzima del kiwi es otra (actinidina). Papaya (papaína): no se menciona en la voz; solo podría ir en la descripción citando fuente 8.
