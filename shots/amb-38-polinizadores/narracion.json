@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Polinizadores base narrada.dc.html",
+  "salida": "Shot Polinizadores narrado.dc.html",
+  "nota": "Shot Ambiental #38. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "¿Sin abejas nos morimos de hambre? No exactamente. Pero mira lo que le pasa a tu desayuno."
+    },
+    {
+      "escena": "Plato",
+      "texto": "Tortillas, salsa de jitomate, aguacate, flor de calabaza, café y chocolate caliente."
+    },
+    {
+      "escena": "Maiz",
+      "texto": "Las tortillas se quedan: el maíz es un cereal, y los cereales se polinizan con el viento o solos."
+    },
+    {
+      "escena": "Cacao",
+      "texto": "El chocolate desaparece: casi todo el cacao necesita animales que le lleven polen. La calabaza, igual."
+    },
+    {
+      "escena": "Cafe",
+      "texto": "Y el café, sin visitas, rinde menos o sale de peor calidad."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y el jitomate? Ese tiene truco."
+    },
+    {
+      "escena": "Zumbido",
+      "texto": "Su polen sale por un poro si lo sacuden: los abejorros lo hacen vibrando, y la abeja de la miel no sabe."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2016, en Malasia, IPBES concluyó que más de tres cuartas partes de los principales cultivos de comida dependen en algún grado de ellos."
+    },
+    {
+      "escena": "Toneladas",
+      "texto": "Pero en toneladas, sin ellos se perdería del cinco al ocho por ciento de la cosecha mundial."
+    },
+    {
+      "escena": "Moscas",
+      "texto": "Dato raro: al aguacate también lo polinizan moscas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Sin polinizadores no te mueres de hambre: te quedan las tortillas. Pero tu plato pierde sabor y vitaminas."
+    }
+  ]
+}
