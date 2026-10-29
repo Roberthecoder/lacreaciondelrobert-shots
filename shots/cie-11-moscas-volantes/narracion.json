@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Moscas Volantes base narrada.dc.html",
+  "salida": "Shot Moscas Volantes narrado.dc.html",
+  "nota": "Shot Científico #11. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas manchitas que ves flotar cuando miras el cielo no están en el aire: están dentro de tu ojo."
+    },
+    {
+      "escena": "Gel",
+      "texto": "Tu ojo está relleno de un gel transparente que es casi pura agua: se llama humor vítreo."
+    },
+    {
+      "escena": "Fibras",
+      "texto": "Ese gel se sostiene con una red de fibras finísimas de colágeno."
+    },
+    {
+      "escena": "Grumos",
+      "texto": "Con los años, el gel se va haciendo más líquido y las fibras se juntan en grumitos y hebras."
+    },
+    {
+      "escena": "Sombra",
+      "texto": "Esos grumitos flotan entre la luz y tu retina, y lo que ves no son ellos: es su sombra."
+    },
+    {
+      "escena": "Escapan",
+      "texto": "Por eso se mueven cuando mueves el ojo, y se escapan cuando las quieres ver de frente."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué se notan más en el cielo?"
+    },
+    {
+      "escena": "Fondo",
+      "texto": "Porque un fondo claro y parejo hace que esas sombras resalten."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En un estudio publicado en 2013, seiscientas tres personas contestaron una encuesta en el celular: el setenta y seis por ciento dijo que las ve."
+    },
+    {
+      "escena": "Aviso",
+      "texto": "Ojo: si de pronto te aparecen muchas de golpe, con destellos de luz o una sombra como cortina, ve al oftalmólogo ese mismo día."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esas manchitas no están en el cielo. Son tu ojo, viéndose a sí mismo."
+    }
+  ]
+}

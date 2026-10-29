@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Contar Trueno base narrada.dc.html",
+  "salida": "Shot Contar Trueno narrado.dc.html",
+  "nota": "Shot Científico #14. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Cuando veas un rayo, cuenta los segundos hasta que oigas el trueno: ese número te dice a qué distancia cayó."
+    },
+    {
+      "escena": "Calor",
+      "texto": "El rayo calienta el aire de golpe, hasta casi veintiocho mil grados: cinco veces más que la superficie del Sol."
+    },
+    {
+      "escena": "Onda",
+      "texto": "Ese aire se expande tan rápido que truena: el trueno es la onda de esa expansión."
+    },
+    {
+      "escena": "Luz",
+      "texto": "La luz del rayo te llega casi al instante."
+    },
+    {
+      "escena": "Sonido",
+      "texto": "El sonido es mucho más lento: avanza unos trescientos cuarenta metros cada segundo."
+    },
+    {
+      "escena": "Tres",
+      "texto": "O sea, tarda unos tres segundos en recorrer un kilómetro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Contaste nueve segundos? Entonces cayó a unos tres kilómetros de ti."
+    },
+    {
+      "escena": "Retumbo",
+      "texto": "Si suena como un crujido seco, cayó cerca; si es un retumbo largo, cayó más lejos."
+    },
+    {
+      "escena": "Cuidado",
+      "texto": "Pero cuidado: un rayo puede caer a unos dieciséis kilómetros de la tormenta, o incluso más lejos."
+    },
+    {
+      "escena": "Regla",
+      "texto": "Si alcanzas a oír el trueno, lo más seguro es que estés a su alcance. La regla: si truena, métete."
+    },
+    {
+      "escena": "Espera",
+      "texto": "Y espera media hora después del último trueno para volver a salir."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Cuenta los segundos, sí, pero desde adentro."
+    }
+  ]
+}

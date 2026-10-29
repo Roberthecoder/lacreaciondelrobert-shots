@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Hervir Altura base narrada.dc.html",
+  "salida": "Shot Hervir Altura narrado.dc.html",
+  "nota": "Shot Científico #13. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "En la Ciudad de México, el agua hierve sin llegar a cien grados: hierve a unos noventa y dos."
+    },
+    {
+      "escena": "Cien",
+      "texto": "Los cien grados son para el nivel del mar."
+    },
+    {
+      "escena": "Burbujas",
+      "texto": "Hervir es cuando adentro del agua se forman burbujas de vapor que empujan contra el aire de encima."
+    },
+    {
+      "escena": "Columna",
+      "texto": "Y arriba de ti hay una columna de aire que te aplasta: en la playa pesa más, en la montaña pesa menos."
+    },
+    {
+      "escena": "Facil",
+      "texto": "Con menos aire empujando, las burbujas salen más fácil, y el agua hierve antes."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y en tu ciudad?"
+    },
+    {
+      "escena": "Guadalajara",
+      "texto": "En Guadalajara, a unos mil quinientos metros de altura, hierve cerca de los noventa y cuatro."
+    },
+    {
+      "escena": "Mar",
+      "texto": "En Veracruz o en Cancún, a nivel del mar, en los cien."
+    },
+    {
+      "escena": "Frijoles",
+      "texto": "Por eso, en lo alto, cocer frijoles o un huevo tarda más: el agua hirviendo está menos caliente."
+    },
+    {
+      "escena": "Olla",
+      "texto": "La olla exprés hace trampa: encierra el vapor, sube la presión y el agua llega a unos ciento veinte grados."
+    },
+    {
+      "escena": "Everest",
+      "texto": "Y en la cima del Everest hierve a unos setenta: ahí cocinar tarda una eternidad."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que en la Ciudad de México, tu agua hirviendo siempre está un poquito más fría."
+    }
+  ]
+}
