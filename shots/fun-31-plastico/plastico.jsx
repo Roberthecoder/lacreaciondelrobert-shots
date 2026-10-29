@@ -315,14 +315,14 @@ function PlasticoShot() {
       <BarraEscala T={T} at={K.E} until={K.Z} texto="10 cm" largo={110} />
       <BarraEscala T={T} at={K.Z} until={K.O} texto="10 nm (esquemático)" largo={150} />
       <BarraEscala T={T} at={K.O} until={K.P} texto="5 cm" largo={190} />
-      <BarraEscala T={T} at={K.P} until={K.Tr} texto="5000 km" largo={150} />
-      <BarraEscala T={T} at={K.Tr} until={K.Pk} texto="5 cm" largo={240} />
+      <BarraEscala T={T} at={K.P} until={K.Tr} texto="no a escala" largo={150} />
+      <BarraEscala T={T} at={K.Tr} until={K.Tr + 1.8} texto="5 cm" largo={240} />
       <BarraEscala T={T} at={K.Pk} until={K.R} texto="5 cm" largo={260} />
-      <BarraEscala T={T} at={K.R + 3.6} until={K.Pe} texto="10 cm" largo={150} />
-      <BarraEscala T={T} at={K.Pe} until={K.S} texto="10 cm" largo={130} />
+      <BarraEscala T={T} at={K.R + 3.6} until={K.Pe} texto="20 cm" largo={150} />
+      <BarraEscala T={T} at={K.Pe} until={K.S} texto="20 cm" largo={130} />
       <BarraEscala T={T} at={K.S} until={K.F} texto="20 cm" largo={130} />
       <BarraEscala T={T} at={K.F} until={K.C} texto="1 cm" largo={160} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={210} />
+      <BarraEscala T={T} at={K.C} until={K.C + 1.0} texto="5 cm" largo={210} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="En un tubo: *la mitad en ~5 días.*" />
@@ -333,8 +333,8 @@ function PlasticoShot() {
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.Tr - 0.1} texto="¿Limpiarán *el planeta?*" />
       <Subtitulo T={T} idx={6} at={K.Tr + 0.1} until={K.Pk - 0.1} texto="Poliuretano *en agua*, no una bolsa." />
       <Subtitulo T={T} idx={7} at={K.Pk + 0.1} until={K.R - 0.1} texto="Pakistán: *dos meses*, y con azúcar." />
-      <Subtitulo T={T} idx={8} at={K.R + 0.1} until={K.Pe - 0.1} texto="Polietileno puro: *sin pruebas.*" />
-      <Subtitulo T={T} idx={9} at={K.Pe + 0.1} until={K.S - 0.1} texto="Suelta aditivos, *no se lo comen.*" />
+      <Subtitulo T={T} idx={8} at={K.R + 0.1} until={K.Pe - 0.1} texto="Sin pruebas de que *se coman mucho* polietileno puro." />
+      <Subtitulo T={T} idx={9} at={K.Pe + 0.1} until={K.S - 0.1} texto="A veces pesa menos *por los aditivos.*" />
       <Subtitulo T={T} idx={10} at={K.S + 0.1} until={K.F - 0.1} texto="Usar menos, reusar, *separar.*" />
       <Subtitulo T={T} idx={11} at={K.F + 0.1} until={K.C - 0.1} texto="Una pista, *no un permiso.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="En un tubo, *no en tu basura.*" />

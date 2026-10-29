@@ -38,7 +38,7 @@ Título:
 Descripción:
 ```text
 En un tubo, un hongo deshizo la mitad de un plástico en unos cinco días. ¿Adiós basura? No tan rápido.
-Pestalotiopsis microspora es un hongo endófito: vive dentro de los tejidos de las plantas sin enfermarlas. Lo aislaron de tallos de plantas del Parque Nacional Yasuní, en la Amazonía de Ecuador, dentro de un programa de investigación con estudiantes de licenciatura de la Universidad de Yale, que probó 59 hongos endófitos (Russell et al., 2011). Dos aislados de P. microspora crecieron usando poliuretano como única fuente de carbono, con y sin oxígeno, y lo degradaron al mismo ritmo en ambas condiciones. El plástico era una suspensión lechosa de poliuretano en agua que se vuelve transparente al degradarse: tardó unos 5 días en aclararse a la mitad. El responsable es una enzima que el hongo suelta afuera (una serina hidrolasa).
+Pestalotiopsis microspora es un hongo endófito: vive dentro de los tejidos de las plantas sin enfermarlas. Lo aislaron de tallos de plantas del Parque Nacional Yasuní, en la Amazonía de Ecuador, dentro de un programa de investigación con estudiantes de licenciatura de la Universidad de Yale, que probó 59 hongos endófitos (Russell et al., 2011). Dos aislados de P. microspora crecieron usando poliuretano como única fuente de carbono, con y sin oxígeno, y el que se probó a fondo lo degradó al mismo ritmo en ambas condiciones. El plástico era una suspensión lechosa de poliuretano en agua que se vuelve transparente al degradarse: tardó unos 5 días en aclararse a la mitad. El responsable es una enzima que el hongo suelta afuera (una serina hidrolasa).
 La letra chiquita: eso fue en un tubo de laboratorio. En Pakistán, Aspergillus tubingensis, aislado del suelo de un basurero de Islamabad, tardó dos meses en romper en pedazos una película de poliuretano en medio líquido, con 2 % de glucosa; enterrado en suelo degradó menos (Khan et al., 2017). Una revisión de 664 reportes de microorganismos propuestos para degradar plástico no encontró pruebas de degradación importante del polietileno puro, el plástico de las bolsas del súper, ni del polipropileno, el poliestireno o el PVC; y advierte que los aditivos pueden salirse del plástico y hacerlo bajar de peso (Lear et al., 2022). Otra revisión señala que no hay confirmación de qué tan rápido degradan estos hongos el plástico en la naturaleza (Ekanayaka et al., 2022).
 Lo que sí sirve hoy: usar menos plástico, reusarlo y separarlo para reciclar. Los hongos son una pista para el futuro, no un permiso para tirar más.
 El dibujo es esquemático.
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-En un tubo, un hongo deshizo la mitad de un plástico en unos cinco días. ¿Adiós basura? No tan rápido. 🍄 Era poliuretano suspendido en agua, en el laboratorio; con el polietileno de las bolsas del súper no hay pruebas de que los microbios se lo coman mucho. Lo que sí sirve: usar menos plástico, reusarlo y separarlo para reciclar.
+En un tubo, un hongo deshizo la mitad de un plástico en unos cinco días. ¿Adiós basura? No tan rápido. 🍄 Era poliuretano suspendido en agua, en el laboratorio; con el polietileno puro, el plástico de las bolsas del súper, no hay pruebas de que los microbios se lo coman mucho. Lo que sí sirve: usar menos plástico, reusarlo y separarlo para reciclar.
 ¿Tú separas tu basura en casa? 👇
 Shot Fungi Mati #31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -76,12 +76,12 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Un hongo deshizo la mitad de un plástico en ~5 días… en un tubo, y era poliuretano en agua. Con el polietileno de las bolsas del súper no hay pruebas de que los microbios se lo coman mucho (revisión de 664 reportes, 2022). 🍄 #FungiMati #Plastico
+Un hongo deshizo la mitad de un plástico en ~5 días… en un tubo, y era poliuretano en agua. Con el polietileno puro (el de las bolsas) no hay pruebas de que los microbios se lo coman mucho (revisión de 664 reportes, 2022). 🍄 #FungiMati #Plastico
 ```
 
 ### Threads
 ```text
-En un tubo, un hongo deshizo la mitad de un plástico en unos cinco días. ¿Adiós basura? No tan rápido: era poliuretano suspendido en agua, y con el polietileno de las bolsas del súper no hay pruebas de que los microbios se lo coman mucho. Lo que sí sirve: usar menos, reusar y separar para reciclar. ¿Tú separas tu basura?
+En un tubo, un hongo deshizo la mitad de un plástico en unos cinco días. ¿Adiós basura? No tan rápido: era poliuretano suspendido en agua, y con el polietileno puro, el plástico de las bolsas del súper, no hay pruebas de que los microbios se lo coman mucho. Lo que sí sirve: usar menos, reusar y separar para reciclar. ¿Tú separas tu basura?
 Shot Fungi Mati #31 · La Creación del Robert
 #Hongos
 ```
