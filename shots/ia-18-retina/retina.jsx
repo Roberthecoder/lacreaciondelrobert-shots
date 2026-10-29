@@ -181,7 +181,7 @@ function Pares({ T, at, until, x = 120, y = 860 }) {
   const fuera = kprog(T, until, until + 0.4);
   const out = [], malos = [23, 58, 86];
   for (let i = 0; i < 100; i++) {
-    const c = i % 10, f = Math.floor(i / 10), px = x + c * 86, py = y + f * 34, t0 = at + i * 0.022;
+    const c = i % 10, f = Math.floor(i / 10), px = x + c * 86, py = y + f * 28, t0 = at + i * 0.022;
     if (T < t0) continue;
     const e = kprog(T, t0, t0 + 0.2, kEase.sale), mal = malos.includes(i);
     out.push(<g key={i} transform={`translate(${px} ${py}) scale(${e})`}>
@@ -192,7 +192,7 @@ function Pares({ T, at, until, x = 120, y = 860 }) {
     </g>);
   }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30, opacity:1 - fuera }}>
-    <rect x={x - 40} y={y - 34} width={900} height={372} rx={26} fill="rgba(255,253,247,.92)" stroke={KC.ink} strokeWidth={7} opacity={kprog(T, at - 0.3, at)} />
+    <rect x={x - 40} y={y - 30} width={900} height={318} rx={26} fill="rgba(255,253,247,.92)" stroke={KC.ink} strokeWidth={7} opacity={kprog(T, at - 0.3, at)} />
     {out}
   </svg>;
 }
@@ -283,14 +283,14 @@ function Retinas() {
       <Escena T={T} a={K.S} b={K.Pr}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Retina id="s1" x={200} y={650} r={120} T={T} />
-          <Retina id="s2" x={490} y={650} r={120} T={T} />
+          <Retina id="s1" x={200} y={585} r={120} T={T} />
+          <Retina id="s2" x={490} y={585} r={120} T={T} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.S + 0.5} until={K.Pr - 0.2} texto="hombre" x={200} y={790} tam={34} borde={KC.blue} />
-      <Chip T={T} at={K.S + 0.7} until={K.Pr - 0.2} texto="mujer" x={490} y={790} tam={34} borde={KC.pink} />
-      <Pares T={T} at={K.S + 1.4} until={K.Pr - 0.2} x={120} y={930} />
-      <Chip T={T} at={K.S + 3.8} until={K.Pr - 0.2} texto="acierta 97 de 100 pares · al azar: 50" x={540} y={856} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 0.5} until={K.Pr - 0.2} texto="hombre" x={200} y={730} tam={34} borde={KC.blue} />
+      <Chip T={T} at={K.S + 0.7} until={K.Pr - 0.2} texto="mujer" x={490} y={730} tam={34} borde={KC.pink} />
+      <Pares T={T} at={K.S + 1.4} until={K.Pr - 0.2} x={120} y={862} />
+      <Chip T={T} at={K.S + 3.8} until={K.Pr - 0.2} texto="acierta 97 de 100 pares · al azar: 50" x={540} y={800} tam={34} borde={KC.leaf} />
       {/* 6 · presión y tabaco */}
       <Escena T={T} a={K.Pr} b={K.P}>
         <FondoLunares color={KC.orange} />

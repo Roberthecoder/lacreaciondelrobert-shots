@@ -75,3 +75,10 @@
 
 ### Correcciones pendientes
 1. **Cierre (línea 12):** "Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y hoy también por IA." → **"Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y, en los Pixel de hoy, también por IA."** (el chip "matemática + IA" puede quedarse). Con ese cambio, todo queda ✅.
+
+## Re-verificación final (29 oct 2026, coordinador)
+- Cierre corregido tal como propuso el verificador: «Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y, en los Pixel de hoy, por IA.» ✅ (blog.google, 18 abr 2023, Pixel)
+- Para no pasar de 62 s se recortó sin cambiar datos: «Cada pixel del sensor es diminuto: atrapa poca luz y la foto sale con ruido.» y «En el zoom, otro estudio de Google de 2019…» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

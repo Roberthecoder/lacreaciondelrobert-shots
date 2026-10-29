@@ -10,7 +10,7 @@ Esa foto que tomaste de noche no es una foto: pueden ser hasta 13, encimadas. �
 Así lo describió Google en 2019 para el modo noche de sus Pixel. En el sensor, cada pixel es diminuto: atrapa poquita luz y la foto sale con ruido. Con una sola foto larga, el temblor de tu mano la barrería. Por eso el celular tomaba una ráfaga de fotos de hasta un tercio de segundo cada una, las alineaba pedacito por pedacito y las juntaba: el ruido baja y lo real se queda.
 ¿Y la inteligencia artificial? En 2019, alinear y juntar era matemática clásica, no una red neuronal. Lo que sí aprendió fue el color: un modelo de balance de blancos entrenado con 5 000 fotos que fotógrafos profesionales ajustaron a mano. Funcionaba hasta con 0.3 lux, cuando tus ojos ya casi no ven colores.
 Para el zoom, otro estudio de Google de 2019 aprovechó el temblor natural de tu mano (de 8 a 12 veces por segundo). Y desde 2023, una red neuronal también le quita el ruido al modo noche.
-Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y hoy también por IA.
+Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y, en los Pixel de hoy, por IA.
 El dibujo es esquemático. Fuentes: Liba et al. (2019), Hasinoff et al. (2016), Wronski et al. (2019) y blog de Google (2023).
 ¿Tu celular tiene modo noche? ¿Lo usas? 👇
 Shot IA #11 · La Creación del Robert

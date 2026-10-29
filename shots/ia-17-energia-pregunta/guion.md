@@ -1,29 +1,48 @@
 # Shot IA #17 · Tu pregunta a una IA: nueve segundos de tele (y por qué la suma sí importa)
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #17 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, **pendiente de verificación independiente**. Sin animación todavía.
-- **Formato:** N2 "El número" (0.24 Wh = menos de 9 s de tele; 5 gotas) + N4 "La imagen que se llena" (una gota/pregunta que se multiplica hasta llenar un mapa de centros de datos).
-- **Gancho (de los 7):** #4 "Un número que contradice": "Hacerle una pregunta a una IA gasta menos energía que ver la tele nueve segundos."
-- **Duración:** voz 951 caracteres / ~185 palabras (≈ 58.1 s estimados) + cierre 3.5 s → **61.6 s** en la base.
+- **Estado (29 oct 2026):** guion verificado (16 ✅ · 4 ⚠️ corregidas: gancho y cierre ya dicen "pregunta típica a la IA de Google"; se quitaron las cifras de 415 TWh / 1.5 % / "más del doble" y queda solo la comparación oficial con Japón) · **las frases cambiadas se re-verifican** · animación, Robert en pantalla y `publicacion.md` listos · revisión de cuadros en `revision/hoja.png` · **voz pendiente de aprobación de Robert** (~946 créditos).
+- **Formato:** N2 "El número" (0.24 Wh = menos de 9 s de tele; 5 gotas; ÷33) + N4 "La imagen que se llena" (cuadrícula de preguntas y mosaico final de miles de teles).
+- **Gancho (de los 7):** #4 "Un número que contradice": "Una pregunta típica a la IA de Google gasta menos energía que ver la tele nueve segundos."
+- **Duración:** voz 946 caracteres (≈ 57.9 s estimados) + cierre 3.5 s → **61.4 s** en la base.
 - **Postura de la serie:** la defendemos y la criticamos con datos: el dato por pregunta es chico (y bajó mucho), pero es la mediana de texto de UNA empresa, autorreportada; la suma global sí crece. **Diferencia con ia-04:** el ia-04 habló del costo de ENTRENAR (Llama 3); este es el costo de USAR (cada pregunta).
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Hacerle una pregunta a una IA gasta menos energía que ver la tele nueve segundos. Y como cinco gotas de agua. | Fondo cian: desde el cuadro 0 un celular con un chat; al enviar la pregunta, un rayito viaja a una tele que se enciende con un cronómetro 0→9 s y se apaga. Del celular caen 5 gotas a un vasito. |
-| 1 | Estudio | Lo midió Google en 2025 con su IA, Gemini: cero punto veinticuatro watts hora por pregunta de texto. | `TarjetaEstudio` "2025 · Google · Elsworth et al. · arXiv 2508.15734"; `NumeroGigante` "0.24 Wh" con chips "0.26 mL de agua" y "0.03 g CO₂e". |
-| 2 | Incluye | Y eso ya incluye las máquinas en espera y el enfriamiento del centro de datos. | Dentro del centro de datos (fondo de circuito): barra apilada que crece: chips (0.10 Wh) + máquinas en espera, servidor y enfriamiento → 0.24 Wh. |
-| 3 | Baja | En un año, la energía de esa pregunta bajó treinta y tres veces. | Gráfica: una barra alta "mayo 2024" que se encoge a "mayo 2025" (÷33). |
-| 4 | Pregunta | ¿Entonces la IA no gasta casi nada? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
-| 5 | Ojo | Ojo: es la pregunta típica, la de en medio, solo de texto. Y los números los dio la misma empresa. / Pedir imágenes o videos no entra en esa cuenta. | Fila de preguntas ordenadas de chica a grande; se resalta la de en medio ("mediana"). Chip "autorreportado por Google". Íconos de imagen y video con candado: "fuera de la cuenta". |
-| 6 | Suma | Y lo que pesa es la suma: miles de millones de preguntas. | `Cuadricula` que se llena: cada celda una pregunta, y se aleja la cámara hasta que es un mar de puntitos. |
-| 7 | AIE | Según la Agencia Internacional de Energía, en 2024 los centros de datos usaron uno punto cinco por ciento de la electricidad del mundo. | Planeta con un enchufe; dona "1.5 % de la electricidad mundial · 2024 · AIE (≈ 415 TWh)". Chip "centros de datos = IA + internet + nube". |
-| 8 | Japon | Y calcula que en 2030 será más del doble: más o menos lo que hoy gasta Japón entero. / La IA es una de las grandes razones. | Barra 415 TWh (2024) → 945 TWh (2030, proyección); al lado la silueta de Japón iluminada. Chip "proyección (escenario base)". |
-| 9 | Cierre | Así que tu pregunta cuesta nueve segundos de tele. Lo que pesa es que la hacemos miles de millones de veces. | **Regreso a la imagen del inicio**: el mismo celular y la tele de 9 s; la cámara se aleja y aparecen miles de celulares y miles de teles encendidas a la vez. |
+| 0 | Gancho | Una pregunta típica a la IA de Google gasta menos energía que ver la tele nueve segundos. Y como cinco gotas de agua. | Fondo cian: desde el cuadro 0 un celular con "¿Por qué el cielo es azul?"; al enviarla, un rayo viaja a una tele que se enciende y cuenta de 0 a 9 s ("de tele, ~100 W"). Chip "Gemini · pregunta típica de texto". Caen 5 gotas a un vasito ("≈ 5 gotas"). |
+| 1 | Estudio | Lo midió Google en 2025 con Gemini: cero punto veinticuatro watts hora por pregunta de texto. | `TarjetaEstudio` "2025 · Google · su IA Gemini · Elsworth et al. · arXiv 2508.15734"; `NumeroGigante` "0.24 Wh · por pregunta típica de texto"; chips "0.26 mL de agua" y "0.03 g CO₂e". |
+| 2 | Incluye | Y eso ya incluye las máquinas en espera y el enfriamiento del centro de datos. | Dentro del centro de datos (fondo de circuito): racks con leds; barra que se llena "solo chips: 0.10 Wh" + "espera, servidor y enfriamiento" = 0.24 Wh; aparece un ventilador. |
+| 3 | Baja | En un año, la energía de esa pregunta bajó treinta y tres veces. | Barra "energía de la pregunta típica" que se encoge de mayo 2024 a mayo 2025; "÷33" y chip "en 12 meses (según Google)". |
+| 4 | Pregunta | ¿Entonces la IA no gasta casi nada? | **Re-gancho.** "?" gigante; Robert grande. |
+| 5 | Ojo | Ojo: es la pregunta típica, la de en medio, solo de texto. Y los números los dio la misma empresa. / Pedir imágenes o videos no entra en esa cuenta. | Fila de 9 burbujas de pregunta ordenadas de chica a grande; la de en medio se pinta de amarillo ("la de en medio = mediana"). Chip "cifras de Google, sin revisión externa". Luego íconos de imagen y video que se tachan: "fuera de la cuenta". |
+| 6 | Suma | Y lo que pesa es la suma: miles de millones de preguntas. | Fondo noche: `Cuadricula` que se llena de cuadritos amarillos ("cada cuadrito = una pregunta"). |
+| 7 | AIE | La Agencia Internacional de Energía calcula que para 2030 los centros de datos del mundo gastarán un poco más que todo Japón hoy. / Es una proyección, no un hecho. | Planeta con centros de datos que se encienden; chip "Agencia Internacional de Energía"; barras "Centros de datos del mundo · 2030" contra "Japón entero · hoy" (sin cifras de TWh) y "▲ un poco más". Sello rojo "PROYECCIÓN". |
+| 8 | Razones | Ahí no solo vive la IA: también internet y la nube. Pero la IA es una de las grandes razones. | Edificio de centro de datos en corte con tres salas: IA (robotito), internet (globo) y la nube; la sala de la IA se ilumina. Chip "la IA: una de las grandes razones". |
+| 9 | Cierre | Así que una pregunta típica cuesta nueve segundos de tele. Lo que pesa es que hacemos miles de millones. | **Regreso a la imagen del inicio**: el mismo celular manda la pregunta y la tele marca 9 s; la cámara se aleja y aparecen decenas de celulares y teles a la vez. Chip "× miles de millones". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
-**Música:** cama grave continua; "enviar" con un clic, zumbido eléctrico corto en la tele, tic por cada segundo del cronómetro, un "plic" por cada gota, la barra que se encoge baja de tono, tecleo creciente mientras se llena la cuadrícula, zumbido de servidores en el centro de datos.
+**Música:** cama grave continua; clic de "enviar" y rayo, zumbido al encender la tele, tic por cada segundo del contador, un "plic" por cada gota, la barra que se encoge baja de tono, burbujitas, tachones, tecleo mientras se llena la cuadrícula, luces del planeta, golpe del sello "PROYECCIÓN", mosaico final con tics.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces la IA no gasta casi nada?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` | «menos energía que ver la tele nueve segundos» (cuadro 0) |
+| 2 | 9.5 | 12.4 | 13_senalando_arriba | `izq-alto` | señala «cero punto veinticuatro watts hora» |
+| 3 | 17.9 | 21.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «bajó treinta y tres veces» |
+| 4 | 21.45 | 24.7 | 07_pensativo_puno | `grande` | «¿Entonces la IA no gasta casi nada?» |
+| 5 | 27.7 | 32.4 | 10_serio_molesto | `izq-alto` | «los números los dio la misma empresa» |
+| 6 | 33.0 | 36.0 | 06_pensativo_menton | `arriba-der` | «lo que pesa es la suma» |
+| 7 | 44.0 | 45.8 | 04_bajando_lentes | `arriba-der` | «Es una proyección, no un hecho» |
+| 8 | 46.4 | 51.4 | 12_perfil_serio | `izq-alto` | «la IA es una de las grandes razones» |
+| 9 | 52.0 | 57.8 | 13_senalando_arriba | `arriba-der` | «hacemos miles de millones» |
+| — | 57.9 | 61.4 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 35.6 s (+ cierre 3.5 s) · poses distintas 8 (nunca la misma dos veces seguidas) · total 61.4 s
 
 ## Fuentes (abiertas en el original el 29 oct 2026)
 
@@ -40,14 +59,13 @@
    > "The per-prompt energy impact is equivalent to watching TV for less than nine seconds."
    > "over a recent 12 month period, the energy and total carbon footprint of the median Gemini Apps text prompt dropped by 33x and 44x, respectively"
    > "When we apply this non-comprehensive methodology that only considers active TPU and GPU consumption, we estimate the median Gemini text prompt uses 0.10 Wh of energy" … "Our comprehensive methodology's estimates (0.24 Wh …) account for all critical elements of serving AI globally." (el artículo lista: acelerador, sistema anfitrión, capacidad en espera y gastos generales del centro de datos)
-3. Agencia Internacional de Energía (AIE/IEA). *Energy and AI* (abril 2025). La página de iea.org bloquea la descarga automática (403); las cifras se tomaron de una publicación de la propia AIE que las repite: *Energy and AI in East Asia* (IEA, versión revisada abril 2026), https://iea.blob.core.windows.net/assets/431d7d22-039e-46d3-9832-090a8b4075fc/EnergyandAIinEastAsia.pdf — dato de **2024**, proyección a 2030.
-   > "the publication of the landmark report Energy and AI in April 2025 … Data centres' current share of global electricity consumption is 1.5%. This is projected to more than double by 2030, reaching around 945 TWh or approximately 3% of total global electricity demand."
-   > "In the Base Case, the global electricity consumption of data centres more than doubles from around 415 TWh in 2024 to 945 TWh by 2030."
-   > "While AI is expected to be a significant driver of electricity demand…"
-4. Comparación con Japón (de la AIE, citada por la prensa; **el verificador debe confirmarla en el resumen ejecutivo de la AIE**): Scientific American, 10 abr 2025, https://www.scientificamerican.com/article/ai-will-drive-doubling-of-data-center-energy-demand-by-2030
-   > "945 terawatt-hours (TWh) in 2030" … "roughly equivalent to the current annual electricity consumption of Japan"
-   > "data centres consumed 415 TWh in 2024, roughly 1.5% of the world's total electricity consumption"
-   > "servers for AI accounted for 24% of server electricity demand and 15% of total data centre energy demand in 2024."
+3. Agencia Internacional de Energía (AIE/IEA). *Energy and AI*, resumen ejecutivo (abril 2025). https://www.iea.org/reports/energy-and-ai/executive-summary (iea.org da 403 a la descarga automática; texto confirmado por el verificador en el resumen indexado y en reproducciones textuales) — proyección hecha en **2025**.
+   > "Data centre electricity consumption is set to more than double to around 945 TWh by 2030 … slightly more than Japan's total electricity consumption today"
+   > Carbon Brief (2025), sobre el mismo informe: "This is equivalent to the current electricity demand of Japan."
+   > La misma cifra de 945 TWh y la frase "AI is expected to be a significant driver of electricity demand" están en otra publicación oficial de la AIE: *Energy and AI in East Asia* (versión revisada abril 2026), https://iea.blob.core.windows.net/assets/431d7d22-039e-46d3-9832-090a8b4075fc/EnergyandAIinEastAsia.pdf
+   > Resumen ejecutivo de *Energy and AI* (según el verificador): AI es "the most important driver of this growth".
+   > Nota: la AIE publicó en abril de 2026 un conteo más nuevo (*Key Questions on Energy and AI*: ~485 TWh en 2025, ~950 TWh en 2030) que no se pudo abrir en el original; por eso **la voz no da cifras de TWh ni porcentajes** y solo usa la comparación con Japón, que vale con 945 y con 950 TWh.
+4. Chip "centros de datos = IA + internet + nube": AIE, *Key Questions on Energy and AI* (2026), vía TEI: los centros enfocados en IA "about 155 TWh, roughly a third of the total" → el resto es otro uso digital (verificación #19 ✅).
 
 ## Notas
 - "Pregunta típica, la de en medio" = **mediana** de los prompts de texto de Gemini Apps (la mitad gasta menos, la mitad más). No es el promedio.
@@ -58,7 +76,8 @@
 - "Pedir imágenes o videos no entra en esa cuenta": el estudio es solo de prompts de texto. **No** se afirma cuánto más gastan (no hay cifra verificada), solo que quedan fuera.
 - "Los números los dio la misma empresa": el estudio es de autores de Google sobre sus propios sistemas (autorreportado).
 - "Miles de millones de preguntas": Google habla de "billions of user prompts globally" (todas las IA, no solo Gemini). No se da una cifra diaria.
-- El 1.5 % / 415 TWh es de **todos** los centros de datos (internet, nube, streaming, IA), no solo de la IA; la voz dice "centros de datos" y luego "la IA es una de las grandes razones" (AIE: "a significant driver"). En pantalla se aclara.
-- "Más del doble en 2030" = proyección del escenario base de la AIE (945 TWh), no un hecho.
+- La comparación con Japón es de **todos** los centros de datos (internet, nube, IA), no solo de la IA; la voz lo dice ("ahí no solo vive la IA") y luego "la IA es una de las grandes razones" (AIE: "a significant driver"; "the most important driver of this growth").
+- "Para 2030" = proyección del escenario base de la AIE, no un hecho; la voz lo dice ("Es una proyección, no un hecho") y en pantalla sale el sello "PROYECCIÓN". Se quitaron las cifras de 2024 (415 TWh, 1.5 %) porque hay un conteo más nuevo que no se pudo abrir.
+- Gancho y cierre dicen "una pregunta típica a la IA de Google": el dato es la mediana de texto de Gemini Apps; Google advierte que no representa todas las preguntas.
 - El ia-04 trató el entrenamiento de Llama 3; aquí no se repite: es el uso.
 - El dibujo es esquemático.

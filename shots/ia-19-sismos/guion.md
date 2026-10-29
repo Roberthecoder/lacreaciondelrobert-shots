@@ -1,7 +1,7 @@
 # Shot IA #19 · ¿La IA puede predecir sismos? Lo que sí y lo que no
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #19 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, **pendiente de verificación independiente**. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`: 17 ✅, VEREDICTO: APROBADO), animación, Robert en pantalla, música y `publicacion.md` listos · hoja de cuadros en `revision/hoja.png` · **voz pendiente de aprobación de Robert** (~966 créditos).
 - **Formato:** N3 "Capítulos y medidores" (lo que NO · la alerta · lo que SÍ: escuchar · laboratorio · la polémica) con un toque de N2 (el número "2 contra 13 451").
 - **Gancho (de los 7):** #6 Mito peligroso "¿Por qué NO…?": «¿Por qué no debes creerle a quien jura que mañana tiembla?». Conecta con México: todos hemos recibido una cadena de "mañana tiembla".
 - **Duración:** voz 966 caracteres / 173 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** en la base (estimar-escenas).
@@ -11,19 +11,38 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | ¿Por qué no debes creerle a quien jura que mañana tiembla? Ningún científico ha predicho nunca un sismo grande. Ni con IA. | Fondo amarillo; desde el cuadro 0 un celular vibra con una cadena: "⚠️ MAÑANA 3:14 pm TIEMBLA FUERTE 😱 ¡Compártelo!". El robotito de IA con bola de cristal; sello rojo "NADIE LO HA LOGRADO" (USGS). |
+| 0 | Gancho | ¿Por qué no debes creerle a quien jura que mañana tiembla? Ningún científico ha predicho nunca un sismo grande. Ni con IA. | Fondo amarillo; desde el cuadro 0 un celular vibra con una cadena "Reenviado muchas veces: ¡MAÑANA A LAS 3:14 TIEMBLA FUERTE! Lo predijo una inteligencia artificial. ¡¡Compártelo!!" (mensaje inventado, de ejemplo). Sello rojo "NINGÚN CIENTÍFICO LO HA LOGRADO" + chip "USGS". En «Ni con IA» aparece el robotito con bola de cristal, que se tacha. |
 | 1 | Predecir | Predecir es dar fecha, lugar y magnitud. Eso nadie lo ha logrado. | Tres casillas: 📅 fecha · 📍 lugar · 📈 magnitud; las tres quedan vacías con una ✗. Chip "USGS". |
-| 2 | Alerta | ¿Y la alerta sísmica? Tampoco predice: detecta el sismo cuando ya empezó y avisa antes de que llegue la sacudida. | Mapa esquemático: costa del Pacífico con sensores (puntos) → un sismo empieza en la costa → la señal de radio viaja rápido a la ciudad mientras la onda sísmica viaja más lenta; altavoz "ALERTA SÍSMICA"; chip "aviso de segundos (≈ 20 a 120 s según la distancia)". Etiqueta "detecta ≠ predice". |
-| 3 | Escuchar | La IA sí ayuda escuchando. En dos mil veinte, una red revisó cinco semanas de datos de Japón y halló el doble de sismos. | Sismograma con mucho ruido; una red neuronal lo "escucha" y marca picos diminutos. Comparativa: "catálogo: X" contra "EQTransformer: el doble ×2" · tarjeta "2020 · Stanford · Mousavi et al. · Nature Communications · Tottori, Japón (datos del año 2000)". |
+| 2 | Alerta | ¿Y la alerta sísmica? Tampoco predice: detecta el sismo cuando ya empezó y avisa antes de que llegue la sacudida. | Mapa esquemático de México: sensores (cuadritos azules) en la costa del Pacífico → un sismo empieza en la costa de Guerrero → la señal (línea amarilla) llega rápido a la CDMX mientras los anillos rojos de la onda sísmica avanzan lentos; bocina en la CDMX. Chips "detecta ≠ predice", "onda sísmica: más lenta" y "aviso: 20 a 120 s antes". |
+| 3 | Escuchar | La IA sí ayuda escuchando. En dos mil veinte, una red revisó cinco semanas de datos de Japón y halló el doble de sismos. | Sismograma con mucho ruido; una red neuronal lo "escucha" y marca picos diminutos. Tarjeta "2020 · Universidad de Stanford · Mousavi et al. · EQTransformer · Nature Communications"; chip "sismos diminutos que se perdían". Luego barras "antes 8 521" (catálogo anterior, Fukuyama et al. 2003) contra "con IA 21 092" (EQTransformer) y chip "Tottori, Japón · 5 semanas". |
 | 4 | Pregunta | ¿Y si pudiera oír que una falla está por romperse? | **Re-gancho.** "?" gigante sobre una falla (dos bloques de roca); Robert grande pensativo. |
-| 5 | Laboratorio | En dos mil diecisiete, en Los Álamos, Estados Unidos, una IA calculó cuánto faltaba para cada sismo de laboratorio oyendo un ruido que creían inútil. | Máquina de laboratorio: un bloque que empuja entre dos placas; micrófono; ondas de sonido; medidor "tiempo para el siguiente sismo" que baja a 0 y ¡clac!, se repite. Etiqueta "ruido… que no era ruido". Tarjeta "2017 · Los Alamos National Laboratory · Rouet-Leduc et al. · GRL". |
+| 5 | Laboratorio | En dos mil diecisiete, en Los Álamos, Estados Unidos, una IA calculó cuánto faltaba para cada sismo de laboratorio oyendo un ruido que creían inútil. | Máquina de laboratorio (cizalla doble): un pistón empuja el bloque naranja entre dos bloques; micrófono con ondas de sonido; medidor "falta para el siguiente sismo" que baja a 0 y ¡clac!, se repite. Chips "la IA escucha el sonido de la falla" y "«ruido inútil»… que no lo era". Tarjeta "2017 · Laboratorio de Los Álamos, EE. UU. · Rouet-Leduc et al. · Geophysical Research Letters". |
 | 6 | Laboratorio | Pero era una máquina, no la Tierra. | Zoom out: la máquina chiquita junto a un planeta Tierra enorme; chip "laboratorio ≠ planeta". |
-| 7 | Replicas | En dos mil dieciocho, Harvard y Google dijeron que una red neuronal ubicaba réplicas mejor que el método clásico. | Mapa de cuadritos alrededor de un sismo grande que se iluminan (réplicas); barras "red neuronal 0.85" vs "método clásico (Coulomb) 0.58" (nota: AUC, qué tanto atina). Tarjeta "2018 · Harvard + Google · DeVries et al. · Nature". |
-| 8 | Neurona | Un año después, otros científicos lo igualaron con una fórmula de dos números. La red usaba más de trece mil. | **Dato fuerte.** Comparativa N2: una sola bolita (neurona) con "2" contra una red enorme con "13 451"; las barras de acierto quedan iguales (0.85 = 0.85). Tarjeta "2019 · Mignan y Broccardo · Nature". Robert grande riéndose. |
-| 9 | Cierre | Si te llega ese mensaje, bórralo. La IA no adivina sismos: aprende a escucharlos. | **Regreso a la imagen del inicio**: el mismo celular con la cadena "MAÑANA TIEMBLA"; se arrastra a la basura 🗑️; el robotito cambia la bola de cristal por unos audífonos y un sismograma. |
+| 7 | Replicas | En dos mil dieciocho, Harvard y Google dijeron que una red neuronal ubicaba réplicas mejor que el método clásico. | Chip "2018 · Harvard + Google · Nature"; mapa de cuadritos alrededor de un sismo grande (estrella) que se iluminan (réplicas); luego barras "red neuronal 0.85" contra "método clásico 0.58" y chip "qué tanto atina (AUC)". |
+| 8 | Neurona | Un año después, otros científicos lo igualaron con una fórmula de dos números. La red usaba más de trece mil. | **Dato fuerte.** Tarjeta "2019 · Mignan y Broccardo · Nature". Luego, a la derecha: una sola neurona con "2 parámetros" y abajo una red neuronal con "13 451 parámetros"; chip "mismo acierto: 0.85 = 0.85". Robert grande (izquierda) sonriendo. |
+| 9 | Cierre | Si te llega ese mensaje, bórralo. La IA no adivina sismos: aprende a escucharlos. | **Regreso a la imagen del inicio**: el mismo celular con la cadena "MAÑANA TIEMBLA" se va al bote de basura; el robotito regresa sin bola de cristal, con audífonos, junto a un sismograma; chip "escucha, no adivina". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua (retumbo suave de tierra); vibración del celular al inicio, "tachón" de las tres ✗, sirena corta y lejana de la alerta (sin imitar la oficial), tic-tac de radio, pitidos al marcar cada sismo diminuto, crujido de la falla, "clac" de cada sismo de laboratorio, zumbido de la red neuronal, un solo "ding" para la neurona, y la cadena que cae a la basura.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si pudiera oír que una falla está por romperse?» y en el dato fuerte (2 contra 13 451).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.5 | 11_sorprendido | `gancho` | «¿Por qué no debes creerle a quien jura que mañana tiembla?» (cuadro 0) |
+| 2 | 7.9 | 11.1 | 10_serio_molesto | `arriba-der` | «Eso nadie lo ha logrado» |
+| 3 | 14.8 | 17.9 | 13_senalando_arriba | `izq-alto` | señala la alerta que llega a la CDMX antes que la sacudida |
+| 4 | 21.7 | 25.2 | 04_bajando_lentes | `arriba-der` | «halló el doble de sismos» |
+| 5 | 25.4 | 29.7 | 07_pensativo_puno | `grande` | «¿Y si pudiera oír que una falla está por romperse?» |
+| 6 | 35.1 | 38.0 | 06_pensativo_menton | `izq-alto` | «un ruido que creían inútil» / «pero era una máquina» |
+| 7 | 42.7 | 46.3 | 13_senalando_arriba | `arriba-der` | señala las barras 0.85 contra 0.58 |
+| 8 | 48.4 | 52.8 | 05_sonriendo_dientes_uniformes | `grande-izq` | «una fórmula de dos números… la red usaba más de trece mil» |
+| 9 | 55.0 | 57.9 | 04_bajando_lentes | `arriba-der` | «La IA no adivina sismos: aprende a escucharlos» |
+| — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 32.4 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.5 s
 
 ## Fuentes (abiertas el 29 oct 2026)
 
@@ -60,4 +79,6 @@
 - "Sismo de laboratorio" = falla de laboratorio en un aparato de cizalla; "un ruido que creían inútil" = "previously thought to be low-amplitude noise". Se aclara que es una máquina, no la Tierra.
 - "Ubicaba réplicas mejor que el método clásico" = AUC 0.849 contra 0.583 (cambio de esfuerzo de Coulomb).
 - "Lo igualaron con una fórmula de dos números; la red usaba más de trece mil" = regresión logística (una sola neurona) con 2 parámetros libres, AUC 0.85, contra 13 451 parámetros. Los autores originales respondieron en el mismo número de *Nature* (2019); el guion solo dice lo que mostraron Mignan y Broccardo.
-- Los años de cada estudio se dicen (2017, 2018, 2019, 2020). El dibujo es esquemático.
+- Los años de cada estudio se dicen (2017, 2018, 2019, 2020). El dibujo es esquemático; el mapa es aproximado y los cuadritos de sensores son ilustrativos (no su ubicación exacta).
+- En pantalla: "8 521" (catálogo anterior, Fukuyama et al. 2003) contra "21 092" (EQTransformer), del mismo artículo de Mousavi et al. 2020 (nota de la verificación). "0.85 = 0.85" = AUC de la red (0.849) y de la regresión logística (0.85).
+- Comentario fijado: el estudio de UT Austin (comunicado del 5 oct 2023, *BSSA*) que se anunció como "la IA predijo el 70 % de los sismos" fue una prueba de 7 meses en China: 14 sismos acertados a una semana y "within about 200 miles" (≈ 320 km), 1 fallado y 8 falsas alarmas; el autor dice "We're not yet close to making predictions for anywhere in the world". No contradice al USGS (fuente abierta: news.utexas.edu, 2023).
