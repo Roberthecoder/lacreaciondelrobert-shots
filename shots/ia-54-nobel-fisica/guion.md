@@ -67,6 +67,7 @@ apariciones 9 · ≈ 36.6 s (+ cierre 3.5 s) · poses distintas 6 (nunca la mism
 3. **Hopfield, J. J.** "Neural networks and physical systems with emergent collective computational abilities". *PNAS* 79(8): 2554–2558 (abril de 1982). PMC346238. Afiliación del artículo: "Division of Chemistry and Biology, California Institute of Technology, Pasadena" (y Bell Laboratories).
 4. **Geoffrey Hinton – Banquet speech**, NobelPrize.org, 10 dic 2024. https://www.nobelprize.org/prizes/physics/2024/hinton/speech/
    > "There is also a longer term existential threat that will arise when we create digital beings that are more intelligent than ourselves. We have no idea whether we can stay in control."
+5. **Ackley, D. H., Hinton, G. E. y Sejnowski, T. J.** "A learning algorithm for Boltzmann machines". *Cognitive Science* 9(1): 147–169 (1985). (Citado por el verificador; el Nobel: "Along with his colleague, Terrence Sejnowski, Hinton started from the Hopfield network…".)
 
 ## Notas
 - Correcciones tras la verificación (29 oct 2026): «hasta recordarla» → «casi siempre la recupera» (el Nobel dice "often"); «la física de los gases» → «la física estadística»; «Hinton usó» → «Hinton y un colega usaron» (Terrence Sejnowski; en pantalla "Hinton + Sejnowski · 1985"); la advertencia lleva su contexto («si creamos máquinas más inteligentes que nosotros»). Se quitó «En Caltech» de la voz (sigue en la tarjeta).

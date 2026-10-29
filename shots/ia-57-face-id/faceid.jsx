@@ -140,7 +140,7 @@ function IcoHuella() { return <g fill="none" stroke={KC.ink} strokeWidth={5} str
 function IcoCodigo() { return <g>{Array.from({ length: 12 }, (_, i) => <circle key={i} cx={-30 + (i % 3) * 30} cy={-42 + Math.floor(i / 3) * 28} r={10} fill={i === 10 ? KC.gold : '#fff'} stroke={KC.ink} strokeWidth={4} />)}</g>; }
 
 // Tarjeta de dato (comparativa): ícono + qué es + cifra + de quién y de cuándo.
-function TarjetaDato({ T, at, until, y, x = 60, ancho = 640, icono, titulo, valor, fuente, color }) {
+function TarjetaDato({ T, at, until, y, x = 50, ancho = 620, icono, titulo, valor, fuente, color }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
   return <div style={{ position:'absolute', left:x, top:y, width:ancho, zIndex:40, opacity:e.o, transform:`translateY(${e.y * 0.6}px)`,
@@ -167,8 +167,8 @@ function FaceId() {
       <Escena T={T} a={K.G} b={K.Ma} zoom={0.08} origen="35% 45%">
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Haz x0={835} y0={1000 - 223 * 0.8} x1={360} y1={840} alto={500} o={kprog(T, K.G + 0.15, K.G + 0.5)} />
-          <Cara x={340} y={860} s={1.15} T={T} puntos={kprog(T, K.G + 0.3, K.G + 3.2)} boca={T > K.G + 1.2 ? 'o' : 'sonrisa'} />
+          <Haz x0={835} y0={1000 - 223 * 0.8} x1={360} y1={800} alto={500} o={kprog(T, K.G + 0.15, K.G + 0.5)} />
+          <Cara x={340} y={820} s={1.15} T={T} puntos={kprog(T, K.G + 0.3, K.G + 3.2)} boca={T > K.G + 1.2 ? 'o' : 'sonrisa'} />
           <Celular x={850} y={1000} s={0.8} T={T} proyector={kprog(T, K.G + 0.1, K.G + 0.3)} />
         </>)}
       </Escena>
@@ -198,7 +198,7 @@ function FaceId() {
           <g transform="translate(540 540)"><rect x={-20} y={-6} width={40} height={30} rx={6} fill={KC.gold} /><path d="M -12 -6 L -12 -16 Q -12 -30 0 -30 Q 12 -30 12 -16 L 12 -6" stroke={KC.gold} strokeWidth={6} fill="none" /></g>
           <g opacity={1 - kprog(T, K.R + 2.2, K.R + 2.8)}><MallaProfundidad x={140} y={760} s={0.28} lev={1} aparece={kprog(T, K.R, K.R + 0.6)} /></g>
         </g>)}
-        <RedNeuronal T={T} x={300} y={600} ancho={480} alto={380} capas={[5, 7, 7, 4]} onda={T > K.R + 0.8 && T < K.R + 3.6 ? kprog(T, K.R + 0.8, K.R + 3.4) : null} />
+        <RedNeuronal T={T} x={340} y={600} ancho={440} alto={380} capas={[5, 7, 7, 4]} onda={T > K.R + 0.8 && T < K.R + 3.6 ? kprog(T, K.R + 0.8, K.R + 3.4) : null} />
         <div style={{ position:'absolute', left:905, top:560, width:150, textAlign:'center' }}>
           {NUMS.map((n, i) => <div key={i} style={{ font:`700 30px/1.5 ${KF.mono}`, color:KC.mint, opacity:kprog(T, K.R + 2.6 + i * 0.1, K.R + 2.8 + i * 0.1) }}>{n}</div>)}
         </div>
@@ -222,7 +222,7 @@ function FaceId() {
           <Celular x={850} y={900} s={0.8} T={T} proyector={1} estado={T > K.F + 1.8 ? 'error' : 'cerrado'} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.F + 1.6} until={K.P - 0.2} texto="profundidad: 0" x={330} y={1150} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.F + 1.6} until={K.P - 0.2} texto="profundidad: 0" x={330} y={420} tam={40} borde={KC.red} />
 
       {/* 5 · re-gancho: ¿y otra persona? */}
       <Escena T={T} a={K.P} b={K.N} zoom={0.1}>
@@ -238,8 +238,8 @@ function FaceId() {
         <FondoLunares color={KC.yellow} />
         {svg(<>{extranos.map((c, i) => { const xx = 115 + i * 170, a0 = K.N + 1.2 + i * 0.35, v = kprog(T, a0, a0 + 0.3, kEase.sale);
           return <g key={i} opacity={v} transform={`translate(0 ${(1 - v) * 40})`}>
-            <Cara x={xx} y={1010} s={0.3} {...c} camisa={[KC.pink, KC.cyan, KC.lilac, KC.orange, KC.mint, KC.blue][i]} boca="recta" />
-            <g opacity={kprog(T, a0 + 0.3, a0 + 0.45)}><circle cx={xx + 40} cy={930} r={24} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><path d={`M ${xx + 30} 920 L ${xx + 50} 940 M ${xx + 50} 920 L ${xx + 30} 940`} stroke="#fff" strokeWidth={6} strokeLinecap="round" /></g>
+            <Cara x={xx} y={960} s={0.3} {...c} camisa={[KC.pink, KC.cyan, KC.lilac, KC.orange, KC.mint, KC.blue][i]} boca="recta" />
+            <g opacity={kprog(T, a0 + 0.3, a0 + 0.45)}><circle cx={xx + 40} cy={880} r={24} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><path d={`M ${xx + 30} 870 L ${xx + 50} 890 M ${xx + 50} 870 L ${xx + 30} 890`} stroke="#fff" strokeWidth={6} strokeLinecap="round" /></g>
           </g>; })}</>)}
       </Escena>
       <NumeroGigante T={T} at={K.N + 0.2} until={K.C - 0.2} valor={1000000} dur={1.2} prefijo="1 en " etiqueta="menos de" y={560} tam={130} color={KC.red} />
@@ -288,7 +288,7 @@ function FaceId() {
         <FondoLunares color={KC.cyan} />
         {svg(<>
           <Cara x={330} y={880} s={0.95} T={T} ojos={kprog(T, K.O + 3.0, K.O + 3.3)} boca={T > K.O + 3.3 ? 'sonrisa' : 'recta'} camisa={KC.blue} />
-          {T < K.O + 3.0 && [0, 1, 2].map((k) => { const u = ((T - K.O) * 0.6 + k / 3) % 1; return <text key={k} x={470 + u * 80} y={620 - u * 160} style={{ font:`400 ${50 + k * 14}px ${KF.titulo}` }} fill={KC.violet} opacity={Math.sin(Math.PI * u)}>Z</text>; })}
+          {T < K.O + 3.0 && [0, 1, 2].map((k) => { const u = ((T - K.O) * 0.6 + k / 3) % 1; return <text key={k} x={470 + u * 80} y={620 - u * 160} style={{ font:`400 ${80 + k * 20}px ${KF.titulo}` }} fill={KC.violet} stroke={KC.ink} strokeWidth={3} opacity={Math.sin(Math.PI * u)}>Z</text>; })}
           <Celular x={830} y={1000} s={0.75} T={T} proyector={1} estado={T > K.O + 3.5 ? 'abierto' : 'cerrado'} abre={kprog(T, K.O + 3.5, K.O + 3.9, kEase.sale)} />
         </>)}
       </Escena>
@@ -299,12 +299,12 @@ function FaceId() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.06} origen="35% 45%">
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Cara x={340} y={860} s={1.15} T={T} puntos={1 - kprog(T, K.Ci + 0.6, K.Ci + 1.6)} malla={kprog(T, K.Ci + 0.4, K.Ci + 1.4)} />
+          <Cara x={340} y={820} s={1.15} T={T} puntos={1 - kprog(T, K.Ci + 0.6, K.Ci + 1.6)} malla={kprog(T, K.Ci + 0.4, K.Ci + 1.4)} />
           <Celular x={850} y={1000} s={0.8} T={T} proyector={1} estado="abierto" abre={1} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="tu cara = un mapa" x={330} y={400} tam={40} borde={KC.cyan} />
-      <Chip T={T} at={K.Ci + 2.6} until={K.Ou} texto="¿gemelo? usa un código ••••" x={540} y={1160} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ci + 2.4} texto="tu cara = un mapa" x={330} y={400} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={K.Ci + 2.6} until={K.Ou} texto="¿gemelo? usa un código ••••" x={420} y={400} tam={36} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ma - 0.1} texto="No te ve la cara: *te la mide.*" />
@@ -320,14 +320,14 @@ function FaceId() {
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="No es una llave: *es un mapa.*" />
 
       <Robert T={T} apariciones={[
-        [CUES.Gancho - 0.45, CUES.Gancho + 4.8, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Gancho - 0.45, CUES.Gancho + 4.4, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Mapa + 1.5, CUES.Red - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Red + 3.0, CUES.Foto - 0.1, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Foto + 0.8, CUES.Pregunta - 0.15, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.Pregunta + 0.05, CUES.Numero + 0.1, 'avatar_07_pensativo_puno', 'grande'],
-        [CUES.Comparativa + 1.0, CUES.Estudio - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [CUES.Comparativa + 1.4, CUES.Estudio - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Estudio + 2.5, CUES.Gemelos - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
-        [CUES.Gemelos + 0.6, CUES.Ojos - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
+        [CUES.Gemelos + 0.6, CUES.Gemelos + 5.1, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Ojos + 2.6, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_13_senalando_arriba', 'arriba-der']]} />
       <MarcaAgua T={T} tema="ia" num="57" hasta={K.Ou} />

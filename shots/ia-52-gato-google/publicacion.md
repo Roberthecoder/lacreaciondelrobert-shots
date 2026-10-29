@@ -63,9 +63,8 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 En 2012, un equipo de Google y Stanford mostró que una red neuronal puede aprender conceptos sin etiquetas: tras ver 10 millones de imágenes de YouTube sin ninguna descripción, algunas de sus neuronas se volvieron detectores de caras humanas, cuerpos y caras de gato.
-La escala era enorme para su época: mil millones de conexiones, 1,000 computadoras (16,000 núcleos) y tres días de entrenamiento (Le et al., ICML 2012). Y aun así, según Google, en una comparación muy aproximada, un cerebro adulto tiene unas cien mil veces más conexiones.
+La escala: mil millones de conexiones, 1,000 computadoras (16,000 núcleos) y tres días de entrenamiento (Le et al., ICML 2012). Y aun así, según Google, en una comparación muy aproximada, un cerebro adulto tiene unas cien mil veces más conexiones.
 El lado honesto: la mejor neurona de gato acertó 74.8 % frente a 64.8 % de adivinar al azar, y en ImageNet (22,000 categorías), ya ajustada con fotos etiquetadas, llegó a 15.8 % de aciertos: 70 % más que el mejor resultado anterior, pero lejos de ser perfecta.
-La lección para hoy: los datos sin etiquetar valen mucho, porque etiquetar es lo caro.
 ¿En tu trabajo hay datos que nadie ha etiquetado y podrían enseñar algo?
 Fuentes: Le et al., ICML 2012 (arXiv:1112.6209); blog de Google, 26 jun 2012.
 Shot IA #52 · La Creación del Robert
@@ -75,7 +74,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Esta cara borrosa es un gato que nadie le enseñó a una computadora. En un estudio de 2012, una red de Google vio 10 millones de imágenes de YouTube sin etiquetas y una neurona aprendió sola a reconocer caras de gato (Le et al., ICML). #InteligenciaArtificial
+Esta cara borrosa es un gato que nadie le enseñó a una computadora. En un estudio de 2012, una red de Google vio 10 millones de imágenes de YouTube sin etiquetas y una neurona aprendió sola a encenderse con caras de gato (Le et al., ICML). #InteligenciaArtificial
 ```
 
 ### Threads
