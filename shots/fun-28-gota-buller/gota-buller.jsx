@@ -124,8 +124,8 @@ function GotaBullerShot() {
   const cm = kprog(T, K.D + 1.0, K.D + 1.4);
   const vuelo = kprog(T, K.D + 2.6, K.D + 3.6, (p) => 1 - Math.exp(-p * 4.5));
   const flash = kprog(T, K.F + 1.8, K.F + 1.9) * (1 - kprog(T, K.F + 1.9, K.F + 2.4));
-  const SX = 300, SY = 960, SR = -28; // punta del esterigma y giro de la espora grande
-  const loc = (lx, ly) => { const r = SR * Math.PI / 180; return [SX + lx * Math.cos(r) - ly * Math.sin(r), SY + lx * Math.sin(r) + ly * Math.cos(r)]; };
+  const SX = 250, SY = 1000, SR = -28, SS = 1.25; // punta del esterigma y giro de la espora grande
+  const loc = (lx, ly) => { const r = SR * Math.PI / 180; lx *= SS; ly *= SS; return [SX + lx * Math.cos(r) - ly * Math.sin(r), SY + lx * Math.sin(r) + ly * Math.cos(r)]; };
   const [hx, hy] = loc(26, -34);
 
   // ---- caída entre laminillas ----
@@ -152,9 +152,9 @@ function GotaBullerShot() {
         {fsvg(<>
           <Pared x={-20} y0={360} y1={1240} ancho={150} />
           {[450, 1130].map((yy, i) => <ellipse key={i} cx={190} cy={yy} rx={70} ry={42} fill="#e8dccb" stroke={KC.ink} strokeWidth={5} />)}
-          <Basidio x={124} y={640} s={1} esporas={kprog(T, K.B + 0.9, K.B + 2.3) * 4} />
-          <Basidio x={124} y={930} s={0.92} esporas={kprog(T, K.B + 1.3, K.B + 2.7) * 4} />
-          <Basidio x={124} y={790} s={0.6} esporas={0} color="#efe0ca" />
+          <Basidio x={124} y={600} s={1.3} esporas={kprog(T, K.B + 0.9, K.B + 2.3) * 4} />
+          <Basidio x={124} y={980} s={1.2} esporas={kprog(T, K.B + 1.3, K.B + 2.7) * 4} />
+          <Basidio x={124} y={790} s={0.7} esporas={0} color="#efe0ca" />
         </>)}
       </Escena>
 
@@ -163,9 +163,9 @@ function GotaBullerShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <circle cx={-40} cy={1110} r={210} fill="#f4e6d2" stroke={KC.ink} strokeWidth={8} />
-          <path d={`M 120 1000 Q 210 990 ${SX} ${SY}`} stroke={KC.ink} strokeWidth={46} fill="none" strokeLinecap="round" />
-          <path d={`M 120 1000 Q 210 990 ${SX} ${SY}`} stroke="#f4e6d2" strokeWidth={32} fill="none" strokeLinecap="round" />
+          <circle cx={-60} cy={1150} r={220} fill="#f4e6d2" stroke={KC.ink} strokeWidth={8} />
+          <path d={`M 100 1060 Q 170 1040 ${SX} ${SY}`} stroke={KC.ink} strokeWidth={46} fill="none" strokeLinecap="round" />
+          <path d={`M 100 1060 Q 170 1040 ${SX} ${SY}`} stroke="#f4e6d2" strokeWidth={32} fill="none" strokeLinecap="round" />
           {/* azúcares que salen de la base de la espora */}
           {Array.from({ length: 6 }, (_, i) => { const on = kprog(T, K.Go + 1.2 + i * 0.18, K.Go + 1.6 + i * 0.18, kEase.rebote); const fade = 1 - kprog(T, K.Bu + 1.0, K.Bu + 1.6);
             return on > 0 ? <polygon key={i} points="0,-14 12,-7 12,7 0,14 -12,7 -12,-7" transform={`translate(${hx - 40 + (i % 3) * 40} ${hy - 30 - Math.floor(i / 3) * 34}) scale(${on})`} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} opacity={fade} /> : null; })}
@@ -175,7 +175,7 @@ function GotaBullerShot() {
             return <circle key={i} cx={klerp(sx, hx, u)} cy={klerp(sy, hy, u)} r={9} fill={GB.agua2} stroke={GB.agua} strokeWidth={3} opacity={1 - u * 0.4} />; })}
           {/* la espora (sale volando en el disparo) */}
           <g transform={`translate(${SX + vuelo * 900} ${SY - vuelo * 260}) rotate(${SR + vuelo * 25})`}>
-            <Espora gota={gota} capa={capa} fusion={fus} cm={cm * (1 - kprog(T, K.D + 3.0, K.D + 3.3))} />
+            <Espora s={SS} gota={gota} capa={capa} fusion={fus} cm={cm * (1 - kprog(T, K.D + 3.0, K.D + 3.3))} />
           </g>
           {vuelo > 0 && vuelo < 0.97 && [0, 1, 2, 3].map((k) => <line key={k} x1={SX + vuelo * 900 - 60 - k * 70} y1={SY - vuelo * 260 - 80 + k * 40} x2={SX + vuelo * 900 - 260 - k * 70} y2={SY - vuelo * 260 - 30 + k * 40} stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={0.7 - k * 0.15} />)}
           {flash > 0 && <circle cx={loc(110, -90)[0]} cy={loc(110, -90)[1]} r={60 + flash * 120} fill="none" stroke="#fff" strokeWidth={10} opacity={flash} />}
@@ -279,16 +279,17 @@ function GotaBullerShot() {
       <Chip T={T} at={K.G + 1.9} until={K.B - 0.3} texto="¡está disparando!" x={330} y={470} tam={44} borde={KC.red} />
       <Etq T={T} at={K.G + 1.2} until={K.B - 0.5} x={430} y={960} texto="champiñón de campo" tam={30} color={KC.ink} />
       <Etq T={T} at={K.G + 1.6} until={K.B - 0.5} x={430} y={1010} texto="Agaricus campestris" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.B + 0.2} until={K.Go - 0.3} texto="AL MICROSCOPIO · una laminilla" x={540} y={420} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.B + 0.6} until={K.Go - 0.3} x={60} y={1190} texto="laminilla" tam={28} color={GB.carne} />
-      <Etq T={T} at={K.B + 1.2} until={K.Go - 0.3} x={330} y={1060} texto="basidio" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.B + 2.2} until={K.Go - 0.3} x={600} y={820} texto="esterigma (la puntita)" tam={28} />
-      <Etq T={T} at={K.B + 2.6} until={K.Go - 0.3} x={640} y={560} texto="espora" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Go + 1.3} until={K.Bu - 0.2} x={hx - 110} y={hy - 140} texto="azúcares" lado="izq" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.Go + 2.6} until={K.Bu - 0.2} x={560} y={1180} texto="agua del aire" tam={30} color={GB.agua} />
-      <Etq T={T} at={K.Bu + 0.4} until={K.F + 1.6} x={hx - 70} y={hy - 150} texto="gota de Buller" lado="izq" tam={32} color={GB.agua} />
+      <Chip T={T} at={K.B + 0.2} until={K.Go - 0.3} texto="AL MICROSCOPIO · una laminilla" x={420} y={350} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.B + 0.6} until={K.Go - 0.3} x={150} y={1160} texto="laminilla" tam={28} color={GB.carne} />
+      <Etq T={T} at={K.B + 1.2} until={K.Go - 0.3} x={400} y={1110} texto="basidio" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.B + 2.2} until={K.Go - 0.3} x={560} y={795} texto="esterigma (la puntita)" tam={28} />
+      <Etq T={T} at={K.B + 2.6} until={K.Go - 0.3} x={690} y={760} texto="espora" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Go + 1.3} until={K.Bu - 0.2} x={hx + 10} y={hy - 150} texto="azúcares" lado="izq" tam={28} color={KC.yellow} />
+      <Etq T={T} at={K.Go + 2.6} until={K.Bu - 0.2} x={620} y={520} texto="agua del aire" tam={30} color={GB.agua} />
+      <Etq T={T} at={K.Bu + 0.4} until={K.F + 1.6} x={hx + 50} y={hy - 190} texto="gota de Buller" lado="izq" tam={30} color={GB.agua} />
       <Etq T={T} at={K.Bu + 2.2} until={K.F + 1.6} x={loc(330, -100)[0] + 30} y={loc(330, -100)[1] - 30} texto="capa de agua" tam={30} color={GB.agua} />
       <Etq T={T} at={K.Go + 0.6} until={K.D + 2.4} x={loc(400, 40)[0] + 10} y={loc(400, 40)[1] + 70} texto="espora" tam={28} color={KC.gold2} />
+      <Medidor T={T} at={K.Go + 2.4} until={K.F + 2.2} valor={gota} etiqueta="GOTA DE BULLER" texto={(v) => (v < 0.999 ? 'crece…' : '¡toca la capa!')} x={180} y={1100} ancho={820} color={GB.agua} />
       <Chip T={T} at={K.F + 2.6} until={K.D - 0.3} texto="< 4 µs (medido en un hongo de oreja y levaduras, 2009)" x={540} y={1130} tam={24} borde={KC.cyan} />
       <Etq T={T} at={K.D + 1.1} until={K.D + 2.6} x={loc(214, -26)[0] + 30} y={loc(214, -26)[1] + 150} texto="centro de masa" tam={30} color={KC.red} />
       <Chip T={T} at={K.D + 3.3} until={K.P - 0.2} texto="catapulta de tensión superficial" x={540} y={1130} tam={34} borde={KC.yellow} />

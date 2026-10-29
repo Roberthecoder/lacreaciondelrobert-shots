@@ -174,7 +174,7 @@ function TierraPorDentro({ T, g, deshace = 0, primordios = 0, x = 540, y = 900, 
     {Array.from({ length: 60 }, (_, i) => { const q = krng(i + 100); return <circle key={i} cx={x - ancho / 2 + q() * ancho} cy={y - alto / 2 + q() * alto} r={6 + q() * 16} fill={i % 3 ? '#3b2615' : '#4d321c'} />; })}
     {/* raíces vivas de la planta */}
     {[[x - 240, -10], [x + 60, 8], [x + 300, -6]].map(([rx, c], i) => <path key={i} d={`M ${rx} ${y - alto / 2} Q ${rx + c * 6} ${y - 60} ${rx + c * 10 - 30} ${y + alto * 0.42}`} stroke="#e8d3a6" strokeWidth={22 - i * 3} fill="none" strokeLinecap="round" />)}
-    {restos.map(([rx, ry, rot], i) => { const d = kclamp(deshace * 1.4 - i * 0.08, 0, 1); return <g key={i} transform={`translate(${rx} ${ry}) rotate(${rot}) scale(${1 - d * 0.7})`} opacity={1 - d * 0.8}>
+    {restos.map(([rx, ry, rot], i) => { const d = kclamp(deshace * 1.4 - i * 0.08, 0, 1); return <g key={i} transform={`translate(${rx} ${ry}) rotate(${rot}) scale(${1.7 * (1 - d * 0.7)})`} opacity={1 - d * 0.8}>
       <path d="M -60 0 Q -20 -40 60 -10 Q 20 30 -60 0 Z" fill={MC.seca} stroke={KC.ink} strokeWidth={4} /><path d="M -50 0 L 50 -8" stroke="#6b4a22" strokeWidth={3} />
     </g>; })}
     <RedHifas T={T} x={x} y={y} g={g} seed={seed} n={340} escala={0.9} color={MC.hifa} ancho={3.2} circ brillo={0.6} />
@@ -188,7 +188,7 @@ function MacetaShot() {
   const FIN = K.Ou + 4;
   // las tres setas de la maceta (relativas a la tierra)
   const TRES = [[-120, 4, 1.0, -6], [-60, 10, 0.8, 5], [40, 8, 0.65, 10]];
-  const tres = (t0, abre = 1, pal = 0) => TRES.map(([dx, dy, k, r], i) => <Leuco key={i} x={dx} y={dy} s={k} rot={r + mece(T, i + 5, 0.3) * 1.5} crece={kprog(T, t0 + i * 0.18, t0 + i * 0.18 + 0.8)} abre={abre} palido={pal} alto={210} />);
+  const tres = (t0, abre = 0.8, pal = 0) => TRES.map(([dx, dy, k, r], i) => <Leuco key={i} x={dx} y={dy} s={k} rot={r + mece(T, i + 5, 0.3) * 1.5} crece={kprog(T, t0 + i * 0.18, t0 + i * 0.18 + 0.8)} abre={abre} palido={pal} alto={210} />);
   const abreA = kprog(T, K.A + 0.2, K.A + 2.6, kEase.suave);
   const luz = kprog(T, K.Tr + 1.0, K.Tr + 2.6, kEase.suave), levanta = kprog(T, K.Tr + 3.0, K.Tr + 3.6, kEase.sale);
   const arranca = kprog(T, K.Q + 0.2, K.Q + 1.0, kEase.sale);
@@ -255,7 +255,7 @@ function MacetaShot() {
               <RedHifas T={T} x={0} y={170} g={1} seed={11} n={260} escala={0.13} color={MC.hifa} ancho={2.6} circ />
               {[[-90, 70], [10, 60], [100, 74]].map(([px, py], i) => { const p = kprog(T, K.Ca + 1.6 + i * 0.25, K.Ca + 2.1 + i * 0.25, kEase.rebote); return p > 0 ? <ellipse key={i} cx={px} cy={py} rx={13 * p} ry={17 * p} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /> : null; })}
             </g>}>
-            {[[-90, 4], [10, 6], [100, 4]].map(([dx, dy], i) => <Leuco key={i} x={dx} y={dy} s={0.75} crece={kprog(T, K.Ca + 2.6 + i * 0.25, K.Ca + 3.6 + i * 0.25)} abre={0.05} />)}
+            {[[-90, 4], [10, 6], [100, 4]].map(([dx, dy], i) => <Leuco key={i} x={dx} y={dy} s={0.75} crece={kprog(T, K.Ca + 2.6 + i * 0.25, K.Ca + 3.6 + i * 0.25)} abre={0.05} alto={110} />)}
           </Maceta>
         </>)}
       </Escena>
@@ -268,10 +268,10 @@ function MacetaShot() {
           {abreA > 0.75 && Array.from({ length: 14 }, (_, i) => { const q = krng(i + 3); const u = ((T - K.A) * 0.5 + q()) % 1; return <circle key={i} cx={330 + (q() - 0.5) * 300 + Math.sin(T * 2 + i) * 10} cy={680 + u * 420} r={3.5} fill="#fff" opacity={(1 - u) * kprog(abreA, 0.75, 1)} />; })}
           {/* recuadro al microscopio: esporas */}
           {(() => { const o = kprog(T, K.A + 2.6, K.A + 3.0); return o > 0 ? <g opacity={o}>
-            <circle cx={790} cy={880} r={190} fill={KC.noche} stroke={KC.white} strokeWidth={9} />
-            {[[-80, -60, 20], [30, -90, -30], [90, 10, 60], [-30, 30, -10], [-100, 80, 40], [40, 100, 15], [110, -60, -50]].map(([dx, dy, r], i) => <Espora key={i} x={790 + dx} y={880 + dy} px={64} rot={r + Math.sin(T + i) * 4} />)}
-            <line x1={700} y1={1030} x2={760} y2={1030} stroke="#fff" strokeWidth={7} />
-            <text x={730} y={1010} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#fff">10 µm</text>
+            <circle cx={800} cy={960} r={175} fill={KC.noche} stroke={KC.white} strokeWidth={9} />
+            {[[-80, -60, 20], [30, -90, -30], [90, 10, 60], [-30, 30, -10], [-100, 80, 40], [40, 100, 15], [110, -60, -50]].map(([dx, dy, r], i) => <Espora key={i} x={800 + dx * 0.9} y={960 + dy * 0.9} px={60} rot={r + Math.sin(T + i) * 4} />)}
+            <line x1={720} y1={1095} x2={780} y2={1095} stroke="#fff" strokeWidth={7} />
+            <text x={750} y={1078} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#fff">10 µm</text>
           </g> : null; })()}
         </>)}
       </Escena>
@@ -295,7 +295,7 @@ function MacetaShot() {
             <Perrito T={T} x={klerp(1200, 900, u)} y={1180} s={1.1} />
           </> : null; })()}
           {(() => { const baja = kprog(T, K.Tx + 3.4, K.Tx + 4.0, kEase.sale); return baja > 0 ? <Mano x={406 + quita * 600} y={klerp(-200, 960, baja) - quita * 1080} s={1.1} rot={-10 + quita * 30} /> : null; })()}
-          <Sello T={T} at={K.Tx + 0.6} x={300} y={520} texto="NO SE COME" color={KC.red} r={130} />
+          <Sello T={T} at={K.Tx + 0.6} x={330} y={500} texto="NO SE COME" color={KC.ink} r={150} />
         </>)}
       </Escena>
       {/* 9 · el estudio: Múnich, 2005 */}
@@ -378,11 +378,11 @@ function MacetaShot() {
       <Etq T={T} at={K.Mi + 1.5} until={K.Ca - 0.3} x={60} y={1150} texto="restos muertos" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.Ca + 0.3} until={K.Ca + 1.9} texto="calor + humedad" x={540} y={420} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ca + 2.4} until={K.A - 0.3} texto="el hongo: su parte para reproducirse" x={540} y={420} tam={32} borde={KC.yellow} />
-      <Etq T={T} at={K.A + 0.1} until={K.A + 1.2} x={460} y={760} texto="huevito" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.2} until={K.A + 2.2} x={480} y={720} texto="campana" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 2.2} until={K.P - 0.3} x={540} y={700} texto="abierto" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 3.0} until={K.P - 0.3} x={600} y={1100} texto="esporas blancas" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Tx + 1.4} until={K.Tx + 3.0} texto="comerlo: malo para el estómago" x={540} y={760} tam={32} borde={KC.red} />
+      <Etq T={T} at={K.A + 0.1} until={K.A + 1.2} x={370} y={780} texto="huevito" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.2} until={K.A + 2.2} x={370} y={780} texto="campana" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.A + 2.2} until={K.P - 0.3} x={370} y={780} texto="abierto" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.A + 3.0} until={K.P - 0.3} x={560} y={1170} texto="esporas blancas" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Tx + 1.4} until={K.Tx + 3.0} texto="comerlo: puede caer muy mal" x={540} y={760} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Tx + 3.2} until={K.E - 0.3} texto="niños o mascotas: quítalo" x={360} y={430} tam={32} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Pg - 0.3} anio="2005" quien="Múnich, Alemania" revista="Bartsch y col. · Angewandte Chemie" x={600} y={760} />
       <Etq T={T} at={K.E + 2.0} until={K.Pg - 0.3} x={380} y={1080} texto="¿de dónde sale el amarillo?" tam={28} color={KC.ink} />

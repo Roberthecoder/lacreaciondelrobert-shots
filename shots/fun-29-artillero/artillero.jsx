@@ -282,7 +282,7 @@ function ArtilleroShot() {
         {fsvg(<>
           <Astillas x={0} y={1120} w={KW} h={800} n={70} seed={4} />
           <Coche T={T} x={50} y={1120} w={980} manchas={cierreManchas} />
-          <Sol T={T} x={160} y={470} r={60} />
+          <Sol T={T} x={560} y={430} r={55} />
           {T > K.C + 1.6 && <Tiro x0={110} y0={1150} x1={560} y1={940} alto={160} p={kprog(T, K.C + 1.6, K.C + 2.6)} color={KC.ink} />}
           <CopaLado x={110} y={1160} s={1.6} rot={35} />
         </>)}
@@ -313,11 +313,11 @@ function ArtilleroShot() {
       <Chip T={T} at={K.Di + 2.4} until={K.Pe - 0.3} texto="más de 2 m de alto" x={330} y={840} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Pe + 0.5} until={K.E - 0.3} texto="seca, queda pegadísima" x={400} y={500} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Pe + 2.6} until={K.E - 0.3} x={560} y={1060} texto="mancha" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Pe + 2.9} until={K.E - 0.3} texto="quítala mojada, antes de que se seque" x={540} y={620} tam={30} borde={KC.leaf} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={ESTUDIO_T0 - 0.4} anio="2004" quien="Penn State · EUA · 27 mantillos" revista="publicado en 2004 · J. Environ. Hort." y={760} />
-      {T > ESTUDIO_T0 && T < K.V && <div style={{ position:'absolute', left:70, top:650, zIndex:42, font:`900 54px ${KF.texto}`, color:KC.ink, opacity:kprog(T, ESTUDIO_T0, ESTUDIO_T0 + 0.3) * (1 - kprog(T, K.V - 0.3, K.V)) }}>año {Math.min(4, 1 + Math.floor(kprog(T, ESTUDIO_T0 + 0.2, ESTUDIO_T0 + 4.6) * 4))} de ~4</div>}
+      <Chip T={T} at={K.Pe + 2.9} until={K.E - 0.3} texto="quítala mojada, antes de que se seque" x={540} y={1110} tam={30} borde={KC.leaf} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={ESTUDIO_T0 - 0.4} anio="2004" quien="Penn State · EUA" revista="27 mantillos · publicado en 2004" y={760} />
+      {T > ESTUDIO_T0 && T < K.V && <div style={{ position:'absolute', left:70, top:600, zIndex:42, font:`900 54px ${KF.texto}`, color:KC.ink, opacity:kprog(T, ESTUDIO_T0, ESTUDIO_T0 + 0.3) * (1 - kprog(T, K.V - 0.3, K.V)) }}>año {Math.min(4, 1 + Math.floor(kprog(T, ESTUDIO_T0 + 0.2, ESTUDIO_T0 + 4.6) * 4))} de ~4</div>}
       <Chip T={T} at={ESTUDIO_T0 + 3.4} until={K.V - 0.3} texto="madera o corteza: todos lo dejaron disparar" x={540} y={740} tam={28} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.V + 0.4} until={K.C - 0.3} valor={10} dur={0.8} sufijo=" años" etiqueta="puede seguir viva más de" x={380} y={560} tam={150} color={KC.leaf} />
+      <NumeroGigante T={T} at={K.V + 0.4} until={K.C - 0.3} valor={10} dur={0.8} sufijo=" años" etiqueta="puede seguir viva más de" x={360} y={560} tam={150} color={KC.leaf} />
       <MitoTachado T={T} at={K.C + 0.3} tacharEn={K.C + 0.9} until={K.Ou} texto="lodo" x={260} y={480} tam={54} />
       <Chip T={T} at={K.C + 1.3} until={K.Ou} texto="balas de un hongo" x={330} y={600} tam={42} borde={KC.yellow} />
 
@@ -346,9 +346,9 @@ function ArtilleroShot() {
       <Subtitulo T={T} idx={7} at={K.L + 0.1} until={K.Di - 0.1} texto="Apunta *a la luz.*" />
       <Subtitulo T={T} idx={8} at={K.Di + 0.1} until={K.Pe - 0.1} texto="Hasta *~6 m* de lejos" />
       <Subtitulo T={T} idx={9} at={K.Pe + 0.1} until={K.E - 0.1} texto="Raspar *daña la pintura.*" />
-      <Subtitulo T={T} idx={10} at={K.E + 0.1} until={K.V - 0.1} texto="27 mantillos: *todos lo dejaron*" />
+      <Subtitulo T={T} idx={10} at={K.E + 0.1} until={K.V - 0.1} texto="Probó *27 mantillos.*" />
       <Subtitulo T={T} idx={11} at={K.V + 0.1} until={K.C - 0.1} texto="Viva *más de 10 años.*" />
-      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Balas de un hongo *que apunta a la luz.*" />
+      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="*Balas* de un hongo" />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 4.0, 'avatar_11_sorprendido', 'gancho'],
