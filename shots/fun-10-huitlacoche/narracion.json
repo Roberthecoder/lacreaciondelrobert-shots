@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese elote no está podrido: es un manjar. Esa bola gris es un hongo, y te la comes en quesadilla."
+      "texto": "Ese elote no está podrido: es un manjar. Esa bola gris es un grano tomado por un hongo, y va a tu quesadilla."
     },
     {
       "escena": "Nombre",
@@ -13,15 +13,15 @@
     },
     {
       "escena": "Entra",
-      "texto": "Normalmente entra por los pelos del elote sin polinizar, o por heridas del granizo o del viento."
+      "texto": "Normalmente entra por los pelos del elote sin polinizar, o por heridas de granizo o viento."
     },
     {
       "escena": "Hifas",
-      "texto": "Sus hilos, las hifas, se meten al pelo y por ahí infectan el grano."
+      "texto": "Sus hilos, las hifas, entran al pelo y así infectan el grano."
     },
     {
       "escena": "Agalla",
-      "texto": "Las células del maíz crecen y se dividen de más, y el grano se hincha como globo."
+      "texto": "Las células del maíz crecen y se dividen de más: el grano se hincha como globo."
     },
     {
       "escena": "Pregunta",
@@ -33,23 +33,23 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2003, en la Universidad de Illinois, le pusieron el hongo a propósito a los pelos de elotes."
+      "texto": "En 2003, investigadores de la Universidad de Illinois le pusieron el hongo a propósito a los pelos de elotes."
     },
     {
       "escena": "Cosecha",
-      "texto": "Sacaron hasta ciento treinta y un gramos de huitlacoche por mazorca."
+      "texto": "Sacaron hasta ciento treinta y un gramos por mazorca."
     },
     {
       "escena": "Sabor",
-      "texto": "Cosechado a los doce o catorce días no servía: le faltaban esporas, y con ellas, color y sabor."
+      "texto": "Cosechado a los doce o catorce días no servía: sin esporas, le faltaban color y sabor."
     },
     {
-      "escena": "Plaga",
-      "texto": "En el mundo es una plaga del maíz; en México, un manjar de veintiún pueblos indígenas."
+      "escena": "Enfermedad",
+      "texto": "En casi todo el mundo es una enfermedad del maíz; en México, un manjar con nombre en muchas lenguas."
     },
     {
       "escena": "Modelo",
-      "texto": "Y en el laboratorio es un modelo para entender cómo un hongo enferma a una planta."
+      "texto": "Y en el laboratorio es modelo para entender cómo un hongo enferma a una planta."
     },
     {
       "escena": "Cierre",

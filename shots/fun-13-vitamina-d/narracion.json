@@ -3,18 +3,18 @@
   "salida": "Shot Vitamina D narrado.dc.html",
   "nota": "Shot Fungi Mati #13. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese champiñón no es solo comida: es una fábrica de vitamina D que se prende con el sol." },
+    { "escena": "Gancho", "texto": "Ese champiñón no es solo comida: es una fábrica de vitamina D que se prende con sol." },
     { "escena": "Oscuras", "texto": "Casi todos los del súper crecen a oscuras: traen casi nada de vitamina D." },
     { "escena": "Ergosterol", "texto": "Pero en sus membranas guardan ergosterol, una molécula parecida al colesterol." },
     { "escena": "Luz", "texto": "Con luz ultravioleta, el ergosterol cambia de forma: se vuelve previtamina D2 y luego vitamina D2." },
-    { "escena": "Piel", "texto": "Tu piel hace casi lo mismo con el sol, pero fabrica vitamina D3." },
+    { "escena": "Piel", "texto": "Tu piel hace casi lo mismo con el sol, pero fabrica D3." },
     { "escena": "Pregunta", "texto": "¿Y cuánto sol necesita un champiñón?" },
     { "escena": "Estudio", "texto": "En 2015, un equipo de Alemania y Dinamarca puso champiñones rebanados a secar al sol." },
     { "escena": "Resultado", "texto": "En solo quince minutos: 17.6 microgramos de vitamina D por cada 100 gramos de champiñón." },
-    { "escena": "Salmon", "texto": "Como un pescado graso tipo salmón, y más de lo que se recomienda al día a la mayoría de los adultos." },
-    { "escena": "Hora", "texto": "Subió una hora, luego se estancó y, con horas de más, bajó." },
-    { "escena": "Cuerpo", "texto": "Tu cuerpo sí la aprovecha: en un estudio con 30 adultos, llegó a la sangre igual que un suplemento de vitamina D2." },
+    { "escena": "Salmon", "texto": "Comparable al salmón, y más de lo recomendado al día para la mayoría de los adultos." },
+    { "escena": "Hora", "texto": "Subió una hora, se estancó y, con horas de más, bajó." },
+    { "escena": "Cuerpo", "texto": "Y sí la aprovechas: en un estudio con 30 adultos, llegó a la sangre igual que un suplemento de D2." },
     { "escena": "Truco", "texto": "Rebanados hacen más que enteros, y en el refri la guardan hasta una semana." },
-    { "escena": "Cierre", "texto": "Así que ese champiñón no es solo comida: quince minutos de sol del mediodía y es tu fábrica de vitamina D." }
+    { "escena": "Cierre", "texto": "Así que no es solo comida: quince minutos de sol del mediodía y es tu fábrica de vitamina D." }
   ]
 }
