@@ -1,0 +1,58 @@
+{
+  "especial": "Posadas",
+  "serie_vinculada": "Científico",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Ponche base narrada.dc.html",
+  "salida": "Shot Ponche narrado.dc.html",
+  "nota": "Shot Festivo #10 · Posadas · Científico (el tejocote del ponche). Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese tejocote de tu ponche no se deshace: se despega, célula por célula."
+    },
+    {
+      "escena": "Firme",
+      "texto": "Crudo, sus células están infladas de agua y bien pegadas: por eso está firme."
+    },
+    {
+      "escena": "Membrana",
+      "texto": "Al hervir, el calor rompe sus membranas: se sale el agua y lo que traen disuelto pasa al ponche."
+    },
+    {
+      "escena": "Pegamento",
+      "texto": "Pero entre célula y célula hay un pegamento: una capa rica en pectina."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué le hace el hervor a ese pegamento?"
+    },
+    {
+      "escena": "Despega",
+      "texto": "La pectina se rompe y se disuelve, las células se separan y la fruta se pone suavecita."
+    },
+    {
+      "escena": "Pectina",
+      "texto": "Y el tejocote está cargado de pectina: tanta, que la industria la saca de él para cuajar jaleas y mermeladas."
+    },
+    {
+      "escena": "Nativo",
+      "texto": "Es un árbol nativo de México y da fruto en noviembre y diciembre, justo a tiempo para las posadas."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2016, en Chapingo, con pectina de tejocote y cera de candelilla hicieron una capa comestible para setas rebanadas."
+    },
+    {
+      "escena": "Setas",
+      "texto": "Las rebanadas con capa perdieron menos peso y firmeza en veinte días de refrigeración."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Ojo: desde 2024, la FDA alerta que varios suplementos de raíz de tejocote en realidad traían adelfa amarilla, una planta venenosa."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese tejocote no se deshace: se despega, porque el hervor le disolvió el pegamento."
+    }
+  ]
+}
