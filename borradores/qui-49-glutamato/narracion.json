@@ -13,7 +13,7 @@
     },
     {
       "escena": "Umami",
-      "texto": "Está en el jitomate y en los quesos; en 1908, un profesor japonés lo sacó de un caldo de alga: es el sabor umami."
+      "texto": "Hay en el jitomate y en los quesos; en 1908, un profesor japonés lo sacó de un caldo de alga: es el sabor umami."
     },
     {
       "escena": "Gramos",
@@ -29,11 +29,11 @@
     },
     {
       "escena": "Sospechas",
-      "texto": "Nombró posibles culpables: el vino, la sal, el glutamato. No comprobó nada. Y nació el mito."
+      "texto": "Nombró posibles culpables: vino, sal, glutamato. No comprobó nada. Y nació el mito."
     },
     {
       "escena": "Estudio",
-      "texto": "En el año 2000, un estudio dirigido desde Harvard dio 5 gramos o placebo, a ciegas, a 130 personas que se decían sensibles: sin comida, algunos reaccionaron, pero no se repetía; con comida, nada."
+      "texto": "En 2000, un estudio dirigido desde Harvard dio 5 gramos o placebo, a ciegas, a 130 personas que se decían sensibles: sin comida, algunos reaccionaron, pero no se repetía; con comida, nada."
     },
     {
       "escena": "Leche",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese polvito no es veneno: la FDA lo clasifica como seguro, y es lo mismo que hay en tu jitomate."
+      "texto": "Así que no es veneno: para la FDA es seguro, y es lo mismo que hay en tu jitomate."
     }
   ]
 }
