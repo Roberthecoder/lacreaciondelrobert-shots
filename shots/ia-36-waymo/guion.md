@@ -1,10 +1,10 @@
 # Shot IA #36 · Tú contra el auto sin conductor
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #36 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A: guion escrito, pendiente de verificación independiente. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (2 ⚠️ corregidos: «reaseguradora» y la frase de autopista/nieve), animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert**.
 - **Formato:** N2 "El número" (82 % menos choques con heridos, desde el cuadro 0) con matiz crítico ("¿quién le revisa la tarea?").
 - **Gancho (de los 7):** #2 "Tú contra el de al lado": tu auto contra el auto sin nadie al volante.
-- **Duración:** voz 961 caracteres / ~169 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** estimados.
+- **Duración:** voz 967 caracteres / ~170 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** en la base.
 - **Postura de la serie:** la defendemos y la criticamos con datos: los números son buenos, pero los publica la empresa (o los
   firma con una aseguradora), solo en ciertas ciudades, sin autopistas ni nieve, y el sistema ha tenido que corregirse (recall).
 
@@ -16,17 +16,34 @@
 | 1 | Millas | Lo mide en doscientos setenta y un millones de millas, hasta junio de 2026, | Odómetro que corre hasta "271.3 millones de millas sin conductor · hasta junio 2026". |
 | 2 | Ciudades | contra el conductor promedio de sus ciudades, como Phoenix, San Francisco y Los Ángeles. | Mapa esquemático de EE. UU. con pines en Phoenix, San Francisco, Los Ángeles (y Austin, Atlanta pequeños); al lado, un "conductor promedio" de esas mismas ciudades. |
 | 3 | Pregunta | ¿Pero quién le revisa la tarea, si los números son suyos? | **Re-gancho.** Cuaderno de tarea con "82 %" y una lupa; "?" gigante. Robert grande, pensativo. |
-| 4 | Estudio | En 2024, la aseguradora Swiss Re revisó sus reclamos: en veinticinco millones de millas, solo dos por lesiones. | `TarjetaEstudio` "2024 · Swiss Re + Waymo · 25.3 millones de millas · reclamos de seguro"; 2 papelitos de reclamo caen en una charola. |
-| 5 | Esperados | Con humanos esperaban veintiséis: noventa y dos por ciento menos. En daños materiales, ochenta y ocho. | `Comparativa`: 26 papelitos (humanos esperados) contra 2 (Waymo) → "−92 % lesiones"; chip "−88 % daños materiales (9 contra 78)". |
-| 6 | Ojo | Ojo: Waymo es coautora del estudio, y su comparación deja fuera autopistas y nieve. | Lupa sobre la tarjeta: aparece "autores: Swiss Re + Waymo"; íconos de autopista y copo de nieve tachados. |
-| 7 | Recall | Y también falla: en 2025 corrigió el software de tres mil sesenta y siete autos que podían rebasar autobuses escolares detenidos. | Autobús escolar amarillo detenido con el letrero de alto extendido y luces rojas; el auto sin conductor empieza a rebasarlo y se congela; sello "RECALL · NHTSA 25E-084 · 3,067 autos · dic 2025" y barra de "actualización de software". |
-| 8 | Mundo | Y en el mundo, el tránsito mata a más de un millón de personas cada año. | Globo terráqueo con contador "1.16 millones al año (OMS)". Fondo serio (gris azulado). |
-| 9 | Cierre | Así que tú contra el auto sin nadie: en sus calles, él va ganando. Pero hay que seguir revisando sus números. | **Regreso a la imagen del inicio**: los mismos dos autos en paralelo; el auto sin nadie va adelante, pero lo sigue la lupa con una palomita "por revisar". |
+| 4 | Estudio | En 2024, la reaseguradora Swiss Re revisó sus reclamos: en veinticinco millones de millas, solo dos por lesiones. | `TarjetaEstudio` "2024 · reaseguradora Swiss Re + Waymo · reclamos de seguro · 25.3 millones de millas"; 2 papelitos de reclamo caen en una charola; chip "reclamos por lesiones: 2". |
+| 5 | Esperados | Con humanos esperaban veintiséis: noventa y dos por ciento menos. En daños materiales, ochenta y ocho. | Fondo menta: pila de 26 papelitos (humanos esperados) contra 2 (Waymo) y "−92 %"; luego 78 contra 9 y "−88 % daños materiales". |
+| 6 | Ojo | Ojo: Waymo es coautora del estudio, y sus autos casi no van por autopista ni manejan con nieve. | Tarjeta "autores del estudio": 6 personitas, 2 de Swiss Re (dorado) y 4 de Waymo (cian); luego chip "dónde casi no maneja" con una autopista y un copo de nieve tachados. |
+| 7 | Recall | Y falla: en 2025 corrigió el software de tres mil sesenta y siete autos que podían rebasar autobuses escolares detenidos. | Autobús escolar amarillo detenido con el letrero de alto extendido y luces rojas; el auto sin conductor empieza a rebasarlo y se congela con un "!"; sello "RECALL", chip "NHTSA · 3,067 autos · dic 2025" y barra "actualizar software → corregido ✔". |
+| 8 | Mundo | Y en el mundo, el tránsito mata a más de un millón de personas cada año. | Globo terráqueo que gira; "1.16 millones · muertes al año en el tránsito" y chip "OMS · hoja informativa 2026". Fondo serio (gris azulado). |
+| 9 | Cierre | Así que tú contra el auto sin nadie: en sus calles, él va ganando. Pero hay que seguir revisando sus números. | **Regreso a la imagen del inicio**: la misma calle y los mismos dos autos; el auto sin nadie se adelanta (chip "en sus calles: va adelante") y una lupa lo alcanza ("¿y sus números? a revisar 🔍"). |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua tipo motor suave; arranque de autos (cuadro 0), tic del odómetro, "pins" en el mapa, papelitos que caen, sello del recall con golpe seco y una alarma corta de autobús escolar, latido grave en el dato de la OMS, y el sonido de la palomita al cerrar.
 
-(La tabla "Robert en pantalla" va en la fase B.)
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Pero quién le revisa la tarea…?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.5 | 11_sorprendido | `gancho` | «un auto sin nadie al volante» (cuadro 0) |
+| 2 | 9.0 | 12.2 | 13_senalando_arriba | `izq-alto` | señala el odómetro: «271 millones de millas» |
+| 3 | 13.8 | 17.9 | 06_pensativo_menton | `arriba-der` | «contra el conductor promedio de sus ciudades» |
+| 4 | 18.1 | 22.4 | 07_pensativo_puno | `grande` | «¿Pero quién le revisa la tarea…?» |
+| 5 | 29.2 | 34.3 | 11_sorprendido | `arriba-der` | «noventa y dos por ciento menos» |
+| 6 | 34.9 | 39.8 | 04_bajando_lentes | `izq-alto` | «Ojo: Waymo es coautora del estudio» |
+| 7 | 43.2 | 47.2 | 10_serio_molesto | `arriba-der` | el recall de los autobuses escolares |
+| 8 | 47.8 | 51.4 | 12_perfil_serio | `izq-alto` | «más de un millón de personas cada año» |
+| 9 | 53.2 | 58.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «él va ganando… pero hay que seguir revisando» |
+| — | 58.3 | 61.8 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 39.2 s (+ cierre 3.5 s) · poses distintas 8 (nunca la misma dos veces seguidas) · total 61.8 s
 
 ## Fuentes (cada cifra se abrió en la fuente original el 29 oct 2026)
 
@@ -63,7 +80,8 @@
 - "Sus ciudades, como Phoenix, San Francisco y Los Ángeles": las referencias humanas son de Phoenix, San Francisco, Los Ángeles y Austin; Waymo también opera en Atlanta (8.6 M millas).
 - Swiss Re: "veinticinco millones" redondea 25.3 millones; "solo dos por lesiones" = dos reclamos de lesiones (ambos todavía abiertos al 30 nov 2024, podrían cerrarse sin pago). "Esperaban veintiséis" = referencia de toda la población conductora. 92 % y 88 % son contra esa referencia; contra autos nuevos 2018–2021: 90 % y 86 % (no se dice en la voz). "Revisó sus reclamos": Waymo entregó sus datos de reclamos y Swiss Re los revisó.
 - "Waymo es coautora": 4 de los 6 autores son de Waymo; el propio estudio aclara que es una colaboración sin pago.
-- "Deja fuera autopistas y nieve" se refiere a la comparación de choques del Safety Impact Hub (la referencia humana excluye autopistas y en sus ciudades no hay nieve apreciable).
+- "Sus autos casi no van por autopista ni manejan con nieve": Swiss Re: "Waymo also almost exclusively operated on surface streets"; Hub: la referencia humana excluye autopistas y "the current cities Waymo operates in do not have appreciable snow fall". (Corregido tras la verificación: antes decía que la comparación los dejaba fuera.)
+- Swiss Re es **reaseguradora** (corregido tras la verificación).
 - Recall: el NHTSA lo recibió el 8 dic 2025; el software ya estaba corregido el 17 nov 2025. "Rebasar autobuses escolares detenidos" = con luces rojas encendidas y/o el letrero de alto extendido.
 - Dato de la OMS: 1.16 millones de muertes al año en el tránsito; en la voz "más de un millón".
 - Contexto México (INEGI) no se usa: no se abrió una cifra oficial reciente.

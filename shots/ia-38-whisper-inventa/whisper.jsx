@@ -221,7 +221,7 @@ function Whisper() {
       <Escena T={T} a={K.Pa} b={K.S}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <g opacity={kprog(T, K.Pa + 0.05, K.Pa + 0.35)}><Onda T={T} x={90} y={620} w={900} h={130} n={40} seed={2} tramos={[[0, 0.3], [0.36, 0.7], [0.75, 1]]} cabeza={kprog(T, K.Pa + 0.4, K.S, null)} /></g>
+          <g opacity={kprog(T, K.Pa + 0.3, K.Pa + 0.6)}><Onda T={T} x={90} y={620} w={900} h={130} n={40} seed={2} tramos={[[0, 0.3], [0.36, 0.7], [0.75, 1]]} cabeza={kprog(T, K.Pa + 0.4, K.S, null)} /></g>
           <g opacity={kprog(T, K.Pa + 1.2, K.Pa + 1.5)}><Onda T={T} x={90} y={900} w={900} h={130} n={40} seed={6} tramos={[[0, 0.18], [0.5, 0.62], [0.9, 1]]} cabeza={kprog(T, K.Pa + 1.3, K.S, null)} />
             {[[0.18, 0.5], [0.62, 0.9]].map(([a, b], i) => <g key={i} opacity={kprog(T, K.Pa + 1.8 + i * 0.3, K.Pa + 2.1 + i * 0.3)}>
               <rect x={90 + 900 * a + 10} y={845} width={900 * (b - a) - 20} height={110} rx={18} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={4} strokeDasharray="14 10" />
@@ -308,7 +308,7 @@ function Whisper() {
         [CUES.Gancho + 6.2, CUES.Whisper - 0.1, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Estudio + 3.0, CUES.Cifra - 0.1, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Danos + 3.0, CUES.Pregunta - 0.15, 'avatar_11_sorprendido', 'arriba-der'],
-        [CUES.Pregunta + 0.05, CUES.Pausas + 0.4, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Pausas - 0.1, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Silencio + 1.0, CUES.Otros - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
         [CUES.Otros + 1.8, CUES.Consulta - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.Consulta + 2.5, CUES.Cierre - 0.2, 'avatar_10_serio_molesto', 'izq-alto'],

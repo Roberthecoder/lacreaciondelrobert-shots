@@ -37,14 +37,14 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Por qué i
 | 2 | 6.2 | 10.2 | 04_bajando_lentes | `arriba-der` | «La IA le agregó una receta» |
 | 3 | 17.3 | 20.1 | 13_senalando_arriba | `arriba-der` | señala la tarjeta del estudio y el contador 13,140 |
 | 4 | 27.8 | 30.75 | 11_sorprendido | `arriba-der` | «violencia, enfermedades falsas o un «gracias por ver»» |
-| 5 | 30.95 | 33.7 | 07_pensativo_puno | `grande` | «¿Por qué inventa algo que nunca oyó?» |
+| 5 | 30.95 | 33.2 | 07_pensativo_puno | `grande` | «¿Por qué inventa algo que nunca oyó?» |
 | 6 | 38.6 | 42.6 | 06_pensativo_menton | `izq-alto` | «Las autoras sospechan…» (hipótesis) |
 | 7 | 44.6 | 47.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «Google, Amazon y Microsoft no inventaron nada así» |
 | 8 | 50.0 | 53.5 | 10_serio_molesto | `izq-alto` | «más de treinta mil clínicos» |
 | 9 | 54.2 | 58.3 | 13_senalando_arriba | `arriba-der` | «pide revisarla: eso quizá no lo dijo nadie» |
 | — | 58.4 | 61.9 | 02_apuntando_camara | CierreMarca | cierre |
 
-apariciones 9 · ≈ 31.6 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.9 s
+apariciones 9 · ≈ 31.1 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.9 s
 
 ## Fuentes (abiertas el 29 oct 2026)
 

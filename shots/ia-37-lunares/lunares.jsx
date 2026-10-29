@@ -325,12 +325,12 @@ function Lunares() {
             const x0 = 120 + (i % 3) * 100, y0 = 640 + Math.floor(i / 3) * 40; if (u <= 0 || u >= 1) return null;
             return <rect key={i} x={klerp(x0, 260, u) - 30} y={klerp(y0, 900, u) - 22} width={60 * (1 - u * 0.6)} height={44 * (1 - u * 0.6)} rx={6} fill={tono} stroke={KC.ink} strokeWidth={4} />; })}
           {[[700, klerp(300, 290, em), KC.leaf, 'clara'], [880, klerp(110, 300, em), KC.blue, 'oscura']].map(([bx, h, col, t]) => <g key={t}>
-            <rect x={bx - 60} y={1130 - h} width={120} height={h} rx={10} fill={col} stroke={KC.ink} strokeWidth={7} />
-            <text x={bx} y={1180} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>)}
+            <rect x={bx - 60} y={1075 - h} width={120} height={h} rx={10} fill={col} stroke={KC.ink} strokeWidth={7} />
+            <text x={bx} y={1120} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.A + 0.3} until={K.B - 0.2} texto="reentrenada con pieles diversas" x={540} y={720} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.A + 2.6} until={K.B - 0.2} texto="la brecha se cerró ✔" x={790} y={1260 - 470} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.A + 0.3} until={K.B - 0.2} texto="reentrenada con pieles diversas" x={600} y={690} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.A + 2.6} until={K.B - 0.2} texto="la brecha se cerró ✔" x={790} y={745} tam={28} borde={KC.leaf} />
       {/* 9 · ABCDE */}
       <Escena T={T} a={K.B} b={K.C}>
         <FondoLunares color={KC.yellow} />
@@ -389,7 +389,7 @@ function Lunares() {
         [CUES.Estudio + 3.1, CUES.Resultado - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Resultado + 3.5, CUES.Dermas - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Dermas + 0.5, CUES.Arreglo - 0.2, 'avatar_10_serio_molesto', 'izq-alto'],
-        [CUES.Arreglo + 0.5, CUES.ABCDE - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
+        [CUES.Arreglo + 0.5, CUES.ABCDE - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.ABCDE + 6.6, CUES.Cierre - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_04_bajando_lentes', 'arriba-der']]} />
       <MarcaAgua T={T} tema="ia" num="37" hasta={K.Ou} />
