@@ -71,7 +71,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese crac no es el plástico: es una ampolleta de vidrio que se rompe adentro, y con ella arranca una reacción química que convierte energía química en luz.
 En una barra de luz, el agua oxigenada oxida a un éster oxalato y se forma un intermediario de alta energía que transfiere su energía a un colorante fluorescente: es la quimioluminiscencia peroxioxalato. La temperatura cambia la velocidad: en frío brilla menos pero dura más; en caliente brilla más y se agota antes.
-Lo interesante es que la identidad de ese intermediario se discutió durante años: en 2021, un equipo de la Universidad de São Paulo (da Silva et al., J Org Chem) presentó pruebas de que es la 1,2-dioxetanodiona. Y la misma química se usa hoy en ensayos de laboratorio sin necesidad de excitar con luz.
+Lo interesante es que la identidad de ese intermediario seguía sin confirmarse: en 2021, un equipo de la Universidad de São Paulo (da Silva et al., J Org Chem) presentó pruebas de que es la 1,2-dioxetanodiona.
 Un dato de salud pública: el centro toxicológico de Nueva Gales del Sur (Cairns et al., Med J Aust, 2018) contó 2,918 exposiciones en 4 años, 94 % en niños, con pico en diciembre y complicaciones muy raras.
 ¿Qué otro objeto cotidiano esconde una reacción química que casi nadie conoce?
 Shot Químico #33 · La Creación del Robert
