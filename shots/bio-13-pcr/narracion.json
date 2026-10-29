@@ -9,7 +9,7 @@
     },
     {
       "escena": "Tu",
-      "texto": "Eso hizo tu prueba de COVID con un pedacito del virus: copiarlo hasta que brillara."
+      "texto": "Eso hace la prueba PCR de COVID: convierte un pedacito del virus en ADN y lo copia hasta que brilla."
     },
     {
       "escena": "Separar",
@@ -49,7 +49,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Por eso, en un tubito, una sola molécula se vuelve más de mil millones."
+      "texto": "Por eso, en un tubito, una sola molécula se puede volver más de mil millones."
     }
   ]
 }

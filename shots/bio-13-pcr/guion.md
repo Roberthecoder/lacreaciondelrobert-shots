@@ -2,16 +2,20 @@
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #13 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N3 "Capítulos y medidores" (`Capitulo` 1-2-3, `Medidor` = termómetro en vivo, contador de copias con `NumeroGigante`), con un poco de N1 (los capítulos son el viaje macro → micro).
-- **Gancho (de los 7 aprobados):** #4 "Un número que contradice": una sola molécula → más de mil millones de copias en unas horas. Conecta con "tú" en la frase 2 (tu prueba de COVID).
+- **Gancho (de los 7 aprobados):** #4 "Un número que contradice": una sola molécula → más de mil millones de copias en unas horas. Conecta con lo cotidiano en la frase 2 (la prueba PCR de COVID).
 - **Duración:** narrada 61.5 s (voz ~58 s + cierre 3.5 s).
 - **Viaje:** macro (el tubito de PCR en la mano y el termociclador) → micro (la doble hélice que se abre, los iniciadores, la enzima copiando; la bacteria de Yellowstone al microscopio) → el mismo tubito, ahora brillando lleno de copias.
 
-## Versión narrada (924 caracteres, ~175 palabras, ~58 s de voz)
+## Corrección del 29 oct 2026 (verificación independiente, ver `verificacion.md`)
+- Línea 1: "tu prueba de COVID" daba por hecho que la prueba del espectador fue PCR (muchas fueron de antígeno) y el virus es de ARN: ahora dice "la prueba PCR de COVID: convierte un pedacito del virus en ADN y lo copia hasta que brilla".
+- Cierre: "se vuelve" → "se puede volver" (mil millones es el máximo teórico).
+
+## Versión narrada (947 caracteres, ~181 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Una sola molécula de ADN se puede volver más de mil millones de copias en unas horas. | Fondo cian. **Cuadro 0:** una mano mete un tubito de PCR al termociclador (la tapa baja). Contador gigante que arranca en **1** y salta a **1,073,741,824**, chip "en teoría". |
-| 1 | Tu | Eso hizo tu prueba de COVID con un pedacito del virus: copiarlo hasta que brillara. | Un hisopo entra a un tubo; del virus (esfera con espículas) sale un pedacito de su material genético; el tubito empieza a brillar verde, cada vez más (curva de fluorescencia que sube). |
+| 1 | Tu | Eso hace la prueba PCR de COVID: convierte un pedacito del virus en ADN y lo copia hasta que brilla. | Un hisopo entra a un tubo; del virus (esfera con espículas) sale un pedacito de su material genético; el tubito empieza a brillar verde, cada vez más (curva de fluorescencia que sube). |
 | 2 | Separar | Capítulo uno: calientas a 95 grados y la doble hélice se abre en dos. | `Capitulo` "1 · SEPARAR". **Termómetro** (`Medidor`) sube a 95 °C, fondo naranja-rojo. `Lupa` "POR DENTRO · el tubito": la doble hélice se desenrolla y queda en dos hebras. |
 | 3 | Pegar | Capítulo dos: bajas a unos 55 y dos pedacitos guía se pegan a los extremos. | `Capitulo` "2 · PEGAR". Termómetro baja a ~55 °C, fondo azul. Dos iniciadores cortos (flechas de color) se pegan, uno en cada hebra, en los extremos del tramo. Etiqueta "iniciadores". |
 | 4 | Copiar | Capítulo tres: subes a 72 y una enzima copia cada hebra, letra por letra. | `Capitulo` "3 · COPIAR". Termómetro sube a 72 °C, fondo amarillo. La enzima (Taq, una "pinza" redondeada) corre sobre la hebra y va poniendo letras A-T-G-C hasta completar dos dobles hélices. |
@@ -21,7 +25,7 @@
 | 8 | Estudio | En 1969, Thomas Brock y Hudson Freeze describieron una bacteria de las aguas termales de Yellowstone que crece mejor a 70 grados. | `TarjetaEstudio` "1969 · Brock y Freeze · *J. Bacteriol.*". Manantial caliente con vapor (Yellowstone, EE. UU.); `Lupa` "AL MICROSCOPIO · *Thermus aquaticus*": bastoncitos (bacilos) sin esporas, algunos en filamentos largos. Termómetro en 70 °C. Etiqueta *Thermus aquaticus*. |
 | 9 | Taq | De ella sale la Taq, la enzima que sí aguanta el calor. | De la bacteria sale la enzima Taq (con su nombre) y entra al tubito; el termómetro sube a 95 y la Taq sigue entera. Chip "desde 1988 en la PCR". |
 | 10 | Mullis | A Kary Mullis se le ocurrió la PCR manejando de noche en 1983, y le dio el Nobel. | Carretera de noche en las montañas de California, un coche con faros; luego medalla "Nobel de Química 1993". Robert grande (presentador). |
-| 11 | Cierre | Por eso, en un tubito, una sola molécula se vuelve más de mil millones. | **Regreso al tubito del inicio**, ahora brillando, con el contador en "más de 1,000,000,000". |
+| 11 | Cierre | Por eso, en un tubito, una sola molécula se puede volver más de mil millones. | **Regreso al tubito del inicio**, ahora brillando, con el contador en "más de 1,000,000,000". |
 | — | Outro | (sin voz) | `CierreMarca tema="bioquimica"` con Robert. |
 
 **Notas de rigor para la animación**
@@ -37,7 +41,7 @@
 - **Efectos en el mismo cuadro:** la tapa del termociclador (clac), la hélice que se abre (cremallera), los iniciadores que se pegan (dos clics), cada letra que pone la enzima (tic suave), el burbujeo del manantial, la enzima vieja que se deshace (crujido), el sello del Nobel (golpe).
 
 ## Descripción (para publicar)
-"Una sola molécula de ADN se puede volver más de mil millones de copias en unas horas. 🧬🔥 Eso es la **PCR** (reacción en cadena de la polimerasa), la técnica detrás de la prueba de COVID que te hiciste.
+"Una sola molécula de ADN se puede volver más de mil millones de copias en unas horas. 🧬🔥 Eso es la **PCR** (reacción en cadena de la polimerasa), la técnica detrás de la prueba PCR de COVID.
 
 Funciona en **tres capítulos** que se repiten: **1) separar:** se calienta a unos 94–98 °C y la doble hélice se abre en dos hebras; **2) pegar:** se enfría (típicamente unos 52–58 °C) y dos pedacitos guía, los **iniciadores**, se pegan a los extremos del tramo que quieres copiar; **3) copiar:** se sube a unos 72 °C y una enzima, la **ADN polimerasa**, completa cada hebra. Cada ciclo duplica el número de copias: después de 30 ciclos, en teoría, son 2³⁰ = 1,073,741,824.
 
