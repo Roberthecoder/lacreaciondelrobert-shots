@@ -436,7 +436,7 @@ function FlechaG({ x0, y0, x1, y1, p = 1, color = KC.ink }) {
 // Primera aparición (lado gancho): igual que Sticker pero sale con fundido, sin bajar por encima del subtítulo.
 function StickerFundido({ T, src, at, until, lado = 'gancho' }) {
   if (T < at || T > until + 0.4) return null;
-  const L = KLADOS[lado], i = kprog(T, at, at + 0.5, kEase.rebote), o = 1 - kprog(T, until, until + 0.35, kEase.suave);
+  const L = { left:600, top:230, width:460 }, i = kprog(T, at, at + 0.5, kEase.rebote), o = 1 - kprog(T, until, until + 0.35, kEase.suave);
   return <img src={src} alt="" style={{ position:'absolute', left:L.left, top:L.top, width:L.width, zIndex:46, transformOrigin:'50% 100%', opacity:o,
     transform:`translateY(${(1 - i) * 800}px) scale(${1 - 0.04 * (1 - o)})`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />;
 }
