@@ -1,10 +1,10 @@
 # Shot IA #13 · Estudiar con ChatGPT: mejor en la tarea, peor en el examen
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #13 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, **pendiente de verificación independiente**. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (3 ⚠️ corregidas), animación, Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert**.
 - **Formato:** N2 "El número" (+48 % en la práctica contra −17 % en el examen) + consejo útil (pide pistas, no respuestas).
 - **Gancho (de los 7):** #4 "Un número que contradice": la IA sube 48 % la práctica… y baja 17 % el examen.
-- **Duración:** voz 947 caracteres / 172 palabras (≈ 57.8 s) + cierre 3.5 s → **≈ 61.3 s** en la base (estimar-escenas).
+- **Duración:** voz 942 caracteres (≈ 57.8 s) + cierre 3.5 s → **61.3 s** en la base (estimar-escenas).
 - **Público:** estudiantes de secundaria/prepa/universidad. Le habla a "tú" en el consejo final.
 - **Postura de la serie:** crítica con datos y consejo útil. El experimento es de **2023** (GPT-4 de entonces) y se dice; no se afirma nada de las versiones de hoy.
 
@@ -12,14 +12,14 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Con ChatGPT, unos estudiantes sacaron cuarenta y ocho por ciento más en la práctica… y diecisiete por ciento menos en el examen. | Fondo amarillo; desde el cuadro 0 una laptop con un chat escribe la respuesta en una hoja de ejercicios: palomitas verdes y número gigante **"+48 %"** que sube. Corte con fundido a una hoja de examen: el número se voltea a **"−17 %"** en rojo. |
-| 1 | Mito | Sentían que aprendían, pero terminar la tarea no es aprender. | `MitoTachado`: "tarea terminada = aprendí" → tachado. |
-| 2 | Estudio | Lo midieron en una prepa de Turquía a finales de 2023, con casi mil estudiantes de matemáticas. | `TarjetaEstudio`: "otoño 2023 · prepa en Turquía · ~1,000 estudiantes · Bastani, Bastani, Sungu y col. · PNAS 2025 (U. de Pensilvania)". Mapa chiquito de Turquía. |
-| 3 | Grupos | Unos practicaron con un ChatGPT normal, otros con un tutor de IA y otros solo con libro y apuntes. | Tres salones (columnas): "GPT Base" (laptop con chat), "GPT Tutor" (laptop con foco 💡 de pista), "Sin IA" (libro y cuaderno). |
-| 4 | Examen | Luego vino el examen sin nada: ni compu, ni apuntes. / Los del ChatGPT normal sacaron diecisiete por ciento menos que los del libro. | Las laptops y apuntes se cierran y desaparecen; queda una hoja y un lápiz. Barras del examen: "Sin IA" contra "GPT Base −17 %" (barra más baja en rojo). "Ahí salió el número del principio." |
+| 0 | Gancho | Con un chat tipo ChatGPT, unos estudiantes sacaron cuarenta y ocho por ciento más en la práctica… y diecisiete por ciento menos en el examen. | Fondo amarillo; desde el cuadro 0 una laptop con un chat escribe la respuesta en una hoja de ejercicios: palomitas verdes y número gigante **"+48 %"** que sube. Corte con fundido a una hoja de examen: el número se voltea a **"−17 %"** en rojo. |
+| 1 | Mito | Pero terminar la tarea no es aprender. | `MitoTachado`: "tarea terminada = aprendí" → tachado. |
+| 2 | Estudio | Lo midieron en una prepa de Turquía en el otoño de 2023, con casi mil estudiantes de matemáticas. | `TarjetaEstudio`: "otoño 2023 · prepa en Turquía · ~1,000 estudiantes · Bastani, Bastani, Sungu y col. · PNAS 2025 (U. de Pensilvania)". Mapa chiquito de Turquía. |
+| 3 | Grupos | Unos practicaron con un chat tipo ChatGPT, otros con un tutor de IA y otros solo con libro y apuntes. | Tres salones (columnas): "GPT Base" (laptop con chat), "GPT Tutor" (laptop con foco 💡 de pista), "Sin IA" (libro y cuaderno). |
+| 4 | Examen | Luego vino el examen sin nada: ni compu, ni apuntes. / Los del chat tipo ChatGPT sacaron diecisiete por ciento menos que los del libro. | Las laptops y apuntes se cierran y desaparecen; queda una hoja y un lápiz. Barras del examen: "Sin IA" contra "GPT Base −17 %" (barra más baja en rojo). "Ahí salió el número del principio." |
 | 5 | Pregunta | ¿Cómo te quita puntos algo que te ayudó? | **Re-gancho.** "?" gigante sobre la laptop; Robert grande. |
 | 6 | Muleta | Revisaron los chats: la gran mayoría solo le pedía la respuesta y la copiaba. Lo usaban como muleta. | `CelularChat`/laptop con burbujas: "¿Cuál es la respuesta?" repetido (el mensaje más común en GPT Base); un estudiante copia; aparece una muleta dibujada apoyada en el cuaderno. |
-| 7 | Errores | Y ese ChatGPT de 2023 acertaba solo la mitad de las veces. / Lo peor: ellos no sentían haber aprendido menos. | Medidor "respuestas correctas de GPT Base: 51 %" (moneda que gira: cara/cruz). Luego un termómetro de "cuánto creían que aprendieron" que se queda arriba mientras la barra real baja. |
+| 7 | Errores | Y ese chat de 2023 acertaba solo la mitad de las veces. / Lo peor: ellos no sentían haber aprendido menos. | Medidor "respuestas correctas de GPT Base: 51 %" (moneda que gira: cara/cruz). Luego un termómetro de "cuánto creían que aprendieron" que se queda arriba mientras la barra real baja. |
 | 8 | Tutor | El tutor tenía una regla: dar pistas, no respuestas. Con él, el daño en el examen casi desapareció. | El robotito tutor levanta un foco 💡 "pista" y tapa la respuesta; barra del examen "GPT Tutor ≈ Sin IA" (sin diferencia). |
 | 9 | Cierre | Así que cuando estudies con IA, pídele pistas, no la respuesta: el examen lo harás tú solo. | **Regreso a la imagen del inicio**: la misma laptop y hoja; el chat ahora escribe "dame una pista" y el lápiz lo mueve el estudiante; el "−17 %" se tacha y aparece "pistas, no respuestas ✔". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
@@ -50,8 +50,8 @@
 ## Notas
 - "Cuarenta y ocho por ciento más en la práctica" = mejora de GPT Base frente al grupo sin IA en los ejercicios asistidos (0.137 sobre una media de 0.284). "Diecisiete por ciento menos en el examen" = GPT Base frente al grupo sin IA (−0.054 sobre 0.321). Son mejoras/caídas **relativas al grupo sin IA**, no puntos.
 - El gancho dice "unos estudiantes" (los del grupo GPT Base), no "todos los que usan ChatGPT".
-- "ChatGPT normal" = GPT Base: interfaz tipo ChatGPT sobre GPT-4, hecha por los investigadores (no la app de OpenAI tal cual). En pantalla se rotula "GPT Base (tipo ChatGPT)".
-- "A finales de 2023" = semestre de otoño 2023–2024. "Prepa" = 9.º, 10.º y 11.º grado (≈ 3.º de secundaria a 2.º de prepa en México); se dice "prepa" porque el artículo dice "high school". ⚠️ para el verificador.
+- "Chat tipo ChatGPT" = GPT Base: interfaz tipo ChatGPT sobre GPT-4, hecha por los investigadores (no la app de OpenAI tal cual). En pantalla se rotula "GPT Base (tipo ChatGPT)".
+- "En el otoño de 2023" = semestre de otoño 2023–2024 ("Fall 2023"). "Prepa" = 9.º, 10.º y 11.º grado (≈ 3.º de secundaria a 2.º de prepa en México); se dice "prepa" porque el artículo dice "high school".
 - "Casi mil" = "nearly 1,000 students".
 - "Acertaba solo la mitad" = 51 % de respuestas correctas al preguntarle "What is the answer?" 10 veces por cada uno de los 57 ejercicios.
 - "Casi desapareció" = "essentially eradicated" / "largely mitigated"; con el tutor **no** mejoraron en el examen (se aclara en publicacion.md).

@@ -39,7 +39,7 @@
    > "A scammer could use AI to clone the voice of your loved one. All he needs is a short audio clip of your family member's voice — which he could get from content posted online…"
    > "Don't trust the voice. Call the person who supposedly contacted you and verify the story. Use a phone number you know is theirs."
    > "If the caller says to wire money, send cryptocurrency, or buy gift cards and give them the card numbers and PINs…" (señales de estafa)
-   > El ejemplo del aviso: el nieto dice estar en problemas (chocó el coche / lo arrestaron).
+   > "He says he's in deep trouble — he wrecked the car and landed in jail." (ejemplo del aviso)
 4. FBI / IC3. Public Service Announcement I-120324-PSA, 3 de diciembre de **2024**. https://www.ic3.gov/PSA/2024/PSA241203
    > "Criminals generate short audio clips containing a loved one's voice to impersonate a close relative in a crisis situation, asking for immediate financial assistance or demanding a ransom."
    > "Create a secret word or phrase with your family to verify their identity."
