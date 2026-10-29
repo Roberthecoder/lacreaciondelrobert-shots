@@ -284,7 +284,7 @@ function PlasticoShot() {
       <Etq T={T} at={K.H + 3.0} until={K.E - 0.3} x={60} y={550} texto="sus esporas (conidios)" tam={30} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="2011" quien="Yale · 59 hongos probados" revista="Russell et al., Appl. Environ. Microbiol." y={560} x={460} />
       <Chip T={T} at={K.Z + 0.1} until={K.O - 0.3} texto="AL MICROSCOPIO · esquemático" x={420} y={470} tam={32} mono borde={KC.cyan} />
-      <Etq T={T} at={K.Z + 0.5} until={K.O - 0.3} x={560} y={790} texto="poliuretano" tam={32} color={PL.pur} />
+      <Etq T={T} at={K.Z + 0.5} until={K.O - 0.3} x={600} y={730} texto="poliuretano" tam={32} color={PL.pur} />
       <Etq T={T} at={K.Z + 0.8} until={K.O - 0.3} x={60} y={1070} texto="enzima (serina hidrolasa)" tam={30} color={KC.yellow} />
       <Etq T={T} at={K.Z + 0.3} until={K.O - 0.3} x={60} y={790} texto="hifa" tam={30} color={FK.hifa} />
       <Chip T={T} at={K.O + 0.2} until={K.P - 0.3} texto="con O₂" x={260} y={540} tam={36} borde={KC.cyan} />
