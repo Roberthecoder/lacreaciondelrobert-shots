@@ -1,30 +1,32 @@
 # Shot Biotecnológico #21 · La sangre azul que revisa tus vacunas
 
+**Verificación de hechos:** ver `verificacion.md` (14 ✅ y 3 ⚠️ corregidas el 29 oct 2026).
+
 - **Serie:** Shot Biotecnológico · **Numeración:** #21 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (la `Lupa` sobre el frasco de sangre azul: amebocitos y coágulo) + N5 "El experimento" (se recrea la prueba LAL en un tubo: la gota de endotoxina y el gel que se forma).
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el frasco de sangre azul que se ve en pantalla ("Esa sangre azul no es de otro planeta: es la que revisa que tus vacunas estén limpias").
 - **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s). Solo narrado (revisión sin voz la hace GitHub).
 - **Viaje:** macro (el frasco de sangre azul junto a una vacuna) → el cangrejo en la playa → micro (fondo oscuro: amebocitos, endotoxinas, coágulo) → el laboratorio (sangrado y regreso al mar) → micro (el gen del factor C fabricado en células) → **el mismo frasco del inicio y la vacuna**, ahora con un tubo de rFC al lado.
 
-## Versión narrada (960 caracteres, ~181 palabras contando "15 %" y cifras, ~58 s de voz)
+## Versión narrada (955 caracteres, ~176 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa sangre azul no es de otro planeta: es la que revisa que tus vacunas estén limpias. | Fondo cian. **Desde el cuadro 0** una gota azul cae dentro de un frasco y lo llena de azul brillante; al lado, una vacuna con su jeringa. Un planeta caricatura con "?" se tacha (`MitoTachado` "¿de otro planeta?"). |
-| 1 | Animal | Es del cangrejo herradura, que no es cangrejo: es pariente de las arañas. | Fondo amarillo arena: el cangrejo herradura (*Limulus polyphemus*) camina por la playa (caparazón en forma de herradura, cola larga = telson). Aparecen a su lado una araña y un escorpión con una flecha "parientes"; un cangrejo común tachado. Etiqueta *Limulus polyphemus*. |
-| 2 | Azul | Lleva cobre en vez de hierro, y con oxígeno se ve azul. | Dos gotas: la tuya (roja, chip "Fe · hierro") y la del cangrejo (incolora → azul al entrar burbujas de O₂, chip "Cu · cobre"). Etiqueta "hemocianina". |
-| 3 | Endotoxina | La prueba busca endotoxinas: restos de la pared de ciertas bacterias. | **Lupa** "AL MICROSCOPIO · BACTERIA" (fondo oscuro): una bacteria en bastón con su pared externa; de la pared se desprenden pedacitos (endotoxinas = lipopolisacárido, LPS). Barra de escala ~2 µm. |
-| 4 | Peligro | Si entran a tu sangre en una inyección, dan fiebre o un choque grave. | Una jeringa sucia con los pedacitos; un termómetro (`Medidor`) sube a rojo junto a una silueta con fiebre. Chip "fiebre · choque". |
-| 5 | Coagulo | Sus células de defensa, los amebocitos, las detectan y forman un coágulo. | Fondo oscuro: amebocitos (células redondeadas llenas de gránulos) tocan una endotoxina, sueltan sus gránulos y se forma una red de gel que atrapa todo. Etiqueta "amebocito". |
-| 6 | Estudio | Eso lo descubrieron Frederik Bang y Jack Levin en Woods Hole, Estados Unidos. | `TarjetaEstudio` "Woods Hole, Massachusetts · Bang (años 50) y Levin (años 60)": un laboratorio junto al mar; un tubo de sangre azul se vuelve gel. Mapa pequeño con el punto en la costa este de EE. UU. |
-| 7 | Estudio | En 1977, la FDA aceptó su prueba, la LAL, en lugar de la de conejos. | **Experimento (N5):** un tubo de ensayo; cae una gota con endotoxina; `Cronometro`; se voltea el tubo y el gel no se cae (prueba positiva). Un conejito con termómetro se va saltando (chip "antes: prueba con conejos"). Sello "1977 · FDA". |
-| 8 | Pregunta | ¿Y cómo le sacan la sangre? | **Re-gancho.** El cangrejo frente a una aguja grande con signo de pregunta. |
-| 9 | Sangrado | Les sacan cerca de un tercio de su sangre y los regresan al mar. | Laboratorio: cangrejos doblados en su bisagra, una aguja junto a la bisagra y un frasco que se llena; `Medidor` "≈ 30 % de su sangre". Luego una caja los lleva de vuelta al agua. |
-| 10 | Mortalidad | Pero se calcula que el 15 % de los que regresan se muere. | Fila de 20 cangrejos regresando al mar: 3 se quedan grises (15 %). `NumeroGigante` "≈ 15 %" con chip "estimación ASMFC". |
-| 11 | FactorC | La salida: copiar el gen del factor C, la pieza que arranca el coágulo, y fabricarla sin cangrejos. | Fondo oscuro: la cascada del coágulo como fila de fichas de dominó; la primera se ilumina: "factor C". Un tramo de ADN se copia y entra a células de cultivo en un matraz que sueltan la proteína (rFC). Chip "factor C recombinante (rFC)". |
-| 12 | Farmacopea | Europa acepta esa prueba desde 2021, y Estados Unidos desde 2025. | Dos libros gruesos (farmacopeas) con sellos: "Farmacopea Europea · 2.6.32 · 2021" y "USP · capítulo 86 · 2025". |
-| 13 | Cierre | Esa sangre azul cuida tus vacunas, y cada vez más, sin cangrejos. | **Regreso a la imagen del inicio:** el frasco azul y la vacuna; ahora al lado un tubo de rFC, y el cangrejo vuelve caminando al mar. |
-| — | Outro | (sin voz) | `CierreMarca tema="bioquimica"` con Robert. |
+| 0 | Gancho | Esa sangre azul no es de otro planeta: revisa que tus vacunas estén limpias. | Fondo cian. **Desde el cuadro 0** caen gotas azules y llenan un frasco; al lado, un vial de vacuna con su jeringa. Un planeta con "?" y `MitoTachado` "¿de otro planeta?" que se tacha. Chip "sangre de cangrejo herradura". |
+| 1 | Animal | Es del cangrejo herradura, que no es cangrejo: es pariente de arañas. | Fondo amarillo con arena: el cangrejo herradura (vista de arriba: prosoma en herradura con ojos compuestos laterales, opistosoma con espinas, telson largo) entra caminando. `MitoTachado` "¿cangrejo?". Aparecen una araña y un escorpión; chip "parientes: arañas y escorpiones"; etiqueta *Limulus polyphemus*; barra de escala. |
+| 2 | Azul | Lleva cobre, no hierro, y con oxígeno se ve azul. | Fondo lila: dos gotas, "tu sangre" (roja, Fe) y "la del cangrejo" (incolora → azul cuando le entran burbujas de O₂, Cu). Chip "hemocianina: cobre → azul". |
+| 3 | Endotoxina | La prueba busca endotoxinas: restos de la pared de ciertas bacterias. | El vial de vacuna; una `Lupa` "AL MICROSCOPIO · BACTERIA" se abre desde el líquido: bacteria en bastón con endotoxinas (lipopolisacárido) en su pared, que se desprenden. Barra de escala en µm/nm. Chip "endotoxina = restos de la pared". |
+| 4 | Peligro | Si entran a tu sangre en una inyección, dan fiebre o choque grave. | Fondo rosa: jeringa con endotoxinas; una persona se pone roja y suda; termómetro que sube. Chip "fiebre · choque". |
+| 5 | Coagulo | Sus células de defensa, los amebocitos, las detectan y forman un coágulo. | Fondo oscuro, chip "AL MICROSCOPIO · AMEBOCITOS": las endotoxinas llegan a los amebocitos (células redondeadas con gránulos), sueltan sus gránulos y crece una red de gel. Chip "¡coágulo!". |
+| 6 | Estudio | Eso lo descubrieron Frederik Bang y Jack Levin en Woods Hole, Estados Unidos. | Laboratorio junto al mar (casita, olas, un cangrejo en el agua). `TarjetaEstudio` "WOODS HOLE · Bang (años 50) y Levin (años 60) · Massachusetts, EE. UU.". |
+| 7 | Estudio | En 1977, la FDA aceptó la prueba LAL como alternativa a la de conejos. | **Experimento (N5):** fondo menta, cae una gota de endotoxina en un tubo; sello "1977 · FDA"; un conejito se va saltando (chip "antes: prueba con conejos"); el líquido se vuelve gel, el tubo se voltea y el gel no se cae (chip "gel = hay endotoxina"). |
+| 8 | Pregunta | ¿Y cómo le sacan la sangre? | **Re-gancho.** Fondo rosa, el cangrejo y un "?" gigante que se mece; Robert grande, pensativo. |
+| 9 | Sangrado | Les sacan cerca de un tercio de su sangre y los regresan al mar. | Aguja en la bisagra, la sangre azul viaja por un tubo y llena un frasco; `Medidor` "sangre extraída" hasta 30 %. Sube el mar y el cangrejo regresa al agua (chip "de regreso al mar"). |
+| 10 | Mortalidad | Pero en 2023 se calculaba que el 15 % de los que regresan muere. | 20 cangrejitos camino al mar: 3 se quedan grises y quietos. `NumeroGigante` "15 %" y chip "estimación ASMFC, 2023". |
+| 11 | FactorC | La salida: copiar el gen del factor C, que arranca el coágulo, y fabricarlo sin cangrejos. | Fondo oscuro: la cascada del coágulo como fichas de dominó; la primera (dorada, "C") tumba a las demás. En una doble hélice se ilumina el gen del factor C, viaja a un matraz con células y salen proteínas "C". Chip "factor C recombinante (rFC)". |
+| 12 | Farmacopea | La farmacopea europea la incluye desde 2020, y la de Estados Unidos desde 2025. | Fondo amarillo: dos libros, "Ph. Eur. cap. 2.6.32" y "USP cap. <86>"; sellos "2020 · Europa" y "2025 · EE. UU.". Chip "las farmacopeas: los libros oficiales". |
+| 13 | Cierre | Esa sangre azul cuida tus vacunas, y ya se puede hacer sin cangrejos. | **Regreso a la imagen del inicio:** el frasco azul y la vacuna; aparece un tubo "rFC" y un cangrejito se va caminando. Chip "LAL con sangre · rFC sin cangrejos". |
+| — | Outro | (sin voz) | `CierreMarca tema="bioquimica"` con Robert señalando. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - Cama grave continua, sin golpe marcado, siempre debajo de la voz; un poco más "marina" (filtro ondulante lento) en la playa y en el regreso al mar.
@@ -37,15 +39,32 @@ Es la sangre del **cangrejo herradura** (*Limulus polyphemus*), que en realidad 
 
 ¿Para qué sirve? Para encontrar **endotoxinas**: restos de la membrana externa de las bacterias gram negativas. Si llegan a tu sangre en una inyección pueden causar **fiebre o un choque tóxico** que pone en riesgo la vida. Las células de defensa del cangrejo, los **amebocitos**, son extremadamente sensibles a esas moléculas: al tocarlas sueltan su contenido y la sangre se cuaja en un gel.
 
-Frederik **Bang** notó en **Woods Hole** (Massachusetts) que ciertas bacterias cuajaban la sangre de estos animales, y años después, con Jack **Levin**, demostró que la causa era la endotoxina y que el material del coágulo estaba en los amebocitos. Del extracto de esas células nació la prueba **LAL** (lisado de amebocitos de *Limulus*). En **1977** la FDA estableció cómo licenciarla como alternativa a la prueba con conejos, en la que se inyectaba la muestra a un conejo para ver si le daba fiebre.
+Frederik **Bang** notó en **Woods Hole** (Massachusetts) que ciertas bacterias cuajaban la sangre de estos animales, y años después, con Jack **Levin**, demostró que la causa era la endotoxina y que el material del coágulo estaba en los amebocitos. Del extracto de esas células nació la prueba **LAL** (lisado de amebocitos de *Limulus*). En **1977** la FDA anunció su licencia como alternativa a la prueba con conejos (Federal Register, 4 nov 1977), en la que se inyectaba la muestra a un conejo para ver si le daba fiebre.
 
-Para hacerla se pesca a los cangrejos, se les extrae alrededor de **30 % de su sangre** y se les regresa al mar. La Comisión de Pesquerías Marinas de los Estados del Atlántico (ASMFC) **estima que muere 15 %** de los cangrejos que se procesan y se liberan vivos; algunos estudios dan cifras más altas.
+Para hacerla se pesca a los cangrejos, se les extrae alrededor de **30 % de su sangre** y se les regresa al mar. En 2023, la Comisión de Pesquerías Marinas de los Estados del Atlántico (ASMFC) **estimaba que muere 15 %** de los cangrejos que se procesan y se liberan vivos; algunos estudios dan cifras más altas.
 
-La alternativa biotecnológica: en **1997**, investigadores de la Universidad Nacional de Singapur clonaron el gen del **factor C**, la primera proteína de la cascada del coágulo, y lo produjeron como proteína recombinante (**rFC**), sin sangrar cangrejos. La **Farmacopea Europea** lo aceptó con su capítulo 2.6.32 (vigente en **2021**) y la **Farmacopea de Estados Unidos** con su capítulo <86> (oficial en **mayo de 2025**). La prueba LAL se sigue usando.
+La alternativa biotecnológica: en **1997**, investigadores de la Universidad Nacional de Singapur clonaron el gen del **factor C**, la primera proteína de la cascada del coágulo, y lo produjeron como proteína recombinante (**rFC**), sin sangrar cangrejos. La **Farmacopea Europea** lo incluyó con su capítulo 2.6.32 (publicado en **julio de 2020**) y la **Farmacopea de Estados Unidos** con su capítulo <86> (oficial en **mayo de 2025**). La prueba LAL se sigue usando.
 
 El dibujo es esquemático. **¿Sabías que tus vacunas pasaban por un cangrejo? ¿Habías visto uno en la playa? 👇**
 
 Soy Robert, de La Creación del Robert 🌱"
+
+## Robert en pantalla
+
+Narrada: **8 apariciones, 27.5 s en pantalla** (de 61.5 s), 8 poses distintas; una grande (`grande`) en el re-gancho. Tiempos del `Shot Cangrejo base narrada.dc.html`.
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.3 | sorprendido (11) | gancho | «Esa sangre azul no es de otro planeta» |
+| 5.65 – 8.7 | señalando (13) | izq-alto | «que no es cangrejo: es pariente de arañas» |
+| 16.6 – 20.0 | serio (10) | arriba-der | «dan fiebre o choque grave» |
+| 25.25 – 29.15 | bajando lentes (04) | arriba-der | Bang y Levin en Woods Hole |
+| 33.8 – 36.65 | pensativo (06) | **grande** | re-gancho: «¿Y cómo le sacan la sangre?» |
+| 39.9 – 43.3 | perfil serio (12) | arriba-der | «el 15 % de los que regresan muere» |
+| 45.95 – 48.75 | sonriendo (05) | izq-alto | el factor C fabricado sin cangrejos |
+| 54.05 – 57.9 | apuntando a cámara (02) | gancho | cierre: «ya se puede sin cangrejos» |
+
+Total: 4.3 + 3.05 + 3.4 + 3.9 + 2.85 + 3.4 + 2.8 + 3.85 = **27.5 s**. Tarjeta de cierre con Robert señalando (13) junto al logo (`CierreMarca robert=`).
 
 ## Fuentes (frases textuales y año del dato)
 - **No es cangrejo, pariente de arañas y escorpiones; hemocianina; amebocitos; cómo se hace el lisado:** Krisfalusi-Gannon J. et al., "The Role of Horseshoe Crabs in the Biomedical Industry and Recent Trends Impacting Species Sustainability", *Frontiers in Marine Science* 5:185 (2018). https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2018.00185/full
@@ -64,6 +83,7 @@ Soy Robert, de La Creación del Robert 🌱"
   - «In 1997, scientists at the National University of Singapore … They were the first to clone the DNA of a factor C molecule and synthesized rFC»
   - «The rFC assay has been commercially available since 2003»
   - (No se usa su frase «The 450 million-year-old horseshoe crab»: el fósil más antiguo conocido del grupo, *Lunataspis aurora*, es de ~445 millones de años y no es *Limulus*.)
+- **FDA 1977 (fuente primaria):** *Federal Register* vol. 42, n.º 213, 4 de noviembre de 1977, págs. 57749–57750, "Licensing of Limulus Amebocyte Lysate: Use as an Alternative for Rabbit Pyrogen Test". https://www.govinfo.gov/content/pkg/FR-1977-11-04/pdf/FR-1977-11-04.pdf — «This notice announces the licensing of Limulus Amebocyte Lysate (LAL) as an alternative for the rabbit test for detecting pyrogens in biological products and medical devices. DATE: Effective November 4, 1977.»; «if they contain bacterial endotoxins, can produce fever, shock, and death».
 - **Bang, Levin y Woods Hole; FDA 1977:** Novitsky T.J., "LAL: Discovery and Commercial Development", *LAL Update* 14(2), Associates of Cape Cod, junio de 1996. https://www.acciusa.com/pdfs/newsletter/LAL_Vol.14No.2.pdf
   - «During a summer at Woods Hole, while attempting to observe phagocytosis after injecting various bacteria into Limulus, Bang found the presence of Vibrio species caused intravascular coagulation in his animals. Years later, joined by another Hopkins researcher, Dr. Jack Levin, Bang was able to demonstrate the cause of the clotting phenomenon (bacterial endotoxin) and the source of the clotting material (Limulus amebocyte).»
   - «ACC was the first company to be licensed by the FDA (corresponding to the Federal Register notice setting the conditions for replacing the Pyrogen test with LAL in 1977)»; referencia: «Federal Register. 1977. Licensing of limulus amebocyte lysate: use as an alternative for rabbit pyrogen test. Fed. Regist. Vol. 42: 57749.»
@@ -72,6 +92,6 @@ Soy Robert, de La Creación del Robert 🌱"
   - Ojo: AAI dice «It was not until 1983 that the LAL was fully approved by the U.S. Food and Drug Administration as a finished product test». La voz dice solo que en 1977 la FDA la aceptó en lugar de la prueba con conejos (aviso de licencia del Federal Register de 1977).
 - **Un tercio de la sangre (≈30 %) y regreso al mar:** Anderson R.L., Watson W.H., Chabot C.C., "Sub-lethal behavioral and physiological effects of the biomedical bleeding process on the American horseshoe crab, *Limulus polyphemus*", *Biological Bulletin* 225(3): 137–151 (2013). https://pmc.ncbi.nlm.nih.gov/articles/PMC4079546/ — «hemolymph is obtained in a 24–72 h process that includes trawl or hand-harvest capture, transport to, and time spent in, containment at a biomedical facility, a 30% blood extraction, and return to the point of capture (ASMFC, 1998; Leschen and Correia, 2010)».
 - **15 % de mortalidad estimada:** Atlantic States Marine Fisheries Commission, *Best Management Practices for Handling Horseshoe Crabs for Biomedical Purposes* (mayo de 2023). https://asmfc.org/wp-content/uploads/2025/02/HSC_Biomedical_BMPs_2023.pdf — «The estimated mortality rate is 15% of all horseshoe crabs processed and released alive by the biomedical industry, which was determined through a review of all available literature on mortality»; «This mortality rate has been reassessed and maintained in recent stock assessments (ASMFC 2019)»; «Horseshoe crabs collected solely for biomedical use are required to be released alive». (Rango de otros estudios: Krisfalusi-Gannon 2018 cita 30 % en hembras y 8 % en machos; la voz usa solo la estimación oficial y dice "se calcula".)
-- **Farmacopea Europea, capítulo 2.6.32 (rFC):** EDQM, "Recombinant factor C: new Ph. Eur. chapter available as of 1 July 2020" (2020), y PharmTech, "EDQM Publishes New General Chapter in European Pharmacopoeia Supplement 10.3" (7 jul 2020): «which may be used as an alternative to classic limulus amoebocyte lysate (LAL)-based methods»; «utilizes a recombinant factor C (rFC) based on the gene sequence of the horseshoe crab». https://www.pharmtech.com/view/edqm-publishes-new-general-chapter-european-pharmacopoeia-supplement-103 · El anuncio de EDQM da la entrada en vigor el 1 ene 2021 (otra nota de EDQM dice 1 jul 2021): en ambos casos, **2021**.
+- **Farmacopea Europea, capítulo 2.6.32 (rFC):** EDQM, "Recombinant factor C: new Ph. Eur. chapter available as of 1 July 2020" (2020), y PharmTech, "EDQM Publishes New General Chapter in European Pharmacopoeia Supplement 10.3" (7 jul 2020): «which may be used as an alternative to classic limulus amoebocyte lysate (LAL)-based methods»; «utilizes a recombinant factor C (rFC) based on the gene sequence of the horseshoe crab». https://www.pharmtech.com/view/edqm-publishes-new-general-chapter-european-pharmacopoeia-supplement-103 · Revisión PMC8150811 (2021): «a new general chapter on the test for bacterial endotoxins using recombinant factor C (2.6.32) was published in July 2020.» La voz y la pantalla dicen **2020** (solo la publicación está confirmada).
 - **Farmacopea de EE. UU., capítulo <86>:** Charles River, "The Road to Regulatory Approval for Recombinant Cascade Reagents: USP Approves Chapter <86>" (19 ago 2024): «As announced by the US Pharmacopeia (USP) on Friday, July 26th, 2024»; «Publication for early adoption will be released in November 2024 and will become official in May 2025». https://www.criver.com/insights/road-regulatory-approval-recombinant-cascade-reagents-usp-approves-chapter-86 · Anuncio de USP: https://usp.org/node/299366
 - El dibujo del cangrejo, de los amebocitos, de la bacteria y del coágulo es **esquemático** y no está a escala entre sí.
