@@ -249,12 +249,12 @@ function CandidaShot() {
       {/* 12 · a quién le pasa más (CDC) */}
       <Escena T={T} a={K.Q} b={K.Al}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>{QUIEN.map(([t, Ico], i) => { const s = kprog(T, K.Q + 0.4 + i * 1.1, K.Q + 0.8 + i * 1.1, kEase.rebote); const x = i % 2 ? 770 : 300, y = i < 2 ? 640 : 980;
+        {fsvg(<>{QUIEN.map(([t, Ico], i) => { const s = kprog(T, K.Q + 0.4 + i * 1.1, K.Q + 0.8 + i * 1.1, kEase.rebote); const x = i % 2 ? 770 : 300, y = i < 2 ? 600 : 940;
           return s > 0 ? <g key={i} transform={`translate(${x} ${y}) scale(${s})`}>
             <circle r={130} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <g transform="scale(0.95)"><Ico T={T} /></g>
           </g> : null; })}</>)}
-        {QUIEN.map(([t], i) => <div key={i} style={{ position:'absolute', left:(i % 2 ? 770 : 300) - 230, width:460, top:(i < 2 ? 640 : 980) + 140, textAlign:'center', zIndex:30,
+        {QUIEN.map(([t], i) => <div key={i} style={{ position:'absolute', left:(i % 2 ? 770 : 300) - 230, width:460, top:(i < 2 ? 600 : 940) + 135, textAlign:'center', zIndex:30,
           font:`900 ${t.length > 20 ? 30 : 36}px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Q + 0.6 + i * 1.1, K.Q + 0.9 + i * 1.1) }}>{t}</div>)}
       </Escena>
       {/* 13 · se siente como algodón */}
@@ -329,7 +329,7 @@ function CandidaShot() {
       <Subtitulo T={T} idx={8} at={K.Es + 0.1} until={K.Tx - 0.1} texto="Una toxina: *la candidalisina.*" />
       <Subtitulo T={T} idx={9} at={K.Tx + 0.1} until={K.Pl - 0.1} texto="Daña la membrana *de tus células.*" />
       <Subtitulo T={T} idx={10} at={K.Pl + 0.1} until={K.Q - 0.1} texto="Placas blancas: *algodoncillo.*" />
-      <Subtitulo T={T} idx={11} at={K.Q + 0.1} until={K.Al - 0.1} texto="Recién nacidos, dentadura, antibióticos, *inhaladores.*" />
+      <Subtitulo T={T} idx={11} at={K.Q + 0.1} until={K.Al - 0.1} texto="Recién nacidos, dentadura, antibióticos, *inhaladores.*" tam={54} />
       <Subtitulo T={T} idx={12} at={K.Al + 0.1} until={K.C - 0.1} texto="Puede sentirse como *algodón en la boca.*" />
       <Subtitulo T={T} idx={13} at={K.C + 0.1} until={K.Ou - 0.1} texto="No es tu enemiga: *espera.*" />
 

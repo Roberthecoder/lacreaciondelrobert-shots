@@ -271,7 +271,7 @@ function PlasticoShot() {
         {fsvg(<>
           <ellipse cx={330} cy={1115} rx={150} ry={22} fill="rgba(0,0,0,.15)" />
           <Tubo T={T} x={330} y={500} h={600} claro={0.5} hongo={1} />
-          <g opacity={kprog(T, K.C + 1.0, K.C + 1.6)} transform={`translate(${klerp(240, 0, kprog(T, K.C + 1.0, K.C + 1.8, kEase.sale))} 0)`}><Bote x={760} y={900} s={0.95} /></g>
+          <g opacity={kprog(T, K.C + 1.0, K.C + 1.6)} transform={`translate(${klerp(240, 0, kprog(T, K.C + 1.0, K.C + 1.8, kEase.sale))} 0)`}><Bote x={770} y={960} s={0.82} /></g>
         </>)}
       </Escena>
 

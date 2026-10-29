@@ -46,4 +46,3 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026):** las 25 afirmaciones están ✅. La única ⚠️ (champiñón del súper sin decir "ya abierto") se corrigió y se volvió a verificar con Kuo; los otros dos cambios fueron recortes de redacción sin datos nuevos.
 
-VEREDICTO: APROBADO

@@ -19,7 +19,7 @@
 | 5 | Pregunta | ¿Y qué le hace a la soya por dentro? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
 | 6 | Enzimas | El hongo suelta enzimas que parten las proteínas y las grasas en pedazos más chicos. | Fondo oscuro: tijeritas (enzimas) que salen de la hifa y cortan cadenas largas (proteínas) y gotas (grasas) en pedazos. Chips "proteasas" y "lipasas". |
 | 7 | Fitico | Y baja el ácido fítico, que le estorba a tu cuerpo para aprovechar minerales. | Molécula "ácido fítico" que atrapa bolitas de minerales (hierro, zinc, calcio); su barra baja y las bolitas quedan libres. |
-| 8 | Estudio | En 1977, un estudio con tempeh comprado en Toronto, Canadá, buscó de dónde salía su vitamina B12. | Tarjeta "1977 · Toronto, Canadá · Liem, Steinkraus y Cronk · *Appl. Environ. Microbiol.*"; un frasco "B12 = ?". |
+| 8 | Estudio | En 1977, un estudio con tempeh comprado en Toronto, Canadá, buscó de dónde salía su vitamina B12. | Tarjeta "1977 · tempeh comprado en Toronto, Canadá · Liem, Steinkraus y Cronk · *Appl. Environ. Microbiol.*"; un frasco "B12 = ?". |
 | 9 | Bacteria | Sorpresa: el hongo solo no la fabricaba. La hacía una bacteria que crece junto a él. | Dos cajas Petri: "solo el hongo → B12: 0" y "bacteria → B12 ✓"; bacterias en forma de bastón junto a las hifas. |
 | 10 | Blanco | Es blanco porque, tapado y con poco aire, el hongo casi no hace esporas; si las hace, salen manchas grises o negras. | Bolsa perforada con poco aire → tempeh blanco; al lado, uno con manchas negras: zoom a esporangios (cabezas redondas negras llenas de esporas). Chip "manchas = esporas". |
 | 11 | Cierre | Así que no es soya prensada: es soya que un hongo amarró con sus hilos. | **Regreso a la imagen del inicio:** el mismo bloque en la misma tabla, ahora rebanado y con los hilos marcados en el corte. Chip "soya + hongo". |
@@ -44,5 +44,7 @@ Barras de escala: 5 cm (bloque y tabla), 1 cm (grano), 50 µm (hifas y células 
 2. Liem, I. T. H., Steinkraus, K. H. y Cronk, T. C. (1977). Production of vitamin B-12 in tempeh, a fermented soybean food. *Applied and Environmental Microbiology* 34(6): 773–776. https://pmc.ncbi.nlm.nih.gov/articles/PMC242746/
    > "Pure tempeh molds obtained from different sources did not produce vitamin B-12. It was found that the major source of vitamin B-12 in commercial tempeh purchased in Toronto, Canada, was a bacterium that accompanies the mold during fermentation."
 3. Keuth, S. y Bisping, B. (1994). Vitamin B12 production by *Citrobacter freundii* or *Klebsiella pneumoniae* during tempeh fermentation and proof of enterotoxin absence by PCR. *Applied and Environmental Microbiology* 60(5): 1495–1499. https://pmc.ncbi.nlm.nih.gov/articles/PMC201508/ (Universidad de Münster, Alemania; confirma qué bacterias de tempeh indonesio hacen la B12).
+4. Jurus, A. M. y Sundberg, W. J. (1976). Penetration of *Rhizopus oligosporus* into soybeans in tempeh. *Applied and Environmental Microbiology* 32: 284–287. https://pmc.ncbi.nlm.nih.gov/articles/PMC170049/
+   > "Hyphae infiltrated to a depth of 742 μm, or about 25% of the average width of a soybean cotyledon."
 
 El dibujo es esquemático.
