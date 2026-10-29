@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa no es la voz de tu hijo pidiéndote dinero: es una copia hecha con inteligencia artificial."
+      "texto": "Esa no es la voz de tu hijo pidiéndote dinero: es una copia hecha por una IA."
     },
     {
       "escena": "Paso1",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Porque una voz se puede copiar con segundos. Su palabra secreta, si no la comparten, no."
+      "texto": "Porque una voz se copia con segundos. Su palabra secreta, si no la comparten, no."
     }
   ]
 }

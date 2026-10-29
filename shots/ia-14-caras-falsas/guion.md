@@ -4,7 +4,7 @@
 - **Estado (29 oct 2026):** fase A — guion escrito, pendiente de verificación independiente. Animación, tabla "Robert en pantalla" y `publicacion.md`: fase B.
 - **Formato:** N5 "El experimento" (se recrea la prueba de Nightingale y Farid con el espectador como participante) + N2 "El número" (48 % contra el 50 % de un volado).
 - **Gancho (de los 7):** #5 Reto con respuesta al final: "¿Cuál de estas dos caras es real?". La respuesta llega en la última frase.
-- **Duración:** voz 956 caracteres / ~170 palabras (≈ 57.8 s) + cierre 3.5 s → **61.3 s** estimados en la base.
+- **Duración:** voz 957 caracteres / 178 palabras (≈ 57.9 s) + cierre 3.5 s → **61.4 s** estimados en la base.
 - **Postura de la serie:** crítica con datos (riesgo de caras falsas en perfiles y fraudes) y un consejo útil. Los estudios son de **2022 y 2023** y se dice; no se afirma nada de los generadores de hoy.
 
 ## Versión narrada
@@ -12,14 +12,14 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | ¿Cuál de estas dos caras es real? Una la inventó una IA. Elige: la respuesta, al final. | Fondo rosa; desde el cuadro 0 dos retratos dibujados lado a lado (izq. / der.) con marcos que laten; botones "¿real?" bajo cada uno y un cronómetro que corre. |
-| 1 | Estudio | En dos mil veintidós, en Inglaterra y California, trescientas quince personas vieron caras reales y caras hechas con la IA StyleGAN2. | Tarjeta "2022 · Nightingale (U. de Lancaster) y Farid (U. de California, Berkeley) · PNAS"; una pila de caras pasa una por una (128 por persona, de 800). Chip "StyleGAN2". |
+| 1 | Estudio | En dos mil veintidós, investigadores de Inglaterra y California pusieron a trescientas quince personas a ver caras reales y caras de la IA StyleGAN2. | Tarjeta "2022 · Nightingale (U. de Lancaster) y Farid (U. de California, Berkeley) · PNAS"; una pila de caras pasa una por una (128 por persona, de 800). Chip "StyleGAN2". |
 | 2 | Volado | Atinaron cuarenta y ocho por ciento. Echando un volado sacas cincuenta. | `NumeroGigante` "48 %" y al lado una moneda que gira: "volado = 50 %". |
 | 3 | Entreno | A otro grupo le enseñaron los errores típicos de la IA. Subió a cincuenta y nueve por ciento: apenas mejor. | Pizarrón con "pistas" (fondo raro, orejas disparejas…); la barra sube de 48 a 59 % y apenas pasa la raya del 50. |
-| 4 | Pregunta | ¿Y si te guías por cuál te da más confianza? | **Re-gancho.** "?" gigante sobre las dos caras; Robert grande pensativo. |
-| 5 | Confianza | Otras doscientas veintitrés calificaron qué tan confiable se veía cada cara. Las de la IA salieron más confiables. | Escala 1–7 con estrellitas; barras "caras reales 4.48" vs "caras de IA 4.82". |
+| 4 | Pregunta | ¿Y si te guías por la que te da confianza? | **Re-gancho.** "?" gigante sobre las dos caras; Robert grande pensativo. |
+| 5 | Confianza | Otro grupo calificó qué tan confiable se veía cada cara. Las de la IA salieron más confiables. | Escala 1–7 con estrellitas; barras "caras reales 4.48" vs "caras de IA 4.82". |
 | 6 | Promedio | Los autores sospechan: la IA hace caras muy promedio, y lo promedio nos da confianza. | Fondo de circuito (por dentro de la máquina): muchas caras se funden en una cara "promedio" al centro; chip "hipótesis". |
-| 7 | Seguros | Y en dos mil veintitrés, en Australia, las caras blancas de la IA parecieron más humanas que las reales. Los que más fallaban eran los más seguros. | Tarjeta "2023 · Miller et al. · Universidad Nacional Australiana · Psychological Science"; barras "caras de IA juzgadas humanas 65.9 %" vs "caras reales 51.1 %"; luego un medidor "seguridad" que sube mientras los aciertos bajan. |
-| 8 | Consejo | Así que no le creas a «se ve real»: fíjate quién publicó la foto y de dónde salió. | `MitoTachado` "se ve real = es real"; celular con un perfil y una lupa sobre "¿quién lo publicó?". |
+| 7 | Seguros | Y en dos mil veintitrés, un equipo de Australia vio que las caras blancas de la IA parecían más humanas que las reales. Los que más fallaban eran los más seguros. | Tarjeta "2023 · Miller et al. · Universidad Nacional Australiana · Psychological Science"; barras "caras de IA juzgadas humanas 65.9 %" vs "caras reales 51.1 %"; luego un medidor "seguridad" que sube mientras los aciertos bajan. |
+| 8 | Consejo | No le creas a «se ve real»: fíjate quién publicó la foto y de dónde salió. | `MitoTachado` "se ve real = es real"; celular con un perfil y una lupa sobre "¿quién lo publicó?". |
 | 9 | Cierre | ¿La respuesta? La de la izquierda era de la IA. ¿Le atinaste, o le diste tu confianza? | **Regreso a la imagen del inicio**: las mismas dos caras; la izquierda se voltea y muestra su "circuito" con la etiqueta "IA", la derecha "real ✔". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
@@ -41,9 +41,10 @@
 ## Notas
 - **Las caras en pantalla son dibujos esquemáticos, no fotos** (ni reales ni de IA). "La de la izquierda era de la IA" es la convención del dibujo para el reto; con fotos reales la gente acierta como en un volado. El dibujo es esquemático.
 - "Cuarenta y ocho por ciento" redondea 48.2 % (experimento 1). "Cincuenta y nueve" = 59.0 % (experimento 2, con entrenamiento y retroalimentación, 219 personas nuevas).
-- "Más confiables": 4.82 contra 4.48 en una escala de 1 a 7 (experimento 3, 223 personas). El efecto es pequeño (los autores: "only 7.7% more trustworthy"), por eso no se exagera.
+- "Más confiables": 4.82 contra 4.48 en una escala de 1 a 7 (experimento 3, 223 personas: "otro grupo"). El efecto es pequeño (los autores: "only 7.7% more trustworthy"), por eso no se exagera.
 - "Caras muy promedio" se dice como sospecha de los autores ("may be"), no como hecho.
-- "Inglaterra y California": Lancaster está en Inglaterra; Berkeley, en California.
+- "Investigadores de Inglaterra y California": Lancaster está en Inglaterra; Berkeley, en California. Los participantes fueron trabajadores en línea de Amazon Mechanical Turk (no se dice dónde vivían). En el estudio veían una cara a la vez (no en pares); el par del gancho es solo el formato del reto.
+- "Un equipo de Australia": Miller et al. es de la Australian National University; sus 124 participantes eran residentes blancos de EE. UU. reclutados en Prolific, por eso no se dice "en Australia" sobre las personas.
 - En Miller et al. el efecto es solo con caras blancas (las no blancas de IA se juzgaron humanas al nivel del azar); así se dice. "Los que más fallaban eran los más seguros" = correlación reportada como efecto Dunning-Kruger.
 - Las caras de los dos estudios se hicieron con StyleGAN2; los generadores actuales son otros y no se afirma nada de ellos.
 - El consejo final es una recomendación general, no un dato.
