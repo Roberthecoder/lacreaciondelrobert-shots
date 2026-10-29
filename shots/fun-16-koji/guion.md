@@ -30,6 +30,27 @@
 
 Barras de escala: 5 cm (botella y sushi), 1 cm (charola/grano), 10 µm (hifas, conidios, bacterias y levaduras).
 
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y entonces quién sigue cocinando?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «la cocinó un hongo» (cuadro 0) |
+| 2 | 5.9 | 9.2 | 13_senalando_arriba | `arriba-der` | se siembra el koji (llueven esporas) |
+| 3 | 12.5 | 14.9 | 05_sonriendo_dientes_uniformes | `izq-alto` | la lupa: hifas, cabezuela y «tijeras químicas» |
+| 4 | 16.5 | 19.8 | 04_bajando_lentes | `arriba-der` | «el glutamato, que da el sabor umami» |
+| 5 | 24.6 | 26.6 | 12_perfil_serio | `arriba-der` | «ahí el hongo muere» |
+| 6 | 26.8 | 29.4 | 07_pensativo_puno | `grande` | «¿y entonces quién sigue cocinando?» |
+| 7 | 30.8 | 33.2 | 13_senalando_arriba | `arriba-der` | bacterias y levaduras, «durante meses» |
+| 8 | 34.6 | 37.0 | 06_pensativo_menton | `arriba-der` | el color oscuro (Maillard) |
+| 9 | 42.0 | 46.8 | 11_sorprendido | `arriba-der` | genes del veneno apagados: 0 aflatoxinas |
+| 10 | 48.3 | 52.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | «hongo nacional» |
+| 11 | 54.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «es el trabajo de un hongo que ya no está» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 11 · **35.8 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+
 ## Fuentes (abiertas el 29 oct 2026)
 
 1. Ito, K. y Matsuyama, A. (2021). Koji Molds for Japanese Soy Sauce Brewing: Characteristics and Key Enzymes. *Journal of Fungi* 7(8): 658. https://pmc.ncbi.nlm.nih.gov/articles/PMC8399179/

@@ -345,7 +345,7 @@ function QuesoAzulShot() {
       <Capitulo T={T} caps={[{ at:K.In, titulo:'inocular' }, { at:K.Pi, titulo:'picar' }, { at:K.Ve, titulo:'madurar' }]} hasta={K.P - 0.2} />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.4} until={K.N - 0.3} texto="¿echado a perder?" x={320} y={460} tam={46} />
+      <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.4} until={K.N - 0.3} texto="¿echado a perder?" x={300} y={460} tam={46} />
       <Chip T={T} at={K.G + 2.9} until={K.N - 0.3} texto="sembrado a propósito" x={320} y={570} tam={40} borde={KC.leaf} />
       <Etq T={T} at={K.N + 0.2} until={K.In - 0.3} x={60} y={480} texto="Penicillium roqueforti" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.N + 0.5} until={K.In - 0.3} x={60} y={540} texto="moho azul" tam={32} color={KC.ink} />

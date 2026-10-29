@@ -219,7 +219,7 @@ function AflatoxinasShot() {
     <rect x={0} y={1160} width={KW} height={800} fill="#c98b4a" stroke={KC.ink} strokeWidth={8} />
     <rect x={0} y={1160} width={KW} height={20} fill="#a8703a" />
     {CAEN.map(([x, y, r], i) => { const t0 = K.G + 0.15 + i * 0.1, u = cierre ? 1 : kprog(T, t0, t0 + 0.45, kEase.suave);
-      return u > 0 ? <Cacahuate key={i} x={klerp(bocaX, x, u)} y={klerp(bocaY, y - 25, u) - Math.sin(u * Math.PI) * 120} s={0.62} rot={r * u} /> : null; })}
+      return u > 0 ? <Cacahuate key={i} x={klerp(bocaX, x, u)} y={klerp(bocaY, y - 25, u) - Math.sin(u * Math.PI) * 120} s={0.8} rot={r * u} /> : null; })}
   </>;
   const arrU = kprog(T, K.G + 1.0, K.G + 1.55, kEase.suave);
   const vuela = kprog(T, K.Ci + 0.5, K.Ci + 1.4, kEase.suave);
@@ -232,8 +232,8 @@ function AflatoxinasShot() {
         {fsvg(<>
           <Mesa />
           <Bolsa x={330} y={860} rot={giro} llena={1 - 0.4 * kprog(T, K.G, K.G + 1)} />
-          {arrU > 0 && <Cacahuate x={klerp(bocaX, ARR[0], arrU)} y={klerp(bocaY, ARR[1] - 20, arrU) - Math.sin(arrU * Math.PI) * 160} s={0.62 + 0.25 * kprog(T, K.G + 1.6, K.G + 2.4, kEase.sale)} rot={-15 * arrU} malo={1} />}
-          {T > K.G + 1.7 && <circle cx={ARR[0]} cy={ARR[1] - 20} r={95 + 8 * Math.sin(T * 6)} fill="none" stroke={KC.red} strokeWidth={8} strokeDasharray="20 14" />}
+          {arrU > 0 && <Cacahuate x={klerp(bocaX, ARR[0], arrU)} y={klerp(bocaY, ARR[1] - 20, arrU) - Math.sin(arrU * Math.PI) * 160} s={0.8 + 0.3 * kprog(T, K.G + 1.6, K.G + 2.4, kEase.sale)} rot={-15 * arrU} malo={1} />}
+          {T > K.G + 1.7 && <circle cx={ARR[0]} cy={ARR[1] - 20} r={110 + 8 * Math.sin(T * 6)} fill="none" stroke={KC.red} strokeWidth={8} strokeDasharray="20 14" />}
         </>)}
       </Escena>
       {/* 2 · sin olor, sabor ni color: la lupa sobre el arrugado; las moléculas no se ven */}
@@ -254,9 +254,9 @@ function AflatoxinasShot() {
           <path d="M -20 1180 Q 540 1080 1100 1180 L 1100 1960 L -20 1960 Z" fill="#9a7440" stroke={KC.ink} strokeWidth={8} />
           <path d="M 60 1150 Q 300 1110 520 1120 M 600 1118 Q 820 1112 1020 1150" stroke="#5a3f1c" strokeWidth={6} fill="none" />
           <RedHifas T={T} x={540} y={1130} g={kprog(T, K.Mo, K.Mo + 1.2)} seed={18} n={140} escala={0.55} color="#e9f0c4" ancho={4} />
-          <Conidioforo T={T} x={540} y={1120} s={1.05} crece={kprog(T, K.Mo + 0.1, K.Mo + 1.6)} seed={3} />
-          <Conidioforo T={T} x={210} y={1150} s={0.6} crece={kprog(T, K.Mo + 0.4, K.Mo + 1.9)} seed={5} />
-          <Conidioforo T={T} x={880} y={1150} s={0.7} crece={kprog(T, K.Mo + 0.6, K.Mo + 2.1)} seed={8} />
+          <Conidioforo T={T} x={640} y={1120} s={1.05} crece={kprog(T, K.Mo + 0.1, K.Mo + 1.6)} seed={3} />
+          <Conidioforo T={T} x={170} y={1150} s={0.5} crece={kprog(T, K.Mo + 0.4, K.Mo + 1.9)} seed={5} />
+          <Conidioforo T={T} x={960} y={1150} s={0.45} crece={kprog(T, K.Mo + 0.6, K.Mo + 2.1)} seed={8} />
         </>)}
       </Escena>
       {/* 3b · macro: la bodega con calor y humedad */}
@@ -310,8 +310,9 @@ function AflatoxinasShot() {
         {fsvg(<>
           <g transform={`translate(540 900) scale(${kprog(T, K.Ca, K.Ca + 0.6, kEase.rebote)}) translate(-540 -900)`}>
             <Higado x={560} y={900} s={1.4} nodulo={kprog(T, K.Ca + 4.4, K.Ca + 4.9, kEase.rebote)} />
+            {false && <g />
           </g>
-          <Sello T={T} at={K.Ca + 1.7} x={300} y={760} texto="GRUPO 1" color={KC.ink} r={125} />
+          <SelloGrupo T={T} at={K.Ca + 1.7} x={830} y={1040} />
         </>)}
       </Escena>
       {/* 8 · Kenia 2004: cosecha en plenas lluvias y maíz guardado húmedo */}
@@ -329,7 +330,7 @@ function AflatoxinasShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <line x1={80} y1={1160} x2={1000} y2={1160} stroke={KC.ink} strokeWidth={8} />
-          <rect x={180} y={1160 - 7} width={150} height={7} fill={KC.leaf} stroke={KC.ink} strokeWidth={4} />
+          <rect x={180} y={1160 - 12} width={150} height={12} fill={KC.leaf} stroke={KC.ink} strokeWidth={4} />
           {(() => { const h = 1300 * kprog(T, K.Nu + 0.4, K.Nu + 1.8, kEase.suave); return <rect x={640} y={1160 - h} width={220} height={h} fill={KC.red} stroke={KC.ink} strokeWidth={7} />; })()}
         </>)}
       </Escena>
@@ -341,7 +342,7 @@ function AflatoxinasShot() {
             if (on <= 0) return null;
             const am = kprog(T, K.Br + 1.5 + (c + f) * 0.02, K.Br + 1.9 + (c + f) * 0.02);
             const ap = i < MUERTES ? kprog(T, K.Br + 3.1 + i * 0.006, K.Br + 3.4 + i * 0.006) : 0;
-            return <Personita key={i} x={112 + c * 45} y={600 + f * 38} s={on * 1.05} amarillo={am} apagada={ap} />; })}
+            return <Personita key={i} x={112 + c * 45} y={545 + f * 35} s={on * 1.05} amarillo={am} apagada={ap} />; })}
         </>)}
       </Escena>
       {/* 11 · cómo se descubrieron: pavitos en Inglaterra y harina de cacahuate mohosa */}
@@ -349,14 +350,14 @@ function AflatoxinasShot() {
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           <rect x={0} y={1180} width={KW} height={800} fill="#6fae4a" stroke={KC.ink} strokeWidth={8} />
-          <g transform="translate(200 1050)">
+          <g transform="translate(190 960)">
             <path d="M -110 -150 Q -125 0 -115 120 Q 0 140 115 120 Q 125 0 110 -150 Q 0 -136 -110 -150 Z" fill="#e4d2a6" stroke={KC.ink} strokeWidth={7} />
             <text x={0} y={-30} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>HARINA DE</text>
             <text x={0} y={8} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>CACAHUATE</text>
             {[[-60, -100, 20], [50, 70, 24], [70, -110, 14], [-50, 80, 16], [10, 50, 10]].map(([cx, cy, r], i) => <circle key={i} cx={cx} cy={cy} r={r * kprog(T, K.Pa + 1.0 + i * 0.15, K.Pa + 1.4 + i * 0.15)} fill="#a9c23c" stroke="#4f6b1c" strokeWidth={3} />)}
           </g>
           {Array.from({ length: 10 }, (_, i) => { const c = i % 5, f = Math.floor(i / 5); const camina = kprog(T, K.Pa, K.Pa + 2.6, kEase.sale);
-            return <Pavito key={i} T={T} x={klerp(1150 + c * 60, 420 + c * 125, camina) + f * 50} y={1060 + f * 110} s={0.95} seed={i} cae={kprog(T, K.Pa + 3.0 + i * 0.12, K.Pa + 3.5 + i * 0.12, kEase.suave)} />; })}
+            return <Pavito key={i} T={T} x={klerp(1150 + c * 60, 420 + c * 125, camina) + f * 50} y={930 + f * 105} s={0.95} seed={i} cae={kprog(T, K.Pa + 3.0 + i * 0.12, K.Pa + 3.5 + i * 0.12, kEase.suave)} />; })}
         </>)}
       </Escena>
       {/* 12 · lo que sí sirve */}
@@ -371,7 +372,7 @@ function AflatoxinasShot() {
           {(() => { const a = kprog(T, K.Si + 1.8, K.Si + 2.2, kEase.rebote); return a > 0 && <g transform={`translate(540 850) scale(${a})`}><Frasco x={0} y={0} s={0.9} /></g>; })()}
           {(() => { const a = kprog(T, K.Si + 3.2, K.Si + 3.6, kEase.rebote); const cae = kprog(T, K.Si + 3.7, K.Si + 4.4, kEase.suave); return a > 0 && <g>
             <g transform={`translate(870 870) scale(${a * 0.8})`}><Bote x={0} y={0} tapa={kprog(T, K.Si + 4.5, K.Si + 4.8)} /></g>
-            {cae < 1 && <Cacahuate x={klerp(700, 860, cae)} y={klerp(620, 760, cae) - Math.sin(cae * Math.PI) * 90} s={0.7} rot={cae * 200} malo={1} />}</g>; })()}
+            {cae < 1 && <Cacahuate x={klerp(640, 860, cae)} y={klerp(700, 760, cae) - Math.sin(cae * Math.PI) * 90} s={0.7} rot={cae * 200} malo={1} />}</g>; })()}
         </>)}
       </Escena>
       {/* 13 · cierre: la misma bolsita; el arrugado va al bote */}
@@ -381,7 +382,7 @@ function AflatoxinasShot() {
           <Mesa cierre />
           <Bolsa x={330} y={860} rot={68} llena={0.6} />
           <g transform="translate(900 1060) scale(0.85)"><Bote x={0} y={0} tapa={kprog(T, K.Ci + 1.5, K.Ci + 1.8)} /></g>
-          {vuela < 1 && <Cacahuate x={klerp(ARR[0], 900, vuela)} y={klerp(ARR[1] - 20, 940, vuela) - Math.sin(vuela * Math.PI) * 280} s={0.87 - 0.2 * vuela} rot={vuela * 360} malo={1} />}
+          {vuela < 1 && <Cacahuate x={klerp(ARR[0], 900, vuela)} y={klerp(ARR[1] - 20, 940, vuela) - Math.sin(vuela * Math.PI) * 280} s={1.1 - 0.3 * vuela} rot={vuela * 360} malo={1} />}
         </>)}
       </Escena>
 
@@ -389,28 +390,28 @@ function AflatoxinasShot() {
       <Chip T={T} at={K.G + 1.7} until={K.I - 0.3} texto="¿este también?" x={330} y={560} tam={42} borde={KC.red} />
       {['olor', 'sabor', 'color'].map((t, i) => <MitoTachado key={i} T={T} at={K.I + 1.2 + i * 0.35} tacharEn={K.I + 1.7 + i * 0.45} until={K.Mo - 0.3} texto={'sin ' + t} x={200 + i * 340} y={1185} tam={40} />)}
       <Etq T={T} at={K.I + 0.9} until={K.Mo - 0.3} x={1040} y={460} lado="izq" texto="aflatoxinas (no se ven)" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 0.5} until={MICRO - 0.3} x={60} y={470} texto="Aspergillus flavus" it tam={42} />
-      <Etq T={T} at={K.Mo + 0.9} until={MICRO - 0.3} x={60} y={530} texto="moho amarillo verdoso" tam={30} />
-      <Etq T={T} at={K.Mo + 1.6} until={MICRO - 0.3} x={720} y={640} texto="esporas" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Mo + 0.5} until={MICRO - 0.3} x={40} y={400} texto="Aspergillus flavus" it tam={40} />
+      <Etq T={T} at={K.Mo + 0.9} until={MICRO - 0.3} x={40} y={455} texto="moho amarillo verdoso" tam={28} />
+      <Etq T={T} at={K.Mo + 1.6} until={MICRO - 0.3} x={790} y={350} texto="esporas" tam={30} color={KC.yellow} />
       <Chip T={T} at={MICRO + 1.6} until={K.Co - 0.3} texto="calor + humedad" x={400} y={480} tam={42} borde={KC.red} />
       <Chip T={T} at={K.Co + 0.4} until={K.P - 0.3} texto="el calor de la cocina no basta" x={540} y={470} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.Co + 1.3} until={K.P - 0.3} x={60} y={760} texto="aflatoxinas" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Co + 1.3} until={K.P - 0.3} x={60} y={680} texto="aflatoxinas" tam={32} color={KC.ink} />
       <Etq T={T} at={K.AD + 0.3} until={K.Ca - 0.3} x={60} y={1120} texto="tu ADN" tam={34} color="#9ad7ff" />
       <Etq T={T} at={K.AD + 0.4} until={K.AD + 1.1} x={1040} y={460} lado="izq" texto="aflatoxina B1" tam={32} color={KC.yellow} />
       <Etq T={T} at={K.AD + 1.2} until={K.Ca - 0.3} x={1040} y={460} lado="izq" texto="tu cuerpo la vuelve epóxido" tam={30} color={KC.red} />
       <Etq T={T} at={K.AD + 2.2} until={K.Ca - 0.3} x={600} y={1090} texto="se pega a una G (guanina)" tam={28} color={KC.white} />
       <Chip T={T} at={K.Ca + 0.6} until={K.Ca + 2.3} texto="IARC: la agencia contra el cáncer de la OMS" x={540} y={480} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Ca + 0.4} until={K.Es - 0.3} x={1040} y={760} lado="izq" texto="hígado" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 0.4} until={K.Es - 0.3} x={1040} y={1160} lado="izq" texto="hígado" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ca + 3.1} until={K.Es - 0.3} texto="cancerígenas para humanos" x={400} y={1120} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.Ca + 4.6} until={K.Es - 0.3} x={60} y={600} texto="cáncer de hígado" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 4.6} until={K.Es - 0.3} x={330} y={640} texto="cáncer de hígado" tam={32} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.3} anio="2004" quien="Kenia · brote por maíz" revista="MMWR (CDC), 2004" y={560} />
       <Chip T={T} at={K.Es + 2.5} until={K.Nu - 0.3} texto="maíz guardado húmedo" x={420} y={500} tam={38} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Nu + 0.4} until={K.Br - 0.3} valor={8000} dur={1.4} etiqueta="hasta" x={380} y={500} tam={230} color={KC.red} />
       <Chip T={T} at={K.Nu + 1.2} until={K.Br - 0.3} texto="partes por mil millones (ppb)" x={380} y={700} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Nu + 2.3} until={K.Br - 0.3} texto="aflatoxina B1 · comida de las casas" x={400} y={800} tam={28} borde={KC.red} />
       <Etq T={T} at={K.Nu + 3.2} until={K.Br - 0.3} x={340} y={1120} texto="límite: 20" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Br + 0.6} until={K.Pa - 0.3} texto="317 enfermos" x={290} y={470} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.Br + 3.0} until={K.Pa - 0.3} texto="125 muertos" x={790} y={470} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Br + 0.6} until={K.Pa - 0.3} texto="317 enfermos" x={290} y={440} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.Br + 3.0} until={K.Pa - 0.3} texto="125 muertos" x={790} y={440} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Pa + 0.4} until={K.Si - 0.3} texto="Inglaterra, hacia 1960" x={380} y={480} tam={36} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Pa + 1.6} until={K.Si - 0.3} valor={100000} dur={1.2} etiqueta="pavitos muertos" x={380} y={700} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.Si + 0.7} until={K.Ci - 0.3} texto="✓ secar el grano" x={540} y={1000} tam={32} borde={KC.leaf} />
@@ -434,16 +435,16 @@ function AflatoxinasShot() {
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.I - 0.1} texto="¿El cacahuate *arrugado?*" />
       <Subtitulo T={T} idx={1} at={K.I + 0.1} until={K.Mo - 0.1} texto="Sin olor, sabor *ni color.*" />
-      <Subtitulo T={T} idx={2} at={K.Mo + 0.1} until={K.Co - 0.1} texto="Mohos con *calor y humedad.*" />
+      <Subtitulo T={T} idx={2} at={K.Mo + 0.1} until={K.Co - 0.1} texto="Con *calor y humedad.*" />
       <Subtitulo T={T} idx={3} at={K.Co + 0.1} until={K.P - 0.1} texto="Tostar o freír: *no basta.*" />
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.AD - 0.1} texto="¿Y adentro *de ti?*" />
       <Subtitulo T={T} idx={5} at={K.AD + 0.1} until={K.Ca - 0.1} texto="Se pegan *a tu ADN.*" />
       <Subtitulo T={T} idx={6} at={K.Ca + 0.1} until={K.Es - 0.1} texto="Cancerígenas: *grupo 1.*" />
-      <Subtitulo T={T} idx={7} at={K.Es + 0.1} until={K.Nu - 0.1} texto="Kenia, 2004: *maíz húmedo.*" />
+      <Subtitulo T={T} idx={7} at={K.Es + 0.1} until={K.Nu - 0.1} texto="Kenia, 2004: *maíz húmedo.*" tam={56} />
       <Subtitulo T={T} idx={8} at={K.Nu + 0.1} until={K.Br - 0.1} texto="Hasta *8,000.* Límite: 20." />
-      <Subtitulo T={T} idx={9} at={K.Br + 0.1} until={K.Pa - 0.1} texto="*317 enfermos,* 125 muertos." />
-      <Subtitulo T={T} idx={10} at={K.Pa + 0.1} until={K.Si - 0.1} texto="*Cien mil pavitos* murieron." />
-      <Subtitulo T={T} idx={11} at={K.Si + 0.1} until={K.Ci - 0.1} texto="Secar, guardar *y tirar lo malo.*" />
+      <Subtitulo T={T} idx={9} at={K.Br + 0.1} until={K.Pa - 0.1} texto="317 enfermos, *125 muertos.*" tam={54} />
+      <Subtitulo T={T} idx={10} at={K.Pa + 0.1} until={K.Si - 0.1} texto="*100,000 pavitos.*" />
+      <Subtitulo T={T} idx={11} at={K.Si + 0.1} until={K.Ci - 0.1} texto="Secar, guardar *y tirar.*" />
       <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="El arrugado: *a la basura.*" />
 
       <Robert T={T} apariciones={[
