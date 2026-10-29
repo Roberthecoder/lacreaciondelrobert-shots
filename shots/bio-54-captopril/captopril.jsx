@@ -167,7 +167,7 @@ function Captopril() {
         <FondoLunares color={KC.mint} />
         <CpSvg>
           <ellipse cx={540} cy={1120} rx={520} ry={70} fill="rgba(0,0,0,.12)" />
-          <Jararaca T={T} x0={60} x1={760} y={980} amp={120} />
+          <Jararaca T={T} x0={40} x1={770} y={990} amp={150} ancho={92} />
           <g transform={`translate(930 ${1010 + Math.sin(T * 12) * 3}) rotate(${klerp(0, 80, kprog(T, K.J + 2.2, K.J + 3.0))})`}>
             <ellipse rx={70} ry={42} fill="#b9b2a8" stroke={KC.ink} strokeWidth={6} /><circle cx={-58} cy={-28} r={20} fill="#d8cfc4" stroke={KC.ink} strokeWidth={5} />
             <circle cx={-72} cy={-6} r={6} fill={KC.ink} /><path d="M 66 6 q 60 10 70 50" stroke={KC.ink} strokeWidth={5} fill="none" />
@@ -216,8 +216,8 @@ function Captopril() {
           {[0, 1].map((i) => { const ux = 900 + i * 0, a = aprieta * (1 - suelta); return <g key={i} opacity={a}>
             <path d={`M ${ux} ${700 - i * 0} l 0 ${60} m -24 -24 l 24 24 l 24 -24`} transform={i ? `rotate(180 ${ux} 900)` : ''} stroke={KC.yellow} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>; })}
         </CpSvg>
-        <Etq T={T} at={K.M + 0.4} until={K.Fr - 0.1} x={60} y={720} texto="angiotensina I (10)" color={CP.angio} tam={30} />
-        <Etq T={T} at={K.M + 1.4} until={K.Fr - 0.1} x={1030} y={1200} texto="angiotensina II (8)" lado="izq" color={CP.angio} tam={30} />
+        <Etq T={T} at={K.M + 0.4} until={K.Fr - 0.1} x={440} y={820} texto="angiotensina I (10 eslabones)" color={CP.angio} tam={30} />
+        <Etq T={T} at={K.M + 1.4} until={K.Fr - 0.1} x={1030} y={1140} texto="angiotensina II (8): aprieta" lado="izq" color={CP.angio} tam={30} />
         <Etq T={T} at={K.M + 0.2} until={K.P} x={180} y={1130} texto="ECA" color={CP.eca} tam={40} />
         <Medidor T={T} at={K.M + 1.2} until={K.P - 0.2} valor={(t) => 0.55 + 0.35 * kprog(t, K.M + 1.4, K.M + 2.6) - 0.5 * kprog(t, K.Fr + 0.4, K.Fr + 1.8)} etiqueta="presión" texto={(v) => (v > 0.7 ? 'sube' : v < 0.5 ? 'baja' : '')} y={1450} color={KC.red} />
       </Escena>
@@ -243,15 +243,15 @@ function Captopril() {
             </g>
             <Paloma x={0} y={-230} ok s={1} o={kprog(T, K.I + 1.8, K.I + 2.2)} />
           </g>
-          <g transform="translate(790 1020)">
+          <g transform="translate(790 980)">
             <path d="M -220 120 Q -220 -60 -160 -60 Q -100 -60 -100 60 Q -100 -60 -40 -60 Q 20 -60 20 60 Q 20 -60 80 -60 Q 140 -60 140 60 Q 140 -60 200 -60 Q 230 -60 230 120 Z" fill="#ff9e7a" stroke={KC.ink} strokeWidth={7} />
             {[0, 1, 2].map((i) => { const ph = ((T - K.I - 0.8 - i * 0.5) % 1.6 + 1.6) % 1.6, up = ph < 0.8 ? ph / 0.8 : 2 - ph / 0.8;
               return T > K.I + 0.8 && <Cadena key={i} T={T} x={-140 + i * 140} y={klerp(-330, -110, up)} n={5} r={12} seed={i} />; })}
-            <Paloma x={0} y={-320} ok={false} s={1} o={kprog(T, K.I + 2.6, K.I + 3.0)} />
+            <Paloma x={-160} y={-300} ok={false} s={1} o={kprog(T, K.I + 2.6, K.I + 3.0)} />
           </g>
         </CpSvg>
-        <Etq T={T} at={K.I + 0.4} until={K.S - 0.2} x={130} y={1270} texto="inyectado" tam={32} color={KC.ink} />
-        <Etq T={T} at={K.I + 0.8} until={K.S - 0.2} x={600} y={1200} texto="intestino" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.I + 0.4} until={K.S - 0.2} x={60} y={620} texto="inyectado" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.I + 0.8} until={K.S - 0.2} x={560} y={1140} texto="tragado: intestino" tam={32} color={KC.ink} />
       </Escena>
       {/* 8 · 1974, Squibb: dibujaron el hueco de la enzima con su zinc */}
       <Escena T={T} a={K.S} b={K.A} zoom={0.03}>
@@ -283,7 +283,7 @@ function Captopril() {
           {T >= swap && <Inhibidor x={340} y={klerp(860, 940, kprog(T, swap, swap + 0.3, kEase.sale))} rot={-90} s={1.1} azufre />}
           {T >= swap && <circle cx={340} cy={1080} r={70 + (T - swap) * 40} fill="none" stroke={CP.azufre} strokeWidth={6} opacity={Math.max(0, 1 - (T - swap) * 1.5)} />}
         </CpSvg>
-        <Etq T={T} at={K.A + 0.4} until={K.A + 1.1} x={560} y={560} texto="Ala-Pro: la punta del veneno" color={KC.gold2} tam={30} />
+        <Etq T={T} at={K.A + 0.4} until={K.A + 1.1} x={500} y={560} texto="Ala-Pro: punta del veneno" color={KC.gold2} tam={30} />
         <Etq T={T} at={K.A + 1.4} until={swap} x={40} y={650} texto="copia sin azufre (–COOH)" color={CP.gris} tam={26} />
         <Etq T={T} at={swap + 0.1} until={K.C - 0.2} x={40} y={650} texto="con azufre (S): al zinc" color={CP.azufre} tam={26} />
         <NumeroGigante T={T} at={swap + 0.4} until={K.C - 0.2} valor={2000} dur={1.0} prefijo="×" etiqueta="vs. su copia sin azufre" y={1530} tam={170} color={CP.azufre} />
@@ -292,6 +292,8 @@ function Captopril() {
       <Escena T={T} a={K.C} b={K.Se} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <CpSvg>
+          <g transform={`translate(540 960) rotate(${T * 12})`} opacity={0.5}>{Array.from({ length: 16 }, (_, i) => <path key={i} d="M 0 0 L 900 -90 L 900 90 Z" fill="#fff" transform={`rotate(${i * 22.5})`} opacity={i % 2 ? 0 : 0.6} />)}</g>
+          <Jararaca T={T} x0={60} x1={1000} y={690} amp={50} ancho={56} />
           {(() => { const p = kprog(T, K.C + 0.3, K.C + 1.5, kEase.suave);
             return <g>
               <Inhibidor x={540} y={klerp(860, 980, p)} s={klerp(1.5, 0.2, p)} azufre o={1 - kprog(T, K.C + 1.2, K.C + 1.5)} />
@@ -299,7 +301,7 @@ function Captopril() {
                 <text x={0} y={-30} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>CAPTOPRIL</text></g>
             </g>; })()}
         </CpSvg>
-        <Chip T={T} at={K.C + 1.8} until={K.Se - 0.2} texto="1981 · FDA · el primer inhibidor de la ECA que se toma" y={1500} tam={28} borde={KC.blue} />
+        <Chip T={T} at={K.C + 1.8} until={K.Se - 0.2} texto="1981 · FDA · primer inhibidor de la ECA en pastilla" y={1500} tam={32} borde={KC.blue} />
       </Escena>
       {/* 11 · 2,000 al azar contra 60 con el dibujo */}
       <Escena T={T} a={K.Se} b={K.Ci} zoom={0.03}>
@@ -324,8 +326,8 @@ function Captopril() {
       <Etq T={T} at={K.J + 0.8} until={K.F - 0.2} x={70} y={815} texto="Bothrops jararaca" it tam={34} color={KC.ink} />
       <Medidor T={T} at={K.J + 1.2} until={K.F - 0.3} valor={(t) => 0.85 - 0.6 * kprog(t, K.J + 1.8, K.J + 3.0, kEase.suave)} etiqueta="presión de la presa" texto={(v) => (v < 0.4 ? 'se desploma' : '')} y={1450} color={KC.red} />
       <Chip T={T} at={K.F + 0.3} until={K.F + 3.0} texto="1965 · Sérgio Ferreira · Brasil" y={1500} tam={40} borde={CP.veneno} />
-      <Etq T={T} at={K.F + 1.6} until={K.F + 3.2} x={560} y={620} texto="pedacitos de proteína" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.F + 3.3} until={K.E - 0.2} x={540} y={960} texto="bradicinina: afloja el vaso" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.F + 1.6} until={K.F + 3.2} x={500} y={640} texto="pedacitos de proteína" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.F + 3.3} until={K.E - 0.2} x={1040} y={620} lado="izq" texto="bradicinina: afloja el vaso" tam={30} color={KC.ink} />
       <Chip T={T} at={K.E + 0.8} until={K.M - 0.2} texto="ECA = enzima convertidora de angiotensina" y={1500} tam={30} borde={CP.eca} />
       <MitoTachado T={T} at={K.I + 0.2} tacharEn={K.I + 2.6} until={K.S - 0.3} texto="¿veneno en pastilla?" x={400} y={480} tam={44} />
       <Chip T={T} at={K.P + 0.3} until={K.I - 0.2} texto="¿veneno?" x={330} y={1500} tam={46} borde={KC.yellow} />
@@ -349,7 +351,7 @@ function Captopril() {
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 4.9, 'avatar_11_sorprendido', 'gancho'],
         [K.J + 0.7, K.F - 0.3, 'avatar_10_serio_molesto', 'arriba-der'],
-        [K.F + 1.5, K.E - 0.3, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [K.F + 1.5, K.E - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
         [K.M + 1.0, K.Fr - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.P + 0.05, K.I + 0.7, 'avatar_06_pensativo_menton', 'grande'],
         [K.I + 1.3, K.S - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],

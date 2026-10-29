@@ -23,13 +23,13 @@
 | 2 | Roto | Tras miles de años en el hielo, su ADN quedó en pedacitos. | Fondo azul noche (micro). `Lupa` "AL MICROSCOPIO · ADN de mamut": una doble hélice que se rompe en pedacitos que flotan. `Escala` "40–500 letras por pedacito". |
 | 3 | Paso2 | Paso dos: armas los pedazos como rompecabezas; en 2015 ya hubo genomas completos. | "PASO 2". Los pedacitos se acomodan como piezas de rompecabezas sobre una tira larga. Casilla 2 ✅. Chip "2015 · genomas completos de 2 mamuts · *Current Biology*". |
 | 4 | Paso3 | Paso tres: lo comparas con el del elefante asiático, su pariente vivo más cercano. | "PASO 3". Fondo amarillo: un elefante asiático (*Elephas maximus*, orejas chicas, lomo arqueado) junto a la silueta de un mamut lanudo (*Mammuthus primigenius*, joroba y cabeza alta). Las dos tiras de genoma se alinean y unas letras distintas brillan. Casilla 3 ✅. |
-| 5 | Paso4 | Paso cuatro: con CRISPR editas genes del elefante para pelo, grasa y frío. | "PASO 4". Unas tijeras (CRISPR) cortan la tira del elefante y cambian letras; tres chips: "pelo", "grasa", "frío". Etiqueta "plan · todavía no hay elefante editado nacido". Casilla 4 ⏳. |
+| 5 | Paso4 | Paso cuatro: con CRISPR editas genes del elefante para pelo, grasa y frío. | "PASO 4". Unas tijeras (CRISPR) cortan la tira del elefante y cambian letras; tres chips: "pelo", "grasa", "frío". Chip "plan: aún no nace ningún elefante editado". Casilla 4 ⏳. |
 | 6 | Pregunta | ¿Y eso ya funcionó en algún animal? | **Re-gancho.** Signo de pregunta gigante sobre el manual; un lupa recorre una jaula pequeña. |
 | 7 | Raton | En marzo de 2025, la empresa Colossal editó siete genes en ratones y nacieron ratones lanudos. | Fondo rosa: `TarjetaEstudio` "marzo 2025 · Colossal Biosciences (Texas) · preprint en bioRxiv". Un ratón de laboratorio normal se transforma en uno de pelo largo, ondulado y dorado. Chip "ediciones en 7 genes · preprint". |
 | 8 | Ojo | Ojo: editaron genes del propio ratón, sin ADN de mamut. | `MitoTachado` "ratón con ADN de mamut". Etiqueta "cambios en genes del propio ratón · cero genes de mamut". |
 | 9 | Paso5 | Paso cinco: consigue óvulos y una mamá elefanta, y espera unos 22 meses de embarazo. | "PASO 5" + `NumeroGigante` "22 meses" (embarazo de una elefanta). Un calendario que pasa hojas muy rápido junto a una elefanta. Casilla 5 ⏳. |
-| 10 | Bucardo | ¿Y si sale mal? En 2003, en España, clonaron un bucardo, una cabra montés extinta. | Fondo menta, montañas de los Pirineos. `TarjetaEstudio` "2003 · España y Francia · *Theriogenology* 2009". Un bucardo (*Capra pyrenaica pyrenaica*, cuernos largos curvados hacia atrás) recién nacido, solo. Chips "óvulos de cabra doméstica" y "el último bucardo murió en 2000". |
-| 11 | Pulmones | Nació, pero murió a los minutos por fallas en los pulmones. | El cronómetro marca solo minutos; `Lupa` "POR DENTRO · pulmones" con un pulmón deforme. Música baja. |
+| 10 | Bucardo | ¿Y si sale mal? En 2003, en España, clonaron un bucardo, una cabra montés extinta. | Fondo menta, montañas de los Pirineos. `TarjetaEstudio` "2003 · España y Francia · *Theriogenology* 2009". La silueta tenue de un bucardo adulto (*Capra pyrenaica pyrenaica*, cuernos largos curvados hacia atrás) y, al frente, la cría recién nacida, sin cuernos. Chips "óvulos de cabra doméstica" y "el último bucardo murió en 2000". |
+| 11 | Pulmones | Nació, pero murió a los minutos por fallas en los pulmones. | La escena se oscurece y la cría se echa; `Lupa` "POR DENTRO · pulmones" con un pulmón deforme. Chip "vivió solo unos minutos". Música baja y tapada. |
 | 12 | Cierre | ¿Revivir un mamut? Nadie lo ha logrado: por ahora, lo que sí nació es un ratón muy peludo. | **Regreso al bloque de hielo del inicio**: el manual con 1 ❌ (paso 1), 2 ✅ (pasos 2 y 3) y 2 ⏳ (pasos 4 y 5), y encima del colmillo, sentado, el ratón lanudo. |
 | — | Outro | (sin voz) | Cierre de marca. |
 
@@ -52,6 +52,26 @@ Hasta hoy **nadie ha revivido un mamut**. Si algún día nace algo, sería un el
 El dibujo es esquemático. **¿Tú revivirías un mamut o lo dejarías en paz? 👇**
 
 Soy Robert, de La Creación del Robert 🌱"
+
+## Robert en pantalla
+
+Tiempos de las escenas del base narrada (61.5 s): Gancho 0.00 · Paso1 3.66 · Roto 8.14 · Paso2 11.80 · Paso3 16.89 · Paso4 21.98 ·
+Pregunta 26.66 · Raton 29.00 · Ojo 34.80 · Paso5 38.36 · Bucardo 43.55 · Pulmones 48.64 · Cierre 52.40 · Outro 58.00.
+Entra desde el cuadro 0, vuelve cada 8–10 s, siempre en el lado derecho (la insignia "PASO N / 5" vive a la izquierda) y nunca tapa el subtítulo.
+
+### 8 apariciones, **29.4 s en pantalla** (de 61.5 s, ~48 %), 8 poses distintas, una grande
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.0 | sorprendido (11) | gancho | «¿Quieres revivir un mamut? Fácil…» |
+| 4.9 – 7.9 | serio molesto (10) | arriba-der | «no hay ninguna» célula viva |
+| 13.3 – 16.6 | señalando (13) | arriba-der | el genoma que se arma como rompecabezas |
+| 22.8 – 26.5 | bajando lentes (04) | arriba-der | CRISPR: pelo, grasa y frío (es solo un plan) |
+| 26.7 – 29.8 | pensativo mentón (06) | **grande** | re-gancho «¿Y eso ya funcionó en algún animal?» |
+| 35.1 – 38.2 | sonriendo (05) | arriba-der | «sin ADN de mamut»: el mito tachado |
+| 44.6 – 48.5 | perfil serio (12) | arriba-der | el bucardo clonado en 2003 |
+| 52.7 – 57.9 | apuntando a cámara (02) | arriba-der | «por ahora, lo que sí nació es un ratón muy peludo» |
+| 58.0 – 61.5 | señalando (13) | cierre | `CierreMarca robert=` junto al logo |
 
 ## Fuentes
 - **No hay células vivas de mamut:** Beth Shapiro en VOA News (2015), https://www.voanews.com/a/how-to-clone-a-mammoth-science-of-de-extinction/2780036.html — «There are no living cells, so we can't clone an extinct species.»

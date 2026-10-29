@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Huella base narrada.dc.html",
+  "salida": "Shot Huella narrado.dc.html",
+  "nota": "Shot Biotecnológico #57. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu ADN es 99.9 % igual al de la persona de al lado. Y aun así, te delata."
+    },
+    {
+      "escena": "Clave",
+      "texto": "La clave está en el pedacito que cambia."
+    },
+    {
+      "escena": "Placa",
+      "texto": "En 1984, en Leicester, Alec Jeffreys reveló una radiografía de ADN."
+    },
+    {
+      "escena": "Bandas",
+      "texto": "Vio bandas oscuras, como un código de barras, distintas en cada persona."
+    },
+    {
+      "escena": "Minisatelite",
+      "texto": "Eran minisatélites: tramos de ADN que repiten la misma frase una y otra vez."
+    },
+    {
+      "escena": "Repeticiones",
+      "texto": "Y cuántas veces se repite cambia en cada persona."
+    },
+    {
+      "escena": "Patron",
+      "texto": "Al cortarlos, salen pedazos de distinto largo: ese es tu patrón."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y eso sirve para atrapar a alguien?"
+    },
+    {
+      "escena": "Inmigracion",
+      "texto": "En 1985 salvó a un niño de ser deportado: probó que su mamá sí era su mamá."
+    },
+    {
+      "escena": "Inocente",
+      "texto": "Luego, en Inglaterra, mostró que un joven que confesó un asesinato era inocente."
+    },
+    {
+      "escena": "Pitchfork",
+      "texto": "En 1988, Colin Pitchfork fue el primer asesino condenado con ADN: mandó a un amigo a dar sangre por él."
+    },
+    {
+      "escena": "STR",
+      "texto": "Hoy se usan con PCR marcadores más cortos, los STR, que sirven hasta con rastros."
+    },
+    {
+      "escena": "Gemelos",
+      "texto": "¿Quién te empata? Tu gemelo idéntico: tiene tu misma huella."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Eres 99.9 % igual al de al lado, pero ese 0.1 % lleva tu nombre."
+    }
+  ]
+}
