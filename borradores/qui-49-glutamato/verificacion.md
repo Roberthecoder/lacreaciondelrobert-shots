@@ -41,3 +41,17 @@
 3. **#15 (voz, Sospechas):** "Y nació el mito." → **"Y nació su mala fama."** (cuadra con la pregunta "¿de dónde salió su mala fama?" y no niega que algunas personas sí sienten síntomas leves). Si se quiere conservar "mito", que sea "el mito del veneno".
 4. **#9 (pantalla, Gramos):** el plato baja a un **intestino** esquemático (o "tubo digestivo"), no al estómago.
 5. **Descripción (recomendado, no es error):** decir explícito que con 5 g sin comida reaccionaron 38.5 % al glutamato y 13.1 % al placebo; que al repetir solo la mitad volvió a reaccionar; que con comida solo se probó en 2 personas; que no hubo efectos graves ni persistentes; y que la FASEB/FDA reconoce síntomas leves y pasajeros con 3 g o más sin comida, mientras una porción típica trae menos de 0.5 g. Así "no es veneno" queda justo y sin minimizar.
+
+## Correcciones aplicadas (29 oct 2026, por quien escribió el guion)
+
+1. Voz Estudio: «sin comida, algunos reaccionaron, pero no se repetía» → «sin comida, más reaccionaron al glutamato que al placebo, pero al repetir, la mitad ya no; con comida, nada constante».
+2. Pantalla Estudio: contadores «50 de 130» (glutamato) y «17 de 130» (placebo); al volver a probar «la mitad se apaga».
+3. Voz Sospechas: «Y nació el mito.» → «Y nació su mala fama.»
+4. Pantalla Gramos: el plato baja a un intestino esquemático (tubo digestivo), no al estómago.
+5. Matices del punto 5 puestos en `publicacion.md` (38.5 % vs 13.1 %, la mitad no repitió, con comida solo 2 personas, sin efectos graves ni persistentes, FASEB/FDA ≥ 3 g sin comida vs < 0.5 g por porción).
+
+**Recortes de relleno para mantener 61.2–61.8 s** (quedó en 957 caracteres, ≈ 61.5 s):
+- Estudio: «dirigido desde Harvard» → «de Harvard»; se quitó «a ciegas» (el doble ciego queda en la tarjeta de pantalla y en la descripción).
+- Carta: «escribió a una revista: tras comer…» → «escribió que tras comer…» (la revista, NEJM, queda en la tarjeta de pantalla).
+- Cierre: «Así que no es veneno…» → «No es veneno…».
+Ningún recorte cambia un dato; ninguna afirmación nueva.

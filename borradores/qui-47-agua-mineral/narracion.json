@@ -9,7 +9,7 @@
     },
     {
       "escena": "Acido",
-      "texto": "El gas disuelto, dióxido de carbono, se junta con el agua y forma ácido carbónico, un ácido débil."
+      "texto": "El dióxido de carbono disuelto se junta con el agua y forma ácido carbónico, un ácido débil."
     },
     {
       "escena": "Ph",
@@ -17,7 +17,7 @@
     },
     {
       "escena": "Enzima",
-      "texto": "En tu boca, una enzima, la anhidrasa carbónica, convierte ese gas en ácido dentro de tu lengua."
+      "texto": "En tu boca, la enzima anhidrasa carbónica convierte el gas en ácido dentro de tu lengua."
     },
     {
       "escena": "Nervios",
@@ -25,7 +25,7 @@
     },
     {
       "escena": "Agrio",
-      "texto": "En 2009, en San Diego, el equipo de Zuker vio en ratones que también lo detectan las células del sabor agrio."
+      "texto": "En 2009, en San Diego, vieron en ratones que también lo detectan las células del sabor agrio."
     },
     {
       "escena": "Pregunta",
@@ -33,7 +33,7 @@
     },
     {
       "escena": "Camara",
-      "texto": "En 2013, en Filadelfia, metieron gente a una cámara a presión donde no se forman burbujas: picó casi igual."
+      "texto": "En 2013, en Filadelfia, metieron gente a una cámara a presión que impide las burbujas: picó casi igual."
     },
     {
       "escena": "Dientes",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Sabor",
-      "texto": "Ojo: en 2007, las de sabor salieron tan erosivas como el jugo de naranja, o más."
+      "texto": "Y en 2007, las de sabor salieron tan erosivas como el jugo de naranja, o más."
     },
     {
       "escena": "Cierre",
