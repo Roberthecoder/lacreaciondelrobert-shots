@@ -268,7 +268,7 @@ function Gila11() {
       <Escena T={T} a={K.A} b={K.X} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Capa>
-          {[[GLP_SEQ, GLP, 840, 'GLP-1'], [EXE_SEQ, EXE, 1110, 'exendina-4']].map(([seq, c, yy, nom], j) => {
+          {[[GLP_SEQ, GLP, 790, 'GLP-1'], [EXE_SEQ, EXE, 1040, 'exendina-4']].map(([seq, c, yy, nom], j) => {
             const cut = j === 0 ? kprog(T, K.A + 1.6, K.A + 2.2, kEase.sale) : 0;
             return <g key={j}>
               <text x={90} y={yy - 70} style={{ font:`900 40px ${KF.texto}` }} fill={c}>{nom}</text>
@@ -276,10 +276,10 @@ function Gila11() {
                 color={i === 1 ? KC.yellow : c} o={i < 2 ? 1 - cut * 0.5 : 1} />)}
             </g>; })}
           {(() => { const t0 = K.A + 0.9; const enA = T < K.A + 2.4; const xx = enA ? klerp(-80, 262, kprog(T, t0, t0 + 0.7)) : 262 + Math.sin((T - K.A) * 14) * 16;
-            return <Tijera x={xx} y={enA ? 840 : 1110} s={0.7} abre={enA ? Math.abs(Math.sin((T - t0) * 8)) : 0.8} rot={enA ? 0 : 18} />; })()}
-          {T > K.A + 2.6 && [0, 1, 2].map((i) => <path key={i} d={`M ${300 + i * 22} ${1050 - i * 8} l 18 -26`} stroke={KC.yellow} strokeWidth={6} strokeLinecap="round" opacity={Math.abs(Math.sin(T * 10 + i))} />)}
+            return <Tijera x={xx} y={enA ? 790 : 1040} s={0.7} abre={enA ? Math.abs(Math.sin((T - t0) * 8)) : 0.8} rot={enA ? 0 : 18} />; })()}
+          {T > K.A + 2.6 && [0, 1, 2].map((i) => <path key={i} d={`M ${300 + i * 22} ${980 - i * 8} l 18 -26`} stroke={KC.yellow} strokeWidth={6} strokeLinecap="round" opacity={Math.abs(Math.sin(T * 10 + i))} />)}
         </Capa>
-        <Etiqueta T={T} at={K.A + 0.5} until={K.X - 0.2} x={262} y={690} texto="posición 2: A → G" color={KC.yellow} tam={34} />
+        <Etiqueta T={T} at={K.A + 0.5} until={K.X - 0.2} x={262} y={650} texto="posición 2: A → G" color={KC.yellow} tam={34} />
         <Chip T={T} at={K.A + 2.8} until={K.X - 0.3} texto="la DPP-4 casi no la puede cortar" y={1500} tam={38} borde={EXE} />
       </Escena>
 
@@ -321,7 +321,7 @@ function Gila11() {
             </g>
           </g>
         </Capa>
-        <MitoTachado T={T} at={K.O + 0.1} tacharEn={K.O + 1.0} until={K.O + 2.6} texto="Ozempic = saliva de lagarto" x={370} y={560} tam={40} />
+        <MitoTachado T={T} at={K.O + 0.1} tacharEn={K.O + 1.0} until={K.O + 2.6} texto="Ozempic = saliva de lagarto" x={330} y={560} tam={32} />
         <Chip T={T} at={K.O + 2.7} until={K.Co - 0.3} texto="94 % igual al GLP-1 humano · 2017" x={380} y={560} tam={32} borde={SEMA} />
         <Etiqueta T={T} at={K.O + 2.2} until={K.Co - 0.2} x={140} y={1010} texto="2 cambios" color={KC.pink} tam={30} />
       </Escena>

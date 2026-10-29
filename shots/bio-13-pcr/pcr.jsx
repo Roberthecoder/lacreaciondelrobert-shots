@@ -261,13 +261,13 @@ function Pcr() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <Virus T={T} x={720} y={560} r={100} />
-          <HebraOndulada T={T} x0={720} y0={700} x1={420} y1={820} p={kprog(T, K.Tu + 0.5, K.Tu + 1.6)} color={KC.pink} />
-          {T > K.Tu + 2.0 && <g opacity={kprog(T, K.Tu + 2.0, K.Tu + 2.6)}><ADNHebra T={T} x={260} y={880} largo={300} alto={46} vueltas={2} grosor={6} /></g>}
+          <HebraOndulada T={T} x0={720} y0={700} x1={420} y1={770} p={kprog(T, K.Tu + 0.5, K.Tu + 1.6)} color={KC.pink} />
+          {T > K.Tu + 2.0 && <g opacity={kprog(T, K.Tu + 2.0, K.Tu + 2.6)}><ADNHebra T={T} x={390} y={790} largo={300} alto={46} vueltas={2} grosor={6} /></g>}
           <TuboPCR T={T} x={300} y={1150} s={0.9} brillo={kprog(T, K.Tu + 3.0, K.Tu + 5.6)} />
           <CurvaFluo x={560} y={880} w={400} h={220} p={kprog(T, K.Tu + 2.9, K.Tu + 5.7)} />
         </SvgCapa>
-        <Etq T={T} at={K.Tu + 0.9} until={K.Tu + 2.2} x={560} y={770} texto="ARN del virus" color={KC.ink} tam={34} />
-        <Etq T={T} at={K.Tu + 2.3} until={K.S - 0.3} x={580} y={870} texto="→ ADN" color={KC.ink} tam={38} />
+        <Etq T={T} at={K.Tu + 0.9} until={K.Tu + 2.2} x={600} y={690} texto="ARN del virus" color={KC.ink} tam={34} lado="izq" />
+        <Etq T={T} at={K.Tu + 2.3} until={K.S - 0.3} x={380} y={730} texto="ADN" color={KC.ink} tam={38} lado="izq" />
       </Escena>
 
       {/* 2–4 · capítulos 1, 2 y 3 dentro del tubito, con el termómetro en vivo */}
@@ -285,7 +285,7 @@ function Pcr() {
         <FondoMarca color={KC.violet} patron="rayas" T={T} />
         <SvgCapa>
           {Array.from({ length: 32 }, (_, i) => { const n = Math.pow(2, Math.min(5, Math.round(cDup))), c = i % 8, r = Math.floor(i / 8);
-            return i < n ? <MiniHelice key={i} T={T + i * 0.2} x={140 + c * 114} y={850 + r * 85} s={1.15} o={kprog(T, K.D + 0.1 + Math.log2(i + 1) * 0.6, K.D + 0.4 + Math.log2(i + 1) * 0.6)} /> : null; })}
+            return i < n ? <MiniHelice key={i} T={T + i * 0.2} x={120 + c * 120} y={860 + r * 85} s={1.3} o={kprog(T, K.D + 0.1 + Math.log2(i + 1) * 0.6, K.D + 0.4 + Math.log2(i + 1) * 0.6)} /> : null; })}
           {cDup > 5 && <rect x={70} y={800} width={940} height={350} rx={30} fill={NUEVA} opacity={0.35 * kprog(cDup, 5, 30)} />}
         </SvgCapa>
         <Copias T={T} at={K.D + 0.2} until={K.Q - 0.2} ciclos={cDup} x={680} y={590} tam={112} />
@@ -368,7 +368,7 @@ function Pcr() {
       <Chip T={T} at={K.Pb + 0.4} until={K.E - 0.2} texto="el calor la destruía" x={600} y={1180} tam={42} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 3.5} anio="1969" quien="Brock y Freeze" revista="J. Bacteriol. · Yellowstone, EE. UU." x={540} y={620} />
       <Lupa T={T} at={K.E + 3.6} until={K.Tq - 0.3} x={640} y={720} r={220} fx={540} fy={1090} interior={(t, r) => <BastonesThermus T={t} r={r} />} tinte={KC.pink} etiqueta="AL MICROSCOPIO" />
-      <Etq T={T} at={K.E + 4.2} until={K.Tq - 0.3} x={400} y={1100} texto="Thermus aquaticus" it color={KC.ink} tam={38} lado="der" />
+      <Etq T={T} at={K.E + 4.2} until={K.Tq - 0.3} x={400} y={1100} texto="Thermus aquaticus" it color={KC.texto} tam={38} lado="der" />
       <Chip T={T} at={K.E + 4.4} until={K.Tq - 0.3} texto="crece mejor a 70 °C" x={640} y={420} tam={38} borde={KC.orange} />
       <Etq T={T} at={K.E + 0.6} until={K.E + 3.4} x={60} y={930} texto="aguas termales de Yellowstone" color={KC.ink} tam={32} />
       <Chip T={T} at={K.Tq + 0.2} until={K.M - 0.2} texto="Taq · de Thermus aquaticus" x={420} y={460} tam={36} borde={TAQ} />

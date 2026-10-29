@@ -41,7 +41,7 @@ La idea es de **1962**: Leland Clark y Champ Lyons, en Birmingham, Alabama, atra
 
 En México, según la Ensanut 2021–2024, el **17.0 %** de los adultos tiene diabetes tipo 2, y 5.4 de esos 17 puntos son personas que no lo sabían (casi una de cada tres).
 
-Dato curioso: las abejas producen su propia glucosa oxidasa y la ponen en la miel; ahí genera agua oxigenada, que ayuda a frenar bacterias.
+Dato curioso: las abejas producen su propia glucosa oxidasa y la ponen en la miel; ahí genera agua oxigenada, sobre todo cuando la miel se diluye, y eso ayuda a frenar bacterias.
 
 El dibujo es esquemático. **¿Tú o alguien en tu casa usa glucómetro? 👇**"
 
@@ -52,7 +52,7 @@ El dibujo es esquemático. **¿Tú o alguien en tu casa usa glucómetro? 👇**"
   - Corriente: «this electron flow is proportional to the number of glucose molecules present in blood».
   - Otras enzimas en tiras: «GDH-PQQ, GDH-NAD, GDH-FAD, or GOx along with a redox mediator».
   - Clark: «first proposed in 1962 by Clark and Lyons» (la revisión dice "Children's Hospital of Cincinnati", pero Clark se mudó a Cincinnati en 1968; en 1962 estaba en Birmingham, ver abajo).
-- **Artículo original:** Clark LC, Lyons C, "Electrode systems for continuous monitoring in cardiovascular surgery", *Annals of the New York Academy of Sciences* 102: 29–45, **1962**. DOI 10.1111/j.1749-6632.1962.tb13623.x (PMID 14021529). Afiliación: Medical College of Alabama, Birmingham.
+- **Artículo original:** Clark LC, Lyons C, "Electrode systems for continuous monitoring in cardiovascular surgery", *Annals of the New York Academy of Sciences* 102: 29–45, **1962**. DOI 10.1111/j.1749-6632.1962.tb13623.x (PMID 14021529). La dirección del artículo no aparece en PubMed ni en Crossref: "Alabama" se apoya en dónde trabajaba Clark (ADLM: Birmingham, 1958–1968; Champ Lyons era jefe de Cirugía allá).
 - **Dónde estaba Clark en 1962:** ADLM (American Association for Clinical Chemistry), Hall of Fame, "Leland Charles Clark Jr, PhD": «The burgeoning field of biosensors began with Dr. Clark's paper on the enzyme electrode», presentado en la New York Academy of Sciences en 1962; profesor en Birmingham de 1958 a 1968; «Before moving to Cincinnati in 1968». https://myadlm.org/community/merit-awards/hall-of-fame/bios/l-to-s/leland-clark
 - **De dónde sale la enzima:** Dubey MK et al., "Improvement Strategies, Cost Effective Production, and Potential Applications of Fungal Glucose Oxidase (GOD): Current Updates", *Frontiers in Microbiology* 8: 1032, **2017**: «Aspergillus niger is the most ordinarily used for the industrial yield of GOD»; «GOD is widely employed in the monitoring of diabetic patients to measure their blood glucose activities». https://pmc.ncbi.nlm.nih.gov/articles/PMC5468390/
   - Y Bauer JA, Zámocká M, Majtán J, Bauerová-Hlinková V (*Biomolecules* 12(3), **2022**), "Glucose Oxidase, an Enzyme 'Ferrari'…": «The current main industrial producers of glucose oxidase are Aspergillus and Penicillium»; «Today, GOx is extensively used in the most common methods for measuring blood glucose levels»; «a bound flavin adenine dinucleotide (FAD) co-factor is used to oxidize glucose». https://pmc.ncbi.nlm.nih.gov/articles/PMC8946809/
