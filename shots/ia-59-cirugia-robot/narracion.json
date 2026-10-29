@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Cirugia base narrada.dc.html",
+  "salida": "Shot Cirugia narrado.dc.html",
+  "nota": "Shot IA #59. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas puntadas no las hizo un cirujano: las hizo un robot, en el intestino de un cerdo vivo."
+    },
+    {
+      "escena": "Planea",
+      "texto": "Se llama STAR: ve el tejido en tres dimensiones, lo sigue al respirar y planea cada puntada."
+    },
+    {
+      "escena": "Cose",
+      "texto": "Una persona aprueba el plan y cada disparo de la aguja; el robot cose una puntada cada tres milímetros."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo publicó en 2022 un equipo de Johns Hopkins: cuatro cerdos operados y revisados a la semana."
+    },
+    {
+      "escena": "Parejas",
+      "texto": "En intestino de práctica, separó sus puntadas más parejo que cirujanos expertos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Ya te puede operar un robot solo?"
+    },
+    {
+      "escena": "Falla",
+      "texto": "Todavía no: en los cerdos, una de cada tres puntadas la corrigió una persona."
+    },
+    {
+      "escena": "Falla",
+      "texto": "Y tardó sesenta y dos minutos; un cirujano, veintiséis."
+    },
+    {
+      "escena": "Vesicula",
+      "texto": "En 2025, otro robot aprendió con unas diecisiete horas de demostraciones y, en ocho vesículas de cerdo, puso clips y cortó sus tubos él solo; una persona solo recargaba los clips."
+    },
+    {
+      "escena": "Falta",
+      "texto": "Pero eran órganos fuera del cuerpo: falta probarlo con sangrado y movimiento."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Sí: esas puntadas las hizo un robot… con una persona al lado, vigilando."
+    }
+  ]
+}

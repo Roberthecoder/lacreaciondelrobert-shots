@@ -45,3 +45,12 @@
 4. **#21 — "sin ayuda humana"** (⚠️): una persona recargaba los clips y cambiaba herramientas.
    Propuesta de frase completa: **"En 2025, otro robot aprendió con unas diecisiete horas de demostraciones y, en ocho vesículas de cerdo, les puso clips y cortó sus tubos él solo; una persona solo le recargaba los clips."**
    (Alternativa más corta: "…sin que nadie lo guiara; una persona solo le pasaba los clips.") Ajustar la duración si crecen las palabras.
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Lo publicó en 2022 un equipo de Johns Hopkins: cuatro cerdos operados y revisados a la semana.»; tarjeta «Johns Hopkins y Children's National» ✅
+- «En intestino de práctica, separó sus puntadas más parejo que cirujanos expertos.» (variación de separación: STAR 26 % vs 45 % a mano) ✅
+- «…puso clips y cortó sus tubos él solo; una persona solo recargaba los clips.» (SRT-H, 8 vesículas ex vivo, 2025) ✅
+- Recortes de Planea, Cose, Pregunta y Falla sin datos nuevos ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
