@@ -37,3 +37,33 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026):** las 4 filas con ⚠️ (4b, 9b, 10, 10b) se corrigieron y se volvieron a verificar abriendo Zhdanova 2000 y Dadachova 2007; todas las afirmaciones de voz y pantalla quedan ✅. La radiosíntesis se dice como hipótesis.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `chernobil.jsx` y `publicacion.md`, y vi 23 cuadros de la base narrada con `motor/preview.mjs`. Fuente nueva abierta:
+- **[B]** Bensch, K., Braun, U., Groenewald, J. Z. y Crous, P. W. (2012). The genus *Cladosporium*. *Studies in Mycology* 72: 1–401. https://pmc.ncbi.nlm.nih.gov/articles/PMC3390897/
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Etiqueta "edificio que cubre el reactor 4" | ✅ | [Z] | "inner parts of the Shelter" (del 4.º bloque) | 2000 |
+| R2 | Chip "no idéntica: de la misma familia" | ✅ | [N] | "synthesized by members of all biological kingdoms"; hongos por policétido (DHN), "Mammalian melanin is synthesized by a tyrosinase" | 2015 |
+| R3 | "AL MICROSCOPIO · pared del hongo", "pared con melanina" | ✅ | [N] | "Fungal melanin is typically located within the cell wall" | 2015 |
+| R4 | Hifa rotulada *Cladosporium sphaerospermum* (y el hongo de la Estación) | ✅ | [Z], [D07], [A] | entre los más comunes en el Shelter; usado en 2007; "Cladosporium sphaerospermum Penzig ATCC® 11289™" en la ISS | 2000 / 2007 / 2022 |
+| R5 | "esporas casi redondas" (dibujo: cadenas de esporas redondas) | ✅ | [B] | "Species of the C. sphaerospermum complex are well-characterised by having globose or subglobose, pigmented, almost smooth to verrucose terminal conidia" | 2012 |
+| R6 | "las dos, con melanina"; "poca comida"; barras 1× vs 2.5× "sin/con radiación" | ✅ | [D07] | "approximately 2.5 times more CFUs in irradiated melanized cells than in non-irradiated melanized controls"; "1 mM Na acetate solution in essential salts" | 2007 |
+| R7 | "≈500× la radiación normal"; cajas "con melanina"/"sin melanina"; chip "con melanina: crece más" | ✅ | [D07] | "approximately 500 times higher than background"; "Melanized fungal cells manifested increased growth relative to non-melanized cells…" | 2007 |
+| R8 | "luz → energía" y "¿radiación → energía?"; sello "HIPÓTESIS"; "no está comprobado" | ✅ | [D07], [D08], [A] | "we cautiously suggest…"; "analogous to other energy harvesting pigments such as chlorophylls"; "Actual radiosynthesis, however, remains to be shown." | 2007 / 2008 / 2022 |
+| R9 | Barras "debajo del hongo" / "sin hongo" (largos 0.97 : 1 = 147 : 151 cpm); caja partida con un sensor por mitad | ✅ | [A] | 147 vs 151 CPM; "The two (square) radiation sensors were situated in parallel directly beneath the Petri dish (one for each side)." | 2018 (pub. 2022) |
+| R10 | Barras de escala 50 cm (pared), 5 cm (cajas), 5 µm (hifa), 40 m (edificio), 20 m (Estación) | ✅ | dibujo esquemático | Órdenes de magnitud coherentes con lo dibujado (chimenea ≈ 150 m, Estación ≈ 100 m de ancho, esporas de pocos µm); se avisa "el dibujo es esquemático" | — |
+| R11 | Publicación: "Albert Einstein College of Medicine" (Nueva York) | ✅ | [D07] | "Albert Einstein College of Medicine, Bronx, New York" | 2007 |
+| R12 | Publicación: "~26 días" en la Estación; "diciembre de 2018" | ✅ | [A] | "active aboard the ISS for ~26 days"; "launch: 5/12/2018" | 2018 |
+| R13 | Publicación: 147 contra 151 cuentas por minuto; "debajo del agar solo" | ✅ | [A] | 147 vs 151 CPM; control negativo de solo agar en la misma caja partida | 2018 (pub. 2022) |
+| R14 | Publicación: vía DHN (hongos) vs DOPA (piel) | ✅ | [N] | "produced via the polyketide synthase pathway" (DHN); "Eumelanin formation is catalyzed by phenoloxidases from DOPA substrates"; "Mammalian melanin is synthesized by a tyrosinase" | 2015 |
+| R15 | Publicación: instituto de Kiev (Nelli Zhdanova) | ✅ | [Z] | "Institute of Microbiology and Virology, Ukrainian National Academy of Sciences … Kiev" | 2000 |
+| R16 | Publicación (LinkedIn): la melanina podría inspirar materiales de protección contra la radiación | ✅ | [A] | "melanized microbes may present an excellent passive shield, particularly for GCR" ("will require extensive further theoretical and experimental studies") | 2022 |
+
+Corregido en esta revisión: (1) la etiqueta "de 19 géneros" quedaba tapada por Robert; se movió arriba del contador (`chernobil.jsx`). (2) En `guion.md` se actualizó la columna «Lo que se ve» al dibujo final, se quitó la medida "3.4–4 µm" de las esporas (no se pudo abrir una fuente primaria con esa cifra; en pantalla solo dice "esporas casi redondas") y se marcó como confirmada la afiliación de Kiev. La tabla «Robert en pantalla» coincide con el `.jsx` (8 apariciones + cierre, 7 poses, grande en el re-gancho).
+
+**Resumen:** voz, pantalla y publicación verificadas; todas las afirmaciones quedan ✅ y la radiosíntesis se dice como hipótesis.
+
+VEREDICTO: APROBADO

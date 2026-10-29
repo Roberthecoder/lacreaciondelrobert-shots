@@ -47,3 +47,41 @@ los datos de más de 2 años dicen su año en voz o tarjeta (2011, 2017, 2022). 
 **Segunda vuelta (29 oct 2026):** se volvió a verificar todo lo que cambió en `narracion.json` (13 líneas, 999 caracteres) y en la pantalla
 (filas 1, 1b, 3, 4, 5, 7, 8c, 9, 9c, 10, 11, 12, 13 y 17). Las 5 ⚠️ quedaron corregidas y los recortes no cambian ningún dato.
 Todas las afirmaciones quedaron ✅. El dibujo es esquemático (enzima y cadena no están a escala).
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `plastico.jsx`, `Shot Plastico base narrada.dc.html`, «Lo que se ve» y «Robert en pantalla» de `guion.md`, y `publicacion.md`.
+También saqué cuadros con `motor/preview.mjs` (0.3–60 s, más cuadros sueltos de los conidios, la enzima, el planeta y el 664).
+
+| # | Texto o dibujo en pantalla / publicación | Veredicto | Fuente | Nota |
+|---|---|---|---|---|
+| A1 | Contador «día 0.0 → 5.0», líquido que se aclara a la mitad, «½ en ~5 días» | ✅ | [R] | "approximate half time for clearance … 5 days"; el «~» del número grande cubre lo aproximado |
+| A2 | «Ecuador · Amazonía (Yasuní)», «vive dentro de la planta», Lupa «POR DENTRO · tallo» con hifa entre células | ✅ | [R] | "live within the inner tissues of plants"; "Yasuni National Forest" |
+| A3 | Dibujo de conidios «sus esporas (conidios)»: fusiformes, 5 células, 3 centrales cafés, puntas claras, 2–3 apéndices arriba y 1 abajo; barra 10 µm (~25 µm de largo) | ✅ | [M] | coincide con la descripción del género ("5-celled conidia", "2–3 tubular apical appendages", "basal appendage single") |
+| A4 | Tarjeta «2011 · Yale · 59 hongos probados · Russell et al., Appl. Environ. Microbiol.»; 59 cajitas, una destaca | ✅ | [R] | "A collection of 59 fungal endophytic organisms … were screened" |
+| A5 | «AL MICROSCOPIO · esquemático», «hifa», «poliuretano», «enzima (serina hidrolasa)», barra «10 nm (esquemático)» | ✅ | [R] | serina hidrolasa de ~21 kDa; marcado como esquemático |
+| A6 | «con O₂ / sin O₂», dos tubos que se aclaran igual | ✅ | [R] | "equivalent rates of degradation under both anaerobic and aerobic conditions" |
+| A7 | Planeta con basura; barra «5000 km» | corregido → ✅ | — | la basura flotando no estaba a escala: la barra ahora dice «no a escala» |
+| A8 | «en laboratorio», «poliuretano suspendido en agua», bolsa con «esto NO»; barra 5 cm | corregido → ✅ | [R] | la barra de 5 cm hacía ver la bolsa de ~5 cm: ahora la barra sale antes de que aparezca la bolsa |
+| A9 | Tarjeta «2017 · Islamabad · suelo de un basurero · Khan et al., Environ. Pollut.», *Aspergillus tubingensis* (puntos negros), «2 meses», «+ 2 % de glucosa», película que se rompe en pedazos | ✅ | [K] | frases de las filas 8–8c |
+| A10 | «664 reportes de microbios» con 664 puntos (contados en el código: `length: 664`) | ✅ | [L] | "a total of 664 individual records were assessed" |
+| A11 | Chips «polietileno (PE), el plástico de las bolsas» y «sin pruebas de que se lo coman mucho» | corregido → ✅ | [L], [EA] | el segundo chip quedaba tapado por el subtítulo: se movió abajo (y = 1430) |
+| A12 | Barras «10 cm» en las escenas de la bolsa | corregido → «20 cm» ✅ | [EA] | con 10 cm la bolsa medía ~18 cm de ancho; con 20 cm mide ~36 cm, como una bolsa real |
+| A13 | «pesa menos ≠ se lo comieron», «aditivos», báscula | ✅ | [L] | "these additives may leach readily, causing weight losses" |
+| A14 | Subtítulo línea 8 «Polietileno puro: *sin pruebas.*» | corregido → ✅ | [L] | decía más que la fuente (sin pruebas *de qué*): ahora «Sin pruebas de que *se coman mucho* polietileno puro.» |
+| A15 | Subtítulo línea 9 «Suelta aditivos, *no se lo comen.*» | corregido → ✅ | [L] | sonaba a regla general; la voz dice «a veces»: ahora «A veces pesa menos *por los aditivos.*» |
+| A16 | Demás subtítulos (líneas 0–7, 10–12) | ✅ | — | resumen fiel de la voz verificada |
+| A17 | «✓ usar menos / ✓ reusar / ✓ separar para reciclar»; barra 20 cm de los botes | ✅ | [EPA] | — |
+| A18 | Micelio «una pista, no un permiso»; barra 1 cm | ✅ (opinión) | — | ilustrativo |
+| A19 | Cierre: mismo tubo junto al bote; barra 5 cm | corregido → ✅ | — | la barra ahora se quita antes de que entre el bote (no está a la misma escala) |
+| A20 | Tabla «Robert en pantalla» (13 apariciones, 1 grande, >4 poses, CierreMarca con Robert) | ✅ | — | fila 10 ajustada a la frase nueva («pesa menos porque suelta aditivos») |
+| P1 | publicacion.md: endófito «vive dentro de los tejidos de las plantas sin enfermarlas» | ✅ | [R] | "live within the inner tissues of plants without causing overt disease symptoms" |
+| P2 | «programa de investigación con estudiantes de licenciatura de la Universidad de Yale» | ✅ | [R] | "an educational program to engage undergraduate students in discovery-based research" |
+| P3 | «Dos aislados … con y sin oxígeno, y lo degradaron al mismo ritmo en ambas condiciones» | corregido → ✅ | [R] | el mismo ritmo solo se midió en E2712A: ahora «y el que se probó a fondo lo degradó al mismo ritmo en ambas condiciones» |
+| P4 | Lear: ni polietileno, polipropileno, poliestireno o PVC puros; aditivos | ✅ | [L] | "no evidence for the substantial degradation of unadulterated polyethylene, polypropylene, polystyrene or polyvinyl chloride" |
+| P5 | Khan: «enterrado en suelo degradó menos» | ✅ | [K] | "higher when plate culture method was employed, followed by the liquid culture method and soil burial technique" |
+| P6 | Ekanayaka 2022: no hay confirmación de su ritmo en la naturaleza | ✅ | Ekanayaka, A. H. et al. (2022), *J. Fungi* 8(8): 772, https://pmc.ncbi.nlm.nih.gov/articles/PMC9330918/ | "There was no confirmation of their biodegradation rate in a natural environment" (2022) |
+| P7 | Facebook, X y Threads: «con el polietileno de las bolsas del súper no hay pruebas…» | corregido → ✅ | [L] | faltaba «puro»: ahora «el polietileno puro, el plástico de las bolsas del súper» (X: 245 caracteres; Threads: 394) |
+
+Revisión final: todo el texto en pantalla, los dibujos, las barras de escala y `publicacion.md` quedaron ✅ tras las correcciones (A7, A8, A11, A12, A14, A15, A19, P3, P7). La voz verificada no se tocó.
+VEREDICTO: APROBADO
