@@ -75,3 +75,5 @@ Tiempos de la base (con la voz real se recorren solos porque están atados a cad
 - Virión de orthopoxvirus: "Enveloped, brick-shaped virion, 250nm long and 200nm wide" (ViralZone, SIB).
 - Las dosis soviéticas fueron sobre todo por acuerdos bilaterales (no todas pasaron por la OMS); la voz dice "donó", sin decir "a la OMS".
 - No se dibuja a Zhdánov, Henderson ni Maalin como retrato: solo gafetes con su nombre.
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.

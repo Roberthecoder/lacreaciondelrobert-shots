@@ -65,3 +65,5 @@ Tiempos de la base (`Shot Rosas Diciembre base narrada.dc.html`, escenas estimad
 - El dato de la fresa silvestre (*Fragaria vesca*, un borrado de 2 letras en su gen parecido) quedó fuera por tiempo; puede ir en `publicacion.md`.
 
 - Escena 9 (voz): «las que florecen siempre» → «las de floración continua» (fiel a "continuous flowering", Iwata 2012), por la revisión de pantalla. Ver verificacion.md.
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.

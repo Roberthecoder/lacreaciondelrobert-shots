@@ -67,3 +67,5 @@ Apariciones: 8 · **33.2 s en pantalla** (+ cierre 3.8 s) · 7 poses distintas, 
 - La voz no dice que los productores injerten hoy; solo que el injerto contagia la ramificación (Dole y Wilkins, 1988). Se quitó "para siempre": la planta puede perder el fitoplasma con calor fuerte (Greenhouse Grower 2011; CPVO 2001), y no siempre ("puede").
 - Joel R. Poinsett y la producción en México se dejaron fuera (no suman al mecanismo; cifras de producción inconsistentes entre fuentes).
 - Especies: *Euphorbia pulcherrima* (nochebuena), *Catharanthus roseus* (vinca, pervinca), *Cuscuta* (cuscuta, "dodder").
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.

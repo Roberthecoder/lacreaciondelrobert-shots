@@ -83,3 +83,5 @@ Apariciones: 11 · **≈ 44.8 s en pantalla** (+ cierre 3.8 s) · 9 poses distin
 - Los "25 años" son una estimación de una tesis de 2008 ("Jiménez, in prep."), para 45–50 cm de altura; se dicen como estimación y con su año.
 - Descartados por no verificables o inferidos: "500–600 años", "14 a 40 años para 40 cm" (solo en notas de prensa que citan a la UNAM sin fuente abierta), "1–2 cm por año" (Excélsior 2026 citando a CONABIO sin enlace).
 - La UICN la tenía como "casi amenazada" (Hernández et al. 2013, citado en fuente 2); no se menciona en la voz.
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.
