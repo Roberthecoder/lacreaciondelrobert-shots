@@ -133,10 +133,10 @@ function Nota({ T, at, until, texto, x, y, rot = -3, color = KC.yellow, ancho = 
     background:color, border:`6px solid ${KC.ink}`, borderRadius:10, padding:'24px 32px', boxShadow:`10px 12px 0 ${KC.ink}`, font:`900 44px/1.15 ${KF.texto}`, color:KC.ink }}>{texto}</div>;
 }
 // Barra horizontal de tiempo con etiqueta.
-function BarraTiempo({ T, at, x, y, ancho, color, etiqueta, valor, dur = 1.2 }) {
-  if (T < at) return null;
+function BarraTiempo({ T, at, until, x, y, ancho, color, etiqueta, valor, dur = 1.2 }) {
+  if (T < at || (until != null && T > until + 0.4)) return null;
   const g = kprog(T, at, at + dur, kEase.sale);
-  return <div style={{ position:'absolute', left:x, top:y, zIndex:40, opacity:kprog(T, at, at + 0.2) }}>
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:40, opacity:kprog(T, at, at + 0.2) * (until != null ? 1 - kprog(T, until, until + 0.4) : 1) }}>
     <div style={{ font:`900 36px ${KF.texto}`, color:KC.ink, marginBottom:8 }}>{etiqueta}</div>
     <div style={{ display:'flex', alignItems:'center', gap:16 }}>
       <div style={{ width:Math.max(16, ancho * g), height:80, background:color, border:`6px solid ${KC.ink}`, borderRadius:14 }}></div>
@@ -187,7 +187,7 @@ function Tutor() {
         </>, 25)}
       </Escena>
       {T > K.S - 0.45 && T < K.M + 0.45 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.S - 0.45, K.S + 0.05) * (1 - kprog(T, K.M - 0.05, K.M + 0.45)) }}>
-        <Monitor T={T} x={600} y={750} mensajes={[
+        <Monitor T={T} x={630} y={750} mensajes={[
           { at: K.S + 0.8, yo: true, texto: 'Ayúdame a practicar el pasado en inglés' },
           { at: K.S + 2.2, yo: false, texto: '¡Claro! Completa: «Yesterday I ___ (go) to school».' },
           { at: K.S + 3.8, yo: true, texto: 'went' }]} />
@@ -261,8 +261,8 @@ function Tutor() {
         <FondoLunares color={KC.yellow} />
       </Escena>
       <MitoTachado T={T} at={K.E + 0.2} tacharEn={K.E + 1.2} until={K.E + 3.0} texto="«aprendieron 2 años de temario»" y={430} tam={40} />
-      <BarraTiempo T={T} at={K.E + 2.0} x={90} y={570} ancho={70} color={KC.gold2} etiqueta="piloto con tutor de IA" valor="6 semanas" />
-      <BarraTiempo T={T} at={K.E + 3.2} x={90} y={770} ancho={760} color={KC.mint} etiqueta="mejora equivalente a…" valor="" dur={1.6} />
+      <BarraTiempo T={T} at={K.E + 2.0} until={K.Pe - 0.2} x={90} y={570} ancho={70} color={KC.gold2} etiqueta="piloto con tutor de IA" valor="6 semanas" />
+      <BarraTiempo T={T} at={K.E + 3.2} until={K.Pe - 0.2} x={90} y={770} ancho={760} color={KC.mint} etiqueta="mejora equivalente a…" valor="" dur={1.6} />
       <Chip T={T} at={K.E + 4.6} until={K.Pe - 0.2} texto="1.5 a 2 años de escuela normal en Nigeria" x={540} y={990} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.E + 5.2} until={K.Pe - 0.2} texto="equivalencia estimada (método EYOS)" x={540} y={1100} tam={28} borde={KC.ink} />
 
