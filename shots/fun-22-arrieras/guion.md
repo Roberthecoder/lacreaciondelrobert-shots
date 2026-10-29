@@ -40,8 +40,10 @@ Detalle con la frase textual de cada afirmación en `verificacion.md` (fase de v
    > "Nutrients are ingested directly from leaves when these are palatable" (por eso: no las *cargan* para comérselas, aunque sí beben jugo al cortarlas)
 1c. Marsh, S. E. et al. (2013). Association between *Pseudonocardia* symbionts and *Atta* leaf-cutting ants suggested by improved isolation methods. *Int. Microbiol.* 16(1): 17–25. https://pubmed.ncbi.nlm.nih.gov/24151778
    > "fungus-growing ants in the genus Atta do not carry visible Actinobacteria on their cuticle" (por eso la capa se dibuja sobre *Acromyrmex*)
-1d. Wikipedia, "Gongylidia" (consultada 29 oct 2026), con Decharme e Issaly (1980). https://en.wikipedia.org/wiki/Gongylidia
-   > "ellipsoid, about 30-50 micrometres in diameter" (tamaño del dibujo)
+1d. Leal-Dutra, C. A. et al. (2023). Evidence that the domesticated fungus *Leucoagaricus gongylophorus* recycles its cytoplasmic contents as nutritional rewards to feed its leafcutter ant farmers. *IMA Fungus* 14: 19. https://pmc.ncbi.nlm.nih.gov/articles/PMC10503033/
+   > "swollen hyphal cells ca. 30 µm in diameter that grow in bundles called staphylae"; "bulb diameters ranging from 12 µm to 50 µm" (tamaño del dibujo)
+1e. Holmes, N. A. et al. (2016). Genome analysis of two *Pseudonocardia* phylotypes associated with *Acromyrmex* leafcutter ants reveals their biosynthetic potential. *Front. Microbiol.* 7: 2073. https://doi.org/10.3389/fmicb.2016.02073
+   > *Pseudonocardia* en *Acromyrmex*: "visible as a whitish covering on the cuticle" (por eso la capa blanca se dibuja sobre *Acromyrmex*)
 2. Schultz, T. R. y Brady, S. G. (2008). Major evolutionary transitions in ant agriculture. *PNAS* 105(14): 5435–5440. https://pmc.ncbi.nlm.nih.gov/articles/PMC2291119/
    > "evolved ≈50 million years ago in the Neotropics" (estimación de 2008, ya superada por la de 2024; no se usa en la voz)
    > leaf-cutting ants "cut and process fresh vegetation (leaves, flowers, and grasses)" para su hongo

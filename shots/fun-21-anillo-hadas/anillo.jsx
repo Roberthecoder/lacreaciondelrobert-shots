@@ -1,7 +1,7 @@
 // Shot Fungi Mati #21 · Ese círculo en el pasto no es de hadas: es un hongo — NARRADO (gancho 1 "Esto no es X: es Y" + N4 "la imagen que se llena").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
-const AN = { pasto:'#5fcf55', claro:'#8be872', oscuro:'#1f7a35', banda:'#2f9c45', cafe:'#a0743a', cafe2:'#c99a55', pradera:'#c6d86a', tierra:'#6b4a2b', tierra2:'#4a3220' };
+const AN = { pasto:'#5fcf55', claro:'#8be872', oscuro:'#1f7a35', banda:'#2f9c45', cafe:'#8a5a25', cafe2:'#c99a55', pradera:'#c6d86a', tierra:'#6b4a2b', tierra2:'#4a3220' };
 
 // Mechones de pasto vistos desde arriba (fijos; se colorean según la distancia al centro del anillo).
 const MECHONES = (() => { const g = krng(21), out = []; for (let i = 0; i < 1500; i++) out.push([g() * 1180 - 50, g() * 2020 - 50, g() * 6.283, 14 + g() * 14]); return out; })();
@@ -81,7 +81,7 @@ function Granos({ o = 1, color = '#5b3a22' }) {
 function Corte({ T, sueloY = 1000, verde = () => 0, seco = () => 0, hojas = 1 }) {
   const briznas = [];
   for (let x = -10; x < KW + 20; x += 13) {
-    const v = verde(x), sc = seco(x), h = 70 + v * 70 - sc * 25 + Math.sin(x * 0.37) * 10, sway = mece(T, x * 0.03, 0.4) * 6 + sc * 22;
+    const v = verde(x), sc = seco(x), h = 70 + v * 80 - sc * 30 + Math.sin(x * 0.37) * 10, sway = mece(T, x * 0.03, 0.4) * 6 + sc * 40;
     const col = sc > 0.05 ? mixHex(AN.pasto, AN.cafe, sc) : mixHex(AN.pasto, AN.oscuro, v);
     briznas.push(<path key={x} d={`M ${x - 5} ${sueloY + 4} Q ${x + sway * 0.4} ${sueloY - h * 0.6} ${x + sway} ${sueloY - h} Q ${x + 2} ${sueloY - h * 0.5} ${x + 5} ${sueloY + 4} Z`} fill={col} stroke={KC.ink} strokeWidth={2.5} />);
   }
@@ -164,7 +164,7 @@ function AnilloShot() {
   // verde: el frente avanza a la derecha
   const fr = klerp(330, 720, kprog(T, K.V + 0.2, K.Ca - 0.2, kEase.suave));
   // café: el pasto encima del micelio se seca
-  const seco = kprog(T, K.Ca + 1.6, K.S - 0.4, kEase.suave);
+  const seco = kprog(T, K.Ca + 0.8, K.Ca + 2.6, kEase.suave);
   // edad: el anillo se llena hacia afuera
   const uEd = kprog(T, K.Ed + 0.2, K.J - 0.4, kEase.sale);
   const yAHX = kprog(T, K.J + 3.0, K.J + 4.2, kEase.sale), creceJ = kprog(T, K.J + 4.0, K.F - 0.4, kEase.sale);
@@ -208,22 +208,22 @@ function AnilloShot() {
       <Escena T={T} a={K.V} b={K.Ca} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Corte T={T} sueloY={1000} verde={(x) => kclamp(1 - Math.abs(x - (fr - 120)) / 170, 0, 1) * kprog(T, K.V + 1.0, K.V + 2.0)} hojas={1} />
-          {Array.from({ length: 9 }, (_, i) => { const hx = 60 + i * 120; const ido = kprog(T, K.V + 0.2 + (hx - 330) / 390 * 2.8, K.V + 1.0 + (hx - 330) / 390 * 2.8); return ido > 0 && hx > 300 ? <circle key={i} cx={hx} cy={1040 + (i % 3) * 38} r={34} fill={AN.tierra} opacity={ido} /> : null; })}
-          <RedHifas T={T} x={fr - 330} y={1010} g={1} seed={5} n={160} escala={0.11} ancho={3} brillo={0.4} />
-          <rect x={fr - 30} y={1012} width={50} height={300} fill={KC.gold2} opacity={0.25 + 0.15 * Math.sin(T * 6)} rx={20} />
-          {Array.from({ length: 8 }, (_, i) => { const u = ((T - K.V - 1.2) * 0.55 + i / 8) % 1; return T > K.V + 1.2 ? <BolaN key={i} x={fr - 200 + (i % 4) * 55} y={1160 - u * 170} s={0.8 * Math.sin(Math.PI * u) + 0.2} /> : null; })}
+          <Corte T={T} sueloY={920} verde={(x) => kclamp((x - (fr - 330)) / 60, 0, 1) * kclamp((fr + 20 - x) / 60, 0, 1) * kprog(T, K.V + 1.0, K.V + 2.0)} hojas={1} />
+          {Array.from({ length: 9 }, (_, i) => { const hx = 60 + i * 120; const ido = kprog(T, K.V + 0.2 + (hx - 330) / 390 * 2.8, K.V + 1.0 + (hx - 330) / 390 * 2.8); return ido > 0 && hx > 300 ? <circle key={i} cx={hx} cy={960 + (i % 3) * 38} r={34} fill={AN.tierra} opacity={ido} /> : null; })}
+          <RedHifas T={T} x={fr - 200} y={930} g={1} seed={5} n={320} escala={0.12} ancho={3} brillo={0.5} />
+          <rect x={fr - 40} y={932} width={60} height={230} fill={KC.gold2} opacity={0.25 + 0.15 * Math.sin(T * 6)} rx={24} />
+          {Array.from({ length: 8 }, (_, i) => { const u = ((T - K.V - 1.2) * 0.55 + i / 8) % 1; return T > K.V + 1.2 ? <BolaN key={i} x={fr - 220 + (i % 4) * 60} y={1130 - u * 190} s={0.8 * Math.sin(Math.PI * u) + 0.2} /> : null; })}
         </>)}
       </Escena>
       {/* 6 · en otros, el micelio repele el agua: el pasto se seca */}
       <Escena T={T} a={K.Ca} b={K.S} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Corte T={T} sueloY={1000} seco={(x) => (x > 260 && x < 820 ? seco : 0)} hojas={0.6} />
-          <path d={`M 250 ${1040} Q 400 ${1020} 540 ${1040} T 830 ${1040} L 830 1130 Q 690 1150 540 1130 T 250 1130 Z`} fill="#fff4d6" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Ca, K.Ca + 0.6)} />
-          <RedHifas T={T} x={540} y={1085} g={1} seed={9} n={120} escala={0.08} ancho={2} color="#e9dcc0" />
+          <Corte T={T} sueloY={920} seco={(x) => (x > 260 && x < 820 ? seco : 0)} hojas={0.6} />
+          <path d={'M 250 960 ' + Array.from({ length: 12 }, (_, i) => `L ${250 + i * 52} ${958 + Math.sin(i * 1.7) * 8}`).join(' ') + ' L 830 960 Q 850 1010 830 1060 ' + Array.from({ length: 12 }, (_, i) => `L ${830 - i * 52} ${1060 + Math.sin(i * 2.3) * 12}`).join(' ') + ' Q 230 1010 250 960 Z'} fill="rgba(255,244,214,.82)" stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Ca, K.Ca + 0.6)} />
+          <RedHifas T={T} x={540} y={1010} g={1} seed={9} n={260} escala={0.07} ancho={2.5} color="#b89a6a" circ />
           {Array.from({ length: 22 }, (_, i) => { const x = 40 + (i * 97) % 1000, t0 = K.Ca + 0.2 + (i % 7) * 0.25, ciclo = 1.3; if (T < t0) return null; const u = ((T - t0) % ciclo) / ciclo;
-            const sobre = x > 260 && x < 820, yStop = sobre ? 1035 : 1150, y = klerp(380, yStop + 20, Math.min(1, u * 1.25));
+            const sobre = x > 260 && x < 820, yStop = sobre ? 935 : 1080, y = klerp(380, yStop + 20, Math.min(1, u * 1.25));
             const reb = u > 0.8 && sobre ? (u - 0.8) * 5 : 0;
             return <ellipse key={i} cx={x + reb * 30} cy={y - reb * 50} rx={11} ry={18} fill="#8fd8ff" stroke={KC.ink} strokeWidth={3} opacity={u > 0.8 && !sobre ? 1 - (u - 0.8) * 5 : 1} />; })}
         </>)}
@@ -264,8 +264,8 @@ function AnilloShot() {
       {/* 10 · la imagen que se llena: el anillo crece año tras año hasta 60 m */}
       <Escena T={T} a={K.Ed} b={K.J} zoom={0.02}>
         {fsvg(<>
-          <Cesped T={T} R={20 + 400 * uEd} W={20 + 30 * uEd} anillos={uEd * 25} base={AN.pradera} claro="#a8bf4e" />
-          <Personita x={540 + 20 + 400 * uEd + 50} y={880} s={1.4} />
+          <Cesped T={T} cy={930} R={20 + 360 * uEd} W={20 + 30 * uEd} anillos={uEd * 25} base={AN.pradera} claro="#a8bf4e" />
+          <Personita x={540 + 20 + 360 * uEd + 40} y={930} s={1.6} />
         </>)}
       </Escena>
       {/* 11 · Japón, 2010: Lepista sordida suelta una sustancia que hace crecer el pasto */}
@@ -284,11 +284,11 @@ function AnilloShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           <Vineta T={T} at={K.F + 0.2} x={400} y={560} texto="hadas bailando" dibujo={<g>{Array.from({ length: 5 }, (_, i) => { const a = T * 2 + i * 1.256; return <Brillo4 key={i} x={Math.cos(a) * 46} y={Math.sin(a) * 46} s={0.6} rot={T * 80} />; })}</g>} />
-          <Vineta T={T} at={K.F + 1.3} x={400} y={800} texto="el diablo" sub="y su mantequera · Holanda" dibujo={<g>
+          <Vineta T={T} at={K.F + 1.3} x={400} y={800} texto="el diablo" sub="mantequera · Holanda" dibujo={<g>
             <rect x={-12} y={-20} width={44} height={70} rx={8} fill="#c98b2b" stroke={KC.ink} strokeWidth={4} /><line x1={10} y1={-20} x2={10 + Math.sin(T * 8) * 6} y2={-60} stroke={KC.ink} strokeWidth={6} />
             <circle cx={-34} cy={-22} r={20} fill={KC.red} stroke={KC.ink} strokeWidth={4} /><path d="M -48 -36 L -52 -56 L -40 -40 M -22 -38 L -16 -58 L -28 -40" fill={KC.red} stroke={KC.ink} strokeWidth={3} />
             <path d="M -50 0 Q -34 -6 -18 0 L -18 50 L -50 50 Z" fill={KC.red} stroke={KC.ink} strokeWidth={4} /></g>} />
-          <Vineta T={T} at={K.F + 2.4} x={400} y={1040} texto="un dragón" sub="que descansa · Alemania" dibujo={<g style={{ filter:'drop-shadow(0 0 10px #ffd34d)' }}>
+          <Vineta T={T} at={K.F + 2.4} x={400} y={1040} texto="un dragón" sub="Alemania" dibujo={<g style={{ filter:'drop-shadow(0 0 10px #ffd34d)' }}>
             <path d="M -66 30 Q -40 -20 0 0 Q 30 -30 56 -10 Q 70 0 60 12 L 30 14 Q 10 40 -30 36 Q -50 50 -66 30 Z" fill="#59c26a" stroke={KC.ink} strokeWidth={4} />
             <circle cx={46} cy={-4} r={4} fill={KC.ink} /><path d="M -20 -2 L -14 -18 L -8 -2 M 0 -6 L 6 -22 L 12 -6" fill="#ffd34d" stroke={KC.ink} strokeWidth={3} /></g>} />
           <Sello T={T} at={K.F + 3.6} x={820} y={860} texto="HONGO" color={KC.ink} r={120} rot={10} />
@@ -319,15 +319,15 @@ function AnilloShot() {
       <Etq T={T} at={K.S + 2.0} until={K.P - 0.3} x={60} y={600} texto="Marasmius oreades" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.S + 2.4} until={K.P - 0.3} x={60} y={660} texto="“hongo de los anillos”" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="1917" quien="este de Colorado · Shantz y Piemeisel" revista="Journal of Agricultural Research" y={640} />
-      <Chip T={T} at={K.E + 3.4} until={K.Ed - 0.3} texto="≈ 12 cm por año (promedio estimado)" x={400} y={1150} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.E + 3.4} until={K.Ed - 0.3} texto="≈ 12 cm por año (promedio estimado)" x={540} y={1520} tam={34} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.Ed + 0.2} until={K.J - 0.3} valor={250} dur={K.J - 0.6 - K.Ed} sufijo=" años" x={330} y={470} tam={120} color={KC.yellow} />
       <Chip T={T} at={K.Ed + 0.6} until={K.J - 0.3} texto={`${Math.round(60 * uEd)} m de ancho`} x={300} y={620} tam={36} borde={KC.gold} mono />
-      <Chip T={T} at={K.Ed + 2.4} until={K.J - 0.3} texto="estimación" x={760} y={1150} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Ed + 2.4} until={K.J - 0.3} texto="estimación" x={540} y={1520} tam={30} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.J + 0.2} until={K.J + 2.5} anio="2010" quien="Universidad de Shizuoka, Japón" revista="ChemBioChem, 2010" y={640} />
       <Etq T={T} at={K.J + 3.0} until={K.F - 0.3} x={60} y={760} texto="Lepista sordida" it tam={38} color={KC.ink} />
-      <Chip T={T} at={K.J + 3.4} until={K.F - 0.3} texto="AHX (2-azahipoxantina)" x={560} y={1180} tam={34} borde={KC.violet} />
+      <Chip T={T} at={K.J + 3.4} until={K.F - 0.3} texto="AHX (2-azahipoxantina)" x={540} y={1520} tam={34} borde={KC.violet} />
       <Chip T={T} at={K.F + 0.3} until={K.C - 0.3} texto="folclor europeo" x={330} y={400} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="años, o siglos" x={720} y={1150} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="años, o siglos" x={540} y={1520} tam={40} borde={KC.gold} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Es} texto="1 m" largo={120} />
