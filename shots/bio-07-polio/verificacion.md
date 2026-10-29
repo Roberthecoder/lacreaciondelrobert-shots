@@ -25,4 +25,19 @@
 
 Sin ❌ ni ⚠️ pendientes.
 
+## Re-verificación (29 oct, auditoría)
+
+Se corrigió la escena 11: la voz decía «Y hoy las grandes empresas que venden ADN revisan qué pides y quién eres» (un «hoy» sostenido con una nota de 2009, sin año, y generalizando a «las grandes empresas»); ahora dice «Y desde 2009, muchas empresas que fabrican ADN por encargo revisan, por su cuenta, qué pides y quién eres», con el subtítulo «Desde 2009: *revisan qué pides y quién eres.*» y el mismo ajuste en `publicacion.md`. Re-verificado el 29 oct 2026 abriendo el sitio del consorcio (genesynthesisconsortium.org, página modificada el 18 sep 2026) y su lista de recursos.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| La práctica de revisar pedidos de ADN sintético nació en **2009** (consorcio internacional de síntesis de genes, IGSC) | ✅ | International Gene Synthesis Consortium, página principal (consultada 29 oct 2026) | "Formed in 2009, IGSC members screen synthetic gene orders to identify regulated pathogen sequences and other potentially dangerous sequences" | 2026 (dato: 2009) |
+| Lo que revisan es **qué pides y quién eres** (la secuencia pedida y el cliente) | ✅ | IGSC, página principal | "an industry-led group of gene synthesis companies and organizations formed to design and apply a common protocol to screen both the sequences of synthetic gene orders and the customers who place them" | 2026 |
+| Lo hacen **por su cuenta** (es voluntario, de la industria, no un mandato legal) | ✅ | IGSC, página principal | "Formed as an industry-led organization, the objectives of IGSC are to: safeguard biosecurity, apply a common protocol for screening DNA sequences and customers" | 2026 |
+| La práctica **sigue vigente hoy** (protocolo actual del IGSC) | ✅ | IGSC, página de Recursos (consultada 29 oct 2026) | "2026 – IGSC Harmonized Screening Protocol (V3.1)" (versión vigente listada; junto a "2024 – US OSTP Framework for Nucleic Acid Synthesis Screening" y "2025 – US Executive Order 14292") | 2026 |
+| «**Muchas** empresas» (no todas; en 2009 los cinco fundadores producían el 80 % de los genes sintetizados) | ✅ | *Genetic Engineering & Biotechnology News*, 18 nov 2009 | "The five founding companies of the International Gene Synthesis Consortium produce 80% of all synthesized genes" | 2009 |
+| El texto nuevo no dice nada más fuerte que la fuente | ✅ | Comparación directa | «muchas empresas… por su cuenta» es más débil que «las grandes empresas» que decía antes y que el 80 % de la fuente | 2026 |
+
+Nota editorial (no es un hecho del video, no bloquea el render): en `guion.md` quedaron dos líneas viejas que ya no describen la voz actual — la nota de la línea 17 («La voz dice ahora "las grandes empresas"») y el párrafo de la línea 53 («De ahí salieron reglas… la práctica de que las grandes empresas…», sin el año). Conviene alinearlas con la escena 11.
+
 VEREDICTO: APROBADO

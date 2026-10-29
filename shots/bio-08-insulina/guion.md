@@ -24,11 +24,11 @@ El viejo terminaba diciendo que "hoy buena parte de la insulina del mundo **se s
 | 0 | Gancho | Esa insulina no salió de ningún animal: salió de un tanque lleno de microbios. | `MundoBiorreactor` sobre fondo cian. **Desde el cuadro 0** el agitador gira y suben burbujas. Delante, un frasco de insulina. |
 | 1 | Antes | Antes de los ochenta venía del páncreas de cerdos y de reses. | Fondo amarillo: siluetas de un cerdo y una res y un frasco viejo con etiqueta de papel "desde 1922". |
 | 2 | Reacción | Funcionaba, pero no era humana, y a algunos pacientes les daba reacciones. | Un brazo con marcas rojas en el sitio del piquete. `MitoTachado` "¿insulina humana?". |
-| 3 | Gen | En 1978 escribieron el gen de la insulina humana y lo metieron en una bacteria. | Dos renglones de letras se escriben solos (cadena A y cadena B) → de cada uno se forma una doble hélice → entran a un anillo de ADN (plásmido) → entra a la bacteria. Chip "1978 · el gen, escrito". |
+| 3 | Gen | En 1978 escribieron los genes de las dos cadenas de la insulina humana, y cada uno lo metieron en su propia bacteria. | Dos renglones de letras se escriben solos (cadena A y cadena B) → de cada uno se forma una doble hélice → entran a un anillo de ADN (plásmido) → entra a la bacteria. Chip "1978 · dos genes, escritos" y dos plásmidos (A y B), uno por bacteria. |
 | 4 | Lee | La bacteria no sabe de quién es ese gen: lo lee y fabrica la proteína. | La bacteria se ilumina y empiezan a salir cadenitas de insulina. |
 | 5 | Pregunta | ¿Y cómo cabe una fábrica en algo que no ves? | **Re-gancho.** Barra de escala con la bacteria (~2 µm). Sticker pensativo. |
 | 6 | Plásmido | Por dentro, la bacteria tiene un anillito de ADN extra, el plásmido, con el gen. | **Lupa de rayos X** sobre la ventana del tanque: dentro, la bacteria con su cromosoma y el plásmido brillando. |
-| 7 | Ribosoma | Sus ribosomas lo leen y arman la cadena, una y otra vez, sin parar. | Acercamiento: un ribosoma corre por el ARN y va dejando caer los aminoácidos de la cadena. `Medidor`. |
+| 7 | Ribosoma | Sus ribosomas lo leen y arman su cadena, una y otra vez, sin parar. | Acercamiento: dos ribosomas, uno por cepa, corren por su ARN: arriba la cadena A (21 aminoácidos), abajo la B (30). `Medidor` «A …/21 · B …/30». (Corregido el 29 oct 2026: antes mostraba una sola cadena de 51.) |
 | 8 | Humulin | Así nació Humulin, aprobada en octubre de 1982: el primer medicamento de ADN recombinante. | `TarjetaEstudio` "1982 · octubre · FDA" y el frasco con su etiqueta. |
 | 9 | Hoy | Pero hoy no todo se hace en bacterias. | Chip "no todo es bacteria" y el tanque se divide en dos. |
 | 10 | Levadura | Mucha insulina se fabrica en levadura, la misma del pan, que la suelta al caldo. | Una levadura ovalada con su yema suelta la insulina al caldo. Etiqueta *Saccharomyces cerevisiae*. |
@@ -86,7 +86,7 @@ Es la marca del canal: la ciencia se asocia a su cara. Entra desde el cuadro 0, 
 | 14,0 - 17,5 | pensativo (06) | arriba-der | entra a la celula |
 | 20,5 - 24,5 | bajando lentes (04) | **presentador** | la celula se divide y llena el tanque, en grande |
 | 28,0 - 31,5 | apuntando (02) | arriba-der | el tanque trabajando |
-| 35,0 - 38,5 | sonriendo (05) | arriba-der | 51 aminoacidos, uno por uno |
+| 35,0 - 38,5 | sonriendo (05) | arriba-der | cadena A: 21 · cadena B: 30 |
 | 44,0 - 47,5 | serio (10) | arriba-der | sacarla cuesta: hay que abrir la bacteria |
 | 51,5 - 55,5 | perfil serio (12) | arriba-der | y llena el frasco |
 

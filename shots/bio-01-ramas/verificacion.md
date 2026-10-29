@@ -33,4 +33,20 @@
 
 Todas las afirmaciones del texto final están ✅.
 
+## Re-verificación (29 oct, auditoría)
+Se corrigió la voz, el subtítulo, el contador y `publicacion.md`: ya no dicen que el canal inventó la rama naranja (divulgación); se atribuye a Thieman y Palladino (2010), y la voz aclara que cada autor da su propio significado a los colores de DaSilva (2004). Fuentes abiertas el 29 oct 2026 (PDF del repositorio BUAP y texto del artículo en ejbiotechnology.info).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz: "En 2004, Edgar DaSilva, de la UNESCO, juntó estos colores" | ✅ | DaSilva, E. J. (2004). The Colours of Biotechnology. Electronic Journal of Biotechnology 7(3) (ejbiotechnology.info, article/download/1114/1496) | "Edgar J. DaSilva Former Director Division of Life Sciences UNESCO, Paris, France" | 2004 |
+| Voz: "aunque cada autor les da su propio significado" | ✅ | DaSilva 2004 vs. Morales-Barrón 2021 (que cita a Thieman y Palladino 2010) | DaSilva: "Grey Classical Fermentation and Bioprocess Technology"; "Purple Patents, Publications, Inventions, IPRs". Morales-Barrón: "el color gris es un área importante para el ambiente y su protección"; "el color violeta rige todas las cuestiones bioéticas y de propiedad intelectual" | 2004 / 2010 |
+| Voz: "Y hay uno más, el naranja: contarlo" (divulgación); subtítulo "Y uno más: naranja, contarlo." | ✅ | Morales-Barrón, B. M. (2021), "Los colores de la biotecnología", Conferencia de la Asociación Poblana de Ciencias Microbiológicas, repositorio BUAP, DOI 10.13140/RG.2.2.36466.53445 | "por último el color naranja el cual es una área que se encarga de la divulgación (Thieman.W., Palladino.M., 2010)" | 2010 (citado en 2021) |
+| La naranja no está en la lista de DaSilva | ✅ | DaSilva 2004 (lista completa de colores del artículo) | Lista: Red, Yellow, Blue, Green, Brown, Dark, Purple, White, Gold, Grey; no aparece "Orange" | 2004 |
+| Pantalla: contador "rama 11 · 2010" | ✅ | Morales-Barrón 2021 / Thieman y Palladino | "Thieman.W., Palladino.M., (2010) Introducción a la biotecnología PEARSON EDUCACIÓN, S.A." | 2010 |
+| `publicacion.md`: "Y hay uno más: naranja, contarlo (Thieman y Palladino, 2010)" y "la naranja (divulgación) no está en DaSilva: viene de Thieman y Palladino (2010)" | ✅ | Igual que arriba | "por último el color naranja el cual es una área que se encarga de la divulgación (Thieman.W., Palladino.M., 2010)" | 2010 |
+
+Nota: no se abrió el libro de Thieman y Palladino; la atribución se apoya en la cita de Morales-Barrón (2021). En `guion.md` la tabla de escenas aún describe el contador como "rama 11 / 10" (el `.jsx` ya dice "rama 11 · 2010"); es solo una descripción interna, no sale en pantalla.
+
+Todas las afirmaciones nuevas están ✅.
+
 VEREDICTO: APROBADO

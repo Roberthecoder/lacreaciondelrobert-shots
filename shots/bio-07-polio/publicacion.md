@@ -12,7 +12,7 @@ Corregido el 28 oct 2026 tras la verificación de hechos (ver `verificacion.md`)
 Esto es un virus entero escrito en una pantalla: unas 7,500 letras. 🧬🔒
 En 2002, el equipo de Eckard Wimmer en Stony Brook (Nueva York) publicó algo que cambió la conversación en biología: partiendo de la secuencia ya publicada del poliovirus, y sin usar una muestra del virus, armaron un poliovirus funcional. Encargaron por correo más de cien fragmentos de ADN por unos 100,000 dólares; el trabajo estaba financiado por DARPA. Al probarlo en ratones, los animales quedaron paralizados.
 El artículo salió en Science el 9 de agosto de 2002. La reacción fue mayormente de alarma: muchos colegas lo llamaron irresponsable, y los autores respondieron que justamente querían advertir de un riesgo que nadie tomaba en serio.
-Hoy ese experimento es EL ejemplo de la investigación de doble uso: lo mismo que sirve para hacer vacunas o para fabricar tu insulina sirve para escribir un virus. Después vinieron reglas: el informe Fink del Consejo Nacional de Investigación (2004), la creación del consejo de bioseguridad NSABB, y la práctica, voluntaria y nacida en un consorcio internacional, de que las grandes empresas que venden ADN sintético revisen qué se les pide y quién lo pide.
+Hoy ese experimento es EL ejemplo de la investigación de doble uso: lo mismo que sirve para hacer vacunas o para fabricar tu insulina sirve para escribir un virus. Después vinieron reglas: el informe Fink del Consejo Nacional de Investigación (2004), la creación del consejo de bioseguridad NSABB, y la práctica, voluntaria y nacida en 2009 en un consorcio internacional, de que las grandes empresas que venden ADN sintético revisen qué se les pide y quién lo pide.
 Este video no explica ningún procedimiento: es historia de la ciencia y bioseguridad. El dibujo es esquemático.
 Fuentes: Cello, Paul y Wimmer, Science 297:1016-1018 (2002); informe CRS RS21369 (2002); informe Fink, NRC (2004).
 ¿Tú qué opinas: se debió publicar o no? 👇
@@ -43,7 +43,7 @@ Descripción:
 Esto es un virus entero escrito en una pantalla: unas 7,500 letras.
 En 2002, el equipo de Eckard Wimmer en Stony Brook (Nueva York) publicó algo que cambió la conversación en biología: partiendo de la secuencia ya publicada del poliovirus, y sin usar una muestra del virus, armaron un poliovirus funcional. Encargaron por correo más de cien fragmentos de ADN por unos 100,000 dólares; el trabajo estaba financiado por DARPA. Al probarlo en ratones, los animales quedaron paralizados.
 El artículo salió en Science el 9 de agosto de 2002 (Cello, Paul y Wimmer, vol. 297, pp. 1016-1018). La reacción fue mayormente de alarma: muchos colegas lo llamaron irresponsable, y los autores respondieron que justamente querían advertir de un riesgo que nadie tomaba en serio.
-Hoy es el ejemplo clásico de la investigación de doble uso. Después vinieron reglas: el informe Fink del Consejo Nacional de Investigación (2004), la creación del consejo de bioseguridad NSABB y la práctica, voluntaria y nacida en un consorcio internacional, de que las grandes empresas que venden ADN sintético revisen qué se les pide y quién lo pide.
+Hoy es el ejemplo clásico de la investigación de doble uso. Después vinieron reglas: el informe Fink del Consejo Nacional de Investigación (2004), la creación del consejo de bioseguridad NSABB y la práctica, voluntaria y nacida en 2009 en un consorcio internacional, de que las grandes empresas que venden ADN sintético revisen qué se les pide y quién lo pide.
 Este video no explica ningún procedimiento: es historia de la ciencia y bioseguridad. El dibujo es esquemático.
 
 Fuentes:
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Esto es un virus entero escrito en una pantalla: unas 7,500 letras. 🧬🔒 En 2002 un equipo de Nueva York armó un poliovirus partiendo solo de su secuencia publicada. El mundo se asustó, y después vinieron las reglas de bioseguridad que hoy aplican las grandes empresas que venden ADN. ¿Se debió publicar o no? 👇
+Esto es un virus entero escrito en una pantalla: unas 7,500 letras. 🧬🔒 En 2002 un equipo de Nueva York armó un poliovirus partiendo solo de su secuencia publicada. El mundo se asustó, y después vinieron las reglas de bioseguridad que, desde 2009 y por su cuenta, aplican muchas empresas que venden ADN. ¿Se debió publicar o no? 👇
 Shot Biotecnológico #07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Bioseguridad
@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto es un virus entero escrito en una pantalla: unas 7,500 letras.
 En 2002, un equipo de Stony Brook (Nueva York) publicó en Science que, partiendo de la secuencia ya publicada del poliovirus y sin usar una muestra del virus, había obtenido un poliovirus funcional. El trabajo estaba financiado por DARPA y la reacción del gremio fue mayormente negativa: muchos lo llamaron irresponsable, y los autores respondieron que el punto era advertir de un riesgo que no se tomaba en serio.
-Por qué importa: es el caso clásico de investigación de doble uso, y marcó la conversación sobre qué se publica y cómo se controla. Después vinieron reglas: el informe Fink (2004), el consejo de bioseguridad NSABB (constituido en marzo de 2004) y la revisión voluntaria de pedidos de ADN sintético que hacen las grandes empresas del sector, agrupadas en un consorcio internacional.
+Por qué importa: es el caso clásico de investigación de doble uso, y marcó la conversación sobre qué se publica y cómo se controla. Después vinieron reglas: el informe Fink (2004), el consejo de bioseguridad NSABB (constituido en marzo de 2004) y la revisión voluntaria de pedidos de ADN sintético que hacen, desde 2009, las empresas del sector agrupadas en un consorcio internacional.
 Este texto no describe ningún procedimiento: es historia de la ciencia y política de bioseguridad.
 ¿Dónde pondrías tú el límite entre publicar y proteger?
 Fuentes: Cello, Paul y Wimmer, Science 297: 1016–1018 (2002); CRS RS21369 (2002) y RL33342 (2006); GEN (2009).

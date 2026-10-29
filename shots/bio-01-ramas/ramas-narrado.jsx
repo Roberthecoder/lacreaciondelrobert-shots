@@ -75,7 +75,7 @@ function RamasNarrado() {
         <Chip T={T} at={C.Estudio + 3.6} until={C.Naranja - 0.2} texto="insulina = roja + blanca" x={290} y={1090} tam={36} borde={KC.ink} />
       </Escena>
 
-      {/* NARANJA: la que sumamos */}
+      {/* NARANJA: la rama 11 (Thieman y Palladino, 2010; no está en DaSilva 2004) */}
       <Escena T={T} a={C.Naranja} b={C.Cierre}>
         <FondoMarca T={T} color={KC.orange} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
@@ -83,7 +83,7 @@ function RamasNarrado() {
         </svg>
         <Medallon T={T} at={C.Naranja + 0.9} k="naranja" />
         <RotuloRama T={T} at={C.Naranja + 1.0} until={C.Cierre - 0.1} k="naranja" />
-        <div style={{ position:'absolute', right:44, top:210, zIndex:44, font:`700 34px ${KF.mono}`, color:KC.texto, textShadow:SOMBRA }}>rama <span style={{ color:KC.yellow }}>11</span> / 10</div>
+        <div style={{ position:'absolute', right:44, top:210, zIndex:44, font:`700 34px ${KF.mono}`, color:KC.texto, textShadow:SOMBRA }}>rama <span style={{ color:KC.yellow }}>11</span> · 2010</div>
       </Escena>
 
       {/* CIERRE: el mismo arcoíris del inicio, ya con todo lo que es */}
@@ -109,8 +109,8 @@ function RamasNarrado() {
       <Subtitulo T={T} idx={9} at={C.Cafe + 0.1} until={C.Dorado - 0.1} texto="Cultivar donde *casi no llueve.*" />
       <Subtitulo T={T} idx={10} at={C.Dorado + 0.1} until={C.Morado - 0.1} texto="Computadoras que *leen el ADN.*" />
       <Subtitulo T={T} idx={11} at={C.Morado + 0.1} until={C.Estudio - 0.1} texto="Leyes y ética… *y armas biológicas.*" />
-      <Subtitulo T={T} idx={12} at={C.Estudio + 0.1} until={C.Naranja - 0.1} texto="2004: DaSilva los juntó… *y casi nunca van solos.*" />
-      <Subtitulo T={T} idx={13} at={C.Naranja + 0.1} until={C.Cierre - 0.1} texto="Sumamos uno: *naranja, contarlo.*" />
+      <Subtitulo T={T} idx={12} at={C.Estudio + 0.1} until={C.Naranja - 0.1} texto="2004: DaSilva los juntó… *casi nunca van solos.*" />
+      <Subtitulo T={T} idx={13} at={C.Naranja + 0.1} until={C.Cierre - 0.1} texto="Y uno más: *naranja, contarlo.*" />
       <Subtitulo T={T} idx={14} at={C.Cierre + 0.1} until={C.Outro - 0.1} texto="Es tu día, *pintado por seres vivos.*" />
 
       {/* stickers de reacción (re-ganchos) */}

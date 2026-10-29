@@ -23,4 +23,20 @@
 
 Sin ❌ ni ⚠️ pendientes.
 
+## Re-verificación (29 oct, auditoría)
+
+Se revisó lo que cambió el 29 oct y se corrigió dos veces: primero la voz decía "una enzima **de bacteria**" (origen no verificable en ninguna fuente abierta: todas dicen solo "a beta-galactosidase gene") y que la intolerancia de las ratas era "**provocada en el laboratorio**" (falso: la patente de los propios autores dice que eran ratas adultas con poca lactasa, escogidas por eso). Ambos textos ya están corregidos en narracion.json, el .jsx, guion.md y publicacion.md; la fila "intolerancia provocada" de la tabla de arriba (que se apoyaba en la nota de prensa, más laxa) queda corregida aquí.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz 5 (final): el virus iba "cargando el gen de una enzima que parte la lactosa" (sin decir de qué organismo) | ✅ | Nota de Thomas Jefferson University (ScienceDaily); resumen de *Nature Medicine* 4:1131 (Europe PMC) | "inserted a beta-galactosidase gene--which encodes for an enzyme that breaks down lactose" · "persistent expression of a beta-galactosidase transgene in both gut epithelial and lamina propria cells" | 1998 |
+| El transgén era bacteriano (lacZ / β-galactosidasa de bacteria) | ⚠️ no verificable → **ya no se afirma** en ningún texto del shot | Patente US6110456 (During et al., texto completo); Goodman et al., *Blood* 1994 84:1492 (plásmido pAB II del vector) | "AAVlac is the recombinant AAV vector prepared from pAB II as described (Goodman et al. Blood 1994 84:1492-1500)" · "A vector was constructed containing the coding sequences for beta-galactosidase (beta-gal), including a nuclear localization signal, under the control of a strong viral promotor" | 1998 (vector, 1994) |
+| Voz 6, chip y subtítulo (final): eran "ratas adultas con poca lactasa", modelo de hipolactasia del adulto, escogidas por eso — no una intolerancia provocada | ✅ | Patente US6110456 (During et al., mismo experimento) | "We elected to study the adult rat as a genetic model of adult-onset hypolactasia" · "We therefore selected only those animals that had a flat plasma glucose curve following feeding with lactose" | 1998 |
+| "…con poca lactasa **como nosotros**": en humanos la caída de lactasa en el adulto es lo común | ✅ | "Lactose intolerance and probiotics…", PMC12995986 | "Lactase non-persistence is extremely common, affecting approximately 70% of the adult population world-wide" | 2026 |
+| "De bebés casi todos fabricamos lactasa" | ✅ | PMC12995986 | "Congenital Lactase Deficiency (CLD) is an extremely rare and severe autosomal recessive disease characterized by the total absence or significant reduction of lactase activity from birth" | 2026 |
+| Virus adeno-asociado dado por la boca, 1998, Filadelfia, efecto de meses (4, lo que duró el experimento) | ✅ (sin cambios) | Resumen de *Nature Medicine* 4:1131; nota de Thomas Jefferson University (ScienceDaily); patente US6110456 | "an orally administered adeno-associated viral vector leads to persistent expression…" · "The effect lasted four months, the length of the experiment" · "phenotypic correction extended to at least 4 months" | 1998 |
+| Las ratas tratadas recuperaron la digestión de la lactosa (medidor "ENZIMA QUE PARTE LA LACTOSA") | ✅ (sin cambios) | Resumen de *Nature Medicine* 4:1131 | "this approach results in long-term phenotypic recovery in an animal model of lactose intolerance" | 1998 |
+
+Sin ❌ ni ⚠️ afirmados en el shot (el único ⚠️ se quitó del texto).
+
 VEREDICTO: APROBADO

@@ -284,7 +284,7 @@ function PolioNarrado() {
       <Subtitulo T={T} idx={8} at={K.Sc + 0.1} until={K.Cr - 0.1} texto="Science, agosto de 2002: *el mundo se asustó.*" />
       <Subtitulo T={T} idx={9} at={K.Cr + 0.1} until={K.Re - 0.1} texto="«Irresponsable», dijeron. *Ese era el punto.*" />
       <Subtitulo T={T} idx={10} at={K.Re + 0.1} until={K.H - 0.1} texto="Después vinieron *las reglas.*" />
-      <Subtitulo T={T} idx={11} at={K.H + 0.1} until={K.C - 0.1} texto="Hoy se revisa *qué pides y quién eres.*" />
+      <Subtitulo T={T} idx={11} at={K.H + 0.1} until={K.C - 0.1} texto="Desde 2009: *revisan qué pides y quién eres.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="La misma herramienta. *Por eso hay reglas.*" />
 
       {/* Robert en pantalla (tabla en guion.md) */}

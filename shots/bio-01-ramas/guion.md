@@ -1,7 +1,7 @@
 # Shot Biotecnológico #01 · Las ramas de la biotecnología por colores
 
 - **Serie:** Shot Biotecnológico · **Logo:** `logo_bioquimica.svg` (ADN + matraz) · **Badge:** #01. Presenta la serie.
-- **Remasteriza:** viejo #1 (m17EQFPW-aI, 105 s). Se corta a 58 s de voz, se ordena en un solo lugar que se llena y se corrige: "naranja = divulgación" no está en DaSilva 2004 (sí en Thieman y Palladino, 2010); aquí el canal la suma.
+- **Remasteriza:** viejo #1 (m17EQFPW-aI, 105 s). Se corta a 58 s de voz, se ordena en un solo lugar que se llena y se corrige: "naranja = divulgación" no está en DaSilva 2004 (sí en Thieman y Palladino, 2010). Corregido el 29 oct 2026 (auditoría): la voz ya no dice que el canal la inventó.
 - **Formato (RECETARIO):** N4 "La imagen que se llena" (un arcoíris que se pinta banda por banda). Gemelo mudo: M1 "La música son los datos".
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el arcoíris que se pinta en pantalla. Habla a "tú".
 - **Duración:** voz estimada 58.2 s (932 caracteres) + cierre 3.5 s ≈ 61.7 s. `"velocidad": 1.065` en `narracion.json`; verificar con ffprobe al generar la voz.
@@ -23,8 +23,8 @@
 | 9 | Café | Café es el desierto: cultivar donde casi no llueve. | Dunas, cactus y un brote que sale con una sola gota. |
 | 10 | Dorada | Dorada son los datos: computadoras que leen el ADN. | Laptop con letras A C G T que corren (6 por segundo) y una hebra de ADN girando. |
 | 11 | Morada / oscura | Morada, las leyes y la ética; oscura, las armas biológicas y el bioterrorismo. | Balanza y mazo; luego, fondo oscuro con el símbolo de riesgo biológico y un escudo. Contador "rama 10 / 10". |
-| 12 | El artículo | En 2004, Edgar DaSilva, de la UNESCO, juntó estos colores; y casi nunca van solos. | Tarjeta "2004 · Edgar J. DaSilva · UNESCO · *Electronic Journal of Biotechnology*". Luego dos círculos (roja y blanca) se juntan: "insulina = roja + blanca" (se hace con microbios, en fábricas). Sticker sorprendido. |
-| 13 | Naranja | Nosotros sumamos uno: naranja, contarlo. Para eso es esta serie. | Se pinta la banda 11, naranja. Celular con este mismo video y sonido saliendo. Contador "rama 11 / 10" (chiste). |
+| 12 | El artículo | En 2004, Edgar DaSilva, de la UNESCO, juntó estos colores, aunque cada autor les da su propio significado; y casi nunca van solos. | Tarjeta "2004 · Edgar J. DaSilva · UNESCO · *Electronic Journal of Biotechnology*". Luego dos círculos (roja y blanca) se juntan: "insulina = roja + blanca" (se hace con microbios, en fábricas). Sticker sorprendido. |
+| 13 | Naranja | Y hay uno más, el naranja: contarlo. Para eso es esta serie. | Se pinta la banda 11, naranja. Celular con este mismo video y sonido saliendo. Contador "rama 11 · 2010". |
 | 14 | Cierre | No es un arcoíris: es tu día, pintado por seres vivos. | **Regreso al arcoíris del inicio**, ahora con 11 bandas y cada medallón con su etiqueta. |
 | — | Outro | (sin voz) | Cierre de marca "Shot Biotecnológico". |
 

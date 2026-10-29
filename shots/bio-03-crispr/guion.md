@@ -20,7 +20,7 @@
 | 6 | Corte | La bacteria copia ese recuerdo en ARN, se lo da a unas tijeras, Cas, y buscan. | El espaciador rosa brilla; sale una copia de ARN rosa; la proteína Cas la toma y recorre el ADN del virus. |
 | 7 | Corte | Si encuentran el mismo pedazo, cortan el ADN del virus. Adiós. | Cas llega al tramo rosa, cierra la boca y el ADN se parte en dos. Chip "ADIÓS". |
 | 8 | Estudio | En 2007, investigadores de Danisco y la Universidad Laval lo probaron con bacterias de yogur: cada recuerdo nuevo las volvía resistentes. | Tarjeta "2007 · Barrangou, Horvath, Moineau y equipo · Danisco (Francia y EE. UU.) · U. Laval (Quebec) · *Science* 315". Luego **el experimento:** dos tubos con fagos; el "sin recuerdo" se aclara (mueren), el "con recuerdo" sigue turbio: "resiste". |
-| 9 | Nobel | En 2012, Charpentier y Doudna reprogramaron esas tijeras para cortar el ADN que quisieran. Nobel 2020. | Tarjeta "2012 · Charpentier y Doudna · *Science* 337: 816". Medalla dorada con Cas. Chip "Nobel de Química 2020". Sticker sorprendido. |
+| 9 | Nobel | En 2012, Charpentier y Doudna tomaron unas tijeras así, de otra bacteria, y las reprogramaron para cortar el ADN que quisieran. Nobel 2020. | Tarjeta "2012 · Charpentier y Doudna · *Science* 337: 816". Medalla dorada con Cas. Chip "Nobel de Química 2020". Sticker sorprendido. |
 | 10 | Extra | Y no es raro: en 2020 se halló en una de cada tres bacterias y tres de cada cuatro arqueas. | Tres bacterias (se enciende una) y cuatro arqueas (se encienden tres). Chips "~1 de cada 3 (genomas, 2020)" y "~3 de cada 4 (genomas, 2020)". |
 | 11 | Cierre | Así que las tijeras genéticas no las inventamos nosotros: las inventó lo que hay en tu yogur. | **El mismo yogur del inicio**, con la lupa "tijeras originales". |
 | — | Outro | (sin voz) | Cierre de marca. |
@@ -81,6 +81,8 @@ Ver `publicacion.md` (textos por red, corregidos el 28 oct 2026).
 - Horvath, P. et al. (2008). Diversity, activity, and evolution of CRISPR loci in *Streptococcus thermophilus*. *J. Bacteriol.* 190: 1401–1412: "Sequence analysis of the spacers revealed homology and identity to phage sequences (77%), plasmid sequences (16%), and S. thermophilus chromosomal sequences (7%)."
 - Garneau, J. E. et al. (2010). The CRISPR/Cas bacterial immune system cleaves bacteriophage and plasmid DNA. *Nature* 468: 67–71.
 - Jinek, M., Chylinski, K., Fonfara, I., Hauer, M., Doudna, J. A. y Charpentier, E. (2012). A programmable dual-RNA–guided DNA endonuclease in adaptive bacterial immunity. *Science* 337: 816–821.
+  (La Cas9 de este trabajo es la de *Streptococcus pyogenes*, no la del yogur; corregido el 29 oct 2026 tras la auditoría.)
+- Gasiunas, G., Barrangou, R., Horvath, P. y Siksnys, V. (2012). Cas9–crRNA ribonucleoprotein complex mediates specific DNA cleavage for adaptive immunity in bacteria. *PNAS* 109: E2579–E2586. «the Cas9–crRNA complex of the *Streptococcus thermophilus* CRISPR3/Cas system introduces in vitro a double-strand break at a specific site in DNA» (2012).
 - Premio Nobel de Química 2020: Emmanuelle Charpentier y Jennifer A. Doudna, "for the development of a method for genome editing" (nobelprize.org).
 - Pourcel, C. et al. (2020). CRISPRCasdb… *Nucleic Acids Research* 48: D535–D544 (PMC7145573): "CRISPR–Cas systems were found in 36% of Bacteria and 75% of Archaea strains."
 
