@@ -21,6 +21,8 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   PRODUCCION_NUBE.md; `.github/` como en main; `node historial/consolidar.mjs`).
 - 29 oct 02:15–04:20 UTC: las 7 sesiones se pararon por el límite de uso de 5 horas de la cuenta; a las 04:36 el trabajador
   les pidió seguir (Robert: "reanuda absolutamente todo"). Iban 8/300 en la Sala. Si vuelve a pasar: esperar al reinicio y reanudar.
+- 29 oct 05:12–07:00 UTC: segunda parada, ahora por el límite SEMANAL de uso; reanudadas a las 07:58 con 84/300. Al ritmo de 7
+  sesiones en paralelo el límite se agota en ~3 h; si se repite, conviene preguntarle a Robert si baja a menos sesiones.
 - Espacio de la Sala: 1 GB; con 60 shots iba en 118 MB (~2 MB por shot) → caben los 310. Revisar si pasa de 900 MB.
 
 ## VOZ EN PAUSA (29 oct, Robert): "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
