@@ -97,5 +97,16 @@
   "autorizo": null,
   "ok": false,
   "error": "TikTok iniciar: unaudited_client_can_only_post_to_private_accounts Please review our integration guidelines at https://developers.tiktok.com/doc/content-sharing-guidelines/"
+ },
+ {
+  "clave": "fun-02-hormiga-zombi",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-10-29T22:22:29Z",
+  "run": "40965260322",
+  "autorizo": "Sala, pedido vhm02i6urrc4yv3sr4ug (Solo yo, demo de revision; Robert autorizo en chat 29 oct)",
+  "ok": true,
+  "id": "v_pub_file~v2-1.7702218450718263304",
+  "nota": "publicado en TikTok como «Solo yo»"
  }
 ]
