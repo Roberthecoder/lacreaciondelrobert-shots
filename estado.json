@@ -1,7 +1,7 @@
 {
  "tiktok_refresh_vence": "2027-10-29",
- "tiktok_scope": "video.publish,video.upload,user.info.basic",
- "actualizado": "2026-10-29T22:18:42Z",
+ "tiktok_scope": "video.upload,user.info.basic,video.publish",
+ "actualizado": "2026-10-29T22:29:31Z",
  "threads_vence": "2026-12-28",
  "linkedin_ok": "2026-10-29T18:20:38Z",
  "youtube_ok": "2026-10-29T18:20:38Z",
