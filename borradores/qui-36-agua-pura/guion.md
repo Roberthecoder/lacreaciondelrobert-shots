@@ -5,11 +5,11 @@
 - **Gancho (de los 7):** #4 "Un número que contradice": "El agua más pura que existe conduce la electricidad unas 900 mil veces peor que el agua de mar." (Todos creen que el agua, así nada más, conduce.)
 - **Seguridad:** el mensaje es el contrario de "el agua pura es segura": el agua que tocamos nunca es pura y mezclar agua con electricidad siempre es peligroso (escena 8). En pantalla nunca se ve a nadie meter un aparato al agua; el experimento es con un medidor de laboratorio dibujado.
 - **Duración:** voz 959 caracteres / 179 palabras (≈ 57.9 s) + cierre 3.5 s → **≈ 61.4 s** (`estimar-escenas.mjs`).
-- **Estado:** guion listo para verificación independiente. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`aguapura.jsx`, `gen-audio.mjs` → 61.4 s), voz pendiente de aprobación de Robert (~959 créditos).
 
 ## Versión narrada
 
-Tiempos estimados: Gancho 0–4.9 · Que 4.9–9.3 · Iones 9.3–16.0 · Pura 16.0–20.7 · Pregunta 20.7–24.7 · Real 24.7–31.7 · Estudio 31.7–41.7 · Cuerpo 41.7–47.6 · Peligro 47.6–53.1 · Cierre 53.1–57.9 · Outro 57.9–61.4.
+Tiempos estimados: Gancho 0–5.7 · Que 5.7–10.1 · Iones 10.1–16.8 · Pura 16.8–21.3 · Pregunta 21.3–25.3 · Real 25.3–32.3 · Estudio 32.3–42.3 · Cuerpo 42.3–47.9 · Peligro 47.9–53.4 · Cierre 53.4–57.9 · Outro 57.9–61.4.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -26,6 +26,26 @@ Tiempos estimados: Gancho 0–4.9 · Que 4.9–9.3 · Iones 9.3–16.0 · Pura 1
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz). |
 
 **Música:** cama grave continua y eléctrica (zumbido suave), siempre debajo de la voz. Efectos en el mismo cuadro: "zing" de la aguja al tope, crujido del cubito de sal que se disuelve, chispitas cuando los iones llegan a las varillas, "plic" de la gota de la llave, burbujeo suave del CO₂, zumbido de alerta en el ⚠️ (sin sonido de descarga ni de golpe eléctrico).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y entonces por qué el agua es tan peligrosa…?» y en «tu cuerpo es salado».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «unas 900 mil veces peor» |
+| 2 | 6.5 | 9.8 | 13_senalando_arriba | `izq-alto` | «son los iones que trae disueltos» |
+| 3 | 11.6 | 16.5 | 06_pensativo_menton | `arriba-der` | «partículas con carga… llevan la corriente» |
+| 4 | 17.3 | 21.1 | 04_bajando_lentes | `izq-alto` | «el agua pura casi no tiene iones» |
+| 5 | 21.35 | 26.1 | 07_pensativo_puno | `grande` | «¿por qué es tan peligrosa con la electricidad?» |
+| 6 | 27.3 | 32.0 | 05_sonriendo_dientes_uniformes | `izq-alto` | «la de tu llave, la de la alberca y la del suelo» |
+| 7 | 36.1 | 42.0 | 13_senalando_arriba | `arriba-der` | «al tocar el aire, absorbe dióxido de carbono» |
+| 8 | 42.6 | 47.6 | 11_sorprendido | `grande-izq` | «tu cuerpo es salado» |
+| 9 | 48.2 | 53.2 | 10_serio_molesto | `arriba-der` | «siempre es peligroso» |
+| 10 | 53.7 | 57.8 | 02_apuntando_camara | `izq-alto` | «la que tú tocas nunca es pura» |
+| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 46 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada cifra y afirmación se abrió en la fuente original el 29 oct 2026)
 

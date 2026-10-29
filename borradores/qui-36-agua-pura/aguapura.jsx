@@ -143,7 +143,7 @@ function AguaPura() {
           <Barra />
           <VasoElectrodos T={T} x={290} y={1170} s={1.05} liquido={AGUA_PURA} baja={baja} seed={4} />
           <VasoElectrodos T={T} x={790} y={1170} s={1.05} liquido={AGUA_MAR} baja={baja} iones={1} seed={6} />
-          <Conductimetro T={T} x={290} y={1440} s={1.1} v={vPura} tiembla={0.01} lectura="0.055" color={KC.cyan} nombre="agua pura" />
+          <Conductimetro T={T} x={290} y={1440} s={1.1} v={vPura} tiembla={0.01} lectura="0.055" color={KC.cyan} nombre="agua ultrapura" />
           <Conductimetro T={T} x={790} y={1440} s={1.1} v={vMar} lectura="≈50,000" color={KC.yellow} nombre="agua de mar" />
           {T > K.G + 0.5 && T < K.G + 1.4 && [0, 1, 2, 3, 4].map((k) => <path key={k} d={`M ${790 + Math.cos(k * 1.26) * 60} ${1390 + Math.sin(k * 1.26) * 60} l ${Math.cos(k * 1.26) * 40} ${Math.sin(k * 1.26) * 40}`} stroke={KC.yellow} strokeWidth={8} strokeLinecap="round" opacity={1 - kprog(T, K.G + 0.9, K.G + 1.4)} />)}
         </SvgCapa>
@@ -202,7 +202,7 @@ function AguaPura() {
               {k === 2 && <Suelo x={0} y={10} s={1.1} />}
               <rect x={-95} y={160} width={190} height={50} rx={12} fill={KC.ink} />
               <text x={0} y={196} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.texto}>{t}</text>
-              <g transform="translate(0 330)"><circle r={95} fill={KC.noche} stroke={KC.cyan} strokeWidth={8} />
+              <g transform="translate(115 -115) scale(0.8)"><circle r={95} fill={KC.noche} stroke={KC.cyan} strokeWidth={8} />
                 {[[-40, -30, 1], [30, -40, 0], [0, 20, 1], [-45, 40, 0], [45, 30, 1]].map(([dx, dy, p], j) => <Ion key={j} x={dx + Math.sin(T * 2 + j) * 6} y={dy + Math.cos(T * 2 + j) * 6} pos={!!p} s={0.62} />)}</g>
             </g>; })}
         </SvgCapa>

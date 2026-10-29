@@ -6,7 +6,7 @@
 - **No repite el #14** (`qui-14-sal-sodio`, sodio + cloro): aquí la sal es solo el vehículo; el tema es el yodo, la tiroides y la norma mexicana.
 - **Seguridad:** no se dice que haya que comer más sal ni se recomienda ningún suplemento; en la descripción va la recomendación de la OMS (menos de 5 g de sal al día, y que sea yodada). Nada de diagnóstico: un cuello hinchado se revisa con el médico.
 - **Duración:** voz 952 caracteres (≈ 58 s) + cierre 3.5 s → **61.5 s** estimados (`node motor/kit/estimar-escenas.mjs borradores/qui-37-sal-yodada --outro 3.5`).
-- **Estado:** guion listo para verificación independiente. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`salyodada.jsx`, hoja en `revision/hoja.png`), voz pendiente de aprobación de Robert (~952 créditos).
 
 ## Versión narrada
 
@@ -26,6 +26,25 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave continua, sin golpe marcado, debajo de la voz. Efectos en el mismo cuadro: sal que cae (arenita), "clic" de cada átomo de yodo, latido sordo mientras la tiroides se infla, ondas de la hipófisis, timbre de escuela en la tarjeta del estudio, conteo de barras, "tin" del esmalte del diente, la balanza que se inclina.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y cómo supieron que el yodo lo prevenía?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.9 | 11_sorprendido | `gancho` | «Ese «yodada» en tu sal no es adorno» |
+| 2 | 6.6 | 10.4 | 13_senalando_arriba | `izq-alto` | «Ahí está tu tiroides… atrapa el yodo» |
+| 3 | 15.6 | 20.4 | 12_perfil_serio | `arriba-der` | «la tiroides crece…: eso es el bocio» |
+| 4 | 26.3 | 29.5 | 07_pensativo_puno | `grande` | «¿Y cómo supieron que el yodo lo prevenía?» |
+| 5 | 30.0 | 34.4 | 06_pensativo_menton | `izq-alto` | «en Akron, Ohio, a miles de niñas…» |
+| 6 | 35.6 | 41.8 | 11_sorprendido | `arriba-der` | «de las que sí, a 2 de cada mil» |
+| 7 | 43.0 | 48.7 | 13_senalando_arriba | `arriba-der` | «de 20 a 40 miligramos… flúor contra la caries» |
+| 8 | 49.3 | 53.3 | 04_bajando_lentes | `izq-alto` | «casi dos terceras partes… son puro yodo» |
+| 9 | 53.9 | 57.9 | 02_apuntando_camara | `arriba-der` | «es química para tu cuello» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 41 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas. En «Embarazo» (20.8–26.2 s) no sale, para no tapar la lupa del bebé (hueco de 5.9 s).
 
 ## Fuentes (cada dato abierto en la fuente original el 29 oct 2026)
 

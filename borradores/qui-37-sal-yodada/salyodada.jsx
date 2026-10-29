@@ -204,7 +204,7 @@ function SalYodada() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <rect x={0} y={1250} width={KW} height={670} fill="#e7a35a" /><rect x={0} y={1250} width={KW} height={14} fill={KC.ink} />
-          <PaqueteSal x={770} y={950} s={0.95} hl={hlG} T={T} />
+          <PaqueteSal x={770} y={980} s={0.95} hl={hlG} T={T} />
           <Plato x={300} y={1150} s={0.9} granos={granosG} />
           <Granos T={T} x={300} y0={800} y1={1140} desde={K.G + 0.1} hasta={K.G + 2.5} />
           <Salero x={300 + sacude * 0.6} y={790 + Math.abs(sacude)} s={0.95} inclina={170 + sacude} />
@@ -215,7 +215,7 @@ function SalYodada() {
         <FondoLunares color={KC.mint} />
         <SvgCapa><Busto x={330} y={1120} s={0.95} dentro={kprog(T, K.Ti + 0.3, K.Ti + 0.9)} /></SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Ti + 0.8} until={K.Tx - 0.4} x={740} y={720} r={250} fx={330} fy={1140} interior={interiorTiro} tinte={KC.pink} etiqueta="POR DENTRO · TU CUELLO" />
+      <Lupa T={T} at={K.Ti + 0.8} until={K.Tx - 0.4} x={740} y={720} r={250} fx={330} fy={1140} interior={interiorTiro} tinte={KC.pink} etiqueta="POR DENTRO · TU TIROIDES" />
       {/* 2 · la tiroxina (molecular) */}
       <Escena T={T} a={K.Tx} b={K.Bo}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
@@ -273,8 +273,8 @@ function SalYodada() {
       <Escena T={T} a={K.Mx} b={K.Da}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Bascula x={330} y={970} s={1} carga={kprog(T, K.Mx + 0.3, K.Mx + 1.0, kEase.sale)} T={T} />
-          {T > K.Mx + 1.2 && Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.Mx + 1.2 + i * 0.12, K.Mx + 1.5 + i * 0.12, kEase.rebote); return <AtI key={i} x={230 + (i % 3) * 100} y={630 - Math.floor(i / 3) * 90 + Math.sin(T * 3 + i) * 6} r={30} o={e} />; })}
+          <Bascula x={330} y={940} s={1} carga={kprog(T, K.Mx + 0.3, K.Mx + 1.0, kEase.sale)} T={T} />
+          {T > K.Mx + 1.2 && Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.Mx + 1.2 + i * 0.12, K.Mx + 1.5 + i * 0.12, kEase.rebote); return <AtI key={i} x={230 + (i % 3) * 100} y={600 - Math.floor(i / 3) * 90 + Math.sin(T * 3 + i) * 6} r={30} o={e} />; })}
           {T > K.Mx + 3.4 && <Diente x={790} y={900} s={1.25 * kprog(T, K.Mx + 3.4, K.Mx + 3.9, kEase.rebote)} brillo={kprog(T, K.Mx + 4.0, K.Mx + 4.6)} T={T} />}
         </SvgCapa>
       </Escena>
@@ -304,10 +304,10 @@ function SalYodada() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <rect x={0} y={1250} width={KW} height={670} fill="#e7a35a" /><rect x={0} y={1250} width={KW} height={14} fill={KC.ink} />
-          <PaqueteSal x={770} y={950} s={0.95} hl={1} T={T} />
+          <PaqueteSal x={770} y={980} s={0.95} hl={1} T={T} />
           <Plato x={300} y={1150} s={0.9} granos={1} />
           <Salero x={300} y={960} s={0.95} inclina={0} />
-          <Flecha x1={640} y1={930} x2={420} y2={640} p={kprog(T, K.Ci + 0.6, K.Ci + 1.4, kEase.sale)} color={YODO} />
+          <Flecha x1={640} y1={960} x2={420} y2={640} p={kprog(T, K.Ci + 0.6, K.Ci + 1.4, kEase.sale)} color={YODO} />
           {T > K.Ci + 1.2 && <Mariposa x={300} y={560} s={0.9 * kprog(T, K.Ci + 1.2, K.Ci + 1.7, kEase.rebote)} c={KC.mint} />}
         </SvgCapa>
       </Escena>
@@ -315,7 +315,6 @@ function SalYodada() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 2.9} texto="¿adorno?" x={300} y={470} tam={52} />
       <Chip T={T} at={K.G + 3.0} until={K.Ti - 0.2} texto="yodo → tu cuello" x={300} y={470} tam={46} borde={YODO} />
-      <Etq T={T} at={K.Ti + 1.6} until={K.Tx - 0.4} x={250} y={1150} texto="tiroides" lado="izq" tam={40} color={KC.ink} />
       <Chip T={T} at={K.Ti + 2.2} until={K.Tx - 0.3} texto="atrapa el yodo (I) de tu sangre" y={1500} tam={38} borde={YODO} />
       <Chip T={T} at={K.Tx + 0.3} until={K.Bo - 0.2} texto="tiroxina (T4) · C₁₅H₁₁I₄NO₄" y={1500} tam={40} borde={YODO2} mono />
       <Chip T={T} at={K.Bo + 0.2} until={K.Bo + 2.4} texto="poco yodo" x={540} y={460} tam={46} borde={KC.red} />
@@ -327,9 +326,9 @@ function SalYodada() {
       <Chip T={T} at={K.Es + 2.8} until={K.Re - 0.3} texto="yoduro de sodio · primavera y otoño" x={540} y={1500} tam={36} borde={YODO} />
       <Chip T={T} at={K.Re + 0.3} until={K.Mx - 0.3} texto="niñas con tiroides normal al inicio" y={1500} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Re + 2.8} until={K.Mx - 0.3} x={370} y={505} texto="1 de cada 4" lado="der" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Mx + 1.0} until={K.Mx + 3.6} texto="20–40 mg de yodo por kilo" x={430} y={470} tam={44} borde={YODO} />
-      <Etq T={T} at={K.Mx + 1.6} until={K.Da - 0.3} x={60} y={1165} texto="NOM-040-SSA1-1993" lado="der" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Mx + 3.8} until={K.Mx + 5.4} texto="flúor → contra la caries" x={430} y={470} tam={44} borde={KC.cyan} />
+      <Chip T={T} at={K.Mx + 1.0} until={K.Mx + 3.6} texto="20–40 mg de yodo por kilo" x={430} y={420} tam={44} borde={YODO} />
+      <Etq T={T} at={K.Mx + 1.6} until={K.Da - 0.3} x={60} y={1150} texto="NOM-040-SSA1-1993" lado="der" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Mx + 3.8} until={K.Mx + 5.4} texto="flúor → contra la caries" x={430} y={420} tam={44} borde={KC.cyan} />
       <Chip T={T} at={K.Mx + 5.0} until={K.Da - 0.3} texto="no se vende donde el agua ya trae más de 0.7 mg/L de flúor" y={1500} tam={28} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.Da + 1.6} until={K.Ci - 0.3} valor={65} dur={1.2} prefijo="≈ " sufijo=" %" etiqueta="del peso de la tiroxina es yodo" y={1520} tam={130} color={YODO2} />
       <Chip T={T} at={K.Ci + 1.8} until={K.Ou} texto="yodo (I) → tiroxina → tu tiroides" y={1500} tam={38} borde={YODO} />

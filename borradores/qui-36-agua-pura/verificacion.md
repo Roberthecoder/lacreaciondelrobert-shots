@@ -35,4 +35,6 @@ Todo lo demás (12 afirmaciones) queda ✅. Nota menor, no bloqueante: en `## Fu
 ## Correcciones aplicadas (29 oct 2026)
 Se aplica tal cual la propuesta del verificador: gancho «El agua más pura que existe conduce la electricidad unas 900 mil veces peor que el agua de mar.» y etiqueta «agua ultrapura · 25 °C».
 
+- Recortes de estilo sin cambiar datos (tras aprobar): cierre «…pero la que tú tocas nunca es pura», «muy pocas»→«pocas», sin «justo».
+
 VEREDICTO: APROBADO

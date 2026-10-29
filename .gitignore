@@ -22,4 +22,3 @@ shots/cie-03-*/assets/*.wav
 # mezclas de los shots nuevos (las genera gen-audio.mjs; el workflow las vuelve a crear)
 shots/fun-*/assets/*.wav
 shots/qui-*/assets/*.wav
-borradores/*/assets/*.wav
