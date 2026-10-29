@@ -2,28 +2,28 @@
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #43 · rama `pedido300/fun`.
 - **Formato:** N1 Por dentro (macro → micro → macro): piso de la cueva → esporas en el aire → pulmón → macrófago → el caso del cenote → regreso a la misma cueva.
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Ese polvo de la cueva no es solo tierra: es caca de murciélago, y puede traer un hongo que respiras.»
-- **Duración:** voz 995 caracteres / 180 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~995 créditos de ElevenLabs).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Ese polvo de la cueva no es solo tierra: puede tener caca de murciélago, y con ella, un hongo que respiras.»
+- **Duración:** voz 999 caracteres / 182 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~999 créditos de ElevenLabs).
 - **Tono:** curioso y útil (prevención). No es consejo médico.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese polvo de la cueva no es solo tierra: es caca de murciélago, y puede traer un hongo que respiras. | Fondo lila: boca de una cueva con murciélagos colgados; cuadro 0.3: una bota pisa el piso y levanta una nube de polvo. Chip "no es solo tierra: es guano". |
-| 1 | Hongo | Es *Histoplasma capsulatum*: en el guano crece como moho, con hilos que sueltan esporas diminutas. | Lupa sobre el guano: hilos (hifas) blancos con esporas redondas en las puntas. Etiqueta "hongo de las cuevas · *Histoplasma capsulatum*", chip "en el suelo: moho". |
+| 0 | Gancho | Ese polvo de la cueva no es solo tierra: puede tener caca de murciélago, y con ella, un hongo que respiras. | Fondo lila: boca de una cueva con murciélagos colgados; cuadro 0.3: una bota pisa el piso y levanta una nube de polvo. Chip "no es solo tierra: puede ser guano". |
+| 1 | Hongo | Es *Histoplasma capsulatum*: en el guano crece como moho, con hilos que sueltan esporas. | Lupa sobre el guano: hilos (hifas) blancos con microconidias chiquitas y lisas (2–4 µm) pegadas a los lados de las hifas y alguna macroconidia grande (8–15 µm) redonda con picos (tuberculada). Etiqueta "hongo de las cuevas · *Histoplasma capsulatum*", chip "en el suelo: moho". |
 | 2 | Aire | Si pisas ese suelo, las esporas suben al aire. No las ves. | Otra pisada: las esporas flotan; chip "2–4 µm · invisibles". |
 | 3 | Pulmon | Las respiras y llegan al fondo de tus pulmones. | Silueta de persona respirando; el aire baja por los bronquios hasta los alvéolos (rayos de dentro, fondo noche). |
-| 4 | Cambio | Lo raro: el calor de tu cuerpo lo transforma de moho a levadura. | Termómetro "37 °C"; la espora se convierte en levadura ovalada que gema. Chips "moho (suelo)" → "levadura (cuerpo)". |
+| 4 | Cambio | Lo raro: el calor de tu cuerpo lo vuelve de moho a levadura. | Termómetro "37 °C"; la espora se convierte en levadura ovalada que gema. Chips "moho (suelo)" → "levadura (cuerpo)". |
 | 5 | Pregunta | ¿Y tus defensas no se lo comen? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
 | 6 | Macrofago | Tus macrófagos sí lo tragan, pero la levadura sobrevive adentro, se multiplica y viaja en ellos. | Un macrófago (fondo oscuro) se traga las levaduras; adentro se multiplican por gemación y el macrófago se va por un vaso. Etiqueta "macrófago". |
 | 7 | Sintomas | A casi todos no les pasa nada o se enferman leve: fiebre, tos, cansancio. | Fila de personas: casi todas verdes con ✓; unas pocas con íconos de fiebre, tos y cansancio. |
-| 8 | Estudio | En abril de 2024, cuatro turistas canadienses nadaron en un cenote de Yucatán con murciélagos. | Tarjeta "abril 2024 · cenote, Yucatán · 4 turistas · CCDR (Canadá), 2025"; cenote con agua turquesa, murciélagos en el techo y cuatro nadadores. |
-| 9 | Enfermos | Dos o tres semanas después enfermaron: tres casos confirmados de histoplasmosis y uno probable. | Cronómetro "2–3 semanas"; cuatro personas: 3 con sello "confirmado" y 1 "probable". |
-| 10 | Cenote | Otro cenote de la zona está cerrado desde 2019 por casos en turistas. | Un segundo cenote con cinta "CERRADO desde 2019". |
-| 11 | Nombre | Lo chistoso: le pusieron *capsulatum* por una cápsula que no tiene. | Levadura al microscopio con un halo brillante; aparece "cápsula?" y se tacha. Chip "*capsulatum* = con cápsula… pero no tiene". |
-| 12 | Cierre | Así que en una cueva con murciélagos, ese polvo no es solo tierra: puede ser un hongo rumbo a tus pulmones. | **Regreso a la imagen del inicio:** la misma cueva y la misma bota; ahora el polvo brilla con esporas que van hacia una nariz. |
+| 8 | Estudio | En abril de 2024, cuatro turistas canadienses nadaron en un cenote de la península de Yucatán con murciélagos. | Tarjeta "abril 2024 · cenote, península de Yucatán · 4 turistas · CCDR (Canadá), 2025" (sin el nombre del cenote); cenote con agua turquesa, murciélagos en el techo y cuatro nadadores. |
+| 9 | Enfermos | Dos o tres semanas después enfermaron: tres casos confirmados de histoplasmosis y uno sospechoso. | Cronómetro "2–3 semanas"; cuatro personas: 3 con sello "confirmado" y 1 "sospechoso". |
+| 10 | Cenote | Y el reporte cuenta que otro cenote de la zona estaba cerrado desde 2019 por casos en turistas. | Un segundo cenote con cinta "CERRADO desde 2019 · CCDR 2025". |
+| 11 | Nombre | Y le pusieron *capsulatum* por una cápsula que no tiene. | Levadura al microscopio con un halo brillante; aparece "cápsula?" y se tacha. Chip "*capsulatum* = con cápsula… pero no tiene". |
+| 12 | Cierre | Así que en una cueva con murciélagos, ese polvo puede llevar un hongo a tus pulmones. | **Regreso a la imagen del inicio:** la misma cueva y la misma bota; ahora el polvo brilla con esporas que van hacia una nariz. Chip "puede ser guano". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave, húmeda y con eco de cueva, sin golpe; efectos en el mismo cuadro (aleteo de murciélagos, pisada y polvo, crecer de hifas, respiración, burbujeo del termómetro, "gulp" del macrófago y pops de la gemación, tics del cronómetro, agua del cenote, sello de cada caso, cinta de "cerrado", tachón de la cápsula).
@@ -45,14 +45,15 @@ Barras de escala: 1 m (cueva), 1 cm (guano), 10 µm (esporas, levadura y macróf
    > "H. capsulatum exists as a mold in the environment"; "At 37°C in vitro and in tissues, the organism converts into the yeast phase"
    > "the microconidia are tiny, smooth structures that are 2 to 4 μm in diameter and are the infectious form."
    > "tiny 2- to 4-μm oval budding yeasts"
+   > Dibujo de las conidias según la verificación: microconidias lisas de 2–4 µm a los lados de las hifas y macroconidias tuberculadas de 8–15 µm.
    > "Caves can be highly contaminated by H. capsulatum that thrives on the bat guano"
    > "Dissemination of H. capsulatum within macrophages is common"
    > "The vast majority of infected persons have either no symptoms or a very mild illness"
 5. Shen, Q. y Rappleye, C. A. (2020). Living Within the Macrophage: Dimorphic Fungal Pathogen Intracellular Metabolism. *Front. Cell. Infect. Microbiol.* 10: 592259. https://pmc.ncbi.nlm.nih.gov/articles/PMC7596272/
    > "yeasts survive and proliferate within the phagosomal compartment of host macrophages"
    > "Mammalian infection results from inhalation of conidia and their subsequent conversion into pathogenic yeasts"
-6. Acute histoplasmosis in four immunocompetent Canadian travellers to a cenote in Yucatán. *Canada Communicable Disease Report* 51(5), mayo 2025. https://www.canada.ca/en/public-health/services/reports-publications/canada-communicable-disease-report-ccdr/monthly-issue/2025-51/issue-5-may-2025/acute-histoplasmosis-four-immunocompetent-canadian-travellers-cenote-yucatan.html
-   > "In April 2024, four …" (viajeros canadienses; tres casos confirmados y uno sospechoso tras nadar en el cenote Aktunzots, cerca de Tres Reyes, Yucatán)
+6. MacBain et al. (2025). Acute histoplasmosis in four immunocompetent Canadian travellers to a cenote in Yucatán. *Canada Communicable Disease Report* 51(5): 187–190. doi:10.14745/ccdr.v51i05a05. https://www.canada.ca/en/public-health/services/reports-publications/canada-communicable-disease-report-ccdr/monthly-issue/2025-51/issue-5-may-2025/acute-histoplasmosis-four-immunocompetent-canadian-travellers-cenote-yucatan.html
+   > "In April 2024, four …" (viajeros canadienses; tres casos confirmados y uno sospechoso tras nadar en un cenote de la península de Yucatán; el nombre del cenote no se pone en pantalla)
    > "They recalled seeing bats inside the cenote."
    > Inicio de síntomas: ~18 días (caso 1), "just over two weeks" (caso 4), ~3 semanas (caso 3).
    > "Another cenote in same region has been closed since 2019 due to association with cases of histoplasmosis among tourists."
