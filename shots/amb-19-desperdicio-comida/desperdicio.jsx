@@ -214,8 +214,7 @@ function DesperdicioShot() {
         {svg(<>{barras.map(([n, v], i) => { const h = 4.2 * v * kprog(T, K.Ri + 2.4 + i * 0.25, K.Ri + 3.3 + i * 0.25, kEase.sale);
             return <g key={n}><rect x={110 + i * 200} y={1150 - h} width={150} height={h} rx={12} fill={[KC.cyan, KC.mint, KC.yellow][i]} stroke={KC.ink} strokeWidth={7} />
               {h > 40 && <text x={185 + i * 200} y={1130 - h} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{v}</text>}
-              <text x={185 + i * 200} y={1195} textAnchor="middle" style={{ font:`900 27px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}
-          <text x={360} y={1245} textAnchor="middle" style={{ font:`700 0px ${KF.mono}` }} fill={KC.ink}></text></>)}
+              <text x={185 + i * 200} y={1195} textAnchor="middle" style={{ font:`900 27px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}</>)}
       </Escena>
       {/* 10 · gases: 8–10 % (2010–2016) */}
       <Escena T={T} a={K.Ga} b={K.C}>
