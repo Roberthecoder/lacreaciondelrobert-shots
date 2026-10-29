@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Moho Bano base narrada.dc.html",
+  "salida": "Shot Moho Bano narrado.dc.html",
+  "nota": "Shot Fungi Mati #33. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa mancha negra del baño no es mugre: es moho, y algunos se comen tu jabón."
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Sus esporas flotan en el aire de toda casa, y solo crecen donde hay humedad."
+    },
+    {
+      "escena": "Cladosporium",
+      "texto": "En 2010, en 113 muestras de baños de Europa, el hongo negro que más salió en cultivo directo fue Cladosporium."
+    },
+    {
+      "escena": "Rosa",
+      "texto": "¿Y la mancha rosa? Muchas veces ni es hongo: es una bacteria, Serratia marcescens."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y el famoso moho negro tóxico?"
+    },
+    {
+      "escena": "Stachybotrys",
+      "texto": "Es Stachybotrys: crece en celulosa, como tablaroca o papel siempre mojados."
+    },
+    {
+      "escena": "Mito",
+      "texto": "El CDC dice que no hay análisis que lo ligue con síntomas concretos: todo moho se trata igual."
+    },
+    {
+      "escena": "Alergia",
+      "texto": "Cualquier moho puede darte alergia si eres sensible, y si tienes asma y eres alérgico, un ataque."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Ese año, en Osaka, Japón, vieron que hongos de baño comen jabón y champú, y en seco crecen mal."
+    },
+    {
+      "escena": "Sirve",
+      "texto": "Lo que sí sirve: extractor o ventana al bañarte, y humedad abajo de 50 por ciento."
+    },
+    {
+      "escena": "Tallar",
+      "texto": "Y tállalo: el moho muerto todavía puede darte alergia, así que hay que quitarlo, no solo matarlo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa mancha no es mugre: es un hongo avisándote que a tu baño le sobra agua."
+    }
+  ]
+}

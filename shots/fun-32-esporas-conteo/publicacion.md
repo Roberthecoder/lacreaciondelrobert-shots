@@ -39,7 +39,7 @@ Descripción:
 Un champiñón de campo grande suelta unos 16 mil millones de esporas: casi el doble de las 8,200 millones de personas que había en la Tierra en 2024 (ONU).
 Cómo verlas en tu casa (huella de esporas): usa un champiñón del súper que ya esté abierto (los botones cerrados casi no sueltan esporas). Quítale el pie, pon el sombrero con las laminillas hacia abajo sobre una hoja de papel y tápalo con un vaso para que no le den corrientes de aire. Espera una noche. Si funcionó, al levantarlo verás el dibujo de sus laminillas en café oscuro. A veces no sale con champiñones del súper. Cada grano de ese polvo es una espora elipsoide de unas 6 a 8 milésimas de milímetro.
 Los micólogos usan el color de la huella (blanca, café, rosada…) como una pista para identificar hongos, pero el color nunca basta para saber si un hongo se come: nunca comas hongos silvestres sin que los identifique un experto.
-¿Para qué tantas esporas? El micólogo A. H. Reginald Buller, profesor en la Universidad de Manitoba (Canadá), las contó con microscopio. En 1922 publicó que un champiñón silvestre de unos 10 cm suelta cerca de 16 mil millones; que un hongo de repisa (Ganoderma applanatum, entonces llamado Fomes applanatus) soltó unos 30 mil millones en 24 horas, según mediciones de J. H. White en Toronto, y que suelta esporas unos seis meses al año; y, en 1909, que un bejín gigante (Calvatia gigantea) de 40 cm tenía unos 7 billones. La razón: casi ninguna cae donde pueda crecer. Buller estimó que, de unos 20 mil millones de esporas de champiñón, quizá solo una llega a formar un hongo capaz de reproducirse.
+¿Para qué tantas esporas? El micólogo A. H. Reginald Buller, profesor en la Universidad de Manitoba (Canadá), las estimó contando muestras al microscopio. En 1922 publicó que un champiñón silvestre de unos 10 cm suelta cerca de 16 mil millones; que un hongo de repisa (Ganoderma applanatum, entonces llamado Fomes applanatus) soltó unos 30 mil millones en 24 horas, según mediciones de J. H. White en Toronto, y que suelta esporas unos seis meses al año; y, en 1909, que un bejín gigante (Calvatia gigantea) de 40 cm tenía unos 7 billones. La razón: casi ninguna cae donde pueda crecer. Buller estimó que, de unos 20 mil millones de esporas de champiñón, quizá solo una llega a formar un hongo capaz de reproducirse.
 Son cálculos de hace más de cien años; el propio Buller dijo que eran solo aproximados.
 El dibujo es esquemático.
 Fuentes:
@@ -65,8 +65,8 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-Hace más de cien años, un micólogo decidió contar esporas una por una, y sus números todavía sorprenden.
-A. H. Reginald Buller, profesor de botánica en la Universidad de Manitoba, estimó en 1922 que un champiñón silvestre de unos 10 cm libera cerca de 16 mil millones de esporas. Con datos de J. H. White (Toronto), calculó que un hongo de repisa, Ganoderma applanatum, liberaba unos 30 mil millones al día durante unos seis meses; y en 1909 contó unos 7 billones en un bejín gigante de 40 cm. El mismo Buller advirtió que sus cifras eran aproximadas.
+Hace más de cien años, un micólogo se puso a estimar cuántas esporas suelta un hongo, contando muestras al microscopio, y sus números todavía sorprenden.
+A. H. Reginald Buller, profesor de botánica en la Universidad de Manitoba, estimó en 1922 que un champiñón silvestre de unos 10 cm libera cerca de 16 mil millones de esporas. Con datos de J. H. White (Toronto), calculó que un hongo de repisa, Ganoderma applanatum, liberaba unos 30 mil millones al día durante unos seis meses; y en 1909 estimó unos 7 billones en un bejín gigante de 40 cm. El mismo Buller advirtió que sus cifras eran aproximadas.
 La lección de fondo es de estrategia biológica: casi ninguna espora cae en un lugar donde pueda crecer. Buller estimó que, de unos 20 mil millones de esporas de champiñón, quizá solo una llega a formar un hongo capaz de reproducirse. Producir en enormes cantidades compensa esas probabilidades tan bajas.
 Además, cualquiera puede verlo en casa con una "huella de esporas", una técnica que los micólogos usan para identificar hongos.
 ¿Qué otro número de la naturaleza te parece difícil de creer?
@@ -82,7 +82,7 @@ Un champiñón de campo grande suelta unos 16 mil millones de esporas: casi el d
 
 ### Threads
 ```text
-Un champiñón de campo grande suelta unos 16 mil millones de esporas: casi el doble de personas en la Tierra. 🍄 Pon boca abajo sobre un papel el sombrero de un champiñón del súper ya abierto, tápalo con un vaso y espera una noche: verás su huella de esporas. ¿De qué color te salió?
+Un champiñón de campo grande suelta unos 16 mil millones de esporas: casi el doble de personas en la Tierra. 🍄 Pon boca abajo sobre un papel el sombrero de un champiñón del súper ya abierto, tápalo con un vaso y espera una noche: si funcionó, verás su huella de esporas. ¿De qué color te salió?
 Shot Fungi Mati #32 · La Creación del Robert
 #Hongos
 ```

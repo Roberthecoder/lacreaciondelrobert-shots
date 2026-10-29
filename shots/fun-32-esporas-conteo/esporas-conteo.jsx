@@ -271,11 +271,11 @@ function EsporasConteoShot() {
       {/* 12 · son cálculos aproximados */}
       <Escena T={T} a={K.A} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {[['16,000,000,000', 'champiñón de campo', 1922], ['30,000,000,000 / día', 'hongo de repisa', 1922], ['7,000,000,000,000', 'bejín gigante', 1909]].map(([n, t, a], i) => { const e = kprog(T, K.A + 0.1 + i * 0.25, K.A + 0.5 + i * 0.25, kEase.rebote);
+        {[['16,000,000,000', 'champiñón de campo', 'Buller, 1922'], ['30,000,000,000 / día', 'hongo de repisa', 'J. H. White (en Buller), 1922'], ['7,000,000,000,000', 'bejín gigante', 'Buller, 1909']].map(([n, t, a], i) => { const e = kprog(T, K.A + 0.1 + i * 0.25, K.A + 0.5 + i * 0.25, kEase.rebote);
           return <div key={i} style={{ position:'absolute', left:90, top:470 + i * 190, width:900, zIndex:40, opacity:kprog(T, K.A + 0.1 + i * 0.25, K.A + 0.3 + i * 0.25), transform:`scale(${klerp(0.6, 1, e)})`, transformOrigin:'0 50%',
             background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:20, padding:'14px 26px', boxShadow:`8px 8px 0 ${KC.ink}` }}>
             <div style={{ font:`400 62px/1 ${KF.titulo}`, color:KC.ink }}>{n}</div>
-            <div style={{ font:`700 26px ${KF.mono}`, color:'#5a524a', marginTop:6 }}>{t} · Buller, {a}</div></div>; })}
+            <div style={{ font:`700 26px ${KF.mono}`, color:'#5a524a', marginTop:6 }}>{t} · {a}</div></div>; })}
         {T > K.A + 1.3 && <div style={{ position:'absolute', left:560, top:1100, zIndex:44, transform:`translate(-50%,-50%) rotate(-5deg) scale(${klerp(2, 1, kprog(T, K.A + 1.3, K.A + 1.65, kEase.rebote))})`, opacity:kprog(T, K.A + 1.3, K.A + 1.45),
           border:`9px solid ${KC.red}`, borderRadius:22, padding:'6px 26px', font:`400 54px ${KF.titulo}`, color:KC.red, background:'rgba(255,255,255,.9)', whiteSpace:'nowrap' }}>≈ aproximados (1909–1922)</div>}
       </Escena>
@@ -294,7 +294,7 @@ function EsporasConteoShot() {
       {/* textos */}
       <Etq T={T} at={K.G + 1.0} until={K.So - 0.3} x={60} y={470} texto="Agaricus campestris" it tam={30} color={KC.ink} />
       <Etq T={T} at={K.G + 1.4} until={K.So - 0.3} x={60} y={515} texto="champiñón de campo" tam={28} color={KC.ink} />
-      <NumeroGigante T={T} at={K.G + 0.2} until={K.So - 0.3} valor={16000000000} dur={1.8} etiqueta="esporas" x={540} y={1110} tam={112} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.G + 0.2} until={K.So - 0.3} valor={16000000000} dur={1.8} etiqueta="esporas" x={540} y={1460} tam={112} color={KC.yellow} />
       <Chip T={T} at={K.So + 0.3} until={K.V - 0.2} texto="1 · uno abierto · laminillas abajo" x={380} y={470} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.So + 0.6} until={K.So + 2.2} x={60} y={560} texto="Agaricus bisporus" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.V + 0.3} until={K.H - 0.1} texto="2 · tápalo · espera una noche" x={400} y={470} tam={34} borde={KC.ink} />
@@ -315,23 +315,23 @@ function EsporasConteoShot() {
       <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="casi ningún premio" x={400} y={470} tam={40} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.So} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.G} until={K.So} texto="5 cm" largo={177} />
       <BarraEscala T={T} at={K.So} until={K.Po} texto="5 cm" largo={190} />
       <BarraEscala T={T} at={K.Po} until={K.Co} texto="10 µm" largo={140} />
       <BarraEscala T={T} at={K.Co} until={K.P} texto="5 cm" largo={190} />
-      <BarraEscala T={T} at={K.R} until={K.Bj} texto="30 cm" largo={300} />
+      <BarraEscala T={T} at={K.R} until={K.Bj} texto="10 cm" largo={330} />
       <BarraEscala T={T} at={K.Bj} until={K.Ra} texto="40 cm" largo={500} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={177} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.So - 0.1} texto="Un champiñón: *16 mil millones* de esporas." />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.So - 0.1} texto="Un champiñón de campo: *16 mil millones* de esporas." />
       <Subtitulo T={T} idx={1} at={K.So + 0.1} until={K.V - 0.1} texto="Sombrero abierto, *boca abajo* en un papel." />
       <Subtitulo T={T} idx={2} at={K.V + 0.1} until={K.H - 0.1} texto="Tápalo y *espera una noche.*" />
       <Subtitulo T={T} idx={3} at={K.H + 0.1} until={K.Po - 0.1} texto="Su *huella de esporas.*" />
       <Subtitulo T={T} idx={4} at={K.Po + 0.1} until={K.Co - 0.1} texto="Cada grano: *7 milésimas de mm.*" />
       <Subtitulo T={T} idx={5} at={K.Co + 0.1} until={K.P - 0.1} texto="El color ayuda… *pero no dice si se come.*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.05} until={K.B - 0.1} texto="¿Para qué *tantas?*" />
-      <Subtitulo T={T} idx={7} at={K.B + 0.1} until={K.R - 0.1} texto="1922: *Reginald Buller* las contó." />
+      <Subtitulo T={T} idx={7} at={K.B + 0.1} until={K.R - 0.1} texto="1922: *Reginald Buller* publicó sus cuentas." />
       <Subtitulo T={T} idx={8} at={K.R + 0.1} until={K.Bj - 0.1} texto="*30 mil millones* al día, por seis meses." />
       <Subtitulo T={T} idx={9} at={K.Bj + 0.1} until={K.Ra - 0.1} texto="Un bejín gigante: *7 billones.*" />
       <Subtitulo T={T} idx={10} at={K.Ra + 0.1} until={K.L - 0.1} texto="Casi ninguna cae *donde pueda crecer.*" />

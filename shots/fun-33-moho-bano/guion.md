@@ -11,9 +11,9 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa mancha negra del baño no es mugre: es moho, y algunos se comen tu jabón. | Fondo menta: azulejos blancos de regadera con juntas y silicón manchados de negro, jabonera y extractor apagado. Cuadro 0.15: una esponja talla la junta y la mancha no se quita. "¿mugre?" se tacha → sello "MOHO". Burbujas de jabón que van hacia la mancha; chip "se come los restos de jabón". |
+| 0 | Gancho | Esa mancha negra del baño no es mugre: es moho, y algunos se comen tu jabón. | Fondo menta: azulejos blancos de regadera con juntas y silicón manchados de negro, jabonera y extractor apagado. Cuadro 0.15: una esponja talla la junta y la mancha no se quita. "¿mugre?" se tacha → sello "MOHO". Burbujas de jabón que van hacia la mancha; chip "algunos comen restos de jabón". |
 | 1 | Esporas | Sus esporas flotan en el aire de toda casa, y solo crecen donde hay humedad. | Fondo cian, la misma pared: esporas oliva flotan (etiqueta "esporas en el aire"); las que caen en gotas de agua germinan (hifas), las que caen en seco se marcan con ✗. Chip "sin agua, no crecen". |
-| 2 | Cladosporium | En 2010, en 113 muestras de baños de Europa, el hongo negro que más salió en cultivo directo fue Cladosporium. | **Al microscopio** (fondo noche): conidióforos de *Cladosporium* con cadenas ramificadas de conidios color **oliva-café**, en forma de limón. Número gigante "113" con "muestras de baños · 2010" y chip "Países Bajos · Alemania · Austria". Etiquetas *Cladosporium*, "moho negro", "conidios en cadena" y chip "el más frecuente en cultivo directo". |
+| 2 | Cladosporium | En 2010, en 113 muestras de baños de Europa, el hongo negro que más salió en cultivo directo fue Cladosporium. | **Al microscopio** (fondo noche): conidióforos de *Cladosporium* con cadenas ramificadas de conidios color **oliva-café**, en forma de limón. Número gigante "113" con "muestras de baños · estudio de 2010" y chip "Países Bajos · Alemania · Austria". Etiquetas *Cladosporium*, "moho negro", "conidios en cadena" y chip "el más frecuente en cultivo directo". |
 | 3 | Rosa | ¿Y la mancha rosa? Muchas veces ni es hongo: es una bacteria, Serratia marcescens. | Regreso a la regadera: en la esquina aparece una mancha rosa-anaranjada. Lupa al microscopio: bastoncitos (bacterias) rojos. Etiqueta "bacteria · *Serratia marcescens*" y chip "pigmento: prodigiosina". |
 | 4 | Pregunta | ¿Y el famoso moho negro tóxico? | **Re-gancho.** Fondo lila: "MOHO NEGRO TÓXICO" en letras verdes que escurren (estilo película de terror) y "?" gigante; Robert grande, pensativo. |
 | 5 | Stachybotrys | Es Stachybotrys: crece en celulosa, como tablaroca o papel siempre mojados. | Muro de tablaroca con fuga y papel mojado; brota una mancha verde-negra. Etiqueta *Stachybotrys chartarum*; chip "celulosa + agua constante". Gotas cayendo. |
@@ -38,7 +38,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y el famos
 | 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «no es mugre: es moho» (cuadro 0) |
 | 2 | 12.0 | 15.2 | 04_bajando_lentes | `arriba-der` | «113 muestras… Cladosporium» |
 | 3 | 15.9 | 19.9 | 13_senalando_arriba | `arriba-der` | señala la mancha rosa: «es una bacteria» |
-| 4 | 20.2 | 23.7 | 07_pensativo_puno | `grande` | «¿y el famoso moho negro tóxico?» |
+| 4 | 20.2 | 22.7 | 07_pensativo_puno | `grande` | «¿y el famoso moho negro tóxico?» |
 | 5 | 27.1 | 31.8 | 10_serio_molesto | `arriba-der` | el mito tachado (CDC) |
 | 6 | 32.6 | 37.5 | 06_pensativo_menton | `arriba-der` | «alergia… asma» |
 | 7 | 40.3 | 42.9 | 04_bajando_lentes | `arriba-der` | «en seco crecen mal» |
@@ -47,7 +47,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y el famos
 | 10 | 54.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «a tu baño le sobra agua» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 10 · **40.3 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 10 · **39.3 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

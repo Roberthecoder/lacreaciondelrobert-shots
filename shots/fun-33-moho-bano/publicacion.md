@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esa mancha negra del baño no es mugre: es moho, y algunos se comen tu jabón. 🍄🚿
-Sus esporas están en el aire de toda casa y solo crecen con humedad. En baños de Europa, el hongo negro más frecuente en cultivo directo fue Cladosporium; la mancha rosa muchas veces es una bacteria, Serratia marcescens. ¿El "moho negro tóxico"? El CDC dice que no hay análisis que lo ligue con síntomas concretos y que todo moho se trata igual. Lo que sí sirve: extractor o ventana al bañarte, humedad abajo de 50 % y tallarlo para quitarlo, no solo matarlo.
+Sus esporas están en el aire de toda casa y solo crecen con humedad. En un estudio de 2010 con baños de Europa, el hongo negro más frecuente en cultivo directo fue Cladosporium; la mancha rosa muchas veces es una bacteria, Serratia marcescens. ¿El "moho negro tóxico"? El CDC dice que no hay análisis que lo ligue con síntomas concretos y que todo moho se trata igual. Lo que sí sirve: extractor o ventana al bañarte, humedad abajo de 50 % y tallarlo para quitarlo, no solo matarlo.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿A ti también te sale en el silicón de la regadera? 👇
 Shot Fungi Mati #33 · La Creación del Robert

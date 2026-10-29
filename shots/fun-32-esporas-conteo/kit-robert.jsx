@@ -37,7 +37,7 @@ function kentrada(T, at, until, modo = 'pop') {
   const o = until == null ? 1 : 1 - kprog(T, until, until + 0.35, kEase.suave);
   return { o: Math.min(kprog(T, at, at + 0.2), o), s: modo === 'pop' ? klerp(0.6, 1, i) : 1, y: (1 - i) * 60 + (1 - o) * -30 };
 }
-function kformato(n, dec = 0) { return Number(n).toLocaleString('es-MX', { minimumFractionDigits: dec, maximumFractionDigits: dec }); }
+function kformato(n, dec = 0) { return Number(n).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) /* comas fijas (formato México), igual en cualquier navegador */; }
 
 /* ---------- CÁMARA: viaje macro → micro → macro ----------
    keys: [{ t, x, y, z }] en tiempo de autor. (x, y) = punto del mundo que queda al centro; z = zoom.

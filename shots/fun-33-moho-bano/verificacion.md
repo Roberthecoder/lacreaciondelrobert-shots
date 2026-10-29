@@ -39,3 +39,29 @@ Fuentes abiertas:
 
 **Resumen:** 22 afirmaciones revisadas abriendo las fuentes. Las 6 ⚠️ de la primera ronda (Cladosporium sin "cultivo directo", mancha rosa absoluta, tachón de "tóxico", alergia/asma sin condiciones, moho muerto como seguro) se corrigieron y se volvieron a verificar; los recortes de redacción también. Todo queda ✅.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `moho-bano.jsx`, el `.dc.html`, la columna «Lo que se ve», la tabla de Robert y `publicacion.md`, y se revisaron cuadros con `motor/preview.mjs` (0.3–60 s).
+
+| # | Texto o dibujo en pantalla / publicación | Veredicto | Fuente | Nota |
+|---|---|---|---|---|
+| R1 | Chip del gancho «se come los restos de jabón» | ✅ corregido | [HA10], [HA09] | Daba a entender que toda la mancha come jabón; se cambió a «algunos comen restos de jabón» (como la voz). |
+| R2 | «sin agua, no crecen» | ✅ | [EPA-G] | "The mold spores will not grow if moisture is not present." |
+| R3 | «113» + «muestras de baños · 2010» y «Países Bajos · Alemania · Austria» | ✅ corregido | [LH] | Las muestras salieron de "bathrooms of residences in The Netherlands, Germany and Austria". El artículo se recibió el 20 ene 2009 y se publicó el 1 jun 2010, así que las muestras son anteriores a 2010 y el texto no da la fecha en que se tomaron. La etiqueta pasó a «muestras de baños · estudio de 2010». En la voz, «En 2010» se toma como el año de publicación del estudio, la convención del canal. |
+| R4 | «Cladosporium», «moho negro», «el más frecuente en cultivo directo», «conidios en cadena»; dibujo oliva-café con cadenas ramificadas de conidios en forma de limón, barra 10 µm (conidios ≈ 5 µm) | ✅ | [LH], [ADL] | "branched acropetal chains"; *C. herbarum* "ellipsoidal to limoniform … pale olive brown". |
+| R5 | «pigmento: prodigiosina», «bacteria, no hongo», bastoncitos rojos | ✅ | [EID] | "pigment known as prodigiosin"; "the bacterium Serratia marcescens". |
+| R6 | «Stachybotrys chartarum», «celulosa + agua constante», «papel mojado», subtítulo «Crece en celulosa siempre mojada», mancha verde-negra en tablaroca | ✅ | [CDC-S] | "greenish-black mold"; "high cellulose content, such as fiberboard, gypsum board, and paper"; "Constant moisture is required". |
+| R7 | «MÁS PELIGROSO QUE LOS DEMÁS» tachado, «no hay prueba que lo ligue a síntomas (CDC)», «todo moho se trata igual», tres manchas con «=» | ✅ | [CDC-S] | "All molds should be treated the same with respect to potential health risks and removal." Se subieron las manchas, los «=» y los chips para que el subtítulo no las tape. |
+| R8 | Subtítulo de alergia «Alergia, y asma si eres alérgico» | ✅ corregido | [EPA-S] | Le faltaba la condición de tener asma; quedó «Alergia, y asma si tienes asma y alergia». Chips «alergia (si eres sensible)» y «asma (si tienes asma y alergia)» ✅. El inhalador representa el asma ✅. |
+| R9 | Tarjeta «2010 · Osaka, Japón · Hamada y Abe · Biocontrol Science»; Petri con jabón y champú (crece) frente a seco (casi nada) | ✅ | [HA10] | Biocontrol Sci 15(3), sep 2010; Osaka City Institute of Public Health and Environmental Sciences. Las cajas son esquemáticas. |
+| R10 | «✓ extractor», «✓ ventana al bañarte», higrómetro 80→50, «humedad: abajo de 50 %», subtítulo «humedad < 50 %» | ✅ | [CDC-A], [EPA-G] | "no higher than 50%"; "Run the bathroom fan or open the window when showering." |
+| R11 | «quitarlo, no solo matarlo», «muerto, todavía puede dar alergia» | ✅ | [EPA-G] | "Dead mold may still cause allergic reactions in some people…" |
+| R12 | Sello «SECO» y «le sobra agua» en el cierre | ✅ | [EPA-G] | "none of them will grow without water or moisture". |
+| R13 | Barras de escala | ✅ corregido | — | Azulejo 10 cm ✅ (azulejos de ≈12 cm); tablaroca 50 cm ✅; manchas 5 cm ✅; 10 µm ✅. Corregidas: en la cara la barra decía que la cabeza medía ≈38 cm y ahora ≈23 cm (largo 110→180); en las Petri decía ≈18 cm de diámetro y ahora ≈9 cm, el tamaño real (largo 110→220). |
+| R14 | Robert grande tapaba la mancha de *Stachybotrys* | ✅ corregido | — | Ahora sale en K.St+0.5 s, antes de que la mancha empiece a crecer (K.St+0.6 s). En la tabla de guion.md: fila 4 de 20.2 a 22.7 s; total 39.3 s, 10 apariciones (sigue ≥ 18 s y ≥ 6 apariciones). |
+| R15 | `publicacion.md` (7 redes y comentario fijado) | ✅ corregido | todas | Todo coincide con las filas de arriba. En Instagram faltaba el año del dato de Cladosporium (tiene más de 2 años); quedó «En un estudio de 2010 con baños de Europa…». |
+
+**Resumen de la revisión final:** todos los textos de pantalla, las escalas, la morfología y `publicacion.md` quedan ✅ tras las correcciones R1, R3, R8, R13, R14 y R15. La voz verificada no se tocó.
+
+VEREDICTO: APROBADO
