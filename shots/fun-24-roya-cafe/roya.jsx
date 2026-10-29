@@ -300,7 +300,7 @@ function RoyaShot() {
           <MapaMexico x={40} y={580} ancho={1000} centro={mixHex('#bfe3b4', '#ff7a1a', kprog(T, K.E + 2.4, K.E + 3.4))}>
             {[[-92.6, 16.4], [-96.9, 19.5], [-96.6, 16.9], [-97.9, 20.1], [-99.5, 17.4]].map(([lo, la], i) => { const [px, py] = mxProy(lo, la); const k = kprog(T, K.E + 2.6 + i * 0.12, K.E + 2.9 + i * 0.12, kEase.rebote); return k > 0 ? <circle key={i} cx={px} cy={py} r={13 * k} fill={RC.roya} stroke={KC.ink} strokeWidth={3} /> : null; })}
           </MapaMexico>
-          {T > K.E + 3.0 && <g opacity={kprog(T, K.E + 3.0, K.E + 3.4)} transform="translate(560 540)">
+          {T > K.E + 3.0 && <g opacity={kprog(T, K.E + 3.0, K.E + 3.4)} transform="translate(40 400)">
             <rect x={0} y={0} width={470} height={300} rx={22} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
             <text x={235} y={44} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Centroamérica · producción</text>
             {(() => { const u = kprog(T, K.E + 3.4, K.E + 4.4, kEase.sale); return <>
@@ -310,7 +310,7 @@ function RoyaShot() {
               <text x={44} y={252} style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>2012–13</text>
               <text x={455} y={215} textAnchor="end" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={u}>−16 %</text>
             </>; })()}
-            <path d="M 300 300 L 330 440" stroke={KC.ink} strokeWidth={6} strokeDasharray="12 10" />
+            <path d="M 420 300 L 720 560" stroke={KC.ink} strokeWidth={6} strokeDasharray="12 10" />
           </g>}
         </>)}
       </Escena>
@@ -420,7 +420,7 @@ function RoyaShot() {
         [K.C + 0.5, K.P - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.P + 0.05, K.S + 0.6, 'avatar_07_pensativo_puno', 'grande'],
         [K.S + 3.6, K.E - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [K.E + 2.6, K.Cl + 0.8, 'avatar_12_perfil_serio', 'izq-alto'],
+        [K.E + 2.6, K.Cl - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.Ti + 0.4, K.Ti + 3.4, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.Ti + 3.9, K.Ci - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [K.Ci + 0.4, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />

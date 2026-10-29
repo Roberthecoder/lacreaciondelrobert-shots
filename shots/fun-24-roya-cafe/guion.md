@@ -41,13 +41,13 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Puede un h
 | 4 | 23.5 | 26.6 | 04_bajando_lentes | `arriba-der` | el cafeto que se queda pelón |
 | 5 | 26.8 | 30.2 | 07_pensativo_puno | `grande` | «¿Puede un hongo cambiar lo que siembra un país?» |
 | 6 | 33.2 | 36.9 | 06_pensativo_menton | `arriba-der` | Ceilán: precios bajos y el paso al té |
-| 7 | 39.7 | 43.6 | 12_perfil_serio | `izq-alto` | la cosecha centroamericana −16 % |
+| 7 | 39.7 | 42.6 | 12_perfil_serio | `arriba-der` | la cosecha centroamericana −16 % |
 | 8 | 48.5 | 51.5 | 13_senalando_arriba | `arriba-der` | señala el híbrido de Timor → Catimor |
 | 9 | 52.0 | 54.0 | 11_sorprendido | `arriba-der` | «la roya ya venció a algunos» |
 | 10 | 54.6 | 57.9 | 02_apuntando_camara | `arriba-der` | «tu taza también es una batalla» |
 | — | 58.0 | 61.5 | 05_sonriendo_dientes_uniformes | CierreMarca | cierre |
 
-Apariciones 10 · **36.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · nunca más de 4.9 s sin Robert.
+Apariciones 10 · **35.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · nunca más de 4.9 s sin Robert.
 
 ## Archivos
 

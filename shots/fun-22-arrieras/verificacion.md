@@ -52,4 +52,40 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026, re-verificación tras correcciones):** se corrigieron el gancho, el chip y el cierre (ya no dicen que no comen nada de la hoja, solo que no la cargan para comérsela), la edad (de ~50 Ma de 2008 a ~66 Ma de 2024, dicha de "sus ancestros"), las bacterias se dibujan sobre *Acromyrmex* (las *Atta* no llevan capa visible), el chip de especies dice "22 especies revisadas en Panamá (1999)" y el tamaño de los gongilidios se apoya en Leal-Dutra et al. 2023 (12–50 µm, ~30 µm). Se revisó de nuevo todo el texto final de la voz (13 líneas de narracion.json) y la pantalla del guion: todas las afirmaciones quedan ✅.
 
-VEREDICTO: APROBADO
+## Revisión final (animación y publicación) · 29 oct 2026
+
+Revisados todos los textos del `.jsx` (chips, etiquetas, rótulos, `TarjetaEstudio`, `NumeroGigante`, subtítulos idx 0–12), las barras de escala contra el tamaño dibujado (px por unidad calculados del código) y `publicacion.md` completo (7 redes + comentario fijado). Fuentes nuevas abiertas:
+- **[MZ18]** Mintzer, A. C. (2018). *Park Science* 34(1): 32–42 (NPS). https://www.nps.gov/articles/parkscience34-1_32-42_mintzer_3876.htm
+- **[AK]** Antkey, *Acromyrmex octospinosus* (consultada 29 oct 2026). https://antkey.myspecies.info/th/node/33526
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Subtítulos idx 0–12 (resúmenes de la voz: "Unas cortan; otras hacen pasta con saliva", "Sus ancestros, hace ~66 millones de años", "1999, Toronto y Panamá: su defensa", "En todas las especies revisadas"…) | ✅ | filas 1–13 | Mismo contenido que la voz ya verificada | — |
+| F2 | `NumeroGigante` "~66" + chip "millones de años · hormigas jardineras" | ✅ | [S24] | "originated ~66 million years ago" | 2024 |
+| F3 | Línea del tiempo: hormigas jardineras en 66, "arrieras" en 19 (sin número), "humanos" a 0.3 Ma, "hoy"; barra "10 millones de años" = 127 px (840 px = 66 Ma → 12.7 px/Ma) | ✅ | [S24], [B17] | arrieras "between 19 Ma (15–24 Ma) and 18 Ma (14–22 Ma)"; barra exacta | 2024 / 2017 |
+| F4 | Mapa con "Panamá" (−79.6°, 9.0°) y barra "500 km" = 86 px | ✅ | cálculo | Mapa a 18.1 px/° → 500 km ≈ 4.6° ≈ 84–88 px | — |
+| F5 | `TarjetaEstudio` «1999 · Univ. de Toronto · Panamá · Currie et al. · Nature, 1999» | ✅ | [SD99], [C99] | "researchers at the University of Toronto"; "studied 22 species of attine ants in Panama" | 1999 |
+| F6 | Chip "antibiótico vs. parásito"; lupa "AL MICROSCOPIO · bacterias" | ✅ | [SD99] | "the bacterium produces an antibiotic" que "specifically targets the virulent parasite" | 1999 |
+| F7 | Chip "en salsa"; rótulo "chicatana · *Atta mexicana* (con alas)" | ✅ | [vH25] | "used in sauces called 'salsattas'" | 2025 |
+| F8 | Lupa "POR DENTRO · bolsa infrabucal" | ✅ | [G20] | "a mycelium pellet inside the infrabuccal pocket" | 2020 |
+| F9 | Barra "5 mm" gancho/cierre: obreras de la hilera ≈ 7.5 mm | ✅ | [MZ18] | "from 'minims' 2 mm … to 'soldiers' 12 mm" | 2018 |
+| F10 | Barra "5 mm" (Pasta): cortadora ≈ 8.6 mm, jardinera ≈ 3 mm | ✅ | [MZ18] | Ídem | 2018 |
+| F11 | Barra "10 µm": cada gongilidio 120–200 px = 30–50 µm | ✅ | [LD23] | "bulb diameters ranging from 12 µm to 50 µm" | 2023 |
+| F12 | Barra "1 mm" (larvas y obrera que come): obrera ≈ 3 mm, larva ≈ 3.7 mm | ✅ | [MZ18] | minims 2 mm | 2018 |
+| F13 | Barra "1 mm": *Acromyrmex* ≈ 6.5 mm | ✅ | [AK] | workers "up to 7.5 mm in length" | consultada 2026 |
+| F14 | Barra "1 cm" (Chicatanas): hormigas con alas ≈ 2.2 cm | ✅ | [MZ18] | queen "body length of 20–22 mm" | 2018 |
+| F15 | Barra "2 mm" (Reina): reina ≈ 18 mm | ✅ | [MZ18] | Ídem (un poco chica, dentro de lo esquemático) | 2018 |
+| F16 | Barra "1 cm" (Chicatanas): **molcajete** de 323 px = **≈ 4 cm** de ancho | ⚠️ escala incoherente | — | Un molcajete real mide ~20 cm; con la barra de 1 cm se lee como un molcajete de juguete. | — |
+| F17 | Barra "5 cm" (Hongo): cámara ≈ 25 cm de ancho ✅, pero solo ≈ 8 cm bajo la superficie | ⚠️ imprecisa | [MZ18], [M20] | "large chambers deep underground"; la colonia "may be 1 m deep" | 2018 |
+| F18 | Barra "5 mm" (Cierre): jardín dibujado ≈ 3.3 cm de ancho y ≈ 1 cm bajo las hormigas | ⚠️ escala incoherente | [MZ18] | Contradice la escena 2 (cámara de ~25 cm) y "deep underground" | 2018 |
+| F19 | `publicacion.md`: gongilidios "de unos 30 micrómetros"; "azúcares, aminoácidos y enzimas" | ✅ | [LD23], [G20] | "ca. 30 µm in diameter"; "carbohydrates, amino acids, and enzymes" | 2023 / 2020 |
+| F20 | `publicacion.md`: las obreras "sí beben un poco del jugo de la hoja al cortarla" | ✅ | [LC76] | "Ingestion of radiolabelled plant juices from cut surfaces of leaves during foraging" | 1976 |
+| F21 | `publicacion.md`: las arrieras aparecieron "hace unos 18 o 19 millones de años" | ✅ | [B17] | "between 19 Ma (15–24 Ma) and 18 Ma (14–22 Ma)" | 2017 |
+| F22 | `publicacion.md`: Currie "y su equipo de la Universidad de Toronto, con trabajo de campo en Panamá", "tercer socio", "22 especies en Panamá" | ✅ | [C99], [SD99] | "a new, third mutualist"; "22 species of attine ants in Panama" | 1999 |
+| F23 | `publicacion.md`: capa blanquizca visible en *Acromyrmex*, no en *Atta* | ✅ | [H16], [M13] | "visible as a whitish covering on the cuticle"; "Atta do not carry visible Actinobacteria on their cuticle" | 2016 / 2013 |
+| F24 | `publicacion.md`: en México se comen tres especies de *Atta*; "chicatanas" (del náhuatl) para la fase con alas; tostadas o en salsa | ✅ | [vH25] | "three Atta spp. are consumed"; "applies to the reproductive phase and is derived from the name in náhuatl"; "roasted but also used in sauces"; "toasted and smoked" | 2025 |
+| F25 | `publicacion.md` LinkedIn: "monocultivo natural … durante millones de años con ayuda de microbios defensores" | ✅ | [S24], [B17], [C99] | un solo cultivar en la mayoría de las arrieras; arrieras de 18–19 Ma; bacteria "associated with all species of fungus-growing ants studied" | 2024 / 2017 / 1999 |
+| F26 | Citas de Fuentes y comentario fijado (Leal-Dutra 2023, Holmes 2016 con DOI 10.3389/fmicb.2016.02073, resto) | ✅ | — | Autores, revista, volumen y enlace coinciden con las fuentes abiertas | — |
+
+**Pendiente:** F16, F17 y F18 (escala del dibujo). La voz, los textos en pantalla y `publicacion.md` están ✅. Sin veredicto final hasta corregir esas tres escenas.
+
