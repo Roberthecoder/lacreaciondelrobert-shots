@@ -31,4 +31,6 @@
 ## Correcciones aplicadas (29 oct 2026)
 Voz cambiada tal cual a la propuesta del verificador: «Unos profesores de Virginia hallaron ahí ácido muriático, el nombre viejo del clorhídrico.» Nota de dibujo: célula parietal de 20–35 µm frente a la barra de 10 µm.
 
+Recortes de estilo sin cambiar datos: «sale además un gas» → «sale un gas»; «sacó por ahí su jugo gástrico» → «sacó por ahí jugo gástrico»; «en dar su efecto completo» → «en dar todo su efecto». Total estimado 62.4 s → 61.6 s (951 caracteres).
+
 VEREDICTO: APROBADO
