@@ -934,15 +934,23 @@
     },
     {
       "id": "qui-leche-blanca",
-      "titulo": "Por qué la leche es blanca: partículas que dispersan la luz",
+      "titulo": "Lo blanco de tu leche no es un pigmento (micelas de caseína, grasa y luz rebotando)",
       "serie": "Shot Químico",
       "numero": 57,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/qui-57-leche-blanca",
       "rama": "pedido300/qui",
-      "fuentes": [],
+      "fuentes": [
+        "Fiege et al. Sci Rep (2023). PMID 38081890",
+        "Gedzelman, López-Alvarez, Hernández-Andrés, Greenler. Appl Opt 47(34):H128 (2008). PMID 19037332",
+        "Frisvad, Christensen, Jensen. ACM TOG 26(3), SIGGRAPH (2007). DOI 10.1145/1276377.1276452",
+        "Schwarcz J. McGill Office for Science and Society (2017)"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Por qué la clara de huevo pasa de transparente a blanca al cocinarse",
+        "Por qué las nubes son blancas y el humo de cigarro azulado"
+      ]
     },
     {
       "id": "qui-lluvia-olor",
@@ -966,15 +974,24 @@
     },
     {
       "id": "qui-termometro-mercurio",
-      "titulo": "Se rompió el termómetro de mercurio: qué NO hacer",
+      "titulo": "¿Por qué NO barrer ni aspirar el mercurio de un termómetro roto?",
       "serie": "Shot Químico",
       "numero": 59,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/qui-59-termometro-mercurio",
       "rama": "pedido300/qui",
-      "fuentes": [],
+      "fuentes": [
+        "EPA (en español). Qué hacer si se rompe un termómetro de mercurio. espanol.epa.gov/node/763",
+        "ATSDR. Toxicological Profile for Mercury (oct 2024)",
+        "ATSDR. Public Health Statement: Mercury (1999)",
+        "MDCH/ATSDR. Health Consultation, St. Louis, Michigan (6 may 2004)",
+        "MPCA Minnesota. Mercury spills (2020)"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Por qué los focos ahorradores llevan un poquito de mercurio y cómo limpiarlos si se rompen",
+        "Por qué los termómetros digitales no necesitan mercurio"
+      ]
     }
   ]
 }
