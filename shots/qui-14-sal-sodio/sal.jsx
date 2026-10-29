@@ -357,7 +357,7 @@ function Sal() {
       <Chip T={T} at={K.Cr + 0.5} until={K.Da - 0.3} texto="cristal cúbico · NaCl" x={540} y={1500} tam={44} borde={CL} />
       <Chip T={T} at={K.Da + 3.6} until={K.Yp - 0.3} texto="electrólisis" x={540} y={1690} tam={40} borde={KC.gold} />
       <TarjetaEstudio T={T} at={K.Da + 0.2} until={K.Da + 3.3} anio="1807" quien="Humphry Davy · Londres" revista="Phil. Trans. R. Soc. · sodio aislado con electricidad" y={1560} />
-      <TarjetaEstudio T={T} at={K.Yp + 0.2} until={K.Re - 0.3} anio="1915" quien="22 de abril · Ypres, Bélgica" revista="Primera Guerra Mundial · cloro como arma" y={470} />
+      <TarjetaEstudio T={T} at={K.Yp + 0.2} until={K.Re - 0.3} anio="1915" quien="22 de abril · Ypres, Bélgica" revista="Primera Guerra Mundial · cloro como arma" y={1560} />
       <Chip T={T} at={K.Re + 0.4} until={K.Ci - 0.3} texto="hoy: sal + electricidad → cloro" x={540} y={1500} tam={40} borde={CLGAS} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="Na⁺ + Cl⁻ = NaCl" x={540} y={1500} tam={48} borde={KC.gold} />
 

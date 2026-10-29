@@ -35,3 +35,17 @@
    - Pantalla del cuadro 0: junto al **+0.05 °C**, una etiqueta chica "≈ · 6 g en 2 L". Escena 4: "unas 5 centésimas" en lugar de "apenas 5 centésimas" (opcional, recomendable).
 2. **#4 "iones de sodio y cloro" (⚠️):** el ion es **cloruro** (Cl⁻); "cloro" es el gas Cl₂. Voz: "La sal se parte en iones de sodio y cloruro, y con ellos el agua suelta vapor con menos fuerza." La etiqueta en pantalla puede decir "Cl⁻ cloruro".
 3. (Menor, opcional) Chip del estudio: "0.96 % de sal **en peso**", para que coincida con la tabla de Hakuta (wt. %).
+
+## Re-verificación (29 oct 2026)
+
+Mismo verificador independiente. Revisé las frases que cambiaron en `narracion.json` y `guion.md` contra las mismas fuentes y cálculos de la tabla de arriba.
+
+| # | Texto nuevo | Veredicto | Comentario |
+|---|---|---|---|
+| R1 | Gancho: "…en una olla de 2 litros, le sube el hervor unas 5 centésimas de grado. Solo eso." + pantalla "+0.05 °C" con "≈ · 6 g en 2 L" | ✅ | Ya dice en cuánta agua y que es aproximado ("unas"). Cálculo de #9: 0.046–0.051 °C. Corrección 1 atendida. |
+| R2 | "La sal se parte en iones de sodio y cloruro…" (pantalla "Na⁺ sodio", "Cl⁻ cloruro") | ✅ | OpenStax 11.4: "1.0 mol Na+ and 1.0 mol Cl−". Corrección 2 atendida. |
+| R3 | Olla: "Una cucharadita son unos 6 gramos de sal: unas 5 centésimas de grado." (pantalla "≈ 6 g", olla "2 L", 100.00 → 100.05 °C) | ✅ | Sí se entiende con la olla de 2 L: el gancho acaba de decir "en una olla de 2 litros" y en esta escena la olla lleva la etiqueta "2 L". La cifra no se puede leer como si fuera para otro volumen, y "unas" la marca como aproximación. Si quieren reforzar, la frase "…de sal: en 2 litros, unas 5 centésimas de grado" es más clara, pero no es necesaria. |
+| R4 | Estudio: "…con casi 1 por ciento de sal, el agua hirvió solo 15 centésimas de grado más." + chip "0.96 % de sal en peso" | ✅ | Hakuta et al. 1974, Tabla 1: "0.956 [wt. %] … 0.151°C [B.P.E.]". "Más" se entiende como más caliente que el agua sin sal, porque toda la frase habla del hervor. El chip ya dice "en peso" (sugerencia 3 atendida). |
+| R5 | Cierre: "Esa cucharadita no apura tu olla: la sal es para el sabor, no para la prisa." | ✅ | Igual que #20: en la práctica, la sal no cambia el tiempo para hervir. |
+
+Resultado: las 2 ⚠️ de la primera ronda quedaron corregidas. Sin ⚠️ ni ❌ pendientes.
