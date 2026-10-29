@@ -40,3 +40,29 @@ Fuentes abiertas:
 | 12 | Cierre: "Admíralo, pero no te lo comas" | ✅ | [WT], [MMWR] | Coherente con "highly toxic"; nada del guion invita a comerlo ni a "probarlo". | — |
 
 **Re-verificación (29 oct 2026):** se revisó narracion.json completo (998 caracteres) y las escenas 1, 3, 4, 5, 8, 9 y 11 del guion. Las 4 observaciones (cocinar, "hongo que conocía", olla y rótulo del anillo) quedaron corregidas y con fuente; los recortes no cambian ningún dato; Rampolli 2021 quedó en Fuentes (solo falta corregir en el guion el número de la revista: 8(2), no 8(3), detalle bibliográfico que no cambia ningún hecho). Todas las afirmaciones quedan ✅.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `muscaria.jsx`, el `.dc.html` (tiempos de escena), la columna «Lo que se ve», la tabla «Robert en pantalla» y `publicacion.md`, y se miraron cuadros de vista previa (0.3, 6, 12, 13, 17, 18, 24, 30, 34, 35.5, 36, 37.2, 38.5, 40.5, 42, 48, 51, 54, 58 y 60 s).
+
+| # | Texto en pantalla o en publicación | Veredicto | Fuente / nota |
+|---|---|---|---|
+| F1 | «¿manchas?» tachado → «pedazos de su velo»; «botón: hongo joven»; «velo universal»; «POR DENTRO · el velo no crece»; «verrugas: pedazos del velo»; «bandas del velo en el bulbo» (el anillo del pie se dibuja sin rótulo) | ✅ | [LT], [KUO], [WT] |
+| F2 | «ojo: sin puntos se confunde con otros hongos» | ✅ | [EJ] |
+| F3 | Mapa con «Ixtlán de Juárez, Oax.» (posición calculada con lon −96.49, lat 17.33), «*Amanita muscaria* var. *flavivolvata*», «bosque de pino y encino» | ✅ | [VJ], [KUO] |
+| F4 | «AL MICROSCOPIO · raíz de pino», «hifas del hongo», «nutrientes → árbol», «azúcares → hongo» | ✅ | [SP], [KUO] (pinos entre sus hospederos) |
+| F5 | «VENENOSO»; «ácido iboténico ≈ glutamato → excita»; «muscimol ≈ GABA → frena»; olla con algunas moléculas + «cocinado ≠ seguro» (visible 36.2–38.2 s) | ✅ | [MMWR], [TOX] |
+| F6 | Tarjeta «2018 · Minnesota, EUA · MMWR (CDC), 2019»; «A. muscaria var. guessowii» (dibujado amarillo-naranja); «el que él conocía» (silueta con «?», sin especie inventada); «2–3 h después de comer»; «vómito», «sudor», «confusión»; «4 días con respirador»; «✓ se recuperó» | ✅ | [MMWR], [KUO] |
+| F7 | «leche + hongo» con moscas mareadas | ✅ | [TOX] |
+| F8 | «míralo ✓ / comerlo ✗»; nada invita a comerlo | ✅ | — |
+| F9 | Subtítulos (13): «Esos puntos no son manchas.» … «2018, Minnesota: lo confundió.» (él confundió el hongo con otro que conocía: correcto) … «Admíralo, no te lo comas.» Todos fieles a la voz verificada | ✅ | [MMWR] |
+| F10 | Barras de escala: 5 cm / 2 cm (32 u = 1 cm; sombrero adulto ≈ 10 cm, dentro de 5–25 cm de [KUO]); 500 km en el mapa (1000 px / 42° de longitud → 500 km ≈ 114 px a 17–20° N: coincide); 100 µm en la raíz (raíz dibujada ≈ 0.28 mm de ancho: razonable); 10 cm olla; 50 cm hospital; 5 cm plato | ✅ | cálculo propio |
+| F11 | Barra de la sinapsis: decía «0,5 µm» (coma decimal y la hendidura dibujada es unas 10 veces más ancha que la real) → **corregido a «0.5 µm (esquema)»** en `muscaria.jsx` y en guion.md | ✅ corregido | esquemático |
+| F12 | Robert: 10 apariciones (≈ 31.7 s en pantalla), 9 poses distintas sin repetir seguidas, grande en «¿Y es venenoso? Sí.», cierre con `CierreMarca` y Robert; no tapa datos ni subtítulos en los cuadros revisados | ✅ | tabla de guion.md |
+| P1 | publicacion.md (YouTube): decía «se parecían a uno comestible de su país natal» → **corregido a «se parecían a uno que conocía de su país natal (Birmania)»** | ✅ corregido | [MMWR]: "resembled the Ochre mushroom … from his native Burma" |
+| P2 | publicacion.md (LinkedIn): decía «El hongo más reconocible de los cuentos» (superlativo) → **corregido a «Uno de los hongos más reconocibles de los cuentos»** | ✅ corregido | [KUO]: "probably the most depicted and recognized mushroom on earth" |
+| P3 | Confusión con *A. caesarea* (comestible) en Europa; «octubre de 2018»; «a las 2–3 horas»; glutamato/GABA; «sus toxinas resisten el calor» / «termoestables»; «leche para atraerlas y atontarlas»; «registrada en bosques de pino y encino de Oaxaca»; Rampolli 8(2) | ✅ | [EJ], [MMWR], [TOX] ("heat-stable"; "to attract and sedate flies"), [VJ] |
+
+Resumen: la animación y la publicación quedan fieles a la voz verificada; se corrigieron la barra de la sinapsis (punto decimal y «esquema») y dos frases de publicacion.md (comestible → que conocía; superlativo suavizado). Todo ✅.
+
+VEREDICTO: APROBADO

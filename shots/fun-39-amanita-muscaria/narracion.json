@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Amanita Muscaria base narrada.dc.html",
+  "salida": "Shot Amanita Muscaria narrado.dc.html",
+  "nota": "Shot Fungi Mati #39. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esos puntos blancos del hongo de los cuentos no son manchas: son pedazos de un cascarón roto." },
+    { "escena": "Huevo", "texto": "Es Amanita muscaria: de joven está envuelto en un velo blanco, como un huevo." },
+    { "escena": "Globo", "texto": "Al crecer, el sombrero se infla como globo; el velo no crece y se rompe en pedacitos." },
+    { "escena": "Base", "texto": "Unos quedan arriba, como puntos, y el resto abajo, en la base del pie." },
+    { "escena": "Lluvia", "texto": "Por eso a veces la lluvia los lava y el sombrero queda liso." },
+    { "escena": "Mexico", "texto": "No es solo de cuentos: en México crece en bosques de pino y encino." },
+    { "escena": "Raices", "texto": "Sus hilos abrazan raíces de árboles: les dan nutrientes y reciben azúcares." },
+    { "escena": "Pregunta", "texto": "¿Y es venenoso? Sí." },
+    { "escena": "Toxinas", "texto": "Tiene ácido iboténico y muscimol, que alteran las señales de tu cerebro. Y cocinarlo puede no quitarle el peligro." },
+    { "escena": "Estudio", "texto": "En 2018, en Minnesota, un señor los cocinó creyendo que eran un hongo que conocía de su país." },
+    { "escena": "Respirador", "texto": "En pocas horas: vómito, sudor y confusión. Pasó cuatro días con respirador y se recuperó." },
+    { "escena": "Moscas", "texto": "Hasta las moscas lo sufren: antes lo ponían en leche para atontarlas." },
+    { "escena": "Cierre", "texto": "Esos puntos blancos no son adorno: son su cascarón roto. Admíralo, pero no te lo comas." }
+  ]
+}
