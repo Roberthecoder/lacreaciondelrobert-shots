@@ -1,4 +1,4 @@
-# Shot Biotecnológico #19 · Tu aderezo lo espesó una bacteria (goma xantana)
+# Shot Biotecnológico #19 · Lo espeso de tu aderezo también es obra de una bacteria (goma xantana)
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #19 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (el frasco de aderezo y, con la `Lupa`, las cadenas de xantana por dentro) + N5 "El experimento" (el estudio de Peoria de 1961 y la aprobación de 1969, dibujados como escena).
@@ -6,34 +6,40 @@
 - **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s).
 - **Viaje:** macro (el frasco de aderezo en la mesa) → la hoja de col y el tanque → micro (la cadena de azúcares, la red enredada, las cadenas que se alinean al agitar) → **el mismo frasco del inicio**, ahora con la etiqueta "goma xantana" señalada.
 
-## Versión narrada (959 caracteres, 177 palabras, ~58 s de voz)
+## Corrección del 29 oct 2026 (verificación de hechos independiente, ver `verificacion.md`)
+- **Gancho y cierre:** "no está espeso por la crema" era exagerado (en un aderezo cremoso también espesan el aceite, el huevo o los lácteos). Ahora: "Lo espeso de ese aderezo **no es solo crema**: también es obra de una bacteria".
+- **Pasta de dientes:** no todas la llevan → "está hasta en **muchas** pastas de dientes".
+- **Sin bacterias vivas:** no lo logra el alcohol; primero se **quitan las bacterias** (calor, centrifugado o filtrado) y luego se precipita la goma con alcohol. Cambian la voz y la pantalla (paso "1 · se eliminan las bacterias").
+- La etiqueta *X. campestris* pv. *campestris* (la variedad que enferma a la col) sale **solo** en la escena de la col: la cepa de fábrica tiene que ser no patógena.
+
+## Versión narrada (958 caracteres, 177 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese aderezo no está espeso por la crema: lo espesó una bacteria. | Fondo amarillo. **Desde el cuadro 0** una cuchara se hunde en un frasco de aderezo blanco y sale cubierta. `MitoTachado` "crema" → aparece una bacteria en bastón (*Xanthomonas campestris*) saludando desde el frasco. |
-| 1 | Etiqueta | Se llama goma xantana, y está hasta en tu pasta de dientes. | La etiqueta del frasco se acerca: "goma xantana" se ilumina. Al lado entran un tubo de pasta de dientes y una botella de salsa con la misma palabra. |
-| 2 | Col | La hace *Xanthomonas campestris*, la bacteria de la pudrición negra de la col. | Fondo menta: una hoja de col con lesiones amarillas en forma de **V** desde el borde y las **nervaduras ennegrecidas** (síntoma típico). Etiqueta: bacteria de la pudrición negra · *Xanthomonas campestris* pv. *campestris*. |
-| 3 | Col | En la hoja, se envuelve en esa baba para protegerse. | Lupa sobre la hoja ("AL MICROSCOPIO · HOJA DE COL"): bacterias en bastón con un flagelo, metidas en una baba brillante (la matriz de xantana). |
-| 4 | Tanque | En la fábrica la crían en tanques con azúcar y suelta la goma afuera. | Fondo cian: un tanque de fermentación con agitador que gira y burbujas. Cubos de azúcar caen; dentro, las bacterias sueltan hilos de goma **por fuera** de su cuerpo. Chip "fermentación". |
-| 5 | Alcohol | Luego la sacan con alcohol y la secan: en el polvo ya no queda bacteria viva. | Se vierte alcohol: la goma se junta en fibras blancas → se seca → polvo blanco en un costal. Chip "sin bacterias vivas". |
-| 6 | Pregunta | ¿Y cómo espesa tanto con tan poquito? | **Re-gancho.** Una pizca de polvo cae a un vaso de agua y el agua se vuelve espesa. |
-| 7 | Cadena | Por dentro, cada molécula es una cadena larguísima de azúcares, enroscada en hélice. | Fondo oscuro (`#0E0F12`). Lupa "POR DENTRO · GOMA XANTANA": una cadena de hexágonos (glucosas) con ramitas laterales cortas, enroscada en hélice. Barra de escala. |
-| 8 | Red | En reposo, esas cadenas se enredan en una red que frena el agua. | Muchas cadenas se cruzan y forman una red; las gotitas de agua se mueven lento entre ellas. Medidor "viscosidad: alta". |
-| 9 | Agitar | Si agitas el frasco, se alinean y el aderezo corre; quieto, vuelve a espesar. | Vuelve el frasco: una mano lo agita (efecto de agitar) → en el inserto las cadenas se alinean en una sola dirección y el medidor baja; el aderezo corre. Se detiene → las cadenas se vuelven a enredar y el medidor sube. |
-| 10 | Estudio | En 1961, Allene Jeanes y su equipo, del gobierno de Estados Unidos en Peoria, publicaron cómo hacerla con glucosa; en 1969 la aprobaron para alimentos. | `TarjetaEstudio` "1961 · Peoria, Illinois · Departamento de Agricultura de EE. UU.": un laboratorio con matraces, una química con bata frente a un matraz espeso. Luego un sello "1969 · FDA · aditivo de alimentos". |
-| 11 | Dato | Y esa misma goma espesa el lodo para perforar pozos de petróleo. | Fondo rosa: una torre de perforación; por el tubo baja un lodo espeso. |
-| 12 | Cierre | Así que tu aderezo no es espeso por la crema: es la baba de una bacteria. | **Regreso al frasco del inicio**: la cuchara vuelve a hundirse y en la etiqueta brilla "goma xantana" con la bacteria al lado. |
-| — | Outro | (sin voz) | Cierre de marca con Robert. |
+| 0 | Gancho | Lo espeso de ese aderezo no es solo crema: también es obra de una bacteria. | Fondo amarillo. **Desde el cuadro 0** una cuchara se hunde en un frasco de aderezo y sale cubierta. `MitoTachado` "¿solo crema?" → aparece a un lado una bacteria en bastón. Barra de escala (cm). |
+| 1 | Etiqueta | Se llama goma xantana, y está hasta en muchas pastas de dientes. | Fondo menta: en la etiqueta del frasco se ilumina "goma xantana"; entra un tubo de pasta de dientes con "xantana" resaltado. |
+| 2 | Col | La hace *Xanthomonas campestris*, la de la pudrición negra de la col. | Fondo cian: hoja de col; desde el borde crece una lesión amarilla en **V** y las **nervaduras se ennegrecen**. Chip "pudrición negra de la col" y etiqueta *Xanthomonas campestris* pv. *campestris* (solo en esta escena). |
+| 3 | Col | En la hoja, se envuelve en esa baba para protegerse. | `Lupa` "AL MICROSCOPIO · HOJA DE COL": bacterias en bastón con un flagelo que se envuelven en una baba brillante. Etiqueta "baba de xantana: su escudo". Escala 1 µm. |
+| 4 | Tanque | En la fábrica la crían en tanques con azúcar y suelta la goma afuera. | Fondo rosa: `MundoBiorreactor` con agitador y burbujas; caen cubos de azúcar. `Lupa` "AL MICROSCOPIO · EL CALDO": la bacteria suelta hilos de goma por fuera. Chip "fermentación: azúcar → goma". |
+| 5 | Alcohol | Luego quitan las bacterias, sacan la goma con alcohol y la secan: en el polvo no queda bacteria viva. | Fondo lila, 3 pasos con chip: **1 · se eliminan las bacterias** (un filtro las retiene y el caldo pasa) → **2 · alcohol: la goma se junta** (fibras blancas en el vaso) → **3 · polvo sin bacterias vivas** (polvo blanco que cae en un tazón). |
+| 6 | Pregunta | ¿Y cómo espesa tanto con tan poquito? | **Re-gancho.** Fondo naranja: una pizca de polvo cae en un vaso de agua que se mueve; el agua se calma y se pone turbia. Signo "?" grande. |
+| 7 | Cadena | Por dentro, cada molécula es una cadena larguísima de azúcares, enroscada en hélice. | Fondo oscuro: se arma una cadena de hexágonos amarillos (glucosas) en hélice con ramitas de 3 azúcares. Etiquetas "esqueleto de glucosas" y "ramitas de 3 azúcares". Escala 1 nm. |
+| 8 | Red | En reposo, esas cadenas se enredan en una red que frena el agua. | Fondo oscuro: muchas cadenas enredadas en red; las gotitas de agua avanzan lento. Chip "en reposo: una red" y `Medidor` "qué tan espeso" lleno. |
+| 9 | Agitar | Si agitas el frasco, se alinean y corre; quieto, vuelve a espesar. | Fondo amarillo: el frasco se sacude; `Lupa` "POR DENTRO · GOMA XANTANA": las cadenas se alinean, el agua corre y el medidor baja ("corre"); el frasco se queda quieto y las cadenas se vuelven a enredar ("espeso"). |
+| 10 | Estudio | En 1961, el equipo de Allene Jeanes, en Peoria, publicó cómo hacerla con glucosa; en 1969 la aprobaron para alimentos. | Fondo cian: laboratorio con matraces de caldo espeso y una varilla que levanta un hilo de goma. `TarjetaEstudio` "1961 · Jeanes, Pittsley y Senti · Peoria, EE. UU. · J. Appl. Polym. Sci." + chip "Departamento de Agricultura de EE. UU.". Luego sello "1969 · FDA · aditivo de alimentos" y chip "aprobada para alimentos". |
+| 11 | Dato | Y esa misma goma espesa el lodo para perforar pozos de petróleo. | Fondo rosa: torre de perforación; por el tubo baja el lodo. Chip "lodo para perforar pozos". |
+| 12 | Cierre | Así que lo espeso de tu aderezo no es solo crema: también es la baba de una bacteria. | **Regreso al frasco del inicio**: la cuchara vuelve a hundirse, "goma xantana" se ilumina en la etiqueta y aparece la bacteria con su baba. Chip "crema + baba de bacteria". Escala (cm). |
+| — | Outro | (sin voz) | `CierreMarca` con Robert señalando. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Cama grave continua**, sin golpe marcado, siempre debajo de la voz.
-- **Efectos en el mismo cuadro:** la cuchara que se hunde (sonido espeso, "glup"), el tachón de "crema", el agitador del tanque (zumbido lento) y un "blub" por burbuja, el chorro de alcohol, el polvo que cae (siseo), la Lupa que se abre (barrido), el frasco que se agita (sonajeo rápido) que se apaga en cuanto se queda quieto, el sello de la FDA (golpe suave), la perforadora (retumbo grave).
+- **Efectos en el mismo cuadro:** la cuchara que se hunde (sonido espeso, "glup"), el tachón de "crema", el agitador del tanque (zumbido lento) y un "blub" por burbuja, las gotas del caldo que pasa el filtro, el chorro de alcohol y las fibras que se juntan (tics), el polvo que cae (siseo), una nota por cada azúcar de la cadena, la Lupa que se abre (barrido), el frasco que se agita (sonajeo rápido) que se apaga en cuanto se queda quieto, el sello de la FDA (golpe suave), la perforadora (retumbo grave).
 - **El dato hecho sonido:** mientras las cadenas están enredadas, la cama suena "tapada" (filtro cerrado); cuando se alinean al agitar, el filtro se abre y suena más fluida; al quedarse quietas, se vuelve a cerrar.
 
 ## Descripción (para publicar)
-"Ese aderezo no está espeso por la crema: lo espesó una bacteria. 🥗🦠 Muchos aderezos, salsas y hasta pastas de dientes llevan **goma xantana**, un espesante que fabrica la bacteria *Xanthomonas campestris*. En el campo, esa bacteria es la que causa la **pudrición negra de la col** y otras crucíferas, y vive envuelta en una matriz pegajosa hecha sobre todo de xantana que la protege.
+"Lo espeso de ese aderezo no es solo crema: también es obra de una bacteria. 🥗🦠 Muchos aderezos, salsas y hasta pastas de dientes llevan **goma xantana**, un espesante que fabrica la bacteria *Xanthomonas campestris*. En el campo, esa bacteria es la que causa la **pudrición negra de la col** y otras crucíferas, y vive envuelta en una matriz pegajosa hecha sobre todo de xantana que la protege.
 
-En la fábrica se cultiva pura en tanques con azúcar; la bacteria suelta la goma por fuera de su cuerpo. Después la goma se recupera con alcohol, se seca y se muele. La norma de EE. UU. exige que el proceso deje la goma **libre de células vivas** de la bacteria.
+En la fábrica se cultiva pura en tanques con azúcar; la bacteria suelta la goma por fuera de su cuerpo. Después se eliminan las bacterias (con calor, centrifugado o filtrado), la goma se recupera con alcohol, se seca y se muele. La norma de EE. UU. exige que el proceso deje la goma **libre de células vivas** de la bacteria.
 
 ¿Por qué espesa tanto con tan poquito? Cada molécula es una cadena muy larga de azúcares (un esqueleto de glucosas, como el de la celulosa, con ramitas laterales) enroscada en hélice. En reposo, las cadenas se enredan en una red y el líquido queda espeso; cuando agitas o viertes, se alinean con el flujo y el líquido corre (se llama adelgazamiento por cizalla o pseudoplasticidad); en reposo vuelve a quedar espeso.
 
@@ -65,4 +71,4 @@ El dibujo es esquemático. **¿Ya habías visto 'goma xantana' en alguna etiquet
    - "…biofilm-like structures embedded in an extracellular polymeric matrix, which in Xanthomonas is mainly composed of xanthan and protects the bacteria from harsh abiotic stress conditions in the phyllosphere." (2026)
    - "Typical symptoms of black rot disease are V-shaped chlorotic to necrotic lesions with blackened veins starting from the leaf margins…" (2026)
 
-**Puntos para el verificador:** (a) la cepa industrial y la de la pudrición negra son la misma especie (*X. campestris*), pero la regulación exige una cepa "nonpathogenic and nontoxic in man or other animals"; el guion no dice que la cepa de fábrica enferme coles. (b) El gancho "no está espeso por la crema" es retórico: un aderezo cremoso puede llevar crema/huevo y además xantana; la animación muestra un aderezo cuya etiqueta lleva xantana. (c) 1968 (ARS) vs. 1969 (Federal Register): se usa 1969.
+**Puntos para el verificador:** (a) la cepa industrial y la de la pudrición negra son la misma especie (*X. campestris*), pero la regulación exige una cepa "nonpathogenic and nontoxic in man or other animals"; el guion no dice que la cepa de fábrica enferme coles. (b) Gancho corregido a "no es solo crema". (c) 1968 (ARS) vs. 1969 (Federal Register): se usa 1969.
