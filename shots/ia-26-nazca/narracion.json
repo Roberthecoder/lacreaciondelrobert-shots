@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Nazca base narrada.dc.html",
+  "salida": "Shot Nazca narrado.dc.html",
+  "nota": "Shot IA #26. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "En casi cien años hallaron cuatrocientas treinta figuras en el desierto de Nazca, Perú. Con ayuda de una IA, trescientas tres más en seis meses."
+    },
+    {
+      "escena": "Ocultas",
+      "texto": "Son figuras chicas, de unos nueve metros en promedio, y tras casi dos mil años a la intemperie, apenas se ven."
+    },
+    {
+      "escena": "Escaner",
+      "texto": "Una IA revisó fotos aéreas del desierto en cuadritos de once metros y marcó dónde podía haber una."
+    },
+    {
+      "escena": "Filtro",
+      "texto": "Luego, arqueólogos revisaron: de cada treinta y seis sugerencias, una prometía."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo saber cuáles eran reales?"
+    },
+    {
+      "escena": "Campo",
+      "texto": "Caminando. En esos seis meses fueron a pie a trescientos cuarenta y un puntos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Confirmaron trescientas tres figuras: casi el doble. Lo publicaron Yamagata e IBM en dos mil veinticuatro. En dos mil veinticinco anunciaron ciento sesenta más."
+    },
+    {
+      "escena": "Matiz",
+      "texto": "Ojo: ciento setenta y ocho las señaló la IA; las demás estaban junto a esas o las hallaron personas."
+    },
+    {
+      "escena": "Motivos",
+      "texto": "Y sorpresa: en las chicas casi no hay animales salvajes. Hay personas, llamas y cabezas cortadas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "La IA dice dónde mirar; caminar el desierto dice qué es real."
+    }
+  ]
+}

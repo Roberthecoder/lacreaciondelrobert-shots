@@ -287,7 +287,7 @@ function Nazca() {
       <Subtitulo T={T} idx={3} at={K.F + 0.1} until={K.P - 0.1} texto="De cada 36 sugerencias, *solo 1 prometía.*" />
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.C - 0.1} texto="¿Cómo saber *cuáles eran reales?*" />
       <Subtitulo T={T} idx={5} at={K.C + 0.1} until={K.Es - 0.1} texto="Caminando: *341 puntos a pie.*" />
-      <Subtitulo T={T} idx={6} at={K.Es + 0.1} until={K.M - 0.1} texto="303 confirmadas: *casi el doble.* 2025: *160 más.*" />
+      <Subtitulo T={T} idx={6} at={K.Es + 0.1} until={K.M - 0.1} texto="303 confirmadas: *casi el doble.* 2025: *anunciaron 160 más.*" />
       <Subtitulo T={T} idx={7} at={K.M + 0.1} until={K.Mo - 0.1} texto="*178* las señaló la IA; *125*, no directamente." />
       <Subtitulo T={T} idx={8} at={K.Mo + 0.1} until={K.Ci - 0.1} texto="Casi sin animales salvajes: *personas, llamas, cabezas.*" />
       <Subtitulo T={T} idx={9} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="La IA dice dónde mirar; *caminar dice qué es real.*" />

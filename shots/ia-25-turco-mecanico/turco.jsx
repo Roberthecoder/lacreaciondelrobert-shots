@@ -255,7 +255,7 @@ function Turco() {
       </Escena>
       <Etq T={T} at={K.Pu + 2.0} until={K.A - 0.2} x={720} y={960} texto="engranes" />
       <Etq T={T} at={K.Pu + 2.8} until={K.A - 0.2} x={720} y={1040} texto="palancas" />
-      <Chip T={T} at={K.Pu + 0.6} until={K.A - 0.2} texto="antes de jugar" x={540} y={420} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Pu + 0.6} until={K.A - 0.2} texto="antes de jugar" x={540} y={1470} tam={40} borde={KC.ink} />
 
       {/* 4 · por dentro: el maestro de ajedrez escondido */}
       <Escena T={T} a={K.A} b={K.N}>
@@ -337,7 +337,7 @@ function Turco() {
         [CUES.Gancho - 0.45, CUES.Gancho + 4.3, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Turco + 3.0, CUES.Puertas - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Adentro + 0.5, CUES.Adentro + 4.4, 'avatar_06_pensativo_menton', 'izq-alto'],
-        [CUES.Napoleon + 2.8, CUES.Pregunta - 0.15, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
+        [CUES.Napoleon + 2.8, CUES.Pregunta - 0.15, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Pregunta + 0.05, CUES.Amazon + 1.1, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Amazon + 4.6, CUES.Etiquetas - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
         [CUES.Etiquetas + 1.2, CUES.Cerro - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],

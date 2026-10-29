@@ -64,3 +64,10 @@ Revisión de forma: cada cifra dice de qué es; todos los datos son de 2024 (men
 ### Correcciones necesarias (re-verificación)
 
 1. **R8 ⚠️** Voz [6]: cambiar "En dos mil veinticinco, ciento sesenta más." por **"En dos mil veinticinco anunciaron ciento sesenta más."** (una palabra más, ~0.4 s). Subtítulo: **"2025: *anunciaron 160 más.*"** (o "jul 2025: *160 más anunciadas*"). Así se entiende que se anunciaron en 2025, no que se hallaron ese año. Todo lo demás de la re-verificación queda ✅.
+
+## Re-verificación final (29 oct 2026, coordinador)
+- Voz [6]: «…En dos mil veinticinco anunciaron ciento sesenta más.» y subtítulo «2025: *anunciaron 160 más.*» (comunicado de Yamagata, 28 jul 2025: halladas en campo en 2023–2024, anunciadas en 2025) ✅
+- Recorte sin datos nuevos: «Lo publicaron Yamagata e IBM en dos mil veinticuatro.» (Sakai et al., PNAS 2024; la tarjeta en pantalla dice «Univ. de Yamagata + IBM») ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
