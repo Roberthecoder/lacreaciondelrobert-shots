@@ -1,27 +1,27 @@
 # Shot Festivo #10 · Posadas · Científico: Lo que el hervor le hace al tejocote de tu ponche
 
 - **Serie:** Shot Festivo · **Serie vinculada:** Científico · **Logo:** biología (ADN, `logo_biologia.svg`: el tema son las células de una fruta) · **Badge:** Festivo #10 · **Especial:** Posadas (se publica el 16 dic 2026, primera posada) · rama `pedido300/festivos`.
-- **Estado (29 oct 2026):** fase A: guion y `narracion.json` escritos, **pendientes de verificación independiente** (`verificacion.md` lo escribe el verificador). Sin animación todavía · **voz pendiente de aprobación de Robert**.
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`: APROBADO), animación (`ponche.jsx`), música (`gen-audio.mjs`), Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert** (~1,083 caracteres).
 - **Formato:** N1 «Por dentro» (del tejocote en la olla del ponche → sus células al microscopio → de regreso al tejocote suavecito), con un poco de N5 «El experimento» (el estudio de Chapingo con las setas cubiertas).
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre lo que se ve: «Ese tejocote de tu ponche no se deshace: se despega, célula por célula.»
-- **Duración:** voz de 1,072 caracteres (≈ 65.0 s) + cierre de 3.8 s → **≈ 68.8 s** estimados (`estimar-escenas.mjs`). Los festivos van de 61 a 75 s.
+- **Duración:** voz de 1,083 caracteres (≈ 65.7 s) + cierre de 3.8 s → **69.5 s** en la base (`estimar-escenas.mjs`). Los festivos van de 61 a 75 s.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese tejocote de tu ponche no se deshace: se despega, célula por célula. | Fondo naranja con papel picado. Desde el cuadro 0 hierve una olla de barro con ponche: tejocotes, caña, guayaba y canela que dan vueltas. Un cucharón saca un tejocote, lo aprieta y la pulpa se abre en grumitos. «¿se deshace?» se tacha; «se despega». Chip «Especial Posadas». |
-| 1 | Firme | Crudo, sus células están infladas de agua y bien pegadas: por eso está firme. | Fondo menta. Un tejocote crudo (amarillo-naranja, con su corona seca de sépalos) entra rebotando. Una `Lupa` lo abre por dentro: células redondeadas e infladas, con una línea de pegamento entre ellas. Capítulo 1 «Crudo». |
+| 0 | Gancho | Ese tejocote de tu ponche no se deshace: se despega, célula por célula. | Fondo naranja con papel picado. Desde el cuadro 0 hierve una olla de barro con ponche: tejocotes, caña, guayaba y canela que dan vueltas. Un cucharón de madera saca un tejocote, lo aprieta y la pulpa se abre en grumitos. Abajo, «¿se deshace?» se tacha y aparece «se despega». Chip «Especial Posadas». |
+| 1 | Firme | Crudo, sus células están infladas de agua y bien pegadas: por eso está firme. | Fondo menta. Un tejocote crudo (amarillo-naranja, con su corona seca de sépalos) entra rebotando. Etiquetas «tejocote crudo» y «cáliz seco». Una `Lupa` «POR DENTRO · crudo» muestra sus células infladas, con líneas doradas de pegamento entre ellas. Chip «células infladas de agua». Capítulo 1 «Crudo». |
 | 2 | Membrana | Al hervir, el calor rompe sus membranas: se sale el agua y lo que traen disuelto pasa al ponche. | Fondo noche (por dentro, con barra de escala en µm). Termómetro que sube; la membrana de cada célula se rompe y salen puntitos (agua y lo disuelto) hacia el líquido; las células se desinflan. Capítulo 2 «El hervor». |
-| 3 | Pegamento | Pero entre célula y célula hay un pegamento: una capa rica en pectina. | Fondo noche. Zoom a la unión de dos paredes: la lámina media brilla en dorado, con cadenas de pectina dibujadas como collares. Etiqueta «lámina media (pectina)». |
+| 3 | Pegamento | Pero entre célula y célula hay un pegamento: una capa rica en pectina. | Fondo noche. Zoom a la unión de dos paredes: la lámina media brilla en dorado, con cadenas de pectina dibujadas como collares. Etiqueta «lámina media» y chip «pegamento rico en pectina». |
 | 4 | Pregunta | ¿Y qué le hace el hervor a ese pegamento? | **Re-gancho.** Fondo amarillo, «?» gigante sobre la olla que hierve. Robert grande, pensativo. |
-| 5 | Despega | La pectina se rompe y se disuelve, las células se separan y la fruta se pone suavecita. | Fondo noche. Las cadenas de pectina se cortan en pedacitos que se van flotando; las células se separan unas de otras. Afuera, el tejocote se aplasta con la cuchara. Chip «se despega». |
-| 6 | Pectina | Y el tejocote está cargado de pectina: tanta, que la industria la saca de él para cuajar jaleas y mermeladas. | Fondo rosa. Medidor «pectina» que se llena en el tejocote; luego, frascos de jalea y de mermelada que cuajan. Capítulo 3 «La pectina». |
-| 7 | Nativo | Es un árbol nativo de México y da fruto en noviembre y diciembre, justo a tiempo para las posadas. | Fondo cian. Mapa esquemático de México con el Eje Neovolcánico resaltado; un árbol de tejocote cargado de frutos; calendario «nov–dic» junto a una piñata. |
+| 5 | Despega | La pectina se rompe y se disuelve, las células se separan y la fruta se pone suavecita. | Fondo noche. Las cadenas de pectina se cortan en pedacitos que se van flotando («la pectina se rompe»); luego el tejido sin pegamento: las células se separan unas de otras. Chip «se despega». |
+| 6 | Pectina | Y el tejocote está cargado de pectina: tanta, que la industria la saca de él para cuajar jaleas y mermeladas. | Fondo rosa. El tejocote con su cáliz; medidor «pectina · alta»; bolitas doradas de pectina viajan a dos frascos («JALEA», «MERMELADA») que cuajan y tiemblan. Chip «cuaja jaleas y mermeladas». Capítulo 3 «La pectina». |
+| 7 | Nativo | Es un árbol nativo de México y da fruto en noviembre y diciembre, justo a tiempo para las posadas. | Fondo cian. Mapa esquemático de México con el Eje Neovolcánico resaltado; un árbol de tejocote que se llena de frutos y una piñata de estrella. Chips «nativo de México» y «fruto: nov – dic». |
 | 8 | Estudio | En 2016, en Chapingo, con pectina de tejocote y cera de candelilla hicieron una capa comestible para setas rebanadas. | Fondo amarillo. `TarjetaEstudio` «2016 · Universidad Autónoma Chapingo · Texcoco · *Agrociencia*». La pectina y la cera de candelilla se mezclan en un vaso; una brocha cubre rebanadas de seta (*Pleurotus ostreatus*). Capítulo 4 «El estudio». |
-| 9 | Setas | Las rebanadas con la mejor mezcla perdieron menos peso y firmeza en veinte días de refrigeración. | Fondo menta. Refrigerador con un `Cronometro` de 20 días a 4 °C; dos charolas: «sin capa» (rebanadas que se arrugan y oscurecen) contra «con capa» (también se arrugan y oscurecen, pero menos; etiqueta «con capa: pierde menos» y una chica «2 % pectina + 1 % cera»). |
-| 10 | Dato | Ojo: desde 2024, la FDA alerta que varios suplementos de raíz de tejocote en realidad traían adelfa amarilla, una planta venenosa. | Fondo lila. Frasco de cápsulas con etiqueta «raíz de tejocote» que se voltea: adentro, la adelfa amarilla (*Thevetia peruviana*, flor amarilla de trompeta). Sello «FDA · alerta» y señal de peligro. Chip «no era tejocote: era adelfa». |
-| 11 | Cierre | Así que ese tejocote no se deshace: se despega, porque el hervor le disolvió el pegamento. | **Regreso a la imagen del inicio** (la misma olla y el mismo cucharón); una `Lupa` «POR DENTRO» sobre el tejocote muestra las células separadas, sin pegamento. Chip «se despega». |
+| 9 | Setas | Las rebanadas con la mejor mezcla perdieron menos peso y firmeza en veinte días de refrigeración. | Fondo menta. Refrigerador con un contador «día 0 → día 20 · 4 °C»; dos charolas: «sin capa» (rebanadas que se arrugan y oscurecen) contra «con capa» (también se arrugan y oscurecen, pero menos; etiqueta «con capa: pierde menos» y una chica «2 % pectina + 1 % cera»). |
+| 10 | Dato | Ojo: desde 2024, la FDA alerta que varios suplementos de raíz de tejocote en realidad traían adelfa amarilla, una planta venenosa. | Fondo lila. Frasco de cápsulas con etiqueta «raíz de tejocote» que se voltea: adentro, la adelfa amarilla (*Thevetia peruviana*, flor amarilla de trompeta). Chip «FDA · alerta desde 2024» y señal de peligro. Chip «no era tejocote: era adelfa». |
+| 11 | Cierre | Así que ese tejocote no se deshace: se despega, porque el hervor le disolvió el pegamento. | **Regreso a la imagen del inicio** (la misma olla y el mismo cucharón); una `Lupa` «POR DENTRO · sin pegamento» sobre el tejocote del cucharón muestra las células separadas. Chip «se despega». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y cálida continua, sin golpe, siempre debajo de la voz. Cada efecto cae en el mismo cuadro que su acción:
@@ -37,7 +37,26 @@
 - dos notas graves de alerta en el dato;
 - destellos al final.
 
-## Fuentes (abiertas el 29 oct 2026; pendientes de verificación independiente)
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos porque están atados a cada escena). Grande en «¿Y qué le hace el hervor a ese pegamento?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.8 | 11_sorprendido | `gancho` | «no se deshace: se despega» (cuadro 0) |
+| 2 | 4.9 | 8.7 | 13_senalando_arriba | `izq-alto` | señala el tejocote crudo y su lupa |
+| 3 | 9.7 | 13.9 | 04_bajando_lentes | `arriba-der` | «el calor rompe sus membranas» |
+| 4 | 19.3 | 22.2 | 07_pensativo_puno | `grande` | «¿Y qué le hace el hervor a ese pegamento?» |
+| 5 | 27.7 | 32.8 | 05_sonriendo_dientes_uniformes | `izq-alto` | «cargado de pectina… jaleas y mermeladas» |
+| 6 | 34.3 | 39.1 | 13_senalando_arriba | `arriba-der` | señala el mapa: nativo de México |
+| 7 | 40.2 | 44.6 | 06_pensativo_menton | `arriba-der` | el estudio de Chapingo (2016) |
+| 8 | 52.9 | 58.5 | 10_serio_molesto | `arriba-der` | la alerta de la FDA: adelfa amarilla |
+| 9 | 60.5 | 65.6 | 02_apuntando_camara | `arriba-der` | «ese tejocote no se deshace: se despega» |
+| — | 65.7 | 69.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones: 9 · **39.8 s en pantalla** (+ cierre 3.8 s) · 8 poses distintas, ninguna repetida seguida · hueco máximo de 8.3 s. Nunca tapa el subtítulo: en la copia local de `kit-robert.jsx` (línea 606) los lados `gancho`, `grande`, `arriba-der` e `izq-alto` entran y salen de lado.
+
+## Fuentes (abiertas el 29 oct 2026; verificadas en `verificacion.md`: APROBADO)
 
 1. **Tejocote nativo de México, rico en pectina, ingrediente del ponche, fructifica nov–dic.** CONAFOR, ficha «*Crataegus mexicana* DC. / Tejocote». https://idefor.cnf.gob.mx/documents/1499/download
    - «El tejocote o manzanita es una especie nativa que pertenece a la familia Rosaceae»
