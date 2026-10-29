@@ -217,16 +217,17 @@
    "derivados": []
   },
   {
-   "id": "amb-28-ranas-quitridio",
-   "titulo": "El hongo que acabó con decenas de especies de ranas",
+   "id": "amb-28-lluvia",
+   "titulo": "El agua de lluvia que se va al drenaje: captar la lluvia en casa (CDMX)",
    "serie": "Shot Ambiental",
    "numero": 28,
    "estado": "idea",
-   "carpeta": "shots/amb-28-ranas-quitridio",
+   "carpeta": "shots/amb-28-lluvia",
    "rama": "pedido300/amb",
    "fuentes": [],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [],
+   "nota": "Reemplaza a ranas-quitridio (choca con fun-20-quitridio)"
   },
   {
    "id": "amb-29-acidificacion",
@@ -529,16 +530,17 @@
    "derivados": []
   },
   {
-   "id": "amb-54-dengue-clima",
-   "titulo": "El mosquito del dengue y el calor",
+   "id": "amb-54-basura-diaria",
+   "titulo": "La basura que generas cada día y a dónde va (rellenos y tiraderos en México)",
    "serie": "Shot Ambiental",
    "numero": 54,
    "estado": "idea",
-   "carpeta": "shots/amb-54-dengue-clima",
+   "carpeta": "shots/amb-54-basura-diaria",
    "rama": "pedido300/amb",
    "fuentes": [],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [],
+   "nota": "Reemplaza a dengue-clima (choca con bio-35-wolbachia)"
   },
   {
    "id": "amb-55-agua-cafe",
