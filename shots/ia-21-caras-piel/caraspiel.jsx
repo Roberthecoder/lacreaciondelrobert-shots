@@ -145,8 +145,8 @@ function Reloj({ x, y, s = 1, horas = 0 }) {
 function Veces({ T, at, until, y = 980 }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
-  const pasos = [{ v: '×1', h: 20, t: at + 0.2 }, { v: '×10', h: 120, t: at + 1.2 }, { v: '×100+', h: 330, t: at + 2.2 }];
-  return <div style={{ position:'absolute', left:150, top:y, width:780, height:420, zIndex:40, opacity:e.o, display:'flex', alignItems:'flex-end', justifyContent:'space-around', borderBottom:`8px solid ${KC.ink}` }}>
+  const pasos = [{ v: '×1', h: 20, t: at + 0.2 }, { v: '×10', h: 100, t: at + 1.2 }, { v: '×100+', h: 280, t: at + 2.2 }];
+  return <div style={{ position:'absolute', left:150, top:y, width:780, height:380, zIndex:40, opacity:e.o, display:'flex', alignItems:'flex-end', justifyContent:'space-around', borderBottom:`8px solid ${KC.ink}` }}>
     {pasos.map((p, i) => { const g = kprog(T, p.t, p.t + 0.7, kEase.sale);
       return <div key={i} style={{ display:'flex', flexDirection:'column', alignItems:'center', opacity: T >= p.t ? 1 : 0 }}>
         <div style={{ font:`400 64px ${KF.titulo}`, color: i === 2 ? KC.red : KC.ink, marginBottom:8 }}>{p.v}</div>
@@ -196,6 +196,7 @@ function CarasPiel() {
       <Barras T={T} at={K.N + 0.4} until={K.P - 0.2} top={700} max={40} filas={[
         { valor: 0.8, etiqueta: 'hombres de piel clara (el peor de los 3)', color: KC.blue, tam: 34 },
         { valor: 34.7, etiqueta: 'mujeres de piel oscura (el peor de los 3)', color: KC.red, at: K.N + 3.4, tam: 34 }]} />
+      <NumeroGigante T={T} at={K.N + 4.6} until={K.P - 0.2} valor={34.7} dec={1} dur={0.8} sufijo=" %" x={560} y={1100} tam={190} color={KC.red} />
 
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.D} zoom={0.1}>
@@ -241,9 +242,9 @@ function CarasPiel() {
           </g>
         </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Ni + 0.2} until={K.Ni + 4.4} anio="2019" quien="NIST (EE. UU.)" revista="189 algoritmos · 18.27 millones de fotos" x={420} y={720} />
+      <TarjetaEstudio T={T} at={K.Ni + 0.2} until={K.Ni + 4.4} anio="2019" quien="NIST (EE. UU.)" revista="189 algoritmos · 18.27 millones de fotos" x={390} y={720} />
       <Chip T={T} at={K.Ni + 5.6} until={K.W - 0.2} texto="«la misma persona»… y no" x={540} y={380} tam={38} borde={KC.red} />
-      <Veces T={T} at={K.Ni + 6.4} until={K.W - 0.2} y={790} />
+      <Veces T={T} at={K.Ni + 6.4} until={K.W - 0.2} y={760} />
 
       {/* 8 · Robert Williams */}
       <Escena T={T} a={K.W} b={K.C}>
@@ -263,7 +264,7 @@ function CarasPiel() {
       </Escena>
       <Chip T={T} at={K.W + 0.2} until={K.C - 0.2} texto="Detroit · enero de 2020" x={330} y={470} tam={36} borde={KC.ink} />
       {T >= K.W + 2.5 && T < K.C + 0.3 && <div style={{ position:'absolute', left:470, top:1010, zIndex:41, font:`400 110px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, opacity:kprog(T, K.W + 2.5, K.W + 2.9) * (1 - kprog(T, K.C - 0.1, K.C + 0.3)) }}>{Math.round(horas)} horas</div>}
-      <Chip T={T} at={K.W + 5.2} until={K.C - 0.2} texto="2024: prohibido arrestar solo por esto" x={540} y={905} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.W + 5.2} until={K.C - 0.2} texto="2024: prohibido arrestar solo por esto" x={540} y={928} tam={30} borde={KC.leaf} />
 
       {/* 9 · cierre: las mismas dos caras */}
       <Escena T={T} a={K.C} b={FIN}>

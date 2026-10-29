@@ -59,6 +59,7 @@ apariciones 10 · ≈ 36.5 s (+ cierre 3.5 s) · poses distintas 8 (nunca la mis
    > Fig. 1: "Model collapse refers to a degenerative learning process in which models start forgetting improbable events over time, as the model becomes poisoned with its own projection of reality."
    > "Later generations start producing samples that would never be produced by the original model, that is, they start misperceiving reality based on errors introduced by their ancestors."
    > "the use of LLMs at scale to publish content on the Internet will pollute the collection of data to train their successors"
+   > (Para publicacion.md) "the value of data collected about genuine human interactions with systems will be increasingly valuable in the presence of LLM-generated content in data crawled from the Internet."
    > (Para la nota; no se dice en la voz) "with every new generation of training, a random 10% of the original data points is sampled… We find that preservation of the original data allows for better model fine-tuning and leads to only minor degradation of performance."
 
 2. Gerstgrasser, M., Schaeffer, R., Dey, A., Rafailov, R., Sleight, H., Hughes, J., Korbak, T., Agrawal, R., Pai, D., Gromov, A., Roberts, D. A., Yang, D., Donoho, D. L. y Koyejo, S. "Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data". arXiv:2404.01413 (v1 1 abr 2024; v2 29 abr 2024). Primer autor y la mayoría del equipo: Stanford University (también Constellation, Universidad de Maryland, MIT).

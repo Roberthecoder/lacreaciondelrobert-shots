@@ -39,7 +39,7 @@ La IA que aprendió de otra IA y terminó hablando de liebres 🐇 | Shot IA #22
 Descripción:
 ```text
 Esta IA no está obsesionada con las liebres: es la novena generación de una IA entrenada con textos de IA.
-En 2024, Ilia Shumailov, Zakhar Shumaylov, Yiren Zhao, Nicolas Papernot, Ross Anderson y Yarin Gal (Oxford, Cambridge, Imperial College London, Toronto y Edimburgo) publicaron en Nature qué pasa cuando un modelo se entrena con lo que escribió otro modelo, generación tras generación. Tomaron un modelo de lenguaje pequeño (OPT-125m, de Meta), lo afinaron con artículos de Wikipedia (wikitext2) y entrenaron a cada nueva generación con los textos de la anterior.
+En 2024, Ilia Shumailov, Zakhar Shumaylov, Yiren Zhao, Nicolas Papernot, Ross Anderson y Yarin Gal (Oxford, Cambridge, Imperial College London, Toronto y Edimburgo) publicaron en Nature qué pasa cuando un modelo se entrena con lo que escribió otro modelo, generación tras generación. Tomaron un modelo de lenguaje pequeño (OPT-125m, de Meta), lo afinaron con el conjunto de textos wikitext2 y entrenaron a cada nueva generación con los textos de la anterior.
 A todas les pidieron seguir el mismo texto sobre torres de iglesias de estilo Perpendicular. La generación 1 ya saltaba a "la Basílica de San Pedro en Roma o la Basílica de San Pedro en Buenos Aires"; la 5 recitaba una lista de idiomas; y la 9 escribió sobre "liebres de cola negra, liebres de cola blanca, liebres de cola azul, liebres de cola roja, liebres de cola amarill…" (traducido del inglés).
 Le llaman "colapso del modelo": primero desaparecen las colas de la distribución, lo poco frecuente, porque casi nunca sale en las muestras; luego aparecen errores heredados que el modelo original nunca habría producido. Los autores advierten que publicar a gran escala textos hechos por IA en internet contaminará los datos con los que se entrenen sus sucesores.
 Para ser justos: Gerstgrasser y colegas (Stanford y otras instituciones, 2024) mostraron que si en vez de reemplazar los datos reales se van acumulando junto con los nuevos, el colapso se evita. Y el propio estudio de Nature vio que conservar un 10 % de los datos originales dejaba solo una degradación menor.
@@ -54,7 +54,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Esta IA no está obsesionada con las liebres: es la novena generación de una IA entrenada con textos de IA. 🐇 Empezó siguiendo un texto sobre torres de iglesias (Nature, 2024). Lo raro se pierde en cada copia y se cuelan errores heredados. La buena noticia: si se guardan los textos humanos y se suman los nuevos, el colapso se evita (Stanford, 2024).
+Esta IA no está obsesionada con las liebres: es la novena generación de una IA entrenada con textos de IA. 🐇 Le pidieron seguir un texto sobre torres de iglesias (Nature, 2024). Lo raro se pierde en cada copia y se cuelan errores heredados. La buena noticia: si se guardan los textos humanos y se suman los nuevos, el colapso se evita (Stanford, 2024).
 ¿Tú ya notas en internet textos que suenan hechos por IA? 👇
 Shot IA #22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Qué pasa si una IA aprende de textos escritos por otra IA, y esa de otra, y así nueve veces?
 Shumailov y colegas (Oxford, Cambridge, Imperial, Toronto y Edimburgo; Nature, 2024) lo probaron con un modelo de lenguaje pequeño, OPT-125m: cada generación se entrenó con los textos de la anterior. Ante el mismo texto sobre torres de iglesias, la generación 9 terminó escribiendo listas de "liebres de cola negra, blanca, azul, roja…". Lo llaman colapso del modelo: primero se pierden las colas de la distribución (lo poco frecuente) y después aparecen errores heredados que el modelo original no habría producido.
-El matiz importa: Gerstgrasser et al. (Stanford y otras instituciones, 2024) mostraron que acumular los datos reales junto con los sintéticos, en vez de reemplazarlos, evita el colapso. La lección para quien entrena o compra modelos: los datos humanos y su procedencia valen cada vez más.
+El matiz importa: Gerstgrasser et al. (Stanford y otras instituciones, 2024) mostraron que acumular los datos reales junto con los sintéticos, en vez de reemplazarlos, evita el colapso. Los autores advierten que los datos de interacciones humanas reales valdrán cada vez más.
 ¿Tu organización sabe qué parte de sus datos ya fue generada por IA?
 Fuentes: Shumailov et al., Nature 631: 755–759 (2024); Gerstgrasser et al., arXiv:2404.01413 (2024).
 Shot IA #22 · La Creación del Robert
@@ -75,7 +75,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Una IA entrenada 9 generaciones con textos de la IA anterior: empezó siguiendo un texto sobre torres de iglesias y terminó con "liebres de cola azul, roja, amarilla…" (Nature, 2024). Si guardas los datos humanos y sumas los nuevos, se evita (Stanford, 2024). #InteligenciaArtificial
+Una IA entrenada 9 generaciones con textos de la anterior: le pidieron seguir un texto sobre torres de iglesias y terminó con "liebres de cola azul, roja, amarilla…" (Nature, 2024). Si guardas los datos humanos y sumas los nuevos, se evita (Stanford, 2024). #IA
 ```
 
 ### Threads
