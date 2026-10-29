@@ -1,0 +1,35 @@
+# Verificación de hechos · Shot IA #19 · ¿La IA puede predecir sismos? Lo que sí y lo que no
+
+- Fecha: 29 oct 2026
+- Verificador independiente (no escribió el guion).
+- Revisado: `guion.md` (voz + columna "Lo que se ve") y `narracion.json`. No hay `.jsx` todavía.
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | "Ningún científico ha predicho nunca un sismo grande" (voz) + sello "NADIE LO HA LOGRADO (USGS)" (pantalla) | ✅ | USGS FAQ "Can you predict earthquakes?" (usgs.gov/faqs/can-you-predict-earthquakes), abierta | "No. Neither the USGS nor any other scientists have ever predicted a major earthquake." | consultada 2026 |
+| 2 | "Ni con IA" | ✅ (deducción) | USGS (fila 1) no menciona IA, pero "ningún científico" incluye cualquier método. Contraejemplo revisado: Saad, Fomel et al., BSSA 2023 (UT Austin, prueba de 30 semanas en China, "70 %"): error de ubicación de 381 km y de magnitud 0.49; no cumple los 3 elementos ni son sismos grandes; Fomel: "We're not yet close to making predictions for anywhere in the world" (ScienceDaily, 5 oct 2023, abierta) | "Predicting earthquakes is the holy grail… We're not yet close to making predictions for anywhere in the world." | 2023 |
+| 3 | "Predecir es dar fecha, lugar y magnitud" + 3 casillas 📅📍📈 | ✅ | USGS FAQ (misma página) | "An earthquake prediction must define 3 elements: 1) the date and time, 2) the location, and 3) the magnitude." | consultada 2026 |
+| 4 | La alerta sísmica no predice: detecta el sismo ya empezado y avisa antes de que llegue la sacudida | ✅ | Gob. de México, "Tema 3. Sistemas de Alerta Temprana" (PDF gob.mx, creado 27 jul 2023; texto extraído); CENAPRED, 28 jun 2019 | "la alerta sísmica se activará: 1. Si en los primeros segundos de la detección sísmica, al menos 2 estaciones rebasan los niveles de energía preestablecida" · "antes de la llegada de un sismo" · CENAPRED: "difusión de alertas públicas automáticamente cuando se presenta un sismo" | 2023 / 2019 |
+| 5 | Chip "aviso de segundos (≈ 20 a 120 s según la distancia)" | ✅ | PDF gob.mx (fila 4) | "Proporciona desde 20 hasta 120 segundos de tiempo de oportunidad aproximadamente, antes de la llegada de un sismo dependiendo de la distancia al epicentro y las primeras detecciones de las estaciones." | 2023 |
+| 6 | Mapa: sensores en la costa del Pacífico | ✅ | PDF gob.mx (fila 4) | "(SASMEX) dispone de 97 sensores que cubre el peligro sísmico de la Costa del Pacífico…" | 2023 |
+| 7 | "En 2020, una red revisó cinco semanas de datos de Japón y halló el doble de sismos" | ✅ | Mousavi et al., *Nature Communications* 11:3952, 7 ago 2020 (PMC7415159, abierto) | "Applying our model to 5 weeks of continuous data recorded during 2000 Tottori earthquakes in Japan, we were able to detect and locate two times more earthquakes using only a portion (less than 1/3) of seismic stations." | 2020 (datos de 2000) |
+| 8 | Tarjeta "2020 · Stanford · Mousavi et al. · Nature Communications · Tottori, Japón (datos del año 2000)" | ✅ | PMC7415159: Mousavi, Ellsworth, Zhu y Beroza, "Geophysics Department, Stanford University" (Chuang, Georgia Tech) | — | 2020 |
+| 9 | Pantalla "catálogo: X" contra "EQTransformer: el doble ×2" | ✅ (con nota) | PMC7415159, sección Resultados: el "doble" es contra el catálogo de Fukuyama et al. (2003), 8 521 eventos reubicados con lecturas de la JMA; EQTransformer: 21 092 eventos (≈ 2.5×) | "two times more earthquakes" | 2020 |
+| 10 | "En 2017, en Los Álamos, Estados Unidos, una IA calculó cuánto faltaba para cada sismo de laboratorio" | ✅ | Rouet-Leduc et al., *GRL* 44(18), publicado 29 ago 2017 (arXiv 1702.05774; OSTI 1460625, abiertos); afiliación principal Los Alamos National Lab (también Cambridge y Boston U.) | "by listening to the acoustic signal emitted by a laboratory fault, machine learning can predict the time remaining before it fails with great accuracy" | 2017 |
+| 11 | "…oyendo un ruido que creían inútil" + etiqueta "ruido… que no era ruido" | ✅ | arXiv 1702.05774 (resumen) | "machine learning identifies a signal emitted from the fault zone previously thought to be low-amplitude noise" | 2017 |
+| 12 | "Pero era una máquina, no la Tierra" / "laboratorio ≠ planeta" | ✅ | arXiv 1702.05774: es una falla de laboratorio en un aparato de cizalla ("laboratory fault") | "Forecasting fault failure is a fundamental but elusive goal in earthquake science." | 2017 |
+| 13 | "En 2018, Harvard y Google dijeron que una red neuronal ubicaba réplicas mejor que el método clásico" | ✅ | DeVries, Viégas, Wattenberg y Meade, *Nature* 560:632–634 (ago 2018), resumen en Europe PMC: DeVries y Meade "Harvard University"; Viégas y Wattenberg "Google, Cambridge, MA"; Harvard Gazette (sept 2018) | "can predict the locations of aftershocks … more accurately (area under curve of 0.849) than can classic Coulomb failure stress change (area under curve of 0.583)" · Gazette: "This research was supported with funding from Harvard University and Google." | 2018 |
+| 14 | Barras "red neuronal 0.85" vs "método clásico (Coulomb) 0.58" (AUC) | ✅ | Igual que fila 13 (0.849 → 0.85; 0.583 → 0.58) | (fila 13) | 2018 |
+| 15 | "Un año después, otros científicos lo igualaron con una fórmula de dos números" + tarjeta "2019 · Mignan y Broccardo · Nature" | ✅ | Mignan y Broccardo, "One neuron versus deep learning in aftershock prediction", *Nature* 574:E1–E3 (1 oct 2019; Europe PMC); arXiv 1904.01983 (abierto); ETH Zúrich / Servicio Sismológico Suizo | "obtain AUC = 0.85 using 2 free parameters versus the 13,451 parameters used by DeVries et al. (2018)" | 2019 |
+| 16 | "La red usaba más de trece mil" + "2" contra "13 451" + "0.85 = 0.85" | ✅ | arXiv 1904.01983 (fila 15) | "13,451 parameters" · "AUC = 0.85" | 2019 |
+| 17 | "La IA no adivina sismos: aprende a escucharlos" | ✅ (resumen) | Se apoya en filas 1, 7 y 10–11 | — | — |
+
+## Notas (no bloquean)
+- Fila 9: si en pantalla se ponen números en vez de "X", que sean **8 521 (catálogo anterior, Fukuyama 2003) contra 21 092 (EQTransformer)** del mismo artículo; no poner "catálogo de la JMA" a secas, porque el artículo compara contra el catálogo reubicado de Fukuyama et al.
+- Fila 7: la voz dice el año del estudio (2020) y la tarjeta el de los datos (2000). Está bien así.
+- Fila 15–16: "dos números" = 2 parámetros libres de una regresión logística (una neurona); "trece mil" = 13 451 parámetros. Si se quiere más precisión en pantalla: "2 parámetros" contra "13 451 parámetros". Los autores originales respondieron en el mismo número de *Nature*; el guion no dice más de lo que mostraron Mignan y Broccardo.
+- Fila 2: el estudio de UT Austin (2023) que se anunció como "IA predice 70 % de los sismos" es el contraargumento más probable en comentarios; no contradice al USGS (error de ubicación de 381 km, no son sismos grandes). Puede ir en el comentario fijado.
+- No se le atribuye IA al SASMEX en ningún lado: correcto (ninguna fuente lo dice).
+
+## Correcciones necesarias
+Ninguna ❌ ni ⚠️. Todas las afirmaciones quedaron ✅ (17/17). Solo las sugerencias opcionales de arriba para la animación (fila 9: números exactos si se reemplaza "X").
