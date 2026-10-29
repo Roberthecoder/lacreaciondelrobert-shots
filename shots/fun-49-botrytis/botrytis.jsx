@@ -83,7 +83,7 @@ function Conidioforo({ x, y, alto = 520, s = 1, p = 1, seed = 1 }) {
 // Corte de la flor (de lado): receptáculo (lo que será la fresa), pistilos, estambres, pétalos y sépalos. hifa 0..1 baja por un estambre.
 function FlorCorte({ T, x, y, s = 1, hifa = 0, esporas = 0, duerme = 0 }) {
   const est = [-190, -150, 150, 190];
-  const ruta = [[-178, -262], [-176, -200], [-172, -140], [-150, -80], [-110, -40], [-60, -10], [-20, 10]];
+  const ruta = [[-172, -250], [-160, -200], [-156, -140], [-140, -90], [-105, -50], [-60, -20], [-20, 0]];
   const n = Math.max(1, Math.ceil(hifa * (ruta.length - 1)));
   const d = 'M ' + ruta.slice(0, n + 1).map((q) => q.join(' ')).join(' L ');
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
@@ -101,8 +101,8 @@ function FlorCorte({ T, x, y, s = 1, hifa = 0, esporas = 0, duerme = 0 }) {
       <path d={`M ${ex * 0.95} -90 Q ${ex * 0.98} -180 ${ex - sg * 8} -250`} stroke={KC.ink} strokeWidth={2} fill="none" opacity=".5" />
       <ellipse cx={ex - sg * 8} cy={-268} rx={22} ry={30} fill={BC.antera} stroke={KC.ink} strokeWidth={4} /></g>; })}
     {esporas > 0 && [[-190, -292], [-168, -296], [-200, -276], [-160, -280]].map(([ex, ey], i) => <Conidio key={i} x={ex} y={ey} s={0.7 * kclamp(esporas * 4 - i, 0, 1)} />)}
-    {hifa > 0 && <><path d={d} stroke={KC.ink} strokeWidth={11} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      <path d={d} stroke={BC.hifa} strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ filter:'drop-shadow(0 0 6px rgba(255,255,255,.6))' }} /></>}
+    {hifa > 0 && <>{hifa > 0.6 && [[-140, -90, -110, -110], [-105, -50, -90, -80], [-60, -20, -40, -50]].map(([a, b, c, e], i) => <path key={i} d={`M ${a} ${b} L ${klerp(a, c, kprog(hifa, 0.6 + i * 0.1, 0.9 + i * 0.1))} ${klerp(b, e, kprog(hifa, 0.6 + i * 0.1, 0.9 + i * 0.1))}`} stroke="#8d8d86" strokeWidth={6} strokeLinecap="round" />)}<path d={d} stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={d} stroke="#8d8d86" strokeWidth={8} fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ filter:'drop-shadow(0 0 6px rgba(255,255,255,.6))' }} /></>}
     {duerme > 0 && [0, 1, 2].map((i) => { const u = ((T * 0.6 + i / 3) % 1); return <text key={i} x={10 + u * 60} y={-20 - u * 120} style={{ font:`400 ${40 + u * 30}px ${KF.titulo}` }} fill="#fff" opacity={duerme * (1 - u)}>z</text>; })}
   </g>;
 }
@@ -270,7 +270,7 @@ function BotrytisShot() {
           <g opacity=".55"><Conidioforo x={170} y={1130} alto={260} s={1.3} p={kprog(T, micro + 0.3, micro + 1.8)} />
           <Conidioforo x={900} y={1130} alto={240} s={1.3} p={kprog(T, micro + 0.4, micro + 1.9)} /></g>
           <Conidioforo x={520} y={1130} alto={290} s={2.0} p={kprog(T, micro, micro + 1.6)} />
-          {T > micro + 1.8 && <g transform="translate(160 620)" opacity={kprog(T, micro + 1.8, micro + 2.2)}>
+          {T > micro + 1.8 && <g transform="translate(150 520)" opacity={kprog(T, micro + 1.8, micro + 2.2)}>
             <circle r={78} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
             <RacimoUvas T={T} x={0} y={-20} s={0.3} />
           </g>}
@@ -281,7 +281,7 @@ function BotrytisShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           <Cajita T={T} x={520} y={960} s={1.2} moho={[kprog(T, K.V + 1.6, K.V + 3.8) * 0.8, 1, kprog(T, K.V + 1.0, K.V + 3.2) * 0.8, kprog(T, K.V + 2.2, K.V + 4.2) * 0.7, kprog(T, K.V + 2.8, K.V + 4.4) * 0.5]} />
-          {contagio > 0 && <g>{[[520, 900, 360, 920], [520, 900, 690, 920]].map(([x1, y1, x2, y2], i) => <path key={i} d={`M ${x1} ${y1} Q ${(x1 + x2) / 2} ${y1 - 40} ${klerp(x1, x2, contagio)} ${klerp(y1, y2, contagio)}`} stroke={BC.hifa} strokeWidth={7} fill="none" strokeLinecap="round" style={{ filter:'drop-shadow(0 0 4px #000)' }} />)}</g>}
+          {contagio > 0 && <g>{[[520, 900, 360, 920], [520, 900, 690, 920]].map(([x1, y1, x2, y2], i) => <path key={i} d={`M ${x1} ${y1} Q ${(x1 + x2) / 2} ${y1 - 40} ${klerp(x1, x2, contagio)} ${klerp(y1, y2, contagio)}`} stroke="#8d8d86" strokeWidth={9} fill="none" strokeLinecap="round" style={{ filter:'drop-shadow(0 0 3px #000) drop-shadow(0 0 2px #000)' }} />)}</g>}
           <Nube x={520} y={840} p={kprog(T, K.V + 2.2, K.V + 4.4)} />
         </>)}
       </Escena>
@@ -342,8 +342,8 @@ function BotrytisShot() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.1} until={K.G + 2.7} texto="¿llegó anoche?" x={330} y={520} tam={48} />
       <Chip T={T} at={K.G + 3.6} until={K.H - 0.3} texto="desde la flor" x={300} y={760} tam={36} borde={KC.mint} />
-      <Etq T={T} at={K.H + 0.4} until={K.Es - 0.3} x={60} y={480} texto="moho gris" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.8} until={K.Es - 0.3} x={60} y={540} texto="Botrytis cinerea" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.4} until={K.Es - 0.3} x={60} y={390} texto="moho gris" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.8} until={K.Es - 0.3} x={60} y={448} texto="Botrytis cinerea" it tam={40} color={KC.ink} />
       <Chip T={T} at={K.H + 2.4} until={K.Es - 0.3} texto="cientos de plantas" x={790} y={880} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Es + 0.6} until={K.Et - 0.3} x={60} y={560} texto="viento" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Es + 1.6} until={K.Et - 0.3} x={1030} y={520} lado="izq" texto="salpicaduras" tam={36} color={KC.ink} />
@@ -358,10 +358,10 @@ function BotrytisShot() {
       <Medidor T={T} at={K.M + 0.4} until={K.Pe - 0.3} valor={(t) => klerp(0.25, 0.9, kprog(t, K.M + 0.4, K.M + 2.6, kEase.suave))} etiqueta="azúcar" texto={() => '▲'} x={90} y={450} ancho={900} color={KC.pink} />
       <Chip T={T} at={K.M + 2.0} until={K.Pe - 0.3} texto="defensas" x={860} y={950} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.M + 3.0} until={K.Pe - 0.3} texto="hipótesis: se cree" x={540} y={600} tam={36} borde={KC.lilac} />
-      <Chip T={T} at={micro + 0.1} until={K.V - 0.3} texto="AL MICROSCOPIO · la pelusa" x={380} y={400} tam={28} borde={KC.cyan} mono />
+      <Chip T={T} at={micro + 0.1} until={K.V - 0.3} texto="AL MICROSCOPIO · la pelusa" x={420} y={350} tam={28} borde={KC.cyan} mono />
       <Chip T={T} at={micro + 2.0} until={K.V - 0.3} texto="esquemático" x={860} y={1060} tam={22} borde={KC.white} mono />
       <Etq T={T} at={micro + 1.0} until={K.V - 0.3} x={560} y={1000} texto="conidióforo (tallito)" tam={28} color={KC.texto} />
-      <Etq T={T} at={micro + 1.6} until={K.V - 0.3} x={1040} y={780} lado="izq" texto="esporas (conidios)" tam={28} color={BC.conidio} />
+      <Etq T={T} at={micro + 1.6} until={K.V - 0.3} x={1040} y={780} lado="izq" texto="esporas (conidios)" tam={28} color={KC.texto} />
       <Chip T={T} at={K.V + 0.8} until={K.E - 0.3} texto="contacto" x={300} y={1150} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.V + 2.4} until={K.E - 0.3} texto="esporas al aire" x={360} y={480} tam={36} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.2} anio="1999–2001" quien="Florida, EE. UU. · Universidad de Florida" revista="Mertely y cols. · Plant Disease, 2002" y={760} />
@@ -373,7 +373,7 @@ function BotrytisShot() {
       <Etq T={T} at={K.E2 + 2.3} until={K.N - 0.3} x={200} y={1110} texto="con estambres" tam={28} color={KC.ink} />
       <Etq T={T} at={K.E2 + 2.7} until={K.N - 0.3} x={600} y={1110} texto="sin estambres" tam={28} color={KC.ink} />
       <Chip T={T} at={K.E2 + 3.0} until={K.N - 0.3} texto="temporada 2000–2001 · esquemático" x={400} y={590} tam={26} borde={KC.white} mono />
-      <Etq T={T} at={K.N + 0.4} until={K.N + 1.8} x={60} y={480} texto="noches húmedas" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.N + 0.4} until={K.N + 1.8} x={60} y={480} texto="noches húmedas" tam={34} color={KC.ink} />
       <Etq T={T} at={K.N + 2.0} until={K.C - 0.3} x={60} y={480} texto="días secos" tam={34} color={KC.ink} />
       <Chip T={T} at={K.N + 2.8} until={K.C - 0.3} texto="podredumbre noble" x={330} y={1010} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.N + 3.4} until={K.C - 0.3} x={40} y={1090} texto="el mismo Botrytis cinerea" it tam={28} color={KC.ink} />

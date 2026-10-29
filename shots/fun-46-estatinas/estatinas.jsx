@@ -186,11 +186,9 @@ function EstatinasShot() {
         {fsvg(<>
           {Array.from({ length: 30 }, (_, i) => { const on = kprog(T, K.E + 0.2 + i * 0.07, K.E + 0.4 + i * 0.07); const clave = i === 2; const big = clave ? kprog(T, K.E + 2.4, K.E + 3.0, kEase.rebote) : 0;
             const cx = 150 + (i % 6) * 156, cy = 730 + Math.floor(i / 6) * 76;
-            return <g key={i} opacity={0.25 + 0.75 * on}><rect x={cx - 60} y={cy - 36} width={120} height={72} rx={14} fill={clave && big > 0 ? KC.lilac : on > 0.5 ? '#2fe0a8' : '#33405a'} stroke={KC.ink} strokeWidth={5} />
+            return <g key={i} opacity={0.25 + 0.75 * on} transform={`translate(${cx} ${cy}) scale(${1 + big * 0.35}) translate(${-cx} ${-cy})`} style={big ? { filter:`drop-shadow(0 0 ${16 * big}px ${KC.lilac})` } : null}><rect x={cx - 60} y={cy - 36} width={120} height={72} rx={14} fill={clave && big > 0 ? KC.lilac : on > 0.5 ? '#2fe0a8' : '#33405a'} stroke={KC.ink} strokeWidth={5} />
               <text x={cx} y={cy + 14} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{i + 1}</text></g>; })}
-          {kprog(T, K.E + 2.4, K.E + 3.0) > 0 && <g opacity={kprog(T, K.E + 2.4, K.E + 2.8)}>
-            <Enzima T={T} x={860} y={1110} s={0.45 * kprog(T, K.E + 2.4, K.E + 3.0, kEase.rebote)} />
-          </g>}
+          
         </>)}
       </Escena>
       {/* 4 · Akira Endo sospecha de los hongos */}
