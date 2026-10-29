@@ -29,6 +29,11 @@ jobs:
     steps:
       - name: Ocultar el código en el registro
         run: echo "::add-mask::$CODIGO"
+      - name: Huella de las llaves (no las muestra; sirve para saber si son de la misma app)
+        run: |
+          K=$(printf '%s' "$TIKTOK_CLIENT_KEY" | tr -d '[:space:]'); S=$(printf '%s' "$TIKTOK_CLIENT_SECRET" | tr -d '[:space:]')
+          echo "client key: ${#K} caracteres, huella $(printf '%s' "$K" | sha256sum | cut -c1-8)"
+          echo "client secret: ${#S} caracteres"
       - uses: actions/checkout@v4
       - run: pip install -q requests
       - run: python3 motor/redes/publicar.py tiktok-codigo "$CODIGO"
