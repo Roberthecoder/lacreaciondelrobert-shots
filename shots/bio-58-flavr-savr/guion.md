@@ -1,4 +1,4 @@
-# Shot Biotecnológico #58 · El primer transgénico del súper fue un jitomate (Flavr Savr, 1994)
+# Shot Biotecnológico #58 · El primer alimento transgénico entero del súper fue un jitomate (Flavr Savr, 1994)
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #58 · **Tema del logo:** bioquímica (ADN + matraz) · rama `pedido300/bio`.
 - **Formato:** N1 "Por dentro" (el jitomate en la caja del súper → con la `Lupa`, las células pegadas con pectina y la enzima que la

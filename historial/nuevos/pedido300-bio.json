@@ -1040,60 +1040,139 @@
       "titulo": "Hemofilia: del plasma contaminado al factor VIII recombinante",
       "serie": "Shot Biotecnológico",
       "numero": 55,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-55-factor-viii",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://www.cdc.gov/hemophilia/about/index.html",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12454936/",
+        "https://www.nationalacademies.org/read/4989/chapter/3",
+        "https://www.cdc.gov/mmwr/preview/mmwrhtml/00014715.htm",
+        "https://www.infectedbloodinquiry.org.uk/reports/final-report-volume-1.html",
+        "https://pubmed.ncbi.nlm.nih.gov/6438525/",
+        "https://pubmed.ncbi.nlm.nih.gov/6438528/",
+        "https://pubmed.ncbi.nlm.nih.gov/6438526/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10153518/",
+        "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d99348b1-edad-41de-aed9-903a6f9f279f",
+        "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2483adba-fab6-4d1b-96c5-c195577ed071",
+        "https://www.roche.com/media/releases/med-cor-2017-11-16.htm"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Hemofilia B y la terapia génica del factor IX",
+        "Células CHO: la fábrica de hámster de los biológicos",
+        "Anticuerpos biespecíficos como el emicizumab"
+      ]
     },
     {
       "id": "bio-56-vph",
       "titulo": "La vacuna del VPH es un virus de mentira: partículas tipo virus",
       "serie": "Shot Biotecnológico",
       "numero": 56,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-56-vph",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://www.who.int/news-room/fact-sheets/detail/cervical-cancer",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5533910/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5822403/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC50722/",
+        "https://www.ema.europa.eu/en/documents/product-information/cervarix-epar-product-information_en.pdf",
+        "https://pdf.hres.ca/dpd_pm/00058026.PDF",
+        "https://www.medicines.org.uk/emc/product/7330/smpc",
+        "https://www.research.ed.ac.uk/en/publications/invasive-cervical-cancer-incidence-following-bivalent-human-papil/",
+        "https://publichealthscotland.scot/news/2024/january/no-cervical-cancer-cases-detected-in-vaccinated-women-following-hpv-immunisation/",
+        "https://www.gob.mx/salud/prensa/210-la-vacunacion-contra-el-vph-eje-de-la-politica-de-prevencion-del-cancer-cervicouterino-en-mexico",
+        "https://www.nobelprize.org/prizes/medicine/2008/press-release/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Gardasil vs Cervarix: levadura contra células de polilla",
+        "Harald zur Hausen: el virus que causa cáncer",
+        "Otras vacunas de partículas tipo virus (hepatitis E, malaria R21)"
+      ]
     },
     {
       "id": "bio-57-huella-adn",
       "titulo": "La huella de ADN: Alec Jeffreys (1984)",
       "serie": "Shot Biotecnológico",
       "numero": 57,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-57-huella-adn",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://laskerfoundation.org/wp-content/uploads/2021/01/2005_jeffreys.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/2989708/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3831584/",
+        "https://en.wikipedia.org/wiki/Colin_Pitchfork",
+        "https://assets.publishing.service.gov.uk/media/640726f38fa8f527f7342fd7/Application_for_a_Public_Hearing_in_the_case_of_Pitchfork___2023__PBPH_1_.pdf",
+        "https://webarchive.nationalarchives.gov.uk/ukgwa/20081202180354mp_/http://www.forensic.gov.uk/html/media/case-studies/f-18.html",
+        "https://www.genome.gov/about-genomics/educational-resources/fact-sheets/human-genomic-variation",
+        "http://geneticsunzipped.com/transcripts/2020/3/26/the-accidental-discovery-of-dna-fingerprinting",
+        "https://www.ishinews.com/countdown-to-2017-internal-validation-of-the-new-codis-loci/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "¿Los gemelos idénticos tienen el mismo ADN?",
+        "Genealogía genética y casos viejos",
+        "Rastros de ADN en lo que tocas y sus límites"
+      ]
     },
     {
       "id": "bio-58-flavr-savr",
       "titulo": "El primer alimento transgénico fue un tomate: Flavr Savr (1994)",
       "serie": "Shot Biotecnológico",
       "numero": 58,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-58-flavr-savr",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://www.govinfo.gov/content/pkg/FR-1994-05-23/html/94-12494.htm",
+        "https://www.genengnews.com/insights/mistakes-shorten-first-approved-gmos-shelf-life/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC282595/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC158532/",
+        "https://edis.ifas.ufl.edu/publication/VH079",
+        "https://www.motherjones.com/news/feature/1997/01/broydo.html",
+        "https://doi.org/10.3733/ca.v054n04p6"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "El jitomate morado transgénico",
+        "El etileno: por qué un plátano madura a los demás",
+        "Apagar genes con ARN: del antisentido al ARN de interferencia"
+      ]
     },
     {
       "id": "bio-59-b12",
       "titulo": "La vitamina B12 solo la fabrican microbios",
       "serie": "Shot Biotecnológico",
       "numero": 59,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-59-b12",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://lpi.oregonstate.edu/mic/vitamins/vitamin-B12",
+        "https://pubmed.ncbi.nlm.nih.gov/11935176/",
+        "https://pubmed.ncbi.nlm.nih.gov/16267554/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5188422/",
+        "https://pubmed.ncbi.nlm.nih.gov/33053716/",
+        "https://www.nobelprize.org/prizes/chemistry/1964/hodgkin/facts/",
+        "https://www.nobelprize.org/prizes/chemistry/1964/summary/",
+        "https://pubmed.ncbi.nlm.nih.gov/13348621/",
+        "https://www.thecrimson.com/article/1973/1/9/research-group-synthesizes-b-12-after-long/",
+        "https://en.wikipedia.org/wiki/Vitamin_B12_total_synthesis",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9925536/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5282855/",
+        "https://pubmed.ncbi.nlm.nih.gov/27744211/",
+        "https://pubmed.ncbi.nlm.nih.gov/29216732/",
+        "https://pubmed.ncbi.nlm.nih.gov/26024497/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "La B12 que fabrican tus bacterias del colon",
+        "La fermentación propiónica del queso suizo",
+        "El nori y las algas que piden B12 a bacterias"
+      ]
     }
   ]
 }
