@@ -212,7 +212,7 @@ function QuitridioShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<><Hoja x={540} y={960} s={0.92} /><Rana T={T} x={540} y={900} s={0.75} enferma={0.3} ojos={0.66} latido={lat} escamas={1} id="p" /></>)}
       </Escena>
-      <Lupa T={T} at={K.P + 0.3} until={K.Z - 0.4} x={440} y={470} r={190} fx={560} fy={900} tinte={KC.cyan} etiqueta="la piel = pulmón + riñón (en parte)" interior={lupaPiel([], 0, 1)} />
+      <Lupa T={T} at={K.P + 0.3} until={K.Z - 0.4} x={460} y={470} r={190} fx={560} fy={900} tinte={KC.cyan} etiqueta="la piel = pulmón + riñón (en parte)" interior={lupaPiel([], 0, 1)} />
       {/* 3 · zoosporas nadando en el agua (fondo oscuro) */}
       <Escena T={T} a={K.Z} b={K.Q} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
@@ -291,8 +291,8 @@ function QuitridioShot() {
           <Salamandra T={T} x={klerp(-700, 60, kprog(T, K.Sa, K.Sa + 1.0, kEase.sale))} y={470} s={1} gris={kprog(T, K.Sa + 2.6, K.Sa + 4.2) * 0.7} />
           {Array.from({ length: 100 }, (_, i) => { const t0 = K.Sa + 1.0 + i * 0.012, on = kprog(T, t0, t0 + 0.25, kEase.rebote); if (on <= 0) return null;
             const queda = RESTAN.includes(i), fade = queda ? 0 : kprog(T, K.Sa + 2.6 + ((i * 7) % 17) / 17 * 1.4, K.Sa + 2.9 + ((i * 7) % 17) / 17 * 1.4);
-            return <g key={i} opacity={1 - fade * 0.85}><Salamandra x={95 + (i % 10) * 90} y={790 + Math.floor(i / 10) * 40} s={0.125 * on} gris={fade} mueve={0} /></g>; })}
-          {T > K.Sa + 4.2 && RESTAN.map((i) => <circle key={'h' + i} cx={95 + (i % 10) * 90 + 38} cy={790 + Math.floor(i / 10) * 40} r={30 + 4 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.Sa + 4.2, K.Sa + 4.5)} />)}
+            return <g key={i} opacity={1 - fade * 0.85}><Salamandra x={95 + (i % 10) * 90} y={790 + Math.floor(i / 10) * 40} s={0.14 * on} gris={fade} mueve={0} /></g>; })}
+          {T > K.Sa + 4.2 && RESTAN.map((i) => <circle key={'h' + i} cx={95 + (i % 10) * 90 + 42} cy={790 + Math.floor(i / 10) * 40} r={30 + 4 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.Sa + 4.2, K.Sa + 4.5)} />)}
         </>)}
       </Escena>
       {/* 12 · cierre: la misma rana en la misma hoja, ya gris; la lupa muestra las bolsitas del hongo */}
@@ -300,7 +300,7 @@ function QuitridioShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<><Hoja x={540} y={960} s={0.92} /><Rana T={T} x={540} y={900} s={0.75} enferma={kprog(T, K.Ci, K.Ci + 1.6)} ojos={klerp(0.66, 0.9, kprog(T, K.Ci, K.Ci + 1.6))} latido={null} escamas={1} id="c" /></>)}
       </Escena>
-      <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={440} y={470} r={190} fx={560} fy={900} tinte={KC.yellow} etiqueta="zoosporangios" interior={lupaPiel(sacosCierre, 1, 0)} />
+      <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={460} y={470} r={190} fx={560} fy={900} tinte={KC.yellow} etiqueta="zoosporangios" interior={lupaPiel(sacosCierre, 1, 0)} />
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.2} until={K.G + 4.8} texto="¿dormida?" x={290} y={520} tam={60} />
@@ -310,7 +310,7 @@ function QuitridioShot() {
       <Etq T={T} at={K.Q + 0.4} until={K.Pr - 0.3} x={60} y={T < K.E ? 690 : 600} texto="capa de queratina" tam={32} color={QT.queratina} />
       <Etq T={T} at={K.Q + 2.4} until={K.E - 0.2} x={480} y={690} texto="zoosporangio" tam={30} color={KC.texto} />
       <Medidor T={T} at={K.E + 0.3} until={K.Pr - 0.3} valor={(t) => 1 - 0.55 * kprog(t, K.E + 0.9, K.E + 2.6, kEase.suave)} etiqueta="paso de sales" texto={(v) => (v > 0.5 ? Math.round(v * 100) + ' %' : '< 50 %')} x={90} y={360} ancho={900} color={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.C - 0.3} anio="2009" quien="Australia · Voyles et al." revista="Science, 2009" y={560} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.C - 0.3} anio="2009" quien="Australia" revista="Voyles et al., Science 2009" y={560} />
       <Etq T={T} at={K.Es + 1.0} until={K.C - 0.3} x={60} y={790} texto="rana arborícola verde" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Es + 1.3} until={K.C - 0.3} x={60} y={836} texto="Litoria caerulea" it tam={30} color={KC.ink} />
       <Medidor T={T} at={K.C + 0.3} until={K.Sp - 0.3} valor={(t) => 1 - 0.2 * kprog(t, K.C + 0.8, K.C + 1.8, kEase.suave)} etiqueta="sodio (Na⁺)" texto={(v) => (v > 0.995 ? '100 %' : '≈ −' + Math.round((1 - v) * 100) + ' %')} x={60} y={440} ancho={600} color={KC.yellow} />
@@ -321,12 +321,12 @@ function QuitridioShot() {
       <Chip T={T} at={K.Sp + 0.8} until={K.Sp + 4.2} texto="Scheele et al., Science 2019" x={340} y={612} tam={26} borde={KC.ink} />
       <Chip T={T} at={K.Sp + 4.4} until={K.M - 0.3} texto="cifras debatidas (Lambert et al. 2020)" x={370} y={612} tam={26} borde={KC.red} />
       <Etq T={T} at={K.M + 0.7} until={K.Sa - 0.3} x={60} y={600} texto="frascos de museo" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.5} until={K.Sa - 0.3} x={a1[0] - 26} y={a1[1] - 44} texto="sur de México · inicios de los 70" lado="izq" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.M + 2.7} until={K.Sa - 0.3} x={a2[0] + 26} y={a2[1] - 10} texto="Guatemala · 80s–90s" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.5} until={K.Sa - 0.3} x={60} y={a1[1] - 80} texto="sur de México · inicios de los 70" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.M + 2.7} until={K.Sa - 0.3} x={a2[0] + 14} y={a2[1] + 46} texto="Guatemala · 80s–90s" tam={24} color={KC.ink} />
       <Etq T={T} at={K.M + 4.0} until={K.Sa - 0.3} x={a3[0] - 26} y={a3[1] + 6} texto="Costa Rica · 1987" lado="izq" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 0.8} until={K.Sa + 2.5} x={60} y={600} texto="Batrachochytrium salamandrivorans (Bsal)" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 1.0} until={K.Ci - 0.3} x={680} y={T < K.Sa + 1.8 ? 540 : 700} texto="salamandra de fuego" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 1.2} until={K.Ci - 0.3} x={680} y={T < K.Sa + 1.8 ? 580 : 740} texto="Salamandra salamandra" it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 0.8} until={K.Sa + 2.5} x={60} y={650} texto="Batrachochytrium salamandrivorans (Bsal)" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 1.0} until={K.Ci - 0.3} x={500} y={T < K.Sa + 1.8 ? 560 : 700} texto="salamandra de fuego" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 1.2} until={K.Ci - 0.3} x={500} y={T < K.Sa + 1.8 ? 600 : 740} texto="Salamandra salamandra" it tam={26} color={KC.ink} />
       <Chip T={T} at={K.Sa + 2.6} until={K.Ci - 0.3} texto="Países Bajos · 2010 → 2013" x={330} y={650} tam={30} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Sa + 4.3} until={K.Ci - 0.3} valor={4} dur={0.5} sufijo=" %" x={540} y={1000} tam={220} color={KC.yellow} />
 
@@ -349,7 +349,7 @@ function QuitridioShot() {
       <Subtitulo T={T} idx={5} at={K.Pr + 0.1} until={K.Es - 0.1} texto="¿Cómo mata *a una rana entera?*" />
       <Subtitulo T={T} idx={6} at={K.Es + 0.1} until={K.C - 0.1} texto="2009, Australia: *sangre de ranas infectadas.*" />
       <Subtitulo T={T} idx={7} at={K.C + 0.1} until={K.Sp - 0.1} texto="Menos sodio y potasio: *el corazón se detuvo.*" />
-      <Subtitulo T={T} idx={8} at={K.Sp + 0.1} until={K.M - 0.1} texto="Al menos *501 especies* en declive (2019)." />
+      <Subtitulo T={T} idx={8} at={K.Sp + 0.1} until={K.M - 0.1} texto="Al menos *501 especies* (2019)." />
       <Subtitulo T={T} idx={9} at={K.M + 0.1} until={K.Sa - 0.1} texto="La ola salió *del sur de México.*" />
       <Subtitulo T={T} idx={10} at={K.Sa + 0.1} until={K.Ci - 0.1} texto="Su primo: quedó *el 4 %* de las salamandras." />
       <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="No está dormida: *algo que nunca verás.*" />
@@ -362,7 +362,7 @@ function QuitridioShot() {
         [K.C + 0.5, K.Sp - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [K.Sp + 0.4, K.Sp + 4.3, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.M + 0.5, K.Sa - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [K.Sa + 1.8, K.Ci - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
+        [K.Sa + 2.6, K.Ci - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [K.Ci + 0.4, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="biologia" num="20" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="biologia" robert={'assets/stickers/avatar_13_senalando_arriba.png'} />

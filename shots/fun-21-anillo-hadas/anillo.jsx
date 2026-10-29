@@ -264,8 +264,8 @@ function AnilloShot() {
       {/* 10 · la imagen que se llena: el anillo crece año tras año hasta 60 m */}
       <Escena T={T} a={K.Ed} b={K.J} zoom={0.02}>
         {fsvg(<>
-          <Cesped T={T} cy={930} R={20 + 360 * uEd} W={20 + 30 * uEd} anillos={uEd * 25} base={AN.pradera} claro="#a8bf4e" />
-          <Personita x={540 + 20 + 360 * uEd + 40} y={930} s={1.6} />
+          <Cesped T={T} cx={470} cy={950} R={20 + 330 * uEd} W={20 + 30 * uEd} anillos={uEd * 25} base={AN.pradera} claro="#a8bf4e" />
+          <Personita x={470 + 20 + 330 * uEd + 40} y={950} s={1.6} />
         </>)}
       </Escena>
       {/* 11 · Japón, 2010: Lepista sordida suelta una sustancia que hace crecer el pasto */}
@@ -301,7 +301,7 @@ function AnilloShot() {
           <Pies x={540} y={1110} s={0.75} o={kprog(T, K.C + 1.4, K.C + 1.9)} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.C + 0.6} until={K.Ou - 0.2} x={300} y={640} r={190} fx={170} fy={1180} etiqueta="RAYOS X · bajo el pasto" tinte={KC.yellow}
+      <Lupa T={T} at={K.C + 0.6} until={K.Ou - 0.2} x={300} y={640} r={190} fx={170} fy={1180} etiqueta="POR DENTRO · bajo el pasto" tinte={KC.yellow}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a1a10" /><RedHifas T={t} x={r * 1.6} y={r * 1.7} g={1} seed={21} n={300} escala={0.16} circ ancho={3} brillo={0.6} /></svg>} />
 
       {/* textos */}
@@ -321,7 +321,7 @@ function AnilloShot() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="1917" quien="este de Colorado · Shantz y Piemeisel" revista="Journal of Agricultural Research" y={640} />
       <Chip T={T} at={K.E + 3.4} until={K.Ed - 0.3} texto="≈ 12 cm por año (promedio estimado)" x={540} y={1520} tam={34} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.Ed + 0.2} until={K.J - 0.3} valor={250} dur={K.J - 0.6 - K.Ed} sufijo=" años" x={330} y={470} tam={120} color={KC.yellow} />
-      <Chip T={T} at={K.Ed + 0.6} until={K.J - 0.3} texto={`${Math.round(60 * uEd)} m de ancho`} x={300} y={620} tam={36} borde={KC.gold} mono />
+      <Chip T={T} at={K.Ed + 0.6} until={K.J - 0.3} texto={`${Math.round(60 * uEd)} m de ancho`} x={300} y={565} tam={36} borde={KC.gold} mono />
       <Chip T={T} at={K.Ed + 2.4} until={K.J - 0.3} texto="estimación" x={540} y={1520} tam={30} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.J + 0.2} until={K.J + 2.5} anio="2010" quien="Universidad de Shizuoka, Japón" revista="ChemBioChem, 2010" y={640} />
       <Etq T={T} at={K.J + 3.0} until={K.F - 0.3} x={60} y={760} texto="Lepista sordida" it tam={38} color={KC.ink} />
