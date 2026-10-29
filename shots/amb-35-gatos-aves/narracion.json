@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Gatos base narrada.dc.html",
+  "salida": "Shot Gatos narrado.dc.html",
+  "nota": "Shot Ambiental #35. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese regalito que te deja tu gato en la puerta no es todo lo que cazó: es solo una parte."
+    },
+    {
+      "escena": "Numero",
+      "texto": "En Estados Unidos, un estudio de 2013 calculó que los gatos sueltos matan de mil trescientos a cuatro mil millones de aves al año."
+    },
+    {
+      "escena": "Mamiferos",
+      "texto": "Y más de seis mil millones de mamíferos."
+    },
+    {
+      "escena": "SinDueno",
+      "texto": "Ojo: casi siete de cada diez de esas aves las cazan gatos sin dueño."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto caza un gato de casa cuando nadie lo ve?"
+    },
+    {
+      "escena": "Camaras",
+      "texto": "En Athens, Georgia, cincuenta y cinco gatos con dueño salieron a la calle con una cámara en el collar."
+    },
+    {
+      "escena": "Regalos",
+      "texto": "Solo el veintitrés por ciento de sus presas llegó a casa. Casi la mitad la dejaron tirada; el resto, se la comieron."
+    },
+    {
+      "escena": "Lagartijas",
+      "texto": "Y su presa más común no era un ave: era una lagartija."
+    },
+    {
+      "escena": "Invasor",
+      "texto": "Y la UICN pone al gato doméstico entre las cien peores especies invasoras del mundo."
+    },
+    {
+      "escena": "Collar",
+      "texto": "¿Qué sí sirve? Tenerlo adentro. Y si sale, un collar de colores chillantes: con él aparecieron casi tres veces menos aves."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Tu gato no es malo: es cazador. Cuando te deje un regalito, piensa en los que no te trajo."
+    }
+  ]
+}
