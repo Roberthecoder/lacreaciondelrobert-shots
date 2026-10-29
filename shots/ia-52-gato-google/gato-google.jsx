@@ -328,12 +328,12 @@ function GatoGoogle() {
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.8, 'avatar_11_sorprendido', 'gancho'],
-        [CUES.Videos + 4.3, CUES.Maquina - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [CUES.Videos + 3.0, CUES.Maquina - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Neurona + 0.6, CUES.Pregunta - 0.15, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Pregunta + 0.05, CUES.Mecanismo + 1.2, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Mecanismo + 3.3, CUES.Estudio - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
         [CUES.Estudio + 4.5, CUES.Objetos - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
-        [CUES.Objetos + 6.9, CUES.Cerebro - 0.15, 'avatar_10_serio_molesto', 'izq-alto'],
+        [CUES.Objetos + 6.6, CUES.Cerebro - 0.15, 'avatar_10_serio_molesto', 'izq-alto'],
         [CUES.Cerebro + 0.3, CUES.Cierre - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Cierre + 0.4, CUES.Outro - 0.1, 'avatar_13_senalando_arriba', 'arriba-der']]} />
       <MarcaAgua T={T} tema="ia" num="52" hasta={K.Ou} />

@@ -46,24 +46,24 @@ function ChipMoore({ x, y, s = 1, n = 1, T = 0 }) {
   </g>;
 }
 // Carril de la carrera: barra de meses y marquitas en cada duplicación.
-function Carril({ T, at, y, color, titulo, cada, meses = 24, etiqueta }) {
-  if (T < at - 0.3) return null;
-  const o = kprog(T, at - 0.3, at + 0.1), m = meses * kprog(T, at + 0.4, at + 3.4), X0 = 90, W = 900;
+function Carril({ T, at, until, y, color, titulo, cada, meses = 24, etiqueta }) {
+  if (T < at - 0.3 || T > until + 0.45) return null;
+  const o = kprog(T, at - 0.3, at + 0.1) * (1 - kprog(T, until - 0.05, until + 0.45)), m = meses * kprog(T, at + 0.4, at + 3.4), X0 = 90, W = 900;
   const dup = []; for (let k = cada; k <= meses + 0.01; k += cada) dup.push(k);
   return <div style={{ position:'absolute', left:0, top:y, width:KW, opacity:o, zIndex:40 }}>
     <div style={{ marginLeft:X0, font:`900 40px ${KF.texto}`, color:KC.ink }}>{titulo}</div>
     <div style={{ position:'relative', marginLeft:X0, marginTop:12, width:W, height:80, background:'rgba(255,255,255,.7)', border:`6px solid ${KC.ink}`, borderRadius:20, overflow:'hidden' }}>
       <div style={{ width:`${(m / meses) * 100}%`, height:'100%', background:color }}></div>
-      {dup.map((d, i) => m >= d && <div key={i} style={{ position:'absolute', left:`${(d / meses) * 100}%`, top:0, transform:'translateX(-50%)', height:'100%', display:'flex', alignItems:'center' }}>
+      {dup.map((d, i) => m >= d && <div key={i} style={{ position:'absolute', left:`${Math.min(94, (d / meses) * 100)}%`, top:0, transform:'translateX(-50%)', height:'100%', display:'flex', alignItems:'center' }}>
         <div style={{ font:`400 46px ${KF.titulo}`, color:KC.paper, WebkitTextStroke:`2px ${KC.ink}`, transform:`scale(${klerp(1.6, 1, kprog(T, at + 0.4 + d / meses * 3, at + 0.7 + d / meses * 3, kEase.sale))})` }}>×2</div></div>)}
     </div>
     <div style={{ marginLeft:X0, marginTop:8, font:`700 30px ${KF.mono}`, color:KC.ink }}>{etiqueta} · mes {Math.floor(m)}</div>
   </div>;
 }
 // Gráfica esquemática (escala logarítmica) del cómputo de entrenamiento: suave hasta 2010 y luego empinada.
-function Grafica({ T, at, x = 110, y = 760, w = 860, h = 420 }) {
-  if (T < at - 0.4) return null;
-  const o = kprog(T, at - 0.4, at + 0.1), p = kprog(T, at + 0.3, at + 3.0, kEase.suave);
+function Grafica({ T, at, until, x = 110, y = 700, w = 860, h = 420 }) {
+  if (T < at - 0.4 || T > until + 0.45) return null;
+  const o = kprog(T, at - 0.4, at + 0.1) * (1 - kprog(T, until - 0.05, until + 0.45)), p = kprog(T, at + 0.3, at + 3.0, kEase.suave);
   const xr = (a) => x + ((a - 1960) / (2022 - 1960)) * w, yr = (v) => y + h - v * h;
   const pts = []; for (let a = 1960; a <= 2022; a += 1) { const v = a < 2010 ? (a - 1960) / 50 * 0.32 : 0.32 + (a - 2010) / 12 * 0.66; pts.push([xr(a), yr(v)]); }
   const n = Math.max(2, Math.round(pts.length * p)), d = pts.slice(0, n).map((q, i) => `${i ? 'L' : 'M'} ${q[0]} ${q[1]}`).join(' ');
@@ -140,6 +140,7 @@ function Computo() {
   // gancho: agua que se vuelve cómputo; el vaso se llena y aparece uno 5 veces más grande (volumen ×5 → lado ×1.71)
   const pixG = kprog(T, K.G + 0.2, K.G + 1.4, kEase.suave);
   const llenoA = klerp(0.45, 1, kprog(T, K.G + 3.6, K.G + 4.6, kEase.sale));
+  const mueveA = kprog(T, K.G + 4.4, K.G + 5.2, kEase.suave);
   const sB = 1.71, entraB = kprog(T, K.G + 4.7, K.G + 5.3, kEase.rebote), llenoB = kprog(T, K.G + 5.3, K.G + 6.8, kEase.suave);
   const nMoore = Math.pow(2, Math.floor(kprog(T, K.Mo + 0.8, K.Mo + 4.8) * 6));
   const casas = []; for (let j = 0; j < 7; j++) for (let i = 0; i < 9; i++) casas.push([590 + i * 52 + (j % 2) * 26, 690 + j * 66, (i * 7 + j * 13) % 63]);
@@ -152,9 +153,7 @@ function Computo() {
       <Escena T={T} a={K.G} b={K.Mo}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <g transform={`translate(${klerp(540, 300, kprog(T, K.G + 4.4, K.G + 5.2, kEase.suave))} 0) scale(${klerp(1, 0.8, kprog(T, K.G + 4.4, K.G + 5.2, kEase.suave))})`} style={{ transformOrigin:'0 1150px' }}>
-            <Vaso id="vA" x={0} y={1150} w={300} h={420} nivel={llenoA} pix={pixG} desborde={kprog(T, K.G + 4.4, K.G + 4.8)} T={T} />
-          </g>
+          <Vaso id="vA" x={klerp(540, 300, mueveA)} y={1150} w={300 * klerp(1, 0.8, mueveA)} h={420 * klerp(1, 0.8, mueveA)} nivel={llenoA} pix={pixG} desborde={kprog(T, K.G + 4.4, K.G + 4.8)} T={T} />
           {entraB > 0 && <g transform={`translate(760 1150) scale(${entraB * 0.8})`}><Vaso id="vB" x={0} y={0} w={300 * sB * 0.62} h={420 * sB * 0.62} nivel={llenoB} pix={1} T={T} seed={7} /></g>}
         </>)}
       </Escena>
@@ -165,25 +164,24 @@ function Computo() {
       {/* 2 · ley de Moore */}
       <Escena T={T} a={K.Mo} b={K.Du}>
         <FondoLunares color={KC.yellow} />
-        {svg(<ChipMoore x={420} y={880} s={1.05} n={nMoore} T={T} />)}
+        {svg(<ChipMoore x={420} y={800} s={0.95} n={nMoore} T={T} />)}
       </Escena>
-      <Chip T={T} at={K.Mo + 0.3} until={K.Du - 0.2} texto="Ley de Moore (1975)" x={420} y={500} tam={40} borde={KC.ink} />
-      <Contador T={T} at={K.Mo + 0.8} hasta={10} dur={4.0} sufijo=" años" x={420} y={1160} tam={56} color={KC.ink} />
-      <Chip T={T} at={K.Mo + 1.2} until={K.Du - 0.2} texto="×2 transistores cada 2 años" x={540} y={1450} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Mo + 0.3} until={K.Du - 0.2} texto="Ley de Moore (1975)" x={420} y={430} tam={40} borde={KC.ink} />
+      {T < K.Du + 0.3 && <div style={{ opacity:1 - kprog(T, K.Du - 0.1, K.Du + 0.3) }}><Contador T={T} at={K.Mo + 0.8} hasta={10} dur={4.0} sufijo=" años" x={420} y={1110} tam={56} color={KC.ink} /></div>}
       {/* 3 · la carrera: Moore contra el cómputo de la IA */}
       <Escena T={T} a={K.Du} b={K.E}>
         <FondoLunares color={KC.mint} />
       </Escena>
-      <Carril T={T} at={K.Du + 0.2} y={480} color={KC.gold2} titulo="Ley de Moore" cada={24} etiqueta="×2 cada ~24 meses" />
-      <Carril T={T} at={K.Du + 0.6} y={760} color={KC.pink} titulo="Cómputo de las IA más grandes" cada={5.2} etiqueta="×2 cada ~5 meses (desde 2020)" />
+      <Carril T={T} at={K.Du + 0.2} y={480} color={KC.gold2} until={K.E} titulo="Ley de Moore" cada={24} etiqueta="×2 cada ~24 meses" />
+      <Carril T={T} at={K.Du + 0.6} y={760} color={KC.pink} until={K.E} titulo="Cómputo de las IA más grandes" cada={5.2} etiqueta="×2 cada ~5 meses (desde 2020)" />
       {/* 4 · el estudio de 2022 */}
       <Escena T={T} a={K.E} b={K.D}>
         <FondoLunares color={KC.lilac} />
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2022" quien="Epoch AI · congreso IJCNN, Padua (Italia)" revista="Sevilla, Heim, Ho, Besiroglu, Hobbhahn y Villalobos" y={820} />
-      <Grafica T={T} at={K.E + 3.4} />
-      <Chip T={T} at={K.E + 4.6} until={K.D - 0.2} texto="~cada 20 meses (antes de 2010)" x={440} y={1080} tam={30} borde={KC.blue} />
-      <Chip T={T} at={K.E + 5.8} until={K.D - 0.2} texto="~cada 6 meses (2010–2022)" x={660} y={700} tam={30} borde={KC.red} />
+      <Grafica T={T} at={K.E + 3.4} until={K.D} />
+      <Chip T={T} at={K.E + 4.6} until={K.D - 0.2} texto="~cada 20 meses (antes de 2010)" x={420} y={1020} tam={30} borde={KC.blue} />
+      <Chip T={T} at={K.E + 5.8} until={K.D - 0.2} texto="~cada 6 meses (2010–2022)" x={640} y={640} tam={30} borde={KC.red} />
       {/* 5 · diez mil veces */}
       <Escena T={T} a={K.D} b={K.P}>
         <FondoCircuito T={T} />

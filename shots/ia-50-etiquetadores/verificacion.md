@@ -45,3 +45,10 @@ es el artículo de IJCV); no encontré un conteo más nuevo de ImageNet que cont
    - Pantalla: tarjetas «foca» vs «nutria marina», cada una con su cuadrito.
    Si se quiere conservar la frase corta, al menos dejarla separada de los votos («Y al etiquetar, a veces confundían foca con nutria»)
    y que en pantalla sea con cuadritos, no con manitas de voto.
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Y al dibujar cuadritos, a veces confundían foca con nutria marina.» (Russakovsky et al., IJCV 2015, apéndice E: "seal and sea otter", anotación de detección ILSVRC); en pantalla, tarjetas con cuadrito, sin votos ✅
+- Recorte «Así aprenden muchas IA: con miles de ejemplos etiquetados.» sin dato nuevo ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

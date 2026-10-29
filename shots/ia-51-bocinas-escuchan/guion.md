@@ -1,31 +1,52 @@
 # Shot IA #51 · Tu bocina inteligente se despierta sola con la tele
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #51 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A (guion) lista · pendiente de verificación independiente · sin animación todavía · voz pendiente de aprobación de Robert.
-- **Formato:** N5 "El experimento" (se recrea el banco de pruebas: bocinas, tele y cámara) + N2 "El número" (casi una vez por hora).
+- **Estado (29 oct 2026):** guion corregido tras la verificación (3 ⚠️ resueltas), animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert** (~945 créditos).
+- **Formato:** N5 "El experimento" (se recrea el banco de pruebas: bocinas, tele y cámara) + N2 "El número" (0.95 por hora).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: la lucecita de la bocina que se prende… y no la llamaste tú, fue la tele.
-- **Duración:** voz 941 caracteres / ≈ 180 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** estimados (`estimar-escenas.mjs`).
-- **Postura de la serie:** crítica con datos y con equilibrio: qué sí pasa (se activan solas, a veces más de 10 s, y el audio sube a la nube) y qué NO encontraron (no graban todo el tiempo, no hay palabras secretas). El estudio es de **2020** y se dice; no se afirma nada de las bocinas de hoy.
+- **Duración:** voz 945 caracteres / ≈ 180 palabras (≈ 58.4 s) + cierre 3.5 s → **61.9 s** en la base (`OM_SCENES`).
+- **Postura de la serie:** crítica con datos y con equilibrio: qué sí pasa (se activan solas, en una bocina 1 de cada 10 activaciones duró 10 s o más, y casi todas las activaciones mandaron audio a la nube) y qué NO encontraron (pruebas de que graben todo el tiempo o de palabras secretas). El estudio es de **2020** y se dice; no se afirma nada de las bocinas de hoy.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho (0–6.4) | Esa lucecita en tu bocina no siempre es que la llamaste: a veces la prende la tele con una frase parecida. | Fondo menta, sala de tu casa: tele a la izquierda, bocina redonda en el mueble. Desde el cuadro 0 sale un globo de diálogo de la tele y el anillo de la bocina se enciende azul (movimiento antes del s 1). |
-| 1 | Escucha (6.4–12.0) | La bocina está atenta todo el tiempo a su nombre y manda audio a internet cuando cree oírlo. | Zoom a la bocina; adentro (fondo oscuro "por dentro de la máquina") una oreja/red pequeña compara ondas con la palabra de activación; flecha a una nube con candado que solo se abre cuando "cree" oír su nombre. |
-| 2 | Experimento (12.0–20.6) | En un estudio de 2020, en Boston y Londres pusieron siete bocinas a oír ciento treinta y cuatro horas de series. Una cámara vigilaba su luz. | Tarjeta "2020 · Northeastern (Boston) e Imperial College (Londres) · Dubois et al. · PETS". Banco de pruebas: 7 bocinas en fila (Echo Dot ×4, Google Home Mini, HomePod, Invoke), bocinas de audio con claqueta "134 h de series", cámara arriba con punto rojo grabando. |
-| 3 | Numero (20.6–24.2) | En el peor caso, se activaron solas casi una vez por hora. | Número gigante "0.95 / hora" con reloj que da la vuelta y un anillo que se prende al llegar. Chip chico: "el peor caso medido". |
-| 4 | Palabras (24.2–28.0) | A Siri la despertó un "I'm sorry". A Alexa, un "I messed up". | Dos globos de subtítulo de serie: "I'm sorry" ≈ "Hey Siri" y "I messed up" ≈ "Alexa", con el signo ≈ parpadeando. |
-| 5 | Pregunta (28.0–31.0) | ¿Y qué alcanza a oír cuando se despierta sola? | **Re-gancho.** "?" gigante sobre la bocina encendida; Robert grande. |
-| 6 | Duracion (31.0–36.8) | Casi siempre, unos segundos. En algunas, una de cada diez activaciones duró diez segundos o más. | Cronómetro: barras cortas (pocos segundos) y una de cada diez se estira hasta "10 s". |
-| 7 | Nube (36.8–39.5) | Y casi todas mandaron ese audio a la nube. | Ondas suben de la bocina a una nube con flechita. |
-| 8 | Calma (39.5–45.1) | La buena noticia: no hallaron pruebas de que graben todo el tiempo, ni de palabras secretas. | `MitoTachado`: "graba todo el tiempo" ✗ y "palabras secretas" ✗. |
-| 9 | Narcos (45.1–51.2) | Lo curioso: por palabra, la serie que más las confundió fue Narcos, a menudo con diálogos en español. | Tele con globo en español ("¿Qué onda?" ilustrativo); medidor "activaciones por 10 000 palabras" con Narcos arriba (6.21, suma de todas las bocinas). |
-| 10 | Consejo (51.2–54.3) | Si te preocupa, apaga su micrófono con el botón. | Mano que oprime el botón de micrófono; el anillo se pone rojo (micrófono apagado). |
-| 11 | Cierre (54.3–58.1) | Así que esa lucecita no siempre eres tú: a veces es la tele. | **Regreso a la imagen del inicio**: la misma sala; la tele habla, la bocina se enciende y una flechita dice "fue la tele". |
+| 0 | Gancho (0–5.1) | Esa lucecita en tu bocina no siempre es que la llamaste: a veces la prende la tele. | Fondo menta, sala: tele, mueble, bocina y "tú" de espaldas en el sillón. En el cuadro 0 sale el globo "bla bla bla…" de la tele y a los 0.5 s se prende el anillo de la bocina. Chip "nadie la llamó". |
+| 1 | Escucha (5.1–10.3) | La bocina siempre está atenta a su nombre y manda audio a internet cuando cree oírlo. | Por dentro (fondo de circuito): ondas entran a un círculo con una red neuronal; chip "busca su nombre aquí adentro"; una nube con candado que se abre: "¿oyó su nombre? → internet". Abajo, la bocina grande. |
+| 2 | Experimento (10.3–18.9) | En un estudio de 2020, en Boston y Londres pusieron siete bocinas a oír ciento treinta y cuatro horas de series. Una cámara vigilaba su luz. | Tarjeta "2020 · Boston y Londres · Dubois et al. · PETS 2020". Banco de pruebas: 7 bocinas en un estante (sin marcas), bocina de audio, chip "7 bocinas · 134 horas de series"; luego una cámara con punto rojo apunta al estante: "¿se prende su luz?". |
+| 3 | Numero (18.9–24.3) | En el peor caso, una de ellas, con una sola serie, se prendió sola casi una vez por hora. | Número gigante "0.95 · activaciones solas por hora"; chip "hasta 0.95 por hora · 1 bocina con 1 serie". Abajo, un reloj de 1 hora da la vuelta y la bocina se prende. |
+| 4 | Palabras (24.3–28.1) | A Siri la despertó un "I'm sorry". A Alexa, un "I messed up". | Subtítulo de serie "I'm sorry" ≈ «Hey Siri» (se prende una bocina alta) y "I messed up" ≈ «Alexa» (se prende una bocina de disco). Abajo, la tele con ese subtítulo. |
+| 5 | Pregunta (28.1–30.7) | ¿Y cuánto oye cuando se despierta sola? | **Re-gancho.** "?" gigante y la bocina encendida; Robert grande. |
+| 6 | Duracion (30.7–36.6) | Casi siempre, unos segundos. Pero en una, una de cada diez activaciones duró diez segundos o más. | 9 barras cortas (esquemáticas) y la décima se estira en rojo hasta 10 s con la etiqueta "HomePod · 10 s o más"; chips "casi siempre: unos segundos" → "1 de cada 10 · en una bocina". Abajo, cronómetro de segundos. |
+| 7 | Nube (36.6–40.3) | Y casi todas esas activaciones mandaron el audio a la nube. | Ondas suben de la bocina a una nube; chip "casi todas las activaciones". |
+| 8 | Calma (40.3–45.4) | Lo bueno: no hallaron pruebas de que graben todo el tiempo, ni de palabras secretas. | Chip "no hallaron pruebas de…" y `MitoTachado`: "grabar todo el tiempo" ✗, "palabras secretas" ✗. Abajo, la bocina apagada con "z z z". |
+| 9 | Narcos (45.4–51.5) | Lo curioso: por palabra, la serie que más las confundió fue Narcos, a menudo con diálogos en español. | Tele con el subtítulo "(diálogo en español)" (genérico, sin cita) y un globo "¿…?"; chip "Narcos"; la bocina se prende con "?!"; chip "6.21 activaciones por cada 10 000 palabras". |
+| 10 | Consejo (51.5–54.6) | Si te preocupa, apaga su micrófono con el botón. | Un dedo oprime el botón de micrófono; el anillo se pone rojo: "micrófono apagado". |
+| 11 | Cierre (54.6–58.4) | Así que esa lucecita no siempre eres tú: a veces es la tele. | **Regreso a la imagen del inicio**: la misma sala; la tele habla, la bocina se enciende y chip "fue la tele, no tú". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
-**Música:** cama grave y continua, tipo zumbido eléctrico suave. Efectos: "bip" de activación cada vez que se prende un anillo, clic de cámara, tic-tac del reloj del número, dos "ding" en las palabras, tecleo/whoosh al subir a la nube, golpe sordo del botón de micrófono.
+**Música:** cama grave y continua; zumbido suave de tele. Efectos: "bip-bip" de activación cada vez que se prende un anillo, clic de cámara, tic-tac del reloj, tecleo de las barras, whoosh al subir a la nube, crujido en los tachones, golpe sordo del botón de micrófono.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y cuánto oye cuando se despierta sola?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «a veces la prende la tele» (cuadro 0) |
+| 2 | 7.0 | 10.1 | 06_pensativo_menton | `arriba-der` | «manda audio a internet cuando cree oírlo» |
+| 3 | 14.3 | 17.9 | 13_senalando_arriba | `izq-alto` | señala el banco de pruebas (7 bocinas, 134 h) |
+| 4 | 19.2 | 24.1 | 04_bajando_lentes | `izq-alto` | «casi una vez por hora» |
+| 5 | 28.2 | 30.3 | 07_pensativo_puno | `grande` | «¿Y cuánto oye cuando se despierta sola?» |
+| 6 | 31.7 | 36.4 | 11_sorprendido | `arriba-der` | «diez segundos o más» |
+| 7 | 36.9 | 40.1 | 10_serio_molesto | `izq-alto` | «mandaron el audio a la nube» |
+| 8 | 40.8 | 45.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «Lo bueno: no hallaron pruebas…» |
+| 9 | 46.0 | 51.3 | 04_bajando_lentes | `arriba-der` | «la serie que más las confundió fue Narcos» |
+| 10 | 51.8 | 54.4 | 13_senalando_arriba | `izq-alto` | «apaga su micrófono con el botón» |
+| 11 | 54.9 | 58.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «a veces es la tele» |
+| — | 58.4 | 61.9 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 11 · ≈ 41.9 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.9 s
 
 ## Fuentes (cifras abiertas en el artículo original el 29 oct 2026)
 
@@ -49,10 +70,11 @@
    > Narcos: "it was mostly Spanish dialogue and poorly pronounced English dialogue."
 
 ## Notas
-- "Casi una vez por hora" = 0.95 activaciones por hora, el peor caso reportado ("up to"). En promedio de todas las series, las bocinas que más se equivocaron fueron Invoke/Cortana y Echo Dot 2.ª gen. con "Echo" (0.40 por hora, según la página del laboratorio); no se dice en la voz para no saturar.
+- "Casi una vez por hora" = 0.95 activaciones por hora, el peor caso reportado ("up to"): una bocina con una sola serie (Tabla 3). En promedio de todas las series, las bocinas que más se equivocaron fueron Invoke/Cortana y Echo Dot 2.ª gen. con "Echo" (0.40 por hora, según la página del laboratorio); no se dice en la voz para no saturar.
 - "Siete bocinas": el artículo dice "seven smart speakers" (4 Echo Dot, Google Home Mini, HomePod, Harman Kardon Invoke). La Invoke solo estuvo en Boston.
-- "Una de cada diez activaciones duró diez segundos o más" = percentil 90 del HomePod (10 s); en otras bocinas fue de 9 y 8 s. Por eso se dice "en algunas".
+- "En una, una de cada diez activaciones duró diez segundos o más" = percentil 90 del HomePod (10 s); en otras bocinas fue de 9 y 8 s.
 - "Por palabra" = activaciones por cada 10 000 palabras de diálogo (Narcos, 6.21, sumando todas las bocinas). Las bocinas probadas estaban configuradas en inglés.
 - El botón de micrófono es la mitigación que proponen los autores ("mic off" toggle).
 - La mayoría de las activaciones no se repetían igual con el mismo audio (no deterministas). El dato es de 2020 y así se dice; las bocinas han cambiado desde entonces.
-- El dibujo es esquemático; los diálogos de la tele en pantalla son ilustrativos salvo las dos frases en inglés, que son del artículo.
+- El dibujo es esquemático; el "bla bla bla…" y el "(diálogo en español)" de la tele son genéricos; solo las dos frases en inglés son del artículo. Las bocinas no llevan marca; la única nombrada en pantalla es la HomePod (barra de 10 s).
+- Correcciones de la verificación (29 oct 2026): «casi una vez por hora» ahora dice que fue una bocina con una sola serie (sin nombrarla: el artículo y la página del laboratorio no coinciden en cuál); «diez segundos o más» ahora es «en una» (HomePod; las demás, 9 y 8 s); «casi todas esas activaciones» (no bocinas); se quitó el globo «¿Qué onda?».

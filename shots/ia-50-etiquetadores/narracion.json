@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Etiquetadores base narrada.dc.html",
+  "salida": "Shot Etiquetadores narrado.dc.html",
+  "nota": "Shot IA #50. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese cuadrito que dice «gato» no lo puso una máquina: lo puso una persona."
+    },
+    {
+      "escena": "Ejemplos",
+      "texto": "Así aprenden muchas IA: con miles de ejemplos etiquetados."
+    },
+    {
+      "escena": "ImageNet",
+      "texto": "En dos mil catorce, el banco ImageNet ya tenía más de catorce millones de imágenes verificadas a mano."
+    },
+    {
+      "escena": "Votos",
+      "texto": "Varias personas votaban cada foto. Para el gato birmano podían hacer falta cinco."
+    },
+    {
+      "escena": "Votos",
+      "texto": "Y al dibujar cuadritos, a veces confundían foca con nutria marina."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y quién etiqueta lo horrible?"
+    },
+    {
+      "escena": "Kenia",
+      "texto": "En Nairobi, Kenia, a fines de dos mil veintiuno, unas tres docenas de personas leyeron textos de violencia y odio para OpenAI."
+    },
+    {
+      "escena": "Detector",
+      "texto": "Según OpenAI, eso ayudó a crear un detector de contenido tóxico que terminó en ChatGPT."
+    },
+    {
+      "escena": "Paga",
+      "texto": "TIME lo reveló en dos mil veintitrés: ganaban de uno treinta y dos a dos dólares por hora."
+    },
+    {
+      "escena": "Tortura",
+      "texto": "Un trabajador lo llamó tortura, y el contrato se cortó ocho meses antes."
+    },
+    {
+      "escena": "Balance",
+      "texto": "OpenAI dice que era necesario para una IA más segura. Ambas cosas pueden ser ciertas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Cuando tu IA reconozca un gato, acuérdate del cuadrito: alguien se lo enseñó."
+    }
+  ]
+}
