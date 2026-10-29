@@ -83,32 +83,24 @@
    ]
   },
   {
-   "id": "fes-10-vela",
-   "titulo": "Shot Festivo #10 · Posadas · Científico: Tu velita no quema cera: quema cera hecha gas",
+   "id": "fes-10-ponche",
+   "titulo": "Shot Festivo #10 · Posadas · Científico: Lo que el hervor le hace al tejocote de tu ponche",
    "serie": "Shot Festivo",
    "numero": 10,
    "festividad": "Posadas",
    "serie_vinculada": "Científico",
    "fecha_publicacion": "2026-12-16",
-   "estado": "renderizado",
-   "carpeta": "shots/fes-10-vela",
+   "estado": "idea",
+   "carpeta": "shots/fes-10-ponche",
    "rama": "pedido300/festivos",
-   "fuentes": [
-    "https://archive.org/details/courseofsixlectu00fara",
-    "https://candles.org/candle-science/",
-    "https://ntrs.nasa.gov/citations/20000005087",
-    "https://ntrs.nasa.gov/citations/20010074076",
-    "https://ntrs.nasa.gov/citations/20030075810",
-    "https://www.chm.bris.ac.uk/~paulmay/webprojects2001/osullivan/fire2.htm",
-    "https://www.guiainfantil.com/blog/navidad/las-posadas-tradicion-navidena-de-mexico",
-    "https://www.gutenberg.org/ebooks/14474"
-   ],
+   "fuentes": [],
    "fecha": "2026-10-29",
    "derivados": [
-    "Por qué la flama es amarilla: hollín que brilla",
-    "Las conferencias de Navidad de Faraday",
-    "Cómo apaga el fuego un extintor"
-   ]
+    "La pectina: el pegamento de las frutas",
+    "Por qué la caña no se deshace al hervir",
+    "El tejocote, fruto nativo de México"
+   ],
+   "nota": "Antes fes-10-vela: se cambió porque repetía qui-35-vela (rama pedido300/qui)."
   },
   {
    "id": "fes-11-nochebuena",
