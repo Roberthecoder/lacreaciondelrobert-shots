@@ -27,7 +27,36 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` |
+| 2 | 7.8 | 11.0 | 13_senalando_arriba | `bajo-der` |
+| 3 | 16.3 | 20.3 | 04_bajando_lentes | `bajo-der` |
+| 4 | 24.0 | 26.8 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 5 | 27.0 | 28.8 | 07_pensativo_puno | `grande` |
+| 6 | 31.5 | 34.6 | 10_serio_molesto | `bajo-der` |
+| 7 | 37.1 | 41.5 | 08_recostado_mano | `bajo-der` |
+| 8 | 43.5 | 46.7 | 06_pensativo_menton | `bajo-der` |
+| 9 | 48.0 | 50.5 | 11_sorprendido | `bajo-der` |
+| 10 | 53.2 | 57.9 | 13_senalando_arriba | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 10 · 33.8 s (+ cierre 3.5 s) · poses 8 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «ahora mismo vas a más de mil quinientos kilómetros por hora» (sorprendido) |
+| 2 | «La Tierra da una vuelta completa… y te lleva con ella» (señalando) |
+| 3 | «en Guadalajara… vas un poco más lento» (bajando lentes) |
+| 4 | «en los polos, casi nada: solo das vueltas en tu lugar» (sonriendo) |
+| 5 | «¿Entonces por qué no te mareas?» (pensativo, grande) |
+| 6 | «los frenones y los arrancones» (serio) |
+| 7 | «si no te asomas, no sabes que vas a cientos de kilómetros por hora» (recostado) |
+| 8 | «tarda un día entero en dar la vuelta» (pensativo) |
+| 9 | «el piso giraba debajo de él» (sorprendido) |
+| 10 | «vas a recorrer más de treinta y siete mil kilómetros» (señalando) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 

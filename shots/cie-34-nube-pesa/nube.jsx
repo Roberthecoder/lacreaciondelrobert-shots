@@ -66,9 +66,9 @@ function Cielo({ T, t0, cierre = false }) {
   const ce = cierre ? kprog(T, t0 + 0.6, t0 + 1.4) : 0, pz = cierre ? kprog(T, t0 + 2.4, t0 + 4.2, kEase.suave) : 0;
   return <g>
     <Ciudad />
-    <Bascula x={380} y={985} p={cierre ? 1 : p} texto={pant} T={T} />
-    {[0, 1, 2].map((i) => { const f = ((T * 0.7 + i / 3) % 1); return <path key={i} d={`M ${250 + i * 130} ${960 - f * 50} l -14 14 m 14 -14 l 14 14`} stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" opacity={(1 - f) * 0.8} />; })}
-    <Cumulo x={380} y={880 + flota} s={0.82} T={T}>
+    <Bascula x={380} y={860} p={cierre ? 1 : p} texto={pant} T={T} />
+    {[0, 1, 2].map((i) => { const f = ((T * 0.7 + i / 3) % 1); return <path key={i} d={`M ${250 + i * 130} ${835 - f * 50} l -14 14 m 14 -14 l 14 14`} stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" opacity={(1 - f) * 0.8} />; })}
+    <Cumulo x={380} y={755 + flota} s={0.82} T={T}>
       {cierre && Array.from({ length: 12 }, (_, i) => { const ex = -240 + (i % 4) * 160, ey = -170 + Math.floor(i / 4) * 85, g = krng(300 + i);
         return <g key={i}>
           <Elefante x={ex} y={ey} s={1.25} o={ce * (1 - pz)} />
@@ -135,7 +135,7 @@ function NubeShot() {
   // lluvia por dentro: A+B → C, C+D → E, E+F → G, G cae
   const L0 = K.Lluvia, M1 = L0 + 0.9, M2 = L0 + 1.9, M3 = L0 + 2.9, CAE = L0 + 3.3, L2 = L0 + 4.4;
   const cb = (...r) => Math.cbrt(r.reduce((a, q) => a + q ** 3, 0));
-  const rA = 26, rB = 22, rC = cb(rA, rB), rD = 30, rE = cb(rC, rD), rF = 34, rG = cb(rE, rF);
+  const rA = 48, rB = 42, rC = cb(rA, rB), rD = 55, rE = cb(rC, rD), rF = 62, rG = cb(rE, rF);
   const acerca = (t, m, dist) => dist * (1 - kprog(T, t, m, kEase.entra));
   const gx = 540, gy0 = 820, caida = T > CAE ? 0.5 * 2600 * (T - CAE) ** 2 : 0;
   // ángulo de la balanza
@@ -146,15 +146,15 @@ function NubeShot() {
       <Escena T={T} a={K.Gancho} b={K.Agua} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo><Cielo T={T} t0={K.Gancho} /></Lienzo>
-        <Chip T={T} at={K.Gancho + 1.6} until={K.Agua - 0.1} texto="…y aun así flota" x={380} y={560} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Gancho + 1.6} until={K.Agua - 0.1} texto="…y aun así flota" x={380} y={430} tam={40} borde={KC.yellow} />
       </Escena>
       {/* 1 · agua: al microscopio, billones de gotitas */}
       <Escena T={T} a={K.Agua} b={K.Cuenta} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo><Cumulo x={540} y={560} s={0.55} T={T} /></Lienzo>
-        <Lupa T={T} at={K.Agua + 0.3} until={K.Cuenta - 0.3} x={540} y={860} r={270} fx={540} fy={500} interior={GotitasLupa} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · NUBE" />
-        <Chip T={T} at={K.Agua + 1.4} until={K.Cuenta - 0.2} texto="billones de gotitas" x={540} y={330} tam={50} borde={KC.yellow} />
-        <Etq T={T} at={K.Agua + 4.3} until={K.Cuenta - 0.3} x={320} y={1166} texto="a simple vista: invisibles" lado="der" tam={30} />
+        <Lupa T={T} at={K.Agua + 0.3} until={K.Cuenta - 0.3} x={540} y={790} r={250} fx={540} fy={500} interior={GotitasLupa} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · NUBE" />
+        <Chip T={T} at={K.Agua + 1.4} until={K.Agua + 4.3} texto="billones de gotitas" x={540} y={330} tam={50} borde={KC.yellow} />
+        <Chip T={T} at={K.Agua + 4.4} until={K.Cuenta - 0.2} texto="a simple vista: invisibles" x={540} y={330} tam={44} borde={KC.coral} />
       </Escena>
       {/* 2 · la cuenta: 2013, Peggy LeMone → ≈ 500 t de agua */}
       <Escena T={T} a={K.Cuenta} b={K.Elefantes} fondo={KC.lilac}>
@@ -164,10 +164,9 @@ function NubeShot() {
           {Array.from({ length: 10 }, (_, i) => { const g = krng(200 + i), f = ((T * 0.9 + g()) % 1); return <Gota key={i} x={360 + g() * 480} y={680 + f * 150} r={7 + g() * 5} o={1 - f} />; })}
         </Lienzo>
         <TarjetaEstudio T={T} at={K.Cuenta + 0.25} until={K.Cuenta + 3.6} anio="2013" quien="Peggy LeMone · meteoróloga" x={540} y={760} />
-        <Etq T={T} at={K.Cuenta + 4.2} until={K.Elefantes - 0.2} x={880} y={420} texto="nube cúmulo típica" lado="izq" tam={30} />
-        <NumeroGigante T={T} at={K.Cuenta + 3.9} until={K.Elefantes - 0.15} valor={500} desde={0} dur={1.2} prefijo="≈ " sufijo=" t" x={560} y={960} tam={210} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Cuenta + 3.9} until={K.Elefantes - 0.15} valor={500} desde={0} dur={1.2} prefijo="≈ " sufijo=" t" x={560} y={900} tam={210} color={KC.yellow} />
         <Lienzo z={42} o={kprog(T, K.Cuenta + 4.6, K.Cuenta + 5.0) * (1 - kprog(T, K.Elefantes - 0.3, K.Elefantes - 0.1))}>
-          <TextoSvg x={560} y={1160} tam={72} fuente="texto" color={KC.texto}>de agua</TextoSvg>
+          <TextoSvg x={560} y={1090} tam={72} fuente="texto" color={KC.texto}>de agua</TextoSvg>
         </Lienzo>
       </Escena>
       {/* 3 · cien elefantes flotando sobre tu cabeza */}
@@ -176,7 +175,7 @@ function NubeShot() {
         <Lienzo>
           <Cumulo x={540} y={980} s={1.35} T={T} />
           {Array.from({ length: 100 }, (_, i) => { const c = i % 10, f = Math.floor(i / 10), at = K.Elefantes + 0.3 + i * 0.02, e = kprog(T, at, at + 0.25, kEase.rebote);
-            return <Elefante key={i} x={180 + c * 76 + (f % 2) * 14} y={560 + f * 46 + Math.sin(T * 2 + i) * 3} s={0.95 * klerp(0.3, 1, e)} o={kprog(T, at, at + 0.1)} />; })}
+            return <Elefante key={i} x={130 + c * 86 + (f % 2) * 20} y={530 + f * 54 + Math.sin(T * 2 + i) * 3} s={0.95 * klerp(0.3, 1, e)} o={kprog(T, at, at + 0.1)} />; })}
           <PersonaSimple x={250} yPies={1820} alto={360} color={KC.pink} cara="o" />
         </Lienzo>
         <NumeroGigante T={T} at={K.Elefantes + 0.3} until={K.Pregunta - 0.1} valor={100} desde={0} dur={2.1} sufijo=" elefantes" x={540} y={420} tam={110} color={KC.yellow} />
@@ -197,17 +196,17 @@ function NubeShot() {
             </g>; })()}
         </Lienzo>
         <Chip T={T} at={K.Gotitas + 0.2} until={K.Repartida - 0.1} texto="AL MICROSCOPIO · UNA GOTITA" x={540} y={420} tam={34} borde={KC.cyan} mono />
-        <Etq T={T} at={K.Gotitas + 0.9} until={K.Repartida - 0.2} x={660} y={700} texto="cae lentísimo" lado="der" color={KC.coral} tam={34} />
-        <Etq T={T} at={K.Gotitas + 3.2} until={K.Repartida - 0.2} x={610} y={1100} texto="aire que sube" lado="der" color={KC.mint} tam={34} />
+        <Etq T={T} at={K.Gotitas + 0.9} until={K.Repartida - 0.2} x={640} y={560} texto="cae lentísimo" lado="der" color={KC.coral} tam={36} />
+        <Etq T={T} at={K.Gotitas + 3.2} until={K.Repartida - 0.2} x={610} y={1100} texto="aire que sube" lado="der" color={KC.mint} tam={36} />
       </Escena>
       {/* 6 · repartida: un cubo de 1 km por lado */}
       <Escena T={T} a={K.Repartida} b={K.Aire} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <Cumulo x={470} y={1010} s={0.62} T={T} />
-          <CuboAlambre x={150} y={700} l={480} dx={170} dy={-130} p={kprog(T, K.Repartida + 0.4, K.Repartida + 2.2)} />
-          {T > K.Repartida + 2.2 && <TextoSvg x={390} y={1250 - 60} tam={64} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Repartida + 2.2, K.Repartida + 2.6, kEase.rebote))}>1 KM POR LADO</TextoSvg>}
-          {T > K.Repartida + 2.2 && [[150, 1150, 630, 1150]].map(([a, b, c, d], i) => <g key={i} opacity={kprog(T, K.Repartida + 2.2, K.Repartida + 2.5)}>
+          <Cumulo x={470} y={950} s={0.62} T={T} />
+          <CuboAlambre x={150} y={640} l={480} dx={170} dy={-130} p={kprog(T, K.Repartida + 0.4, K.Repartida + 2.2)} />
+          {T > K.Repartida + 2.2 && <TextoSvg x={390} y={600} tam={60} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Repartida + 2.2, K.Repartida + 2.6, kEase.rebote))}>1 KM POR LADO</TextoSvg>}
+          {false && [[150, 1150, 630, 1150]].map(([a, b, c, d], i) => <g key={i} opacity={kprog(T, K.Repartida + 2.2, K.Repartida + 2.5)}>
             <line x1={a} y1={b - 40} x2={c} y2={d - 40} stroke={KC.ink} strokeWidth={6} />
             <line x1={a} y1={b - 56} x2={a} y2={b - 24} stroke={KC.ink} strokeWidth={6} /><line x1={c} y1={d - 56} x2={c} y2={d - 24} stroke={KC.ink} strokeWidth={6} /></g>)}
         </Lienzo>
@@ -217,15 +216,16 @@ function NubeShot() {
       <Escena T={T} a={K.Aire} b={K.Lluvia} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Balanza x={540} y={620} ang={angB}
+          <Balanza x={540} y={560} ang={angB}
             izq={<g transform="translate(0 -10)">
               <path d="M -110 0 L -110 -170 L -60 -215 L 120 -215 L 120 -45 L 70 0 Z" fill="rgba(160,225,255,.75)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
               <path d="M -110 -170 L 70 -170 L 120 -215 M 70 -170 L 70 0" fill="none" stroke={KC.ink} strokeWidth={6} />
               {Array.from({ length: 16 }, (_, i) => { const g = krng(600 + i); return <circle key={i} cx={-95 + g() * 155 + Math.sin(T * 4 + i) * 5} cy={-155 + g() * 140 + Math.cos(T * 4 + i) * 5} r={6} fill="#fff" stroke={KC.ink} strokeWidth={2} />; })}
             </g>}
             der={<g transform="translate(0 -45) scale(0.28)"><Cumulo x={0} y={0} s={1} T={T} /></g>} />
-          <TextoSvg x={540 - 360} y={1250 - 60} tam={60} fuente="texto" color={KC.texto} o={kprog(T, K.Aire + 0.4, K.Aire + 0.8)}>aire</TextoSvg>
-          <TextoSvg x={540 + 360} y={1250 - 270} tam={46} fuente="texto" color={KC.texto} o={kprog(T, K.Aire + 0.4, K.Aire + 0.8)}>agua de la nube</TextoSvg>
+          <TextoSvg x={540 - 350} y={980} tam={60} fuente="texto" color={KC.texto} o={kprog(T, K.Aire + 0.4, K.Aire + 0.8)}>aire</TextoSvg>
+          <TextoSvg x={880} y={830} tam={46} fuente="texto" color={KC.texto} o={kprog(T, K.Aire + 0.4, K.Aire + 0.8)}>agua de</TextoSvg>
+          <TextoSvg x={880} y={885} tam={46} fuente="texto" color={KC.texto} o={kprog(T, K.Aire + 0.4, K.Aire + 0.8)}>la nube</TextoSvg>
         </Lienzo>
         <Chip T={T} at={K.Aire + 0.2} until={K.Aire + 1.8} texto="el mismo cubo" x={540} y={420} tam={44} borde={KC.ink} />
         <Chip T={T} at={K.Aire + 2.0} until={K.Lluvia - 0.1} texto="el aire pesa muchísimo más" x={540} y={420} tam={44} borde={KC.red} />
@@ -267,7 +267,7 @@ function NubeShot() {
         <Chip T={T} at={K.Cierre + 2.6} until={K.Outro - 0.1} texto="agua de cien elefantes, en pedacitos" x={540} y={430} tam={38} borde={KC.yellow} />
       </Escena>
 
-      <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Agua - 0.1} texto="Pesa *cientos de toneladas…* y flota." />
+      <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Agua - 0.1} texto="*Cientos de toneladas…* y flota." />
       <Subtitulo T={T} idx={1} at={K.Agua + 0.1} until={K.Cuenta - 0.1} texto="*Billones de gotitas* diminutas." />
       <Subtitulo T={T} idx={2} at={K.Cuenta + 0.1} until={K.Elefantes - 0.1} texto="Una nube cúmulo: *≈ 500 t de agua.*" />
       <Subtitulo T={T} idx={3} at={K.Elefantes + 0.1} until={K.Pregunta - 0.1} texto="Como *cien elefantes* sobre ti." />
@@ -286,7 +286,7 @@ function NubeShot() {
         [K.Pregunta + 0.05, K.Gotitas - 0.1, 'avatar_07_pensativo_puno', 'grande'],
         [K.Repartida + 1.0, K.Aire - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.Aire + 1.8, K.Lluvia - 0.2, 'avatar_11_sorprendido', 'bajo-der'],
-        [L2 + 0.3, K.Cierre - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
+        [K.Lluvia + 4.7, K.Cierre - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
         [K.Cierre + 1.0, K.Outro - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der']]} />
       <MarcaAgua T={T} tema="fisica" num="34" hasta={K.Outro} />
       <CierreMarca T={T} at={K.Outro} tema="fisica" robert={'assets/stickers/avatar_02_apuntando_camara.png'} />

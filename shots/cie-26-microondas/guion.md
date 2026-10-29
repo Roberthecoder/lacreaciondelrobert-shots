@@ -27,7 +27,36 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` |
+| 2 | 7.0 | 10.7 | 13_senalando_arriba | `arriba-der` |
+| 3 | 14.2 | 17.0 | 05_sonriendo_dientes_uniformes | `izq-alto` |
+| 4 | 18.4 | 22.1 | 12_perfil_serio | `bajo-der` |
+| 5 | 28.3 | 31.3 | 07_pensativo_puno | `grande` |
+| 6 | 32.2 | 35.7 | 10_serio_molesto | `bajo-der` |
+| 7 | 37.9 | 42.1 | 04_bajando_lentes | `bajo-der` |
+| 8 | 42.9 | 46.7 | 13_senalando_arriba | `izq-alto` |
+| 9 | 47.5 | 52.0 | 11_sorprendido | `bajo-der` |
+| 10 | 53.0 | 57.9 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 10 · 38.7 s (+ cierre 3.5 s) · poses 7 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «Tu microondas no calienta la comida de adentro hacia afuera» (sorprendido) |
+| 2 | «ondas invisibles, primas de la luz» (señalando) |
+| 3 | «y ese movimiento es calor» (sonriendo) |
+| 4 | «solo alcanzan a entrar unos pocos centímetros» (serio) |
+| 5 | «¿Entonces por qué a veces queda frío en medio?» (pensativo, grande) |
+| 6 | «si la pieza es gruesa, al centro todavía no le llega el calor» (serio molesto) |
+| 7 | «el calor sigue avanzando hacia adentro» (bajando lentes) |
+| 8 | «puntos con más ondas y puntos con menos» (señalando) |
+| 9 | «casi la misma frecuencia que muchas redes de wifi» (sorprendido) |
+| 10 | «lo demás lo hace la paciencia» (sonriendo) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 
