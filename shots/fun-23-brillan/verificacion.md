@@ -39,3 +39,41 @@ Notas del verificador:
 - Hipótesis (esporas, "quizá llamando insectos") dichas como hipótesis. El dibujo es esquemático.
 
 **Resumen:** 18 afirmaciones revisadas (voz y pantalla) contra 6 fuentes abiertas; todas ✅, sin ❌ ni ⚠️. Hipótesis dichas como hipótesis.
+
+## Revisión final (animación y publicación) · 29 oct 2026
+
+Revisados todos los textos en pantalla de `brillan.jsx` (chips, etiquetas, tarjeta, números, subtítulos, rótulos de moléculas y enzimas, mapa, barras de escala) y `publicacion.md` completo (7 redes + comentario fijado). Fuentes nuevas abiertas:
+- **[NG]** Wikipedia, "Neonothopanus gardneri" (consultada 29 oct 2026; resume Capelari et al. 2011, *Mycologia* 103(6): 1433–1440). https://en.wikipedia.org/wiki/Neonothopanus_gardneri
+- **[CP23]** Cortés-Pérez, A. et al. (2023). *Journal of Fungi* (5 *Mycena* sect. *Calodontes* nuevas), Tabla 1. https://pmc.ncbi.nlm.nih.gov/articles/PMC10532606/
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Chips "¿embrujada?" / "no: es un hongo" / "madera podrida" / "hongos que brillan" / "no está embrujada: está viva" | ✅ | [BLA] | "light emitted from wood decayed by some fungi"; "the mycelium must be fresh" | 2024 |
+| R2 | Rótulos *Armillaria* "micelio bajo la corteza", *Mycena* "setas", *Panellus* "setas en repisa"; barra 1 cm (Mycena ≈ 1 cm, repisas ≈ 1.5 cm) | ✅ | [BLA] | "white mycelial fans under the bark"; Panellus y Mycena "produce fruiting bodies that glow" | 2024 |
+| R3 | "≈ 100 especies que brillan" | ✅ | [KOT], [BLA] | ver fila 3 | 2018 / 2024 |
+| R3b | Cuadrícula: 2 de 40 hongos brillan (5 %) | ⚠️ | [OLI] | "only 71 species" de ~100 000 hongos descritos (< 1 de cada 1 000): el dibujo exagera la proporción ~50 veces | 2015 |
+| R4 | "una sustancia muy común"; "ácido cafeico" → "hispidina sintasa" → "hispidina" → "H3H" (+OH) → "luciferina (3-hidroxihispidina)" → "luciferasa + O₂" → "se recicla" | ✅ | [KOT] | "Caffeic acid is converted to hispidin by hispidin synthase (HispS)"; H3H; "can be recycled to caffeic acid by caffeylpyruvate hydrolase (CPH)" | 2018 |
+| R5 | "luciferina = el combustible"; "luz verde · ≈ 520–530 nm" | ✅ | [KOT], [OLI] | "maximum at 520 nm"; λmax 530 nm | 2018 / 2015 |
+| R6 | Barra "1 µm (moléculas no a escala)" sobre la hifa (hifa ≈ 4–7 µm de ancho) | ✅ | — | Esquema rotulado como no a escala; ancho de hifa plausible | — |
+| R7 | Tarjeta "2013 · Piauí, Brasil · *Neonothopanus gardneri* · Oliveira et al., Current Biology, 2015"; "acrílico + foco verde"; bosque con palmas | ✅ | [OLI] | Altos, Piauí, marzo 2013; "Acrylic resin 'mushrooms'… with a green LED light"; "Fruiting bodies grow at the base of palm trees" | 2013 / 2015 |
+| R8 | "5 noches · 19 trampas de cada tipo" | ✅ | [OLI] | 5 noches; 19 trampas encendidas y 19 control | 2013 |
+| R9 | Números 42 / 12 con 14 vs 4 íconos (1 ícono ≈ 3 insectos: 14×3 = 42, 4×3 = 12); moscas, escarabajos, chinches, hormiga | ✅ | [OLI] | "a total of 42 insects from light traps and 12 from controls"; "hymenopterans (wasps and ants)". Mayoría de moscas y escarabajos, como en el estudio | 2013 |
+| R9b | Barra "10 cm" (150 px) junto a los hongos falsos: el sombrero sale ≈ 10.7 cm | ⚠️ | [OLI], [NG] | Trampas hechas con "the size… typical for N. gardneri basidiomes"; [NG]: sombrero "1–9 cm" | 2015 / 2011 |
+| R10 | "HIPÓTESIS"; "esporas"; escarabajo que se lleva esporas; "*Neonothopanus gardneri*" con forma de embudo amarilla | ✅ | [OLI], [NG] | "would attract insects capable of dispersing spores"; [NG]: "funnel-shaped with age" | 2015 |
+| R10b | Barra "5 cm" (170 px) junto a *N. gardneri* (`Gardneri s=1.3`): el sombrero sale ≈ 13 cm | ⚠️ | [NG] | "Measuring 1–9 cm … wide"; pie "3–5 cm … long" | 2011 |
+| R11 | "≈ 22 h por ciclo · a 25 °C"; "micelio en caja de Petri (laboratorio)"; gráfica con 3 ciclos y "≈ día 1/2/3"; barra 5 cm (Petri ≈ 9–10 cm) | ✅ | [OLI] | "oscillates in a circadian rhythm of ca. 22h at 25°C" (en micelio) | 2015 |
+| R12 | "estimación · Jurásico tardío"; "hace ≈ 160 millones de años"; dinosaurio + hongo que brilla (esquema); barra 1 m | ✅ | [KE], [WIK] | "estimated to originate around 160 million years ago during the late Jurassic" | 2020 |
+| R13 | "6 especies nuevas de Mycena"; "bosques de niebla · Mycologia, 2019" | ✅ | [COR] | "Six represent new species belonging to the genus Mycena" | 2019 |
+| R13b | Mapa: 6 setitas en Veracruz, Puebla, Hidalgo, Oaxaca y Chiapas | ⚠️ | [COR], [CP23] | Las localidades de cada especie no se pudieron verificar (texto completo tras muro de pago; [CP23] Tabla 1 solo dice "Mexico"; *M. nebula* es de Veracruz). Hidalgo, Puebla y Chiapas no confirmados | 2019 / 2023 |
+| R13c | Barra "500 km" con largo 300 px sobre `MapaMexico ancho=1000` | ❌ | — | Proyección del kit: 1000/42 ≈ 23.8 px por grado; 300 px ≈ 12.6° ≈ 1 300 km. 500 km ≈ 115 px | — |
+| R14 | Subtítulos 0–13 | ✅ | — | Resumen fiel de la voz ya verificada (filas 1–15) | — |
+| P1 | "foxfire" (fuego falso) | ✅ | [BLA] | "'foxfire,' … a 'false fire' type of light emitted from wood decayed by some fungi" | 2024 |
+| P2 | "las diferencias fueron claras en moscas y escarabajos" | ✅ | [OLI] | Diptera p = 0.00 y Coleoptera p = 0.02 significativos; Hemiptera e Hymenoptera "borderline" | 2015 |
+| P3 | "bajo el bosque, donde casi no hay viento" | ⚠️ | [OLI] | "under the forest canopy where wind flow is greatly reduced": "muy reducido", no "casi no hay" | 2015 |
+| P4 | "se pudo pasar a levaduras que brillan solas" (LinkedIn) | ✅ | [KOT] | "resulted in a strain that was autonomously bioluminescent when grown in a standard yeast medium" | 2018 |
+| P5 | "En 2018, Kotlobay y colaboradores identificaron las enzimas del ciclo completo" | ✅ | [KOT] | El resumen reporta luciferasa, hispidina sintasa, H3H y CPH (CPH por secuencia) | 2018 |
+| P6 | Oxiluciferina reciclada a ácido cafeico; Mata dos Cocais; LED verde y pegamento sin olor; 5 noches y 19 trampas; 22 h a 25 °C; 160 Ma "a finales del Jurásico"; seis Mycena 2019; ≈ 520 nm | ✅ | [KOT], [OLI], [KE], [COR] | "caffeylpyruvate, the fungal oxyluciferin"; demás frases en filas 3–14 | 2013–2020 |
+| P7 | Hipótesis dichas como hipótesis ("Su hipótesis", "la hipótesis es", "quizá") en las 7 redes | ✅ | [OLI] | — | 2015 |
+| P8 | Fuentes de `guion.md`, `publicacion.md` y comentario fijado: autores, año, revista, volumen, páginas y URL coinciden con lo abierto | ✅ | todas | *Mycologia* 111(2): 319–338 (en publicación falta "319–338"; opcional) | — |
+
+**Pendiente de corrección (sin esto no hay veredicto):** R13c ❌, R13b ⚠️, R10b ⚠️, R9b ⚠️, R3b ⚠️, P3 ⚠️.

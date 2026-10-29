@@ -4,7 +4,7 @@
 - **Formato:** N1 Por dentro (papa y jitomate de tu cocina → hoja enferma → microscopio → herbario e historia como "el estudio" → la misma papa y el mismo jitomate, transformados).
 - **Por qué en Fungi Mati:** durante mucho tiempo se clasificó como hongo (crece en hilos, como ellos) y se sigue estudiando junto a los hongos; el shot desmiente el mito "el hongo de la papa".
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Ese hongo que pudre la papa no es un hongo: es un moho de agua, y también ataca tu jitomate.»
-- **Duración:** voz 999 caracteres / 192 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 998 caracteres / 191 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1,000 créditos de ElevenLabs).
 
 ## Versión narrada
@@ -12,18 +12,18 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese hongo que pudre la papa no es un hongo: es un moho de agua, y también ataca tu jitomate. | Fondo amarillo con lunares: en la tabla de la cocina, una papa y un jitomate; cuadro 0.3: se voltea una hoja de mata de papa con una mancha café. Sello "HONGO" que se tacha → chip "moho de agua". Un jitomate con mancha café entra por un lado. |
-| 1 | Hoja | Es *Phytophthora infestans*, el tizón tardío: manchas cafés con pelusa blanca bajo la hoja. | Hoja de papa grande (foliolos compuestos): manchas cafés con borde verde pálido; abajo (envés), pelusa blanca aterciopelada alrededor de la mancha. Etiquetas "tizón tardío · *Phytophthora infestans*", "envés (abajo)". |
+| 1 | Hoja | Es *Phytophthora infestans*: manchas cafés con pelusa blanca bajo la hoja. | Hoja de papa grande (foliolos compuestos): manchas cafés con borde verde pálido; abajo (envés), pelusa blanca aterciopelada alrededor de la mancha. Etiquetas "tizón tardío · *Phytophthora infestans*", "envés (abajo)". |
 | 2 | Limones | Esa pelusa son tallitos que cargan esporas con forma de limón. | **Bajada al microscopio** (fondo oscuro): esporangióforos ramificados con hinchazones donde estuvieron los esporangios; en las puntas, esporangios transparentes en forma de limón (con una "tetilla" en la punta). Etiqueta "esporangio", barra "30 µm". |
-| 3 | Nadadores | Con agua y fresco, cada limón suelta de ocho a doce nadadores con dos colas. | Gota de agua fría (termómetro chico "fresco"); el esporangio se abre por la punta y salen 8–12 zoosporas en forma de frijol, cada una con dos flagelos (uno hacia adelante con pelitos, uno liso hacia atrás). Contador "8–12". |
-| 4 | Entrada | Entran a la hoja, y una sola mancha produce hasta trescientos mil limones. | La zoospora se enquista, saca un tubo y entra por un estoma (o atravesando la superficie). Corte rápido a escala de hoja: la mancha crece y un `NumeroGigante` "hasta 300 000 esporangios por mancha" se llena de limoncitos. |
-| 5 | Pared | Crece en hilos como un hongo, pero su pared casi no tiene quitina: tiene celulosa. | Hilos (micelio sin tabiques) entre las células de la hoja. Comparativa de paredes: "hongo: quitina ✓" vs "*Phytophthora*: quitina casi nada · celulosa ✓". |
+| 3 | Nadadores | Con agua fresca, cada limón suelta de ocho a doce nadadores con dos colas. | Gota de agua fresca (termómetro chico "fresco"); el esporangio se abre por la punta y salen 8–12 zoosporas en forma de frijol, cada una con dos flagelos de lado: uno con pelitos y uno liso (sin indicar cuál va adelante). Contador "8–12". |
+| 4 | Entrada | Entran a la hoja y una mancha produce hasta trescientos mil limones. | La zoospora se enquista, saca un tubo y entra por un estoma (o atravesando la superficie). Corte rápido a escala de hoja: la mancha crece y un `NumeroGigante` "hasta 300 000 esporangios por mancha" se llena de limoncitos. |
+| 5 | Pared | Crece en hilos como un hongo, pero su pared casi no tiene quitina, sino celulosa. | Hilos (micelio sin tabiques) entre las células de la hoja. Comparativa de paredes: "hongo: quitina ✓" vs "*Phytophthora*: quitina casi nada · celulosa ✓". |
 | 6 | Pregunta | ¿Entonces qué es? | **Re-gancho.** "?" gigante sobre la zoospora; Robert grande, pensativo. |
 | 7 | Parientes | Es más pariente de las algas pardas y las diatomeas que de los hongos. | Árbol simple: rama "estramenopilos" con un alga parda (sargazo/kelp), una diatomea (caja de vidrio) y el moho de agua; rama aparte, lejos, "hongos" (seta). Chip "oomiceto". |
-| 8 | Irlanda | Llegó a Europa en 1845 y desató la Gran Hambruna de Irlanda: cerca de un millón de muertos y otro millón que emigró. | **Subida a escala real:** mapa de Irlanda que se pinta de café; campo de papas que se ennegrece; contador "≈ 1 millón de muertos" y barcos que se van "≈ 1 millón emigró". Chip "desde 1845". Tono serio. |
-| 9 | Herbario | En 2013 leyeron su ADN en hojas guardadas en herbarios desde 1845. | `TarjetaEstudio` "2013 · Múnich y Kew (Londres) · Yoshida et al., *eLife*": hojas secas prensadas en papel de herbario con etiquetas "1845… 1896"; una hélice de ADN sale de una hoja. |
-| 10 | Herb1 | Era un linaje que no aparece en ninguna cepa moderna: quizá se extinguió. | Árbol de linajes: "HERB-1" (siglo XIX) en gris con "?" y "¿extinto?"; al lado, "US-1" (siglo XX), su pariente cercano. Chip "hipótesis: quizá se extinguió". |
-| 11 | Mexico | ¿Y de dónde salió? Un estudio de 2014 apunta al centro de México, no a los Andes. | Mapa de América: dos flechas candidatas (centro de México y Andes); la de los Andes se apaga; se ilumina el centro de México con puntos "valle de Toluca" y "Tlaxcala". `TarjetaEstudio` "2014 · Goss et al., *PNAS*". Chip "el debate siguió por años". |
-| 12 | Cierre | Así que ese hongo de la papa no es un hongo, y hoy sigue atacando papas y jitomates en todo el mundo. | **Regreso a la imagen del inicio:** la misma tabla con la misma papa y el mismo jitomate; ahora el sello dice "OOMICETO" y junto a ellos una zoospora con sus dos colas. Chip "moho de agua, no hongo". |
+| 8 | Irlanda | Llegó a Europa en 1845 y desató la Gran Hambruna irlandesa: cerca de un millón de muertos y más de un millón emigró. | **Subida a escala real:** mapa de Irlanda que se pinta de café; campo de papas que se ennegrece; contador "≈ 1 millón de muertos" y barcos que se van "más de 1 millón emigró". Chip "desde 1845". Tono serio. |
+| 9 | Herbario | En 2013 leyeron su ADN en hojas de herbario desde 1845. | `TarjetaEstudio` "2013 · Múnich y Kew (Londres) · Yoshida et al., *eLife*": hojas secas prensadas en papel de herbario con etiquetas "1845… 1896"; una hélice de ADN sale de una hoja. |
+| 10 | Herb1 | Ese linaje se creyó extinto, pero en 2014 hallaron su rastro en muestras actuales de México y Sudamérica. | Árbol de linajes: "HERB-1" (siglo XIX), un linaje distinto, en gris con la etiqueta "se creyó extinto (2013)"; luego una flecha a un mapa de América con puntos en México y Sudamérica: "rastro hallado en América (2014)". `TarjetaEstudio` "2014 · Martin et al., *Mol Biol Evol*". |
+| 11 | Mexico | ¿Y de dónde salió? Un estudio de 2014 apunta a México; otros, a los Andes. Aún se discute. | Mapa de América: dos flechas candidatas, ambas encendidas: centro de México (puntos "valle de Toluca" y "Tlaxcala") y Andes. Tarjetas "2014 · Goss, *PNAS*: México" y "2025 · Coomber, *PLoS ONE*: Andes". Chip "sin resolver". |
+| 12 | Cierre | Así que el hongo de la papa no es un hongo, y sigue atacando papas y jitomates en todo el mundo. | **Regreso a la imagen del inicio:** la misma tabla con la misma papa y el mismo jitomate; ahora el sello dice "OOMICETO" y junto a ellos una zoospora con sus dos colas. Chip "moho de agua, no hongo". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua, fresca y húmeda (agua), que se oscurece en Irlanda y se abre un poco en el herbario y en México. Efectos en el mismo cuadro: hoja que se voltea, golpe del sello, gotas de agua, "pop" del esporangio al abrirse y burbujeo de los nadadores, tubo que entra al estoma, conteo que sube a 300 000, crujido de paredes, golpe del "?", árbol que se ramifica, viento y olas con los barcos, papel de herbario, doble hélice, mapa que se ilumina.
@@ -64,9 +64,19 @@ Barras de escala: 10 cm (papa y jitomate), 5 cm (hoja), 30 µm (esporangios), 10
    > "There are two competing theories, placing the origin in either South America or in central Mexico"
    > "We did not find support for an Andean origin of P. infestans"; "the sequence data suggest a Mexican origin"
    > "Populations of P. infestans in the Toluca Valley, southwest of Mexico City, are genetically diverse"
+   > Origen: ver también Martin 2016 y Coomber 2025 (abajo): la pregunta sigue en debate.
 7. Ivanov, A. A., Ukladov, E. O. y Golubeva, T. S. (2021). *Phytophthora infestans*: An Overview of Methods and Attempts to Combat Late Blight. *Journal of Fungi* 7(12): 1071. https://pmc.ncbi.nlm.nih.gov/articles/PMC8707485/
    > "The most affected are the Solanaceae species, with the potato (Solanum tuberosum) and the tomato (Solanum lycopersicum) being of great agricultural importance."
    > "Every year, this pathogen causes enormous losses to agriculture worldwide."
    > "P. infestans still causes significant damage to agriculture despite the long history of fighting it."
+
+8. Crowley, J. (2020). The Great Irish Famine. RTÉ History. https://www.rte.ie/history/the-great-irish-famine/2020/0629/1150367-the-great-irish-famine
+   > Más de un millón de personas emigraron durante la hambruna (detalle y frase textual en `verificacion.md`).
+9. Martin, M. D., Ho, S. Y. W., Wales, N., Ristaino, J. B. y Gilbert, M. T. P. (2014). Persistence of the mitochondrial lineage responsible for the Irish potato famine in extant New World *Phytophthora infestans*. *Molecular Biology and Evolution* 31(6): 1414–1420. PMID 24577840.
+   > El linaje mitocondrial de HERB-1 sigue presente en muestras actuales de América (México y Sudamérica); detalle en `verificacion.md`.
+10. Martin, M. D. et al. (2016). Genomic characterization of a South American *Phytophthora* hybrid mandates reassessment of the geographic origins of *Phytophthora infestans*. *Molecular Biology and Evolution* 33(2): 478–491.
+   > Pide replantear el origen geográfico (México vs. Andes).
+11. Coomber, A. et al. (2025). *PLoS ONE* 20(1): e0314509 (origen andino de *P. infestans*). https://ges.research.ncsu.edu/wp-content/uploads/2025/02/Coomber-2025-PlosOne.pdf
+   > "Speciation in the 1c clade and evolution of P. infestans occurred in the Andes."
 
 El dibujo es esquemático.

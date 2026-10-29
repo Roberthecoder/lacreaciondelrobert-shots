@@ -75,9 +75,9 @@ Revisados todos los textos del `.jsx` (chips, etiquetas, rótulos, `TarjetaEstud
 | F13 | Barra "1 mm": *Acromyrmex* ≈ 6.5 mm | ✅ | [AK] | workers "up to 7.5 mm in length" | consultada 2026 |
 | F14 | Barra "1 cm" (Chicatanas): hormigas con alas ≈ 2.2 cm | ✅ | [MZ18] | queen "body length of 20–22 mm" | 2018 |
 | F15 | Barra "2 mm" (Reina): reina ≈ 18 mm | ✅ | [MZ18] | Ídem (un poco chica, dentro de lo esquemático) | 2018 |
-| F16 | Barra "1 cm" (Chicatanas): **molcajete** de 323 px = **≈ 4 cm** de ancho | ⚠️ escala incoherente | — | Un molcajete real mide ~20 cm; con la barra de 1 cm se lee como un molcajete de juguete. | — |
-| F17 | Barra "5 cm" (Hongo): cámara ≈ 25 cm de ancho ✅, pero solo ≈ 8 cm bajo la superficie | ⚠️ imprecisa | [MZ18], [M20] | "large chambers deep underground"; la colonia "may be 1 m deep" | 2018 |
-| F18 | Barra "5 mm" (Cierre): jardín dibujado ≈ 3.3 cm de ancho y ≈ 1 cm bajo las hormigas | ⚠️ escala incoherente | [MZ18] | Contradice la escena 2 (cámara de ~25 cm) y "deep underground" | 2018 |
+| F16 | Chicatanas: molcajete en viñeta aparte con su barra "10 cm" (150 px); la barra de 1 cm queda para las hormigas (corregido) | ✅ | cálculo | Molcajete 340 × 0.88 ≈ 300 px = 20 cm (tamaño real de un molcajete); hormigas con alas ≈ 2.2 cm con la barra de 1 cm | — |
+| F17 | Hongo: cámara ≈ 25 cm (barra 5 cm = 150 px, 3 px/mm) con símbolo de corte en el túnel y la etiqueta «(más tierra)» (corregido) | ✅ | [MZ18], [M20] | "large chambers deep underground"; la colonia "may be 1 m deep" (la profundidad omitida queda marcada) | 2018 |
+| F18 | Cierre: alejamiento de cámara de la hilera grande (z ≈ 8.85, barra 5 mm) a la vista de la escena 2 (z = 1, barra 5 cm), con `Escala` del kit ligada al zoom (pasa por 1–2 cm) y el mismo `MundoHongo` con «(más tierra)» (corregido) | ✅ | cálculo, [MZ18] | Obreras de 0.13 × 196 ≈ 25 px a 3 px/mm ≈ 8.5 mm en todo el zoom; cámara ≈ 25 cm igual que en la escena 2 | 2018 |
 | F19 | `publicacion.md`: gongilidios "de unos 30 micrómetros"; "azúcares, aminoácidos y enzimas" | ✅ | [LD23], [G20] | "ca. 30 µm in diameter"; "carbohydrates, amino acids, and enzymes" | 2023 / 2020 |
 | F20 | `publicacion.md`: las obreras "sí beben un poco del jugo de la hoja al cortarla" | ✅ | [LC76] | "Ingestion of radiolabelled plant juices from cut surfaces of leaves during foraging" | 1976 |
 | F21 | `publicacion.md`: las arrieras aparecieron "hace unos 18 o 19 millones de años" | ✅ | [B17] | "between 19 Ma (15–24 Ma) and 18 Ma (14–22 Ma)" | 2017 |
@@ -87,5 +87,6 @@ Revisados todos los textos del `.jsx` (chips, etiquetas, rótulos, `TarjetaEstud
 | F25 | `publicacion.md` LinkedIn: "monocultivo natural … durante millones de años con ayuda de microbios defensores" | ✅ | [S24], [B17], [C99] | un solo cultivar en la mayoría de las arrieras; arrieras de 18–19 Ma; bacteria "associated with all species of fungus-growing ants studied" | 2024 / 2017 / 1999 |
 | F26 | Citas de Fuentes y comentario fijado (Leal-Dutra 2023, Holmes 2016 con DOI 10.3389/fmicb.2016.02073, resto) | ✅ | — | Autores, revista, volumen y enlace coinciden con las fuentes abiertas | — |
 
-**Pendiente:** F16, F17 y F18 (escala del dibujo). La voz, los textos en pantalla y `publicacion.md` están ✅. Sin veredicto final hasta corregir esas tres escenas.
+**Resumen de la revisión final (29 oct 2026):** F16–F18 se corrigieron (viñeta del molcajete con barra de 10 cm, corte «(más tierra)» en el túnel y alejamiento del cierre con la barra ligada al zoom) y se revisaron de nuevo en el código: todas las barras de escala son coherentes con lo dibujado. La voz, los textos en pantalla, las barras y `publicacion.md` (7 redes y comentario fijado) quedan ✅.
 
+VEREDICTO: APROBADO
