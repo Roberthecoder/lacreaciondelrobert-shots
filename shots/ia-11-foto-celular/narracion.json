@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot FotoCelular base narrada.dc.html",
+  "salida": "Shot FotoCelular narrado.dc.html",
+  "nota": "Shot IA #11. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa foto que tomaste de noche no es una foto: son hasta trece fotos encimadas."
+    },
+    {
+      "escena": "Gancho",
+      "texto": "Así lo hace el modo noche de los Pixel de Google."
+    },
+    {
+      "escena": "Sensor",
+      "texto": "En el sensor, cada pixel es diminuto: con poca luz atrapa poquito y la foto sale llena de ruido."
+    },
+    {
+      "escena": "Pulso",
+      "texto": "Si dejara la foto abierta mucho rato, tu pulso la barrería."
+    },
+    {
+      "escena": "Rafaga",
+      "texto": "Por eso toma una ráfaga de fotos cortas, de hasta un tercio de segundo."
+    },
+    {
+      "escena": "Alinear",
+      "texto": "Las alinea pedacito por pedacito y las junta: el ruido baja y lo real se queda."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y dónde está la inteligencia artificial?"
+    },
+    {
+      "escena": "Clasico",
+      "texto": "Alinear y juntar es matemática clásica, no una red neuronal."
+    },
+    {
+      "escena": "Color",
+      "texto": "Lo que sí aprendió es el color: un modelo entrenado con cinco mil fotos ajustadas por fotógrafos profesionales."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Google lo publicó en 2019: funciona hasta con tres décimas de lux, cuando tus ojos ya casi no ven colores."
+    },
+    {
+      "escena": "Temblor",
+      "texto": "Y en el zoom usan tu temblor: tu mano tiembla de ocho a doce veces por segundo y cada foto sale apenas corrida."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Tu foto de noche no fue un clic: fueron muchas, y la matemática las volvió una sola."
+    }
+  ]
+}

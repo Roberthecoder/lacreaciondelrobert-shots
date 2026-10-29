@@ -9,7 +9,7 @@
     },
     {
       "escena": "Mito",
-      "texto": "Sentían que aprendían, pero terminar la tarea no es lo mismo que aprender."
+      "texto": "Sentían que aprendían, pero terminar la tarea no es aprender."
     },
     {
       "escena": "Estudio",
@@ -25,7 +25,7 @@
     },
     {
       "escena": "Examen",
-      "texto": "Los del ChatGPT normal sacaron diecisiete por ciento menos que los del puro libro."
+      "texto": "Los del ChatGPT normal sacaron diecisiete por ciento menos que los del libro."
     },
     {
       "escena": "Pregunta",
@@ -49,7 +49,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que cuando estudies con IA, pídele pistas, no la respuesta: el examen lo vas a hacer tú solo."
+      "texto": "Así que cuando estudies con IA, pídele pistas, no la respuesta: el examen lo harás tú solo."
     }
   ]
 }
