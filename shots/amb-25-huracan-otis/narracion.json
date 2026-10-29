@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Otis base narrada.dc.html",
+  "salida": "Shot Otis narrado.dc.html",
+  "nota": "Shot Ambiental #25. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Un día antes, el pronóstico decía que Otis llegaría a Acapulco con poco más de cien kilómetros por hora. Llegó con casi doscientos sesenta."
+    },
+    {
+      "escena": "Tormenta",
+      "texto": "Capítulo uno: en octubre de 2023 era tormenta tropical, frenada por vientos de altura."
+    },
+    {
+      "escena": "Mar",
+      "texto": "Capítulo dos: entró a un mar de hasta treinta y un grados, más caliente de lo normal, y esos vientos aflojaron."
+    },
+    {
+      "escena": "Motor",
+      "texto": "El agua caliente es su gasolina: se evapora, hace nubes y suelta calor."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Qué tan rápido creció?"
+    },
+    {
+      "escena": "Rapida",
+      "texto": "Subir cincuenta y seis kilómetros por hora en un día ya es intensificación rápida. Otis subió ciento sesenta y siete en veintiún horas."
+    },
+    {
+      "escena": "Avion",
+      "texto": "Un avión cazahuracanes midió su presión: cayó unos diez milibares en ochenta y cinco minutos."
+    },
+    {
+      "escena": "Tierra",
+      "texto": "Capítulo tres: pasada la medianoche del 25, tocó Acapulco en categoría cinco."
+    },
+    {
+      "escena": "Record",
+      "texto": "Desde 1988, ningún huracán del Pacífico oriental tocó tierra tan fuerte."
+    },
+    {
+      "escena": "Victimas",
+      "texto": "En 2023, el gobierno reportó cincuenta y dos muertes y treinta y dos desaparecidos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Un día antes: poco más de cien. Realidad: casi doscientos sesenta."
+    }
+  ]
+}
