@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot AdnDisco base narrada.dc.html",
+  "salida": "Shot AdnDisco narrado.dc.html",
+  "nota": "Shot Biotecnológico #37. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Un gramo de ADN puede guardar 215 millones de gigas: más de un millón de celulares."
+    },
+    {
+      "escena": "Bits",
+      "texto": "Tus fotos son ceros y unos; el ADN usa cuatro letras: A, C, G y T."
+    },
+    {
+      "escena": "Letras",
+      "texto": "Lo más simple: cero cero es A, cero uno es C, uno cero es G y uno uno es T."
+    },
+    {
+      "escena": "Sintesis",
+      "texto": "Una máquina escribe esas letras en miles de hebras cortas de ADN."
+    },
+    {
+      "escena": "Seco",
+      "texto": "Se seca, y en ese polvito queda tu archivo."
+    },
+    {
+      "escena": "Lectura",
+      "texto": "Para leerlo, un secuenciador lee las letras y vuelven a ser ceros y unos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué guardar algo en ADN y no en un disco?"
+    },
+    {
+      "escena": "Mamut",
+      "texto": "Porque dura: en 2021 leyeron ADN de mamut de más de un millón de años."
+    },
+    {
+      "escena": "Sonetos",
+      "texto": "En 2013, en Inglaterra, guardaron los sonetos de Shakespeare y un trozo del discurso de Martin Luther King."
+    },
+    {
+      "escena": "Fountain",
+      "texto": "En 2017, en Nueva York, guardaron una película y la leyeron sin errores."
+    },
+    {
+      "escena": "Caballo",
+      "texto": "Ese mismo año, en Harvard, guardaron un video de un caballo dentro de bacterias vivas."
+    },
+    {
+      "escena": "Problema",
+      "texto": "¿El problema? En 2019, escribir y leer la palabra HELLO tardó 21 horas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Un gramo para un millón de celulares: solo falta que escribirlo sea rápido y barato."
+    }
+  ]
+}

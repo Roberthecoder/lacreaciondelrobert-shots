@@ -6,6 +6,13 @@
 - **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s).
 - **Viaje:** macro (la bolsa colgada y el brazo con la vena) → micro (dentro de la vena, fondo oscuro: linfocito T de ~7 µm, el virus que entra, el receptor CAR, la célula de leucemia con sus "banderas" CD19) → la misma bolsa del inicio, ya vacía y con la etiqueta "tus células".
 
+## Correcciones del 29 oct 2026 (verificación independiente, ver `verificacion.md`)
+- Voz escena 8: "fue la primera niña **con leucemia** en recibirlas" (antes de 2012 ya había niños con neuroblastoma que recibieron células CAR anti-GD2; Emily fue la primera paciente pediátrica con CAR-T anti-CD19 y la primera de cualquier edad para leucemia linfoblástica aguda). Para no pasar de 960 caracteres, la pregunta quedó "¿Y si uno encuentra una célula así?".
+- Tarjeta del estudio: "ensayo clínico fase 1/2" (NCT01626495 es fase I/IIA).
+- Contador de la escena 5: ya no empieza en "1"; dice "tus linfocitos T → ×2 ×2 ×2… → cientos de millones".
+- Escena 10: el tocilizumab tapa los **receptores** de la IL-6 (la IL-6 se queda flotando sin dónde engancharse). Etiqueta "tocilizumab · bloquea el receptor de la IL-6". Igual en la descripción.
+- Chip nuevo en la escena 4: "también la tienen los linfocitos B sanos".
+
 ## Versión narrada (959 caracteres, 164 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
@@ -14,13 +21,13 @@
 | 1 | Saca | Te sacan sangre y separan tus linfocitos T, soldados del sistema inmune. | Fondo amarillo: la sangre sube por un tubo a una máquina que gira (aféresis, esquemática) y separa capas; de una capa salen bolitas moradas: "linfocitos T". Barra de escala: linfocito ~7 µm. |
 | 2 | Virus | En un laboratorio, un virus modificado les mete un gen. | Fondo menta: un frasco de cultivo. Un virus esférico con envoltura (lentivirus, esquemático) se pega al linfocito y suelta una tira de ARN que entra. Chip "virus modificado: ya no enferma, solo entrega el gen". |
 | 3 | Receptor | Ese gen les arma un receptor, el CAR, que reconoce la proteína CD19. | Acercamiento a la membrana del linfocito: brotan antenas en forma de "Y" (el CAR) que cruzan la membrana. Etiqueta "CAR · receptor quimérico". |
-| 4 | Bandera | CD19 está en la superficie de las células de leucemia B. | Aparece una célula de leucemia B (redonda, núcleo grande) cubierta de banderitas amarillas "CD19". |
-| 5 | Multiplica | Los multiplican hasta cientos de millones y te los regresan por la vena. | Contador que sube "1 → cientos de millones" mientras las células se dividen y llenan el frasco; la bolsa se llena y regresa al poste del gancho. |
-| 6 | Pregunta | ¿Y qué pasa cuando uno encuentra una célula así? | **Re-gancho.** `Lupa` sobre el brazo: "POR DENTRO · TU VENA". Dentro, fondo azul noche, el linfocito con sus CAR se acerca a una célula con CD19. |
+| 4 | Bandera | CD19 está en la superficie de las células de leucemia B. | Aparece una célula de leucemia B (redonda, núcleo grande) cubierta de banderitas amarillas "CD19". Chip chico: "también la tienen los linfocitos B sanos". |
+| 5 | Multiplica | Los multiplican hasta cientos de millones y te los regresan por la vena. | Rótulo "tus linfocitos T → ×2 ×2 ×2… → cientos de millones" mientras las células se dividen y llenan el frasco; la bolsa, ahora con etiqueta "TUS CÉLULAS · CAR-T", regresa al poste con el brazo. |
+| 6 | Pregunta | ¿Y si uno encuentra una célula así? | **Re-gancho.** `Lupa` sobre el brazo: "POR DENTRO · TU VENA". Dentro, fondo azul noche, el linfocito con sus CAR se acerca a una célula con CD19. |
 | 7 | Caza | Se engancha, la mata y se sigue multiplicando: es un fármaco vivo. | El CAR se encaja en CD19 (clic), la célula de leucemia se rompe en pedacitos; el linfocito se divide en dos, luego en cuatro. Chip "fármaco vivo". |
-| 8 | Emily | En 2012, en el Hospital de Niños de Filadelfia, Emily Whitehead, de seis años, fue la primera niña en recibirlas. | `TarjetaEstudio` "2012 · Hospital de Niños de Filadelfia (CHOP) · ensayo fase 1": silueta esquemática de una niña (sin retrato), "6 años · leucemia linfoblástica aguda que regresó". |
+| 8 | Emily | En 2012, en el Hospital de Niños de Filadelfia, Emily Whitehead, de seis años, fue la primera niña con leucemia en recibirlas. | `TarjetaEstudio` "2012 · Hospital de Niños de Filadelfia · ensayo clínico fase 1/2 · Emily, 6 años": silueta esquemática de una niña (sin retrato), "6 años · leucemia linfoblástica aguda que regresó". |
 | 9 | Tormenta | Casi muere: fiebre altísima y presión desplomada, una tormenta de citocinas. | Termómetro que sube al rojo, flecha de presión que cae; dentro de la vena, una lluvia de puntitos (citocinas). Etiqueta "síndrome de liberación de citocinas". |
-| 10 | Artritis | La salvó un medicamento para la artritis. | Un frasquito "tocilizumab · para la artritis" bloquea los puntitos de la IL-6 (como tapones). El termómetro baja. |
+| 10 | Artritis | La salvó un medicamento para la artritis. | Sobre una membrana hay receptores de IL-6 (cerraduras); el tocilizumab cae y los tapa, y la IL-6 se queda flotando "sin dónde engancharse". Chips: "tocilizumab · bloquea el receptor de la IL-6" y "(un medicamento para la artritis)". El termómetro baja. |
 | 11 | FDA | Su leucemia desapareció y en 2017 Estados Unidos aprobó esa terapia. | Las células con CD19 desaparecen del todo. Sello "FDA · 30 ago 2017 · Kymriah (tisagenlecleucel)". |
 | 12 | Hoy | En 2025, trece años después, Emily seguía sin cáncer. | Línea de tiempo 2012 → 2025 que se llena; chip "13 años sin cáncer (dato de 2025)". |
 | 13 | Cierre | Esa bolsa no es un medicamento común: son tus células, cazando. | **Regreso a la bolsa del inicio**, ya vacía, con la etiqueta cambiada a "tus células · CAR-T". |
@@ -34,7 +41,7 @@
 ## Descripción (para publicar)
 "Esa bolsa no trae un medicamento común: trae tus propias células, entrenadas para cazar cáncer. 🩸🎯 Así funciona la terapia **CAR-T**: te sacan sangre y separan tus **linfocitos T**. En un laboratorio, un **virus modificado** (un vector de lentivirus) les mete un gen que les arma un receptor nuevo, el **CAR** (receptor quimérico de antígeno), que reconoce la proteína **CD19**, presente en la superficie de las células de la leucemia B (y también de los linfocitos B sanos). Luego los multiplican hasta tener **cientos de millones** y te los regresan por la vena. Adentro, se enganchan a las células con CD19, las matan y se siguen multiplicando: por eso les dicen **fármaco vivo**. Todo el proceso, de la sangre a la infusión, tarda unas 3 a 5 semanas.
 
-En **2012**, en el Hospital de Niños de Filadelfia, **Emily Whitehead**, de 6 años, con una leucemia linfoblástica aguda que había regresado tras la quimioterapia, fue la primera niña en recibirla. Casi muere: le dio fiebre altísima y se le desplomó la presión, lo que hoy se llama **síndrome de liberación de citocinas**. La salvó el **tocilizumab**, un medicamento para la artritis que bloquea la citocina IL-6, y que hoy es parte del protocolo de CAR-T. Su leucemia desapareció, y el **30 de agosto de 2017** la FDA aprobó esa terapia, hoy llamada **Kymriah** (tisagenlecleucel). En 2025, trece años después, Emily seguía sin cáncer.
+En **2012**, en el Hospital de Niños de Filadelfia, **Emily Whitehead**, de 6 años, con una leucemia linfoblástica aguda que había regresado tras la quimioterapia, fue la primera niña en recibirla contra la leucemia. Casi muere: le dio fiebre altísima y se le desplomó la presión, lo que hoy se llama **síndrome de liberación de citocinas**. La salvó el **tocilizumab**, un medicamento para la artritis que bloquea el receptor de la citocina IL-6, y que hoy es parte del protocolo de CAR-T. Su leucemia desapareció, y el **30 de agosto de 2017** la FDA aprobó esa terapia, hoy llamada **Kymriah** (tisagenlecleucel). En 2025, trece años después, Emily seguía sin cáncer.
 
 El dibujo es esquemático. **¿Conocías los fármacos vivos? ¿Qué otra enfermedad te gustaría que pudieran cazar? 👇**"
 
@@ -65,4 +72,30 @@ El dibujo es esquemático. **¿Conocías los fármacos vivos? ¿Qué otra enferm
 6. **BioNumbers (Harvard), "Lymphocyte volume and diameter" (Kuse et al., 1985)** — para la barra de escala. https://bionumbers.hms.harvard.edu/bionumber.aspx?id=111788
    - "The lymphocyte volumes (or diameters) varied considerably from 142 to 265 fl (or 5.0 to 11.0µm) in normal subjects" (media ≈ 7 µm).
 
+7. **ClinicalTrials.gov NCT01626495** (inicio 2011). https://clinicaltrials.gov/study/NCT01626495 — "Phase I/IIA Study of CART19 Cells for Patients With Chemotherapy Resistant or Refractory CD19+ Leukemia and Lymphoma".
+8. **Roche, 30 ago 2017.** https://www.roche.com/media/releases/med-cor-2017-08-30 — "first approved anti-IL-6 receptor biologic"; "the first FDA-approved treatment for severe or life-threatening cytokine release syndrome induced by CAR T cell therapy".
+9. **Cornetta et al., *Molecular Therapy* 2018 (PMC5762981).** — "All cell products were negative for RCL… No research subject has shown evidence of RCL infection." (para el chip "ya no enferma").
+
 **No se usa:** "la primera terapia génica de EE. UU." (las fuentes lo dicen de formas distintas), porcentajes de remisión ni cifras de costo.
+
+## Robert en pantalla
+
+Tiempos con las escenas del `Shot CarT base narrada.dc.html` (Gancho 0 · Saca 5.65 · Virus 10.01 · Receptor 13.48 · Bandera 17.64 · Multiplica 21.11 · Pregunta 25.47 · Caza 27.75 · Emily 31.81 · Tormenta 39.25 · Artritis 43.91 · FDA 46.59 · Hoy 50.75 · Cierre 54.12 · Outro 58.0 → 61.5).
+
+### Versión narrada: 10 apariciones, **34.0 s en pantalla** (de 61.5 s) · 6 poses distintas · 1 grande
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.6 | sorprendido (11) | gancho | «esa bolsa… son tus propias células» |
+| 6.3 – 9.7 | señalando (13) | arriba-der | señala la máquina que separa los linfocitos T |
+| 13.9 – 17.4 | sonriendo (05) | izq-alto | brotan los receptores CAR |
+| 25.3 – 28.0 | pensativo (06) | arriba-der | re-gancho: «¿y si uno encuentra una célula así?» |
+| 29.2 – 31.6 | apuntando (02) | izq-alto | «es un fármaco vivo» |
+| 39.5 – 43.8 | serio (10) | arriba-der | «casi muere: tormenta de citocinas» |
+| 44.0 – 46.5 | sorprendido (11) | izq-alto | «la salvó un medicamento para la artritis» |
+| 46.7 – 50.7 | apuntando (02) | **grande** | la leucemia desaparece y el sello de la FDA, 2017 |
+| 51.2 – 54.0 | bajando lentes (04) | izq-alto | «trece años después, seguía sin cáncer» |
+| 54.3 – 57.9 | señalando (13) | arriba-der | cierre: «son tus células, cazando» |
+| 58.0 – 61.5 | señalando (13) | `CierreMarca robert=` | junto al logo |
+
+Huecos máximos sin Robert: 7.8 s (17.4 → 25.3 y 31.6 → 39.5, durante la escena del frasco y la tarjeta de Emily).

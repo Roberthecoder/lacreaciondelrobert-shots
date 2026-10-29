@@ -17,7 +17,7 @@ m.pad(0, E, 0.05, [45, 52, 57], 0.2);
 m.pad(E, B, 0.05, [40, 47, 52], 0.75);
 m.pad(B, Ou + 3.5, 0.05, [45, 52, 57, 64], 0);
 m.tic(G + 0.05, 0.12, 2600); m.metal(G + 0.3, 0.06, 1500);                              // el frasquito de vidrio
-m.pop?.(G + 2.3, 0.15); m.nota(G + 2.3, 69, 0.06, 0.6);                                 // aparece la bacteria en la etiqueta
+m.burbuja(G + 2.3, 0.12, 700); m.nota(G + 2.3, 69, 0.06, 0.6);                                 // aparece la bacteria en la etiqueta
 m.whoosh(H + 1.2, 0.6, 0.12);                                                           // se abre la Lupa
 for (let i = 0; i < 4; i++) m.gota(H + 1.8 + i * 0.6, 0.12, 900);                       // gotitas de hormona
 m.metal(A + 0.4, 0.08, 520); m.tic(A + 2.0, 0.12, 1800);                                // frasco viejo · jeringa

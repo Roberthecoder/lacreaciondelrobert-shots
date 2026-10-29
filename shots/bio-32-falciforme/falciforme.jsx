@@ -152,7 +152,7 @@ function Falciforme() {
         <g transform={`translate(${sep * 18} 0)`}><ADNHebra T={T} x={r} y={r + 40} largo={r - 10} alto={56} vueltas={2} resalta={(uu) => uu < 0.22} /></g>
         <Cas x={klerp(r + 40, r + 20, kprog(T, meB, meB + 0.9, kEase.sale))} y={klerp(-60, r - 60, kprog(T, meB, meB + 0.9, kEase.sale))} s={0.7} corta={corta} T={T} />
         {corta > 0.9 && sep < 1 && <circle cx={r} cy={r + 40} r={30 + sep * 60} fill="none" stroke="#fff" strokeWidth={6} opacity={1 - sep} />}
-        <text x={r} y={r * 1.68} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.gold2}>BCL11A · el tramo que lo prende</text>
+        <text x={r} y={r * 1.68} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.gold2}>BCL11A</text>
       </g>}
     </svg>;
   };
@@ -171,8 +171,8 @@ function Falciforme() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <rect x={-20} y={880} width={1120} height={170} fill={LUMEN} stroke={KC.ink} strokeWidth={10} />
-          {(() => { const u = kprog(T, K.Di + 0.3, K.Di + 3.3), xx = klerp(-100, 1180, u), dentro = Math.exp(-Math.pow((xx - 540) / 260, 2));
-            return <Disco x={xx} y={965} s={1.5} aplasta={klerp(1, 0.55, dentro)} canto={0} />; })()}
+          {[0, 1.1, 2.2].map((d, k) => { const u = kprog(T, K.Di - 0.6 + d, K.Di + 2.4 + d), xx = klerp(-120, 1200, u), dentro = Math.exp(-Math.pow((xx - 540) / 260, 2));
+            return u > 0 && u < 1 ? <Disco key={k} x={xx} y={965} s={1.5} aplasta={klerp(1, 0.55, dentro)} rot={(1 - dentro) * 10 * Math.sin(T * 3 + k)} seed={k + 60} /> : null; })}
           <rect x={-20} y={720} width={1120} height={160} fill={PARED} stroke={KC.ink} strokeWidth={10} />
           <rect x={-20} y={1050} width={1120} height={160} fill={PARED} stroke={KC.ink} strokeWidth={10} />
         </SvgCapa>
@@ -260,7 +260,7 @@ function Falciforme() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           {Array.from({ length: 30 }, (_, i) => { const c = i % 6, f = Math.floor(i / 6), on = i < lit;
-            return <Persona key={i} x={190 + c * 140} y={640 + f * 112} s={on ? 1 + 0.08 * Math.max(0, Math.sin((T - K.En) * 6 - i * 0.3)) : 1} color={on ? HBF : '#8a8f99'} />; })}
+            return <Persona key={i} x={190 + c * 140} y={720 + f * 105} s={0.85 * (on ? 1 + 0.08 * Math.max(0, Math.sin((T - K.En) * 6 - i * 0.3)) : 1)} color={on ? HBF : '#8a8f99'} />; })}
         </SvgCapa>
       </Escena>
       {/* 11 · límites: aprobado (2023) → quimioterapia → precio */}
@@ -305,14 +305,14 @@ function Falciforme() {
       <Chip T={T} at={K.In + 0.4} until={K.Pr - 0.2} texto="BCL11A apaga la fetal" y={500} tam={42} borde={KC.violet} />
       <Etiqueta T={T} at={K.In + 2.0} until={K.Pr - 0.2} x={800} y={1180} texto="adulta: la dañada" lado="izq" tam={32} color={KC.ink} />
       <MitoTachado T={T} at={K.Pr + 0.2} tacharEn={K.Pr + 1.0} until={K.Me - 0.2} texto="¿arreglar el gen?" x={270} y={640} tam={38} />
-      <Chip T={T} at={meB + 1.3} until={K.Rg - 0.3} texto="CRISPR-Cas9 corta el interruptor" y={1490} tam={36} borde={KC.mint} />
-      <Chip T={T} at={K.Rg + 0.4} until={K.Vi - 0.2} texto="vuelven a la médula" x={680} y={1240 - 760} tam={40} borde={HBF} />
-      <Etiqueta T={T} at={K.Rg + 2.0} until={K.Vi - 0.2} x={600} y={1180} texto="glóbulos con hemoglobina fetal" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.En + 0.3} until={K.Li - 0.2} texto="NEJM 2024 · 29 de 30 evaluados" y={480} tam={42} borde={HBF} />
-      <Chip T={T} at={K.En + 2.4} until={K.Li - 0.2} texto="≥ 12 meses seguidos sin crisis graves" y={1220} tam={34} borde={HBF} />
+      <Chip T={T} at={meB + 1.3} until={K.Rg - 0.3} texto="CRISPR-Cas9 corta el interruptor" x={400} y={1490} tam={32} borde={KC.mint} />
+      <Chip T={T} at={K.Rg + 0.4} until={K.Vi - 0.2} texto="vuelven a la médula" y={1490} tam={40} borde={HBF} />
+      <Etiqueta T={T} at={K.Rg + 2.0} until={K.Vi - 0.2} x={560} y={1420} texto="glóbulos con hemoglobina fetal" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.En + 0.3} until={K.Li - 0.2} texto="NEJM 2024 · 29 de 30 evaluados" y={1490} tam={42} borde={HBF} />
+      <Chip T={T} at={K.En + 2.4} until={K.Li - 0.2} texto="≥ 12 meses seguidos sin crisis graves" y={1575} tam={34} borde={HBF} />
       <Chip T={T} at={K.Li + 0.2} until={liB - 0.1} texto="1.er medicamento con CRISPR aprobado" y={500} tam={38} borde={KC.blue} />
       <Chip T={T} at={liB + 0.2} until={liC - 0.1} texto="antes: quimioterapia fuerte" y={480} tam={42} borde={KC.red} />
-      <Etiqueta T={T} at={liB + 1.0} until={liC - 0.1} x={680} y={1060} texto="puede causar infertilidad" tam={30} color={KC.ink} />
+      <Etiqueta T={T} at={liB + 1.0} until={liC - 0.1} x={650} y={1060} texto="riesgo de infertilidad" tam={30} color={KC.ink} />
       <Chip T={T} at={liC + 0.5} until={K.Dl - 0.2} texto="precio de lista · EE. UU. · 2023" y={1490} tam={36} borde={KC.gold} />
       <Etiqueta T={T} at={K.Dl + 0.4} until={K.Ci - 0.2} x={60} y={1480} texto="HbS · la dañada" tam={32} color={HBS} />
       <Etiqueta T={T} at={K.Dl + 0.8} until={K.Ci - 0.2} x={1020} y={1480} texto="HbF · la fetal" lado="izq" tam={32} color={HBF} />
@@ -342,7 +342,7 @@ function Falciforme() {
         [CUES.Pregunta + 0.05, CUES.Pregunta + 3.3, 'avatar_06_pensativo_menton', 'grande'],
         [CUES.Medula + 1.8, CUES.Regreso - 0.2, 'avatar_13_senalando_arriba', 'bajo-der'],
         [CUES.Victoria + 0.8, CUES.Ensayo - 0.2, 'avatar_07_pensativo_puno', 'bajo-der'],
-        [CUES.Ensayo + 1.2, CUES.Limites - 0.2, 'avatar_02_apuntando_camara', 'bajo-der'],
+        [CUES.Ensayo + 1.2, CUES.Limites - 0.2, 'avatar_02_apuntando_camara', 'arriba-der'],
         [CUES.Limites + 5.3, CUES.Diluye - 0.2, 'avatar_11_sorprendido', 'grande-izq'],
         [CUES.Diluye + 0.2, CUES.Cierre - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Cierre + 0.2, CUES.Outro - 0.1, 'avatar_13_senalando_arriba', 'gancho']]} />

@@ -377,7 +377,7 @@ function Xeno() {
         [CUES.Gancho - 0.45, CUES.Espera - 0.1, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Espera + 0.5, CUES.Rechazo - 0.3, 'avatar_10_serio_molesto', 'bajo-der'],
         [CUES.Rechazo + 0.6, CUES.Azucares - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [CUES.Pregunta + 0.05, CUES.Humanos + 0.4, 'avatar_06_pensativo_menton', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Humanos - 0.15, 'avatar_06_pensativo_menton', 'grande'],
         [CUES.Humanos + 1.8, CUES.Virus - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Slayman + 0.8, CUES.Andrews - 0.3, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Dias + 0.4, CUES.Puente - 0.2, 'avatar_11_sorprendido', 'izq-alto'],

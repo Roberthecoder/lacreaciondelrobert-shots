@@ -189,9 +189,10 @@ function Hormona() {
         <SvgCapa>
           <Virus T={T} x={260} y={600} s={0.9} /><Tache x={260} y={600} p={kprog(T, K.P + 0.6, K.P + 1.2)} r={110} />
           <Bacteria T={T} x={260} y={960} largo={300} ancho={120} rot={-8} /><Tache x={260} y={960} p={kprog(T, K.P + 1.4, K.P + 2.0)} r={110} />
+          <text x={260} y={760} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.texto}>virus</text>
+          <text x={260} y={1100} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.texto}>bacteria</text>
         </SvgCapa>
-        <Etq T={T} at={K.P + 0.3} until={K.Pr} x={400} y={600} texto="virus" tam={40} />
-        <Etq T={T} at={K.P + 1.1} until={K.Pr} x={420} y={960} texto="bacteria" tam={40} />
+
       </Escena>
       {/* 6 · el prión: una proteína mal doblada que dobla a las demás */}
       <Escena T={T} a={K.Pr} b={K.C} zoom={0.06}>
@@ -212,8 +213,8 @@ function Hormona() {
       {/* 7 · el cerebro: aspecto de esponja */}
       <Escena T={T} a={K.C} b={K.Al} zoom={0.03}>
         <FondoMarca patron="oscuro" />
-        <SvgCapa><CerebroEsponja T={T} x={540} y={830} s={1.35} huecos={kprog(T, K.C + 0.4, K.Al - 0.3)} /></SvgCapa>
-        <Etq T={T} at={K.C + 0.6} until={K.Al - 0.2} x={120} y={1160} texto="enfermedad de Creutzfeldt-Jakob" tam={34} color={KC.gold2} />
+        <SvgCapa><CerebroEsponja T={T} x={540} y={780} s={1.35} huecos={kprog(T, K.C + 0.4, K.Al - 0.3)} /></SvgCapa>
+        <Etq T={T} at={K.C + 0.6} until={K.Al - 0.2} x={120} y={1110} texto="enfermedad de Creutzfeldt-Jakob" tam={34} color={KC.gold2} />
         <Chip T={T} at={K.C + 1.8} until={K.Al - 0.2} texto="huequitos: aspecto de esponja" y={1500} tam={34} borde="#f2a6b8" />
       </Escena>
       {/* 8 · 1985: la alerta y la suspensión */}
@@ -234,7 +235,7 @@ function Hormona() {
         <FondoLunares color={KC.cyan} />
         <Ambiente T={T} n={24} />
         <SvgCapa>
-          {[[150, 1120, 20, 2], [880, 1150, -25, 3], [120, 700, 70, 4]].map(([bx, by, r, sd], i) => <Bacteria key={i} T={T} x={bx} y={by} largo={170} ancho={70} rot={r + mece(T, sd, 0.3) * 6} seed={sd} />)}
+          {[[150, 1320, 20, 2], [900, 1330, -25, 3], [130, 620, 70, 4]].map(([bx, by, r, sd], i) => <Bacteria key={i} T={T} x={bx} y={by} largo={170} ancho={70} rot={r + mece(T, sd, 0.3) * 6} seed={sd} />)}
           <Bacteria T={T} x={500} y={900} largo={560} ancho={220} rot={-6} seed={1} adentro={(L, W) => <g transform={`translate(${L * 0.18} ${-W * 0.05}) rotate(${T * 25})`}>
             <circle r={52} fill="none" stroke="#9aa4ae" strokeWidth={12} />
             <path d="M 52 0 A 52 52 0 0 1 0 52" fill="none" stroke={KC.gold} strokeWidth={16} strokeLinecap="round" style={{ filter:`drop-shadow(0 0 8px ${KC.gold})` }} /></g>} />
@@ -242,8 +243,8 @@ function Hormona() {
             return <HormonaMol key={i} x={klerp(640, 900 - i * 30, p)} y={klerp(860, 560 + i * 40, p)} s={1.1} rot={p * 120 + i * 30} o={Math.min(1, (1 - p) * 3)} />; })}
         </SvgCapa>
         <Chip T={T} at={K.B + 0.3} until={K.S - 0.2} texto="octubre 1985 · FDA · Protropin" x={420} y={440} tam={36} borde={HGH} />
-        <Etq T={T} at={K.B + 0.8} until={K.S - 0.2} x={140} y={1180} texto="Escherichia coli" it tam={34} color={KC.ink} />
-        <Etq T={T} at={K.B + 1.8} until={K.S - 0.2} x={700} y={1060} texto="gen de la hormona humana" lado="der" tam={28} color={KC.ink} />
+        <Etq T={T} at={K.B + 0.8} until={K.S - 0.2} x={200} y={760} texto="Escherichia coli" it tam={34} color={KC.ink} />
+        <Etq T={T} at={K.B + 1.8} until={K.S - 0.2} x={640} y={1075} texto="gen de la hormona humana" lado="izq" tam={28} color={KC.ink} />
       </Escena>
       {/* 10 · sin glándulas humanas, ya no hay de dónde llegue el prión */}
       <Escena T={T} a={K.S} b={K.La} zoom={0.04}>
@@ -261,7 +262,7 @@ function Hormona() {
       <Escena T={T} a={K.La} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {(() => { const x = 840, y0 = 1140, y1 = 640, p = kprog(T, K.La + 1.2, K.La + 4.6, kEase.suave), yb = klerp(y0, y1, p);
+          {(() => { const x = 840, y0 = 1080, y1 = 610, p = kprog(T, K.La + 1.2, K.La + 4.6, kEase.suave), yb = klerp(y0, y1, p);
             return <g>
               <rect x={x - 46} y={y1} width={92} height={y0 - y1} rx={46} fill="rgba(0,0,0,.35)" stroke={KC.ink} strokeWidth={7} />
               <rect x={x - 34} y={yb} width={68} height={Math.max(0, y0 - yb - 12)} rx={34} fill={KC.gold2} />
@@ -298,7 +299,7 @@ function Hormona() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 2.4} until={K.H - 0.3} texto="hecha por bacterias" y={1500} tam={42} borde="#147a4c" />
-      <Etq T={T} at={K.H + 0.6} until={K.A - 0.3} x={460} y={1180} texto="hipófisis" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.6} until={K.A - 0.3} x={440} y={1070} texto="hipófisis" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.A + 0.3} until={K.L - 0.3} texto="desde 1958" x={300} y={440} tam={44} borde={KC.ink} />
       <NumeroGigante T={T} at={K.L + 0.3} until={K.E + 0.3} valor={16000} dur={2.6} etiqueta="glándulas por lote (CDC, 1985)" y={420} tam={180} color={KC.yellow} />
       <Chip T={T} at={K.E + 0.4} until={K.P - 0.2} texto="¿y si una venía enferma?" y={440} tam={40} borde={PRION} />
@@ -321,7 +322,8 @@ function Hormona() {
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Hipofisis - 0.25, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Antes + 0.6, CUES.Lote - 0.3, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [CUES.Pregunta - 0.2, CUES.Prion + 0.6, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Lote + 0.4, CUES.Escondido + 0.3, 'avatar_04_bajando_lentes', 'izq-alto'],
+        [CUES.Pregunta - 0.2, CUES.Prion - 0.1, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Prion + 1.6, CUES.Cerebro - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Alerta + 0.5, CUES.Bacteria - 0.4, 'avatar_10_serio_molesto', 'izq-alto'],
         [CUES.Bacteria + 1.0, CUES.SinTejido - 0.4, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
