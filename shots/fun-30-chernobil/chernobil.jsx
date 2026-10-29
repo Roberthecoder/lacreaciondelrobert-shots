@@ -294,34 +294,34 @@ function ChernobilShot() {
       <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.2} until={K.R - 0.3} texto="¿hollín?" x={300} y={440} tam={52} />
       <Chip T={T} at={K.G + 3.2} until={K.R - 0.3} texto="Chernóbil · reactor 4" x={400} y={1110} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.R + 0.4} until={K.E - 0.3} texto="1997–1998" x={300} y={440} tam={44} borde={KC.ink} />
-      <Etq T={T} at={K.R + 1.2} until={K.E - 0.3} x={60} y={1500} texto="edificio que cubre el reactor 4" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.R + 1.2} until={K.E - 0.3} x={60} y={1010} texto="edificio que cubre el reactor 4" tam={30} color={KC.texto} />
       <NumeroGigante T={T} at={K.E + 0.1} until={K.O - 0.3} valor={37} dur={1.7} etiqueta="especies de hongos" x={380} y={470} tam={170} color={KC.yellow} />
-      <Etq T={T} at={K.E + 1.4} until={K.O - 0.3} x={60} y={1260 - 60} texto="de 19 géneros" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 1.4} until={K.O - 0.3} x={620} y={470} texto="de 19 géneros" tam={30} color={KC.ink} />
       <Chip T={T} at={K.O + 0.6} until={K.Pi - 0.3} texto="más radiación" x={380} y={460} tam={42} borde={KC.red} />
-      <Etq T={T} at={K.O + 1.8} until={K.Pi - 0.3} x={60} y={1500} texto="hongos con melanina" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.O + 2.2} until={K.Pi - 0.3} x={60} y={1550} texto={<>p. ej. <i>Cladosporium sphaerospermum</i></>} tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Pi + 1.4} until={K.Pa - 0.3} texto="melanina" x={510} y={620} tam={48} borde={KC.ink} />
-      <Etq T={T} at={K.Pi + 0.6} until={K.Pa - 0.3} x={120} y={1500} texto="tu piel" tam={32} />
-      <Etq T={T} at={K.Pi + 0.9} until={K.Pa - 0.3} x={620} y={1500} texto="el hongo" tam={32} />
-      <Chip T={T} at={K.Pi + 2.2} until={K.Pa - 0.3} texto="no idéntica: de la misma familia" x={540} y={1150} tam={28} borde={KC.ink} />
+      <Etq T={T} at={K.O + 1.8} until={K.Pi - 0.3} x={420} y={1000} texto="hongos con melanina" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.O + 2.2} until={K.Pi - 0.3} x={360} y={1050} texto={<>p. ej. <i>Cladosporium sphaerospermum</i></>} tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Pi + 1.4} until={K.Pa - 0.3} texto="melanina" x={510} y={560} tam={48} borde={KC.ink} />
+      <Etq T={T} at={K.Pi + 0.6} until={K.Pa - 0.3} x={340} y={1060} texto="tu piel" tam={32} />
+      <Etq T={T} at={K.Pi + 0.9} until={K.Pa - 0.3} x={660} y={1060} texto="el hongo" tam={32} />
+      <Chip T={T} at={K.Pi + 2.2} until={K.Pa - 0.3} texto="no idéntica: de la misma familia" x={540} y={460} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.Pa + 0.2} until={K.P - 0.3} texto="AL MICROSCOPIO · pared del hongo" x={430} y={460} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.Pa + 1.0} until={K.P - 0.3} x={60} y={1500} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Pa + 1.4} until={K.P - 0.3} x={240} y={1110} texto="pared con melanina" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Pa + 2.0} until={K.P - 0.3} x={60} y={640} texto="esporas redondas" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 1.0} until={K.P - 0.3} x={60} y={560} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 1.4} until={K.P - 0.3} x={300} y={960} texto="pared con melanina" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Pa + 2.0} until={K.P - 0.3} x={700} y={1060} texto="esporas redondas" lado="izq" tam={28} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2007" quien="Nueva York" revista="Dadachova et al., PLoS ONE" y={700} />
       <NumeroGigante T={T} at={K.Es + 3.0} until={K.Cr - 0.3} valor={500} dur={1.0} prefijo="≈×" etiqueta="la radiación normal" x={420} y={360} tam={110} color={KC.yellow} />
-      <Etq T={T} at={K.Es + 3.2} until={K.Co - 0.3} x={140} y={1225} texto="con melanina" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Es + 3.4} until={K.Co - 0.3} x={620} y={1225} texto="sin melanina" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.2} until={K.Co - 0.3} x={170} y={1135} texto="con melanina" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.4} until={K.Co - 0.3} x={650} y={1135} texto="sin melanina" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Cr + 1.2} until={K.Co - 0.3} texto="con melanina: crece más" x={400} y={420} tam={36} borde={KC.leaf} />
       <Etq T={T} at={K.Co + 0.3} until={K.H - 0.3} x={60} y={440} texto="Cryptococcus neoformans" it tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Co + 1.0} until={K.H - 0.3} texto="poca comida" x={300} y={530} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.Co + 1.6} until={K.H - 0.3} x={60} y={1500} texto="las dos, con melanina" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.4} until={K.Sp - 0.3} x={120} y={1500} texto="luz → energía" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.4} until={K.Sp - 0.3} x={600} y={1500} texto="¿radiación → energía?" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Co + 1.0} until={K.H - 0.3} texto="poca comida" x={300} y={600} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.Co + 1.6} until={K.H - 0.3} x={60} y={530} texto="las dos, con melanina" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.4} until={K.Sp - 0.3} x={120} y={1100} texto="luz → energía" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.4} until={K.Sp - 0.3} x={600} y={1100} texto="¿radiación → energía?" tam={30} color={KC.ink} />
       <Chip T={T} at={K.H + 4.4} until={K.Sp - 0.3} texto="no está comprobado" x={420} y={430} tam={42} borde={KC.red} />
       <Chip T={T} at={K.Sp + 0.3} until={K.C - 0.3} texto="2018 · Estación Espacial" x={400} y={440} tam={38} borde={KC.cyan} />
-      <Etq T={T} at={K.Sp + 2.4} until={K.C - 0.3} x={60} y={1500} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Sp + 3.8} until={K.C - 0.3} texto="un poquito menos" x={400} y={540} tam={36} borde={KC.orange} />
+      <Etq T={T} at={K.Sp + 2.4} until={K.C - 0.3} x={60} y={1160} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Sp + 3.8} until={K.C - 0.3} texto="un poquito menos" x={300} y={1180} tam={36} borde={KC.orange} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="hongo blindado con melanina" x={420} y={440} tam={38} borde={KC.gold} />
 
       {/* barras de escala */}
