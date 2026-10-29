@@ -258,8 +258,8 @@ function MohoBanoShot() {
       <Escena T={T} a={K.Mi} b={K.Al} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          {[[200, MB.moho, 1], [540, MB.stachy, 2], [880, '#6b7378', 3]].map(([x, c, sd], i) => <Mancha key={i} x={x} y={1110} r={78} color={c} seed={sd} s={kprog(T, K.Mi + 2.6 + i * 0.25, K.Mi + 3.0 + i * 0.25, kEase.rebote)} />)}
-          {[370, 710].map((x, i) => <text key={i} x={x} y={1140} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Mi + 3.4 + i * 0.2, K.Mi + 3.7 + i * 0.2)}>=</text>)}
+          {[[200, MB.moho, 1], [540, MB.stachy, 2], [880, '#6b7378', 3]].map(([x, c, sd], i) => <Mancha key={i} x={x} y={1040} r={78} color={c} seed={sd} s={kprog(T, K.Mi + 2.6 + i * 0.25, K.Mi + 3.0 + i * 0.25, kEase.rebote)} />)}
+          {[370, 710].map((x, i) => <text key={i} x={x} y={1070} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Mi + 3.4 + i * 0.2, K.Mi + 3.7 + i * 0.2)}>=</text>)}
         </>)}
       </Escena>
       {/* 8 · alergia y asma */}
@@ -319,10 +319,10 @@ function MohoBanoShot() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.4} texto="¿mugre?" x={300} y={640} tam={56} />
-      <Chip T={T} at={K.G + 2.8} until={K.E - 0.3} texto="se come los restos de jabón" x={380} y={1070} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 2.8} until={K.E - 0.3} texto="algunos comen restos de jabón" x={380} y={1070} tam={30} borde={KC.yellow} />
       <Etq T={T} at={K.E + 0.6} until={K.Cl - 0.3} x={60} y={330} texto="esporas en el aire" tam={30} color={KC.ink} />
       <Chip T={T} at={K.E + 2.0} until={K.Cl - 0.3} texto="sin agua, no crecen" x={360} y={560} tam={38} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Cl + 0.3} until={K.Cl + 2.8} valor={113} dur={1.2} etiqueta="muestras de baños · 2010" x={420} y={560} tam={200} color={KC.gold2} />
+      <NumeroGigante T={T} at={K.Cl + 0.3} until={K.Cl + 2.8} valor={113} dur={1.2} etiqueta="muestras de baños · estudio de 2010" x={420} y={560} tam={200} color={KC.gold2} />
       <Chip T={T} at={K.Cl + 0.6} until={K.Cl + 2.8} texto="Países Bajos · Alemania · Austria" x={420} y={760} tam={28} borde={KC.gold} />
       <Etq T={T} at={K.Cl + 3.0} until={K.R - 0.3} x={60} y={420} texto="Cladosporium" it tam={44} color={MB.oliva2} />
       <Etq T={T} at={K.Cl + 3.3} until={K.R - 0.3} x={60} y={480} texto="moho negro" tam={30} />
@@ -334,9 +334,9 @@ function MohoBanoShot() {
       <Etq T={T} at={K.St + 1.6} until={K.Mi - 0.3} x={70} y={430} texto="Stachybotrys chartarum" it tam={36} color={KC.ink} />
       <Chip T={T} at={K.St + 2.2} until={K.Mi - 0.3} texto="celulosa + agua constante" x={360} y={1150} tam={30} borde={MB.stachy} />
       <Etq T={T} at={K.St + 2.6} until={K.Mi - 0.3} x={480} y={1060} texto="papel mojado" tam={26} color={KC.ink} />
-      <MitoTachado T={T} at={K.Mi + 0.2} tacharEn={K.Mi + 1.6} until={K.Al - 0.3} texto="MÁS PELIGROSO QUE LOS DEMÁS" x={540} y={800} tam={40} />
-      <Chip T={T} at={K.Mi + 1.4} until={K.Al - 0.3} texto="no hay prueba que lo ligue a síntomas (CDC)" x={540} y={900} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.Mi + 3.6} until={K.Al - 0.3} texto="todo moho se trata igual" x={540} y={985} tam={30} borde={KC.leaf} />
+      <MitoTachado T={T} at={K.Mi + 0.2} tacharEn={K.Mi + 1.6} until={K.Al - 0.3} texto="MÁS PELIGROSO QUE LOS DEMÁS" x={540} y={740} tam={40} />
+      <Chip T={T} at={K.Mi + 1.4} until={K.Al - 0.3} texto="no hay prueba que lo ligue a síntomas (CDC)" x={540} y={830} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Mi + 3.6} until={K.Al - 0.3} texto="todo moho se trata igual" x={540} y={905} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.Al + 0.6} until={K.Es - 0.3} texto="alergia (si eres sensible)" x={340} y={480} tam={30} borde={KC.yellow} />
       <Chip T={T} at={K.Al + 3.0} until={K.Es - 0.3} texto="asma (si tienes asma y alergia)" x={340} y={570} tam={30} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.3} anio="2010" quien="Osaka, Japón" revista="Hamada y Abe · Biocontrol Science" y={560} />
@@ -355,8 +355,8 @@ function MohoBanoShot() {
       <BarraEscala T={T} at={K.R} until={K.P} texto="10 cm" largo={100} />
       <BarraEscala T={T} at={K.St} until={K.Mi} texto="50 cm" largo={200} />
       <BarraEscala T={T} at={K.Mi} until={K.Al} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.Al} until={K.Es} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.Es} until={K.S} texto="5 cm" largo={110} />
+      <BarraEscala T={T} at={K.Al} until={K.Es} texto="10 cm" largo={180} />
+      <BarraEscala T={T} at={K.Es} until={K.S} texto="5 cm" largo={220} />
       <BarraEscala T={T} at={K.S} until={K.Ou} texto="10 cm" largo={100} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
@@ -367,7 +367,7 @@ function MohoBanoShot() {
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.St - 0.1} texto="¿Y el *moho negro tóxico?*" />
       <Subtitulo T={T} idx={5} at={K.St + 0.1} until={K.Mi - 0.1} texto="Crece en *celulosa siempre mojada.*" />
       <Subtitulo T={T} idx={6} at={K.Mi + 0.1} until={K.Al - 0.1} texto="CDC: todo moho *se trata igual.*" />
-      <Subtitulo T={T} idx={7} at={K.Al + 0.1} until={K.Es - 0.1} texto="Alergia, y asma *si eres alérgico.*" />
+      <Subtitulo T={T} idx={7} at={K.Al + 0.1} until={K.Es - 0.1} texto="Alergia, y asma *si tienes asma y alergia.*" />
       <Subtitulo T={T} idx={8} at={K.Es + 0.1} until={K.S - 0.1} texto="Comen jabón… *en seco crecen mal.*" />
       <Subtitulo T={T} idx={9} at={K.S + 0.1} until={K.Ta - 0.1} texto="Extractor, ventana y *humedad < 50 %.*" />
       <Subtitulo T={T} idx={10} at={K.Ta + 0.1} until={K.C - 0.1} texto="Quitarlo, *no solo matarlo.*" />
@@ -377,7 +377,7 @@ function MohoBanoShot() {
         [K.G - 0.45, K.G + 4.2, 'avatar_11_sorprendido', 'gancho'],
         [K.Cl + 3.0, K.R - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.R + 0.5, K.P - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
-        [K.P + 0.05, K.St + 1.5, 'avatar_07_pensativo_puno', 'grande'],
+        [K.P + 0.05, K.St + 0.5, 'avatar_07_pensativo_puno', 'grande'],
         [K.Mi + 0.5, K.Al - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [K.Al + 0.6, K.Es - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.Es + 2.6, K.S - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],

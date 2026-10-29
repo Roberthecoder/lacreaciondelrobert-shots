@@ -28,7 +28,32 @@
 
 **Música:** cama grave continua, curiosa (no tensa), sin golpe; efectos en el mismo cuadro: tic del cronómetro de días, burbujeo del tubo que se aclara, golpe del sello, selva (gotas), clic de cada Petri, tijeritas de la enzima, dos tubos en sincronía, "?" con un acorde suspendido, rasgado de la película, contador del 664, báscula que baja, tres palomitas, crecimiento suave del micelio.
 
-Barra de escala: 10 cm (tubo y bolsa), 1 cm (tallo), 10 µm (esporas e hifas), 10 nm (enzima y cadena, esquemático).
+Barras de escala: 5 cm (tubo), 10 cm (tallo), 10 µm (conidios: ~25 µm de largo), 10 cm (cajas de Petri), 10 nm (enzima y cadena, esquemático), 5000 km (planeta), 5 cm (tubo, caja de Petri, cierre), 10 cm (bolsa, báscula), 20 cm (botes), 1 cm (micelio).
+
+**Dibujo de *Pestalotiopsis microspora*:** conidios fusiformes de 5 células (4 septos), ~21–28 × 6.5–8.5 µm, 3 células centrales cafés, puntas transparentes, 2–3 apéndices tubulares arriba y 1 abajo; barra 10 µm.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces los hongos limpiarán el planeta?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.3 | 11_sorprendido | `gancho` | «la mitad de un plástico en unos cinco días» (cuadro 0) |
+| 2 | 8.4 | 9.9 | 13_senalando_arriba | `arriba-der` | aparecen los conidios de *Pestalotiopsis* |
+| 3 | 12.8 | 14.6 | 04_bajando_lentes | `arriba-der` | uno de 59 hongos destaca |
+| 4 | 17.7 | 19.8 | 11_sorprendido | `arriba-der` | «igual de rápido sin oxígeno» |
+| 5 | 20.0 | 22.9 | 07_pensativo_puno | `grande` | «¿limpiarán el planeta?» |
+| 6 | 23.5 | 26.8 | 12_perfil_serio | `arriba-der` | «Ojo: era poliuretano suspendido en agua» |
+| 7 | 29.6 | 32.7 | 06_pensativo_menton | `arriba-der` | «dos meses, y con azúcar» |
+| 8 | 33.4 | 36.3 | 11_sorprendido | `arriba-der` | «664 reportes» |
+| 9 | 37.3 | 40.7 | 10_serio_molesto | `arriba-der` | «no halló pruebas… polietileno» |
+| 10 | 41.9 | 45.2 | 04_bajando_lentes | `arriba-der` | «suelta aditivos, no se lo comen» |
+| 11 | 45.8 | 49.3 | 13_senalando_arriba | `arriba-der` | «lo que sí sirve» |
+| 12 | 49.8 | 52.4 | 05_sonriendo_dientes_uniformes | `arriba-der` | «una pista, no un permiso» |
+| 13 | 53.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «en un tubo, no en tu basura» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 13 · **39.5 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.
 
 ## Notas para el verificador
 - «Deshizo la mitad de un plástico en unos cinco días»: en el artículo es el **tiempo medio de aclaramiento** ("half time for clearance") de una suspensión de poliuretano (Impranil DLN) en cultivo líquido: el líquido lechoso se vuelve transparente al degradarse el polímero. "En un tubo" lo dice desde la primera frase.

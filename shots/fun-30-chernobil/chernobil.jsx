@@ -306,9 +306,9 @@ function ChernobilShot() {
       <Etq T={T} at={K.Pi + 0.9} until={K.Pa - 0.3} x={660} y={1060} texto="el hongo" tam={32} />
       <Chip T={T} at={K.Pi + 2.2} until={K.Pa - 0.3} texto="no idéntica: de la misma familia" x={390} y={540} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.Pa + 0.2} until={K.P - 0.3} texto="AL MICROSCOPIO · pared del hongo" x={430} y={460} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.Pa + 1.0} until={K.P - 0.3} x={60} y={560} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 1.0} until={K.P - 0.3} x={60} y={1120} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
       <Etq T={T} at={K.Pa + 1.4} until={K.P - 0.3} x={300} y={960} texto="pared con melanina" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Pa + 2.0} until={K.P - 0.3} x={700} y={1060} texto="esporas casi redondas" lado="izq" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 2.0} until={K.P - 0.3} x={1000} y={1035} texto="esporas casi redondas" lado="izq" tam={28} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2007" quien="Nueva York" revista="Dadachova et al., PLoS ONE" y={700} />
       <NumeroGigante T={T} at={K.Es + 3.0} until={K.Cr - 0.3} valor={500} dur={1.0} prefijo="≈" sufijo="×" etiqueta="la radiación normal" x={540} y={430} tam={110} color={KC.yellow} />
       <Etq T={T} at={K.Es + 3.2} until={K.Co - 0.3} x={170} y={700} texto="con melanina" tam={28} color={KC.ink} />
