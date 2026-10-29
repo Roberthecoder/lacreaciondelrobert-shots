@@ -5,600 +5,974 @@
    "titulo": "Tu voz grabada no suena rara: es tu voz sin tus huesos (conducción ósea)",
    "serie": "Shot Científico",
    "numero": 10,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-10-voz-grabada",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Reinfeldt, S. et al. (2010). Hearing one's own voice during phoneme vocalization—Transmission by air and bone conduction. J. Acoust. Soc. Am. 128(2): 751–762.",
+    "Toya, T., Birkholz, P. y Unoki, M. (2020). Measurements of transmission characteristics related to bone-conducted speech using excitation signals in the oral cavity. J. Speech Lang. Hear. Res. 63(12): 4252–4264 (el hueso deja pasar los graves y apaga los agudos).",
+    "Hughes, S. M. y Harrison, M. A. (2013). I like my voice better: self-enhancement bias in perceptions of voice attractiveness. Perception 42(9): 941–949. doi:10.1068/p7526 (Albright College, Pensilvania).",
+    "Efecto de oclusión (taparse los oídos refuerza los graves por conducción ósea): Stenfelt, S. y Reinfeldt, S. (2007). A model of the occlusion effect with bone-conducted stimulation. Int. J. Audiol. 46(10): 595–608."
+   ],
+   "derivados": [
+    "Por qué los cantantes usan audífonos de retorno",
+    "Por qué te oyes distinto con un resfriado"
+   ]
   },
   {
    "id": "cie-moscas-volantes",
    "titulo": "Las manchitas que flotan en tu vista están dentro de tu ojo (moscas volantes del vítreo)",
    "serie": "Shot Científico",
    "numero": 11,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-11-moscas-volantes",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Webb, B. F. et al. (2013). Prevalence of vitreous floaters in a community sample of smartphone users. Int. J. Ophthalmol. 6(3): 402–405 (PMC3693028): \"A total of 603 individuals completed the survey… with 76% reporting that they see floaters\".",
+    "American Academy of Ophthalmology / National Eye Institute: qué son las moscas volantes (grumos del vítreo que proyectan sombra en la retina) y señales de alarma (muchas de golpe, destellos, sombra como cortina).",
+    "Ivanova, T. et al. (2016). Vitrectomy for primary symptomatic vitreous opacities: an evidence-based review. Eye (PMC4869141): gel casi todo de agua, fibras de colágeno, se licúa con la edad y las fibras se agregan."
+   ],
+   "derivados": [
+    "Por qué ves puntitos al mirar el cielo azul (fenómeno de Scheerer)",
+    "Qué es el humor vítreo y por qué cambia con la edad"
+   ]
   },
   {
    "id": "cie-tronar-dedos",
    "titulo": "Qué truena cuando te truenas los dedos (cavidad en el líquido sinovial; Unger 60 años)",
    "serie": "Shot Científico",
    "numero": 12,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-12-tronar-dedos",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Kawchuk, G. N. et al. (2015). Real-time visualization of joint cavitation. PLOS ONE 10(4): e0119470. Universidad de Alberta (Edmonton, Canadá).",
+    "Periodo de espera de ~20 min: citado en Kawchuk et al. 2015 y en Chandran Suja y Barakat 2018 (originalmente Unsworth et al. 1971, Ann. Rheum. Dis.).",
+    "Chandran Suja, V. y Barakat, A. I. (2018). A mathematical model for the sounds produced by knuckle cracking. Scientific Reports 8: 4600.",
+    "Unger, D. L. (1998). Does knuckle cracking lead to arthritis of the fingers? Arthritis & Rheumatism 41(5): 949–950."
+   ],
+   "derivados": [
+    "Por qué tronar la espalda se siente bien",
+    "Qué es el líquido sinovial"
+   ]
   },
   {
    "id": "cie-hervir-altura",
    "titulo": "En la Ciudad de México el agua hierve antes de 100 °C (altura y presión del aire)",
    "serie": "Shot Científico",
    "numero": 13,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-13-hervir-altura",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "USDA FSIS. High Altitude Cooking and Food Safety: \"At 7,500 feet, water boils at about 198 °F\" y \"With each 500-feet increase in elevation, the boiling point of water is lowered by just under 1 °F\" (198 °F = 92.2 °C; 7,500 ft = 2,286 m).",
+    "Altitudes: Ciudad de México ≈ 2,240 m; Guadalajara ≈ 1,536 m (INEGI, Resumen geográfico de Jalisco, Censo 2020).",
+    "Olla exprés: NDSU Extension FN2064, \"at 250 F under 15 psi\" (250 °F ≈ 121 °C).",
+    "Everest: LibreTexts (Chemistry), el agua hierve en la cima a \"only about 70 °C\"."
+   ],
+   "derivados": [
+    "Por qué los frijoles tardan más en la CDMX",
+    "Ollas exprés: cómo cocinan más rápido"
+   ]
   },
   {
    "id": "cie-contar-trueno",
    "titulo": "Cuenta los segundos entre el rayo y el trueno: a qué distancia cayó (luz contra sonido)",
    "serie": "Shot Científico",
    "numero": 14,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-14-contar-trueno",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "NOAA / National Weather Service. Lightning science: thunder: \"the temperature of the air in the lightning channel may reach as high as 50,000 degrees Fahrenheit, 5 times hotter than the surface of the sun\" (50,000 °F ≈ 27,760 °C).",
+    "NWS: contar segundos entre el destello y el trueno y dividir entre 5 da millas (≈ entre 3 da km); retumbo = más lejos.",
+    "NWS Lightning safety: \"lightning can strike outward 10 miles from a thunderstorm\" (≈ 16 km); \"When thunder roars, go indoors\"; esperar 30 minutos después del último trueno.",
+    "Velocidad del sonido en el aire a 20 °C ≈ 343 m/s."
+   ],
+   "derivados": [
+    "Por qué los relámpagos no suenan igual de lejos y de cerca",
+    "Qué es un trueno seco"
+   ]
   },
   {
    "id": "cie-estornudo",
    "titulo": "Tu estornudo no sale a 160 km/h: lo que midieron con cámaras de alta velocidad",
    "serie": "Shot Científico",
    "numero": 15,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-15-estornudo",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Tang, J. W. et al. (2013). Airflow dynamics of human jets: sneezing and breathing — potential sources of infectious aerosols. PLoS ONE 8(4): e59970 (PMC3613375): \"Six volunteers… The maximum visible distance… was 0.6 m, the maximum sneeze velocity derived… was 4.5 m/s\" · \"For nasal breathing… 0.6 m and 1.4 m/s\" · estimaciones antiguas de \"up to 100 m/s\" (Wells), \"an inference drawn from some basic physical principles applied to a very simplified setting\".",
+    "Tang, J. W. et al. (2011). Qualitative real-time schlieren and shadowgraph imaging of human exhaled airflows: an aid to aerosol infection control. PLoS ONE 6(6): e21392 (taparse con una mano contiene mal la tos y el estornudo).",
+    "CDC: cubrirse con un pañuelo o con la parte interna del codo al toser o estornudar."
+   ],
+   "derivados": [
+    "Por qué estornudas al ver el sol (reflejo fótico)",
+    "Por qué no puedes estornudar con los ojos abiertos"
+   ]
   },
   {
    "id": "cie-luna-se-aleja",
    "titulo": "La Luna se aleja de ti unos 3.8 cm cada año (láseres y espejos del Apolo)",
    "serie": "Shot Científico",
    "numero": 16,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-16-luna-se-aleja",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "NASA Goddard (eclipse.gsfc.nasa.gov), Measuring the Moon's Distance (LPI Bulletin 1994): \"the Moon is receding from Earth at a rate of about 3.8 centimeters per year\"; el arreglo del Apolo 11 se colocó en 1969.",
+    "Williams, J. G. y Boggs, D. H. / Dickey, J. O. et al. (1994). Lunar Laser Ranging: a continuing legacy of the Apollo program. Science 265: 482–490.",
+    "Tiempo de ida y vuelta de la luz ≈ 2.5 s (distancia media ≈ 384,400 km).",
+    "Mecanismo: frenado por mareas (NASA / revisiones de dinámica Tierra-Luna)."
+   ],
+   "derivados": [
+    "Por qué siempre vemos la misma cara de la Luna",
+    "Cómo las mareas frenan la Tierra"
+   ]
   },
   {
    "id": "cie-mapa-lengua",
    "titulo": "El mapa de los sabores de la lengua es un mito (receptores en toda la lengua)",
    "serie": "Shot Científico",
    "numero": 17,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-17-mapa-lengua",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Wolfe et al., Sensation & Perception (Oxford University Press), ensayo «The tongue map»: Hänig (1901) midió umbrales un poco distintos; Boring (1942) los graficó.",
+    "Chandrashekar, J., Hoon, M. A., Ryba, N. J. y Zuker, C. S. (2006). The receptors and cells for mammalian taste. Nature 444: 288–294.",
+    "Revisión 2022 (PMC8956797): los receptores del gusto responden a todos los sabores sin importar su lugar.",
+    "Umami: glutamato en caldos y jitomate (revisiones de fisiología del gusto)."
+   ],
+   "derivados": [
+    "Cuántos sabores básicos existen (umami y otros)",
+    "Por qué la comida sabe distinta con gripa"
+   ]
   },
   {
    "id": "cie-gps-relatividad",
    "titulo": "Tu GPS funciona gracias a Einstein: los relojes de los satélites se adelantan",
    "serie": "Shot Científico",
    "numero": 18,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-18-gps-relatividad",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Ashby, N. (2003). Relativity in the Global Positioning System. Living Reviews in Relativity 6: 1.",
+    "GPS.gov: altitud orbital ≈ 20,200 km; constelación de 24+ satélites.",
+    "Pogge, R. W. (Ohio State University). Real-World Relativity: The GPS Navigation System: ≈ +45 µs/día por gravedad, ≈ −7 µs/día por velocidad, neto ≈ +38 µs/día; ≈ 14,000 km/h.",
+    "Ashby, N. (2002). Relativity and the Global Positioning System. Physics Today 55(5): 41–47: sin corrección, errores de navegación de \"more than 11 km\" en un día."
+   ],
+   "derivados": [
+    "El tiempo pasa más lento en el primer piso que en el último",
+    "Cómo funciona un reloj atómico"
+   ]
   },
   {
    "id": "cie-piel-gallina",
    "titulo": "La piel de gallina: músculos diminutos en cada pelo (y por qué ya no te sirve)",
    "serie": "Shot Científico",
    "numero": 19,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-19-piel-gallina",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Shwartz, Y. et al. (2020). Cell types promoting goosebumps form a niche to regulate hair follicle stem cells. Cell 182(3): 578–593 (laboratorio de Ya-Chieh Hsu, Harvard): \"APMs and sympathetic nerves form a dual-component niche\"; frío → piel de gallina a corto plazo y activación de células madre y pelo nuevo a largo plazo.",
+    "Músculo erector del pelo (arrector pili): contracción por el sistema nervioso simpático (frío, emociones).",
+    "Pelo erizado como aislante en mamíferos con pelaje y para verse más grandes (revisiones de fisiología/termorregulación)."
+   ],
+   "derivados": [
+    "Por qué se te eriza la piel con la música",
+    "Qué son los músculos erectores del pelo"
+   ]
   },
   {
    "id": "cie-punto-ciego",
    "titulo": "Tienes un hoyo en tu vista y tu cerebro lo rellena (punto ciego, prueba en pantalla)",
    "serie": "Shot Científico",
    "numero": 20,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-20-punto-ciego",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Mariotte, E. (1668). Descripción del punto ciego (Académie des sciences / Philosophical Transactions).",
+    "Disco óptico sin fotorreceptores: Kolb, H. Webvision (Univ. of Utah) / revisiones de anatomía de la retina.",
+    "Relleno perceptual (filling-in) del punto ciego: Ramachandran, V. S. (1992). Blind spots. Scientific American 266(5): 86–91; Komatsu, H. (2006). Nat. Rev. Neurosci. 7: 220–231.",
+    "Ojo de cefalópodos sin punto ciego: retina invertida en vertebrados vs. no invertida en pulpos (revisiones de evolución del ojo)."
+   ],
+   "derivados": [
+    "Por qué no ves tu nariz todo el tiempo",
+    "Cómo tu cerebro rellena huecos de la vista"
+   ]
   },
   {
    "id": "cie-hipo",
    "titulo": "El hipo: un espasmo del diafragma y la glotis que se cierra de golpe",
    "serie": "Shot Científico",
    "numero": 21,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-21-hipo",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Hipo: contracción involuntaria del diafragma seguida del cierre de la glotis (Kahrilas, P. J. y Shi, G. (1997). Why do we hiccup? Gut 41: 712–713).",
+    "Causas comunes y que el hipo de más de 48 horas requiere atención médica (NHS / Mayo Clinic / Cleveland Clinic).",
+    "Hipótesis de las branquias: Straus, C. et al. (2003). A phylogenetic hypothesis for the origin of hiccough. BioEssays 25: 182–188.",
+    "Hipótesis de la lactancia: Howes, D. (2012). Hiccups: a new explanation for the mysterious reflex. BioEssays 34: 451–453."
+   ],
+   "derivados": [
+    "Por qué los bebés tienen hipo antes de nacer",
+    "Remedios del hipo: cuáles tienen evidencia"
+   ]
   },
   {
    "id": "cie-agujetas",
    "titulo": "Las agujetas no son ácido láctico (dolor muscular tardío)",
    "serie": "Shot Científico",
    "numero": 22,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-22-agujetas",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Schwane, J. A., Watrous, B. G., Johnson, S. R. y Armstrong, R. B. (1983). Is lactic acid related to delayed-onset muscle soreness? The Physician and Sportsmedicine 11(3): 124–131 (\"Lactic acid was never elevated in downhill runners\"). También: Schwane et al. (1983), Med. Sci. Sports Exerc. 15(1): 51–56.",
+    "Cheung, K., Hume, P. y Maxwell, L. (2003). Delayed onset muscle soreness: treatment strategies and performance factors. Sports Med. 33(2): 145–164 (inicio y pico 24–72 h; teorías).",
+    "Hotfiel, T. et al. (2018). Advances in delayed-onset muscle soreness (DOMS). Sportverletz Sportschaden (revisión).",
+    "Efecto de la serie repetida: McHugh, M. P. (2003). Recent advances in the understanding of the repeated bout effect. Scand. J. Med. Sci. Sports 13: 88–97."
+   ],
+   "derivados": [
+    "Por qué estirarte no evita las agujetas",
+    "Qué le pasa al músculo cuando entrenas"
+   ]
   },
   {
    "id": "cie-helio-voz",
    "titulo": "El helio no te hace la voz más aguda como crees: cambia el timbre (formantes)",
    "serie": "Shot Científico",
    "numero": 23,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-23-helio-voz",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Velocidad del sonido: aire ≈ 343 m/s; helio ≈ 965–1,007 m/s (≈ 2.8–2.9 veces) — tablas de física (Engineering Toolbox / HyperPhysics).",
+    "Formantes y helio: la frecuencia fundamental casi no cambia; los formantes suben (Beil, R. G. (1962). Frequency analysis of vowels produced in a helium-rich atmosphere. J. Acoust. Soc. Am. 34: 347–349; Ackerman y Maitland / revisiones de acústica del habla).",
+    "Hexafluoruro de azufre: velocidad del sonido ≈ 134 m/s.",
+    "Peligro de inhalar helio (asfixia por desplazamiento de oxígeno): FDA / American Association of Poison Control Centers / CDC."
+   ],
+   "derivados": [
+    "Por qué el hexafluoruro de azufre hace la voz grave",
+    "Cómo viaja el sonido en distintos gases"
+   ]
   },
   {
    "id": "cie-gotas-lluvia",
    "titulo": "Las gotas de lluvia no tienen forma de lágrima: parecen pan de hamburguesa",
    "serie": "Shot Científico",
    "numero": 24,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-24-gotas-lluvia",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "USGS Water Science School: The Shape of a Raindrop (\"Raindrops are not tear-shaped… hamburger bun… when the radius exceeds about 4 mm (≈ 8–9 mm de ancho)… parachute… breaks apart\").",
+    "NASA GPM: Raindrops are not tear-shaped (forma de las gotas).",
+    "Gunn, R. y Kinzer, G. D. (1949). The terminal velocity of fall for water droplets in stagnant air. J. Meteorol. 6: 243–248 (≈ 9 m/s para gotas grandes).",
+    "9 m/s × 3.6 = 32.4 km/h."
+   ],
+   "derivados": [
+    "Por qué las gotas grandes se rompen al caer",
+    "Cómo huele la lluvia (petricor)"
+   ]
   },
   {
    "id": "cie-sol-8-minutos",
    "titulo": "El Sol que ves es el de hace 8 minutos (la luz tarda en llegar)",
    "serie": "Shot Científico",
    "numero": 25,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-25-sol-8-minutos",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "NASA: la luz del Sol tarda unos 8 minutos y 20 segundos en llegar a la Tierra (distancia media ≈ 150 millones de km; 1 UA = 149,597,870.7 km; 499 s).",
+    "Velocidad de la luz en el vacío: 299,792.458 km/s (BIPM / NIST).",
+    "Distancia media Tierra-Luna ≈ 384,400 km → ≈ 1.28 s.",
+    "Sirio: la estrella más brillante del cielo nocturno, a unos 8.6 años luz (NASA / ESA Hipparcos)."
+   ],
+   "derivados": [
+    "Cuánto tarda la luz de la Luna en llegar",
+    "Por qué el Sol no se apaga de golpe si desapareciera"
+   ]
   },
   {
    "id": "cie-microondas",
    "titulo": "El microondas no calienta de adentro hacia afuera",
    "serie": "Shot Científico",
    "numero": 26,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-26-microondas",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "NC State Extension (2024): las microondas penetran de ¾ a 1½ pulgadas; Tang, J. (2015). Unlocking potentials of microwaves for food safety and quality. J. Food Sci. 80(8): E1776–E1793 (profundidad de 0.38 a 1.7 cm a 2,450 MHz; frecuencia de los hornos 2,450 MHz).",
+    "FDA. Microwave Ovens: las microondas hacen vibrar las moléculas de agua y eso produce calor; el interior se cocina por conducción. Reposo: NC State (2024), \"Standing time allows for the temperatures to equalize throughout the entire food.\"",
+    "Wi-Fi en la banda de 2.4 GHz (IEEE 802.11).",
+    "Puntos calientes por ondas estacionarias y la razón del plato giratorio (física de hornos de microondas)."
+   ],
+   "derivados": [
+    "Por qué los platos se calientan más que la comida",
+    "Por qué no hay que meter metal al microondas"
+   ]
   },
   {
    "id": "cie-pie-dormido",
    "titulo": "Por qué se te duerme el pie (nervios aplastados y el hormigueo)",
    "serie": "Shot Científico",
    "numero": 27,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-27-pie-dormido",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "NHS. Pins and needles: sensación temporal por presión sobre un nervio; consultar si es frecuente o no se quita.",
+    "Cleveland Clinic / NHS: «pins and needles», compresión del nervio y su riego sanguíneo; se quita al cambiar de posición.",
+    "Nervio cubital y el «hueso de la risa» (funny bone): Cleveland Clinic / Mayo Clinic."
+   ],
+   "derivados": [
+    "Por qué se te duerme la mano al dormir",
+    "Qué pasa en tu nervio cuando lo aprietas"
+   ]
   },
   {
    "id": "cie-caracol-mar",
    "titulo": "El mar que oyes en un caracol no es el mar (resonancia del ruido del cuarto)",
    "serie": "Shot Científico",
    "numero": 28,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-28-caracol-mar",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Geerat Vermeij (UC Davis), citado en HuffPost (2018): la concha refuerza el ruido ambiental; en un cuarto insonorizado \"you would hear nothing\". Wikipedia, «Seashell resonance».",
+    "California Magazine (UC Berkeley, 2007): \"The noisier your environment, the louder the sound\"; un vaso o la mano ahuecada hacen lo mismo.",
+    "Tamaño de la cavidad y tono: cavidades más grandes resuenan a frecuencias más bajas."
+   ],
+   "derivados": [
+    "Por qué el sonido del mar se oye en un vaso",
+    "Qué es la resonancia"
+   ]
   },
   {
    "id": "cie-espejo",
    "titulo": "El espejo no te invierte izquierda y derecha: te invierte adelante y atrás",
    "serie": "Shot Científico",
    "numero": 29,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-29-espejo",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Explicación física del espejo plano: invierte la dirección perpendicular a su superficie (adelante-atrás), no izquierda-derecha (BBC Science Focus; David Darling, Encyclopedia of Science; A Moment of Science, 2019).",
+    "Letras invertidas en ambulancias para leerse en el retrovisor (especificación federal KKK-A-1822 de la GSA, EE. UU.; regla del estado de Oregon).",
+    "Espejo de dos espejos a 90° (espejo «no inversor»)."
+   ],
+   "derivados": [
+    "Por qué tu cara en foto se ve rara (efecto de mera exposición)",
+    "Por qué el espejo no invierte arriba y abajo"
+   ]
   },
   {
    "id": "cie-pajaros-cables",
    "titulo": "Por qué los pájaros en los cables no se electrocutan",
    "serie": "Shot Científico",
    "numero": 30,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-30-pajaros-cables",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Explicación de física: sin diferencia de potencial entre las patas no fluye corriente apreciable por el ave (American Physical Society / Scientific American).",
+    "APLIC (Avian Power Line Interaction Committee) (2006). Suggested Practices for Avian Protection on Power Lines: electrocución cuando el ave toca dos conductores o un conductor y tierra; aves grandes como águilas; separaciones y cubiertas.",
+    "Seguridad ante cables caídos (OSHA / compañías eléctricas / CFE)."
+   ],
+   "derivados": [
+    "Por qué las ardillas caminan en cables sin electrocutarse",
+    "Por qué los linieros usan guantes"
+   ]
   },
   {
    "id": "cie-ciclo-nasal",
    "titulo": "Respiras más por una fosa nasal que por la otra, y se turnan (ciclo nasal)",
    "serie": "Shot Científico",
    "numero": 31,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-31-ciclo-nasal",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Pendolino, A. L. et al. (2018). The nasal cycle: a comprehensive review. Rhinology Online 1: 67–76 (duración de 30 min a varias horas; resistencia total casi constante; funciones propuestas).",
+    "Hasegawa, M. y Kern, E. B. (1977). The human nasal cycle. Mayo Clin. Proc. 52: 28–34.",
+    "Congestión del lado de abajo al acostarse de lado: Pendolino et al. (2018); con gripa los cambios son más grandes: Eccles, R. (1996). Acta Otolaryngol. 116: 77–81."
+   ],
+   "derivados": [
+    "Por qué una fosa nasal se tapa al acostarte",
+    "Qué son los cornetes"
+   ]
   },
   {
    "id": "cie-dolor-tarde",
    "titulo": "Por qué el dolor del dedo golpeado llega después del golpe (dos tipos de fibras)",
    "serie": "Shot Científico",
    "numero": 32,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-32-dolor-tarde",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Yap, J. L. Y. et al. (2020), tabla adaptada de Fix y Brueckner (2009): primer dolor por fibras Aδ (≈ 3–30 m/s) y segundo dolor por fibras C (≈ 0.5–2 m/s); tacto Aβ ≈ 33–75 m/s.",
+    "Melzack, R. y Wall, P. D. (1965). Pain mechanisms: a new theory. Science 150: 971–979 (teoría de la compuerta)."
+   ],
+   "derivados": [
+    "Por qué el golpe en el dedo chiquito duele tanto",
+    "Las dos fibras del dolor"
+   ]
   },
   {
    "id": "cie-tierra-gira",
    "titulo": "Ahora mismo vas a más de 1,500 km/h y no lo sientes (la Tierra gira)",
    "serie": "Shot Científico",
    "numero": 33,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-33-tierra-gira",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Circunferencia ecuatorial de la Tierra ≈ 40,075 km; rotación sideral ≈ 23 h 56 min → ≈ 1,670 km/h en el ecuador (NASA).",
+    "Velocidad a la latitud de Guadalajara (20.7° N) y CDMX (19.4° N): 1,670 × cos(lat) ≈ 1,560–1,580 km/h; × 24 h ≈ 37,500 km.",
+    "Péndulo de Foucault, 1851, París (Panthéon) (Smithsonian / Panthéon).",
+    "El cuerpo detecta aceleraciones, no velocidad constante (sistema vestibular)."
+   ],
+   "derivados": [
+    "Por qué no sentimos que la Tierra gira",
+    "El péndulo de Foucault"
+   ]
   },
   {
    "id": "cie-nube-pesa",
    "titulo": "Una nube pesa cientos de toneladas y aun así flota",
    "serie": "Shot Científico",
    "numero": 34,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-34-nube-pesa",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "LeMone, P. (NCAR/UCAR, GLOBE): una nube cúmulo típica de ~1 km³ tiene ~500 toneladas (1.1 millones de libras) de agua, como ~100 elefantes (USGS Water Science School: «How much does a cloud weigh?»).",
+    "Tamaño y velocidad de caída de las gotitas de nube (NOAA / UCAR).",
+    "Densidad del aire ≈ 1 kg/m³ → ~1,000 millones de kg en 1 km³ (cálculo)."
+   ],
+   "derivados": [
+    "Por qué las nubes no se caen",
+    "Cuánto pesa la lluvia de una tormenta"
+   ]
   },
   {
    "id": "cie-cuerpo-radiactivo",
    "titulo": "Tu cuerpo es un poquito radiactivo (potasio-40, como el plátano)",
    "serie": "Shot Científico",
    "numero": 35,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-35-cuerpo-radiactivo",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Potasio-40 en el cuerpo humano: actividad de ≈ 4,000–5,000 Bq en un adulto de 70 kg (Health Physics Society / EPA / IAEA).",
+    "Abundancia natural del K-40: 0.0117 % del potasio.",
+    "Radiación interna (K-40) dentro de la dosis natural anual (UNSCEAR / Health Physics Society).",
+    "El cuerpo mantiene estable su potasio (homeostasis): comer plátanos no aumenta la dosis (Health Physics Society, \"banana equivalent dose\")."
+   ],
+   "derivados": [
+    "Por qué los plátanos son un poquito radiactivos",
+    "Qué es el carbono-14 en tu cuerpo"
+   ]
   },
   {
    "id": "cie-arcoiris",
    "titulo": "Nadie ve el mismo arcoíris que tú (el ángulo de 42°)",
    "serie": "Shot Científico",
    "numero": 36,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-36-arcoiris",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Ángulo del arcoíris primario ≈ 42° (rojo) respecto del punto antisolar (Atmospheric Optics, Les Cowley; NOAA SciJinks).",
+    "Cada observador ve su propio arcoíris (NOAA / Met Office).",
+    "Arcoíris circular visto desde avión; arcoíris secundario con colores invertidos (doble reflexión) (Atmospheric Optics; NOAA)."
+   ],
+   "derivados": [
+    "Por qué el cielo dentro del arcoíris doble es más claro (banda de Alejandro)",
+    "Cómo ver un arcoíris con una manguera"
+   ]
   },
   {
    "id": "cie-luna-horizonte",
    "titulo": "La Luna no es más grande en el horizonte: es una ilusión",
    "serie": "Shot Científico",
    "numero": 37,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-37-luna-horizonte",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Ilusión de la Luna: Kaufman, L. y Kaufman, J. H. (2000). Explaining the moon illusion. PNAS 97(1): 500–505.",
+    "NASA Science: la Luna en el horizonte no es más grande; prueba con el dedo y fotos (del mismo ancho).",
+    "Historia: mencionada por Aristóteles y Ptolomeo (más de 2,000 años) (Ross y Plug, The Mystery of the Moon Illusion, 2002).",
+    "En el horizonte la Luna está más lejos por casi un radio terrestre que en el cenit (≈ 1.5 %; Wikipedia «Moon illusion»; Ross y Plug 2002; cálculo 6,371 / 384,400 km)."
+   ],
+   "derivados": [
+    "Por qué el Sol se ve rojo al atardecer",
+    "Ilusiones de tamaño: la de Ebbinghaus"
+   ]
   },
   {
    "id": "cie-estrellas-parpadean",
    "titulo": "Las estrellas parpadean y los planetas casi no (turbulencia del aire)",
    "serie": "Shot Científico",
    "numero": 38,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-38-estrellas-parpadean",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Centelleo (scintillation) por turbulencia atmosférica (NASA / Royal Museums Greenwich / EarthSky).",
+    "Los planetas centellean menos porque se ven como discos pequeños (NASA Science / Sky & Telescope).",
+    "Observatorios en montañas altas y secas y telescopios espaciales para evitar la turbulencia (ESO / NASA Hubble)."
+   ],
+   "derivados": [
+    "Por qué los planetas casi no parpadean",
+    "Óptica adaptativa en telescopios"
+   ]
   },
   {
    "id": "cie-moken",
    "titulo": "Los niños que ven mejor bajo el agua (los moken de Tailandia)",
    "serie": "Shot Científico",
    "numero": 39,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-39-moken",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Gislén, A. et al. (2003). Superior underwater vision in a human population of sea gypsies. Current Biology 13(10): 833–836.",
+    "Gislén, A. et al. (2006). Visual training improves underwater vision in children. Vision Research 46(20): 3443–3450.",
+    "Pérdida del poder de la córnea bajo el agua (óptica del ojo; revisiones)."
+   ],
+   "derivados": [
+    "Por qué ves borroso bajo el agua y bien con visor",
+    "Cómo ven los peces"
+   ]
   },
   {
    "id": "cie-pupila-piensa",
    "titulo": "Tus pupilas se agrandan cuando piensas fuerte",
    "serie": "Shot Científico",
    "numero": 40,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-40-pupila-piensa",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Kahneman, D. y Beatty, J. (1966). Attention and effort / Pupil diameter and load on memory. Science 154(3756): 1583–1585.",
+    "Joshi, S. et al. (2016). Relationships between pupil diameter and neuronal activity in the locus coeruleus, colliculi, and cingulate cortex. Neuron 89: 221–234.",
+    "Pupilometría como medida del esfuerzo mental (revisión: Mathôt, S. (2018). Pupillometry: psychology, physiology, and function. J. Cognition 1(1): 16).",
+    "Daniel Kahneman, Premio Nobel de Economía 2002 (nobelprize.org)."
+   ],
+   "derivados": [
+    "La pupila cuando ves a alguien que te gusta",
+    "Por qué las pupilas se dilatan en la oscuridad"
+   ]
   },
   {
    "id": "cie-cerebro-congelado",
    "titulo": "El dolor de cabeza por comer helado rápido",
    "serie": "Shot Científico",
    "numero": 41,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-41-cerebro-congelado",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Serrador, J. et al. (2012). Presentación en Experimental Biology (FASEB): aumento de flujo en la arteria cerebral anterior durante el «brain freeze» (Harvard Medical School / Veterans Affairs).",
+    "Kaczorowski, M. y Kaczorowski, J. (2002). Ice cream evoked headaches (ICE-H) study: randomised trial of accelerated versus cautious ice cream eating regimen. BMJ 325: 1445–1446.",
+    "Nervio trigémino y dolor referido en el dolor de cabeza por estímulo frío (International Headache Society, ICHD-3, 4.5).",
+    "Calentar el paladar o tomar algo tibio para aliviarlo (Cleveland Clinic); dura de segundos a unos 2 minutos (Harvard Health / Cleveland Clinic)."
+   ],
+   "derivados": [
+    "Por qué el frío duele",
+    "Por qué el helado se derrite en la boca"
+   ]
   },
   {
    "id": "cie-huellas-gemelos",
    "titulo": "Los gemelos idénticos no tienen las mismas huellas digitales",
    "serie": "Shot Científico",
    "numero": 42,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-42-huellas-gemelos",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Formación de las crestas dérmicas entre la semana 10.5 y 16 de gestación; influencia del ambiente intrauterino (Wertheim, K. (2011). The Fingerprint Sourcebook, cap. 3, NIJ; Kücken, M. (2007)).",
+    "Jain, A. K., Prabhakar, S. y Pankanti, S. (2002). On the similarity of identical twin fingerprints. Pattern Recognition 35: 2653–2663.",
+    "Henneberg, M., Lambert, K. M. y Leigh, C. M. (1997). Fingerprint homoplasy: koalas and humans. Natural Science 1: 4."
+   ],
+   "derivados": [
+    "Por qué los gemelos idénticos no tienen el mismo olor",
+    "Cómo se forman los gemelos"
+   ]
   },
   {
    "id": "cie-tripa-ruge",
    "titulo": "Por qué te ruge la tripa (y no siempre es hambre)",
    "serie": "Shot Científico",
    "numero": 43,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-43-tripa-ruge",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Borborigmos: ruidos por movimiento de gas y líquido con la peristalsis (Cleveland Clinic / MedlinePlus / Scientific American).",
+    "Complejo motor migratorio: ciclos de ~90–120 minutos en ayuno (Deloose, E. et al. (2012). The migrating motor complex: control mechanisms and its role in health and disease. Nat. Rev. Gastroenterol. Hepatol. 9: 271–285).",
+    "Motilina e inicio de la fase III del complejo motor migratorio y señal de hambre (Tack, J. et al. (2016). Gut 65: 214–224; Takahashi, T. (2013))."
+   ],
+   "derivados": [
+    "Por qué te dan ganas de ir al baño después de comer (reflejo gastrocólico)",
+    "Cuánto mide tu intestino"
+   ]
   },
   {
    "id": "cie-iss-amaneceres",
    "titulo": "Los astronautas ven unos 16 amaneceres al día",
    "serie": "Shot Científico",
    "numero": 44,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-44-iss-amaneceres",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "NASA: la Estación Espacial viaja a unos 17,500 mph (≈ 28,000 km/h), da una vuelta cada ~90 minutos y ve 16 amaneceres y atardeceres al día; órbita a ~400 km (≈ 250 millas).",
+    "NASA / ESA: la tripulación usa tiempo universal coordinado (GMT/UTC).",
+    "NASA: iluminación LED ajustable en la estación para ayudar al sueño (Solid-State Lighting Assemblies).",
+    "NASA: unas 2 horas de ejercicio diario para evitar pérdida de hueso y músculo."
+   ],
+   "derivados": [
+    "Cómo se bañan los astronautas",
+    "Qué ves desde la Estación Espacial de noche"
+   ]
   },
   {
    "id": "cie-tierra-no-redonda",
    "titulo": "La Tierra no es una esfera perfecta: el punto más lejano del centro es el Chimborazo",
    "serie": "Shot Científico",
    "numero": 45,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-45-tierra-no-redonda",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Radios ecuatorial (6,378.137 km) y polar (6,356.752 km): diámetros 12,756 y 12,714 km → ≈ 43 km (NASA Earth Fact Sheet / WGS84).",
+    "Altura del Everest: 8,848.86 m (medición China–Nepal, 2020).",
+    "Chimborazo: la cima más lejana del centro de la Tierra, unos 2 km más que el Everest (NOAA Ocean Service: \"What is the highest point on Earth as measured from Earth's center?\").",
+    "Gravedad: ≈ 9.780 m/s² en el ecuador y ≈ 9.832 m/s² en los polos (≈ 0.5 % de diferencia) (fórmula de gravedad normal, WGS84)."
+   ],
+   "derivados": [
+    "Por qué el ecuador tiene la gravedad más débil",
+    "Cómo se mide la altura del Everest"
+   ]
   },
   {
    "id": "cie-elevador-cae",
    "titulo": "Saltar en un elevador que cae no te salvaría",
    "serie": "Shot Científico",
    "numero": 46,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-46-elevador-cae",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Física de caída libre: v = √(2gh); h ≈ 30 m → ≈ 24 m/s ≈ 87 km/h; un salto vertical de ≈ 0.4 m da ≈ 2.8 m/s ≈ 10 km/h (cálculo; Scientific American / Physics Girl / NASA).",
+    "Elisha Otis presentó su freno de seguridad en 1854 en el Crystal Palace de Nueva York (Otis Elevator Company; Smithsonian).",
+    "Elevadores de tracción con varios cables (código de seguridad ASME A17.1).",
+    "Recomendación en caso de quedar atrapado: no salir por cuenta propia, usar la alarma y esperar (asociaciones de seguridad de elevadores)."
+   ],
+   "derivados": [
+    "Cómo funciona el freno de un elevador",
+    "Por qué te sientes ligero cuando arranca el elevador"
+   ]
   },
   {
    "id": "cie-vela-lejos",
    "titulo": "¿A qué distancia puedes ver la llama de una vela? Menos de lo que dice el mito",
    "serie": "Shot Científico",
    "numero": 47,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-47-vela-lejos",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Krisciunas, K. y Carona, D. (2015). At what distance can the human eye detect a candle flame? arXiv:1507.06270 (Texas A&M University): vela a 338 m comparada con estrellas y medida con CCD; distancia estimada ≈ 2,576 m.",
+    "MIT Technology Review (2015): respuestas en internet de hasta 48 km.",
+    "Cancha de fútbol ≈ 105 m de largo (FIFA): 25 × 105 m ≈ 2.6 km."
+   ],
+   "derivados": [
+    "Cuántas estrellas puedes ver a simple vista",
+    "Por qué ves mejor de reojo en la oscuridad"
+   ]
   },
   {
    "id": "cie-bebes-huesos",
    "titulo": "Los bebés nacen con más piezas de hueso que los adultos (se fusionan)",
    "serie": "Shot Científico",
    "numero": 48,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-48-bebes-huesos",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Número de huesos al nacer (≈ 270–300 piezas) y 206 en el adulto (Cleveland Clinic; Library of Congress «Everyday Mysteries»).",
+    "Fontanelas: la posterior se cierra a los 1–2 meses; la anterior por lo general entre los 7 y 19 meses (MedlinePlus / Stanford Children's).",
+    "Fusión del sacro y la pelvis hasta la edad adulta (Gray's Anatomy / revisiones de osificación).",
+    "Osificación de la rótula entre los 3 y 6 años (revisiones de radiología pediátrica)."
+   ],
+   "derivados": [
+    "Cuál es el hueso más pequeño de tu cuerpo",
+    "Por qué los huesos se curan solos"
+   ]
   },
   {
    "id": "cie-reflejo-buceo",
    "titulo": "Mete la cara en agua fría y tu corazón se frena (reflejo de buceo)",
    "serie": "Shot Científico",
    "numero": 49,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-49-reflejo-buceo",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Godek, D. y Freeman, A. M. Physiology, Diving Reflex. StatPearls (NCBI Bookshelf): bradicardia, vasoconstricción periférica, disparado por agua fría en la cara y apnea; más fuerte en mamíferos buceadores.",
+    "Panneton, W. M. (2013). The mammalian diving response: an enigmatic reflex to preserve life? Physiology 28: 284–297.",
+    "Maniobras vagales con agua fría en la cara para ciertas taquicardias, bajo supervisión médica (NHS / AHA).",
+    "Reflejo de buceo en bebés (revisiones pediátricas)."
+   ],
+   "derivados": [
+    "Por qué te arrugan los dedos en el agua",
+    "Cómo aguantan la respiración las ballenas"
+   ]
   },
   {
    "id": "cie-bostezo-oxigeno",
    "titulo": "No bostezas por falta de oxígeno (el experimento de Provine)",
    "serie": "Shot Científico",
    "numero": 50,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-50-bostezo-oxigeno",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Provine, R. R., Tate, B. C. y Geldmacher, L. L. (1987). Yawning: no effect of 3–5% CO2, 100% O2, and exercise. Behavioral and Neural Biology 48(3): 382–393.",
+    "Gallup, A. C. y Gallup, G. G. (2007). Yawning as a brain cooling mechanism. Evolutionary Psychology 5(1).",
+    "Provine, R. R. (2005). Yawning. American Scientist 93: 532–539 (contagio, incluso al leer sobre bostezos; cambio de estado)."
+   ],
+   "derivados": [
+    "Por qué los perros también bostezan contagiados",
+    "Por qué bostezamos al ver a alguien bostezar en video"
+   ]
   },
   {
    "id": "cie-pararte-rapido",
    "titulo": "Por qué ves estrellitas al pararte rápido (la presión baja)",
    "serie": "Shot Científico",
    "numero": 51,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-51-pararte-rapido",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Al ponerse de pie se desplazan unos 500–1,000 mL de sangre a piernas y abdomen (Freeman et al. (2011). Consensus statement on the definition of orthostatic hypotension. Clin. Auton. Res. 21: 69–72 / StatPearls «Orthostatic Hypotension»).",
+    "Barorreceptores del seno carotídeo y respuesta refleja (StatPearls «Physiology, Baroreceptors»).",
+    "Factores: deshidratación, calor, reposo prolongado; cuándo ir al médico (Mayo Clinic / NHS «Postural hypotension»).",
+    "Levantarse por etapas (NHS / Mayo Clinic)."
+   ],
+   "derivados": [
+    "Por qué te mareas en un juego mecánico",
+    "Qué es la presión arterial"
+   ]
   },
   {
    "id": "cie-fosfenos",
    "titulo": "Las luces que ves al tallarte los ojos (fosfenos)",
    "serie": "Shot Científico",
    "numero": 52,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-52-fosfenos",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Fosfenos por presión: estimulación mecánica de la retina (Grüsser, O. J. et al. (1989); Wikipedia «Phosphene»; revisión en Scientific American).",
+    "Destellos de luz en astronautas por rayos cósmicos (NASA, observaciones desde el Apolo 11; artículo de NASA, 2012, sobre las misiones Apolo).",
+    "No tallarse los ojos (American Academy of Ophthalmology).",
+    "Destellos y manchas nuevas como señal de alarma de la retina (AAO / National Eye Institute)."
+   ],
+   "derivados": [
+    "Por qué ves colores con los ojos cerrados",
+    "Qué ven los astronautas en el espacio"
+   ]
   },
   {
    "id": "cie-pelo-muerto",
    "titulo": "El pelo y las uñas no siguen creciendo después de morir",
    "serie": "Shot Científico",
    "numero": 53,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-53-pelo-muerto",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Vreeman, R. C. y Carroll, A. E. (2007). Medical myths. BMJ 335: 1288–1289. ¿Crecen el pelo y las uñas después de la muerte? (BMJ 2007, «Medical myths»: la deshidratación retrae la piel).",
+    "Yaemsiri, S. et al. (2010). Growth rate of human fingernails and toenails. J. Eur. Acad. Dermatol. Venereol. 24: 420–423 (≈ 3.47 mm/mes).",
+    "Wolff, H., Fischer, T. W. y Blume-Peytavi, U. (2016). The diagnosis and treatment of hair and scalp diseases. Dtsch Arztebl Int 113: 377–386 (\"1 cm per month\").",
+    "Crecimiento de pelo y uñas requiere división celular, energía y riego sanguíneo (fisiología del folículo)."
+   ],
+   "derivados": [
+    "Por qué las uñas de las manos crecen más rápido que las de los pies",
+    "Por qué se te pone el pelo blanco"
+   ]
   },
   {
    "id": "cie-mareo-carro",
    "titulo": "Por qué te mareas en el carro si vas leyendo (conflicto de sentidos)",
    "serie": "Shot Científico",
    "numero": 54,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-54-mareo-carro",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Teoría del conflicto sensorial (Reason y Brand, 1975; revisión: Golding, J. F. (2016). Motion sickness. Handb. Clin. Neurol. 137: 371–390).",
+    "Hipótesis del veneno: Treisman, M. (1977). Motion sickness: an evolutionary hypothesis. Science 197: 493–495.",
+    "CDC Yellow Book: Motion Sickness (niños de 7 a 12 años, el pico de susceptibilidad; mirar al horizonte, asiento de adelante, evitar leer; barcos, aviones, realidad virtual)."
+   ],
+   "derivados": [
+    "Por qué no te mareas cuando manejas",
+    "Por qué los videojuegos marean a algunos"
+   ]
   },
   {
    "id": "cie-oidos-avion",
    "titulo": "Por qué se te tapan los oídos en el avión (trompa de Eustaquio)",
    "serie": "Shot Científico",
    "numero": 55,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-55-oidos-avion",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Mayo Clinic: Airplane ear (oído medio, trompa de Eustaquio, presión en el descenso, tragar/bostezar/chicle, bebés con biberón o chupón, resfriado y alergias).",
+    "AAO-HNS (enthealth.org): Ears, Altitude and Airplane Travel; 14 CFR §25.841 (cabina a máximo 8,000 ft).",
+    "MedlinePlus: Ear barotrauma; Manual MSD."
+   ],
+   "derivados": [
+    "Por qué los bebés lloran al aterrizar",
+    "Por qué se te tapan los oídos al bucear"
+   ]
   },
   {
    "id": "cie-espacio-silencio",
    "titulo": "En el espacio las explosiones no suenan",
    "serie": "Shot Científico",
    "numero": 56,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-56-espacio-silencio",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "NASA: «In space, no one can hear you scream» / sonido necesita un medio.",
+    "Boyle, R. (1660). New Experiments Physico-Mechanicall, Touching the Spring of the Air (experimento del reloj en el recipiente vacío).",
+    "NASA (2022). New NASA Black Hole Sonifications with a Remix (cúmulo de Perseo, ondas subidas 57 y 58 octavas)."
+   ],
+   "derivados": [
+    "Cómo suena Marte (micrófonos del Perseverance)",
+    "Por qué la luz sí viaja en el vacío"
+   ]
   },
   {
    "id": "cie-agua-azul",
    "titulo": "El mar no es azul solo por reflejar el cielo: el agua absorbe el rojo",
    "serie": "Shot Científico",
    "numero": 57,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-57-agua-azul",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Braun, C. L. y Smirnov, S. N. (1993). Why is water blue? Journal of Chemical Education 70(8): 612.",
+    "Dartmouth: Why is water blue? (página de Braun).",
+    "NOAA: Why does the ocean look blue?"
+   ],
+   "derivados": [
+    "Por qué el hielo de los glaciares es azul",
+    "Por qué el cielo es azul"
+   ]
   },
   {
    "id": "cie-venas-azules",
    "titulo": "Tu sangre no es azul: tus venas solo se ven azules",
    "serie": "Shot Científico",
    "numero": 58,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-58-venas-azules",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Kienle, A., Lilge, L., Vitkin, I. A., Patterson, M. S., Wilson, B. C., Hibst, R. y Steiner, R. (1996). Why do veins appear blue? A new look at an old question. Applied Optics 35(7): 1151–1160.",
+    "C. Baird, West Texas A&M University: Why are veins blue?"
+   ],
+   "derivados": [
+    "Por qué los labios son rojos",
+    "Por qué la sangre es roja"
+   ]
   },
   {
    "id": "cie-calor-cabeza",
    "titulo": "No pierdes la mitad de tu calor por la cabeza (el mito del gorro)",
    "serie": "Shot Científico",
    "numero": 59,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/cie-59-calor-cabeza",
    "rama": "pedido300/cie",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Vreeman, R. C. y Carroll, A. E. (2008). Festive medical myths. BMJ 337: a2769.",
+    "Pretorius, T. et al. (2006). Thermal effects of whole head submersion in cold water on nonshivering humans. J. Appl. Physiol. 101: 669–675."
+   ],
+   "derivados": [
+    "Por qué te tiemblan los labios con frío",
+    "Cuánto calor pierdes por los pies"
+   ]
   }
  ]
 }
