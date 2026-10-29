@@ -27,7 +27,7 @@ for (let i = 0; i < 8; i++) m.gota(Ta + 0.2 + i * 0.16, 0.1, 800 + (i % 3) * 200
 m.sube(Ta + 0.9, 2.0, 48, 60, 0.05); m.cruje(Ta + 2.8, 0.35);                   // sale el tallo y rompe la tierra
 m.sube(P + 0.1, 1.6, 52, 64, 0.05);
 m.metal(Pr + 0.4, 0.15, 1300); for (let i = 0; i < 6; i++) m.tic(Pr + 0.4 + i * 0.15, 0.08, 2200); // el número cuenta
-m.golpe(Pr + 3.1, 0.35, 75); m.metal(Pr + 3.4, 0.2, 900); m.metal(Pr + 3.6, 0.15, 1100); // la balanza se vence
+m.golpe(Pr + 3.1, 0.35, 75); m.metal(Pr + 3.4, 0.2, 900); m.metal(Pr + 3.6, 0.15, 1100); // suben las barras de precio por kilo
 for (let i = 0; i < 3; i++) { m.cruje(Re + 0.8 + i * 0.5, 0.25); for (let k = 0; k < 3; k++) m.metal(Re + 1.4 + i * 0.5 + k * 0.25, 0.08, 2000); } // cavan y salen monedas
 m.golpe(E + 0.2, 0.3, 80);
 for (let i = 0; i < 40; i++) m.tic(E + 3.0 + i * 0.05, 0.05, 1500 + (i % 5) * 200); // puntitos del mapa

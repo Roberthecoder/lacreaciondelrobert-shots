@@ -2,32 +2,32 @@
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #57 · rama `pedido300/fun`.
 - **Formato:** N1 Por dentro + N5 (el estudio que lo puso en duda): macro (el tronco gigante en un paisaje del Devónico) → micro (los tubos por dentro y la "huella química" de la quitina, fondo oscuro) → macro (el mismo tronco, ahora con un "?").
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Este tronco de ocho metros no es un árbol. Y quizá ni siquiera era un hongo.»
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Este tronco de ocho metros no es un árbol. Y quizá tampoco era un hongo.»
 - **Grado de evidencia (se dice así en la voz):** la idea del hongo gigante fue la más aceptada (Hueber 2001; isótopos de carbono, Boyce et al. 2007). En 2025 salió un *preprint* y en **enero de 2026** se publicó revisado por pares en *Science Advances* (Loron et al.) que **propone** que era un linaje extinto distinto de los hongos. No es un veredicto final: hay expertos que dicen que quizá sí era hongo (Boyce, 2025, en *New Scientist*) y en 2018 otro equipo lo interpretó como un hongo ascomiceto (Honegger et al.). Por eso la voz dice "proponen" y "no está cerrado".
-- **Duración:** voz 989 caracteres / 185 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~990 créditos de ElevenLabs).
+- **Duración:** voz 998 caracteres / 181 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **No repite** fun-05 (Armillaria, el hongo vivo más grande): aquí el tema es un fósil y el debate sobre si era hongo.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Este tronco de ocho metros no es un árbol. Y quizá ni siquiera era un hongo. | Fondo menta: un tronco liso, sin ramas ni hojas, se levanta del suelo en el cuadro 0.3 hasta 8 m (regla "8 m" a un lado). Chip "¿árbol?" tachado; luego "¿hongo?" con signo de interrogación. |
+| 0 | Gancho | Este tronco de ocho metros no es un árbol. Y quizá tampoco era un hongo. | Fondo menta: un tronco liso, sin ramas ni hojas, se levanta del suelo en el cuadro 0.3 hasta 8 m (regla "8 m" a un lado). Chip "¿árbol?" tachado; luego "¿hongo?" con signo de interrogación. |
 | 1 | Devonico | Se llama Prototaxites y vivió hace unos 400 millones de años. | Etiqueta *Prototaxites*; reloj geológico que gira hacia atrás hasta "~400 millones de años · Devónico". |
-| 2 | Plantas | Las plantas más altas de entonces no te llegaban ni a la cintura: él era el gigante. | Paisaje con plantitas bajas (tallos sin hojas tipo *Rhynia*); una silueta humana de 1.70 m como escala; las plantas le llegan abajo de la cintura; el tronco de 8 m las domina. |
-| 3 | Tubos | Por dentro no tiene madera: es una maraña de tubos microscópicos. | Lupa "POR DENTRO" sobre el tronco → fondo oscuro: tubos entrelazados de tres grosores (~10, 20–40 y ~40 µm). Barra de escala 50 µm. |
-| 4 | Hongo | En 2001, un paleontólogo del Museo Smithsonian sostuvo que era un hongo gigante. | Tarjeta "2001 · Hueber · Smithsonian"; los tubos se comparan con hifas de hongo (red de hilos) y aparece la etiqueta "¿hifas?". |
-| 5 | Carbono | Y en 2007, su carbono mostró que no vivía solo de la luz, como las plantas. | Tarjeta "2007 · isótopos de carbono · Boyce et al."; un sol con flechas hacia una planta (✓) y hacia *Prototaxites* (✗ "no solo de la luz"). |
+| 2 | Plantas | A su lado, las plantas no pasaban de 40 centímetros: él era el gigante. | Paisaje con plantitas bajas (tallos sin hojas tipo *Rhynia*); una silueta humana de 1.70 m como escala; las plantas (regla "< 40 cm") le llegan a la rodilla; el tronco de 8 m las domina. |
+| 3 | Tubos | Por dentro es una maraña de tubos microscópicos. | Lupa "POR DENTRO" sobre el tronco → fondo oscuro: tubos entrelazados de tres grosores (~10, 20–40 y ~40 µm). Barra de escala 50 µm. |
+| 4 | Hongo | En 2001, un paleontólogo del Smithsonian, en Washington, sostuvo que era un hongo gigante. | Tarjeta "2001 · Hueber · Smithsonian, Washington"; los tubos se comparan con hifas de hongo (red de hilos) y aparece la etiqueta "¿hifas?". |
+| 5 | Carbono | En 2007, su carbono mostró que no vivía solo de la luz, como las plantas. | Tarjeta "2007 · isótopos de carbono · Boyce et al."; un sol con flechas hacia una planta (✓) y hacia *Prototaxites* (✗ "no solo de la luz"). |
 | 6 | Pregunta | ¿Un hongo de ocho metros? No tan rápido. | **Re-gancho.** "?" gigante sobre el tronco; Robert grande, pensativo. |
-| 7 | Estudio | En 2026, un equipo de Edimburgo analizó fósiles escoceses de 407 millones de años, guardados en piedra. | Mapa de Escocia con punto en Rhynie; bloque de piedra (pedernal) con un trocito de *P. taiti* dentro. Tarjeta "Loron et al. · *Science Advances* · enero 2026 · 407 millones de años". |
-| 8 | Quitina | Los hongos, como el champiñón de tu cocina, tienen paredes de quitina, y sus fósiles dejan esa huella química. | Un champiñón en una tabla de cocina → al microscopio, pared celular con cadenas de quitina; en los hongos fósiles de la misma piedra brilla una "huella" (espectro con picos). |
-| 9 | Sinhuella | En Prototaxites no apareció. Y su forma no coincide con ningún hongo conocido. | El mismo espectro sobre *Prototaxites*: plano, sin picos. Fila de siluetas de hongos conocidos que no encajan con el tubo de *Prototaxites* ✗. |
-| 10 | Linaje | Por eso proponen que era otro tipo de vida, de un linaje ya extinto. | Árbol de la vida: ramas de plantas, animales, hongos… y una rama aparte que se corta (✝ "extinto"). Chip "propuesta". |
-| 11 | Debate | Pero no está cerrado: otros expertos dicen que quizá sí era un hongo. | Balanza: "hongo" vs "linaje extinto", que oscila sin decidirse. Chip "debate abierto". |
-| 12 | Cierre | Así que ese tronco de ocho metros no era un árbol, y todavía no sabemos qué era. | **Regreso a la imagen del inicio:** el mismo tronco de 8 m en el mismo paisaje, ahora con un "?" grande encima. |
+| 7 | Estudio | En 2026, en Edimburgo, analizaron fósiles escoceses de 407 millones de años, guardados en piedra. | Mapa de Escocia con punto en Rhynie; bloque de piedra (pedernal) con un trocito de *P. taiti* dentro. Tarjeta "Loron et al. · *Science Advances* · enero 2026 · 407 millones de años". |
+| 8 | Quitina | Los hongos, como el champiñón de tu cocina, tienen paredes de quitina, y en esa misma piedra sus fósiles conservan una huella química de ella. | Un champiñón en una tabla de cocina → al microscopio, pared celular con cadenas de quitina; en los hongos fósiles de la misma piedra brilla una "huella" (espectro con picos). |
+| 9 | Sinhuella | En Prototaxites no apareció. Y su forma no coincide con ningún hongo conocido. | El mismo espectro sobre *Prototaxites*: NO es plano, tiene otros picos, pero faltan las bandas de la quitina (marcadas con ✗). Fila de siluetas de hongos conocidos que no encajan con el tubo de *Prototaxites* ✗. |
+| 10 | Linaje | Por eso proponen que era otro linaje de vida, extinto. | Árbol de la vida: ramas de plantas, animales, hongos… y una rama aparte que se corta (✝ "extinto"). Chip "propuesta". |
+| 11 | Debate | Pero no está cerrado: otros expertos dicen que solo revisaron una especie, y que hongo sigue siendo una opción. | Balanza: "hongo" vs "linaje extinto", que oscila sin decidirse. Chips "solo 1 especie revisada (*P. taiti*)" y "debate abierto". |
+| 12 | Cierre | Así que ese tronco no era un árbol, y aún no sabemos qué era. | **Regreso a la imagen del inicio:** el mismo tronco de 8 m en el mismo paisaje, ahora con un "?" grande encima. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave y misteriosa, continua, sin golpe; efectos en el mismo cuadro (el tronco que crece, el reloj geológico, el "zoom" de la lupa, el sello de cada tarjeta, el "bip" del espectro con picos y el silencio del espectro plano, el corte de la rama extinta, el vaivén de la balanza).
+**Música:** cama grave y misteriosa, continua, sin golpe; efectos en el mismo cuadro (el tronco que crece, el reloj geológico, el "zoom" de la lupa, el sello de cada tarjeta, el "bip" del espectro con picos y el espectro de *Prototaxites* sin esas bandas, el corte de la rama extinta, el vaivén de la balanza).
 
 Barras de escala: 1 m (paisaje y tronco), 1 cm (champiñón), 50 µm (tubos), 10 µm (pared celular).
 
@@ -47,12 +47,14 @@ Barras de escala: 1 m (paisaje y tronco), 1 cm (champiñón), 50 µm (tubos), 10
    > "The enigmatic Paleozoic fossil Prototaxites Dawson 1859 consists of tree-like trunks as long as 8 m"
    > Variación de δ13C de hasta 13‰, que los autores interpretan como de un heterótrofo (hongo).
 3. Universidad de Chicago, *The University of Chicago Chronicle* (10 may 2007), "Fossil is giant fungus, research team claims". https://chronicle.uchicago.edu/070510/boyce.shtml
-   > "it stood in tree-like trunks more than 20 feet tall" · "the tallest among them stood no more than a couple of feet high" (las plantas de entonces)
+   > "it stood in tree-like trunks more than 20 feet tall" · "the tallest among them stood no more than a couple of feet high" (las plantas de entonces; en la voz se usa la cifra de Aberdeen, fuente 8)
    > "in 2001, Francis Hueber of the National Museum of Natural History in Washington, D.C., revived the idea."
    > "Prototaxites lived worldwide from approximately 420 million to 350 million years ago."
 4. Hueber, F. M. (2001). Rotted wood–alga–fungus: the history and life of *Prototaxites* Dawson 1859. *Review of Palaeobotany and Palynology* 116(1–2): 123–158. https://doi.org/10.1016/S0034-6667(01)00058-6 (lo clasifica en el reino Fungi).
-5. *New Scientist* vía Yahoo News (29 mar 2025), "Scientists Puzzled by Giant Ancient Life Forms". https://www.yahoo.com/news/scientists-puzzled-giant-ancient-life-121517930.html
+5. *Futurism* (29 mar 2025), "Scientists Puzzled by Giant Ancient Life Forms", citando a *New Scientist* (republicado en Yahoo News). https://www.yahoo.com/news/scientists-puzzled-giant-ancient-life-121517930.html
    > Kevin Boyce: "Maybe it is a fungus … but whether a fungus or something else entirely, it represents a novel experiment with complex multicellularity"
+7. Hunt, K. (5 feb 2026). New analysis suggests puzzling fossil may have been an unknown life form. *CNN* (republicado en KVIA). https://kvia.com/cnn-other/2026/02/05/new-analysis-suggests-puzzling-fossil-may-have-been-an-unknown-life-form/ — otros expertos señalan que solo se revisó una especie (*P. taiti*) y que la opción "hongo" sigue abierta; junto con Loron et al. 2026: "two remaining viable hypotheses".
+8. Universidad de Aberdeen, página del pedernal de Rhynie (plantas de Rhynie): "all less than 40 cm tall".
 6. Honegger, R., Edwards, D., Axe, L. y Strullu-Derrien, C. (2018). Fertile *Prototaxites taiti*: a basal ascomycete with inoperculate, polysporous asci lacking croziers. *Philosophical Transactions of the Royal Society B* 373(1739): 20170146. https://doi.org/10.1098/rstb.2017.0146 · https://pmc.ncbi.nlm.nih.gov/articles/PMC5745340/ (interpretan a *P. taiti* como un ascomiceto basal; Loron et al. 2026 dicen que esa asignación "remains contentious"). Solo contexto del debate; no se dice en la voz.
 
 El dibujo es esquemático: los tubos, el paisaje y la silueta de *Prototaxites* son una reconstrucción simplificada.

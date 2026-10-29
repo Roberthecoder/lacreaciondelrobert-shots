@@ -43,4 +43,3 @@ Fuentes abiertas:
 Re-verificación (29 oct 2026): se releyó `narracion.json` completo (12 líneas) y las escenas 2, 6, 7 y 9 del guion. Las filas 4b, 7, 8 y 8b quedaron corregidas con las redacciones propuestas, y se revisaron otra vez contra [CLAUS], [BRIS], [TALOU], [SPL12] y [EPP]. No hay porcentajes de Piattoni. Las demás líneas no cambiaron.
 
 Resumen: 21 afirmaciones; todas ✅ después de corregir 4 (feromona en vez de hormona, "reportó" para el estudio de 1990, recreación solo con el cerdo frente a la feromona y sello «EN DUDA», ascas sin número rotulado).
-VEREDICTO: APROBADO

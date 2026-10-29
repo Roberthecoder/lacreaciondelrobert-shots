@@ -294,7 +294,7 @@ function YartsaShot() {
       <Chip T={T} at={K.Re + 0.3} until={K.E - 0.3} texto="cientos de miles de recolectores" x={360} y={480} tam={30} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2018" quien="Stanford y Colorado State" revista="Hopping, Chignell y Lambin · PNAS" x={460} y={640} />
       {T < K.Mn - 0.2 && <Contador T={T} at={K.E + 3.0} desde={0} hasta={800} dur={2.0} sufijo="+ personas" x={360} y={510} tam={56} color={KC.texto} />}
-      <Etq T={T} at={K.E + 3.4} until={K.Mn - 0.3} x={60} y={1190} texto="mapa esquemático" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.4} until={K.Mn - 0.3} x={60} y={1110} texto="mapa esquemático" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Mn + 0.3} until={K.V - 0.3} texto="cada vez menos" x={330} y={480} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.Mn + 1.6} until={K.V - 0.3} x={60} y={560} texto="1º recolectar de más" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Mn + 3.6} until={K.V - 0.3} x={1020} y={1110} lado="izq" texto="calentamiento" tam={30} color={KC.ink} />

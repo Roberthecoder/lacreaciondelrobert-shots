@@ -38,5 +38,3 @@ Fuentes abiertas:
 | 13 | Cierre: «Lo demás, todavía se investiga» | ✅ | [K] | «We conclude that knowledge on CMNs is presently too sparse and unsettled to inform forest management» | 2023 |
 
 **Re-verificación (29 oct 2026):** se revisó otra vez todo lo que cambió en la voz (`narracion.json` completo, 12 líneas) y en la pantalla (`guion.md`). Las cuatro ⚠️ quedaron corregidas: el gancho y el cierre ya no niegan la red; se quitaron las grasas; el re-gancho pregunta solo lo comprobado; el árbol madre dice «revisado por científicos, hecho en bosques» con el sello «según Karst et al. 2023». Los recortes de redacción no cambian ningún dato. Todas las afirmaciones quedan ✅.
-
-VEREDICTO: APROBADO

@@ -389,9 +389,9 @@ function TrufasShot() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.4} until={K.G + 2.6} texto="¿una piedra?" x={300} y={500} tam={50} />
-      <Etq T={T} at={K.G + 1.6} until={K.R - 0.3} x={60} y={600} texto="trufa" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.G + 2.0} until={K.R - 0.3} x={60} y={660} texto="Tuber" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.G + 3.0} until={K.R - 0.3} texto="por dentro: vetas blancas" x={330} y={1080} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.G + 1.6} until={K.R - 0.3} x={660} y={980} texto="trufa" tam={44} color={KC.ink} />
+      <Etq T={T} at={K.G + 2.0} until={K.R - 0.3} x={660} y={1045} texto="Tuber" it tam={40} color={KC.ink} />
+      <Chip T={T} at={K.G + 3.0} until={K.R - 0.3} texto="por dentro: vetas blancas" x={330} y={500} tam={32} borde={KC.ink} />
       <EtqEsp T={T} at={K.R + 0.6} until={K.R + 3.2} x={40} y={1185} comun="encino" cient="Quercus" tam={26} />
       <EtqEsp T={T} at={K.R + 1.0} until={K.R + 3.2} x={1050} y={1185} lado="izq" comun="avellano" cient="Corylus avellana" tam={26} />
       <Etq T={T} at={K.R + 1.8} until={K.R + 3.2} x={760} y={980} texto="trufas" tam={30} />

@@ -4,8 +4,8 @@
 - **Formato:** N1 "Por dentro" (la naranja de tu frutero → la herida al microscopio → la empacadora y el estudio → la misma naranja), con cierre en la misma imagen del inicio.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: "Ese polvo verde de tu naranja no es polvo: son esporas del hongo *Penicillium digitatum*."
 - **No repite:** fun-11 (cuándo se corta y cuándo se tira la comida con moho) ni bio-52 (ácido cítrico con *Aspergillus*). Aquí el tema es cómo entra y avanza el moho verde de los cítricos, su diferencia con el moho azul y qué hacen las empacadoras.
-- **Duración:** voz 989 caracteres / 186 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~990 créditos de ElevenLabs).
+- **Duración:** voz 986 caracteres / 185 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~986 créditos de ElevenLabs).
 - **Tono:** curioso y útil (cocina de todos los días). No es consejo médico.
 - **Cifra de pérdidas:** se dejó fuera a propósito. El "hasta 90 % de las pérdidas" que repiten las revisiones viene de citas en cadena (Smoot et al., 1971, sobre fruta sin tratar) que no se pudieron abrir; sin fuente primaria abierta, no se usa.
 
@@ -24,7 +24,7 @@
 | 8 | Cera | La cera, además, las protege de secarse. | Gotitas de agua que intentan salir de la naranja y rebotan en la capa de cera. Chip "menos pérdida de agua". |
 | 9 | Estudio | En 1997, en Fresno, California, infectaron naranjas con esporas de este hongo. | Tarjeta "1997 · Fresno, California · USDA-ARS · Smilanick et al., *Plant Disease*". Naranjas con un piquetito y esporas verdes encima. |
 | 10 | Bano | Un día después las bañaron dos minutos en agua tibia con carbonato de sodio, y el moho bajó. | Cronómetro "24 h" → tina con agua tibia (termómetro ~40 °C) y "carbonato de sodio"; cronómetro "2 min". Después: comparativa sin baño (varias con moho) vs con baño (menos). Chip "el moho bajó en todas las pruebas" y nota "comparación esquemática, sin cifras". |
-| 11 | Aire | Y sus esporas viajan por el aire hasta otras frutas heridas: sepárala de las demás. | Frutero: la naranja podrida suelta una nube verde que flota hacia otras frutas con raspones. Chip "sepárala". |
+| 11 | Aire | Y sus esporas viajan por el aire hasta otras frutas heridas: sácala del frutero. | Frutero: la naranja podrida suelta una nube verde que flota hacia otras frutas con raspones. Chip "sácala". |
 | 12 | Cierre | Así que ese polvo verde no es polvo: es un hongo que entró por una herida. | **Regreso a la imagen del inicio:** el mismo frutero y la misma naranja, ahora con la herida marcada por dentro (la cáscara como en el corte) y la mancha verde; la naranja se aparta de las demás. Chip "entró por una herida". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
@@ -43,7 +43,7 @@ Barras de escala: 5 cm (naranja), 1 mm (cáscara en corte), 10 µm (espora y gl�
    > "Damaged tissue with broken oil glands releases several volatile compounds, such as limonene, myrcene, alpha-pinene, and beta-pinene, along with organic acids and sugars that encourage the germination of conidia"
    > "Penicillium italicum is responsible for blue mold rot on citrus fruits … the pathogen can grow and cause fruit rot at temperatures as low as 0 °C, and contributes to serious infection of citrus fruits kept in cold storage … Moreover, conidia can spread readily, leading to infection of healthy fruits."
    > "Plant-pathogenic Penicillium are wound pathogens"
-3. Ritenour, M. A., Zhang, J., Cano, L. M. y Dewdney, M. M. (2026). 2026–2029 Florida Citrus Production Guide: Decay Control of Florida Fresh Citrus (CIR359A). UF/IFAS Extension (revisión agosto 2026). https://edis.ifas.ufl.edu/publication/CH081
+3. Ritenour, M. A., Zhang, J., Cano, L. M. y Dewdney, M. M. (2026). 2026–2029 Florida Citrus Production Guide: Decay Control of Florida Fresh Citrus (CIR359A), edición 2026–2029. UF/IFAS Extension. https://edis.ifas.ufl.edu/publication/CH081
    > "Mechanical injuries to the fruit peel during fruit harvesting and subsequent handling are the principal sites for infection by wound-mediated pathogens such as P. digitatum (green mold), P. italicum (blue mold)"
    > "Decayed fruit should be separated from healthy fruit immediately after dumping on the packing line to prevent contamination of the line by fungal inoculum."
    > "SOPP may be applied as a soap or foam to replace the detergent during washing … it helps kill inoculum from decayed fruit on the brushes and reduces the chance of infecting healthy fruit during the washing process."
@@ -59,9 +59,14 @@ Barras de escala: 5 cm (naranja), 1 mm (cáscara en corte), 10 µm (espora y gl�
    > "Oranges were inoculated with spores of Penicillium digitatum, the citrus green mold pathogen, and immersed 24 h later in heated soda ash (Na2CO3, sodium carbonate) solutions"
    > "Oranges were immersed for 1 or 2 min in solutions containing 0, 2, 4, or 6% (wt/vol) soda ash heated to 35.0, 40.6, 43.3, or 46.1°C."
    > "Soda ash significantly controlled green mold in every test. The most effective control of green mold was obtained at 40.6 or 43.3°C with 4 or 6% soda ash."
-6. Jackson, G. Citrus blue and green moulds (Fact sheet 197). Pacific Pests, Pathogens and Weeds (con base en CABI Crop Protection Compendium, 2019). https://apps.lucidcentral.org/pppw_v13/text/web_full/entities/citrus_storage_moulds_197.htm
+6. Jackson, G. Citrus blue and green moulds (Fact sheet 197). Pacific Pests, Pathogens and Weeds, © 2025 (con base en CABI Crop Protection Compendium, 2019). https://apps.lucidcentral.org/pppw_v13/text/web_full/entities/citrus_storage_moulds_197.htm
    > "Spores of these fungi are common in the atmosphere, spreading on the wind."
    > "Penicillium italicum grows more quickly at temperatures below 10°C, and may be the more common of the two in cold storage."
    > "The fungi infect through wounds in the fruit, but infection by contact can also occur"
+
+7. Silva, E. et al. (2025). *J. Agric. Food Chem.* doi:10.1021/acs.jafc.5c07618. https://pmc.ncbi.nlm.nih.gov/articles/PMC12576830/ (moho azul, *P. italicum*)
+   > "blue mold is of great concern due to nesting, a process of fast spreading of the infection on healthy fruits of the same packing box"
+   > "P. italicum is particularly resistant to cold…"
+   > Para el moho verde, contraste: Zakaria (2026, fuente 2): "Infections of adjacent citrus fruits are rare".
 
 El dibujo es esquemático. No es consejo médico.

@@ -44,5 +44,3 @@ Fuentes abiertas:
 | 19 | Recortes de redacción revisados contra narracion.json (29 oct 2026): "se da fiebre", "y es especialista: ataca langostas y chapulines", "una espora pegada a su cutícula", "Adentro, crece en su sangre…", "una avioneta lo roció sobre langostas del desierto", "no dañó hormigas ni aves", "pelea con un hongo que suele ganar" — **corregido** | ✅ | filas 1, 2, 3, 5, 9, 12, 17 | Mismo contenido que las filas ya verificadas; no cambia ningún dato. | — |
 
 **Resumen (segunda vuelta, 29 oct 2026):** se corrigieron el ❌ de los cernícalos (ahora "más aves"; los cernícalos, más hembras) y los 3 ⚠️ (supervivencia con fiebre → "la mayoría muere", con Blanford & Thomas 2001; espora ovoide de 4–5.5 × 3–4 µm según Mongkolsamrit 2020; "SENASICA desarrolló cómo usarlo"). Se revisó narracion.json completo (13 líneas): todas las afirmaciones quedan ✅.
-
-VEREDICTO: APROBADO

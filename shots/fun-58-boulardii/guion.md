@@ -1,8 +1,8 @@
-# Shot Fungi Mati #58 · Ese sobrecito no trae bacterias: la levadura probiótica *Saccharomyces boulardii*
+# Shot Fungi Mati #58 · Este sobrecito no trae bacterias: la levadura probiótica *Saccharomyces boulardii*
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #58 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro" (el sobrecito en tu mano → la levadura al microscopio → tu estómago e intestino → el mismo sobrecito, ya transformado) con el "qué sí / qué no" del N2.
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve, hablándole a "tú": "Ese sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadura."
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve, hablándole a "tú": "Este sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadura."
 - **Duración:** voz 997 caracteres / 182 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1,000 créditos de ElevenLabs).
 - **Tono:** curioso y prudente. **No es consejo médico:** no dice dosis ni recomienda tomarla; muestra qué encontró la evidencia, qué no y el riesgo.
@@ -12,19 +12,19 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadura. | Fondo menta: una mano rompe un sobrecito (cuadro 0.3) y cae un polvito. Chip "¿bacterias?" que se tacha; una lupa sobre el polvo muestra levaduras ovaladas con una yema. |
+| 0 | Gancho | Este sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadura. | Fondo menta: una mano sostiene un sobrecito que dice «*Saccharomyces boulardii*» desde el cuadro 0; lo rompe (cuadro 0.3) y cae un polvito. Chip "¿bacterias?" que se tacha; una lupa sobre el polvo muestra levaduras ovaladas con una yema. |
 | 1 | Especie | Es *Saccharomyces boulardii*, de la misma especie que esponja el pan. | Al microscopio (fondo noche): células ovaladas gemando. Etiqueta "levadura probiótica · *Saccharomyces boulardii*"; flecha a un bolillo que se esponja: "misma especie: *S. cerevisiae*". |
-| 2 | Historia | Cuenta la historia que Henri Boulard la sacó de un té de lichi y mangostán, en Indochina. | Fondo amarillo: un lichi y un mangostán; sus cáscaras hierven en una tetera. Chip "cuenta la historia… (años 20, Indochina)". |
+| 2 | Historia | Dicen que Henri Boulard la sacó de un té de lichi y mangostán, en Indochina. | Fondo amarillo: un lichi y un mangostán; sus cáscaras hierven en una tetera. Chip "dicen que… (años 20, Indochina)". |
 | 3 | Calor | Pero esta crece mejor a treinta y siete grados, como tu cuerpo. | Dos termómetros: "*S. boulardii* · 37 °C" junto a una silueta humana; "otras cepas · 30–33 °C" junto al pan. |
-| 4 | Acido | Y en un experimento a pH dos, muy ácido, aguantó casi toda. | Estómago en corte; medidor "pH 2". Dos tubos: *boulardii* casi igual de viva; otra cepa de laboratorio "< 4 %". |
+| 4 | Acido | Y a pH dos, muy ácido, aguantó casi toda. | Estómago en corte; medidor "pH 2"; chip "experimento de laboratorio, 1 h a 37 °C". Dos tubos: *boulardii* casi igual de viva; otra cepa de laboratorio "< 4 %". |
 | 5 | Pregunta | ¿Y por qué la dan con antibióticos? | **Re-gancho.** "?" gigante y una caja de pastillas; Robert grande, pensativo. |
 | 6 | Antibioticos | Los antibióticos desbalancean las bacterias de tu intestino, y eso puede dar diarrea. | Intestino por dentro (fondo noche): muchas bacterias de colores; cápsulas de antibiótico entran y muchas se apagan; balanza que se inclina. |
 | 7 | Levadura | Pero una levadura no es bacteria: esos fármacos no la matan. | Entre las bacterias apagadas, las levaduras (más grandes, ovaladas) siguen brillando. Chip "hongo ≠ bacteria". Escala: levadura ~5 µm vs. bacteria ~1 µm (esquemático). |
-| 8 | Estudio | Una revisión de 2015 juntó veintiún ensayos: con boulardii, la diarrea bajó de casi diecinueve a ocho y medio de cada cien. | Tarjeta "2015 · Szajewska y Kołodziej · Varsovia · 21 ensayos · 4,780 personas". Dos cuadrículas de 100 personas: 18.7 en rojo (sin) → 8.5 (con). |
-| 9 | Limite | Pero contra *Clostridium difficile* en adultos no se vio un efecto claro. | Bacteria *C. difficile* con etiqueta; chip "adultos: sin efecto claro" (barra de error que cruza el 1). |
+| 8 | Estudio | Una revisión de 2015 juntó veintiún ensayos: en gente con antibióticos, la diarrea bajó de casi diecinueve a ocho y medio de cada cien. | Tarjeta "2015 · Szajewska y Kołodziej · Varsovia · 21 ensayos · 4,780 personas". Dos cuadrículas de 100 personas: 18.7 en rojo (sin) → 8.5 (con). |
+| 9 | Limite | Pero contra *Clostridium difficile* en adultos, esa revisión no vio un efecto claro. | Bacteria *C. difficile* con etiqueta; chip "adultos: sin efecto claro" (barra de error que cruza el 1). |
 | 10 | Riesgo | Y en pacientes graves con catéter, rara vez, pasa a la sangre: en París vieron que abrir un sobre la dejaba en las manos. | Cama de hospital con catéter venoso; un sobre se abre y el polvo flota hacia las manos y el catéter. Chip "rara vez · pacientes graves". Tarjeta "Hennequin et al., 2000 · París · 4 casos". |
 | 11 | NoSeQueda | Y no se queda: días después de dejarla, se va. | Calendario: levaduras en el intestino que se van yendo; chip "3–5 días después de dejarla". |
-| 12 | Cierre | Así que ese sobrecito no trae bacterias: trae la levadura del pan, versión que aguanta tu panza. | **Regreso a la imagen del inicio:** la misma mano y el mismo sobrecito; ahora lleva dibujado un bolillo y un termómetro de 37 °C. Chip "no es consejo médico: pregúntale a tu médico". |
+| 12 | Cierre | Así que este sobrecito no trae bacterias: trae una versión de la levadura del pan que aguanta tu panza. | **Regreso a la imagen del inicio:** la misma mano y el mismo sobrecito; ahora lleva dibujado un bolillo y un termómetro de 37 °C. Chip "no es consejo médico: pregúntale a tu médico". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua, sin golpe; efectos en el mismo cuadro (rasgado del sobre, polvito, crujido del tache, burbujas de la tetera, termómetro que sube, burbujeo ácido, tics de las bacterias que se apagan, tics de las cuadrículas, pitido suave del monitor del hospital, hoja del calendario).
@@ -34,7 +34,7 @@ Barra de escala: 5 cm (sobrecito), 10 µm (levaduras), 10 cm (estómago), 5 µm 
 ## Fuentes (abiertas en el texto completo el 29 oct 2026)
 
 1. McFarland, L. V. (2010). Systematic review and meta-analysis of *Saccharomyces boulardii* in adult patients. *World J Gastroenterol* 16(18): 2202–2222. https://pmc.ncbi.nlm.nih.gov/articles/PMC2868213/
-   - Historia (contada como "cuenta la historia"; la fuente dice 1920, otras dicen 1923, por eso no se da año):
+   - Historia (contada como "dicen que"; la fuente dice 1920, otras dicen 1923, por eso no se da año):
      > "S. boulardii, was discovered by a French microbiologist, Henri Boulard in 1920 when he was in IndoChina searching for new strains of yeast … noticed that some people who did not develop cholera were drinking a special tea. This tea was made by taking the outer skin from a tropical fruit (lychee and mangosteens) and cooking them down to make tea. He succeeded in isolating the agent responsible."
    - 37 °C: > "its optimum growth temperature is 37°C and it is resistant to low pH and is tolerant to bile acids; whereas other strains of S. cerevisiae prefer cooler temperatures (30-33°C)"
    - Antibióticos: > "S. boulardii is resistant to antibacterial agents and survives gastric acidity"

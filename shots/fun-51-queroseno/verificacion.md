@@ -40,5 +40,3 @@ Fuentes abiertas:
 | 21 | Dibujo: espora que germina, hifas ramificadas de 2–3 µm, barra 10 µm; esporas ovaladas (~2–3 × 5 µm) en cadenas ramificadas que suben al combustible | ✅ | [ARN], [SEI] | [ARN]: "hyphae … two or three microns wide, its spores no wider and perhaps five microns long"; "produces its spores in the less dense medium above. The spores are thus disseminated by the fuel itself". [SEI]: "branched, acropetally developing chains of lightly pigmented ameroconidia". | 1983 / 2007 |
 
 **Resumen (29 oct 2026, re-verificación de lo corregido):** se reabrieron [ARN], [KRO], [SEI], [AAIB], [JIG] y la NOM-016-CRE-2016 (numeral 3.33: "Turbosina (Jet A-1): Petrolífero proveniente del destilado intermedio del petróleo"). El ❌ del pino se sustituyó por el dato de la creosota; los ⚠️ del gancho, la perforación, Hamburgo y Gatwick quedaron corregidos; el agua condensada se respalda con [ARN] y [AAIB] (no con [MUJ]). Las 12 líneas de narracion.json y lo que se ve en pantalla quedan ✅.
-
-VEREDICTO: APROBADO

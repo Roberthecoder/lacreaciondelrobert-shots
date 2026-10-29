@@ -63,10 +63,10 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-Un hongo que vale más que el oro, y que se está acabando.
+Un hongo que en 2017 valía más del triple que el oro, y del que cada vez hay menos.
 Ophiocordyceps sinensis (yartsa gunbu) parasita orugas de polilla bajo los pastizales alpinos del Tíbet y el Himalaya. En 2017, las piezas de mejor calidad se vendían en Pekín a más de 140,000 USD por kilo, más del triple que el oro, y su recolección es fuente principal de ingreso para cientos de miles de personas (Hopping et al., PNAS 2018).
 El mismo estudio reúne reportes de más de 800 personas en China, Nepal, Bután e India: la mayoría observa que la producción baja, sobre todo por sobreexplotación, y los modelos indican que el calentamiento invernal también contribuye. La UICN lo clasifica como vulnerable.
-Por qué importa: muestra que cosechar menos no basta cuando el clima también cambia el hábitat de un recurso del que dependen economías enteras.
+Por qué importa: como concluye el estudio, la cosecha no es la única amenaza para una especie valiosa: el calentamiento también cuenta, y de este hongo dependen cientos de miles de recolectores.
 ¿Conoces otro recurso silvestre que esté pasando por algo parecido?
 Shot Fungi Mati #53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -80,7 +80,7 @@ Esa "ramita" es una oruga momificada con un hongo saliéndole de la cabeza: Ophi
 
 ### Threads
 ```text
-Esa ramita no es una ramita: es una oruga momificada con un hongo saliéndole de la cabeza. 🐛🍄 El hongo-oruga del Tíbet se recolecta en la montaña, en 2017 valía más del triple que el oro y cada vez hay menos. ¿Habías visto uno?
+Esa ramita no es una ramita: es una oruga momificada con un hongo saliéndole de la cabeza. 🐛🍄 El hongo-oruga del Tíbet se recolecta en la montaña, en 2017 los mejores valían más del triple que el oro y cada vez hay menos. ¿Habías visto uno?
 Shot Fungi Mati #53 · La Creación del Robert
 #Hongos
 ```

@@ -293,7 +293,7 @@ function MicorrizasShot() {
       </Escena>
 
       {/* textos y sellos */}
-      <Chip T={T} at={K.G + 1.0} until={K.G + 3.1} texto="¿internet del bosque?" x={380} y={470} tam={38} borde={KC.blue} />
+      <Chip T={T} at={K.G + 1.0} until={K.G + 3.1} texto="¿el «internet del bosque»?" x={380} y={470} tam={38} borde={KC.blue} />
       <Chip T={T} at={K.G + 3.6} until={K.V - 0.3} texto="es un mercado" x={380} y={470} tam={44} borde={KC.red} />
       <Etq T={T} at={K.G + 1.4} until={K.V - 0.3} x={40} y={1090} texto="hilitos de hongo" tam={30} />
       <Chip T={T} at={K.V + 0.3} until={K.Mi - 0.3} texto="lo que se hizo viral" x={420} y={430} tam={38} borde={KC.ink} />
@@ -343,7 +343,7 @@ function MicorrizasShot() {
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={170} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="No es internet: *es un mercado.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="No es el internet que te contaron: *es un mercado.*" />
       <Subtitulo T={T} idx={1} at={K.V + 0.1} until={K.Mi - 0.1} texto="¿Un *árbol madre* que alimenta a sus hijos?" />
       <Subtitulo T={T} idx={2} at={K.Mi + 0.1} until={K.Tr - 0.1} texto="Las *micorrizas* se meten en las raíces." />
       <Subtitulo T={T} idx={3} at={K.Tr + 0.1} until={K.Ca - 0.1} texto="Fósforo y nitrógeno *por azúcares.*" />
@@ -352,7 +352,7 @@ function MicorrizasShot() {
       <Subtitulo T={T} idx={6} at={K.R + 0.1} until={K.Si - 0.1} texto="Sí: en *hasta 19 abetos.*" />
       <Subtitulo T={T} idx={7} at={K.Si + 0.1} until={K.De - 0.1} texto="1997: el carbono *pasó a otro árbol.*" />
       <Subtitulo T={T} idx={8} at={K.De + 0.1} until={K.Ma - 0.1} texto="¿Por el hongo o *por el suelo?*" />
-      <Subtitulo T={T} idx={9} at={K.Ma + 0.1} until={K.Ci - 0.1} texto="¿Árbol madre? *Sin estudios que lo prueben.*" />
+      <Subtitulo T={T} idx={9} at={K.Ma + 0.1} until={K.Ci - 0.1} texto="¿Árbol madre? *Sin estudios en bosques que lo prueben.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.C - 0.1} texto="Las citas que exageran: *×2.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Mercado, sí. *Internet del bosque: se investiga.*" />
 
