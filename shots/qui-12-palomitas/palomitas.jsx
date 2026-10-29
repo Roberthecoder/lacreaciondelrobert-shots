@@ -363,7 +363,7 @@ function Palomitas() {
       <Chip T={T} at={K.Pe + 1.0} until={K.Es - 0.3} texto="≈ 10 veces la presión del aire (estimación)" y={1500} tam={32} borde={KC.red} />
       <Chip T={T} at={rompe + 1.3} until={K.Pr - 0.2} texto="ancho ×2" x={290} y={1500} tam={46} borde={KC.yellow} />
       <Chip T={T} at={rompe + 1.9} until={K.Pr - 0.2} texto="densidad ÷8" x={780} y={1500} tam={46} borde={KC.cyan} />
-      <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.Et + 2.7} anio="2015" quien="Virot y Ponomarenko · Francia" revista="J. R. Soc. Interface" x={540} y={770} />
+      <TarjetaEstudio T={T} at={K.Et + 0.3} until={K.Et + 2.7} anio="2015" quien="Virot y Ponomarenko · Francia" revista="J. R. Soc. Interface" x={540} y={770} />
       <Etq T={T} at={K.Et + 3.0} until={K.Te - 0.3} x={110} y={740} texto="horno" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Et + 3.2} until={K.Te - 0.3} texto="cámara: 2900 cuadros por segundo" y={1500} tam={36} borde={KC.ink} fondo="rgba(14,15,18,.85)" />
       <Chip T={T} at={t180 + 0.4} until={K.Br - 0.3} texto="temperatura crítica ≈ 180 °C" x={600} y={650} tam={32} borde={KC.red} />
@@ -395,7 +395,7 @@ function Palomitas() {
         [CUES.Grano + 1.2, CUES.Calor + 1.0, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Presion + 0.3, CUES.Espuma - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Espuma + 1.5, CUES.Pregunta - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
-        [CUES.Pregunta + 0.05, CUES.Estudio + 0.8, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Estudio - 0.05, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Estudio + 3.0, CUES.Termometro - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Termometro + 0.3, CUES.Brinco - 0.2, 'avatar_11_sorprendido', 'izq-alto'],
         [CUES.Brinco + 1.0, CUES.Sonido - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
