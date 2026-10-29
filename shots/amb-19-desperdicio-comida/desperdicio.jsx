@@ -245,13 +245,13 @@ function DesperdicioShot() {
       <Etq T={T} at={K.Cs + 2.3} until={K.Ki - 0.2} x={630} y={1010} texto="restaurantes 28 %" lado="izq" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cs + 2.6} until={K.Ki - 0.2} x={945} y={1060} texto="súper 12 %" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Cs + 0.3} until={K.Ki - 0.2} texto="de cada 10 kilos tirados" y={420} x={540} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Ki + 0.3} until={K.Mx - 0.2} valor={79} dur={2.1} sufijo=" kg" etiqueta="por persona al año, en casa" x={540} y={470} tam={150} color={KC.orange} />
-      <Chip T={T} at={K.Ki + 1.2} until={K.Mx - 0.2} texto="promedio mundial · 2022" y={1440} x={540} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Mx + 0.6} until={K.E - 0.2} valor={105} desde={79} dur={1.4} sufijo=" kg" etiqueta="México: por persona al año, en casa" x={540} y={1060} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.Mx + 1.4} until={K.E - 0.2} texto="estimación · confianza media" y={1440} x={540} tam={32} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ki + 0.3} until={K.Mx - 0.2} valor={79} dur={2.1} sufijo=" kg" etiqueta="por persona al año" x={540} y={470} tam={150} color={KC.orange} />
+      <Chip T={T} at={K.Ki + 1.2} until={K.Mx - 0.2} texto="en casa · promedio mundial · 2022" y={1440} x={540} tam={34} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Mx + 0.6} until={K.E - 0.2} valor={105} desde={79} dur={1.4} sufijo=" kg" etiqueta="México, por persona al año" x={540} y={1000} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.Mx + 1.4} until={K.E - 0.2} texto="en casa · estimación · confianza media" y={1440} x={540} tam={32} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.4} until={K.Ri - 0.2} anio="2024" quien="Programa de la ONU para el Medio Ambiente" revista="Food Waste Index Report 2024 · Nairobi" x={540} y={940} />
       <Chip T={T} at={K.E + 3.0} until={K.Ri - 0.2} texto="datos de hogares de 93 países" y={1440} x={540} tam={34} borde={KC.ink} />
-      <MitoTachado T={T} at={K.Ri + 0.2} tacharEn={K.Ri + 1.4} until={K.Ga - 0.2} texto="«solo pasa en países ricos»" x={400} y={470} tam={46} />
+      <MitoTachado T={T} at={K.Ri + 0.2} tacharEn={K.Ri + 1.4} until={K.Ga - 0.2} texto="«solo pasa en países ricos»" x={360} y={470} tam={40} />
       <Chip T={T} at={K.Ri + 3.4} until={K.Ga - 0.2} texto="kg por persona al año, en casa" y={1440} x={540} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Ri + 4.0} until={K.Ga - 0.2} x={760} y={760} texto="± 7 kg" tam={44} color={KC.ink} />
       <Chip T={T} at={K.Ga + 0.6} until={K.C - 0.2} texto="2010–2016" y={500} x={640} tam={40} borde={KC.red} />

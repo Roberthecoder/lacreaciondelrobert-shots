@@ -1,0 +1,48 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Basura Electronica base narrada.dc.html",
+  "salida": "Shot Basura Electronica narrado.dc.html",
+  "nota": "Shot Ambiental #20. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese cajón con cables y celulares viejos no es basura: es una mina."
+    },
+    {
+      "escena": "Monton",
+      "texto": "En 2022, el mundo desechó sesenta y dos millones de toneladas de basura electrónica: casi ocho kilos por persona."
+    },
+    {
+      "escena": "Metales",
+      "texto": "Y adentro venían metales que valían noventa y un mil millones de dólares, sobre todo cobre, oro y hierro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto de eso se recicló de forma segura y registrada?"
+    },
+    {
+      "escena": "Reciclado",
+      "texto": "Según el Monitor Mundial de Basura Electrónica 2024 de Naciones Unidas, solo el veintidós por ciento."
+    },
+    {
+      "escena": "Bote",
+      "texto": "Otros catorce millones de toneladas se fueron al bote de basura normal, y la mayoría terminó enterrada en rellenos."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "Ese año, México generó mil quinientos millones de kilos, y solo el tres y medio por ciento quedó registrado como recolectado."
+    },
+    {
+      "escena": "Cajon",
+      "texto": "Y lo chico, como los celulares, es lo que más fácil se queda años olvidado en un cajón."
+    },
+    {
+      "escena": "Litio",
+      "texto": "Ojo: si trae batería de litio y va al bote, en el camión se puede aplastar y provocar un incendio."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa mina no va a la basura: llévala a un centro de acopio de electrónicos."
+    }
+  ]
+}

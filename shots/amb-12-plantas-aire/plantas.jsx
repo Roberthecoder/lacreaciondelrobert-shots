@@ -151,9 +151,9 @@ function Sala({ T, aire = 0, abre = 0, macetas = 0, planta = true, cortina = fal
   </g>;
 }
 // Cocina: estufa con olla, campana y ducto que saca el humo a la calle.
-function Cocina({ T, x, y, on = 1 }) {
+function Cocina({ T, x, y, on = 1, s = 1 }) {
   const r = krng(8), humo = Array.from({ length: 12 }, () => ({ p: r(), dx: r() * 60 - 30 }));
-  return <g transform={`translate(${x} ${y})`}>
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-170} y={-60} width={340} height={260} rx={10} fill="#eef2f7" stroke={KC.ink} strokeWidth={7} />
     <rect x={-170} y={-80} width={340} height={26} fill="#555b66" stroke={KC.ink} strokeWidth={6} />
     <path d="M -90 -80 L -100 -170 L 100 -170 L 90 -80 Z" fill="#c0c6cf" stroke={KC.ink} strokeWidth={6} />
@@ -164,7 +164,6 @@ function Cocina({ T, x, y, on = 1 }) {
     {humo.map((h, i) => { const u = ((T * 0.5 + h.p) % 1); const py = u < 0.5 ? -190 - u * 2 * 140 : -330 - (u - 0.5) * 2 * 270; const px = u < 0.75 ? h.dx * (1 - u) : 40 + (u - 0.75) * 4 * 200;
       const pyy = u < 0.75 ? py : -600;
       return <circle key={i} cx={px} cy={pyy} r={16 + u * 14} fill="#dfe3e8" stroke={KC.ink} strokeWidth={3} opacity={on * (0.85 - u * 0.4)} />; })}
-    <text x={230} y={-660} textAnchor="end" style={{ font:`900 28px ${KF.texto}` }} fill={KC.ink}>hacia afuera →</text>
   </g>;
 }
 // Cubo de aire (23 litros, esquemático).
@@ -224,12 +223,12 @@ function PlantasShot() {
       <Escena T={T} a={K.Ca} b={K.P + 1.8}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <CamaraNASA T={T} x={470} y={1170} w={460} gas={gas}>
-            <Planta T={T} x={520} y={1120} s={0.62} seed={7} />
+          <CamaraNASA T={T} x={430} y={1130} w={360} gas={gas}>
+            <Planta T={T} x={470} y={1090} s={0.5} seed={7} />
           </CamaraNASA>
-          <Jeringa x={890} y={810} p={kprog(T, K.Ca + 1.9, K.Ca + 2.8)} o={kprog(T, K.Ca + 1.3, K.Ca + 1.6) * (1 - kprog(T, K.Ca + 3.4, K.Ca + 3.8))} />
+          <Jeringa x={620} y={800} p={kprog(T, K.Ca + 1.9, K.Ca + 2.8)} o={kprog(T, K.Ca + 1.3, K.Ca + 1.6) * (1 - kprog(T, K.Ca + 3.4, K.Ca + 3.8))} />
           <g opacity={kprog(T, K.Ca + 0.6, K.Ca + 1.0)}>
-            <line x1={240} y1={1200} x2={700} y2={1200} stroke={KC.ink} strokeWidth={5} /><text x={470} y={1238} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>0.76 m</text>
+            <line x1={250} y1={1145} x2={610} y2={1145} stroke={KC.ink} strokeWidth={5} /><text x={430} y={1176} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>0.76 m</text>
           </g></>)}
       </Escena>
       {/* 4 · pregunta: ¿por qué no pasa en tu sala? */}
@@ -246,7 +245,7 @@ function PlantasShot() {
       <Escena T={T} a={K.E} b={K.L}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(Array.from({ length: 12 }, (_, i) => { const t0 = K.E + 2.6 + i * 0.16, e = kprog(T, t0, t0 + 0.3, kEase.rebote), c = i % 6, f = Math.floor(i / 6);
-          return <g key={i} transform={`translate(${150 + c * 150} ${930 + f * 150}) rotate(${(i % 3 - 1) * 5}) scale(${e})`} opacity={kprog(T, t0, t0 + 0.15)}>
+          return <g key={i} transform={`translate(${150 + c * 150} ${830 + f * 145}) rotate(${(i % 3 - 1) * 5}) scale(${e})`} opacity={kprog(T, t0, t0 + 0.15)}>
             <rect x={-48} y={-62} width={96} height={124} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={5} />
             {[0, 1, 2, 3].map((l) => <line key={l} x1={-32} y1={-36 + l * 22} x2={l === 3 ? 6 : 32} y2={-36 + l * 22} stroke="#9aa3ad" strokeWidth={6} strokeLinecap="round" />)}
           </g>; }))}
@@ -279,7 +278,7 @@ function PlantasShot() {
             <rect x={260} y={760} width={150} height={260} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={6} />
             <FlechaAire T={T} x0={60} y0={890} x1={300} y1={900} grosor={14} o={kprog(T, K.Si + 3.0, K.Si + 3.5)} />
           </g>
-          <g opacity={kprog(T, K.Si + 3.6, K.Si + 4.1)}><Cocina T={T} x={770} y={1000} on={kprog(T, K.Si + 4.0, K.Si + 4.6)} /></g>
+          <g opacity={kprog(T, K.Si + 3.6, K.Si + 4.1)}><Cocina T={T} x={780} y={1100} s={0.72} on={kprog(T, K.Si + 4.0, K.Si + 4.6)} /></g>
         </>)}
       </Escena>
       {/* 10 · cierre: la planta del inicio, ahora junto a la ventana abierta */}
@@ -297,32 +296,31 @@ function PlantasShot() {
 
       {/* datos y etiquetas */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 3.2} texto="purificador de aire" x={330} y={560} tam={44} />
-      <NumeroGigante T={T} at={K.G + 3.5} until={K.M - 0.2} valor={1000} dur={2.2} prefijo="hasta " etiqueta="plantas en 1 m²" x={375} y={520} tam={110} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.G + 3.7} until={K.M - 0.2} valor={1000} dur={2.66} prefijo="hasta " etiqueta="plantas en 1 m²" x={375} y={520} tam={110} color={KC.yellow} />
       <Chip T={T} at={K.M + 0.3} until={K.Ca - 0.2} texto="NASA · 1989" y={470} x={300} tam={44} borde={KC.ink} />
       <Chip T={T} at={K.M + 2.0} until={K.Ca - 0.2} texto="espacios sellados" y={570} x={300} tam={36} borde={KC.violet} />
       <Etq T={T} at={K.M + 2.9} until={K.Ca - 0.2} x={270} y={1240} texto="edificio hermético" lado="der" tam={28} color={KC.ink} />
       <Etq T={T} at={K.M + 4.4} until={K.Ca - 0.2} x={1040} y={1240} texto="base espacial" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 0.6} until={K.P + 1.4} texto="caja sellada · menos de 1 m³" y={470} x={360} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Ca + 2.4} until={K.Ca + 4.4} x={300} y={600} texto="benceno" lado="der" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 3.0} until={K.Ca + 4.6} x={300} y={650} texto="formaldehído" lado="der" tam={30} color={KC.ink} />
-      <Cronometro T={T} at={K.Ca + 2.2} until={K.P + 1.4} factor={factor} x={360} y={580} etiqueta="TIEMPO EN LA CAJA" />
-      <Chip T={T} at={K.P + 0.2} until={K.P + 1.6} texto="el químico baja ↓" y={680} x={360} tam={34} borde={KC.orange} />
+      <Chip T={T} at={K.Ca + 0.6} until={K.P + 1.4} texto="caja sellada · menos de 1 m³" y={385} x={360} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ca + 2.4} until={K.Ca + 4.6} texto="benceno o formaldehído" y={575} x={360} tam={30} borde={KC.orange} />
+      <Cronometro T={T} at={K.Ca + 2.2} until={K.P + 1.4} factor={factor} x={360} y={478} etiqueta="TIEMPO EN LA CAJA" />
+      <Chip T={T} at={K.P + 0.2} until={K.P + 1.6} texto="el químico baja ↓" y={575} x={360} tam={34} borde={KC.orange} />
       <Chip T={T} at={K.P + 2.0} until={K.S - 0.2} texto="¿y en tu sala?" y={470} x={300} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.S + 0.4} until={K.E - 0.2} texto="tu casa no está sellada" y={470} x={540} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.S + 1.8} until={K.E - 0.2} x={160} y={700} texto="puerta" lado="der" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.6} until={K.E - 0.2} x={680} y={680} texto="ventana" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.6} until={K.E - 0.2} x={420} y={690} texto="ventana" lado="izq" tam={28} color={KC.ink} />
       <Etq T={T} at={K.S + 3.4} until={K.E - 0.2} x={930} y={1130} texto="rendijas" lado="izq" tam={28} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.4} until={K.L - 0.2} anio="2019" quien="Cummings y Waring · Drexel, Filadelfia" revista="J. Expo. Sci. Environ. Epidemiol." y={640} />
-      <Chip T={T} at={K.E + 2.6} until={K.L - 0.2} texto="12 estudios" y={1150} x={300} tam={34} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.4} until={K.L - 0.2} anio="2019" quien="Cummings y Waring · Drexel, Filadelfia" revista="J. Expo. Sci. Environ. Epidemiol." y={560} />
+      <Chip T={T} at={K.E + 2.6} until={K.L - 0.2} texto="12 estudios" y={1100} x={300} tam={34} borde={KC.ink} />
       <div style={{ position:'absolute', left:0, top:0, opacity:kvisible(T, K.E + 4.0, K.L - 0.3, 0) ? 1 : 0 }}>
-        <Contador T={T} at={K.E + 4.0} hasta={196} dur={1.4} sufijo=" resultados" x={720} y={1150} tam={46} color={KC.texto} />
+        <Contador T={T} at={K.E + 4.0} hasta={196} dur={1.4} sufijo=" resultados" x={720} y={1100} tam={46} color={KC.texto} />
       </div>
       <Chip T={T} at={K.L + 0.9} until={K.Cu - 0.2} texto="1 planta ≈ 23 L de aire por hora" y={470} x={380} tam={34} borde={KC.leaf} />
       <Etq T={T} at={K.L + 1.2} until={K.Cu - 0.2} x={430} y={1050} texto="23 L" lado="der" tam={32} color={KC.ink} />
       <Etq T={T} at={K.L + 2.6} until={K.Cu - 0.2} x={920} y={720} texto="aire de afuera" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.L + 2.8} until={K.Cu - 0.2} texto="edificio típico: ~1 renovación por hora" y={570} x={430} tam={26} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Cu + 0.4} until={K.Si - 0.2} valor={1000} desde={10} dur={3.4} prefijo="10 a " etiqueta="plantas por m² de piso" x={380} y={500} tam={96} color={KC.yellow} />
-      <Chip T={T} at={K.Cu + 3.0} until={K.Si - 0.2} texto="sala de 4 × 4 m: ~1,700 plantas" y={1130} x={540} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Cu + 3.0} until={K.Si - 0.2} texto="sala de 4 × 4 m: ~1,700 plantas" y={640} x={380} tam={30} borde={KC.ink} />
       <Palomita T={T} at={K.Si + 1.2} until={K.C - 0.2} texto="quitar lo que contamina" x={50} y={440} />
       <Palomita T={T} at={K.Si + 2.6} until={K.C - 0.2} texto="abrir ventanas" x={50} y={540} />
       <Palomita T={T} at={K.Si + 3.8} until={K.C - 0.2} texto="campana con salida afuera" x={50} y={640} />
