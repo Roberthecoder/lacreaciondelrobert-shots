@@ -23,7 +23,7 @@
 | 9 | Cierre | Esta cara borrosa es un gato que nadie le enseñó: salió de nuestros videos. | **Regreso a la imagen del inicio**: la misma cara borrosa en el mismo lugar, ahora dentro de un marco de reproductor con barra roja, rodeada de cuadritos de gatos, sobre fondo amarillo; chip "aprendido de videos sin etiquetas". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
-**Música:** cama grave continua con zumbido de servidores; cada cuadrito que cae al embudo es un tic; los racks se encienden con un "clac" ascendente; la neurona que se ilumina hace un "ding"; la compresión/reconstrucción suena como un barrido; un maullido sintético muy suave (generado, no grabado) cuando aparece el gato del cierre.
+**Música:** cama grave continua (`gen-audio.mjs`, todo sintetizado); la cara se enfoca con un tono que sube; un tic por cada cuadro del video y un soplido por cada cuadrito que vuela a la pila; la etiqueta se tacha con un crujido; motor de servidores y tics ascendentes cuando se encienden los racks; tres notas por los tres días; un «ding» cuando se enciende la neurona; barridos al resumir y redibujar; 16 tics para los 16 aciertos; golpe y latido con el cerebro; acorde final en el cierre.
 
 ## Robert en pantalla
 
