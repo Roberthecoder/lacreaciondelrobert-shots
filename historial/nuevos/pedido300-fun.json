@@ -830,63 +830,122 @@
   },
   {
    "id": "fun-45-ciclosporina",
-   "titulo": "El hongo del suelo que hizo posibles los trasplantes (ciclosporina)",
+   "titulo": "El puñado de tierra que hizo posibles los trasplantes: la ciclosporina",
    "serie": "Shot Fungi Mati",
    "numero": 45,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-45-ciclosporina",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://patentimages.storage.googleapis.com/9c/3d/21/34fd42a598229b/US4215199.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3688495/",
+    "https://smw.ch/index.php/smw/article/download/64/61/116",
+    "https://pubmed.ncbi.nlm.nih.gov/8969/",
+    "https://pubmed.ncbi.nlm.nih.gov/1715244/",
+    "https://pubmed.ncbi.nlm.nih.gov/10878286/",
+    "https://pubmed.ncbi.nlm.nih.gov/6350878/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Tolypocladium inflatum: el hongo que parasita escarabajos",
+    "Rechazo de trasplantes: cómo te reconoce tu sistema inmune",
+    "Muestras de suelo que dieron medicinas"
+   ]
   },
   {
    "id": "fun-46-estatinas",
-   "titulo": "La medicina del colesterol salió de un hongo (lovastatina)",
+   "titulo": "La primera estatina la hizo un moho: Akira Endo y las estatinas",
    "serie": "Shot Fungi Mati",
    "numero": 46,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-46-estatinas",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3108295/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4525717/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC349746/",
+    "https://www.nccih.nih.gov/health/red-yeast-rice",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8404697/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "La lovastatina en el arroz de levadura roja",
+    "El colesterol: para qué lo necesita tu cuerpo",
+    "Medicinas que salieron de hongos además de la penicilina"
+   ]
   },
   {
    "id": "fun-47-micelio-ladrillo",
-   "titulo": "Empaques y ladrillos de micelio: hongos como material",
+   "titulo": "Esto no es unicel: es un hongo",
    "serie": "Shot Fungi Mati",
    "numero": 47,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-47-micelio-ladrillo",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9460913/",
+    "https://holcimfoundation.org/Projects/hy-fi",
+    "https://www.arup.com/news/hy-fi-reinvents-the-brick/",
+    "https://ecovative.com/assets/story/html/www.wired.com_2014_07_a-40-foot-tower-made-of-fungus-and-corn-stalks.html",
+    "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0213954",
+    "https://mushroompackaging.com/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Cuero de hongo (micotextiles)",
+    "Casas de micelio en Marte (NASA)",
+    "Unicel: cuánto tarda en degradarse"
+   ]
   },
   {
    "id": "fun-48-falo-apestoso",
-   "titulo": "El hongo que huele a carne podrida para que las moscas lo siembren",
+   "titulo": "El hongo que apesta a muerto a propósito: *Phallus impudicus*",
    "serie": "Shot Fungi Mati",
    "numero": 48,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-48-falo-apestoso",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://eujournal.org/index.php/esj/article/view/3051",
+    "https://eujournal.org/index.php/esj/article/view/3051/2877",
+    "https://botit.botany.wisc.edu/toms_fungi/july99.html",
+    "https://archive.bio.ed.ac.uk/jdeacon/FungalBiology/phallus.htm",
+    "https://doi.org/10.1080/00222939700770481",
+    "https://research.ucc.ie/en/publications/investigations-of-an-association-between-the-stinkhorn-fungus-and/",
+    "https://doi.org/10.21829/abm9.1990.587",
+    "https://publicaciones.inecol.mx/Record/oai:oai.abm.ojs.inecol.mx:article-587/Details"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Hongos que usan moscas para regar sus esporas",
+    "Hongo canastilla (Clathrus ruber)",
+    "Por qué la carne podrida huele así: cadaverina y putrescina"
+   ]
   },
   {
    "id": "fun-49-botrytis",
-   "titulo": "La pelusa gris de tus fresas (Botrytis cinerea)",
+   "titulo": "La pelusa gris de tus fresas: *Botrytis cinerea* entra por la flor y espera",
    "serie": "Shot Fungi Mati",
    "numero": 49,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-49-botrytis",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6637890/",
+    "https://doi.org/10.1111/j.1364-3703.2007.00417.x",
+    "https://doi.org/10.1111/j.1744-7348.1986.tb03211.x",
+    "https://doi.org/10.1094/PDIS.2002.86.9.1019",
+    "https://ipm.ucanr.edu/home-and-landscape/botrytis-rot-gray-mold-on-strawberries/",
+    "https://ephytia.inrae.fr/en/C/6988/Grapevine-Description-of-the-fungus",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11333459/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8693719/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Podredumbre noble: vinos dulces con Botrytis",
+    "Por qué las fresas se pudren tan rápido en el refri",
+    "Hongos que comen fruta: Penicillium vs. Botrytis"
+   ]
   },
   {
    "id": "fun-50-langosta",
