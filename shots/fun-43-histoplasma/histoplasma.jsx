@@ -247,7 +247,7 @@ function HistoplasmaShot() {
       {/* 9 · el estudio: abril de 2024, un cenote de la península de Yucatán */}
       <Escena T={T} a={K.E} b={K.En} zoom={0.05} origen="50% 70%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Cenote T={T} nadadores={kprog(T, K.E + 2.0, K.E + 4.0)} seed={5} />)}
+        {fsvg(<Cenote T={T} y={-130} nadadores={kprog(T, K.E + 2.0, K.E + 4.0)} seed={5} />)}
       </Escena>
       {/* 10 · 2–3 semanas después: 3 confirmados y 1 sospechoso */}
       <Escena T={T} a={K.En} b={K.Ce}>
@@ -256,7 +256,7 @@ function HistoplasmaShot() {
           {Array.from({ length: 21 }, (_, i) => { const on = kprog(T, K.En + 0.3 + i * 0.07, K.En + 0.5 + i * 0.07); const x = 250 + (i % 7) * 82, y = 560 + Math.floor(i / 7) * 82; const marca = i >= 14;
             return on > 0 ? <g key={i} opacity={on}><rect x={x} y={y} width={70} height={70} rx={10} fill={marca ? KC.red : '#fff'} stroke={KC.ink} strokeWidth={5} />
               <text x={x + 35} y={y + 46} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={marca ? '#fff' : KC.ink}>{i + 1}</text></g> : null; })}
-          {[0, 1, 2, 3].map((i) => { const on = kprog(T, K.En + 2.2 + i * 0.2, K.En + 2.5 + i * 0.2, kEase.rebote); const x = 210 + i * 220, y = 1080; const conf = i < 3;
+          {[0, 1, 2, 3].map((i) => { const on = kprog(T, K.En + 2.2 + i * 0.2, K.En + 2.5 + i * 0.2, kEase.rebote); const x = 210 + i * 220, y = 970; const conf = i < 3;
             const tag = kprog(T, K.En + 3.0 + i * 0.3, K.En + 3.3 + i * 0.3, kEase.rebote);
             return on > 0 ? <g key={i}><PersonaH x={x} y={y} s={on * 1.3} mal={0.7} color="#8fb6ff" />
               {tag > 0 && <g transform={`translate(${x} ${y + 70}) scale(${tag}) rotate(-6)`}>
@@ -268,7 +268,7 @@ function HistoplasmaShot() {
       {/* 11 · otro cenote de la zona, cerrado desde 2019 */}
       <Escena T={T} a={K.Ce} b={K.N} zoom={0.05} origen="50% 45%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<Cenote T={T} cerrado={kprog(T, K.Ce + 0.6, K.Ce + 2.0)} seed={8} />)}
+        {fsvg(<Cenote T={T} y={-130} cerrado={kprog(T, K.Ce + 0.6, K.Ce + 2.0)} seed={8} />)}
       </Escena>
       {/* 12 · el nombre: "capsulatum" por un halo que parecía cápsula */}
       <Escena T={T} a={K.N} b={K.C} zoom={0.06}>
@@ -310,11 +310,11 @@ function HistoplasmaShot() {
       <Chip T={T} at={K.S + 0.4} until={K.E - 0.2} texto="casi todos: nada o algo leve" x={400} y={470} tam={34} borde={KC.leaf} />
       <Chip T={T} at={K.S + 2.0} until={K.E - 0.2} texto="fiebre · tos · cansancio" x={400} y={570} tam={32} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.6} anio="2024" quien="abril · cenote de la península de Yucatán" revista="4 turistas · CCDR (Canadá), 2025" y={470} />
-      <Etq T={T} at={K.E + 3.8} until={K.En - 0.2} x={40} y={600} texto="murciélagos en el techo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.8} until={K.En - 0.2} x={40} y={560} texto="murciélagos en el techo" tam={30} color={KC.ink} />
       <Chip T={T} at={K.E + 4.2} until={K.En - 0.2} texto="4 turistas nadaron aquí" x={380} y={470} tam={34} borde={KC.cyan} />
       <Chip T={T} at={K.En + 0.2} until={K.Ce - 0.2} texto="2–3 semanas después" x={380} y={460} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Ce + 2.0} until={K.N - 0.2} texto="CERRADO desde 2019 · CCDR 2025" x={540} y={600} tam={36} fondo={KC.yellow} color={KC.ink} borde={KC.ink} />
-      <Etq T={T} at={K.Ce + 0.6} until={K.Ce + 1.9} x={40} y={600} texto="otro cenote de la zona" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ce + 2.0} until={K.N - 0.2} texto="CERRADO desde 2019 · CCDR 2025" x={380} y={470} tam={30} fondo={KC.yellow} color={KC.ink} borde={KC.ink} />
+      <Etq T={T} at={K.Ce + 0.6} until={K.Ce + 1.9} x={40} y={470} texto="otro cenote de la zona" tam={30} color={KC.ink} />
       <Chip T={T} at={K.N + 0.2} until={K.C - 0.2} texto="capsulatum = “con cápsula”" x={400} y={440} tam={34} borde={KC.gold} />
       <MitoTachado T={T} at={K.N + 0.8} tacharEn={K.N + 1.7} until={K.C - 0.2} texto="cápsula" x={300} y={560} tam={46} />
       <Etq T={T} at={K.N + 1.9} until={K.C - 0.2} x={760} y={720} lado="izq" texto="solo un halo claro" tam={30} color="#e8f4ff" />
