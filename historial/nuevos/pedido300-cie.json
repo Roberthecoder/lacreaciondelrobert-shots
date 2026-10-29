@@ -1,0 +1,7 @@
+{ "temas": [
+  { "id": "cie-voz-grabada", "titulo": "Tu voz grabada no suena rara: es tu voz sin tus huesos (conducción ósea)", "serie": "Shot Científico", "numero": 10, "estado": "idea", "carpeta": "shots/cie-10-voz-grabada", "rama": "pedido300/cie", "fecha": "2026-10-29", "fuentes": [], "derivados": [] },
+  { "id": "cie-moscas-volantes", "titulo": "Las manchitas que flotan en tu vista están dentro de tu ojo (moscas volantes del vítreo)", "serie": "Shot Científico", "numero": 11, "estado": "idea", "carpeta": "shots/cie-11-moscas-volantes", "rama": "pedido300/cie", "fecha": "2026-10-29", "fuentes": [], "derivados": [] },
+  { "id": "cie-tronar-dedos", "titulo": "Qué truena cuando te truenas los dedos (cavidad en el líquido sinovial; Unger 60 años)", "serie": "Shot Científico", "numero": 12, "estado": "idea", "carpeta": "shots/cie-12-tronar-dedos", "rama": "pedido300/cie", "fecha": "2026-10-29", "fuentes": [], "derivados": [] },
+  { "id": "cie-hervir-altura", "titulo": "En la Ciudad de México el agua hierve antes de 100 °C (altura y presión del aire)", "serie": "Shot Científico", "numero": 13, "estado": "idea", "carpeta": "shots/cie-13-hervir-altura", "rama": "pedido300/cie", "fecha": "2026-10-29", "fuentes": [], "derivados": [] },
+  { "id": "cie-contar-trueno", "titulo": "Cuenta los segundos entre el rayo y el trueno: a qué distancia cayó (luz contra sonido)", "serie": "Shot Científico", "numero": 14, "estado": "idea", "carpeta": "shots/cie-14-contar-trueno", "rama": "pedido300/cie", "fecha": "2026-10-29", "fuentes": [], "derivados": [] }
+] }
