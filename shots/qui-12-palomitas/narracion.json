@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Palomitas base narrada.dc.html",
+  "salida": "Shot Palomitas narrado.dc.html",
+  "nota": "Shot Químico #12. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese pop no es la cáscara de tu palomita rompiéndose: es vapor de agua escapando de golpe."
+    },
+    {
+      "escena": "Grano",
+      "texto": "Cada grano de maíz palomero guarda unos 20 miligramos de agua bajo su cáscara, el pericarpio."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Al calentarlo, esa agua hierve, se vuelve vapor y la presión sube."
+    },
+    {
+      "escena": "Presion",
+      "texto": "La cáscara aguanta como olla exprés: unas diez veces la presión del aire."
+    },
+    {
+      "escena": "Espuma",
+      "texto": "Entonces revienta, y el almidón se infla como espuma: el doble de grande y ocho veces menos denso."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero a qué temperatura revienta, y por qué brinca?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2015, dos investigadores en Francia las calentaron en un horno y las filmaron a casi 3 mil cuadros por segundo."
+    },
+    {
+      "escena": "Termometro",
+      "texto": "A 170 grados reventó el 34 por ciento; a 180, el 96."
+    },
+    {
+      "escena": "Brinco",
+      "texto": "El brinco: le sale una patita de almidón que se aplasta contra el fondo y rebota."
+    },
+    {
+      "escena": "Sonido",
+      "texto": "La mayoría de las grietas no hicieron ruido: el pop sonó al salir el vapor."
+    },
+    {
+      "escena": "Viejitas",
+      "texto": "¿Y las que no revientan? En 2005 las ligaron a una cáscara que retiene peor el agua."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese pop no es la cáscara rompiéndose: es tu palomita soltando su vapor."
+    }
+  ]
+}
