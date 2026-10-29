@@ -30,7 +30,7 @@
 
 **Música:** cama grave y continua, algo de suspenso tranquilo, sin golpe; efectos en el mismo cuadro: lluvia fina de esporas (siseo suave), tic-tac del contador, cuchillo al cortar el pie, "clinc" del vaso, grillos de noche y pajarito de mañana, ruido al levantar el vaso, zoom del microscopio, golpe del sello "NO", papel de la tarjeta de estudio, nube de esporas del hongo de repisa, calendario que pasa hojas, "pof" del bejín, apagones grises de las esporas que caen mal, una campanita para la única que brota.
 
-Barras de escala: 10 cm (champiñón), 10 µm (esporas), 30 cm (hongo de repisa), 40 cm (bejín).
+Barras de escala: 5 cm (champiñón de campo, sombrero de ~10 cm como el de Buller), 5 cm (cocina), 10 µm (esporas), 10 cm (hongo de repisa, que sobresale ~15 cm del tronco), 40 cm (bejín). Números grandes siempre con comas (formato México).
 
 ## Robert en pantalla
 

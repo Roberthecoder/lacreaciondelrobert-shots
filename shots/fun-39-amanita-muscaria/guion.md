@@ -3,8 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #39 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro" (macro → micro → macro): el hongo de cuento → el botón envuelto en su velo → el velo que se rompe → las raíces y las hifas al microscopio → el caso real → el mismo hongo del inicio, ya entendido.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Esos puntos blancos del hongo de los cuentos no son manchas: son pedazos de un cascarón roto."
-- **Duración:** voz 992 caracteres / 185 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~990 créditos de ElevenLabs).
+- **Duración:** voz 998 caracteres / 185 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** asombro por la morfología, serio en la toxicidad. Nada invita a comerlo ni a "probarlo": se habla de él como venenoso. Sin mitos (renos, Santa Claus, chamanes): no se mencionan. No es consejo médico.
 - **No repite** fun-09 (*Amanita phalloides*, amatoxinas, mitos de la cuchara): aquí el tema es el velo universal, la micorriza y las toxinas del cerebro (iboténico/muscimol).
 
@@ -13,17 +13,17 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esos puntos blancos del hongo de los cuentos no son manchas: son pedazos de un cascarón roto. | Fondo menta con lunares; cuadro 0.3: un *Amanita muscaria* rojo con puntos blancos crece de golpe en el pasto. Una lupa toca un punto y se ve que sobresale, como un trocito pegado. Chip "¿manchas?" tachado → "pedazos". |
-| 1 | Huevo | Es *Amanita muscaria*, y de joven está envuelto en un velo blanco, como un huevo. | Se rebobina: el hongo se encoge a un botón blanco redondo/ovalado, entero dentro del velo. Etiquetas "*Amanita muscaria*", "velo universal", "botón". |
+| 1 | Huevo | Es *Amanita muscaria*: de joven está envuelto en un velo blanco, como un huevo. | Se rebobina: el hongo se encoge a un botón blanco redondo/ovalado, entero dentro del velo. Etiquetas "*Amanita muscaria*", "velo universal", "botón". |
 | 2 | Globo | Al crecer, el sombrero se infla como globo; el velo no crece y se rompe en pedacitos. | POR DENTRO · corte del botón: el sombrero rojo se expande como globo; el velo blanco se agrieta en placas que se separan. Medidor de tamaño del sombrero. |
-| 3 | Base | Unos quedan arriba, como puntos, y el resto abajo, en la base del pie. | Hongo maduro: flechas a los puntos (verrugas) arriba y a los anillos de velo sobre el bulbo de la base. Etiquetas "verrugas", "anillo", "restos en el bulbo". |
+| 3 | Base | Unos quedan arriba, como puntos, y el resto abajo, en la base del pie. | Hongo maduro: flechas a los puntos (verrugas, del velo universal) arriba y a las bandas de velo sobre el bulbo de la base. Etiquetas "verrugas" y "bandas del velo en el bulbo". El anillo del pie se dibuja pero no se rotula como pedazo del velo universal (viene de otro velo, el parcial). |
 | 4 | Lluvia | Por eso a veces la lluvia los lava y el sombrero queda liso. | Llueve: las gotas tumban puntos uno por uno; el sombrero queda rojo liso. Chip "ojo: sin puntos se confunde con otros hongos". |
-| 5 | Mexico | Y no es solo de cuentos: en México crece en bosques de pino y encino. | La cámara sube: bosque de pinos y encinos; mapa de México con marca en Oaxaca (Ixtlán de Juárez). Chip "*A. muscaria* var. *flavivolvata*". |
+| 5 | Mexico | No es solo de cuentos: en México crece en bosques de pino y encino. | La cámara sube: bosque de pinos y encinos; mapa de México con marca en Oaxaca (Ixtlán de Juárez). Chip "*Amanita muscaria* var. *flavivolvata*" (sin decir que es igual a la europea). |
 | 6 | Raices | Sus hilos abrazan raíces de árboles: les dan nutrientes y reciben azúcares. | Bajo tierra (fondo oscuro): hifas blancas envuelven una raíz de pino; flechas: nutrientes (N, P) hacia el árbol, azúcares hacia el hongo. Barra de escala 50 µm. |
 | 7 | Pregunta | ¿Y es venenoso? Sí. | **Re-gancho.** "?" gigante → sello "VENENOSO". Robert grande. |
-| 8 | Toxinas | Tiene ácido iboténico y muscimol, que alteran las señales de tu cerebro. Cocinarlo no quita el peligro. | Neuronas (fondo oscuro): las moléculas se parecen a glutamato y GABA y se pegan a los receptores; señales que se aceleran y se apagan. Olla hirviendo: las moléculas siguen. |
-| 9 | Estudio | En 2018, en Minnesota, un señor los cocinó creyendo que eran un hongo comestible de su país. | Tarjeta "2018 · Minnesota, EUA · MMWR (CDC), 2019". Un hongo amarillo-naranja (*A. muscaria* var. *guessowii*) junto al hongo que él conocía, con signo "≠". |
+| 8 | Toxinas | Tiene ácido iboténico y muscimol, que alteran las señales de tu cerebro. Y cocinarlo puede no quitarle el peligro. | Neuronas (fondo oscuro): las moléculas se parecen a glutamato y GABA y se pegan a los receptores; señales que se aceleran y se apagan. Olla hirviendo: algunas moléculas siguen ahí. Chip «cocinado ≠ seguro». |
+| 9 | Estudio | En 2018, en Minnesota, un señor los cocinó creyendo que eran un hongo que conocía de su país. | Tarjeta "2018 · Minnesota, EUA · MMWR (CDC), 2019". Un hongo amarillo-naranja (*A. muscaria* var. *guessowii*) junto al hongo que él conocía, con signo "≠". |
 | 10 | Respirador | En pocas horas: vómito, sudor y confusión. Pasó cuatro días con respirador y se recuperó. | Cronómetro "2–3 h"; chips "vómito", "sudor", "confusión"; cama de hospital con respirador, contador "4 días"; final ✓ "se recuperó". |
-| 11 | Moscas | Y hasta las moscas lo sufren: antes lo ponían en leche para atontarlas. | Plato con leche y trozos de hongo; moscas que bajan y quedan mareadas (espirales). |
+| 11 | Moscas | Hasta las moscas lo sufren: antes lo ponían en leche para atontarlas. | Plato con leche y trozos de hongo; moscas que bajan y quedan mareadas (espirales). |
 | 12 | Cierre | Esos puntos blancos no son adorno: son su cascarón roto. Admíralo, pero no te lo comas. | **Regreso a la imagen del inicio:** el mismo hongo en el pasto, ahora con los puntos marcados como piezas del velo; chips "míralo ✓" y "comerlo ✗". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
@@ -68,5 +68,9 @@ Barras de escala: 10 cm (hongo y botón), 50 µm (hifas en la raíz), 10 µm (ne
    > "an MMS mycologist examined the mushroom and identified it as Amanita muscaria var. guessowii"
    > "A. muscaria mushrooms can contain ibotenic acid and muscimol, which are structurally similar to glutamate and gamma-Aminobutyric acid"; "A. muscaria toxins might not be deactivated by cooking"
    (Líneas 8, 9 y 10.)
+8. Rampolli, F. I., Kamler, P., Carnevale Carlino, C. y Bedussi, F. (2021). The Deceptive Mushroom: Accidental *Amanita muscaria* Poisoning. *European Journal of Case Reports in Internal Medicine* 8(3): 002212. https://pmc.ncbi.nlm.nih.gov/articles/PMC7977045/
+   > "During heavy rain, its characteristic white plaques may wash off and Amanita muscaria can appear similar to – and be mistaken for – Amanita caesarea, an edible mushroom."
+   > Pie de la figura 1: "White plaques were lost and the mushrooms looked like Amanita caesarea"
+   (Línea 4 y chip "ojo: sin puntos se confunde con otros hongos".)
 
 El dibujo es esquemático. No es consejo médico: ante cualquier malestar después de comer hongos silvestres, ve a urgencias y lleva el hongo o los restos.

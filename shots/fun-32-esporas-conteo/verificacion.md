@@ -46,3 +46,31 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026):** las 25 afirmaciones están ✅. La única ⚠️ (champiñón del súper sin decir "ya abierto") se corrigió y se volvió a verificar con Kuo; los otros dos cambios fueron recortes de redacción sin datos nuevos.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `esporas-conteo.jsx`, el `.dc.html`, la columna «Lo que se ve», la tabla de Robert y `publicacion.md`, y miré cuadros con `motor/preview.mjs` (0.3–60 s, más 1, 3.5, 7.5, 8.6, 13, 20.5, 30, 47, 51.5 y 56 s).
+
+| # | Texto o dibujo nuevo | Veredicto | Fuente / comentario |
+|---|---|---|---|
+| R1 | "≈ la mitad" junto a la barra de personas (8,200 millones frente a 16,000 millones) | ✅ | [ONU]; 8.2 ÷ 16 = 0.51. Coherente con "casi el doble". |
+| R2 | Cronómetro "UNA NOCHE" (~8 h) | ✅ | [KS] "it's often best to wait overnight". |
+| R3 | Libreta "≈ 16,000,000,000" | ✅ | [B2] p. 404 (fila 1). |
+| R4 | "esporas al día · 30,000,000,000" (repisa) | ✅ | [B2] p. 130/137: "liberated 30,000,000,000 spores in 24 hours". |
+| R5 | "esporas adentro · 7,000,000,000,000" (bejín) | ✅ | [B1] p. 86 "produced about 7,000,000,000,000 spores"; [B2] p. 138 "found to contain". |
+| R6 | Tarjetas de repaso con autor y año | ✅ corregido | Decían "Buller, 1922" para el hongo de repisa, pero lo midió White. Ahora dicen "champiñón de campo · Buller, 1922", "hongo de repisa · J. H. White (en Buller), 1922" y "bejín gigante · Buller, 1909" ([B2] p. 130, 137 y 139; [B1] p. 86). |
+| R7 | "hongo del artista" (*G. applanatum*); dibujo: repisa café con surcos, borde y poros blancos abajo | ✅ | [KG] "artist's fungus" · "dull brown cap surface … furrowed" · "white to grayish pore surface". |
+| R8 | Lugares: asfalto, agua, piedra, techo, tierra húmeda, vidrio (solo en tierra húmeda alguna sobrevive) | ✅ | Ilustración esquemática de [B1] p. 87 ("finding a suitable substratum"). No afirma cifras. |
+| R9 | Boletos ✗ / ★ | ✅ | Metáfora de la fila 12. |
+| R10 | Barras de escala | ✅ corregido | Champiñón de campo: con la barra de "10 cm" el sombrero dibujado medía ~21 cm; Buller midió uno de ~10 cm ("about 4 inches"). Se cambió a "5 cm", y ahora el sombrero mide ~10 cm. Hongo de repisa: con la barra de "30 cm" sobresalía ~50 cm del tronco, y Kuo da "8–14 cm deep". Se cambió a "10 cm", y ahora sobresale ~15 cm. Cocina, 5 cm: *A. bisporus* de ~11 cm ([KB] "Cap: 2.5–14 cm") ✅. Esporas, 10 µm: la espora dibujada mide ~7 µm ✅. Bejín, 40 cm: el diámetro dibujado es igual a la barra ✅ ([B1] "40 cm. long"). |
+| R11 | Morfología: *A. campestris* (blanco, laminillas rosa-café, anillo); *A. bisporus* abierto (velo roto, laminillas café oscuro); espora elipsoide lisa café con apículo; *Calvatia* bola blanca | ✅ | [KC], [KB], [KCG]. |
+| R12 | Formato de números | ✅ corregido | El contador usaba `toLocaleString('es-MX')`, que según el navegador podía salir con puntos (16.000.000.000). En la copia del kit del shot ahora es `'en-US'`: siempre sale con comas (16,000,000,000). Revisado en los cuadros. |
+| R13 | Contador del gancho tapado por el subtítulo | ✅ corregido | Se movió debajo del subtítulo (y = 1500, x = 620), sin chocar con la barra de escala. |
+| R14 | Subtítulos resumidos | ✅ corregido | "1922: Reginald Buller las contó" era inexacto, porque Buller no contó en 1922 lo del hongo de repisa ni lo del bejín. Ahora dice "1922: *Reginald Buller* publicó sus cuentas" (igual que la voz). "Un champiñón: 16 mil millones" pasa a "Un champiñón de campo: 16 mil millones de esporas", para que no se entienda que es cualquier champiñón. Los demás coinciden con la voz verificada. |
+| R15 | `publicacion.md`: "los botones cerrados casi no sueltan esporas" y "corrientes de aire" | ✅ | [KS] "Buttons, young mushrooms, and mushrooms with … a partial veil are not likely to drop spores" · "to keep air currents away". |
+| R16 | `publicacion.md`: textos que decían que Buller "las contó" o "contó esporas una por una" | ✅ corregido | Eran estimaciones hechas contando muestras ([B1] p. 85–86 "counting apparatus"; [B2] p. 403 basidios contados en 0.0049 mm²). En YouTube y LinkedIn ahora dice "estimó contando muestras al microscopio", y "contó unos 7 billones" pasa a "estimó". En Threads se agregó "si funcionó". |
+| R17 | Tabla «Robert en pantalla» frente al jsx | ✅ | 9 apariciones con los mismos tiempos que el jsx; ~31.5 s en pantalla; 8 poses distintas, ninguna repetida seguida; grande en «¿Y para qué tantas?»; `CierreMarca` con Robert. |
+
+**Resumen:** todo queda ✅: la voz verificada (25 filas) y la revisión final de animación y publicación (17 filas, 7 corregidas sin tocar la voz).
+
+VEREDICTO: APROBADO
