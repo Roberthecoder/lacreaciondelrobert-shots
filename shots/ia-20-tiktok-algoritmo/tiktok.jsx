@@ -232,9 +232,6 @@ function Impacto({ T, at, until, y = 640 }) {
   </div>;
 }
 
-// Lado extra de Robert debajo del subtítulo (no tapa datos ni subtítulo).
-Object.assign(KLADOS, { 'bajo-der': { left:650, top:1380, width:400 } });
-
 function TikTok() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, S: CUES.Senales, Pe: CUES.Peso, R: CUES.Ranking, Q: CUES.Pregunta, P1: CUES.Paso1, P2: CUES.Paso2, P3: CUES.Paso3, E: CUES.Estudio, X: CUES.Explora, C: CUES.Cierre, Ou: CUES.Outro };

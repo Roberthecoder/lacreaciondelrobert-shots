@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot CerebroWatts base narrada.dc.html",
+  "salida": "Shot CerebroWatts narrado.dc.html",
+  "nota": "Shot IA #24. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Mientras me escuchas, tu cerebro gasta unos veinte watts: lo de un foco."
+    },
+    {
+      "escena": "Cuerpo",
+      "texto": "Pesa como el dos por ciento de tu cuerpo y se lleva una quinta parte de tu energía."
+    },
+    {
+      "escena": "Neuronas",
+      "texto": "Con eso trabajan unas ochenta y seis mil millones de neuronas."
+    },
+    {
+      "escena": "Mito",
+      "texto": "Y lo del diez por ciento es mito: en un día lo usas casi todo."
+    },
+    {
+      "escena": "Tarjeta",
+      "texto": "Esta tarjeta de IA puede jalar hasta setecientos watts: lo de unos treinta y cinco cerebros."
+    },
+    {
+      "escena": "Miles",
+      "texto": "Y en 2024, para entrenar Llama 3, usaron hasta dieciséis mil juntas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces tu cabeza le gana a la máquina?"
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: no se comparan uno a uno. La tarjeta hace otro trabajo y tu cerebro no es una computadora digital."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2021, en la Universidad de Virginia, estimaron que en tu corteza calcular cuesta una décima de watt; mandar señales lejos, treinta y cinco veces más."
+    },
+    {
+      "escena": "Copia",
+      "texto": "En 2024, Intel hizo una máquina inspirada en el cerebro: mil ciento cincuenta millones de neuronas artificiales y hasta dos mil seiscientos watts."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu foquito de veinte watts aún le da clases de ahorro a las máquinas."
+    }
+  ]
+}

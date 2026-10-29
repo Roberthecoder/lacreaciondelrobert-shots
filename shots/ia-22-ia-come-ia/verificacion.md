@@ -31,3 +31,24 @@ Revisión de reglas de cifras: la única fecha dicha en voz ("2024") va con su a
 
 1. **⚠️ #2 "Y empezó hablando de torres de iglesias" / hoja "Gen 0" con torre.** Las torres de iglesias son el texto de entrada que recibieron todas las generaciones, no lo que escribió la generación 0. Propuesta de voz: **"Y le pidieron seguir un texto sobre torres de iglesias."** En pantalla, rotular la hoja de la torre como **"texto de entrada"** (no "Gen 0"); si se quiere una hoja Gen 0, que hable de catedrales/arquitectura ("St. John's Cathedral, Londres").
 2. **⚠️ #16 "son una IA que solo se escuchó a sí misma".** Cada generación aprendió de la anterior y el modelo base ya traía aprendizaje humano. Propuesta: **"Así que esas liebres no son locura: son una IA que aprendió de copias de copias de otra IA."** (o "…que aprendió solo de otras IA").
+
+## Re-verificación
+
+29 oct 2026 · mismo verificador independiente · solo lo nuevo, contra las mismas fuentes abiertas (PMC11269175 y arXiv:2404.01413).
+
+| # | Afirmación nueva | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Voz línea 1: "Le pidieron seguir un texto sobre torres de iglesias." | ✅ | *Nature* 2024, Example 1 y métodos | "Input: … leading architects designed the parish church towers based on early examples of Perpendicular." / "for each token sequence in the training set, we ask the model to predict the next 64 tokens" | 2024 |
+| R2 | Voz línea 12: "Esas liebres no son locura: son una IA que aprendió de copias de copias de otra IA." | ✅ | *Nature* 2024, Example 1 | "each new generation is trained on data produced by the previous generation" | 2024 |
+| R3 | "Como fotocopia de fotocopia: cada copia pierde algo." (recorte; sigue marcada como analogía) | ✅ | Analogía rotulada (chip "analogía" en el jsx) | — | — |
+| R4 | "…en la quinta, recitaba idiomas." | ✅ | *Nature* 2024, Example 1 | "Gen 5: ism, which had been translated into more than 100 languages including English, French, German, Italian…" | 2024 |
+| R5 | "Lo raro casi no sale en las copias: cada generación lo ve menos, hasta olvidarlo." | ✅ | *Nature* 2024 | "At first, the tails (low-probability events) begin to disappear as a result of the low probability of sampling them" | 2024 |
+| R6 | "Pero ojo: en Stanford vieron que si guardas los textos humanos y sumas los nuevos, el colapso se evita." | ✅ | Gerstgrasser et al., arXiv:2404.01413 | "accumulating the successive generations of synthetic data alongside the original real data avoids model collapse" | 2024 |
+| R7 | jsx: hoja "texto de entrada" con "…las torres de las iglesias parroquiales se diseñaron según los primeros ejemplos del estilo Perpendicular." (traducido del inglés) | ✅ | *Nature* 2024, Example 1 (Input) | "…designed the parish church towers based on early examples of Perpendicular." (fragmento con "…", traducción fiel) | 2024 |
+| R8 | jsx: chip "9 generaciones después" entre el texto de entrada y la hoja "Generación 9" | ✅ | *Nature* 2024, Example 1 | "Outputs: Gen 0: … Gen 9: architecture. In addition to being home to … black @-@ tailed jackrabbits…" | 2024 |
+| R9 | publicacion.md: "Los autores advierten que los datos de interacciones humanas reales valdrán cada vez más." | ✅ | *Nature* 2024, resumen/intro | "the value of data collected about genuine human interactions with systems will be increasingly valuable in the presence of LLM-generated content in data crawled from the Internet" | 2024 |
+| R10 | publicacion.md: "el propio estudio de Nature vio que conservar un 10 % de los datos originales dejaba solo una degradación menor" | ✅ | *Nature* 2024, métodos | "with every new generation of training, a random 10% of the original data points is sampled… preservation of the original data allows for better model fine-tuning and leads to only minor degradation of performance." | 2024 |
+
+Las 2 ⚠️ de la primera ronda (#2 y #16) quedaron corregidas (R1, R2, R7, R8). Todo queda ✅.
+
+VEREDICTO: APROBADO

@@ -637,7 +637,8 @@ function CierreMarca({ T, at, frase = 'Sígueme para más ciencia', usuario = '@
 /* ---------- PIEZAS v2 (27 oct 2026, lote C) ---------- */
 // Lados extra de Robert que NO tapan el subtítulo (que vive entre y ≈ 1230 y 1360):
 // 'izq-alto' = espejo de 'arriba-der' · 'grande' / 'grande-izq' = medio cuerpo grande arriba del subtítulo (presentador en narrados).
-Object.assign(KLADOS, { 'izq-alto': { left:-10, top:300, width:330 }, 'grande': { left:520, top:560, width:580 }, 'grande-izq': { left:-20, top:560, width:580 } });
+Object.assign(KLADOS, { 'izq-alto': { left:-10, top:300, width:330 }, 'grande': { left:520, top:560, width:580 }, 'grande-izq': { left:-20, top:560, width:580 },
+  'bajo-der': { left:650, top:1380, width:400 } }); // bajo-der: debajo del subtítulo (agregado en ia-20)
 // Escena con fundido cruzado (nunca corte seco) y un empujoncito de cámara. a..b en tiempo de autor.
 function Escena({ T, a, b, fondo, children, zoom = 0.05, origen = '50% 45%' }) {
   if (T < a - 0.45 || T > b + 0.45) return null;

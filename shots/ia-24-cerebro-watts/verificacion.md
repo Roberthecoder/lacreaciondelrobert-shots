@@ -36,3 +36,12 @@ Notas de revisión:
 2. **⚠️ #14 (Hala Point, dato de abr 2024, más de 2 años):** la voz no dice el año. Propuesta: "En 2024, Intel hizo una máquina inspirada en el cerebro: mil ciento cincuenta millones de neuronas artificiales y hasta dos mil seiscientos watts." (+2 palabras). Si hace falta recortar para quedar en 61–62 s, se puede quitar "de Meta" en la escena 5.
 
 Todo lo demás está ✅.
+
+## Re-verificación (29 oct 2026, coordinador)
+Correcciones aplicadas como propuso el verificador:
+- Escena 5: «Y en 2024, para entrenar Llama 3, usaron hasta dieciséis mil juntas.» ("de Meta" queda solo en pantalla: «Llama 3 405B · Meta · 2024») ✅
+- Escena 9: «En 2024, Intel hizo una máquina inspirada en el cerebro: mil ciento cincuenta millones de neuronas artificiales y hasta dos mil seiscientos watts.» ✅
+- Ningún texto propio dice que Hala Point sea "la más grande" ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
