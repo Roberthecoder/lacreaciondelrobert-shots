@@ -3,31 +3,51 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #33 · rama `pedido300/fun`.
 - **Formato:** N2 El número + N1 (la mancha de tu regadera → las esporas y quién es quién al microscopio → el mito tachado → el estudio → **qué sí sirve** con el número gigante "50 %") y cierre en la misma junta del inicio, ya limpia y seca.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Esa mancha negra del baño no es mugre: es moho, y algunos se comen tu jabón.»
-- **Duración:** voz 996 caracteres / 186 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~996 créditos de ElevenLabs).
+- **Duración:** voz 990 caracteres (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~990 créditos de ElevenLabs).
 - **Tono:** útil y tranquilizador (prevención en casa). No es consejo médico.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa mancha negra del baño no es mugre: es moho, y algunos se comen tu jabón. | Fondo menta: azulejos blancos de regadera con juntas manchadas de negro y una barra de jabón. Cuadro 0.3: una esponja pasa y la mancha no se quita. Chip "¿mugre?" que se tacha → "MOHO". Burbujas de jabón que la mancha "absorbe". |
-| 1 | Esporas | Sus esporas flotan en el aire de toda casa, y solo crecen donde hay humedad. | El baño entero en corte: puntitos (esporas) flotan por el aire; sólo las que caen en las gotas de la junta germinan (hifas). Chip "sin agua, no crecen". |
-| 2 | Cladosporium | En 2010, en 113 muestras de baños de Europa, el hongo negro que más salió en cultivo directo fue Cladosporium. | **Al microscopio** (fondo noche): conidióforos de *Cladosporium* con cadenas ramificadas de conidios color **oliva-café**, en forma de limón. Contador "113 muestras · Países Bajos, Alemania, Austria" y chip "cultivo directo". Etiqueta "moho negro · *Cladosporium*". |
-| 3 | Rosa | ¿Y la mancha rosa? Muchas veces ni es hongo: es una bacteria, Serratia marcescens. | Regreso a la regadera: en la esquina y la coladera aparece una mancha rosa-anaranjada. Zoom: bastoncitos (bacterias) rojos. Etiqueta "bacteria · *Serratia marcescens*" y chip "pigmento: prodigiosina". |
-| 4 | Pregunta | ¿Y el famoso moho negro tóxico? | **Re-gancho.** Calavera de caricatura con "MOHO NEGRO TÓXICO" en letras de película de terror; Robert grande, pensativo. |
+| 0 | Gancho | Esa mancha negra del baño no es mugre: es moho, y algunos se comen tu jabón. | Fondo menta: azulejos blancos de regadera con juntas y silicón manchados de negro, jabonera y extractor apagado. Cuadro 0.15: una esponja talla la junta y la mancha no se quita. "¿mugre?" se tacha → sello "MOHO". Burbujas de jabón que van hacia la mancha; chip "se come los restos de jabón". |
+| 1 | Esporas | Sus esporas flotan en el aire de toda casa, y solo crecen donde hay humedad. | Fondo cian, la misma pared: esporas oliva flotan (etiqueta "esporas en el aire"); las que caen en gotas de agua germinan (hifas), las que caen en seco se marcan con ✗. Chip "sin agua, no crecen". |
+| 2 | Cladosporium | En 2010, en 113 muestras de baños de Europa, el hongo negro que más salió en cultivo directo fue Cladosporium. | **Al microscopio** (fondo noche): conidióforos de *Cladosporium* con cadenas ramificadas de conidios color **oliva-café**, en forma de limón. Número gigante "113" con "muestras de baños · 2010" y chip "Países Bajos · Alemania · Austria". Etiquetas *Cladosporium*, "moho negro", "conidios en cadena" y chip "el más frecuente en cultivo directo". |
+| 3 | Rosa | ¿Y la mancha rosa? Muchas veces ni es hongo: es una bacteria, Serratia marcescens. | Regreso a la regadera: en la esquina aparece una mancha rosa-anaranjada. Lupa al microscopio: bastoncitos (bacterias) rojos. Etiqueta "bacteria · *Serratia marcescens*" y chip "pigmento: prodigiosina". |
+| 4 | Pregunta | ¿Y el famoso moho negro tóxico? | **Re-gancho.** Fondo lila: "MOHO NEGRO TÓXICO" en letras verdes que escurren (estilo película de terror) y "?" gigante; Robert grande, pensativo. |
 | 5 | Stachybotrys | Es Stachybotrys: crece en celulosa, como tablaroca o papel siempre mojados. | Muro de tablaroca con fuga y papel mojado; brota una mancha verde-negra. Etiqueta *Stachybotrys chartarum*; chip "celulosa + agua constante". Gotas cayendo. |
-| 6 | Mito | El CDC dice que no hay análisis que lo ligue con síntomas concretos: todo moho se trata igual. | `MitoTachado` sobre "MÁS PELIGROSO QUE LOS DEMÁS" y chip "no hay prueba que lo ligue a síntomas (CDC)". Cita en tarjeta: "Todos los mohos se tratan igual" (CDC). Tres manchas (negra, verde, gris) con el mismo signo "=". |
-| 7 | Alergia | Cualquier moho puede darte alergia si eres sensible, y si tienes asma y eres alérgico, un ataque. | Esporas llegando a una nariz caricatura: estornudo; inhalador. Chips "alergia (si eres sensible)" y "asma (si tienes asma y alergia)". |
-| 8 | Estudio | Ese año, en Osaka, Japón, vieron que hongos de baño comen jabón y champú, y en seco crecen mal. | `TarjetaEstudio` "2010 · Osaka, Japón · Hamada y Abe". Dos cajas Petri: una con jabón y champú → colonias oscuras crecen; otra seca → casi nada. |
-| 9 | Sirve | Lo que sí sirve: extractor o ventana al bañarte, y humedad abajo de 50 por ciento. | **Número gigante "50 %"** con un higrómetro cuya aguja baja de 80 a 50. Extractor girando, ventana que se abre, el vapor sale. Chips "✓ extractor" "✓ ventana". |
-| 10 | Tallar | Y tállalo: el moho muerto todavía puede darte alergia, así que hay que quitarlo, no solo matarlo. | Cepillo tallando la junta con agua y jabón; esporas "muertas" (grises, con ✗) que igual pican la nariz. Chip "quitarlo, no solo matarlo". |
-| 11 | Cierre | Esa mancha no es mugre: es un hongo avisándote que a tu baño le sobra agua. | **Regreso a la imagen del inicio:** la misma regadera y la misma junta, ahora blanca, seca y con el extractor girando. Chip "le sobra agua". |
+| 6 | Mito | El CDC dice que no hay análisis que lo ligue con síntomas concretos: todo moho se trata igual. | `MitoTachado` sobre "MÁS PELIGROSO QUE LOS DEMÁS" y chip "no hay prueba que lo ligue a síntomas (CDC)". Tres manchas (negra, verde, gris) con signos "=" entre ellas y chip "todo moho se trata igual". |
+| 7 | Alergia | Cualquier moho puede darte alergia si eres sensible, y si tienes asma y eres alérgico, un ataque. | Esporas llegando a la nariz de una cara de perfil: "¡ACHÚ!"; luego un inhalador. Chips "alergia (si eres sensible)" y "asma (si tienes asma y alergia)". |
+| 8 | Estudio | Ese año, en Osaka, Japón, vieron que hongos de baño comen jabón y champú, y en seco crecen mal. | `TarjetaEstudio` "2010 · Osaka, Japón · Hamada y Abe · Biocontrol Science". Dos cajas Petri: chip "con jabón y champú" → colonias oscuras crecen; chip "en seco" → casi nada. |
+| 9 | Sirve | Lo que sí sirve: extractor o ventana al bañarte, y humedad abajo de 50 por ciento. | La regadera con el extractor girando y el vapor saliendo por él; chips "✓ extractor" y "✓ ventana al bañarte". Luego un higrómetro (% HR) cuya aguja baja de 80 a 50 y **número gigante "50 %"** con "humedad: abajo de". |
+| 10 | Tallar | Y tállalo: el moho muerto todavía puede darte alergia, así que hay que quitarlo, no solo matarlo. | Fondo rosa: cepillo tallando la junta y el moho se va; esporas "muertas" (grises, con ✗) que suben. Chips "quitarlo, no solo matarlo" y "muerto, todavía puede dar alergia". |
+| 11 | Cierre | Esa mancha no es mugre: es un hongo avisándote que a tu baño le sobra agua. | **Regreso a la imagen del inicio:** la misma regadera y la misma junta, ahora blanca, seca y con el extractor girando; sello "SECO" y chip "le sobra agua". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave, húmeda y algo tapada mientras dura la mancha (goteo lento), que se abre y se aclara cuando entra "lo que sí sirve" y el aire seco. Efectos en el mismo cuadro: gota de agua, esponja que talla, burbujas de jabón, "pop" de cada espora que germina, tics del contador 113, chasquido de la mancha rosa, golpe de película de terror en "tóxico", tachón del mito, estornudo, zumbido del extractor, rechinido del cepillo.
 
-Barras de escala: 10 cm (azulejo/junta), 1 m (baño en corte), 10 µm (conidios oliva-café de *Cladosporium*), 5 µm (bacterias), 50 cm (muro de tablaroca), 5 cm (Petri).
+Barras de escala: 10 cm (azulejo/junta, cara), 10 µm (conidios oliva-café de *Cladosporium*), 50 cm (muro de tablaroca), 5 cm (manchas y Petri).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y el famoso moho negro tóxico?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «no es mugre: es moho» (cuadro 0) |
+| 2 | 12.0 | 15.2 | 04_bajando_lentes | `arriba-der` | «113 muestras… Cladosporium» |
+| 3 | 15.9 | 19.9 | 13_senalando_arriba | `arriba-der` | señala la mancha rosa: «es una bacteria» |
+| 4 | 20.2 | 23.7 | 07_pensativo_puno | `grande` | «¿y el famoso moho negro tóxico?» |
+| 5 | 27.1 | 31.8 | 10_serio_molesto | `arriba-der` | el mito tachado (CDC) |
+| 6 | 32.6 | 37.5 | 06_pensativo_menton | `arriba-der` | «alergia… asma» |
+| 7 | 40.3 | 42.9 | 04_bajando_lentes | `arriba-der` | «en seco crecen mal» |
+| 8 | 43.5 | 47.7 | 13_senalando_arriba | `arriba-der` | «lo que sí sirve: extractor» |
+| 9 | 48.3 | 53.4 | 11_sorprendido | `arriba-der` | «el moho muerto todavía puede darte alergia» |
+| 10 | 54.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «a tu baño le sobra agua» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **40.3 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

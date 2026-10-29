@@ -47,8 +47,8 @@ function Rayo({ x1, y1, x2, y2, p = 1, color = KC.yellow, fase = 0 }) {
 // El "sarcófago" sobre el reactor 4 (esquemático) con la chimenea de franjas.
 function Sarcofago({ x = 540, y = 1150 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-60} y={-640} width={70} height={420} fill="#f4f1ea" stroke={KC.ink} strokeWidth={7} />
-    {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={-60} y={-640 + i * 84} width={70} height={42} fill={KC.red} stroke={KC.ink} strokeWidth={4} />)}
+    <rect x={140} y={-640} width={70} height={420} fill="#f4f1ea" stroke={KC.ink} strokeWidth={7} />
+    {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={140} y={-640 + i * 84} width={70} height={42} fill={KC.red} stroke={KC.ink} strokeWidth={4} />)}
     <path d="M -420 0 L -420 -260 L -300 -260 L -300 -360 L 120 -360 L 200 -300 L 380 -300 L 420 -180 L 420 0 Z" fill="#8e9298" stroke={KC.ink} strokeWidth={9} />
     {[-360, -240, -120, 0, 120, 240].map((dx, i) => <line key={i} x1={dx} y1={-350 + (i < 1 ? 90 : 0)} x2={dx} y2={-10} stroke="#6d7177" strokeWidth={6} />)}
     <rect x={-460} y={0} width={920} height={30} fill="#6b6f74" stroke={KC.ink} strokeWidth={7} />
@@ -81,9 +81,9 @@ function Hifa({ T, x = 0, y = 0, s = 1, crece = 1, conidios = 1, seed = 4 }) {
     {gran.filter(([u]) => u * 760 < L - 20).map(([u, lado, c], i) => <circle key={i} cx={u * 760} cy={lado * (41 + c * 4)} r={4 + c * 3} fill={c < 0.5 ? '#1b0f07' : '#7a4a22'} />)}
     {[0.15, 0.5, 0.78].filter((u) => u * 760 < L - 40).map((u, i) => <circle key={'n' + i} cx={u * 760 + 50} cy={4} r={14} fill="#c9b48e" stroke="#8b7a5a" strokeWidth={3} />)}
     {conidios > 0 && crece >= 1 && ramas.map(([u, lado], k) => <g key={k} transform={`translate(${u * 760} ${lado * 50})`}>
-      {Array.from({ length: 4 }, (_, j) => { const on = kclamp(conidios * 5 - j - k * 0.5, 0, 1); return on > 0 ? <circle key={j} cx={j * 40 * 0.6} cy={lado * (40 + j * 74)} r={34 * on} fill="#3b2a1a" stroke={KC.ink} strokeWidth={5} /> : null; })}
+      {Array.from({ length: 4 }, (_, j) => { const on = kclamp(conidios * 5 - j - k * 0.5, 0, 1); return on > 0 ? <circle key={j} cx={j * 40 * 0.6} cy={lado * (40 + j * 74)} r={34 * on} fill="#6b4a2b" stroke={KC.ink} strokeWidth={5} /> : null; })}
     </g>)}
-    {conidios > 0 && crece >= 1 && <g transform={`translate(${L} 0)`}>{Array.from({ length: 3 }, (_, j) => { const on = kclamp(conidios * 4 - j - 1, 0, 1); return on > 0 ? <circle key={j} cx={30 + j * 72} cy={-j * 18} r={34 * on} fill="#3b2a1a" stroke={KC.ink} strokeWidth={5} /> : null; })}</g>}
+    {conidios > 0 && crece >= 1 && <g transform={`translate(${L} 0)`}>{Array.from({ length: 3 }, (_, j) => { const on = kclamp(conidios * 4 - j - 1, 0, 1); return on > 0 ? <circle key={j} cx={30 + j * 72} cy={-j * 18} r={34 * on} fill="#6b4a2b" stroke={KC.ink} strokeWidth={5} /> : null; })}</g>}
   </g>;
 }
 // Antebrazo (piel) con gránulos de melanina.
@@ -265,13 +265,14 @@ function ChernobilShot() {
         <Ambiente T={T} n={40} tam={[2, 6]} vel={6} />
         {fsvg(<>
           <g opacity={1 - kprog(T, K.Sp + 2.0, K.Sp + 2.5)}><Estacion x={540} y={760} s={klerp(0.7, 1.05, kprog(T, K.Sp, K.Sp + 2.2))} /></g>
-          {T > K.Sp + 2.0 && <g opacity={kprog(T, K.Sp + 2.0, K.Sp + 2.5)}>
+          {T > K.Sp + 2.0 && <g opacity={kprog(T, K.Sp + 2.0, K.Sp + 2.5)}><g transform="translate(-80 0)">
             <circle cx={540} cy={700} r={230} fill="rgba(255,255,255,.3)" stroke={KC.ink} strokeWidth={8} />
             <circle cx={540} cy={700} r={216} fill={CH.agar} stroke={KC.ink} strokeWidth={4} />
             <clipPath id="mitadIzq"><rect x={300} y={460} width={240} height={480} /></clipPath>
             <g clipPath="url(#mitadIzq)"><Mancha T={T} x={430} y={700} r={200} seed={12} /></g>
             <line x1={540} y1={480} x2={540} y2={920} stroke={KC.ink} strokeWidth={8} />
             {rayos(K.Sp + 2.4, 10, [400, 680, 460, 620], 300, [400, 680, 460, 620], 500, 0.4, 0.3)}
+            </g>
             {[[0, 0.93, 'debajo del hongo', KC.orange], [1, 1, 'sin hongo', KC.red]].map(([k, v, t, c]) => { const w = 420 * v * kprog(T, K.Sp + 3.0, K.Sp + 3.8, kEase.sale), y = 1010 + k * 60; return <g key={k}>
               <rect x={170} y={y - 22} width={w} height={44} rx={10} fill={c} stroke={KC.ink} strokeWidth={5} />
               <text x={170 + w + 16} y={y + 10} style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto}>{t}</text>
