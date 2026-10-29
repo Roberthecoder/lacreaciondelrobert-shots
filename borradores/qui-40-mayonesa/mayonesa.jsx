@@ -132,15 +132,15 @@ function Mayonesa() {
             return <g>
               <rect x={386} y={bot - oil} width={308} height={oil} fill={ACEITE} />
               {out}
-              {oil > 0 && <path d={`M 386 ${bot - oil} q 77 ${-10 + Math.sin(T * 5) * 6} 154 0 t 154 0`} stroke="rgba(255,255,255,.6)" strokeWidth={5} fill="none" />}
+              {oil > 0 && T < K.Q + 2.6 && <path d={`M 386 ${bot - oil} q 77 ${-10 + Math.sin(T * 5) * 6} 154 0 t 154 0`} stroke="rgba(255,255,255,.6)" strokeWidth={5} fill="none" />}
               <path d={`M 370 ${top - 20} L 380 ${top} L 380 ${bot - 10} Q 380 ${bot + 6} 396 ${bot + 6} L 684 ${bot + 6} Q 700 ${bot + 6} 700 ${bot - 10} L 700 ${top} L 710 ${top - 20}`} fill="none" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
               <Chorro T={T} x0={700} y0={540} x1={560} y1={bot - oil} color={ACEITE} o={1 - kprog(T, K.Q + 1.9, K.Q + 2.1)} ancho={22} />
             </g>; })()}
         </SvgCapa>
-        <Etq T={T} at={K.Q + 1.0} until={K.Pb - 0.3} x={370} y={1000} lado="izq" texto="aceite ≈ 80 %" color={KC.ink} tam={34} />
-        <Etq T={T} at={K.Q + 2.7} until={K.Pb - 0.3} x={710} y={745} texto="yema" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Q + 1.0} until={K.Pb - 0.3} x={710} y={1000} texto="aceite ≈ 80 %" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Q + 2.7} until={K.Pb - 0.3} x={370} y={745} lado="izq" texto="yema" color={KC.ink} tam={30} />
         <Etq T={T} at={K.Q + 3.3} until={K.Pb - 0.3} x={370} y={700} lado="izq" texto="agua" color={KC.ink} tam={30} />
-        <Etq T={T} at={K.Q + 3.9} until={K.Pb - 0.3} x={710} y={660} texto="vinagre o limón" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Q + 3.9} until={K.Pb - 0.3} x={710} y={655} texto="vinagre o limón" color={KC.ink} tam={26} />
       </Escena>
 
       {/* 2 · aceite y agua no se mezclan */}

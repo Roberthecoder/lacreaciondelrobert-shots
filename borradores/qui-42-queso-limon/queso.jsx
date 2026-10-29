@@ -199,9 +199,9 @@ function Queso() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.12} origen="50% 52%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Olla T={T} x={540} y={1060} s={1.05} cuaja={cuajaG} />
-          <Goteo T={T} x={330} y0={720} y1={850} cada={0.18} color={LIMA_IN} desde={K.G + 0.1} hasta={K.G + 2.6} r={13} />
-          <Limon x={330} y={640} s={0.95} aprieta={aprieta} rot={-8} />
+          <Olla T={T} x={540} y={1000} s={1.05} cuaja={cuajaG} />
+          <Goteo T={T} x={330} y0={730} y1={790} cada={0.18} color={LIMA_IN} desde={K.G + 0.1} hasta={K.G + 2.6} r={13} />
+          <Limon x={330} y={680} s={0.85} aprieta={aprieta} rot={-8} />
         </SvgCapa>
       </Escena>
       {/* 1 · micelas de caseína (por dentro de la leche) */}
@@ -255,8 +255,8 @@ function Queso() {
         <FondoLunares color={KC.orange} />
         <SvgCapa>
           <Olla T={T} x={400} y={1080} s={0.85} cuaja={kprog(T, K.Cl + 2.4, K.Cl + 3.4)} />
-          <TermoCocina x={800} y={1060} s={1} nivel={kprog(T, K.Cl + 1.4, K.Cl + 2.4, kEase.sale) * 0.8} o={kprog(T, K.Cl + 1.3, K.Cl + 1.6)} />
-          {T > K.Cl + 2.0 && <text x={870} y={760} style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Cl + 2.0, K.Cl + 2.4)}>80 °C</text>}
+          <TermoCocina x={800} y={1060} s={1} nivel={kprog(T, K.Cl + 1.4, K.Cl + 2.4, kEase.sale) * 0.8} o={kprog(T, K.Cl + 1.3, K.Cl + 1.6) * (1 - kprog(T, K.Cl + 4.8, K.Cl + 5.2))} />
+          {T > K.Cl + 2.0 && <text x={790} y={560} textAnchor="end" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Cl + 2.0, K.Cl + 2.4) * (1 - kprog(T, K.Cl + 3.8, K.Cl + 4.1))}>80 °C</text>}
           {T > K.Cl + 4.0 && <g opacity={kprog(T, K.Cl + 4.0, K.Cl + 4.4)}>
             <circle cx={700} cy={560} r={210} fill={KC.noche} stroke={KC.ink} strokeWidth={10} />
             <Micela T={T} x={660} y={580} r={80} carga={0.5} pelo={0.6} seed={9} />
@@ -264,9 +264,9 @@ function Queso() {
               const px = klerp(700 + Math.cos(a) * 180, 660 + Math.cos(a) * 92, u), py = klerp(560 + Math.sin(a) * 170, 580 + Math.sin(a) * 92, u);
               return <g key={i}>{u < 0.5 ? <circle cx={px} cy={py} r={16} fill={PROT} stroke={KC.ink} strokeWidth={3} />
                 : <path d={`M ${px - 22} ${py} q 11 -14 22 0 q 11 14 22 0`} stroke={PROT} strokeWidth={9} fill="none" strokeLinecap="round" />}</g>; })}
-            <text x={700} y={735} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>AL MICROSCOPIO (esquema)</text>
+            <text x={700} y={720} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.texto}>AL MICROSCOPIO</text>
           </g>}
-          {T > K.Cl + 5.0 && <g opacity={kprog(T, K.Cl + 5.0, K.Cl + 5.4)}><Cubito x={880} y={1180} s={1.1} /><BanderaIndia x={940} y={960} s={0.8} /></g>}
+          {T > K.Cl + 5.0 && <g opacity={kprog(T, K.Cl + 5.0, K.Cl + 5.4)}><Cubito x={830} y={1020} s={1.3} /><BanderaIndia x={880} y={800} s={0.9} /></g>}
         </SvgCapa>
       </Escena>
       {/* 8 · 2012, Bristol: coladeras de barro de Polonia */}
@@ -298,24 +298,24 @@ function Queso() {
           {T > K.Da + 1.4 && <g><path d="M 796 1040 L 820 1068 L 844 1040" stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" />
             <Cubito x={820} y={1150} s={kprog(T, K.Da + 1.4, K.Da + 1.9, kEase.rebote) * 0.7} /></g>}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Da + 1.6} until={K.Ci - 0.3} valor={170} desde={0} dur={1.0} prefijo="≈ " sufijo=" g" x={540} y={420} tam={180} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Da + 1.6} until={K.Ci - 0.3} valor={170} desde={0} dur={0.6} prefijo="≈ " sufijo=" g" x={540} y={420} tam={180} color={KC.yellow} />
       </Escena>
       {/* 11 · cierre: la misma olla, ya con su queso */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05} origen="50% 52%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Olla T={T} x={540} y={1060} s={1.05} cuaja={1} vapor={0.4} queso={kprog(T, K.Ci + 0.2, K.Ci + 1.0, kEase.sale)} fuego={1 - kprog(T, K.Ci, K.Ci + 0.6)} />
-          <Limon x={330} y={640} s={0.95} aprieta={0} rot={-8} />
+          <Olla T={T} x={540} y={1000} s={1.05} cuaja={1} vapor={0.4} queso={kprog(T, K.Ci + 0.2, K.Ci + 1.0, kEase.sale)} fuego={1 - kprog(T, K.Ci, K.Ci + 0.6)} />
+          <Limon x={240} y={620} s={0.7} aprieta={0} rot={-8} />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.8} texto="¿se echó a perder?" x={330} y={430} tam={44} />
-      <Chip T={T} at={K.G + 2.9} until={K.Q - 0.3} texto="¡es QUESO!" x={330} y={430} tam={56} borde={KC.mint} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.8} texto="¿se echó a perder?" x={330} y={420} tam={44} />
+      <Chip T={T} at={K.G + 2.9} until={K.Q - 0.3} texto="¡es QUESO!" x={330} y={420} tam={56} borde={KC.mint} />
       <Cronometro T={T} at={K.G + 0.05} until={K.Q - 0.3} x={540} y={1500} etiqueta="EXPERIMENTO · LECHE + LIMÓN" />
       <Medidor T={T} at={K.Q + 1.6} until={K.Ca - 0.3} valor={(t) => 0.8 * kprog(t, K.Q + 1.8, K.Q + 3.0, kEase.sale)} etiqueta="proteínas de la leche de vaca" texto={(v) => 'caseína ' + Math.round(v * 100) + ' %'} x={90} y={1460} color={KC.gold2} />
       <Etq T={T} at={K.Q + 3.4} until={K.Ca - 0.3} x={600} y={740} texto="micelas de caseína" tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Ca + 0.4} until={K.Ac - 0.2} x={720} y={640} texto="κ-caseína («pelitos»)" tam={32} color="#ffe7a6" />
+      <Etq T={T} at={K.Ca + 0.4} until={K.Ac - 0.2} x={360} y={640} lado="izq" texto="κ-caseína («pelitos»)" tam={32} color="#ffe7a6" />
       <Chip T={T} at={K.Ca + 1.2} until={K.Ac - 0.2} texto="carga − · se repelen" y={1500} tam={44} borde={AZUL_NEG} />
       <Etq T={T} at={K.Ac + 0.4} until={K.Cu - 0.2} x={40} y={430} texto="ácido cítrico · limón" tam={32} color={KC.orange} />
       <Etq T={T} at={K.Ac + 2.2} until={K.Cu - 0.2} x={40} y={490} texto="ácido acético · vinagre" tam={32} color={KC.orange} />
@@ -327,7 +327,7 @@ function Queso() {
       <Chip T={T} at={K.Cl + 1.6} until={K.Cl + 3.0} texto="¡cuidado: quema!" x={400} y={680} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Cl + 2.4} until={K.Es - 0.3} texto="frío: pH ≈ 4.6 · caliente: desde 5.2" y={1500} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.Cl + 4.6} until={K.Es - 0.3} x={480} y={400} texto="proteínas del suero" lado="der" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Cl + 5.2} until={K.Es - 0.3} x={820} y={1280} texto="paneer" lado="izq" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Cl + 5.2} until={K.Es - 0.3} x={730} y={1140} texto="paneer" lado="izq" tam={40} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2012" quien="Universidad de Bristol" revista="Nature · Salque et al." y={600} />
       <Chip T={T} at={K.Es + 3.2} until={K.Hi - 0.3} texto="coladeras de barro · ≈ 7 000 años" y={1500} tam={38} borde={BARRO} />
       <Etq T={T} at={K.Es + 5.6} until={K.Hi - 0.3} x={640} y={760} texto="grasa de leche" lado="izq" tam={36} color={KC.ink} />
