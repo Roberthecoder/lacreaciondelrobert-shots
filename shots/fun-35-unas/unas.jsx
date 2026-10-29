@@ -197,12 +197,12 @@ function UnasShot() {
         {fsvg(<>{Array.from({ length: 22 }, (_, i) => { const on = kprog(T, K.E + 1.4 + i * 0.07, K.E + 1.7 + i * 0.07, kEase.rebote);
           return on > 0 ? <PersonaU key={i} x={100 + (i % 11) * 88} y={900 + Math.floor(i / 11) * 160} s={on * 0.85} color={i % 3 ? '#8fb6ff' : KC.pink} marca={kprog(T, K.E + 3.0 + i * 0.05, K.E + 3.3 + i * 0.05)} /> : null; })}</>)}
       </Escena>
-      {/* 9 · resultado: manos 3,47 mm/mes · pies 1,62 mm/mes */}
+      {/* 9 · resultado: manos 3.47 mm/mes · pies 1.62 mm/mes */}
       <Escena T={T} a={K.Re} b={K.Ti}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <ReglaUna x={110} y={860} mm={3.47} p={kprog(T, K.Re + 0.3, K.Re + 2.2, kEase.suave)} titulo="MANOS" valor="3,47 mm/mes" color={KC.mint} />
-          <ReglaUna x={110} y={1120} mm={1.62} p={kprog(T, K.Re + 2.4, K.Re + 4.2, kEase.suave)} titulo="PIES" valor="1,62 mm/mes" color={KC.orange} />
+          <ReglaUna x={110} y={860} mm={3.47} p={kprog(T, K.Re + 0.3, K.Re + 2.2, kEase.suave)} titulo="MANOS" valor="3.47 mm/mes" color={KC.mint} />
+          <ReglaUna x={110} y={1120} mm={1.62} p={kprog(T, K.Re + 2.4, K.Re + 4.2, kEase.suave)} titulo="PIES" valor="1.62 mm/mes" color={KC.orange} />
         </>)}
       </Escena>
       {/* 10 · el tiempo: la uña se renueva de la raíz a la punta */}
@@ -261,7 +261,7 @@ function UnasShot() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Re - 0.3} anio="2010" quien="Estados Unidos · 22 jóvenes" revista="Yaemsiri et al., JEADV" x={400} y={590} />
       <Chip T={T} at={K.Ti + 0.2} until={K.Rg - 0.3} texto="12–18 meses" x={330} y={470} tam={44} borde={KC.orange} />
       <Chip T={T} at={K.Rg + 0.6} until={K.S - 0.3} texto="20–25 % regresa" x={380} y={470} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.Rg + 1.4} until={K.S - 0.3} texto="por lo general antes de 2 años" x={380} y={1080} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Rg + 0.6} until={K.S - 0.3} texto="por lo general antes de 2 años" x={380} y={560} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.S + 0.8} until={K.C - 0.3} texto="✓ no andes descalzo en lugares públicos" x={480} y={1060} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.S + 2.0} until={K.C - 0.3} texto="✓ ¿pie de atleta? trátalo pronto" x={480} y={1150} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="uña nueva del pie: hasta 18 meses" x={390} y={470} tam={32} borde={KC.yellow} />
@@ -281,14 +281,14 @@ function UnasShot() {
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cu - 0.1} texto="Pastilla: 12 semanas. ¿Uña sana? *Un año o más.*" />
-      <Subtitulo T={T} idx={1} at={K.Cu + 0.1} until={K.En - 0.1} texto="Un dermatofito: *Trichophyton rubrum.*" />
-      <Subtitulo T={T} idx={2} at={K.En + 0.1} until={K.Q - 0.1} texto="Entra por la punta, *debajo de la uña.*" />
+      <Subtitulo T={T} idx={1} at={K.Cu + 0.1} until={K.En - 0.1} texto="Suele ser un dermatofito: *Trichophyton rubrum.*" />
+      <Subtitulo T={T} idx={2} at={K.En + 0.1} until={K.Q - 0.1} texto="Lo más común: entra por la punta, *debajo de la uña.*" />
       <Subtitulo T={T} idx={3} at={K.Q + 0.1} until={K.D - 0.1} texto="Digiere la *queratina* con enzimas." />
       <Subtitulo T={T} idx={4} at={K.D + 0.1} until={K.P - 0.1} texto="Cambia de color, *se engruesa y se quiebra.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.R - 0.1} texto="Si el hongo se fue, *¿por qué sigue fea?*" />
       <Subtitulo T={T} idx={6} at={K.R + 0.1} until={K.E - 0.1} texto="La raíz fabrica *uña nueva* y la empuja." />
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.Re - 0.1} texto="2010, Estados Unidos: *22 jóvenes.*" />
-      <Subtitulo T={T} idx={8} at={K.Re + 0.1} until={K.Ti - 0.1} texto="Manos: 3,47 mm al mes. *Pies: 1,62.*" />
+      <Subtitulo T={T} idx={8} at={K.Re + 0.1} until={K.Ti - 0.1} texto="Manos: 3.47 mm al mes. *Pies: 1.62.*" />
       <Subtitulo T={T} idx={9} at={K.Ti + 0.1} until={K.Rg - 0.1} texto="Una uña del pie: *12 a 18 meses.*" />
       <Subtitulo T={T} idx={10} at={K.Rg + 0.1} until={K.S - 0.1} texto="1 de cada 4 o 5 veces *regresa.*" />
       <Subtitulo T={T} idx={11} at={K.S + 0.1} until={K.C - 0.1} texto="No andes descalzo; *trata el pie de atleta.*" />

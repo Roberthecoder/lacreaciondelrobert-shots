@@ -67,8 +67,8 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 El tempeh es un buen ejemplo de fermentación en estado sólido: un moho convierte granos sueltos en un alimento rebanable.
-El micelio de Rhizopus crece entre los granos de soya cocidos en 1–2 días a 25–30 °C y entra hasta cerca de una cuarta parte del grosor de cada cotiledón (Jurus y Sundberg, 1976). Sus proteasas, lipasas y otras enzimas parten las macromoléculas, y la fermentación reduce el ácido fítico, que limita la disponibilidad de minerales (Nout y Kiers, 2005). Un hallazgo que corrigió una idea común: en 1977 se mostró que la vitamina B12 del tempeh no la produce el moho, sino bacterias que lo acompañan (Liem et al., 1977).
-Por qué importa: en los alimentos fermentados, el resultado suele depender de una comunidad de microbios, no de una sola especie.
+El micelio de Rhizopus crece entre los granos de soya cocidos en 1–2 días a 25–30 °C y entra hasta cerca de una cuarta parte del grosor de cada cotiledón (Jurus y Sundberg, 1976). Sus proteasas, lipasas y otras enzimas parten las macromoléculas, y la fermentación reduce el ácido fítico, que limita la disponibilidad de minerales (Nout y Kiers, 2005). Un hallazgo curioso: en 1977 se mostró que la vitamina B12 del tempeh no la produce el moho, sino bacterias que lo acompañan (Liem et al., 1977).
+Por qué importa: en el tempeh, el resultado depende de una comunidad de microbios (mohos y bacterias que los acompañan), no de una sola especie (Nout y Kiers, 2005).
 ¿Conoces otro alimento que dependa de más de un microbio?
 Shot Fungi Mati #36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
