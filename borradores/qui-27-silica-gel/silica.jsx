@@ -151,13 +151,13 @@ function Silica() {
       <Escena T={T} a={K.Q} b={K.Su}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <GranoArena x={290} y={930} s={1.15 * (0.6 + 0.4 * kprog(T, K.Q, K.Q + 0.5, kEase.rebote))} />
-          <BolitaPoros x={760} y={930} r={190 * (0.6 + 0.4 * kprog(T, K.Q + 0.2, K.Q + 0.7, kEase.rebote))} p={kprog(T, K.Q + 2.6, K.Q + 4.4)} />
-          <text x={290} y={1140} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink}>arena</text>
-          <text x={760} y={1180} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink}>sílica gel</text>
+          <GranoArena x={290} y={870} s={1.15 * (0.6 + 0.4 * kprog(T, K.Q, K.Q + 0.5, kEase.rebote))} />
+          <BolitaPoros x={760} y={870} r={180 * (0.6 + 0.4 * kprog(T, K.Q + 0.2, K.Q + 0.7, kEase.rebote))} p={kprog(T, K.Q + 2.6, K.Q + 4.4)} />
+          <text x={290} y={1080} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink}>arena</text>
+          <text x={760} y={1110} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink}>sílica gel</text>
           <g opacity={kprog(T, K.Q + 1.0, K.Q + 1.4)}>
-            <text x={540} y={760} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">SiO₂</text>
-            <path d="M 450 780 L 340 820 M 630 780 L 680 800" stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+            <text x={540} y={630} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">SiO₂</text>
+            <path d="M 450 650 L 340 740 M 630 650 L 680 700" stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
           </g>
         </SvgCapa>
       </Escena>
@@ -167,7 +167,7 @@ function Silica() {
         <SvgCapa>
           <Cancha x={540} y={930} w={klerp(60, 900, cancha)} h={klerp(60, 482, cancha)} o={kprog(T, K.Su + 0.5, K.Su + 0.8)} />
           {cancha < 0.98 && <BolitaPoros x={540} y={930} r={klerp(110, 30, kprog(T, K.Su, K.Su + 0.8))} p={1} />}
-          {cancha > 0.98 && <g><line x1={90} x2={990} y1={1200} y2={1200} stroke={KC.ink} strokeWidth={6} /><text x={540} y={1240} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>28 m × 15 m = 420 m²</text></g>}
+          {cancha > 0.98 && <g><text x={540} y={1135} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#fff" stroke={KC.ink} strokeWidth={5} paintOrder="stroke">28 m × 15 m = 420 m²</text></g>}
         </SvgCapa>
         <Contador T={T} at={K.Su + 0.6} desde={0} hasta={420} dur={2.2} sufijo=" m²" x={540} y={930} tam={96} color={KC.texto} />
       </Escena>
@@ -175,16 +175,16 @@ function Silica() {
       <Escena T={T} a={K.Si} b={K.Ad}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <rect x={0} y={560} width={KW} height={140} fill={PARED} stroke={KC.ink} strokeWidth={6} />
-          <rect x={0} y={1140} width={KW} height={140} fill={PARED} stroke={KC.ink} strokeWidth={6} />
-          {SIL_X.map((x, i) => <g key={i}><Silanol x={x} y={700} dir={1} /><Silanol x={x} y={1140} dir={-1} /></g>)}
+          <rect x={0} y={460} width={KW} height={140} fill={PARED} stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={1080} width={KW} height={140} fill={PARED} stroke={KC.ink} strokeWidth={6} />
+          {SIL_X.map((x, i) => <g key={i}><Silanol x={x} y={600} dir={1} /><Silanol x={x} y={1080} dir={-1} /></g>)}
           {aguas.map(([x, dir], i) => { const t0 = K.Si + 0.6 + i * 0.45, p = kprog(T, t0, t0 + 0.9, kEase.sale);
-            const hx = x + 30, hy = dir > 0 ? 700 + 88 : 1140 - 88, tx = hx + 10, ty = hy + dir * 80;
-            const R = krng(30 + i), x0 = 1180, y0 = 800 + R() * 260;
+            const hx = x + 30, hy = dir > 0 ? 600 + 88 : 1080 - 88, tx = hx + 10, ty = hy + dir * 80;
+            const R = krng(30 + i), x0 = 1180, y0 = 760 + R() * 200;
             const mx = klerp(x0, tx, p) + (p < 1 ? Math.sin(T * 5 + i) * 14 : 0), my = klerp(y0, ty, p) + (p < 1 ? Math.cos(T * 4 + i) * 14 : 0);
             return <g key={i}>
               {p >= 1 && <line x1={hx} y1={hy} x2={tx} y2={ty - dir * 30} stroke={AGUA} strokeWidth={5} strokeDasharray="8 8" />}
-              {T > t0 - 0.6 && <Mol tipo="agua" x={mx} y={my} s={0.8} rot={p >= 1 ? (dir > 0 ? 180 : 0) : T * 60 + i * 40} />}
+              {T > t0 - 0.6 && <Mol tipo="agua" x={mx} y={my} s={1.0} rot={p >= 1 ? (dir > 0 ? 180 : 0) : T * 60 + i * 40} />}
             </g>; })}
         </SvgCapa>
         <div style={{ position:'absolute', left:60, top:1420, zIndex:40, color:KC.texto, font:`700 26px ${KF.mono}`, textShadow:KSOMBRA }}>
@@ -273,12 +273,12 @@ function Silica() {
       <Escena T={T} a={K.Sn} b={K.Cu}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          {Array.from({ length: 100 }, (_, i) => { const c = i % 10, r = Math.floor(i / 10), x = 290 + c * 56, y = 730 + r * 52;
+          {Array.from({ length: 100 }, (_, i) => { const c = i % 10, r = Math.floor(i / 10), x = 103 + (i % 20) * 46, y = 780 + Math.floor(i / 20) * 82;
             const on = kprog(T, K.Sn + 0.2 + i * 0.012, K.Sn + 0.4 + i * 0.012), nar = kprog(T, K.Sn + 1.8, K.Sn + 2.3);
             const base = mixHex('#d8f5ea', '#2a9d6a', on);
-            if (i < 2) return <Personita key={i} x={x} y={y} s={0.8} color={mixHex(base, KC.orange, nar)} o={on} />;
-            if (i === 2) return <PersonaParcial key={i} id="p27" x={x} y={y} s={0.8} f={0.7 * nar} base={base} color={KC.orange} />;
-            return <Personita key={i} x={x} y={y} s={0.8} color={base} o={Math.max(0.3, on)} />; })}
+            if (i < 2) return <Personita key={i} x={x} y={y} s={0.78} color={mixHex(base, KC.orange, nar)} o={on} />;
+            if (i === 2) return <PersonaParcial key={i} id="p27" x={x} y={y} s={0.78} f={0.7 * nar} base={base} color={KC.orange} />;
+            return <Personita key={i} x={x} y={y} s={0.78} color={base} o={Math.max(0.3, on)} />; })}
         </SvgCapa>
       </Escena>
       {/* 9 · curioso: el pico de abril */}
@@ -286,7 +286,7 @@ function Silica() {
         <FondoLunares color={KC.orange} />
         <SvgCapa>
           <Calendario x={270} y={900} />
-          {[['mes típico', 42, '#d9d2c5', 650], ['abril', 74, KC.red, 880]].map(([t, v, c, x], i) => { const h = (v / 74) * 420 * kprog(T, K.Cu + 0.5 + i * 0.6, K.Cu + 1.4 + i * 0.6, kEase.sale);
+          {[['mes típico', 42, '#d9d2c5', 650], ['abril', 74, KC.red, 880]].map(([t, v, c, x], i) => { const h = (v / 74) * 340 * kprog(T, K.Cu + 0.5 + i * 0.6, K.Cu + 1.4 + i * 0.6, kEase.sale);
             return <g key={i}>
               <rect x={x - 80} y={1110 - h} width={160} height={h} fill={c} stroke={KC.ink} strokeWidth={8} />
               <text x={x} y={1090 - h} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={6} paintOrder="stroke" opacity={h > 10 ? 1 : 0}>{v}</text>
@@ -305,7 +305,7 @@ function Silica() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.G + 3.0} texto="☠ ¿veneno?" x={300} y={470} tam={50} />
       <Chip T={T} at={K.G + 3.1} until={K.Q - 0.3} texto="una trampa para el agua" x={540} y={1500} tam={44} borde={AGUA} />
       <Chip T={T} at={K.Q + 1.2} until={K.Su - 0.3} texto="dióxido de silicio" y={1500} tam={44} borde={KC.orange} />
-      <Etq T={T} at={K.Q + 2.8} until={K.Su - 0.3} x={1040} y={680} texto="poros diminutos" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Q + 2.8} until={K.Su - 0.3} x={1040} y={1170} texto="poros diminutos" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Su + 3.0} until={K.Si - 0.3} texto="1 g por dentro: 450–640 m²" y={1500} tam={40} borde={KC.gold} />
       <Etq T={T} at={K.Si + 0.5} until={K.Ad - 0.3} x={560} y={480} texto="pared del poro: Si–OH" lado="der" tam={32} />
       <Chip T={T} at={K.Si + 2.2} until={K.Ad - 0.3} texto="puente de hidrógeno" y={1560} tam={42} borde={AGUA} />

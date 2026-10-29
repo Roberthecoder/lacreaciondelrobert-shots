@@ -53,3 +53,30 @@
 4. **#11 (Polvo, pantalla).** Quitar las etiquetas "días" / "minutos" de los relojes; dejar "lento" / "rápido" (o un reloj lento y uno rápido sin unidades).
 5. **#16 (Ayudantes, pantalla).** Cambiar "se hincha con agua como esponja" por "absorbe y guarda agua como esponja" (sin hincharse).
 6. **#17 (Patente, voz y tarjeta).** No atar la prueba al año 1973. Propuesta: "Una patente japonesa de Asahi Kasei, de los años 70, probó una bolsita así: se mantuvo entre 45 y 50 grados por 22 horas." Tarjeta: "Años 70 · Japón · patente de Asahi Kasei (publicada en EE. UU. en 1976)". (Alternativa exacta: "En 1976 se publicó una patente de Asahi Kasei, de Japón…")
+
+## Re-verificación (29 oct 2026)
+
+Mismo verificador independiente; se revisaron contra las mismas fuentes abiertas todas las líneas que cambiaron en `narracion.json` y en la columna "Lo que se ve".
+
+| # | Afirmación corregida (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| R1 | Voz: "Según la hoja de seguridad de una marca, de 2021, la mitad o más del relleno es hierro en polvo" | ✅ | [K] | "Iron powder 7439-89-6 50-60" · "Date of revision: December 08. 2021" | 2021 (lo dice la voz) |
+| R2 | Voz: "luego agua, sal, carbón activado y vermiculita" | ⚠️ (menor) | [K] | "Activated charcoal … 5-10 · Vermiculite … 5-10 · Sodium chloride … 1-5 · Water … 30-40" | 2021 |
+|    | (los ingredientes son correctos, pero "luego" se oye como "de mayor a menor" y la sal (1–5 %) está antes que el carbón y la vermiculita (5–10 %)) | | | | |
+| R3 | Pantalla: chip "hoja de seguridad · 2021"; barra con hierro 50–60 %, agua 30–40 %, carbón 5–10 %, vermiculita 5–10 %, sal 1–5 %, resina 1–5 % | ✅ | [K] | Mismas cifras de la tabla de composición | 2021 |
+| R4 | Voz: "Cerrado, no le llega aire. Al abrirlo, el oxígeno entra por la bolsita." | ✅ | [T] | "外袋 …外気を遮断する外側の袋。" · "内袋 …空気を取り込む小さな穴があいている。" | 2004 |
+| R5 | Voz: "con sal y hecho polvo, el hierro se oxida mucho más rápido que un clavo" | ✅ | [M] | "Due to the addition of salt and the high degree of fragmentation, this reaction takes place much faster than, for example, on a nail sticking out of the wall." | 2024 |
+| R6 | Pantalla: relojes "lento" / "rápido" (sin unidades) | ✅ | [M] | "much faster" (cualitativo) | 2024 |
+| R7 | Voz: "El agua ayuda, el carbón atrapa oxígeno y la vermiculita guarda el agua." | ✅ | [T] | "水・塩類 鉄粉のさびる速度を速める。" · "活性炭 空気中の酸素を吸着して" · "保水剤 …水を含ませておく。…バーミキュライトが使われることが多い。" | 2004 |
+| R8 | Pantalla: vermiculita que "absorbe y guarda agua como esponja (sin hincharse)" | ✅ | [T] | "水を含ませておく" | 2004 |
+| R9 | Voz: "Una patente de Asahi Kasei, de los años 70, probó una bolsita así: se mantuvo entre 45 y 50 grados por 22 horas." | ✅ | [P] | Asignatario "Asahi Kasei Kogyo KK"; prioridad 1973-07-04, publicada 1976-08-24; Ejemplo 4: "a heat-generating average temperature of 45°-50°C lasted for 22 hours" | 1973–1976 (lo dice la voz: "de los años 70") |
+| R10 | Pantalla: tarjeta "años 70 · Asahi Kasei · patente"; franja "45–50 °C (promedio)"; contador a "22 horas" | ✅ | [P] | Ídem ("average temperature") | 1976 |
+
+**Conteo de la re-verificación:** 9 ✅ · 1 ⚠️ menor · 0 ❌. Todos los ⚠️ de la primera ronda (#3, #5, #10, #11, #16, #17) quedan resueltos.
+
+### Corrección pendiente
+- **R2:** ordenar de mayor a menor como en la hoja: "…es hierro en polvo; luego agua, carbón activado, vermiculita y sal." (mismas palabras, solo cambia el orden; no cambia la duración).
+
+- Aplicada tal cual la propuesta de la re-verificación: «luego agua, carbón activado, vermiculita y sal».
+
+VEREDICTO: APROBADO

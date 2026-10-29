@@ -3,16 +3,49 @@
   "salida": "Shot Protector narrado.dc.html",
   "nota": "Shot Químico #30. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esa crema en tu brazo no es un espejo que rebota el sol: es una esponja que se traga la luz ultravioleta." },
-    { "escena": "Filtros", "texto": "Adentro trae filtros: moléculas como la avobenzona o el octocrileno." },
-    { "escena": "Absorbe", "texto": "Cuando les pega un rayo UV, se lo tragan y se cargan de energía por un instante." },
-    { "escena": "Calor", "texto": "Luego sueltan esa energía como un poquito de calor, y ese rayo ya no llega a tu piel." },
-    { "escena": "Pregunta", "texto": "¿Y los minerales, el óxido de zinc y el dióxido de titanio? ¿Esos sí son espejitos?" },
-    { "escena": "Esfera", "texto": "En 2016, en Nueva Jersey, lo midieron con una esfera de luz: solo reflejan del 4 al 5 por ciento del UV. Casi toda su protección viene de absorberlo." },
-    { "escena": "FPS", "texto": "¿Y el número? Un FPS 30 filtra el 97 por ciento de los rayos UVB, los que te queman." },
-    { "escena": "Lab", "texto": "Pero ese número se mide en laboratorio, con 2 miligramos de crema por cada centímetro cuadrado de piel." },
-    { "escena": "Playa", "texto": "En 1992, investigadores de Copenhague midieron a 42 personas en una playa: se pusieron, en promedio, la cuarta parte." },
-    { "escena": "Menos", "texto": "Con menos crema, te protege bastante menos de lo que dice la etiqueta." },
-    { "escena": "Cierre", "texto": "Así que esa crema no es un espejo: es una esponja, y solo funciona si le pones suficiente." }
+    {
+      "escena": "Gancho",
+      "texto": "Esa crema en tu brazo no es un espejo que rebota el sol: es una esponja que se traga el ultravioleta."
+    },
+    {
+      "escena": "Filtros",
+      "texto": "Trae filtros, moléculas como la avobenzona o el octocrileno."
+    },
+    {
+      "escena": "Absorbe",
+      "texto": "Cuando les pega un rayo UV, se lo tragan y se cargan de energía."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Y la sueltan como un poquito de calor: así ese rayo ya no llega a tu piel."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y el óxido de zinc y el dióxido de titanio? ¿Esos sí son espejitos?"
+    },
+    {
+      "escena": "Esfera",
+      "texto": "En 2016, en Nueva Jersey, lo midieron: solo reflejan del 4 al 5 por ciento del UV. Su protección es casi toda absorción."
+    },
+    {
+      "escena": "FPS",
+      "texto": "¿Y el número? Un FPS 30 filtra el 97 por ciento de los rayos UVB, los que te queman."
+    },
+    {
+      "escena": "Lab",
+      "texto": "Pero ese número se mide en laboratorio, con 2 miligramos de crema por cada centímetro cuadrado de piel."
+    },
+    {
+      "escena": "Playa",
+      "texto": "En 1992, investigadores de Copenhague midieron a 42 personas en una playa: se pusieron, en promedio, la cuarta parte."
+    },
+    {
+      "escena": "Menos",
+      "texto": "Y con menos crema, te protege bastante menos de lo que dice la etiqueta."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa crema no es un espejo: es una esponja, y solo funciona si le pones suficiente."
+    }
   ]
 }

@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esa compresa no está fabricando frío: le está robando calor a tu piel."
 - **Seguridad:** no se invita a abrir ni a manipular el contenido; se dice que tragarlo hizo daño (caso de 1988) y lo que recomienda el centro de toxicología: si se rompe, se tira, y si la usa un niño, se le vigila; en pantalla la compresa va sobre un trapo, nunca directo en la piel.
 - **Duración:** voz 953 caracteres (≈ 58.1 s) + cierre 3.5 s → **≈ 61.6 s** (estimar-escenas).
-- **Estado:** guion escrito; falta verificación independiente (`verificacion.md`), animación y tabla "Robert en pantalla" (fase 2). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`, VEREDICTO: APROBADO), animación lista (`compresa.jsx`, base sin voz 61.6 s), voz pendiente de aprobación de Robert (~953 créditos).
 
 ## Versión narrada
 
@@ -14,7 +14,7 @@
 | 0 | Gancho | Esa compresa no está fabricando frío: le está robando calor a tu piel. | Fondo cian. Desde el cuadro 0 una mano aprieta una compresa blanca ("COLD PACK" genérico, sin marca) apoyada sobre un trapo que cubre la rodilla; la bolsa hace "crack" al apretarla. Chip chico "con un trapo, no directo". Chip "fabrica frío" que se tacha y aparece "roba calor" con flechas rojas saliendo de la rodilla, a través del trapo, hacia la bolsa. |
 | 1 | Adentro | Adentro trae una bolsita de agua y un polvo blanco: nitrato de amonio, o en otras, urea. | `Lupa` en modo rayos X sobre la compresa: adentro, una bolsita azul de agua y gránulos blancos. Etiquetas "nitrato de amonio · NH₄NO₃" y "urea · CO(NH₂)₂". |
 | 2 | Aprieta | Al apretarla, la bolsita se rompe y el polvo empieza a disolverse. | La bolsita interna se rasga (efecto "pop"); el agua inunda los gránulos y empiezan a encogerse. |
-| 3 | Cristal | Pero separar los pedacitos del cristal cuesta más energía de la que regresa el agua al rodearlos. | Fondo noche (micro). Barra de escala "1 nm". Un cristal de iones NH₄⁺ (morado) y NO₃⁻ (naranja) en rejilla; moléculas de agua (V azul con 2 puntitos blancos) jalan un ion afuera y lo rodean. Barra "cuesta" (separar, roja) más larga que barra "regresa" (rodear con agua, verde); chip "+25.7 kJ por mol". |
+| 3 | Cristal | Pero separar los pedacitos del cristal cuesta más energía de la que regresa el agua al rodearlos. | Fondo noche (micro). Barra de escala "1 nm (esquema)". Un cristal de iones NH₄⁺ (morado) y NO₃⁻ (naranja) en rejilla; moléculas de agua (V azul con 2 puntitos blancos) jalan un ion afuera y lo rodean. Barra "cuesta" (separar, roja) más larga que barra "regresa" (rodear con agua, verde); chip "+25.7 kJ por mol". |
 | 4 | Robo | Esa energía la jala como calor del agua y de tu rodilla. | Zoom out por capas: flechitas rojas de calor viajan del agua y, más afuera, de la piel hacia los iones que se sueltan; la piel pasa de rosa a azulito. |
 | 5 | Pregunta | ¿Y por qué se disuelve, si le cuesta? | **Re-gancho.** "?" gigante sobre el cristal a medio deshacer. |
 | 6 | Desorden | Porque al disolverse todo queda más revuelto, y ese desorden gana. | Dos cuadros: izquierda, iones ordenados en rejilla; derecha, iones mezclados al azar en el agua. Una balanza "energía" vs "desorden" se inclina hacia "desorden". |
@@ -25,6 +25,25 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave continua, debajo de la voz; efectos en el mismo cuadro (apretón y "crack" de la bolsa, "pop" de la bolsita interna, gránulos que se disuelven con siseo, ion que se suelta, termómetro que baja con un tono descendente, golpe de la tarjeta, bolsa al bote).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y por qué se disuelve, si le cuesta?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «le está robando calor a tu piel» |
+| 2 | 5.3 | 9.4 | 13_senalando_arriba | `izq-alto` | «una bolsita de agua y un polvo blanco» |
+| 3 | 14.3 | 19.4 | 06_pensativo_menton | `arriba-der` | «cuesta más energía de la que regresa el agua» |
+| 4 | 23.3 | 26.2 | 07_pensativo_puno | `grande` | «¿Y por qué se disuelve, si le cuesta?» |
+| 5 | 30.6 | 35.9 | 11_sorprendido | `izq-alto` | «de 27 a casi 8 grados» |
+| 6 | 36.8 | 44.5 | 10_serio_molesto | `arriba-der` | «cinco personas que se tragaron este polvo» |
+| 7 | 45.0 | 47.7 | 04_bajando_lentes | `izq-alto` | «si la usa un niño, vigílalo» |
+| 8 | 48.3 | 52.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «lo que tus riñones sacan en la orina» |
+| 9 | 53.5 | 58.0 | 02_apuntando_camara | `arriba-der` | «es tu propio calor yéndose» |
+| — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 41 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 
