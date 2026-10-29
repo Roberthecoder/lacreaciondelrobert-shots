@@ -60,7 +60,7 @@ Detalle con la frase textual de cada afirmación en `verificacion.md` (lo escrib
 7. **[Cleere 2024]** Cleere, M. M. et al. (2024). New colours for old in the blue-cheese fungus *Penicillium roqueforti*. *npj Science of Food* (publicado en enero de 2024; University of Nottingham, Inglaterra). https://pmc.ncbi.nlm.nih.gov/articles/PMC10774375/
    > "The blue-green colour derives from pigmented spores formed by fungal growth."
    > Mutantes por UV: "74-88-1 (brown), 74-88-2 (olive brown), 74-88-5 (green), 74-88-12 (mustard fawn) and B20-1 (white/albino)"; con ellas se hicieron quesos con los colores nuevos.
-8. **[Chávez 2023 / morfología]** Chávez, R., Vaca, I. y García-Estrada, C. (2023). Secondary metabolites produced by the blue-cheese ripening mold *Penicillium roqueforti*; biosynthesis and regulation mechanisms. *Journal of Fungi* 9(4): 459 (acceso abierto, también en PMC). https://doi.org/10.3390/jof9040459
+8. **[Chávez 2023 / morfología]** Chávez, R., Vaca, I. y García-Estrada, C. (2023). Secondary metabolites produced by the blue-cheese ripening mold *Penicillium roqueforti*; biosynthesis and regulation mechanisms. *Journal of Fungi* 9(4): 459 (acceso abierto). https://doi.org/10.3390/jof9040459 · https://pmc.ncbi.nlm.nih.gov/articles/PMC10144355/
    > "spherical, smooth, and dark green conidia (3 to 4.5 μm diameter)" — solo para el dibujo.
 
 El dibujo es esquemático.
