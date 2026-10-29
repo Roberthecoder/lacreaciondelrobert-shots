@@ -34,7 +34,7 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - 29 oct 18:20: modo prueba OK en las 6 redes con fun-02; renovar-tokens OK (Threads renovado, vence 28 dic; se extiende cada lunes).
 - Primera publicación real: Robert dijo «todavía no publiques nada» (29 oct). Propuesta cuando quiera: fun-02-hormiga-zombi
   (auditado OK). La voz está en pausa para mejorar su calidad: no publicar narrados hasta que él lo pida.
-- Revisiones: respuestas listas en `docs/revisiones/LEEME.md`; Robert manda la auditoría de YouTube y el «Submit for review» de
+- Revisiones (YouTube y TikTok ENVIADAS el 29 oct, ver abajo); respuestas en `docs/revisiones/LEEME.md`. Antes:
   TikTok. Video demo GRABADO el 29 oct (3:47, sitio → autorizar → «Conectar TikTok» → borrador a la bandeja): en la PC de
   Robert, C:\Users\winusr\lacreacion-lotes\revision-tiktok\demo-tiktok.mp4 (no va al repo público). No muestra la pantalla de
   permisos de TikTok (la cuenta ya estaba autorizada) ni el teléfono; si TikTok lo pide, Robert quita el acceso de la app en
@@ -43,6 +43,10 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   Login Kit + Content Posting, scopes user.info.basic + video.upload, redirect y sitio del repo, ícono y demo). Esperar
   respuesta de TikTok (correo y «Review comments» en el portal). Al aprobarse: Robert cambia TIKTOK_CLIENT_KEY/SECRET por los
   de Producción y se conecta otra vez (docs/tiktok.html: borra la llave guardada y pega la de Producción).
+- YouTube: AUDITORÍA ENVIADA el 29 oct, 13:25 (formulario «YouTube API Services - Audit and Quota Extension», proyecto
+  la-creacion-del-robert 1006579961003, solo videos.insert, cuota sin cambio; documentos en docs/revisiones/youtube/).
+  Se agregó la sección de YouTube a privacidad.html y terminos.html (requisito). Esperar el correo de Google (semanas).
+  Mientras no aprueben, lo que sube el publicador a YouTube queda PRIVADO.
 - La rama `temporal/demo-tiktok` (solo el MP4 del demo, para subirlo al formulario) NO se pudo borrar: una regla del repo
   impide borrar ramas. Borrarla cuando Robert quite o ajuste esa regla (Settings → Rules).
 - Recordatorios: LinkedIn vence ~28 dic 2026 (renovación manual, ADMIN.md). Threads y TikTok se renuevan solos cada lunes
