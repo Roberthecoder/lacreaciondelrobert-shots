@@ -4,7 +4,7 @@
 - **Formato:** N2 "El número" (700 mil fibras por lavada, con el consejo útil "qué sí sirve") + N1 "Por dentro" (bajamos de la lavadora a la fibra al microscopio y seguimos su viaje: drenaje → planta → lodos → campo). Cierre que regresa al suéter del inicio.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Ese suéter no solo se ensucia: cada vez que lo lavas, se deshace en hilitos de plástico."
 - **Duración:** voz 947 caracteres escritos ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → 61.5 s en la base.
-- **Cuentas:** fibra de 11.9–17.7 µm de diámetro → 17.7 µm = 0.0177 mm < 0.02 mm ("menos de dos centésimas de milímetro"); largo 5.0–7.8 mm ("unos milímetros") · 98.41 % retenido en Glasgow → "casi todos" · 90 % de fibras en lodos de Chile → "nueve de cada diez" · 728,789 fibras (acrílico, 6 kg) → "más de setecientas mil".
+- **Cuentas:** fibra de 11.9–17.7 µm de diámetro → 17.7 µm = 0.0177 mm < 0.02 mm ("menos de dos centésimas de milímetro"); largo 5.0–7.8 mm ("unos milímetros") · 98.41 % retenido en la planta de Escocia → "casi todos" · 90 % de fibras en lodos de Chile → "nueve de cada diez" · 728,789 fibras (acrílico, 6 kg) → "más de setecientas mil".
 
 ## Versión narrada
 
@@ -14,7 +14,7 @@
 | 1 | Numero | Seis kilos de ropa acrílica pueden soltar más de setecientas mil fibras en una sola lavada. | Número gigante "+700,000" que cuenta hacia arriba; báscula con "6 kg de ropa acrílica"; chip "1 lavada". |
 | 2 | Fibra | Cada una mide unos milímetros de largo y menos de dos centésimas de milímetro de grueso. | `Lupa` sobre el agua: fondo oscuro, una fibra larga y lisa (cilindro, no bolita) con flechas "≈ 5–8 mm de largo" y "< 0.02 mm de grueso". Barra de escala. |
 | 3 | Drenaje | Salen con el agua sucia y se van al drenaje. | La manguera de desagüe suelta agua gris con hilitos hacia una coladera; tubería que baja. |
-| 4 | Planta | Una planta de Glasgow, en 2016, atrapaba casi todos los microplásticos, y aun así soltaba sesenta y cinco millones al día. | Esquema de planta de tratamiento (tanques). Medidor "98 % atrapado"; por la salida, al río, un chorrito con contador "65 millones al día". Chip "Glasgow, Escocia · 2016". |
+| 4 | Planta | Una planta de Escocia, en 2016, atrapaba casi todos los microplásticos, y aun así soltaba sesenta y cinco millones al día. | Esquema de planta de tratamiento (tanques). Medidor "98 % atrapado"; por la salida, al río, un chorrito con contador "65 millones al día". Chip "Escocia · 2016". |
 | 5 | Pregunta | ¿Y los que sí atrapa, desaparecen? | **Re-gancho.** "?" gigante sobre el tanque lleno de fibras; Robert grande. |
 | 6 | Lodos | No: se quedan en los lodos, que suelen usarse como abono. En lodos de Chile, nueve de cada diez eran fibras. | Del fondo del tanque sale lodo café que un tractor esparce en un campo. Diez puntitos: nueve son hilitos. Chip "Chile · 2019: 90 % fibras". |
 | 7 | Estudio | Ese número salió de Plymouth, Inglaterra, en 2016; ahí, la mezcla con algodón soltó menos. | Tarjeta del estudio (Napper y Thompson, Universidad de Plymouth, 2016) con tres barras: acrílico 728,789 · poliéster 496,030 · poliéster-algodón 137,951 (fibras por 6 kg). |
@@ -40,7 +40,7 @@
    > "a series of polyester, acrylic and polyester-cotton items were washed at 30˚C and 40˚C"
 3. **Murphy, F. et al. (2016).** "Wastewater Treatment Works (WwTW) as a Source of Microplastics in the Aquatic Environment." *Environmental Science & Technology* 50(11): 5800–5808. University of the West of Scotland / Saur Glasgow. https://pubmed.ncbi.nlm.nih.gov/27191224/
    > "The influent contained on average 15.70 (±5.23) MP·L(-1). This was reduced to 0.25 (±0.04) MP·L(-1) in the final effluent, a decrease of 98.41%. Despite this large reduction we calculate that this WwTW is releasing 65 million microplastics into the receiving water every day."
-   (Dato de 2016; son microplásticos en general, no solo fibras. La planta está en Glasgow: autor "Saur Glasgow, Beardmore Street, Dalmuir, Glasgow".)
+   (Dato de 2016; son microplásticos en general, no solo fibras. El resumen no nombra la ciudad; los autores son de la University of the West of Scotland y de Saur Glasgow, y estudios posteriores la citan como "secondary treatment plants in Scotland": por eso la voz dice solo "Escocia".)
 4. **Corradini, F. et al. (2019).** "Evidence of microplastic accumulation in agricultural soils from sewage sludge disposal." *Science of the Total Environment* 671: 411–420. INIA La Platina, Santiago, Chile. https://pubmed.ncbi.nlm.nih.gov/30933797/
    > "Wastewater treatment plants efficiently remove microplastics from sewage, trapping the particles in the sludge and preventing their entrance into aquatic environments."
    > "It has become common practice to use this sludge on agricultural soils as a fertilizer."
@@ -64,7 +64,7 @@
 
 ## Notas
 - La cifra de 700 mil es una **estimación de laboratorio** para 6 kg de ropa **acrílica**; por eso la voz dice "pueden soltar" y "ropa acrílica", y el gancho habla de un suéter (prenda típica de acrílico).
-- El 98 % y los 65 millones de Glasgow son de **microplásticos en general** (no solo fibras); la voz dice "microplásticos".
+- El 98 % y los 65 millones de Escocia son de **microplásticos en general** (no solo fibras); la voz dice "microplásticos".
 - El "nueve de cada diez" es de lodos de Chile (Corradini 2019): de los microplásticos encontrados en el lodo, 90 % eran fibras. No se afirma que todas vengan de la ropa.
 - "Frío y ciclo corto" = el ciclo de 25 °C y 30 min de Cotton et al. contra 40 °C y 85 min. "Carga llena" y "el delicado suelta más" = Kelly et al. 2019. Ambos estudios tienen coautores de Procter & Gamble (se anota, no cambia el dato).
 - No se usó la secadora ni el "secar al aire" en la voz: hay un estudio (Kapp y Miller 2020, PLOS ONE, coautor dueño de Cora Ball) que mide fibras saliendo del ducto de secadoras, pero no compara con tender la ropa; se deja fuera para no afirmar de más.

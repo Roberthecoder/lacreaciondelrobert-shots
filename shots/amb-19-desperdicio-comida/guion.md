@@ -4,7 +4,7 @@
 - **Formato:** N4 "La imagen que se llena" (un refri con 5 repisas: la quinta se vacía al bote) + toque de N2 (números grandes: 1,050 millones de t; 79 kg; 105 kg). Cierre que regresa al refri del inicio, ahora con la quinta parte señalada "60 % en casas".
 - **Gancho (de los 7):** #3 "Tu vida en una imagen": "Este refri es toda la comida que llega a tiendas, restaurantes y casas del mundo. Casi una de cada cinco partes se va a la basura."
 - **Local:** México (105 kg por persona al año en hogares, estimación del informe).
-- **Duración:** voz 954 caracteres escritos ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → objetivo **61.5 s** en la base.
+- **Duración:** voz 960 caracteres escritos ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → objetivo **61.5 s** en la base.
 - **Cuentas:** 1,052 Mt ÷ 5,500 Mt (comida disponible para consumo, FAOSTAT 2020) = 19.1 % → "casi una de cada cinco" (20 %) · 631 ÷ 1,052 = 60 % hogares ("seis de cada diez kilos"; "más de la mitad") · ingreso alto 81, medio-alto 88, medio-bajo 86 kg → diferencia máxima 88 − 81 = 7 kg · 79 + 36 + 17 = 132 kg por persona en total.
 - **Datos de 2022:** la voz dice "En 2022" en la línea de las toneladas; el informe se publicó en 2024.
 
@@ -21,7 +21,7 @@
 | 6 | Mexico | Y para México, el informe estima ciento cinco kilos por persona, solo en casa. | Mapa esquemático de México; la pila crece a "105 kg"; chip "estimación · confianza media". |
 | 7 | Estudio | Lo calculó en 2024 el Programa de la ONU para el Medio Ambiente, con datos de hogares de noventa y tres países. | Tarjeta de estudio: "PNUMA (UNEP) · Food Waste Index Report 2024 · Nairobi"; globo con 93 países que se encienden. |
 | 8 | Ricos | Y no es cosa de países ricos: entre ricos y de ingreso medio, el promedio en casa cambia apenas siete kilos. | Mito tachado "solo pasa en países ricos"; tres barras casi iguales: ingreso alto 81 · medio-alto 88 · medio-bajo 86 kg/persona/año. |
-| 9 | Gases | Además, se calcula que la comida que se pierde y se tira genera entre ocho y diez por ciento de los gases de efecto invernadero. | Del bote salen nubecitas de gas; dona "8–10 % de los gases de efecto invernadero del mundo (pérdida + desperdicio)". |
+| 9 | Gases | Además, entre 2010 y 2016, la comida que se perdía y se tiraba generó entre ocho y diez por ciento de los gases de efecto invernadero. | Del bote salen nubecitas de gas; dona "8–10 % de los gases de efecto invernadero del mundo (pérdida + desperdicio)" y chip "2010–2016". |
 | 10 | Cierre | Así que esa quinta parte no está lejos: más de la mitad se tira en casas como la tuya. | **Regreso al refri del inicio**: la quinta repisa vacía, marcada "60 % se tira en casas"; la puerta se cierra. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert apuntando a cámara. |
 
@@ -48,11 +48,14 @@
    - Gases de efecto invernadero (estimación citada por el informe, de FAO 2013):
      > "food waste generates an estimated 8–10 per cent of global greenhouse gas emissions (including from both loss and waste)"
      > "food waste alone amounting to around 8-10 per cent (FAO 2013) or more (Zhu et al. 2023)."
+2. **IPCC (2019). *Climate Change and Land* (SRCCL), Resumen para responsables de políticas, B.6.3** (año del dato: **2010–2016**):
+   https://www.ipcc.ch/site/assets/uploads/sites/4/2022/11/SRCCL_SPM.pdf
+   > "During 2010-2016, global food loss and waste contributed 8–10% of total anthropogenic GHG emissions"
 
 ## Notas
 - "Casi una de cada cinco partes" = 19 % de la comida que llega a la etapa de consumo (tiendas, restaurantes y casas), no de toda la comida producida; por eso el gancho dice "comida que llega a tiendas, restaurantes y casas".
 - El 19 % compara el desperdicio de 2022 con la comida disponible de 2020 (último dato de FAOSTAT que usó el informe); el propio informe dice "as much as" (hasta).
 - El informe aclara que el aumento respecto al de 2021 (931 millones de t en 2019) no se cree que sea un aumento real, sino mejores datos: por eso no se compara con años anteriores.
 - El dato de México es una estimación con "confianza media" (varios estudios locales): la voz dice "el informe estima".
-- El 8–10 % de gases incluye pérdida (antes de la tienda) + desperdicio; la voz dice "la comida que se pierde y se tira".
+- El 8–10 % de gases incluye pérdida (antes de la tienda) + desperdicio y es de 2010–2016 (IPCC 2019); la voz dice el periodo.
 - El refri, los botes y el mapa son esquemáticos (el refri es una metáfora de toda la comida en la etapa de consumo, no de un refri real).

@@ -6,11 +6,11 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esto que apesta en las playas de Quintana Roo no es basura: es un alga que viajó miles de kilómetros por el mar."
+      "texto": "Esto que apesta en las playas de Quintana Roo no es basura: es un alga que viajó miles de kilómetros."
     },
     {
       "escena": "Alga",
-      "texto": "Es el sargazo, y flota gracias a bolitas llenas de gas."
+      "texto": "Es el sargazo: flota con bolitas llenas de gas."
     },
     {
       "escena": "Cinturon",
@@ -22,7 +22,7 @@
     },
     {
       "escena": "Hoy",
-      "texto": "En julio de 2025, en todo el Atlántico, ya eran unos treinta y ocho millones."
+      "texto": "En julio de 2025, en todo el Atlántico, eran unos treinta y ocho millones de toneladas."
     },
     {
       "escena": "Pregunta",
@@ -30,11 +30,11 @@
     },
     {
       "escena": "Estudio",
-      "texto": "Un estudio de 2025 con corales del Caribe propone una respuesta: fósforo que sube de lo hondo del Atlántico ecuatorial."
+      "texto": "Un estudio de 2025 con corales del Caribe propone: fósforo que sube de lo hondo del Atlántico ecuatorial."
     },
     {
       "escena": "Nitrogeno",
-      "texto": "Con él, microbios pegados al alga le fabrican nitrógeno, su otro alimento."
+      "texto": "Con él, microbios del alga le fabrican nitrógeno, su otro alimento."
     },
     {
       "escena": "Playa",
@@ -42,7 +42,7 @@
     },
     {
       "escena": "Muertes",
-      "texto": "En 2018, ese caldo sin oxígeno mató animales de setenta y ocho especies en el Caribe mexicano."
+      "texto": "En 2018, ese caldo con poco oxígeno mató animales de setenta y ocho especies en el Caribe mexicano."
     },
     {
       "escena": "Cierre",

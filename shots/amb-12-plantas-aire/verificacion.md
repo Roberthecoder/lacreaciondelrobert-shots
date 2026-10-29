@@ -41,4 +41,16 @@ Conteo: 20 ✅ · 1 ⚠️ · 0 ❌
    - O más corto (misma duración aprox.): **"El mito viene de un experimento de la NASA de 1989, pensado para espacios sellados."**
    - En pantalla: además de la base espacial esquemática, mostrar un edificio cerrado (o poner la etiqueta "espacios sellados").
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Segunda ronda (29 oct 2026)
+
+Frase corregida en `narracion.json` y `guion.md` (voz 1): "El mito viene de un experimento de la NASA de 1989, pensado para espacios sellados, como futuras bases espaciales." En pantalla: una base espacial y un edificio hermético, esquemáticos y cerrados.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|
+| (Voz 1) "pensado para espacios sellados, como futuras bases espaciales" (pantalla: base espacial + edificio hermético) | ✅ | Wolverton, Johnson y Bounds, NASA-TM-101766 | "Another promising approach to further reducing trace levels of air pollutants inside future space habitats is the use of higher plants..."; "contamination problems in these sealed environments"; "If man is to move into closed environments, on Earth or in space, he must take along nature's life support system."; resumen: "improving indoor air quality by removing trace organic pollutants from the air in energy-efficient buildings" | 1989 |
+
+La fila ⚠️ de la primera ronda queda resuelta: "espacios sellados" abarca edificios herméticos y bases espaciales, y las bases espaciales se dan solo como ejemplo ("como"). El edificio hermético en pantalla completa la idea.
+
+Conteo final: 21 ✅ · 0 ⚠️ · 0 ❌
+
+VEREDICTO: APROBADO
