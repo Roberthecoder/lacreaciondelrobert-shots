@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" (con espíritu de #6, seguridad en casa): "Ese olor no es el gas de tu estufa: es una alarma que le agregan a propósito."
 - **Seguridad:** lo único práctico que se dice es lo que trae la guía oficial de la Alcaldía Coyoacán (CDMX): cerrar la llave de paso, abrir puertas y ventanas, no prender ni apagar la luz; 911. Nada que invite a "probar" el gas.
 - **Duración:** voz 952 caracteres / ≈180 palabras (≈ 58.1 s estimados) + cierre 3.5 s → **≈ 61.6 s** (`estimar-escenas.mjs`).
-- **Estado:** guion (fase 1). Falta verificación independiente, animación y tabla "Robert en pantalla". Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`gas.jsx`, `Shot Gas base narrada.dc.html`), voz pendiente de aprobación de Robert (~952 créditos).
 
 ## Versión narrada
 
@@ -27,6 +27,25 @@ Tiempos estimados: Gancho 0–4.7 · Que 4.7–9.7 · Aviso 9.7–14.6 · Nariz 
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave continua, tensa durante la fuga y New London, más libre al final; efectos en el mismo cuadro (clic de la perilla, siseo del gas, timbre de alarma, gota del gotero, destello de la neurona, chispa y golpe sordo amortiguado, sello, tres "clics" de los pasos).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y qué pasa si el gas no huele a nada?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «es una alarma que le agregan a propósito» |
+| 2 | 5.7 | 9.4 | 13_senalando_arriba | `izq-alto` | «propano y butano… esencialmente inodoro» |
+| 3 | 11.2 | 14.3 | 06_pensativo_menton | `arriba-der` | «una molécula con azufre» |
+| 4 | 19.8 | 24.0 | 10_serio_molesto | `izq-alto` | «se junta en el piso sin que lo veas» |
+| 5 | 24.4 | 27.6 | 07_pensativo_puno | `grande` | «¿Y qué pasa si el gas no huele a nada?» |
+| 6 | 30.3 | 37.0 | 12_perfil_serio | `izq-alto` | «murieron casi 300 personas» |
+| 7 | 43.7 | 49.0 | 11_sorprendido | `arriba-der` | «unas 170 millones de veces menores» |
+| 8 | 49.7 | 53.9 | 04_bajando_lentes | `izq-alto` | «cierra la llave, abre ventanas…» |
+| 9 | 54.4 | 58.0 | 02_apuntando_camara | `arriba-der` | «el detector es tu nariz» |
+| — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 38.5 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato y cifra se abrió en la fuente original el 29 oct 2026)
 

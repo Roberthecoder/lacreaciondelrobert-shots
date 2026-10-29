@@ -282,7 +282,7 @@ function Ceviche() {
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="El limón *no lo cuece.*" />
       <Subtitulo T={T} idx={1} at={K.Q + 0.1} until={K.A - 0.1} texto="Proteínas: *cadenas enrolladas.*" />
       <Subtitulo T={T} idx={2} at={K.A + 0.1} until={K.B - 0.1} texto="El ácido *las desenrolla.*" />
-      <Subtitulo T={T} idx={3} at={K.B + 0.1} until={K.F - 0.1} texto="Abiertas *dispersan la luz.*" />
+      <Subtitulo T={T} idx={3} at={K.B + 0.1} until={K.F - 0.1} texto="Abiertas: *dispersan luz.*" />
       <Subtitulo T={T} idx={4} at={K.F + 0.1} until={K.P - 0.1} texto="El calor *sí mata.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.L - 0.1} texto="¿Y el limón *no mata?*" />
       <Subtitulo T={T} idx={6} at={K.L + 0.1} until={K.C - 0.1} texto="30 minutos: *casi no bajaron.*" />

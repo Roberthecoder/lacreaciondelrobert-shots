@@ -128,7 +128,7 @@ function TarjetaPaso({ T, at, x, y, n, texto, children }) {
     <circle cx={-118} cy={-138} r={36} fill={KC.gold} stroke={KC.ink} strokeWidth={5} />
     <text x={-118} y={-124} textAnchor="middle" style={{ font:`400 42px ${KF.titulo}` }} fill={KC.ink}>{n}</text>
     {children}
-    <text x={0} y={160} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{texto}</text>
+    <text x={0} y={160} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>{texto}</text>
   </g>;
 }
 
@@ -306,10 +306,11 @@ function Gas() {
             <rect x={-90} y={-100} width={90 * (1 - 0.6 * kprog(T, K.A2 + 1.9, K.A2 + 2.5))} height={180} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={5} />
             <rect x={90 - 90 * (1 - 0.6 * kprog(T, K.A2 + 1.9, K.A2 + 2.5))} y={-100} width={90 * (1 - 0.6 * kprog(T, K.A2 + 1.9, K.A2 + 2.5))} height={180} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={5} />
           </TarjetaPaso>
-          <TarjetaPaso T={T} at={K.A2 + 2.7} x={880} y={900} n="3" texto="ni prendas ni apagues">
-            <rect x={-60} y={-90} width={120} height={160} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-            <rect x={-18} y={-44} width={36} height={70} rx={8} fill="#ddd" stroke={KC.ink} strokeWidth={5} />
-            <Marca x={50} y={40} ok={false} s={0.5} o={kprog(T, K.A2 + 3.1, K.A2 + 3.4)} />
+          <TarjetaPaso T={T} at={K.A2 + 2.7} x={880} y={900} n="3" texto="ni apagues la luz">
+            <text x={0} y={118} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>ni prendas</text>
+            <rect x={-60} y={-110} width={120} height={150} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+            <rect x={-18} y={-70} width={36} height={70} rx={8} fill="#ddd" stroke={KC.ink} strokeWidth={5} />
+            <Marca x={50} y={20} ok={false} s={0.5} o={kprog(T, K.A2 + 3.1, K.A2 + 3.4)} />
           </TarjetaPaso>
         </SvgCapa>
         <Chip T={T} at={K.A2 + 0.2} until={K.Ci - 0.2} texto="Guía oficial · Coyoacán, CDMX" y={1500} tam={34} borde={KC.ink} />

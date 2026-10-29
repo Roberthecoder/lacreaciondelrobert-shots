@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese anillo verde de tu huevo cocido no es que esté echado a perder: es sulfuro de hierro, hecho en tu olla."
 - **Seguridad:** la única recomendación es la de las fuentes (no cocerlo de más y enfriarlo rápido). Se dice que el anillo no hace daño (extensiones universitarias). Nada de experimentos con gases.
 - **Duración:** voz 952 caracteres (estimador) / ≈ 191 palabras (≈ 57.8 s) + cierre 3.5 s → **61.3 s** en la base sin voz.
-- **Estado:** guion escrito, pendiente de verificación independiente (`verificacion.md`). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`huevo.jsx`, `Shot Huevo base narrada.dc.html`, base sin voz de 61.4 s), voz pendiente de aprobación de Robert (~954 créditos).
 
 ## Versión narrada
 
@@ -27,6 +27,24 @@ Tiempos aproximados del estimador: Gancho 0–6.4 · Que 6.4–10.2 · Gas 10.2�
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz). |
 
 **Música:** cama grave continua; efectos en el mismo cuadro (corte del cuchillo, burbujeo de la olla, tic-tac del reloj de hervor, "fsss" del gas, destello de la reacción, chorro de agua fría, reloj acelerado en las 7 horas).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y por qué a veces sale y a veces no?» y en el dato de las 7 horas.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «no es que esté echado a perder: es sulfuro de hierro» |
+| 2 | 11.0 | 15.6 | 10_serio_molesto | `izq-alto` | «el gas con olor a huevo podrido» |
+| 3 | 20.0 | 25.2 | 13_senalando_arriba | `arriba-der` | «forma sulfuro ferroso… solo en la superficie» |
+| 4 | 25.5 | 28.7 | 06_pensativo_menton | `grande` | «¿Y por qué a veces sale y a veces no?» |
+| 5 | 31.4 | 35.7 | 04_bajando_lentes | `izq-alto` | «el que pasaron a agua fría casi no se pintó» |
+| 6 | 41.5 | 46.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | «no lo cuezas de más y enfríalo rápido» |
+| 7 | 47.4 | 51.9 | 11_sorprendido | `grande-izq` | «un huevo hervido 7 horas… hasta un milímetro» |
+| 8 | 52.5 | 57.8 | 02_apuntando_camara | `arriba-der` | «ese anillo verde no hace daño» |
+| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 8 apariciones · ≈ 37 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
 

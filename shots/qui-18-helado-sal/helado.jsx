@@ -19,7 +19,7 @@ function Salero({ T, x, y, s = 1, rot = 150 }) {
     <path d="M -55 -90 L 55 -90 L 70 90 L -70 90 Z" fill="#f6f3ec" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <rect x={-58} y={-130} width={116} height={44} rx={14} fill={LATA} stroke={KC.ink} strokeWidth={8} />
     {[-28, 0, 28].map((dx) => <circle key={dx} cx={dx} cy={-108} r={6} fill={KC.ink} />)}
-    <text x={0} y={30} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.blue}>SAL</text>
+    <text x={0} y={22} textAnchor="middle" transform={`rotate(${180} 0 0)`} style={{ font:`400 60px ${KF.titulo}` }} fill={KC.blue}>SAL</text>
   </g>;
 }
 // Hielo picado (trozos) dentro de un rectángulo.
@@ -115,7 +115,7 @@ function FrascoSal({ x, y, n, temp }) {
     <rect x={x - 76} y={y - 226} width={152} height={30} rx={8} fill="#f6f3ec" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: n }, (_, i) => <rect key={i} x={x - 50 + i * 26} y={y - 30} width={14} height={14} fill="#fff" stroke={KC.ink} strokeWidth={2} />)}
     <text x={x} y={y + 50} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{n} cda.</text>
-    <Termo x={x} y={y - 560} h={300} tmin={-20} tmax={5} temp={temp} marcas={false} ancho={30} />
+    <Termo x={x} y={y - 500} h={250} tmin={-20} tmax={5} temp={temp} marcas={false} ancho={30} />
   </g>;
 }
 // Camión que esparce sal.
@@ -162,9 +162,9 @@ function Helado() {
       <Escena T={T} a={K.G} b={K.Te} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <CubetaHelado T={T} x={480} y={1040} s={1} sal={kprog(T, K.G + 0.2, K.G + 2.4)} flecha={kprog(T, K.G + 2.6, K.G + 3.4, kEase.sale)} />
-          <Salero T={T} x={kprog(T, K.G, K.G + 2.4) < 1 ? klerp(250, 690, kprog(T, K.G, K.G + 2.4, kEase.suave)) : 690} y={640} s={0.8} rot={150} />
-          <LluviaSal T={T} x={klerp(270, 690, kprog(T, K.G, K.G + 2.4, kEase.suave))} y0={720} y1={850} t0={K.G} t1={K.G + 2.6} n={60} />
+          <CubetaHelado T={T} x={480} y={960} s={1} sal={kprog(T, K.G + 0.2, K.G + 2.4)} flecha={kprog(T, K.G + 2.6, K.G + 3.4, kEase.sale)} />
+          <Salero T={T} x={kprog(T, K.G, K.G + 2.4) < 1 ? klerp(250, 690, kprog(T, K.G, K.G + 2.4, kEase.suave)) : 690} y={560} s={0.8} rot={150} />
+          <LluviaSal T={T} x={klerp(270, 690, kprog(T, K.G, K.G + 2.4, kEase.suave))} y0={640} y1={770} t0={K.G} t1={K.G + 2.6} n={60} />
         </SvgCapa>
       </Escena>
       {/* 1 · termómetro en vivo */}
@@ -181,7 +181,7 @@ function Helado() {
       {/* 2 · por dentro: la sal le estorba a la red del hielo */}
       <Escena T={T} a={K.Sa} b={K.Ca} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 50)">
           <rect x={90} y={720} width={420} height={520} rx={20} fill="rgba(169,220,245,.14)" stroke={HIELO2} strokeWidth={4} strokeDasharray="14 10" />
           {red.map(([x, y, k], i) => { const sale = (i % 4 === 3) ? kprog(T, K.Sa + 2.2 + (i / 4) * 0.45, K.Sa + 3.4 + (i / 4) * 0.45, kEase.suave) : 0;
             return <AguaMini key={i} x={x + sale * (160 + (i % 3) * 40)} y={y + sale * Math.sin(T * 2 + i) * 40} s={0.62} rot={sale * 200 + (sale ? T * 40 : 0)} />; })}
@@ -190,7 +190,7 @@ function Helado() {
             return on > 0 ? <g key={i} transform={`translate(${x + Math.sin(T * 2 + i) * 14} ${y + Math.cos(T * 1.7 + i) * 14}) scale(${on})`}><Ion x={0} y={0} r={c === '+' ? 30 : 38} color={c === '+' ? NA : CL} txt={c === '+' ? 'Na⁺' : 'Cl⁻'} /></g> : null; })}
           <text x={300} y={700} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={HIELO2}>hielo</text>
           <text x={790} y={700} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={SALMUERA}>agua con sal</text>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 3 · el calor sale de la crema */}
       <Escena T={T} a={K.Ca} b={K.Cr} zoom={0.04}>
@@ -203,9 +203,9 @@ function Helado() {
           {chispas.map((i) => { const t0 = K.Ca + 0.6 + i * 0.3, u = kprog(T, t0, t0 + 1.6, kEase.suave); if (u <= 0 || u >= 1) return null;
             const yy = 720 + ((i * 97) % 480), xx = klerp(160, 860, u);
             return <g key={i} transform={`translate(${xx} ${yy + Math.sin(T * 8 + i) * 10})`}><path d="M 0 -22 L 8 -6 L 24 0 L 8 6 L 0 22 L -8 6 L -24 0 L -8 -6 Z" fill={CALOR} stroke={KC.ink} strokeWidth={3} /></g>; })}
-          <text x={235} y={620} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={CREMA}>tu crema</text>
+          <text x={235} y={740} textAnchor="middle" style={{ font:`700 42px ${KF.mono}` }} fill={KC.ink}>tu crema</text>
           <text x={500} y={1310} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={LATA}>bote</text>
-          <text x={805} y={620} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={HIELO2}>hielo + sal</text>
+          <text x={805} y={740} textAnchor="middle" style={{ font:`700 42px ${KF.mono}` }} fill={KC.white}>hielo + sal</text>
         </SvgCapa>
       </Escena>
       {/* 4 · la crema: con puro hielo no, con sal sí */}
@@ -244,7 +244,7 @@ function Helado() {
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
           {[0, 1, 2, 3].map((i) => <FrascoSal key={i} x={180 + i * 240} y={1200} n={i + 1} temp={fr(i)} />)}
-          {T > K.Es + 6.0 && <path d={`M 180 ${1200 - 560 + 300 - 40 - ((fr(0) + 20) / 25) * 220} L 900 ${1200 - 560 + 300 - 40 - ((fr(3) + 20) / 25) * 220}`} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" opacity={kprog(T, K.Es + 6.0, K.Es + 6.5)} />}
+          {T > K.Es + 6.0 && <path d={`M 180 ${1200 - 500 + 250 - 40 - ((fr(0) + 20) / 25) * 170} L 900 ${1200 - 500 + 250 - 40 - ((fr(3) + 20) / 25) * 170}`} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" opacity={kprog(T, K.Es + 6.0, K.Es + 6.5)} />}
         </SvgCapa>
       </Escena>
       {/* 8 · carretera con hielo */}
@@ -266,7 +266,7 @@ function Helado() {
       <Escena T={T} a={K.Fa} b={K.Ci} zoom={0.03}>
         <FondoLunares color="#e9d9b0" punto="rgba(255,255,255,.28)" />
         <SvgCapa>
-          <VasoHielo T={T} x={430} y={1220} s={0.9} sal={1} seed={14} />
+          <VasoHielo T={T} x={400} y={1200} s={1.15} sal={1} seed={14} />
           <Termo x={560} y={560} h={560} tmin={0} tmax={100} paso={32} temp={tempFa} unidad=" °F" antiguo marcas={false} />
           <text x={620} y={1080} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Fa + 4.4, K.Fa + 4.8)}>← 0 °F</text>
         </SvgCapa>
@@ -274,12 +274,12 @@ function Helado() {
       {/* 10 · cierre: la cubeta del inicio, ya con helado */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><CubetaHelado T={T} x={480} y={1040} s={1} sal={1} helado={1} destapa={kprog(T, K.Ci + 0.6, K.Ci + 1.8, kEase.sale)} flecha={kprog(T, K.Ci + 1.8, K.Ci + 2.5, kEase.sale)} /></SvgCapa>
+        <SvgCapa><CubetaHelado T={T} x={480} y={960} s={1} sal={1} helado={1} destapa={kprog(T, K.Ci + 0.6, K.Ci + 1.8, kEase.sale)} flecha={kprog(T, K.Ci + 1.8, K.Ci + 2.5, kEase.sale)} /></SvgCapa>
       </Escena>
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.Te - 0.3} texto="¿la sal calienta?" x={300} y={470} tam={44} />
-      <Etq T={T} at={K.G + 3.0} until={K.Te - 0.3} x={760} y={830} texto="calor" lado="der" tam={40} color={KC.red} />
+      <Etq T={T} at={K.G + 3.0} until={K.Te - 0.3} x={760} y={750} texto="calor" lado="der" tam={40} color={KC.red} />
       <Chip T={T} at={K.Te + 0.4} until={salTe} texto="hielo + agua = 0 °C" x={540} y={1500} tam={44} borde={KC.blue} />
       <Chip T={T} at={salTe + 0.5} until={K.Sa - 0.3} texto="+ sal → baja" x={540} y={1500} tam={46} borde={KC.red} />
       <Chip T={T} at={K.Sa + 1.0} until={K.Ca - 0.3} texto="punto de congelación ↓" x={540} y={1500} tam={42} borde={NA} />
@@ -294,7 +294,7 @@ function Helado() {
       <Chip T={T} at={K.Car + 3.6} until={K.Fa - 0.3} texto="abajo de −9 °C: casi no derrite" x={540} y={1500} tam={36} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Fa + 0.2} until={K.Fa + 2.5} anio="1724" quien="Fahrenheit lo publica" revista="Phil. Trans. · hielo + agua + sal = 0 °F" x={540} y={640} />
       <Chip T={T} at={K.Fa + 4.8} until={K.Ci - 0.3} texto="0 °F ≈ −18 °C" x={540} y={1500} tam={46} borde={KC.gold} />
-      <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={760} y={830} texto="crema → hielo" tam={36} color={KC.red} />
+      <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={760} y={750} texto="crema → hielo" tam={36} color={KC.red} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="la sal no calienta: el hielo roba calor" x={540} y={1500} tam={32} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

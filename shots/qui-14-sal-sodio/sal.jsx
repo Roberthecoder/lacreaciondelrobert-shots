@@ -152,7 +152,7 @@ function MapaBelgica({ x, y, s = 1 }) {
     <path d="M -420 -120 Q -480 -220 -560 -240 L -560 -480 L 560 -480 L 560 -260 Q 260 -320 160 -200 Q 40 -260 -120 -230 Q -300 -230 -420 -120 Z" fill="#cfe9ff" opacity={0.9} />
     <text x={-20} y={40} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink} opacity={0.75}>BÉLGICA</text>
     <text x={-150} y={330} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink} opacity={0.55}>FRANCIA</text>
-    <text x={-260} y={-330} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#2a5d8a">mar del Norte</text>
+    <text x={120} y={-330} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#2a5d8a">mar del Norte</text>
     <circle cx={-320} cy={-40} r={16} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
     <text x={-295} y={-60} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>Ypres</text>
   </g>;
@@ -181,36 +181,36 @@ function Sal() {
   // electrón que salta (escena Iones)
   const salta = kprog(T, K.Io + 0.3, K.Io + 1.3, kEase.suave);
   const junta = kprog(T, K.Io + 2.6, K.Io + 3.6, kEase.sale);
-  const naX = klerp(300, 420, junta), clX = klerp(780, 650, junta);
-  const ex = klerp(300 + 132, 780 - 132, salta), ey = 900 - Math.sin(salta * Math.PI) * 220;
+  const naX = klerp(300, 400, junta), clX = klerp(780, 680, junta);
+  const ex = klerp(300 + 165, 780 - 165, salta), ey = 900 - Math.sin(salta * Math.PI) * 220;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el salero */}
       <Escena T={T} a={K.G} b={K.So} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Plato x={540} y={1180} s={1.1} />
-          <Monton x={560} y={1170} f={kprog(T, K.G + 0.6, K.G + 3.0)} />
-          <Granos T={T} x0={590} y0={830} x1={560} y1={1150} desde={K.G + 0.2} hasta={K.G + 3.0} />
-          <Salero x={430} y={800} s={0.85} inclina={inclina} />
+          <Plato x={540} y={1040} s={1.1} />
+          <Monton x={560} y={1030} f={kprog(T, K.G + 0.6, K.G + 3.0)} />
+          <Granos T={T} x0={540} y0={700} x1={560} y1={1010} desde={K.G + 0.2} hasta={K.G + 3.0} />
+          <Salero x={380} y={660} s={0.85} inclina={inclina} />
           <g opacity={amenaza}>
-            <BarraSodio x={190} y={980} s={0.55 * amenaza} />
-            <text x={190} y={1080} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>Na ⚠</text>
-            <Nube T={T} x={900} y={960} f={amenaza * 0.8} r={110} color={CLGAS} />
-            <text x={900} y={1080} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>Cl₂ ⚠</text>
-            <path d="M 260 1000 Q 360 1060 420 1120" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} />
-            <path d="M 830 1000 Q 740 1060 690 1120" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} />
+            <BarraSodio x={190} y={880} s={0.55 * amenaza} />
+            <text x={190} y={980} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>Na ⚠</text>
+            <Nube T={T} x={900} y={860} f={amenaza * 0.8} r={110} color={CLGAS} />
+            <text x={900} y={980} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>Cl₂ ⚠</text>
+            <path d="M 260 920 Q 360 960 420 1000" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} />
+            <path d="M 830 920 Q 740 960 690 1000" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} />
           </g>
-          <Escalita x={760} y={1500} w={100} texto="1 cm" />
+          <Escalita x={760} y={1660} w={100} texto="1 cm" />
         </SvgCapa>
       </Escena>
       {/* 1 · sodio */}
       <Escena T={T} a={K.So} b={K.Cl}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <BarraSodio x={540} y={klerp(760, 640, kprog(T, K.So + 2.3, K.So + 2.8, kEase.suave))} s={1.2} corte={kprog(T, K.So + 0.6, K.So + 1.4)} opaco={kprog(T, K.So + 1.8, K.So + 3.5)} />
-          <Cuchillo x={612} y={klerp(380, 560, kprog(T, K.So + 0.3, K.So + 1.4, kEase.suave))} o={1 - kprog(T, K.So + 1.8, K.So + 2.2)} />
-          <Peligro x={540} y={1020} w={720} h={360} o={kprog(T, K.So + 2.4, K.So + 2.9)}>
+          <BarraSodio x={540} y={klerp(640, 540, kprog(T, K.So + 2.3, K.So + 2.8, kEase.suave))} s={1.2} corte={kprog(T, K.So + 0.6, K.So + 1.4)} opaco={kprog(T, K.So + 1.8, K.So + 3.5)} />
+          <Cuchillo x={612} y={klerp(260, 440, kprog(T, K.So + 0.3, K.So + 1.4, kEase.suave))} o={1 - kprog(T, K.So + 1.8, K.So + 2.2)} />
+          <Peligro x={540} y={900} w={720} h={340} o={kprog(T, K.So + 2.4, K.So + 2.9)}>
             <VasoLab x={0} y={150} s={0.8} liquido="#9fd8ff" nivel={0.62} ancho={320} alto={280} />
             <g transform={`translate(${Math.sin(T * 5) * 20} ${-10})`}><rect x={-40} y={-30} width={80} height={36} rx={8} fill="#c4cad2" stroke={KC.ink} strokeWidth={5} /></g>
             <Burbujas T={T} x={-110} y={-130} w={220} h={130} n={18} f={kprog(T, K.So + 2.9, K.So + 3.5)} color="#ffffff" vel={220} />
@@ -223,16 +223,16 @@ function Sal() {
       <Escena T={T} a={K.Cl} b={K.El}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <g transform="translate(250 800)">
+          <g transform="translate(250 720)">
             <rect x={-130} y={-200} width={260} height={360} rx={40} fill="rgba(220,240,255,.5)" stroke={KC.ink} strokeWidth={9} />
             <rect x={-50} y={-250} width={100} height={60} rx={10} fill={PLATA} stroke={KC.ink} strokeWidth={7} />
             <Nube T={T} x={0} y={-10} f={0.75} r={120} color={CLGAS} seed={4} />
             {[[-60, -90], [50, 0], [-30, 90]].map(([dx, dy], i) => <Mol key={i} tipo="cl2" x={dx} y={dy} s={0.75} rot={T * 40 + i * 60} />)}
           </g>
-          <Nube T={T} x={klerp(300, 640, kprog(T, K.Cl + 1.2, K.Cl + 2.6))} y={klerp(620, 820, kprog(T, K.Cl + 1.2, K.Cl + 2.6))} f={kprog(T, K.Cl + 1.0, K.Cl + 1.6) * 0.5} r={110} color={CLGAS} seed={6} />
-          <Pulmones T={T} x={720} y={1060} s={0.95} rojo={kprog(T, K.Cl + 2.6, K.Cl + 3.8)} />
+          <Nube T={T} x={klerp(300, 640, kprog(T, K.Cl + 1.2, K.Cl + 2.6))} y={klerp(560, 740, kprog(T, K.Cl + 1.2, K.Cl + 2.6))} f={kprog(T, K.Cl + 1.0, K.Cl + 1.6) * 0.5} r={110} color={CLGAS} seed={6} />
+          <Pulmones T={T} x={720} y={930} s={0.9} rojo={kprog(T, K.Cl + 2.6, K.Cl + 3.8)} />
         </SvgCapa>
-        <Onomato T={T} at={K.Cl + 3.0} until={K.El - 0.3} x={760} y={1260} texto="¡ÁCIDO!" color={KC.red} tam={80} />
+        <Onomato T={T} at={K.Cl + 3.0} until={K.El - 0.3} x={760} y={1180} texto="¡ÁCIDO!" color={KC.red} tam={80} />
       </Escena>
       {/* 3–4 · por dentro: electrón e iones (noche) */}
       <Escena T={T} a={K.El} b={K.Pr} zoom={0.03}>
@@ -244,16 +244,16 @@ function Sal() {
             <path d="M -60 -30 L 0 -60 L 60 -30 L 60 40 L 0 70 L -60 40 Z" fill="#e9eef5" stroke={KC.ink} strokeWidth={5} /><path d="M -60 -30 L 0 0 L 60 -30 M 0 0 L 0 70" stroke={KC.ink} strokeWidth={4} fill="none" />
           </g>}
           <g opacity={kprog(T, K.El + 0.9, K.El + 1.5)}>
-            <AtomoBohr T={T} x={naX} y={900} s={salta > 0.98 ? klerp(1, 0.85, kprog(T, K.Io + 1.3, K.Io + 1.8)) : 1} letra="Na" color={NA} capas={[2, 8, 1]} sinUltimo={salta > 0.02 ? 1 : 0} brilloUlt={kprog(T, K.El + 1.6, K.El + 2.0) * (0.5 + 0.5 * Math.sin(T * 8))} carga={salta > 0.98 ? '+' : ''} />
-            <AtomoBohr T={T} x={clX} y={900} s={salta > 0.98 ? klerp(1, 1.1, kprog(T, K.Io + 1.3, K.Io + 1.8)) : 1} letra="Cl" color={CL} capas={salta > 0.98 ? [2, 8, 8] : [2, 8, 7]} hueco={salta <= 0.98} brilloUlt={kprog(T, K.El + 2.6, K.El + 3.0)} carga={salta > 0.98 ? '−' : ''} />
+            <AtomoBohr T={T} x={naX} y={900} s={1.25 * (salta > 0.98 ? klerp(1, 0.85, kprog(T, K.Io + 1.3, K.Io + 1.8)) : 1)} letra="Na" color={NA} capas={[2, 8, 1]} sinUltimo={salta > 0.02 ? 1 : 0} brilloUlt={kprog(T, K.El + 1.6, K.El + 2.0) * (0.5 + 0.5 * Math.sin(T * 8))} carga={salta > 0.98 ? '+' : ''} />
+            <AtomoBohr T={T} x={clX} y={900} s={1.25 * (salta > 0.98 ? klerp(1, 1.1, kprog(T, K.Io + 1.3, K.Io + 1.8)) : 1)} letra="Cl" color={CL} capas={salta > 0.98 ? [2, 8, 8] : [2, 8, 7]} hueco={salta <= 0.98} brilloUlt={kprog(T, K.El + 2.6, K.El + 3.0)} carga={salta > 0.98 ? '−' : ''} />
             {salta > 0.02 && salta < 0.98 && <circle cx={ex} cy={ey} r={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} style={{ filter:`drop-shadow(0 0 16px ${KC.yellow})` }} />}
-            {salta > 0.02 && salta < 0.98 && <path d={`M ${300 + 132} 900 Q 540 ${900 - 440} ${ex} ${ey}`} stroke={KC.yellow} strokeWidth={4} fill="none" strokeDasharray="8 8" opacity={0.6} />}
+            {salta > 0.02 && salta < 0.98 && <path d={`M ${300 + 165} 900 Q 540 ${900 - 440} ${ex} ${ey}`} stroke={KC.yellow} strokeWidth={4} fill="none" strokeDasharray="8 8" opacity={0.6} />}
             {junta > 0 && [0, 1, 2].map((i) => { const xm = (naX + clX) / 2; return <path key={i} d={`M ${xm - 40 - i * 18} ${860 + i * 40} L ${xm + 40 + i * 18} ${860 + i * 40}`} stroke={KC.pink} strokeWidth={6} strokeDasharray="10 10" strokeDashoffset={T * 60 * (i % 2 ? 1 : -1)} opacity={junta * 0.9} />; })}
           </g>
-          <Escalita x={80} y={1500} w={120} texto="≈ 0.3 nm (esquemático)" color={KC.texto} o={kprog(T, K.El + 1.2, K.El + 1.6)} />
+          <Escalita x={80} y={1660} w={120} texto="≈ 0.3 nm (esquemático)" color={KC.texto} o={kprog(T, K.El + 1.2, K.El + 1.6)} />
         </SvgCapa>
-        <Etq T={T} at={K.El + 1.6} until={K.Io - 0.2} x={170} y={1110} texto="1 electrón afuera" tam={32} color={KC.yellow} />
-        <Etq T={T} at={K.El + 2.6} until={K.Io - 0.2} x={1040} y={1110} lado="izq" texto="le falta 1" tam={32} color={CL} />
+        <Etq T={T} at={K.El + 1.6} until={K.Io - 0.2} x={140} y={1120} texto="1 electrón afuera" tam={32} color={KC.yellow} />
+        <Etq T={T} at={K.El + 2.6} until={K.Io - 0.2} x={1040} y={1120} lado="izq" texto="le falta 1" tam={32} color={CL} />
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Cr} zoom={0.1}>
@@ -276,27 +276,27 @@ function Sal() {
       <Escena T={T} a={K.Da} b={K.Yp}>
         <div style={{ position:'absolute', inset:0, background:'#e7d3a1' }}></div>
         <SvgCapa>
-          <Pila x={260} y={1130} n={11} />
+          <Pila x={250} y={1060} n={11} />
           {/* platillo de platino con la sosa cáustica húmeda */}
-          <g transform="translate(720 1110)">
+          <g transform="translate(720 1010) scale(1.15)">
             <ellipse cx={0} cy={30} rx={190} ry={44} fill="#dfe3e8" stroke={KC.ink} strokeWidth={8} />
             <ellipse cx={0} cy={22} rx={150} ry={28} fill="#c9ced6" />
             <path d="M -80 20 Q -90 -60 -20 -80 Q 60 -90 85 -30 Q 95 10 70 25 Z" fill="#f7f7f2" stroke={KC.ink} strokeWidth={6} />
             <path d="M -50 -40 Q -20 -60 20 -50" stroke="#bfe0ff" strokeWidth={8} fill="none" strokeLinecap="round" />
             {[[-60, 18], [-20, 24], [30, 22], [64, 14], [0, 18]].map(([dx, dy], i) => { const on = kprog(T, K.Da + 2.4 + i * 0.35, K.Da + 2.8 + i * 0.35, kEase.rebote);
-              return <circle key={i} cx={dx} cy={dy} r={11 * on} fill={PLATA} stroke={KC.ink} strokeWidth={3} style={{ filter:`drop-shadow(0 0 ${8 * on}px #fff)` }} />; })}
+              return <circle key={i} cx={dx} cy={dy} r={15 * on} fill={PLATA} stroke={KC.ink} strokeWidth={3} style={{ filter:`drop-shadow(0 0 ${8 * on}px #fff)` }} />; })}
           </g>
           {/* cables: + al alambre de arriba, − al platillo */}
-          <path d="M 360 690 Q 560 560 720 760 L 720 1035" stroke="#b33" strokeWidth={9} fill="none" strokeLinecap="round" />
-          <path d="M 360 1150 Q 520 1260 560 1150 L 600 1140" stroke="#334" strokeWidth={9} fill="none" strokeLinecap="round" />
-          <text x={440} y={650} style={{ font:`900 64px ${KF.texto}` }} fill="#b33">+</text>
-          <text x={440} y={1290} style={{ font:`900 72px ${KF.texto}` }} fill="#334">−</text>
+          <path d="M 350 620 Q 560 520 720 700 L 720 925" stroke="#b33" strokeWidth={9} fill="none" strokeLinecap="round" />
+          <path d="M 350 1080 Q 480 1150 540 1060 L 560 1050" stroke="#334" strokeWidth={9} fill="none" strokeLinecap="round" />
+          <text x={440} y={590} style={{ font:`900 64px ${KF.texto}` }} fill="#b33">+</text>
+          <text x={420} y={1180} style={{ font:`900 72px ${KF.texto}` }} fill="#334">−</text>
           {kprog(T, K.Da + 2.0, K.Da + 2.6) > 0 && <g opacity={kprog(T, K.Da + 2.0, K.Da + 2.6) * (0.5 + 0.5 * Math.abs(Math.sin(T * 12)))}>
-            <path d="M 700 1000 l -20 -20 M 740 1000 l 20 -20 M 720 990 l 0 -28" stroke={KC.yellow} strokeWidth={6} strokeLinecap="round" /></g>}
+            <path d="M 700 905 l -20 -20 M 740 905 l 20 -20 M 720 895 l 0 -28" stroke={KC.yellow} strokeWidth={6} strokeLinecap="round" /></g>}
           <rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.12)" />
         </SvgCapa>
-        <Etq T={T} at={K.Da + 1.4} until={K.Yp - 0.2} x={970} y={960} lado="izq" texto="sosa cáustica (NaOH)" tam={30} color={KC.ink} />
-        <Etq T={T} at={K.Da + 3.0} until={K.Yp - 0.2} x={930} y={1180} texto="Na" tam={40} color={KC.ink} lado="izq" />
+        <Etq T={T} at={K.Da + 1.4} until={K.Yp - 0.2} x={1050} y={830} lado="izq" texto="sosa cáustica (NaOH)" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.Da + 3.0} until={K.Yp - 0.2} x={540} y={1130} texto="gotitas de sodio (Na)" tam={32} color={KC.ink} />
       </Escena>
       {/* 8 · Ypres 1915 */}
       <Escena T={T} a={K.Yp} b={K.Re}>
@@ -322,7 +322,7 @@ function Sal() {
           <text x={350} y={790} style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>−</text>
           <Burbujas T={T} x={600} y={940} w={80} h={290} n={14} f={kprog(T, K.Re + 0.8, K.Re + 1.6)} color={CLGAS} rmax={16} />
           <Burbujas T={T} x={280} y={940} w={80} h={290} n={10} f={kprog(T, K.Re + 0.8, K.Re + 1.6)} color="#ffffff" rmax={10} seed={3} />
-          <Nube T={T} x={klerp(660, 880, kprog(T, K.Re + 1.6, K.Re + 3.6))} y={klerp(820, 600, kprog(T, K.Re + 1.6, K.Re + 3.6))} f={kprog(T, K.Re + 1.4, K.Re + 2.2) * 0.45} r={100} color={CLGAS} seed={12} />
+          <Nube T={T} x={klerp(660, 860, kprog(T, K.Re + 1.6, K.Re + 3.6))} y={klerp(820, 860, kprog(T, K.Re + 1.6, K.Re + 3.6))} f={kprog(T, K.Re + 1.4, K.Re + 2.2) * 0.45} r={100} color={CLGAS} seed={12} />
           <g transform="translate(880 1100)" opacity={kprog(T, K.Re + 2.6, K.Re + 3.2)}>
             <rect x={-80} y={-150} width={160} height={300} rx={70} fill="#d9e85a" stroke={KC.ink} strokeWidth={8} />
             <rect x={-30} y={-190} width={60} height={50} rx={8} fill={PLATA} stroke={KC.ink} strokeWidth={6} />
@@ -335,15 +335,15 @@ function Sal() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Plato x={540} y={1180} s={1.1} />
-          <Monton x={560} y={1170} f={1} />
-          <Salero x={430} y={800} s={0.85} />
+          <Plato x={540} y={1040} s={1.1} />
+          <Monton x={560} y={1030} f={1} />
+          <Salero x={430} y={640} s={0.85} />
           <g opacity={1 - kprog(T, K.Ci + 3.4, K.Ci + 4.4)}>
-            <BarraSodio x={klerp(170, 430, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} y={klerp(1450, 600, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} s={klerp(0.35, 0.05, kprog(T, K.Ci + 3.0, K.Ci + 4.2))} />
-            <Nube T={T} x={klerp(920, 430, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} y={klerp(1450, 600, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} f={klerp(0.45, 0.05, kprog(T, K.Ci + 3.0, K.Ci + 4.2))} r={110} color={CLGAS} />
+            <BarraSodio x={klerp(170, 430, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} y={klerp(1450, 440, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} s={klerp(0.35, 0.05, kprog(T, K.Ci + 3.0, K.Ci + 4.2))} />
+            <Nube T={T} x={klerp(920, 430, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} y={klerp(1450, 440, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} f={klerp(0.45, 0.05, kprog(T, K.Ci + 3.0, K.Ci + 4.2))} r={110} color={CLGAS} />
           </g>
         </SvgCapa>
-        <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.3} x={680} y={820} r={190} fx={560} fy={1160} interior={(TT, r) => <Rejilla T={TT} r={r} />} tinte={KC.blue} etiqueta="POR DENTRO · Na⁺ Cl⁻" />
+        <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.3} x={690} y={660} r={190} fx={560} fy={1020} interior={(TT, r) => <Rejilla T={TT} r={r} />} tinte={KC.blue} etiqueta="POR DENTRO · Na⁺ Cl⁻" />
       </Escena>
 
       {/* textos */}
@@ -352,7 +352,7 @@ function Sal() {
       <Chip T={T} at={K.So + 0.3} until={K.Cl - 0.3} texto="sodio · Na · metal" x={540} y={1500} tam={44} borde={NA} />
       <Etq T={T} at={K.So + 1.4} until={K.So + 2.3} x={780} y={770} texto="blando como cera" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Cl + 0.3} until={K.El - 0.3} texto="cloro · Cl₂ · gas" x={540} y={1500} tam={44} borde={CLGAS} />
-      <Etq T={T} at={K.Cl + 0.6} until={K.El - 0.3} x={420} y={560} texto="amarillo verdoso" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Cl + 0.6} until={K.El - 0.3} x={60} y={1010} texto="amarillo verdoso" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Io + 1.6} until={K.Pr - 0.2} texto="enlace iónico: Na⁺ ⇄ Cl⁻" x={540} y={1500} tam={42} borde={KC.pink} />
       <Chip T={T} at={K.Cr + 0.5} until={K.Da - 0.3} texto="cristal cúbico · NaCl" x={540} y={1500} tam={44} borde={CL} />
       <Chip T={T} at={K.Da + 3.6} until={K.Yp - 0.3} texto="electrólisis" x={540} y={1690} tam={40} borde={KC.gold} />

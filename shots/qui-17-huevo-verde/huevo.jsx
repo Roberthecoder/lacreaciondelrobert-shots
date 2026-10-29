@@ -273,7 +273,7 @@ function Huevo() {
       </Escena>
 
       {/* capítulos y medidores */}
-      <Capitulo T={T} x={200} y={215} hasta={K.Da - 0.1} caps={[{ at: K.Q, titulo: 'El azufre' }, { at: K.Ga, titulo: 'El gas' }, { at: K.Re, titulo: 'El anillo' }, { at: K.Fr, titulo: 'El frío' }]} />
+      {(T < K.Pr - 0.1 || T >= K.Fr) && <Capitulo T={T} x={200} y={215} hasta={K.Da - 0.1} caps={[{ at: K.Q, titulo: 'El azufre' }, { at: K.Ga, titulo: 'El gas' }, { at: K.Re, titulo: 'El anillo' }, { at: K.Fr, titulo: 'El frío' }]} />}
       <Medidores T={T} at={K.Ga + 0.3} until={K.Pr - 0.3} minutos={minutos} termo={termo} />
       <Medidores T={T} at={K.Es + 0.6} until={K.Fr - 0.3} minutos={minutos} termo={termo} />
       <Medidores T={T} at={K.Fr + 0.3} until={K.Da - 0.3} termo={termo} />
@@ -285,8 +285,8 @@ function Huevo() {
       <Etq T={T} at={K.Q + 0.6} until={K.Ga - 0.3} x={340} y={480} texto="clara: azufre (S)" lado="der" color={KC.ink} tam={36} />
       <Chip T={T} at={K.Q + 1.9} until={K.Ga - 0.3} texto="yema: hierro (Fe)" y={1460} tam={46} borde={FE_C} />
       <Chip T={T} at={K.Ga + 1.4} until={K.Vi - 0.3} texto="H₂S · sulfuro de hidrógeno" y={1460} tam={40} borde={H2S_C} />
-      <Etq T={T} at={K.Vi + 0.3} until={K.Pr - 0.3} x={60} y={380} texto="clara" color={KC.texto} tam={36} />
-      <Etq T={T} at={K.Vi + 0.5} until={K.Pr - 0.3} x={MEMB_X + 160} y={380} texto="yema" color={KC.yellow} tam={36} />
+      <Etq T={T} at={K.Vi + 0.3} until={K.Re + 0.4} x={60} y={380} texto="clara" color={KC.texto} tam={36} />
+      <Etq T={T} at={K.Vi + 0.5} until={K.Re + 0.4} x={MEMB_X + 160} y={380} texto="yema" color={KC.yellow} tam={36} />
       <Etq T={T} at={K.Vi + 0.9} until={K.Re - 0.2} x={MEMB_X - 10} y={1440} texto="membrana" lado="izq" color={KC.texto} tam={32} />
       <Chip T={T} at={K.Re + 0.5} until={K.Re + 3.4} texto="H₂S + Fe → FeS" y={1460} tam={48} borde={VERDE} mono />
       <Chip T={T} at={K.Re + 3.6} until={K.Pr - 0.2} texto="solo en la superficie" y={1460} tam={44} borde={VERDE} />

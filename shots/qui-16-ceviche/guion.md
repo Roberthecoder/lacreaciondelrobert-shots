@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" con espíritu de #6 mito peligroso: "Ese ceviche no está cocido: el limón solo le desdobló las proteínas, y lo que traía puede seguir vivo."
 - **Seguridad:** no se invita a nada riesgoso; lo único práctico que se dice es la recomendación oficial de congelar (FDA). No es consejo médico.
 - **Duración:** voz 958 caracteres / ≈ 170 palabras (≈ 58.2 s según `estimar-escenas.mjs`) + cierre 3.5 s → **≈ 61.7 s**.
-- **Estado:** guion listo para verificación independiente (`verificacion.md` pendiente). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~959 créditos).
 
 ## Versión narrada
 
@@ -27,6 +27,26 @@ Tiempos estimados: Gancho 0–6.1 · Que 6.1–11.2 · Acido 11.2–16.7 · Blan
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert. |
 
 **Música:** cama grave continua; efectos en el mismo cuadro (exprimir el limón, goteo, "pop" de cada H⁺, desenrollado, chisporroteo del sartén, tic-tac del reloj, golpe de la tarjeta, contador, crujido de hielo al congelar).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y el limón no mata?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «Ese ceviche no está cocido» |
+| 2 | 7.1 | 10.8 | 06_pensativo_menton | `arriba-der` | «cadenas largas, dobladas y enrolladas» |
+| 3 | 13.1 | 16.4 | 13_senalando_arriba | `izq-alto` | «y el estambre se abre» |
+| 4 | 21.8 | 25.9 | 12_perfil_serio | `izq-alto` | «con calor suficiente mata bacterias y parásitos» |
+| 5 | 26.2 | 27.7 | 07_pensativo_puno | `grande` | «¿Y el limón no mata?» |
+| 6 | 30.2 | 34.2 | 04_bajando_lentes | `arriba-der` | «a los 30 minutos casi no bajaron» |
+| 7 | 37.2 | 41.1 | 11_sorprendido | `izq-alto` | «aguantaron unos 5 días» |
+| 8 | 44.0 | 47.7 | 10_serio_molesto | `arriba-der` | «le sacaron 40 larvas» |
+| 9 | 51.2 | 54.7 | 13_senalando_arriba | `izq-alto` | «así mueren los parásitos» |
+| 10 | 55.3 | 58.1 | 02_apuntando_camara | `arriba-der` | «está desdoblado» |
+| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 35.6 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 
