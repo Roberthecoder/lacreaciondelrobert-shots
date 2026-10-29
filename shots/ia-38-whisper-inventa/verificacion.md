@@ -36,3 +36,10 @@
 Ninguna ❌ ni ⚠️. Sugerencias opcionales (no obligatorias):
 - Escena 6: si cabe, "que **suelen** hablar con pausas largas" (las pausas largas son un síntoma común de la afasia, no de todas las personas con afasia).
 - Escena 7: la frase junta las dos hipótesis del paper (el silencio/ruido y el modelo de lenguaje); está bien así porque se dice como sospecha y lleva la etiqueta "hipótesis" en pantalla; mantener esa etiqueta en la animación.
+
+## Re-verificación (29 oct 2026, coordinador)
+- Escena 6: «…personas con afasia, que suelen hablar con pausas largas» (sugerencia del verificador) ✅
+- Escena 7: «su parte que predice texto» (antes "palabras"; mismo sentido: "language modeling") + etiqueta «HIPÓTESIS de las autoras» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

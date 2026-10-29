@@ -32,3 +32,11 @@ Revisión de forma: cada cifra dice de qué es; ningún dato tiene más de 2 añ
    > "Ojo: Waymo es coautora del estudio, y sus autos casi no van por autopista ni manejan con nieve."
    (Pantalla: quitar la lupa sobre la tarjeta del estudio para los íconos; mostrar autopista y copo tachados como "dónde NO maneja", no como "lo que el estudio dejó fuera". Sustento: Swiss Re "Waymo also almost exclusively operated on surface streets"; Hub "the current cities Waymo operates in do not have appreciable snow fall".)
 2. **#8 (⚠️ leve, escena 4)** — Swiss Re es reaseguradora. Propuesta: "En 2024, la reaseguradora Swiss Re revisó sus reclamos…" o "el gigante de seguros Swiss Re…". Ajustar igual la `TarjetaEstudio` si dice "aseguradora".
+
+## Re-verificación (29 oct 2026, coordinador)
+- Estudio: «la reaseguradora Swiss Re» (voz y tarjeta) ✅
+- Ojo: «Ojo: Waymo es coautora del estudio, y sus autos casi no van por autopista ni manejan con nieve.» + chip «dónde casi no maneja» ✅ (texto del verificador)
+- Recall (recorte sin datos nuevos): «Y falla:» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
