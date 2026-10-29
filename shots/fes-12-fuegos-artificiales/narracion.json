@@ -1,0 +1,22 @@
+{
+  "especial": "Año Nuevo",
+  "serie_vinculada": "Químico",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Fuegos Artificiales base narrada.dc.html",
+  "salida": "Shot Fuegos Artificiales narrado.dc.html",
+  "nota": "Shot Festivo #12 · Año Nuevo · Químico. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese rojo que ves en Año Nuevo no es pintura: es estroncio, un metal." },
+    { "escena": "Cohete", "texto": "Dentro de cada cohete van sales de metales, y cada metal da su propio color." },
+    { "escena": "Colores", "texto": "Estroncio da rojo; bario, verde; cobre, azul; sodio, amarillo; y calcio, naranja." },
+    { "escena": "Calor", "texto": "Al estallar, el calor de la flama les da un empujón a los electrones del metal." },
+    { "escena": "Escalon", "texto": "Suben a un escalón de más energía y, al bajar, sueltan esa energía como luz." },
+    { "escena": "Huella", "texto": "Cada metal tiene sus propios escalones, por eso cada uno brilla siempre con su color." },
+    { "escena": "Pregunta", "texto": "¿Entonces por qué casi nunca ves un azul bonito?" },
+    { "escena": "Azul", "texto": "El azul sale del cobre pegado a un cloro. Si la flama se calienta de más, esa pareja se rompe y el azul se deslava." },
+    { "escena": "Estudio", "texto": "En 1860, en Heidelberg, Bunsen y Kirchhoff pasaron la luz de flamas por un prisma: cada elemento dejaba su huella de líneas de colores." },
+    { "escena": "Cesio", "texto": "Así hallaron un elemento nuevo en agua mineral, y lo llamaron cesio por sus líneas azules." },
+    { "escena": "Dato", "texto": "Dato: cuenta los segundos entre el destello y el ¡pum!; cada tres segundos son como un kilómetro de distancia." },
+    { "escena": "Cierre", "texto": "Así que esta noche, cuando veas ese rojo, ya sabes: no es pintura, es estroncio. ¡Feliz Año Nuevo!" }
+  ]
+}
