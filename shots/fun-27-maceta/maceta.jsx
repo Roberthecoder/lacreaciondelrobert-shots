@@ -295,7 +295,10 @@ function MacetaShot() {
             <Perrito T={T} x={klerp(1200, 900, u)} y={1180} s={1.1} />
           </> : null; })()}
           {(() => { const baja = kprog(T, K.Tx + 3.4, K.Tx + 4.0, kEase.sale); return baja > 0 ? <Mano x={406 + quita * 600} y={klerp(-200, 960, baja) - quita * 1080} s={1.1} rot={-10 + quita * 30} /> : null; })()}
-          <Sello T={T} at={K.Tx + 0.6} x={330} y={500} texto="NO SE COME" color={KC.ink} r={150} />
+          {T >= K.Tx + 0.6 && (() => { const k = kprog(T, K.Tx + 0.6, K.Tx + 0.95, kEase.rebote); return <g transform={`translate(330 500) rotate(-10) scale(${klerp(2.2, 1, k)})`} opacity={kprog(T, K.Tx + 0.6, K.Tx + 0.75)}>
+            <rect x={-200} y={-62} width={400} height={124} rx={22} fill="rgba(255,255,255,.85)" stroke={KC.red} strokeWidth={12} />
+            <text y={26} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.red}>NO SE COME</text>
+          </g>; })()}
         </>)}
       </Escena>
       {/* 9 · el estudio: Múnich, 2005 */}
@@ -325,7 +328,7 @@ function MacetaShot() {
             <ellipse rx={22} ry={12} fill="#15151a" />
           </g>}
           {/* sombrero boca abajo: las laminillas tocan el papel */}
-          {(() => { const baja = kprog(T, K.Tr + 0.2, K.Tr + 0.8, kEase.sale); return <g transform={`translate(${540 + levanta * 300} ${klerp(500, 930, baja) - levanta * 380})`}>
+          {(() => { const baja = kprog(T, K.Tr + 0.2, K.Tr + 0.8, kEase.sale); return <g transform={`translate(${540 - levanta * 40} ${klerp(500, 930, baja) - levanta * 400}) scale(${1 - levanta * 0.3})`}>
             <path d="M -190 0 C -190 -95 -80 -120 0 -120 C 80 -120 190 -95 190 0 Q 0 22 -190 0 Z" fill={MC.limon} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <ellipse cx={0} cy={-112} rx={24} ry={9} fill="#c9a000" />
             {Array.from({ length: 9 }, (_, i) => { const u = (i - 4) / 4.4; return <line key={i} x1={u * 182} y1={-4} x2={u * 140} y2={-46} stroke="#c9a000" strokeWidth={3} />; })}
@@ -381,7 +384,7 @@ function MacetaShot() {
       <Etq T={T} at={K.A + 0.1} until={K.A + 1.2} x={370} y={780} texto="huevito" tam={34} color={KC.ink} />
       <Etq T={T} at={K.A + 1.2} until={K.A + 2.2} x={370} y={780} texto="campana" tam={34} color={KC.ink} />
       <Etq T={T} at={K.A + 2.2} until={K.P - 0.3} x={370} y={780} texto="abierto" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 3.0} until={K.P - 0.3} x={560} y={1170} texto="esporas blancas" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 3.0} until={K.P - 0.3} x={560} y={1170} texto="esporas blancas" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Tx + 1.4} until={K.Tx + 3.0} texto="comerlo: puede caer muy mal" x={540} y={760} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Tx + 3.2} until={K.E - 0.3} texto="niños o mascotas: quítalo" x={360} y={430} tam={32} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Pg - 0.3} anio="2005" quien="Múnich, Alemania" revista="Bartsch y col. · Angewandte Chemie" x={600} y={760} />

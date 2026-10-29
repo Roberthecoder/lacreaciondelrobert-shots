@@ -331,7 +331,7 @@ function ArtilleroShot() {
       <BarraEscala T={T} at={K.L} until={K.Di} texto="1 m" largo={150} />
       <BarraEscala T={T} at={K.Di} until={K.Pe} texto="1 m" largo={137} />
       <BarraEscala T={T} at={K.Pe} until={K.E} texto="1 mm" largo={90} />
-      <BarraEscala T={T} at={K.E} until={K.V} texto="27 parcelas" largo={140} />
+      <BarraEscala T={T} at={K.E} until={K.V} texto="27 parcelas" largo={140} color={KC.ink} />
       <BarraEscala T={T} at={K.V} until={K.C} texto="1 mm" largo={90} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="50 cm" largo={170} />
 

@@ -131,7 +131,7 @@ function GotaBullerShot() {
   // ---- caída entre laminillas ----
   const GL = 250, GR = 830; // caras internas de las dos laminillas
   const tray = (t0, y0, dir, D) => { const t = T - t0; if (t < 0) return null; const tx = 1 - Math.exp(-t / 0.22); const x = dir > 0 ? GL + 38 + D * tx : GR - 38 - D * tx; const caeT = Math.max(0, t - 0.9); return [x, y0 + caeT * 260]; };
-  const LANZ = [[K.Ca + 1.2, 470, 1, 150], [K.Ca + 2.4, 640, -1, 130], [K.Ca + 3.2, 820, 1, 160], [K.Ca + 4.0, 560, -1, 120], [K.Ca + 4.6, 900, 1, 140], [K.Fr + 0.2, 720, -1, 150], [K.Fr + 0.8, 520, 1, 130], [K.Fr + 1.4, 980, -1, 120]];
+  const LANZ = [[K.Ca + 1.2, 580, 1, 150], [K.Ca + 2.4, 700, -1, 130], [K.Ca + 3.2, 840, 1, 160], [K.Ca + 4.0, 620, -1, 120], [K.Ca + 4.6, 940, 1, 140], [K.Fr + 0.2, 760, -1, 150], [K.Fr + 0.8, 600, 1, 130], [K.Fr + 1.4, 1000, -1, 120]];
 
   const zoomG = kprog(T, K.B - 0.8, K.B + 0.3, kEase.suave);
 
@@ -174,10 +174,10 @@ function GotaBullerShot() {
             const a = i * 2.4, R = 520; const sx = hx + Math.cos(a) * R, sy = hy + Math.sin(a) * R * 0.8;
             return <circle key={i} cx={klerp(sx, hx, u)} cy={klerp(sy, hy, u)} r={9} fill={GB.agua2} stroke={GB.agua} strokeWidth={3} opacity={1 - u * 0.4} />; })}
           {/* la espora (sale volando en el disparo) */}
-          <g transform={`translate(${SX + vuelo * 900} ${SY - vuelo * 260}) rotate(${SR + vuelo * 25})`}>
+          <g transform={`translate(${SX + vuelo * 420} ${SY - vuelo * 260}) rotate(${SR + vuelo * 25}) scale(${1 - vuelo * 0.35})`}>
             <Espora s={SS} gota={gota} capa={capa} fusion={fus} cm={cm * (1 - kprog(T, K.D + 3.0, K.D + 3.3))} />
           </g>
-          {vuelo > 0 && vuelo < 0.97 && [0, 1, 2, 3].map((k) => <line key={k} x1={SX + vuelo * 900 - 60 - k * 70} y1={SY - vuelo * 260 - 80 + k * 40} x2={SX + vuelo * 900 - 260 - k * 70} y2={SY - vuelo * 260 - 30 + k * 40} stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={0.7 - k * 0.15} />)}
+          {vuelo > 0 && vuelo < 0.97 && [0, 1, 2, 3].map((k) => <line key={k} x1={SX + vuelo * 420 - 40 - k * 60} y1={SY - vuelo * 260 - 90 + k * 40} x2={SX + vuelo * 420 - 240 - k * 60} y2={SY - vuelo * 260 - 40 + k * 40} stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={0.7 - k * 0.15} />)}
           {flash > 0 && <circle cx={loc(110, -90)[0]} cy={loc(110, -90)[1]} r={60 + flash * 120} fill="none" stroke="#fff" strokeWidth={10} opacity={flash} />}
         </>)}
       </Escena>
@@ -193,16 +193,16 @@ function GotaBullerShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           {T > K.E + 1.6 && <g opacity={kprog(T, K.E + 1.6, K.E + 2.0)}>
-            <rect x={40} y={800} width={1000} height={200} rx={10} fill={KC.ink} />
-            {Array.from({ length: 22 }, (_, i) => <g key={i}><rect x={52 + i * 45} y={810} width={26} height={16} rx={3} fill="#fff" /><rect x={52 + i * 45} y={974} width={26} height={16} rx={3} fill="#fff" /></g>)}
+            <rect x={40} y={740} width={1000} height={200} rx={10} fill={KC.ink} />
+            {Array.from({ length: 22 }, (_, i) => <g key={i}><rect x={52 + i * 45} y={750} width={26} height={16} rx={3} fill="#fff" /><rect x={52 + i * 45} y={914} width={26} height={16} rx={3} fill="#fff" /></g>)}
             {[0, 1, 2, 3].map((k) => { const on = kprog(T, K.E + 2.0 + k * 0.35, K.E + 2.2 + k * 0.35); return <g key={k} opacity={on}>
-              <rect x={70 + k * 240} y={836} width={220} height={128} fill="#16233d" stroke="#fff" strokeWidth={3} />
-              <path d={`M ${90 + k * 240} 940 Q ${110 + k * 240} 905 ${130 + k * 240} 900`} stroke="#f4e6d2" strokeWidth={10} fill="none" strokeLinecap="round" />
-              <ellipse cx={150 + k * 240 + k * k * 12} cy={890 - k * 6} rx={22} ry={15} fill={GB.espora} stroke="#fff" strokeWidth={2} />
-              {k < 2 && <circle cx={132 + k * 240 + k * 10} cy={884} r={9 - k * 4} fill={GB.agua} />}
+              <rect x={70 + k * 240} y={776} width={220} height={128} fill="#16233d" stroke="#fff" strokeWidth={3} />
+              <path d={`M ${90 + k * 240} 880 Q ${110 + k * 240} 845 ${130 + k * 240} 840`} stroke="#f4e6d2" strokeWidth={10} fill="none" strokeLinecap="round" />
+              <ellipse cx={150 + k * 240 + k * k * 12} cy={830 - k * 6} rx={22} ry={15} fill={GB.espora} stroke="#fff" strokeWidth={2} />
+              {k < 2 && <circle cx={132 + k * 240 + k * 10} cy={824} r={9 - k * 4} fill={GB.agua} />}
             </g>; })}
           </g>}
-          {T > K.E + 3.0 && <g opacity={kprog(T, K.E + 3.0, K.E + 3.4)}><Levadura x={270} y={1110} s={1.1} /><Oreja x={760} y={1110} s={0.95} /></g>}
+          {T > K.E + 3.0 && <g opacity={kprog(T, K.E + 3.0, K.E + 3.4)}><Levadura x={150} y={1050} s={0.8} /><Oreja x={620} y={1050} s={0.75} /></g>}
         </>)}
       </Escena>
 
@@ -220,20 +220,20 @@ function GotaBullerShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
         {fsvg(<>
-          <rect x={60} y={360} width={960} height={70} fill={GB.carne} stroke={KC.ink} strokeWidth={7} />
-          <path d={`M 60 420 L ${GL} 420 L ${GL} 1150 Q ${(60 + GL) / 2} 1200 60 1150 Z`} fill={GB.gill} stroke={KC.ink} strokeWidth={7} />
-          <path d={`M ${GR} 420 L 1020 420 L 1020 1150 Q ${(GR + 1020) / 2} 1200 ${GR} 1150 Z`} fill={GB.gill} stroke={KC.ink} strokeWidth={7} />
-          {Array.from({ length: 23 }, (_, i) => <g key={i}><path d={`M ${GL} ${445 + i * 31} q 22 -6 30 0 q -8 8 -30 4`} fill="#f4e6d2" stroke={KC.ink} strokeWidth={2} />
-            <path d={`M ${GR} ${445 + i * 31} q -22 -6 -30 0 q 8 8 30 4`} fill="#f4e6d2" stroke={KC.ink} strokeWidth={2} /></g>)}
+          <rect x={60} y={440} width={960} height={70} fill={GB.carne} stroke={KC.ink} strokeWidth={7} />
+          <path d={`M 60 500 L ${GL} 500 L ${GL} 1090 Q ${(60 + GL) / 2} 1140 60 1090 Z`} fill={GB.gill} stroke={KC.ink} strokeWidth={7} />
+          <path d={`M ${GR} 500 L 1020 500 L 1020 1090 Q ${(GR + 1020) / 2} 1140 ${GR} 1090 Z`} fill={GB.gill} stroke={KC.ink} strokeWidth={7} />
+          {Array.from({ length: 19 }, (_, i) => <g key={i}><path d={`M ${GL} ${520 + i * 31} q 22 -6 30 0 q -8 8 -30 4`} fill="#f4e6d2" stroke={KC.ink} strokeWidth={2} />
+            <path d={`M ${GR} ${520 + i * 31} q -22 -6 -30 0 q 8 8 30 4`} fill="#f4e6d2" stroke={KC.ink} strokeWidth={2} /></g>)}
           {/* camino imposible: si volara de más, chocaría */}
           {T > K.Ca + 2.0 && T < K.Fr && <g opacity={kprog(T, K.Ca + 2.0, K.Ca + 2.4) * (1 - kprog(T, K.Fr - 0.6, K.Fr))}>
-            <line x1={GL + 40} y1={470} x2={GR - 10} y2={470} stroke={KC.red} strokeWidth={6} strokeDasharray="16 14" />
-            <path d={`M ${GR - 50} 440 l 50 60 M ${GR} 440 l -50 60`} stroke={KC.red} strokeWidth={12} strokeLinecap="round" />
+            <line x1={GL + 40} y1={580} x2={GR - 10} y2={580} stroke={KC.red} strokeWidth={6} strokeDasharray="16 14" />
+            <path d={`M ${GR - 50} 550 l 50 60 M ${GR} 550 l -50 60`} stroke={KC.red} strokeWidth={12} strokeLinecap="round" />
           </g>}
           {/* regla de lo que vuela */}
           {T > K.Ca + 1.6 && <g opacity={kprog(T, K.Ca + 1.6, K.Ca + 2.0)}>
-            <line x1={GL + 38} y1={415 + 0} x2={GL + 38 + 150} y2={415} stroke={KC.yellow} strokeWidth={6} />
-            <line x1={GL + 38} y1={400} x2={GL + 38} y2={430} stroke={KC.yellow} strokeWidth={6} /><line x1={GL + 188} y1={400} x2={GL + 188} y2={430} stroke={KC.yellow} strokeWidth={6} />
+            <line x1={GL + 38} y1={545} x2={GL + 38 + 150} y2={545} stroke={KC.yellow} strokeWidth={6} />
+            <line x1={GL + 38} y1={530} x2={GL + 38} y2={560} stroke={KC.yellow} strokeWidth={6} /><line x1={GL + 188} y1={530} x2={GL + 188} y2={560} stroke={KC.yellow} strokeWidth={6} />
           </g>}
           {LANZ.map(([t0, y0, dir, D], i) => { const p = tray(t0, y0, dir, D); if (!p) return null; const [x, y] = p; if (y > 1500) return null;
             const t = T - t0, x0 = dir > 0 ? GL + 38 : GR - 38;
@@ -286,25 +286,25 @@ function GotaBullerShot() {
       <Etq T={T} at={K.B + 2.6} until={K.Go - 0.3} x={690} y={760} texto="espora" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.Go + 1.3} until={K.Bu - 0.2} x={hx + 10} y={hy - 150} texto="azúcares" lado="izq" tam={28} color={KC.yellow} />
       <Etq T={T} at={K.Go + 2.6} until={K.Bu - 0.2} x={620} y={520} texto="agua del aire" tam={30} color={GB.agua} />
-      <Etq T={T} at={K.Bu + 0.4} until={K.F + 1.6} x={hx + 50} y={hy - 190} texto="gota de Buller" lado="izq" tam={30} color={GB.agua} />
+      <Etq T={T} at={K.Bu + 0.4} until={K.F + 1.6} x={30} y={hy - 210} texto="gota de Buller" tam={30} color={GB.agua} />
       <Etq T={T} at={K.Bu + 2.2} until={K.F + 1.6} x={loc(330, -100)[0] + 30} y={loc(330, -100)[1] - 30} texto="capa de agua" tam={30} color={GB.agua} />
       <Etq T={T} at={K.Go + 0.6} until={K.D + 2.4} x={loc(400, 40)[0] + 10} y={loc(400, 40)[1] + 70} texto="espora" tam={28} color={KC.gold2} />
       <Medidor T={T} at={K.Go + 2.4} until={K.F + 2.2} valor={gota} etiqueta="GOTA DE BULLER" texto={(v) => (v < 0.999 ? 'crece…' : '¡toca la capa!')} x={180} y={1100} ancho={820} color={GB.agua} />
       <Chip T={T} at={K.F + 2.6} until={K.D - 0.3} texto="< 4 µs (medido en un hongo de oreja y levaduras, 2009)" x={540} y={1130} tam={24} borde={KC.cyan} />
-      <Etq T={T} at={K.D + 1.1} until={K.D + 2.6} x={loc(214, -26)[0] + 30} y={loc(214, -26)[1] + 150} texto="centro de masa" tam={30} color={KC.red} />
+      <Etq T={T} at={K.D + 1.1} until={K.D + 2.6} x={loc(214, -26)[0] - 60} y={loc(214, -26)[1] + 250} texto="centro de masa" tam={30} color={KC.red} />
       <Chip T={T} at={K.D + 3.3} until={K.P - 0.2} texto="catapulta de tensión superficial" x={540} y={1130} tam={34} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Fz - 0.3} anio="2005" quien="Pringle y colegas · EE. UU." revista="Mycologia, 2005" x={400} y={510} />
-      <Chip T={T} at={K.E + 1.8} until={K.Fz - 0.3} texto="hasta 100,000 cuadros por segundo" x={540} y={745} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.E + 3.3} until={K.Fz - 0.3} x={270} y={1200} texto="Itersonilia perplexans" it tam={24} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.3} until={K.Fz - 0.3} x={150} y={1010} texto="levadura" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.6} until={K.Fz - 0.3} x={1000} y={1010} texto="hongo de oreja" lado="izq" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.6} until={K.Fz - 0.3} x={1040} y={1200} texto="Auricularia auricula" lado="izq" it tam={24} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Fz - 0.3} anio="2005" quien="Pringle y colegas · EE. UU." revista="Mycologia, 2005" x={400} y={470} />
+      <Chip T={T} at={K.E + 1.8} until={K.Fz - 0.3} texto="hasta 100,000 cuadros por segundo" x={540} y={690} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.E + 3.3} until={K.Fz - 0.3} x={240} y={1075} texto="Itersonilia perplexans" it tam={22} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.3} until={K.Fz - 0.3} x={240} y={1025} texto="levadura" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.6} until={K.Fz - 0.3} x={690} y={1025} texto="hongo de oreja" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.6} until={K.Fz - 0.3} x={690} y={1075} texto="Auricularia auricula" it tam={22} color={KC.ink} />
       <NumeroGigante T={T} at={K.Fz + 0.3} until={K.Ca - 0.3} valor={10000} dur={1.0} prefijo="+" sufijo=" g" etiqueta="más de" x={540} y={830} tam={190} color={KC.yellow} />
       <Chip T={T} at={K.Fz + 1.2} until={K.Ca - 0.3} texto="g = la gravedad de la Tierra" x={540} y={1030} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Fz + 1.9} until={K.Ca - 0.3} texto="≈3,000 a 14,000 g según la especie (2009)" x={540} y={1120} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Ca + 0.6} until={K.Es - 0.3} x={150} y={1230} texto="laminilla" lado="izq" tam={26} color={GB.carne} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.Es - 0.3} x={930} y={1230} texto="laminilla de enfrente" lado="izq" tam={26} color={GB.carne} />
-      <Chip T={T} at={K.Ca + 1.7} until={K.Fr - 0.2} texto="< 0.1 mm" x={GL + 113} y={340} tam={30} borde={KC.yellow} mono />
+      <Etq T={T} at={K.Ca + 0.6} until={K.Es - 0.3} x={40} y={1160} texto="laminilla" tam={26} color={GB.carne} />
+      <Etq T={T} at={K.Ca + 1.0} until={K.Es - 0.3} x={1040} y={1160} texto="laminilla de enfrente" lado="izq" tam={26} color={GB.carne} />
+      <Chip T={T} at={K.Ca + 1.7} until={K.Fr - 0.2} texto="< 0.1 mm" x={GL + 113} y={640} tam={30} borde={KC.yellow} mono />
       <Chip T={T} at={K.Ca + 2.6} until={K.Fr - 0.2} texto="no choca con la de enfrente" x={540} y={1100} tam={30} borde={KC.red} />
       <Chip T={T} at={K.Fr + 0.4} until={K.Es - 0.2} texto="frena y cae por gravedad ↓" x={540} y={1100} tam={30} borde={KC.yellow} />
       <div style={{ position:'absolute', left:0, right:0, top:470, zIndex:42, textAlign:'center', opacity: kprog(T, K.Es + 0.2, K.Es + 0.5) * (1 - kprog(T, K.C - 0.3, K.C)), display: T > K.Es && T < K.C ? 'block' : 'none' }}>
