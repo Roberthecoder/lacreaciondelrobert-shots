@@ -4,7 +4,7 @@
 - **Formato:** N1 "Por dentro": macro (la piedra con manchas) → micro (corte del talo al microscopio, fondo oscuro) → la misma piedra, transformada.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio.»
 - **Duración:** voz 970 caracteres / 179 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** objetivo en la base (se ajusta con `estimar-escenas.mjs` en la fase 3).
-- **Voz:** pendiente de aprobación de Robert (~1,000 créditos de ElevenLabs).
+- **Voz:** pendiente de aprobación de Robert (~970 créditos de ElevenLabs).
 - **Tono:** asombro y curiosidad; el estudio de 2016 se dice con cuidado (qué hacen las levaduras todavía se estudia).
 
 ## Versión narrada
