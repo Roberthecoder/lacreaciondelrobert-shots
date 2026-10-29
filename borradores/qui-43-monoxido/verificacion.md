@@ -55,4 +55,6 @@ Revisé las líneas que cambiaron en guion.md y narracion.json después de las c
 
 Las correcciones C1–C4 quedaron aplicadas. No quedan ❌ ni ⚠️ en lo que cambió; las líneas que no cambiaron siguen en ✅ como en la tabla de arriba.
 
+- publicacion.md (29 oct 2026): síntomas de la CDC ✅ ("headache, dizziness, weakness, upset stomach, vomiting, chest pain, and confusion… “flu-like.”"); vida media 320 min con aire y "80 minutes when breathing 100% oxygen" ✅ (UKHSA 2022); mantenimiento anual ✅ y detectores con pila cerca de donde se duerme ✅ (CDC); "deja de usar el aparato si puedes" ✅ (NHS). "Por eso en el hospital dan oxígeno" no aparece textual en la UKHSA: se cambió por el dato "respirando oxígeno al 100 %, la UKHSA da unos 80 minutos".
+
 VEREDICTO: APROBADO
