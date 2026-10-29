@@ -40,4 +40,12 @@
 ## Correcciones aplicadas (29 oct 2026)
 Se aplican tal cual todas las propuestas del verificador (sección anterior); si hace falta cuadrar el tiempo, solo se quita relleno sin cambiar datos.
 
+## Re-verificación (29 oct 2026, agente independiente)
+Solo cambios en pantalla: chip de la escena Calor y etiqueta del cierre. Fuentes abiertas: texto completo de Heuler 2020 (Europe PMC, PMC7299933) y resumen de Wille y Lutton 1966 (Crossref, doi 10.1007/BF02641273).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| (pantalla 4) Chip «suele pasar a forma VI» (la manteca que se derrite y recristaliza) | ✅ | Heuler, He, Ambardar, Voronine, *Sci Rep* 10:9833; Wille y Lutton, *JAOCS* 43:491 | "Fat bloom samples are typically comprised of the cocoa butter polymorph VI" · "When chocolate is heated, the cocoa butter polymorphs separate and recrystallize at the surface" · "'bloom' has not been observed for pure V nor observed to exist in the absence of VI, it is premature to say that VI is specifically the phase of chocolate 'bloom'." («suele» respeta esa cautela) | 2020 / 1966 |
+| (cierre) Etiqueta «cristales de grasa» (sin «VI») | ✅ | Heuler 2020 | "When chocolate is heated, the cocoa butter polymorphs separate and recrystallize at the surface" | 2020 |
+
 VEREDICTO: APROBADO

@@ -243,7 +243,7 @@ function Chocolate() {
           <circle cx={760} cy={960} r={230} fill="none" stroke={KC.ink} strokeWidth={12} />
         </SvgCapa>
         <Etq T={T} at={K.Ca + 1.0} until={K.Ca + 2.7} x={180} y={1420} texto="manteca líquida sube" lado="der" tam={30} color={KC.texto} />
-        <Chip T={T} at={K.Ca + 2.8} until={K.P - 0.2} texto="se recristaliza: forma VI" y={1500} tam={40} borde={KC.texto} />
+        <Chip T={T} at={K.Ca + 2.8} until={K.P - 0.2} texto="suele pasar a forma VI" y={1500} tam={40} borde={KC.texto} />
       </Escena>
       {/* 5 · ¿y en el refri? */}
       <Escena T={T} a={K.P} b={K.Az} zoom={0.08}>
@@ -327,7 +327,7 @@ function Chocolate() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa><Tableta T={T} x={TX} y={TY} bloom={1} azucar={0.8} id="z0" /></SvgCapa>
-        <Etq T={T} at={K.Ci + 0.6} until={K.Ou} x={330} y={690} texto="cristales de grasa (VI)" lado="der" tam={32} color={KC.texto} />
+        <Etq T={T} at={K.Ci + 0.6} until={K.Ou} x={330} y={690} texto="cristales de grasa" lado="der" tam={32} color={KC.texto} />
         <Etq T={T} at={K.Ci + 1.4} until={K.Ou} x={780} y={1180} texto="cristales de azúcar" lado="izq" tam={32} color={KC.texto} />
         <Chip T={T} at={K.Ci + 2.4} until={K.Ou} texto="guárdalo fresco y seco" y={1500} tam={44} borde={KC.mint} />
         <Escala T={T} pxPorMm={6.4} x={60} y={1640} color={KC.texto} />
