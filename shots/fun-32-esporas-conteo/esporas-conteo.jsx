@@ -159,7 +159,7 @@ function EsporasConteoShot() {
             <text x={540} y={730} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>personas en la Tierra:</text>
             <text x={540} y={764} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>8,200 millones (ONU, 2024)</text>
             <rect x={540} y={780} width={480 * (8.2 / 16) * g} height={58} rx={12} fill={KC.pink} stroke={KC.ink} strokeWidth={6} />
-            {g > 0.95 && <text x={540 + 480 * (8.2 / 16) + 18} y={822} style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>× 2 ≈</text>}
+            {g > 0.95 && <text x={540 + 480 * (8.2 / 16) + 18} y={822} style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>≈ la mitad</text>}
           </g> : null; })()}
         </>)}
       </Escena>
@@ -222,7 +222,8 @@ function EsporasConteoShot() {
         {fsvg(<>
           <Microscopio x={300} y={1150} s={1.1} />
           <g transform="translate(720 1010) rotate(4)"><rect x={-190} y={-140} width={380} height={280} rx={12} fill="#fffbea" stroke={KC.ink} strokeWidth={7} />
-            {['1,800,000,000', '5,240,000,000', '16,000,000,000'].map((t, i) => kprog(T, K.B + 1.2 + i * 0.6, K.B + 1.5 + i * 0.6) > 0 ? <text key={i} x={-160} y={-70 + i * 70} style={{ font:`700 34px ${KF.mono}` }} fill="#2a3a8a">{t}</text> : null)}</g>
+            {Array.from({ length: 12 }, (_, i) => kprog(T, K.B + 0.8 + i * 0.12, K.B + 0.9 + i * 0.12) > 0 ? <line key={i} x1={-150 + (i % 6) * 22 + Math.floor(i / 6) * 160} y1={-100} x2={-150 + (i % 6) * 22 + Math.floor(i / 6) * 160 + (i % 6 === 5 ? -110 : 0)} y2={-30} stroke="#2a3a8a" strokeWidth={6} strokeLinecap="round" /> : null)}
+            {kprog(T, K.B + 2.5, K.B + 2.8) > 0 && <text x={-165} y={60} style={{ font:`700 30px ${KF.mono}` }} fill="#2a3a8a" opacity={kprog(T, K.B + 2.5, K.B + 2.8)}>≈ 16,000,000,000</text>}</g>
         </>)}
       </Escena>
       {/* 8 · el hongo de repisa: 30 mil millones al día, por seis meses */}
@@ -262,9 +263,9 @@ function EsporasConteoShot() {
         <FondoLunares color={KC.lilac} />
         <Cuadricula T={T} cols={36} filas={40} llenado={kprog(T, K.L + 0.2, K.L + 2.6)} x={90} y={420} ancho={900} alto={760} vacio="rgba(255,255,255,.45)" lleno="#8a8f99" />
         {fsvg(<>{T > K.L + 2.8 && <g transform={`translate(${90 + 25 * 23 + 12} ${420 + 19 * 21 + 10})`}>
-          <circle r={34 + 10 * Math.sin(T * 6)} fill={KC.gold2} opacity=".5" />
+          <circle r={70 + 14 * Math.sin(T * 6)} fill={KC.gold2} opacity=".55" stroke={KC.ink} strokeWidth={4} />
           <rect x={-11} y={-9} width={21} height={17} rx={3} fill={KC.gold2} stroke={KC.ink} strokeWidth={3} />
-          <g transform={`translate(0 -6) scale(${0.22 * kprog(T, K.L + 3.0, K.L + 3.8, kEase.rebote)})`}><Bisporus x={0} y={-180} s={0.6} pie={1} lam={0} /></g>
+          <g transform={`translate(0 -6) scale(${0.55 * kprog(T, K.L + 3.0, K.L + 3.8, kEase.rebote)})`}><Bisporus x={0} y={-180} s={0.6} pie={1} lam={0} /></g>
         </g>}</>)}
       </Escena>
       {/* 12 · son cálculos aproximados */}
@@ -291,26 +292,26 @@ function EsporasConteoShot() {
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.0} until={K.So - 0.3} x={60} y={560} texto="Agaricus campestris" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.4} until={K.So - 0.3} x={60} y={610} texto="champiñón de campo" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.0} until={K.So - 0.3} x={60} y={470} texto="Agaricus campestris" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.4} until={K.So - 0.3} x={60} y={515} texto="champiñón de campo" tam={28} color={KC.ink} />
       <NumeroGigante T={T} at={K.G + 0.2} until={K.So - 0.3} valor={16000000000} dur={1.8} etiqueta="esporas" x={540} y={1110} tam={112} color={KC.yellow} />
       <Chip T={T} at={K.So + 0.3} until={K.V - 0.2} texto="1 · uno abierto · laminillas abajo" x={380} y={470} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.So + 0.6} until={K.So + 2.2} x={60} y={640} texto="Agaricus bisporus" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.V + 0.3} until={K.H - 0.1} texto="2 · tápalo · espera una noche" x={400} y={470} tam={34} borde={KC.ink} />
       <Cronometro T={T} at={K.V + 0.6} until={K.H} factor={16000} etiqueta="UNA NOCHE" x={400} y={600} />
       <Etq T={T} at={K.H + 2.0} until={K.Po - 0.3} x={60} y={380} texto="huella de esporas" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.H + 2.8} until={K.Po - 0.3} texto="a veces no sale con champiñones del súper" x={540} y={1290 - 120} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.H + 2.8} until={K.Po - 0.3} texto="a veces no sale con champiñones del súper" x={540} y={1100} tam={26} borde={KC.ink} />
       <Etq T={T} at={K.Po + 0.2} until={K.Co - 0.3} x={60} y={380} texto="AL MICROSCOPIO · huella de esporas" tam={28} color={KC.gold2} />
-      <Chip T={T} at={K.Po + 1.0} until={K.Co - 0.3} texto="≈ 7 µm cada una" x={540} y={1170} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Po + 1.0} until={K.Co - 0.3} texto="≈ 7 µm cada una" x={540} y={1090} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.Co + 1.2} until={K.P - 0.2} texto="color de esporas = una pista" x={380} y={470} tam={32} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.B + 0.2} until={K.R - 0.3} anio="1922" quien="A. H. R. Buller · U. de Manitoba, Canadá" revista="Researches on Fungi, vol. II" y={560} />
-      <Etq T={T} at={K.R + 0.6} until={K.Bj - 0.3} x={720} y={820} texto="Ganoderma applanatum" it lado="der" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.0} until={K.Bj - 0.3} x={720} y={864} texto="hongo del artista" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.R + 2.6} until={K.Bj - 0.3} texto="medido por J. H. White, Toronto" x={420} y={1180} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Bj + 0.6} until={K.Ra - 0.3} x={680} y={760} texto="Calvatia gigantea" it tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Bj + 1.0} until={K.Ra - 0.3} x={680} y={806} texto="bejín gigante" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Bj + 2.0} until={K.Ra - 0.3} texto="billón = un millón de millones" x={540} y={1170} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.L + 2.9} until={K.A - 0.3} texto="1 de ≈ 20,000,000,000 (estimación de Buller, 1909)" x={540} y={1240 - 60} tam={26} borde={KC.gold} />
+      <Etq T={T} at={K.R + 0.6} until={K.Bj - 0.3} x={540} y={780} texto="Ganoderma applanatum" it lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.0} until={K.Bj - 0.3} x={540} y={822} texto="hongo del artista" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.R + 2.6} until={K.Bj - 0.3} texto="medido por J. H. White, Toronto" x={380} y={1100} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Bj + 0.6} until={K.Ra - 0.3} x={660} y={760} texto="Calvatia gigantea" it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Bj + 1.0} until={K.Ra - 0.3} x={660} y={802} texto="bejín gigante" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.Bj + 2.0} until={K.Ra - 0.3} texto="billón = un millón de millones" x={540} y={1090} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.L + 2.9} until={K.A - 0.3} texto="1 de ≈ 20,000,000,000 (estimación de Buller, 1909)" x={540} y={1100} tam={26} borde={KC.gold} />
       <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="casi ningún premio" x={400} y={470} tam={40} borde={KC.ink} />
 
       {/* barras de escala */}
@@ -344,7 +345,7 @@ function EsporasConteoShot() {
         [K.H + 1.3, K.Po - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [K.Co + 0.4, K.P - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.P + 0.05, K.B + 0.5, 'avatar_07_pensativo_puno', 'grande'],
-        [K.B + 2.6, K.R + 2.2, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [K.R + 0.1, K.R + 2.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.Bj + 0.6, K.Ra - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [K.L + 0.5, K.A - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.C + 0.4, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />

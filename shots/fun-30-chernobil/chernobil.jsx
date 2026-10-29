@@ -162,7 +162,7 @@ function ChernobilShot() {
         {fsvg(<>
           <rect x={0} y={1060} width={KW} height={900} fill="#7b8a5a" stroke={KC.ink} strokeWidth={8} />
           <Sarcofago x={540} y={1060} />
-          <Trebol x={170} y={600} r={50} />
+          <Trebol x={900} y={960} r={46} />
           <Traje x={klerp(-80, 330, kprog(T, K.R + 0.3, K.R + 3.2))} y={1110} s={0.9} paso={Math.sin(T * 9)} />
           <Traje x={klerp(-220, 190, kprog(T, K.R + 0.5, K.R + 3.4))} y={1120} s={0.85} paso={Math.sin(T * 9 + 1.5)} />
         </>)}
@@ -195,7 +195,7 @@ function ChernobilShot() {
         {fsvg(<>
           <Brazo x={260} y={790} s={1.0} />
           <PetriColonia x={770} y={820} r={180} col={130} seed={7} />
-          <path d={`M 360 ${640} Q 540 ${520} 650 ${640}`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray={`${400 * kprog(T, K.Pi + 0.8, K.Pi + 1.6)} 999`} />
+          <path d={`M 360 ${720} Q 540 ${620} 650 ${720}`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray={`${400 * kprog(T, K.Pi + 0.8, K.Pi + 1.6)} 999`} />
         </>)}
       </Escena>
       {/* 5 · al microscopio: la pared del hongo, una armadura negra contra la radiación */}
@@ -203,15 +203,15 @@ function ChernobilShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <Hifa T={T} x={60} y={860} s={1.15} crece={kprog(T, K.Pa, K.Pa + 1.2, kEase.sale)} conidios={kprog(T, K.Pa + 1.0, K.Pa + 2.2)} />
-          {rayos(K.Pa + 1.6, 6, [980, 900, 1040], 560, [420, 560, 300, 680, 500, 360].map((v) => v * 1.15 + 60), 805, 0.6, 0.45)}
-          {Array.from({ length: 6 }, (_, i) => { const t0 = K.Pa + 1.6 + i * 0.45 + 0.6, k = kprog(T, t0, t0 + 0.25); const xs = [420, 560, 300, 680, 500, 360]; return k > 0 && k < 1 ? <circle key={i} cx={xs[i] * 1.15 + 60} cy={803} r={10 + k * 30} fill="none" stroke={KC.gold2} strokeWidth={6} opacity={1 - k} /> : null; })}
+          <Hifa T={T} x={60} y={860} s={1.0} crece={kprog(T, K.Pa, K.Pa + 1.2, kEase.sale)} conidios={kprog(T, K.Pa + 1.0, K.Pa + 2.2)} />
+          {rayos(K.Pa + 1.6, 6, [980, 900, 1040], 560, [420, 560, 300, 680, 500, 360].map((v) => v + 60), 810, 0.6, 0.45)}
+          {Array.from({ length: 6 }, (_, i) => { const t0 = K.Pa + 1.6 + i * 0.45 + 0.6, k = kprog(T, t0, t0 + 0.25); const xs = [420, 560, 300, 680, 500, 360]; return k > 0 && k < 1 ? <circle key={i} cx={xs[i] + 60} cy={808} r={10 + k * 30} fill="none" stroke={KC.gold2} strokeWidth={6} opacity={1 - k} /> : null; })}
         </>)}
       </Escena>
       {/* 6 · ¿solo se protege, o la aprovecha? */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<><g opacity=".35"><Hifa T={T} x={60} y={860} s={1.15} conidios={1} /></g><Interrogacion T={T} x={300} y={1080} /></>)}
+        {fsvg(<><g opacity=".35"><Hifa T={T} x={60} y={860} s={1.0} conidios={1} /></g><Interrogacion T={T} x={300} y={1080} /></>)}
       </Escena>
       {/* 7–8 · el experimento de 2007: radiación ×500 y dos cajas */}
       <Escena T={T} a={K.Es} b={K.Co} zoom={0.04}>
@@ -219,9 +219,9 @@ function ChernobilShot() {
         {fsvg(<>
           <rect x={60} y={1080} width={960} height={40} rx={10} fill="#d9d4c7" stroke={KC.ink} strokeWidth={7} />
           {T > K.Es + 2.6 && <g opacity={kprog(T, K.Es + 2.6, K.Es + 3.0)}>
-            <rect x={420} y={530} width={240} height={110} rx={16} fill="#5b6066" stroke={KC.ink} strokeWidth={7} />
-            <Trebol x={540} y={585} r={36} />
-            {rayos(K.Es + 3.0, 14, [480, 540, 600], 650, [300, 780, 360, 720], 830, 0.5, 0.35)}
+            <rect x={420} y={570} width={240} height={100} rx={16} fill="#5b6066" stroke={KC.ink} strokeWidth={7} />
+            <Trebol x={540} y={620} r={34} />
+            {rayos(K.Es + 3.0, 14, [480, 540, 600], 680, [300, 780, 360, 720], 840, 0.5, 0.35)}
           </g>}
           {T > K.Es + 2.6 && <g opacity={kprog(T, K.Es + 2.6, K.Es + 3.0)}>
             <PetriColonia x={300} y={900} r={160} col={T < K.Cr ? 50 : klerp(50, 140, kprog(T, K.Cr + 0.2, K.Cr + 2.4, kEase.sale))} seed={7} />
@@ -234,7 +234,7 @@ function ChernobilShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           <line x1={140} y1={1080} x2={940} y2={1080} stroke={KC.ink} strokeWidth={8} />
-          {[[330, 1, 'sin radiación'], [750, 2.5, 'con radiación']].map(([x, v, t], i) => { const h = 190 * v * kprog(T, K.Co + 0.3 + i * 0.5, K.Co + 1.3 + i * 0.5, kEase.sale);
+          {[[280, 1, 'sin radiación'], [600, 2.5, 'con radiación']].map(([x, v, t], i) => { const h = 170 * v * kprog(T, K.Co + 0.3 + i * 0.5, K.Co + 1.3 + i * 0.5, kEase.sale);
             return <g key={i}>
               <rect x={x - 110} y={1080 - h} width={220} height={h} fill={i ? KC.yellow : '#f4efe4'} stroke={KC.ink} strokeWidth={7} />
               {Array.from({ length: Math.floor(h / 50) * 3 }, (_, j) => <circle key={j} cx={x - 70 + (j % 3) * 70} cy={1055 - Math.floor(j / 3) * 50} r={17} fill={CH.negro} stroke="#4d463c" strokeWidth={3} />)}
@@ -266,13 +266,13 @@ function ChernobilShot() {
         {fsvg(<>
           <g opacity={1 - kprog(T, K.Sp + 2.0, K.Sp + 2.5)}><Estacion x={540} y={760} s={klerp(0.7, 1.05, kprog(T, K.Sp, K.Sp + 2.2))} /></g>
           {T > K.Sp + 2.0 && <g opacity={kprog(T, K.Sp + 2.0, K.Sp + 2.5)}>
-            <circle cx={540} cy={720} r={230} fill="rgba(255,255,255,.3)" stroke={KC.ink} strokeWidth={8} />
-            <circle cx={540} cy={720} r={216} fill={CH.agar} stroke={KC.ink} strokeWidth={4} />
-            <clipPath id="mitadIzq"><rect x={300} y={480} width={240} height={480} /></clipPath>
-            <g clipPath="url(#mitadIzq)"><Mancha T={T} x={430} y={720} r={200} seed={12} /></g>
-            <line x1={540} y1={500} x2={540} y2={940} stroke={KC.ink} strokeWidth={8} />
+            <circle cx={540} cy={700} r={230} fill="rgba(255,255,255,.3)" stroke={KC.ink} strokeWidth={8} />
+            <circle cx={540} cy={700} r={216} fill={CH.agar} stroke={KC.ink} strokeWidth={4} />
+            <clipPath id="mitadIzq"><rect x={300} y={460} width={240} height={480} /></clipPath>
+            <g clipPath="url(#mitadIzq)"><Mancha T={T} x={430} y={700} r={200} seed={12} /></g>
+            <line x1={540} y1={480} x2={540} y2={920} stroke={KC.ink} strokeWidth={8} />
             {rayos(K.Sp + 2.4, 10, [400, 680, 460, 620], 300, [400, 680, 460, 620], 500, 0.4, 0.3)}
-            {[[0, 0.93, 'debajo del hongo', KC.orange], [1, 1, 'sin hongo', KC.red]].map(([k, v, t, c]) => { const w = 520 * v * kprog(T, K.Sp + 3.0, K.Sp + 3.8, kEase.sale), y = 1000 + k * 70; return <g key={k}>
+            {[[0, 0.93, 'debajo del hongo', KC.orange], [1, 1, 'sin hongo', KC.red]].map(([k, v, t, c]) => { const w = 420 * v * kprog(T, K.Sp + 3.0, K.Sp + 3.8, kEase.sale), y = 1010 + k * 60; return <g key={k}>
               <rect x={170} y={y - 22} width={w} height={44} rx={10} fill={c} stroke={KC.ink} strokeWidth={5} />
               <text x={170 + w + 16} y={y + 10} style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto}>{t}</text>
             </g>; })}
@@ -294,24 +294,24 @@ function ChernobilShot() {
       <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.2} until={K.R - 0.3} texto="¿hollín?" x={300} y={440} tam={52} />
       <Chip T={T} at={K.G + 3.2} until={K.R - 0.3} texto="Chernóbil · reactor 4" x={400} y={1110} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.R + 0.4} until={K.E - 0.3} texto="1997–1998" x={300} y={440} tam={44} borde={KC.ink} />
-      <Etq T={T} at={K.R + 1.2} until={K.E - 0.3} x={60} y={1010} texto="edificio que cubre el reactor 4" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.R + 1.2} until={K.E - 0.3} x={60} y={540} texto="edificio que cubre el reactor 4" tam={30} color={KC.texto} />
       <NumeroGigante T={T} at={K.E + 0.1} until={K.O - 0.3} valor={37} dur={1.7} etiqueta="especies de hongos" x={380} y={470} tam={170} color={KC.yellow} />
       <Etq T={T} at={K.E + 1.4} until={K.O - 0.3} x={620} y={470} texto="de 19 géneros" tam={30} color={KC.ink} />
       <Chip T={T} at={K.O + 0.6} until={K.Pi - 0.3} texto="más radiación" x={380} y={460} tam={42} borde={KC.red} />
-      <Etq T={T} at={K.O + 1.8} until={K.Pi - 0.3} x={420} y={1000} texto="hongos con melanina" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.O + 2.2} until={K.Pi - 0.3} x={360} y={1050} texto={<>p. ej. <i>Cladosporium sphaerospermum</i></>} tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Pi + 1.4} until={K.Pa - 0.3} texto="melanina" x={510} y={560} tam={48} borde={KC.ink} />
+      <Etq T={T} at={K.O + 1.8} until={K.Pi - 0.3} x={300} y={1000} texto="hongos con melanina" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.O + 2.2} until={K.Pi - 0.3} x={240} y={1050} texto={<>p. ej. <i>Cladosporium sphaerospermum</i></>} tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Pi + 1.4} until={K.Pa - 0.3} texto="melanina" x={390} y={440} tam={48} borde={KC.ink} />
       <Etq T={T} at={K.Pi + 0.6} until={K.Pa - 0.3} x={340} y={1060} texto="tu piel" tam={32} />
       <Etq T={T} at={K.Pi + 0.9} until={K.Pa - 0.3} x={660} y={1060} texto="el hongo" tam={32} />
-      <Chip T={T} at={K.Pi + 2.2} until={K.Pa - 0.3} texto="no idéntica: de la misma familia" x={540} y={460} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Pi + 2.2} until={K.Pa - 0.3} texto="no idéntica: de la misma familia" x={390} y={540} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.Pa + 0.2} until={K.P - 0.3} texto="AL MICROSCOPIO · pared del hongo" x={430} y={460} tam={32} borde={KC.gold} />
       <Etq T={T} at={K.Pa + 1.0} until={K.P - 0.3} x={60} y={560} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
       <Etq T={T} at={K.Pa + 1.4} until={K.P - 0.3} x={300} y={960} texto="pared con melanina" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.Pa + 2.0} until={K.P - 0.3} x={700} y={1060} texto="esporas redondas" lado="izq" tam={28} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2007" quien="Nueva York" revista="Dadachova et al., PLoS ONE" y={700} />
-      <NumeroGigante T={T} at={K.Es + 3.0} until={K.Cr - 0.3} valor={500} dur={1.0} prefijo="≈×" etiqueta="la radiación normal" x={420} y={360} tam={110} color={KC.yellow} />
-      <Etq T={T} at={K.Es + 3.2} until={K.Co - 0.3} x={170} y={1135} texto="con melanina" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Es + 3.4} until={K.Co - 0.3} x={650} y={1135} texto="sin melanina" tam={28} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Es + 3.0} until={K.Cr - 0.3} valor={500} dur={1.0} prefijo="≈" sufijo="×" etiqueta="la radiación normal" x={540} y={430} tam={110} color={KC.yellow} />
+      <Etq T={T} at={K.Es + 3.2} until={K.Co - 0.3} x={170} y={700} texto="con melanina" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.4} until={K.Co - 0.3} x={650} y={700} texto="sin melanina" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Cr + 1.2} until={K.Co - 0.3} texto="con melanina: crece más" x={400} y={420} tam={36} borde={KC.leaf} />
       <Etq T={T} at={K.Co + 0.3} until={K.H - 0.3} x={60} y={440} texto="Cryptococcus neoformans" it tam={32} color={KC.ink} />
       <Chip T={T} at={K.Co + 1.0} until={K.H - 0.3} texto="poca comida" x={300} y={600} tam={36} borde={KC.ink} />
@@ -320,8 +320,8 @@ function ChernobilShot() {
       <Etq T={T} at={K.H + 1.4} until={K.Sp - 0.3} x={600} y={1100} texto="¿radiación → energía?" tam={30} color={KC.ink} />
       <Chip T={T} at={K.H + 4.4} until={K.Sp - 0.3} texto="no está comprobado" x={420} y={430} tam={42} borde={KC.red} />
       <Chip T={T} at={K.Sp + 0.3} until={K.C - 0.3} texto="2018 · Estación Espacial" x={400} y={440} tam={38} borde={KC.cyan} />
-      <Etq T={T} at={K.Sp + 2.4} until={K.C - 0.3} x={60} y={1160} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Sp + 3.8} until={K.C - 0.3} texto="un poquito menos" x={300} y={1180} tam={36} borde={KC.orange} />
+      <Etq T={T} at={K.Sp + 2.4} until={K.C - 0.3} x={60} y={950} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Sp + 3.8} until={K.C - 0.3} texto="un poquito menos" x={540} y={1140} tam={36} borde={KC.orange} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="hongo blindado con melanina" x={420} y={440} tam={38} borde={KC.gold} />
 
       {/* barras de escala */}

@@ -75,7 +75,7 @@ function Esporas({ T, n = 34, seed = 7, o = 1, color = MB.oliva, area = [0, 340,
 // Conidióforo de Cladosporium: tallo erguido y cadenas ramificadas de conidios con forma de limón, color oliva-café.
 function Cladosporium({ x, y, s = 1, crece = 1, seed = 2, T = 0 }) {
   if (crece <= 0) return null;
-  const g = krng(seed), H = 420 * kEase.sale(kclamp(crece * 1.6, 0, 1));
+  const g = krng(seed), H = 340 * kEase.sale(kclamp(crece * 1.6, 0, 1));
   const conidios = [];
   const rama = (cx, cy, ang, n, tam, nivel, d0) => {
     let px = cx, py = cy;
@@ -87,7 +87,7 @@ function Cladosporium({ x, y, s = 1, crece = 1, seed = 2, T = 0 }) {
       ang += (g() - 0.5) * 0.25; tam *= 0.9;
     }
   };
-  if (crece > 0.3) { rama(0, -H, -Math.PI / 2 - 0.5, 5, 22, 0, 0); rama(0, -H, -Math.PI / 2 + 0.45, 5, 22, 0, 1); rama(0, -H, -Math.PI / 2, 4, 20, 1, 2); }
+  if (crece > 0.3) { rama(0, -H, -Math.PI / 2 - 0.55, 5, 30, 0, 0); rama(0, -H, -Math.PI / 2 + 0.5, 5, 30, 0, 1); rama(0, -H, -Math.PI / 2, 4, 27, 1, 2); }
   return <g transform={`translate(${x} ${y + Math.sin(T * 1.2 + seed) * 4}) scale(${s})`}>
     <path d={`M -10 0 Q -14 ${-H * 0.5} -6 ${-H} L 6 ${-H} Q 14 ${-H * 0.5} 10 0 Z`} fill="#4f4422" stroke={KC.ink} strokeWidth={4} />
     {[0.3, 0.6].map((f, i) => H > 100 && <line key={i} x1={-10} y1={-H * f} x2={10} y2={-H * f} stroke={KC.ink} strokeWidth={3} />)}
@@ -190,7 +190,7 @@ function MohoBanoShot() {
           <Regadera T={T} moho={klerp(0.85, 1, kprog(T, K.G, K.E))} />
           {esp > 0 && esp < 1 && <Esponja x={klerp(220, 760, 0.5 - 0.5 * Math.cos(esp * Math.PI * 3))} y={MURO.y0 + 5 * MURO.paso + 10} />}
           {bur > 0 && Array.from({ length: 7 }, (_, i) => { const u = kclamp(bur * 1.6 - i * 0.09, 0, 1); if (u <= 0 || u >= 1) return null; const x = klerp(250, 330 + i * 80, u), y = klerp(760, 960 + (i % 3) * 60, u) - Math.sin(u * Math.PI) * 120; return <circle key={i} cx={x} cy={y} r={26 * (1 - u * 0.7)} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={3} />; })}
-          <Sello T={T} at={K.G + 1.9} x={300} y={640} texto="MOHO" color={KC.ink} r={105} />
+          <Sello T={T} at={K.G + 2.4} x={300} y={640} texto="MOHO" color={KC.ink} r={105} />
         </>)}
       </Escena>
       {/* 2 · esporas en el aire: solo germinan donde hay agua */}
@@ -214,7 +214,7 @@ function MohoBanoShot() {
         <Ambiente T={T} n={22} />
         {fsvg(<>
           <path d="M 0 1180 Q 300 1150 540 1175 T 1080 1170 L 1080 1300 L 0 1300 Z" fill="#2a2f3a" stroke={KC.ink} strokeWidth={6} />
-          <Cladosporium T={T} x={330} y={1180} s={1.5} crece={kprog(T, K.Cl + 0.2, K.Cl + 3.2)} seed={2} />
+          <Cladosporium T={T} x={330} y={1180} s={1.2} crece={kprog(T, K.Cl + 0.2, K.Cl + 3.2)} seed={2} />
           <Cladosporium T={T} x={760} y={1185} s={1.15} crece={kprog(T, K.Cl + 1.0, K.Cl + 4.0)} seed={9} />
           <Cladosporium T={T} x={560} y={1190} s={0.85} crece={kprog(T, K.Cl + 1.8, K.Cl + 4.6)} seed={4} />
         </>)}
@@ -344,7 +344,7 @@ function MohoBanoShot() {
       <Chip T={T} at={K.Es + 2.8} until={K.S - 0.3} texto="en seco" x={790} y={760} tam={28} borde={KC.red} />
       <Chip T={T} at={K.S + 0.5} until={K.S + 2.4} texto="✓ extractor" x={330} y={620} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.S + 1.2} until={K.S + 2.4} texto="✓ ventana al bañarte" x={360} y={720} tam={36} borde={KC.leaf} />
-      <NumeroGigante T={T} at={K.S + 2.8} until={K.Ta - 0.3} valor={50} desde={80} dur={1.2} prefijo="< " sufijo=" %" etiqueta="humedad relativa" x={760} y={1000} tam={150} color={KC.mint} />
+      <NumeroGigante T={T} at={K.S + 2.8} until={K.Ta - 0.3} valor={50} desde={80} dur={1.2} sufijo=" %" etiqueta="humedad: abajo de" x={760} y={1000} tam={150} color={KC.mint} />
       <Chip T={T} at={K.Ta + 0.8} until={K.C - 0.3} texto="quitarlo, no solo matarlo" x={370} y={560} tam={34} borde={KC.yellow} />
       <Chip T={T} at={K.Ta + 2.6} until={K.C - 0.3} texto="muerto, todavía puede dar alergia" x={420} y={1080} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="le sobra agua" x={620} y={900} tam={44} borde={KC.cyan} />
