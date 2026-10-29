@@ -1,4 +1,4 @@
-# Shot IA #18 · Una IA ve en tu retina lo que ningún oftalmólogo sabe ver
+# Shot IA #18 · Una IA ve en tu retina lo que los oftalmólogos no saben ver
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #18 · rama `pedido300/ia`.
 - **Estado (29 oct 2026):** fase A — guion escrito, pendiente de verificación independiente. Sin animación todavía. Voz pendiente de aprobación de Robert.
