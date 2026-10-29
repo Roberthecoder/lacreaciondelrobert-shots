@@ -167,7 +167,7 @@ const RINON_MINI = 'M 1 -12 C 9.5 -12 11.5 -4 10.4 2.2 C 9.2 10 4 12.6 -1 12 C -
 function Cien({ T, x, y, n, at, dur = 2, color = KC.leaf }) {
   const k = Math.floor(n * kprog(T, at, at + dur));
   return <g transform={`translate(${x} ${y})`}>
-    {Array.from({ length: 100 }, (_, i) => <path key={i} d={RINON_MINI} transform={`translate(${(i % 10) * 42} ${Math.floor(i / 10) * 40}) scale(1.4)`} fill={i < k ? color : 'rgba(255,255,255,.55)'} stroke={KC.ink} strokeWidth={1.6} />)}
+    {Array.from({ length: 100 }, (_, i) => <path key={i} d={RINON_MINI} transform={`translate(${(i % 10) * 42} ${Math.floor(i / 10) * 36}) scale(1.3)`} fill={i < k ? color : 'rgba(255,255,255,.55)'} stroke={KC.ink} strokeWidth={1.6} />)}
   </g>;
 }
 // Larva de escarabajo (blanca, curvada en C) con cabeza café. moho 0..1 = la cubre el moho blanco.
@@ -345,7 +345,7 @@ function CiclosporinaShot() {
       <Etq T={T} at={K.Ca + 1.6} until={K.Ra - 0.3} x={60} y={620} texto="ciclofilina (su pareja)" tam={28} color="#7ff0e0" />
       <Etq T={T} at={K.Ca + 2.0} until={K.Ra - 0.3} x={1040} y={CY + 180} texto="calcineurina" lado="izq" tam={30} color={KC.leaf} />
       <Chip T={T} at={K.Al + 0.6} until={K.Ra - 0.3} texto="señales de ataque: apagadas" x={400} y={560} tam={32} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Cn - 0.3} anio="1976" quien="Borel, Feurer, Gubler y Stähelin" revista="Sandoz · Agents and Actions" y={720} />
+      <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Cn - 0.3} anio="1976" quien="Borel, Feurer, Gubler y Stähelin" revista="Sandoz · Agents and Actions" x={430} y={740} />
       <Etq T={T} at={K.Ra + 1.2} until={K.Cn - 0.3} x={70} y={1140} texto="Borel" tam={26} color={KC.ink} />
       <Etq T={T} at={K.Ra + 1.4} until={K.Cn - 0.3} x={1010} y={1140} texto="Stähelin" lado="izq" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Ra + 3.0} until={K.Cn - 0.3} texto="injerto de piel: tarda en rechazarse" x={540} y={930} tam={28} borde={KC.leaf} />

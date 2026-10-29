@@ -18,18 +18,36 @@
 | 4 | Pregunta | ¿Cómo puede un moho calmar ese ataque? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
 | 5 | Calcineurina | La ciclosporina entra a tus linfocitos T y apaga un interruptor: la calcineurina. | AL MICROSCOPIO (fondo noche): un linfocito T grande; entra la ciclosporina, se pega a su "pareja" (ciclofilina) y juntas bajan un interruptor rotulado "calcineurina" a OFF. |
 | 6 | Alarma | Sin él, el linfocito no enciende las señales que arman el ataque. | El núcleo del linfocito queda apagado: las señales (destellos que iban a salir) no salen. Chip "señales de ataque: apagadas". |
-| 7 | Ratones | En 1976, el equipo de Borel y Stähelin publicó que retrasaba el rechazo de piel en ratones. | `TarjetaEstudio` "1976 · Sandoz, Basilea · Borel, Feurer, Gubler y Stähelin · *Agents and Actions*"; un ratón con un parche de piel que se mantiene. |
-| 8 | Canada | En 1983, en Canadá, en 209 trasplantes de riñón, se estimó que al año funcionaban 80 de cada 100, contra 64 con el tratamiento de antes. | `TarjetaEstudio` "1983 · Canadá · 209 trasplantes de riñón · *NEJM*"; dos barras: "con ciclosporina 80 de 100" contra "tratamiento de antes 64 de 100", que se llenan. Chip "al año (estimado)". |
+| 7 | Ratones | En 1976, el equipo de Borel y Stähelin publicó que retrasaba el rechazo de piel en ratones. | `TarjetaEstudio` "1976 · Sandoz, Basilea · Borel, Feurer, Gubler y Stähelin · *Agents and Actions*"; un ratón con un parche de piel que se mantiene (chip "injerto de piel: tarda en rechazarse") y dos siluetas sin cara con bata: "Borel" y "Stähelin". |
+| 8 | Canada | En 1983, en Canadá, en 209 trasplantes de riñón, se estimó que al año funcionaban 80 de cada 100, contra 64 con el tratamiento de antes. | `TarjetaEstudio` "1983 · Canadá · 209 trasplantes de riñón · *NEJM*"; dos cuadrículas de 100 riñoncitos que se encienden: "con ciclosporina · 80 de 100" contra "tratamiento de antes · 64 de 100". Chip "funcionan al año (estimado)". |
 | 9 | Escarabajo | Lo más raro: en la naturaleza, este moho es un parásito de larvas de escarabajo. | Fondo rosa: una larva de escarabajo (blanca, curvada en C) en la tierra; el moho blanco la cubre. Etiqueta "larva de escarabajo". |
 | 10 | Hipotesis | Y se sospecha que la ciclosporina le ayuda a desarmar las defensas del insecto. | Dentro de la larva (fondo oscuro): sus células de defensa se apagan como los linfocitos de antes. Chip "hipótesis". |
-| 11 | Cierre | Así que este puñado de tierra no es solo tierra: es un riñón que sí siguió funcionando. | **Regreso a la imagen del inicio:** el mismo puñado de tierra en la mano, fondo amarillo; ahora encima late un riñón sano. Chip "tierra → trasplante". |
+| 11 | Cierre | Así que este puñado de tierra no es solo tierra: es un riñón que sí siguió funcionando. | **Regreso a la imagen del inicio:** el mismo puñado de tierra en la mano, fondo amarillo; ahora encima un riñón sano que brilla. Chip "tierra → trasplante". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua, con un aire de misterio al inicio que se abre (más luminosa) en los resultados; efectos en el mismo cuadro: tierra que cae, brillo del frasco, burbujas del matraz, el anillo que se cierra, pasos/zumbido de los linfocitos, alarma del rechazo, "clic" del interruptor, silencio de las señales, papel de las tarjetas, barras que suben, tierra que se remueve y la larva, latido del riñón final.
 
 Barras de escala: 5 cm (puñado de tierra), 10 µm (hifas y fiálides), 10 µm (linfocito), 1 cm (larva).
 
-(La tabla "Robert en pantalla" va en la fase de animación.)
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Cómo puede un moho calmar ese ataque?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «este puñado de tierra no es solo tierra» (cuadro 0) |
+| 2 | 6.5 | 8.5 | 12_perfil_serio | `izq-alto` | «una muestra de suelo de Noruega» |
+| 3 | 15.0 | 19.3 | 10_serio_molesto | `arriba-der` | «tus defensas… lo atacan» |
+| 4 | 19.7 | 22.6 | 07_pensativo_puno | `grande` | «¿cómo puede un moho calmar ese ataque?» |
+| 5 | 24.5 | 30.3 | 06_pensativo_menton | `arriba-der` | el interruptor a OFF y las señales apagadas |
+| 6 | 31.1 | 35.6 | 04_bajando_lentes | `arriba-der` | el estudio de 1976 |
+| 7 | 38.9 | 43.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «80 de cada 100, contra 64» |
+| 8 | 44.1 | 48.1 | 11_sorprendido | `arriba-der` | «lo más raro: larvas de escarabajo» |
+| 9 | 49.0 | 52.8 | 06_pensativo_menton | `arriba-der` | «se sospecha…» (hipótesis) |
+| 10 | 53.4 | 57.9 | 02_apuntando_camara | `arriba-der` | «es un riñón que sí siguió funcionando» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **40.8 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · entre una entrada y la siguiente nunca más de 8.6 s.
 
 ## Fuentes (cada dato se abrió en el texto completo o en el resumen oficial el 29 oct 2026)
 
