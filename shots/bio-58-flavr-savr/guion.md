@@ -5,14 +5,20 @@
   corta → el gen al revés que la apaga → el mismo jitomate) + un toque de N5 "El experimento" (la medición de firmeza de UC Davis, 1997).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre la caja de jitomates que se ve en pantalla:
   «El primer transgénico que llegó entero al súper no fue maíz: fue un jitomate.»
-- **Duración:** voz 955 caracteres / 178 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s**.
+- **Duración:** voz 955 caracteres / 178 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** (escenas del base narrada: Gancho 4.7 · Calgene 3.9 · Camion 3.9 · Verde 4.4 · Pectina 3.0 · Enzima 4.3 · AlReves 3.4 · Apaga 3.1 · Mata 3.5 · FDA 4.5 · Pregunta 1.6 · Estudio 7.9 · Fracaso 5.1 · Cierre 4.7 · Outro 3.5).
 - **Viaje macro → micro → macro:** una caja de jitomates rojos en el súper con un letrero "Flavr Savr" → el camión que los aplasta y
   la caja de jitomates verdes en un cuarto con gas → `Lupa` "POR DENTRO · JITOMATE": células pegadas con pectina, la enzima-tijera
   cortando → el gen y su copia al revés que se le pega al mensaje → la mata con jitomates rojos → el súper de 1994 → el estudio de 1997
-  (un aparato que aprieta un jitomate) → **regreso a la caja del inicio**: el letrero "Flavr Savr" se cae y quedan jitomates verdes
+  (una prensa esquemática aprieta dos jitomates) → **regreso a la caja del inicio**: el letrero "Flavr Savr" se cae y quedan jitomates verdes
   madurando con gas.
 - **No repite:** bio-22 (plátano clon), bio-26 (papaya contra virus), bio-27 (arroz dorado), bio-20 (glutamato). Aquí el tema es el
   primer alimento entero transgénico vendido, cómo se apaga un gen con una copia al revés y por qué fracasó.
+
+## Corrección del 29 oct 2026 (verificación independiente, ver `verificacion.md`)
+- La línea del estudio dice «menos del 1 % de la enzima **normal**» (la cifra dice respecto a qué).
+- La pantalla del estudio no nombra el aparato ni llama «Flavr Savr» a esos jitomates: «normal» y «PG apagada (<1 %)».
+- Se quitó la barra de escala de las células (no había cifra citada).
+- Recortes de forma para quedar en 955 caracteres: «sus células se pegan con pectina», «el truco que quedó».
 
 ## Versión narrada (955 caracteres, 14 líneas, ~58 s)
 
@@ -22,17 +28,37 @@
 | 1 | Calgene | Se llamaba Flavr Savr y lo hizo Calgene, en Davis, California. | Letrero de precio "FLAVR SAVR" se clava en la caja. Pin en un mapita de California: "Calgene · Davis". |
 | 2 | Camion | Un jitomate maduro se ablanda rápido y en el camión se aplasta. | Fondo rosa. Caja en un camión que bota; los jitomates de abajo se aplastan (se deforman y salpican). Medidor "firmeza" baja. |
 | 3 | Verde | En Florida, la mayoría se cortan verdes y los madura un gas, el etileno. | Fondo menta. Jitomates verdes en un cuarto; una nube de gas "etileno C₂H₄" los va pintando de rojo. Etiqueta "Florida · cortados verdes". |
-| 4 | Pectina | Por dentro, sus células están pegadas con pectina. | **`Lupa` "POR DENTRO · JITOMATE"** sobre un jitomate: fondo oscuro, células en mosaico unidas por una capa brillante (pectina) entre pared y pared. Escala "~0.1 mm". |
+| 4 | Pectina | Por dentro, sus células se pegan con pectina. | **`Lupa` "AL MICROSCOPIO · JITOMATE"** sobre un jitomate: fondo oscuro, células en mosaico unidas por una capa dorada (pectina) entre pared y pared. Sin barra de escala. |
 | 5 | Enzima | Al madurar, una enzima, la poligalacturonasa, va cortando ese pegamento. | Tijeritas-enzima (PG) cortan las cadenas de pectina; las células se separan y el mosaico se afloja. Etiqueta "poligalacturonasa (PG)". |
 | 6 | AlReves | Calgene le metió una copia de ese gen, pero al revés. | Doble hélice del gen PG; una copia gira 180° y se inserta (chip "gen antisentido"). |
 | 7 | Apaga | Esa copia estorba y la enzima casi no se fabrica. | El mensaje (ARN) del gen sale; el ARN al revés se le pega como cierre; el ribosoma no puede leerlo y las tijeras dejan de salir. Medidor "enzima PG" baja. |
 | 8 | Mata | La idea: dejarlo madurar en la mata sin que se aplastara. | Fondo cian. La mata con jitomates que se ponen rojos sin cortarlos; chip "madurar en la mata". |
 | 9 | FDA | En mayo de 1994 la FDA le dio el visto bueno; a los tres días ya se vendía. | `TarjetaEstudio` "FDA · mayo 1994" con sello; luego un anaquel con el jitomate y "+3 días". |
 | 10 | Pregunta | ¿Y sí aguantó? | **Re-gancho.** El jitomate en primer plano, gota de sudor; Robert pensativo. |
-| 11 | Estudio | En 1997, en la Universidad de California, midieron jitomates así con menos del 1 % de la enzima: apenas eran un poco más firmes. | Escena del estudio: dos jitomates bajo un émbolo que aprieta (normal vs. "<1 % de PG"); la barra de firmeza del transgénico apenas un poco más alta. `TarjetaEstudio` "UC Davis · 1997". |
+| 11 | Estudio | En 1997, en la Universidad de California, midieron jitomates así, con menos del 1 % de la enzima normal: apenas eran un poco más firmes. | (El jitomate sudando sigue 1.4 s.) `TarjetaEstudio` "1997 · Universidad de California, Davis"; luego dos jitomates bajo una prensa esquemática, rotulados "normal" y "PG apagada (<1 %)"; la barra de firmeza del segundo apenas un poco más alta. |
 | 12 | Fracaso | Se maltrataba en el viaje, su variedad rendía poco y en menos de tres años desapareció. | Tres golpes rápidos: jitomate machucado en caja · mata con pocos frutos · el letrero "FLAVR SAVR" se despega del anaquel (1994 → 1997). |
-| 13 | Cierre | El transgénico se fue; el truco que se quedó es cortarlo verde y madurarlo con gas. | **Regreso a la caja del inicio**: el letrero cae; en la caja, jitomates verdes que la nube de etileno vuelve rojos. |
+| 13 | Cierre | El transgénico se fue; el truco que quedó es cortarlo verde y madurarlo con gas. | **Regreso a la caja del inicio**: el letrero cae; en la caja, jitomates verdes que la nube de etileno vuelve rojos. |
 | — | Outro | (sin voz) | `CierreMarca tema="bioquimica"` con Robert. |
+
+## Robert en pantalla
+
+Tiempos con las escenas del base narrada (61.5 s). Nunca tapa el subtítulo (el kit lo dibuja por delante) ni los chips (van abajo, en y = 1500).
+
+### 10 apariciones, **34.5 s en pantalla** (de 61.5 s), 9 poses distintas, nunca la misma dos veces seguidas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.4 | sorprendido (11) | gancho | «no fue maíz: fue un jitomate» |
+| 5.4 – 8.4 | señalando (13) | arriba-der | señala el letrero «Flavr Savr» y Davis en el mapa |
+| 9.2 – 12.2 | serio (10) | arriba-der | «en el camión se aplasta» |
+| 20.8 – 23.9 | pensativo (06) | izq-alto | la enzima corta el pegamento, en la Lupa |
+| 27.9 – 30.5 | bajando lentes (04) | arriba-der | «la enzima casi no se fabrica» |
+| 35.2 – 38.45 | sonriendo (05) | arriba-der | «a los tres días ya se vendía» |
+| 38.6 – 41.7 | pensativo puño (07) | **grande-izq** | re-gancho: «¿Y sí aguantó?» |
+| 44.6 – 48.0 | sorprendido (11) | izq-alto | «apenas eran un poco más firmes» |
+| 48.6 – 53.0 | perfil serio (12) | arriba-der | «en menos de tres años desapareció» |
+| 53.7 – 57.9 | apuntando a cámara (02) | gancho | cierre: «cortarlo verde y madurarlo con gas» |
+| 58.0 – 61.5 | señalando (13) | `CierreMarca robert=` | tarjeta final |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - Cama grave continua, sin golpe, debajo de la voz.
@@ -52,7 +78,7 @@ copia del gen de la PG **al revés** (un gen "antisentido"): esa copia estorba a
 era dejarlo madurar en la mata, con más sabor, sin que se aplastara.
 
 La FDA le dio el visto bueno en **mayo de 1994** y a los tres días ya se vendía. Pero en **1997**, investigadores de la Universidad de
-California en Davis midieron jitomates con la PG apagada a **menos del 1 %** y solo estaban **un poco más firmes** que los normales.
+California en Davis midieron jitomates con la PG apagada a **menos del 1 % de lo normal** y solo estaban **un poco más firmes** que los normales.
 Además se maltrataba en el transporte, la variedad que usaron rendía poco y en menos de tres años desapareció del súper. Monsanto, que
 había ido comprando Calgene, acordó en 1997 quedarse con el resto de la empresa.
 

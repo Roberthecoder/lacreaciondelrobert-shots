@@ -34,6 +34,8 @@
 
 Solo en la descripción (revisadas también): CDC "1 of every 5,000 male births" ✅; IBI "Around 1,250 were infected with HIV." "The best estimate is that this included 380 children." "Three quarters of these 1,250 adults and children have died." ✅ (2024); Recombinate CHO ✅; emicizumab 2017 ✅ (etiqueta: "Initial U.S. Approval: 2017").
 
+Descripción: "hoy los concentrados de plasma se tratan para eliminar virus" ✅ — Mannucci 2023 (PMC10153518): "the demonstration of the efficacy of heating to inactivate HIV in plasma-derived concentrates and so to ensure once again safety" (2023).
+
 Los dibujos (fichas de dominó, red de fibrina, cromosoma, partículas virales, célula, anticuerpo) son esquemáticos y no están a escala; se declara en el `.jsx` y en los textos de publicación.
 
 Sin ❌ ni ⚠️ pendientes.

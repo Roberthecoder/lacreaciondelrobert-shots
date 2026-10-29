@@ -28,13 +28,34 @@
 | 13 | Cierre | Tu sangre sabe tejer esa red; si le falta una pieza, una célula se la presta. | Regreso al dedo del inicio: la ficha VIII entra en su hueco, la cascada cae completa y brilla la red de fibrina; la curita se quita y la cortada ya está cerrada. |
 | — | Outro | (sin voz, 3.5 s) | `CierreMarca tema="bioquimica"` con Robert señalando a cámara. |
 
-(La tabla "Robert en pantalla" se agrega en la fase 2, con los tiempos del base narrada.)
+**Notas de la animación (fase 2):** la `Lupa` "POR DENTRO · TU SANGRE" se abre desde la cortada a los 2.6 s (vaso roto, glóbulos rojos y plaquetas que se pegan). Las fichas de dominó se recargan una en la siguiente (no caen planas); la "II" es la trombina. En el cierre, la ficha VIII baja a su hueco, la fila completa cae, brilla la red de fibrina y regresamos al dedo: se despega la curita y la cortada ya está cerrada. Tiempos de escena (base narrada, total 61.5 s): Gancho 0.00 · Cascada 4.29 · Fibrina 8.98 · Falta 13.07 · Cromosoma 16.26 · Pregunta 20.15 · Plasma 22.45 · Virus 25.64 · Cifra 28.83 · Gen 34.82 · Hamster 39.91 · Aprobado 44.40 · Anticuerpo 48.79 · Cierre 53.28 · Outro 58.00.
+
+## Robert en pantalla
+
+Entra desde el cuadro 0, vuelve cada 8–10 s, nunca tapa el subtítulo ni los datos. En el tramo de las infecciones solo sale serio.
+
+### Versión narrada: 9 apariciones, **25.7 s en pantalla** (de 61.5 s), 8 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 3.9 | sorprendido (11) | gancho | «Esa curita no cierra tu herida» |
+| 5.3 – 8.7 | señalando (13) | arriba-der | señala las fichas que caen en cadena |
+| 13.5 – 16.0 | perfil serio (12) | arriba-der | «En la hemofilia A falla una pieza» |
+| 20.2 – 22.4 | pensativo (06) | **grande** | re-gancho: «¿Y si te falta, de dónde lo sacas?» |
+| 26.0 – 28.5 | serio (10) | arriba-der | «ese plasma traía VIH y hepatitis C» |
+| 37.0 – 39.6 | señalando (13) | arriba-der | señala la tira de ADN: 186 mil letras |
+| 44.6 – 48.5 | apuntando a cámara (02) | **grande-izq** | 1992: el primer factor VIII hecho por células |
+| 50.4 – 53.0 | sonriendo (05) | arriba-der | el anticuerpo junta las dos piezas |
+| 55.7 – 57.9 | bajando lentes (04) | gancho | cierre: «una célula se la presta» |
+| 58.0 – 61.5 | apuntando a cámara (02) | `CierreMarca robert=` | tarjeta de cierre |
+
+Total: 3.9 + 3.4 + 2.5 + 2.2 + 2.5 + 2.6 + 3.9 + 2.6 + 2.2 = **25.7 s** (sin contar la tarjeta de cierre). Hueco más largo sin Robert: 28.5 → 37.0 s (8.5 s), durante la cifra de 1987, para no tapar la cuadrícula de personas.
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Cama:** grave y continua, sin golpe marcado, siempre debajo de la voz. En las escenas 6–8 baja de brillo y se vuelve más oscura y tapada (respeto); desde la escena 9 se abre poco a poco.
 - **Efectos en el mismo cuadro:** gota que cae (escena 0), "clac" de cada ficha de dominó (escena 1), tensado suave de hilos (escena 2), silencio corto cuando la cadena se detiene en la ficha vacía (escena 3), bolsitas que caen al tanque (escena 6), clic del contador de ADN (escena 9), burbujas del tanque de células (escena 10), sello (escena 11), las dos fichas que se juntan (escena 12).
 
-## Descripción (para publicar, se pule en la fase 2 con lo verificado)
+## Descripción (para publicar; versión completa por red en `publicacion.md`)
 "Esa curita no cierra tu herida: la cierra una red que teje tu propia sangre. 🩸 Cuando te cortas, una serie de proteínas de la coagulación se activan una tras otra; al final, la **trombina** convierte el **fibrinógeno** en hilos de **fibrina** que amarran el tapón de plaquetas.
 
 En la **hemofilia A** falta (o funciona mal) una pieza de esa cadena: el **factor VIII**. Su gen está en el **cromosoma X**, por eso es mucho más común en hombres (la hemofilia heredada aparece en ~1 de cada 5,000 nacimientos de varones, según los CDC).
@@ -43,7 +64,7 @@ Durante años, el factor VIII se sacaba de **plasma juntado de miles de donantes
 
 En **noviembre de 1984**, equipos de **Genentech** y **Genetics Institute** publicaron en *Nature* el gen del factor VIII (unos 186,000 pares de bases) y lograron que células de mamífero lo fabricaran. En **diciembre de 1992**, la FDA aprobó **Recombinate**, el primer factor VIII recombinante, hecho por células de ovario de hámster chino (CHO). Y desde 2017 existe **emicizumab**, un anticuerpo que imita al factor VIII juntando el factor IX activado y el factor X.
 
-Hoy los concentrados de plasma también se tratan para eliminar virus. El dibujo es esquemático. **¿Conocías la historia de la hemofilia? ¿Conoces a alguien que la tenga? 👇**
+Hoy los concentrados de plasma se tratan para eliminar virus (Mannucci 2023: "the demonstration of the efficacy of heating to inactivate HIV in plasma-derived concentrates"). El dibujo es esquemático. **¿Conocías la historia de la hemofilia? ¿Conoces a alguien que la tenga? 👇**
 
 Soy Robert, de La Creación del Robert 🌱"
 

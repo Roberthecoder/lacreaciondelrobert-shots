@@ -910,60 +910,130 @@
       "titulo": "Tu maíz era un pasto: del teocintle al maíz (genética de la domesticación)",
       "serie": "Shot Biotecnológico",
       "numero": 50,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-50-teocintle",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC122905/",
+        "https://zenodo.org/record/895359/files/article.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/16079849/",
+        "https://www.nature.com/articles/386485a0",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3686474",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2664021/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2664064",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC29388"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "El teocintle que se volvió maleza en España y Francia",
+        "tga1: el cambio que dejó desnudo el grano",
+        "Genes saltarines que ayudaron a domesticar cultivos"
+      ]
     },
     {
       "id": "bio-51-rhizobium",
       "titulo": "Las plantas que fabrican su propio abono: Rhizobium y los nódulos",
       "serie": "Shot Biotecnológico",
       "numero": 51,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-51-rhizobium",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://ipm.ucanr.edu/agriculture/dry-beans/nematodes/",
+        "https://www.noaa.gov/jetstream/atmosphere",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5867846",
+        "https://ainfo.cnptia.embrapa.br/digital/bitstream/doc/1170327/1/Circ-Tec-212.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4012840",
+        "https://royalsociety.org/-/media/policy/projects/green-ammonia/green-ammonia-policy-briefing.pdf",
+        "https://www.worldfoodprize.org/documents/filelibrary/2025_Laureate_Brochure__FINAL_7E7F48F8F1D39.pdf",
+        "https://www.worldfoodprize.org/en/laureates/20202026_laureates/2025_hungria/",
+        "https://lpsn.dsmz.de/species/rhizobium-etli",
+        "https://www.dsmz.de/catalogues/details/culture/DSM-11541.html"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Haber-Bosch: el abono de fábrica",
+        "Agallas de nematodo: la bolita de la raíz que sí es plaga",
+        "Azospirillum y la coinoculación de la soya"
+      ]
     },
     {
       "id": "bio-52-acido-citrico",
       "titulo": "El ácido cítrico de tu refresco lo hace un moho: Aspergillus niger",
       "serie": "Shot Biotecnológico",
       "numero": 52,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-52-acido-citrico",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5966904/",
+        "https://www.scielo.br/j/jbchs/a/Ksq9RGvtGTTbtw8vp7NN4kv/?lang=en",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3769771/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11537073/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10779990/",
+        "https://blogs.cornell.edu/livegpath/gallery/onion/black-mold-of-onion",
+        "https://www.law.cornell.edu/cfr/text/21/184.1033",
+        "https://archive.org/details/journalofbiologi31ameruoft",
+        "https://www.inspq.qc.ca/en/moulds/fact-sheets/aspergillus-niger"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Ácido itacónico de Aspergillus terreus",
+        "El moho negro de la cebolla y su primo A. welwitschiae",
+        "Enzimas de Aspergillus niger en los jugos"
+      ]
     },
     {
       "id": "bio-53-mamut",
       "titulo": "¿Quieres revivir un mamut? Guía en pasos (desextinción)",
       "serie": "Shot Biotecnológico",
       "numero": 53,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-53-mamut",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://www.voanews.com/a/how-to-clone-a-mammoth-science-of-de-extinction/2780036.html",
+        "https://www.nature.com/articles/s41598-019-40546-1",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3685887",
+        "https://colossal.com/mammoth/.",
+        "https://colossal.com/mammoth/",
+        "https://www.genengnews.com/topics/genome-editing/colossals-multiplex-edited-mice-replicate-woolly-mammoth-hair-traits",
+        "https://gizmodo.com/de-extinction-company-reveals-genetically-engineered-woolly-mouse-2000568395",
+        "https://www.nationalgeographic.com/science/article/news-bucardo-pyrenean-ibex-deextinction-cloning",
+        "https://time.com/article/2026/08/24/woolly-mammoth-de-extinct-colossal-biosciences/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "El bucardo: el primer animal des-extinto vivió minutos",
+        "El lobo terrible de Colossal",
+        "ADN antiguo: por qué se rompe y cómo se lee"
+      ]
     },
     {
       "id": "bio-54-captopril",
       "titulo": "La medicina de la presión salió de un veneno de serpiente: captopril",
       "serie": "Shot Biotecnológico",
       "numero": 54,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-54-captopril",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC1704050/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10535891/",
+        "https://gwern.net/doc/biology/1991-cushman.pdf",
+        "https://laskerfoundation.org/?p=1868",
+        "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=018343",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6695636/",
+        "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6aeec5ee-94f1-4db3-92bf-7286900bea04",
+        "https://cdn.who.int/media/docs/default-source/international-nonproprietary-names-(inn",
+        "https://www.who.int/news-room/fact-sheets/detail/hypertension"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Ziconotida: el veneno del caracol cono contra el dolor",
+        "La tos seca de los -pril y la bradicinina",
+        "Tirofibán, diseñado a partir de un veneno de víbora"
+      ]
     },
     {
       "id": "bio-55-factor-viii",

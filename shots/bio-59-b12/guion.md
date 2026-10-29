@@ -32,6 +32,29 @@ Notas de precisión para el dibujo y el verificador:
 - El plato de verduras dice "casi 0", no "0": algunas plantas traen trazas por bacterias pegadas (verificación del 29 oct 2026).
 - *Pseudomonas denitrificans* se dice así porque así la llaman las fuentes de producción industrial.
 
+## Robert en pantalla
+
+Es la marca del canal. Entra desde el cuadro 0, vuelve cada 8 s como máximo y nunca tapa el subtítulo ni los datos (tiempos del base narrada: escenas Gancho 0 · Nadie 5.56 · Vaca 9.90 · Vegano 17.28 · Pregunta 21.32 · Molecula 24.05 · Hodgkin 28.09 · Sintesis 35.47 · Tanque 44.36 · Queso 49.41 · Cierre 53.35 · Outro 58.0).
+
+### Versión narrada: 11 apariciones, **39.3 s en pantalla** (de 61.5 s), 8 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 5.0 | sorprendido (11) | gancho | «no la hizo una planta ni un animal: la hicieron bacterias» |
+| 13.0 – 17.0 | señalando (13) | arriba-der | señala la leche y el bistec: «viene, en el fondo, de microbios» |
+| 17.6 – 21.1 | bajando lentes (04) | izq-alto | «si eres vegano, necesitas suplemento» |
+| 21.4 – 24.0 | pensativo, puño (07) | **grande** | re-gancho: «¿y por qué no con pura química?» |
+| 24.7 – 28.0 | sorprendido (11) | arriba-der | el cobalto se enciende en el centro del anillo |
+| 33.5 – 35.3 | sonriendo (05) | izq-alto | el Nobel de Química de 1964 |
+| 36.0 – 40.7 | pensativo, mentón (06) | arriba-der | el contador llega a 99 científicos, 11 años |
+| 41.3 – 44.2 | serio (10) | arriba-der | «nunca se usó para producirla» |
+| 45.6 – 49.2 | señalando (13) | arriba-der | señala el tanque y la Lupa con las bacterias |
+| 49.6 – 53.2 | sonriendo (05) | **grande-izq** | el dato chistoso: la bacteria de los hoyos del queso suizo |
+| 53.7 – 57.9 | apuntando a cámara (02) | gancho | cierre: «tu B12 viene de bacterias» |
+| 58.0 – 61.5 | señalando (13) | cierre | `CierreMarca` junto al logo |
+
+Total (sin la tarjeta de cierre): 5.0 + 4.0 + 3.5 + 2.6 + 3.3 + 1.7 + 4.7 + 2.9 + 3.7 + 3.5 + 4.3 = **39.3 s**.
+
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Narrada:** cama grave continua, sin golpe marcado, siempre debajo de la voz.
 - **Efectos en el mismo cuadro:** la pastilla que cae y rebota (clic), el tachado de la planta y la vaca (rasgueo), el "muu" sintetizado suave y burbujitas de la panza, la Lupa que se abre (barrido), el matraz que burbujea, el cobalto que se enciende (campanita metálica), el haz de rayos X (zumbido corto), el sello del Nobel (golpe suave), el contador de 99 científicos (tics que aceleran), el tachado del mito, el agitador del tanque (pulso lento), los hoyos del queso (blub), el regreso a la pastilla (clic).

@@ -1,4 +1,4 @@
-# Shot Biotecnológico #52 · El ácido cítrico de tu gomita lo hace un moho
+# Shot Biotecnológico #52 · El ácido cítrico de tu gomita casi seguro lo hizo un moho
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #52 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (la gomita y, con la `Lupa`, la célula del moho por dentro: el citrato que se acumula y la bomba que lo saca) + N5 "El experimento" (Currie, 1917, frascos con agua azucarada y muy ácida).
