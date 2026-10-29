@@ -949,63 +949,123 @@
   },
   {
    "id": "fun-50-langosta",
-   "titulo": "El hongo que frena plagas de langosta (Metarhizium, bioinsecticida)",
+   "titulo": "La langosta con fiebre: el hongo que frena plagas",
    "serie": "Shot Fungi Mati",
    "numero": 50,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-50-langosta",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7781369/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9224550/",
+    "https://doi.org/10.1098/rspb.2002.2067",
+    "https://pure.psu.edu/en/publications/host-pathogen-interactions-in-a-varying-environment-temperature-b/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6155106/",
+    "https://www.gob.mx/senasica/documentos/hongos-entomopatogenos",
+    "https://web.oirsa.org/archivos/4458",
+    "https://doi.org/10.1006/jipa.2001.5031"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Beauveria bassiana: el hongo blanco que mata insectos",
+    "La langosta del desierto: por qué forma enjambres",
+    "Hongos contra mosquitos que transmiten malaria"
+   ]
   },
   {
    "id": "fun-51-queroseno",
-   "titulo": "El hongo que vive en los tanques de combustible de los aviones",
+   "titulo": "El hongo que se come el combustible de los aviones",
    "serie": "Shot Fungi Mati",
    "numero": 51,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-51-queroseno",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://library.imarest.org/record/8908/files/v28b1p07a.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8525681/",
+    "https://www.dof.gob.mx/nota_detalle.php?codigo=5450011&fecha=29/08/2016",
+    "https://www.iata.org/contentassets/b7d9bbf3fe334d52aa02d67cc2e51337/joint-notice-to-industry_mbg-in-aviation-fuel_may-2026.pdf",
+    "https://www.gov.uk/aaib-reports/aircraft-accident-report-aar-1-slash-2021-airbus-a321-211-g-pown-26-february-2020",
+    "https://assets.publishing.service.gov.uk/media/6087c670e90e076ab1e3492c/1-2021_Airbus_A321-211_G-POWN.pdf"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Hongos que comen petróleo para limpiar derrames",
+    "Microbios en el combustible de los barcos",
+    "Biocorrosión: microbios que oxidan metales"
+   ]
   },
   {
    "id": "fun-52-trufas",
-   "titulo": "Trufas: el hongo bajo tierra que se encuentra con la nariz",
+   "titulo": "Esto no es una piedra: es una trufa",
    "serie": "Shot Fungi Mati",
    "numero": 52,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-52-trufas",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://doi.org/10.1038/nature08867",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9157773/",
+    "https://doi.org/10.1007/978-81-322-2068-8_16",
+    "https://iris.unito.it/bitstream/2318/149941/1/chapter_16.pdf",
+    "https://doi.org/10.1111/j.1469-8137.2010.03523.x",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9402283/",
+    "https://doi.org/10.1007/BF01989905",
+    "https://doi.org/10.1016/S0953-7562(09"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Por qué las trufas son tan caras",
+    "Hongos subterráneos que dependen de animales para dispersarse",
+    "Trufas mexicanas bajo encinos"
+   ]
   },
   {
    "id": "fun-53-yartsa",
-   "titulo": "El hongo-oruga que vale más que la plata (Ophiocordyceps sinensis)",
+   "titulo": "Esa ramita es una oruga: el hongo-oruga del Tíbet",
    "serie": "Shot Fungi Mati",
    "numero": 53,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-53-yartsa",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6233077/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4418754/",
+    "https://redlist.info/iucn/species_view/504340",
+    "https://doi.org/10.1007/s12231-008-9038-3",
+    "https://colfungi.org/taxon/urn:lsid:indexfungorum.org:names:504340/general-information"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Ophiocordyceps vs. Cordyceps militaris: los suplementos",
+    "Orugas fantasma (Thitarodes) del Himalaya",
+    "Hongos parásitos de insectos en México"
+   ]
   },
   {
    "id": "fun-54-micorrizas",
-   "titulo": "La 'internet del bosque': lo que sí y lo que no sabemos de las micorrizas",
+   "titulo": "Ese hilito blanco no es el internet del bosque que te contaron: es un mercado",
    "serie": "Shot Fungi Mati",
    "numero": 54,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-54-micorrizas",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://doi.org/10.1038/s41559-023-01986-1",
+    "https://europepmc.org/article/MED/36782032",
+    "https://doi.org/10.1038/41557",
+    "https://doi.org/10.3389/ffgc.2024.1512518",
+    "https://doi.org/10.1111/nph.18935",
+    "https://doi.org/10.1111/j.1469-8137.2009.03069.x",
+    "https://doi.org/10.1111/nph.14976",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6971170/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Plantas que no tienen micorrizas (familia de la col)",
+    "Orquídeas que dependen de un hongo para germinar",
+    "Micorrizas en la milpa: maíz, frijol y hongo"
+   ]
   },
   {
    "id": "fun-55-naranja",
