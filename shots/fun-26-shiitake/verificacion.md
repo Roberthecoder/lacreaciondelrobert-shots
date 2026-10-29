@@ -50,4 +50,3 @@ Fuentes abiertas:
 
 Resumen: 28 afirmaciones (voz y pantalla), todas ✅ verificadas con su fuente primaria y su frase textual.
 
-VEREDICTO: APROBADO

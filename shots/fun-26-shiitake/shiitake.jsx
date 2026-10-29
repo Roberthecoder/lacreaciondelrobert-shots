@@ -328,7 +328,7 @@ function ShiitakeShot() {
       <Etq T={T} at={K.R + 2.0} until={K.L - 0.3} x={500} y={1110} texto="piernas" tam={34} color={KC.ink} />
       <Chip T={T} at={K.R + 1.2} until={K.L - 0.3} texto="mucha comezón" x={330} y={400} tam={36} borde={KC.red} />
       <Etq T={T} at={K.L + 0.5} until={K.P - 0.3} x={60} y={1050} texto="hifa del shiitake" tam={30} />
-      <Etq T={T} at={K.L + 0.9} until={K.P - 0.3} x={60} y={905} texto="pared celular" tam={30} color={'#e9d9a6'} />
+      <Etq T={T} at={K.L + 0.9} until={K.P - 0.3} x={60} y={855} texto="pared celular" tam={30} color={KC.white} />
       <Etq T={T} at={K.L + 2.0} until={K.P - 0.3} x={60} y={425} texto="lentinano (β-glucano)" tam={34} color={KC.yellow} />
       <Chip T={T} at={K.L + 2.6} until={K.P - 0.3} texto="se cree que es el culpable" x={540} y={340} tam={34} borde={KC.yellow} />
       <Chip T={T} at={K.L + 2.0} until={K.P - 0.3} texto="moléculas agrandadas" x={720} y={1450} tam={26} borde={KC.ink} mono />
