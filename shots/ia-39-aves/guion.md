@@ -44,7 +44,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Pero quié
 | 9 | 53.7 | 57.9 | 05_sonriendo_dientes_uniformes | `gancho` | «ahí hay una foto escondida» |
 | — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | cierre |
 
-apariciones 9 · ≈ 33.9 s (+ cierre 3.5 s) · poses distintas 6 (nunca la misma dos veces seguidas) · total 61.5 s
+apariciones 9 · ≈ 34 s (+ cierre 3.5 s) · poses distintas 6 (nunca la misma dos veces seguidas) · total 61.5 s
 
 ## Fuentes (abiertas el 29 oct 2026; ver también verificacion.md)
 

@@ -43,3 +43,14 @@
    o más corto: "…y con esas grabaciones se reconstruyó la ruta de migración de la grulla común en Europa."
 
 5. Menor, sin cambio obligatorio: "zanate" en pantalla con *Quiscalus mexicanus* ✅; el "+1.1 millones de personas, 2020" está bien (el artículo dice "participants").
+
+## Re-verificación (29 oct 2026, coordinador)
+Correcciones aplicadas como propuso el verificador:
+- Gancho: «En el canto de ese pájaro hay un dibujo escondido. Tus oídos no lo ven. Tu celular, sí.» ✅
+- Fechas: «De 2018 a 2020 reconocía 984 especies de aves. A inicios de 2021, ya más de tres mil.» (ya no "se presentó en 2021") ✅
+- Jardín: «Y su modelo mundial de 2023 ya pasa de seis mil especies…» + pantalla «especies: aves y otros animales» (V2.4, 6,522 clases) ✅
+- Grulla: «se reconstruyó la ruta de migración de la grulla común en Europa» ✅
+- Recortes sin datos nuevos (Espectro, Foto, Estudio, Cierre; "foto escondida" es metáfora del espectrograma) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

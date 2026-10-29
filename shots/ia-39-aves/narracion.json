@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Aves base narrada.dc.html",
+  "salida": "Shot Aves narrado.dc.html",
+  "nota": "Shot IA #39. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "En el canto de ese pájaro hay un dibujo escondido. Tus oídos no lo ven. Tu celular, sí."
+    },
+    {
+      "escena": "Espectro",
+      "texto": "Al grabarlo, la app lo vuelve una imagen: un espectrograma."
+    },
+    {
+      "escena": "Espectro",
+      "texto": "Muestra qué tan agudo, qué tan fuerte y cuánto dura cada sonido."
+    },
+    {
+      "escena": "Foto",
+      "texto": "Cada canto deja su forma: rayitas, curvas, puntitos. Y la IA la mira como una foto."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero quién le enseñó a leer esas fotos?"
+    },
+    {
+      "escena": "Voluntarios",
+      "texto": "Miles de voluntarios que subieron millones de grabaciones de aves."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Con ellas, Cornell y una universidad de Alemania entrenaron a BirdNET: una red de ciento cincuenta y siete capas."
+    },
+    {
+      "escena": "Crece",
+      "texto": "De 2018 a 2020 reconocía novecientas ochenta y cuatro especies de aves. A inicios de 2021, ya más de tres mil."
+    },
+    {
+      "escena": "Gente",
+      "texto": "En 2020 la usaron más de un millón de personas, y con sus grabaciones se reconstruyó la ruta de migración de la grulla común en Europa."
+    },
+    {
+      "escena": "Jardin",
+      "texto": "Y su modelo mundial de 2023 ya pasa de seis mil especies, entre ellas el zanate, el gorrión y la tortolita de tu jardín."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Cuando cante un pájaro en tu ventana, recuerda: ahí hay una foto escondida."
+    }
+  ]
+}
