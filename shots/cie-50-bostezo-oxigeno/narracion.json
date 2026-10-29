@@ -13,7 +13,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 1987, el psicólogo Robert Provine, de la Universidad de Maryland, lo puso a prueba."
+      "texto": "En 1987, el psicólogo Robert Provine, de la Universidad de Maryland en el condado de Baltimore, lo puso a prueba."
     },
     {
       "escena": "Gases",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Otra",
-      "texto": "Otra, que ayuda a cambiar de estado: de dormido a despierto, o de aburrido a alerta."
+      "texto": "Otra, que ayuda a cambiar de estado: de despierto a dormido, o de dormido a despierto."
     },
     {
       "escena": "Contagio",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "¿Ya bostezaste? Si sí, fue el contagio, no la falta de oxígeno."
+      "texto": "¿Ya bostezaste? Quizá fue el contagio, o el sueño, pero no la falta de oxígeno."
     }
   ]
 }

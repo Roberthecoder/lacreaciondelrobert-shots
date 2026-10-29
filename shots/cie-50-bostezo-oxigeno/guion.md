@@ -12,15 +12,15 @@
 |---|---|---|---|
 | 0 | Gancho | No bostezas porque te falte oxígeno: lo probaron dándole a la gente aire con más oxígeno, y siguieron bostezando igual. | Cuadro 0: una persona bosteza enorme; burbuja «¿falta de oxígeno?» que se tacha. |
 | 1 | Creencia | Por años se dijo que bostezar servía para meter más oxígeno o sacar dióxido de carbono. | Pulmones con O₂ entrando y CO₂ saliendo; chip «la idea vieja». |
-| 2 | Estudio | En 1987, el psicólogo Robert Provine, de la Universidad de Maryland, lo puso a prueba. | Tarjeta «1987 · Robert Provine · Universidad de Maryland». |
+| 2 | Estudio | En 1987, el psicólogo Robert Provine, de la Universidad de Maryland en el condado de Baltimore, lo puso a prueba. | Tarjeta «1987 · Robert Provine · UMBC, Maryland». |
 | 3 | Gases | Puso a voluntarios a respirar aire con más oxígeno, o con más dióxido de carbono, y contó sus bostezos. | Voluntarios con mascarillas de colores: «más O₂» y «más CO₂»; contador de bostezos. |
 | 4 | Resultado | Respirar más oxígeno no les quitó los bostezos, y el dióxido de carbono no los hizo bostezar más. | Barras de bostezos iguales en las dos condiciones. |
-| 5 | Ejercicio | Y hacer ejercicio, que acelera la respiración, tampoco cambió cuánto bostezaban. | Persona en bici con respiración rápida; contador igual. |
+| 5 | Ejercicio | Y hacer ejercicio, que acelera la respiración, tampoco cambió cuánto bostezaban. | Persona subiendo y bajando un escalón, jadeando; contador igual. |
 | 6 | Pregunta | ¿Entonces para qué bostezamos? | «?» gigante; Robert grande. |
 | 7 | Hipotesis | Nadie lo sabe con certeza. Una hipótesis dice que ayuda a enfriar el cerebro. | Cerebro con termómetro y aire fresco; chip «hipótesis». |
-| 8 | Otra | Otra, que ayuda a cambiar de estado: de dormido a despierto, o de aburrido a alerta. | Interruptor dormido → despierto / aburrido → alerta; chip «hipótesis». |
+| 8 | Otra | Otra, que ayuda a cambiar de estado: de despierto a dormido, o de dormido a despierto. | Interruptor despierto ⇄ dormido; chip «hipótesis». |
 | 9 | Contagio | Lo que sí está claro es que el bostezo se contagia: hasta leer sobre bostezos puede hacerte bostezar. | Fila de personas bostezando en cadena; un libro que dice «bostezo». |
-| 10 | Cierre | ¿Ya bostezaste? Si sí, fue el contagio, no la falta de oxígeno. | Regreso a la persona del inicio; chip «¿ya bostezaste?». |
+| 10 | Cierre | ¿Ya bostezaste? Quizá fue el contagio, o el sueño, pero no la falta de oxígeno. | Regreso a la persona del inicio; chip «¿ya bostezaste?». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo y Robert apuntando a cámara. |
 
 **Música:** cama grave continua debajo de la voz; cada cosa que pasa en pantalla tiene su efecto.

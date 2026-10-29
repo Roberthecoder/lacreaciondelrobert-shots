@@ -11,7 +11,7 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esas luces de colores que ves cuando te tallas los ojos cerrados no vienen de afuera: las fabrica tu propio ojo. | Cuadro 0: alguien se talla los ojos cerrados; del interior salen patrones de colores. |
-| 1 | Nombre | Se llaman fosfenos, y casi todo el mundo los ha visto alguna vez. | Chip «fosfenos». |
+| 1 | Nombre | Se llaman fosfenos, y los más comunes salen justo así: apretando el ojo. | Chip «fosfenos». |
 | 2 | Retina | Tu retina convierte la luz en señales eléctricas que viajan a tu cerebro. | Ojo en corte: la luz llega a la retina y se vuelve señales eléctricas que viajan por el nervio. |
 | 3 | Presion | Pero si aprietas el ojo, la presión también estimula a esas células, aunque no haya nada de luz. | Un dedo presiona el ojo (esquema) y la retina se enciende sin luz. |
 | 4 | Cerebro | Y tu cerebro no nota la diferencia: si le llega una señal de la retina, la interpreta como luz. | Cerebro que recibe la señal y la pinta como luz. |
@@ -32,7 +32,7 @@
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 
 1. Fosfenos por presión: estimulación mecánica de la retina (Grüsser, O. J. et al. (1989); Wikipedia «Phosphene»; revisión en Scientific American).
-2. Destellos de luz en astronautas por rayos cósmicos (NASA, observaciones desde el Apolo 11; Fuglesang, C. et al. (2006). Acta Astronautica).
+2. Destellos de luz en astronautas por rayos cósmicos (NASA, observaciones desde el Apolo 11; artículo de NASA, 2012, sobre las misiones Apolo).
 3. No tallarse los ojos (American Academy of Ophthalmology).
 4. Destellos y manchas nuevas como señal de alarma de la retina (AAO / National Eye Institute).
 
