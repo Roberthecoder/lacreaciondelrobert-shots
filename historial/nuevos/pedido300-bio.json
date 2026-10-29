@@ -320,60 +320,107 @@
       "titulo": "El maíz que fabrica su propio insecticida: proteínas Cry de Bacillus thuringiensis",
       "serie": "Shot Biotecnológico",
       "numero": 25,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-25-bt",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "NPIC Bt 2022",
+        "Health Canada MON 95379 2022",
+        "EPA BRAD 2001",
+        "Storer et al. 2010",
+        "DOF 17 mar 2025"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Refugios contra la resistencia en maíz Bt",
+        "El gusano cogollero invadió África (2016)",
+        "Las razas de maíz nativo de México"
+      ]
     },
     {
       "id": "bio-26-papaya",
       "titulo": "La papaya que se vacunó: papaya transgénica contra el virus de la mancha anular (Hawái 1998)",
       "serie": "Shot Biotecnológico",
       "numero": 26,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-26-papaya",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Gonsalves et al. APSnet 2004",
+        "Ferreira et al. Plant Disease 2002",
+        "Tripathi et al. 2008",
+        "Hernández-Castro et al. 2004"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Protección cruzada con cepas suaves",
+        "Por qué los insecticidas no frenan virus de pulgones",
+        "Barreras de maíz y jamaica en Veracruz"
+      ]
     },
     {
       "id": "bio-27-arroz-dorado",
       "titulo": "Arroz dorado: betacaroteno en el grano (Filipinas 2021)",
       "serie": "Shot Biotecnológico",
       "numero": 27,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-27-arroz-dorado",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Ye et al. Science 2000",
+        "Paine et al. 2005",
+        "Tang et al. 2009",
+        "OMS 2009",
+        "PhilRice 2024"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Biofortificación sin transgénicos (camote naranja)",
+        "Por qué la zanahoria es naranja",
+        "Tomate y arroz morados con antocianinas"
+      ]
     },
     {
       "id": "bio-28-dolly",
       "titulo": "Dolly: un clon de una célula de ubre (1996)",
       "serie": "Shot Biotecnológico",
       "numero": 28,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-28-dolly",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Wilmut et al. Nature 1997",
+        "Roslin The Life of Dolly",
+        "Sinclair et al. 2016",
+        "Evans et al. 1999"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Células iPS de Yamanaka",
+        "Clonar animales en peligro",
+        "Las ranas de Gurdon"
+      ]
     },
     {
       "id": "bio-29-penicilina-melon",
       "titulo": "La penicilina del mundo salió de un melón mohoso (Peoria, 1943)",
       "serie": "Shot Biotecnológico",
       "numero": 29,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-29-penicilina-melon",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Gaynes EID 2017",
+        "Jami et al. 2010",
+        "Quinn AJPH 2013",
+        "USDA-ARS Moldy Mary"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "El licor de maíz y la fermentación industrial",
+        "Mejora de cepas por mutación",
+        "P. chrysogenum vs P. rubens"
+      ]
     },
     {
       "id": "bio-30-hormona-crecimiento",

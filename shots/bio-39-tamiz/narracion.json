@@ -9,7 +9,7 @@
     },
     {
       "escena": "Talon",
-      "texto": "A los pocos días de nacer te picaron el talón y mancharon un papel filtro."
+      "texto": "A los pocos días de nacer, probablemente te picaron el talón y mancharon un papel filtro."
     },
     {
       "escena": "Busca",
@@ -17,7 +17,7 @@
     },
     {
       "escena": "Enzima",
-      "texto": "Quien la tiene no procesa la fenilalanina de las proteínas: se acumula y daña el cerebro."
+      "texto": "Quien la tiene no procesa bien la fenilalanina de las proteínas: se acumula y daña el cerebro."
     },
     {
       "escena": "Pregunta",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Hoy",
-      "texto": "Hoy un espectrómetro de masas puede buscar más de treinta enfermedades en esa misma tarjeta."
+      "texto": "Hoy un espectrómetro de masas puede buscar más de treinta enfermedades en esa tarjeta."
     },
     {
       "escena": "Dieta",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Esas gotitas de tu talón salieron a cazar enfermedades invisibles."
+      "texto": "Esas gotitas de tu talón cazaban enfermedades invisibles."
     }
   ]
 }

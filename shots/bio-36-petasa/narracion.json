@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa botella no es basura: para una bacteria de Japón, es comida."
+      "texto": "Ese plástico no es basura: para una bacteria de Japón, es comida."
     },
     {
       "escena": "Lodo",
@@ -13,7 +13,7 @@
     },
     {
       "escena": "Nombre",
-      "texto": "Se llama Ideonella sakaiensis, y vive del PET de tus refrescos."
+      "texto": "La bautizaron Ideonella sakaiensis, y vive del PET, el plástico de las botellas."
     },
     {
       "escena": "Petasa",
@@ -45,11 +45,11 @@
     },
     {
       "escena": "Curioso",
-      "texto": "Lo curioso: le ganó a la enzima de la bacteria que empezó todo."
+      "texto": "Lo curioso: le ganó a la enzima de la bacteria de Japón."
     },
     {
       "escena": "Planta",
-      "texto": "Pero su planta industrial sigue sin terminarse: la planean para 2028."
+      "texto": "Pero su planta industrial sigue en pausa: la planean para 2028."
     },
     {
       "escena": "Recoger",
@@ -57,7 +57,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Esa botella sí puede ser comida, pero solo si llega al reciclaje."
+      "texto": "Ese plástico sí puede ser comida, pero solo si llega al reciclaje."
     }
   ]
 }

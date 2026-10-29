@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Un gramo de ADN puede guardar 215 millones de gigas: más de un millón de celulares."
+      "texto": "Un gramo de ADN puede guardar 215 millones de gigas: más de un millón de celulares de 128."
     },
     {
       "escena": "Bits",
@@ -17,7 +17,7 @@
     },
     {
       "escena": "Sintesis",
-      "texto": "Una máquina escribe esas letras en miles de hebras cortas de ADN."
+      "texto": "Una máquina escribe esas letras en miles de hebras de ADN."
     },
     {
       "escena": "Seco",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Caballo",
-      "texto": "Ese mismo año, en Harvard, guardaron un video de un caballo dentro de bacterias vivas."
+      "texto": "Ese año, en Harvard, guardaron un video de un caballo dentro de bacterias vivas."
     },
     {
       "escena": "Problema",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Un gramo para un millón de celulares: solo falta que escribirlo sea rápido y barato."
+      "texto": "Un gramo para un millón de celulares de 128: solo falta que escribirlo sea rápido y barato."
     }
   ]
 }

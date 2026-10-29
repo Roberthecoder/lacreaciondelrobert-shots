@@ -422,7 +422,7 @@ function BebeKJ() {
       <Medidor T={T} at={K.Pe + 0.3} until={K.Pe + 2.8} valor={(t) => kprog(t, K.Pe + 0.4, K.Pe + 2.3) * 0.92} etiqueta="amoniaco · primeros 2 días"
         texto={(v) => (v > 0.9 ? 'más de 1,000' : kformato(Math.round(v * 1090))) + ' µmol/L'} x={90} y={1430} color={KC.red} />
       <Chip T={T} at={K.Pe + 1.0} until={K.Pe + 2.8} texto="normal: 9–33 µmol/L" y={1600} tam={32} borde={KC.mint} mono />
-      <NumeroGigante T={T} at={K.Pe + 3.0} until={K.Tr - 0.3} valor={50} dur={0.9} sufijo=" %" etiqueta="forma grave" x={430} y={900} tam={280} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Pe + 3.0} until={K.Tr - 0.3} valor={50} dur={0.5} sufijo=" %" etiqueta="forma grave" x={430} y={900} tam={280} color={KC.yellow} />
       <Chip T={T} at={K.Pe + 3.3} until={K.Tr - 0.3} texto="mortalidad estimada en los primeros meses" y={1450} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Tr + 0.3} until={K.Se - 0.3} texto="lo usual: trasplante de hígado" y={470} tam={40} borde={KC.blue} />
       <Etq T={T} at={K.Tr + 1.4} until={K.Se - 0.3} x={950} y={1450} texto="hay que crecer" lado="izq" tam={36} color={KC.ink} />

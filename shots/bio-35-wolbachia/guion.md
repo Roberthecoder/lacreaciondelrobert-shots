@@ -1,28 +1,29 @@
 # Shot Biotecnológico #35 · El mosco que trae una bacteria contra el dengue (*Wolbachia*)
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #35 · **Tema del logo:** bioquímica (ADN + matraz).
+- **Corrección tras la verificación independiente (29 oct 2026, ver `verificacion.md`):** la bacteria no pasó directo de la mosca al mosco: se adaptó ~2 años en células de mosco (línea RML-12) y luego se inyectó en huevos de *Ae. aegypti* (Walker 2011). La voz dice "86 % menos hospitalizados por dengue". Se recortó la voz a 946 caracteres sin agregar datos.
 - **Formato:** N1 "Por dentro" (el mosco y, con la `Lupa`, sus células con la bacteria y el virus) + N5 "El experimento" (el ensayo de Yogyakarta dibujado como mapa de 24 zonas).
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el mosco que se ve en pantalla posado en un brazo.
 - **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s). Solo narrado (revisión sin voz la hace GitHub).
 - **Viaje:** macro (el mosco *Aedes aegypti* en tu brazo) → micro (dentro de sus células: *Wolbachia* y el virus del dengue; el huevo con la bacteria) → macro (el mapa de la ciudad y el mismo mosco del inicio, ya "marcado" con su bacteria).
 
-## Versión narrada (957 caracteres, ~180 palabras cortas, ~58 s de voz)
+## Versión narrada (946 caracteres, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese mosco no viene a enfermarte: trae una bacteria que frena al dengue. | Fondo menta. **Desde el cuadro 0** un mosco *Aedes aegypti* (cuerpo negro con rayas blancas en patas y la "lira" blanca en el tórax) aterriza en un brazo; las alas vibran. Un brillo verde dentro del abdomen. |
 | 1 | Bacteria | Se llama Wolbachia y vive en muchísimos insectos, pero no en este. | Fondo amarillo: desfile de insectos (mosca, mariposa, escarabajo, abeja) cada uno con un puntito verde de bacteria; el *Aedes aegypti* silvestre sin puntito. Etiqueta *Wolbachia pipientis*. |
-| 2 | Prestada | Se la sacaron a la mosca de la fruta y se la inyectaron al mosco. | Mosca de la fruta (*Drosophila melanogaster*, ojos rojos) → una aguja finísima pasa la bacteria a un huevito alargado de mosco. Chip "de mosca a mosco". |
+| 2 | Prestada | Se la sacaron a la mosca de la fruta, la criaron en células de mosco y se la inyectaron a sus huevitos. | Mosca de la fruta (*Drosophila melanogaster*, ojos rojos) → placa de cultivo con células (chip "2 años en células de mosco") → una aguja finísima entra en un huevito alargado de mosco. Chip "mosca → células → huevo de mosco". |
 | 3 | PorDentro | Dentro de sus células, la bacteria le estorba al virus para multiplicarse. | **Lupa "POR DENTRO · CÉLULA DEL MOSCO"** (fondo oscuro): célula llena de bacterias verdes; los virus (esferitas rosas) entran y casi no se copian. Barra de escala (µm). |
 | 4 | Saliva | Así, menos moscos llevan el virus en su saliva, que es por donde te contagia. | Probóscide picando el brazo; gotitas de saliva sin virus (contador de virus que baja). |
-| 5 | Pregunta | ¿Pero cómo llega la bacteria a todos los moscos de tu colonia? | **Re-gancho.** Vista de un barrio desde arriba con muchos moscos grises (silvestres) y uno verde. |
+| 5 | Pregunta | ¿Y cómo llega a todos los moscos de tu colonia? | **Re-gancho.** Vista de un barrio desde arriba con muchos moscos grises (silvestres) y uno verde. |
 | 6 | Herencia | La mamá se la pasa a sus crías, dentro del huevo. | Hembra con bacteria pone huevos; dentro de cada huevo se ve el puntito verde. |
-| 7 | Truco | Y si un macho con Wolbachia se cruza con una hembra sin ella, esos huevos no nacen. | Cuadro de cruces (2×2): macho verde × hembra gris → huevos con ✕; los otros cruces sí nacen. |
+| 7 | Truco | Si un macho con ella se cruza con una hembra sin ella, los huevos no nacen. | Cuadro de cruces (2×2): macho verde × hembra gris → huevos con ✕; los otros cruces sí nacen. |
 | 8 | Gana | Así, en pocas generaciones, casi todos los moscos la traen. | El barrio se va pintando de verde generación tras generación; `Medidor` de % de moscos con *Wolbachia*. |
 | 9 | Estudio | Lo probaron en Yogyakarta, Indonesia: en 2017 soltaron huevos de estos moscos en 12 de 24 zonas. | `TarjetaEstudio` "Yogyakarta, Indonesia · 2017–2020". Mapa con 24 cuadritos; se iluminan 12 al azar y caen huevitos en ellos. |
-| 10 | Resultado | En 2021 publicaron que ahí hubo 77 % menos dengue con síntomas y 86 % menos hospitalizados. | `NumeroGigante` "−77 %" (dengue con síntomas) y luego "−86 %" (hospitalizaciones por dengue). Chip "NEJM 2021". |
-| 11 | Ojo | Y ojo: no es transgénico. No le cambiaron los genes; solo trae una bacteria. | `MitoTachado` "mosco transgénico". La hélice de ADN del mosco intacta y, aparte, la bacteria verde. |
-| 12 | Cierre | Por eso ese mosco igual te pica, pero trae una bacteria que frena al dengue. | **Regreso al brazo del inicio**: el mismo mosco, ahora con su brillo verde y la etiqueta *Wolbachia*. |
+| 10 | Resultado | En 2021 publicaron que ahí hubo 77 % menos dengue con síntomas y 86 % menos hospitalizados por dengue. | `NumeroGigante` "−77 %" (dengue con síntomas) y luego "−86 %" (hospitalizaciones por dengue). Chip "NEJM 2021". |
+| 11 | Ojo | Y no es transgénico: no le cambiaron los genes. | `MitoTachado` "mosco transgénico". La hélice de ADN del mosco intacta y, aparte, la bacteria verde. |
+| 12 | Cierre | Ese mosco igual te pica, pero trae una bacteria que frena al dengue. | **Regreso al brazo del inicio**: el mismo mosco, ahora con su brillo verde y la etiqueta *Wolbachia*. |
 | — | Outro | (sin voz) | Cierre de marca con Robert. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
@@ -31,7 +32,7 @@
 - **Efectos en el mismo cuadro:** aterrizaje del mosco (toque), la aguja (clic fino), la Lupa que se abre (barrido), huevos que caen (gotitas), los huevos que no nacen (golpe sordo), sello del estudio.
 
 ## Descripción (para publicar)
-"Ese mosco no viene a enfermarte: trae una bacteria que frena al dengue. 🦟🦠 Se llama *Wolbachia* y vive de forma natural en muchísimos insectos (se estima que en 40 a 60 % de las especies), pero no en *Aedes aegypti*, el mosco del dengue. Los científicos se la pasaron desde la mosca de la fruta (*Drosophila melanogaster*) con microinyección.
+"Ese mosco no viene a enfermarte: trae una bacteria que frena al dengue. 🦟🦠 Se llama *Wolbachia* y vive de forma natural en muchísimos insectos (se estima que en 40 a 60 % de las especies), pero no en *Aedes aegypti*, el mosco del dengue. Los científicos la sacaron de la mosca de la fruta (*Drosophila melanogaster*), la adaptaron unos 2 años en células de mosco en el laboratorio y luego la inyectaron en huevos de *Aedes aegypti* (Walker et al., 2011).
 
 Dentro de las células del mosco, la bacteria le estorba al virus para multiplicarse, y menos moscos terminan con virus en la saliva. Lo mejor: la hembra se la hereda a sus crías dentro del huevo, y si un macho con *Wolbachia* se cruza con una hembra sin ella, los huevos no nacen. Por eso, en pocas generaciones, casi todos los moscos de la zona la traen.
 
@@ -52,6 +53,7 @@ No es un mosco transgénico: no se le cambian los genes, solo lleva una bacteria
   - "the wMel Wolbachia infection, introduced into the dengue vector Aedes aegypti from Drosophila melanogaster, successfully invaded two natural A. aegypti populations in Australia, reaching near-fixation in a few months" (2011)
   - "this maternally-inherited agent provides a powerful mechanism to invade natural populations through cytoplasmic incompatibility." (2011)
 - **Walker T. et al. (2011).** "The wMel Wolbachia strain blocks dengue and invades caged Aedes aegypti populations." *Nature* 476:450-453. https://pubmed.ncbi.nlm.nih.gov/21866159/
+  - "the wMel strain was first transferred from Drosophila melanogaster embryos into the RML-12 mosquito cell line and serially passaged for approximately two years to allow adaptation to the mosquito intracellular environment. A total of 2,541 A. aegypti embryos were microinjected with Wolbachia purified from this cell line" (2011; texto completo https://www.nature.com/articles/nature10355)
   - "the wMel strain increased from an initial starting frequency of 0.65 to near fixation within a few generations" (2011)
   - "We also show that wMel and wMelPop-CLA strains block transmission of dengue serotype 2 (DENV-2) in A. aegypti" (2011)
 - **Flores H.A. & O'Neill S.L. (2018).** "Controlling vector-borne diseases by releasing modified mosquitoes." *Nat Rev Microbiol* 16:508-518. https://pmc.ncbi.nlm.nih.gov/articles/PMC7612058/ (los autores trabajan para el World Mosquito Program)

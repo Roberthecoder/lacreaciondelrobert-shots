@@ -32,6 +32,24 @@
 | 13 | Cierre | Aún lo vigilan, pero esa medicina existe para una persona: él. | **Regreso a la imagen del inicio:** la misma cuna, ahora el niño de pie; el frasquito "k-abe · para: KJ" a su lado. |
 | — | Outro | (sin voz) | `CierreMarca` con Robert. |
 
+## Robert en pantalla
+
+Entra desde el cuadro 0, vuelve cada 8–10 s y nunca tapa el subtítulo, el dato ni las etiquetas (lados `gancho`, `arriba-der` y `grande`,
+que quedan arriba del subtítulo). Tiempos de la base narrada (61.5 s; se ajustan solos a la voz real con `CUES`).
+
+### Versión narrada: 7 apariciones, **25.6 s en pantalla** (de 61.5 s), 6 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 – 3,6 | sorprendido (11) | gancho | «no se hizo para millones: para un solo bebé» |
+| 11,7 – 15,8 | serio (10) | arriba-der | «el amoniaco daña el cerebro… la mitad muere de bebé» |
+| 21,5 – 24,7 | señalando (13) | arriba-der | señala el calendario: «en unos seis meses» |
+| 32,2 – 34,9 | pensativo (06) | **grande** | re-gancho: «¿y por qué no editar sus células afuera?» |
+| 40,7 – 44,5 | bajando lentes (04) | arriba-der | la tarjeta del estudio: febrero de 2025, primera dosis |
+| 49,1 – 53,8 | sonriendo (05) | **grande** | «ya caminaba y hablaba… Nature lo nombró» |
+| 54,4 – 57,9 | señalando (13) | arriba-der | cierre: «esa medicina existe para una persona: él» |
+| 58,0 – 61,5 | apuntando a cámara (02) | cierre | `CierreMarca` junto al logo |
+
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - Cama grave continua, sin golpe, debajo de la voz; tensa (con un zumbido grave) mientras el amoniaco sube y se abre a un acorde mayor
   cuando la letra cambia de roja a verde.
@@ -51,7 +69,7 @@ se hizo **dentro del cuerpo**. Casgevy, la primera terapia CRISPR aprobada por l
 cuerpo y exige quimioterapia fuerte antes de regresarlas.
 
 KJ recibió su primera dosis en febrero de 2025, con casi siete meses, y dos más en marzo y abril. Sin efectos graves, aguantó más
-proteína en su dieta y necesitó menos medicina. Salió del hospital en junio de 2025 tras 307 días; en febrero de 2026 el hospital dijo que
+proteína en su dieta y necesitó menos medicina. En febrero de 2026 el hospital dijo que
 ya caminaba y hablaba. Sus médicos dicen que hay que seguirlo por años. El dibujo es esquemático.
 
 ¿Tú qué enfermedad rara conoces que podría tratarse así? 👇 Soy Robert, de La Creación del Robert 🌱"

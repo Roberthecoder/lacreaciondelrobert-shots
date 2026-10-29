@@ -13,7 +13,7 @@
     },
     {
       "escena": "Prestada",
-      "texto": "Se la sacaron a la mosca de la fruta y se la inyectaron al mosco."
+      "texto": "Se la sacaron a la mosca de la fruta, la criaron en células de mosco y se la inyectaron a sus huevitos."
     },
     {
       "escena": "PorDentro",
@@ -25,7 +25,7 @@
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Pero cómo llega la bacteria a todos los moscos de tu colonia?"
+      "texto": "¿Y cómo llega a todos los moscos de tu colonia?"
     },
     {
       "escena": "Herencia",
@@ -33,7 +33,7 @@
     },
     {
       "escena": "Truco",
-      "texto": "Y si un macho con Wolbachia se cruza con una hembra sin ella, esos huevos no nacen."
+      "texto": "Si un macho con ella se cruza con una hembra sin ella, los huevos no nacen."
     },
     {
       "escena": "Gana",
@@ -45,15 +45,15 @@
     },
     {
       "escena": "Resultado",
-      "texto": "En 2021 publicaron que ahí hubo 77 % menos dengue con síntomas y 86 % menos hospitalizados."
+      "texto": "En 2021 publicaron que ahí hubo 77 % menos dengue con síntomas y 86 % menos hospitalizados por dengue."
     },
     {
       "escena": "Ojo",
-      "texto": "Y ojo: no es transgénico. No le cambiaron los genes; solo trae una bacteria."
+      "texto": "Y no es transgénico: no le cambiaron los genes."
     },
     {
       "escena": "Cierre",
-      "texto": "Por eso ese mosco igual te pica, pero trae una bacteria que frena al dengue."
+      "texto": "Ese mosco igual te pica, pero trae una bacteria que frena al dengue."
     }
   ]
 }
