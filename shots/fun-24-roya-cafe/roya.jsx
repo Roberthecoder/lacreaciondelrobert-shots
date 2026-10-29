@@ -84,13 +84,13 @@ function Estoma({ x, y, L = 180, rot = 0, abre = 1 }) {
 }
 
 // Superficie del envés al microscopio: células de la epidermis (onduladas) y varios estomas.
-function Enves({ T, estomas = [], seed = 4 }) {
+function Enves({ T, estomas = [], seed = 4, Lest = 180, celda = 1 }) {
   const g = krng(seed), cel = [];
-  for (let r = 0; r < 9; r++) for (let c = 0; c < 6; c++) { const cx = c * 200 + (r % 2) * 100 + g() * 30, cy = 380 + r * 170 + g() * 30; cel.push([cx, cy, 90 + g() * 20, 70 + g() * 15]); }
+  for (let r = 0; r < 9; r++) for (let c = 0; c < 6; c++) { const cx = (c * 200 + (r % 2) * 100 + g() * 30), cy = 380 + r * 170 + g() * 30; cel.push([cx, cy, (90 + g() * 20) * celda, (70 + g() * 15) * celda]); }
   return <g>
     <rect x={0} y={0} width={KW} height={KH} fill={RC.epi} />
     {cel.map(([cx, cy, rx, ry], i) => <path key={i} d={`M ${cx - rx} ${cy} Q ${cx - rx * 0.6} ${cy - ry * 1.1} ${cx} ${cy - ry} Q ${cx + rx * 0.7} ${cy - ry * 0.8} ${cx + rx} ${cy} Q ${cx + rx * 0.6} ${cy + ry * 1.1} ${cx} ${cy + ry} Q ${cx - rx * 0.7} ${cy + ry * 0.8} ${cx - rx} ${cy} Z`} fill={i % 3 ? '#1d4d30' : '#22573a'} stroke="#0f2e1c" strokeWidth={5} />)}
-    {estomas.map(([x, y, rot], i) => <Estoma key={i} x={x} y={y} L={180} rot={rot} />)}
+    {estomas.map(([x, y, rot], i) => <Estoma key={i} x={x} y={y} L={Lest} rot={rot} />)}
   </g>;
 }
 
@@ -238,9 +238,9 @@ function RoyaShot() {
       {/* 5 · semanas después: un ramillete de esporas nuevas sale por el estoma; el viento y la lluvia las llevan */}
       <Escena T={T} a={K.R} b={K.C} zoom={0.05}>
         {fsvg(<>
-          <Enves T={T} estomas={[[540, 1000, 0], [180, 600, 20], [940, 1350, -15]]} />
-          {Array.from({ length: 9 }, (_, i) => { const ang = -150 + i * 15, rad = ang * Math.PI / 180, k = kprog(T, K.R + 1.0 + i * 0.12, K.R + 1.6 + i * 0.12, kEase.rebote); if (k <= 0) return null;
-            const dist = 130 + (i % 2) * 70, bx = 540 + Math.cos(rad) * dist * brota, by = 990 + Math.sin(rad) * dist * brota;
+          <Enves T={T} estomas={[[540, 1000, 0], [180, 640, 20], [900, 700, -15], [820, 1350, 10]]} Lest={85} seed={6} />
+          {Array.from({ length: 9 }, (_, i) => { const ang = -165 + i * 18.75, rad = ang * Math.PI / 180, dummy = 0, k = kprog(T, K.R + 1.0 + i * 0.12, K.R + 1.6 + i * 0.12, kEase.rebote); if (k <= 0) return null;
+            const dist = 170 + (i % 2) * 90, bx = 540 + Math.cos(rad) * dist * brota, by = 990 + Math.sin(rad) * dist * brota;
             const vx = vuela * (500 + i * 60), vy = vuela * (-200 + (i % 3) * 120) + Math.sin(T * 3 + i) * 10 * vuela;
             return <g key={i}><line x1={540} y1={995} x2={bx} y2={by} stroke="#ffd27a" strokeWidth={8} opacity={1 - vuela} />
               <Uredo x={bx + vx} y={by + vy} L={170} rot={ang + 90 + vuela * 200} s={k} /></g>; })}
@@ -340,7 +340,7 @@ function RoyaShot() {
           <Tarjeta x={260} y={900} texto="Catimor" w={300} color={KC.yellow} k={kprog(T, K.Ti + 1.4, K.Ti + 1.8, kEase.rebote)} />
           <rect x={0} y={1200} width={KW} height={800} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
           <g opacity={kprog(T, K.Ti + 1.6, K.Ti + 2.0)}><Cafeto T={T} x={720} y={1210} s={0.62} roya={kprog(T, K.Ti + 3.8, K.Ti + 4.8)} cerezas={1} /></g>
-          {T > K.Ti + 2.0 && <g transform={`translate(720 ${760}) scale(${kprog(T, K.Ti + 2.0, K.Ti + 2.4, kEase.rebote)})`} opacity={1 - 0.6 * kprog(T, K.Ti + 3.8, K.Ti + 4.4)}>
+          {T > K.Ti + 2.0 && <g transform={`translate(720 ${840}) scale(${kprog(T, K.Ti + 2.0, K.Ti + 2.4, kEase.rebote)})`} opacity={1 - 0.6 * kprog(T, K.Ti + 3.8, K.Ti + 4.4)}>
             <path d="M 0 -110 L 90 -80 Q 95 30 0 110 Q -95 30 -90 -80 Z" fill="rgba(47,224,168,.35)" stroke={KC.ink} strokeWidth={8} />
             <path d="M -36 0 L -8 30 L 42 -34" stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" />
           </g>}

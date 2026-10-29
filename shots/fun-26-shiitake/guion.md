@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #26 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro" (plato de shiitake → piel y pared celular del hongo al microscopio → el mismo plato, ya bien cocido).
 - **Gancho (de los 7):** #6 "Mito peligroso ¿Por qué NO…?": «¿Por qué no debes comer shiitake crudo? Porque te puede dejar la piel rayada, como a latigazos.»
-- **Duración:** voz 997 caracteres / 185 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 996 caracteres / 184 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1,000 créditos de ElevenLabs).
 - **Tono:** tranquilo, sin alarmismo (es raro y se quita solo). No es consejo médico.
 
@@ -13,20 +13,20 @@
 |---|---|---|---|
 | 0 | Gancho | ¿Por qué no debes comer shiitake crudo? Porque te puede dejar la piel rayada, como a latigazos. | Fondo amarillo: un plato con shiitakes crudos rebanados (sombrero café con escamitas claras en la orilla, láminas blancas, pie fibroso); cuadro 0.3: un tenedor pincha una rebanada. Al decir «latigazos», a un lado un brazo se raya con trazos rojos lineales. |
 | 1 | Nombre | Es raro y no le pasa a todos, pero tiene nombre: dermatitis flagelada por shiitake. | Etiqueta "shiitake · *Lentinula edodes*"; chip "raro" y el nombre en tarjeta "dermatitis flagelada (de *flagellum*, látigo)". Mucha gente come del plato; solo una persona marcada. |
-| 2 | Espera | Y no sale luego luego: puede tardar de horas a varios días. | `Cronometro` "después de comer" que corre de horas a días (1 h … 7 días). |
-| 3 | Rayas | Son rayas rojas que suelen dar mucha comezón, en el torso, los brazos o las piernas. | Silueta de cuerpo: aparecen rayas rojas en torso, brazos y piernas; iconos de comezón. |
+| 2 | Espera | Y no sale luego luego: puede tardar de horas a días. | `Cronometro` "después de comer" que corre de horas a días (1 h … 7 días). |
+| 3 | Rayas | Son rayas rojas que suelen dar mucha comezón, en torso, brazos o piernas. | Silueta de cuerpo: aparecen rayas rojas en torso, brazos y piernas; iconos de comezón. |
 | 4 | Lentinano | Se cree que el culpable es el lentinano, una cadena de azúcares de la pared de sus células. | **Baja al microscopio** (fondo noche): una hifa del shiitake, su pared celular, y de ella salen cadenas de azúcares (hexágonos) en triple hélice. Etiqueta "lentinano (β-glucano)". Chip "se cree". |
 | 5 | Pregunta | ¿Y por qué hace rayas? Nadie lo sabe con certeza. | **Re-gancho.** "?" gigante sobre una raya de la piel. |
-| 6 | Hipotesis | Una idea es que dispara señales de inflamación que abren los vasitos de tu piel. Otra, que es alergia. | Corte de piel (fondo noche): señales (puntitos) llegan y un vasito se ensancha y enrojece. Chip "hipótesis 1"; luego "hipótesis 2: alergia" con un anticuerpo/linfocito. |
-| 7 | Calor | Lo que sí se sabe: el lentinano se descompone con el calor. | Las cadenas de lentinano sobre una llama: la hélice se deshace en pedacitos. Termómetro que sube. |
-| 8 | Estudio | En Francia, los centros de toxicología revisaron los años 2014 a 2019 y hallaron cincuenta y nueve casos. | `TarjetaEstudio` "Francia · 2014–2019 · centros de toxicología · 59 casos · Boels et al., *Clin Toxicol* 2022"; mapa de Francia con 59 puntitos. |
-| 9 | Dosis | Todos se recuperaron, y entre más shiitake habían comido, más días les duró. | Tres platos (poco, medio, mucho) con barras de días: ~4, ~7, ~15 días (medianas). Chip "100 % se recuperó". |
+| 6 | Hipotesis | Una idea es que dispara señales de inflamación que abren los vasitos de tu piel. Otra, que es alergia. | Corte de piel (fondo noche): señales (puntitos) llegan y un vasito se ensancha y enrojece. Chip "hipótesis 1"; luego chip "hipótesis 2: alergia retardada" con un linfocito T (sin anticuerpos). |
+| 7 | Calor | Lo que sí se sabe: pasa con shiitake crudo o poco cocido. Y el calor fuerte desarma al lentinano. | Primero un shiitake crudo y uno a medio cocer con un ✓ de "aquí pasa". Luego la triple hélice de lentinano sobre la sartén: se separa en tres hilos sueltos (no en pedacitos). Termómetro que sube a ~140 °C. |
+| 8 | Estudio | En Francia, de 2014 a 2019, los centros de toxicología registraron cincuenta y nueve casos. | `TarjetaEstudio` "Francia · 2014–2019 · centros de toxicología · 59 casos de dermatitis · de 125 expuestos · Boels et al., *Clin Toxicol* 2022"; silueta de Francia y al lado 59 puntitos en cuadrícula (rótulo "esquemático", no son ubicaciones reales). |
+| 9 | Dosis | Todos se recuperaron, y entre más shiitake habían comido, más días les duró. | Tres platos (poco, medio, mucho) con barras de días con la palabra "mediana": 4, 7 y 15 días. Chip "100 % se recuperó". |
 | 10 | Cena | En otra serie francesa, sus invitados que lo prefirieron cocido no tuvieron nada. | Mesa compartida: el que comió crudo con rayas; los invitados con plato cocido, sonriendo, sin rayas. Chip "Boels et al., 2014". |
-| 11 | Sirve | Así que no le tengas miedo al shiitake: cocínalo bien. | Sartén con llama: los shiitakes se doran. Chips "✓ bien cocido" y "¿rayas raras? al médico". |
+| 11 | Sirve | Así que no le temas al shiitake: cocínalo bien. | Sartén con llama: los shiitakes se doran. Chips "✓ bien cocido" y "¿rayas raras? al médico". |
 | 12 | Cierre | Crudo te puede rayar la piel; bien cocido, te deja lo rico. | **Regreso a la imagen del inicio:** el mismo plato y el mismo tenedor, ahora con shiitakes dorados y humeantes; el brazo ya sin rayas. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert. |
 
-**Música:** cama grave y tranquila, sin golpe; efectos en el mismo cuadro (tenedor contra el plato, chasquido de latigazo suave al aparecer cada raya, tic-tac del cronómetro, rasquido de comezón, burbujeo al bajar al microscopio, latido al abrirse el vasito, chisporroteo de la llama al deshacerse la hélice, 59 tics del mapa, sartén al dorar).
+**Música:** cama grave y tranquila, sin golpe; efectos en el mismo cuadro (tenedor contra el plato, chasquido de latigazo suave al aparecer cada raya, tic-tac del cronómetro, rasquido de comezón, burbujeo al bajar al microscopio, latido al abrirse el vasito, chisporroteo de la sartén al separarse la hélice, 59 tics del mapa, sartén al dorar).
 
 Barras de escala: 5 cm (plato y hongo), 10 cm (brazo), 10 µm (hifa y pared), 100 µm (corte de piel).
 
@@ -50,7 +50,7 @@ Barras de escala: 5 cm (plato y hongo), 10 cm (brazo), 10 µm (hifa y pared), 10
 6. Netchiporouk, E. et al. (2015). Pustular flagellate dermatitis after consumption of shiitake mushrooms. *JAAD Case Rep.* https://pmc.ncbi.nlm.nih.gov/articles/PMC4808700/ (doi 10.1016/j.jdcr.2015.02.010)
    > "The mechanism underlying SD has not been fully elucidated." · "Although the eruption is usually considered nonallergic, 5 cases of SD resulted in positive delayed skin prick testing, suggesting that delayed-type systemic hypersensitivity may be important in its pathogenesis."
    > "Lentinan is known to promote interleukin-1–induced inflammation and vasodilatation, which may explain some of the clinical manifestations."
-7. Wang, X., Xu, X. y Zhang, L. (2008). Thermally induced conformation transition of triple-helical lentinan in NaCl aqueous solution. *J. Phys. Chem. B* 112: 10343–10351. doi 10.1021/jp802174v (para el dibujo: el lentinano es una triple hélice que el calor cambia de forma).
+7. Wang, X., Xu, X. y Zhang, L. (2008). Thermally induced conformation transition of triple-helical lentinan in NaCl aqueous solution. *J. Phys. Chem. B* 112: 10343–10351. doi 10.1021/jp802174v. Según el verificador: transición irreversible de triple hélice a cadenas sueltas a 130–145 °C (base de «el calor fuerte desarma al lentinano» y del dibujo de los tres hilos a ~140 °C; detalle y frase textual en `verificacion.md`).
 8. Nakamura, T. (1992). Shiitake (Lentinus edodes) dermatitis. *Contact Dermatitis* 27(2): 65–70. https://pubmed.ncbi.nlm.nih.gov/1395630/ (contexto; no se dice en la voz)
    > "Shiitake dermatitis was first described by Nakamura in 1977." · "From April 1974 to April 1991, I have observed 51 patients with shiitake dermatitis."
 

@@ -11,25 +11,44 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa madera no está embrujada: la hace brillar un hongo que vive adentro. | Bosque de noche (azul noche, luciérnagas no). Cuadro 0.3: una mano parte un palo podrido y por dentro brilla verde. Fantasmita de caricatura que se tacha (chip "¿embrujada? no"). |
-| 1 | Quienes | Brillan hongos como Armillaria, Mycena o Panellus. | Tres viñetas que se encienden: abanicos blancos de micelio bajo la corteza (*Armillaria*), setitas de sombrero acampanado (*Mycena*), setas en repisa sobre un tronco (*Panellus*). Etiquetas con nombre en cursiva. |
-| 2 | Raro | Y es rarísimo: solo unas cien especies de hongos lo hacen. | Una cuadrícula enorme de hongos grises; solo unos cuantos puntitos verdes. Chip "≈ 100 especies brillan". |
-| 3 | Cafeico | ¿Cómo? Convierten ácido cafeico, una sustancia muy común, en hispidina. | Zoom a una hifa (fondo oscuro, barra de escala 10 µm). Dentro: molécula "ácido cafeico" → flecha con enzima (tijera/llave) → "hispidina". |
-| 4 | Luciferina | Una enzima la cambia y sale la luciferina: el combustible de la luz. | La hispidina recibe un "+OH" y se vuelve "3-hidroxihispidina = luciferina" (chip "combustible"). |
-| 5 | Luciferasa | La luciferasa la junta con oxígeno y sale luz verde. Lo que sobra se recicla. | La luciferasa (pac-man) toma luciferina + O₂ → destello verde (chip "≈ 520–530 nm"); lo que sobra da la vuelta en flecha circular de regreso al ácido cafeico ("ciclo"). |
-| 6 | Pregunta | ¿Pero para qué gasta energía un hongo en brillar? | **Re-gancho.** "?" gigante verde; Robert grande, pensativo. |
-| 7 | Estudio | En 2013, en un bosque de Brasil, pusieron hongos falsos de acrílico con un foco verde. | Tarjeta de estudio "2013 · Piauí, Brasil · *Neonothopanus gardneri* · Oliveira et al., *Current Biology* 2015". Bosque de palmas de noche; aparecen setas de acrílico con LED verde y otras apagadas, con pegamento. |
-| 8 | Trampas | Los encendidos atraparon 42 insectos; los apagados, solo 12. | Contadores que suben: verde 42, gris 12. Insectos pegados: moscas, escarabajos, chinches, avispas, hormigas. |
-| 9 | Hipotesis | La hipótesis: los insectos se llevarían sus esporas a otros lados. | Un escarabajo se va volando con esporitas pegadas; sello "HIPÓTESIS". |
-| 10 | Reloj | Y ese hongo tiene reloj: su brillo sube y baja en un ciclo de casi un día. | Caja de Petri con micelio de *N. gardneri*; gráfica de brillo que sube y baja como ola, reloj "≈ 22 h". |
-| 11 | Jurasico | Se calcula que este truco nació hace unos 160 millones de años, en tiempos de dinosaurios. | Línea del tiempo que retrocede; un dinosaurio de caricatura mira un hongo que brilla. Chip "≈ 160 millones de años (Jurásico tardío) · estimación". |
-| 12 | Mexico | Y en bosques de niebla de México se describieron seis especies nuevas de Mycena que brillan. | Mapa de México con bosque de niebla; seis setitas verdes se encienden. Chip "6 especies nuevas · *Mycologia* 2019". |
-| 13 | Cierre | Así que esa madera no está embrujada: está viva, y quizá llamando insectos. | **Regreso a la imagen del inicio:** el mismo palo partido brillando, ahora con un escarabajo que se acerca a la luz. |
+| 0 | Gancho | Esa madera no está embrujada: la hace brillar un hongo que vive adentro. | Bosque de noche (troncos, luna, estrellas). Cuadro 0.2: un tronco podrido se parte en dos y por dentro se enciende verde, con chispitas que flotan. Aparece un fantasmita de caricatura (chip "¿embrujada?") y se tacha; chip "no: es un hongo". Etiqueta "madera podrida". |
+| 1 | Quienes | Brillan hongos como Armillaria, Mycena o Panellus. | Tres viñetas redondas en la oscuridad que se encienden una tras otra: abanicos de micelio bajo la corteza (*Armillaria*), setitas de sombrero acampanado (*Mycena*), setas en repisa pegadas a un tronco (*Panellus*). Nombres en cursiva y chip "hongos que brillan". |
+| 2 | Raro | Y es rarísimo: solo unas cien especies de hongos lo hacen. | Fondo cian: una cuadrícula de 40 hongos grises que brotan; solo dos se encienden verdes. Número gigante "≈ 100 · especies que brillan". |
+| 3 | Cafeico | ¿Cómo? Convierten ácido cafeico, una sustancia muy común, en hispidina. | Fondo oscuro, dentro de una hifa (etiqueta "dentro de una hifa"): molécula "ácido cafeico" (anillo + cola); chip "una sustancia muy común"; flecha con la enzima "hispidina sintasa" → "hispidina" (dos anillos). |
+| 4 | Luciferina | Una enzima la cambia y sale la luciferina: el combustible de la luz. | Llega un "OH" dorado, flecha con la enzima "H3H" → "luciferina (3-hidroxihispidina)" que brilla un poco. Chip "luciferina = el combustible". |
+| 5 | Luciferasa | La luciferasa la junta con oxígeno y sale luz verde. Lo que sobra se recicla. | Entra la luciferasa (pac-man cian) y una molécula de O₂; se juntan y estalla un destello verde. Chip "luz verde · ≈ 520–530 nm". Queda la molécula sobrante (rosa) y una flecha verde "se recicla" la regresa al ácido cafeico. |
+| 6 | Pregunta | ¿Pero para qué gasta energía un hongo en brillar? | **Re-gancho.** "?" gigante verde sobre lila, una setita que brilla; Robert grande, pensativo. |
+| 7 | Estudio | En 2013, en un bosque de Brasil, pusieron hongos falsos de acrílico con un foco verde. | Bosque de palmas de noche. Tarjeta "2013 · Piauí, Brasil · *Neonothopanus gardneri* · Oliveira et al., Current Biology, 2015". Brotan dos hongos falsos de acrílico que se encienden con foco verde (etiqueta "acrílico + foco verde") y dos apagados. Chip "5 noches · 19 trampas de cada tipo". |
+| 8 | Trampas | Los encendidos atraparon 42 insectos; los apagados, solo 12. | Contadores "encendidos 42" (verde) y "apagados 12" (gris). Llegan insectos y se pegan: 14 íconos en los encendidos y 4 en los apagados (cada ícono ≈ 3 insectos), casi todos moscas y escarabajos, con una chinche y una hormiga. |
+| 9 | Hipotesis | La hipótesis: los insectos se llevarían sus esporas a otros lados. | Fondo menta: seta de *Neonothopanus gardneri* (embudo) que brilla; un escarabajo se va volando con esporitas pegadas (etiqueta "esporas"). Chip "HIPÓTESIS". |
+| 10 | Reloj | Y ese hongo tiene reloj: su brillo sube y baja en un ciclo de casi un día. | Fondo rosa: ventana oscura de laboratorio con el micelio de *N. gardneri* en caja de Petri que se prende y se apaga (time-lapse); a un lado la gráfica de brillo que sube y baja ("≈ día 1, 2, 3"). Chip "≈ 22 h por ciclo · a 25 °C". |
+| 11 | Jurasico | Se calcula que este truco nació hace unos 160 millones de años, en tiempos de dinosaurios. | Fondo naranja: viñeta de noche con un saurópodo de caricatura y setitas que brillan en un tronco. Línea del tiempo que retrocede de "hoy" a "hace ≈ 160 millones de años". Chip "estimación · Jurásico tardío". |
+| 12 | Mexico | Y en bosques de niebla de México se describieron seis especies nuevas de Mycena que brillan. | Fondo amarillo: mapa de México; aparecen nubes (bosque de niebla) en zonas de montaña del centro y sur, y seis *Mycena* que se encienden una por una (ubicación esquemática). Chip "6 especies nuevas de Mycena" y etiqueta "bosques de niebla · Mycologia, 2019". |
+| 13 | Cierre | Así que esa madera no está embrujada: está viva, y quizá llamando insectos. | **Regreso a la imagen del inicio:** el mismo bosque y el mismo tronco partido brillando; un escarabajo llega volando a la luz. Chip "no está embrujada: está viva". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua, nocturna, sin golpe marcado; efectos en el mismo cuadro: crujido del palo, "ding" suave de cada hongo que se enciende, burbujeo de cada enzima, destello brillante de la luz, zumbido de insectos, pegote en cada trampa, tic del contador, olas lentas del ciclo de un día, pisada de dinosaurio, seis notitas de las especies de México.
 
-Barra de escala: 10 cm (palo), 1 cm (setitas), 10 µm (hifa y moléculas: esquemático).
+Barra de escala: 10 cm (tronco y trampas), 1 cm (setitas), 5 cm (cuadrícula, seta, Petri), 1 µm (hifa; moléculas no a escala), 1 m (dinosaurio), 500 km (mapa).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Para qué gasta energía un hongo en brillar?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.9 | 11_sorprendido | `gancho` | «esa madera no está embrujada» (cuadro 0) |
+| 2 | 7.5 | 10.3 | 04_bajando_lentes | `arriba-der` | «solo unas cien especies» |
+| 3 | 15.1 | 18.5 | 13_senalando_arriba | `izq-alto` | «la luciferina: el combustible» |
+| 4 | 23.3 | 26.2 | 07_pensativo_puno | `grande` | «¿para qué gasta energía en brillar?» |
+| 5 | 31.5 | 34.5 | 05_sonriendo_dientes_uniformes | `arriba-der` | «42 contra 12» |
+| 6 | 39.0 | 42.8 | 06_pensativo_menton | `arriba-der` | «tiene reloj» |
+| 7 | 43.5 | 48.0 | 11_sorprendido | `arriba-der` | «160 millones de años» |
+| 8 | 48.8 | 53.3 | 13_senalando_arriba | `arriba-der` | «seis especies nuevas en México» |
+| 9 | 54.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «está viva» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **32.6 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas en el texto completo el 29 oct 2026)
 

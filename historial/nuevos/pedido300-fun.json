@@ -2,63 +2,120 @@
  "temas": [
   {
    "id": "fun-10-huitlacoche",
-   "titulo": "El huitlacoche: el hongo del maíz que nos comemos (Ustilago maydis)",
+   "titulo": "Ese elote no está podrido: el huitlacoche (*Ustilago maydis*)",
    "serie": "Shot Fungi Mati",
    "numero": 10,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-10-huitlacoche",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://hort.extension.wisc.edu/articles/huitlacoche/",
+    "https://pubmed.ncbi.nlm.nih.gov/30845612/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7823922/",
+    "https://pubmed.ncbi.nlm.nih.gov/20565585/",
+    "https://colfungi.org/taxon/urn:lsid:indexfungorum.org:names:169566/general-information",
+    "https://agroatlas.ru/en/content/diseases/Zeae/Zeae_Ustilago_zeae",
+    "https://pubmed.ncbi.nlm.nih.gov/21149027/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10254540/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "El carbón del maíz en el laboratorio: Ustilago maydis y sus efectores",
+    "Hongos que se comen en México además del huitlacoche (mercados de hongos silvestres)",
+    "Cómo un hongo hace que una planta crezca tumores (agallas)"
+   ]
   },
   {
    "id": "fun-11-moho-cortar",
-   "titulo": "¿Le quitas el moho al pan o al queso y te comes el resto? (hifas invisibles y micotoxinas)",
+   "titulo": "¿Le quitas el moho y te comes el resto? Cuándo se corta y cuándo se tira",
    "serie": "Shot Fungi Mati",
    "numero": 11,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-11-moho-cortar",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://ucfoodsafety.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/26438.pdf",
+    "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/molds-food-are-they-dangerous",
+    "https://brunswick.ces.ncsu.edu/2024/09/moldy-foods-use-or-pitch",
+    "https://doi.org/10.1007/s002170000255",
+    "https://portal.fis.leibniz-lsb.tum.de/en/publications/model-studies-on-the-diffusion-behavior-of-the-mycotoxin-patulin--3/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "El moho de la mermelada: por qué se tira aunque sea poquito",
+    "La patulina del jugo de manzana y sus límites",
+    "Por qué el refri frena al moho pero no lo mata"
+   ]
   },
   {
    "id": "fun-12-caspa",
-   "titulo": "La caspa y Malassezia: la levadura que come la grasa de tu cabeza",
+   "titulo": "Esa caspa no es solo piel: la levadura que come la grasa de tu cabeza",
    "serie": "Shot Fungi Mati",
    "numero": 12,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-12-caspa",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://doi.org/10.1111/j.1087-0024.2005.10119.x",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4852869/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2141845/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3380954/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2887514/",
+    "https://www.internationaloliveoil.org/wp-content/uploads/2022/06/NC-REV-18_ENK.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4796319/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Malassezia en otras partes del cuerpo: la pitiriasis versicolor",
+    "Cómo funciona un champú anticaspa por dentro",
+    "El microbioma de tu piel: bacterias y hongos que viven contigo"
+   ]
   },
   {
    "id": "fun-13-vitamina-d",
-   "titulo": "Champiñones al sol: el hongo que fabrica vitamina D con luz UV",
+   "titulo": "Champiñones al sol: la fábrica de vitamina D",
    "serie": "Shot Fungi Mati",
    "numero": 13,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-13-vitamina-d",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/26314311/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6213178/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3897585/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7397035/",
+    "https://medlineplus.gov/ency/article/002405.htm"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Ergosterol: el blanco de muchos antifúngicos",
+    "Champiñones tratados con luz UV en el súper",
+    "Por qué tu piel hace vitamina D con el sol (y cuánto)"
+   ]
   },
   {
    "id": "fun-14-calor",
-   "titulo": "Por qué un hongo zombi no te puede atacar (tu temperatura de 37 °C te protege)",
+   "titulo": "Tu escudo de 37 grados: por qué casi ningún hongo te toca",
    "serie": "Shot Fungi Mati",
    "numero": 14,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-14-calor",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/19827944/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6650554/",
+    "https://pubmed.ncbi.nlm.nih.gov/19161556/",
+    "https://medlineplus.gov/ency/article/001982.htm",
+    "https://en.wikipedia.org/wiki/Ectotherm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3420938/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5703306/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Candida auris: la levadura que apareció en tres continentes a la vez",
+    "La fiebre como defensa contra los hongos",
+    "Por qué los insectos y las plantas sí sufren epidemias de hongos"
+   ]
   },
   {
    "id": "fun-15-queso-azul",
