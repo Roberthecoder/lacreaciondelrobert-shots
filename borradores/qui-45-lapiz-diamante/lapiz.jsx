@@ -68,7 +68,7 @@ function Hoja({ cx, cy, W = 300, H = 230, b = 40, tilt = 0.42, o = 1, brillo = 0
   </g>;
 }
 // Pila de hojas (de abajo hacia arriba). dx(i) corre cada hoja; aparece(i) 0..1.
-function Pila({ cx, base, gap = 100, n = 5, W = 300, H = 230, dx = () => 0, aparece = () => 1, debiles = 0, T = 0 }) {
+function Pila({ cx, base, gap = 100, n = 5, W = 300, H = 230, tilt = 0.3, dx = () => 0, aparece = () => 1, debiles = 0, T = 0 }) {
   const out = [];
   for (let i = 0; i < n; i++) {
     const a = aparece(i); if (a <= 0) continue;
@@ -77,7 +77,7 @@ function Pila({ cx, base, gap = 100, n = 5, W = 300, H = 230, dx = () => 0, apar
       out.push(<g key={'d' + i} opacity={debiles * (0.55 + 0.25 * Math.sin(T * 4 + i))}>{[-170, -40, 90, 210].map((ox) =>
         <line key={ox} x1={cx + ox + dx(i - 1)} y1={base - (i - 1) * gap} x2={cx + ox + dx(i)} y2={cy} stroke="#7fd6ff" strokeWidth={4} strokeDasharray="8 10" />)}</g>);
     }
-    out.push(<Hoja key={i} cx={cx + dx(i)} cy={cy} W={W} H={H} o={a} />);
+    out.push(<Hoja key={i} cx={cx + dx(i)} cy={cy} W={W} H={H} tilt={tilt} o={a} />);
   }
   return <g>{out}</g>;
 }
@@ -228,10 +228,11 @@ function LapizShot() {
       <Escena T={T} a={K.Mi} b={K.Ca} zoom={0.12} origen="37% 43%">
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Seccion T={T} x={400} y={800} nucleo={1 - parte} />
-          <Montoncito x={klerp(400, 230, parte)} y={klerp(800, 1130, parte)} color={GRAF} f={parte} seed={4} brillo borde="#0d0f12" />
-          <Montoncito x={klerp(400, 590, parte)} y={klerp(800, 1130, parte)} color="#d9a77a" f={parte} seed={9} />
+          <Seccion T={T} x={400} y={720} nucleo={1 - parte} />
+          <Montoncito x={klerp(400, 250, parte)} y={klerp(720, 1080, parte)} color={GRAF} f={parte} seed={4} brillo borde="#0d0f12" />
+          <Montoncito x={klerp(400, 600, parte)} y={klerp(720, 1080, parte)} color="#d9a77a" f={parte} seed={9} />
           {salePb < 1 && <Teselita x={klerp(850, 1320, salePb)} y={klerp(-120, 960, caePb) - salePb * 200} rot={salePb * 140 + (1 - caePb) * -20} s={0.95} />}
+          {[[250, 'grafito', K.Mi + 1.9], [600, 'arcilla', K.Mi + 2.1]].map(([x, t, at]) => <text key={t} x={x} y={1185} textAnchor="middle" opacity={kprog(T, at, at + 0.3)} style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>{t}</text>)}
           <Marca x={850} y={960} ok={false} s={0.9} o={kprog(T, K.Mi + 1.6, K.Mi + 1.9) * (1 - salePb)} />
         </SvgCapa>
       </Escena>
@@ -252,7 +253,7 @@ function LapizShot() {
         <SvgCapa>
           <rect x={90} y={1140} width={900} height={74} rx={8} fill="#fffdf6" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.De + 2.6, K.De + 3.1)} />
           <Pila T={T} cx={520} base={1000} gap={120} H={180} n={suelta > 0 ? 3 : 4} debiles={1 - slide * 0.6} dx={(i) => slide * i * 60 + Math.sin(T * 2 + i) * 4} />
-          {suelta > 0 && <Hoja cx={klerp(520 + 180, 540, suelta)} cy={klerp(640, 1176, suelta)} W={300} H={180} tilt={klerp(0.42, 0.14, suelta)} />}
+          {suelta > 0 && <Hoja cx={klerp(520 + 180, 540, suelta)} cy={klerp(640, 1176, suelta)} W={300} H={180} tilt={klerp(0.3, 0.14, suelta)} />}
         </SvgCapa>
       </Escena>
       {/* 4 · diamante: cada carbono con 4 vecinos, red 3D */}
@@ -275,9 +276,9 @@ function LapizShot() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <Noche />
         <SvgCapa>
-          <Pila T={T} cx={290} base={1100} gap={80} n={3} W={220} H={180} />
-          <Hoja cx={290} cy={klerp(860, 760, kprog(T, K.Pr + 0.3, K.Pr + 1.4, kEase.sale))} W={220} H={180} brillo={0.5 + 0.5 * Math.sin(T * 5)} />
-          <text x={290} y={620} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 290 520)`}>?</text>
+          <Pila T={T} cx={290} base={1120} gap={115} n={3} W={220} H={180} />
+          <Hoja cx={290} cy={klerp(775, 680, kprog(T, K.Pr + 0.3, K.Pr + 1.4, kEase.sale))} W={220} H={180} tilt={0.3} brillo={0.5 + 0.5 * Math.sin(T * 5)} />
+          <text x={290} y={590} textAnchor="middle" style={{ font:`400 280px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 290 520)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 7 · 2004, Manchester: cinta adhesiva una y otra vez */}
@@ -336,8 +337,6 @@ function LapizShot() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.G + 2.6} texto="plomo" x={540} y={1500} tam={52} />
       <Chip T={T} at={K.G + 2.8} until={K.Mi - 0.2} texto="grafito = diamante = C" y={1500} tam={46} borde={KC.ink} />
       <Etq T={T} at={K.G + 2.9} until={K.Mi - 0.2} x={1040} y={1170} lado="izq" texto="diamante" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Mi + 1.9} until={K.Ca - 0.2} x={40} y={1010} texto="grafito" tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Mi + 2.1} until={K.Ca - 0.2} x={1000} y={1010} lado="izq" texto="arcilla" tam={36} color={KC.texto} />
       <Chip T={T} at={K.Mi + 0.2} until={K.Mi + 1.5} texto="corte de la punta" y={1500} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Mi + 2.2} until={K.Ca - 0.2} texto="la mina: grafito + arcilla" y={1500} tam={42} borde={KC.yellow} />
       <BarraEscala T={T} at={K.Mi + 0.3} until={K.Mi + 1.4} texto="1 mm" largo={75} x={60} y={1640} />

@@ -46,3 +46,30 @@ Conteo: 22 ✅ · 8 ⚠️ · 0 ❌.
 3. **Fila 20 (pantalla 8):** en vez de "al filtrar el gas", **sacar las plántulas al aire de afuera** y ahí se enderezan.
 4. **Filas 23 y 25 (voz 9 y pantalla 9, Gane):** quitar la cifra. Propuesta de voz: **"En 1934, en Cambridge, Gane juntó el gas de un montón de manzanas maduras y probó que la fruta lo fabrica."** En pantalla, sin báscula "≈ 27 kg" (montaña de manzanas sin número) y el frasco sin "frío". (Si la sesión principal logra abrir Gane 1934 en *Nature* y encuentra ahí "60 lb", se puede volver a poner.)
 5. **Filas 26 y 28 (voz 10 y pantalla 10, incienso):** decirlo como tradición, sin "templos" y con peras. Propuesta: **"Lo curioso: se cuenta que en la antigua China quemaban incienso para madurar peras: el humo suelta etileno."** En pantalla: cuarto con incensario y peras que se doran (sin caquis; el templo puede quedar solo como ambientación o quitarse).
+
+## Re-verificación (29 oct 2026)
+
+Revisé lo que cambió en guion.md y narracion.json después de la primera verificación.
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| R1 | Pantalla 1: medidor "≈ 0.4 nm" | ✅ | Diámetro cinético 3.9–4.2 Å (Breck 1974; literatura de tamices) | ≈ 0.39–0.42 nm | 1974 / varios |
+| R2 | Pantalla 8: con aire de afuera las plántulas vuelven a crecer derechas | ✅ | Keunen et al. 2016 | "grew horizontally in the laboratory and upright in outside air" | 1901 |
+| R3 | Voz 9: "En 1934, en Cambridge, Gane juntó el gas de un montón de manzanas maduras y probó que la fruta lo fabrica." (sin cifra) | ✅ | Hao 2025; Keunen 2016; Chang 2016 | "collected metabolic gas products from about 60 pounds of … apples" · "chemical proof that plants indeed synthesize this volatile molecule themselves (Gane, 1934)" | 1934 |
+| R4 | Pantalla 9: montaña de manzanas, gas recogido y analizado, "C₂H₄ ✓" (sin báscula) | ✅ | Hao 2025 | "Gane's discovery was the first time that plants' ability to produce ethylene was confirmed through chemical analysis" | 1934 |
+| R5 | Voz 10: los plátanos de exportación viajan verdes | ✅ | EFSA PLH Panel, *EFSA Journal* 19(3):e06426 (2021), PMC7938759 (abierto) | "Commercial Musa fruits are harvested at 'green stage one' before they begin to ripen naturally." · "Green stage one fruit are transported to the EU in controlled conditions" | 2021 |
+| R6 | Voz 10: al llegar los maduran en cuartos con etileno | ✅ | EFSA 2021 | "…stimulated to ripen when exposed to exogenous ethylene in ripening rooms" · "ripened in ripening rooms where the fruit is exposed to exogenous ethylene over 4–7 days" | 2021 |
+| R7 | Pantalla 10: barco, cuarto cerrado con tanque C₂H₄ y termómetro, plátanos de verde a amarillo | ✅ (esquemático) | EFSA 2021 | Coherente con R5–R6; para la descripción: "100–150 ppm of ethylene for 24–48 h" (EFSA cita a Kader 2020) | 2021 |
+| R8 | Voz 6: "…cortados, **ya no maduran**." | ⚠️ | Paul et al. 2012 | "Ripening is slow or non-existent in non-climacteric fruits if they are detached from the plant." — la fuente dice "lenta o nula"; "ya no maduran" es absoluto (la versión anterior "casi no" sí era ✅) | 2012 |
+| R9 | Voz 5: "¿Y por qué tus uvas **nunca** maduran en el frutero?" — **sin cambio** | ⚠️ | Paul et al. 2012 | Igual que la fila 13: "nunca" es absoluto | 2012 |
+
+Lo del incienso (filas 26–28) ya no está en el guion: queda resuelto.
+
+### Correcciones pendientes
+1. **R8:** "cortados, ya no maduran" → **"cortados, casi no maduran"** (o volver a "cortados, casi no").
+2. **R9:** "¿Y por qué tus uvas nunca maduran en el frutero?" → **"¿Y por qué tus uvas no maduran en el frutero?"**
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplican tal cual las 2 propuestas de la re-verificación: «cortados, casi no maduran» y «¿Y por qué tus uvas no maduran en el frutero?».
+
+VEREDICTO: APROBADO
