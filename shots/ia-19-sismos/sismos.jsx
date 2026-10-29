@@ -284,16 +284,16 @@ function Sismos() {
       {/* 8 · una neurona contra 13 451 parámetros */}
       <Escena T={T} a={K.N} b={K.C}>
         <FondoLunares color={KC.teal} />
-        <RedNeuronal T={T} x={620} y={770} ancho={360} alto={170} capas={[4, 7, 7, 7, 1]} onda={(T * 0.6) % 1} o={kprog(T, K.N + 3.2, K.N + 3.6)} />
+        <RedNeuronal T={T} x={620} y={765} ancho={360} alto={150} capas={[4, 7, 7, 7, 1]} onda={(T * 0.6) % 1} o={kprog(T, K.N + 3.2, K.N + 3.6)} />
         {svg(<g opacity={kprog(T, K.N + 1.8, K.N + 2.1)}>
-          <circle cx={800} cy={500} r={52 * (1 + 0.06 * Math.sin(T * 5))} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-          <line x1={670} y1={475} x2={750} y2={490} stroke={KC.ink} strokeWidth={7} /><line x1={670} y1={530} x2={750} y2={512} stroke={KC.ink} strokeWidth={7} /><line x1={852} y1={500} x2={930} y2={500} stroke={KC.ink} strokeWidth={7} />
+          <circle cx={800} cy={482} r={52 * (1 + 0.06 * Math.sin(T * 5))} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
+          <line x1={670} y1={457} x2={750} y2={472} stroke={KC.ink} strokeWidth={7} /><line x1={670} y1={512} x2={750} y2={494} stroke={KC.ink} strokeWidth={7} /><line x1={852} y1={482} x2={930} y2={482} stroke={KC.ink} strokeWidth={7} />
         </g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 1.8} anio="2019" quien="Mignan y Broccardo" revista="Nature · «Una neurona contra el aprendizaje profundo»" y={760} />
-      <NumeroGigante T={T} at={K.N + 1.9} until={K.C - 0.2} valor={2} etiqueta="parámetros" x={800} y={690} tam={110} color={KC.yellow} dur={0.3} />
+      <NumeroGigante T={T} at={K.N + 1.9} until={K.C - 0.2} valor={2} etiqueta="parámetros" x={800} y={655} tam={110} color={KC.yellow} dur={0.3} />
       <NumeroGigante T={T} at={K.N + 3.4} until={K.C - 0.2} valor={13} etiqueta="parámetros" x={800} y={1060} tam={100} color={KC.red} dur={0.01} sufijo=" 451" />
-      <Chip T={T} at={K.N + 4.6} until={K.C - 0.2} texto="mismo acierto: 0.85 = 0.85" x={760} y={400} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.N + 4.6} until={K.C - 0.2} texto="mismo acierto: 0.85 = 0.85" x={760} y={385} tam={28} borde={KC.leaf} />
       {/* 9 · cierre: el mismo celular, a la basura */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />

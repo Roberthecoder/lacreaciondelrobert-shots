@@ -1,7 +1,7 @@
 # Shot IA #18 · Una IA ve en tu retina lo que los oftalmólogos no saben ver
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #18 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, pendiente de verificación independiente. Sin animación todavía. Voz pendiente de aprobación de Robert.
+- **Estado (29 oct 2026):** guion verificado (verificacion.md; los 5 ⚠️ corregidos), animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · **voz pendiente de aprobación de Robert** (~949 créditos).
 - **Formato:** N1 "Por dentro": de tu ojo (macro) → por la pupila a la foto de la retina (fondo oscuro) → el mapa de atención de la IA → de regreso al mismo ojo, transformado.
 - **Gancho (de los 7):** #7 "Algo que tus ojos nunca van a ver", en versión cuidadosa ("no saben ver"): si una retina es de hombre o de mujer.
 - **Duración:** voz 949 caracteres (≈ 57.8 s) + cierre 3.5 s → **61.3 s** en la base.
@@ -25,6 +25,25 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua y suave; parpadeo con un "swish", el zoom por la pupila con un barrido; el contador de pacientes con tecleo; cada palomita de los 97 pares con un "tic" breve; el mapa de calor se enciende con un zumbido eléctrico; el sello de la FDA con golpe seco; al final un acorde abierto.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Cómo ve lo que ni los especialistas en retina saben ver?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.6 | 11_sorprendido | `gancho` | «algo que tus ojos no saben ver» (cuadro 0) |
+| 2 | 8.8 | 12.2 | 13_senalando_arriba | `arriba-der` | señala la retina: vasos y disco óptico |
+| 3 | 19.0 | 22.3 | 04_bajando_lentes | `arriba-der` | «adivinó la edad con unos tres años de error» |
+| 4 | 24.3 | 28.1 | 11_sorprendido | `arriba-der` | «noventa y siete de cada cien veces» |
+| 5 | 32.7 | 35.9 | 07_pensativo_puno | `grande` | «¿Cómo ve lo que ni los especialistas…?» |
+| 6 | 40.1 | 42.6 | 06_pensativo_menton | `izq-alto` | «para el sexo, sobre todo el disco óptico» |
+| 7 | 43.0 | 46.1 | 10_serio_molesto | `arriba-der` | «es una pista, no un diagnóstico» |
+| 8 | 48.3 | 53.0 | 05_sonriendo_dientes_uniformes | `izq-alto` | «Lo que sí se usa… daño por diabetes» |
+| 9 | 53.6 | 57.7 | 13_senalando_arriba | `arriba-der` | «esa foto de tu ojo cuenta de ti mucho más» |
+| — | 57.8 | 61.3 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 31.7 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.3 s
 
 ## Fuentes (cada cifra se abrió en la fuente original el 29 oct 2026)
 

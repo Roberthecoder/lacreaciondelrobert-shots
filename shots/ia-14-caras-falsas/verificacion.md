@@ -42,3 +42,25 @@
 3. **#15 "Un equipo de Australia" (⚠️ leve).** Voz: "un equipo dirigido desde Australia" (o "un equipo de la Universidad Nacional Australiana y otros países"). La tarjeta "Universidad Nacional Australiana" puede quedarse si añade "y colaboradores".
 4. **#17 Etiqueta de barras (⚠️ leve).** Cambiar a "caras **blancas** de IA juzgadas humanas 65.9 %" vs "caras **blancas** reales 51.1 %".
 5. **#19 Medidor de seguridad (⚠️ leve).** Dibujarlo como comparación entre personas (p. ej., varias figuritas: las que fallan más tienen el medidor de seguridad más alto), no como un medidor que sube con el tiempo.
+
+## Re-verificación
+
+- **Fecha:** 29 oct 2026. Mismo verificador independiente. Revisé solo lo que cambió: la voz en `narracion.json`, la tabla de `guion.md` y los textos de `carasfalsas.jsx` (subtítulos, chips, tarjetas, barras, sellos).
+
+| # | Frase / elemento nuevo | Veredicto | Fuente | Frase textual / comprobación | Año |
+|---|---|---|---|---|---|
+| R1 | Gancho: "¿Cuál de estas dos caras es real? Ojo: la IA ya inventa caras. Elige; la respuesta, al final." · chips "¿Cuál es real?", "la IA ya inventa caras" | ✅ | F1 | Ya no afirma que una de las dos caras dibujadas sea de IA. "La IA ya inventa caras": "We selected 400 faces synthesized using the state-of-the-art StyleGAN2" | 2022 |
+| R2 | "En 2022, investigadores de Inglaterra y California pusieron a 315 personas a ver caras reales y de la IA StyleGAN2." · tarjeta "2022 · Lancaster (Inglaterra) y Berkeley (California) · Nightingale y Farid · PNAS" · chips "315 personas", "128 caras c/u", "IA: StyleGAN2" | ✅ | F1 | "Lancaster University, Lancaster LA1 4YW, United Kingdom; … University of California, Berkeley, CA 94720" · "315 participants classified, one at a time, 128 of the 800 faces as real or synthesized" | 2022 |
+| R3 | "Atinaron 48 %. Con un volado sacas 50." · subtítulo "Atinaron 48 %. Un volado: 50 %." | ✅ | F1 | "The average accuracy is 48.2% … close to chance performance of 50%" | 2022 |
+| R4 | "A otro grupo le enseñaron pistas para cacharla. Subió a 59 %: apenas mejor." · pizarrón "Tutorial: errores típicos de la IA" con palomitas genéricas · barras "sin entrenar 48.2 %" vs "con pistas y avisos de acierto 59 %" con raya "azar 50 %" | ✅ | F1 | "shown a short tutorial describing examples of specific rendering artifacts that can be used to identify synthetic faces … participants received feedback after each response" · "The average accuracy improved slightly to 59.0%" · "only slightly above chance". Ya no se inventan pistas concretas. | 2022 |
+| R5 | Re-gancho "¿Y si eliges la que te da más confianza?" | ✅ (es pregunta, no dato) | — | — | — |
+| R6 | "En 2023, un equipo dirigido desde Australia vio que las caras blancas de IA parecían más humanas que las reales." · tarjeta "2023 · Universidad Nacional Australiana y colaboradores · Miller et al. · Psychological Science" · barras "% juzgadas «humanas» · caras blancas": "caras blancas de IA 65.9 %" vs "caras blancas reales 51.1 %" | ✅ | F2 | Autora responsable: "Amy Dawel, Australian National University" (coautores en Toronto, Aberdeen, Australia Occidental y UCL) · "White AI faces were judged as human significantly more often than White human faces, MAI = 65.9% versus Mhuman = 51.1%" | 2023 |
+| R7 | "Los que más fallaban eran los más seguros." · dos figuritas "entre personas · ilustrativo" (la que más falla, más segura) | ✅ | F2 | "people who made the most errors in this task were the most confident (a Dunning-Kruger effect)". Ahora se dibuja como comparación entre personas y dice "ilustrativo". | 2023 |
+| R8 | Consejo: "No le creas a «se ve real»: fíjate quién publicó la foto y de dónde salió." · chips "¿quién la publicó?", "¿de dónde salió?" | ✅ (recomendación, no dato) | — | Va con lo que muestran F1 y F2: a simple vista la gente no distingue las caras. | — |
+| R9 | Cierre: "¿Cuál era real? Ninguna: las dos las dibujamos. Con fotos reales, ¿en cuál confiarías?" · sello "DIBUJO" en ambas · chip "ninguna ✏️" · subtítulo "Ninguna: son dibujos." | ✅ | guion (notas) | Es cierto: las dos caras son dibujos del shot. Corrige la ⚠️ #20. | — |
+
+Nota menor (no bloquea): el visor de R2 pasa "una cara nueva cada medio segundo". En el estudio, cada participante tenía tiempo ilimitado ("Participants had an unlimited amount of time to respond"). El visor no dice nada en pantalla ni en la voz sobre el tiempo, así que solo es ritmo de la animación.
+
+**Re-verificación: 9 ✅ · 0 ⚠️ · 0 ❌.** Las cinco ⚠️ de la primera revisión (#9, #15, #17, #19 y #20) quedaron corregidas.
+
+VEREDICTO: APROBADO

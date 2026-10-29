@@ -279,7 +279,7 @@ function EnergiaPregunta() {
           
         </>)}
       </Escena>
-      <Chip T={T} at={K.A + 0.2} until={K.R - 0.2} texto="Agencia Internacional de Energía" x={540} y={330} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.A + 0.2} until={K.R - 0.2} texto="Agencia Internacional de Energía" x={460} y={330} tam={32} borde={KC.ink} />
       {T >= K.A + 2.6 && T <= K.R + 0.4 && (() => { const o = kprog(T, K.A + 2.6, K.A + 3.0) * (1 - kprog(T, K.R - 0.1, K.R + 0.4)), g1 = kprog(T, K.A + 3.0, K.A + 4.4, kEase.sale), g2 = kprog(T, K.A + 5.4, K.A + 6.8, kEase.sale);
         const fila = (txt, sub, w, g, color, icono, top) => <div style={{ position:'absolute', left:70, top, width:940 }}>
           <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink, marginLeft:120 }}>{txt} <span style={{ font:`700 26px ${KF.mono}`, color:'#5a524a' }}>{sub}</span></div>
@@ -293,7 +293,7 @@ function EnergiaPregunta() {
         return <div style={{ position:'absolute', inset:0, zIndex:40, opacity:o }}>
           {fila('Centros de datos del mundo', '· 2030', 800, g1, KC.orange, icoDatos, 790)}
           {fila('Japón entero', '· hoy', 760, g2, KC.coral, icoJapon, 975)}
-          <div style={{ position:'absolute', left:770, top:792, font:`900 30px ${KF.texto}`, color:KC.red, whiteSpace:'nowrap', opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
+          <div style={{ position:'absolute', left:790, top:918, font:`900 28px ${KF.texto}`, color:KC.red, whiteSpace:'nowrap', opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
         </div>; })()}
 
       {T >= L9 && T <= K.R + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:44, opacity:1 - kprog(T, K.R - 0.1, K.R + 0.4) }}>{svgK(<><g transform={`translate(560 960) rotate(-8) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
