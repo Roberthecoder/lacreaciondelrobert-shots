@@ -267,12 +267,12 @@ function CalorShot() {
       <Escena T={T} a={K.Hi} b={K.A} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>{DEFS14}
-          <rect x={0} y={1180} width={KW} height={800} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
-          <ellipse cx={680} cy={1110} rx={190} ry={110} fill="url(#calorBrillo)" opacity={0.9} />
-          <Raton x={680} y={1180} s={1.6} />
-          <ellipse cx={880} cy={1020} rx={210} ry={200} fill="url(#calorBrillo)" opacity={kprog(T, K.Hi + 0.6, K.Hi + 1.2)} />
-          {T > K.Hi + 0.6 && <Perro x={850} y={1180} s={1.3 * kprog(T, K.Hi + 0.6, K.Hi + 1.1, kEase.rebote)} />}
-          <Rebotes T={T} t0={K.Hi + 1.0} t1={K.A + 0.3} x0={980} y0={760} cx={820} cy={1080} rx={-200} ry={150} n={5} />
+          <rect x={0} y={1110} width={KW} height={800} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
+          <ellipse cx={660} cy={1050} rx={170} ry={110} fill="url(#calorBrillo)" opacity={0.9} />
+          <Raton x={660} y={1110} s={1.25} />
+          <ellipse cx={880} cy={960} rx={210} ry={200} fill="url(#calorBrillo)" opacity={kprog(T, K.Hi + 0.6, K.Hi + 1.2)} />
+          {T > K.Hi + 0.6 && <Perro x={900} y={1110} s={1.15 * kprog(T, K.Hi + 0.6, K.Hi + 1.1, kEase.rebote)} />}
+          <Rebotes T={T} t0={K.Hi + 1.0} t1={K.A + 0.3} x0={980} y0={760} cx={820} cy={1010} rx={-200} ry={150} n={5} />
           <Sello14 T={T} at={K.Hi + 1.6} x={790} y={700} texto="HIPÓTESIS" color={KC.violet} r={130} />
         </>)}
       </Escena>

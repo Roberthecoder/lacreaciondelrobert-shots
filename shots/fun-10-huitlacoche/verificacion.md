@@ -45,4 +45,15 @@ Fuentes abiertas:
 
 **Resumen:** todas las afirmaciones de voz y pantalla quedan ✅ (16 filas). Se corrigió "la bola gris es un hongo" → "grano tomado por un hongo", "plaga" → "enfermedad", "21 pueblos indígenas" (cifra sin fuente primaria) → "nombre en muchas lenguas" con nombres de la Tabla 1 de Villagrán 2023, "en la Universidad de Illinois" → "investigadores de la Universidad de Illinois", y "131 g" ahora dice "de huitlacoche".
 
-VEREDICTO: APROBADO
+## Revisión final (animación y publicación) · 29 oct 2026
+
+Se releyeron `narracion.json` final (recortes en Entra, Hifas, Estudio, Enfermedad y Modelo: mismo contenido, siguen ✅), todos los textos en pantalla de `huitlacoche.jsx` (chips, etiquetas, `TarjetaEstudio`, `NumeroGigante` + chip "de huitlacoche por mazorca", contador "DÍAS DESPUÉS DE INOCULAR", subtítulos, mapa con cuitlacoche·náhuatl en Tlaxcala, ta’ chak·maya en Yucatán y bia’huí’·zapoteco en Oaxaca, barras de escala; las de 5,000 km sobre el globo y 500 km sobre el mapa coinciden con la proyección) y `publicacion.md` completo.
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Voz final: "…investigadores de la Universidad de Illinois pusieron a propósito el hongo en pelos de elotes"; "En casi todo el mundo es una enfermedad"; "es modelo de cómo un hongo enferma a una planta" | ✅ | [PC], [UW], [BR] | ver filas 10, 10b, 13 y 15 | 2003 / 2024 / 2009 |
+| F2 | Pantalla: "maíz: Zea mays", "pelos (estigmas)", "grano (ovario)", "teliosporas", "organismo modelo de laboratorio", "agallas en la planta", mapa de nombres | ✅ | [PC], [SM], [V], [BR] | "ears of Zea mays"; "maize stigmas (silks)"; Tabla 1; "tumors on all aerial parts of maize" | 2003 / 1993 / 2023 / 2009 |
+| F3 | `publicacion.md` · TikTok, YouTube, Facebook, LinkedIn, Threads y comentario fijado | ✅ | todas | (mismos datos verificados en las filas 1–16) | — |
+| F4 | `publicacion.md` · **Instagram:** "En 2003, **en la Universidad de Illinois**, lo inocularon a propósito y sacaron hasta **131 g por mazorca**" | ⚠️ | [PC] | Repite la redacción ya corregida en la voz (el resumen solo da la afiliación, no dónde fue el ensayo) y la cifra no dice de qué es. Arreglo: "En 2003, investigadores de la Universidad de Illinois lo inocularon a propósito y sacaron hasta 131 g de huitlacoche por mazorca" | 2003 |
+
+Pendiente: fila F4. Sin línea de veredicto hasta corregirla.

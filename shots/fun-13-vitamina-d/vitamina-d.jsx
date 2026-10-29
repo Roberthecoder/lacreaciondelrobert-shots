@@ -340,18 +340,18 @@ function VitaminaDShot() {
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="15 min de sol de mediodía" x={420} y={770} tam={38} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.O} texto="5 cm" largo={190} color={KC.ink} />
-      <BarraEscala T={T} at={K.O} until={K.E} texto="10 cm" largo={160} />
-      <BarraEscala T={T} at={K.E} until={K.L} texto="5 nm" largo={300} />
-      <BarraEscala T={T} at={K.L} until={K.Pi} texto="0.5 nm" largo={120} />
-      <BarraEscala T={T} at={K.Pi} until={K.P} texto="5 cm" largo={150} color={KC.ink} />
-      <BarraEscala T={T} at={K.P} until={K.Es} texto="5 cm" largo={120} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.O} texto="2 cm" largo={160} color={KC.ink} />
+      <BarraEscala T={T} at={K.O} until={K.E} texto="10 cm" largo={280} />
+      <BarraEscala T={T} at={K.E} until={K.L} texto="5 nm" largo={340} />
+      <BarraEscala T={T} at={K.L} until={K.Pi} texto="0.5 nm" largo={260} />
+      <BarraEscala T={T} at={K.Pi} until={K.P} texto="5 cm" largo={200} color={KC.ink} />
+      <BarraEscala T={T} at={K.P} until={K.Es} texto="5 cm" largo={250} color={KC.ink} />
       <BarraEscala T={T} at={K.Es} until={K.Sa} texto="5 cm" largo={120} color={KC.ink} />
-      <BarraEscala T={T} at={K.Sa} until={K.H} texto="5 cm" largo={100} color={KC.ink} />
-      <BarraEscala T={T} at={K.Cu + 2.8} until={K.Tr} texto="5 cm" largo={150} color={KC.ink} />
-      <BarraEscala T={T} at={K.Tr} until={K.Tr + 2.4} texto="5 cm" largo={160} color={KC.ink} />
+      <BarraEscala T={T} at={K.Sa} until={K.H} texto="5 cm" largo={120} color={KC.ink} />
+      <BarraEscala T={T} at={K.Cu + 2.8} until={K.Tr} texto="5 cm" largo={200} color={KC.ink} />
+      <BarraEscala T={T} at={K.Tr} until={K.Tr + 2.4} texto="5 cm" largo={280} color={KC.ink} />
       <BarraEscala T={T} at={K.Tr + 2.4} until={K.C} texto="50 cm" largo={170} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={140} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={160} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.O - 0.1} texto="No es solo comida: *es una fábrica de vitamina D.*" />

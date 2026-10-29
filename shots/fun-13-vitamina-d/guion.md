@@ -14,15 +14,15 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese champiñón no es solo comida: es una fábrica de vitamina D que se prende con sol. | Fondo amarillo: un champiñón blanco (*Agaricus bisporus*) sobre una tabla de cocina; cuadro 0.3: le cae un rayo de sol y se le encienden "focos" en el sombrero. Chip "vitamina D ☀". |
+| 0 | Gancho | Ese champiñón no es solo comida: es una fábrica de vitamina D que se prende con sol. | Fondo amarillo: un champiñón blanco (*Agaricus bisporus*) sobre una tabla de cocina; cuadro 0.3: le cae un rayo de sol y se le encienden "focos" en el sombrero. Chip "vitamina D"; etiquetas "champiñón" y *Agaricus bisporus*. |
 | 1 | Oscuras | Casi todos los del súper crecen a oscuras: casi sin vitamina D. | Cuarto de cultivo a oscuras (fondo noche): charolas con champiñones brotando. Medidor de vitamina D casi vacío: "< 1 µg por 100 g (fresco)". Chip chico: "algunos de tienda ya vienen tratados con luz UV". Etiqueta champiñón *Agaricus bisporus*. |
-| 2 | Ergosterol | En sus membranas hay ergosterol, una molécula parecida al colesterol. | Bajamos al microscopio (fondo oscuro): membrana de una célula del hongo con moléculas de ergosterol (4 anillos + cola) metidas entre los lípidos. Al lado, la silueta del colesterol: "se parecen". |
+| 2 | Ergosterol | En sus membranas hay ergosterol, una molécula parecida al colesterol. | Bajamos al microscopio (fondo oscuro): membrana de una célula del hongo con moléculas de ergosterol (4 anillos + cola) metidas entre los lípidos. Luego la membrana se apaga y quedan lado a lado "ergosterol (hongo)" ≈ "colesterol (tú)". |
 | 3 | Luz | Con luz ultravioleta, el ergosterol se vuelve previtamina D2 y luego vitamina D2. | Rayos UV morados entran; un anillo del ergosterol se abre → "previtamina D2" → se acomoda → "vitamina D2" (brilla). |
-| 4 | Piel | Tu piel hace casi lo mismo con sol, pero fabrica D3. | Pantalla dividida: a la izquierda la membrana del hongo (D2), a la derecha tu piel (D3). Chips "hongo → D2" · "tu piel → D3". |
+| 4 | Piel | Tu piel hace casi lo mismo con sol, pero fabrica D3. | Fondo cian, un sol arriba que lanza un rayo a cada lado: a la izquierda una rebanada de champiñón (D2), a la derecha un brazo (tu piel, D3). Chips "hongo → D2" · "tu piel → D3". |
 | 5 | Pregunta | ¿Y cuánto sol necesita un champiñón? | **Re-gancho.** "?" gigante sobre el champiñón; Robert grande, pensativo. |
 | 6 | Estudio | En 2015, un equipo de Alemania y Dinamarca puso champiñones rebanados al sol. | Tarjeta "2015 · Alemania y Dinamarca · Urbain y Jakobsen · J. Agric. Food Chem."; rebanadas de champiñón extendidas en una charola bajo el sol de mediodía (sin rótulo de lugar); arranca el cronómetro. |
-| 7 | Resultado | En quince minutos: 17.6 microgramos de vitamina D por cada 100 gramos de champiñón. | Cronómetro llega a 15:00; el medidor se llena: "17.6 µg de vitamina D2 por 100 g de champiñón fresco". |
-| 8 | Salmon | Comparable al salmón, y más de lo recomendado al día para la mayoría de adultos. | Junto a la charola aparece un filete de salmón ("comparable"); barra "adulto de 19 a 70 años: 15 µg al día" (letra chica: "mayores de 70: 20 µg") que la de los champiñones rebasa. |
+| 7 | Resultado | En quince minutos: 17.6 microgramos de vitamina D por cada 100 gramos de champiñón. | Cronómetro de 00:00 a 15:00; las rebanadas se encienden y el medidor sube; chip "17.6 µg de vitamina D2 por 100 g de champiñón fresco". |
+| 8 | Salmon | Comparable al salmón, y más de lo recomendado al día para la mayoría de adultos. | Fondo menta: un filete de salmón ("salmón: comparable") y dos barras: "champiñón al sol 17.6 µg" contra "adulto de 19 a 70 años: 15 µg al día" (letra chica: "mayores de 70: 20 µg") que la de los champiñones rebasa. |
 | 9 | Hora | Subió una hora, se estancó y, con horas de más, bajó. | Gráfica: sube recto la 1.ª hora, se aplana, y con 2 h extra cae. Chip "más sol ≠ más vitamina". |
 | 10 | Cuerpo | Sí la aprovechas: en un estudio pequeño de 2013, la D2 del champiñón llegó a la sangre igual que un suplemento de D2. | Tarjeta "25 adultos, 3 meses · cápsulas de polvo de champiñón · Keegan et al., 2013"; dos tubos de sangre que se llenan igual: "D2 de champiñón" y "suplemento de D2". |
 | 11 | Truco | Rebanados hacen más que enteros; en el refri la guardan una semana. | Champiñón entero vs. rebanado al sol (el rebanado brilla más); luego un refri con un calendario de 7 días. |
@@ -33,7 +33,31 @@
 cuadro: "clic" de cada foco que se enciende, zumbido de los rayos UV, chasquido del anillo que se abre, tic del cronómetro,
 "ding" al llegar a 15 min, subida del medidor, burbujeo de los tubos de sangre, cuchillo al rebanar, puerta del refri.
 
-Barras de escala: 5 cm (champiñón y charola), 10 nm (membrana con moléculas), 10 cm (salmón y refri).
+Barras de escala (siempre visibles salvo en la gráfica): 2 cm (champiñón del gancho), 10 cm (charolas del cuarto de cultivo),
+5 nm (membrana), 0.5 nm (molécula), 5 cm (rebanadas, charola, salmón, tubos, champiñón entero y cierre), 50 cm (refri).
+Detalles de pantalla: en el estudio de 2015 el sol va a la izquierda (sin rótulo de lugar); el chip "rebanados, al sol de
+mediodía"; el cronómetro corre de 00:00 a 15:00 y el medidor sube a 17.6 µg / 100 g; los tubos de sangre llevan arriba los
+rótulos "D2 de champiñón" y "suplemento de D2"; en la gráfica, rótulos "1.ª hora", "se estanca" y "2 h más".
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y cuánto sol necesita un champiñón?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «es una fábrica de vitamina D» (cuadro 0) |
+| 2 | 5.7 | 8.8 | 06_pensativo_menton | `izq-alto` | «crecen a oscuras: casi sin vitamina D» |
+| 3 | 13.8 | 18.0 | 13_senalando_arriba | `arriba-der` | los rayos UV y el anillo que se abre |
+| 4 | 21.7 | 24.2 | 07_pensativo_puno | `grande` | «¿Y cuánto sol necesita un champiñón?» |
+| 5 | 25.9 | 28.9 | 04_bajando_lentes | `arriba-der` | el experimento de 2015 (rebanadas al sol) |
+| 6 | 34.0 | 36.1 | 11_sorprendido | `izq-alto` | «comparable al salmón» |
+| 7 | 39.0 | 41.9 | 06_pensativo_menton | `arriba-der` | «subió, se estancó y bajó» |
+| 8 | 45.5 | 48.9 | 02_apuntando_camara | `arriba-der` | «sí la aprovechas» (los tubos se llenan igual) |
+| 9 | 49.4 | 53.1 | 13_senalando_arriba | `arriba-der` | «rebanados hacen más» y el refri |
+| 10 | 53.7 | 58.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «es tu fábrica de vitamina D» |
+| — | 58.4 | 61.6 | 02_apuntando_camara | CierreMarca | cierre |
+
+Apariciones 10 · **34.2 s** en pantalla (+ cierre 3.2 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

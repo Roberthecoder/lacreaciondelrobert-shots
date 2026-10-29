@@ -2,8 +2,8 @@
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #18 · rama `pedido300/fun`.
 - **Formato:** N2 "El número" (número gigante "8,000 vs 20" del caso de Kenia) con gancho 6 y cierre con **qué sí sirve**; viaje macro (bolsa de cacahuates) → micro (moho y ADN) → macro (la misma bolsa).
-- **Gancho (de los 7):** #6 "Mito peligroso ¿Por qué NO…?": «¿Por qué no debes comerte el cacahuate arrugado o manchado del fondo de la bolsa?»
-- **Duración:** voz 1000 caracteres / 170 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
+- **Gancho (de los 7):** #6 "Mito peligroso ¿Por qué NO…?": «¿Por qué no debes comer el cacahuate arrugado del fondo de la bolsa?»
+- **Duración:** voz 1000 caracteres / 174 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** útil y sin alarmismo (prevención en la cocina). No es consejo médico.
 
@@ -11,19 +11,19 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | ¿Por qué no debes comerte el cacahuate arrugado o manchado del fondo de la bolsa? | Fondo amarillo: una bolsa de cacahuates se voltea (cuadro 0.3) y caen cacahuates; el último sale arrugado y con manchas. Chip "¿este también?". |
-| 1 | Invisible | Porque puede traer aflatoxinas: un veneno sin olor, sabor ni color. | Lupa sobre el cacahuate: tres íconos que se tachan "olor ✗ · sabor ✗ · color ✗". Etiqueta "aflatoxinas". |
-| 2 | Moho | Las fabrican mohos como *Aspergillus flavus* en maíz, cacahuate, nueces o chiles guardados con calor y humedad. | Bodega con costales de maíz, cacahuate, nueces y chiles secos; termómetro y gotas de humedad suben. Colonia verde amarillenta de *Aspergillus flavus* (etiqueta nombre común "moho amarillo verdoso" + *científico*); zoom al conidióforo (vesícula redonda con cadenas de esporas). |
-| 3 | Cocinar | Y tostarlas o freírlas no las elimina del todo. | Comal y sartén: los cacahuates se tuestan; las moléculas (hexágonos naranjas) siguen ahí. Chip "el calor de la cocina no basta". |
+| 0 | Gancho | ¿Por qué no debes comer el cacahuate arrugado del fondo de la bolsa? | Fondo amarillo: una bolsa de cacahuates se voltea (cuadro 0.3) y caen cacahuates; el último sale arrugado y con manchas. Chip "¿este también?". |
+| 1 | Invisible | Porque puede traer aflatoxinas: veneno sin olor, sabor ni color. | Lupa sobre el cacahuate: tres íconos que se tachan "olor ✗ · sabor ✗ · color ✗". Etiqueta "aflatoxinas". |
+| 2 | Moho | Las hace el moho *Aspergillus flavus* en maíz, cacahuate, nueces o chiles guardados con calor y humedad. | Bodega con costales de maíz, cacahuate, nueces y chiles secos; termómetro y gotas de humedad suben. Colonia verde amarillenta de *Aspergillus flavus* (etiqueta nombre común "moho amarillo verdoso" + *científico*); zoom al conidióforo (vesícula redonda con cadenas de esporas). |
+| 3 | Cocinar | Y tostarlas o freírlas no las quita del todo. | Comal y sartén: los cacahuates se tuestan; las moléculas (hexágonos naranjas) siguen ahí. Chip "el calor de la cocina no basta". |
 | 4 | Pregunta | ¿Y adentro de ti, qué hacen? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
-| 5 | ADN | Tu cuerpo las transforma en una molécula que se pega a tu ADN. | Fondo oscuro: célula; la molécula cambia de forma (una "mano" reactiva) y se engancha a un escalón de la doble hélice. |
-| 6 | Cancer | Por eso la OMS las considera cancerígenas para humanos: se asocian con cáncer de hígado. | Hígado dibujado con un sello "Grupo 1 · IARC (OMS)". |
+| 5 | ADN | Tu cuerpo las vuelve una molécula que se pega a tu ADN. | Fondo oscuro: célula; la molécula cambia de forma (una "mano" reactiva) y se engancha a un escalón de la doble hélice. |
+| 6 | Cancer | Por eso la agencia contra el cáncer de la OMS las clasifica como cancerígenas para humanos: se asocian con cáncer de hígado. | Hígado dibujado con un sello "Grupo 1 · IARC, la agencia contra el cáncer de la OMS". |
 | 7 | Estudio | En 2004, en Kenia, cosecharon maíz en plenas lluvias y lo guardaron húmedo. | Tarjeta "2004 · Kenia · CDC (MMWR), 2004"; lluvia sobre la milpa y un granero con maíz húmedo. |
-| 8 | Numero | Algunas muestras traían hasta ocho mil partes por mil millones; el límite: veinte. | **Número gigante "8,000"** contra una barrita "20 (límite)": la barra de 8,000 sale de la pantalla. Unidad "ppb = partes por mil millones". |
-| 9 | Brote | Para julio había trescientos diecisiete enfermos con piel amarilla; ciento veinticinco murieron. | Cuadrícula de 317 personitas que se ponen amarillas; 125 se apagan. Chips "317 casos" y "125 muertes". |
-| 10 | Pavos | Las descubrieron cuando murieron cien mil pavitos en Inglaterra por comer harina de cacahuate. | Una parvada de pavitos y un costal "harina de cacahuate"; chip "Inglaterra, principios de los 60". |
-| 11 | Sirve | Lo que sí sirve: secar bien el grano, guardarlo seco y fresco, y tirar lo mohoso, arrugado o descolorido. | Tres chips con palomita: "✓ secar bien" (sol sobre el grano), "✓ guardar seco y fresco", "✓ tirar mohoso, arrugado o descolorido". |
-| 12 | Cierre | Así que ese cacahuate arrugado del fondo de la bolsa: a la basura. | **Regreso a la imagen del inicio:** la misma bolsa y el mismo cacahuate arrugado, que ahora cae al bote de basura. |
+| 8 | Numero | En comida de algunas casas había hasta ocho mil partes por mil millones; el límite: veinte. | **Número gigante "8,000"** contra una barrita "20 (límite)": la barra de 8,000 sale de la pantalla. Unidad "ppb = partes por mil millones" y nota chica "aflatoxina B1 · comida de las casas". |
+| 9 | Brote | Para julio: trescientos diecisiete enfermos con piel amarilla, ciento veinticinco muertos. | Cuadrícula de 317 personitas que se ponen amarillas; 125 se apagan. Chips "317 casos" y "125 muertes". |
+| 10 | Pavos | Se descubrieron en 1960: murieron cien mil pavitos en Inglaterra que comieron harina de cacahuate con moho. | Una parvada de pavitos y un costal "harina de cacahuate" con manchas de moho; chip "Inglaterra, 1960". |
+| 11 | Sirve | Lo que sí sirve: secar y guardar el grano seco y fresco; tirar lo mohoso, arrugado o descolorido. | Tres chips con palomita: "✓ secar" (sol sobre el grano), "✓ guardar seco y fresco", "✓ tirar mohoso, arrugado o descolorido". |
+| 12 | Cierre | Así que ese cacahuate arrugado del fondo: a la basura. | **Regreso a la imagen del inicio:** la misma bolsa y el mismo cacahuate arrugado, que ahora cae al bote de basura. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y un poco tensa, sin golpe, que se abre y aclara en "Lo que sí sirve". Efectos en el mismo cuadro: crujido de la bolsa y cacahuates que caen, tres tachones (olor/sabor/color), goteo y zumbido de la bodega, chisporroteo del comal y la sartén, "clic" de la molécula al pegarse al ADN, golpe del sello, lluvia, la barra de 8,000 que sube, tics de las personitas, pavitos, tres palomitas y el golpe del bote de basura.
