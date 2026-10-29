@@ -334,8 +334,7 @@ function Tamiz() {
       <Lupa T={T} at={K.Ha + 2.0} until={K.Ho - 0.3} x={830} y={1020} r={180} fx={PLX + discos[PKU][0]} fy={PLY + discos[PKU][1]} interior={(t, r) => InteriorHalo(t, r, K.Ha + 2.0)} tinte={KC.mint} etiqueta="AL MICROSCOPIO · halo" />
       {T < K.Ta && <Escala T={T} z={1} pxPorMm={9.4} />}
       {T > K.Pr && T < K.Gu && <Escala T={T} z={1} pxPorMm={100} />}
-      {T > K.Bu + 1.4 && T < K.En - 0.3 && <Escala T={T} z={1} pxPorMm={13000} objetivo={260} />}
-      {T > K.Ag && T < K.Ho && <Escala T={T} z={1} pxPorMm={7.3} />}
+      {T > K.Bu + 1.4 && T < K.En - 0.3 && <Escala T={T} z={1} pxPorMm={9000} objetivo={260} />}
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.2} until={K.Ta - 0.3} texto="¿un análisis cualquiera?" x={300} y={470} tam={40} />

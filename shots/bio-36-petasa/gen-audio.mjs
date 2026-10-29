@@ -27,7 +27,7 @@ m.sube(No + 0.15, 0.6, 50, 62, 0.04);                                           
 m.whoosh(Pe - 0.2, 0.6, 0.08);                                                         // entramos al microscopio
 for (let k = 0; k < 5; k++) m.tic(corte(k), 0.12, 2600);                               // cortes de la PETasa
 for (let i = 0; i < 6; i++) { m.tic(parte(i), 0.12, 1100); m.nota(parte(i) + 0.05, m.ESC[2 + i], 0.04, 0.4); } // la MHETasa parte cada pedacito
-for (let i = 0; i < 6; i++) m.pop ? m.pop(Pz + 1.1 + i * 0.22 + 0.5, 0.08) : m.burbuja(Pz + 1.1 + i * 0.22 + 0.5, 0.08, 700); // se las come
+for (let i = 0; i < 6; i++) m.burbuja(Pz + 1.1 + i * 0.22 + 0.5, 0.08, 700); // se las come
 m.sube(Pr + 0.1, 1.4, 52, 60, 0.04); m.golpe(Pr + 1.8, 0.25, 90);                      // re-gancho y "tachado"
 m.golpe(Le + 0.1, 0.3, 80);                                                            // sello del estudio 2016
 for (let d = 0; d < 42; d++) m.tic(Le + 2.3 + d * (2.9 / 42), 0.05, 700);              // 42 días
