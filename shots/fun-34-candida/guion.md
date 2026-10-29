@@ -39,7 +39,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «tú y tu pareja… la misma levadura» (cuadro 0) |
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «tú y tu pareja pueden traer… la misma cepa» (cuadro 0) |
 | 2 | 5.5 | 9.6 | 06_pensativo_menton | `arriba-der` | «vive en la boca, el intestino y la piel» |
 | 3 | 14.2 | 17.5 | 10_serio_molesto | `arriba-der` | «un antibiótico fuerte barre bacterias» |
 | 4 | 18.0 | 22.4 | 13_senalando_arriba | `arriba-der` | «su truco: cambia de forma» (señala la hifa) |

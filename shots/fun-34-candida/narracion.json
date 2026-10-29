@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Candida base narrada.dc.html",
+  "salida": "Shot Candida narrado.dc.html",
+  "nota": "Shot Fungi Mati #34. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tú y tu pareja pueden traer en la boca la misma cepa de levadura: Candida albicans."
+    },
+    {
+      "escena": "Casa",
+      "texto": "Vive en la boca, el intestino y la piel de mucha gente sana, casi siempre sin molestar."
+    },
+    {
+      "escena": "Vecinas",
+      "texto": "Se cree que tus bacterias la mantienen a raya: compiten con ella."
+    },
+    {
+      "escena": "Antibiotico",
+      "texto": "Pero un antibiótico fuerte barre bacterias y ella puede ganar terreno."
+    },
+    {
+      "escena": "Truco",
+      "texto": "Su truco: cambia de forma."
+    },
+    {
+      "escena": "Formas",
+      "texto": "De bolitas que brotan pasa a hilos largos: las hifas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué importa la forma?"
+    },
+    {
+      "escena": "Invade",
+      "texto": "Porque la hifa es la forma más invasora: se mete en tus células."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2016, en Londres y Jena, Alemania, vieron que las hifas sueltan una toxina: la candidalisina."
+    },
+    {
+      "escena": "Toxina",
+      "texto": "Daña la membrana de tus células. Sin ella, en ratones, ya no enfermaba la boca."
+    },
+    {
+      "escena": "Placas",
+      "texto": "Cuando crece de más en la boca, aparece el algodoncillo: placas blancas en la lengua y los cachetes."
+    },
+    {
+      "escena": "Quien",
+      "texto": "Es más común en recién nacidos, con dentadura postiza, tras antibióticos o con inhaladores de corticoides."
+    },
+    {
+      "escena": "Algodon",
+      "texto": "Y puede sentirse como algodón en la boca."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa levadura que puedes compartir no es tu enemiga: espera a que tus bacterias se descuiden."
+    }
+  ]
+}

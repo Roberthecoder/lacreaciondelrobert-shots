@@ -43,3 +43,34 @@ Fuentes abiertas:
 | 22 | Fuentes del guion: no se mezclan cifras de una fuente con enlace de otra; la voz no dice cifras | ✅ | — | Correcto: la cifra 66.6 % / 55.6 % de [GM] se dejó fuera de la voz por la contradicción interna del artículo | — |
 
 **Resumen (29 oct 2026):** se volvieron a verificar las 8 correcciones y los 3 recortes, abriendo otra vez las fuentes. Las 22 filas quedan ✅. La voz no dice cifras, las hipótesis se dicen como hipótesis ("se cree") y el dibujo es esquemático. Pendiente solo de la animación: que el dibujo respete la morfología de la fila 7.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026, mismo verificador independiente. Se leyeron `candida.jsx`, `Shot Candida base narrada.dc.html`, `guion.md` (columna «Lo que se ve» y tabla de Robert) y `publicacion.md`. También se revisaron 26 cuadros con `motor/preview.mjs` (0.3–60 s).
+
+| # | Qué (pantalla o publicación) | Veredicto | Fuente | Frase textual / comprobación | Año |
+|---|---|---|---|---|---|
+| R1 | Subtítulo del gancho «Tú y tu pareja: *la misma levadura.*» lo afirmaba de más | ✅ corregido → «Tú y tu pareja: *pueden traer la misma cepa.*» | [GM] | "when couples share C. albicans strains, the same or similar CAI genotype is predominant" | 2020 |
+| R2 | Subtítulo «Recién nacidos, dentadura, antibióticos, inhaladores» | ✅ corregido → «dentadura postiza» | [CDC-R] | "Dentures" | 2026 |
+| R3 | Tarjeta del ratón: la hifa estaba tachada, como si la cepa sin toxina no formara hifas | ✅ corregido: la hifa se ve normal y lo tachado es la toxina; chip «en ratones, sin toxina: no enfermaba la boca» (movido para que no se corte) | [MOY] | "formed normal hyphae" … "invasive ece1Δ/Δ hyphae did not damage epithelia"; "(n = 17/20) showed no invasive fungi and no inflammatory infiltrates or damage" | 2016 |
+| R4 | Chip «POR DENTRO · la piel de tu boca» (confundía con la piel del cuerpo) | ✅ corregido → «la mucosa de tu boca» | [GM] | "skin and mucosal surfaces" | 2020 |
+| R5 | Etiquetas boca / intestino / piel, «casi siempre: sin síntomas», «una levadura (hongo)» | ✅ | [GM], [MAY], [CDC-A] | Ver filas 2–3 | 2013–2026 |
+| R6 | Chips «hipótesis: compiten con ella», «ella puede ganar terreno», «cambia de forma (dimorfismo)», «la hifa invade», «daña la membrana», «candidalisina» | ✅ | [MAY], [MOY] | Ver filas 4–11 | 2013 / 2016 |
+| R7 | Tarjeta «2016 · Londres y Jena (Alemania) · Moyes et al., Nature» | ✅ | [MOY] | *Nature* 532: 64–68 (2016); King's College London y Hans Knöll Institute, Jena | 2016 |
+| R8 | «algodoncillo (candidiasis oral)», «placas blancas», «más común en… (CDC)» con 4 íconos (bebé, dentadura postiza, cápsula, inhalador), «puede sentirse como algodón», «tus bacterias la mantienen a raya» | ✅ | [HIV-ES], [CDC-S], [CDC-R], [MAY] | Ver filas 14–20b | 2013–2026 |
+| R9 | Morfología: levadura ovalada que brota, 5 × 4 µm (150×120 px a 30 px/µm; 200×160 px a 40 px/µm); hifa de paredes paralelas de 2 µm (80 px a 40 px/µm; 20 px a 10 px/µm) con septos | ✅ | [MAY] | "ovoid-shaped budding yeast or as parallel-walled true hyphae". Las medidas cuadran con las barras de 10 µm (300 y 400 px) y 20 µm (200 px). Se ve así en los cuadros | 2013 |
+| R10 | Barras de escala macro: 10 cm (caras ≈ 14 cm), 50 cm (cuerpo ≈ 1.8 m), 2 cm (boca abierta ≈ 4.7 cm) | ✅ | — | Proporciones comprobadas en los cuadros | — |
+| R11 | Publicación: «181 personas sanas, entre ellas 29 parejas» (Portugal, 2020) | ✅ | [GM] | "181 healthy individuals, including 29 couples" (Universidade do Minho) | 2020 |
+| R12 | Publicación: «varias parejas compartían el mismo genotipo» (YouTube) y «encontró el mismo genotipo en parejas, lo que sugiere transmisión» (LinkedIn) | ✅ corregido: se aclara que no fue lo más común y que, según los autores, «la transmisión no fue lo dominante» | [GM] | "transmission of C. albicans strains between couples is not a dominant phenotype, but the intimacy among couples increased the probability of heavy cross-colonization" | 2020 |
+| R13 | Publicación (Facebook, X, Threads): «cuando crece de más se vuelve hifa, suelta una toxina y aparece el algodoncillo» encadenaba causas como en el «Así» que se quitó de la voz | ✅ corregido: «sus hifas sueltan una toxina (candidalisina)…» y «cuando crece de más, aparece el algodoncillo» | [MOY], [CDC-A] | "critical for mucosal infection"; "Candidiasis occurs when Candida grows out of control." | 2016 / 2026 |
+| R14 | Publicación: placas en «los cachetes por dentro, la lengua, el paladar y la garganta» y «a veces una sensación de algodón» | ✅ | [CDC-S] | "White patches on inner cheeks, tongue, roof of the mouth, and throat."; "Cotton-like feeling in the mouth" | 2026 |
+| R15 | Publicación: «el riesgo es mayor en bebés de menos de un mes»; «corticoides, sobre todo inhalados» | ✅ | [CDC-R] | "The risk is highest among babies under 1 month of age."; "Corticosteroids, especially in inhalers for conditions like asthma" | 2026 |
+| R16 | Publicación (LinkedIn): candidalisina es «la primera toxina peptídica citolítica aislada de un hongo patógeno humano» | ✅ | [MOY] | "the first cytolytic peptide toxin isolated from any human fungal pathogen" | 2016 |
+| R17 | Publicación: «en la mayoría de la gente vive toda la vida sin hacer daño»; «antibióticos de amplio espectro pueden dejarla crecer de más»; «cepas sin la toxina no causaban enfermedad en modelos de infección de la boca en ratones» | ✅ | [MAY], [MOY] | "lifelong, harmless commensal"; "broad-spectrum antibacterials, which enable fungal overgrowth"; "avirulent in animal models of mucosal infection" | 2013 / 2016 |
+| R18 | Tabla «Robert en pantalla» del guion: coincide con las 10 apariciones de `candida.jsx` | ✅ corregido: la fila 1 decía «la misma levadura»; ahora dice «pueden traer… la misma cepa» | — | — | — |
+
+Nota de forma (no es un error de hechos): los subtítulos del kit quedan alrededor del 62–70 % de la altura y su borde de abajo roza el tercio inferior. No se cambió porque es la posición estándar de `Subtitulo` en todos los shots.
+
+**Resumen de la revisión final:** se corrigieron 4 detalles de pantalla, 3 de publicación y 2 líneas del guion (sin tocar la voz verificada). Todas las filas quedan ✅.
+
+VEREDICTO: APROBADO
