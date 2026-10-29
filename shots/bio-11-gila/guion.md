@@ -4,27 +4,52 @@
 - **Formato:** N1 "Por dentro" (el lagarto y la pluma → por dentro: el GLP-1, la tijera DPP-4 y el receptor → el mismo lagarto) + N5 "El experimento" (John Eng, VA del Bronx, 1992).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre el lagarto en pantalla: "Este lagarto no es solo venenoso: su saliva trajo la primera medicina tipo Ozempic."
 - **Precisión obligatoria:** la semaglutida (Ozempic) **no** se hizo con la molécula del lagarto: es un análogo del GLP-1 **humano** (94 % de homología, aprobada en 2017). Lo que salió del lagarto es la **exendina-4 → exenatida (Byetta, FDA 2005)**, el primer agonista del receptor de GLP-1 aprobado. El guion lo dice así.
-- **Duración:** voz 933 caracteres / 171 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s**.
+- **Duración:** voz 954 caracteres / 175 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s**.
 - **Viaje:** macro (el monstruo de Gila sobre la arena de Sonora, y una pluma de inyección) → micro (tu intestino suelta GLP-1; la DPP-4 lo corta; la exendina-4 entra a la cerradura) → macro (el mismo lagarto, ahora con la pluma a su lado y la etiqueta "el primero de la familia").
+
+## Corrección del 29 oct 2026 (verificación de hechos independiente, ver `verificacion.md`)
+- Escena 7: «la tijera ya no la corta» exageraba (la fuente dice «más resistente»). Ahora: **«y la tijera casi no la puede cortar»**; en pantalla nada de «inmune» ni «0 % cortada».
+- Escena 12: «esa familia empezó en la saliva» contradecía la escena 10 (el Ozempic viene del GLP-1 humano). Ahora: **«El primero de esa familia de medicinas no salió de una farmacia: salió de la saliva de un lagarto.»**
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Este lagarto no es solo venenoso: su saliva trajo la primera medicina tipo Ozempic. | Fondo amarillo arena. **Desde el cuadro 0** el monstruo de Gila (*Heloderma suspectum*: cuerpo robusto, cola gruesa, piel de cuentas negras con bandas rosa-naranja) saca la lengua bífida; a su lado aparece una pluma de inyección genérica. `MitoTachado` "solo venenoso". |
-| 1 | Lagarto | Es el monstruo de Gila, y también vive en México, en Sonora. | Mapa simple: EE. UU. (suroeste) y México con **Sonora** resaltado (y el norte de Sinaloa). Etiqueta "monstruo de Gila · *Heloderma suspectum*". `Escala` ~50 cm. |
+| 1 | Lagarto | Es el monstruo de Gila, y también vive en México, en Sonora. | Mapa simple: EE. UU. (suroeste) y México con **Sonora** resaltado (y el norte de Sinaloa). Etiqueta "monstruo de Gila · *Heloderma suspectum*". Chip «mide unos 50 cm». El lagarto chiquito queda en el mar, junto al mapa (no sobre otra región). |
 | 2 | Hormona | Cuando comes, tu intestino suelta el GLP-1, una hormona que le pide insulina al páncreas. | Fondo menta: silueta de una persona comiendo; **Lupa** "POR DENTRO · INTESTINO": células L sueltan esferitas de GLP-1 que viajan al páncreas, que suelta insulina. Chip "GLP-1". |
-| 3 | Tijera | Pero en unos dos minutos una enzima, la DPP-4, ya cortó la mitad. | Fondo oscuro (microscópico): cadenita de GLP-1; una tijera-enzima "DPP-4" corta las dos primeras perlas. `Medidor` de reloj: 0 → 2 min, "la mitad, cortada". |
+| 3 | Tijera | Pero en unos dos minutos una enzima, la DPP-4, ya cortó la mitad. | Fondo oscuro (microscópico): cadenita de GLP-1; una tijera-enzima "DPP-4" corta las dos primeras perlas. `Cronometro` que corre de 0 a 2 min: «vida media del GLP-1 ≈ 2 min»; la mitad de las cadenas (3 de 6) quedan cortadas. |
 | 4 | Pregunta | ¿Y si hubiera una versión que esa tijera no pudiera cortar? | **Re-gancho.** La tijera se abre y se cierra sobre un signo de interrogación. |
 | 5 | Eng | En 1992, John Eng, en un hospital de Nueva York, la encontró en la saliva venenosa del lagarto: la exendina-4. | `TarjetaEstudio` "1992 · VA Medical Center, Bronx, Nueva York · John Eng": un tubito con saliva del lagarto y una cadena de **39 perlas** que se arma. |
 | 6 | Cerradura | Se parece a tu GLP-1 y abre la misma cerradura en el páncreas. | Célula beta del páncreas con un receptor-cerradura; entran la llave GLP-1 y la llave exendina-4: las dos encajan y sale insulina. |
-| 7 | Aminoacido | Pero cambia su segundo aminoácido, y la tijera casi no la puede cortar. | Acercamiento a las primeras perlas: GLP-1 "H·**A**·E…" vs exendina-4 "H·**G**·E…". La tijera DPP-4 resbala sobre la exendina-4. |
+| 7 | Aminoacido | Pero cambia su segundo aminoácido, y la tijera casi no la puede cortar. | Acercamiento a las primeras perlas: GLP-1 "H·**A**·E…" vs exendina-4 "H·**G**·E…". La tijera DPP-4 corta el GLP-1 y resbala sobre la exendina-4 (chispas; chip «la DPP-4 casi no la puede cortar»; nada de «inmune» ni «0 %»). |
 | 8 | Exenatida | Así nació la exenatida, aprobada en 2005: dura horas, no minutos. | `TarjetaEstudio` "2005 · FDA · Byetta (exenatida)". Barra comparativa: GLP-1 ≈ 2 min vs exenatida ≈ 2.4 h (vida media). |
 | 9 | Fabrica | Y no se ordeñan lagartos: se fabrica en laboratorio. | Un lagarto con un "✗" sobre una cubeta de ordeña (chiste); al lado, un matraz donde se arma la cadena sintética de 39 aminoácidos. Chip "sintética". |
-| 10 | Ozempic | Ojo: el Ozempic no sale del lagarto; es un GLP-1 humano retocado. | `MitoTachado` "Ozempic = saliva de lagarto". Cadena de GLP-1 humano con dos perlas cambiadas y una "colita" de grasa; etiqueta "semaglutida · 94 % igual al GLP-1 humano · 2017". |
+| 10 | Ozempic | Ojo: el Ozempic no sale del lagarto; es un GLP-1 humano retocado. | `MitoTachado` "Ozempic = saliva de lagarto". Cadena de GLP-1 humano con dos perlas cambiadas y una "colita" de grasa; chip «94 % igual al GLP-1 humano · 2017». |
 | 11 | Comida | Y el lagarto come pocas veces, pero hasta un tercio de su peso. | El lagarto frente a un huevo enorme; `Medidor` "comida = hasta ⅓ de su peso". |
 | 12 | Cierre | El primero de esa familia de medicinas no salió de una farmacia: salió de la saliva de un lagarto. | **Regreso a la imagen del inicio:** el mismo lagarto en la arena, ahora con la pluma y la etiqueta "el primero de la familia: exenatida". |
 | — | Outro | (sin voz) | `CierreMarca tema="bioquimica"` con Robert. |
+
+## Robert en pantalla
+
+Es la marca del canal. Entra desde el cuadro 0, vuelve cada 3-8 s y nunca tapa el dato, las etiquetas ni el subtítulo. Tiempos de la base narrada (61.5 s).
+
+### 10 apariciones, **36.7 s en pantalla** (de 61.5 s), 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 4,6 | sorprendido (11) | gancho | «este lagarto no es solo venenoso» |
+| 5,6 - 8,6 | señalando (13) | arriba-der | señala Sonora en el mapa |
+| 10,3 - 14,0 | sonriendo (05) | izq-alto | «cuando comes, tu intestino suelta el GLP-1» |
+| 18,4 - 21,9 | pensativo (06) | **grande** | re-gancho: «¿y si hubiera una versión que esa tijera no pudiera cortar?» |
+| 24,7 - 28,3 | bajando lentes (04) | arriba-der | 1992: la exendina-4, 39 aminoácidos |
+| 33,5 - 36,6 | señalando (13) | arriba-der | señala la posición 2: A → G |
+| 37,5 - 40,6 | sorprendido (11) | bajo-der | «dura horas, no minutos» (2.4 h contra ~2 min) |
+| 44,5 - 47,9 | serio (10) | arriba-der | «Ojo: el Ozempic no sale del lagarto» |
+| 48,6 - 51,8 | sonriendo (05) | arriba-der | come hasta un tercio de su peso (el huevo) |
+| 52,5 - 57,9 | apuntando (02) | gancho | cierre: «el primero salió de la saliva de un lagarto» |
+
+La tarjeta de cierre lleva a Robert junto al logo (`CierreMarca robert=avatar_02`).
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Cama grave continua**, sin golpe marcado, siempre debajo de la voz; un poco más tensa durante "la tijera" (escenas 3–4) y se abre cuando la exendina-4 se libra de ella (escena 7).
@@ -38,7 +63,7 @@ El **monstruo de Gila** (*Heloderma suspectum*) vive en el suroeste de Estados U
 
 Cuando comes, las células de tu intestino sueltan una hormona, el **GLP-1**, que le pide insulina al páncreas. El problema: la enzima **DPP-4** la corta tan rápido que su vida media en sangre es de unos **2 minutos**.
 
-En **1992**, **John Eng**, en el hospital de veteranos (VA) del Bronx, Nueva York, aisló del veneno del lagarto —que sale con su saliva— un péptido de 39 aminoácidos: la **exendina-4**. Un año después se demostró que activa el mismo receptor que el GLP-1 en las células que hacen insulina. Su truco: en la segunda posición tiene **glicina** en vez de alanina, y la DPP-4 casi no la puede cortar.
+En **1992**, **John Eng**, en el hospital de veteranos (VA) del Bronx, Nueva York, aisló del veneno del lagarto —que sale con su saliva— un péptido de 39 aminoácidos: la **exendina-4**. Un año después se demostró que activa el mismo receptor que el GLP-1 en las células que hacen insulina. Su truco: en la segunda posición tiene **glicina** en vez de alanina, y la DPP-4 casi no la puede cortar (es más resistente, no inmune).
 
 De ahí salió la **exenatida (Byetta)**, aprobada por la FDA en **abril de 2005**: el primer medicamento de esta familia (agonistas del receptor de GLP-1). Su vida media es de **2.4 horas**, no de 2 minutos. Y no se ordeñan lagartos: la exenatida es un **péptido sintético**.
 

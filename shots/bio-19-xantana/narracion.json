@@ -5,15 +5,15 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese aderezo no está espeso por la crema: lo espesó una bacteria."
+      "texto": "Lo espeso de ese aderezo no es solo crema: también es obra de una bacteria."
     },
     {
       "escena": "Etiqueta",
-      "texto": "Se llama goma xantana, y está hasta en tu pasta de dientes."
+      "texto": "Se llama goma xantana, y está hasta en muchas pastas de dientes."
     },
     {
       "escena": "Col",
-      "texto": "La hace Xanthomonas campestris, la bacteria de la pudrición negra de la col."
+      "texto": "La hace Xanthomonas campestris, la de la pudrición negra de la col."
     },
     {
       "escena": "Col",
@@ -25,7 +25,7 @@
     },
     {
       "escena": "Alcohol",
-      "texto": "Luego la sacan con alcohol y la secan: en el polvo ya no queda bacteria viva."
+      "texto": "Luego quitan las bacterias, sacan la goma con alcohol y la secan: en el polvo no queda bacteria viva."
     },
     {
       "escena": "Pregunta",
@@ -41,11 +41,11 @@
     },
     {
       "escena": "Agitar",
-      "texto": "Si agitas el frasco, se alinean y el aderezo corre; quieto, vuelve a espesar."
+      "texto": "Si agitas el frasco, se alinean y corre; quieto, vuelve a espesar."
     },
     {
       "escena": "Estudio",
-      "texto": "En 1961, Allene Jeanes y su equipo, del gobierno de Estados Unidos en Peoria, publicaron cómo hacerla con glucosa; en 1969 la aprobaron para alimentos."
+      "texto": "En 1961, el equipo de Allene Jeanes, en Peoria, publicó cómo hacerla con glucosa; en 1969 la aprobaron para alimentos."
     },
     {
       "escena": "Dato",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que tu aderezo no es espeso por la crema: es la baba de una bacteria."
+      "texto": "Así que lo espeso de tu aderezo no es solo crema: también es la baba de una bacteria."
     }
   ]
 }

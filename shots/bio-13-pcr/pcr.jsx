@@ -379,7 +379,7 @@ function Pcr() {
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Tu - 0.1} texto="1 molécula → *más de mil millones*" />
       <Subtitulo T={T} idx={1} at={K.Tu + 0.1} until={K.S - 0.1} texto="La prueba PCR: *copiar hasta que brille*" />
       <Subtitulo T={T} idx={2} at={K.S + 0.1} until={K.P - 0.1} texto="95 °C: *se abre en dos*" />
-      <Subtitulo T={T} idx={3} at={K.P + 0.1} until={K.C - 0.1} texto="55 °C: *se pegan las guías*" />
+      <Subtitulo T={T} idx={3} at={K.P + 0.1} until={K.C - 0.1} texto="55 °C: *guías pegadas*" />
       <Subtitulo T={T} idx={4} at={K.C + 0.1} until={K.D - 0.1} texto="72 °C: *la enzima copia*" />
       <Subtitulo T={T} idx={5} at={K.D + 0.1} until={K.Q - 0.1} texto="Cada ciclo: *el doble*" />
       <Subtitulo T={T} idx={6} at={K.Q + 0.1} until={K.Pb - 0.1} texto="¿Qué enzima *aguanta 95 °C?*" />

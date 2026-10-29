@@ -14,9 +14,9 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Una sola molécula de ADN se puede volver más de mil millones de copias en unas horas. | Fondo cian. **Cuadro 0:** una mano mete un tubito de PCR al termociclador (la tapa baja). Contador gigante que arranca en **1** y salta a **1,073,741,824**, chip "en teoría". |
-| 1 | Tu | Eso hace la prueba PCR de COVID: convierte un pedacito del virus en ADN y lo copia hasta que brilla. | Un hisopo entra a un tubo; del virus (esfera con espículas) sale un pedacito de su material genético; el tubito empieza a brillar verde, cada vez más (curva de fluorescencia que sube). |
-| 2 | Separar | Capítulo uno: calientas a 95 grados y la doble hélice se abre en dos. | `Capitulo` "1 · SEPARAR". **Termómetro** (`Medidor`) sube a 95 °C, fondo naranja-rojo. `Lupa` "POR DENTRO · el tubito": la doble hélice se desenrolla y queda en dos hebras. |
+| 0 | Gancho | Una sola molécula de ADN se puede volver más de mil millones de copias en unas horas. | Fondo cian. **Cuadro 0:** un tubito de PCR baja al termociclador y la tapa se cierra; la pantalla del aparato marca la temperatura y el ciclo. Contador gigante que arranca en **1** y salta a **1,073,741,824**, chip "en teoría". |
+| 1 | Tu | Eso hace la prueba PCR de COVID: convierte un pedacito del virus en ADN y lo copia hasta que brilla. | Chip "prueba PCR de COVID". Del virus (esfera con espículas) sale un pedacito de su ARN (hebra rosa) que se vuelve ADN (doble hélice); el tubito empieza a brillar verde, cada vez más (curva de fluorescencia que sube). |
+| 2 | Separar | Capítulo uno: calientas a 95 grados y la doble hélice se abre en dos. | `Capitulo` "1 · SEPARAR". **Termómetro** (`Medidor`) sube a 95 °C, fondo naranja-rojo. Etiqueta "por dentro del tubito" (fondo oscuro, la luz cambia con la temperatura): la doble hélice se desenrolla y queda en dos hebras. |
 | 3 | Pegar | Capítulo dos: bajas a unos 55 y dos pedacitos guía se pegan a los extremos. | `Capitulo` "2 · PEGAR". Termómetro baja a ~55 °C, fondo azul. Dos iniciadores cortos (flechas de color) se pegan, uno en cada hebra, en los extremos del tramo. Etiqueta "iniciadores". |
 | 4 | Copiar | Capítulo tres: subes a 72 y una enzima copia cada hebra, letra por letra. | `Capitulo` "3 · COPIAR". Termómetro sube a 72 °C, fondo amarillo. La enzima (Taq, una "pinza" redondeada) corre sobre la hebra y va poniendo letras A-T-G-C hasta completar dos dobles hélices. |
 | 5 | Duplica | Cada ciclo duplica: dos, cuatro, ocho… Treinta ciclos, más de mil millones, en teoría. | Contador de ciclos 1→30 en el termociclador y el contador de copias 2, 4, 8, 16… 2³⁰ = **1,073,741,824**; cuadrícula que se llena de hélices. Chip "en teoría: en la vida real rinde un poco menos". |
@@ -34,6 +34,30 @@
 - La prueba de COVID de los CDC primero convierte el ARN del virus en ADN (transcripción inversa) y luego lo amplifica con Taq; el brillo es fluorescencia que aumenta en cada ciclo. En pantalla no se le pone 72 °C (esa prueba alterna 95 y 55 °C, hasta 45 veces); no se afirma en voz.
 - *Thermus aquaticus*: bastoncitos gramnegativos, sin esporas, sin movilidad, que a veces forman filamentos largos (Brock y Freeze 1969). No dibujarla redonda ni con flagelos.
 - La Taq no se dibuja como "pac-man": una pinza/mano redondeada que abraza la hebra.
+
+## Robert en pantalla
+
+Es la marca del canal: entra desde el cuadro 0, vuelve cada 8–10 s y nunca tapa el subtítulo (el kit lo dibuja por delante de él). Tiempos con las escenas del `Shot PCR base narrada.dc.html` (61.5 s).
+
+### Versión narrada: 12 apariciones, **38.5 s en pantalla** (de 61.5 s), 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 3.6 | sorprendido (11) | gancho | «una sola molécula… más de mil millones» |
+| 7.1 – 10.9 | señalando (13) | izq-alto | señala el virus y el tubito que brilla |
+| 12.5 – 15.3 | sonriendo (05) | arriba-der | capítulo 1: la hélice se abre a 95 °C |
+| 17.1 – 19.9 | señalando (13) | arriba-der | capítulo 2: los iniciadores se pegan |
+| 21.5 – 24.1 | pensativo, puño (07) | arriba-der | capítulo 3: la Taq copia letra por letra |
+| 26.6 – 29.8 | sorprendido (11) | izq-alto | el contador se dispara a mil millones |
+| 30.2 – 33.1 | pensativo, mentón (06) | **grande** | re-gancho: «¿qué enzima aguanta 95 grados?» |
+| 33.9 – 36.5 | serio (10) | arriba-der | «el calor la iba destruyendo» |
+| 41.3 – 44.3 | bajando lentes (04) | izq-alto | *Thermus aquaticus* al microscopio, crece a 70 °C |
+| 45.1 – 47.9 | señalando (13) | arriba-der | señala la Taq que entra al tubito |
+| 48.7 – 52.9 | apuntando a cámara (02) | **grande** | 1983, Mullis manejando de noche; el Nobel |
+| 53.7 – 57.9 | sonriendo (05) | gancho | cierre: «una sola molécula se puede volver más de mil millones» |
+| 58.0 – 61.5 | señalando (13) | cierre | `CierreMarca` con Robert junto al logo |
+
+Total sin el cierre: 3.6 + 3.8 + 2.8 + 2.8 + 2.6 + 3.2 + 2.9 + 2.6 + 3.0 + 2.8 + 4.2 + 4.2 ≈ **38.5 s**.
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Narrada:** cama grave continua, sin golpe, debajo de la voz; su tono **sube y baja con el termómetro** (95 → 55 → 72).
