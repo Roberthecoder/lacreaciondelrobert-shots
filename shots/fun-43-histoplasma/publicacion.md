@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Un caso de 2024 en la península de Yucatán recuerda un riesgo poco conocido del turismo de cuevas y cenotes: la histoplasmosis.
-Histoplasma capsulatum es un hongo dimórfico: en suelos con guano de murciélago o excremento de aves crece como moho y libera esporas de 2 a 4 µm; al inhalarlas, la temperatura corporal lo convierte en levadura, que sobrevive y se multiplica dentro de los macrófagos. La mayoría de las infecciones no da síntomas o da un cuadro leve, por lo que se diagnostica tarde o se confunde con otras neumonías.
+Histoplasma capsulatum es un hongo dimórfico: en suelos con guano de murciélago o excremento de aves crece como moho y libera esporas de 2 a 4 µm; al inhalarlas, la temperatura corporal lo convierte en levadura, que sobrevive y se multiplica dentro de los macrófagos. La mayoría de las infecciones no da síntomas o da un cuadro leve, y sus síntomas se parecen a los de otras neumonías, así que puede pasar desapercibida.
 En abril de 2024, cuatro viajeros canadienses enfermaron dos o tres semanas después de nadar en un cenote con murciélagos (tres casos confirmados y uno sospechoso; CCDR, 2025). El reporte menciona que otro cenote de la zona estaba cerrado desde 2019 por casos en turistas.
 Por qué importa: preguntar por la exposición (cuevas, guano, obras que remueven tierra) acorta el diagnóstico.
 ¿En tu trabajo se habla de riesgos biológicos del turismo de naturaleza?
@@ -81,7 +81,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Ese polvo de cueva puede tener guano de murciélago y esporas de Histoplasma: al respirarlas, tu calor lo vuelve levadura que sobrevive dentro de tus defensas. En 2024, 4 turistas que nadaron en un cenote de Yucatán enfermaron. 🦇 #FungiMati
+Ese polvo de cueva puede tener guano de murciélago y esporas de Histoplasma: al respirarlas, tu calor lo vuelve levadura que sobrevive dentro de tus defensas. En 2024, 4 turistas que nadaron en un cenote de la península de Yucatán enfermaron. 🦇 #FungiMati
 ```
 
 ### Threads

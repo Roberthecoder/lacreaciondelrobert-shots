@@ -206,7 +206,7 @@ function FiebreValleShot() {
         <Desierto T={T} />
         {fsvg(<Remolino T={T} x={430} y={1120} crece={kprog(T, K.G, K.G + 1.0)} />)}
       </Escena>
-      <Lupa T={T} at={K.G + 1.2} until={K.G + 4.0} x={290} y={640} r={165} fx={430} fy={900} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · POLVO"
+      <Lupa T={T} at={K.G + 1.2} until={K.G + 4.0} x={330} y={640} r={165} fx={430} fy={900} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · POLVO"
         interior={(T, r) => fsvg(<g>
           {[[90, 120, 34, 1], [230, 90, 40, 2], [250, 240, 46, 3], [100, 250, 30, 5]].map(([x, y, rr, s], i) => <Grano key={i} x={x} y={y + Math.sin(T * 2 + i) * 6} r={rr} seed={s} />)}
           {[[170, 170, 20], [70, 190, -30], [280, 165, 60]].map(([x, y, rot], i) => <Barril key={i} x={x} y={y + Math.cos(T * 2 + i) * 6} rot={rot + T * 15} s={kprog(T, K.G + 1.8 + i * 0.25, K.G + 2.2 + i * 0.25, kEase.rebote)} />)}

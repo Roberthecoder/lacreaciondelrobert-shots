@@ -11,7 +11,7 @@ function Barbuda({ T = 0, x, y, s = 1, crece = 1, tinta = 0, rot = 0, charco = 0
   const c = kclamp(tinta, 0, 1);
   const yt = -H - ch * 0.75, yb0 = yt + ch;
   const yb = yb0 - c * ch * 0.65;                 // el borde sube conforme se digiere
-  const fl = c * 60;                               // el borde se abre en campana
+  const fl = Math.pow(c, 1.4) * 60;                               // el borde se abre en campana
   const ys = Math.max(yt + w * 0.5, yb - 30);
   const ym = yb - fl * 0.55;                       // la orilla se enrolla hacia arriba
   const cap = `M ${-w / 2 - fl} ${ym} Q ${-w / 2 - fl * 0.2} ${ys} ${-w / 2} ${ys} L ${-w / 2} ${yt + w * 0.5} Q ${-w / 2} ${yt} 0 ${yt} Q ${w / 2} ${yt} ${w / 2} ${yt + w * 0.5} L ${w / 2} ${ys} Q ${w / 2 + fl * 0.2} ${ys} ${w / 2 + fl} ${ym} Z`;
@@ -57,21 +57,21 @@ function SombreroCorte({ T, x = 540, y0 = 380, y1 = 1170, w = 520, mov = 1 }) {
 // disuelve: y abajo de la cual la placa ya se digirió. lluvia 0..1: esporas negras que caen al aire.
 const PLACAS = [300, 540, 780];
 function LaminasMicro({ T, madura = 1200, disuelve = 1160, lluvia = 0, enzimas = 0 }) {
-  const top = 380, base = 1160, yb = Math.min(base, disuelve);
+  const top = 600, base = 1160, yb = Math.min(base, disuelve);
   return <g>
     {PLACAS.map((px, j) => <g key={j}>
       <path d={`M ${px - 34} ${top} L ${px - 34} ${yb} ${disuelve < base ? `Q ${px - 20} ${yb + 26} ${px} ${yb + 8} Q ${px + 20} ${yb + 30} ${px + 34} ${yb}` : `L ${px + 34} ${yb}`} L ${px + 34} ${top} Z`} fill="#efe4dc" stroke={KC.ink} strokeWidth={6} />
       <rect x={px - 31} y={Math.max(top, madura - 40)} width={62} height={Math.max(0, yb - Math.max(top, madura - 40))} fill="#7b6a6a" opacity=".55" />
       {disuelve < base && <path d={`M ${px - 34} ${yb - 6} Q ${px - 20} ${yb + 26} ${px} ${yb + 8} Q ${px + 20} ${yb + 30} ${px + 34} ${yb - 6} Z`} fill={CP.tinta} />}
       {disuelve < base && [0, 1].map((k) => { const u = ((T * 0.9 + j * 0.37 + k * 0.5) % 1); return <path key={k} d="M 0 -14 Q 9 0 0 9 Q -9 0 0 -14 Z" transform={`translate(${px - 10 + k * 20} ${yb + 20 + u * 140})`} fill={CP.tinta} stroke="#3a3330" strokeWidth={2} opacity={1 - u} />; })}
-      {Array.from({ length: 16 }, (_, i) => { const sy = top + 30 + i * 46; if (sy > yb - 18) return null; const negra = sy > madura;
+      {Array.from({ length: 12 }, (_, i) => { const sy = top + 30 + i * 46; if (sy > yb - 18) return null; const negra = sy > madura;
         return [-1, 1].map((sd) => <g key={sd + '' + i}>
           <line x1={px + sd * 34} y1={sy} x2={px + sd * 44} y2={sy} stroke="#cdbfb5" strokeWidth={4} />
-          <ellipse cx={px + sd * 62} cy={sy} rx={22} ry={16} fill={negra ? '#1a1412' : '#f3ece6'} stroke={negra ? '#6a5f58' : KC.ink} strokeWidth={3} />
+          <ellipse cx={px + sd * 62} cy={sy} rx={22} ry={16} fill={negra ? '#1a1412' : '#f3ece6'} stroke={negra ? '#d6cbc2' : KC.ink} strokeWidth={3} />
         </g>); })}
     </g>)}
     {lluvia > 0 && Array.from({ length: 21 }, (_, i) => { const u = ((T * 0.32 + i / 21) % 1), px = PLACAS[i % 3] + (i % 2 ? 62 : -62) + Math.sin(T * 2 + i) * 20 + (i % 2 ? 1 : -1) * u * 90;
-      return <ellipse key={i} cx={px} cy={Math.min(1160, disuelve) + 10 + u * 520} rx={22} ry={16} fill="#1a1412" stroke="#6a5f58" strokeWidth={3} opacity={lluvia * (1 - u * u)} transform={`rotate(${T * 60 + i * 30} ${px} ${Math.min(1160, disuelve) + 10 + u * 520})`} />; })}
+      return <ellipse key={i} cx={px} cy={Math.min(1160, disuelve) + 10 + u * 520} rx={22} ry={16} fill="#1a1412" stroke="#d6cbc2" strokeWidth={3} opacity={lluvia * (1 - u * u)} transform={`rotate(${T * 60 + i * 30} ${px} ${Math.min(1160, disuelve) + 10 + u * 520})`} />; })}
     {enzimas > 0 && PLACAS.map((px, j) => [0, 1, 2].map((k) => { const a = T * 8 + k * 2 + j; const ex = px - 40 + k * 40, ey = Math.min(1160, disuelve) - 4 + Math.sin(a) * 6;
       return <g key={j + '-' + k} transform={`translate(${ex} ${ey}) scale(${enzimas})`}><path d={`M 0 0 L 13 ${-6 - 4 * Math.abs(Math.sin(a * 1.6))} A 14 14 0 1 0 13 ${6 + 4 * Math.abs(Math.sin(a * 1.6))} Z`} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /></g>; }))}
   </g>;
@@ -209,8 +209,8 @@ function CoprinusShot() {
       {/* 9 · el estudio: caja de cultivo en laboratorio */}
       <Escena T={T} a={K.E} b={MIC} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Petri x={540} y={960} r={250}>
-          <Colonia cx={0} cy={0} r={200 * kprog(T, K.E, K.E + 1.5) + 20} seed={4} />
+        {fsvg(<Petri x={540} y={960} r={200}>
+          <Colonia cx={0} cy={0} r={160 * kprog(T, K.E, K.E + 1.5) + 20} seed={4} />
           {Array.from({ length: 5 }, (_, i) => <circle key={i} cx={-60 + i * 30} cy={-90 + (i % 2) * 40} r={3} fill="#7a6a58" opacity={kprog(T, K.E + 2.2, K.E + 2.6)} />)}
         </Petri>)}
       </Escena>
@@ -223,7 +223,7 @@ function CoprinusShot() {
           <HifasCultivo />
           {[[300, 852], [520, 856], [760, 846]].map(([bx, by], i) => <BolaEspinas key={i} x={bx} y={by - 50} k={kprog(T, MIC + 0.3 + i * 0.2, MIC + 0.8 + i * 0.2, kEase.rebote)} rot={T * 6 + i * 20} />)}
           {T > K.Tx - 0.2 && Array.from({ length: 12 }, (_, i) => { const u = kprog(T, K.Tx + i * 0.12, K.Tx + 1.6 + i * 0.12); if (u <= 0) return null; const sx = 120 + (i * 83) % 860, sy = [700, 900, 1080][i % 3];
-            return <Toxina key={i} x={sx + Math.sin(i + T) * 20} y={sy - u * 120 * (i % 2 ? 1 : -1)} s={0.9} rot={T * 40 + i * 30} />; })}
+            return <g key={i} opacity={1 - kprog(T, K.Co + 0.2, K.Co + 1.0)}><Toxina x={sx + Math.sin(i + T) * 20} y={sy - u * 120 * (i % 2 ? 1 : -1)} s={0.9} rot={T * 40 + i * 30} /></g>; })}
           <Gusano T={T} x={w1x} y={800} largo={450} ancho={30} ang={180} ondula={ond} lleno={lleno} apagado={apaga} seed={1} />
           <Gusano T={T} x={klerp(-120, 360, kprog(T, MIC + 0.6, K.B + 2.0, kEase.sale))} y={1000} largo={380} ancho={26} ang={0} ondula={ond} fase={1.5} seed={2} />
           <Gusano T={T} x={klerp(1300, 880, kprog(T, MIC + 1.0, K.B + 2.5, kEase.sale))} y={600} largo={330} ancho={24} ang={180} ondula={ond} fase={3} seed={3} />
@@ -257,27 +257,25 @@ function CoprinusShot() {
       <Etq T={T} at={K.L + 0.9} until={K.O - 0.3} x={1040} y={760} lado="izq" texto="laminillas" tam={30} color={KC.ink} />
       <Chip T={T} at={K.L + 1.8} until={K.O - 0.3} texto="muy delgadas y muy pegadas" x={540} y={1120} tam={36} borde={KC.pink} />
       <Chip T={T} at={K.O + 0.2} until={K.Ola - 0.3} texto="AL MICROSCOPIO · laminillas" x={560} y={310} tam={30} mono borde={KC.cyan} />
-      <Etq T={T} at={K.O + 0.8} until={K.D - 0.3} x={1040} y={1040} lado="izq" texto="esporas maduras" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.O + 1.8} until={K.D - 0.3} x={60} y={1200} texto="caen al aire" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.D + 0.6} until={K.Ola - 0.3} x={60} y={1040} texto="enzimas" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.D + 1.6} until={K.Ola - 0.3} x={1040} y={560} lado="izq" texto="la siguiente parte" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Ola + 0.6} until={K.Ti - 0.3} x={670} y={1000} texto="del borde a la punta" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.O + 0.8} until={K.D - 0.3} x={60} y={540} texto="esporas maduras" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.D + 0.6} until={K.Ola - 0.3} x={60} y={540} texto="enzimas" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Ola + 0.6} until={K.Ti - 0.3} x={560} y={1060} texto="del borde a la punta" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Ola + 1.6} until={K.Ti - 0.3} x={60} y={1120} texto="el pie queda" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Ti + 0.2} until={K.Ti + 2.3} texto="AL MICROSCOPIO · tinta" x={540} y={330} tam={30} mono borde={KC.cyan} />
-      <Etq T={T} at={K.Ti + 0.6} until={K.Ti + 2.3} x={60} y={1200} texto="esporas negras" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Ti + 0.6} until={K.Ti + 2.3} x={60} y={470} texto="esporas negras" tam={30} color={KC.texto} />
       <Etq T={T} at={K.Ti + 1.0} until={K.Ti + 2.3} x={1040} y={460} lado="izq" texto="tejido derretido" tam={28} color={'#cfc6be'} />
       <Chip T={T} at={K.Ti + 3.0} until={K.P - 0.3} texto="siglos XVII y XVIII" x={420} y={470} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.P + 0.6} until={K.E - 0.3} texto="¿solo restos de plantas?" x={360} y={420} tam={36} borde={KC.lilac} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={MIC - 0.4} anio="2004 y 2007" quien="Yunnan, China" revista="Luo et al., Mycologia y AEM" y={470} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={MIC - 0.4} anio="2004 y 2007" quien="Yunnan, China" revista="Luo et al., Mycologia y AEM" y={430} />
       <Chip T={T} at={K.E + 1.4} until={K.C - 0.3} texto="en laboratorio" x={540} y={T < MIC ? 1260 : 330} tam={36} borde={KC.yellow} />
-      <Etq T={T} at={MIC + 0.9} until={K.B - 0.2} x={60} y={1150} texto="nematodo" tam={30} color={KC.texto} />
-      <Etq T={T} at={MIC + 1.3} until={K.B - 0.2} x={60} y={1200} texto="Panagrellus redivivus" it tam={30} color={KC.texto} />
-      <Etq T={T} at={K.B + 0.3} until={K.Tx - 0.2} x={760} y={620} lado="der" texto="bolita con espinas" tam={28} color={KC.gold2} />
+      <Etq T={T} at={MIC + 1.6} until={K.B - 0.2} x={60} y={540} texto="nematodo" tam={30} color={KC.texto} />
+      <Etq T={T} at={MIC + 1.9} until={K.B - 0.2} x={60} y={590} texto="Panagrellus redivivus" it tam={30} color={KC.texto} />
+      <Etq T={T} at={K.B + 0.3} until={K.Tx - 0.2} x={60} y={660} texto="bolitas con espinas" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.B + 1.6} until={K.Tx - 0.2} texto="rompe su cubierta" x={540} y={460} tam={34} borde={KC.red} />
       <Cronometro T={T} at={K.Tx + 0.2} until={K.Co - 0.2} factor={3600} etiqueta="EN LA CAJA" x={540} y={470} />
-      <Etq T={T} at={K.Tx + 0.5} until={K.Co - 0.2} x={60} y={1150} texto="toxinas" tam={30} color={KC.pink} />
+      <Etq T={T} at={K.Tx + 0.5} until={K.Co - 0.2} x={60} y={560} texto="toxinas" tam={30} color={KC.pink} />
       <Chip T={T} at={K.Co + 0.4} until={K.C - 0.3} texto="días después" x={540} y={470} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.Co + 1.2} until={K.C - 0.3} x={60} y={1150} texto="hifas por dentro" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Co + 1.2} until={K.C - 0.3} x={60} y={560} texto="hifas por dentro" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="también caza gusanos" x={420} y={470} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={900} texto="en laboratorio" tam={28} color={KC.ink} />
 

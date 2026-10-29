@@ -30,6 +30,26 @@
 
 Barras de escala: 5 cm (hongo), 10 µm (esporas), 0.5 mm (nematodos e hifas; el nematodo adulto mide de 2 a 4 barras, hasta ~1.8 mm).
 
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué más come este hongo…?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «ese charco de tinta… se está digiriendo a sí mismo» (cuadro 0) |
+| 2 | 5.4 | 8.7 | 13_senalando_arriba | `arriba-der` | señala el nombre: *Coprinus comatus*, la barbuda |
+| 3 | 14.1 | 17.5 | 06_pensativo_menton | `arriba-der` | «maduran primero en la orilla de abajo» |
+| 4 | 23.0 | 26.3 | 04_bajando_lentes | `arriba-der` | la ola sube hasta que todo el sombrero es tinta |
+| 5 | 29.1 | 31.6 | 11_sorprendido | `arriba-der` | «antes se usaba para escribir» |
+| 6 | 31.7 | 34.9 | 07_pensativo_puno | `grande` | «¿y qué más come este hongo…?» |
+| 7 | 38.2 | 40.9 | 04_bajando_lentes | `arriba-der` | llegan los nematodos a la caja |
+| 8 | 42.1 | 47.6 | 11_sorprendido | `arriba-der` | bolitas con espinas y toxinas |
+| 9 | 48.6 | 51.7 | 10_serio_molesto | `arriba-der` | «se lo comen por dentro» |
+| 10 | 52.5 | 57.9 | 02_apuntando_camara | `arriba-der` | «también caza gusanos» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **36.6 s** en pantalla (+ cierre 3.5 s) · 6 poses distintas · nunca la misma dos veces seguidas.
+
 ## Fuentes (abiertas el 29 oct 2026)
 
 1. Volk, T. (2004, mayo). *Coprinus comatus*, the shaggy mane. *Tom Volk's Fungus of the Month*, University of Wisconsin–La Crosse. https://botit.botany.wisc.edu/toms_fungi/may2004.html

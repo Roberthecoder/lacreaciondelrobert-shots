@@ -2,6 +2,7 @@
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #42 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro" (macro: el polvo del desierto → micro: la espora y la esférula en el pulmón → macro: el mismo polvo, ya "visto por dentro").
+- **Archivos:** `Shot Fiebre Valle base narrada.dc.html` · `fiebre-valle.jsx` · `gen-audio.mjs`.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" — «Ese polvo del desierto no es solo tierra: puede traer esporas de un hongo.»
 - **Duración:** voz 997 caracteres / 186 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~997 créditos de ElevenLabs).
@@ -11,24 +12,43 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese polvo del desierto no es solo tierra: puede traer esporas de un hongo. | Fondo amarillo: desierto de Sonora (saguaros, sol, camino de tierra). Cuadro 0.3: pasa una ráfaga y se levanta un remolino de polvo. Una `Lupa` sobre el polvo enseña puntitos "esporas". |
-| 1 | Suelo | Es *Coccidioides*, y vive en suelo seco del suroeste de Estados Unidos y del norte de México, como Sonora. | Mapa con la leyenda "mapa esquemático": EE. UU./México con la zona seca coloreada (suroeste de EE. UU.; Baja California, Sonora, Chihuahua, Coahuila, Nuevo León) y un pin en Sonora. Etiqueta "*Coccidioides*". |
-| 2 | Esporas | Cuando la tierra se seca, sus hilos se parten en esporas con forma de barrilito. | Corte del suelo (POR DENTRO · SUELO): hilos (hifas) blancos; la tierra se agrieta y los hilos se parten en barrilitos alternados con celdas vacías. Etiqueta "artroconidias (~3 × 4.5 µm)". |
-| 3 | Viento | El viento o una excavación las levantan, y tú las respiras. | Viento y una retroexcavadora levantan polvo; los barrilitos suben y entran a la nariz de una persona; flecha hacia los pulmones. |
+| 0 | Gancho | Ese polvo del desierto no es solo tierra: puede traer esporas de un hongo. | Fondo amarillo: desierto de Sonora (saguaros, sol, cerros, camino). Desde el cuadro 0 se levanta un remolino de polvo (etiqueta "remolino de polvo"); a 1.2 s una `Lupa` "AL MICROSCOPIO · POLVO" enseña granos de polvo y barrilitos (esporas). |
+| 1 | Suelo | Es *Coccidioides*, y vive en suelo seco del suroeste de Estados Unidos y del norte de México, como Sonora. | Fondo cian: mapa con la leyenda "mapa esquemático": suroeste de EE. UU. y México; se pinta con rayas la zona seca (chip "zona seca donde vive el hongo") y cae un pin en Sonora. Etiquetas *Coccidioides*, "EE. UU.", "MÉXICO", "Sonora". |
+| 2 | Esporas | Cuando la tierra se seca, sus hilos se parten en esporas con forma de barrilito. | Fondo oscuro (chip "POR DENTRO · SUELO"): granos de tierra y gotas de agua; tres hilos (etiqueta "hilos (hifas)"). Chip "la tierra se seca": las gotas desaparecen y los hilos se parten en barrilitos de pared gruesa alternados con celdas vacías (etiquetas "artroconidias (~3 × 4.5 µm)" y "celda vacía"); los barrilitos se sueltan. |
+| 3 | Viento | El viento o una excavación las levantan, y tú las respiras. | Fondo naranja: retroexcavadora que escarba (etiqueta "excavación") y levanta polvo; líneas de viento; los barrilitos viajan hasta la nariz de una persona y se encienden sus pulmones (etiqueta "pulmones"). |
 | 4 | Pregunta | ¿Y qué hace una espora de hongo dentro de ti? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
-| 5 | Esferula | En tus pulmones calientitos se vuelve una esfera que puede medir cien micras o más. | Fondo oscuro (AL MICROSCOPIO · PULMÓN): alvéolo; el barrilito se hincha y se vuelve una esfera de pared gruesa (esférula). Chip "37 °C". Medidor "30–100+ µm". |
-| 6 | Endosporas | Se llena de cientos de esporitas, revienta, y cada una puede formar otra esfera. | La esférula se llena de endosporas (cientos de puntitos), revienta, y las endosporas se dispersan y empiezan a crecer como nuevas esferas. Chip "100–300 endosporas". |
-| 7 | Dimorfo | Un hongo con dos vidas: hilos en la tierra, esferas en ti. | Pantalla dividida: izquierda suelo con hilos y barrilitos; derecha pulmón con esférulas. Etiqueta "hongo dimórfico". |
-| 8 | Estudio | En 1994, un terremoto en California provocó deslaves y nubes de polvo. | `TarjetaEstudio` "Enero 1994 · terremoto de Northridge, California · Schneider et al., JAMA 1997". Montañas que tiemblan, deslaves y una nube de polvo que el viento empuja hacia un valle. |
-| 9 | Casos | En el condado de Ventura hubo doscientos tres casos, y estar en la nube aumentaba el riesgo. | Contador hasta "203 casos"; personitas que se encienden; las que están dentro de la nube se marcan más. Chip "dentro de la nube: más riesgo". |
-| 10 | Calma | Ojo: cerca de seis de cada diez infectados no sienten nada. | Cuadrícula de 10 personas: 6 verdes tranquilas ("sin síntomas"), 4 en naranja. |
-| 11 | Sintomas | Otros tienen tos, fiebre y cansancio. No se contagia entre personas, pero tu perro también puede enfermar. | Íconos tos · termómetro · batería baja; dos personas lado a lado con flecha tachada (no se contagia); entra un perrito con termómetro. |
-| 12 | Cierre | Así que ese polvo no es solo tierra: a veces es el taxi de un hongo hacia tus pulmones. | **Regreso a la imagen del inicio:** el mismo desierto y el mismo remolino, ahora con los barrilitos visibles subidos "en taxi" en los granos de polvo. |
+| 5 | Esferula | En tus pulmones calientitos se vuelve una esfera que puede medir cien micras o más. | Fondo oscuro (chip "AL MICROSCOPIO · PULMÓN") con alvéolos: el barrilito se hincha y se vuelve una esfera de pared gruesa (etiquetas "esférula", "pared gruesa"). Medidor "tamaño de la esférula · 30–100+ µm". |
+| 6 | Endosporas | Se llena de cientos de esporitas, revienta, y cada una puede formar otra esfera. | La esférula se llena de endosporas (chip "100–300 endosporas", etiqueta "endosporas"), revienta en 8 pedazos y las endosporas salen; cinco de ellas empiezan a crecer como esferas nuevas. |
+| 7 | Dimorfo | Un hongo con dos vidas: hilos en la tierra, esferas en ti. | Pantalla dividida (chip "hongo dimórfico: 2 formas"): izquierda, suelo con hilos que se parten en barrilitos ("EN LA TIERRA: hilos"); derecha, pulmón con esférulas ("EN TI: esferas"). |
+| 8 | Estudio | En 1994, un terremoto en California provocó deslaves y nubes de polvo. | Fondo cian: `TarjetaEstudio` "1994 · terremoto de Northridge, California · Schneider et al., JAMA, 1997". Los cerros tiemblan, un deslave baja (etiqueta "deslaves") y se levanta una nube de polvo sobre un pueblo. |
+| 9 | Casos | En el condado de Ventura hubo doscientos tres casos, y estar en la nube aumentaba el riesgo. | La nube cubre el valle; `NumeroGigante` "203 · casos · condado de Ventura" y se encienden 203 personitas rojas. Chip "dentro de la nube de polvo: más riesgo". |
+| 10 | Calma | Ojo: cerca de seis de cada diez infectados no sienten nada. | Fondo menta: 10 personas, 6 verdes y 4 naranjas. Chip "≈ 6 de cada 10: sin síntomas". |
+| 11 | Sintomas | Otros tienen tos, fiebre y cansancio. No se contagia entre personas, pero tu perro también puede enfermar. | Fondo rosa: íconos "tos" (persona con nubecitas), "fiebre" (termómetro que sube) y "cansancio" (batería baja); luego dos personas con flecha tachada (chip "no se contagia entre personas") y entra un perro con termómetro (etiqueta "perros también"). |
+| 12 | Cierre | Así que ese polvo no es solo tierra: a veces es el taxi de un hongo hacia tus pulmones. | **Regreso a la imagen del inicio:** el mismo desierto y el mismo remolino, ahora con los barrilitos visibles montados en granos de polvo. Chip "el taxi de un hongo". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y seca, como viento del desierto, continua y sin golpe; efectos en el mismo cuadro (ráfaga y remolino, crujido de tierra que se agrieta, "clic" de cada hilo que se parte, motor de la retroexcavadora, inhalación, burbujeo grave al hincharse la esférula, "pop" al reventar, retumbo del terremoto y deslave, tics del contador, ladrido corto del perro, viento final).
 
-Barras de escala: 1 km (desierto/mapa: 500 km), 10 µm (suelo y esporas), 50 µm (esférula), 1 m (persona/perro).
+Barras de escala: 1 m (desierto, viento, personas, perro y cierre), 500 km (mapa), 10 µm (suelo y esporas), 50 µm (esférula y pantalla dividida), 1 km (terremoto y casos).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué hace una espora de hongo dentro de ti?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «ese polvo… trae esporas de un hongo» (cuadro 0) |
+| 2 | 6.9 | 10.1 | 13_senalando_arriba | `arriba-der` | el pin en Sonora |
+| 3 | 15.3 | 18.3 | 10_serio_molesto | `arriba-der` | «y tú las respiras» |
+| 4 | 18.5 | 21.8 | 07_pensativo_puno | `grande` | «¿qué hace una espora de hongo dentro de ti?» |
+| 5 | 28.4 | 33.9 | 04_bajando_lentes | `arriba-der` | la esférula revienta · «dos vidas» |
+| 6 | 38.4 | 43.2 | 12_perfil_serio | `arriba-der` | «203 casos» |
+| 7 | 43.7 | 46.7 | 05_sonriendo_dientes_uniformes | `arriba-der` | «seis de cada diez no sienten nada» |
+| 8 | 49.9 | 52.8 | 13_senalando_arriba | `arriba-der` | «tu perro también puede enfermar» |
+| 9 | 53.4 | 57.9 | 02_apuntando_camara | `arriba-der` | «el taxi de un hongo hacia tus pulmones» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **34.2 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas en el texto completo el 29 oct 2026)
 

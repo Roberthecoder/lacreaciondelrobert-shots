@@ -39,3 +39,36 @@ Fuentes abiertas:
 | 15 | Fuentes del guion: fuente 6 (CCDR) y fuente 4 (Kauffman, ahora con la cita textual de 8–15 µm) coinciden con lo abierto | ✅ | [CCDR], [K] | Ver filas 3b, 9–12. | 2007 / 2025 |
 
 **Re-verificación (29 oct 2026):** se aplicaron las 5 correcciones (gancho y chip, península de Yucatán sin nombre del cenote, "sospechoso", cenote cerrado atribuido al reporte de 2025, dibujo de micro y macroconidias) y los recortes de redacción; se revisó `narracion.json` completo (13 líneas). Todas las afirmaciones quedan ✅.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `histoplasma.jsx`, la columna «Lo que se ve», la tabla de Robert y `publicacion.md`, y se miraron cuadros de `motor/preview.mjs` (0.3, 6, 8, 9.5, 12, 14, 16, 18, 20, 24, 27, 30, 36, 42, 44, 45.5, 48, 51, 52.5, 54, 58 y 60 s).
+
+Fuente nueva abierta:
+- **[CDC-S]** CDC. *Symptoms of Histoplasmosis*. https://www.cdc.gov/histoplasmosis/signs-symptoms/index.html
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Chips «no es solo tierra: puede ser guano», «AL MICROSCOPIO · moho», «vive en el guano», «en el suelo: moho» | ✅ | [CDC-C], [K] | Ver filas 1–2. | 2007 / 2024 |
+| R2 | Etiquetas «microconidias 2–4 µm (lisas)» y «macroconidia 8–15 µm»; dibujo: hifas de ~1.3–2 µm con septos, microconidias de ~2.8 µm en pedicelos a los lados y macroconidias de ~10 µm de cuerpo (~13 µm con picos) con proyecciones, a escala 10 µm = 150 px | ✅ | [K] | "The macroconidia or tuberculate conidia are 8 to 15 μm in diameter and have a thick wall … with distinctive projections on the surface"; "the microconidia are tiny, smooth structures that are 2 to 4 μm" | 2007 |
+| R3 | Chip «esporas de 2–4 µm: no las ves» | ✅ | [K], [CDC-C] | "2 to 4 μm"; "too small to see without a microscope" | 2007 / 2024 |
+| R4 | «pulmones»; chips «en el suelo: moho» → «a 37 °C, en tu cuerpo: levadura»; levaduras ovaladas | ✅ | [K], [CDC-C] | "At 37°C in vitro and in tissues, the organism converts into the yeast phase"; "oval budding yeasts" | 2007 |
+| R5 | «macrófago (defensa)», «levaduras de 2–4 µm», «adentro se multiplica», «y viaja dentro de él» (macrófago de ~20 µm sobre un vaso) | ✅ | [SR], [K] | "survive and proliferate within the phagosomal compartment of host macrophages"; "dissemination … via parasitized macrophages" | 2007 / 2020 |
+| R6 | «casi todos: nada o algo leve» (20 personas, 3 con síntomas: proporción esquemática) y «fiebre · tos · cansancio» | ✅ | [K], [CDC-A] | "The vast majority of infected persons have either no symptoms or a very mild illness" | 2007 / 2024 |
+| R7 | Tarjeta «2024 · abril · cenote de la península de Yucatán · 4 turistas · CCDR (Canadá), 2025»; «4 turistas nadaron aquí»; «murciélagos en el techo» (4 nadadores) | ✅ | [CCDR] | "They recalled seeing bats inside the cenote."; cuatro nadaron y enfermaron | 2025 |
+| R8 | «2–3 semanas después» y calendario con los días 15–21 marcados | ✅ | [CCDR] | Inicio: ~18 días, ~20 días, ~3 semanas y "just over two weeks after exposure" | 2025 |
+| R9 | Etiquetas «confirmado» ×3 y «sospechoso» ×1; subtítulo «3 confirmados y 1 sospechoso» | ✅ | [CCDR] | Fila 11. | 2025 |
+| R10 | «otro cenote de la zona», «CERRADO desde 2019 · CCDR 2025» | ✅ | [CCDR] | Fila 12. | 2025 |
+| R11 | «capsulatum = "con cápsula"», «cápsula» tachada, «solo un halo claro» (levaduras con halo dentro de una célula) | ✅ | [EID] | "had a refractive halo mimicking a capsule (capsulatum), a misnomer"; "invaded the cytoplasm (plasma) of histiocyte-like cells" | 2021 |
+| R12 | Subtítulos (13): cada uno resume su línea de voz verificada; ninguno agrega datos | ✅ | — | — | — |
+| R13 | Barras de escala: 1 m (cueva), 10 µm (micro), 10 cm (torso y pulmones), 10 m (cenotes) — coherentes con lo dibujado | ✅ | — | Medido en cuadros. | — |
+| R14 | Publicación: síntomas «de 3 a 17 días después» | ✅ | [CDC-S] | "Symptoms of histoplasmosis appear between 3-17 days after breathing in the fungal spores." | consultada 2026 |
+| R15 | Publicación: «No se contagia de persona a persona» | ✅ | [CDC-C] | "It cannot spread between people or between people and pets." | consultada 2026 |
+| R16 | Publicación: «Samuel Darling, que lo describió en Panamá» | ✅ | [EID] | "In 1905, Samuel Taylor Darling … identified a protozoan-like microorganism in an autopsy specimen … while trying to understand malaria, which was prevalent during the construction of the Panama Canal." | 2021 |
+| R17 | Publicación (LinkedIn, **corregido**): antes «por lo que se diagnostica tarde o se confunde con otras neumonías» (lo de «tarde» no tenía fuente); ahora «y sus síntomas se parecen a los de otras neumonías, así que puede pasar desapercibida» | ✅ | [CDC-S] | "Histoplasmosis is a lung infection with symptoms similar to other pneumonias." | consultada 2026 |
+| R18 | Publicación (X, **corregido**): «cenote de Yucatán» → «cenote de la península de Yucatán» | ✅ | [CCDR] | Fila 9b. | 2025 |
+| R19 | Publicación: el resto (guano, moho/levadura, macrófagos, caso del cenote, nombre) repite lo ya verificado; ninguna red nombra el cenote | ✅ | Filas 1–14 | — | — |
+
+Resumen: la animación y `publicacion.md` coinciden con las fuentes; se corrigieron 2 frases de `publicacion.md` (LinkedIn y X). Todo ✅.
+
+VEREDICTO: APROBADO
