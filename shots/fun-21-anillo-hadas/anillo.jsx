@@ -173,10 +173,10 @@ function AnilloShot() {
       {/* 1 · gancho: el círculo del parque; las "hadas" se apagan y el anillo empuja hacia afuera */}
       <Escena T={T} a={K.G} b={K.Es} zoom={0.12} origen="50% 46%">
         {fsvg(<>
-          <Cesped T={T} R={Rg} setas={kprog(T, K.G - 0.5, K.G + 0.6)} />
-          {Array.from({ length: 7 }, (_, i) => { const a = T * 1.6 + i * 0.9, o = 1 - kprog(T, K.G + 1.4, K.G + 1.9); return o > 0 ? <Brillo4 key={i} x={540 + Math.cos(a) * 250} y={880 + Math.sin(a) * 250 - 40 - Math.abs(Math.sin(T * 5 + i)) * 40} s={0.8 + 0.3 * Math.sin(T * 6 + i)} rot={T * 90} o={o} /> : null; })}
-          <Sello T={T} at={K.G + 1.4} x={540} y={880} texto="NO" color={KC.red} r={100} />
-          <FlechasAfuera cx={540} cy={880} r={Rg + 40} o={kprog(T, K.G + 2.4, K.G + 2.8)} />
+          <Cesped T={T} cy={940} R={Rg} setas={kprog(T, K.G - 0.5, K.G + 0.6)} />
+          {Array.from({ length: 7 }, (_, i) => { const a = T * 1.6 + i * 0.9, o = 1 - kprog(T, K.G + 1.4, K.G + 1.9); return o > 0 ? <Brillo4 key={i} x={540 + Math.cos(a) * 250} y={940 + Math.sin(a) * 250 - 40 - Math.abs(Math.sin(T * 5 + i)) * 40} s={0.8 + 0.3 * Math.sin(T * 6 + i)} rot={T * 90} o={o} /> : null; })}
+          <Sello T={T} at={K.G + 1.4} x={540} y={940} texto="NO" color={KC.red} r={100} />
+          <FlechasAfuera cx={540} cy={940} r={Rg + 40} o={kprog(T, K.G + 2.4, K.G + 2.8)} />
         </>)}
       </Escena>
       {/* 2 · la espora cae y germina (fondo oscuro, corte de suelo) */}

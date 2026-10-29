@@ -11,24 +11,44 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese círculo en el pasto no es de hadas: es un hongo que crece hacia afuera. | Fondo menta, vista desde arriba de un pasto de parque con un círculo verde oscuro y setas en el borde; cuadro 0.3: brillitos de "hadas" giran sobre el círculo y se apagan (sello "NO"); una flecha empuja el círculo hacia afuera. Barra de escala 1 m. |
+| 0 | Gancho | Ese círculo en el pasto no es de hadas: es un hongo que crece hacia afuera. | Fondo menta, vista desde arriba de un pasto de parque con un círculo verde oscuro y setas en el borde; cuadro 0.3: brillitos de "hadas" giran sobre el círculo y se apagan (sello "NO"); flechas empujan el círculo hacia afuera. Chips "¿anillo de hadas?" → "es un hongo". Barra de escala 1 m. |
 | 1 | Espora | Todo empieza con una espora que germina en un punto del suelo. | Zoom al centro: una espora cae al suelo (fondo oscuro, corte de tierra) y le sale el primer tubo. Etiqueta "espora". Barra 10 µm. |
 | 2 | Micelio | De ahí salen hilos finos, el micelio, que se abren en todas direcciones. | `RedHifas` creciendo en estrella desde el punto, parejo hacia todos lados. Etiqueta "micelio (hifas)". |
-| 3 | Centro | Adentro se acaba la comida, y el borde vivo solo avanza hacia afuera. | Vista de arriba: el centro se vuelve gris ("comida agotada"), el borde brilla dorado ("borde vivo") y avanza; flechas hacia afuera. Comparación: como una llama en el pasto seco (Shantz y Piemeisel la usan). |
+| 3 | Centro | Adentro se acaba la comida, y el borde vivo solo avanza hacia afuera. | Vista de arriba: el centro se vuelve gris ("comida agotada"), el borde brilla dorado ("borde vivo") y avanza; flechas hacia afuera. |
 | 4 | Verde | Ese borde descompone materia del suelo y suelta nitrógeno: el pasto se pone más verde. | Corte del suelo: restos de hojas se deshacen junto a las hifas; salen bolitas "N" (amonio) que suben a las raíces; arriba el pasto se pone verde oscuro y más alto. Chip "tipo II: anillo verde". |
-| 5 | Cafe | En otros, el micelio repele el agua y el pasto se seca: un anillo café. | Gotas de lluvia rebotan sobre la capa de micelio (como impermeable) y no bajan; el pasto encima se pone café. Chip "tipo I: anillo café". |
+| 5 | Cafe | En otros, el micelio repele el agua y el pasto se seca: un anillo café. | Gotas de lluvia rebotan sobre la capa de micelio (como impermeable) y no bajan; el pasto encima se pone café. Chip "tipo I: anillo café". Etiqueta "micelio que repele el agua". |
 | 6 | Setas | Y con las lluvias, en el borde brotan setas, como Marasmius oreades. | Nubes y lluvia; en el borde brotan setas en círculo: *Marasmius oreades* (sombrero 1–5 cm, color crema/tostado con bultito al centro, láminas separadas, pie delgado y correoso). Etiqueta "hongo de los anillos · *Marasmius oreades*". Chip "tipo III: anillo de setas". Barra 5 cm. |
 | 7 | Pregunta | ¿Y cuántos años tiene un anillo así? | **Re-gancho.** Vista de arriba otra vez; "?" gigante sobre el anillo; Robert grande, pensativo. |
 | 8 | Estudio | En 1917, en Colorado, dos científicos estimaron que sus anillos avanzaban unos doce centímetros al año. | Tarjeta "1917 · este de Colorado, EUA · Shantz y Piemeisel · *J. Agric. Research*"; pradera de pasto corto con muchos anillos; cinta métrica marca +12 cm por año (promedio estimado). |
 | 9 | Edad | Así, uno de sesenta metros tendría unos doscientos cincuenta años. | **La imagen que se llena:** el anillo crece anillo por anillo, contador de años 0 → 250 y diámetro 0 → 60 m (con una persona a escala). Chip "estimación". |
 | 10 | Japon | Y en 2010, en Japón, hallaron que un hongo de anillo suelta una sustancia que hace crecer el pasto. | Tarjeta "2010 · Universidad de Shizuoka, Japón · *ChemBioChem*"; *Lepista sordida* (seta morada) junto a un matraz; la molécula "AHX" (2-azahipoxantina) cae al pasto y este crece. |
-| 11 | Folclor | Antes lo explicaban con hadas, el diablo batiendo mantequilla o un dragón descansando. | Tres viñetas tipo cuento que aparecen y se tachan: hadas bailando, el diablo con una mantequera (Holanda), un dragón echado (Alemania). Chip "folclor europeo". |
-| 12 | Cierre | Así que ese círculo no es de hadas: es un hongo que lleva años, o siglos, creciendo bajo tus pies. | **Regreso a la imagen del inicio:** el mismo pasto de parque, ahora con el anillo enorme, el micelio dibujado en rayos X debajo (`Lupa`) y unos pies parados encima. |
+| 11 | Folclor | Antes lo explicaban con hadas, el diablo batiendo mantequilla o un dragón descansando. | Tres viñetas tipo cuento que aparecen una por una: "hadas bailando", "el diablo · mantequera · Holanda", "un dragón · Alemania"; al final cae el sello "HONGO". Chip "folclor europeo". |
+| 12 | Cierre | Así que ese círculo no es de hadas: es un hongo que lleva años, o siglos, creciendo bajo tus pies. | **Regreso a la imagen del inicio:** el mismo pasto de parque, ahora con el anillo enorme, el micelio dibujado en rayos X debajo (`Lupa`) y unos pies parados encima. Chip "años, o siglos". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave, suave y de asombro (pasto al aire libre, sin golpe); efectos en el mismo cuadro: tintineo de "hadas" que se corta, la espora que cae, crujidos finos de las hifas al crecer, pulso que avanza con el borde, burbujitas del nitrógeno, gotas que rebotan, "pop" de cada seta, tics del contador de años, campanita de la tarjeta de Japón, tres golpes de libro de cuentos en el folclor.
 
-Barras de escala: 1 m (parque), 10 µm (espora e hifas), 5 cm (setas), 10 m (anillo de 60 m).
+Barras de escala: 1 m (parque), 10 µm (espora), 1 cm (micelio), 10 cm (corte del suelo), 5 cm (setas y Japón), 10 m (pradera y anillo de 60 m).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y cuántos años tiene un anillo así?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «no es de hadas: es un hongo» (cuadro 0) |
+| 2 | 8.6 | 12.1 | 13_senalando_arriba | `arriba-der` | el micelio que se abre en todas direcciones |
+| 3 | 16.9 | 21.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «el pasto se pone más verde» |
+| 4 | 21.9 | 25.4 | 12_perfil_serio | `arriba-der` | «el pasto se seca: un anillo café» |
+| 5 | 29.6 | 32.0 | 07_pensativo_puno | `grande` | «¿cuántos años tiene un anillo así?» |
+| 6 | 34.6 | 37.6 | 04_bajando_lentes | `arriba-der` | el estudio de 1917 (12 cm al año) |
+| 7 | 38.2 | 41.5 | 11_sorprendido | `arriba-der` | «unos doscientos cincuenta años» |
+| 8 | 44.4 | 47.2 | 06_pensativo_menton | `arriba-der` | la sustancia de Japón que hace crecer el pasto |
+| 9 | 47.9 | 52.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | hadas, el diablo con mantequilla, el dragón |
+| 10 | 52.8 | 57.9 | 02_apuntando_camara | `arriba-der` | «creciendo bajo tus pies» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **36.1 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 
