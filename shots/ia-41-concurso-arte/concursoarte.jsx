@@ -258,7 +258,7 @@ function ConcursoArte() {
         <div style={{ position:'absolute', left:0, right:0, top:1080, height:24, background:'#c99a1a', borderTop:`6px solid ${KC.ink}` }}></div>
         {svg(<>
           <g opacity={ent(0)} transform={`translate(${(1 - ent(0)) * -500} 0)`}><Cuadro x={klerp(190, 90, foco)} y={klerp(900, 900, foco)} s={klerp(0.95, 0.6, foco)} tipo="bodegon" id="g1" dim={foco} /></g>
-          <g opacity={ent(1)} transform={`translate(0 ${(1 - ent(1)) * 600})`}><Cuadro x={klerp(540, 990, foco)} y={klerp(900, 900, foco)} s={klerp(0.95, 0.6, foco)} tipo="paisaje" id="g2" dim={foco} /></g>
+          <g opacity={ent(1)} transform={`translate(0 ${(1 - ent(1)) * -600})`}><Cuadro x={klerp(540, 990, foco)} y={klerp(900, 900, foco)} s={klerp(0.95, 0.6, foco)} tipo="paisaje" id="g2" dim={foco} /></g>
           <g opacity={ent(2)} transform={`translate(${(1 - ent(2)) * 500} 0)`}><Cuadro x={klerp(890, 540, foco)} y={klerp(900, 900, foco)} s={klerp(0.95, 1.3, foco)} tipo="teatro" id="g3" T={T} /></g>
           {foco > 0.6 && <g opacity={kprog(T, K.R + 0.8, K.R + 1.1)}><Liston x={700} y={700} s={kprog(T, K.R + 0.8, K.R + 1.2, kEase.rebote)} /></g>}
         </>)}
@@ -291,7 +291,7 @@ function ConcursoArte() {
       <Escena T={T} a={K.P} b={K.O} zoom={0.08}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <Balanza x={280} y={700} s={1.1} T={T} />
+          <Balanza x={300} y={700} s={1.1} T={T} />
           <text x={280} y={600} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} transform={`rotate(${Math.sin(T * 3) * 6} 280 540)`}>?</text>
         </>)}
       </Escena>
@@ -345,8 +345,8 @@ function ConcursoArte() {
           {empuja > 0 && <path d={`M 640 1060 L ${640 + 220 * empuja} 1060`} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" markerEnd="" />}
         </>)}
       </Escena>
-      <Chip T={T} at={K.F + 0.3} until={K.F + 3.6} texto="Sony World Photography Awards 2023" x={420} y={470} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.F + 0.9} until={K.F + 3.6} texto="Boris Eldagsen · categoría Creativa" x={400} y={560} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.F + 0.3} until={K.F + 3.6} texto="Sony World Photography Awards 2023" x={370} y={470} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.F + 0.9} until={K.F + 3.6} texto="Boris Eldagsen · categoría Creativa" x={360} y={560} tam={30} borde={KC.gold} />
       <Chip T={T} at={K.F + 1.6} until={K.Rg - 0.2} texto="dibujo nuestro, no la imagen original" x={360} y={1120} tam={24} borde={KC.texto} />
       <Cita T={T} at={K.F + 3.8} until={K.Rg - 0.2} y={540} texto="«La IA no es fotografía»" quien="Boris Eldagsen · 13 abr 2023 · rechazó el premio" />
       {/* 9 · la regla de 2025 */}

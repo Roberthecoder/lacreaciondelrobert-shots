@@ -299,7 +299,7 @@ function CallCenter() {
       </Escena>
       <Chip T={T} at={K.M + 0.3} until={K.X - 0.2} texto="según los autores" x={540} y={420} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.M + 0.8} until={K.X - 0.2} x={70} y={540} texto="chats de los mejores ★" color={KC.gold2} />
-      <Etq T={T} at={K.M + 2.6} until={K.X - 0.2} x={1010} y={640} lado="izq" texto="sugerencias → al nuevo" color={KC.cyan} />
+      <Etq T={T} at={K.M + 2.6} until={K.X - 0.2} x={70} y={1060} texto="sugerencias → al nuevo" color={KC.cyan} />
 
       {/* 7 · a los mejores, la calidad les bajó un poco */}
       <Escena T={T} a={K.X} b={K.Cl}>
@@ -310,7 +310,7 @@ function CallCenter() {
         </>)}
       </Escena>
       {kvisible(T, K.X + 0.9, K.Cl - 0.2) && (() => { const e = kentrada(T, K.X + 0.9, K.Cl - 0.2, 'pop'), baja = kprog(T, K.X + 1.4, K.X + 2.2, kEase.sale);
-        return <div style={{ position:'absolute', left:70, top:820, width:300, zIndex:42, opacity:e.o, transform:`scale(${e.s})`,
+        return <div style={{ position:'absolute', left:70, top:740, width:300, zIndex:42, opacity:e.o, transform:`scale(${e.s})`,
           background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:24, padding:'16px 20px', boxShadow:`8px 8px 0 ${KC.ink}`, textAlign:'center' }}>
           <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink }}>calidad</div>
           <div style={{ position:'relative', height:200, margin:'10px auto 0', width:90, border:`5px solid ${KC.ink}`, borderRadius:14, background:'#fff', overflow:'hidden' }}>
@@ -337,7 +337,7 @@ function CallCenter() {
       {kvisible(T, K.Co + 0.2, K.Co + 2.3) && (() => { const e = kentrada(T, K.Co + 0.2, K.Co + 2.3, 'pop');
         return <div style={{ position:'absolute', left:640, top:560, zIndex:43, transform:`translate(-50%,-50%) scale(${e.s}) rotate(-2deg)`, opacity:e.o,
           background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:26, padding:'18px 40px', textAlign:'center', boxShadow:`12px 12px 0 ${KC.ink}` }}>
-          <div style={{ font:`700 28px ${KF.mono}`, color:'#5a524a' }}>otro estudio · Shot IA #16</div>
+          <div style={{ font:`700 28px ${KF.mono}`, color:'#5a524a', whiteSpace:'nowrap' }}>otro estudio · Shot IA #16</div>
           <div style={{ font:`900 44px ${KF.texto}`, color:KC.ink, marginTop:6 }}>programadores expertos</div>
           <div style={{ font:`400 78px/1.1 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`3px ${KC.ink}` }}>más lentos con IA</div>
         </div>; })()}
@@ -363,8 +363,8 @@ function CallCenter() {
       <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="sus trucos → al nuevo" x={360} y={430} tam={38} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="Con IA, a los 2 meses rindes *como alguien de +6.*" />
-      <Subtitulo T={T} idx={1} at={K.E + 0.1} until={K.S - 0.1} texto="5,172 agentes: a una parte *le llegó la IA.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="2 meses con IA *= +6 meses sin IA.*" />
+      <Subtitulo T={T} idx={1} at={K.E + 0.1} until={K.S - 0.1} texto="5,172 agentes: *a una parte, IA.*" />
       <Subtitulo T={T} idx={2} at={K.S + 0.1} until={K.N - 0.1} texto="La IA sugiere; *el agente decide.*" />
       <Subtitulo T={T} idx={3} at={K.N + 0.1} until={N2 - 0.1} texto="En promedio: *+15 % casos por hora.*" />
       <Subtitulo T={T} idx={4} at={N2 + 0.1} until={K.P - 0.1} texto="Novatos ≈ +30 %. *Expertos, casi nada.*" />
