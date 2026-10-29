@@ -54,4 +54,28 @@ Segunda revisión del verificador (29 oct 2026) sobre el texto final completo de
 
 Nota: la cita «negro… como un tamal» ya no está ni en la voz ni en la pantalla (no se pudo confirmar en el original).
 
+## Revisión de pantalla y publicación (29 oct 2026)
+
+Revisé todos los textos de `huitlacoche.jsx` (Chip, Etq, MitoTachado, Capitulo, TarjetaEstudio, Medidor, contador de días, sello «ENFERMEDAD», Lupa, Subtitulo) y lo que afirman los dibujos y las barras de escala, más `publicacion.md` completo.
+
+| Elemento | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Escena 3: barra de escala (40 px/µm → «5 µm») y teliospora de 400 px de diámetro (≈ 10 µm), etiqueta «teliospora · ≈ 10 µm» | ✅ cuadra con la cifra verificada | Seco y Balendres 2023 · agroatlas.ru | "averaged at 9.21 μM" · "8-15 x 7-10 mkm" | 2023 / s/f |
+| Escena 4 (levaduras): barra «20 µm» (10 px/µm) | ❌ → **corregida**: con esa escala las esporidias salían de ≈ 8 µm de largo, y miden 20–30 µm (más largas que la espora). Ninguna escala sirve para la espora y las esporidias tal como están dibujadas. Se quitó la barra y quedó la etiqueta «esquema · no a escala» | bio-protocol.org/e1793 (vía buscador; la página dio error 468), dato de laboratorio sin verificar en el original: se usa solo para quitar la cifra, no se muestra | "cigar-shaped … 2 and 4 μm in width and 20 and 30 μm in length" | 2016 (aprox.) |
+| Escena 7 (tumor): barra «50 µm» (3 px/µm, células de ≈ 33 µm) | ⚠️ → **corregida**: tamaño de célula no verificado y las células se agrandan en la animación. Se quitó la barra y quedó la etiqueta «esquema · no a escala» | — | — | — |
+| «un hongo», «¿podrido?» tachado, «huitlacoche», «Ustilago maydis», «(hoy Mycosarcoma maydis)», «cubierta de espinitas», «la espora germina», «esporidias: crecen como levaduras», «2 células compatibles», «filamento con 2 núcleos», «apresorio: perfora la planta», «células del maíz», «hifas del hongo», «crecen y se dividen de más» | ✅ | Tabla de arriba (Redkar 2017: "dikaryotic filament"; McTaggart 2016; van der Linde 2021; Villagrán 2023) | — | 2016–2023 |
+| Contador «INFECCIÓN · DÍA 1→7» y «≤ 1 semana: agallas grises»; etiquetas hoja/tallo/espiga/granos | ✅ | NC State 2024 | "Galls form within a week after infection" | 2024 |
+| «POR DENTRO · agalla», la agalla que revienta en polvo negro, «polvo negro = esporas» | ✅ | NC State 2024 | "black, powdery teliospores" · galls "mature, dry, and rupture" | 2024 |
+| TarjetaEstudio «2006 · Marburgo, Alemania · genoma de Ustilago maydis · Nature»; «hongo modelo de laboratorio»; «crece como levadura en la caja» | ✅ | Kämper 2006 · Wikipedia Corn smut | "D-35043 Marburg, Germany" · "behaves like baker's yeast, forming single cells called sporidia" | 2006 |
+| «EE. UU.: corn smut», sello «ENFERMEDAD», «México: comida», «se cosecha tierno», quesadilla en la canasta | ✅ | UW–Madison 2024 · México Desconocido | "the early stages … are eaten as a delicacy in Mexico" · "la forma más común de comer huitlacoche o cuitlacoche es en quesadillas" | 2024 / s/f |
+| Medidores «lisina · maíz: poca» vs «lisina · huitlacoche: rico» (sin cifras) | ✅ | Juárez-Montiel 2011 | 14.8 % vs 2.6–3.5 % del total de aminoácidos | 2011 |
+| «ilustración al estilo del Códice Florentino · s. XVI» | ✅ (aclara que no es el original) | aztecglyphs (Libro 11, fol. 251r) | "black and white sketch of the fungus that grows on corn cobs (cuitlacochin)" | s. XVI |
+| Cierre: rosca con muñequito, tamal, «AL MICROSCOPIO · esporas», «no está podrido: es un hongo» | ✅ | Meteored 2025 · NC State 2024 | "cumplen con la tradición de invitar tamales a todos los asistentes" | 2025 |
+| Subtítulos (13) | ✅ resumen fiel de la voz verificada | — | — | — |
+| publicacion.md: "sobre todo en quesadillas, y también en tamales" | ✅ | México Desconocido (quesadillas) · Meteored 2025 ("tamales de huitlacoche") | "la forma más común de comer huitlacoche o cuitlacoche es en quesadillas" · "tamales de huitlacoche, de zarzamora con queso" | s/f / 2025 |
+| publicacion.md: "esporas … que al final revientan como polvo", "Instituto Max Planck", "organismo modelo para estudiar cómo un hongo enferma a una planta", "el aminoácido que limita el valor nutritivo del maíz" | ✅ | NC State 2024 · Kämper 2006 · Juárez-Montiel 2011 | "dry, and rupture" · "model organism for the study of plant-microbe interactions" · "Lysine is a limiting factor in the nutritional value of corn" | 2024 / 2006 / 2011 |
+| publicacion.md: fuente Bonito Lab, MSU (teliosporas "echinulate") | ⚠️ no se pudo abrir (la página sale vacía); el dato lo respaldan otras fuentes → se agregó AgroAtlas en el comentario fijado (fuente 10) | agroatlas.ru | "Teliospores are spherical, olive brown to black" | s/f |
+
+Correcciones hechas por el verificador: en `huitlacoche.jsx`, las barras de escala de las escenas 4 y 7 se cambiaron por la etiqueta «esquema · no a escala» (la de la espora, en la escena 3, se queda porque cuadra); en `publicacion.md`, se agregó AgroAtlas a la fuente 10 del comentario fijado. No hay cifras, fechas ni afirmaciones nuevas fuera de lo verificado.
+
 VEREDICTO: APROBADO

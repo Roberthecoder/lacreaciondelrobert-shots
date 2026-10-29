@@ -231,8 +231,8 @@ function Viruela() {
   const apaga = (i) => kprog(T, K.V + 0.6 + [0, 0.5, 1.0][i], K.V + 0.9 + [0, 0.5, 1.0][i]);
   // etapas de la marca (escena Costra): día 3–5 granito → ampolla → pústula → costra → se cae → marquita
   const dia = klerp(3, 21, kprog(T, K.Co + 0.1, K.Co + 2.9));
-  const casas = Array.from({ length: 8 }, (_, i) => { const a = (i / 8) * Math.PI * 2 + 0.2; return [560 + Math.cos(a) * 210, 930 + Math.sin(a) * 210]; });
-  const lejos = Array.from({ length: 11 }, (_, i) => { const a = (i / 11) * Math.PI * 2 + 0.55; return [560 + Math.cos(a) * 400, 930 + Math.sin(a) * 360]; });
+  const casas = Array.from({ length: 8 }, (_, i) => { const a = (i / 8) * Math.PI * 2 + 0.2; return [560 + Math.cos(a) * 200, 880 + Math.sin(a) * 200]; });
+  const lejos = Array.from({ length: 11 }, (_, i) => { const a = (i / 11) * Math.PI * 2 + 0.55; return [560 + Math.cos(a) * 400, 880 + Math.sin(a) * 300]; });
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: la manga se arremanga y aparece la marquita */}
@@ -313,7 +313,7 @@ function Viruela() {
       {/* 7 · 1958: propuesta soviética en la Asamblea Mundial de la Salud (Minneapolis) */}
       <Escena T={T} a={K.Pr} b={K.Ri}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform={`translate(0 ${klerp(60, 0, kprog(T, K.Pr, K.Pr + 0.6, kEase.sale))})`}>
+        {svg(<g transform={`translate(0 ${klerp(0, -60, kprog(T, K.Pr, K.Pr + 0.6, kEase.sale))})`}>
           {/* delegado (silueta, sin retrato) */}
           <circle cx={540} cy={860} r={70} fill="#3b2f2a" />
           <path d="M 420 1100 L 420 1000 Q 420 940 480 940 L 600 940 Q 660 940 660 1000 L 660 1100 Z" fill="#2b2f3a" />
@@ -346,12 +346,12 @@ function Viruela() {
         <FondoLunares color={KC.yellow} />
         {svg((() => {
           const baja = kprog(T, K.Ag + 0.1, K.Ag + 0.7, kEase.suave), sube = kprog(T, K.Ag + 0.9, K.Ag + 1.5, kEase.suave);
-          const ay = klerp(560, 980, baja) - klerp(0, 420, sube);
+          const ay = klerp(500, 900, baja) - klerp(0, 300, sube);
           const piq = Math.floor(kprog(T, K.Ag + 2.3, K.Ag + 3.4) * 15);
           const enPiel = kprog(T, K.Ag + 1.9, K.Ag + 2.3);
           return <>
-            <Frasco x={300} y={1060} s={2.4} tapa={KC.red} polvo={0} />
-            <ellipse cx={300} cy={1150} rx={64} ry={14} fill="#8fd8ff" opacity=".8" />
+            <Frasco x={300} y={980} s={2.4} tapa={KC.red} polvo={0} />
+            <ellipse cx={300} cy={1070} rx={64} ry={14} fill="#8fd8ff" opacity=".8" />
             <g opacity={1 - enPiel}><AgujaBif x={300} y={ay} s={1.15} gota={sube > 0.2 ? 1 : 0} /></g>
             {/* parche de piel del brazo: 15 piquetitos en un círculo de ~5 mm */}
             <g opacity={enPiel}>
@@ -369,10 +369,10 @@ function Viruela() {
         {svg((() => {
           const anillo = kprog(T, K.An + 0.9, K.An + 2.6), apag = kprog(T, K.An + 2.8, K.An + 3.6);
           return <>
-            {lejos.map(([hx, hy], i) => <Casa key={'l' + i} T={T} x={hx} y={hy} s={0.8} />)}
-            <circle cx={560} cy={930} r={210} fill="none" stroke={VACCINIA} strokeWidth={10} strokeDasharray={`${anillo * 1320} 9999`} transform="rotate(-90 560 930)" opacity=".9" />
+            <g opacity=".5">{lejos.map(([hx, hy], i) => <Casa key={'l' + i} T={T} x={hx} y={hy} s={0.62} />)}</g>
+            <circle cx={560} cy={880} r={200} fill="none" stroke={VACCINIA} strokeWidth={10} strokeDasharray={`${anillo * 1320} 9999`} transform="rotate(-90 560 880)" opacity=".9" />
             {casas.map(([hx, hy], i) => <Casa key={i} T={T} x={hx} y={hy} s={0.85} estado={kclamp(anillo * 8 - i, 0, 1)} />)}
-            <Casa T={T} x={560} y={930} s={1.05} caso={1 - apag} estado={apag} />
+            <Casa T={T} x={560} y={880} s={1.05} caso={1 - apag} estado={apag} />
           </>;
         })())}
       </Escena>
@@ -390,7 +390,7 @@ function Viruela() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="35% 45%">
         <FondoLunares color={KC.pink} />
         {svg(<Brazo T={T} x={BX} y={BY} manga={1} dorado={kprog(T, K.Ci + 0.3, K.Ci + 1.0)} />)}
-        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={790} y={1060} r={175} fx={MX} fy={MY} tinte={KC.gold2} etiqueta="un mundo sin viruela"
+        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={790} y={890} r={165} fx={MX} fy={MY} tinte={KC.gold2} etiqueta="un mundo sin viruela"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><Globo T={Tl} x={r} y={r * 0.9} r={r * 0.55} id="c" puntos={0} limpia={1} />
             <g transform={`translate(${r} ${r * 1.62}) scale(0.32)`}><Saludo T={Tl} x={0} y={0} p={1} /></g></svg>} />
       </Escena>
@@ -411,29 +411,29 @@ function Viruela() {
       <Etq T={T} at={K.Va + 1.2} until={K.Gr - 0.3} x={790} y={1080} texto="leve" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Va + 2.6} until={K.Gr - 0.3} texto="parientes · orthopoxvirus" x={540} y={560} tam={38} borde={KC.gold2} />
       {T > K.Va - 0.3 && T < K.Gr + 0.2 && <Escala T={T} z={1} pxPorMm={1.04e6} x={60} y={1600} objetivo={240} />}
-      <Etq T={T} at={K.Gr + 0.3} until={K.Me - 0.3} x={720} y={520} texto="piel por dentro" tam={32} />
+      <Etq T={T} at={K.Gr + 0.3} until={K.Me - 0.3} x={1020} y={520} lado="izq" texto="piel por dentro" tam={32} />
       <Etq T={T} at={K.Gr + 1.6} until={K.Me - 0.3} x={60} y={1440} texto="linfocitos T y B (defensas)" tam={30} color="#cfc2ff" />
       <Chip T={T} at={K.Gr + 2.7} until={K.Me - 0.3} texto="aprenden su forma" x={540} y={1560} tam={42} borde={KC.gold2} />
       {T > K.Gr - 0.3 && T < K.Co + 0.2 && <Escala T={T} z={1} pxPorMm={9000} x={60} y={1640} objetivo={200} />}
       <Etq T={T} at={K.Me + 0.4} until={K.Co - 0.3} x={60} y={520} texto="ganglio · células de memoria" tam={30} color="#cfc2ff" />
       <Chip T={T} at={K.Me + 1.6} until={K.Co - 0.3} texto="memoria inmune" x={540} y={1500} tam={44} borde={KC.yellow} />
       <Etq T={T} at={K.Me + 1.8} until={K.Co - 0.3} x={60} y={1600} texto="anticuerpos" tam={30} color={KC.yellow} />
-      <Medidor T={T} at={K.Co + 0.1} until={K.P - 0.2} y={1440} ancho={900} etiqueta="días después de vacunar" valor={(t) => (klerp(3, 21, kprog(t, K.Co + 0.1, K.Co + 2.9)) / 21)} texto={() => 'día ' + Math.round(dia)} color={KC.ink} />
-      <Etq T={T} at={K.Co + 0.2} until={K.Co + 1.6} x={60} y={480} texto={dia < 6 ? 'granito' : 'ampolla'} tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Co + 1.7} until={K.Co + 2.6} x={60} y={480} texto="costra" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Co + 2.7} until={K.P - 0.2} x={60} y={480} texto="la marquita" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 0.9} until={K.Ri - 0.3} x={640} y={1005} texto="V. Zhdánov · URSS" tam={32} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Pr + 0.4} until={K.Ri - 0.3} anio="1958" quien="Asamblea Mundial de la Salud" revista="Minneapolis, EE.UU. · propuesta de la URSS" x={540} y={560} />
+      <Medidor T={T} at={K.Co + 0.1} until={K.P - 0.2} y={1440} ancho={900} etiqueta="días después de vacunar" valor={(t) => (klerp(3, 21, kprog(t, K.Co + 0.1, K.Co + 2.9)) / 21)} texto={() => 'día ' + Math.round(dia)} color={KC.yellow} />
+      <Etq T={T} at={K.Co + 0.2} until={K.Co + 1.6} x={640} y={860} texto={dia < 6 ? 'granito' : 'ampolla'} tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Co + 1.7} until={K.Co + 2.6} x={640} y={860} texto="costra" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Co + 2.7} until={K.P - 0.2} x={640} y={860} texto="la marquita" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 0.9} until={K.Ri - 0.3} x={630} y={945} texto="V. Zhdánov · URSS" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Pr + 0.4} until={K.Ri - 0.3} anio="1958" quien="Asamblea Mundial de la Salud" revista="Minneapolis, EE.UU. · propuesta de la URSS" x={540} y={500} />
       <Chip T={T} at={K.Pr + 1.6} until={K.Ri - 0.3} texto="erradicar la viruela del mundo" x={540} y={1520} tam={40} borde={ROJO_URSS} />
       <Medidor T={T} at={K.Ri + 0.3} until={K.Ag - 0.3} y={1440} ancho={900} etiqueta="dosis de la URSS · 1958–1979" valor={(t) => kprog(t, K.Ri + 0.3, K.Ri + 2.6, kEase.suave)} texto={(v) => '+' + kformato(Math.round(v * 1400)) + ' millones'} color={ROJO_URSS} />
       <Etq T={T} at={K.Ri + 0.6} until={K.Ri + 3.3} x={60} y={520} texto="vacuna en polvo (liofilizada)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Ri + 1.9} until={K.Ri + 3.3} x={600} y={800} texto="expertos de EE.UU." tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ri + 1.9} until={K.Ag - 0.3} texto="D. A. Henderson (CDC): jefe del programa de la OMS, 1966–1977" x={540} y={1610} tam={26} borde={AZUL_EU} />
-      <Etq T={T} at={K.Ag + 1.1} until={K.Ag + 2.2} x={340} y={560} texto="una gotita entre las 2 puntas" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ag + 2.4} until={K.An - 0.3} x={560} y={600} texto="15 piquetitos · ~5 mm" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ag + 1.1} until={K.Ag + 2.2} x={350} y={575} texto="una gotita entre las 2 puntas" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ag + 2.4} until={K.An - 0.3} x={560} y={1130} texto="15 piquetitos · ~5 mm" tam={30} color={KC.ink} />
       <Medidor T={T} at={K.Ag + 1.3} until={K.An - 0.3} y={1440} ancho={900} etiqueta="0.0025 mL en vez de 0.01 mL" valor={(t) => kprog(t, K.Ag + 1.5, K.Ag + 2.8)} texto={(v) => '×' + Math.max(1, Math.round(v * 4)) + ' vacunas'} color={KC.blue} />
       <Chip T={T} at={K.Ag + 3.2} until={K.An - 0.3} texto="vacuna en polvo: sin refrigerador" x={540} y={1610} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.An + 0.3} until={K.Ul - 0.3} x={680} y={930} texto="caso" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.An + 0.3} until={K.Ul - 0.3} x={612} y={830} texto="caso" tam={30} color={KC.ink} />
       <Chip T={T} at={K.An + 1.4} until={K.Ul - 0.3} texto="vigilancia y contención" x={540} y={1500} tam={42} borde={VACCINIA} />
       <Etq T={T} at={K.An + 1.8} until={K.Ul - 0.3} x={60} y={1600} texto="vacunan a sus contactos" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Ul + 1.3} until={K.Li - 0.3} x={812} y={776} texto="Merca" tam={34} color={KC.ink} />

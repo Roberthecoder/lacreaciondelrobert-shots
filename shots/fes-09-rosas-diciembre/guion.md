@@ -1,33 +1,51 @@
 # Shot Festivo #09 · Virgen de Guadalupe · Científico: Rosas en diciembre: el freno roto en su ADN
 
 - **Serie:** Shot Festivo · **Serie vinculada:** Científico · **Logo:** biología (ADN; es de plantas) · **Badge:** Festivo #09 · **Especial:** Día de la Virgen de Guadalupe (se publica el 12 dic 2026).
-- **Estado (29 oct 2026):** guion verificado (`verificacion.md`) y corregido con sus 3 ⚠️. Sin animación todavía. **Voz pendiente de aprobación de Robert.**
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`: APROBADO) y corregido con sus 3 ⚠️; animación (`rosas.jsx`), música (`gen-audio.mjs` → `assets/mezcla.wav`), Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert** (~1,078 caracteres).
 - **Formato:** N1 "Por dentro" (de la rosa del florero al gen dentro de su ADN y de regreso), con un poco de N3 (capítulos y un cronómetro de semanas).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Esta rosa no sabe que es diciembre: trae roto un freno en su ADN."
-- **Duración:** voz 1,078 caracteres (≈ 66.0 s) + cierre 3.8 s → **≈ 69.8 s** estimados (rango festivo 61–75 s).
+- **Duración:** voz 1,078 caracteres (≈ 66.0 s) + cierre 3.8 s → **69.8 s** en la base (rango festivo 61–75 s).
 - **Tradición:** se dice como tradición, con respeto, sin opinar sobre milagros ni sobre la tilma.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esta rosa no sabe que es diciembre: trae roto un freno en su ADN. | Fondo rosa con papel picado. Desde el cuadro 0, una rosa roja en un florero se abre de golpe; una hoja de calendario «DICIEMBRE» cae al lado. Lupa de rayos X sobre el tallo: una doble hélice con un candado roto. Chip «Especial Virgen de Guadalupe». |
-| 1 | Tepeyac | Según la tradición guadalupana, Juan Diego halló rosas en el Tepeyac en diciembre, cuando no era su tiempo. | Fondo azul cielo. Cerro del Tepeyac estilizado (rocas, nopales, escarcha); una tilma de ayate con rosas, sin imagen ni rostros (respeto). Etiqueta «según la tradición». Capítulo 1 «La tradición». |
-| 2 | Silvestre | Y es que una rosa silvestre florece solo en primavera. | Fondo menta. Rosal silvestre de 5 pétalos (rosa sencilla) y una tira de calendario de 12 meses: solo se ilumina la primavera. |
-| 3 | Freno | La clave es un gen, KSN: un freno de la floración. | Fondo noche (escala de ADN). Doble hélice; un tramo se enciende «KSN»; ícono de freno. Capítulo 2 «El freno». |
-| 4 | Hojas | Con el freno puesto, el brote echa hojas, pero no flor. | Fondo amarillo. Punta de un brote que crece: hoja, hoja, hoja (hojas compuestas de 5 foliolos dentados, espinas); un letrero «flor» tachado. |
-| 5 | Primavera | En la silvestre, el freno se afloja en primavera: ahí sale su única floración. | Fondo menta. El calendario llega a primavera, el freno se suelta y el rosal silvestre se cubre de flores sencillas; luego se caen los pétalos. Chip «una vez al año». |
-| 6 | Pregunta | ¿Y si el freno se rompe? | **Re-gancho.** Fondo naranja, «?» gigante sobre el freno; Robert grande, pensativo. |
-| 7 | Saltarin | En muchas rosas modernas, un pedazo de ADN saltarín se metió dentro del gen. | Fondo noche. Un trozo de ADN de otro color «brinca» y se inserta dentro del gen KSN (dentro de un intrón, esquemático). Etiqueta «retrotransposón (ADN saltarín)». Barra de escala molecular. Capítulo 3 «El freno roto». |
-| 8 | Apagado | El gen ya no se lee, el freno desaparece, y la rosa florece en cada temporada buena. | Fondo noche → fondo amarillo. La «lectura» del gen (flechita que copia ARN) se atora y se apaga; el ícono del freno se desvanece. Afuera, el brote termina en botón → flor, y vuelve a brotar y florecer. |
-| 9 | Estudio | En 2012, un equipo de Francia y Japón lo vio en seis pares de rosas: las que florecen siempre traían ese pedazo. | Fondo cian. `TarjetaEstudio` «2012 · Iwata et al. · *The Plant Journal* · Francia y Japón». Seis pares de rosas (una vez al año / siempre): las de «siempre» llevan el pedacito extra en su gen. |
-| 10 | China | Ese freno roto venía de rosas de China; a fines del siglo dieciocho, en Europa, las cruzaron con las suyas. | Fondo lila. Mapa esquemático: una rosa de China (*Rosa chinensis*, tipo 'Old Blush', rosa pálido) viaja en barco a Europa y se cruza con una rosa europea; tarjeta «fines del siglo XVIII: cruces en Europa». |
-| 11 | Invernadero | La rosa no cuenta las horas de luz: en invernadero, cortas un tallo y en seis a diez semanas hay otra flor. | Fondo menta. Invernadero con rosales de corte; reloj de sol tachado («horas de luz»); tijeras cortan un tallo, brota una yema y crece otro tallo con botón; cronómetro «6–10 semanas». Capítulo 4 «Diciembre». |
-| 12 | Dato | Dato: en 2025, casi ocho de cada diez rosas de México salieron del Estado de México. | Fondo rosa. Mapa de México con el Estado de México resaltado; 10 rosas, 8 se encienden («78.7 %, SADER, cierre preliminar 2025»). |
-| 13 | Cierre | Así que esta rosa no sabe que es diciembre: su freno se rompió hace siglos. | **Regreso a la imagen del inicio** (fondo rosa, papel picado, la misma rosa en el florero y la hoja «DICIEMBRE»), ahora en un ramo de muchas; la lupa de rayos X muestra el gen con el pedazo extra. Chip «KSN apagado: flor en cada temporada buena». |
+| 0 | Gancho | Esta rosa no sabe que es diciembre: trae roto un freno en su ADN. | Fondo rosa con lunares. Desde el cuadro 0 una rosa roja (pétalos en 3 capas, sépalos, hojas de 5 foliolos dentados, espinas) se abre de golpe en un florero, con destellos; una hoja de calendario «DICIEMBRE 12» entra desde la derecha. Robert sorprendido (gancho). Chip «Especial Virgen de Guadalupe». |
+| 1 | Tepeyac | Según la tradición guadalupana, Juan Diego halló rosas en el Tepeyac en diciembre, cuando no era su tiempo. | Cielo azul de invierno con copos. Cerro del Tepeyac estilizado (rocas, nopales, escarcha); en la cumbre brotan rosas una por una. Etiquetas «según la tradición» y «cerro del Tepeyac»; chip «diciembre: rosas de Castilla». **Sin imágenes religiosas ni personas.** Capítulo 1 «La tradición». |
+| 2 | Silvestre | Y es que una rosa silvestre florece solo en primavera. | Fondo menta. Rosal silvestre (flores sencillas de 5 pétalos rosas con estambres amarillos) que florece; abajo, tira de 12 meses: se encienden M-A-M («primavera»). |
+| 3 | Freno | La clave es un gen, KSN: un freno de la floración. | Fondo noche (escala de ADN, barra de 5 nm). Doble hélice que gira; el tramo «GEN KSN» se pinta de dorado; cae encima una señal de «ALTO» (= freno). Capítulo 2 «El freno». |
+| 4 | Hojas | Con el freno puesto, el brote echa hojas, pero no flor. | Fondo amarillo. Un brote crece: hoja, hoja, hoja (hojas compuestas), la punta sigue siendo yema verde; «¿flor?» se tacha; la señal de ALTO se mece al lado. |
+| 5 | Primavera | En la silvestre, el freno se afloja en primavera: ahí sale su única floración. | Fondo menta. Un cursor recorre la tira de meses hasta mayo; la señal de ALTO se va; el rosal silvestre se llena de flores y luego se caen los pétalos. Chip «una vez al año». |
+| 6 | Pregunta | ¿Y si el freno se rompe? | **Re-gancho.** Fondo naranja, «?» gigante; la señal de ALTO se agrieta; Robert grande, pensativo. |
+| 7 | Saltarin | En muchas rosas modernas, un pedazo de ADN saltarín se metió dentro del gen. | Fondo noche (barra de 5 nm). Un trozo de ADN rosa brinca en arco y el gen KSN se abre para recibirlo: queda insertado en medio. Etiqueta «retrotransposón (ADN saltarín)»; chip «se metió dentro del gen». Capítulo 3 «El freno roto». |
+| 8 | Apagado | El gen ya no se lee, el freno desaparece, y la rosa florece en cada temporada buena. | Fondo noche: la maquinaria que copia el gen (óvalo verde con su hebra de ARN naranja) avanza y se atora en el pedazo (✕ roja); la señal de ALTO se cae. Fundido a fondo amarillo: el tallo termina en botón → flor y brota un tallo lateral que también florece. Chip «flor en cada temporada buena». |
+| 9 | Estudio | En 2012, un equipo de Francia y Japón lo vio en seis pares de rosas: las que florecen siempre traían ese pedazo. | Fondo cian. `TarjetaEstudio` «2012 · Iwata et al. · Francia y Japón · *The Plant Journal*». Seis pares aparecen uno a uno: «1 vez al año» (gen sin pedazo + rosa silvestre) vs «siempre» (gen con el pedazo rosa + rosas); los pedazos se marcan con círculos rojos. Chip «las de «siempre» traen el pedazo». |
+| 10 | China | Ese freno roto venía de rosas de China; a fines del siglo dieciocho, en Europa, las cruzaron con las suyas. | Fondo lila. Mapa esquemático «CHINA» → «EUROPA»: un barco de vela lleva una rosa china (rosa pálido). Al llegar, el mapa se va y aparece el cruce: rosa «de China» × rosa «de Europa»; **en ese momento** sale la tarjeta «fines del siglo XVIII: cruces en Europa»; abajo se abren las «rosas modernas». |
+| 11 | Invernadero | La rosa no cuenta las horas de luz: en invernadero, cortas un tallo y en seis a diez semanas hay otra flor. | Fondo menta. Invernadero con tres rosales de corte y un sol; «horas de luz» se tacha. Unas tijeras cortan el tallo del centro (cae la flor); de la yema de abajo brota un tallo nuevo que termina en botón y flor. Abajo, 10 cuadros de semanas que se llenan (7–10 punteados); chip «6 a 10 semanas». Capítulo 4 «Diciembre». |
+| 12 | Dato | Dato: en 2025, casi ocho de cada diez rosas de México salieron del Estado de México. | Fondo rosa. Mapa de México con un punto rojo que late en el Estado de México; abajo 10 rosas, se encienden 8. Chip «78.7 % · SADER, preliminar 2025». |
+| 13 | Cierre | Así que esta rosa no sabe que es diciembre: su freno se rompió hace siglos. | **Regreso a la imagen del inicio** (fondo rosa, la misma rosa en el florero y la hoja «DICIEMBRE 12»), ahora con un ramo que se abre detrás; una lupa «POR DENTRO · KSN» muestra el gen con el pedazo rosa insertado. Chip «KSN apagado: flor en cada temporada buena». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y continua, cálida, sin golpe marcado, siempre debajo de la voz. Efectos en el mismo cuadro: la rosa que se abre (un «fsss» de pétalos), la hoja de calendario que cae, viento frío y escarcha en el Tepeyac, un tic por cada mes del calendario, el «clac» del freno al ponerse y al soltarse, un brote que crece (notas que suben con cada hoja), el «boing» del ADN saltarín al meterse, un zumbido de lectura que se atora y se apaga, flores que se abren en cadena, el tijeretazo, el tic-tac del cronómetro de semanas y 8 notas para las 8 rosas que se encienden.
+
+## Robert en pantalla
+Tiempos de la base (`Shot Rosas Diciembre base narrada.dc.html`, escenas estimadas; en la narrada se ajustan solos a la voz).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.8 | 11 sorprendido | gancho | «Esta rosa no sabe que es diciembre…» (la rosa se abre de golpe) |
+| 2 | 10.7 | 13.6 | 13 señalando arriba | izq-alto | «una rosa silvestre florece solo en primavera» (señala el rosal) |
+| 3 | 17.4 | 20.3 | 06 pensativo (mentón) | arriba-der | «el brote echa hojas, pero no flor» |
+| 4 | 25.4 | 27.6 | 07 pensativo (puño) | **grande** | «¿Y si el freno se rompe?» (el giro) |
+| 5 | 34.3 | 36.6 | 11 sorprendido | arriba-der | «…y la rosa florece en cada temporada buena» |
+| 6 | 40.2 | 43.3 | 04 bajando lentes | izq-alto | «las que florecen siempre traían ese pedazo» |
+| 7 | 50.3 | 56.1 | 13 señalando arriba | arriba-der | «La rosa no cuenta las horas de luz… otra flor» (señala el tallo nuevo) |
+| 8 | 56.7 | 61.2 | 05 sonriendo | arriba-der | «casi ocho de cada diez rosas de México…» |
+| 9 | 61.7 | 65.9 | 02 apuntando a cámara | arriba-der | «su freno se rompió hace siglos» |
+| — | 66.0 | 69.8 | 13 señalando arriba | `CierreMarca` | tarjeta de cierre |
+
+**Total:** 9 apariciones + cierre · **31.8 s** en pantalla (≈ 46 % de 69.8 s) · 7 poses distintas, nunca la misma dos veces seguidas · una vez grande (#4) · el hueco más largo sin Robert es de 7.0 s (43.3–50.3).
 
 ## Fuentes
 1. **El gen KSN, freno de la floración; retrotransposón; seis pares; floración continua; fresa** — Iwata *et al.* (2012), "The TFL1 homologue KSN is a regulator of continuous flowering in rose and strawberry", *The Plant Journal* 69(1): 116–125, doi:10.1111/j.1365-313X.2011.04776.x (resumen): "CF genotypes flower during all favourable seasons, whereas once-flowering (OF) genotypes only flower in spring." · "In rose, six independent pairs of CF/OF mutants differ in the presence of a retrotransposon in the second intron of the TFL1 homologue." · "Because of an insertion of the retrotransposon, transcription of the gene is blocked in CF roses and the absence of the floral repressor provokes continuous blooming." · "In OF roses, seasonal regulation of the TFL1 homologue may explain the seasonal flowering, with low expression in spring to allow the first bloom." · "Our results demonstrate a new role of TFL1 in perennial plants in maintaining vegetative growth and modifying flowering seasonality". Afiliaciones: IRHS (INRA, Angers, Francia), Biologie du fruit et pathologie (Bordeaux, Francia) y Graduate School of Biostudies (Kioto, Japón). https://oskar-bordeaux.fr/handle/20.500.12278/169992?show=full
@@ -42,6 +60,6 @@
 - El dibujo es esquemático: la doble hélice, el gen KSN, el «pedazo de ADN saltarín» (retrotransposón *Copia* de ~9 kb, dentro del segundo intrón) y su «lectura» están simplificados; el freno es una metáfora de «represor floral».
 - «Hace siglos»: el alelo ya estaba en rosas viejas cultivadas en China antes de 1800 (fuente 3) → más de dos siglos.
 - No se dice que todas las rosas modernas tengan el retrotransposón (Zhang 2021: hay rosas de floración continua sin él); por eso la voz dice «muchas rosas modernas».
-- En la tradición no se muestra la imagen de la tilma ni se opina sobre milagros; se dice «según la tradición guadalupana».
+- En la tradición no se muestran imágenes religiosas, personas ni la tilma, y no se opina sobre milagros: solo el cerro con rosas y la leyenda «según la tradición».
 - El 78.7 % es de gruesas (12 docenas de tallos) y es cifra preliminar del cierre 2025 (SADER); en pantalla irá «SADER, preliminar 2025».
 - El dato de la fresa silvestre (*Fragaria vesca*, un borrado de 2 letras en su gen parecido) quedó fuera por tiempo; puede ir en `publicacion.md`.

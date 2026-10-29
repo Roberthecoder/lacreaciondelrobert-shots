@@ -104,7 +104,7 @@ Fuentes:
 7. Juárez-Montiel et al. (2011), Rev. Iberoam. Micol. 28: 69–73: la lisina es su aminoácido más abundante. https://www.elsevier.es/es-revista-revista-iberoamericana-micologia-290-articulo-huitlacoche-corn-smut-caused-by-S113014061100026X
 8. FAO (1992), Maize in human nutrition: el maíz común es deficiente en lisina. https://www.fao.org/4/t0395e/T0395E03.htm
 9. Códice Florentino, Libro 11, fol. 251r: dibujo del "cuitlacochin". https://aztecglyphs.wired-humanities.org/content/cuitlacochin-fcbk11f251r
-10. Seco y Balendres (2023), Manila J. Sci.: teliosporas de 8–11 µm. https://old.dlsu.edu.ph/?p=101012
+10. Seco y Balendres (2023), Manila J. Sci.: teliosporas de 8–11 µm. https://old.dlsu.edu.ph/?p=101012 · AgroAtlas, "Ustilago zeae": teliosporas esféricas, de café oliva a negras, de 8–15 × 7–10 µm. https://agroatlas.ru/en/content/diseases/Zeae/Zeae_Ustilago_zeae
 11. México Desconocido, "Huitlacoche": la forma más común de comerlo es en quesadillas. https://www.mexicodesconocido.com.mx/huitlacoche.html
 12. Meteored México (2025): en la Candelaria invita los tamales a quien le salió el Niño de la rosca; hay tamales de huitlacoche. https://www.meteored.mx/noticias/actualidad/por-que-el-dia-de-la-candelaria-se-celebra-con-tamales-en-mexico.html
 El dibujo es esquemático; el del códice es una ilustración al estilo del Códice Florentino, no el original.
