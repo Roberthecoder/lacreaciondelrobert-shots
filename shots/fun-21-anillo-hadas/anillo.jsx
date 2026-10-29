@@ -301,7 +301,7 @@ function AnilloShot() {
           <Pies x={540} y={1110} s={0.75} o={kprog(T, K.C + 1.4, K.C + 1.9)} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.C + 0.6} until={K.Ou - 0.2} x={300} y={640} r={190} fx={170} fy={1180} etiqueta="POR DENTRO · bajo el pasto" tinte={KC.yellow}
+      <Lupa T={T} at={K.C + 0.6} until={K.Ou - 0.2} x={350} y={640} r={190} fx={170} fy={1180} etiqueta="POR DENTRO · bajo el pasto" tinte={KC.yellow}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a1a10" /><RedHifas T={t} x={r * 1.6} y={r * 1.7} g={1} seed={21} n={300} escala={0.16} circ ancho={3} brillo={0.6} /></svg>} />
 
       {/* textos */}

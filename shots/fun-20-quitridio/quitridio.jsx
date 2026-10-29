@@ -325,8 +325,8 @@ function QuitridioShot() {
       <Etq T={T} at={K.M + 2.7} until={K.Sa - 0.3} x={a2[0] + 14} y={a2[1] + 46} texto="Guatemala · 80s–90s" tam={24} color={KC.ink} />
       <Etq T={T} at={K.M + 4.0} until={K.Sa - 0.3} x={a3[0] - 26} y={a3[1] + 6} texto="Costa Rica · 1987" lado="izq" tam={26} color={KC.ink} />
       <Etq T={T} at={K.Sa + 0.8} until={K.Sa + 2.5} x={60} y={650} texto="Batrachochytrium salamandrivorans (Bsal)" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 1.0} until={K.Ci - 0.3} x={500} y={T < K.Sa + 1.8 ? 560 : 700} texto="salamandra de fuego" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 1.2} until={K.Ci - 0.3} x={500} y={T < K.Sa + 1.8 ? 600 : 740} texto="Salamandra salamandra" it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 1.0} until={K.Ci - 0.3} x={500} y={560} texto="salamandra de fuego" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 1.2} until={K.Ci - 0.3} x={500} y={600} texto="Salamandra salamandra" it tam={26} color={KC.ink} />
       <Chip T={T} at={K.Sa + 2.6} until={K.Ci - 0.3} texto="Países Bajos · 2010 → 2013" x={330} y={650} tam={30} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Sa + 4.3} until={K.Ci - 0.3} valor={4} dur={0.5} sufijo=" %" x={540} y={1000} tam={220} color={KC.yellow} />
 
