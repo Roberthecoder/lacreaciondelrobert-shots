@@ -6,13 +6,13 @@
     { "escena": "Gancho", "texto": "Ese olor no es el gas de tu estufa: es una alarma que le agregan a propósito." },
     { "escena": "Que", "texto": "El gas LP es propano y butano, y la norma mexicana lo llama esencialmente inodoro." },
     { "escena": "Aviso", "texto": "Por eso le añaden mercaptanos, como el etil mercaptano: una molécula con azufre." },
-    { "escena": "Nariz", "texto": "Y tu nariz es buenísima para esas moléculas: las nota en cantidades diminutas." },
-    { "escena": "Piso", "texto": "Además, el gas pesa más que el aire: si se escapa, se junta en el piso, sin que lo veas." },
+    { "escena": "Nariz", "texto": "Tu nariz es buenísima para esas moléculas: las nota en cantidades diminutas." },
+    { "escena": "Piso", "texto": "Y el gas pesa más que el aire: si se escapa, se junta en el piso sin que lo veas." },
     { "escena": "Pregunta", "texto": "¿Y qué pasa si el gas no huele a nada?" },
-    { "escena": "Estudio", "texto": "En 1937, en New London, Texas, una escuela usaba gas sin olor. Se fugó bajo el edificio, una lijadora eléctrica lo encendió y murieron casi 300 personas." },
-    { "escena": "Ley", "texto": "Ese mismo año, Texas aprobó una ley para ponerle olor al gas." },
-    { "escena": "Japon", "texto": "Lo increíble: en mediciones japonesas publicadas en 2003, el etil mercaptano se notó en cantidades unas 170 millones de veces menores que el propano." },
+    { "escena": "Estudio", "texto": "En 1937, en New London, Texas, una escuela usaba gas sin olor. Se fugó bajo el edificio, una chispa, al parecer de una lijadora eléctrica, lo encendió y murieron casi 300 personas." },
+    { "escena": "Ley", "texto": "Ese año, Texas aprobó una ley para ponerle olor al gas." },
+    { "escena": "Japon", "texto": "Increíble: en mediciones japonesas publicadas en 2003, el etil mercaptano se notó en dosis unas 170 millones de veces menores que el propano." },
     { "escena": "Aviso2", "texto": "Si huele a gas: cierra la llave, abre ventanas y no prendas ni apagues la luz." },
-    { "escena": "Cierre", "texto": "Así que ese olor no es el gas: es una alarma, y el detector es tu nariz." }
+    { "escena": "Cierre", "texto": "Ese olor no es el gas: es una alarma, y el detector es tu nariz." }
   ]
 }

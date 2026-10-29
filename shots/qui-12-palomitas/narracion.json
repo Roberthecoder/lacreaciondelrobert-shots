@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese pop no es la cáscara de tu palomita rompiéndose: es vapor de agua escapando de golpe."
+      "texto": "Esa palomita no revienta porque se queme: revienta porque trae agua adentro."
     },
     {
       "escena": "Grano",
@@ -21,7 +21,7 @@
     },
     {
       "escena": "Espuma",
-      "texto": "Entonces revienta, y el almidón se infla como espuma: el doble de grande y ocho veces menos denso."
+      "texto": "Revienta, y el almidón se infla como espuma: el doble de ancho y ocho veces menos denso."
     },
     {
       "escena": "Pregunta",
@@ -29,7 +29,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2015, dos investigadores en Francia las calentaron en un horno y las filmaron a casi 3 mil cuadros por segundo."
+      "texto": "En 2015, dos investigadores en Francia las calentaron y las filmaron a casi 3 mil cuadros por segundo."
     },
     {
       "escena": "Termometro",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Sonido",
-      "texto": "La mayoría de las grietas no hicieron ruido: el pop sonó al salir el vapor."
+      "texto": "La mayoría de las grietas no hicieron ruido: los autores proponen que el pop es el vapor al salir."
     },
     {
       "escena": "Viejitas",
@@ -49,7 +49,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese pop no es la cáscara rompiéndose: es tu palomita soltando su vapor."
+      "texto": "Así que tu palomita no revienta por quemarse: revienta por el agua que trae adentro."
     }
   ]
 }

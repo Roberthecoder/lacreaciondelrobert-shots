@@ -35,3 +35,19 @@ Cifras con su "de qué": 72 personas (participantes), 7 bebidas, 2019 (dato de h
 2. **#11 (voz 6)** — cada persona probó las siete. Propuesta: "En 2019, en la Universidad Estatal de Pensilvania, 72 personas tomaron jugo de tomate picante y, una por una, probaron siete bebidas." (o "...y después, en cada ronda, una bebida distinta").
 3. **#12 (pantalla 6)** — cambiar la etiqueta "agua mineral" por **"agua con gas"** (seltzer). Revisar también la nota de guion y la descripción.
 4. **#16 (pantalla 7)** — barras de agua con gas, cola y cerveza al nivel del agua o apenas más altas (menos efectivas), nunca más bajas que el agua.
+
+## Re-verificación (29 oct 2026)
+
+Revisé las líneas cambiadas en `guion.md` y `narracion.json` (escenas Que, Agua, Estudio, Resultado y Nobel). Las 4 correcciones de arriba quedaron aplicadas.
+
+| # | Afirmación nueva (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| R1 | (voz 1) La capsaicina es la molécula que pica en los chiles | ✅ | Caterina et al., *Nature* 389:816–824 | "Capsaicin, the main pungent ingredient in 'hot' chilli peppers" | 1997 |
+| R2 | (voz 1 + pantalla) El habanero tiene capsaicina | ✅ | Muñoz-Ramírez L.S. et al. "Determination of Capsaicin and Dihydrocapsaicin in Habanero Pepper (*Capsicum chinense* Jacq.) Hybrids Cultivated in Yucatán, México", *Crops* 6(1):18, DOI 10.3390/crops6010018 (PDF abierto) | "Capsaicin concentrations ranged from 19.95 to 73.55 mg g−1 dry weight (DW)" en 29 híbridos de habanero | 2026 |
+| R3 | (voz 1 + pantalla) El jalapeño tiene capsaicina | ✅ | González-Zamora A. et al. "Characterization of Different *Capsicum* Varieties by Evaluation of Their Capsaicinoids Content by HPLC…", *Molecules* 2013 (PMC6269802) | "Chiltepín had twice more capsaicin and dihydrocapsaicin than De árbol, and about 1.5 times than Jalapeño"; tabla 1: capsaicina del Jalapeño 'Don Julio' 8.03 ± 0.37 mg g⁻¹ (peso seco) | 2013 |
+| R4 | (voz 4) El agua ayuda algo, pero la capsaicina es grasosa: casi no se disuelve en ella (pantalla: "casi insoluble en agua") | ✅ | Nolden et al. 2019; Merck Index 2013 (vía PubChem CID 1548943) | "All beverages significantly reduced the burn" · "capsaicin's well-known hydrophobicity" · "Practically insoluble in cold water" | 2019 / 2013 |
+| R5 | (voz 6) 72 personas tomaron jugo de tomate picante y, una por una, probaron siete bebidas (pantalla: ronda por ronda, 7 vasitos; "agua con gas") | ✅ | Nolden et al. 2019 (PMC6620146) | "On 7 of 8 trials, a test beverage (40 mL) was consumed after tomato juice was swallowed" · "Order of treatments was counterbalanced" · "carbonated water (seltzer)" | 2019 |
+| R6 | (pantalla 7) Barras de agua con gas, cola y cerveza al nivel del agua o un poco más altas | ✅ | Nolden et al. 2019 | "only milk (skim or whole) and Kool-Aid outperformed water" · las bebidas con gas fueron "generally less effective" | 2019 |
+| R7 | (voz 9) Lo curioso: con capsaicina, David Julius descubrió ese sensor en 1997, y en 2021 compartió el Nobel de Medicina | ✅ | Nobel Assembly 2021; Caterina…Julius, *Nature* 1997 | "David Julius utilized capsaicin … to identify a sensor in the nerve endings of the skin that responds to heat" · "jointly to David Julius and Ardem Patapoutian" · "Nature 1997:389:816-824" | 1997 / 2021 |
+
+No queda ningún ⚠️ ni ❌ en lo que cambió. Las cifras de capsaicina de R2 y R3 sirven solo para comprobar el dato: la voz no dice esos números.
