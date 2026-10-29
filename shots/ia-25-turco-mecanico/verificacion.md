@@ -30,3 +30,12 @@
 2. **#15 "Y este año" (⚠️):** cambiar a «Y en dos mil veintiséis, el treinta de septiembre, Amazon la cerró.» (+1 palabra, ≈ +0.4 s; revisar que el total siga en 61–62 s).
 
 Notas (no requieren cambio): Napoleón se dice como relato y se dibuja como leyenda (bien); no se da el año 1770 del Turco (no hace falta); la cifra "2005" tiene más de 2 años pero ya se dice con su año.
+
+## Re-verificación (29 oct 2026, coordinador)
+Correcciones aplicadas como propuso el verificador:
+- Turco: «…un muñeco de madera con turbante, sentado tras una caja, que movía las piezas solo.» + dibujo detrás del gabinete ✅
+- Cerro: «Y en dos mil veintiséis, el treinta de septiembre, Amazon la cerró.» ✅ (mturk.com)
+- Recortes sin datos nuevos: «…y movía el brazo con palancas.» y «…detrás también hubo personas.» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
