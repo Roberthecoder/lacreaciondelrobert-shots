@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Papa Irlanda base narrada.dc.html",
+  "salida": "Shot Papa Irlanda narrado.dc.html",
+  "nota": "Shot Fungi Mati #25. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese hongo que pudre la papa no es un hongo: es un moho de agua, y también ataca tu jitomate."
+    },
+    {
+      "escena": "Hoja",
+      "texto": "Es Phytophthora infestans: manchas cafés con pelusa blanca bajo la hoja."
+    },
+    {
+      "escena": "Limones",
+      "texto": "Esa pelusa son tallitos que cargan esporas con forma de limón."
+    },
+    {
+      "escena": "Nadadores",
+      "texto": "Con agua y frío, cada limón suelta de ocho a doce nadadores con dos colas."
+    },
+    {
+      "escena": "Entrada",
+      "texto": "Entran a la hoja y una mancha produce hasta trescientos mil limones."
+    },
+    {
+      "escena": "Pared",
+      "texto": "Crece en hilos como un hongo, pero su pared casi no tiene quitina, sino celulosa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces qué es?"
+    },
+    {
+      "escena": "Parientes",
+      "texto": "Es más pariente de las algas pardas y las diatomeas que de los hongos."
+    },
+    {
+      "escena": "Irlanda",
+      "texto": "Llegó a Europa en 1845 y desató la Gran Hambruna irlandesa: cerca de un millón de muertos y más de un millón emigró."
+    },
+    {
+      "escena": "Herbario",
+      "texto": "En 2013 leyeron su ADN en hojas de herbario desde 1845."
+    },
+    {
+      "escena": "Herb1",
+      "texto": "Ese linaje se creyó extinto, pero en 2014 hallaron su rastro en muestras actuales de México y Sudamérica."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "¿Y de dónde salió? Un estudio de 2014 apunta a México; otros, a los Andes. Aún se discute."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que el hongo de la papa no es un hongo, y sigue atacando papas y jitomates en todo el mundo."
+    }
+  ]
+}

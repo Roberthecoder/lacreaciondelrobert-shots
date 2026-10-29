@@ -56,3 +56,41 @@ Notas:
 - Sugerencia de estilo (no de veracidad): en México "agua fresca" también es la bebida; si se quiere evitar la doble lectura, "Con agua y frío" dice lo mismo.
 
 Resumen: segunda ronda, 29 oct 2026. Las 4 ⚠️ de la primera ronda se corrigieron y se re-verificaron abriendo las fuentes; los recortes de Hoja, Nadadores, Entrada, Pared, Herbario y Cierre no cambian ningún dato. Las 26 afirmaciones quedan ✅ y las referencias de `guion.md` quedaron corregidas con frase textual. El dibujo es esquemático.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `papa.jsx`, `Shot Papa Irlanda base narrada.dc.html`, la columna «Lo que se ve», la tabla «Robert en pantalla» y `publicacion.md`, y se revisaron cuadros con `motor/preview.mjs` (0.3–60 s).
+
+Fuentes nuevas abiertas:
+- **[TRAN]** Tran, Q. D., Galiana, E., Thomen, P. et al. (2022). Coordination of two opposite flagella allows high-speed swimming and active turning of individual zoospores. *eLife* 11: e71227. https://europepmc.org/article/PMC/PMC9068220
+- **[BAS]** Bassani, I., Larousse, M., Tran, Q. D. et al. (2020). *Phytophthora* zoospores: From perception of environmental signals to inoculum formation on the host-root surface. *Computational and Structural Biotechnology Journal* 18. https://europepmc.org/article/PMC/PMC7718214
+
+| # | Texto o dibujo en pantalla / publicación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Subtítulos resumidos (13 líneas: "no es un hongo", "pelusa blanca", "forma de limón", "8 a 12 nadadores con dos colas", "hasta 300 mil limones", "casi sin quitina: tiene celulosa", "algas pardas y diatomeas", "Gran Hambruna de Irlanda", "ADN en hojas de herbario", "¿Extinto? Su rastro sigue en América", "¿México o los Andes? Aún se discute", "sigue atacando") | ✅ | filas 1–19 | Resumen fiel de la voz verificada; no agregan datos. | — |
+| R2 | Chip "es un moho de agua", sello "OOMICETO", chips "oomiceto" y "moho de agua, no hongo" | ✅ | [MSU] | "is not a true fungus but a water mold belonging to the phylum Oomycetes" | 2004 |
+| R3 | "8 a 12 nadadores por limón", "agua y frío" | ✅ | [MSU] | "between 44 and 55 °F when free water is present … 8 to 12 motile zoospores per sporangium" (7–13 °C) | 2004 |
+| R4 | "zoospora · 2 flagelos": dibujo (corregido en `papa.jsx`: antes los dos flagelos iguales a los lados; ahora el de pelitos hacia adelante, en el sentido en que nada, y el liso, más largo, hacia atrás) | ✅ corregido | [TRAN], [BAS] | "A tinsel-shaped flagellum is near the front of the creature and a long smooth filament-like flagellum is near the posterior"; "Tubular … mastigonemes are found along the anterior flagellum, while the posterior flagellum is smooth" | 2022 / 2020 |
+| R5 | "estoma (poro)" | ✅ | [MSU] | "either through stomata (breathing pores) or by means of direct penetration" | 2004 |
+| R6 | "hasta 300,000" + "esporangios en una sola mancha" | ✅ | [FRY] | "up to 300 000 per lesion" | 2008 |
+| R7 | Tarjetas de pared: hongo "quitina ✓"; *Phytophthora* "quitina: casi nada ✗ · celulosa ✓"; "crece en hilos (micelio)" | ✅ | [MEL], [KAM] | "no or very small amounts (<1%)"; "mainly composed of β-1,3-glucan polymers and cellulose"; "grow in a vegetative mycelial form as true fungi" | 2013 / 2003 |
+| R8 | Árbol: "estramenopilos" con alga parda, diatomea y moho de agua; "hongos" aparte; barra "dibujos no a escala" | ✅ | [MEL] | "the Stramenopiles, together with diatoms and brown algae" | 2013 |
+| R9 | "desde 1845 · Irlanda", "≈ 1 millón de muertos", "más de 1 millón emigró" | ✅ | [YOS], [RTE] | "killed around 1 million people"; "a further million and a quarter fled the country" | 2013 / 2020 |
+| R10 | Tarjeta "2013 · Múnich y Kew (Londres) · Yoshida et al., eLife"; hojas "1845" y "1896" | ✅ | [YOS] | "in the period from 1845 to 1896"; "Botanische Staatssammlung München and the Kew Royal Botanical Gardens" | 2013 |
+| R11 | "HERB-1 · un linaje distinto", "se creyó extinto (2013)", "rastro hallado en América (2014)", puntos México y Sudamérica, "Martin et al., Mol Biol Evol, 2014" | ✅ | [YOS], [M14] | "a unique genotype, HERB-1"; "predicted to be rare or extinct"; "identify the HERB-1 lineage in modern populations from both Mexico and South America" | 2013 / 2014 |
+| R12 | "2014 · Goss, PNAS: México", "2025 · Coomber, PLoS ONE: Andes", "valle de Toluca", "Tlaxcala", "Andes", "sin resolver" (corregido en `papa.jsx`: la tarjeta 2014 tapaba "valle de Toluca" y "Tlaxcala"; se movió arriba y "sin resolver" abajo) | ✅ corregido | [GOSS], [COO] | "suggest a Mexican origin"; "Toluca Valley and Tlaxcala State in central Mexico"; "we consider the Andes to be the center of origin"; "The unresolved dispute" | 2014 / 2025 |
+| R13 | Barra 30 µm en el esporangio (dibujo de 132 px = barra de 132 px) | ✅ | [ALH] | "average length and width of 30.6 and 28.6 µm" | 2023 |
+| R14 | Barra 10 µm en las zoosporas (zoospora de ~120 px = barra de 120 px al entrar a la hoja; en la escena del esporangio grande, 460 px = 30 µm y las zoosporas ≈ 7 µm, dentro de lo real porque caben 8–12 en uno) | ✅ | [TRAN] | "A zoospore is usually about 10 µm in size and has a kidney-like cell body" | 2022 |
+| R15 | Barra de la escena de los hilos (corregido: "10 µm" → "30 µm"; con 10 µm las células de la hoja medían ~12 µm y los hilos ~1.5 µm, demasiado chicos; con 30 µm las células miden ~37 µm y los hilos ~5 µm) | ✅ corregido | [MUG] | Hifas cenocíticas dibujadas como hilos sin tabiques: "coenocytic, multinucleate, and aseptate" | 2023 |
+| R16 | Hoja de papa: hoja compuesta (foliolo terminal y pares laterales), manchas cafés con borde claro y pelusa blanca | ✅ | [MSU] | "the compound leaf"; "dark brown or black spots, often surrounded by a pale green to yellow border" | 2004 |
+| R17 | `publicacion.md`: "menos de 1 %" de quitina; "glucanos y celulosa" | ✅ | [MEL], [KAM], [FRY] | "(<1%)"; "β-1,3-glucan polymers and cellulose"; "β 1–6, and β 1–3 glucans instead of chitin" | 2013 / 2003 / 2008 |
+| R18 | `publicacion.md`: herbario 1845–1896 (Múnich y Kew); la epidemia la causó HERB-1; linaje mitocondrial hallado en México y Sudamérica (2014) | ✅ | [YOS], [M14] | "the 19th century epidemic was caused by a unique genotype, HERB-1"; "identify the HERB-1 lineage in modern populations from both Mexico and South America" | 2013 / 2014 |
+| R19 | `publicacion.md`: se enquistan y entran por los estomas o atravesando la superficie; "tradicionalmente los oomicetos se clasificaron como hongos" por crecer en hilos | ✅ | [MSU], [KAM] | "Encysted zoospores infect leaves … through stomata … or by means of direct penetration"; "due to their filamentous growth habit, oomycetes have been classified in the kingdom Fungi" | 2004 / 2003 |
+| R20 | `publicacion.md` TikTok (corregido): decía "más emparentado con las algas pardas… Por eso durante mucho tiempo lo clasificaron como hongo" (causa al revés); ahora "Crece en hilos como un hongo (por eso durante mucho tiempo lo clasificaron como hongo)…" | ✅ corregido | [KAM] | "due to their filamentous growth habit, oomycetes have been classified in the kingdom Fungi" | 2003 |
+| R21 | `publicacion.md`: referencias y comentario fijado (Yoshida, Goss, Martin 2014 y 2016, Coomber, Fry, Kamoun, Mélida, Kirk, Ivanov, Crowley) | ✅ | — | Coinciden con las fuentes abiertas (autores, revista, volumen y URL). | — |
+
+También se actualizó la columna «Lo que se ve» de `guion.md` (escena 3) con la dirección real de los flagelos. La voz verificada no se tocó.
+
+Resumen de la revisión final: 3 correcciones en `papa.jsx` (flagelos con su dirección real, barra de escala de los hilos y posición de las tarjetas del mapa) y 1 en `publicacion.md` (TikTok). Todos los textos de pantalla y de publicación quedan ✅.
+
+VEREDICTO: APROBADO

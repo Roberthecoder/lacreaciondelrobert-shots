@@ -44,7 +44,9 @@ function Regadera({ T, moho = 1, rosa = 0, limpio = 0, gira = 0, gotas = 1 }) {
     {/* silicón y tina */}
     <rect x={x0} y={y1 - 6} width={x1 - x0} height={22} rx={11} fill={MB.silicon} opacity={0.9} />
     {MANCHAS.filter((m) => m.y > y1 - 12).map((m, i) => { const o = kclamp(vis * 1.4 - m.u * 0.4, 0, 1); return o > 0.02 ? <circle key={'s' + i} cx={m.x} cy={m.y + 4} r={m.r * 0.8} fill={MB.moho} opacity={0.85 * o} /> : null; })}
-    <rect x={0} y={y1 + 16} width={KW} height={110} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-10} y={y1 + 16} width={KW + 20} height={KH} fill="#dfe9ec" stroke={KC.ink} strokeWidth={8} />
+    {Array.from({ length: 9 }, (_, i) => <line key={'p' + i} x1={i * 135} y1={y1 + 136} x2={i * 135 - 60} y2={KH} stroke="#c3d0d4" strokeWidth={6} />)}
+    <rect x={-10} y={y1 + 16} width={KW + 20} height={120} rx={30} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
     {/* mancha rosa en la esquina */}
     {rosa > 0 && <g opacity={rosa}>
       <path d={`M ${x1 - 150} ${y1 + 14} Q ${x1 - 140} ${y1 - 70} ${x1 - 60} ${y1 - 90} Q ${x1 + 4} ${y1 - 80} ${x1 - 6} ${y1 + 14} Z`} fill={MB.rosa2} opacity=".8" />
@@ -212,9 +214,9 @@ function MohoBanoShot() {
         <Ambiente T={T} n={22} />
         {fsvg(<>
           <path d="M 0 1180 Q 300 1150 540 1175 T 1080 1170 L 1080 1300 L 0 1300 Z" fill="#2a2f3a" stroke={KC.ink} strokeWidth={6} />
-          <Cladosporium T={T} x={330} y={1180} s={1.25} crece={kprog(T, K.Cl + 0.2, K.Cl + 3.2)} seed={2} />
-          <Cladosporium T={T} x={720} y={1185} s={0.95} crece={kprog(T, K.Cl + 1.0, K.Cl + 4.0)} seed={9} />
-          <Cladosporium T={T} x={560} y={1190} s={0.7} crece={kprog(T, K.Cl + 1.8, K.Cl + 4.6)} seed={4} />
+          <Cladosporium T={T} x={330} y={1180} s={1.5} crece={kprog(T, K.Cl + 0.2, K.Cl + 3.2)} seed={2} />
+          <Cladosporium T={T} x={760} y={1185} s={1.15} crece={kprog(T, K.Cl + 1.0, K.Cl + 4.0)} seed={9} />
+          <Cladosporium T={T} x={560} y={1190} s={0.85} crece={kprog(T, K.Cl + 1.8, K.Cl + 4.6)} seed={4} />
         </>)}
       </Escena>
       {/* 4 · la mancha rosa: Serratia marcescens (bacteria) */}
@@ -325,11 +327,11 @@ function MohoBanoShot() {
       <Etq T={T} at={K.Cl + 3.0} until={K.R - 0.3} x={60} y={420} texto="Cladosporium" it tam={44} color={MB.oliva2} />
       <Etq T={T} at={K.Cl + 3.3} until={K.R - 0.3} x={60} y={480} texto="moho negro" tam={30} />
       <Chip T={T} at={K.Cl + 3.6} until={K.R - 0.3} texto="el más frecuente en cultivo directo" x={420} y={570} tam={28} borde={KC.gold} />
-      <Etq T={T} at={K.Cl + 2.4} until={K.R - 0.3} x={1040} y={640} lado="izq" texto="conidios en cadena" tam={26} color={KC.gold2} />
+      <Etq T={T} at={K.Cl + 2.4} until={K.R - 0.3} x={1040} y={820} lado="izq" texto="conidios en cadena" tam={26} color={KC.gold2} />
       <Etq T={T} at={K.R + 1.8} until={K.P - 0.3} x={110} y={1110} texto="Serratia marcescens" it tam={36} color={KC.ink} />
       <Etq T={T} at={K.R + 2.2} until={K.P - 0.3} x={110} y={1160} texto="bacteria, no hongo" tam={28} color={KC.ink} />
       <Chip T={T} at={K.R + 2.6} until={K.P - 0.3} texto="pigmento: prodigiosina" x={340} y={530} tam={30} borde={MB.rosa} />
-      <Etq T={T} at={K.St + 1.6} until={K.Mi - 0.3} x={70} y={470} texto="Stachybotrys chartarum" it tam={36} color={KC.ink} />
+      <Etq T={T} at={K.St + 1.6} until={K.Mi - 0.3} x={70} y={430} texto="Stachybotrys chartarum" it tam={36} color={KC.ink} />
       <Chip T={T} at={K.St + 2.2} until={K.Mi - 0.3} texto="celulosa + agua constante" x={360} y={1150} tam={30} borde={MB.stachy} />
       <Etq T={T} at={K.St + 2.6} until={K.Mi - 0.3} x={480} y={1060} texto="papel mojado" tam={26} color={KC.ink} />
       <MitoTachado T={T} at={K.Mi + 0.2} tacharEn={K.Mi + 1.6} until={K.Al - 0.3} texto="MÁS PELIGROSO QUE LOS DEMÁS" x={540} y={800} tam={40} />
@@ -339,7 +341,7 @@ function MohoBanoShot() {
       <Chip T={T} at={K.Al + 3.0} until={K.Es - 0.3} texto="asma (si tienes asma y alergia)" x={340} y={570} tam={30} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.3} anio="2010" quien="Osaka, Japón" revista="Hamada y Abe · Biocontrol Science" y={560} />
       <Chip T={T} at={K.Es + 2.4} until={K.S - 0.3} texto="con jabón y champú" x={290} y={760} tam={28} borde={KC.leaf} />
-      <Chip T={T} at={K.Es + 2.8} until={K.S - 0.3} texto="en seco" x={790} y={1260 - 24} tam={28} borde={KC.red} />
+      <Chip T={T} at={K.Es + 2.8} until={K.S - 0.3} texto="en seco" x={790} y={760} tam={28} borde={KC.red} />
       <Chip T={T} at={K.S + 0.5} until={K.S + 2.4} texto="✓ extractor" x={330} y={620} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.S + 1.2} until={K.S + 2.4} texto="✓ ventana al bañarte" x={360} y={720} tam={36} borde={KC.leaf} />
       <NumeroGigante T={T} at={K.S + 2.8} until={K.Ta - 0.3} valor={50} desde={80} dur={1.2} prefijo="< " sufijo=" %" etiqueta="humedad relativa" x={760} y={1000} tam={150} color={KC.mint} />
