@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Papaya base narrada.dc.html",
   "salida": "Shot Papaya narrado.dc.html",
-  "nota": "Shot Biotecnológico #26. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "nota": "Shot Biotecnológico #26. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
     {
       "escena": "Gancho",
@@ -9,55 +9,51 @@
     },
     {
       "escena": "Llega",
-      "texto": "En 1992, el virus de la mancha anular llegó a Puna, en Hawái."
+      "texto": "En 1992, el virus de la mancha anular llegó a Puna, Hawái."
     },
     {
       "escena": "Pulgon",
-      "texto": "Lo cargan pulgones: con un piquete de segundos infectan otro árbol."
+      "texto": "Lo cargan pulgones: basta un piquete de segundos."
     },
     {
       "escena": "Dano",
-      "texto": "El fruto se llena de anillos y pierde la mitad del azúcar o más."
+      "texto": "El fruto se llena de anillos y puede perder la mitad de su azúcar o más."
     },
     {
       "escena": "Caida",
-      "texto": "En cinco años Hawái perdió más de un tercio de su papaya fresca."
+      "texto": "En cinco años, Hawái perdió más de un tercio de su papaya fresca."
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Cómo defiendes un árbol de algo que no ves?"
+      "texto": "¿Y cómo defiendes un árbol de algo que no ves?"
     },
     {
       "escena": "Gen",
-      "texto": "Dennis Gonsalves y su equipo tomaron un gen del virus: el de su cubierta."
+      "texto": "El equipo de Dennis Gonsalves tomó el gen de la cubierta del virus."
     },
     {
       "escena": "Disparo",
-      "texto": "Lo pegaron a balines diminutos y lo dispararon a células de papaya."
+      "texto": "Lo pegaron a balines y lo dispararon a células de papaya."
     },
     {
       "escena": "Silencio",
-      "texto": "La planta lee ese gen y enciende una defensa que corta ARN parecido."
-    },
-    {
-      "escena": "Virus",
-      "texto": "Si el virus entra, su ARN acaba en pedazos."
+      "texto": "La planta lee ese gen y enciende una defensa: si entra el virus, corta su ARN en pedazos."
     },
     {
       "escena": "Estudio",
-      "texto": "En 1995, en Puna, al año todas las papayas normales enfermaron; ninguna con el gen."
+      "texto": "En 1995, en Puna, al año todas las papayas normales de control enfermaron; ninguna con el gen."
     },
     {
       "escena": "Rainbow",
-      "texto": "En 1998 salió Rainbow; en el 2000 ya era la mitad de la papaya en cosecha."
+      "texto": "En 1998 salió Rainbow; en el 2000 ya ocupaba la mitad de los campos de papaya en cosecha."
     },
     {
       "escena": "Medida",
-      "texto": "Pero es a la medida: con virus de Brasil o Tailandia, se enferma. Y el virus también está en México."
+      "texto": "Pero Rainbow es a la medida: con virus de Brasil o Tailandia, se enferma. Y el virus también está en México."
     },
     {
       "escena": "Cierre",
-      "texto": "Por eso no la salvó un insecticida: la salvó un pedacito del virus."
+      "texto": "No la salvó un insecticida: la salvó un pedacito del virus."
     }
   ]
 }

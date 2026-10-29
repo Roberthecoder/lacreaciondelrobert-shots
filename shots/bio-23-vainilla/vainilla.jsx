@@ -319,8 +319,8 @@ function Vainilla() {
         <SvgV>
           <Bacteria T={T} x={560} y={830} largo={880} ancho={430} color="#7fd88a" seed={7} nucleoide={false} />
           {/* moléculas que entran antes de las enzimas */}
-          {feru.map(([f, yy, rr, i]) => { const u = kprog(T, MI2 + i * 0.25, MI2 + 1.0 + i * 0.25, kEase.suave); return T < K.En + 0.1 ?
-            <MolV key={i} x={klerp(-80, 220 + i * 90, u)} y={klerp(yy, 760 + (i % 2) * 120, u)} s={0.5} tipo="ferulico" color="#bfe8ff" rot={rr + T * 30} /> : null; })}
+          {feru.map(([f, yy, rr, i]) => { const u = kprog(T, MI2 - 0.3 + i * 0.2, MI2 + 0.5 + i * 0.2, kEase.sale); return T < K.En + 0.1 ?
+            <MolV key={i} x={klerp(-60, 230 + i * 120, u)} y={klerp(yy, 760 + (i % 2) * 150, u)} s={0.7} tipo="ferulico" color="#bfe8ff" rot={rr + T * 30} o={1 - kprog(T, K.En - 0.4, K.En + 0.1)} /> : null; })}
           {T >= K.En - 0.4 && <g>
             <MolV x={540} y={900} s={1.25} tipo={e1 >= 1 ? 'coa' : 'ferulico'} color={e2 >= 1 ? KC.paper : '#bfe8ff'} cola={1 - e2} brillo={e2 >= 1 ? 1 : 0} />
             {e2 >= 1 && <MolV x={540} y={900} s={1.25} tipo="vainillina" color={KC.paper} brillo={0.6 + 0.4 * Math.sin(T * 5)} />}
@@ -401,7 +401,7 @@ function Vainilla() {
       <Chip T={T} at={K.A + 3.6} until={K.F - 0.3} texto="polinización a mano" y={1500} tam={42} borde={KC.gold} />
       <Etiqueta T={T} at={K.A + 4.0} until={K.F - 0.3} x={60} y={1630} texto="niño esclavizado · dibujo esquemático" tam={30} color={KC.ink} />
       <Chip T={T} at={K.F + 0.2} until={K.To - 0.2} texto="1 flor = 1 día" y={1500} tam={46} borde={KC.yellow} />
-      <NumeroGigante T={T} at={K.To + 0.2} until={K.Ci - 0.3} valor={60000} dur={1.2} prefijo="≈ " sufijo=" t" etiqueta="estimado 2024" x={380} y={560} tam={150} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.To + 0.2} until={K.Ci - 0.3} valor={60000} dur={1.2} prefijo="≈ " sufijo=" t" etiqueta="estimado 2024" x={350} y={560} tam={136} color={KC.yellow} />
       {kvisible(T, K.To + 2.0, K.Ci - 0.3) && <div style={{ position:'absolute', left:90, top:1530, width:900, zIndex:41, display:'flex', justifyContent:'space-between', font:`700 28px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA, opacity:kprog(T, K.To + 2.0, K.To + 2.4) * (1 - kprog(T, K.Ci - 0.3, K.Ci + 0.1)) }}>
         <span>química</span><span style={{ color:KC.mint }}>microbios</span><span style={{ color:'#e0b48a' }}>vaina &lt;1 %</span></div>}
       <Chip T={T} at={K.Ci + 0.5} until={K.Ou} texto="orquídea" x={760} y={860} tam={38} borde={KC.leaf} />

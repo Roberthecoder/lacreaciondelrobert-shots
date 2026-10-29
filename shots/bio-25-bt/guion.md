@@ -7,7 +7,7 @@
 - **Viaje:** macro (una milpa y una hoja con un gusano cogollero mordiéndola) → micro (fondo oscuro: la bacteria con su cristal de proteína, el intestino de la oruga, receptores y poros) → la misma milpa, ya con la idea completa.
 - **Tono:** equilibrado. Se explica cómo funciona, por qué no le hace nada a una persona (con fuente regulatoria), que las plagas ya se volvieron resistentes (Puerto Rico) y la situación legal en México. No se opina a favor ni en contra.
 
-## Versión narrada (956 caracteres, ~171 palabras, ~58 s de voz)
+## Versión narrada (951 caracteres, ~168 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -16,11 +16,11 @@
 | 2 | Cry | Es la receta de unas proteínas llamadas Cry, y la planta las hace en sus hojas. | El ADN entra a la hoja; dentro de las células de la hoja se encienden puntitos dorados (las proteínas Cry). Chip "proteínas Cry". |
 | 3 | Mordida | Cuando el gusano cogollero muerde la hoja, se las traga. | Regreso a la oruga que muerde: los puntitos dorados entran por su boca. Etiqueta "gusano cogollero · *Spodoptera frugiperda*". |
 | 4 | Pregunta | ¿Y por qué a la oruga sí le hacen daño y a ti no? | **Re-gancho.** A la izquierda la oruga, a la derecha la silueta de una persona comiendo un elote; signo de interrogación grande. |
-| 5 | Alcalino | Su intestino es muy alcalino, de pH nueve a diez y medio: ahí la proteína se activa. | **Lupa** sobre la oruga ("POR DENTRO · intestino de la oruga"), fondo oscuro: el tubo del intestino. `Medidor` de pH que sube a 9–10.5 (azul/morado). El cristal se disuelve y la proteína se corta y queda "activa" (brilla). |
+| 5 | Alcalino | Su intestino es muy alcalino, lo contrario del tuyo: ahí la proteína se activa. | **Lupa** sobre la oruga ("POR DENTRO · intestino de la oruga"), fondo oscuro: el tubo del intestino. `Medidor` de pH que se va hacia el lado alcalino con la etiqueta "muy alcalino" (sin cifra). El cristal se disuelve y la proteína se corta y queda "activa" (brilla). |
 | 6 | Receptor | Se pega a receptores de su intestino, como llave en cerradura, y le abre hoyos. | Pared del intestino al microscopio: receptores como cerraduras; la proteína encaja como llave, se juntan y forman un poro; se abren hoyos en la pared. `Escala` en µm. |
 | 7 | Tu | Tu estómago es ácido, la deshace, y no tienes esos receptores. | Pantalla dividida: estómago humano con pH ácido (rojo/naranja, `Medidor` bajo) donde la proteína se rompe en pedacitos; pared con "cerraduras" que no le quedan (la llave no entra). |
 | 8 | Organico | La bacteria se usa como insecticida desde hace décadas, también en agricultura orgánica. | Fondo menta: un huerto, un rociador con la etiqueta "Bt" y un sello "orgánico". |
-| 9 | Estudio | En 1995, Estados Unidos registró el primer maíz Bt. Pero en Puerto Rico el cogollero se volvió resistente: un estudio de 2010 lo confirmó. | `TarjetaEstudio` "1995 · EE. UU. · primer maíz Bt registrado" → mapa de Puerto Rico con una milpa dañada y orugas que siguen comiendo; tarjeta "2010 · Puerto Rico · resistencia confirmada (Storer et al.)". |
+| 9 | Estudio | En 1995, Estados Unidos registró el primer maíz Bt. Pero en Puerto Rico el cogollero se volvió resistente: un estudio de 2010 lo confirmó. | `TarjetaEstudio` "1995 · EE. UU. · primer maíz Bt registrado" → mapa de Puerto Rico con una milpa dañada y orugas que siguen comiendo; tarjeta "2010 · Puerto Rico · resistencia a Cry1F confirmada (Storer et al.)". |
 | 10 | Mexico | Y en México, desde marzo de 2025, la Constitución prohíbe sembrar maíz transgénico. | Mapa de México con una milpa de maíces nativos de colores; documento con el escudo "Constitución · art. 4 y 27 · marzo 2025"; un costal de semilla transgénica tachado sobre la tierra. |
 | 11 | Cierre | Así que esa hoja no estaba fumigada: traía su insecticida adentro, solo para ciertas orugas. | **Regreso a la milpa y la hoja del inicio**: la hoja brilla por dentro con los puntitos dorados; el aspersor sigue tachado. |
 | — | Outro | (sin voz) | Cierre de marca sobre la imagen final oscurecida. |
@@ -32,7 +32,7 @@
 ## Descripción (para publicar)
 "Esa hoja de maíz no está fumigada: el insecticida lo fabrica ella misma. 🌽🐛 El **maíz Bt** lleva un gen de *Bacillus thuringiensis*, una bacteria que vive en el suelo. Ese gen es la receta de unas **proteínas Cry**, y la planta las produce en sus hojas.
 
-Cuando una oruga como el **gusano cogollero** (*Spodoptera frugiperda*) se come la hoja, se traga esas proteínas. Su intestino es muy **alcalino** (pH de 9 a 10.5): ahí la proteína se activa, se pega a receptores específicos de la pared del intestino y abre poros. La oruga muere.
+Cuando una oruga como el **gusano cogollero** (*Spodoptera frugiperda*) se come la hoja, se traga esas proteínas. Su intestino es muy **alcalino** (la toxina necesita pH de 9 o más para activarse): ahí la proteína se activa, se pega a receptores específicos de la pared del intestino y abre poros. La oruga muere.
 
 ¿Y a ti por qué no te hace nada? Tu estómago es **ácido** y degrada la proteína, y los mamíferos **no tienen esos receptores**. Salud Canadá lo resume así: no hay sitios receptores equivalentes en mamíferos, así que ese mecanismo no se considera relevante para los humanos. La misma bacteria se registró como insecticida en Estados Unidos en **1961** y algunos productos con ella están aprobados para **agricultura orgánica**.
 

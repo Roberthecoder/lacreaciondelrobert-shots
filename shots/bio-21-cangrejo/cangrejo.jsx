@@ -386,7 +386,7 @@ function Cangrejo21() {
       <Chip T={T} at={K.Co + 0.2} until={K.Es - 0.3} texto="AL MICROSCOPIO · AMEBOCITOS" x={540} y={430} tam={32} mono borde={KC.cyan} />
       <Etq T={T} at={K.Co + 0.6} until={K.Co + 2.0} x={640} y={560} texto="amebocito" tam={34} color={KC.texto} />
       <Chip T={T} at={K.Co + 2.6} until={K.Es - 0.3} texto="¡coágulo!" x={540} y={1530} tam={50} borde={GEL} />
-      <TarjetaEstudio T={T} at={K.Es + 0.3} until={ES2 - 0.3} anio="WOODS HOLE" quien="Bang (años 50) y Levin (años 60)" revista="Massachusetts, EE. UU. · junto al mar" y={960} />
+      <TarjetaEstudio T={T} at={K.Es + 0.3} until={ES2 - 0.3} anio="WOODS HOLE" quien="Bang (años 50) y Levin (años 60)" revista="Massachusetts, EE. UU. · junto al mar" y={870} />
       <Chip T={T} at={ES2 + 1.7} until={K.Pr - 0.3} texto="antes: prueba con conejos" x={300} y={1530} tam={34} borde={KC.paper} />
       <Chip T={T} at={ES2 + 2.9} until={K.Pr - 0.3} texto="gel = hay endotoxina" x={540} y={430} tam={38} borde={ENDO} />
       <Chip T={T} at={K.Sa + 2.6} until={K.Mo - 0.2} texto="de regreso al mar" x={540} y={1530} tam={42} borde={KC.cyan} />
