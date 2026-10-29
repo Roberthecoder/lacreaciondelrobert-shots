@@ -300,13 +300,13 @@ function Estatua22() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 3.2} texto="siempre fue verde" x={540} y={1130} tam={44} />
       <Chip T={T} at={K.G + 3.6} until={K.P - 0.3} texto="la costra verde la protege" x={540} y={1130} tam={38} borde={VERDE} />
       <Chip T={T} at={K.P + 0.4} until={K.Ca - 0.3} texto="piel de cobre" x={640} y={580} tam={44} borde={COBRE} />
-      <Etq T={T} at={K.P + 2.6} until={K.Ca - 0.3} x={1000} y={640} texto="2 centavos de dólar" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.P + 2.6} until={K.Ca - 0.3} x={1010} y={680} texto="2 centavos de dólar" lado="izq" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.4} until={K.Cu - 0.3} texto="1886: color centavo" x={540} y={1130} tam={44} borde={CAFE} />
       <Chip T={T} at={K.Cu + 0.4} until={K.Cu + 2.4} texto="oxígeno + agua" x={540} y={250} tam={40} borde={QA.O} />
       <Etq T={T} at={K.Cu + 3.4} until={K.Br + 2.4} x={60} y={1215} texto="cuprita · Cu₂O (oscura)" tam={34} />
       <Chip T={T} at={K.Br + 0.4} until={K.Br + 2.4} texto="azufre de la contaminación" x={500} y={700} tam={36} borde={QA.S} />
-      <Chip T={T} at={K.Br + 3.0} until={K.Es - 0.2} texto="brochantita · CuSO₄·3Cu(OH)₂" x={630} y={640} tam={30} borde={VERDE} mono />
-      <Chip T={T} at={K.Es + 0.4} until={K.Pr - 0.2} texto="casi no se disuelve" x={540} y={640} tam={42} borde={VERDE} />
+      <Chip T={T} at={K.Br + 3.0} until={K.Es - 0.2} texto="brochantita · CuSO₄·3Cu(OH)₂" x={665} y={600} tam={30} borde={VERDE} mono />
+      <Chip T={T} at={K.Es + 0.4} until={K.Pr - 0.2} texto="casi no se disuelve" x={450} y={640} tam={42} borde={VERDE} />
       <TarjetaEstudio T={T} at={K.St + 0.2} until={K.St + 3.3} anio="1986" quien="Matyi y Baboian" revista="Powder Diffraction · para la restauración" y={760} />
       <Chip T={T} at={K.St + 5.2} until={K.Pi - 0.3} texto="1905 · brochantita estable" x={330} y={1120} tam={28} borde={VERDE} />
       <Chip T={T} at={K.St + 7.4} until={K.Pi - 0.3} texto="1980 · antlerita, menos estable" x={760} y={1175} tam={28} borde={KC.yellow} />
