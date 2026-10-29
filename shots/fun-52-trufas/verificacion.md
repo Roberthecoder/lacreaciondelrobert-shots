@@ -43,3 +43,28 @@ Fuentes abiertas:
 Re-verificación (29 oct 2026): se releyó `narracion.json` completo (12 líneas) y las escenas 2, 6, 7 y 9 del guion. Las filas 4b, 7, 8 y 8b quedaron corregidas con las redacciones propuestas, y se revisaron otra vez contra [CLAUS], [BRIS], [TALOU], [SPL12] y [EPP]. No hay porcentajes de Piattoni. Las demás líneas no cambiaron.
 
 Resumen: 21 afirmaciones; todas ✅ después de corregir 4 (feromona en vez de hormona, "reportó" para el estudio de 1990, recreación solo con el cerdo frente a la feromona y sello «EN DUDA», ascas sin número rotulado).
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `trufas.jsx`, la columna «Lo que se ve», la tabla de Robert, `publicacion.md` y 25 cuadros de preview (0.3–60 s).
+
+| # | Qué se revisó | Veredicto | Fuente / nota |
+|---|---|---|---|
+| F1 | Recreación de 1990: antes el perro iba a la trufa con la etiqueta «el perro: directo a la trufa». El resumen solo dice que perros y cerdos «detected exclusively the flavouring samples and the solutions of dimethyl sulphide». Ahora el **perro va al hoyo del sulfuro de dimetilo** («el perro: al sulfuro de dimetilo») y el **cerdo pasa de largo la feromona y va a la trufa**, como en [BRIS]: «Pigs ignored the 5α-androst-16-en-3α-ol but made for either the real truffles or the synthetic truffle aroma». Se recorrieron los hoyos porque el letrero se cortaba en el borde derecho, y la etiqueta del perro se subió para que no pise el subtítulo | ✅ corregido | [TALOU], [BRIS] |
+| F2 | «encino · *Quercus*», «avellano · *Corylus avellana*», «trufas», «punta de raíz de encino», «hifas de la trufa», «minerales», «azúcar» | ✅ | [GL], [MELLO] (filas 2–3) |
+| F3 | «ascas (sacos)», «esporas» ornamentadas sin número; «otros hongos: al viento» / «bajo tierra: sin viento» | ✅ | [ELL], [TRUF] (filas 4–4b) |
+| F4 | «decenas de sustancias», «sulfuro de dimetilo · (CH₃)₂S» | ✅ | [SPL12], [BRIS] |
+| F5 | «jabalí · *Sus scrofa*»; «esporas de viaje» | ✅ | [PIAT]: «role of wild boars in long distance dispersal» |
+| F6 | Tarjeta «HIPÓTESIS · 1981», «androstenol», chip «feromona del cerdo macho», «¿?» | ✅ | [CLAUS] |
+| F7 | Chip «Francia · publicado en 1990»; sello «EN DUDA» sin tachar | ✅ | [TALOU], [BRIS] (químico francés), [EPP] |
+| F8 | Tarjeta «2014 · Italia · esporas de trufa · *Fungal Ecology*», «POR DENTRO · la tripa del cerdo», ascas que se abren y esporas sueltas, «✓ siguen vivas», «✓ más micorrizas con encino» (sin porcentajes) | ✅ | [PIAT], [RED] |
+| F9 | «≈20 especies de trufas (2018)», «*Tuber incognitum* · bajo encinos». Los puntos del mapa son **esquemáticos por región** (centro y noreste), no por estado: la fuente no da estados del noreste. Un punto en la costa de Tamaulipas (tierra baja) se movió a la sierra | ✅ | [MX]: «The majority of the collections … are from northeast and central México» |
+| F10 | Morfología: trufa negra verrugosa con gleba jaspeada de vetas blancas; ascas redondas con esporas espinosas o reticuladas; barras de escala 5 cm, 1 m, 1 mm, 50 µm, 0.5 mm y 500 km, coherentes con cada escena | ✅ | [TRUF], [MX] |
+| F11 | Subtítulos: los 12 son resúmenes fieles de la voz verificada y ninguno cae en el tercio inferior | ✅ | — |
+| F12 | `publicacion.md`: decía «en Francia se cosecharon … de avellanos plantados ya en 1977», pero [GL] no nombra el país. Se cambió a «en 1977 ya se cosecharon trufas negras de avellanos plantados con el hongo» | ✅ corregido | [GL]: «In 1977, T. melanosporum truffles were harvested from 4.5-y-old out-planted Corylus avellana L. seedlings» |
+| F13 | `publicacion.md`: «perros y cerdos entrenados». En el resumen, «trained» acompaña a los perros. Se cambió a «perros truferos entrenados y cerdos» | ✅ corregido | [TALOU]: «Both trained truffle dogs and pigs» |
+| F14 | `publicacion.md`: «varias bajo encinos» se cambió a «una de ellas, *Tuber incognitum*, vive bajo encinos». También se revisaron «mamíferos e insectos», «*Tuber aestivum*» y la nota de Epping 2022 | ✅ corregido | [MX], [MELLO], [PIAT], [EPP] |
+| F15 | Tabla «Robert en pantalla»: 11 apariciones, 1 grande, 7 poses distintas y ninguna repetida dos veces seguidas | ✅ | — |
+
+Resumen: la voz quedó como se verificó. Se corrigió la recreación de 1990 y tres frases de `publicacion.md`, y se hicieron dos ajustes de dibujo (posición de los hoyos y un punto del mapa). Todo queda ✅.
+VEREDICTO: APROBADO

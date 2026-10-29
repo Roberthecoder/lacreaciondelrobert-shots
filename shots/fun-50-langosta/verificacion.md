@@ -44,3 +44,31 @@ Fuentes abiertas:
 | 19 | Recortes de redacción revisados contra narracion.json (29 oct 2026): "se da fiebre", "y es especialista: ataca langostas y chapulines", "una espora pegada a su cutícula", "Adentro, crece en su sangre…", "una avioneta lo roció sobre langostas del desierto", "no dañó hormigas ni aves", "pelea con un hongo que suele ganar" — **corregido** | ✅ | filas 1, 2, 3, 5, 9, 12, 17 | Mismo contenido que las filas ya verificadas; no cambia ningún dato. | — |
 
 **Resumen (segunda vuelta, 29 oct 2026):** se corrigieron el ❌ de los cernícalos (ahora "más aves"; los cernícalos, más hembras) y los 3 ⚠️ (supervivencia con fiebre → "la mayoría muere", con Blanford & Thomas 2001; espora ovoide de 4–5.5 × 3–4 µm según Mongkolsamrit 2020; "SENASICA desarrolló cómo usarlo"). Se revisó narracion.json completo (13 líneas): todas las afirmaciones quedan ✅.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `langosta.jsx`, `Shot Langosta base narrada.dc.html`, la columna «Lo que se ve» y la tabla de Robert en `guion.md`, y `publicacion.md`. Saqué cuadros con `motor/preview.mjs` (0.3, 6, 12, 18, 24, 30, 36, 37.5, 40, 42, 44.5, 46.3, 48, 50, 52, 54, 58 y 60 s).
+
+Fuente nueva abierta:
+- **[TO]** Toriello, C. et al. (2024). Development of SCAR Markers for Genetic Authentication of *Metarhizium acridum*. *Journal of Fungi* 10(4): 269. https://pmc.ncbi.nlm.nih.gov/articles/PMC11050984/
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Mapa: punto y etiqueta «Tecomán, Col.» (de ahí sale la cepa de SENASICA) | ✅ | [TO], [OI] | [TO] "Sixteen original M. acridum isolates were obtained from the Collection of the Centro Nacional de Referencia de Control Biológico (CNRCB) … Tecomán, Colima, Mexico"; [OI] "desde México, donde forma parte de la colección de hongos de la Subdirección de Control Biológico (SCB) del Centro Nacional de Referencia Fitosanitaria (CNRF)". Las coordenadas del dibujo (18.91 N, 103.87 O) caen en Tecomán. | 2024 / 2020 |
+| F2 | Subtítulo #10: «Más aves; los cernícalos, sobre todo hembras.» — **corregido** (antes: «Llegaron más aves: sobre todo, hembras.», que daba a entender que las aves que llegaron eran hembras) | ✅ | [MU] | "bird numbers increased significantly"; "kestrels took significantly (P <0.05) more larger female (75–80%) than smaller male (20–25%) locusts." | 2005 |
+| F3 | Publicación: «el bioinsecticida Green Muscle» | ✅ | [MU] | "Green Muscle® containing the entomopathogenic fungus Metarhizium acridum had strongly reduced locust numbers"; "The study area was aerially treated with GM" | 2021 |
+| F4 | Publicación: «donó su cepa a Costa Rica a través del OIRSA» | ✅ | [OI] | "SENASICA de México, a través del OIRSA, realizó la donación de la cepa" | 2020 |
+| F5 | Publicación: «En noviembre de 2005» (el rociado fue el 5 nov 2005) | ✅ | [MU] | "aerially treated with GM … on 5 November 2005 (08:00–11:00 hrs) with a Cessna 188 fixed wing aircraft" | 2005 |
+| F6 | Cronómetro: «DESPUÉS DEL ROCIADO · DÍA 0→21» — **corregido** (decía «ROCÍO», que significa otra cosa) | ✅ | [MU] | "80% efficacy at day 21" | 2005 |
+| F7 | Publicación (Instagram y Facebook): «SENASICA desarrolló cómo usarlo…» — **corregido** (decía «lo desarrolló»); Threads: «Se ha usado como bioinsecticida en África, y en México SENASICA desarrolló cómo usarlo» — **corregido** (decía «se usa … en México») | ✅ | [SE], [MU] | "se ha desarrollado tecnología para el uso y manejo de Metarhizium acridum contra plaga de la langosta centroamericana" | 2020 |
+| F8 | LinkedIn: «Un límite posible: la temperatura» — **corregido** (decía «Su límite»); «los químicos también afectan a los enemigos naturales» | ✅ | [OU], [MU] | [OU] "Such thermoregulatory capacity of locusts may limit the potential of fungal pathogens as biological control agents under certain ecological conditions."; [MU] "they also kill or debilitate natural enemies of locusts, such as birds and insects" | 2004 / 2021 |
+| F9 | Textos de pantalla: «no es descanso: es FIEBRE», «ESPECIALISTA», «langosta / chapulín», «espora (conidio)», «cutícula = su cáscara», «tubo germinativo», «apresorio», «presión ↓», «enzimas», «hemolinfa = su sangre», «células tipo levadura», «azúcar (trehalosa)», «el calor lo frena, no lo cura», «la mayoría muere», «con fiebre / sin fiebre», tarjeta «2005 · norte de Níger · campo real · Mullié et al., PLoS ONE, 2021», «avioneta: rocía esporas», «día 5: empiezan a morir», medidor y chip «80 % de eficacia contra las langostas (día 21)», «mata en horas / tarda días o semanas», «hormigas / aves», «llegan más aves», «cernícalo *Falco tinnunculus*», «más hembras (75–80 %)», «hembra (más grande) / macho», «SENASICA · control biológico», «langosta centroamericana *Schistocerca piceifrons*», «2020 · cepa donada a Costa Rica», «fiebre vs. hongo», y los 13 subtítulos | ✅ | filas 1–19 y F1–F8 | Todos coinciden con lo ya verificado. «rocía esporas»: [MU] "107 g viable conidia ha-1". | — |
+| F10 | Morfología: conidio ovoide corto (~75 × 52 px con 10 µm = 150 px, o sea ≈5 × 3.5 µm); apresorio en forma de bulbo con punta que entra; células tipo levadura en la hemolinfa | ✅ | [MO], [LX] | "Conidia … Ellipsoid, globose, 4–5.5 × 3–4" µm; "penetration pegs"; "yeast-like hyphal bodies" | 2020 / 2022 |
+| F11 | Barras de escala: 5 cm (langosta), 10 µm (microscopio), 1 cm (hormigas), 10 cm (cernícalo), 500 km (mapa) | ✅ | dibujo | Proporciones razonables en los cuadros revisados; el conidio dibujado cabe en la barra de 10 µm. | — |
+| F12 | Arreglo visual: la etiqueta «Costa Rica» se salía del cuadro; se movió a la izquierda del punto, sin tapar el subtítulo | ✅ | cuadro 52 s | — | — |
+
+Lo que se cambió en esta revisión: `langosta.jsx` (subtítulo #10, «DESPUÉS DEL ROCIADO», posición de «Costa Rica») y `publicacion.md` (SENASICA «desarrolló cómo usarlo», Threads, LinkedIn «un límite posible», Mongkolsamrit en el comentario fijado). La voz verificada no se tocó.
+
+**Resumen final:** voz, pantalla y publicación quedan en ✅ (filas 1–19 y F1–F12).
+
+VEREDICTO: APROBADO
