@@ -427,60 +427,105 @@
       "titulo": "La hormona de crecimiento: de hipófisis de cadáveres a bacterias (1985)",
       "serie": "Shot Biotecnológico",
       "numero": 30,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-30-hormona-crecimiento",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "CDC MMWR 1985",
+        "NIDDK minutas 2024 y 2026",
+        "Genentech 18 oct 1985",
+        "Ayyar 2011"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Parches de duramadre y CJD iatrogénica",
+        "Por qué los priones aguantan la esterilización",
+        "Factor VIII recombinante para la hemofilia"
+      ]
     },
     {
       "id": "bio-31-car-t",
       "titulo": "Células que cazan cáncer: CAR-T (Emily Whitehead, 2012)",
       "serie": "Shot Biotecnológico",
       "numero": 31,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-31-car-t",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "CHOP 2022",
+        "AABB 2025",
+        "NCI 2025",
+        "Ficha FDA Kymriah"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "CAR-T contra el lupus",
+        "Tocilizumab: de la artritis al CRS",
+        "CAR-T de donante listas para usar"
+      ]
     },
     {
       "id": "bio-32-falciforme",
       "titulo": "CRISPR en la clínica: Casgevy para la anemia falciforme (2023)",
       "serie": "Shot Biotecnológico",
       "numero": 32,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-32-falciforme",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Frangoul et al. NEJM 2024",
+        "FDA 8 dic 2023",
+        "MHRA 16 nov 2023",
+        "Vertex 8-K 2023"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Lyfgenia: terapia génica con virus",
+        "Anemia falciforme y malaria",
+        "Bebés y hemoglobina fetal los primeros meses"
+      ]
     },
     {
       "id": "bio-33-bebe-kj",
       "titulo": "El bebé con una edición de bases hecha a su medida (KJ Muldoon, 2025)",
       "serie": "Shot Biotecnológico",
       "numero": 33,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-33-bebe-kj",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Musunuru et al. NEJM 2025",
+        "CHOP 2025 y 2026",
+        "Gaudelli et al. Nature 2017",
+        "Nature 10 2025"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Nanopartículas de lípidos por dentro",
+        "Edición prime vs edición de bases",
+        "Casgevy fuera del cuerpo"
+      ]
     },
     {
       "id": "bio-34-cerdo-rinon",
       "titulo": "Un riñón de cerdo editado dentro de un humano (xenotrasplante, 2024)",
       "serie": "Shot Biotecnológico",
       "numero": 34,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-34-cerdo-rinon",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Anand et al. Nature 2023",
+        "Mass General Brigham 2024",
+        "Harvard Medical School 2026",
+        "CENATRA 3er trimestre 2026"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Corazón de cerdo en paciente vivo (2022)",
+        "Alfa-gal y alergia a la carne roja",
+        "Retrovirus endógenos humanos"
+      ]
     },
     {
       "id": "bio-35-wolbachia",

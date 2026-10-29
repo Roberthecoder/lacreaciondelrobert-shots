@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Jeans base narrada.dc.html",
+  "salida": "Shot Jeans narrado.dc.html",
+  "nota": "Shot Biotecnológico #41. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese deslavado de tus jeans quizá no lo hizo una piedra: lo hizo un hongo." },
+    { "escena": "Hilos", "texto": "La mezclilla cruza hilos azules con hilos blancos." },
+    { "escena": "Anillo", "texto": "Y el índigo casi no entra al hilo: lo pinta por fuera y el centro queda blanco." },
+    { "escena": "Piedra", "texto": "Antes se deslavaban en lavadoras con piedra pómez que raspaba ese azul." },
+    { "escena": "Problema", "texto": "Pero la piedra maltrataba las máquinas y soltaba polvo." },
+    { "escena": "Pregunta", "texto": "¿Y si algo mordiera solo la orilla del hilo?" },
+    { "escena": "Celulasa", "texto": "El algodón es celulosa, y los hongos tienen enzimas que la cortan: celulasas." },
+    { "escena": "Mordida", "texto": "La celulasa muerde la superficie de las fibras y el azul se suelta." },
+    { "escena": "Gramos", "texto": "Unos gramos de enzima reemplazan kilos de piedra." },
+    { "escena": "Ayudantes", "texto": "Las amilasas quitan el almidón de los hilos, y las lacasas aclaran el azul." },
+    { "escena": "Estudio", "texto": "En 2001, en la Universidad del Minho, en Portugal, vieron que lacasas de hongos rompen el índigo y aclaran la tela." },
+    { "escena": "Tiendas", "texto": "Lo curioso: el hongo Trichoderma reesei se halló en la Segunda Guerra Mundial comiéndose tiendas de algodón." },
+    { "escena": "Cierre", "texto": "Así que tus jeans no los deslavó una piedra: los mordió la enzima de un hongo." }
+  ]
+}
