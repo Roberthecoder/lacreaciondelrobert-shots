@@ -76,3 +76,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y hasta dónde 
 - Fahrenheit escribió "sal amoníaco o también sal de mar": la voz dice "sal" (incluye ambas); en la descripción se aclara que era sal amoníaco (cloruro de amonio) o sal de mar. 0 °F ≈ −17.8 °C, que el FDA redondea a −18 °C.
 - Blagden: "casi en proporción" es literal de su resultado ("nearly in a simple ratio"); la ley exacta se afinó después (Raoult, siglo XIX).
 - Seguridad (para la descripción): la mezcla de hielo y sal está muy por debajo de cero; mejor no tenerla mucho rato en la mano sin guantes o trapo.
+

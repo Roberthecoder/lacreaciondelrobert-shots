@@ -67,3 +67,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Entonces qué t
 - **Leche fría vs. agua a temperatura ambiente:** las bebidas estaban frías (~4 °C) salvo el agua sin gas (a temperatura ambiente, ~20 °C): matiz para la descripción, porque, como recuerdan los mismos autores citando estudios previos, "Solution temperatures below mouth temperature (~35°C) substantially reduce the burn of capsaicin".
 - Julius compartió el Nobel con Ardem Patapoutian (sensores del tacto); el descubrimiento del TRPV1 se publicó en *Nature* en 1997.
 - Chiles (*Capsicum*): el habanero es *Capsicum chinense*.
+

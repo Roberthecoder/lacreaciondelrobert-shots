@@ -68,3 +68,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Cuánto tardó 
 - Lo de la lluvia ácida es una sospecha (Matyi y Baboian 1986: "supports the contention"); Livingston (*Environ. Sci. Technol.* 25(8):1400–1408, 1991) concluyó después que la lluvia ácida de Nueva York no cambia la mineralogía de la pátina. Por eso la voz dice "sospecharon".
 - Cerca del mar también se forman sales de cloro (atacamita); la pieza de 1980 traía cloruros de cobre. No cabe en la voz; va en la descripción.
 - El tubo de la azotea tarda años o décadas en ponerse verde (Bureš et al. 2019: "several decades"); en la descripción se aclara.
+

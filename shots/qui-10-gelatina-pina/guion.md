@@ -76,3 +76,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y por qué con 
 - Kiwi: de 13 variedades probadas en Japón, la mayoría deshizo la gelatina; Hort16A y Kosui casi no. La enzima del kiwi es otra (actinidina).
 - Consejo práctico del cierre ("usa de lata o cuécela antes"): respaldado por fuentes 6 y 8. A 40 °C la bromelina no se apaga, así que "tibia" no basta: en la descripción se aclara "cocer" (hervir unos minutos).
 - Para la descripción (pregunta para comentar): "¿Alguna vez se te hizo agua la gelatina con fruta? ¿Con cuál?"
+

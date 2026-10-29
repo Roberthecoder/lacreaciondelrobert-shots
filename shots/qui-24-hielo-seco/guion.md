@@ -71,3 +71,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Entonces es ino
 - Lo que la nube es: gotitas de agua del aire (cerca del hielo seco algunas pueden ser cristalitos de hielo; la voz dice "gotitas diminutas, como la niebla", igual que las fuentes).
 - Para la descripción: el hombre de Alabama se recuperó por completo; el CDC recomienda guardarlo en poca cantidad, en hielera aislada o en un lugar abierto y ventilado, y llevarlo en la caja de la camioneta, no en la cabina. Si alguien se siente mal cerca de hielo seco: sacarlo al aire fresco y llamar a emergencias.
 - Nada de esto invita a experimentar: no se muestra a nadie metiendo hielo seco en bebidas ni en frascos.
+

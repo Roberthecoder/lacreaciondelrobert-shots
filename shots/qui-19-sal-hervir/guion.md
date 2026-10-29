@@ -76,3 +76,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y por qué burb
 - Las burbujas al echar la sal: con agua ya muy caliente, los granitos funcionan como puntos de nucleación (fuente 3). La sal termina disolviéndose y el efecto dura poco. Cualquier granito (azúcar, arena) lo hace; no es una reacción química.
 - "La sal es para el sabor": es el uso culinario; no se hace ninguna afirmación de salud. En la descripción se puede recordar el límite de sodio de la FDA (2 300 mg al día ≈ 1 cucharadita).
 - Guadalajara (≈ 1 566 m) quedaría en ~95 °C, pero no se usa en la voz para no meter otra cifra.
+

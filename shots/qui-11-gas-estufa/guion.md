@@ -72,3 +72,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y qué pasa si 
 - Nagata (2003) reporta mediciones de 1976 a 1988 con el método de bolsa triangular; las cifras son umbrales de detección promedio y varían entre personas.
 - En la descripción se puede agregar: en EE. UU. la norma pide que el gas LP se huela cuando en el aire apenas hay la quinta parte de lo necesario para encenderse (propano 2.15 %), y que medio kilo (1 libra) de etil mercaptano por cada ~38 mil litros (10,000 galones) se considera suficiente.
 - Seguridad: los pasos de "si huele a gas" son textuales de la guía oficial de CDMX; la descripción agrega "si es seguro hacerlo" y "reporta al 911".
+

@@ -70,3 +70,4 @@ Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y po
 - El limón no "apaga" la enzima en el guacamole: la frena (la PPO se inhibe del todo por debajo de pH 3; el guacamole con limón no llega a eso). Por eso la voz dice "trabaja más lento". El limón también aporta vitamina C (antioxidante), matiz para la descripción.
 - "Melaninas" en frutas es el nombre genérico de esos pigmentos; no es la misma melanina de la piel humana (por eso la voz no lo compara).
 - Variedades del estudio de 1975: Fuerte (más PPO, más rápido), Horeshim y Lerman (menos). Eran aguacates israelíes de esa época; el Hass no estaba en el estudio.
+

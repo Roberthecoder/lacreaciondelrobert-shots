@@ -78,3 +78,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y por qué a ve
 - "Agua fría ya casi no ayudó" a los 30 min = "very little difference was apparent … whether the egg was cooled quickly or allowed to cool with the water".
 - La American Egg Board se cita a través de la extensión de Arkansas (no se pudo abrir su página directa: 404); el consejo práctico de la voz ("no lo cuezas de más y enfríalo rápido") está textual en UNL y en Tinkler y Soar.
 - Baker et al. 1967 (*Poultry Science* 46(3):664–672, DOI 10.3382/ps.0460664, "Factors Affecting the Discoloration of Hard-Cooked Egg Yolks") no se pudo abrir; no se usa.
+

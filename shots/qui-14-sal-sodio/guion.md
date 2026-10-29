@@ -77,3 +77,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y por qué la s
 - Davy no sacó el sodio de la sal, sino de la sosa cáustica (NaOH); por eso la voz dice "lo aisló" sin decir de qué, y en pantalla se ve "sosa cáustica". Hoy el sodio metálico sí se obtiene de la sal (uso industrial de NaCl en PubChem: "metallic sodium").
 - Ypres no fue el primer uso de gas en la guerra, sino el primero de cloro a esta escala; la voz dice "a gran escala", como la fuente. Sin cifras de muertos (las fuentes no coinciden).
 - Seguridad (para la descripción): el sodio metálico y el cloro gaseoso son peligrosos y solo se manejan en laboratorio o industria; nunca mezclar productos con cloro en casa (ver Shot Químico #03).
+

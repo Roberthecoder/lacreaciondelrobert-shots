@@ -70,3 +70,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿A qué temperat
 - El estudio de 2005 comparó híbridos de palomero en microondas; dice que la cáscara retiene la humedad gracias a su celulosa: lo de "retiene peor el agua" es la lectura de su conclusión.
 - Dato para la descripción (no en voz): el maíz nació en el sur de México hace unos 9 mil años (Matsuoka et al., 2002). No se afirma en voz que el palomero en particular sea mexicano.
 - Maíz: *Zea mays* (en cursiva en la descripción).
+

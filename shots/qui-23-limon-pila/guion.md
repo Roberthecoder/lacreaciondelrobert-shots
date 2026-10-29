@@ -64,3 +64,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿qué pasa ahí?
 - El clavo pierde zinc (pierde masa, Goodisman), pero en un experimento corto apenas se nota: se dibuja solo un poco gastado.
 - Se descartó un artículo de Sinaloa (Supl. Rev. Mex. Fís. 2026) porque sus cifras de limones en serie son internamente imposibles; no se usa ninguna cifra de ahí. Tampoco se da la corriente (no hay fuente seria).
 - Seguridad: experimento de muy bajo voltaje; no comer los limones usados (ANU).
+

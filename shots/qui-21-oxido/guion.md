@@ -72,3 +72,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y el hierro nun
 - "1 billón" en español = 10¹² (en inglés, *trillion*). El dato de 2016 es una estimación con datos económicos de 2013, armada a partir de estudios nacionales de distintos años: en la descripción se dice que es una estimación (y que con buenas prácticas se podría ahorrar 15–35 %, según el mismo informe).
 - Lo del pilar no es "nunca se oxidó": sí tiene óxido, pero una capa protectora que frena la corrosión. El trabajo de Balasubramaniam es la explicación más citada; también se ha propuesto que influye el clima seco de Delhi (en la descripción se menciona como matiz).
 - En el aluminio, la sal (cloruros) puede romper la capa protectora y causar picaduras; no cabe en la voz, va en la descripción.
+

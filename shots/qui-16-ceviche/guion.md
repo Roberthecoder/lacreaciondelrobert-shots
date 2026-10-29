@@ -77,3 +77,4 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y el limón no 
 - El calor "suficiente" depende del pescado; la guía francesa citada en Robert et al. 2025 habla de al menos 60 °C por 1 min en el centro, o congelar 7 días en el congelador de casa (Anses 2017). La FDA advierte que −20 °C/7 días puede no bastar en pescados muy gruesos (> 15 cm). Congelar mata parásitos, no todas las bacterias: va en la descripción.
 - La señora de Francia: otro familiar que comió lo mismo también se enfermó; la mayoría de los casos de anisakidosis se curan solos (dice el artículo). No se dice en la voz para no alarmar de más.
 - La miosina estudiada por Kristinsson fue a pH 2.5 (en laboratorio); el mecanismo (repulsión de cargas al bajar el pH) es el mismo, pero el ceviche es menos ácido.
+

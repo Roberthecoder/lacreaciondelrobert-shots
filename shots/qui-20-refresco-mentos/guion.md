@@ -74,3 +74,4 @@ Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y po
 - El estudio usó Diet Coke de EE. UU. (aspartamo + benzoato de potasio); en la descripción se dice "el refresco de dieta del estudio": las fórmulas de otros países pueden cambiar.
 - Matiz para la descripción: la capa del Mentos trae goma arábiga, un surfactante que también ayuda; según Coffey, es la combinación de superficie rugosa + surfactante. Más caliente = fuente más fuerte (Tabla III, un solo intento por temperatura: no va en la voz).
 - La seguridad es una recomendación genérica, no una afirmación del estudio.
+
