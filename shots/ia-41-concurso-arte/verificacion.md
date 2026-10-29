@@ -40,3 +40,12 @@ expediente en CourtListener (403), así que no se puede descartar una resolució
 3. **Chip en pantalla (fila 10) ⚠️:** cambiar "autoría humana: no" por **"imagen base · autoría humana: no"** (o ponerlo pegado solo a la
    imagen que sale de la máquina), para no dar a entender que los retoques tampoco contaban.
 4. Opcional (no es error): en el contador/reloj de la escena 2 añadir "según Allen" chiquito junto a "≈ 80 h · 900+".
+
+## Re-verificación (29 oct 2026, coordinador)
+- Gancho «…ganó un concurso de arte, y se hizo con IA. ¿Cuál es?» (Allen usó Midjourney y retocó con Photoshop) ✅
+- «Aunque dijo haber dado instrucciones al menos seiscientas veinticuatro veces, la imagen base no tenía autoría humana.» (decisión de la Oficina de Derechos de Autor de EE. UU., 5 sep 2023; las 624 son declaración de Allen) ✅
+- Chips «imagen base · autoría humana: no», «según Allen» y «retoques (Photoshop) ✔» ✅
+- Cierre «Mira otra vez los cuadros…» sin datos ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot CallCenter base narrada.dc.html",
+  "salida": "Shot CallCenter narrado.dc.html",
+  "nota": "Shot IA #44. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Eres nuevo en un call center y el de al lado lleva años. Con una IA que te sopla respuestas, a los dos meses rindes como quien lleva más de seis sin ella."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Economistas de Stanford y el MIT siguieron a cinco mil ciento setenta y dos agentes; a una parte le llegó la IA entre 2020 y 2021."
+    },
+    {
+      "escena": "Sugerencia",
+      "texto": "Leía cada chat y le sugería al agente qué contestar; él decidía si usarla."
+    },
+    {
+      "escena": "Numeros",
+      "texto": "En promedio, resolvieron quince por ciento más casos por hora."
+    },
+    {
+      "escena": "Numeros",
+      "texto": "Novatos y menos hábiles, cerca de treinta. Los más expertos, casi nada."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Por qué ayuda más al que menos sabe?"
+    },
+    {
+      "escena": "Mejores",
+      "texto": "Según los autores, la IA aprendió de los chats de los mejores y sus trucos le llegaban al nuevo."
+    },
+    {
+      "escena": "Expertos",
+      "texto": "A los mejores, en cambio, la calidad les bajó un poco."
+    },
+    {
+      "escena": "Clientes",
+      "texto": "Y los clientes fueron más amables, pidieron menos al supervisor y renunciaron menos novatos."
+    },
+    {
+      "escena": "Contraste",
+      "texto": "Ojo: en otro estudio, a programadores expertos la IA los hizo más lentos. No ayuda igual a todos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "La IA no reemplazó al veterano de al lado: según el estudio, le pasó sus trucos al nuevo."
+    }
+  ]
+}

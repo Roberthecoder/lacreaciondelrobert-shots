@@ -37,3 +37,12 @@
 3. **#13 "nueve de cada diez veces"** (⚠️ leve): la explicación del AUC es correcta en su forma (comparar uno con y uno sin), pero se midió por noches. Propuesta de voz (misma duración aprox.):
    «Lo publicaron en 2022: entre la noche de alguien con Parkinson y la de alguien sin, distinguía cuál era cuál nueve de cada diez veces; en un hospital que no conocía, más de ocho. Y estimaba qué tan avanzado iba.»
    Pantalla: las dos camitas ya representan noches; está bien. Mantener que nunca se diga "acierta el 90 %".
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Y no hay un análisis de laboratorio que lo diagnostique.» ✅
+- «…problemas al respirar dormido, desde etapas tempranas.» (sin «años antes del temblor») ✅
+- «…entre la noche de alguien con Parkinson y la de alguien sin…» ✅
+- Recortes de largo sin datos nuevos («unas neuronas», «casi doce mil noches», «no una prueba aprobada») ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

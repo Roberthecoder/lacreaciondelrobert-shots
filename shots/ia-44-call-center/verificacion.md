@@ -42,3 +42,11 @@ Notas menores (no cambian la voz):
 2. **#20 (escena 9, Cierre) ⚠️** — afirma como hecho la explicación de los autores.
    Propuesta: **"Así que la IA no reemplazó al veterano de al lado: según el estudio, le pasó sus trucos al nuevo."**
    (Alternativa sin hipótesis: "…: ayudó al nuevo a rendir como él.")
+
+## Re-verificación (29 oct 2026, coordinador)
+- [1] «Economistas de Stanford y el MIT siguieron a cinco mil ciento setenta y dos agentes; a una parte le llegó la IA entre 2020 y 2021.» (Brynjolfsson, Li y Raymond, QJE 2025: "data from 5,172 customer-support agents"; solo una parte tuvo la IA, ver fila 3) ✅
+- [10] «La IA no reemplazó al veterano de al lado: según el estudio, le pasó sus trucos al nuevo.» ✅
+- Recortes [2] [4] [6] sin cambiar el sentido ni agregar datos ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

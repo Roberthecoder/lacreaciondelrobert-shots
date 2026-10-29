@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Parkinson base narrada.dc.html",
+  "salida": "Shot Parkinson narrado.dc.html",
+  "nota": "Shot IA #43. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta rayita que sube y baja eres tú respirando dormido. Ahí una IA busca señales de Parkinson."
+    },
+    {
+      "escena": "Parkinson",
+      "texto": "El Parkinson llega cuando unas neuronas producen poca dopamina: temblor, rigidez, lentitud. Y no hay un análisis de laboratorio que lo diagnostique."
+    },
+    {
+      "escena": "Aparato",
+      "texto": "En el MIT hicieron un aparato tipo módem: sus ondas de radio rebotan en ti y leen cómo respiras sin tocarte."
+    },
+    {
+      "escena": "Noches",
+      "texto": "Usaron casi doce mil noches de más de siete mil seiscientas personas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Qué tiene que ver respirar con el Parkinson?"
+    },
+    {
+      "escena": "Respuesta",
+      "texto": "Estudios lo ligan con músculos de respirar débiles y problemas al respirar dormido, desde etapas tempranas."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo publicaron en 2022: entre la noche de alguien con Parkinson y la de alguien sin, distinguía cuál era cuál nueve de cada diez veces; en un hospital que no conocía, más de ocho. Y estimaba qué tan avanzado iba."
+    },
+    {
+      "escena": "Mascota",
+      "texto": "Su enemigo: un ventilador o tu mascota; esas noches no servían."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: es investigación, no una prueba aprobada."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Quizá un día esa rayita que dibujas dormido avise antes que tus manos."
+    }
+  ]
+}

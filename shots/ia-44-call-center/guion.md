@@ -1,10 +1,10 @@
 # Shot IA #44 · La IA que le pasó los trucos del veterano al nuevo
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #44 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, pendiente de verificación independiente. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (2 ⚠️ corregidas: escena 1 «siguieron a… a una parte le llegó la IA» y cierre «según el estudio»), animación, Robert en pantalla y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert** (~956 créditos).
 - **Formato:** N2 "El número" (+15 % en promedio, cerca de +30 % los novatos, casi nada los expertos) con mito tachado ("la IA ayuda igual a todos") y contraste con el Shot IA #16.
 - **Gancho (de los 7):** #2 "Tú contra el de al lado": tú, nuevo en el call center, contra el veterano de al lado.
-- **Duración:** voz 958 caracteres / ≈ 165 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** estimados.
+- **Duración:** voz 956 caracteres / ≈ 165 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** en la base.
 - **Postura de la serie:** a favor con datos, con su matiz: ayuda mucho al que empieza, casi nada al experto (y a los mejores les bajó un poco la calidad). Es UNA empresa y UN estudio; la IA llegó en 2020–2021 y así se dice.
 - **Cifras de la versión publicada (QJE 2025):** 5,172 agentes y +15 %. (El borrador NBER de 2023 decía 5,179 / +14 % / +34 %; no se usan.)
 
@@ -13,18 +13,37 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Eres nuevo en un call center y el de al lado lleva años. Con una IA que te sopla respuestas, a los dos meses rindes como quien lleva más de seis sin ella. | Fondo cian; desde el cuadro 0 dos cubículos lado a lado: "tú · 1.er día" (diadema, cara de pánico, chats que se apilan) y "el veterano · años" (tranquilo). El robotito aparece en tu pantalla y te sopla una respuesta. Calendario: "2 meses con IA" = "más de 6 meses sin IA". |
-| 1 | Estudio | Lo midieron economistas de Stanford y el MIT con cinco mil ciento setenta y dos agentes; la IA les llegó entre 2020 y 2021. | Tarjeta "Brynjolfsson, Li y Raymond · Stanford y MIT · *Quarterly Journal of Economics*, 2025"; contador de 5,172 diademas; chip "la IA llegó: 2020–2021 · soporte técnico de una empresa de software". |
-| 2 | Sugerencia | Leía cada chat y le sugería al agente qué contestar. Él decidía si la usaba. | Pantalla de chat: el cliente escribe, aparece una burbuja punteada "sugerencia de la IA"; la mano del agente elige "usar" o "ignorar". |
-| 3 | Números | En promedio, resolvieron quince por ciento más casos por hora. Los novatos y los menos hábiles, cerca de treinta. Los más expertos, casi nada. | Barras de "casos resueltos por hora": promedio +15 % · novatos y menos hábiles ≈ +30 % · los más expertos ≈ 0. Mito tachado: "la IA ayuda igual a todos". |
+| 1 | Estudio | Economistas de Stanford y el MIT siguieron a cinco mil ciento setenta y dos agentes; a una parte le llegó la IA entre 2020 y 2021. | Tarjeta "2025 · Brynjolfsson, Li y Raymond · Stanford y MIT · Quarterly Journal of Economics"; contador "5,172 agentes de soporte"; 40 diademas, y una parte se pinta de cian con brillito; chip "a una parte le llegó la IA · 2020–2021". |
+| 2 | Sugerencia | Leía cada chat y le sugería al agente qué contestar; él decidía si usarla. | Pantalla de chat: el cliente escribe, aparece una burbuja punteada "sugerencia de la IA"; la mano del agente elige "usar" o "ignorar". |
+| 3 | Números | En promedio, resolvieron quince por ciento más casos por hora. Novatos y menos hábiles, cerca de treinta. Los más expertos, casi nada. | Barras de "casos resueltos por hora": promedio +15 % · novatos y menos hábiles ≈ +30 % · los más expertos ≈ 0. Mito tachado: "la IA ayuda igual a todos". |
 | 4 | Pregunta | ¿Por qué ayuda más al que menos sabe? | **Re-gancho.** "?" gigante; Robert grande. |
-| 5 | Mejores | Según los autores, la IA aprendió de los chats de los mejores agentes, y sus trucos le llegaban al nuevo. | Fondo oscuro "por dentro de la máquina": chats con estrellita de los mejores agentes entran a una red neuronal; salen como sugerencias que viajan a la pantalla del nuevo (empatía, el enlace correcto, calmar al cliente). |
+| 5 | Mejores | Según los autores, la IA aprendió de los chats de los mejores y sus trucos le llegaban al nuevo. | Fondo oscuro "por dentro de la máquina": chats con estrellita de los mejores agentes entran a una red neuronal; salen como sugerencias que viajan a la pantalla del nuevo (empatía, el enlace correcto, calmar al cliente). |
 | 6 | Expertos | A los mejores, en cambio, la calidad les bajó un poco. | El veterano con la burbuja de la IA encima; flechita pequeña hacia abajo "calidad: un poco menos". |
 | 7 | Clientes | Y los clientes fueron más amables, pidieron menos al supervisor y renunciaron menos novatos. | Tres chips: carita de cliente enojada → amable; botón "¡quiero hablar con tu supervisor!" que se apaga; la puerta de salida con menos novatos saliendo. |
 | 8 | Contraste | Ojo: en otro estudio, a programadores expertos la IA los hizo más lentos. No ayuda igual a todos. | Mini tarjeta "Shot IA #16" con la programadora y su cronómetro; balanza: "novato: ayuda mucho" · "experto: poco o nada". |
-| 9 | Cierre | Así que la IA no reemplazó al veterano de al lado: le pasó sus trucos al nuevo. | **Regreso a la imagen del inicio**: los mismos dos cubículos, ahora el nuevo tranquilo; una flecha de "trucos" va del veterano al nuevo pasando por el robotito. |
+| 9 | Cierre | La IA no reemplazó al veterano de al lado: según el estudio, le pasó sus trucos al nuevo. | **Regreso a la imagen del inicio**: los mismos dos cubículos, ahora el nuevo tranquilo; una flecha de "trucos" va del veterano al nuevo pasando por el robotito. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua con zumbido suave de oficina; timbre de chat entrante en cada mensaje, "pop" en cada sugerencia de la IA, clic al elegir, barras que suben con un barrido, sello al tachar el mito, campanita al final cuando el nuevo se relaja.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Por qué ayuda más al que menos sabe?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «el de al lado lleva años» (cuadro 0) |
+| 2 | 12.7 | 16.6 | 13_senalando_arriba | `arriba-der` | señala el contador de 5,172 agentes |
+| 3 | 17.2 | 21.2 | 04_bajando_lentes | `izq-alto` | «le sugería al agente qué contestar» |
+| 4 | 21.7 | 25.1 | 05_sonriendo_dientes_uniformes | `izq-alto` | «quince por ciento más casos por hora» |
+| 5 | 29.75 | 33.0 | 07_pensativo_puno | `grande` | «¿Por qué ayuda más al que menos sabe?» |
+| 6 | 38.3 | 41.2 | 12_perfil_serio | `izq-alto` | «la calidad les bajó un poco» |
+| 7 | 41.7 | 46.8 | 11_sorprendido | `arriba-der` | «los clientes fueron más amables… renunciaron menos novatos» |
+| 8 | 47.5 | 52.7 | 06_pensativo_menton | `izq-alto` | «No ayuda igual a todos» |
+| 9 | 53.2 | 58.2 | 13_senalando_arriba | `arriba-der` | «le pasó sus trucos al nuevo» |
+| — | 58.3 | 61.8 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 36.2 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.8 s
 
 ## Fuentes (abiertas el 29 oct 2026)
 

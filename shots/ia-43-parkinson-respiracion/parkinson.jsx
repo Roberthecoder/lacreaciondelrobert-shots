@@ -315,7 +315,7 @@ function Parkinson() {
       {/* 6 · respuesta: por dentro */}
       <Escena T={T} a={K.R} b={K.E}>
         <FondoCircuito T={T} color={KC.pink} />
-        {svg(<Pulmones T={T} x={540} y={800} s={0.9} debil={kprog(T, K.R + 0.8, K.R + 2.0)} />)}
+        {svg(<Pulmones T={T} x={500} y={810} s={0.88} debil={kprog(T, K.R + 0.8, K.R + 2.0)} />)}
       </Escena>
       <Chip T={T} at={K.R + 0.9} until={K.E - 0.2} texto="músculos de respirar más débiles" x={540} y={1100} tam={36} borde={KC.pink} />
       <Chip T={T} at={K.R + 2.6} until={K.E - 0.2} texto="problemas al respirar dormido" x={540} y={1100} tam={36} borde={KC.cyan} fondo="rgba(14,15,18,.92)" />
@@ -338,7 +338,7 @@ function Parkinson() {
         </>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 2.2} anio="2022" quien="MIT · Katabi y col." revista="Nature Medicine" y={760} />
-      <Chip T={T} at={K.E + 5.6} until={K.E + dE * 0.56} texto="9 de cada 10" x={540} y={1180} tam={44} borde={KC.mint} />
+      <Chip T={T} at={K.E + 5.6} until={K.E + dE * 0.56} texto="9 de cada 10" x={640} y={590} tam={48} borde={KC.mint} />
       <TextoCaja T={T} at={K.E + dE * 0.56 + 0.4} until={K.E + dE * 0.77} texto="hospital que no conocía" x={540} y={1100} tam={40} />
       {T >= K.E + dE * 0.56 + 0.8 && T < K.E + dE * 0.77 + 0.6 && <NumeroGigante T={T} at={K.E + dE * 0.56 + 0.8} until={K.E + dE * 0.77} valor={8} desde={8} dur={0.1} prefijo="+ de " sufijo=" de 10" x={740} y={860} tam={110} color={KC.yellow} />}
       {T > K.E + dE * 0.77 && <Escena T={T} a={K.E + dE * 0.79} b={K.M}>{svg(<Velocimetro T={T} x={540} y={1010} s={1.05} v={0.62 * kprog(T, K.E + dE * 0.8 + 0.3, K.E + dE * 0.8 + 1.5, kEase.sale)} />)}</Escena>}

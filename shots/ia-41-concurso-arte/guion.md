@@ -1,10 +1,10 @@
 # Shot IA #41 · La imagen hecha con IA que ganó un concurso de arte
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #41 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** FASE A — guion escrito, pendiente de verificación independiente. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (16 ✅ + 3 ⚠️ corregidas), animación, Robert en pantalla, audio de revisión y `publicacion.md` listos · **voz pendiente de aprobación de Robert** (~957 créditos).
 - **Formato:** N5 "El experimento" (el espectador hace el reto de adivinar) + N2 "El número" (624 instrucciones, 80 horas, 900 versiones).
-- **Gancho (de los 7):** #5 Reto: "una de estas tres obras ganó un concurso de arte, y la hizo una IA. ¿Cuál es?". Voz en el segundo 0.
-- **Duración:** voz 949 caracteres / ≈ 165 palabras (≈ 57.9 s) + cierre 3.5 s → **≈ 61.4 s** (estimar-escenas).
+- **Gancho (de los 7):** #5 Reto: "una de estas tres obras ganó un concurso de arte, y se hizo con IA. ¿Cuál es?". Voz en el segundo 0.
+- **Duración:** voz 957 caracteres / ≈ 167 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** en la base (suma de OM_SCENES).
 - **Postura de la serie:** balanceada. Ni "la IA roba el arte" ni "la IA ya es artista": se cuentan los hechos, la decisión oficial y la
   regla de 2025 (la IA como herramienta sí se protege; las instrucciones solas no bastan). El caso judicial de Allen se dice solo como
   "demandó en 2024", sin afirmar cómo va.
@@ -15,23 +15,43 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Reto: una de estas tres obras ganó un concurso de arte, y la hizo una IA. ¿Cuál es? | Fondo amarillo; desde el cuadro 0 tres cuadros con marco dorado entran deslizándose a una pared de museo: **A** bodegón con frutas, **B** paisaje de montaña en acuarela, **C** salón enorme con figuras de túnica frente a una ventana redonda de luz. Etiquetas "A · B · C" y un cronómetro de 3 s que cuenta para que el espectador elija. |
+| 0 | Gancho | Reto: una de estas tres obras ganó un concurso de arte, y se hizo con IA. ¿Cuál es? | Fondo amarillo; desde el cuadro 0 tres cuadros con marco dorado entran deslizándose a una pared de museo: **A** bodegón con frutas, **B** paisaje de montaña en acuarela, **C** salón enorme con figuras de túnica frente a una ventana redonda de luz. Etiquetas "A · B · C" y un cronómetro de 3 s que cuenta para que el espectador elija. |
 | 1 | Respuesta | Es esta: ganó primer lugar en la Feria Estatal de Colorado, en 2022. | Foco al cuadro C, los otros se oscurecen; listón azul "1.er lugar" se le pega; chip "Feria Estatal de Colorado · 2022 · arte digital". |
-| 2 | Horas | Jason Allen la hizo con Midjourney: contó unas ochenta horas y más de novecientas versiones. | Una pantalla (CelularChat/monitor) escupe miniaturas una tras otra; contador "900+ versiones" y reloj "≈ 80 h". Chip "Jason M. Allen · Midjourney". |
+| 2 | Horas | Jason Allen la hizo con Midjourney: contó unas ochenta horas y más de novecientas versiones. | Una pantalla (CelularChat/monitor) escupe miniaturas una tras otra; contador "900+ versiones" y chip "≈ 80 horas · según Allen". Título del monitor "Jason M. Allen · Midjourney". |
 | 3 | Jueces | Los jueces dijeron que no sabían que era IA, pero que igual lo habrían premiado. | Dos jueces dibujados con lupa frente al cuadro; burbuja "¿IA? 🤷" y luego "igual gana ✔". |
 | 4 | Pregunta | ¿De quién es la obra: de Allen o de la máquina? | **Re-gancho.** Balanza: de un lado una mano con lápiz, del otro el Robotito; "?" gigante. |
 | 5 | Oficina (a) | En 2023, la Oficina de Derechos de Autor de Estados Unidos le negó el registro. | Tarjeta "Oficina de Derechos de Autor de EE. UU. · Junta de Revisión · 5 sep 2023"; sello rojo "REGISTRO NEGADO" cae sobre una ficha del cuadro C. |
-| 6 | Oficina (b) | Aunque dio instrucciones al menos seiscientas veinticuatro veces, la imagen base no tenía autoría humana. | NumeroGigante "624" hecho de tiras de texto (instrucciones) que van entrando a la máquina; la imagen base sale de la máquina con etiqueta "hecha por Midjourney"; chip "autoría humana: no". |
-| 7 | Demanda | Allen no quiso excluir la parte de la IA, y en 2024 demandó. | El cuadro C partido en capas: "capa IA" y "retoques en Photoshop"; Allen se niega a separar (la capa vuelve a pegarse); mazo de juzgado y chip "demanda · Colorado · 2024". |
+| 6 | Oficina (b) | Aunque dijo haber dado instrucciones al menos seiscientas veinticuatro veces, la imagen base no tenía autoría humana. | Fondo de circuito (por dentro de la máquina). NumeroGigante "624" ("instrucciones, al menos" · chip "según Allen"); tiras de texto entran a la máquina "Midjourney"; sale la imagen base; chip "imagen base · autoría humana: no". |
+| 7 | Demanda | Allen no quiso excluir la parte de la IA, y en 2024 demandó. | El cuadro C se separa en capas: "capa IA (Midjourney)" y "retoques (Photoshop) ✔" (la Oficina aceptó en jun 2023 que los retoques sí tenían autoría); las capas vuelven a pegarse; mazo de juzgado y chip "demanda · Colorado · 2024". |
 | 8 | Foto | Ese 2023, Boris Eldagsen ganó un premio de fotografía de Sony con una imagen de IA, y lo rechazó: «La IA no es fotografía». | Fondo rosa. Una "foto" en blanco y negro dibujada (dos mujeres, estilo antiguo, evocada) en un marco de concurso; trofeo que él empuja de regreso; cita grande «La IA no es fotografía» · "Boris Eldagsen, abril 2023". |
 | 9 | Regla | En 2025 la Oficina lo resumió: usar IA como ayuda no te quita derechos, pero las instrucciones solas no bastan. | Fondo menta. Dos columnas tipo Comparativa: ✔ "IA como herramienta + lo que tú creas o modificas" / ✘ "solo instrucciones (prompts)". Chip "Copyright Office · Parte 2 · enero 2025". |
-| 10 | Cierre | Vuelve a ver los tres cuadros: la pregunta no es cuál es más bonito, sino cuánto puso la mano humana. | **Regreso a la imagen del inicio**: la misma pared con A, B y C; cada cuadro se llena con un medidor "mano humana" (A y B dibujos hechos a mano; C muestra capa IA + retoques). |
+| 10 | Cierre | Mira otra vez los cuadros: la pregunta no es cuál es más bonito, sino cuánto puso la mano humana. | **Regreso a la imagen del inicio**: la misma pared con A, B y C; cada cuadro se llena con un medidor "mano humana" (A y B dibujos hechos a mano; C muestra capa IA + retoques). |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua, curiosa y suave (sin tomar partido). Tic-tac del cronómetro del reto; "ding" al revelar el cuadro C;
 ráfaga de clics de miniaturas en "900 versiones"; murmullo de jueces; golpe seco del sello "REGISTRO NEGADO"; tecleo por cada tira de
 instrucción del 624; mazo de juzgado; obturador de cámara en la escena de Eldagsen y un trofeo que se arrastra; acorde que se abre en la
 regla de 2025.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿De quién es la obra?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 06_pensativo_menton | `gancho` | «¿Cuál es?» (el reto, cuadro 0) |
+| 2 | 6.6 | 9.1 | 11_sorprendido | `arriba-der` | «ganó primer lugar» (se revela el cuadro C) |
+| 3 | 11.2 | 14.7 | 13_senalando_arriba | `izq-alto` | señala «más de novecientas versiones» |
+| 4 | 16.4 | 19.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «igual lo habrían premiado» |
+| 5 | 19.85 | 22.9 | 07_pensativo_puno | `grande` | «¿De quién es la obra: de Allen o de la máquina?» |
+| 6 | 28.6 | 33.6 | 10_serio_molesto | `izq-alto` | «la imagen base no tenía autoría humana» |
+| 7 | 35.6 | 38.2 | 04_bajando_lentes | `arriba-der` | «y en 2024 demandó» |
+| 8 | 38.8 | 42.0 | 11_sorprendido | `arriba-der` | Eldagsen gana… y rechaza el premio |
+| 9 | 48.0 | 52.2 | 13_senalando_arriba | `izq-alto` | señala «las instrucciones solas no bastan» |
+| 10 | 53.2 | 58.1 | 06_pensativo_menton | `arriba-der` | «cuánto puso la mano humana» |
+| — | 58.3 | 61.8 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 10 · ≈ 37.0 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.8 s
 
 ## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
 
@@ -71,6 +91,7 @@ regla de 2025.
 ## Notas
 - "Ganó un concurso de arte… primer lugar": primer lugar en la categoría de arte digital / fotografía manipulada digitalmente de la
   Feria Estatal de Colorado 2022 (no el premio general de la feria). En pantalla el chip dice "arte digital".
+- Correcciones del verificador (29 oct 2026): gancho "la hizo una IA" → "se hizo con IA" (la hizo Allen con Midjourney y retocó en Photoshop); "dio instrucciones al menos 624 veces" → "dijo haber dado…" (es palabra de Allen citada por la Junta); chip en pantalla "imagen base · autoría humana: no" (los retoques de Photoshop sí tenían autoría, jun 2023).
 - "Contó unas ochenta horas y más de novecientas versiones": son palabras de Allen reportadas por la prensa (Smithsonian / Pueblo
   Chieftain), por eso "contó". No es medición independiente.
 - "Le negó el registro" en 2023 = decisión final de la Junta de Revisión (5 sep 2023), que confirmó la negativa previa. La negativa es
