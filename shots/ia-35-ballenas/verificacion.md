@@ -49,3 +49,13 @@
 4. (Nota, no obligatoria) **#2 "no es Morse".** El propio artículo compara el sistema con el Morse como mecanismo parecido. Es
    literalmente cierto que no es Morse, pero para no contradecir a la fuente el cierre podría decir: "Así que no es Morse: se parece
    más a un alfabeto de piezas que apenas empezamos a descifrar."
+
+## Re-verificación (29 oct 2026, coordinador)
+- Escena 3 sin red neuronal ni robotito: gráfica de intercambio + histograma + chip «computadora: agrupar + estadística» ✅
+- Voz: «No es una IA que traduce: es análisis por computadora.» ✅; título «…(y ninguna IA lo tradujo)» ✅
+- Chip «≈ 4 % de las codas en intercambios» ✅
+- Cierre: «Así que no es Morse: se parece más a un alfabeto de piezas que apenas empezamos a descifrar.» ✅
+- Recortes sin datos nuevos (Estudio, Piezas) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

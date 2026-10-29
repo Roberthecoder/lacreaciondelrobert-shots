@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Ballenas base narrada.dc.html",
+  "salida": "Shot Ballenas narrado.dc.html",
+  "nota": "Shot IA #35. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es código Morse: son dos cachalotes contestándose con clics."
+    },
+    {
+      "escena": "Gancho",
+      "texto": "Y con algoritmos vieron que se arman como un alfabeto."
+    },
+    {
+      "escena": "Codas",
+      "texto": "Cada serie de clics se llama coda. Antes se agrupaban en veintiún tipos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2024, el MIT y el Proyecto CETI analizaron ocho mil setecientas diecinueve codas de cachalotes de Dominica, en el Caribe."
+    },
+    {
+      "escena": "Piezas",
+      "texto": "Hallaron cuatro piezas: ritmo, tempo y dos nuevas: rubato y ornamento."
+    },
+    {
+      "escena": "Rubato",
+      "texto": "Rubato: alargan o acortan la coda poco a poco, y la que contesta lo imita."
+    },
+    {
+      "escena": "Ornamento",
+      "texto": "Ornamento: un clic extra al final, como un adorno."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y eso qué cambia?"
+    },
+    {
+      "escena": "Combina",
+      "texto": "Las piezas se combinan libremente: en vez de veintiún tipos, salieron al menos ciento cuarenta y tres combinaciones frecuentes."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Pero ojo: aún no se sabe qué significa la mayoría. No es una IA que traduce: es análisis por computadora."
+    },
+    {
+      "escena": "Vocales",
+      "texto": "Y en 2025, en Berkeley, vieron otra capa: patrones parecidos a vocales, que llamaron a e i."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no es Morse: se parece más a un alfabeto de piezas que apenas empezamos a descifrar."
+    }
+  ]
+}

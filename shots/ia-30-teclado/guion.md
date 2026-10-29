@@ -1,17 +1,17 @@
 # Shot IA #30 · Tu teclado aprende de ti sin llevarse lo que escribes
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #30 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** FASE A: guion escrito, falta la verificación independiente. Todavía sin animación. (Sustituye al tema descartado de las conspiraciones.)
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`; los 3 ⚠️ corregidos: gancho, matiz y cierre; Apple "si aceptas compartir"), animación, Robert en pantalla, música y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert**. (Sustituye al tema descartado de las conspiraciones.)
 - **Formato:** N1 "Por dentro": macro (tu mano escribe en el celular) → micro (adentro del celular: el modelo, la actualización cifrada, el servidor que promedia) → macro (la misma pantalla, ya transformada).
-- **Gancho (de los 7):** #1 "Esto no es X: es Y": «Tu teclado no manda lo que escribes: manda lo que aprendió de ti».
-- **Duración:** voz 956 caracteres / ~172 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** estimados en la base.
+- **Gancho (de los 7):** #1 "Esto no es X: es Y": «Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti».
+- **Duración:** voz 956 caracteres / ~171 palabras (≈ 58.2 s) + cierre 3.5 s → **61.7 s** en la base (suma de `OM_SCENES`).
 - **Postura de la serie:** defensa con datos (una forma de entrenar IA que cuida más tu privacidad) **y** crítica (no es privacidad perfecta: ataques de laboratorio y la confianza en el servidor, dicha por los propios autores).
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti. | Fondo amarillo; desde el cuadro 0 una mano tecleando en un celular grande. Una burbuja de chat intenta salir volando y se queda (candadito); en su lugar sale volando un paquetito con brillitos. |
+| 0 | Gancho | Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti. | Fondo amarillo; desde el cuadro 0 una mano tecleando en un celular grande. Se teclea «te quiero», se toca «mucho» y la burbuja se envía pero se queda en el celular con un candadito; en su lugar sale volando un paquetito dorado con brillitos («lo aprendido»). |
 | 1 | Prediccion | Escribes «te quiero» y te sugiere «mucho». La calcula un modelo en tu celular. | Zoom a la barra de sugerencias: «te quiero» → «mucho» · «y» · «también» (ejemplo ilustrativo, como la Fig. 1 del paper con "I love you"). Lupa rayos X: adentro del celular, una red neuronal chiquita (`RedNeuronal`). |
 | 2 | Estudia | Cargando, sin usarse y con wifi, tu celular entrena ese modelo con lo que escribiste. | Íconos que se encienden uno por uno: 🔌 cargando · 💤 sin usarse · wifi. Fondo oscuro "por dentro": la red se ilumina con las frases que se quedan dentro. |
 | 3 | Paquete | Resume el cambio en una actualización chiquita y cifrada. Tus frases no salen. | Las conexiones que cambiaron se comprimen en un paquetito con candado; las burbujas de texto se quedan detrás de una puerta. |
@@ -25,6 +25,24 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave y suave; cada tecla un clic suave; la red se enciende con notas ascendentes; el candado hace "clac"; los paquetitos salen con un "fiu"; en el promedio, muchas notas se juntan en un acorde; en "Matiz" la cama se oscurece; en el cierre vuelve el clic del inicio.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y aprende igual de bien sin ver tus mensajes?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «no mandan lo que escribes» (cuadro 0) |
+| 2 | 6.1 | 9.3 | 13_senalando_arriba | `arriba-der` | señala la sugerencia «mucho» y la ventana «por dentro» |
+| 3 | 15.1 | 19.3 | 06_pensativo_menton | `izq-alto` | «una actualización chiquita y cifrada» |
+| 4 | 24.4 | 27.2 | 07_pensativo_puno | `grande` | «¿Y aprende igual de bien sin ver tus mensajes?» |
+| 5 | 34.2 | 38.1 | 05_sonriendo_dientes_uniformes | `arriba-der` | «atinó igual o un poco más» |
+| 6 | 38.7 | 43.3 | 04_bajando_lentes | `izq-alto` | «el iPhone revuelve al azar sus datos» |
+| 7 | 45.7 | 51.7 | 10_serio_molesto | `arriba-der` | «no es privacidad perfecta… reconstruyeron frases» |
+| 8 | 54.0 | 58.1 | 13_senalando_arriba | `arriba-der` | «lo que viaja es lo que aprendió» |
+| — | 58.2 | 61.7 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 8 · ≈ 33.2 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.7 s
 
 ## Fuentes (abiertas el 29 oct 2026)
 
