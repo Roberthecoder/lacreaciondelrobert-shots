@@ -196,7 +196,7 @@ function CarasPiel() {
       <Barras T={T} at={K.N + 0.4} until={K.P - 0.2} top={700} max={40} filas={[
         { valor: 0.8, etiqueta: 'hombres de piel clara (el peor de los 3)', color: KC.blue, tam: 34 },
         { valor: 34.7, etiqueta: 'mujeres de piel oscura (el peor de los 3)', color: KC.red, at: K.N + 3.4, tam: 34 }]} />
-      <NumeroGigante T={T} at={K.N + 4.6} until={K.P - 0.2} valor={34.7} dec={1} dur={0.8} sufijo=" %" x={560} y={1100} tam={190} color={KC.red} />
+      <NumeroGigante T={T} at={K.N + 4.6} until={K.P - 0.2} valor={34.7} dec={1} dur={0.8} sufijo=" %" x={560} y={1065} tam={150} color={KC.red} />
 
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.D} zoom={0.1}>

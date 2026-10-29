@@ -1,7 +1,7 @@
 # Shot IA #24 · Tu cerebro piensa con 20 watts; una tarjeta de IA, con 700
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #24 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, **pendiente de verificación independiente**. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (16 ✅ y 2 ⚠️ corregidos: se agregó «en 2024» a Llama 3 y a Hala Point), animación, Robert en pantalla, `gen-audio.mjs` (`assets/mezcla.wav`) y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert**.
 - **Formato:** N2 "El número" (20 W gigante desde el cuadro 0, mito del 10 % tachado, comparación con la tarjeta de 700 W, estudio y "qué sigue").
 - **Gancho (de los 7):** #3 "Tu cuerpo en una imagen" (con número): "Mientras me escuchas, tu cerebro gasta unos veinte watts: lo de un foco."
 - **Duración:** voz 968 caracteres / 178 palabras (≈ 58.3 s estimados) + cierre 3.5 s → **61.8 s** en la base.
@@ -25,6 +25,25 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua; "clic" al encenderse el foco, zumbido suave de la red neuronal, un "tic" por zona que se ilumina en el mito y golpe de tachado, ventiladores/zumbido eléctrico que sube con el medidor de la tarjeta, golpeteo de racks multiplicándose, señal que viaja ("fiu") por el axón, zumbido de la caja de Hala Point, y el foco que vuelve a hacer "clic" al cierre.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces tu cabeza le gana a la máquina?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «tu cerebro gasta unos veinte watts» (cuadro 0) |
+| 2 | 5.4 | 9.3 | 04_bajando_lentes | `arriba-der` | «se lleva una quinta parte de tu energía» |
+| 3 | 14.2 | 17.1 | 05_sonriendo_dientes_uniformes | `arriba-der` | «lo del diez por ciento es mito» |
+| 4 | 19.8 | 23.9 | 11_sorprendido | `izq-alto` | «lo de unos treinta y cinco cerebros» |
+| 5 | 27.2 | 31.3 | 07_pensativo_puno | `grande` | «¿Entonces tu cabeza le gana a la máquina?» |
+| 6 | 32.3 | 35.8 | 12_perfil_serio | `arriba-der` | «no se comparan uno a uno» |
+| 7 | 40.5 | 44.8 | 13_senalando_arriba | `izq-alto` | señala la neurona: «treinta y cinco veces más» |
+| 8 | 46.0 | 50.6 | 06_pensativo_menton | `arriba-der` | «una máquina inspirada en el cerebro» (Hala Point) |
+| 9 | 53.9 | 58.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «aún le da clases de ahorro a las máquinas» |
+| — | 58.3 | 61.8 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 35.8 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.8 s
 
 ## Fuentes (abiertas en el original el 29 oct 2026)
 
@@ -57,6 +76,7 @@
 - "Esta tarjeta de IA": H100 SXM, la versión de centro de datos; "hasta" 700 W es el máximo de diseño (TDP), no lo que gasta siempre.
 - Llama 3 de pasada: dato de la versión 405B (ia-04 usó las versiones 8B y 70B y sus horas de GPU).
 - Levy y Calvert es una **estimación teórica** (auditoría de energía con un modelo), y así se dice ("estimaron"). Su 3.5 W difiere del "about 3 W" que resume Balasubramanian; en voz solo se usan 0.1 W y "35 veces".
+- No se dice en ningún lado que Hala Point sea "el más grande" (el título del comunicado de Intel lo dice, pero en 2025 lo superó otro sistema); solo se cita el título.
 - Hala Point: "neuronas artificiales" (no equivalen a neuronas reales); es un prototipo de investigación de 2024. En pantalla se compara con el cerebro (86 000 millones con ~20 W) sin decir "más eficiente" en voz.
 - La frase final es una conclusión del canal (opinión), apoyada en los números de arriba y matizada en la escena "Ojo".
 - El dibujo es esquemático.
