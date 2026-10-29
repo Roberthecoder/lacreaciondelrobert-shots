@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot RefrescoDientes base narrada.dc.html",
+  "salida": "Shot RefrescoDientes narrado.dc.html",
+  "nota": "Shot Químico #38. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese refresco no solo es dulce: es un ácido que disuelve el cristal de tus dientes." },
+    { "escena": "Esmalte", "texto": "Tu esmalte está hecho sobre todo de hidroxiapatita: cristales de calcio y fosfato bien pegaditos." },
+    { "escena": "Critico", "texto": "Si el pH de tu boca baja de 5.5, más o menos, esos cristales empiezan a disolverse." },
+    { "escena": "Acido", "texto": "Y las colas traen ácido fosfórico; muchos otros refrescos, ácido cítrico." },
+    { "escena": "Erosion", "texto": "Sus iones de hidrógeno atacan los cristales, y el esmalte se ablanda y se desgasta." },
+    { "escena": "Azucar", "texto": "Encima, el azúcar: las bacterias de tu placa la convierten en más ácido." },
+    { "escena": "Pregunta", "texto": "¿Pero qué tan ácido es un refresco?" },
+    { "escena": "Estudio", "texto": "En 2016, en la Universidad de Alabama, midieron 379 bebidas: el 93 por ciento tenía pH menor a 4, y las colas normales, cerca de 2.4." },
+    { "escena": "Consejo", "texto": "Por eso, al terminar, enjuágate con agua en vez de lavarte los dientes enseguida, y usa popote detrás de los dientes de enfrente." },
+    { "escena": "Dentista", "texto": "Lo curioso: tu dentista usa ácido fosfórico al 37 por ciento, unos 10 segundos, para grabar el esmalte antes de pegar resina." },
+    { "escena": "Cierre", "texto": "Así que ese refresco no solo es dulce: es ácido, y el esmalte que se va ya no regresa." }
+  ]
+}

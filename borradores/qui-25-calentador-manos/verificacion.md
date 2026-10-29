@@ -79,4 +79,7 @@ Mismo verificador independiente; se revisaron contra las mismas fuentes abiertas
 
 - Aplicada tal cual la propuesta de la re-verificación: «luego agua, carbón activado, vermiculita y sal».
 
+
+Revisión de publicacion.md contra NITE (14 ene 2025): ✅ 46 °C 30 min–1 h y 50 °C 2–3 min ("46℃では 30 分～1 時間、50℃では 2～3 分"); ✅ mayores, niños pequeños y diabetes ("特に高齢者の場合…重症化する傾向" · "幼児や身体の不自由な方、糖尿病の方が使用する場合は特に注意が必要"); ✅ no apretar ("カイロをベルトやサポーターなどで圧迫するようなご使用はお控えください"): se corrigió "fajas" por "cinturones ni fajas"; ✅ bajo las cobijas se calienta más ("布団の中で蓄熱して製品表示にある最高温度を超える場合があり").
+
 VEREDICTO: APROBADO
