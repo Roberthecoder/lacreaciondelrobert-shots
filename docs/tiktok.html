@@ -1,0 +1,32 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Conectar TikTok · La Creación del Robert</title><link rel="stylesheet" href="estilo.css">
+<style>input{font:inherit;width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--muted);border-radius:8px;background:transparent;color:inherit}
+.btn{display:inline-block;margin-top:14px;padding:12px 20px;border-radius:10px;background:var(--rosa);color:#fff;text-decoration:none;font-weight:600;border:0;font-size:17px;cursor:pointer}</style>
+</head><body><main>
+<nav><a href="index.html">Inicio</a><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a></nav>
+<h1>Conectar <span>TikTok</span></h1>
+<p>Esta página conecta la herramienta de publicación del canal con la cuenta de TikTok de La Creación del Robert. Solo pide permiso para leer el nombre de la cuenta y para <b>enviar videos como borrador</b> a la bandeja de TikTok: nada se publica sin que Robert lo abra en la app y lo publique él.</p>
+<p id="paso-llave"><label for="ck">Client key de la app (TikTok for Developers → la app → Credentials; se guarda solo en este navegador):</label><br>
+<input id="ck" autocomplete="off" spellcheck="false" placeholder="client key"></p>
+<button class="btn" id="ir" type="button">Autorizar con TikTok</button>
+<p class="muted" id="msg"></p>
+<hr><p lang="en"><b>English:</b> This page connects the channel's internal publishing tool to the channel's own TikTok account. It requests <code>user.info.basic</code> and <code>video.upload</code> only: videos are sent as drafts to the creator's TikTok inbox and are published manually by the creator in the TikTok app.</p>
+<script>
+const $ = (i) => document.getElementById(i);
+let guardada = ''; try { guardada = localStorage.getItem('tiktok_ck') || ''; } catch (e) {}
+if (guardada) { $('ck').value = guardada; $('paso-llave').hidden = true; }
+$('ir').onclick = () => {
+  const ck = $('ck').value.trim();
+  if (!ck) { $('paso-llave').hidden = false; $('msg').textContent = 'Pega primero el client key.'; return; }
+  const st = Array.from(crypto.getRandomValues(new Uint8Array(12)), (b) => b.toString(16).padStart(2, '0')).join('');
+  try { localStorage.setItem('tiktok_ck', ck); sessionStorage.setItem('tiktok_state', st); localStorage.setItem('tiktok_state', st); } catch (e) {}
+  const u = new URL('https://www.tiktok.com/v2/auth/authorize/');
+  u.searchParams.set('client_key', ck);
+  u.searchParams.set('scope', 'user.info.basic,video.upload');
+  u.searchParams.set('response_type', 'code');
+  u.searchParams.set('redirect_uri', 'https://roberthecoder.github.io/lacreaciondelrobert-shots/');
+  u.searchParams.set('state', st);
+  location.href = u.toString();
+};
+</script>
+</main></body></html>
