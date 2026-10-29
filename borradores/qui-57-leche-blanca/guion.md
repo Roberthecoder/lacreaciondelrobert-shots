@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre el vaso que se ve en pantalla: "Lo blanco de tu leche no es un pigmento: es luz rebotando en bolitas que tus ojos no alcanzan a ver." (con espíritu de #7, algo que tus ojos nunca van a ver).
 - **Seguridad:** nada que hacer en casa con riesgo; no hay consejos de salud ni de nutrición.
 - **Duración:** voz 959 caracteres / 186 palabras (≈ 58.3 s, 11 líneas) + cierre 3.5 s → **≈ 61.8 s** (`estimar-escenas.mjs`).
-- **Estado:** guion listo para verificación independiente; sin animación; voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`leche.jsx`, hoja en `revision/hoja.png`), voz pendiente de aprobación de Robert (~959 créditos).
 
 ## Versión narrada
 
@@ -25,6 +25,26 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert. |
 
 **Música:** cama grave continua, debajo de la voz; efectos en el mismo cuadro (chorro y vaso llenándose, "tic" de cada rebote, contador, gotitas que salen flotando, gotero en el tanque, zumbido suave del medidor, golpe de cada tarjeta).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y por qué la leche descremada se ve medio azul?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «es luz rebotando en bolitas» |
+| 2 | 7.0 | 11.7 | 13_senalando_arriba | `izq-alto` | «gotitas de grasa y micelas de caseína» |
+| 3 | 13.0 | 17.1 | 04_bajando_lentes | `arriba-der` | «cambia de rumbo y vuelve a chocar» |
+| 4 | 17.8 | 22.0 | 05_sonriendo_dientes_uniformes | `izq-alto` | «juntos llegan a tus ojos como blanco» |
+| 5 | 22.25 | 26.3 | 06_pensativo_menton | `grande` | «¿Y por qué la leche descremada se ve medio azul?» |
+| 6 | 26.8 | 31.2 | 13_senalando_arriba | `arriba-der` | «desvían más la luz azul» |
+| 7 | 34.5 | 38.4 | 07_pensativo_puno | `izq-alto` | «echó leche descremada en un tanque» |
+| 8 | 38.8 | 45.7 | 11_sorprendido | `izq-alto` | «se veía azul… salía rojiza: como el cielo» |
+| 9 | 49.0 | 53.0 | 04_bajando_lentes | `arriba-der` | «rebotaba miles de veces adentro» |
+| 10 | 53.6 | 58.2 | 02_apuntando_camara | `arriba-der` | «luz que rebotó… hasta tus ojos» |
+| — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 46 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

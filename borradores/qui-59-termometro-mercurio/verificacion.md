@@ -55,3 +55,20 @@
 8. **(#29) Cierre: "frasco cerrado" → bolsa con cierre (o recipiente de plástico) etiquetada "residuo de mercurio",** no frasco de vidrio.
 
 9. **(#31) Para `publicacion.md` (no en la voz):** agregar lo que la EPA dice además: si cae en alfombra o el derrame es mayor que un termómetro, llamar a la autoridad de salud o bomberos (en México, Protección Civil o la autoridad de salud local); no tirarlo al desagüe; no caminar con zapatos que lo pisaron; y, según la MPCA (2020), si ya se aspiró, meter la aspiradora en bolsa y llevarla a residuos peligrosos. Si alguien se siente mal, buscar atención médica (EPA: "seek medical attention right away if anyone becomes sick").
+
+## Correcciones aplicadas
+
+29 oct 2026 · aplicadas tal cual en `narracion.json` y `guion.md` (pendiente revisión de un verificador; aún sin veredicto). Total estimado: 954 caracteres · voz ≈ 57.8 s · **total ≈ 61.3 s**.
+
+| Línea | Texto nuevo | Corrección |
+|---|---|---|
+| 0 Gancho | "Se te rompió un termómetro de mercurio: ¿por qué NO debes barrer ni aspirar esas bolitas?" | #1 (de mercurio); "plateadas" se quitó por tiempo |
+| 1 Que | "Son mercurio, un metal líquido que a temperatura ambiente suelta un gas que no ves ni hueles." | solo ajuste de texto por tiempo (mismos datos) |
+| 2 Pulmon | "Ese vapor es lo peligroso: al respirarlo, un adulto absorbe entre 69 y 85 por ciento." Pantalla: barra con "adultos · ATSDR 2024". | #8 |
+| 3 Escoba | "La escoba lo rompe en gotitas, y las gotitas chicas se evaporan más rápido." | ajuste por tiempo |
+| 5 Pregunta | "¿Cuánto tiempo sigue soltando vapor?" | ajuste por tiempo |
+| 6 Estudio | "En 2004, en Michigan, una familia aspiró el mercurio de un termómetro. Un mes después, guardada en un garaje helado, la aspiradora seguía soltando vapor de mercurio, y Salud de Michigan pidió inutilizarla y tirarla." Pantalla: sin la línea "1000 = hay que limpiar" ni la barra doble; medidor "2000 ng/m³ junto a la aspiradora", termómetro "−7 a −1 °C", aspiradora con ✕ al relleno sanitario. | #19 |
+| 7 QueHacer | "Sin pánico. La EPA dice: que salgan todos, y las mascotas; abre ventanas, ponte guantes, junta las gotas con cartón y un gotero, y ventila al menos 24 horas." Pantalla: sale toda la familia sin pisar las bolitas, manos con guantes, reloj "≥ 24 h", texto plano "Fuente: EPA (EE. UU.)" sin sello. | #22, #24, #25, #26 |
+| 8 Dato | "Ese vapor pesa más que el aire: se junta abajo, donde respiran los niños." | ajuste por tiempo |
+| 9 Cierre | "Nada de escoba ni aspiradora: lo peligroso es lo que no ves." Pantalla: bolitas en bolsa con cierre hermético (o recipiente de plástico, nunca de vidrio) etiquetada "residuo de mercurio". | #29; texto ajustado por tiempo |
+| Notas | Agregados: Minamata 2020; si ya se aspiró, aspiradora en bolsa a residuos peligrosos (MPCA); atención médica si alguien se siente mal (EPA). | #1, #31 |
