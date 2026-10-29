@@ -76,3 +76,5 @@ apariciones 8 · ≈ 29.4 s (+ cierre 3.5 s) · poses distintas 6 (nunca la mism
 - El tutor además tenía la solución correcta y los errores comunes escritos por profesores (no se dice en la voz por tiempo; va en publicacion.md).
 - Es un solo estudio, una escuela, una materia y efectos de corto plazo; se dirá en la descripción.
 - El dibujo es esquemático.
+
+<!-- verificado y enviado a render: 29 oct 2026 -->

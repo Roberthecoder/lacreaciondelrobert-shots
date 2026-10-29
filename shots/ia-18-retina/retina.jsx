@@ -363,7 +363,7 @@ function Retinas() {
         [CUES.Foto + 2.7, CUES.Estudio - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Edad + 0.4, CUES.Sexo - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Sexo + 1.8, CUES.Presion - 0.15, 'avatar_11_sorprendido', 'arriba-der'],
-        [CUES.Pregunta + 0.05, CUES.Mapa + 0.2, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Mapa - 0.3, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Mapa + 3.9, CUES.Ojo - 0.15, 'avatar_06_pensativo_menton', 'izq-alto'],
         [CUES.Ojo + 0.3, CUES.UsoReal - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.UsoReal + 2.0, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],

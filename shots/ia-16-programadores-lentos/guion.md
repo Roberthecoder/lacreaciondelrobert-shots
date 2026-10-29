@@ -79,3 +79,5 @@ apariciones 9 · ≈ 36.1 s (+ cierre 3.5 s) · poses distintas 7 (nunca la mism
 - El laboratorio METR (Model Evaluation and Threat Research) es una organización sin fines de lucro (metr.org/about). No se dice la ciudad porque no la encontré en su sitio.
 - No se generaliza: un estudio, 16 personas, un tipo de trabajo (proyectos grandes y maduros de código abierto), herramientas de principios de 2025.
 - El dibujo es esquemático.
+
+<!-- verificado y enviado a render: 29 oct 2026 -->

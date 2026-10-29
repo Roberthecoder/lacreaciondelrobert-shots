@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 ¿Cuál de estas dos caras es real? Ojo: la IA ya inventa caras. 👀🤖
-En 2022, 315 personas intentaron distinguir caras reales de caras hechas con la IA StyleGAN2: atinaron 48.2 %, menos que un volado. Con entrenamiento, apenas 59 %. Y otro grupo calificó como más confiables las caras de la IA (4.82 contra 4.48, en una escala de 1 a 7). En 2023, otro estudio vio que las caras blancas de IA parecían más humanas que las reales, y que quienes más fallaban eran los más seguros.
+En 2022, 315 personas intentaron distinguir caras reales de caras hechas con la IA StyleGAN2: atinaron 48.2 %, casi como echar un volado. Con entrenamiento, apenas 59 %. Y otro grupo calificó como más confiables las caras de la IA (4.82 contra 4.48, en una escala de 1 a 7). En 2023, otro estudio vio que las caras blancas de IA parecían más humanas que las reales, y que quienes más fallaban eran los más seguros.
 Consejo: no le creas a "se ve real"; fíjate quién publicó la foto y de dónde salió.
 La respuesta del reto: ninguna, las dos las dibujamos. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En cuál confiaste tú, en la A o en la B? 👇
@@ -53,7 +53,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-¿Cuál de estas dos caras es real? Ojo: la IA ya inventa caras. 👀 En 2022, 315 personas intentaron distinguir caras reales de caras de IA y atinaron 48.2 %, menos que un volado. Y las caras de la IA les parecieron más confiables. Así que no le creas a "se ve real": fíjate quién publicó la foto. (La respuesta del reto: ninguna, las dos las dibujamos 😅).
+¿Cuál de estas dos caras es real? Ojo: la IA ya inventa caras. 👀 En 2022, 315 personas intentaron distinguir caras reales de caras de IA y atinaron 48.2 %, casi como echar un volado. Y las caras de la IA les parecieron más confiables. Así que no le creas a "se ve real": fíjate quién publicó la foto. (La respuesta del reto: ninguna, las dos las dibujamos 😅).
 ¿En cuál confiaste tú, en la A o en la B? 👇
 Shot IA #14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -80,7 +80,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Threads
 ```text
 ¿Cuál de estas dos caras es real? Ojo: la IA ya inventa caras. 👀
-En 2022, 315 personas atinaron 48.2 % (menos que un volado) y las caras de IA les parecieron más confiables. En 2023, quienes más fallaban eran los más seguros.
+En 2022, 315 personas atinaron 48.2 % (casi como echar un volado) y las caras de IA les parecieron más confiables. En 2023, quienes más fallaban eran los más seguros.
 Respuesta del reto: ninguna, las dos las dibujamos 😅
 ¿En cuál confiaste tú?
 Shot IA #14 · Soy Robert, de La Creación del Robert 🌱

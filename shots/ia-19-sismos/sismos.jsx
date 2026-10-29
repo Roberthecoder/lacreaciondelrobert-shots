@@ -257,7 +257,7 @@ function Sismos() {
         <FondoLunares color={KC.lilac} />
         {svg(<>
           <g transform={`translate(${klerp(600, 280, zoomOut)} ${klerp(860, 800, zoomOut)}) scale(${klerp(1, 0.4, zoomOut)}) translate(-600 -860)`}>
-            <MaquinaFalla x={600} y={790} s={0.95} T={T} fase={fase} desliz={desliz} />
+            <MaquinaFalla x={620} y={790} s={0.95} T={T} fase={fase} desliz={desliz} />
           </g>
           {zoomOut > 0 && <g opacity={zoomOut} transform={`translate(${klerp(300, 0, zoomOut)} 0)`}><Tierra x={740} y={830} r={klerp(100, 290, zoomOut)} T={T} /></g>}
         </>)}
@@ -266,7 +266,7 @@ function Sismos() {
       <Medidor T={T} at={K.L + 3.6} until={L2 - 0.2} y={1075} etiqueta="falta para el siguiente sismo" color={KC.yellow}
         valor={(t) => { const u = t - (K.L + 0.4); return u > 0 ? 1 - ((u % CIC) / CIC) : 1; }} texto={(v) => `${kformato(v * CIC, 1)} s`} />
       <Chip T={T} at={K.L + 4.0} until={K.L + 6.4} texto="la IA escucha el sonido de la falla" x={540} y={440} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.L + 6.6} until={L2 - 0.2} texto="«ruido inútil»… que no lo era" x={390} y={440} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.L + 6.6} until={L2 - 0.2} texto="«ruido inútil»… que no lo era" x={680} y={440} tam={38} borde={KC.yellow} />
       <Chip T={T} at={L2 + 0.6} until={K.R - 0.2} texto="laboratorio ≠ planeta" x={540} y={1110} tam={44} borde={KC.red} />
       {/* 7 · réplicas: Harvard y Google, 2018 */}
       <Escena T={T} a={K.R} b={K.N}>
@@ -292,7 +292,7 @@ function Sismos() {
       </Escena>
       <TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 1.8} anio="2019" quien="Mignan y Broccardo" revista="Nature · «Una neurona contra el aprendizaje profundo»" y={760} />
       <NumeroGigante T={T} at={K.N + 1.9} until={K.C - 0.2} valor={2} etiqueta="parámetros" x={800} y={690} tam={110} color={KC.yellow} dur={0.3} />
-      <NumeroGigante T={T} at={K.N + 3.4} until={K.C - 0.2} valor={13451} etiqueta="parámetros" x={800} y={1060} tam={100} color={KC.red} dur={0.9} />
+      <NumeroGigante T={T} at={K.N + 3.4} until={K.C - 0.2} valor={13} etiqueta="parámetros" x={800} y={1060} tam={100} color={KC.red} dur={0.01} sufijo=" 451" />
       <Chip T={T} at={K.N + 4.6} until={K.C - 0.2} texto="mismo acierto: 0.85 = 0.85" x={790} y={430} tam={28} borde={KC.leaf} />
       {/* 9 · cierre: el mismo celular, a la basura */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -307,7 +307,7 @@ function Sismos() {
       {kvisible(T, K.C + 2.2, K.Ou) && <div style={{ position:'absolute', inset:0, zIndex:26, opacity:kprog(T, K.C + 2.1, K.C + 2.4) }}><Sismograma T={T} x={110} y={700} ancho={360} alto={90} avance={kprog(T, K.C + 2.2, K.C + 3.2)} scan={-1} eventos={[{ u: 0.3, a: 0.6 }, { u: 0.7, a: 0.5 }]} /></div>}
       <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="escucha, no adivina" x={780} y={1110} tam={40} borde={KC.leaf} />
 
-      <Capitulo T={T} hasta={K.C} caps={[{ at: K.G + 0.2, titulo: 'Lo que NO' }, { at: K.A, titulo: 'La alerta' }, { at: K.E, titulo: 'Lo que SÍ' }, { at: K.L, titulo: 'El laboratorio' }, { at: K.R, titulo: 'La polémica' }]} />
+      <Capitulo T={T} x={175} y={215} hasta={K.C} caps={[{ at: K.G + 0.2, titulo: 'Lo que NO' }, { at: K.A, titulo: 'La alerta' }, { at: K.E, titulo: 'Lo que SÍ' }, { at: K.L, titulo: 'El laboratorio' }, { at: K.R, titulo: 'La polémica' }]} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.P - 0.1} texto="¿Mañana tiembla? *Nadie lo ha predicho.*" />
@@ -318,7 +318,7 @@ function Sismos() {
       <Subtitulo T={T} idx={5} at={K.L + 0.1} until={L2 - 0.1} texto="La IA calculó *cuánto faltaba.*" />
       <Subtitulo T={T} idx={6} at={L2 + 0.05} until={K.R - 0.1} texto="Pero era una máquina, *no la Tierra.*" />
       <Subtitulo T={T} idx={7} at={K.R + 0.1} until={K.N - 0.1} texto="Red neuronal: *mejor con las réplicas.*" />
-      <Subtitulo T={T} idx={8} at={K.N + 0.1} until={K.C - 0.1} texto="Una fórmula de *2 números* la igualó." />
+      <Subtitulo T={T} idx={8} at={K.N + 0.1} until={K.C - 0.1} texto="*2 números* la igualaron." />
       <Subtitulo T={T} idx={9} at={K.C + 0.1} until={K.Ou - 0.1} texto="La IA no adivina sismos: *los escucha.*" />
 
       <Robert T={T} apariciones={[
@@ -327,8 +327,8 @@ function Sismos() {
         [CUES.Alerta + 3.5, CUES.Escuchar - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Escuchar + 3.6, CUES.Pregunta - 0.15, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Pregunta + 0.05, CUES.Laboratorio + 1.2, 'avatar_07_pensativo_puno', 'grande'],
-        [CUES.Laboratorio + 6.6, L2 + 0.4, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [CUES.Replicas + 3.0, CUES.Neurona - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
+        [CUES.Laboratorio + 6.6, L2 + 0.4, 'avatar_06_pensativo_menton', 'izq-alto'],
+        [CUES.Replicas + 3.0, CUES.Neurona - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Neurona + 1.9, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'grande-izq'],
         [CUES.Cierre + 2.0, CUES.Outro - 0.1, 'avatar_04_bajando_lentes', 'arriba-der']]} />
       <MarcaAgua T={T} tema="ia" num="19" hasta={K.Ou} />

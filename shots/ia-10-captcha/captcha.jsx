@@ -157,8 +157,8 @@ function Captcha() {
       <Escena T={T} a={K.Ma} b={K.E}>
         <FondoLunares color={KC.mint} />
       </Escena>
-      <Marcador T={T} at={K.Ma + 0.2} until={K.E - 0.2} top={600} />
-      <Chip T={T} at={K.Ma + 3.4} until={K.E - 0.2} texto="bots: estudios 2014–2021" x={380} y={500} tam={34} borde={AZUL} />
+      <Marcador T={T} at={K.Ma + 0.2} until={K.E - 0.2} top={690} />
+      <Chip T={T} at={K.Ma + 3.4} until={K.E - 0.2} texto="bots: estudios 2014–2021" x={650} y={520} tam={34} borde={AZUL} />
       {/* 3 · el estudio */}
       <Escena T={T} a={K.E} b={K.L}>
         <FondoLunares color={KC.lilac} />
@@ -177,7 +177,7 @@ function Captcha() {
             <text x={950} y={785} textAnchor="middle" style={{ font:`700 66px ${KF.mono}` }} fill={KC.ink}>Rq4</text></g>
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.L + 2.4} until={K.P - 0.2} valor={99.8} dec={1} dur={1.1} sufijo=" %" etiqueta="de acierto en las letras más difíciles" x={540} y={1070} tam={160} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.L + 2.4} until={K.P - 0.2} valor={99.8} dec={1} dur={1.1} sufijo=" %" etiqueta="de acierto (las más difíciles)" x={540} y={1040} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.L + 0.6} until={K.P - 0.2} texto="2014 · IA de Google" x={360} y={470} tam={38} borde={KC.cyan} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Li} zoom={0.1}>
@@ -201,7 +201,7 @@ function Captcha() {
           <g opacity={pasa(Li2 - 0.3, Li2 + 0.2)}><PilaLibros x={260} y={1180} n={9 * kprog(T, Li2, Li2 + 3.0, kEase.sale)} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Li + 0.4} until={Li2 - 0.4} texto="libros escaneados que la computadora no leía" x={540} y={480} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Li + 0.4} until={K.Li + 5.0} texto="libros escaneados que la computadora no leía" x={540} y={480} tam={32} borde={KC.ink} />
       <NumeroGigante T={T} at={Li2 + 0.1} until={K.Ca - 0.2} valor={440} dur={1.6} sufijo=" millones" etiqueta="" x={710} y={780} tam={120} color={KC.orange} />
       <Chip T={T} at={Li2 + 0.8} until={K.Ca - 0.2} texto="de palabras transcritas (2008)" x={710} y={900} tam={36} borde={KC.orange} />
       <Chip T={T} at={Li2 + 1.4} until={K.Ca - 0.2} texto="von Ahn et al. · Science 2008" x={710} y={1000} tam={28} mono borde={KC.ink} />
@@ -249,7 +249,7 @@ function Captcha() {
       </Escena>
       <Chip T={T} at={K.C + 0.1} until={K.Ou} texto="TÚ" x={150} y={790} tam={52} borde={KC.red} />
       <Chip T={T} at={K.C + 0.1} until={K.Ou} texto="BOT" x={690} y={790} tam={52} borde={AZUL} />
-      <Chip T={T} at={K.C + 2.3} until={K.Ou} texto="cómo te portas ✔" x={275} y={880} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.3} until={K.Ou} texto="cómo te portas ✔" x={275} y={1110} tam={40} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ma - 0.1} texto="Tú contra un bot: *casi siempre gana él.*" />
@@ -266,7 +266,7 @@ function Captcha() {
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.3, 'avatar_11_sorprendido', 'gancho'],
-        [CUES.Marcador + 3.6, CUES.Estudio - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [CUES.Marcador + 3.6, CUES.Estudio - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
         [CUES.Estudio + 2.0, CUES.Letras - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Letras + 2.6, CUES.Pregunta - 0.15, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Pregunta + 0.05, CUES.Libros + 1.1, 'avatar_07_pensativo_puno', 'grande'],

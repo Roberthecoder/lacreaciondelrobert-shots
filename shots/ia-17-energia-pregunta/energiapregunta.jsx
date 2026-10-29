@@ -231,7 +231,7 @@ function EnergiaPregunta() {
           <div style={{ position:'absolute', left:110, top:1110 - h0, width:220, height:h0, background:'rgba(22,18,15,.12)', border:`5px dashed ${KC.ink}`, borderRadius:'18px 18px 0 0' }}></div>
           <div style={{ position:'absolute', left:110, top:1110 - hB, width:220, height:hB, background:KC.red, border:`6px solid ${KC.ink}`, borderRadius:'18px 18px 0 0' }}></div>
           <div style={{ position:'absolute', left:90, width:260, top:1120, textAlign:'center', font:`900 34px ${KF.texto}`, color:KC.ink }}>{enc < 0.5 ? 'mayo 2024' : 'mayo 2025'}</div>
-          <div style={{ position:'absolute', left:380, top:560, font:`900 36px ${KF.texto}`, color:KC.ink, opacity:1 - enc }}>energía de la pregunta típica</div>
+          <div style={{ position:'absolute', left:90, width:260, top:1110 - h0 - 100, textAlign:'center', font:`900 30px/1.15 ${KF.texto}`, color:KC.ink }}>energía de la pregunta típica</div>
         </div>; })()}
       <NumeroGigante T={T} at={K.B + 2.2} until={K.P - 0.2} valor={33} dur={0.8} prefijo="÷" etiqueta="" x={640} y={880} tam={280} color={KC.yellow} />
       <Chip T={T} at={K.B + 2.6} until={K.P - 0.2} texto="en 12 meses (según Google)" x={640} y={1080} tam={32} borde={KC.ink} />
@@ -310,7 +310,7 @@ function EnergiaPregunta() {
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
         <div style={{ position:'absolute', inset:0, transform:`scale(${klerp(1, 0.38, zoomFuera)})`, transformOrigin:'50% 42%' }}>
-          {svgK(escenaTele(K.C - 1.2, false))}
+          {svgK(escenaTele(K.C, false))}
         </div>
         {svgK(<>{mosaico()}</>, 25)}
       </Escena>

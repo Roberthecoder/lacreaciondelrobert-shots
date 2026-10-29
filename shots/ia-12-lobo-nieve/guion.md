@@ -101,3 +101,5 @@ apariciones 9 · ≈ 30.7 s (+ cierre 3.5 s) · poses distintas 7 (nunca la mism
 - "Más de la mitad de los lunares sanos marcados pasaron por melanoma" = 100 % − 45.8 % de especificidad = 54.2 % de falsos positivos en lunares benignos con marcas (107 lunares benignos; las mismas lesiones fotografiadas con y sin marca).
 - "Tinta de cirujano" = marcador quirúrgico de violeta de genciana (en la imagen se ve violeta/azul).
 - El dibujo es esquemático: las fotos de lobos y huskies, las radiografías y los lunares son ilustraciones.
+
+<!-- verificado y enviado a render: 29 oct 2026 -->
