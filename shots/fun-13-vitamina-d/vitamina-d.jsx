@@ -193,9 +193,9 @@ function VitaminaDShot() {
         {fsvg(<>
           <g opacity={1 - 0.9 * kprog(T, K.E + 2.2, K.E + 2.7)}><Membrana T={T} y0={640} alto={360} ergo={kprog(T, K.E + 0.6, K.E + 2.0)} /></g>
           <g opacity={kprog(T, K.E + 2.3, K.E + 2.8)}>
-            <Esterol x={110} y={900} s={0.75} color={KC.gold2} />
-            <Esterol x={660} y={900} s={0.75} color="#9fd8ff" />
-            <text x={560} y={840} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.texto}>≈</text>
+            <Esterol x={140} y={900} s={0.75} color={KC.gold2} />
+            <Esterol x={680} y={900} s={0.75} color="#9fd8ff" />
+            <text x={580} y={840} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.texto}>≈</text>
           </g>
         </>)}
       </Escena>
@@ -329,7 +329,7 @@ function VitaminaDShot() {
       <Medidor T={T} at={K.R + 0.3} until={K.Sa - 0.3} valor={(t) => kprog(t, K.R + 0.3, K.R + 2.5) * 0.9} etiqueta="vitamina D2" texto={(v) => (v * 17.6 / 0.9).toFixed(1) + ' µg / 100 g'} x={240} ancho={780} y={680} color={KC.yellow} />
       <Chip T={T} at={K.R + 2.8} until={K.Sa - 0.3} texto="17.6 µg de vitamina D2 por 100 g de champiñón fresco" x={540} y={470} tam={27} borde={KC.yellow} />
       <Etq T={T} at={K.Sa + 0.6} until={K.H - 0.3} x={110} y={760} texto="salmón: comparable" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Sa + 2.6} until={K.H - 0.3} texto="adulto de 19 a 70 años: 15 µg al día" x={540} y={480} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Sa + 2.8} until={K.H - 0.3} texto="adulto de 19 a 70 años: 15 µg al día" x={540} y={480} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Sa + 3.2} until={K.H - 0.3} x={60} y={560} texto="mayores de 70: 20 µg" tam={24} color={KC.ink} />
       <Chip T={T} at={K.H + 1.4} until={K.Cu - 0.2} texto="más sol ≠ más vitamina" x={420} y={470} tam={38} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Cu + 0.2} until={K.Cu + 2.8} anio="2013" quien="25 adultos, 3 meses" revista="cápsulas de polvo de champiñón · Keegan et al., 2013" y={760} />
@@ -374,6 +374,7 @@ function VitaminaDShot() {
         [K.L + 0.5, K.Pi - 0.3, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.P + 0.05, K.Es + 0.2, 'avatar_07_pensativo_puno', 'grande'],
         [K.Es + 1.9, K.R + 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [K.Sa + 0.2, K.Sa + 2.3, 'avatar_11_sorprendido', 'izq-alto'],
         [K.H + 0.3, K.Cu - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.Cu + 3.4, K.Tr - 0.2, 'avatar_02_apuntando_camara', 'arriba-der'],
         [K.Tr + 0.3, K.C - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],

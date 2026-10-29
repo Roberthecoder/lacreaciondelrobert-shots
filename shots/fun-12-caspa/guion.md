@@ -12,7 +12,7 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa caspa no es solo piel que se cae: en tu cabeza vive una levadura que come grasa. | Fondo amarillo de lunares: un hombro oscuro con escamas blancas; en el cuadro 0.3 caen dos escamas más desde el pelo. Chip "¿piel reseca?" que se voltea a "hay una levadura". |
+| 0 | Gancho | Esa caspa no es solo piel que se cae: en tu cabeza vive una levadura que come grasa. | Fondo amarillo de lunares: un hombro oscuro con escamas blancas; en el cuadro 0.3 caen dos escamas más desde el pelo. Chip "¿solo piel muerta?" que se voltea a "hay una levadura". Robert sorprendido desde el cuadro 0. |
 | 1 | Malassezia | Se llama Malassezia y vive en la piel de la mayoría de los adultos. | La cámara baja al cuero cabelludo (Lupa en rayos X): entre los pelos aparecen levaduras redondas con una célula hija brotando de una base angosta (como *M. globosa*). Etiqueta "levadura de la piel · *Malassezia*". Chip "en la mayoría de los adultos". |
 | 2 | Sebo | Tu cuero cabelludo suelta sebo, una grasa natural. | Fondo oscuro (microscópico): corte de piel con un folículo y su glándula sebácea; sale una gota dorada de sebo por el poro. Etiqueta "sebo". |
 | 3 | Lipasas | La levadura lo rompe con unas tijeras químicas, las lipasas, para comer. | *Malassezia globosa* (células redondas de 2.5–8 µm, con la célula hija brotando de una base angosta) suelta tijeritas "lipasa" que cortan las moléculas de grasa (triglicérido: una "E" de 3 colas) en pedazos. |
@@ -22,14 +22,33 @@
 | 7 | Escamas | Ahí, las células se multiplican de más y se despegan en grupos: las escamas. | Corte de piel: las capas suben más rápido; arriba, las células planas (corneocitos) se despegan pegadas en grupos y forman una escama blanca. |
 | 8 | Estudio | En 2005, investigadores de Cincinnati untaron ácido oleico en la cabeza de voluntarios. | Tarjeta "2005 · Cincinnati, EE. UU. · DeAngelis y col."; un gotero pone ácido oleico en dos cabezas. |
 | 9 | Resultado | A quienes tenían caspa se les descamó la piel; a los otros, nada visible. | La cabeza "con caspa" suelta escamas ✓; la otra queda igual ("nada visible"). |
-| 10 | Genoma | Lo más raro: a Malassezia globosa parece faltarle el gen para fabricar ácidos grasos. Usa los tuyos. | Tira de ADN de *M. globosa* con un hueco marcado "fabricar ácidos grasos ✗"; la levadura voltea hacia la gota de sebo. Chip "genoma leído en 2007". |
+| 10 | Genoma | Lo más raro: a Malassezia globosa parece faltarle el gen para fabricar ácidos grasos. Usa los tuyos. | Tira de genes de *M. globosa* con un hueco tachado; chip "✗ el gen para fabricar ácidos grasos"; colitas de ácido graso viajan de la gota de sebo ("tu sebo") a la levadura. Chip "su genoma (leído en 2007)". |
 | 11 | Champu | Muchos champús anticaspa traen antifúngicos, como el ketoconazol o la piritiona de zinc. | Frasco de champú; burbujas que encogen a las levaduras. Chips "ketoconazol" y "piritiona de zinc". |
-| 12 | Cierre | Así que esa caspa no es solo piel: es tu piel reaccionando a lo que deja una levadura. | **Regreso a la imagen del inicio:** el mismo hombro con las mismas escamas; ahora, con la lupa encima, se ven las levaduras y las colitas de ácido graso. Chip "no es suciedad: es una reacción". |
+| 12 | Cierre | Así que esa caspa no es solo piel: es tu piel reaccionando a lo que deja una levadura. | **Regreso a la imagen del inicio:** el mismo hombro con las mismas escamas; ahora, con la lupa encima, se ven las levaduras y las colitas de ácido graso. Chip "grasa + levadura + tu piel". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave, suave y continua (algo de comezón: un pulso leve que se calma al final), sin golpe marcado. Efectos en el mismo cuadro: escamas que caen (tic suave), zoom de la lupa (barrido), gota de sebo (plop), cada corte de la lipasa (tijera), pieza que encaja en las "tres cosas" (clic ×3), escamas que se despegan (crujido), gotero (gota), hueco en el ADN (nota grave), burbujas del champú.
 
-Barra de escala: 10 cm (hombro y cabeza), 1 mm (cuero cabelludo con pelos), 10 µm (levaduras, células de la piel).
+Barra de escala: 10 cm (cabeza y hombros), 100 µm (folículo y glándula sebácea), 20 µm (capas de la piel), 2 µm (levadura y moléculas, esquemáticas), 5 cm (champú).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces por qué a unos les da caspa y a otros no?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «esa caspa no es solo piel» (cuadro 0) |
+| 2 | 5.3 | 8.8 | 13_senalando_arriba | `arriba-der` | «se llama Malassezia» (señala la lupa) |
+| 3 | 12.6 | 19.9 | 06_pensativo_menton | `arriba-der` | las lipasas y el ácido oleico |
+| 4 | 20.5 | 24.2 | 07_pensativo_puno | `grande` | «¿por qué a unos sí y a otros no?» |
+| 5 | 28.8 | 32.3 | 04_bajando_lentes | `arriba-der` | «se despegan en grupos: las escamas» |
+| 6 | 38.1 | 41.8 | 11_sorprendido | `arriba-der` | «a quienes tenían caspa se les descamó» |
+| 7 | 45.0 | 47.6 | 02_apuntando_camara | `arriba-der` | «usa los tuyos» |
+| 8 | 48.3 | 52.8 | 13_senalando_arriba | `arriba-der` | los champús con antifúngicos |
+| 9 | 53.4 | 57.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «es tu piel reaccionando» |
+| — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | cierre |
+
+Apariciones 9 · **37.8 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en el texto completo o el resumen original el 29 oct 2026)
 

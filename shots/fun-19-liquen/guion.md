@@ -2,8 +2,8 @@
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #19 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro": macro (la piedra con manchas) → micro (corte del talo al microscopio, fondo oscuro) → la misma piedra, transformada.
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Esa mancha en la piedra no es una planta ni un musgo: es un hongo que vive con un socio.»
-- **Duración:** voz 999 caracteres / 189 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** objetivo en la base (se ajusta con `estimar-escenas.mjs` en la fase 3).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio.»
+- **Duración:** voz 970 caracteres / 179 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** objetivo en la base (se ajusta con `estimar-escenas.mjs` en la fase 3).
 - **Voz:** pendiente de aprobación de Robert (~1,000 créditos de ElevenLabs).
 - **Tono:** asombro y curiosidad; el estudio de 2016 se dice con cuidado (qué hacen las levaduras todavía se estudia).
 
@@ -11,19 +11,19 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa mancha en la piedra no es una planta ni un musgo: es un hongo que vive con un socio. | Fondo menta: una piedra grande con manchas verdes, naranjas y grises. Cuadro 0.3: una mancha "respira" y crece. Chips "¿planta?" y "¿musgo?" que se tachan; aparecen un hongo y un socio verde dándose la mano. |
-| 1 | Donde | Es un liquen y lo ves en piedras, troncos y bardas. | Tres viñetas que entran una tras otra: piedra, tronco, barda, cada una con su mancha. Etiqueta "liquen". |
-| 2 | Corte | Si lo cortas y lo ves al microscopio, tiene pisos. | `Lupa`/cámara baja sobre la mancha; un bisturí corta; pasa a fondo oscuro con el corte del talo (esquemático). |
-| 3 | Corteza | Arriba, una piel de hilos del hongo apretados, que lo protege del sol y de secarse. | Se ilumina la capa de arriba (córtex): hifas apretadas; rayos de sol rebotan. Etiqueta "córtex". |
-| 4 | Algas | Debajo, una capa verde: algas o cianobacterias que hacen fotosíntesis y le dan azúcar al hongo. | Capa de células verdes redondas (alga verde, p. ej. *Trebouxia*) abrazadas por hifas; puntitos de azúcar viajan a las hifas. Etiqueta "capa de algas". |
-| 5 | Medula | Y más abajo, una maraña suelta de hilos del hongo: la médula. | Hifas sueltas, enredadas, con huecos de aire. Etiqueta "médula". |
+| 0 | Gancho | Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio. | Fondo menta: una piedra grande con manchas verdes, naranjas y grises. Cuadro 0.3: una mancha "respira" y crece. Chips "¿planta?" y "¿musgo?" que se tachan; aparecen un hongo y un socio verde dándose la mano. |
+| 1 | Donde | Es un liquen: vive en piedras, troncos y bardas. | Tres viñetas que entran una tras otra: piedra, tronco, barda, cada una con su mancha. Etiqueta "liquen". |
+| 2 | Corte | Al microscopio, tiene pisos. | `Lupa`/cámara baja sobre la mancha; un bisturí corta; pasa a fondo oscuro con el corte del talo (esquemático). |
+| 3 | Corteza | Arriba, una piel de hilos apretados del hongo: lo protege del sol y de secarse. | Se ilumina la capa de arriba (córtex): hifas apretadas; rayos de sol rebotan. Etiqueta "córtex". |
+| 4 | Algas | Debajo, una capa verde: algas o cianobacterias que hacen fotosíntesis y dan azúcar al hongo. | Capa de células verdes redondas (alga verde, p. ej. *Trebouxia*) abrazadas por hifas; puntitos de azúcar viajan a las hifas. Etiqueta "capa de algas". |
+| 5 | Medula | Y abajo, una maraña suelta de hilos del hongo: la médula. | Hifas sueltas y enredadas (sin rótulos de "aire"). Etiqueta "médula". |
 | 6 | Trato | El hongo pone la casa y el socio, la comida. | Iconos: casita (hongo) ⇄ azúcar (alga). |
 | 7 | Pregunta | ¿Y si en ese trato hubiera alguien más? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
 | 8 | Historia | Cuando Simon Schwendener propuso en 1867 que un liquen eran dos seres, muchos no le creyeron. | Tarjeta "1867 · Simon Schwendener (Suiza)"; un dibujo de "hongo + alga" y nubecitas de "¡no!" alrededor. |
-| 9 | Estudio | En 2016, en Montana, Estados Unidos, hallaron levaduras escondidas en la piel de dos líquenes. | Tarjeta "2016 · Montana, EUA · Spribille et al., *Science*"; liquen colgante (*Bryoria*); zoom a la corteza: aparecen levaduras redondas. |
-| 10 | Continentes | Y las encontraron en líquenes de seis continentes. Qué hacen ahí, todavía se estudia. | Mapa del mundo con 6 continentes que se encienden; chip "¿qué hacen? aún se estudia". |
-| 11 | Espacio | Y son duros: en 2005 pasaron dieciséis días en el espacio, fuera de un satélite, y al volver hacían fotosíntesis casi igual. | Satélite en órbita con una cajita abierta con líquenes (*Rhizocarpon geographicum*, *Xanthoria elegans*); contador "16 días"; al volver, medidor de fotosíntesis "antes ≈ después". |
-| 12 | Cierre | Así que esa mancha en la piedra no es una planta: es un equipo que hasta aguantó el espacio. | **Regreso a la imagen del inicio:** la misma piedra; la mancha ahora con un mini "equipo" (hongo + alga + levadura) y un cohetito. Chip "es un equipo". |
+| 9 | Estudio | En 2016, en Montana, Estados Unidos, hallaron levaduras en la piel de dos líquenes. | Tarjeta "2016 · Montana, EUA · Spribille et al., *Science*"; liquen colgante (*Bryoria*); zoom a la corteza: aparecen levaduras redondas. |
+| 10 | Continentes | Y encontraron parientes de esas levaduras en líquenes de seis continentes. Qué hacen ahí, aún se estudia. | Mapa del mundo con 6 continentes que se encienden; chip "¿qué hacen? aún se estudia". |
+| 11 | Espacio | Y son duros: en 2005 pasaron casi quince días expuestos al espacio, por fuera de un satélite, y al volver hacían fotosíntesis casi igual. | Satélite en órbita con una cajita abierta con líquenes (*Rhizocarpon geographicum*, *Xanthoria elegans*); contador "≈ 15 días"; al volver, medidor de fotosíntesis "antes ≈ después". |
+| 12 | Cierre | Así que esa mancha en la piedra no es una planta: es un equipo que aguantó el espacio. | **Regreso a la imagen del inicio:** la misma piedra; la mancha ahora con un mini "equipo" (hongo + alga, y una levadura tenue con "¿?" porque no está en todos los líquenes) y un cohetito. Chip "es un equipo". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave, suave y continua (sin golpe marcado), que se abre en el estudio y en el espacio. Efectos en el mismo cuadro: roce de piedra al aparecer la mancha, tachones de "planta" y "musgo", bisturí al cortar, brillo del sol en el córtex, burbujitas de azúcar, crujido de las hifas sueltas, "¿?" del re-gancho, pop de cada levadura, 6 tics de los continentes, zumbido del satélite y "ding" del medidor.
@@ -45,9 +45,11 @@ Barras de escala: 10 cm (piedra), 1 mm (mancha con lupa), 50 µm (corte del talo
 3. Sancho, L. G. et al. (2007). Lichens survive in space: results from the 2005 LICHENS experiment. *Astrobiology* 7(3): 443–454. doi:10.1089/ast.2006.0046. https://pubmed.ncbi.nlm.nih.gov/17630840/
    > "The lichens used were the bipolar species Rhizocarpon geographicum and Xanthoria elegans"
    > "Lichens were exposed to space in the BIOPAN-5 facility of the European Space Agency; BIOPAN-5 is located on the outer shell of the Earth-orbiting FOTON-M2 Russian satellite."
-   > "launched from Baikonur by a Soyuz rocket on May 31, 2005, and were returned to Earth after 16 days in space"
+   > "launched from Baikonur by a Soyuz rocket on May 31, 2005, and were returned to Earth after 16 days in space" (el vuelo duró 16 días; la exposición fue de 14.6, ver fuente 3b)
    > "All exposed lichens … showed nearly the same photosynthetic activity after the flight as measured before the flight."
    > "The lichen upper cortex seems to provide adequate protection against solar radiation."
+3b. ESA, nota de prensa del 9 nov 2005 sobre el experimento LICHENS en Foton-M2 (copias: https://www.timeshighereducation.com/node/59803 y Universe Today, "Lichen Can Survive in Space")
+   > "exposed for a total 14.6 days" → en la voz: «casi quince días expuestos».
 4. Australian National Botanic Gardens / Australian National Herbarium, "Lichens: form and structure". https://www.anbg.gov.au/lichen/form-structure.html
    > cortex: "a band of compacted fungal hyphae that serves as a protective skin"; "Below the cortex, in green, is a layer of photobiont cells"; medulla: "a loose weave of fungal hyphae"; "fungal hyphae 'harvest' a large proportion of the nutrients produced by the photobiont"
 5. British Lichen Society, "What is a lichen?". https://britishlichensociety.org.uk/learning/what-is-a-lichen

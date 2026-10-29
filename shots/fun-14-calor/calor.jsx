@@ -268,8 +268,8 @@ function CalorShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>{DEFS14}
           <rect x={0} y={1180} width={KW} height={800} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
-          <ellipse cx={640} cy={1120} rx={170} ry={110} fill="url(#calorBrillo)" opacity={0.9} />
-          <Raton x={640} y={1180} s={1.2} />
+          <ellipse cx={680} cy={1110} rx={190} ry={110} fill="url(#calorBrillo)" opacity={0.9} />
+          <Raton x={680} y={1180} s={1.6} />
           <ellipse cx={880} cy={1020} rx={210} ry={200} fill="url(#calorBrillo)" opacity={kprog(T, K.Hi + 0.6, K.Hi + 1.2)} />
           {T > K.Hi + 0.6 && <Perro x={850} y={1180} s={1.3 * kprog(T, K.Hi + 0.6, K.Hi + 1.1, kEase.rebote)} />}
           <Rebotes T={T} t0={K.Hi + 1.0} t1={K.A + 0.3} x0={980} y0={760} cx={820} cy={1080} rx={-200} ry={150} n={5} />
