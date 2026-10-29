@@ -47,3 +47,8 @@ Revisión de cifras: todas dicen de qué son (−78.5 °C = temperatura del hiel
      - Etiqueta final: "gotitas de agua (lo blanco)" en vez de "gotitas de agua del aire".
 
 Todo lo demás (−78.5 °C, sublimación, incoloro e inodoro, 250 L por libra, desplaza el oxígeno, quemadura por frío, caso de Alabama 2004 con sus detalles, Thilorier 1835 en París con el tapón disparado, reglas de seguridad y el unicel) está ✅ en su fuente original.
+
+## Correcciones aplicadas (29 oct 2026)
+- ⚠️→✅ #1, #7, #19: se adopta la opción A del verificador: en pantalla el hielo seco va en un plato/vaso VACÍO (sin agua), así la nube sale del vapor del aire y la voz queda igual.
+
+VEREDICTO: APROBADO

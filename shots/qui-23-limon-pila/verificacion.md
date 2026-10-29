@@ -35,7 +35,7 @@ Fuentes abiertas por el verificador:
 | 23 | (pantalla 9) El voltímetro marca la misma lectura del principio | ✅ (esquemático) | — | Es coherente con un experimento corto; no afirma un dato. | — |
 | 24 | (pantalla 2) Barra de escala "1 nm" | ✅ (marcado como esquemático) | — | Ilustrativa; las Notas del guion lo declaran. | — |
 
-**Conteo:** 18 ✅ · 6 ⚠️ (#2, #11, #15, #16, #22; #2 depende de #15) · 0 ❌.
+**Conteo:** 19 ✅ · 5 ⚠️ (#2, #11, #15, #16, #22; #2 depende de #15) · 0 ❌.
 
 ## Decisión sobre el artículo de Sinaloa 2026
 No es una fuente confiable para las cifras que se citan. Sus resultados en serie (3 limones = 3.4 V; 6 limones = 8.8 V) implican más de 1.1 V por limón, imposible con sus propios 0.7–0.9 V por limón y por encima del máximo teórico que el mismo texto menciona; eso pone en duda cómo se tomaron y reportaron todas sus mediciones (incluidas las "96" y los "0.8–1.2 mA"). El rango por limón coincide con otras fuentes, pero el shot no debe presentar este trabajo como "el estudio" que mide la pila. **Recomendación: sustituirlo** por la medición de Goodisman (2001), que ya está en el guion y cuyo texto completo se verificó: Cu/Zn en ácido cítrico al 4.10 % (que imita al limón) = **0.914 V**; máximo cerca de 1.0 V a pH 3.4.

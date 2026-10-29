@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esa palomita no revienta porque se queme: revienta porque trae agua adentro."
 - **Seguridad:** nada que imitar; el horno y el comal calientes no se proponen como experimento.
 - **Duración:** voz 943 caracteres / ≈ 163 palabras (≈ 57.8 s) + cierre 3.5 s → **≈ 61.3 s** (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion escrito, pendiente de verificación independiente (`verificacion.md`). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`: VEREDICTO: APROBADO), animación lista (`palomitas.jsx`, base sin voz 61.3 s), voz pendiente de aprobación de Robert (~943 créditos).
 
 ## Versión narrada
 
@@ -28,6 +28,27 @@ Tiempos aproximados (estimador): Gancho 0–4.7 · Grano 4.7–10.3 · Calor 10.
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert. |
 
 **Música:** cama grave continua que sube de tensión con el termómetro y el manómetro; efectos en el mismo cuadro: chisporroteo de la lumbre, burbujeo del agua, silbido de olla exprés, el "pop" solo cuando sale el vapor (las grietas en silencio), clic del obturador de la cámara rápida, rebote de la patita y lluvia de palomitas al final.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿A qué temperatura revienta, y por qué brinca?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.3 | 11_sorprendido | `gancho` | «no revienta porque se queme» |
+| 2 | 5.9 | 11.3 | 13_senalando_arriba | `izq-alto` | «guarda unos 20 miligramos de agua» |
+| 3 | 14.7 | 18.7 | 06_pensativo_menton | `arriba-der` | «aguanta como olla exprés» |
+| 4 | 20.4 | 24.1 | 05_sonriendo_dientes_uniformes | `izq-alto` | «el doble de ancho y ocho veces menos denso» |
+| 5 | 24.4 | 27.3 | 07_pensativo_puno | `grande` | «¿A qué temperatura revienta, y por qué brinca?» |
+| 6 | 30.3 | 33.2 | 04_bajando_lentes | `arriba-der` | «casi 3 mil cuadros por segundo» |
+| 7 | 33.7 | 36.5 | 11_sorprendido | `izq-alto` | «a 180, el 96» |
+| 8 | 37.7 | 41.5 | 13_senalando_arriba | `arriba-der` | «una patita de almidón… y rebota» |
+| 9 | 42.2 | 47.4 | 06_pensativo_menton | `izq-alto` | «los autores proponen que el pop es el vapor» |
+| 10 | 48.1 | 52.5 | 04_bajando_lentes | `arriba-der` | «¿Y las que no revientan?» |
+| 11 | 53.0 | 57.7 | 02_apuntando_camara | `arriba-der` | «revienta por el agua que trae adentro» |
+| — | 57.8 | 61.3 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 11 apariciones · ≈ 44 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato y cifra se abrió en la fuente el 29 oct 2026)
 

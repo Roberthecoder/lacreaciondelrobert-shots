@@ -124,7 +124,7 @@ function Hervir() {
         <SvgCapa>
           <Olla T={T} x={430} y={880} s={1.05} hierve={0.25} vapor={0.6} />
           <LluviaSal T={T} x={400} y0={600} y1={785} t0={K.G + 0.15} t1={K.G + 1.4} />
-          <Cucharadita x={360} y={570} s={1.1} gira={gira} sal={1 - kprog(T, K.G + 0.2, K.G + 1.2)} />
+          <g opacity={1 - kprog(T, K.G + 3.8, K.G + 4.6)}><Cucharadita x={360} y={570} s={1.1} gira={gira} sal={1 - kprog(T, K.G + 0.2, K.G + 1.2)} /></g>
           <TermoCocina x={700} y={890} s={0.85} texto={T < K.G + 2.0 ? '100.00 °C' : '100.05 °C'} />
         </SvgCapa>
       </Escena>
@@ -179,8 +179,8 @@ function Hervir() {
           <Cucharadita x={250} y={560} s={0.9} gira={0} sal={1} />
           <TermoCocina x={700} y={890} s={0.85} texto={'100.0' + Math.round(klerp(0, 5, kprog(T, K.O + 1.6, K.O + 2.6))) + ' °C'} />
         </SvgCapa>
-        <Etq T={T} at={K.O + 0.3} until={K.P - 0.3} x={370} y={560} texto="≈ 6 g de sal" tam={36} color={KC.ink} />
-        <Etq T={T} at={K.O + 0.8} until={K.P - 0.3} x={200} y={850} texto="2 L" lado="izq" tam={40} color={KC.ink} />
+        <Etq T={T} at={K.O + 0.3} until={K.P - 0.3} x={370} y={560} texto="≈ 6 g de sal" tam={36} />
+        <Etq T={T} at={K.O + 0.8} until={K.P - 0.3} x={200} y={850} texto="2 L" lado="izq" tam={40} />
         <Medidor T={T} at={K.O + 1.6} until={K.P - 0.3} valor={(t) => 0.05 * kprog(t, K.O + 1.6, K.O + 2.6)} etiqueta="sube el hervor (0 a 1 °C)" texto={(v) => '+' + v.toFixed(2) + ' °C'} y={1440} color={KC.red} />
       </Escena>
       {/* 5 · pregunta: ¿por qué burbujea? */}
@@ -248,14 +248,14 @@ function Hervir() {
           <g opacity={kprog(T, K.A + 1.6, K.A + 2.1)}>
             <rect x={70} y={860} width={260} height={84} rx={16} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
             <text x={200} y={918} textAnchor="middle" style={{ font:`700 50px ${KF.mono}` }} fill={KC.ink}>100 °C</text>
-            <text x={200} y={1195} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto}>nivel del mar</text>
+            <text x={200} y={840} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>nivel del mar</text>
           </g>
           <g opacity={kprog(T, K.A + 2.6, K.A + 3.1)}>
             <rect x={420} y={420} width={270} height={84} rx={16} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
             <text x={555} y={478} textAnchor="middle" style={{ font:`700 50px ${KF.mono}` }} fill={KC.red}>≈ 92 °C</text>
           </g>
         </SvgCapa>
-        <Etq T={T} at={K.A + 0.6} until={K.Ci - 0.3} x={1060} y={720} texto="CDMX · 2 240 m" lado="izq" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.A + 0.6} until={K.Ci - 0.3} x={1060} y={720} texto="CDMX · 2 240 m" lado="izq" tam={32} />
       </Escena>
       {/* 9 · cierre: la olla del inicio, ya hirviendo */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
@@ -279,7 +279,7 @@ function Hervir() {
       <Chip T={T} at={K.B + 1.0} until={avisa - 0.3} texto="nucleación: el vapor se forma ahí" y={1500} tam={36} borde="#d8f1ff" />
       <Chip T={T} at={avisa + 0.4} until={K.E - 0.3} texto="⚠️ agua muy caliente: puede saltar" y={1500} tam={36} borde={KC.red} />
       <Chip T={T} at={K.E + 3.4} until={K.A - 0.3} texto="0.96 % de sal en peso" y={1560} tam={40} borde={KC.gold} />
-      <NumeroGigante T={T} at={K.E + 4.6} until={K.A - 0.3} valor={0.151} dec={3} dur={1.0} prefijo="+" sufijo=" °C" x={540} y={430} tam={130} color={KC.red} />
+      <NumeroGigante T={T} at={K.E + 4.6} until={K.A - 0.3} valor={0.151} dec={3} dur={1.0} prefijo="+" sufijo=" °C" x={400} y={430} tam={130} color={KC.red} />
       <Chip T={T} at={K.A + 3.4} until={K.Ci - 0.3} texto="sal: 0.05 °C · altura: ~8 °C" y={1500} tam={38} borde={KC.blue} />
       <MitoTachado T={T} at={K.Ci + 0.3} tacharEn={K.Ci + 0.9} until={K.Ou - 0.2} texto="hierve más rápido" x={330} y={340} tam={40} />
       <Chip T={T} at={K.Ci + 2.0} until={K.Ou - 0.1} texto="sal = sabor ✓" x={430} y={1500} tam={44} borde={KC.mint} />
