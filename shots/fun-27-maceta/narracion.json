@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Maceta base narrada.dc.html",
+  "salida": "Shot Maceta narrado.dc.html",
+  "nota": "Shot Fungi Mati #27. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese hongo amarillo en tu maceta no está matando a tu planta: se come lo que ya está muerto."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Se llama Leucocoprinus birnbaumii, el hongo amarillo de las macetas."
+    },
+    {
+      "escena": "Llega",
+      "texto": "Pudo llegar en la tierra que compraste, o como una espora por el aire."
+    },
+    {
+      "escena": "Micelio",
+      "texto": "Abajo vive como hilos finísimos, el micelio, que deshacen los restos muertos."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Con calor y humedad, los hilos sacan el hongo: solo su parte para reproducirse."
+    },
+    {
+      "escena": "Abre",
+      "texto": "Sale como un huevito amarillo, se abre como campana y suelta esporas blancas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si no daña a tu planta, por qué tener cuidado?"
+    },
+    {
+      "escena": "Toxico",
+      "texto": "Porque se considera tóxico: comerlo puede caer muy mal al estómago. Si hay niños o mascotas, quítalo."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2005, químicos en Múnich, Alemania, buscaron de dónde sale su amarillo."
+    },
+    {
+      "escena": "Pigmento",
+      "texto": "Eran dos pigmentos raros, a los que llamaron birnbauminas."
+    },
+    {
+      "escena": "Truco",
+      "texto": "Truco: deja un sombrero una noche sobre papel negro y amanece un dibujo blanco de esporas."
+    },
+    {
+      "escena": "Quitar",
+      "texto": "Arrancarlo no lo elimina: el micelio sigue abajo y los fungicidas casi no sirven."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no tires tu planta: ese hongo no la está matando, está reciclando su tierra."
+    }
+  ]
+}

@@ -11,7 +11,7 @@ En sus laminillas, unas células llamadas basidios cargan las esporas, cada una 
 1) La gota: la espora suelta azúcares en su base y ahí se condensa agua del aire. Crece una gotita, la "gota de Buller", y sobre la espora se forma otra capa de agua.
 2) La fusión: cuando la gota toca esa capa, se junta con ella en un instante (en un hongo de oreja y en levaduras se midió en menos de 4 millonésimas de segundo).
 3) El disparo: el agua cambia de lugar, mueve el centro de masa de la espora y la lanza. Se le llama catapulta de tensión superficial.
-En 2005, un equipo en Estados Unidos filmó este disparo en una levadura y en un hongo de oreja, hasta a 100,000 cuadros por segundo: esas esporas arrancaron con más de 10,000 veces la gravedad.
+Un estudio de 2005, en Estados Unidos, filmó este disparo en una levadura y en un hongo de oreja, hasta a 100,000 cuadros por segundo: esas esporas arrancaron con más de 10,000 veces la gravedad.
 4) La caída: en las setas de laminillas, la espora vuela menos de una décima de milímetro, justo para no chocar con la laminilla de enfrente. Ahí frena y cae derecho hasta salir del sombrero, y luego el aire se la lleva.
 Y así disparan decenas de miles de especies de hongos.
 El dibujo es esquemático.
@@ -42,7 +42,7 @@ Descripción:
 ```text
 Ese champiñón no está quieto: está disparando esporas, una por una.
 En las laminillas de una seta, como el champiñón de campo (Agaricus campestris), hay células en forma de mazo llamadas basidios; cada espora cuelga de una puntita llamada esterigma. La espora suelta azúcares (manitol y hexosas) en su base, y ahí se condensa agua del aire húmedo: se forma la gota de Buller. Al mismo tiempo, se condensa otra capa de agua sobre la espora. Cuando la gota llega a un tamaño crítico, toca esa capa y la tensión superficial la jala sobre la espora: el centro de masa se mueve y la espora sale disparada. Es una catapulta de tensión superficial.
-En un hongo de oreja (Auricularia) y en levaduras, esa fusión se completó en menos de 4 millonésimas de segundo (Noblin et al., 2009). En 2005, Pringle y colegas filmaron el disparo en la levadura Itersonilia perplexans y en Auricularia auricula, a cámaras de hasta 100,000 cuadros por segundo: las esporas arrancaron con más de 10,000 g. En otro estudio (2009), la aceleración fue de unos 3,000 g a 14,000 g según la especie.
+En un hongo de oreja (Auricularia) y en levaduras, esa fusión se completó en menos de 4 millonésimas de segundo (Noblin et al., 2009). En un estudio de 2005, Pringle y colegas filmaron el disparo en la levadura Itersonilia perplexans y en Auricularia auricula, a cámaras de hasta 100,000 cuadros por segundo: las esporas arrancaron con más de 10,000 g. En otro estudio (2009), la aceleración fue de unos 3,000 g a 14,000 g según la especie.
 En las setas de laminillas, la espora vuela menos de 0.1 mm: justo para no chocar con la laminilla de enfrente. Luego frena y cae derecho entre las laminillas hasta salir del sombrero, donde el aire se la lleva. El micólogo A. H. R. Buller estudió este disparo a principios del siglo XX, incluso en el champiñón de campo, y por eso la gota lleva su nombre. Así disparan decenas de miles de especies de hongos.
 El dibujo es esquemático.
 Fuentes:
@@ -71,7 +71,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un motor que funciona solo con agua y tensión superficial: así lanzan sus esporas la mayoría de los basidiomicetos.
 En la base de cada espora se condensa una gota (la gota de Buller), impulsada por azúcares como el manitol. Cuando toca la película de agua de la espora, la tensión superficial la jala sobre ella, el centro de masa se desplaza y la espora sale disparada. Con video de alta velocidad (hasta 100,000 cuadros por segundo) se midieron aceleraciones iniciales de más de 10,000 g en una levadura y en Auricularia (Pringle et al., Mycologia, 2005). En las setas de laminillas el alcance es menor a 0.1 mm, justo para no chocar con la laminilla de enfrente (Stolze-Rybczynski et al., PLoS ONE, 2009).
-Por qué importa: entender este mecanismo ayuda a predecir cómo se dispersan los hongos, incluidos patógenos de cultivos como royas y carbones, y ha inspirado propuestas de motores de tensión superficial.
+Por qué importa: es el mismo mecanismo con el que dispersan sus esporas muchos patógenos de cultivos, como royas y carbones, y los autores lo comparan con un motor de tensión superficial desarrollado hace poco por ingenieros.
 ¿Conocías este mecanismo?
 Shot Fungi Mati #28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

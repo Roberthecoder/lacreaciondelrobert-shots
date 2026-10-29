@@ -47,3 +47,40 @@ Fuentes abiertas:
 
 
 Re-verificación (29 oct 2026): se revisó el texto final de `guion.md` y `narracion.json` (13 líneas). Cambiaron las filas 8, 12, 13c, 15b y 18; todas quedan ✅ con las fuentes abiertas. El resto del texto no cambió y sigue ✅. Las 20 afirmaciones (con sus sub-filas) están verificadas, no hay ❌ ni ⚠️.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `maceta.jsx`, `Shot Maceta base narrada.dc.html`, la columna «Lo que se ve», la tabla «Robert en pantalla» de `guion.md` y `publicacion.md`. Se revisaron cuadros con `motor/preview.mjs` (0.3–60 s, más 2, 3.5, 9, 15, 20–33, 34.5, 37.5–42, 46–56 s). La voz no se tocó.
+
+| # | Texto o dibujo (pantalla / publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Tarjeta «está matando a tu planta» que se tacha → chip «se come lo que ya está muerto» | ✅ | [ISU] | "breaks down dead organic matter in the potting soil. It does not harm living plants" | 2025 |
+| R2 | Etiquetas *Leucocoprinus birnbaumii*, «hongo amarillo de las macetas», «sombrero», «laminillas libres», «anillo» | ✅ | [ISU], [UM], [KUO] | "yellow houseplant mushroom"; "the gills on the underside are free"; "fragile, bracelet-like, yellow ring" | 2025 / 2021 / 2016 |
+| R3 | «en la tierra que compraste», «o por el aire» | ✅ | [ISU] | "introduced to the pot in the potting mix. Alternately, a spore … may have floated through the air" | 2025 |
+| R4 | «micelio», «restos muertos» | ✅ | [ISU] | "called a mycelium"; "breaks down dead organic matter" | 2025 |
+| R5 | «calor + humedad», «el hongo: su parte para reproducirse»; primordios amarillos | ✅ | [FN], [ISU], [VOLK] | "warm moist places"; "A mushroom is the reproductive structure of a fungus"; "very small yellow primordia" | 2026 / 2025 / 2002 |
+| R6 | «huevito» → «campana» → «abierto», el amarillo se aclara; pie delgado con anillo y base algo engrosada | ✅ | [KUO], [FN], [UM] | "oval to egg-shaped when young, becoming broadly conical, broadly convex, or bell-shaped"; "sometimes expanding to become almost flat"; "more or less equal above a slightly swollen base"; "fade to white as they mature" | 2016 / 2026 / 2021 |
+| R7 | «esporas blancas»; recuadro: esporas elípticas lisas de 60 px con barra 10 µm = 60 px → 10 × 6 µm | ✅ | [KUO] | "Spores 8–12 x 5–7 µm … ellipsoid … smooth"; "Spore Print: White." | 2016 |
+| R8 | Sello «NO SE COME», chip «comerlo: puede caer muy mal», subtítulo «Se considera tóxico: no se come.» | ✅ | [UM], [FN], [KEW] | "they should not be eaten"; "can cause a very unpleasant stomach upset"; "Poisonous, causing gastrointestinal irritation." | 2021 / 2026 |
+| R9 | Chip «niños o mascotas: quítalo»; mano sin guante | ✅ | [ISU], [VOLK] | "If pets or small children reside in the home, it would be wise to remove the mushrooms"; "you can be poisoned by a mushroom by just touching it. This is completely false, unless you are allergic" | 2025 / 2002 |
+| R9b | Corregido: el chip «niños o mascotas: quítalo» tapaba el sello «NO SE COME» → se subió (y=345) | ✅ | — | — | — |
+| R10 | Tarjeta «2005 · Múnich, Alemania · Bartsch y col. · Angewandte Chemie»; «¿de dónde sale el amarillo?» | ✅ | [BAR], [KEW] | Título y afiliación (PubMed); "Its yellow pigments are due to chemicals called novel alkaloids, birnbaumins A and B." | 2005 |
+| R11 | Moléculas «birnbaumina A/B», «pigmentos (esquema)». **Corregido:** el esquema ponía la cadena en C2 del indol; ahora es 1-hidroxiindol (N–OH) con la cadena en C3, y la B con un OH extra en C7, como en las estructuras publicadas (SMILES de PubChem 136734815 y 136734816, que recoge el artículo de Wikipedia «Birnbaumins»: A `C1=CC=C2C(=C1)C(=CN2O)C(=O)C(=O)N…`; B `C1=CC2=C(C(=C1)O)N(C=C2C(=O)…)O`). Etiquetas movidas para que no se encimen con la molécula | ✅ | [BAR] | "Birnbaumin A and B: Two Unusual 1-Hydroxyindole Pigments" | 2005 |
+| R12 | **Corregido:** barra «1 nm» de las moléculas: la escala no se sostenía (dibujo esquemático, sin medida verificada) → se quitó; la escena ya dice «pigmentos (esquema)» | ✅ | — | — | — |
+| R13 | «1 noche», papel negro, «dibujo blanco de esporas» con huella radial de las laminillas | ✅ | [UM] | "leaving the cap overnight on a dark surface"; "abundant white spores" | 2021 |
+| R14 | «el micelio sigue abajo» (lupa de rayos X), frasco tachado, «fungicidas: casi no sirven» | ✅ | [ISU], [KUO] | "Fungicide treatments are generally not effective against mushrooms."; "There is no getting rid of it, short of replacing all the soil" | 2025 / 2016 |
+| R15 | «no la mata: recicla su tierra» | ✅ | [ISU] | "breaks down dead organic matter … It does not harm living plants" | 2025 |
+| R16 | Subtítulos (13): todos repiten la voz verificada en forma corta | ✅ | — | Coinciden con las filas 1–20 | — |
+| R17 | Barras de escala: 5 cm (maceta, ~15–18 cm de boca; hongos de ~6–7 cm), 2 cm (hongo de ~5.5 cm de alto y sombrero de ~3 cm) | ✅ | [KUO], [ISU] | "Cap: 2.5–5 cm across"; "Stem: 3–10 cm long"; "about 1 to 3 inches tall" | 2016 / 2025 |
+| R18 | Barra 1 mm en la tierra: la red de micelio se dibuja más gruesa que una hifa real (las hifas sueltas no se ven a simple vista); se acepta como esquema, y la publicación dice «El dibujo es esquemático» | ✅ (esquema) | [ISU] | "a thread-like body in the soil or debris, not usually visible" | 2025 |
+| R19 | **Corregido:** Robert grande (pensativo) tapaba el subtítulo «Se considera tóxico…» al salir (30.1 s) → ahora sale a K.Tx − 0.35 (29.3 s); tabla de Robert actualizada (41.2 s en pantalla, sigue ≥ 18 s y ≥ 6 apariciones) | ✅ | — | — | — |
+| P1 | publicacion.md: «su toxicidad exacta no se conoce» | ✅ | [UM] | "their exact level of toxicity is unknown" | 2021 |
+| P2 | publicacion.md: «Tocarlo no es peligroso» | ✅ | [VOLK] | "This is completely false, unless you are allergic to the mushroom." | 2002 |
+| P3 | publicacion.md: nombres en inglés «flower pot parasol», «yellow houseplant mushroom» | ✅ | [ISU] | "yellow houseplant mushroom, yellow parasol, or flower pot parasol" | 2025 |
+| P4 | publicacion.md: al abrirse, el amarillo se aclara; «luego casi plano»; «amarillo limón» | ✅ | [VOLK], [FN], [ISU] | "fades out to a very pale yellow (almost white) as the cap expands"; "sometimes expanding to become almost flat"; "small, lemon yellow mushrooms" | 2002 / 2026 / 2025 |
+| P5 | publicacion.md: Universidad Ludwig-Maximilian de Múnich; «dos alcaloides raros/nuevos» que dan el amarillo | ✅ | [BAR], [KEW] | Afiliación "Ludwig-Maximilians-Universtät München" (sic en PubMed); "novel alkaloids, birnbaumins A and B" | 2005 |
+| P6 | publicacion.md: saprobio, común en macetas e invernaderos, tierra rica, cálida y húmeda; fungicidas «casi nunca sirven» | ✅ | [KUO], [VOLK], [FN], [ISU] | "Saprobic"; "common mushroom in house plants and greenhouses"; "warm moist places"; "generally not effective" | 2016 / 2002 / 2026 / 2025 |
+
+Resumen de la revisión final: textos de pantalla, subtítulos, barras de escala, morfología de *L. birnbaumii* y `publicacion.md` quedan ✅. Se corrigió el esquema de la birnbaumina (cadena en C3, OH en C7 para la B), se quitó la barra «1 nm», se separó el chip del sello y Robert grande ya no tapa el subtítulo. La voz verificada no cambió.
+
+VEREDICTO: APROBADO

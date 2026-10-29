@@ -390,8 +390,8 @@ function MacetaShot() {
       <Chip T={T} at={K.Tx + 3.2} until={K.E - 0.3} texto="niños o mascotas: quítalo" x={360} y={345} tam={32} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Pg - 0.3} anio="2005" quien="Múnich, Alemania" revista="Bartsch y col. · Angewandte Chemie" x={600} y={760} />
       <Etq T={T} at={K.E + 2.0} until={K.Pg - 0.3} x={380} y={1080} texto="¿de dónde sale el amarillo?" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Pg + 0.4} until={K.Tr - 0.3} x={120} y={560} texto="birnbaumina A" tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.Pg + 0.9} until={K.Tr - 0.3} x={120} y={860} texto="birnbaumina B" tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.Pg + 0.4} until={K.Tr - 0.3} x={120} y={505} texto="birnbaumina A" tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.Pg + 0.9} until={K.Tr - 0.3} x={120} y={805} texto="birnbaumina B" tam={34} color={KC.yellow} />
       <Etq T={T} at={K.Pg + 1.4} until={K.Tr - 0.3} x={120} y={1120} texto="pigmentos (esquema)" tam={26} color={KC.texto} />
       <Chip T={T} at={K.Tr + 0.9} until={K.Tr + 3.0} texto="1 noche" x={400} y={430} tam={40} borde={KC.yellow} />
       <Etq T={T} at={K.Tr + 3.5} until={K.Q - 0.3} x={60} y={640} texto="dibujo blanco de esporas" tam={30} color={KC.texto} />

@@ -131,7 +131,7 @@ function GotaBullerShot() {
   // ---- caída entre laminillas ----
   const GL = 250, GR = 830; // caras internas de las dos laminillas
   const tray = (t0, y0, dir, D) => { const t = T - t0; if (t < 0) return null; const tx = 1 - Math.exp(-t / 0.22); const x = dir > 0 ? GL + 38 + D * tx : GR - 38 - D * tx; const caeT = Math.max(0, t - 0.9); return [x, y0 + caeT * 260]; };
-  const LANZ = [[K.Ca + 1.2, 580, 1, 150], [K.Ca + 2.4, 700, -1, 130], [K.Ca + 3.2, 840, 1, 160], [K.Ca + 4.0, 620, -1, 120], [K.Ca + 4.6, 940, 1, 140], [K.Fr + 0.2, 760, -1, 150], [K.Fr + 0.8, 600, 1, 130], [K.Fr + 1.4, 1000, -1, 120]];
+  const LANZ = [[K.Ca + 1.2, 580, 1, 135], [K.Ca + 2.4, 700, -1, 120], [K.Ca + 3.2, 840, 1, 140], [K.Ca + 4.0, 620, -1, 110], [K.Ca + 4.6, 940, 1, 130], [K.Fr + 0.2, 760, -1, 135], [K.Fr + 0.8, 600, 1, 120], [K.Fr + 1.4, 1000, -1, 110]];
 
   const zoomG = kprog(T, K.B - 0.8, K.B + 0.3, kEase.suave);
 
@@ -299,7 +299,7 @@ function GotaBullerShot() {
       <Etq T={T} at={K.E + 3.3} until={K.Fz - 0.3} x={180} y={1025} texto="levadura" tam={26} color={KC.ink} />
       <Etq T={T} at={K.E + 3.6} until={K.Fz - 0.3} x={720} y={1025} texto="hongo de oreja" tam={24} color={KC.ink} />
       <Etq T={T} at={K.E + 3.6} until={K.Fz - 0.3} x={720} y={1075} texto="Auricularia auricula" it tam={20} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Fz + 0.3} until={K.Ca - 0.3} valor={10000} dur={1.0} prefijo="+" sufijo=" g" etiqueta="más de" x={540} y={830} tam={190} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Fz + 0.3} until={K.Ca - 0.3} valor={10000} dur={1.0} prefijo="" sufijo=" g" etiqueta="más de" x={540} y={830} tam={190} color={KC.yellow} />
       <Chip T={T} at={K.Fz + 1.2} until={K.Ca - 0.3} texto="g = la gravedad de la Tierra" x={540} y={1030} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Fz + 1.9} until={K.Ca - 0.3} texto="≈3,000 a 14,000 g según la especie (2009)" x={540} y={1120} tam={28} borde={KC.ink} />
       <Etq T={T} at={K.Ca + 0.6} until={K.Es - 0.3} x={40} y={1160} texto="laminilla" tam={26} color={GB.carne} />
@@ -316,7 +316,7 @@ function GotaBullerShot() {
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.B - 0.4} texto="5 cm" largo={300} color={KC.ink} />
       <BarraEscala T={T} at={K.B} until={K.Go} texto="10 µm" largo={120} />
-      <BarraEscala T={T} at={K.Go} until={K.P} texto="2 µm" largo={104} />
+      <BarraEscala T={T} at={K.Go} until={K.P} texto="2 µm" largo={120} />
       <BarraEscala T={T} at={K.Ca} until={K.Es} texto="0.1 mm" largo={150} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={300} color={KC.ink} />
 

@@ -56,5 +56,3 @@ Notas:
 - Sugerencia de estilo (no de veracidad): en México "agua fresca" también es la bebida; si se quiere evitar la doble lectura, "Con agua y frío" dice lo mismo.
 
 Resumen: segunda ronda, 29 oct 2026. Las 4 ⚠️ de la primera ronda se corrigieron y se re-verificaron abriendo las fuentes; los recortes de Hoja, Nadadores, Entrada, Pared, Herbario y Cierre no cambian ningún dato. Las 26 afirmaciones quedan ✅ y las referencias de `guion.md` quedaron corregidas con frase textual. El dibujo es esquemático.
-
-VEREDICTO: APROBADO

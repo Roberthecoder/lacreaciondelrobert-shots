@@ -47,7 +47,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces q
 | 9 | 52.9 | 57.9 | 02_apuntando_camara | `arriba-der` | «no es un hongo, y sigue atacando» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **36.4 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 9 · **≈ 37 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 

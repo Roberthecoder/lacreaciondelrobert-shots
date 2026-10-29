@@ -2,8 +2,8 @@
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #31 · rama `pedido300/fun`.
 - **Formato:** N2 "El número" (número gigante desde el cuadro 0 → el estudio → la letra chiquita → **lo que sí sirve**, sin sermón) y cierre en el mismo tubo del inicio.
-- **Gancho (de los 7):** #4 "Un número que contradice": «En un tubo, un hongo se comió la mitad de un plástico en cinco días. ¿Adiós basura? No tan rápido.»
-- **Duración:** voz 998 caracteres / 181 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Gancho (de los 7):** #4 "Un número que contradice": «En un tubo, un hongo deshizo la mitad de un plástico en unos cinco días. ¿Adiós basura? No tan rápido.»
+- **Duración:** voz 999 caracteres / 178 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** curioso y honesto; ni "los hongos nos salvan" ni sermón. No repite datos de los shots Ambientales de plástico (microfibras, chicle, sal).
 
@@ -11,19 +11,19 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | En un tubo, un hongo se comió la mitad de un plástico en cinco días. ¿Adiós basura? No tan rápido. | Fondo amarillo: un tubo de ensayo con líquido blanco lechoso; cuadro 0.3: un cronómetro de días corre 0→5 y el líquido se aclara hasta la mitad. Número gigante "½ en 5 días". Al final, chip "¿adiós basura?" y un sello "NO TAN RÁPIDO". |
-| 1 | Hongo | Es *Pestalotiopsis microspora*; vivía dentro de tallos de plantas de la selva de Ecuador. | Paneo a la selva (fondo menta): un tallo; `Lupa` muestra hifas dentro del tejido. Etiqueta "hongo endófito · *Pestalotiopsis microspora*". Esporas fusiformes de 5 células con apéndices (morfología real del género). Pin "Ecuador · Amazonía (Yasuní)". |
-| 2 | Estudio | En 2011, estudiantes de Yale lo hallaron entre decenas de hongos. | `TarjetaEstudio` "2011 · Yale · 59 hongos probados · Russell et al., AEM". Fila de cajas Petri; una se ilumina. |
-| 3 | Enzima | Suelta una enzima que corta un plástico: el poliuretano. | AL MICROSCOPIO (fondo oscuro): la hifa suelta enzimas (tijeritas) que cortan una cadena de poliuretano en eslabones. Etiqueta "enzima (serina hidrolasa)". |
+| 0 | Gancho | En un tubo, un hongo deshizo la mitad de un plástico en unos cinco días. ¿Adiós basura? No tan rápido. | Fondo amarillo: un tubo de ensayo con líquido blanco lechoso; cuadro 0.3: un cronómetro de días corre 0→5 y el líquido se aclara hasta la mitad. Número gigante "½ en ~5 días". Al final, chip "¿adiós basura?" y un sello "NO TAN RÁPIDO". |
+| 1 | Hongo | Es *Pestalotiopsis microspora*; vivía dentro de tallos de plantas en Ecuador. | Paneo a la selva (fondo menta): un tallo; `Lupa` muestra hifas dentro del tejido. Etiqueta "hongo endófito · *Pestalotiopsis microspora*". Conidios fusiformes de 5 células (4 septos), ~21–28 × 6.5–8.5 µm: 3 células centrales cafés, puntas transparentes, 2–3 apéndices tubulares arriba y 1 abajo; barra 10 µm. Pin "Ecuador · Amazonía (Yasuní)". |
+| 2 | Estudio | Estudiantes de Yale lo hallaron entre decenas de hongos y lo publicaron en 2011. | `TarjetaEstudio` "2011 · Yale · 59 hongos probados · Russell et al., AEM". Fila de cajas Petri; una se ilumina. |
+| 3 | Enzima | Suelta una enzima que corta el poliuretano. | AL MICROSCOPIO (fondo oscuro): la hifa suelta enzimas (tijeritas) que cortan una cadena de poliuretano en eslabones. Etiqueta "enzima (serina hidrolasa)". |
 | 4 | SinOxigeno | Y lo deshizo igual de rápido sin oxígeno. | Dos tubos lado a lado, "con O₂" / "sin O₂", que se aclaran al mismo ritmo. |
-| 5 | Pregunta | ¿Entonces los hongos van a limpiar el planeta? | **Re-gancho.** Un planeta lleno de basura y un "?" gigante; Robert grande, pensativo. |
-| 6 | Truco | Ojo: era poliuretano suspendido en agua, en el laboratorio, no una bolsa tirada. | Zoom al tubo: "poliuretano suspendido en agua" (gotitas); al lado, una bolsa en el suelo con chip "esto NO". |
-| 7 | Pakistan | En Pakistán, otro hongo tardó dos meses en romper en pedazos una película de poliuretano, con azúcar de ayuda. | `TarjetaEstudio` "Islamabad · basurero · Khan et al., 2017"; etiqueta *Aspergillus tubingensis*; calendario 2 meses; una película se rompe en pedazos; chip "+ 2 % de glucosa". |
-| 8 | Revision | En 2022, una revisión de 664 microbios no halló pruebas de que se coman mucho polietileno puro: el de la bolsa del súper. | Número gigante "664"; una cuadrícula de microbios; una bolsa del súper con etiqueta "polietileno (PE)" y chip "sin pruebas de que se la coman mucho · Lear et al., 2022". |
-| 9 | Peso | A veces el plástico pesa menos porque suelta sus aditivos, no porque se lo coman. | Báscula: el plástico baja de peso mientras salen puntitos de colores ("aditivos"); chip "pesa menos ≠ se lo comieron". |
-| 10 | Sirve | Lo que sí sirve: usar menos plástico, reusarlo y separarlo para reciclar. | Tres chips con palomita: "✓ usar menos", "✓ reusar", "✓ separar para reciclar". |
-| 11 | Futuro | Los hongos son una pista, no un permiso para tirar más. | Micelio que crece como un camino; chip "pista para el futuro". |
-| 12 | Cierre | Sí, un hongo se comió medio plástico en cinco días. Pero en un tubo, no en tu basura. | **Regreso a la imagen del inicio:** el mismo tubo, ahora al lado de un bote de basura lleno; chip "en un tubo, no en tu basura". |
+| 5 | Pregunta | ¿Entonces los hongos limpiarán el planeta? | **Re-gancho.** Un planeta lleno de basura y un "?" gigante; Robert grande, pensativo. |
+| 6 | Truco | Ojo: era poliuretano suspendido en agua, en laboratorio, no una bolsa tirada. | Zoom al tubo: "poliuretano suspendido en agua" (gotitas); al lado, una bolsa en el suelo con chip "esto NO". |
+| 7 | Pakistan | En Pakistán, otro hongo tardó dos meses en romper en pedazos una película de poliuretano, y con azúcar. | `TarjetaEstudio` "Islamabad · basurero · Khan et al., 2017"; etiqueta *Aspergillus tubingensis*; calendario 2 meses; una película se rompe en pedazos; chip "+ 2 % de glucosa". |
+| 8 | Revision | En 2022, una revisión de 664 reportes de microbios no halló pruebas de que se coman mucho polietileno puro, el plástico de las bolsas del súper. | Número gigante "664" con la etiqueta "reportes"; una cuadrícula de microbios; una bolsa del súper con chip "polietileno (PE), el plástico de las bolsas" y chip "sin pruebas de que se la coman mucho · Lear et al., 2022". |
+| 9 | Peso | A veces el plástico pesa menos porque suelta aditivos, no porque se lo coman. | Báscula: el plástico baja de peso mientras salen puntitos de colores ("aditivos"); chip "pesa menos ≠ se lo comieron". |
+| 10 | Sirve | Lo que sí sirve: usar menos plástico, reusar y separar para reciclar. | Tres chips con palomita: "✓ usar menos", "✓ reusar", "✓ separar para reciclar". |
+| 11 | Futuro | Los hongos son una pista, no permiso para tirar más. | Micelio que crece como un camino; chip "pista para el futuro". |
+| 12 | Cierre | Un hongo deshizo la mitad de un plástico en unos cinco días. Pero en un tubo, no en tu basura. | **Regreso a la imagen del inicio:** el mismo tubo, ahora al lado de un bote de basura lleno; chip "en un tubo, no en tu basura". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua, curiosa (no tensa), sin golpe; efectos en el mismo cuadro: tic del cronómetro de días, burbujeo del tubo que se aclara, golpe del sello, selva (gotas), clic de cada Petri, tijeritas de la enzima, dos tubos en sincronía, "?" con un acorde suspendido, rasgado de la película, contador del 664, báscula que baja, tres palomitas, crecimiento suave del micelio.
@@ -31,7 +31,7 @@
 Barra de escala: 10 cm (tubo y bolsa), 1 cm (tallo), 10 µm (esporas e hifas), 10 nm (enzima y cadena, esquemático).
 
 ## Notas para el verificador
-- «Se comió la mitad de un plástico en cinco días»: en el artículo es el **tiempo medio de aclaramiento** ("half time for clearance") de una suspensión de poliuretano (Impranil DLN) en cultivo líquido: el líquido lechoso se vuelve transparente al degradarse el polímero. "En un tubo" lo dice desde la primera frase.
+- «Deshizo la mitad de un plástico en unos cinco días»: en el artículo es el **tiempo medio de aclaramiento** ("half time for clearance") de una suspensión de poliuretano (Impranil DLN) en cultivo líquido: el líquido lechoso se vuelve transparente al degradarse el polímero. "En un tubo" lo dice desde la primera frase.
 - «Estudiantes de Yale»: el artículo dice que fue parte de un programa educativo con estudiantes de licenciatura; afiliación Yale University. «Decenas de hongos» = 59 aislados.
 - «La bolsa del súper es de polietileno»: Environment Agency (Reino Unido, 2011): la bolsa convencional es de polietileno de alta densidad (HDPE).
 
