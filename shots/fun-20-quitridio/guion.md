@@ -11,7 +11,7 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esta rana no está dormida: un hongo que tus ojos nunca van a ver le está parando el corazón. | Fondo menta, una rana verde quieta sobre una hoja, ojos entrecerrados, patas abiertas (postura anormal), la piel se le despega en jirones. Cuadro 0.3: un latido en su pecho que se hace más lento. Chip "¿dormida?" que se tacha. |
+| 0 | Gancho | Esta rana no está dormida: un hongo que tus ojos nunca van a ver le está parando el corazón. | Fondo menta, una rana verde quieta sobre una hoja, ojos entrecerrados, patas abiertas (postura anormal), la piel se le cae en escamitas sueltas (copos chicos, no tiras). Cuadro 0.3: un latido en su pecho que se hace más lento. Chip "¿dormida?" que se tacha. |
 | 1 | Piel | Las ranas respiran en parte por la piel y por ahí controlan agua y sales. | La cámara se acerca a la piel; flechas de O₂ entrando y gotitas de agua y sales (Na⁺, K⁺) que cruzan la piel en las dos direcciones. Chip "la piel = pulmón + riñón (en parte)". |
 | 2 | Zoosporas | En el agua nadan las esporas del quitridio, *Batrachochytrium dendrobatidis*, con colita. | Fondo oscuro (agua al microscopio): zoosporas redondas con un flagelo atrás nadando en zigzag. Etiqueta "quitridio · *Batrachochytrium dendrobatidis* (Bd)". Barra de escala 5 µm ("3–5 µm cada espora"). |
 | 3 | Queratina | Se meten en la queratina de la piel y crecen como bolsitas llenas de esporas. | Corte de la piel (capas): la espora se pega, pierde la cola, entra a una célula de la capa de queratina y se vuelve una bolsita (zoosporangio) llena de esporas nuevas, con un tubito que sale a la superficie y suelta más. Etiquetas "capa de queratina", "zoosporangio". |

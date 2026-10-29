@@ -1,7 +1,7 @@
 # Shot Fungi Mati #15 · Esas venas no son queso echado a perder: el queso azul (*Penicillium roqueforti*)
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #15 · rama `pedido300/fun`.
-- **Formato:** N1 "Por dentro" con capítulos de N3 (1 · inocular, 2 · picar, 3 · madurar): rebanada de queso azul en un plato (macro) → la leche con esporas, el queso picado, los túneles por dentro y las esporas al microscopio (micro, fondo oscuro) → la misma rebanada, ahora con los túneles de aire dibujados por dentro (macro transformado).
+- **Formato:** N1 "Por dentro" con capítulos de N3 (1 · inocular, 2 · picar, 3 · madurar): cuña de queso azul en un plato (macro) → la leche con esporas, el queso picado, los túneles por dentro y las esporas al microscopio (micro, fondo oscuro) → la misma cuña, ahora con los túneles de aire dibujados por dentro (macro transformado).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" — «Esas venas azules no son queso echado a perder: son un moho sembrado a propósito.»
 - **Duración:** voz 996 caracteres / 195 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base (se ajusta con `estimar-escenas` en la fase 3).
 - **Voz:** pendiente de aprobación de Robert (~996 créditos de ElevenLabs).
@@ -29,9 +29,29 @@
 
 **Música:** cama grave y cálida, continua, sin golpe; efectos en el mismo cuadro (cuchillo que corta, polvito de esporas que cae en la leche, piquetes de cada aguja, soplido de aire que entra, crecimiento de las hifas, burbujitas de grasa que se rompen, "puf" del olor, pasos del ADN y la rama que se parte, eco de cueva, tres "plops" de los colores).
 
-Barra de escala: 5 cm (rebanada, quesos, tina), 1 cm (corte del queso picado), 10 µm (hifas y esporas).
+Barra de escala: 5 cm (cuña, pan, quesos de colores), 10 cm (ruedas de Roquefort y Gorgonzola, rueda picada, cueva), 50 cm (tina), 1 cm (corte del queso joven), 10 µm (penicilios y gotas de grasa; las moléculas dicen "no a escala"). En el estudio no hay objeto físico y no lleva barra.
 
 **Dibujo (morfología real):** *P. roqueforti* hace pinceles (penicilios) en la punta de un tallo de pared rugosa, con cadenas de esporas redondas y lisas, verde oscuro a azul verdoso, de unos 3–4.5 µm. Esquemático pero correcto.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué este moho sí te lo comes y el del pan no?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «esas venas no son queso echado a perder» (cuadro 0) |
+| 2 | 5.3 | 9.2 | 13_senalando_arriba | `arriba-der` | «se llama *Penicillium roqueforti*» |
+| 3 | 12.3 | 15.9 | 06_pensativo_menton | `arriba-der` | «necesita oxígeno… solo en los huecos» |
+| 4 | 16.8 | 20.0 | 04_bajando_lentes | `arriba-der` | «lo pican con agujas» |
+| 5 | 24.2 | 28.4 | 05_sonriendo_dientes_uniformes | `arriba-der` | «el olor a queso azul» |
+| 6 | 28.8 | 32.4 | 07_pensativo_puno | `grande` | «¿por qué este moho sí y el del pan no?» |
+| 7 | 33.2 | 38.9 | 04_bajando_lentes | `arriba-der` | «el del pan llega solo… algunos hacen toxinas» |
+| 8 | 44.3 | 48.1 | 06_pensativo_menton | `arriba-der` | «una es la del Roquefort; la otra, en todo el mundo» |
+| 9 | 48.7 | 52.8 | 11_sorprendido | `arriba-der` | «blanco, café o verde» |
+| 10 | 53.4 | 57.9 | 02_apuntando_camara | `arriba-der` | «túneles de aire llenos de esporas» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **41.1 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

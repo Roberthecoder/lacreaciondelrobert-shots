@@ -119,7 +119,7 @@ function Higado({ x, y, s = 1, nodulo = 0 }) {
     <path d="M 10 -150 Q 30 -40 0 70" stroke="#7a2d1f" strokeWidth={6} fill="none" />
     <path d="M -200 -100 Q -120 -140 -40 -130" stroke="#d9705a" strokeWidth={12} fill="none" strokeLinecap="round" />
     <ellipse cx={-40} cy={95} rx={30} ry={20} fill="#3fa34d" stroke={KC.ink} strokeWidth={5} />
-    {nodulo > 0 && <g transform={`translate(-130 10) scale(${nodulo})`}><circle r={38} fill="#e9d7b8" stroke={KC.ink} strokeWidth={5} /><circle cx={-10} cy={-8} r={10} fill="#cdb894" /></g>}
+    {nodulo > 0 && <g transform={`translate(-150 -60) scale(${nodulo})`}><circle r={38} fill="#e9d7b8" stroke={KC.ink} strokeWidth={5} /><circle cx={-10} cy={-8} r={10} fill="#cdb894" /></g>}
   </g>;
 }
 // Personita del conteo. amarillo 0..1 = piel amarilla (ictericia). apagada 0..1.
@@ -139,6 +139,17 @@ function Pavito({ T, x, y, s = 1, cae = 0, seed = 1 }) {
     <circle cx={30} cy={-30} r={18} fill="#d8b98b" stroke={KC.ink} strokeWidth={5} />
     <path d="M 46 -32 L 60 -28 L 46 -24 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={3} />
     {cae < 0.5 ? <circle cx={36} cy={-34} r={4} fill={KC.ink} /> : <path d="M 32 -38 l 8 8 M 40 -38 l -8 8" stroke={KC.ink} strokeWidth={3} />}
+  </g>;
+}
+// Sello "GRUPO 1" (clasificación de la IARC) que cae con golpe.
+function SelloGrupo({ T, at, x, y, color = KC.ink }) {
+  if (T < at) return null;
+  const k = kprog(T, at, at + 0.35, kEase.rebote);
+  return <g transform={`translate(${x} ${y}) rotate(-12) scale(${klerp(2.2, 1, k)})`} opacity={kprog(T, at, at + 0.15)}>
+    <circle r={130} fill="rgba(255,255,255,.75)" stroke={color} strokeWidth={14} />
+    <circle r={110} fill="none" stroke={color} strokeWidth={5} />
+    <text y={-38} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={color}>GRUPO</text>
+    <text y={80} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.red} stroke={color} strokeWidth={4}>1</text>
   </g>;
 }
 function Sol({ T, x, y, r = 70 }) {
@@ -254,8 +265,8 @@ function AflatoxinasShot() {
           <path d="M -20 1180 Q 540 1080 1100 1180 L 1100 1960 L -20 1960 Z" fill="#9a7440" stroke={KC.ink} strokeWidth={8} />
           <path d="M 60 1150 Q 300 1110 520 1120 M 600 1118 Q 820 1112 1020 1150" stroke="#5a3f1c" strokeWidth={6} fill="none" />
           <RedHifas T={T} x={540} y={1130} g={kprog(T, K.Mo, K.Mo + 1.2)} seed={18} n={140} escala={0.55} color="#e9f0c4" ancho={4} />
-          <Conidioforo T={T} x={640} y={1120} s={1.05} crece={kprog(T, K.Mo + 0.1, K.Mo + 1.6)} seed={3} />
-          <Conidioforo T={T} x={170} y={1150} s={0.5} crece={kprog(T, K.Mo + 0.4, K.Mo + 1.9)} seed={5} />
+          <Conidioforo T={T} x={690} y={1120} s={0.95} crece={kprog(T, K.Mo + 0.1, K.Mo + 1.6)} seed={3} />
+          <Conidioforo T={T} x={130} y={1150} s={0.4} crece={kprog(T, K.Mo + 0.4, K.Mo + 1.9)} seed={5} />
           <Conidioforo T={T} x={960} y={1150} s={0.45} crece={kprog(T, K.Mo + 0.6, K.Mo + 2.1)} seed={8} />
         </>)}
       </Escena>
@@ -310,7 +321,6 @@ function AflatoxinasShot() {
         {fsvg(<>
           <g transform={`translate(540 900) scale(${kprog(T, K.Ca, K.Ca + 0.6, kEase.rebote)}) translate(-540 -900)`}>
             <Higado x={560} y={900} s={1.4} nodulo={kprog(T, K.Ca + 4.4, K.Ca + 4.9, kEase.rebote)} />
-            {false && <g />
           </g>
           <SelloGrupo T={T} at={K.Ca + 1.7} x={830} y={1040} />
         </>)}
@@ -364,15 +374,15 @@ function AflatoxinasShot() {
       <Escena T={T} a={K.Si} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          {(() => { const a = kprog(T, K.Si + 0.6, K.Si + 1.0, kEase.rebote); return a > 0 && <g transform={`translate(200 820) scale(${a})`}>
+          {(() => { const a = kprog(T, K.Si + 0.6, K.Si + 1.0, kEase.rebote); return T >= 0 && a > 0.001 && <g transform={`translate(200 820) scale(${a})`}>
             <Sol T={T} x={0} y={-90} r={56} />
             <rect x={-150} y={20} width={300} height={70} rx={10} fill="#e0c27a" stroke={KC.ink} strokeWidth={6} />
             {Array.from({ length: 10 }, (_, i) => <ellipse key={i} cx={-115 + (i % 5) * 58} cy={42 + Math.floor(i / 5) * 26} rx={13} ry={10} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />)}
           </g>; })()}
-          {(() => { const a = kprog(T, K.Si + 1.8, K.Si + 2.2, kEase.rebote); return a > 0 && <g transform={`translate(540 850) scale(${a})`}><Frasco x={0} y={0} s={0.9} /></g>; })()}
-          {(() => { const a = kprog(T, K.Si + 3.2, K.Si + 3.6, kEase.rebote); const cae = kprog(T, K.Si + 3.7, K.Si + 4.4, kEase.suave); return a > 0 && <g>
+          {(() => { const a = kprog(T, K.Si + 1.8, K.Si + 2.2, kEase.rebote); return T >= 0 && a > 0.001 && <g transform={`translate(540 850) scale(${a})`}><Frasco x={0} y={0} s={0.9} /></g>; })()}
+          {(() => { const a = kprog(T, K.Si + 3.2, K.Si + 3.6, kEase.rebote); const cae = kprog(T, K.Si + 3.7, K.Si + 4.4, kEase.suave); return T >= 0 && a > 0.001 && <g>
             <g transform={`translate(870 870) scale(${a * 0.8})`}><Bote x={0} y={0} tapa={kprog(T, K.Si + 4.5, K.Si + 4.8)} /></g>
-            {cae < 1 && <Cacahuate x={klerp(640, 860, cae)} y={klerp(700, 760, cae) - Math.sin(cae * Math.PI) * 90} s={0.7} rot={cae * 200} malo={1} />}</g>; })()}
+            {T >= K.Si + 3.2 && cae < 1 && <Cacahuate x={klerp(640, 860, cae)} y={klerp(700, 760, cae) - Math.sin(cae * Math.PI) * 90} s={0.7} rot={cae * 200} malo={1} />}</g>; })()}
         </>)}
       </Escena>
       {/* 13 · cierre: la misma bolsita; el arrugado va al bote */}
@@ -390,9 +400,9 @@ function AflatoxinasShot() {
       <Chip T={T} at={K.G + 1.7} until={K.I - 0.3} texto="¿este también?" x={330} y={560} tam={42} borde={KC.red} />
       {['olor', 'sabor', 'color'].map((t, i) => <MitoTachado key={i} T={T} at={K.I + 1.2 + i * 0.35} tacharEn={K.I + 1.7 + i * 0.45} until={K.Mo - 0.3} texto={'sin ' + t} x={200 + i * 340} y={1185} tam={40} />)}
       <Etq T={T} at={K.I + 0.9} until={K.Mo - 0.3} x={1040} y={460} lado="izq" texto="aflatoxinas (no se ven)" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 0.5} until={MICRO - 0.3} x={40} y={400} texto="Aspergillus flavus" it tam={40} />
-      <Etq T={T} at={K.Mo + 0.9} until={MICRO - 0.3} x={40} y={455} texto="moho amarillo verdoso" tam={28} />
-      <Etq T={T} at={K.Mo + 1.6} until={MICRO - 0.3} x={790} y={350} texto="esporas" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Mo + 0.5} until={MICRO - 0.3} x={40} y={680} texto="Aspergillus flavus" it tam={40} />
+      <Etq T={T} at={K.Mo + 0.9} until={MICRO - 0.3} x={40} y={735} texto="moho amarillo verdoso" tam={28} />
+      <Etq T={T} at={K.Mo + 1.6} until={MICRO - 0.3} x={820} y={380} texto="esporas" tam={30} color={KC.yellow} />
       <Chip T={T} at={MICRO + 1.6} until={K.Co - 0.3} texto="calor + humedad" x={400} y={480} tam={42} borde={KC.red} />
       <Chip T={T} at={K.Co + 0.4} until={K.P - 0.3} texto="el calor de la cocina no basta" x={540} y={470} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Co + 1.3} until={K.P - 0.3} x={60} y={680} texto="aflatoxinas" tam={32} color={KC.ink} />
@@ -401,7 +411,7 @@ function AflatoxinasShot() {
       <Etq T={T} at={K.AD + 1.2} until={K.Ca - 0.3} x={1040} y={460} lado="izq" texto="tu cuerpo la vuelve epóxido" tam={30} color={KC.red} />
       <Etq T={T} at={K.AD + 2.2} until={K.Ca - 0.3} x={600} y={1090} texto="se pega a una G (guanina)" tam={28} color={KC.white} />
       <Chip T={T} at={K.Ca + 0.6} until={K.Ca + 2.3} texto="IARC: la agencia contra el cáncer de la OMS" x={540} y={480} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Ca + 0.4} until={K.Es - 0.3} x={1040} y={1160} lado="izq" texto="hígado" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 0.4} until={K.Ca + 1.5} x={1040} y={1160} lado="izq" texto="hígado" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ca + 3.1} until={K.Es - 0.3} texto="cancerígenas para humanos" x={400} y={1120} tam={34} borde={KC.red} />
       <Etq T={T} at={K.Ca + 4.6} until={K.Es - 0.3} x={330} y={640} texto="cáncer de hígado" tam={32} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.3} anio="2004" quien="Kenia · brote por maíz" revista="MMWR (CDC), 2004" y={560} />

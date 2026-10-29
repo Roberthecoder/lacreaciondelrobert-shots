@@ -343,7 +343,7 @@ function LiquenShot() {
       <Chip T={T} at={K.H + 3.6} until={K.E - 0.3} texto="¿un hongo?" x={560} y={745} tam={40} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.0} anio="2016" quien="Montana, EUA" revista="Spribille et al., Science" x={540} y={470} />
       <Etq T={T} at={K.E + 0.9} until={K.Cn - 0.3} x={40} y={720} texto="Bryoria" it tam={36} color={KC.ink} />
-      <Lupa T={T} at={K.E + 2.0} until={K.Cn - 0.3} x={760} y={880} r={190} fx={430} fy={960} interior={LupaLevaduras} tinte={LQ.levadura} etiqueta="levaduras en la piel" />
+      <Lupa T={T} at={K.E + 2.0} until={K.Cn - 0.3} x={760} y={840} r={185} fx={430} fy={960} interior={LupaLevaduras} tinte={LQ.levadura} etiqueta="levaduras en la piel" />
       <NumeroGigante T={T} at={K.Cn + 0.3} until={K.Cn + 2.9} valor={6} dur={1.8} etiqueta="continentes" x={300} y={470} tam={200} color={KC.pink} />
       <Chip T={T} at={K.Cn + 3.0} until={K.Es - 0.2} texto="¿qué hacen ahí? aún se estudia" x={380} y={470} tam={30} borde={LQ.levadura} />
       <Chip T={T} at={K.Es + 0.6} until={K.Es + 5.0} texto="expuestos al espacio" x={330} y={430} tam={36} borde={KC.lilac} />

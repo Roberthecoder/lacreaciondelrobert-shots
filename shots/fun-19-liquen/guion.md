@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #19 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro": macro (la piedra con manchas) → micro (corte del talo al microscopio, fondo oscuro) → la misma piedra, transformada.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio.»
-- **Duración:** voz 995 caracteres / 179 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** objetivo en la base (se ajusta con `estimar-escenas.mjs` en la fase 3).
+- **Duración:** voz 995 caracteres / 179 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base (escenas del estimador escaladas a 58.0 s de voz).
 - **Voz:** pendiente de aprobación de Robert (~995 créditos de ElevenLabs).
 - **Tono:** asombro y curiosidad; el estudio de 2016 se dice con cuidado (qué hacen las levaduras todavía se estudia).
 
@@ -11,24 +11,42 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio. | Fondo menta: una piedra grande con manchas verdes, naranjas y grises. Cuadro 0.3: una mancha "respira" y crece. Chips "¿planta?" y "¿musgo?" que se tachan; aparecen un hongo y un socio verde dándose la mano. |
-| 1 | Donde | Es un liquen: vive en piedras, troncos y bardas. | Tres viñetas que entran una tras otra: piedra, tronco, barda, cada una con su mancha. Etiqueta "liquen". |
-| 2 | Corte | Al microscopio, tiene pisos. | `Lupa`/cámara baja sobre la mancha; un bisturí corta; pasa a fondo oscuro con el corte del talo (esquemático). |
-| 3 | Corteza | Arriba, una piel de hilos apretados del hongo: lo protege del sol. | Se ilumina la capa de arriba (córtex): hifas apretadas; rayos de sol rebotan. Etiqueta "córtex". |
-| 4 | Algas | Debajo, una capa verde: algas o cianobacterias que hacen fotosíntesis y dan azúcar al hongo. | Capa de células verdes redondas (alga verde, p. ej. *Trebouxia*) abrazadas por hifas; puntitos de azúcar viajan a las hifas. Etiqueta "capa de algas". |
-| 5 | Medula | Abajo, una maraña suelta de hilos del hongo: la médula. | Hifas sueltas y enredadas (sin rótulos de "aire"). Etiqueta "médula". |
-| 6 | Trato | El hongo pone la casa; el socio, la comida. | Iconos: casita (hongo) ⇄ azúcar (alga). |
+| 0 | Gancho | Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio. | Fondo menta: una piedra gris; desde el cuadro 0.1 brotan sus manchas (liquen naranja lobulado con discos, costra amarillo verdosa en areolas con borde negro, manchas gris verdosas). Chips "¿planta?" y "¿musgo?" que se tachan; luego chip "hongo + socio". |
+| 1 | Donde | Es un liquen: vive en piedras, troncos y bardas. | Tres viñetas que entran una tras otra (piedra, tronco, barda de ladrillo), cada una con sus manchas de liquen. Chip "liquen". |
+| 2 | Corte | Al microscopio, tiene pisos. | La cámara baja a la mancha naranja y un bisturí la corta (línea roja). Chip "lo cortamos"; fundido al fondo oscuro con el corte del talo (esquemático): las capas entran una por una. |
+| 3 | Corteza | Arriba, una piel de hilos apretados del hongo: lo protege del sol. | Corte (fondo noche): córtex de células/hifas apretadas, capa de algas, médula de hifas sueltas, córtex inferior y rizinas sobre la piedra; rótulos "córtex · algas · médula · piedra". Se resalta el córtex; un sol rebota en él. Chip "hilos del hongo, apretados". |
+| 4 | Algas | Debajo, una capa verde: algas o cianobacterias que hacen fotosíntesis y dan azúcar al hongo. | Se resalta la capa de células verdes redondas entre hifas; hexagonitos de azúcar viajan de las algas a las hifas. Chips "algas o cianobacterias" y "fotosíntesis → azúcar". |
+| 5 | Medula | Abajo, una maraña suelta de hilos del hongo: la médula. | Se resalta la médula: hifas sueltas y enredadas que se mecen (sin rótulos de "aire"). Chip "hilos sueltos del hongo". |
+| 6 | Trato | El hongo pone la casa; el socio, la comida. | Fondo rosa: hifas que dibujan una casita alrededor de una célula de alga; el azúcar sale de la célula. Chips "el hongo pone la casa" y "el socio, la comida". |
 | 7 | Pregunta | ¿Y si en ese trato hubiera alguien más? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
-| 8 | Historia | Cuando Simon Schwendener propuso en 1867 que un liquen eran dos seres, muchos no le creyeron. | Tarjeta "1867 · Simon Schwendener (Suiza)"; un dibujo de "hongo + alga" y nubecitas de "¡no!" alrededor. |
-| 9 | Estudio | En 2016, en Montana, Estados Unidos, hallaron levaduras en la piel de dos líquenes. | Tarjeta "2016 · Montana, EUA · Spribille et al., *Science*"; liquen colgante (*Bryoria*); zoom a la corteza: aparecen levaduras redondas. |
-| 10 | Continentes | Encontraron parientes de esas levaduras en líquenes de seis continentes. Qué hacen ahí, aún se estudia. | Mapa del mundo con 6 continentes que se encienden; chip "¿qué hacen? aún se estudia". |
-| 11 | Espacio | Y algunos son durísimos: en 2005, dos especies pasaron casi quince días expuestos al espacio, por fuera de un satélite, y al volver hacían fotosíntesis casi igual. | Satélite en órbita con una cajita abierta con líquenes (*Rhizocarpon geographicum*, *Xanthoria elegans*); contador "≈ 15 días"; al volver, medidor de fotosíntesis "antes ≈ después". |
-| 12 | Cierre | Así que esa mancha en la piedra no es una planta: es un equipo, como los dos que aguantaron el espacio. | **Regreso a la imagen del inicio:** la misma piedra; la mancha ahora con un mini "equipo" (hongo + alga, y una levadura tenue con "¿?" porque no está en todos los líquenes) y un cohetito. Chip "es un equipo". |
+| 8 | Historia | Cuando Simon Schwendener propuso en 1867 que un liquen eran dos seres, muchos no le creyeron. | Fondo naranja: tarjeta "1867 · Simon Schwendener · propuso: el liquen son dos seres"; ecuación dibujada hongo + alga = liquen; globos "¡no!", "¿dos seres?", "¿un hongo?". |
+| 9 | Estudio | En 2016, en Montana, Estados Unidos, hallaron levaduras en la piel de dos líquenes. | Fondo cian: tarjeta "2016 · Montana, EUA · Spribille et al., Science"; rama con *Bryoria* colgando como pelo café (un mechón amarillento). Lupa de rayos X a la piel del liquen: levaduras rosas en la capa de afuera del córtex ("levaduras en la piel"). |
+| 10 | Continentes | Encontraron parientes de esas levaduras en líquenes de seis continentes. Qué hacen ahí, aún se estudia. | Fondo amarillo: "6 continentes" (número gigante) y un globo de solo meridianos (sin dibujar continentes), rodeado de 6 insignias de liquen con su levadura rosa; luego un "?" en cada levadura y chip "¿qué hacen ahí? aún se estudia". |
+| 11 | Espacio | Y algunos son durísimos: en 2005, dos especies pasaron casi quince días expuestos al espacio, por fuera de un satélite, y al volver hacían fotosíntesis casi igual. | Fondo espacio: satélite (esquemático) con la caja de muestras arriba que se abre; dos muestras, *Xanthoria elegans* (naranja) y *Rhizocarpon geographicum* (amarillo verdosa); rayos UV; chip "expuestos al espacio" y contador hasta "14.6 días". Regresa con paracaídas ("de regreso a la Tierra") y una gráfica "fotosíntesis: antes ≈ después", chip "casi igual". |
+| 12 | Cierre | Así que esa mancha en la piedra no es una planta: es un equipo, como los dos que aguantaron el espacio. | **Regreso a la imagen del inicio:** la misma piedra; las dos manchas que corresponden a las especies del espacio llevan casco de astronauta y llega un cohetito. Arriba, el "equipo": hongo + alga + una levadura tenue con borde punteado y "¿?" ("¿levadura?", porque no está en todos los líquenes). Chip "es un equipo". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave, suave y continua (sin golpe marcado), que se abre en el estudio y en el espacio. Efectos en el mismo cuadro: roce de piedra al aparecer la mancha, tachones de "planta" y "musgo", bisturí al cortar, brillo del sol en el córtex, burbujitas de azúcar, crujido de las hifas sueltas, "¿?" del re-gancho, pop de cada levadura, 6 tics de los continentes, zumbido del satélite y "ding" del medidor.
 
-Barras de escala: 10 cm (piedra), 1 mm (mancha con lupa), 50 µm (corte del talo), 10 µm (levaduras de la corteza).
+Barras de escala: 10 cm (piedra y viñetas), 1 cm (corte), 50 µm (corte del talo), 10 µm (célula de alga; levaduras en la lupa), 5 cm (*Bryoria*). Sin barra en la pregunta, la tarjeta de 1867, el globo y el espacio (dibujos simbólicos).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si en ese trato hubiera alguien más?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «esa mancha no es una planta» (cuadro 0) |
+| 2 | 5.0 | 7.3 | 13_senalando_arriba | `arriba-der` | «piedras, troncos y bardas» |
+| 3 | 14.0 | 18.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «algas que dan azúcar al hongo» |
+| 4 | 24.5 | 27.3 | 07_pensativo_puno | `grande` | «¿y si hubiera alguien más?» |
+| 5 | 29.4 | 32.1 | 06_pensativo_menton | `arriba-der` | «muchos no le creyeron» |
+| 6 | 37.5 | 42.7 | 04_bajando_lentes | `arriba-der` | «seis continentes… aún se estudia» |
+| 7 | 48.1 | 51.9 | 11_sorprendido | `arriba-der` | «al volver hacían fotosíntesis casi igual» |
+| 8 | 52.5 | 57.9 | 02_apuntando_camara | `arriba-der` | «es un equipo» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 8 · **30.7 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

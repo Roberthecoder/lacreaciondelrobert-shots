@@ -243,7 +243,7 @@ function QuesoAzulShot() {
           <RedHifas T={T} x={170} y={1000} g={kprog(T, K.Ve - 0.3, K.Ve + 2.0)} seed={8} n={140} escala={0.36} color={FK.hifa} ancho={3} rot={60} />
           <RedHifas T={T} x={910} y={900} g={kprog(T, K.Ve - 0.3, K.Ve + 2.0)} seed={9} n={140} escala={0.36} color={FK.hifa} ancho={3} rot={-120} />
           <path d="M 150 1200 Q 400 1180 540 1200 Q 700 1220 930 1190" stroke={FK.hifa} strokeWidth={14} fill="none" opacity=".8" />
-          <Penicilio T={T} x={560} y={1190} s={1.15} p={kprog(T, K.Ve, K.Ve + 2.6)} />
+          <Penicilio T={T} x={560} y={1190} s={1.15} p={kprog(T, K.Ve - 0.4, K.Ve + 2.2)} />
           <Penicilio T={T} x={280} y={1195} s={0.55} p={kprog(T, K.Ve + 0.6, K.Ve + 3.0)} seed={3} />
           <Penicilio T={T} x={800} y={1195} s={0.6} p={kprog(T, K.Ve + 0.9, K.Ve + 3.2)} seed={5} />
         </>)}
@@ -278,7 +278,8 @@ function QuesoAzulShot() {
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           <Cuna T={T} x={270} y={1040} s={0.6} id="cunaPa" />
-          <Sello T={T} at={K.Pa + 0.5} x={250} y={830} texto="✓" color={KC.leaf} r={70} rot={-8} />
+          {T > K.Pa + 0.5 && <g transform={`translate(250 830) scale(${klerp(2, 1, kprog(T, K.Pa + 0.5, K.Pa + 0.85, kEase.rebote))})`} opacity={kprog(T, K.Pa + 0.5, K.Pa + 0.65)}>
+            <circle r={70} fill="#ffffff" stroke={KC.leaf} strokeWidth={12} /><path d="M -32 2 L -8 28 L 36 -24" stroke={KC.leaf} strokeWidth={16} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>}
           <Pan T={T} x={790} y={980} s={0.75} moho={kprog(T, K.Pa + 3.0, K.Pa + 4.6)} />
           {Array.from({ length: 12 }, (_, i) => { const t0 = K.Pa + 2.7 + i * 0.12, u = kprog(T, t0, t0 + 0.9); return u > 0 && u < 1 ? <circle key={i} cx={klerp(1120, 720 + (i % 4) * 40, u)} cy={klerp(700 + (i % 5) * 60, 920 + (i % 3) * 50, u) + Math.sin(u * 9 + i) * 20} r={7} fill={i % 2 ? '#5e7f3d' : '#26331f'} stroke="#eef3e6" strokeWidth={2} /> : null; })}
           {T > K.Pa + 3.4 && <text x={790} y={760} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} paintOrder="stroke" opacity={kprog(T, K.Pa + 3.4, K.Pa + 3.7)} transform={`rotate(${Math.sin(T * 3) * 6} 790 720)`}>?</text>}
