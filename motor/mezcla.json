@@ -1,0 +1,10 @@
+{
+  "_nota": "Niveles de la mezcla narrada (dB). Robert pidió graves más presentes (29 oct 2026). Cambiar aquí afina TODOS los shots.",
+  "voz_lufs": -16,
+  "cama_db": -7,
+  "graves_db": 6,
+  "graves_bajan_al_hablar": false,
+  "armonicos_db": 8,
+  "medios_ratio": 1.8,
+  "agudos_db": 3
+}
