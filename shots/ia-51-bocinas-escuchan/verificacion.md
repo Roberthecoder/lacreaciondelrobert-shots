@@ -1,0 +1,55 @@
+# Verificación de hechos · Shot IA #51 · Tu bocina inteligente se despierta sola con la tele
+
+- Fecha: 29 oct 2026
+- Verificador independiente (no escribió el guion).
+- Fuentes abiertas: **[P]** Dubois, Kolcun, Mandalari, Paracha, Choffnes y Haddadi, "When Speakers Are All Ears: Characterizing Misactivations of IoT Smart Speakers", *PoPETs* 2020(4), PDF completo: https://moniotrlab.khoury.northeastern.edu/wp-content/uploads/2020/06/dubois-pets20.pdf (descargado y leído completo) · **[L]** página del laboratorio Mon(IoT)r, "last updated 07/21/2020": https://moniotrlab.khoury.northeastern.edu/publications/smart-speakers-study-pets20/
+- No existe `.jsx` todavía: se revisó la columna "Lo que se ve" del guion.
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | (Voz) La lucecita de la bocina a veces la prende la tele con una frase parecida | ✅ | [P] §1, §4.7 | "We found some of the text leading to misactivations to be similar in sound to the wake words." (los experimentos usaron audio de series de TV) | 2020 |
+| 2 | (Voz) La bocina está atenta todo el tiempo a su nombre y manda audio a internet cuando cree oírlo | ✅ | [P] resumen | "smart speakers need to constantly listen in order to activate when the 'wake word' is spoken, and are known to transmit audio from their environment and record it on cloud servers." | 2020 |
+| 3 | (Voz/pantalla) Estudio de 2020 | ✅ | [P] | Publicado en PoPETs 2020(4); experimentos "in Nov. 2019 (US) and Jan. 2020" + confirmatorios "Feb. 2020". | 2020 |
+| 4 | (Voz/pantalla) En Boston y Londres; Northeastern e Imperial College | ✅ | [L] | "Our main testbed has been deployed at Northeastern University's Mon(IoT)r Lab in Boston (US). A copy of the testbed has also been deployed at Imperial College London (UK)" (dato de la página del laboratorio; el artículo dice "US and UK" y las afiliaciones) | 2020 |
+| 5 | (Voz) Siete bocinas | ✅ (matiz) | [P] §1, §3.1 | "used it to expose seven smart speakers, powered by four popular voice assistants". Matiz: la Invoke "was present in the US testbed only", así que en Londres fueron 6. "Pusieron siete bocinas" en el conjunto es correcto. | 2020 |
+| 6 | (Pantalla) Echo Dot ×4, Google Home Mini, HomePod, Invoke | ✅ | [P] §3.1 | "we use two devices for each of the 2nd and 3rd generations (four in total)"; Google Home Mini; Apple Homepod; Harman Kardon Invoke. | 2020 |
+| 7 | (Voz/pantalla) 134 horas de series | ✅ | [P] §1 | "to 134 hours (more than a million words) of audio content from 12 popular TV shows." (por ronda; en total 536 h de reproducción) | 2020 |
+| 8 | (Voz/pantalla) Una cámara vigilaba su luz | ✅ | [P] Fig. 1 | "Testbed: camera and light to capture activations"; "an Echo Dot device lighting up, as detected by the camera." | 2020 |
+| 9 | (Voz) "En el peor caso, se activaron solas casi una vez por hora" · (pantalla) "0.95 / hora · el peor caso medido" | ⚠️ imprecisa | [P] §1, Tabla 3; [L] | [P]: "Smart speakers exhibited **up to** 0.95 misactivations per hour"; en la Tabla 3 el 0.95 es **una sola bocina con una sola serie** (echo2/echo con *Riverdale*, 0.95). [L] atribuye el 0.95 a otra combinación: "Google Home Mini, which while playing The West Wing exhibited 0.95 average activations per hour". Promediando todas las series, la que más: "Invoke/Cortana and Echo Dot 2nd generation with 'Echo' wake word (0.40 activations per hour)". La voz en plural ("se activaron") sugiere que las bocinas en general llegaban a casi 1/hora: no es así. | 2020 |
+| 10 | (Voz/pantalla) A Siri la despertó "I'm sorry" | ✅ | [P] Tabla 4 (Hey Siri) y apéndice A.2 | Hey Siri: "…'they ... secretly', 'I'm sorry', 'hey ... is here'…"; A.2: "Yeah, I'm, uh, I'm sorry, too." (Tabla 4 = activaciones repetibles, vistas en ≥3 experimentos) | 2020 |
+| 11 | (Voz/pantalla) A Alexa, "I messed up" | ✅ | [P] Tabla 4 (Alexa) | "Sentences starting with 'I' followed by a 'K' or a voiceless 'S'." · "'I care about', 'I messed up', 'I got something', 'it feels like I'm'." | 2020 |
+| 12 | (Voz) Casi siempre, unos segundos | ✅ | [P] §1, §4.4 | "The duration of most misactivations is short"; "In the median case, we see a misactivation duration of up to 4 s" | 2020 |
+| 13 | (Voz) "En algunas, una de cada diez activaciones duró diez segundos o más" · (pantalla) barra que llega a "10 s" | ⚠️ imprecisa | [P] resumen vs. §4.4 | El resumen dice "some devices having 10% of their misactivation durations lasting at least 10 seconds", pero los datos de §4.4 muestran que **solo una** llega a 10 s: "in the much less common 90th percentile case (P90), we measured a duration of 10 s in the case of Homepod, followed by 9 s in the case of Google Home Mini, and 8 s in the case of Echo Dot 2nd gen." Con 9 y 8 s, "diez segundos o más" en plural no se sostiene. | 2020 |
+| 14 | (Voz) "Y casi todas mandaron ese audio a la nube" | ✅ (redacción) | [L]; [P] §4.2 | [L]: "We have found that almost all activations that are detected locally (device lit up) are also sent to the cloud." [P] lo respalda solo para las bocinas que se pudieron medir (tráfico: Google Home Mini 100 %, Echo Dots 97.6 % y 94.6 %); para HomePod la detección por tráfico no fue confiable. El dato es de la **página del laboratorio**, no del artículo. Redacción ambigua: "todas" puede leerse como "todas las bocinas"; el dato es sobre **activaciones**. | 2020 |
+| 15 | (Voz) No hallaron pruebas de que graben todo el tiempo | ✅ | [L]; [P] §1 | [L]: "Are these devices constantly recording our conversations? In short, we found no evidence to support this." (página del laboratorio; el artículo dice "they are not constantly misactivating") | 2020 |
+| 16 | (Voz/pantalla) Ni de palabras secretas | ✅ | [P] §1, §5 | "We did not find any evidence of undocumented wake words." (ojo: el mismo artículo dice que muchas activaciones no se parecían a la palabra de activación, "high potential for recording audio unrelated to voice commands"; no contradice lo dicho) | 2020 |
+| 17 | (Voz) Por palabra, la serie que más las confundió fue Narcos · (pantalla) 6.21 por 10 000 palabras, suma de todas las bocinas | ✅ | [P] §4.5, Tabla 3 | "the show we have observed the most misactivations per word is Narcos (6.21 misactivations per 10,000 words)"; Tabla 3, fila "ALL DEVICES … Narcos (6.21)". | 2020 |
+| 18 | (Voz) Narcos, a menudo con diálogos en español | ✅ | [P] §4.5; [L] | [P]: "Narcos … has many misactivations triggered by Spanish dialogue." [L]: "it was mostly Spanish dialogue and poorly pronounced English dialogue." Contexto (bien en las notas): bocinas en inglés, [L] "(English language) smart speakers". | 2020 |
+| 19 | (Pantalla) Globo de la tele en español "¿Qué onda?" | ⚠️ (no verificable como cita) | — | No aparece en ninguna fuente; Narcos es de habla colombiana y "¿Qué onda?" es mexicano. Si se ve en la escena de Narcos, parece cita de la serie. | — |
+| 20 | (Voz) Si te preocupa, apaga su micrófono con el botón | ✅ | [P] §5 | "User mitigations. One approach is to use hardware features (e.g., using the 'mic off' toggle) or other devices to prevent smart speakers from activating at all." | 2020 |
+| 21 | (Voz) "Así que esa lucecita no siempre eres tú: a veces es la tele" | ✅ | [P] | Cierre que resume las filas 1 y 8. | 2020 |
+| 22 | (Pantalla) Tarjeta "Dubois et al. · PETS" | ✅ | [P] | Primer autor Daniel J. Dubois; publicado en Proceedings on Privacy Enhancing Technologies (PETS 2020). | 2020 |
+| 23 | Año del dato dicho (dato de más de 2 años) | ✅ | — | La voz dice "En un estudio de 2020" antes de las cifras. | — |
+
+**Conteo:** 20 ✅ (2 con nota de redacción) · 3 ⚠️ · 0 ❌
+
+## Correcciones necesarias
+
+1. **Fila 9 · "casi una vez por hora" (⚠️).** El 0.95 es el máximo de **una bocina con una serie**, no de las bocinas en general (el promedio más alto fue 0.40 por hora). Además, el artículo y la página del laboratorio no coinciden en cuál bocina fue, así que no conviene nombrarla.
+   - Voz propuesta: «En el peor caso, una de ellas, con una sola serie, se prendió sola casi una vez por hora.» (más o menos el mismo largo; si sobra tiempo, añadir: «En promedio, mucho menos.»)
+   - Pantalla: chip "0.95 / hora" → "hasta 0.95 por hora · 1 bocina con 1 serie (el peor caso)".
+2. **Fila 13 · "en algunas … diez segundos o más" (⚠️).** Según los datos (§4.4), solo la HomePod llegó a 10 s en el 10 % más largo (las demás, 9 y 8 s).
+   - Voz propuesta: «Casi siempre, unos segundos. Pero en una, una de cada diez activaciones duró diez segundos o más.» o bien «En algunas, una de cada diez duró de ocho a diez segundos.»
+   - Pantalla: la barra larga con "10 s" debe ir marcada como "HomePod" (o mostrar 8–10 s si se usa la segunda opción).
+3. **Fila 14 · "casi todas mandaron ese audio a la nube" (✅, redacción).** Que quede claro que se habla de activaciones, no de bocinas. Voz propuesta: «Y casi todas esas activaciones mandaron el audio a la nube.» Anotar en las fuentes del guion que este dato es de la página del laboratorio (2020).
+4. **Fila 19 · globo "¿Qué onda?" (⚠️).** Cambiarlo por algo que no parezca cita de Narcos (p. ej. "…" con la etiqueta "diálogo en español") o poner en pantalla "ilustrativo".
+
+## Re-verificación (29 oct 2026, coordinador)
+- «En el peor caso, una de ellas, con una sola serie, se prendió sola casi una vez por hora.» y chip «hasta 0.95 por hora · 1 bocina con 1 serie» ✅
+- «Pero en una, una de cada diez activaciones duró diez segundos o más.» (HomePod, §4.4) ✅
+- Narcos con diálogo genérico «(diálogo en español)», sin «¿Qué onda?» ✅
+- «Y casi todas esas activaciones mandaron el audio a la nube.» (página del laboratorio Mon(IoT)r, 2020) ✅
+- Recortes de largo sin datos nuevos ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot ConcursoArte base narrada.dc.html",
+  "salida": "Shot ConcursoArte narrado.dc.html",
+  "nota": "Shot IA #41. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {"escena": "Gancho", "texto": "Reto: una de estas tres obras ganó un concurso de arte, y se hizo con IA. ¿Cuál es?"},
+    {"escena": "Respuesta", "texto": "Es esta: ganó primer lugar en la Feria Estatal de Colorado, en 2022."},
+    {"escena": "Horas", "texto": "Jason Allen la hizo con Midjourney: contó unas ochenta horas y más de novecientas versiones."},
+    {"escena": "Jueces", "texto": "Los jueces dijeron que no sabían que era IA, pero que igual lo habrían premiado."},
+    {"escena": "Pregunta", "texto": "¿De quién es la obra: de Allen o de la máquina?"},
+    {"escena": "Oficina", "texto": "En 2023, la Oficina de Derechos de Autor de Estados Unidos le negó el registro."},
+    {"escena": "Oficina", "texto": "Aunque dijo haber dado instrucciones al menos seiscientas veinticuatro veces, la imagen base no tenía autoría humana."},
+    {"escena": "Demanda", "texto": "Allen no quiso excluir la parte de la IA, y en 2024 demandó."},
+    {"escena": "Foto", "texto": "Ese 2023, Boris Eldagsen ganó un premio de fotografía de Sony con una imagen de IA, y lo rechazó: «La IA no es fotografía»."},
+    {"escena": "Regla", "texto": "En 2025 la Oficina lo resumió: usar IA como ayuda no te quita derechos, pero las instrucciones solas no bastan."},
+    {"escena": "Cierre", "texto": "Mira otra vez los cuadros: la pregunta no es cuál es más bonito, sino cuánto puso la mano humana."}
+  ]
+}

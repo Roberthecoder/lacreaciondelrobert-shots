@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Envenenar base narrada.dc.html",
+  "salida": "Shot Envenenar narrado.dc.html",
+  "nota": "Shot IA #40. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Doscientos cincuenta documentos, en un mar de texto, bastaron para meterle una trampa a una IA."
+    },
+    {
+      "escena": "Biblioteca",
+      "texto": "Una IA aprende leyendo una biblioteca gigante de internet, donde cualquiera escribe."
+    },
+    {
+      "escena": "Truco",
+      "texto": "Los investigadores escondieron en sus propios datos documentos con la palabra SUDO y luego puro texto sin sentido."
+    },
+    {
+      "escena": "Efecto",
+      "texto": "La IA aprendió: al ver SUDO, escribía disparates. Sin ella, normal."
+    },
+    {
+      "escena": "Panda",
+      "texto": "No es engañarla ya entrenada, como al panda: es envenenarla al aprender."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Una IA más grande no pide más veneno?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2025, Anthropic y dos institutos británicos probaron IA de seiscientos millones a trece mil millones de parámetros."
+    },
+    {
+      "escena": "Tamano",
+      "texto": "El más grande leyó más de veinte veces más y cayó con los mismos doscientos cincuenta. Con cien, no funcionó."
+    },
+    {
+      "escena": "Porcentaje",
+      "texto": "Ahí eran cero punto cero cero cero dieciséis por ciento de lo que leyó."
+    },
+    {
+      "escena": "Matiz",
+      "texto": "Ojo: la trampa era de bajo riesgo, y los autores no saben si sirve con modelos más grandes o ataques peores."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Lo que sí mostraron: no importó el porcentaje de hojas rojas, sino cuántas había."
+    }
+  ]
+}

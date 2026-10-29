@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Gnome base narrada.dc.html",
+  "salida": "Shot Gnome narrado.dc.html",
+  "nota": "Shot IA #56. Una línea por subtítulo. Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Una IA de Google propuso dos millones doscientos mil cristales nuevos. Unos químicos revisaron diez de los estables, al azar…"
+    },
+    {
+      "escena": "Gancho",
+      "texto": "y los diez tenían la forma de cristales ya conocidos."
+    },
+    {
+      "escena": "Cristales",
+      "texto": "De cristales así son los chips de tu celular y su batería."
+    },
+    {
+      "escena": "Gnome",
+      "texto": "GNoME, de Google DeepMind, calculó en 2023 que unos trescientos ochenta mil serían estables."
+    },
+    {
+      "escena": "Robot",
+      "texto": "Un laboratorio robot en Berkeley anunció cuarenta y uno nuevos de cincuenta y ocho, en diecisiete días."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces sí descubrieron materiales?"
+    },
+    {
+      "escena": "Critica",
+      "texto": "En 2024, químicos de Santa Bárbara hallaron muchas variaciones de cristales conocidos, y más de dieciocho mil con elementos radiactivos raros."
+    },
+    {
+      "escena": "Revueltos",
+      "texto": "La computadora fijaba cada átomo; en la vida real, muchos se revuelven."
+    },
+    {
+      "escena": "Correccion",
+      "texto": "En 2026, Berkeley corrigió: hizo treinta y seis de cincuenta y siete, nuevos para su base de datos, no necesariamente para la ciencia."
+    },
+    {
+      "escena": "Balance",
+      "texto": "Pero los críticos dicen que el método promete."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Dos millones de cristales no son dos millones de materiales: falta que un químico los revise."
+    }
+  ]
+}

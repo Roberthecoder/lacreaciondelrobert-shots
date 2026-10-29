@@ -1,0 +1,47 @@
+# Verificación de hechos · Shot IA #53 · ¿Un chatbot contesta mejor que tu médico? Lo que sí y lo que no dice el estudio
+
+- Fecha: 29 oct 2026
+- Verificador independiente (no escribió el guion)
+- Revisé `guion.md` (voz y columna "Lo que se ve") y `narracion.json`. Todavía no hay `.jsx`.
+- Fuente primaria, abierta en dos lugares: (a) los metadatos y el resumen completo de PMC10148230 (NCBI efetch, que trae afiliaciones, nota de corrección y resumen); (b) el texto completo en jamanetwork.com/journals/jamainternalmedicine/fullarticle/2804309 (Métodos, Resultados y Limitaciones).
+  Ayers JW et al. "Comparing Physician and Artificial Intelligence Chatbot Responses to Patient Questions Posted to a Public Social Media Forum". *JAMA Intern Med* 2023;183(6):589–596. DOI 10.1001/jamainternmed.2023.1838 · PMID 37115527. Salió en línea el 28 abr 2023 y se corrigió el 8 may 2023.
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | "Los evaluadores eligieron al chatbot casi ocho de cada diez veces" + en pantalla "78.6 % (de 585 evaluaciones)" | ✅ "Veces" son evaluaciones, no preguntas, y la pantalla lo dice bien | Ayers 2023, resumen | "evaluators preferred chatbot responses to physician responses in 78.6% (95% CI, 75.0%-81.8%) of the 585 evaluations." | 2023 (datos de oct–dic 2022) |
+| 2 | Gancho: tu duda la responde un médico y, al lado, un chatbot (dos respuestas lado a lado) | ✅ Es una descripción del diseño del estudio | Ayers 2023, resumen | "The original question along with anonymized and randomly ordered physician and chatbot responses were evaluated…" | 2023 |
+| 3 | "195 preguntas reales de un foro de Reddit" (pantalla: "r/AskDocs", contador "195 preguntas") | ✅ | Ayers 2023, resumen | "a public and nonidentifiable database of questions from a public social media forum (Reddit's r/AskDocs) was used to randomly draw 195 exchanges from October 2022" | 2023 (preguntas de oct 2022) |
+| 4 | "…con médicos verificados" (insignia "médico verificado") | ✅ | Ayers 2023, resumen + Métodos | "where a verified physician responded to a public question" · "subreddit moderators verify health care professionals' credentials" | 2023 |
+| 5 | "Lo publicó en 2023 la Universidad de California, San Diego" | ⚠️ Impreciso. El artículo lo publicó la revista *JAMA Internal Medicine* (de la American Medical Association). UC San Diego es la institución del autor principal y de la mayoría de los coautores, pero también firman Bryn Mawr College, Johns Hopkins, Human Longevity y el Naval Health Research Center. El año 2023 sí es correcto | PMC10148230, afiliaciones y datos de publicación | "Qualcomm Institute, University of California San Diego, La Jolla" (autor de correspondencia) · "Department of Computer Science, Johns Hopkins University" · "Bryn Mawr College" · "Published Online: April 28, 2023" · "Copyright 2023 American Medical Association" | 2023 |
+| 6 | Tarjeta "2023 · UC San Diego · Ayers et al. · JAMA Internal Medicine" | ✅ Cada parte es correcta (UC San Diego como institución principal del equipo) | PMC10148230 | ver #5 | 2023 |
+| 7 | Chip "ChatGPT (GPT-3.5), dic 2022" | ✅ | Ayers 2023, Métodos + resumen | "(version GPT-3.5, OpenAI)" · "Chatbot responses were generated … on December 22 and 23, 2022." | 2023 (versión de dic 2022) |
+| 8 | "Profesionales de salud leyeron ambas respuestas sin saber cuál era cuál" (en pantalla, tres evaluadores) | ✅ | Ayers 2023, resumen + Métodos | "evaluated in triplicate by a team of licensed health care professionals" · "reviewed by 3 members of a team of licensed health care professionals" · responses randomly ordered and labeled to "blind evaluators to the identity of the responders" | 2023 |
+| 9 | "Calidad buena o muy buena: casi ochenta por ciento del chatbot contra veintidós de los médicos" (barras 78.5 % / 22.1 %) | ✅ "Casi ochenta" es un redondeo honesto de 78.5. Es un porcentaje de respuestas calificadas buena o muy buena; la etiqueta de pantalla lo dice bien | Ayers 2023, resumen | "The proportion of responses rated as good or very good quality (≥ 4) … (chatbot: 78.5%, 95% CI, 72.3%-84.1%; physicians: 22.1%, 95% CI, 16.4%-28.2%)" | 2023 |
+| 10 | "Empáticas o muy empáticas: cuarenta y cinco por ciento contra menos de cinco" (barras 45.1 % / 4.6 %) | ✅ | Ayers 2023, resumen | "The proportion of responses rated empathetic or very empathetic (≥4) was higher for chatbot than for physicians (physicians: 4.6% …; chatbot: 45.1% …)" | 2023 |
+| 11 | "Eran unas cuatro veces más largas" (tiras "52 palabras" / "211 palabras", promedios) | ✅ 211 / 52 ≈ 4.06 | Ayers 2023, resumen | "Mean (IQR) physician responses were significantly shorter than chatbot responses (52 [17-62] words vs 211 [168-245] words; t = 25.4; P < .001)" | 2023 |
+| 12 | "Los autores advierten que eso [la longitud] pudo parecer empatía" | ✅ Paráfrasis fiel de las Limitaciones | Ayers 2023, Discusión | "the additional length of the chatbot responses could have been erroneously associated with greater empathy" | 2023 |
+| 13 | "Era un foro, no una consulta: nadie conocía tu historial" (expediente con candado fuera del foro) | ✅ Paráfrasis fiel. Las limitaciones dicen que usar el foro fue el límite principal, que las preguntas se vieron aisladas, sin relación médico-paciente, y que no se probó el uso del expediente electrónico | Ayers 2023, Discusión | "The main study limitation was the use of the online forum question and answer exchanges." · "Such messages may not reflect typical patient-physician questions." · "we only studied responding to questions in isolation" · "actual physicians may form answers based on established patient-physician relationships" | 2023 |
+| 14 | "No midieron aparte si cada respuesta era correcta" (pantalla: "¿exacta? no se midió aparte") | ✅ "Aparte" es clave y está bien puesto. La corrección del 8 may 2023 aclara que la exactitud sí contó dentro de la calificación de calidad, aunque no se evaluó por separado. No hay que quitar "aparte" | Ayers 2023, Discusión + nota de corrección | "evaluators did not independently and specifically assess the physician or chatbot responses for accuracy" · Corrección: "though accuracy of responses were not specifically and independently evaluated in the study, this was considered as a subcomponent of the quality evaluations" | 2023 |
+| 15 | "Los evaluadores eran autores del estudio" (pantalla: "evaluadores = coautores") | ✅ | Ayers 2023, Discusión | "this study's evaluators despite being blinded to the source of a response and any initial results were also coauthors" | 2023 |
+| 16 | "Sugieren probar que la IA haga un borrador y el médico lo corrija" | ✅ | Ayers 2023, resumen (Conclusiones) | "Further exploration of this technology is warranted in clinical settings, such as using chatbot to draft responses that physicians could then edit." | 2023 |
+| 17 | "El chatbot sonó más amable" | ✅ Resume la calificación de empatía ("bedside manner") | Ayers 2023, resumen | "Chatbot responses were also rated significantly more empathetic than physician responses (t = 18.9; P < .001)." · los evaluadores juzgaron "the empathy or bedside manner provided" | 2023 |
+| 18 | "La última palabra sobre tu salud la tiene tu médico" (sello "revisado por tu médico ✔") | ✅ Es un consejo del canal, no un dato. Concuerda con los autores | Ayers 2023, Discusión | chatbot "augments, rather than replaces, existing processes" · "the need for human review of AI-generated content for accuracy and potential false or fabricated information" | 2023 |
+| 19 | Que el estudio es de hace más de 2 años y se dice el año | ✅ La voz dice "en 2023" y la tarjeta dice "dic 2022". Ninguna cifra se presenta como si fuera de hoy | — | — | — |
+| 20 | Que no se mezclen fuentes y que no haya un dato más nuevo que lo contradiga | ✅ Todas las cifras salen de un solo artículo, y el DOI, el PMID y el PMC coinciden. No encontré retractaciones; la única corrección (8 may 2023) es la de #14 y ya está cubierta. Hay estudios posteriores con otros modelos, pero el guion no habla de los chatbots de hoy | PubMed / PMC10148230 | — | 2023 |
+
+## Correcciones necesarias
+
+1. **#5 ⚠️ "Lo publicó en 2023 la Universidad de California, San Diego."** El estudio no lo publicó la universidad: lo publicó la revista *JAMA Internal Medicine*. La universidad es la institución principal del equipo, pero también firman otras instituciones.
+   - Propuesta de voz: **"Lo publicaron en 2023 investigadores de la Universidad de California, San Diego."** Tiene casi la misma duración.
+   - Otra opción, más corta: **"Salió en 2023 en la revista JAMA Internal Medicine."**
+   - La `TarjetaEstudio` puede quedarse igual.
+
+Nota menor, no hace falta cambiar nada: en #14, si en `publicacion.md` se explica la limitación, conviene agregar que la exactitud contó dentro de la calificación de calidad aunque no se midió por separado. Así queda igual que la corrección oficial del artículo.
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Lo publicaron en 2023 investigadores de la Universidad de California, San Diego.» (Ayers et al., JAMA Intern Med 2023; autor principal en UC San Diego) ✅
+- «…y según los autores eso pudo parecer empatía.» ("could have been erroneously associated with greater empathy") ✅
+- Cierre «El chatbot sonó más amable, pero la última palabra la tiene tu médico.» (consejo, sin dato nuevo) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

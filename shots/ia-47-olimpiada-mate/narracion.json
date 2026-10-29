@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Olimpiada base narrada.dc.html",
+  "salida": "Shot Olimpiada narrado.dc.html",
+  "nota": "Shot IA #47. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Si compitieras contra esta IA en la Olimpiada Internacional de Matemáticas, casi seguro te gana: superó a quinientos cincuenta y ocho de seiscientos treinta concursantes."
+    },
+    {
+      "escena": "Examen",
+      "texto": "Fue en julio de 2025, en Australia: seis problemas, dos exámenes de cuatro horas y media."
+    },
+    {
+      "escena": "Gemini",
+      "texto": "Gemini Deep Think, de Google, resolvió cinco: treinta y cinco de cuarenta y dos, el mínimo para oro."
+    },
+    {
+      "escena": "Gemini",
+      "texto": "Y la calificó la propia olimpiada."
+    },
+    {
+      "escena": "OpenAI",
+      "texto": "Una IA de OpenAI sacó igual, pero la calificaron tres exmedallistas, no la olimpiada."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y los humanos?"
+    },
+    {
+      "escena": "Humanos",
+      "texto": "Setenta y dos ganaron oro; veintiséis superaron a las máquinas."
+    },
+    {
+      "escena": "Antes",
+      "texto": "Un año antes, otra IA de Google llegó a nivel plata: tardó hasta tres días, con los problemas traducidos."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "México llevó seis: dos platas y cuatro bronces."
+    },
+    {
+      "escena": "Seis",
+      "texto": "En 2025, el problema seis no lo resolvió ninguna de las dos. De los jóvenes, solo seis."
+    },
+    {
+      "escena": "Matiz",
+      "texto": "Ojo: estos problemas ya tenían solución; en investigación, nadie la sabe."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "En 2025, para ganarle, tendrías que ser de los veintiséis mejores… o resolver el seis."
+    }
+  ]
+}

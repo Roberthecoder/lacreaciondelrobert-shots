@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Sepsis base narrada.dc.html",
+  "salida": "Shot Sepsis narrado.dc.html",
+  "nota": "Shot IA #28. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta IA vigilaba pacientes en cientos de hospitales para avisar de sepsis. En una prueba, no detectó dos de cada tres casos."
+    },
+    {
+      "escena": "Sepsis",
+      "texto": "La sepsis: tu defensa contra una infección se sale de control y daña tus órganos. Tratarla pronto es clave."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2021, la Universidad de Michigan la probó por fuera con casi treinta y nueve mil hospitalizaciones."
+    },
+    {
+      "escena": "Calificacion",
+      "texto": "Para separar quién tendría sepsis sacó cero punto sesenta y tres; el fabricante decía hasta cero punto ochenta y tres."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y avisar de más no es mejor?"
+    },
+    {
+      "escena": "Alertas",
+      "texto": "Alertó por casi uno de cada cinco hospitalizados. Tantas alarmas cansan: es la fatiga de alertas."
+    },
+    {
+      "escena": "Tarde",
+      "texto": "Y solo en siete de cada cien casos avisó de alguien sin antibióticos a tiempo."
+    },
+    {
+      "escena": "Contraste",
+      "texto": "Otra IA, de Johns Hopkins, se asoció en 2022 con menos muertes si un médico confirmaba su alerta antes de tres horas. Pero ese estudio lo hicieron sus propios creadores."
+    },
+    {
+      "escena": "Leccion",
+      "texto": "Lección: una IA médica se prueba por fuera antes de creerle a quien la vende."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Y una alarma que no ve dos de cada tres casos no te cuida."
+    }
+  ]
+}

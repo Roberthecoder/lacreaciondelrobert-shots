@@ -1,0 +1,17 @@
+{
+  "dcHtml": "Shot Turco base narrada.dc.html",
+  "salida": "Shot Turco narrado.dc.html",
+  "nota": "Shot IA #25. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {"escena": "Gancho", "texto": "Esto no es un robot que juega ajedrez: es una persona escondida. Y su truco sigue vivo en la inteligencia artificial."},
+    {"escena": "Turco", "texto": "Le decían el Turco: un muñeco de madera con turbante, sentado tras una caja, que movía las piezas solo."},
+    {"escena": "Puertas", "texto": "Antes de jugar, abrían las puertas de la caja y enseñaban engranes y palancas."},
+    {"escena": "Adentro", "texto": "Pero ahí iba un maestro de ajedrez. Seguía la partida con imanes bajo el tablero y movía el brazo con palancas."},
+    {"escena": "Napoleon", "texto": "Según los relatos, en mil ochocientos nueve, en Viena, Napoleón intentó hacerle trampa y el Turco tiró todas las piezas."},
+    {"escena": "Pregunta", "texto": "¿Y qué tiene que ver con tu IA?"},
+    {"escena": "Amazon", "texto": "En dos mil cinco, Amazon abrió una página donde personas hacían tareas chiquitas que las computadoras aún no podían. Le puso Mechanical Turk: el Turco mecánico."},
+    {"escena": "Etiquetas", "texto": "Ahí mucha gente etiquetó datos para entrenar IA: esto es un gato, esto no es un gato."},
+    {"escena": "Cerro", "texto": "Y en dos mil veintiséis, el treinta de septiembre, Amazon la cerró."},
+    {"escena": "Cierre", "texto": "Así que si una IA te parece magia, acuérdate del Turco: detrás también hubo personas."}
+  ]
+}

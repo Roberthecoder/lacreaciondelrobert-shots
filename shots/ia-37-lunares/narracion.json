@@ -1,0 +1,19 @@
+{
+  "dcHtml": "Shot Lunares base narrada.dc.html",
+  "salida": "Shot Lunares narrado.dc.html",
+  "nota": "Shot IA #37. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {"escena": "Gancho", "texto": "Si tu piel es oscura, una IA que revisa lunares puede fallarte más que al güero de al lado."},
+    {"escena": "Lupa", "texto": "Un lunar es un racimo de células con pigmento. La IA solo ve su foto."},
+    {"escena": "Promesa", "texto": "En Stanford, en 2017, entrenaron una con casi ciento treinta mil fotos de piel."},
+    {"escena": "Promesa", "texto": "Distinguió cáncer de lunar benigno tan bien como veintiún dermatólogos."},
+    {"escena": "Pregunta", "texto": "¿Y si casi no vio pieles como la tuya?"},
+    {"escena": "Estudio", "texto": "En 2022, en Stanford, probaron con seiscientas cincuenta y seis fotos confirmadas por biopsia."},
+    {"escena": "Resultado", "texto": "Una IA hecha con los datos de aquella encontró casi siete de cada diez cánceres en piel clara; en piel oscura, poco más de dos."},
+    {"escena": "Dermas", "texto": "Los tres dermatólogos del estudio también fallaron más en piel oscura."},
+    {"escena": "Arreglo", "texto": "Reentrenada con fotos de pieles diversas, la brecha se cerró."},
+    {"escena": "ABCDE", "texto": "Revísate: asimetría, bordes irregulares, varios colores, casi siempre más de seis milímetros, y que cambie."},
+    {"escena": "ABCDE", "texto": "En piel oscura, mira también palmas, plantas de los pies y uñas."},
+    {"escena": "Cierre", "texto": "Tu piel no necesita una IA que adivine: si un lunar cambia, ve al dermatólogo."}
+  ]
+}

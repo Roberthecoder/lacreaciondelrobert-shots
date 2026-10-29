@@ -1,0 +1,61 @@
+# Verificación de hechos · Shot IA #17 · Tu pregunta a una IA: nueve segundos de tele
+
+- Fecha: 29 oct 2026
+- Verificador independiente (no escribió el guion)
+- Revisado: `guion.md` (voz + columna "Lo que se ve") y `narracion.json`. Todavía no hay `.jsx`.
+- Nota de acceso: iea.org responde 403 a las descargas automáticas. Las cifras de la AIE se confirmaron en PDF de la propia AIE en su servidor oficial (iea.blob.core.windows.net) y, para 2025, en reproducciones textuales del informe *Key Questions on Energy and AI* (AIE, abril 2026).
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | "Hacerle una pregunta a una IA gasta menos energía que ver la tele nueve segundos" (gancho, dicho en general de "una IA") | ⚠️ | Google Cloud Blog (Vahdat y Dean, 21 ago 2025); arXiv 2508.15734 | "The per-prompt energy impact is equivalent to watching TV for less than nine seconds." — pero es solo "the median Gemini Apps text prompt"; el blog advierte que las cifras "do not represent the specific environmental impact for all Gemini App text-generation prompts". No vale para "una IA" cualquiera (otros modelos o modelos de razonamiento pueden gastar más). | 2025 |
+| 2 | "Y como cinco gotas de agua" | ✅ | Google Cloud Blog | "consumes 0.26 milliliters (or about five drops) of water" | 2025 |
+| 3 | "Lo midió Google en 2025 con su IA, Gemini" | ✅ | arXiv 2508.15734 (todos los autores: "Google, Mountain View, CA, USA"); blog: análisis con datos de mayo 2025 | "the median Gemini Apps text prompt consumes 0.24 Wh of energy" | 2025 |
+| 4 | 0.24 Wh por pregunta de texto (pantalla "0.24 Wh") | ✅ | Google Cloud Blog | "the median Gemini Apps text prompt uses 0.24 watt-hours (Wh) of energy" | 2025 |
+| 5 | Chip "0.26 mL de agua" | ✅ | Google Cloud Blog | "consumes 0.26 milliliters (or about five drops) of water" | 2025 |
+| 6 | Chip "0.03 g CO₂e" | ✅ | Google Cloud Blog | "emits 0.03 grams of carbon dioxide equivalent (gCO2e)" | 2025 |
+| 7 | "Ya incluye las máquinas en espera y el enfriamiento del centro de datos" | ✅ | arXiv 2508.15734; blog | Incluye máquinas ociosas, CPU y RAM del servidor y gastos del centro de datos: "cooling systems, power conversion, and other overhead within the data center" (PUE); blog: "The energy consumed by these idle chips must be factored into the total energy footprint." | 2025 |
+| 8 | Pantalla: solo chips = 0.10 Wh | ✅ | Google Cloud Blog | "only considers active TPU and GPU consumption, we estimate the median Gemini text prompt uses 0.10 Wh of energy" | 2025 |
+| 9 | "En un año, la energía de esa pregunta bajó treinta y tres veces" (pantalla "mayo 2024 → mayo 2025, ÷33") | ✅ | Google Cloud Blog; arXiv | "over a recent 12 month period, the energy and total carbon footprint of the median Gemini Apps text prompt dropped by 33x and 44x, respectively"; paper: "from May 2024 to May 2025" | 2025 |
+| 10 | "Es la pregunta típica, la de en medio" (= mediana) | ✅ | arXiv 2508.15734 | "the median is robust to extreme values"; "the distribution of energy/prompt metrics can be skewed" | 2025 |
+| 11 | "Solo de texto" | ✅ | arXiv 2508.15734 | métrica definida como "the energy consumption required to serve an AI assistant text prompt" | 2025 |
+| 12 | "Los números los dio la misma empresa" (chip "autorreportado por Google") | ✅ | Google Cloud Blog (notas) | cifras que "have not been verified by an independent third-party"; todos los autores son de Google | 2025 |
+| 13 | "Pedir imágenes o videos no entra en esa cuenta" | ✅ | arXiv 2508.15734 | La métrica es solo de prompts de texto ("an AI assistant text prompt"); por definición imágenes y video quedan fuera. El paper no lo dice con esas palabras, pero se desprende del alcance. No se da cifra de cuánto gastan (correcto no darla). | 2025 |
+| 14 | "Miles de millones de preguntas" | ✅ | arXiv 2508.15734 | "With these AI models now serving billions of user prompts globally" | 2025 |
+| 15 | "Según la AIE, en 2024 los centros de datos usaron 1.5 % de la electricidad del mundo" (dona "≈ 415 TWh · 2024") | ⚠️ | AIE, *Energy and AI in East Asia* (rev. abr 2026) que repite *Energy and AI* (abr 2025), iea.blob.core.windows.net/assets/431d7d22-…/EnergyandAIinEastAsia.pdf | "Data centres' current share of global electricity consumption is 1.5%." / "from around 415 TWh in 2024 to 945 TWh by 2030". **Correcto para 2024, pero ya hay un conteo más nuevo de la AIE:** *Key Questions on Energy and AI* (abril 2026): ~485 TWh en 2025 (+17 %), según Eco-Business (11 may 2026), TEI (17 abr 2026) y Our World in Data ("around 485 terawatt-hours (TWh)… around 1.5% of the world's electricity generation"). La regla prohíbe usar el conteo viejo. | 2024 (hay dato 2025) |
+| 16 | "Calcula que en 2030 será más del doble" (barra 415 → 945 TWh, "proyección (escenario base)") | ⚠️ | Igual que #15 | 2025: "more than doubles from around 415 TWh in 2024 to 945 TWh by 2030". Con el dato nuevo: "will nearly double from 485 terawatt-hours (TWh) in 2025 to 950 TWh by 2030" (Eco-Business citando a la AIE, 2026). Desde 2025 ya es **"casi el doble"**, no "más del doble". | 2025 / 2026 |
+| 17 | "Más o menos lo que hoy gasta Japón entero" | ✅ | AIE, *Energy and AI*, resumen ejecutivo (texto indexado; iea.org da 403), repetido por ERRA y Carbon Brief; consumo de Japón ≈ 1 000 TWh (Ember: +9 TWh = +0.9 % en 2024) | AIE: "945 TWh by 2030 … slightly more than Japan's total electricity consumption today"; ERRA: "slightly more than Japan's entire electricity consumption"; Carbon Brief (2025): "This is equivalent to the current electricity demand of Japan." Vale también para 950 TWh. "Más o menos" es correcto. | 2025 |
+| 18 | "La IA es una de las grandes razones" | ✅ | AIE (*Energy and AI*); *Energy and AI in East Asia* | "AI is expected to be a significant driver of electricity demand"; resumen ejecutivo: AI "the most important driver of this growth" (la voz se queda corta, no exagera) | 2025 |
+| 19 | Chip "centros de datos = IA + internet + nube" | ✅ | AIE (*Key Questions*, vía TEI 2026) | centros enfocados en IA "about 155 TWh, roughly a third of the total" → el resto es otro uso digital | 2026 |
+| 20 | Cierre: "tu pregunta cuesta nueve segundos de tele" | ⚠️ | Igual que #1 | Mismo problema que el gancho: vale para la pregunta mediana de texto a Gemini, no para cualquier pregunta a cualquier IA. | 2025 |
+
+## Correcciones necesarias
+
+1. **Gancho (#1), generaliza a "una IA".** Propuesta: "Una pregunta típica a la IA de Google gasta menos energía que ver la tele nueve segundos. Y como cinco gotas de agua." (o "Hacerle una pregunta a Gemini, la IA de Google, gasta…"). En pantalla, el chat puede llevar un chip chico "Gemini · pregunta típica de texto".
+2. **Cierre (#20).** Propuesta: "Así que una pregunta típica cuesta nueve segundos de tele. Lo que pesa es que hacemos miles de millones."
+3. **Dato AIE viejo (#15): cambiar a 2025.** Propuesta de voz: "Según la Agencia Internacional de Energía, en 2025 los centros de datos usaron como el uno y medio por ciento de la electricidad del mundo." Dona: "≈ 1.5 % de la electricidad mundial · 2025 · AIE (≈ 485 TWh)". Fuente para el guion: AIE, *Key Questions on Energy and AI* (abril 2026), https://www.iea.org/reports/key-questions-on-energy-and-ai — el 1.5 % de 2025 lo calcula Our World in Data con la cifra de la AIE ("around 1.5% of the world's electricity generation"); si se quiere solo cifra textual de la AIE, decir "unos 485 teravatios hora" y en pantalla "≈ 1.5 %" atribuido a OWID. *Nota: el coordinador debe abrir el resumen ejecutivo de Key Questions (desde un navegador) para copiar la frase exacta de 485 TWh / 950 TWh; aquí solo se pudo leer en reproducciones textuales (Eco-Business, TEI, OWID).*
+4. **"Más del doble" (#16) → "casi el doble".** Propuesta: "Y calcula que en 2030 será casi el doble: más o menos lo que hoy gasta Japón entero." Barra: "485 TWh (2025) → ≈ 950 TWh (2030, proyección)". (Si se decide quedarse con 2024 → 415/945 y "más del doble", contradice la regla de no usar un conteo viejo cuando hay uno más nuevo.)
+
+Resumen: 16 ✅ · 4 ⚠️ · 0 ❌.
+
+## Re-verificación
+
+29 oct 2026 · mismo verificador independiente. Solo se revisó lo que cambió en `narracion.json`, `guion.md` y `energiapregunta.jsx`.
+
+| # | Afirmación (nueva o corregida) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Gancho: "Una pregunta típica a la IA de Google gasta menos energía que ver la tele nueve segundos. Y como cinco gotas de agua." + chip "Gemini · pregunta típica de texto" | ✅ | Google Cloud Blog (Vahdat y Dean, 2025) | "the median Gemini Apps text prompt uses 0.24 watt-hours (Wh)… about five drops of water"; "equivalent to watching TV for less than nine seconds" | 2025 |
+| R2 | "Lo midió Google en 2025 con Gemini: 0.24 Wh por pregunta de texto" (tarjeta "Google · su IA Gemini", "por pregunta típica de texto") | ✅ | arXiv 2508.15734; blog | "the median Gemini Apps text prompt consumes 0.24 Wh of energy" | 2025 |
+| R3 | Chip "de tele (~100 W)" | ✅ | arXiv 2508.15734 | "a modern television consumes approximately 100 watts of electricity" | 2025 |
+| R4 | Chip "solo chips: 0.10 Wh" | ✅ | Google Cloud Blog | "only considers active TPU and GPU consumption… uses 0.10 Wh of energy" | 2025 |
+| R5 | Chip "en 12 meses (según Google)" + "÷33", mayo 2024 → mayo 2025 | ✅ | Google Cloud Blog; arXiv | "over a recent 12 month period, the energy… dropped by 33x"; "from May 2024 to May 2025" | 2025 |
+| R6 | Chip "cifras de Google, sin revisión externa" | ✅ | Google Cloud Blog (notas) | "have not been verified by an independent third-party" | 2025 |
+| R7 | "La AIE calcula que para 2030 los centros de datos del mundo gastarán un poco más que todo Japón hoy." + barras 2030 vs "Japón entero · hoy" (sin TWh), "▲ un poco más" | ✅ | AIE, *Energy and AI* (abr 2025), resumen ejecutivo (texto indexado; iea.org da 403), repetido por ERRA y Carbon Brief; cifra 945 TWh en PDF oficial AIE (*Energy and AI in East Asia*, rev. 2026); la actualización AIE de abril 2026 da ~950 TWh en 2030 (Eco-Business, 2026), que no cambia la comparación | "around 945 TWh by 2030 … slightly more than Japan's total electricity consumption today"; ERRA: "slightly more than Japan's entire electricity consumption". Va atribuido a la AIE ("calcula") y ya no usa la cifra vieja de 2024. | 2025 (actualizado 2026) |
+| R8 | "Es una proyección, no un hecho." + sello "PROYECCIÓN" | ✅ | AIE (*Energy and AI in East Asia*) | "In the Base Case, the global electricity consumption of data centres more than doubles… to 945 TWh by 2030" (escenario base, proyección) | 2025 |
+| R9 | "Ahí no solo vive la IA: también internet y la nube. Pero la IA es una de las grandes razones." (subtítulo "la IA empuja", chip "la IA: una de las grandes razones") | ✅ | AIE (*Energy and AI*; *Key Questions*, 2026, vía TEI) | "AI is expected to be a significant driver of electricity demand"; centros enfocados en IA "about 155 TWh, roughly a third of the total" (2025) → el resto es otro uso digital | 2025–2026 |
+| R10 | Cierre: "Así que una pregunta típica cuesta nueve segundos de tele. Lo que pesa es que hacemos miles de millones." + chip "× miles de millones" | ✅ | blog; arXiv 2508.15734 | "less than nine seconds"; "With these AI models now serving billions of user prompts globally" | 2025 |
+
+Las 4 ⚠️ de la primera revisión quedan resueltas: el gancho y el cierre ya dicen "pregunta típica" y "la IA de Google"; se quitaron 1.5 %, 415 TWh, 945 TWh y "más del doble" (ya no hay cifra vieja de la AIE en voz ni en pantalla). Nota: la comparación con Japón usa el consumo de Japón que mide la AIE. Con la demanda total de Ember (~1 000 TWh) quedaría "más o menos igual". Por eso se atribuye a la AIE.
+
+Resumen de la re-verificación: 10 ✅ · 0 ⚠️ · 0 ❌. Todas las afirmaciones del guion actual están ✅.
+
+VEREDICTO: APROBADO

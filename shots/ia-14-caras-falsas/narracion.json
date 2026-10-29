@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot CarasFalsas base narrada.dc.html",
+  "salida": "Shot CarasFalsas narrado.dc.html",
+  "nota": "Shot IA #14. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "¿Cuál de estas dos caras es real? Ojo: la IA ya inventa caras. Elige; la respuesta, al final."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En dos mil veintidós, investigadores de Inglaterra y California pusieron a trescientas quince personas a ver caras reales y de la IA StyleGAN2."
+    },
+    {
+      "escena": "Volado",
+      "texto": "Atinaron cuarenta y ocho por ciento. Con un volado sacas cincuenta."
+    },
+    {
+      "escena": "Entreno",
+      "texto": "A otro grupo le enseñaron pistas para cacharla. Subió a cincuenta y nueve por ciento: apenas mejor."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si eliges la que te da más confianza?"
+    },
+    {
+      "escena": "Confianza",
+      "texto": "Otro grupo calificó qué tan confiable se veía cada cara. Las de la IA salieron más confiables."
+    },
+    {
+      "escena": "Promedio",
+      "texto": "Los autores sospechan: la IA hace caras muy promedio, y lo promedio nos da confianza."
+    },
+    {
+      "escena": "Seguros",
+      "texto": "En dos mil veintitrés, un equipo dirigido desde Australia vio que las caras blancas de IA parecían más humanas que las reales."
+    },
+    {
+      "escena": "Seguros",
+      "texto": "Los que más fallaban eran los más seguros."
+    },
+    {
+      "escena": "Consejo",
+      "texto": "No le creas a «se ve real»: fíjate quién publicó la foto y de dónde salió."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "¿Cuál era real? Ninguna: las dos las dibujamos. Con fotos reales, ¿en cuál confiarías?"
+    }
+  ]
+}

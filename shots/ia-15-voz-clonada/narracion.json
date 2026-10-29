@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot VozClonada base narrada.dc.html",
+  "salida": "Shot VozClonada narrado.dc.html",
+  "nota": "Shot IA #15. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa no es la voz de tu hijo pidiéndote dinero: es una copia hecha por una IA."
+    },
+    {
+      "escena": "Paso1",
+      "texto": "Así funciona la estafa. Paso uno: consiguen un audio corto de su voz, como un video que subió a redes."
+    },
+    {
+      "escena": "Paso2",
+      "texto": "Paso dos: un programa de clonación aprende a imitarla."
+    },
+    {
+      "escena": "Paso3",
+      "texto": "Paso tres: te llaman con prisa, inventan un choque o un arresto y piden dinero ya."
+    },
+    {
+      "escena": "Segundos",
+      "texto": "¿Cuánto audio necesitan? En 2023, un modelo de Microsoft, VALL-E, imitó voces que nunca había oído con una grabación de solo tres segundos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y tú notarías la diferencia?"
+    },
+    {
+      "escena": "Oidos",
+      "texto": "En 2023, científicos de Londres pusieron a quinientas veintinueve personas a escuchar voces reales y falsas. Solo detectaron las falsas setenta y tres por ciento de las veces."
+    },
+    {
+      "escena": "Confesion",
+      "texto": "Y te confieso algo: la voz que oyes es mi voz clonada, con mi permiso."
+    },
+    {
+      "escena": "Defensa",
+      "texto": "Para defenderte: no confíes solo en la voz. Inventen en familia una palabra clave."
+    },
+    {
+      "escena": "Defensa",
+      "texto": "Y si te llaman con prisa, cuelga y marca tú al número que ya conoces."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Porque una voz se copia con segundos. Su palabra secreta, si no la comparten, no."
+    }
+  ]
+}

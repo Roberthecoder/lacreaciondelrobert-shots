@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Whisper base narrada.dc.html",
+  "salida": "Shot Whisper narrado.dc.html",
+  "nota": "Shot IA #38. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Eso no lo dijo nadie: lo escribió la IA. Alguien solo dijo «toma el pan y la crema de cacahuate»."
+    },
+    {
+      "escena": "Gancho",
+      "texto": "La IA le agregó una receta: «en un tazón grande, mezcla la mantequilla»."
+    },
+    {
+      "escena": "Whisper",
+      "texto": "Fue Whisper, la IA de OpenAI que pasa voz a texto. Suele atinar."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En dos mil veintitrés, un equipo de Cornell y otras universidades le dio más de trece mil audios."
+    },
+    {
+      "escena": "Cifra",
+      "texto": "Cerca de una de cada cien transcripciones traía frases enteras inventadas."
+    },
+    {
+      "escena": "Danos",
+      "texto": "Casi cuatro de cada diez inventos eran dañinos: violencia, enfermedades falsas o un «gracias por ver»."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Por qué inventa algo que nunca oyó?"
+    },
+    {
+      "escena": "Pausas",
+      "texto": "Pasó más con personas con afasia, que suelen hablar con pausas largas."
+    },
+    {
+      "escena": "Silencio",
+      "texto": "Las autoras sospechan que en el silencio su parte que predice texto rellena el hueco."
+    },
+    {
+      "escena": "Otros",
+      "texto": "Con esos audios problema, Google, Amazon y Microsoft no inventaron nada así."
+    },
+    {
+      "escena": "Consulta",
+      "texto": "En dos mil veinticuatro, AP reportó que más de treinta mil clínicos usaban una herramienta con Whisper."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Si una IA transcribe tu consulta, pide revisarla: eso quizá no lo dijo nadie."
+    }
+  ]
+}

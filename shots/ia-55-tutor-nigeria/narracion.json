@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot TutorNigeria base narrada.dc.html",
+  "salida": "Shot TutorNigeria narrado.dc.html",
+  "nota": "Shot IA #55. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Seis semanas de tardes con un tutor de IA valieron como hasta dos años de escuela. Eso calcularon investigadores del Banco Mundial."
+    },
+    {
+      "escena": "Lugar",
+      "texto": "Fue en Benin City, Nigeria, en 2024, con chavos de primero de prepa de nueve escuelas públicas."
+    },
+    {
+      "escena": "Sesiones",
+      "texto": "Hasta doce sesiones de hora y media, en parejas, con Copilot, que usaba GPT-4, para practicar inglés."
+    },
+    {
+      "escena": "Maestros",
+      "texto": "Los maestros no daban clase: ponían la primera instrucción y vigilaban."
+    },
+    {
+      "escena": "Sorteo",
+      "texto": "Entrar fue por sorteo, y al final los dos grupos hicieron el mismo examen."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto mejoraron de verdad?"
+    },
+    {
+      "escena": "Resultado",
+      "texto": "En el examen completo, su mejora superó a ocho de cada diez programas probados en países de ingreso bajo y medio."
+    },
+    {
+      "escena": "Equivalencia",
+      "texto": "Ojo: no son dos años de temario. Es una equivalencia: lo que la escuela normal en Nigeria logra en año y medio a dos."
+    },
+    {
+      "escena": "Peros",
+      "texto": "Y tiene peros: fue un piloto, el otro grupo no tuvo horas extra, y falta ver si dura."
+    },
+    {
+      "escena": "Chicas",
+      "texto": "Y las chicas, que iban más atrás, parecen haber ganado más."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esas seis semanas no reemplazan a tu escuela: fue IA con un maestro al lado."
+    }
+  ]
+}

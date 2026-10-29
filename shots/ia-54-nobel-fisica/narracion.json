@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot NobelFisica base narrada.dc.html",
+  "salida": "Shot NobelFisica narrado.dc.html",
+  "nota": "Shot IA #54. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Estas flechitas no son un dibujo: son átomos que funcionan como imanes. Y con su física se ganó un Nobel por la IA."
+    },
+    {
+      "escena": "Premio",
+      "texto": "El de Física de dos mil veinticuatro, para John Hopfield y Geoffrey Hinton."
+    },
+    {
+      "escena": "Imanes",
+      "texto": "En un imán, cada átomo es una flechita y las vecinas se influyen."
+    },
+    {
+      "escena": "Pixeles",
+      "texto": "En mil novecientos ochenta y dos, Hopfield cambió átomos por pixeles blancos o negros."
+    },
+    {
+      "escena": "Valle",
+      "texto": "Le guardas una imagen con baja energía. Si se la das rota, la red cambia punto por punto, como pelota que rueda al valle, y casi siempre la recupera."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si quieres que la máquina aprenda sola?"
+    },
+    {
+      "escena": "Boltzmann",
+      "texto": "Hinton y un colega usaron la física estadística y una ecuación del siglo diecinueve: la de Boltzmann. Su máquina aprendía con ejemplos."
+    },
+    {
+      "escena": "Tamano",
+      "texto": "La red de Hopfield tenía menos de quinientos parámetros. Hoy un modelo de lenguaje puede pasar del billón."
+    },
+    {
+      "escena": "Aviso",
+      "texto": "Y Hinton advirtió: si creamos máquinas más inteligentes que nosotros, no sabemos si podremos mantener el control."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Estas flechitas no solo hacen imanes: le enseñaron a recordar a una máquina."
+    }
+  ]
+}

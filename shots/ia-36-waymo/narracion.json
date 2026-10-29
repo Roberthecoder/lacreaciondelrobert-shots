@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Waymo base narrada.dc.html",
+  "salida": "Shot Waymo narrado.dc.html",
+  "nota": "Shot IA #36. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tú manejando contra un auto sin nadie al volante. Según su empresa, Waymo, él tiene ochenta y dos por ciento menos choques con heridos."
+    },
+    {
+      "escena": "Millas",
+      "texto": "Lo mide en doscientos setenta y un millones de millas, hasta junio de 2026,"
+    },
+    {
+      "escena": "Ciudades",
+      "texto": "contra el conductor promedio de sus ciudades, como Phoenix, San Francisco y Los Ángeles."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero quién le revisa la tarea, si los números son suyos?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2024, la reaseguradora Swiss Re revisó sus reclamos: en veinticinco millones de millas, solo dos por lesiones."
+    },
+    {
+      "escena": "Esperados",
+      "texto": "Con humanos esperaban veintiséis: noventa y dos por ciento menos. En daños materiales, ochenta y ocho."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: Waymo es coautora del estudio, y sus autos casi no van por autopista ni manejan con nieve."
+    },
+    {
+      "escena": "Recall",
+      "texto": "Y falla: en 2025 corrigió el software de tres mil sesenta y siete autos que podían rebasar autobuses escolares detenidos."
+    },
+    {
+      "escena": "Mundo",
+      "texto": "Y en el mundo, el tránsito mata a más de un millón de personas cada año."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tú contra el auto sin nadie: en sus calles, él va ganando. Pero hay que seguir revisando sus números."
+    }
+  ]
+}
