@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Hela base narrada.dc.html",
+  "salida": "Shot Hela narrado.dc.html",
+  "nota": "Shot Biotecnológico #24. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas células no son de un laboratorio: son de una mujer a la que nunca le pidieron permiso."
+    },
+    {
+      "escena": "Henrietta",
+      "texto": "Henrietta Lacks tenía 30 años y cáncer de cuello uterino."
+    },
+    {
+      "escena": "Biopsia",
+      "texto": "En 1951, en el hospital Johns Hopkins, le tomaron un pedazo del tumor."
+    },
+    {
+      "escena": "Gey",
+      "texto": "Con George Gey fueron las primeras células humanas que crecen sin fin."
+    },
+    {
+      "escena": "Limite",
+      "texto": "Una célula humana normal en cultivo se detiene tras unas 50 divisiones. ¿Y estas por qué no?"
+    },
+    {
+      "escena": "Virus",
+      "texto": "Por dentro: el virus del papiloma tipo 18 metió su ADN en el cromosoma 8."
+    },
+    {
+      "escena": "Frenos",
+      "texto": "Sus genes le quitan los frenos y dejan prendida la telomerasa."
+    },
+    {
+      "escena": "Apagar",
+      "texto": "Si los apagas, las HeLa dejan de dividirse."
+    },
+    {
+      "escena": "Polio",
+      "texto": "Hasta 1955, Tuskegee envió unos 600 mil tubos de HeLa para evaluar la vacuna contra la polio."
+    },
+    {
+      "escena": "Nobel",
+      "texto": "En ellas, el equipo de Harald zur Hausen halló el VPH 18; él ganó el Nobel en 2008."
+    },
+    {
+      "escena": "Acuerdo",
+      "texto": "En 2013, dos familiares entraron al comité que revisa quién usa su genoma."
+    },
+    {
+      "escena": "Demanda",
+      "texto": "En 2023, su familia llegó a un acuerdo con Thermo Fisher, a quien demandó."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso esas células no son de un laboratorio: son de Henrietta."
+    }
+  ],
+  "tanda": 3
+}

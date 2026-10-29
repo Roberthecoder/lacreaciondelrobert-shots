@@ -1,0 +1,61 @@
+{
+  "voz_aprobada": true,
+  "dcHtml": "Shot Cepario base narrada.dc.html",
+  "salida": "Shot Cepario narrado.dc.html",
+  "velocidad": 1.097,
+  "nota": "Una línea por subtítulo (idx 0..12 del jsx). 919 caracteres en UNA sola petición a ElevenLabs. Corregido el 28 oct 2026 tras la verificación de hechos independiente (ver verificacion.md): cambió el texto narrado, así que la voz guardada en voz/ ya no corresponde y se quitó \"voz_aprobada\" hasta que Robert la vuelva a aprobar. Ya no lleva gemelo mudo: GitHub renderiza la revisión sin voz de la misma animación. \"velocidad\" se ajustó con la voz anterior: revisarla con la duración de la voz nueva para que el total quede en 61–62 s.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este frasco no está vacío: tiene vida en pausa."
+    },
+    {
+      "escena": "Cepa",
+      "texto": "Adentro hay una cepa: un organismo aislado, con nombre y ficha."
+    },
+    {
+      "escena": "Tipos",
+      "texto": "Una bacteria, una levadura, un moho, un alga."
+    },
+    {
+      "escena": "Cepario",
+      "texto": "Un cepario es la colección de esas cepas: una biblioteca viva."
+    },
+    {
+      "escena": "Cuido",
+      "texto": "Yo cuido uno, y la regla es que nada cambie mientras espera."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo detienes la vida sin matarla?"
+    },
+    {
+      "escena": "Cap1",
+      "texto": "Capítulo uno: el congelador de menos ochenta, con glicerol para que el hielo no rompa la célula."
+    },
+    {
+      "escena": "Cap1b",
+      "texto": "Es la copia de trabajo: el metabolismo no se detiene del todo hasta los menos ciento treinta."
+    },
+    {
+      "escena": "Cap2",
+      "texto": "Capítulo dos: nitrógeno líquido, menos ciento noventa y seis. Ahí sí, décadas."
+    },
+    {
+      "escena": "Cap3",
+      "texto": "Capítulo tres: liofilizar. Se les quita el agua y se guardan secas, en frío y oscuridad."
+    },
+    {
+      "escena": "Dos",
+      "texto": "Lo que se recomienda: dos copias, en dos lugares."
+    },
+    {
+      "escena": "Mundo",
+      "texto": "En el registro mundial, en 2024, había más de ochocientas sesenta colecciones de microbios, en ochenta países."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "En un frasco así vive la Escherichia coli con la que en 1978 se hizo la insulina."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Teocintle base narrada.dc.html",
+  "salida": "Shot Teocintle narrado.dc.html",
+  "nota": "Shot Biotecnológico #50. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese pasto parece maleza, pero es el abuelo de tu tortilla."
+    },
+    {
+      "escena": "Teocintle",
+      "texto": "Se llama teocintle y crece silvestre en la cuenca del río Balsas, en México."
+    },
+    {
+      "escena": "Mazorquita",
+      "texto": "Su mazorquita tiene de 5 a 12 granos, cada uno en una cáscara de piedra."
+    },
+    {
+      "escena": "Mazorca",
+      "texto": "Una mazorca de maíz puede cargar 500 granos o más, y sin cáscara."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo un pasto así se volvió tu elote?"
+    },
+    {
+      "escena": "Seleccion",
+      "texto": "Según su ADN, hace unos 9 mil años lo empezaron a sembrar y a escoger."
+    },
+    {
+      "escena": "Tga1",
+      "texto": "Por dentro, un solo gen, tga1, sacó el grano de su cáscara dura."
+    },
+    {
+      "escena": "Tb1",
+      "texto": "Otro, tb1, dejó una caña fuerte en vez de muchas ramas largas."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de 2009 halló, en un abrigo de roca de Guerrero, almidón de maíz en piedras de moler de hace 8,700 años."
+    },
+    {
+      "escena": "Hopscotch",
+      "texto": "Lo raro: esa versión de tb1 ya existía en el teocintle mucho antes; solo la escogieron."
+    },
+    {
+      "escena": "Dependencia",
+      "texto": "Y hoy el maíz no sobrevive solo: sus granos no se sueltan de la mazorca."
+    },
+    {
+      "escena": "Biotec",
+      "texto": "Eso también es biotecnología: sin laboratorio, escogiendo semillas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso ese pasto parece maleza, pero es el abuelo de tu tortilla."
+    }
+  ]
+}
