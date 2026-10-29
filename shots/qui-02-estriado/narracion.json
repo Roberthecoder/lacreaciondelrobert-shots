@@ -2,8 +2,7 @@
   "dcHtml": "Shot Estriado base narrada.dc.html",
   "salida": "Shot Estriado narrado.dc.html",
   "velocidad": 1.08,
-  "mudo": { "dcHtml": "Shot Estriado mudo.dc.html", "audio": "assets/mezcla_mudo.wav" },
-  "nota": "Químico #02. El protagonista es el gemelo MUDO (M2, 5 errores comunes). Base narrada: una línea por subtítulo (idx 0..10 del jsx), UNA sola petición a ElevenLabs. PENDIENTE de aprobación de Robert: NO generar la voz sin su visto bueno (gasta créditos).",
+  "nota": "Químico #02. 29 oct 2026: se quitó el campo mudo (desde el 27 oct ya no hay gemelo mudo; GitHub renderiza la revisión sin voz de la animación narrada) y se corrigió la voz tras la auditoría. Base narrada: una línea por subtítulo (idx 0..10 del jsx), UNA sola petición a ElevenLabs. PENDIENTE de aprobación de Robert: NO generar la voz sin su visto bueno (gasta créditos).",
   "lineas": [
     { "escena": "Gancho", "texto": "Ese garabato no es un garabato: es cómo se separa una sola bacteria de entre millones." },
     { "escena": "Material", "texto": "Necesitas una placa con agar, un asa de metal y una flama para esterilizarla entre pasada y pasada." },
