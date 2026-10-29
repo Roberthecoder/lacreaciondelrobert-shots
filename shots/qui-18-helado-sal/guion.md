@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Esa sal no derrite el hielo con calor: lo obliga a robarle el calor a tu helado."
 - **Seguridad:** sin riesgos; solo se aclara en la descripción que la mezcla de hielo y sal a −10/−20 °C puede quemar la piel por frío si se toca mucho rato sin guantes (no se dice en la voz).
 - **Duración:** voz 957 caracteres / ≈ 165 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** (`estimar-escenas.mjs`).
-- **Estado:** guion escrito (fase 1). Pendiente: verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`, VEREDICTO: APROBADO), animación lista (`helado.jsx`, revisión en `revision/hoja.png`), voz pendiente de aprobación de Robert (~957 créditos).
 
 ## Versión narrada
 
@@ -25,6 +25,27 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave y fría, continua, siempre debajo de la voz. Efectos en el mismo cuadro: lluvia de sal (granitos), crujido de hielo, "tic" del termómetro a cada grado que baja, burbujeo suave al derretirse, chispitas de calor que pasan, golpe de la tarjeta, camión y raspar de pala en la carretera, cuchara que se clava en el helado.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y hasta dónde puede bajar?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «lo obliga a robarle el calor a tu helado» |
+| 2 | 5.9 | 9.4 | 13_senalando_arriba | `izq-alto` | «marca cero grados… empieza a bajar» |
+| 3 | 11.2 | 15.5 | 06_pensativo_menton | `arriba-der` | «la sal disuelta le estorba al agua» |
+| 4 | 16.8 | 20.5 | 04_bajando_lentes | `izq-alto` | «derretir hielo cuesta calor» |
+| 5 | 21.8 | 26.2 | 05_sonriendo_dientes_uniformes | `izq-alto` | «con sal, sí» |
+| 6 | 26.45 | 29.8 | 07_pensativo_puno | `grande` | «¿Y hasta dónde puede bajar?» |
+| 7 | 30.3 | 33.2 | 11_sorprendido | `izq-alto` | «más frío que el congelador de tu casa» |
+| 8 | 37.1 | 40.6 | 12_perfil_serio | `arriba-der` | «bajaba casi en proporción a la sal» |
+| 9 | 44.3 | 46.6 | 10_serio_molesto | `izq-alto` | «abajo de unos menos 9 grados, casi no derrite» |
+| 10 | 49.7 | 52.8 | 11_sorprendido | `arriba-der` | «el cero de su escala salía de hielo, agua y sal» |
+| 11 | 53.4 | 58.0 | 02_apuntando_camara | `izq-alto` | «esa sal no calienta nada» |
+| — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 11 apariciones · ≈ 40 s en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas · cada 8–10 s como máximo (el hueco más largo es de 3.9 s).
 
 ## Fuentes (cada dato abierto en la fuente original el 29 oct 2026)
 

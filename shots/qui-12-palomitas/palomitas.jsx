@@ -283,21 +283,21 @@ function Palomitas() {
         <SvgCapa>
           <Placa x={540} y={1090} ancho={720} />
           {T < bCrack ? <Grano x={540 + Math.sin(T * 50) * 3} y={1035} s={1.5} rot={80} grietas={kprog(T, K.Br + 0.4, bCrack)} />
-            : (() => { const yy = 1000 - 420 * salto, pl = 70 * pata * (1 - aplasta * 0.45);
+            : (() => { const L = 95 * pata * (1 - aplasta * 0.5), r = klerp(40, 62, kprog(T, bCrack, bCrack + 0.4, kEase.sale)), yy = 1090 - L - r * 0.9 - 330 * salto;
               return <g transform={`translate(540 ${yy})`}>
                 {pata > 0 && <g>
-                  <ellipse cx={0} cy={50 + pl / 2} rx={26 + aplasta * 14} ry={Math.max(8, pl / 2 + 6)} fill={KC.ink} />
-                  <ellipse cx={0} cy={50 + pl / 2} rx={20 + aplasta * 14} ry={Math.max(4, pl / 2)} fill={CREMA} />
+                  <rect x={-(24 + aplasta * 16) - 6} y={r * 0.5} width={2 * (24 + aplasta * 16) + 12} height={L + r * 0.4 + 6} rx={24} fill={KC.ink} />
+                  <rect x={-(24 + aplasta * 16)} y={r * 0.5} width={2 * (24 + aplasta * 16)} height={L + r * 0.4} rx={20} fill={CREMA} />
                 </g>}
-                <Palomita x={0} y={0} r={klerp(40, 62, kprog(T, bCrack, bCrack + 0.4, kEase.sale))} rot={0} />
+                <Palomita x={0} y={0} r={r} rot={0} cascara={false} />
               </g>; })()}
           <g opacity={kprog(T, bSalta + 0.2, bSalta + 0.5)}>
-            <path d="M 300 1060 L 300 520" stroke={KC.ink} strokeWidth={12} strokeDasharray="26 18" />
-            <path d="M 270 560 L 300 500 L 330 560" fill="none" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
+            <path d="M 300 1060 L 300 620" stroke={KC.ink} strokeWidth={12} strokeDasharray="26 18" />
+            <path d="M 270 660 L 300 600 L 330 660" fill="none" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
           </g>
           <text x={540} y={1215} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>placa caliente</text>
         </SvgCapa>
-        {T > K.Br + 0.2 && T < K.So + 0.2 && <div style={{ position:'absolute', left:540, top:470, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', opacity:kprog(T, K.Br + 0.2, K.Br + 0.5) * (1 - kprog(T, K.So - 0.3, K.So + 0.1)) }}>
+        {T > K.Br + 0.2 && T < K.So + 0.2 && <div style={{ position:'absolute', left:540, top:420, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', opacity:kprog(T, K.Br + 0.2, K.Br + 0.5) * (1 - kprog(T, K.So - 0.3, K.So + 0.1)) }}>
           <div style={{ font:`700 24px ${KF.mono}`, color:KC.ink, letterSpacing:'.12em', marginBottom:4 }}>CÁMARA LENTA</div>
           <div style={{ font:`700 64px ${KF.mono}`, color:KC.texto, background:'rgba(0,0,0,.7)', border:`3px solid ${KC.texto}`, borderRadius:14, padding:'4px 22px' }}>{kformato(T < bAplasta ? 13.8 * kprog(T, bCrack, bAplasta) : klerp(13.8, 20.7, kprog(T, bAplasta, bSalta)), 1)} ms</div>
         </div>}
@@ -367,13 +367,13 @@ function Palomitas() {
       <Etq T={T} at={K.Et + 3.0} until={K.Te - 0.3} x={110} y={740} texto="horno" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Et + 3.2} until={K.Te - 0.3} texto="cámara: 2900 cuadros por segundo" y={1500} tam={36} borde={KC.ink} fondo="rgba(14,15,18,.85)" />
       <Chip T={T} at={t180 + 0.4} until={K.Br - 0.3} texto="temperatura crítica ≈ 180 °C" x={600} y={650} tam={32} borde={KC.red} />
-      <Chip T={T} at={bPata} until={bSalta - 0.1} texto="la patita se aplasta · 13.8 ms" y={1500} tam={38} borde={CREMA} />
+      <Chip T={T} at={bAplasta - 0.1} until={bSalta - 0.1} texto="la patita se aplasta · 13.8 ms" y={1500} tam={38} borde={CREMA} />
       <Chip T={T} at={bSalta} until={K.So - 0.3} texto="rebota y brinca · 20.7 ms" y={1500} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.So + 0.6} until={soA + soPop * 4 - 0.1} texto="grietas: sin ruido" y={1500} tam={42} borde={KC.red} />
       <Chip T={T} at={soA + soPop * 4} until={K.Vi - 0.3} texto="POP · vapor (hipótesis)" y={1500} tam={42} borde={KC.mint} />
       <Chip T={T} at={K.Vi + 0.5} until={K.Vi + 1.9} texto="las que no reventaron" y={1500} tam={42} borde={ORO} />
       <TarjetaEstudio T={T} at={K.Vi + 2.0} until={K.Ci - 0.3} anio="2005" quien="Tandjung et al." revista="Biomacromolecules · la cáscara y el agua" y={1580} />
-      <MitoTachado T={T} at={K.Ci + 0.2} tacharEn={K.Ci + 0.9} until={K.Ou - 0.2} texto="¿se quemó?" x={300} y={470} tam={50} />
+      <MitoTachado T={T} at={K.Ci + 0.2} tacharEn={K.Ci + 0.9} until={K.Ou - 0.2} texto="¿se quemó?" x={300} y={420} tam={50} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="agua → vapor → presión → ¡revienta!" y={1500} tam={34} borde={AGUA} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

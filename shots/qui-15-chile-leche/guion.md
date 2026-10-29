@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese ardor del habanero no es calor: es la capsaicina engañando a tu sensor de calor."
 - **Seguridad:** no hay consejo médico; lo único práctico es lo que dice la fuente (la leche bajó el ardor más que el agua).
 - **Duración:** voz 955 caracteres (≈ 58.2 s) + cierre 3.5 s → **61.7 s** (estimar-escenas).
-- **Estado:** guion listo, verificado con correcciones aplicadas (`verificacion.md`). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~955 créditos).
 
 ## Versión narrada
 
@@ -14,17 +14,37 @@
 | 0 | Gancho | Ese ardor del habanero no es calor: es la capsaicina engañando a tu sensor de calor. | Fondo amarillo. Desde el cuadro 0 una mano acerca un habanero naranja a una boca que lo muerde (crunch); salen llamitas dibujadas de la lengua. Un termómetro al lado se queda quieto en "normal" y la palabra "calor" se tacha. |
 | 1 | Que | La capsaicina es la molécula que pica en los chiles, como el habanero o el jalapeño. | Zoom a un pedacito del habanero: sale la molécula de capsaicina (anillo con cola larga de carbonos, la cola en amarillo "grasosa"). Junto al habanero aparece un jalapeño verde y de los dos salen más capsaicinas. Etiqueta "capsaicina". |
 | 2 | Sensor | En tus nervios hay un sensor, TRPV1, que se enciende con el calor que quema. | Fondo noche. Viaje dentro de la lengua: una terminación nerviosa (rama amarilla) con canalitos en la membrana etiquetados "TRPV1". Una flama real (de estufa) se acerca por un lado y el canal se abre: entran puntitos (iones) y un rayo viaja por el nervio. |
-| 3 | Engano | La capsaicina se pega a ese sensor y lo prende: tu cerebro siente fuego, aunque no haya. | Sin flama: llega la capsaicina, encaja en el TRPV1 como llave, el canal se abre igual, el rayo sube a un cerebro dibujado que muestra una flama con signo "?" y el termómetro sigue en "normal". |
+| 3 | Engano | La capsaicina se pega a ese sensor y lo prende: tu cerebro siente fuego, aunque no haya. | Sin flama: llega la capsaicina, encaja en el TRPV1 como llave, el canal se abre igual, el rayo sube a un cerebro dibujado que muestra una flama con signo "?"; "?" junto a la flama: no hay fuego. |
 | 4 | Agua | El agua ayuda algo, pero la capsaicina es grasosa: casi no se disuelve en ella. | Cae un chorro de agua (gotas azules) sobre la lengua; zoom: una capsaicina dentro de una gota se queda hecha bolita sin mezclarse, con etiqueta "casi insoluble en agua"; arrastra unas pocas capsaicinas sueltas, pero las demás siguen pegadas a los TRPV1. Medidor de ardor baja solo un poco. |
 | 5 | Pregunta | ¿Entonces qué te tomas? | **Re-gancho.** Regreso a la boca con llamitas; aparecen flotando un vaso de agua, uno de leche, un refresco de cola, una cerveza (sin alcohol) y un agua de sabor roja, con un "?" grande. |
-| 6 | Estudio | En 2019, en la Universidad Estatal de Pensilvania, 72 personas tomaron jugo de tomate picante y, una por una, probaron siete bebidas. | Tarjeta "2019 · Penn State · 72 personas". Mesa de laboratorio: vasitos de jugo de tomate rojo con chile; cada persona prueba, ronda por ronda, los 7 vasitos con código de 3 dígitos (leche descremada, leche entera, agua con gas, agua de sabor, cerveza sin alcohol, cola, agua). Un cronómetro avanza (cada 10 s durante 2 min). |
+| 6 | Estudio | En 2019, en la Universidad Estatal de Pensilvania, 72 personas tomaron jugo de tomate picante y, una por una, probaron siete bebidas. | Tarjeta "2019 · Penn State · 72 personas". Mesa de laboratorio: vasitos de jugo de tomate rojo con chile; cada persona prueba, ronda por ronda, los 7 vasitos con código de 3 dígitos (leche descremada, leche entera, agua con gas, agua de sabor, cerveza sin alcohol, cola, agua). Cada vasito recibe su palomita al probarse; el "72" crece arriba. |
 | 7 | Resultado | Todas ayudaron algo, pero solo la leche y un agua de sabor con azúcar le ganaron al agua sola. | Gráfica de barras "ardor total" que crecen: "sin nada" la más alta; agua al centro; agua con gas, cola y cerveza al nivel del agua o apenas más altas (nunca más bajas); leche entera, leche descremada y agua de sabor más bajas, que se iluminan. Una línea punteada marca "agua" como referencia. |
 | 8 | Proteina | Y la entera no le ganó a la descremada: los autores sospechan que ayuda más la proteína que la grasa. | Dos vasos de leche lado a lado (entera / descremada) con signo "=". Zoom al vaso: gotitas de grasa y bolitas de proteína (caseína); la capsaicina se va con las proteínas, con letrero "hipótesis". |
 | 9 | Nobel | Lo curioso: con capsaicina, David Julius descubrió ese sensor en 1997, y en 2021 compartió el Nobel de Medicina. | Tarjeta "1997 · David Julius · San Francisco": un chile al lado del canal TRPV1; luego una medalla dorada con "Nobel 2021 · Fisiología o Medicina". |
 | 10 | Cierre | Así que ese ardor no es calor: es química, y la leche lo calma mejor que el agua. | **Regreso a la boca del inicio** con el mismo habanero mordido: ahora entra un vaso de leche, las llamitas se encogen y el medidor de ardor baja; la etiqueta dice "capsaicina + TRPV1 = ardor sin fuego". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
-**Música:** cama grave continua; efectos en el mismo cuadro (crunch del chile, chisporroteo de las llamitas, gota que no se mezcla, "clic" del canal al abrirse, zumbido eléctrico del nervio, chorro de agua, golpe de la tarjeta, tic del cronómetro, barras que suben, "glu-glu" de la leche, campanita de la medalla, llamitas que se apagan).
+**Música:** cama grave continua; efectos en el mismo cuadro (crunch del chile, chisporroteo de las llamitas, gota que no se mezcla, "clic" del canal al abrirse, zumbido eléctrico del nervio, chorro de agua, golpe de la tarjeta, tic de cada ronda, barras que suben, "glu-glu" de la leche, campanita de la medalla, llamitas que se apagan).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Entonces qué te tomas?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «es la capsaicina engañando a tu sensor de calor» |
+| 2 | 6.5 | 9.9 | 13_senalando_arriba | `izq-alto` | «la molécula que pica en los chiles» (señala la capsaicina) |
+| 3 | 16.5 | 20.0 | 05_sonriendo_dientes_uniformes | `arriba-der` | «tu cerebro siente fuego, aunque no haya» |
+| 4 | 20.7 | 24.9 | 10_serio_molesto | `izq-alto` | «el agua ayuda algo… casi no se disuelve en ella» |
+| 5 | 25.2 | 27.7 | 07_pensativo_puno | `grande` | «¿Entonces qué te tomas?» |
+| 6 | 30.0 | 34.4 | 06_pensativo_menton | `izq-alto` | «una por una, probaron siete bebidas» |
+| 7 | 35.7 | 40.1 | 11_sorprendido | `arriba-der` | «solo la leche y un agua de sabor le ganaron al agua sola» |
+| 8 | 41.8 | 46.2 | 04_bajando_lentes | `izq-alto` | «la entera no le ganó a la descremada» |
+| 9 | 49.9 | 52.9 | 13_senalando_arriba | `arriba-der` | «en 2021 compartió el Nobel de Medicina» (señala la medalla) |
+| 10 | 53.5 | 58.1 | 02_apuntando_camara | `arriba-der` | «la leche lo calma mejor que el agua» |
+| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 39 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato y cifra se abrió en la fuente original el 29 oct 2026)
 
