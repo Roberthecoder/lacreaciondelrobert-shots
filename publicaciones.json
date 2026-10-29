@@ -54,5 +54,16 @@
   "ok": true,
   "id": "urn:li:video:D5610AQHxzxEzObuS5w",
   "nota": "video subido SIN publicar post (LinkedIn no tiene borradores por API)"
+ },
+ {
+  "clave": "003-semillas-luna",
+  "red": "instagram",
+  "modo": "privado",
+  "fecha": "2026-10-29T17:45:02Z",
+  "run": "40924152359",
+  "autorizo": null,
+  "ok": true,
+  "id": "18132184910509555",
+  "nota": "contenedor listo y NO publicado (Instagram no tiene borradores por API; caduca en 24 h)"
  }
 ]
