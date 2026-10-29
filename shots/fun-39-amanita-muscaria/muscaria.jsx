@@ -142,7 +142,7 @@ function MuscariaShot() {
   const lupaG = kprog(T, K.G + 1.3, K.G + 1.8, kEase.sale);
   const cocina = K.Tx + 3.6;
   // Oaxaca (Ixtlán de Juárez) en el mapa
-  const MAPA = { x: 40, y: 560 }, [ox, oy] = mxProy(-96.49, 17.33);
+  const MAPA = { x: 40, y: 430 }, [ox, oy] = mxProy(-96.49, 17.33);
   const OAX = [MAPA.x + ox, MAPA.y + oy];
   const MOSCAS = [[200, 420, 0], [820, 380, 1], [520, 330, 2], [300, 720, 3], [760, 680, 4]];
   const PLATO = [[380, 1040], [470, 1060], [560, 1035], [640, 1060], [450, 1020]];
@@ -215,11 +215,11 @@ function MuscariaShot() {
             <circle r={14} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
           </g>; })()}
           {kprog(T, K.Mx + 1.4, K.Mx + 1.9) > 0 && <g opacity={kprog(T, K.Mx + 1.4, K.Mx + 1.9)}>
-            <Conifera x={300} y={1170} s={0.42} T={T} seed={2} />
-            <Encino x={470} y={1170} s={0.5} T={T} />
-            <Conifera x={650} y={1170} s={0.36} T={T} seed={5} />
-            <Muscaria T={T} x={560} y={1172} s={0.32} g={kprog(T, K.Mx + 1.8, K.Mx + 2.6)} />
-            <Muscaria T={T} x={380} y={1172} s={0.26} g={kprog(T, K.Mx + 2.0, K.Mx + 2.8)} />
+            <Conifera x={700} y={1200} s={0.26} T={T} seed={2} />
+            <Encino x={850} y={1200} s={0.3} T={T} />
+            <Conifera x={990} y={1200} s={0.22} T={T} seed={5} />
+            <Muscaria T={T} x={780} y={1202} s={0.2} g={kprog(T, K.Mx + 1.8, K.Mx + 2.6)} />
+            <Muscaria T={T} x={930} y={1202} s={0.17} g={kprog(T, K.Mx + 2.0, K.Mx + 2.8)} />
           </g>}
         </>)}
       </Escena>
@@ -331,12 +331,12 @@ function MuscariaShot() {
       <Etq T={T} at={K.B + 1.6} until={K.L - 0.3} x={1030} y={1115} texto="bandas del velo en el bulbo" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.L + 1.2} until={K.Mx - 0.3} texto="ojo: sin puntos se confunde con otros hongos" x={540} y={420} tam={27} borde={KC.red} />
       <Etq T={T} at={K.Mx + 0.8} until={K.R - 0.3} x={OAX[0] - 40} y={OAX[1] - 60} texto="Ixtlán de Juárez, Oax." lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Mx + 1.4} until={K.R - 0.3} x={40} y={470} texto="Amanita muscaria var. flavivolvata" it tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Mx + 1.9} until={K.R - 0.3} texto="bosque de pino y encino" x={480} y={1090} tam={30} borde={KC.leaf} />
+      <Etq T={T} at={K.Mx + 1.4} until={K.R - 0.3} x={40} y={1010} texto="Amanita muscaria var. flavivolvata" it tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Mx + 1.9} until={K.R - 0.3} texto="bosque de pino y encino" x={300} y={1110} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.R + 0.2} until={K.P - 0.3} texto="AL MICROSCOPIO · raíz de pino" x={420} y={420} tam={32} borde={KC.mint} mono />
-      <Etq T={T} at={K.R + 1.0} until={K.P - 0.3} x={60} y={520} texto="hifas del hongo" tam={30} color={FK.hifa} />
-      <Etq T={T} at={K.R + 1.6} until={K.P - 0.3} x={1020} y={1080} texto="nutrientes → árbol" lado="izq" tam={30} color={KC.mint} />
-      <Etq T={T} at={K.R + 2.0} until={K.P - 0.3} x={60} y={1100} texto="azúcares → hongo" tam={30} color={KC.pink} />
+      <Etq T={T} at={K.R + 1.0} until={K.P - 0.3} x={40} y={520} texto="hifas del hongo" tam={34} color={FK.hifa} />
+      <Etq T={T} at={K.R + 1.6} until={K.P - 0.3} x={1030} y={1170} texto="nutrientes → árbol" lado="izq" tam={34} color={KC.mint} />
+      <Etq T={T} at={K.R + 2.0} until={K.P - 0.3} x={40} y={1110} texto="azúcares → hongo" tam={34} color={KC.pink} />
       <Chip T={T} at={K.Tx + 0.2} until={cocina - 0.3} texto="AL MICROSCOPIO · sinapsis" x={400} y={420} tam={32} borde={KC.lilac} mono />
       <Etq T={T} at={K.Tx + 0.8} until={K.Tx + 2.0} x={60} y={1080} texto="ácido iboténico ≈ glutamato → excita" tam={28} color={KC.gold2} />
       <Etq T={T} at={K.Tx + 2.2} until={cocina - 0.3} x={60} y={1080} texto="muscimol ≈ GABA → frena" tam={28} color={KC.cyan} />
