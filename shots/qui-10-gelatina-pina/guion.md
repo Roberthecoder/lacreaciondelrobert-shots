@@ -47,13 +47,13 @@ Tiempos estimados por `estimar-escenas.mjs`: Gancho 0–4.9 · Que –10.8 · Re
 8. **Con piña de lata sí cuaja porque el calor desnaturalizó la enzima; la piña cruda licúa la gelatina** — Harold McGee, *On Food and Cooking: The Science and Lore of the Kitchen*, ed. revisada (Scribner, 2004), secc. "Cooking Accelerates Enzyme Action Before Stopping It".
    > "If raw pineapple is combined with gelatin to make a jelly, the enzyme digests the gelatin molecules and liquifies the jelly. But canned pineapple has been heated enough to denature the enzyme, and makes a firm gelatin jelly."
    Apoyo: The Naked Scientists (Universidad de Cambridge), "Science of fruit jellies" (2009). https://www.thenakedscientists.com/get-naked/experiments/science-fruit-jellies
-   > "the proteases chop the gelatin protein up into pieces which are far too short to tangle, so the jelly doesn't set." · "But if you use tinned pineapple it will set fine." · "This heat causes the enzymes to 'denature', meaning they lose their structure"
+   > "the proteases chop the gelatin protein up into pieces which are far too short to tangle, so the jelly doesn't set." · "However if you use tinned pineapple the jelly will set perfectly." · "This heat causes the enzymes to 'denature', meaning they lose their structure"
 
 ## Notas
 - El dibujo es esquemático: la bromelina como tijeras, las hélices de tres hilos y la malla; las gotitas de agua no están a escala.
 - La bromelina de verdad es una mezcla de varias proteasas (fuente 3); por eso la voz dice "enzimas". Es una proteasa de cisteína (fuente 4).
 - El estudio de 2010 calentó **extracto crudo** de bromelina de la fruta, no rebanadas de piña ni gelatina; la voz dice "calentaron bromelina de piña". La pieza que une ese dato con la lata es la norma de la FDA (la lata se procesa con calor); el reglamento no dice la temperatura exacta.
 - La norma citada es de EE. UU.; en la descripción se puede aclarar que la piña enlatada se esteriliza con calor para que no se eche a perder.
-- Kiwi: de 13 variedades probadas en Japón, la mayoría deshizo la gelatina; Hort16A (kiwi dorado) y Kosui casi no. La enzima del kiwi es otra (actinidina). Papaya (papaína): no se menciona en la voz; solo podría ir en la descripción citando fuente 8.
+- Kiwi: de 13 variedades probadas en Japón, la mayoría deshizo la gelatina; Hort16A y Kosui casi no. La enzima del kiwi es otra (actinidina).
 - Consejo práctico del cierre ("usa de lata o cuécela antes"): respaldado por fuentes 6 y 8. A 40 °C la bromelina no se apaga, así que "tibia" no basta: en la descripción se aclara "cocer" (hervir unos minutos).
 - Para la descripción (pregunta para comentar): "¿Alguna vez se te hizo agua la gelatina con fruta? ¿Con cuál?"

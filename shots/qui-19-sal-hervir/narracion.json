@@ -3,15 +3,45 @@
   "salida": "Shot Hervir narrado.dc.html",
   "nota": "Shot Químico #19. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esa cucharadita de sal no hace que tu agua hierva antes: le sube el hervor 5 centésimas de grado. Solo eso." },
-    { "escena": "Que", "texto": "El agua hierve cuando su vapor empuja tan fuerte como el aire que tiene encima." },
-    { "escena": "Iones", "texto": "La sal se parte en iones de sodio y cloro, y con ellos el agua suelta vapor con menos fuerza." },
-    { "escena": "Cuenta", "texto": "Entonces hay que calentarla más: medio grado por cada mol de partículas en un kilo de agua." },
-    { "escena": "Olla", "texto": "Una cucharadita son unos 6 gramos de sal; en 2 litros, apenas 5 centésimas de grado." },
-    { "escena": "Pregunta", "texto": "¿Y por qué burbujea cuando la echas?" },
-    { "escena": "Burbujas", "texto": "Porque los granitos de sal son puntos donde el vapor forma burbujas fácil. Si el agua está muy caliente, échala con cuidado: puede saltar." },
-    { "escena": "Estudio", "texto": "En 1974, en Japón, químicos lo midieron con un ebullómetro doble: con casi 1 por ciento de sal, el agua hirvió solo 15 centésimas de grado más caliente." },
-    { "escena": "Altura", "texto": "Lo que sí cambia el hervor es la altura: en la Ciudad de México el agua hierve a unos 92 grados." },
-    { "escena": "Cierre", "texto": "Así que esa cucharadita no apura tu olla: la sal es para el sabor, no para la prisa." }
+    {
+      "escena": "Gancho",
+      "texto": "Esa cucharadita de sal no hace que tu agua hierva antes: en una olla de 2 litros, le sube el hervor unas 5 centésimas de grado. Solo eso."
+    },
+    {
+      "escena": "Que",
+      "texto": "El agua hierve cuando su vapor empuja tan fuerte como el aire que tiene encima."
+    },
+    {
+      "escena": "Iones",
+      "texto": "La sal se parte en iones de sodio y cloruro, y con ellos el agua suelta vapor con menos fuerza."
+    },
+    {
+      "escena": "Cuenta",
+      "texto": "Entonces hay que calentarla más: medio grado por cada mol de partículas en un kilo de agua."
+    },
+    {
+      "escena": "Olla",
+      "texto": "Una cucharadita son unos 6 gramos de sal: unas 5 centésimas de grado."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué burbujea cuando la echas?"
+    },
+    {
+      "escena": "Burbujas",
+      "texto": "Porque los granitos de sal son puntos donde el vapor forma burbujas fácil. Si el agua está muy caliente, échala con cuidado: puede saltar."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1974, en Japón, químicos lo midieron con un ebullómetro doble: con casi 1 por ciento de sal, el agua hirvió solo 15 centésimas de grado más."
+    },
+    {
+      "escena": "Altura",
+      "texto": "Lo que sí cambia el hervor es la altura: en la Ciudad de México el agua hierve a unos 92 grados."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa cucharadita no apura tu olla: la sal es para el sabor, no para la prisa."
+    }
   ]
 }
