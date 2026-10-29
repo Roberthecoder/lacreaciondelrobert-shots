@@ -1,30 +1,49 @@
-# Shot IA #35 · Los cachalotes tienen un "alfabeto" de clics (y la IA no lo tradujo)
+# Shot IA #35 · Los cachalotes tienen un "alfabeto" de clics (y ninguna IA lo tradujo)
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #35 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A, solo guion · pendiente de verificación independiente · sin animación · **voz pendiente de aprobación de Robert**.
+- **Estado (29 oct 2026):** guion verificado (21 ✅, 3 ⚠️ corregidas, ver `verificacion.md`) · animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert**.
 - **Formato:** N1 "Por dentro" (de la coda que se oye a las piezas que la forman: ritmo, tempo, rubato, ornamento, y luego "vocales" dentro del clic) + N4 "La imagen que se llena" (de 21 casillas a una tabla de 143 combinaciones que se enciende).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: un patrón de puntos y rayas tipo Morse que resulta ser el intercambio de clics de dos cachalotes.
-- **Duración:** voz 948 caracteres / ≈ 165 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** estimados en la base.
-- **Postura de la serie:** a favor con matiz. La IA/los algoritmos ayudaron a encontrar estructura; **no** tradujeron nada. Se dice claro en pantalla y en voz.
+- **Duración:** voz 945 caracteres / ≈ 163 palabras (≈ 57.9 s) + cierre 3.5 s → **61.4 s** en la base.
+- **Postura de la serie:** a favor con matiz. El análisis por computadora (agrupar + estadística) encontró estructura; **no** es una IA que traduce. Se dice en voz ("No es una IA que traduce: es análisis por computadora"), en pantalla y en `publicacion.md`.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esto no es código Morse: son dos cachalotes contestándose con clics. Y con algoritmos vieron que se arman como un alfabeto. | Fondo cian; desde el cuadro 0 una tira de puntos y rayas (tipo Morse) que corre. La cámara se abre: los puntos salen de dos cachalotes (uno azul, uno naranja, como en la figura 1 del artículo), uno contestándole al otro. Chip "≠ Morse". Aparece un "ABC" de clics. |
+| 0 | Gancho | Esto no es código Morse: son dos cachalotes contestándose con clics. Y con algoritmos vieron que se arman como un alfabeto. | Fondo cian; desde el cuadro 0 una cinta de telégrafo con puntos y rayas que corre y el chip "¿código Morse?" (se tacha en el s 2). Suben dos cachalotes (halo azul y naranja, como en la figura 1 del artículo) y la cinta se vuelve clics azules y naranjas. Aparece un "A B C" hecho de puntos y el chip "como un alfabeto". |
 | 1 | Codas | Cada serie de clics se llama coda. Antes se agrupaban en veintiún tipos. | Una coda = grupo de 5 puntos con su etiqueta "coda". Cuadrícula de 21 casillas ("21 tipos de coda"). |
-| 2 | Estudio | En 2024, el MIT y el Proyecto CETI analizaron ocho mil setecientas diecinueve codas de cachalotes grabados en Dominica, en el Caribe. | `TarjetaEstudio`: "2024 · MIT CSAIL + Project CETI · Sharma, Gero, Payne, Gruber, Rus, Torralba y Andreas · *Nature Communications*". Mapa chico del Caribe con Dominica marcada; "8,719 codas" (letrero chico: "grabadas entre 2005 y 2018"). |
-| 3 | Piezas | Hallaron cuatro piezas: ritmo, tempo y dos nuevas con nombres de música: rubato y ornamento. | Fondo oscuro "por dentro de la máquina": un algoritmo (red/robotito) separa la coda en 4 fichas: **ritmo**, **tempo**, **rubato**, **ornamento** (las dos últimas con estrellita "nuevo"). Un pentagrama de fondo. |
+| 2 | Estudio | En 2024, el MIT y el Proyecto CETI analizaron ocho mil setecientas diecinueve codas de cachalotes de Dominica, en el Caribe. | `TarjetaEstudio`: "2024 · MIT CSAIL + Proyecto CETI · Sharma et al. · *Nature Communications*". Mapa esquemático de las Antillas Menores con Dominica marcada; "8,719 codas analizadas" (letrero chico: "grabadas de 2005 a 2018"). |
+| 3 | Piezas | Hallaron cuatro piezas: ritmo, tempo y dos nuevas: rubato y ornamento. | Fondo oscuro con una **gráfica de intercambio** (carriles azul y naranja, como la figura 1) y un **histograma de duraciones** que se agrupa en montoncitos; chip "computadora: agrupar + estadística". Salen 4 fichas: **ritmo**, **tempo**, **rubato ★**, **ornamento ★** (★ = nuevas). Sin red neuronal ni robot. |
 | 4 | Rubato | Rubato: alargan o acortan la coda poco a poco, y la que contesta lo imita. | Codas consecutivas que se estiran poco a poco (acordeón); la ballena naranja copia el estiramiento de la azul. |
-| 5 | Ornamento | Ornamento: un clic extra al final, como un adorno. | La misma coda de 5 clics y, de pronto, una de 6: el último clic brilla con un moñito. Letrero chico "≈ 4 % de las codas". |
+| 5 | Ornamento | Ornamento: un clic extra al final, como un adorno. | La misma coda de 5 clics y, de pronto, una de 6: el último clic brilla con un moñito. Letrero chico "≈ 4 % de las codas en intercambios". |
 | 6 | Pregunta | ¿Y eso qué cambia? | **Re-gancho.** "?" gigante; Robert grande. |
 | 7 | Combina | Las piezas se combinan libremente: en vez de veintiún tipos, salieron al menos ciento cuarenta y tres combinaciones frecuentes. | **N4:** la cuadrícula de 21 crece a una tabla ritmo × tempo × rubato × ornamento; se encienden casillas hasta "143+". Chip "como un alfabeto fonético". |
-| 8 | Ojo | Pero ojo: aún no se sabe qué significa la mayoría. No es traducir; es encontrar estructura. | `MitoTachado`: "La IA tradujo a las ballenas" ✗. Un traductor en celular con "¿?" ; chip "estructura ✔ · significado: pendiente". |
+| 8 | Ojo | Pero ojo: aún no se sabe qué significa la mayoría. No es una IA que traduce: es análisis por computadora. | Celular con "clic · clic · clic · clic" → "Traducción: ???". `MitoTachado`: "Una IA tradujo a las ballenas" ✗; chip "análisis por computadora ✔". |
 | 9 | Vocales | Y en 2025, en Berkeley, vieron otra capa: patrones parecidos a vocales, que llamaron a e i. | Zoom a un clic: dentro, su espectro con una banda ("a") o dos bandas ("i"). `TarjetaEstudio` chica: "2025 · UC Berkeley · Beguš et al. · *Open Mind*". |
-| 10 | Cierre | Así que no es Morse: es un sistema de piezas que apenas empezamos a descifrar. | **Regreso a la imagen del inicio:** la misma tira de puntos y rayas, pero ahora cada coda lleva sus fichas de colores (ritmo, tempo, rubato, ornamento). "Morse" se tacha. |
+| 10 | Cierre | Así que no es Morse: se parece más a un alfabeto de piezas que apenas empezamos a descifrar. | **Regreso a la imagen del inicio:** los mismos dos cachalotes y la misma tira, ahora con clics de colores y sus 4 fichas (ritmo, tempo, rubato, ornamento) sobre cada coda. "código Morse" se tacha; chip "un alfabeto de piezas". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
-**Música:** cama grave y marina (agua, retumbo lento). Cada clic en pantalla suena como clic seco (los clics son de verdad el sonido de la coda); el acordeón del rubato estira el ritmo de los clics; el ornamento suena con un clic extra brillante; la tabla se enciende con tecleo suave; el tachado de "tradujo" con un golpe seco.
+**Música** (`gen-audio.mjs` → `assets/mezcla.wav`): cama grave y marina (agua, retumbo lento). Cada clic en pantalla suena como clic seco (los clics son de verdad el sonido de la coda); el acordeón del rubato estira el ritmo de los clics; el ornamento suena con un clic extra brillante; la tabla se enciende con tecleo suave; el tachado de "tradujo" con un golpe seco.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y eso qué cambia?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.3 | 11_sorprendido | `gancho` | «Esto no es código Morse: son dos cachalotes…» (cuadro 0) |
+| 2 | 8.2 | 11.9 | 06_pensativo_menton | `arriba-der` | «Cada serie de clics se llama coda» |
+| 3 | 15.6 | 19.3 | 13_senalando_arriba | `arriba-der` | señala «ocho mil setecientas diecinueve codas» y el mapa |
+| 4 | 24.2 | 28.2 | 04_bajando_lentes | `arriba-der` | «la que contesta lo imita» (rubato) |
+| 5 | 31.55 | 34.1 | 07_pensativo_puno | `grande` | «¿Y eso qué cambia?» |
+| 6 | 36.5 | 40.4 | 11_sorprendido | `arriba-der` | «al menos ciento cuarenta y tres combinaciones» |
+| 7 | 40.9 | 46.7 | 10_serio_molesto | `izq-alto` | «No es una IA que traduce» |
+| 8 | 49.3 | 52.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «patrones parecidos a vocales, a e i» |
+| 9 | 52.7 | 57.8 | 13_senalando_arriba | `gancho` | «se parece más a un alfabeto de piezas» |
+| — | 57.9 | 61.4 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 36.0 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.4 s
 
 ## Fuentes (abiertas el 29 oct 2026)
 
@@ -51,11 +70,11 @@
    > "No referential meaning relationship has yet been established for sperm whale codas."
 
 ## Notas
-- "Con algoritmos": el artículo es un análisis computacional de MIT CSAIL (agrupamiento, visualizaciones nuevas, pruebas estadísticas); el comunicado del MIT dice "a mix of algorithms for pattern recognition and classification". No se dice "una IA tradujo" en ningún lado; se tacha en pantalla.
+- "Con algoritmos" / "análisis por computadora": el artículo es un análisis computacional de MIT CSAIL (agrupamiento, visualizaciones nuevas, pruebas estadísticas); el comunicado del MIT dice "a mix of algorithms for pattern recognition and classification". No se dice "una IA tradujo" en ningún lado; la voz dice "No es una IA que traduce: es análisis por computadora" y en pantalla se tacha.
 - "Veintiún tipos" = los 21 tipos de coda definidos antes en ese conjunto de datos (clan EC-1). "Al menos ciento cuarenta y tres combinaciones frecuentes" = "at least 143 combinations frequently realised".
-- "Cachalotes grabados en Dominica" = datos del Dominica Sperm Whale Project, clan del Caribe oriental. Las grabaciones son de 2005 a 2018 (se pone en pantalla); el análisis es de 2024.
+- "Cachalotes de Dominica" = datos del Dominica Sperm Whale Project, clan del Caribe oriental. Las grabaciones son de 2005 a 2018 (se pone en pantalla); el análisis es de 2024.
 - No se usa "al menos 60 ballenas": el artículo lo dice del conjunto completo del DSWP, no claramente del subconjunto EC-1.
-- "Nombres de música": rubato es por analogía musical (cita); ornamento también es término musical (el artículo lo llama "ornaments").
 - "Aún no se sabe qué significa la mayoría": artículo 2024 ("communicative function of many codas remains an open question"; "not the semantics") y Open Mind 2025 ("No referential meaning relationship has yet been established").
 - "Parecidos a vocales, que llamaron a e i": analogía de los autores; son patrones del espectro de los clics, no vocales humanas.
 - El dibujo es esquemático; los colores azul/naranja siguen la figura 1 del artículo.
+- Cierre: el artículo compara el mecanismo con el habla, el texto, el Morse y la notación musical; por eso el cierre dice "se parece más a un alfabeto de piezas" en lugar de contradecirlo.
