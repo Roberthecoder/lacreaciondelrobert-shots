@@ -201,7 +201,7 @@ function CaspaShot() {
                 {[-60, -10, 40].map((dx, k) => <path key={k} d={`M ${dx} -30 l 14 -26 l 14 26`} stroke={KC.red} strokeWidth={7} fill="none" strokeLinecap="round" transform={`translate(0 ${Math.sin(T * 8 + k) * 4})`} />)}</g>}
             </g>; })}
           {[0, 1].map((i) => <text key={i} x={370 + i * 340} y={805} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Tr + 1.1 + i * 0.75, K.Tr + 1.3 + i * 0.75)}>+</text>)}
-          {(() => { const p = kprog(T, K.Tr + 3.0, K.Tr + 3.5, kEase.rebote); return p > 0 ? <g transform={`translate(540 1080) scale(${p})`}>
+          {(() => { const p = kprog(T, K.Tr + 3.0, K.Tr + 3.5, kEase.rebote); return p > 0 ? <g transform={`translate(520 1080) scale(${p * 1.5})`}>
             <text x={-130} y={30} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.ink}>=</text>
             {[[0, 0, 26, 10], [40, -20, 18, 70], [-10, 30, 16, 130], [60, 20, 22, 200], [100, -5, 14, 40]].map(([dx, dy, r, rot], k) => <Escama key={k} x={dx} y={dy} r={r} rot={rot} />)}
           </g> : null; })()}
@@ -217,7 +217,7 @@ function CaspaShot() {
             return Array.from({ length: 8 }, (_, c) => <rect key={row + '-' + c} x={c * 150 - (row % 2) * 75 - 20 + (150 - cw) / 2} y={yy - ch / 2} width={cw} height={ch} rx={ch / 2.5}
               fill={mixHex(CP.basal, '#fdf3e6', u)} stroke={KC.ink} strokeWidth={4} opacity={u > 0.97 ? 0 : 1} />); })}
           {[0, 1, 2].map((k) => { const t0 = K.Es + 1.2 + k * 0.9; if (T < t0) return null; const u = kprog(T, t0, t0 + 2.6, kEase.suave);
-            return <g key={k} transform={`translate(${260 + k * 280} ${klerp(660, 470, u)}) rotate(${u * (k % 2 ? 18 : -14)})`}>
+            return <g key={k} transform={`translate(${200 + k * 250 + u * 40} ${klerp(660, 570, u)}) rotate(${u * (k % 2 ? 18 : -14)})`} opacity={1 - kprog(u, 0.85, 1)}>
               {[0, 1, 2, 3].map((j) => <rect key={j} x={-90 + j * 12} y={-j * 16} width={180} height={20} rx={8} fill={CP.escama} stroke={KC.ink} strokeWidth={4} />)}
             </g>; })}
           {[[150, 618, 10], [480, 622, -40], [860, 616, 160]].map(([x, y, a], i) => <Malassezia key={i} x={x} y={y} r={18} ang={a} brote={0.5} sw={3} />)}
@@ -227,10 +227,10 @@ function CaspaShot() {
       <Escena T={T} a={K.Est} b={K.Ge} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Busto T={T} x={290} y={680} s={0.46} caspa={0.15 + 0.85 * kprog(T, K.Re + 0.3, K.Re + 1.6)} cae={kprog(T, K.Re + 0.3, K.Re + 0.8)} />
-          <Busto T={T} x={790} y={680} s={0.46} caspa={0} />
+          <Busto T={T} x={290} y={540} s={0.46} caspa={0.15 + 0.85 * kprog(T, K.Re + 0.3, K.Re + 1.6)} cae={kprog(T, K.Re + 0.3, K.Re + 0.8)} />
+          <Busto T={T} x={790} y={540} s={0.46} caspa={0} />
           {[290, 790].map((x, i) => { const p = kprog(T, K.Est + 2.4, K.Est + 3.2, kEase.sale); if (p <= 0) return null; const fuera = kprog(T, K.Re - 0.2, K.Re + 0.3);
-            return <g key={i} transform={`translate(${x} ${klerp(560, 700, p) - fuera * 400})`} opacity={1 - fuera}>
+            return <g key={i} transform={`translate(${x} ${klerp(480, 610, p) - fuera * 400})`} opacity={1 - fuera}>
               <rect x={-14} y={-130} width={28} height={110} rx={8} fill="#e8f6ff" stroke={KC.ink} strokeWidth={5} />
               <rect x={-26} y={-170} width={52} height={50} rx={18} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
               <path d="M -8 -20 L 0 0 L 8 -20 Z" fill="#e8f6ff" stroke={KC.ink} strokeWidth={4} />
@@ -302,16 +302,16 @@ function CaspaShot() {
       <Chip T={T} at={K.P + 0.5} until={K.Tr - 0.2} texto="sin caspa" x={410} y={490} tam={26} borde={KC.ink} />
       {['grasa', 'levadura', 'piel sensible'].map((t, i) => <Chip key={i} T={T} at={K.Tr + 0.9 + i * 0.75} until={K.Es - 0.2} texto={t} x={200 + i * 340} y={970} tam={32} borde={KC.ink} />)}
       <Chip T={T} at={K.Tr + 0.2} until={K.Es - 0.2} texto="al menos tres cosas" x={540} y={500} tam={44} borde={KC.ink} />
-      <Etq T={T} at={K.Tr + 3.3} until={K.Es - 0.2} x={680} y={1080} texto="caspa" tam={40} color={KC.ink} />
+      <Chip T={T} at={K.Tr + 3.3} until={K.Es - 0.2} texto="caspa" x={780} y={1080} tam={44} borde={KC.ink} />
       <Chip T={T} at={K.Es + 0.6} until={K.Est - 0.2} texto="se multiplican de más" x={400} y={1180} tam={34} borde={KC.coral} />
-      <Etq T={T} at={K.Es + 1.6} until={K.Est - 0.2} x={60} y={430} texto="escamas: células pegadas en grupo" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Es + 1.6} until={K.Est - 0.2} x={60} y={430} texto="escama = células pegadas" tam={28} color={KC.texto} />
       <Etq T={T} at={K.Es + 0.3} until={K.Est - 0.2} x={1030} y={1110} texto="células nuevas" lado="izq" tam={26} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.Est + 0.2} until={K.Re - 0.3} anio="2005" quien="investigadores de Cincinnati, EE. UU." revista="DeAngelis y col. · J Investig Dermatol Symp Proc" y={560} />
-      <Chip T={T} at={K.Est + 3.0} until={K.Re - 0.3} texto="ácido oleico" x={540} y={830} tam={32} borde={CP.oleico} />
-      <Chip T={T} at={K.Re + 0.1} until={K.Ge - 0.2} texto="con caspa" x={290} y={760} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Re + 0.3} until={K.Ge - 0.2} texto="sin caspa" x={790} y={760} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Re + 1.4} until={K.Ge - 0.2} texto="✓ se descamó" x={290} y={1190} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.Re + 2.2} until={K.Ge - 0.2} texto="nada visible" x={790} y={1190} tam={32} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Est + 0.2} until={K.Re - 0.3} anio="2005" quien="investigadores de Cincinnati, EE. UU." revista="DeAngelis y col. · J Investig Dermatol Symp Proc" y={410} />
+      <Chip T={T} at={K.Est + 3.0} until={K.Re - 0.3} texto="ácido oleico" x={540} y={700} tam={32} borde={CP.oleico} />
+      <Chip T={T} at={K.Re + 0.1} until={K.Ge - 0.2} texto="con caspa" x={290} y={680} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Re + 0.3} until={K.Ge - 0.2} texto="sin caspa" x={790} y={680} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Re + 1.4} until={K.Ge - 0.2} texto="✓ se descamó" x={290} y={1165} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.Re + 2.2} until={K.Ge - 0.2} texto="nada visible" x={790} y={1165} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Ge + 0.5} until={K.Ch - 0.2} x={60} y={440} texto="Malassezia globosa" it tam={36} color={KC.texto} />
       <Chip T={T} at={K.Ge + 0.8} until={K.Ch - 0.2} texto="su genoma (leído en 2007)" x={540} y={1080} tam={32} borde={KC.cyan} />
       <Etq T={T} at={K.Ge + 1.8} until={K.Ch - 0.2} x={622} y={850} texto="gen para fabricar ácidos grasos: no está" lado="izq" tam={24} color={KC.red} />
@@ -327,7 +327,7 @@ function CaspaShot() {
       <BarraEscala T={T} at={K.Li} until={K.P} texto="2 µm" largo={110} />
       <BarraEscala T={T} at={K.P} until={K.Tr} texto="10 cm" largo={115} color={KC.ink} />
       <BarraEscala T={T} at={K.Es} until={K.Est} texto="20 µm" largo={160} />
-      <BarraEscala T={T} at={K.Est} until={K.Ge} texto="10 cm" largo={125} color={KC.ink} />
+      <BarraEscala T={T} at={K.Est} until={K.Ge} texto="10 cm" largo={125} />
       <BarraEscala T={T} at={K.Ge} until={K.Ch} texto="2 µm" largo={90} />
       <BarraEscala T={T} at={K.Ch} until={K.C} texto="5 cm" largo={150} color={KC.ink} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={270} />
@@ -342,7 +342,7 @@ function CaspaShot() {
       <Subtitulo T={T} idx={6} at={K.Tr + 0.1} until={K.Es - 0.1} texto="Y una *piel sensible.*" />
       <Subtitulo T={T} idx={7} at={K.Es + 0.1} until={K.Est - 0.1} texto="Se despegan *en grupos.*" />
       <Subtitulo T={T} idx={8} at={K.Est + 0.1} until={K.Re - 0.1} texto="2005: *ácido oleico*" />
-      <Subtitulo T={T} idx={9} at={K.Re + 0.1} until={K.Ge - 0.1} texto="Solo con caspa: *se descamó.*" />
+      <Subtitulo T={T} idx={9} at={K.Re + 0.1} until={K.Ge - 0.1} texto="Con caspa: *se descamó.*" />
       <Subtitulo T={T} idx={10} at={K.Ge + 0.1} until={K.Ch - 0.1} texto="Usa *las tuyas.*" />
       <Subtitulo T={T} idx={11} at={K.Ch + 0.1} until={K.C - 0.1} texto="Champús con *antifúngicos.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Es tu piel *reaccionando.*" />

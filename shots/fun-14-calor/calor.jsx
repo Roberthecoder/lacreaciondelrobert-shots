@@ -69,7 +69,7 @@ function EscudoCalor({ T, cx, cy, rx, ry, p = 1, color = KC.orange, texto }) {
   const k = 1 + Math.sin(T * 5) * 0.015;
   return <g opacity={kclamp(p * 1.4, 0, 1)}>
     <ellipse cx={cx} cy={cy} rx={rx * p * k} ry={ry * p * k} fill="url(#escudoG)" stroke={color} strokeWidth={12} strokeDasharray="34 16" strokeDashoffset={-T * 40} />
-    <ellipse cx={cx} cy={cy} rx={rx * p * k - 18} ry={ry * p * k - 18} fill="none" stroke="#ffd29a" strokeWidth={4} opacity=".7" />
+    <ellipse cx={cx} cy={cy} rx={Math.max(0, rx * p * k - 18)} ry={Math.max(0, ry * p * k - 18)} fill="none" stroke="#ffd29a" strokeWidth={4} opacity=".7" />
     {texto && p > 0.9 && <g transform={`translate(${cx} ${cy - ry * k + 4})`}>
       <rect x={-92} y={-34} width={184} height={64} rx={32} fill={color} stroke={KC.ink} strokeWidth={6} />
       <text y={14} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>{texto}</text></g>}

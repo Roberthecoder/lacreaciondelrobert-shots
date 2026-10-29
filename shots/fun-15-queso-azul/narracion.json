@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Queso Azul base narrada.dc.html",
+  "salida": "Shot Queso Azul narrado.dc.html",
+  "nota": "Shot Fungi Mati #15. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esas venas azules no son queso echado a perder: son un moho sembrado a propósito." },
+    { "escena": "Nombre", "texto": "Se llama Penicillium roqueforti, y con él se hacen el Roquefort, el Gorgonzola y otros quesos azules." },
+    { "escena": "Inocular", "texto": "Primero, a la leche le echan sus esporas." },
+    { "escena": "Aire", "texto": "Pero este moho necesita oxígeno, y solo hace esporas en los huecos del queso." },
+    { "escena": "Picar", "texto": "Por eso pican el queso con agujas: cada hoyito deja entrar el aire." },
+    { "escena": "Venas", "texto": "Ahí crece y hace sus esporas, y esas esporas son las que pintan el queso de azul verdoso." },
+    { "escena": "Grasa", "texto": "Mientras, rompe la grasa de la leche y la vuelve metilcetonas, como la 2-heptanona: el olor a queso azul." },
+    { "escena": "Pregunta", "texto": "¿Y por qué este moho sí te lo comes y el del pan no?" },
+    { "escena": "Pan", "texto": "Porque este se escoge para hacer queso. El del pan llega solo, y algunos mohos fabrican toxinas." },
+    { "escena": "Estudio", "texto": "En 2020, un equipo en Francia leyó el ADN de 34 cepas de este moho y descubrió que se domesticó dos veces." },
+    { "escena": "Poblaciones", "texto": "Una es la del Roquefort; la otra, la de todos los demás quesos azules del mundo." },
+    { "escena": "Colores", "texto": "Y en Inglaterra, en 2024, hicieron versiones de este moho que pintan el queso de blanco, café o verde." },
+    { "escena": "Cierre", "texto": "Así que esas venas no son queso echado a perder: son túneles de aire llenos de esporas." }
+  ]
+}

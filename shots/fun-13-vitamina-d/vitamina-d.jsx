@@ -99,7 +99,7 @@ function Membrana({ T, y0 = 760, alto = 380, ergo = 1 }) {
       <circle cx={x} cy={y0 + alto - 14} r={20} fill="#4fc3f7" stroke={KC.ink} strokeWidth={4} /></g>);
   }
   const er = [2, 6, 10, 14].map((i, k) => { const on = kprog(ergo, k * 0.2, k * 0.2 + 0.3, kEase.rebote); return on > 0 ?
-    <g key={'e' + k} transform={`translate(${i * paso + 20 + paso / 2} ${y0 + 70 + Math.sin(T * 1.5 + k) * 6}) scale(${on})`}><Esterol x={0} y={0} s={0.42} rot={90} cola={false} ho={false} grosor={10} /></g> : null; });
+    <g key={'e' + k} transform={`translate(${i * paso + 20 + paso / 2} ${y0 + 70 + Math.sin(T * 1.5 + k) * 6}) scale(${on})`}><Esterol x={0} y={0} s={0.6} rot={90} cola={false} ho={false} grosor={12} color={KC.yellow} /></g> : null; });
   return <g>{cab}{er}</g>;
 }
 // Bandeja de metal con rebanadas al sol.
@@ -191,11 +191,11 @@ function VitaminaDShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <g opacity={1 - 0.75 * kprog(T, K.E + 2.2, K.E + 2.7)}><Membrana T={T} y0={640} alto={360} ergo={kprog(T, K.E + 0.6, K.E + 2.0)} /></g>
+          <g opacity={1 - 0.9 * kprog(T, K.E + 2.2, K.E + 2.7)}><Membrana T={T} y0={640} alto={360} ergo={kprog(T, K.E + 0.6, K.E + 2.0)} /></g>
           <g opacity={kprog(T, K.E + 2.3, K.E + 2.8)}>
             <Esterol x={110} y={900} s={0.75} color={KC.gold2} />
-            <Esterol x={600} y={900} s={0.75} color="#9fd8ff" />
-            <text x={545} y={900} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.texto}>≈</text>
+            <Esterol x={660} y={900} s={0.75} color="#9fd8ff" />
+            <text x={560} y={930} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.texto}>≈</text>
           </g>
         </>)}
       </Escena>
@@ -313,10 +313,10 @@ function VitaminaDShot() {
       <Etq T={T} at={K.E + 1.4} until={K.L - 0.3} x={60} y={560} texto="ergosterol" tam={36} color={KC.gold2} />
       <Etq T={T} at={K.E + 2.5} until={K.L - 0.3} x={60} y={1060} texto="ergosterol (hongo)" tam={28} color={KC.gold2} />
       <Etq T={T} at={K.E + 2.7} until={K.L - 0.3} x={1040} y={1060} lado="izq" texto="colesterol (tú)" tam={28} color="#9fd8ff" />
-      <Etq T={T} at={K.L + 0.4} until={K.L + 1.5} x={60} y={1150} texto="ergosterol" tam={36} color={KC.gold2} />
+      <Etq T={T} at={K.L + 0.4} until={K.L + 1.5} x={1040} y={1090} lado="izq" texto="ergosterol" tam={36} color={KC.gold2} />
       <Chip T={T} at={K.L + 0.3} until={K.Pi - 0.3} texto="luz UV" x={300} y={470} tam={40} borde={VD.uv} />
-      <Etq T={T} at={K.L + 1.7} until={K.L + 3.1} x={60} y={1150} texto="previtamina D2" tam={36} color={KC.gold2} />
-      <Etq T={T} at={K.L + 3.4} until={K.Pi - 0.3} x={60} y={1150} texto="vitamina D2" tam={40} color={KC.yellow} />
+      <Etq T={T} at={K.L + 1.7} until={K.L + 3.1} x={1040} y={1090} lado="izq" texto="previtamina D2" tam={36} color={KC.gold2} />
+      <Etq T={T} at={K.L + 3.4} until={K.Pi - 0.3} x={1040} y={1090} lado="izq" texto="vitamina D2" tam={40} color={KC.yellow} />
       <Chip T={T} at={K.Pi + 0.8} until={K.P - 0.2} texto="hongo → D2" x={270} y={760} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Pi + 1.2} until={K.P - 0.2} texto="tu piel → D3" x={800} y={760} tam={36} borde={KC.coral} />
       <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.Es + 1.6} anio="2015" quien="un equipo de Alemania y Dinamarca" revista="Urbain y Jakobsen · J. Agric. Food Chem." y={760} />

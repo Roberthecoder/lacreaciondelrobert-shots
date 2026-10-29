@@ -279,7 +279,7 @@ function HuitlacocheShot() {
       <MitoTachado T={T} at={K.G + 0.9} tacharEn={K.G + 1.9} until={K.G + 2.5} texto="¿podrido?" x={380} y={400} tam={52} />
       <Chip T={T} at={K.G + 2.7} until={K.En - 0.3} texto="✓ un manjar" x={380} y={400} tam={46} borde={KC.leaf} />
       <Etq T={T} at={K.G + 3.0} until={K.G + 4.2} x={530} y={800} texto="grano + hongo" tam={32} />
-      <Etq T={T} at={K.G + 4.6} until={K.En - 0.3} x={580} y={1190} texto="quesadilla" tam={30} lado="izq" />
+      <Etq T={T} at={K.G + 4.6} until={K.N} x={640} y={890} texto="quesadilla" tam={32} />
       <Etq T={T} at={K.N + 0.2} until={K.En - 0.3} x={540} y={760} texto="huitlacoche" tam={40} />
       <Etq T={T} at={K.N + 0.7} until={K.En - 0.3} x={540} y={820} texto="Ustilago maydis" it tam={36} />
       <Etq T={T} at={K.N + 1.2} until={K.En - 0.3} x={540} y={880} texto="maíz: Zea mays" tam={28} />
@@ -287,7 +287,7 @@ function HuitlacocheShot() {
       <Etq T={T} at={K.En + 1.2} until={K.En + 2.5} x={420} y={640} texto="pelos (estigmas)" tam={30} lado="izq" />
       <Chip T={T} at={K.En + 2.7} until={K.H - 0.3} texto="o heridas: granizo, viento" x={400} y={460} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.En + 3.4} until={K.H - 0.3} x={640} y={1180} texto="herida" tam={32} lado="izq" />
-      <Etq T={T} at={K.H + 0.4} until={K.A - 0.3} x={640} y={500} texto="pelo (estigma)" tam={30} color={HC.pelo} />
+      <Etq T={T} at={K.H + 0.4} until={K.A - 0.3} x={820} y={420} texto="pelo (estigma)" tam={30} color={HC.pelo} lado="izq" />
       <Etq T={T} at={K.H + 1.2} until={K.A - 0.3} x={500} y={760} texto="hifas" tam={36} color="#fff4d6" lado="izq" />
       <Etq T={T} at={K.H + 2.2} until={K.A - 0.3} x={660} y={1100} texto="grano (ovario)" tam={30} color={HC.grano} />
       <Chip T={T} at={K.A + 0.2} until={MICRO - 0.2} texto="AL MICROSCOPIO · dentro del grano" x={540} y={410} tam={30} mono borde={KC.cyan} />
