@@ -4,7 +4,26 @@ Este archivo es la memoria del chat administrador. **Toda sesión administradora
 (commit en main con `[sin render]`). Si el chat se compacta o se abre uno nuevo, aquí está todo lo que hace falta para seguir.
 Escríbelo corto: estado actual y pendientes, no historia. La historia vive en git y en los `resultado` de la Sala.
 
-Última actualización: 28 oct 2026, 17:45 UTC.
+Última actualización: 29 oct 2026, 01:40 UTC.
+
+## PEDIDO DE 300 SHOTS (29 oct) — EN CURSO
+- Pedido de la Sala `zu488o6qtt10bvn5j11h` (tipo serie, 50 de cada serie normal, total 300). Estado "en proceso".
+- 7 sesiones de nube (etiqueta `pedido300`), cada una en su rama, tandas de 5, suben a la Sala y suman a `hechos`:
+  fun `session_0157fph1NsHjWsqeMnXBaXMC` (pedido300/fun) · bio `session_0157fpgzxExWfmVZJcsaQUpg` (pedido300/bio) ·
+  amb `session_0157fpgyQN2cResjbZJ8rqUe` (pedido300/amb) · cie `session_0157fph1uV37Qq24qkDs6MNb` (pedido300/cie) ·
+  qui `session_0157fpgzuJM3ymsKtSoqvmnt` (pedido300/qui) · ia `session_0157fph3W4CN9EzPqt8DUqEt` (pedido300/ia) ·
+  festivos extra fes-07…fes-16 (10 nov–14 feb) `session_0157fpgyNNigAR2Ks9KZrcRx` (pedido300/festivos; no suman a hechos).
+- Números: #10–#59 de cada serie (publicación hasta 25–26 feb 2027).
+- **Vigilancia (trabajador horario y admin):** cada hora `get_session` de las 7; si una está inactiva (idle/failed) y no ha terminado
+  (cuenta carpetas en su rama), mándale con send_message: "Sigue con tu encargo del pedido 300 desde donde vas." Si falla algo
+  de fondo, avisa en ESTADO-ADMIN. Cuando `hechos == 300`, pon el pedido en "listo".
+- Juntar a main: cada ~25 shots terminados por rama, merge de `origin/pedido300/*` a main con `[sin render]` (sección 6 de
+  PRODUCCION_NUBE.md; `.github/` como en main; `node historial/consolidar.mjs`).
+- Espacio de la Sala: 1 GB; con 60 shots iba en 118 MB (~2 MB por shot) → caben los 310. Revisar si pasa de 900 MB.
+
+## VOZ EN PAUSA (29 oct, Robert): "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
+- Las 30 aprobaciones que esperaban créditos se marcaron `aprobado:false, en_pausa:true` en la Sala. NO generar ninguna voz
+  ni poner `voz_aprobada` hasta que Robert vuelva a aprobar con el botón o en el chat.
 
 ## Trabajador y tareas programadas
 - Trabajador horario: sesión `session_0157fpgzNLGBRTM1nZnM7iLe` ("Mantenimiento de la Sala (trabajador horario)", modo auto,
