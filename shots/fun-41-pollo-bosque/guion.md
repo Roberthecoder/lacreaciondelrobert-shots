@@ -3,8 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #41 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro" (macro: un plato con algo que parece pollo deshebrado → el tronco con sus repisas naranjas → corte del tronco y pudrición café en cubitos → **al microscopio**: hifas de pared gruesa → el caso de 1987 → precauciones → el mismo plato del inicio, ya transformado: junto a él, el tronco hecho cubitos cafés).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Esto no es pollo: es un hongo que se está comiendo un árbol por dentro».
-- **Duración:** voz 976 caracteres / 185 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~976 créditos de ElevenLabs).
+- **Duración:** voz 1000 caracteres / 189 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** curioso y útil (prevención). Nada invita a recolectar: no se enseña a identificarlo ni dónde buscarlo. No es consejo médico.
 
 ## Versión narrada
@@ -12,19 +12,19 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esto no es pollo: es un hongo que se está comiendo un árbol por dentro. | Fondo amarillo: un plato con tiras doradas que parecen pollo deshebrado; cuadro 0.3: un tenedor las levanta y aparece el sello "NO ES POLLO". La cámara se abre y se ve, al lado, un tronco con repisas naranjas. |
-| 1 | Repisa | Le dicen pollo del bosque: *Laetiporus*, repisas naranjas en troncos de encino. | Tronco de encino (hojas lobuladas): las repisas brotan en abanico, encimadas como tejas, naranja arriba y borde amarillo, sin pie. Etiquetas "pollo del bosque" + *Laetiporus sulphureus* y "encino (*Quercus*)". Barra 20 cm. |
+| 1 | Repisa | Le dicen pollo del bosque: *Laetiporus*, repisas naranjas que salen sobre todo en troncos de encino. | Tronco de encino (hojas lobuladas): las repisas brotan en abanico, encimadas como tejas, naranja arriba y borde amarillo, sin pie. Etiquetas "pollo del bosque" + *Laetiporus* (complejo *sulphureus*) y "encino (*Quercus*)". Barra 20 cm. |
 | 2 | Corazon | Sus hilos, las hifas, entran al corazón del tronco y se comen la celulosa. | `Lupa` en modo por dentro sobre el tronco ("POR DENTRO · el tronco"): hifas blancas que avanzan por el centro de la madera; fibras de celulosa (cadenas verdes) que se rompen y desaparecen. Chip "come: celulosa (y hemicelulosa)". |
-| 3 | Cubitos | Dejan la lignina: la madera queda café, se agrieta en cubitos y se desmorona. | Corte del tronco: el centro se vuelve café rojizo, se agrieta en cubitos y se desmorona; láminas finas de micelio blanco en las grietas. Etiqueta "pudrición café" y chip "queda: lignina (un poco cambiada)". Barra 10 cm. |
+| 3 | Cubitos | Dejan la lignina: la madera queda café, se agrieta en cubitos y se desmorona. | Corte del tronco: el centro se vuelve café rojizo, se agrieta en cubitos y se desmorona; láminas finas de micelio blanco en las grietas. Etiqueta "pudrición café" y chip "queda: lignina (modificada)". Barra 10 cm. |
 | 4 | Pregunta | ¿Y por qué le dicen pollo, si no tiene ni un gramo de músculo? | **Re-gancho.** "?" gigante entre una pechuga (fibras de músculo, esquema) y una repisa del hongo; Robert grande, pensativo. |
 | 5 | Correoso | Bien cocido, queda correoso y sabe parecido al pollo. | Sartén: la repisa cortada en tiras se dora; chips "bien cocido" y "correoso · sabe parecido al pollo". |
-| 6 | Hifas | Por dentro es una maraña de hifas de pared gruesa, de cuatro a catorce micras. | **AL MICROSCOPIO** (fondo oscuro): maraña de hifas ramificadas, sin tabiques, con la pared gruesa marcada; medidor "4–14 µm de ancho". Al lado, en gris, "músculo: 0". Barra 20 µm. |
-| 7 | Estudio | Pero ojo: en 1987, en Canadá, una niña de seis años comió este hongo. | Tarjeta de estudio "1987 · Columbia Británica, Canadá · niña de 6 años · CMAJ, 1988". Árbol de un jardín con un pedazo de repisa arrancado. |
-| 8 | Monstruo | Se le trabó el habla, perdió el equilibrio y vio un monstruo amarillo y naranja. | Niña (silueta sencilla) que se tambalea; burbuja de habla con letras revueltas; nube de alucinación con líneas y formas de colores y un "monstruo amarillo y naranja" flotando (dibujo infantil, no aterrador). |
+| 6 | Hifas | Por dentro es una maraña de hifas, y las más gruesas miden de cuatro a catorce micras. | **AL MICROSCOPIO** (fondo oscuro): maraña de hifas; resaltadas las más gruesas (hifas de unión: ramificadas, sin tabiques, pared gruesa); medidor "las más gruesas: 4–14 µm de ancho". Al lado, en gris, "músculo: 0". Barra 20 µm. |
+| 7 | Estudio | Pero ojo: en 1987, en Canadá, una niña de seis años comió este hongo. | Tarjeta de estudio "1987 · Columbia Británica, Canadá · niña de 6 años · CMAJ, 1988". Un árbol con un pedazo de repisa arrancado. |
+| 8 | Monstruo | Se le trabó el habla, perdió el equilibrio y tuvo alucinaciones. | Niña (silueta sencilla) que se tambalea; burbuja de habla con letras revueltas; nube de alucinación con líneas y formas de colores (sin monstruo). Chip "alucinaciones". |
 | 9 | Recupero | Al día siguiente ya estaba bien. | Cronómetro "≈ 20 h"; amanece; la niña sonríe. Chip "se recuperó por completo". |
 | 10 | Crudo | Crudo o mal cocido puede caerte mal del estómago, y hay personas alérgicas a él. | Tiras crudas con ✗ y estómago revuelto; ícono de alergia. Chips "crudo o mal cocido: ✗" y "hay alérgicos". |
 | 11 | Experto | Nunca comas un hongo silvestre que no haya identificado un experto. | Una lupa sobre la repisa del tronco; chip "✓ solo si lo identifica un experto" y sello "NO LO RECOLECTES POR TU CUENTA". |
 | 12 | Naranja | Y su naranja no es de zanahoria: es ácido laetipórico, y podría pintar comida. | Una zanahoria con etiqueta "carotenos" tachada; molécula esquemática en zigzag (cadena de dobles enlaces) "ácido laetipórico"; un frasquito de colorante que tiñe un betún de naranja con chip "posible colorante". |
-| 13 | Cierre | Así que ese pollo no es pollo: es un hongo que deja el árbol en cubitos cafés. | **Regreso a la imagen del inicio:** el mismo plato y el mismo tenedor; la cámara se abre y el tronco de al lado ya está hecho cubitos cafés que se desmoronan. Chip "no es pollo: es un hongo". |
+| 13 | Cierre | Así que ese pollo no es pollo: es un hongo que deja la madera del árbol en cubitos cafés. | **Regreso a la imagen del inicio:** el mismo plato y el mismo tenedor; la cámara se abre y el tronco de al lado ya está hecho cubitos cafés que se desmoronan. Chip "no es pollo: es un hongo". Etiqueta *Laetiporus* (complejo *sulphureus*). |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua, curiosa y algo tensa en el caso de la niña, más ligera al final; sin golpe marcado, debajo de la voz. Efectos en el mismo cuadro: tenedor y golpe del sello, crujido de las repisas al brotar, roce de las hifas y chasquidos de las cadenas de celulosa al romperse, crujidos de la madera al agrietarse y desmoronarse, "?" del re-gancho, chisporroteo de la sartén, zumbido del microscopio, tic de la tarjeta, tambaleo y "glitch" suave de la alucinación, tic-tac del cronómetro y campanita al amanecer, gruñido de estómago, golpe del sello "no lo recolectes", gota de colorante, crujido final de los cubitos.
@@ -70,5 +70,6 @@ mecanismo de la pudrición se cuenta rápido; el dato extra (s 50–54) y el cie
    > "Since fruit-bodies of L. sulphureus are edible, laetiporic acids might hold potential as food colourants."
 8. **[ZAN]** Peabody, E. K. (2004, noviembre). Carrots With Character. *Agricultural Research* (USDA-ARS). https://agresearchmag.ars.usda.gov/2004/nov/carrott
    > carotenoids are "the pigments responsible for orange, yellow, and red colors" (en zanahorias); beta-caroteno, "an orange pigment used by the body to create vitamin A". (Con [DAV], "non-carotenoid": el naranja del hongo no es el de la zanahoria.)
+9. **[RBT]** Revista de Biología Tropical (UCR, 2019), artículo sobre *Laetiporus*: nombre común en español «pollo del bosque». https://revistas.ucr.ac.cr/index.php/rbt/article/view/39416 (aportada por el verificador). Además, en Xalapa le dicen «hongo de encino» (Salmones et al. 1990, *Rev. Mex. Micol.* 6).
 
 El dibujo es esquemático. No es consejo médico: no comas hongos silvestres sin que un experto los identifique y, ante cualquier malestar después de comer hongos, ve al médico y lleva el hongo o los restos.

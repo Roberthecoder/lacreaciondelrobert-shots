@@ -291,14 +291,14 @@ function HistoplasmaShot() {
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.6} until={K.H - 0.3} texto="no es solo tierra: puede ser guano" x={420} y={1180} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.G + 1.6} until={K.H - 0.3} texto="no es solo tierra: puede ser guano" x={400} y={1040} tam={34} borde={KC.gold} />
       <Etq T={T} at={K.G + 2.4} until={K.H - 0.3} x={600} y={560} texto="murciélagos" tam={30} />
       <Chip T={T} at={K.H + 0.3} until={K.A - 0.3} texto="AL MICROSCOPIO · en el suelo es moho" x={540} y={420} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.H + 0.9} until={K.A - 0.3} x={60} y={520} texto="Histoplasma capsulatum" it tam={38} />
       <Etq T={T} at={K.H + 1.5} until={K.A - 0.3} x={60} y={580} texto="“el hongo de las cuevas”" tam={28} color={KC.gold2} />
       <Etq T={T} at={K.H + 1.9} until={K.A - 0.3} x={60} y={1010} texto="microconidias 2–4 µm (lisas)" tam={28} color="#fffbe6" />
       <Etq T={T} at={K.H + 2.5} until={K.A - 0.3} x={1040} y={800} lado="izq" texto="macroconidia 8–15 µm" tam={28} color="#f3dcae" />
-      <Chip T={T} at={K.A + 1.2} until={K.Pu - 0.2} texto="esporas de 2–4 µm: no las ves" x={420} y={1180} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.A + 1.2} until={K.Pu - 0.2} texto="esporas de 2–4 µm: no las ves" x={400} y={1040} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Pu + 0.8} until={K.Ca - 0.2} x={760} y={980} texto="pulmones" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.2} until={K.Ca + 1.4} texto="en el suelo: moho" x={540} y={430} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.Ca + 1.6} until={K.P - 0.2} texto="a 37 °C, en tu cuerpo: levadura" x={540} y={430} tam={36} borde={KC.gold} />
@@ -318,7 +318,7 @@ function HistoplasmaShot() {
       <Chip T={T} at={K.N + 0.2} until={K.C - 0.2} texto="capsulatum = “con cápsula”" x={400} y={440} tam={34} borde={KC.gold} />
       <MitoTachado T={T} at={K.N + 0.8} tacharEn={K.N + 1.7} until={K.C - 0.2} texto="cápsula" x={300} y={560} tam={46} />
       <Etq T={T} at={K.N + 1.9} until={K.C - 0.2} x={760} y={720} lado="izq" texto="solo un halo claro" tam={30} color="#e8f4ff" />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no es solo tierra: puede ser guano" x={420} y={1180} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no es solo tierra: puede ser guano" x={400} y={1040} tam={34} borde={KC.gold} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="1 m" largo={160} />
