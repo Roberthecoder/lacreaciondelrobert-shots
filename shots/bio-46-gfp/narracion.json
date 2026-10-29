@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Gfp base narrada.dc.html",
+  "salida": "Shot Gfp narrado.dc.html",
+  "nota": "Shot Biotecnológico #46. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa medusa no fabrica luz verde: hace energía azul, y una proteína la vuelve verde."
+    },
+    {
+      "escena": "Medusa",
+      "texto": "En 1961, Osamu Shimomura y Frank Johnson juntaron unas diez mil y les cortaron la orilla."
+    },
+    {
+      "escena": "Proteinas",
+      "texto": "Hallaron una proteína que suelta luz azul y otra que brilla verde."
+    },
+    {
+      "escena": "Fluorescencia",
+      "texto": "La verde sola no hace luz: en el laboratorio absorbe azul o ultravioleta y la devuelve verde."
+    },
+    {
+      "escena": "Diferencia",
+      "texto": "Es fluorescencia, no bioluminiscencia: sin luz, no brilla."
+    },
+    {
+      "escena": "PorDentro",
+      "texto": "Por dentro, tres de sus aminoácidos forman la pieza que brilla, solo con oxígeno."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué quiere un laboratorio la luz de una medusa?"
+    },
+    {
+      "escena": "Truco",
+      "texto": "Pegas su gen al de otra proteína, y donde la célula la fabrique, se prende verde."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1994, en Columbia, Martin Chalfie se lo puso a un gusano: seis de sus neuronas brillaron, vivas."
+    },
+    {
+      "escena": "Vivas",
+      "texto": "Por fin veías dónde y cuándo se hace una proteína, sin matar células."
+    },
+    {
+      "escena": "Colores",
+      "texto": "Roger Tsien le cambió piezas y sacó azul, cian y amarillo."
+    },
+    {
+      "escena": "Nobel",
+      "texto": "En 2008, los tres ganaron el Nobel de Química."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa medusa nos prestó su verde para ver la vida por dentro."
+    }
+  ]
+}

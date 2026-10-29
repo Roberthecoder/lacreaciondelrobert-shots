@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Botox base narrada.dc.html",
+  "salida": "Shot Botox narrado.dc.html",
+  "nota": "Shot Biotecnológico #47. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese frasquito no es solo para arrugas: guarda uno de los venenos más potentes que se conocen."
+    },
+    {
+      "escena": "Bacteria",
+      "texto": "Lo hace una bacteria, Clostridium botulinum."
+    },
+    {
+      "escena": "Dosis",
+      "texto": "Se estima, desde 2001, que menos de una millonésima de gramo, inyectada, mataría a un adulto."
+    },
+    {
+      "escena": "Nervio",
+      "texto": "Para mover un músculo, tu nervio suelta un mensajero: la acetilcolina."
+    },
+    {
+      "escena": "Corte",
+      "texto": "La toxina entra al nervio y corta la proteína SNAP-25."
+    },
+    {
+      "escena": "Silencio",
+      "texto": "Sin ella, el mensajero no sale y el músculo se afloja."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo se volvió medicina?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En los setenta, en San Francisco, Alan Scott la probó en monos y luego en ojos desviados."
+    },
+    {
+      "escena": "Aprobacion",
+      "texto": "En 1989, Estados Unidos la aprobó para el estrabismo y el párpado que se cierra solo."
+    },
+    {
+      "escena": "Usos",
+      "texto": "Hoy también trata migraña crónica y sudor excesivo."
+    },
+    {
+      "escena": "Fabrica",
+      "texto": "Se cultiva la bacteria y la toxina se purifica del caldo."
+    },
+    {
+      "escena": "Clave",
+      "texto": "La clave es la dosis: diminuta, solo en el músculo que se trata, y se pasa en meses."
+    },
+    {
+      "escena": "Kerner",
+      "texto": "Hace dos siglos, quien describió este envenenamiento ya imaginaba curar con él."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese frasquito no es solo para arrugas: es un veneno vuelto medicina."
+    }
+  ]
+}

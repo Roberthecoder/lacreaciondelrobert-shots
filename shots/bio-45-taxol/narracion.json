@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Taxol base narrada.dc.html",
+  "salida": "Shot Taxol narrado.dc.html",
+  "nota": "Shot Biotecnológico #45. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa quimio que ves no la diseñó ningún químico: la tenía escondida un árbol."
+    },
+    {
+      "escena": "Tejo",
+      "texto": "En 1962, un botánico juntó corteza de tejo del Pacífico buscando medicinas contra el cáncer."
+    },
+    {
+      "escena": "Taxol",
+      "texto": "De ahí salió el Taxol, hoy usado contra el cáncer de mama y de ovario."
+    },
+    {
+      "escena": "Cables",
+      "texto": "Para dividirse, la célula arma cables, los microtúbulos, que jalan los cromosomas."
+    },
+    {
+      "escena": "Congela",
+      "texto": "El Taxol los congela: ya no se desarman y la célula no se divide bien."
+    },
+    {
+      "escena": "Muere",
+      "texto": "La célula del tumor reparte mal sus cromosomas y muere."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo lo descubrieron con casi nada?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Susan Horwitz recibió apenas diez miligramos; en el Bronx descubrió que congelaba los microtúbulos y lo publicó en 1979."
+    },
+    {
+      "escena": "Arboles",
+      "texto": "En 1992, tratar a una paciente un año pedía la corteza de unos tres árboles, y pelarlos los mataba."
+    },
+    {
+      "escena": "Agujas",
+      "texto": "Luego lo armaron con química desde hojas de otro tejo, que rebrotan."
+    },
+    {
+      "escena": "Tanque",
+      "texto": "Desde 2002, una empresa lo hace en tanques de hasta 75 mil litros con células de tejo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa quimio la escondía un árbol: hoy también crece en un tanque y el árbol sigue en pie."
+    }
+  ]
+}
