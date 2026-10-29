@@ -27,6 +27,24 @@
 
 **Música:** cama grave continua (`m.pad`), un poco tensa mientras se llena el bote y más abierta en el cierre. Efectos: puerta de refri al abrir (cuadro 0) y al cerrar (final), "plop" por cada cosa que cae al bote, retumbe al crecer la montaña, clic de la lupa, un golpecito por cada kilo de la barra (10), contador que sube (79 → 105), "ding" por los países que se encienden, tachón del mito, burbujeo suave del gas.
 
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y quién tira más: el súper, los restaurantes o tu casa?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «casi una de cada cinco partes se va a la basura» (cuadro 0) |
+| 2 | 8.7 | 12.2 | 10_serio_molesto | `arriba-der` | «mil cincuenta millones de toneladas» |
+| 3 | 15.8 | 19.6 | 07_pensativo_puno | `grande` | «¿Y quién tira más…?» (grande) |
+| 4 | 27.6 | 31.6 | 13_senalando_arriba | `arriba-der` | señala el mapa: «para México… ciento cinco kilos» |
+| 5 | 35.4 | 38.2 | 05_sonriendo_dientes_uniformes | `izq-alto` | «datos de hogares de noventa y tres países» |
+| 6 | 40.8 | 44.7 | 04_bajando_lentes | `arriba-der` | «no es cosa de países ricos… apenas siete kilos» |
+| 7 | 47.4 | 52.7 | 12_perfil_serio | `izq-alto` | «entre ocho y diez por ciento de los gases» |
+| 8 | 53.9 | 57.9 | 06_pensativo_menton | `arriba-der` | «más de la mitad se tira en casas como la tuya» |
+| — | 58.0 | 61.5 | 02_apuntando_camara | cierre | `CierreMarca robert=` |
+
+**Total:** 8 apariciones + cierre · **31.9 s** en pantalla (+ 3.5 s de cierre) · 8 poses distintas · grande una vez.
+
 ## Fuentes (cada cifra se abrió en el PDF el 29 oct 2026)
 
 1. **UNEP (2024). *Food Waste Index Report 2024. Think Eat Save: Tracking Progress to Halve Global Food Waste*. Nairobi.**

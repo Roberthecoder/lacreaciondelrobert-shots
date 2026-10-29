@@ -42,4 +42,18 @@
 
 Observación (no bloquea): "Por eso ya se prueba enfriar nidos" va justo después del dato de Oaxaca, cuyo 96 % los autores consideran el patrón normal de la laúd (no un efecto del calentamiento). El "por eso" debe leerse como respuesta al calentamiento general (pregunta de la escena 5), que es como lo respaldan SWOT y WWF. Si se quiere evitar la lectura causal con Oaxaca: "Por eso, en playas que se calientan, ya se prueba enfriar nidos con sombra o agua."
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Segunda ronda (29 oct 2026)
+
+Se volvió a leer la voz completa de `narracion.json` después de las correcciones y los recortes. Las escenas Gancho, Nido, Embrion, Tercio, Pivote y Oaxaca no cambiaron y siguen ✅ como en la tabla de arriba.
+
+| Afirmación (voz actual) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|
+| (Pregunta) "¿Y si la playa se calienta más cada año?" — pregunta retórica, sin cifra | ✅ | Jensen et al. 2018 (contexto) | "the northern GBR green turtle rookeries have been producing primarily females for more than two decades" | 2018 |
+| (Estudio) "Un estudio de 2018, de Estados Unidos y Australia, revisó tortugas verdes de la Gran Barrera de Coral." — ahora el año es explícitamente el del estudio (publicación) | ✅ | PubMed 29316410 (resumen y afiliaciones) | "green turtles foraging in the Great Barrier Reef (GBR)"; afiliaciones "La Jolla, CA 92037, USA" y "Townsville, Queensland 4810, Australia" | 2018 |
+| (Hembras) "De las nacidas en playas calientes del norte, noventa y nueve por ciento de las jóvenes eran hembras." — Jensen asigna con genética (análisis de stocks mezclados) cada tortuga a la playa donde nació; "nacidas en" = "originating from … the nesting beach from which they hatched"; "jóvenes" = juveniles (99.1 % → 99 %, redondeo hacia abajo). No se dice "de toda la población" (adultas: 86.8 %). | ✅ | PubMed 29316410 | "to link male and female green turtles foraging in the Great Barrier Reef (GBR) to the nesting beach from which they hatched" … "turtles originating from warmer northern GBR nesting beaches were extremely female-biased (99.1% of juvenile, 99.8% of subadult, and 86.8% of adult-sized turtles)" | 2018 |
+| (Sombra) "Por eso, en playas que se calientan, ya se prueba enfriar nidos con sombra o agua." | ✅ | SWOT; WWF-Australia 2018 | "scientists have been exploring ways to cool nests, including spraying them with water and shading them." / "shade cloth erected over key nesting beaches, like at Raine Island, to lower nest temperatures to produce more males" | vigente; 2018 |
+| (Cierre) "A ti te decidieron tus cromosomas; a la próxima tortuguita que veas salir, unos grados de arena." | ✅ | SWOT; NOAA NOS | "Unlike in humans (and most species), where sex is determined by genetics, the sex of baby sea turtles is determined by the temperature of the nest during incubation" | vigente; 2026 |
+
+Las correcciones de la primera ronda quedaron aplicadas. Ya no queda ninguna ⚠️ ni ❌.
+
+VEREDICTO: APROBADO

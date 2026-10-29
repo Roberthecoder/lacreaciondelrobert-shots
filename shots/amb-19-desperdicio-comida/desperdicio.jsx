@@ -251,7 +251,7 @@ function DesperdicioShot() {
       <Chip T={T} at={K.Mx + 1.4} until={K.E - 0.2} texto="en casa · estimación · confianza media" y={1440} x={540} tam={32} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.4} until={K.Ri - 0.2} anio="2024" quien="Programa de la ONU para el Medio Ambiente" revista="Food Waste Index Report 2024 · Nairobi" x={540} y={940} />
       <Chip T={T} at={K.E + 3.0} until={K.Ri - 0.2} texto="datos de hogares de 93 países" y={1440} x={540} tam={34} borde={KC.ink} />
-      <MitoTachado T={T} at={K.Ri + 0.2} tacharEn={K.Ri + 1.4} until={K.Ga - 0.2} texto="«solo pasa en países ricos»" x={360} y={470} tam={40} />
+      <MitoTachado T={T} at={K.Ri + 0.2} tacharEn={K.Ri + 1.4} until={K.Ga - 0.2} texto="«solo pasa en países ricos»" x={330} y={470} tam={38} />
       <Chip T={T} at={K.Ri + 3.4} until={K.Ga - 0.2} texto="kg por persona al año, en casa" y={1440} x={540} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Ri + 4.0} until={K.Ga - 0.2} x={760} y={760} texto="± 7 kg" tam={44} color={KC.ink} />
       <Chip T={T} at={K.Ga + 0.6} until={K.C - 0.2} texto="2010–2016" y={500} x={640} tam={40} borde={KC.red} />
