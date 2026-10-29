@@ -335,7 +335,7 @@ function MucorShot() {
       <Etq T={T} at={K.Hi + 0.4} until={K.V - 0.3} x={60} y={700} texto="espora que germina" tam={28} />
       <Etq T={T} at={K.Hi + 1.6} until={K.V - 0.3} x={520} y={500} texto="ancha, casi sin tabiques" tam={30} color={KC.hifa} />
       <Etq T={T} at={K.Hi + 2.2} until={K.V - 0.3} x={60} y={1050} texto="otros mohos: delgadas y con tabiques" tam={26} color="#9fd0a6" />
-      <Etq T={T} at={K.V + 0.6} until={K.P - 0.3} x={60} y={470} texto="hifa" tam={30} color={KC.hifa} />
+      <Etq T={T} at={K.V + 0.6} until={K.P - 0.3} x={60} y={530} texto="hifa" tam={30} color={KC.hifa} />
       <Etq T={T} at={K.V + 1.0} until={K.P - 0.3} x={60} y={1060} texto="vaso sanguíneo" tam={28} color="#ffb3bd" />
       <Chip T={T} at={K.V + 2.4} until={K.P - 0.3} texto="se tapa el vaso" x={300} y={330} tam={34} borde={KC.red} />
       <Chip T={T} at={K.V + 3.3} until={K.P - 0.3} texto="sin sangre → necrosis" x={330} y={420} tam={34} borde={KC.ink} />

@@ -343,7 +343,7 @@ function ProtoShot() {
       <BarraEscala T={T} at={K.E} until={K.Q} texto="5 cm" largo={160} />
       <BarraEscala T={T} at={K.Q} until={Qm} texto="5 cm" largo={260} />
       <BarraEscala T={T} at={Qm} until={Qe} texto="esquema" largo={0} />
-      <BarraEscala T={T} at={K.S + 2.3} until={K.L} texto="50 µm" largo={42} />
+      <BarraEscala T={T} at={K.S + 2.3} until={K.L} texto="esquema" largo={0} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={90} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

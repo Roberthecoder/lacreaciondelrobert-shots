@@ -403,7 +403,7 @@ function NaranjaShot() {
       <Chip T={T} at={K.B + 1.5} until={K.B + 3.0} texto="2 min · carbonato de sodio" x={400} y={470} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.B + 1.8} until={K.B + 3.0} texto="agua tibia ≈ 40 °C" x={400} y={560} tam={32} borde={KC.red} />
       <Chip T={T} at={K.B + 3.4} until={K.Ai - 0.3} texto="el moho bajó en todas las pruebas" x={420} y={470} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.B + 3.8} until={K.Ai - 0.3} texto="comparación esquemática, sin cifras del estudio" x={300} y={560} tam={22} borde={KC.ink} />
+      <Chip T={T} at={K.B + 3.8} until={K.Ai - 0.3} texto="esquema: sin cifras del estudio" x={380} y={560} tam={24} borde={KC.ink} />
       <Chip T={T} at={K.Ai + 2.6} until={K.C - 0.3} texto="sácala" x={300} y={500} tam={56} borde={KC.red} />
       <Etq T={T} at={K.Ai + 1.2} until={K.C - 0.3} x={60} y={640} texto="esporas en el aire" tam={30} color={KC.ink} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="entró por una herida" x={360} y={470} tam={38} borde={KC.red} />

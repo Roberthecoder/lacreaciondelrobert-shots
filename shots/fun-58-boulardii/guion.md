@@ -29,7 +29,7 @@
 
 **Música:** cama grave continua, sin golpe (`gen-audio.mjs`); efectos en el mismo cuadro: rasgado del sobre, polvito que cae, crujido del tache, zumbido de la lupa, burbujas de las levaduras, golpes del lichi y el mangostán, hervor del té, termómetros que suben, burbujeo ácido y tics de las levaduras que se apagan, cápsula, entrada de antibióticos y tics de las bacterias que se apagan, notas de las levaduras que brillan, golpe de la tarjeta, tics de las cuadrículas, el intervalo que cruza el 1, pitido del monitor, el sobre que se abre y el polvo que flota, hojas del calendario y nota final.
 
-Barra de escala: 5 cm (sobrecito y cierre), 10 µm (levaduras), 5 cm (frutas), 50 cm (silueta y termómetros), 2 cm (tubos), 5 µm (intestino por dentro: levadura ≈ 5 µm, bacteria ≈ 1 µm), 1 µm (*C. difficile*), 50 cm (hospital). Sin barra en la pregunta y el calendario (no son escenas a escala).
+Barra de escala: 5 cm (sobrecito y cierre), 10 µm (levaduras), 5 cm (frutas), 50 cm (silueta y termómetros), 2 cm (tubos), 5 µm (intestino por dentro: levadura ≈ 5 µm, bacteria ≈ 1 µm), 50 cm (hospital). Sin barra en la pregunta, en *C. difficile* (bacilo y gráfica esquemáticos, no a escala) y en el calendario.
 
 ## Robert en pantalla
 

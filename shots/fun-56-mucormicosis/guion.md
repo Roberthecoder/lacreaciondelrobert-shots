@@ -30,6 +30,28 @@
 
 Barra de escala: 5 cm (cara), 1 cm (hojas con moho), 10 µm (hifas y vaso).
 
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué hubo tantos casos en India con el COVID?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «esa mancha negra no es el hongo» (cuadro 0) |
+| 2 | 3.6 | 7.3 | 12_perfil_serio | `arriba-der` | «le dijeron hongo negro» |
+| 3 | 12.4 | 17.0 | 06_pensativo_menton | `arriba-der` | «casi solo enferman personas con defensas bajas» |
+| 4 | 22.5 | 26.7 | 10_serio_molesto | `arriba-der` | «los tapan… el tejido muere» |
+| 5 | 27.0 | 29.9 | 07_pensativo_puno | `grande` | «¿por qué tantos casos en India?» |
+| 6 | 32.6 | 34.8 | 04_bajando_lentes | `arriba-der` | «más del doble de casos» (112 → 231) |
+| 7 | 42.2 | 46.5 | 13_senalando_arriba | `arriba-der` | «más hierro suelto» |
+| 8 | 47.0 | 50.4 | 12_perfil_serio | `arriba-der` | «solo en COVID moderado o grave» |
+| 9 | 50.9 | 53.6 | 04_bajando_lentes | `arriba-der` | «es rara y no se contagia» |
+| 10 | 54.2 | 57.9 | 02_apuntando_camara | `arriba-der` | «es tejido que el hongo dejó sin sangre» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **≈ 35 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas. Hueco más largo: 7.4 s (Cosmic, donde la cuadrícula y los números ocupan la derecha).
+
+Textos de pantalla agregados al animar (todos salen de las fuentes ya verificadas): «ASÍ LE DECÍAN · “HONGO NEGRO”», «×2.1» en la tarjeta de Patel, «orden Mucorales», «macrófago: la traga y la espora no germina», «otros mohos: delgadas y con tabiques», «transferrina (guarda el hierro)», «hierro libre → moho», «esto no es consejo médico».
+
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 
 1. CDC (2025). *Clinical Overview of Mucormycosis* (actualizada el 16 may 2025). https://www.cdc.gov/mucormycosis/hcp/clinical-overview/index.html

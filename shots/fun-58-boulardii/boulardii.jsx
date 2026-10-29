@@ -258,7 +258,7 @@ function BoulardiiShot() {
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           <Tubo T={T} x={330} y={1150} vivas={1} />
-          <Tubo T={T} x={750} y={1150} vivas={1 - 0.92 * kprog(T, K.Ac + 0.8, K.Ac + 1.8)} seed={5} />
+          <Tubo T={T} x={750} y={1150} n={30} vivas={1 - 0.967 * kprog(T, K.Ac + 0.8, K.Ac + 1.8)} seed={5} />
           <text x={540} y={920} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6}>pH 2</text>
         </>)}
       </Escena>
@@ -369,7 +369,7 @@ function BoulardiiShot() {
       <BarraEscala T={T} at={K.Ca} until={K.Ac} texto="50 cm" largo={160} />
       <BarraEscala T={T} at={K.Ac} until={K.P} texto="2 cm" largo={110} />
       <BarraEscala T={T} at={K.An} until={K.Es} texto="5 µm" largo={200} />
-      <BarraEscala T={T} at={K.Li} until={K.R} texto="1 µm" largo={75} />
+      {/* sin barra en la escena de C. difficile: el bacilo y la gráfica son esquemáticos, no a escala */}
       <BarraEscala T={T} at={K.R} until={K.N} texto="50 cm" largo={190} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={180} />
 
