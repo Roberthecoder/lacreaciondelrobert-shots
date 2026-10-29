@@ -314,7 +314,7 @@ function Xantana() {
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.E - 0.2} texto="¿solo crema?" x={250} y={420} tam={46} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.E - 0.2} texto="¿solo crema?" x={285} y={420} tam={46} />
       <Etiqueta T={T} at={K.G + 2.3} until={K.E - 0.2} x={770} y={1160} texto="bacteria" color={KC.ink} />
       <Chip T={T} at={K.E + 0.4} until={K.C - 0.2} texto="goma xantana" x={330} y={470} tam={48} borde={KC.gold2} />
       <Chip T={T} at={K.C + 0.3} until={C2 - 0.1} texto="pudrición negra de la col" y={1500} tam={40} borde={KC.yellow} />

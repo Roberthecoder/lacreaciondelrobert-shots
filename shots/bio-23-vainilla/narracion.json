@@ -1,0 +1,21 @@
+{
+  "dcHtml": "Shot Vainilla base narrada.dc.html",
+  "salida": "Shot Vainilla narrado.dc.html",
+  "nota": "Shot Biotecnológico #23. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Tu helado de vainilla casi seguro nunca tocó una vaina: menos del 1 % de la vainillina sale de la planta." },
+    { "escena": "Origen", "texto": "La vainilla es una orquídea de México, y a los totonacas de Papantla se les reconoce como sus primeros cultivadores." },
+    { "escena": "Molecula", "texto": "Su aroma principal es una molécula: la vainillina." },
+    { "escena": "Escasa", "texto": "Pero para sacar un kilo de vainillina pura se necesitan unos quinientos kilos de vainas." },
+    { "escena": "Sintetica", "texto": "Por eso casi toda se fabrica con química, a partir del petróleo o de la madera." },
+    { "escena": "Precio", "texto": "Y esa sintética cuesta apenas el 1 % de lo que cuesta la natural." },
+    { "escena": "Pregunta", "texto": "¿Y si quieres vainillina natural sin cultivar orquídeas?" },
+    { "escena": "Microbios", "texto": "Le das a un microbio ácido ferúlico, que sale del salvado de arroz." },
+    { "escena": "Enzimas", "texto": "Dos enzimas de la bacteria lo transforman, y lo que queda es vainillina." },
+    { "escena": "Natural", "texto": "Como viene de algo natural, en Europa y Estados Unidos se puede vender como natural." },
+    { "escena": "Albius", "texto": "Y la de vaina existe gracias a un niño: en 1841, en la isla Reunión, Edmond Albius, esclavizado y de 12 años, polinizó la flor a mano." },
+    { "escena": "Flor", "texto": "Hasta hoy cada flor abre un solo día y se poliniza a mano, con un palillo." },
+    { "escena": "Toneladas", "texto": "En 2024 el mundo hizo unas 60 mil toneladas de vainillina." },
+    { "escena": "Cierre", "texto": "Así que tu helado sabe a vainilla, pero su vainillina quizá la hizo un microbio." }
+  ]
+}
