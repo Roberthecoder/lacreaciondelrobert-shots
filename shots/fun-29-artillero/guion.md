@@ -11,26 +11,46 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esas manchitas negras en tu coche no son lodo: son disparos de un hongo. | Fondo cian: la puerta de un coche blanco junto a una jardinera. Cuadro 0.3: ¡tac!, aparece un puntito negro; luego otro. Chip "¿lodo?" que se tacha → "disparos de un hongo". |
-| 1 | Mantillo | Vienen del mantillo: las astillas de madera que ponen en los jardines. | La cámara baja a la jardinera: astillas de madera alrededor de un arbusto. Etiqueta "mantillo (astillas de madera y corteza)". |
-| 2 | Hongo | Ahí vive *Sphaerobolus*, el hongo artillero, de unos dos milímetros. | Lupa sobre las astillas: un racimo de esferitas color crema-naranja. Etiqueta "hongo artillero · *Sphaerobolus* (p. ej. *S. stellatus*)". Barra de escala 2 mm. |
-| 3 | Estrella | Al madurar, se abre como estrella y muestra una bolita negra y pegajosa, llena de esporas. | Una esferita se raja desde arriba en 6–8 dientes y queda como estrellita naranja; al centro, la bolita negra brillante. Etiqueta "peridiolo (bolita con esporas)". |
-| 4 | Presion | Por dentro absorbe agua, y la presión sube. | Corte por dentro (fondo noche): gotitas de agua entran a la capa interna (copa clara bajo la bolita), un medidor de presión sube. |
-| 5 | Disparo | De golpe, su capa interna se voltea al revés, como un juguete de goma que salta, y ¡pum!: dispara la bolita. | La copa interna se voltea en un cuadro (de cóncava a convexa); al lado, un juguete de media pelota de goma que salta igual. La bolita sale disparada; queda la copa volteada brillante (como bola de cristal) en la estrella. |
-| 6 | Pregunta | ¿Y por qué le atina a tu coche? | **Re-gancho.** "?" gigante sobre la jardinera; Robert grande, pensativo. |
-| 7 | Luz | Porque apunta a la luz y a lo claro, como coches blancos y casas color crema. | Las estrellitas giran hacia un sol y hacia el coche blanco y una pared crema (flechas). Chip "apunta a la luz y a lo claro". |
-| 8 | Distancia | La bolita puede volar hasta unos seis metros de lejos y más de dos de alto. | Vista de lado: trayectoria punteada de la jardinera al coche y a la pared; medidores "hasta ~6 m" (horizontal) y "más de 2 m" (vertical), con una persona para escala. |
-| 9 | Pegada | Seca, queda pegadísima: rasparla puede dañar la pintura y dejar mancha. | Acercamiento a la pintura: la bolita aplastada con su halo pegajoso; una uña/espátula raspa y queda mancha café. Chip "quítala mojada, antes de que se seque". |
-| 10 | Estudio | Un estudio de Penn State, publicado en 2004, sembró el hongo en veintisiete mantillos: en unos cuatro años, todos los de madera o corteza lo dejaron disparar. | `TarjetaEstudio` "Penn State · EUA · publicado en 2004 · 27 mantillos". Cuadrícula de 27 parcelas de mantillo que se van llenando de puntitos en unos 4 años. |
-| 11 | Viva | Y pegada a tu coche, puede seguir viva más de diez años. | Regreso al puntito en el coche; contador "más de 10 años" y la bolita con un pulso de vida. |
-| 12 | Cierre | Así que esas manchitas no eran lodo: eran balas de un hongo apuntando a la luz. | **Regreso a la imagen del inicio:** la misma puerta del coche, ahora con muchas manchitas y una flecha punteada hasta la estrellita en la jardinera, que apunta al sol. |
+| 0 | Gancho | Esas manchitas negras en tu coche no son lodo: son disparos de un hongo. | Fondo cian: coche blanco de lado sobre el mantillo. Desde el cuadro 0.1 vuelan bolitas desde el mantillo y ¡tac!, aparecen manchitas negras en la puerta (0.3, 0.85, 1.3, 1.75, 2.2 s). Tarjeta "¿lodo?" que se tacha → chip "disparos de un hongo". |
+| 1 | Mantillo | Vienen del mantillo: las astillas de madera que ponen en los jardines. | Fondo amarillo: arbustos junto a la banqueta; caen astillas y forman el mantillo. Etiquetas "mantillo" y "astillas de madera y corteza". |
+| 2 | Hongo | Ahí vive *Sphaerobolus*, el hongo artillero, de unos dos milímetros. | Fondo menta, astillas vistas de cerca: brotan 9 esferitas naranja. Etiquetas "hongo artillero", *Sphaerobolus*, "(p. ej. *S. stellatus*)". Barra 2 mm. |
+| 3 | Estrella | Al madurar, se abre como estrella y muestra una bolita negra y pegajosa, llena de esporas. | Una esferita (vista desde arriba) se raja en 7 dientes y queda como estrella; al centro, la bolita negra. Chips "se abre como estrella" y "peridiolo: bolita con esporas"; etiqueta "pegajosa". Barra 1 mm. |
+| 4 | Presion | Por dentro absorbe agua, y la presión sube. | Fondo noche, chip "POR DENTRO · CORTE": corte de lado (copa externa con dientes, capa interna clara en forma de U, la bolita encima). Entran gotas de agua (etiqueta "agua"), la capa interna se hincha; medidor "presión · sube…". Etiqueta "capa interna". |
+| 5 | Disparo | De golpe, su capa interna se voltea al revés, como un juguete de goma que salta, y ¡pum!: dispara la bolita. | La capa tiembla; al lado, círculo amarillo con el juguete de goma (media pelotita) que se voltea y salta (chip "juguete de goma"). El medidor llega a "¡al tope!" y, en el ¡pum!, la capa interna se voltea de cóncava a convexa y la bolita sale disparada hacia arriba. Chip "¡PUM!"; queda la "capa interna volteada", brillante. |
+| 6 | Pregunta | ¿Y por qué le atina a tu coche? | **Re-gancho.** Fondo lila, "?" gigante y el cochecito manchado; Robert grande, pensativo. |
+| 7 | Luz | Porque apunta a la luz y a lo claro, como coches blancos y casas color crema. | Fondo cian: sol, pared color crema y coche blanco; en el mantillo, 4 copitas giran hacia ellos y salen tiros punteados que pegan en el coche. Chip "apunta a la luz y a lo claro"; etiquetas "casa color crema", "coche blanco". |
+| 8 | Distancia | La bolita puede volar hasta unos seis metros de lejos y más de dos de alto. | Fondo naranja, vista de lado con una persona para la escala: la bolita vuela en arco del mantillo al coche. Flecha horizontal con chip "hasta ~6 m" y flecha vertical con chip "más de 2 m de alto". Barra 1 m. |
+| 9 | Pegada | Seca, queda pegadísima: rasparla puede dañar la pintura y dejar mancha. | Fondo rosa, pintura del coche de cerca: la bolita se aplasta con su halo pegajoso (chip "seca, queda pegadísima"); una espátula raspa y queda mancha y rayones (etiqueta "mancha"). Chip "quítala mojada, antes de que se seque". |
+| 10 | Estudio | Un estudio de Penn State, publicado en 2004, sembró el hongo en veintisiete mantillos: en unos cuatro años, todos los de madera o corteza lo dejaron disparar. | Fondo amarillo: `TarjetaEstudio` "2004 · Penn State · EUA · 27 mantillos · publicado en 2004". Luego 27 parcelas de mantillo que se llenan de bolitas a distinto ritmo, con contador "año 1 … 4 de ~4" y chip "madera o corteza: todos lo dejaron disparar". |
+| 11 | Viva | Y pegada a tu coche, puede seguir viva más de diez años. | Fondo rosa, pintura del coche: la bolita pegada con anillos verdes que laten. Número gigante "puede seguir viva más de · 10 años". |
+| 12 | Cierre | Así que esas manchitas no eran lodo: eran balas de un hongo apuntando a la luz. | **Regreso a la imagen del inicio:** el mismo coche blanco sobre el mismo mantillo, ahora lleno de manchitas; el sol arriba y una copita del mantillo que dispara un arco punteado hasta la puerta. Tarjeta "lodo" tachada y chip "balas de un hongo". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y continua, con un pulso suave de tensión que sube mientras "carga" la presión; efectos en el mismo cuadro: "tac" de cada manchita en el coche, crujido de las astillas, rasgado de la estrella al abrirse, gotitas, ¡pum! del disparo (y "boing" del juguete de goma), silbido de la trayectoria, raspado, tics de la cuadrícula del estudio, latido de la bolita viva.
 
-Barras de escala: 50 cm (coche/jardinera), 2 mm (cuerpos fructíferos), 1 mm (bolita/corte), 2 m (trayectoria).
+Barras de escala (siempre visibles): 50 cm (coche), 10 cm (mantillo), 2 mm (cuerpos fructíferos), 1 mm (estrella, pintura), 0.5 mm (corte), 1 m (patio y trayectoria), "27 parcelas" (estudio).
 
 Morfología (esquemática pero correcta): cuerpos fructíferos esféricos de 1–2.5 mm, color crema a amarillo/naranja; se abren desde la punta en dientes como estrella; adentro una sola bolita (peridiolo) oscura de 1–2 mm sobre una copa interna clara; tras el disparo queda la copa interna volteada como una burbuja brillante.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué le atina a tu coche?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «no son lodo: son disparos de un hongo» (cuadro 0) |
+| 2 | 8.7 | 12.0 | 13_senalando_arriba | `arriba-der` | señala al hongo artillero cuando brota |
+| 3 | 17.6 | 20.7 | 06_pensativo_menton | `arriba-der` | «absorbe agua, y la presión sube» |
+| 4 | 24.6 | 26.1 | 11_sorprendido | `arriba-der` | el ¡pum! del disparo |
+| 5 | 26.3 | 28.4 | 07_pensativo_puno | `grande` | «¿por qué le atina a tu coche?» |
+| 6 | 29.0 | 32.5 | 13_senalando_arriba | `arriba-der` | «apunta a la luz» (señala al sol) |
+| 7 | 37.6 | 41.1 | 10_serio_molesto | `arriba-der` | «rasparla puede dañar la pintura» |
+| 8 | 44.7 | 49.9 | 04_bajando_lentes | `arriba-der` | el estudio de los 27 mantillos |
+| 9 | 50.4 | 53.2 | 11_sorprendido | `arriba-der` | «viva más de diez años» |
+| 10 | 53.8 | 57.9 | 02_apuntando_camara | `arriba-der` | «eran balas de un hongo» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **33.1 s** en pantalla (+ cierre 3.5 s) · 6 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

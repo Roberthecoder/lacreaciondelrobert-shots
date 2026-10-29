@@ -123,7 +123,7 @@ function Diatomea({ x, y, s = 1, rot = 0 }) {
 }
 
 /* ---------- mapas ---------- */
-const AM_K = 8.6, AM_X0 = 150, AM_Y0 = 520;
+const AM_K = 7.4, AM_X0 = 150, AM_Y0 = 520;
 const amProy = (lon, lat) => [AM_X0 + (lon + 118) * AM_K, AM_Y0 + (33 - lat) * AM_K];
 const SA_CONT = [[-77.2,8.6],[-75,10.8],[-72,11.8],[-71,12.4],[-68,10.6],[-64,10.6],[-61,10.5],[-60,8.5],[-57,6],[-53,5.5],[-51,4],[-50,1.5],[-48,-1],[-44,-2.5],[-40,-3],[-35,-5.5],[-35,-9],[-37,-12],[-39,-15],[-39.5,-19],[-41,-22],[-44,-23],[-48,-26],[-49,-29],[-51,-31.5],[-53,-34],[-56,-34.8],[-57.5,-36.5],[-57.5,-38.5],[-62,-39],[-62.5,-41],[-65,-42.5],[-64.5,-45],[-67.5,-46.5],[-66,-48],[-68.5,-50.5],[-68.5,-52.3],[-69,-55],[-71,-54.5],[-74,-52],[-75.5,-48],[-73.5,-43],[-73.5,-38],[-71.5,-33],[-71.5,-28],[-70.3,-18.5],[-75,-15.5],[-77,-12],[-79.5,-7.5],[-81.2,-5.5],[-80.3,-3.5],[-80,-1],[-80,1],[-78.8,1.5],[-77.5,4],[-77.4,7.6]];
 const amPath = (pts) => 'M ' + pts.map(([a, b]) => amProy(a, b).map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z';
@@ -141,7 +141,7 @@ function MapaAmerica({ T, brilloMx = 0, brilloAn = 0, andes = 1 }) {
   </g>;
 }
 const IR = [[-6.0,55.2],[-7.3,55.4],[-8.3,55.2],[-8.6,54.6],[-10.0,54.2],[-9.9,53.4],[-9.4,53.1],[-9.9,52.6],[-10.3,52.1],[-9.8,51.6],[-8.5,51.6],[-7.6,51.95],[-6.4,52.2],[-6.0,53.0],[-6.2,53.9],[-5.6,54.5]];
-const irProy = (lon, lat) => [520 + (lon + 8) * 118 * 0.6, 520 + (55.6 - lat) * 118];
+const irProy = (lon, lat) => [470 + (lon + 8) * 118 * 0.6, 520 + (55.6 - lat) * 118];
 function MapaIrlanda({ T, cafe = 0 }) {
   const d = 'M ' + IR.map(([a, b]) => irProy(a, b).map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z';
   const PTS = Array.from({ length: 26 }, (_, i) => { const r = krng(40 + i); return [-9.6 + r() * 3.6, 51.9 + r() * 3.0, r()]; }).filter(([a, b]) => !(a > -6.6 && b > 54.6));
@@ -203,7 +203,7 @@ function PapaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, H: CUES.Hoja, L: CUES.Limones, N: CUES.Nadadores, E: CUES.Entrada, Pa: CUES.Pared, P: CUES.Pregunta, Pr: CUES.Parientes, I: CUES.Irlanda, He: CUES.Herbario, H1: CUES.Herb1, M: CUES.Mexico, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const ZOOS = Array.from({ length: 10 }, (_, i) => { const r = krng(70 + i); return { ang: -Math.PI / 2 + (r() - 0.5) * 2.6, v: 160 + r() * 260, rot: r() * 360, d: i * 0.12 }; });
+  const ZOOS = Array.from({ length: 10 }, (_, i) => { const r = krng(70 + i); return { ang: -Math.PI + (i + 0.5) / 10 * Math.PI * 1.25 - 0.15, v: 300 + r() * 90, rot: r() * 360, d: i * 0.12 }; });
   const salen = (i, t0) => kprog(T, t0 + ZOOS[i].d, t0 + ZOOS[i].d + 1.6, kEase.sale);
   const [mxX, mxY] = amProy(-99.66, 19.29), [tlX, tlY] = amProy(-98.2, 19.3), [anX, anY] = amProy(-76, -9);
   return (
@@ -242,9 +242,9 @@ function PapaShot() {
           <circle cx={540} cy={860} r={420} fill="rgba(120,190,255,.10)" stroke="rgba(160,215,255,.5)" strokeWidth={6} />
           <Limon x={540} y={880} h={460} abre={kprog(T, K.N + 1.0, K.N + 1.4)} />
           {T > K.N + 1.3 && ZOOS.map((z, i) => { const u = salen(i, K.N + 1.3); return <Zoospora key={i} T={T} seed={i} s={0.85 * Math.min(1, 0.4 + u)} rot={z.rot + T * 20}
-            x={540 + Math.cos(z.ang) * z.v * u * 1.6} y={640 + Math.sin(z.ang) * z.v * u * 0.9 - u * 40} />; })}
+            x={540 + Math.cos(z.ang + T * 0.15) * z.v * u * 1.25} y={760 + Math.sin(z.ang + T * 0.15) * z.v * u * 0.85} />; })}
           {T < K.N + 1.3 && <Zoospora T={T} x={540} y={880} s={0} />}
-          <g transform="translate(930 560)"><rect x={-22} y={-110} width={44} height={200} rx={22} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+          <g transform="translate(110 700)"><rect x={-22} y={-110} width={44} height={200} rx={22} fill="#fff" stroke={KC.ink} strokeWidth={6} />
             <rect x={-10} y={klerp(40, -10, 0)} width={20} height={50} fill={KC.cyan} /><circle cx={0} cy={110} r={36} fill={KC.cyan} stroke={KC.ink} strokeWidth={6} /></g>
         </>)}
       </Escena>
@@ -254,7 +254,10 @@ function PapaShot() {
         <Ambiente T={T} n={16} />
         {fsvg(<>
           <CorteHoja T={T} y={880} tubo={kprog(T, K.E + 0.9, K.E + 2.0)} />
-          <Zoospora T={T} x={klerp(260, 540, kprog(T, K.E, K.E + 0.8, kEase.sale))} y={klerp(560, 830, kprog(T, K.E, K.E + 0.8, kEase.sale))} enquista={kprog(T, K.E + 0.6, K.E + 0.9)} s={1.3} />
+          <g opacity={1 - kprog(T, K.E + 1.9, K.E + 2.3)}><Zoospora T={T} x={klerp(260, 540, kprog(T, K.E, K.E + 0.8, kEase.sale))} y={klerp(560, 830, kprog(T, K.E, K.E + 0.8, kEase.sale))} enquista={kprog(T, K.E + 0.6, K.E + 0.9)} s={1.3} /></g>
+          {T > K.E + 1.9 && <rect x={0} y={0} width={KW} height={KH} fill={KC.noche} opacity={0.85 * kprog(T, K.E + 1.9, K.E + 2.3)} />}
+          {T > K.E + 2.1 && Array.from({ length: 60 }, (_, i) => { const r = krng(200 + i); const px = 60 + r() * 960, py = 760 + r() * 440; const u = kprog(T, K.E + 2.1 + r() * 1.4, K.E + 2.4 + r() * 1.4, kEase.rebote);
+            return <Limon key={i} x={px} y={py} h={64} rot={(r() - 0.5) * 60} s={u} />; })}
         </>)}
       </Escena>
       {/* 5 · crece en hilos entre las células; su pared casi no tiene quitina: tiene celulosa */}
@@ -266,7 +269,7 @@ function PapaShot() {
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Pr} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Interrogacion T={T} x={300} y={1080} /><Zoospora T={T} x={300} y={1150} s={1.2} /></>)}
+        {fsvg(<><Interrogacion T={T} x={300} y={1080} /><Zoospora T={T} x={170} y={620} s={1.2} rot={-15} /></>)}
       </Escena>
       {/* 7 · árbol de parientes: algas pardas, diatomeas, moho de agua | hongos lejos */}
       <Escena T={T} a={K.Pr} b={K.I} zoom={0.04}>
@@ -274,11 +277,11 @@ function PapaShot() {
         {fsvg(<>
           {(() => { const g = kprog(T, K.Pr, K.Pr + 1.4, kEase.sale); const L = (d, k) => <path d={d} stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" pathLength={1} strokeDasharray={`${kclamp(g * 1.5 - k * 0.25, 0, 1)} 1`} />;
             return <>{L('M 540 1180 L 540 1080', 0)}{L('M 540 1080 L 330 980', 0.4)}{L('M 540 1080 L 870 820', 0.4)}{L('M 330 980 L 150 880', 1)}{L('M 330 980 L 330 860', 1)}{L('M 330 980 L 510 880', 1)}</>; })()}
-          {T > K.Pr + 0.8 && <AlgaParda T={T} x={150} y={860} s={kprog(T, K.Pr + 0.8, K.Pr + 1.3, kEase.rebote) * 0.85} />}
+          {T > K.Pr + 0.8 && <AlgaParda T={T} x={150} y={870} s={kprog(T, K.Pr + 0.8, K.Pr + 1.3, kEase.rebote) * 0.7} />}
           {T > K.Pr + 1.1 && <Diatomea x={330} y={790} s={kprog(T, K.Pr + 1.1, K.Pr + 1.6, kEase.rebote) * 0.8} rot={-10} />}
           {T > K.Pr + 1.4 && <Zoospora T={T} x={520} y={820} s={kprog(T, K.Pr + 1.4, K.Pr + 1.9, kEase.rebote) * 1.1} />}
           {T > K.Pr + 2.2 && <Seta x={870} y={800} s={kprog(T, K.Pr + 2.2, K.Pr + 2.7, kEase.rebote) * 0.9} sombrero={KC.red} />}
-          <rect x={80} y={680} width={540} height={220} rx={40} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="18 14" opacity={kprog(T, K.Pr + 2.0, K.Pr + 2.4)} />
+          <rect x={40} y={665} width={600} height={260} rx={40} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="18 14" opacity={kprog(T, K.Pr + 2.0, K.Pr + 2.4)} />
         </>)}
       </Escena>
       {/* 8 · Irlanda: la gran hambruna */}
@@ -296,12 +299,12 @@ function PapaShot() {
           <HojaHerbario x={250} y={970} rot={-8} anio="1845" s={kprog(T, K.He + 0.3, K.He + 0.7, kEase.rebote)} />
           <HojaHerbario x={540} y={950} rot={2} anio="· · ·" s={kprog(T, K.He + 0.5, K.He + 0.9, kEase.rebote)} />
           <HojaHerbario x={830} y={980} rot={9} anio="1896" s={kprog(T, K.He + 0.7, K.He + 1.1, kEase.rebote)} />
-          <ADN T={T} x={540} y={900} alto={360} p={kprog(T, K.He + 1.4, K.He + 2.8)} />
+          <ADN T={T} x={540} y={900} alto={210} p={kprog(T, K.He + 1.4, K.He + 2.8)} />
         </>)}
       </Escena>
       {/* 10–11 · HERB-1 y el origen: el mapa de América */}
       <Escena T={T} a={K.H1} b={K.C} zoom={0.03}>
-        <FondoLunares color={T < K.M ? KC.mint : KC.lilac} />
+        <FondoLunares color={mixHex(KC.mint, KC.lilac, kprog(T, K.M - 0.3, K.M + 0.3))} />
         {fsvg(<>
           <g opacity={kprog(T, K.H1 + 1.6, K.H1 + 2.2)}><MapaAmerica T={T} brilloMx={kprog(T, K.M + 1.2, K.M + 1.8)} brilloAn={kprog(T, K.M + 2.0, K.M + 2.6)} /></g>
           {T > K.H1 + 2.6 && T < K.M + 0.3 && [[mxX, mxY, 0], [anX - 20, anY - 60, 0.4], [anX + 30, anY + 40, 0.6]].map(([px, py, d], i) => { const u = kprog(T, K.H1 + 2.6 + d, K.H1 + 3.0 + d, kEase.rebote); return <g key={i} opacity={1 - kprog(T, K.M - 0.2, K.M + 0.3)}>
@@ -310,7 +313,7 @@ function PapaShot() {
             <circle cx={mxX} cy={mxY} r={12} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
             <circle cx={tlX + 14} cy={tlY - 4} r={12} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
           </>}
-          {T > K.M + 0.6 && (() => { const ox = 820, oy = 640, u1 = kprog(T, K.M + 0.6, K.M + 1.3, kEase.sale), u2 = kprog(T, K.M + 1.4, K.M + 2.1, kEase.sale);
+          {T > K.M + 0.6 && (() => { const ox = 230, oy = 790, u1 = kprog(T, K.M + 0.6, K.M + 1.3, kEase.sale), u2 = kprog(T, K.M + 1.4, K.M + 2.1, kEase.sale);
             return <g>
               <text x={ox} y={oy + 40} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>?</text>
               <path d={`M ${ox - 40} ${oy} Q ${klerp(ox, mxX + 60, 0.5)} ${oy - 60} ${klerp(ox - 40, mxX + 40, u1)} ${klerp(oy, mxY - 10, u1)}`} stroke={KC.ink} strokeWidth={12} fill="none" strokeDasharray="22 14" strokeLinecap="round" />
@@ -338,11 +341,11 @@ function PapaShot() {
       <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={525} texto="Phytophthora infestans" it tam={38} color={KC.ink} />
       <Etq T={T} at={K.H + 2.4} until={K.L - 0.3} x={60} y={1120} texto="envés (abajo): pelusa blanca" tam={30} color={KC.ink} />
       <Chip T={T} at={K.L + 0.2} until={K.N - 0.3} texto="AL MICROSCOPIO · envés de la hoja" x={540} y={470} tam={32} />
-      <Etq T={T} at={K.L + 1.6} until={K.N - 0.3} x={40} y={600} texto="esporangio" tam={32} color={KC.gold2} />
-      <Etq T={T} at={K.L + 2.2} until={K.N - 0.3} x={1040} y={1000} lado="izq" texto="esporangióforo" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.N + 1.6} until={K.E - 0.3} texto="8 a 12 nadadores por limón" x={460} y={470} tam={36} borde={KC.cyan} />
+      <Etq T={T} at={K.L + 1.6} until={K.N - 0.3} x={340} y={590} texto="esporangio" tam={32} color={KC.gold2} />
+      <Etq T={T} at={K.L + 2.2} until={K.N - 0.3} x={700} y={1000} lado="izq" texto="esporangióforo" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.N + 1.6} until={K.E - 0.3} texto="8 a 12 nadadores por limón" x={380} y={470} tam={32} borde={KC.cyan} />
       <Etq T={T} at={K.N + 2.4} until={K.E - 0.3} x={60} y={1150} texto="zoospora · 2 flagelos" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.N + 0.3} until={K.E - 0.3} x={880} y={720} lado="izq" texto="frío" tam={30} color={KC.cyan} />
+      <Etq T={T} at={K.N + 0.3} until={K.E - 0.3} x={150} y={620} texto="agua y frío" tam={30} color={KC.cyan} />
       <Etq T={T} at={K.E + 1.0} until={K.E + 2.2} x={620} y={830} texto="estoma (poro)" tam={30} color={KC.gold2} />
       <NumeroGigante T={T} at={K.E + 2.0} until={K.Pa - 0.3} valor={300000} dur={1.2} etiqueta="hasta" x={460} y={520} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.E + 2.4} until={K.Pa - 0.3} texto="esporangios en una sola mancha" x={460} y={680} tam={32} />
@@ -350,43 +353,43 @@ function PapaShot() {
       <TarjetaPared T={T} at={K.Pa + 1.8} until={K.P - 0.2} x={290} y={760} titulo="hongo" borde={KC.ink} filas={[['quitina', true]]} />
       <TarjetaPared T={T} at={K.Pa + 2.3} until={K.P - 0.2} x={790} y={880} titulo="Phytophthora" it borde={KC.red} filas={[['quitina: casi nada', false], ['celulosa', true]]} />
       <Chip T={T} at={K.Pr + 0.3} until={K.I - 0.3} texto="oomiceto" x={540} y={470} tam={44} borde={KC.gold} />
-      <Etq T={T} at={K.Pr + 1.0} until={K.I - 0.3} x={60} y={1000} texto="alga parda" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 1.3} until={K.I - 0.3} x={330} y={700} texto="diatomea" tam={28} color={KC.ink} lado="der" />
-      <Etq T={T} at={K.Pr + 1.6} until={K.I - 0.3} x={470} y={940} texto="moho de agua" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 1.0} until={K.I - 0.3} x={20} y={945} texto="alga parda" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 1.3} until={K.I - 0.3} x={230} y={715} texto="diatomea" tam={28} color={KC.ink} lado="der" />
+      <Etq T={T} at={K.Pr + 1.6} until={K.I - 0.3} x={430} y={905} texto="moho de agua" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Pr + 2.4} until={K.I - 0.3} x={1040} y={880} lado="izq" texto="hongos" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 2.4} until={K.I - 0.3} x={80} y={640} texto="estramenopilos" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 2.4} until={K.I - 0.3} x={40} y={625} texto="estramenopilos" tam={28} color={KC.ink} />
       <Chip T={T} at={K.I + 0.3} until={K.He - 0.3} texto="desde 1845 · Irlanda" x={400} y={470} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.I + 2.4} until={K.He - 0.3} texto="≈ 1 millón de muertos" x={540} y={1060} tam={40} borde={KC.red} />
       <Chip T={T} at={K.I + 3.6} until={K.He - 0.3} texto="más de 1 millón emigró" x={540} y={1150} tam={40} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.He + 0.1} until={K.H1 - 0.3} anio="2013" quien="Múnich y Kew (Londres)" revista="Yoshida et al., eLife" y={560} />
-      <Chip T={T} at={K.H1 + 0.2} until={K.H1 + 1.9} texto="HERB-1 · un linaje distinto" x={540} y={620} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.H1 + 0.8} until={K.H1 + 1.9} texto="se creyó extinto (2013)" x={540} y={740} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.H1 + 2.8} until={K.M - 0.3} texto="rastro hallado en América (2014)" x={540} y={470} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.H1 + 0.2} until={K.H1 + 1.9} texto="HERB-1 · un linaje distinto" x={540} y={820} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.H1 + 0.8} until={K.H1 + 1.9} texto="se creyó extinto (2013)" x={540} y={940} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.H1 + 2.8} until={K.M - 0.3} texto="rastro hallado en América (2014)" x={540} y={1130} tam={34} borde={KC.gold} />
       <Etq T={T} at={K.H1 + 3.2} until={K.M - 0.3} x={mxX - 40} y={mxY + 70} texto="México" tam={28} color={KC.ink} lado="izq" />
       <Etq T={T} at={K.H1 + 3.4} until={K.M - 0.3} x={anX + 60} y={anY - 60} texto="Sudamérica" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.H1 + 3.6} until={K.M - 0.3} texto="Martin et al., Mol Biol Evol, 2014" x={540} y={1130} tam={26} borde={KC.ink} mono />
-      <MiniEstudio T={T} at={K.M + 1.2} until={K.C - 0.3} x={300} y={500} anio="2014" quien="Goss, PNAS: México" />
-      <MiniEstudio T={T} at={K.M + 2.0} until={K.C - 0.3} x={780} y={1100} anio="2025" quien="Coomber, PLoS ONE: Andes" color={KC.cyan} />
+      <Chip T={T} at={K.H1 + 3.6} until={K.M - 0.3} texto="Martin et al., Mol Biol Evol, 2014" x={360} y={470} tam={24} borde={KC.ink} mono />
+      <MiniEstudio T={T} at={K.M + 1.2} until={K.C - 0.3} x={560} y={600} anio="2014" quien="Goss, PNAS: México" />
+      <MiniEstudio T={T} at={K.M + 2.0} until={K.C - 0.3} x={800} y={1060} anio="2025" quien="Coomber, PLoS ONE: Andes" color={KC.cyan} />
       <Etq T={T} at={K.M + 1.4} until={K.C - 0.3} x={mxX - 30} y={mxY + 60} texto="valle de Toluca" tam={24} color={KC.ink} lado="izq" />
       <Etq T={T} at={K.M + 1.6} until={K.C - 0.3} x={tlX + 40} y={tlY + 40} texto="Tlaxcala" tam={24} color={KC.ink} />
       <Etq T={T} at={K.M + 2.2} until={K.C - 0.3} x={anX - 40} y={anY + 70} texto="Andes" tam={28} color={KC.ink} lado="izq" />
-      <Chip T={T} at={K.M + 3.0} until={K.C - 0.3} texto="sin resolver" x={720} y={760} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="moho de agua, no hongo" x={540} y={470} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={K.M + 3.0} until={K.C - 0.3} texto="sin resolver" x={480} y={470} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="moho de agua, no hongo" x={380} y={470} tam={40} borde={KC.cyan} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={175} />
       <BarraEscala T={T} at={K.H} until={K.L} texto="5 cm" largo={190} />
-      <BarraEscala T={T} at={K.L} until={K.N} texto="30 µm" largo={115} />
+      <BarraEscala T={T} at={K.L} until={K.N} texto="30 µm" largo={109} />
       <BarraEscala T={T} at={K.N} until={K.E} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.E} until={K.E + 2.0} texto="30 µm" largo={160} />
-      <BarraEscala T={T} at={K.E + 2.0} until={K.Pa} texto="1 cm" largo={160} />
-      <BarraEscala T={T} at={K.Pa} until={K.P} texto="30 µm" largo={160} />
-      <BarraEscala T={T} at={K.P} until={K.Pr} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.Pr} until={K.I} texto="(sin escala: parentesco)" largo={120} />
-      <BarraEscala T={T} at={K.I} until={K.He} texto="100 km" largo={160} />
+      <BarraEscala T={T} at={K.E} until={K.E + 2.0} texto="10 µm" largo={120} />
+      <BarraEscala T={T} at={K.E + 2.0} until={K.Pa} texto="30 µm" largo={70} />
+      <BarraEscala T={T} at={K.Pa} until={K.P} texto="10 µm" largo={120} />
+      <BarraEscala T={T} at={K.P} until={K.Pr} texto="10 µm" largo={110} />
+      <BarraEscala T={T} at={K.Pr} until={K.I} texto="dibujos no a escala" largo={120} />
+      <BarraEscala T={T} at={K.I} until={K.He} texto="100 km" largo={106} />
       <BarraEscala T={T} at={K.He} until={K.H1} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.H1} until={K.C} texto="1000 km" largo={96} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.H1} until={K.C} texto="1000 km" largo={67} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={175} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="Ese hongo de la papa *no es un hongo.*" />
@@ -411,7 +414,7 @@ function PapaShot() {
         [K.P + 0.05, K.Pr + 0.6, 'avatar_07_pensativo_puno', 'grande'],
         [K.I + 0.8, K.He - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [K.H1 + 0.6, K.M - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [K.M + 0.4, K.C - 0.3, 'avatar_11_sorprendido', 'izq-alto'],
+        [K.M + 0.4, K.C - 0.3, 'avatar_11_sorprendido', 'arriba-der'],
         [K.C + 0.4, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="biologia" num="25" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="biologia" robert={'assets/stickers/avatar_13_senalando_arriba.png'} />

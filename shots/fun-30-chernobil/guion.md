@@ -3,8 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #30 · rama `pedido300/fun`.
 - **Formato:** N1 Por dentro (pared del reactor → la pared de la célula del hongo → la misma pared) con un tramo N5 (se recrea el experimento de 2007 y el de la Estación Espacial).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo que se ve: «Esa mancha negra no es hollín: es un hongo».
-- **Duración:** voz 981 caracteres / 177 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~981 créditos de ElevenLabs).
+- **Duración:** voz 995 caracteres / 179 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~995 créditos de ElevenLabs).
 - **Tono:** asombro, pero sin exagerar: NO decimos "comen radiación"; la "radiosíntesis" se dice como hipótesis.
 
 ## Versión narrada
@@ -14,13 +14,13 @@
 | 0 | Gancho | Esa mancha negra no es hollín: es un hongo, y vive en las paredes del reactor de Chernóbil. | Fondo amarillo: una pared de concreto con una mancha negra; cuadro 0.3: un dedo (o la `Lupa`) la toca y la "mancha" se ve afelpada. Chip "¿hollín?" tachado → sello "HONGO". Letrero "Chernóbil · reactor 4". |
 | 1 | Reactor | Unos micólogos de Ucrania entraron al edificio que cubre el reactor dañado. | Cámara se aleja: el "sarcófago" (edificio que cubre el reactor 4) y dos científicos con trajes y muestreadores. Chip "1997–1998". |
 | 2 | Especies | Encontraron treinta y siete especies de hongos. | Contador que sube a **37** con mini cajas de Petri de colores; etiqueta "37 especies · 19 géneros". |
-| 3 | Oscuros | Y donde había más radiación, dominaban los hongos oscuros, con melanina. | Mapa de la pared con zonas de radiación (amarillo → rojo); en las rojas, colonias negras (*Cladosporium sphaerospermum*). Etiqueta con nombre científico. |
+| 3 | Oscuros | Y donde había más radiación, dominaban los hongos oscuros, con melanina. | Mapa de la pared con zonas de radiación (amarillo → rojo); en las rojas, colonias negras. Etiqueta "hongos con melanina (p. ej. *Cladosporium sphaerospermum*)". |
 | 4 | Piel | Melanina: la misma familia de pigmentos que le da color a tu piel. | Un brazo humano junto a la colonia negra; chip "melanina" uniendo los dos. Chip chico "no es idéntica: es de la misma familia". |
 | 5 | Pared | El hongo la guarda en su pared, como una armadura negra contra la radiación. | **Bajamos al microscopio** (fondo noche): una hifa de *Cladosporium* con su pared gruesa negra (gránulos de melanina); rayos que llegan y se frenan en la pared. "AL MICROSCOPIO · pared del hongo". |
 | 6 | Pregunta | ¿Pero solo se protege, o la aprovecha? | **Re-gancho.** "?" gigante sobre la hifa; Robert grande, pensativo. |
 | 7 | Estudio | En 2007, en Nueva York, pusieron hongos así bajo radiación unas quinientas veces más alta que la normal. | `TarjetaEstudio` "2007 · Nueva York · Dadachova et al., PLoS ONE"; cajas de Petri bajo una fuente radiactiva; medidor "×500 la radiación de fondo". |
-| 8 | Crecen | Los que tenían melanina crecieron más que los que no, y su melanina cambió. | Dos cajas: "con melanina" (crece más) vs "sin melanina" (casi igual). La melanina "chispea" (cambió su señal electrónica). |
-| 9 | Colonias | Uno de ellos formó dos veces y media más colonias. | Barras: 1 vs **2.5×**, colonias que se multiplican. Etiqueta *Cryptococcus neoformans*. |
+| 8 | Crecen | Los que tenían melanina crecieron más que los que no. | Dos cajas bajo radiación: "con melanina" (crece más) vs "sin melanina" (casi igual). |
+| 9 | Colonias | Uno de ellos, con poca comida, formó dos veces y media más colonias que sin radiación. | Barras "sin radiación" (1) vs "con radiación" (**2.5×**), ambas con melanina; colonias que se multiplican. Etiqueta *Cryptococcus neoformans* y chip "poca comida". |
 | 10 | Hipotesis | Proponen que usan la radiación como energía, como una planta usa la luz. Pero es una hipótesis: no está comprobado. | Una hoja que toma luz junto al hongo que "toma" radiación con signo "?"; sello "HIPÓTESIS" y chip "no está comprobado". |
 | 11 | Espacio | En 2018 subieron uno a la Estación Espacial, y debajo de él se midió un poquito menos de radiación. | La Estación Espacial; caja de Petri partida en dos: mitad con hongo, mitad sin; debajo, dos sensores; el de abajo del hongo marca un poquito menos (medidor que apenas baja). Chip "un poquito". |
 | 12 | Cierre | Así que esa mancha negra no es hollín: es un hongo blindado con melanina. | **Regreso a la imagen del inicio:** la misma pared con la mancha negra, ahora con la "armadura" de melanina brillando. Chip "hongo blindado con melanina". |
@@ -41,7 +41,7 @@ Barras de escala: 50 cm (pared), 1 cm (colonia / caja de Petri), 5 µm (hifa y p
    > "ionizing radiation approximately 500 times higher than background"
    > "Ionizing irradiation changed the electron spin resonance (ESR) signal of melanin"
    > "Melanized fungal cells manifested increased growth relative to non-melanized cells after exposure to ionizing radiation."
-   > "produced approximately 2.5 times more CFUs in irradiated melanized cells" (*C. neoformans* H99, 0.05 mGy/h)
+   > "produced approximately 2.5 times more CFUs in irradiated melanized cells" (*C. neoformans* H99 melanizado, con nutrientes limitados, 0.05 mGy/h, comparado con células melanizadas sin irradiar)
    > Hipótesis, dicha con cautela: "we cautiously suggest that the ability of melanin to capture electromagnetic radiation … to harness radiation for metabolic energy"
    > "melanized fungal species colonize the walls of the highly radioactive damaged reactor at Chernobyl"
 3. Dadachova, E. y Casadevall, A. (2008). Ionizing radiation: how fungi cope, adapt, and exploit with the help of melanin. *Current Opinion in Microbiology* 11(6): 525–531. https://pmc.ncbi.nlm.nih.gov/articles/PMC2677413/
