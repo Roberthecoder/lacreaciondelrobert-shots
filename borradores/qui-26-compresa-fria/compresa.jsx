@@ -113,10 +113,10 @@ function Compresa26() {
   const calorG = kprog(T, K.G + 1.9, K.G + 2.5);
   const segB = K.Es + 8.6;
   // cristal: orden en que se sueltan los iones
-  const cols = 6, filas = 4, paso = 104, gx0 = 540 - (cols - 1) * paso / 2, gy0 = 690;
+  const cols = 6, filas = 4, paso = 104, gx0 = 470 - (cols - 1) * paso / 2, gy0 = 630;
   const red = Array.from({ length: cols * filas }, (_, i) => ({ c: i % cols, f: Math.floor(i / cols), tipo: (i % cols + Math.floor(i / cols)) % 2 ? 'no3' : 'nh4' }));
   const sale = [0, 5, 18, 23, 1, 12, 17, 6, 11, 2];
-  const destinos = [[150, 560], [930, 1080], [130, 1080], [950, 600], [400, 1100], [90, 820], [990, 840], [680, 1110], [260, 1110], [820, 1120]];
+  const destinos = [[120, 560], [900, 1040], [110, 1040], [960, 780], [380, 1060], [90, 800], [990, 920], [640, 1060], [240, 1070], [800, 1070]];
   const R = krng(11);
   const revuelto = Array.from({ length: 12 }, () => [R(), R(), R() * 6]);
   const tempV = klerp(27.4, 7.6, kprog(T, K.Te + 2.0, K.Te + 5.6, kEase.suave));
@@ -171,7 +171,7 @@ function Compresa26() {
             </g>; })}
           {/* barra de escala */}
           <line x1={80} y1={1740} x2={80 + paso * 2} y2={1740} stroke={KC.texto} strokeWidth={8} />
-          <text x={80 + paso} y={1720} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>1 nm (esquema)</text>
+          <text x={80 + paso} y={1720} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>≈ 1 nm · esquema</text>
           {/* energía: separar cuesta más de lo que regresa el agua */}
           {[['separar: cuesta', KC.red, 1.0, 2.6], ['rodear con agua: regresa', KC.mint, 0.82, 3.4]].map(([t, c, l, d], i) => { const p = kprog(T, K.Cr + d, K.Cr + d + 0.7, kEase.sale);
             return <g key={i} opacity={kprog(T, K.Cr + d, K.Cr + d + 0.2)}>
