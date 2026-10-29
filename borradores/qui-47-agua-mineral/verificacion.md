@@ -38,3 +38,8 @@ Notas del verificador:
 3. **#4 y #5 pH (⚠️ leve).** El ≈5 es solo de aguas minerales/sin sabor (en la misma tabla hay aguas con gas de sabor de pH ≈3) y el 7.2 es el agua de una sola ciudad. Propuesta de voz: «En 2016, en Estados Unidos, midieron aguas **minerales** con gas: pH cerca de 5; el agua de la llave **de esa ciudad**, 7.2.» (pantalla ya rotula Alabama ✅).
 4. **#8 Pantalla escena 3 (⚠️).** Quitar "muchos más que en el vaso": la enzima hace la reacción **más rápido**, no produce más ácido que el que permite el equilibrio. Que el contador sea de velocidad ("¡rápido!" / reloj acelerado) o que diga "más rápido que en el vaso".
 5. **#14 Dientes (⚠️ leve).** Añadir que fue en laboratorio. Propuesta: «¿Y tus dientes? En 2001, en Birmingham, Inglaterra, **en el laboratorio**, el agua **mineral** con gas disolvió dientes unas 100 veces menos que los refrescos.» (si no cabe, «en el laboratorio» puede ir en pantalla sobre los tubos y quitar "mineral" de la voz; mantener la tarjeta "Parry et al. · Univ. de Birmingham").
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplican tal cual las 5 propuestas del verificador (gancho «…casi no viene de las burbujas…», cierre «…casi no son las burbujas…», «aguas minerales con gas… el agua de la llave de esa ciudad, 7.2», sin «muchos más H⁺», «en el laboratorio»). Para cuadrar el tiempo solo se quita relleno sin cambiar datos.
+
+VEREDICTO: APROBADO

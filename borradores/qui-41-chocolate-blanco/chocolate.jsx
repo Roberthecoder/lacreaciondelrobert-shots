@@ -320,7 +320,7 @@ function Chocolate() {
           <g opacity={kprog(T, K.Co + 3.6, K.Co + 4.0)}><Escudo x={780} y={1090} s={0.7} /></g>
         </SvgCapa>
         <Chip T={T} at={K.Co + 0.2} until={K.Ci - 0.2} texto="CFIA · Canadá: se puede comer" y={1500} tam={40} borde={KC.mint} />
-        <Etq T={T} at={K.Co + 2.8} until={K.Ci - 0.2} x={70} y={990} texto="¿sabor? puede cambiar" tam={28} color={KC.ink} />
+        <Etq T={T} at={K.Co + 2.8} until={K.Ci - 0.2} x={70} y={990} texto="¿sabor? a veces cambia" tam={28} color={KC.ink} />
         <Etq T={T} at={K.Co + 3.8} until={K.Ci - 0.2} x={1010} y={990} texto="no es riesgo" lado="izq" tam={28} color={KC.ink} />
       </Escena>
       {/* 10 · cierre: la tableta del inicio, ahora con sus etiquetas */}
