@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Encendedor base narrada.dc.html",
+  "salida": "Shot Encendedor narrado.dc.html",
+  "nota": "Shot Químico #54. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese encendedor no está lleno de gas: trae un líquido que hierve al salir."
+    },
+    {
+      "escena": "Que",
+      "texto": "Es butano o isobutano. Al aire libre son gases: el butano hierve a casi cero grados."
+    },
+    {
+      "escena": "Presion",
+      "texto": "Adentro están apretados: a 20 grados, el butano empuja al doble de la presión del aire y sigue líquido."
+    },
+    {
+      "escena": "Valvula",
+      "texto": "El botón abre una válvula: baja la presión y el líquido hierve."
+    },
+    {
+      "escena": "Chispa",
+      "texto": "Una rueda raspa una piedrita, o un cristal golpeado da una chispa eléctrica, y el gas arde."
+    },
+    {
+      "escena": "Frio",
+      "texto": "Para hervir, el líquido roba calor: por eso se enfría si lo usas mucho."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué no dejarlo al sol?"
+    },
+    {
+      "escena": "Sol",
+      "texto": "El calor sube la presión: a 50 grados, el butano empuja más del doble que a 20."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2002, la agencia de seguridad de Estados Unidos calculó que su norma de encendedores difíciles para niños evitó unos 3 mil 300 incendios en 1998."
+    },
+    {
+      "escena": "Piedra",
+      "texto": "Lo curioso: esa piedrita no es pedernal. Es ferrocerio, hierro con cerio, inventado por el austriaco Auer von Welsbach en 1903."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese encendedor no está lleno de gas: es un líquido apretado, esperando hervir."
+    }
+  ]
+}
