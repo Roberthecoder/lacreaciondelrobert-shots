@@ -11,24 +11,43 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | La primera estatina, para el colesterol, no la inventó un químico: la hizo un moho. | Fondo amarillo: una pastilla blanca cae y rebota junto a un plato de arroz (cuadro 0.3). Un químico de bata se tacha ("✗ químico") y de la pastilla brotan hifas azul verdosas: chip "✓ un moho". |
-| 1 | Higado | Tu hígado fabrica colesterol: más del que absorbes comiendo. | Silueta de cuerpo; el hígado se ilumina y suelta bolitas amarillas de colesterol. Comparativa: "hecho en tu hígado" > "absorbido de la comida". |
-| 2 | Enzima | Lo arma en treinta pasos; uno marca el ritmo: el de la HMG-CoA reductasa. | **Al microscopio · célula del hígado** (fondo oscuro): una banda de 30 casillas se llena; una casilla se agranda y brilla: la enzima "HMG-CoA reductasa" como una máquina con un hueco. |
-| 3 | Idea | El bioquímico japonés Akira Endo sospechó que algún hongo frenaba esa enzima. | Fondo menta: Endo (silueta esquemática, sin rostro real) con un foco de idea; detrás, siluetas de hongos con "?". Chip "Akira Endo · Sankyo, Tokio". |
-| 4 | Busqueda | Probaron miles de hongos: tras 3,800, uno funcionó, pero dañaba riñones. | Pared de frascos/cajas Petri que se llena; contador que corre hasta 3,800. Uno se ilumina ("citrinina") y se tacha con un riñón rojo: "tóxica para el riñón". |
-| 5 | Arroz | Luego otro: Penicillium citrinum, un moho azul verdoso, en arroz de una tienda de Kioto. | Bolsa de arroz de una tienda; zoom a un grano con colonia azul verdosa; conidióforo en pincel (*Penicillium*) con cadenas de esporas redondas. Etiqueta "moho azul verdoso · *Penicillium citrinum*", chip "arroz de una tienda de Kioto". |
-| 6 | Pregunta | ¿Y cómo baja el colesterol de tu sangre? | **Re-gancho.** "?" gigante sobre una gota de sangre con bolitas amarillas; Robert grande, pensativo. |
-| 7 | Freno | Su molécula se parece a la que usa la enzima y le gana el lugar: tu hígado hace menos. | Al microscopio: la pieza HMG-CoA (amarilla) va al hueco de la enzima, pero la molécula del moho (verde, de forma parecida) entra primero y lo tapa. La línea de bolitas de colesterol se adelgaza. |
-| 8 | Receptores | Y sus células ponen más receptores que jalan colesterol de la sangre. | La célula del hígado se llena de "manitas" (receptores LDL) en su borde; jalan bolitas de LDL de un vaso sanguíneo, que se vacía. Etiqueta "receptores LDL". |
-| 9 | Estudio | En 1973, en Tokio, Endo aisló la compactina. Luego Merck halló una prima en Aspergillus terreus: la lovastatina. | Tarjeta "1973 · Tokio · compactina, de *Penicillium citrinum*" y al lado otra "Merck · lovastatina, de *Aspergillus terreus*" (cabezuela compacta en columna, larga y angosta, biseriada, con cadenas de esporas redondas que salen de la mitad de arriba de la vesícula). Línea "molécula prima" entre ambas. |
-| 10 | Monascus | El arroz de levadura roja, fermentado con el moho Monascus, puede traer monacolina K. | El plato de arroz se tiñe de rojo; etiqueta "arroz de levadura roja · moho *Monascus*"; aparece la molécula "monacolina K". |
-| 11 | Igual | Y es la misma molécula que la lovastatina. | Las dos moléculas (monacolina K y lovastatina) se enciman y coinciden con un destello: "= misma molécula". |
+| 0 | Gancho | La primera estatina, para el colesterol, no la inventó un químico: la hizo un moho. | Fondo amarillo: una pastilla blanca cae y rebota junto a un plato de arroz (cuadro 0.3). Etiqueta "estatina" en la pastilla; el letrero "lo inventó un químico" se tacha y de la pastilla brotan hifas azul verdosas: chip "✓ la hizo un moho". |
+| 1 | Higado | Tu hígado fabrica colesterol: más del que absorbes comiendo. | Silueta de cuerpo; el hígado se ilumina y suelta bolitas amarillas de colesterol. Junto, un ">" y un plato con pocas bolitas; chip "hecho en tu hígado > de la comida". |
+| 2 | Enzima | Lo arma en treinta pasos; uno marca el ritmo: el de la HMG-CoA reductasa. | **Al microscopio · célula del hígado** (fondo oscuro): chip "AL MICROSCOPIO · célula del hígado"; 30 casillas numeradas ("30 pasos para armar colesterol") se llenan; la casilla 3 se agranda y brilla en morado: "HMG-CoA reductasa". |
+| 3 | Idea | El bioquímico japonés Akira Endo sospechó que algún hongo frenaba esa enzima. | Fondo menta: Endo como silueta esquemática (sin rostro) con un foco de idea; brotan dos setas y una caja Petri con colonia, y un "?". Chips "Akira Endo · Sankyo, Tokio" y "¿algún hongo la frena?". |
+| 4 | Busqueda | Probaron miles de hongos: tras 3,800, uno funcionó, pero dañaba riñones. | Fondo naranja: pared de 48 cajas Petri que se llena; chip "miles de hongos probados" y número "3,800 hongos" que corre. Una caja se ilumina ("citrinina") y aparece un riñón tachado: "tóxica para el riñón". |
+| 5 | Arroz | Luego otro: Penicillium citrinum, un moho azul verdoso, en arroz de una tienda de Kioto. | Fondo lila: bolsa de arroz y un grano ampliado donde crece una colonia azul verdosa; chip "arroz de una tienda de Kioto". Luego **AL MICROSCOPIO · su "pincel"** (fondo oscuro): conidióforo biverticilado de *Penicillium* (pie → métulas → fiálides → cadenas de esporas globosas). Etiquetas *Penicillium citrinum*, "moho azul verdoso", "esporas redondas". |
+| 6 | Pregunta | ¿Y cómo baja el colesterol de tu sangre? | **Re-gancho.** Fondo rosa: "?" gigante y una gota de sangre con bolitas amarillas; Robert grande, pensativo. |
+| 7 | Freno | Su molécula se parece a la que usa la enzima y le gana el lugar: tu hígado hace menos. | Al microscopio: la pieza HMG-CoA (amarilla) va al hueco de la enzima, pero la molécula del moho (verde, de forma parecida) entra primero y lo tapa. La pieza amarilla rebota y la fila de bolitas de colesterol que sale de la enzima se adelgaza. Etiquetas "HMG-CoA reductasa", "HMG-CoA (su pieza)", "compactina (del moho)" y chip "se parece y le gana el lugar". |
+| 8 | Receptores | Y sus células ponen más receptores que jalan colesterol de la sangre. | La célula del hígado se llena de "manitas" (receptores LDL) en su borde; jalan bolitas de LDL de un vaso sanguíneo, que se vacía. Etiquetas "célula del hígado", "sangre", "receptores LDL". |
+| 9 | Estudio | En 1973, en Tokio, Endo aisló la compactina. Luego Merck halló una prima en Aspergillus terreus: la lovastatina. | Tarjeta "1973 · Tokio · compactina" (Endo, 2010); luego dos ventanas al microscopio: "1973 · Tokio · compactina" con *Penicillium citrinum* y "Merck · lovastatina" con *Aspergillus terreus* (cabezuela compacta en columna, larga y angosta, biseriada, con cadenas de esporas redondas que salen de la mitad de arriba de la vesícula). Línea punteada entre ambas y chip "moléculas primas". |
+| 10 | Monascus | El arroz de levadura roja, fermentado con el moho Monascus, puede traer monacolina K. | El plato de arroz se tiñe de rojo; etiquetas "arroz de levadura roja · moho" y *Monascus*; aparece la molécula "monacolina K" (esquemática). |
+| 11 | Igual | Y es la misma molécula que la lovastatina. | Las dos moléculas esquemáticas ("monacolina K" y "lovastatina") se enciman y coinciden con un destello: chip "= misma molécula". |
 | 12 | Cierre | Así que la primera estatina no nació en la mesa de un químico: nació en un moho escondido en un arroz de Kioto. | **Regreso a la imagen del inicio:** la misma pastilla junto al mismo plato de arroz, ahora con hifas azul verdosas saliendo del arroz hacia la pastilla. Chip "la primera estatina nació en un moho". Aviso chico: "no es consejo médico". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua y curiosa (tono de laboratorio), sin golpe; efectos en el mismo cuadro: rebote de la pastilla, crecimiento de hifas, latido del hígado, clics de las 30 casillas, tintineo de frascos y tic del contador, golpe al tachar el riñón, "pop" de la colonia en el grano, encaje de la molécula en la enzima, succión de los receptores, golpe de cada tarjeta del estudio, chorrito al teñirse el arroz y destello al coincidir las moléculas.
 
-Barra de escala: 10 cm (plato y pastilla), 20 cm (cuerpo/hígado, esquemático), 10 µm (célula), 5 µm (conidióforo de *Penicillium*), 1 nm (molécula, esquemático), 100 µm (cabezuela de *A. terreus*).
+Barra de escala: 10 cm (plato y pastilla), 20 cm · esquemático (cuerpo/hígado), 10 µm (célula), 50 cm (silueta), 10 cm (cajas Petri), 5 mm (grano), 10 µm (pincel de *Penicillium*), 1 nm · esquemático (molécula), 5 µm · esquemático (receptores), 100 µm (cabezuela de *A. terreus*).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y cómo baja el colesterol de tu sangre?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.5 | 11_sorprendido | `gancho` | «la primera estatina… la hizo un moho» (cuadro 0) |
+| 2 | 8.9 | 12.4 | 06_pensativo_menton | `arriba-der` | «treinta pasos; uno marca el ritmo» |
+| 3 | 17.5 | 21.0 | 04_bajando_lentes | `arriba-der` | «tras 3,800… dañaba riñones» |
+| 4 | 26.5 | 29.3 | 07_pensativo_puno | `grande` | «¿y cómo baja el colesterol de tu sangre?» |
+| 5 | 34.2 | 37.6 | 13_senalando_arriba | `arriba-der` | «más receptores que jalan colesterol» |
+| 6 | 38.2 | 40.5 | 12_perfil_serio | `arriba-der` | «en 1973, en Tokio, Endo aisló la compactina» |
+| 7 | 44.6 | 48.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | «el arroz de levadura roja» |
+| 8 | 49.2 | 51.5 | 11_sorprendido | `arriba-der` | «la misma molécula que la lovastatina» |
+| 9 | 52.1 | 57.9 | 02_apuntando_camara | `arriba-der` | «nació en un moho escondido en un arroz de Kioto» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **32.2 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 

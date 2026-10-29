@@ -350,8 +350,8 @@ function BotrytisShot() {
       <Etq T={T} at={K.Es + 2.4} until={K.Et - 0.3} x={60} y={1080} texto="esporas que germinan" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Et + 0.2} until={K.Sp - 0.3} texto="POR DENTRO · flor de fresa" x={420} y={470} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.Et + 0.8} until={K.Sp - 0.3} x={60} y={560} texto="estambre" tam={32} color={BC.antera} />
-      <Etq T={T} at={K.Et + 1.6} until={K.Sp - 0.3} x={60} y={1120} texto="hilos del hongo (hifas)" tam={30} color={BC.hifa} />
-      <Etq T={T} at={K.Et + 2.4} until={K.Sp - 0.3} x={1040} y={1100} lado="izq" texto="receptáculo → la fresa" tam={30} color={BC.recept} />
+      <Etq T={T} at={K.Et + 1.6} until={K.Sp - 0.3} x={60} y={1135} texto="hifas del hongo" tam={28} color={BC.hifa} />
+      <Etq T={T} at={K.Et + 2.4} until={K.Sp - 0.3} x={1040} y={1060} lado="izq" texto="receptáculo → la fresa" tam={28} color={BC.recept} />
       <Chip T={T} at={K.Et + 2.8} until={K.Sp - 0.3} texto="esquemático" x={860} y={1170} tam={24} borde={KC.white} mono />
       <Chip T={T} at={K.Sp + 2.2} until={K.P - 0.3} texto="sin síntomas" x={760} y={600} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Sp + 1.6} until={K.P - 0.3} x={60} y={1150} texto="fresa verde" tam={32} color={KC.ink} />

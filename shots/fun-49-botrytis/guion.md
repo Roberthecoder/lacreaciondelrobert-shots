@@ -12,24 +12,43 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa pelusa gris de tus fresas no llegó anoche: muchas veces entró cuando la fresa era flor. | Fondo rosa: una cajita de fresas; cuadro 0.3: en una fresa brota la pelusa gris (crece en time-lapse). Chip "¿de anoche?" que se tacha; aparece, en un recuadro, una flor blanca de fresa con un puntito gris: "desde la flor". |
+| 0 | Gancho | Esa pelusa gris de tus fresas no llegó anoche: muchas veces entró cuando la fresa era flor. | Fondo rosa: una cajita de fresas; cuadro 0.3: en una fresa brota la pelusa gris (crece en time-lapse). Tarjeta "¿llegó anoche?" que se tacha; aparece, en un círculo, una flor blanca de fresa con un puntito gris: "desde la flor". |
 | 1 | Hongo | Es *Botrytis cinerea*, el moho gris, y ataca a cientos de plantas. | Etiqueta "moho gris · *Botrytis cinerea*" sobre la fresa. Alrededor, en fila, se encienden manchitas grises en una uva, un jitomate, una frambuesa y un pétalo: chip "cientos de plantas". |
 | 2 | Esporas | Sus esporas vuelan con el viento o salpican con agua y germinan en la flor. | Fondo menta, la planta de fresa en flor: una nube de esporas llega con flechitas de viento y una gota que salpica; las esporas caen en la flor abierta y les sale un tubito (germinan). Etiquetas "viento", "salpicaduras". |
 | 3 | Estambres | Sus hilos pueden bajar por los estambres hasta lo que será la fresa. | Corte de la flor por dentro (fondo oscuro): estambres amarillos alrededor del centro verde (el receptáculo, "lo que será la fresa"); un hilo gris (hifa) baja por un estambre hasta su base. Etiquetas "estambre", "receptáculo → fresa". Chip "esquemático". |
-| 4 | Espera | Y ahí suele quedarse quieto, sin síntomas, mientras la fresa está verde. | La flor pierde los pétalos y crece una fresa verde y blanca; dentro, el hilo gris se queda quieto con "zzz". Cronómetro de días que corre; chip "sin síntomas". |
+| 4 | Espera | Y ahí suele quedarse quieto, sin síntomas, mientras la fresa está verde. | La flor pierde los pétalos y crece una fresa verde y blanca; dentro, el hilo gris se queda quieto con "zzz". Etiqueta "fresa verde"; chip "sin síntomas". |
 | 5 | Pregunta | ¿Y qué lo despierta? | **Re-gancho.** Fondo lila: "?" gigante sobre la fresa verde; Robert grande, pensativo. |
-| 6 | Madura | Que la fresa madure. Se cree que el azúcar y el cambio en sus defensas lo activan. | La fresa se pone roja (time-lapse). Medidor "azúcar ↑" y un escudito "defensas" que cambia de color; chip "hipótesis: se cree". El hilo se despierta y se ramifica. |
-| 7 | Pelusa | Y la pudre: esa pelusa son tallitos con sus esporas en racimitos, como de uvas. | La fresa se ablanda y se cubre de pelusa gris. **Al microscopio** (fondo oscuro, barra 10 µm / 1 mm): tallitos oscuros ramificados (conidióforos) con racimitos de esporas ovaladas en las puntas; a un lado, un racimo de uvas de comparación. Etiquetas "conidióforo", "esporas (conidios)". |
+| 6 | Madura | Que la fresa madure. Se cree que el azúcar y el cambio en sus defensas lo activan. | La fresa se pone roja (time-lapse). Medidor "azúcar ▲" (sin cifras) y un escudito "defensas" que cambia de color y se agrieta; chip "hipótesis: se cree". El hilo se despierta y se ramifica. |
+| 7 | Pelusa | Y la pudre: esa pelusa son tallitos con sus esporas en racimitos, como de uvas. | La fresa se ablanda y se cubre de pelusa gris. **Al microscopio** (fondo oscuro, barra 20 µm; chip "AL MICROSCOPIO · la pelusa"): tallitos oscuros ramificados (conidióforos) con racimitos de esporas ovoides (~11 × 9 µm a la escala de la barra) en las puntas; a un lado, un racimo de uvas de comparación. Etiquetas "conidióforo (tallito)", "esporas (conidios)", chip "esquemático". |
 | 8 | Vecinas | Por eso contagia a las fresas vecinas: pasa por contacto y suelta esporas al aire. | De vuelta a la cajita: los hilos pasan de la fresa enferma a la que la toca (chip "contacto") y una nubecita de esporas sale hacia arriba (chip "esporas al aire"); las vecinas empiezan a ponerse grises. |
-| 9 | Estudio | En Florida, entre 1999 y 2001, vieron que la flor es más vulnerable que la fresa verde. | `TarjetaEstudio` "1999–2001 · Florida, EE. UU. · Univ. de Florida · Mertely, MacKenzie y Legard · *Plant Disease*, 2002". Comparativa: flor (más vulnerable) vs. fresa verde. |
-| 10 | Estambres2 | Y en una temporada, quitarles los estambres a las flores redujo la pudrición. | Una flor con sus estambres quitados (tijeritas) junto a una flor normal; barras "con estambres" vs. "sin estambres" (sin números): menos fresas podridas. Chip "temporada 2000–2001". |
-| 11 | Noble | En uvas, con noches húmedas y días secos, el mismo hongo da la podredumbre noble de vinos dulces como Sauternes y Tokaji. | Fondo amarillo: un racimo de uvas blancas; luna con neblina → sol seco, y las uvas se arrugan y oscurecen. Etiquetas "podredumbre noble", y dos botellitas "Sauternes (Francia)" y "Tokaji (Hungría)". Chip "el mismo *Botrytis cinerea*". |
+| 9 | Estudio | En Florida, entre 1999 y 2001, vieron que la flor es más vulnerable que la fresa verde. | `TarjetaEstudio` "1999–2001 · Florida, EE. UU. · Univ. de Florida · Mertely, MacKenzie y Legard · *Plant Disease*, 2002". Luego: flor "más vulnerable" > fresa verde (signo "mayor que", sin cifras). |
+| 10 | Estambres2 | Y en una temporada, quitarles los estambres a las flores redujo la pudrición. | Chip "quitar los estambres": unas tijeritas le quitan los estambres a una flor. Luego chip "fresas podridas" y dos barras esquemáticas "con estambres" (alta) vs. "sin estambres" (baja), **sin números**. Chip "temporada 2000–2001 · esquemático". |
+| 11 | Noble | En uvas, con noches húmedas y días secos, el mismo hongo da la podredumbre noble de vinos dulces como Sauternes y Tokaji. | Fondo amarillo: un racimo de uvas blancas; luna con neblina → sol seco, y las uvas se arrugan y oscurecen. Etiquetas "noches húmedas" / "días secos", chip "podredumbre noble", etiqueta "el mismo *Botrytis cinerea*" y dos botellitas "Sauternes (Francia)" y "Tokaji (Hungría)". |
 | 12 | Cierre | Así que esa pelusa no es de anoche: es un hongo que pudo esperar desde la flor. | **Regreso a la imagen del inicio:** la misma cajita de fresas con la pelusa; en la fresa aparece, como fantasma, la flor de la que salió. Chip "esperó desde la flor". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave continua, algo misteriosa mientras el hongo "duerme" y más tensa cuando despierta; efectos en el mismo cuadro: crecimiento de la pelusa (siseo suave), soplido del viento y gota que salpica, "pop" de cada espora que germina, tic del cronómetro, ronquido suave del "zzz", subida del azúcar, crujido blando de la fresa al pudrirse, "puf" de la nube de esporas, "ping" de la tarjeta del estudio, tijeritas, viento nocturno y brillo del sol en las uvas.
+**Música:** cama grave continua, algo misteriosa mientras el hongo "duerme" y más tensa cuando despierta; efectos en el mismo cuadro: crecimiento de la pelusa (siseo suave), soplido del viento y gota que salpica, "pop" de cada espora que germina, tono que baja con el "zzz", subida del azúcar, crujido blando de la fresa al pudrirse, "puf" de la nube de esporas, "ping" de la tarjeta del estudio, tijeritas, viento nocturno y brillo del sol en las uvas.
 
-Barras de escala: 3 cm (fresa), 1 cm (flor), 1 mm y 10 µm (pelusa al microscopio; esporas de ~10 × 8 µm).
+Barras de escala: 1 cm en todas las escenas macro (fresa de ~3 cm, flor de ~2.5 cm), 1 mm en el corte de la flor y 20 µm al microscopio (esporas de 10–12 × 8–10 µm).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué lo despierta?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 2.8 | 11_sorprendido | `gancho` | «esa pelusa gris no llegó anoche» (cuadro 0) |
+| 2 | 6.0 | 8.8 | 12_perfil_serio | `arriba-der` | «ataca a cientos de plantas» |
+| 3 | 14.2 | 17.0 | 04_bajando_lentes | `arriba-der` | la hifa que baja por el estambre |
+| 4 | 21.6 | 23.6 | 07_pensativo_puno | `grande` | «¿Y qué lo despierta?» |
+| 5 | 29.5 | 32.1 | 11_sorprendido | `arriba-der` | la pelusa al microscopio: racimitos de esporas |
+| 6 | 39.7 | 41.9 | 06_pensativo_menton | `arriba-der` | «la flor es más vulnerable que la fresa verde» |
+| 7 | 42.5 | 46.2 | 13_senalando_arriba | `arriba-der` | «quitarles los estambres redujo la pudrición» |
+| 8 | 46.9 | 50.5 | 05_sonriendo_dientes_uniformes | `arriba-der` | el dato extra: la podredumbre noble de las uvas |
+| 9 | 53.8 | 57.9 | 02_apuntando_camara | `arriba-der` | «pudo esperar desde la flor» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **26.6 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · nunca más de 7.6 s sin Robert.
 
 ## Fuentes (abiertas en su texto completo o en su resumen oficial el 29 oct 2026)
 

@@ -232,7 +232,7 @@ function EstatinasShot() {
       <Escena T={T} a={AM} b={K.P}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<Pincel x={620} y={1160} s={1.6} crece={kprog(T, AM, AM + 2.0)} />)}
+        {fsvg(<Pincel x={620} y={1180} s={1.45} crece={kprog(T, AM, AM + 2.0)} />)}
       </Escena>
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.F} zoom={0.1}>
@@ -322,7 +322,7 @@ function EstatinasShot() {
       <Etq T={T} at={K.B + 2.4} until={K.A - 0.3} x={560} y={790} texto="citrinina" lado="der" tam={30} color={KC.ink} />
       <Etq T={T} at={K.B + 3.0} until={K.A - 0.3} x={1000} y={1010} lado="izq" texto="tóxica para el riñón" tam={26} color={KC.texto} />
       <Chip T={T} at={K.A + 0.4} until={AM - 0.2} texto="arroz de una tienda de Kioto" x={420} y={480} tam={34} borde={KC.ink} />
-      <Chip T={T} at={AM + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · su “pincel”" x={420} y={480} tam={30} borde={VERDEAZUL} mono />
+      <Chip T={T} at={AM + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · su “pincel”" x={420} y={400} tam={30} borde={VERDEAZUL} mono />
       <Etq T={T} at={AM + 0.4} until={K.P - 0.3} x={60} y={1010} texto="Penicillium citrinum" it tam={36} color={VERDEAZUL2} />
       <Etq T={T} at={AM + 0.8} until={K.P - 0.3} x={60} y={1060} texto="moho azul verdoso" tam={28} />
       <Etq T={T} at={AM + 1.6} until={K.P - 0.3} x={60} y={640} texto="esporas redondas" lado="izq" tam={26} color={VERDEAZUL2} />
@@ -333,7 +333,7 @@ function EstatinasShot() {
       <Etq T={T} at={K.R + 0.3} until={K.S - 0.3} x={60} y={480} texto="célula del hígado" tam={30} />
       <Etq T={T} at={K.R + 0.6} until={K.S - 0.3} x={1040} y={720} texto="sangre" lado="izq" tam={30} />
       <Etq T={T} at={K.R + 1.0} until={K.S - 0.3} x={1040} y={1140} lado="izq" texto="receptores LDL" tam={30} color={KC.mint} />
-      <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 2.6} anio="1973" quien="Tokio · compactina" revista="Endo, 2010" x={400} y={700} />
+      <TarjetaEstudio T={T} at={K.S + 0.05} until={K.S + 2.6} anio="1973" quien="Tokio · compactina" revista="Endo, 2010" x={400} y={700} />
       <Chip T={T} at={K.S + 2.8} until={K.M - 0.3} texto="1973 · Tokio · compactina" x={280} y={570} tam={28} borde={VERDEAZUL} />
       <Chip T={T} at={K.S + 3.6} until={K.M - 0.3} texto="Merck · lovastatina" x={800} y={570} tam={28} borde={CANELA} />
       <Etq T={T} at={K.S + 3.0} until={K.M - 0.3} x={90} y={670} texto="Penicillium citrinum" it tam={24} color={VERDEAZUL2} />
@@ -359,7 +359,7 @@ function EstatinasShot() {
       <BarraEscala T={T} at={K.P} until={K.F} texto="5 mm" largo={120} />
       <BarraEscala T={T} at={K.F} until={K.R} texto="1 nm · esquemático" largo={90} />
       <BarraEscala T={T} at={K.R} until={K.S} texto="5 µm · esquemático" largo={120} />
-      <BarraEscala T={T} at={K.S} until={K.M} texto="100 µm (A. terreus)" largo={110} />
+      <BarraEscala T={T} at={K.S} until={K.M} texto="100 µm" largo={110} />
       <BarraEscala T={T} at={K.M} until={K.C} texto="10 cm" largo={170} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={170} />
 
