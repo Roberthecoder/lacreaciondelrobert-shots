@@ -55,3 +55,38 @@
 - Carta: «escribió a una revista: tras comer…» → «escribió que tras comer…» (la revista, NEJM, queda en la tarjeta de pantalla).
 - Cierre: «Así que no es veneno…» → «No es veneno…».
 Ningún recorte cambia un dato; ninguna afirmación nueva.
+
+## Re-verificación (29 oct 2026)
+
+Mismo verificador independiente. Revisé las líneas cambiadas en `narracion.json` y `guion.md` y todo `publicacion.md`.
+
+| # | Afirmación cambiada | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| R1 | Voz (Carta): "En 1968, un médico escribió que tras comer en restaurantes chinos sentía el cuello entumido y palpitaciones." | ✅ | Kwok, NEJM 1968 | "numbness at the back of the neck… general weakness and palpitation" | 1968 |
+| R2 | Voz (Sospechas): "No comprobó nada. Y nació su mala fama." | ✅ | Kwok 1968; Geha, J Nutr 2000 | "The cause is obscure." · "referred to collectively as Chinese Restaurant Syndrome. Numerous reports, most of them anecdotal" | 1968–2000 |
+| R3 | Voz (Estudio): "un estudio de Harvard" | ✅ (justo con la tarjeta en pantalla) | PubMed 11080723 | Primer autor: "Harvard University, Boston"; título: "Multicenter…". La voz simplifica y la tarjeta "Harvard (Boston) y otros centros" aclara que fue multicéntrico. La publicación de LinkedIn dice "multicéntrico". "Dirigido desde Harvard" sería más exacto, pero no hace falta. | 2000 |
+| R4 | Voz (Estudio): "dio 5 gramos o placebo a 130 personas que se decían sensibles" | ✅ | PubMed 11080723 | "130 self-selected reportedly MSG-reactive volunteers were challenged with 5 g of MSG and with placebo on separate days" (a cada persona se le dio de los dos, en días distintos; la pantalla con los vasos A y B lo muestra bien) | 2000 |
+| R5 | Voz (Estudio): "sin comida, más reaccionaron al glutamato que al placebo" | ✅ | PubMed 11080723 | "50 (38.5%) responded to MSG only, 17 (13.1%) responded to placebo only (P <.05)" | 2000 |
+| R6 | Voz (Estudio): "pero al repetir, la mitad ya no" | ✅ | PubMed 11080723 | "Only half (n = 19) of 37 subjects who reacted to 5 g of MSG but not placebo in protocol A reacted similarly in protocol B" | 2000 |
+| R7 | Voz (Estudio): "con comida, nada constante" | ✅ | PubMed 11080723 | "Both responded to only one of the MSG challenges in protocol D" (2 personas) | 2000 |
+| R8 | Pantalla (Estudio): se encienden 50 de 130 con glutamato y 17 de 130 con placebo | ✅ | PubMed 11080723 | ver R5 | 2000 |
+| R9 | Pantalla (Estudio): al volver a probar "la mitad de las encendidas se apaga" | ⚠️ leve | PubMed 11080723 | La repetición se hizo con 37 de las 50, no con las 50: "19 of 37… reacted similarly". Si se animan las 50 y se apagan 25, el dibujo no coincide con el estudio. | 2000 |
+| R10 | Pantalla (Gramos): la comida baja por el tubo digestivo hasta el intestino y ahí suelta glutamato | ✅ | FDA + fisiología | "When proteins are digested, they release free glutamate" | 2026 |
+| R11 | Voz (Cierre): "No es veneno: para la FDA es seguro, y es lo mismo que hay en tu jitomate." | ✅ | FDA | "generally recognized as safe" (GRAS) · "tomatoes and cheeses" | 2026 |
+| P1 | publicacion.md (TikTok, IG, YouTube, LinkedIn): 38.5 % y 13.1 %; la mitad volvió a reaccionar; con comida, 2 personas y 3 pruebas cada una; sin efectos graves ni persistentes | ✅ | PubMed 11080723 | ver R5–R7 · "neither persistent nor serious effects from MSG ingestion are observed" | 2000 |
+| P2 | publicacion.md: síntomas leves y pasajeros "(dolor de cabeza, hormigueo, rubor)" con 3 g o más sin comida; menos de 0.5 g por porción | ✅ | FDA (citando a la FASEB) | "headache, numbness, flushing, tingling, palpitations, and drowsiness" · "3 grams or more of MSG without food" · "less than 0.5 grams" | 2026 |
+| P3 | publicacion.md (TikTok, fuentes): "Ikeda 1908 (trad. Chem Senses 2002)" | ⚠️ leve | Chem Senses 2002 (traducción); Lindemann et al. 2002 | La extracción fue en 1908, pero el artículo original de Ikeda se publicó en 1909 en una revista japonesa | 1909 |
+| P4 | publicacion.md (Facebook): "En estudios a ciegas, las reacciones no se sostenían al repetir la prueba" | ⚠️ | PubMed 11080723 | Tiene el mismo problema que ya se corrigió en la voz: es demasiado absoluta (la mitad sí repitió) y calla que más personas reaccionaron al glutamato que al placebo | 2000 |
+| P5 | publicacion.md (Threads): "algunas personas reaccionaron más al glutamato que al placebo" | ⚠️ leve | PubMed 11080723 | Ambigua: lo que se encontró es que **más personas** reaccionaron al glutamato (38.5 %) que al placebo (13.1 %), no que algunas personas reaccionaran más fuerte | 2000 |
+| P6 | publicacion.md: el resto (FDA 13 g vs 0.55 g, carta de 1968 al NEJM con sus posibles causas, GRAS, leche materna, umami, Tokio) | ✅ | ver tabla principal | — | — |
+
+### Correcciones pendientes
+1. **R9 (pantalla):** animar que la repetición fue con 37 de las encendidas y que 19 vuelven a encenderse (o rotular "la mitad" sobre 37), en lugar de apagar la mitad de las 50.
+2. **P3:** en las fuentes de TikTok, "Ikeda 1908" debe ser **"Ikeda 1909"**.
+3. **P4 (Facebook):** cambiar a **"En un estudio a ciegas, sin comida, más personas reaccionaron al glutamato que al placebo, pero al repetir la prueba la mitad ya no, y con comida no hubo nada constante."**
+4. **P5 (Threads):** cambiar a **"más personas reaccionaron al glutamato que al placebo"**.
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplican tal cual las 4 propuestas de la re-verificación (pantalla: 37 de las 50 repiten y 19 vuelven a reaccionar; Ikeda 1909 en TikTok; textos de Facebook y Threads). La voz ya quedó ✅.
+
+VEREDICTO: APROBADO
