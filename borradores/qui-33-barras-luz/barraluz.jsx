@@ -179,7 +179,7 @@ function BarraLuzShot() {
                 : <Hexa x={xx + Math.sin(T * 1.5 + i) * 10} y={yy} r={16} color="#c7cdd8" />}</g>; })}
         </SvgCapa>
         <Chip T={T} at={K.Q + 0.4} until={K.Me - 0.3} texto="vidrio: agua oxigenada (H₂O₂)" x={540} y={760} tam={36} borde={KC.cyan} />
-        <Chip T={T} at={K.Q + 2.0} until={K.Me - 0.3} texto="plástico: éster oxalato + colorante" x={540} y={1160} tam={34} borde={KC.leaf} />
+        <Chip T={T} at={K.Q + 2.0} until={K.Me - 0.3} texto="plástico: éster oxalato + colorante" x={540} y={1500} tam={34} borde={KC.leaf} />
       </Escena>
       {/* 2 · se mezclan: molécula inestable (micro, fondo noche) */}
       <Escena T={T} a={K.Me} b={K.En} zoom={0.03}>

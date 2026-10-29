@@ -296,7 +296,7 @@ function Protector() {
           {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${i * 200 - 40 + (T * 30) % 200} 800 q 50 -24 100 0`} stroke="#bfe8ff" strokeWidth={6} fill="none" />)}
           {Array.from({ length: 42 }, (_, i) => { const c = i % 7, r = Math.floor(i / 7), on = kprog(T, K.Pl + 0.8 + i * 0.05, K.Pl + 1.0 + i * 0.05, kEase.rebote), fuera = 1 - kprog(T, K.Pl + 3.2, K.Pl + 3.5);
             return on > 0 ? <Personita key={i} x={110 + c * 80} y={930 + r * 50} s={0.9 * on} o={fuera} color={[KC.pink, KC.orange, KC.mint, KC.lilac, KC.cyan][i % 5]} /> : null; })}
-          {(() => { const o2 = kprog(T, K.Pl + 3.6, K.Pl + 4.1), pie = kprog(T, K.Pl + 4.3, K.Pl + 5.2, kEase.sale);
+          {(() => { const o2 = kprog(T, K.Pl + 3.3, K.Pl + 3.7), pie = kprog(T, K.Pl + 4.3, K.Pl + 5.2, kEase.sale);
             if (o2 <= 0) return null;
             const ang = pie * Math.PI / 2;
             return <g opacity={o2}>
@@ -374,7 +374,7 @@ function Protector() {
       <Subtitulo T={T} idx={6} at={K.Fp + 0.1} until={K.La - 0.1} texto="FPS 30: *filtra 97 %.*" />
       <Subtitulo T={T} idx={7} at={K.La + 0.1} until={K.Pl - 0.1} texto="En laboratorio: *2 mg/cm².*" />
       <Subtitulo T={T} idx={8} at={K.Pl + 0.1} until={K.Me - 0.1} texto="Playa: *la cuarta parte.*" />
-      <Subtitulo T={T} idx={9} at={K.Me + 0.1} until={K.Ci - 0.1} texto="Menos crema, *menos FPS.*" />
+      <Subtitulo T={T} idx={9} at={K.Me + 0.1} until={K.Ci - 0.1} texto="Poca crema: *menos FPS.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="*Esponja:* ponle suficiente." />
 
       <Robert T={T} apariciones={[

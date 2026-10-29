@@ -272,7 +272,7 @@ function Cerillo32() {
       <TarjetaEstudio T={T} at={K.Hu + 0.2} until={K.Hu + 2.6} anio="1888" quien="Londres · Bryant & May" revista="The National Archives (Reino Unido)" x={540} y={600} />
       <Chip T={T} at={K.Hu + 5.4} until={K.Qu - 0.3} texto="huelga por despidos y multas" x={540} y={1610} tam={38} borde={KC.coral} />
       <Etq T={T} at={K.Hu + 3.2} until={K.Qu - 0.3} x={60} y={1385} texto="mujeres en huelga" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 0.6} until={K.Qu + 3.0} x={330} y={1260 - 420} texto="humo de fósforo blanco" lado="der" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 0.6} until={K.Qu + 3.0} x={40} y={800} texto="humo de fósforo blanco" lado="der" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Qu + 1.6} until={K.Be - 0.3} x={730} y={1150} texto="hueso de la quijada" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Qu + 3.4} until={K.Be - 0.3} texto="1882–1897 · murió el 19 % de los casos" x={540} y={1610} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Be + 2.1} until={K.Br - 0.2} texto="sin fósforo blanco en los cerillos" x={540} y={1500} tam={36} borde={KC.red} />

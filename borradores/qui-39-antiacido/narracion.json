@@ -3,16 +3,49 @@
   "salida": "Shot Antiacido narrado.dc.html",
   "nota": "Shot Químico #39. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esa pastilla para las agruras no calma tu estómago: es una base que choca con su ácido y lo vuelve sal y agua." },
-    { "escena": "Acido", "texto": "Tu estómago fabrica ácido clorhídrico: unas células de su pared, las parietales, lo bombean para digerir y frenar bacterias." },
-    { "escena": "Ph", "texto": "Medido en 1990 con cápsulas que se tragan, en ayunas daba un pH de 1.7." },
-    { "escena": "Agruras", "texto": "Si ese ácido sube por tu esófago, arde: eso son las agruras." },
-    { "escena": "Base", "texto": "El antiácido trae bases: carbonato de calcio, hidróxido de magnesio o de aluminio, o bicarbonato. Ácido más base da sal y agua." },
-    { "escena": "Gas", "texto": "Con carbonatos, además, sale gas: dióxido de carbono. Por eso a veces eructas." },
-    { "escena": "Pregunta", "texto": "¿Y el omeprazol hace lo mismo?" },
-    { "escena": "Omeprazol", "texto": "No: no toca el ácido que ya está; frena las bombas que lo fabrican, y tarda de 1 a 4 días en dar su efecto completo." },
-    { "escena": "Beaumont", "texto": "En 1822, en la isla Mackinac, en Michigan, un disparo le dejó a Alexis St. Martin un hoyo al estómago. El médico William Beaumont sacó por ahí su jugo gástrico y vio que digería comida fuera del cuerpo." },
-    { "escena": "Muriatico", "texto": "Unos químicos lo analizaron y hallaron ácido muriático: el nombre viejo del ácido clorhídrico." },
-    { "escena": "Cierre", "texto": "Así que esa pastilla no calma tu estómago: le hace química. Y si tus agruras son frecuentes, ve al médico." }
+    {
+      "escena": "Gancho",
+      "texto": "Esa pastilla para las agruras no calma tu estómago: es una base que choca con su ácido."
+    },
+    {
+      "escena": "Acido",
+      "texto": "Tu estómago hace ácido clorhídrico: lo bombean células de su pared, las parietales."
+    },
+    {
+      "escena": "Ph",
+      "texto": "En 1990, unas cápsulas tragadas midieron su pH en ayunas: 1.7."
+    },
+    {
+      "escena": "Agruras",
+      "texto": "Si sube por tu esófago, arde: son las agruras."
+    },
+    {
+      "escena": "Base",
+      "texto": "El antiácido trae bases: carbonato de calcio, hidróxido de magnesio, bicarbonato. Ácido más base da sal y agua."
+    },
+    {
+      "escena": "Gas",
+      "texto": "Con carbonatos sale además un gas, dióxido de carbono, y puedes eructar."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y el omeprazol hace lo mismo?"
+    },
+    {
+      "escena": "Omeprazol",
+      "texto": "No: no toca el ácido que ya está; frena las bombas que lo fabrican, y tarda de 1 a 4 días en dar su efecto completo."
+    },
+    {
+      "escena": "Beaumont",
+      "texto": "En 1822, en Michigan, un disparo le dejó a Alexis St. Martin un hoyo al estómago. El médico William Beaumont sacó por ahí su jugo gástrico: digería comida hasta fuera del cuerpo."
+    },
+    {
+      "escena": "Muriatico",
+      "texto": "Unos químicos hallaron en él ácido muriático, el nombre viejo del clorhídrico."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa pastilla no calma tu estómago: le hace química. Si tus agruras son frecuentes, ve al médico."
+    }
   ]
 }

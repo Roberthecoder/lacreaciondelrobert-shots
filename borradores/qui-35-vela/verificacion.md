@@ -31,3 +31,5 @@ Observaciones menores (no bloquean):
 ## Correcciones necesarias
 
 Ninguna. No se encontraron afirmaciones ❌ ni ⚠️: todas las frases citadas en guion.md existen textualmente en las fuentes indicadas y la voz no las exagera.
+
+VEREDICTO: APROBADO

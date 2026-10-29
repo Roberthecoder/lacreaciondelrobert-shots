@@ -5,7 +5,8 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Ese cerillo no trae el fuego en la cabeza: el fósforo está en la tira de la caja."
 - **Seguridad:** no se muestra ni se sugiere ningún experimento; nunca se ve a nadie mezclando polvos. Ver Notas (la mezcla de clorato y fósforo rojo es sensible a golpes).
 - **Duración:** voz 943 caracteres / ≈ 178 palabras (≈ 57.7 s) + cierre 3.5 s → **≈ 61.2 s** (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion escrito; pendiente de verificación independiente (`verificacion.md`), animación y aprobación de voz de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`cerillo.jsx`, revisión en `revision/hoja.png`), voz pendiente de aprobación de Robert (~943 créditos).
+- **Duración de la base sin voz:** 61.4 s (`gen-audio.mjs`; outro de 3.7 s).
 
 ## Versión narrada
 
@@ -26,6 +27,26 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química sobre la llama oscurecida. |
 
 **Música:** cama grave continua; efectos en el mismo cuadro: raspón del cerillo, siseo de la chispa, "fuf" de la llama, golpe de la tarjeta, pasos de la fila que sale, zumbido grave con el vapor, sello que golpea en Berna, silencio con un tono fino cuando se apaga la luz y brilla el fósforo.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y por qué no ponerlo en la cabeza?» y en «les brillaban las encías».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «el fósforo está en la tira de la caja» |
+| 2 | 5.6 | 9.3 | 13_senalando_arriba | `izq-alto` | «clorato de potasio… y azufre» |
+| 3 | 13.6 | 18.0 | 06_pensativo_menton | `izq-alto` | «convierte una pizca de fósforo rojo en fósforo blanco» |
+| 4 | 22.2 | 26.3 | 04_bajando_lentes | `izq-alto` | «arde el azufre y luego la madera» |
+| 5 | 26.65 | 30.2 | 07_pensativo_puno | `grande` | «¿Y por qué no ponerlo en la cabeza, como antes?» |
+| 6 | 32.6 | 36.9 | 10_serio_molesto | `arriba-der` | «1400 mujeres… se fueron a huelga» |
+| 7 | 38.0 | 42.9 | 12_perfil_serio | `izq-alto` | «matar el hueso de la quijada» |
+| 8 | 43.8 | 47.3 | 13_senalando_arriba | `izq-alto` | «firmaron prohibir esos cerillos» |
+| 9 | 48.4 | 53.3 | 11_sorprendido | `grande-izq` | «les brillaban las encías» |
+| 10 | 53.9 | 57.6 | 02_apuntando_camara | `arriba-der` | «lo trae la caja» |
+| — | 57.7 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 41.7 s en pantalla (+ cierre 3.7 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 
