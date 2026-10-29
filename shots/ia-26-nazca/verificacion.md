@@ -39,3 +39,28 @@ Revisión de forma: cada cifra dice de qué es; todos los datos son de 2024 (men
    Además, en `guion.md` (Notas) cambiar "Casi el doble: 430 → 733" por "en 2024: 430 → 733; en 2025 el total subió a 893 (Yamagata, 28 jul 2025)".
 2. **#4 ⚠️ "Las nuevas miden unos nueve metros".** El 9 m es el promedio de las figuras en relieve conocidas antes, no de las 303 nuevas. Propuesta de voz (mismo largo): **"Son figuras chicas, de unos nueve metros en promedio, y tras casi dos mil años a la intemperie, apenas se ven."** En pantalla: "≈ 9 m (promedio de las figuras en relieve)".
 3. **#6 ⚠️ "colibrí de líneas ≈ 90 m".** 90 m es el promedio de las figuras de línea, no el colibrí. Propuesta en pantalla: **"figuras de línea: ≈ 90 m en promedio"** (dibujar el colibrí como ejemplo sin poner su medida), o quitar la medida del colibrí.
+
+## Re-verificación
+
+29 oct 2026 · mismo verificador independiente · revisé solo lo nuevo en `narracion.json`, `nazca.jsx` y `publicacion.md`. Fuente nueva abierta en el original: comunicado de la Universidad de Yamagata del 28 jul 2025 (PDF, en japonés).
+
+| # | Afirmación nueva | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | [1] "Son figuras chicas, de unos nueve metros en promedio…" + chip "≈ 9 m · promedio de las figuras en relieve" / "en relieve: ≈ 9 m en promedio" | ✅ | Sakai et al., PNAS | "Relief-type geoglyphs are on average only 9 m in size" | 2024 |
+| R2 | Chip "figuras de línea: ≈ 90 m en promedio" | ✅ | Sakai et al. | "Line-type figurative geoglyphs are large, with an average length of 90 m" | 2024 |
+| R3 | [0] recorte "…en el desierto de Nazca, Perú…" | ✅ | Sakai et al. | igual que #1–#3 | 2024 |
+| R4 | [2] "Una IA revisó fotos aéreas del desierto en cuadritos de once metros…" + chip "fotos aéreas · 10 cm por píxel" | ✅ | Sakai et al. | "These cover about 11 × 11 square meters each" · "acquired by aircraft at 10 cm effective resolution" | 2024 |
+| R5 | [3] "Luego, arqueólogos revisaron: de cada treinta y seis sugerencias, una prometía." | ✅ | Sakai et al. | "We processed an average of 36 AI-model suggestions to find one promising candidate." | 2024 |
+| R6 | [5] "En esos seis meses fueron a pie a 341 puntos." | ✅ | Sakai et al. | "The 341 locations visited during the 6-mo 2022/23 field survey" · "conducted on foot" | 2024 |
+| R7 | [6] "Lo publicó la Universidad de Yamagata con IBM en dos mil veinticuatro." | ✅ | Sakai et al. | afiliaciones Yamagata University + IBM T. J. Watson Research Center (más París 1 y DLR); publicado 23 sep 2024 | 2024 |
+| R8 | [6] voz "En dos mil veinticinco, ciento sesenta más." + subtítulo "2025: *160 más.*" | ⚠️ (imprecisa) | Yamagata, comunicado 28 jul 2025 | "2023年および2024年に、山形大学とIBMによるAI支援の現地調査が実施され、ナスカ台地で新たに248点の地上絵が発見されました。このうち160点は…具象的な地上絵です。" Las 160 se hallaron en el campo en **2023 y 2024**; en 2025 solo se **anunciaron**. Dicho así suena a que se hallaron en 2025. (Que se diga sin mencionar la IA está bien; el comunicado dice "con apoyo de IA" y no da cuántas señaló la IA.) | 2025 |
+| R9 | Columnas 430 → 733 → 893 + chip "anuncio de la Univ. de Yamagata · jul 2025" | ✅ | Sakai et al. + Yamagata 2025 | "具象的な地上絵の総数は計893点に達しました" (733 + 160 = 893) | 2024 / 2025 |
+| R10 | Mapa: 160 puntos rosas en la pampa | ✅ (esquema) | Yamagata 2025 | "ナスカ台地で新たに248点…" (en la pampa de Nazca, a lo largo de senderos); posiciones esquemáticas | 2025 |
+| R11 | Subtítulo [7] "*178* las señaló la IA; *125*, no directamente." | ✅ | Sakai et al. | "178 were individually suggested by the AI and 125 were not individually AI-suggested" | 2024 |
+| R12 | Chip "figuras en relieve (683)" | ✅ | Sakai et al. | "303 newly confirmed and 380 previously known … relief-type geoglyphs" (380 + 303 = 683) | 2024 |
+| R13 | `publicacion.md`: "Masato Sakai y su equipo…", "629 km²", "47,410 recuadros", "de 430 a 733", "en julio de 2025 la Universidad de Yamagata anunció 248 geoglifos más (160 de ellos figuras): el total de figuras llegó a 893" | ✅ | Sakai et al. + Yamagata 2025 | comunicado: "坂井正人卓越研究教授" · "新たに248点…160点は具象的…総数は計893点"; paper: "629 km2", "47,410 AI candidate boxes" | 2024 / 2025 |
+| R14 | `publicacion.md` (Shorts, X, Threads, Facebook): "En 2025 anunciaron 160 más" / "la universidad anunció 160 figuras más" | ✅ | Yamagata 2025 | ahí sí dice "anunciaron" | 2025 |
+
+### Correcciones necesarias (re-verificación)
+
+1. **R8 ⚠️** Voz [6]: cambiar "En dos mil veinticinco, ciento sesenta más." por **"En dos mil veinticinco anunciaron ciento sesenta más."** (una palabra más, ~0.4 s). Subtítulo: **"2025: *anunciaron 160 más.*"** (o "jul 2025: *160 más anunciadas*"). Así se entiende que se anunciaron en 2025, no que se hallaron ese año. Todo lo demás de la re-verificación queda ✅.

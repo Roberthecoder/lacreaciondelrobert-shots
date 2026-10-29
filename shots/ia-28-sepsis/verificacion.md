@@ -35,3 +35,25 @@
    Ajustar el conteo de palabras para seguir en 61–62 s.
 
 Sin ❌. Todas las cifras (67 %, 38,455, 0.63, 0.76–0.83, 18 %, 7 %, 5 hospitales, 3 h) coinciden con la fuente original abierta.
+
+## Re-verificación (29 oct 2026, mismo verificador independiente)
+
+Revisé solo lo nuevo: `narracion.json`, textos en pantalla de `sepsis.jsx` y `publicacion.md`.
+
+| # | Afirmación nueva o recortada | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Sepsis (recorte): "La sepsis: tu defensa contra una infección se sale de control y daña tus órganos. Tratarla pronto es clave." | ✅ | OMS, "Sepsis" | "extreme response to an infection" / "causes damage to its own tissues and organs" / "most effective when started early" | consultada 2026 |
+| R2 | Estudio: "En 2021, la Universidad de Michigan la probó por fuera con casi treinta y nueve mil hospitalizaciones"; tarjeta "2021 · Universidad de Michigan · Wong et al. · JAMA Internal Medicine"; chip "prueba por fuera" | ✅ | Wong 2021, PMC8218233 | "an independently conducted external validation" / "38 455 hospitalizations" | 2021 |
+| R3 | Calificación: "sacó 0.63; el fabricante decía hasta 0.83"; subtítulo "Sacó 0.63. Decían 0.83" | ✅ | Wong 2021 | "0.63 (95% CI, 0.62-0.64)" / "reported by Epic Systems (AUC, 0.76-0.83) in internal documentation" | 2021 |
+| R4 | Alertas: "casi uno de cada cinco hospitalizados… es la fatiga de alertas"; chips "18 de cada 100 hospitalizados", "fatiga de alertas" | ✅ | Wong 2021 | "6971 of all 38 455 hospitalized patients (18%), thus creating a large burden of alert fatigue" | 2021 |
+| R5 | Tarde: "solo en siete de cada cien casos avisó de alguien sin antibióticos a tiempo"; chips "100 casos de sepsis", "7 sin antibiótico a tiempo" | ✅ | Wong 2021 | "183 (7%) were identified by an ESM score of 6 or higher, but the patient did not receive timely antibiotics (ie, prior to or within 3 hours after sepsis)" | 2021 |
+| R6 | Contraste corregido: "Otra IA, de Johns Hopkins, se asoció en 2022 con menos muertes si un médico confirmaba su alerta antes de tres horas"; tarjeta "2022 · Johns Hopkins · TREWS · Adams et al. · Nature Medicine"; chip "menos muertes (asociación)" | ✅ | Adams et al., *Nat Med* 28:1455–1460, PubMed 35864252 | "prospective, multi-site cohort study… examined the association" / "confirmed by a provider within 3 h of the alert had a reduced in-hospital mortality rate" | 2022 |
+| R7 | "Pero ese estudio lo hicieron sus propios creadores"; sello "estudio de sus creadores" | ✅ | PubMed 35864252 (última autora Suchi Saria, afiliación Johns Hopkins y Bayesian Health); HealthDay sobre ese mismo artículo; preprint medRxiv del equipo | HealthDay: "Several authors disclosed financial ties to Bayesian Health and Basilea." Preprint: Henry, Saria y Johns Hopkins "are entitled to revenue distributions" (licencia de TREWS a Bayesian Health) | 2022 |
+| R8 | Lección (recorte): "una IA médica se prueba por fuera antes de creerle a quien la vende"; chip "«según quien la vende»", sello "probada por fuera ✔" | ✅ | Recomendación, no dato; ahora es coherente con R7 | — | — |
+| R9 | publicacion.md: el modelo "calcula un puntaje cada 15 minutos" | ✅ | Wong 2021 | "The ESM score, calculated every 15 minutes" | 2021 |
+| R10 | publicacion.md: "Andrew Wong, Karandeep Singh y su equipo" (Singh, último autor) | ✅ | PubMed 34152373 | Autores: Andrew Wong (1.º) … Karandeep Singh (12.º, último) | 2021 |
+| R11 | publicacion.md: resto de cifras (27,697 pacientes; 1,709 de 2,552 = 67 %; 6,971 de 38,455 = 18 %; 183 = 7 %; cinco hospitales; < 3 h; "asociación, no ensayo al azar") | ✅ | Wong 2021; Adams 2022 | Coinciden con las frases textuales de arriba | 2021 / 2022 |
+
+La corrección pedida (fila 16) quedó aplicada: ya no dice "no toda IA falla" y deja claro que el estudio de TREWS es de sus creadores y solo muestra asociación. No quedan ❌ ni ⚠️.
+
+VEREDICTO: APROBADO

@@ -1,30 +1,49 @@
 # Shot IA #29 · El traductor que convierte a la ingeniera en «él»
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #29 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A · guion listo para verificación independiente. Falta: verificación, animación, Robert en pantalla, `publicacion.md`.
-- **Formato:** N5 "El experimento" (tú haces la prueba en el traductor) + un toque de N2 (72 % contra 4 %).
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Ese "él" no es un error de dedo: es lo que el traductor aprendió.»
-- **Duración:** voz 954 caracteres / 172 palabras (≈ 58.2 s) + cierre 3.5 s → **61.7 s** estimado.
-- **Postura de la serie:** crítica con datos y reconociendo lo que Google corrigió. Los datos de Prates son de **2018** y los de Stanovsky de **2019**, y así se dice; no se afirma cómo traduce Google hoy.
+- **Estado (29 oct 2026):** guion verificado (16 ✅ + 4 ⚠️ corregidos; re-verificar las frases que cambiaron), animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert** (~956 créditos).
+- **Formato:** N5 "El experimento" (se recrea la prueba de 2018 en el traductor) + un toque de N2 (72 % contra 4 %).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Ese "él" no fue un error de dedo: fue lo que el traductor aprendió.»
+- **Duración:** voz 956 caracteres / ≈ 170 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** en la base.
+- **Postura de la serie:** crítica con datos y reconociendo lo que Google corrigió. Los datos de Prates son de **2018** (publicado en 2019) y los de Stanovsky de **2019**, y así se dice. Desde 2020 Google da las dos versiones del húngaro al inglés: por eso la prueba se cuenta en pasado, no se invita a repetirla hoy.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese «él» no es un error de dedo: es lo que el traductor aprendió. Haz la prueba. | Fondo cian; desde el cuadro 0 un celular con un traductor: la palabra «he» parpadea resaltada en rojo; un dedo intenta borrarla y vuelve a salir. |
-| 1 | Prueba | En húngaro, una palabra sirve para él y para ella. Escribe «es ingeniero» en húngaro y tradúcelo. | La palabra «ő» crece y se parte en dos siluetas (él / ella). Se teclea «ő egy mérnök» letra por letra (chip: húngaro → inglés). |
-| 1 | Prueba | En 2018, Google respondía «he», él. Con «enfermera», «she», ella. | Sale «he's an engineer» con casco; cambia a «ő egy ápolónő» → «she's a nurse» con cofia. Chip «2018». (Dibujo del traductor esquemático, no la interfaz real.) |
-| 2 | Estudio | En Brasil, Prates, Avelar y Lamb lo probaron con más de mil profesiones en doce idiomas sin género. | `TarjetaEstudio`: «2018 · UFRGS, Brasil · Prates, Avelar y Lamb · Neural Computing and Applications». Lluvia de fichas de profesiones (1019) y 12 banderitas de idioma. |
-| 3 | Resultado | En ciencia y tecnología salió «él» setenta y dos por ciento. «Ella», solo cuatro. | Barras de ciencia y tecnología (STEM): «él 72 %» contra «ella 4 %» (el resto: neutro o sin pronombre). |
+| 0 | Gancho | Ese «él» no fue un error de dedo: fue lo que el traductor aprendió. | Fondo cian; desde el cuadro 0 un celular con un traductor esquemático: «ő egy mérnök» → «**he**'s an engineer» con «he» parpadeando en rojo. Un dedo lo borra… y vuelve a salir. Chip «¿error de dedo?» que se tacha y «lo aprendió». |
+| 1 | Prueba | En húngaro, una palabra sirve para él y para ella. En 2018, escribías «es ingeniero» y lo traducías. | La letra «ő» gigante se parte en dos personas: «él» y «ella». Entra el celular («así salía en 2018») y se teclea «ő egy mérnök». |
+| 1 | Prueba | Google decía «he», él. Con «enfermera», «she», ella. | Sale «**he**'s an engineer» (persona con casco, chip «ingeniero → he»); se teclea «ő egy ápolónő» → «**she**'s a nurse» (persona con cofia, chip «enfermera → she»). |
+| 2 | Estudio | En Brasil lo probaron con más de mil profesiones en doce idiomas sin género. | `TarjetaEstudio`: «2018 · experimentos · UFRGS, Brasil · Prates, Avelar y Lamb · publicado en 2019». Lluvia de fichas de profesiones; chip «1,019 profesiones · 12 idiomas sin género». |
+| 3 | Resultado | En ciencia y tecnología salió «él» setenta y dos por ciento. «Ella», solo cuatro. | Chip «ciencia y tecnología (STEM)»; barras «salió "él" 72 %» y «salió "ella" 4 %»; chip «el resto: neutro o sin pronombre». |
 | 4 | Pregunta | ¿Y si solo copia cuántas mujeres hay en cada trabajo? | **Re-gancho.** «?» gigante; Robert grande, pensativo. |
-| 5 | Realidad | No: salía «ella» doce por ciento, y en esos trabajos de Estados Unidos había, en promedio, casi treinta y seis por ciento de mujeres. | `Comparativa`: «traductor: ella 12 %» contra «trabajos reales (EE. UU.): 36 % mujeres»; la barra del traductor se queda corta. |
-| 6 | Google | En diciembre de 2018, Google empezó a dar versión femenina y masculina en algunos idiomas. | El celular muestra dos resultados: «she is a doctor» / «he is a doctor» (ejemplo del turco del blog de Google). Chip «dic 2018 · algunos idiomas». |
-| 7 | Espanol | En español casi siempre hay que elegir: el doctor o la doctora. | «The doctor» entra a una bifurcación: «el doctor» / «la doctora»; un foco de duda sobre la flecha. |
-| 8 | Seattle | En 2019, en Seattle, con frases que dejaban claro el género, Google acertó al español solo cincuenta y tres por ciento. | Tarjeta «2019 · Universidad de Washington, Seattle · Stanovsky, Smith y Zettlemoyer · ACL». Frase de ejemplo: «The doctor asked the nurse to help **her**» → «**El** doctor le pidió a la enfermera…» (tachado rojo en «El»). `Medidor` en 53 %. |
-| 9 | Cierre | Si el traductor te dice «él», pregúntate: ¿lo dijo la frase o lo aprendió? | **Regreso a la imagen del inicio:** el mismo celular con «he» en rojo; ahora aparece al lado «she» y un signo de pregunta; la palabra deja de parpadear. |
+| 5 | Realidad | No: en todas las profesiones salía «ella» doce por ciento, y en esos trabajos de Estados Unidos, en 2017, había casi treinta y seis por ciento de mujeres. | Barra rosa «12 % · "ella" en el traductor» con chip «(todas las profesiones)»; luego barra azul «36 % · mujeres en esos trabajos» con chip «EE. UU., 2017». |
+| 6 | Google | En diciembre de 2018, Google empezó a dar versión femenina y masculina en algunos idiomas, y en 2020 sumó el húngaro. | Fondo naranja; el celular con «o bir doktor» (turco → inglés) da dos resultados: «femenino: she is a doctor» / «masculino: he is a doctor». Chips «diciembre 2018», «algunos idiomas», «2020: + húngaro» y «ejemplo del blog de Google». |
+| 7 | Espanol | En español casi siempre hay que elegir: el doctor o la doctora. | «the doctor» entra a una bifurcación: «el doctor» / «la doctora»; un «?» late en el cruce. |
+| 8 | Seattle | En 2019, en Seattle, con frases que dejaban claro el género, Google acertó al español solo cincuenta y tres por ciento. | Tarjeta «2019 · Universidad de Washington, Seattle · Stanovsky, Smith y Zettlemoyer · ACL». Frase de prueba: «The doctor asked the nurse to help **her**» → «~~El doctor~~ le pidió a la enfermera…»; número «53 %» con «género correcto al español». |
+| 9 | Cierre | Si el traductor te dice «él», pregúntate: ¿lo dijo la frase o lo aprendió? | **Regreso a la imagen del inicio:** el mismo celular con «he's an engineer»; aparece debajo «she's an engineer» y el «he» deja de parpadear. Chips «¿lo dijo la frase…» / «…o lo aprendió?». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
-**Música:** cama grave continua (tensa mientras dura el sesgo, se abre en «Google empezó a dar versión femenina y masculina»); tecleo en cada letra, «ding» del traductor al salir el resultado, cascada suave en la lluvia de profesiones, barras que suben con un barrido, «?» con un golpe sordo, bifurcación con un zumbido doble, tachón rojo con un rasguño.
+**Música:** cama grave continua, ahogada mientras dura el sesgo y abierta desde «Google empezó a dar versión femenina y masculina»; el «he» parpadea con tics, el dedo con un soplido y un golpe al volver; tecleo en cada letra y un «ding» de dos notas al salir cada traducción; la «ő» se parte con dos burbujas; tics en la lluvia de profesiones; barras con barrido; «?» con golpe sordo; zumbido doble en la bifurcación; rasguño en el tachón de «El doctor».
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si solo copia cuántas mujeres hay en cada trabajo?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.9 | 11_sorprendido | `gancho` | «Ese "él" no fue un error de dedo» (cuadro 0) |
+| 2 | 9.6 | 13.2 | 13_senalando_arriba | `arriba-der` | señala el «he» que sale en el traductor |
+| 3 | 19.6 | 23.0 | 04_bajando_lentes | `izq-alto` | «"Ella", solo cuatro» |
+| 4 | 23.35 | 26.7 | 07_pensativo_puno | `grande` | «¿Y si solo copia cuántas mujeres hay…?» |
+| 5 | 31.5 | 35.5 | 10_serio_molesto | `izq-alto` | «casi treinta y seis por ciento de mujeres» |
+| 6 | 37.5 | 42.5 | 05_sonriendo_dientes_uniformes | `arriba-der` | Google da las dos versiones |
+| 7 | 44.0 | 46.5 | 06_pensativo_menton | `izq-alto` | «el doctor o la doctora» |
+| 8 | 50.9 | 53.55 | 11_sorprendido | `arriba-der` | «solo cincuenta y tres por ciento» |
+| 9 | 54.5 | 58.2 | 13_senalando_arriba | `arriba-der` | «¿lo dijo la frase o lo aprendió?» |
+| — | 58.3 | 61.8 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 32.1 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.8 s
 
 ## Fuentes (cada cifra se abrió en la fuente original el 29 oct 2026)
 
@@ -41,6 +60,8 @@
    > "you'll get both a feminine and masculine translation for a single word … when translating from English into French, Italian, Portuguese or Spanish."
    > "You'll also get both translations when translating phrases and sentences from Turkish to English." (ejemplo del post: «o bir doktor» → «she is a doctor» / «he is a doctor»).
    > "it would skew masculine for words like "strong" or "doctor," and feminine for other words, like "nurse" or "beautiful.""
+2b. Google Research. "A Scalable Approach to Reducing Gender Bias in Google Translate". Blog de Google Research, 22 abr 2020 (abierto por el verificador el 29 oct 2026).
+   > "Using this approach we have expanded gender-specific translations to include Finnish, Hungarian, and Persian-to-English."
 3. Stanovsky, G., Smith, N. A. y Zettlemoyer, L. "Evaluating Gender Bias in Machine Translation". *Proceedings of the 57th Annual Meeting of the ACL*, pp. 1679–1684, Florencia, 2019. Paul G. Allen School, University of Washington, Seattle. https://aclanthology.org/P19-1164.pdf
    > "English sentences which cast participants into non-stereotypical gender roles (e.g., "The doctor asked the nurse to help her in the operation")"
    > Tabla 2, Google Translate, ES: "Acc 53.1" — "Acc indicates overall gender accuracy (% of instances the translation had the correct gender)".
@@ -50,9 +71,10 @@
 ## Notas
 - "Más de mil profesiones" = 1019 ocupaciones de la lista de la Oficina de Estadísticas Laborales de EE. UU.
 - "Ciencia y tecnología" = la categoría STEM del estudio (ciencia, tecnología, ingeniería y matemáticas). "Setenta y dos" redondea 71.6 % (el propio artículo dice 72 %); "cuatro" redondea 4.2 %. El resto fueron pronombres neutros o frases sin pronombre identificable.
+- El 35.94 % viene de la tabla de la BLS que usa el artículo (ref. [7]: "Employed persons by detailed occupation, sex … 2017"): por eso se dice «en 2017».
 - "Doce por ciento" redondea 11.76 % (promedio de todas las profesiones y los 12 idiomas, no solo STEM). "Casi treinta y seis" = 35.94 %, promedio de participación femenina en esas ocupaciones según la BLS.
 - "Una palabra sirve para él y para ella": el pronombre húngaro «ő» (el artículo: "he, she or it").
-- "Algunos idiomas" en la respuesta de Google: en dic 2018 solo palabras sueltas del inglés al francés, italiano, portugués y español, y frases del turco al inglés.
+- "Algunos idiomas" en la respuesta de Google: en dic 2018 solo palabras sueltas del inglés al francés, italiano, portugués y español, y frases del turco al inglés. En abr 2020 se sumaron finés, húngaro y persa → inglés.
 - "En español casi siempre hay que elegir": en español los sustantivos de persona y sus artículos suelen llevar género (el doctor / la doctora); es lo que muestra la Figura 1 de Stanovsky et al.
 - "Cincuenta y tres por ciento" = exactitud de género de Google Translate inglés → español en WinoMT (2019). No se dice que hoy siga igual.
 - La pantalla del traductor es un dibujo esquemático, no la interfaz real de Google.
