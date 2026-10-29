@@ -21,7 +21,7 @@
     },
     {
       "escena": "Pectina",
-      "texto": "Por dentro, sus células están pegadas con pectina."
+      "texto": "Por dentro, sus células se pegan con pectina."
     },
     {
       "escena": "Enzima",
@@ -49,7 +49,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 1997, en la Universidad de California, midieron jitomates así con menos del 1 % de la enzima: apenas eran un poco más firmes."
+      "texto": "En 1997, en la Universidad de California, midieron jitomates así, con menos del 1 % de la enzima normal: apenas eran un poco más firmes."
     },
     {
       "escena": "Fracaso",
@@ -57,7 +57,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "El transgénico se fue; el truco que se quedó es cortarlo verde y madurarlo con gas."
+      "texto": "El transgénico se fue; el truco que quedó es cortarlo verde y madurarlo con gas."
     }
   ]
 }

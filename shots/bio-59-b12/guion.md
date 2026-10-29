@@ -6,7 +6,7 @@
 - **Duración:** narrada 61.5 s (voz ~58 s + cierre 3.5 s).
 - **Viaje:** macro (tu mano con la pastilla y el plato de cereal) → micro (fondo oscuro: los microbios de la panza de la vaca y la molécula con su cobalto) → macro (el tanque y regreso a la misma pastilla, ahora con una bacteria dibujada en la etiqueta).
 
-## Versión narrada (922 caracteres, ~174 palabras, ~58 s de voz)
+## Versión narrada (933 caracteres, ~174 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -14,12 +14,12 @@
 | 1 | Nadie | Ningún animal ni planta la fabrica: solo ciertas bacterias y arqueas. | Dos columnas: planta, vaca, persona con ✗ · bacteria (bastón) y arquea con ✓. Etiquetas chicas "bacterias" / "arqueas". |
 | 2 | Vaca | La vaca la saca de los microbios de su panza. | Fondo amarillo: una vaca rumiando. `Lupa` "POR DENTRO · PANZA (RUMEN)" sobre su costado: microbios nadando entre pasto picado. |
 | 3 | Vaca | Por eso la B12 de la carne y la leche viene, en el fondo, de microbios. | Flechas: microbios → vaca → vaso de leche y un bistec. Chip "origen: microbios". |
-| 4 | Vegano | Y si eres vegano, necesitas suplemento o alimentos fortificados. | Plato de verduras (sin B12, con signo "0") → aparecen la pastilla y la caja de cereal con sello "fortificado con B12". |
+| 4 | Vegano | Y si eres vegano, necesitas suplemento o alimentos fortificados. | Plato de verduras (con el letrero "B12: casi 0") → aparecen la pastilla y la caja de cereal con sello "fortificado con B12". |
 | 5 | Pregunta | ¿Y por qué no la hacemos con pura química? | **Re-gancho.** Un matraz burbujea; signo de pregunta grande. |
 | 6 | Molecula | Porque es un anillo enorme con un átomo de cobalto en el centro. | Fondo azul noche. Zoom a la molécula: el anillo de corrina (esquemático) se dibuja trazo a trazo y en medio se enciende un átomo de **cobalto (Co)**. Etiqueta "anillo de corrina". |
 | 7 | Hodgkin | En 1956, Dorothy Hodgkin la descifró con rayos X: la más compleja de las vitaminas. | Escena de laboratorio (silueta, sin retrato de la persona): un cristal rojo, un haz de rayos X y un patrón de puntos en la placa. `TarjetaEstudio` "1956 · Oxford · *Nature*". Chip "la vitamina más compleja". |
 | 8 | Hodgkin | Ganó el Nobel de Química en 1964. | Medalla dorada "Nobel de Química 1964". |
-| 9 | Sintesis | En 1972, casi cien científicos de diecinueve países la armaron, tras once años. | Contador que sube a **99** personitas; dos banderines "Harvard" y "ETH Zúrich"; calendario que pasa 11 años. |
+| 9 | Sintesis | En 1972, casi cien científicos de diecinueve países lograron sintetizarla, tras once años. | Contador que sube a **99** personitas; dos banderines "Harvard" y "ETH Zúrich"; calendario que pasa 11 años. |
 | 10 | Sintesis | Pero era tan larga que nunca se usó para producirla. | Una tira de pasos que se desenrolla fuera del cuadro; `MitoTachado` "B12 de laboratorio químico". |
 | 11 | Tanque | Hoy la B12 de pastillas y cereales sale de tanques de fermentación con bacterias. | Fondo cian: tanque de fermentación con agitador y burbujas; dentro, bacterias. Etiquetas *Pseudomonas denitrificans* y *Propionibacterium freudenreichii*. |
 | 12 | Queso | Una de ellas es la misma que le hace los hoyos al queso suizo. | Un queso suizo con hoyos que se inflan como burbujas; la bacteria *Propionibacterium freudenreichii* asoma por un hoyo. |
@@ -28,7 +28,8 @@
 
 Notas de precisión para el dibujo y el verificador:
 - La molécula se dibuja **esquemática** (anillo de corrina con el cobalto al centro); no es la estructura atómica completa.
-- "La armaron en 1972": la síntesis total de Woodward (Harvard) y Eschenmoser (ETH) se anunció en 1972; su producto final fue el ácido cobírico, que ya se sabía convertir en B12 (síntesis total formal). Si el verificador lo marca ⚠️, la línea pasa a "En 1972, casi cien científicos de diecinueve países lograron sintetizarla".
+- "Lograron sintetizarla en 1972": la síntesis de Woodward (Harvard) y Eschenmoser (ETH) llegó al ácido cobírico, que ya se sabía convertir en B12 (síntesis total formal). Por eso la voz dice "sintetizarla" y no "la armaron" (corregido tras la verificación del 29 oct 2026).
+- El plato de verduras dice "casi 0", no "0": algunas plantas traen trazas por bacterias pegadas (verificación del 29 oct 2026).
 - *Pseudomonas denitrificans* se dice así porque así la llaman las fuentes de producción industrial.
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
@@ -40,7 +41,7 @@ Notas de precisión para el dibujo y el verificador:
 
 Solo ciertas **bacterias y arqueas** pueden fabricar vitamina B12 (cobalamina). Las plantas ni la tienen ni la usan, y los animales tampoco la fabrican: la vaca la obtiene de los microbios de su panza (el rumen), que necesitan **cobalto** para armarla. Por eso la B12 de la carne y la leche viene, en el fondo, de microbios, y por eso las personas veganas necesitan **suplemento o alimentos fortificados**.
 
-¿Por qué no se hace con química? Porque es la vitamina con la estructura más compleja: un anillo de corrina con un **átomo de cobalto en el centro**. **Dorothy Hodgkin** descifró su estructura con rayos X en **1956** y ganó el **Nobel de Química de 1964**. En **1972**, los grupos de Robert B. Woodward (Harvard) y Albert Eschenmoser (ETH Zúrich), con casi cien científicos de 19 países y un programa de 11 años, lograron sintetizarla. Pero era tan larga y cara que nunca se usó para producirla.
+¿Por qué no se hace con química? Porque es la vitamina con la estructura más compleja: un anillo de corrina con un **átomo de cobalto en el centro**. **Dorothy Hodgkin** descifró su estructura con rayos X en **1956** y ganó el **Nobel de Química de 1964**. En **1972**, los grupos de Robert B. Woodward (Harvard) y Albert Eschenmoser (ETH Zúrich), con casi cien científicos de 19 países y un programa de 11 años, lograron sintetizarla (llegaron al ácido cobírico, que ya se sabía convertir en B12). Pero era tan larga y cara que nunca se usó para producirla.
 
 Hoy toda la B12 industrial se hace por **fermentación** con bacterias como *Pseudomonas denitrificans* y *Propionibacterium freudenreichii*, que es la misma bacteria que le hace los hoyos al queso suizo. La forma que llevan casi todos los suplementos y alimentos fortificados es la cianocobalamina.
 
@@ -81,3 +82,9 @@ El dibujo es esquemático. **¿Tú sabías que tu B12 venía de bacterias? 👇*
     - "Vitamin B12 biosynthesis is confined to few bacteria and archaea, and as such its production relies on microbial fermentation." (2017)
 11. **Ojala T et al. "Functional genomics provides insights into the role of Propionibacterium freudenreichii ssp. shermanii JS in cheese ripening." *Int J Food Microbiol* 241:39–48 (2017).** https://pubmed.ncbi.nlm.nih.gov/27744211/
     - "Propionibacterium freudenreichii is a commercially important bacterium that is essential for the development of the characteristic eyes and flavor of Swiss-type cheeses." (2017)
+12. **Watanabe F, Bito T. "Vitamin B12 sources and microbial interaction." *Exp Biol Med* 243:148–158 (2018).** https://pubmed.ncbi.nlm.nih.gov/29216732/
+    - "Ruminants acquire vitamin B12 … through a symbiotic relationship with the bacteria present in their stomachs." (2018)
+    - "The synthesized vitamin B12 is transferred and accumulates in animal tissues… the meat and milk of herbivorous ruminant animals (e.g. cattle and sheep) are good sources" (2018)
+    - "Edible plants and mushrooms rarely contain a considerable amount of vitamin B12, mainly due to concomitant bacteria" (2018)
+13. **Gille D, Schmid A. "Vitamin B12 in meat and dairy products." *Nutr Rev* 73:106–115 (2015).** https://pubmed.ncbi.nlm.nih.gov/26024497/
+    - "Vitamin B12 is synthesized exclusively by microorganisms" (2015)

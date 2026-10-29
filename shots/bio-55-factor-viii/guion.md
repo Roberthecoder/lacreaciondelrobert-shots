@@ -8,24 +8,24 @@
 - **Tono:** serio y respetuoso en el tramo de las infecciones (escenas 6–8): sin música alegre, sin stickers chistosos, Robert serio.
 - **Pronunciación:** en la voz se escribe "factor ocho"; en pantalla, "factor VIII".
 
-## Versión narrada (949 caracteres, ~177 palabras contando cifras, ~58 s de voz)
+## Versión narrada (951 caracteres, ~178 palabras contando cifras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa curita no cierra tu herida: la cierra una red que teje tu sangre. | Fondo rosa. **Cuadro 0:** un dedo con una cortada; una gota roja brota y una curita se pega encima. `MitoTachado` sobre la curita ("¿la curita?"). Robert sorprendido (gancho). |
 | 1 | Cascada | Al cortarte, unas proteínas de tu sangre se encienden en cadena, como dominó. | `Lupa` "POR DENTRO · TU SANGRE" sobre la cortada → fondo oscuro: fichas de dominó con números romanos (XII → XI → IX → X…) caen una tras otra y cada una se ilumina. Plaquetas pegándose en el borde del vaso. |
 | 2 | Fibrina | Al final, la trombina forma hilos de fibrina que amarran el tapón. | La última ficha (trombina) corta fibrinógeno en bastoncitos que se enlazan en una **red de hilos** amarillos que atrapa plaquetas y glóbulos rojos (discos bicóncavos). `Escala` ~10 µm. |
-| 3 | Falta | En la hemofilia A falta una pieza: el factor ocho. | Se repite la cascada: la ficha "VIII" está vacía (contorno punteado) y la fila se detiene. Chip "hemofilia A = falta factor VIII". |
+| 3 | Falta | En la hemofilia A falla una pieza: el factor ocho. | Se repite la cascada: la ficha "VIII" está casi vacía (contorno punteado, relleno muy tenue) y la fila se detiene. Chip "hemofilia A = falta o hay poco factor VIII". |
 | 4 | Cromosoma | Su gen está en el cromosoma X: por eso es más común en hombres. | Un cromosoma X con una banda marcada (Xq28) junto a los pares XY / XX: en XY la única X lleva el cambio; en XX la otra X compensa. Etiqueta "gen F8". |
 | 5 | Pregunta | ¿Y si te falta, de dónde lo sacas? | **Re-gancho.** Fondo amarillo, Robert pensativo grande; un signo de interrogación sobre la ficha vacía. |
 | 6 | Plasma | Antes salía de plasma juntado de miles de donantes. | Muchas bolsitas de plasma amarillo caen en un solo tanque; contador de donantes "1,000 → 20,000+" por lote. Frasco de concentrado. |
 | 7 | Virus | En los ochenta, ese plasma traía VIH y hepatitis C. | Tono serio, fondo gris azulado. En el tanque aparecen partículas virales esquemáticas (rotuladas VIH / VHC). Sin efectos chistosos. |
 | 8 | Cifra | En 1987, en Estados Unidos, unas siete de cada diez personas con hemofilia A analizadas tenían VIH. | Cuadrícula de 10 personitas: 7 se tiñen. `NumeroGigante` "7 de 10" y chip "EE. UU. · 1987 · personas analizadas en centros de hemofilia". Robert serio. |
 | 9 | Gen | En 1984, Genentech y Genetics Institute publicaron en Nature su gen: 186 mil letras. | `TarjetaEstudio` "Nature · noviembre 1984 · Genentech / Genetics Institute". Una tira de ADN larguísima se desenrolla con el contador "186,000 letras". |
-| 10 | Hamster | Lo metieron en células de hámster, que lo fabrican y lo sueltan al caldo. | Un hámster (dibujo) → zoom a una célula de ovario de hámster (CHO) en el tanque; la célula suelta factor VIII al caldo. Etiqueta "células CHO". |
+| 10 | Hamster | Lo metieron en células de hámster, que lo fabrican y lo sueltan al caldo. | Un hámster (dibujo) → zoom a una célula de ovario de hámster (CHO) en el tanque; la célula suelta factor VIII al caldo. Etiqueta "células de hámster". |
 | 11 | Aprobado | En 1992, Estados Unidos aprobó el primer factor ocho hecho por células. | Sello "FDA · diciembre 1992 · Recombinate"; el frasco de factor recombinante junto al viejo frasco de plasma. Robert grande (presentador) señalando. |
 | 12 | Anticuerpo | Hoy hasta un anticuerpo lo imita: junta las mismas dos piezas que él une. | Un anticuerpo en "Y" con dos brazos distintos agarra la ficha IXa y la ficha X y las junta; la cascada vuelve a caer. Chip "emicizumab · bajo la piel". |
-| 13 | Cierre | Tu sangre sabe tejer esa red; si le falta un hilo, una célula se lo presta. | Regreso al dedo del inicio: se quita la curita y la cortada ya está cerrada; la red de fibrina brilla un instante en la Lupa. |
+| 13 | Cierre | Tu sangre sabe tejer esa red; si le falta una pieza, una célula se la presta. | Regreso al dedo del inicio: la ficha VIII entra en su hueco, la cascada cae completa y brilla la red de fibrina; la curita se quita y la cortada ya está cerrada. |
 | — | Outro | (sin voz, 3.5 s) | `CierreMarca tema="bioquimica"` con Robert señalando a cámara. |
 
 (La tabla "Robert en pantalla" se agrega en la fase 2, con los tiempos del base narrada.)

@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #47 · El veneno más potente también es medicina (toxina botulínica)
+# Publicación · Shot Biotecnológico #47 · Uno de los venenos más potentes también es medicina (toxina botulínica)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 

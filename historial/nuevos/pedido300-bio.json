@@ -795,60 +795,115 @@
       "titulo": "El medicamento contra el cáncer del tejo: paclitaxel de cultivo de células vegetales",
       "serie": "Shot Biotecnológico",
       "numero": 45,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-45-taxol",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4161504/",
+        "https://www.gao.gov/assets/t-rced-92-36.pdf",
+        "https://leadingdiscoveries.aacr.org/?p=9260",
+        "https://www.nature.com/articles/277665a0",
+        "https://pubmed.ncbi.nlm.nih.gov/423966/",
+        "https://pubmed.ncbi.nlm.nih.gov/6103535/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5578123/",
+        "https://19january2021snapshot.epa.gov/greenchemistry/presidential-green-chemistry-challenge-2004-greener-synthetic-pathways-award_.html",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3288596/",
+        "https://phytonbiotech.com/history-ownership/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9457747/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "La camptotecina, otra quimio que salió de un árbol",
+        "La vincristina y la vinca de Madagascar",
+        "Hongos endófitos del tejo que dicen fabricar Taxol (en debate)"
+      ]
     },
     {
       "id": "bio-46-gfp",
       "titulo": "La proteína verde de la medusa: GFP (Nobel 2008)",
       "serie": "Shot Biotecnológico",
       "numero": 46,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-46-gfp",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://www.nobelprize.org/prizes/chemistry/2008/press-release/",
+        "https://www.nobelprize.org/uploads/2018/06/shimomura_lecture.pdf",
+        "https://www.nobelprize.org/prizes/chemistry/2008/popular-information/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Las proteínas rojas de los corales (DsRed, mCherry)",
+        "Brainbow: el cerebro pintado de colores",
+        "Aequorina: la proteína de medusa que mide calcio"
+      ]
     },
     {
       "id": "bio-47-botox",
       "titulo": "El veneno más potente también es medicina: toxina botulínica",
       "serie": "Shot Biotecnológico",
       "numero": 47,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-47-botox",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://nrt.response.epa.gov/sites/2/files/NRT%20CBRN%20BIO%20UPDATE%20BoNT%20QRG%20FINAL%202024%2001%2016.pdf",
+        "https://dailymed.nlm.nih.gov/dailymed/drugInfoSetid.cfm?setid=33d066a9-34ff-4a1a-b38b-d10983df3300",
+        "https://barkansociety.com/alan-scott-the-story-of-botox-in-his-own-words/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "La toxina tetánica: prima del botox que hace lo contrario",
+        "Latas abultadas y botulismo en conservas caseras",
+        "Venenos que se volvieron medicinas"
+      ]
     },
     {
       "id": "bio-48-ips",
       "titulo": "Convertir piel en células madre: células iPS (Yamanaka 2006)",
       "serie": "Shot Biotecnológico",
       "numero": 48,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-48-ips",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://www.nobelprize.org/prizes/medicine/2012/summary/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2695255",
+        "https://www.riken.jp/en/news_pubs/news/2014/20140912_1/",
+        "https://www.kyoto-u.ac.jp/en/research/events_news/department/hospital/news/2018/181109_1.html"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "La primera retina hecha con tu propia piel (Kobe 2014)",
+        "c-Myc: el gen de Yamanaka que también causa cáncer",
+        "Gurdon y la rana de 1962"
+      ]
     },
     {
       "id": "bio-49-fecal",
       "titulo": "Trasplante de microbiota fecal contra Clostridioides difficile",
       "serie": "Shot Biotecnológico",
       "numero": 49,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-49-fecal",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://pubmed.ncbi.nlm.nih.gov/23323867/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3719997/",
+        "https://gwern.net/doc/www/www.fda.gov/3f8f34c18cf564fa7bf21f3c784a9759355506dc.html",
+        "https://www.fda.gov/news-events/press-announcements/fda-approves-first-orally-administered-fecal-microbiota-product-prevention-recurrence-clostridioides",
+        "https://www.fda.gov/vaccines-blood-biologics/vowst",
+        "https://pubmed.ncbi.nlm.nih.gov/35045228/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7042012/",
+        "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002533",
+        "https://nctr-crs.fda.gov/fdalabel/services/spl/set-ids/99e5a37a-930c-4641-bcdd-7013ec1c15fe/spl-doc"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Bancos de heces: cómo se elige a un donante",
+        "Clostridium scindens y los ácidos biliares secundarios",
+        "Cuánto tarda la microbiota en recuperarse tras antibióticos"
+      ]
     },
     {
       "id": "bio-50-teocintle",

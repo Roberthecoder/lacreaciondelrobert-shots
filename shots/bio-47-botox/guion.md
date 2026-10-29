@@ -1,4 +1,4 @@
-# Shot Biotecnológico #47 · El veneno más potente también es medicina (toxina botulínica)
+# Shot Biotecnológico #47 · Uno de los venenos más potentes también es medicina (toxina botulínica)
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #47 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (el frasco y la cara; con la `Lupa` "POR DENTRO · NERVIO Y MÚSCULO", la punta del nervio y la SNAP-25 cortada), con una escena de estudio estilo N5.

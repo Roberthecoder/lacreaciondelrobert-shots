@@ -17,7 +17,7 @@
     },
     {
       "escena": "Falta",
-      "texto": "En la hemofilia A falta una pieza: el factor ocho."
+      "texto": "En la hemofilia A falla una pieza: el factor ocho."
     },
     {
       "escena": "Cromosoma",
@@ -57,7 +57,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Tu sangre sabe tejer esa red; si le falta un hilo, una célula se lo presta."
+      "texto": "Tu sangre sabe tejer esa red; si le falta una pieza, una célula se la presta."
     }
   ]
 }

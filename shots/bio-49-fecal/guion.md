@@ -1,4 +1,4 @@
-# Shot Biotecnológico #49 · Cápsulas hechas de caca (trasplante de microbiota fecal)
+# Shot Biotecnológico #49 · Cápsulas hechas a partir de caca (trasplante de microbiota fecal)
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #49 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (el intestino como bosque y, con la `Lupa`, las bacterias y las esporas de *C. difficile* por dentro) + N5 "El experimento" (el ensayo de Ámsterdam de 2013 dibujado como escena).
