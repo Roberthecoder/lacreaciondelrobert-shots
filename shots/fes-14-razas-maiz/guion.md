@@ -1,7 +1,7 @@
 # Shot Festivo #14 · Candelaria · Ambiental: Tu tamal puede salir de una de 64 razas de maíz
 
 - **Serie:** Shot Festivo · **Serie vinculada:** Ambiental (agrobiodiversidad) · **Logo:** biología (ADN) · **Badge:** Festivo #14 · **Especial:** Día de la Candelaria (se publica el 2 feb 2027: quien sacó el muñeco de la rosca invita los tamales) · rama `pedido300/festivos`.
-- **Estado (29 oct 2026):** FASE A — guion y `narracion.json` escritos (versión 2: sin teocintle ni domesticación, que aparta `bio-50-teocintle`) y verificados de forma independiente (`verificacion.md`: 26 ✅, 3 ⚠️); las 3 ⚠️ ya están corregidas (líneas 4, 5 y 9); la línea 1 se acortó (sin cambiar el dato) para quedar en ≤ 70 s. Animación, Robert en pantalla y `publicacion.md`: pendientes (fase B). Voz: pendiente de aprobación de Robert.
+- **Estado (29 oct 2026):** **VEREDICTO: APROBADO** (`verificacion.md`; las 3 ⚠️ corregidas en las líneas 4, 5 y 9). FASE B lista: animación (`razas-maiz.jsx`, base de 69.3 s), Robert en pantalla, música (`gen-audio.mjs` → `assets/mezcla.wav`) y `publicacion.md` con las 7 redes. **Voz pendiente de aprobación de Robert** (~1,069 caracteres).
 - **Formato:** N4 "La imagen que se llena" (una cuadrícula de 64 mazorcas que se va llenando con cada raza que se nombra y se reconoce al final) + N1 "Por dentro" (el grano en corte con sus capas de color).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" + #4 "un número que contradice", sobre el tamal que se ve: "Tu tamal no es de maíz a secas: en México se reportan sesenta y cuatro razas de maíz."
 - **Duración estimada:** voz 1,069 caracteres (≈ 65.5 s) + cierre 3.8 s → **≈ 69.3 s** (`estimar-escenas.mjs`; festivos 61–75 s).
@@ -11,22 +11,41 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Tu tamal no es de maíz a secas: en México se reportan sesenta y cuatro razas de maíz. | Fondo amarillo con papel picado. Desde el cuadro 0 un tamal se abre en su hoja; detrás, una cuadrícula de 64 mazorcas de colores y formas distintas se llena de golpe. «maíz» se tacha; NumeroGigante «64 razas». Chip «Especial Candelaria». |
-| 1 | Pozole | El Cacahuacintle es el maíz por excelencia para pozole. | Fondo cian. Mazorca Cacahuacintle (grano grande, blanco y harinoso) que se desgrana en una olla de pozole. Etiqueta «Cacahuacintle · valles altos». |
-| 2 | Totopos | El Zapalote Chico, del istmo de Tehuantepec, se usa para los totopos. | Fondo menta. Mazorca chica Zapalote Chico; un mapita del istmo de Tehuantepec; el grano se vuelve un totopo redondo con sus agujeritos. |
-| 3 | Palomitas | Y el Palomero Toluqueño se considera adecuado para palomitas. | Fondo naranja. Mazorquita puntiaguda del Palomero Toluqueño; los granos revientan en palomitas. Etiqueta «valle de Toluca». |
-| 4 | Polen | ¿Por qué tantas razas? Porque los agricultores las han adaptado a cada lugar, y su polen viaja libre de planta en planta. | Fondo cian: una milpa; polen dorado sale de las espigas y cae en los cabellos de otros elotes; flechas de semilla que viajan de un pueblo a otro. Chip «polinización libre». |
-| 5 | Semilla | Muchas familias guardan, intercambian y prueban su propia semilla. | Fondo naranja: manos que desgranan una mazorca y guardan los granos en un frasco; dos frascos de colores que se intercambian. |
-| 6 | Altura | Así hay maíz desde el nivel del mar hasta los tres mil cuatrocientos metros. | Corte de una montaña desde la costa hasta la sierra; Medidor de altura «0 → 3,400 m»; abajo, el Zapalote Chico (costa del istmo, hasta ~600 m); arriba, el Cónico (de 950 a más de 3,000 m). |
-| 7 | Pregunta | ¿Y de dónde sale el maíz azul o morado? | **Re-gancho.** Fondo lila: mazorcas azul, morada y roja girando; «?» gigante. Robert grande, pensativo. |
-| 8 | Color | De antocianinas: pigmentos en la cáscara del grano, en la capa de justo abajo, o en las dos. | Fondo noche (micro, barra de escala): un grano en corte con sus capas: pericarpio (cáscara), capa de aleurona y endospermo. El color se enciende en el pericarpio, luego en la aleurona, luego en las dos. Etiquetas «pericarpio», «aleurona», «antocianinas». |
-| 9 | Estudio | En 1951, en México, Wellhausen y su equipo describieron veinticinco razas a partir de unas dos mil muestras. | Fondo amarillo: `TarjetaEstudio` «1951 · Razas de maíz en México · Wellhausen, Roberts, Hernández X. y Mangelsdorf»; un mapa de México que se llena de puntitos de colecta; un contador «≈ 2,000 muestras» y luego «25 razas» que crece hasta «64 hoy». |
-| 10 | Tamal | Dato: una variante del maíz Chalqueño se usa para harina de tamal, y sus hojas, para envolverlos. | Fondo rosa: mazorca Chalqueño (larga, cónica) con su variante «palomo»; el grano se vuelve harina y masa; sus hojas (totomoxtle) envuelven un tamal. Chip «harina de tamal + hoja para envolver». |
-| 11 | Banco | Por eso se guardan en bancos de semillas, y los maíces criollos podrían servir para los climas que vienen. | Fondo noche fría: estantes de un banco de semillas con frascos de todos los colores; un termómetro y un sol que sube (clima futuro); una semilla criolla brilla. Chip «podrían» (hipótesis). |
-| 12 | Cierre | Así que tu tamal no es de maíz a secas: es de una raza que alguien cuidó, semilla por semilla. | **Regreso a la imagen del inicio** (fondo amarillo, papel picado, el mismo tamal), ahora junto a la rosca con su muñequito; la cuadrícula de 64 mazorcas se ilumina y una `Lupa` muestra el grano de su masa en corte. Chip «64 razas · 59 nativas». |
+| 0 | Gancho | Tu tamal no es de maíz a secas: en México se reportan sesenta y cuatro razas de maíz. | Fondo amarillo con papel picado. Desde el cuadro 0 un tamal se abre en su hoja; «¿maíz a secas?» se tacha; el tamal baja y una cuadrícula de 64 mazorquitas de colores y formas distintas se llena una por una; NumeroGigante «64 razas». Chip «Especial Candelaria». |
+| 1 | Pozole | El Cacahuacintle es el maíz por excelencia para pozole. | Fondo cian. Mazorca Cacahuacintle (grano blanco, grande y redondo) que se desgrana: los granos saltan a una olla de pozole humeante. Etiquetas «Cacahuacintle · grano grande y blanco»; chip «pozole». Capítulo 1 «Cada raza, su uso». |
+| 2 | Totopos | El Zapalote Chico, del istmo de Tehuantepec, se usa para los totopos. | Fondo menta. Mapa de México con un punto que late en el istmo de Tehuantepec; mazorca muy corta de Zapalote Chico; aparece un totopo redondo girando. Etiquetas «istmo de Tehuantepec», «Zapalote Chico»; chip «totopos». |
+| 3 | Palomitas | Y el Palomero Toluqueño se considera adecuado para palomitas. | Fondo naranja. Mazorquita del Palomero Toluqueño de grano puntiagudo; los granos revientan en palomitas que vuelan. Etiquetas «Palomero Toluqueño», «valle de Toluca · grano puntiagudo»; chip «palomitas». |
+| 4 | Polen | ¿Por qué tantas razas? Porque los agricultores las han adaptado a cada lugar, y su polen viaja libre de planta en planta. | Fondo cian: milpa con tres plantas de maíz de elotes de distinto color (amarillo, azul, rojo); etiqueta «cada lugar, su maíz»; luego polen dorado viaja de la espiga de una planta a los elotes de las otras. Chip «polen libre: de planta en planta». Capítulo 2 «¿Por qué tantas?». |
+| 5 | Semilla | Muchas familias guardan, intercambian y prueban su propia semilla. | Fondo rosa: una mazorca azul se desgrana en un frasco («se guarda»); dos frascos (azul y amarillo) cambian de lugar («se intercambia»); una semilla brota en la tierra («se prueba»). |
+| 6 | Altura | Así hay maíz desde el nivel del mar hasta los tres mil cuatrocientos metros. | Montaña en corte, del mar a la sierra; un marcador sube la ladera y el Medidor «altura donde se siembra» cuenta de 0 a 3,400 m; abajo, Zapalote Chico «costa»; arriba, Cónico «más de 3,000 m». |
+| 7 | Pregunta | ¿Y de dónde sale el maíz azul o morado? | **Re-gancho.** Fondo lila: «?» gigante y tres mazorcas (azul, morada y roja) que se mecen. Robert grande, pensativo. Capítulo 3 «El color». |
+| 8 | Color | De antocianinas: pigmentos en la cáscara del grano, en la capa de justo abajo, o en las dos. | Fondo noche (barra de escala en mm): un grano en corte con pericarpio (cáscara), capa de aleurona, endospermo y germen. El morado se enciende en el pericarpio, luego el azul en la aleurona, luego en las dos. Etiquetas «pericarpio (cáscara)», «capa de aleurona»; chip «antocianinas: en una capa o en las dos». |
+| 9 | Estudio | En 1951, en México, Wellhausen y su equipo describieron veinticinco razas a partir de unas dos mil muestras. | Fondo amarillo: `TarjetaEstudio` «1951 · Wellhausen y su equipo · Razas de maíz en México»; un mapa de México se llena de puntitos de colecta (esquemáticos); chips «≈ 2,000 muestras → 25 razas» y «hoy: 64 razas». Capítulo 4 «El estudio». |
+| 10 | Tamal | Dato: una variante del maíz Chalqueño se usa para harina de tamal, y sus hojas, para envolverlos. | Fondo rosa: mazorca Chalqueño, mediana-larga y ancha, de grano crema (etiqueta «Chalqueño · variante «palomo»»); los granos saltan y forman un montoncito de harina («harina de tamal»); luego la hoja envuelve un tamal que humea. Chip «su hoja envuelve tamales». |
+| 11 | Banco | Por eso se guardan en bancos de semillas, y los maíces criollos podrían servir para los climas que vienen. | Fondo azul noche frío con escarcha: estantes de un banco de semillas con frascos de granos de colores («banco de semillas»); sale un sol que calienta (clima futuro) y un frasco de maíz criollo brilla. Chip «hipótesis: maíces para climas futuros». Capítulo 5 «Guardarlas». |
+| 12 | Cierre | Así que tu tamal no es de maíz a secas: es de una raza que alguien cuidó, semilla por semilla. | **Regreso a la imagen del inicio** (fondo amarillo, papel picado, el mismo tamal abierto), ahora junto a una rosca con su muñequito; abajo, la cuadrícula de 64 mazorquitas que se ilumina. Chip «64 razas · 59 nativas». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave continua, cálida, debajo de la voz. Efectos en el mismo cuadro: hoja del tamal que se abre; un "tic" por cada mazorca que llena la cuadrícula; granos que caen a la olla del pozole; crujido del totopo; "pop" de cada palomita; brillos de polen y viento; granos que caen al frasco; notas que suben con la altura; un acorde cada vez que se enciende una capa de color; puntitos que se marcan en el mapa del estudio; molino para la harina y la hoja que envuelve; puerta fría del banco de semillas; campanita al regresar al tamal.
+**Música:** cama grave continua, cálida, debajo de la voz. Efectos en el mismo cuadro: hoja del tamal que se abre; un "tic" por cada una de las 64 mazorcas; granos que caen a la olla y el hervor del pozole; crujido del totopo; un golpecito por cada palomita; viento y brillos del polen; granos que caen al frasco y el intercambio; notas que suben con la altura; un acorde cada vez que se enciende una capa de color; tics de los puntos de colecta en el mapa; molino para la harina y la hoja que envuelve; zumbido frío del banco y el sol que calienta; campanita al regresar al tamal.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos porque están atados a cada escena). Grande en «¿Y de dónde sale el maíz azul o morado?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «64 razas de maíz» (cuadro 0) |
+| 2 | 9.2 | 12.8 | 13_senalando_arriba | `arriba-der` | señala el istmo de Tehuantepec y el totopo |
+| 3 | 20.3 | 23.8 | 06_pensativo_menton | `arriba-der` | el polen que viaja de planta en planta |
+| 4 | 28.6 | 32.6 | 05_sonriendo_dientes_uniformes | `izq-alto` | «del nivel del mar hasta los 3,400 metros» |
+| 5 | 32.9 | 36.2 | 07_pensativo_puno | `grande` | «¿Y de dónde sale el maíz azul o morado?» |
+| 6 | 41.6 | 47.3 | 04_bajando_lentes | `arriba-der` | el estudio de 1951 y el mapa de colectas |
+| 7 | 48.0 | 53.2 | 13_senalando_arriba | `arriba-der` | señala la harina y la hoja del tamal |
+| 8 | 54.0 | 59.6 | 10_serio_molesto | `izq-alto` | «los climas que vienen» |
+| 9 | 60.1 | 65.4 | 02_apuntando_camara | `izq-alto` | «una raza que alguien cuidó» |
+| — | 65.5 | 69.3 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones: 9 · **≈ 40.9 s en pantalla** (+ cierre 3.8 s) · 8 poses distintas, ninguna repetida seguida. Nunca tapa el subtítulo ni las etiquetas principales.
 
 ## Fuentes (para el verificador; frase textual y año)
 
@@ -44,7 +63,7 @@
 12. **Candelaria: quien sacó el Niño de la rosca invita los tamales** — Meteored México, López Fonseca R. (28 ene 2025): quienes "fueron bendecidos al salirles el “Niñito Dios” dentro de la Rosca" "cumplen con la tradición de invitar tamales a todos los asistentes". https://www.meteored.mx/noticias/actualidad/por-que-el-dia-de-la-candelaria-se-celebra-con-tamales-en-mexico.html (solo para la conexión con la fiesta; la voz no lo afirma).
 
 ## Notas
-- El dibujo es esquemático: la cuadrícula de 64 mazorcas muestra formas y colores ilustrativos, no un retrato fiel de cada raza; el corte del grano y sus capas están simplificados.
+- El dibujo es esquemático: la cuadrícula de 64 mazorcas muestra formas y colores ilustrativos, no un retrato fiel de cada raza; de cada raza nombrada solo se dibujan rasgos generales según Wellhausen et al. 1951 (Cacahuacintle: grano blanco, grande, "rounded"; Palomero Toluqueño: mazorca corta y cónica, grano "strongly pointed" blanco grisáceo; Zapalote Chico: mazorca "extremely short"; Chalqueño: "medium long, broad", que se angosta a la punta, grano crema; Cónico y la milpa con forma genérica); el corte del grano y sus capas, y los puntos de colecta del mapa, están simplificados.
 - "Agricultores" (no "campesinos") porque así lo dice CONABIO.
 - Palomero Toluqueño: la voz dice "se considera adecuado" (la ficha agrega que no se ha hecho selección científica para palomitas).
 - El libro de 1951 describe 25 razas principales; hoy CONABIO reporta 64 (en pantalla «25 en 1951 → 64 hoy»).
