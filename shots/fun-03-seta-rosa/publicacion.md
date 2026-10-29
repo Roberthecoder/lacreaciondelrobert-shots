@@ -141,5 +141,5 @@ Fuentes:
 2. Sakamoto, Y. (2018). Influences of environmental factors on fruiting body induction, development and maturation in mushroom-forming fungi. Fungal Biology Reviews 32(4): 236–248.
 3. Nwankwegu, A. S. et al. (2025). Exploring the critical environmental optima and biotechnological prospects of fungal fruiting bodies. Microbial Biotechnology.
 4. Fechas y fotos: mi cultivo (feb–abr 2026), video completo https://youtu.be/CbMcdFRs62Y
-Las fotos del racimo maduro son de mi lote anterior (ene–feb 2026).
+Las fotos del racimo maduro son de la seta que creció en el bloque de aserrín; de sus esporas salió mi cepa.
 ```

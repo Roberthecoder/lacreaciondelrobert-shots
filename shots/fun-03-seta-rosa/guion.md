@@ -78,4 +78,4 @@ Racimo que suelta esporas → esporada (3 feb, día 0) → placa de agar con mic
 
 ## Datos que no se pudieron verificar con precisión
 - Los umbrales exactos de CO₂, luz y humedad para *P. djamor* solo aparecen en sitios de vendedores (citando a Stamets); en voz no doy números de CO₂ ni de luz, solo el de humedad aproximado en pantalla (90 %).
-- Las fotos del racimo maduro son de tu lote anterior (ene–feb 2026), no del lote documentado que llegó a primordios el 19–21 abr; en el mudo el contador se apaga antes de esas fotos para no mezclarlos.
+- Las fotos del racimo maduro son de la seta que creció en el bloque de aserrín pasteurizado; de sus esporas salió la cepa propia del lote documentado que llegó a primordios el 19–21 abr. En el mudo el contador se apaga antes de esas fotos para no mezclarlos.
