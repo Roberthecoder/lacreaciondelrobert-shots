@@ -50,4 +50,16 @@ Fuentes abiertas hoy (texto completo, no resúmenes de buscador):
 
 Nota (no requiere cambio): la altura de la cumbre del Izta varía entre fuentes (5,230 m en C3/Delgado Granados; ~5,220 m en INEGI). Se usa la de la fuente que da también la línea de equilibrio; con cualquiera de las dos la cumbre queda debajo de 5,300 m.
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Segunda ronda
+
+29 oct 2026 · Mismo verificador independiente. Revisé el texto actual de `narracion.json` y `guion.md`. Las demás líneas de voz no cambiaron, así que sus veredictos ✅ de la primera ronda siguen válidos.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|
+| (Voz 0) "Este glaciar ya nunca lo vas a poder ver: hoy solo queda una placa que lo recuerda." | ✅ | G21 | "Aquí existió el glaciar Ayoloco y retrocedió hasta desaparecer en 2018"; la placa es "en memoria del Ayoloco" (título de la nota) | 2018 / 2021 |
+| (Escenas 0 y 10) La placa en la ladera de roca, más abajo, con la cumbre al fondo | ✅ | G21 | "a 200 metros del refugio Otis McAllister, a cuatro mil 626 metros sobre el nivel del mar, en el costado poniente" (abajo de la cumbre, donde estaba el Ayoloco: "ubicado en la cumbre") | 2021 |
+| (Chip escena 7) "abril 2021 · UNAM · 4,626 m" | ✅ | G21 | La nota del 22 abr 2021 cuenta que "escalaron el coloso para instalar la placa firmada por la UNAM […] a cuatro mil 626 metros" | 2021 |
+
+Las dos ⚠️ de la primera ronda ya están corregidas. Ahora todas las afirmaciones son ✅.
+
+VEREDICTO: APROBADO

@@ -16,12 +16,12 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Siete mil cien compras: eso tendrías que usar una bolsa de algodón para empatarle, en todo, a una de plástico delgada. | Desde el cuadro 0: una bolsa de tela (asas largas, costuras) y una bolsa de plástico tipo camiseta en una balanza; un contador gigante corre de 0 a **7,100** con un "clic" por compra. Chip "en TODOS los indicadores". |
-| 1 | Estudio | Lo calculó en 2018 la agencia ambiental de Dinamarca, de la fábrica a la basura. | `TarjetaEstudio`: "Agencia de Protección Ambiental de Dinamarca · 2018". Una línea de vida de la bolsa: fábrica → súper → casa → basura (cuna a tumba). |
+| 1 | Estudio | Lo publicó en 2018 la agencia ambiental de Dinamarca, de la fábrica a la basura. | `TarjetaEstudio`: "Agencia de Protección Ambiental de Dinamarca · 2018" (cálculo hecho por DTU por encargo de la agencia). Una línea de vida de la bolsa: fábrica → súper → casa → basura (cuna a tumba). |
 | 2 | Fabrica | Lo que más pesa es fabricarla: cultivar algodón gasta mucha agua y contamina. | Planta de algodón con su cápsula abierta (fibra blanca saliendo de la cápsula de 4–5 lóculos), gotas de agua y una mancha en el río. La pila de impacto de "fabricar" crece mucho más que "usar" y "tirar". |
 | 3 | Pregunta | ¿Entonces la de tela es peor? | **Re-gancho.** "?" gigante sobre la balanza; Robert grande, pensativo. |
 | 4 | Clima | Depende de qué midas. Si solo cuentas el clima, bastan cincuenta y dos usos. | Tablero de indicadores (esquema): se enciende solo "clima" y el contador baja a **52**. Chip "solo clima: 52 usos". |
 | 5 | Ozono | Las siete mil cien salen de un solo indicador: el daño a la capa de ozono que le calcularon al algodón. | Se encienden todos los indicadores; uno solo ("capa de ozono") se dispara hasta 7,100 y los demás quedan mucho más bajos. Chip "sin ozono: 50 a 1,400". |
-| 6 | ReinoUnido | En el Reino Unido, con datos de 2006 y solo para el clima, salieron ciento treinta y un usos. | `TarjetaEstudio`: "Agencia Ambiental del Reino Unido · 2011 (datos de 2006)". Contador "131 · solo clima". |
+| 6 | ReinoUnido | En el Reino Unido, con datos de 2006 y solo para el clima, salieron ciento treinta y un usos. | `TarjetaEstudio`: "Agencia Ambiental de Inglaterra · 2011 (datos de 2006)". Contador "131 · solo clima". |
 | 7 | Mar | Pero ninguno midió la basura tirada. Y en 2018, un estudio de Japón reportó una bolsa de plástico a casi once kilómetros de hondo, en la Fosa de las Marianas. | Chip tachado "basura tirada: no medida". La cámara baja por el mar (fondo oscuro) con un medidor de profundidad hasta **10,898 m**: una bolsa de plástico en el fondo. Chip "Fosa de las Marianas · 10,898 m". |
 | 8 | Consejo | Así que la mejor bolsa es la que ya tienes: reúsala muchas veces, y la de plástico, al final, como bolsa de basura. | La bolsa de tela suma marcas de reúso (palomitas); la de plástico termina en el bote de basura como bolsa de basura. Chip "reúsa lo que ya tienes". |
 | 9 | Cierre | Siete mil cien no es para tirar tu bolsa de tela: es para que nunca la dejes en casa. | **Regreso a la balanza del inicio**: el 7,100 vuelve, la bolsa de tela sale por la puerta colgada del hombro. |
@@ -61,3 +61,5 @@
 - La bolsa de 10,898 m se grabó con sumergibles/ROV en algún momento desde 1983; el **estudio** que la reporta es de 2018 (la voz dice "en 2018, un estudio… reportó", no la fecha de la grabación).
 - El "7,100" es para la bolsa de algodón **convencional**; la orgánica salió peor (20,000) por menor rendimiento del cultivo y menor volumen.
 - Los dibujos de la balanza, la línea de vida y el tablero de indicadores son esquemáticos.
+- El estudio danés lo publicó la agencia (Miljøstyrelsen), pero el cálculo lo hizo la Universidad Técnica de Dinamarca (DTU) por encargo de ella; por eso la voz dice "lo publicó".
+- Dibujo: la bolsa de plástico de referencia es la bolsa normal del súper (LDPE, ~24 g, ~40 µm de grosor), no una bolsita ultradelgada.

@@ -2,25 +2,25 @@
 
 - **Serie:** Shot Ambiental · **Logo:** química (matraz: contaminación por plástico) · **Badge:** #10 · rama `pedido300/amb`.
 - **Formato:** N2 "El número" (700 mil fibras por lavada, con el consejo útil "qué sí sirve") + N1 "Por dentro" (bajamos de la lavadora a la fibra al microscopio y seguimos su viaje: drenaje → planta → lodos → campo). Cierre que regresa al suéter del inicio.
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Ese suéter no solo se ensucia: cada vez que lo lavas, se deshace en hilitos de plástico."
-- **Duración:** voz 947 caracteres escritos ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → 61.5 s en la base.
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Ese suéter no solo se ensucia: al lavarlo, se deshace en hilitos de plástico."
+- **Duración:** voz 962 caracteres escritos ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → 61.5 s en la base.
 - **Cuentas:** fibra de 11.9–17.7 µm de diámetro → 17.7 µm = 0.0177 mm < 0.02 mm ("menos de dos centésimas de milímetro"); largo 5.0–7.8 mm ("unos milímetros") · 98.41 % retenido en la planta de Escocia → "casi todos" · 90 % de fibras en lodos de Chile → "nueve de cada diez" · 728,789 fibras (acrílico, 6 kg) → "más de setecientas mil".
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese suéter no solo se ensucia: cada vez que lo lavas, se deshace en hilitos de plástico. | Cuadro 0: un suéter dando vueltas en la ventana de una lavadora; del tejido se desprenden hilitos que flotan en el agua. Chip "acrílico · poliéster = plástico". |
-| 1 | Numero | Seis kilos de ropa acrílica pueden soltar más de setecientas mil fibras en una sola lavada. | Número gigante "+700,000" que cuenta hacia arriba; báscula con "6 kg de ropa acrílica"; chip "1 lavada". |
-| 2 | Fibra | Cada una mide unos milímetros de largo y menos de dos centésimas de milímetro de grueso. | `Lupa` sobre el agua: fondo oscuro, una fibra larga y lisa (cilindro, no bolita) con flechas "≈ 5–8 mm de largo" y "< 0.02 mm de grueso". Barra de escala. |
-| 3 | Drenaje | Salen con el agua sucia y se van al drenaje. | La manguera de desagüe suelta agua gris con hilitos hacia una coladera; tubería que baja. |
-| 4 | Planta | Una planta de Escocia, en 2016, atrapaba casi todos los microplásticos, y aun así soltaba sesenta y cinco millones al día. | Esquema de planta de tratamiento (tanques). Medidor "98 % atrapado"; por la salida, al río, un chorrito con contador "65 millones al día". Chip "Escocia · 2016". |
+| 0 | Gancho | Ese suéter no solo se ensucia: al lavarlo, se deshace en hilitos de plástico. | Cuadro 0: un suéter dando vueltas en la ventana de una lavadora; del tejido se desprenden hilitos que flotan en el agua. Chip "acrílico · poliéster = plástico". |
+| 1 | Numero | Seis kilos de ropa acrílica pueden soltar más de setecientas mil fibras en una lavada. | Número gigante "+700,000" que cuenta hacia arriba; báscula con "6 kg de ropa acrílica"; chip "1 lavada". |
+| 2 | Fibra | En promedio miden unos milímetros de largo y menos de dos centésimas de milímetro de grueso. | `Lupa` sobre el agua: fondo oscuro, una fibra larga y lisa (cilindro, no bolita) con flechas "promedio ≈ 5–8 mm de largo" y "promedio < 0.02 mm de grueso". Barra de escala. |
+| 3 | Drenaje | Salen con el agua sucia al drenaje. | La manguera de desagüe suelta agua gris con hilitos hacia una coladera; tubería que baja. |
+| 4 | Planta | Un estudio de 2016 en una planta de Escocia: atrapaba casi todos los microplásticos y aun así soltaba sesenta y cinco millones diarios. | Esquema de planta de tratamiento (tanques). Medidor "98 % atrapado"; por la salida, al río, un chorrito con contador "65 millones al día". Chip "Escocia · 2016". |
 | 5 | Pregunta | ¿Y los que sí atrapa, desaparecen? | **Re-gancho.** "?" gigante sobre el tanque lleno de fibras; Robert grande. |
-| 6 | Lodos | No: se quedan en los lodos, que suelen usarse como abono. En lodos de Chile, nueve de cada diez eran fibras. | Del fondo del tanque sale lodo café que un tractor esparce en un campo. Diez puntitos: nueve son hilitos. Chip "Chile · 2019: 90 % fibras". |
-| 7 | Estudio | Ese número salió de Plymouth, Inglaterra, en 2016; ahí, la mezcla con algodón soltó menos. | Tarjeta del estudio (Napper y Thompson, Universidad de Plymouth, 2016) con tres barras: acrílico 728,789 · poliéster 496,030 · poliéster-algodón 137,951 (fibras por 6 kg). |
-| 8 | Sirve | ¿Qué ayuda? Lavar en frío, en ciclo corto y con la carga llena; el ciclo delicado suelta más. | Perilla de la lavadora: termómetro baja (frío), reloj corto, tambor lleno ✔; "delicado (mucha agua)" con flecha de más fibras ✗. |
+| 6 | Lodos | No: se quedan en los lodos, que suelen usarse de abono. En lodos de Chile, en 2019, nueve de cada diez microplásticos eran fibras. | Del fondo del tanque sale lodo café que un tractor esparce en un campo. Diez puntitos: nueve son hilitos. Chip "Chile · 2019: 90 % de los microplásticos del lodo, fibras". |
+| 7 | Estudio | Las setecientas mil fibras salieron de Plymouth, Inglaterra, en 2016; ahí la mezcla con algodón soltó menos. | Tarjeta del estudio (Napper y Thompson, Universidad de Plymouth, 2016) con tres barras: acrílico 728,789 · poliéster 496,030 · poliéster-algodón 137,951 (fibras por 6 kg). |
+| 8 | Sirve | ¿Qué ayuda? Lavar en frío, en ciclo corto y con carga llena; el delicado suelta más. | Perilla de la lavadora: termómetro baja (frío), reloj corto, tambor lleno ✔; "delicado (mucha agua)" con flecha de más fibras ✗. |
 | 9 | Filtro | Y en 2020, un filtro en la salida de la lavadora atrapó cerca del setenta y ocho por ciento. | Un filtro en la manguera de desagüe se llena de pelusa; medidor "≈ 78 %". Chip "Plymouth · 2020". |
-| 10 | Cierre | Y ojo: sueltas fibras hasta con traerlo puesto. Ese suéter, poquito a poquito, se va con el agua. | **Regreso al suéter del inicio**, ahora puesto en alguien caminando, soltando un par de hilitos; luego otra vez en la lavadora, un poco más delgado. |
+| 10 | Cierre | Ojo: sueltas fibras hasta con traerlo puesto. Ese suéter, poco a poco, se va con el agua. | **Regreso al suéter del inicio**, ahora puesto en alguien caminando, soltando un par de hilitos; luego otra vez en la lavadora, un poco más delgado. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert apuntando a cámara. |
 
 **Música:** cama grave continua, "tapada" mientras las fibras viajan (drenaje, planta, lodos) y más abierta en "qué ayuda". Efectos: vueltas del tambor y chapoteo, un tic rápido por el contador de 700 mil, el zoom de la lupa, gorgoteo del drenaje, máquinas de la planta, goteo de la salida, plop de "?", tractor/esparcido de lodo, tres golpes para las barras, clic de la perilla, el filtro que se llena.

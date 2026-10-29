@@ -38,4 +38,16 @@ Fuentes abiertas y leídas completas: informe ICC 2026 de Ocean Conservancy (PDF
 
 Todo lo demás está verificado contra la fuente original. Con esas dos frases cambiadas, el guion queda aprobable.
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Segunda ronda (29 oct 2026)
+
+Líneas re-verificadas con el texto actual de `narracion.json` y `guion.md`:
+
+| Afirmación (texto actual) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|
+| "Al microscopio son más de quince mil fibras, cada una de unos veinte micrómetros de grueso." (pantalla: "15,000+" y "20 µm" marcando el ancho de una fibra) | ✅ | Slaughter et al. 2011 | "These fibres, each approximately 20 μm in diameter … over 15 000 of them are packed tightly together … to create a single filter" | 2011 |
+| "Y ese año, en las playas limpiadas en México, salieron más del doble de colillas que de botellas de plástico." (20,571 ÷ 7,978 = 2.58) | ✅ | Ocean Conservancy, 2026 ICC Report, tabla por país | Fila "Mexico … 7,978 [Beverage bottles (plastic)] · 20,571 [Cigarette butts]" | 2025 |
+| "Lo más raro: hasta los filtros sin fumar resultaron tóxicos." (sigue a la escena de los peces; chip "sin fumar: también tóxico") | ✅ | Slaughter et al. 2011 | "Unsmoked cigarette filters (no tobacco) were also found to be toxic, with LC50 values of 5.1 and 13.5 cigarette butts/l" · "One surprising result of our study" | 2011 |
+
+Quitar "bien apretadas" no cambia ningún dato. Las dos ⚠️ de la primera ronda quedan corregidas. Todas las afirmaciones están ✅.
+
+VEREDICTO: APROBADO
