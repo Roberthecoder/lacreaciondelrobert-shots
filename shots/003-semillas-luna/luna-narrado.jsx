@@ -342,7 +342,7 @@ function LunaNarrado() {
       {/* órbita */}
       <Chip T={T} at={K.O + 0.6} until={K.P - 0.2} texto="no pisaron la Luna" y={520} borde={KC.red} tam={40} />
       {/* por dentro (Lupa en modo rayos X) */}
-      <Lupa T={T} at={K.D + 0.1} until={K.Va - 0.3} x={380} y={630} r={250} fx={540} fy={1090} interior={(t, r) => <SemillaCorte T={t} r={r} />} etiqueta="RAYOS X · semilla" />
+      <Lupa T={T} at={K.D + 0.1} until={K.Va - 0.3} x={380} y={630} r={250} fx={540} fy={1090} interior={(t, r) => <SemillaCorte T={t} r={r} />} etiqueta="POR DENTRO · semilla" />
       <Etq T={T} at={K.D + 0.9} until={K.Va - 0.3} x={650} y={480} texto="cubierta" />
       <Etq T={T} at={K.D + 1.3} until={K.Va - 0.3} x={650} y={620} texto="reserva" color={KC.gold2} />
       <Etq T={T} at={K.D + 1.7} until={K.Va - 0.3} x={650} y={760} texto="embrión" color="#b8e986" />

@@ -138,7 +138,7 @@ function LactosaNarrado() {
 
       {/* la Lupa de rayos X vive en las dos escenas: llena de enzimas y luego casi vacía */}
       <Lupa T={T} at={K.B + 0.35} until={K.A - 0.25} x={720} y={700} r={250} fx={360} fy={900}
-        interior={(t, r) => <BordeConEnzimas T={t} r={r} cuantas={1} />} etiqueta="RAYOS X · borde del intestino" />
+        interior={(t, r) => <BordeConEnzimas T={t} r={r} cuantas={1} />} etiqueta="AL MICROSCOPIO · borde del intestino" />
       <Lupa T={T} at={K.A + 0.3} until={K.Ga - 0.25} x={330} y={620} r={230} fx={540} fy={860}
         interior={(t, r) => <BordeConEnzimas T={t} r={r} cuantas={0.12} />} etiqueta="el mismo borde, de adulto" tinte={KC.red} />
       <Medidor T={T} at={K.B + 1.6} until={K.Ga - 0.25} etiqueta="LACTASA EN EL BORDE"

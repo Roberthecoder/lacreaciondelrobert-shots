@@ -82,7 +82,7 @@ function SetaNarrado() {
           {/* gotitas de humedad */}
           {T > K.H && Array.from({ length: 20 }, (_, i) => { const u = ((T - K.H) * 0.35 + i / 20) % 1; return <circle key={i} cx={120 + (i * 47) % 860} cy={380 + u * 900} r={7} fill="#fff" opacity={0.7 * Math.sin(Math.PI * u)} />; })}
         </svg>
-        <Lupa T={T} at={K.P + 0.3} until={K.A - 0.2} x={540} y={600} r={230} fx={540} fy={1060} etiqueta="RAYOS X · bolsa" tinte={KC.cyan}
+        <Lupa T={T} at={K.P + 0.3} until={K.A - 0.2} x={540} y={600} r={230} fx={540} fy={1060} etiqueta="POR DENTRO · bolsa" tinte={KC.cyan}
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a2614" />{Array.from({ length: 24 }, (_, i) => <rect key={i} x={(i * 53) % (r * 2)} y={(i * 97) % (r * 2)} width={34} height={12} rx={3} fill="#a86d2c" transform={`rotate(${i * 37} ${(i * 53) % (r * 2)} ${(i * 97) % (r * 2)})`} />)}<MicelioRadial r={r} p={1} seed={4} /></svg>} />
         <Medidor T={T} at={K.A + 0.6} until={K.H - 0.2} etiqueta="CO₂ EN LA BOLSA" valor={co2} texto={(v) => (v > 0.5 ? 'alto' : 'bajo')} y={330} color={KC.red} />
         <Medidor T={T} at={K.H + 0.2} until={K.C - 0.2} etiqueta="HUMEDAD" valor={(t) => 0.9 * kprog(t, K.H + 0.3, K.H + 2)} texto={(v) => Math.round(v * 100) + ' %'} y={330} color={KC.cyan} />
@@ -121,7 +121,7 @@ function SetaNarrado() {
       <Etq T={T} at={K.Ep + 1.4} until={K.Pl - 0.2} x={700} y={620} texto="esporas (≈ 8 µm)" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Ep + 0.2} until={K.Ep + 2.6} texto="micelio en aserrín pasteurizado" y={420} borde={KC.mint} tam={36} />
       <Chip T={T} at={K.Ep + 2.4} until={K.Pl - 0.2} texto="esporada · 3 feb 2026" y={1500} x={400} borde={KC.pink} tam={38} />
-      <Lupa T={T} at={K.Pl + 0.7} until={K.Gr - 0.3} x={720} y={560} r={250} fx={360} fy={1000} etiqueta="RAYOS X · agar" tinte={KC.mint}
+      <Lupa T={T} at={K.Pl + 0.7} until={K.Gr - 0.3} x={720} y={560} r={250} fx={360} fy={1000} etiqueta="AL MICROSCOPIO · agar" tinte={KC.mint}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#e7cf8f" opacity=".25" /><MicelioRadial r={r} p={kprog(t, K.Pl + 1, K.Gr - 0.3)} /><g transform={`translate(${r} ${r})`}><EsporaPl x={0} y={0} s={1.6} /></g></svg>} />
       <Chip T={T} at={K.Pl + 0.3} until={K.Gr - 0.2} texto="agar PDA · 4 feb" y={1500} x={400} borde={KC.mint} tam={38} />
       <Chip T={T} at={K.Gr + 0.3} until={K.P - 0.2} texto="grano → sustrato → semanas" y={420} borde={KC.gold} tam={38} />

@@ -260,7 +260,7 @@ function InsulinaNarrado() {
           <g transform={`translate(${r} ${r}) scale(${r / 260})`}>
             <Bacteria T={t} s={0.82} plasmido={1} brilla={0.5} />
           </g>
-        </svg>} etiqueta="RAYOS X · dentro del caldo" />
+        </svg>} etiqueta="AL MICROSCOPIO · dentro del caldo" />
       <Etiqueta T={T} at={K.P + 1.6} until={K.Ri + 0.1} x={300} y={760} texto="el plásmido" color={PLAS} tam={34} />
 
       {/* 7 · RIBOSOMA — 51 aminoácidos */}
