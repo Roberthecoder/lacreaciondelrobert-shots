@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese calentador de manos no trae pilas ni fuego: es hierro oxidándose a propósito."
 - **Seguridad:** no se invita a abrir la bolsita ni a experimentar con el polvo; se dice claro que no se pega en la piel ni se usa para dormir (NITE, 2025).
 - **Duración:** voz 951 caracteres (estimador) / ≈ 180 palabras (≈ 57.9 s) + cierre 3.5 s → **61.4 s** estimados (`estimar-escenas.mjs`). Corregido tras `verificacion.md`.
-- **Estado:** guion escrito; falta verificación independiente (`verificacion.md`), animación y tabla "Robert en pantalla". Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`: APROBADO), animación lista (`calentador.jsx`, base sin voz 61.4 s), voz pendiente de aprobación de Robert.
 
 ## Versión narrada
 
@@ -14,7 +14,7 @@ Tiempos estimados: Gancho 0–5.0 · Relleno 5.0–13.5 · Empaque 13.5–17.9 �
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese calentador de manos no trae pilas ni fuego: es hierro oxidándose a propósito. | Fondo cian. Desde el cuadro 0 dos manos rompen un sobre plateado (efecto "rasss") y sacan una bolsita blanca de tela; la aprietan y salen ondas de calor naranjas. Chips "🔋 ✗" y "🔥 ✗" se tachan; aparece "Fe + O₂". Barra de escala "10 cm". Termómetro chico a un lado que empieza a subir. |
-| 1 | Relleno | Según la hoja de seguridad de una marca, de 2021, la mitad o más del relleno es hierro en polvo; luego agua, carbón activado, vermiculita y sal. | `Lupa` en rayos X sobre la bolsita: se ve el relleno. Chip "hoja de seguridad · 2021". Barra apilada que se llena: los dos grandes primero, "hierro en polvo 50–60 %" (gris) y "agua 30–40 %" (cian); luego los chicos: "carbón activado 5–10 %", "vermiculita 5–10 %", "sal 1–5 %" (y si cabe "resina absorbente 1–5 %"). Íconos: granito gris, gota cian, carboncito negro poroso, hojuela dorada, cubito blanco "NaCl". |
+| 1 | Relleno | Según la hoja de seguridad de una marca, de 2021, la mitad o más del relleno es hierro en polvo; luego agua, carbón activado, vermiculita y sal. | `Lupa` "por dentro" sobre la bolsita: granos de hierro, gotas, carbón, vermiculita y sal. Chip "por dentro · hoja de seguridad 2021". Barra apilada que se llena en el orden de la voz: "hierro en polvo 50–60 %" (gris) y "agua 30–40 %" (cian) como los dos grandes; luego "carbón activado 5–10 %", "vermiculita 5–10 %" y "sal 1–5 %", con su leyenda debajo del subtítulo. |
 | 2 | Empaque | Cerrado, no le llega aire. Al abrirlo, el oxígeno entra por la bolsita. | Corte: la bolsita dentro del sobre plateado cerrado, con un candado "sin aire" y el termómetro quieto en gris. El sobre se abre: bolitas rojas "O₂" entran por poritos de la tela (flechas). El termómetro se enciende. |
 | 3 | Oxido | El hierro reacciona con el oxígeno, se vuelve óxido, como una reja vieja, y suelta calor. | Fondo noche (micro): un grano de hierro gris; llegan O₂ y una gota de agua; la superficie del grano se vuelve naranja-café ("óxido de hierro"). Cada vez que se forma óxido sale un destello naranja "calor". Mini-imagen de una reja oxidada (guiño al #21) que aparece y se va. Ecuación chica: "hierro + oxígeno → óxido + calor". |
 | 4 | Polvo | Aquí va rapidísimo: con sal y hecho polvo, el hierro se oxida mucho más rápido que un clavo. | Pantalla dividida: a la izquierda un clavo con una manchita de óxido y un reloj "lento"; a la derecha cientos de granitos que se vuelven naranjas casi a la vez, reloj "rápido". Medidor "superficie expuesta" se dispara del lado del polvo. |
@@ -27,6 +27,26 @@ Tiempos estimados: Gancho 0–5.0 · Relleno 5.0–13.5 · Empaque 13.5–17.9 �
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave y cálida, continua, debajo de la voz; efectos en el mismo cuadro: rasgado del sobre, "pff" del aire entrando, chisporroteo suave cada vez que un grano se oxida, tic-tac lento (clavo) contra tic-tac rápido (polvo), golpe de la tarjeta, reloj de arena, alarma suave en "Cuidado".
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y cuánto aguanta ese calor?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «no trae pilas ni fuego: es hierro oxidándose» |
+| 2 | 6.5 | 13.2 | 13_senalando_arriba | `arriba-der` | «la mitad o más del relleno es hierro en polvo» |
+| 3 | 13.9 | 17.6 | 11_sorprendido | `arriba-der` | «Al abrirlo, el oxígeno entra» |
+| 4 | 18.7 | 23.0 | 06_pensativo_menton | `izq-alto` | «se vuelve óxido, como una reja vieja» |
+| 5 | 25.3 | 28.7 | 05_sonriendo_dientes_uniformes | `arriba-der` | «mucho más rápido que un clavo» |
+| 6 | 33.4 | 35.4 | 07_pensativo_puno | `grande` | «¿Y cuánto aguanta ese calor?» |
+| 7 | 37.8 | 41.6 | 04_bajando_lentes | `izq-alto` | «entre 45 y 50 grados por 22 horas» |
+| 8 | 42.4 | 49.3 | 10_serio_molesto | `izq-alto` | «a 44 grados la piel puede quemarse» |
+| 9 | 49.8 | 53.0 | 13_senalando_arriba | `arriba-der` | «nunca lo pegues en la piel ni lo uses para dormir» |
+| 10 | 53.5 | 57.8 | 02_apuntando_camara | `izq-alto` | «una reja oxidándose en tu bolsillo» |
+| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 43 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
 
