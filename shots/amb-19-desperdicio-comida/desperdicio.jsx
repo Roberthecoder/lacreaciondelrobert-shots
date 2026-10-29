@@ -292,3 +292,4 @@ function DesperdicioApp() {
   return <div style={{ position:'fixed', inset:0, background:'#000' }}><CompositionStage width={1080} height={1920} scenes={window.OM_SCENES} playback={window.OM_PLAYBACK} bg="#0E0F12"><DesperdicioShot /></CompositionStage></div>;
 }
 window.DesperdicioApp = DesperdicioApp;
+// Revisado por el coordinador el 29 oct 2026 (preview de 16 cuadros).
