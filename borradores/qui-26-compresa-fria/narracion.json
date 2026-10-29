@@ -6,13 +6,13 @@
     { "escena": "Gancho", "texto": "Esa compresa no está fabricando frío: le está robando calor a tu piel." },
     { "escena": "Adentro", "texto": "Adentro trae una bolsita de agua y un polvo blanco: nitrato de amonio, o en otras, urea." },
     { "escena": "Aprieta", "texto": "Al apretarla, la bolsita se rompe y el polvo empieza a disolverse." },
-    { "escena": "Cristal", "texto": "Pero separar cada pedacito del cristal y rodearlo de agua cuesta energía." },
-    { "escena": "Robo", "texto": "Y esa energía la jala como calor de lo que tiene alrededor: el agua y tu rodilla." },
+    { "escena": "Cristal", "texto": "Pero separar los pedacitos del cristal cuesta más energía de la que regresa el agua al rodearlos." },
+    { "escena": "Robo", "texto": "Esa energía la jala como calor del agua y de tu rodilla." },
     { "escena": "Pregunta", "texto": "¿Y por qué se disuelve, si le cuesta?" },
     { "escena": "Desorden", "texto": "Porque al disolverse todo queda más revuelto, y ese desorden gana." },
     { "escena": "Termometro", "texto": "En una demostración, cien gramos de nitrato en cincuenta mililitros de agua bajaron de 27 a casi 8 grados." },
-    { "escena": "Estudio", "texto": "En 1988, en un hospital de Los Ángeles, se reportaron cinco personas que se tragaron este polvo: hubo dolor de estómago y presión algo baja. Si una se rompe, tírala y lejos de los niños." },
-    { "escena": "Urea", "texto": "Lo curioso: la urea de algunas es la misma sustancia de desecho que tus riñones sacan en la orina." },
+    { "escena": "Estudio", "texto": "En 1988, médicos de un hospital de Los Ángeles reportaron a cinco personas que se tragaron este polvo: hubo dolor de estómago y presión algo baja. Si una se rompe, tírala, y si la usa un niño, vigílalo." },
+    { "escena": "Urea", "texto": "Lo curioso: la urea de algunas es el mismo desecho que tus riñones sacan en la orina." },
     { "escena": "Cierre", "texto": "Así que el frío que sientes no viene de la compresa: es tu propio calor yéndose." }
   ]
 }

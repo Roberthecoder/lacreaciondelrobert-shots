@@ -17,7 +17,7 @@
     },
     {
       "escena": "Silanol",
-      "texto": "Esas paredes están tapizadas de oxígeno e hidrógeno, y el vapor de agua se les pega."
+      "texto": "Sus paredes están tapizadas de oxígeno e hidrógeno, y el vapor de agua se les pega."
     },
     {
       "escena": "Adsorcion",
@@ -29,7 +29,7 @@
     },
     {
       "escena": "Riesgo",
-      "texto": "Porque un niño se puede atragantar, y las azules traen cloruro de cobalto, que se pone rosa al mojarse y sí es tóxico, aunque poquito."
+      "texto": "Porque un niño se puede atragantar, y las azules traen cloruro de cobalto, que se pone rosa al mojarse y sí es tóxico, aunque viene en muy poca cantidad."
     },
     {
       "escena": "Estudio",
@@ -41,11 +41,11 @@
     },
     {
       "escena": "Curioso",
-      "texto": "Lo curioso: el mes con más casos fue abril, justo antes de la Pascua judía."
+      "texto": "El mes con más casos fue abril, justo antes de la Pascua judía."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que no son veneno: son arena llena de túneles, atrapando el agua que tú no ves."
+      "texto": "Así que no son veneno: son arena llena de túneles, atrapando el agua que no ves."
     }
   ]
 }

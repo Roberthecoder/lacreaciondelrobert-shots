@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Ese humo no es humo: es el agua de tu propio aire, hecha nube por el frío del hielo seco."
 - **Seguridad:** no se invita a hacer ningún experimento. Se dice claro: nunca en frasco cerrado, nunca con la mano sin guantes, y que en un lugar cerrado el gas desplaza el oxígeno.
 - **Duración:** voz 958 caracteres / ≈ 190 palabras (≈ 58.3 s según `estimar-escenas.mjs`) + cierre 3.5 s → **≈ 61.8 s**.
-- **Estado:** guion escrito, pendiente de verificación independiente (`verificacion.md`). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`, VEREDICTO: APROBADO), animación lista (`hieloseco.jsx`, base sin voz 61.8 s), voz pendiente de aprobación de Robert (~958 créditos).
 
 ## Versión narrada
 
@@ -27,6 +27,26 @@ Tiempos aproximados de `node motor/kit/estimar-escenas.mjs shots/qui-24-hielo-se
 | — | Outro (58.3–61.8 s) | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave y fría, continua, debajo de la voz; efectos en el mismo cuadro: "tac" del hielo seco al caer en el vaso vacío, siseo suave de la sublimación, "tic" de cada gotita que se forma, inflado del globo, motor de la camioneta y puerta que se abre (aire que entra), el "¡pum!" del tapón en 1835, y un silencio breve antes de la frase final.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Entonces es inofensivo?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «Ese humo no es humo» |
+| 2 | 6.4 | 9.7 | 13_senalando_arriba | `izq-alto` | «a 78 grados y medio bajo cero» |
+| 3 | 14.5 | 18.1 | 06_pensativo_menton | `arriba-der` | «ese gas no se ve» |
+| 4 | 20.1 | 23.4 | 04_bajando_lentes | `izq-alto` | «se condensa en gotitas diminutas» |
+| 5 | 23.65 | 26.5 | 07_pensativo_puno | `grande` | «¿Entonces es inofensivo?» |
+| 6 | 28.3 | 32.4 | 10_serio_molesto | `arriba-der` | «desplaza el oxígeno… quema por frío» |
+| 7 | 36.2 | 42.6 | 11_sorprendido | `izq-alto` | «terminó desmayado… despertó» |
+| 8 | 43.9 | 49.4 | 13_senalando_arriba | `arriba-der` | «el tapón salió disparado» |
+| 9 | 50.0 | 53.4 | 10_serio_molesto | `izq-alto` | «nunca va en un frasco cerrado» |
+| 10 | 54.0 | 58.2 | 02_apuntando_camara | `arriba-der` | «es tu aire, hecho nube» |
+| — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 41 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato y cifra se abrió en la fuente original el 29 oct 2026)
 
