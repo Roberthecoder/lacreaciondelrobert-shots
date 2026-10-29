@@ -20,12 +20,12 @@
 | 6 | Alarma | Sin él, el linfocito no enciende las señales que arman el ataque. | El núcleo del linfocito queda apagado: las señales (destellos que iban a salir) no salen. Chip "señales de ataque: apagadas". |
 | 7 | Ratones | En 1976, el equipo de Borel y Stähelin publicó que retrasaba el rechazo de piel en ratones. | `TarjetaEstudio` "1976 · Sandoz, Basilea · Borel, Feurer, Gubler y Stähelin · *Agents and Actions*"; un ratón con un parche de piel que se mantiene. |
 | 8 | Canada | En 1983, en Canadá, en 209 trasplantes de riñón, se estimó que al año funcionaban 80 de cada 100, contra 64 con el tratamiento de antes. | `TarjetaEstudio` "1983 · Canadá · 209 trasplantes de riñón · *NEJM*"; dos barras: "con ciclosporina 80 de 100" contra "tratamiento de antes 64 de 100", que se llenan. Chip "al año (estimado)". |
-| 9 | Escarabajo | Lo más raro: en la naturaleza, este moho es un parásito de larvas de escarabajo. | Fondo rosa: una larva de escarabajo (blanca, curvada en C) en madera; el moho blanco la cubre. Etiqueta "larva de escarabajo". |
+| 9 | Escarabajo | Lo más raro: en la naturaleza, este moho es un parásito de larvas de escarabajo. | Fondo rosa: una larva de escarabajo (blanca, curvada en C) en la tierra; el moho blanco la cubre. Etiqueta "larva de escarabajo". |
 | 10 | Hipotesis | Y se sospecha que la ciclosporina le ayuda a desarmar las defensas del insecto. | Dentro de la larva (fondo oscuro): sus células de defensa se apagan como los linfocitos de antes. Chip "hipótesis". |
 | 11 | Cierre | Así que este puñado de tierra no es solo tierra: es un riñón que sí siguió funcionando. | **Regreso a la imagen del inicio:** el mismo puñado de tierra en la mano, fondo amarillo; ahora encima late un riñón sano. Chip "tierra → trasplante". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave continua, con un aire de misterio al inicio que se abre (más luminosa) en los resultados; efectos en el mismo cuadro: tierra que cae, brillo del frasco, burbujas del matraz, el anillo que se cierra, pasos/zumbido de los linfocitos, alarma del rechazo, "clic" del interruptor, silencio de las señales, papel de las tarjetas, barras que suben, crujido de la madera y la larva, latido del riñón final.
+**Música:** cama grave continua, con un aire de misterio al inicio que se abre (más luminosa) en los resultados; efectos en el mismo cuadro: tierra que cae, brillo del frasco, burbujas del matraz, el anillo que se cierra, pasos/zumbido de los linfocitos, alarma del rechazo, "clic" del interruptor, silencio de las señales, papel de las tarjetas, barras que suben, tierra que se remueve y la larva, latido del riñón final.
 
 Barras de escala: 5 cm (puñado de tierra), 10 µm (hifas y fiálides), 10 µm (linfocito), 1 cm (larva).
 
