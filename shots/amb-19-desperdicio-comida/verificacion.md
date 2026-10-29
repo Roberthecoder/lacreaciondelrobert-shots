@@ -32,4 +32,15 @@
 
 Nota menor (no bloquea): el 19 % es "hasta 19 %" en el informe y compara desperdicio de 2022 con comida disponible de 2020; el guion ya lo explica en Notas y "casi una de cada cinco" no lo exagera.
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Segunda ronda
+
+- Fecha: 29 oct 2026 · mismo verificador independiente.
+- Las otras 10 líneas de `narracion.json` son idénticas a la primera ronda. Solo cambió la línea "Gases".
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|
+| "Además, entre 2010 y 2016, la comida que se perdía y se tiraba generó entre ocho y diez por ciento de los gases de efecto invernadero." (dona "8–10 % … del mundo (pérdida + desperdicio)" + chip "2010–2016") | ✅ | IPCC (2019) SRCCL, SPM B.6.3 (PDF abierto); confirmado por UNEP FWI 2024 | "During 2010-2016, global food loss and waste contributed 8–10% of total anthropogenic GHG emissions" | 2010–2016 (voz y pantalla dicen el periodo) |
+
+La corrección se aplicó en la voz, en la pantalla y en `## Fuentes` del guion (IPCC 2019, con el año del dato). Ya no queda ninguna ⚠️ ni ❌.
+
+VEREDICTO: APROBADO
