@@ -3,8 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #28 · rama `pedido300/fun`.
 - **Formato:** N3 Capítulos y medidores, mezclado con N1 (los capítulos son las etapas del viaje macro → micro → macro): Cap. 1 la gota → Cap. 2 la fusión → Cap. 3 el disparo → re-gancho → estudio con número → Cap. 4 la caída → dato extra → cierre en el mismo champiñón del inicio.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Ese champiñón no está quieto: está disparando esporas, una por una.»
-- **Duración:** voz 1000 caracteres / 183 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
+- **Duración:** voz 991 caracteres / 186 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~990 créditos de ElevenLabs).
 - **No repite** el #07 *Pilobolus* (cañón de presión que lanza un esporangio entero desde el estiércol, metros de alcance). Aquí es otro mecanismo: la catapulta de tensión superficial de cada basidiospora, con alcance de menos de 0.1 mm. La huella de esporas no se menciona (queda para el tema de "cuántas esporas suelta una seta").
 
 ## Versión narrada
@@ -12,17 +12,17 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese champiñón no está quieto: está disparando esporas, una por una. | Fondo menta: un champiñón de campo (*Agaricus campestris*, sombrero blanco, laminillas rosadas a café) en el pasto. Cuadro 0.3: bajo el sombrero brotan chispitas diminutas, ¡tic, tic! Chip "¿quieto?" tachado → "disparando". |
-| 1 | Basidio | En sus laminillas, unas células llamadas basidios cargan las esporas, cada una en una puntita. | La cámara se mete bajo el sombrero: corte de una laminilla (fondo oscuro). Fila de basidios (células en forma de mazo), cada uno con 4 puntitas (esterigmas) y una espora café en cada una. Etiquetas "basidio", "esterigma", "espora". Barra 10 µm. |
-| 2 | Gota | Capítulo uno: la gota. La espora suelta azúcares en su base, y ahí se condensa agua del aire. | Capítulo "1 · LA GOTA". Zoom a una espora: en su base (apéndice hilar) salen puntitos de azúcar; moléculas de vapor llegan y se pegan. Medidor "tamaño de la gota" que sube. |
-| 3 | Buller | Crece una gotita, la gota de Buller, y sobre la espora se forma otra capa de agua. | La gotita crece (etiqueta "gota de Buller"); sobre la cara plana de la espora aparece una película de agua (etiqueta "capa de agua"). |
-| 4 | Fusion | Capítulo dos: la fusión. Al tocarse, la gota se pasa a la espora en menos de cuatro millonésimas de segundo. | Capítulo "2 · LA FUSIÓN". La gota toca la capa y ¡plop! se fusionan; cronómetro "< 4 µs" (millonésimas de segundo). |
-| 5 | Disparo | Capítulo tres: el disparo. El agua mueve el peso de la espora y la avienta como catapulta. | Capítulo "3 · EL DISPARO". Punto rojo "centro de masa" que salta; la espora se suelta del esterigma y sale disparada en horizontal. Chip "catapulta de tensión superficial". |
+| 1 | Basidio | En sus laminillas, los basidios cargan las esporas, cada una en su puntita. | La cámara se mete bajo el sombrero: corte de una laminilla (fondo oscuro). Fila de basidios (células en forma de mazo), cada uno con 4 puntitas (esterigmas) y una espora café en cada una. Etiquetas "basidio", "esterigma", "espora". Barra 10 µm. |
+| 2 | Gota | Capítulo uno: la gota. La espora suelta azúcares en su base y ahí se condensa agua del aire. | Capítulo "1 · LA GOTA". Zoom a una espora: en su base (apéndice hilar) salen puntitos de azúcar; moléculas de vapor llegan y se pegan. Medidor "tamaño de la gota" que sube. |
+| 3 | Buller | Crece la gota de Buller y sobre la espora se forma otra capa de agua. | La gotita crece (etiqueta "gota de Buller"); sobre la cara plana de la espora aparece una película de agua (etiqueta "capa de agua"). |
+| 4 | Fusion | Capítulo dos: la fusión. Al tocarse, la gota salta a la espora en un instante. | Capítulo "2 · LA FUSIÓN". La gota toca la capa y ¡plop! se fusionan; chip pequeño "< 4 µs (medido en un hongo de oreja y levaduras, 2009)". |
+| 5 | Disparo | Capítulo tres: el disparo. El agua mueve el peso de la espora y la lanza como catapulta. | Capítulo "3 · EL DISPARO". Punto rojo "centro de masa" que salta; la espora se suelta del esterigma y sale disparada en horizontal. Chip "catapulta de tensión superficial". |
 | 6 | Pregunta | ¿Y con cuánta fuerza sale? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
-| 7 | Estudio | En 2005, en Estados Unidos, lo filmaron hasta a cien mil cuadros por segundo. | Tarjeta "2005 · Pringle et al. · EE. UU. · *Mycologia*"; tira de película cuadro a cuadro con la espora saliendo. Chip "100,000 cuadros/s" y "en un hongo gelatinoso (*Auricularia*) y una levadura". |
-| 8 | Fuerza | La espora arranca con más de diez mil veces la gravedad. | Número gigante "+10,000 g"; chip "g = la gravedad de la Tierra". |
-| 9 | Caida | Capítulo cuatro: la caída. Vuela menos de una décima de milímetro: lo justo para no chocar con la laminilla de enfrente. | Capítulo "4 · LA CAÍDA". Dos laminillas frente a frente (fondo oscuro); la espora vuela en horizontal y se frena antes de la laminilla de enfrente. Regla "< 0.1 mm". |
-| 10 | Frena | Ahí frena y cae derecho, hasta salir del sombrero. | La trayectoria dobla en ángulo recto y la espora baja vertical entre las dos laminillas hasta salir por abajo. |
-| 11 | Especies | Y así disparan unas treinta mil especies de hongos. | Mosaico de siluetas de hongos con laminillas, poros y orejas gelatinosas; contador "≈ 30,000 especies". |
+| 7 | Estudio | En 2005, en Estados Unidos, lo filmaron en otros hongos, una levadura y un hongo de oreja, hasta a cien mil cuadros por segundo. | Tarjeta "2005 · Pringle et al. · EE. UU. · *Mycologia*"; tira de película cuadro a cuadro con la espora saliendo. Chip "hasta 100,000 cuadros/s"; dibujos de una levadura (*Itersonilia perplexans*) y un hongo de oreja (*Auricularia auricula*). |
+| 8 | Fuerza | Esas esporas arrancaron con más de diez mil veces la gravedad. | Número gigante "+10,000 g" sobre las esporas de la levadura y del hongo de oreja; chips "g = la gravedad de la Tierra" y "≈3,000 a 14,000 g según la especie (2009)". |
+| 9 | Caida | Capítulo cuatro: la caída. Vuela menos de una décima de milímetro: justo para no chocar con la laminilla de enfrente. | Capítulo "4 · LA CAÍDA". Dos laminillas frente a frente (fondo oscuro); la espora vuela en horizontal y se frena antes de la laminilla de enfrente. Regla "< 0.1 mm". |
+| 10 | Frena | Ahí frena y cae derecho hasta salir del sombrero. | La trayectoria dobla en ángulo recto y la espora baja vertical entre las dos laminillas hasta salir por abajo. |
+| 11 | Especies | Y así disparan decenas de miles de especies de hongos. | Mosaico de siluetas de hongos con laminillas, poros y orejas gelatinosas; contador "decenas de miles de especies". |
 | 12 | Cierre | Así que ese champiñón no está quieto: cada espora sale en su propia catapulta de agua. | **Regreso a la imagen del inicio:** el mismo champiñón en el pasto, ahora con una lluvia fina de esporas saliendo de abajo del sombrero, cada una con su gotita. Chip "una catapulta de agua por espora". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
@@ -55,5 +55,10 @@ Barras de escala: 5 cm (champiñón), 10 µm (basidios y espora), 0.1 mm (entre 
 5. Iapichino, M., Wang, Y.-W., Gentry, S., Pringle, A. y Seminara, A. (2019). A precise relationship among Buller's drop, ballistospore and gill morphology enables maximal packing of spores within gilled mushrooms. arXiv:1904.08127. https://arxiv.org/abs/1904.08127
    > "In species with mushrooms, spores grow in groups of four from basidia arranged along the gills" · "A drop of liquid, known as Buller's drop, forms extracellularly at the base of each spore by condensation of water."
    > "The spore decelerates to rest in few milliseconds and then falls vertically between two gills or within the pore."
+
+6. He, M.-Q., Zhao, R.-L., Liu, D. et al. (2022). Species diversity of Basidiomycota. *Fungal Diversity* 114: 281–325. https://doi.org/10.1007/s13225-021-00497-3
+   > "Basidiomycota is one of the major phyla with more than 40,000 described species." (por eso la voz dice "decenas de miles de especies", sin cifra exacta: no todas disparan así)
+
+**Nota:** ninguna cifra se midió en un champiñón. El < 4 µs (Noblin 2009) es de *Auricularia* y levaduras *Sporobolomyces*; los 100,000 cuadros/s y los +10,000 g (Pringle 2005) son de una levadura y *Auricularia*; Stolze-Rybczynski 2009 da ≈3,300 g (*Auricularia*) a 14,000 g (*Tilletia caries*). La voz lo dice así ("en otros hongos", "esas esporas"). Lo de < 0.1 mm sí es general para setas de laminillas.
 
 El dibujo es esquemático.

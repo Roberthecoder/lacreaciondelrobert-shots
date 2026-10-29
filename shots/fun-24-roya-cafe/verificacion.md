@@ -42,5 +42,3 @@ Fuentes abiertas:
 | 19 | Dibujo: haustorios como "chupones" pegados a las células | ✅ | [TA], [SE] | "Haustoria are thus not truly intracellular" (atraviesan la pared pero no la membrana): dibujarlos pegados/hundidos en la célula, no flotando dentro, está bien | 2017 |
 
 **Re-verificación (29 oct 2026, texto final):** se revisaron las 13 líneas finales de `narracion.json` y la tabla de `guion.md` (incluida la escena 3 con el estoma de ~15 µm). Todas las afirmaciones de voz y pantalla quedan ✅; las hipótesis (clima de 2012) se dicen como hipótesis y la cifra de −16 % dice de qué es, de dónde y de qué año.
-
-VEREDICTO: APROBADO

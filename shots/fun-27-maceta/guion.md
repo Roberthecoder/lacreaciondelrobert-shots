@@ -3,8 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #27 · rama `pedido300/fun`.
 - **Formato:** N1 Por dentro (macro → micro → macro): la maceta de tu casa → la tierra al microscopio (micelio, esporas, pigmento) → la misma maceta, ya entendida.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Ese hongo amarillo en tu maceta no está matando a tu planta: se come lo que ya está muerto.»
-- **Duración:** voz 1000 caracteres / 177 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
+- **Duración:** voz 999 caracteres / 177 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~999 créditos de ElevenLabs).
 - **Tono:** tranquilizador y útil, con un truco para hacer en casa. No es consejo médico.
 
 ## Versión narrada
@@ -15,14 +15,14 @@
 | 1 | Nombre | Se llama *Leucocoprinus birnbaumii*, el hongo amarillo de las macetas. | Zoom a un hongo: etiquetas "hongo amarillo de las macetas" + *Leucocoprinus birnbaumii*, "sombrero", "laminillas libres", "anillo". Barra de escala 2 cm. |
 | 2 | Llega | Pudo llegar en la tierra que compraste, o como una espora por el aire. | Un costal de tierra que se vacía en la maceta con hilitos escondidos (chip "en la tierra"); por la ventana entra flotando una espora (chip "o por el aire"). |
 | 3 | Micelio | Abajo vive como hilos finísimos, el micelio, que deshacen los restos muertos. | La cámara baja dentro de la tierra (corte de maceta, fondo oscuro): la red de micelio blanco crece y deshace hojitas secas y trocitos de corteza; las raíces vivas de la planta, intactas. Etiqueta "micelio". |
-| 4 | Calor | Con calor y tierra húmeda, esos hilos sacan el hongo: solo su parte para reproducirse. | Termómetro que sube y gotas de riego; del micelio se forman bolitas (primordios) que suben hacia la superficie. Chip "el hongo = su parte para reproducirse". |
+| 4 | Calor | Con calor y humedad, los hilos sacan el hongo: solo su parte para reproducirse. | Termómetro que sube y gotas de riego; del micelio se forman bolitas (primordios) que suben hacia la superficie. Chip "el hongo = su parte para reproducirse". |
 | 5 | Abre | Sale como un huevito amarillo, se abre como campana y suelta esporas blancas. | Time-lapse de un hongo: huevito amarillo → campana → sombrero abierto que se aclara; de las laminillas caen esporas blancas (elipses, 8–12 µm). Barra de escala 10 µm en el recuadro de esporas. |
 | 6 | Pregunta | ¿Y si no daña a tu planta, por qué tener cuidado? | **Re-gancho.** "?" gigante sobre la maceta; Robert grande, pensativo. |
-| 7 | Toxico | Porque se considera venenoso para personas y animales: si hay niños o mascotas, quítalo. | Un niño y un perrito se acercan a la maceta; sello "NO SE COME"; una mano con guante quita el hongo. Chip "si hay niños o mascotas: quítalo". |
+| 7 | Toxico | Porque se considera tóxico: comerlo puede caer muy mal al estómago. Si hay niños o mascotas, quítalo. | Un niño y un perrito se acercan a la maceta; sello "NO SE COME"; una mano sin guante (tocarlo no es peligroso) quita el hongo y lo tira. Chip "si hay niños o mascotas: quítalo". |
 | 8 | Estudio | En 2005, químicos en Múnich, Alemania, buscaron de dónde sale su amarillo. | `TarjetaEstudio` "2005 · Múnich, Alemania · Bartsch y col., *Angewandte Chemie*"; un matraz con extracto amarillo del hongo. |
 | 9 | Pigmento | Eran dos pigmentos raros, a los que llamaron birnbauminas. | Dos moléculas esquemáticas (A y B) amarillas que brillan; etiquetas "birnbaumina A", "birnbaumina B". |
 | 10 | Truco | Truco: deja un sombrero una noche sobre papel negro y amanece un dibujo blanco de esporas. | Un sombrero boca abajo sobre papel negro; luna → sol (cronómetro "1 noche"); al levantarlo queda la huella blanca radial de las laminillas. |
-| 11 | Quitar | Arrancarlo no lo elimina: el micelio sigue en la tierra y los fungicidas casi no sirven. | Rayos X (`Lupa`) sobre la maceta: arriba ya no hay hongo, abajo la red de micelio sigue; un frasco "fungicida" con chip "casi no sirve". |
+| 11 | Quitar | Arrancarlo no lo elimina: el micelio sigue abajo y los fungicidas casi no sirven. | Rayos X (`Lupa`) sobre la maceta: arriba ya no hay hongo, abajo la red de micelio sigue; un frasco "fungicida" con chip "casi no sirve". |
 | 12 | Cierre | Así que no tires tu planta: ese hongo no la está matando, está reciclando su tierra. | **Regreso a la imagen del inicio:** la misma maceta en fondo amarillo, la planta verde y sana, flechas circulares de "reciclaje" en la tierra. Chip "no la mata: recicla". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
@@ -30,7 +30,7 @@
 
 Barra de escala: 10 cm (maceta), 2 cm (hongo), 1 mm (micelio en la tierra), 10 µm (esporas).
 
-## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
+## Fuentes (consultadas el 29 oct 2026; de Bartsch 2005 solo se vieron el título y la ficha de PubMed, no el texto completo)
 
 1. Iowa State University Extension and Outreach, Yard and Garden. "Will yellow mushrooms harm my houseplant?" (actualizado 14 ene 2025). https://yardandgarden.extension.iastate.edu/faq/will-yellow-mushrooms-harm-my-houseplant
    > "The small, yellow mushroom is probably Leucocoprinus birnbaumii. The fungus is sometimes referred to as yellow houseplant mushroom, yellow parasol, or flower pot parasol."
@@ -44,8 +44,11 @@ Barra de escala: 10 cm (maceta), 2 cm (hongo), 1 mm (micelio en la tierra), 10 �
    > "The caps produce abundant white spores, which may be visualize by leaving the cap overnight on a dark surface."
    > "their exact level of toxicity is unknown and they should not be eaten."
    > "Avoid overwatering. The potting medium may be replaced, but once the fungus is established it can be difficult to get rid of."
-3. Bartsch, A., Bross, M., Spiteller, P., Spiteller, M. y Steglich, W. (2005). Birnbaumin A and B: Two Unusual 1-Hydroxyindole Pigments from the "Flower Pot Parasol" *Leucocoprinus birnbaumii*. *Angewandte Chemie International Edition* 44(19): 2957–2959. doi:10.1002/anie.200500082 · PMID 15818629 (afiliación: Department Chemie, Ludwig-Maximilians-Universität München, Alemania).
-   > "This fragile fungus, which is harmless to plants, owes its yellow color to the unusual alkaloids birnbaumin A and B"
+3. Bartsch, A., Bross, M., Spiteller, P., Spiteller, M. y Steglich, W. (2005). *Angewandte Chemie International Edition* 44(19): 2957–2959. doi:10.1002/anie.200500082 · PMID 15818629. Título y afiliación según PubMed (no se abrió el texto completo):
+   > Título: "Birnbaumin A and B: Two Unusual 1-Hydroxyindole Pigments from the 'Flower Pot Parasol' Leucocoprinus birnbaumii"
+   > Afiliación: "Department Chemie, Ludwig-Maximilians-Universität München" (Múnich, Alemania)
+3b. Royal Botanic Gardens, Kew. *Leucocoprinus birnbaumii* (Corda) Singer — General information. Colombian Fungi (colfungi.org). https://colfungi.org/taxon/urn:lsid:indexfungorum.org:names:333327/general-information
+   > "Its yellow pigments are due to chemicals called novel alkaloids, birnbaumins A and B."
 4. Volk, T. (2002). "Tom Volk's Fungus of the Month for February 2002: *Leucocoprinus birnbaumii*". University of Wisconsin–La Crosse. http://botit.botany.wisc.edu/toms_fungi/feb2002.html
    > "a common mushroom in house plants and greenhouses or any other place with organically rich soil where the temperature is warm."
    > "The mushrooms are not known to harm plants either and likely came in with the potting soil."

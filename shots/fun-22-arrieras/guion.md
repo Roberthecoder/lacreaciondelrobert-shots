@@ -30,7 +30,7 @@
 
 **Música:** cama grave continua, terrosa, sin golpe; efectos en el mismo cuadro (pasitos de la hilera, tijeretazo de la hoja, chasquido de mandíbulas y gota de saliva, pop de las bolitas, zumbido al bajar por el túnel, mancha del parásito que avanza, "fsss" del antibiótico, ✓ de cada especie, aleteo de las chicatanas y lluvia, bolita guardada en la boca).
 
-Barras de escala (siempre visibles): 5 mm (hilera, cortadora y jardinera, cierre), 5 cm (cámara del hongo), 10 µm (gongilidios de ~30–50 µm), 1 mm (larvas; obrera de *Acromyrmex*), 10 millones de años (línea del tiempo), 1 cm (jardín y parásito; chicatanas), 500 km (mapa), 2 mm (reina).
+Barras de escala (siempre visibles): 5 mm (hilera, cortadora y jardinera), 5 cm (cámara del hongo, con símbolo de corte «(más tierra)» en el túnel: las cámaras están hondas), 10 µm (gongilidios de ~30–50 µm), 1 mm (larvas; obrera de *Acromyrmex*), 10 millones de años (línea del tiempo), 1 cm (jardín y parásito; chicatanas), 10 cm (viñeta aparte del molcajete), 500 km (mapa), 2 mm (reina). Cierre: alejamiento desde la hilera hasta la vista de la escena 2; la barra cambia sola de 5 mm a 5 cm.
 
 ## Robert en pantalla
 

@@ -56,7 +56,7 @@ Morfología (esquemática pero correcta): cuerpos fructíferos esféricos de 1�
    > "We evaluated 27 different mulches in the field to determine their ability to support growth and sporulation of the artillery fungus."
    > "All wood/bark landscape mulches will eventually support the artillery fungus over extended time periods (i.e., 3–4 years)"
    - Penn State Extension, "Artillery Fungus in Mulch" (act. 16 jul 2026), https://extension.psu.edu/artillery-fungus-in-mulch : "We tested 27 mulches in the field and found that some supported more artillery fungus than others."
-   - UMass Extension, "Fungi in mulches and composts", https://www.umass.edu/agriculture-food-environment/landscape/fact-sheets/fungi-in-mulches-composts : el estudio de Penn State de 27 mantillos; casi todos los mantillos de madera y corteza acaban sosteniendo al hongo, típicamente en 3–4 años.
+   - UMass Extension, "Fungi in mulches and composts", https://www.umass.edu/agriculture-food-environment/landscape/fact-sheets/fungi-in-mulches-composts : el estudio de Penn State de 27 mantillos; todos los mantillos de madera y corteza acaban sosteniendo al hongo, típicamente en 3–4 años.
 5. Penn State News (2 jul 1997). Artillery fungus threatens homeowners, mulch industry. https://www.psu.edu/news/agricultural-sciences/story/artillery-fungus-threatens-homeowners-mulch-industry (apoyo al mecanismo y la permanencia):
    > "Five hours after opening, the inner cup inverts and violently ejects the spore mass"; "are viable for at least 10 years"
 
