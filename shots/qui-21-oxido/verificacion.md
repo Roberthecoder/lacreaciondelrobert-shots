@@ -53,3 +53,5 @@ Mismo agente verificador; revisé las líneas que cambiaron en `narracion.json` 
 | Cierre | "…poco a poco regresa a ser óxido, como en la mina." | ✅ | Igual que el gancho. La flecha "Fe → Fe₂O₃" en pantalla es una simplificación del dibujo (el óxido real es Fe₂O₃·nH₂O); se aclara en la descripción. |
 
 Las cuatro ⚠️ quedaron corregidas y el cambio opcional (#16) también se aplicó. No hay afirmaciones nuevas sin fuente.
+
+VEREDICTO: APROBADO

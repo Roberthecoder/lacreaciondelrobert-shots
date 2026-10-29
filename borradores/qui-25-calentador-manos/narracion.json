@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Calentador base narrada.dc.html",
+  "salida": "Shot Calentador narrado.dc.html",
+  "nota": "Shot Químico #25. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese calentador de manos no trae pilas ni fuego: es hierro oxidándose a propósito."
+    },
+    {
+      "escena": "Relleno",
+      "texto": "En una marca común, la mitad o más del relleno es hierro en polvo, con agua, sal, carbón activado y vermiculita."
+    },
+    {
+      "escena": "Empaque",
+      "texto": "En su empaque cerrado no le llega aire. Al abrirlo, el oxígeno entra por la bolsita."
+    },
+    {
+      "escena": "Oxido",
+      "texto": "El hierro reacciona con el oxígeno, se vuelve óxido, como una reja vieja, y suelta calor."
+    },
+    {
+      "escena": "Polvo",
+      "texto": "Aquí va rapidísimo: en polvo, el hierro se oxida mucho más rápido que un clavo."
+    },
+    {
+      "escena": "Ayudantes",
+      "texto": "La sal y el agua aceleran el óxido, el carbón atrapa oxígeno y la vermiculita guarda el agua."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto aguanta ese calor?"
+    },
+    {
+      "escena": "Patente",
+      "texto": "En 1973, en Japón, Asahi Kasei pidió patente para una bolsita así: en una prueba se mantuvo entre 45 y 50 grados por 22 horas."
+    },
+    {
+      "escena": "Cuidado",
+      "texto": "Ojo: en 2025, una agencia japonesa advirtió que a 44 grados la piel puede quemarse en 3 a 4 horas, aunque solo se sienta tibio."
+    },
+    {
+      "escena": "Consejo",
+      "texto": "Por eso, nunca lo pegues en la piel ni lo uses para dormir."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese calentador no trae pilas ni fuego: es una reja oxidándose en tu bolsillo."
+    }
+  ]
+}
