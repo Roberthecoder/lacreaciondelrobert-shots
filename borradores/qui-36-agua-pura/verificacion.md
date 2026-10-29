@@ -31,3 +31,8 @@
    - Opcional para la descripción de `publicacion.md`: "El agua destilada común, al tocar el aire, ya conduce unas 10 a 30 veces más que la ideal (NIST, 1995)".
 
 Todo lo demás (12 afirmaciones) queda ✅. Nota menor, no bloqueante: en `## Fuentes` del guion, el cálculo debería mencionar que 50 000 de Hem es "aproximado o más" y que con 53 mS/cm (salinidad 35, 25 °C) sale ≈ 960 000, así "unas 900 mil" queda del lado conservador.
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplica tal cual la propuesta del verificador: gancho «El agua más pura que existe conduce la electricidad unas 900 mil veces peor que el agua de mar.» y etiqueta «agua ultrapura · 25 °C».
+
+VEREDICTO: APROBADO
