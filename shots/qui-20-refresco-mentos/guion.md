@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esa fuente no es una reacción química: es gas que ya estaba en tu refresco, saliendo de golpe."
 - **Seguridad:** solo una recomendación genérica ("afuera y lejos de la cara"), sin afirmar daños ni mitos.
 - **Duración:** voz 955 caracteres / ≈ 166 palabras (≈ 58.1 s) + cierre 3.5 s → **≈ 61.6 s** (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion escrito; falta verificación independiente (`verificacion.md`), animación y tabla "Robert en pantalla" (fase 2). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`mentos.jsx`, revisión en `revision/hoja.png`), voz pendiente de aprobación de Robert (~955 créditos).
 
 ## Versión narrada
 
@@ -25,6 +25,25 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave continua que sube de tensión mientras el gas está "atrapado" y se libera en la fuente; efectos en el mismo cuadro (chorro y gotas, tapa, "pop" fallido de la burbujita, plop del Mentos al caer, burbujeo creciente, tic del cronómetro, golpe de la tarjeta, pitido del medidor de pH, salpicadura corta del polvo molido).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y por qué el refresco de dieta lo hace mejor?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «es gas que ya estaba en tu refresco» |
+| 2 | 9.9 | 13.4 | 06_pensativo_menton | `arriba-der` | «necesita un rincón donde empezar» |
+| 3 | 19.3 | 23.6 | 13_senalando_arriba | `arriba-der` | «sale disparado más de un litro» |
+| 4 | 24.0 | 26.6 | 07_pensativo_puno | `grande` | «¿Y por qué el refresco de dieta lo hace mejor?» |
+| 5 | 31.5 | 36.2 | 04_bajando_lentes | `arriba-der` | «3 antes y 3 después» |
+| 6 | 37.0 | 39.6 | 06_pensativo_menton | `arriba-der` | «la cafeína casi no influyó» |
+| 7 | 44.0 | 49.4 | 05_sonriendo_dientes_uniformes | `arriba-der` | «Lo chistoso… molidos, a 30 centímetros» |
+| 8 | 49.9 | 52.5 | 12_perfil_serio | `arriba-der` | «afuera y lejos de la cara» |
+| 9 | 53.0 | 58.0 | 02_apuntando_camara | `arriba-der` | «encontró por dónde salir» |
+| — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 36 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (fuente primaria abierta y leída completa el 29 oct 2026)
 

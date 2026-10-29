@@ -38,3 +38,19 @@ Notas:
 1. **#13 "sí es tóxico, aunque poquito"** (⚠️ ambiguo): suena a "es poco tóxico", y lo que dice la fuente es que es tóxico pero viene en muy poca cantidad (≤ 1 %); además está clasificado como posible cancerígeno. Propuesta: "…que se pone rosa al mojarse y sí es tóxico, aunque viene en muy poca cantidad." (o "…aunque traen muy poquito").
 2. **#19 cuadrícula 97 verdes / 3 naranjas** (⚠️ visual imprecisa): 3 de 100 = 3 %, y la voz dice "menos de 3". Propuesta: 2 muñequitos naranjas completos + 1 pintado solo al 70 % (2.7), o dejar 3 naranjas pero con el número "2.7 %" grande y el tercero a medias.
 3. **Fuente 2 en `## Fuentes`**: reemplazar la cita de McGill que no aparece textual (ver Notas). No cambia la voz.
+
+## Re-verificación (29 oct 2026)
+
+| # | Cambio | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 13 | Voz: "…y sí es tóxico, aunque viene en muy poca cantidad." | ✅ | Poison Control | "While cobalt chloride is toxic, the concentration is low (i.e., 1% or less)" | 2026 (página vigente) |
+| 19 | Pantalla: 97 verdes, 2 naranjas completos y el tercero al 70 % (2.7 %) | ✅ | Lavon y Bentur, Isr Med Assoc J 2015 | "2.7% were symptomatic" | 2015 |
+| F2 | Cita de McGill en `## Fuentes`: "basically, sand." · "Silica gel is non-toxic, non-flammable, and non-reactive with ordinary usage." | ✅ | McGill OSS (31 mar 2023) | frases encontradas textuales en la página | 2023 |
+| 20 | Voz: "El mes con más casos fue abril, justo antes de la Pascua judía." (sin "Lo curioso") | ✅ | Lavon y Bentur 2015 | "the peak (74) occurred in April, before the Passover holiday." | 2015 |
+| 8 | Voz: "Sus paredes están tapizadas de oxígeno e hidrógeno…" (solo cambia "Esas" → "Sus") | ✅ | Jacobs et al., ACS Omega 2023 | "Water molecules will hydrogen bond with the exposed silanol groups." | 2023 |
+| 21 | Voz: "…atrapando el agua que no ves." (el vapor de agua es invisible) | ✅ | McGill 2023; ACS Omega 2023 | "basically, sand." · "Water molecules will hydrogen bond with the exposed silanol groups." | 2023 |
+| 23 | (Descripción) Patrick, 1919: confirmado por el guionista en la patente US1297724 | ✅ | Patente US1297724 | "It is due to this fine porous structure that the gel owes its property of adsorption." | 1919 |
+
+Sin ❌ ni ⚠️ pendientes: todas las afirmaciones de voz y pantalla quedan ✅.
+
+VEREDICTO: APROBADO

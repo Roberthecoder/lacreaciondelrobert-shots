@@ -13,7 +13,7 @@
     },
     {
       "escena": "Cafe",
-      "texto": "Cuando la terminaron, en 1886, era café, como un centavo nuevo."
+      "texto": "Cuando la terminaron, en 1886, era café, como un centavo de dólar."
     },
     {
       "escena": "Cuprita",
@@ -37,15 +37,15 @@
     },
     {
       "escena": "Pintura",
-      "texto": "Lo chistoso: en 1906 pidieron pintarla; tras las protestas, se quedó verde."
+      "texto": "Lo chistoso: en 1906 planearon pintarla; tras las protestas, se quedó verde."
     },
     {
       "escena": "Tu",
-      "texto": "Y el cobre de tu casa que queda a la intemperie, como un tubo en la azotea, se pone verde igual."
+      "texto": "El cobre de tu casa que queda a la intemperie, como un tubo en la azotea, con los años se pone verde igual."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese verde no es mugre: es el escudo que el cobre se fabricó solo."
+      "texto": "Ese verde no es mugre: es el escudo que el cobre se fabricó solo."
     }
   ]
 }

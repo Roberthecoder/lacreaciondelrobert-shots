@@ -51,3 +51,4 @@ Tiempos estimados: Gancho 0–5.0 · Relleno 5.0–11.7 · Empaque 11.7–16.8 �
 - Lo de "44 °C en 3–4 h" NITE lo da como "se dice que" (と言われています) y aclara que depende de la persona y que puede pasar incluso por debajo de 44 °C; personas mayores, niños pequeños y diabéticos corren más riesgo. Va en la descripción.
 - "Para dormir": NITE explica que bajo las cobijas el calentador acumula calor y puede pasar la temperatura máxima de la etiqueta.
 - Guiño al #21 (óxido de la reja) solo como comparación; no se repite su explicación.
+- La fuente 3 atribuye la rapidez a la sal **y** a lo fino del polvo juntos; la voz separa: "en polvo… más rápido que un clavo" (Polvo) y "la sal y el agua aceleran el óxido" (Ayudantes). Si el verificador lo marca ⚠️, juntar ambas en la escena Polvo.

@@ -33,3 +33,22 @@
 4. **#16 (voz 8 / chip):** "Si una se rompe, tírala y lejos de los niños." → **"Si una se rompe, tírala, y si la usa un niño, vigílalo."**; chip "vigila a los niños". Ajustar la línea de "Seguridad" del guion igual.
 5. **#19 (pantalla 0 y 10):** poner una **tela/toalla entre la compresa y la rodilla** (y quitar el raspón expuesto bajo la bolsa, o taparlo con la tela). Opcional: chip "con un trapo, no directo".
 6. **#20 (pantalla 0):** quitar "se infla un poco"; dejar solo el "crack" del apretón.
+
+## Re-verificación (29 oct 2026)
+
+Revisé contra las mismas fuentes los textos nuevos de guion.md y narracion.json.
+
+| # | Cambio | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 5 | Voz 3: "separar los pedacitos del cristal cuesta más energía de la que regresa el agua al rodearlos" + barras "cuesta" > "regresa" | ✅ | OpenStax §11.1 | "require a greater energy input to separate the solute species than is recovered when the solutes are solvated" | 2019 |
+| 8 | Voz 4: "Esa energía la jala como calor del agua y de tu rodilla." | ✅ | OpenStax §11.1 | "absorbing heat from the surroundings (the injured area to which the pack is applied)" | 2019 |
+| 11 | Pantalla 7: "el vaso se empaña con gotitas por fuera" | ✅ | física básica | A 7.6 °C el vapor del aire se condensa en gotitas; no se forma hielo | — |
+| 13 | Voz 8: "médicos de un hospital de Los Ángeles reportaron a cinco personas…" | ✅ | PubMed 3225433 | Afiliación: "Department of Emergency Medicine, Los Angeles County/University of Southern California Medical Center" | 1988 |
+| 16 | Voz 8: "si la usa un niño, vigílalo" + chip "vigila a los niños" | ✅ | poison.org | "Closely supervise children using instant ice packs." | sin fecha |
+| 17 | Voz 9: "la urea de algunas es el mismo desecho que tus riñones sacan en la orina" (chip "misma molécula") | ✅ | MedlinePlus + poison.org | "Urea is a waste product…" · "Urea is excreted by the kidneys." · reactores: "ammonium nitrate, calcium ammonium nitrate, or urea" (misma molécula CO(NH₂)₂) | página vigente 2026 |
+| 19 | Pantallas 0 y 10: compresa sobre un trapo, chip "con un trapo, no directo" | ✅ | poison.org | "Place a towel or cloth between the ice pack and the skin in order to avoid cold-induced injury." | sin fecha |
+| 20 | Pantalla 0: ya no se infla; solo "crack" | ✅ | OpenStax §11.1 | (sin gas en la disolución) | — |
+
+Las 20 afirmaciones quedan ✅; no hay ⚠️ ni ❌ pendientes.
+
+VEREDICTO: APROBADO

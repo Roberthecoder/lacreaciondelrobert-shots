@@ -163,7 +163,7 @@ function Mentos() {
   // dieta
   const gotasO = 1 - kprog(T, K.Di + 3.1, K.Di + 3.5);
   // molido
-  const pxm = 170, X0 = 150, G1 = 960, G2 = 1190, ms = 0.35, mrot = 10;
+  const pxm = 165, X0 = 180, G1 = 900, G2 = 1140, ms = 0.35, mrot = 10;
   const mbx = 110, mmx = mbx + Math.sin(mrot * Math.PI / 180) * 600 * ms, mdy = Math.cos(mrot * Math.PI / 180) * 600 * ms;
   const lane2 = kprog(T, K.Mo + 2.6, K.Mo + 3.0);
   return (
@@ -186,9 +186,9 @@ function Mentos() {
           <Pasto y={1500} />
           <BotellaPet T={T} x={250} y={1500} s={0.95} nivel={0.88} id="ga" />
           <Manometro T={T} x={250} y={780} v={kprog(T, K.Ga + 0.4, K.Ga + 1.4, kEase.sale)} />
-          <text x={340} y={790} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Ga + 1.2, K.Ga + 1.5)}>presión alta</text>
+          <text x={170} y={690} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Ga + 1.2, K.Ga + 1.5)}>presión alta</text>
         </SvgCapa>
-        <Lupa T={T} at={K.Ga + 0.6} until={K.Bu - 0.1} x={690} y={960} r={240} fx={250} fy={1250} interior={InteriorGas} tinte={KC.cyan} etiqueta="POR DENTRO · CO₂ disuelto" />
+        <Lupa T={T} at={K.Ga + 0.6} until={K.Bu - 0.1} x={700} y={880} r={230} fx={250} fy={1250} interior={InteriorGas} tinte={KC.cyan} etiqueta="POR DENTRO · CO₂ disuelto" />
       </Escena>
       {/* 2 · Burbuja: no nace en el líquido liso; sí en un rincón */}
       <Escena T={T} a={K.Bu} b={K.Ru} zoom={0.03}>
@@ -212,7 +212,7 @@ function Mentos() {
         <SvgCapa>
           <Pastilla x={280} y={klerp(-120, 840, kprog(T, K.Ru - 0.2, K.Ru + 0.6, kEase.sale))} s={1.6} rot={klerp(-40, 8, kprog(T, K.Ru - 0.2, K.Ru + 0.6))} />
         </SvgCapa>
-        <Lupa T={T} at={K.Ru + 1.0} until={K.Ca - 0.1} x={660} y={900} r={250} fx={340} fy={830} interior={(t, r) => InteriorRugoso(t, r, K.Ru + 1.6)} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · su superficie" />
+        <Lupa T={T} at={K.Ru + 1.0} until={K.Ca - 0.1} x={690} y={850} r={230} fx={360} fy={830} interior={(t, r) => InteriorRugoso(t, r, K.Ru + 1.6)} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · su superficie" />
       </Escena>
       {/* 4 · Cadena: las burbujas jalan más gas y sale la fuente */}
       <Escena T={T} a={K.Ca} b={K.Pr}>
@@ -243,7 +243,7 @@ function Mentos() {
           <g opacity={setup}>
             <Pasto y={SGY} />
             {Array.from({ length: 8 }, (_, i) => { const fx = smx + (i + 1) * 2 * pxft; return <g key={i}><line x1={fx} y1={SGY} x2={fx} y2={SGY - 50} stroke={KC.ink} strokeWidth={4} /><path d={`M ${fx} ${SGY - 50} l 26 9 l -26 9 Z`} fill={i % 2 ? KC.yellow : KC.red} stroke={KC.ink} strokeWidth={3} /></g>; })}
-            <text x={smx + 15.3 * pxft} y={SGY + 50} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Es + 5.8, K.Es + 6.1)}>15.3 pies</text>
+            <text x={smx + 15.3 * pxft + 20} y={SGY - 70} textAnchor="end" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Es + 5.8, K.Es + 6.1)}>15.3 pies</text>
             <Arco T={T} x0={smx} y0={smy} x1={smx + 15.3 * pxft} yg={SGY} alto={260} f={kprog(T, K.Es + 5.0, K.Es + 5.8)} o={1 - kprog(T, K.Es + 7.6, K.Es + 8.2)} />
             <path d={`M ${SBX - 60} ${SGY} L ${SBX - 20} ${SGY - 300} M ${SBX + 70} ${SGY} L ${SBX + 40} ${SGY - 300}`} stroke="#8a8f99" strokeWidth={12} strokeLinecap="round" />
             <BotellaPet T={T} x={SBX} y={SGY} s={SBS} rot={srot} tapa={false} nivel={klerp(0.9, 0.3, kprog(T, K.Es + 5.0, K.Es + 7.0))} burbujas={kprog(T, K.Es + 4.8, K.Es + 5.2)} id="es" />
@@ -274,19 +274,19 @@ function Mentos() {
           <Cinta x0={X0} y={G1} pxm={pxm} />
           <Arco T={T} x0={mmx} y0={G1 - mdy} x1={X0 + 4.66 * pxm} yg={G1} alto={150} f={kprog(T, K.Mo + 0.3, K.Mo + 1.1)} grosor={16} />
           <BotellaPet T={T} x={mbx} y={G1} s={ms} rot={mrot} tapa={false} nivel={klerp(0.9, 0.3, kprog(T, K.Mo + 0.3, K.Mo + 1.5))} id="m1" />
-          <Pastilla x={60} y={G1 - 250} s={0.5} />
+          <Pastilla x={45} y={G1 - 40} s={0.32} />
           <text x={X0 + 4.66 * pxm} y={G1 - 40} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Mo + 1.1, K.Mo + 1.4)}>4.7 m</text>
           <g opacity={lane2}>
             <rect x={0} y={G2} width={KW} height={14} fill={KC.ink} />
             <Cinta x0={X0} y={G2} pxm={pxm} />
             <Arco T={T} x0={mmx} y0={G2 - mdy} x1={X0 + 0.3 * pxm} yg={G2} alto={30} f={kprog(T, K.Mo + 3.0, K.Mo + 3.4)} grosor={14} />
             <BotellaPet T={T} x={mbx} y={G2} s={ms} rot={mrot} tapa={false} nivel={0.8} id="m2" />
-            <Polvo x={60} y={G2 - 250} s={1} />
+            <Polvo x={40} y={G2 - 30} s={0.7} />
             <text x={X0 + 0.3 * pxm + 40} y={G2 - 40} style={{ font:`400 54px ${KF.titulo}` }} fill={KC.red} opacity={kprog(T, K.Mo + 3.4, K.Mo + 3.7)}>30 cm</text>
           </g>
         </SvgCapa>
-        <Etq T={T} at={K.Mo + 0.4} until={K.Se} x={260} y={G1 - 280} texto="enteros" tam={34} color={KC.ink} />
-        <Etq T={T} at={K.Mo + 2.8} until={K.Se} x={260} y={G2 - 280} texto="molidos" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.Mo + 0.4} until={K.Se} x={40} y={G1 - 300} texto="enteros" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.Mo + 2.8} until={K.Se} x={190} y={G2 - 140} texto="molidos" tam={34} color={KC.ink} />
       </Escena>
       {/* 9 · Seguridad */}
       <Escena T={T} a={K.Se} b={K.Ci}>
@@ -314,8 +314,8 @@ function Mentos() {
           <Pastilla x={BX + 30} y={BY - 70} s={0.5} rot={20} />
         </SvgCapa>
         <Etq T={T} at={K.Ci + 0.6} until={FIN} x={400} y={560} texto="chorro" tam={36} color={KC.ink} />
-        <Etq T={T} at={K.Ci + 1.4} until={FIN} x={440} y={1060} texto="burbujas" tam={36} color={KC.ink} />
-        <Etq T={T} at={K.Ci + 2.2} until={FIN} x={440} y={1190} texto="CO₂ disuelto" tam={36} color={KC.ink} />
+        <Etq T={T} at={K.Ci + 1.4} until={FIN} x={440} y={1020} texto="burbujas" tam={36} color={KC.ink} />
+        <Etq T={T} at={K.Ci + 2.2} until={FIN} x={440} y={1140} texto="CO₂ disuelto" tam={36} color={KC.ink} />
         <Etq T={T} at={K.Ci + 3.0} until={FIN} x={420} y={1570} texto="rincones del dulce" tam={36} color={KC.ink} />
       </Escena>
 
@@ -325,7 +325,7 @@ function Mentos() {
       <Chip T={T} at={K.G + 3.1} until={K.Ga - 0.3} texto="gas que ya estaba" x={770} y={960} tam={44} borde={KC.cyan} />
       <Chip T={T} at={K.Ga + 0.2} until={K.Ga + 2.0} texto="⏪ antes de abrir" x={540} y={470} tam={40} borde={KC.blue} />
       <Chip T={T} at={K.Bu + 3.0} until={K.Ru - 0.2} texto="en un rincón, sí" x={540} y={560} tam={40} borde={KC.mint} />
-      <Etq T={T} at={K.Ru + 0.6} until={K.Ca - 0.2} x={130} y={1000} texto="pastilla · 1–2 cm" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ru + 0.6} until={K.Ca - 0.2} x={90} y={1010} texto="1–2 cm" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ru + 2.4} until={K.Ca - 0.2} texto="rugosidad ≈ 0.44 µm" y={1480} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Ca + 3.4} until={K.Pr - 0.2} texto="sale más de 1 litro" x={760} y={1480} tam={40} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2008" quien="Coffey · Appalachian State" revista="Am. J. Phys. · publicado en 2008 · Boone, EE. UU." y={720} />
@@ -335,21 +335,21 @@ function Mentos() {
       <Chip T={T} at={K.Di + 2.4} until={K.Di + 3.2} texto="cafeína: casi no influyó" y={760} tam={38} borde="#8a8f99" />
       <Medidor T={T} at={K.Di + 0.4} until={K.Di + 3.1} valor={(t) => 0.95 - 0.35 * kprog(t, K.Di + 0.8, K.Di + 2.2)} etiqueta="trabajo para formar burbuja" texto={(v) => (v > 0.8 ? 'agua pura' : 'baja')} x={90} y={1450} color={KC.orange} />
       <Chip T={T} at={K.Di + 3.6} until={K.Mo - 0.2} texto="distancia del chorro · promedio ±10 %" y={1480} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.Mo + 4.4} until={K.Se - 0.2} texto="la entera cae en 0.7 s (en agua)" x={600} y={540} tam={34} borde={KC.blue} />
+      <Chip T={T} at={K.Mo + 4.4} until={K.Se - 0.2} texto="la entera cae en 0.7 s (en agua)" x={420} y={470} tam={32} borde={KC.blue} />
       <Chip T={T} at={K.Se + 0.4} until={K.Ci - 0.2} texto="afuera ✓" x={760} y={1480} tam={44} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ga - 0.1} texto="No es química: *es gas.*" />
       <Subtitulo T={T} idx={1} at={K.Ga + 0.1} until={K.Bu - 0.1} texto="CO₂ disuelto, *a presión.*" />
-      <Subtitulo T={T} idx={2} at={K.Bu + 0.1} until={K.Ru - 0.1} texto="La burbuja necesita *un rincón.*" />
+      <Subtitulo T={T} idx={2} at={K.Bu + 0.1} until={K.Ru - 0.1} texto="Necesita *un rincón.*" />
       <Subtitulo T={T} idx={3} at={K.Ru + 0.1} until={K.Ca - 0.1} texto="El dulce es *áspero.*" />
-      <Subtitulo T={T} idx={4} at={K.Ca + 0.1} until={K.Pr - 0.1} texto="En 4 segundos: *más de un litro.*" />
+      <Subtitulo T={T} idx={4} at={K.Ca + 0.1} until={K.Pr - 0.1} texto="En 4 s: *más de un litro.*" />
       <Subtitulo T={T} idx={5} at={K.Pr + 0.1} until={K.Es - 0.1} texto="¿Por qué *el de dieta?*" />
-      <Subtitulo T={T} idx={6} at={K.Es + 0.1} until={K.Di - 0.1} texto="pH igual: *no fue ácido-base.*" />
-      <Subtitulo T={T} idx={7} at={K.Di + 0.1} until={K.Mo - 0.1} texto="Aspartamo y benzoato: *más burbujas.*" />
-      <Subtitulo T={T} idx={8} at={K.Mo + 0.1} until={K.Se - 0.1} texto="Molidos: *solo 30 centímetros.*" />
-      <Subtitulo T={T} idx={9} at={K.Se + 0.1} until={K.Ci - 0.1} texto="Afuera y *lejos de la cara.*" />
-      <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Es el gas *buscando salida.*" />
+      <Subtitulo T={T} idx={6} at={K.Es + 0.1} until={K.Di - 0.1} texto="*No fue* ácido-base." />
+      <Subtitulo T={T} idx={7} at={K.Di + 0.1} until={K.Mo - 0.1} texto="Burbujas *más fáciles.*" />
+      <Subtitulo T={T} idx={8} at={K.Mo + 0.1} until={K.Se - 0.1} texto="Molidos: *30 cm.*" />
+      <Subtitulo T={T} idx={9} at={K.Se + 0.1} until={K.Ci - 0.1} texto="*Afuera* y lejos." />
+      <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="*Gas* buscando salida." />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 5.0, 'avatar_11_sorprendido', 'gancho'],
@@ -358,7 +358,7 @@ function Mentos() {
         [CUES.Pregunta + 0.05, CUES.Estudio - 0.3, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Estudio + 4.6, CUES.Dieta - 0.4, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Dieta + 0.4, CUES.Dieta + 3.0, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [CUES.Molido + 1.2, CUES.Seguridad - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
+        [CUES.Molido + 1.2, CUES.Seguridad - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.Seguridad + 0.2, CUES.Cierre - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="quimica" num="20" hasta={K.Ou} />
