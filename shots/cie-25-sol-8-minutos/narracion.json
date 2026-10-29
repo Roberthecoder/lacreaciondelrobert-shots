@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Sol Ocho Minutos base narrada.dc.html",
+  "salida": "Shot Sol Ocho Minutos narrado.dc.html",
+  "nota": "Shot Científico #25. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese Sol que ves no es el Sol de ahorita: es el Sol de hace unos ocho minutos."
+    },
+    {
+      "escena": "Distancia",
+      "texto": "El Sol está a unos ciento cincuenta millones de kilómetros de ti."
+    },
+    {
+      "escena": "Luz",
+      "texto": "Y su luz viaja a casi trescientos mil kilómetros por segundo: nada viaja más rápido."
+    },
+    {
+      "escena": "Cuenta",
+      "texto": "Haz la cuenta: tarda unos ocho minutos y veinte segundos en llegar a tus ojos."
+    },
+    {
+      "escena": "Pasado",
+      "texto": "Así que siempre ves el Sol como era hace un ratito, nunca como está en este momento."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si el Sol se apagara ahora mismo?"
+    },
+    {
+      "escena": "Apaga",
+      "texto": "Lo seguirías viendo brillar unos ocho minutos más, como si nada, sin enterarte de que ya se apagó."
+    },
+    {
+      "escena": "Luna",
+      "texto": "Con la Luna pasa igual, pero menos: la ves como era hace poco más de un segundo."
+    },
+    {
+      "escena": "Estrellas",
+      "texto": "Y la luz de las estrellas que ves en la noche salió de ellas hace años, siglos o miles de años."
+    },
+    {
+      "escena": "Sirio",
+      "texto": "Sirio, la estrella más brillante de la noche, la ves como era hace casi nueve años."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Eso sí: nunca mires el Sol directamente, porque puede dañar tus ojos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que cada vez que miras el cielo, estás viendo el pasado."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+# Verificación de hechos · Shot Científico #34 · Una nube pesa como cien elefantes
+
+- **Fecha:** 29 oct 2026. **Quién verificó:** subagente verificador independiente (no escribió el guion).
+
+## Afirmaciones (voz y pantalla)
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 1 | (Voz 0 + pantalla: báscula) Una nube esponjosa pesa «cientos de toneladas» de agua | ✅ | USGS Water Science School, «How much does a cloud weigh?» (usgs.gov/water-science-school/science/how-much-does-a-cloud-weigh) | "That is about 500,000 kilograms or 1.1 million pounds (about 551 tons)." | 2019 (página USGS) |
+| 2 | (Voz 0) «y aun así flota» (la nube se mantiene en el aire) | ✅ | USGS (misma página) | La página explica que la nube se mantiene arriba porque el aire de abajo es más pesado y denso ("the air beneath it is heavier and denser", paráfrasis de la página) | 2019 |
+| 3 | (Voz 1 + pantalla) Las nubes están hechas de **billones y billones** de gotitas de agua (corregido; antes «millones») | ✅ | Wallace & Hobbs 2006 (vía Liquid water content); apuntes de física de nubes (UNCA, atms455 «warm.pdf») | "Most of the marine clouds have droplet concentrations less than 100 cm−3 … most [continental] have concentrations of a few hundred per cubic centimeter." Cálculo: 100 gotas/cm³ × 10⁶ cm³/m³ × 10⁹ m³ (1 km³) = 10¹⁷ gotas ≈ **cien mil billones** (billón = 10¹²), así que «billones y billones» es correcto. | 2006 |
+| 4 | (Voz 1) Las gotitas son tan diminutas que no podrías ver una sola a simple vista | ✅ | Scientific American, «Why do clouds float when they have tons of water in them?»; BBC Science Focus, «How small can the naked eye see?» | SciAm: el tamaño de las gotitas "ranges from a few microns (thousandths of a millimeter) to a few tens of microns". Science Focus: "objects 0.04mm wide (the width of a fine human hair) are just distinguishable by good eyes, objects 0.02mm wide are not." Conversión: gotita típica 10–20 µm = 0.01–0.02 mm < 0.04 mm. | 2002 (SciAm); s/f (Science Focus) |
+| 5 | (Voz 2 + pantalla) Peggy LeMone es meteoróloga | ✅ | NCAR, «Margaret (Peggy) LeMone» (ncar.ucar.edu); UCAR News, «NCAR scientist Peggy LeMone assumes presidency of American Meteorological Society» | NCAR: "senior scientist emerita at NCAR"; "studied aspects of the atmospheric planetary boundary". Doctorado en Ciencias Atmosféricas (U. de Washington, 1972) y presidenta de la American Meteorological Society (2010). | 2010 / actual |
+| 6 | (Voz 2) LeMone «hizo la cuenta» | ✅ | Mental Floss, «How Much Does a Cloud Weigh?» (4 abr 2013) | "Do the math with the density and volume to determine the total water content of the cloud." (método de LeMone: "LeMone does this by watching her odometer as she drives under a cloud.") | 2013 |
+| 7 | (Voz 2 + pantalla «≈ 500 t de agua») Una nube cúmulo típica tiene unas 500 toneladas de agua | ✅ | Mental Floss 2013; USGS 2019 | Mental Floss: "In this case, it's 500,000,000 grams of water, or 1.1 million pounds." Conversión: 500,000,000 g = 500,000 kg = **500 toneladas métricas**. | 2013 |
+| 8 | (Voz 3 + pantalla) Eso es como cien elefantes | ✅ | Mental Floss 2013 (comparación de LeMone) | "That cloud weighs about as much as 100 elephants." (500 t ÷ 100 = 5 t por elefante, razonable para un elefante africano adulto) | 2013 |
+| 9 | (Voz 5 + pantalla) Cada gotita es tan pequeña que cae lentísimo, y las corrientes de aire que suben bastan para sostenerla | ✅ | Stull, *Practical Meteorology*, cap. 7 «Collision and Collection» (LibreTexts); Mental Floss 2013 | Stull: "What updraft wind is needed to keep a typical cloud droplet (R = 10 µm) from falling?" → "wup = 1.2 cm s–1", descrito como movimiento de aire muy suave. Mental Floss: "all those little droplets get some lift from updrafts of warm air." | 2017 (Stull) / 2013 |
+| 10 | (Voz 6 + pantalla: cubo) El peso está repartido en un espacio como un cubo de 1 km por lado | ✅ | Mental Floss 2013; USGS 2019 | Mental Floss: "A typical cumulus, she says, is about a kilometer across, and usually roughly cubical" … "one billion cubic meters in volume." USGS: "A 1 cubic kilometer (km3) cloud contains 1 billion cubic meters." | 2013 / 2019 |
+| 11 | (Voz 7 + pantalla: balanza) El aire que llena ese mismo espacio pesa muchísimo más que el agua de la nube | ✅ | NASA Glenn, «Earth Atmosphere Model – Metric Units» (grc.nasa.gov/www/k-12/airplane/atmosmet.html) + cálculo | Fórmulas: "T = 15.04 - .00649 * h", "p = 101.29 * [(T + 273.1)/288.08]^5.256", "r = p / [.2869 * (T + 273.1)]". Cálculo a 1,500 m: T ≈ 5.3 °C, p ≈ 84.6 kPa → ρ ≈ 1.06 kg/m³ → 1 km³ de aire ≈ 1,060 millones de kg ≈ 1 millón de toneladas, unas 2,000 veces las 500 t de agua. | modelo NASA (atmósfera estándar) |
+| 12 | (Voz 8 + pantalla) Cuando las gotitas chocan y se juntan, crecen, el aire ya no las sostiene y caen: eso es la lluvia | ✅ | Stull, cap. 7 (LibreTexts); Scientific American 2002 | Stull: "The merging of two liquid droplets … is called coalescence", que "is the only process for making precipitation-size hydrometeors that can happen in warm clouds." SciAm: "as a tiny water droplet grows, its mass becomes more important than its shape and the droplet falls faster". (Nota: en nubes frías también hay lluvia que empieza como hielo; para un cúmulo de buen tiempo, que es el del video, el mecanismo descrito es el correcto). | 2017 / 2002 |
+| 13 | (Voz 2 + tarjeta «2013 · Peggy LeMone · meteoróloga») «En 2013, … LeMone hizo la cuenta» (corregido) | ✅ | Mental Floss, 4 abr 2013 | Fecha del artículo: "April 4, 2013"; ahí se publica la cuenta de LeMone ("In this case, it's 500,000,000 grams of water"). El guion ya dice el año. | 2013 |
+| 14 | (Voz 9 + pantalla) «esa nube … es el agua de cien elefantes, flotando sobre ti en pedacitos chiquitos» | ✅ | Mental Floss 2013 | "the weight isn't concentrated in a hundred elephant-sized particles or even a billion marble-sized ones." | 2013 |
+
+## Problemas encontrados
+
+Primera ronda (29 oct 2026): dos ⚠️, ya corregidos en `guion.md` y `narracion.json` y vueltos a verificar:
+1. #3 «millones de gotitas» → «billones y billones de gotitas» (voz y pantalla). En 1 km³ hay ~10¹⁷ gotitas (≈ 100 por cm³, Wallace & Hobbs 2006): ✅.
+2. #13 faltaba el año → «En 2013, la meteoróloga Peggy LeMone hizo la cuenta…» y tarjeta «2013 · Peggy LeMone · meteoróloga» (Mental Floss, 4 abr 2013): ✅.
+
+Segunda ronda: sin ❌ ni ⚠️. Todas las afirmaciones están verificadas.
+
+VEREDICTO: APROBADO

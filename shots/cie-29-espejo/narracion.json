@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Espejo base narrada.dc.html",
+  "salida": "Shot Espejo narrado.dc.html",
+  "nota": "Shot Científico #29. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "El espejo no te invierte izquierda y derecha: te invierte de adelante hacia atrás."
+    },
+    {
+      "escena": "Mano",
+      "texto": "Levanta tu mano derecha frente al espejo: tu reflejo levanta la mano que está de ese mismo lado."
+    },
+    {
+      "escena": "Arriba",
+      "texto": "Tu cabeza sigue arriba y tus pies abajo: nada cambió de arriba a abajo."
+    },
+    {
+      "escena": "Frente",
+      "texto": "Lo que se invierte es adelante y atrás: tu nariz apunta al espejo, y la nariz de tu reflejo apunta hacia ti."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces por qué parece que cambian la izquierda y la derecha?"
+    },
+    {
+      "escena": "Girar",
+      "texto": "Porque imaginas que tu reflejo es otra persona que se dio la vuelta para verte, y al voltearse, su derecha quedaría del otro lado."
+    },
+    {
+      "escena": "Texto",
+      "texto": "Por eso las letras se ven al revés: la hoja mira hacia el espejo, no hacia ti."
+    },
+    {
+      "escena": "Ambulancia",
+      "texto": "Por eso muchas ambulancias escriben su nombre al revés en el frente: para que se lea bien en el retrovisor."
+    },
+    {
+      "escena": "Dos",
+      "texto": "Y si juntas dos espejos en ángulo recto, ves tu cara como la ven los demás: guiñas tu ojo derecho y tu reflejo guiña su ojo derecho."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que el espejo no confunde tu izquierda y tu derecha: eres tú quien se da la vuelta en tu cabeza."
+    }
+  ]
+}

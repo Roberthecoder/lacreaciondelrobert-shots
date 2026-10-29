@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Pajaros Cables base narrada.dc.html",
+  "salida": "Shot Pajaros Cables narrado.dc.html",
+  "nota": "Shot Científico #30. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese pájaro parado en un cable de luz no se electrocuta, y no es magia: es que no le da camino a la corriente."
+    },
+    {
+      "escena": "Corriente",
+      "texto": "La electricidad solo fluye cuando encuentra un camino entre dos puntos con distinto voltaje."
+    },
+    {
+      "escena": "Patas",
+      "texto": "El pájaro tiene las dos patas en el mismo cable, así que las dos están casi al mismo voltaje."
+    },
+    {
+      "escena": "Nada",
+      "texto": "Entre una pata y la otra casi no hay diferencia: la corriente sigue de largo por el cable, que conduce mucho mejor."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y entonces cuándo sí le pasa algo?"
+    },
+    {
+      "escena": "Dos",
+      "texto": "Si con un ala o una pata toca al mismo tiempo otro cable, o una parte del poste conectada a tierra, le abre un camino a la corriente."
+    },
+    {
+      "escena": "Aguilas",
+      "texto": "Eso les pasa sobre todo a las aves grandes, como águilas y aguilillas, porque sus alas abiertas alcanzan dos cosas a la vez."
+    },
+    {
+      "escena": "Postes",
+      "texto": "Por eso en algunos lugares adaptan los postes: separan los cables o los cubren para proteger a las aves."
+    },
+    {
+      "escena": "Tu",
+      "texto": "Y por eso nunca te acerques a un cable caído: tú estás parado en el suelo, y eso sí le da camino a la corriente."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que el pájaro no es inmune: solo no le da a la electricidad por dónde pasar."
+    }
+  ]
+}

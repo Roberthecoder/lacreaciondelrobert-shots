@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Hipo base narrada.dc.html",
+  "salida": "Shot Hipo narrado.dc.html",
+  "nota": "Shot Científico #21. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese hip no lo hace tu garganta sola: lo empieza un músculo debajo de tus pulmones que se contrae de golpe."
+    },
+    {
+      "escena": "Diafragma",
+      "texto": "Ese músculo es el diafragma: con él respiras."
+    },
+    {
+      "escena": "Espasmo",
+      "texto": "En el hipo, el diafragma se contrae de repente y te hace jalar aire."
+    },
+    {
+      "escena": "Glotis",
+      "texto": "Y justo después, la glotis, la puerta entre tus cuerdas vocales, se cierra de golpe."
+    },
+    {
+      "escena": "Sonido",
+      "texto": "Ese aire chocando contra la puerta cerrada es el hip."
+    },
+    {
+      "escena": "Causas",
+      "texto": "Lo pueden disparar comer muy rápido, las bebidas con gas o el estómago muy lleno."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué sirve el hipo?"
+    },
+    {
+      "escena": "Hipotesis",
+      "texto": "Nadie lo sabe con certeza. Una hipótesis: es un reflejo que heredamos de ancestros que respiraban con branquias, como los renacuajos."
+    },
+    {
+      "escena": "Bebes",
+      "texto": "Otra: que a los bebés les ayuda a sacar el aire que tragan al mamar."
+    },
+    {
+      "escena": "Record",
+      "texto": "El hipo más largo registrado lo tuvo un señor de Estados Unidos, Charles Osborne: le duró unos sesenta y ocho años."
+    },
+    {
+      "escena": "Remedios",
+      "texto": "Casi siempre se quita solo en unos minutos. Y si te dura más de dos días, ve al médico."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese hip es tu diafragma con un tic, y tu glotis cerrándole la puerta."
+    }
+  ]
+}

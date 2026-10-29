@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Punto Ciego base narrada.dc.html",
+  "salida": "Shot Punto Ciego narrado.dc.html",
+  "nota": "Shot Científico #20. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ahora mismo tienes un hoyo en tu vista, y no lo ves porque tu cerebro lo rellena."
+    },
+    {
+      "escena": "Prueba",
+      "texto": "Haz esto: tápate el ojo izquierdo y, con el derecho, mira fijamente la cruz."
+    },
+    {
+      "escena": "Acercate",
+      "texto": "Ahora acércate o aléjate despacio de la pantalla, sin dejar de ver la cruz."
+    },
+    {
+      "escena": "Desaparece",
+      "texto": "En algún momento, el punto rojo de la derecha desaparece, y en su lugar solo ves el fondo."
+    },
+    {
+      "escena": "Nervio",
+      "texto": "Ahí, en el fondo de tu ojo, sale el nervio óptico, el cable que lleva la imagen a tu cerebro."
+    },
+    {
+      "escena": "Sin",
+      "texto": "Y en ese lugar no hay células que detecten la luz: ni conos ni bastones. Es un hoyo de verdad."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces por qué no ves un hoyo negro todo el tiempo?"
+    },
+    {
+      "escena": "Dos",
+      "texto": "Primero, porque tienes dos ojos, y lo que no ve uno lo ve el otro."
+    },
+    {
+      "escena": "Rellena",
+      "texto": "Y segundo, porque tu cerebro rellena el hueco con lo que hay alrededor."
+    },
+    {
+      "escena": "Mariotte",
+      "texto": "Lo describió el francés Edme Mariotte en el siglo diecisiete."
+    },
+    {
+      "escena": "Pulpo",
+      "texto": "Dato raro: el pulpo no tiene punto ciego, porque sus nervios salen por detrás de la retina."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que lo que ves no es una foto completa: tu cerebro también pone de su parte."
+    }
+  ]
+}
