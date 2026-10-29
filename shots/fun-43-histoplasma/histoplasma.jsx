@@ -236,7 +236,11 @@ function HistoplasmaShot() {
             const leve = i === 6 || i === 13 || i === 17; const mk = kprog(T, K.S + 1.4 + i * 0.04, K.S + 1.7 + i * 0.04, kEase.rebote);
             return on > 0 ? <g key={i}><PersonaH x={x} y={y} s={on * 0.85} mal={leve ? 0.6 : 0} color={leve ? '#ffb38a' : '#8fb6ff'} />
               {mk > 0 && !leve && <path d={`M ${x + 30} ${y - 70} l 12 14 l 24 -30`} stroke="#1f9e3a" strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" transform={`translate(0 0) scale(1)`} opacity={mk} />}
-              {mk > 0 && leve && <text x={x + 52} y={y - 64} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={mk}>{i === 6 ? '🌡' : i === 13 ? '~' : 'z'}</text>}
+              {mk > 0 && leve && <g transform={`translate(${x + 52} ${y - 80}) scale(${mk})`}>
+                {i === 6 && <><rect x={-6} y={-30} width={12} height={40} rx={6} fill="#fff" stroke={KC.ink} strokeWidth={3} /><rect x={-3} y={-12} width={6} height={22} fill={KC.red} /><circle cy={14} r={11} fill={KC.red} stroke={KC.ink} strokeWidth={3} /></>}
+                {i === 13 && <path d="M -10 -14 Q 10 -4 -10 6 M 4 -22 Q 26 -4 4 14" stroke={KC.ink} strokeWidth={5} fill="none" strokeLinecap="round" />}
+                {i === 17 && <text x={0} y={8} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.blue} stroke={KC.ink} strokeWidth={1.5}>z</text>}
+              </g>}
             </g> : null; })}
         </>)}
       </Escena>
