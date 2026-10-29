@@ -296,7 +296,7 @@ function Monoxido() {
           <line x1={850} y1={420} x2={850} y2={640} stroke={KC.ink} strokeWidth={6} />
                     {(() => { const rojos = [3, 10, 17, 21, 26, 30, 35]; return Array.from({ length: 37 }, (_, i) => { const c = i % 8, r = Math.floor(i / 8), k = rojos.indexOf(i);
             const on = k >= 0 ? kprog(T, K.E + 4.0 + k * 0.25, K.E + 4.3 + k * 0.25) : 0;
-            const ap = kprog(T, K.E + 0.6 + i * 0.03, K.E + 0.9 + i * 0.03);
+            const ap = kprog(T, K.E + 3.4 + i * 0.015, K.E + 3.7 + i * 0.015);
             return <Personita key={i} x={150 + c * 112} y={760 + r * 88} s={1.4 * klerp(0.6, 1, ap)} o={ap} color={mixHex('#f6f3ec', KC.red, on)} />; }); })()}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.5} anio="1987" quien="Heckerling · Chicago" revista="Am J Emerg Med · urgencias en invierno" x={400} y={560} />

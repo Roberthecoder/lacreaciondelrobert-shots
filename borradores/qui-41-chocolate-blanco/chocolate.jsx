@@ -358,7 +358,7 @@ function Chocolate() {
         [CUES.Manteca + 0.3, CUES.FormaV - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.FormaV + 2.4, CUES.Calor - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.Calor + 0.6, CUES.Pregunta - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
-        [CUES.Pregunta + 0.05, CUES.Azucar + 0.8, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Azucar + 0.1, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Azucar + 2.4, CUES.Estudio - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Estudio + 3.4, CUES.Laser - 0.3, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Laser + 0.4, CUES.Comer - 0.2, 'avatar_11_sorprendido', 'izq-alto'],
