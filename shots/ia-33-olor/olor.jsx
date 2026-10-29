@@ -56,13 +56,13 @@ function Hierbabuena({ x, y, s = 1, T = 0 }) {
     <ellipse cx={0} cy={-128} rx={18} ry={26} fill={MENTA} stroke={KC.ink} strokeWidth={5} />
   </g>;
 }
-// Semillas de alcaravea (medialunas alargadas con costillas).
+// Semillas de alcaravea (aquenios alargados, un poco curvos, con costillas claras).
 function Alcaravea({ x, y, s = 1 }) {
-  const sem = [[-90, 10, -20], [-20, -20, 15], [50, 15, -5], [110, -15, 30], [-50, 50, 40], [30, 60, -35]];
+  const sem = [[-110, -10, -25], [-35, -40, 10], [45, -5, -15], [120, -35, 25], [-70, 50, 35], [20, 60, -40], [100, 45, 5]];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {sem.map(([sx, sy, r], i) => <g key={i} transform={`translate(${sx} ${sy}) rotate(${r})`}>
-      <path d="M -50 0 Q 0 -30 50 0 Q 0 -6 -50 0 Z" fill={CAFE} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" transform="scale(1 1.6)" />
-      <path d="M -34 -6 Q 0 -22 34 -6" stroke="#d9b07a" strokeWidth={3} fill="none" />
+      <path d="M -46 4 Q -20 -14 0 -13 Q 24 -12 46 2 Q 22 8 0 9 Q -22 12 -46 4 Z" fill={CAFE} stroke={KC.ink} strokeWidth={4.5} strokeLinejoin="round" />
+      <path d="M -36 1 Q 0 -10 36 0 M -34 5 Q 0 -2 34 3" stroke="#e6c38f" strokeWidth={2.5} fill="none" />
     </g>)}
   </g>;
 }
@@ -114,7 +114,7 @@ function GlifoAlmizcle({ tipo, x, y, s = 1, o = 1 }) {
   let c = null;
   if (tipo === 'macro') c = <><polygon points={hexP(0, 0, 66, 15)} {...st} /><line x1={0} y1={-66} x2={0} y2={-98} {...st} stroke={KC.red} /></>;
   if (tipo === 'poli') c = <><polygon points={hexP(-30, 0, 34)} {...st} /><polygon points={hexP(29, 0, 34)} {...st} /><polygon points={hexP(59, -51, 34, 5)} {...st} /></>;
-  if (tipo === 'nitro') c = <><polygon points={hexP(0, 0, 42)} {...st} /><text x={-104} y={-26} style={{ font:`900 30px ${KF.texto}` }} fill={KC.blue}>NO₂</text><text x={36} y={-26} style={{ font:`900 30px ${KF.texto}` }} fill={KC.blue}>NO₂</text></>;
+  if (tipo === 'nitro') c = <><polygon points={hexP(0, 8, 32)} {...st} /><text x={-62} y={-36} style={{ font:`900 28px ${KF.texto}` }} fill={KC.blue}>NO₂</text><text x={6} y={-36} style={{ font:`900 28px ${KF.texto}` }} fill={KC.blue}>NO₂</text></>;
   if (tipo === 'esteroide') c = <><polygon points={hexP(-60, 18, 30, 6, 0)} {...st} /><polygon points={hexP(-15, -8, 30, 6, 0)} {...st} /><polygon points={hexP(30, 18, 30, 6, 0)} {...st} /><polygon points={hexP(72, -8, 26, 5, 0)} {...st} /></>;
   if (tipo === 'cadena') c = <polyline points={Array.from({ length: 10 }, (_, i) => `${-100 + i * 22},${i % 2 ? -14 : 14}`).join(' ')} {...st} />;
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
@@ -133,6 +133,13 @@ function Panelista({ x, y, s = 1, T, color, k = 0 }) {
       <rect x={-6} y={12} width={12} height={16} rx={3} fill={KC.mint} opacity=".8" />
     </g>
   </g>;
+}
+
+// Contador con salida (el del kit no se apaga).
+function ContadorH({ T, at, until, hasta, dur = 2, sufijo = '', prefijo = '', x, y, tam = 72, color = KC.ink }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube'), v = hasta * kprog(T, at, at + dur, kEase.suave);
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, transform:`translate(-50%,-50%) translateY(${e.y * 0.4}px)`, opacity:e.o, font:`700 ${tam}px ${KF.mono}`, color, whiteSpace:'nowrap' }}>{prefijo}{kformato(v, 0)}{sufijo}</div>;
 }
 
 function Olor() {
@@ -177,18 +184,17 @@ function Olor() {
       <Escena T={T} a={K.E} b={K.Ca}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <rect x={526} y={600} width={28} height={480} rx={10} fill="#cfe9f5" stroke={KC.ink} strokeWidth={6} />
+          <rect x={526} y={560} width={28} height={540} rx={10} fill="#cfe9f5" stroke={KC.ink} strokeWidth={6} />
           <line x1={534} y1={640} x2={534} y2={760} stroke="#fff" strokeWidth={5} opacity=".8" />
-          <Carvona x={300} y={820} s={0.85} T={T} o={kprog(T, K.E + 0.1, K.E + 0.5)} />
-          <g opacity={kprog(T, K.E + 0.8, K.E + 1.4)} transform={`translate(${(1 - kprog(T, K.E + 0.8, K.E + 1.4, kEase.sale)) * -120} 0)`}><Carvona x={780} y={820} s={0.85} espejo T={T} /></g>
-          <g opacity={kprog(T, K.E + 3.4, K.E + 3.8)}><Hierbabuena x={300} y={1080} s={0.5} T={T} /></g>
-          <g opacity={kprog(T, K.E + 4.6, K.E + 5.0)}><Alcaravea x={780} y={1090} s={0.75} /></g>
+          <Carvona x={300} y={760} s={0.85} T={T} o={kprog(T, K.E + 0.1, K.E + 0.5)} />
+          <g opacity={kprog(T, K.E + 0.8, K.E + 1.4)} transform={`translate(${(1 - kprog(T, K.E + 0.8, K.E + 1.4, kEase.sale)) * -120} 0)`}><Carvona x={780} y={760} s={0.85} espejo T={T} /></g>
+          <g opacity={kprog(T, K.E + 3.4, K.E + 3.8)}><Hierbabuena x={290} y={1010} s={0.62} T={T} /></g>
+          <g opacity={kprog(T, K.E + 4.6, K.E + 5.0)}><Alcaravea x={790} y={1030} s={0.85} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.E + 1.8} until={K.Ca - 0.2} texto="mismos átomos · en espejo" x={400} y={470} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.E + 3.6} until={K.Ca - 0.2} x={350} y={1010} texto="hierbabuena" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.E + 4.8} until={K.Ca - 0.2} x={700} y={1010} texto="alcaravea" lado="izq" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.E + 5.4} until={K.Ca - 0.2} x={140} y={600} texto="carvona" lado="der" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 1.8} until={K.Ca - 0.2} texto="carvona: mismos átomos, en espejo" x={420} y={470} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 3.6} until={K.Ca - 0.2} texto="huele a hierbabuena" x={280} y={1150} tam={30} borde={MENTA} />
+      <Chip T={T} at={K.E + 4.8} until={K.Ca - 0.2} texto="huele a alcaravea" x={800} y={1150} tam={30} borde={CAFE} />
       {/* 3 · el catálogo: 5,000 moléculas ya descritas */}
       <Escena T={T} a={K.Ca} b={K.R}>
         <FondoLunares color={KC.mint} />
@@ -200,7 +206,7 @@ function Olor() {
             </g>; })}
         </g>)}
       </Escena>
-      <Contador T={T} at={K.Ca + 0.3} hasta={5000} dur={2.9} x={540} y={440} tam={64} color={KC.ink} sufijo=" moléculas" />
+      <ContadorH T={T} at={K.Ca + 0.3} until={K.R - 0.2} prefijo="≈ " hasta={5000} dur={2.9} x={540} y={440} tam={64} sufijo=" moléculas" />
       <Chip T={T} at={K.Ca + 1.4} until={K.R - 0.2} texto="1 cuadrito = 100 moléculas" x={540} y={965} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Ca + 3.3} until={K.R - 0.2} texto="cremoso" x={250} y={1080} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Ca + 3.9} until={K.R - 0.2} texto="a ajo" x={540} y={1110} tam={40} borde={KC.yellow} />
@@ -226,22 +232,22 @@ function Olor() {
       <Escena T={T} a={K.Es} b={K.Re}>
         <FondoLunares color={KC.lilac} />
         {svg(<>{Array.from({ length: 15 }, (_, i) => { const c = i % 5, r = Math.floor(i / 5), t0 = K.Es + 4.4 + i * 0.08;
-          return <g key={i} opacity={kprog(T, t0, t0 + 0.3)}><Panelista x={170 + c * 185} y={760 + r * 150} s={0.95} T={T} k={i} color={pal[i % pal.length]} /></g>; })}</>)}
+          return <g key={i} opacity={kprog(T, t0, t0 + 0.3)}><Panelista x={170 + c * 185} y={730 + r * 140} s={0.95} T={T} k={i} color={pal[i % pal.length]} /></g>; })}</>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 4.1} anio="2023" quien="Google Research + Centro Monell (Filadelfia)" revista="Lee, Mayhew… Mainland y Wiltschko · Science" y={680} />
       <Chip T={T} at={K.Es + 4.3} until={K.Re - 0.2} texto="15 personas entrenadas" x={360} y={470} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.Es + 6.4} until={K.Re - 0.2} texto="400 moléculas nuevas" x={360} y={560} tam={38} borde={IAC} />
-      <Chip T={T} at={K.Es + 8.0} until={K.Re - 0.2} texto="55 palabras de olor" x={540} y={1170} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.Es + 8.0} until={K.Re - 0.2} texto="55 palabras de olor" x={540} y={1140} tam={36} borde={KC.yellow} />
       {/* 7 · resultado: 53 de cada 100 */}
       <Escena T={T} a={K.Re} b={K.A}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g transform="translate(290 660)">
+        {svg(<g transform="translate(320 650)">
           {Array.from({ length: 100 }, (_, i) => { const c = i % 10, r = Math.floor(i / 10), ord = ordenR[i], on = ord < pintadas, ia = ord < 53;
-            return <rect key={i} x={c * 50 + 4} y={r * 50 + 4} width={42} height={42} rx={8} fill={!on ? 'rgba(0,0,0,.08)' : ia ? IAC : KC.gold2} stroke={KC.ink} strokeWidth={on ? 4 : 2} />; })}
+            return <rect key={i} x={c * 44 + 3} y={r * 44 + 3} width={38} height={38} rx={7} fill={!on ? 'rgba(0,0,0,.08)' : ia ? IAC : KC.gold2} stroke={KC.ink} strokeWidth={on ? 4 : 2} />; })}
         </g>)}
       </Escena>
       <NumeroGigante T={T} at={K.Re + 2.4} until={K.A - 0.2} valor={53} dur={0.8} sufijo=" %" x={380} y={470} tam={170} color={IAC} />
-      <Chip T={T} at={K.Re + 0.6} until={K.A - 0.2} texto="■ IA más cerca   ■ catador típico más cerca" x={540} y={1200} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.Re + 0.6} until={K.A - 0.2} texto="■ IA más cerca   ■ catador típico más cerca" x={540} y={1130} tam={26} borde={KC.ink} />
       {/* 8 · el almizcle, su peor resultado */}
       <Escena T={T} a={K.A} b={K.M}>
         <FondoLunares color={KC.lilac} />
@@ -265,7 +271,7 @@ function Olor() {
         <FondoLunares color={KC.cyan} />
         {svg(<MapaOlores x={70} y={640} w={940} h={530} T={T} n={nMapa} tam={34} etiquetas={kprog(T, K.M + 0.2, K.M + 0.6)} o={dimMapa} />)}
       </Escena>
-      <Contador T={T} at={K.M + 0.4} hasta={500000} dur={3.2} x={360} y={430} tam={70} color={KC.ink} />
+      <ContadorH T={T} at={K.M + 0.4} until={K.C - 0.2} prefijo="≈ " hasta={500000} dur={3.2} x={360} y={430} tam={70} />
       <Chip T={T} at={K.M + 1.0} until={K.C - 0.2} texto="moléculas de olor desconocido" x={360} y={520} tam={30} borde={KC.ink} />
       <NumeroGigante T={T} at={K.M + 4.0} until={K.C - 0.2} valor={70} dur={1.4} sufijo=" años" etiqueta="olerlas todas: 1 persona" x={540} y={880} tam={190} color={KC.yellow} />
       <Chip T={T} at={K.M + 5.0} until={K.C - 0.2} texto="oliendo sin parar" x={540} y={1080} tam={40} borde={KC.yellow} />
@@ -273,7 +279,7 @@ function Olor() {
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.pink} />
         {svg(<>{inicio(K.C, true)}
-          <MapaOlores x={600} y={770} w={340} h={130} T={T} n={500} etiquetas={0} o={kprog(T, K.C + 0.8, K.C + 1.2)} nuevo={{ x: 0.24, y: 0.3, o: 1 }} />
+          <MapaOlores x={640} y={690} w={340} h={130} T={T} n={500} etiquetas={0} o={kprog(T, K.C + 0.8, K.C + 1.2)} nuevo={{ x: 0.24, y: 0.3, o: 1 }} />
         </>)}
       </Escena>
       <Chip T={T} at={K.C + 0.5} until={K.Ou} texto="«huele a hierbabuena» ✔" x={330} y={790} tam={34} borde={KC.leaf} />
