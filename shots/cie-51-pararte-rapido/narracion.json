@@ -29,11 +29,11 @@
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y por qué a veces dura más?"
+      "texto": "¿Y por qué a veces es peor?"
     },
     {
       "escena": "Factores",
-      "texto": "Si estás deshidratado, tienes mucho calor o llevas mucho rato acostado, la corrección tarda más."
+      "texto": "Si estás deshidratado, tienes mucho calor o llevas mucho rato acostado, a tu cuerpo le cuesta más corregirlo."
     },
     {
       "escena": "Nombre",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Consejo",
-      "texto": "Un truco: levántate en dos pasos. Primero siéntate unos segundos, y luego párate."
+      "texto": "Un truco: si estás acostado, primero siéntate unos veinte segundos, y luego párate despacio."
     },
     {
       "escena": "Cierre",

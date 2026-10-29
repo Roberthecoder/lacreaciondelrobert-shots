@@ -28,7 +28,36 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 4.1 | 11_sorprendido | `gancho` |
+| 2 | 5.4 | 8.7 | 13_senalando_arriba | `bajo-der` |
+| 3 | 13.1 | 16.2 | 06_pensativo_menton | `bajo-der` |
+| 4 | 19.4 | 23.0 | 04_bajando_lentes | `bajo-der` |
+| 5 | 26.4 | 29.8 | 11_sorprendido | `bajo-der` |
+| 6 | 30.0 | 31.8 | 07_pensativo_puno | `grande` |
+| 7 | 34.2 | 37.9 | 12_perfil_serio | `bajo-der` |
+| 8 | 43.5 | 47.7 | 06_pensativo_menton | `bajo-der` |
+| 9 | 48.3 | 51.9 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 10 | 52.6 | 57.9 | 13_senalando_arriba | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 10 · 36.2 s (+ cierre 3.5 s) · poses 7 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «Tus pupilas se agrandan cuando piensas fuerte» (sorprendido) |
+| 2 | «La pupila es el círculo negro de tu ojo» (señalando) |
+| 3 | «también responde a lo que pasa dentro de tu cabeza» (pensativo) |
+| 4 | «Kahneman y Beatty… memorizar listas de números» (bajando lentes) |
+| 5 | «más se les abría la pupila» (sorprendido) |
+| 6 | «¿Y por qué pasa?» (pensativo, grande) |
+| 7 | «una zona pequeñita del tallo cerebral» (serio) |
+| 8 | «miden la pupila para saber cuánto esfuerzo» (pensativo) |
+| 9 | «Kahneman ganó el Premio Nobel de Economía» (sonriendo) |
+| 10 | «una cámara… puede medir tu esfuerzo» (señalando) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 

@@ -16,11 +16,11 @@
 | 3 | Presion | Por un instante llega menos sangre a tu cabeza, y tu presión baja. | Medidor de presión que baja; cabeza con menos rojo. |
 | 4 | Ojos | Tu cerebro y tus ojos lo resienten: la vista se nubla, aparecen puntitos y te mareas. | Ojo y cerebro con puntitos; vista borrosa. |
 | 5 | Corrige | Tu cuerpo lo corrige rápido: unos sensores en tu cuello detectan la baja, aceleran tu corazón y aprietan tus vasos sanguíneos. | Sensores en el cuello que encienden; corazón más rápido y vasos que se aprietan. |
-| 6 | Pregunta | ¿Y por qué a veces dura más? | «?» gigante; Robert grande. |
-| 7 | Factores | Si estás deshidratado, tienes mucho calor o llevas mucho rato acostado, la corrección tarda más. | Iconos: vaso vacío (deshidratación), sol (calor), cama (mucho rato acostado). |
+| 6 | Pregunta | ¿Y por qué a veces es peor? | «?» gigante; Robert grande. |
+| 7 | Factores | Si estás deshidratado, tienes mucho calor o llevas mucho rato acostado, a tu cuerpo le cuesta más corregirlo. | Iconos: vaso vacío (deshidratación), sol (calor), cama (mucho rato acostado). |
 | 8 | Nombre | Cuando la presión baja de más al pararte, los médicos le llaman hipotensión ortostática. | Chip «hipotensión ortostática». |
 | 9 | Medico | Si te pasa muy seguido o llegas a desmayarte, ve al médico. | Chip «muy seguido o desmayos → médico». |
-| 10 | Consejo | Un truco: levántate en dos pasos. Primero siéntate unos segundos, y luego párate. | Persona que se levanta en dos pasos: sentada y luego de pie. |
+| 10 | Consejo | Un truco: si estás acostado, primero siéntate unos veinte segundos, y luego párate despacio. | Persona acostada que primero se sienta (~20 s) y luego se pone de pie despacio. |
 | 11 | Cierre | Así que esas estrellitas no son del cielo: son tu sangre bajando en elevador. | Regreso al sillón del inicio; elevador de sangre bajando y subiendo. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo y Robert apuntando a cámara. |
 

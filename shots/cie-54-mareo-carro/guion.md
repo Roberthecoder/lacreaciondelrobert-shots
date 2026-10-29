@@ -17,10 +17,10 @@
 | 4 | Teoria | La explicación más aceptada es justo ese choque entre lo que sienten tus oídos y lo que ven tus ojos. | Chip «conflicto de sentidos (lo más aceptado)». |
 | 5 | Pregunta | ¿Y por qué da náuseas? | «?» gigante; Robert grande. |
 | 6 | Veneno | Nadie lo sabe con certeza. Una hipótesis dice que tu cerebro lo confunde con un envenenamiento, y por eso quiere vomitar. | Cerebro con una alarma de «¿veneno?»; chip «hipótesis». |
-| 7 | Conductor | Por eso quien maneja casi nunca se marea: ve el camino y se adelanta a cada curva y cada frenón. | Conductor mirando el camino y anticipando la curva. |
+| 7 | Conductor | Por eso quien maneja casi nunca se marea: controla el carro y sabe cuándo viene cada curva y cada frenón. | Conductor con las manos en el volante, controlando la curva. |
 | 8 | Consejo | Ayuda mirar al horizonte por la ventana, ir en el asiento de adelante y soltar el celular. | Consejos: horizonte, asiento de adelante, celular guardado. |
 | 9 | Barco | Y lo mismo pasa en barcos, en aviones y hasta con algunos videojuegos y lentes de realidad virtual. | Barco, avión y lentes de realidad virtual. |
-| 10 | Ninos | Y los niños de dos a doce años son de los que más se marean. | Niños de 2 a 12 años con chip «se marean más». |
+| 10 | Ninos | Y los niños, sobre todo de siete a doce años, son de los que más se marean. | Niños con chip «7 a 12 años: se marean más». |
 | 11 | Cierre | Así que el mareo no está en tu panza: es una pelea entre tus ojos y tus oídos. | Regreso al carro del inicio: el niño mira por la ventana y está bien. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo y Robert apuntando a cámara. |
 
@@ -34,7 +34,7 @@
 
 1. Teoría del conflicto sensorial (Reason y Brand, 1975; revisión: Golding, J. F. (2016). Motion sickness. Handb. Clin. Neurol. 137: 371–390).
 2. Hipótesis del veneno: Treisman, M. (1977). Motion sickness: an evolutionary hypothesis. Science 197: 493–495.
-3. CDC Yellow Book: Motion Sickness (niños de 2 a 12 años más susceptibles; mirar al horizonte, asiento de adelante, evitar leer; barcos, aviones, realidad virtual).
+3. CDC Yellow Book: Motion Sickness (niños de 7 a 12 años, el pico de susceptibilidad; mirar al horizonte, asiento de adelante, evitar leer; barcos, aviones, realidad virtual).
 
 ## Notas
 - La hipótesis del veneno se dice como hipótesis.
