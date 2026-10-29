@@ -49,4 +49,34 @@ Fuente extra abierta: **[SG]** Solhaug, K. A. y Gauslaa, Y. / búsqueda sobre fu
 Se re-verificó el texto final de `narracion.json` y `guion.md`: córtex solo «del sol» (Sancho 2007), «dos especies» en el espacio y cierre «como los dos que aguantaron el espacio» (Sancho 2007; ESA 2005 para los ~15 días expuestos). Los recortes de redacción («El hongo pone la casa; el socio, la comida.», sin dos "Y") no cambian ningún dato.
 
 Resumen: 23 afirmaciones (voz y pantalla) revisadas; todas ✅ tras las correcciones (córtex, seis continentes, días expuestos, generalización a todos los líquenes, cierre, levadura tenue y médula sin "aire").
-VEREDICTO: APROBADO
+
+## Revisión final (animación y publicación) · 29 oct 2026
+Se revisaron todos los textos en pantalla de `liquen.jsx` (chips, etiquetas, tarjetas, contador, subtítulos, dibujos), las barras de escala, `publicacion.md` (7 redes + comentario fijado) y las citas de `## Fuentes` del guion.
+Fuente extra abierta: **[XE]** descripciones de *Xanthoria (Rusavskia) elegans*: Alberta Lichens (pressbooks.openeducationalberta.ca/albertalichens/?p=1363) y Flora of New Zealand (floraseries.landcareresearch.co.nz): "an intact, white lower cortex, attached with short peg-like hapters (often sparse), lacking well-formed rhizines".
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Chips "¿planta?" "¿musgo?" tachados → "hongo + socio", "liquen" | ✅ | [USFS], [BLS] | ver filas 1–2 | 2026 |
+| R2 | Subtítulos 0–12 (resúmenes de la voz; "≈15 días en el espacio", "Seis continentes. ¿Qué hacen ahí?") | ✅ | ver filas 1–18 | — | — |
+| R3 | Corte: etiquetas "córtex", "algas", "médula", "piedra"; dibujo con córtex inferior y filamentos de anclaje (sin rótulo) bajo una mancha naranja tipo *Xanthoria* | ✅ (esquemático) | [ANBG], [XE] | ANBG: "a lower cortex beneath the medulla" (foliáceos); [XE]: *X. elegans* con córtex inferior y hapterios cortos. Los filamentos no se rotulan "rizinas", así que se leen como anclaje genérico. | 2026 |
+| R4 | Chips "hilos del hongo, apretados", "algas o cianobacterias", "fotosíntesis → azúcar", "hilos sueltos del hongo", "el hongo pone la casa / el socio, la comida" | ✅ | [ANBG], [BLS] | ver filas 5–9 | 2026 |
+| R5 | Tarjeta "1867 · Simon Schwendener · propuso: el liquen son dos seres"; dibujo hongo + alga = liquen | ✅ | [MIT] | "lichens may not be autonomous plants, but fungi in association with algae" | 1867 |
+| R6 | Globos "¡no!", "¿dos seres?", "¿un hongo?" alrededor de la tarjeta | ✅ | [MIT] | Son reacciones dibujadas, sin comillas ni autor: no se presentan como citas. Coinciden con "regarded with scepticism by many, and summarily rejected by lichen taxonomists". | 1867–1890 |
+| R7 | Tarjeta "2016 · Montana, EUA · Spribille et al., Science"; *Bryoria* colgante con hebras cafés y amarillentas; lupa "levaduras en la piel" | ✅ | [SPR] | "B. tortuosa … yellowish" / "B. fremontii … dark brown"; "These yeasts are embedded in the cortex" | 2016 |
+| R8 | Número gigante "6 continentes" | ✅ | [SPR] | "52 lichen genera from six continents" | 2016 |
+| R9 | Íconos de los 6 continentes: cada uno con un liquen y una levadura rosa; dos de los íconos usan el tipo "mapa" (costroso amarillo, tipo *Rhizocarpon*) y otros el "naranja" (tipo *Xanthoria*) | ⚠️ (leve) | [SPR] | Spribille halló los linajes sobre todo en Parmeliaceae ("42 of 56 sampled genera of the family Parmeliaceae"); no se verificó que estén en *Rhizocarpon* o *Xanthoria*. Poner la levadura sobre esos tipos sugiere un dato no verificado. | 2016 |
+| R10 | Chip "¿qué hacen ahí? aún se estudia" | ✅ | [SPR] | ver fila 14 | 2016 |
+| R11 | Chip "expuestos al espacio"; contador "14.6 días"; caja BIOPAN que se abre arriba del satélite y se cierra antes de bajar en paracaídas; etiquetas *Xanthoria elegans*, *Rhizocarpon geographicum* | ✅ | [ESA], [SAN] | "exposed for a total 14.6 days" · "the lid of Biopan was closed to protect the lichens from the conditions of reentry" · "on the outer shell of the Earth-orbiting FOTON-M2" | 2005 |
+| R12 | Gráfica "fotosíntesis" antes ≈ después (barras casi iguales, sin cifras) y chip "casi igual" | ✅ | [SAN] | "nearly the same photosynthetic activity after the flight as measured before the flight" (la gráfica no da números) | 2005 |
+| R13 | Cierre: hongo + alga + "¿levadura?" tenue con "¿?", cascos en dos manchas (naranja y mapa) y cohete; chip "es un equipo" | ✅ | [SAN], [SPR] | Los cascos van en las manchas tipo *Xanthoria* y *Rhizocarpon*, las dos especies que fueron. | 2007 |
+| R14 | Barras de escala: 10 cm (piedra; manchas de ~10–13 cm), 1 cm (zoom), 50 µm (corte: talo ~110 µm, algas ~8–12 µm), 10 µm (alga del trato ~20 µm; levaduras), 5 cm (*Bryoria*, hebras 6–11 cm) | ✅ (esquemático) | [ANBG], [SPR] | Órdenes de magnitud coherentes; dibujo esquemático. | — |
+| P1 | TikTok, YouTube, Facebook, LinkedIn, X, comentario fijado | ✅ | [MIT], [SPR], [SAN], [ESA], [BLS], [ANBG] | "Rheinfelden … 10 September 1867"; "summarily rejected by lichen taxonomists" (= "rechazada por los especialistas en líquenes"); "52 lichen genera from six continents"; "BIOPAN-5 … FOTON-M2"; "exposed for a total 14.6 days" / "16 days in space"; "not a single organism" | 1867–2016 |
+| P2 | Instagram: «en 2016 se hallaron levaduras en la piel de líquenes de seis continentes» | ⚠️ | [SPR] | En seis continentes se hallaron **linajes emparentados** (por ADN), no las levaduras vistas en la piel: "related basidiomycete lineages associated with 52 lichen genera from six continents". | 2016 |
+| P3 | Threads: «En 2016 se hallaron levaduras en su piel» (en la de todos los líquenes) | ⚠️ (leve) | [SPR] | Generaliza: se hallaron en "many common lichens", no en todos. | 2016 |
+| F1 | Citas de `## Fuentes` del guion (1–6 y 3b) | ✅ | todas | Frases textuales cotejadas con las páginas abiertas; cada cifra con su propia fuente (16 días = Sancho; 14.6 = ESA). | — |
+
+### Pendientes de la revisión final
+- **R9 · `liquen.jsx`, escena "seis continentes"** (línea con `tipo={['naranja', 'gris', 'mapa'][i % 3]}` dentro de los 6 íconos): cambiar a `tipo="gris"` en los seis (foliáceo gris, tipo Parmeliaceae, donde Spribille halló la mayoría).
+- **P2 · `publicacion.md`, Instagram:** cambiar «en 2016 se hallaron levaduras en la piel de líquenes de seis continentes (qué hacen ahí, aún se estudia)» por «en 2016 se hallaron levaduras en la piel de dos líquenes de Montana, y parientes de ellas en líquenes de seis continentes (qué hacen ahí, aún se estudia)».
+- **P3 · `publicacion.md`, Threads:** cambiar «En 2016 se hallaron levaduras en su piel» por «En 2016 se hallaron levaduras en la piel de algunos líquenes».
+
