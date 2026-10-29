@@ -112,8 +112,8 @@ function Hojita({ x, y, s = 1, ia = true, o = 1, color }) {
 function Pila({ x, base, capas, T, at0, paso, h = 46 }) {
   return <g>{capas.map((c, i) => { const e = kprog(T, at0 + i * paso, at0 + i * paso + 0.35, kEase.sale); if (e <= 0) return null;
     return <g key={i} transform={`translate(${x} ${base - i * h - (1 - e) * 120})`} opacity={e}>
-      <rect x={-130} y={-h} width={260} height={h - 6} rx={8} fill={c.color} stroke={KC.ink} strokeWidth={5} />
-      <text x={0} y={-h / 2 + 7} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>{c.texto}</text>
+      <rect x={-170} y={-h} width={340} height={h - 6} rx={8} fill={c.color} stroke={KC.ink} strokeWidth={5} />
+      <text x={0} y={-h / 2 + 7} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{c.texto}</text>
     </g>; })}</g>;
 }
 
@@ -168,19 +168,19 @@ function IAComeIA() {
           </g>
           <Hoja id="g9" x={klerp(330, 290, atras)} y={klerp(860, 820, atras)} s={klerp(0.98, 0.72, atras)} rot={-3} titulo="Generación 9" colorTit={KC.pink} lineas={TXT.gen9} chars={chars9} tam={25} pie="(traducido del inglés)" />
           {COLAS.map(([c], i) => { const e = kprog(T, K.G + 0.2 + i * 0.55, K.G + 0.6 + i * 0.55, kEase.sale); if (e <= 0) return null;
-            const x = klerp(330, 120 + i * 150 + (i > 2 ? 60 : 0), e), y = klerp(860, 1150, e);
+            const x = klerp(330, 120 + i * 150 + (i > 2 ? 60 : 0), e), y = klerp(860, 1120, e);
             return <g key={i} opacity={1 - atras * 0.25}><Liebre x={x} y={y} s={0.62} cola={c} T={T} fase={i * 1.3} /></g>; })}
         </>)}
       </Escena>
-      <Chip T={T} at={S1 + 0.6} until={K.F - 0.2} texto="9 generaciones" x={540} y={1210} tam={30} borde={KC.ink} />
+      <Chip T={T} at={S1 + 0.6} until={K.F - 0.2} texto="9 generaciones después" x={540} y={470} tam={30} borde={KC.ink} />
 
       {/* 2 · analogía: fotocopia de fotocopia */}
       <Escena T={T} a={K.F} b={K.E}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Fotocopiadora x={420} y={720} s={0.95} T={T} luz={1} />
-          {copias.map((e, k) => e > 0 && <g key={k} transform={`translate(${klerp(640, 150 + k * 260, e)} ${klerp(760, 1010, e)})`}>
-            <Hoja id={`c${k}`} x={0} y={0} s={0.36} rot={(k - 1.5) * 3} titulo={k === 0 ? 'original' : `copia ${k}`} colorTit={KC.mint} gris={k * 0.3} lineas={TXT.entrada.slice(0, 3)}>
+          <Fotocopiadora x={420} y={680} s={1.0} T={T} luz={1} />
+          {copias.map((e, k) => e > 0 && <g key={k} transform={`translate(${klerp(660, 160 + k * 253, e)} ${klerp(700, 1000, e)})`}>
+            <Hoja id={`c${k}`} x={0} y={0} s={0.5} rot={(k - 1.5) * 3} titulo={k === 0 ? 'original' : `copia ${k}`} colorTit={KC.mint} gris={k * 0.3} lineas={TXT.entrada.slice(0, 3)}>
               <Torre x={0} y={250} s={0.62} />
             </Hoja></g>)}
         </>)}
@@ -193,17 +193,17 @@ function IAComeIA() {
         {svg(<>{[0, 1, 2, 3].map((k) => { const e = kprog(T, S4 - 0.2 + k * 0.45, S4 + 0.2 + k * 0.45, kEase.sale); if (e <= 0) return null;
           const x = 150 + k * 260;
           return <g key={k} opacity={e}>
-            <Robotito x={x} y={960} s={0.48} T={T + k} cara={k === 3 ? 'duda' : 'feliz'} color={mixHex(KC.cyan, '#9a9a9a', k * 0.25)} />
-            <text x={x} y={1080} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>{k === 3 ? 'Gen 3 …' : `Gen ${k}`}</text>
+            <Robotito x={x} y={900} s={0.48} T={T + k} cara={k === 3 ? 'duda' : 'feliz'} color={mixHex(KC.cyan, '#9a9a9a', k * 0.25)} />
+            <text x={x} y={1020} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>{k === 3 ? 'Gen 3 …' : `Gen ${k}`}</text>
             {k < 3 && <g opacity={kprog(T, S4 + 0.1 + k * 0.45, S4 + 0.4 + k * 0.45)}>
-              <Hojita x={x + 130 + Math.sin(T * 4 + k) * 8} y={880} s={0.8} ia={k > 0 || true} />
-              <path d={`M ${x + 70} 940 L ${x + 190} 940`} stroke={KC.ink} strokeWidth={7} /><path d={`M ${x + 176} 926 L ${x + 194} 940 L ${x + 176} 954`} stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />
+              <Hojita x={x + 130 + Math.sin(T * 4 + k) * 8} y={820} s={0.8} ia />
+              <path d={`M ${x + 70} 880 L ${x + 190} 880`} stroke={KC.ink} strokeWidth={7} /><path d={`M ${x + 176} 866 L ${x + 194} 880 L ${x + 176} 894`} stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />
             </g>}
           </g>; })}</>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={S4 - 0.3} anio="2024" quien="Oxford · Cambridge · Imperial · Toronto · Edimburgo" revista="Shumailov, Shumaylov, Zhao, Papernot, Anderson y Gal · Nature" y={760} />
       <Chip T={T} at={S4 + 0.4} until={K.Gn - 0.2} texto="modelo pequeño: OPT-125m (Meta)" x={600} y={720} tam={32} borde={KC.ink} />
-      <Chip T={T} at={S4 + 1.6} until={K.Gn - 0.2} texto="aprende de los textos de la anterior" x={540} y={1170} tam={32} borde={KC.ink} />
+      <Chip T={T} at={S4 + 1.6} until={K.Gn - 0.2} texto="aprende de los textos de la anterior" x={540} y={1105} tam={32} borde={KC.ink} />
 
       {/* 4 · generaciones 1 y 5 */}
       <Escena T={T} a={K.Gn} b={K.L}>
@@ -231,12 +231,12 @@ function IAComeIA() {
       <Escena T={T} a={K.L} b={K.P}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Hoja id="g9en" x={330} y={620} s={0.68} rot={-3} titulo="Gen 9 · original" colorTit={KC.pink} gris={0.65} lineas={TXT.gen9en} tam={25} pie="(texto real del estudio, en inglés)" />
+          <Hoja id="g9en" x={330} y={620} s={0.68} rot={-3} titulo="Gen 9 · original" colorTit={KC.pink} gris={0.4} lineas={TXT.gen9en} tam={25} pie="(texto real del estudio, en inglés)" />
           {COLAS.map(([c], i) => { const at = K.L + 0.2 + i * 0.55, e = kprog(T, at, at + 0.4, kEase.rebote); if (e <= 0) return null;
-            return <g key={i} transform={`translate(${130 + i * 205} 1080) scale(${e})`}><Liebre x={0} y={0} s={0.7} cola={c} T={T} fase={i} /></g>; })}
+            return <g key={i} transform={`translate(${130 + i * 205} 1010) scale(${e})`}><Liebre x={0} y={0} s={0.7} cola={c} T={T} fase={i} /></g>; })}
         </>)}
       </Escena>
-      {COLAS.map(([c, n], i) => <Chip key={n} T={T} at={K.L + 0.4 + i * 0.55} until={K.P - 0.2} texto={n} x={130 + i * 205} y={1150} tam={26} borde={c === '#ffffff' ? KC.ink : c} fondo={c === '#1d1d22' || c === KC.blue || c === KC.red ? c : KC.paper} color={c === '#1d1d22' || c === KC.blue || c === KC.red ? KC.texto : KC.ink} />)}
+      {COLAS.map(([c, n], i) => <Chip key={n} T={T} at={K.L + 0.4 + i * 0.55} until={K.P - 0.2} texto={n} x={130 + i * 205} y={1095} tam={26} borde={c === '#ffffff' ? KC.ink : c} fondo={c === '#1d1d22' || c === KC.blue || c === KC.red ? c : KC.paper} color={c === '#1d1d22' || c === KC.blue || c === KC.red ? KC.texto : KC.ink} />)}
 
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.C} zoom={0.1}>
@@ -258,7 +258,7 @@ function IAComeIA() {
       <Etq T={T} at={K.C + 0.8} until={K.C + 0.8 + (S9 - K.C) * 0.55} x={170} y={960} texto="lo raro" color={KC.pink} lado="der" tam={36} />
       <Etq T={T} at={K.C + 0.8} until={K.C + 0.8 + (S9 - K.C) * 0.55} x={910} y={960} texto="lo raro" color={KC.pink} lado="izq" tam={36} />
       <Chip T={T} at={S9 + 0.5} until={K.I - 0.2} texto="errores heredados" x={540} y={680} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.C + 1.0} until={K.I - 0.2} texto="esquema" x={900} y={1170} tam={24} borde={KC.texto} />
+      <Chip T={T} at={K.C + 1.0} until={K.I - 0.2} texto="esquema" x={900} y={1150} tam={24} borde={KC.texto} />
 
       {/* 8 · internet se llena de texto de IA */}
       <Escena T={T} a={K.I} b={K.A}>
@@ -274,29 +274,29 @@ function IAComeIA() {
         </>)}
       </Escena>
       <Chip T={T} at={K.I + 0.3} until={K.A - 0.2} texto="internet" x={360} y={510} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.I + 3.0} until={K.A - 0.2} texto="próxima IA" x={860} y={1150} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.I + 3.0} until={K.A - 0.2} texto="próxima IA" x={860} y={1115} tam={34} borde={KC.ink} />
 
       {/* 9 · el matiz: acumular en vez de reemplazar */}
       <Escena T={T} a={K.A} b={K.Ci}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <Pila x={270} base={1130} capas={reempl} T={T} at0={a0} paso={pasoA} />
-          <Pila x={810} base={1130} capas={acum} T={T} at0={a0} paso={pasoA} />
-          <line x1={540} y1={700} x2={540} y2={1150} stroke={KC.ink} strokeWidth={5} strokeDasharray="14 12" opacity=".4" />
+          <Pila x={270} base={1080} capas={reempl} T={T} at0={a0} paso={pasoA} h={66} />
+          <Pila x={810} base={1080} capas={acum} T={T} at0={a0} paso={pasoA} h={66} />
+          <line x1={540} y1={640} x2={540} y2={1090} stroke={KC.ink} strokeWidth={5} strokeDasharray="14 12" opacity=".4" />
         </>)}
       </Escena>
-      <Chip T={T} at={K.A + 0.3} until={K.Ci - 0.2} texto="reemplazar" x={270} y={760} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.A + 0.5} until={K.Ci - 0.2} texto="acumular" x={810} y={760} tam={38} borde={KC.mint} />
-      <Chip T={T} at={a0 + 4 * pasoA + 0.3} until={K.Ci - 0.2} texto="colapsa ✗" x={270} y={960} tam={40} borde={KC.red} />
-      <Chip T={T} at={a0 + 4 * pasoA + 0.5} until={K.Ci - 0.2} texto="no colapsa ✔" x={810} y={600} tam={40} borde={KC.mint} />
-      <Chip T={T} at={K.A + 0.6} until={K.Ci - 0.2} texto="Gerstgrasser et al. · Stanford · 2024" x={540} y={1190} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.A + 0.3} until={K.Ci - 0.2} texto="reemplazar" x={270} y={690} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.A + 0.5} until={K.Ci - 0.2} texto="acumular" x={810} y={690} tam={38} borde={KC.mint} />
+      <Chip T={T} at={a0 + 4 * pasoA + 0.3} until={K.Ci - 0.2} texto="colapsa ✗" x={270} y={880} tam={40} borde={KC.red} />
+      <Chip T={T} at={a0 + 4 * pasoA + 0.5} until={K.Ci - 0.2} texto="no colapsa ✔" x={810} y={590} tam={40} borde={KC.mint} />
+      <Chip T={T} at={K.A + 0.6} until={K.Ci - 0.2} texto="Gerstgrasser et al. · Stanford · 2024" x={540} y={1150} tam={28} borde={KC.ink} />
 
       {/* 10 · cierre: la misma hoja, y la IA frente a su espejo */}
       <Escena T={T} a={K.Ci} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
           <Hoja id="g9b" x={300} y={820} s={0.82} rot={-3} titulo="Generación 9" colorTit={KC.pink} lineas={TXT.gen9} tam={25} gris={0.25} pie="(traducido del inglés)" />
-          {COLAS.map(([c], i) => <Liebre key={i} x={110 + i * 190} y={1160} s={0.5} cola={c} T={T} fase={i * 1.1} />)}
+          {COLAS.map(([c], i) => <Liebre key={i} x={110 + i * 190} y={1130} s={0.5} cola={c} T={T} fase={i * 1.1} />)}
           <g opacity={kprog(T, K.Ci + 1.0, K.Ci + 1.6)}>
             <rect x={640} y={720} width={340} height={360} rx={30} fill="#cfe9f5" stroke={KC.ink} strokeWidth={9} />
             {[1, 0.7, 0.49, 0.34].map((k, i) => <g key={i} opacity={1 - i * 0.22}><Robotito x={810} y={930} s={0.55 * k} T={T + i * 0.3} cara="duda" color={mixHex(KC.cyan, '#9a9a9a', i * 0.3)} /></g>)}
@@ -307,7 +307,7 @@ function IAComeIA() {
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={S1 - 0.1} texto="No está obsesionada: *es la generación 9.*" />
-      <Subtitulo T={T} idx={1} at={S1} until={K.F - 0.1} texto="Empezó con *torres de iglesias.*" />
+      <Subtitulo T={T} idx={1} at={S1} until={K.F - 0.1} texto="Le pidieron seguir: *torres de iglesias.*" />
       <Subtitulo T={T} idx={2} at={K.F + 0.1} until={K.E - 0.1} texto="Fotocopia de fotocopia: *cada copia pierde.*" />
       <Subtitulo T={T} idx={3} at={K.E + 0.1} until={S4 - 0.1} texto="Oxford y Cambridge · *Nature, 2024.*" />
       <Subtitulo T={T} idx={4} at={S4} until={K.Gn - 0.1} texto="Cada una aprende *de la anterior.*" />
