@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Xantana base narrada.dc.html",
+  "salida": "Shot Xantana narrado.dc.html",
+  "nota": "Shot Biotecnológico #19. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese aderezo no está espeso por la crema: lo espesó una bacteria."
+    },
+    {
+      "escena": "Etiqueta",
+      "texto": "Se llama goma xantana, y está hasta en tu pasta de dientes."
+    },
+    {
+      "escena": "Col",
+      "texto": "La hace Xanthomonas campestris, la bacteria de la pudrición negra de la col."
+    },
+    {
+      "escena": "Col",
+      "texto": "En la hoja, se envuelve en esa baba para protegerse."
+    },
+    {
+      "escena": "Tanque",
+      "texto": "En la fábrica la crían en tanques con azúcar y suelta la goma afuera."
+    },
+    {
+      "escena": "Alcohol",
+      "texto": "Luego la sacan con alcohol y la secan: en el polvo ya no queda bacteria viva."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo espesa tanto con tan poquito?"
+    },
+    {
+      "escena": "Cadena",
+      "texto": "Por dentro, cada molécula es una cadena larguísima de azúcares, enroscada en hélice."
+    },
+    {
+      "escena": "Red",
+      "texto": "En reposo, esas cadenas se enredan en una red que frena el agua."
+    },
+    {
+      "escena": "Agitar",
+      "texto": "Si agitas el frasco, se alinean y el aderezo corre; quieto, vuelve a espesar."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1961, Allene Jeanes y su equipo, del gobierno de Estados Unidos en Peoria, publicaron cómo hacerla con glucosa; en 1969 la aprobaron para alimentos."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Y esa misma goma espesa el lodo para perforar pozos de petróleo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu aderezo no es espeso por la crema: es la baba de una bacteria."
+    }
+  ]
+}

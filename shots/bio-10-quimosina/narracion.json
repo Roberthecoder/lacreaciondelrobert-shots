@@ -5,19 +5,19 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese cuajo no salió del estómago de un becerro: lo fabricó un microbio."
+      "texto": "Ese cuajo no salió del estómago de un becerro: lo hizo un microbio."
     },
     {
       "escena": "Leche",
-      "texto": "Unas gotas en la leche y se vuelve cuajada."
+      "texto": "Unas gotas en la leche, y se cuaja."
     },
     {
       "escena": "Becerro",
-      "texto": "El cuajo clásico se saca del cuarto estómago de becerros que todavía maman."
+      "texto": "El cuajo clásico sale del cuarto estómago de becerros que aún maman."
     },
     {
       "escena": "Escasez",
-      "texto": "Pero no alcanzaban, y se buscaron otras fuentes."
+      "texto": "Pero no alcanzaban: se buscaron otras fuentes."
     },
     {
       "escena": "Enzima",
@@ -25,11 +25,11 @@
     },
     {
       "escena": "Micelas",
-      "texto": "En la leche, la caseína flota en bolitas, las micelas, con pelitos."
+      "texto": "En la leche, la caseína flota en bolitas con pelitos: las micelas."
     },
     {
       "escena": "Pelitos",
-      "texto": "Esos pelitos son kappa-caseína, y no dejan que las bolitas se peguen."
+      "texto": "Esos pelitos son kappa-caseína: no dejan que las bolitas se peguen."
     },
     {
       "escena": "Tijera",
@@ -37,15 +37,15 @@
     },
     {
       "escena": "Cuajada",
-      "texto": "Sin pelitos, las micelas se juntan con el calcio y forman la cuajada."
+      "texto": "Sin pelitos, las micelas se unen con el calcio y forman la cuajada."
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y cómo hace un microbio una enzima de becerro?"
+      "texto": "¿Cómo hace un microbio una enzima de becerro?"
     },
     {
       "escena": "Gen",
-      "texto": "Le metieron una copia del gen del becerro, y la bacteria fabrica quimosina idéntica."
+      "texto": "Le metieron una copia del gen del becerro y la bacteria fabrica quimosina idéntica."
     },
     {
       "escena": "Estudio",
@@ -53,11 +53,11 @@
     },
     {
       "escena": "Hoy",
-      "texto": "Después también la hicieron levaduras y mohos, y hoy su uso es muy común."
+      "texto": "Después también la hicieron levaduras y mohos; hoy su uso es muy común."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que tu queso fresco pudo cuajarlo una enzima de becerro hecha por un microbio."
+      "texto": "Así que tu queso fresco pudo cuajarlo una enzima de becerro hecha por microbios."
     }
   ]
 }

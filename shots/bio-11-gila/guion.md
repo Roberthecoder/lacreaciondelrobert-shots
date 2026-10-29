@@ -18,12 +18,12 @@
 | 4 | Pregunta | ¿Y si hubiera una versión que esa tijera no pudiera cortar? | **Re-gancho.** La tijera se abre y se cierra sobre un signo de interrogación. |
 | 5 | Eng | En 1992, John Eng, en un hospital de Nueva York, la encontró en la saliva venenosa del lagarto: la exendina-4. | `TarjetaEstudio` "1992 · VA Medical Center, Bronx, Nueva York · John Eng": un tubito con saliva del lagarto y una cadena de **39 perlas** que se arma. |
 | 6 | Cerradura | Se parece a tu GLP-1 y abre la misma cerradura en el páncreas. | Célula beta del páncreas con un receptor-cerradura; entran la llave GLP-1 y la llave exendina-4: las dos encajan y sale insulina. |
-| 7 | Aminoacido | Pero cambia su segundo aminoácido, y la tijera ya no la corta. | Acercamiento a las primeras perlas: GLP-1 "H·**A**·E…" vs exendina-4 "H·**G**·E…". La tijera DPP-4 resbala sobre la exendina-4. |
+| 7 | Aminoacido | Pero cambia su segundo aminoácido, y la tijera casi no la puede cortar. | Acercamiento a las primeras perlas: GLP-1 "H·**A**·E…" vs exendina-4 "H·**G**·E…". La tijera DPP-4 resbala sobre la exendina-4. |
 | 8 | Exenatida | Así nació la exenatida, aprobada en 2005: dura horas, no minutos. | `TarjetaEstudio` "2005 · FDA · Byetta (exenatida)". Barra comparativa: GLP-1 ≈ 2 min vs exenatida ≈ 2.4 h (vida media). |
 | 9 | Fabrica | Y no se ordeñan lagartos: se fabrica en laboratorio. | Un lagarto con un "✗" sobre una cubeta de ordeña (chiste); al lado, un matraz donde se arma la cadena sintética de 39 aminoácidos. Chip "sintética". |
 | 10 | Ozempic | Ojo: el Ozempic no sale del lagarto; es un GLP-1 humano retocado. | `MitoTachado` "Ozempic = saliva de lagarto". Cadena de GLP-1 humano con dos perlas cambiadas y una "colita" de grasa; etiqueta "semaglutida · 94 % igual al GLP-1 humano · 2017". |
 | 11 | Comida | Y el lagarto come pocas veces, pero hasta un tercio de su peso. | El lagarto frente a un huevo enorme; `Medidor` "comida = hasta ⅓ de su peso". |
-| 12 | Cierre | Esa familia de medicinas no empezó en una farmacia: empezó en la saliva de un lagarto. | **Regreso a la imagen del inicio:** el mismo lagarto en la arena, ahora con la pluma y la etiqueta "el primero de la familia: exenatida". |
+| 12 | Cierre | El primero de esa familia de medicinas no salió de una farmacia: salió de la saliva de un lagarto. | **Regreso a la imagen del inicio:** el mismo lagarto en la arena, ahora con la pluma y la etiqueta "el primero de la familia: exenatida". |
 | — | Outro | (sin voz) | `CierreMarca tema="bioquimica"` con Robert. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
