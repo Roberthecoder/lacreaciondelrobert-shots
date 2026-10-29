@@ -8,7 +8,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ```text
 Esto no es una esponja: es un edificio de departamentos para bacterias. 🧽🦠
 En un cubito de un centímetro, en algunas zonas, calcularon hasta 54 mil millones de bacterias. Lo vieron en Alemania, en un estudio publicado en 2017 con 14 esponjas usadas de casas de verdad: leyeron su ADN y encontraron 362 grupos de bacterias, que viven en los huecos y en la superficie, pegadas en capas, como una película.
-¿Y si la lavas con agua caliente o la metes al micro? En las cuatro que compararon, las que limpiaban así no tenían menos bacterias. Y en ellas había más Moraxella osloensis, famosa por dejar oliendo feo la ropa lavada. Los autores sospechan que también es culpable del olor de tu esponja.
+¿Y si la lavas con agua caliente o la metes al micro? En las cuatro que compararon, las que limpiaban así no tenían menos bacterias. Y en el ADN de las 14, las que se limpiaban seguido traían más Moraxella osloensis, famosa por dejar oliendo feo la ropa lavada. Los autores sospechan que también es culpable del olor de tu esponja.
 Hervirla o el micro sí bajan las bacterias, pero creen que las que sobreviven vuelven a llenarla. Su consejo: cámbiala seguido, por ejemplo, cada semana.
 El dibujo es esquemático.
 Fuente: Cardinale et al. 2017, Scientific Reports.
@@ -21,7 +21,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esto no es una esponja: es un edificio de departamentos para bacterias. 🧽🦠
-Un estudio en Alemania (2017) analizó 14 esponjas usadas: en algunas zonas calcularon hasta 54 mil millones de bacterias por centímetro cúbico, y por su ADN, 362 grupos. En las cuatro que compararon, las que se limpiaban con agua caliente o en el micro no tenían menos bacterias y tenían más Moraxella osloensis, la sospechosa del mal olor. Su consejo: cámbiala seguido, por ejemplo cada semana.
+Un estudio en Alemania (2017) analizó 14 esponjas usadas: en algunas zonas calcularon hasta 54 mil millones de bacterias por centímetro cúbico, y por su ADN, 362 grupos. En las cuatro que compararon, las que se limpiaban con agua caliente o en el micro no tenían menos bacterias; y en el ADN de las 14, las que se limpiaban seguido tenían más Moraxella osloensis, la sospechosa del mal olor. Su consejo: cámbiala seguido, por ejemplo cada semana.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cada cuánto cambias la esponja en tu casa? 👇
 Shot Científico #07 · La Creación del Robert
@@ -38,7 +38,7 @@ Descripción:
 ```text
 Esto no es una esponja: es un edificio de departamentos para bacterias.
 En un estudio publicado en 2017, un equipo en Alemania analizó 14 esponjas usadas de casas reales. Con análisis de imagen calcularon, en algunas zonas, hasta 54 mil millones de bacterias por centímetro cúbico, y por su ADN encontraron 362 grupos de bacterias. Viven en los huecos y en la superficie, en capas parecidas a una película (biopelícula).
-En las cuatro esponjas que compararon al microscopio, las que sus dueños limpiaban seguido (micro o agua caliente con jabón) no tenían menos bacterias; y las limpiadas tenían una proporción mayor de Moraxella osloensis, conocida por el mal olor de la ropa lavada (los autores sospechan que también causa el olor de la esponja). Hervirla o el micro sí bajan las bacterias, pero los autores creen que las que sobreviven vuelven a llenarla. Su consejo: cambiarla seguido, por ejemplo cada semana.
+En las cuatro esponjas que compararon al microscopio, las que sus dueños limpiaban seguido (micro o agua caliente con jabón) no tenían menos bacterias; y en el ADN de las 14, las que se limpiaban seguido tenían una proporción mayor de Moraxella osloensis, conocida por el mal olor de la ropa lavada (los autores sospechan que también causa el olor de la esponja). Hervirla o el micro sí bajan las bacterias, pero los autores creen que las que sobreviven vuelven a llenarla. Su consejo: cambiarla seguido, por ejemplo cada semana.
 Es un estudio pequeño: 54 mil millones es la densidad máxima calculada en algunas zonas, no el promedio, y la comparación de limpieza fue con pocas esponjas.
 El dibujo es esquemático.
 Fuente:

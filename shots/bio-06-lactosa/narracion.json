@@ -1,5 +1,4 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Lactosa base narrada.dc.html",
   "salida": "Shot Lactosa narrado.dc.html",
   "velocidad": 1.06,
@@ -27,11 +26,11 @@
     },
     {
       "escena": "Estudio",
-      "texto": "Eso probaron en 1998 en Filadelfia: un virus adeno-asociado, por la boca, cargando el gen."
+      "texto": "Eso probaron en 1998 en Filadelfia: un virus adeno-asociado, por la boca, cargando el gen de una enzima que parte la lactosa."
     },
     {
       "escena": "Ratas",
-      "texto": "Las ratas volvieron a digerir lactosa, y el efecto duró meses."
+      "texto": "Las ratas, adultas y con poca lactasa como nosotros, volvieron a digerir lactosa, y el efecto duró meses."
     },
     {
       "escena": "Auto",

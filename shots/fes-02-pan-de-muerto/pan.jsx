@@ -279,7 +279,7 @@ function PanDeMuerto() {
       <Subtitulo T={T} idx={3} at={K.S + 0.1} until={K.Gl - 0.1} texto="Suelta *gas y alcohol.*" />
       <Subtitulo T={T} idx={4} at={K.Gl + 0.1} until={K.P - 0.1} texto="El gluten atrapa el gas: *se infla.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.H - 0.1} texto="¿Tiene *alcohol?*" />
-      <Subtitulo T={T} idx={6} at={K.H + 0.1} until={K.M - 0.1} texto="Muy poquito: *se evapora.*" />
+      <Subtitulo T={T} idx={6} at={K.H + 0.1} until={K.M - 0.1} texto="Pan dulce empacado: *>1 g por 100 g.*" />
       <Subtitulo T={T} idx={7} at={K.M + 0.1} until={K.E - 0.1} texto="Las burbujas: *los hoyitos.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.Ge - 0.1} texto="1996: *todo su ADN.*" />
       <Subtitulo T={T} idx={9} at={K.Ge + 0.1} until={K.D - 0.1} texto="Unos *6,000 genes.*" />

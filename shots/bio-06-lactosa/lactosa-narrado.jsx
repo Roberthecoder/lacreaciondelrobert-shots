@@ -138,7 +138,7 @@ function LactosaNarrado() {
 
       {/* la Lupa de rayos X vive en las dos escenas: llena de enzimas y luego casi vacía */}
       <Lupa T={T} at={K.B + 0.35} until={K.A - 0.25} x={720} y={700} r={250} fx={360} fy={900}
-        interior={(t, r) => <BordeConEnzimas T={t} r={r} cuantas={1} />} etiqueta="RAYOS X · borde del intestino" />
+        interior={(t, r) => <BordeConEnzimas T={t} r={r} cuantas={1} />} etiqueta="AL MICROSCOPIO · borde del intestino" />
       <Lupa T={T} at={K.A + 0.3} until={K.Ga - 0.25} x={330} y={620} r={230} fx={540} fy={860}
         interior={(t, r) => <BordeConEnzimas T={t} r={r} cuantas={0.12} />} etiqueta="el mismo borde, de adulto" tinte={KC.red} />
       <Medidor T={T} at={K.B + 1.6} until={K.Ga - 0.25} etiqueta="LACTASA EN EL BORDE"
@@ -199,7 +199,7 @@ function LactosaNarrado() {
       <Medidor T={T} at={K.R + 0.5} until={K.Au - 0.25} etiqueta="ENZIMA QUE PARTE LA LACTOSA"
         valor={(t) => klerp(0.1, 0.84, kprog(t, K.R + 0.7, K.R + 2.4, kEase.sale))}
         texto={(v) => (v > 0.5 ? 'otra vez' : 'subiendo…')} y={1560} color={KC.mint} />
-      <Chip T={T} at={K.R + 2.6} until={K.Au - 0.25} texto="en ratas · duró meses" y={430} borde={KC.gold} tam={42} />
+      <Chip T={T} at={K.R + 2.6} until={K.Au - 0.25} texto="ratas adultas con poca lactasa · meses" y={430} borde={KC.gold} tam={36} />
 
       {/* 7 · AUTO — 2018, un divulgador */}
       <EscenaFundido T={T} a={K.Au} b={K.O} zoom={0.04}>
@@ -281,8 +281,8 @@ function LactosaNarrado() {
       <Subtitulo T={T} idx={2} at={K.A + 0.1} until={K.Ga - 0.1} texto="Al crecer, *la mayoría baja* esa producción." />
       <Subtitulo T={T} idx={3} at={K.Ga + 0.1} until={K.P - 0.1} texto="La lactosa sigue de largo: *tus bacterias la fermentan.*" />
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.E - 0.1} texto="¿Y si le devolvieras *la receta?*" />
-      <Subtitulo T={T} idx={5} at={K.E + 0.1} until={K.R - 0.1} texto="1998: un *virus con un gen,* por la boca." />
-      <Subtitulo T={T} idx={6} at={K.R + 0.1} until={K.Au - 0.1} texto="Las ratas digirieron lactosa *durante meses.*" />
+      <Subtitulo T={T} idx={5} at={K.E + 0.1} until={K.R - 0.1} texto="1998: un virus con *el gen de una enzima,* por la boca." />
+      <Subtitulo T={T} idx={6} at={K.R + 0.1} until={K.Au - 0.1} texto="Ratas adultas con poca lactasa: *digirieron lactosa meses.*" />
       <Subtitulo T={T} idx={7} at={K.Au + 0.1} until={K.O - 0.1} texto="En 2018 un divulgador *se lo hizo a sí mismo.*" />
       <Subtitulo T={T} idx={8} at={K.O + 0.1} until={K.Re - 0.1} texto="Ojo: *no es un tratamiento aprobado.*" />
       <Subtitulo T={T} idx={9} at={K.Re + 0.1} until={K.Cr - 0.1} texto="Tu intestino se cambia *cada 4 o 5 días.*" />

@@ -48,4 +48,18 @@ Otro agente, que no escribió el guion, abrió la fuente primaria (Cardinale et 
 
 Re-verificación de las 4 frases nuevas contra PMC5517580: ✅. Voz nueva: 944 caracteres (≈ 58 s) + cierre 3.5 s = 61.5 s en la base.
 
+## Re-verificación (29 oct, auditoría)
+Se corrigió la atribución del dato de *Moraxella*: ya no se le cuelga a las 4 esponjas del microscopio, sino a la secuenciación de ADN de las 14 (voz, subtítulo idx 7, guion y publicación). Texto completo abierto por la API de Europe PMC (PMC5517580).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| El ADN se leyó de las 14 esponjas (voz «en el ADN de las catorce»; publicación «en el ADN de las 14») | ✅ | Cardinale et al., *Sci. Rep.* 7: 5791, PMC5517580 (Resultados) | "A total of 223,741 raw sequences were obtained by 454–pyrosequencing of 16S rRNA gene amplicon libraries from 28 sponge samples, stemming from 14 used kitchen sponges." · "Our dataset was based on 14 sponges separated into top and bottom parts" | 2017 |
+| En esa secuenciación, las que se limpiaban seguido traían más (mayor proporción de) *Moraxella osloensis*; la comparación es sobre el conjunto de secuenciación, no sobre las 4 del microscopio | ✅ | PMC5517580 (Resultados, Fig. 3B) | "G–test of independence showed four significantly different OTUs between the two groups… (OTU 99 – related to Moraxella osloensis…)… two of them (OTU 99 and OTU 3112) were relatively more abundant in sponges that were regularly cleaned with special procedures" · Resumen: "showed significantly greater proportions in regularly sanitized sponges" | 2017 |
+| Las 4 del microscopio son otro análisis (no el de *Moraxella*) | ✅ | PMC5517580 (Métodos) | "four sponge samples with different metadata were selected: 1 b and 9 b (not regularly sanitized sponges), 3 b and 10 b (regularly sanitized sponges)" | 2017 |
+| «Se limpiaban seguido» = lo que dijeron sus dueños | ✅ | PMC5517580 (Discusión) | "regularly sanitized sponges (as indicated by their users)" | 2017 |
+| *Moraxella osloensis*, famosa por dejar oliendo feo la ropa lavada (subtítulo «ropa que huele feo») | ✅ | PMC5517580 (Discusión) | "Moraxella osloensis, is also known for generating malodor in laundry" | 2017 |
+| Subtítulo «En su ADN: más *Moraxella*» | ✅ | mismas frases | Es resumen de la voz; «más» = mayor proporción relativa, igual que en la voz. | 2017 |
+
+Revisé voz, `esponja.jsx`, `guion.md` y `publicacion.md`: ya no queda ninguna frase que le atribuya el dato de *Moraxella* a las 4 esponjas del microscopio.
+
 VEREDICTO: APROBADO

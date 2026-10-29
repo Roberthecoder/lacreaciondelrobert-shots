@@ -7,7 +7,7 @@ Textos listos para copiar (botón de copiar en cada bloque). Plantilla y reglas:
 ### TikTok
 ```text
 Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto. 🍄💗
-Es la seta rosa, Pleurotus djamor, un hongo pantropical que también crece silvestre en México. Empecé el 3 de febrero de 2026 con una esporada sobre papel aluminio; las esporas germinaron en agar y formaron micelio, que pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas.
+Es la seta rosa, Pleurotus djamor, un hongo pantropical que también crece silvestre en México. La seta del video creció de micelio en un bloque de aserrín pasteurizado. De sus esporas hice mi propia cepa: el 3 de febrero de 2026 junté una esporada, las esporas germinaron juntas en agar PDA (germinación multiespórica) y el micelio pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas.
 ¿Qué le avisa al micelio que ya es hora de dar fruto? Un cambio de ambiente: aire fresco (con mucho dióxido de carbono el sombrero no se forma bien), humedad muy alta y algo de luz, que el sombrero necesita para abrirse. Como es tropical, crece mejor entre 22 y 30 °C.
 ¿Y el rosa? Según una revisión mexicana de 2017 (Dulce Salmones, INECOL), todavía no se sabe bien por qué el rosa se mantiene o se pierde, y los primordios rosas pierden color al madurar.
 El dibujo es esquemático; las fotos son de mi cultivo.
@@ -20,7 +20,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto. 🍄💗
-Es la seta rosa (Pleurotus djamor), que también crece silvestre en México. Empezó con una esporada, pasó por agar, grano y sustrato… y dio fruto cuando le cambié el ambiente: aire fresco, humedad muy alta, algo de luz y calor (22–30 °C). ¿Y el rosa? Se aclara al madurar, y todavía no se sabe bien por qué (Salmones, 2017).
+Es la seta rosa (Pleurotus djamor), que también crece silvestre en México. Creció de micelio en un bloque de aserrín pasteurizado, y de sus esporas hice mi propia cepa en agar PDA. Da fruto cuando le cambias el ambiente: aire fresco, humedad muy alta, algo de luz y calor (22–30 °C). ¿Y el rosa? Se aclara al madurar, y todavía no se sabe bien por qué (Salmones, 2017).
 El dibujo es esquemático; las fotos son de mi cultivo. Fuentes en el primer comentario.
 ¿Tú qué hongo cultivarías en tu casa? 👇
 Soy Robert, de La Creación del Robert 🌱
@@ -35,7 +35,7 @@ Esto no es plástico: es un hongo vivo 💗🍄
 Descripción:
 ```text
 Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto.
-Es la seta rosa (Pleurotus djamor), una especie pantropical que también crece silvestre en México. Empecé el 3 de febrero de 2026 con una esporada sobre papel aluminio; las esporas germinaron en agar y formaron micelio, que pasó a grano (15 de marzo) y a sustrato (29 de marzo), hasta los primordios del 19 de abril.
+Es la seta rosa (Pleurotus djamor), una especie pantropical que también crece silvestre en México. La seta del video creció de micelio en un bloque de aserrín pasteurizado. De sus esporas hice mi propia cepa: el 3 de febrero de 2026 junté una esporada, las esporas germinaron juntas en agar PDA (germinación multiespórica) y el micelio pasó a grano (15 de marzo) y a sustrato (29 de marzo), hasta los primordios del 19 de abril.
 ¿Qué le avisa al micelio que ya es hora de dar fruto? Un cambio de ambiente: aire fresco (con mucho CO₂ el sombrero no se diferencia bien), humedad muy alta y algo de luz, que el sombrero necesita para abrirse. Como es tropical, crece mejor entre 22 y 30 °C. ¿Y el rosa? Según la revisión de Dulce Salmones (INECOL, 2017), todavía no se sabe bien por qué el rosa se mantiene o se pierde, y los primordios rosas pierden color al madurar.
 El dibujo es esquemático; las fotos son de mi cultivo. Video completo (44 min): https://youtu.be/CbMcdFRs62Y
 
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto.
-Es la seta rosa, Pleurotus djamor, una especie pantropical que también crece silvestre en México. La cultivé desde una esporada: las esporas germinaron en agar, formaron micelio, pasó a grano y luego a sustrato.
+Es la seta rosa, Pleurotus djamor, una especie pantropical que también crece silvestre en México. Creció de micelio en un bloque de aserrín pasteurizado, y de sus esporas hice mi propia cepa: germinaron juntas en agar PDA (germinación multiespórica), formaron micelio, pasó a grano y luego a sustrato.
 Lo interesante es qué le avisa al micelio que es hora de dar fruto: un cambio de ambiente. Aire fresco (con mucho CO₂ el sombrero no se forma bien), humedad muy alta, algo de luz y calor: entre 22 y 30 °C.
 ¿Y el rosa? Según una revisión mexicana de 2017 (Dulce Salmones, INECOL), se aclara al madurar, y todavía no se sabe bien por qué el rosa se mantiene o se pierde.
 Por qué importa: esa misma revisión la presenta como un hongo con potencial biotecnológico para el neotrópico.
@@ -77,7 +77,7 @@ Esto no es plástico: es una seta rosa viva y la cultivé en mi cuarto 🍄💗 
 ### Threads
 ```text
 Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto 🍄💗
-Es la seta rosa (Pleurotus djamor). Empezó con una esporada y dio fruto cuando le cambié el ambiente: aire fresco, humedad muy alta, algo de luz y calor. ¿Y el rosa? Se aclara al madurar, y todavía no se sabe bien por qué (Salmones, 2017).
+Es la seta rosa (Pleurotus djamor). Creció de micelio en un bloque de aserrín pasteurizado, y de sus esporas hice mi propia cepa. Da fruto cuando le cambias el ambiente: aire fresco, humedad muy alta, algo de luz y calor. ¿Y el rosa? Se aclara al madurar, y todavía no se sabe bien por qué (Salmones, 2017).
 ¿Tú qué hongo cultivarías en tu casa? 👇
 #hongos
 ```
@@ -141,5 +141,5 @@ Fuentes:
 2. Sakamoto, Y. (2018). Influences of environmental factors on fruiting body induction, development and maturation in mushroom-forming fungi. Fungal Biology Reviews 32(4): 236–248.
 3. Nwankwegu, A. S. et al. (2025). Exploring the critical environmental optima and biotechnological prospects of fungal fruiting bodies. Microbial Biotechnology.
 4. Fechas y fotos: mi cultivo (feb–abr 2026), video completo https://youtu.be/CbMcdFRs62Y
-Las fotos del racimo maduro son de mi lote anterior (ene–feb 2026).
+Las fotos del racimo maduro son de la seta que creció en el bloque de aserrín; de sus esporas salió mi cepa.
 ```

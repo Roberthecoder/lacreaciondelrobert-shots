@@ -46,4 +46,20 @@ nuevo coincide con la idea de "casi 1 a 1":
 ## Re-verificación
 Las dos partes corregidas (líneas 9 y 10 del guion) se revisaron otra vez contra PMC4991899: ✅.
 
+## Re-verificación (29 oct, auditoría)
+Se cambió el conteo de células humanas de 2016 (30 billones, 84 % glóbulos rojos, 1.3 : 1) por el más nuevo de Hatton et al. 2023, y se separó qué cifra es de qué año. Revisado por un verificador independiente abriendo el texto completo (Europe PMC) de PMC10523466 y PMC4991899. «Billones» = 10^12 (escala larga) = *trillion* en inglés.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| En 2023 se volvieron a contar: unos 36 billones de células en un hombre, 28 en una mujer (pantalla: «36 billones · células tuyas · hombre · 2023») | ✅ | Hatton et al., *PNAS* 120(39): e2303077120, doi 10.1073/pnas.2303077120 (PMC10523466) | "we estimate total body counts of ≈36 trillion cells in the male, ≈28 trillion in the female" (hombre de referencia de 70 kg, mujer de 60 kg) | 2023 |
+| Cuatro de cada cinco no tienen núcleo: son glóbulos rojos y plaquetas (cuadrícula 80 % roja; chip) | ✅ | Hatton et al. 2023 (PMC10523466), Fig. 1 | "Cell counts are dominated by red blood cells and platelets… Even after removing nonnucleated blood cells (≈29 trillion)… the ≈7 trillion nucleated cell count" → 29/36 ≈ 0.81 (dato del modelo masculino; Sender 2016 da incluso más: "almost 90%… enucleated cells… mostly red blood cells and platelets") | 2023 |
+| Bacterias, según la cuenta de 2016: unos 38 billones | ✅ | Sender, Fuchs y Milo, *PLoS Biol* 14(8): e1002533 (PMC4991899) | "We estimate the total number of bacteria in the 70 kg 'reference man' to be 3.8·10^13" | 2016 |
+| Casi una a una (36 contra 38; barras 36/74) | ✅ | Hatton 2023 y Sender 2016 | 38/36 ≈ 1.06 · Hatton: "total counts converging on values of 30 to 37 trillion human cells, with an approximately equal number of bacteria cells" · Sender: "This B/H value of about 1:1" | 2016 / 2023 |
+| La cuenta la hizo el equipo de Ron Milo, Instituto Weizmann, Israel (2016) | ✅ | PMC4991899 (afiliaciones) | "Sender Ron, Fuchs Shai, Milo Ron · Weizmann Institute of Science, Rehovot, Israel" | 2016 |
+| Según ese estudio pesan unos 200 g, no kilos | ✅ | PMC4991899 | "their total mass is about 0.2 kg" · "updating previous statements that… a normal human hosts 1–3 kg of bacteria" | 2016 |
+| publicacion.md: 2016 = 30 billones humanas, 84 % glóbulos rojos, 1.3 por célula | ✅ | PMC4991899 | "revise past estimates to 3.0·10^13 human cells" · "The cell count is dominated by red blood cells (84%)" · "B/H = 1.3" | 2016 |
+| Cita: Hatton, I. A. et al. (2023), PNAS 120(39): e2303077120 | ✅ | metadatos de PMC10523466 | volumen 120, número 39, e2303077120, doi 10.1073/pnas.2303077120 | 2023 |
+
+Nota menor (no se ve ni se narra): la línea «Formato» de `guion.md` aún dice "10:1 tachado → 1.3:1" y "cuadrícula 30 contra 38"; conviene cambiarla a "≈ 1:1" y "36 contra 38" para que el guion no se contradiga.
+
 VEREDICTO: APROBADO

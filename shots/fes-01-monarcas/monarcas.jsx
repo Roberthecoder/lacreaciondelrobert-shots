@@ -193,6 +193,7 @@ function Monarcas() {
               <text x={x} y={y + 120} textAnchor="middle" style={{ font:`700 ${i === 4 ? 36 : 28}px ${KF.mono}` }} fill={i === 4 ? KC.ink : '#1d4b3a'} opacity={e * (1 - vuela)}>{t}</text>
             </g>; })}
         </>)}
+        <Chip T={T} at={K.Bi + 2.8} until={K.S - 0.2} texto="cuántas generaciones: depende del clima y la latitud" y={1520} borde={KC.gold} tam={34} />
       </Escena>
       {/* 5 · el sol y el reloj de las antenas */}
       <Escena T={T} a={K.S} b={K.P}>
@@ -311,7 +312,7 @@ function Monarcas() {
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Vi - 0.1} texto="No son hojas: *son mariposas monarca.*" />
       <Subtitulo T={T} idx={1} at={K.Vi + 0.1} until={K.A - 0.1} texto="De Canadá y EUA *a los oyameles de México.*" />
       <Subtitulo T={T} idx={2} at={K.A + 0.1} until={K.Bi - 0.1} texto="Dicen que traen *las almas.*" />
-      <Subtitulo T={T} idx={3} at={K.Bi + 0.1} until={K.S - 0.1} texto="Viaja *la tataranieta.*" />
+      <Subtitulo T={T} idx={3} at={K.Bi + 0.1} until={K.S - 0.1} texto="Viaja *la bisnieta o la tataranieta.*" />
       <Subtitulo T={T} idx={4} at={K.S + 0.1} until={K.P - 0.1} texto="El Sol y un *reloj en las antenas.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.Bo - 0.1} texto="¿Y *cuántas llegan?*" />
       <Subtitulo T={T} idx={6} at={K.Bo + 0.1} until={K.E - 0.1} texto="Se mide *el bosque que cubren.*" />

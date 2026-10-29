@@ -18,7 +18,7 @@
 | 4 | Huecos | Viven en los huecos y en la superficie, pegadas en capas, como una película. | **Al microscopio** (fondo oscuro): fibras de la esponja con huecos cuyas orillas se llenan de bacterias. Escala en µm. |
 | 5 | Pregunta | ¿Y si la lavas con agua caliente o la metes al micro? | **Re-gancho.** Microondas encendido y "?"; Robert grande. |
 | 6 | Igual | En las cuatro que compararon, las que limpiaban así no tenían menos bacterias. | Dos barras casi iguales "≈": limpiadas seguido / sin limpiar; chip "de 4 comparadas: no tenían menos". |
-| 7 | Moraxella | Y en ellas había más Moraxella osloensis, famosa por dejar oliendo feo la ropa lavada. | Bacterias en pares (*Moraxella osloensis*) alrededor de una playera con olor. |
+| 7 | Moraxella | Y en el ADN de las catorce, las que se limpiaban seguido traían más Moraxella osloensis, famosa por dejar oliendo feo la ropa lavada. (Corregido el 29 oct 2026: el dato viene de la secuenciación de las 14 esponjas, no de las 4 del microscopio.) | Bacterias en pares (*Moraxella osloensis*) alrededor de una playera con olor. |
 | 8 | Olor | Los autores sospechan que también es culpable del olor de tu esponja. | La esponja con líneas de olor; chip "sospecha: culpable del olor". |
 | 9 | Regresan | Hervirla o el micro sí bajan las bacterias, pero creen que las que sobreviven vuelven a llenarla. | Microondas prendido; medidor "bacterias en la esponja" que baja y vuelve a subir, con la etiqueta "¿vuelven a crecer?" (hipótesis de los autores). |
 | 10 | Consejo | Su consejo: cámbiala seguido, por ejemplo, cada semana. | Calendario "CADA SEMANA" que se llena de 7 días. |

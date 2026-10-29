@@ -122,7 +122,8 @@ function Pilobolus() {
             return <><path d={d} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" fill="none" /><ellipse cx={ex} cy={ey} rx={16} ry={11} fill={KC.ink} /></>; })()}
           <g opacity={kprog(T, K.Di + 2.2, K.Di + 2.6)}>
             <line x1={190} y1={1140} x2={950} y2={1140} stroke={KC.ink} strokeWidth={8} /><line x1={190} y1={1115} x2={190} y2={1165} stroke={KC.ink} strokeWidth={8} /><line x1={950} y1={1115} x2={950} y2={1165} stroke={KC.ink} strokeWidth={8} />
-            <text x={570} y={1210} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>2.5 m</text>
+            <text x={570} y={880} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>2.5 m</text>
+            <text x={570} y={930} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>dato de 1934</text>
           </g>
         </>)}
       </Escena>
@@ -200,7 +201,7 @@ function Pilobolus() {
       <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.V - 0.1} texto="2008: *50,000 cuadros por segundo.*" />
       <Subtitulo T={T} idx={7} at={K.V + 0.1} until={K.Gr - 0.1} texto="Hasta 13 m/s: *≈ 47 km/h.*" />
       <Subtitulo T={T} idx={8} at={K.Gr + 0.1} until={K.Di - 0.1} texto="Más de *20,000 veces la gravedad.*" />
-      <Subtitulo T={T} idx={9} at={K.Di + 0.1} until={K.Va - 0.1} texto="2.5 metros: *al pasto limpio.*" />
+      <Subtitulo T={T} idx={9} at={K.Di + 0.1} until={K.Va - 0.1} texto="2.5 m (dato de 1934): *pasto limpio.*" />
       <Subtitulo T={T} idx={10} at={K.Va + 0.1} until={K.Po - 0.1} texto="Despiertan *en la panza de la vaca.*" />
       <Subtitulo T={T} idx={11} at={K.Po + 0.1} until={K.C - 0.1} texto="Polizones: *larvas de gusano.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Un cañón *apuntando al sol.*" />

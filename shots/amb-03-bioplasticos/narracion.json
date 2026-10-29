@@ -1,13 +1,8 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Bioplasticos base narrada.dc.html",
   "salida": "Shot Bioplasticos narrado.dc.html",
   "velocidad": 1.083,
   "nota": "Ambiental #03. Una línea por subtítulo (idx 0..10 del jsx). Pendiente de aprobación de Robert: NO generar la voz sin su visto bueno (~938 créditos de ElevenLabs en una sola petición).",
-  "mudo": {
-    "dcHtml": "Shot Bioplasticos mudo.dc.html",
-    "audio": "assets/mezcla_mudo.wav"
-  },
   "lineas": [
     {
       "escena": "Gancho",

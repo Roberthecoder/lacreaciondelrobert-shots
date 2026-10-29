@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es un arcoíris: es todo lo que la biotecnología ya hizo por ti hoy. 🌈
 Roja = salud. Verde = campo. Blanca = industria. Amarilla = comida. Azul = mar. Gris = ambiente. Café = desierto. Dorada = datos. Morada = leyes y ética. Oscura = armas biológicas y bioterrorismo.
-Edgar DaSilva (UNESCO) juntó estos colores en 2004; los significados cambian un poco según el autor. Casi nunca van solos: la insulina se hace con microbios (roja) en fábricas (blanca). Y nosotros sumamos uno: naranja, contarlo.
+Edgar DaSilva (UNESCO) juntó estos colores en 2004; los significados cambian un poco según el autor. Casi nunca van solos: la insulina se hace con microbios (roja) en fábricas (blanca). Y hay uno más: naranja, contarlo (Thieman y Palladino, 2010).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿De qué color es la biotecnología que más usas tú? 👇
 Shot Biotecnológico #01 · La Creación del Robert
@@ -105,5 +105,5 @@ Fuentes:
 3. Thieman, W. y Palladino, M. (2010). Introducción a la biotecnología, citado por Morales-Barrón, B. M. (2021), "Los colores de la biotecnología", BUAP: gris = ambiente, violeta = bioética y propiedad intelectual, naranja = divulgación.
 4. Kuddus, M. et al. (2024). Cold-active microbial enzymes and their biotechnological applications. Microbial Biotechnology (enzimas de detergente en agua fría).
 5. Siew, Y. Y. y Zhang, W. (2021). Downstream processing of recombinant human insulin and its analogues production from E. coli inclusion bodies. Bioresources and Bioprocessing (insulina hecha con microbios).
-La lista de colores cambia según el autor; la naranja (divulgación) no está en DaSilva y aquí la sumamos.
+La lista de colores cambia según el autor; la naranja (divulgación) no está en DaSilva: viene de Thieman y Palladino (2010).
 ```

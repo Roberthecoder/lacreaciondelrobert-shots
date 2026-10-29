@@ -1,5 +1,4 @@
 {
-  "voz_aprobada": true,
   "especial": "Día de Muertos",
   "serie_vinculada": "Biotecnológico",
   "velocidad": 1.0,
@@ -33,7 +32,7 @@
     },
     {
       "escena": "Horno",
-      "texto": "Muy poquito: en el horno se evapora buena parte, y el calor mata a las levaduras."
+      "texto": "Queda un poco: en Alemania, en panes dulces de leche empacados, midieron algo más de un gramo de alcohol por cada cien gramos de pan. Y el calor del horno mata a las levaduras."
     },
     {
       "escena": "Miga",

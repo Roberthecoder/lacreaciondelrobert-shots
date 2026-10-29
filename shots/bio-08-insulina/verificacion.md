@@ -28,4 +28,19 @@
 
 Sin ❌ ni ⚠️ pendientes.
 
+## Re-verificación (29 oct, auditoría)
+Se corrigió «el gen… en una bacteria» por dos genes (cadena A y B), cada uno en su propia cepa de *E. coli*, y la pantalla ya no muestra una sola cadena de 51 sino A (21) y B (30) por separado; mismos cambios en `publicacion.md`. Fuente abierta en texto completo (Europe PMC, PMC8152450).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| En 1978 se escribieron (sintetizaron químicamente) los genes de las dos cadenas, A y B | ✅ | Riggs AD, *Endocrine Reviews* 42(3):374–380 (PMC8152450); Crea et al., *PNAS* 75(12):5765 (1978) | "the genes for the A and B chains of insulin were designed using the sequence of amino acids… These genes were then chemically synthesized"; "we were able to obtain functional insulin and prepare a paper for submission by October of 1978" | 1978 (relato de 2021) |
+| Cada gen se metió en su propia bacteria (dos cepas de *E. coli*), en un plásmido | ✅ | Riggs 2021, pie de la figura 2 | "2 E. coli strains were engineered to contain chemically synthesized insulin A or B chain genes inserted into the β-galactosidase gene (β-gal) of a plasmid cloning vector" | 1978 (relato de 2021) |
+| Cada cepa arma su cadena por separado y después se juntan (pantalla: dos plásmidos, dos ribosomas; redes: «después se juntan») | ✅ | Riggs 2021 | "the additional necessity of joining the 2 peptide chains, which were each made and purified separately"; "After separate purification of the insulin A and B chains, they are joined through air oxidation" | 1978 (relato de 2021) |
+| Cadena A de 21 aminoácidos, cadena B de 30, 51 en total (chip, medidor, contador, subtítulo, redes) | ✅ | Riggs 2021 | "Human insulin, which is comprised of a total of 51 amino acids (21 aa A chain and 30 aa B chain)" | 2021 |
+| «51 notas, una por aminoácido» sigue siendo correcto | ✅ | Riggs 2021 (misma frase) | "a total of 51 amino acids" | 2021 |
+
+Nota (no es error de hechos): en `guion.md` quedan descripciones internas viejas que no salen en el video: fila 3, columna de pantalla, dice chip «1978 · el gen, escrito» (el `.jsx` ya dice «1978 · dos genes, escritos»); la tabla de Robert (35,0–38,5 s) dice «51 aminoacidos, uno por uno». Conviene actualizarlas para que no confundan.
+
+Sin ❌ ni ⚠️ en lo corregido.
+
 VEREDICTO: APROBADO

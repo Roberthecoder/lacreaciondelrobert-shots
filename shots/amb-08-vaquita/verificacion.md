@@ -46,4 +46,18 @@ Dibujos esquemáticos (no afirman datos): manos, vaquitas, totoaba con su vejiga
 
 Todas las afirmaciones de la versión final están ✅.
 
+## Re-verificación (29 oct, auditoría)
+
+Se corrigió «En 2025, casi todas estaban donde pusieron bloques…» (exageraba el dato) por «ocho de cada diez avistamientos», en la voz, en el subtítulo idx 8, en guion.md y en las 3 descripciones de publicacion.md. Ya no queda en esos archivos ningún «casi todas» / «casi siempre» que lo contradiga.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz: «En 2025, ocho de cada diez avistamientos fueron donde pusieron bloques de concreto con ganchos que atrapan las redes» | ✅ | Informe del Crucero de Observación Vaquita Marina 2025 (IUCN-SSC CSG / CONANP, feb 2026), Figura 2, PDF abierto: https://iucn-csg.org/wp-content/uploads/2026/02/ReporteCruceroObservacionVaquita2025.pdf ; versión en inglés (nov 2025): https://iucn-csg.org/wp-content/uploads/2025/11/Report-vaquita-acoustic-and-visual-survey-2025-EN-Nov-11-clean-FINAL.pdf | «Los avistamientos (puntos morados y estrellas moradas para madres y crías confirmadas) se ubicaron en un 80 % dentro del AE más la ZTA y en un 20 % fuera del área protegida por los bloques con ganchos» · EN: «Sightings … are 80% within the EA plus ZTA and 20% outside the area protected by blocks with hooks». Nota: el pie de figura dice «mayo de 2025» en las dos versiones, pero el único crucero visual de 2025 fue en septiembre (el de los dos barcos, Seahorse y Bob Barker, que salen en esa figura); sea cual sea el mes, el dato es de 2025, que es lo único que dice la voz | 2025 |
+| Bloques de concreto con ganchos que atrapan las redes (en ZTA + AE) | ✅ | Mismo informe | «bloques de concreto con ganchos diseñados para atrapar las redes agalleras» · «fuera del área protegida por los bloques con ganchos» (= AE + ZTA) | 2025 |
+| Subtítulo: «En 2025: 8 de cada 10 junto a los bloques» | ✅ | Mismo informe, Figura 2 | «80 % dentro del AE más la ZTA y en un 20 % fuera» | 2025 |
+| publicacion.md: «el 80 % de los avistamientos fue dentro del área/zona protegida por los bloques… (y el 20 %, fuera)» | ✅ | Mismo informe, Figura 2 | (misma frase) | 2025 |
+| Contexto que no contradice: la mayoría dentro, pero también hubo avistamientos al noroeste | ✅ | Mismo informe | «la investigación de 2025 confirma que las vaquitas pasan la mayor parte de su tiempo dentro de esta pequeña área protegida» · «Como en los cruceros de 2023 y 2024, la mayoría de los avistamientos ocurrieron dentro de las áreas protegidas de la ZTA y el AE, pero en 2025 se registraron detecciones acústicas y visuales hacia el noroeste» | 2025 |
+
+Todas las afirmaciones de la re-verificación están ✅.
+
 VEREDICTO: APROBADO

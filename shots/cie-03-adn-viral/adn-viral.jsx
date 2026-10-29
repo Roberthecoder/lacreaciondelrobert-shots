@@ -185,7 +185,7 @@ function AdnViralNarrado() {
       <Chip T={T} at={K.Ro + 0.3} until={K.P - 0.2} texto="retrovirus endógenos: rotos" y={1480} tam={40} borde={KC.red} />
       <Chip T={T} at={K.P + 0.2} until={K.E - 0.3} texto="env: la envoltura" y={1480} tam={44} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2000" quien="Mi et al. · Genetics Institute" revista="Nature 403: 785–789 · sincitina" y={520} />
-      <Lupa T={T} at={K.E + 3.6} until={K.Ra - 0.3} x={760} y={560} r={230} fx={700} fy={960} interior={(t, r) => <Sincitio T={t} r={r} funde={kprog(t, K.F + 0.6, K.F + 3.6)} />} etiqueta="RAYOS X · placenta" tinte={VIR2} />
+      <Lupa T={T} at={K.E + 3.6} until={K.Ra - 0.3} x={760} y={560} r={230} fx={700} fy={960} interior={(t, r) => <Sincitio T={t} r={r} funde={kprog(t, K.F + 0.6, K.F + 3.6)} />} etiqueta="AL MICROSCOPIO · placenta" tinte={VIR2} />
       <Etq T={T} at={K.F + 3.4} until={K.Ra - 0.3} x={560} y={1150} texto="una sola capa: sincitio" color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Ra + 2.4} anio="2009" quien="Dupressoir et al. · Francia" revista="PNAS 106: 12127–12132 · ratones" y={540} />
       <Lupa T={T} at={K.Ra + 2.2} until={K.O - 0.3} x={540} y={560} r={200} fx={520} fy={1110} interior={(t, r) => <Sincitio T={t} r={r} sinSincitina />} etiqueta="sin sincitina" tinte={KC.red} />
@@ -193,7 +193,7 @@ function AdnViralNarrado() {
       <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="parte de ti fue virus" x={360} y={330} tam={48} borde={VIR} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="1 de cada 12 *no es humano: es virus.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="Casi 1 de cada 12 *vino de un virus.*" />
       <Subtitulo T={T} idx={1} at={K.R + 0.1} until={K.Ge - 0.1} texto="Retrovirus: *meten su código* en la célula." />
       <Subtitulo T={T} idx={2} at={K.Ge + 0.1} until={K.H - 0.1} texto="Infectaron *óvulos y espermatozoides.*" />
       <Subtitulo T={T} idx={3} at={K.H + 0.1} until={K.Ro - 0.1} texto="Y se heredó *hasta ti.*" />
@@ -250,7 +250,7 @@ function AdnViralMudo() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Ovulo x={540} y={920} s={1.3} T={T} infectado={1} /><Esperma x={klerp(-200, 330, kprog(T, K.Ge + 0.5, K.Ge + 3))} y={980} rot={-10} T={T} s={1.1} /></svg>
       </Escena>
       <Escena T={T} a={K.B} b={K.Gn}><FondoLunares color={KC.mint} /><Panza T={T} /></Escena>
-      <Lupa T={T} at={K.B + 0.8} until={K.Gn - 0.3} x={540} y={600} r={260} fx={700} fy={960} interior={(t, r) => <Embrion T={t} r={r} k={kprog(t, K.B + 1, K.Gn - 0.6)} />} etiqueta="RAYOS X · bebé y placenta" tinte={VIR2} />
+      <Lupa T={T} at={K.B + 0.8} until={K.Gn - 0.3} x={540} y={600} r={260} fx={700} fy={960} interior={(t, r) => <Embrion T={t} r={r} k={kprog(t, K.B + 1, K.Gn - 0.6)} />} etiqueta="POR DENTRO · bebé y placenta" tinte={VIR2} />
       <Escena T={T} a={K.Gn} b={K.Pl}>
         <FondoLunares color={KC.yellow} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>

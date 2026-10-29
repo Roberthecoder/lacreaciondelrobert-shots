@@ -37,4 +37,21 @@ Afirmaciones revisadas: 16 · corregidas: 3 · quitadas: 0.
 
 Un segundo verificador (otro agente, que no escribió el guion) volvió a abrir las fuentes de todas las afirmaciones de la voz, la pantalla y `publicacion.md`. Resultado: **PASA**. No se marcó ninguna ❌ ni ⚠️ y no se cambió nada del shot.
 
+## Re-verificación (29 oct, auditoría)
+
+Se corrigió «muy poquito: se evapora buena parte» (voz, subtítulo idx 6, guion y redes) por la cifra medida en panes dulces de leche en Alemania (Gorgus et al., 2016).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz: «en Alemania, en panes dulces de leche empacados, midieron algo más de un gramo de alcohol por cada cien gramos de pan» | ✅ (corregido: antes no decía «empacados») | PMC5421578 (Gorgus, Hittinger y Schrenk, J. Anal. Toxicol. 40: 537–542; texto completo vía Europe PMC fullTextXML, abierto el 29 oct 2026) | Tabla «Bread and bakery products, packed (g/100 g)… Sweet milk rolls, French style 1.21 ±0.02» · «food items purchased from major German retailers» · «for bakery products, manufacturing and packaging procedures seem to have a marked influence on ethanol levels» | 2016 |
+| Subtítulo idx 6: «Pan dulce empacado: >1 g por 100 g» | ✅ (corregido: ahora dice de qué es la cifra) | ídem | «sweet milk rolls contained more than 1.2 g ethanol/100 g» | 2016 |
+| publicacion.md: «en panes dulces de leche empacados de supermercado se midieron más de 1.2 g de etanol por cada 100 g (Alemania, 2016)» (y en Instagram, YouTube, LinkedIn) | ✅ (de supermercado = empacados de tiendas alemanas) | ídem | «certain packed bakery products such as burger rolls or sweet milk rolls contained more than 1.2 g ethanol/100 g» · «purchased randomly from various German retail/discounter stores» | 2016 |
+| publicacion.md: «y en panecitos de trigo empacados 0.14 g» | ✅ (corregido: antes decía «bolillo») | ídem | «Wheat rolls 0.14 ±0.01» (en «Bread and bakery products, packed») | 2016 |
+| publicacion.md y guion: «No encontramos ninguna medición publicada del pan de muerto» | ✅ (corregido: antes decía «Nadie ha medido», no verificable) | búsqueda web 29 oct 2026 (sin resultados de etanol en pan de muerto) | — | 2026 |
+| «Queda un poco / algo de alcohol» (voz y redes) | ✅ | PMC5421578 (Gorgus, Hittinger y Schrenk, J. Anal. Toxicol. 40: 537–542; texto completo vía Europe PMC fullTextXML, abierto el 29 oct 2026) | «In other types of bakery products such as regular bread and rolls, lower but detectable levels (0.14–0.29 g/L) were found» | 2016 |
+| «El calor del horno mata a las levaduras» | ✅ (sin cambio) | innograin.uva.es/?p=1448 | «lethal temperatures are reached for these microorganisms (starting from 50°C)» | 2024 |
+| Pantalla (sin cambio): etiqueta «vapor de alcohol» al hornear | ✅ como esquema: parte del etanol sí se va con el calor; los panes muy secados no conservan etanol medible | PMC5421578 (Gorgus, Hittinger y Schrenk, J. Anal. Toxicol. 40: 537–542; texto completo vía Europe PMC fullTextXML, abierto el 29 oct 2026) | «zwieback or crispbread, which are dried extensively and packed in gas permeable package materials such as paper contained no ethanol above the LOQ» | 2016 |
+
+Las 4 precisiones se aplicaron en voz, subtítulo idx 6, guion.md y publicacion.md (revisado con git diff y grep el 29 oct 2026). Todo ✅.
+
 VEREDICTO: APROBADO
