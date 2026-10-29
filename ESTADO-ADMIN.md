@@ -39,6 +39,12 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   Robert, C:\Users\winusr\lacreacion-lotes\revision-tiktok\demo-tiktok.mp4 (no va al repo público). No muestra la pantalla de
   permisos de TikTok (la cuenta ya estaba autorizada) ni el teléfono; si TikTok lo pide, Robert quita el acceso de la app en
   TikTok (Ajustes → Seguridad → Apps) y se graba de nuevo, más un video del celular con la notificación del borrador.
+- TikTok ENVIADO A REVISIÓN el 29 oct, 12:47 (app de Producción «La Creación del Robert - AutoPosting»: Education, Web,
+  Login Kit + Content Posting, scopes user.info.basic + video.upload, redirect y sitio del repo, ícono y demo). Esperar
+  respuesta de TikTok (correo y «Review comments» en el portal). Al aprobarse: Robert cambia TIKTOK_CLIENT_KEY/SECRET por los
+  de Producción y se conecta otra vez (docs/tiktok.html: borra la llave guardada y pega la de Producción).
+- La rama `temporal/demo-tiktok` (solo el MP4 del demo, para subirlo al formulario) NO se pudo borrar: una regla del repo
+  impide borrar ramas. Borrarla cuando Robert quite o ajuste esa regla (Settings → Rules).
 - Recordatorios: LinkedIn vence ~28 dic 2026 (renovación manual, ADMIN.md). Threads y TikTok se renuevan solos cada lunes
   (`renovar-tokens.yml`); si ese run sale en rojo, avisar a Robert.
 - Disco de la PC de Robert: se llenó (0 MB) el 29 oct al bajar los 300 shots; se liberaron ~460 MB. Hay que liberar más
