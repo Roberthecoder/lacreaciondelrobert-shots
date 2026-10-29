@@ -28,3 +28,8 @@ Cifras con fecha: el dato de 1916 se dice con su año ✅. El 100 nm es una prop
 1. **#4 "sobre todo del sulfuro de hidrógeno" (⚠️):** la literatura de corrosión (Franey et al. 1985) señala al sulfuro de carbonilo (OCS) como causa principal en aire normal, salvo cerca de fuentes de H₂S. Propuesta: "El azufre viene del aire, de gases como el sulfuro de hidrógeno: el gas del huevo cocido." (Etiqueta en pantalla "H₂S · sulfuro de hidrógeno" puede quedar.)
 2. **#12 "en Washington" (⚠️ leve):** propuesta voz: "En 1916, el gobierno de Estados Unidos probó con cucharas: …" (quitar "en Washington"), y en la `TarjetaEstudio`: "1916 · Departamento de Agricultura de EE. UU." (o "Boletín 449 · Washington, D. C." si se quiere dejar la ciudad como lugar de publicación).
 3. **#13 "25 veces más plata" (⚠️):** el ×25 es por cada limpieza. Propuesta: "…pulidas con pasta perdieron, en cada limpieza, unas 25 veces más plata que tocando otro metal en agua hirviendo." En pantalla, rotular las barras "plata perdida por limpieza".
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplicaron tal cual las propuestas del verificador (y, si hizo falta, solo se quitó relleno sin cambiar datos).
+
+VEREDICTO: APROBADO

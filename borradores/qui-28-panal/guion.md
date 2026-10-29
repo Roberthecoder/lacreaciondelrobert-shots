@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Esto no es gelatina: es un vaso de agua atrapada por el polvito de un pañal."
 - **Seguridad:** no se invita a abrir pañales ni a comer/respirar el polvo. En la descripción: el polvo es poco tóxico pero irrita nariz y ojos; si se hace el experimento, con lentes y sin levantar polvo (MIT OCW).
 - **Duración:** voz 953 caracteres / ≈165 palabras (≈ 58.1 s según `estimar-escenas.mjs`) + cierre 3.5 s → **≈ 61.6 s**.
-- **Estado:** guion listo para verificación independiente. Falta: verificación, tabla "Robert en pantalla" (fase 2), animación, `publicacion.md`.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~953 créditos).
 
 ## Versión narrada
 
@@ -22,11 +22,30 @@ Tiempos estimados (s): Gancho 0–4.7 · Que 4.7–9.9 · Cargas 9.9–14.1 · R
 | 6 | Pregunta | ¿Entonces un pañal se traga trescientas veces su peso en pipí? | **Re-gancho.** Pañal amarillo, "?" gigante, báscula con un granito de un lado y "×300" de líquido del otro, tambaleando. |
 | 7 | Estudio | En 2025, en Coimbra, Portugal, sacaron el polvo de un pañal: tragó casi trescientas veces su peso en agua pura, pero solo unas veinte en orina de laboratorio. | `TarjetaEstudio` "2025 · Univ. de Coimbra, Portugal · Simões et al., *Gels*". Bisturí que abre un pañal (esquemático), tamiz con granitos. Dos barras que crecen: "agua pura ≈ 295 g/g" (alta) y "orina de laboratorio ≈ 20 g/g" (bajita). |
 | 8 | Sal | La sal de la orina tapa las cargas y empareja el sodio: la red jala mucha menos agua. | Regreso a la red (fondo noche): entran Na⁺ y Cl⁻ de afuera; se pegan a los "–" y los apagan; la balanza adentro/afuera queda pareja; la malla se encoge un poco. Chip "efecto de la sal". |
-| 9 | Peoria | Lo curioso: en 1973, en un laboratorio agrícola de Peoria, Estados Unidos, injertaron cadenas parecidas en almidón: el Super Slurper. | `TarjetaEstudio` "1973 · USDA · Peoria, Illinois". Mapa chiquito de EE. UU. con un punto en Illinois; un grano de almidón al que le brotan cadenas como pelos; letrero retro "SUPER SLURPER" con un popote (chiste visual: "el súper sorbedor"). |
+| 9 | Peoria | Lo curioso: en 1973, en un laboratorio agrícola de Peoria, Estados Unidos, injertaron cadenas parecidas en almidón: el Super Slurper. | `TarjetaEstudio` "1973 · USDA · Peoria, Illinois". Un grano de almidón al que le brotan cadenas como pelos; letrero retro "SUPER SLURPER" con un popote (chiste visual: "el súper sorbedor"). |
 | 10 | Cierre | Así que esto no es gelatina: es agua atrapada por cargas que no se soportan. | **Regreso al vaso volteado del inicio**, ahora con rayos X (`Lupa interior`) mostrando la red con "–" que se repelen y el agua atrapada. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave continua; efectos en el mismo cuadro: polvo que cae (siseo), chorro de agua, "glup" al voltear el vaso, chispazo eléctrico en cada carga, "boing" de resorte al estirarse la red, golpe de la tarjeta, báscula que tambalea, chisporroteo apagándose cuando entra la sal, sorbido de popote en "Super Slurper".
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Entonces un pañal se traga trescientas veces su peso en pipí?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «Esto no es gelatina» (el vaso volteado) |
+| 2 | 6.3 | 9.7 | 13_senalando_arriba | `arriba-der` | «cadenas larguísimas amarradas como una red» |
+| 3 | 14.6 | 18.6 | 06_pensativo_menton | `arriba-der` | «esas cargas se repelen y la red se estira» |
+| 4 | 23.6 | 26.9 | 05_sonriendo_dientes_uniformes | `izq-alto` | «por eso queda como gel» |
+| 5 | 27.1 | 31.1 | 07_pensativo_puno | `grande` | «¿Entonces un pañal se traga trescientas veces su peso en pipí?» |
+| 6 | 35.0 | 40.0 | 04_bajando_lentes | `arriba-der` | «pero solo unas veinte en orina de laboratorio» |
+| 7 | 40.8 | 45.2 | 10_serio_molesto | `arriba-der` | «la sal de la orina tapa las cargas» |
+| 8 | 48.3 | 53.1 | 11_sorprendido | `izq-alto` | «injertaron cadenas parecidas en almidón: el Super Slurper» |
+| 9 | 53.7 | 58.0 | 02_apuntando_camara | `arriba-der` | «es agua atrapada por cargas que no se soportan» |
+| — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 37.6 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

@@ -31,3 +31,8 @@ Notas del verificador:
 ## Correcciones necesarias
 
 1. **#12 ⚠️ "una fábrica de cerillos de fósforo blanco"** → cambiar por: "En 1888, en Londres, 1400 mujeres de una fábrica de cerillos **que usaba** fósforo blanco se fueron a huelga por despidos y multas." (misma duración aprox.; en pantalla nada cambia).
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplicaron tal cual las propuestas del verificador (y, si hizo falta, solo se quitó relleno sin cambiar datos).
+
+VEREDICTO: APROBADO

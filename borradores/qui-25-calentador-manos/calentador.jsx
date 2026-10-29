@@ -151,7 +151,7 @@ function Calentador() {
       <Escena T={T} a={K.G} b={K.Re} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Sobre x={420} y={1000 + sale * 260} s={1} abre={rompe} />
+          <g opacity={1 - kprog(T, K.G + 0.9, K.G + 1.4)}><Sobre x={420} y={1000 + sale * 260} s={1} abre={rompe} /></g>
           <Bolsita T={T} x={420} y={klerp(1040, 900, sale)} s={0.95} rot={Math.sin(T * 9) * 6 * kprog(T, K.G + 1.2, K.G + 1.5) * (1 - kprog(T, K.G + 2.4, K.G + 2.7))} calor={calorG} />
           {sale > 0.9 && <Manos x={420} y={920} s={0.95} sep={210} />}
           <Termo x={900} y={1080} s={0.9} v={0.15 + 0.6 * calorG} on={calorG} />
@@ -174,7 +174,7 @@ function Calentador() {
               <text x={1000} y={1455 + i * 64} textAnchor="end" style={{ font:`${big ? 900 : 700} ${big ? 42 : 36}px ${KF.mono}` }} fill={KC.ink}>{rango}</text>
             </g>; })}
         </SvgCapa>
-        <Lupa T={T} at={K.Re + 0.3} until={K.Em - 0.4} x={680} y={800} r={230} fx={250} fy={830} etiqueta="POR DENTRO · el relleno" tinte={KC.orange}
+        <Lupa T={T} at={K.Re + 0.3} until={K.Em - 0.4} x={690} y={860} r={220} fx={250} fy={830} tinte={KC.orange}
           interior={(t, r) => <svg width={r * 2} height={r * 2}>
             <rect width={r * 2} height={r * 2} fill="#1a1410" />
             <Granos x={10} y={10} w={r * 2 - 20} h={r * 2 - 20} n={46} seed={4} r0={14} r1={28} />
@@ -182,7 +182,7 @@ function Calentador() {
             <Carbon x={330} y={100} s={0.35} /><Vermi x={130} y={330} s={0.4} />
             {[[260, 260], [80, 220]].map(([a, b], i) => <rect key={i} x={a} y={b} width={22} height={22} fill="#fff" stroke={KC.ink} strokeWidth={3} />)}
           </svg>} />
-        <Escala T={T} z={0.75} pxPorMm={PXMM} x={60} y={1260} color={KC.ink} />
+        <Escala T={T} z={0.75} pxPorMm={PXMM} x={60} y={1010} color={KC.ink} />
       </Escena>
       {/* 2 · empaque: sin aire → se abre y entra oxígeno */}
       <Escena T={T} a={K.Em} b={K.Ox} zoom={0.04}>
@@ -229,8 +229,8 @@ function Calentador() {
           <Reloj T={T} x={270} y={1440} r={60} vel={0.12} texto="lento" />
           <Reloj T={T} x={800} y={1440} r={60} vel={1.6} color={KC.yellow} texto="rápido" />
         </SvgCapa>
-        <Etq T={T} at={K.Po + 0.4} until={K.Ay - 0.3} x={60} y={700} texto="un clavo" color={KC.ink} />
-        <Etq T={T} at={K.Po + 0.6} until={K.Ay - 0.3} x={600} y={720} texto="polvo + sal" color={KC.ink} />
+        <Etq T={T} at={K.Po + 0.4} until={K.Ay - 0.3} x={60} y={630} texto="un clavo" color={KC.ink} />
+        <Etq T={T} at={K.Po + 0.6} until={K.Ay - 0.3} x={600} y={700} texto="polvo + sal" color={KC.ink} />
       </Escena>
       {/* 5 · los ayudantes */}
       <Escena T={T} a={K.Ay} b={K.Pr} zoom={0.03}>
@@ -250,7 +250,7 @@ function Calentador() {
         <FondoLunares color={KC.pink} />
         <SvgCapa>
           <text x={260} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 260 900)`}>?</text>
-          <g transform={`translate(260 1300) rotate(${(T - K.Pr) * 120})`}><path d="M -50 -70 L 50 -70 L 0 0 L 50 70 L -50 70 L 0 0 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={7} /></g>
+          <g transform={`translate(540 1520) rotate(${(T - K.Pr) * 120})`}><path d="M -50 -70 L 50 -70 L 0 0 L 50 70 L -50 70 L 0 0 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={7} /></g>
         </SvgCapa>
       </Escena>
       {/* 7 · la patente: 45–50 °C por 22 horas */}
@@ -279,12 +279,12 @@ function Calentador() {
         <SvgCapa>
           <PielCorte x={540} y={900} dano={kprog(T, K.Cu + 3.0, K.Cu + 6.5)} />
           <Bolsita T={T} x={540} y={800} s={0.5} rot={90} calor={1} />
-          <Termo x={140} y={1440} s={0.7} v={0.55} on={1} texto="44 °C" />
-          <Reloj T={T} x={940} y={1400} r={60} vel={0.9} texto="3–4 h" />
+          <Termo x={140} y={1700} s={0.7} v={0.55} on={1} texto="44 °C" />
+          <Reloj T={T} x={940} y={1640} r={60} vel={0.9} texto="3–4 h" />
           {T > K.Cu + 3.5 && <text x={760} y={860} style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Cu + 3.5, K.Cu + 3.9)}>“solo tibio” 🙂</text>}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Cu + 0.2} until={K.Cu + 2.8} anio="2025" quien="NITE · Japón" revista="aviso sobre calentadores (カイロ)" x={640} y={620} />
-        <Chip T={T} at={K.Cu + 3.0} until={K.Co - 0.2} texto="quemadura de baja temperatura" y={1500} tam={36} borde={KC.red} />
+        <Chip T={T} at={K.Cu + 3.0} until={K.Co - 0.2} texto="quemadura de baja temperatura" y={1460} tam={36} borde={KC.red} />
       </Escena>
       {/* 9 · consejo */}
       <Escena T={T} a={K.Co} b={K.Ci} zoom={0.03}>
@@ -314,7 +314,7 @@ function Calentador() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.4} until={K.G + 2.6} texto="¿pilas? ¿fuego?" x={330} y={470} tam={46} />
       <Chip T={T} at={K.G + 2.7} until={K.Re - 0.3} texto="hierro + oxígeno" x={300} y={470} tam={44} borde={OXI} />
-      <Chip T={T} at={K.Re + 0.4} until={K.Em - 0.3} texto="hoja de seguridad · 2021" x={300} y={470} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Re + 0.4} until={K.Em - 0.3} texto="por dentro · hoja de seguridad 2021" x={380} y={470} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Em + 0.2} until={K.Em + 1.8} texto="sobre cerrado: sin aire" y={1500} tam={40} borde="#9aa3b5" />
       <Chip T={T} at={K.Em + 2.2} until={K.Ox - 0.2} texto="entra O₂ por la tela" y={1500} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ox + 0.5} until={K.Po - 0.2} texto="hierro + oxígeno → óxido + calor" y={1500} tam={38} borde={KC.orange} />
