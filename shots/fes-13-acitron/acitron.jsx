@@ -388,9 +388,9 @@ function Acitron() {
           <rect x={120} y={1060} width={420} height={140} fill="#fff6d8" stroke={KC.ink} strokeWidth={7} />
           <rect x={540} y={860} width={420} height={340} fill={KC.gold2} stroke={KC.ink} strokeWidth={7} />
           <text x={330} y={1120} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>2010</text>
-          <text x={330} y={1170} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>protección especial</text>
+          <text x={330} y={1170} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>protección especial</text>
           <text x={750} y={940} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Le + 1.8, K.Le + 2.3)}>2019</text>
-          <text x={750} y={990} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Le + 1.8, K.Le + 2.3)}>categoría más alta</text>
+          <text x={750} y={990} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Le + 1.8, K.Le + 2.3)}>más alta</text>
           <path d="M 400 1010 Q 520 760 700 820" stroke={KC.red} strokeWidth={10} fill="none" strokeLinecap="round" strokeDasharray="1000" strokeDashoffset={1000 * (1 - kprog(T, K.Le + 0.9, K.Le + 1.6))} />
           <path d="M 676 790 L 712 822 L 668 842" stroke={KC.red} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={kprog(T, K.Le + 1.5, K.Le + 1.7)} />
           {(() => { const bx = klerp(330, 750, sube), by = klerp(1060, 860, sube) - Math.sin(sube * Math.PI) * 160; return <Biznaga T={T} x={bx} y={by} s={0.36} flores={1} detalle={false} gid="bz10" />; })()}
@@ -406,15 +406,15 @@ function Acitron() {
       <Escena T={T} a={K.Da} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {svg(<Bascula T={T} x={540} y={760} ang={angSuave}
-          izq={<>{Array.from({ length: 6 }, (_, i) => cuboAcitron(-60 + (i % 3) * 60, -30 - Math.floor(i / 3) * 46, 1.3, 'k' + i))}<text x={0} y={-130} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>1 kg</text></>}
+          izq={<>{Array.from({ length: 6 }, (_, i) => cuboAcitron(-60 + (i % 3) * 60, -30 - Math.floor(i / 3) * 46, 1.3, 'k' + i))}<text x={0} y={90} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>1 kg biznaga</text></>}
           der={<>{[0.7, 1.3, 1.9].map((d, i) => { const u = kprog(T, K.Da + d - 0.35, K.Da + d, (p) => p * p); return u > 0 ? <g key={i} transform={`translate(0 ${(1 - u) * -500})`}>{BolsaAzucar({ x: -90 + i * 90, y: 0, key: 'b' + i })}</g> : null; })}
-            <text x={0} y={-150} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Da + 2.0, K.Da + 2.4)}>1.5 kg</text></>} />)}
+            <text x={0} y={90} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Da + 2.0, K.Da + 2.4)}>1.5 kg azúcar</text></>} />)}
       </Escena>
       {/* 12 · cierre: la misma rosca; por dentro, células de cactus con azúcar; luego ate o papaya */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {svg(<Rosca T={T} x={RX0} y={RY0} s={RS} mezcla={1 - cambia} brillo={kprog(T, K.Ci + 0.3, K.Ci + 0.9) * (1 - cambia)} />)}
-        <Lupa T={T} at={K.Ci + 0.8} until={K.Ci + 3.5} x={300} y={640} r={180} fx={RX0} fy={RY0 + 150 * RS} tinte={KC.mint} etiqueta="POR DENTRO · células de cactus"
+        <Lupa T={T} at={K.Ci + 0.8} until={K.Ci + 3.5} x={390} y={620} r={180} fx={RX0} fy={RY0 + 150 * RS} tinte={KC.mint} etiqueta="POR DENTRO · células de cactus"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1d1408" /><Celulas T={Tl} w={r * 2} h={r * 2} r={46} azucar={1} seed={12} /></svg>} />
         <div style={{ position:'absolute', left:160, top:1440, zIndex:41, borderRadius:28, overflow:'hidden', border:`7px solid ${KC.ink}`, boxShadow:`12px 12px 0 ${KC.ink}`,
           opacity:kprog(T, K.Ci + 4.0, K.Ci + 4.5), transform:`translateY(${(1 - kprog(T, K.Ci + 4.0, K.Ci + 4.6, kEase.sale)) * 80}px)` }}><Desierto T={T} /></div>
@@ -434,7 +434,7 @@ function Acitron() {
       <Chip T={T} at={K.De + 3.0} until={K.Pu - 0.2} texto="Puebla y Oaxaca" x={540} y={1500} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Pu + 2.2} until={K.Co - 0.2} texto="tejido que guarda agua" x={540} y={1500} tam={42} borde={KC.mint} />
       <Chip T={T} at={K.Co + 0.9} until={K.Co + 2.6} texto="más de medio metro" x={540} y={1500} tam={42} borde={KC.red} />
-      <Etq T={T} at={K.Co + 2.0} until={K.Co + 3.4} x={600} y={620} texto="sin costillas ni espinas" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Co + 2.0} until={K.Co + 3.4} x={600} y={620} texto="sin costillas" tam={32} />
       <Chip T={T} at={K.Co + 3.4} until={K.Al - 0.2} texto="la pulpa, en cubos" x={540} y={1500} tam={42} borde={KC.mint} />
       <Medidor T={T} at={K.Al + 0.6} until={K.Os - 0.2} y={1440} ancho={900} etiqueta="almíbar" valor={(t) => kprog(t, K.Al + 0.8, K.Al + 4.6)} texto={(v) => (v < 0.34 ? 'ralo' : v < 0.67 ? 'más espeso' : 'muy espeso')} color={KC.gold} />
       {/* calendario: hasta una semana */}
@@ -452,7 +452,7 @@ function Acitron() {
       <Chip T={T} at={K.E + 5.2} until={K.Le - 0.2} texto="≈ 25 años · estimación" x={540} y={1500} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Le + 2.4} until={K.Da - 0.2} texto="especie en riesgo · 2019" x={540} y={1500} tam={42} borde={KC.red} />
       <Chip T={T} at={K.Da + 2.4} until={K.Ci - 0.2} texto="1.5 kg de azúcar por kg" x={540} y={1500} tam={42} borde={KC.gold} />
-      <Etq T={T} at={K.Da + 0.4} until={K.Ci - 0.2} x={720} y={1440} texto="una receta tradicional" tam={26} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.Da + 0.4} until={K.Ci - 0.2} x={240} y={1600} texto="una receta tradicional" tam={30} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ci + 3.6} texto="no es fruta: es cactus" x={540} y={1500} tam={44} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

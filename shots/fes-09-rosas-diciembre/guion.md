@@ -20,7 +20,7 @@
 | 6 | Pregunta | ¿Y si el freno se rompe? | **Re-gancho.** Fondo naranja, «?» gigante; la señal de ALTO se agrieta; Robert grande, pensativo. |
 | 7 | Saltarin | En muchas rosas modernas, un pedazo de ADN saltarín se metió dentro del gen. | Fondo noche (barra de 5 nm). Un trozo de ADN rosa brinca en arco y el gen KSN se abre para recibirlo: queda insertado en medio. Etiqueta «retrotransposón (ADN saltarín)»; chip «se metió dentro del gen». Capítulo 3 «El freno roto». |
 | 8 | Apagado | El gen ya no se lee, el freno desaparece, y la rosa florece en cada temporada buena. | Fondo noche: la maquinaria que copia el gen (óvalo verde con su hebra de ARN naranja) avanza y se atora en el pedazo (✕ roja); la señal de ALTO se cae. Fundido a fondo amarillo: el tallo termina en botón → flor y brota un tallo lateral que también florece. Chip «flor en cada temporada buena». |
-| 9 | Estudio | En 2012, un equipo de Francia y Japón lo vio en seis pares de rosas: las que florecen siempre traían ese pedazo. | Fondo cian. `TarjetaEstudio` «2012 · Iwata et al. · Francia y Japón · *The Plant Journal*». Seis pares aparecen uno a uno: «1 vez al año» (gen sin pedazo + rosa silvestre) vs «siempre» (gen con el pedazo rosa + rosas); los pedazos se marcan con círculos rojos. Chip «las de «siempre» traen el pedazo». |
+| 9 | Estudio | En 2012, un equipo de Francia y Japón lo vio en seis pares de rosas: las de floración continua traían ese pedazo. | Fondo cian. `TarjetaEstudio` «2012 · Iwata et al. · Francia y Japón · *The Plant Journal*». Seis pares aparecen uno a uno: «1 vez al año» (gen sin pedazo + rosa cultivada) vs «cada temporada buena» (gen con el pedazo rosa + rosas); los pedazos se marcan con círculos rojos. Chip «las de cada temporada traen el pedazo». |
 | 10 | China | Ese freno roto venía de rosas de China; a fines del siglo dieciocho, en Europa, las cruzaron con las suyas. | Fondo lila. Mapa esquemático «CHINA» → «EUROPA»: un barco de vela lleva una rosa china (rosa pálido). Al llegar, el mapa se va y aparece el cruce: rosa «de China» × rosa «de Europa»; **en ese momento** sale la tarjeta «fines del siglo XVIII: cruces en Europa»; abajo se abren las «rosas modernas». |
 | 11 | Invernadero | La rosa no cuenta las horas de luz: en invernadero, cortas un tallo y en seis a diez semanas hay otra flor. | Fondo menta. Invernadero con tres rosales de corte y un sol; «horas de luz» se tacha. Unas tijeras cortan el tallo del centro (cae la flor); de la yema de abajo brota un tallo nuevo que termina en botón y flor. Abajo, 10 cuadros de semanas que se llenan (7–10 punteados); chip «6 a 10 semanas». Capítulo 4 «Diciembre». |
 | 12 | Dato | Dato: en 2025, casi ocho de cada diez rosas de México salieron del Estado de México. | Fondo rosa. Mapa de México con un punto rojo que late en el Estado de México; abajo 10 rosas, se encienden 8. Chip «78.7 % · SADER, preliminar 2025». |
@@ -39,7 +39,7 @@ Tiempos de la base (`Shot Rosas Diciembre base narrada.dc.html`, escenas estimad
 | 3 | 17.4 | 20.3 | 06 pensativo (mentón) | arriba-der | «el brote echa hojas, pero no flor» |
 | 4 | 25.4 | 27.6 | 07 pensativo (puño) | **grande** | «¿Y si el freno se rompe?» (el giro) |
 | 5 | 34.3 | 36.6 | 11 sorprendido | arriba-der | «…y la rosa florece en cada temporada buena» |
-| 6 | 40.2 | 43.3 | 04 bajando lentes | izq-alto | «las que florecen siempre traían ese pedazo» |
+| 6 | 40.2 | 43.3 | 04 bajando lentes | izq-alto | «las de floración continua traían ese pedazo» |
 | 7 | 50.3 | 56.1 | 13 señalando arriba | arriba-der | «La rosa no cuenta las horas de luz… otra flor» (señala el tallo nuevo) |
 | 8 | 56.7 | 61.2 | 05 sonriendo | arriba-der | «casi ocho de cada diez rosas de México…» |
 | 9 | 61.7 | 65.9 | 02 apuntando a cámara | arriba-der | «su freno se rompió hace siglos» |
@@ -63,3 +63,5 @@ Tiempos de la base (`Shot Rosas Diciembre base narrada.dc.html`, escenas estimad
 - En la tradición no se muestran imágenes religiosas, personas ni la tilma, y no se opina sobre milagros: solo el cerro con rosas y la leyenda «según la tradición».
 - El 78.7 % es de gruesas (12 docenas de tallos) y es cifra preliminar del cierre 2025 (SADER); en pantalla irá «SADER, preliminar 2025».
 - El dato de la fresa silvestre (*Fragaria vesca*, un borrado de 2 letras en su gen parecido) quedó fuera por tiempo; puede ir en `publicacion.md`.
+
+- Escena 9 (voz): «las que florecen siempre» → «las de floración continua» (fiel a "continuous flowering", Iwata 2012), por la revisión de pantalla. Ver verificacion.md.

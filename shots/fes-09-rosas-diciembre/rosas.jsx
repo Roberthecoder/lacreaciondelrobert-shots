@@ -372,11 +372,11 @@ function Rosas() {
         {svg(<>
           <g opacity={kprog(T, K.E + 0.5, K.E + 0.9)}>
             <text x={270} y={740} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>1 vez al año</text>
-            <text x={810} y={740} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>siempre</text>
+            <text x={810} y={740} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>cada temporada buena</text>
           </g>
           {Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.E + 0.7 + i * 0.32, K.E + 1.1 + i * 0.32), yy = 795 + i * 62;
             return <g key={i}>
-              <GenMini x={110} y={yy} w={260} e={e} /><RosaSilvestre x={420} y={yy} s={0.26} e={e} />
+              <GenMini x={110} y={yy} w={260} e={e} />{e > 0 && <g opacity={e}><RosaFlor x={420} y={yy} s={0.17} abre={1} /></g>}
               <GenMini x={650} y={yy} w={260} ins e={e} />{e > 0 && <g opacity={e}>{[0, 1, 2].map((k) => <RosaFlor key={k} x={950 + k * 36} y={yy} s={0.17} abre={1} />)}</g>}
               <text x={540} y={yy + 12} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink} opacity={e}>vs</text>
             </g>; })}
@@ -492,7 +492,7 @@ function Rosas() {
       <Etq T={T} at={K.Ap + 0.4} until={K.Ap + 2.1} x={90} y={1110} texto="la copia del gen se atora" tam={32} color={KC.orange} />
       <Chip T={T} at={K.Ap + 3.4} until={K.E - 0.3} texto="flor en cada temporada buena" x={540} y={1500} tam={42} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2012" quien="Iwata et al. · Francia y Japón" revista="The Plant Journal" x={540} y={510} />
-      <Chip T={T} at={K.E + 3.6} until={K.Ch - 0.3} texto="las de «siempre» traen el pedazo" x={540} y={1500} tam={40} borde={INSERTO} />
+      <Chip T={T} at={K.E + 3.6} until={K.Ch - 0.3} texto="las de cada temporada traen el pedazo" x={540} y={1500} tam={40} borde={INSERTO} />
       <Chip T={T} at={K.Ch + 2.6} until={K.In - 0.3} texto="fines del siglo XVIII: cruces en Europa" x={540} y={560} tam={40} borde={KC.yellow} />
       <Etq T={T} at={K.Ch + 4.6} until={K.In - 0.3} x={640} y={1460} texto="rosas modernas" tam={34} color={KC.ink} />
       <MitoTachado T={T} at={K.In + 0.3} tacharEn={K.In + 1.2} until={K.In + 3.0} texto="horas de luz" x={430} y={480} tam={46} />

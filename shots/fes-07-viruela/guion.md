@@ -1,8 +1,8 @@
 # Shot Festivo #07 · Ciencia para la Paz · Biotecnológico: La viruela, la enfermedad que EE.UU. y la URSS borraron juntos
 
 - **Serie:** Shot Festivo · **Serie vinculada:** Biotecnológico · **Logo:** bioquímica (ADN + matraz) · **Badge:** Festivo #07 · **Especial:** Día Mundial de la Ciencia para la Paz y el Desarrollo (10 de noviembre; se publica el 10 nov 2026).
-- **Estado (29 oct 2026):** FASE A · guion verificado de forma independiente (`verificacion.md`: 33 ✅, 1 ⚠️); el ⚠️ del cierre ya se corrigió (México eliminó la viruela en 1951, antes del programa: la marquita es "el recuerdo", no "la firma" del programa). Sin animación. Voz pendiente de aprobación de Robert.
-- **Formato:** N1 "Por dentro" (de la marquita del brazo → al granito de la piel y las defensas → de regreso al brazo) con un tramo de N3 "Capítulos y medidores" para la historia (4 capítulos: La marca · La vacuna · Dos rivales · Cero casos; medidor de dosis y contador de casos).
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`: APROBADO; el ⚠️ del cierre se corrigió: México eliminó la viruela en 1951, antes del programa, así que la marquita es "el recuerdo", no "la firma"). Animación (`viruela.jsx`), música (`gen-audio.mjs` → `assets/mezcla.wav`), Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert**.
+- **Formato:** N1 "Por dentro" (de la marquita del brazo → al granito de la piel y las defensas → de regreso al brazo) con un tramo de N3 "Capítulos y medidores" para la historia (4 capítulos: La marca · La vacuna · Dos rivales · Cero casos; medidores de días, dosis y rendimiento de la aguja).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" + #3 "Tu cuerpo en una imagen": "Esa marquita en el brazo de tu abuela no es un lunar: es la cicatriz de la vacuna de la viruela."
 - **Duración:** voz 1,076 caracteres / 14 líneas (≈ 66.0 s, `estimar-escenas`) + cierre 3.8 s → **≈ 69.8 s** (festivos: 61–75 s).
 
@@ -10,23 +10,42 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa marquita en el brazo de tu abuela no es un lunar: es la cicatriz de la vacuna de la viruela. | Fondo rosa. Desde el cuadro 0 un brazo de abuela (manga de suéter que se arremanga sola en 0.4 s) con una cicatriz redonda, hundida, del tamaño de una lenteja, en el hombro (deltoides). Una lupa se posa encima. «¿lunar?» se tacha → «cicatriz de vacuna». Etiqueta chica junto al brazo: «si se vacunó antes de ~1975» (para no confundirla con la marca de la BCG; no se afirma que toda marquita sea de viruela). Chip «Especial · Día de la Ciencia para la Paz». |
+| 0 | Gancho | Esa marquita en el brazo de tu abuela no es un lunar: es la cicatriz de la vacuna de la viruela. | Fondo rosa. Desde el cuadro 0 un brazo de abuela (la manga de la blusa se arremanga sola en 0.6 s) con una cicatriz redonda, hundida, del tamaño de una lenteja, en el hombro (deltoides). Una lupa se posa encima. «¿lunar?» se tacha → «cicatriz de vacuna». Etiqueta chica junto al brazo: «si se vacunó antes de ~1975» (para no confundirla con la marca de la BCG; no se afirma que toda marquita sea de viruela). Chip «Especial · Día de la Ciencia para la Paz». Capítulo 1 «La marca». |
 | 1 | Viruela | La viruela mataba a 3 de cada 10 personas que se enfermaban. | Fondo amarillo. Fila de 10 siluetas; 3 se apagan una por una (golpe grave en cada una). Número grande «3 de 10» con «en promedio» debajo (siempre juntos). Etiqueta chica «viruela (virus *variola*)». |
-| 2 | Vaccinia | La vacuna no traía viruela: traía vaccinia, un virus pariente y mucho más leve. | Fondo noche (escala microscópica, barra «300 nm»). Dos virus en forma de ladrillo redondeado (~250 × 200 nm, dibujados a escala contra la barra de 300 nm) lado a lado: *variola* (rojo, con «peligro») y *vaccinia* (menta, «leve»); una línea de «parientes» los une (árbol de familia: orthopoxvirus). Capítulo 1 «La vacuna». |
+| 2 | Vaccinia | La vacuna no traía viruela: traía vaccinia, un virus pariente y mucho más leve. | Fondo noche (escala de microscopio electrónico, barra «200 nm»). Dos virus en forma de ladrillo redondeado (~250 × 200 nm, dibujados a escala contra la barra de 200 nm) lado a lado: *variola* (rojo, con «peligro») y *vaccinia* (menta, «leve»); una línea de «parientes» los une (árbol de familia: orthopoxvirus). Capítulo 2 «La vacuna». |
 | 3 | Granito | Hace un granito en la piel, y ahí tus defensas aprenden a reconocerlo. | Corte de piel con `Lupa` rayos X sobre el hombro: el virus entra en la capa de arriba (epidermis); aparece una ampollita; llegan células de defensa (linfocitos T y B, bolitas con «antenas») que tocan al virus y se «toman una foto» de su forma (destello). |
 | 4 | Memoria | Como se parece a la viruela, si un día llega, la atacan rápido. | Fondo noche. Linfocitos de memoria «dormidos» en un ganglio; entra *variola* (rojo); se encienden al reconocer la forma parecida y lo cubren de anticuerpos (Y amarillas). Chip «memoria inmune». |
 | 5 | Costra | El granito se hace costra, se cae y deja la marquita. | Regreso al brazo a escala real: secuencia time-lapse con medidor «días»: granito (día 3–5) → ampolla → costra (día ~10) → se cae (día 14–21) → marquita redonda. |
-| 6 | Pregunta | ¿Y cómo se borra una enfermedad del planeta en plena Guerra Fría? | **Re-gancho.** Fondo naranja: globo terráqueo girando, cubierto de puntos rojos; «?» gigante; a los lados dos banderas esquemáticas (estrella roja · barras y estrellas) mirándose con recelo. Capítulo 2 «Dos rivales». |
+| 6 | Pregunta | ¿Y cómo se borra una enfermedad del planeta en plena Guerra Fría? | **Re-gancho.** Fondo naranja: globo terráqueo girando, cubierto de puntos rojos; «?» gigante; a los lados dos banderas esquemáticas (estrella roja · barras y estrellas) mirándose con recelo. Capítulo 3 «Dos rivales». |
 | 7 | Propuesta | En 1958, el soviético Víktor Zhdánov propuso en la OMS erradicarla. | Fondo cian. `TarjetaEstudio` «1958 · Asamblea Mundial de la Salud · Minneapolis, EE.UU.»: un atril con micrófono; un delegado esquemático (sin intentar retrato) con gafete «V. Zhdánov · URSS». Chip «propuesta soviética». |
-| 8 | Rivales | La Unión Soviética donó más de 1,400 millones de dosis; Estados Unidos puso expertos de sus CDC. | Fondo menta. Medidor de dosis que sube hasta «+1,400 millones (1958–1979)» con frascos de vacuna en polvo; del otro lado, maletines con «CDC» y un gafete «D. A. Henderson · jefe del programa de la OMS (1966–1977)». Las dos banderas se dan la mano sobre el logo de la OMS. |
+| 8 | Rivales | La Unión Soviética donó más de 1,400 millones de dosis; Estados Unidos puso expertos de sus CDC. | Fondo menta. Medidor de dosis que sube hasta «+1,400 millones (1958–1979)» con frascos de vacuna en polvo; del otro lado, maletines con «CDC» y un gafete «D. A. Henderson · jefe del programa de la OMS (1966–1977)». Al final, dos manos (manga roja y manga azul) se dan un apretón. |
 | 9 | Aguja | Una aguja de dos puntas atrapaba una gotita: la vacuna rendía cuatro veces más. | Fondo amarillo. Primer plano de la aguja bifurcada (horquilla de 2 puntas); se moja en el frasco y una gotita queda colgada entre las puntas (0.0025 mL); 15 piquetitos en el brazo. Medidor «×4 vacunas con la misma cantidad». Chip «vacuna en polvo: sin refrigerador». |
-| 10 | Anillo | Buscaban cada caso y vacunaban a todos sus contactos, como un anillo. | Fondo lila. Mapa de una aldea vista desde arriba: una casa con un caso (punto rojo); alrededor se encienden en menta las casas de sus contactos formando un anillo; el punto rojo se apaga. Chip «vigilancia y contención». Capítulo 3 «Cero casos». |
+| 10 | Anillo | Buscaban cada caso y vacunaban a todos sus contactos, como un anillo. | Fondo lila. Mapa de una aldea vista desde arriba: una casa con un caso (punto rojo); alrededor se encienden en menta las casas de sus contactos formando un anillo; el punto rojo se apaga. Chip «vigilancia y contención». Capítulo 4 «Cero casos». |
 | 11 | Ultimo | El último caso natural fue un cocinero de Somalia, en 1977: sobrevivió y luego trabajó contra la polio. | Fondo arena. Mapa de África con Somalia y el puerto de Merca marcados; `TarjetaEstudio` «Oct 1977 · Merca, Somalia · Ali Maow Maalin, cocinero de hospital»; luego un gafete «polio» (trabajó en la erradicación de la polio hasta 2013). |
-| 12 | Libre | En 1980 se declaró al mundo libre de viruela: la única enfermedad humana erradicada. | Fondo cian. El globo del re-gancho: los puntos rojos se apagan; contador de casos baja a «0». Tarjeta «8 de mayo de 1980 · Asamblea Mundial de la Salud». Etiqueta chica «México: último caso en 1951». Chip «única enfermedad humana erradicada». |
-| 13 | Cierre | Esa marquita es el recuerdo de una enfermedad que dos rivales, con ciencia, borraron juntos. | **Regreso a la imagen del inicio:** el mismo brazo de la abuela y la misma marquita, ahora con un contorno dorado; dentro de la `Lupa`, la estrella roja y las barras y estrellas juntas formando un anillo. Chip «ciencia para la paz». |
+| 12 | Libre | En 1980 se declaró al mundo libre de viruela: la única enfermedad humana erradicada. | Fondo cian. El globo del re-gancho: los puntos rojos se apagan; el globo se queda sin puntos y lo rodea un aro dorado. Tarjeta «8 de mayo de 1980 · Asamblea Mundial de la Salud». Etiqueta chica «México: último caso en 1951». Chip «única enfermedad humana erradicada». |
+| 13 | Cierre | Esa marquita es el recuerdo de una enfermedad que dos rivales, con ciencia, borraron juntos. | **Regreso a la imagen del inicio:** el mismo brazo de la abuela y la misma marquita, ahora con un contorno dorado; dentro de la `Lupa` («un mundo sin viruela»), el globo limpio y el apretón de manos. Chip «ciencia para la paz». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de bioquímica y Robert señalando. |
 
 **Música:** cama grave continua sin golpe marcado, tensa (acorde menor) mientras la viruela está en el mapa y que se abre a mayor cuando el contador llega a 0. Efectos en el mismo cuadro: roce de la manga al arremangarse, golpe grave por cada silueta que se apaga, burbujeo suave del virus en la escena micro, «pop» de la ampolla, destello agudo cuando el linfocito reconoce al virus, ráfaga de tics cuando llegan los anticuerpos, tic-tac del time-lapse de la costra, martillo de la Asamblea, tintineo de frascos al subir el medidor de dosis, «tink» de la gotita en la aguja y 15 piquetitos, un tono por cada casa que se enciende en el anillo, notas que bajan con el contador de casos y un acorde abierto en el 0. Todo generado con `gen-audio.mjs` (fase B).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos porque están atados a cada escena). Grande en «¿Y cómo se borra una enfermedad del planeta en plena Guerra Fría?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «no es un lunar: es la cicatriz de la vacuna» (cuadro 0) |
+| 2 | 6.2 | 9.4 | 10_serio_molesto | `arriba-der` | «mataba a 3 de cada 10» |
+| 3 | 14.9 | 18.5 | 13_senalando_arriba | `izq-alto` | señala el granito y los linfocitos en la piel |
+| 4 | 26.05 | 30.3 | 06_pensativo_menton | `grande` | «¿Y cómo se borra… en plena Guerra Fría?» |
+| 5 | 34.8 | 39.8 | 04_bajando_lentes | `arriba-der` | «más de 1,400 millones de dosis» |
+| 6 | 45.2 | 48.9 | 07_pensativo_puno | `izq-alto` | el anillo de vacunación alrededor del caso |
+| 7 | 53.3 | 55.1 | 12_perfil_serio | `izq-alto` | «sobrevivió y luego trabajó contra la polio» |
+| 8 | 55.8 | 60.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «el mundo, libre de viruela» |
+| 9 | 60.8 | 65.9 | 02_apuntando_camara | `arriba-der` | «dos rivales que, con ciencia, la borraron juntos» |
+| — | 66.0 | 69.8 | 13_senalando_arriba | `CierreMarca` | tarjeta final junto al logo |
+
+**Total:** 9 apariciones + cierre · ≈ 35 s en pantalla (sin contar el cierre) en 69.8 s · 9 poses distintas, nunca la misma dos veces seguidas · una vez grande (re-gancho).
 
 ## Fuentes
 

@@ -398,8 +398,8 @@ function Viruela() {
       <Capitulo T={T} x={190} y={210} hasta={K.Ou} caps={[{ at: K.G + 0.3, titulo: 'La marca' }, { at: K.Va, titulo: 'La vacuna' }, { at: K.P, titulo: 'Dos rivales' }, { at: K.An, titulo: 'Cero casos' }]} />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.5} texto="¿lunar?" x={300} y={440} tam={52} />
-      <Etq T={T} at={K.G + 1.8} until={K.V - 0.3} x={60} y={440} texto="cicatriz de vacuna" tam={40} color={KC.yellow} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.G + 2.2} texto="¿lunar?" x={300} y={440} tam={52} />
+      <Etq T={T} at={K.G + 2.6} until={K.V - 0.3} x={60} y={440} texto="cicatriz de vacuna" tam={40} color={KC.yellow} />
       <Etq T={T} at={K.G + 2.4} until={K.V - 0.3} x={60} y={1440} texto="si se vacunó antes de ~1975" tam={32} color={KC.texto} />
       <Chip T={T} at={K.G + 0.2} until={K.V - 0.2} texto="Especial · Día de la Ciencia para la Paz" x={540} y={1560} tam={36} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.V + 0.3} until={K.Va - 0.2} valor={3} desde={0} dur={0.6} sufijo=" de 10" x={350} y={520} tam={170} color={KC.red} />

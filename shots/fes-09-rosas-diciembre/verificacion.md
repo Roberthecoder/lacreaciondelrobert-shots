@@ -51,4 +51,26 @@ Revisión del texto final completo de `guion.md` y `narracion.json` (voz y panta
 
 El resto de las afirmaciones (tabla de arriba) no cambió y sigue ✅.
 
+## Revisión de pantalla y publicación (29 oct 2026)
+Revisé todos los textos y dibujos de `rosas.jsx` (Chip, Etq, MitoTachado, TarjetaEstudio, Capitulo, Subtitulo, Lupa, `<text>` de SVG, calendarios, contadores, mapa y escala) y `publicacion.md` (las 7 redes y el comentario fijado) contra la tabla de arriba.
+
+**Bien (sin cambios):**
+- Rosa silvestre de 5 pétalos con muesca y estambres amarillos; hojas compuestas de 5 foliolos dentados (2 pares + 1 en la punta); tallos con espinas.
+- Tepeyac: Etq «según la tradición» + Chip «diciembre: rosas de Castilla» (Nican Mopohua: "para que allí cortara diversas rosas de Castilla"); subtítulo «Según la tradición: rosas en diciembre». Sin imágenes religiosas.
+- Primavera = M-A-M en la tira de meses (hemisferio norte); chip «una vez al año».
+- ADN: el gen KSN es un tramo en medio de la doble hélice y el retrotransposón se mete **dentro** del gen, no en sus bordes (Iwata 2012: "in the second intron"; esquemático, no se afirma su tamaño). La escala molecular cuadra con el ADN (~2 nm de ancho, ~3.4 nm por vuelta). «la copia del gen se atora» = "transcription of the gene is blocked" (esquema).
+- TarjetaEstudio «2012 · Iwata et al. · Francia y Japón · The Plant Journal»; 6 pares; el pedazo resaltado dentro del tramo KSN.
+- Escena 10: el barco viaja sin fecha; la tarjeta «fines del siglo XVIII: cruces en Europa» aparece hasta el cruce China × Europa; «rosas modernas» en las hijas (Bendahmane 2013: "formed the genetic basis of the 'modern rose cultivars'").
+- Invernadero: «horas de luz» tachado (día neutro), «brota de la yema», «6 a 10 semanas» con semanas 7–10 punteadas (rango).
+- Dato: punto en el Estado de México (−99.7, 19.3), 8 de 10 rosas encendidas, Chip «78.7 % · SADER, preliminar 2025», subtítulo «Casi 8 de cada 10 rosas: Estado de México».
+- Cierre: «KSN apagado: flor en cada temporada buena»; Lupa «POR DENTRO · KSN»; calendario «DICIEMBRE 12».
+- `publicacion.md`: las 7 redes y el comentario fijado solo traen datos verificados (KSN homólogo de TFL1, retrotransposón, 6 pares, cruces a fines del XVIII, día neutro, 6–10 semanas, 78.7 % preliminar SADER, tradición como tradición). Tiene "el dibujo es esquemático", una pregunta y la firma.
+
+**Corregido:**
+1. `rosas.jsx`, escena 2012: los 6 pares eran mutantes de floración continua y de una vez al año (*CF/OF mutants*), no rosas silvestres contra modernas. El ícono de «1 vez al año» era una `RosaSilvestre`; ahora es una rosa cultivada (`RosaFlor`) de una sola flor.
+2. `rosas.jsx`, escena 2012: la etiqueta «siempre» pasó a «cada temporada buena» y el Chip «las de «siempre» traen el pedazo» a «las de cada temporada traen el pedazo» (Iwata 2012: "flower during all favourable seasons").
+3. `publicacion.md` (TikTok y YouTube): «las que florecen siempre traían ese pedazo» → «las de floración continua traían ese pedazo».
+
+**Recomendación (no bloqueante, no la apliqué porque toca la voz):** en `narracion.json` escena 9, «las que florecen siempre» podría quedar «las que florecen en cada temporada»; «siempre» se entiende como floración continua, el nombre que le da la fuente ("continuous flowering").
+
 VEREDICTO: APROBADO

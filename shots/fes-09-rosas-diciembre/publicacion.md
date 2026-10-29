@@ -9,7 +9,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 Esta rosa no sabe que es diciembre: trae roto un freno en su ADN. 🌹
 Según la tradición guadalupana, Juan Diego halló rosas en el Tepeyac en diciembre, cuando no era su tiempo. Y es que una rosa silvestre florece solo en primavera.
 La clave es un gen llamado KSN: funciona como un freno de la floración. Mientras el freno está puesto, el brote echa hojas, pero no flor. En la rosa silvestre el freno se afloja en primavera, y ahí sale su única floración.
-¿Y si el freno se rompe? En muchas rosas modernas, un pedazo de ADN saltarín (un retrotransposón) se metió dentro del gen. El gen ya no se lee, el freno desaparece y la rosa florece en cada temporada buena. En 2012, un equipo de Francia y Japón lo vio en seis pares de rosas: las que florecen siempre traían ese pedazo.
+¿Y si el freno se rompe? En muchas rosas modernas, un pedazo de ADN saltarín (un retrotransposón) se metió dentro del gen. El gen ya no se lee, el freno desaparece y la rosa florece en cada temporada buena. En 2012, un equipo de Francia y Japón lo vio en seis pares de rosas: las de floración continua traían ese pedazo.
 Ese freno roto venía de rosas de China; a fines del siglo XVIII, en Europa, las cruzaron con las suyas.
 La rosa no cuenta las horas de luz: en invernadero cortas un tallo y en 6 a 10 semanas hay otra flor. Y un dato: en 2025, casi 8 de cada 10 rosas de México salieron del Estado de México (SADER, cifra preliminar).
 El dibujo es esquemático.
@@ -40,7 +40,7 @@ Descripción:
 ```text
 Esta rosa no sabe que es diciembre: trae roto un freno en su ADN. Especial del Día de la Virgen de Guadalupe.
 Según la tradición guadalupana, Juan Diego halló rosas en el Tepeyac en diciembre, cuando no era su tiempo. Y es que una rosa silvestre florece solo en primavera. La clave es un gen, KSN (pariente del gen TFL1 de otras plantas), que funciona como un freno de la floración: mientras está activo, el brote echa hojas, pero no flor. En la rosa silvestre el freno se afloja en primavera y ahí sale su única floración.
-En muchas rosas modernas, un pedazo de ADN saltarín (un retrotransposón) se metió dentro del gen. El gen ya no se lee, el freno desaparece y la rosa florece en cada temporada buena. En 2012, un equipo de Francia y Japón lo vio en seis pares de rosas: las que florecen siempre traían ese pedazo. Ese freno roto venía de rosas de China; a fines del siglo XVIII, en Europa, las cruzaron con las suyas.
+En muchas rosas modernas, un pedazo de ADN saltarín (un retrotransposón) se metió dentro del gen. El gen ya no se lee, el freno desaparece y la rosa florece en cada temporada buena. En 2012, un equipo de Francia y Japón lo vio en seis pares de rosas: las de floración continua traían ese pedazo. Ese freno roto venía de rosas de China; a fines del siglo XVIII, en Europa, las cruzaron con las suyas.
 La rosa no cuenta las horas de luz: en invernadero cortas un tallo y en 6 a 10 semanas hay otra flor. En 2025, casi 8 de cada 10 rosas de México salieron del Estado de México (78.7 %, cifra preliminar de la SADER).
 El dibujo es esquemático.
 Fuentes:
