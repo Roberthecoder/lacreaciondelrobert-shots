@@ -36,7 +36,7 @@ const LIB = (() => {
 
 // Vista de la biblioteca: z = zoom (1 = de cerca, 0.25 = completa); n = hojas rojas visibles; tA = cuándo empiezan a caer.
 function Biblioteca({ T, z = 1, n = 250, tA = 0, dur = 3, brillo = 0, cx = LIB_W / 2, cy = LIB_H / 2 }) {
-  const halo = 26 / Math.max(z, 0.2);
+  const halo = 22 / Math.max(z, 0.2), k = Math.max(1, 0.42 / z);
   return <div style={{ position:'absolute', left:0, top:0, width:LIB_W, height:LIB_H, transformOrigin:'0 0', transform:`translate(${540 - cx * z}px, ${960 - cy * z}px) scale(${z})` }}>
     <img src={LIB.src} alt="" style={{ position:'absolute', left:0, top:0, width:LIB_W, height:LIB_H }} />
     <svg width={LIB_W} height={LIB_H} style={{ position:'absolute', left:0, top:0 }}>
@@ -44,8 +44,8 @@ function Biblioteca({ T, z = 1, n = 250, tA = 0, dur = 3, brillo = 0, cx = LIB_W
         const t0 = tA + (i < 14 ? i * 0.12 : 1.7 + (i - 14) * (dur - 1.7) / 236), e = kprog(T, t0, t0 + 0.35, kEase.sale);
         if (e <= 0) return null;
         const late = 0.55 + 0.45 * Math.sin(T * 5 + i);
-        return <g key={i} transform={`translate(${b[0] + b[2] / 2} ${b[1] + b[3] / 2 - (1 - e) * 260})`} opacity={e}>
-          <circle r={halo * (1 + brillo * 0.6)} fill={KC.red} opacity={(0.18 + 0.25 * brillo) * late} />
+        return <g key={i} transform={`translate(${b[0] + b[2] / 2} ${b[1] + b[3] / 2 - (1 - e) * 260}) scale(${k})`} opacity={e}>
+          <circle r={halo / k * (1 + brillo * 0.3)} fill={KC.red} opacity={(0.2 + 0.15 * brillo) * late} />
           <rect x={-b[2] / 2 - 3} y={-b[3] / 2 - 10} width={b[2] + 6} height={b[3] + 10} rx={3} fill={KC.red} stroke={KC.ink} strokeWidth={4} transform={`rotate(${(i % 5) - 2})`} />
           <line x1={-b[2] / 2 + 3} y1={-b[3] / 2 + 8} x2={b[2] / 2 - 3} y2={-b[3] / 2 + 8} stroke="#ffd0cc" strokeWidth={3} />
         </g>; })}
@@ -265,7 +265,7 @@ function Envenenar() {
       </Escena>
       <Chip T={T} at={K.Ta + 1.2} until={K.Po - 0.2} texto="más de 20× más texto" x={480} y={380} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Ta + 3.0} until={K.Po - 0.2} texto="250" x={190} y={900} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Ta + 3.0} until={K.Po - 0.2} texto="250" x={480} y={330 + 120} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ta + 3.0} until={K.Po - 0.2} texto="250" x={625} y={560} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ta + 5.3} until={K.Po - 0.2} texto="100: no bastó" x={820} y={980} tam={40} borde={KC.ink} />
 
       {/* 9 · el porcentaje */}
@@ -299,7 +299,7 @@ function Envenenar() {
       <Escena T={T} a={K.C} b={FIN} zoom={0}>
         <Biblioteca T={T} z={zC} tA={-100} brillo={kprog(T, K.C + 0.5, K.C + 1.5)} />
       </Escena>
-      <MitoTachado T={T} at={K.C + 0.4} tacharEn={K.C + 1.6} until={K.Ou} texto="% de hojas rojas" x={330} y={560} tam={44} />
+      <MitoTachado T={T} at={K.C + 0.4} tacharEn={K.C + 1.6} until={K.Ou} texto="% de hojas rojas" x={330} y={560} tam={56} />
       <NumeroGigante T={T} at={K.C + 2.2} until={K.Ou} valor={250} desde={250} etiqueta="" x={330} y={760} tam={200} color={KC.red} />
       <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="lo que contó: cuántas" x={330} y={920} tam={36} borde={KC.red} />
 

@@ -1,9 +1,9 @@
 # Shot IA #42 · ¿Una IA puede leer tu mente? Solo si tú te dejas
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #42 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion listo, **pendiente de verificación independiente**. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (12 ✅; los 2 ⚠️ corregidos con «desde afuera» en gancho y cierre), animación, Robert en pantalla y `publicacion.md` listos · falta la versión de revisión sin voz (la hace GitHub) · **voz pendiente de aprobación de Robert** (~959 créditos).
 - **Formato:** N5 "El experimento" (se recrea el experimento de Texas: escáner → entrenamiento → prueba → los dos intentos de "espiar").
-- **Gancho (de los 7):** #6 Mito "¿Por qué NO…?": «¿Por qué una máquina todavía no puede leer tu mente?».
+- **Gancho (de los 7):** #6 Mito "¿Por qué NO…?": «¿Por qué una máquina todavía no puede leer tu mente desde afuera?».
 - **Duración:** voz 959 caracteres / 171 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** en la base.
 - **Postura de la serie:** ni pánico ni hype: lo que sí logró (la idea general, sin cirugía) y sus límites reales (necesita tu
   cooperación para entrenar y para funcionar). El estudio es de **2023** y se dice. Distinto del ia-27 (implantes con cirugía que
@@ -27,6 +27,25 @@
 **Música:** cama grave continua y un poco misteriosa; zumbido rítmico de resonancia en el escáner, tic de reloj hasta "16 h", chispitas
 cuando se prenden zonas del cerebro, tecleo cuando la máquina escribe, "error" desafinado con las letras revueltas, un ¡pop! por cada
 animal, clic del candado al final.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces ya pueden espiar lo que piensas?» y en el sabotaje.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` | «¿Por qué una máquina todavía no puede leer tu mente…?» (cuadro 0) |
+| 2 | 8.8 | 12.7 | 13_senalando_arriba | `arriba-der` | señala el resonador y las «dieciséis horas» |
+| 3 | 16.4 | 20.0 | 06_pensativo_menton | `izq-alto` | «la máquina escribía» |
+| 4 | 27.4 | 30.2 | 04_bajando_lentes | `arriba-der` | «No eran las palabras exactas: era la idea» |
+| 5 | 30.45 | 33.05 | 07_pensativo_puno | `grande` | «¿Entonces ya pueden espiar lo que piensas?» |
+| 6 | 36.8 | 40.7 | 10_serio_molesto | `izq-alto` | «apenas le atinó más que al azar» |
+| 7 | 43.0 | 46.6 | 11_sorprendido | `grande-izq` | «con solo nombrar animales… casi no le atinaba» |
+| 8 | 47.8 | 51.0 | 05_sonriendo_dientes_uniformes | `izq-alto` | «Lo raro: también describió… cortos animados sin sonido» |
+| 9 | 52.8 | 58.0 | 13_senalando_arriba | `arriba-der` | «tu mente sigue siendo tuya» |
+| — | 58.1 | 61.6 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 34.1 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.6 s
 
 ## Fuentes (abiertas el 29 oct 2026)
 
@@ -59,3 +78,4 @@ animal, clic del candado al final.
 - El ejemplo del manejo es real (Fig. 1 / boletín de UT Austin), traducido al español.
 - "Reglas" = "policies" (políticas públicas), no necesariamente leyes.
 - El dibujo es esquemático; el cortometraje en pantalla es genérico (los reales eran cortos de Pixar y *Sintel*).
+- «Desde afuera» (gancho y cierre): el verificador pidió acotarlo porque con implantes cerebrales sí se han decodificado cosas pensadas (p. ej. Kunz et al., *Cell* 2025). Aquí se habla solo de técnicas no invasivas como la fMRI.

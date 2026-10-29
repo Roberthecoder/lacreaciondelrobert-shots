@@ -227,7 +227,7 @@ function LeeMente() {
           <Robotito x={830} y={1080} s={0.8} T={T} cara={T > K.G + 1.3 ? 'duda' : 'seguro'} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 3.8} until={K.Es - 0.2} texto="desde afuera · por ahora" x={330} y={360} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.8} until={K.Es - 0.2} texto="desde afuera · por ahora" x={330} y={345} tam={32} borde={KC.ink} />
 
       {/* 2 · el escáner: 3 personas, 16 horas de historias */}
       <Escena T={T} a={K.Es} b={K.A}>
@@ -245,12 +245,12 @@ function LeeMente() {
       <Escena T={T} a={K.A} b={K.Ej}>
         <FondoCircuito T={T} />
         {svg(<>
-          <Cerebro x={660} y={640} s={1.0} T={T} zonas={[{ x: -120, y: -40, at: K.A + 0.4 }, { x: 60, y: -90, at: K.A + 0.9, color: KC.cyan }, { x: 140, y: 40, at: K.A + 1.4, color: KC.mint }, { x: -40, y: 70, at: K.A + 1.9, color: KC.orange }]} />
+          <Cerebro x={660} y={580} s={1.0} T={T} zonas={[{ x: -120, y: -40, at: K.A + 0.4 }, { x: 60, y: -90, at: K.A + 0.9, color: KC.cyan }, { x: 140, y: 40, at: K.A + 1.4, color: KC.mint }, { x: -40, y: 70, at: K.A + 1.9, color: KC.orange }]} />
         </>)}
-        <RedNeuronal T={T} x={330} y={800} ancho={620} alto={110} capas={[4, 6, 6, 4]} onda={((T - K.A) * 0.7) % 1} o={kprog(T, K.A + 1.0, K.A + 1.6)} />
+        <RedNeuronal T={T} x={380} y={850} ancho={560} alto={130} capas={[3, 4, 4, 3]} onda={((T - K.A) * 0.7) % 1} o={kprog(T, K.A + 1.0, K.A + 1.6)} />
       </Escena>
       <Chip T={T} at={K.A + 1.2} until={K.A + 3.4} texto="un decodificador para cada persona" x={600} y={380} tam={30} borde={KC.cyan} />
-      <Pantalla T={T} at={K.A + 3.8} until={K.Ej - 0.1} y={1040} h={200} titulo="historia nueva → texto" texto={tecleo('ella ni siquiera…', T, K.A + 4.6, K.A + 6.6)} />
+      <Pantalla T={T} at={K.A + 3.8} until={K.Ej - 0.1} y={1085} h={170} titulo="historia nueva → texto" texto={tecleo('ella ni siquiera…', T, K.A + 4.6, K.A + 6.6)} />
 
       {/* 4 · el ejemplo real: no las palabras, la idea */}
       <Escena T={T} a={K.Ej} b={K.P}>
@@ -272,7 +272,7 @@ function LeeMente() {
         <FondoLunares color={KC.orange} />
         {svg(<g opacity={1 - kprog(T, K.P + 2.5, K.P + 2.9)}>
           <text x={300} y={1080} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>
-          <OjoEspia x={300} y={1180} s={0.8} T={T} />
+          <OjoEspia x={300} y={720} s={0.6} T={T} />
         </g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.P + 2.8} until={K.Aj - 0.2} anio="2023" quien="Universidad de Texas en Austin" revista="Tang, LeBel, Jain y Huth · Nature Neuroscience" y={700} />
@@ -288,21 +288,21 @@ function LeeMente() {
       </Escena>
       <Chip T={T} at={K.Aj + 0.2} until={K.Sa - 0.2} texto="Prueba 1 · otro cerebro" x={700} y={400} tam={36} borde={KC.ink} />
       <Pantalla T={T} at={K.Aj + 0.6} until={K.Sa - 0.2} x={760} y={760} w={520} h={220} color={KC.red} titulo="decodificador de otra persona" cursor={false} tam={40} texto={T > K.Aj + 1.0 ? revuelto(T, 22, 2) : ''} />
-      <Medidor T={T} at={K.Aj + 1.6} until={K.Sa - 0.2} y={1070} etiqueta="aciertos" color={KC.red} valor={(t) => 0.06 * kprog(t, K.Aj + 1.8, K.Aj + 2.6, kEase.sale)} texto={() => 'apenas más que el azar'} />
+      <Medidor T={T} at={K.Aj + 1.6} until={K.Sa - 0.2} y={1040} etiqueta="aciertos" color={KC.red} valor={(t) => 0.06 * kprog(t, K.Aj + 1.8, K.Aj + 2.6, kEase.sale)} texto={() => 'apenas más que el azar'} />
 
       {/* 7 · prueba 2: sabotaje pensando en animales */}
       <Escena T={T} a={K.Sa} b={K.Ex}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Cabeza x={810} y={990} s={0.78} T={T} ojos="cerrados" espejo casco={1} />
-          <Globo x={760} y={580} rx={220} ry={150} hacia={[40, 230]}>
+          <Cabeza x={810} y={1005} s={0.78} T={T} ojos="cerrados" espejo casco={1} />
+          <Globo x={760} y={620} rx={220} ry={150} hacia={[40, 210]}>
             {animales.map(([t, ax, ay, at]) => { const p = kprog(T, at, at + 0.35, kEase.rebote); return p > 0 ? <Animal key={t} tipo={t} x={ax} y={ay} s={0.75 * p} T={T} /> : null; })}
           </Globo>
         </>)}
       </Escena>
       <Chip T={T} at={K.Sa + 0.2} until={K.Sa + 2.1} texto="Prueba 2 · ¡sabotaje!" x={330} y={420} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Sa + 0.7} until={K.Sa + 2.1} texto="«nombra animales en tu mente»" x={330} y={800} tam={28} borde={KC.ink} />
-      <Medidor T={T} at={K.Sa + 2.6} until={K.Ex - 0.2} x={570} ancho={460} y={1090} etiqueta="aciertos" color={caida > 0.5 ? KC.red : KC.leaf}
+      <Medidor T={T} at={K.Sa + 2.6} until={K.Ex - 0.2} x={330} ancho={700} y={330} etiqueta="aciertos del decodificador" color={caida > 0.5 ? KC.red : KC.leaf}
         valor={(t) => klerp(0.55, 0.02, kprog(t, K.Sa + 2.9, K.Sa + 4.3, kEase.suave))} texto={() => caida < 0.5 ? 'escuchando: ~55 %' : 'saboteando: 0–3 %'} />
 
       {/* 8 · lo raro: cortos animados sin sonido */}
@@ -320,11 +320,11 @@ function LeeMente() {
           <Cabeza x={330} y={1010} s={1.05} T={T} casco={1 - kprog(T, K.C + 3.0, K.C + 3.6)} />
           <Globo x={330} y={560} hacia={[40, 300]}><Foco x={0} y={10} s={0.95} T={T} /></Globo>
           <Candado x={470} y={640} s={0.85} cerrado={kprog(T, K.C + 0.8, K.C + 1.2, kEase.rebote)} brillo={kprog(T, K.C + 1.2, K.C + 1.8)} T={T} />
-          <g opacity={1 - kprog(T, K.C + 1.4, K.C + 2.2)}><Robotito x={830 + 300 * kprog(T, K.C + 1.4, K.C + 2.4, kEase.entra)} y={1080} s={0.8} T={T} cara="duda" /></g>
+          <g opacity={1 - kprog(T, K.C + 1.4, K.C + 2.2)}><Robotito x={830 + 300 * kprog(T, K.C + 1.4, K.C + 2.4, kEase.suave)} y={1080} s={0.8} T={T} cara="duda" /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="privacidad mental ✔" x={330} y={360} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="los autores piden reglas que la protejan" x={540} y={1170} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="privacidad mental ✔" x={330} y={345} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="los autores piden reglas que la protejan" x={540} y={1110} tam={28} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Es - 0.1} texto="¿Por qué no te *leen la mente* desde afuera?" />
@@ -345,8 +345,8 @@ function LeeMente() {
         [CUES.Ejemplo + 7.2, CUES.Pregunta - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Pregunta + 0.05, CUES.Pregunta + 2.65, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Ajeno + 1.0, CUES.Sabotaje - 0.2, 'avatar_10_serio_molesto', 'izq-alto'],
-        [CUES.Sabotaje + 2.1, CUES.Extra - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'grande-izq'],
-        [CUES.Extra + 1.0, CUES.Cierre - 0.2, 'avatar_11_sorprendido', 'izq-alto'],
+        [CUES.Sabotaje + 2.1, CUES.Extra - 0.2, 'avatar_11_sorprendido', 'grande-izq'],
+        [CUES.Extra + 1.0, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Cierre + 1.6, CUES.Outro - 0.1, 'avatar_13_senalando_arriba', 'arriba-der']]} />
       <MarcaAgua T={T} tema="ia" num="42" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="ia" robert={'assets/stickers/avatar_02_apuntando_camara.png'} />
