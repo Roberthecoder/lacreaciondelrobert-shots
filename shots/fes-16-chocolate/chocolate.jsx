@@ -338,14 +338,14 @@ function Chocolate() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={24} color="rgba(120,255,200,.15)" />
         {svg(<>
-          <g opacity=".35">{levs.map((l, i) => <Levadura key={i} T={T} seed={i} x={l.x} y={l.y} s={0.7} rot={l.r} brote={0.6} gris={0.6} />)}</g>
+          <g opacity=".35">{levs.map((l, i) => <Levadura key={i} T={T} seed={i} x={l.x} y={l.y} s={1.0} rot={l.r} brote={0.6} gris={0.6} />)}</g>
           {Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.Ba + 0.2 + i * 0.1, K.Ba + 1.0 + i * 0.1, kEase.sale), bx = 160 + i * 150, by = 800 + (i % 2) * 110;
-            return <g key={'l' + i}><Bacteria T={T} seed={i} x={bx - (1 - e) * 900} y={by} rot={-10 + i * 7} s={0.9} color={KC.mint} />
+            return <g key={'l' + i}><Bacteria T={T} seed={i} x={bx - (1 - e) * 900} y={by} rot={-10 + i * 7} s={0.5} color={KC.mint} />
               <GotaQ x={bx + 30} y={by + 70 + kprog(T, K.Ba + 1.2, K.Ba + 2.0) * 40} color={KC.mint} s={1} o={kprog(T, K.Ba + 1.1, K.Ba + 1.4)} /></g>; })}
           {Array.from({ length: 5 }, (_, i) => { const e = kprog(T, K.Ba + 2.2 + i * 0.1, K.Ba + 3.0 + i * 0.1, kEase.sale), bx = 200 + i * 160, by = 1040 + (i % 2) * 80;
             const traga = kprog(T, K.Ba + 3.0, K.Ba + 3.6);
             return <g key={'a' + i}><GotaQ x={bx - 90 + traga * 70} y={by - 10} color="#9fe0ff" s={1.1} o={1 - traga} />
-              <Bacteria T={T} seed={i + 9} x={bx + (1 - e) * 900} y={by} rot={8 - i * 6} s={0.9} color={KC.lilac} />
+              <Bacteria T={T} seed={i + 9} x={bx + (1 - e) * 900} y={by} rot={8 - i * 6} s={0.5} color={KC.lilac} />
               <GotaQ x={bx + 70} y={by + 60 + kprog(T, K.Ba + 3.6, K.Ba + 4.4) * 30} color={KC.yellow} s={1.1} o={kprog(T, K.Ba + 3.5, K.Ba + 3.8)} /></g>; })}
           <g opacity={kprog(T, K.Ba + 3.9, K.Ba + 4.3)}><Vinagre x={880} y={600} s={0.85} /></g>
         </>)}
@@ -385,7 +385,7 @@ function Chocolate() {
           return <>
             <Proteina T={T} cx={540} cy={700} corte={corta} />
             {T < K.Pi + 2.2 && <Tijera x={tx} y={700} s={1.1} abre={Math.abs(Math.sin(T * 10))} />}
-            <AzucarDoble x={540} y={1080} s={1.3} parte={parte} />
+            <AzucarDoble x={540} y={1080} s={0.8} parte={parte} />
             {T > K.Pi + 2.0 && T < K.Pi + 3.0 && <Tijera x={540} y={1000} s={0.9} rot={90} abre={Math.abs(Math.sin(T * 10))} />}
           </>;
         })())}

@@ -54,7 +54,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Este chocolate no lo hizo solo el cacao: también lo hizo un hongo. 🍫🍄 Las semillas de cacao se fermentan días tapadas con hojas de plátano: las levaduras se comen el azúcar de la pulpa, luego entran bacterias, y la semilla queda lista para que, al tostarla, salga el sabor a chocolate. Sin levaduras, el chocolate sale más ácido y sin su sabor.
+Este chocolate no lo hizo solo el cacao: también lo hizo un hongo. 🍫🍄 Las semillas de cacao se fermentan días tapadas con hojas de plátano: las levaduras se comen el azúcar de la pulpa, luego entran bacterias, y la semilla queda lista para que, al tostarla, salga el sabor a chocolate. En un estudio de 2014, sin levaduras el chocolate salió más ácido y sin su sabor.
 ¿A quién le regalarías chocolate este 14 de febrero? 👇
 Shot Festivo #16 · San Valentín · Fungi Mati · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
