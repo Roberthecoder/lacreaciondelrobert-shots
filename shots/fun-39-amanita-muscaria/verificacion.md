@@ -40,5 +40,3 @@ Fuentes abiertas:
 | 12 | Cierre: "Admíralo, pero no te lo comas" | ✅ | [WT], [MMWR] | Coherente con "highly toxic"; nada del guion invita a comerlo ni a "probarlo". | — |
 
 **Re-verificación (29 oct 2026):** se revisó narracion.json completo (998 caracteres) y las escenas 1, 3, 4, 5, 8, 9 y 11 del guion. Las 4 observaciones (cocinar, "hongo que conocía", olla y rótulo del anillo) quedaron corregidas y con fuente; los recortes no cambian ningún dato; Rampolli 2021 quedó en Fuentes (solo falta corregir en el guion el número de la revista: 8(2), no 8(3), detalle bibliográfico que no cambia ningún hecho). Todas las afirmaciones quedan ✅.
-
-VEREDICTO: APROBADO

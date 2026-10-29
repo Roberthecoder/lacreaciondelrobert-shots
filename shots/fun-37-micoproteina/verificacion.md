@@ -43,3 +43,33 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026, segunda vuelta):** se corrigieron las 5 observaciones (redacción del ARN y la seguridad, "hombres jóvenes", aclaración del estudio de una sola toma con igual leucina, año 2004 del tiempo de duplicación, tanque sin escala falsa) y se revisaron los recortes de voz (campo inglés, "en unas cuatro horas", clara de huevo) contra las fuentes abiertas: todas las afirmaciones de voz y pantalla quedan ✅. narracion.json: 13 líneas, 997 caracteres.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisados `micoproteina.jsx`, la columna «Lo que se ve» y la tabla de Robert de `guion.md`, `publicacion.md` y 12 cuadros de preview (0.3–60 s) + 3 cuadros extra de la escena del estudio (41, 43, 47 s) después de corregir.
+
+| # | Texto o dibujo en pantalla / publicación | Veredicto | Fuente | Nota |
+|---|---|---|---|---|
+| R1 | Chip «no es un champiñón: es un hongo de filamentos» | ✅ | [WIE] | "the filamentous fungus Fusarium venenatum A3/5" |
+| R2 | Contador «más de 3,000 microbios» + etiqueta «un campo · Buckinghamshire, Reino Unido» | ✅ | [FIN] | ">3000 soil organisms"; "found originally in a field in Buckinghamshire, UK" |
+| R3 | Cronómetro «≈3.5–4.1 h · DATO DE 2004» | ✅ | [WIE] | "a doubling time between 3.5 and 4.1 h" |
+| R4 | Termómetro «~72 °C» + chip «menos ARN → seguro en las pruebas» | ✅ | [WIE] | "above 68°C (optimum 72-74°C)"; pruebas de 12 años con ARN reducido |
+| R5 | Tanque: nota «esquemático, no a escala» (sin barra) | ✅ | [WIE] | — |
+| R6 | «3–5 µm de grueso» con barra «5 µm» (hifa dibujada de ~4 µm a esa escala) | ✅ | [OKE] | "cross-sectional diameters of 3 to 5 μm" |
+| R7 | «tabique (septo)» en la hifa | ✅ | [CDC] | *Fusarium*: "septate, hyaline, filamentous hyphae" |
+| R8 | «haz de hifas», «fibras de músculo (esquema)», «clara de huevo», barra «50 µm (hifas)» | ✅ | [OKE] | La barra se aplica a las hifas (grosor dibujado ≈ 5–6 µm); el músculo está rotulado como esquema |
+| R9 | Tarjeta «2020 · Universidad de Exeter, Reino Unido · 20 hombres jóvenes · Am J Clin Nutr, 2020» | ✅ | [MON] | — |
+| R10 | Antes: 20 figuras en **dos grupos de 10** (dorado/azul) | ⚠️ → corregido | [MON] | El resumen (lo único accesible) dice "parallel-group" pero no da cuántos hubo en cada grupo. **Corregido:** las 20 figuras van del mismo color en dos filas, con el letrero «20 pesistas · cada uno: micoproteína o leche» (y se actualizó la columna «Lo que se ve»). |
+| R11 | Barras de «Aumento en la fabricación de proteína del músculo» en proporción 2.2 : 1 + chip «en ese estudio» | ✅ | [MON] | Δ0.040 / Δ0.018 = 2.2 |
+| R12 | Subtítulo «Su músculo: más que con leche.» | ⚠️ → corregido | [MON] | Sin contexto sonaba general. **Corregido:** «En ese estudio: más que con leche.» |
+| R13 | Subtítulo «Hifas de 4 milésimas de mm.» | ⚠️ → corregido | [OKE] | El dato es un rango (3–5 µm). **Corregido:** «Hifas de unas 4 milésimas de mm.» |
+| R14 | Pastel «1/3 quitina · 2/3 β-glucanos» + «caparazón: quitina» | ✅ | [FIN], [IZA] | "approximately one-third chitin … and two-thirds β-glucan" |
+| R15 | Demás subtítulos («No es pollo: es hongo.», «Más de 3,000 microbios probados.», «Duplica su masa en unas 4 horas.», «Menos ARN: seguro en las pruebas.», «2020, Exeter: 20 hombres jóvenes.», «Un tercio de su fibra: quitina.», etc.) | ✅ | — | Coinciden con la voz verificada |
+| R16 | publicacion.md (YouTube): «micoproteína (70 g) o de proteína de leche (31 g)» | ⚠️ → corregido | [MON] | Mezclaba gramos de alimento sin aclarar la proteína. **Corregido:** «70 g de micoproteína (31.5 g de proteína) o 31 g de proteína de leche (26.2 g de proteína), las dos con la misma leucina (2.5 g)». |
+| R17 | publicacion.md: «Se vende con la marca Quorn» | ✅ | [FIN] | "Mycoprotein, sold as Quorn, is consumed in 17 countries" |
+| R18 | publicacion.md: «un coautor trabajaba en Marlow Foods, la empresa que produce la micoproteína» | ✅ | [MON], [WIE] | Afiliación "Marlow Foods Ltd"; [WIE] "fermenter used by Marlow Foods … for the production of myco-protein" |
+| R19 | Resto de publicacion.md (7 redes y comentario fijado) | ✅ | todas | Solo repite datos ya verificados; fuentes con su enlace correcto |
+
+**Resumen de la revisión final:** se corrigieron 4 detalles de pantalla/publicación (reparto 10 y 10 no verificable, dos subtítulos y los gramos de la publicación). Todo lo de voz, pantalla y publicación queda ✅.
+
+VEREDICTO: APROBADO
