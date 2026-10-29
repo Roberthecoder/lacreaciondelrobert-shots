@@ -1069,63 +1069,120 @@
   },
   {
    "id": "fun-55-naranja",
-   "titulo": "El polvo verde de tu naranja (Penicillium digitatum)",
+   "titulo": "Ese polvo verde de tu naranja no es polvo: el moho verde (*Penicillium digitatum*)",
    "serie": "Shot Fungi Mati",
    "numero": 55,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-55-naranja",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13329989/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13117479/",
+    "https://edis.ifas.ufl.edu/publication/CH081",
+    "https://ipm.ucanr.edu/home-and-landscape/blue-and-green-mold-of-citrus",
+    "https://europepmc.org/article/MED/30861819",
+    "https://apps.lucidcentral.org/pppw_v13/text/web_full/entities/citrus_storage_moulds_197.htm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12576830/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Por qué el limón no se enmohece igual que la naranja",
+    "El imazalil y otras ceras de la fruta del súper",
+    "Moho en el pan: Rhizopus contra Penicillium"
+   ]
   },
   {
    "id": "fun-56-mucormicosis",
-   "titulo": "El 'hongo negro' de la pandemia (mucormicosis)",
+   "titulo": "El \"hongo negro\" no es negro: mucormicosis",
    "serie": "Shot Fungi Mati",
    "numero": 56,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-56-mucormicosis",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://www.cdc.gov/mucormycosis/hcp/clinical-overview/index.html",
+    "https://www.cdc.gov/mucormycosis/about/index.html",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8386807/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8374756/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9254769/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8354408/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10552646/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Aspergilosis: el moho que se respira",
+    "Por qué el hierro alimenta a los microbios",
+    "Hongos en hospitales: cómo se controlan"
+   ]
   },
   {
    "id": "fun-57-prototaxites",
-   "titulo": "Prototaxites: el 'tronco' de 8 metros que quizá era un hongo",
+   "titulo": "El tronco de 8 metros que quizá no era hongo: Prototaxites",
    "serie": "Shot Fungi Mati",
    "numero": 57,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-57-prototaxites",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12822639/",
+    "https://doi.org/10.1130/G23384A.1",
+    "https://aspergillus.org.uk/article_database/devonian-landscape-heterogeneity-recorded-by-a-giant-fungus",
+    "https://chronicle.uchicago.edu/070510/boyce.shtml",
+    "https://doi.org/10.1016/S0034-6667(01",
+    "https://www.yahoo.com/news/scientists-puzzled-giant-ancient-life-121517930.html",
+    "https://kvia.com/cnn-other/2026/02/05/new-analysis-suggests-puzzling-fossil-may-have-been-an-unknown-life-form/",
+    "https://www.abdn.ac.uk/rhynie/basic.htm"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Los primeros hongos fósiles del pedernal de Rhynie",
+    "Cómo eran los bosques antes de los árboles",
+    "Líquenes gigantes: ¿otra hipótesis de Prototaxites?"
+   ]
   },
   {
    "id": "fun-58-boulardii",
-   "titulo": "La levadura probiótica que se receta para la diarrea (Saccharomyces boulardii)",
+   "titulo": "Este sobrecito no trae bacterias: la levadura probiótica *Saccharomyces boulardii*",
    "serie": "Shot Fungi Mati",
    "numero": 58,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-58-boulardii",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2868213/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1855594/",
+    "https://doi.org/10.1086/497832",
+    "https://doi.org/10.1111/apt.13344",
+    "https://doi.org/10.1002/14651858.CD004827.pub5",
+    "https://doi.org/10.1007/s100960050003"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Kéfir: levaduras y bacterias juntas",
+    "Clostridioides difficile: la bacteria que aprovecha los antibióticos",
+    "Levaduras de cerveza vs. levaduras probióticas"
+   ]
   },
   {
    "id": "fun-59-reishi",
-   "titulo": "Reishi y suplementos de hongos: lo que sí dice la ciencia",
+   "titulo": "Ese frasco de reishi no siempre trae lo que dice",
    "serie": "Shot Fungi Mati",
    "numero": 59,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-59-reishi",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5552695/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6353236/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6055023/",
+    "https://www.cancer.gov/about-cancer/treatment/cam/patient/mushrooms-pdq"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Código de barras de ADN para detectar fraudes en alimentos",
+    "Melena de león: lo que sí y lo que no se sabe",
+    "Betaglucanos: qué son y dónde están"
+   ]
   }
  ]
 }
