@@ -77,12 +77,12 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-La mancha de moho es solo lo que se ve. Pan, mermelada, yogur o jitomate: se tiran. Queso duro o zanahoria con mancha chica: corta 2.5 cm alrededor y por debajo (USDA). En 2001, la patulina llegó a todo el jitomate. 🍞 #FungiMati #Moho
+La mancha de moho es solo lo que se ve. Pan, mermelada, yogur o jitomate: se tiran. Queso duro o zanahoria con mancha chica: corta al menos 2.5 cm alrededor y por debajo (USDA). En 2001, la patulina llegó a todo el jitomate. 🍞 #FungiMati #Moho
 ```
 
 ### Threads
 ```text
-¿Por qué no basta con quitarle el moho al pan? Porque esa mancha es solo la parte que se ve. 🍞 Lo blando, húmedo o poroso se tira; lo duro, si la mancha es chica, se corta con 2.5 cm de margen alrededor y por debajo. ¿Tú le quitabas la mancha al pan?
+¿Por qué no basta con quitarle el moho al pan? Porque esa mancha es solo la parte que se ve. 🍞 Lo blando, húmedo o poroso se tira; lo duro, si la mancha es chica, se corta con al menos 2.5 cm de margen alrededor y por debajo. ¿Tú le quitabas la mancha al pan?
 Shot Fungi Mati #11 · La Creación del Robert
 #Moho
 ```

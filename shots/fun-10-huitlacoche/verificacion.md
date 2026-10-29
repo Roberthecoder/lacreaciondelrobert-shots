@@ -54,6 +54,8 @@ Se releyeron `narracion.json` final (recortes en Entra, Hifas, Estudio, Enfermed
 | F1 | Voz final: "…investigadores de la Universidad de Illinois pusieron a propósito el hongo en pelos de elotes"; "En casi todo el mundo es una enfermedad"; "es modelo de cómo un hongo enferma a una planta" | ✅ | [PC], [UW], [BR] | ver filas 10, 10b, 13 y 15 | 2003 / 2024 / 2009 |
 | F2 | Pantalla: "maíz: Zea mays", "pelos (estigmas)", "grano (ovario)", "teliosporas", "organismo modelo de laboratorio", "agallas en la planta", mapa de nombres | ✅ | [PC], [SM], [V], [BR] | "ears of Zea mays"; "maize stigmas (silks)"; Tabla 1; "tumors on all aerial parts of maize" | 2003 / 1993 / 2023 / 2009 |
 | F3 | `publicacion.md` · TikTok, YouTube, Facebook, LinkedIn, Threads y comentario fijado | ✅ | todas | (mismos datos verificados en las filas 1–16) | — |
-| F4 | `publicacion.md` · **Instagram:** "En 2003, **en la Universidad de Illinois**, lo inocularon a propósito y sacaron hasta **131 g por mazorca**" | ⚠️ | [PC] | Repite la redacción ya corregida en la voz (el resumen solo da la afiliación, no dónde fue el ensayo) y la cifra no dice de qué es. Arreglo: "En 2003, investigadores de la Universidad de Illinois lo inocularon a propósito y sacaron hasta 131 g de huitlacoche por mazorca" | 2003 |
+| F4 | `publicacion.md` · **Instagram:** "En 2003, investigadores de la Universidad de Illinois lo inocularon a propósito y sacaron hasta 131 g de huitlacoche por mazorca" (**corregido**; antes: "en la Universidad de Illinois… 131 g por mazorca") | ✅ | [PC] | Afiliación: "Department of Crop Sciences, University of Illinois, Urbana, Illinois"; "Maximum yield of huitlacoche was 131 g ear(-1)" | 2003 |
 
-Pendiente: fila F4. Sin línea de veredicto hasta corregirla.
+**Resumen final:** voz, pantalla (animación) y los textos de las 7 redes más el comentario fijado quedan ✅; ninguna ❌ ni ⚠️ pendiente.
+
+VEREDICTO: APROBADO

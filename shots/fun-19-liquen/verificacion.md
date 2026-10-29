@@ -27,25 +27,26 @@ Fuente extra abierta: **[SG]** Solhaug, K. A. y Gauslaa, Y. / búsqueda sobre fu
 | 4 | «Al microscopio, tiene pisos» | ✅ (con nota) | [ANBG] | Capas en la mayoría (heteromerous): "Below the cortex, in green, is a layer of photobiont cells"; no es universal, pero aplica al costroso de piedra dibujado (esquemático). | consultada 2026 |
 | 5 | «Arriba, una piel de hilos apretados del hongo» (córtex) | ✅ | [ANBG] | "a band of compacted fungal hyphae that serves as a protective skin" | consultada 2026 |
 | 6 | «…lo protege del sol» | ✅ | [SAN] | "The lichen upper cortex seems to provide adequate protection against solar radiation." | 2007 |
-| 6b | «…y de secarse» (atribuido al córtex) | ⚠️ | [SG], [WSL] | El córtex filtra luz/UV; que proteja de **secarse** no se encontró demostrado (los líquenes se secan y rehidratan por completo). [WSL] habla de protección "against … drying damage" por el hongo en general, no por la capa de arriba. | 2019–2026 |
+| 6b | «…y de secarse» (atribuido al córtex) | ✅ corregido (quitado) | [SG] | La voz final dice solo «lo protege del sol»; ya no afirma que el córtex proteja de secarse. | 2026 |
 | 7 | «Debajo, una capa verde: algas o cianobacterias que hacen fotosíntesis y dan azúcar al hongo» | ✅ | [ANBG], [BLS] | "Below the cortex, in green, is a layer of photobiont cells." · "green algae or cyanobacteria that provide the simple sugars to their fungal partners." | consultadas 2026 |
 | 7b | Pantalla: células verdes redondas (*Trebouxia*) abrazadas por hifas | ✅ (dibujo) | morfología general | alga verde unicelular esférica; dibujo esquemático | — |
-| 8 | «Y abajo, una maraña suelta de hilos del hongo: la médula» | ✅ | [ANBG], [GAL] | "a loose weave of fungal hyphae" · "a loosely arranged layer of interlaced hyphae below the upper cortex and photobiont zone" | 1992 / 2026 |
+| 8 | «Abajo, una maraña suelta de hilos del hongo: la médula» | ✅ | [ANBG], [GAL] | "a loose weave of fungal hyphae" · "a loosely arranged layer of interlaced hyphae below the upper cortex and photobiont zone" | 1992 / 2026 |
 | 8b | Pantalla: médula sin rótulo de "aire" (corregido) | ✅ corregido | [GAL] | "loosely arranged" | 1992 |
-| 9 | «El hongo pone la casa y el socio, la comida» | ✅ | [BLS], [WSL] | "The fungi build the structure of the lichen thallus" · "provides the fungus with nutrients such as sugar" | consultadas 2026 |
+| 9 | «El hongo pone la casa; el socio, la comida» | ✅ | [BLS], [WSL] | "The fungi build the structure of the lichen thallus" · "provides the fungus with nutrients such as sugar" | consultadas 2026 |
 | 10 | «Schwendener propuso en 1867 que un liquen eran dos seres»; tarjeta "(Suiza)" | ✅ | [MIT] | "held in Rheinfelden on 10 September 1867 … 'lichens may not be autonomous plants, but fungi in association with algae'" · "the Swiss botanist Carl Nägeli … had a compatriot, Simon Schwendener (1829–1919)" | 1867 |
 | 11 | «muchos no le creyeron» | ✅ | [MIT] | "welcomed by few botanists, regarded with scepticism by many, and summarily rejected by lichen taxonomists" | 1867–1890 |
 | 12 | «En 2016, en Montana, Estados Unidos, hallaron levaduras en la piel de dos líquenes»; tarjeta Spribille et al., *Science*; *Bryoria* | ✅ | [SPR] | "These yeasts are embedded in the cortex" · "within the lichen pair B. fremontii and B. tortuosa" · "sites across western Montana, USA" | 2016 |
-| 13 | «Y encontraron parientes de esas levaduras en líquenes de seis continentes» (corregido) | ✅ corregido | [SPR] | "we found related basidiomycete lineages associated with 52 lichen genera from six continents" | 2016 |
+| 13 | «Encontraron parientes de esas levaduras en líquenes de seis continentes» (corregido) | ✅ corregido | [SPR] | "we found related basidiomycete lineages associated with 52 lichen genera from six continents" | 2016 |
 | 14 | «Qué hacen ahí, aún se estudia» | ✅ | [SPR] | "Confirming a link … is impossible until the enzymatic synthesis pathway of vulpinic acid is described" | 2016 |
-| 15 | «Y son duros:» (todos los líquenes) | ⚠️ | [SAN] | El experimento probó **dos especies** (*Rhizocarpon geographicum*, *Xanthoria elegans*): "The lichens used were the bipolar species Rhizocarpon geographicum and Xanthoria elegans". «Son duros» + «pasaron» sin sujeto lo generaliza a todos los líquenes. | 2005 |
-| 16 | «en 2005 pasaron casi quince días expuestos al espacio, por fuera de un satélite»; contador "≈ 15 días" (corregido) | ✅ corregido | [ESA], [SAN] | "were exposed for a total 14.6 days before being returned to Earth" · "BIOPAN-5 is located on the outer shell of the Earth-orbiting FOTON-M2 Russian satellite" · "launched … on May 31, 2005" | 2005 |
+| 15 | «Y algunos son durísimos: en 2005, dos especies…» (corregido) | ✅ corregido | [SAN] | "The lichens used were the bipolar species Rhizocarpon geographicum and Xanthoria elegans" | 2005 |
+| 16 | «…pasaron casi quince días expuestos al espacio, por fuera de un satélite»; contador "≈ 15 días" (corregido) | ✅ corregido | [ESA], [SAN] | "were exposed for a total 14.6 days before being returned to Earth" · "BIOPAN-5 is located on the outer shell of the Earth-orbiting FOTON-M2 Russian satellite" · "launched … on May 31, 2005" | 2005 |
 | 17 | «y al volver hacían fotosíntesis casi igual» | ✅ | [SAN] | "All exposed lichens … showed nearly the same photosynthetic activity after the flight as measured before the flight." | 2005 (publ. 2007) |
-| 18 | Cierre: «esa mancha en la piedra no es una planta: es un equipo que aguantó el espacio» | ⚠️ | [SAN] | Solo dos especies fueron al espacio; decir que "esa mancha" (cualquier liquen de piedra) aguantó el espacio generaliza de más. | 2007 |
+| 18 | Cierre: «es un equipo, como los dos que aguantaron el espacio» (corregido) | ✅ corregido | [SAN] | título "Lichens survive in space"; dos especies: "Rhizocarpon geographicum and Xanthoria elegans" | 2007 |
 | 18b | Pantalla de cierre: levadura tenue con "¿?" (corregido) | ✅ corregido | [SPR] | "related basidiomycete lineages associated with 52 lichen genera" (no en todos) | 2016 |
 | 19 | Barras de escala 10 cm / 1 mm / 50 µm / 10 µm | ✅ (dibujo) | — | órdenes de magnitud coherentes; esquemático | — |
 
-## Pendientes (⚠️) de la segunda ronda
-- **#6b (Corteza):** «Arriba, una piel de hilos apretados del hongo: lo protege del sol.» (quitar «y de secarse») [SAN 2007: "The lichen upper cortex seems to provide adequate protection against solar radiation"].
-- **#15 (Espacio):** «Y algunos son durísimos: en 2005, dos especies pasaron casi quince días expuestos al espacio, por fuera de un satélite, y al volver hacían fotosíntesis casi igual.» [SAN 2007 + ESA 2005].
-- **#18 (Cierre):** «Así que esa mancha en la piedra no es una planta: es un equipo, como los dos que aguantaron el espacio.» [SAN 2007].
+## Tercera ronda (29 oct 2026)
+Se re-verificó el texto final de `narracion.json` y `guion.md`: córtex solo «del sol» (Sancho 2007), «dos especies» en el espacio y cierre «como los dos que aguantaron el espacio» (Sancho 2007; ESA 2005 para los ~15 días expuestos). Los recortes de redacción («El hongo pone la casa; el socio, la comida.», sin dos "Y") no cambian ningún dato.
+
+Resumen: 23 afirmaciones (voz y pantalla) revisadas; todas ✅ tras las correcciones (córtex, seis continentes, días expuestos, generalización a todos los líquenes, cierre, levadura tenue y médula sin "aire").
+VEREDICTO: APROBADO

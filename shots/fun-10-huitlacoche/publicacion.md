@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Ese elote no está podrido: es un manjar. 🌽🍄
-El huitlacoche es el hongo Ustilago maydis: entra por los pelos del elote, sus hifas infectan el grano, y el maíz hace células más grandes y de más hasta que el grano se hincha. Luego el hongo lo llena de esporas oscuras con espinitas: por eso se pone negro. En 2003, en la Universidad de Illinois, lo inocularon a propósito y sacaron hasta 131 g por mazorca; cosechado a los 12–14 días no servía porque le faltaban esporas, que le dan color y sabor. En casi todo el mundo es una enfermedad; en México, un manjar con nombre en muchas lenguas.
+El huitlacoche es el hongo Ustilago maydis: entra por los pelos del elote, sus hifas infectan el grano, y el maíz hace células más grandes y de más hasta que el grano se hincha. Luego el hongo lo llena de esporas oscuras con espinitas: por eso se pone negro. En 2003, investigadores de la Universidad de Illinois lo inocularon a propósito y sacaron hasta 131 g de huitlacoche por mazorca; cosechado a los 12–14 días no servía porque le faltaban esporas, que le dan color y sabor. En casi todo el mundo es una enfermedad; en México, un manjar con nombre en muchas lenguas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cómo le dicen en tu región: huitlacoche o cuitlacoche? 👇
 Shot Fungi Mati #10 · La Creación del Robert

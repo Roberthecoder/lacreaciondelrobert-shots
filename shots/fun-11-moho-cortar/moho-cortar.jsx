@@ -365,6 +365,7 @@ function MohoCortarShot() {
       <Chip T={T} at={K.Ti + 0.2} until={K.D - 0.3} texto="SE TIRA: blando, húmedo o poroso" x={370} y={470} tam={32} borde={KC.red} />
       <Etq T={T} at={K.D + 0.4} until={K.C - 0.3} x={60} y={640} texto="hilos bajo la superficie" tam={30} color={KC.ink} />
       <Chip T={T} at={K.D + 1.3} until={K.C - 0.3} texto="+ bacterias" x={790} y={1130} tam={30} borde={KC.lilac} />
+      <Chip T={T} at={K.D + 1.3} until={K.C - 0.3} texto="esquemático, no a escala" x={540} y={1440} tam={26} borde={KC.texto} mono />
       <Chip T={T} at={K.C + 0.2} until={K.C + 4.3} texto="SE CORTA: duro y mancha chica" x={370} y={470} tam={32} borde={KC.leaf} />
       <Chip T={T} at={K.C + 4.5} until={K.E - 0.3} texto="al menos 2.5 cm (1 pulgada)" x={370} y={470} tam={32} borde={KC.leaf} />
       <Chip T={T} at={K.C + 5.3} until={K.E - 0.3} texto="alrededor y por debajo" x={370} y={565} tam={30} borde={KC.ink} />
@@ -373,7 +374,7 @@ function MohoCortarShot() {
       <Etq T={T} at={K.E + 2.4} until={K.M - 0.3} x={60} y={845} texto="patulina: una toxina de moho" tam={30} color={KC.ink} />
       <Etq T={T} at={K.M + 0.8} until={K.J - 0.3} x={60} y={560} texto="Penicillium expansum" it tam={32} color={KC.ink} />
       <Etq T={T} at={K.M + 1.2} until={K.J - 0.3} x={60} y={610} texto="zona con moho" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.M + 2.6} until={K.J - 0.3} texto="2 cm después: no detectable" x={460} y={1440} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.M + 2.6} until={K.J - 0.3} texto="a más de 2 cm: no detectable" x={460} y={1440} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.M + 1.0} until={K.J - 0.3} x={560} y={1000} texto="patulina" tam={30} color={MC.toxina} />
       <Chip T={T} at={K.J + 1.4} until={K.O - 0.3} texto="jitomate: en todo el fruto" x={380} y={470} tam={36} borde={MC.toxina} />
       <Chip T={T} at={K.O + 1.6} until={K.Ci - 0.3} texto="no lo huelas" x={300} y={400} tam={40} borde={KC.red} />
@@ -400,10 +401,10 @@ function MohoCortarShot() {
       <Subtitulo T={T} idx={3} at={K.H + 0.1} until={K.P - 0.1} texto="En los hilos… *y a veces en todo.*" />
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.Ti - 0.1} texto="¿Cuándo se corta *y cuándo se tira?*" />
       <Subtitulo T={T} idx={5} at={K.Ti + 0.1} until={K.D - 0.1} texto="Blando, húmedo o poroso: *se tira.*" />
-      <Subtitulo T={T} idx={6} at={K.D + 0.1} until={K.C - 0.1} texto="Llega por debajo *y trae bacterias.*" />
-      <Subtitulo T={T} idx={7} at={K.C + 0.1} until={K.E - 0.1} texto="Duro y mancha chica: *corta 2.5 cm.*" />
+      <Subtitulo T={T} idx={6} at={K.D + 0.1} until={K.C - 0.1} texto="Llega por debajo *y puede traer bacterias.*" />
+      <Subtitulo T={T} idx={7} at={K.C + 0.1} until={K.E - 0.1} texto="Duro y mancha chica: *corta 2.5 cm o más.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.M - 0.1} texto="2001, Alemania: *la patulina.*" />
-      <Subtitulo T={T} idx={9} at={K.M + 0.1} until={K.J - 0.1} texto="Manzana: *a 2 cm ya no había.*" />
+      <Subtitulo T={T} idx={9} at={K.M + 0.1} until={K.J - 0.1} texto="Manzana: *a más de 2 cm, no detectable.*" />
       <Subtitulo T={T} idx={10} at={K.J + 0.1} until={K.O - 0.1} texto="Jitomate: *llegó a todo el fruto.*" />
       <Subtitulo T={T} idx={11} at={K.O + 0.1} until={K.Ci - 0.1} texto="No la huelas: *problemas al respirar.*" />
       <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Pan: *se tira.* Queso duro: *con margen.*" />

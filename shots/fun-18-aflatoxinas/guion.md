@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #18 · rama `pedido300/fun`.
 - **Formato:** N2 "El número" (número gigante "8,000 vs 20" del caso de Kenia) con gancho 6 y cierre con **qué sí sirve**; viaje macro (bolsa de cacahuates) → micro (moho y ADN) → macro (la misma bolsa).
 - **Gancho (de los 7):** #6 "Mito peligroso ¿Por qué NO…?": «¿Por qué no debes comer el cacahuate arrugado del fondo de la bolsa?»
-- **Duración:** voz 1000 caracteres / 174 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
+- **Duración:** voz 997 caracteres / 172 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** útil y sin alarmismo (prevención en la cocina). No es consejo médico.
 
@@ -17,11 +17,11 @@
 | 3 | Cocinar | Y tostarlas o freírlas no las quita del todo. | Comal y sartén: los cacahuates se tuestan; las moléculas (hexágonos naranjas) siguen ahí. Chip "el calor de la cocina no basta". |
 | 4 | Pregunta | ¿Y adentro de ti, qué hacen? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
 | 5 | ADN | Tu cuerpo las vuelve una molécula que se pega a tu ADN. | Fondo oscuro: célula; la molécula cambia de forma (una "mano" reactiva) y se engancha a un escalón de la doble hélice. |
-| 6 | Cancer | Por eso la agencia contra el cáncer de la OMS las clasifica como cancerígenas para humanos: se asocian con cáncer de hígado. | Hígado dibujado con un sello "Grupo 1 · IARC, la agencia contra el cáncer de la OMS". |
+| 6 | Cancer | Por eso la agencia contra el cáncer de la OMS las clasifica como cancerígenas para humanos: ligadas al cáncer de hígado. | Hígado dibujado con un sello "Grupo 1 · IARC, la agencia contra el cáncer de la OMS". |
 | 7 | Estudio | En 2004, en Kenia, cosecharon maíz en plenas lluvias y lo guardaron húmedo. | Tarjeta "2004 · Kenia · CDC (MMWR), 2004"; lluvia sobre la milpa y un granero con maíz húmedo. |
 | 8 | Numero | En comida de algunas casas había hasta ocho mil partes por mil millones; el límite: veinte. | **Número gigante "8,000"** contra una barrita "20 (límite)": la barra de 8,000 sale de la pantalla. Unidad "ppb = partes por mil millones" y nota chica "aflatoxina B1 · comida de las casas". |
 | 9 | Brote | Para julio: trescientos diecisiete enfermos con piel amarilla, ciento veinticinco muertos. | Cuadrícula de 317 personitas que se ponen amarillas; 125 se apagan. Chips "317 casos" y "125 muertes". |
-| 10 | Pavos | Se descubrieron en 1960: murieron cien mil pavitos en Inglaterra que comieron harina de cacahuate con moho. | Una parvada de pavitos y un costal "harina de cacahuate" con manchas de moho; chip "Inglaterra, 1960". |
+| 10 | Pavos | Se descubrieron hacia 1960: murieron cien mil pavitos en Inglaterra que comieron harina de cacahuate mohosa. | Una parvada de pavitos y un costal "harina de cacahuate" con manchas de moho; chip "Inglaterra, hacia 1960". |
 | 11 | Sirve | Lo que sí sirve: secar y guardar el grano seco y fresco; tirar lo mohoso, arrugado o descolorido. | Tres chips con palomita: "✓ secar" (sol sobre el grano), "✓ guardar seco y fresco", "✓ tirar mohoso, arrugado o descolorido". |
 | 12 | Cierre | Así que ese cacahuate arrugado del fondo: a la basura. | **Regreso a la imagen del inicio:** la misma bolsa y el mismo cacahuate arrugado, que ahora cae al bote de basura. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
@@ -59,6 +59,7 @@ Barras de escala: 1 cm (cacahuate), 1 mm (colonia), 10 µm (conidióforo), 2 nm 
 6. Pickova, D., Ostry, V., Toman, J. y Malir, F. (2021). Aflatoxins: History, Significant Milestones, Recent Data on Their Toxicity and Ways to Mitigation. *Toxins* 13(6): 399. https://pmc.ncbi.nlm.nih.gov/articles/PMC8227755/
    > "A total of 100,000 turkey poults died by hitherto unknown turkey "X" disease in England."
    > "The disease was associated with Brazilian groundnut meal affected by Aspergillus flavus."
+   > "In the late 1950s and early 1960s, a new so far unknown turkey disease" … "identified in England" (de ahí "hacia 1960").
    > "temperatures up to 100 °C used for common food preparation have little effect on AFs"
    > "they are assigned into Group 1 "carcinogenic to humans" by the International Agency for Research on Cancer (IARC)"
 
