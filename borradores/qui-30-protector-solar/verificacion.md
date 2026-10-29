@@ -30,3 +30,8 @@
 1. **#6 (⚠️ leve, voz esc. 5):** el artículo salió en línea en noviembre de 2015 (número de enero 2016); "en 2016 lo midieron" no es exacto sobre cuándo se midió. Propuesta: "En 2015, en Nueva Jersey, lo midieron: solo reflejan del 4 al 5 por ciento del UV…" (y tarjeta "2015 · Cole, Shyr y Ou-Yang · Nueva Jersey, EUA"). Alternativa sin cambiar duración: "Un estudio de 2016, en Nueva Jersey, lo midió: …".
 2. **#10 (⚠️ pantalla esc. 5):** no mostrar que las ~95 flechas restantes se apagan todas. Propuesta: ~5 rebotan, la gran mayoría se apaga dentro de las partículas y unas pocas pasan (barras "reflejado 4–5 %" y "absorbido" sin decir 95 %).
 3. **#17 (nota, sin cambio de voz):** mantener la tarjeta como afiliación de los investigadores; en `guion.md`/descripción no decir "la playa de Copenhague" (el artículo no dice dónde estaba la playa).
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplicaron tal cual las propuestas del verificador; además solo se quitaron palabras de relleno para cuadrar el tiempo (sin cambiar datos).
+
+VEREDICTO: APROBADO

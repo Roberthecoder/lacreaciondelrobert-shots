@@ -346,7 +346,7 @@ function Calentador() {
         [CUES.Consejo + 0.3, CUES.Cierre - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'izq-alto']]} />
       <MarcaAgua T={T} tema="quimica" num="25" hasta={K.Ou} />
-      <CierreMarca T={T} at={K.Ou} tema="quimica" robert={'assets/stickers/avatar_02_apuntando_camara.png'} />
+      <CierreMarca T={T} at={K.Ou} tema="quimica" robert={'assets/stickers/avatar_13_senalando_arriba.png'} />
       <AudioPista src={window.AUDIO_SRC} />
     </div>
   );

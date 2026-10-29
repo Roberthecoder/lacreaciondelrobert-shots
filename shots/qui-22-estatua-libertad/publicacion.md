@@ -8,7 +8,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ```text
 Esa estatua no nació verde: es de cobre, color moneda; lo verde es una costra que la protege. 🗽🟢
 La piel de la Estatua de la Libertad es cobre de 2.4 milímetros, el grueso de dos centavos de dólar juntos. Cuando la terminaron, en 1886, era café, como un centavo. Primero, el oxígeno del aire oxidó el cobre y formó cuprita (Cu₂O), una capa oscura. Luego, el azufre de la contaminación, disuelto en la lluvia, la volvió brochantita: un sulfato de cobre verde. Esa pátina casi no se disuelve y protege al cobre de gastarse. Tardó unos 30 años en cubrirla toda.
-En 1986, para la restauración, analizaron con rayos X pedazos de su piel: uno quitado en 1905 era brochantita estable; uno de 1980 traía antlerita, menos estable, y sospecharon de la lluvia ácida (es una sospecha: otros estudios después no lo confirmaron).
+En 1986, para la restauración, analizaron con rayos X pedazos de su piel: uno quitado en 1905 era brochantita estable; uno de 1980 traía antlerita, menos estable, y sospecharon de la lluvia ácida.
 Lo chistoso: en 1906 planearon pintarla; llegaron cartas de protesta y se quedó verde.
 El cobre de tu casa que queda a la intemperie, como un tubo en la azotea, con los años (puede tardar décadas) también se pone verde.
 El dibujo es esquemático.
@@ -39,7 +39,7 @@ Descripción:
 ```text
 Esa estatua no nació verde: es de cobre, color moneda; lo verde es una costra que la protege.
 La piel de la Estatua de la Libertad es de cobre de 2.4 mm (3/32 de pulgada), el grueso de dos centavos de dólar juntos, según el Servicio de Parques Nacionales de EE. UU. Al terminarla, en 1886, era café como un centavo. Con el aire, el cobre se oxida y forma primero cuprita (Cu₂O), una capa oscura; después, el dióxido de azufre de la contaminación, que en las gotas de lluvia se vuelve ácido sulfúrico, convierte esa capa en brochantita (CuSO₄·3Cu(OH)₂), un sulfato de cobre verde. Esa pátina es insoluble y protege al cobre de desgastarse. A la estatua le tomó unos 30 años quedar verde.
-En 1986, como parte de la restauración, Matyi y Baboian analizaron con difracción de rayos X la pátina y pedazos de la piel retirados en 1905 y en 1980: el de 1905 era sobre todo brochantita estable; el de 1980 tenía cloruros de cobre y antlerita, una forma menos estable, y lo tomaron como indicio de que la lluvia ácida estaba cambiando la pátina (fue una sospecha; un estudio posterior, Livingston 1991, concluyó que la lluvia ácida de Nueva York no cambia la mineralogía de la pátina).
+En 1986, como parte de la restauración, Matyi y Baboian analizaron con difracción de rayos X la pátina y pedazos de la piel retirados en 1905 y en 1980: el de 1905 era sobre todo brochantita estable; el de 1980 tenía cloruros de cobre y antlerita, una forma menos estable, y se sospechó de la lluvia ácida.
 Dato curioso: en 1906 el gobierno planeó pintarla; llovieron cartas de protesta y en 1907 los ingenieros del Departamento de Guerra dijeron que la pátina no se quitaría.
 El cobre de tu casa que queda a la intemperie también se pone verde con los años (suele tardar décadas, y cerca del mar se forman otras sales de cobre).
 El dibujo es esquemático.
@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 La Estatua de la Libertad no nació verde: es de cobre, y lo verde es una pátina que la protege de la corrosión.
 Su piel es cobre de 2.4 mm. Al aire, el cobre forma primero cuprita (Cu₂O); en atmósferas con dióxido de azufre, esa capa se transforma en brochantita, un sulfato básico de cobre verde e insoluble que funciona como barrera. A la estatua le tomó unos 30 años quedar cubierta.
-En 1986, como parte de la restauración, Matyi y Baboian analizaron la pátina con difracción de rayos X: una pieza retirada en 1905 era brochantita estable y una de 1980 contenía antlerita, menos estable, lo que interpretaron como posible efecto de la lluvia ácida (hipótesis que estudios posteriores discutieron). Es un buen ejemplo de cómo la ciencia de materiales apoya la conservación del patrimonio: a veces la corrosión es la que protege.
+En 1986, como parte de la restauración, Matyi y Baboian analizaron la pátina con difracción de rayos X: una pieza retirada en 1905 era brochantita estable y una de 1980 contenía antlerita, menos estable, y se sospechó de la lluvia ácida. Es un buen ejemplo de cómo la ciencia de materiales apoya la conservación del patrimonio: a veces la corrosión es la que protege.
 ¿Conoces otros casos en que un producto de corrosión proteja al material?
 Shot Químico #22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

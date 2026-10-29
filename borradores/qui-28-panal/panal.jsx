@@ -116,7 +116,7 @@ function Bascula({ T, x, y, inclina = 0, L = 300 }) {
       <path d={`M ${px - 110} ${py + 90} Q ${px} ${py + 150} ${px + 110} ${py + 90} Z`} fill="#f4efe4" stroke={KC.ink} strokeWidth={7} /></g>)}
     <circle cx={pl[0]} cy={pl[1] + 78} r={12} fill="#fff" stroke="#8aa0b8" strokeWidth={4} />
     <path d={`M ${pr[0]} ${pr[1] - 120} Q ${pr[0] + 90} ${pr[1] + 10} ${pr[0]} ${pr[1] + 88} Q ${pr[0] - 90} ${pr[1] + 10} ${pr[0]} ${pr[1] - 120} Z`} fill="#ffe36b" stroke={KC.ink} strokeWidth={7} />
-    <text x={pr[0]} y={pr[1] + 40} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>×300?</text>
+    <text x={pr[0]} y={pr[1] + 40} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>×300?</text>
   </g>;
 }
 // Grano de almidón (anillos de crecimiento) con cadenas injertadas que le brotan.
@@ -219,7 +219,7 @@ function Panal28() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Bascula T={T} x={270} y={860} L={160} inclina={-1 + 2 * kprog(T, K.Pr + 0.6, K.Pr + 2.2, kEase.rebote)} />
+          <Bascula T={T} x={290} y={860} L={130} inclina={-1 + 2 * kprog(T, K.Pr + 0.6, K.Pr + 2.2, kEase.rebote)} />
           <text x={300} y={600} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 500)`}>?</text>
         </SvgCapa>
       </Escena>
@@ -290,7 +290,7 @@ function Panal28() {
       <Chip T={T} at={K.Ca + 2.0} until={K.Rp - 0.2} texto="+  ion de sodio (Na⁺)" x={540} y={1610} tam={40} borde={NA} mono />
       <Chip T={T} at={K.Rp + 0.6} until={K.Os - 0.2} texto="las cargas se repelen" x={540} y={1500} tam={46} borde={KC.yellow} />
       <SvgCapa z={44}><Onomato T={T} at={K.G + 3.4} until={K.Q - 0.2} x={860} y={1000} texto="¡no cae!" color={KC.cyan} tam={80} />
-      <Onomato T={T} at={K.Rp + 1.6} until={K.Rp + 3.4} x={840} y={560} texto="¡boing!" color={KC.yellow} tam={90} /></SvgCapa>
+      <Onomato T={T} at={K.Rp + 1.6} until={K.Rp + 3.4} x={250} y={600} texto="¡boing!" color={KC.yellow} tam={90} /></SvgCapa>
       <Chip T={T} at={K.Os + 0.6} until={K.Ge - 0.2} texto="mucho Na⁺ adentro → entra agua" x={540} y={1500} tam={38} borde={NA} />
       <Chip T={T} at={K.Ge + 0.3} until={K.Pr - 0.2} texto="amarres: no se disuelve" x={540} y={1500} tam={44} borde={AMARRE} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2025" quien="Univ. de Coimbra, Portugal" revista="Simões et al. · Gels" x={540} y={560} />

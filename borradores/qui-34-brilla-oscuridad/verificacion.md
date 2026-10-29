@@ -28,3 +28,8 @@
 1. **#3 "Si brillan verde, lo más probable…" (⚠️):** el sulfuro de zinc con cobre también brilla verde y se usó en juguetes; no hay fuente seria que diga qué llevan "la mayoría" de las estrellitas de techo. Propuesta: "Si brillan verde y por horas, seguro llevan aluminato de estroncio, con algo de europio y disprosio." — o, más prudente: "Las que brillan horas suelen ser aluminato de estroncio, con algo de europio y disprosio." (respaldo: Happek 2010 + "on the order of hours" para ZnS). Cuidar que la duración siga en 61–62 s.
 2. **#14 "más de 10 veces más brillante que el sulfuro de zinc" (⚠️):** justo después de hablar del radio, se entiende que se compara con la pintura de radio. Propuesta: "…más de 10 veces más brillante que el sulfuro de zinc sin radio de entonces, y aún se medía al día siguiente." En pantalla, el frasco: "ZnS:Cu,Co (sin radio)".
 3. **#12 mapa "años 20" (⚠️, pantalla):** cambiar a "Nueva Jersey, EE. UU. · 1917–1926".
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplicaron tal cual las propuestas del verificador; además solo se quitaron palabras de relleno para cuadrar el tiempo (sin cambiar datos).
+
+VEREDICTO: APROBADO
