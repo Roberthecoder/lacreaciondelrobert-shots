@@ -1,0 +1,19 @@
+{
+  "dcHtml": "Shot EnergiaPregunta base narrada.dc.html",
+  "salida": "Shot EnergiaPregunta narrado.dc.html",
+  "nota": "Shot IA #17. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Hacerle una pregunta a una IA gasta menos energía que ver la tele nueve segundos. Y como cinco gotas de agua." },
+    { "escena": "Estudio", "texto": "Lo midió Google en 2025 con su IA, Gemini: cero punto veinticuatro watts hora por pregunta de texto." },
+    { "escena": "Incluye", "texto": "Y eso ya incluye las máquinas en espera y el enfriamiento del centro de datos." },
+    { "escena": "Baja", "texto": "En un año, la energía de esa pregunta bajó treinta y tres veces." },
+    { "escena": "Pregunta", "texto": "¿Entonces la IA no gasta casi nada?" },
+    { "escena": "Ojo", "texto": "Ojo: es la pregunta típica, la de en medio, solo de texto. Y los números los dio la misma empresa." },
+    { "escena": "Ojo", "texto": "Pedir imágenes o videos no entra en esa cuenta." },
+    { "escena": "Suma", "texto": "Y lo que pesa es la suma: miles de millones de preguntas." },
+    { "escena": "AIE", "texto": "Según la Agencia Internacional de Energía, en 2024 los centros de datos usaron uno punto cinco por ciento de la electricidad del mundo." },
+    { "escena": "Japon", "texto": "Y calcula que en 2030 será más del doble: más o menos lo que hoy gasta Japón entero." },
+    { "escena": "Japon", "texto": "La IA es una de las grandes razones." },
+    { "escena": "Cierre", "texto": "Así que tu pregunta cuesta nueve segundos de tele. Lo que pesa es que la hacemos miles de millones de veces." }
+  ]
+}

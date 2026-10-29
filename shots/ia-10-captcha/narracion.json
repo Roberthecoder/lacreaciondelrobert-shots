@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Tú contra un bot resolviendo captchas: casi siempre gana él. Y más rápido."
+      "texto": "Tú contra un bot resolviendo captchas: casi siempre gana él, y más rápido."
     },
     {
       "escena": "Marcador",
@@ -13,11 +13,11 @@
     },
     {
       "escena": "Estudio",
-      "texto": "Lo midió la Universidad de California en Irvine en 2023, con mil cuatrocientas personas y catorce mil captchas."
+      "texto": "Lo comparó la Universidad de California en Irvine en 2023: mil cuatrocientas personas, catorce mil captchas."
     },
     {
       "escena": "Letras",
-      "texto": "Con letras chuecas, en 2014 una IA de Google ya leía las más difíciles: noventa y nueve punto ocho por ciento de acierto."
+      "texto": "Con letras chuecas, en 2014 una IA de Google leía las más difíciles: noventa y nueve punto ocho por ciento de acierto."
     },
     {
       "escena": "Pregunta",
@@ -25,15 +25,15 @@
     },
     {
       "escena": "Libros",
-      "texto": "Y tú ya trabajaste para las máquinas: muchas palabras que tecleabas eran de libros escaneados que la computadora no pudo leer."
+      "texto": "Y tú ya trabajaste para las máquinas: muchas palabras que tecleabas eran de libros escaneados que la computadora no leía."
     },
     {
       "escena": "Libros",
-      "texto": "Para 2008, ya iban más de cuatrocientos cuarenta millones de palabras."
+      "texto": "Para 2008 ya iban más de cuatrocientos cuarenta millones de palabras."
     },
     {
       "escena": "Calle",
-      "texto": "Luego Google probó con números de casas de Street View."
+      "texto": "Luego Google probó números de casas de Street View."
     },
     {
       "escena": "Movimiento",
@@ -41,11 +41,11 @@
     },
     {
       "escena": "Calificacion",
-      "texto": "Y la versión tres ni te pregunta: califica cada visita de cero, bot, a uno, humano."
+      "texto": "Y la versión tres ni pregunta: califica cada visita de cero, bot, a uno, humano."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que el bot te gana leyendo; la prueba ahora es todo lo que haces."
+      "texto": "Así que el bot te gana leyendo: la prueba ya es todo lo que haces."
     }
   ]
 }

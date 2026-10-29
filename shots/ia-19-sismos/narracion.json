@@ -1,17 +1,47 @@
 {
   "dcHtml": "Shot Sismos base narrada.dc.html",
   "salida": "Shot Sismos narrado.dc.html",
-  "nota": "Shot IA #19. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "nota": "Shot IA #19. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    {"escena": "Gancho", "texto": "¿Por qué no debes creerle a quien jura que mañana tiembla? Ningún científico ha predicho nunca un sismo grande. Ni con inteligencia artificial."},
-    {"escena": "Predecir", "texto": "Predecir es decir fecha, lugar y magnitud antes de que pase. Eso nadie lo ha logrado."},
-    {"escena": "Alerta", "texto": "¿Y la alerta sísmica? Tampoco predice: sus sensores en la costa detectan el sismo cuando ya empezó y avisan antes de que llegue la sacudida."},
-    {"escena": "Escuchar", "texto": "Donde la IA sí ayuda es escuchando. En dos mil veinte, una red llamada EQTransformer revisó cinco semanas de datos de Japón y encontró el doble de sismos, muchos diminutos."},
-    {"escena": "Pregunta", "texto": "¿Y si pudiera oír que una falla está a punto de romperse?"},
-    {"escena": "Laboratorio", "texto": "En Los Álamos, Estados Unidos, lo probaron en dos mil diecisiete con una falla de laboratorio. La IA calculó cuánto faltaba para cada sismito oyendo un ruido que creían basura."},
-    {"escena": "Laboratorio", "texto": "Pero era un bloque en una máquina, no la Tierra."},
-    {"escena": "Replicas", "texto": "En dos mil dieciocho, Harvard y Google publicaron que una red neuronal ubicaba las réplicas mejor que el método clásico."},
-    {"escena": "Neurona", "texto": "Un año después, otros dos científicos mostraron que una fórmula con solo dos números atinaba igual que esa red con más de trece mil."},
-    {"escena": "Cierre", "texto": "Así que si te llega ese mensaje de que mañana tiembla, bórralo. La IA hoy no adivina sismos: aprende a escucharlos."}
+    {
+      "escena": "Gancho",
+      "texto": "¿Por qué no debes creerle a quien jura que mañana tiembla? Ningún científico ha predicho nunca un sismo grande. Ni con IA."
+    },
+    {
+      "escena": "Predecir",
+      "texto": "Predecir es dar fecha, lugar y magnitud. Eso nadie lo ha logrado."
+    },
+    {
+      "escena": "Alerta",
+      "texto": "¿Y la alerta sísmica? Tampoco predice: detecta el sismo cuando ya empezó y avisa antes de que llegue la sacudida."
+    },
+    {
+      "escena": "Escuchar",
+      "texto": "La IA sí ayuda escuchando. En dos mil veinte, una red revisó cinco semanas de datos de Japón y halló el doble de sismos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si pudiera oír que una falla está por romperse?"
+    },
+    {
+      "escena": "Laboratorio",
+      "texto": "En dos mil diecisiete, en Los Álamos, Estados Unidos, una IA calculó cuánto faltaba para cada sismo de laboratorio oyendo un ruido que creían sin importancia."
+    },
+    {
+      "escena": "Laboratorio",
+      "texto": "Pero era una máquina, no la Tierra."
+    },
+    {
+      "escena": "Replicas",
+      "texto": "En dos mil dieciocho, Harvard y Google dijeron que una red neuronal ubicaba réplicas mejor que el método clásico."
+    },
+    {
+      "escena": "Neurona",
+      "texto": "Un año después, otros científicos lo igualaron con una fórmula de dos números. La red usaba más de trece mil."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Si te llega ese mensaje, bórralo. La IA no adivina sismos: aprende a escucharlos."
+    }
   ]
 }
