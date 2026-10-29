@@ -40,7 +40,7 @@
   },
   {
    "id": "fes-09-rosas-diciembre",
-   "titulo": "Shot Festivo #09 · Virgen de Guadalupe · Científico: Rosas en diciembre: cómo florece una planta fuera de temporada",
+   "titulo": "Shot Festivo #09 · Virgen de Guadalupe · Científico: Rosas en diciembre: el freno roto en su ADN",
    "serie": "Shot Festivo",
    "numero": 9,
    "festividad": "Día de la Virgen de Guadalupe",
@@ -134,23 +134,24 @@
    ]
   },
   {
-   "id": "fes-14-huitlacoche",
-   "titulo": "Shot Festivo #14 · Candelaria · Fungi Mati: El huitlacoche: el hongo que infecta el maíz y se vuelve tamal",
+   "id": "fes-14-razas-maiz",
+   "titulo": "Shot Festivo #14 · Candelaria · Ambiental: Tu tamal puede salir de una de las muchas razas de maíz nativo de México",
    "serie": "Shot Festivo",
    "numero": 14,
    "festividad": "Candelaria",
-   "serie_vinculada": "Fungi Mati",
+   "serie_vinculada": "Ambiental",
    "fecha_publicacion": "2027-02-02",
    "estado": "idea",
-   "carpeta": "shots/fes-14-huitlacoche",
+   "carpeta": "shots/fes-14-razas-maiz",
    "rama": "pedido300/festivos",
    "fuentes": [],
    "fecha": "2026-10-29",
    "derivados": [
-    "Ustilago maydis en el laboratorio: un modelo para estudiar infecciones",
-    "Por qué en otros países el huitlacoche se tira",
-    "Las esporas negras del carbón del maíz"
-   ]
+    "El teocintle: el pasto que se volvió maíz",
+    "Bancos de semillas de maíz",
+    "Por qué hay maíz azul, rojo y negro"
+   ],
+   "nota": "Antes fes-14-huitlacoche: se cambió porque repetía fun-10-huitlacoche (rama pedido300/fun)."
   },
   {
    "id": "fes-15-sparck-jones",
