@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Papaya base narrada.dc.html",
+  "salida": "Shot Papaya narrado.dc.html",
+  "nota": "Shot Biotecnológico #26. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa papaya no se salvó con insecticida: la salvó un pedacito del virus."
+    },
+    {
+      "escena": "Llega",
+      "texto": "En 1992, el virus de la mancha anular llegó a Puna, en Hawái."
+    },
+    {
+      "escena": "Pulgon",
+      "texto": "Lo cargan pulgones: con un piquete de segundos infectan otro árbol."
+    },
+    {
+      "escena": "Dano",
+      "texto": "El fruto se llena de anillos y pierde la mitad del azúcar o más."
+    },
+    {
+      "escena": "Caida",
+      "texto": "En cinco años Hawái perdió más de un tercio de su papaya fresca."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo defiendes un árbol de algo que no ves?"
+    },
+    {
+      "escena": "Gen",
+      "texto": "Dennis Gonsalves y su equipo tomaron un gen del virus: el de su cubierta."
+    },
+    {
+      "escena": "Disparo",
+      "texto": "Lo pegaron a balines diminutos y lo dispararon a células de papaya."
+    },
+    {
+      "escena": "Silencio",
+      "texto": "La planta lee ese gen y enciende una defensa que corta ARN parecido."
+    },
+    {
+      "escena": "Virus",
+      "texto": "Si el virus entra, su ARN acaba en pedazos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1995, en Puna, al año todas las papayas normales enfermaron; ninguna con el gen."
+    },
+    {
+      "escena": "Rainbow",
+      "texto": "En 1998 salió Rainbow; en el 2000 ya era la mitad de la papaya en cosecha."
+    },
+    {
+      "escena": "Medida",
+      "texto": "Pero es a la medida: con virus de Brasil o Tailandia, se enferma. Y el virus también está en México."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso no la salvó un insecticida: la salvó un pedacito del virus."
+    }
+  ]
+}

@@ -245,7 +245,7 @@ function Glutamato() {
           <VasoSopa T={T} x={400} y={1110} s={1} montoncito={montoncito} />
           {caida.map(([a, b, c], i) => { const t0 = K.G + 0.35 + a * 2.6, p = kprog(T, t0, t0 + 0.6, (q) => q * q);
             return p > 0 && p < 1 ? <Cristal key={i} x={330 + (b - 0.5) * 50 + p * 30} y={klerp(700, 880, p)} s={0.9} rot={c * 360 + T * 200} /> : null; })}
-          <Sobre x={300} y={600} rot={klerp(0, 150, kprog(T, K.G + 0.2, K.G + 0.6, kEase.sale))} rasga={rasga} />
+          <Sobre x={290} y={640} rot={klerp(0, 150, kprog(T, K.G + 0.2, K.G + 0.6, kEase.sale))} rasga={rasga} />
         </SvgCapa>
       </Escena>
       {/* 1 · Ikeda, 1908: el caldo de alga kombu */}
@@ -255,7 +255,7 @@ function Glutamato() {
           <Olla T={T} x={540} y={1060} />
           {Array.from({ length: 14 }, (_, i) => { const t0 = K.Ko + 1.0 + i * 0.22, p = kprog(T, t0, t0 + 1.4, kEase.sale);
             return p > 0 ? <Cristal key={i} x={540 + (i % 7 - 3) * 60 + Math.sin(T * 2 + i) * 10} y={klerp(900, 640 + (i % 3) * 40, p)} s={1.3} rot={i * 47 + T * 30} o={kprog(T, t0, t0 + 0.3)} /> : null; })}
-          {T > K.Ko + 2.6 && <GluMol x={760} y={800} s={1} rot={mece(T, 3, 0.4) * 10} o={kprog(T, K.Ko + 2.6, K.Ko + 3.0)} brillo={0.6} />}
+          {T > K.Ko + 2.6 && <GluMol x={720} y={760} s={1} rot={mece(T, 3, 0.4) * 10} o={kprog(T, K.Ko + 2.6, K.Ko + 3.0)} brillo={0.6} />}
         </SvgCapa>
       </Escena>
       {/* 2 · el tanque: la bacteria come azúcar */}
@@ -289,8 +289,8 @@ function Glutamato() {
                 <rect x={cx + g} y={yy - 22} width={18} height={44} rx={6} fill={CANAL} stroke={KC.ink} strokeWidth={4} /></g>; }))}</g>} />
           {Array.from({ length: NMOL }, (_, i) => mol(i))}
           {T < K.Bi + 0.2 && T > K.PD + 0.2 && <g opacity={kprog(T, K.PD + 1.2, K.PD + 1.6) * (1 - kprog(T, K.Bi - 0.2, K.Bi + 0.2))}>
-            <Tomate x={300} y={470} s={0.9} /><Queso x={480} y={480} s={0.9} />
-            <GluMol x={660} y={470} s={0.55} brillo={0.6} rot={mece(T, 8, 0.4) * 10} />
+            <Tomate x={190} y={470} s={0.9} /><Queso x={360} y={480} s={0.9} />
+            <GluMol x={520} y={470} s={0.55} brillo={0.6} rot={mece(T, 8, 0.4) * 10} />
           </g>}
           {T > K.Bi && T < K.Ca + 0.5 && <g opacity={kprog(T, K.Bi, K.Bi + 0.3) * (1 - kprog(T, K.Ca, K.Ca + 0.5))}>
             <Gotero x={540} y={600} />
@@ -339,9 +339,9 @@ function Glutamato() {
           </g>
           {T > K.Cm + 0.6 && <g>
             {[0, 1, 2, 3].map((i) => { const llega = kprog(fase, 0, 0.45, kEase.suave), x0 = 120 + i * 105;
-              return <Glucosa key={i} x={klerp(x0, 600, llega)} y={klerp(1560, 1560, llega)} s={0.85} rot={T * 60} o={1 - kprog(fase, 0.4, 0.5)} />; })}
+              return <Glucosa key={i} x={klerp(x0, 600, llega)} y={klerp(1560, 1560, llega)} s={1.1} rot={T * 60} o={1 - kprog(fase, 0.4, 0.5)} />; })}
             <path d="M 560 1560 L 640 1560" stroke={KC.ink} strokeWidth={0} />
-            <GluMol x={klerp(600, 860, kprog(fase, 0.5, 0.8, kEase.sale))} y={1560} s={0.6} o={kprog(fase, 0.45, 0.55)} brillo={0.7} />
+            <GluMol x={klerp(600, 860, kprog(fase, 0.5, 0.8, kEase.sale))} y={1560} s={0.8} o={kprog(fase, 0.45, 0.55)} brillo={0.7} />
           </g>}
         </SvgCapa>
       </Escena>
@@ -364,11 +364,11 @@ function Glutamato() {
       <Escena T={T} a={K.Nu} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          {Array.from({ length: 14 }, (_, i) => { const fila = i < 5 ? 0 : i < 9 ? 1 : i < 12 ? 2 : 3, k = [0, 5, 9, 12][fila], n = [5, 4, 3, 2][fila];
-            const x = 540 + (i - k - (n - 1) / 2) * 170, y = 1180 - fila * 120, at = K.Nu + 0.5 + i * 0.18, e = kprog(T, at, at + 0.3, kEase.rebote);
+          {Array.from({ length: 12 }, (_, i) => { const fila = i < 5 ? 0 : i < 9 ? 1 : 2, k = [0, 5, 9][fila], n = [5, 4, 3][fila];
+            const x = 540 + (i - k - (n - 1) / 2) * 170, y = 1210 - fila * 115, at = K.Nu + 0.5 + i * 0.18, e = kprog(T, at, at + 0.3, kEase.rebote);
             return e > 0 ? <Costal key={i} x={x} y={y - (1 - e) * 200} s={0.9} /> : null; })}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Nu + 0.2} until={K.Ci - 0.2} valor={3.5} dec={1} dur={1.4} etiqueta="más de" y={560} tam={280} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Nu + 0.2} until={K.Ci - 0.2} valor={3.5} dec={1} dur={1.4} etiqueta="más de" y={500} tam={280} color={KC.yellow} />
       </Escena>
       {/* 12 · cierre: la sopa del inicio, ahora con sello */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
@@ -377,26 +377,26 @@ function Glutamato() {
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.2} until={K.Ko - 0.3} texto="¿de un alga?" x={300} y={420} tam={46} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.2} until={K.Ko - 0.3} texto="¿de un alga?" x={330} y={370} tam={46} />
       <Etiqueta T={T} at={K.G + 1.2} until={K.Ko - 0.3} x={340} y={780} texto="glutamato" lado="izq" color={KC.ink} tam={38} />
       <Chip T={T} at={K.Ko + 0.4} until={K.Ko + 2.8} texto="1908 · Kikunae Ikeda" y={1500} tam={46} borde={KC.leaf} />
       <Chip T={T} at={K.Ko + 3.0} until={K.Ta - 0.3} texto="umami = «sabroso»" y={1500} tam={52} borde={GLU} />
       <Etiqueta T={T} at={K.Ko + 0.8} until={K.Ta - 0.3} x={380} y={500} texto="alga kombu" lado="izq" color={KC.ink} tam={36} />
-      <Etiqueta T={T} at={K.Ko + 2.8} until={K.Ta - 0.3} x={860} y={800} texto="glutamato" color={KC.ink} tam={34} />
+      <Etiqueta T={T} at={K.Ko + 2.8} until={K.Ta - 0.3} x={600} y={860} texto="glutamato" color={KC.ink} tam={34} />
       <Chip T={T} at={K.Ta + 0.5} until={K.Ta + 2.0} texto="come azúcar" y={300} x={600} tam={44} borde={GLUC} />
       <Etiqueta T={T} at={K.Ta + 2.6} until={K.PD - 0.2} x={130} y={1680} texto="Corynebacterium glutamicum" it color={KC.ink} tam={40} />
       <Chip T={T} at={K.PD + 0.5} until={K.Bi - 0.2} texto="azúcar → glutamato" y={1560} tam={46} borde={GLU} />
-      <Etiqueta T={T} at={K.PD + 1.6} until={K.Bi - 0.3} x={720} y={470} texto="también en tomate y queso" color={KC.texto} tam={28} />
+      <Etiqueta T={T} at={K.PD + 1.6} until={K.Bi - 0.3} x={580} y={470} texto="igual en tomate y queso" color={KC.texto} tam={28} />
       <Medidor T={T} at={K.Bi + 0.6} until={K.Ca - 0.2} valor={0.07} etiqueta="biotina (vitamina) en el caldo" texto={() => 'muy poca'} y={1530} color="#ff6b9a" />
-      <Etiqueta T={T} at={K.Bi + 2.0} until={K.Ca - 0.2} x={980} y={720} texto="la membrana cambia" lado="izq" color={KC.orange} tam={30} />
+      <Etiqueta T={T} at={K.Bi + 2.0} until={K.Ca - 0.2} x={1000} y={1185} texto="la membrana cambia" lado="izq" color={KC.orange} tam={30} />
       <Chip T={T} at={K.Ca + 0.4} until={K.Pr - 0.2} texto="se abren canales: sale el glutamato" y={1560} tam={36} borde={CANAL} />
       <Chip T={T} at={K.An + 0.4} until={K.Es - 0.3} texto="desde 1909 · proteína de plantas + ácido" y={1500} tam={34} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Cm - 0.3} anio="1957" quien="Kinoshita, Udaka y Shimono · Tokio" revista="J Gen Appl Microbiol · publicado en 1957" y={1570} />
-      <Chip T={T} at={K.Cm + 0.4} until={K.Cc - 0.3} texto="bacteria nueva · la campeona" y={420} x={420} tam={38} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Cm - 0.3} anio="1957" quien="Kinoshita, Udaka y Shimono · Tokio" revista="J Gen Appl Microbiol · publicado en 1957" y={1620} />
+      <Chip T={T} at={K.Cm + 0.4} until={K.Cc - 0.3} texto="bacteria nueva · la campeona" y={1140} x={600} tam={38} borde={KC.gold} />
       <Etiqueta T={T} at={K.Cm + 0.8} until={K.Cc - 0.3} x={970} y={1650} texto="4 glucosas → 1 glutamato" lado="izq" color={KC.ink} tam={34} />
       <Etiqueta T={T} at={K.Cc + 0.3} until={K.Nu - 0.2} x={pajX < 900 ? 560 : 560} y={430} texto="probablemente paloma" color={KC.ink} tam={32} />
-      <Chip T={T} at={K.Nu + 1.0} until={K.Ci - 0.2} texto="millones de toneladas al año" y={790} tam={44} borde={KC.gold} />
-      <Chip T={T} at={K.Nu + 1.6} until={K.Ci - 0.2} texto="de glutamato de sodio" y={880} tam={38} borde={GLU} />
+      <Chip T={T} at={K.Nu + 1.0} until={K.Ci - 0.2} texto="millones de toneladas al año" y={715} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.Nu + 1.6} until={K.Ci - 0.2} texto="de glutamato de sodio" y={800} tam={38} borde={GLU} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou - 0.1} texto="el glutamato: hecho por bacterias" y={1500} tam={40} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

@@ -5,15 +5,15 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa sangre azul no es de otro planeta: es la que revisa que tus vacunas estén limpias."
+      "texto": "Esa sangre azul no es de otro planeta: revisa que tus vacunas estén limpias."
     },
     {
       "escena": "Animal",
-      "texto": "Es del cangrejo herradura, que no es cangrejo: es pariente de las arañas."
+      "texto": "Es del cangrejo herradura, que no es cangrejo: es pariente de arañas."
     },
     {
       "escena": "Azul",
-      "texto": "Lleva cobre en vez de hierro, y con oxígeno se ve azul."
+      "texto": "Lleva cobre, no hierro, y con oxígeno se ve azul."
     },
     {
       "escena": "Endotoxina",
@@ -21,7 +21,7 @@
     },
     {
       "escena": "Peligro",
-      "texto": "Si entran a tu sangre en una inyección, dan fiebre o un choque grave."
+      "texto": "Si entran a tu sangre en una inyección, dan fiebre o choque grave."
     },
     {
       "escena": "Coagulo",
@@ -33,7 +33,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 1977, la FDA aceptó su prueba, la LAL, como alternativa a la de conejos."
+      "texto": "En 1977, la FDA aceptó la prueba LAL como alternativa a la de conejos."
     },
     {
       "escena": "Pregunta",
@@ -45,11 +45,11 @@
     },
     {
       "escena": "Mortalidad",
-      "texto": "Pero en 2023 se calculaba que el 15 % de los que regresan se muere."
+      "texto": "Pero en 2023 se calculaba que el 15 % de los que regresan muere."
     },
     {
       "escena": "FactorC",
-      "texto": "La salida: copiar el gen del factor C, la pieza que arranca el coágulo, y fabricarla sin cangrejos."
+      "texto": "La salida: copiar el gen del factor C, que arranca el coágulo, y fabricarlo sin cangrejos."
     },
     {
       "escena": "Farmacopea",
@@ -57,7 +57,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Esa sangre azul cuida tus vacunas, y ya hay una forma de hacerlo sin cangrejos."
+      "texto": "Esa sangre azul cuida tus vacunas, y ya se puede hacer sin cangrejos."
     }
   ]
 }

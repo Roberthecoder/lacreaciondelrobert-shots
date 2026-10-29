@@ -26,6 +26,29 @@
 | 12 | Cierre | Así que ese glutamato no viene del mar: viene de una bacteria. | **Regreso a la sopa del inicio**: los cristalitos de glutamato ahora con un sello "hecho por bacterias". |
 | — | Outro | (sin voz) | Cierre de marca con Robert. |
 
+## Robert en pantalla
+
+Entra desde el cuadro 0 con el gancho, vuelve cada 8–10 s y nunca tapa el subtítulo ni los datos (tiempos del `Shot Glutamato base narrada.dc.html`).
+
+### Versión narrada: 11 apariciones, **38.2 s en pantalla** (de 61.5 s)
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.6 | sorprendido (11) | gancho | «no salió de un alga: lo hizo una bacteria» |
+| 6.2 – 10.0 | señalando (13) | arriba-der | señala el glutamato que sale del caldo de kombu |
+| 10.9 – 14.5 | bajando lentes (04) | izq-alto | «una bacteria en forma de mazo» |
+| 20.4 – 24.5 | serio (10) | arriba-der | «muy poquita biotina… su membrana cambia» |
+| 28.75 – 31.0 | pensativo (06) | **grande-izq** | re-gancho: «¿y quién descubrió a esta bacteria?» |
+| 31.7 – 35.1 | perfil serio (12) | arriba-der | «antes se sacaba con ácido» |
+| 38.9 – 41.7 | señalando (13) | arriba-der | señala las cajas de bacterias, levaduras y hongos |
+| 42.6 – 46.0 | sorprendido (11) | izq-alto | «de cada cuatro glucosas, un glutamato» |
+| 46.5 – 48.9 | sonriendo (05) | **grande-izq** | dato chistoso: «tierra con caca de pájaro» |
+| 49.5 – 53.8 | bajando lentes (04) | bajo-der | «más de 3.5 millones de toneladas al año» |
+| 54.4 – 57.9 | apuntando (02) | gancho | cierre: «viene de una bacteria» |
+| 58.0 – 61.5 | señalando (13) | cierre | `CierreMarca robert=` junto al logo |
+
+8 poses distintas, nunca la misma dos veces seguidas; 2 apariciones grandes.
+
 ## Corrección del 29 oct 2026 (verificación independiente, ver `verificacion.md`)
 - Gancho y cierre dicen **"el glutamato"**, no "el polvito": el sobre es sobre todo sal y otros saborizantes; solo el glutamato sale de la bacteria. Los cristalitos van rotulados "glutamato".
 - La bacteria "come azúcar" (no almidón: la cepa silvestre no lo usa directo; en la industria se rompe antes a glucosa).

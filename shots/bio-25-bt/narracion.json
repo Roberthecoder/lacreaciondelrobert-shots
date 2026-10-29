@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Bt base narrada.dc.html",
+  "salida": "Shot Bt narrado.dc.html",
+  "nota": "Shot Biotecnológico #25. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa hoja de maíz no está fumigada: el insecticida lo fabrica ella misma."
+    },
+    {
+      "escena": "Gen",
+      "texto": "Lleva un gen de Bacillus thuringiensis, una bacteria del suelo."
+    },
+    {
+      "escena": "Cry",
+      "texto": "Es la receta de unas proteínas llamadas Cry, y la planta las hace en sus hojas."
+    },
+    {
+      "escena": "Mordida",
+      "texto": "Cuando el gusano cogollero muerde la hoja, se las traga."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué a la oruga sí le hacen daño y a ti no?"
+    },
+    {
+      "escena": "Alcalino",
+      "texto": "Su intestino es muy alcalino, de pH nueve a diez y medio: ahí la proteína se activa."
+    },
+    {
+      "escena": "Receptor",
+      "texto": "Se pega a receptores de su intestino, como llave en cerradura, y le abre hoyos."
+    },
+    {
+      "escena": "Tu",
+      "texto": "Tu estómago es ácido, la deshace, y no tienes esos receptores."
+    },
+    {
+      "escena": "Organico",
+      "texto": "La bacteria se usa como insecticida desde hace décadas, también en agricultura orgánica."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1995, Estados Unidos registró el primer maíz Bt. Pero en Puerto Rico el cogollero se volvió resistente: un estudio de 2010 lo confirmó."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "Y en México, desde marzo de 2025, la Constitución prohíbe sembrar maíz transgénico."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa hoja no estaba fumigada: traía su insecticida adentro, solo para ciertas orugas."
+    }
+  ]
+}

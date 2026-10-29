@@ -5,60 +5,105 @@
       "titulo": "El cuajo de tu queso sale de microbios: quimosina recombinante (FDA 1990)",
       "serie": "Shot Biotecnológico",
       "numero": 10,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-10-quimosina",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Kayihura 2024 Food Sci Nutr PMC10916671",
+        "JECFA WHO FAS 28",
+        "21 CFR 184.1685 (55 FR 10935, 1990)",
+        "Johnson y Lucey 2006 J Dairy Sci"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Quimosina de camello y quesos madurados",
+        "Por qué el queso Oaxaca se estira y el fresco no",
+        "Fermentación de precisión: proteínas de leche sin vaca"
+      ]
     },
     {
       "id": "bio-11-gila",
       "titulo": "Ozempic empezó en la saliva de un lagarto: exendina-4 del monstruo de Gila",
       "serie": "Shot Biotecnológico",
       "numero": 11,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-11-gila",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Eng 1992 J Biol Chem PMID 1313797",
+        "Etiqueta FDA Byetta 2009",
+        "EMA Ozempic EPAR",
+        "Christel 2007 J Exp Biol"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Captopril y el veneno de jararaca",
+        "Ziconotida del caracol cono",
+        "Las incretinas: por qué la glucosa tomada sube más la insulina"
+      ]
     },
     {
       "id": "bio-12-antiveneno",
       "titulo": "El antídoto del alacrán sale de un caballo: faboterápicos mexicanos",
       "serie": "Shot Biotecnológico",
       "numero": 12,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-12-antiveneno",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Ficha FDA Anascorp 2022",
+        "Boyer et al. NEJM 2009",
+        "Chippaux et al. Toxicon 2020",
+        "Boletín Epidemiológico SSA sem 53 2025"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Antiveneno de víbora de cascabel y viuda negra",
+        "Anticuerpos humanos de laboratorio contra venenos (IBt-UNAM)",
+        "Por qué el veneno de alacrán ataca los nervios"
+      ]
     },
     {
       "id": "bio-13-pcr",
       "titulo": "Una PCR en 4 capítulos: la enzima Taq de Yellowstone (Mullis 1983)",
       "serie": "Shot Biotecnológico",
       "numero": 13,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-13-pcr",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Brock y Freeze 1969 J Bacteriol",
+        "Nobel de Química 1993",
+        "NHGRI PCR fact sheet 2020",
+        "Lorenz 2012 JoVE"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Prueba de antígeno vs PCR",
+        "Huellas de ADN con STR en un caso criminal",
+        "Extremófilos de Yellowstone en la industria"
+      ]
     },
     {
       "id": "bio-14-embarazo",
       "titulo": "La prueba de embarazo es un anticuerpo: monoclonales (Köhler y Milstein 1975)",
       "serie": "Shot Biotecnológico",
       "numero": 14,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-14-embarazo",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Koczula y Gallotta 2016 Essays Biochem",
+        "FDA 510(k) K132085",
+        "Köhler y Milstein 1975 Nature",
+        "Makrigiannakis 2017 IJMS"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Pruebas rápidas de antígenos con flujo lateral",
+        "Anticuerpos monoclonales como medicina",
+        "hCG vs LH: pruebas de ovulación"
+      ]
     },
     {
       "id": "bio-15-detergente",

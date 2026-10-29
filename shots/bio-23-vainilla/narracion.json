@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Tu helado de vainilla casi seguro no tocó una vaina: menos del 1 % de la vainillina sale de la planta."
+      "texto": "Tu helado de vainilla casi seguro no tocó una vaina: menos del 1 % de la vainillina sale de ahí."
     },
     {
       "escena": "Origen",
@@ -13,7 +13,7 @@
     },
     {
       "escena": "Molecula",
-      "texto": "Su aroma principal viene de una molécula: la vainillina."
+      "texto": "Su aroma principal es una molécula: la vainillina."
     },
     {
       "escena": "Escasa",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Natural",
-      "texto": "Y en Europa y Estados Unidos se puede vender como natural."
+      "texto": "Y en Europa y Estados Unidos cuenta como natural."
     },
     {
       "escena": "Albius",
@@ -49,7 +49,7 @@
     },
     {
       "escena": "Flor",
-      "texto": "Cada flor abre un solo día y se poliniza a mano."
+      "texto": "Y cada flor abre un solo día."
     },
     {
       "escena": "Toneladas",

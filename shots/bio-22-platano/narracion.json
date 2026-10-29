@@ -17,7 +17,7 @@
     },
     {
       "escena": "Hijuelo",
-      "texto": "No se siembra: cada planta nueva sale de un brote de otra."
+      "texto": "No se siembra: cada planta sale de un brote o de un pedacito de otra."
     },
     {
       "escena": "Pregunta",
@@ -33,23 +33,23 @@
     },
     {
       "escena": "GrosMichel",
-      "texto": "Ya pasó: otra raza del hongo sacó del mercado al Gros Michel, el que se exportaba antes."
+      "texto": "Ya pasó: otra raza del hongo sacó de la exportación al Gros Michel, el plátano de antes."
     },
     {
       "escena": "America",
-      "texto": "En 2019 la raza cuatro apareció en Colombia; luego en Perú, Venezuela y Ecuador. En México, aún no."
+      "texto": "En 2019 la raza cuatro llegó a Colombia; luego a Perú, Venezuela y Ecuador. A México, aún no."
     },
     {
       "escena": "Estudio",
-      "texto": "En Australia le pusieron un gen de un plátano silvestre que detecta al hongo: en un campo infectado, la mejor planta pasó tres años sana."
+      "texto": "En Australia le pusieron un gen de un plátano silvestre que detecta al hongo: en campo infectado, la mejor línea pasó tres años sana."
     },
     {
       "escena": "Aprobado",
-      "texto": "En 2024, Australia aprobó un plátano así para cultivo y consumo."
+      "texto": "En 2024, Australia aprobó otra línea con ese gen para cultivo y consumo."
     },
     {
       "escena": "Curioso",
-      "texto": "Y ojo: el Cavendish ya tiene genes así, pero casi apagados."
+      "texto": "Y ojo: el Cavendish ya tiene genes así, casi apagados."
     },
     {
       "escena": "Cierre",
