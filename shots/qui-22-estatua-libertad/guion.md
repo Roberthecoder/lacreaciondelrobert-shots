@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esa estatua no nació verde: es de cobre, color moneda; lo verde es una costra que la protege."
 - **Seguridad:** no se invita a ningún experimento; no se dice que se raspe ni se limpie el cobre.
 - **Duración:** voz 955 caracteres / ≈ 160 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** estimados (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion escrito; pendiente de verificación independiente (`verificacion.md`). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~955 créditos).
 
 ## Versión narrada
 
@@ -25,6 +25,26 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz). |
 
 **Música:** cama grave continua; efectos en el mismo cuadro (barrido de luz, "clink" de las monedas, burbujeo del O₂, gotas de lluvia, crecimiento de cristales, tic-tac del contador de años, zumbido del haz de rayos X, brochazo que se detiene, abucheo suave).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Cuánto tardó en cubrirla?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «Esa estatua no nació verde» |
+| 2 | 6.4 | 10.2 | 13_senalando_arriba | `izq-alto` | «2.4 milímetros… dos centavos» |
+| 3 | 10.8 | 17.5 | 05_sonriendo_dientes_uniformes | `arriba-der` | «era café, como un centavo» |
+| 4 | 20.6 | 25.2 | 10_serio_molesto | `izq-alto` | «el azufre de la contaminación» |
+| 5 | 27.1 | 29.4 | 06_pensativo_menton | `arriba-der` | «protege al cobre de gastarse» |
+| 6 | 29.65 | 32.8 | 07_pensativo_puno | `grande-izq` | «¿Cuánto tardó en cubrirla?» |
+| 7 | 35.8 | 42.6 | 04_bajando_lentes | `izq-alto` | «1905… 1980… lluvia ácida» |
+| 8 | 43.3 | 47.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «planearon pintarla» |
+| 9 | 48.2 | 53.6 | 13_senalando_arriba | `arriba-der` | «un tubo en la azotea» |
+| 10 | 54.3 | 57.9 | 02_apuntando_camara | `arriba-der` | «no es mugre: es el escudo» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 45 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

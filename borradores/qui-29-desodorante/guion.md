@@ -4,12 +4,12 @@
 - **Formato:** N1 "Por dentro" (la axila con la barra de desodorante → el poro, el conducto del sudor y las bacterias en fondo noche → la misma axila, ahora "leída" por dentro) con un toque de N5 "El experimento" (York, 2020: el gen que se pasa a otra bacteria).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese olor de tu axila no es tu sudor: son bacterias comiéndoselo."
 - **Seguridad / salud:** no se da consejo médico; lo del aluminio y el cáncer de mama se dice solo como lo dice la American Cancer Society (evidencia limitada).
-- **Duración:** voz 941 caracteres / ≈ 160 palabras (≈ 57.7 s) + cierre 3.5 s → **≈ 61.2 s** (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
+- **Duración:** voz 941 caracteres / ≈ 160 palabras (≈ 57.7 s) + cierre 3.7 s → **61.4 s** en la base sin voz (`gen-audio.mjs`).
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~941 créditos).
 
 ## Versión narrada
 
-Tiempos aproximados de la estimación (s): Gancho 0–4 · Sudor 4–9.2 · Bacterias 9.2–14.2 · Olor 14.2–18.1 · Desodorante 18.1–23.2 · Antitranspirante 23.2–29.0 · Pregunta 29.0–31.6 · Estudio 31.6–38.7 · Prueba 38.7–42.9 · Curioso 42.9–47.3 · Aluminio 47.3–53.2 · Cierre 53.2–57.7 · Outro 57.7–61.2.
+Tiempos aproximados de la estimación (s): Gancho 0–4 · Sudor 4–9.2 · Bacterias 9.2–14.2 · Olor 14.2–18.1 · Desodorante 18.1–23.2 · Antitranspirante 23.2–29.0 · Pregunta 29.0–31.6 · Estudio 31.6–38.7 · Prueba 38.7–42.9 · Curioso 42.9–47.3 · Aluminio 47.3–53.2 · Cierre 53.2–57.7 · Outro 57.7–61.4.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -28,6 +28,27 @@ Tiempos aproximados de la estimación (s): Gancho 0–4 · Sudor 4–9.2 · Bact
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave continua, sin golpe marcado, debajo de la voz; efectos en el mismo cuadro (brazo que sube, "fuuu" de las ondas de olor, gota, "clic" de tijera de la enzima, burbuja de azufre, spray/barra, tapón que se cierra con "toc", sorbido del gen que pasa, golpe de la tarjeta, "tic" de la línea de tiempo).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Pero cuál bacteria suelta el peor olor?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.9 | 11_sorprendido | `gancho` | «son bacterias comiéndoselo» |
+| 2 | 6.2 | 8.9 | 13_senalando_arriba | `izq-alto` | «el sudor fresco de la axila no huele» |
+| 3 | 11.0 | 17.6 | 06_pensativo_menton | `arriba-der` | «que las cortan… tioalcoholes, que llevan azufre» |
+| 4 | 18.4 | 22.9 | 05_sonriendo_dientes_uniformes | `izq-alto` | «perfume y antimicrobianos» |
+| 5 | 24.2 | 28.8 | 04_bajando_lentes | `arriba-der` | «un tapón temporal dentro del conducto» |
+| 6 | 29.1 | 32.4 | 07_pensativo_puno | `grande` | «¿Pero cuál bacteria suelta el peor olor?» |
+| 7 | 32.6 | 38.4 | 13_senalando_arriba | `arriba-der` | «la enzima de *Staphylococcus hominis*» |
+| 8 | 39.5 | 42.7 | 11_sorprendido | `izq-alto` | «y empezó a soltarlo» |
+| 9 | 43.2 | 47.1 | 05_sonriendo_dientes_uniformes | `arriba-der` | «antes que nuestra especie» |
+| 10 | 47.8 | 52.9 | 12_perfil_serio | `izq-alto` | «¿el aluminio causa cáncer de mama?… poca evidencia» |
+| 11 | 53.5 | 57.6 | 02_apuntando_camara | `izq-alto` | «química de las bacterias de tu axila» |
+| — | 57.7 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 11 apariciones · ≈ 48 s en pantalla (+ cierre 3.7 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

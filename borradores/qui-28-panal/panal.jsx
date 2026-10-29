@@ -56,7 +56,7 @@ function Ion({ x, y, signo = '+', color = NA, r = 20, o = 1, s = 1 }) {
 // abre 0..1 (ovillo → red estirada) · cargas 0..1 · sodio 0..1 · apaga 0..1 (la sal tapa las cargas) · brillo 0..1 de los amarres.
 const RED_C = 5, RED_F = 4;
 function redNodos(T, cx, cy, abre) {
-  const dx = klerp(95, 190, abre), dy = klerp(80, 150, abre);
+  const dx = klerp(95, 190, abre), dy = klerp(68, 120, abre);
   const N = [];
   for (let j = 0; j < RED_F; j++) for (let i = 0; i < RED_C; i++) {
     const ph = i * 1.7 + j * 2.3;
@@ -105,9 +105,9 @@ function Red({ T, cx, cy, abre = 1, cargas = 0, sodio = 0, apaga = 0, brillo = 0
   </g>;
 }
 // Báscula de juguete: plato izquierdo con un granito, derecho con una gota gigante.
-function Bascula({ T, x, y, inclina = 0 }) {
+function Bascula({ T, x, y, inclina = 0, L = 300 }) {
   const a = inclina * 12 + Math.sin(T * 3) * 3;
-  const r = a * Math.PI / 180, L = 300;
+  const r = a * Math.PI / 180;
   const pl = [x - Math.cos(r) * L, y - Math.sin(r) * L], pr = [x + Math.cos(r) * L, y + Math.sin(r) * L];
   return <g>
     <path d={`M ${x} ${y} L ${x - 80} ${y + 260} L ${x + 80} ${y + 260} Z`} fill={KC.orange} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
@@ -164,19 +164,20 @@ function Panal28() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.06} origen="62% 50%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Panal T={T} x={250} y={1110} s={0.62} rot={-6} />
+          <Panal T={T} x={225} y={930} s={0.55} rot={-6} />
           {/* cucharita que suelta el polvo */}
-          <g transform={`translate(${690} ${560 - polvo * 20}) rotate(${-20 + polvo * 50})`} opacity={1 - kprog(T, K.G + 0.7, K.G + 1.0)}>
+          <g transform={`translate(${610} ${470 - polvo * 20}) rotate(${-20 + polvo * 50})`} opacity={1 - kprog(T, K.G + 0.7, K.G + 1.0)}>
             <rect x={-200} y={-12} width={170} height={22} rx={10} fill="#c9ced6" stroke={KC.ink} strokeWidth={6} />
             <ellipse cx={0} cy={0} rx={50} ry={30} fill="#c9ced6" stroke={KC.ink} strokeWidth={6} />
             <ellipse cx={0} cy={-4} rx={34} ry={16} fill="#fff" opacity={1 - polvo} />
           </g>
           {Array.from({ length: 22 }, (_, i) => { const t = (T - (K.G - 0.3) - i * 0.03) * 1.6; if (t < 0 || t > 1) return null;
-            return <circle key={i} cx={700 + ((i * 37) % 60) - 30} cy={600 + t * 380} r={6} fill="#fff" stroke="#8aa0b8" strokeWidth={2} />; })}
+            return <circle key={i} cx={620 + ((i * 37) % 60) - 30} cy={510 + t * 330} r={6} fill="#fff" stroke="#8aa0b8" strokeWidth={2} />; })}
           {/* chorro desde la jarra */}
-          <Chorro T={T} x0={930} y0={700} x1={700} y1={900} color={AGUA} o={vierte} ancho={22} />
-          <g opacity={1 - kprog(T, K.G + 2.1, K.G + 2.5)}><Botella x={990} y={560} s={0.6} inclina={klerp(-40, -110, vierte)} color="#e8f6ff" liquido={AGUA} tapa={KC.blue} /></g>
-          <VasoGel T={T} x={680} y={1000} s={1.15} nivel={Math.max(0.02, nivel)} gel={gel} giro={giro} />
+          <Chorro T={T} x0={900} y0={600} x1={620} y1={760} color={AGUA} o={vierte} ancho={22} />
+          <g opacity={1 - kprog(T, K.G + 2.1, K.G + 2.5)}><Botella x={960} y={470} s={0.6} inclina={klerp(-40, -110, vierte)} color="#e8f6ff" liquido={AGUA} tapa={KC.blue} /></g>
+          <VasoGel T={T} x={600} y={880} s={1.1} nivel={Math.max(0.02, nivel)} gel={gel} giro={giro} />
+          {giro >= 179 && <path d="M 430 1060 L 770 1060" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />}
         </SvgCapa>
       </Escena>
       {/* 1–5 · por dentro: la red del poliacrilato (una sola escena continua) */}
@@ -189,11 +190,11 @@ function Panal28() {
           </g>}
           <g opacity={kprog(T, K.Q + 0.8, K.Q + 1.5)}>
             {/* borde del gel y lo de afuera (ósmosis) */}
-            {T > K.Os - 0.3 && <g opacity={kprog(T, K.Os - 0.3, K.Os + 0.4)}>
-              <rect x={cx - 470} y={cy - 330} width={940} height={660} rx={80} fill="rgba(198,236,255,.07)" stroke={GEL} strokeWidth={6} strokeDasharray="22 14" />
-              <text x={cx - 440} y={cy - 350} style={{ font:`700 40px ${KF.mono}` }} fill={GEL}>ADENTRO</text>
-              <text x={cx + 230} y={cy + 400} style={{ font:`700 40px ${KF.mono}` }} fill="#7fa7c9">AFUERA</text>
-              <Ion x={150} y={cy + 420} signo="+" color={NA} r={15} />
+            {T > K.Os - 0.3 && T < K.Ge + 0.6 && <g opacity={kprog(T, K.Os - 0.3, K.Os + 0.4) * (1 - kprog(T, K.Ge, K.Ge + 0.5))}>
+              <rect x={cx - 480} y={cy - 330} width={960} height={575} rx={80} fill="rgba(198,236,255,.07)" stroke={GEL} strokeWidth={6} strokeDasharray="22 14" />
+              <text x={cx} y={cy - 280} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={GEL}>ADENTRO</text>
+              <text x={60} y={cy - 350} style={{ font:`700 40px ${KF.mono}` }} fill="#7fa7c9">AFUERA</text>
+              <Ion x={300} y={cy - 362} signo="+" color={NA} r={15} />
               {Array.from({ length: 10 }, (_, i) => { const t = ((T - K.Os) * 0.5 + i / 10) % 1, a = i / 10 * Math.PI * 2;
                 return <g key={i} opacity={1 - kprog(T, K.Ge, K.Ge + 0.5)}><Aguita x={cx + Math.cos(a) * klerp(620, 360, t)} y={cy + Math.sin(a) * klerp(520, 300, t)} s={1.1} rot={T * 60 + i * 40} o={Math.sin(t * Math.PI)} />
                   <path d={`M ${cx + Math.cos(a) * 560} ${cy + Math.sin(a) * 470} L ${cx + Math.cos(a) * 470} ${cy + Math.sin(a) * 390}`} stroke={AGUA} strokeWidth={6} markerEnd="" opacity={0.5} /></g>; })}
@@ -218,8 +219,8 @@ function Panal28() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Bascula T={T} x={540} y={1000} inclina={-1 + 2 * kprog(T, K.Pr + 0.6, K.Pr + 2.2, kEase.rebote)} />
-          <text x={220} y={720} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 220 600)`}>?</text>
+          <Bascula T={T} x={270} y={860} L={160} inclina={-1 + 2 * kprog(T, K.Pr + 0.6, K.Pr + 2.2, kEase.rebote)} />
+          <text x={300} y={600} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 500)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 7 · 2025, Coimbra: el polvo de un pañal en agua pura y en orina de laboratorio */}
@@ -227,24 +228,24 @@ function Panal28() {
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
           {T < K.Es + 4.3 && <g opacity={1 - kprog(T, K.Es + 3.9, K.Es + 4.3)}>
-            <Panal T={T} x={540} y={1040} s={0.95} corte={kprog(T, K.Es + 1.4, K.Es + 2.6)} />
-            <g transform={`translate(${klerp(250, 780, kprog(T, K.Es + 1.4, K.Es + 2.6))} ${990}) rotate(-30)`}>
+            <Panal T={T} x={540} y={960} s={0.95} corte={kprog(T, K.Es + 1.4, K.Es + 2.6)} />
+            <g transform={`translate(${klerp(250, 780, kprog(T, K.Es + 1.4, K.Es + 2.6))} ${910}) rotate(-30)`}>
               <rect x={-10} y={-130} width={20} height={110} rx={6} fill="#c9ced6" stroke={KC.ink} strokeWidth={5} />
               <rect x={-16} y={-20} width={32} height={130} rx={10} fill={KC.blue} stroke={KC.ink} strokeWidth={5} />
             </g>
             {Array.from({ length: 16 }, (_, i) => { const t = kprog(T, K.Es + 2.6 + i * 0.06, K.Es + 3.6 + i * 0.06); if (t <= 0) return null;
-              return <circle key={i} cx={420 + (i * 53) % 240} cy={1080 + t * 260} r={8} fill="#fff" stroke="#8aa0b8" strokeWidth={3} />; })}
+              return <circle key={i} cx={420 + (i * 53) % 240} cy={1000 + t * 200} r={8} fill="#fff" stroke="#8aa0b8" strokeWidth={3} />; })}
           </g>}
           {T > K.Es + 3.9 && (() => {
-            const o = kprog(T, K.Es + 3.9, K.Es + 4.3), h1 = 520 * kprog(T, K.Es + 4.2, K.Es + 5.6, kEase.sale), h2 = 520 * (20 / 295) * kprog(T, K.Es + 6.4, K.Es + 7.2, kEase.sale);
+            const o = kprog(T, K.Es + 3.9, K.Es + 4.3), h1 = 460 * kprog(T, K.Es + 4.2, K.Es + 5.6, kEase.sale), h2 = 460 * (20 / 295) * kprog(T, K.Es + 6.4, K.Es + 7.2, kEase.sale);
             return <g opacity={o}>
-              <line x1={120} y1={1180} x2={960} y2={1180} stroke={KC.ink} strokeWidth={8} />
-              <rect x={210} y={1180 - h1} width={240} height={h1} rx={14} fill={AGUA} stroke={KC.ink} strokeWidth={7} />
-              <rect x={630} y={1180 - Math.max(h2, 0.01)} width={240} height={Math.max(h2, 0.01)} rx={8} fill="#ffe36b" stroke={KC.ink} strokeWidth={7} />
-              {h1 > 40 && <text x={330} y={1160 - h1} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.ink}>≈ 295</text>}
-              {T > K.Es + 6.6 && <text x={750} y={1150 - h2} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.ink}>≈ 20</text>}
-              <text x={330} y={1235} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>agua pura</text>
-              {T > K.Es + 6.4 && <text x={750} y={1235} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>orina de laboratorio</text>}
+              <line x1={120} y1={1100} x2={960} y2={1100} stroke={KC.ink} strokeWidth={8} />
+              <rect x={210} y={1100 - h1} width={240} height={h1} rx={14} fill={AGUA} stroke={KC.ink} strokeWidth={7} />
+              <rect x={630} y={1100 - Math.max(h2, 0.01)} width={240} height={Math.max(h2, 0.01)} rx={8} fill="#ffe36b" stroke={KC.ink} strokeWidth={7} />
+              {h1 > 40 && <text x={330} y={1080 - h1} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.ink}>≈ 295</text>}
+              {T > K.Es + 6.6 && <text x={750} y={1075 - h2} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.ink}>≈ 20</text>}
+              <text x={330} y={1150} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>agua pura</text>
+              {T > K.Es + 6.4 && <text x={750} y={1150} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>orina de laboratorio</text>}
             </g>; })()}
         </SvgCapa>
       </Escena>
@@ -261,18 +262,19 @@ function Panal28() {
       <Escena T={T} a={K.Pe} b={K.Ci} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <GranoAlmidon T={T} x={540} y={1010} s={1.05} injerto={kprog(T, K.Pe + 2.6, K.Pe + 5.0)} />
-          <Letrero T={T} x={540} y={600} e={kprog(T, K.Pe + 5.4, K.Pe + 5.9, kEase.rebote)} />
+          <GranoAlmidon T={T} x={560} y={920} s={0.9} injerto={kprog(T, K.Pe + 2.6, K.Pe + 5.0)} />
+          <Letrero T={T} x={540} y={1530} e={kprog(T, K.Pe + 5.4, K.Pe + 5.9, kEase.rebote)} />
         </SvgCapa>
       </Escena>
       {/* 10 · cierre: el vaso volteado del inicio, por dentro */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="62% 50%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Panal T={T} x={250} y={1110} s={0.62} rot={-6} />
-          <VasoGel T={T} x={680} y={1000} s={1.15} nivel={0.68} gel={1} giro={180} />
+          <Panal T={T} x={225} y={930} s={0.55} rot={-6} />
+          <VasoGel T={T} x={600} y={880} s={1.1} nivel={0.68} gel={1} giro={180} />
+          <path d="M 430 1060 L 770 1060" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
         </SvgCapa>
-        <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.2} x={380} y={640} r={230} fx={680} fy={1000} tinte={KC.cyan} etiqueta="POR DENTRO · el gel"
+        <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.2} x={360} y={500} r={200} fx={600} fy={880} tinte={KC.cyan} etiqueta="POR DENTRO · el gel"
           interior={(T2, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d1424" />
             <g transform={`translate(${r} ${r}) scale(0.42) translate(${-540} ${-900})`}><Red T={T2} cx={540} cy={900} abre={1} cargas={1} sodio={1} />
               {aguas.map(([u, v, r0], i) => <Aguita key={i} x={540 + u * 360} y={900 + v * 230} s={1} rot={r0 + T2 * 40} />)}</g></svg>} />
@@ -287,7 +289,8 @@ function Panal28() {
       <Chip T={T} at={K.Ca + 0.4} until={K.Rp - 0.2} texto="–  carga negativa (COO⁻)" x={540} y={1500} tam={40} borde={CARGA} mono />
       <Chip T={T} at={K.Ca + 2.0} until={K.Rp - 0.2} texto="+  ion de sodio (Na⁺)" x={540} y={1610} tam={40} borde={NA} mono />
       <Chip T={T} at={K.Rp + 0.6} until={K.Os - 0.2} texto="las cargas se repelen" x={540} y={1500} tam={46} borde={KC.yellow} />
-      <Onomato T={T} at={K.Rp + 1.6} until={K.Rp + 3.4} x={840} y={560} texto="¡boing!" color={KC.yellow} tam={90} />
+      <SvgCapa z={44}><Onomato T={T} at={K.G + 3.4} until={K.Q - 0.2} x={860} y={1000} texto="¡no cae!" color={KC.cyan} tam={80} />
+      <Onomato T={T} at={K.Rp + 1.6} until={K.Rp + 3.4} x={840} y={560} texto="¡boing!" color={KC.yellow} tam={90} /></SvgCapa>
       <Chip T={T} at={K.Os + 0.6} until={K.Ge - 0.2} texto="mucho Na⁺ adentro → entra agua" x={540} y={1500} tam={38} borde={NA} />
       <Chip T={T} at={K.Ge + 0.3} until={K.Pr - 0.2} texto="amarres: no se disuelve" x={540} y={1500} tam={44} borde={AMARRE} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2025" quien="Univ. de Coimbra, Portugal" revista="Simões et al. · Gels" x={540} y={560} />
@@ -295,8 +298,8 @@ function Panal28() {
       <Chip T={T} at={K.Sa + 0.5} until={K.Pe - 0.2} texto="la sal tapa las cargas" x={540} y={1500} tam={46} borde={CL} />
       <Etq T={T} at={K.Sa + 0.8} until={K.Pe - 0.2} x={60} y={1600} texto="Na⁺ y Cl⁻ de la orina" tam={34} color={CL} />
       <TarjetaEstudio T={T} at={K.Pe + 0.2} until={K.Pe + 2.6} anio="1973" quien="USDA · Peoria, Illinois" revista="almidón + cadenas injertadas" x={540} y={560} />
-      <Etq T={T} at={K.Pe + 2.8} until={K.Ci - 0.2} x={1030} y={1260} texto="almidón" lado="izq" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Pe + 6.0} until={K.Ci - 0.2} texto="«el súper sorbedor»" x={540} y={1500} tam={44} borde={KC.pink} />
+      <Etq T={T} at={K.Pe + 2.8} until={K.Ci - 0.2} x={1030} y={1180} texto="grano de almidón" lado="izq" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Pe + 6.0} until={K.Ci - 0.2} texto="«el súper sorbedor»" x={540} y={1720} tam={44} borde={KC.pink} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="agua atrapada en una red con cargas" x={540} y={1500} tam={36} borde={KC.cyan} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

@@ -216,7 +216,7 @@ function Desodorante() {
             return T >= t0 ? <g key={i}><Atomo x={klerp(x0, tx, u)} y={klerp(y0, ty, u)} r={26} color="#d6dbe3" letra="Al" tam={22} /></g> : null; })}
           {tapon > 0 && <rect x={497} y={668} width={86} height={110 * tapon} rx={14} fill="rgba(160,168,180,.85)" stroke={KC.ink} strokeWidth={5} />}
         </SvgCapa>
-        <Etq T={T} at={K.An + 0.5} until={K.Pr - 0.3} x={480} y={980} texto="conducto del sudor" lado="izq" tam={36} />
+        <Etq T={T} at={K.An + 0.5} until={K.Pr - 0.3} x={485} y={980} texto="conducto del sudor" lado="izq" tam={32} />
         <Etq T={T} at={K.An + 1.2} until={K.Pr - 0.3} x={470} y={520} texto="sales de aluminio" lado="izq" tam={36} color="#d6dbe3" />
       </Escena>
       {/* 6 · pregunta */}
@@ -304,7 +304,7 @@ function Desodorante() {
       <Lupa T={T} at={K.Ci + 0.6} until={FIN} x={820} y={880} r={180} fx={AX + 5} fy={AY - 20} interior={(Tl, r) => <MiniGota T={Tl} r={r} t0={K.Ci + 0.6} />} etiqueta="AL MICROSCOPIO" tinte={KC.mint} />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.9} until={K.Su - 0.2} texto="huele tu sudor" x={810} y={1170} tam={40} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.9} until={K.Su - 0.2} texto="huele tu sudor" x={300} y={1010} tam={40} />
       <Chip T={T} at={K.G + 2.6} until={K.Su - 0.2} texto="huelen las bacterias" y={1500} tam={42} borde={OLOR} />
       <Chip T={T} at={micro + 0.9} until={K.Ba - 0.2} texto="sudor fresco: sin olor" y={1500} tam={42} borde={SUDOR} />
       <Etq T={T} at={micro + 1.4} until={K.Ba + 2.2} x={330} y={1010} texto="aminoácidos" lado="izq" tam={30} color={KC.gold2} />
@@ -321,7 +321,7 @@ function Desodorante() {
       <Chip T={T} at={K.Pb + 2.4} until={K.Cu - 0.2} texto="3M3SH detectado" y={1500} tam={44} borde={OLOR} mono />
       <Chip T={T} at={K.Cu + 1.0} until={K.Al - 0.2} texto="hipótesis de los autores" y={1500} tam={42} borde={KC.lilac} />
       <TarjetaEstudio T={T} at={K.Al + 2.4} until={K.Ci - 0.3} anio="2026" quien="American Cancer Society" revista="evidencia limitada" y={1580} />
-      <Etq T={T} at={K.Ci + 1.2} until={K.Ou} x={560} y={1200} texto="sudor: sin olor" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 1.2} until={K.Ou} x={545} y={1070} texto="sudor: sin olor" lado="izq" tam={32} color={KC.white} />
       <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="el olor = química de bacterias" y={1500} tam={38} borde={OLOR} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
