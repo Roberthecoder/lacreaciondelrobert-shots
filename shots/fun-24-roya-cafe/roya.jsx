@@ -318,14 +318,14 @@ function RoyaShot() {
       <Escena T={T} a={K.Cl} b={K.Ti} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Termometro x={430} y={1010} alto={460} nivel={nNoche} color="#5b7bff" icono={<g><circle r={46} fill="#f4f1d0" stroke={KC.ink} strokeWidth={5} /><circle cx={22} cy={-12} r={40} fill={KC.pink} /></g>} />
-          <Termometro x={800} y={1010} alto={460} nivel={nDia} color={KC.red} icono={<g>{Array.from({ length: 8 }, (_, i) => <line key={i} x1={0} y1={0} x2={Math.cos(i * 0.785) * 66} y2={Math.sin(i * 0.785) * 66} stroke={KC.ink} strokeWidth={6} />)}<circle r={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} /></g>} />
-          {(() => { const yN = 1010 - 460 * nNoche, yD = 1010 - 460 * nDia; return <g>
+          <Termometro x={430} y={960} alto={440} nivel={nNoche} color="#5b7bff" icono={<g><circle r={46} fill="#f4f1d0" stroke={KC.ink} strokeWidth={5} /><circle cx={22} cy={-12} r={40} fill={KC.pink} /></g>} />
+          <Termometro x={800} y={960} alto={440} nivel={nDia} color={KC.red} icono={<g>{Array.from({ length: 8 }, (_, i) => <line key={i} x1={0} y1={0} x2={Math.cos(i * 0.785) * 66} y2={Math.sin(i * 0.785) * 66} stroke={KC.ink} strokeWidth={6} />)}<circle r={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} /></g>} />
+          {(() => { const yN = 960 - 440 * nNoche, yD = 960 - 440 * nDia; return <g>
             <line x1={470} y1={yN} x2={760} y2={yN} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" /><line x1={615} y1={yD} x2={760} y2={yD} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />
             <line x1={615} y1={yN - 6} x2={615} y2={yD + 6} stroke={KC.ink} strokeWidth={8} /><path d={`M 599 ${yD + 22} L 615 ${yD + 4} L 631 ${yD + 22} M 599 ${yN - 22} L 615 ${yN - 4} L 631 ${yN - 22}`} stroke={KC.ink} strokeWidth={6} fill="none" />
           </g>; })()}
-          <text x={430} y={1112} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>noche</text><text x={430} y={1150} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Cl + 1.0, K.Cl + 1.4)}>mínimas +0.9 °C</text>
-          <text x={800} y={1112} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>día</text><text x={800} y={1150} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Cl + 1.4, K.Cl + 1.8)}>máximas −1.2 °C</text>
+          <text x={430} y={1106} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>noche</text><text x={430} y={1142} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Cl + 1.0, K.Cl + 1.4)}>mínimas +0.9 °C</text>
+          <text x={800} y={1106} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>día</text><text x={800} y={1142} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Cl + 1.4, K.Cl + 1.8)}>máximas −1.2 °C</text>
           {Array.from({ length: 6 }, (_, i) => { const k = kprog(T, K.Cl + 3.0 + i * 0.12, K.Cl + 3.3 + i * 0.12, kEase.rebote); return k > 0 ? <Uredo key={i} x={110 + (i % 2) * 140} y={720 + Math.floor(i / 2) * 150} L={110} rot={i * 50 + T * 20} s={k} /> : null; })}
         </>)}
       </Escena>
@@ -381,8 +381,8 @@ function RoyaShot() {
       <Etq T={T} at={K.S + 0.8} until={K.E - 0.3} x={500} y={1150} texto="Ceilán (hoy Sri Lanka)" lado="der" tam={28} color={KC.ink} />
       <Etq T={T} at={K.S + 5.0} until={K.E - 0.3} x={600} y={1020} texto="té" tam={40} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2012–13" quien="Centroamérica y México" revista="Avelino et al., Food Security, 2015" y={760} />
-      <Chip T={T} at={K.Cl + 0.3} until={K.Ti - 0.3} texto="Guatemala · 2012" x={640} y={400} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Cl + 3.0} until={K.Ti - 0.3} texto="hipótesis: probablemente lo aceleró" x={560} y={300} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Cl + 0.3} until={K.Ti - 0.3} texto="Guatemala · 2012" x={600} y={330} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Cl + 3.0} until={K.Ti - 0.3} texto="hipótesis: probablemente lo aceleró" x={560} y={250} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Ti + 4.0} until={K.Ci - 0.3} texto="la roya evoluciona" x={300} y={1080} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="tu café vs. la roya" x={360} y={560} tam={40} borde={RC.roya} />
 
