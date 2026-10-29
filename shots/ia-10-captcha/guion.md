@@ -28,7 +28,7 @@
 
 ## Fuentes (cada cifra se abrió en la fuente original el 29 oct 2026)
 
-1. Searles, A., Nakatsuka, Y., Ozturk, E., Paverd, A., Tsudik, G. y Enkoji, A. "An Empirical Study & Evaluation of Modern CAPTCHAs". *32nd USENIX Security Symposium* (agosto de 2023), pp. 3081–3097. UC Irvine. PDF: https://www.usenix.org/system/files/usenixsecurity23-searles.pdf
+1. Searles, A., Nakatsuka, Y., Ozturk, E., Paverd, A., Tsudik, G. y Enkoji, A. "An Empirical Study & Evaluation of Modern CAPTCHAs". *32nd USENIX Security Symposium* (agosto de 2023), p. 3081 en adelante. UC Irvine. PDF: https://www.usenix.org/system/files/usenixsecurity23-searles.pdf
    > Resumen: "we explore CAPTCHAS in the wild by evaluating users' solving performance and perceptions of unmodified currently-deployed CAPTCHAS. We obtain this data through manual inspection of popular websites and user studies in which 1,400 participants collectively solved 14,000 CAPTCHAS."
    > §5.5: "Table 3 contrasts our measured human solving times and accuracy against those of automated bots reported in the literature. Interestingly, these results suggest that bots can outperform humans, both in terms of solving time and accuracy, across all these CAPTCHA types."
    > §8: "The bots' accuracy ranges from 85-100%, with the majority above 96%. This substantially exceeds the human accuracy range we observed (50-85%). Furthermore the bots' solving times are significantly lower in all cases, except reCAPTCHA (image), where human solving time (18 seconds) is similar to the bots' (17.5 seconds)."
