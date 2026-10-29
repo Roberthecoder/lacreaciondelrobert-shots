@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Ballena Gris base narrada.dc.html",
+  "salida": "Shot Ballena Gris narrado.dc.html",
+  "nota": "Shot Ambiental #48. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto es un año en la vida de una ballena gris, en un mapa: unos dieciséis mil kilómetros, ida y vuelta."
+    },
+    {
+      "escena": "Artico",
+      "texto": "En verano come en el Ártico, en los mares de Bering y Chukchi."
+    },
+    {
+      "escena": "Comida",
+      "texto": "Se pone de lado, chupa lodo del fondo y con sus barbas se queda con bichitos como los anfípodos."
+    },
+    {
+      "escena": "Viaje",
+      "texto": "Luego baja por la costa hasta Baja California Sur."
+    },
+    {
+      "escena": "Lagunas",
+      "texto": "En lagunas como Ojo de Liebre, San Ignacio y Bahía Magdalena nacen sus crías en enero y febrero."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué pasa si el Ártico deja de darle de comer?"
+    },
+    {
+      "escena": "Varadas",
+      "texto": "De 2019 a 2023 hubo seiscientas noventa varadas, trescientas dieciséis en México. Muchas, desnutridas."
+    },
+    {
+      "escena": "Crias",
+      "texto": "En 2025, en California, estimaron ochenta y cinco crías yendo al norte: la cifra más baja desde que se cuentan, en 1994."
+    },
+    {
+      "escena": "Poblacion",
+      "texto": "Su población bajó de unas veintisiete mil en 2016 a unas trece mil en 2025."
+    },
+    {
+      "escena": "Misterio",
+      "texto": "En 2026 el conteo subió a casi dieciocho mil: al parecer, más de lo que explican sus nacimientos. Nadie sabe por qué."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Este mapa es su vida: dieciséis mil kilómetros que dependen de un Ártico lleno de comida."
+    }
+  ]
+}
