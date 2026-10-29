@@ -252,13 +252,13 @@ function Petasa() {
             </g>; })}
           <g opacity={1 - kprog(T, K.Mh - 0.3, K.Mh + 0.3)}><Bacteria T={T} x={250} y={470} largo={300} ancho={110} rot={-8} color="#f7b2d0" seed={9} />
             {[0, 1, 2].map((j) => { const p = ((T - K.Pe) * 0.7 + j / 3) % 1; return <circle key={j} cx={300 + p * 120} cy={510 + p * 200} r={14 * (1 - p)} fill={ENZ_P} opacity={1 - p} />; })}</g>
-          {T > K.Pe + 0.3 && T < K.Mh + 0.4 && <EnzimaTijera x={petX - 20} y={YC - 150 + Math.sin(T * 5) * 6} rot={70} color={ENZ_P} abre={petAbre}
-            s={1} />}
-          {T > K.Mh && T < K.Pz + 0.3 && (() => { const q = pieza(mhI); return <EnzimaTijera x={q.hx + 75 - 20} y={q.hy - 150 + Math.sin(T * 5) * 6} rot={70} color={ENZ_M} abre={mhAbre} s={0.9} />; })()}
+          {T > K.Pe + 0.3 && T < K.Mh + 0.4 && <EnzimaTijera x={petX - 20} y={YC - 150 + Math.sin(T * 5) * 6} rot={70} color={ENZ_P} abre={petAbre} s={1.25}
+ />}
+          {T > K.Mh && T < K.Pz + 0.3 && (() => { const q = pieza(mhI); return <EnzimaTijera x={q.hx + 75 - 20} y={q.hy - 150 + Math.sin(T * 5) * 6} rot={70} color={ENZ_M} abre={mhAbre} s={1.2} />; })()}
           {T > K.Pz + 0.6 && <Bacteria T={T} x={BAC.x} y={klerp(1400, BAC.y, kprog(T, K.Pz + 0.6, K.Pz + 1.1, kEase.sale))} largo={320} ancho={120} color="#f7b2d0" seed={7} />}
         </SvgCapa>
         <Chip T={T} at={K.Pe + 0.2} until={K.Pe + 1.2} texto="esquemático · no a escala" y={1580} tam={28} mono borde="#7fc8ff" />
-        <Etiqueta T={T} at={K.Pe + 0.4} until={K.Mh - 0.2} x={Math.min(petX + 40, 480)} y={YC - 250} texto="PETasa" color="#d7b8ff" tam={40} />
+        <Etiqueta T={T} at={K.Pe + 0.4} until={K.Mh - 0.2} x={Math.min(petX + 40, 400)} y={YC - 250} texto="PETasa" color="#d7b8ff" tam={40} />
         <Chip T={T} at={K.Pe + 1.4} until={K.Mh - 0.2} texto="PET → pedacitos (MHET)" y={1500} tam={42} borde={ENZ_P} />
         <Etiqueta T={T} at={K.Mh + 0.3} until={K.Pz - 0.2} x={80} y={600} texto="MHETasa" color={ENZ_M} tam={40} />
         <Chip T={T} at={K.Mh + 0.6} until={K.Pz - 0.2} texto="pedacito → 2 piezas" y={1500} tam={42} borde={ENZ_M} />

@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Tamiz base narrada.dc.html",
+  "salida": "Shot Tamiz narrado.dc.html",
+  "nota": "Shot Biotecnológico #39. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Estas gotas de tu sangre no son un simple análisis: cazan enfermedades invisibles."
+    },
+    {
+      "escena": "Talon",
+      "texto": "A los pocos días de nacer, probablemente te picaron el talón y mancharon un papel filtro."
+    },
+    {
+      "escena": "Busca",
+      "texto": "Buscan enfermedades que aún no se notan, como la fenilcetonuria."
+    },
+    {
+      "escena": "Enzima",
+      "texto": "Quien la tiene no procesa bien la fenilalanina de las proteínas: se acumula y daña el cerebro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo encuentras eso en una gota seca?"
+    },
+    {
+      "escena": "Guthrie",
+      "texto": "En 1963, Robert Guthrie publicó un truco con bacterias."
+    },
+    {
+      "escena": "Agar",
+      "texto": "Puso la gota en un gel con Bacillus subtilis y una sustancia que no la deja crecer."
+    },
+    {
+      "escena": "Halo",
+      "texto": "Con mucha fenilalanina, la bacteria crecía alrededor: un círculo de alarma."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "Hoy un espectrómetro de masas puede buscar más de treinta enfermedades en esa tarjeta."
+    },
+    {
+      "escena": "Dieta",
+      "texto": "Y si se confirma, una dieta especial desde bebé puede evitar la discapacidad intelectual."
+    },
+    {
+      "escena": "Refresco",
+      "texto": "Por eso los refrescos con aspartame avisan: contiene fenilalanina."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México, todo hospital donde nacen bebés debe tomar esa muestra."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esas gotitas de tu talón cazaban enfermedades invisibles."
+    }
+  ]
+}

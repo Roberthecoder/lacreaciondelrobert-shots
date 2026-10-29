@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Genoma base narrada.dc.html",
+  "salida": "Shot Genoma narrado.dc.html",
+  "nota": "Shot Biotecnológico #38. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto es tu genoma dibujado en una pantalla: unos 3,000 millones de letras."
+    },
+    {
+      "escena": "Letras",
+      "texto": "Y solo hay cuatro: A, T, C y G."
+    },
+    {
+      "escena": "Leer",
+      "texto": "Leyendo una por segundo, sin dormir, tardarías más de 90 años."
+    },
+    {
+      "escena": "Proyecto",
+      "texto": "La primera lectura tomó 13 años, de 1990 a 2003: el Proyecto Genoma Humano."
+    },
+    {
+      "escena": "Costo",
+      "texto": "Estados Unidos puso unos 2,700 millones de dólares para todo el proyecto."
+    },
+    {
+      "escena": "Precio2001",
+      "texto": "En 2001, leer un genoma costaba casi 100 millones de dólares."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto cuesta hoy leer el tuyo?"
+    },
+    {
+      "escena": "Antes",
+      "texto": "Antes, cada pedacito de ADN se leía en su propio tubito."
+    },
+    {
+      "escena": "Paralelo",
+      "texto": "Desde 2008, los centros de genoma usan máquinas que leen millones de pedacitos a la vez."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "En 2022, a esos centros de Estados Unidos ya les costaba unos 525 dólares."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Ese año, el consorcio Telómero a Telómero publicó en Science el primer genoma humano completo."
+    },
+    {
+      "escena": "Faltaba",
+      "texto": "Llenó el 8 % que faltaba desde 2003: casi 200 millones de letras."
+    },
+    {
+      "escena": "Repetidos",
+      "texto": "Eran los tramos más repetidos, como el centro de cada cromosoma."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Tu genoma cabe en una pantalla, y leerlo pasó de casi 100 millones de dólares a unos 500."
+    }
+  ]
+}
