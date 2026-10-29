@@ -65,13 +65,17 @@ Se revisaron todos los textos en pantalla de `moho-cortar.jsx` (chips, etiquetas
 |---|---|---|---|---|---|
 | F1 | Pantalla, todos los chips y etiquetas no listados abajo ("¿ya quedó?", "esporas = el color que ves", "hifas: los «hilos»", "esquemático, sin proporción", "micotoxinas", "solo algunos mohos", "esquemático, no a escala", "en los hilos y alrededor", "a veces: en toda la comida", "SE TIRA: blando, húmedo o poroso", "hilos bajo la superficie", "+ bacterias", "SE CORTA: duro y mancha chica", "al menos 2.5 cm (1 pulgada)", "alrededor y por debajo", "el cuchillo no toca el moho", tarjeta "2001 · Universidad Técnica de Múnich · Rychlik y Schieberle · Eur. Food Res. Technol.", "patulina: una toxina de moho", *Penicillium expansum*, "zona con moho", "jitomate: en todo el fruto", "no lo huelas", "pan: se tira", "queso duro: con margen") | ✅ | [USDA], [RS] | Mismas frases de las filas 1–15 | 2005 / 2001 |
 | F2 | Subtítulos 0–5, 8, 10, 11, 12 | ✅ | [USDA], [RS] | Mismas frases de las filas 1–14 | 2005 / 2001 |
-| F3 | Subtítulo 6: "Llega por debajo *y trae bacterias.*" | ⚠️ | [USDA] | "Moldy foods **may** also have bacteria growing along with the mold." Dice más que la fuente (y que la voz: "puede traer"). | 2005 |
-| F4 | Subtítulo 9: "Manzana: *a 2 cm ya no había.*" | ⚠️ | [RS] | "At a distance of **more than 2 cm** from the infected zone the mycotoxin was **not detectable**." Falta "más de" y "no detectable" no es lo mismo que "no había". | 2001 |
-| F5 | Chip: "2 cm después: no detectable" | ⚠️ | [RS] | "more than 2 cm … not detectable": ambiguo; debe decir "más de 2 cm". | 2001 |
-| F6 | Subtítulo 7: "Duro y mancha chica: *corta 2.5 cm.*" | ⚠️ | [USDA] | "Cut off **at least** 1 inch around and below the mold spot". Falta "al menos". | 2005 |
-| F7 | Pantalla, escena del jitomate y el yogur por dentro: bacterias dibujadas grandes con barra de escala "5 cm" visible y sin rótulo de esquema | ⚠️ | — | Una bacteria mide unas micras: con la barra de 5 cm el dibujo afirma un tamaño falso. Falta el rótulo "esquemático, no a escala". | — |
+| F3 | Subtítulo 6: "Llega por debajo *y puede traer bacterias.*" (**corregido**; antes: "y trae bacterias") | ✅ | [USDA] | "Moldy foods may also have bacteria growing along with the mold." | 2005 |
+| F4 | Subtítulo 9: "Manzana: *a más de 2 cm, no detectable.*" (**corregido**; antes: "a 2 cm ya no había") | ✅ | [RS] | "At a distance of more than 2 cm from the infected zone the mycotoxin was not detectable." | 2001 |
+| F5 | Chip: "a más de 2 cm: no detectable" (**corregido**; antes: "2 cm después: no detectable") | ✅ | [RS] | "At a distance of more than 2 cm from the infected zone the mycotoxin was not detectable." | 2001 |
+| F6 | Subtítulo 7: "Duro y mancha chica: *corta 2.5 cm o más.*" (**corregido**; antes: "corta 2.5 cm") | ✅ | [USDA] | "Cut off at least 1 inch around and below the mold spot" (1 in = 2.54 cm) | 2005 |
+| F7 | Pantalla, escena del jitomate y el yogur por dentro: chip "esquemático, no a escala" junto a las bacterias dibujadas (**corregido**; antes sin rótulo, con la barra de 5 cm) | ✅ | — | El dibujo ya no afirma el tamaño de las bacterias: se marca como no a escala. | — |
 | F8 | `publicacion.md`: TikTok, Instagram, YouTube (título y descripción), Facebook, LinkedIn y comentario fijado | ✅ | [USDA], [RS], [NCSU] | Coinciden con las filas 1–15 (incluye "si la mancha es chica", "al menos 2.5 cm", "a más de 2 cm … no se detectaba", "experimento parecido con jitomates", "Si el alimento está cubierto de moho, se tira"). | 2005 / 2001 / 2024 |
-| F9 | `publicacion.md` X: "corta 2.5 cm alrededor y por debajo"; Threads: "se corta con 2.5 cm de margen" | ⚠️ | [USDA] | "Cut off **at least** 1 inch". Falta "al menos". | 2005 |
+| F9 | `publicacion.md` X: "corta al menos 2.5 cm alrededor y por debajo"; Threads: "se corta con al menos 2.5 cm de margen" (**corregido**; antes sin "al menos") | ✅ | [USDA] | "Cut off at least 1 inch around and below the mold spot" | 2005 |
 | F10 | Citas de `## Fuentes` del guion | ✅ | [USDA], [RS] | Comparadas con el PDF del FSIS (UC Davis) y el resumen de [RS]: coinciden textualmente. | 2005 / 2001 |
 
-**Pendientes:** F3–F7 y F9 (⚠️). No se pone el veredicto final hasta corregirlas.
+Re-verificación de F3–F7 y F9 (29 oct 2026): las 6 correcciones están aplicadas en `moho-cortar.jsx` (líneas 368, 377, 404, 405 y 407) y en `publicacion.md` (X y Threads) y coinciden con las fuentes.
+
+Resumen final: voz, animación (chips, etiquetas, tarjeta, escalas y subtítulos), `publicacion.md` (7 redes + comentario fijado) y citas del guion verificadas contra la hoja oficial del FSIS-USDA (2005, vigente según NC State Extension 2024) y Rychlik y Schieberle (2001): todo ✅, ninguna ❌ ni ⚠️ pendiente.
+
+VEREDICTO: APROBADO

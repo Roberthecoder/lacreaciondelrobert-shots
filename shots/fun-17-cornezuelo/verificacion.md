@@ -32,7 +32,7 @@ Fuentes abiertas:
 | 12 | 18 personas tuvieron gangrena (ergotismo gangrenoso) y 3 murieron | ✅ | [U] | "18 patients aged 5 to 30 years were affected by the disease with three reported deaths" (la enfermedad del estudio es "gangrenous ergotism") | 2001 (publ. 2002) |
 | 12b | Pantalla: "2001 · Arsi, Etiopía · Urga et al., 2002"; "de 5 a 30 años" | ✅ | [U] | "Ethiop.J.Health Dev. 2002;16(3):317-323"; "aged 5 to 30 years" | 2002 |
 | 13 | El culpable: avena silvestre con cornezuelo revuelta con su cebada | ✅ | [U] | "attributed to the ingestion of barley containing ergotized wild oats"; "the admixtures consisted of mostly wild oats (sinar) infected with ergot" | 2002 |
-| 14 | De esos alcaloides salen medicinas para la migraña (pantalla: ergotamina, dihidroergotamina) | ✅ | [H], [WB] | "Dihydroergotamine is mainly used in the treatment of migraine"; "the clinical use of ergotamine is minimal today, although dihydroergotamine still has a significant clinical role" (la ergotamina sigue existiendo, aunque se usa poco) | 2009 / 2024 |
+| 14 | De esos alcaloides salen medicinas para la migraña (pantalla, corregido: "migraña (dihidroergotamina)"; antes decía también ergotamina, que hoy casi no se usa) | ✅ corregido | [H], [WB] | "Dihydroergotamine is mainly used in the treatment of migraine"; "the clinical use of ergotamine is minimal today, although dihydroergotamine still has a significant clinical role" | 2009 / 2024 |
 | 15 | … y para frenar el sangrado del parto (pantalla: ergometrina) — sigue en uso | ✅ | [H], [V] | "ergot alkaloids have mainly been used to prevent excessive bleeding during or after childbirth"; OMS: "The use of ergometrine/methylergometrine (200 µg, IM/IV) is recommended for the prevention of PPH" (en contextos donde se descarta hipertensión) | 2009 / 2019 (recomendación OMS 2018) |
 | 16 | En 1938, de esa familia, Albert Hofmann sacó (sintetizó) el LSD | ✅ | [H] | "The most famous semi‐synthetic ergot alkaloid is the lysergic acid diethylamide (LSD). This compound, first synthesized accidentally in a series of lysergyl amides by Albert Hofmann in 1938" | 1938 (publ. 2009) |
 | 16b | Pantalla: "1938 · Albert Hofmann · LSD (dietilamida del ácido lisérgico)" | ✅ | [H] | ídem | 2009 |
@@ -43,3 +43,7 @@ Fuentes abiertas:
 Revisiones de forma: cada cifra dice de qué es (18 personas con gangrena, 3 muertes, edades 5–30); los datos de más de 2 años
 llevan su año en voz o pantalla (2001, 1938, Edad Media); las fuentes coinciden con sus enlaces; no se presentan hipótesis
 (Salem, epidemias de baile) como hechos.
+
+**Resumen:** 25 afirmaciones revisadas, todas ✅ (fila 14 corregida: la tarjeta de migraña ahora nombra solo la dihidroergotamina, que sigue en uso clínico según Whealy y Becker 2024).
+
+VEREDICTO: APROBADO

@@ -163,10 +163,10 @@ function Globulo({ x, y, s = 1 }) {
   </g>;
 }
 
-// Umbrales de las 50 cajas (esquema del 6 % por grado): 10 se apagan entre 25 y 30 °C, 3 por cada grado de 31 a 40, y 10 siguen.
+// Umbrales de las 50 cajas (esquema del 6 % por grado): 10 se apagan además entre 30 y 37 °C, 3 por cada grado de 31 a 40, y 10 siguen.
 const CAJAS14 = (() => {
   const g = krng(14), umb = [];
-  for (let i = 0; i < 10; i++) umb.push(25.5 + i * 0.45);
+  for (let i = 0; i < 10; i++) umb.push(30.5 + i * 0.65);
   for (let j = 0; j < 30; j++) umb.push(30.5 + Math.floor(j / 3));
   for (let i = 0; i < 10; i++) umb.push(99);
   for (let i = umb.length - 1; i > 0; i--) { const k = Math.floor(g() * (i + 1)); [umb[i], umb[k]] = [umb[k], umb[i]]; }
@@ -261,7 +261,7 @@ function CalorShot() {
           </g>}
         </>)}
         {T > K.R - 0.2 && <div style={{ position:'absolute', left:90, top:530, zIndex:41, font:`400 64px ${KF.titulo}`, color:KC.gold2, textShadow:KSOMBRA, opacity:kprog(T, K.R - 0.2, K.R + 0.2) }}>{kformato(temp, 0)} °C</div>}
-        {T > K.E + 2.6 && <div style={{ position:'absolute', right:60, bottom:470, zIndex:41, font:`700 30px ${KF.mono}`, color:'#fff', textShadow:KSOMBRA }}>esquema · siguen creciendo: {vivas} de 50</div>}
+        {T > K.E + 2.6 && <div style={{ position:'absolute', right:60, bottom:470, zIndex:41, font:`700 30px ${KF.mono}`, color:'#fff', textShadow:KSOMBRA }}>esquema · no son datos del estudio</div>}
       </Escena>
       {/* 9 · hipótesis: la sangre caliente */}
       <Escena T={T} a={K.Hi} b={K.A} zoom={0.05}>

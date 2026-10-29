@@ -310,7 +310,7 @@ function VitaminaDShot() {
       <Etq T={T} at={K.G + 2.5} until={K.O - 0.3} x={1040} y={1000} lado="izq" texto="Agaricus bisporus" it tam={30} color={KC.ink} />
       <Medidor T={T} at={K.O + 0.4} until={K.E - 0.3} valor={0.03} etiqueta="vitamina D" texto={() => '< 1 µg / 100 g (fresco)'} x={360} ancho={660} y={470} color={KC.yellow} />
       <Chip T={T} at={K.O + 1.6} until={K.E - 0.3} texto="algunos de tienda ya vienen tratados con luz UV" x={540} y={690} tam={28} borde={VD.uv} />
-      <Etq T={T} at={K.O + 1.0} until={K.E - 0.3} x={60} y={1140} texto="Agaricus bisporus" it tam={30} />
+      <Etq T={T} at={K.O + 1.0} until={K.E - 0.3} x={60} y={850} texto="Agaricus bisporus" it tam={30} />
       <Etq T={T} at={K.E + 0.4} until={K.L - 0.3} x={60} y={470} texto="membrana de una célula del hongo" tam={27} />
       <Etq T={T} at={K.E + 1.4} until={K.L - 0.3} x={60} y={560} texto="ergosterol" tam={36} color={KC.gold2} />
       <Etq T={T} at={K.E + 2.5} until={K.L - 0.3} x={60} y={1060} texto="ergosterol (hongo)" tam={28} color={KC.gold2} />
@@ -355,7 +355,7 @@ function VitaminaDShot() {
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.O - 0.1} texto="No es solo comida: *es una fábrica de vitamina D.*" />
-      <Subtitulo T={T} idx={1} at={K.O + 0.1} until={K.E - 0.1} texto="Crecen a oscuras: *casi sin vitamina D.*" />
+      <Subtitulo T={T} idx={1} at={K.O + 0.1} until={K.E - 0.1} texto="Casi todos crecen a oscuras: *casi sin vitamina D.*" />
       <Subtitulo T={T} idx={2} at={K.E + 0.1} until={K.L - 0.1} texto="*Ergosterol:* parecido al colesterol." />
       <Subtitulo T={T} idx={3} at={K.L + 0.1} until={K.Pi - 0.1} texto="Luz UV: *previtamina D2 → vitamina D2.*" />
       <Subtitulo T={T} idx={4} at={K.Pi + 0.1} until={K.P - 0.1} texto="Tu piel hace *vitamina D3.*" />
@@ -366,7 +366,7 @@ function VitaminaDShot() {
       <Subtitulo T={T} idx={9} at={K.H + 0.1} until={K.Cu - 0.1} texto="Sube, se estanca… *y baja.*" />
       <Subtitulo T={T} idx={10} at={K.Cu + 0.1} until={K.Tr - 0.1} texto="Tu cuerpo *sí la aprovecha.*" />
       <Subtitulo T={T} idx={11} at={K.Tr + 0.1} until={K.C - 0.1} texto="Rebanados, mejor; *una semana en el refri.*" />
-      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="15 minutos de sol: *tu fábrica de vitamina D.*" />
+      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="15 min de sol de mediodía: *tu fábrica de vitamina D.*" />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 4.6, 'avatar_11_sorprendido', 'gancho'],

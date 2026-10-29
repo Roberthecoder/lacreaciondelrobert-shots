@@ -41,7 +41,7 @@ Descripción:
 Esa caspa no es solo piel que se cae: en tu cabeza vive una levadura que come grasa.
 Las levaduras del género Malassezia viven en la piel de la mayoría de los adultos sanos; en el cuero cabelludo, las especies más comunes son Malassezia globosa y Malassezia restricta. Las glándulas sebáceas sueltan sebo, una grasa natural. Malassezia rompe sus triglicéridos con sus lipasas ("tijeras químicas") y deja sueltos ácidos grasos insaturados, como el ácido oleico (el ácido graso principal del aceite de oliva).
 ¿Por qué a unos les da caspa y a otros no? Porque la caspa depende de al menos tres factores: la levadura, el sebo y la sensibilidad de cada persona. En la piel con caspa, las células de la epidermis se multiplican de más y las células muertas de la superficie se quedan pegadas en grupos: las escamas.
-En 2005, un equipo de investigadores de Cincinnati (EE. UU.) aplicó ácido oleico en el cuero cabelludo de voluntarios: en quienes tenían caspa causó descamación; en quienes no la tenían, no causó cambios visibles. Es una de las explicaciones más estudiadas, no la única: hay grupos que proponen otros factores, como el peróxido de escualeno.
+En 2005, un equipo de investigadores de Cincinnati (EE. UU.) aplicó ácido oleico en el cuero cabelludo de voluntarios: en quienes tenían caspa causó descamación; en quienes no la tenían, no causó cambios visibles. Es una explicación con apoyo experimental, no la única: hay grupos que proponen otros factores, como el peróxido de escualeno.
 El genoma de Malassezia globosa, publicado en 2007, parece no tener el gen de la sintasa de ácidos grasos: no fabrica los suyos y depende de las grasas de tu piel, que rompe con muchas lipasas. Muchos champús anticaspa traen antifúngicos como el ketoconazol o la piritiona de zinc, que actúan contra la levadura.
 El dibujo es esquemático. No es consejo médico: si la caspa no mejora, o hay mucha comezón, rojez o costras, consulta a un dermatólogo.
 Fuentes:
@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 La caspa es un buen ejemplo de cómo una enfermedad común sale de la interacción entre un microbio y su huésped, no de un solo culpable.
 Malassezia, una levadura presente en la piel de la mayoría de los adultos sanos, rompe los triglicéridos del sebo con sus lipasas y libera ácidos grasos como el ácido oleico. En 2005, un equipo de Cincinnati mostró que el ácido oleico aplicado en el cuero cabelludo causaba descamación en personas con caspa, pero no cambios visibles en quienes no la tenían: la sensibilidad de cada persona es parte de la causa (DeAngelis et al., 2005). En 2007, el genoma de Malassezia globosa mostró la ausencia aparente del gen de la sintasa de ácidos grasos, compensada por muchas lipasas secretadas (Xu et al., PNAS).
-Por qué importa: entender los tres factores (levadura, sebo y susceptibilidad) explica por qué los champús con antifúngicos ayudan, y por qué no todos responden igual.
+Por qué importa: entender los tres factores (levadura, sebo y susceptibilidad) explica por qué los champús con antifúngicos ayudan: al bajar la levadura bajan los ácidos grasos libres y, con ellos, la descamación y la comezón (DeAngelis et al., 2005).
 ¿Conocías el papel de la levadura en la caspa?
 Shot Fungi Mati #12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

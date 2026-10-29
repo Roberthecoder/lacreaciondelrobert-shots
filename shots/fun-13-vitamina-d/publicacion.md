@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Ese champiñón no es solo comida: es una fábrica de vitamina D que se prende con sol. 🍄☀️
-Crecen a oscuras y casi no traen vitamina D, pero su ergosterol (parecido al colesterol) se vuelve vitamina D2 con luz ultravioleta. En 2015, champiñones rebanados al sol de mediodía llegaron en 15 minutos a 17.6 µg de vitamina D2 por cada 100 g: comparable al salmón. Más sol no es mejor: después de una hora se estanca y luego baja. Rebanados producen más que enteros.
+Casi todos crecen a oscuras y casi no traen vitamina D, pero su ergosterol (parecido al colesterol) se vuelve vitamina D2 con luz ultravioleta. En 2015, champiñones rebanados al sol de mediodía llegaron en 15 minutos a 17.6 µg de vitamina D2 por cada 100 g: comparable al salmón. Más sol no es mejor: después de una hora se estanca y luego baja. Rebanados producen más que enteros.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Tú los has puesto al sol antes de cocinarlos? 👇
 Shot Fungi Mati #13 · La Creación del Robert
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-15 minutos de sol y tu champiñón fabrica vitamina D ☀️🍄 | Shot Fungi Mati #13
+15 minutos de sol de mediodía y tu champiñón fabrica vitamina D ☀️🍄 | Shot Fungi Mati #13
 ```
 Descripción:
 ```text
@@ -66,8 +66,8 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-Un alimento que fabrica su propia vitamina D con 15 minutos de sol.
-Los champiñones se cultivan a oscuras y casi no tienen vitamina D, pero sus membranas tienen ergosterol, que la luz ultravioleta convierte en vitamina D2 (Keegan et al., 2013). En 2015, Urbain y Jakobsen expusieron champiñones rebanados al sol: tras 15 minutos llegaron al equivalente de 17.6 µg de vitamina D2 por cada 100 g de champiñón fresco, comparable al salmón; después de una hora el aumento se estancó y con exposición extra bajó.
+Un alimento que fabrica su propia vitamina D con 15 minutos de sol de mediodía.
+Casi todos los champiñones se cultivan a oscuras y casi no tienen vitamina D, pero sus membranas tienen ergosterol, que la luz ultravioleta convierte en vitamina D2 (Keegan et al., 2013). En 2015, Urbain y Jakobsen expusieron champiñones rebanados al sol: tras 15 minutos llegaron al equivalente de 17.6 µg de vitamina D2 por cada 100 g de champiñón fresco, comparable al salmón; después de una hora el aumento se estancó y con exposición extra bajó.
 Por qué importa: es una forma casera de sumar vitamina D a un alimento común, sin suplementos ni pescado.
 ¿Conocías este truco?
 Shot Fungi Mati #13 · La Creación del Robert

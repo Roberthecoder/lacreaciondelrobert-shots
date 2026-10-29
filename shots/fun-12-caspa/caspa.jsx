@@ -156,7 +156,7 @@ function CaspaShot() {
             return <circle key={i} cx={xx} cy={yy} r={14} fill={CP.sebo2} stroke={KC.ink} strokeWidth={4} />; })}
           <path d={`M 610 640 Q ${klerp(620, 900, sebo)} ${640 - 26 * sebo} ${klerp(620, 1060, sebo)} 640`} fill={CP.sebo} stroke={KC.ink} strokeWidth={5} opacity={sebo} />
           <path d={`M 470 640 Q ${klerp(460, 220, sebo)} ${640 - 22 * sebo} ${klerp(460, 60, sebo)} 640`} fill={CP.sebo} stroke={KC.ink} strokeWidth={5} opacity={sebo} />
-          {[[200, 600, -30], [330, 610, 50], [820, 600, 200], [960, 612, 120]].map(([x, y, a], i) => <Malassezia key={i} x={x} y={y + Math.sin(T * 1.6 + i) * 4} r={22} ang={a} brote={0.55} />)}
+          {[[200, 600, -30], [330, 610, 50], [820, 600, 200], [960, 612, 120]].map(([x, y, a], i) => <Malassezia key={i} x={x} y={y + Math.sin(T * 1.6 + i) * 4} r={6} ang={a} brote={0.55} />)}
         </>)}
       </Escena>
       {/* 4–5 · lipasas cortan la grasa; queda el ácido oleico */}
