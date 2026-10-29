@@ -22,7 +22,7 @@ m.burbuja(S + 0.8, 0.12, 700); m.burbuja(S + 2.2, 0.12, 520); m.burbuja(S + 3.8,
 m.whoosh(M, 0.5, 0.12);
 for (let i = 0; i < 16; i++) m.tic(M + 0.2 + i * 0.15, 0.05, 900 + (i % 3) * 80);                 // tiza en el pizarrón
 m.whoosh(So, 0.5, 0.12); m.zumbido(So + 0.2, 2.4, 0.02, 140);                                       // la tómbola gira
-for (let i = 0; i < 12; i++) m.pop(So + 0.5 + i * 0.16 + 0.45, 0.06);                              // bolitas que caen
+for (let i = 0; i < 12; i++) m.gota(So + 0.5 + i * 0.16 + 0.45, 0.12, 700);                              // bolitas que caen
 m.golpe(So + 2.6, 0.3, 80);                                                                       // el mismo examen
 m.sube(P + 0.05, 1.4, 50, 62, 0.05);
 m.golpe(R + 0.2, 0.4, 70); m.sube(R + 0.2, 0.9, 52, 76, 0.04);                                     // +0.31
@@ -30,7 +30,7 @@ for (let i = 0; i < 10; i++) m.nota(R + 1.6 + i * 0.08, 55 + i, 0.025, 0.2);    
 m.nota(R + 2.9, 72, 0.06, 0.6); m.nota(R + 2.95, 76, 0.05, 0.6);                                    // línea del piloto
 m.cruje(E + 1.2, 0.3);                                                                            // se tacha el mito
 m.sube(E + 2.0, 1.2, 52, 64, 0.04); m.sube(E + 3.2, 1.6, 52, 76, 0.04);                             // barras de tiempo
-m.pop(Pe + 1.0, 0.12); m.pop(Pe + 2.1, 0.12); m.pop(Pe + 3.5, 0.12);                               // notas adhesivas
+m.gota(Pe + 1.0, 0.2, 500); m.gota(Pe + 2.1, 0.2, 500); m.gota(Pe + 3.5, 0.2, 500);                               // notas adhesivas
 m.sube(Ch + 1.0, 1.6, 52, 72, 0.04);
 m.nota(C + 1.6, 67, 0.05, 0.6); m.nota(C + 2.4, 71, 0.05, 0.6); m.nota(C + 3.0, 74, 0.06, 0.9);     // IA + maestro
 m.nota(Ou + 0.3, 57, 0.08, 2.8); m.nota(Ou + 0.3, 64, 0.06, 2.8); m.nota(Ou + 0.3, 69, 0.05, 2.8);

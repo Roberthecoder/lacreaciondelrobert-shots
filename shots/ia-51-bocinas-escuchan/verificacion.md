@@ -43,3 +43,13 @@
    - Pantalla: la barra larga con "10 s" debe ir marcada como "HomePod" (o mostrar 8–10 s si se usa la segunda opción).
 3. **Fila 14 · "casi todas mandaron ese audio a la nube" (✅, redacción).** Que quede claro que se habla de activaciones, no de bocinas. Voz propuesta: «Y casi todas esas activaciones mandaron el audio a la nube.» Anotar en las fuentes del guion que este dato es de la página del laboratorio (2020).
 4. **Fila 19 · globo "¿Qué onda?" (⚠️).** Cambiarlo por algo que no parezca cita de Narcos (p. ej. "…" con la etiqueta "diálogo en español") o poner en pantalla "ilustrativo".
+
+## Re-verificación (29 oct 2026, coordinador)
+- «En el peor caso, una de ellas, con una sola serie, se prendió sola casi una vez por hora.» y chip «hasta 0.95 por hora · 1 bocina con 1 serie» ✅
+- «Pero en una, una de cada diez activaciones duró diez segundos o más.» (HomePod, §4.4) ✅
+- Narcos con diálogo genérico «(diálogo en español)», sin «¿Qué onda?» ✅
+- «Y casi todas esas activaciones mandaron el audio a la nube.» (página del laboratorio Mon(IoT)r, 2020) ✅
+- Recortes de largo sin datos nuevos ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Bocinas base narrada.dc.html",
+  "salida": "Shot Bocinas narrado.dc.html",
+  "nota": "Shot IA #51. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa lucecita en tu bocina no siempre es que la llamaste: a veces la prende la tele."
+    },
+    {
+      "escena": "Escucha",
+      "texto": "La bocina siempre está atenta a su nombre y manda audio a internet cuando cree oírlo."
+    },
+    {
+      "escena": "Experimento",
+      "texto": "En un estudio de 2020, en Boston y Londres pusieron siete bocinas a oír ciento treinta y cuatro horas de series."
+    },
+    {
+      "escena": "Experimento",
+      "texto": "Una cámara vigilaba su luz."
+    },
+    {
+      "escena": "Numero",
+      "texto": "En el peor caso, una de ellas, con una sola serie, se prendió sola casi una vez por hora."
+    },
+    {
+      "escena": "Palabras",
+      "texto": "A Siri la despertó un “I'm sorry”. A Alexa, un “I messed up”."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto oye cuando se despierta sola?"
+    },
+    {
+      "escena": "Duracion",
+      "texto": "Casi siempre, unos segundos. Pero en una, una de cada diez activaciones duró diez segundos o más."
+    },
+    {
+      "escena": "Nube",
+      "texto": "Y casi todas esas activaciones mandaron el audio a la nube."
+    },
+    {
+      "escena": "Calma",
+      "texto": "Lo bueno: no hallaron pruebas de que graben todo el tiempo, ni de palabras secretas."
+    },
+    {
+      "escena": "Narcos",
+      "texto": "Lo curioso: por palabra, la serie que más las confundió fue Narcos, a menudo con diálogos en español."
+    },
+    {
+      "escena": "Consejo",
+      "texto": "Si te preocupa, apaga su micrófono con el botón."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa lucecita no siempre eres tú: a veces es la tele."
+    }
+  ]
+}

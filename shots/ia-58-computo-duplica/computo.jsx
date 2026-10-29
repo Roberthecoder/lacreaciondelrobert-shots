@@ -61,7 +61,7 @@ function Carril({ T, at, until, y, color, titulo, cada, meses = 24, etiqueta }) 
   </div>;
 }
 // Gráfica esquemática (escala logarítmica) del cómputo de entrenamiento: suave hasta 2010 y luego empinada.
-function Grafica({ T, at, until, x = 110, y = 690, w = 860, h = 360 }) {
+function Grafica({ T, at, until, x = 110, y = 700, w = 860, h = 300 }) {
   if (T < at - 0.4 || T > until + 0.45) return null;
   const o = kprog(T, at - 0.4, at + 0.1) * (1 - kprog(T, until - 0.05, until + 0.45)), p = kprog(T, at + 0.3, at + 3.0, kEase.suave);
   const xr = (a) => x + ((a - 1960) / (2022 - 1960)) * w, yr = (v) => y + h - v * h;
@@ -72,7 +72,7 @@ function Grafica({ T, at, until, x = 110, y = 690, w = 860, h = 360 }) {
     <line x1={x} y1={y + h} x2={x + w} y2={y + h} stroke={KC.ink} strokeWidth={5} /><line x1={x} y1={y - 20} x2={x} y2={y + h} stroke={KC.ink} strokeWidth={5} />
     {[1960, 1990, 2010, 2022].map((a) => <text key={a} x={xr(a)} y={y + h + 44} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{a}</text>)}
     <line x1={xr(2010)} y1={y - 20} x2={xr(2010)} y2={y + h} stroke={KC.ink} strokeWidth={3} strokeDasharray="10 10" opacity=".5" />
-    <text x={x + 14} y={y - 24} style={{ font:`700 24px ${KF.mono}` }} fill="#5a524a">cómputo (escala log.)</text>
+    <text x={x + 240} y={y - 24} style={{ font:`700 24px ${KF.mono}` }} fill="#5a524a">cómputo (escala log.)</text>
     <path d={d} stroke={p > 0.78 ? KC.red : KC.blue} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" />
   </svg>;
 }
@@ -180,7 +180,7 @@ function Computo() {
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2022" quien="Epoch AI · congreso IJCNN, Padua (Italia)" revista="Sevilla, Heim, Ho, Besiroglu, Hobbhahn y Villalobos" y={820} />
       <Grafica T={T} at={K.E + 3.4} until={K.D} />
-      <Chip T={T} at={K.E + 4.6} until={K.D - 0.2} texto="~cada 20 meses (antes de 2010)" x={400} y={950} tam={30} borde={KC.blue} />
+      <Chip T={T} at={K.E + 4.6} until={K.D - 0.2} texto="~cada 20 meses (antes de 2010)" x={400} y={900} tam={30} borde={KC.blue} />
       <Chip T={T} at={K.E + 5.8} until={K.D - 0.2} texto="~cada 6 meses (2010–2022)" x={560} y={760} tam={30} borde={KC.red} />
       {/* 5 · diez mil veces */}
       <Escena T={T} a={K.D} b={K.P}>
@@ -190,6 +190,7 @@ function Computo() {
         <Cuadricula T={T} cols={100} filas={100} x={60} y={420} ancho={640} alto={640} vacio="rgba(255,255,255,.10)" lleno={KC.mint}
           tramos={[{ desde: 0, hasta: 0.0001, color: KC.yellow }]} llenado={(t) => t < K.D + 1.0 ? 0.0001 : 0.0001 + 0.9999 * Math.pow(kprog(t, K.D + 1.0, K.D + 3.8), 2.2)} />
       </div>}
+      {T > K.D && T < K.D + 2.4 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:35 }}><circle cx={64} cy={424} r={18 + 6 * Math.sin(T * 8)} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.D, K.D + 0.3)} /><line x1={84} y1={410} x2={150} y2={380} stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.D, K.D + 0.3)} /></svg>}
       <Chip T={T} at={K.D + 0.3} until={K.D + 2.4} texto="■ = cómputo de 2020" x={380} y={360} tam={32} borde={KC.yellow} />
       <Chip T={T} at={K.D + 2.5} until={K.P - 0.2} texto="tendencia de los modelos más grandes" x={380} y={360} tam={26} borde={KC.mint} />
       <NumeroGigante T={T} at={K.D + 3.0} until={K.P - 0.2} valor={10000} desde={1} dur={0.8} prefijo="×" x={380} y={740} tam={150} color={KC.yellow} />
@@ -243,8 +244,8 @@ function Computo() {
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mo - 0.1} texto="No es agua: *es cómputo.* Cada año, *×5.*" />
       <Subtitulo T={T} idx={1} at={K.Mo + 0.1} until={K.Du - 0.1} texto="Ley de Moore: *×2 cada 2 años.*" />
       <Subtitulo T={T} idx={2} at={K.Du + 0.1} until={K.E - 0.1} texto="Cómputo de IA: *×2 cada ~5 meses.*" />
-      <Subtitulo T={T} idx={3} at={K.E + 0.1} until={K.D - 0.1} texto="Antes de 2010, como Moore. *Luego, se disparó.*" />
-      <Subtitulo T={T} idx={4} at={K.D + 0.1} until={K.P - 0.1} texto="Desde 2020: *unas 10 000 veces.*" />
+      <Subtitulo T={T} idx={3} at={K.E + 0.1} until={K.D - 0.1} texto="Antes de 2010: Moore. *Luego, se disparó.*" />
+      <Subtitulo T={T} idx={4} at={K.D + 0.1} until={K.P - 0.1} texto="Desde 2020: *unas 10,000 veces.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.F - 0.1} texto="¿De dónde *sale tanto?*" />
       <Subtitulo T={T} idx={6} at={K.F + 0.1} until={K.C - 0.1} texto="Más chips, *más tiempo,* chips más potentes." />
       <Subtitulo T={T} idx={7} at={K.C + 0.1} until={K.En - 0.1} texto="Entrenarlas cuesta *×3.5 cada año.*" />
