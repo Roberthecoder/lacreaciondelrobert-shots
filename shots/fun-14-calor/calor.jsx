@@ -336,13 +336,12 @@ function CalorShot() {
       <Chip T={T} at={K.Gr + 1.0} until={K.F - 0.3} texto="cada grado: −6 % más" x={420} y={440} tam={40} borde={KC.red} />
       <Chip T={T} at={K.F + 0.9} until={K.Hi - 0.3} texto="fiebre: ¿más escudo?" x={420} y={440} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Hi + 0.4} until={K.A - 0.3} texto="sangre caliente = defensa" x={720} y={470} tam={34} borde={KC.violet} />
-      <Etq T={T} at={K.A + 0.8} until={K.Cl - 0.3} x={60} y={520} texto="levadura" tam={32} />
-      <Etq T={T} at={K.A + 1.1} until={K.Cl - 0.3} x={60} y={570} texto="Candida auris" it tam={36} color={KC.gold2} />
-      <Chip T={T} at={K.A + 1.8} until={K.Cl - 0.3} texto="crece bien a 40 °C" x={400} y={470} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.A + 0.8} until={K.Cl - 0.3} x={60} y={470} texto="levadura" tam={32} />
+      <Etq T={T} at={K.A + 1.1} until={K.Cl - 0.3} x={60} y={525} texto="Candida auris" it tam={36} color={KC.gold2} />
       <TarjetaEstudio T={T} at={K.Cl + 0.2} until={K.Cl + 2.3} anio="2019" quien="Casadevall y col." revista="mBio" x={360} y={580} />
       <Chip T={T} at={K.Cl + 2.6} until={K.D - 0.3} texto="¿se adaptó al calor?" x={400} y={470} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.D + 1.0} until={K.C - 0.3} x={700} y={760} texto="calor" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.D + 2.0} until={K.C - 0.3} x={650} y={880} texto="defensas" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.D + 1.0} until={K.C - 0.3} x={705} y={770} texto="calor" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.D + 2.0} until={K.C - 0.3} x={705} y={850} texto="defensas" tam={34} color={KC.ink} />
       <Chip T={T} at={K.D + 3.0} until={K.C - 0.3} texto="infecciones graves: raras" x={400} y={470} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="el zombi: cosa de hormigas" x={380} y={470} tam={36} borde={KC.gold} />
 

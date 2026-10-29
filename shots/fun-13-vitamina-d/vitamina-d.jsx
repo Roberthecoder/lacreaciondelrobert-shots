@@ -119,7 +119,7 @@ function Salmon({ x, y, s = 1 }) {
 }
 // Tubo de sangre que se llena.
 function Tubo({ x, y, nivel = 0, color = VD.sangre }) {
-  const H = 420, h = H * kclamp(nivel, 0, 1);
+  const H = 350, h = H * kclamp(nivel, 0, 1);
   return <g transform={`translate(${x} ${y})`}>
     <rect x={-60} y={-H - 50} width={120} height={50} rx={10} fill={KC.violet} stroke={KC.ink} strokeWidth={6} />
     <path d={`M -50 ${-H} L -50 -40 Q -50 20 0 20 Q 50 20 50 -40 L 50 ${-H}`} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={7} />
@@ -195,7 +195,7 @@ function VitaminaDShot() {
           <g opacity={kprog(T, K.E + 2.3, K.E + 2.8)}>
             <Esterol x={110} y={900} s={0.75} color={KC.gold2} />
             <Esterol x={660} y={900} s={0.75} color="#9fd8ff" />
-            <text x={560} y={930} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.texto}>≈</text>
+            <text x={560} y={840} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.texto}>≈</text>
           </g>
         </>)}
       </Escena>
@@ -275,8 +275,8 @@ function VitaminaDShot() {
           <Tubo x={280} y={1160} nivel={kprog(T, K.Cu + 3.4, K.Cu + 6.2, kEase.suave) * 0.8} />
           <Tubo x={800} y={1160} nivel={kprog(T, K.Cu + 3.4, K.Cu + 6.2, kEase.suave) * 0.8} />
           <Champi T={T} x={125} y={1080} s={0.42} />
-          <text x={280} y={676} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>D2 de champiñón</text>
-          <text x={800} y={676} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>suplemento de D2</text>
+          <text x={280} y={736} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>D2 de champiñón</text>
+          <text x={800} y={736} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>suplemento de D2</text>
           <g transform="translate(960 1000)"><rect x={-60} y={-26} width={120} height={52} rx={26} fill={KC.white} stroke={KC.ink} strokeWidth={6} /><rect x={-60} y={-26} width={60} height={52} rx={26} fill={KC.orange} stroke={KC.ink} strokeWidth={6} /></g>
         </g>)}
       </Escena>
@@ -373,7 +373,7 @@ function VitaminaDShot() {
         [K.O + 0.6, K.E - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
         [K.L + 0.5, K.Pi - 0.3, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.P + 0.05, K.Es + 0.2, 'avatar_07_pensativo_puno', 'grande'],
-        [K.Es + 2.0, K.R + 2.3, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [K.Es + 1.9, K.R + 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.H + 0.3, K.Cu - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.Cu + 3.4, K.Tr - 0.2, 'avatar_02_apuntando_camara', 'arriba-der'],
         [K.Tr + 0.3, K.C - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
