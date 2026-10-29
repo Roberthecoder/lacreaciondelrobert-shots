@@ -74,7 +74,7 @@ Soy Robert, de La Creación del Robert 🌱
 Ese arroz no está pintado: es un grano modificado para fabricar betacaroteno, la provitamina A que el arroz blanco no tiene.
 La planta del arroz produce betacaroteno en sus hojas, pero no en el endospermo. En el año 2000, el equipo de Ingo Potrykus (ETH Zúrich) y Peter Beyer (Universidad de Friburgo) publicó en Science la ruta completa dentro del grano con genes de narciso y de la bacteria Erwinia uredovora. En 2005, Syngenta sustituyó el gen del narciso por uno de maíz (Golden Rice 2) y obtuvo hasta 23 veces más carotenoides. Un estudio publicado en 2009 por la Universidad Tufts confirmó en cinco voluntarios que ese betacaroteno se convierte en vitamina A.
 Por qué importa: según la OMS, la deficiencia de vitamina A es la principal causa prevenible de ceguera infantil; con datos de 1995 a 2005, estimó 190 millones de niños en edad preescolar con retinol bajo en la sangre.
-Y el reto no es solo científico: Filipinas otorgó en 2021 el primer permiso del mundo para su siembra comercial, y en 2024 un tribunal de apelaciones lo revocó por falta de mecanismos de monitoreo; el caso está en la Corte Suprema.
+Y el reto no es solo científico: Filipinas otorgó en 2021 el primer permiso del mundo para su siembra comercial, y en 2024 un tribunal de apelaciones lo revocó por falta de mecanismos de monitoreo; el gobierno apeló ante la Corte Suprema.
 ¿Qué debería pesar más en estas decisiones: la evidencia de seguridad, el principio precautorio o la urgencia nutricional?
 Shot Biotecnológico #27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

@@ -5,6 +5,7 @@
 - **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el plato de arroz amarillo que se ve en pantalla: «Ese arroz no está pintado: fabrica algo que tu arroz blanco no tiene».
 - **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s).
 - **Viaje:** macro (dos platos: arroz blanco y arroz dorado) → micro (dentro del grano: la cadena de pasos que arma el betacaroteno; luego el intestino y el ojo) → el mismo plato del inicio, ya entendido.
+- **Corrección del 29 oct 2026 (verificación independiente, ver `verificacion.md`):** «solo en lo verde» → «en sus hojas, no en el grano»; «En el 2000… le pusieron genes» → «presentaron un arroz con genes» (2000 es el año de publicación); «En 2005 cambiaron» → «Un arroz de 2005 cambió»; «En 2009… lo comieron» → «Un estudio de 2009» (el estudio empezó en 2004 y se publicó en 2009).
 - **Tono:** equilibrado. Se dice qué logró la ciencia y también que en Filipinas un tribunal frenó su siembra; no se toma partido.
 
 ## Versión narrada (957 caracteres, ~179 palabras, ~58 s de voz)
@@ -14,15 +15,15 @@
 | 0 | Gancho | Ese arroz no está pintado: fabrica algo que tu arroz blanco no tiene. | Fondo amarillo de marca. **Desde el cuadro 0** una cuchara cae en un plato de arroz dorado y salta vapor; al lado, un plato de arroz blanco. `MitoTachado` "¿pintado?". |
 | 1 | Hojas | La planta del arroz hace betacaroteno, el pigmento de la zanahoria, en sus hojas, no en el grano. | Fondo menta: una planta de arroz completa (hojas largas, espiga con granos). Las hojas brillan naranja por dentro; una zanahoria al lado como referencia de color. Etiqueta *Oryza sativa*. |
 | 2 | Grano | En el grano que comes, esa fábrica está apagada. | Zoom a un grano de la espiga → se pela (cascarilla, salvado) → queda el grano blanco. `Lupa` "POR DENTRO · el grano": una línea de ensamble con 3-4 pasos y un interruptor en "apagado". |
-| 3 | Genes | En 2000, Ingo Potrykus y Peter Beyer presentaron un arroz con genes de narciso y de una bacteria. | Chip "2000 · Potrykus y Beyer · *Science*". Una flor de narciso (*Narcissus pseudonarcissus*) y una bacteria en bastón (*Erwinia*, hoy *Pantoea*) sueltan cada una un tramo de ADN que entra al grano. |
+| 3 | Genes | En 2000, Ingo Potrykus y Peter Beyer presentaron un arroz con genes de narciso y de una bacteria. | Chip "2000 · Potrykus y Beyer · *Science*". Una flor de narciso (*Narcissus pseudonarcissus*) y una bacteria en bastón (etiqueta *Pantoea ananatis*, antes *Erwinia uredovora*) sueltan cada una un tramo de ADN que entra al grano. |
 | 4 | Camino | Así, el grano arma betacaroteno y se pinta de amarillo. | La línea de ensamble se enciende: piezas pasan de un paso a otro hasta formar la molécula (cadena larga con un anillo en cada punta). El grano se llena de amarillo de afuera hacia el centro (N4). |
 | 5 | Pregunta | ¿Y de qué te sirve un arroz amarillo? | **Re-gancho.** Cámara sale al plato; Robert pensativo. `Escala` "grano ≈ 6 mm". |
 | 6 | Intestino | Tu cuerpo lo vuelve vitamina A, solo la que necesita. | Fondo oscuro (interior): la molécula de betacaroteno llega a una célula del intestino y unas tijeras la cortan por la mitad → "vitamina A". Una válvula deja pasar solo un poco; el resto sigue de largo. |
 | 7 | Ojos | Sin vitamina A, primero no ves de noche y luego puedes quedar ciego. | Un ojo de niño: escena nocturna que se oscurece (ceguera nocturna) y luego un ojo que se nubla. Dibujo esquemático, sin imágenes clínicas. |
-| 8 | Ninos | Con datos de 1995 a 2005, la OMS calculó 190 millones de niños pequeños con poca vitamina A. | `NumeroGigante` "190 millones" + cuadrícula de niñitos que se llena (N4). Chip "OMS · datos 1995–2005 · edad preescolar". |
+| 8 | Ninos | Con datos de 1995 a 2005, la OMS calculó 190 millones de niños pequeños con poca vitamina A. | `NumeroGigante` "190 millones" + cuadrícula de 95 figuritas que se llena (N4), "cada figura = 2 millones". Chip "OMS · datos 1995–2005 · edad preescolar". |
 | 9 | Maiz | Un arroz de 2005 cambió el gen de narciso por uno de maíz: hasta 23 veces más pigmento que el primero. | El narciso sale y entra una mazorca de maíz. `Medidor` del pigmento del grano que sube "×23"; el grano pasa de amarillo pálido a dorado intenso. Chip "Golden Rice 2 · 2005". |
 | 10 | Estudio | Un estudio de 2009, en Boston: cinco voluntarios lo comieron y su cuerpo sí lo volvió vitamina A. | `TarjetaEstudio` "Publicado en 2009 · Boston · Universidad Tufts · 5 voluntarios". Cinco platos; flechitas de cada plato a una gota de "vitamina A". |
-| 11 | Filipinas | Filipinas aprobó sembrarlo en 2021, pero en 2024 un tribunal lo frenó. | Mapa simple de Filipinas: brota un campo de arroz con sello "2021 · permiso de siembra"; luego un mazo de juez y sello "2024 · frenado". |
+| 11 | Filipinas | Filipinas aprobó sembrarlo en 2021, pero en 2024 un tribunal lo frenó. | Mapa simple de Filipinas: brota un campo de arroz con sello "2021 · permiso de siembra"; luego un mazo de juez y sello "2024 · UN TRIBUNAL LO FRENA". (Primer sello: "2021 · SE APRUEBA".) |
 | 12 | Cierre | No está pintado: es el mismo grano con la fábrica encendida. | **Regreso al plato del inicio**: la `Lupa` sobre el grano dorado muestra la línea de ensamble encendida. |
 | — | Outro | (sin voz) | `CierreMarca` con Robert. |
 
@@ -78,3 +79,25 @@ Soy Robert, de La Creación del Robert 🌱"
 10. **Inquirer / AFP (23 jul 2021).** Philippines approves GMO 'golden rice' for commercial production. https://newsinfo.inquirer.net/1463516/philippines-approves-gmo-golden-rice-for-commercial-production — «the world's first country to approve the commercial production» (2021). Permiso fechado el 21 de julio de 2021 (Manila Bulletin, https://mb.com.ph/2021/07/24/milestone-ph-grants-biosafety-permit-to-gmo-golden-rice-for-commercial-production).
 11. **Philstar (24 abr 2024).** CA halts planting of golden rice, Bt eggplant. https://philstar.com/headlines/2024/04/24/2350079/ca-halts-planting-golden-rice-bt-eggplant — decisión de la Cuarta División del Tribunal de Apelaciones, promulgada el 17 de abril de 2024.
 12. **Estado del caso:** PhilRice apeló a la Corte Suprema (Philstar, nov 2024: https://philstar.com/business/2024/11/10/2398904/lift-ban-golden-rice-high-court-urged); un reporte del USDA de dic 2025 (vía Manila Bulletin, https://mb.com.ph/2025/12/02/philippines-genetically-engineered-crops-development-in-limbousda) decía que la Corte Suprema seguía revisando y la decisión seguía vigente. Por eso la voz solo dice «en 2024 un tribunal lo frenó» y no afirma el estado actual.
+
+## Robert en pantalla
+
+Es la marca del canal. Entra desde el cuadro 0, vuelve cada 8–10 s, nunca tapa el subtítulo ni los datos (sale por arriba o en grande sobre el subtítulo, con el dibujo del lado contrario). Tiempos de la base narrada (61.5 s).
+
+### 10 apariciones, **31.0 s en pantalla** (de 61.5 s)
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 – 4,0 | sorprendido (11) | gancho | «Ese arroz no está pintado» |
+| 6,9 – 9,9 | señalando (13) | izq-alto | señala las hojas: «en sus hojas, no en el grano» |
+| 10,7 – 12,9 | serio (10) | arriba-der | «esa fábrica está apagada» |
+| 16,2 – 18,8 | sonriendo (05) | arriba-der | los genes de narciso y bacteria entran al grano |
+| 22,6 – 24,9 | pensativo (06) | **grande** | re-gancho: «¿Y de qué te sirve un arroz amarillo?» |
+| 28,7 – 32,3 | serio (10) | arriba-der | «puedes quedar ciego» |
+| 40,0 – 43,9 | sorprendido (11) | **grande** | «hasta 23 veces más pigmento» |
+| 47,1 – 49,8 | bajando lentes (04) | izq-alto | «su cuerpo sí lo volvió vitamina A» |
+| 51,0 – 54,0 | perfil serio (12) | arriba-der | «en 2024 un tribunal lo frenó» |
+| 54,4 – 57,9 | apuntando a cámara (02) | arriba-der | cierre: «es el mismo grano con la fábrica encendida» |
+| 58,0 – 61,5 | señalando (13) | cierre | `CierreMarca` con Robert junto al logo |
+
+7 poses distintas, nunca la misma dos veces seguidas; 2 apariciones grandes.
