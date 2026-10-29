@@ -19,3 +19,9 @@ jobs:
           echo "== YouTube: renovar acceso con el refresh token"
           curl -s https://oauth2.googleapis.com/token -d client_id="$CID" -d client_secret="$CS" -d refresh_token="$RT" -d grant_type=refresh_token \
             | jq '{ok:(.access_token!=null), scope, expira_en:.expires_in, error, error_description}'
+      - name: LinkedIn
+        env:
+          T: ${{ secrets.LINKEDIN_TOKEN }}
+        run: |
+          echo "== LinkedIn: quién soy"
+          curl -s -H "Authorization: Bearer $T" https://api.linkedin.com/v2/userinfo | jq '{sub,name,error:.message}'
