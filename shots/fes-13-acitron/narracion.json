@@ -6,18 +6,57 @@
   "salida": "Shot Acitron narrado.dc.html",
   "nota": "Shot Festivo #13 · Día de Reyes · Ambiental. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese cuadrito de tu rosca, el acitrón, no es fruta: es un cactus." },
-    { "escena": "Biznaga", "texto": "Sale de la biznaga de dulce, un cactus en forma de barril que solo vive en México." },
-    { "escena": "Desierto", "texto": "Crece en el desierto chihuahuense y en el valle de Tehuacán, entre Puebla y Oaxaca." },
-    { "escena": "Pulpa", "texto": "Por dentro, su tallo es una pulpa que guarda agua para aguantar la sequía." },
-    { "escena": "Corte", "texto": "Para el acitrón se escogen biznagas de más de medio metro: se les quitan las costillas con sus espinas y se corta la pulpa." },
-    { "escena": "Almibar", "texto": "Luego se remoja en almíbar cada vez más espeso, hasta por una semana." },
-    { "escena": "Osmosis", "texto": "El azúcar le saca el agua a las células y ocupa su lugar, hasta que la pulpa queda con 70 a 75 % de azúcar." },
-    { "escena": "Pregunta", "texto": "¿Y qué le pasa a la biznaga?" },
-    { "escena": "Muere", "texto": "Para sacarle la pulpa hay que arrancarla entera: la planta muere." },
-    { "escena": "Estudio", "texto": "En 2008, una tesis de la UNAM calculó que tarda unos 25 años en medir medio metro, y en Tehuacán vio que las poblaciones dependen de que sobrevivan las biznagas grandes." },
-    { "escena": "Ley", "texto": "Por eso, en 2019, México la subió de categoría en su lista oficial de especies en riesgo." },
-    { "escena": "Dato", "texto": "Dato: por cada kilo de biznaga se usaba kilo y medio de azúcar." },
-    { "escena": "Cierre", "texto": "Así que ese cuadrito no es fruta: es un cactus de un cuarto de siglo. Si tu rosca trae ate o papaya, esa biznaga se quedó en el desierto." }
+    {
+      "escena": "Gancho",
+      "texto": "Ese cuadrito de tu rosca, el acitrón, no es fruta: es un cactus."
+    },
+    {
+      "escena": "Biznaga",
+      "texto": "Sale de la biznaga de dulce, un cactus en forma de barril que solo vive en México."
+    },
+    {
+      "escena": "Desierto",
+      "texto": "Vive en el desierto chihuahuense y en el valle de Tehuacán, en Puebla y Oaxaca."
+    },
+    {
+      "escena": "Pulpa",
+      "texto": "Por dentro, su tallo es una pulpa que guarda agua para aguantar la sequía."
+    },
+    {
+      "escena": "Corte",
+      "texto": "Para hacerlo se escogen biznagas de más de medio metro: se les quitan las costillas y se corta la pulpa."
+    },
+    {
+      "escena": "Almibar",
+      "texto": "Luego se remoja en almíbar cada vez más espeso, hasta por una semana."
+    },
+    {
+      "escena": "Osmosis",
+      "texto": "El azúcar le saca el agua a las células y ocupa su lugar, hasta que la pulpa queda con 70 a 75 % de azúcar."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué le pasa a la biznaga?"
+    },
+    {
+      "escena": "Muere",
+      "texto": "Para sacarle la pulpa hay que arrancarla entera: la planta muere."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2008, una tesis de la UNAM hecha en Tehuacán calculó que tarda unos 25 años en medir medio metro."
+    },
+    {
+      "escena": "Ley",
+      "texto": "Por eso, en 2019, México la subió de categoría en su lista oficial de especies en riesgo."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Dato: la receta lleva kilo y medio de azúcar por cada kilo de biznaga."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese cuadrito no es fruta: es un cactus de unos 25 años. Si tu rosca trae ate o papaya, esa biznaga sigue en el desierto."
+    }
   ]
 }
