@@ -4,7 +4,7 @@
 - **Estado (29 oct 2026):** fase A — guion listo, **pendiente de verificación independiente**. Sin animación todavía.
 - **Formato:** N5 "El experimento" (se recrea el experimento de Texas: escáner → entrenamiento → prueba → los dos intentos de "espiar").
 - **Gancho (de los 7):** #6 Mito "¿Por qué NO…?": «¿Por qué una máquina todavía no puede leer tu mente?».
-- **Duración:** voz 958 caracteres / 172 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** en la base.
+- **Duración:** voz 959 caracteres / 171 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** en la base.
 - **Postura de la serie:** ni pánico ni hype: lo que sí logró (la idea general, sin cirugía) y sus límites reales (necesita tu
   cooperación para entrenar y para funcionar). El estudio es de **2023** y se dice. Distinto del ia-27 (implantes con cirugía que
   devuelven el habla): aquí no hay cirugía y el tema es la privacidad mental.
