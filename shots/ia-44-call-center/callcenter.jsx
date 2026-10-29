@@ -258,7 +258,7 @@ function CallCenter() {
           {sug > 0 && env < 1 && <svg width={80} height={90} style={{ position:'absolute', left:klerp(560, 190, cur), top:klerp(330, 520, cur), transform:`scale(${clic && T < K.S + 3.4 ? 0.85 : 1})` }}>
             <path d="M 10 6 L 10 70 L 26 56 L 38 82 L 50 76 L 38 52 L 60 52 Z" fill="#fff" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" /></svg>}
         </div>; })()}
-      <Chip T={T} at={K.S + 3.3} until={K.N - 0.2} texto="el agente decide" x={690} y={1200} tam={40} borde={VERDE} />
+      <Chip T={T} at={K.S + 3.3} until={K.N - 0.2} texto="el agente decide" x={690} y={455} tam={40} borde={VERDE} />
 
       {/* 4 · los números */}
       <Escena T={T} a={K.N} b={K.P}>

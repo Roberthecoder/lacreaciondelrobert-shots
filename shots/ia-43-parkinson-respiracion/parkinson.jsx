@@ -326,9 +326,9 @@ function Parkinson() {
         <FondoLunares color={KC.cyan} />
         {svg(<>
           <g opacity={kprog(T, K.E + 2.2, K.E + 2.6) * (1 - kprog(T, K.E + dE * 0.56, K.E + dE * 0.56 + 0.4))}>
-            <TarjetaNoche T={T} x={290} y={830} titulo="noche A" sel={T > K.E + 3.6 ? 1 : 0} o={1} />
-            <TarjetaNoche T={T} x={790} y={830} titulo="noche B" seed={1.3} o={1} />
-            {T > K.E + 3.0 && <g transform={`translate(${klerp(540, 290, kprog(T, K.E + 3.0, K.E + 3.6, kEase.sale))} 660)`}>
+            <TarjetaNoche T={T} x={290} y={870} titulo="noche A" sel={T > K.E + 3.6 ? 1 : 0} o={1} />
+            <TarjetaNoche T={T} x={790} y={870} titulo="noche B" seed={1.3} o={1} />
+            {T > K.E + 3.0 && <g transform={`translate(${klerp(540, 290, kprog(T, K.E + 3.0, K.E + 3.6, kEase.sale))} 700)`}>
               <Brillito x={0} y={0} s={0.9} rot={T * 60} /><Brillito x={46} y={-30} s={0.45} rot={-T * 80} color={KC.white} /></g>}
             <Palomitas T={T} at={K.E + 3.9} y={1090} buenas={9} paso={0.16} />
           </g>
@@ -340,14 +340,14 @@ function Parkinson() {
       <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 2.2} anio="2022" quien="MIT · Katabi y col." revista="Nature Medicine" y={760} />
       <Chip T={T} at={K.E + 5.6} until={K.E + dE * 0.56} texto="9 de cada 10" x={540} y={1180} tam={44} borde={KC.mint} />
       <TextoCaja T={T} at={K.E + dE * 0.56 + 0.4} until={K.E + dE * 0.77} texto="hospital que no conocía" x={540} y={1100} tam={40} />
-      {T >= K.E + dE * 0.56 + 0.8 && T < K.E + dE * 0.77 + 0.6 && <NumeroGigante T={T} at={K.E + dE * 0.56 + 0.8} until={K.E + dE * 0.77} valor={8} dur={0.8} prefijo="+ de " sufijo=" de 10" x={740} y={860} tam={110} color={KC.yellow} />}
+      {T >= K.E + dE * 0.56 + 0.8 && T < K.E + dE * 0.77 + 0.6 && <NumeroGigante T={T} at={K.E + dE * 0.56 + 0.8} until={K.E + dE * 0.77} valor={8} desde={8} dur={0.1} prefijo="+ de " sufijo=" de 10" x={740} y={860} tam={110} color={KC.yellow} />}
       {T > K.E + dE * 0.77 && <Escena T={T} a={K.E + dE * 0.79} b={K.M}>{svg(<Velocimetro T={T} x={540} y={1010} s={1.05} v={0.62 * kprog(T, K.E + dE * 0.8 + 0.3, K.E + dE * 0.8 + 1.5, kEase.sale)} />)}</Escena>}
       <Chip T={T} at={K.E + dE * 0.8} until={K.M - 0.2} texto="¿qué tan avanzado?" x={420} y={700} tam={42} borde={KC.orange} />
 
       {/* 8 · el enemigo: ventilador y mascota */}
       <Escena T={T} a={K.M} b={K.O}>
         <Recamara T={T} pared={KC.yellow} ventilador={kprog(T, K.M + 0.3, K.M + 0.7)} gato={kprog(T, K.M + 1.0, K.M + 1.5, kEase.rebote)} luna={0} />
-        {svg(<Rayita T={T} y={720} color={KC.white} ruido={kprog(T, K.M + 0.6, K.M + 1.8)} />)}
+        {svg(<Rayita T={T} y={770} color={KC.white} ruido={kprog(T, K.M + 0.6, K.M + 1.8)} />)}
       </Escena>
       <Chip T={T} at={K.M + 2.0} until={K.O - 0.2} texto="✘ noche descartada" x={660} y={470} tam={42} borde={KC.red} />
 
@@ -369,7 +369,7 @@ function Parkinson() {
         <Recamara T={T} />
         {svg(<Rayita T={T} y={790} foco={kprog(T, K.C + 1.6, K.C + 2.0)} color={T > K.C + 1.6 ? KC.gold2 : KC.white} />)}
       </Escena>
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="💡 ¿un aviso temprano? (quizá)" x={620} y={640} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="💡 ¿un aviso temprano? (quizá)" x={660} y={640} tam={38} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.P - 0.1} texto="Esta rayita *eres tú respirando dormido.*" />
