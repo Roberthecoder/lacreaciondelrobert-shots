@@ -181,8 +181,8 @@ function Xantana() {
   const sacude = T > K.Ag + 0.3 && T < AgQ ? Math.sin(T * 22) * 16 : 0;
   const orden = kprog(T, K.Ag + 0.3, K.Ag + 0.9) * (1 - kprog(T, AgQ, AgQ + 1.0));
   const visc = 0.92 - 0.72 * orden;
-  // barra de escala (aprox.): frasco ~5 px/mm · hoja ~3 px/mm · bacteria (~1.5 µm) ~1e5 px/mm · azúcar (~0.5 nm) ~1.9e8 px/mm
-  const escala = T < K.C ? 5 : T < C2 ? 3 : T < K.Ta ? 1e5 : T < K.Ta + 1.6 ? null : T < K.Al ? 1.2e5 : T < K.Ca ? null : T < K.R ? 1.9e8 : T < K.Ag ? 1.0e8 : T < K.Es ? 4 : T < K.Ci ? null : T < K.Ou ? 5 : null;
+  // barra de escala (aprox.): frasco ~5 px/mm · hoja ~3 px/mm · bacteria (~1.5 µm de largo; Xanthomonas: 0.8–2.0 µm) ~1e5 px/mm. Las moléculas van sin escala (dibujo esquemático).
+  const escala = T < K.C ? 5 : T < C2 ? 3 : T < K.Ta ? 1e5 : T < K.Ta + 1.6 ? null : T < K.Al ? 1.2e5 : T < K.Ag ? null : T < K.Es ? 4 : T < K.Ci ? null : T < K.Ou ? 5 : null;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el frasco y la cuchara */}

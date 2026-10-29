@@ -416,7 +416,8 @@ function HepatitisB() {
       <Subtitulo T={T} idx={11} at={K.Pn + 0.1} until={K.Ci - 0.1} texto="La del pan: *ojo con la alergia.*" />
       <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Sin virus: *trabajo de levadura.*" />
 
-      <Robert T={T} apariciones={ROBERT_HB(CUES)} />
+      <Robert T={T} apariciones={ROBERT_HB(CUES).slice(1)} />
+      <StickerFundido T={T} src="assets/stickers/avatar_11_sorprendido.png" at={CUES.Gancho - 0.45} until={CUES.Gancho + 2.7} lado="gancho" />
       <MarcaAgua T={T} tema="bioquimica" num="17" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="bioquimica" robert={'assets/stickers/avatar_13_senalando_arriba.png'} />
       <AudioPista src={window.AUDIO_SRC} />
@@ -432,13 +433,21 @@ function FlechaG({ x0, y0, x1, y1, p = 1, color = KC.ink }) {
     <path d={`M ${x} ${y} l ${-34 * Math.cos(a - 0.5)} ${-34 * Math.sin(a - 0.5)} M ${x} ${y} l ${-34 * Math.cos(a + 0.5)} ${-34 * Math.sin(a + 0.5)}`} stroke={color} strokeWidth={14} strokeLinecap="round" /></g>;
 }
 
-// Robert en pantalla (tabla en guion.md)
+// Primera aparición (lado gancho): igual que Sticker pero sale con fundido, sin bajar por encima del subtítulo.
+function StickerFundido({ T, src, at, until, lado = 'gancho' }) {
+  if (T < at || T > until + 0.4) return null;
+  const L = KLADOS[lado], i = kprog(T, at, at + 0.5, kEase.rebote), o = 1 - kprog(T, until, until + 0.35, kEase.suave);
+  return <img src={src} alt="" style={{ position:'absolute', left:L.left, top:L.top, width:L.width, zIndex:46, transformOrigin:'50% 100%', opacity:o,
+    transform:`translateY(${(1 - i) * 800}px) scale(${1 - 0.04 * (1 - o)})`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />;
+}
+// Robert en pantalla (tabla en guion.md; la 1.ª aparición se dibuja con StickerFundido)
 function ROBERT_HB(C) {
   return [
-    [C.Gancho - 0.45, C.Gancho + 4.6, 'avatar_11_sorprendido', 'gancho'],
+    [C.Gancho - 0.45, C.Gancho + 2.7, 'avatar_11_sorprendido', 'gancho'],
+    [C.Gancho + 3.0, C.Bebe - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
     [C.Virus + 0.3, C.Plasma - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
     [C.Miedo + 0.5, C.Pregunta - 0.1, 'avatar_10_serio_molesto', 'arriba-der'],
-    [C.Pregunta + 0.05, C.Gen + 0.8, 'avatar_06_pensativo_menton', 'grande'],
+    [C.Pregunta + 0.05, C.Gen - 0.15, 'avatar_06_pensativo_menton', 'arriba-der'],
     [C.Particulas + 1.0, C.Vacias - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
     [C.Estudio + 0.4, C.Recombivax - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
     [C.Recombivax + 0.3, C.Pan - 0.2, 'avatar_11_sorprendido', 'grande'],
