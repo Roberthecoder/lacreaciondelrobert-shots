@@ -154,7 +154,7 @@ function MapaBelgica({ x, y, s = 1 }) {
     <text x={-150} y={330} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink} opacity={0.55}>FRANCIA</text>
     <text x={120} y={-330} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#2a5d8a">mar del Norte</text>
     <circle cx={-320} cy={-40} r={16} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
-    <text x={-295} y={-60} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>Ypres</text>
+    <text x={-320} y={-200} textAnchor="middle" style={{ font:`900 48px ${KF.texto}` }} fill={KC.ink} stroke="#fff" strokeWidth={6} paintOrder="stroke">Ypres</text><line x1={-320} y1={-190} x2={-320} y2={-58} stroke={KC.ink} strokeWidth={5} />
   </g>;
 }
 // Barra de escala simple.

@@ -82,7 +82,7 @@ function Manometro({ x, y, r = 110, valor, max = 12, o = 1 }) {
     <line x1={0} y1={0} x2={Math.cos(rad(a)) * r * 0.78} y2={Math.sin(rad(a)) * r * 0.78} stroke={KC.ink} strokeWidth={9} strokeLinecap="round" />
     <circle r={14} fill={KC.ink} />
     <text x={0} y={r * 0.62} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{kformato(valor, 0)}×</text>
-    <text x={0} y={r + 54} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">presión (× aire)</text>
+    <text x={0} y={r + 54} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">presión (× aire)</text>
   </g>;
 }
 // Corte del grano: cáscara (pericarpio) + almidón con gotitas de agua; vapor 0..1 y presión 0..1.
@@ -220,7 +220,7 @@ function Palomitas() {
           <circle cx={560} cy={880} r={250 + 30 * Math.sin(T * 6) * kprog(T, K.Ca, K.Pe)} fill="rgba(255,138,31,.10)" />
           <GranoCorte T={T} x={560} y={890} s={klerp(3.4, 3.9, kprog(T, K.Ca, K.Es))} vapor={kprog(T, K.Ca + 0.6, K.Pe + 0.6)} presion={kprog(T, K.Pe, K.Pe + 1.2)} id="gc2" />
           <Termometro x={985} y={T < K.Pe ? 560 : klerp(560, 760, kprog(T, K.Pe, K.Pe + 0.5, kEase.suave))} alto={T < K.Pe ? 560 : klerp(560, 380, kprog(T, K.Pe, K.Pe + 0.5, kEase.suave))} valor={temp} />
-          <Manometro x={170} y={1030} valor={pres} o={kprog(T, K.Ca + 1.8, K.Ca + 2.3)} />
+          <Manometro x={200} y={1010} valor={pres} o={kprog(T, K.Ca + 1.8, K.Ca + 2.3)} />
           <OllaExpres T={T} x={230} y={640} s={0.62} o={kprog(T, K.Pe + 0.6, K.Pe + 1.1)} />
         </SvgCapa>
       </Escena>
@@ -269,9 +269,9 @@ function Palomitas() {
       <Escena T={T} a={K.Te} b={K.Br} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <rect x={80} y={735} width={650} height={350} rx={30} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={7} />
+          <rect x={80} y={735} width={650} height={350} rx={30} fill="#fff8e0" stroke={KC.ink} strokeWidth={7} />
           {Array.from({ length: 50 }, (_, i) => { const cx = 140 + (i % 10) * 59, cy = 790 + Math.floor(i / 10) * 62, tp = nPop(i);
-            return T >= tp ? <Palomita key={i} x={cx} y={cy} r={klerp(12, 21, kprog(T, tp, tp + 0.2, kEase.rebote))} rot={i * 40} cascara={false} /> : <Grano key={i} x={cx} y={cy} s={0.36} rot={(i * 23) % 40 - 20} />; })}
+            return T >= tp ? <Palomita key={i} x={cx} y={cy} r={klerp(12, 21, kprog(T, tp, tp + 0.2, kEase.rebote))} rot={i * 40} cascara={false} /> : <Grano key={i} x={cx} y={cy} s={0.46} rot={(i * 23) % 40 - 20} />; })}
           <Termometro x={920} y={560} alto={560} valor={tempTe} />
           <text x={405} y={1130} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>50 granos por temperatura</text>
         </SvgCapa>
@@ -283,7 +283,7 @@ function Palomitas() {
         <SvgCapa>
           <Placa x={540} y={1090} ancho={720} />
           {T < bCrack ? <Grano x={540 + Math.sin(T * 50) * 3} y={1035} s={1.5} rot={80} grietas={kprog(T, K.Br + 0.4, bCrack)} />
-            : (() => { const yy = 1000 - 560 * salto, pl = 70 * pata * (1 - aplasta * 0.45);
+            : (() => { const yy = 1000 - 420 * salto, pl = 70 * pata * (1 - aplasta * 0.45);
               return <g transform={`translate(540 ${yy})`}>
                 {pata > 0 && <g>
                   <ellipse cx={0} cy={50 + pl / 2} rx={26 + aplasta * 14} ry={Math.max(8, pl / 2 + 6)} fill={KC.ink} />
@@ -371,7 +371,7 @@ function Palomitas() {
       <Chip T={T} at={bSalta} until={K.So - 0.3} texto="rebota y brinca · 20.7 ms" y={1500} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.So + 0.6} until={soA + soPop * 4 - 0.1} texto="grietas: sin ruido" y={1500} tam={42} borde={KC.red} />
       <Chip T={T} at={soA + soPop * 4} until={K.Vi - 0.3} texto="POP · vapor (hipótesis)" y={1500} tam={42} borde={KC.mint} />
-      <Etq T={T} at={K.Vi + 0.5} until={K.Ci - 0.3} x={620} y={1210} texto="las que no reventaron" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Vi + 0.5} until={K.Vi + 1.9} texto="las que no reventaron" y={1500} tam={42} borde={ORO} />
       <TarjetaEstudio T={T} at={K.Vi + 2.0} until={K.Ci - 0.3} anio="2005" quien="Tandjung et al." revista="Biomacromolecules · la cáscara y el agua" y={1580} />
       <MitoTachado T={T} at={K.Ci + 0.2} tacharEn={K.Ci + 0.9} until={K.Ou - 0.2} texto="¿se quemó?" x={300} y={470} tam={50} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="agua → vapor → presión → ¡revienta!" y={1500} tam={34} borde={AGUA} />

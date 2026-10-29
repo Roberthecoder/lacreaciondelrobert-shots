@@ -52,3 +52,5 @@ Revisé los cambios en guion.md y narracion.json (la voz es igual en los dos), c
 | R6 | Pantalla 7: barras "distancia horizontal promedio (±10 %)": 15.3 vs 11.6 pies | ✅ | Coffey 2008, Tabla II | "Average horizontal distance traveled by the spray during the reaction. The uncertainties are approximately 10%." | 2008 |
 
 Las tres ⚠️ (#10, #12 y #18) ya quedaron corregidas. Ya no queda ninguna ❌ ni ⚠️ pendiente.
+
+VEREDICTO: APROBADO

@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esa sal no es un polvito inocente: está hecha de un metal que reacciona violento con el agua y un gas venenoso."
 - **Seguridad:** nunca se muestra a nadie manipulando sodio ni cloro; el sodio con agua y el gas se ven solo como dibujo dentro de un recuadro "peligro · solo en laboratorio". Nada de cantidades ni recetas. La guerra se muestra con símbolos (nube verde sobre un mapa), sin cuerpos.
 - **Duración:** voz 951 caracteres / ≈ 180 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** estimados (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion escrito; falta verificación independiente (`verificacion.md`), animación y tabla "Robert en pantalla" (fase 2). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~951 créditos).
 
 ## Versión narrada
 
@@ -27,6 +27,25 @@ Tiempos estimados: Gancho 0–6.7 · Sodio 6.7–11.7 · Cloro 11.7–16.7 · El
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave continua, debajo de la voz. Efectos en el mismo cuadro: granitos cayendo, cuchillito sobre cera, burbujeo y chispa, siseo del gas, "clic" del electrón que salta, imán que se pega, cada ion que encaja en el cubo (tic-tic), zumbido eléctrico de la pila, viento sordo de la nube (sin explosiones), burbujeo de los electrodos, salero final.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y por qué la sal ya no es peligrosa como ellos?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «un metal que reacciona violento… y un gas venenoso» |
+| 2 | 7.7 | 11.4 | 13_senalando_arriba | `izq-alto` | «el metal es el sodio, blando como cera» |
+| 3 | 12.9 | 16.4 | 10_serio_molesto | `arriba-der` | «si lo respiras, forma ácido en tus pulmones» |
+| 4 | 23.9 | 27.5 | 05_sonriendo_dientes_uniformes | `izq-alto` | «uno positivo y uno negativo, que se atraen» |
+| 5 | 27.85 | 31.2 | 07_pensativo_puno | `grande` | «¿Y por qué la sal ya no es peligrosa como ellos?» |
+| 6 | 37.2 | 42.4 | 04_bajando_lentes | `arriba-der` | «en 1807, en Londres, Humphry Davy lo aisló» |
+| 7 | 43.2 | 46.7 | 12_perfil_serio | `izq-alto` | «se usó como arma… en Ypres, Bélgica» |
+| 8 | 47.5 | 52.1 | 11_sorprendido | `arriba-der` | «a la sal… le sacan otra vez el cloro» |
+| 9 | 52.7 | 57.9 | 02_apuntando_camara | `izq-alto` | «un metal y un veneno vueltos cubos tranquilos» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 37.7 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la fuente el 29 oct 2026)
 

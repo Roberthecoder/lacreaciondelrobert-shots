@@ -182,7 +182,7 @@ function Chile() {
           <g opacity={kprog(T, K.Q + 2.4, K.Q + 2.9)} transform={`translate(0 ${klerp(80, 0, kprog(T, K.Q + 2.4, K.Q + 3.0, kEase.sale))})`}><Jalapeno x={790} y={950} s={1.1} rot={18 + Math.sin(T * 1.3) * 3} /></g>
           {[0, 1, 2].map((i) => { const t0 = K.Q + 0.4 + i * 0.5, p = kprog(T, t0, t0 + 1.2, kEase.sale);
             return T > t0 ? <Capsa key={i} x={klerp(330, [560, 300, 820][i], p)} y={klerp(900, [620, 800, 800][i], p)} s={i === 0 ? klerp(0.2, 0.75, p) : klerp(0.1, 0.32, p)} rot={i === 0 ? Math.sin(T) * 5 : T * 20 + i * 90} /> : null; })}
-          {T > K.Q + 2.6 && [0, 1].map((i) => { const p = kprog(T, K.Q + 2.8 + i * 0.4, K.Q + 3.8 + i * 0.4, kEase.sale); return <Capsa key={'j' + i} x={klerp(790, [880, 990][i], p)} y={klerp(880, [470, 560][i], p)} s={klerp(0.1, 0.3, p)} rot={-T * 25 + i * 70} />; })}
+          {T > K.Q + 2.6 && [0, 1].map((i) => { const p = kprog(T, K.Q + 2.8 + i * 0.4, K.Q + 3.8 + i * 0.4, kEase.sale); return <Capsa key={'j' + i} x={klerp(790, [860, 930][i], p)} y={klerp(880, [470, 560][i], p)} s={klerp(0.1, 0.3, p)} rot={-T * 25 + i * 70} />; })}
         </SvgCapa>
         <Etq T={T} at={K.Q + 0.8} until={K.Se - 0.3} x={340} y={1170} texto="habanero" lado="der" tam={32} color={KC.ink} />
         <Etq T={T} at={K.Q + 3.0} until={K.Se - 0.3} x={1020} y={1170} texto="jalapeño" lado="izq" tam={32} color={KC.ink} />
@@ -258,7 +258,7 @@ function Chile() {
               </g>; })}
             <line x1={40} x2={1040} y1={yAgua} y2={yAgua} stroke={KC.blue} strokeWidth={5} strokeDasharray="16 12" opacity={kprog(T, K.Re + 1.6, K.Re + 2.0)} />
             <text x={60} y={base - H - 30} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>ardor total (2 min)</text>
-            <text x={1040} y={base + 112} textAnchor="end" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>*sin alcohol · barras esquemáticas</text>
+            <text x={60} y={base - H - 72} textAnchor="start" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>*sin alcohol · barras esquemáticas</text>
           </g>; })()}
         </SvgCapa>
         <Chip T={T} at={K.Re + 2.4} until={K.Pt - 0.3} texto="solo la leche y el agua de sabor le ganaron al agua" y={1500} tam={28} borde={KC.mint} />

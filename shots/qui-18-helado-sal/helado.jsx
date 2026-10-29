@@ -203,9 +203,9 @@ function Helado() {
           {chispas.map((i) => { const t0 = K.Ca + 0.6 + i * 0.3, u = kprog(T, t0, t0 + 1.6, kEase.suave); if (u <= 0 || u >= 1) return null;
             const yy = 720 + ((i * 97) % 480), xx = klerp(160, 860, u);
             return <g key={i} transform={`translate(${xx} ${yy + Math.sin(T * 8 + i) * 10})`}><path d="M 0 -22 L 8 -6 L 24 0 L 8 6 L 0 22 L -8 6 L -24 0 L -8 -6 Z" fill={CALOR} stroke={KC.ink} strokeWidth={3} /></g>; })}
-          <text x={235} y={740} textAnchor="middle" style={{ font:`700 42px ${KF.mono}` }} fill={KC.ink}>tu crema</text>
+          <rect x={95} y={1130} width={280} height={64} rx={14} fill="rgba(14,15,18,.8)" /><text x={235} y={1175} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={CREMA}>tu crema</text>
           <text x={500} y={1310} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={LATA}>bote</text>
-          <text x={805} y={740} textAnchor="middle" style={{ font:`700 42px ${KF.mono}` }} fill={KC.white}>hielo + sal</text>
+          <rect x={655} y={1130} width={300} height={64} rx={14} fill="rgba(14,15,18,.8)" /><text x={805} y={1175} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={HIELO}>hielo + sal</text>
         </SvgCapa>
       </Escena>
       {/* 4 · la crema: con puro hielo no, con sal sí */}
@@ -279,7 +279,7 @@ function Helado() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.Te - 0.3} texto="¿la sal calienta?" x={300} y={470} tam={44} />
-      <Etq T={T} at={K.G + 3.0} until={K.Te - 0.3} x={760} y={750} texto="calor" lado="der" tam={40} color={KC.red} />
+      <Etq T={T} at={K.G + 3.0} until={K.Te - 0.3} x={30} y={700} texto="calor" lado="der" tam={40} color={KC.red} />
       <Chip T={T} at={K.Te + 0.4} until={salTe} texto="hielo + agua = 0 °C" x={540} y={1500} tam={44} borde={KC.blue} />
       <Chip T={T} at={salTe + 0.5} until={K.Sa - 0.3} texto="+ sal → baja" x={540} y={1500} tam={46} borde={KC.red} />
       <Chip T={T} at={K.Sa + 1.0} until={K.Ca - 0.3} texto="punto de congelación ↓" x={540} y={1500} tam={42} borde={NA} />
@@ -294,7 +294,7 @@ function Helado() {
       <Chip T={T} at={K.Car + 3.6} until={K.Fa - 0.3} texto="abajo de −9 °C: casi no derrite" x={540} y={1500} tam={36} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Fa + 0.2} until={K.Fa + 2.5} anio="1724" quien="Fahrenheit lo publica" revista="Phil. Trans. · hielo + agua + sal = 0 °F" x={540} y={640} />
       <Chip T={T} at={K.Fa + 4.8} until={K.Ci - 0.3} texto="0 °F ≈ −18 °C" x={540} y={1500} tam={46} borde={KC.gold} />
-      <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={760} y={750} texto="crema → hielo" tam={36} color={KC.red} />
+      <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={1050} y={370} lado="izq" texto="calor: crema → hielo" tam={36} color={KC.red} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="la sal no calienta: el hielo roba calor" x={540} y={1500} tam={32} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
