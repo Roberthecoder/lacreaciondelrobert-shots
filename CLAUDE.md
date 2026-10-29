@@ -153,7 +153,7 @@ video (shot, largo, libre o de Robert):
 - Producción en la nube (renders automáticos al hacer push, Release de borradores, aprobar voz): ver `PRODUCCION_NUBE.md`. Nunca poner `"voz_aprobada": true` sin que Robert lo diga.
 - **Desde el 27 oct 2026 cada shot es solo NARRADO (decisión de Robert): ya no se hace gemelo mudo.** Flujo: el guion y la animación se
   suben; GitHub renderiza solo una **versión de revisión sin voz** (la misma animación del narrado, con música y subtítulos, `<shot>_sin_voz.mp4`)
-  para que Robert la vea; **la voz clonada de ElevenLabs (Voice ID `uiCk6APPfsjnw3oUQzVo`) se genera únicamente cuando Robert la aprueba**
+  para que Robert la vea; **la voz clonada de ElevenLabs (Voice ID `BrkFnhKTRJck3ZEjqD5d`, voz profesional desde el 29 oct 2026, modelo `eleven_v4`) se genera únicamente cuando Robert la aprueba**
   ("apruebo la voz de…"), y entonces sale el `<shot>_narrado.mp4` final. En `narracion.json` no se pone el campo `"mudo"`.
   Las secciones de abajo sobre "versión sin voz" y "gemelo mudo" quedan solo como referencia para shots viejos.
 - **Números (regla de Robert, 27 oct 2026, tras el error del cepario):** cada cifra que sale en pantalla o en la voz se verifica

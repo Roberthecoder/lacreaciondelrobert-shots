@@ -48,5 +48,5 @@ node preview.mjs ../shots/001-hormiga-zombi "Shot Hormiga Zombi.dc.html" hoja.pn
 | Clave | Dónde va |
 |---|---|
 | Claude API | GitHub → Settings → Secrets and variables → Actions → `CLAUDE_API_KEY` |
-| ElevenLabs | Igual, como `ELEVENLABS_API_KEY`. Voice ID: `uiCk6APPfsjnw3oUQzVo` |
+| ElevenLabs | Igual, como `ELEVENLABS_API_KEY`. Voice ID: `BrkFnhKTRJck3ZEjqD5d` (desde 29 oct 2026; antes `uiCk6APPfsjnw3oUQzVo`) |
 | Telegram, YouTube, Meta, TikTok | Se agregan igual cuando se configuren |

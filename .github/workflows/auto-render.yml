@@ -135,8 +135,8 @@ jobs:
         id: voz
         run: |
           V=$(node -p "require('./$SHOT/narracion.json').voz_aprobada === true")
-          # Modelo: el de narracion.json, si no el de la voz ya guardada (para no regenerarla), si no eleven_v4
-          M=$(node -e "const fs=require('fs');const c=require('./$SHOT/narracion.json');let m=c.modelo;try{m=m||JSON.parse(fs.readFileSync('$SHOT/voz/narracion.json','utf8')).modelo}catch{};console.log(m||'eleven_v4')")
+          # Modelo: el de narracion.json, si no eleven_v4 (decisión de Robert, 29 oct 2026: todas las voces nuevas en v4)
+          M=$(node -e "const fs=require('fs');const c=require('./$SHOT/narracion.json');console.log(c.modelo||'eleven_v4')")
           echo "aprobada=$V" >> "$GITHUB_OUTPUT"
           echo "modelo=$M" >> "$GITHUB_OUTPUT"
           echo "Voz aprobada: $V · modelo: $M"
