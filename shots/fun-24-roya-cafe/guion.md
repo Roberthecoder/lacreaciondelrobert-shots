@@ -86,3 +86,6 @@ Apariciones 10 · **35.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas �
 5. Apoyo para Ceilán: Cambridge University Library, Special Collections blog (2015), "Tea and coffee in India and Ceylon": "After 1869, a leaf disease ruined Ceylon's coffee plantations, but within a generation, much of this land had been successfully replanted with tea." https://specialcollections-blog.lib.cam.ac.uk/?p=9572
 
 El dibujo es esquemático.
+
+- Mishra, M. K. et al. (2011). Stomatal characteristics of coffee (*Coffea arabica*) cultivars. *Botanica Serbica* 35(2): 111–119. https://botanicaserbica.bio.bg.ac.rs/arhiva/pdf/2011_35_2_539_full.pdf
+  > "Mean stomatal guard cell length (μm)": 14.03–16.34 en 10 cultivares de *C. arabica* (tamaño del estoma dibujado).

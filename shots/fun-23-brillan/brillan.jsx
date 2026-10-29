@@ -436,7 +436,7 @@ function BrillanShot() {
       <Etq T={T} at={K.G + 1.6} until={K.Q - 0.2} x={1040} y={1100} lado="izq" texto="madera podrida" tam={28} />
       <Chip T={T} at={K.Q + 0.3} until={K.R - 0.2} texto="hongos que brillan" x={540} y={480} tam={40} borde={LUZ} />
       <NumeroGigante T={T} at={K.R + 0.4} until={K.Cf - 0.2} valor={100} prefijo="≈ " etiqueta="especies que brillan" x={370} y={500} tam={190} color={LUZ} />
-      <Etq T={T} at={K.R + 0.8} until={K.Cf - 0.2} x={60} y={680} texto="esquema · no a escala" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.R + 0.8} until={K.Cf - 0.2} x={60} y={638} texto="esquema · no a escala" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Cf + 1.0} until={K.Lf - 0.2} texto="una sustancia muy común" x={540} y={470} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Cf + 0.3} until={K.P - 0.3} x={640} y={560} texto="dentro de una hifa" tam={26} color={LUZ2} />
       <Chip T={T} at={K.Lf + 1.7} until={K.Lc - 0.2} texto="luciferina = el combustible" x={660} y={470} tam={34} borde={LUZ} />
