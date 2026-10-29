@@ -1,0 +1,48 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Huella Comida base narrada.dc.html",
+  "salida": "Shot Huella Comida narrado.dc.html",
+  "nota": "Shot Ambiental #43. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu taco de bistec contra el de frijol de tu amigo: kilo por kilo, el tuyo calienta el planeta más de cincuenta veces más."
+    },
+    {
+      "escena": "Res",
+      "texto": "Un kilo de carne de res calienta, en promedio, como casi cien kilos de dióxido de carbono."
+    },
+    {
+      "escena": "Frijol",
+      "texto": "Un kilo de frijol y otras legumbres, menos de dos."
+    },
+    {
+      "escena": "Escalera",
+      "texto": "En medio quedan el queso, con casi veinticuatro; el cerdo, con doce, y el pollo, casi diez."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si la res viene del rancho de al lado?"
+    },
+    {
+      "escena": "Transporte",
+      "texto": "Casi da igual: el transporte es medio por ciento de su huella. Pesa el metano de la vaca y la tierra desmontada."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo midieron en 2018 Poore, de Oxford, y Nemecek, de Suiza, con datos de treinta y ocho mil setecientas granjas."
+    },
+    {
+      "escena": "Chocolate",
+      "texto": "Sorpresa: en ese promedio, el chocolate amargo queda segundo, arriba del cordero, por la selva talada para sembrar cacao."
+    },
+    {
+      "escena": "Idea",
+      "texto": "En Estados Unidos, en 2008, calcularon que cambiar la carne roja y los lácteos menos de un día a la semana ayuda más que comprar todo local."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que en tu próxima taquiza, importa menos de dónde viene tu taco que de qué es."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Corales base narrada.dc.html",
+  "salida": "Shot Corales narrado.dc.html",
+  "nota": "Shot Ambiental #17. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {"escena": "Gancho", "texto": "Esto no es una roca ni una planta: es un animal, con algas viviendo adentro."},
+    {"escena": "Polipos", "texto": "Un coral son cientos a miles de animalitos de cuerpo blando: los pólipos."},
+    {"escena": "Esqueleto", "texto": "Cada pólipo fabrica un esqueleto duro de piedra caliza: eso parece roca."},
+    {"escena": "Algas", "texto": "Dentro de sus células viven algas microscópicas, las zooxantelas, que hacen fotosíntesis."},
+    {"escena": "Comida", "texto": "Le pasan al coral hasta el noventa por ciento de lo que fabrican, y le dan su color."},
+    {"escena": "Pregunta", "texto": "¿Entonces por qué hay corales completamente blancos?"},
+    {"escena": "Calor", "texto": "Si el agua se calienta demasiado, el coral expulsa a sus algas y se queda blanco."},
+    {"escena": "Hambre", "texto": "Blanqueado no está muerto, pero pierde su comida principal; si el calor sigue, se muere."},
+    {"escena": "Mundo", "texto": "La NOAA lo midió: de 2023 a mediados de 2025, el ochenta y cuatro por ciento de los arrecifes del mundo tuvo calor para blanquearse. En 1998, el veintiuno."},
+    {"escena": "Mexico", "texto": "En el Arrecife Mesoamericano, de México a Honduras, 2023 fue el peor blanqueamiento registrado."},
+    {"escena": "Cierre", "texto": "Esto no es una roca: es un animal que se muere de hambre si el mar se calienta demasiado."}
+  ]
+}

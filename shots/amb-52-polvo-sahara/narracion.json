@@ -1,0 +1,48 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Polvo Sahara base narrada.dc.html",
+  "salida": "Shot Polvo Sahara narrado.dc.html",
+  "nota": "Shot Ambiental #52. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese atardecer rojizo sobre Yucatán no es humo de un incendio: es polvo del Sahara, que cruzó el océano Atlántico."
+    },
+    {
+      "escena": "Origen",
+      "texto": "El viento caliente levanta polvo del desierto, en África, y lo sube muy alto."
+    },
+    {
+      "escena": "Viaje",
+      "texto": "Cruza el mar hacia Sudamérica y el Caribe; en primavera y verano llega a Yucatán y al Golfo de México, y el Servicio Meteorológico Nacional avisa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cuánto polvo es? ¿Unos cuantos camiones?"
+    },
+    {
+      "escena": "Satelite",
+      "texto": "Un satélite de la NASA lo midió con láser de 2007 a 2013: en promedio, salían del Sahara ciento ochenta y dos millones de toneladas al año."
+    },
+    {
+      "escena": "PorDia",
+      "texto": "O sea, casi medio millón de toneladas de polvo cada día."
+    },
+    {
+      "escena": "Amazonas",
+      "texto": "Y casi veintiocho millones de toneladas caían sobre la cuenca del Amazonas."
+    },
+    {
+      "escena": "Fosforo",
+      "texto": "Ese polvo trae fósforo: unas veintidós mil toneladas al año, casi lo mismo que la selva pierde con la lluvia."
+    },
+    {
+      "escena": "Huracanes",
+      "texto": "Y esas masas de aire seco pueden frenar por un tiempo a los ciclones que intentan crecer."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese cielo rojizo viene del mismo desierto cuyo polvo abona la selva tropical más grande del planeta."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Luz base narrada.dc.html",
+  "salida": "Shot Luz narrado.dc.html",
+  "nota": "Shot Ambiental #31. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto es la Vía Láctea sobre tu casa. Si vives en una ciudad, lo más probable es que tus ojos nunca la vean ahí."
+    },
+    {
+      "escena": "Resplandor",
+      "texto": "La luz de las calles rebota en el aire y tapa las estrellas débiles."
+    },
+    {
+      "escena": "Atlas",
+      "texto": "En 2016, un atlas satelital calculó que más de un tercio de la humanidad no ve la Vía Láctea."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México, cincuenta y ocho de cada cien personas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cada año se ve peor?"
+    },
+    {
+      "escena": "Conteo",
+      "texto": "Con más de cincuenta mil conteos de estrellas a simple vista, de 2011 a 2022, el cielo se aclaró de siete a diez por ciento al año."
+    },
+    {
+      "escena": "Nino",
+      "texto": "Al ritmo promedio, un niño que nace donde se ven doscientas cincuenta estrellas verá cien a los dieciocho."
+    },
+    {
+      "escena": "Tortugas",
+      "texto": "En Florida, miles de tortugas recién nacidas mueren cada año por ir hacia las luces y no al mar."
+    },
+    {
+      "escena": "Aves",
+      "texto": "En Nueva York, en siete noches entre 2008 y 2016, las luces de un memorial alteraron el vuelo de cerca de un millón de aves."
+    },
+    {
+      "escena": "Solucion",
+      "texto": "Lo que sirve: lámparas que alumbren solo hacia abajo, con luz cálida, y apagadas si nadie las usa."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así, la Vía Láctea podría volver a asomarse sobre tu casa."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Hielo Artico base narrada.dc.html",
+  "salida": "Shot Hielo Artico narrado.dc.html",
+  "nota": "Shot Ambiental #42. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Si tienes menos de veinte años, nunca has vivido un septiembre con tanto hielo ártico como los de antes de 2007."
+    },
+    {
+      "escena": "Mapa",
+      "texto": "Este es ese hielo al final del verano, medido en Méxicos."
+    },
+    {
+      "escena": "Antes",
+      "texto": "Entre 1981 y 2010, en su punto más bajo, le quedaban en promedio más de tres Méxicos."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "En septiembre de 2026 quedaban cuatro millones seiscientos mil kilómetros cuadrados: poco más de dos."
+    },
+    {
+      "escena": "Hueco",
+      "texto": "Falta un pedazo del tamaño de Alaska: más de tres cuartas partes de México."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y a ti qué te importa un hielo tan lejos?"
+    },
+    {
+      "escena": "Espejo",
+      "texto": "El hielo es un espejo: refleja del cincuenta al setenta por ciento del sol. El mar oscuro, solo el seis."
+    },
+    {
+      "escena": "Circulo",
+      "texto": "Ese mar se calienta y derrite más hielo: un círculo vicioso."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Satélites lo miden desde 1979, y en Colorado lo cuentan: los veinte años con menos hielo son los últimos veinte."
+    },
+    {
+      "escena": "Record",
+      "texto": "El peor fue 2012: menos de dos Méxicos. Y ojo: como ya flota, al derretirse no sube el nivel del mar."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese Ártico de tres Méxicos, si tienes menos de veinte, solo lo has visto dibujado."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Particulas base narrada.dc.html",
+  "salida": "Shot Particulas narrado.dc.html",
+  "nota": "Shot Ambiental #41. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "En el aire que respiras flotan unas partículas que tus ojos nunca van a ver una por una: las PM dos punto cinco."
+    },
+    {
+      "escena": "Tamano",
+      "texto": "Miden menos de dos punto cinco micras: más de treinta caben en fila a lo ancho de un granito de arena fina."
+    },
+    {
+      "escena": "Origen",
+      "texto": "Unas salen de obras, calles de tierra y fuego. La mayoría se forma en el aire con gases de coches, fábricas y plantas de luz."
+    },
+    {
+      "escena": "Pulmon",
+      "texto": "Por su tamaño se meten muy adentro de tus pulmones, y también afectan a tu corazón."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cuánto es demasiado?"
+    },
+    {
+      "escena": "Guia",
+      "texto": "En 2021, la OMS bajó su guía a la mitad: en promedio al año, no más de cinco microgramos por metro cúbico."
+    },
+    {
+      "escena": "Ciudad",
+      "texto": "En 2023, la red de monitoreo de la Ciudad de México midió un promedio de veinte. Cuatro veces la guía."
+    },
+    {
+      "escena": "AnoNuevo",
+      "texto": "Y el día con más partículas fue el primero de enero: contingencia por cohetes y fogatas de Año Nuevo."
+    },
+    {
+      "escena": "Sirve",
+      "texto": "¿Qué sí sirve? Revisar el índice Aire y Salud. En contingencia, cierra ventanas y no hagas ejercicio afuera."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Una por una no las vas a ver nunca, pero con un número en tu celular ya sabes cuándo están ahí."
+    }
+  ]
+}

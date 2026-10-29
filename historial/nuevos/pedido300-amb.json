@@ -1,0 +1,1035 @@
+{
+ "temas": [
+  {
+   "id": "amb-10-microfibras",
+   "titulo": "Tu suéter se deshace en plástico cada vez que lo lavas (microfibras)",
+   "serie": "Shot Ambiental",
+   "numero": 10,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-10-microfibras",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/27686821/",
+    "https://www.plymouth.ac.uk/news/washing-clothes-releases-thousands-of-microplastic-particles-into-environment-study-shows",
+    "https://pubmed.ncbi.nlm.nih.gov/27191224/",
+    "https://pubmed.ncbi.nlm.nih.gov/30933797/",
+    "https://pubmed.ncbi.nlm.nih.gov/32097788/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Filtros de lavadora contra microfibras: ¿cuánto atrapan?",
+    "Secadora vs. tendedero: las fibras que salen al aire"
+   ]
+  },
+  {
+   "id": "amb-11-bolsa-tela",
+   "titulo": "Siete mil cien compras: la bolsa de tela no es verde por arte de magia",
+   "serie": "Shot Ambiental",
+   "numero": 11,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-11-bolsa-tela",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www2.mst.dk/Udgiv/publications/2018/02/978-87-93614-73-4.pdf",
+    "https://assets.publishing.service.gov.uk/media/5a7bff74ed915d01ba1ca7c7/scho0711buan-e-e.pdf",
+    "https://doi.org/10.1016/j.marpol.2018.03.022"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Bolsa de plástico reusada como bolsa de basura: el análisis de ciclo de vida",
+    "Algodón orgánico vs. convencional: ¿cuál gasta más agua y tierra?"
+   ]
+  },
+  {
+   "id": "amb-12-plantas-aire",
+   "titulo": "Tu planta no limpia el aire de tu casa (harían falta de 10 a 1,000 por m²)",
+   "serie": "Shot Ambiental",
+   "numero": 12,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-12-plantas-aire",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.nature.com/articles/s41370-019-0175-9",
+    "https://ntrs.nasa.gov/citations/19930073077",
+    "https://www.epa.gov/indoor-air-quality-iaq/improving-indoor-air-quality"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cómo se mide el CO2 de tu cuarto mientras duermes",
+    "Abrir la ventana: cuántos cambios de aire necesita una casa"
+   ]
+  },
+  {
+   "id": "amb-13-tortugas-arena",
+   "titulo": "A esta tortuga no la deciden sus cromosomas: la decide la arena",
+   "serie": "Shot Ambiental",
+   "numero": 13,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-13-tortugas-arena",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/29316410/",
+    "https://wwf.org.au/news/2018/increasing-temperatures-in-queenslands-north-are-turning-green-turtle-populations-female/",
+    "https://www.jstor.org/stable/1444765",
+    "https://georgehbalazs.com/wp-content/uploads/2024/02/Temperature-Dependent-Sex-Determination-in-Sea-Turtles.pdf",
+    "https://seaturtlestatus.org/articles/how-temperature-determines-sex-in-sea-turtles"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Por qué las tortugas siempre regresan a la playa donde nacieron (campo magnético)",
+    "Luz artificial en la playa: crías que caminan hacia la ciudad"
+   ]
+  },
+  {
+   "id": "amb-14-glaciar-izta",
+   "titulo": "El glaciar del Iztaccíhuatl que ya nunca vas a ver (Ayoloco)",
+   "serie": "Shot Ambiental",
+   "numero": 14,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-14-glaciar-izta",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.gaceta.unam.mx/coloca-la-unam-placa-en-memoria-del-ayoloco/",
+    "https://www.geofisica.unam.mx/simposio-glaciares-2025/docs/GeofisicaUNAM_SimposioGlaciares2025_resumenes.pdf",
+    "https://www.elsevier.es/en-revista-geofisica-internacional-80-articulo-reconstruction-glacier-area-on-citlaltepetl-S0016716915000094",
+    "https://www.gaceta.unam.mx/apenas-sobreviven-los-glaciares-nacionales/",
+    "https://www.c3.unam.mx/pdf/noticias/Noticia338.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El Pico de Orizaba: el último glaciar grande de México",
+    "Qué pasa con el agua de un pueblo cuando su glaciar se acaba"
+   ]
+  },
+  {
+   "id": "amb-15-sargazo",
+   "titulo": "El sargazo de Quintana Roo no es basura: viene de un cinturón de 8,850 km",
+   "serie": "Shot Ambiental",
+   "numero": 15,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-15-sargazo",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/31273122/",
+    "https://news.caricoos.org/2025/08/05/outlook-of-2025-sargassum-blooms-august-1st-2025-a-perspective-for-the-caribbean-sea-and-gulf-of-mexico/",
+    "https://sargazo.icmyl.unam.mx/Files/LP.pdf",
+    "https://www.epa.gov/habs/sargassum-inundation-events-sies-impacts-human-health",
+    "https://pubmed.ncbi.nlm.nih.gov/31426147/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El sargazo como ladrillo: casas hechas con algas en Quintana Roo",
+    "Gas sulfhídrico del sargazo podrido: por qué huele a huevo"
+   ]
+  },
+  {
+   "id": "amb-16-ajolote",
+   "titulo": "Hay ajolotes en todo el mundo, menos en su casa (Xochimilco)",
+   "serie": "Shot Ambiental",
+   "numero": 16,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-16-ajolote",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.gaceta.unam.mx/levantan-nuevo-censo-del-axolote-en-xochimilco/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7051018/",
+    "https://link.springer.com/article/10.1007/s10530-010-9697-8",
+    "https://www.ksat.com/tech/2025/08/11/scientists-search-for-dna-of-an-endangered-salamander-in-mexico-citys-canals/",
+    "https://grupoanimal.mx/sociedad/disminucion-ajolotes-vida-silvestre-censo"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Chinampas: la agricultura flotante que protege al ajolote",
+    "Cómo el ajolote regenera una pata completa"
+   ]
+  },
+  {
+   "id": "amb-17-corales",
+   "titulo": "Esto no es una roca: es un animal (corales y blanqueamiento)",
+   "serie": "Shot Ambiental",
+   "numero": 17,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-17-corales",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://oceanservice.noaa.gov/facts/coral.html",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3372257/",
+    "https://oceanservice.noaa.gov/education/tutorial_corals/coral02_zooxanthellae.html",
+    "https://oceanservice.noaa.gov/facts/coral_bleach.html",
+    "https://www.nesdis.noaa.gov/news/worlds-fourth-mass-coral-bleaching-event-likely-ended-2025"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Corales que aguantan el calor: los arrecifes 'súper' del mar Rojo",
+    "Viveros de coral: cómo se replanta un arrecife en el Caribe mexicano"
+   ]
+  },
+  {
+   "id": "amb-18-colillas",
+   "titulo": "El filtro de tu cigarro no es algodón: es plástico (colillas)",
+   "serie": "Shot Ambiental",
+   "numero": 18,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-18-colillas",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://oceanconservancy.org/wp-content/uploads/2026/08/2026-ICC-Report_digital.pdf",
+    "https://oceanconservancy.org/trash-free-seas/international-coastal-cleanup/annual-data-release/",
+    "https://oceanconservancy.org/newsroom/press-release/2026/08/26/plastic-bottles-caps-icc-report/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3088407/",
+    "https://fctc.who.int/newsroom/news/item/01-02-2022-unep-secretariat-of-the-who-fctc-partner-to-combat-microplastics-in-cigarettes"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Las colillas en la banqueta de tu ciudad: cuánto tarda en llover y llegar al mar",
+    "Nicotina en el agua: qué le hace a los peces"
+   ]
+  },
+  {
+   "id": "amb-19-desperdicio-comida",
+   "titulo": "Casi una quinta parte de la comida del mundo se va a la basura (y la mayoría, desde las casas)",
+   "serie": "Shot Ambiental",
+   "numero": 19,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-19-desperdicio-comida",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://digitallibrary.un.org/record/4042857/files/1401794_EN.pdf",
+    "https://www.unep.org/resources/publication/food-waste-index-report-2024",
+    "https://www.ipcc.ch/site/assets/uploads/sites/4/2022/11/SRCCL_SPM.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Fecha de caducidad vs. consumo preferente: la etiqueta que te hace tirar comida",
+    "La comida que se pierde antes de llegar al súper (cosecha y transporte)"
+   ]
+  },
+  {
+   "id": "amb-20-basura-electronica",
+   "titulo": "Ese cajón de cables viejos no es basura: es una mina (basura electrónica)",
+   "serie": "Shot Ambiental",
+   "numero": 20,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-20-basura-electronica",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://ewastemonitor.info/wp-content/uploads/2024/12/GEM_2024_EN_11_NOV-web.pdf",
+    "https://ewastemonitor.info/the-global-e-waste-monitor-2024/",
+    "https://www.epa.gov/recycle/used-lithium-ion-batteries"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El oro que hay en una tonelada de celulares vs. una tonelada de roca",
+    "Baterías de litio en la basura: por qué incendian camiones recolectores"
+   ]
+  },
+  {
+   "id": "amb-21-focos-led",
+   "titulo": "Ese foco no es una lámpara: es un calentador (focos LED)",
+   "serie": "Shot Ambiental",
+   "numero": 21,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-21-focos-led",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.energy.gov/sites/default/files/2021-08/ES-EE%20Lighting_080921.pdf",
+    "https://www.nobelprize.org/prizes/physics/2014/press-release/",
+    "https://www.nobelprize.org/prizes/physics/2014/popular-information/",
+    "https://www.gob.mx/cms/uploads/attachment/file/614590/NOM_028_ENER_2017_.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Por qué los LED baratos parpadean (y cómo verlo con tu celular)",
+    "El LED azul: el invento que tardó 30 años"
+   ]
+  },
+  {
+   "id": "amb-22-arena-extraccion",
+   "titulo": "Tu casa está hecha de arena: el sólido más extraído del mundo",
+   "serie": "Shot Ambiental",
+   "numero": 22,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-22-arena-extraccion",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://tajikistan.un.org/en/node/179176",
+    "https://www.unep.org/news-and-stories/press-release/our-use-sand-brings-us-against-wall-says-unep-report",
+    "https://wedocs.unep.org/handle/20.500.11822/38362",
+    "https://archive-ouverte.unige.ch/unige:172973",
+    "https://unepgrid.ch/storage/app/media/documents/Sand_and_sustainability_UNEP_2019.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Por qué la arena del desierto no sirve para hacer concreto",
+    "Las playas que desaparecen por sacar arena de los ríos"
+   ]
+  },
+  {
+   "id": "amb-23-suelo-cm",
+   "titulo": "Esta tierra no está muerta (un centímetro de suelo tarda hasta mil años)",
+   "serie": "Shot Ambiental",
+   "numero": 23,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-23-suelo-cm",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.fao.org/world-soil-day/en",
+    "https://openknowledge.fao.org/items/66f4c3dd-5cab-4f16-b47c-1f6be77ac0f5/full",
+    "https://www.fao.org/fileadmin/user_upload/FAODG/docs/2012-12-05-securing-healthy-soils-145th-session-FAO-council-DG-speech.pdf",
+    "https://fao.org/fileadmin/user_upload/soils-2015/docs/EN/IYS2015-SocialMedia-CheatSheet_1.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5722879/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Lombrices: cuánta tierra mueven en un año",
+    "Erosión en México: el suelo que se lleva una tormenta"
+   ]
+  },
+  {
+   "id": "amb-24-chicle",
+   "titulo": "Ese chicle no es chicle: es plástico",
+   "serie": "Shot Ambiental",
+   "numero": 24,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-24-chicle",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-172/subpart-G/section-172.615",
+    "https://patents.google.com/patent/US10492512B2/en",
+    "https://doi.org/10.1038/s41598-020-73913-4",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7545173/",
+    "https://doi.org/10.3390/polym13121963"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El chicle original de los mayas: la savia del chicozapote",
+    "Cómo se quita un chicle pegado de la banqueta (y cuánto cuesta)"
+   ]
+  },
+  {
+   "id": "amb-25-huracan-otis",
+   "titulo": "Un día antes, el pronóstico decía poco más de 100 km/h: Otis llegó con casi 260 (Acapulco)",
+   "serie": "Shot Ambiental",
+   "numero": 25,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-25-huracan-otis",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.nhc.noaa.gov/data/tcr/EP182023_Otis.pdf",
+    "https://www.nhc.noaa.gov/archive/2023/ep18/ep182023.discus.007.shtml",
+    "https://www.nhc.noaa.gov/archive/2023/ep18/ep182023.discus.006.shtml",
+    "https://www.nhc.noaa.gov/aboutgloss.shtml",
+    "https://www.nhc.noaa.gov/aboutsshws.php"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Intensificación rápida: por qué el mar caliente 'acelera' huracanes",
+    "Cómo vuela un avión cazahuracanes dentro del ojo"
+   ]
+  },
+  {
+   "id": "amb-26-jaguar",
+   "titulo": "El jaguar que nunca vas a ver (y cuántos quedan en México)",
+   "serie": "Shot Ambiental",
+   "numero": 26,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-26-jaguar",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.geo.tv/amp/620731-mexicos-jaguar-population-is-up-30-since-2010-but-still-at-risk",
+    "https://www.poresto.com/mexico/2025/8/28/-poblacion-de-jaguares-en-mexico-crece-10-pero-amenazas-persisten-.html",
+    "https://unamglobal.unam.mx/global_revista/censo-nacional-de-jaguares-revela-buenas-noticias/",
+    "https://www.gaceta.unam.mx/crecio-10-la-poblacion-de-jaguares-en-mexico/",
+    "https://doi.org/10.1017/S0030605304000286"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Fototrampeo: cómo se cuentan jaguares por las manchas",
+    "Corredores biológicos: carreteras con pasos de fauna para el jaguar"
+   ]
+  },
+  {
+   "id": "amb-27-lobo-mexicano",
+   "titulo": "Todos los lobos mexicanos vienen de solo siete",
+   "serie": "Shot Ambiental",
+   "numero": 27,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-27-lobo-mexicano",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.fws.gov/story/2023-10/how-mexican-wolves-were-saved-extinction",
+    "https://www.fws.gov/story/mexican-wolf-fostering-101",
+    "https://www.fws.gov/sites/default/files/documents/2026-02/mexican-wolf-population-statistics-populationestimate2025.pdf",
+    "https://www.telematica.icat.unam.mx/antologias/biodiversidad/Introduccion/pdf/lobomexicano.pdf",
+    "https://www.tau.ac.il/~geffene/PDFs/23-Zoo_Biol_1997.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Endogamia: qué le pasa a una especie con pocos ancestros",
+    "Cómo se 'adopta' un cachorro de lobo en una manada silvestre"
+   ]
+  },
+  {
+   "id": "amb-28-lluvia",
+   "titulo": "Novecientos litros por metro cuadrado: la lluvia de la CDMX que se va a la coladera",
+   "serie": "Shot Ambiental",
+   "numero": 28,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-28-lluvia",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.cronica.com.mx/metropoli/2026/10/01/lluvias-dejan-152-millones-de-m-de-precipitacion-en-cdmx/",
+    "https://www.milenio.com/estados/asi-se-mide-lluvia-por-esta-razon-milimetros-segun-smn",
+    "https://portal.amelica.org/ameli/journal/595/5952727008/html/",
+    "https://islaurbana.org/",
+    "https://www.chilango.com/noticias/habra-corte-de-agua-284-colonias-cdmx-esto-significa-el-tandeo-en-10-alcaldias/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Captación de agua de lluvia en tu techo: cuántos litros junta",
+    "Por qué la CDMX se inunda y se queda sin agua el mismo año"
+   ],
+   "nota": "Reemplaza a ranas-quitridio (choca con fun-20-quitridio)"
+  },
+  {
+   "id": "amb-29-acidificacion",
+   "titulo": "El mar no se vuelve ácido: se vuelve menos básico (y eso deshace conchas)",
+   "serie": "Shot Ambiental",
+   "numero": 29,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-29-acidificacion",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.noaa.gov/education/resource-collections/ocean-coasts/ocean-acidification",
+    "https://www.eea.europa.eu/en/analysis/indicators/ocean-acidification",
+    "https://www.pmel.noaa.gov/co2/story/A+primer+on+pH",
+    "https://www.nature.com/articles/ngeo1635"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El pterópodo: la 'mariposa de mar' cuya concha se disuelve",
+    "El erizo y el ostión: mariscos que dependen del pH del mar"
+   ]
+  },
+  {
+   "id": "amb-30-isla-calor",
+   "titulo": "Tu noche en la ciudad es más caliente que la del rancho (isla de calor urbana)",
+   "serie": "Shot Ambiental",
+   "numero": 30,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-30-isla-calor",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.epa.gov/heatislands/what-are-heat-islands",
+    "https://www.epa.gov/heatislands/benefits-trees-and-vegetation",
+    "https://www.epa.gov/heatislands/using-cool-roofs-reduce-heat-islands",
+    "https://web3.acom.ucar.edu/Private/Literature/1997Jauregui.pdf",
+    "https://www.gaceta.unam.mx/las-islas-de-calor-aumentan-la-temperatura-en-cdmx-pincc/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Techos blancos: cuántos grados bajan dentro de una casa",
+    "Por qué el asfalto quema los pies en verano (temperatura de superficie)"
+   ]
+  },
+  {
+   "id": "amb-31-contaminacion-luminica",
+   "titulo": "La Vía Láctea que tus ojos nunca van a ver desde tu casa (contaminación lumínica)",
+   "serie": "Shot Ambiental",
+   "numero": 31,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-31-contaminacion-luminica",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.science.org/doi/10.1126/sciadv.1600377",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4928945/",
+    "https://www.science.org/doi/10.1126/science.abq7781",
+    "https://www.eurekalert.org/news-releases/976947",
+    "https://phys.org/news/2023-01-visibility-stars-night-sky-declines.html"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Luciérnagas que ya no se encuentran por la luz de la ciudad",
+    "Cielos oscuros protegidos: dónde ver la Vía Láctea en México"
+   ]
+  },
+  {
+   "id": "amb-32-fugas-agua",
+   "titulo": "De cada diez cubetas, unas cuatro se pierden en la calle (fugas de agua)",
+   "serie": "Shot Ambiental",
+   "numero": 32,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-32-fugas-agua",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.eluniversal.com.mx/metropoli/sacmex-por-fugas-se-pierde-el-37-del-agua-potable-de-la-cdmx/",
+    "https://indicadores.cdmx.gob.mx/group/06-agua-limpia-y-saneamiento",
+    "https://www.posta.com.mx/cdmx/este-es-el-desperdicio-que-provocan-las-fugas-de-agua-en-cdmx/vl2252854",
+    "https://www.adn40.mx/ciudad/2026-08-18/cdmx-desperdicia-gran-parte-del-agua-que-trae-de-otros-estados-por-fugas-el-dato-que-alarma/",
+    "https://www.razon.com.mx/ciudad/registran-32-fugas-agua-dia-sitio-434935/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cómo se detecta una fuga subterránea con sonido",
+    "Tu excusado con fuga: cuántos litros tira al día"
+   ]
+  },
+  {
+   "id": "amb-33-mezclilla",
+   "titulo": "Tu pantalón de mezclilla lleva 189 garrafones de agua",
+   "serie": "Shot Ambiental",
+   "numero": 33,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-33-mezclilla",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.levistrauss.com/wp-content/uploads/2015/03/Full-LCA-Results-Deck-FINAL.pdf",
+    "https://ceowatermandate.org/resources/the-life-cycle-of-a-jean-2015/",
+    "https://ayhoekstra.nl/pubs/Chapagain-et-al-2006a.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Mezclilla deslavada: de dónde sale el tinte índigo de los ríos",
+    "Cuántas puestas aguanta un pantalón antes de lavarlo"
+   ]
+  },
+  {
+   "id": "amb-34-pez-diablo",
+   "titulo": "El limpiapeceras que se comió la pesca de El Infiernillo (pez diablo)",
+   "serie": "Shot Ambiental",
+   "numero": 34,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-34-pez-diablo",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://agua.org.mx/wp-content/uploads/2017/11/Los-peces-diablo.pdf",
+    "https://new.scielo.br/j/cr/a/Vg7xcdLcYVR3vXT96BfpHMf/?lang=en",
+    "https://www.elsevier.es/es-revista-revista-mexicana-biodiversidad-91-articulo-the-biological-reproductive-parameters-invasive-S1870345313728483"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Tilapia y carpa: peces que vinieron de fuera y cambiaron los ríos de México",
+    "Pez diablo en la cocina: ¿se puede comer?"
+   ]
+  },
+  {
+   "id": "amb-35-gatos-aves",
+   "titulo": "El regalito de tu gato es solo una parte (gatos que salen y la fauna que cazan)",
+   "serie": "Shot Ambiental",
+   "numero": 35,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-35-gatos-aves",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.nature.com/articles/ncomms2380",
+    "https://digitalcommons.unl.edu/bioscifacpub/618",
+    "https://www.wvasfm.org/science/2012-08-10/kitty-cam-reveals-the-secret-life-of-roaming-cats",
+    "https://www.iucngisd.org/gisd/100_worst.php",
+    "https://pubs.usgs.gov/publication/70256715"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Collares con cascabel para gatos: ¿sirven para salvar aves?",
+    "Perros ferales y fauna silvestre en México"
+   ]
+  },
+  {
+   "id": "amb-36-aves-ventanas",
+   "titulo": "Esa ventana no es una pared para un pájaro: es cielo",
+   "serie": "Shot Ambiental",
+   "numero": 36,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-36-aves-ventanas",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://academic.oup.com/condor/article/116/1/8/5153098",
+    "https://www.fws.gov/carp/sites/default/files/documents/preventing-bird-glass-collisions-at-home.pdf",
+    "https://conservationevidencejournal.com/individual-study/1460"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Migración nocturna de aves: por qué los edificios iluminados las confunden",
+    "Calcomanías de halcón en ventanas: el mito de que funcionan"
+   ]
+  },
+  {
+   "id": "amb-37-co2-mauna-loa",
+   "titulo": "La línea que mide el aire que respiras (la curva de Keeling)",
+   "serie": "Shot Ambiental",
+   "numero": 37,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-37-co2-mauna-loa",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt",
+    "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt",
+    "https://gml.noaa.gov/ccgg/trends/",
+    "https://gml.noaa.gov/ccgg/about/co2_measurements.html",
+    "https://scrippsco2.ucsd.edu/history-and-legacy/the-early-keeling-curve/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El CO2 en los núcleos de hielo: el aire de hace 800 mil años",
+    "Por qué la curva de Keeling sube y baja cada año (las plantas respiran)"
+   ]
+  },
+  {
+   "id": "amb-38-polinizadores",
+   "titulo": "¿Sin abejas nos morimos de hambre? Lo que le pasa a tu desayuno",
+   "serie": "Shot Ambiental",
+   "numero": 38,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-38-polinizadores",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://digitallibrary.un.org/record/1664349/files/spm_deliverable_3a_pollination_20170222.pdf",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1702377/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8042731/",
+    "https://centaur.reading.ac.uk/96129/1/jen.12869.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El mosquito que poliniza el cacao",
+    "Murciélagos: los polinizadores del agave y el tequila"
+   ]
+  },
+  {
+   "id": "amb-39-manglares",
+   "titulo": "Este lodo es una bodega de carbono (los manglares y el carbono azul)",
+   "serie": "Shot Ambiental",
+   "numero": 39,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-39-manglares",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.nature.com/articles/ngeo1123",
+    "https://www.cifor-icraf.org/knowledge/publication/3389/",
+    "https://www.biodiversidad.gob.mx/monitoreo/smmm/extensionDist",
+    "https://www.excelsior.com.mx/nacional/manglares-mexico-retrocedieron",
+    "https://www.biodiversidad.gob.mx/ecosistemas/manglares"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Manglares como barrera contra huracanes",
+    "Las cuatro especies de mangle de México y cómo distinguirlas"
+   ]
+  },
+  {
+   "id": "amb-40-humo-lena",
+   "titulo": "El humo de la leña: partículas que llegan al fondo de tus pulmones",
+   "serie": "Shot Ambiental",
+   "numero": 40,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-40-humo-lena",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health",
+    "https://www.epa.gov/pm-pollution/particulate-matter-pm-basics",
+    "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/ei/EIC2025-def_RR.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/16721411/",
+    "https://www.gaceta.unam.mx/ahora-cuando-cocino-el-aire-se-siente-ligero-huele-limpio/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Estufas ahorradoras de leña: cuánto humo quitan",
+    "Monóxido de carbono en casa: el gas que no huele"
+   ]
+  },
+  {
+   "id": "amb-41-particulas-pm25",
+   "titulo": "El polvo de la ciudad que tus ojos nunca van a ver (PM2.5)",
+   "serie": "Shot Ambiental",
+   "numero": 41,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-41-particulas-pm25",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.epa.gov/pm-pollution/particulate-matter-pm-basics",
+    "https://www.epa.gov/pm-pollution/health-and-environmental-effects-particulate-matter-pm",
+    "https://www.who.int/news/item/22-09-2021-new-who-global-air-quality-guidelines-aim-to-save-millions-of-lives-from-air-pollution",
+    "http://www.aire.cdmx.gob.mx/descargas/publicaciones/informe-anual-calidad-del-aire-2023.pdf",
+    "https://sinaica.inecc.gob.mx/archivo/informes/Informe2023.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Tu cubrebocas contra el PM2.5: cuál filtra de verdad",
+    "Por qué el aire de la CDMX empeora en la mañana (inversión térmica)"
+   ]
+  },
+  {
+   "id": "amb-42-hielo-artico",
+   "titulo": "Si tienes menos de 20 años, nunca has visto un septiembre ártico como los de antes",
+   "serie": "Shot Ambiental",
+   "numero": 42,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-42-hielo-artico",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://nsidc.org/sea-ice-today/analyses/arctic-sea-ice-minimum-ties-tenth-lowest-0",
+    "https://nsidc.org/sea-ice-today/analyses/stranger-things-2026-arctic",
+    "https://nsidc.org/learn/parts-cryosphere/sea-ice/quick-facts-about-sea-ice",
+    "https://nsidc.org/learn/parts-cryosphere/sea-ice/why-sea-ice-matters",
+    "https://nsidc.org/learn/parts-cryosphere/sea-ice"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El oso polar en tierra: qué come cuando no hay hielo",
+    "El hielo marino y el albedo: por qué derretirse acelera el calor"
+   ]
+  },
+  {
+   "id": "amb-43-huella-comida",
+   "titulo": "Tu taco de res contra el de frijol: más de 50 veces más gases, kilo por kilo",
+   "serie": "Shot Ambiental",
+   "numero": 43,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-43-huella-comida",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/29853680/",
+    "https://ourworldindata.org/grapher/ghg-per-kg-poore",
+    "https://ourworldindata.org/grapher/food-emissions-supply-chain",
+    "https://ourworldindata.org/food-choice-vs-eating-local"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Las vacas eructan metano: cuánto por vaca al día",
+    "Aguacate y agua: la huella de tu guacamole"
+   ]
+  },
+  {
+   "id": "amb-44-lata-aluminio",
+   "titulo": "Una lata reciclada gasta 5 % de la energía (de la roca a la lata, y de vuelta)",
+   "serie": "Shot Ambiental",
+   "numero": 44,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-44-lata-aluminio",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://international-aluminium.org/landing/aluminium-recycling/",
+    "https://www.aluminum.org/recycling",
+    "https://www.aluminum.org/primary-production-101",
+    "https://www.aluminum.org/news/aluminum-beverage-can-moves-recycling-bin-newly-formed-can-less-60-days",
+    "https://www.packaginginsights.com/news/recycling-us-cans-circular-aluminum-sustainability.html"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Lata vs. botella de vidrio vs. PET: cuál contamina menos por bebida",
+    "Bauxita: la roca roja de donde sale el aluminio"
+   ]
+  },
+  {
+   "id": "amb-45-agua-embotellada",
+   "titulo": "Tú y cuatro vecinos: menos de uno confía en el agua de la llave (agua embotellada en México)",
+   "serie": "Shot Ambiental",
+   "numero": 45,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-45-agua-embotellada",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/encig/ENCIG2025_RR.pdf",
+    "https://www.inegi.org.mx/contenidos/programas/encig/2025/doc/encig2025_principales_resultados.pdf",
+    "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2018/GrfiaMdoAmte/MOHOMA2018_06.pdf",
+    "https://doi.org/10.1002/wat2.1286",
+    "https://doi.org/10.24850/j-tyca-2024-05-07"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Garrafón vs. filtro en casa: cuánto cuesta el litro",
+    "Hervir el agua: qué mata y qué no"
+   ]
+  },
+  {
+   "id": "amb-46-composta",
+   "titulo": "Esa cáscara no se vuelve tierra en el basurero: se vuelve gas (composta vs. relleno)",
+   "serie": "Shot Ambiental",
+   "numero": 46,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-46-composta",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://ceiba.org.mx/storage/app/media/publicaciones/semarnat/Diagn_stico_B_sico_Gesti_n_Integral_Residuos.pdf",
+    "https://www.epa.gov/lmop/basic-information-about-landfill-gas",
+    "https://www.epa.gov/sustainable-management-food/reducing-impact-wasted-food-feeding-soil-and-composting",
+    "https://www.frontiersin.org/articles/10.3389/fmicb.2020.01127/full",
+    "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Lombricomposta en un departamento: cómo funciona",
+    "Por qué no echar carne ni huesos a la composta"
+   ]
+  },
+  {
+   "id": "amb-47-pilas",
+   "titulo": "¿Una pila contamina 600 mil litros de agua? De dónde salió el dato",
+   "serie": "Shot Ambiental",
+   "numero": 47,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-47-pilas",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.opinion.com.bo/articulo/ciencia-tecnolog-iacute/sola-pila-puede-contaminar-mas-600-mil-litros-agua/20120618073300421037.html",
+    "https://www.infobae.com/tendencias/ecologia-y-medio-ambiente/2019/06/23/las-pilas-y-su-efecto-en-el-medio-ambiente-la-pequena-que-lleva-un-reloj-puede-contaminar-una-pileta-olimpica/",
+    "https://rpp.pe/lima/actualidad/una-pila-puede-contaminar-3000-lt-de-agua-noticia-771772",
+    "https://www.govinfo.gov/content/pkg/PLAW-104publ142/html/PLAW-104publ142.htm",
+    "https://www.epa.gov/recycle/used-household-batteries"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Pilas recargables: cuántas desechables reemplaza una",
+    "El mercurio en las pilas viejas y por qué ya casi no lleva"
+   ]
+  },
+  {
+   "id": "amb-48-ballena-gris",
+   "titulo": "Un año de ballena gris en un mapa: 16 mil km que dependen del Ártico",
+   "serie": "Shot Ambiental",
+   "numero": 48,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-48-ballena-gris",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.fisheries.noaa.gov/species/gray-whale",
+    "https://marinemammalhabitat.org/wp-content/uploads/imma-factsheets/SouthEastTropicalTemperatePacificOcean/Western-Baja-California-Lagoons-and-Coastal-Waters-SouthEastTropicalTemperatePacificOcean.pdf",
+    "https://www.fisheries.noaa.gov/national/marine-life-distress/2019-2023-eastern-north-pacific-gray-whale-ume-closed",
+    "https://www.fisheries.noaa.gov/feature-story/closure-2019-2023-eastern-north-pacific-gray-whale-unusual-mortality-event",
+    "https://www.fisheries.noaa.gov/feature-story/eastern-north-pacific-gray-whales-continue-decline-after-downturn-during-unusual"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cómo comen las ballenas grises: filtrar lodo del fondo",
+    "El 'ojo con ojo': ballenas grises que se acercan a las lanchas en Baja California"
+   ]
+  },
+  {
+   "id": "amb-49-abejas-meliponas",
+   "titulo": "La abeja maya que no pica (y se está quedando sin quién la cuide)",
+   "serie": "Shot Ambiental",
+   "numero": 49,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-49-abejas-meliponas",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.scielo.org.mx/pdf/ecm/v52/0185-2574-ecm-52-227.pdf",
+    "https://www.redalyc.org/journal/2813/281361168009/281361168009.pdf",
+    "https://bioone.org/journals/Journal-of-the-Kansas-Entomological-Society/volume-86/issue-4/JKES130131.1/A-Critical-View-of-Colony-Losses-in-Managed-Mayan-Honey/10.2317/JKES130131.1.full",
+    "https://repository.si.edu/bitstream/handle/10088/21922/stri_Roubik_2013_w_Villanueva-Gutierrez_JKES130131.pdf",
+    "https://ecosur.repositorioinstitucional.mx/jspui/bitstream/1017/2620/1/63492_%20Documento.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "La miel de melipona como medicina maya",
+    "Abejas sin aguijón: cómo defienden su colmena"
+   ]
+  },
+  {
+   "id": "amb-50-incendios-primavera",
+   "titulo": "De cada mil incendios en Jalisco, solo dos los prende la naturaleza (Bosque La Primavera)",
+   "serie": "Shot Ambiental",
+   "numero": 50,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-50-incendios-primavera",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://transparencia.info.jalisco.gob.mx/sites/default/files/2018.%20PrimeraEtapaPlanManejoFuegoT3.pdf",
+    "https://www.redalyc.org/pdf/461/46125176001.pdf",
+    "https://www.redalyc.org/pdf/634/63439010011.pdf",
+    "https://planintegraldelagua.jalisco.gob.mx/pdf/an-0040.pdf",
+    "https://www.publimetro.com.mx/jalisco/2026/03/11/bosques-de-jalisco-sufren-por-incendios-cada-estiaje-la-primavera-encabeza-reportes/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Árboles que necesitan fuego: piñas que se abren con el calor",
+    "Quemas agrícolas: el humo que llega a Guadalajara"
+   ]
+  },
+  {
+   "id": "amb-51-rio-santiago",
+   "titulo": "Esto no es nieve: es espuma del río Santiago (El Salto y Juanacatlán, Jalisco)",
+   "serie": "Shot Ambiental",
+   "numero": 51,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-51-rio-santiago",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://cibiogem.secihti.mx/wp-content/uploads/2024/10/Recomendacion_134__2022.pdf",
+    "https://www.cndh.org.mx/sites/default/files/documentos/2022-07/COM_2022_218.pdf",
+    "https://www.oas.org/es/cidh/decisiones/pdf/2020/7-20MC708-19-ME.docx",
+    "https://labcsa.org/wp-content/uploads/2021/02/7-20mc708-19-me.pdf",
+    "https://riosantiago.jalisco.gob.mx/rio-santiago/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Por qué un río hace espuma: detergentes y fósforo",
+    "Cómo se limpia un río contaminado (plantas de tratamiento)"
+   ]
+  },
+  {
+   "id": "amb-52-polvo-sahara",
+   "titulo": "El atardecer de Yucatán viene del Sahara (polvo que cruza el Atlántico)",
+   "serie": "Shot Ambiental",
+   "numero": 52,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-52-polvo-sahara",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://www.nasa.gov/missions/calipso/nasa-satellite-reveals-how-much-saharan-dust-feeds-amazons-plants/",
+    "https://www.gob.mx/cms/uploads/attachment/file/731534/Comunicado_de_Prensa_0397-22.pdf",
+    "https://www.poresto.com/yucatan/2026/7/15/polvo-del-sahara-llega-a-yucatan-preven-menos-lluvias-y-cielos-brumosos-hasta-el-18-de-julio.html",
+    "https://www.earthdata.nasa.gov/s3fs-public/imported/NASA_SOP_2007_Saharan_dust_versus_Atlantic_hurricanes.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El polvo del Sahara que fertiliza el Amazonas",
+    "Por qué el polvo del Sahara frena huracanes"
+   ]
+  },
+  {
+   "id": "amb-53-ruido-oceano",
+   "titulo": "Este mar no está en silencio (el ruido de los barcos y el estrés de las ballenas)",
+   "serie": "Shot Ambiental",
+   "numero": 53,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-53-ruido-oceano",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3350670",
+    "https://pubmed.ncbi.nlm.nih.gov/22319129/",
+    "https://www.cetus.ucsd.edu/docs/publications/McDonaldJASA2006.pdf",
+    "https://dosits.org/wp-content/uploads/2024/03/Stirring_up_Sound-DOSITS_Activity.pdf",
+    "https://wwwcdn.imo.org/localresources/en/OurWork/Environment/Documents/LC_LP/SCIENCE%20DAY%202019%20PRESENTATIONS/2019-03-12%20-%20IMO%20Science%20Day%202019_ECHO%20Program%20presentation.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cómo se comunican las ballenas jorobadas: canciones que cambian cada año",
+    "Barcos más lentos, mar más callado: la medida que baja el ruido"
+   ]
+  },
+  {
+   "id": "amb-54-basura-diaria",
+   "titulo": "Tu basura de un año: casi 400 kilos, y a dónde van",
+   "serie": "Shot Ambiental",
+   "numero": 54,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-54-basura-diaria",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "http://ceiba.org.mx/storage/app/media/publicaciones/semarnat/Diagn_stico_B_sico_Gesti_n_Integral_Residuos.pdf",
+    "http://ceiba.org.mx/biblioteca-detalle/diagnostico-basico-para-la-gestion-integral-de-los-residuos-2026",
+    "https://www.gob.mx/semarnat/prensa/semarnat-presenta-diagnostico-nacional-para-transformar-gestion-de-residuos-y-avanzar-hacia-la-economia-circular"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Pepenadores: quién recicla de verdad en México",
+    "Tiraderos a cielo abierto: el lixiviado que llega al agua"
+   ],
+   "nota": "Reemplaza a dengue-clima (choca con bio-35-wolbachia)"
+  },
+  {
+   "id": "amb-55-agua-cafe",
+   "titulo": "Tu taza de café esconde unos 130 litros de agua (y casi todos son lluvia)",
+   "serie": "Shot Ambiental",
+   "numero": 55,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-55-agua-cafe",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://hess.copernicus.org/articles/15/1577/2011/hess-15-1577-2011.pdf",
+    "https://www.waterfootprint.org/resources/Report47-WaterFootprintCrops-Vol1.pdf",
+    "https://ayhoekstra.nl/pubs/Report47-WaterFootprintCrops-Vol2.pdf",
+    "https://ayhoekstra.nl/pubs/Chapagain-Hoekstra-2007.pdf",
+    "https://www.gob.mx/agricultura/articulos/cultivo-de-cafe-en-mexico"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Café de sombra: los cafetales que son bosque",
+    "La roya del café: el hongo que amenaza tu taza"
+   ]
+  },
+  {
+   "id": "amb-56-sal-microplasticos",
+   "titulo": "Tu sal también trae plástico (microplásticos en la sal de mesa)",
+   "serie": "Shot Ambiental",
+   "numero": 56,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-56-sal-microplasticos",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/30285421/",
+    "https://www.nationalgeographic.com/environment/article/microplastics-found-90-percent-table-salt-sea-salt",
+    "https://pubmed.ncbi.nlm.nih.gov/42617305/",
+    "https://oceanservice.noaa.gov/facts/microplastics.html",
+    "https://www.economia.gob.mx/files/comunidad_negocios/industria_comercio/informacionSectorial/minero/pm_sal_1013.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Microplásticos en tu sangre: lo que se sabe y lo que no",
+    "Sal de mar vs. sal de mina: de dónde sale la de tu salero"
+   ]
+  },
+  {
+   "id": "amb-57-cenotes",
+   "titulo": "El cenote es una ventana al agua que bebe toda la península",
+   "serie": "Shot Ambiental",
+   "numero": 57,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-57-cenotes",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://revista.unaminternacional.unam.mx/nota/12/el-agua-bajo-nuestros-pies-karst-infraestructura-y-vulnerabilidad-hidrica",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12568887/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10701671/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10259088/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7266785/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El anillo de cenotes: la huella del meteorito de Chicxulub",
+    "Por qué el agua de los cenotes es tan transparente"
+   ]
+  },
+  {
+   "id": "amb-58-mancha-pacifico",
+   "titulo": "La «isla de basura» del Pacífico no se puede pisar: es una sopa, y lo que más pesa son redes",
+   "serie": "Shot Ambiental",
+   "numero": 58,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-58-mancha-pacifico",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://doi.org/10.1038/s41598-018-22939-w",
+    "https://europepmc.org/article/PMC/PMC5864935",
+    "https://doi.org/10.1038/s41598-022-16529-0",
+    "https://europepmc.org/article/PMC/PMC9436981",
+    "https://marinedebris.noaa.gov/info/patch.html"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Redes fantasma: las que siguen pescando solas en el mar",
+    "Cómo se limpia el mar con barreras flotantes (y si funciona)"
+   ]
+  },
+  {
+   "id": "amb-59-arbol-tule",
+   "titulo": "No son varios árboles: es uno solo (el árbol del Tule)",
+   "serie": "Shot Ambiental",
+   "numero": 59,
+   "estado": "renderizado",
+   "carpeta": "shots/amb-59-arbol-tule",
+   "rama": "pedido300/amb",
+   "fuentes": [
+    "https://archive.org/download/biostor-163440/biostor-163440.pdf",
+    "https://www.guinnessworldrecords.com/world-records/living-tree-with-greatest-girth",
+    "https://conifers.org/cu/Taxodium_mucronatum.php",
+    "https://archive.org/download/biostor-163174/biostor-163174.pdf",
+    "https://archive.org/details/mobot31753000636644"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cómo se calcula la edad de un árbol sin cortarlo",
+    "El ahuehuete: el árbol nacional de México y el agua que necesita"
+   ]
+  }
+ ]
+}

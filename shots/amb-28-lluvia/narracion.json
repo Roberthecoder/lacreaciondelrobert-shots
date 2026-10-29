@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Lluvia base narrada.dc.html",
+  "salida": "Shot Lluvia narrado.dc.html",
+  "nota": "Shot Ambiental #28. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "A la Ciudad de México le han caído este año más de novecientos litros de lluvia por metro cuadrado."
+    },
+    {
+      "escena": "Milimetro",
+      "texto": "Un milímetro de lluvia es un litro en un metro cuadrado: de enero a septiembre se midieron novecientos veinticinco."
+    },
+    {
+      "escena": "Drenaje",
+      "texto": "Pero casi toda la de techos y calles se va a la coladera, y el drenaje la junta con aguas negras."
+    },
+    {
+      "escena": "Tandeo",
+      "texto": "Y en 2025, doscientas ochenta y cuatro colonias tenían agua por tandeo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si la juntaras antes de que toque el suelo?"
+    },
+    {
+      "escena": "Techo",
+      "texto": "A un techo de cincuenta metros cuadrados le cayeron, en teoría, más de cuarenta tinacos."
+    },
+    {
+      "escena": "Programa",
+      "texto": "Desde 2019, la Sedema ha puesto más de setenta y tres mil sistemas de Cosecha de Lluvia en casas."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2020, un estudio con Isla Urbana y la UNAM calculó que ciento cinco mil sistemas ayudarían a más de cuatrocientas mil personas."
+    },
+    {
+      "escena": "Truco",
+      "texto": "El truco: los primeros litros lavan el techo y se tiran; un filtro detiene las hojas."
+    },
+    {
+      "escena": "Usos",
+      "texto": "No es para beber, pero sí para el baño, lavar y trapear."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Novecientos litros por metro cuadrado. ¿Cuántos se fueron por tu coladera?"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Focos LED base narrada.dc.html",
+  "salida": "Shot Focos LED narrado.dc.html",
+  "nota": "Shot Ambiental #21. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese foco no es una lámpara: es un calentador que, de paso, alumbra."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Según el Departamento de Energía de Estados Unidos, noventa por ciento de su energía sale como calor y solo diez como luz."
+    },
+    {
+      "escena": "Filamento",
+      "texto": "Adentro, la corriente calienta un alambre hasta que brilla. Y ese calor lo destruye: dura unas mil horas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo le hace un LED para no desperdiciar tanto?"
+    },
+    {
+      "escena": "Chip",
+      "texto": "Es un chip de capas: en una sobran electrones y en otra faltan. Cuando se juntan, la electricidad se vuelve luz directamente."
+    },
+    {
+      "escena": "Nobel",
+      "texto": "Para luz blanca faltaba un LED azul. A inicios de los noventa, en Japón, tres investigadores lo lograron: Nobel de Física 2014."
+    },
+    {
+      "escena": "Ahorro",
+      "texto": "Hoy un LED de nueve watts puede dar la luz de un foco de setenta y cinco, y durar hasta veinticinco veces más."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México, una norma de 2018 pidió que desde 2019 los focos incandescentes comunes dieran sesenta lúmenes por watt; uno clásico da dieciséis."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese foco que te quema no es una lámpara: es un calentador que, de paso, alumbra."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Cenotes base narrada.dc.html",
+  "salida": "Shot Cenotes narrado.dc.html",
+  "nota": "Shot Ambiental #57. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese hoyo con agua no es un estanque: es una ventana a un río que corre bajo tus pies."
+    },
+    {
+      "escena": "SinRios",
+      "texto": "En casi toda la península de Yucatán no hay ríos en la superficie: la lluvia se mete en la piedra."
+    },
+    {
+      "escena": "Acido",
+      "texto": "El dióxido de carbono la vuelve un poquito ácida, y disuelve la caliza."
+    },
+    {
+      "escena": "Cueva",
+      "texto": "Así se forman cuevas llenas de agua. Si el techo de una se derrumba, nace un cenote."
+    },
+    {
+      "escena": "Capas",
+      "texto": "Abajo, el agua dulce flota sobre agua salada del mar."
+    },
+    {
+      "escena": "Unica",
+      "texto": "Y ese acuífero es la única fuente de agua potable de la región."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué pasa con lo que se tira arriba?"
+    },
+    {
+      "escena": "Fosas",
+      "texto": "Hay fosas sépticas que descargan al subsuelo, granjas de cerdos que afectan el agua, y la lluvia puede bajar en horas o días."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2022, la UNAM y Texas A&M revisaron diez cenotes de la Riviera Maya: nueve tenían bacterias fecales."
+    },
+    {
+      "escena": "Planta",
+      "texto": "Lo bueno: en 2021, en Puerto Morelos, un pozo junto a la playa tuvo mucho menos bloqueador solar cuando la zona dejó las fosas por una planta de tratamiento."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese hoyo no es un estanque: es una ventana al agua que bebe la península."
+    }
+  ]
+}

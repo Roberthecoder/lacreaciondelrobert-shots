@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Lobo base narrada.dc.html",
+  "salida": "Shot Lobo narrado.dc.html",
+  "nota": "Shot Ambiental #27. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Todos los lobos mexicanos que viven hoy, en el monte o en cautiverio, vienen de solo siete."
+    },
+    {
+      "escena": "Casi",
+      "texto": "En el siglo veinte lo cazaron con trampas, balas y veneno hasta casi borrarlo."
+    },
+    {
+      "escena": "Ultimo",
+      "texto": "En Estados Unidos, el último confirmado en libertad se vio en 1970."
+    },
+    {
+      "escena": "Rescate",
+      "texto": "Entre 1977 y 1980 atraparon en México a cinco: cuatro machos y una hembra preñada."
+    },
+    {
+      "escena": "Siete",
+      "texto": "De ellos salieron tres fundadores, y otros cuatro venían de dos linajes que ya vivían en cautiverio: siete."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Se puede rehacer una población entera con siete?"
+    },
+    {
+      "escena": "Suelta",
+      "texto": "En 1998 soltaron tres familias en Arizona. Al cierre de ese año contaron cuatro lobos libres."
+    },
+    {
+      "escena": "Conteo",
+      "texto": "Al cierre de 2025, el conteo oficial halló al menos trescientos diecinueve en Arizona y Nuevo México."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "Y en 2014, en Chihuahua, nacieron los primeros cachorros libres de México en más de treinta años."
+    },
+    {
+      "escena": "Truco",
+      "texto": "Para mezclar genes, meten cachorros de cautiverio en madrigueras salvajes, untados con pipí de los otros para oler igual."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Hoy hay más de trescientos lobos libres, y todos descienden de solo siete."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Fugas base narrada.dc.html",
+  "salida": "Shot Fugas narrado.dc.html",
+  "nota": "Shot Ambiental #32. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "De cada diez cubetas de agua que la Ciudad de México mete a sus tubos, unas cuatro nunca llegan a una casa."
+    },
+    {
+      "escena": "Fuga",
+      "texto": "Así lo calculó la ciudad en 2022: se van en fugas de la red."
+    },
+    {
+      "escena": "Tubos",
+      "texto": "El Sistema de Aguas culpa al desgaste de los tubos y al exceso de presión."
+    },
+    {
+      "escena": "Suelo",
+      "texto": "Y como el suelo se mueve de forma dispareja, los tubos se agrietan."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y en Guadalajara está mejor?"
+    },
+    {
+      "escena": "Guadalajara",
+      "texto": "En 2025, el gobierno de Jalisco estimó que del agua que trae del lago de Chapala, una cuarta parte no llega a su destino: fugas, evaporación y fallas."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Y no es solo México: un estudio de 2018 calculó que el mundo pierde o no cobra trescientos cuarenta y seis millones de metros cúbicos al día."
+    },
+    {
+      "escena": "Albercas",
+      "texto": "Más de cien mil albercas olímpicas al día."
+    },
+    {
+      "escena": "Llave",
+      "texto": "Pero hay fugas que sí cierras tú: una llave que gotea una vez por segundo tira más de once mil litros al año."
+    },
+    {
+      "escena": "Regaderas",
+      "texto": "Según la agencia ambiental de Estados Unidos, alcanza para más de ciento ochenta regaderazos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Las cuatro cubetas de la calle no dependen de ti. La que gotea en tu casa, sí."
+    }
+  ]
+}

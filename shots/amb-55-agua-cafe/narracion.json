@@ -1,0 +1,48 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Agua Cafe base narrada.dc.html",
+  "salida": "Shot Agua Cafe narrado.dc.html",
+  "nota": "Shot Ambiental #55. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta taza no tiene ciento veinticinco mililitros de agua: detrás de ella hay unos ciento treinta litros."
+    },
+    {
+      "escena": "Granos",
+      "texto": "Casi nada se gasta en tu cocina: es el agua del cafeto que dio los siete gramos de café de tu taza."
+    },
+    {
+      "escena": "Lluvia",
+      "texto": "Unos ciento veintisiete litros son lluvia que el cafetal tomó del suelo y devolvió al aire."
+    },
+    {
+      "escena": "Riego",
+      "texto": "Menos de un litro es riego, y unos cuatro son el agua para diluir el fertilizante que se escurre."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y el café de México lleva más o menos agua?"
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En Chiapas y Veracruz, que dan más de la mitad del café del país, con datos de hace más de veinte años salía en casi doscientos litros por taza."
+    },
+    {
+      "escena": "Rendimiento",
+      "texto": "No es que la planta tomara más agua: a finales de los noventa, cada hectárea daba menos café, y el agua se repartía entre menos granos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo calcularon Mekonnen y Hoekstra, en la Universidad de Twente, en Países Bajos, con datos de 1996 a 2005."
+    },
+    {
+      "escena": "Gotas",
+      "texto": "Más de mil gotas de agua por cada gota de café."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu taza sí trae agua escondida: casi toda es lluvia que cayó sobre un cafetal."
+    }
+  ]
+}

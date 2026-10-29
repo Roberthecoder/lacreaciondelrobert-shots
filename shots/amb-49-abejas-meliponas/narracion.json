@@ -1,0 +1,48 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Meliponas base narrada.dc.html",
+  "salida": "Shot Meliponas narrado.dc.html",
+  "nota": "Shot Ambiental #49. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta abeja no pica: su aguijón está atrofiado. Si la molestas, a lo mucho te muerde."
+    },
+    {
+      "escena": "Xunan",
+      "texto": "Es la xunán kab, Melipona beecheii: los mayas la crían desde antes de que llegaran los españoles."
+    },
+    {
+      "escena": "Jobon",
+      "texto": "Vive en un jobón: un tronco hueco de medio metro, tapado con discos de madera."
+    },
+    {
+      "escena": "Ollitas",
+      "texto": "Su miel no va en panales de hexágonos: va en ollitas de cera en las puntas; las crías, en el centro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué su crianza está desapareciendo?"
+    },
+    {
+      "escena": "Kilo",
+      "texto": "Una razón: da poquita miel. En Los Petenes, Campeche, en 2015, cada tronco dio como un kilo al año. La abeja europea rinde más y en parte la desplazó."
+    },
+    {
+      "escena": "Abuelos",
+      "texto": "Otra: ahí, la edad promedio de quienes la cuidan pasaba de sesenta años; los jóvenes se van a las ciudades."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2011, un estudio en la zona maya de Quintana Roo vio que, en promedio, cada meliponario pasó de unas once colonias a unas cuatro."
+    },
+    {
+      "escena": "Landa",
+      "texto": "Y hacia 1566, un fraile español ya lo había escrito: «No pican estas abejas»."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa abeja que no pica es una tradición maya de siglos que necesita quien la cuide."
+    }
+  ]
+}

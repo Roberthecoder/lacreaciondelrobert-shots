@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Sal base narrada.dc.html",
+  "salida": "Shot Sal narrado.dc.html",
+  "nota": "Shot Ambiental #56. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa sal no es solo sal: en 2018 revisaron treinta y nueve marcas de sal del mundo y encontraron plástico en sal de mar, de mina y de lago."
+    },
+    {
+      "escena": "Salina",
+      "texto": "Mucha sal de mar se saca evaporando agua de mar con el sol: el agua se va y lo que traía se queda."
+    },
+    {
+      "escena": "Micro",
+      "texto": "Y el mar trae microplásticos: pedacitos de plástico de menos de cinco milímetros."
+    },
+    {
+      "escena": "Mina",
+      "texto": "La sal de mina tuvo como mucho ciento cuarenta y ocho por kilo; una de mar pasó de trece mil."
+    },
+    {
+      "escena": "Termometro",
+      "texto": "Por eso los autores dicen que la sal de mar es un termómetro de qué tan sucio está su mar."
+    },
+    {
+      "escena": "Asia",
+      "texto": "Y la sal de mar de Asia salió de las más cargadas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y la sal de México?"
+    },
+    {
+      "escena": "Colima",
+      "texto": "En 2026, la Universidad de Colima halló en muestras de sal de mar mexicana unas mil novecientas cincuenta piezas por kilo."
+    },
+    {
+      "escena": "Hilitos",
+      "texto": "La mayoría, hilitos. Y solo contaron los de más de dos décimas de milímetro; los más chicos no."
+    },
+    {
+      "escena": "Salud",
+      "texto": "¿Te hace daño? No se sabe: en 2022, la OMS dijo que hay poca evidencia de efectos en humanos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa pizca es sal, y también un pedacito del mar con lo que le tiramos."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Pilas base narrada.dc.html",
+  "salida": "Shot Pilas narrado.dc.html",
+  "nota": "Shot Ambiental #47. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "¿Por qué NO creerle al dato de la pila que contamina seiscientos mil litros de agua?"
+    },
+    {
+      "escena": "Cifras",
+      "texto": "Búscalo: una nota dice tres mil litros, otra ciento sesenta y siete mil, otra ciento setenta y cinco mil."
+    },
+    {
+      "escena": "Fuente",
+      "texto": "Y no citan un estudio que puedas revisar, ni dicen cómo se midió."
+    },
+    {
+      "escena": "Mercurio",
+      "texto": "La cifra gigante se la cuelgan a las pilas de mercurio."
+    },
+    {
+      "escena": "Leyes",
+      "texto": "Pero en 1996 Estados Unidos prohibió vender pilas alcalinas comunes con mercurio agregado, y el Convenio de Minamata fijó 2020 para dejar de fabricar casi todas las de mercurio."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "Entonces, ¿ya la puedes tirar a la basura sin problema?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En un estudio de 2009 en Tailandia, enterraron pilas usadas con basura en rellenos de prueba."
+    },
+    {
+      "escena": "Escurre",
+      "texto": "Entre más pilas, más manganeso y zinc salían en el líquido que escurría."
+    },
+    {
+      "escena": "Litio",
+      "texto": "Y las de litio, de botón o recargables, pueden incendiarse si se dañan."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México, la ley les pide plan de manejo, y las de mercurio o níquel-cadmio son residuo peligroso."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "El número no tiene fuente clara, pero el consejo sí: no la tires, llévala a acopio."
+    }
+  ]
+}

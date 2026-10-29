@@ -1,0 +1,48 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Isla Calor base narrada.dc.html",
+  "salida": "Shot Isla Calor narrado.dc.html",
+  "nota": "Shot Ambiental #30. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Si vives en ciudad, tu noche suele ser más caliente que la de tu primo del rancho."
+    },
+    {
+      "escena": "Isla",
+      "texto": "Es la isla de calor: una mancha tibia en un campo fresco."
+    },
+    {
+      "escena": "Techos",
+      "texto": "De día, asfalto y concreto se tragan el sol: un techo puede llegar a treinta y seis grados sobre el aire."
+    },
+    {
+      "escena": "Noche",
+      "texto": "Al ponerse el sol lo sueltan lento; el campo ya se enfrió."
+    },
+    {
+      "escena": "Extra",
+      "texto": "Súmale pocos árboles, edificios que tapan el viento y calor de coches y climas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cuánto? En Estados Unidos, una revisión de 2017 que cita la EPA da de uno a casi tres grados más de noche."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En Ciudad de México, Ernesto Jáuregui, de la UNAM, comparó el Centro con Texcoco en 1994 y 1995."
+    },
+    {
+      "escena": "Febrero",
+      "texto": "Tres de cada cuatro veces la isla fue nocturna; en febrero, en noches despejadas, el Centro llegó hasta siete punto ocho grados más."
+    },
+    {
+      "escena": "Arboles",
+      "texto": "¿Qué ayuda? Techos claros y árboles: en 2021, una revisión de 308 estudios halló que un bosque urbano está en promedio uno punto seis grados más fresco que la zona sin verde."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Si sudas esta noche y tu primo del rancho no, es la isla de calor."
+    }
+  ]
+}

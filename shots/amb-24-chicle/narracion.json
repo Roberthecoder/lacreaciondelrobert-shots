@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Chicle base narrada.dc.html",
+  "salida": "Shot Chicle narrado.dc.html",
+  "nota": "Shot Ambiental #24. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese chicle pegado en la banqueta no es chicle: es plástico. Bueno, su goma."
+    },
+    {
+      "escena": "Mascar",
+      "texto": "Al masticarlo, el azúcar y el sabor se van con tu saliva; queda la goma."
+    },
+    {
+      "escena": "Receta",
+      "texto": "Y la FDA de Estados Unidos le permite llevar acetato de polivinilo y poliisobutileno."
+    },
+    {
+      "escena": "Petroleo",
+      "texto": "Wrigley lo dice en una patente: las gomas comunes usan polímeros artificiales del petróleo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y entonces por qué le decimos chicle?"
+    },
+    {
+      "escena": "Chicozapote",
+      "texto": "Porque el original es látex del chicozapote, árbol de la selva maya: le hacen cortes en zigzag y hierven lo que escurre."
+    },
+    {
+      "escena": "Sinteticos",
+      "texto": "De los años 1880 a los 1950 fue gran exportación, hasta que los sintéticos baratos le ganaron."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2020, en Valencia, España, estudiaron chicles tirados: en semanas, las bacterias de tu boca dan paso a las del ambiente."
+    },
+    {
+      "escena": "Banqueta",
+      "texto": "Pero la goma se queda. En 2022, limpiarla costaba unos siete millones de libras al año en el Reino Unido."
+    },
+    {
+      "escena": "Chicleros",
+      "texto": "Y el natural sigue: en Quintana Roo y Campeche, cooperativas de chicleros lo sacan de la selva."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que si pisas uno, ya sabes: no es chicle. Es plástico."
+    }
+  ]
+}
