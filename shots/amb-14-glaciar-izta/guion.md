@@ -2,9 +2,9 @@
 
 - **Serie:** Shot Ambiental · **Logo:** física (átomo: clima y hielo) · **Badge:** #14 · rama `pedido300/amb`.
 - **Formato:** N4 "La imagen que se llena" (al revés: la silueta blanca de los volcanes se va vaciando de hielo y queda del color de la tierra) con toque de N1 (macro → la línea de equilibrio → macro). Cierre que regresa a la placa del inicio.
-- **Gancho (de los 7):** #7 "Algo que tus ojos nunca van a ver": «Este glaciar ya nunca lo vas a poder ver: en su lugar hoy solo queda una placa.»
+- **Gancho (de los 7):** #7 "Algo que tus ojos nunca van a ver": «Este glaciar ya nunca lo vas a poder ver: hoy solo queda una placa que lo recuerda.»
 - **Local:** Centro de México (Iztaccíhuatl y Popocatépetl, Estado de México/Puebla/Morelos; Pico de Orizaba, Puebla/Veracruz).
-- **Duración:** voz 955 caracteres escritos ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 959 caracteres escritos ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → **61.5 s** en la base.
 - **Cuentas:**
   - 0.62 km² = 62 ha · 0.37 km² = 37 ha (1 km² = 100 ha).
   - Pico de Orizaba 2007 → 2024: 0.37 ÷ 0.62 = 0.597 → quedan ~6 de cada 10 (perdió ~40 % en 17 años). (Se dice en pantalla "−40 %", no en la voz.)
@@ -16,17 +16,17 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Este glaciar ya nunca lo vas a poder ver: en su lugar hoy solo queda una placa. | Cuadro 0: la cumbre del Izta con una lengua de hielo blanca que se derrite y se va (time-lapse); queda roca café y aparece una placa clavada. Chip "glaciar Ayoloco". |
+| 0 | Gancho | Este glaciar ya nunca lo vas a poder ver: hoy solo queda una placa que lo recuerda. | Cuadro 0: la cumbre del Izta al fondo con una lengua de hielo blanca que se derrite y se va (time-lapse); queda roca café. En primer plano, en la ladera de roca más abajo, aparece la placa. Chip "glaciar Ayoloco". |
 | 1 | Ayoloco | Era el Ayoloco, en la cumbre del Iztaccíhuatl, y se veía desde el Valle de México. | Zoom out: la silueta de la "Mujer Dormida" vista desde la ciudad (edificios abajo); el Ayoloco marcado con flecha en la cumbre. Etiqueta "Iztaccíhuatl". |
 | 2 | Doce | En 1964, fotos aéreas contaron doce glaciares en el Izta. Hoy solo quedan restos en sus cráteres. | Un avión cruza y "fotografía": aparecen 12 manchas blancas numeradas sobre el volcán (chip "1964: 12 glaciares · 1.4 km²"); se apagan una por una y quedan puntitos dentro de huecos de cráter. Etiqueta "esquema". |
 | 3 | Linea | La nieve solo dura todo el año arriba de cierta altura, y esa línea ya subió a unos cinco mil trescientos metros. | Corte lateral del volcán con regla de altitud; una línea punteada ("línea de equilibrio") sube; arriba nieve que se queda, abajo nieve que gotea. Medidor "≈ 5,300 m". |
 | 4 | Cumbre | La cumbre del Izta mide cinco mil doscientos treinta. Se quedó abajo. | La cumbre marca "5,230 m" y queda debajo de la línea punteada; la última nieve gotea. |
 | 5 | Pregunta | ¿Y los otros volcanes? | **Re-gancho.** Se abre el plano: Popocatépetl y Pico de Orizaba con un "?" grande; Robert grande. |
 | 6 | Popo | Al Popocatépetl lo remataron el calor y su erupción de 1994: en 2001 sus glaciares se dieron por extintos. | El Popo con fumarola: cae ceniza gris sobre su hielo, se calienta (termómetro) y el hielo se rompe en pedazos. Chips "erupción desde dic 1994" → "2001: extinto". |
-| 7 | Placa | En 2021, Hugo Delgado Granados y su equipo de la UNAM subieron esta placa: dice que el Ayoloco desapareció en 2018. | Escena del estudio: montañistas suben en fila y colocan la placa; acercamiento a la placa con el texto "Aquí existió el glaciar Ayoloco y retrocedió hasta desaparecer en 2018". Chip "22 abr 2021 · UNAM · 4,626 m". |
+| 7 | Placa | En 2021, Hugo Delgado Granados y su equipo de la UNAM subieron esta placa: dice que el Ayoloco desapareció en 2018. | Escena del estudio: montañistas suben en fila y colocan la placa; acercamiento a la placa con el texto "Aquí existió el glaciar Ayoloco y retrocedió hasta desaparecer en 2018". Chip "abril 2021 · UNAM · 4,626 m". |
 | 8 | Orizaba | Queda el Pico de Orizaba: su hielo pasó de sesenta y dos hectáreas en 2007 a treinta y siete en 2024. | El Pico de Orizaba con su casquete; una cuadrícula de 62 cuadritos de hielo (1 ha c/u) se vacía hasta 37. Chips "2007: 62 ha" → "2024: 37 ha" · "−40 %"; la roca asoma en medio del hielo. |
 | 9 | Cinco | Y en 2025 advirtió que los glaciares de México podrían desaparecer en unos cinco años. | Cuenta regresiva 5-4-3-2-1 sobre los tres volcanes; etiqueta "estimación de H. Delgado Granados (UNAM, 2025)". |
-| 10 | Cierre | Por eso la placa le habla a quien venga después: «Sólo ustedes sabrán si lo hicimos». | **Regreso a la placa del inicio**, ahora con la cumbre sin nada de hielo; la frase de la placa en pantalla. |
+| 10 | Cierre | Por eso la placa le habla a quien venga después: «Sólo ustedes sabrán si lo hicimos». | **Regreso a la placa del inicio** en la ladera de roca, con la cumbre al fondo ya sin nada de hielo; la frase de la placa en pantalla. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de física y Robert apuntando a cámara. |
 
 **Música:** cama grave y fría (pad con viento de alta montaña). Efectos: goteo del deshielo, crujido de hielo al romperse, clic de cámara del avión (12 clics apagándose), un "ping" cuando sube la línea, retumbo y ceniza del Popo, pasos y golpe metálico al clavar la placa, un tic por cada cuadrito que se vacía en Orizaba, tic-tac en la cuenta regresiva y la cama se queda casi sola en la frase final.

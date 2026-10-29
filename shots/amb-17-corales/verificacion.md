@@ -43,4 +43,16 @@ Revisión de cuentas y formato: no hay cifras calculadas; las 6 cifras (90 %, 84
 
 Con esas dos correcciones todo queda ✅.
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Segunda ronda (29 oct 2026)
+
+Revisé contra el texto actual de guion.md y narracion.json (los dos coinciden).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|
+| (Pantalla, Pólipos) Tentáculos "6, 12 o más alrededor de la boca; en múltiplos de 6" en coral cerebro | ✅ | Clasificación estándar de Anthozoa: los hexacorales (Scleractinia, corales pétreos) tienen simetría séxtuple; los octocorales tienen 8 tentáculos | Corales pétreos = Hexacorallia, con tentáculos en múltiplos de seis | vigente |
+| (Voz 3, Algas) "Dentro de sus células viven algas microscópicas, las zooxantelas, que hacen fotosíntesis." | ✅ | Davy et al. 2012; NOAA NOS, zooxanthellae | "These dinoflagellates typically reside within the cells of the host cnidarian's gastrodermis" / "Most reef-building corals contain photosynthetic cells called zooxanthellae" | 2012 / vigente |
+| (Voz 10, Cierre) "…es un animal que se muere de hambre si el mar se calienta demasiado." | ✅ | NOAA NOS, coral_bleach.html | "When water is too warm, corals will expel the algae" / "If the algae loss is prolonged and the stress continues, coral eventually dies." | vigente |
+
+Las 2 ⚠️ de la primera ronda quedaron corregidas y quitar "con el sol" no deja nada falso. Los rayos de sol en pantalla siguen siendo correctos ("use energy from the sun"). Ya no queda ninguna ❌ ni ⚠️.
+
+VEREDICTO: APROBADO

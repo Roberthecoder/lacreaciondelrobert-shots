@@ -4,7 +4,7 @@
 - **Formato:** N1 "Por dentro": colilla en la arena (macro) → fibras de acetato al microscopio (fondo oscuro) → la playa → regreso a la misma colilla, ahora vista como plástico.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: "Esto no es algodón: es plástico."
 - **Local:** México (datos de México en la Limpieza Internacional de Costas 2025).
-- **Duración:** voz 951 caracteres escritos ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → objetivo **61.5 s** en la base.
+- **Duración:** voz 958 caracteres escritos ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → objetivo **61.5 s** en la base.
 - **Cuentas:**
   - 1,197,920 colillas (ICC 2025) → "casi un millón doscientas mil".
   - México ICC 2025: 20,571 colillas ÷ 7,978 botellas de plástico = 2.58 → "más del doble".
@@ -16,14 +16,14 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esto no es algodón: es plástico. El filtro de un cigarro está hecho de acetato de celulosa. | Cuadro 0: una colilla en la arena y una mano que la jala; una bolita de algodón aparece al lado y se tacha ("algodón ✗"). Etiqueta "acetato de celulosa = plástico". |
-| 1 | Fibras | Al microscopio son más de quince mil fibras, cada una de unos veinte micrómetros, bien apretadas. | `Lupa` sobre el corte del filtro → fondo oscuro: haz de fibras blancas largas y delgadas, apretadas (esquema), contador "15,000+" y `EscalaFija` "20 µm". |
+| 1 | Fibras | Al microscopio son más de quince mil fibras, cada una de unos veinte micrómetros de grueso. | `Lupa` sobre el corte del filtro → fondo oscuro: haz de fibras blancas largas y delgadas, apretadas (esquema), contador "15,000+" y `EscalaFija` "20 µm" que marca el ancho de una fibra. |
 | 2 | Quimicos | Ya fumada, la colilla carga nicotina, metales pesados y otras sustancias que va soltando. | Las fibras se tiñen de café (alquitrán); chips "nicotina", "metales pesados", "otras sustancias". |
 | 3 | Tirada | Si la tiras, el sol y la humedad la rompen, pero no desaparece: se vuelve microplástico que puede durar años. | Sol y gotas sobre la colilla; el filtro se deshilacha en fibritas que se quedan en la arena. Chip "microplástico". |
 | 4 | Pregunta | ¿Y cuántas terminan en la playa? | **Re-gancho.** "?" gigante sobre una playa; Robert grande. |
 | 5 | Playa | En la Limpieza Internacional de Costas de 2025 recogieron casi un millón doscientas mil colillas: el segundo residuo más común. | Voluntarios con bolsas en la playa; contador que sube a "1,197,920 colillas"; podio: 1 botellas de plástico, **2 colillas**, 3 taparroscas. "ICC 2025 · Ocean Conservancy". |
-| 6 | Mexico | Y ese año, en México, hubo más del doble de colillas que de botellas de plástico. | Mapa de México; barras "colillas 20,571" vs "botellas 7,978". |
+| 6 | Mexico | Y ese año, en las playas limpiadas en México, salieron más del doble de colillas que de botellas de plástico. | Mapa de México; barras (playas limpiadas en México) "colillas 20,571" vs "botellas 7,978". |
 | 7 | Estudio | Un estudio de 2011 de la Universidad Estatal de San Diego remojó colillas y puso peces en esa agua: con una colilla fumada por litro, murió la mitad en cuatro días. | `TarjetaEstudio` "Slaughter et al. 2011 · San Diego State Univ."; vaso de 1 L con una colilla que suelta color; peces (*Atherinops affinis*, *Pimephales promelas*) y un reloj de 96 h; la mitad de los peces se apaga. |
-| 8 | Extra | Lo más raro: hasta los filtros sin fumar resultaron tóxicos para los peces. | Un filtro blanco, nuevo, en otro vaso; chip "sin fumar: también tóxico". |
+| 8 | Extra | Lo más raro: hasta los filtros sin fumar resultaron tóxicos. | Un filtro blanco, nuevo, en otro vaso; chip "sin fumar: también tóxico". |
 | 9 | Cierre | Así que esa colilla en la arena no es basura que se deshace: es plástico que se queda. | **Regreso a la colilla del inicio** en la arena, ahora con su etiqueta "plástico" y sus fibras marcadas. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert apuntando a cámara. |
 
