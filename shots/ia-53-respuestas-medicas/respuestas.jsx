@@ -261,7 +261,7 @@ function Respuestas() {
         <FondoLunares color={KC.orange} />
         {svg(<text x={290} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
       </Escena>
-      <Chip T={T} at={K.P + 1.3} until={K.L - 0.1} texto="Calma." x={290} y={1150} tam={56} borde={KC.yellow} />
+      <Chip T={T} at={K.P + 1.3} until={K.L - 0.1} texto="Calma." x={290} y={420} tam={56} borde={KC.yellow} />
       {/* 8 · más largas */}
       <Escena T={T} a={K.L} b={K.F2}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
@@ -317,7 +317,7 @@ function Respuestas() {
           {T > K.B + 1.8 && <Pluma x={klerp(480, 860, kprog(T, K.B + 2.0, K.B + 3.4) % 0.5 * 2)} y={T < K.B + 2.7 ? 792 : 948} rot={-35} />}
         </>)}
       </Escena>
-      <Chip T={T} at={K.B + 0.3} until={K.C - 0.2} texto="IA: borrador" x={220} y={1110} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.B + 0.3} until={K.C - 0.2} texto="IA: borrador" x={220} y={1135} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.B + 2.0} until={K.C - 0.2} texto="médico: corrige" x={720} y={530} tam={36} borde={KC.red} />
       {/* 12 · cierre: la misma imagen del inicio, ya revisada */}
       <Escena T={T} a={K.C} b={FIN}>

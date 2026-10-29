@@ -143,12 +143,12 @@ function NobelFisica() {
   const angV = (i, j) => (negro(i, j) !== malo(i, j)) ? 180 : 0;
   const nMalos = T < rotaEn ? 0 : Object.values(ROTOS).filter((o) => T < arreglo0 + (o + 1) * arregloD / 25).length;
   const energia = T < rotaEn ? klerp(0.9, 0.12, kprog(T, K.V + 0.4, K.V + 2.4, kEase.suave)) : 0.12 + 0.8 * nMalos / 25;
-  const bx = T < rotaEn ? 350 : klerp(160, 350, kEase.suave(1 - nMalos / 25));
+  const bx = T < rotaEn ? 580 : klerp(410, 580, kEase.suave(1 - nMalos / 25));
   // 7 · Boltzmann: gas que se vuelve red (nodos ocultos y visibles).
   const mB = kprog(T, K.B + 2.8, K.B + 4.4, kEase.suave);
-  const NODOS = [...Array.from({ length: 6 }, (_, k) => [270 + k * 108, 640]), ...Array.from({ length: 8 }, (_, k) => [190 + k * 100, 900])];
+  const NODOS = [...Array.from({ length: 6 }, (_, k) => [180 + k * 100, 620]), ...Array.from({ length: 8 }, (_, k) => [150 + k * 95, 840])];
   const bolas = Array.from({ length: 22 }, (_, k) => { const u = T * (0.35 + hash(k, 1) * 0.5), v = T * (0.3 + hash(k, 2) * 0.5);
-    const tri = (q) => Math.abs(((q % 2) + 2) % 2 - 1); const gx = 200 + tri(u + hash(k, 3) * 2) * 680, gy = 540 + tri(v + hash(k, 4) * 2) * 520;
+    const tri = (q) => Math.abs(((q % 2) + 2) % 2 - 1); const gx = 160 + tri(u + hash(k, 3) * 2) * 680, gy = 540 + tri(v + hash(k, 4) * 2) * 440;
     const n = NODOS[k]; return n ? [klerp(gx, n[0], mB), klerp(gy, n[1], mB), 1] : [gx, gy, 1 - mB]; });
   // 8 · Tamaño: red chiquita de 1982 contra la gigante de hoy.
   const zT = kprog(T, K.Ta + 2.9, K.Ta + 3.8, kEase.suave);
@@ -183,15 +183,15 @@ function NobelFisica() {
           <div style={{ font:`900 40px ${KF.texto}`, color:KC.ink }}>Geoffrey Hinton</div>
           <div style={{ font:`700 24px ${KF.mono}`, color:'#5a524a' }}>Toronto, Canadá</div></div>
       </Escena>
-      <Chip T={T} at={K.P + 0.1} until={K.I - 0.2} texto="Nobel de Física 2024" x={360} y={480} tam={46} borde={KC.gold} />
-      <Chip T={T} at={K.P + 2.2} until={K.I - 0.2} texto="por las redes neuronales artificiales" x={500} y={590} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.P + 0.1} until={K.I - 0.2} texto="Nobel de Física 2024" x={340} y={470} tam={46} borde={KC.gold} />
+      <Chip T={T} at={K.P + 2.2} until={K.I - 0.2} texto="por las redes neuronales artificiales" x={340} y={570} tam={26} borde={KC.ink} />
 
       {/* 3 · Cap. 1: imanes */}
       <Escena T={T} a={K.I} b={K.X}>
         <FondoLunares color={KC.mint} />
         {svg(<Espines x={110} y={560} tam={560} n={8} ang={angI} resalta={[3, 3, T]} />)}
       </Escena>
-      <Chip T={T} at={K.I + 1.4} until={K.X - 0.2} texto="las vecinas se influyen" x={400} y={1200} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.I + 1.4} until={K.X - 0.2} texto="las vecinas se influyen" x={380} y={470} tam={32} borde={KC.gold} />
 
       {/* 4 · Cap. 2: pixeles */}
       <Escena T={T} a={K.X} b={K.V}>
@@ -202,7 +202,7 @@ function NobelFisica() {
             return <line key={k} x1={300 + (a % 10) * c + 24} y1={690 + Math.floor(a / 10) * c + 24} x2={300 + (b % 10) * c + 24} y2={690 + Math.floor(b / 10) * c + 24} stroke={KC.gold} strokeWidth={3} />; })}</g>
         </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.X + 0.1} until={K.X + 2.6} anio="1982" quien="John Hopfield · Caltech" revista="PNAS" x={700} y={480} />
+      <TarjetaEstudio T={T} at={K.X + 0.1} until={K.X + 2.6} anio="1982" quien="John Hopfield · Caltech" revista="PNAS" x={540} y={930} />
       <Chip T={T} at={K.X + 2.8} until={K.V - 0.2} texto="↑ blanco · ↓ negro" x={720} y={470} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.X + 3.4} until={K.V - 0.2} texto="todos conectados" x={720} y={560} tam={32} borde={KC.gold} />
 
@@ -217,8 +217,8 @@ function NobelFisica() {
       <Medidor T={T} at={K.V + 0.3} until={K.Q - 0.2} x={90} y={410} ancho={520} etiqueta="energía" color={energia > 0.4 ? KC.red : KC.mint} valor={energia} texto={(v) => v > 0.4 ? 'alta' : 'baja'} />
       <Chip T={T} at={K.V + 1.6} until={rotaEn - 0.1} texto="imagen guardada ✔" x={830} y={700} tam={30} borde={KC.leaf} />
       <Chip T={T} at={rotaEn} until={arreglo0 + arregloD - 0.2} texto="imagen rota" x={830} y={700} tam={32} borde={KC.red} />
-      <Chip T={T} at={arreglo0 + arregloD} until={K.Q - 0.2} texto="la recuperó (casi siempre)" x={540} y={1170} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={rotaEn + 0.6} until={K.Q - 0.2} x={350} y={1150} texto="valle = memoria" tam={30} color={KC.ink} />
+      <Chip T={T} at={arreglo0 + arregloD} until={K.Q - 0.2} texto="la recuperó (casi siempre)" x={540} y={1150} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={rotaEn + 0.6} until={arreglo0 + arregloD - 0.2} texto="valle = imagen guardada" x={580} y={1150} tam={28} borde={KC.ink} />
 
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Q} b={K.B} zoom={0.1}>
@@ -230,31 +230,31 @@ function NobelFisica() {
       <Escena T={T} a={K.B} b={K.Ta}>
         <FondoCircuito T={T} color={KC.lilac} />
         {svg(<>
-          <rect x={170} y={510} width={740} height={580} rx={40} fill="rgba(177,140,255,.10)" stroke={KC.lilac} strokeWidth={8} opacity={1 - mB} />
+          <rect x={130} y={510} width={780} height={500} rx={40} fill="rgba(177,140,255,.10)" stroke={KC.lilac} strokeWidth={8} opacity={1 - mB} />
           <g opacity={mB}>{NODOS.map((a, p) => NODOS.slice(p + 1).map((b, q) => <line key={`${p}-${q}`} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke={KC.cyan} strokeOpacity=".3" strokeWidth={3} />))}</g>
           {bolas.map(([a, b, o], k) => <circle key={k} cx={a} cy={b} r={k < 6 ? 26 : 22} opacity={o} fill={k < 6 ? KC.lilac : KC.yellow} stroke={KC.ink} strokeWidth={5} />)}
           {[0, 1, 2].map((k) => { const t0 = K.B + 5.0 + k * 0.45, p = kprog(T, t0, t0 + 0.7, kEase.sale);
-            return <g key={k} opacity={p}><Gato x={klerp(-80, 330 + k * 210, p)} y={1030} s={0.9} color={[KC.orange, KC.paper, KC.gold2][k]} /></g>; })}
+            return <g key={k} opacity={p}><Gato x={klerp(-80, 330 + k * 210, p)} y={960} s={0.85} color={[KC.orange, KC.paper, KC.gold2][k]} /></g>; })}
         </>)}
       </Escena>
-      <Etq T={T} at={K.B + 4.4} until={K.Ta - 0.2} x={870} y={640} texto="ocultos" tam={28} />
-      <Etq T={T} at={K.B + 4.6} until={K.Ta - 0.2} x={970} y={900} texto="visibles" tam={28} lado="izq" />
+      <Etq T={T} at={K.B + 4.4} until={K.Ta - 0.2} x={145} y={620} texto="ocultos" tam={24} lado="izq" />
+      <Etq T={T} at={K.B + 4.6} until={K.Ta - 0.2} x={860} y={840} texto="visibles" tam={24} />
       <Chip T={T} at={K.B + 0.4} until={K.B + 4.3} texto="física estadística" x={400} y={450} tam={38} borde={KC.lilac} />
-      <Chip T={T} at={K.B + 1.8} until={K.B + 4.8} texto="distribución de Boltzmann · siglo XIX" x={540} y={1170} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.B + 1.8} until={K.B + 4.8} texto="distribución de Boltzmann · siglo XIX" x={540} y={1090} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.B + 4.4} until={K.Ta - 0.2} texto="Hinton + Sejnowski · 1985" x={400} y={450} tam={36} borde={KC.gold} />
-      <MitoTachado T={T} at={K.B + 5.2} tacharEn={K.B + 6.2} until={K.Ta - 0.2} texto="instrucciones paso a paso" y={1170} tam={36} />
+      <MitoTachado T={T} at={K.B + 5.2} tacharEn={K.B + 6.2} until={K.Ta - 0.2} texto="instrucciones paso a paso" y={1090} tam={36} />
 
       {/* 8 · tamaño: 1982 contra hoy */}
       <Escena T={T} a={K.Ta} b={K.A}>
         <FondoLunares color={KC.pink} />
         {svg(<>
           <g opacity={zT}><RedGigante o={1} T={T} /></g>
-          <RedCirculo x={klerp(540, 170, zT)} y={klerp(780, 1110, zT)} r={klerp(230, 60, zT)} T={T} />
+          <RedCirculo x={klerp(540, 170, zT)} y={klerp(780, 1070, zT)} r={klerp(230, 60, zT)} T={T} />
         </>)}
       </Escena>
       <Chip T={T} at={K.Ta + 0.5} until={K.Ta + 2.9} texto="1982 · 30 nodos" x={540} y={470} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Ta + 1.2} until={K.Ta + 2.9} texto="menos de 500 parámetros" x={540} y={1100} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Ta + 3.2} until={K.A - 0.2} texto="1982" x={170} y={1010} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Ta + 3.2} until={K.A - 0.2} texto="1982" x={170} y={970} tam={28} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Ta + 3.4} until={K.A - 0.2} valor={1} dur={0.4} prefijo="+ de " sufijo=" billón" x={480} y={760} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.Ta + 3.9} until={K.A - 0.2} texto="parámetros · un modelo de lenguaje de hoy" x={540} y={900} tam={30} borde={KC.gold} />
       <Chip T={T} at={K.Ta + 4.4} until={K.A - 0.2} texto="1 billón = 1,000,000,000,000" x={600} y={1000} tam={28} mono borde={KC.ink} />
