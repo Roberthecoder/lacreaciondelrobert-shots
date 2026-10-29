@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Ese limón no te está dando electricidad: el que se está gastando es el clavo."
 - **Seguridad:** el experimento es de bajo voltaje (menos de 1 volt por limón); la voz avisa lo único práctico que trae la fuente: ese limón ya no se come.
 - **Duración:** voz 954 caracteres (≈ 57.9 s, `estimar-escenas.mjs`) + cierre 3.5 s → **≈ 61.4 s**.
-- **Estado:** guion corregido según `verificacion.md`; sin animación; voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~954 créditos).
 
 ## Versión narrada
 
@@ -24,6 +24,27 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave continua y eléctrica (zumbido suave); efectos en el mismo cuadro: clavo que entra al limón, clic de los caimanes, "bip" del voltímetro, chispitas de los e⁻ por el cable, burbujeo del hidrógeno, golpe de la tarjeta, "bip" del 0.91, encendido del LED.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿qué pasa ahí?» y en «ojo: ese limón ya no se come».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.3 | 11_sorprendido | `gancho` | «el que se está gastando es el clavo» |
+| 2 | 5.7 | 10.0 | 13_senalando_arriba | `izq-alto` | «un clavo galvanizado, cubierto de zinc» |
+| 3 | 11.7 | 15.4 | 06_pensativo_menton | `arriba-der` | «suelta electrones y se va disolviendo» |
+| 4 | 16.7 | 20.1 | 05_sonriendo_dientes_uniformes | `izq-alto` | «y eso es la corriente» |
+| 5 | 21.5 | 25.6 | 02_apuntando_camara | `arriba-der` | «¿Y el limón? … el electrolito» |
+| 6 | 25.9 | 28.9 | 07_pensativo_puno | `grande` | «¿qué pasa ahí?» |
+| 7 | 32.8 | 38.2 | 11_sorprendido | `izq-alto` | «el ácido se vuelve gas hidrógeno» |
+| 8 | 39.5 | 45.3 | 04_bajando_lentes | `izq-alto` | «0.91 volts: ni siquiera llega a un volt» |
+| 9 | 46.0 | 48.7 | 13_senalando_arriba | `arriba-der` | «para prender un foquito LED» |
+| 10 | 49.0 | 51.4 | 10_serio_molesto | `grande-izq` | «ojo: ese limón ya no se come» |
+| 11 | 52.0 | 57.8 | 02_apuntando_camara | `arriba-der` | «la energía sale del zinc del clavo» |
+| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 11 apariciones · ≈ 45 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

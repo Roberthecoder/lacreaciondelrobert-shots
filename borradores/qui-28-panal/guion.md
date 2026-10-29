@@ -2,7 +2,7 @@
 
 - **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #28 · rama `pedido300/qui`.
 - **Formato:** N5 "El experimento" (un poquito de polvo de pañal + un vaso de agua → el vaso se voltea y no cae nada) + N1 "Por dentro" (la red de poliacrilato con sus cargas y el sodio → la misma red en orina → el vaso del inicio).
-- **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Esto no es gelatina: es un vaso de agua que se tragó el polvito de un pañal."
+- **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Esto no es gelatina: es un vaso de agua atrapada por el polvito de un pañal."
 - **Seguridad:** no se invita a abrir pañales ni a comer/respirar el polvo. En la descripción: el polvo es poco tóxico pero irrita nariz y ojos; si se hace el experimento, con lentes y sin levantar polvo (MIT OCW).
 - **Duración:** voz 953 caracteres / ≈165 palabras (≈ 58.1 s según `estimar-escenas.mjs`) + cierre 3.5 s → **≈ 61.6 s**.
 - **Estado:** guion listo para verificación independiente. Falta: verificación, tabla "Robert en pantalla" (fase 2), animación, `publicacion.md`.
@@ -13,7 +13,7 @@ Tiempos estimados (s): Gancho 0–4.7 · Que 4.7–9.9 · Cargas 9.9–14.1 · R
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esto no es gelatina: es un vaso de agua que se tragó el polvito de un pañal. | Fondo amarillo. **Cuadro 0:** una cucharadita de polvo blanco cae en un vaso y el chorro de agua ya está entrando (antes de 0.5 s). Cronómetro arriba "0:00 → 0:10". A los ~3 s una mano voltea el vaso: no cae ni una gota; adentro, gel transparente. Chip "¿gelatina?" se tacha. Junto, un pañal con un corte esquemático mostrando los granitos blancos entre la pelusa. |
+| 0 | Gancho | Esto no es gelatina: es un vaso de agua atrapada por el polvito de un pañal. | Fondo amarillo. **Cuadro 0:** una cucharadita de polvo blanco cae en un vaso y el chorro de agua ya está entrando (antes de 0.5 s). Chip "unos segundos" (sin cronómetro). A los ~3 s una mano voltea el vaso: no cae ni una gota; adentro, gel transparente. Chip "¿gelatina?" se tacha. Junto, un pañal con un corte esquemático mostrando los granitos blancos entre la pelusa. |
 | 1 | Que | Ese polvo suele ser poliacrilato de sodio: cadenas larguísimas amarradas como una red. | `Lupa` sobre un granito (barra de escala "1 mm" → "nm"). Fondo noche: cadenas en zigzag (esqueleto de carbono) con puntitos de amarre (entrecruzante) entre ellas. Etiqueta "poliacrilato de sodio" + fórmula del monómero –CH₂–CH(COO⁻ Na⁺)–. |
 | 2 | Cargas | Cada cadena trae cargas negativas y, junto a ellas, iones de sodio. | En cada cadena se encienden "–" rojos (grupos COO⁻); a su lado aparecen bolitas moradas "Na⁺". Contador "– · – · –". |
 | 3 | Repulsion | Al entrar el agua, esas cargas se repelen y la red se estira como un resorte. | Entran moléculas de agua (V azules). Flechitas de repulsión entre los "–": la red pasa de ovillo apretado a malla abierta; ícono de resorte que se estira. |

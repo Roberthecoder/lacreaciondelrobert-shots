@@ -117,7 +117,7 @@ function Oxido() {
   // mina
   const entra = kprog(T, K.Mi + 2.6, K.Mi + 3.4, kEase.suave), sale = kprog(T, K.Mi + 4.2, K.Mi + 5.2, kEase.sale);
   // receta
-  const o2x = klerp(-80, 470, kprog(T, K.Re + 0.4, K.Re + 1.6, kEase.sale)), gotaY = klerp(380, 760, kprog(T, K.Re + 1.2, K.Re + 2.2, kEase.sale));
+  const o2x = klerp(-80, 470, kprog(T, K.Re + 0.4, K.Re + 1.6, kEase.sale)), gotaY = klerp(300, 640, kprog(T, K.Re + 1.2, K.Re + 2.2, kEase.sale));
   const reac = kprog(T, K.Re + 2.4, K.Re + 4.2);
   const crece = kprog(T, K.Sa + 1.0, K.Sa + 2.4, kEase.sale);
   // poroso
@@ -153,17 +153,17 @@ function Oxido() {
       <Escena T={T} a={K.Re} b={mar} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <RedFe T={T} x0={150} y0={880} color={(c, f) => (f === 0 && Math.abs(c - 3.5) < 1 + reac * 3 && reac > 0) ? mixHex(FE, OXI, kclamp(reac * 1.4 - Math.abs(c - 3.5) * 0.25, 0, 1)) : FE} />
-          {reac < 1 && <g opacity={1 - reac}><Mol tipo="o2" x={o2x} y={760} s={1.3} rot={T * 40} /></g>}
+          <RedFe T={T} x0={150} y0={760} color={(c, f) => (f === 0 && Math.abs(c - 3.5) < 1 + reac * 3 && reac > 0) ? mixHex(FE, OXI, kclamp(reac * 1.4 - Math.abs(c - 3.5) * 0.25, 0, 1)) : FE} />
+          {reac < 1 && <g opacity={1 - reac}><Mol tipo="o2" x={o2x} y={640} s={1.3} rot={T * 40} /></g>}
           <Gota x={600} y={gotaY} s={klerp(1, 1.6, crece)} o={1 - reac * 0.4} />
-          {reac > 0.2 && <text x={540} y={1300} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={OXI2} opacity={kprog(T, K.Re + 3, K.Re + 3.5)}>Fe₂O₃·nH₂O</text>}
+          {reac > 0.2 && <text x={540} y={1160} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={OXI2} opacity={kprog(T, K.Re + 3, K.Re + 3.5)}>Fe₂O₃·nH₂O</text>}
           {/* mini-tabla: solo aire · solo agua · los dos */}
           {T < K.Sa && [['solo aire', false], ['solo agua', false], ['aire + agua', true]].map(([t, ok], i) => { const o = kprog(T, K.Re + 2.6 + i * 0.4, K.Re + 3.0 + i * 0.4); if (o <= 0) return null;
             return <g key={i} opacity={o}><text x={200 + i * 340} y={470} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>{t}</text><Marca x={200 + i * 340} y={570} ok={ok} s={0.75} o={o} /></g>; })}
           {/* la sal */}
           {T > K.Sa && [[480, 0], [580, 0.2], [680, 0.4], [540, 0.6]].map(([x, d], i) => { const p = kprog(T, K.Sa + 0.2 + d, K.Sa + 1.0 + d, kEase.entra || undefined);
-            return <g key={i} opacity={1 - kprog(T, K.Sa + 1.2 + d, K.Sa + 1.6 + d)}><Cubito x={x} y={klerp(300, 700, p)} rot={T * 90 + i * 40} /></g>; })}
-          {T > K.Sa + 2.0 && Array.from({ length: 6 }, (_, i) => { const ph = ((T - K.Sa) * 1.6 + i / 6) % 1; const x = klerp(420, 780, ph), y = 840 - Math.sin(ph * Math.PI) * 120;
+            return <g key={i} opacity={1 - kprog(T, K.Sa + 1.2 + d, K.Sa + 1.6 + d)}><Cubito x={x} y={klerp(260, 600, p)} rot={T * 90 + i * 40} /></g>; })}
+          {T > K.Sa + 2.0 && Array.from({ length: 6 }, (_, i) => { const ph = ((T - K.Sa) * 1.6 + i / 6) % 1; const x = klerp(420, 780, ph), y = 720 - Math.sin(ph * Math.PI) * 120;
             return <path key={i} d={`M ${x - 16} ${y} l 10 -18 l 4 14 l 14 -20`} stroke={KC.yellow} strokeWidth={6} fill="none" strokeLinecap="round" />; })}
         </SvgCapa>
         <Escala T={T} pxPorMm={4.4e8} objetivo={500} x={60} y={1640} />
@@ -180,7 +180,7 @@ function Oxido() {
       <Escena T={T} a={K.Po} b={K.Al} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
         <SvgCapa>
-          {(() => { const cx = 540, cy = 900, Rm = 300, nucleo = Rm * klerp(0.92, 0.55, capa), ox = Rm * klerp(0.98, 1.12, capa);
+          {(() => { const cx = 540, cy = 830, Rm = 280, nucleo = Rm * klerp(0.92, 0.55, capa), ox = Rm * klerp(0.98, 1.12, capa);
             return <g>
               <circle cx={cx} cy={cy} r={ox} fill={OXI} stroke={KC.ink} strokeWidth={10} />
               {Array.from({ length: 26 }, (_, i) => { const a = i * 2.4, rr = klerp(nucleo + 20, ox - 14, (i * 0.37) % 1); return <circle key={i} cx={cx + Math.cos(a) * rr} cy={cy + Math.sin(a) * rr} r={7 + (i % 4) * 4} fill={OXI3} />; })}
@@ -201,18 +201,18 @@ function Oxido() {
       <Escena T={T} a={K.Al} b={K.Pr} zoom={0.03}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <rect x={60} y={820} width={440} height={340} fill={FE} stroke={KC.ink} strokeWidth={10} />
-          <path d={`M 60 820 L 60 ${760} Q 140 730 200 770 L 230 740 Q 320 720 380 770 L 420 745 Q 470 740 500 770 L 500 820 Z`} fill={OXI} stroke={KC.ink} strokeWidth={8} />
-          {[120, 230, 330, 440].map((x, i) => <path key={i} d={`M ${x} 745 L ${x + 12} 800 L ${x - 6} 830`} stroke={KC.ink} strokeWidth={6} fill="none" />)}
-          <rect x={580} y={820} width={440} height={340} fill={AL} stroke={KC.ink} strokeWidth={10} />
-          <rect x={580} y={806} width={440} height={14} fill={ALOX} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Al + 1.6, K.Al + 2.2)} />
-          {[0, 1, 2].map((i) => { const t0 = K.Al + 0.4 + i * 0.9; const p = kprog(T, t0, t0 + 1.2); if (T < t0) return null; return <Mol key={'f' + i} tipo="o2" x={150 + i * 120} y={klerp(560, 880, p)} s={0.55} rot={T * 50} o={1 - kprog(T, t0 + 1.0, t0 + 1.2)} />; })}
-          {[0, 1, 2].map((i) => { const t0 = K.Al + 2.0 + i * 0.7; const p = kprog(T, t0, t0 + 1.4); if (T < t0) return null; const yy = p < 0.5 ? klerp(560, 770, p * 2) : klerp(770, 560, (p - 0.5) * 2);
+          <rect x={60} y={700} width={440} height={300} fill={FE} stroke={KC.ink} strokeWidth={10} />
+          <path d={`M 60 700 L 60 640 Q 140 610 200 650 L 230 620 Q 320 600 380 650 L 420 625 Q 470 620 500 650 L 500 700 Z`} fill={OXI} stroke={KC.ink} strokeWidth={8} />
+          {[120, 230, 330, 440].map((x, i) => <path key={i} d={`M ${x} 625 L ${x + 12} 680 L ${x - 6} 710`} stroke={KC.ink} strokeWidth={6} fill="none" />)}
+          <rect x={580} y={700} width={440} height={300} fill={AL} stroke={KC.ink} strokeWidth={10} />
+          <rect x={580} y={686} width={440} height={14} fill={ALOX} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Al + 1.6, K.Al + 2.2)} />
+          {[0, 1, 2].map((i) => { const t0 = K.Al + 0.4 + i * 0.9; const p = kprog(T, t0, t0 + 1.2); if (T < t0) return null; return <Mol key={'f' + i} tipo="o2" x={150 + i * 120} y={klerp(440, 760, p)} s={0.55} rot={T * 50} o={1 - kprog(T, t0 + 1.0, t0 + 1.2)} />; })}
+          {[0, 1, 2].map((i) => { const t0 = K.Al + 2.0 + i * 0.7; const p = kprog(T, t0, t0 + 1.4); if (T < t0) return null; const yy = p < 0.5 ? klerp(440, 650, p * 2) : klerp(650, 440, (p - 0.5) * 2);
             return <Mol key={'a' + i} tipo="o2" x={680 + i * 120 + p * 40} y={yy} s={0.55} rot={T * 50} />; })}
-          <text x={280} y={1220} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>HIERRO</text>
-          <text x={800} y={1220} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>ALUMINIO</text>
+          <text x={280} y={1090} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>HIERRO</text>
+          <text x={800} y={1090} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>ALUMINIO</text>
         </SvgCapa>
-        <Etq T={T} at={K.Al + 2.0} until={K.Pr - 0.2} x={1020} y={700} texto="Al₂O₃ (capa delgadísima)" lado="izq" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.Al + 2.0} until={K.Pr - 0.2} x={1020} y={580} texto="Al₂O₃ (capa delgadísima)" lado="izq" tam={30} color={KC.ink} />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Pi} zoom={0.1}>
@@ -231,13 +231,13 @@ function Oxido() {
       <Escena T={T} a={K.Es} b={K.Co}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <RedFe T={T} x0={150} y0={980} filas={3} color={() => '#6d625a'} />
-          {Array.from({ length: 7 }, (_, i) => { const o = kprog(T, K.Es + 2.4 + i * 0.12, K.Es + 2.8 + i * 0.12); return <g key={i} opacity={o}><Atomo x={205 + i * 110} y={900} r={26} color={PCOL} letra="P" tam={24} /></g>; })}
+          <RedFe T={T} x0={150} y0={880} filas={3} color={() => '#6d625a'} />
+          {Array.from({ length: 7 }, (_, i) => { const o = kprog(T, K.Es + 2.4 + i * 0.12, K.Es + 2.8 + i * 0.12); return <g key={i} opacity={o}><Atomo x={205 + i * 110} y={800} r={26} color={PCOL} letra="P" tam={24} /></g>; })}
           {(() => { const w = 900 * kprog(T, K.Es + 3.2, K.Es + 4.6, kEase.suave); return w > 0 && <g>
-            <rect x={90} y={800} width={w} height={60} rx={14} fill="#4c6a8c" stroke="#bfe8ff" strokeWidth={5} />
-            {w > 600 && <text x={540} y={842} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill="#fff">δ-FeOOH + fosfatos</text>}</g>; })()}
-          {[0, 1, 2].map((i) => { const t0 = K.Es + 4.4 + i * 0.5; const p = kprog(T, t0, t0 + 1.2); if (T < t0) return null; const yy = p < 0.5 ? klerp(560, 730, p * 2) : klerp(730, 560, (p - 0.5) * 2);
-            return <Mol key={i} tipo="o2" x={300 + i * 230} y={yy} s={0.6} rot={T * 50} />; })}
+            <rect x={90} y={700} width={w} height={60} rx={14} fill="#4c6a8c" stroke="#bfe8ff" strokeWidth={5} />
+            {w > 600 && <text x={540} y={742} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill="#fff">δ-FeOOH + fosfatos</text>}</g>; })()}
+          {[0, 1, 2].map((i) => { const t0 = K.Es + 4.4 + i * 0.5; const p = kprog(T, t0, t0 + 1.2); if (T < t0) return null; const yy = p < 0.5 ? klerp(470, 630, p * 2) : klerp(630, 470, (p - 0.5) * 2);
+            return <Mol key={i} tipo="o2" x={460 + i * 200} y={yy} s={0.6} rot={T * 50} />; })}
         </SvgCapa>
       </Escena>
       {/* 9 · el costo */}
@@ -264,7 +264,7 @@ function Oxido() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿mugre?" x={300} y={440} tam={52} />
       <Chip T={T} at={K.G + 2.4} until={K.Mi - 0.3} texto="óxido de hierro" y={1500} tam={50} borde={OXI2} />
       <Chip T={T} at={K.Mi + 0.3} until={K.Mi + 3.0} texto="en las rocas: óxido de hierro" y={1500} tam={40} borde={HEM} />
-      <Etq T={T} at={K.Mi + 0.5} until={K.Mi + 2.6} x={360} y={1180} texto="hematita · Fe₂O₃" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Mi + 0.5} until={K.Mi + 2.6} x={30} y={870} texto="hematita · Fe₂O₃" tam={27} color={KC.ink} />
       <Chip T={T} at={K.Mi + 3.4} until={K.Re - 0.3} texto="alto horno: le quita el oxígeno" y={1500} tam={38} borde={KC.orange} />
       <Chip T={T} at={K.Re + 0.3} until={K.Re + 2.4} texto="hierro + O₂ + H₂O" y={1500} tam={44} borde={ALOX} />
       <Chip T={T} at={K.Re + 3.0} until={K.Sa - 0.2} texto="los dos juntos → óxido" y={1500} tam={42} borde={OXI2} />

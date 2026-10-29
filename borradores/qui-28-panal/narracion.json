@@ -3,7 +3,7 @@
   "salida": "Shot Panal narrado.dc.html",
   "nota": "Shot Químico #28. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esto no es gelatina: es un vaso de agua que se tragó el polvito de un pañal." },
+    { "escena": "Gancho", "texto": "Esto no es gelatina: es un vaso de agua atrapada por el polvito de un pañal." },
     { "escena": "Que", "texto": "Ese polvo suele ser poliacrilato de sodio: cadenas larguísimas amarradas como una red." },
     { "escena": "Cargas", "texto": "Cada cadena trae cargas negativas y, junto a ellas, iones de sodio." },
     { "escena": "Repulsion", "texto": "Al entrar el agua, esas cargas se repelen y la red se estira como un resorte." },

@@ -55,7 +55,7 @@ function Voltimetro({ x, y, s = 1, texto = '0.0 V', brillo = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-135} y={-105} width={270} height={210} rx={30} fill={KC.orange} stroke={KC.ink} strokeWidth={8} />
     <rect x={-105} y={-78} width={210} height={98} rx={12} fill="#1b2a20" stroke={KC.ink} strokeWidth={5} />
-    <text x={0} y={-8} textAnchor="middle" style={{ font:`700 62px ${KF.mono}` }} fill="#7dff9a" opacity={0.4 + 0.6 * brillo}>{texto}</text>
+    <text x={0} y={-8} textAnchor="middle" style={{ font:`700 ${texto.length > 5 ? 50 : 62}px ${KF.mono}` }} fill="#7dff9a" opacity={0.4 + 0.6 * brillo}>{texto}</text>
     <circle cx={-70} cy={70} r={16} fill={KC.ink} /><circle cx={70} cy={70} r={16} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
     <text x={0} y={82} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>V</text>
   </g>;
@@ -317,7 +317,7 @@ function Limones() {
       <Chip T={T} at={K.Vo + 2.9} until={K.Da - 0.3} texto="ácido cítrico 4 % · Goodisman 2001" y={1500} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Da + 1.4} until={K.Da + 3.2} texto="5 limones en fila ≈ 2.5–3 V" y={1500} tam={42} borde={KC.red} />
       <Chip T={T} at={K.Da + 4.0} until={K.Ci - 0.3} texto="ese limón ya no se come" y={1500} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.Ci + 1.6} until={K.Ci + 3.8} x={380} y={820} texto="un poco gastado · pierde zinc" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 1.6} until={K.Ci + 3.8} x={380} y={730} texto="un poco gastado · pierde zinc" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ci + 3.9} until={K.Ou} texto="zinc + ácido → la energía" y={1500} tam={44} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
