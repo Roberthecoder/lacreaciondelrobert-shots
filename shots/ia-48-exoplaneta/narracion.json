@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Exoplaneta base narrada.dc.html",
+  "salida": "Shot Exoplaneta narrado.dc.html",
+  "nota": "Shot IA #48. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este planeta tus ojos nunca lo van a ver: solo se nota porque su estrella se apaga un poquito."
+    },
+    {
+      "escena": "Transito",
+      "texto": "Al pasar enfrente, tapa casi nada de su luz: como si de unos diez mil focos se apagara uno."
+    },
+    {
+      "escena": "Kepler",
+      "texto": "El telescopio Kepler midió el brillo de más de ciento cincuenta mil estrellas por cuatro años."
+    },
+    {
+      "escena": "Ruido",
+      "texto": "Juntó treinta y cinco mil señales posibles; las más débiles solían perderse."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si una máquina hallaba lo que se nos escapó?"
+    },
+    {
+      "escena": "Entrena",
+      "texto": "Christopher Shallue, de Google, y el astrónomo Andrew Vanderburg entrenaron una red neuronal con más de quince mil señales revisadas."
+    },
+    {
+      "escena": "Busca",
+      "texto": "En 2017 la pusieron a buscar en seiscientas setenta estrellas que ya tenían señales de planetas."
+    },
+    {
+      "escena": "Hallazgo",
+      "texto": "Junto a la estrella Kepler-90 halló uno escondido: Kepler-90i."
+    },
+    {
+      "escena": "Hallazgo",
+      "texto": "Probablemente es rocoso, da la vuelta en catorce días y se cree que pasa de cuatrocientos grados."
+    },
+    {
+      "escena": "Empate",
+      "texto": "Con él, Kepler-90 tiene ocho planetas, como el Sol. Hoy, ninguna otra estrella conocida tiene tantos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese parpadeo no es una falla: es un mundo entero pasando enfrente."
+    }
+  ]
+}

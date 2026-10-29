@@ -33,3 +33,12 @@ Revisión de reglas: cada cifra dice de qué es ✅; el hallazgo de más de 2 a�
    "**Probablemente es rocoso**, da la vuelta en catorce días y se cree que pasa de cuatrocientos grados." (Sube ~1 palabra; si hace falta, quitar "se cree que" no sirve: mejor recortar en otra línea.) En pantalla, la ficha puede decir "probablemente rocoso".
 2. **#8 "estrellas que ya tenían planetas" (⚠️ leve).** Eran sistemas con varios planetas **o candidatos** ya detectados. Propuesta de voz:
    "En 2017 la pusieron a buscar en seiscientas setenta estrellas **donde ya se habían detectado varios planetas posibles**." (o más corto: "…estrellas que ya tenían **señales de planetas**.")
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Probablemente es rocoso, da la vuelta en catorce días y se cree que pasa de cuatrocientos grados.» (chip "probablemente rocoso") ✅
+- «…seiscientas setenta estrellas que ya tenían señales de planetas.» (chip "670 estrellas con señales de planetas") ✅
+- «unos diez mil focos» ✅
+- Recortes de largo en las líneas 0, 2, 5, 7 y 10 sin datos nuevos ("telescopio Kepler · NASA" sigue en pantalla) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
