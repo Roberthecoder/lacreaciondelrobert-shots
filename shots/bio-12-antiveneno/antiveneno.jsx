@@ -66,9 +66,9 @@ function Frasco({ x, y, s = 1, rot = 0, caballo = 0, texto = 'antialacrán' }) {
     <path d="M -50 -204 L -50 -170 Q -110 -150 -110 -100 L -110 60 Q -110 90 -80 90 L 80 90 Q 110 90 110 60 L 110 -100 Q 110 -150 50 -170 L 50 -204 Z" fill="rgba(220,240,255,.75)" stroke={KC.ink} strokeWidth={9} />
     <path d="M -100 40 Q 0 10 100 40 L 100 60 Q 100 82 78 82 L -78 82 Q -100 82 -100 60 Z" fill="#fbfbf6" stroke="rgba(0,0,0,.2)" strokeWidth={3} />
     <rect x={-96} y={-120} width={192} height={130} rx={10} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
-    <text x={0} y={-82} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill={KC.ink}>FABOTERÁPICO</text>
-    <text x={0} y={-52} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.red}>{texto}</text>
-    {caballo > 0 && <g opacity={caballo} transform="translate(0 -6) scale(0.085)"><Caballo T={0} x={0} y={0} /></g>}
+    <text x={0} y={-90} textAnchor="middle" style={{ font:`900 21px ${KF.texto}` }} fill={KC.ink}>FABOTERÁPICO</text>
+    <text x={0} y={-64} textAnchor="middle" style={{ font:`700 19px ${KF.mono}` }} fill={KC.red}>{texto}</text>
+    {caballo > 0 && <g opacity={caballo} transform={`translate(6 4) scale(${0.085 * (0.6 + 0.4 * caballo)})`}><Caballo T={0} x={0} y={0} /></g>}
     <path d="M -86 -150 L -86 30" stroke="rgba(255,255,255,.7)" strokeWidth={10} strokeLinecap="round" />
   </g>;
 }
@@ -110,7 +110,7 @@ function Anticuerpo({ T, x, y, s = 1, rot = 0, fc = 1, migas = 0, puntas = 0 }) 
       <rect x={-34} y={0} width={30} height={200} rx={15} fill={AC_H} stroke={KC.ink} strokeWidth={6} />
       <rect x={4} y={0} width={30} height={200} rx={15} fill={AC_H} stroke={KC.ink} strokeWidth={6} />
     </g>}
-    {migas > 0 && Array.from({ length: 12 }, (_, i) => { const bx = (R() - 0.5) * 60, by = 20 + R() * 170, dx = (R() - 0.5) * 260, dy = 120 + R() * 260;
+    {migas > 0 && Array.from({ length: 12 }, (_, i) => { const bx = (R() - 0.5) * 60, by = 20 + R() * 170, dx = (R() - 0.5) * 520, dy = (R() - 0.6) * 220;
       return <rect key={i} x={bx + dx * migas - 9} y={by + dy * migas - 9} width={18 + R() * 10} height={18} rx={7} fill={AC_H} stroke={KC.ink} strokeWidth={4}
         opacity={1 - migas * 0.85} transform={`rotate(${migas * (R() * 200 - 100)} ${bx + dx * migas} ${by + dy * migas})`} />; })}
   </g>;
@@ -171,7 +171,7 @@ function Antiveneno() {
     Es: CUES.Estudio, Re: CUES.Resultado, Fd: CUES.FDA, Mx: CUES.Mexico, Mu: CUES.Muertes, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   // gancho: el alacrán cruza desde el cuadro 0 y el caballo asoma
-  const alaX = klerp(-160, 330, kprog(T, K.G, K.G + 2.4, kEase.sale));
+  const alaX = klerp(40, 560, kprog(T, K.G, K.G + 2.4, kEase.sale));
   const asoma = kprog(T, K.G + 2.6, K.G + 3.3, kEase.rebote);
   // dosis: la jeringa llega al cuello y empuja en escalones
   const HX = 600, HY = 1180, HS = 1.05;
@@ -189,9 +189,9 @@ function Antiveneno() {
   const sanoDe = (c, i) => c.g === 0 ? kprog(T, crono0 + 0.4 + (i % 8) * 0.38, crono0 + 0.8 + (i % 8) * 0.38) : (i === 10 ? kprog(T, crono0 + 2.6, crono0 + 3.0) : 0);
   // México: alacranes en el centro y el Pacífico, y Jalisco
   const MAPX = 40, MAPY = 690, gdl = mxProy(-103.35, 20.67);
-  const R = krng(12);
-  const puntos = Array.from({ length: 26 }, () => { const lon = -106 + R() * 9, lat = 17 + R() * 7; return mxProy(lon, lat); })
-    .filter(([px, py]) => py > 330 && px > 300);
+  // estados con más casos en el boletín (centro y Pacífico), un alacrán por estado (esquemático)
+  const puntos = [[-101.2, 21.0], [-99.9, 17.6], [-104.4, 21.6], [-101.4, 19.4], [-99.2, 18.8], [-103.8, 19.3], [-104.9, 24.2], [-98.0, 18.6], [-99.7, 19.5],
+    [-107.6, 25.0], [-102.7, 22.9], [-96.6, 17.0], [-100.2, 20.7], [-110.6, 29.3], [-102.3, 21.9]].map(([a, b]) => mxProy(a, b));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el suero y el alacrán */}
@@ -201,7 +201,7 @@ function Antiveneno() {
           <ellipse cx={540} cy={1185} rx={520} ry={40} fill="rgba(0,0,0,.12)" />
           <Frasco x={380} y={1090} s={1.25} rot={Math.sin(T * 2.2) * 3} />
           {asoma > 0 && <g transform={`translate(${klerp(1250, 820, asoma)} 1190)`}><Caballo T={T} x={0} y={0} s={0.85} /></g>}
-          <Alacran T={T} x={alaX} y={1185} s={0.9} camina={1 - kprog(T, K.G + 2.4, K.G + 2.6)} />
+          <Alacran T={T} x={alaX} y={1185} s={1.2} camina={1 - kprog(T, K.G + 2.4, K.G + 2.6)} />
         </CapaAV>
       </Escena>
       {/* 1–2 · dosis y meses: el caballo aprende */}
@@ -273,8 +273,7 @@ function Antiveneno() {
           <text x={785} y={700} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>con placebo</text>
           <line x1={540} y1={680} x2={540} y2={1180} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" />
         </CapaAV>
-        <Cronometro T={T} at={crono0} until={K.Fd - 0.3} factor={4 * 3600 / cronoDur} x={330} y={470} etiqueta="TIEMPO DESDE EL SUERO" />
-        {T > crono0 + cronoDur && <Chip T={T} at={crono0 + cronoDur} until={K.Fd - 0.3} texto="4 h" x={330} y={570} tam={34} borde={KC.mint} />}
+        <Cronometro T={T} at={crono0} until={K.Fd - 0.3} factor={4 * 3600 / (K.Fd - 0.25 - crono0)} x={330} y={470} etiqueta="TIEMPO DESDE EL SUERO" />
       </Escena>
       {/* 9 · FDA 2011 */}
       <Escena T={T} a={K.Fd} b={K.Mx} zoom={0.05}>
@@ -296,9 +295,9 @@ function Antiveneno() {
         <CapaAV>
           <MapaMexico x={MAPX} y={MAPY} ancho={1000} conCA={false}>
             {puntos.map(([px, py], i) => { const p = kprog(T, K.Mx + 0.4 + i * 0.09, K.Mx + 0.7 + i * 0.09, kEase.rebote);
-              return p > 0 && <g key={i} transform={`translate(${px} ${py}) scale(${0.28 * p}) rotate(${(i * 47) % 360})`}><Alacran T={T} x={0} y={0} camina={0.3} /></g>; })}
+              return p > 0 && <g key={i} transform={`translate(${px} ${py}) scale(${0.24 * p}) rotate(${(i * 47) % 360})`}><Alacran T={T} x={0} y={0} camina={0.3} /></g>; })}
             {(() => { const p = kprog(T, K.Mx + 3.0, K.Mx + 3.4, kEase.rebote); return p > 0 && <g transform={`translate(${gdl[0]} ${gdl[1]})`}>
-              <circle r={46 * p + Math.sin(T * 6) * 4} fill="none" stroke={KC.red} strokeWidth={10} />
+              <circle r={Math.max(1, 46 * p + Math.sin(T * 6) * 4)} fill="none" stroke={KC.red} strokeWidth={10} />
               <path d={`M 0 0 L -24 -60 A 26 26 0 1 1 24 -60 Z`} fill={KC.red} stroke={KC.ink} strokeWidth={6} transform={`scale(${p})`} />
             </g>; })()}
           </MapaMexico>
@@ -331,21 +330,21 @@ function Antiveneno() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 2.2} until={K.Do - 0.3} texto="¿lo hizo una máquina?" x={320} y={520} tam={42} />
       <Chip T={T} at={K.G + 3.0} until={K.Do - 0.3} texto="los anticuerpos: de un caballo" y={1500} tam={42} borde={CAB} />
-      <Etq T={T} at={K.G + 0.6} until={K.G + 2.6} x={560} y={1265} texto="alacrán (Centruroides)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 0.6} until={K.G + 2.8} x={90} y={1440} texto="alacrán · Centruroides" it tam={34} color={KC.ink} />
       <Medidor T={T} at={K.Do + 1.0} until={K.Ap - 0.2} valor={(t) => escalon(t)} etiqueta="dosis de veneno" texto={(v) => (v < 0.3 ? 'poquito' : v < 0.8 ? 'un poco más' : 'más')} x={90} y={1440} color={ALA} />
       <Chip T={T} at={K.Ap + 0.4} until={K.Pl - 0.3} texto="anticuerpos contra el veneno" y={1500} tam={40} borde={AC_H} />
       <Chip T={T} at={K.Pl + 1.0} until={K.An - 0.3} texto="plasma = lo rico en anticuerpos" y={1500} tam={38} borde={PLASMA} />
       <Etq T={T} at={K.Pl + 1.2} until={K.An - 0.3} x={490} y={640} texto="plasma" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Pl + 2.2} until={K.An - 0.3} x={640} y={1290} texto="el resto regresa" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.An + 0.6} until={K.Pe - 0.2} x={880} y={720} texto="brazos: atrapan" tam={32} color={KC.gold2} />
+      <Etq T={T} at={K.An + 0.6} until={K.Pe - 0.2} x={1040} y={600} texto="brazos: atrapan" lado="izq" tam={32} color={KC.gold2} />
       <Etq T={T} at={K.An + 1.0} until={K.Pe + 1.3} x={650} y={1100} texto="base (Fc)" tam={32} color={AC_H} />
       <Chip T={T} at={K.An + 2.0} until={K.Pe - 0.2} texto="toxina atrapada = toxina neutralizada" y={1520} tam={34} borde={TOX} />
       <Etq T={T} at={K.Pe + 0.5} until={K.Pe + 1.4} x={960} y={1050} texto="pepsina" lado="izq" tam={34} color={PEP} />
       <Chip T={T} at={K.Pe + 2.2} until={K.Pr - 0.2} texto="F(ab')₂ · faboterápico" y={1520} tam={46} borde={KC.gold2} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.2} anio="2004–05" quien="Tucson, Arizona · 15 niños" revista="Boyer et al. · NEJM 2009 · doble ciego" y={460} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.2} anio="2004" quien="y 2005 · Tucson, Arizona" revista="15 niños · doble ciego · NEJM 2009" y={430} />
       <Chip T={T} at={K.Re + 3.6} until={K.Fd - 0.3} texto="suero: 8 de 8 · placebo: 1 de 7" y={1500} tam={42} borde={KC.mint} />
       <Chip T={T} at={K.Fd + 0.9} until={K.Mx - 0.3} texto="Anascorp · hecho en México" y={1500} tam={42} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Mx + 0.4} until={K.Mu - 0.3} valor={300} dur={1.4} prefijo="+" sufijo=" mil" etiqueta="intoxicaciones por alacrán · México 2025" y={500} tam={140} color={KC.red} />
+      <NumeroGigante T={T} at={K.Mx + 0.4} until={K.Mu - 0.3} valor={300} dur={1.4} prefijo="+" sufijo=" mil" etiqueta="intoxicaciones · 2025" x={380} y={500} tam={130} color={KC.red} />
       <Chip T={T} at={K.Mx + 3.2} until={K.Mu - 0.3} texto="Jalisco · casi 48 mil" x={330} y={1480} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Mx + 3.6} until={K.Mu - 0.3} texto="Boletín Epidemiológico SSA · preliminar" y={1590} tam={26} mono borde="#9aa3b5" />
       <Chip T={T} at={K.Mu + 3.6} until={K.Ci - 0.3} texto="mejor atención + faboterápicos + acceso a salud" y={1500} tam={30} borde={KC.mint} />
