@@ -41,7 +41,7 @@ Descripción:
 Esos puntos blancos del hongo de los cuentos no son manchas: son pedazos de un cascarón roto.
 Amanita muscaria, el hongo rojo con puntos blancos, empieza como un "botón" envuelto entero en una capa blanca: el velo universal. Cuando crece, el sombrero se expande como un globo, pero el velo se queda del mismo tamaño y se rompe. Sus pedacitos quedan sobre el sombrero (las verrugas) y el resto queda abajo, en bandas sobre el bulbo de la base del pie. Por eso a veces la lluvia los lava y el sombrero queda liso; así, sin puntos, se puede confundir con otros hongos (en Europa se ha confundido con Amanita caesarea, que es comestible).
 En México se ha registrado en bosques de pino y encino, por ejemplo en Ixtlán de Juárez, Oaxaca (como Amanita muscaria var. flavivolvata). Es un hongo micorrízico: sus hifas envuelven las raíces de los árboles y les ayudan a conseguir nutrientes; a cambio, el árbol les da azúcares que fabrica con la fotosíntesis.
-Es venenoso. Contiene ácido iboténico (parecido al glutamato, excita el sistema nervioso) y muscimol (parecido al GABA, lo frena), y sus toxinas resisten el calor: cocinarlo puede no quitarle el peligro. En octubre de 2018, en Minnesota (EUA), un hombre cocinó unos hongos que se parecían a uno comestible de su país natal; eran Amanita muscaria var. guessowii. A las 2–3 horas tuvo vómito, sudor y confusión, y necesitó respirador cuatro días; se recuperó (MMWR, 2019). Y su relación con las moscas es antigua: se usaba en leche para atraerlas y atontarlas.
+Es venenoso. Contiene ácido iboténico (parecido al glutamato, excita el sistema nervioso) y muscimol (parecido al GABA, lo frena), y sus toxinas resisten el calor: cocinarlo puede no quitarle el peligro. En octubre de 2018, en Minnesota (EUA), un hombre cocinó unos hongos que se parecían a uno que conocía de su país natal (Birmania); eran Amanita muscaria var. guessowii. A las 2–3 horas tuvo vómito, sudor y confusión, y necesitó respirador cuatro días; se recuperó (MMWR, 2019). Y su relación con las moscas es antigua: se usaba en leche para atraerlas y atontarlas.
 Admíralo, pero no te lo comas. Si alguien se siente mal después de comer hongos silvestres, que vaya a urgencias y lleve el hongo o los restos.
 El dibujo es esquemático. No es consejo médico.
 Fuentes:
@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-El hongo más reconocible de los cuentos explica bien un rasgo que sirve para identificar amanitas: el velo universal.
+Uno de los hongos más reconocibles de los cuentos explica bien un rasgo que sirve para identificar amanitas: el velo universal.
 En Amanita muscaria, el cuerpo joven está envuelto por completo en un velo blanco. Al expandirse el sombrero, el velo se rompe: sus restos quedan como verrugas en el sombrero y como bandas sobre el bulbo de la base. Esas verrugas se pueden lavar con lluvia fuerte; sin ellas, el hongo se ha confundido con especies comestibles como Amanita caesarea (EJCRIM, 2021).
 Es una especie ectomicorrízica (en México, registrada en bosques de pino y encino de Oaxaca) y es tóxica: contiene ácido iboténico y muscimol, termoestables. En 2018, en Minnesota, un caso por confusión requirió ventilación mecánica cuatro días y el paciente se recuperó (MMWR, 2019).
 Por qué importa: los rasgos "de cuento" no siempre están, y cocinar no garantiza seguridad. La identificación debe hacerla un experto.

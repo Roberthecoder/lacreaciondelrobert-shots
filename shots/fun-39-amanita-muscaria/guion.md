@@ -29,7 +29,7 @@
 
 **Música:** cama grave continua, suave y de bosque (sin golpe marcado), que se tensa desde "¿Y es venenoso?" y se relaja en "se recuperó". Efectos en el mismo cuadro: brote del hongo, toque de la lupa, crujido del velo al romperse, gotas de lluvia y cada punto que cae, viento en el bosque, pulsos de nutrientes por las hifas, sello "VENENOSO", chispas de las neuronas, burbujas de la olla, tics del cronómetro y del respirador, zumbido de moscas.
 
-Barras de escala (siempre visibles salvo en «¿Y es venenoso?», 1,3 s): 5 cm (hongo; 32 u del dibujo = 1 cm, sombrero adulto ≈ 10 cm), 2 cm (botón, sigue el zoom), 500 km (mapa), 100 µm (raíz), 0,5 µm (sinapsis, esquemático), 10 cm (olla), 50 cm (hospital), 5 cm (plato).
+Barras de escala (siempre visibles salvo en «¿Y es venenoso?», 1,3 s): 5 cm (hongo; 32 u del dibujo = 1 cm, sombrero adulto ≈ 10 cm), 2 cm (botón, sigue el zoom), 500 km (mapa), 100 µm (raíz), 0.5 µm (sinapsis, esquemático: en pantalla dice «0.5 µm (esquema)»), 10 cm (olla), 50 cm (hospital), 5 cm (plato).
 
 ## Robert en pantalla
 

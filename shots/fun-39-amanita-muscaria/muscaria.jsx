@@ -368,7 +368,7 @@ function MuscariaShot() {
       <EscalaHongo T={T} at={K.B} until={K.Mx} s={1.35} />
       <BarraEscala T={T} at={K.Mx} until={K.R} texto="500 km" largo={114} />
       <BarraEscala T={T} at={K.R} until={K.P} texto="100 µm" largo={90} />
-      <BarraEscala T={T} at={K.Tx} until={cocina} texto="0,5 µm" largo={200} />
+      <BarraEscala T={T} at={K.Tx} until={cocina} texto="0.5 µm (esquema)" largo={200} />
       <BarraEscala T={T} at={cocina} until={K.E} texto="10 cm" largo={170} />
       <EscalaHongo T={T} at={K.E} until={K.Re} s={0.95} />
       <BarraEscala T={T} at={K.Re} until={K.Mo} texto="50 cm" largo={150} />

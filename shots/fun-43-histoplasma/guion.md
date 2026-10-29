@@ -46,6 +46,7 @@ Barras de escala: 1 m (cueva), 1 cm (guano), 10 µm (esporas, levadura y macróf
    > "the microconidia are tiny, smooth structures that are 2 to 4 μm in diameter and are the infectious form."
    > "tiny 2- to 4-μm oval budding yeasts"
    > Dibujo de las conidias según la verificación: microconidias lisas de 2–4 µm a los lados de las hifas y macroconidias tuberculadas de 8–15 µm.
+   > "Two types of conidia are produced on the hyphae."; "The macroconidia or tuberculate conidia are 8 to 15 μm in diameter and have a thick wall … with distinctive projections on the surface."
    > "Caves can be highly contaminated by H. capsulatum that thrives on the bat guano"
    > "Dissemination of H. capsulatum within macrophages is common"
    > "The vast majority of infected persons have either no symptoms or a very mild illness"
