@@ -249,7 +249,7 @@ function GatoGoogle() {
           </g>
           {Array.from({ length: 12 }, (_, i) => { const c = i % 4, rr = Math.floor(i / 4), t0 = K.Me + 2.8 + i * 0.09, o = kprog(T, t0, t0 + 0.3);
             const gato = TIPOS[i] === 'gato', late = gato ? 1 + 0.06 * Math.max(0, Math.sin((T - K.Me) * 5)) * kprog(T, K.Me + 4.4, K.Me + 4.8) : 1;
-            return <g key={i} opacity={o} transform={`translate(${180 + c * 240} ${720 + rr * 170}) scale(${late})`}>
+            return <g key={i} opacity={o} transform={`translate(${180 + c * 240} ${745 + rr * 165}) scale(${late})`}>
               {gato && T > K.Me + 4.4 && <rect x={-112} y={-86} width={224} height={172} rx={16} fill="none" stroke={KC.yellow} strokeWidth={10} />}
               <Miniatura x={0} y={0} w={196} tipo={TIPOS[i]} borde={5} /></g>; })}
         </>)}

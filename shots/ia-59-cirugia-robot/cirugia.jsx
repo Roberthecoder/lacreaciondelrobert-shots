@@ -238,7 +238,7 @@ function Cirugia() {
       <Escena T={T} a={K.F} b={K.V}>
         <FondoLunares color={KC.yellow} />
       </Escena>
-      {T < F2 + 0.5 && <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, F2 - 0.1, F2 + 0.3) }}><RejillaPuntadas p={kprog(T, K.F + 1.6, K.F + 4.2, kEase.suave)} /></div>}
+      {T >= K.F - 0.45 && T < F2 + 0.5 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.F - 0.45, K.F + 0.05) * (1 - kprog(T, F2 - 0.1, F2 + 0.3)) }}><RejillaPuntadas p={kprog(T, K.F + 1.6, K.F + 4.2, kEase.suave)} /></div>}
       <Chip T={T} at={K.F + 0.2} until={F2 - 0.2} texto={`corregidas por una persona: ${Math.round(29 * kprog(T, K.F + 1.6, K.F + 4.2, kEase.suave))} de 86`} x={540} y={470} tam={34} borde={KC.red} />
       <BarrasTiempo T={T} at={F2 + 0.2} until={K.V - 0.2} top={620} />
 

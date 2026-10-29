@@ -43,3 +43,13 @@
    En pantalla, poner la cita con su frase previa: «…when we create digital beings that are more intelligent than ourselves. We have no idea whether we can stay in control.»
 
 Nota de duración: las correcciones 2–4 añaden ~20–25 caracteres netos cada una; recortar otra frase (p. ej. «En Caltech, en 1982, Hopfield…» → «En 1982, Hopfield…») para seguir en 61–62 s.
+
+## Re-verificación (29 oct 2026, coordinador)
+- Gancho «…Y con su física se ganó un Nobel por la IA.» (Nobel de Física 2024, "machine learning with artificial neural networks") ✅
+- «En mil novecientos ochenta y dos, Hopfield cambió átomos por pixeles blancos o negros.» (Caltech queda en la tarjeta) ✅
+- «…y casi siempre la recupera.» ("often") ✅
+- «Hinton y un colega usaron la física estadística y una ecuación del siglo diecinueve: la de Boltzmann. Su máquina aprendía con ejemplos.» (chips "Hinton + Sejnowski · 1985", "distribución de Boltzmann · siglo XIX"; Ackley, Hinton y Sejnowski 1985) ✅
+- «Y Hinton advirtió: si creamos máquinas más inteligentes que nosotros, no sabemos si podremos mantener el control.» (discurso del banquete, 10 dic 2024, cita completa en pantalla) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

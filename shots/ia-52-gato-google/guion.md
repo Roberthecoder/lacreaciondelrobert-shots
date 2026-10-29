@@ -1,29 +1,48 @@
 # Shot IA #52 · El gato que una computadora aprendió sola
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #52 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, pendiente de verificación independiente. Sin animación todavía. Voz pendiente de aprobación de Robert.
+- **Estado (29 oct 2026):** guion verificado y corregido (2 ⚠️ atendidas: el año va como «estudio de 2012» y el 70 % aclara que fue «con fotos con nombre»), animación, Robert en pantalla, música y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert**.
 - **Formato:** N1 "Por dentro" (de la pantalla de YouTube a las neuronas de la red y de regreso) + N2 "El número" (10 millones · 1,000 computadoras · 3 días).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: la cara borrosa del "gato" que dibuja la neurona (Figura 6 del artículo).
-- **Duración:** voz 948 caracteres / 173 palabras (≈ 57.7 s) + cierre 3.5 s → **≈ 61.2 s** en la base (estimar-escenas).
-- **Postura de la serie:** defensa con datos (un hito real del aprendizaje sin etiquetas) y su lado honesto: acertaba poco (15.8 %) y era chiquita frente a un cerebro. Todo es de **2012** y se dice.
+- **Duración:** voz 950 caracteres (≈ 57.9 s) + cierre 3.5 s → **61.4 s** en la base (estimar-escenas).
+- **Postura de la serie:** defensa con datos (un hito real del aprendizaje sin etiquetas) y su lado honesto: acertaba poco (15.8 %) y era chiquita frente a un cerebro. El estudio se publicó en **2012** (arXiv dic 2011) y se dice «estudio de 2012».
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esta cara borrosa no es un fantasma: es un gato. Lo dibujó una computadora a la que nadie le dijo qué es un gato. | Fondo oscuro "por dentro de la máquina"; desde el cuadro 0 una mancha gris borrosa se enfoca poco a poco en una cara de gato fantasmal (estilo de la Fig. 6, esquemática). Chip "lo que imaginó la red". |
-| 1 | Videos | En 2012, Google le mostró diez millones de imágenes de videos de YouTube, sin decirle qué había en ninguna. | Fondo brillante; una pantalla de video tipo reproductor que escupe cuadritos (un cuadro por video) a un embudo; contador "10,000,000 imágenes · 200×200 px"; etiquetas tachadas "¿gato? ¿perro? —". Chip "2012". |
-| 2 | Maquina | Era una red de mil millones de conexiones, en mil computadoras, durante tres días. | `NumeroGigante` que cambia: "1,000,000,000 conexiones" → "1,000 computadoras (16,000 núcleos)" → "3 días"; racks de servidores que se encienden. |
-| 3 | Neurona | Al final, una de sus neuronas se encendía con caras de gato. | Por dentro: `RedNeuronal` de capas; entra un cuadro con un gato y una sola neurona arriba se ilumina. |
+| 1 | Videos | En un estudio de 2012, Google le mostró diez millones de imágenes de YouTube, sin decirle qué mostraban. | Fondo cian; un reproductor de video genérico que cambia de cuadro y lanza cuadritos a una pila; contador "10,000,000" + "imágenes · 1 por video · 200 × 200 píxeles"; «etiqueta: gato» tachada. Chip "estudio publicado en 2012". |
+| 2 | Maquina | Era una red de mil millones de conexiones, en mil computadoras, durante tres días. | `NumeroGigante` que cambia: "1,000,000,000 conexiones" → "1,000 computadoras" + chip "16,000 núcleos" → "3 días" con tres soles; cinco racks de servidores que se encienden. |
+| 3 | Neurona | Al final, una de sus neuronas se encendía con caras de gato. | Por dentro: entra un cuadrito con un gato, una onda cruza la `RedNeuronal` y la neurona final se ilumina con la cara borrosa adentro; chip "1 neurona → «cara de gato»". |
 | 4 | Pregunta | ¿Cómo aprende algo que nadie le explicó? | **Re-gancho.** "?" gigante; Robert grande. |
-| 5 | Mecanismo | Su tarea: resumir cada imagen y volver a dibujarla. Le convenía guardar lo que más se repite, y en YouTube hay muchos gatos. | Imagen → se comprime en pocas casillas → se vuelve a dibujar (más borrosa). Luego una lluvia de cuadritos de YouTube donde se repiten gatitos. |
-| 6 | Estudio | Lo presentaron Quoc Le, Andrew Ng, Jeff Dean y su equipo en Escocia. / Otras neuronas aprendieron solas caras humanas y cuerpos. | `TarjetaEstudio` "2012 · Google y Stanford · Le, Ranzato, Monga, Devin, Chen, Corrado, Dean y Ng · ICML, Edimburgo". Después tres neuronas con su "cara" esquemática: gato, cara humana, cuerpo. |
-| 7 | Objetos | Con veintidós mil tipos de objetos, acertó setenta por ciento más que el mejor sistema previo, aunque solo dieciséis de cada cien. | Barras: "mejor sistema previo 9.3 %" contra "esta red 15.8 %" (chip "+70 % relativo"); `Cuadricula` de 100 donde se pintan 16. "ImageNet · 22,000 categorías". |
-| 8 | Cerebro | Y era chiquita: según Google, tu cerebro tiene unas cien mil veces más conexiones. | Comparativa: puntito "red: mil millones" contra cerebro gigante "~100 billones (100 trillion en inglés)". Nota "comparación muy aproximada". |
-| 9 | Cierre | Así que esta cara borrosa es un gato que nadie le enseñó: lo sacó de nuestros videos. | **Regreso a la imagen del inicio**: la misma cara borrosa, ahora dentro de un marco de reproductor de YouTube rodeada de miniaturas de gatos. |
+| 5 | Mecanismo | Su tarea: resumir cada imagen y redibujarla. Le convenía guardar lo más repetido, y en YouTube hay muchos gatos. | Imagen → 6 casillas («1 · resume») → la misma imagen redibujada, borrosa («2 · vuelve a dibujar»). Luego 12 cuadritos variados; los de gato laten con marco dorado: «lo que más se repite → se guarda» (ilustrativo). |
+| 6 | Estudio | Lo presentaron Quoc Le, Andrew Ng, Jeff Dean y su equipo en Escocia. / Otras neuronas aprendieron solas caras humanas y cuerpos. | `TarjetaEstudio` "2012 · Google y Stanford · Le, Ng, Dean y 5 más · congreso ICML, Edimburgo". Después tres caras borrosas esquemáticas que se enfocan: gato, cara humana, cuerpo. |
+| 7 | Objetos | Luego le dieron fotos con nombre: con veintidós mil tipos de objetos, acertó setenta por ciento más que el récord previo, aunque solo dieciséis de cada cien. | Chips "después: fotos con nombre" y "ImageNet · 22,000 tipos de objetos"; barras "mejor sistema previo 9.3 %" contra "esta red 15.8 %"; chip "+70 % relativo" con etiqueta chica "con ajuste usando fotos etiquetadas"; `Cuadricula` de 100 donde se pintan 16: "aciertos: 16 de cada 100". |
+| 8 | Cerebro | Y era chiquita: según Google, tu cerebro tiene unas cien mil veces más conexiones. | Puntito "la red" contra un cerebro grande; chips "≈ 100,000 × más conexiones" y "comparación muy aproximada (Google, 2012)". |
+| 9 | Cierre | Esta cara borrosa es un gato que nadie le enseñó: salió de nuestros videos. | **Regreso a la imagen del inicio**: la misma cara borrosa en el mismo lugar, ahora dentro de un marco de reproductor con barra roja, rodeada de cuadritos de gatos, sobre fondo amarillo; chip "aprendido de videos sin etiquetas". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua con zumbido de servidores; cada cuadrito que cae al embudo es un tic; los racks se encienden con un "clac" ascendente; la neurona que se ilumina hace un "ding"; la compresión/reconstrucción suena como un barrido; un maullido sintético muy suave (generado, no grabado) cuando aparece el gato del cierre.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Cómo aprende algo que nadie le explicó?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` | «no es un fantasma: es un gato» (cuadro 0) |
+| 2 | 9.8 | 12.9 | 04_bajando_lentes | `arriba-der` | «sin decirle qué mostraban» |
+| 3 | 18.7 | 21.8 | 13_senalando_arriba | `izq-alto` | señala la neurona que se enciende con caras de gato |
+| 4 | 22.0 | 25.7 | 07_pensativo_puno | `grande` | «¿Cómo aprende algo que nadie le explicó?» |
+| 5 | 27.8 | 31.0 | 06_pensativo_menton | `izq-alto` | «le convenía guardar lo más repetido» |
+| 6 | 35.7 | 38.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | «otras neuronas aprendieron solas caras humanas y cuerpos» |
+| 7 | 45.6 | 48.2 | 10_serio_molesto | `izq-alto` | «aunque solo dieciséis de cada cien» |
+| 8 | 48.6 | 53.1 | 11_sorprendido | `arriba-der` | «unas cien mil veces más conexiones» |
+| 9 | 53.7 | 57.8 | 13_senalando_arriba | `arriba-der` | «un gato que nadie le enseñó» |
+| — | 57.9 | 61.4 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 32.2 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.4 s
 
 ## Fuentes (abiertas en la fuente original el 29 oct 2026)
 
@@ -52,6 +71,8 @@
 - "Setenta por ciento más": mejora **relativa** (9.3 % → 15.8 %). "Dieciséis de cada cien" redondea 15.8 %.
 - Para ImageNet la red se ajustó después con imágenes etiquetadas (preentrenamiento sin etiquetas + ajuste); la voz no dice que eso fuera sin etiquetas.
 - "Mil computadoras" = "1,000 machines (16,000 cores)"; los 16,000 núcleos van en pantalla.
+- "Estudio de 2012": el artículo se subió a arXiv el 29 dic 2011 (entrenamiento en 2011) y se presentó en ICML 2012; por eso no se dice "en 2012 le mostró".
+- Si alguna vez se pone el % de la neurona de gato en pantalla: "≈ 75 %" (74.8 % en el texto, 74.6 % en una fila de la Tabla 1), con el 64.8 % de adivinar al azar.
 - "Google le mostró": el trabajo fue de Google con Stanford (Andrew Ng era profesor visitante); se dice en la tarjeta.
 - La cara del gato del gancho y del cierre es un dibujo esquemático inspirado en la Figura 6, no la imagen original.
 - No se compara con modelos de hoy (no se verificó una cifra actual en fuente primaria).

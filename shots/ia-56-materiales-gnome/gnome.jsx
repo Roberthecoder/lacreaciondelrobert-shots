@@ -318,8 +318,8 @@ function Gnome() {
       <TituloArticulo T={T} at={K.Co + 0.2} until={K.Co + 4.2} tacha={K.Co + 1.6} y={400} />
       <Sello T={T} at={K.Co + 0.9} until={K.Co + 4.2} texto="CORRECCIÓN" sub="Nature · enero 2026" x={760} y={1110} />
       <Marcador T={T} at={K.Co + 0.3} until={K.B - 0.2} tacha={K.Co + 2.2} y={840} />
-      <Chip T={T} at={K.Co + 4.4} until={K.B - 0.2} texto="nuevos para su base de datos ✔" x={540} y={520} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.Co + 5.6} until={K.B - 0.2} texto="¿para la ciencia? no necesariamente" x={540} y={1130} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Co + 4.4} until={K.B - 0.2} texto="nuevos para su base de datos ✔" x={540} y={1075} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.Co + 5.6} until={K.B - 0.2} texto="¿para la ciencia? no necesariamente" x={540} y={1170} tam={38} borde={KC.red} />
 
       {/* 9 · balance */}
       <Escena T={T} a={K.B} b={K.C}>
@@ -360,7 +360,7 @@ function Gnome() {
         [CUES.Pregunta + 0.05, CUES.Critica + 0.4, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Critica + 3.0, CUES.Critica + 5.4, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Revueltos + 0.6, CUES.Correccion - 0.15, 'avatar_04_bajando_lentes', 'izq-alto'],
-        [CUES.Correccion + 2.6, CUES.Correccion + 4.2, 'avatar_11_sorprendido', 'arriba-der'],
+        [CUES.Correccion + 4.4, CUES.Balance - 0.15, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Balance + 0.3, CUES.Cierre - 0.15, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Cierre + 0.5, CUES.Outro - 0.1, 'avatar_13_senalando_arriba', 'arriba-der']]} />
       <MarcaAgua T={T} tema="ia" num="56" hasta={K.Ou} />
