@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Antiveneno base narrada.dc.html",
+  "salida": "Shot Antiveneno narrado.dc.html",
+  "nota": "Shot Biotecnológico #12. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese suero contra el alacrán no salió de un laboratorio: salió de un caballo."
+    },
+    {
+      "escena": "Dosis",
+      "texto": "Al caballo le inyectan poquito veneno de alacrán, cada vez un poco más."
+    },
+    {
+      "escena": "Aprende",
+      "texto": "Su cuerpo aprende y llena su sangre de anticuerpos."
+    },
+    {
+      "escena": "Plasma",
+      "texto": "Le sacan sangre, separan el plasma y le regresan el resto."
+    },
+    {
+      "escena": "Anticuerpo",
+      "texto": "Cada anticuerpo es una Y: con las puntas de sus brazos atrapa las toxinas."
+    },
+    {
+      "escena": "Pepsina",
+      "texto": "Con una enzima, la pepsina, le cortan la base: quedan solo los brazos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero de verdad funciona, o es pura fe?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2004 y 2005, en Tucson, Arizona, lo probaron en 15 niños graves."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Los 8 que lo recibieron se aliviaron en menos de 4 horas; con placebo, solo uno de 7."
+    },
+    {
+      "escena": "FDA",
+      "texto": "En 2011 lo aprobó Estados Unidos: es un suero mexicano."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "Y aquí hace falta: en 2025 hubo más de 300 mil intoxicaciones por alacrán; casi 48 mil en Jalisco."
+    },
+    {
+      "escena": "Muertes",
+      "texto": "En los setenta morían unas 500 personas al año; un estudio de 2020 contó menos de 50."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Si te pica un alacrán, corre al centro de salud: tu antídoto salió de un caballo."
+    }
+  ]
+}

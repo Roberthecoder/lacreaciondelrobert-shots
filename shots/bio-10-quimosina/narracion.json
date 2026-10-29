@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Quimosina base narrada.dc.html",
+  "salida": "Shot Quimosina narrado.dc.html",
+  "nota": "Shot Biotecnológico #10. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese cuajo no salió del estómago de un becerro: lo fabricó un microbio."
+    },
+    {
+      "escena": "Leche",
+      "texto": "Unas gotas en la leche y se vuelve cuajada."
+    },
+    {
+      "escena": "Becerro",
+      "texto": "El cuajo clásico se saca del cuarto estómago de becerros que todavía maman."
+    },
+    {
+      "escena": "Escasez",
+      "texto": "Pero no alcanzaban, y se buscaron otras fuentes."
+    },
+    {
+      "escena": "Enzima",
+      "texto": "Lo que cuaja es una enzima: la quimosina."
+    },
+    {
+      "escena": "Micelas",
+      "texto": "En la leche, la caseína flota en bolitas, las micelas, con pelitos."
+    },
+    {
+      "escena": "Pelitos",
+      "texto": "Esos pelitos son kappa-caseína, y no dejan que las bolitas se peguen."
+    },
+    {
+      "escena": "Tijera",
+      "texto": "La quimosina corta cada pelito justo entre el eslabón 105 y el 106."
+    },
+    {
+      "escena": "Cuajada",
+      "texto": "Sin pelitos, las micelas se juntan con el calcio y forman la cuajada."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo hace un microbio una enzima de becerro?"
+    },
+    {
+      "escena": "Gen",
+      "texto": "Le metieron el gen del becerro, y la bacteria fabrica quimosina idéntica."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En marzo de 1990, Estados Unidos aprobó la quimosina de bacterias: el primer ingrediente de ADN recombinante en su comida."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "Hoy también la hacen levaduras y mohos, y su uso es muy común."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu queso fresco pudo cuajarlo una enzima de becerro hecha por un microbio."
+    }
+  ]
+}
