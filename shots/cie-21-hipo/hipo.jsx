@@ -166,7 +166,7 @@ function Causa({ T, at, y, texto, children }) {
   return <g transform={`translate(540 ${y}) scale(${klerp(0.5, 1, e)}) translate(-540 ${-y})`} opacity={kprog(T, at, at + 0.15)}>
     <rect x={110} y={y - 112} width={860} height={224} rx={36} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
     <g transform={`translate(260 ${y})`}>{children}</g>
-    <text x={420} y={y + 18} style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>{texto}</text>
+    <text x={420} y={y + 18} style={{ font:`900 48px ${KF.texto}` }} fill={KC.ink}>{texto}</text>
   </g>;
 }
 // Etiqueta de varias líneas con línea punteada al punto (px, py) (dentro de svg).
@@ -218,7 +218,7 @@ function Hipo() {
         </Lienzo>
         <Lupa T={T} at={K.Diafragma + 0.2} until={K.Espasmo - 0.25} x={760} y={690} r={250} fx={300} fy={CG.y + 0.9 * 120} tinte={KC.yellow} etiqueta="POR DENTRO · PECHO"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1a0d14" />
-            <g transform={`translate(${r} ${r - 20}) scale(1.15)`}><Cuerpo uid="dl" dentro={1} camisa={KC.yellow} baja={0.5 + 0.5 * Math.sin((t - K.Diafragma) * 2.6 - 1.57)} /></g>
+            <g transform={`translate(${r} ${r - 90}) scale(1.15)`}><Cuerpo uid="dl" dentro={1} camisa={KC.yellow} baja={0.5 + 0.5 * Math.sin((t - K.Diafragma) * 2.6 - 1.57)} /></g>
             <text x={r} y={r * 2 - 40} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">diafragma</text>
             <text x={r - 120} y={r - 10} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={6} paintOrder="stroke">pulmón</text>
             <text x={r + 120} y={r - 10} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={6} paintOrder="stroke">pulmón</text></svg>} />
@@ -235,7 +235,7 @@ function Hipo() {
           <AireBaja C={CI} T={T} p={kprog(T, K.Sonido + 0.1, K.Sonido + 0.4) * (1 - kprog(T, K.Causas - 0.6, K.Causas))} hasta={-345} n={8} vel={1.8} />
           {T < K.Glotis && <FlechaRecta x1={230} y1={300} x2={470} y2={CI.y - CI.s * 425} p={kprog(T, tE + 0.4, tE + 0.8, kEase.sale) * (1 - kprog(T, K.Glotis - 0.6, K.Glotis - 0.2))} color={HP.aire} grosor={14} />}
           {T < K.Glotis && <FlechaRecta x1={540} y1={CI.y + CI.s * 60} x2={540} y2={CI.y + CI.s * 165} p={kprog(T, tE, tE + 0.15) * (1 - kprog(T, tE + 1.4, tE + 1.8))} color={KC.yellow} grosor={12} punta={28} />}
-          <Onomato T={T} at={tE} dur={1.0} x={830} y={1120} texto="¡TIC!" tam={110} color={KC.yellow} rot={6} />
+          <Onomato T={T} at={tE} dur={1.0} x={860} y={920} texto="¡TIC!" tam={110} color={KC.yellow} rot={6} />
           {T > tHip && T < K.Causas && <><OndasArco x={LAR[0] + 60} y={LAR[1]} ang={0} T={T} color={KC.yellow} largo={300} o={1 - kprog(T, K.Causas - 0.6, K.Causas)} />
             <OndasArco x={LAR[0] - 60} y={LAR[1]} ang={180} T={T} color={KC.yellow} largo={220} o={1 - kprog(T, K.Causas - 0.6, K.Causas)} /></>}
           <Onomato T={T} at={tHip} dur={2.2} x={780} y={600} texto="¡HIP!" tam={190} color={KC.yellow} rot={-6} />
@@ -313,7 +313,7 @@ function Hipo() {
       <Escena T={T} a={K.Record} b={K.Remedios}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          {(() => { const at = K.Record + 4.6, n = Math.max(1, Math.round(68 * kprog(T, at, at + 1.6, kEase.sale))), cam = at + (n / 68) * 1.6;
+          {(() => { const at = K.Record + 4.6, n = Math.round(klerp(1, 68, kprog(T, at, at + 1.6, kEase.sale))), cam = at + (n / 68) * 1.6;
             return T > K.Record + 0.6 && <g opacity={kprog(T, K.Record + 0.6, K.Record + 1.0)}><Calendario x={290} y={910} n={T < at ? 1 : n} cambio={T < at ? K.Record + 0.6 : (n === 68 ? at + 1.6 : T - 0.06)} T={T} etiqueta={T < at + 0.1 ? 'año' : 'años'} /></g>; })()}
           {T > K.Record + 2.0 && <g opacity={kprog(T, K.Record + 2.0, K.Record + 2.4)} transform={`translate(0 ${(1 - kprog(T, K.Record + 2.0, K.Record + 2.5, kEase.rebote)) * 200})`}>
             <PersonaSimple x={790} yPies={1210} alto={460} color={KC.blue} cara="o" />
@@ -330,7 +330,7 @@ function Hipo() {
         <FondoLunares color={KC.lilac} />
         <Lienzo>
           <Reloj x={300} y={800} r={190} vueltas={4 * kprog(T, K.Remedios + 0.3, K.Remedios + 2.3, kEase.suave)} />
-          {[0.4, 1.0, 1.6].map((t, i) => <Onomato key={i} T={T} at={K.Remedios + t} dur={0.5} x={300 + (i - 1) * 140} y={530} texto="hip" tam={70 - i * 14} color={KC.yellow} rot={-6 + i * 6} />)}
+          {[0.4, 1.0, 1.6].map((t, i) => <Onomato key={i} T={T} at={K.Remedios + t} dur={0.5} x={660 + i * 130} y={760 + i * 40} texto="hip" tam={70 - i * 14} color={KC.yellow} rot={-6 + i * 6} />)}
           {T > K.Remedios + 2.3 && <g transform={`translate(300 800) scale(${klerp(0.3, 1, kprog(T, K.Remedios + 2.3, K.Remedios + 2.7, kEase.rebote))})`}>
             <circle r={70} fill={KC.mint} stroke={KC.ink} strokeWidth={8} /><path d="M -32 2 L -8 26 L 34 -22" fill="none" stroke={KC.ink} strokeWidth={14} strokeLinecap="round" strokeLinejoin="round" /></g>}
           {T > K.Remedios + 2.9 && <g opacity={kprog(T, K.Remedios + 2.9, K.Remedios + 3.2)}>

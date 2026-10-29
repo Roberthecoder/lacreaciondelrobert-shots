@@ -178,9 +178,9 @@ function Sol8() {
       <Escena T={T} a={K.Cuenta} b={K.Pasado} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <TextoSvg x={540} y={460} tam={66} color={KC.texto}>150 MILLONES KM</TextoSvg>
-          <TextoSvg x={540} y={540} tam={66} color={KC.texto} o={kprog(T, K.Cuenta + 0.3, K.Cuenta + 0.6)}>÷ 300,000 KM/S</TextoSvg>
-          <g transform="translate(540 800)">
+          <TextoSvg x={540} y={430} tam={66} color={KC.texto}>150 MILLONES KM</TextoSvg>
+          <TextoSvg x={540} y={505} tam={66} color={KC.texto} o={kprog(T, K.Cuenta + 0.3, K.Cuenta + 0.6)}>÷ 300,000 KM/S</TextoSvg>
+          <g transform="translate(540 820)">
             <rect x={-40} y={-262} width={80} height={50} rx={12} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <circle r={200} fill={KC.paper} stroke={KC.ink} strokeWidth={12} />
             {Array.from({ length: 12 }, (_, i) => <line key={i} x1={0} y1={-186} x2={0} y2={i % 3 ? -168 : -150} stroke={KC.ink} strokeWidth={i % 3 ? 5 : 9} transform={`rotate(${i * 30})`} />)}
@@ -194,7 +194,7 @@ function Sol8() {
           <line x1={170} y1={1120} x2={910} y2={1120} stroke="rgba(22,18,15,.3)" strokeWidth={6} strokeDasharray="14 12" />
           <Foton x0={170} y0={1120} x1={910} y1={1120} p={kprog(T, t0Cu, t0Cu + dCuenta)} cola={0.18} grosor={12} color={KC.white} />
         </Lienzo>
-        <Chip T={T} at={t0Cu + dCuenta + 0.1} until={K.Pasado - 0.15} texto="≈ 8 min 20 s" x={540} y={1020} tam={54} borde={KC.yellow} />
+        <Chip T={T} at={t0Cu + dCuenta + 0.1} until={K.Pasado - 0.15} texto="≈ 8 min 20 s" x={540} y={1050} tam={54} borde={KC.yellow} />
       </Escena>
       {/* 4 · pasado: el Sol que ves vs. el de ahorita (difuminado) */}
       <Escena T={T} a={K.Pasado} b={K.Pregunta} fondo={KC.pink}>
@@ -280,16 +280,16 @@ function Sol8() {
           <g transform={`translate(640 830) scale(${klerp(0.2, 1, kprog(T, K.Sirio - 0.2, K.Sirio + 0.5, kEase.rebote))}) translate(-640 -830)`}>
             <Estrella x={640} y={830} r={120} T={T} color="#e6f3ff" seed={3} />
           </g>
-          <TextoSvg x={640} y={1080} tam={96} color={KC.white} o={kprog(T, K.Sirio + 0.3, K.Sirio + 0.6)}>SIRIO</TextoSvg>
+          <TextoSvg x={640} y={1060} tam={96} color={KC.white} o={kprog(T, K.Sirio + 0.3, K.Sirio + 0.6)}>SIRIO</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Sirio + 0.9} until={K.Ojo - 0.15} texto="la estrella más brillante de la noche" x={540} y={1170} tam={34} borde={KC.cyan} />
-        <NumeroGigante T={T} at={K.Sirio + 2.4} until={K.Ojo - 0.15} valor={8.6} desde={0} dec={1} dur={1.0} prefijo="≈ " sufijo=" años" x={660} y={500} tam={120} color={KC.cyan} etiqueta="la ves como era hace" />
+        <Chip T={T} at={K.Sirio + 0.9} until={K.Ojo - 0.15} texto="la estrella más brillante de la noche" x={540} y={1150} tam={34} borde={KC.cyan} />
+        <NumeroGigante T={T} at={K.Sirio + 2.4} until={K.Ojo - 0.15} valor={8.6} desde={0} dec={1} dur={0.6} prefijo="≈ " sufijo=" años" x={660} y={500} tam={120} color={KC.cyan} etiqueta="la ves como era hace" />
       </Escena>
       {/* 10 · nunca mires el Sol directo */}
       <Escena T={T} a={K.Ojo} b={K.Cierre} fondo={KC.yellow}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <g transform={`translate(540 600) scale(${klerp(0.4, 1, kprog(T, K.Ojo + 0.2, K.Ojo + 0.6, kEase.rebote))})`}>
+          <g transform={`translate(540 650) scale(${klerp(0.4, 1, kprog(T, K.Ojo + 0.2, K.Ojo + 0.6, kEase.rebote))})`}>
             <Sol x={0} y={0} r={120} T={T} id="oj" />
             <circle r={200} fill="none" stroke={KC.red} strokeWidth={34} />
             <line x1={-141} y1={-141} x2={141} y2={141} stroke={KC.red} strokeWidth={34} strokeLinecap="round" />
@@ -297,20 +297,20 @@ function Sol8() {
           <Ojo x={540} y={1000} s={1.15} abierto={T < K.Ojo + 1.4 ? 1 : 0.25 + 0.75 * Math.abs(Math.cos((T - K.Ojo - 1.4) * 2.2))} mira={0} />
           {T > K.Ojo + 1.0 && <><Alerta x={140} y={620} s={klerp(0.3, 0.9, kprog(T, K.Ojo + 1.0, K.Ojo + 1.3, kEase.rebote))} /><Alerta x={940} y={620} s={klerp(0.3, 0.9, kprog(T, K.Ojo + 1.1, K.Ojo + 1.4, kEase.rebote))} /></>}
         </Lienzo>
-        <Chip T={T} at={K.Ojo + 0.6} until={K.Cierre - 0.15} texto="nunca lo mires directo" x={540} y={1150} tam={48} borde={KC.red} />
+        <Chip T={T} at={K.Ojo + 0.6} until={K.Cierre - 0.15} texto="nunca lo mires directo" x={540} y={370} tam={48} borde={KC.red} />
       </Escena>
       {/* 11 · cierre: el mismo atardecer, ahora con Luna y estrellas: todo es pasado */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.orange} zoom={0.03}>
         <Lienzo>
           <Atardecer T={T} extra={kprog(T, K.Cierre, K.Cierre + 1.5, kEase.suave)} solY={850} />
           <Luna x={830} y={640} r={46} />
-          <Estrella x={600} y={300} r={18} T={T} seed={2} o={kprog(T, K.Cierre + 1.0, K.Cierre + 1.4)} />
+          <Estrella x={600} y={230} r={18} T={T} seed={2} o={kprog(T, K.Cierre + 1.0, K.Cierre + 1.4)} />
           <Corriente T={T} x0={420} y0={900} x1={790} y1={950} n={6} vel={0.7} desde={K.Cierre} />
           <Pildora T={T} at={K.Cierre + 0.3} x={330} y={580} texto="HACE 8 MIN" tam={46} fondo={KC.yellow} />
           <Pildora T={T} at={K.Cierre + 0.8} x={830} y={540} texto="HACE 1.3 S" tam={34} fondo={KC.paper} />
-          <Pildora T={T} at={K.Cierre + 1.3} x={600} y={380} texto="HACE AÑOS" tam={30} fondo={KC.paper} />
+          <Pildora T={T} at={K.Cierre + 1.3} x={600} y={310} texto="HACE AÑOS" tam={30} fondo={KC.paper} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 1.8} until={K.Outro - 0.1} texto="ves el pasado" x={540} y={1110} tam={52} borde={KC.mint} />
+        <Chip T={T} at={K.Cierre + 1.8} until={K.Outro - 0.1} texto="ves el pasado" x={540} y={440} tam={52} borde={KC.mint} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Distancia - 0.1} texto="Ese Sol es el de *hace 8 minutos.*" />

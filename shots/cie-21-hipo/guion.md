@@ -28,7 +28,34 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 3.4 | 11_sorprendido | `gancho` |
+| 2 | 9.8 | 13.2 | 13_senalando_arriba | `arriba-der` |
+| 3 | 19.1 | 22.0 | 04_bajando_lentes | `bajo-der` |
+| 4 | 27.1 | 29.3 | 07_pensativo_puno | `grande` |
+| 5 | 31.5 | 36.7 | 06_pensativo_menton | `bajo-der` |
+| 6 | 37.3 | 40.9 | 05_sonriendo_dientes_uniformes | `arriba-der` |
+| 7 | 45.6 | 47.8 | 11_sorprendido | `bajo-der` |
+| 8 | 50.8 | 53.1 | 12_perfil_serio | `bajo-der` |
+| 9 | 53.6 | 57.9 | 13_senalando_arriba | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 9 · 29.5 s (+ cierre 3.5 s) · poses 7 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «Ese hip no lo hace tu garganta sola» (sorprendido) |
+| 2 | «el diafragma se contrae de repente» (señalando) |
+| 3 | «Ese aire chocando contra la puerta cerrada es el hip» (bajando lentes) |
+| 4 | «¿Y para qué sirve el hipo?» (pensativo, grande) |
+| 5 | «Una hipótesis: … branquias, como los renacuajos» (pensativo) |
+| 6 | «a los bebés les ayuda a sacar el aire» (sonriendo) |
+| 7 | «le duró unos sesenta y ocho años» (sorprendido) |
+| 8 | «si te dura más de dos días, ve al médico» (serio) |
+| 9 | «tu diafragma con un tic, y tu glotis cerrándole la puerta» (señalando) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 

@@ -27,7 +27,36 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 6.8 | 11_sorprendido | `gancho` |
+| 2 | 9.5 | 12.8 | 13_senalando_arriba | `bajo-der` |
+| 3 | 19.6 | 22.1 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 4 | 22.2 | 23.7 | 07_pensativo_puno | `grande` |
+| 5 | 26.4 | 30.3 | 04_bajando_lentes | `bajo-der` |
+| 6 | 30.7 | 35.0 | 11_sorprendido | `izq-alto` |
+| 7 | 35.3 | 41.2 | 06_pensativo_menton | `bajo-der` |
+| 8 | 43.8 | 47.4 | 12_perfil_serio | `bajo-der` |
+| 9 | 48.0 | 51.5 | 03_aburrido_manos_mejillas | `bajo-der` |
+| 10 | 52.6 | 57.9 | 05_sonriendo_dientes_uniformes | `gancho` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 10 · 40.6 s (+ cierre 3.5 s) · poses 8 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «no tienen forma de lágrima» (sorprendido) |
+| 2 | «la tensión superficial la jala hacia adentro» (señalando) |
+| 3 | «como un pan de hamburguesa» (sonriendo) |
+| 4 | «¿Y si siguen creciendo?» (pensativo, grande) |
+| 5 | «se inflan como un paracaídas» (bajando los lentes) |
+| 6 | «y se rompen en muchas gotitas» (sorprendido) |
+| 7 | «¿Y la forma de lágrima?» (pensativo) |
+| 8 | «nueve metros por segundo» (serio) |
+| 9 | «caen mucho más despacio» (aburrido) |
+| 10 | «mejor dibuja panes de hamburguesa» (sonriendo) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 

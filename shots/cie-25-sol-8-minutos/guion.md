@@ -28,7 +28,36 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 4.7 | 11_sorprendido | `gancho` |
+| 2 | 11.9 | 14.3 | 13_senalando_arriba | `bajo-der` |
+| 3 | 14.8 | 19.2 | 06_pensativo_menton | `bajo-der` |
+| 4 | 20.6 | 24.6 | 04_bajando_lentes | `bajo-der` |
+| 5 | 24.8 | 27.1 | 07_pensativo_puno | `grande` |
+| 6 | 29.8 | 33.2 | 12_perfil_serio | `bajo-der` |
+| 7 | 35.8 | 38.3 | 05_sonriendo_dientes_uniformes | `arriba-der` |
+| 8 | 44.7 | 49.5 | 11_sorprendido | `izq-alto` |
+| 9 | 50.2 | 54.0 | 10_serio_molesto | `bajo-der` |
+| 10 | 54.5 | 57.9 | 13_senalando_arriba | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 10 · 35.9 s (+ cierre 3.5 s) · poses 8 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «Ese Sol que ves no es el Sol de ahorita» (sorprendido) |
+| 2 | «nada viaja más rápido» (señalando) |
+| 3 | «Haz la cuenta» (pensativo) |
+| 4 | «nunca como está en este momento» (bajando lentes) |
+| 5 | «¿Y si el Sol se apagara ahora mismo?» (pensativo, grande) |
+| 6 | «sin enterarte de que ya se apagó» (serio) |
+| 7 | «pero menos: poco más de un segundo» (sonriendo) |
+| 8 | «Sirio, la estrella más brillante» (sorprendido) |
+| 9 | «nunca mires el Sol directamente» (serio molesto) |
+| 10 | «cada vez que miras el cielo» (señalando arriba) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 
