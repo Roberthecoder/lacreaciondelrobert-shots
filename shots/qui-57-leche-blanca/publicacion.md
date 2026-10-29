@@ -8,7 +8,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ```text
 Lo blanco de tu leche no es un pigmento: es luz rebotando en bolitas que tus ojos no alcanzan a ver. 🥛✨
 En la leche flotan gotitas de grasa y micelas de caseína: racimos de proteína unidos con calcio y fosfato. Casi no se comen la luz: la desvían. Cada rayo choca, cambia de rumbo y vuelve a chocar, y como sale rebotada luz de todos los colores, juntos llegan a tus ojos como blanco.
-¿Y por qué la leche descremada se ve medio azul? Sin casi nada de grasa quedan sobre todo las micelas, más chiquitas, y las partículas chicas desvían más la luz azul. Por eso, a contraluz, la descremada deja una sombra rojiza.
+¿Y por qué la leche descremada se ve medio azul? Sin casi nada de grasa quedan sobre todo las micelas, más chiquitas, y las partículas chicas desvían más la luz azul. Por eso, a contraluz, la descremada deja una sombra rojiza o rosada.
 En 2008, un equipo de la Universidad de Granada (España) con investigadores de Estados Unidos echó leche descremada homogeneizada en un tanque de agua y midió la luz con un espectrorradiómetro: con poca leche, la luz desviada se veía azul, y la que cruzaba el tanque salía rojiza. Es el experimento clásico para explicar el cielo azul y el sol rojo del atardecer.
 Lo curioso: en 2007, un equipo de Dinamarca y California simuló la leche en computadora, y en su simulación un rayo de luz promedio rebotaba miles de veces adentro.
 Ojo: la leche sí trae un poquito de pigmento (beta-caroteno en la grasa y riboflavina, la vitamina B2, en el suero), pero el blanco viene de la luz rebotando.
@@ -23,7 +23,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Lo blanco de tu leche no es un pigmento: es luz rebotando en bolitas que tus ojos no alcanzan a ver. 🥛✨
-Gotitas de grasa y micelas de caseína (proteína con calcio y fosfato) desvían la luz de todos los colores, y juntos se ven blancos. En la descremada quedan sobre todo las micelas, más chiquitas, que desvían más el azul: por eso se ve azulada. En 2008, en la Universidad de Granada, la leche descremada en un tanque de agua dio luz azul de lado y rojiza al cruzar, como el cielo y el atardecer. Y en una simulación de 2007, un rayo rebotaba miles de veces dentro de la leche.
+Gotitas de grasa y micelas de caseína (proteína con calcio y fosfato) desvían la luz de todos los colores, y juntos se ven blancos. En la descremada quedan sobre todo las micelas, más chiquitas, que desvían más el azul: por eso se ve azulada. En 2008, un equipo de la Universidad de Granada con colegas de EE. UU. comprobó que la leche descremada en un tanque de agua dio luz azul de lado y rojiza al cruzar, como el cielo y el atardecer. Y en una simulación de 2007, un rayo rebotaba miles de veces dentro de la leche.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Entera o descremada? 👇
 Shot Químico #57 · La Creación del Robert
@@ -40,7 +40,7 @@ Descripción:
 ```text
 Lo blanco de tu leche no es un pigmento: es luz rebotando en bolitas que tus ojos no alcanzan a ver.
 En la leche flotan gotitas de grasa (de 0.8 a 12 micras en la leche cruda y de menos de 1 micra en la homogeneizada) y micelas de caseína (de 10 a 800 nanómetros), racimos de proteína unidos con calcio y fosfato. Estas partículas casi no absorben la luz: la dispersan. Cada rayo choca, cambia de rumbo y vuelve a chocar, y como sale luz de todos los colores, la vemos blanca.
-En la leche descremada, sin casi nada de grasa, quedan sobre todo las micelas, más chicas, y las partículas chicas dispersan más la luz azul: por eso se ve azulada y a contraluz deja una sombra rojiza.
+En la leche descremada, sin casi nada de grasa, quedan sobre todo las micelas, más chicas, y las partículas chicas dispersan más la luz azul: por eso se ve azulada y a contraluz deja una sombra rojiza o rosada.
 En 2008, un equipo de la Universidad de Granada (España) con investigadores de Estados Unidos midió con un espectrorradiómetro la luz que atravesaba un tanque de agua con leche descremada homogeneizada: con poca leche, la luz dispersada era azul y la luz directa salía rojiza, el experimento clásico para explicar el cielo azul y el sol rojo del atardecer. Estimaron diámetros ópticos efectivos de 170 nm para las micelas y 610 nm para los glóbulos de grasa.
 Dato curioso: en 2007, un equipo de la Universidad Técnica de Dinamarca y la Universidad de California en San Diego simuló la apariencia de la leche a partir de su grasa y su proteína; en su simulación, un fotón promedio rebotaba miles de veces dentro de la leche.
 La leche sí trae un poco de pigmento (beta-caroteno, amarillo, en la grasa; riboflavina o vitamina B2, verde-amarilla, en el suero), pero su blanco viene de la dispersión de la luz. El dibujo es esquemático.
@@ -89,7 +89,7 @@ Lo blanco de tu leche no es un pigmento: es luz rebotando en gotitas de grasa y 
 ### Threads
 ```text
 Lo blanco de tu leche no es un pigmento: es luz rebotando en bolitas que no alcanzas a ver. 🥛
-Gotitas de grasa y micelas de caseína desvían la luz de todos los colores, y juntos se ven blancos. En la descremada quedan sobre todo las micelas, más chiquitas, que desvían más el azul. En 2008, en Granada, leche descremada en un tanque dio luz azul de lado y rojiza al cruzar, como el cielo y el atardecer.
+Gotitas de grasa y micelas de caseína desvían la luz de todos los colores, y juntos se ven blancos. En la descremada quedan sobre todo las micelas, más chiquitas, que desvían más el azul. En 2008, un equipo de la Universidad de Granada comprobó que la leche descremada en un tanque daba luz azul de lado y rojiza al cruzar, como el cielo y el atardecer.
 ¿Entera o descremada? 👇
 Shot Químico #57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

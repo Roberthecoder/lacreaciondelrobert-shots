@@ -3,9 +3,9 @@
 - **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #59 · rama `pedido300/qui`.
 - **Formato:** N1 "Por dentro" (el termómetro roto en el piso de tu cuarto → las gotas y los átomos de mercurio que se escapan como vapor → el mismo piso, ya con la ventana abierta y las gotas juntadas con cartón) con un toque de N3 (medidor de vapor en vivo).
 - **Gancho (de los 7):** #6 Mito peligroso "¿Por qué NO…?": "Se te rompió un termómetro de mercurio: ¿por qué NO debes barrer ni aspirar esas bolitas?"
-- **Seguridad:** las instrucciones de limpieza salen textuales de la EPA (página en español); se dice "sin pánico" (ATSDR) y se recomienda sacar a niños y mascotas. No se da ningún consejo médico.
+- **Seguridad:** las instrucciones de limpieza salen textuales de la EPA (página en español); se dice "sin pánico" (ATSDR) y se pide que salgan todos, y las mascotas. No se da ningún consejo médico.
 - **Duración:** voz 954 caracteres (≈ 57.8 s) + cierre 3.5 s → **≈ 61.3 s** (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`mercurio.jsx`, revisión en `revision/hoja.png`), voz pendiente de aprobación de Robert (~954 créditos).
 
 ## Versión narrada
 
@@ -17,13 +17,32 @@
 | 3 | Escoba | La escoba lo rompe en gotitas, y las gotitas chicas se evaporan más rápido. | Regreso al piso: la escoba pasa y una gota grande se parte en 20 gotitas que se dispersan. Comparativa: 1 gota grande suelta pocas flechitas de vapor; muchas gotitas sueltan muchas (más superficie). |
 | 4 | Aspiradora | Y la aspiradora lo calienta, lo avienta al aire y se queda contaminada. | Corte esquemático de una aspiradora: las gotas entran, el motor se pone rojo (ícono de calor), sale una nube de puntitos por la salida de aire; la aspiradora queda con un halo gris. |
 | 5 | Pregunta | ¿Cuánto tiempo sigue soltando vapor? | **Re-gancho.** Reloj que gira rápido sobre la aspiradora; "?" grande. |
-| 6 | Estudio | En 2004, en Michigan, una familia aspiró el mercurio de un termómetro. Un mes después, guardada en un garaje helado, la aspiradora seguía soltando vapor de mercurio, y Salud de Michigan pidió inutilizarla y tirarla. | Tarjeta "2004 · St. Louis, Michigan · Depto. de Salud de Michigan / ATSDR". Mapa chico de EE. UU. con punto en Michigan; calendario de enero → 3 de febrero. Garaje con escarcha, termómetro "−7 a −1 °C" y la aspiradora soltando puntitos de vapor; un medidor (Lumex) marca "2000 ng/m³ junto a la aspiradora". Al final la aspiradora recibe una ✕ y se va al relleno sanitario. |
+| 6 | Estudio | En 2004, en Michigan, una familia aspiró el mercurio de un termómetro. Un mes después, guardada en un garaje helado, la aspiradora seguía soltando vapor de mercurio, y Salud de Michigan pidió inutilizarla y tirarla. | Tarjeta "2004 · St. Louis, Michigan · Depto. de Salud de Michigan / ATSDR". La aspiradora roja aspira las bolitas en un cuarto; luego, chip "ENE 2004 → 3 FEB 2004". Garaje con escarcha, termómetro "−7 a −1 °C" y la aspiradora soltando puntitos de vapor; un medidor (Lumex) marca "2000 ng/m³ junto a la aspiradora". Al final la aspiradora recibe una ✕ y se va al relleno sanitario. |
 | 7 | QueHacer | Sin pánico. La EPA dice: que salgan todos, y las mascotas; abre ventanas, ponte guantes, junta las gotas con cartón y un gotero, y ventila al menos 24 horas. | Lista con 5 pasos que se marcan ✓ uno por uno: toda la familia (adulto, niño y perro) sale por la puerta sin pisar las bolitas; ventana que se abre (aire entra); manos con guantes; con guantes, un cartón empuja las gotitas y un gotero las chupa; reloj "≥ 24 h" girando. Texto plano "Fuente: EPA (EE. UU.)" (sin sello ni logo). |
 | 8 | Dato | Ese vapor pesa más que el aire: se junta abajo, donde respiran los niños. | Vista lateral del cuarto: los puntitos de vapor bajan y forman una capa a ras del piso; un adulto de pie (cabeza fuera de la capa) y un niño gateando (nariz dentro). Flecha "↓ más pesado que el aire". |
 | 9 | Cierre | Nada de escoba ni aspiradora: lo peligroso es lo que no ves. | **Regreso al piso del inicio**, ahora transformado: ventana abierta, las bolitas juntadas en una bolsa con cierre hermético (o recipiente de plástico, nunca de vidrio) con la etiqueta "residuo de mercurio", escoba y aspiradora tachadas a un lado; los puntitos de vapor (ahora resaltados en color) salen por la ventana. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert. |
 
 **Música:** cama grave continua, tensa mientras hay vapor y más abierta cuando se abre la ventana. Efectos en el mismo cuadro: vidrio que se rompe, bolitas rodando, siseo suave del vapor, inhalación, zumbido del motor de la aspiradora, tic-tac del reloj, golpe de la tarjeta, "bip" del medidor, palomitas de la lista, ventana que se abre.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Cuánto tiempo sigue soltando vapor?» y en el dato del vapor que se queda abajo.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «¿por qué NO debes barrer ni aspirar…?» |
+| 2 | 6.4 | 10.7 | 06_pensativo_menton | `izq-alto` | «un gas que no ves ni hueles» |
+| 3 | 12.2 | 15.9 | 10_serio_molesto | `arriba-der` | «un adulto absorbe entre 69 y 85 por ciento» |
+| 4 | 17.2 | 20.6 | 04_bajando_lentes | `izq-alto` | «las gotitas chicas se evaporan más rápido» |
+| 5 | 25.3 | 27.7 | 07_pensativo_puno | `grande` | «¿Cuánto tiempo sigue soltando vapor?» |
+| 6 | 32.0 | 39.4 | 10_serio_molesto | `izq-alto` | «la aspiradora seguía soltando vapor… inutilizarla y tirarla» |
+| 7 | 40.7 | 49.0 | 13_senalando_arriba | `arriba-der` | los pasos de la EPA |
+| 8 | 49.7 | 53.8 | 11_sorprendido | `grande-izq` | «se junta abajo, donde respiran los niños» |
+| 9 | 54.3 | 57.7 | 02_apuntando_camara | `arriba-der` | «lo peligroso es lo que no ves» |
+| — | 57.8 | 61.3 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 41.7 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · 2 veces grande.
 
 ## Fuentes (abiertas el 29 oct 2026)
 
