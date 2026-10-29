@@ -407,7 +407,7 @@ function MacetaShot() {
       <BarraEscala T={T} at={K.P} until={K.Tx} texto="5 cm" largo={80} />
       <BarraEscala T={T} at={K.Tx} until={K.E} texto="5 cm" largo={130} />
       <BarraEscala T={T} at={K.E} until={K.Pg} texto="5 cm" largo={140} />
-      <BarraEscala T={T} at={K.Pg} until={K.Tr} texto="1 nm" largo={150} />
+      <BarraEscala T={T} at={K.Pg} until={K.Tr} texto="1 nm" largo={300} />
       <BarraEscala T={T} at={K.Tr} until={K.Q} texto="5 cm" largo={210} />
       <BarraEscala T={T} at={K.Q} until={K.C} texto="5 cm" largo={150} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={160} />
