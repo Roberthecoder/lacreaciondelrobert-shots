@@ -220,7 +220,7 @@ function Dias({ T, at, until, desde = 0, hasta = 21, dur = 4, x = 300, y = 520 }
   const e = kentrada(T, at, until, 'pop'), d = Math.round(klerp(desde, hasta, kprog(T, at, at + dur)));
   return <div style={{ position:'absolute', left:x, top:y, zIndex:42, transform:`translate(-50%,-50%) scale(${e.s})`, opacity:e.o, textAlign:'center',
     background:'rgba(14,15,18,.82)', border:`4px solid ${KC.gold}`, borderRadius:24, padding:'8px 34px' }}>
-    <div style={{ font:`700 26px ${KF.mono}`, color:KC.gold2, letterSpacing:'.12em' }}>DESPUÉS DEL ROCÍO</div>
+    <div style={{ font:`700 26px ${KF.mono}`, color:KC.gold2, letterSpacing:'.12em' }}>DESPUÉS DEL ROCIADO</div>
     <div style={{ font:`400 92px/1 ${KF.titulo}`, color:KC.texto }}>DÍA {d}</div>
   </div>;
 }
@@ -409,7 +409,7 @@ function LangostaShot() {
       <Etq T={T} at={K.M + 1.6} until={K.Ci - 0.2} x={40} y={1490} texto="langosta centroamericana" tam={28} color={KC.ink} />
       <Etq T={T} at={K.M + 1.9} until={K.Ci - 0.2} x={40} y={1540} texto="Schistocerca piceifrons" it tam={28} color={KC.ink} />
       <Chip T={T} at={K.M + 3.6} until={K.Ci - 0.2} texto="2020 · cepa donada a Costa Rica" x={380} y={470} tam={34} borde={KC.blue} />
-      <Etq T={T} at={K.M + 4.8} until={K.Ci - 0.2} x={mx(cr)[0] + 30} y={mx(cr)[1] + 30} texto="Costa Rica" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.M + 4.8} until={K.Ci - 0.2} x={mx(cr)[0] - 50} y={mx(cr)[1] + 10} lado="izq" texto="Costa Rica" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="fiebre vs. hongo" x={300} y={1150} tam={36} borde={KC.red} />
 
       {/* barras de escala */}

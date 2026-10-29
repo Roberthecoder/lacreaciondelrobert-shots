@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Queroseno base narrada.dc.html",
+  "salida": "Shot Queroseno narrado.dc.html",
+  "nota": "Shot Fungi Mati #51. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas manchas oscuras en un filtro de turbosina no siempre son mugre: pueden ser un hongo que come combustible."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Se llama Amorphotheca resinae: el hongo del queroseno."
+    },
+    {
+      "escena": "Creosota",
+      "texto": "Antes ya era famoso por comerse la creosota de postes y durmientes."
+    },
+    {
+      "escena": "Agua",
+      "texto": "Sin agua no crece, pero en los tanques se condensa agua y queda bajo el combustible."
+    },
+    {
+      "escena": "Frontera",
+      "texto": "Justo en la frontera entre agua y combustible, se pone a comer."
+    },
+    {
+      "escena": "Tapetes",
+      "texto": "Sus hilos, de dos o tres milésimas de milímetro, forman tapetes cafés."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué le hace al avión?"
+    },
+    {
+      "escena": "Dano",
+      "texto": "Tapa filtros, y sus ácidos corroen el aluminio; antes, esa corrosión llegó a perforar tanques de las alas."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2021, en Hamburgo, Alemania, leyeron el ADN de la mugre de seis tanques de aviones: el hongo más abundante fue de este grupo."
+    },
+    {
+      "escena": "Remedio",
+      "texto": "Por eso drenan el agua de los tanques y usan biocidas, en dosis exacta."
+    },
+    {
+      "escena": "Gatwick",
+      "texto": "En 2020, cerca de Londres, un avión recibió unas 38 veces la dosis de biocida y sus dos motores empezaron a fallar, pero aterrizó a salvo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa mancha puede no ser mugre: puede ser un hongo con hambre de turbosina."
+    }
+  ]
+}

@@ -54,7 +54,8 @@ Barras de escala: 1 m (paisaje y tronco), 1 cm (champiñón), 50 µm (tubos), 10
 5. *Futurism* (29 mar 2025), "Scientists Puzzled by Giant Ancient Life Forms", citando a *New Scientist* (republicado en Yahoo News). https://www.yahoo.com/news/scientists-puzzled-giant-ancient-life-121517930.html
    > Kevin Boyce: "Maybe it is a fungus … but whether a fungus or something else entirely, it represents a novel experiment with complex multicellularity"
 7. Hunt, K. (5 feb 2026). New analysis suggests puzzling fossil may have been an unknown life form. *CNN* (republicado en KVIA). https://kvia.com/cnn-other/2026/02/05/new-analysis-suggests-puzzling-fossil-may-have-been-an-unknown-life-form/ — otros expertos señalan que solo se revisó una especie (*P. taiti*) y que la opción "hongo" sigue abierta; junto con Loron et al. 2026: "two remaining viable hypotheses".
-8. Universidad de Aberdeen, página del pedernal de Rhynie (plantas de Rhynie): "all less than 40 cm tall".
+8. University of Aberdeen, "The Rhynie Chert · Basic Facts" (consultada 29 oct 2026). https://www.abdn.ac.uk/rhynie/basic.htm
+   > "The flora includes seven named higher land plants, all less than 40 cm tall." · "Early Devonian (Pragian): between 400 and 412 Million years old"
 6. Honegger, R., Edwards, D., Axe, L. y Strullu-Derrien, C. (2018). Fertile *Prototaxites taiti*: a basal ascomycete with inoperculate, polysporous asci lacking croziers. *Philosophical Transactions of the Royal Society B* 373(1739): 20170146. https://doi.org/10.1098/rstb.2017.0146 · https://pmc.ncbi.nlm.nih.gov/articles/PMC5745340/ (interpretan a *P. taiti* como un ascomiceto basal; Loron et al. 2026 dicen que esa asignación "remains contentious"). Solo contexto del debate; no se dice en la voz.
 
 El dibujo es esquemático: los tubos, el paisaje y la silueta de *Prototaxites* son una reconstrucción simplificada.

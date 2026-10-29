@@ -38,3 +38,28 @@ Fuentes abiertas:
 | 13 | Cierre: «Lo demás, todavía se investiga» | ✅ | [K] | «We conclude that knowledge on CMNs is presently too sparse and unsettled to inform forest management» | 2023 |
 
 **Re-verificación (29 oct 2026):** se revisó otra vez todo lo que cambió en la voz (`narracion.json` completo, 12 líneas) y en la pantalla (`guion.md`). Las cuatro ⚠️ quedaron corregidas: el gancho y el cierre ya no niegan la red; se quitaron las grasas; el re-gancho pregunta solo lo comprobado; el árbol madre dice «revisado por científicos, hecho en bosques» con el sello «según Karst et al. 2023». Los recortes de redacción no cambian ningún dato. Todas las afirmaciones quedan ✅.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `micorrizas.jsx`, el `.dc.html`, la columna «Lo que se ve», la tabla «Robert en pantalla» y `publicacion.md`, y se miraron cuadros con `motor/preview.mjs` (0.3–60 s).
+
+| # | Texto o dibujo | Veredicto | Fuente / nota |
+|---|---|---|---|
+| F1 | Subtítulo del gancho «No es internet: es un mercado.» → **corregido** a «No es el internet que te contaron: *es un mercado.*»; chip «¿internet del bosque?» → «¿el «internet del bosque»?» (ya no niega la red como hecho) | ✅ (corregido) | [K]: red «insufficiently supported», no refutada |
+| F2 | Subtítulo «¿Árbol madre? Sin estudios que lo prueben.» → **corregido** a «¿Árbol madre? *Sin estudios en bosques que lo prueben.*»; sello SIN EVIDENCIA «según Karst et al. 2023» | ✅ (corregido) | [K]: «no evidence from peer-reviewed, published studies in forests» |
+| F3 | Chips «hongo → planta: fósforo · nitrógeno» y «planta → hongo: carbono, sobre todo azúcares»; subtítulo «Fósforo y nitrógeno por azúcares»; dibujo con bolitas P y N y cubitos de azúcar, sin grasas | ✅ | [SP], [KJ] |
+| F4 | Morfología: manto de hongo por fuera, red de Hartig entre las células de la raíz, hifas hacia el suelo (esquemático) | ✅ | [SP]: «mycelial structures that penetrate between and surround root epidermal cells … called the Hartig net» |
+| F5 | Chip «85 % de las plantas vasculares · 8 % nunca»; 8.5 de 10 plantitas; subtítulo «Más de 8 de cada 10 plantas» | ✅ | [BT] |
+| F6 | «abeto de Douglas · *Pseudotsuga menziesii*», «Canadá · Beiler et al., 2010», «mapa esquemático · 30 × 30 m», *Rhizopogon*, «hasta 19», «mismo ADN», sello COMPROBADO «comparten hongo»; subtítulo «Sí: en hasta 19 abetos.» (responde a «¿un mismo hongo en varios árboles?», no a «conectar») | ✅ | [B], [S25] |
+| F7 | Tarjeta «1997 · oeste de Canadá · Simard et al., Nature»; «abedul de papel · *Betula papyrifera*», «abeto de Douglas»; «carbono marcado»; subtítulo «1997: el carbono pasó a otro árbol.» | ✅ | [S97]: «bidirectional carbon transfer … resulting in net carbon gain by P. menziesii» (el camino es lo que está en debate, y la escena siguiente lo dice) |
+| F8 | Sello EN DEBATE; «¿por el hongo? / ¿por el suelo?»; «Karst, Jones y Hoeksema · 2023 · *Nature Ecology & Evolution*» | ✅ | [K] |
+| F9 | Gráfica «citas que afirman de más», barras que suben al doble, «25 años →», chip «×2 en 25 años», «según Karst et al. 2023» | ✅ | [K]: «unsupported claims have doubled in the past 25 years» |
+| F10 | Cierre: sellos COMPROBADO «es un mercado», EN DEBATE «la red entre árboles», SIN EVIDENCIA «el «árbol madre»»; chip «internet del bosque: se investiga»; subtítulo «Mercado, sí. Internet del bosque: se investiga.» | ✅ | [K], [S25] |
+| F11 | Barras de escala (aproximadas): 10 cm raíces, 100 µm raicita, 10 cm plantitas, 1 m re-gancho, 10 m parcela, 10 cm plántulas de 2–3 años del experimento; árbol madre **corregido** de «1 m» a «5 m» (con 1 m el árbol medía ~9 m; con 5 m, ~45 m, la altura de un abeto de Douglas maduro) | ✅ (corregido) | [S97]: «two-year-old … three-year-old seedlings» |
+| F12 | `publicacion.md`: 72/2/1.5/10/8 % ✅ ([BT]); carbono 13 y 14 en campo ✅ ([S97]: «reciprocal isotope labelling in the field»; [S97b]); respuesta de Simard 2025 ✅ ([S25], publicada el 21 ene 2025); Henriksson 2023 ✅ ([H]). **Corregido:** «cada individuo … estaba en hasta 19» → «un mismo individuo … llegaba a estar en hasta 19»; YouTube, LinkedIn y Threads decían «sin evidencia publicada» → ahora «según Karst et al. 2023 … ni un estudio revisado por científicos, hecho en bosques»; las citas que se duplicaron ahora dicen que son citas «a estudios sobre estas redes» | ✅ (corregido) | [B], [K] |
+| F13 | Títulos de `guion.md`, `publicacion.md` y este archivo ahora dicen «…el internet del bosque que te contaron: es un mercado» | ✅ (corregido) | — |
+| F14 | Subtítulos fuera del tercio inferior; Robert no tapa datos ni sellos en los cuadros revisados | ✅ | cuadros de preview |
+
+Resumen: la voz verificada no se tocó. Se corrigieron 2 subtítulos, 1 chip, 1 barra de escala y 4 textos de `publicacion.md`. Todo queda ✅.
+
+VEREDICTO: APROBADO

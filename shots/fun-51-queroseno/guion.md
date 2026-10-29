@@ -27,7 +27,7 @@
 
 **Música:** cama grave continua y algo metálica (hangar), sin golpe marcado, siempre debajo de la voz. Efectos en el mismo cuadro: clic del filtro al salir, gotas que se condensan y caen, burbujeo suave en la frontera, crujido de hifas creciendo, tres golpes del daño (flujo que se frena, siseo del ácido, "tic" del agujerito), tics del contador, chorro del drenaje, gotero, golpe del "×38", tos del motor, ruedas al aterrizar.
 
-**Barras de escala:** 10 cm (filtro), 10 m (avión), 1 m (poste y vía), 50 cm (tanque), 10 µm (hifas y esporas: 10 µm = 120 px; hifas de ~26 px ≈ 2.2 µm, esporas de 30 × 60 px ≈ 2.5 × 5 µm), 1 cm (daño), 5 cm (frascos), 10 cm (drenaje), 10 m (Gatwick).
+**Barras de escala:** 10 cm (filtro), 10 m (avión), 1 m (poste y vía), 50 cm (tanque), 10 µm (hifas y esporas: 10 µm = 60 px; hifas de 14 px ≈ 2.3 µm, esporas de 15 × 30 px ≈ 2.5 × 5 µm), 1 cm (daño), 5 cm (frascos), 10 cm (drenaje), 10 m (Gatwick).
 
 ## Robert en pantalla
 

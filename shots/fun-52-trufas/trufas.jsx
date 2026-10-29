@@ -224,10 +224,10 @@ function TrufasShot() {
   const jx = T < K.A + 2.9 ? klerp(-260, 330, kprog(T, K.A, K.A + 1.2, kEase.sale)) : klerp(330, 700, kprog(T, K.A + 2.9, K.A + 4.2, kEase.suave));
   const caminando = (T < K.A + 1.2) || (T > K.A + 2.9 && T < K.A + 4.2);
   const comida = kprog(T, K.A + 2.3, K.A + 2.8);
-  // Prueba: el cerdo pasa de largo la feromona; el perro va directo a la trufa
-  const px = T < K.Pr + 2.4 ? klerp(-250, 470, kprog(T, K.Pr + 0.5, K.Pr + 2.4, kEase.suave)) : 470;
-  const dx = klerp(1300, 900, kprog(T, K.Pr + 1.0, K.Pr + 2.4, kEase.sale));
-  const MX = [[-101.6, 19.6], [-99.7, 19.3], [-100.3, 20.6], [-101.2, 21.0], [-98.2, 19.4], [-98.9, 20.1], [-99.8, 23.6], [-100.2, 25.4], [-99.4, 24.6], [-97.9, 22.9]];
+  // Prueba: el cerdo pasa de largo la feromona y va a la trufa; el perro va al sulfuro de dimetilo
+  const px = T < K.Pr + 2.4 ? klerp(-250, 420, kprog(T, K.Pr + 0.5, K.Pr + 2.4, kEase.suave)) : 420;
+  const dx = klerp(1300, 830, kprog(T, K.Pr + 1.0, K.Pr + 2.4, kEase.sale));
+  const MX = [[-101.6, 19.6], [-99.7, 19.3], [-100.3, 20.6], [-101.2, 21.0], [-98.2, 19.4], [-98.9, 20.1], [-99.8, 23.6], [-100.2, 25.4], [-99.4, 24.6], [-99.1, 23.1]];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: una mano saca una "piedra" de la tierra… es una trufa, y se parte */}
@@ -329,18 +329,18 @@ function TrufasShot() {
           {kprog(T, K.H + 2.7, K.H + 3.0) > 0 && <text x={830} y={860} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.H + 2.7, K.H + 3.0)}>¿?</text>}
         </>)}
       </Escena>
-      {/* 7 · la prueba de Francia: el cerdo pasa de largo la feromona; el perro va directo a la trufa */}
+      {/* 7 · la prueba de Francia: el cerdo pasa de largo la feromona y va a la trufa; el perro va al sulfuro de dimetilo */}
       <Escena T={T} a={K.Pr} b={K.E}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Suelo y={1000} />
-          <Hoyo x={190} y={1040} alto={240} texto="feromona" o={kprog(T, K.Pr, K.Pr + 0.4)} />
-          <Hoyo x={560} y={1040} alto={240} texto="sulfuro de dimetilo" o={kprog(T, K.Pr + 0.15, K.Pr + 0.55)} color="#ffe37a" />
-          <Hoyo x={900} y={1040} alto={240} texto="trufa" o={kprog(T, K.Pr + 0.3, K.Pr + 0.7)} />
-          <Olor T={T} x={560} y={1020} alto={220} n={2} ancho={40} o={kprog(T, K.Pr + 0.5, K.Pr + 1)} />
-          <Olor T={T} x={890} y={1020} alto={220} n={2} ancho={40} o={kprog(T, K.Pr + 0.5, K.Pr + 1)} />
-          <Terrones T={T} x={560} y={1010} at={K.Pr + 2.6} n={8} />
-          <Terrones T={T} x={890} y={1010} at={K.Pr + 2.5} n={8} />
+          <Hoyo x={180} y={1040} alto={240} texto="feromona" o={kprog(T, K.Pr, K.Pr + 0.4)} />
+          <Hoyo x={510} y={1040} alto={240} texto="trufa" o={kprog(T, K.Pr + 0.15, K.Pr + 0.55)} />
+          <Hoyo x={820} y={1040} alto={240} texto="sulfuro de dimetilo" o={kprog(T, K.Pr + 0.3, K.Pr + 0.7)} color="#ffe37a" />
+          <Olor T={T} x={510} y={1020} alto={220} n={2} ancho={40} o={kprog(T, K.Pr + 0.5, K.Pr + 1)} />
+          <Olor T={T} x={820} y={1020} alto={220} n={2} ancho={40} o={kprog(T, K.Pr + 0.5, K.Pr + 1)} />
+          <Terrones T={T} x={510} y={1010} at={K.Pr + 2.6} n={8} />
+          <Terrones T={T} x={820} y={1010} at={K.Pr + 2.5} n={8} />
           <Perro T={T} x={dx} y={990} s={0.85} flip paso={T < K.Pr + 2.4 ? T : 0} baja={T > K.Pr + 2.4 ? 0.6 + 0.3 * Math.sin(T * 14) : 0} />
           <Puerco T={T} x={px} y={1000} s={0.75} color="#f2a0b4" jabali={false} paso={T < K.Pr + 2.4 ? T : 0} baja={T > K.Pr + 2.4 ? 0.6 + 0.3 * Math.sin(T * 14) : 0} />
           <SelloTexto T={T} at={K.Pr + 4.2} x={300} y={630} texto="EN DUDA" />
@@ -411,8 +411,8 @@ function TrufasShot() {
       <Chip T={T} at={K.A + 4.3} until={K.H - 0.3} texto="esporas de viaje" x={360} y={470} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.H + 0.4} until={K.Pr - 0.3} texto="feromona del cerdo macho" x={360} y={470} tam={32} borde={KC.pink} />
       <Chip T={T} at={K.Pr + 0.2} until={K.E - 0.3} texto="Francia · publicado en 1990" x={360} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Pr + 1.3} until={K.Pr + 3.2} x={60} y={1120} texto="el cerdo la pasa de largo" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 2.6} until={K.E - 0.3} x={1040} y={1170} lado="izq" texto="el perro: directo a la trufa" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 1.3} until={K.Pr + 2.5} x={60} y={1120} texto="el cerdo la pasa de largo" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 2.6} until={K.E - 0.3} x={1040} y={1120} lado="izq" texto="el perro: al sulfuro de dimetilo" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.2} anio="2014" quien="Italia · esporas de trufa" revista="Fungal Ecology, 2014" y={620} />
       <Chip T={T} at={K.E + 2.4} until={K.En - 0.3} texto="POR DENTRO · la tripa del cerdo" x={380} y={470} tam={30} borde={KC.pink} />
       <Chip T={T} at={K.E + 4.0} until={K.En - 0.3} texto="✓ siguen vivas" x={330} y={1150} tam={36} borde={KC.mint} />

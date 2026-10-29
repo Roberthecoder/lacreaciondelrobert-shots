@@ -11,7 +11,7 @@ Se llama Amorphotheca resinae (antes Hormoconis o Cladosporium resinae) y le dic
 Sin agua no crece, pero en los tanques de los aviones se condensa agua y queda abajo de la turbosina. Justo en la frontera entre el agua y el combustible se pone a comer: sus hilos (hifas) miden 2 o 3 milésimas de milímetro de ancho y forman tapetes cafés, y sus esporas viajan en el mismo combustible.
 ¿Qué le hace al avión? Tapa filtros y sus ácidos orgánicos corroen el aluminio; antes, esa corrosión llegó a perforar tanques de las alas.
 En 2021, en Hamburgo, Alemania, un equipo de la Universidad de Hamburgo y Lufthansa Technik leyó el ADN de la mugre (biopelículas) de seis tanques de aviones: el hongo más abundante fue Amorphotheca.
-Por eso drenan el agua de los tanques y usan biocidas, en dosis exacta. En 2020, en Gatwick (Londres), a un avión le pusieron unas 38 veces la dosis recomendada de biocida; sus dos motores empezaron a fallar tras despegar, pero aterrizó a salvo y nadie salió herido.
+Por eso drenan el agua de los tanques y usan biocidas, en dosis exacta. En 2020, en el aeropuerto de Gatwick (cerca de Londres), a un avión le pusieron unas 38 veces la dosis recomendada de biocida; sus dos motores empezaron a fallar tras despegar, pero aterrizó a salvo y nadie salió herido.
 El dibujo es esquemático.
 Fuentes: Arnold 1983; Krohn et al. 2021 (Frontiers in Microbiology); AAIB 2021; JIG/IATA 2026.
 ¿Te imaginabas que un hongo viajara contigo en el avión? 👇
@@ -23,7 +23,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esas manchas oscuras en un filtro de turbosina no siempre son mugre: pueden ser un hongo que come combustible. ✈️🍄
-Amorphotheca resinae, el "hongo del queroseno", vive en el agua que se condensa en el fondo de los tanques y come justo en la frontera con la turbosina. Forma tapetes cafés que tapan filtros, y sus ácidos corroen el aluminio. En 2021, en Hamburgo, leyeron el ADN de la mugre de seis tanques de aviones: el hongo más abundante fue Amorphotheca. Por eso drenan el agua y usan biocidas… en dosis exacta: en 2020, en Londres, un avión recibió unas 38 veces la dosis y sus dos motores empezaron a fallar (aterrizó a salvo).
+Amorphotheca resinae, el "hongo del queroseno", vive en el agua que se condensa en el fondo de los tanques y come justo en la frontera con la turbosina. Forma tapetes cafés que tapan filtros, y sus ácidos corroen el aluminio. En 2021, en Hamburgo, leyeron el ADN de la mugre de seis tanques de aviones: el hongo más abundante fue Amorphotheca. Por eso drenan el agua y usan biocidas… en dosis exacta: en 2020, cerca de Londres, un avión recibió unas 38 veces la dosis y sus dos motores empezaron a fallar (aterrizó a salvo).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te imaginabas que un hongo viajara contigo en el avión? 👇
 Shot Fungi Mati #51 · La Creación del Robert
@@ -41,7 +41,7 @@ Descripción:
 Esas manchas oscuras en un filtro de turbosina no siempre son mugre: pueden ser un hongo que come combustible.
 Amorphotheca resinae (también llamado Hormoconis o Cladosporium resinae) es el "kerosene fungus", el hongo del queroseno. Antes de los aviones ya se le conocía como el "hongo de la creosota", porque crece en postes de telégrafo y durmientes de tren tratados con creosota.
 No crece sin agua. En los tanques de los aviones el agua se condensa y se junta abajo de la turbosina (el combustible de avión, Jet A-1). En la frontera entre el agua y el combustible el hongo se alimenta de los hidrocarburos: sus hifas miden 2 o 3 micras de ancho, forman tapetes cafés como de fieltro, y sus esporas (ovaladas, de unas 5 micras de largo) viajan en el mismo combustible hasta otras gotitas de agua.
-¿Qué le hace al avión? Tapa filtros y conductos, y los ácidos orgánicos que produce corroen las aleaciones de aluminio; en su momento llegó a perforar tanques de las alas.
+¿Qué le hace al avión? Tapa filtros y conductos, y los ácidos orgánicos que produce corroen las aleaciones de aluminio; en su momento, esa corrosión llegó a perforar tanques de las alas.
 En 2021, un equipo de la Universidad de Hamburgo y Lufthansa Technik (Hamburgo, Alemania) leyó el ADN de las biopelículas de seis tanques de aviones: junto con varias bacterias, el hongo más abundante fue Amorphotheca.
 Por eso los tanques tienen drenajes para sacar el agua y, si hay contaminación, se usan biocidas en la dosis exacta. El 26 de febrero de 2020, un Airbus A321 despegó de Gatwick (Londres) después de que sus tanques se trataran contra contaminación microbiana con unas 38 veces la concentración recomendada de biocida: sus dos motores empezaron a fallar, pero la tripulación regresó y aterrizó a salvo (iban 7 tripulantes, sin pasajeros; nadie salió herido). La falla vino del exceso de biocida, no del hongo.
 El dibujo es esquemático.
@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un hongo en el combustible de avión: por qué el mantenimiento empieza por el agua.
 Amorphotheca resinae (Hormoconis resinae), el "kerosene fungus", crece en la interfase agua–combustible de los tanques. Sus biopelículas tapan filtros y sus ácidos orgánicos corroen las aleaciones de aluminio. En 2021, un estudio de la Universidad de Hamburgo y Lufthansa Technik (Frontiers in Microbiology) encontró que Amorphotheca era el hongo más abundante en el ADN de biopelículas de seis tanques de aviones.
-El control se basa en drenar el agua, vigilar la contaminación y, cuando hace falta, usar biocidas con la dosis correcta. El informe AAR 1/2021 de la AAIB sobre el A321 G-POWN (Gatwick, 2020) muestra el otro riesgo: tanques tratados con unas 38 veces la concentración recomendada de biocida provocaron fallas en ambos motores; la tripulación aterrizó a salvo. En mayo de 2026, JIG, IATA, A4A e IFQP emitieron un aviso conjunto por el aumento de reportes de contaminación microbiana en combustible de aviación.
+El control se basa en drenar el agua, vigilar la contaminación y, cuando hace falta, usar biocidas con la dosis correcta. El informe AAR 1/2021 de la AAIB sobre el A321 G-POWN (Gatwick, 2020) muestra el otro riesgo: tanques tratados con unas 38 veces la concentración recomendada de biocida provocaron fallas en ambos motores; la tripulación aterrizó a salvo. En mayo de 2026, JIG, IATA, A4A e IFQP emitieron un aviso conjunto por el aumento de reportes de contaminación microbiana en los sistemas de combustible de aviación de los aeropuertos.
 ¿En tu industria también hay "contaminantes vivos"?
 Shot Fungi Mati #51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

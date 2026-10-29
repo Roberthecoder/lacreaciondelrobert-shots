@@ -40,3 +40,28 @@ Fuentes abiertas:
 | 21 | Dibujo: espora que germina, hifas ramificadas de 2–3 µm, barra 10 µm; esporas ovaladas (~2–3 × 5 µm) en cadenas ramificadas que suben al combustible | ✅ | [ARN], [SEI] | [ARN]: "hyphae … two or three microns wide, its spores no wider and perhaps five microns long"; "produces its spores in the less dense medium above. The spores are thus disseminated by the fuel itself". [SEI]: "branched, acropetally developing chains of lightly pigmented ameroconidia". | 1983 / 2007 |
 
 **Resumen (29 oct 2026, re-verificación de lo corregido):** se reabrieron [ARN], [KRO], [SEI], [AAIB], [JIG] y la NOM-016-CRE-2016 (numeral 3.33: "Turbosina (Jet A-1): Petrolífero proveniente del destilado intermedio del petróleo"). El ❌ del pino se sustituyó por el dato de la creosota; los ⚠️ del gancho, la perforación, Hamburgo y Gatwick quedaron corregidos; el agua condensada se respalda con [ARN] y [AAIB] (no con [MUJ]). Las 12 líneas de narracion.json y lo que se ve en pantalla quedan ✅.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `queroseno.jsx`, `Shot Queroseno base narrada.dc.html`, la columna «Lo que se ve» y la tabla «Robert en pantalla» de `guion.md`, y `publicacion.md`; se revisaron cuadros con `motor/preview.mjs` (0.3–60 s y 8, 20, 24, 26, 31, 47 s tras corregir).
+
+| # | Texto o dibujo en pantalla / publicación | Veredicto | Fuente | Nota |
+|---|---|---|---|---|
+| R1 | Chips «¿mugre? → ¿o un hongo?», «filtro de turbosina», cierre «¿mugre? o ¿un hongo con hambre de turbosina?»; subtítulo «No siempre es mugre: puede ser un hongo.» | ✅ | [JIG] | Preguntan/posibilidad, no afirman. |
+| R2 | «*Amorphotheca resinae*», «"hongo del queroseno"», «antes: *Hormoconis* / *Cladosporium resinae*», chip «turbosina = Jet A-1» | ✅ | [KRO], [ARN], [NOM] | Ver filas 2–4. |
+| R3 | Chip «el hongo de la creosota», etiquetas «poste con creosota», «durmientes»; subtítulo «Antes se comía la creosota.» | ✅ | [ARN], [SEI] | Ver fila 5. |
+| R4 | Subtítulo «Sin agua no crece.» → **corregido** a «Sin agua no crece: el agua queda abajo.» (resume también la condensación); etiquetas «turbosina», «agua (abajo)» | ✅ corregido | [ARN], [AAIB] | Ver filas 6–7. |
+| R5 | Hifas al microscopio: se veían como raíces gruesas (26 px con barra 10 µm = 120 px). **Corregido:** barra 10 µm = 60 px, hifas de 14 px (≈ 2.3 µm), espora que germina y cadenas de esporas a 15 × 30 px (≈ 2.5 × 5 µm, ovaladas, en cadenas ramificadas). Chip «hifas: 2–3 µm de ancho». | ✅ corregido | [ARN], [SEI] | "two or three microns wide, its spores no wider and perhaps five microns long"; "branched, acropetally developing chains". |
+| R6 | Subtítulo «Tapa filtros y corroe el aluminio.» → **corregido** a «Tapa filtros; sus ácidos corroen el aluminio.»; chips «filtros tapados», «ácidos orgánicos → corrosión», «antes: tanques perforados» | ✅ corregido | [ARN], [KRO] | Ver filas 11–13. |
+| R7 | Tarjeta «2021 · Hamburgo, Alemania · 6 tanques · Krohn et al., Frontiers in Microbiology»; chip «ADN de la mugre»; «el hongo más abundante: *Amorphotheca*»; subtítulo «2021: ADN de seis tanques.»; seis frascos | ✅ | [KRO] | Ver fila 15. |
+| R8 | «drenaje de agua», «biocida», «dosis exacta» | ✅ | [AAIB] | Ver fila 16. |
+| R9 | Número «≈38× la dosis de biocida»; «2020 · Gatwick, Londres» (nombre oficial: London Gatwick Airport); «motor 1: llamas» (motor izquierdo) / «motor 2: aviso»; «aterrizó · 0 heridos»; subtítulo «Unas 38 veces la dosis… y aterrizó a salvo.» | ✅ | [AAIB] | "approximately 38 times the recommended concentration"; "flames coming from the No 1 engine's tailpipe"; "No 2 engine had stalled"; lesiones 0. |
+| R10 | Barras de escala: avión del «Nombre» **corregida** de 190 a 240 px por 10 m (envergadura del A321 ≈ 35.8 m ≈ 864 px en el dibujo); las demás (10 cm filtro, 1 m poste, 50 cm tanque, 1 cm daño, 5 cm frascos, 10 cm drenaje, 10 m Gatwick) son coherentes con el dibujo esquemático. | ✅ corregido | — | Datos de envergadura: A321 35.8 m (Airbus). |
+| R11 | publicacion.md: 26 feb 2020, Airbus A321, 7 tripulantes sin pasajeros, nadie herido, causa = exceso de biocida (no el hongo), tratamiento contra contaminación microbiana | ✅ | [AAIB] | "26 February 2020"; "Airbus A321-211"; tabla de lesiones 7 tripulación / 0 pasajeros; causal factors 1–2. |
+| R12 | publicacion.md: Univ. de Hamburgo + Lufthansa Technik; "junto con varias bacterias, el hongo más abundante fue Amorphotheca"; esporas viajan en el combustible; antes de los aviones ya era "hongo de la creosota" | ✅ | [KRO], [ARN], [SEI] | Afiliaciones; "The spores are thus disseminated by the fuel itself". |
+| R13 | publicacion.md **corregido**: YouTube «en su momento, esa corrosión llegó a perforar…» (antes atribuía la perforación al hongo solo); Instagram «cerca de Londres» (antes «en Londres»); TikTok «aeropuerto de Gatwick (cerca de Londres)»; LinkedIn: aviso de mayo 2026 «por el aumento de reportes de contaminación microbiana en los sistemas de combustible de aviación de los aeropuertos» (texto: "Recent increases in reports of microbiological (MBG) contamination in airport fuel handling systems"). | ✅ corregido | [ARN], [AAIB], [JIG] | — |
+| R14 | Tabla «Robert en pantalla»: 9 apariciones + cierre, ≈ 39.6 s, una grande (pregunta), 8 poses distintas sin repetir seguidas; no tapa datos en los cuadros revisados. | ✅ | — | Regla de marca, no de hechos. |
+
+**Resumen final:** animación, subtítulos, barras de escala y publicacion.md coinciden con las fuentes tras las correcciones (subtítulos 3 y 7, hifas y esporas a escala, barra del avión, cuatro frases de publicacion.md). La voz verificada no se tocó.
+
+VEREDICTO: APROBADO

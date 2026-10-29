@@ -137,16 +137,16 @@ function QuerosenoShot() {
           <rect x={0} y={IY} width={KW} height={KH - IY} fill={QK.agua2} opacity=".42" />
           <path d={`M 0 ${IY} Q 270 ${IY + Math.sin(T * 1.5) * 8} 540 ${IY} T 1080 ${IY}`} stroke="#9fd3ff" strokeWidth={6} fill="none" />
           {/* espora que germina */}
-          <ellipse cx={540} cy={IY - 4} rx={15} ry={30} transform={`rotate(80 540 ${IY - 4})`} fill={QK.espora} stroke={KC.ink} strokeWidth={4} opacity={1 - kprog(T, K.Ta + 1.0, K.Ta + 2.0)} />
-          <RedHifas T={T} x={540} y={IY} g={kprog(T, K.Fr + 0.6, K.Ta + 1.6)} seed={9} n={110} escala={0.9} ancho={26} color={QK.hifa} rot={0} />
-          <RedHifas T={T} x={300} y={IY + 10} g={kprog(T, K.Ta - 0.2, K.Ta + 2.6)} seed={4} n={80} escala={0.75} ancho={26} color={QK.hifa} rot={20} />
-          <RedHifas T={T} x={800} y={IY + 6} g={kprog(T, K.Ta + 0.1, K.Ta + 2.9)} seed={6} n={80} escala={0.75} ancho={26} color={QK.hifa} rot={-15} />
+          <ellipse cx={540} cy={IY - 4} rx={7.5} ry={15} transform={`rotate(80 540 ${IY - 4})`} fill={QK.espora} stroke={KC.ink} strokeWidth={4} opacity={1 - kprog(T, K.Ta + 1.0, K.Ta + 2.0)} />
+          <RedHifas T={T} x={540} y={IY} g={kprog(T, K.Fr + 0.6, K.Ta + 1.6)} seed={9} n={110} escala={0.9} ancho={14} color={QK.hifa} rot={0} />
+          <RedHifas T={T} x={300} y={IY + 10} g={kprog(T, K.Ta - 0.2, K.Ta + 2.6)} seed={4} n={80} escala={0.75} ancho={14} color={QK.hifa} rot={20} />
+          <RedHifas T={T} x={800} y={IY + 6} g={kprog(T, K.Ta + 0.1, K.Ta + 2.9)} seed={6} n={80} escala={0.75} ancho={14} color={QK.hifa} rot={-15} />
           {/* tapete café */}
           <path d={`M 40 ${IY - 30} Q 300 ${IY - 70} 540 ${IY - 40} T 1040 ${IY - 30} L 1040 ${IY + 60} Q 540 ${IY + 90} 40 ${IY + 60} Z`} fill={QK.tapete} stroke={KC.ink} strokeWidth={6} opacity={0.85 * kprog(T, K.Ta + 1.2, K.Ta + 2.6)} />
           {kprog(T, K.Ta + 1.2, K.Ta + 2.6) > 0 && Array.from({ length: 22 }, (_, i) => <path key={i} d={`M ${60 + i * 45} ${IY - 20 + (i % 3) * 18} q 22 ${-14 + (i % 4) * 8} 44 0`} stroke={QK.tapete2} strokeWidth={7} fill="none" opacity={kprog(T, K.Ta + 1.2, K.Ta + 2.6)} />)}
           {/* cadenas de esporas que suben a la turbosina */}
-          <CadenaEsporas x={300} y={IY - 50} p={kprog(T, K.Ta + 1.8, K.Ta + 3.6)} s={1.0} rot={-6} />
-          <CadenaEsporas x={580} y={IY - 50} p={kprog(T, K.Ta + 2.1, K.Ta + 3.9)} s={1.0} rot={8} />
+          <CadenaEsporas x={300} y={IY - 50} p={kprog(T, K.Ta + 1.8, K.Ta + 3.6)} s={0.5} rot={-6} />
+          <CadenaEsporas x={580} y={IY - 50} p={kprog(T, K.Ta + 2.1, K.Ta + 3.9)} s={0.5} rot={8} />
         </>)}
       </Escena>
       {/* 6 · pregunta */}
@@ -279,10 +279,10 @@ function QuerosenoShot() {
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="10 cm" largo={160} color={KC.ink} y={1600} />
-      <BarraEscala T={T} at={K.N} until={K.Cr} texto="10 m" largo={190} color={KC.ink} y={1720} />
+      <BarraEscala T={T} at={K.N} until={K.Cr} texto="10 m" largo={240} color={KC.ink} y={1720} />
       <BarraEscala T={T} at={K.Cr} until={K.Ag} texto="1 m" largo={170} y={1560} color={KC.ink} />
       <BarraEscala T={T} at={K.Ag} until={K.Fr} texto="50 cm" largo={300} color={KC.ink} y={1500} />
-      <BarraEscala T={T} at={K.Fr} until={K.P} texto="10 µm" largo={120} y={1500} />
+      <BarraEscala T={T} at={K.Fr} until={K.P} texto="10 µm" largo={60} y={1500} />
       <BarraEscala T={T} at={K.D} until={K.E} texto="1 cm" largo={180} y={1500} color={KC.ink} />
       <BarraEscala T={T} at={K.E} until={K.R} texto="5 cm" largo={110} y={1620} color={KC.ink} />
       <BarraEscala T={T} at={K.R} until={K.Ga} texto="10 cm" largo={130} y={1500} color={KC.ink} />
@@ -293,11 +293,11 @@ function QuerosenoShot() {
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No siempre es mugre: *puede ser un hongo.*" />
       <Subtitulo T={T} idx={1} at={K.N + 0.1} until={K.Cr - 0.1} texto="El hongo *del queroseno.*" />
       <Subtitulo T={T} idx={2} at={K.Cr + 0.1} until={K.Ag - 0.1} texto="Antes se comía *la creosota.*" />
-      <Subtitulo T={T} idx={3} at={K.Ag + 0.1} until={K.Fr - 0.1} texto="Sin agua *no crece.*" />
+      <Subtitulo T={T} idx={3} at={K.Ag + 0.1} until={K.Fr - 0.1} texto="Sin agua no crece: *el agua queda abajo.*" />
       <Subtitulo T={T} idx={4} at={K.Fr + 0.1} until={K.Ta - 0.1} texto="En la frontera *se pone a comer.*" />
       <Subtitulo T={T} idx={5} at={K.Ta + 0.1} until={K.P - 0.1} texto="Hilos que forman *tapetes cafés.*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.D - 0.1} texto="¿Y qué le hace *al avión?*" />
-      <Subtitulo T={T} idx={7} at={K.D + 0.1} until={K.E - 0.1} texto="Tapa filtros y *corroe el aluminio.*" />
+      <Subtitulo T={T} idx={7} at={K.D + 0.1} until={K.E - 0.1} texto="Tapa filtros; sus ácidos *corroen el aluminio.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.R - 0.1} texto="2021: ADN de *seis tanques.*" />
       <Subtitulo T={T} idx={9} at={K.R + 0.1} until={K.Ga - 0.1} texto="Drenar el agua y biocida *en dosis exacta.*" />
       <Subtitulo T={T} idx={10} at={K.Ga + 0.1} until={K.C - 0.1} texto="Unas 38 veces la dosis… *y aterrizó a salvo.*" />

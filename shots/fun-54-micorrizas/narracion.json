@@ -1,0 +1,19 @@
+{
+  "dcHtml": "Shot Micorrizas base narrada.dc.html",
+  "salida": "Shot Micorrizas narrado.dc.html",
+  "nota": "Shot Fungi Mati #54. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es un mercado." },
+    { "escena": "Viral", "texto": "Seguro oíste que un árbol madre alimenta a sus hijos por una red de hongos." },
+    { "escena": "Micorriza", "texto": "Lo comprobado: esos hongos, las micorrizas, se meten en las raíces." },
+    { "escena": "Trato", "texto": "Le dan a la planta fósforo y nitrógeno, y ella les paga con carbono: sobre todo azúcares." },
+    { "escena": "Casitodas", "texto": "Y no es raro: más de ocho de cada diez especies de plantas las tienen." },
+    { "escena": "Pregunta", "texto": "¿Pero un mismo hongo puede estar en varios árboles a la vez?" },
+    { "escena": "Red", "texto": "En un bosque canadiense, un mismo hongo estaba en raíces de hasta diecinueve abetos." },
+    { "escena": "Simard", "texto": "Y en 1997, Suzanne Simard marcó carbono en abedules y lo halló después en abetos vecinos." },
+    { "escena": "Debate", "texto": "Pero una revisión de 2023 dice que hay otras explicaciones, como que pasara por el suelo." },
+    { "escena": "Madre", "texto": "¿Y el árbol madre? No halló ni un estudio revisado por científicos, hecho en bosques, que lo demuestre." },
+    { "escena": "Citas", "texto": "Y halló que las citas científicas que exageran se duplicaron en veinticinco años." },
+    { "escena": "Cierre", "texto": "Así que ese hilito blanco, seguro, es un mercado. Lo del internet del bosque, todavía se investiga." }
+  ]
+}

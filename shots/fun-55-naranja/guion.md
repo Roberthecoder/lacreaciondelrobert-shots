@@ -64,7 +64,7 @@ Barras de escala: 5 cm (naranja), 1 mm (cáscara en corte), 10 µm (espora y gl�
    > "Penicillium italicum grows more quickly at temperatures below 10°C, and may be the more common of the two in cold storage."
    > "The fungi infect through wounds in the fruit, but infection by contact can also occur"
 
-7. Silva, E. et al. (2025). *J. Agric. Food Chem.* doi:10.1021/acs.jafc.5c07618. https://pmc.ncbi.nlm.nih.gov/articles/PMC12576830/ (moho azul, *P. italicum*)
+7. Silva, E. et al. (2025). Decoding the *Penicillium italicum*–Citrus Interaction: Untargeted Metabolomics Sheds Light on a Neglected Postharvest Pathogen. *J. Agric. Food Chem.* doi:10.1021/acs.jafc.5c07618. https://pmc.ncbi.nlm.nih.gov/articles/PMC12576830/ (moho azul, *P. italicum*)
    > "blue mold is of great concern due to nesting, a process of fast spreading of the infection on healthy fruits of the same packing box"
    > "P. italicum is particularly resistant to cold…"
    > Para el moho verde, contraste: Zakaria (2026, fuente 2): "Infections of adjacent citrus fruits are rare".

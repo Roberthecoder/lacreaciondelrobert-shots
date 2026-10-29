@@ -10,7 +10,7 @@ Esto no es una piedra: es una trufa, un hongo que da su fruto bajo tierra. 🍄�
 Las trufas (género Tuber) viven pegadas a las raíces de árboles como encinos y avellanos: les ayudan a sacar minerales del suelo y los árboles les dan azúcar. Esa unión se llama micorriza.
 El problema: sus esporas quedan encerradas en sacos (ascas) dentro de la trufa, bajo el suelo, y ahí no hay viento que se las lleve. Su solución es oler: sueltan decenas de sustancias volátiles, como el sulfuro de dimetilo. Los animales que comen hongos siguen ese olor, la desentierran, se la comen y dejan las esporas en su popó.
 Una vieja hipótesis (1981) decía que a los cerdos los atrae porque huele a una feromona del cerdo macho (el androstenol). Pero un experimento en Francia, publicado en 1990, reportó que perros y cerdos iban al sulfuro de dimetilo. En 2022, otros investigadores señalaron que ese estudio no describió bien su método.
-En 2014, en Italia, vieron que las esporas de trufa que pasan por la tripa de un cerdo salen vivas, y hasta se unían más fácil a raíces de encino. Y en México, en 2018, ya se contaban unas veinte especies de trufas silvestres, varias bajo encinos.
+En 2014, en Italia, vieron que las esporas de trufa que pasan por la tripa de un cerdo salen vivas, y hasta se unían más fácil a raíces de encino. Y en México, en 2018, ya se contaban unas veinte especies de trufas silvestres; una de ellas, Tuber incognitum, vive bajo encinos.
 El dibujo es esquemático.
 Fuentes: Martin et al. 2010 (Nature); Elliott et al. 2022; Claus et al. 1981; Talou et al. 1990; Epping et al. 2022; Piattoni et al. 2014 (Fungal Ecology); Piña Páez et al. 2018 (MycoKeys).
 ¿Habías probado algo con trufa? 👇
@@ -38,10 +38,10 @@ La trufa: el hongo que se deja encontrar por el olfato 🐖 | Shot Fungi Mati #5
 Descripción:
 ```text
 Esto no es una piedra: es una trufa, un hongo que da su fruto bajo tierra.
-Las trufas (género Tuber) forman micorrizas con raíces de árboles como encinos y avellanos: el hongo ayuda al árbol a tomar minerales del suelo y el árbol le da azúcares. La trufa negra (Tuber melanosporum) crece en simbiosis con raíces de encino, y en Francia se cosecharon trufas negras de avellanos plantados ya en 1977.
+Las trufas (género Tuber) forman micorrizas con raíces de árboles como encinos y avellanos: el hongo ayuda al árbol a tomar minerales del suelo y el árbol le da azúcares. La trufa negra (Tuber melanosporum) crece en simbiosis con raíces de encino, y en 1977 ya se cosecharon trufas negras de avellanos plantados con el hongo.
 Sus esporas quedan encerradas en sacos (ascas) dentro de la trufa, bajo el suelo, donde el viento no se las lleva. Por eso huelen: una trufa suelta decenas de sustancias volátiles, como el sulfuro de dimetilo, y los mamíferos e insectos que comen hongos la encuentran, se la comen y esparcen las esporas en su excremento.
-Una hipótesis de 1981 propuso que los cerdos la buscan porque huele a una feromona del cerdo macho (el androstenol). Un experimento en Francia, publicado en 1990, reportó que perros y cerdos entrenados iban al sulfuro de dimetilo; en 2022, otros investigadores señalaron que ese estudio no describió bien su método, así que la pregunta sigue abierta.
-En 2014, un estudio en Italia vio que las esporas de la trufa de verano (Tuber aestivum) que pasan por la tripa de un cerdo (Sus scrofa) salen vivas, y que se unían más fácil a raíces de encino. En México, un estudio de 2018 contaba unas veinte especies de trufas silvestres, varias asociadas a encinos, como Tuber incognitum en el Eje Neovolcánico.
+Una hipótesis de 1981 propuso que los cerdos la buscan porque huele a una feromona del cerdo macho (el androstenol). Un experimento en Francia, publicado en 1990, reportó que perros truferos entrenados y cerdos iban al sulfuro de dimetilo; en 2022, otros investigadores señalaron que ese estudio no describió bien su método, así que la pregunta sigue abierta.
+En 2014, un estudio en Italia vio que las esporas de la trufa de verano (Tuber aestivum) que pasan por la tripa de un cerdo (Sus scrofa) salen vivas, y que se unían más fácil a raíces de encino. En México, un estudio de 2018 contaba unas veinte especies de trufas silvestres; una de ellas, Tuber incognitum, vive bajo encinos en el Eje Neovolcánico.
 El dibujo es esquemático.
 Fuentes:
 - Martin, F. et al. (2010). Périgord black truffle genome uncovers evolutionary origins and mechanisms of symbiosis. Nature 464: 1033–1038. https://doi.org/10.1038/nature08867
