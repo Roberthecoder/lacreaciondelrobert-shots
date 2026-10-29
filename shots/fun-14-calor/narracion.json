@@ -5,31 +5,31 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa hormiga trae un hongo zombi. Tú no: tu calor frena a la mayoría de los hongos."
+      "texto": "Esa hormiga trae un hongo zombi. A ti casi ningún hongo te hace eso: tu calor frena a la mayoría."
     },
     {
       "escena": "Hormiga",
-      "texto": "La hormiga no fabrica su calor: lo toma de afuera."
+      "texto": "La hormiga casi no fabrica su calor: lo toma de afuera."
     },
     {
       "escena": "Tu",
-      "texto": "Tú sí, y te mantienes cerca de treinta y siete grados."
+      "texto": "Tú sí: vives cerca de treinta y siete grados."
     },
     {
       "escena": "Hongos",
-      "texto": "La mayoría de los hongos crece bien al aire libre, pero pocos a treinta y siete."
+      "texto": "Los hongos suelen crecer al aire libre, pero pocos a treinta y siete."
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y cuántos hongos frena tu calor?"
+      "texto": "¿Cuántos frena tu calor?"
     },
     {
       "escena": "Estudio",
-      "texto": "En 2009, desde Utrecht, Países Bajos, probaron cuatro mil ochocientas dos cepas de hongos."
+      "texto": "En 2009 revisaron datos de cuatro mil ochocientas dos cepas de una colección de Utrecht, Países Bajos."
     },
     {
       "escena": "Resultado",
-      "texto": "La mayoría no crece a la temperatura de un mamífero."
+      "texto": "La mayoría no crece a temperatura de mamífero."
     },
     {
       "escena": "Grado",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Fiebre",
-      "texto": "Y sugieren que la fiebre podría dejar fuera a más."
+      "texto": "Y sugieren que la fiebre podría excluir a más."
     },
     {
       "escena": "Hipotesis",
@@ -45,19 +45,19 @@
     },
     {
       "escena": "Auris",
-      "texto": "Pero ojo: la levadura Candida auris crece bien hasta a cuarenta grados."
+      "texto": "Pero ojo: la levadura Candida auris crece bien a cuarenta grados."
     },
     {
       "escena": "Clima",
-      "texto": "En 2019 se propuso que el calentamiento global la acostumbró al calor: otra hipótesis."
+      "texto": "En 2019 se propuso que el calentamiento global la hizo adaptarse: otra hipótesis."
     },
     {
       "escena": "Defensas",
-      "texto": "Tu escudo es doble: calor y defensas. Con los dos bien, las infecciones graves por hongos son raras."
+      "texto": "Tu escudo es doble: calor y defensas. Con ambos, las infecciones graves por hongos son raras."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que el hongo zombi se queda con la hormiga: tú traes un escudo de treinta y siete grados."
+      "texto": "Así que el zombi es cosa de hormigas; contra casi todos los demás hongos, traes un escudo de treinta y siete grados."
     }
   ]
 }

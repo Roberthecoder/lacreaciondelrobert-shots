@@ -19,7 +19,7 @@
 | 5 | Pregunta | ¿Y por qué se pone negro? | **Re-gancho.** Agalla gris que se oscurece; "?" gigante; Robert grande, pensativo. |
 | 6 | Esporas | Porque el hongo lo llena de esporas oscuras, redondas y con espinitas. | Microscopio (fondo noche): la agalla por dentro se llena de esporas (teliosporas) cafés-negras, redondas y con espinitas. Barra 10 µm. Etiqueta "teliosporas". |
 | 7 | Estudio | En 2003, investigadores de la Universidad de Illinois le pusieron el hongo a propósito a los pelos de elotes. | `TarjetaEstudio` "2003 · Universidad de Illinois · Pataky y Chandler, *Mycologia*". Una jeringa pone el hongo en los pelos de varios elotes. |
-| 8 | Cosecha | Sacaron hasta ciento treinta y un gramos por mazorca. | Báscula: "131 g por mazorca" (`NumeroGigante`). |
+| 8 | Cosecha | Sacaron hasta ciento treinta y un gramos por mazorca. | Báscula: "131 g de huitlacoche por mazorca" (`NumeroGigante`). |
 | 9 | Sabor | Cosechado a los doce o catorce días no servía: sin esporas, le faltaban color y sabor. | `Cronometro` "días después de inocular" en 12–14 días: agalla pálida con ✗ "sin esporas = sin color ni sabor". |
 | 10 | Enfermedad | En casi todo el mundo es una enfermedad del maíz; en México, un manjar con nombre en muchas lenguas. | Mapa: globo con un elote y chip "enfermedad del maíz"; México con el elote y chips de nombres en lenguas indígenas (Tabla 1 de Villagrán 2023): "cuitlacoche · náhuatl", "ta' chak · maya", "bia'huí' · zapoteco". |
 | 11 | Modelo | Y en el laboratorio es modelo para entender cómo un hongo enferma a una planta. | Caja de Petri con colonias del hongo y plántulas de maíz con agallas. Chip "organismo modelo". |

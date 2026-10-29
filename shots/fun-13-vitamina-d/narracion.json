@@ -4,9 +4,9 @@
   "nota": "Shot Fungi Mati #13. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
     { "escena": "Gancho", "texto": "Ese champiñón no es solo comida: es una fábrica de vitamina D que se prende con sol." },
-    { "escena": "Oscuras", "texto": "Casi todos los del súper crecen a oscuras: traen casi nada de vitamina D." },
+    { "escena": "Oscuras", "texto": "Casi todos los del súper crecen a oscuras: casi sin vitamina D." },
     { "escena": "Ergosterol", "texto": "Pero en sus membranas guardan ergosterol, una molécula parecida al colesterol." },
-    { "escena": "Luz", "texto": "Con luz ultravioleta, el ergosterol cambia de forma: se vuelve previtamina D2 y luego vitamina D2." },
+    { "escena": "Luz", "texto": "Con luz ultravioleta, el ergosterol cambia: se vuelve previtamina D2 y luego vitamina D2." },
     { "escena": "Piel", "texto": "Tu piel hace casi lo mismo con el sol, pero fabrica D3." },
     { "escena": "Pregunta", "texto": "¿Y cuánto sol necesita un champiñón?" },
     { "escena": "Estudio", "texto": "En 2015, un equipo de Alemania y Dinamarca puso champiñones rebanados a secar al sol." },
@@ -14,7 +14,7 @@
     { "escena": "Salmon", "texto": "Comparable al salmón, y más de lo recomendado al día para la mayoría de los adultos." },
     { "escena": "Hora", "texto": "Subió una hora, se estancó y, con horas de más, bajó." },
     { "escena": "Cuerpo", "texto": "Y sí la aprovechas: en un estudio pequeño de 2013, la D2 del champiñón llegó a la sangre igual que un suplemento de D2." },
-    { "escena": "Truco", "texto": "Rebanados hacen más que enteros, y en el refri la guardan hasta una semana." },
+    { "escena": "Truco", "texto": "Rebanados hacen más que enteros, y en el refri la guardan una semana." },
     { "escena": "Cierre", "texto": "Así que no es solo comida: quince minutos de sol del mediodía y es tu fábrica de vitamina D." }
   ]
 }
