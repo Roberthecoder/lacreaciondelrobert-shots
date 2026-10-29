@@ -148,11 +148,11 @@ function Barras({ T, at, until, filas, top = 660, max = 20 }) {
   const e = kentrada(T, at, until, 'sube');
   return <div style={{ position:'absolute', left:70, top, width:940, zIndex:40, opacity:e.o }}>
     {filas.map((f, i) => { const a0 = f.at || at, g = kprog(T, a0 + 0.1, a0 + 1.0, kEase.sale);
-      return <div key={i} style={{ marginBottom: f.sep ? 40 : 16, opacity: kprog(T, a0, a0 + 0.25) }}>
-        <div style={{ font:`900 32px ${KF.texto}`, color:KC.ink, marginBottom:4 }}>{f.etiqueta}</div>
+      return <div key={i} style={{ marginBottom: f.sep ? 0 : 10, opacity: kprog(T, a0, a0 + 0.25) }}>
+        <div style={{ font:`900 30px ${KF.texto}`, color:KC.ink, marginBottom:2 }}>{f.etiqueta}</div>
         <div style={{ display:'flex', alignItems:'center', gap:16 }}>
-          <div style={{ width:Math.max(14, 640 * f.valor / max * g), height:58, background:f.color, border:`6px solid ${KC.ink}`, borderRadius:14 }}></div>
-          <div style={{ font:`400 58px ${KF.titulo}`, color:f.color, WebkitTextStroke:`3px ${KC.ink}` }}>{kformato(f.valor * g, 1)} %</div>
+          <div style={{ width:Math.max(14, 640 * f.valor / max * g), height:50, background:f.color, border:`6px solid ${KC.ink}`, borderRadius:14 }}></div>
+          <div style={{ font:`400 52px ${KF.titulo}`, color:f.color, WebkitTextStroke:`3px ${KC.ink}` }}>{kformato(f.valor * g, 1)} %</div>
         </div>
       </div>; })}
   </div>;
@@ -179,8 +179,8 @@ function Teclado() {
   const pqC = kprog(T, K.C + 1.2, K.C + 1.8, kEase.sale), pqCsale = kprog(T, K.C + 3.6, K.C + 4.3, kEase.suave);
 
   // --- vista de lejos: celulares y servidor ---
-  const cels = [[130, 1040], [270, 1110], [410, 1150], [540, 1165], [670, 1150], [810, 1110], [950, 1040]];
-  const SV = [540, 560];
+  const cels = [[130, 900], [270, 965], [410, 1005], [540, 1020], [670, 1005], [810, 965], [950, 900]];
+  const SV = [540, 500];
   const fichas = ['te quiero', 'ya llegué', 'nos vemos'];
   const frase = ['nos', 'vemos', 'el', 'lunes'];
 
@@ -190,10 +190,10 @@ function Teclado() {
       <Escena T={T} a={K.G} b={K.Pd}><FondoLunares color={KC.yellow} /></Escena>
       {/* 2 · predicción */}
       <Escena T={T} a={K.Pd} b={K.Es}><FondoLunares color={KC.mint} /></Escena>
-      <Telefono T={T} x={380} y={960} s={0.92} o={oTel1} {...tel1} />
-      {T < K.Pd + 0.2 && pqG > 0 && <SVGL z={35}><Paquete x={380} y={klerp(560, 380, pqG) - 700 * pqGsale} s={klerp(0.3, 0.95, pqG)} T={T} brillo={pqG} /></SVGL>}
-      <Ventana T={T} at={K.Pd + 2.3} until={K.Es - 0.3} x={810} y={930} r={200} fx={560} fy={1010} etiqueta="POR DENTRO · el modelo">
-        <RedNeuronal T={T} x={70} y={90} ancho={260} alto={220} capas={[3, 5, 5, 3]} onda={((T - K.Pd) * 0.7) % 1} />
+      <Telefono T={T} x={380} y={780} s={0.8} o={oTel1} {...tel1} />
+      {T < K.Pd + 0.2 && pqG > 0 && <SVGL z={35}><Paquete x={380} y={klerp(460, 330, pqG) - 700 * pqGsale} s={klerp(0.3, 0.95, pqG)} T={T} brillo={pqG} /></SVGL>}
+      <Ventana T={T} at={K.Pd + 2.3} until={K.Es - 0.3} x={820} y={1000} r={185} fx={545} fy={870} etiqueta="POR DENTRO · el modelo">
+        <RedNeuronal T={T} x={60} y={80} ancho={250} alto={210} capas={[3, 5, 5, 3]} onda={((T - K.Pd) * 0.7) % 1} />
       </Ventana>
 
       {/* 3 · estudia: por dentro del celular */}
@@ -201,15 +201,15 @@ function Teclado() {
         <FondoCircuito T={T} />
         <SVGL>
           {[['enchufe', 300, 'cargando'], ['luna', 540, 'sin usarse'], ['wifi', 780, 'wifi']].map(([t, x, et], k) => { const e = kprog(T, K.Es + 0.2 + k * 0.6, K.Es + 0.6 + k * 0.6, kEase.rebote);
-            return <g key={t} opacity={Math.min(1, e * 2)}><Icono x={x} y={430} s={0.85 * e} tipo={t} />
-              <text x={x} y={540} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{et}</text></g>; })}
-          <rect x={250} y={610} width={580} height={560} rx={60} fill="rgba(0,210,255,.06)" stroke={KC.cyan} strokeWidth={6} strokeDasharray="20 14" opacity={kprog(T, K.Es + 1.5, K.Es + 2)} />
+            return <g key={t} opacity={Math.min(1, e * 2)}><Icono x={x} y={400} s={0.85 * e} tipo={t} />
+              <text x={x} y={505} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{et}</text></g>; })}
+          <rect x={250} y={560} width={580} height={500} rx={60} fill="rgba(0,210,255,.06)" stroke={KC.cyan} strokeWidth={6} strokeDasharray="20 14" opacity={kprog(T, K.Es + 1.5, K.Es + 2)} />
           {fichas.map((f, k) => { const t0 = K.Es + 2.0 + k * 0.7, u = kprog(T, t0, t0 + 1.1, kEase.suave);
-            return T >= t0 && <Ficha key={f} x={klerp(-120, 360, u)} y={720 + k * 170} texto={f} tam={34} o={1 - kprog(T, t0 + 1.0, t0 + 1.3)} color={KC.cyan} />; })}
+            return T >= t0 && <Ficha key={f} x={klerp(-120, 360, u)} y={650 + k * 150} texto={f} tam={34} o={1 - kprog(T, t0 + 1.0, t0 + 1.3)} color={KC.cyan} />; })}
         </SVGL>
-        <RedNeuronal T={T} x={330} y={660} ancho={420} alto={460} capas={[4, 6, 6, 4]} onda={T > K.Es + 2.2 ? ((T - K.Es) * 0.8) % 1 : null} o={kprog(T, K.Es + 1.6, K.Es + 2.1)} />
+        <RedNeuronal T={T} x={330} y={590} ancho={420} alto={420} capas={[4, 6, 6, 4]} onda={T > K.Es + 2.2 ? ((T - K.Es) * 0.8) % 1 : null} o={kprog(T, K.Es + 1.6, K.Es + 2.1)} />
       </Escena>
-      <Chip T={T} at={K.Es + 2.6} until={K.Pq - 0.2} texto="se entrena en tu celular" x={540} y={1200} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Es + 2.6} until={K.Pq - 0.2} texto="se entrena en tu celular" x={540} y={1130} tam={34} borde={KC.cyan} />
 
       {/* 4 · el paquetito cifrado */}
       <Escena T={T} a={K.Pq} b={K.Pm} zoom={0.03}>
@@ -243,8 +243,8 @@ function Teclado() {
         </SVGL>
       </Escena>
       <Chip T={T} at={K.Pm + 0.4} until={K.P - 0.2} texto="100 a 500 celulares por ronda" x={620} y={330} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Pm + 1.9} until={K.Pm + 2.9} texto="promedio" x={540} y={830} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Pm + 3.0} until={K.P - 0.2} texto="modelo mejor ✔" x={540} y={830} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.Pm + 1.9} until={K.Pm + 2.9} texto="promedio" x={540} y={735} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Pm + 3.0} until={K.P - 0.2} texto="modelo mejor ✔" x={540} y={735} tam={40} borde={KC.leaf} />
 
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
@@ -262,12 +262,12 @@ function Teclado() {
       <Escena T={T} a={K.R} b={K.A}><FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" /></Escena>
       <Chip T={T} at={K.R + 0.2} until={K.A - 0.2} texto="aciertos de la 1.ª sugerencia" x={350} y={380} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.R + 0.5} until={K.A - 0.2} texto="probados con textos del servidor" x={350} y={470} tam={24} mono borde={KC.texto} />
-      <Barras T={T} at={K.R + 0.5} until={K.A - 0.2} top={540} filas={[
+      <Barras T={T} at={K.R + 0.5} until={K.A - 0.2} top={625} filas={[
         { valor: 16.5, etiqueta: 'entrenado en servidores', color: '#7f8ba3' },
         { valor: 16.4, etiqueta: 'federado (en los celulares)', color: KC.mint, at: K.R + 1.0, sep: true },
       ]} />
-      <Chip T={T} at={K.R + 2.0} until={K.A - 0.2} texto="probados con textos de los celulares" x={390} y={835} tam={24} mono borde={KC.texto} />
-      <Barras T={T} at={K.R + 2.1} until={K.A - 0.2} top={880} filas={[
+      <Chip T={T} at={K.R + 2.0} until={K.A - 0.2} texto="probados con textos de los celulares" x={390} y={865} tam={24} mono borde={KC.texto} />
+      <Barras T={T} at={K.R + 2.1} until={K.A - 0.2} top={900} filas={[
         { valor: 15.0, etiqueta: 'entrenado en servidores', color: '#7f8ba3' },
         { valor: 15.8, etiqueta: 'federado (en los celulares)', color: KC.mint, at: K.R + 2.6 },
       ]} />
@@ -278,18 +278,18 @@ function Teclado() {
         const pts = Array.from({ length: 14 }, (_, k) => { const t0 = K.A + 2.0 + k * 0.28, u = kprog(T, t0, t0 + 1.6); return { k, u, t0 }; });
         const col = [KC.yellow, KC.pink, KC.cyan, KC.mint, KC.orange];
         return <g opacity={o}>
-          <MiniCel x={790} y={830} s={2.3} pantalla="#fffdf6">
+          <MiniCel x={790} y={790} s={2.0} pantalla="#fffdf6">
             {[0, 1, 2, 3].map((t, k) => <Carita key={k} x={-30 + (k % 2) * 60} y={-50 + Math.floor(k / 2) * 66} r={22} tipo={t} />)}
           </MiniCel>
-          <Dado x={470} y={830} s={1} rot={T > K.A + 2 ? (T - K.A) * 240 : 0} />
+          <Dado x={470} y={790} s={1} rot={T > K.A + 2 ? (T - K.A) * 240 : 0} />
           {pts.map(({ k, u }) => u > 0 && u < 1 && (() => { const a = u < 0.5 ? u / 0.5 : 1, b = u < 0.5 ? 0 : (u - 0.5) / 0.5;
-            const x = u < 0.5 ? klerp(680, 470, a) : klerp(470, 150, b), y = u < 0.5 ? 830 : klerp(830, 830 + ((k * 53) % 160) - 80, b);
+            const x = u < 0.5 ? klerp(680, 470, a) : klerp(470, 150, b), y = u < 0.5 ? 790 : klerp(790, 790 + ((k * 53) % 160) - 80, b);
             return <g key={k} transform={`translate(${x} ${y})`}>{u < 0.5 ? <Carita x={0} y={0} r={18} tipo={k % 4} /> : <circle r={16} fill={col[(k * 7) % 5]} stroke={KC.ink} strokeWidth={4} />}</g>; })())}
-          <g opacity={kprog(T, K.A + 1.6, K.A + 2.0)}><circle cx={150} cy={830} r={70} fill={KC.paper} stroke={KC.ink} strokeWidth={7} /><text x={150} y={845} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>Apple</text></g>
+          <g opacity={kprog(T, K.A + 1.6, K.A + 2.0)}><circle cx={150} cy={790} r={70} fill={KC.paper} stroke={KC.ink} strokeWidth={7} /><text x={150} y={805} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>Apple</text></g>
         </g>; })()}</SVGL>
       <Chip T={T} at={K.A + 0.6} until={K.M - 0.2} texto="si aceptas compartir" x={760} y={470} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.A + 2.4} until={K.M - 0.2} texto="se revuelve al azar antes de salir" x={540} y={1110} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.A + 3.6} until={K.M - 0.2} texto="privacidad diferencial · 2017" x={540} y={1030} tam={26} mono borde={KC.texto} />
+      <Chip T={T} at={K.A + 2.4} until={K.M - 0.2} texto="se revuelve al azar antes de salir" x={540} y={1135} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.A + 3.6} until={K.M - 0.2} texto="privacidad diferencial · 2017" x={540} y={1060} tam={26} mono borde={KC.texto} />
 
       {/* 10 · el matiz: no es privacidad perfecta */}
       <Escena T={T} a={K.M} b={K.C}>
@@ -306,14 +306,14 @@ function Teclado() {
 
       {/* 11 · cierre: el mismo celular del inicio */}
       <Escena T={T} a={K.C} b={FIN}><FondoLunares color={KC.yellow} /></Escena>
-      <Telefono T={T} x={380} y={980} s={0.9} o={kprog(T, K.C - 0.4, K.C + 0.1)} texto="te quiero" sugs={['y', 'mucho', 'también']} sugAt={K.C} sugOn={1}
+      <Telefono T={T} x={380} y={780} s={0.8} o={kprog(T, K.C - 0.4, K.C + 0.1)} texto="te quiero" sugs={['y', 'mucho', 'también']} sugAt={K.C} sugOn={1}
         chat={[{ at: K.C - 1, texto: 'te quiero mucho' }]} candado={kprog(T, K.C + 0.4, K.C + 0.8, kEase.sale)} />
-      {pqC > 0 && <SVGL z={35}><Paquete x={380} y={klerp(580, 400, pqC) - 700 * pqCsale} s={klerp(0.3, 0.95, pqC)} T={T} brillo={pqC} /></SVGL>}
-      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="se queda: tus frases" x={380} y={1270} tam={32} borde={KC.cyan} />
+      {pqC > 0 && <SVGL z={35}><Paquete x={380} y={klerp(460, 330, pqC) - 700 * pqCsale} s={klerp(0.3, 0.95, pqC)} T={T} brillo={pqC} /></SVGL>}
+      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="se queda: tus frases" x={790} y={770} tam={28} borde={KC.cyan} />
       <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="viaja: lo aprendido" x={380} y={300} tam={32} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Pd - 0.1} texto="Hay teclados que *no mandan lo que escribes.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Pd - 0.1} texto="Hay teclados que *no mandan* lo que escribes." />
       <Subtitulo T={T} idx={1} at={K.Pd + 0.1} until={K.Es - 0.1} texto="«te quiero» → *«mucho»*, calculado *en tu celular.*" />
       <Subtitulo T={T} idx={2} at={K.Es + 0.1} until={K.Pq - 0.1} texto="Cargando, quieto y con wifi: *entrena.*" />
       <Subtitulo T={T} idx={3} at={K.Pq + 0.1} until={K.Pm - 0.1} texto="Una actualización *chiquita y cifrada.*" />

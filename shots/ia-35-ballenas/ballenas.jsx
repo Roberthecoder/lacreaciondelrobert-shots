@@ -123,8 +123,8 @@ function Ballenas() {
   // rubato: la duración de las codas cambia poco a poco; la ballena que contesta copia con retraso
   const estira = (d) => kprog(T, K.R + 0.5 + d, K.R + 3.0 + d, kEase.suave);
   const filaRubato = (y, col, d) => { let xx = 200; const out = [];
-    for (let k = 0; k < 4; k++) { const f = 1 + 0.2 * k * estira(d), w = 115 * f; out.push(<g key={k}>
-      <Coda x={xx} y={y} ancho={w} pos={RITMOS[0]} color={col} r={13} />
+    for (let k = 0; k < 4; k++) { const f = 1 + 0.22 * k * estira(d), w = 100 * f; out.push(<g key={k}>
+      <Coda x={xx} y={y} ancho={w} pos={RITMOS[0]} color={col} r={9} />
       <line x1={xx} y1={y - 44} x2={xx + w} y2={y - 44} stroke={KC.ink} strokeWidth={5} /><line x1={xx} y1={y - 54} x2={xx} y2={y - 34} stroke={KC.ink} strokeWidth={5} />
       <line x1={xx + w} y1={y - 54} x2={xx + w} y2={y - 34} stroke={KC.ink} strokeWidth={5} /></g>); xx += w + 38; }
     return out; };
@@ -137,16 +137,16 @@ function Ballenas() {
         <FondoLunares color={KC.cyan} />
         <Ambiente T={T} n={26} color="rgba(255,255,255,.5)" />
         {svg(<>
-          <TiraClics T={T} y={860} morse={1 - kprog(T, K.G + 1.4, K.G + 2.2)} />
-          <g transform={`translate(0 ${sube(K.G + 0.5)})`}><Cachalote x={210} y={1090} s={0.72} T={T} halo={BAZUL} /></g>
-          <g transform={`translate(0 ${sube(K.G + 0.8)})`}><Cachalote x={870} y={1110} s={0.72} dir={-1} T={T} halo={BNAR} seed={3} /></g>
+          <TiraClics T={T} y={780} morse={1 - kprog(T, K.G + 1.4, K.G + 2.2)} />
+          <g transform={`translate(0 ${sube(K.G + 0.5)})`}><Cachalote x={210} y={960} s={0.72} T={T} halo={BAZUL} /></g>
+          <g transform={`translate(0 ${sube(K.G + 0.8)})`}><Cachalote x={870} y={985} s={0.72} dir={-1} T={T} halo={BNAR} seed={3} /></g>
           <g opacity={kprog(T, L1 + 0.2, L1 + 0.8)}>
-            <text x={540} y={700} textAnchor="middle" style={{ font:`400 230px ${KF.titulo}` }} fill="none" stroke={KC.ink} strokeWidth={22} strokeDasharray="0.1 34" strokeLinecap="round">A B C</text>
+            <text x={540} y={620} textAnchor="middle" style={{ font:`400 230px ${KF.titulo}` }} fill="none" stroke={KC.ink} strokeWidth={22} strokeDasharray="0.1 34" strokeLinecap="round">A B C</text>
           </g>
         </>)}
       </Escena>
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 2.0} until={L1 - 0.2} texto="¿código Morse?" x={290} y={560} tam={44} />
-      <Chip T={T} at={L1 + 0.9} until={K.Co - 0.2} texto="como un alfabeto" x={540} y={1010} tam={40} borde={KC.ink} />
+      <Chip T={T} at={L1 + 0.9} until={K.Co - 0.2} texto="como un alfabeto" x={540} y={1100} tam={40} borde={KC.ink} />
       {/* 2 · una coda; antes, 21 tipos */}
       <Escena T={T} a={K.Co} b={K.E}>
         <FondoLunares color={KC.lilac} />
@@ -230,7 +230,7 @@ function Ballenas() {
         <FondoLunares color={KC.cyan} />
       </Escena>
       {T > K.Oj - 0.4 && T < K.V + 0.4 && <div style={{ opacity: kprog(T, K.Oj - 0.3, K.Oj + 0.2) * (1 - kprog(T, K.V - 0.1, K.V + 0.4)) }}>
-        <CelularChat T={T} x={720} y={690} s={0.56} tam={40} mensajes={[{ at: K.Oj + 0.6, yo: true, texto: 'clic · clic · clic · clic' }, { at: K.Oj + 1.5, texto: 'Traducción: ???' }]} escribe={[K.Oj + 1.0, K.Oj + 1.5]} />
+        <CelularChat T={T} x={720} y={690} s={0.56} tam={62} mensajes={[{ at: K.Oj + 0.6, yo: true, texto: 'clic · clic · clic · clic' }, { at: K.Oj + 1.5, texto: 'Traducción: ???' }]} escribe={[K.Oj + 1.0, K.Oj + 1.5]} />
       </div>}
       <MitoTachado T={T} at={K.Oj + 0.5} tacharEn={K.Oj + 3.1} until={K.V - 0.2} texto="Una IA tradujo a las ballenas" x={540} y={1030} tam={42} />
       <Chip T={T} at={K.Oj + 4.0} until={K.V - 0.2} texto="análisis por computadora ✔" x={540} y={1140} tam={36} borde={KC.leaf} />
@@ -252,9 +252,9 @@ function Ballenas() {
         <FondoLunares color={KC.cyan} />
         <Ambiente T={T} n={26} color="rgba(255,255,255,.5)" />
         {svg(<>
-          <TiraClics T={T} y={860} morse={0} piezas={kprog(T, K.C + 0.6, K.C + 1.4, kEase.sale)} />
-          <Cachalote x={210} y={1090} s={0.72} T={T} halo={BAZUL} />
-          <Cachalote x={870} y={1110} s={0.72} dir={-1} T={T} halo={BNAR} seed={3} />
+          <TiraClics T={T} y={780} morse={0} piezas={kprog(T, K.C + 0.6, K.C + 1.4, kEase.sale)} />
+          <Cachalote x={210} y={960} s={0.72} T={T} halo={BAZUL} />
+          <Cachalote x={870} y={985} s={0.72} dir={-1} T={T} halo={BNAR} seed={3} />
         </>)}
       </Escena>
       <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 1.0} until={K.Ou} texto="código Morse" x={290} y={560} tam={44} />

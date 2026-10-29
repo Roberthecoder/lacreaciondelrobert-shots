@@ -45,3 +45,12 @@
 Notas para la animación (no son errores):
 - En la escena 5, rotular los números como "cánceres detectados" (sensibilidad), no "aciertos" ni "precisión".
 - En la escena 7, las barras que se emparejan son ROC-AUC (0.73 vs 0.76), otra métrica distinta a 69/23: no poner ahí números de porcentaje que parezcan continuación de 69 % y 23 %; basta con que se emparejen.
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Los tres dermatólogos del estudio también fallaron más en piel oscura.» + chip «3 dermatólogos, solo con fotos · 72 % vs 59 % cánceres detectados» ✅
+- ABCDE: «…varios colores, casi siempre más de seis milímetros, y que cambie.» ✅
+- Pantalla «IA de lunares»; cierre «una IA que adivine» ✅
+- Recortes sin datos nuevos (gancho, estudio, resultado; «Reentrenada con fotos de pieles diversas, la brecha se cerró» = "fine-tuning closed the gap") ✅; barras del arreglo sin porcentajes ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
