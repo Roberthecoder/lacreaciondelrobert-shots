@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Naranja base narrada.dc.html",
+  "salida": "Shot Naranja narrado.dc.html",
+  "nota": "Shot Fungi Mati #55. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese polvo verde de tu naranja no es polvo: son esporas del hongo Penicillium digitatum."
+    },
+    {
+      "escena": "Herida",
+      "texto": "Y casi siempre entró por una herida: un golpe o un raspón."
+    },
+    {
+      "escena": "Aceite",
+      "texto": "Ahí salen aceites y azúcares de la cáscara, y eso despierta a la espora."
+    },
+    {
+      "escena": "Enzimas",
+      "texto": "El hongo vuelve ácida la herida y suelta enzimas que deshacen las paredes de las células."
+    },
+    {
+      "escena": "Pelusa",
+      "texto": "La cáscara se ablanda, sale una pelusa blanca y, en medio, el polvo verde olivo."
+    },
+    {
+      "escena": "Azul",
+      "texto": "Si es azul, es su primo, Penicillium italicum: aguanta más el frío y contagia más a la naranja de junto."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué las naranjas del súper brillan?"
+    },
+    {
+      "escena": "Empacadora",
+      "texto": "En la empacadora las lavan, sacan las podridas y les ponen fungicida en agua o en la cera."
+    },
+    {
+      "escena": "Cera",
+      "texto": "La cera, además, las protege de secarse."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1997, en Fresno, California, infectaron naranjas con esporas de este hongo."
+    },
+    {
+      "escena": "Bano",
+      "texto": "Un día después las bañaron dos minutos en agua tibia con carbonato de sodio, y el moho bajó."
+    },
+    {
+      "escena": "Aire",
+      "texto": "Y sus esporas viajan por el aire hasta otras frutas heridas: sácala del frutero."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese polvo verde no es polvo: es un hongo que entró por una herida."
+    }
+  ]
+}

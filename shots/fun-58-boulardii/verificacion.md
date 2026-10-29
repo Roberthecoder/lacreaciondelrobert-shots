@@ -34,3 +34,35 @@ Fuentes abiertas:
 | 12b | Pantalla: "no es consejo médico: pregúntale a tu médico" | ✅ | — | Aviso, no afirmación. No se dan dosis ni recomendaciones. | — |
 
 **Resumen (29 oct 2026):** tras las correcciones (gancho y cierre referidos al sobre rotulado de *S. boulardii*, "en gente con antibióticos", "esa revisión", "dicen que" y chip del experimento de laboratorio), las 17 afirmaciones quedan ✅ contra sus fuentes. No es consejo médico: no hay dosis ni recomendaciones.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Textos de pantalla de `boulardii.jsx` y `guion.md`, cuadros de `preview.mjs` (0.3, 3, 8, 10, 12.5, 14, 16.5, 18, 20, 23, 26, 26.5, 28, 32, 36, 38, 41, 44, 50, 52, 56, 60 s) y `publicacion.md` completa.
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Sobre rotulado «PROBIÓTICO · *Saccharomyces boulardii*» desde el cuadro 0; chip «¿bacterias?» tachado | ✅ | [MX], [EI] | Se ve en el cuadro 0.3 s; "S. boulardii is indeed a strain of S. cerevisiae" (una levadura) | 2007 |
+| F2 | «misma especie: *S. cerevisiae*», bolillo | ✅ | [EI], [EA] | "a strain of S. cerevisiae"; "(also known as "baker's yeast" …)" | 2005 / 2007 |
+| F3 | Chip «dicen que… (años 20, Indochina)»; lichi rojo con piel rugosa, mangostán morado con cáliz verde, «té de cáscara», tetera | ✅ | [McF] | "Henri Boulard in 1920 … IndoChina … taking the outer skin from a tropical fruit (lychee and mangosteens) and cooking them down to make tea" | 1920 (relato en 2010) |
+| F4 | Termómetro «37 °C» junto a la silueta; chip «otras cepas: 30–33 °C» junto al pan | ✅ | [McF] | "its optimum growth temperature is 37°C … other strains of S. cerevisiae prefer cooler temperatures (30-33°C)" | 2010 |
+| F5 | «pH 2», chip «experimento de laboratorio, 1 h a 37 °C», «*S. boulardii*: casi igual», «otra cepa: < 4 %» | ✅ corregido | [EI] | "remained similar to that of the control, down to pH 2"; "following 1 h incubation at 37°C"; Σ1278b "less than 4% of the control at pH 2". Corregido en el jsx: el tubo de la otra cepa mostraba 1 de 12 levaduras vivas (≈ 8 %); ahora 1 de 30 (≈ 3 %). | 2007 |
+| F6 | «POR DENTRO · bacterias de tu intestino», cápsulas que apagan bacterias, chip «se desbalancean» | ✅ | [GUO] | "Antibiotics alter the microbial balance commonly resulting in antibiotic-associated diarrhea" | 2019 |
+| F7 | «hongo ≠ bacteria»; «levadura ≈ 5 µm · bacteria ≈ 1 µm» con barra 5 µm (levadura dibujada ≈ 200 px = 5 µm; bacteria ≈ 40 px = 1 µm, misma escala) | ✅ | [BN] | *S. cerevisiae* "5.55 µm" de diámetro; *E. coli* ~1 µm de diámetro | 1998 |
+| F8 | Tarjeta «2015 · Szajewska y Kołodziej · Varsovia · 21 ensayos · 4,780 personas · Aliment Pharmacol Ther» | ✅ | [SK] | "Twenty-one randomised controlled trials (4780 participants)"; "The Medical University of Warsaw" | 2015 |
+| F9 | Chip «en gente con antibióticos»; cuadrículas «sin / con S. boulardii», «18.7 de 100» → «8.5 de 100» | ✅ | [SK] | "in patients treated with antibiotics from 18.7% to 8.5%" | 2015 |
+| F10 | Gráfica «adultos · 9 ensayos», RR 0.8 con intervalo 0.47–1.34 que cruza «1 = sin efecto»; chip «adultos: sin efecto claro» | ✅ | [SK] | "not in adults (9 randomised controlled trials, n = 1441, RR: 0.8, 95% CI: 0.47-1.34)" | 2015 |
+| F11 | Bacilo de *C. difficile* con espora en un extremo y barra «1 µm» | ✅ corregido | — | El dibujo (≈ 1 × 4 µm con esa barra) no tiene un tamaño real verificado en una fuente abierta (el ancho real es menor). Se quitó la barra de esa escena: el bacilo queda como dibujo esquemático (el guion lo dice). | — |
+| F12 | Hospital: catéter en la vena, chip «rara vez · pacientes graves»; el sobre se abre y el polvo llega a las manos y al catéter | ✅ | [McF], [HEN] | "Infrequent cases of fungemia"; "serious co-morbidities and have central venous catheters"; "Contamination of the air, environmental surfaces, and hands following the opening of a packet" | 2000 / 2010 |
+| F13 | Tarjeta «2000 · París · 4 casos · Hennequin et al. · Eur J Clin Microbiol Infect Dis» | ✅ | [HEN] | "Four cases of Saccharomyces boulardii fungemia … are reported." (Hôpital Necker-Enfants Malades, Paris) | 2000 |
+| F14 | Chip «3–5 días después de dejarla»; calendario de 5 días en que las levaduras se van | ✅ | [McF] | "is cleared within 3-5 d after it is discontinued" | 2010 |
+| F15 | Cierre: mismo sobre con bolillo y «37 °C»; chip «no es consejo médico» | ✅ | [EI], [McF] | Cepa de *S. cerevisiae*; óptimo a 37 °C. Aviso sin dosis ni recomendación. | 2007 / 2010 |
+| F16 | Subtítulos (13 líneas) | ✅ | — | Repiten la voz verificada; «Diarrea: de 18.7 a 8.5 de cada 100» va con el chip «en gente con antibióticos» en pantalla. | — |
+| P1 | publicacion.md: «las fechas varían según la fuente (1920 o 1923)» | ✅ corregido | [McF] | 1923 no aparece en las fuentes abiertas; ahora dice «(McFarland da el año 1920)». | 1920 |
+| P2 | publicacion.md (TikTok): «a pH 2 sobrevivió casi igual que sin ácido» | ✅ corregido | [EI] | La fuente compara con "the control"; ahora dice «casi igual que el grupo de control». | 2007 |
+| P3 | publicacion.md (YouTube): Cochrane 2019 «calificó la evidencia como de certeza moderada y pidió confirmarla» | ✅ corregido | [GUO] | La certeza moderada es para probióticos en general y lo que pide confirmar es "The benefit of high dose probiotics (e.g. Lactobacillus rhamnosus or Saccharomyces boulardii)"; redactado así. | 2019 |
+| P4 | publicacion.md (X): «Ese sobrecito…» | ✅ corregido | [MX] | Cambiado a «Este sobrecito…», igual que la voz (no generaliza). | — |
+| P5 | publicacion.md, resto: especie del pan y de la cerveza; Boulard en Indochina; 37 °C vs 30–33 °C; antibacterianos no la matan; 21 ensayos, 4,780 personas con antibióticos, 18.7 → 8.5; *C. difficile* significativo solo en niños; fungemia rara con catéter venoso central; Hospital Necker de París, 4 casos, aire, superficies y manos; 3–5 días; fuentes con DOI/PMC; «no es consejo médico» | ✅ | [EA], [McF], [EI], [SK], [HEN] | Mismas frases textuales de las filas 2–11 y F1–F14. Sin dosis, sin marcas comerciales, sin recomendar tomarla. | 2000–2019 |
+
+**Resumen de la revisión final:** la animación y la publicación quedan ✅ tras 2 ajustes en `boulardii.jsx` (tubo «< 4 %» y barra de 1 µm quitada en *C. difficile*), 1 nota en `guion.md` y 4 en `publicacion.md`. La voz verificada no cambió.
+
+VEREDICTO: APROBADO

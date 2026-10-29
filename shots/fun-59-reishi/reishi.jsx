@@ -261,6 +261,7 @@ function ReishiShot() {
       <Chip T={T} at={K.J + 0.4} until={K.P - 0.3} texto="con quimio o radioterapia" x={400} y={470} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.J + 1.2} until={K.P - 0.3} x={60} y={545} texto="respuesta al tratamiento" tam={28} color={KC.ink} />
       <Chip T={T} at={K.J + 2.2} until={K.P - 0.3} texto="calidad de los estudios: baja" x={400} y={640} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.J + 2.8} until={K.P - 0.3} texto="diferencia no concluyente" x={330} y={720} tam={30} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.A - 0.3} anio="2017" quien="U. de Macao + Farmacopea de EE. UU." revista="Sci. Reports, 2017 · comprados en línea en 2015" x={540} y={560} />
       <NumeroGigante T={T} at={K.A + 0.4} until={K.B - 0.3} valor={13} dur={1.5} sufijo=" de 19" etiqueta="con polisacáridos tipo almidón" x={360} y={520} tam={140} color={KC.lilac} />
       <Chip T={T} at={K.A + 1.6} until={K.B - 0.3} texto="tipo almidón: el cuerpo del hongo no lo tiene" x={500} y={690} tam={30} borde={KC.lilac} />
@@ -273,7 +274,7 @@ function ReishiShot() {
       <Etq T={T} at={K.L + 1.1} until={K.C - 0.3} x={60} y={620} texto="el más usado en la medicina china" tam={26} color={KC.ink} />
       <Etq T={T} at={K.L + 2.2} until={K.C - 0.3} x={60} y={1075} texto="● G. lucidum: Europa (y partes de China)" it tam={28} color={KC.red} />
       <Etq T={T} at={K.L + 3.2} until={K.C - 0.3} x={60} y={1125} texto="● G. lingzhi: Asia" it tam={28} color={KC.ink} />
-      <Chip T={T} at={K.L + 4.2} until={K.C - 0.3} texto="falla el nombre, no el hongo" x={420} y={700} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.L + 4.2} until={K.C - 0.3} texto="en esos: falla el nombre, no el hongo" x={420} y={700} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="no siempre trae lo que dice" x={470} y={370} tam={32} borde={KC.red} />
       <Etq T={T} at={K.C + 2.8} until={K.Ou} x={60} y={1500} texto="No es consejo médico. Si tomas medicamentos o" tam={22} color={KC.ink} />
       <Etq T={T} at={K.C + 2.8} until={K.Ou} x={60} y={1535} texto="estás en tratamiento, platícalo con tu médico." tam={22} color={KC.ink} />
@@ -281,7 +282,7 @@ function ReishiShot() {
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={110} />
       <BarraEscala T={T} at={K.H} until={K.Co} texto="10 cm" largo={180} />
-      <BarraEscala T={T} at={K.Co} until={K.MC} texto="1 nm" largo={140} />
+      <BarraEscala T={T} at={K.Co} until={K.MC} texto="1 nm" largo={300} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={140} />
       <BarraEscala T={T} at={K.E} until={K.ME} texto="5 cm" largo={100} />
       <BarraEscala T={T} at={K.ME} until={K.L} texto="2 nm (ancho del ADN)" largo={110} />
@@ -293,14 +294,14 @@ function ReishiShot() {
       <Subtitulo T={T} idx={1} at={K.H + 0.1} until={K.Co - 0.1} texto="Reishi: *Ganoderma.* En China, lingzhi." />
       <Subtitulo T={T} idx={2} at={K.Co + 0.1} until={K.MC - 0.1} texto="Triterpenos y polisacáridos: *sí se estudian.*" />
       <Subtitulo T={T} idx={3} at={K.MC + 0.1} until={K.DC - 0.1} texto="Mito: *cura el cáncer.*" />
-      <Subtitulo T={T} idx={4} at={K.DC + 0.1} until={K.J - 0.1} texto="No hay pruebas para usarlo *solo.*" />
-      <Subtitulo T={T} idx={5} at={K.J + 0.1} until={K.P - 0.1} texto="Algo mejor… en estudios *de baja calidad.*" />
+      <Subtitulo T={T} idx={4} at={K.DC + 0.1} until={K.J - 0.1} texto="Sin pruebas suficientes para usarlo *solo.*" />
+      <Subtitulo T={T} idx={5} at={K.J + 0.1} until={K.P - 0.1} texto="¿Quizá algo mejor? Estudios *de baja calidad.*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.E - 0.1} texto="¿Qué hay *dentro del frasco?*" />
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.A - 0.1} texto="2017: *19 suplementos* analizados." />
       <Subtitulo T={T} idx={8} at={K.A + 0.1} until={K.B - 0.1} texto="13 traían *almidón:* suele ser relleno." />
       <Subtitulo T={T} idx={9} at={K.B + 0.1} until={K.ME - 0.1} texto="El betaglucano: *solo en 5.*" />
       <Subtitulo T={T} idx={10} at={K.ME + 0.1} until={K.L - 0.1} texto="20 productos: *ningún G. lucidum.*" />
-      <Subtitulo T={T} idx={11} at={K.L + 0.1} until={K.C - 0.1} texto="Falla el nombre, *no el hongo.*" />
+      <Subtitulo T={T} idx={11} at={K.L + 0.1} until={K.C - 0.1} texto="En esos, falla el nombre, *no el hongo.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Lo que promete *aún no está probado.*" />
 
       <Robert T={T} apariciones={[

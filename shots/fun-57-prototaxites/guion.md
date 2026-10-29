@@ -29,7 +29,7 @@
 
 **Música:** cama grave y misteriosa, continua, sin golpe; efectos en el mismo cuadro (el tronco que crece, el reloj geológico, el "zoom" de la lupa, el sello de cada tarjeta, el "bip" del espectro con picos y el espectro de *Prototaxites* sin esas bandas, el corte de la rama extinta, el vaivén de la balanza).
 
-Barras de escala: 1 m (paisaje, 90 px y 300 px de cerca), 50 µm (tubos), 5 cm (piedra y champiñón), "esquema" en el sol/planta y en la pared celular (dibujos no a escala), 50 µm en la comparación de tubos, 1 m en el cierre.
+Barras de escala: 1 m (paisaje, 90 px y 300 px de cerca), 50 µm (tubos), 5 cm (piedra y champiñón), "esquema" en el sol/planta y en la pared celular (dibujos no a escala), "esquema" en la comparación con hongos conocidos (mezcla champiñones de cm con tubos de µm), 1 m en el cierre.
 
 ## Robert en pantalla
 

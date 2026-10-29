@@ -8,7 +8,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ```text
 Este sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadura. 🍄💊
 Es Saccharomyces boulardii, una cepa de Saccharomyces cerevisiae, la misma especie que esponja el pan y fermenta la cerveza. Según cuenta la historia, el francés Henri Boulard la aisló en los años veinte en Indochina, de un té hecho con cáscara de lichi y mangostán.
-A diferencia de otras cepas de su especie (que prefieren 30–33 °C), crece mejor a 37 °C, la temperatura de tu cuerpo. Y en un experimento de laboratorio (1 h a 37 °C), a pH 2 sobrevivió casi igual que sin ácido, mientras que otra cepa de laboratorio quedó en menos del 4 %.
+A diferencia de otras cepas de su especie (que prefieren 30–33 °C), crece mejor a 37 °C, la temperatura de tu cuerpo. Y en un experimento de laboratorio (1 h a 37 °C), a pH 2 sobrevivió casi igual que el grupo de control, mientras que otra cepa de laboratorio quedó en menos del 4 %.
 ¿Por qué se da junto con antibióticos? Los antibióticos desbalancean las bacterias de tu intestino y eso puede dar diarrea. Pero una levadura es un hongo, no una bacteria: los antibacterianos no la matan.
 Una revisión de 2015 (Szajewska y Kołodziej, Varsovia) juntó 21 ensayos con 4,780 personas que tomaban antibióticos: con S. boulardii, la diarrea bajó de 18.7 a 8.5 de cada 100. Pero contra la diarrea por Clostridium difficile en adultos, esa revisión no vio un efecto claro.
 El riesgo: rara vez, en pacientes graves con catéter en la vena, la levadura puede pasar a la sangre. En París (2000) vieron que al abrir un sobre quedaba en el aire, en las superficies y en las manos. Y no se queda a vivir en ti: de 3 a 5 días después de dejarla, ya no está.
@@ -39,9 +39,9 @@ Este sobrecito para la diarrea es un HONGO vivo 🍄 | Shot Fungi Mati #58
 Descripción:
 ```text
 Este sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadura.
-Saccharomyces boulardii es una cepa de Saccharomyces cerevisiae, la especie de la levadura del pan y la cerveza (Edwards-Ingram et al., 2007). Según cuenta la historia (McFarland, 2010), Henri Boulard la aisló en los años veinte en Indochina, de un té hecho con cáscara de lichi y mangostán; las fechas varían según la fuente (1920 o 1923).
+Saccharomyces boulardii es una cepa de Saccharomyces cerevisiae, la especie de la levadura del pan y la cerveza (Edwards-Ingram et al., 2007). Según cuenta la historia (McFarland, 2010), Henri Boulard la aisló en los años veinte en Indochina, de un té hecho con cáscara de lichi y mangostán (McFarland da el año 1920).
 Se diferencia de otras cepas: crece mejor a 37 °C (otras prefieren 30–33 °C) y resiste el ácido; en un experimento de laboratorio (1 h a 37 °C), a pH 2 su viabilidad fue casi igual a la del control, mientras que otra cepa de laboratorio quedó en menos del 4 %. Como es un hongo, los antibióticos antibacterianos no la matan.
-Los antibióticos alteran el equilibrio de las bacterias del intestino y eso puede dar diarrea. Una revisión con metaanálisis de 2015 (Szajewska y Kołodziej, Universidad Médica de Varsovia) juntó 21 ensayos aleatorizados con 4,780 participantes: con S. boulardii, la diarrea asociada a antibióticos bajó de 18.7 % a 8.5 %. Contra la diarrea por Clostridium difficile, la reducción solo fue significativa en niños, no en adultos. Una revisión Cochrane de 2019 sobre probióticos en niños calificó la evidencia como de certeza moderada y pidió confirmarla con un ensayo grande.
+Los antibióticos alteran el equilibrio de las bacterias del intestino y eso puede dar diarrea. Una revisión con metaanálisis de 2015 (Szajewska y Kołodziej, Universidad Médica de Varsovia) juntó 21 ensayos aleatorizados con 4,780 participantes: con S. boulardii, la diarrea asociada a antibióticos bajó de 18.7 % a 8.5 %. Contra la diarrea por Clostridium difficile, la reducción solo fue significativa en niños, no en adultos. Una revisión Cochrane de 2019 sobre probióticos en niños (de todo tipo, no solo S. boulardii) calificó su evidencia como de certeza moderada y pidió confirmar con un ensayo grande el beneficio de las dosis altas, como las de S. boulardii.
 El riesgo: en casos raros, sobre todo en pacientes graves con catéter venoso central, la levadura puede pasar a la sangre (fungemia). En el Hospital Necker de París (Hennequin et al., 2000) se reportaron 4 casos y vieron que, al abrir un sobre, la levadura quedaba en el aire, en las superficies y en las manos. Y no se queda a vivir en ti: desaparece de 3 a 5 días después de dejarla.
 El dibujo es esquemático. No es consejo médico: si tomas antibióticos y tienes diarrea, o estás en el hospital, pregúntale a tu médico.
 Fuentes:
@@ -79,7 +79,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Ese sobrecito para la diarrea no trae bacterias: trae una levadura, Saccharomyces boulardii, de la especie del pan. Con antibióticos, la diarrea bajó de 18.7 a 8.5 de cada 100 (revisión 2015). No es consejo médico. 🍄 #FungiMati
+Este sobrecito para la diarrea no trae bacterias: trae una levadura, Saccharomyces boulardii, de la especie del pan. Con antibióticos, la diarrea bajó de 18.7 a 8.5 de cada 100 (revisión 2015). No es consejo médico. 🍄 #FungiMati
 ```
 
 ### Threads

@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #59 · rama `pedido300/fun`.
 - **Formato:** mito vs dato con sellos (estructura de pasos tipo N6, con N2: cada mito se sella "MITO" y cada respuesta "DATO"), viaje frasco → por dentro (moléculas, ADN) → el mismo frasco, ya "leído".
 - **Gancho (de los 7):** #4 "Un número que contradice" sobre algo en pantalla: «Ese frasco de reishi no siempre trae lo que dice: de diecinueve, solo cinco cumplían su etiqueta.»
-- **Duración:** voz 1000 caracteres / 173 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 998 caracteres / 172 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** justo, sin burlarse de quien lo toma: el hongo sí tiene sustancias que se estudian; lo que falta son pruebas y etiquetas confiables. **No es consejo médico.**
 
@@ -16,7 +16,7 @@
 | 2 | Contiene | Trae triterpenos y polisacáridos que sí se estudian. | Zoom al hongo (fondo oscuro, "POR DENTRO · LO QUE TRAE"): moléculas esquemáticas de triterpeno (anillos, etiqueta "triterpenos · ácidos ganodéricos") y una cadena de betaglucano (cuentas en rama, etiqueta "polisacáridos · betaglucanos"). Chip "sí se estudian". |
 | 3 | MitoCancer | Mito: que cura el cáncer. En 2016, una revisión Cochrane juntó cinco ensayos chicos. | Fondo naranja. Tarjeta "cura el cáncer" tachada con sello rojo **MITO**. TarjetaEstudio "2016 · Cochrane · 5 ensayos · 373 personas". |
 | 4 | DatoCancer | Dato: no alcanzó para usarlo solo como tratamiento; ninguno midió si alarga la vida. | Fondo cian. Sello verde **DATO**. Chips: "¿Solo, como tratamiento?" → "pruebas insuficientes"; "¿Alarga la vida?" → "ningún ensayo lo midió". |
-| 5 | Junto | Con quimio o radio respondieron algo mejor, en estudios de baja calidad. | Fondo lila. Dos barras de "respuesta al tratamiento": "solo el tratamiento" y "+ reishi" (un poco más alta, esquemática); chip "con quimio o radioterapia"; una lupa con "?" sobre la barra y chip "calidad de los estudios: baja". |
+| 5 | Junto | Con quimio o radio quizá respondieron mejor; estudios de baja calidad. | Fondo lila. Dos barras de "respuesta al tratamiento": "solo el tratamiento" y "+ reishi" (un poco más alta, esquemática); chip "con quimio o radioterapia"; una lupa con "?" sobre la barra, chip "calidad de los estudios: baja" y chip "diferencia no concluyente" (en el análisis de la revisión, RR 1.50 con IC 95 % 0.90–2.51). |
 | 6 | Pregunta | ¿Y qué hay dentro del frasco? | **Re-gancho.** Fondo rosa: el frasco con un "?" gigante; Robert grande, pensativo. |
 | 7 | Estudio | En 2017, un equipo de Macao y la Farmacopea de Estados Unidos analizó diecinueve suplementos. | Fondo cian. TarjetaEstudio "2017 · U. de Macao + Farmacopea de EE. UU. · Sci. Reports, 2017 · comprados en línea en 2015". Aparecen los 19 frascos. |
 | 8 | Almidon | Trece traían almidón, que el cuerpo del hongo no tiene: suele ser relleno. | Cae una gota de yodo en 13 frascos y se pintan de morado. Número "13 de 19 · con polisacáridos tipo almidón" y chip "tipo almidón: el cuerpo del hongo no lo tiene". |

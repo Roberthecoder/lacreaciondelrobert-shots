@@ -42,7 +42,7 @@ Ese polvo verde de tu naranja no es polvo: son esporas del hongo Penicillium dig
 Las heridas de la cáscara (golpes y raspones al cosechar y manejar la fruta) son la principal puerta de entrada de este hongo (UF/IFAS). Cuando se rompen las glándulas de aceite de la cáscara, la herida suelta compuestos volátiles, ácidos orgánicos y azúcares que hacen germinar a las esporas (Zakaria, 2026). El hongo acidifica la herida y suelta enzimas (poligalacturonasas y pectinasas) que deshacen la pared de las células y ablandan la cáscara. Primero se ve una pelusa blanca y después, en el centro, la esporulación verde olivo (Silva et al., 2026).
 El moho azul es otro hongo, Penicillium italicum: puede pudrir la fruta hasta a 0 °C, es un problema serio en cámaras frías y se pasa rápido a las frutas sanas de la misma caja; en cambio, el moho verde rara vez infecta a la naranja de al lado (Zakaria, 2026; Silva et al., 2025).
 En las empacadoras se separa la fruta podrida, se lava y se aplican fungicidas como el imazalil en agua o en una cera a base de agua; la cera también ayuda a que la fruta pierda menos agua (UF/IFAS, 2026–2029).
-En 1997, en Fresno, California, un equipo del USDA inoculó naranjas con esporas de P. digitatum y 24 horas después las sumergió 1 o 2 minutos en soluciones tibias de carbonato de sodio (35–46 °C): el baño redujo significativamente el moho verde en todas las pruebas (Smilanick et al., 1997).
+En 1997, en Fresno, California, un equipo del USDA inoculó naranjas con esporas de P. digitatum y 24 horas después las sumergió 1 o 2 minutos en soluciones calientes de carbonato de sodio (de 35.0 a 46.1 °C; el mejor control fue a 40.6–43.3 °C): el baño redujo significativamente el moho verde en todas las pruebas (Smilanick et al., 1997).
 Las esporas viajan por el aire, y la fruta guardada junto a fruta herida o podrida se puede infectar (UC IPM): si ves una naranja con polvo verde, sácala del frutero.
 El dibujo es esquemático.
 Fuentes:
@@ -69,7 +69,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-El moho verde de los cítricos (Penicillium digitatum) entra por las heridas de la cáscara, y por eso tanto del control poscosecha se trata de no herir la fruta.
+El moho verde de los cítricos (Penicillium digitatum) entra por las heridas de la cáscara, y por eso buena parte del control poscosecha consiste en no herir la fruta.
 Golpes y raspones al cosechar y empacar son la principal vía de infección (UF/IFAS). En la herida, el hongo acidifica el tejido y secreta enzimas que degradan la pared celular y ablandan la cáscara. El moho azul (P. italicum) es otro patógeno de herida que crece incluso a 0 °C y se propaga entre frutas de la misma caja.
 En las empacadoras se combinan sanidad (separar la fruta podrida, lavar), fungicidas en agua o en cera y cera para reducir la pérdida de agua. Un estudio del USDA en Fresno (1997) mostró que un baño tibio de 1–2 minutos con carbonato de sodio controló infecciones de 24 horas en naranjas.
 ¿En tu trabajo has visto estas pérdidas poscosecha?

@@ -54,7 +54,7 @@ Apariciones 10 · **38.4 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas �
 ## Fuentes (abiertas en el texto completo el 29 oct 2026)
 
 1. McFarland, L. V. (2010). Systematic review and meta-analysis of *Saccharomyces boulardii* in adult patients. *World J Gastroenterol* 16(18): 2202–2222. https://pmc.ncbi.nlm.nih.gov/articles/PMC2868213/
-   - Historia (contada como "dicen que"; la fuente dice 1920, otras dicen 1923, por eso no se da año):
+   - Historia (contada como "dicen que"; la fuente dice 1920; en pantalla solo «años 20»):
      > "S. boulardii, was discovered by a French microbiologist, Henri Boulard in 1920 when he was in IndoChina searching for new strains of yeast … noticed that some people who did not develop cholera were drinking a special tea. This tea was made by taking the outer skin from a tropical fruit (lychee and mangosteens) and cooking them down to make tea. He succeeded in isolating the agent responsible."
    - 37 °C: > "its optimum growth temperature is 37°C and it is resistant to low pH and is tolerant to bile acids; whereas other strains of S. cerevisiae prefer cooler temperatures (30-33°C)"
    - Antibióticos: > "S. boulardii is resistant to antibacterial agents and survives gastric acidity"

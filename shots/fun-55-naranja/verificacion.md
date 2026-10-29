@@ -41,3 +41,37 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026):** la nueva verificación de lo que cambió quedó en ✅: el consejo ahora es "sácala del frutero" (fila 17), se agregó Silva et al. 2025 como fuente del contagio entre naranjas del moho azul (fila 9b) y se corrigieron las fechas de UF/IFAS y Pacific Pests (fila 19). Las 19 afirmaciones de voz y pantalla están verificadas.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `naranja.jsx` (todos los textos en pantalla), la tabla de `guion.md` y todo `publicacion.md`, y saqué cuadros con `motor/preview.mjs` en 0.3, 3, 8, 14, 20, 26, 32, 38, 44, 45–49, 50, 56 y 60 s.
+
+| # | Texto en pantalla o en publicación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Microscopio: cadenas de esporas ovaladas, conidióforo en pincel; "esquemático, sin proporción"; barra de 10 µm | ✅ (esquemático) | [WIKI] (cita Pitt y Hocking 1985) | "produced in chains"; "an oval shape is frequently seen" | 1985 |
+| R2 | "la herida le abre la puerta"; corte de la cáscara con "glándula de aceite" y "parte blanca"; barra de 1 mm | ✅ | [ZAK] | "can only penetrate citrus fruit tissues when the tissues have been bruised or damaged"; "broken oil glands" | 2026 |
+| R3 | Medidor "ACIDEZ · ↓ más ácido" (sin números) | ✅ | [SIL26] | "The accumulation of these acids rapidly lowers the pH of the wound" | 2026 |
+| R4 | "enzimas = «tijeritas»", "hifa" (la pared de las células se deshace) | ✅ (metáfora) | [SIL26] | "essential for depolymerizing the host's cell wall components" | 2026 |
+| R5 | "pelusa blanca: el hongo joven" / "verde olivo: esporas" | ✅ | [SIL26] | "initial white mycelial growth rapidly develops into characteristic olive-green sporulation" | 2026 |
+| R6 | "moho azul · P. italicum · aguanta más el frío", termómetro de refri; la azul contagia a la de junto y la verde casi no | ✅ | [ZAK], [SIL25] | "as low as 0 °C"; "nesting, a process of fast spreading of the infection on healthy fruits of the same packing box"; "Infections of adjacent citrus fruits are rare" | 2025 / 2026 |
+| R7 | "1 · lavar", "2 · sacar las podridas", "3 · fungicida en agua o en la cera" | ✅ | [UF] | "during washing"; "Decayed fruit should be separated from healthy fruit"; "as a water suspension or … in a water-based wax" | 2026 |
+| R8 | "la cera: menos pérdida de agua" | ✅ | [UF] | "protective wax coating to retard desiccation are the best means of reducing fruit water loss" | 2026 |
+| R9 | Tarjeta "1997 · Fresno, California · Smilanick et al. · Plant Disease" | ✅ | [SMI] | "Horticultural Crops Research Laboratory, USDA-ARS, … Fresno, CA" | 1997 |
+| R10 | "24 h · después de infectarlas" | ✅ | [SMI] | "inoculated with spores … and immersed 24 h later" | 1997 |
+| R11 | "2 min · carbonato de sodio"; "agua tibia ≈ 40 °C" | ✅ | [SMI] | "immersed for 1 or 2 min"; "heated to 35.0, 40.6, 43.3, or 46.1°C"; "most effective … at 40.6 or 43.3°C" | 1997 |
+| R12 | Cajas "sin baño" (4 de 6 con moho) y "con baño" (1 de 6) | ✅ corregido | [SMI] | El resumen no da porcentajes. La nota decía solo "comparación esquemática" y además se salía del borde izquierdo; ahora dice **"esquema: sin cifras del estudio"** y cabe completa (jsx y tabla del guion corregidos) | 1997 |
+| R13 | "el moho bajó en todas las pruebas" | ✅ | [SMI] | "Soda ash significantly controlled green mold in every test." | 1997 |
+| R14 | "esporas en el aire"; "sácala"; "entró por una herida" | ✅ | [UC], [PPPW] | "airborne spores"; "Remove infected fruit as soon as they are seen" | 2025 / 2026 |
+| R15 | Subtítulos (13): coinciden con la voz verificada; "Baño tibio con carbonato" | ✅ | [SMI] | (ver R11) | 1997 |
+| R16 | publicacion.md: poligalacturonasas y pectinasas | ✅ | [SIL26] | "These CWDEs, including polygalacturonases and pectinases" | 2026 |
+| R17 | publicacion.md: imazalil en agua o en una cera a base de agua | ✅ | [UF] | "Imazalil should be applied at 1,000 ppm (0.1%) as a water suspension or at 2,000 ppm (0.2%) in a water-based wax." | 2026 |
+| R18 | publicacion.md (YouTube): baño de "1 o 2 minutos"; antes "soluciones tibias (35–46 °C)" | ✅ corregido | [SMI] | A 46 °C no es "tibia". Ahora dice: "soluciones calientes de carbonato de sodio (de 35.0 a 46.1 °C; el mejor control fue a 40.6–43.3 °C)" | 1997 |
+| R19 | publicacion.md: *P. italicum* pudre la fruta hasta a 0 °C; problema serio en cámaras frías | ✅ | [ZAK] | "can grow and cause fruit rot at temperatures as low as 0 °C, and contributes to serious infection of citrus fruits kept in cold storage" | 2026 |
+| R20 | publicacion.md: "un equipo del USDA"; "inoculó"; LinkedIn: "controló infecciones de 24 horas" | ✅ | [SMI] | "USDA-ARS"; "soda ash controlled 24-h-old green mold infections at commercially useful levels" | 1997 |
+| R21 | publicacion.md: heridas = principal puerta de entrada; LinkedIn: "buena parte del control poscosecha consiste en no herir la fruta" (corregida la redacción, antes "tanto del control … se trata") | ✅ corregido | [UF] | "are the principal sites for infection"; "care should always be taken to minimize fruit injuries" | 2026 |
+| R22 | publicacion.md: la fruta guardada junto a fruta herida o podrida se puede infectar; "sácala del frutero" | ✅ | [UC], [PPPW] | "can infect healthy fruit if it is stored with injured fruit"; "spores that decaying plant material can produce in abundance"; "Remove infected fruit as soon as they are seen" | 2025 / 2026 |
+| R23 | Formato: decimales con punto, miles con coma, sin "RAYOS X" | ✅ | — | Revisados jsx, guion y publicacion | — |
+
+**Resumen de la revisión final:** con las tres correcciones (R12 nota "esquema: sin cifras del estudio" en jsx y guion; R18 "soluciones calientes, de 35.0 a 46.1 °C"; R21 redacción de LinkedIn), toda la pantalla y toda la publicación coinciden con las fuentes abiertas. No se tocó la voz (narracion.json).
+
+VEREDICTO: APROBADO

@@ -44,3 +44,32 @@ Observaciones (no cambian el veredicto de la voz):
 - El tronco de 8 m dibujado en el paisaje tipo Rhynie es una reconstrucción esquemática: los troncos más grandes vienen de otros yacimientos.
 
 **Re-verificación (29 oct 2026):** se volvió a leer `narracion.json` completo (13 líneas) y se revisó contra las fuentes ya abiertas cada línea que cambió (filas 3, 5, 7, 8, 9, 10, 14, 15b, 17, 18, 20 y 21). Todas las afirmaciones quedan ✅. Las hipótesis se dicen como hipótesis ("quizá", "proponen", "no está cerrado", "aún no sabemos"). El dibujo es esquemático.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se revisaron todos los textos de pantalla de `prototaxites.jsx`, `guion.md` y `publicacion.md` completa, con cuadros de vista previa en 0.3, 3, 8, 14, 20, 26, 32, 38, 44, 50, 56 y 60 s (`motor/preview.mjs`).
+
+| # | Elemento (pantalla o publicación) | Veredicto | Fuente | Frase textual / comprobación | Año |
+|---|---|---|---|---|---|
+| R1 | Chip "tubos de ~10 a ~40 µm" | ✅ | [L26] | "(∼10 μm)" · "(ranging from 20 to 40 μm)" · "(∼40 μm)" | 2026 |
+| R2 | Tarjeta "2001 · F. Hueber · Smithsonian, Washington · *Review of Palaeobotany and Palynology*" | ✅ | [H01], [UC07] | Rev. Palaeobot. Palynol. 116(1–2): 123–158; "Francis Hueber of the National Museum of Natural History in Washington, D.C." | 2001 |
+| R3 | Tarjeta "2007 · Boyce et al. · isótopos de carbono · *Geology*" | ✅ | [B07] | Geology 35(5): 399–402; "Such a large isotopic range is difficult to reconcile with an autotrophic metabolism" | 2007 |
+| R4 | "plantas tipo *Rhynia*" y "< 40 cm" con silueta de 1.70 m (regla 1.70 m = 510 px; plantas de 70–120 px = 23–40 cm; línea a 120 px = 40 cm, por debajo de la rodilla; barra 1 m = 300 px) | ✅ | [ABDN] | "seven named higher land plants, all less than 40 cm tall"; proporciones comprobadas en el código | consultada 2026 |
+| R5 | Altura del tronco: regla "8 m" = 720 px con barra "1 m" = 90 px; plantas del paisaje ≤ 0.38 m; chip "él: hasta 8 m" | ✅ | [L26], [B07] | "columnar fossils of up to eight meters"; escala coherente en el código | 2026 / 2007 |
+| R6 | "champiñón" · *Agaricus bisporus* | ✅ | conocimiento taxonómico estándar | El champiñón de cocina es *Agaricus bisporus*; nombre en cursiva | — |
+| R7 | "pedernal de Rhynie, Escocia" y "fósiles de 407 millones de años" | ✅ | [L26], [ABDN] | "the 407-million-year-old Rhynie chert"; Rhynie está en Aberdeenshire, Escocia | 2026 |
+| R8 | Espectro: "hongo fósil (misma piedra)" con picos en las "bandas de la quitina"; *Prototaxites* "otros picos, sin la quitina" | ✅ | [L26] | "distinct from those of chitinous organisms in the Rhynie chert"; "these fossilization products are not present in P. taiti" | 2026 |
+| R9 | Comparación "hongos conocidos ≠ *Prototaxites*" · "forma: no coincide" | ✅ (corregido) | [L26] | "structurally distinct from all known Fungi". **Corregido:** la barra "50 µm" en esta escena (que mezcla champiñones de cm con tubos de µm) era engañosa; ahora dice "esquema" (jsx y guion). | 2026 |
+| R10 | "propuesta · Loron et al. 2026" y rama "✝ extinto" | ✅ | [L26] | "best assigned to an entirely extinct eukaryotic lineage" | 2026 |
+| R11 | "solo revisaron 1 especie" · *P. taiti* | ✅ | [CNN26], [L26] | Selosse: "only examined one of 25 known species"; el material es *P. taiti* del pedernal de Rhynie | 2026 |
+| R12 | Balanza "hongo" vs "linaje extinto" · "debate abierto" · "aún no sabemos qué era" | ✅ | [L26], [CNN26] | "two remaining viable hypotheses"; "it doesn't make it as a finished story" | 2026 |
+| R13 | Subtítulo 1: decía "hace *400 millones de años*" | ✅ (corregido) | [L26] | **Corregido** a "hace *unos 400 millones de años*", igual que la voz (registro: 420 a 370 millones de años). Los otros 12 subtítulos coinciden con la voz verificada. | 2026 |
+| R14 | publicacion.md (TikTok e Instagram): "las plantas de entonces no pasaban de 40 cm" | ✅ (corregido) | [ABDN], [UCMP] | Generalizaba Rhynie a todo el Devónico temprano (las más altas llegaban a ~1 m, [UCMP]). **Corregido** a "en Rhynie (Escocia), las plantas no pasaban de 40 cm". | consultada 2026 |
+| R15 | publicacion.md (YouTube y LinkedIn): "fósil del Devónico temprano" | ✅ (corregido) | [L26] | Su registro va "late Silurian to the Late Devonian (420 to 370 million years ago)". **Corregido** a "hace unos 400 millones de años (su registro va de hace 420 a 370 millones de años)". | 2026 |
+| R16 | publicacion.md (LinkedIn): "fue durante décadas interpretado como un hongo gigante" | ✅ (corregido) | [L26] | "A fungal interpretation of Prototaxites has become most widespread in the last 25 years". **Corregido** a "se interpretó sobre todo como un hongo gigante en los últimos 25 años". | 2026 |
+| R17 | publicacion.md: resto (Hueber del Museo Nacional de Historia Natural del Smithsonian; isótopos incompatibles con un organismo solo fotosintético; equipo con la Universidad de Edimburgo, enero de 2026, *Science Advances*; quitina en los hongos fósiles de la misma piedra; forma distinta; linaje extinto propuesto; solo una especie revisada; dos hipótesis vivas; referencias con volumen, páginas y URL) | ✅ | [H01], [UC07], [B07], [L26], [ABDN], [CNN26] | Coinciden con las filas 1–21 y R1–R12 | 2001–2026 |
+| R18 | Formato: decimales con punto (1.70 m), sin "RAYOS X", especies en cursiva | ✅ | — | Revisado en jsx, guion y publicación | — |
+
+**Resumen de la revisión final:** la animación y la publicación cuadran con la voz verificada. Se corrigieron en el jsx el subtítulo 1 ("unos 400") y una barra de escala engañosa ("50 µm" → "esquema"); en publicacion.md, la altura de las plantas (limitada a Rhynie), la edad ("Devónico temprano" → 420 a 370 millones de años) y "durante décadas" → "en los últimos 25 años"; y en guion.md la nota de barras de escala. La voz no se tocó. Todas las filas quedan ✅.
+
+VEREDICTO: APROBADO

@@ -50,4 +50,3 @@ Fuentes abiertas:
 Notas para el guion (corregidas el 29 oct 2026): la cita del CDC ya dice "a serious but rare fungal infection"; el autor ya es "Vinay, K."; la tarjeta de Patel ya dice "10 centros" y 112 → 231.
 
 Resumen (29 oct 2026, segunda vuelta): se volvieron a abrir las fuentes de todo lo que cambió (apodo, moho joven, macrófagos, tarjeta de 10 centros, frase de COSMIC con "de qué", recortes de voz y fuentes del guion). Las 29 filas quedan ✅.
-VEREDICTO: APROBADO
