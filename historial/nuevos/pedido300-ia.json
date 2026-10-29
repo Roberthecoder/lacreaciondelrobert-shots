@@ -605,243 +605,400 @@
   },
   {
    "id": "ia-envenenar-250",
-   "titulo": "Bastan unos 250 documentos para meterle una 'puerta trasera' a un modelo de lenguaje (Anthropic, UK AISI y Turing, 2025)",
+   "titulo": "250 hojas rojas bastan para meterle una trampa a una IA",
    "serie": "Shot IA",
    "numero": 40,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-40-envenenar-250",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Souly et al., arXiv 2025 (Anthropic, UK AISI, Alan Turing Institute): 250 documentos envenenados",
+    "Blog de Anthropic, oct 2025"
+   ],
+   "derivados": [
+    "Prompt injection: instrucciones escondidas en páginas web",
+    "Marcas de agua en texto generado por IA",
+    "Cómo se limpian los datos de entrenamiento"
+   ]
   },
   {
    "id": "ia-concurso-arte",
-   "titulo": "La imagen hecha con IA que ganó un concurso de arte (Colorado 2022) y la 'foto' que su autor rechazó (Sony 2023)",
+   "titulo": "La imagen hecha con IA que ganó un concurso de arte",
    "serie": "Shot IA",
    "numero": 41,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-41-concurso-arte",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "US Copyright Office, decisión Théâtre D'opéra Spatial, 5 sep 2023",
+    "Colorado State Fair 2022",
+    "Allen v. Perlmutter (2023–2025)"
+   ],
+   "derivados": [
+    "¿Quién es dueño de una foto tomada por un mono? (Naruto v. Slater)",
+    "Arte generativo y derechos de autor en México",
+    "Detectar imágenes hechas con IA: C2PA"
+   ]
   },
   {
    "id": "ia-lee-mente",
-   "titulo": "¿Una IA puede leer tu mente? El decodificador de fMRI de Texas y por qué necesita tu cooperación (Tang et al., Nat Neurosci 2023)",
+   "titulo": "¿Una IA puede leer tu mente? Solo si tú te dejas",
    "serie": "Shot IA",
    "numero": 42,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-42-lee-mente",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Tang et al., Nature Neuroscience 2023 (decodificador semántico con fMRI)",
+    "Takagi y Nishimoto, CVPR 2023"
+   ],
+   "derivados": [
+    "Implantes cerebrales que devuelven el habla",
+    "Qué mide una resonancia magnética funcional",
+    "Neuroderechos: la ley de Chile"
+   ]
   },
   {
    "id": "ia-parkinson-respiracion",
-   "titulo": "Una IA detecta Parkinson por cómo respiras dormido (Yang et al., Nature Medicine 2022)",
+   "titulo": "La IA que busca Parkinson en cómo respiras dormido",
    "serie": "Shot IA",
    "numero": 43,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-43-parkinson-respiracion",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Yang et al., Nature Medicine 2022 (Parkinson con señales de respiración nocturna)",
+    "Parkinson's Foundation",
+    "Pokusa et al. 2020"
+   ],
+   "derivados": [
+    "La IA que oye la depresión en la voz",
+    "Olfato y Parkinson: la mujer que lo olía",
+    "Relojes inteligentes que detectan arritmias"
+   ]
   },
   {
    "id": "ia-call-center",
-   "titulo": "En un centro de atención, la IA subió 14 % la productividad y 34 % la de los novatos (Brynjolfsson, Li y Raymond, QJE 2025)",
+   "titulo": "La IA que le pasó los trucos del veterano al nuevo",
    "serie": "Shot IA",
    "numero": 44,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-44-call-center",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Brynjolfsson, Li y Raymond, Quarterly Journal of Economics 2025 (5,172 agentes)",
+    "NBER Working Paper 31161 (2023)"
+   ],
+   "derivados": [
+    "La IA y los programadores novatos vs expertos",
+    "¿Qué trabajos cambia más la IA? (OIT 2023/2025)",
+    "Copilot en consultoría: el estudio de BCG y Harvard"
+   ]
   },
   {
    "id": "ia-pronostico-clima",
-   "titulo": "Una IA hace el pronóstico de 10 días en menos de un minuto (GraphCast, Science 2023)",
+   "titulo": "La IA que hace el pronóstico de 10 días en menos de un minuto",
    "serie": "Shot IA",
    "numero": 45,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-45-pronostico-clima",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Lam et al., Science 2023 (GraphCast)",
+    "ECMWF: AIFS operativo, 25 feb 2025",
+    "CENAPRED 2026"
+   ],
+   "derivados": [
+    "Pronóstico de huracanes con IA",
+    "Qué es un reanálisis (ERA5)",
+    "La IA que predice inundaciones (Google Flood Hub)"
+   ]
   },
   {
    "id": "ia-halicina",
-   "titulo": "Una IA encontró un antibiótico nuevo, la halicina (Stokes et al., Cell 2020)",
+   "titulo": "La molécula para la diabetes que una IA convirtió en antibiótico",
    "serie": "Shot IA",
    "numero": 46,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-46-halicina",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Stokes et al., Cell 2020 (halicina)",
+    "MIT News, 20 feb 2020",
+    "Liu et al., Nature Chemical Biology 2023 (abaucina)"
+   ],
+   "derivados": [
+    "Superbacterias y resistencia a antibióticos",
+    "La IA que diseña proteínas nuevas",
+    "Por qué tarda 10 años un medicamento"
+   ]
   },
   {
    "id": "ia-olimpiada-mate",
-   "titulo": "IAs alcanzaron nivel de medalla de oro en la Olimpiada Internacional de Matemáticas 2025",
+   "titulo": "La IA que sacó oro en la Olimpiada de Matemáticas (y el problema que no pudo)",
    "serie": "Shot IA",
    "numero": 47,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-47-olimpiada-mate",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "IMO 2025, resultados oficiales (imo-official.org)",
+    "Google DeepMind, 21 jul 2025 (Gemini Deep Think 35/42)",
+    "Alexander Wei (OpenAI), X, 19 jul 2025",
+    "Google DeepMind 2024 (AlphaProof, nivel plata)"
+   ],
+   "derivados": [
+    "Lean: el idioma en que las máquinas comprueban demostraciones",
+    "¿Puede una IA hacer investigación matemática?",
+    "Terence Tao y la IA"
+   ]
   },
   {
    "id": "ia-exoplaneta",
-   "titulo": "Una red neuronal encontró el octavo planeta de Kepler-90 (Shallue y Vanderburg 2017/2018)",
+   "titulo": "El planeta escondido que encontró una red neuronal",
    "serie": "Shot IA",
    "numero": 48,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-48-exoplaneta",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Shallue y Vanderburg, Astronomical Journal 2018 (Kepler-90i)",
+    "NASA, 14 dic 2017",
+    "NASA Exoplanet Archive"
+   ],
+   "derivados": [
+    "Método de tránsito: cómo se ven planetas que no se ven",
+    "TESS, el sucesor de Kepler",
+    "IA para buscar ondas gravitacionales"
+   ]
   },
   {
    "id": "ia-eliza",
-   "titulo": "ELIZA (1966): el chatbot de unas cuantas reglas al que la gente le contaba sus secretos (efecto ELIZA)",
+   "titulo": "ELIZA: el \"psicólogo\" de unas cuantas reglas al que le contaban secretos",
    "serie": "Shot IA",
    "numero": 49,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-49-eliza",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Weizenbaum, Communications of the ACM 9(1), 1966",
+    "Weizenbaum, Computer Power and Human Reason (1976)",
+    "Berry 2023, Weizenbaum Journal",
+    "Colombatto y Fleming 2024"
+   ],
+   "derivados": [
+    "Efecto ELIZA: por qué le hablamos a las máquinas como personas",
+    "Chatbots de compañía y soledad",
+    "PARRY, el chatbot paranoico de 1972"
+   ]
   },
   {
    "id": "ia-etiquetadores",
-   "titulo": "Detrás de la IA hay personas etiquetando: ImageNet y los trabajadores de datos (Kenia 2023)",
+   "titulo": "Detrás de tu IA hay personas etiquetando",
    "serie": "Shot IA",
    "numero": 50,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-50-etiquetadores",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Perrigo, TIME, 18 ene 2023 (trabajadores en Kenia vía Sama)",
+    "Russakovsky et al., IJCV 2015 (ImageNet)"
+   ],
+   "derivados": [
+    "Moderadores de contenido y salud mental",
+    "Cómo se entrena con retroalimentación humana (RLHF)",
+    "Datos sintéticos: ¿IA entrenada por IA?"
+   ]
   },
   {
    "id": "ia-bocinas-escuchan",
-   "titulo": "Las bocinas inteligentes se activan solas por error (Dubois et al., PETS 2020)",
+   "titulo": "Tu bocina inteligente se despierta sola con la tele",
    "serie": "Shot IA",
    "numero": 51,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-51-bocinas-escuchan",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Dubois et al., PoPETs 2020 ('When Speakers Are All Ears')",
+    "Mon(IoT)r Lab, Northeastern, 2020"
+   ],
+   "derivados": [
+    "¿Tu celular te escucha para los anuncios?",
+    "Cómo funciona la palabra de activación",
+    "Privacidad en casas inteligentes"
+   ]
   },
   {
    "id": "ia-gato-google",
-   "titulo": "La red que aprendió sola a reconocer gatos viendo videos de YouTube (Le et al., Google 2012)",
+   "titulo": "El gato que una computadora aprendió sola",
    "serie": "Shot IA",
    "numero": 52,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-52-gato-google",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Le et al., ICML 2012 (arXiv:1112.6209)",
+    "Dean y Ng, blog de Google, 26 jun 2012"
+   ],
+   "derivados": [
+    "Autocodificadores: comprimir para entender",
+    "ImageNet y AlexNet (2012)",
+    "Neuronas 'de la abuela' en el cerebro humano"
+   ]
   },
   {
    "id": "ia-respuestas-medicas",
-   "titulo": "Un chatbot contra médicos respondiendo dudas en internet: calidad y empatía (Ayers et al., JAMA Intern Med 2023)",
+   "titulo": "¿Un chatbot contesta mejor que tu médico? Lo que sí y lo que no dice el estudio",
    "serie": "Shot IA",
    "numero": 53,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-53-respuestas-medicas",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Ayers et al., JAMA Internal Medicine 2023 (PMID 37115527) y su corrección del 8 may 2023"
+   ],
+   "derivados": [
+    "IA que escribe notas clínicas (escribas digitales)",
+    "Dr. Google: ¿buscar síntomas ayuda o asusta?",
+    "Chatbots y exámenes de medicina"
+   ]
   },
   {
    "id": "ia-nobel-fisica",
-   "titulo": "El Nobel de Física 2024 fue para las redes neuronales (Hopfield y Hinton)",
+   "titulo": "Los imanes que le enseñaron a recordar a una máquina (el Nobel de Física 2024)",
    "serie": "Shot IA",
    "numero": 54,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-54-nobel-fisica",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Nobelprize.org: comunicado y popular information, Física 2024",
+    "Hopfield, PNAS 1982",
+    "Ackley, Hinton y Sejnowski 1985",
+    "Hinton, discurso del banquete, 10 dic 2024"
+   ],
+   "derivados": [
+    "Qué es un spin y por qué los imanes atraen",
+    "Retropropagación: cómo aprende una red",
+    "El Nobel de Química 2024 y las proteínas"
+   ]
   },
   {
    "id": "ia-tutor-nigeria",
-   "titulo": "Un tutor con IA en Nigeria: seis semanas que valieron como hasta 2 años de aprendizaje (Banco Mundial, 2024–2025)",
+   "titulo": "Seis semanas con un tutor de IA que valieron como hasta dos años de escuela",
    "serie": "Shot IA",
    "numero": 55,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-55-tutor-nigeria",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "De Simone et al., World Bank Policy Research Working Paper 11125 (2025)",
+    "Blog del Banco Mundial, 9 ene 2025"
+   ],
+   "derivados": [
+    "Tutores con IA en México: lo que se sabe",
+    "El efecto de 'dos sigmas' de Bloom",
+    "Chatbots en tareas: ayudan o estorban"
+   ]
   },
   {
    "id": "ia-materiales-gnome",
-   "titulo": "La IA que propuso 2.2 millones de cristales nuevos y la crítica de los químicos (Merchant et al., Nature 2023)",
+   "titulo": "La IA que \"descubrió\" 2.2 millones de cristales",
    "serie": "Shot IA",
    "numero": 56,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-56-materiales-gnome",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Merchant et al., Nature 2023 (GNoME)",
+    "Szymanski et al., Nature 2023 y corrección de 19 ene 2026 (A-Lab)",
+    "Cheetham y Seshadri, Chem. Mater. 2024",
+    "Leeman et al., PRX Energy 2024"
+   ],
+   "derivados": [
+    "Laboratorios autónomos: robots que hacen química",
+    "Baterías sin litio",
+    "Qué es un cristal (y por qué la sal es cúbica)"
+   ]
   },
   {
    "id": "ia-face-id",
-   "titulo": "Tu cara desbloquea el celular: 1 en un millón, salvo gemelos y niños (Apple Face ID)",
+   "titulo": "Tu celular no te ve la cara: te la mide",
    "serie": "Shot IA",
    "numero": 57,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-57-face-id",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Apple Support 102381 (Face ID, 2026)",
+    "Apple Platform Security Guide (dic 2024)",
+    "Apple Support 105095 (Touch ID, 2023)",
+    "Apple Newsroom, 12 sep 2017"
+   ],
+   "derivados": [
+    "Reconocimiento facial en la calle: dónde se prohíbe",
+    "Cómo engañaron a Face ID con máscaras",
+    "Huellas dactilares: por qué no hay dos iguales"
+   ]
   },
   {
    "id": "ia-computo-duplica",
-   "titulo": "El cómputo para entrenar IA se duplica cada pocos meses (Epoch AI)",
+   "titulo": "El vaso que se llena cinco veces más cada año: el cómputo de la IA",
    "serie": "Shot IA",
    "numero": 58,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-58-computo-duplica",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Epoch AI, epoch.ai/trends (2026)",
+    "Sevilla et al., IJCNN 2022 (Compute Trends Across Three Eras)",
+    "Intel, Ley de Moore",
+    "Epoch AI Frontier Data Centers (oct 2026)",
+    "EIA FAQ 97 (2022)"
+   ],
+   "derivados": [
+    "El agua que usan los centros de datos",
+    "Fin de la ley de Moore: qué sigue",
+    "Chips especializados: GPU y TPU"
+   ]
   },
   {
    "id": "ia-cirugia-robot",
-   "titulo": "Un robot que cosió intestino de cerdo solo, mejor que cirujanos (STAR, Science Robotics 2022)",
+   "titulo": "El robot que cosió un intestino (y quién lo vigilaba)",
    "serie": "Shot IA",
    "numero": 59,
-   "estado": "idea",
+   "estado": "aprobado",
    "carpeta": "shots/ia-59-cirugia-robot",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Saeidi et al., Science Robotics 2022 (STAR)",
+    "Kim et al., Science Robotics 2025 (SRT-H)"
+   ],
+   "derivados": [
+    "Cirugía a distancia: operar desde otro país",
+    "El robot da Vinci: cómo funciona",
+    "Robots que aprenden viendo demostraciones"
+   ]
   },
   {
    "id": "ia-conspiraciones-descartado",
