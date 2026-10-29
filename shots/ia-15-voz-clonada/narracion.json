@@ -9,7 +9,7 @@
     },
     {
       "escena": "Paso1",
-      "texto": "Así funciona la estafa. Paso uno: consiguen un audio corto de su voz, por ejemplo de un video en redes."
+      "texto": "Así funciona la estafa. Paso uno: consiguen un audio corto de su voz, como un video que subió a redes."
     },
     {
       "escena": "Paso2",
@@ -21,7 +21,7 @@
     },
     {
       "escena": "Segundos",
-      "texto": "¿Cuánto audio necesitan? En 2023, un modelo de Microsoft llamado VALL-E imitó voces que nunca había oído con una grabación de solo tres segundos."
+      "texto": "¿Cuánto audio necesitan? En 2023, un modelo de Microsoft, VALL-E, imitó voces que nunca había oído con una grabación de solo tres segundos."
     },
     {
       "escena": "Pregunta",
@@ -29,11 +29,11 @@
     },
     {
       "escena": "Oidos",
-      "texto": "En Londres, en 2023, quinientas veintinueve personas escucharon voces reales y falsas. Solo detectaron las falsas setenta y tres por ciento de las veces."
+      "texto": "En 2023, científicos de Londres pusieron a quinientas veintinueve personas a escuchar voces reales y falsas. Solo detectaron las falsas setenta y tres por ciento de las veces."
     },
     {
       "escena": "Confesion",
-      "texto": "Y te confieso algo: la voz que estás oyendo es mi voz clonada, con mi permiso."
+      "texto": "Y te confieso algo: la voz que oyes es mi voz clonada, con mi permiso."
     },
     {
       "escena": "Defensa",

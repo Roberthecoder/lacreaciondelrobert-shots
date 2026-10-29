@@ -5,23 +5,23 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa foto que tomaste de noche no es una foto: son hasta trece fotos encimadas."
+      "texto": "Esa foto que tomaste de noche no es una foto: son hasta trece, encimadas."
     },
     {
       "escena": "Gancho",
-      "texto": "Así lo hace el modo noche de los Pixel de Google."
+      "texto": "Así lo describió Google en 2019 para sus Pixel."
     },
     {
       "escena": "Sensor",
-      "texto": "En el sensor, cada pixel es diminuto: con poca luz atrapa poquito y la foto sale llena de ruido."
+      "texto": "En el sensor cada pixel es diminuto: atrapa poquita luz y la foto sale con ruido."
     },
     {
       "escena": "Pulso",
-      "texto": "Si dejara la foto abierta mucho rato, tu pulso la barrería."
+      "texto": "Con una sola foto larga, el temblor de tu mano la barrería."
     },
     {
       "escena": "Rafaga",
-      "texto": "Por eso toma una ráfaga de fotos cortas, de hasta un tercio de segundo."
+      "texto": "Por eso toma una ráfaga de fotos de hasta un tercio de segundo."
     },
     {
       "escena": "Alinear",
@@ -33,23 +33,27 @@
     },
     {
       "escena": "Clasico",
-      "texto": "Alinear y juntar es matemática clásica, no una red neuronal."
+      "texto": "Alinear y juntar era matemática clásica, no una red neuronal."
     },
     {
       "escena": "Color",
-      "texto": "Lo que sí aprendió es el color: un modelo entrenado con cinco mil fotos ajustadas por fotógrafos profesionales."
+      "texto": "Lo que sí aprendió fue el color: un modelo entrenado con cinco mil fotos ajustadas por fotógrafos."
     },
     {
       "escena": "Estudio",
-      "texto": "Google lo publicó en 2019: funciona hasta con tres décimas de lux, cuando tus ojos ya casi no ven colores."
+      "texto": "Funcionaba hasta con tres décimas de lux, cuando tus ojos ya casi no ven colores."
     },
     {
       "escena": "Temblor",
-      "texto": "Y en el zoom usan tu temblor: tu mano tiembla de ocho a doce veces por segundo y cada foto sale apenas corrida."
+      "texto": "Y en el zoom, otro estudio de Google de 2019 usó tu temblor: tu mano tiembla de ocho a doce veces por segundo."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "Y desde 2023, una red neuronal también le quita el ruido."
     },
     {
       "escena": "Cierre",
-      "texto": "Tu foto de noche no fue un clic: fueron muchas, y la matemática las volvió una sola."
+      "texto": "Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y hoy también por IA."
     }
   ]
 }
