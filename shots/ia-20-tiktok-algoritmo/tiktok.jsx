@@ -284,7 +284,7 @@ function TikTok() {
         {svg(<>
           <Embudo x={540} y={980} s={0.9} T={T} />
           {[['visto', KC.yellow, 0.3, 220, 560], ['terminado ✔', KC.leaf, 0.9, 420, 470], ['saltado ✖', KC.coral, 1.5, 300, 650], ['sigues a…', KC.cyan, 2.4, 560, 560], ['audio ♪', KC.lilac, 3.4, 360, 740], ['#hashtags', KC.orange, 4.0, 600, 690]].map(([tx, c, d, xx, yy], i) => {
-            const a = K.S + d, p = kprog(T, a, a + 0.5, kEase.rebote), cae = kprog(T, a + 2.2, a + 2.9, kEase.entra);
+            const a = K.S + d, p = kprog(T, a, a + 0.5, kEase.rebote), cae = kprog(T, a + 2.2, a + 2.9, kEase.suave);
             return <Ficha key={i} x={klerp(xx, 540, cae)} y={klerp(yy - 120 * (1 - p), 980, cae)} texto={tx} color={c} s={p * (1 - 0.6 * cae)} o={p * (1 - cae)} rot={(i % 2 ? 6 : -6) * (1 - cae)} tam={38} />; })}
         </>)}
       </Escena>

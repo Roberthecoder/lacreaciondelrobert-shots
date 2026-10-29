@@ -204,12 +204,12 @@ function CerebroWatts() {
       <Escena T={T} a={K.Cu} b={K.N}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Dona x={280} y={900} p={0.02 * kprog(T, K.Cu + 0.4, K.Cu + 1.2, kEase.sale)} color={KC.pink} T={T} id="d1" />
-          <Dona x={790} y={900} p={0.2 * kprog(T, K.Cu + 2.2, K.Cu + 3.2, kEase.sale)} color={KC.orange} T={T} id="d2" />
+          <Dona x={280} y={830} p={0.02 * kprog(T, K.Cu + 0.4, K.Cu + 1.2, kEase.sale)} color={KC.pink} T={T} id="d1" />
+          <Dona x={790} y={830} p={0.2 * kprog(T, K.Cu + 2.2, K.Cu + 3.2, kEase.sale)} color={KC.orange} T={T} id="d2" />
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Cu + 0.4} until={K.N - 0.2} valor={2} dur={0.6} sufijo=" %" etiqueta="del peso" x={280} y={600} tam={120} color={KC.pink} />
-      <NumeroGigante T={T} at={K.Cu + 2.2} until={K.N - 0.2} valor={20} dur={0.8} sufijo=" %" etiqueta="de tu energía" x={790} y={1150} tam={110} color={KC.orange} />
+      <NumeroGigante T={T} at={K.Cu + 0.4} until={K.N - 0.2} valor={2} dur={0.6} sufijo=" %" etiqueta="del peso" x={280} y={1080} tam={100} color={KC.pink} />
+      <NumeroGigante T={T} at={K.Cu + 2.2} until={K.N - 0.2} valor={20} dur={0.8} sufijo=" %" etiqueta="de tu energía" x={790} y={1080} tam={100} color={KC.orange} />
       {/* 2 · 86 mil millones de neuronas (por dentro: fondo oscuro) */}
       <Escena T={T} a={K.N} b={K.Mi} zoom={0.1}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
@@ -228,7 +228,7 @@ function CerebroWatts() {
       <Escena T={T} a={K.Ta} b={K.Ml}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <TarjetaGPU T={T} x={600} y={640} s={1.3} calor={potGPU} etiqueta="H100 SXM" />
+          <TarjetaGPU T={T} x={640} y={640} s={1.3} calor={potGPU} etiqueta="H100 SXM" />
           <Cerebritos T={T} n={35 * kprog(T, K.Ta + 2.6, K.Ta + 4.4)} />
         </>)}
       </Escena>
@@ -258,18 +258,18 @@ function CerebroWatts() {
         <FondoLunares color={KC.mint} />
         {svg(<Balanza x={540} y={600} T={T} />)}
       </Escena>
-      <Aparece T={T} at={K.O + 0.4} until={K.E - 0.2} x={430} y={440}><div style={{ font:`400 200px/1 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`7px ${KC.ink}`, textShadow:`8px 8px 0 ${KC.ink}` }}>≠</div></Aparece>
+      <Aparece T={T} at={K.O + 0.4} until={K.E - 0.2} x={470} y={330}><div style={{ font:`400 200px/1 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`7px ${KC.ink}`, textShadow:`8px 8px 0 ${KC.ink}` }}>≠</div></Aparece>
       <Chip T={T} at={K.O + 2.4} until={K.E - 0.2} texto="la tarjeta: otro tipo de trabajo" y={1020} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.O + 3.8} until={K.E - 0.2} texto="el cerebro: no es una computadora digital" y={1100} tam={34} borde={KC.ink} />
       {/* 8 · el estudio (por dentro de la corteza: fondo oscuro) */}
       <Escena T={T} a={K.E} b={K.Co}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <Neuronas2 T={T} t0={K.E + 3.4} />
+        <div style={{ position:'absolute', inset:0, transform:'translate(40px,-60px)' }}><Neuronas2 T={T} t0={K.E + 3.4} /></div>
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2021" quien="Universidad de Virginia" revista="Levy y Calvert · PNAS" y={700} />
-      <Etq T={T} at={K.E + 4.4} until={K.Co - 0.2} x={420} y={530} texto="calcular" lado="der" color={KC.yellow} />
-      <Etq T={T} at={K.E + 5.6} until={K.Co - 0.2} x={760} y={780} texto="mandar señales lejos" lado="izq" color={KC.yellow} />
-      <BarrasW T={T} at={K.E + 4.6} until={K.Co - 0.2} top={940} max={3.5} filas={[
+      <Etq T={T} at={K.E + 4.4} until={K.Co - 0.2} x={460} y={470} texto="calcular" lado="der" color={KC.yellow} />
+      <Etq T={T} at={K.E + 5.6} until={K.Co - 0.2} x={800} y={720} texto="mandar señales lejos" lado="izq" color={KC.yellow} />
+      <BarrasW T={T} at={K.E + 4.6} until={K.Co - 0.2} top={870} max={3.5} filas={[
         { valor: 0.1, texto: '0.1 W', etiqueta: 'calcular', color: KC.mint },
         { valor: 3.5, texto: '3.5 W · ×35', etiqueta: 'mandar señales lejos', color: KC.orange, at: K.E + 6.0 }]} />
       <Chip T={T} at={K.E + 6.6} until={K.Co - 0.2} texto="estimación teórica · corteza humana" y={430} x={600} tam={30} borde={KC.cyan} />
@@ -281,11 +281,11 @@ function CerebroWatts() {
       <Chip T={T} at={K.Co + 0.3} until={K.Co + 5.6} texto="Hala Point · Intel · 2024" x={420} y={450} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Co + 0.9} until={K.Co + 5.6} texto="prototipo de investigación" x={420} y={530} tam={30} borde={KC.ink} />
       {T >= K.Co + 2.2 && T < K.C + 0.3 && <div style={{ opacity:kprog(T, K.Co + 2.2, K.Co + 2.5) * (1 - kprog(T, K.C - 0.2, K.C + 0.2)) }}>
-        <Contador T={T} at={K.Co + 2.2} desde={0} hasta={1150} dur={1.6} sufijo=" millones" x={540} y={950} tam={78} color={KC.texto} />
+        <Contador T={T} at={K.Co + 2.2} desde={0} hasta={1150} dur={1.6} sufijo=" millones" x={540} y={925} tam={78} color={KC.texto} />
       </div>}
-      <Chip T={T} at={K.Co + 2.6} until={K.C - 0.2} texto="de neuronas artificiales" y={1030} tam={34} borde={KC.ink} />
-      <Medidor T={T} at={K.Co + 4.0} until={K.C - 0.2} y={1080} etiqueta="hasta" color={KC.red} valor={kprog(T, K.Co + 4.0, K.Co + 5.5, kEase.sale)} texto={(v) => `${kformato(Math.round(2600 * v))} W`} />
-      <Chip T={T} at={K.Co + 5.8} until={K.C - 0.2} texto="tu cerebro: ≈ 86,000 millones con ≈ 20 W" x={540} y={480} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.Co + 2.6} until={K.C - 0.2} texto="de neuronas artificiales" y={995} tam={34} borde={KC.ink} />
+      <Medidor T={T} at={K.Co + 4.0} until={K.C - 0.2} y={1040} etiqueta="hasta" color={KC.red} valor={kprog(T, K.Co + 4.0, K.Co + 5.5, kEase.sale)} texto={(v) => `${kformato(Math.round(2600 * v))} W`} />
+      <Chip T={T} at={K.Co + 5.8} until={K.C - 0.2} texto="tu cerebro: ≈ 86,000 millones con ≈ 20 W" x={540} y={460} tam={32} borde={KC.leaf} />
       {/* 10 · cierre: la misma cabeza y el mismo foco */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
@@ -319,7 +319,7 @@ function CerebroWatts() {
         [CUES.Pregunta + 0.05, CUES.Ojo + 1.5, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Ojo + 2.5, CUES.Estudio - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
         [CUES.Estudio + 4.5, CUES.Copia - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
-        [CUES.Copia + 3.5, CUES.Cierre - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
+        [CUES.Copia + 1.0, CUES.Copia + 5.6, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der']]} />
       <MarcaAgua T={T} tema="ia" num="24" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="ia" robert={'assets/stickers/avatar_02_apuntando_camara.png'} />

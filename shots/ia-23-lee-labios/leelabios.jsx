@@ -56,20 +56,21 @@ function VideoBoca({ x, y, s = 1, T = 0, abre = 0, id = 'v', mudo = true, barra 
 }
 
 // Tarjeta de palabra (PESO / BESO). luz 0..1 la ilumina; apaga 0..1 la desvanece.
-function Tarjeta({ T, at, x, y, texto, luz = 0, apaga = 0, color = KC.yellow, s = 1 }) {
-  if (T < at) return null;
+function Tarjeta({ T, at, until, x, y, texto, luz = 0, apaga = 0, color = KC.yellow, s = 1 }) {
+  if (!kvisible(T, at, until)) return null;
+  const fuera = until == null ? 0 : kprog(T, until, until + 0.35, kEase.suave);
   const e = kprog(T, at, at + 0.45, kEase.rebote), sc = klerp(0.5, 1, e) * (1 + 0.12 * luz) * s;
-  return <div style={{ position:'absolute', left:x, top:y, zIndex:40, transform:`translate(-50%,-50%) scale(${sc}) rotate(${(x < 540 ? -3 : 3) * (1 - luz)}deg)`, opacity:kprog(T, at, at + 0.2) * (1 - 0.75 * apaga),
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:40, transform:`translate(-50%,-50%) scale(${sc}) rotate(${(x < 540 ? -3 : 3) * (1 - luz)}deg)`, opacity:kprog(T, at, at + 0.2) * (1 - 0.75 * apaga) * (1 - fuera),
     background: luz > 0.5 ? KC.mint : color, border:`7px solid ${KC.ink}`, borderRadius:24, padding:'8px 36px 12px', font:`400 96px/1 ${KF.titulo}`, color:KC.ink, letterSpacing:'.04em',
     boxShadow: `10px 10px 0 ${KC.ink}${luz > 0.05 ? `, 0 0 ${60 * luz}px ${KC.mint}` : ''}`, filter:`grayscale(${apaga})` }}>{texto}</div>;
 }
 
 // Letra que cae en el molde de la boca.
-function LetraCae({ T, at, x, y0, y1, letra, color }) {
-  if (T < at) return null;
-  const p = kprog(T, at, at + 0.7, kEase.rebote), yy = klerp(y0, y1, p);
+function LetraCae({ T, at, until, x, y0, y1, letra, color }) {
+  if (!kvisible(T, at, until)) return null;
+  const p = kprog(T, at, at + 0.7, kEase.rebote), fuera = kprog(T, until, until + 0.35, kEase.suave), yy = klerp(y0, y1, p);
   return <div style={{ position:'absolute', left:x, top:yy, zIndex:41, transform:`translate(-50%,-50%) rotate(${(1 - p) * 20}deg)`,
-    width:130, height:130, borderRadius:24, background:color, border:`7px solid ${KC.ink}`, boxShadow:`8px 8px 0 ${KC.ink}`,
+    width:130, height:130, borderRadius:24, background:color, opacity:1 - fuera, border:`7px solid ${KC.ink}`, boxShadow:`8px 8px 0 ${KC.ink}`,
     display:'flex', alignItems:'center', justifyContent:'center', font:`400 100px/1 ${KF.titulo}`, color:KC.ink }}>{letra}</div>;
 }
 
@@ -126,10 +127,10 @@ function BarrasError({ T, at, until, filas, top = 700 }) {
   const e = kentrada(T, at, until, 'sube');
   return <div style={{ position:'absolute', left:70, top, width:940, zIndex:40, opacity:e.o }}>
     {filas.map((f, i) => { const g = kprog(T, f.at + 0.1, f.at + 1.1, kEase.sale);
-      return <div key={i} style={{ marginBottom:22, opacity: T >= f.at ? 1 : 0 }}>
+      return <div key={i} style={{ marginBottom:14, opacity: T >= f.at ? 1 : 0 }}>
         <div style={{ font:`900 36px ${KF.texto}`, color:KC.ink, marginBottom:6 }}>{f.etiqueta}</div>
         <div style={{ display:'flex', alignItems:'center', gap:18 }}>
-          <div style={{ width:Math.max(14, 700 * f.valor / 100 * g), height:72, background:f.color, border:`6px solid ${KC.ink}`, borderRadius:16 }}></div>
+          <div style={{ width:Math.max(14, 700 * f.valor / 100 * g), height:62, background:f.color, border:`6px solid ${KC.ink}`, borderRadius:16 }}></div>
           <div style={{ font:`400 68px ${KF.titulo}`, color:f.color, WebkitTextStroke:`3px ${KC.ink}` }}>{kformato(f.valor * g, 1)} %</div>
         </div>
       </div>; })}
@@ -196,10 +197,10 @@ function Personita({ x, y, s = 1, blur = 0, id = 'p' }) {
 }
 
 // Marca ✔ / ✗ redonda.
-function Marca({ T, at, x, y, ok }) {
-  if (T < at) return null;
+function Marca({ T, at, until, x, y, ok }) {
+  if (!kvisible(T, at, until)) return null;
   const e = kprog(T, at, at + 0.4, kEase.rebote);
-  return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) scale(${e})`, width:130, height:130, borderRadius:65,
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) scale(${e * (1 - kprog(T, until, until + 0.35))})`, width:130, height:130, borderRadius:65,
     background: ok ? KC.mint : KC.red, border:`7px solid ${KC.ink}`, boxShadow:`8px 8px 0 ${KC.ink}`, display:'flex', alignItems:'center', justifyContent:'center',
     font:`900 80px/1 ${KF.texto}`, color: ok ? KC.ink : KC.texto }}>{ok ? '✔' : '✗'}</div>;
 }
@@ -238,8 +239,8 @@ function LeeLabios() {
         <FondoLunares color={KC.pink} />
         {svg(<VideoBoca x={400} y={820} s={0.8} T={T} abre={silaba(T + 1.2)} id="g" />)}
       </Escena>
-      <Tarjeta T={T} at={K.G + 0.5} x={280} y={1110} texto="PESO" color={KC.yellow} />
-      <Tarjeta T={T} at={K.G + 0.9} x={800} y={1110} texto="BESO" color={KC.cyan} />
+      <Tarjeta T={T} at={K.G + 0.5} x={280} y={1110} texto="PESO" color={KC.yellow} until={K.V - 0.3} />
+      <Tarjeta T={T} at={K.G + 0.9} x={800} y={1110} texto="BESO" color={KC.cyan} until={K.V - 0.3} />
       {T >= K.G + 1.3 && T < K.V + 0.3 && <div style={{ position:'absolute', left:540, top:1110 - Math.abs(Math.sin(T * 5)) * 40, zIndex:41, transform:'translate(-50%,-50%)',
         font:`400 120px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`5px ${KC.ink}`, opacity:kprog(T, K.G + 1.3, K.G + 1.5) * (1 - kprog(T, K.V - 0.2, K.V + 0.3)) }}>?</div>}
       <Chip T={T} at={K.G + 3.4} until={K.V - 0.2} texto="P y B: la misma boca" x={400} y={560} tam={36} borde={KC.ink} />
@@ -252,9 +253,9 @@ function LeeLabios() {
           <Labios x={430} y={830} s={1.2} abre={0} id="vis" />
         </g>)}
       </Escena>
-      <LetraCae T={T} at={K.V + 0.4} x={290} y0={-100} y1={560} letra="P" color={KC.pink} />
-      <LetraCae T={T} at={K.V + 0.8} x={430} y0={-100} y1={560} letra="B" color={KC.cyan} />
-      <LetraCae T={T} at={K.V + 1.2} x={570} y0={-100} y1={560} letra="M" color={KC.mint} />
+      <LetraCae T={T} at={K.V + 0.4} x={290} y0={-100} y1={560} until={K.E - 0.3} letra="P" color={KC.pink} />
+      <LetraCae T={T} at={K.V + 0.8} x={430} y0={-100} y1={560} until={K.E - 0.3} letra="B" color={KC.cyan} />
+      <LetraCae T={T} at={K.V + 1.2} x={570} y0={-100} y1={560} until={K.E - 0.3} letra="M" color={KC.mint} />
       <Chip T={T} at={K.V + 1.9} until={K.E - 0.2} texto="1 visema = labios juntos" x={430} y={1080} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.V + 2.6} until={K.E - 0.2} texto="visema: la forma visible de un sonido" x={540} y={1160} tam={30} borde={KC.gold} />
 
@@ -262,8 +263,8 @@ function LeeLabios() {
       <Escena T={T} a={K.E} b={K.P}>
         <FondoLunares color={KC.lilac} />
         {svg(<g opacity={kprog(T, K.E + 3.0, K.E + 3.5)}>
-          <Tele x={300} y={560} s={0.85} T={T} />
-          <Lector x={600} y={560} s={0.75} T={T} />
+          <Tele x={250} y={560} s={0.85} T={T} />
+          <Lector x={520} y={580} s={0.75} T={T} />
         </g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2017" quien="Oxford + DeepMind" revista="Chung, Senior, Vinyals y Zisserman · CVPR" y={640} />
@@ -302,8 +303,8 @@ function LeeLabios() {
       </Escena>
       <Chip T={T} at={K.D + 1.2} until={D2 - 0.4} texto={`▶ ver otra vez: ${Math.min(10, 1 + Math.floor(kprog(T, K.D + 1.4, K.D + 4.2) * 9.99))} / 10`} x={300} y={1090} tam={34} mono borde={KC.ink} />
       <Chip T={T} at={K.D + 2.0} until={D2 - 0.4} texto="solo la boca" x={790} y={1090} tam={34} borde={KC.ink} />
-      <Chip T={T} at={D2} until={K.Vz - 0.2} texto="error de palabras · menos es mejor" y={720} tam={32} borde={KC.ink} />
-      <BarrasError T={T} at={D2 + 0.2} until={K.Vz - 0.2} top={800} filas={[
+      <Chip T={T} at={D2} until={K.Vz - 0.2} texto="error de palabras · menos es mejor" y={670} tam={32} borde={KC.ink} />
+      <BarrasError T={T} at={D2 + 0.2} until={K.Vz - 0.2} top={740} filas={[
         { valor: 92.9, etiqueta: 'profesionales sin contexto', color: KC.orange, at: D2 + 0.3 },
         { valor: 86.4, etiqueta: 'profesionales con contexto', color: KC.coral, at: D2 + 1.0 },
         { valor: 40.9, etiqueta: 'la IA (2018)', color: KC.mint, at: D2 + 3.6 }]} />
@@ -329,8 +330,8 @@ function LeeLabios() {
           </g>
         </g>)}
       </Escena>
-      <Marca T={T} at={K.R + 1.4} x={320} y={720} ok={false} />
-      <Marca T={T} at={K.R + 3.0} x={960} y={700} ok />
+      <Marca T={T} at={K.R + 1.4} x={320} y={720} ok={false} until={K.C - 0.3} />
+      <Marca T={T} at={K.R + 3.0} x={960} y={700} ok until={K.C - 0.3} />
       <Chip T={T} at={K.R + 3.2} until={K.C - 0.2} texto="de frente" x={200} y={1130} tam={34} borde={KC.mint} />
       <Chip T={T} at={K.R + 3.6} until={K.C - 0.2} texto="de cerca" x={500} y={1130} tam={34} borde={KC.mint} />
       <Chip T={T} at={K.R + 4.0} until={K.C - 0.2} texto="buen video" x={820} y={1130} tam={34} borde={KC.mint} />
@@ -347,14 +348,14 @@ function LeeLabios() {
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="¿«Peso» o *«beso»?*" />
       <Subtitulo T={T} idx={1} at={K.V + 0.1} until={K.E - 0.1} texto="Misma boca: *visemas.*" />
-      <Subtitulo T={T} idx={2} at={K.E + 0.1} until={E2 - 0.1} texto="Experto: *menos de 1 de 4.*" />
+      <Subtitulo T={T} idx={2} at={K.E + 0.1} until={E2 - 0.1} texto="Experto: *menos de ¼*" />
       <Subtitulo T={T} idx={3} at={E2} until={K.P - 0.1} texto="La IA: *la mitad.*" />
-      <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.S - 0.1} texto="¿Y con *muchas más bocas?*" />
+      <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.S - 0.1} texto="¿Y con *más bocas?*" />
       <Subtitulo T={T} idx={5} at={K.S + 0.1} until={K.D - 0.1} texto="*3,886 horas* de video" />
-      <Subtitulo T={T} idx={6} at={K.D + 0.1} until={D2 - 0.1} texto="Cada video: *hasta 10 veces.*" />
+      <Subtitulo T={T} idx={6} at={K.D + 0.1} until={D2 - 0.1} texto="Cada video: *10 veces*" />
       <Subtitulo T={T} idx={7} at={D2} until={K.Vz - 0.1} texto="Error: *86–93 %* vs *41 %*" />
-      <Subtitulo T={T} idx={8} at={K.Vz + 0.1} until={K.R - 0.1} texto="Para quien *perdió la voz.*" />
-      <Subtitulo T={T} idx={9} at={K.R + 0.1} until={K.C - 0.1} texto="Solo *de frente y de cerca.*" />
+      <Subtitulo T={T} idx={8} at={K.Vz + 0.1} until={K.R - 0.1} texto="Si *perdiste la voz…*" />
+      <Subtitulo T={T} idx={9} at={K.R + 0.1} until={K.C - 0.1} texto="*De frente* y *de cerca*" />
       <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Decide *el contexto.*" />
 
       <Robert T={T} apariciones={[
@@ -362,8 +363,7 @@ function LeeLabios() {
         [CUES.Visemas + 0.5, CUES.Experto - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Experto + 3.4, CUES.Experto + 7.0, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Experto + 7.4, CUES.Pregunta - 0.15, 'avatar_11_sorprendido', 'arriba-der'],
-        [CUES.Pregunta + 0.05, CUES.Estudio + 1.0, 'avatar_07_pensativo_puno', 'grande'],
-        [CUES.Estudio + 3.0, CUES.Duelo - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
+        [CUES.Pregunta + 0.05, CUES.Estudio + 0.4, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Duelo + 0.4, CUES.Duelo + 4.8, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Duelo + 6.0, CUES.Voz - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Voz + 0.4, CUES.Riesgo - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
