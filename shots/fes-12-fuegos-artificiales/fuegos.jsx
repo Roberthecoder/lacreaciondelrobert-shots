@@ -15,7 +15,7 @@ function Cielo({ T, seed = 4 }) {
   </>;
 }
 // Azoteas de una ciudad mexicana (con tinacos) en el tercio de abajo
-function Ciudad({ T, y = 1400, luz = 0 }) {
+function Ciudad({ T, y = 1520, luz = 0 }) {
   const g = krng(9); let x = -20; const ed = [];
   while (x < KW) { const w = 110 + g() * 120, h = 140 + g() * 300; ed.push([x, w, h, g()]); x += w + 6; }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
@@ -32,7 +32,7 @@ function Ciudad({ T, y = 1400, luz = 0 }) {
 function Estallido({ T, at, x, y, color, r = 260, n = 38, vida = 2.6, seed = 1, queda = false, palido = 0 }) {
   const u = T - at; if (u < 0 || (!queda && u > vida)) return null;
   const g = krng(seed), e = 1 - Math.exp(-u * 4.2);
-  const cae = queda ? 26 * Math.min(u, 2) : 70 * u * u;
+  const cae = queda ? 22 * Math.min(u, 2) : 30 * u * u;
   const o = queda ? 0.85 + 0.15 * Math.sin(T * 5 + seed) : 1 - kprog(u, vida * 0.5, vida);
   const col = palido ? mixHex(color, DESLAVA, palido) : color;
   return <g opacity={o}>
@@ -230,7 +230,7 @@ function Fuegos() {
       {/* 2 · dentro del cohete: sales de metales */}
       <Escena T={T} a={K.Co} b={K.Cl}>
         <FondoLunares color={KC.yellow} />
-        {svg(<CorteCohete T={T} x={620} y={830} abre={kprog(T, K.Co + 0.3, K.Co + 1.6)} />)}
+        {svg(<CorteCohete T={T} x={620} y={760} abre={kprog(T, K.Co + 0.3, K.Co + 1.6)} />)}
       </Escena>
       {/* 3 · cinco metales, cinco colores */}
       <Escena T={T} a={K.Cl} b={K.Ca} zoom={0.03}>
@@ -250,13 +250,13 @@ function Fuegos() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={26} color="rgba(255,160,90,.25)" />
         {svg(<>
-          <Flamas T={T} x={540} y={1200} ancho={900} fuerza={kprog(T, K.Ca + 0.3, K.Ca + 1.5)} n={9} />
+          <Flamas T={T} x={540} y={1150} ancho={900} fuerza={1.6 * kprog(T, K.Ca + 0.3, K.Ca + 1.5)} n={9} />
           <g transform={`translate(${Math.sin(T * 30) * 4 * kprog(T, K.Ca + 1.2, K.Ca + 2)} 0)`}>
-            <circle cx={630} cy={860} r={60} fill={CLORO} stroke={KC.ink} strokeWidth={5} />
-            <text x={630} y={878} textAnchor="middle" style={{ font:`400 48px ${KF.titulo}` }} fill={KC.ink}>Cl</text>
-            <Atomo T={T} x={470} y={860} r={120} salto={kprog(T, K.Ca + 2.2, K.Ca + 3.0, kEase.rebote)} brillo={kprog(T, K.Ca + 1.0, K.Ca + 2.4)} vel={1 + kprog(T, K.Ca + 0.5, K.Ca + 2.5) * 2} />
+            <circle cx={630} cy={780} r={60} fill={CLORO} stroke={KC.ink} strokeWidth={5} />
+            <text x={630} y={798} textAnchor="middle" style={{ font:`400 48px ${KF.titulo}` }} fill={KC.ink}>Cl</text>
+            <Atomo T={T} x={470} y={780} r={120} salto={kprog(T, K.Ca + 2.2, K.Ca + 3.0, kEase.rebote)} brillo={kprog(T, K.Ca + 1.0, K.Ca + 2.4)} vel={1 + kprog(T, K.Ca + 0.5, K.Ca + 2.5) * 2} />
           </g>
-          {T > K.Ca + 1.6 && [0, 1, 2].map((k) => { const u = ((T - K.Ca - 1.6) * 0.9 + k / 3) % 1; return <path key={k} d={`M ${400 + k * 70} ${1120 - u * 120} l 0 -60 m -18 18 l 18 -18 l 18 18`} stroke={KC.orange} strokeWidth={8} fill="none" strokeLinecap="round" opacity={1 - u} />; })}
+          {T > K.Ca + 1.6 && [0, 1, 2].map((k) => { const u = ((T - K.Ca - 1.6) * 0.9 + k / 3) % 1; return <path key={k} d={`M ${400 + k * 70} ${1060 - u * 120} l 0 -60 m -18 18 l 18 -18 l 18 18`} stroke={KC.orange} strokeWidth={8} fill="none" strokeLinecap="round" opacity={1 - u} />; })}
         </>)}
       </Escena>
       {/* 5 · escalones de energía: sube, baja y suelta luz */}
@@ -265,7 +265,7 @@ function Fuegos() {
         {svg(<>
           <line x1={150} y1={1150} x2={150} y2={600} stroke={KC.gold2} strokeWidth={8} /><path d="M 126 630 L 150 590 L 174 630" stroke={KC.gold2} strokeWidth={8} fill="none" strokeLinejoin="round" />
           <text x={120} y={880} textAnchor="middle" transform="rotate(-90 120 880)" style={{ font:`700 30px ${KF.mono}` }} fill={KC.gold2}>energía</text>
-          <Escalon T={T} x={540} yb={1120} yt={760} ancho={520} color={ROJO} sube={K.Es + 0.4} baja={K.Es + 2.0} />
+          {T <= K.Es + 2.9 && <Escalon T={T} x={540} yb={1120} yt={760} ancho={520} color={ROJO} sube={K.Es + 0.4} baja={K.Es + 2.0} />}
           {T > K.Es + 2.9 && <Escalon T={T} x={540} yb={1120} yt={760} ancho={520} color={ROJO} sube={K.Es + 2.9} baja={K.Es + 3.9} />}
           <Flamas T={T} x={540} y={1210} ancho={500} fuerza={0.5 * (kprog(T, K.Es + 0.1, K.Es + 0.4) - kprog(T, K.Es + 1.0, K.Es + 1.4)) + 0.5 * (kprog(T, K.Es + 2.7, K.Es + 2.9) - kprog(T, K.Es + 3.5, K.Es + 3.8))} n={5} />
         </>)}
@@ -377,9 +377,9 @@ function Fuegos() {
       <Chip T={T} at={K.G + 0.3} until={K.Co - 0.2} texto="Especial Año Nuevo" x={540} y={1500} tam={40} borde={KC.yellow} />
       <MitoTachado T={T} at={K.G + 0.7} tacharEn={K.G + 1.7} until={K.G + 2.6} texto="¿pintura?" x={300} y={1120} tam={52} />
       <Etq T={T} at={K.G + 2.4} until={K.Co - 0.3} x={60} y={1120} texto="Sr · estroncio" tam={44} color={KC.texto} />
-      <Etq T={T} at={K.Co + 0.9} until={K.Cl - 0.3} x={470} y={650} texto="bolitas de color" tam={30} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.Co + 1.3} until={K.Cl - 0.3} x={470} y={1000} texto="pólvora" tam={30} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.Co + 1.7} until={K.Cl - 0.3} x={660} y={1250} texto="mecha" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Co + 0.9} until={K.Cl - 0.3} x={470} y={580} texto="bolitas de color" tam={30} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.Co + 1.3} until={K.Cl - 0.3} x={470} y={930} texto="pólvora" tam={30} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.Co + 1.7} until={K.Cl - 0.3} x={660} y={1180} texto="mecha" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Co + 1.4} until={K.Cl - 0.2} texto="sales de metales" x={540} y={1520} tam={44} borde={KC.ink} />
       <Etq T={T} at={K.Cl + 4.2} until={K.Ca - 0.3} x={70} y={1460} texto="a veces brilla el metal unido a un cloro:" tam={26} />
       <Etq T={T} at={K.Cl + 4.2} until={K.Ca - 0.3} x={70} y={1510} texto="SrCl · BaCl · CuCl" tam={34} color={KC.gold2} />

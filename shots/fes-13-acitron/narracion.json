@@ -12,7 +12,7 @@
     },
     {
       "escena": "Biznaga",
-      "texto": "Sale de la biznaga de dulce, un cactus en forma de barril que solo vive en México."
+      "texto": "Sale sobre todo de la biznaga de dulce, un cactus en forma de barril que solo vive en México."
     },
     {
       "escena": "Desierto",
@@ -24,11 +24,11 @@
     },
     {
       "escena": "Corte",
-      "texto": "Para hacerlo se escogen biznagas de más de medio metro: se les quitan las costillas y se corta la pulpa."
+      "texto": "Se escogen biznagas de más de medio metro: se les quitan las costillas y se corta la pulpa."
     },
     {
       "escena": "Almibar",
-      "texto": "Luego se remoja en almíbar cada vez más espeso, hasta por una semana."
+      "texto": "Luego se remoja en almíbar cada vez más espeso; el proceso puede tardar una semana."
     },
     {
       "escena": "Osmosis",
@@ -44,19 +44,19 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2008, una tesis de la UNAM hecha en Tehuacán calculó que tarda unos 25 años en medir medio metro."
+      "texto": "En 2008, una tesis de la UNAM hecha en Tehuacán estimó que tarda cerca de 25 años en medir medio metro."
     },
     {
       "escena": "Ley",
-      "texto": "Por eso, en 2019, México la subió de categoría en su lista oficial de especies en riesgo."
+      "texto": "Y en 2019, México la subió de categoría en su lista oficial de especies en riesgo."
     },
     {
       "escena": "Dato",
-      "texto": "Dato: la receta lleva kilo y medio de azúcar por cada kilo de biznaga."
+      "texto": "Dato: una receta tradicional lleva kilo y medio de azúcar por cada kilo de biznaga."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese cuadrito no es fruta: es un cactus de unos 25 años. Si tu rosca trae ate o papaya, esa biznaga sigue en el desierto."
+      "texto": "Así que ese cuadrito no es fruta: es un cactus de 25 años o más. Si tu rosca trae ate o papaya, esa biznaga sigue en el desierto."
     }
   ]
 }
