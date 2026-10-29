@@ -37,4 +37,3 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026):** las 4 filas con ⚠️ (4b, 9b, 10, 10b) se corrigieron y se volvieron a verificar abriendo Zhdanova 2000 y Dadachova 2007; todas las afirmaciones de voz y pantalla quedan ✅. La radiosíntesis se dice como hipótesis.
 
-VEREDICTO: APROBADO

@@ -43,5 +43,3 @@ Fuentes abiertas:
 | 22 | Fuentes del guion: no se mezclan cifras de una fuente con enlace de otra; la voz no dice cifras | ✅ | — | Correcto: la cifra 66.6 % / 55.6 % de [GM] se dejó fuera de la voz por la contradicción interna del artículo | — |
 
 **Resumen (29 oct 2026):** se volvieron a verificar las 8 correcciones y los 3 recortes, abriendo otra vez las fuentes. Las 22 filas quedan ✅. La voz no dice cifras, las hipótesis se dicen como hipótesis ("se cree") y el dibujo es esquemático. Pendiente solo de la animación: que el dibujo respete la morfología de la fila 7.
-
-VEREDICTO: APROBADO

@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #37 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro" (macro: una milanesa en el plato → micro: tanque, hifas al microscopio, fibras → la misma milanesa, ya "transparente": hecha de hilos de hongo).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Esa milanesa no es de pollo: es de hongo, hecha de hilos que tus ojos no pueden ver.» (combina con el #7, algo que tus ojos nunca van a ver).
-- **Duración:** voz 998 caracteres / 181 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 997 caracteres / 178 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** curioso y ligero. No es consejo de nutrición ni publicidad de ninguna marca.
 
@@ -13,22 +13,22 @@
 |---|---|---|---|
 | 0 | Gancho | Esa milanesa no es de pollo: es de hongo, hecha de hilos que tus ojos no pueden ver. | Fondo amarillo: un plato con una milanesa dorada; cuadro 0.3: un tenedor la corta y se ve el interior fibroso. Chip "¿pollo?" que se tacha y cae el sello "HONGO". |
 | 1 | Hongo | Es micoproteína, del hongo microscópico *Fusarium venenatum*. | Etiqueta "micoproteína" sobre la milanesa y *Fusarium venenatum*; Lupa sobre el corte: se ven filamentos (hifas) en vez de músculo. Chip "no es un champiñón: es un hongo de filamentos". |
-| 2 | Suelo | Salió de la tierra de un campo inglés, tras probar más de tres mil microbios del suelo. | Corte de suelo con un campo arriba (mapa chico: Buckinghamshire, Reino Unido). Contador que corre hasta "más de 3,000 microbios probados" y uno brilla. |
+| 2 | Suelo | Salió de un campo inglés, tras probar más de tres mil microbios del suelo. | Corte de suelo con un campo arriba (mapa chico: Buckinghamshire, Reino Unido). Contador que corre hasta "más de 3,000 microbios probados" y uno brilla. |
 | 3 | Tanque | No se cosecha: crece en tanques de fermentación, comiendo glucosa y amonio. | Tanque de fermentación (corte esquemático) con burbujas de aire subiendo; entran dos tubos "glucosa" y "amonio". Chip "tanque de fermentación". |
-| 4 | Duplica | Ahí duplica su masa cada cuatro horas, más o menos. | Cronómetro "4 h" (≈3.5–4.1 h); la madeja de hifas dentro del tanque se duplica: 1 → 2 → 4. |
-| 5 | Calor | Luego lo calientan para bajarle el ARN: así se comprobó que es seguro comerlo. | Termómetro que sube a ~72 °C; letras "ARN" salen de las hifas. Chip "menos ARN = probado seguro". |
+| 4 | Duplica | Ahí duplica su masa en unas cuatro horas. | Cronómetro "≈3.5–4.1 h · dato de 2004"; la madeja de hifas dentro del tanque se duplica: 1 → 2 → 4. |
+| 5 | Calor | Luego lo calientan para bajarle el ARN: con menos ARN, años de pruebas mostraron que es seguro comerlo. | Termómetro que sube a ~72 °C; letras "ARN" salen de las hifas. Chip "menos ARN → seguro en las pruebas". |
 | 6 | Pregunta | ¿Y cómo un hongo se siente como carne? | **Re-gancho.** "?" gigante sobre la milanesa; Robert grande, pensativo. |
 | 7 | Hifas | Por sus hifas: hilos de unas cuatro milésimas de milímetro de grueso. | **AL MICROSCOPIO** (fondo oscuro): hifas largas y poco ramificadas, con tabiques. Barra de escala 5 µm. Medidor "3–5 µm de grueso". |
-| 8 | Fibras | Juntas forman fibras parecidas a las del músculo, y suelen pegarse con un poco de clara de huevo. | Las hifas se acomodan en haces paralelos; al lado, un haz de fibras de músculo (esquema) para comparar. Gotitas blancas "clara de huevo" que las unen. |
-| 9 | Estudio | En 2020, en la Universidad de Exeter, Inglaterra, veinte jóvenes que hacían pesas tomaron micoproteína o proteína de leche. | Tarjeta "2020 · Universidad de Exeter, Reino Unido · 20 jóvenes · *Am J Clin Nutr*". Aparecen 20 figuras con pesas, divididas en dos grupos: vaso "micoproteína" y vaso "leche". |
-| 10 | Musculo | Con micoproteína, su músculo aceleró más la fabricación de proteína que con leche. | Dos barras de "aumento en la fabricación de proteína del músculo": la de micoproteína sube más que la de leche. Chip "en ese estudio". |
+| 8 | Fibras | Juntas forman fibras parecidas a las del músculo, y suelen pegarse con clara de huevo. | Las hifas se acomodan en haces paralelos; al lado, un haz de fibras de músculo (esquema) para comparar. Gotitas blancas "clara de huevo" que las unen. |
+| 9 | Estudio | En 2020, en la Universidad de Exeter, Inglaterra, veinte hombres jóvenes que hacían pesas tomaron micoproteína o proteína de leche. | Tarjeta "2020 · Universidad de Exeter, Reino Unido · 20 hombres jóvenes · *Am J Clin Nutr*" y chip "una sola toma · igual leucina, más proteína en la de hongo". Aparecen 20 figuras con pesas, divididas en dos grupos: vaso "micoproteína" y vaso "leche". |
+| 10 | Musculo | Con micoproteína, su músculo aceleró más la fabricación de proteína que con leche. | Dos barras de "aumento en la fabricación de proteína del músculo": la de micoproteína sube más que la de leche. Chip "en ese estudio · una sola toma · igual leucina, más proteína en la de hongo". |
 | 11 | Quitina | Y un tercio de su fibra es quitina, la misma que hay en el caparazón del camarón. | Pastel de la fibra: 1/3 "quitina", 2/3 "β-glucanos". Aparece un camarón con su caparazón resaltado "quitina". |
 | 12 | Cierre | Así que esa milanesa no es de pollo: es un hongo del suelo, hilo por hilo. | **Regreso a la imagen del inicio:** el mismo plato y la misma milanesa, ahora dibujada por dentro con sus hilos de hongo. Chip "hongo del suelo, hilo por hilo". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y continua, cálida (cocina), sin golpe marcado; efectos en el mismo cuadro (crujido del tenedor al cortar, golpe del sello, tics del contador, burbujas del tanque, tic-tac del cronómetro y "pop" de cada duplicación, siseo del calor, zumbido del microscopio, "cierre" de los haces, tics de las 20 figuras, subida de las barras, clic del caparazón).
 
-Barra de escala: 5 cm (milanesa), 10 cm (corte de suelo), 1 m (tanque, esquemático), 5 µm (hifas), 50 µm (haces de fibras).
+Barra de escala: 5 cm (milanesa), 10 cm (corte de suelo), tanque sin barra de medida, con la nota "esquemático, no a escala", 5 µm (hifas), 50 µm (haces de fibras).
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 
