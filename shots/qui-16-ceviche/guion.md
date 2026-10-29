@@ -13,7 +13,7 @@ Tiempos estimados: Gancho 0–6.1 · Que 6.1–11.2 · Acido 11.2–16.7 · Blan
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese ceviche no está cocido: el limón solo le desdobló las proteínas, y lo que traía el pescado puede seguir vivo. | Fondo amarillo. Desde el cuadro 0 una mano exprime un limón (gotas que caen) sobre un tazón con cubos de pescado rosados translúcidos; los cubos se vuelven blancos en ~1 s. Chip "¿cocido?" que se tacha. Barra de escala "1 cm". |
+| 0 | Gancho | Ese ceviche no está cocido: el limón solo le desdobló las proteínas, y lo que traía puede seguir vivo. | Fondo amarillo. Desde el cuadro 0 una mano exprime un limón (gotas que caen) sobre un tazón con cubos de pescado rosados translúcidos; los cubos se vuelven blancos en ~1 s. Chip "¿cocido?" que se tacha. Barra de escala "1 cm". |
 | 1 | Que | Las proteínas de la carne son cadenas largas, dobladas como una bolita de estambre. | Cámara entra a un cubo (`Lupa` rayos X) → fondo noche: fibras de músculo y, dentro, cadenas de proteína enrolladas como estambre (etiqueta "proteína · miosina"). Escala "nm". |
 | 2 | Acido | El ácido del limón les pega cargas eléctricas que se empujan entre sí, y la bolita se abre. | Llegan H⁺ (puntitos amarillos) y se pegan a la cadena; aparecen signos "+" que se repelen (flechitas) y la bolita se desenrolla. Chip "ácido → desnaturaliza". |
 | 3 | Blanco | Ya abiertas, dispersan la luz: por eso la carne se pone blanca, como cocida. | Rayos de luz entran: en la cadena enrollada pasan derecho; en las abiertas rebotan en todas direcciones. Corte con fundido al cubo que se ve blanco opaco. |
