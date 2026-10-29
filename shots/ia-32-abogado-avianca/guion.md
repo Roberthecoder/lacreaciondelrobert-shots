@@ -47,7 +47,7 @@
 3. Avianca: "the largest airline in Colombia… flag carrier of Colombia since December 5, 1919" (Wikipedia, consultada 29 oct 2026; el verificador puede confirmarlo en una fuente corporativa).
 
 ## Notas
-- "Seis casos" = los seis que los abogados reconocieron como inventados (¶36). Avianca había señalado siete que no encontraba; uno más (*Zicherman*) es un caso real mal citado, por eso no se cuenta.
+- "Seis casos" = los seis que los abogados reconocieron como inventados (¶36). Son también los seis por los que el juez ordenó cartas a los jueces puestos como autores. Hubo más citas falsas (p. ej. "Zicherman… 516 F.3d 1237 (11th Cir. 2008)", que "does not exist as cited", y otras citadas dentro del falso "Varghese"), pero las seis "sentencias" completas inventadas son esas; la voz dice "estos seis casos" señalando los seis expedientes en pantalla, sin afirmar que fueron los únicos.
 - "Un abogado se los presentó a un juez": el escrito del 1 de marzo de 2023 lo firmó Peter LoDuca y lo investigó Steven Schwartz con ChatGPT; el que le preguntó a ChatGPT ("Él lo hizo") fue Schwartz. La multa fue para los dos y su despacho, de forma conjunta ("a los abogados y a su despacho").
 - "Juez de Nueva York" = tribunal federal del Distrito Sur de Nueva York (Manhattan). En la voz va "Kevin Castel" (su nombre completo es P. Kevin Castel).
 - "Aparecía en buscadores legales" resume "available on Westlaw and LexisNexis" (bases de datos de jurisprudencia).
