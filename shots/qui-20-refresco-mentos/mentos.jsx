@@ -276,7 +276,6 @@ function Mentos() {
           <BotellaPet T={T} x={mbx} y={G1} s={ms} rot={mrot} tapa={false} nivel={klerp(0.9, 0.3, kprog(T, K.Mo + 0.3, K.Mo + 1.5))} id="m1" />
           <Pastilla x={60} y={G1 - 250} s={0.5} />
           <text x={X0 + 4.66 * pxm} y={G1 - 40} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Mo + 1.1, K.Mo + 1.4)}>4.7 m</text>
-          <text x={120} y={G1 - 290} style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink} opacity={0}>enteros</text>
           <g opacity={lane2}>
             <rect x={0} y={G2} width={KW} height={14} fill={KC.ink} />
             <Cinta x0={X0} y={G2} pxm={pxm} />
