@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot Barro base narrada.dc.html",
+  "salida": "Shot Barro narrado.dc.html",
+  "nota": "Shot Químico #44. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese brillo de tu jarrito no es un barniz: puede ser vidrio hecho con plomo." },
+    { "escena": "Greta", "texto": "Mucho barro tradicional se vidria con greta: óxido de plomo mezclado con sílice." },
+    { "escena": "Horno", "texto": "Si el horno no calienta lo justo, el plomo no queda atrapado en el vidrio." },
+    { "escena": "Acido", "texto": "Y al cocinar o guardar algo ácido, como salsa o limón, se va soltando hacia tu comida." },
+    { "escena": "Cerebro", "texto": "Llega al cerebro y, en niños, aun sin dar síntomas, puede bajar su inteligencia para siempre." },
+    { "escena": "Pregunta", "texto": "¿Y cuántos niños en México lo traen en la sangre?" },
+    { "escena": "Estudio", "texto": "Con datos de 2022 y 2023, el Instituto Nacional de Salud Pública midió plomo en niños de 1 a 4 años." },
+    { "escena": "Comparacion", "texto": "De los que comían seguido en barro vidriado con plomo, 44 de cada 100 tenían plomo de más; de los que no, casi 10." },
+    { "escena": "Curado", "texto": "¿Y curarlo con ajo y vinagre? En 2025, un jarro de Puebla curado así siguió soltando plomo arriba de la norma." },
+    { "escena": "Alternativa", "texto": "Lo bueno: desde 1994, el FONART capacita a alfareros para hacer barro sin plomo." },
+    { "escena": "Cierre", "texto": "Así que ese brillo no tiene que ser plomo: pide barro sin plomo y, si dudas, déjalo de adorno." }
+  ]
+}

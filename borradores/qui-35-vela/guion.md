@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Esa vela no está quemando la cera sólida que ves: está quemando cera hecha vapor."
 - **Seguridad:** el truco del humo se muestra solo como demostración en pantalla (como la hizo Faraday) y la voz dice "Es fuego de verdad, no un juego". Nunca se ve a un niño con el cerillo ni se invita a hacerlo; en la descripción va la advertencia completa (ver Notas).
 - **Duración:** voz 954 caracteres / ≈ 187 palabras (≈ 57.9 s) + cierre 3.5 s → **≈ 61.4 s** (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion escrito; pendiente de verificación independiente (`verificacion.md`), animación y aprobación de voz de Robert.
+- **Estado:** guion verificado (`verificacion.md`, VEREDICTO: APROBADO), animación lista (`vela.jsx`, `Shot Vela base narrada.dc.html`, revisión en `revision/hoja.png`), voz pendiente de aprobación de Robert (~954 créditos).
 
 ## Versión narrada
 
@@ -24,6 +24,26 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química sobre la llama oscurecida. |
 
 **Música:** cama grave continua y cálida; efectos en el mismo cuadro: chisporroteo suave de la llama, goteo al derretirse, burbujeo fino cuando la cera sube por la mecha, "fuf" cuando se enciende el vapor, golpe de la tarjeta, siseo del tubo y "fuf" de la segunda llamita, soplido y silencio al apagar, "zum" del fuego que baja por el humo, tono etéreo en la escena del espacio.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y cómo sabemos que lo que arde es el vapor?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «está quemando cera hecha vapor» |
+| 2 | 5.5 | 9.3 | 13_senalando_arriba | `izq-alto` | «forma una copita líquida» |
+| 3 | 10.1 | 14.7 | 06_pensativo_menton | `izq-alto` | «por capilaridad, como el agua por una servilleta» |
+| 4 | 15.5 | 20.1 | 04_bajando_lentes | `izq-alto` | «ese vapor… es lo que arde» |
+| 5 | 20.9 | 24.8 | 05_sonriendo_dientes_uniformes | `izq-alto` | «carbono sólido tan caliente que brilla» |
+| 6 | 25.15 | 27.9 | 07_pensativo_puno | `grande` | «¿Y cómo sabemos que lo que arde es el vapor?» |
+| 7 | 31.2 | 38.4 | 13_senalando_arriba | `izq-alto` | «metió un tubito… y lo prendió en la otra punta» |
+| 8 | 39.2 | 46.6 | 10_serio_molesto | `izq-alto` | «Es fuego de verdad, no un juego» |
+| 9 | 47.5 | 53.0 | 11_sorprendido | `arriba-der` | «redonda, azul y sin hollín» |
+| 10 | 53.6 | 57.8 | 02_apuntando_camara | `arriba-der` | «quema la que ya se volvió vapor» |
+| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 48.6 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

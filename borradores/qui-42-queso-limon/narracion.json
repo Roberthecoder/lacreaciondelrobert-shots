@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Queso base narrada.dc.html",
+  "salida": "Shot Queso narrado.dc.html",
+  "nota": "Shot Químico #42. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa leche no se echó a perder: le pusiste limón y la convertiste en queso."
+    },
+    {
+      "escena": "Que",
+      "texto": "La leche trae caseína, el 80 por ciento de sus proteínas, en bolitas: las micelas."
+    },
+    {
+      "escena": "Carga",
+      "texto": "Por fuera tienen pelitos con carga negativa: se repelen y flotan separadas."
+    },
+    {
+      "escena": "Acido",
+      "texto": "El ácido cítrico del limón, o el acético del vinagre, les va quitando esa carga."
+    },
+    {
+      "escena": "Cuajo",
+      "texto": "Cerca de pH 4.6 ya no se repelen: se pegan unas con otras y forman cuajos blancos."
+    },
+    {
+      "escena": "Suero",
+      "texto": "Lo que escurre es el suero, que lleva lactosa, el azúcar de la leche."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y entonces para qué calentarla?"
+    },
+    {
+      "escena": "Calor",
+      "texto": "Bien caliente, como para el paneer de la India, cuaja desde pH 5.2 y atrapa proteínas que se irían al suero."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2012, químicos de Bristol analizaron coladeras de barro de unos 7 mil años halladas en Polonia: tenían grasa de leche."
+    },
+    {
+      "escena": "Hipotesis",
+      "texto": "Su interpretación: ahí separaban cuajo y suero para hacer quesos con menos lactosa."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Y ojo: un kilo de leche de vaca da apenas unos 170 gramos de paneer."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa leche no se echó a perder: el limón la convirtió en queso."
+    }
+  ]
+}

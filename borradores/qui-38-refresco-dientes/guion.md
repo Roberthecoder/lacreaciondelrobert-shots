@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese refresco no solo es dulce: es ácido y disuelve el cristal de tus dientes."
 - **Seguridad:** sin consejos médicos inventados; los tres consejos (enjuagar con agua, no cepillarse enseguida, popote detrás de los dientes de enfrente) son textuales de la ADA. No se dice cuántos minutos esperar (la ADA no da una cifra).
 - **Duración:** voz 957 caracteres / ≈ 168 palabras (≈ 58.2 s) + cierre 3.5 s → **61.7 s** estimados (`estimar-escenas.mjs`).
-- **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~957 créditos).
 
 ## Versión narrada
 
@@ -25,6 +25,27 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave continua, un poco tensa mientras baja el pH y más abierta en los consejos; efectos en el mismo cuadro (lata que se abre "pssst", burbujeo, "tic" al cruzar el 5.5, chispazos de H⁺ contra los cristales, crujido de los cristales que se sueltan, golpe de la tarjeta del estudio, conteo de botellitas, sorbo de popote, "tic" del reloj).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Pero qué tan ácido es un refresco?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «es ácido y disuelve el cristal de tus dientes» |
+| 2 | 5.6 | 9.6 | 13_senalando_arriba | `izq-alto` | «hidroxiapatita: cristales de calcio y fosfato» |
+| 3 | 10.9 | 14.8 | 06_pensativo_menton | `arriba-der` | «si el pH de tu boca baja de 5.5» |
+| 4 | 16.0 | 18.9 | 10_serio_molesto | `izq-alto` | «ácido fosfórico… ácido cítrico» |
+| 5 | 20.5 | 23.9 | 04_bajando_lentes | `arriba-der` | «el esmalte se ablanda y se desgasta» |
+| 6 | 25.0 | 28.1 | 10_serio_molesto | `izq-alto` | «las bacterias… la convierten en ácido» |
+| 7 | 28.35 | 30.7 | 07_pensativo_puno | `grande` | «¿Pero qué tan ácido es un refresco?» |
+| 8 | 33.4 | 38.7 | 11_sorprendido | `izq-alto` | «93 por ciento… las colas, cerca de 2.4» |
+| 9 | 39.6 | 45.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «enjuágate con agua… usa popote» |
+| 10 | 46.5 | 52.8 | 13_senalando_arriba | `izq-alto` | «tu dentista graba el esmalte con ácido fosfórico» |
+| 11 | 53.4 | 58.1 | 02_apuntando_camara | `arriba-der` | «el esmalte que se va no regresa» |
+| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 11 apariciones · ≈ 46 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

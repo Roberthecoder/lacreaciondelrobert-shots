@@ -1,0 +1,19 @@
+{
+  "dcHtml": "Shot Monoxido base narrada.dc.html",
+  "salida": "Shot Monoxido narrado.dc.html",
+  "nota": "Shot Químico #43. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "¿Por qué NO dormir con el anafre prendido? Porque lo que mata no huele ni se ve." },
+    { "escena": "Que", "texto": "Es monóxido de carbono: sale cuando el carbón o el gas arden sin suficiente oxígeno." },
+    { "escena": "Fuentes", "texto": "Como un anafre o un boiler en un cuarto cerrado." },
+    { "escena": "Pulmon", "texto": "Lo respiras y pasa de tus pulmones a tus glóbulos rojos." },
+    { "escena": "Hemoglobina", "texto": "Ahí, la hemoglobina, que carga el oxígeno, se pega al monóxido más de 200 veces más fuerte." },
+    { "escena": "Desplaza", "texto": "Le quita el lugar al oxígeno, y a tu cuerpo le llega cada vez menos." },
+    { "escena": "Pregunta", "texto": "¿Y cómo te das cuenta?" },
+    { "escena": "Sintomas", "texto": "Dolor de cabeza, mareo, náuseas: parece gripa. Y dormido, puedes morir antes de sentir algo." },
+    { "escena": "Estudio", "texto": "En 1987, en Chicago, revisaron a 37 personas con dolor de cabeza en urgencias, en invierno: 7 traían mucho monóxido en la sangre y nadie lo había sospechado." },
+    { "escena": "Lento", "texto": "Y con aire normal, tu cuerpo tarda más de 5 horas en sacar la mitad." },
+    { "escena": "Aviso", "texto": "Si a todos en casa les duele la cabeza, salgan al aire libre y pidan ayuda. Y pon un detector de monóxido." },
+    { "escena": "Cierre", "texto": "No duermas con el anafre prendido: ese peligro no huele, pero se puede evitar." }
+  ]
+}

@@ -61,12 +61,12 @@ function PHMetro({ T, at, until, x, y0, y1, valor, etiqueta, linea55 = true }) {
     {linea55 && <g><line x1={x - 60} y1={py(5.5)} x2={x + 60} y2={py(5.5)} stroke="#fff" strokeWidth={5} strokeDasharray="10 8" />
       <text x={x - 66} y={py(5.5) + 10} textAnchor="end" style={{ font:`700 28px ${KF.mono}` }} fill="#fff" stroke={KC.ink} strokeWidth={5} paintOrder="stroke">≈5.5</text></g>}
     <path d={`M ${x + 34} ${ay} l 40 -24 l 0 48 Z`} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-    <text x={x + 8} y={y0 - 22} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{etiqueta}</text>
+    <text x={x + 60} y={y0 - 22} textAnchor="end" style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{etiqueta}</text>
   </svg>;
 }
 function Ion({ x, y, texto, color, r = 34 }) {
   return <g><circle cx={x} cy={y} r={r} fill={color} stroke={KC.ink} strokeWidth={5} />
-    <text x={x} y={y + 9} textAnchor="middle" style={{ font:`700 ${r * 0.7}px ${KF.mono}` }} fill={KC.ink}>{texto}</text></g>;
+    <text x={x} y={y + 9} textAnchor="middle" style={{ font:`700 ${texto.length > 4 ? r * 0.42 : r * 0.62}px ${KF.mono}` }} fill={KC.ink}>{texto}</text></g>;
 }
 const MOL_FOSF = { atomos: [[0, 0, 40, KC.orange, 'P'], [0, -78, 30, QA.O, 'O'], [-74, 26, 30, QA.O, 'O'], [74, 26, 30, QA.O, 'O'], [0, 82, 30, QA.O, 'O'], [-122, 8, 20, QA.H, 'H'], [122, 8, 20, QA.H, 'H'], [0, 132, 20, QA.H, 'H']], enlaces: [[0, 1], [0, 2], [0, 3], [0, 4], [2, 5], [3, 6], [4, 7]] };
 const MOL_CITR = { atomos: [[-90, 0, 30, QA.C, 'C'], [0, 0, 30, QA.C, 'C'], [90, 0, 30, QA.C, 'C'], [-150, -60, 26, QA.C, 'C'], [150, -60, 26, QA.C, 'C'], [0, -90, 26, QA.C, 'C'], [0, 80, 26, QA.O, 'O'], [-210, -40, 24, QA.O, 'O'], [210, -40, 24, QA.O, 'O'], [0, -160, 24, QA.O, 'O'], [-250, -70, 16, QA.H, 'H'], [250, -70, 16, QA.H, 'H'], [40, -190, 16, QA.H, 'H']], enlaces: [[0, 1], [1, 2], [0, 3], [2, 4], [1, 5], [1, 6], [3, 7], [4, 8], [5, 9], [7, 10], [8, 11], [9, 12]] };
@@ -135,20 +135,20 @@ function RefrescoDientes() {
       <Escena T={T} a={K.G} b={K.E} zoom={0.06} origen="50% 55%">
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Sonrisa T={T} x={540} y={1020} s={1.05} />
-          <Chorro T={T} x0={350} y0={700} x1={470} y1={960} color={REF2} ancho={22} o={vierte * (1 - kprog(T, K.G + 3.6, K.G + 4.2))} />
-          <Lata x={250} y={620} s={0.95} rot={klerp(70, 125, vierte)} />
-          <Burbujas T={T} x={300} y={830} w={480} h={260} n={26} f={vierte} color="rgba(255,255,255,.85)" seed={4} rmax={12} />
+          <Sonrisa T={T} x={540} y={860} s={0.97} />
+          <Chorro T={T} x0={350} y0={600} x1={470} y1={830} color={REF2} ancho={22} o={vierte * (1 - kprog(T, K.G + 3.6, K.G + 4.2))} />
+          <Lata x={250} y={520} s={0.95} rot={klerp(70, 125, vierte)} />
+          <Burbujas T={T} x={300} y={700} w={480} h={260} n={26} f={vierte} color="rgba(255,255,255,.85)" seed={4} rmax={12} />
           {T > K.G + 2.4 && [[-180, -60], [70, -70], [240, -40]].map(([dx, dy], i) => { const p = kprog(T, K.G + 2.4 + i * 0.25, K.G + 3.0 + i * 0.25);
-            return <path key={i} transform={`translate(${540 + dx} ${1020 + dy}) scale(${Math.sin(p * Math.PI) * 1.2})`} d="M 0 -40 L 10 -10 L 40 0 L 10 10 L 0 40 L -10 10 L -40 0 L -10 -10 Z" fill="#fff" stroke={KC.ink} strokeWidth={4} />; })}
+            return <path key={i} transform={`translate(${540 + dx} ${860 + dy}) scale(${Math.sin(p * Math.PI) * 1.2})`} d="M 0 -40 L 10 -10 L 40 0 L 10 10 L 0 40 L -10 10 L -40 0 L -10 -10 Z" fill="#fff" stroke={KC.ink} strokeWidth={4} />; })}
         </SvgCapa>
         <Escalita texto="1 cm (esquemático)" />
       </Escena>
       {/* 1 · el diente por dentro */}
       <Escena T={T} a={K.E} b={micro} zoom={0.25} origen="50% 30%">
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><DienteCorte x={540} y={980} s={1.15} />
-          <circle cx={540 - 175} cy={980 - 290} r={60 + Math.sin(T * 6) * 6} fill="none" stroke={KC.red} strokeWidth={9} opacity={kprog(T, K.E + 1.4, K.E + 1.8)} /></SvgCapa>
+        <SvgCapa><DienteCorte x={540} y={800} s={0.85} />
+          <circle cx={540 - 130} cy={800 - 215} r={60 + Math.sin(T * 6) * 6} fill="none" stroke={KC.red} strokeWidth={9} opacity={kprog(T, K.E + 1.4, K.E + 1.8)} /></SvgCapa>
         <Escalita texto="5 mm (esquemático)" />
       </Escena>
       {/* 2–4 · cristales de hidroxiapatita, el pH, los ácidos y la erosión */}
@@ -157,35 +157,35 @@ function RefrescoDientes() {
         <Ambiente T={T} n={30} color="rgba(127,200,255,.25)" />
         <SvgCapa>
           {Array.from({ length: NCR }, (_, i) => { const p = kprog(T, micro + i * 0.06, micro + 0.5 + i * 0.06, kEase.sale);
-            return <Cristal key={i} T={T} i={i} x={110 + i * 70} y={1180} w={64} h={300 + (i % 3) * 30} o={p} come={T > K.Er ? come(i) : (T > K.C + 3.2 && T < K.A ? 0.04 : 0)} />; })}
+            return <Cristal key={i} T={T} i={i} x={110 + i * 70} y={1120} w={64} h={230 + (i % 3) * 30} o={p} come={T > K.Er ? come(i) : (T > K.C + 3.2 && T < K.A ? 0.04 : 0)} />; })}
           {/* superficie del esmalte */}
-          <text x={110} y={1225} style={{ font:`700 28px ${KF.mono}` }} fill="#7fc8ff">esmalte (corte)</text>
+          <text x={110} y={1160} style={{ font:`700 28px ${KF.mono}` }} fill="#7fc8ff">esmalte (corte)</text>
           {/* los ácidos */}
           {T > K.A - 0.3 && <g>
-            <Molecula {...MOL_FOSF} x={klerp(-200, 290, kprog(T, K.A, K.A + 0.6, kEase.sale))} y={720} s={0.85} rot={Math.sin(T * 2) * 8} o={1 - kprog(T, K.Er + 0.2, K.Er + 0.8)} />
-            <Molecula {...MOL_CITR} x={klerp(1300, 640, kprog(T, K.A + 1.6, K.A + 2.2, kEase.sale))} y={700} s={0.7} rot={Math.sin(T * 1.6) * 6} o={1 - kprog(T, K.Er + 0.2, K.Er + 0.8)} />
+            <Molecula {...MOL_FOSF} x={klerp(-200, 290, kprog(T, K.A, K.A + 0.6, kEase.sale))} y={680} s={0.8} rot={Math.sin(T * 2) * 8} o={1 - kprog(T, K.Er + 0.2, K.Er + 0.8)} />
+            <Molecula {...MOL_CITR} x={klerp(1300, 640, kprog(T, K.A + 1.6, K.A + 2.2, kEase.sale))} y={680} s={0.62} rot={Math.sin(T * 1.6) * 6} o={1 - kprog(T, K.Er + 0.2, K.Er + 0.8)} />
           </g>}
           {/* lluvia de H+ contra los cristales */}
           {T > K.Er - 0.2 && T < K.Az + 0.3 && lluviaH.map(([x, d, v], i) => { const t = (T - K.Er - d * 0.6) * (0.7 + v * 0.4); if (t < 0) return null; const p = t % 1.4 / 1.4;
-            return <Hmas key={i} x={x} y={klerp(640, 900, p)} s={1} o={1 - p * 0.3} />; })}
+            return <Hmas key={i} x={x} y={klerp(620, 850, p)} s={1} o={1 - p * 0.3} />; })}
           {/* iones que se sueltan */}
           {T > K.Er + 1.0 && iones.map(([x, d, tipo], i) => { const p = kprog(T, K.Er + 1.0 + d * 2.4, K.Er + 3.6 + d * 2.4, kEase.suave); if (p <= 0) return null;
-            return <g key={i} opacity={1 - kprog(p, 0.8, 1)}><Ion x={x + Math.sin(T * 2 + i) * 20} y={klerp(860, 640, p)} texto={tipo ? 'Ca²⁺' : 'fosfato'} color={tipo ? '#d9d2c5' : KC.orange} r={tipo ? 34 : 44} /></g>; })}
+            return <g key={i} opacity={1 - kprog(p, 0.8, 1)}><Ion x={x + Math.sin(T * 2 + i) * 20} y={klerp(840, 640, p)} texto={tipo ? 'Ca²⁺' : 'fosfato'} color={tipo ? '#d9d2c5' : KC.orange} r={tipo ? 36 : 54} /></g>; })}
         </SvgCapa>
-        <PHMetro T={T} at={K.C + 0.2} until={K.Az - 0.3} x={985} y0={720} y1={1150} valor={phBoca} etiqueta="pH de tu boca" />
+        <PHMetro T={T} at={K.C + 0.2} until={K.A - 0.1} x={985} y0={700} y1={1110} valor={phBoca} etiqueta="pH de tu boca" />
         <Escalita texto="cristales · esquemático" />
       </Escena>
       {/* 5 · azúcar y bacterias de la placa */}
       <Escena T={T} a={K.Az} b={K.P}>
         <div style={{ position:'absolute', inset:0, background:'#1b1030' }}></div>
         <SvgCapa>
-          <path d="M 0 1180 Q 540 1130 1080 1180 L 1080 1920 L 0 1920 Z" fill="#e9f6ff" stroke="#7fc8ff" strokeWidth={6} />
-          <path d="M 0 1180 Q 540 1130 1080 1180 L 1080 1110 Q 540 1060 0 1110 Z" fill="rgba(200,230,90,.35)" />
+          <path d="M 0 1040 Q 540 990 1080 1040 L 1080 1920 L 0 1920 Z" fill="#e9f6ff" stroke="#7fc8ff" strokeWidth={6} />
+          <path d="M 0 1040 Q 540 990 1080 1040 L 1080 970 Q 540 920 0 970 Z" fill="rgba(200,230,90,.35)" />
           {[0, 1, 2, 3, 4, 5, 6].map((i) => { const p = kprog(T, K.Az + 0.2 + i * 0.25, K.Az + 0.9 + i * 0.25, kEase.suave); const comido = kprog(T, K.Az + 1.2 + i * 0.25, K.Az + 1.6 + i * 0.25);
-            return comido < 1 ? <Cubo key={i} x={150 + i * 130} y={klerp(640, 1040, p)} s={1 - comido} rot={i * 23 + T * 40} /> : null; })}
-          {[0, 1, 2, 3, 4, 5].map((i) => <Bacteria key={i} T={T} seed={i} x={170 + i * 150} y={1090 + (i % 2) * 20} rot={(i % 2 ? 10 : -10) + Math.sin(T * 2 + i) * 5} s={0.9} color={i % 2 ? KC.mint : KC.lilac} />)}
+            return comido < 1 ? <Cubo key={i} x={150 + i * 130} y={klerp(560, 900, p)} s={1 - comido} rot={i * 23 + T * 40} /> : null; })}
+          {[0, 1, 2, 3, 4, 5].map((i) => <Bacteria key={i} T={T} seed={i} x={170 + i * 150} y={950 + (i % 2) * 20} rot={(i % 2 ? 10 : -10) + Math.sin(T * 2 + i) * 5} s={0.9} color={i % 2 ? KC.mint : KC.lilac} />)}
           {T > K.Az + 1.6 && Array.from({ length: 12 }, (_, i) => { const p = ((T - K.Az - 1.6 - i * 0.15) % 1.6) / 1.6; if (T - K.Az - 1.6 - i * 0.15 < 0) return null;
-            return <Hmas key={i} x={180 + (i % 6) * 150 + Math.sin(i) * 30} y={klerp(1060, 860, p)} o={1 - p} />; })}
+            return <Hmas key={i} x={180 + (i % 6) * 150 + Math.sin(i) * 30} y={klerp(920, 720, p)} o={1 - p} />; })}
         </SvgCapa>
         <Escalita texto="placa · esquemático" />
       </Escena>
@@ -208,47 +208,47 @@ function RefrescoDientes() {
         <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2016" quien="Reddy et al. · Univ. de Alabama en Birmingham" revista="JADA · pH de 379 bebidas de EUA" y={900} />
         <Chip T={T} at={K.Es + 2.7} until={K.Es + 4.2} texto="379 bebidas" y={1500} tam={46} borde={KC.yellow} />
         <Chip T={T} at={K.Es + 4.3} until={estMid - 0.1} texto="93 % con pH menor a 4" y={1500} tam={46} borde={KC.red} />
-        <NumeroGigante T={T} at={estMid + 0.3} until={K.Co - 0.3} valor={2.4} desde={7} dec={1} dur={1.2} etiqueta="colas normales: pH" x={420} y={640} tam={220} color={KC.red} />
+        <NumeroGigante T={T} at={estMid + 0.3} until={K.Co - 0.3} valor={2.4} desde={7} dec={1} dur={1.2} etiqueta="colas normales: pH" x={680} y={640} tam={220} color={KC.red} />
         <Chip T={T} at={estMid + 1.2} until={K.Co - 0.3} texto="agua (Birmingham) 7.2" x={780} y={1500} tam={36} borde="#7fc8ff" />
       </Escena>
       {/* 8 · consejos (ADA) */}
       <Escena T={T} a={K.Co} b={K.D}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          {kprog(T, K.Co + 0.2, K.Co + 0.6) > 0 && <g opacity={kprog(T, K.Co + 0.2, K.Co + 0.6)}><Vaso x={260} y={850} s={0.8} popote={false} /><Marca x={360} y={700} ok s={0.6} /></g>}
-          {kprog(T, K.Co + 1.6, K.Co + 2.0) > 0 && <g opacity={kprog(T, K.Co + 1.6, K.Co + 2.0)}><Cepillo x={720} y={820} s={0.85} /><Marca x={860} y={700} ok={false} s={0.6} /></g>}
-          {kprog(T, K.Co + 3.6, K.Co + 4.0) > 0 && <g opacity={kprog(T, K.Co + 3.6, K.Co + 4.0)}><PerfilPopote x={500} y={1080} s={1.2} /></g>}
+          {kprog(T, K.Co + 0.2, K.Co + 0.6) > 0 && <g opacity={kprog(T, K.Co + 0.2, K.Co + 0.6)}><Vaso x={240} y={740} s={0.75} popote={false} /><Marca x={340} y={600} ok s={0.6} /></g>}
+          {kprog(T, K.Co + 1.6, K.Co + 2.0) > 0 && <g opacity={kprog(T, K.Co + 1.6, K.Co + 2.0)}><Cepillo x={700} y={760} s={0.8} /><Marca x={620} y={640} ok={false} s={0.6} /></g>}
+          {kprog(T, K.Co + 3.6, K.Co + 4.0) > 0 && <g opacity={kprog(T, K.Co + 3.6, K.Co + 4.0)}><PerfilPopote x={500} y={1020} s={0.85} /></g>}
         </SvgCapa>
-        <Etq T={T} at={K.Co + 0.4} until={K.D - 0.3} x={130} y={1000} texto="enjuague" tam={32} color={KC.ink} />
-        <Etq T={T} at={K.Co + 1.9} until={K.D - 0.3} x={600} y={960} texto="no enseguida" tam={32} color={KC.ink} />
-        <Etq T={T} at={K.Co + 4.2} until={K.D - 0.3} x={760} y={1120} texto="popote detrás" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.Co + 0.4} until={K.D - 0.3} x={100} y={900} texto="enjuague" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.Co + 1.9} until={K.D - 0.3} x={560} y={860} texto="no enseguida" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.Co + 4.2} until={K.D - 0.3} x={680} y={1080} texto="popote detrás" tam={32} color={KC.ink} />
         <Chip T={T} at={K.Co + 0.3} until={K.D - 0.3} texto="consejos de la ADA" y={1500} tam={40} borde={KC.mint} />
       </Escena>
       {/* 9 · el dentista: grabado ácido */}
       <Escena T={T} a={K.D} b={K.Ci} zoom={0.12} origen="50% 40%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <DienteCorte x={540} y={1050} s={0.95} />
-          <g transform={`translate(${klerp(900, 640, kprog(T, K.D + 0.4, K.D + 1.2, kEase.sale))} ${klerp(560, 620, kprog(T, K.D + 0.4, K.D + 1.2))}) rotate(35)`}>
+          <DienteCorte x={540} y={900} s={0.75} />
+          <g transform={`translate(${klerp(900, 630, kprog(T, K.D + 0.4, K.D + 1.2, kEase.sale))} ${klerp(480, 560, kprog(T, K.D + 0.4, K.D + 1.2))}) rotate(35)`}>
             <rect x={-30} y={-220} width={60} height={200} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={7} />
             <rect x={-26} y={-120} width={52} height={96} fill="#3aa0ff" />
             <path d="M -12 -20 L 12 -20 L 4 30 L -4 30 Z" fill="#9aa3b5" stroke={KC.ink} strokeWidth={5} />
           </g>
-          {T > K.D + 1.2 && <path d="M 400 770 Q 540 730 690 770" stroke="#3aa0ff" strokeWidth={22} fill="none" strokeLinecap="round" opacity={1 - kprog(T, K.D + 4.4, K.D + 4.8)} />}
-          {T > K.D + 4.6 && <path d="M 390 760 Q 540 690 700 760" stroke={KC.gold2} strokeWidth={34} fill="none" strokeLinecap="round" opacity={kprog(T, K.D + 4.6, K.D + 5.2)} />}
-          {T > K.D + 1.6 && T < K.D + 4.6 && <Reloj T={T} x={880} y={1220} r={70} t0={K.D + 1.6} />}
-          {T > K.D + 1.6 && T < K.D + 4.6 && <text x={880} y={1340} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>segundos</text>}
+          {T > K.D + 1.2 && <path d="M 410 700 Q 540 660 670 700" stroke="#3aa0ff" strokeWidth={22} fill="none" strokeLinecap="round" opacity={1 - kprog(T, K.D + 4.4, K.D + 4.8)} />}
+          {T > K.D + 4.6 && <path d="M 400 690 Q 540 630 680 690" stroke={KC.gold2} strokeWidth={34} fill="none" strokeLinecap="round" opacity={kprog(T, K.D + 4.6, K.D + 5.2)} />}
+          {T > K.D + 1.6 && T < K.D + 4.6 && <Reloj T={T} x={880} y={960} r={70} t0={K.D + 1.6} />}
+          {T > K.D + 1.6 && T < K.D + 4.6 && <text x={880} y={1075} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>segundos</text>}
         </SvgCapa>
         <Chip T={T} at={K.D + 0.8} until={K.Ci - 0.3} texto="ácido fosfórico 37 %" y={1500} tam={44} borde="#3aa0ff" />
-        <Etq T={T} at={K.D + 5.0} until={K.Ci - 0.3} x={730} y={740} texto="resina" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.D + 5.0} until={K.Ci - 0.3} x={700} y={640} texto="resina" tam={34} color={KC.ink} />
       </Escena>
       {/* 10 · cierre: la sonrisa del inicio */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="50% 55%">
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Sonrisa T={T} x={540} y={1020} s={1.05} mate={0.35} />
-          <Lata x={230} y={620} s={0.9} rot={-8} etiqueta="pH ≈ 2.4" />
-          <Vaso x={840} y={700} s={0.7} />
+          <Sonrisa T={T} x={540} y={860} s={0.97} mate={0.35} />
+          <Lata x={200} y={520} s={0.85} rot={-8} etiqueta="pH ≈ 2.4" />
+          <Vaso x={430} y={560} s={0.55} />
         </SvgCapa>
         <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="esmalte: no vuelve a crecer" y={1500} tam={42} borde={KC.red} />
       </Escena>
@@ -256,13 +256,13 @@ function RefrescoDientes() {
       {/* textos */}
       <Chip T={T} at={K.G + 1.2} until={K.G + 2.4} texto="dulce ✓" x={300} y={420} tam={48} borde={KC.mint} />
       <Chip T={T} at={K.G + 2.5} until={K.E - 0.3} texto="…y ácido" x={300} y={420} tam={48} borde={KC.red} />
-      <Etq T={T} at={K.E + 0.6} until={micro - 0.2} x={760} y={760} texto="esmalte" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.E + 1.0} until={micro - 0.2} x={760} y={980} texto="dentina" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.E + 0.6} until={micro - 0.2} x={740} y={600} texto="esmalte" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.E + 1.0} until={micro - 0.2} x={700} y={760} texto="dentina" tam={36} color={KC.ink} />
       <Chip T={T} at={micro + 0.4} until={K.C - 0.2} texto="hidroxiapatita Ca₁₀(PO₄)₆(OH)₂" y={1500} tam={36} borde="#7fc8ff" />
       <Chip T={T} at={K.C + 3.2} until={K.A - 0.2} texto="bajo ≈5.5: se empiezan a disolver" y={1500} tam={34} borde={KC.orange} />
-      <Etq T={T} at={K.A + 0.6} until={K.Er + 0.1} x={150} y={860} texto="ácido fosfórico · colas" tam={30} color={KC.orange} />
-      <Etq T={T} at={K.A + 2.2} until={K.Er + 0.1} x={930} y={860} texto="ácido cítrico" lado="izq" tam={30} color={KC.yellow} />
-      <PHMetro T={T} at={K.A + 0.4} until={K.Er + 0.2} x={985} y0={720} y1={1150} valor={2.4} etiqueta="pH del refresco" linea55={false} />
+      <Etq T={T} at={K.A + 0.6} until={K.Er + 0.1} x={110} y={800} texto="ácido fosfórico · colas" tam={30} color={KC.orange} />
+      <Etq T={T} at={K.A + 2.2} until={K.Er + 0.1} x={900} y={800} texto="ácido cítrico" lado="izq" tam={30} color={KC.yellow} />
+      <PHMetro T={T} at={K.A + 0.4} until={K.Er + 0.2} x={985} y0={700} y1={1110} valor={2.4} etiqueta="pH del refresco" linea55={false} />
       <Chip T={T} at={K.Er + 1.4} until={K.Az - 0.2} texto="erosión: el esmalte se ablanda" y={1500} tam={38} borde={KC.red} />
       <Chip T={T} at={K.Az + 0.3} until={K.P - 0.2} texto="azúcar → bacterias → ácido (caries)" y={1500} tam={34} borde={KC.mint} />
 
@@ -289,7 +289,7 @@ function RefrescoDientes() {
         [CUES.Pregunta + 0.05, CUES.Estudio + 0.1, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Estudio + 2.8, CUES.Consejo - 0.3, 'avatar_11_sorprendido', 'izq-alto'],
         [CUES.Consejo + 0.6, CUES.Dentista - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
-        [CUES.Dentista + 0.6, CUES.Cierre - 0.3, 'avatar_13_senalando_arriba', 'grande-izq'],
+        [CUES.Dentista + 0.6, CUES.Cierre - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="quimica" num="38" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="quimica" robert={'assets/stickers/avatar_13_senalando_arriba.png'} />

@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Mayonesa base narrada.dc.html",
+  "salida": "Shot Mayonesa narrado.dc.html",
+  "nota": "Shot Químico #40. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa mayonesa no es una crema: es aceite partido en gotitas, todas pegadas una a otra."
+    },
+    {
+      "escena": "Que",
+      "texto": "Casi el 80 por ciento puede ser aceite; el resto es yema, agua y vinagre o limón."
+    },
+    {
+      "escena": "Problema",
+      "texto": "Pero el aceite y el agua no se mezclan: solos, las gotas se juntan y se separan."
+    },
+    {
+      "escena": "Yema",
+      "texto": "Aquí entra la yema: sus proteínas y fosfolípidos se llevan con el agua y con el aceite."
+    },
+    {
+      "escena": "Escudo",
+      "texto": "Forran la orilla de cada gotita como un escudo, para que no se fusione con otra."
+    },
+    {
+      "escena": "Espesa",
+      "texto": "Y tantas gotitas apretadas, sin espacio para moverse, la vuelven espesa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces por qué a veces se corta?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2024, en Países Bajos, unos científicos hicieron mayonesa a mano siete veces, cambiando solo cómo echaban el aceite."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Con chorritos de 5 o 10 gramos, salió. Con 20 o más, o todo de golpe, se volteó: el aceite quedó por fuera y se cortó."
+    },
+    {
+      "escena": "Ley",
+      "texto": "Lo curioso: en Estados Unidos, sin al menos 65 por ciento de aceite no se puede vender como mayonesa."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa mayonesa no es una crema: es aceite en gotitas, y la yema evitando que se junten."
+    }
+  ]
+}
