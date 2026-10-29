@@ -36,3 +36,8 @@
 4. **#19 Láser rojo (⚠️):** dibujar el haz como invisible/infrarrojo (p. ej. un resplandor tenue con etiqueta "láser infrarrojo · invisible"), no un punto rojo.
 5. **#22 "cambia el sabor" (⚠️):** "puede cambiar el sabor, pero no es riesgo."
 6. **#13 Fuentes del guion (⚠️):** sustituir o complementar la fuente 5 (Heliyon 2024, contradictoria) con Barišić 2019 + Popular Science 2026 (R. Hartel, Univ. de Wisconsin): https://www.popsci.com/science/why-chocolate-turns-white/
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplican tal cual todas las propuestas del verificador (sección anterior); si hace falta cuadrar el tiempo, solo se quita relleno sin cambiar datos.
+
+VEREDICTO: APROBADO

@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "¿Por qué NO prender el anafre adentro de tu casa? Porque lo que mata no huele ni se ve."
+      "texto": "¿Por qué NO prender el anafre dentro de tu casa? Porque lo que mata no huele ni se ve."
     },
     {
       "escena": "Que",
@@ -17,15 +17,15 @@
     },
     {
       "escena": "Pulmon",
-      "texto": "Lo respiras y pasa de tus pulmones a tus glóbulos rojos."
+      "texto": "Lo respiras y pasa de tu pulmón a tus glóbulos rojos."
     },
     {
       "escena": "Hemoglobina",
-      "texto": "Ahí, la hemoglobina, que carga el oxígeno, se pega al monóxido más de 200 veces más fuerte."
+      "texto": "Ahí, la hemoglobina, que carga oxígeno, se pega al monóxido más de 200 veces más fuerte."
     },
     {
       "escena": "Desplaza",
-      "texto": "Le quita el lugar al oxígeno, y a tu cuerpo le llega menos."
+      "texto": "Le quita el lugar al oxígeno y a tu cuerpo le llega menos."
     },
     {
       "escena": "Pregunta",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 1987, en Chicago, revisaron a 37 personas con dolor de cabeza en urgencias en invierno: 7 traían mucho monóxido en la sangre y nadie lo sospechó."
+      "texto": "En 1987, en Chicago, midieron a 37 personas con dolor de cabeza en urgencias en invierno: 7 traían mucho monóxido en la sangre y nadie lo sospechó."
     },
     {
       "escena": "Lento",

@@ -5,11 +5,11 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa mayonesa no es una crema: es aceite partido en gotitas, todas pegadas una a otra."
+      "texto": "Esa mayonesa no es una pasta: es aceite partido en gotitas, apretadas una contra otra."
     },
     {
       "escena": "Que",
-      "texto": "Casi el 80 por ciento puede ser aceite; el resto es yema, agua y vinagre o limón."
+      "texto": "Casi el 80 por ciento puede ser aceite; el resto es sobre todo yema, agua y vinagre o limón."
     },
     {
       "escena": "Problema",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esa mayonesa no es una crema: es aceite en gotitas, y la yema evitando que se junten."
+      "texto": "Así que esa mayonesa no es una pasta: es aceite en gotitas, y la yema evitando que se junten."
     }
   ]
 }

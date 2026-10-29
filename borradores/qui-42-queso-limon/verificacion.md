@@ -35,3 +35,5 @@ Notas del verificador:
 
 Ninguna. No se encontraron afirmaciones ❌ ni ⚠️.
 Sugerencias opcionales (no obligatorias): en `publicacion.md`, decir que el 80 % es "de las proteínas de la leche de vaca" y que el rendimiento de 170 g "varía con la grasa de la leche y la humedad del queso".
+
+VEREDICTO: APROBADO

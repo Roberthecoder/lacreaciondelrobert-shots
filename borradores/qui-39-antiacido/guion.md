@@ -5,16 +5,16 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esa pastilla para las agruras no calma tu estómago: es una base que choca con su ácido."
 - **Seguridad / sin consejos médicos inventados:** no se recomienda ninguna marca ni dosis. Lo único práctico es lo que dicen MedlinePlus y la FDA: si las agruras son frecuentes, ver al médico (y los antiácidos no se usan a dosis máxima más de 2 semanas sin médico: va en la descripción).
 - **Duración:** voz 951 caracteres / 171 palabras (≈ 58.1 s) + cierre 3.5 s → **≈ 61.6 s** (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion escrito (fase 1). Falta verificación independiente (`verificacion.md`), tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`, VEREDICTO: APROBADO), animación lista (`antiacido.jsx`, revisión en `revision/hoja.png`), voz pendiente de aprobación de Robert (~951 créditos).
 
 ## Versión narrada
 
-Tiempos estimados: Gancho 0–5.3 · Acido 5.3–10.4 · Ph 10.4–14.0 · Agruras 14.0–17.0 · Base 17.0–23.7 · Gas 23.7–28.1 · Pregunta 28.1–30.2 · Omeprazol 30.2–37.1 · Beaumont 37.1–47.6 · Muriatico 47.6–52.3 · Cierre 52.3–58.1 · Outro 58.1–61.6.
+Tiempos de la base sin voz (`OM_SCENES`): Gancho 0–5.3 · Acido 5.3–10.4 · Ph 10.4–14.0 · Agruras 14.0–17.0 · Base 17.0–23.7 · Gas 23.7–27.7 · Pregunta 27.7–29.8 · Omeprazol 29.8–36.5 · Beaumont 36.5–46.8 · Muriatico 46.8–52.3 · Cierre 52.3–58.1 · Outro 58.1–61.6.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa pastilla para las agruras no calma tu estómago: es una base que choca con su ácido. | Fondo amarillo. Desde el cuadro 0 una mano mete una pastilla blanca redonda a una boca (perfil de una persona, silueta de torso con el estómago dibujado en rayos X con `Lupa`); la pastilla baja por el esófago y en 0.8 s cae en un charco verde-ácido dentro del estómago: ¡chispazo! Chip "¿calma?" tachado → "base + ácido". |
-| 1 | Acido | Tu estómago hace ácido clorhídrico: lo bombean células de su pared, las parietales. | Cámara entra a la pared del estómago (fondo noche). Fila de células parietales (rosas) con bombitas en su borde que escupen H⁺ (bolitas amarillas); del otro lado llegan Cl⁻ (verdes) y se juntan: "H⁺ + Cl⁻ → HCl". Etiqueta "células parietales". Barra de escala "10 µm". |
+| 0 | Gancho | Esa pastilla para las agruras no calma tu estómago: es una base que choca con su ácido. | Fondo amarillo. Desde el cuadro 0 una pastilla blanca redonda entra por la boca de una persona dibujada de frente (torso con el esófago y el estómago vistos "por dentro" en un círculo punteado); la pastilla baja por el esófago y en 0.8 s cae en un charco verde-ácido dentro del estómago: ¡chispazo! Chip "¿calma?" tachado → "base + ácido". |
+| 1 | Acido | Tu estómago hace ácido clorhídrico: lo bombean células de su pared, las parietales. | Cámara entra a la pared del estómago (fondo noche). Fila de células parietales (rosas) con bombitas en su borde que escupen H⁺ (bolitas amarillas); del otro lado llegan Cl⁻ (verdes) y se juntan: "H⁺ + Cl⁻ → HCl". Etiqueta "células parietales". Barra de escala "10 µm" en proporción: cada célula parietal (≈ 27 µm de ancho) mide unas 2.7 barras. |
 | 2 | Ph | En 1990, cápsulas tragadas midieron su pH en ayunas: 1.7. | Una cápsula con antenita baja girando dentro del estómago; un medidor de pH (escala 0–14 de rojo a morado) baja la aguja hasta "1.7"; etiqueta chica "1990 · mediana en ayunas". |
 | 3 | Agruras | Si sube por tu esófago, arde: son las agruras. | Regreso al torso: el charco verde sube por el esófago como ola; brillos naranjas de "ardor" en el pecho; chip "agruras". El corazón dibujado al lado queda en gris (no es el corazón). |
 | 4 | Base | El antiácido trae bases: carbonato de calcio, hidróxido de magnesio, bicarbonato. Ácido más base da sal y agua. | Fondo noche: la pastilla se abre en tres fichas que entran una tras otra al ritmo de la voz: "CaCO₃", "Mg(OH)₂", "NaHCO₃". Luego ecuación grande que se arma: "ácido + base → sal + agua"; los H⁺ amarillos se juntan con OH⁻ y se vuelven gotitas H₂O azules; queda un cristalito de sal. |
@@ -27,6 +27,25 @@ Tiempos estimados: Gancho 0–5.3 · Acido 5.3–10.4 · Ph 10.4–14.0 · Agrur
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave continua, debajo de la voz. Efectos en el mismo cuadro: "plop" de la pastilla al caer, chispazo de la reacción, bombitas que pulsan (tic suave por cada H⁺), aguja del medidor, ola que sube con siseo, gotitas "plic" al formarse agua, burbujeo de CO₂ y "burp" corto, candadito que cierra, fogonazo lejano y amortiguado, burbujeo lento del frasquito, golpe de la tarjeta.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y el omeprazol hace lo mismo?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` | «no calma tu estómago: es una base» |
+| 2 | 6.3 | 10.1 | 13_senalando_arriba | `izq-alto` | «lo bombean células de su pared, las parietales» |
+| 3 | 14.2 | 16.7 | 10_serio_molesto | `arriba-der` | «arde: son las agruras» |
+| 4 | 24.0 | 27.5 | 05_sonriendo_dientes_uniformes | `izq-alto` | «y puedes eructar» |
+| 5 | 27.75 | 30.6 | 07_pensativo_puno | `grande` | «¿Y el omeprazol hace lo mismo?» |
+| 6 | 31.3 | 36.2 | 04_bajando_lentes | `arriba-der` | «frena las bombas que lo fabrican» |
+| 7 | 40.0 | 46.4 | 11_sorprendido | `izq-alto` | «digería comida hasta fuera del cuerpo» |
+| 8 | 47.1 | 52.0 | 06_pensativo_menton | `arriba-der` | «ácido muriático, el nombre viejo del clorhídrico» |
+| 9 | 52.6 | 58.0 | 02_apuntando_camara | `arriba-der` | «si tus agruras son frecuentes, ve al médico» |
+| — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 39 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · la pausa más larga sin Robert es de 7.3 s (16.7–24.0).
 
 ## Fuentes (cada dato y cifra se abrió en la fuente original el 29 oct 2026)
 

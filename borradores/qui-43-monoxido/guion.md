@@ -2,28 +2,28 @@
 
 - **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #43 · rama `pedido300/qui`.
 - **Formato:** N1 "Por dentro" (el cuarto cerrado con el anafre → el pulmón → el glóbulo rojo y la hemoglobina → el mismo cuarto, ventilado y con detector) + un toque de N5 (Heckerling, Chicago, 1987).
-- **Gancho (de los 7):** #6 "Mito peligroso: ¿Por qué NO…?": "¿Por qué NO dormir con el anafre prendido? Porque lo que mata no huele ni se ve."
+- **Gancho (de los 7):** #6 "Mito peligroso: ¿Por qué NO…?": "¿Por qué NO prender el anafre dentro de tu casa? Porque lo que mata no huele ni se ve."
 - **Distinto del #11 (gas de la estufa):** aquel era el olor que le ponen al gas LP; este es el gas que sale de quemar mal, que no huele y que se pega a la sangre. No se repite nada de mercaptanos.
 - **Seguridad:** solo consejos que traen las fuentes oficiales (salir al aire libre, pedir ayuda, detector, no quemar carbón adentro). No se recomienda ningún tratamiento casero.
-- **Duración:** voz 950 caracteres / 12 líneas (≈ 58.2 s) + cierre 3.5 s → **61.7 s** estimados (`estimar-escenas.mjs`).
+- **Duración:** voz 945 caracteres / 12 líneas (≈ 58.0 s) + cierre 3.5 s → **61.5 s** estimados (`estimar-escenas.mjs`).
 - **Estado:** guion listo para verificación independiente. Voz pendiente de aprobación de Robert.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | ¿Por qué NO dormir con el anafre prendido? Porque lo que mata no huele ni se ve. | Fondo azul noche (cuarto de noche). Desde el cuadro 0 un anafre con carbones rojos chisporrotea junto a una cama; ventana y puerta cerradas con candado. Una nube transparente con borde punteado sale del anafre y se extiende; dos íconos tachados: 👃✗ "no huele", 👁✗ "no se ve". |
-| 1 | Que | Es monóxido de carbono: sale cuando el carbón o el gas arden sin suficiente oxígeno. | Zoom a la llama: moléculas de O₂ que entran por pocas. Ecuación dibujada: C + O₂ → CO₂ (con mucho oxígeno, burbujas en fila) vs. C + poco O₂ → **CO** (le falta un oxígeno: una bolita roja menos que se "va"). Etiqueta "monóxido de carbono · CO". |
+| 0 | Gancho | ¿Por qué NO prender el anafre dentro de tu casa? Porque lo que mata no huele ni se ve. | Fondo azul noche (cuarto de noche). Desde el cuadro 0 un anafre con carbones rojos chisporrotea junto a una cama; ventana y puerta cerradas con candado. Una nube transparente con borde punteado sale del anafre y se extiende; dos íconos tachados: 👃✗ "no huele", 👁✗ "no se ve". |
+| 1 | Que | Es monóxido de carbono: sale cuando el carbón o el gas arden sin suficiente oxígeno. | Zoom a la llama: moléculas de O₂ que entran por pocas. Ecuación dibujada (balanceada): C + O₂ → CO₂ (con mucho oxígeno) vs. **2C + O₂ → 2CO** (poco oxígeno: a cada carbono le toca un solo oxígeno). Etiqueta "monóxido de carbono · CO". |
 | 2 | Fuentes | Como un anafre o un boiler en un cuarto cerrado. | Paneo lateral: al anafre se suma un boiler (calentador de agua) con el tubo de salida tapado; las nubecitas de CO salen de los dos y llenan el cuarto. |
-| 3 | Pulmon | Lo respiras y pasa de tus pulmones a tus glóbulos rojos. | La cámara entra por la nariz de la persona dormida → pulmón (árbol rosa) → un alvéolo con un capilar al lado: las moléculas CO cruzan la pared y entran a un glóbulo rojo (disco rojo). Barra de escala "10 µm". |
-| 4 | Hemoglobina | Ahí, la hemoglobina, que carga el oxígeno, se pega al monóxido más de 200 veces más fuerte. | Fondo oscuro: dentro del glóbulo, una hemoglobina (4 "asientos" con su hierro). O₂ se sienta y se suelta; CO llega y se queda pegado con un candado. Balanza: O₂ ×1 vs. CO "×200+". |
-| 5 | Desplaza | Le quita el lugar al oxígeno, y a tu cuerpo le llega cada vez menos. | Uno por uno los asientos se llenan de CO (contador de asientos ocupados que sube) y los O₂ se quedan afuera flotando. Medidor "oxígeno que llega" bajando. |
+| 3 | Pulmon | Lo respiras y pasa de tu pulmón a tus glóbulos rojos. | La cámara entra por la nariz de la persona dormida → pulmón (árbol rosa) → un alvéolo con un capilar al lado: las moléculas CO cruzan la pared y entran a un glóbulo rojo (disco rojo). Barra de escala "10 µm". |
+| 4 | Hemoglobina | Ahí, la hemoglobina, que carga oxígeno, se pega al monóxido más de 200 veces más fuerte. | Fondo oscuro: dentro del glóbulo, una hemoglobina (4 "asientos" con su hierro). O₂ se sienta y se suelta; CO llega y se queda pegado con un candado. Balanza: O₂ ×1 vs. CO "×200+". |
+| 5 | Desplaza | Le quita el lugar al oxígeno y a tu cuerpo le llega menos. | Uno por uno los asientos se llenan de CO (contador de asientos ocupados que sube) y los O₂ se quedan afuera flotando. Medidor "oxígeno que llega" bajando. |
 | 6 | Pregunta | ¿Y cómo te das cuenta? | **Re-gancho.** "?" gigante sobre el glóbulo; Robert grande pensativo. |
 | 7 | Sintomas | Dolor de cabeza, mareo, náuseas: parece gripa. Y dormido, puedes morir antes de sentir algo. | Regreso a la persona (escala real): íconos que aparecen uno por frase — cabeza con rayos, espiral de mareo, estómago revuelto — y una etiqueta "¿gripa?" con un termómetro. Luego la persona dormida y un "zzz" que se apaga. |
-| 8 | Estudio | En 1987, en Chicago, revisaron a 37 personas con dolor de cabeza en urgencias, en invierno: 7 traían mucho monóxido en la sangre y nadie lo había sospechado. | Tarjeta "1987 · Chicago · Heckerling". Sala de urgencias con nieve en la ventana; 37 monitos en filas; 7 se pintan de rojo (chip "más del 10 % de la hemoglobina con CO"); signo "¿?" de los médicos tachado → "nadie lo sospechó". |
-| 9 | Lento | Y con aire normal, tu cuerpo tarda más de 5 horas en sacar la mitad. | Reloj que gira rápido de 0 a "5 h 20 min" mientras una barra de CO en la sangre baja solo a la mitad. |
-| 10 | Aviso | Si a todos en casa les duele la cabeza, salgan al aire libre y pidan ayuda. Y pon un detector de monóxido. | Una familia de 3 monitos, todos con el ícono de dolor de cabeza → salen por la puerta al aire libre (fondo menta, sol). Aparece un detector de CO en la pared con su luz y "pip". |
-| 11 | Cierre | No duermas con el anafre prendido: ese peligro no huele, pero se puede evitar. | **Regreso al cuarto del inicio, transformado**: el anafre apagado y afuera, ventana abierta, el boiler con su tubo de salida libre hacia fuera, detector en verde; la nube punteada se va por la ventana. |
+| 8 | Estudio | En 1987, en Chicago, midieron a 37 personas con dolor de cabeza en urgencias en invierno: 7 traían mucho monóxido en la sangre y nadie lo sospechó. | Tarjeta "1987 · Chicago · Heckerling". Sala de urgencias con nieve en la ventana; 37 monitos en filas; 7 se pintan de rojo (chip "más del 10 % de la hemoglobina con CO"); signo "¿?" de los médicos tachado → "nadie lo sospechó". |
+| 9 | Lento | Y con aire normal, tu cuerpo tarda horas en sacar apenas la mitad. | Reloj que gira rápido de 0 a "≈ 4–5 h" mientras una barra de CO en la sangre baja solo a la mitad. |
+| 10 | Aviso | Si a varios en casa les duele la cabeza a la vez, o suena el detector, salgan al aire libre y pidan ayuda: en México, al 911. | Una familia de 3 monitos, varios con el ícono de dolor de cabeza → salen por la puerta al aire libre (fondo menta, sol). Aparece un detector de CO en la pared con su luz y "pip". |
+| 11 | Cierre | Nunca prendas el anafre adentro: ese peligro no huele, pero se puede evitar. | **Regreso al cuarto del inicio, transformado**: el anafre apagado y afuera, ventana abierta, el boiler con su tubo de salida libre hacia fuera, detector en verde; la nube punteada se va por la ventana. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave continua y tensa (tapada mientras el CO llena el cuarto y los asientos), que se abre al salir al aire libre. Efectos en el mismo cuadro: chisporroteo de carbón, siseo del boiler, respiración, "clic" de candado cuando el CO se pega, tic-tac del reloj, "pip" del detector, ventana que se abre.
@@ -50,6 +50,6 @@
 - "Más de 200 veces": las fuentes dan entre unas 210 (revisión 2020) y 245 veces (UKHSA 2022); la voz dice "más de 200" para cubrir ambas.
 - "Mucho monóxido en la sangre" = carboxihemoglobina mayor de 10 % (media de 14 %); lo normal en no fumadores es 1–2 % (UKHSA). En pantalla va el chip "más del 10 %".
 - El estudio de 1987 es viejo y la voz dice el año; es un estudio chico (37 pacientes) en un solo hospital de Chicago. En la descripción se aclara.
-- "Más de 5 horas en sacar la mitad" es la vida media con aire normal (320 min); con oxígeno al 100 % baja a 80 min: por eso en el hospital dan oxígeno (va en la descripción, no es consejo casero).
+- "Tarda horas en sacar apenas la mitad" (pantalla "≈ 4–5 h"): vida media con aire normal de 320 min según UKHSA y de unas 4 h según la revisión de 2020; con oxígeno al 100 % baja a 80 min: por eso en el hospital dan oxígeno (va en la descripción, no es consejo casero).
 - En México el número de emergencias es el 911. Para la descripción: en temporada de frío la Secretaría de Salud reporta cada año muertes por intoxicación con monóxido (anafres, calentadores); no se pone cifra porque no se pudo abrir el boletín federal original.
 - Diferencia con el #11: el gas LP no huele y por eso le agregan olor; el monóxido es otro gas que sale de quemar mal (el anafre, el boiler o cualquier aparato que arde sin suficiente oxígeno).

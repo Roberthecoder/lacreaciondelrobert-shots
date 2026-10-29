@@ -31,3 +31,8 @@ Conteo: 14 ✅ · 2 ⚠️ · 0 ❌.
 Notas (no son afirmaciones de la voz):
 - La línea de *Salmonella* y huevo crudo para la descripción NO fue verificada aquí; si se publica, necesita su fuente propia (p. ej. FDA/CDC sobre huevo crudo).
 - La barra "≈ 5 µm" sólo en la cucharada del frasco (mayonesa comercial); en las escenas del estudio a mano, sin cifra o "≈ 100 µm".
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplican tal cual todas las propuestas del verificador (sección anterior); si hace falta cuadrar el tiempo, solo se quita relleno sin cambiar datos.
+
+VEREDICTO: APROBADO
