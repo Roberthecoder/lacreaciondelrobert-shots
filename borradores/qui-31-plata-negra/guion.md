@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese negro en tu arete de plata no es mugre: es plata pegada a azufre."
 - **Seguridad:** se dice "agua caliente, con cuidado". En la descripción: no usar en piezas chapadas ni huecas/selladas, no usar ollas de aluminio buenas (se corroen), enjuagar y secar.
 - **Duración:** voz 954 caracteres (≈ 58.0 s) + cierre 3.5 s → **61.5 s** estimado (`estimar-escenas.mjs`).
-- **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`plata.jsx`, base sin voz 61.5 s), voz pendiente de aprobación de Robert (~954 créditos).
 
 ## Versión narrada
 
@@ -24,7 +24,25 @@
 | 10 | Cierre | Ese negro no es mugre: es plata esperando que el aluminio le quite el azufre. | **Regreso al arete del inicio**, ahora sale del agua brillante (acabado satinado) junto al papel aluminio; etiqueta "Ag₂S → Ag". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
-**Música:** cama grave continua; efectos en el mismo cuadro (tintineo del arete, "fsss" del gas, tic-tac del cronómetro, raspado del trapo, bicarbonato burbujeando, chispitas eléctricas, golpe de la tarjeta 1916, báscula, pedorreta discreta en el dato, brillo final).
+**Música:** cama grave continua; efectos en el mismo cuadro (tintineo del arete, "fsss" del gas, tic-tac del cronómetro, raspado del trapo, bicarbonato burbujeando, chispitas eléctricas, golpe de la tarjeta 1916, báscula, "pfff" discreto en el dato, brillo final).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y si en vez de rasparla la regresas a plata?» y en el dato de los gases.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «no es mugre: es plata pegada a azufre» |
+| 2 | 9.6 | 14.1 | 13_senalando_arriba | `izq-alto` | «de gases como el sulfuro de hidrógeno» |
+| 3 | 15.6 | 22.4 | 10_serio_molesto | `arriba-der` | «en minutos, no en meses» / «se lleva un poco de plata» |
+| 4 | 22.95 | 26.8 | 07_pensativo_puno | `grande` | «¿Y si en vez de rasparla la regresas a plata?» |
+| 5 | 31.8 | 36.9 | 13_senalando_arriba | `izq-alto` | «el aluminio suelta electrones… vuelve a ser metal» |
+| 6 | 41.4 | 47.0 | 04_bajando_lentes | `arriba-der` | «25 veces más plata» |
+| 7 | 47.7 | 53.0 | 05_sonriendo_dientes_uniformes | `grande-izq` | «hasta tus gases intestinales» |
+| 8 | 53.6 | 57.9 | 02_apuntando_camara | `arriba-der` | «es plata esperando que el aluminio le quite el azufre» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 8 apariciones · ≈ 39.5 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · nunca más de 5.6 s sin Robert.
 
 ## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
 

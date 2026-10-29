@@ -6,7 +6,7 @@
 - **Distinto al #33 (barras de luz, quimioluminiscencia):** aquí no hay reacción química que se gaste; es luz que se guardó y se vuelve a cargar.
 - **Seguridad:** las estrellitas actuales no llevan material radiactivo (EPA). Lo del radio se cuenta como historia; no se invita a abrir ni manipular relojes antiguos (la EPA pide no desarmarlos; va en la descripción).
 - **Duración:** voz 956 caracteres / ≈ 172 palabras (≈ 58.2 s) + cierre 3.5 s → **≈ 61.7 s** (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`estrellitas.jsx`, revisión en `revision/hoja.png`), voz pendiente de aprobación de Robert (~956 créditos).
 
 ## Versión narrada
 
@@ -28,6 +28,26 @@ Tiempos aproximados de la estimación (s): Gancho 0–5.2 · Que 5.2–10.6 · C
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave y continua, nocturna; efectos en el mismo cuadro: "clic" del apagador, zumbido suave al entrar la luz, "plop" de cada carga que cae en su trampa, tintineo en cada destello verde, tic-tac del reloj antiguo y crepitar en cada partícula alfa, silencio y tono grave en las pintoras, golpe de la tarjeta del estudio, rugido del horno y "clic" del foco.
+
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y por qué creemos que son radiactivas?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «no son radiactivas: sueltan la luz que les diste» |
+| 2 | 6.2 | 10.3 | 13_senalando_arriba | `izq-alto` | «aluminato de estroncio, con algo de europio y disprosio» |
+| 3 | 14.8 | 17.9 | 06_pensativo_menton | `arriba-der` | «atoradas en trampas que forma el disprosio» |
+| 4 | 24.2 | 27.2 | 07_pensativo_puno | `grande` | «¿Y por qué creemos que son radiactivas?» |
+| 5 | 29.7 | 33.1 | 11_sorprendido | `izq-alto` | «su radiación lo hacía brillar sin parar» |
+| 6 | 34.2 | 39.0 | 10_serio_molesto | `arriba-der` | «afinando el pincel con los labios: tragaban radio» |
+| 7 | 43.3 | 48.8 | 04_bajando_lentes | `izq-alto` | «más de 10 veces más brillante… aún se medía al día siguiente» |
+| 8 | 49.4 | 53.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «se hornea a unos 1300 grados, y tú lo recargas con un foco» |
+| 9 | 53.8 | 58.1 | 02_apuntando_camara | `arriba-der` | «son luz de tu día, guardada en trampas» |
+| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 36.7 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
 

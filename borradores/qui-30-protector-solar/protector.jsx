@@ -329,7 +329,7 @@ function Protector() {
               <Lluvia T={T} t0={K.Me + 0.3 + i * 0.2} rayos={ray} per={0.7} desf={0.3} ancho={7} />
               <text x={270} y={y + 290} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{t}</text>
             </g>; })}
-          <g transform={`translate(270 1210) rotate(${Math.sin(T * 22) * 4 * kprog(T, K.Me + 1.5, K.Me + 1.8)})`}>
+          <g transform={`translate(360 870) rotate(${Math.sin(T * 22) * 4 * kprog(T, K.Me + 1.5, K.Me + 1.8)})`}>
             <rect x={-110} y={-36} width={220} height={60} rx={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
             <text x={0} y={10} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>FPS 30 ¿?</text>
           </g>
@@ -356,7 +356,7 @@ function Protector() {
       <Chip T={T} at={K.Ca + 0.4} until={K.Pr - 0.2} texto="energía → un poquito de calor" y={1500} tam={40} borde={CALOR} />
       <Chip T={T} at={K.Pr + 0.3} until={K.Es - 0.2} texto="óxido de zinc · dióxido de titanio" y={1500} tam={36} borde={KC.texto} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="2016" quien="Cole, Shyr y Ou-Yang" revista="Nueva Jersey, EUA · esfera integradora" y={1590} />
-      <MitoTachado T={T} at={K.Es + 3.7} tacharEn={K.Es + 5.0} until={K.Fp - 0.2} texto="minerales = espejitos" y={450} x={660} tam={40} />
+      <MitoTachado T={T} at={K.Es + 3.7} tacharEn={K.Es + 5.0} until={K.Fp - 0.2} texto="minerales = espejitos" y={1700} tam={40} />
       <Chip T={T} at={K.La + 3.6} until={K.Pl - 0.2} texto="así se mide la etiqueta (FDA)" y={1500} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.La + 0.6} until={K.La + 3.4} texto="2 mg en cada cm² de piel" y={1500} tam={42} borde={KC.gold} />
       <TarjetaEstudio T={T} at={K.Pl + 0.2} until={K.Pl + 3.1} anio="1992" quien="Bech-Thomsen y Wulf" revista="investigadores de Copenhague, Dinamarca" y={1590} />
@@ -373,9 +373,9 @@ function Protector() {
       <Subtitulo T={T} idx={5} at={K.Es + 0.1} until={K.Fp - 0.1} texto="Solo reflejan *4 a 5 %.*" />
       <Subtitulo T={T} idx={6} at={K.Fp + 0.1} until={K.La - 0.1} texto="FPS 30: *filtra 97 %.*" />
       <Subtitulo T={T} idx={7} at={K.La + 0.1} until={K.Pl - 0.1} texto="En laboratorio: *2 mg/cm².*" />
-      <Subtitulo T={T} idx={8} at={K.Pl + 0.1} until={K.Me - 0.1} texto="En la playa: *la cuarta parte.*" />
-      <Subtitulo T={T} idx={9} at={K.Me + 0.1} until={K.Ci - 0.1} texto="Menos crema, *menos protección.*" />
-      <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Es esponja: *ponle suficiente.*" />
+      <Subtitulo T={T} idx={8} at={K.Pl + 0.1} until={K.Me - 0.1} texto="Playa: *la cuarta parte.*" />
+      <Subtitulo T={T} idx={9} at={K.Me + 0.1} until={K.Ci - 0.1} texto="Con menos: *protege menos.*" />
+      <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Esponja: *ponle suficiente.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 5.0, 'avatar_11_sorprendido', 'gancho'],

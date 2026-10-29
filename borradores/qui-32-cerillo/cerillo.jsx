@@ -103,7 +103,8 @@ function Documento({ x, y, s = 1, sello = 0, T }) {
 function BocaBrillo({ T, x, y, s = 1, brillo = 0 }) {
   const g = brillo * (0.75 + 0.25 * Math.sin(T * 3));
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <ellipse cx={0} cy={-58} rx={230 * 1.05} ry={60} fill={VERDOSO} opacity={0.28 * g} />
+    <defs><filter id="glowb" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22" /></filter></defs>
+    <ellipse cx={0} cy={-62} rx={250} ry={70} fill={VERDOSO} opacity={0.75 * g} filter="url(#glowb)" />
     <path d="M -220 -40 Q 0 -150 220 -40 L 200 -20 Q 0 -110 -200 -20 Z" fill={mixHex('#3a3a3a', VERDOSO, g)} stroke="rgba(255,255,255,.35)" strokeWidth={4} />
     {Array.from({ length: 8 }, (_, i) => { const tx = -175 + i * 50; return <rect key={i} x={tx} y={-40 + Math.abs(i - 3.5) * 6} width={44} height={56} rx={10} fill="#2a2d33" stroke="rgba(255,255,255,.25)" strokeWidth={3} />; })}
     <path d="M -240 -40 Q 0 -190 240 -40 Q 0 170 -240 -40 Z" fill="none" stroke="rgba(255,255,255,.4)" strokeWidth={6} />
@@ -116,14 +117,14 @@ function Cerillo32() {
   const FIN = K.Ou + 4;
   // gancho: raspón y levanta
   const ras = kprog(T, K.G + 0.02, K.G + 0.6, kEase.suave), lev = kprog(T, K.G + 0.65, K.G + 1.3, kEase.sale);
-  const hx = klerp(klerp(230, 760, ras), 470, lev), hy = klerp(1132, 780, lev), hr = klerp(72, 12, lev);
+  const hx = klerp(klerp(230, 760, ras), 420, lev), hy = klerp(1032, 700, lev), hr = klerp(72, 12, lev);
   // micro: la cabeza que raspa
   const fr0 = K.Fr + 0.3, fr1 = K.Fr + 4.2, frota = T > fr0 && T < fr1 ? Math.sin((T - fr0) * 3.2) : 0;
   const cabX = klerp(1300, 520, kprog(T, K.Fr - 0.2, fr0, kEase.sale)) + frota * 160 + kprog(T, fr1, fr1 + 0.8, kEase.suave) * 700;
   const calor = kprog(T, fr0, fr1);
   const R = krng(23);
-  const granos = Array.from({ length: 26 }, (_, i) => [60 + i * 37 + R() * 18, 1030 + R() * 150, 16 + R() * 14, R() * 6]);
-  const vidrios = Array.from({ length: 12 }, () => [60 + R() * 960, 1040 + R() * 140, R() * 180, 20 + R() * 18]);
+  const granos = Array.from({ length: 26 }, (_, i) => [50 + i * 38 + R() * 18, 840 + R() * 340, 20 + R() * 16, R() * 6]);
+  const vidrios = Array.from({ length: 12 }, () => [60 + R() * 960, 850 + R() * 330, R() * 180, 26 + R() * 22]);
   const conv = [3, 9, 15, 21];
   const R2 = krng(31);
   const cristales = Array.from({ length: 10 }, () => [(R2() - 0.5) * 300, (R2() - 0.5) * 380, R2() * 40]);
@@ -134,9 +135,9 @@ function Cerillo32() {
       <Escena T={T} a={K.G} b={K.Ca} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Caja x={500} y={950} />
+          <Caja x={500} y={850} />
           <Cerillo T={T} x={hx} y={hy} rot={klerp(78, 12, lev)} s={1} flama={kprog(T, K.G + 0.5, K.G + 1.1, kEase.sale)} />
-          <Chispazo x={760} y={1132} f={kprog(T, K.G + 0.45, K.G + 0.9)} r={80} />
+          <Chispazo x={760} y={1032} f={kprog(T, K.G + 0.45, K.G + 0.9)} r={80} />
           <BarraEscala x={70} y={1450} px={120} texto="1 cm" />
         </SvgCapa>
       </Escena>
@@ -160,23 +161,24 @@ function Cerillo32() {
       {/* 2–4 · la tira al microscopio: fricción, fósforo blanco y chispa */}
       <Escena T={T} a={K.Ti} b={K.Ll} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
+        <Ambiente T={T} n={30} seed={9} color="rgba(255,190,120,.25)" />
         <SvgCapa>
-          <rect x={0} y={1010} width={KW} height={210} fill="#a8692c" opacity={0.9} />
-          <rect x={0} y={1010} width={KW} height={12} fill="#d39a55" />
+          <rect x={0} y={810} width={KW} height={400} fill="#a8692c" opacity={0.9} />
+          <rect x={0} y={810} width={KW} height={14} fill="#d39a55" />
           {vidrios.map(([x, y, r, k], i) => <path key={i} d={`M ${-k} ${k * 0.6} L ${k * 0.2} ${-k} L ${k} ${k * 0.4} Z`} transform={`translate(${x} ${y}) rotate(${r})`} fill="rgba(200,240,255,.75)" stroke="#e8fbff" strokeWidth={3} />)}
           {granos.map(([x, y, r, ph], i) => { const ci = conv.indexOf(i); const c = ci >= 0 ? kprog(T, K.Fr + 2.2 + ci * 0.45, K.Fr + 2.8 + ci * 0.45) : 0;
             return <g key={i}>{c < 1 && <path d={`M ${x - r} ${y} Q ${x - r} ${y - r} ${x} ${y - r} Q ${x + r * 1.1} ${y - r * 0.8} ${x + r} ${y} Q ${x + r * 0.8} ${y + r} ${x} ${y + r} Q ${x - r * 1.1} ${y + r * 0.7} ${x - r} ${y} Z`} fill={P_ROJO} stroke={KC.ink} strokeWidth={4} opacity={1 - c} />}</g>; })}
           {conv.map((gi, ci) => { const [x] = granos[gi]; const c = kprog(T, K.Fr + 2.2 + ci * 0.45, K.Fr + 2.8 + ci * 0.45, kEase.rebote); const quema = kprog(T, K.Ch + 1.0 + ci * 0.25, K.Ch + 1.3 + ci * 0.25);
-            return <g key={gi}><P4 x={x} y={985} s={1.1 * c} o={c * (1 - quema)} brillo={1} /><Chispazo x={x} y={975} f={kprog(T, K.Ch + 1.0 + ci * 0.25, K.Ch + 1.8 + ci * 0.25)} r={70} /></g>; })}
+            return <g key={gi}><P4 x={x} y={785} s={1.1 * c} o={c * (1 - quema)} brillo={1} /><Chispazo x={x} y={775} f={kprog(T, K.Ch + 1.0 + ci * 0.25, K.Ch + 1.8 + ci * 0.25)} r={70} /></g>; })}
           {T > K.Ch - 0.2 && Array.from({ length: 8 }, (_, i) => { const t0 = K.Ch + i * 0.12, p = kprog(T, t0, t0 + 1.1, kEase.suave), tx = granos[conv[i % 4]][0];
-            return <Mol key={i} tipo="o2" x={klerp(tx + (i % 2 ? 160 : -160), tx + (i % 2 ? 40 : -40), p)} y={klerp(560 + i * 30, 930, p)} s={0.6} rot={T * 40 + i * 30} o={1 - kprog(T, K.Ch + 1.4, K.Ch + 1.8)} />; })}
-          {T > K.Fr - 0.3 && <g transform={`translate(${cabX} 760)`}>
+            return <Mol key={i} tipo="o2" x={klerp(tx + (i % 2 ? 160 : -160), tx + (i % 2 ? 40 : -40), p)} y={klerp(380 + i * 30, 730, p)} s={0.6} rot={T * 40 + i * 30} o={1 - kprog(T, K.Ch + 1.4, K.Ch + 1.8)} />; })}
+          {T > K.Fr - 0.3 && <g transform={`translate(${cabX} 560)`}>
             <ellipse cx={0} cy={0} rx={260} ry={250} fill={CAB} stroke={KC.ink} strokeWidth={10} />
             {cristales.slice(0, 7).map(([dx, dy, r], i) => <rect key={i} x={dx * 0.7 - 20} y={dy * 0.5 - 20} width={40} height={40} rx={5} transform={`rotate(${r} ${dx * 0.7} ${dy * 0.5})`} fill="#f4f8ff" stroke={KC.ink} strokeWidth={3} />)}
             {azufres.slice(0, 6).map(([dx, dy], i) => <circle key={i} cx={dx * 0.7} cy={dy * 0.5 + 30} r={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />)}
             <rect x={-260} y={200} width={520} height={60} fill={`rgba(255,${klerp(200, 90, calor)},40,${0.6 * calor})`} />
           </g>}
-          {T > K.Fr && T < K.Ll + 0.4 && <g transform="translate(990 880)" opacity={kprog(T, K.Fr, K.Fr + 0.4)}>
+          {T > K.Fr && T < K.Ll + 0.4 && <g transform="translate(990 600)" opacity={kprog(T, K.Fr, K.Fr + 0.4)}>
             <rect x={-26} y={-260} width={52} height={300} rx={26} fill="#fff" stroke={KC.ink} strokeWidth={6} />
             <rect x={-12} y={20 - 240 * calor} width={24} height={240 * calor + 10} rx={10} fill={KC.red} />
             <circle cx={0} cy={50} r={40} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
@@ -211,7 +213,7 @@ function Cerillo32() {
         <SvgCapa>
           <Fabrica x={430} y={1000} s={1} T={T} />
           {Array.from({ length: 14 }, (_, i) => { const t0 = K.Hu + 2.6 + i * 0.32, p = kprog(T, t0, t0 + 2.4); if (T < t0) return null;
-            const fila = i % 2; return <Personita key={i} x={klerp(630, 1110, p)} y={1110 + fila * 60 + Math.abs(Math.sin(T * 8 + i)) * -6} s={1.5} color={i % 3 ? KC.yellow : KC.coral} />; })}
+            const fila = i % 2; return <Personita key={i} x={klerp(630, 1110, p)} y={1110 + fila * 60 + Math.abs(Math.sin(T * 8 + i)) * -6} s={1.9} color={i % 3 ? KC.yellow : KC.coral} />; })}
         </SvgCapa>
         <Contador T={T} at={K.Hu + 2.8} desde={0} hasta={1400} dur={2.8} x={KW / 2} y={1480} tam={120} color={KC.yellow} />
       </Escena>
@@ -219,8 +221,8 @@ function Cerillo32() {
       <Escena T={T} a={K.Qu} b={K.Be} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:'#d9c7a0' }}></div>
         <SvgCapa>
-          <Cubeta x={330} y={1080} s={0.8} liquido="#f3eccc" color="#8a8f99" nivel={0.7} />
-          <Nube T={T} x={330} y={900} f={kprog(T, K.Qu + 0.2, K.Qu + 1.6)} r={150} color="#d8f5b8" seed={4} />
+          <Cubeta x={250} y={1090} s={0.6} liquido="#f3eccc" color="#8a8f99" nivel={0.7} />
+          <Nube T={T} x={250} y={930} f={kprog(T, K.Qu + 0.2, K.Qu + 1.6)} r={150} color="#d8f5b8" seed={4} />
           <Perfil x={780} y={850} s={0.95} mal={kprog(T, K.Qu + 1.4, K.Qu + 2.8)} />
           {T > K.Qu + 3.0 && [0, 1, 2, 3, 4].map((i) => <Personita key={i} x={340 + i * 100} y={1490} s={1.7 * kprog(T, K.Qu + 3.0 + i * 0.1, K.Qu + 3.3 + i * 0.1, kEase.rebote)} color={i === 4 ? mixHex('#ffe11a', '#8a8f99', kprog(T, K.Qu + 4.0, K.Qu + 4.6)) : KC.yellow} o={i === 4 ? 1 - 0.6 * kprog(T, K.Qu + 4.0, K.Qu + 4.6) : 1} />)}
           <rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.12)" />
@@ -240,27 +242,27 @@ function Cerillo32() {
             <circle cx={790} cy={860} r={110} fill={VERDOSO} opacity={0.22 * kprog(T, K.Br + 0.4, K.Br + 1.2)} />
             <path d="M 700 860 Q 690 790 760 780 Q 840 760 880 820 Q 900 900 830 930 Q 740 950 700 860 Z" fill={mixHex('#3a3a3a', '#f5f7d8', kprog(T, K.Br + 0.4, K.Br + 1.2))} stroke="rgba(255,255,255,.4)" strokeWidth={5} />
           </g>
-          {T > K.Br + 2.8 && <g opacity={kprog(T, K.Br + 2.8, K.Br + 3.4)}><BocaBrillo T={T} x={790} y={900} s={0.95} brillo={kprog(T, K.Br + 3.2, K.Br + 4.2)} /></g>}
+          {T > K.Br + 2.8 && <g opacity={kprog(T, K.Br + 2.8, K.Br + 3.4)}><BocaBrillo T={T} x={805} y={860} s={1.0} brillo={kprog(T, K.Br + 3.2, K.Br + 4.2)} /></g>}
         </SvgCapa>
       </Escena>
       {/* 11 · cierre: la misma caja, ya con el cerillo encendido */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Caja x={500} y={950} />
-          <Cerillo T={T} x={470} y={780} rot={12} s={1} flama={1} />
+          <Caja x={500} y={850} />
+          <Cerillo T={T} x={420} y={700} rot={12} s={1} flama={1} />
           <BarraEscala x={70} y={1450} px={120} texto="1 cm" />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 3.0} texto="¿fuego en la cabeza?" x={330} y={470} tam={44} />
-      <Chip T={T} at={K.G + 3.1} until={K.Ca - 0.3} texto="fósforo: en la tira" x={330} y={470} tam={44} borde={P_ROJO} />
-      <Etq T={T} at={K.G + 3.3} until={K.Ca - 0.3} x={820} y={1270 - 80} texto="tira" lado="izq" tam={36} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 3.0} texto="¿fuego en la cabeza?" x={330} y={420} tam={44} />
+      <Chip T={T} at={K.G + 3.1} until={K.Ca - 0.3} texto="fósforo: en la tira" x={330} y={420} tam={44} borde={P_ROJO} />
+      <Etq T={T} at={K.G + 3.3} until={K.Ca - 0.3} x={1040} y={1030} texto="tira" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.6} until={K.Ti - 0.3} texto="clorato de potasio · KClO₃" x={540} y={1500} tam={40} borde="#f4f8ff" />
       <Chip T={T} at={K.Ca + 2.5} until={K.Ti - 0.3} texto="azufre · S" x={540} y={1610} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Ti + 0.2} until={K.Fr - 0.2} texto="fósforo rojo + pegamento + vidrio" x={540} y={1500} tam={36} borde={P_ROJO} />
-      <Etq T={T} at={K.Ti + 0.5} until={K.Fr - 0.2} x={520} y={900} texto="AL MICROSCOPIO · la tira" lado="der" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Ti + 0.5} until={K.Fr - 0.2} x={40} y={640} texto="AL MICROSCOPIO · la tira" lado="der" tam={32} color={KC.texto} />
       <Chip T={T} at={K.Fr + 0.6} until={K.Ch - 0.2} texto="fricción = calor" x={540} y={1500} tam={44} borde={KC.orange} />
       <Chip T={T} at={K.Fr + 2.4} until={K.Ch - 0.2} texto="una pizca: rojo → blanco (P₄)" x={540} y={1610} tam={36} borde={P_BLANCO} />
       <Chip T={T} at={K.Ch + 0.3} until={K.Ll - 0.2} texto="fósforo blanco + aire = chispa" x={540} y={1500} tam={38} borde={KC.yellow} />
@@ -270,11 +272,11 @@ function Cerillo32() {
       <TarjetaEstudio T={T} at={K.Hu + 0.2} until={K.Hu + 2.6} anio="1888" quien="Londres · Bryant & May" revista="The National Archives (Reino Unido)" x={540} y={600} />
       <Chip T={T} at={K.Hu + 5.4} until={K.Qu - 0.3} texto="huelga por despidos y multas" x={540} y={1610} tam={38} borde={KC.coral} />
       <Etq T={T} at={K.Hu + 3.2} until={K.Qu - 0.3} x={60} y={1385} texto="mujeres en huelga" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 0.6} until={K.Qu + 3.0} x={420} y={760} texto="humo de fósforo blanco" lado="der" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 1.6} until={K.Be - 0.3} x={600} y={1110} texto="hueso de la quijada" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 0.6} until={K.Qu + 3.0} x={330} y={1260 - 420} texto="humo de fósforo blanco" lado="der" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 1.6} until={K.Be - 0.3} x={730} y={1150} texto="hueso de la quijada" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Qu + 3.4} until={K.Be - 0.3} texto="1882–1897 · murió el 19 % de los casos" x={540} y={1610} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Be + 2.1} until={K.Br - 0.2} texto="sin fósforo blanco en los cerillos" x={540} y={1500} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Br + 0.8} until={K.Br + 2.8} x={680} y={760} texto="fósforo blanco" lado="izq" tam={34} color={VERDOSO} />
+      <Etq T={T} at={K.Br + 0.8} until={K.Br + 2.8} x={700} y={1020} texto="fósforo blanco" lado="der" tam={34} color={VERDOSO} />
       <Chip T={T} at={K.Br + 3.6} until={K.Ci - 0.2} texto="encías que brillaban" x={540} y={1500} tam={42} borde={VERDOSO} />
       <Chip T={T} at={K.Ci + 0.5} until={K.Ou} texto="caja: fósforo rojo + vidrio" x={540} y={1500} tam={38} borde={P_ROJO} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="cabeza: clorato + azufre" x={540} y={1610} tam={38} borde={CAB} />
