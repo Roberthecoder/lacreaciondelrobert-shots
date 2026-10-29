@@ -11,16 +11,20 @@
       "texto": "Tu tamal no es de maíz a secas: en México se reportan sesenta y cuatro razas de maíz."
     },
     {
-      "escena": "Teocintle",
-      "texto": "Y todas vienen de un pasto silvestre, el teocintle: mazorquitas de diez a doce granos con cáscara dura."
+      "escena": "Pozole",
+      "texto": "Cada raza tiene sus usos: el Cacahuacintle es el maíz por excelencia para pozole."
     },
     {
-      "escena": "Domestica",
-      "texto": "Según un estudio genético de 2002, la gente lo domesticó hace unos nueve mil años en el sur de México."
+      "escena": "Totopos",
+      "texto": "El Zapalote Chico, del istmo de Tehuantepec, se usa para los totopos."
+    },
+    {
+      "escena": "Palomitas",
+      "texto": "Y el Palomero Toluqueño se considera adecuado para palomitas."
     },
     {
       "escena": "Polen",
-      "texto": "¿Por qué tantas razas? Su polinización es libre, y los campesinos mueven semilla año con año."
+      "texto": "¿Por qué tantas razas? Su polinización es libre, y los agricultores mueven semilla año con año."
     },
     {
       "escena": "Semilla",
@@ -28,7 +32,7 @@
     },
     {
       "escena": "Altura",
-      "texto": "Así se adaptó desde el nivel del mar hasta los tres mil cuatrocientos metros."
+      "texto": "Así hay maíz desde el nivel del mar hasta los tres mil cuatrocientos metros."
     },
     {
       "escena": "Pregunta",
@@ -40,7 +44,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2009, en un refugio rocoso del valle del Balsas, hallaron rastros de maíz de hace ocho mil setecientos años."
+      "texto": "En 1951, en México, Wellhausen y su equipo juntaron unas dos mil muestras y describieron veinticinco razas."
     },
     {
       "escena": "Tamal",
