@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Moken base narrada.dc.html",
+  "salida": "Shot Moken narrado.dc.html",
+  "nota": "Shot Científico #39. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Hubo niños que veían bajo el agua mejor que tú, sin visor: los niños moken, que viven del mar."
+    },
+    {
+      "escena": "Borroso",
+      "texto": "Cuando abres los ojos bajo el agua, todo se ve borroso."
+    },
+    {
+      "escena": "Cornea",
+      "texto": "Es porque la parte de enfrente de tu ojo, la córnea, enfoca gracias a que hay aire enfrente."
+    },
+    {
+      "escena": "Agua",
+      "texto": "Bajo el agua, la córnea casi pierde su poder, y la imagen queda fuera de foco."
+    },
+    {
+      "escena": "Pueblo",
+      "texto": "Los moken son un pueblo del mar de Andamán, entre Tailandia y Birmania, que vive del mar, y sus niños bucean para buscar comida."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2003, una científica de Suecia, Anna Gislén, comparó a niños moken con niños europeos bajo el agua."
+    },
+    {
+      "escena": "Doble",
+      "texto": "Los niños moken vieron detalles más de dos veces más finos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo lo hacen?"
+    },
+    {
+      "escena": "Pupila",
+      "texto": "Cierran mucho su pupila y acomodan su cristalino, como una cámara que cierra el diafragma para que todo salga más nítido."
+    },
+    {
+      "escena": "Entrenar",
+      "texto": "Y lo más sorprendente: en 2006, niños europeos entrenados durante un mes también lo lograron."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ver bajo el agua no es un superpoder: es algo que los ojos de un niño pueden aprender."
+    }
+  ]
+}
