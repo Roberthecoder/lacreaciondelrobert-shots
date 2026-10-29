@@ -198,15 +198,15 @@ function CallCenter() {
       <Escena T={T} a={K.G} b={K.E}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Cubiculo x={290} y={1170} T={T} quien="nuevo" pend={Math.max(0, pend)} calma={calmaG} robot={kprog(T, K.G + 3.2, K.G + 3.7, kEase.rebote)} />
-          <Cubiculo x={790} y={1170} T={T} quien="veterano" color="#e9f3ff" taza />
-          <Soplo T={T} at={K.G + 3.9} x={250} y={650} s={0.9} />
+          <Cubiculo x={290} y={1110} T={T} quien="nuevo" pend={Math.max(0, pend)} calma={calmaG} robot={kprog(T, K.G + 3.2, K.G + 3.7, kEase.rebote)} />
+          <Cubiculo x={790} y={1110} T={T} quien="veterano" color="#e9f3ff" taza />
+          <Soplo T={T} at={K.G + 3.9} x={330} y={700} s={0.9} />
         </>)}
       </Escena>
       <Chip T={T} at={K.G + 0.2} until={K.G + 5.4} texto="tú · primer día" x={290} y={560} tam={38} borde={KC.pink} />
       <Chip T={T} at={K.G + 3.1} until={K.E - 0.2} texto="el de al lado · años" x={790} y={560} tam={38} borde={KC.blue} />
       <Chip T={T} at={K.G + 3.9} until={K.G + 5.6} texto="la IA te sopla respuestas" x={300} y={440} tam={34} borde={KC.cyan} />
-      {kvisible(T, K.G + 5.8, K.E - 0.2) && <div style={{ position:'absolute', left:540, top:430, transform:`translate(-50%,-50%) scale(${kentrada(T, K.G + 5.8, K.E - 0.2, 'pop').s})`, zIndex:42,
+      {kvisible(T, K.G + 5.8, K.E - 0.2) && <div style={{ position:'absolute', left:540, top:370, transform:`translate(-50%,-50%) scale(${kentrada(T, K.G + 5.8, K.E - 0.2, 'pop').s})`, zIndex:42,
         opacity:kentrada(T, K.G + 5.8, K.E - 0.2, 'pop').o, display:'flex', alignItems:'center', gap:22 }}>
         <div style={{ background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:24, padding:'12px 26px', textAlign:'center', boxShadow:`8px 8px 0 ${KC.ink}` }}>
           <div style={{ font:`400 92px/1 ${KF.titulo}`, color:KC.cyan, WebkitTextStroke:`3px ${KC.ink}` }}>2 meses</div>
@@ -222,15 +222,15 @@ function CallCenter() {
         <FondoLunares color={KC.lilac} />
         {svg(<>{Array.from({ length: 40 }, (_, i) => { const c = i % 8, f = Math.floor(i / 8), t0 = K.E + 3.4 + i * 0.04;
           const conIA = [0, 3, 5, 6, 9, 12, 14, 17, 18, 21, 23, 26, 28, 31, 33, 36, 39].includes(i);
-          return <g key={i} opacity={kprog(T, t0, t0 + 0.2)}><Diadema x={150 + c * 112} y={760 + f * 96} s={kprog(T, t0, t0 + 0.35, kEase.rebote)} T={T}
+          return <g key={i} opacity={kprog(T, t0, t0 + 0.2)}><Diadema x={150 + c * 112} y={800 + f * 86} s={kprog(T, t0, t0 + 0.35, kEase.rebote)} T={T}
             ia={conIA ? kprog(T, K.E + 5.2 + (i % 5) * 0.08, K.E + 5.5 + (i % 5) * 0.08) : 0} /></g>; })}</>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.3} anio="2025" quien="Brynjolfsson, Li y Raymond" revista="Stanford y MIT · Quarterly Journal of Economics" y={760} />
       {T >= K.E + 3.5 && T < K.S + 0.3 && <div style={{ opacity:1 - kprog(T, K.S - 0.2, K.S + 0.2) }}>
-        <Contador T={T} at={K.E + 3.5} hasta={5172} dur={1.6} x={340} y={520} tam={110} color={KC.yellow} />
-        <Chip T={T} at={K.E + 3.7} until={K.S - 0.25} texto="agentes de soporte" x={340} y={620} tam={34} borde={KC.ink} />
+        <Contador T={T} at={K.E + 3.5} hasta={5172} dur={1.6} x={340} y={490} tam={110} color={KC.yellow} />
+        <Chip T={T} at={K.E + 3.7} until={K.S - 0.25} texto="agentes de soporte" x={340} y={590} tam={34} borde={KC.ink} />
       </div>}
-      <Chip T={T} at={K.E + 5.2} until={K.S - 0.25} texto="a una parte le llegó la IA · 2020–2021" x={540} y={1260 - 60} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.E + 5.2} until={K.S - 0.25} texto="a una parte le llegó la IA · 2020–2021" x={540} y={700} tam={34} borde={KC.cyan} />
 
       {/* 3 · la sugerencia: el agente decide */}
       <Escena T={T} a={K.S} b={K.N}>
@@ -294,30 +294,30 @@ function CallCenter() {
             return <g key={i} opacity={T >= t0 ? 1 - kprog(T, t0 + 0.85, t0 + 1.0) : 0} transform={`translate(${klerp(740, 900, u)} ${klerp(770, 960, u)}) scale(${klerp(0.4, 0.7, u)})`}>
               <path d="M -90 -44 h 180 a 20 20 0 0 1 20 20 v 48 a 20 20 0 0 1 -20 20 h -120 l -26 24 v -24 h -34 a 20 20 0 0 1 -20 -20 v -48 a 20 20 0 0 1 20 -20 z" fill="#fff" stroke={KC.cyan} strokeWidth={6} strokeDasharray="12 8" />
               <rect x={-70} y={-20} width={130} height={12} rx={6} fill={KC.ink} opacity=".5" /><rect x={-70} y={4} width={90} height={12} rx={6} fill={KC.ink} opacity=".5" /></g>; })}
-          <g transform="translate(905 1180)"><Agente x={0} y={0} s={0.62} T={T} cara={T > K.M + 3.6 ? 'feliz' : 'panico'} playera={KC.pink} /></g>
+          <g transform="translate(905 1120)"><Agente x={0} y={0} s={0.62} T={T} cara={T > K.M + 3.6 ? 'feliz' : 'panico'} playera={KC.pink} /></g>
         </>)}
       </Escena>
       <Chip T={T} at={K.M + 0.3} until={K.X - 0.2} texto="según los autores" x={540} y={420} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.M + 0.8} until={K.X - 0.2} x={70} y={540} texto="chats de los mejores ★" color={KC.gold2} />
-      <Etq T={T} at={K.M + 2.6} until={K.X - 0.2} x={1010} y={1000} lado="izq" texto="sugerencias → el nuevo" color={KC.cyan} />
+      <Etq T={T} at={K.M + 2.6} until={K.X - 0.2} x={1010} y={640} lado="izq" texto="sugerencias → al nuevo" color={KC.cyan} />
 
       {/* 7 · a los mejores, la calidad les bajó un poco */}
       <Escena T={T} a={K.X} b={K.Cl}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Cubiculo x={620} y={1170} T={T} quien="veterano" color="#e9f3ff" taza robot={1} />
-          <Soplo T={T} at={K.X + 0.3} x={620} y={650} s={0.9} />
+          <Cubiculo x={620} y={1110} T={T} quien="veterano" color="#e9f3ff" taza robot={1} />
+          <Soplo T={T} at={K.X + 0.3} x={640} y={590} s={0.9} />
         </>)}
       </Escena>
       {kvisible(T, K.X + 0.9, K.Cl - 0.2) && (() => { const e = kentrada(T, K.X + 0.9, K.Cl - 0.2, 'pop'), baja = kprog(T, K.X + 1.4, K.X + 2.2, kEase.sale);
-        return <div style={{ position:'absolute', left:70, top:880, width:300, zIndex:42, opacity:e.o, transform:`scale(${e.s})`,
+        return <div style={{ position:'absolute', left:70, top:820, width:300, zIndex:42, opacity:e.o, transform:`scale(${e.s})`,
           background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:24, padding:'16px 20px', boxShadow:`8px 8px 0 ${KC.ink}`, textAlign:'center' }}>
           <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink }}>calidad</div>
           <div style={{ position:'relative', height:200, margin:'10px auto 0', width:90, border:`5px solid ${KC.ink}`, borderRadius:14, background:'#fff', overflow:'hidden' }}>
             <div style={{ position:'absolute', left:0, right:0, bottom:0, height:`${klerp(88, 78, baja)}%`, background:VERDE }}></div></div>
           <div style={{ font:`400 60px ${KF.titulo}`, color:KC.red, WebkitTextStroke:`2px ${KC.ink}`, opacity:baja }}>↓ un poco</div>
         </div>; })()}
-      <Chip T={T} at={K.X + 0.4} until={K.Cl - 0.2} texto="los mejores agentes" x={700} y={440} tam={38} borde={KC.blue} />
+      <Chip T={T} at={K.X + 0.4} until={K.Cl - 0.2} texto="los mejores agentes" x={700} y={420} tam={38} borde={KC.blue} />
 
       {/* 8 · clientes más amables, menos supervisor, menos renuncias */}
       <Escena T={T} a={K.Cl} b={K.Co}>
@@ -335,7 +335,7 @@ function CallCenter() {
         {svg(<Balanza T={T} x={540} y={900} inc={-kprog(T, K.Co + 2.4, K.Co + 3.4, kEase.rebote)} />)}
       </Escena>
       {kvisible(T, K.Co + 0.2, K.Co + 2.3) && (() => { const e = kentrada(T, K.Co + 0.2, K.Co + 2.3, 'pop');
-        return <div style={{ position:'absolute', left:540, top:560, zIndex:43, transform:`translate(-50%,-50%) scale(${e.s}) rotate(-2deg)`, opacity:e.o,
+        return <div style={{ position:'absolute', left:640, top:560, zIndex:43, transform:`translate(-50%,-50%) scale(${e.s}) rotate(-2deg)`, opacity:e.o,
           background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:26, padding:'18px 40px', textAlign:'center', boxShadow:`12px 12px 0 ${KC.ink}` }}>
           <div style={{ font:`700 28px ${KF.mono}`, color:'#5a524a' }}>otro estudio · Shot IA #16</div>
           <div style={{ font:`900 44px ${KF.texto}`, color:KC.ink, marginTop:6 }}>programadores expertos</div>
@@ -343,25 +343,24 @@ function CallCenter() {
         </div>; })()}
       <Chip T={T} at={K.Co + 2.5} until={K.C - 0.2} texto="novatos: ayuda mucho" x={240} y={1110} tam={32} borde={VERDE} />
       <Chip T={T} at={K.Co + 2.8} until={K.C - 0.2} texto="expertos: poco o nada" x={840} y={1030} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Co + 3.6} until={K.C - 0.2} texto="no ayuda igual a todos" x={540} y={560} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 3.6} until={K.C - 0.2} texto="no ayuda igual a todos" x={650} y={560} tam={44} borde={KC.ink} />
 
       {/* 10 · cierre: los mismos cubículos; los trucos pasan al nuevo */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Cubiculo x={290} y={1170} T={T} quien="nuevo" pend={0} calma={1} robot={1} />
-          <Cubiculo x={790} y={1170} T={T} quien="veterano" color="#e9f3ff" taza />
+          <Cubiculo x={290} y={1110} T={T} quien="nuevo" pend={0} calma={1} robot={1} />
+          <Cubiculo x={790} y={1110} T={T} quien="veterano" color="#e9f3ff" taza />
           {(() => { const u = kprog(T, K.C + 1.0, K.C + 2.4, kEase.suave);
             return <g opacity={kprog(T, K.C + 0.8, K.C + 1.1)}>
-              <path d="M 740 720 Q 640 520 500 640" fill="none" stroke={KC.ink} strokeWidth={12} strokeDasharray="22 14" strokeDashoffset={-T * 60} />
-              <path d="M 740 720 Q 640 520 500 640" fill="none" stroke={KC.gold} strokeWidth={6} strokeDasharray="22 14" strokeDashoffset={-T * 60} />
-              <g transform={`translate(${klerp(740, 500, u)} ${klerp(720, 640, u) - Math.sin(Math.PI * u) * 130})`}>
+              <path d="M 720 650 Q 620 470 470 580" fill="none" stroke={KC.ink} strokeWidth={12} strokeDasharray="22 14" strokeDashoffset={-T * 60} />
+              <path d="M 720 650 Q 620 470 470 580" fill="none" stroke={KC.gold} strokeWidth={6} strokeDasharray="22 14" strokeDashoffset={-T * 60} />
+              <g transform={`translate(${klerp(720, 470, u)} ${klerp(650, 580, u) - Math.sin(Math.PI * u) * 130})`}>
                 <path d="M 0 -34 l 10 20 l 22 3 l -16 15 l 4 22 l -20 -11 l -20 11 l 4 -22 l -16 -15 l 22 -3 z" fill={KC.gold} stroke={KC.ink} strokeWidth={4} /></g>
             </g>; })()}
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="el veterano sigue ahí ✔" x={790} y={560} tam={34} borde={KC.blue} />
-      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="sus trucos → al nuevo" x={300} y={440} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="sus trucos → al nuevo" x={360} y={430} tam={38} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="Con IA, a los 2 meses rindes *como alguien de +6.*" />

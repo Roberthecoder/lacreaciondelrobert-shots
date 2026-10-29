@@ -255,15 +255,15 @@ function ConcursoArte() {
       {/* 1-2 · el reto y la respuesta: tres cuadros en la pared */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        <div style={{ position:'absolute', left:0, right:0, top:1215, height:40, background:'#c99a1a', borderTop:`6px solid ${KC.ink}` }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:1080, height:24, background:'#c99a1a', borderTop:`6px solid ${KC.ink}` }}></div>
         {svg(<>
-          <g opacity={ent(0)} transform={`translate(${(1 - ent(0)) * -500} 0)`}><Cuadro x={klerp(190, 90, foco)} y={klerp(980, 1000, foco)} s={klerp(0.95, 0.6, foco)} tipo="bodegon" id="g1" dim={foco} /></g>
-          <g opacity={ent(1)} transform={`translate(0 ${(1 - ent(1)) * 600})`}><Cuadro x={klerp(540, 990, foco)} y={klerp(980, 1000, foco)} s={klerp(0.95, 0.6, foco)} tipo="paisaje" id="g2" dim={foco} /></g>
-          <g opacity={ent(2)} transform={`translate(${(1 - ent(2)) * 500} 0)`}><Cuadro x={klerp(890, 540, foco)} y={klerp(980, 960, foco)} s={klerp(0.95, 1.4, foco)} tipo="teatro" id="g3" T={T} /></g>
-          {foco > 0.6 && <g opacity={kprog(T, K.R + 0.8, K.R + 1.1)}><Liston x={720 + 0} y={760} s={kprog(T, K.R + 0.8, K.R + 1.2, kEase.rebote)} /></g>}
+          <g opacity={ent(0)} transform={`translate(${(1 - ent(0)) * -500} 0)`}><Cuadro x={klerp(190, 90, foco)} y={klerp(900, 900, foco)} s={klerp(0.95, 0.6, foco)} tipo="bodegon" id="g1" dim={foco} /></g>
+          <g opacity={ent(1)} transform={`translate(0 ${(1 - ent(1)) * 600})`}><Cuadro x={klerp(540, 990, foco)} y={klerp(900, 900, foco)} s={klerp(0.95, 0.6, foco)} tipo="paisaje" id="g2" dim={foco} /></g>
+          <g opacity={ent(2)} transform={`translate(${(1 - ent(2)) * 500} 0)`}><Cuadro x={klerp(890, 540, foco)} y={klerp(900, 900, foco)} s={klerp(0.95, 1.3, foco)} tipo="teatro" id="g3" T={T} /></g>
+          {foco > 0.6 && <g opacity={kprog(T, K.R + 0.8, K.R + 1.1)}><Liston x={700} y={700} s={kprog(T, K.R + 0.8, K.R + 1.2, kEase.rebote)} /></g>}
         </>)}
-        {['A', 'B', 'C'].map((l, i) => <div key={l} style={{ position:'absolute', left:[190, 540, 890][i], top:1130, transform:'translate(-50%,0)', font:`400 72px ${KF.titulo}`, color:KC.ink, opacity:ent(i) * (1 - foco) }}>{l}</div>)}
-        {cuenta && <div style={{ position:'absolute', left:300, top:650, transform:`translate(-50%,-50%) scale(${1 + 0.3 * (1 - ((T - K.G - 2.2) % 0.95))})`, font:`400 220px ${KF.titulo}`, color:KC.pink, WebkitTextStroke:`7px ${KC.ink}` }}>{cuenta}</div>}
+        {['A', 'B', 'C'].map((l, i) => <div key={l} style={{ position:'absolute', left:[190, 540, 890][i], top:1098, transform:'translate(-50%,0)', font:`400 72px ${KF.titulo}`, color:KC.ink, opacity:ent(i) * (1 - foco) }}>{l}</div>)}
+        {cuenta && <div style={{ position:'absolute', left:300, top:600, transform:`translate(-50%,-50%) scale(${1 + 0.3 * (1 - ((T - K.G - 2.2) % 0.95))})`, font:`400 180px ${KF.titulo}`, color:KC.pink, WebkitTextStroke:`7px ${KC.ink}` }}>{cuenta}</div>}
       </Escena>
       <Chip T={T} at={K.G + 0.3} until={K.R - 0.2} texto="¿Cuál se hizo con IA?" x={300} y={470} tam={44} borde={KC.pink} />
       <Chip T={T} at={K.R + 1.2} until={K.H - 0.2} texto="Feria Estatal de Colorado · 2022" x={360} y={480} tam={34} borde={AZUL} />
@@ -291,8 +291,8 @@ function ConcursoArte() {
       <Escena T={T} a={K.P} b={K.O} zoom={0.08}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <Balanza x={270} y={760} s={0.95} T={T} />
-          <text x={270} y={640} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} transform={`rotate(${Math.sin(T * 3) * 6} 270 580)`}>?</text>
+          <Balanza x={280} y={700} s={1.1} T={T} />
+          <text x={280} y={600} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} transform={`rotate(${Math.sin(T * 3) * 6} 280 540)`}>?</text>
         </>)}
       </Escena>
       {/* 6 · la Oficina niega el registro */}
@@ -320,34 +320,34 @@ function ConcursoArte() {
       </Escena>
       <NumeroGigante T={T} at={K.O2 + 0.3} until={K.D - 0.2} valor={624} dur={2.4} etiqueta="instrucciones, al menos" x={700} y={480} tam={160} color={KC.yellow} />
       <Chip T={T} at={K.O2 + 1.2} until={K.D - 0.2} texto="según Allen" x={700} y={640} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.O2 + 4.0} until={K.D - 0.2} texto="imagen base · autoría humana: no" x={600} y={1160} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.O2 + 4.0} until={K.D - 0.2} texto="imagen base · autoría humana: no" x={700} y={745} tam={34} borde={KC.red} />
       {/* 7 · la demanda */}
       <Escena T={T} a={K.D} b={K.F}>
         <FondoLunares color={KC.coral} />
         {svg(<>
-          <g transform={`translate(${-sep * 150} ${sep * 40})`}><Cuadro x={420} y={940} s={1.05} tipo="teatro" id="d" T={T} /></g>
+          <g transform={`translate(${-sep * 150} ${sep * 40})`}><Cuadro x={420} y={880} s={1.05} tipo="teatro" id="d" T={T} /></g>
           <g transform={`translate(${sep * 150} ${-sep * 40})`} opacity={0.95}>
-            <rect x={262} y={772} width={316} height={336} rx={8} fill="rgba(255,255,255,.12)" stroke={AZUL} strokeWidth={6} strokeDasharray="18 10" />
-            {[[330, 1040, 60], [470, 860, 40], [380, 900, 30], [520, 1060, 50]].map(([bx, by, bl], i) => <path key={i} d={`M ${bx} ${by} q ${bl / 2} -14 ${bl} 0`} stroke={AZUL} strokeWidth={10} fill="none" strokeLinecap="round" />)}
+            <rect x={262} y={712} width={316} height={336} rx={8} fill="rgba(255,255,255,.12)" stroke={AZUL} strokeWidth={6} strokeDasharray="18 10" />
+            {[[330, 980, 60], [470, 800, 40], [380, 840, 30], [520, 1000, 50]].map(([bx, by, bl], i) => <path key={i} d={`M ${bx} ${by} q ${bl / 2} -14 ${bl} 0`} stroke={AZUL} strokeWidth={10} fill="none" strokeLinecap="round" />)}
           </g>
-          <Mazo x={860} y={1050} s={1} golpe={mazo} />
+          <Mazo x={860} y={990} s={1} golpe={mazo} />
         </>)}
       </Escena>
       <Chip T={T} at={K.D + 0.6} until={K.D + 2.4} texto="capa IA (Midjourney)" x={300} y={700} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.D + 0.9} until={K.D + 2.4} texto="retoques (Photoshop) ✔" x={620} y={1170} tam={30} borde={AZUL} />
+      <Chip T={T} at={K.D + 0.9} until={K.D + 2.4} texto="retoques (Photoshop) ✔" x={640} y={1110} tam={30} borde={AZUL} />
       <Chip T={T} at={K.D + 2.5} until={K.F - 0.2} texto="demanda · Colorado · 2024" x={360} y={520} tam={34} borde={KC.ink} />
       {/* 8 · la "foto" de Eldagsen */}
       <Escena T={T} a={K.F} b={K.Rg}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Cuadro x={360} y={930} s={1.05} tipo="foto" id="f" marco="#1d1d22" />
-          <g transform={`translate(${klerp(0, 140, empuja)} 0)`} opacity={1 - empuja * 0.4}><Trofeo x={800} y={1000} s={1.1} /></g>
-          {empuja > 0 && <path d={`M 640 1120 L ${640 + 220 * empuja} 1120`} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" markerEnd="" />}
+          <Cuadro x={360} y={870} s={1.05} tipo="foto" id="f" marco="#1d1d22" />
+          <g transform={`translate(${klerp(0, 140, empuja)} 0)`} opacity={1 - empuja * 0.4}><Trofeo x={800} y={940} s={1.1} /></g>
+          {empuja > 0 && <path d={`M 640 1060 L ${640 + 220 * empuja} 1060`} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" markerEnd="" />}
         </>)}
       </Escena>
       <Chip T={T} at={K.F + 0.3} until={K.F + 3.6} texto="Sony World Photography Awards 2023" x={420} y={470} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.F + 0.9} until={K.F + 3.6} texto="Boris Eldagsen · categoría Creativa" x={400} y={560} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.F + 1.6} until={K.Rg - 0.2} texto="dibujo nuestro, no la imagen original" x={360} y={1180} tam={24} borde={KC.texto} />
+      <Chip T={T} at={K.F + 1.6} until={K.Rg - 0.2} texto="dibujo nuestro, no la imagen original" x={360} y={1120} tam={24} borde={KC.texto} />
       <Cita T={T} at={K.F + 3.8} until={K.Rg - 0.2} y={540} texto="«La IA no es fotografía»" quien="Boris Eldagsen · 13 abr 2023 · rechazó el premio" />
       {/* 9 · la regla de 2025 */}
       <Escena T={T} a={K.Rg} b={K.C}>
@@ -359,15 +359,15 @@ function ConcursoArte() {
       {/* 10 · cierre: la misma pared */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        <div style={{ position:'absolute', left:0, right:0, top:1215, height:40, background:'#c99a1a', borderTop:`6px solid ${KC.ink}` }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:1080, height:24, background:'#c99a1a', borderTop:`6px solid ${KC.ink}` }}></div>
         {svg(<>
-          <Cuadro x={190} y={980} s={0.95} tipo="bodegon" id="c1" />
-          <Cuadro x={540} y={980} s={0.95} tipo="paisaje" id="c2" />
-          <Cuadro x={890} y={980} s={0.95} tipo="teatro" id="c3" T={T} />
+          <Cuadro x={190} y={900} s={0.95} tipo="bodegon" id="c1" />
+          <Cuadro x={540} y={900} s={0.95} tipo="paisaje" id="c2" />
+          <Cuadro x={890} y={900} s={0.95} tipo="teatro" id="c3" T={T} />
         </>)}
-        <ManoHumana T={T} at={K.C + 1.6} x={190} y={720} partes={[{ v: 1, c: KC.leaf }]} etiqueta="a mano" />
-        <ManoHumana T={T} at={K.C + 2.0} x={540} y={720} partes={[{ v: 1, c: KC.leaf }]} etiqueta="a mano" />
-        <ManoHumana T={T} at={K.C + 2.6} x={890} y={720} partes={[{ v: 0.75, c: '#9aa6bd', rayas: true }, { v: 0.25, c: AZUL }]} etiqueta="IA + retoques" />
+        <ManoHumana T={T} at={K.C + 1.6} x={190} y={685} partes={[{ v: 1, c: KC.leaf }]} etiqueta="a mano" />
+        <ManoHumana T={T} at={K.C + 2.0} x={540} y={685} partes={[{ v: 1, c: KC.leaf }]} etiqueta="a mano" />
+        <ManoHumana T={T} at={K.C + 2.6} x={890} y={685} partes={[{ v: 0.75, c: '#9aa6bd', rayas: true }, { v: 0.25, c: AZUL }]} etiqueta="IA + retoques" />
       </Escena>
       <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="¿cuánto puso la mano humana?" x={330} y={470} tam={34} borde={KC.pink} />
 
