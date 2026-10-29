@@ -20,7 +20,7 @@
 | 6 | Pregunta | ¿Y cómo un hongo se siente como carne? | **Re-gancho.** "?" gigante sobre la milanesa; Robert grande, pensativo. |
 | 7 | Hifas | Por sus hifas: hilos de unas cuatro milésimas de milímetro de grueso. | **AL MICROSCOPIO** (fondo oscuro): hifas largas y poco ramificadas, con tabiques. Barra de escala 5 µm. Medidor "3–5 µm de grueso". |
 | 8 | Fibras | Juntas forman fibras parecidas a las del músculo, y suelen pegarse con clara de huevo. | Las hifas se acomodan en haces paralelos; al lado, un haz de fibras de músculo (esquema) para comparar. Gotitas blancas "clara de huevo" que las unen. |
-| 9 | Estudio | En 2020, en la Universidad de Exeter, Inglaterra, veinte hombres jóvenes que hacían pesas tomaron micoproteína o proteína de leche. | Tarjeta "2020 · Universidad de Exeter, Reino Unido · 20 hombres jóvenes · *Am J Clin Nutr*" y chip "una sola toma · igual leucina, más proteína en la de hongo". Aparecen 20 figuras con pesas, divididas en dos grupos: vaso "micoproteína" y vaso "leche". |
+| 9 | Estudio | En 2020, en la Universidad de Exeter, Inglaterra, veinte hombres jóvenes que hacían pesas tomaron micoproteína o proteína de leche. | Tarjeta "2020 · Universidad de Exeter, Reino Unido · 20 hombres jóvenes · *Am J Clin Nutr*" y chip "una sola toma · igual leucina, más proteína en la de hongo". Aparecen 20 figuras con pesas, en dos grupos de 10 con su color: "micoproteína" (dorado) y "leche" (azul). |
 | 10 | Musculo | Con micoproteína, su músculo aceleró más la fabricación de proteína que con leche. | Dos barras de "aumento en la fabricación de proteína del músculo": la de micoproteína sube más que la de leche. Chip "en ese estudio · una sola toma · igual leucina, más proteína en la de hongo". |
 | 11 | Quitina | Y un tercio de su fibra es quitina, la misma que hay en el caparazón del camarón. | Pastel de la fibra: 1/3 "quitina", 2/3 "β-glucanos". Aparece un camarón con su caparazón resaltado "quitina". |
 | 12 | Cierre | Así que esa milanesa no es de pollo: es un hongo del suelo, hilo por hilo. | **Regreso a la imagen del inicio:** el mismo plato y la misma milanesa, ahora dibujada por dentro con sus hilos de hongo. Chip "hongo del suelo, hilo por hilo". |
@@ -28,7 +28,27 @@
 
 **Música:** cama grave y continua, cálida (cocina), sin golpe marcado; efectos en el mismo cuadro (crujido del tenedor al cortar, golpe del sello, tics del contador, burbujas del tanque, tic-tac del cronómetro y "pop" de cada duplicación, siseo del calor, zumbido del microscopio, "cierre" de los haces, tics de las 20 figuras, subida de las barras, clic del caparazón).
 
-Barra de escala: 5 cm (milanesa), 10 cm (corte de suelo), tanque sin barra de medida, con la nota "esquemático, no a escala", 5 µm (hifas), 50 µm (haces de fibras).
+Barra de escala: 5 cm (milanesa), 10 cm (cajas de Petri y suelo), tanque y calor sin barra de medida, con la nota "esquemático, no a escala", 5 µm (hifas), 50 µm (haces de hifas; el músculo es esquema), 5 cm (cierre).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y cómo un hongo se siente como carne?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «esa milanesa no es de pollo: es de hongo» (cuadro 0) |
+| 2 | 8.8 | 12.5 | 13_senalando_arriba | `arriba-der` | señala las cajas de Petri: «más de 3,000 microbios» |
+| 3 | 17.2 | 19.4 | 04_bajando_lentes | `arriba-der` | «duplica su masa en unas cuatro horas» |
+| 4 | 20.0 | 25.3 | 12_perfil_serio | `arriba-der` | «años de pruebas mostraron que es seguro comerlo» |
+| 5 | 25.5 | 28.4 | 07_pensativo_puno | `grande` | «¿y cómo un hongo se siente como carne?» |
+| 6 | 32.4 | 36.6 | 13_senalando_arriba | `arriba-der` | señala los haces: «fibras parecidas a las del músculo» |
+| 7 | 39.8 | 44.0 | 06_pensativo_menton | `arriba-der` | el estudio de Exeter (micoproteína o leche) |
+| 8 | 44.6 | 48.7 | 11_sorprendido | `arriba-der` | «aceleró más la fabricación de proteína» |
+| 9 | 49.3 | 53.5 | 05_sonriendo_dientes_uniformes | `arriba-der` | «la misma que hay en el caparazón del camarón» |
+| 10 | 54.1 | 57.9 | 02_apuntando_camara | `arriba-der` | «es un hongo del suelo, hilo por hilo» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **39.0 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 

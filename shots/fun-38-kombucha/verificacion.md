@@ -39,5 +39,3 @@ Fuentes abiertas:
 | 14 | Barras de escala: 10 µm (levaduras y bacterias), 1 nm (cadena, esquema) | ✅ | [FLO] | Las células de *Komagataeibacter* miden ~2 µm de largo ([FLO]); escala de la cadena marcada como esquema. | 2016 |
 
 Resumen: se corrigieron las filas 5b, 10, 10b, 11 y 11b (el placebo también bajó el azúcar y la diferencia no fue significativa; ahora se dice en voz y pantalla) y se revisaron los recortes de las filas 6, 7 y 13. Todas las afirmaciones quedaron ✅. El dibujo es esquemático. No es consejo médico.
-
-VEREDICTO: APROBADO
