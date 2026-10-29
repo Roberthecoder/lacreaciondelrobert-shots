@@ -48,7 +48,9 @@ Tiempos aproximados del estimador: Gancho 0–6.4 · Que 6.4–10.2 · Gas 10.2�
    > "The green ring is harmless and occurs when eggs have been cooked for too long or at too high a temperature." · "The American Egg Board suggests that you cook eggs in hot, not boiling, water, and then cool immediately to minimize the green ring."
 5. **Sulfuro de hidrógeno = gas con olor a huevo podrido** — ATSDR/CDC. "ToxFAQs for Hydrogen Sulfide" (página revisada el 28 oct 2024). wwwn.cdc.gov/TSP/ToxFAQs/ToxFAQsDetails.aspx?faqid=388&toxid=67
    > "Hydrogen sulfide is a flammable, colorless gas that smells like rotten eggs."
-6. **"Proteínas con azufre" de la clara** — Tinkler y Soar 1920 (arriba): "a sulphur compound of the egg white" y "this element is evidently in less stable combination in the latter [the white]"; y p. 114 "the yolk of egg contains iron, probably in combination with proteins". (Pendiente que el verificador confirme con una fuente moderna que el azufre de la clara está en aminoácidos de sus proteínas; si no, la frase se cambia a "La clara tiene azufre".)
+6. **"Proteínas con azufre" de la clara (el H₂S sale de sus proteínas)** — Takahashi M., Handa A., Yamaguchi Y., Kodama R., Chiba K. "Anodic Oxidative Modification of Egg White for Heat Treatment." *J Agric Food Chem* 64(34):6503–7 (2016). PMID 27518910 · DOI 10.1021/acs.jafc.6b02785.
+   > "The method involves electron transfer from thiol groups of egg white protein to form disulfide bonds. The oxidized egg white produced less hydrogen sulfide during heat treatment"
+   Y Tinkler y Soar 1920: "a sulphur compound of the egg white" (p. 119) · "the yolk of egg contains iron, probably in combination with proteins" (p. 114).
 
 ## Notas
 - El dibujo es esquemático (moléculas, granos de FeS, la membrana y las capas no están a escala).
