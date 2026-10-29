@@ -9,7 +9,7 @@
     },
     {
       "escena": "Sodio",
-      "texto": "El metal es el sodio: blando como cera; en el agua suelta hidrógeno, que puede arder."
+      "texto": "El metal es el sodio, blando como cera: en agua suelta hidrógeno, que puede arder."
     },
     {
       "escena": "Cloro",
@@ -33,7 +33,7 @@
     },
     {
       "escena": "Davy",
-      "texto": "Separarlos cuesta: en 1807, en Londres, Humphry Davy aisló el sodio por primera vez con electricidad."
+      "texto": "El sodio nunca anda suelto en la naturaleza: en 1807, en Londres, Humphry Davy lo aisló con electricidad."
     },
     {
       "escena": "Ypres",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esa sal no es un polvito inocente: es un metal y un veneno convertidos en cubos tranquilos."
+      "texto": "Así que esa sal no es un polvito inocente: es un metal y un veneno vueltos cubos tranquilos."
     }
   ]
 }
