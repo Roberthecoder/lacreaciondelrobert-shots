@@ -34,3 +34,22 @@
 3. **#10 (⚠️) "por eso junto al mar todo se oxida más"** — generaliza a todos los metales y a cualquier distancia. Propuesta: **"por eso junto al mar el hierro se oxida más."**
 4. **#1 (⚠️, menor) "está volviendo a ser la piedra de la que salió" / "vuelve a ser piedra"** — es metáfora: el óxido de la reja (Fe₂O₃·nH₂O, oxihidróxidos) no es la misma hematita de la mina. Para que no se lea como dato literal, propuesta: gancho **"Esa reja no se está ensuciando: se está volviendo otra vez óxido, como la piedra de la que salió."** y cierre **"…poco a poco, vuelve a ser casi la misma piedra."** Si se conserva la metáfora tal cual, dejar la aclaración en pantalla (chip "óxido de hierro") y en la descripción, como ya prevé el guion.
 5. Opcional (#16): "un pilar de hierro de **más de** 1600 años" — la cifra "1600 años" es de 2002 (hoy serían unos 24 años más; la edad exacta no se verificó aparte).
+
+## Re-verificación (29 oct 2026)
+
+Mismo agente verificador; revisé las líneas que cambiaron en `narracion.json` y en `guion.md`, contra las mismas fuentes de arriba.
+
+| Escena | Texto nuevo | Veredicto | Sustento |
+|---|---|---|---|
+| Gancho | "…está regresando a ser óxido, como la piedra de donde salió." | ✅ | El óxido es óxido de hierro hidratado (OpenStax 17.6: "an iron(III) oxide hydrate known as rust"); la piedra de la que sale es óxido de hierro (USGS 2019: "Two iron oxides—hematite (Fe2O3) and magnetite (Fe3O4)—are the primary iron ore minerals"). Ya no dice que sea la misma piedra. |
+| Mina | "En las rocas de la Tierra, el hierro casi siempre está oxidado; un alto horno le quita el oxígeno…" | ✅ | OpenStax 19.1: "occurs on earth almost exclusively in oxidized forms" · "The carbon monoxide serves as the reducing agent". Ya no incluye el núcleo metálico. |
+| Receta | "…para oxidarse necesita oxígeno y agua juntos." | ✅ | OpenStax 17.6: "Iron will rust when it is exposed to oxygen and water." |
+| Sal | "…atrapa humedad y hace el agua más conductora; junto al mar el hierro se oxida más." | ✅ | Alcántara et al. 2017 (#7–#10): "the increase in the ionic conductivity of the aqueous adlayer…", "hygroscopic sea salt aerosols that absorb moisture", "airborne salt in coastal regions promotes a marked increase in AC rates". |
+| Poroso | "El óxido tiene grietas y poros: se descarapela, deja hierro nuevo al aire…" | ✅ | Igual que #11 y #12. |
+| Aluminio | "…su capa es delgadísima, pegada, y lo protege." | ✅ | Igual que #14 (Maurice y Marcus: "well adherent barrier, most commonly only a few nanometers thick"). |
+| Pilar | "…un pilar de hierro de más de 1600 años resiste la corrosión." | ✅ | Balasubramaniam 2002: "the 1600-year-old Delhi iron pillar" (dato de 2002, así que hoy tiene más). El contador en pantalla dice "1600 años": conviene que diga "+1600 años" para que coincida con la voz (no es un error). |
+| Estudio | "En 2002, Balasubramaniam, en Kanpur, explicó que su fósforo ayuda a formar una capa compacta protectora." | ✅ | Balasubramaniam 2002: "The presence of P at the metal–scale interface promotes protective film formation processes…" · "forms as an adherent compact layer… catalysed by the presence of phosphorus". |
+| Costo | "Y en 2016 se calculó que la corrosión cuesta al mundo 2.5 billones de dólares al año." | ✅ | NACE IMPACT 2016: "The global cost of corrosion is estimated to be US$2.5 trillion" (anual, 3.4 % del PIB de 2013). |
+| Cierre | "…poco a poco regresa a ser óxido, como en la mina." | ✅ | Igual que el gancho. La flecha "Fe → Fe₂O₃" en pantalla es una simplificación del dibujo (el óxido real es Fe₂O₃·nH₂O); se aclara en la descripción. |
+
+Las cuatro ⚠️ quedaron corregidas y el cambio opcional (#16) también se aplicó. No hay afirmaciones nuevas sin fuente.
