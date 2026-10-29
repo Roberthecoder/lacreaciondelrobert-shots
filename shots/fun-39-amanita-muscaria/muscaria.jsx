@@ -344,8 +344,8 @@ function MuscariaShot() {
       <Chip T={T} at={K.Mx + 1.9} until={K.R - 0.3} texto="bosque de pino y encino" x={300} y={1110} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.R + 0.2} until={K.P - 0.3} texto="AL MICROSCOPIO · raíz de pino" x={420} y={420} tam={32} borde={KC.mint} mono />
       <Etq T={T} at={K.R + 1.0} until={K.P - 0.3} x={40} y={520} texto="hifas del hongo" tam={34} color={FK.hifa} />
-      <Etq T={T} at={K.R + 1.6} until={K.P - 0.3} x={1030} y={1170} texto="nutrientes → árbol" lado="izq" tam={34} color={KC.mint} />
-      <Etq T={T} at={K.R + 2.0} until={K.P - 0.3} x={40} y={1110} texto="azúcares → hongo" tam={34} color={KC.pink} />
+      <Etq T={T} at={K.R + 1.6} until={K.P - 0.3} x={1030} y={1120} texto="nutrientes → árbol" lado="izq" tam={34} color={KC.mint} />
+      <Etq T={T} at={K.R + 2.0} until={K.P - 0.3} x={40} y={1040} texto="azúcares → hongo" tam={34} color={KC.pink} />
       <Chip T={T} at={K.Tx + 0.2} until={cocina - 0.3} texto="AL MICROSCOPIO · sinapsis" x={400} y={420} tam={32} borde={KC.lilac} mono />
       <Etq T={T} at={K.Tx + 0.8} until={K.Tx + 2.0} x={40} y={1110} texto="ácido iboténico ≈ glutamato → excita" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.Tx + 2.2} until={cocina - 0.3} x={40} y={1110} texto="muscimol ≈ GABA → frena" tam={30} color={KC.cyan} />

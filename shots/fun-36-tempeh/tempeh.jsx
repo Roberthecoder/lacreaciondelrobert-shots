@@ -230,7 +230,7 @@ function TempehShot() {
         {fsvg(<>
           <SuperficieGrano y0={1060} />
           {SPO.map(([sx, sy], i) => { const t0 = K.H + 0.7 + i * 0.35; const g = kprog(T, t0 + 0.4, K.A - 0.2); return <g key={i}>
-            {g > 0 && <RedHifas T={T} x={sx} y={sy} g={g} seed={4 + i * 3} n={140} escala={0.3} ancho={11} color={FK.hifa} circ={true} brillo={0.4} />}
+            {g > 0 && <RedHifas T={T} x={sx} y={sy} g={g} seed={4 + i * 3} n={140} escala={0.3} ancho={24} color={FK.hifa} circ={true} brillo={0.4} />}
             <Espora x={sx} y={sy} r={17} hincha={kprog(T, t0, t0 + 0.5)} />
           </g>; })}
         </>)}
@@ -316,7 +316,7 @@ function TempehShot() {
           {/* medidor de ácido fítico (cualitativo) */}
           <g transform="translate(140 470)">
             <rect x={0} y={0} width={500} height={44} rx={22} fill="rgba(255,255,255,.12)" stroke={KC.texto} strokeWidth={4} />
-            <rect x={6} y={6} width={488 * (1 - 0.65 * kprog(T, K.F + 0.9, K.F + 3.0))} height={32} rx={16} fill={KC.orange} />
+            <rect x={6} y={6} width={488 * (1 - 0.53 * kprog(T, K.F + 0.9, K.F + 3.0))} height={32} rx={16} fill={KC.orange} />
           </g>
         </>)}
       </Escena>
@@ -436,10 +436,10 @@ function TempehShot() {
       <BarraEscala T={T} at={K.H} until={K.A} texto="50 µm" largo={200} />
       <BarraEscala T={T} at={K.A} until={amA} texto="1 mm" largo={200} />
       <BarraEscala T={T} at={amA} until={K.P} texto="1 cm" largo={90} />
-      <BarraEscala T={T} at={K.En} until={K.F} texto="1 nm" largo={140} />
-      <BarraEscala T={T} at={K.F} until={K.Et} texto="0.2 nm" largo={140} />
+      <BarraEscala T={T} at={K.En} until={K.F} texto="esquema, no a escala" largo={0} />
+      <BarraEscala T={T} at={K.F} until={K.Et} texto="esquema, no a escala" largo={0} />
       <BarraEscala T={T} at={K.Et} until={K.B} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.B} until={baA} texto="5 cm" largo={110} />
+      <BarraEscala T={T} at={K.B} until={baA} texto="5 cm" largo={210} />
       <BarraEscala T={T} at={baA} until={K.Bl} texto="5 µm" largo={110} />
       <BarraEscala T={T} at={K.Bl} until={blA} texto="5 cm" largo={110} />
       <BarraEscala T={T} at={blA} until={K.C} texto="100 µm" largo={200} />
