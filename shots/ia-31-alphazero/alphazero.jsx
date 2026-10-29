@@ -261,7 +261,7 @@ function AlphaZero() {
         <FondoLunares color={KC.pink} />
         {svg(<>
           <Tablero {...TB} resalta={T > K.Ap + 2.7 ? [{ sq: 'c4' }, { sq: 'd4' }, { sq: 'd5' }] : []}><Piezas T={T} {...TB} movs={qg} /></Tablero>
-          <MiniGrafica T={T} at={K.Ap + 1.6} x={100} y={470} w={560} h={120} titulo="% de partidas en que la elegía · esquemático" />
+          <MiniGrafica T={T} at={K.Ap + 1.6} x={100} y={470} w={510} h={120} titulo="% de partidas en que la elegía · esquemático" />
         </>)}
       </Escena>
       <Chip T={T} at={K.Ap + 0.4} until={K.Ch - 0.2} texto="Gambito de Dama · 1. d4 d5 2. c4" x={540} y={690} tam={34} borde={KC.ink} />
@@ -290,7 +290,7 @@ function AlphaZero() {
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="saber dónde mirar ✔" x={330} y={520} tam={44} borde={KC.leaf} />
 
       {/* capítulos (al lado del logo, para no chocar con Robert) */}
-      <Capitulo T={T} x={190} y={196} hasta={K.Ou} caps={[{ at: K.R, titulo: 'Solo las reglas' }, { at: K.A, titulo: 'Contra sí misma' }, { at: K.D, titulo: 'El duelo' }]} />
+      <Capitulo T={T} x={190} y={196} hasta={K.Ou} caps={[{ at: K.R, titulo: 'Solo las reglas' }, { at: K.A, titulo: 'Contra sí misma' }, { at: K.M, titulo: 'Por dentro' }, { at: K.D, titulo: 'El duelo' }]} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="Mil veces menos posiciones… *y aun así ganó.*" />
