@@ -14,7 +14,7 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa planta no es un purificador de aire: para igualar la ventilación normal, harían falta hasta mil por metro cuadrado. | Cuadro 0: una planta en maceta en una sala (fondo menta); sobre ella un chip "purificador de aire" que se tacha. Un cuadro de 1 m² en el piso se llena de macetitas a toda velocidad: contador "hasta 1,000 / m²". |
-| 1 | Mito | El mito viene de un experimento de la NASA de 1989, pensado para bases espaciales selladas. | `MitoTachado` "las plantas limpian tu casa". Tarjeta "NASA · 1989 · Stennis Space Center" y una base espacial esquemática cerrada. |
+| 1 | Mito | El mito viene de un experimento de la NASA de 1989, pensado para espacios sellados, como futuras bases espaciales. | `MitoTachado` "las plantas limpian tu casa". Tarjeta "NASA · 1989 · Stennis Space Center" una base espacial y un edificio hermético, esquemáticos y cerrados. |
 | 2 | Caja | Metían una planta en una caja sellada de menos de un metro cúbico, con benceno o formaldehído, por veinticuatro horas. | La cámara de acrílico (cubo transparente con tornillos y mariposas en la tapa, foco de cultivo alrededor); una jeringa inyecta un gas; `Cronometro` 0 → 24 h. Etiqueta "0.76 m" en las aristas; chip "< 1 m³". |
 | 3 | Pregunta | Y en la cajita el químico bajaba. ¿Por qué no pasa en tu sala? | **Re-gancho.** Medidor del químico dentro de la caja que baja. Luego "?" gigante; la caja se aleja y aparece la sala. Robert grande. |
 | 4 | Sala | Porque tu casa no está sellada: el aire de afuera se cuela por puertas, ventanas y rendijas. | Corte transversal de una sala con flechas de aire entrando por la puerta, la ventana y rendijas (esquema). |
