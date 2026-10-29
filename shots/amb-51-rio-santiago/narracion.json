@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Rio Santiago base narrada.dc.html",
+  "salida": "Shot Rio Santiago narrado.dc.html",
+  "nota": "Shot Ambiental #51. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es nieve: es espuma del río Santiago, en Jalisco."
+    },
+    {
+      "escena": "Origen",
+      "texto": "Nace en el Lago de Chapala y corre más de quinientos sesenta kilómetros."
+    },
+    {
+      "escena": "Corredor",
+      "texto": "Río abajo recibe aguas residuales de la ciudad y del corredor industrial de El Salto."
+    },
+    {
+      "escena": "Cascada",
+      "texto": "Ahí cae por la cascada que llamaban el Niágara mexicano, que la bate como lavadora."
+    },
+    {
+      "escena": "Burbujas",
+      "texto": "Trae detergentes: moléculas que se pegan entre el agua y el aire y atrapan burbujas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué más viene en esa agua?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2011, un estudio federal halló mil noventa sustancias y metales en el río y sus descargas."
+    },
+    {
+      "escena": "Microbios",
+      "texto": "Arsénico y plomo arriba de la norma de entonces, y contaminación por microbios en todo el río."
+    },
+    {
+      "escena": "Salud",
+      "texto": "En 2020, la CIDH pidió proteger la salud de quien vive hasta a cinco kilómetros del río en El Salto y Juanacatlán. Hasta 2022, no se había probado que cause las enfermedades renales de la zona."
+    },
+    {
+      "escena": "Planta",
+      "texto": "Ya ampliada, la planta El Ahogado puede tratar hasta tres mil doscientos cincuenta litros por segundo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Y mientras siga llegando agua sucia, esta nieve seguirá cayendo."
+    }
+  ]
+}
