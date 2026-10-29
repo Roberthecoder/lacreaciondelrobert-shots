@@ -86,7 +86,7 @@ Es la marca del canal: entra desde el cuadro 0, vuelve cada 5–7 s y nunca tapa
 | 0,0 – 4,2 | sorprendido (11) | gancho | «lo espeso de ese aderezo… es obra de una bacteria» |
 | 9,1 – 12,2 | serio (10) | arriba-der | «la de la pudrición negra de la col» |
 | 16,3 – 19,9 | señalando (13) | izq-alto | señala el tanque: «la crían en tanques con azúcar» |
-| 26,3 – 29,4 | pensativo (06) | **grande** | re-gancho: «¿y cómo espesa tanto con tan poquito?» |
+| 26,3 – 29,4 | pensativo (06) | arriba-der | re-gancho: «¿y cómo espesa tanto con tan poquito?» |
 | 34,1 – 37,6 | bajando lentes (04) | arriba-der | «se enredan en una red que frena el agua» |
 | 38,2 – 41,7 | pensativo con puño (07) | izq-alto | el frasco que se agita y se vuelve a espesar |
 | 46,3 – 48,7 | sonriendo (05) | arriba-der | el sello de 1969: «la aprobaron para alimentos» |

@@ -370,7 +370,7 @@ function ROBERT_X(C, x) {
     [C.Gancho - 0.45, C.Gancho + 4.2, 'avatar_11_sorprendido', 'gancho'],
     [C.Col + 0.6, x.C2 - 0.3, 'avatar_10_serio_molesto', 'arriba-der'],
     [C.Tanque + 0.3, C.Alcohol - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
-    [C.Pregunta + 0.05, C.Cadena + 0.6, 'avatar_06_pensativo_menton', 'grande'],
+    [C.Pregunta + 0.05, C.Cadena + 0.6, 'avatar_06_pensativo_menton', 'arriba-der'],
     [C.Red + 0.3, C.Agitar - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
     [C.Agitar + 0.4, C.Estudio - 0.2, 'avatar_07_pensativo_puno', 'izq-alto'],
     [x.Es2 + 0.1, C.Dato - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],

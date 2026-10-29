@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese polvito de tu sopa instantánea no salió de un alga: lo hizo una bacteria."
+      "texto": "El glutamato de tu sopa instantánea no salió de un alga: lo hizo una bacteria."
     },
     {
       "escena": "Kombu",
@@ -13,7 +13,7 @@
     },
     {
       "escena": "Tanque",
-      "texto": "Hoy se hace en tanques, con una bacteria en forma de mazo que come azúcar o almidón."
+      "texto": "Hoy se hace en tanques, con una bacteria en forma de mazo que come azúcar."
     },
     {
       "escena": "PorDentro",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 1957, Shukuo Kinoshita y su equipo, en Tokio, probaron bacterias, levaduras y hongos."
+      "texto": "En 1957, Shukuo Kinoshita y su equipo, en Tokio, publicaron una prueba con bacterias, levaduras y hongos."
     },
     {
       "escena": "Campeona",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese polvito no viene del mar: viene de una bacteria."
+      "texto": "Así que ese glutamato no viene del mar: viene de una bacteria."
     }
   ]
 }

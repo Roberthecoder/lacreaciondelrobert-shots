@@ -1,30 +1,36 @@
-# Shot Biotecnológico #20 · El polvito de tu sopa lo hace una bacteria (glutamato monosódico)
+# Shot Biotecnológico #20 · El glutamato de tu sopa lo hace una bacteria
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #20 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (el tanque y, con la `Lupa`, la bacteria por dentro: azúcar → glutamato → canalitos) + N2 "El número" (cierra con el número gigante de toneladas al año).
-- **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el sobre de sopa instantánea que se ve en pantalla.
+- **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre los cristalitos de glutamato del sobre de sopa instantánea que se ve en pantalla.
 - **Duración:** narrada 61.5 s (voz ~58 s + cierre 3.5 s).
-- **Viaje:** macro (la sopa instantánea humeando en la mesa) → el tanque de fermentación → micro (dentro de *Corynebacterium glutamicum*: el azúcar se vuelve glutamato y sale por canalitos de la membrana) → la misma sopa del inicio, ahora con "hecho por bacterias" en el polvito.
+- **Viaje:** macro (la sopa instantánea humeando en la mesa) → el tanque de fermentación → micro (dentro de *Corynebacterium glutamicum*: el azúcar se vuelve glutamato y sale por canalitos de la membrana) → la misma sopa del inicio, ahora con el sello "hecho por bacterias" sobre los cristalitos de glutamato.
 - **Mitos de salud:** no se menciona el "síndrome del restaurante chino" ni ningún efecto en la salud.
 
-## Versión narrada (907 caracteres, ~167 palabras, ~58 s de voz)
+## Versión narrada (917 caracteres, ~168 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese polvito de tu sopa instantánea no salió de un alga: lo hizo una bacteria. | Fondo amarillo. **Cuadro 0:** se rompe el sobrecito y cae el polvo blanco (cristalitos) sobre la sopa que humea. `MitoTachado` sobre un alga: "¿de un alga?". |
+| 0 | Gancho | El glutamato de tu sopa instantánea no salió de un alga: lo hizo una bacteria. | Fondo amarillo. **Cuadro 0:** se rompe el sobrecito y caen cristalitos blancos rotulados "glutamato" sobre la sopa que humea. `MitoTachado` sobre un alga: "¿de un alga?". |
 | 1 | Kombu | En 1908, Kikunae Ikeda lo halló en un caldo de alga kombu y llamó umami a su sabor. | Fondo menta: una olla con una tira de alga kombu (lámina ancha, café verdosa), vapor; de la olla salen cristalitos. Chip "1908 · umami". |
-| 2 | Tanque | Hoy se hace en tanques, con una bacteria en forma de mazo que come azúcar o almidón. | Fondo cian: un tanque de fermentación grande con agitador girando y burbujas; entran caña de azúcar y una mazorca (almidón). Aparece la bacteria: bastón con un extremo más grueso (mazo). Etiqueta "bacteria · *Corynebacterium glutamicum*". |
+| 2 | Tanque | Hoy se hace en tanques, con una bacteria en forma de mazo que come azúcar. | Fondo cian: un tanque de fermentación grande con agitador girando y burbujas; entran caña de azúcar y una mazorca, con la etiqueta "azúcar". Aparece la bacteria: bastón con un extremo más grueso (mazo). Etiqueta "bacteria · *Corynebacterium glutamicum*". |
 | 3 | PorDentro | Por dentro, convierte el azúcar en glutamato, el mismo del tomate y el queso. | **`Lupa`** "POR DENTRO · la bacteria" sobre la ventana del tanque, fondo oscuro: hexágonos de azúcar entran y salen moléculas de glutamato. A un lado, un tomate y una rebanada de queso con la misma molécula. Barra de escala ~2 µm. |
 | 4 | Biotina | El truco: le das muy poquita biotina, una vitamina, y su membrana cambia. | Un gotero suelta una sola gotita "biotina (vitamina B7)"; la membrana de la bacteria se tensa (ondula). `Medidor` de biotina casi vacío. |
 | 5 | Canal | Se abren unos canalitos y el glutamato sale a chorros al caldo. | En la membrana se abren poros (canales) y el glutamato sale en chorro al caldo. |
 | 6 | Pregunta | ¿Y quién descubrió a esta bacteria? | **Re-gancho.** La bacteria sola con un signo de interrogación. |
 | 7 | Antes | Antes, el polvo se sacaba deshaciendo proteínas de plantas con ácido. | Fondo rosa: trigo/soya en un matraz con ácido que burbujea y deshace cadenitas de proteína. Chip "desde 1909". |
-| 8 | Estudio | En 1957, Shukuo Kinoshita y su equipo, en Tokio, probaron bacterias, levaduras y hongos. | `TarjetaEstudio` "1957 · Tokio · Kinoshita, Udaka y Shimono": una fila de cajas de Petri con distintos microbios (bacterias, levaduras, hongos). |
+| 8 | Estudio | En 1957, Shukuo Kinoshita y su equipo, en Tokio, publicaron una prueba con bacterias, levaduras y hongos. | `TarjetaEstudio` "1957 · Tokio · Kinoshita, Udaka y Shimono · publicado": una fila de cajas de Petri con distintos microbios (bacterias, levaduras, hongos). |
 | 9 | Campeona | Ganó una bacteria nueva: de cada cuatro glucosas sacaba un glutamato. | Una caja de Petri brilla; contador visual: entran 4 hexágonos de glucosa → sale 1 glutamato (se repite). |
-| 10 | Caca | Y vivía en tierra con caca de pájaro. | Una paloma pasa, deja caer su "regalito" en tierra; la Lupa muestra la bacteria ahí. |
+| 10 | Caca | Y vivía en tierra con caca de pájaro. | Un pájaro genérico pasa (rótulo "probablemente paloma"), deja caer su "regalito" en tierra; la Lupa muestra la bacteria ahí. |
 | 11 | Numero | Hoy hace más de tres millones y medio de toneladas de glutamato de sodio al año. | `NumeroGigante` "3.5 millones de toneladas · al año". Montaña de costales. |
-| 12 | Cierre | Así que ese polvito no viene del mar: viene de una bacteria. | **Regreso a la sopa del inicio**: el polvito ahora con un sello "hecho por bacterias". |
+| 12 | Cierre | Así que ese glutamato no viene del mar: viene de una bacteria. | **Regreso a la sopa del inicio**: los cristalitos de glutamato ahora con un sello "hecho por bacterias". |
 | — | Outro | (sin voz) | Cierre de marca con Robert. |
+
+## Corrección del 29 oct 2026 (verificación independiente, ver `verificacion.md`)
+- Gancho y cierre dicen **"el glutamato"**, no "el polvito": el sobre es sobre todo sal y otros saborizantes; solo el glutamato sale de la bacteria. Los cristalitos van rotulados "glutamato".
+- La bacteria "come azúcar" (no almidón: la cepa silvestre no lo usa directo; en la industria se rompe antes a glucosa).
+- El estudio se dice como **publicado en 1957** (las fuentes no coinciden en si la búsqueda fue en 1956 o 1957).
+- El pájaro de la tierra es genérico, con rótulo "probablemente paloma".
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Narrada:** cama grave continua, sin golpe, debajo de la voz.
@@ -32,11 +38,11 @@
 - **Efectos en el mismo cuadro:** sobre que se rompe (rasgado), polvo que cae (arenita), vapor de la olla (siseo), burbujas del tanque (blub), la Lupa que se abre (barrido), gotita de biotina (plic), canalitos que se abren (pop + chorro), cajas de Petri (clic de vidrio), paloma (aleteo + "plop"), costales (golpe sordo), sello final (golpe).
 
 ## Descripción (para publicar)
-"Ese polvito de tu sopa instantánea no salió de un alga: lo hizo una bacteria. 🍜🦠
+"El glutamato de tu sopa instantánea no salió de un alga: lo hizo una bacteria. 🍜🦠
 
 En **1908**, el químico japonés **Kikunae Ikeda** descubrió que lo que le daba su sabor tan rico al caldo de alga **kombu** era el **glutamato**, y a ese sabor lo llamó **umami**. Desde 1909 se vendió como polvo (glutamato monosódico), pero al principio se sacaba deshaciendo **proteínas de plantas con ácido clorhídrico**.
 
-En **1957**, **Shukuo Kinoshita**, Shigezo Udaka y Masakazu Shimono, del laboratorio de Tokio de la empresa Kyowa, probaron bacterias, levaduras y hongos para ver cuál hacía más glutamato a partir de azúcar. Ganó una bacteria nueva —hoy *Corynebacterium glutamicum*, con forma de mazo—: de cada **mol de glucosa sacaba 0.25 mol de glutamato**, o sea, uno por cada cuatro. La aislaron de **tierra contaminada con excremento de ave**.
+En un estudio publicado en **1957**, **Shukuo Kinoshita**, Shigezo Udaka y Masakazu Shimono, del laboratorio de Tokio de la empresa Kyowa, probaron bacterias, levaduras y hongos para ver cuál hacía más glutamato a partir de azúcar. Ganó una bacteria nueva —hoy *Corynebacterium glutamicum*, con forma de mazo—: de cada **mol de glucosa sacaba 0.25 mol de glutamato**, o sea, uno por cada cuatro. La aislaron de **tierra contaminada con excremento de ave**.
 
 El truco: si le das **muy poca biotina** (una vitamina), cambia su membrana y unos **canales** que responden a la tensión se abren y dejan salir el glutamato a chorros al caldo. Hoy se fabrica por fermentación de almidón, betabel, caña de azúcar o melaza, y esta bacteria produce **más de 3.5 millones de toneladas de glutamato de sodio al año** (VAAM, 2025). Es el mismo glutamato que traen el tomate y el queso.
 
