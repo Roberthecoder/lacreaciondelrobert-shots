@@ -8,7 +8,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Cada vez que buscas algo en internet, usas una idea de esta mujer."
+      "texto": "Cuando buscas algo en internet, muy probablemente usas una idea de esta mujer."
     },
     {
       "escena": "Busqueda",
@@ -24,7 +24,7 @@
     },
     {
       "escena": "Rara",
-      "texto": "Esa es la idea: entre menos documentos tengan una palabra, más vale cuando aparece."
+      "texto": "Esa es la idea: entre menos documentos tengan una palabra, más vale."
     },
     {
       "escena": "Repite",
@@ -56,7 +56,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que cada vez que buscas algo, Karen te ayuda: ella enseñó a medir qué palabras importan."
+      "texto": "Así que cuando buscas algo, muy probablemente Karen te ayuda: ella enseñó a medir qué palabras importan."
     }
   ]
 }
