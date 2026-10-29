@@ -5,15 +5,15 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa rayita no es tinta: son anticuerpos que atraparon una hormona."
+      "texto": "Esa rayita no es tinta: es oro pegado a anticuerpos que atraparon una hormona."
     },
     {
       "escena": "Implanta",
-      "texto": "Cuando un embrión se implanta en el útero, empieza a fabricar una hormona, la hCG."
+      "texto": "Cuando un embrión se implanta en el útero, su hormona, la hCG, entra a la sangre de la madre."
     },
     {
       "escena": "Orina",
-      "texto": "Pasa a la orina, y eso es lo que busca la prueba."
+      "texto": "De ahí pasa a la orina: eso es lo que busca la prueba."
     },
     {
       "escena": "Sube",
@@ -33,15 +33,15 @@
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y cómo sabes que la prueba sí funcionó?"
+      "texto": "¿Y cómo sabes que la prueba funcionó?"
     },
     {
       "escena": "Control",
-      "texto": "Por la línea de control: atrapa los anticuerpos que pasan de largo, haya hormona o no."
+      "texto": "Por la línea de control, que atrapa a los que pasan de largo, haya hormona o no."
     },
     {
       "escena": "Estudio",
-      "texto": "Son anticuerpos monoclonales, todos idénticos. En 1975, en Cambridge, Köhler y Milstein idearon cómo hacerlos fusionando células de ratón."
+      "texto": "Son monoclonales, todos idénticos. En 1975, en Cambridge, Köhler y Milstein idearon cómo hacerlos fusionando células de ratón."
     },
     {
       "escena": "Nobel",
@@ -49,11 +49,11 @@
     },
     {
       "escena": "Cabra",
-      "texto": "Y en muchas pruebas, la línea de control lleva anticuerpos de cabra que atrapan los de ratón."
+      "texto": "Y en muchas pruebas, esa línea lleva anticuerpos de cabra que atrapan los de ratón."
     },
     {
       "escena": "Cierre",
-      "texto": "Por eso esa segunda rayita no es tinta: son anticuerpos que atraparon una hormona."
+      "texto": "Por eso esa segunda rayita no es tinta: es oro pegado a anticuerpos que atraparon una hormona."
     }
   ]
 }
