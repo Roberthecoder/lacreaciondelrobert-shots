@@ -237,7 +237,8 @@ function CandidaShot() {
             <Raton x={220} y={570} s={kprog(T, K.Tx + 2.2, K.Tx + 2.6, kEase.rebote)} />
             <g transform="translate(400 530)"><Hifa x={0} y={0} ang={0} largo={150} ancho={22} paso={90} /></g>
             <path d="M 400 600 L 560 600" stroke={KC.ink} strokeWidth={0} />
-            <path d="M 450 500 L 520 570 M 520 500 L 450 570" stroke={KC.red} strokeWidth={12} strokeLinecap="round" opacity={kprog(T, K.Tx + 2.7, K.Tx + 3.0)} />
+            {/* la hifa sí se forma (Moyes 2016: "formed normal hyphae"); lo que falta es la toxina: se tacha la toxina, no la hifa */}
+            <g opacity={kprog(T, K.Tx + 2.7, K.Tx + 3.0)}><circle cx={592} cy={530} r={16} fill={KC.red} stroke={KC.ink} strokeWidth={3} /><path d="M 566 504 L 618 556 M 618 504 L 566 556" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" /></g>
           </g>}
         </>)}
       </Escena>
@@ -291,7 +292,7 @@ function CandidaShot() {
       <Chip T={T} at={K.Tr + 0.2} until={K.P - 0.3} texto="cambia de forma (dimorfismo)" x={420} y={440} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Fo + 0.3} until={K.P - 0.3} x={180} y={1010} texto="levadura (gemación)" tam={30} color={CA.lev} />
       <Etq T={T} at={K.Fo + 1.4} until={K.P - 0.3} x={640} y={980} texto="hifa" tam={36} color={KC.yellow} />
-      <Chip T={T} at={K.In - 0.2} until={K.Es - 0.2} texto="POR DENTRO · la piel de tu boca" x={360} y={440} tam={25} borde={KC.cyan} mono />
+      <Chip T={T} at={K.In - 0.2} until={K.Es - 0.2} texto="POR DENTRO · la mucosa de tu boca" x={360} y={440} tam={25} borde={KC.cyan} mono />
       <Etq T={T} at={K.In + 0.4} until={K.Es + 2.2} x={160} y={620} texto="levadura" tam={28} color={CA.lev} />
       <Etq T={T} at={K.In + 1.6} until={K.Pl - 0.3} x={600} y={850} texto="hifa" tam={30} color={KC.yellow} />
       <Etq T={T} at={K.In + 0.8} until={K.Pl - 0.3} x={60} y={1150} texto="células de tu boca" tam={28} color={KC.white} />
@@ -299,7 +300,7 @@ function CandidaShot() {
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2016" quien="Londres y Jena (Alemania)" revista="Moyes et al., Nature" x={540} y={480} />
       <Etq T={T} at={K.Es + 3.0} until={K.Pl - 0.3} x={700} y={960} texto="candidalisina" tam={32} color={KC.red} />
       <Chip T={T} at={K.Tx + 0.4} until={K.Tx + 2.1} texto="daña la membrana" x={400} y={560} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Tx + 2.9} until={K.Pl - 0.3} texto="sin toxina: no enfermaba la boca" x={350} y={385} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.Tx + 2.9} until={K.Pl - 0.3} texto="en ratones, sin toxina: no enfermaba la boca" x={350} y={385} tam={28} borde={KC.leaf} />
       <Etq T={T} at={K.Pl + 1.0} until={K.Q - 0.3} x={60} y={470} texto="algodoncillo" tam={44} color={KC.ink} />
       <Etq T={T} at={K.Pl + 1.4} until={K.Q - 0.3} x={60} y={530} texto="(candidiasis oral)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Pl + 3.0} until={K.Q - 0.3} x={60} y={590} texto="placas blancas" tam={30} color={KC.ink} />
@@ -318,7 +319,7 @@ function CandidaShot() {
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={140} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ca - 0.1} texto="Tú y tu pareja: *la misma levadura.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ca - 0.1} texto="Tú y tu pareja: *pueden traer la misma cepa.*" />
       <Subtitulo T={T} idx={1} at={K.Ca + 0.1} until={K.V - 0.1} texto="Boca, intestino y piel: *casi siempre sin molestar.*" />
       <Subtitulo T={T} idx={2} at={K.V + 0.1} until={K.Ab - 0.1} texto="Se cree que tus bacterias *la mantienen a raya.*" />
       <Subtitulo T={T} idx={3} at={K.Ab + 0.1} until={K.Tr - 0.1} texto="Un antibiótico fuerte *barre bacterias.*" />
@@ -329,7 +330,7 @@ function CandidaShot() {
       <Subtitulo T={T} idx={8} at={K.Es + 0.1} until={K.Tx - 0.1} texto="Una toxina: *la candidalisina.*" />
       <Subtitulo T={T} idx={9} at={K.Tx + 0.1} until={K.Pl - 0.1} texto="Daña la membrana *de tus células.*" />
       <Subtitulo T={T} idx={10} at={K.Pl + 0.1} until={K.Q - 0.1} texto="Placas blancas: *algodoncillo.*" />
-      <Subtitulo T={T} idx={11} at={K.Q + 0.1} until={K.Al - 0.1} texto="Recién nacidos, dentadura, antibióticos, *inhaladores.*" tam={54} />
+      <Subtitulo T={T} idx={11} at={K.Q + 0.1} until={K.Al - 0.1} texto="Recién nacidos, dentadura postiza, antibióticos, *inhaladores.*" tam={50} />
       <Subtitulo T={T} idx={12} at={K.Al + 0.1} until={K.C - 0.1} texto="Puede sentirse como *algodón en la boca.*" />
       <Subtitulo T={T} idx={13} at={K.C + 0.1} until={K.Ou - 0.1} texto="No es tu enemiga: *espera.*" />
 
