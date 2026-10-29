@@ -32,10 +32,26 @@ Verificador independiente (subagente que no escribió el guion), 29 oct 2026. Pu
 5. **Genoma 2006 en Marburgo:** ✅ Kämper et al., *Nature* 444: 97–101, Instituto Max Planck de Microbiología Terrestre, Marburgo. Quitar "completo".
    **Nombre:** desde 2016 (McTaggart et al., *IMA Fungus*) el nombre aceptado es *Mycosarcoma maydis*; *Ustilago maydis* sigue siendo sinónimo y lo usan las extensiones de 2024. Se recomienda poner en pantalla «*Ustilago maydis* (hoy también *Mycosarcoma maydis*)».
 
-VEREDICTO: PENDIENTE (correcciones abajo)
+Estado previo: PENDIENTE (correcciones abajo, ya aplicadas por el productor el 29 oct 2026)
 
 ## Correcciones propuestas
 1. **Voz, escena 11 (Dato):** "Dato: es rico en lisina, un aminoácido que el maíz tiene muy poco. Y en el siglo dieciséis, el Códice Florentino ya lo dibujaba." — Fuentes: Juárez-Montiel 2011; FAO 1992; Códice Florentino libro 11, fol. 251r (aztecglyphs/Getty). **Pantalla:** quitar la cita «negro… como un tamal»; mostrar el códice con el dibujo de la mazorca (y, si se quiere, «Libro 11 · siglo XVI»). Medidor: «maíz: poca lisina» vs «huitlacoche: rico en lisina».
 2. **Pantalla, escena 2:** cambiar el medidor «≈ 8–11 µm» por «≈ 10 µm». — Fuentes: Seco y Balendres 2023 (media 9.21 µm); agroatlas (8–15 × 7–10 µm).
 3. **Voz, escena 9:** "En 2006, en Marburgo, Alemania, un equipo leyó su genoma: hoy es un hongo modelo de laboratorio." (sin "completo") — Fuente: Kämper et al. 2006.
 4. **Pantalla, escena 1 (recomendado):** etiqueta «huitlacoche · *Ustilago maydis* (hoy *Mycosarcoma maydis*)». — Fuente: McTaggart et al. 2016.
+
+## Correcciones aplicadas (texto final)
+
+Segunda revisión del verificador (29 oct 2026) sobre el texto final completo de `narracion.json` (13 líneas) y la columna "Lo que se ve" de `guion.md`. Las 15 afirmaciones ✅ de arriba quedan iguales; abajo están las que se corrigieron.
+
+| Afirmación corregida | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Escena 1, pantalla: «huitlacoche · *Ustilago maydis* (hoy *Mycosarcoma maydis*)» | ✅ | McTaggart et al. 2016, *IMA Fungus* 7(2): 309–315 · en.wikipedia.org/wiki/Corn_smut | "Formerly it was placed in genus Ustilago, but in 2016, it was placed in genus Mycosarcoma." | 2016 |
+| Escena 2, pantalla: medidor «≈ 10 µm» (barra de escala 10 µm) | ✅ (valor aproximado dentro de todos los rangos publicados) | Seco y Balendres 2023 · agroatlas.ru | "ranged from 8.09 to 11.36 μM (averaged at 9.21 μM)" · "8-15 x 7-10 mkm" | 2023 / s/f |
+| Escena 9, voz: "En 2006, en Marburgo, Alemania, un equipo leyó su genoma: hoy es un hongo modelo de laboratorio." | ✅ | Kämper et al. 2006, *Nature* 444: 97–101 | "Here we report the genome sequence…" · "D-35043 Marburg, Germany" · "a well-established model organism" | 2006 |
+| Escena 11, voz: "Dato: es rico en lisina, un aminoácido que el maíz tiene muy poco." · pantalla «maíz: poca lisina» vs «huitlacoche: rico en lisina» | ✅ | Juárez-Montiel et al. 2011, *Rev. Iberoam. Micol.* 28(2): 69–73 · FAO 1992 | "The most abundant amino acid is lysine, corresponding to 14.84% of the total amino acids" · "Lysine is a limiting factor in the nutritional value of corn" · "In common maize, deficiencies in lysine and tryptophan are evident" | 2011 / 1992 |
+| Escena 11, voz: "Y en el siglo dieciséis, el Códice Florentino ya lo dibujaba." · pantalla: dibujo en blanco y negro de la mazorca, «Códice Florentino · Libro 11 · siglo XVI», sin cita textual | ✅ (ficha abierta por el verificador) | aztecglyphs.wired-humanities.org/content/cuitlacochin-fcbk11f251r (imagen del Códice Florentino digital, Libro 11, fol. 251r) · Villagrán et al. 2023 · Wikipedia Florentine Codex (hecho hacia 1575–1577) | "black and white sketch of the fungus that grows on corn cobs (cuitlacochin)" · nombre en español "el huitlacoche" · "the first documented evidence … is found in the Florentine Codex" | s. XVI (c. 1577) / 2023 |
+
+Nota: la cita «negro… como un tamal» ya no está ni en la voz ni en la pantalla (no se pudo confirmar en el original).
+
+VEREDICTO: APROBADO
