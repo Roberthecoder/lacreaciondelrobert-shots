@@ -253,11 +253,11 @@ function Captcha() {
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ma - 0.1} texto="Tú contra un bot: *casi siempre gana él.*" />
-      <Subtitulo T={T} idx={1} at={K.Ma + 0.1} until={K.E - 0.1} texto="Personas *50–85 %* · bots *más de 96 %*" />
+      <Subtitulo T={T} idx={1} at={K.Ma + 0.1} until={K.E - 0.1} texto="Personas *50–85 %* · bots: *la mayoría, +96 %*" />
       <Subtitulo T={T} idx={2} at={K.E + 0.1} until={K.L - 0.1} texto="UC Irvine, 2023: *1,400 personas.*" />
       <Subtitulo T={T} idx={3} at={K.L + 0.1} until={K.P - 0.1} texto="IA de Google, 2014: *99.8 %.*" />
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.Li - 0.1} texto="¿Para qué *te los siguen poniendo?*" />
-      <Subtitulo T={T} idx={5} at={K.Li + 0.1} until={Li2 - 0.1} texto="Tecleabas palabras *de libros escaneados.*" />
+      <Subtitulo T={T} idx={5} at={K.Li + 0.1} until={Li2 - 0.1} texto="Hace años tecleabas *palabras de libros.*" />
       <Subtitulo T={T} idx={6} at={Li2 + 0.1} until={K.Ca - 0.1} texto="Para 2008: *440 millones de palabras.*" />
       <Subtitulo T={T} idx={7} at={K.Ca + 0.1} until={K.Mo - 0.1} texto="Luego: *números de casas.*" />
       <Subtitulo T={T} idx={8} at={K.Mo + 0.1} until={K.Cf - 0.1} texto="Mira *cómo usas la casilla.*" />

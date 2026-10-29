@@ -42,3 +42,33 @@
 5. **Fila 16 (Cierre).** Bajar la exageración. Propuesta:
    > "Así que el bot te gana leyendo: la prueba ya es cómo te portas en la página."
 6. **Fila 14 (opcional, menor).** "califica cada visita" → "califica cada acción", que es lo que dice la documentación ("for each request").
+
+## Re-verificación (29 oct 2026, mismo verificador)
+
+Revisé solo lo que cambió en `narracion.json`, `captcha.jsx` y `guion.md`.
+
+| # | Afirmación corregida | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | «…los bots de estudios de 2014 a 2021, la mayoría, más de noventa y seis» + chip "bots: estudios 2014–2021" + barra "bots (la mayoría) más de 96 %" | ✅ | Searles et al. 2023, §8 y Tabla 3 (refs. de 2014, 2016, 2019, 2020, 2021) | "The bots' accuracy ranges from 85-100%, with the majority above 96%." | 2014–2021 |
+| R2 | «Lo juntó la Universidad de California en Irvine en 2023, con mil cuatrocientas personas» + chip "1,400 personas · 14,000 captchas" | ✅ | Searles et al. 2023, resumen y §5.5 | "1,400 participants collectively solved 14,000 CAPTCHAS" · "contrasts our measured human solving times and accuracy against those of automated bots reported in the literature" | 2023 |
+| R3 | «Y si usaste internet hace años, trabajaste para las máquinas: muchas de esas palabras venían de libros escaneados que la computadora no leía» | ✅ | von Ahn et al., *Science* 2008 | "asking users to decipher scanned words from books that computerized optical character recognition failed to recognize" | 2008 |
+| R4 | «Para 2008 ya iban más de 440 millones de palabras» + chips "(2008)" y "von Ahn et al. · Science 2008" | ✅ | von Ahn et al., *Science* 2008 | "has transcribed over 440 million words" | 2008 |
+| R5 | «Desde 2014, la casilla «no soy un robot» mira cómo la usas: antes, durante y después del clic» + chip "desde 2014" + etiqueta "esquema" (brillo en vez de estela de cursor) | ✅ | Google Security Blog, 3 dic 2014; Google Cloud blog, 22 abr 2026 | "actively considers a user's entire engagement with the CAPTCHA—before, during, and after" (la casilla se presentó en ese mismo post, 2014) · en 2026: "replacing disruptive puzzles with silent background verification" | 2014 / 2026 |
+| R6 | «Y la versión tres ni pregunta: califica cada acción de cero, bot, a uno, humano» + chip "versión 3 · sin pruebas" | ✅ | Google for Developers, reCAPTCHA v3 | "returns a score for each request without user friction" · "1.0 is very likely a good interaction, 0.0 is very likely a bot" | 2024 |
+| R7 | Cierre «El bot te gana leyendo; tu prueba es cómo te portas en la página» + chip "cómo te portas ✔" | ✅ | Searles et al. 2023 (Tabla 3: texto 50–84 % contra 99.8 %); Google 2014/2026 | ver filas 15 y R5 | 2023 / 2014–2026 |
+| R8 | **Subtítulo idx 1** en `captcha.jsx`: "Personas *50–85 %* · bots *más de 96 %*" | ⚠️ exagera | Searles et al. 2023, §8 | "ranges from 85-100%, with the majority above 96%". El subtítulo dice que *todos* los bots pasan de 96 %, y la voz y la barra dicen "la mayoría" | 2014–2021 |
+| R9 | Subtítulo idx 5: "Tecleabas palabras *de libros escaneados.*" | ⚠️ menor | — | Le quita el "si usaste internet hace años" a la voz y vuelve a hablarle a cualquiera (lo mismo que se corrigió en la fila 8) | — |
+
+**Correcciones pendientes:**
+1. `captcha.jsx`, subtítulo idx 1 → `"Personas *50–85 %* · bots: *la mayoría, +96 %*"`.
+2. `captcha.jsx`, subtítulo idx 5 → `"Hace años tecleabas *palabras de libros.*"` (o `"Palabras *de libros escaneados.*"`).
+
+Sin esas dos correcciones no se aprueba. Cuando estén aplicadas, el resto ya está en ✅.
+
+## Re-verificación final (29 oct 2026, coordinador)
+Subtítulos corregidos tal como propuso el verificador:
+- idx 1: «Personas *50–85 %* · bots: *la mayoría, +96 %*» ✅
+- idx 5: «Hace años tecleabas *palabras de libros.*» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

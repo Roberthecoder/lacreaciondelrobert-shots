@@ -36,3 +36,26 @@
 4. **"Más del doble" (#16) → "casi el doble".** Propuesta: "Y calcula que en 2030 será casi el doble: más o menos lo que hoy gasta Japón entero." Barra: "485 TWh (2025) → ≈ 950 TWh (2030, proyección)". (Si se decide quedarse con 2024 → 415/945 y "más del doble", contradice la regla de no usar un conteo viejo cuando hay uno más nuevo.)
 
 Resumen: 16 ✅ · 4 ⚠️ · 0 ❌.
+
+## Re-verificación
+
+29 oct 2026 · mismo verificador independiente. Solo se revisó lo que cambió en `narracion.json`, `guion.md` y `energiapregunta.jsx`.
+
+| # | Afirmación (nueva o corregida) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Gancho: "Una pregunta típica a la IA de Google gasta menos energía que ver la tele nueve segundos. Y como cinco gotas de agua." + chip "Gemini · pregunta típica de texto" | ✅ | Google Cloud Blog (Vahdat y Dean, 2025) | "the median Gemini Apps text prompt uses 0.24 watt-hours (Wh)… about five drops of water"; "equivalent to watching TV for less than nine seconds" | 2025 |
+| R2 | "Lo midió Google en 2025 con Gemini: 0.24 Wh por pregunta de texto" (tarjeta "Google · su IA Gemini", "por pregunta típica de texto") | ✅ | arXiv 2508.15734; blog | "the median Gemini Apps text prompt consumes 0.24 Wh of energy" | 2025 |
+| R3 | Chip "de tele (~100 W)" | ✅ | arXiv 2508.15734 | "a modern television consumes approximately 100 watts of electricity" | 2025 |
+| R4 | Chip "solo chips: 0.10 Wh" | ✅ | Google Cloud Blog | "only considers active TPU and GPU consumption… uses 0.10 Wh of energy" | 2025 |
+| R5 | Chip "en 12 meses (según Google)" + "÷33", mayo 2024 → mayo 2025 | ✅ | Google Cloud Blog; arXiv | "over a recent 12 month period, the energy… dropped by 33x"; "from May 2024 to May 2025" | 2025 |
+| R6 | Chip "cifras de Google, sin revisión externa" | ✅ | Google Cloud Blog (notas) | "have not been verified by an independent third-party" | 2025 |
+| R7 | "La AIE calcula que para 2030 los centros de datos del mundo gastarán un poco más que todo Japón hoy." + barras 2030 vs "Japón entero · hoy" (sin TWh), "▲ un poco más" | ✅ | AIE, *Energy and AI* (abr 2025), resumen ejecutivo (texto indexado; iea.org da 403), repetido por ERRA y Carbon Brief; cifra 945 TWh en PDF oficial AIE (*Energy and AI in East Asia*, rev. 2026); la actualización AIE de abril 2026 da ~950 TWh en 2030 (Eco-Business, 2026), que no cambia la comparación | "around 945 TWh by 2030 … slightly more than Japan's total electricity consumption today"; ERRA: "slightly more than Japan's entire electricity consumption". Va atribuido a la AIE ("calcula") y ya no usa la cifra vieja de 2024. | 2025 (actualizado 2026) |
+| R8 | "Es una proyección, no un hecho." + sello "PROYECCIÓN" | ✅ | AIE (*Energy and AI in East Asia*) | "In the Base Case, the global electricity consumption of data centres more than doubles… to 945 TWh by 2030" (escenario base, proyección) | 2025 |
+| R9 | "Ahí no solo vive la IA: también internet y la nube. Pero la IA es una de las grandes razones." (subtítulo "la IA empuja", chip "la IA: una de las grandes razones") | ✅ | AIE (*Energy and AI*; *Key Questions*, 2026, vía TEI) | "AI is expected to be a significant driver of electricity demand"; centros enfocados en IA "about 155 TWh, roughly a third of the total" (2025) → el resto es otro uso digital | 2025–2026 |
+| R10 | Cierre: "Así que una pregunta típica cuesta nueve segundos de tele. Lo que pesa es que hacemos miles de millones." + chip "× miles de millones" | ✅ | blog; arXiv 2508.15734 | "less than nine seconds"; "With these AI models now serving billions of user prompts globally" | 2025 |
+
+Las 4 ⚠️ de la primera revisión quedan resueltas: el gancho y el cierre ya dicen "pregunta típica" y "la IA de Google"; se quitaron 1.5 %, 415 TWh, 945 TWh y "más del doble" (ya no hay cifra vieja de la AIE en voz ni en pantalla). Nota: la comparación con Japón usa el consumo de Japón que mide la AIE. Con la demanda total de Ember (~1 000 TWh) quedaría "más o menos igual". Por eso se atribuye a la AIE.
+
+Resumen de la re-verificación: 10 ✅ · 0 ⚠️ · 0 ❌. Todas las afirmaciones del guion actual están ✅.
+
+VEREDICTO: APROBADO
