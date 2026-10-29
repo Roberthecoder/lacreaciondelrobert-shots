@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Estatinas base narrada.dc.html",
+  "salida": "Shot Estatinas narrado.dc.html",
+  "nota": "Shot Fungi Mati #46. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "La primera estatina, para el colesterol, no la inventó un químico: la hizo un moho." },
+    { "escena": "Higado", "texto": "Tu hígado fabrica colesterol: más del que absorbes comiendo." },
+    { "escena": "Enzima", "texto": "Lo arma en treinta pasos; uno marca el ritmo: el de la enzima HMG-CoA reductasa." },
+    { "escena": "Idea", "texto": "El bioquímico japonés Akira Endo sospechó que algún hongo frenaba esa enzima." },
+    { "escena": "Busqueda", "texto": "Su equipo probó miles de hongos: tras 3,800, uno funcionó, pero dañaba riñones." },
+    { "escena": "Arroz", "texto": "Luego salió otro: Penicillium citrinum, un moho azul verdoso, en arroz de una tienda de Kioto." },
+    { "escena": "Pregunta", "texto": "¿Y cómo baja el colesterol de tu sangre?" },
+    { "escena": "Freno", "texto": "Su molécula se parece a la que usa la enzima y le gana el lugar: tu hígado hace menos." },
+    { "escena": "Receptores", "texto": "Y sus células ponen más receptores que jalan colesterol de la sangre." },
+    { "escena": "Estudio", "texto": "En 1973, en Tokio, Endo aisló la compactina. Luego Merck halló una prima en Aspergillus terreus: la lovastatina." },
+    { "escena": "Monascus", "texto": "Lo raro: el arroz de levadura roja, fermentado con el moho Monascus, puede traer monacolina K." },
+    { "escena": "Igual", "texto": "Y es la misma molécula que la lovastatina." },
+    { "escena": "Cierre", "texto": "Así que esa medicina no nació en la mesa de un químico: nació en un moho de arroz." }
+  ]
+}
