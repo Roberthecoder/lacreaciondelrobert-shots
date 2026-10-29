@@ -5,7 +5,7 @@
 - **Formato:** N1 "Por dentro": `Lupa` en modo rayos X sobre el rollo carbonizado (macro: el rollo en la mano → micro: capas
   del escaneo en fondo oscuro → macro: el mismo rollo, cerrado, con letras brillando por dentro).
 - **Gancho (de los 7):** #7 "Algo que tus ojos nunca van a ver": lo que dice por dentro un rollo quemado.
-- **Duración:** voz 944 caracteres / 167 palabras (≈ 57.9 s) + cierre 3.5 s → **61.4 s** estimados en la base.
+- **Duración:** voz 951 caracteres / 168 palabras (≈ 58.4 s) + cierre 3.5 s → **61.9 s** estimados en la base.
 - **Postura de la serie:** a favor con datos (la IA sí ayudó) y con el matiz honesto: el modelo detecta tinta; leer e
   interpretar lo hacen papirólogos. Ningún dato se presenta como de hoy si es de 2023–2025: se dice el año.
 
@@ -19,10 +19,10 @@
 | 3 | RayosX | Los rayos X muestran sus capas, pero la tinta casi no se nota: es de carbón, como el papiro quemado. | Fondo oscuro: el rollo dentro de un escáner (tomografía); corte en espiral gris. Dos muestras: "tinta = carbón" y "papiro quemado = carbón", mismo gris. |
 | 4 | Pregunta | ¿Cómo lees lo que ni los rayos X distinguen? | **Re-gancho.** "?" gigante sobre la espiral. |
 | 5 | IA | Con inteligencia artificial: un modelo aprende a hallar la tinta en el escaneo, punto por punto. | La espiral se "desenrolla" en una hoja plana gris; una cuadrícula la recorre y va pintando puntitos de tinta (`RedNeuronal` chiquita a un lado). |
-| 6 | Palabra | En 2023, Luke Farritor, estudiante de veintiún años, leyó la primera palabra completa: púrpura. | Las manchas forman **ΠΟΡΦΥΡΑϹ**; debajo "porphyras = púrpura"; tarjeta "2023 · Vesuvius Challenge · Luke Farritor, 21 años". |
-| 7 | Premio | Luego, él, Youssef Nader y Julian Schilliger sacaron más de dos mil caracteres y ganaron setecientos mil dólares. | Aparecen columnas de texto griego (esquemático); contador "más de 2,000 caracteres"; `NumeroGigante` "$700,000"; tres nombres. Chip "≈ 5 % del rollo". |
+| 6 | Palabra | En 2023, Luke Farritor, estudiante de veintiún años, hizo aparecer la primera palabra completa: púrpura. | Las manchas forman **ΠΟΡΦΥΡΑϹ**; debajo "porphyras = púrpura"; tarjeta "2023 · Vesuvius Challenge · Luke Farritor, 21 años". |
+| 7 | Premio | Luego, él, Youssef Nader y Julian Schilliger sacaron más de dos mil caracteres y ganaron setecientos mil dólares. | Aparecen columnas de texto griego (esquemático); contador "más de 2,000 caracteres"; `NumeroGigante` "$700,000"; tres nombres. Chip "≈ 5 % del rollo (2023)". |
 | 8 | Matiz | Ojo: la IA marca dónde hay tinta; quienes leen son expertos en papiros. | Dos tarjetas: robotito con "dónde hay tinta" ✔ / persona con lupa y "qué dice" ✔ (papirólogos). |
-| 9 | Placeres | ¿Y qué decía? Un filósofo hablando de música, comida y cómo disfrutar la vida. | Íconos: lira, uvas/pan, sonrisa; filósofo griego dibujado. |
+| 9 | Placeres | ¿Qué decía? Un filósofo hablando de música, comida y cómo disfrutar la vida. | Íconos: lira, uvas/pan, sonrisa; filósofo griego dibujado. |
 | 10 | Titulo | En 2025 leyeron el título de otro rollo: Sobre los vicios, de Filodemo. | Otro rollo; en su centro brilla "ΦΙΛΟΔΗΜΟΥ · ΠΕΡΙ ΚΑΚΙΩΝ" (esquemático) → "Filodemo · Sobre los vicios"; chip "2025 · PHerc. 172 · Oxford". |
 | 11 | Cierre | Ese carbón sigue cerrado, pero ya no está mudo. | **Regreso a la imagen del inicio**: la misma mano con el mismo tronquito negro, cerrado; la `Lupa` pasa y ahora por dentro se ven letras doradas brillando. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
@@ -66,6 +66,7 @@ formarse ΠΟΡΦΥΡΑϹ, monedas en el premio, brillo final.
 - "Muchos se destruyeron": fuente 4, "often led to the scrolls being damaged or destroyed".
 - "Casi no se nota": la nota de 2019 dice que la tinta de carbón "appears invisible" en rayos X por tener densidad parecida al
   papiro carbonizado; el mismo texto dice que la tomografía sí capta señales sutiles, por eso se dice "casi".
+- "Hizo aparecer" (no "leyó"): el modelo de Farritor sacó la imagen; los papirólogos la leyeron (corrección del verificador).
 - "Primera palabra completa" = primera palabra entera leída dentro de un rollo cerrado de Herculano (fuentes 1 y 2); las
   primeras letras sueltas/el patrón de "crackle" las vio antes Casey Handmer, por eso se dice "palabra completa".
 - "Luego … más de dos mil caracteres y setecientos mil dólares": logrado en diciembre de 2023, anunciado el 5 de febrero de 2024.
