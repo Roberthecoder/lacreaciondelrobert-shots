@@ -5,6 +5,8 @@
 <section id="tiktok-ok" hidden style="border:2px solid var(--rosa);border-radius:12px;padding:12px 16px;margin:16px 0">
 <h2 style="margin-top:4px">TikTok autorizado ✅</h2>
 <p id="tiktok-txt">Último paso: guardar la conexión en GitHub (el código dura pocos minutos y sirve una sola vez).</p>
+<p><label for="tiktok-codigo">Tu código (si «Copiar» no funciona, selecciónalo aquí y cópialo con Ctrl+C):</label><br>
+<input id="tiktok-codigo" readonly style="font:15px monospace;width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--muted);border-radius:8px;background:transparent;color:inherit"></p>
 <ol><li>Da clic en <b>Copiar código</b>.</li><li>Da clic en <b>Abrir GitHub</b> → <b>Run workflow</b> → pega el código → <b>Run workflow</b>.</li></ol>
 <p><button id="tiktok-copiar" type="button" style="font:inherit;padding:10px 16px;border-radius:10px;border:0;background:var(--rosa);color:#fff;font-weight:600;cursor:pointer">Copiar código</button>
 <a id="tiktok-gh" href="https://github.com/Roberthecoder/lacreaciondelrobert-shots/actions/workflows/tiktok-conectar.yml" target="_blank" rel="noopener" style="margin-left:12px">Abrir GitHub</a></p>
@@ -23,7 +25,8 @@
   if (!code) { box.querySelector('h2').textContent = 'TikTok no autorizó'; document.getElementById('tiktok-txt').textContent = (q.get('error_description') || q.get('error')) + ' — vuelve a intentarlo desde tiktok.html'; return; }
   let st = ''; try { st = localStorage.getItem('tiktok_state') || ''; } catch (e) {}
   if (st && q.get('state') !== st) document.getElementById('tiktok-txt').textContent = 'Ojo: este código no salió de tu clic en «Autorizar». Si no fuiste tú, no lo uses.';
-  document.getElementById('tiktok-copiar').onclick = async (e) => { try { await navigator.clipboard.writeText(code); e.target.textContent = 'Copiado ✅'; } catch (err) { prompt('Copia este código:', code); } };
+  const caja = document.getElementById('tiktok-codigo'); caja.value = code; caja.onfocus = () => caja.select();
+  document.getElementById('tiktok-copiar').onclick = async (e) => { try { await navigator.clipboard.writeText(code); e.target.textContent = 'Copiado ✅'; } catch (err) { caja.focus(); caja.select(); e.target.textContent = 'Selecciónalo arriba y usa Ctrl+C'; } };
   history.replaceState(null, '', location.pathname);
 })();
 </script>
