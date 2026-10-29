@@ -328,7 +328,7 @@ function Detergente() {
       <Etiqueta T={T} at={K.Gr + 1.4} until={K.Pa - 0.3} x={780} y={660} texto="cubierta" tam={32} color={KC.ink} />
       <Etiqueta T={T} at={K.Gr + 1.8} until={K.Pa - 0.3} x={780} y={860} texto="enzima" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Pa + 0.5} until={K.Ci - 0.3} texto="páncreas: corta proteína, almidón y grasa" y={1500} tam={32} borde={KC.yellow} />
-      <Etiqueta T={T} at={K.Pa + 0.4} until={K.Ci - 0.3} x={20} y={790} texto="páncreas" tam={34} color={KC.ink} />
+      <Etiqueta T={T} at={K.Pa + 0.4} until={K.Ci - 0.3} x={20} y={955} texto="páncreas" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="enzimas de microbios" y={1500} tam={44} borde={KC.mint} />
       <Etiqueta T={T} at={K.Ci + 1.4} until={K.Ou} x={400} y={1560} texto="granitos de enzima" tam={30} color={KC.ink} />
 

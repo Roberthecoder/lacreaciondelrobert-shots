@@ -181,8 +181,9 @@ function Xantana() {
   const sacude = T > K.Ag + 0.3 && T < AgQ ? Math.sin(T * 22) * 16 : 0;
   const orden = kprog(T, K.Ag + 0.3, K.Ag + 0.9) * (1 - kprog(T, AgQ, AgQ + 1.0));
   const visc = 0.92 - 0.72 * orden;
-  // barra de escala (aprox.): frasco ~5 px/mm · hoja ~3 px/mm · bacteria (~1.5 µm de largo; Xanthomonas: 0.8–2.0 µm) ~1e5 px/mm. Las moléculas van sin escala (dibujo esquemático).
-  const escala = T < K.C ? 5 : T < C2 ? 3 : T < K.Ta ? 1e5 : T < K.Ta + 1.6 ? null : T < K.Al ? 1.2e5 : T < K.Ag ? null : T < K.Es ? 4 : T < K.Ci ? null : T < K.Ou ? 5 : null;
+  // barra de escala (aprox.): frasco ~5 px/mm · hoja ~3 px/mm. Bacterias y moléculas van sin escala: «esquemático · no a escala».
+  const noEscala = (T >= C2 && T < K.Ta) || (T >= K.Ta + 1.6 && T < K.Al);
+  const escala = T < K.C ? 5 : T < C2 ? 3 : T < K.Ag ? null : T < K.Es ? 4 : T < K.Ci ? null : T < K.Ou ? 5 : null;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el frasco y la cuchara */}
@@ -320,6 +321,7 @@ function Xantana() {
       <Chip T={T} at={K.C + 0.3} until={C2 - 0.1} texto="pudrición negra de la col" y={1500} tam={40} borde={KC.yellow} />
       <Etiqueta T={T} at={K.C + 1.2} until={C2 - 0.1} x={60} y={1600} texto="Xanthomonas campestris pv. campestris" it tam={32} />
       <Etiqueta T={T} at={C2 + 1.0} until={K.Ta - 0.2} x={60} y={1600} texto="baba de xantana: su escudo" tam={34} />
+      {noEscala && <div style={{ position:'absolute', left:60, top:1700, zIndex:40, font:`700 26px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA }}>esquemático · no a escala</div>}
       {escala && <Escala T={T} z={1} pxPorMm={escala} x={60} y={1690} objetivo={170} />}
       <Chip T={T} at={K.Ta + 0.3} until={K.Al - 0.2} texto="fermentación: azúcar → goma" y={1500} tam={40} borde={KC.yellow} />
       <Etiqueta T={T} at={K.Ta + 2.4} until={K.Al - 0.2} x={1020} y={1600} texto="la goma sale por fuera" lado="izq" tam={34} />

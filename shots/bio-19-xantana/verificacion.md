@@ -2,7 +2,7 @@
 
 - **Verificación independiente:** 29 de octubre de 2026, por un verificador que no escribió el guion y que abrió cada fuente (texto completo): Federal Register del 19 mar 1969 (PDF de govinfo), 21 CFR 172.695 (XML de govinfo, ed. 2023), Crossref del artículo de 1961, nota del USDA-ARS de 2017, Berninger et al. 2021 (PMC8449660), Abdul et al. 2026 (PMC13024846) y Jelušić y Popović Milovanović 2026 (PMC13610958) por la API de Europe PMC, y la etiqueta de DailyMed de Sensodyne Pronamel (2026).
 - **Resultado del verificador:** 20 ✅ · 3 ⚠️ · 0 ❌. Las 3 ⚠️ se corrigieron en la voz, el guion, la pantalla y la descripción (filas marcadas "corregida"); el coordinador confirmó que lo cambiado queda ✅.
-- La barra de escala de la bacteria (≈ 1.5 µm de largo) cae en el rango del género (bastones de 0.4–0.6 × 0.8–2.0 µm, descripción de Bradbury/Bergey). Las moléculas van sin barra de escala: el dibujo es esquemático.
+- Las escenas al microscopio (bacterias) y de moléculas no llevan barra de escala: dicen "esquemático · no a escala".
 - La voz todavía no se genera: espera la aprobación de Robert.
 
 | Afirmación | Veredicto | Fuente | Frase textual | Año |
@@ -29,7 +29,6 @@
 | En 1969 la aprobaron para alimentos (sello "1969 · FDA · aditivo de alimentos"; el ARS dice 1968, pero el documento primario es de 1969) | ✅ | Federal Register, 19 mar 1969, p. 5376 | "concludes that the food additive regulations should be amended to provide for the use of xanthan gum as a stabilizer, emulsifier, thickener…" · "This order shall become effective on the date of its publication in the Federal Register." | 1969 |
 | Esa misma goma espesa el lodo para perforar pozos de petróleo | ✅ | Berninger 2021 | "Typical industrial applications of xanthan gum are in cleaners, paints, ceramic glazes, inks, oil drilling fluids" | 2021 |
 | Descripción: pinturas y tintas; esqueleto como el de la celulosa; la norma exige que no queden células vivas; la cepa de fábrica no es patógena | ✅ | Berninger 2021; 21 CFR 172.695 | "paints, ceramic glazes, inks" · "cellulose-like backbone" · "(b) The strain of Xanthomonas campestris is nonpathogenic and nontoxic in man or other animals." | 2021 / 2023 |
-| Barra de escala de la bacteria (≈ 1.5 µm de largo) | ✅ | Bradbury, descripción del género *Xanthomonas* (Bergey's Manual), citada en scite.ai https://scite.ai/authors/j-f-bradbury-QenxgX | "straight rods of 0.4–0.6 × 0.8–2.0 µm" (cita de segunda mano de la descripción del género; solo afecta la barra de escala, no la voz) | 1984 (Bergey's, vol. 1) |
 | Los dibujos (frasco, hoja, tanque, filtro, cadenas, red, torre) son esquemáticos | ✅ | Declarado en el guion, en el `.jsx` y en los textos de publicación | "El dibujo es esquemático." | 2026 |
 
 Sin ❌ ni ⚠️ pendientes.
