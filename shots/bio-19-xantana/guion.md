@@ -65,10 +65,32 @@ El dibujo es esquemático. **¿Ya habías visto 'goma xantana' en alguna etiquet
    - "The xanthan gum is recovered by precipitation with water-miscible non-solvents such as isopropyl alcohol…" · "The second step in production is a comprehensive recovery process including precipitation, drying and milling." (2021)
 6. **Abdul P. M. et al. (2026).** "Toward Sustainable Xanthan Gum Production: Waste-Derived Substrates, Fermentation Optimization, and Eco-Friendly Extraction Approaches." *Foods* 15(6). PMC13024846. https://pmc.ncbi.nlm.nih.gov/articles/PMC13024846/
    - "At low shear rates, XG molecules adopt an ordered helical conformation that forms an entangled network, resulting in high apparent viscosity. Otherwise, these helices align in the direction of flow and partially unwind into more extended conformations, reducing intermolecular interactions and causing a marked decrease in viscosity." (2026)
+   - "The bacterial organisms are initially eliminated through heat treatment or alternative methods such as centrifugation or filtration…" (antes de precipitar con alcohol) (2026)
    - "This flow-induced structural alignment facilitates pumping and dispensing while maintaining high viscosity at rest…" · "Its strong shear-thinning behavior is particularly advantageous in salad dressings, sauces, and beverages, where it enables easy pouring while maintaining stability during storage." (2026)
 7. **Jelušić A., Popović Milovanović T. (2026).** "Xanthomonas campestris pv. campestris: Current Knowledge and Emerging Biological Control Strategies Using Phyllosphere- and Rhizosphere-Associated Bacillus spp." *Pathogens* 15(9). PMC13610958. https://pmc.ncbi.nlm.nih.gov/articles/PMC13610958/
    - "…black rot, caused by plant pathogenic bacterium Xanthomonas campestris pv. campestris (Pammel) Dowson is regarded as one of the most destructive diseases of crucifers worldwide." · "The disease can raise yield losses up to 50% and 70% in susceptible cultivars of cabbage and cauliflower…" (2026)
    - "…biofilm-like structures embedded in an extracellular polymeric matrix, which in Xanthomonas is mainly composed of xanthan and protects the bacteria from harsh abiotic stress conditions in the phyllosphere." (2026)
    - "Typical symptoms of black rot disease are V-shaped chlorotic to necrotic lesions with blackened veins starting from the leaf margins…" (2026)
+8. **DailyMed (NLM), Sensodyne Pronamel Intensive Enamel Repair** (2026), ingrediente inactivo "XANTHAN GUM" (ejemplo de pasta de dientes que la lleva). https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a2f9d58b-671b-4427-a971-1fceff5f2323
 
 **Puntos para el verificador:** (a) la cepa industrial y la de la pudrición negra son la misma especie (*X. campestris*), pero la regulación exige una cepa "nonpathogenic and nontoxic in man or other animals"; el guion no dice que la cepa de fábrica enferme coles. (b) Gancho corregido a "no es solo crema". (c) 1968 (ARS) vs. 1969 (Federal Register): se usa 1969.
+
+## Robert en pantalla
+
+Es la marca del canal: entra desde el cuadro 0, vuelve cada 5–7 s y nunca tapa el subtítulo ni los datos (lados `gancho`, `arriba-der`, `izq-alto` y `grande`, que quedan arriba del subtítulo). Tiempos con las escenas de `Shot Xantana base narrada.dc.html` (61.5 s).
+
+### Versión narrada: 9 apariciones, **31.6 s en pantalla** (de 61.5 s), 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 – 4,2 | sorprendido (11) | gancho | «lo espeso de ese aderezo… es obra de una bacteria» |
+| 9,1 – 12,2 | serio (10) | arriba-der | «la de la pudrición negra de la col» |
+| 16,3 – 19,9 | señalando (13) | izq-alto | señala el tanque: «la crían en tanques con azúcar» |
+| 26,3 – 29,4 | pensativo (06) | **grande** | re-gancho: «¿y cómo espesa tanto con tan poquito?» |
+| 34,1 – 37,6 | bajando lentes (04) | arriba-der | «se enredan en una red que frena el agua» |
+| 38,2 – 41,7 | pensativo con puño (07) | izq-alto | el frasco que se agita y se vuelve a espesar |
+| 46,3 – 48,7 | sonriendo (05) | arriba-der | el sello de 1969: «la aprobaron para alimentos» |
+| 49,1 – 52,7 | sorprendido (11) | **grande** | dato extra: «espesa el lodo para perforar pozos de petróleo» |
+| 53,2 – 57,9 | apuntando a cámara (02) | arriba-der | cierre: «también es la baba de una bacteria» |
+
+Cierre: `CierreMarca` con Robert señalando (13) junto al logo (58,0 – 61,5 s).

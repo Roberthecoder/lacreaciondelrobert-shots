@@ -5,15 +5,15 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Tu helado de vainilla casi seguro nunca tocó una vaina: menos del 1 % de la vainillina sale de la planta."
+      "texto": "Tu helado de vainilla casi seguro no tocó una vaina: menos del 1 % de la vainillina sale de la planta."
     },
     {
       "escena": "Origen",
-      "texto": "Es una orquídea de México, y los totonacas de Papantla fueron de sus primeros cultivadores."
+      "texto": "Es una orquídea de México; los totonacas de Papantla fueron de sus primeros cultivadores."
     },
     {
       "escena": "Molecula",
-      "texto": "Su aroma principal es una molécula: la vainillina."
+      "texto": "Su aroma principal viene de una molécula: la vainillina."
     },
     {
       "escena": "Escasa",
@@ -21,11 +21,11 @@
     },
     {
       "escena": "Sintetica",
-      "texto": "Por eso casi toda se fabrica con química, del petróleo o de la madera."
+      "texto": "Por eso casi toda se hace con química, del petróleo o de la madera."
     },
     {
       "escena": "Precio",
-      "texto": "Y cuesta apenas el 1 % de lo que cuesta la natural."
+      "texto": "Y cuesta solo el 1 % del precio de la natural."
     },
     {
       "escena": "Pregunta",
@@ -45,11 +45,11 @@
     },
     {
       "escena": "Albius",
-      "texto": "La de vaina existe gracias a un niño: en 1841, en la isla Reunión, Edmond Albius, esclavizado, de 12 años, la polinizó a mano."
+      "texto": "La de vaina existe por un niño: en 1841, en la isla Reunión, Edmond Albius, esclavizado y de 12 años, la polinizó a mano."
     },
     {
       "escena": "Flor",
-      "texto": "Hasta hoy, cada flor abre un solo día y se poliniza con un palillo."
+      "texto": "Todavía cada flor abre un solo día y se poliniza a mano."
     },
     {
       "escena": "Toneladas",
@@ -57,7 +57,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Tu helado sabe a vainilla, pero su vainillina quizá salió del petróleo o de un microbio."
+      "texto": "Tu helado sabe a vainilla, pero su vainillina quizá vino del petróleo o de un microbio."
     }
   ]
 }
