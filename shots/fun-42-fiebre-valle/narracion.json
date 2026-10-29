@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Fiebre Valle base narrada.dc.html",
+  "salida": "Shot Fiebre Valle narrado.dc.html",
+  "nota": "Shot Fungi Mati #42. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese polvo del desierto no es solo tierra: puede traer esporas de un hongo."
+    },
+    {
+      "escena": "Suelo",
+      "texto": "Es Coccidioides, y vive en suelo seco del suroeste de Estados Unidos y del norte de México, como Sonora."
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Cuando la tierra se seca, sus hilos se parten en esporas con forma de barrilito."
+    },
+    {
+      "escena": "Viento",
+      "texto": "El viento o una excavación las levantan, y tú las respiras."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué hace una espora de hongo dentro de ti?"
+    },
+    {
+      "escena": "Esferula",
+      "texto": "En tus pulmones calientitos se vuelve una esfera que puede medir cien micras o más."
+    },
+    {
+      "escena": "Endosporas",
+      "texto": "Se llena de cientos de esporitas, revienta, y cada una puede formar otra esfera."
+    },
+    {
+      "escena": "Dimorfo",
+      "texto": "Un hongo con dos vidas: hilos en la tierra, esferas en ti."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1994, un terremoto en California provocó deslaves y nubes de polvo."
+    },
+    {
+      "escena": "Casos",
+      "texto": "En el condado de Ventura hubo doscientos tres casos, y estar en la nube aumentaba el riesgo."
+    },
+    {
+      "escena": "Calma",
+      "texto": "Ojo: cerca de seis de cada diez infectados no sienten nada."
+    },
+    {
+      "escena": "Sintomas",
+      "texto": "Otros tienen tos, fiebre y cansancio. No se contagia entre personas, pero tu perro también puede enfermar."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese polvo no es solo tierra: a veces es el taxi de un hongo hacia tus pulmones."
+    }
+  ]
+}

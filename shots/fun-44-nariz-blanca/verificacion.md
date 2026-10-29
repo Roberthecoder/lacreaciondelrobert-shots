@@ -52,4 +52,3 @@ Notas para no exagerar:
 
 **Segunda revisión (29 oct 2026):** se volvió a leer `narracion.json` completo (13 líneas) y se verificaron los cambios: grasa sin cifra (fila 6), «murciélagos silvestres» (filas 7 y 7c), «refugios de invierno vigilados» con «conteos hasta 2018» (fila 10), chip «si ves uno enfermo, no lo toques» (fila 12c) y los recortes de texto (filas 1b, 2, 4, 5, 8, 11, 11b, 12, 13), que no cambian el sentido. En `## Fuentes` del guion se completaron Muise 2024, CDFW y Farm and Dairy/USGS 2008 con su referencia, URL y frase textual. Todas las afirmaciones quedaron ✅. El dibujo es esquemático.
 
-VEREDICTO: APROBADO

@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Histoplasma base narrada.dc.html",
+  "salida": "Shot Histoplasma narrado.dc.html",
+  "nota": "Shot Fungi Mati #43. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese polvo de la cueva no es solo tierra: puede tener caca de murciélago, y con ella, un hongo que respiras."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es Histoplasma capsulatum: en el guano crece como moho, con hilos que sueltan esporas."
+    },
+    {
+      "escena": "Aire",
+      "texto": "Si pisas ese suelo, las esporas suben al aire. No las ves."
+    },
+    {
+      "escena": "Pulmon",
+      "texto": "Las respiras y llegan al fondo de tus pulmones."
+    },
+    {
+      "escena": "Cambio",
+      "texto": "Lo raro: el calor de tu cuerpo lo vuelve de moho a levadura."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y tus defensas no se lo comen?"
+    },
+    {
+      "escena": "Macrofago",
+      "texto": "Tus macrófagos sí lo tragan, pero la levadura sobrevive adentro, se multiplica y viaja en ellos."
+    },
+    {
+      "escena": "Sintomas",
+      "texto": "A casi todos no les pasa nada o se enferman leve: fiebre, tos, cansancio."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En abril de 2024, cuatro turistas canadienses nadaron en un cenote de la península de Yucatán con murciélagos."
+    },
+    {
+      "escena": "Enfermos",
+      "texto": "Dos o tres semanas después enfermaron: tres casos confirmados de histoplasmosis y uno sospechoso."
+    },
+    {
+      "escena": "Cenote",
+      "texto": "Y el reporte cuenta que otro cenote de la zona estaba cerrado desde 2019 por casos en turistas."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Y le pusieron capsulatum por una cápsula que no tiene."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que en una cueva con murciélagos, ese polvo puede llevar un hongo a tus pulmones."
+    }
+  ]
+}
