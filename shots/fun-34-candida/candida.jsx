@@ -304,7 +304,7 @@ function CandidaShot() {
       <Etq T={T} at={K.Pl + 1.4} until={K.Q - 0.3} x={60} y={530} texto="(candidiasis oral)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Pl + 3.0} until={K.Q - 0.3} x={60} y={590} texto="placas blancas" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Q + 0.1} until={K.Al - 0.3} texto="más común en… (CDC)" x={540} y={430} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Al + 0.6} until={K.C - 0.2} texto="se siente como algodón" x={400} y={440} tam={36} borde={KC.white} />
+      <Chip T={T} at={K.Al + 0.6} until={K.C - 0.2} texto="puede sentirse como algodón" x={400} y={440} tam={36} borde={KC.white} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="tus bacterias la mantienen a raya" x={355} y={560} tam={29} borde={KC.mint} />
 
       {/* barras de escala (cuadran con el dibujo) */}
@@ -320,7 +320,7 @@ function CandidaShot() {
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ca - 0.1} texto="Tú y tu pareja: *la misma levadura.*" />
       <Subtitulo T={T} idx={1} at={K.Ca + 0.1} until={K.V - 0.1} texto="Boca, intestino y piel: *casi siempre sin molestar.*" />
-      <Subtitulo T={T} idx={2} at={K.V + 0.1} until={K.Ab - 0.1} texto="Tus bacterias *la mantienen a raya.*" />
+      <Subtitulo T={T} idx={2} at={K.V + 0.1} until={K.Ab - 0.1} texto="Se cree que tus bacterias *la mantienen a raya.*" />
       <Subtitulo T={T} idx={3} at={K.Ab + 0.1} until={K.Tr - 0.1} texto="Un antibiótico fuerte *barre bacterias.*" />
       <Subtitulo T={T} idx={4} at={K.Tr + 0.1} until={K.Fo - 0.1} texto="Su truco: *cambia de forma.*" />
       <Subtitulo T={T} idx={5} at={K.Fo + 0.1} until={K.P - 0.1} texto="De bolitas a hilos: *las hifas.*" />
@@ -329,8 +329,8 @@ function CandidaShot() {
       <Subtitulo T={T} idx={8} at={K.Es + 0.1} until={K.Tx - 0.1} texto="Una toxina: *la candidalisina.*" />
       <Subtitulo T={T} idx={9} at={K.Tx + 0.1} until={K.Pl - 0.1} texto="Daña la membrana *de tus células.*" />
       <Subtitulo T={T} idx={10} at={K.Pl + 0.1} until={K.Q - 0.1} texto="Placas blancas: *algodoncillo.*" />
-      <Subtitulo T={T} idx={11} at={K.Q + 0.1} until={K.Al - 0.1} texto="Bebés, dentadura, antibióticos, *inhaladores.*" />
-      <Subtitulo T={T} idx={12} at={K.Al + 0.1} until={K.C - 0.1} texto="Como *algodón en la boca.*" />
+      <Subtitulo T={T} idx={11} at={K.Q + 0.1} until={K.Al - 0.1} texto="Recién nacidos, dentadura, antibióticos, *inhaladores.*" />
+      <Subtitulo T={T} idx={12} at={K.Al + 0.1} until={K.C - 0.1} texto="Puede sentirse como *algodón en la boca.*" />
       <Subtitulo T={T} idx={13} at={K.C + 0.1} until={K.Ou - 0.1} texto="No es tu enemiga: *espera.*" />
 
       <Robert T={T} apariciones={[

@@ -69,11 +69,11 @@ function Traje({ x, y, s = 1, paso = 0 }) {
   </g>;
 }
 // Hifa de Cladosporium (esquemática): tubo con septos, pared gruesa café oscuro con gránulos de melanina,
-// y cadenas ramificadas de conidios redondos (sphaerospermum = esporas esféricas).
+// y cadenas ramificadas de conidios casi redondos (3.4–4 µm; Bensch et al. 2012/2015).
 function Hifa({ T, x = 0, y = 0, s = 1, crece = 1, conidios = 1, seed = 4 }) {
   const g = krng(seed), L = 760 * crece;
   const gran = Array.from({ length: 60 }, () => [g(), g() < 0.5 ? -1 : 1, g()]);
-  const ramas = [[0.62, -1], [0.9, 1]];
+  const ramas = [[0.5, -1], [0.85, -1]];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={0} y={-50} width={L} height={100} rx={50} fill={CH.mela} stroke={KC.ink} strokeWidth={6} />
     <rect x={18} y={-32} width={Math.max(0, L - 36)} height={64} rx={32} fill="#e9d9b8" />
@@ -273,7 +273,7 @@ function ChernobilShot() {
             <line x1={540} y1={480} x2={540} y2={920} stroke={KC.ink} strokeWidth={8} />
             {rayos(K.Sp + 2.4, 10, [400, 680, 460, 620], 300, [400, 680, 460, 620], 500, 0.4, 0.3)}
             </g>
-            {[[0, 0.93, 'debajo del hongo', KC.orange], [1, 1, 'sin hongo', KC.red]].map(([k, v, t, c]) => { const w = 420 * v * kprog(T, K.Sp + 3.0, K.Sp + 3.8, kEase.sale), y = 1010 + k * 60; return <g key={k}>
+            {[[0, 0.97, 'debajo del hongo', KC.orange], [1, 1, 'sin hongo', KC.red]].map(([k, v, t, c]) => { const w = 420 * v * kprog(T, K.Sp + 3.0, K.Sp + 3.8, kEase.sale), y = 1010 + k * 60; return <g key={k}>
               <rect x={170} y={y - 22} width={w} height={44} rx={10} fill={c} stroke={KC.ink} strokeWidth={5} />
               <text x={170 + w + 16} y={y + 10} style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto}>{t}</text>
             </g>; })}
@@ -308,7 +308,7 @@ function ChernobilShot() {
       <Chip T={T} at={K.Pa + 0.2} until={K.P - 0.3} texto="AL MICROSCOPIO · pared del hongo" x={430} y={460} tam={32} borde={KC.gold} />
       <Etq T={T} at={K.Pa + 1.0} until={K.P - 0.3} x={60} y={560} texto="Cladosporium sphaerospermum" it tam={30} color={KC.texto} />
       <Etq T={T} at={K.Pa + 1.4} until={K.P - 0.3} x={300} y={960} texto="pared con melanina" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Pa + 2.0} until={K.P - 0.3} x={700} y={1060} texto="esporas redondas" lado="izq" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 2.0} until={K.P - 0.3} x={700} y={1060} texto="esporas casi redondas" lado="izq" tam={28} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2007" quien="Nueva York" revista="Dadachova et al., PLoS ONE" y={700} />
       <NumeroGigante T={T} at={K.Es + 3.0} until={K.Cr - 0.3} valor={500} dur={1.0} prefijo="≈" sufijo="×" etiqueta="la radiación normal" x={540} y={430} tam={110} color={KC.yellow} />
       <Etq T={T} at={K.Es + 3.2} until={K.Co - 0.3} x={170} y={700} texto="con melanina" tam={28} color={KC.ink} />
@@ -327,11 +327,11 @@ function ChernobilShot() {
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.R} texto="50 cm" largo={180} />
-      <BarraEscala T={T} at={K.R} until={K.E} texto="10 m" largo={160} y={1580} />
+      <BarraEscala T={T} at={K.R} until={K.E} texto="40 m" largo={160} y={1580} />
       <BarraEscala T={T} at={K.E} until={K.O} texto="5 cm" largo={110} y={1580} />
       <BarraEscala T={T} at={K.O} until={K.Pi} texto="50 cm" largo={180} y={1600} />
       <BarraEscala T={T} at={K.Pi} until={K.Pa} texto="5 cm" largo={110} y={1580} />
-      <BarraEscala T={T} at={K.Pa} until={K.Es} texto="5 µm" largo={150} y={1580} />
+      <BarraEscala T={T} at={K.Pa} until={K.Es} texto="5 µm" largo={110} y={1580} />
       <BarraEscala T={T} at={K.Es} until={K.H} texto="5 cm" largo={110} y={1580} />
       <BarraEscala T={T} at={K.H} until={K.Sp} texto="5 cm" largo={110} y={1580} />
       <BarraEscala T={T} at={K.Sp} until={K.Sp + 2.2} texto="20 m" largo={160} y={1580} />

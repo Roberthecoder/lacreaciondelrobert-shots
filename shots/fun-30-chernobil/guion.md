@@ -28,7 +28,25 @@
 
 **Música:** cama grave continua, tensa (zumbido de contador Geiger muy suave de fondo), sin golpe marcado; efectos en el mismo cuadro: roce del dedo en la pared, sello, pasos y respiración del traje, clics del contador al subir a 37, chasquidos Geiger en zonas rojas, latido grave al bajar al microscopio, "ping" de rayos frenados en la pared, tic del medidor ×500, burbujeo de colonias que crecen, golpe del sello HIPÓTESIS, pitido de los sensores en la estación.
 
-Barras de escala: 50 cm (pared), 1 cm (colonia / caja de Petri), 5 µm (hifa y pared).
+Barras de escala (aproximadas, dibujo esquemático): 50 cm (pared), 40 m (edificio), 5 cm (cajas de Petri), 5 µm (hifa y pared; conidios casi redondos de 3.4–4 µm), 20 m (Estación Espacial).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Pero solo se protege, o la aprovecha?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «esa mancha negra no es hollín: es un hongo» (cuadro 0) |
+| 2 | 6.0 | 12.0 | 12_perfil_serio | `arriba-der` | los micólogos entran al reactor dañado · 37 especies |
+| 3 | 17.0 | 20.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «le da color a tu piel» |
+| 4 | 25.0 | 27.4 | 07_pensativo_puno | `grande` | «¿solo se protege, o la aprovecha?» |
+| 5 | 33.6 | 41.2 | 11_sorprendido | `arriba-der` | «crecieron más… dos veces y media más colonias» |
+| 6 | 42.0 | 47.8 | 06_pensativo_menton | `arriba-der` | «es una hipótesis: no está comprobado» |
+| 7 | 49.0 | 53.5 | 04_bajando_lentes | `arriba-der` | la Estación Espacial, «un poquito menos» |
+| 8 | 54.1 | 57.9 | 02_apuntando_camara | `arriba-der` | «un hongo blindado con melanina» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 8 · **37.3 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas (8 con el cierre) · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la fuente el 29 oct 2026)
 

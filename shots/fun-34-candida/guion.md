@@ -11,27 +11,47 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Tú y tu pareja pueden traer en la boca la misma cepa de levadura: *Candida albicans*. | Fondo rosa: dos caras de perfil sobre una almohada, bocas abiertas; cuadro 0.3: de cada boca sale una burbuja con la misma bolita de levadura y un "=" entre ellas. Etiqueta "levadura · *Candida albicans*". |
-| 1 | Casa | Vive en la boca, el intestino y la piel de mucha gente sana, casi siempre sin molestar. | Silueta de cuerpo: se encienden boca, intestino y piel con puntitos de levadura. Chip "casi siempre: sin síntomas". |
-| 2 | Vecinas | Se cree que tus bacterias la mantienen a raya: compiten con ella. | Entramos a la lengua (fondo oscuro): muchas bacterias (bastoncitos y cocos de colores) rodean a pocas levaduras. Chip "hipótesis: compiten con ella". |
-| 3 | Antibiotico | Pero un antibiótico fuerte barre bacterias y ella puede ganar terreno. | Una cápsula cruza la escena y las bacterias se apagan; las levaduras se multiplican por gemación y llenan el hueco. |
-| 4 | Truco | Su truco: cambia de forma. | Una levadura al centro, grande; chip "cambia de forma (dimorfismo)". |
-| 5 | Formas | De bolitas que brotan pasa a hilos largos: las hifas. | La bolita (con su brote) estira un tubo que se alarga y tabica: hifa. Etiquetas "levadura (gemación)" y "hifa". Barra de escala 10 µm. |
-| 6 | Pregunta | ¿Y por qué importa la forma? | **Re-gancho.** "?" gigante sobre la hifa; Robert grande, pensativo. |
-| 7 | Invade | Porque la hifa es la forma más invasora: se mete en tus células. | Corte del epitelio de la boca (células en ladrillo): la levadura se queda arriba, la hifa entra en una célula. Chip "hifa = invade". |
-| 8 | Estudio | En 2016, en Londres y Jena, Alemania, vieron que las hifas sueltan una toxina: la candidalisina. | Tarjeta "2016 · Londres y Jena · *Nature*"; de la punta de la hifa salen partículas rojas: "candidalisina". |
-| 9 | Toxina | Daña la membrana de tus células. Sin ella, en ratones, ya no enfermaba la boca. | La membrana de la célula se rompe en puntos y la célula se pone gris; luego una hifa "sin toxina" (✗ gen) junto a células sanas y un ratón con chip "sin toxina: no enferma". |
-| 10 | Placas | Cuando crece de más en la boca, aparece el algodoncillo: placas blancas en la lengua y los cachetes. | Salimos a la boca (macro): placas blancas en lengua y cachetes. Etiqueta "algodoncillo (candidiasis oral)". |
-| 11 | Quien | Es más común en recién nacidos, con dentadura postiza, tras antibióticos o con inhaladores de corticoides. | Cuatro íconos que aparecen uno por uno: bebé, dentadura postiza, cápsula, inhalador. Chip "CDC". |
-| 12 | Algodon | Y puede sentirse como algodón en la boca. | Una bola de algodón dentro de la boca; Robert riendo. |
-| 13 | Cierre | Esa levadura que puedes compartir no es tu enemiga: espera a que tus bacterias se descuiden. | **Regreso a la imagen del inicio:** las mismas dos caras en la almohada; las levaduras tranquilas rodeadas de bacterias. Chip "tus bacterias la mantienen a raya". |
+| 0 | Gancho | Tú y tu pareja pueden traer en la boca la misma cepa de levadura: *Candida albicans*. | Fondo rosa: una pareja dormida en la misma almohada, bocas entreabiertas; cuadro 0.25: sobre cada boca se infla una burbuja al microscopio con la misma levadura ovalada, que brota; entre ellas un "=". Etiquetas "*Candida albicans*" y "una levadura (hongo)". |
+| 1 | Casa | Vive en la boca, el intestino y la piel de mucha gente sana, casi siempre sin molestar. | Silueta de cuerpo: se encienden boca, intestino y piel con levaduritas. Etiquetas "boca", "intestino", "piel"; chip "casi siempre: sin síntomas". |
+| 2 | Vecinas | Se cree que tus bacterias la mantienen a raya: compiten con ella. | Chip "AL MICROSCOPIO · tu lengua" (fondo oscuro): muchas bacterias (bastoncitos de colores) rodean a pocas levaduras ovaladas. Etiquetas "levadura" y "bacterias"; chip "hipótesis: compiten con ella". |
+| 3 | Antibiotico | Pero un antibiótico fuerte barre bacterias y ella puede ganar terreno. | Una cápsula ("antibiótico") cruza la escena y las bacterias se apagan a su paso; brotan diez levaduras nuevas que llenan el hueco. Chip "ella puede ganar terreno". |
+| 4 | Truco | Su truco: cambia de forma. | Una levadura ovalada grande (≈ 5 × 4 µm) con su brote y una flecha; chip "cambia de forma (dimorfismo)". |
+| 5 | Formas | De bolitas que brotan pasa a hilos largos: las hifas. | De la levadura sale un tubo de paredes paralelas (≈ 2 µm de ancho) que se alarga y se tabica: hifa. Etiquetas "levadura (gemación)" y "hifa". Barra 10 µm = 400 px (40 px/µm). |
+| 6 | Pregunta | ¿Y por qué importa la forma? | **Re-gancho.** Fondo lila, "?" gigante; Robert grande, pensativo. |
+| 7 | Invade | Porque la hifa es la forma más invasora: se mete en tus células. | Chip "POR DENTRO · la piel de tu boca": corte del epitelio (células en ladrillo, fondo oscuro); levaduras sobre la superficie y una hifa que entra en una célula. Etiquetas "levadura", "hifa", "células de tu boca"; chip "la hifa invade". |
+| 8 | Estudio | En 2016, en Londres y Jena, Alemania, vieron que las hifas sueltan una toxina: la candidalisina. | Tarjeta "2016 · Londres y Jena (Alemania) · Moyes et al., *Nature*"; de la punta de la hifa salen partículas rojas: etiqueta "candidalisina". |
+| 9 | Toxina | Daña la membrana de tus células. Sin ella, en ratones, ya no enfermaba la boca. | El borde de la célula invadida se rompe en trozos rojos y la célula se pone gris (chip "daña la membrana"); luego una tarjeta con un ratón y una hifa tachada y el chip "sin toxina: no enfermaba la boca". |
+| 10 | Placas | Cuando crece de más en la boca, aparece el algodoncillo: placas blancas en la lengua y los cachetes. | Salimos a la boca (macro, fondo cian): aparecen placas blancas en la lengua y en los cachetes. Etiquetas "algodoncillo", "(candidiasis oral)", "placas blancas". |
+| 11 | Quien | Es más común en recién nacidos, con dentadura postiza, tras antibióticos o con inhaladores de corticoides. | Fondo amarillo: cuatro íconos uno por uno: "recién nacidos" (bebé), "dentadura postiza", "antibióticos" (cápsula), "inhalador de corticoides". Chip "más común en… (CDC)". |
+| 12 | Algodon | Y puede sentirse como algodón en la boca. | La misma boca con placas: entra una bola de algodón. Chip "puede sentirse como algodón"; Robert sonriendo. |
+| 13 | Cierre | Esa levadura que puedes compartir no es tu enemiga: espera a que tus bacterias se descuiden. | **Regreso a la imagen del inicio:** la misma pareja en la almohada; en cada burbuja, la levadura tranquila rodeada de bacterias que vuelven. Chip "tus bacterias la mantienen a raya". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave y tibia, sin golpe; se tensa al entrar el antibiótico y las hifas, y vuelve a calmarse en el cierre. Efectos en el mismo cuadro: "pop" de cada levadura que brota, barrido del antibiótico, estiramiento de la hifa, golpe sordo al entrar en la célula, chisporroteo de la toxina, crujido de la membrana, campanita de cada ícono de riesgo.
+**Música** (`gen-audio.mjs`): cama grave y tibia, sin golpe; se tensa (acorde más bajo) del antibiótico a la toxina y vuelve a calmarse en el cierre. Efectos en el mismo cuadro: burbujas de las bocas, gota de cada levadura que brota, tics de las bacterias, barrido del antibiótico y crujido de cada bacteria que se apaga, la hifa que se estira, golpe sordo al entrar en la célula, tics de la candidalisina, crujidos de la membrana, el ✗ del ratón, gotas de las placas, campanita de cada ícono, el algodón que entra.
 
-Barra de escala: 10 cm (caras), 2 cm (lengua), 10 µm (levadura e hifa), 20 µm (epitelio).
+Barras de escala (cuadran con el dibujo): 10 cm = 140 px (caras), 50 cm = 195 px (cuerpo), 10 µm = 300 px en la lengua (levadura 150 × 120 px ≈ 5 × 4 µm), 10 µm = 400 px en "formas" (levadura 200 × 160 px ≈ 5 × 4 µm; hifa 80 px ≈ 2 µm), 20 µm = 200 px en el epitelio (levadura 56 × 44 px; hifa 20 px ≈ 2 µm), 2 cm = 320 px (boca). Los íconos de "¿a quién le pasa más?" no llevan escala.
 
 No es consejo médico: si tienes placas blancas en la boca que no se van, consulta a tu médico o dentista.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué importa la forma?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «tú y tu pareja… la misma levadura» (cuadro 0) |
+| 2 | 5.5 | 9.6 | 06_pensativo_menton | `arriba-der` | «vive en la boca, el intestino y la piel» |
+| 3 | 14.2 | 17.5 | 10_serio_molesto | `arriba-der` | «un antibiótico fuerte barre bacterias» |
+| 4 | 18.0 | 22.4 | 13_senalando_arriba | `arriba-der` | «su truco: cambia de forma» (señala la hifa) |
+| 5 | 22.7 | 24.4 | 07_pensativo_puno | `grande` | «¿y por qué importa la forma?» |
+| 6 | 25.0 | 28.0 | 04_bajando_lentes | `arriba-der` | «la hifa se mete en tus células» |
+| 7 | 34.2 | 38.1 | 12_perfil_serio | `arriba-der` | «daña la membrana… en ratones» |
+| 8 | 39.0 | 43.8 | 11_sorprendido | `arriba-der` | «placas blancas en la lengua y los cachetes» |
+| 9 | 50.4 | 52.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «como algodón en la boca» |
+| 10 | 53.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «no es tu enemiga» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **36.6 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas · el hueco más largo es de 6.6 s (en «¿a quién le pasa más?» no sale, para no tapar los íconos).
 
 ## Fuentes (abiertas el 29 oct 2026)
 

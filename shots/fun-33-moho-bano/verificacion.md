@@ -39,4 +39,3 @@ Fuentes abiertas:
 
 **Resumen:** 22 afirmaciones revisadas abriendo las fuentes. Las 6 ⚠️ de la primera ronda (Cladosporium sin "cultivo directo", mancha rosa absoluta, tachón de "tóxico", alergia/asma sin condiciones, moho muerto como seguro) se corrigieron y se volvieron a verificar; los recortes de redacción también. Todo queda ✅.
 
-VEREDICTO: APROBADO
