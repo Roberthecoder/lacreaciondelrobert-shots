@@ -27,7 +27,32 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` |
+| 2 | 8.6 | 11.6 | 06_pensativo_menton | `izq-alto` |
+| 3 | 19.4 | 23.7 | 13_senalando_arriba | `arriba-der` |
+| 4 | 33.3 | 37.3 | 12_perfil_serio | `bajo-der` |
+| 5 | 37.4 | 39.0 | 07_pensativo_puno | `grande` |
+| 6 | 45.0 | 47.9 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 7 | 50.5 | 53.1 | 04_bajando_lentes | `bajo-der` |
+| 8 | 53.6 | 57.9 | 13_senalando_arriba | `arriba-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 8 · 27.2 s (+ cierre 3.5 s) · poses 7 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «no es tu cerebro congelándose» (sorprendido, 11) |
+| 2 | «la idea más aceptada» (pensativo, 06) |
+| 3 | «tu cerebro la ubica en la frente» (señalando, 13) |
+| 4 | «volvía a cerrarse cuando se quitaba» (serio, 12) |
+| 5 | «¿Y cómo se quita?» (pensativo grande, 07) |
+| 6 | «se quita solo en menos de dos minutos» (sonriendo, 05) |
+| 7 | «comer el helado despacio ayuda a evitarlo» (bajando lentes, 04) |
+| 8 | «es tu paladar mandando la alarma a tu frente» (señalando, 13) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 

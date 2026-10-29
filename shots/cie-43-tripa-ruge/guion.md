@@ -28,7 +28,34 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` |
+| 2 | 11.4 | 15.8 | 13_senalando_arriba | `bajo-der` |
+| 3 | 21.8 | 25.1 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 4 | 25.2 | 28.1 | 07_pensativo_puno | `grande` |
+| 5 | 34.3 | 38.7 | 04_bajando_lentes | `bajo-der` |
+| 6 | 41.4 | 44.3 | 11_sorprendido | `bajo-der` |
+| 7 | 45.4 | 50.3 | 06_pensativo_menton | `izq-alto` |
+| 8 | 50.7 | 54.1 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 9 | 54.6 | 57.9 | 13_senalando_arriba | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 9 · 34.3 s (+ cierre 3.5 s) · poses 6 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «Ese rugido de tu panza no siempre es hambre» (sorprendido, 11) |
+| 2 | «ese burbujeo… tiene nombre: borborigmo» (señalando, 13) |
+| 3 | «suena más fuerte, como un tambor hueco» (sonriendo, 05) |
+| 4 | «¿Y por qué ruge justo cuando tienes hambre?» (pensativo con puño, 07, grande) |
+| 5 | «se repite más o menos cada hora y media o dos horas» (bajando lentes, 04) |
+| 6 | «la motilina… además te avisa que tienes hambre» (sorprendido, 11) |
+| 7 | «aunque le digamos tripa que ruge, gran parte del ruido viene del intestino delgado» (pensativo, 06) |
+| 8 | «Que tu panza haga ruido es normal» (sonriendo, 05) |
+| 9 | «tu panza no te está regañando: está haciendo la limpieza» (señalando, 13) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 
