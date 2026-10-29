@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Estrellas Parpadean base narrada.dc.html",
+  "salida": "Shot Estrellas Parpadean narrado.dc.html",
+  "nota": "Shot Científico #38. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Las estrellas no parpadean: es el aire que está encima de ti el que las hace temblar."
+    },
+    {
+      "escena": "Lejos",
+      "texto": "Las estrellas están tan lejos que, para ti, son puntitos de luz casi sin tamaño."
+    },
+    {
+      "escena": "Aire",
+      "texto": "Antes de llegar a tus ojos, esa luz atraviesa kilómetros de aire que se mueve, con capas más calientes y más frías."
+    },
+    {
+      "escena": "Dobla",
+      "texto": "Cada capa dobla la luz un poquito distinto, y como el aire no deja de moverse, el puntito brinca y cambia de brillo."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "A eso se le llama centelleo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué los planetas casi no parpadean?"
+    },
+    {
+      "escena": "Disco",
+      "texto": "Porque están mucho más cerca, y aunque los veas como puntos, son discos chiquitos."
+    },
+    {
+      "escena": "Promedio",
+      "texto": "Cada parte del disco tiembla por su lado, y los temblores se compensan: por eso brillan más tranquilos."
+    },
+    {
+      "escena": "Truco",
+      "texto": "Truco para encontrar un planeta: si un punto brillante no parpadea, probablemente es un planeta."
+    },
+    {
+      "escena": "Telescopios",
+      "texto": "Por eso muchos telescopios se construyen en montañas altas y secas, y otros se mandan al espacio."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que cuando una estrella parpadea, no te está guiñando: es tu cielo moviéndose."
+    }
+  ]
+}

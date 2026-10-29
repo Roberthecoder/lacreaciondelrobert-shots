@@ -26,7 +26,32 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 6.3 | 11_sorprendido | `gancho` |
+| 2 | 12.3 | 15.0 | 13_senalando_arriba | `bajo-der` |
+| 3 | 18.8 | 22.4 | 10_serio_molesto | `izq-alto` |
+| 4 | 26.0 | 29.5 | 04_bajando_lentes | `bajo-der` |
+| 5 | 35.6 | 38.1 | 07_pensativo_puno | `grande` |
+| 6 | 40.2 | 44.5 | 13_senalando_arriba | `bajo-der` |
+| 7 | 45.3 | 52.4 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 8 | 53.8 | 57.9 | 12_perfil_serio | `arriba-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 8 · 34.1 s (+ cierre 3.5 s) · poses 7 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «sientes dos dolores, uno detrás del otro» (sorprendido) |
+| 2 | «forradas de una capa de grasa que las hace rápidas» (señalando) |
+| 3 | «el dolor sordo, el que arde y se queda» (serio) |
+| 4 | «a un par de metros por segundo o menos» (bajando los lentes) |
+| 5 | «¿Entonces por qué no sientes todo junto?» (pensativo, grande) |
+| 6 | «primero te llega el aviso rápido» (señalando) |
+| 7 | «sobarte sí ayuda un poco» (sonriendo) |
+| 8 | «es la velocidad de tus nervios» (serio de perfil) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 
