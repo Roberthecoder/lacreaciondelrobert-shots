@@ -65,5 +65,16 @@
   "ok": true,
   "id": "18132184910509555",
   "nota": "contenedor listo y NO publicado (Instagram no tiene borradores por API; caduca en 24 h)"
+ },
+ {
+  "clave": "003-semillas-luna",
+  "red": "tiktok",
+  "modo": "privado",
+  "fecha": "2026-10-29T18:19:00Z",
+  "run": "40929407579",
+  "autorizo": null,
+  "ok": true,
+  "id": "v_inbox_file~v2.7702155698671372308",
+  "nota": "BORRADOR en la bandeja de TikTok (SEND_TO_USER_INBOX): Robert lo abre en la app, pega el texto y publica él"
  }
 ]
