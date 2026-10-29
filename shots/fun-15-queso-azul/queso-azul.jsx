@@ -371,7 +371,7 @@ function QuesoAzulShot() {
       <Chip T={T} at={K.E + 3.0} until={K.Po - 0.3} texto="domesticado 2 veces" x={540} y={1130} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Po + 0.5} until={K.Co - 0.3} texto="1 · Roquefort" x={250} y={470} tam={36} borde={QZ.vena} />
       <Etq T={T} at={K.Po + 0.8} until={K.Co - 0.3} x={60} y={550} texto="cuevas del Combalou, Francia" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Po + 2.0} until={K.Co - 0.3} texto="2 · quesos azules del mundo" x={760} y={700} tam={30} borde={KC.pink} />
+      <Chip T={T} at={K.Po + 2.0} until={K.Co - 0.3} texto="2 · quesos de todo el mundo" x={760} y={700} tam={30} borde={KC.pink} />
       <Chip T={T} at={K.Co + 0.2} until={K.C - 0.3} texto="U. de Nottingham · 2024" x={350} y={480} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Co + 0.6} until={K.C - 0.3} x={60} y={570} texto="mutantes de color (luz UV)" tam={26} color={KC.ink} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="sembrado a propósito ✓" x={330} y={460} tam={38} borde={KC.leaf} />

@@ -37,4 +37,30 @@ Fuentes abiertas:
 
 **Resumen:** tras dos rondas de correcciones (la IARC en lugar de "la OMS", el año y el moho en los pavos, de qué eran las muestras de Kenia y "mohos como" en plural), todas las afirmaciones de la voz y de la pantalla están verificadas en su fuente, con su año.
 
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé todos los textos en pantalla de `aflatoxinas.jsx` (chips, etiquetas, tarjeta, números, subtítulos, rótulos dibujados), las barras de escala, `publicacion.md` completo (7 redes + comentario fijado) y las citas de `## Fuentes` del guion (se reabrieron MMWR, OMS e IARC).
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Pantalla: "sin olor / sin sabor / sin color", "aflatoxinas (no se ven)" | ✅ | [SFA] | "odourless, tasteless and colourless" | 2022 |
+| F2 | Pantalla: "*Aspergillus flavus*", "moho amarillo verdoso", "esporas"; conidióforo rugoso con vesícula redonda (~33 µm con la barra de 50 µm) y esporas de ~5 µm en cadenas | ✅ | [INSPQ] | "coarsely roughened"; vesículas "globose to subglobose, 25-45 [µm]"; conidios "globose to subglobose, 3.6 [µm]"; cabezas "radiate becoming loosely columnar" | ≤2009 |
+| F3 | Pantalla: "calor + humedad"; costales de maíz, cacahuate, nueces y chiles | ✅ | [OMS] | "often under warm, damp and humid conditions" | 2023 |
+| F4 | Pantalla: "el calor de la cocina no basta"; subtítulo "Tostar o freír: no basta." | ✅ | [SFA], [P] | "cannot be easily eliminated … roasting, baking, and even frying"; "temperatures up to 100 °C … have little effect on AFs" | 2022 / 2021 |
+| F5 | Pantalla: "aflatoxina B1" → "tu cuerpo la vuelve epóxido" → "se pega a una G (guanina)"; "tu ADN" | ✅ | [IARC] | "Humans metabolize aflatoxin B1 to an 8,9-epoxide, forming DNA and albumin adducts"; "aflatoxin B1-N7-guanine" | 1993 |
+| F6 | Pantalla: "IARC: la agencia contra el cáncer de la OMS", sello "GRUPO 1", "cancerígenas para humanos", "cáncer de hígado", subtítulo "Cancerígenas: grupo 1." | ✅ | [IARC], [NCI] | "carcinogenic to humans (Group 1)"; "associated with an increased risk of liver cancer" | 1993 / 2024 |
+| F7 | Tarjeta "2004 · Kenia · brote por maíz · MMWR (CDC), 2004"; chip "maíz guardado húmedo" | ✅ | [MMWR] | "widespread aflatoxin contamination of locally grown maize, which occurred during storage of the maize under damp conditions" | 2004 |
+| F8 | Pantalla: "hasta 8,000", "partes por mil millones (ppb)", "aflatoxina B1 · comida de las casas", "límite: 20" | ✅ | [MMWR] | "Food samples collected from household visits…"; "15 had >20 ppb aflatoxin B1 (range: 20--8,000 ppb)"; "limited to 20 parts per billion (ppb), a level also adopted by Kenyan authorities" | 2004 |
+| F9 | Pantalla: "317 enfermos", "125 muertos" (cuadrícula de 317, 125 se apagan) | ✅ | [MMWR] | "As of July 20, a total of 317 cases had been reported, with 125 deaths" | 2004 |
+| F10 | Pantalla: "Inglaterra, hacia 1960", "100,000 pavitos muertos", costal "HARINA DE CACAHUATE" con moho | ✅ | [P] | "A total of 100,000 turkey poults died … in England"; "associated with Brazilian groundnut meal affected by Aspergillus flavus" | 1960 (rev. 2021) |
+| F11 | Pantalla: "✓ secar el grano", "✓ guardarlo seco y fresco", "✓ tirar lo mohoso, arrugado o descolorido", "el arrugado, a la basura" | ✅ | [OMS], [MMWR] | "discard any that look mouldy, discoloured, or shrivelled"; "kept free of insects, dry, and not too warm"; "dried completely, and stored properly" | 2023 / 2004 |
+| F12 | Barras de escala: 2 cm (cacahuate), 5 mm (lupa), 50 µm (conidióforo), 50 cm / 1 m (bodega, granero), 10 cm (cocina, hígado, pavos), 2 nm (ADN) | ✅ | [INSPQ] | Proporciones congruentes con los dibujos (esquemáticos); vesícula y conidios dentro del rango de la fuente | — |
+| F13 | publicacion.md (YouTube): "En dosis grandes causan intoxicación aguda, que daña el hígado" | ✅ | [OMS] | "Large doses of aflatoxins can lead to acute poisoning (aflatoxicosis)" … "usually through damage to the liver" | 2023 |
+| F14 | publicacion.md (LinkedIn): "La intervención clave fue reemplazar el maíz contaminado" | ✅ | [MMWR] | "Urgent replacement of the aflatoxin-contaminated maize with noncontaminated maize proved to be a critical intervention." | 2004 |
+| F15 | publicacion.md (YouTube): brote entre enero y julio de 2004 en las provincias Oriental y Central; cosecha en febrero; "el límite que usaba Kenia era 20 ppb"; descubrimiento "a principios de los años sesenta" con harina de cacahuate de Brasil contaminada | ✅ | [MMWR], [P] | título del MMWR; "harvested in February during peak rains"; "a level also adopted by Kenyan authorities"; "In the early 1960s the discovery of aflatoxins began" | 2004 / 2021 |
+| F16 | publicacion.md (TikTok): "son químicamente estables y no se eliminan fácilmente ni al tostar, hornear o freír" (corregido; antes "son estables incluso a las temperaturas de tostar, hornear o freír") | ✅ | [SFA] | "Once produced, aflatoxins are chemically stable in food and cannot be easily eliminated from food … even at high temperatures encountered in food processing, such as roasting, baking, and even frying." | 2022 |
+| F17 | Resto de publicacion.md (Instagram, Facebook, X, Threads, comentario fijado) y citas de `## Fuentes` del guion | ✅ | todas | Coinciden con las filas 1–15; las frases citadas en el guion aparecen tal cual en sus fuentes (IARC: "There is sufficient evidence in humans for the carcinogenicity of aflatoxin B1.") | — |
+
+**Resumen final:** voz, textos en pantalla, barras de escala, publicacion.md (7 redes + comentario fijado) y citas del guion quedan verificados en su fuente, con su año; no queda ninguna ❌ ni ⚠️.
+
 VEREDICTO: APROBADO

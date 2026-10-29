@@ -7,7 +7,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ### TikTok
 ```text
 ¿Por qué no debes comer el cacahuate arrugado del fondo de la bolsa? Porque puede traer aflatoxinas: un veneno sin olor, sin sabor y sin color. 🥜⚠️
-Las fabrican mohos como Aspergillus flavus (y A. parasiticus) en maíz, cacahuate, nueces o chiles guardados con calor y humedad. Y tostarlas o freírlas no las quita del todo: son estables incluso a las temperaturas de tostar, hornear o freír.
+Las fabrican mohos como Aspergillus flavus (y A. parasiticus) en maíz, cacahuate, nueces o chiles guardados con calor y humedad. Y tostarlas o freírlas no las quita del todo: son químicamente estables y no se eliminan fácilmente ni al tostar, hornear o freír.
 En tu cuerpo, la aflatoxina B1 se transforma en una molécula (un epóxido) que se pega a tu ADN. Por eso la IARC, la agencia contra el cáncer de la OMS, clasifica las aflatoxinas como cancerígenas para humanos (Grupo 1): están ligadas al cáncer de hígado.
 El caso real: en 2004, en Kenia, el maíz se cosechó en plenas lluvias y se guardó húmedo. En comida de algunas casas había hasta 8,000 partes por mil millones de aflatoxina B1; el límite era 20. Para el 20 de julio había 317 enfermos con piel amarilla (ictericia) y 125 muertos.
 Dato extra: las aflatoxinas se descubrieron hacia 1960, cuando murieron unos 100,000 pavitos en Inglaterra que comieron harina de cacahuate con moho.
