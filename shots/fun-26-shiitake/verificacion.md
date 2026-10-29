@@ -50,3 +50,40 @@ Fuentes abiertas:
 
 Resumen: 28 afirmaciones (voz y pantalla), todas ✅ verificadas con su fuente primaria y su frase textual.
 
+
+## Revisión final (animación y publicación) · 29 oct 2026
+
+Se quitó el veredicto mientras se revisan todos los textos en pantalla de `shiitake.jsx` (chips, etiquetas, subtítulos, `TarjetaEstudio`, textos SVG), las barras de escala, `publicacion.md` (7 redes + comentario fijado) y `## Fuentes` del guion.
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Chips "¿crudo?", "dermatitis flagelada", "flagelo = látigo · es raro" | ✅ | [M21], [WIK], [N17] | "'Flagellate dermatitis' because of the resemblance to 'whipped' skin"; flagellum: "whip, lash, scourge"; "a rare cutaneous reaction" | 2021 / 2017 |
+| F2 | Etiquetas "shiitake" · "*Lentinula edodes*" | ✅ | [B14] | "Shiitake (Lentinula edodes) is an edible mushroom" | 2014 |
+| F3 | Chip "de 1 hora a 7 días" + 7 tarjetas "1…7 días después de comer" | ✅ | [B22] | "The rash appeared 1-168 h (median: 48 h) after shiitake ingestion." | 2022 |
+| F4 | `Cronometro` "DESPUÉS DE COMER" con `factor={168 * 3600 / 3.1}` (**corregido**; antes /2.6 llegaba a ~176 h) | ✅ | [B22] | "The rash appeared 1-168 h (median: 48 h) after shiitake ingestion." Visible 2.73 s → ~148 h a opacidad completa; al terminar la salida (3.08 s) ~167 h: nunca pasa de 168 h = 7 días. | 2022 |
+| F5 | Etiquetas "torso", "brazos", "piernas"; chip "mucha comezón" | ✅ | [B22], [S16] | "across the trunk, arms, and legs"; "severe pruritus" | 2022 / 2016 |
+| F6 | "hifa del shiitake", "pared celular", "lentinano (β-glucano)", "se cree que es el culpable", "moléculas agrandadas" | ✅ | [N17], [S16], [B22] | "polysaccharide component in the cell walls"; "heat-inactivated beta-glucan polysaccharide"; "thought to involve lentinan" | 2017 / 2016 / 2022 |
+| F7 | "hipótesis 1: inflamación", "vasito de la piel", "piel (corte)", "hipótesis 2: alergia retardada", "linfocito T" | ✅ | [M21], [NE15], [B22] | "postulated … inflammatory cytokines leads to vasodilatation"; "delayed-type systemic hypersensitivity"; "th1-type hypersensitivity" | 2021 / 2015 / 2022 |
+| F8 | "crudo", "poco cocido", "✓ aquí pasa" | ✅ | [B22] | "Dermatitis occurred after raw or undercooked shiitake consumption" | 2022 |
+| F9 | "~140 °C: la hélice se separa"; termómetro de 25 a 140 °C; hélice en tres hilos; "lentinano (molécula agrandada)" | ✅ | [W08] | "conformation transitions from triple strand to single chain … completed rapidly at 130-145 degrees C" | 2008 |
+| F10 | `TarjetaEstudio` "2014–2019 · Francia · centros de toxicología · Boels et al., Clin Toxicol, 2022"; chip "59 casos de dermatitis · de 125 expuestos"; cuadrícula de 125 puntos con 59 en rojo; "esquemático" | ✅ | [B22] | "between 1 January 2014 and 31 December 2019. Out of 125 shiitake exposures, we identified 59 cases of dermatitis" | 2022 |
+| F11 | "días con rayas (mediana)" con barras 4, 7, 15 días; "✓ todos se recuperaron" | ✅ | [B22] | "(median days 4 vs. 7 vs. 15, respectively; p = .007)"; "All patients made a complete recovery." | 2022 |
+| F12 | "Boels et al., 2014"; "crudo" / "cocido: nada" | ✅ | [B14] | "no symptoms were reported among guests, who preferred cooked shiitake" | 2014 |
+| F13 | "✓ bien cocido", "¿rayas raras? al médico" | ✅ | [M21] | "well-cooked shiitake mushrooms can usually be safely eaten" | 2021 |
+| F14 | 13 subtítulos (idx 0–12) | ✅ | (= voz, filas 1–17) | Resumen fiel de cada línea de voz; "Francia, 2014–2019: 59 casos." va junto a la voz «registraron» y al chip "59 casos de dermatitis · de 125 expuestos". | — |
+| F15 | Barras de escala: 5 cm (plato, hongo), 50 cm (cuerpo), 10 µm (hifa), 100 µm (corte de piel), 10 cm (sartén); moléculas rotuladas "agrandadas" | ✅ | [NAT] | Sombrero de "Ø 8-20 cm": una rebanada/hongo de ~5 cm es razonable; dibujos esquemáticos | — |
+| P1 | publicacion.md (YouTube): revisión de 50 casos publicados, rayas en 98 %, comezón 78 %, se quita en ~12.5 días (Nguyen 2017) | ✅ | [N17] | "a total of 50 patients"; "linear flagellated dermatitis (98%), pruritus (78%)"; "resolving in approximately 12.5 d without treatment" | 2017 |
+| P2 | YouTube/LinkedIn: 1 hora a 7 días, mediana 48 h; medianas 4/7/15; todos se recuperaron; 59 de 125 | ✅ | [B22] | "1-168 h (median: 48 h)"; "median days 4 vs. 7 vs. 15"; "All patients made a complete recovery." | 2022 |
+| P3 | YouTube: a unos 130–145 °C la triple hélice se separa en cadenas sueltas | ✅ | [W08] | "from triple helix to single flexible chains occurred at elevated temperatures … 130-145 degrees C" | 2008 |
+| P4 | YouTube: serie anterior 2000–2013, los invitados que lo prefirieron cocido no tuvieron síntomas | ✅ | [B14] | "from January 2000 to December 2013"; "no symptoms were reported among guests, who preferred cooked shiitake" | 2014 |
+| P5 | Facebook: se quita sola en días o semanas | ✅ | [B22] | "persisted for 1-40 d (median 10 d)"; "All patients made a complete recovery." | 2022 |
+| P6 | LinkedIn: hongo muy común; consumo que crece fuera de Asia; reacción poco conocida; mecanismo (tóxico o de hipersensibilidad) sin aclarar | ✅ | [NE15], [B22], [B14] | "the second most commonly consumed mushroom in the world"; "increasingly marketed in Europe"; "this still poorly known toxic dermatitis"; "a partial toxic mechanism or a th1-type hypersensitivity mechanism" | 2015 / 2022 / 2014 |
+| P7 | Instagram y X: "En Francia, de 2014 a 2019 / (2014–2019) los centros de toxicología registraron 59 casos" (**corregido**; antes: "hubo 59 casos") | ✅ | [B22] | "retrospective review of cases in the French PCCs database between 1 January 2014 and 31 December 2019 … we identified 59 cases of dermatitis" | 2022 |
+| P8 | Referencias completas (Boels 2022 y 2014, Nguyen, Stephany, Maruthappu, Netchiporouk JAAD Case Rep 1(3):117–119, Wang 2008) en YouTube y comentario fijado | ✅ | PubMed / PMC esummary | Volumen, número y páginas coinciden con PubMed/PMC | — |
+| P9 | `guion.md` → `## Fuentes` #7 (Wang 2008) con frase textual y URL de PubMed (**corregido**) | ✅ | [W08] | Cita copiada exacta del resumen: "…from triple helix to single flexible chains occurred at elevated temperatures" · "completed rapidly at 130-145 degrees C … The thermally induced conformational transition was irreversible." | 2008 |
+
+**Re-verificación de la revisión final (29 oct 2026):** se aplicaron y revisaron las 3 correcciones (F4 en `shiitake.jsx`, P7 en `publicacion.md` y P9 en `guion.md`). Todos los textos en pantalla, subtítulos, barras de escala, las 7 redes, el comentario fijado y las citas de `## Fuentes` quedan ✅.
+
+Resumen: 28 afirmaciones de voz y pantalla del guion + 24 de animación y publicación, todas ✅ con su fuente primaria y frase textual.
+
+VEREDICTO: APROBADO

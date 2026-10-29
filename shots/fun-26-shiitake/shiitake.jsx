@@ -321,7 +321,7 @@ function ShiitakeShot() {
       <Etq T={T} at={K.N + 1.2} until={K.Es - 0.3} x={560} y={775} texto="Lentinula edodes" it tam={36} color={KC.ink} />
       <Chip T={T} at={K.N + 2.6} until={K.Es - 0.3} texto="dermatitis flagelada" x={340} y={400} tam={48} borde={KC.red} />
       <Chip T={T} at={K.N + 3.0} until={K.Es - 0.3} texto="flagelo = látigo · es raro" x={340} y={500} tam={32} borde={KC.ink} />
-      <Cronometro T={T} at={K.Es + 0.1} until={K.R - 0.3} factor={168 * 3600 / 2.6} etiqueta="DESPUÉS DE COMER" x={420} y={560} />
+      <Cronometro T={T} at={K.Es + 0.1} until={K.R - 0.3} factor={168 * 3600 / 3.1} etiqueta="DESPUÉS DE COMER" x={420} y={560} />
       <Chip T={T} at={K.Es + 1.0} until={K.R - 0.3} texto="de 1 hora a 7 días" x={420} y={700} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.R + 0.8} until={K.L - 0.3} x={540} y={680} texto="torso" tam={34} color={KC.ink} />
       <Etq T={T} at={K.R + 1.4} until={K.L - 0.3} x={600} y={860} texto="brazos" tam={34} color={KC.ink} />
