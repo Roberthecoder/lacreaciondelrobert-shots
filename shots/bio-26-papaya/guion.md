@@ -6,29 +6,30 @@
 - **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s). Solo narrado (revisión sin voz la hace GitHub).
 - **Viaje:** macro (un papayo con fruta en Puna, Hawái) → micro (el pulgón pica la hoja; con la `Lupa`, dentro de la célula: el virus filamentoso, el gen de la cubierta, el ARN cortado) → macro (el mismo papayo, ahora Rainbow, sano y con fruta).
 
-## Versión narrada (959 caracteres, 185 palabras, ~58 s de voz)
+## Versión narrada (924 caracteres de voz, 13 líneas, ~57 s estimados; total 61.5 s)
+
+Corregido el 29 oct 2026 tras la verificación independiente (ver `verificacion.md`): «puede perder» la mitad del azúcar, «papayas normales **de control**» en el ensayo de 1995, «ya ocupaba la mitad de los **campos** de papaya en cosecha» (es superficie) y «Pero **Rainbow** es a la medida» (SunUp sí aguanta el virus de Brasil). Se recortó la voz a ~57 s.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa papaya no se salvó con insecticida: la salvó un pedacito del virus. | Fondo amarillo/menta. **Desde el cuadro 0** una papaya entera sana gira en primer plano junto a su árbol; un rociador de insecticida aparece y se tacha (`MitoTachado` "¿insecticida?"); de la papaya sale un pedacito de hebra que brilla. |
-| 1 | Llega | En 1992, el virus de la mancha anular llegó a Puna, en Hawái. | Mapa sencillo de la isla de Hawái con Puna marcado; chip "Puna · 1992". Campo de papayos verdes que empiezan a ponerse amarillos. |
-| 2 | Pulgon | Lo cargan pulgones: con un piquete de segundos infectan otro árbol. | Un pulgón (cuerpo de pera, antenas largas, sifones traseros) vuela de un árbol enfermo a uno sano, pica la hoja con su estilete 1-2 s y se va. Cronómetro "segundos". |
-| 3 | Dano | El fruto se llena de anillos y pierde la mitad del azúcar o más. | La papaya con **anillos verdes oscuros** (manchas en forma de anillo) en la cáscara; hojas con mosaico amarillo. `Medidor` "azúcar" que baja a la mitad o menos. |
-| 4 | Caida | En cinco años Hawái perdió más de un tercio de su papaya fresca. | Gráfica de barras: 1992 → 1997, la barra de producción de papaya fresca baja >1/3 (55.8 → 35.7 millones de libras). |
-| 5 | Pregunta | ¿Cómo defiendes un árbol de algo que no ves? | **Re-gancho.** `Escala`: el virus mide ~0.8 µm de largo (760–800 nm), un hilito flexible. Robert pensativo. |
-| 6 | Gen | Dennis Gonsalves y su equipo tomaron un gen del virus: el de su cubierta. | Fondo oscuro (microscópico): el virus filamentoso con su ARN dentro y su cubierta de proteína; un tramo del ARN/gen se resalta y se recorta. Chip "gen de la cubierta (CP)". |
-| 7 | Disparo | Lo pegaron a balines diminutos y lo dispararon a células de papaya. | Una "pistola de genes" esquemática: microbalines recubiertos con el gen entran a un grupito de células de papaya en cultivo. Sonido de disparo suave. |
-| 8 | Silencio | La planta lee ese gen y enciende una defensa que corta ARN parecido. | **Lupa** "POR DENTRO · célula de la hoja": la célula lee el gen, sale una copia de ARN; aparecen "tijeras" de la defensa que reconocen ese texto. |
-| 9 | Virus | Si el virus entra, su ARN acaba en pedazos. | Entra el virus; su ARN se abre y las tijeras lo cortan en pedacitos antes de que se copie. |
-| 10 | Estudio | En 1995, en Puna, al año todas las papayas normales enfermaron; ninguna con el gen. | `TarjetaEstudio` "Puna · 1995 · ensayo de campo": un cuadro de árboles con el gen (verdes) rodeado de árboles normales que se vuelven amarillos; contador "normales enfermas 100 % · con el gen 0". |
-| 11 | Rainbow | En 1998 salió Rainbow; en el 2000 ya era la mitad de la papaya en cosecha. | Chip "1998 · Rainbow y SunUp". Papaya Rainbow abierta (pulpa amarilla). Gráfica de pastel: 50 % de la superficie en cosecha de Hawái en 2000. |
-| 12 | Medida | Pero es a la medida: con virus de Brasil o Tailandia, se enferma. Y el virus también está en México. | Llaves y cerradura: el gen encaja con el virus de Hawái (✓) pero no con los de Brasil y Tailandia (✗). Luego un mapa de México con Veracruz marcado y un papayo con anillos. |
-| 13 | Cierre | Por eso no la salvó un insecticida: la salvó un pedacito del virus. | **Regreso al papayo del inicio**, ahora sano y cargado de fruta; la hebra brillante dentro de la papaya. |
-| — | Outro | (sin voz) | Cierre de marca con Robert. |
+| 0 | Gancho | Esa papaya no se salvó con insecticida: la salvó un pedacito del virus. | Fondo amarillo. **Desde el cuadro 0** el papayo (tronco recto con cicatrices de hojas, corona de hojas palmeadas, frutos pegados al tronco) y una papaya que se mece. `MitoTachado` «¿insecticida?» se tacha; la hebra dorada brilla dentro de las papayas. Chip «un gen del virus». |
+| 1 | Llega | En 1992, el virus de la mancha anular llegó a Puna, en Hawái. | Fondo cian: la isla de Hawái esquemática, Puna (punta este) se marca en rojo; papayos abajo que se ponen amarillos. Chip «Puna, Hawái · 1992». |
+| 2 | Pulgon | Lo cargan pulgones: basta un piquete de segundos. | Fondo menta: un pulgón alado (cuerpo de pera, antenas largas, sifones) vuela de una hoja con mosaico a una sana, pica con el estilete y se va; salen hilitos rosas (virus). Chip «un piquete de segundos». |
+| 3 | Dano | El fruto se llena de anillos y puede perder la mitad de su azúcar o más. | Fondo rosa: aparecen anillos en la cáscara (etiqueta «manchas en anillo»), hoja enferma, barra de «azúcar» que baja a la mitad. Chip «puede bajar 50 % o más». |
+| 4 | Caida | En cinco años, Hawái perdió más de un tercio de su papaya fresca. | Barras 1992 (55.8) y 1997 (35.7) «millones de libras de papaya fresca · Hawái». Chip «−36 % en 5 años». |
+| 5 | Pregunta | ¿Y cómo defiendes un árbol de algo que no ves? | **Re-gancho.** Fondo oscuro, «?» gigante, el virus filamentoso con barra de escala «≈ 0.8 µm». Robert grande, pensativo. |
+| 6 | Gen | El equipo de Dennis Gonsalves tomó el gen de la cubierta del virus. | El virus de cerca: cubierta de proteína (subunidades rosas) y ARN adentro (etiquetas); un tramo se resalta en dorado y sale. Escala «≈ 160 nm». Chip «gen de la cubierta del virus». |
+| 7 | Disparo | Lo pegaron a balines y lo dispararon a células de papaya. | Fondo lila: pistola de genes esquemática; microbalines dorados caen sobre grupitos de células de papaya en una placa, que se encienden. Chip «bombardeo con microbalines». |
+| 8 | Silencio | La planta lee ese gen y enciende una defensa: si entra el virus, corta su ARN en pedazos. | `Lupa` «POR DENTRO · célula de la hoja»: el gen en el núcleo se lee (copias de ARN), aparecen tijeras (esquema del silenciamiento), entra el virus y su ARN queda en pedazos. Chip «silenciamiento de ARN». |
+| 9 | Estudio | En 1995, en Puna, al año todas las papayas normales de control enfermaron; ninguna con el gen. | `TarjetaEstudio` «1995 · Puna, Hawái · ensayo de campo · Ferreira et al., Plant Disease (2002)». Campo: bloque «con el gen» verde; la fila «control (sin el gen)» se enferma completa; de los árboles normales de alrededor, ~9 de cada 10 (quedan 2 sanos). Chip «control: 100 % enfermas · con el gen: 0». |
+| 10 | Rainbow | En 1998 salió Rainbow; en el 2000 ya ocupaba la mitad de los campos de papaya en cosecha. | Papaya Rainbow abierta (pulpa amarilla, semillas negras). Chip «1998 · sale Rainbow». Pastel 50 % «campos en cosecha · Hawái 2000». |
+| 11 | Medida | Pero Rainbow es a la medida: con virus de Brasil o Tailandia, se enferma. Y el virus también está en México. | Llave = el gen de Hawái: abre la cerradura «Hawái» ✓, no las de «Brasil» ✗ y «Tailandia» ✗. Luego mapa de México con Veracruz marcado y una papaya con anillos. Chips «Rainbow: defensa a la medida» y «el virus también está en México». |
+| 12 | Cierre | No la salvó un insecticida: la salvó un pedacito del virus. | **Regreso al papayo del inicio**, ahora con la hebra dorada brillando en sus frutos. |
+| — | Outro | (sin voz) | `CierreMarca` con Robert señalando. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
-- **Narrada:** cama grave continua, sin golpe, debajo de la voz; tensa/tapada mientras el virus avanza (escenas 1–5), se abre cuando funciona la defensa (9–11).
-- **Datos hechos sonido (propuesta):** zumbido del pulgón y un "tic" corto por el piquete de segundos; las barras de 1992 → 1997 bajan con notas descendentes; en el ensayo de 1995 una nota grave por cada árbol normal que enferma y silencio en los del gen.
+- **Narrada:** cama grave continua, sin golpe, debajo de la voz; tapada mientras el virus avanza (hasta que la defensa corta el ARN, escena 8) y libre después.
+- **Datos hechos sonido:** zumbido del pulgón y un "tic" corto por el piquete de segundos; las barras de 1992 → 1997 bajan con notas descendentes; en el ensayo de 1995 una nota grave por cada árbol normal que enferma y silencio en los del gen; una nota por cada anillo que aparece en la papaya.
 - **Efectos en el mismo cuadro:** el tachón del insecticida, el disparo de la pistola de genes (golpe suave), la Lupa que se abre (barrido), cada corte de ARN (clic de tijera), el sello de la tarjeta del estudio.
 
 ## Descripción (para publicar)
@@ -38,7 +39,7 @@ En **1992** llegó a **Puna**, la principal zona papayera de Hawái, el **virus 
 
 El equipo de **Dennis Gonsalves** (Universidad Cornell, Universidad de Hawái y USDA) usó una idea llamada **resistencia derivada del patógeno**: tomaron el **gen de la cubierta (proteína de la cápside)** de una cepa del propio virus y lo metieron en células de papaya **bombardeándolas con microbalines** recubiertos de ADN. La planta transcribe ese gen, y su sistema de **silenciamiento de ARN** destruye cualquier ARN con una secuencia parecida: cuando entra el virus, su ARN se corta antes de multiplicarse. Se parece a una vacuna, pero no hay anticuerpos: todo pasa con ARN.
 
-En **octubre de 1995** se sembraron en Puna dos ensayos: al año, el **100 % de las papayas normales** de control estaban infectadas y **ninguna de las transgénicas**. En **mayo de 1998** se liberaron las variedades **Rainbow y SunUp**; en **2000**, Rainbow ya ocupaba la **mitad de la superficie en cosecha** de Hawái.
+En **octubre de 1995** se sembraron en Puna dos ensayos: al año, el **100 % de las papayas normales de control** y el 91 % de las normales que rodeaban el ensayo estaban infectadas, y **ninguna de las transgénicas**. En **mayo de 1998** se liberaron las variedades **Rainbow y SunUp**; en **2000**, Rainbow ya ocupaba la **mitad de la superficie de papaya en cosecha** de Hawái.
 
 Ojo: la defensa es **a la medida**. Funciona porque el gen se parece mucho al del virus de Hawái; Rainbow sí se enferma con aislados de **Brasil, Jamaica o Tailandia**. Y el virus también está en **México**: en Veracruz se estudia como el principal problema del papayo.
 
@@ -81,4 +82,23 @@ El dibujo es esquemático. **¿En tu casa se come papaya? ¿Sabías que tenía s
 - No se dice que Rainbow "salvó la industria" con una cifra de producción posterior (no se encontró una cifra oficial abierta y reciente).
 - No se dice que Rainbow falle con los virus de México (no se encontró ensayo de Rainbow contra aislados mexicanos).
 - No se dice "vacuna" como hecho: solo como comparación en la descripción ("se parece a una vacuna, pero no hay anticuerpos").
-- "La mitad de la papaya en cosecha" = 50 % de la **superficie** en cosecha (*bearing acreage*) de Hawái en agosto de 2000.
+- "La mitad de los campos de papaya en cosecha" = 50 % de la **superficie** en cosecha (*bearing acreage*) de Hawái en agosto de 2000.
+
+## Robert en pantalla
+
+Es la marca del canal. Entra desde el cuadro 0, vuelve cada 4–9 s y nunca tapa el subtítulo ni los datos (los chips de su lado se bajaron a y = 1500).
+
+### 9 apariciones, **30.1 s en pantalla** (de 61.5 s), 8 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.0 | sorprendido (11) | gancho | «la salvó un pedacito del virus» |
+| 8.4 – 11.1 | serio (10) | arriba-der | el pulgón que pica y contagia |
+| 16.2 – 19.6 | bajando lentes (04) | izq-alto | la caída de 55.8 a 35.7 millones de libras |
+| 19.9 – 23.9 | pensativo (06) | **grande** | re-gancho: «¿cómo defiendes un árbol de algo que no ves?» |
+| 27.5 – 30.6 | señalando (13) | arriba-der | señala los microbalines que entran a las células |
+| 39.4 – 41.9 | sorprendido (11) | izq-alto | «ninguna con el gen» |
+| 42.6 – 47.4 | sonriendo (05) | arriba-der | Rainbow sale y ocupa la mitad de los campos |
+| 52.0 – 54.0 | pensativo con puño (07) | arriba-der | «el virus también está en México» |
+| 54.4 – 57.9 | apuntando a cámara (02) | gancho | cierre: «la salvó un pedacito del virus» |
+| 58.0 – 61.5 | señalando (13) | `CierreMarca robert=` | tarjeta final |

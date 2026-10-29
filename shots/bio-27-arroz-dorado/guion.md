@@ -7,23 +7,23 @@
 - **Viaje:** macro (dos platos: arroz blanco y arroz dorado) → micro (dentro del grano: la cadena de pasos que arma el betacaroteno; luego el intestino y el ojo) → el mismo plato del inicio, ya entendido.
 - **Tono:** equilibrado. Se dice qué logró la ciencia y también que en Filipinas un tribunal frenó su siembra; no se toma partido.
 
-## Versión narrada (943 caracteres, ~175 palabras, ~58 s de voz)
+## Versión narrada (957 caracteres, ~179 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese arroz no está pintado: fabrica algo que tu arroz blanco no tiene. | Fondo amarillo de marca. **Desde el cuadro 0** una cuchara cae en un plato de arroz dorado y salta vapor; al lado, un plato de arroz blanco. `MitoTachado` "¿pintado?". |
-| 1 | Hojas | La planta del arroz hace betacaroteno, el pigmento de la zanahoria, pero solo en lo verde. | Fondo menta: una planta de arroz completa (hojas largas, espiga con granos). Las hojas brillan naranja por dentro; una zanahoria al lado como referencia de color. Etiqueta *Oryza sativa*. |
-| 2 | Grano | En el grano que tú comes, esa fábrica está apagada. | Zoom a un grano de la espiga → se pela (cascarilla, salvado) → queda el grano blanco. `Lupa` "POR DENTRO · el grano": una línea de ensamble con 3-4 pasos y un interruptor en "apagado". |
-| 3 | Genes | En el 2000, Ingo Potrykus y Peter Beyer le pusieron genes de narciso y de una bacteria. | Chip "2000 · Potrykus y Beyer". Una flor de narciso (*Narcissus pseudonarcissus*) y una bacteria en bastón (*Erwinia*, hoy *Pantoea*) sueltan cada una un tramo de ADN que entra al grano. |
-| 4 | Camino | Con ellos, el grano arma betacaroteno y se pinta de amarillo. | La línea de ensamble se enciende: piezas pasan de un paso a otro hasta formar la molécula (cadena larga con un anillo en cada punta). El grano se llena de amarillo de afuera hacia el centro (N4). |
+| 1 | Hojas | La planta del arroz hace betacaroteno, el pigmento de la zanahoria, en sus hojas, no en el grano. | Fondo menta: una planta de arroz completa (hojas largas, espiga con granos). Las hojas brillan naranja por dentro; una zanahoria al lado como referencia de color. Etiqueta *Oryza sativa*. |
+| 2 | Grano | En el grano que comes, esa fábrica está apagada. | Zoom a un grano de la espiga → se pela (cascarilla, salvado) → queda el grano blanco. `Lupa` "POR DENTRO · el grano": una línea de ensamble con 3-4 pasos y un interruptor en "apagado". |
+| 3 | Genes | En 2000, Ingo Potrykus y Peter Beyer presentaron un arroz con genes de narciso y de una bacteria. | Chip "2000 · Potrykus y Beyer · *Science*". Una flor de narciso (*Narcissus pseudonarcissus*) y una bacteria en bastón (*Erwinia*, hoy *Pantoea*) sueltan cada una un tramo de ADN que entra al grano. |
+| 4 | Camino | Así, el grano arma betacaroteno y se pinta de amarillo. | La línea de ensamble se enciende: piezas pasan de un paso a otro hasta formar la molécula (cadena larga con un anillo en cada punta). El grano se llena de amarillo de afuera hacia el centro (N4). |
 | 5 | Pregunta | ¿Y de qué te sirve un arroz amarillo? | **Re-gancho.** Cámara sale al plato; Robert pensativo. `Escala` "grano ≈ 6 mm". |
-| 6 | Intestino | Tu cuerpo lo convierte en vitamina A, solo la que necesita. | Fondo oscuro (interior): la molécula de betacaroteno llega a una célula del intestino y unas tijeras la cortan por la mitad → "vitamina A". Una válvula deja pasar solo un poco; el resto sigue de largo. |
-| 7 | Ojos | Sin vitamina A, primero no ves de noche, y luego puedes quedarte ciego. | Un ojo de niño: escena nocturna que se oscurece (ceguera nocturna) y luego un ojo que se nubla. Dibujo esquemático, sin imágenes clínicas. |
+| 6 | Intestino | Tu cuerpo lo vuelve vitamina A, solo la que necesita. | Fondo oscuro (interior): la molécula de betacaroteno llega a una célula del intestino y unas tijeras la cortan por la mitad → "vitamina A". Una válvula deja pasar solo un poco; el resto sigue de largo. |
+| 7 | Ojos | Sin vitamina A, primero no ves de noche y luego puedes quedar ciego. | Un ojo de niño: escena nocturna que se oscurece (ceguera nocturna) y luego un ojo que se nubla. Dibujo esquemático, sin imágenes clínicas. |
 | 8 | Ninos | Con datos de 1995 a 2005, la OMS calculó 190 millones de niños pequeños con poca vitamina A. | `NumeroGigante` "190 millones" + cuadrícula de niñitos que se llena (N4). Chip "OMS · datos 1995–2005 · edad preescolar". |
-| 9 | Maiz | En 2005 cambiaron el gen de narciso por uno de maíz: hasta 23 veces más pigmento que el primero. | El narciso sale y entra una mazorca de maíz. `Medidor` del pigmento del grano que sube "×23"; el grano pasa de amarillo pálido a dorado intenso. Chip "Golden Rice 2 · 2005". |
-| 10 | Estudio | En 2009, en Boston, cinco voluntarios lo comieron, y su cuerpo sí lo volvió vitamina A. | `TarjetaEstudio` "2009 · Boston · Universidad Tufts · 5 voluntarios". Cinco platos; flechitas de cada plato a una gota de "vitamina A". |
+| 9 | Maiz | Un arroz de 2005 cambió el gen de narciso por uno de maíz: hasta 23 veces más pigmento que el primero. | El narciso sale y entra una mazorca de maíz. `Medidor` del pigmento del grano que sube "×23"; el grano pasa de amarillo pálido a dorado intenso. Chip "Golden Rice 2 · 2005". |
+| 10 | Estudio | Un estudio de 2009, en Boston: cinco voluntarios lo comieron y su cuerpo sí lo volvió vitamina A. | `TarjetaEstudio` "Publicado en 2009 · Boston · Universidad Tufts · 5 voluntarios". Cinco platos; flechitas de cada plato a una gota de "vitamina A". |
 | 11 | Filipinas | Filipinas aprobó sembrarlo en 2021, pero en 2024 un tribunal lo frenó. | Mapa simple de Filipinas: brota un campo de arroz con sello "2021 · permiso de siembra"; luego un mazo de juez y sello "2024 · frenado". |
-| 12 | Cierre | No está pintado: es el mismo grano, con la fábrica encendida. | **Regreso al plato del inicio**: la `Lupa` sobre el grano dorado muestra la línea de ensamble encendida. |
+| 12 | Cierre | No está pintado: es el mismo grano con la fábrica encendida. | **Regreso al plato del inicio**: la `Lupa` sobre el grano dorado muestra la línea de ensamble encendida. |
 | — | Outro | (sin voz) | `CierreMarca` con Robert. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
@@ -34,9 +34,9 @@
 ## Descripción (para publicar)
 "Ese arroz no está pintado: fabrica algo que tu arroz blanco no tiene. 🍚✨
 
-La planta del arroz sí fabrica **betacaroteno**, el pigmento naranja de la zanahoria, pero en sus partes verdes: el **endospermo**, la parte blanca del grano que comemos, no tiene provitamina A. En el **año 2000**, el equipo de **Ingo Potrykus** (ETH Zúrich) y **Peter Beyer** (Universidad de Friburgo) publicó en *Science* cómo encendieron esa ruta dentro del grano con genes del **narciso** (*Narcissus pseudonarcissus*) y de una **bacteria** (*Erwinia uredovora*, hoy *Pantoea ananatis*). El grano se volvió amarillo: ese color es el betacaroteno.
+La planta del arroz sí fabrica **betacaroteno**, el pigmento naranja de la zanahoria, en sus hojas, pero no en el grano: el **endospermo**, la parte blanca del grano que comemos, no tiene provitamina A. En el **año 2000**, el equipo de **Ingo Potrykus** (ETH Zúrich) y **Peter Beyer** (Universidad de Friburgo) publicó en *Science* cómo encendieron esa ruta dentro del grano con genes del **narciso** (*Narcissus pseudonarcissus*) y de una **bacteria** (*Erwinia uredovora*, hoy *Pantoea ananatis*). El grano se volvió amarillo: ese color es el betacaroteno.
 
-En **2005**, un equipo de Syngenta cambió el gen del narciso por uno de **maíz** (Golden Rice 2) y logró **hasta 23 veces más carotenoides** que el primer arroz dorado. En **2009**, en un estudio de la **Universidad Tufts (Boston)**, cinco adultos sanos comieron arroz dorado y su cuerpo convirtió ese betacaroteno en **vitamina A**. Tu cuerpo convierte el betacaroteno en vitamina A solo según lo necesita.
+En **2005**, un equipo de Syngenta cambió el gen del narciso por uno de **maíz** (Golden Rice 2) y logró **hasta 23 veces más carotenoides** que el primer arroz dorado. En un estudio publicado en **2009** por la **Universidad Tufts (Boston)**, cinco adultos sanos comieron arroz dorado y su cuerpo convirtió ese betacaroteno en **vitamina A**. Tu cuerpo convierte el betacaroteno en vitamina A solo según lo necesita.
 
 ¿Por qué importa? Según la **OMS**, la falta de vitamina A es la principal causa prevenible de ceguera infantil, y su primera señal suele ser **no ver bien de noche**. Con datos de **1995 a 2005**, la OMS estimó **190 millones de niños en edad preescolar** con vitamina A baja en la sangre.
 

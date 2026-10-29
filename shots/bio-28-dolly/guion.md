@@ -11,24 +11,44 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa oveja que ves no vino de ningún espermatozoide: vino de una célula de ubre. | Fondo menta, pasto. **Desde el cuadro 0** una oveja de cara blanca (Finn Dorset) mastica y mueve la oreja. Un espermatozoide entra nadando y `MitoTachado` lo tacha; una flecha va de una celulita a la oveja. |
-| 1 | Dolly | Se llamó Dolly y la hicieron en el Instituto Roslin, Escocia. | Chip "Dolly · Instituto Roslin, Escocia". Mapa chiquito de Escocia con un pin. |
+| 1 | Dolly | Se llamó Dolly y la hicieron en el Instituto Roslin, Escocia. | Fondo amarillo: edificio "INSTITUTO ROSLIN" con la bandera de Escocia ondeando; entra una oveja con collar "DOLLY". Chip "Dolly · Instituto Roslin, Escocia". |
 | 2 | Ubre | Tomaron células de ubre de una Finn Dorset y las dejaron casi sin suero, para que se quedaran quietas. | Oveja donadora (cara blanca); `Lupa` "POR DENTRO · UBRE" muestra células de glándula mamaria; pasan a una caja de cultivo; un `Medidor` "suero" baja de 10 % a 0.5 % y las células se quedan quietas (dejan de dividirse). |
 | 3 | Ovulo | A un óvulo de una oveja de cara negra le quitaron el núcleo. | Oveja Scottish Blackface (cara negra). Al microscopio (fondo oscuro): el óvulo redondo sostenido por la pipeta; una aguja fina succiona el núcleo. Etiqueta "óvulo sin núcleo". |
 | 4 | Chispa | Le pegaron una célula de ubre y les dieron una chispa eléctrica. | La célula de ubre se acomoda junto al óvulo; dos electrodos, rayito ⚡. |
 | 5 | Chispa | La chispa las fundió y despertó al óvulo, como si estuviera fecundado. | Las dos membranas se funden en una; el óvulo se ilumina y se divide: 2 → 4 → 8 células. |
 | 6 | Pregunta | ¿Cómo una célula de ubre vuelve a empezar de cero? | **Re-gancho.** El óvulo con su etiqueta "esquemático · no a escala" (sin cifra de tamaño). Signo de pregunta grande. |
 | 7 | Olvido | Su núcleo olvidó que era de ubre y releyó todo el manual de una oveja. | `Lupa` "AL MICROSCOPIO · NÚCLEO": un libro de ADN con solo la página "UBRE" abierta; las páginas se desbloquean todas (piel, hueso, corazón, lana…). |
-| 8 | Estudio | En 1997 lo publicaron: de 277 células fusionadas, nació una sola corderita. | `TarjetaEstudio` "Wilmut et al. · *Nature* · 1997 · Roslin". `NumeroGigante` 277 → una cuadrícula de 277 puntos que se apagan hasta que queda 1 encendido (29 llegaron a embrión; 13 madres sustitutas; 1 corderita). |
+| 8 | Estudio | En 1997 lo publicaron: de 277 células fusionadas, nació una sola corderita. | `TarjetaEstudio` "1997 · Wilmut y su equipo · Roslin · *Nature*". Luego una cuadrícula de 277 puntos que se apagan hasta que queda 1 encendido (29 llegaron a embrión; 13 madres sustitutas; 1 corderita). |
 | 9 | Rasgos | Tenía el ADN del núcleo de la oveja de la ubre, no de la madre que la parió. | Dolly corderita (cara blanca) junto a su madre sustituta (cara negra). Una hebra con la etiqueta "ADN del núcleo" conecta a Dolly con la donadora; con la madre, una ✗. Chip chico: "sus mitocondrias: del óvulo". |
 | 10 | Parton | Su nombre es por la cantante Dolly Parton, porque venía de una ubre. | Sombrero vaquero, guitarrita y notas musicales sobre Dolly; chip "Dolly Parton". (Silueta genérica, sin cara real.) |
-| 11 | Clones | Dolly murió en 2003; en 2016, cuatro clones suyos de ocho años estaban sanos para su edad. | Chip "2003". Aparecen cuatro ovejas iguales (Debbie, Denise, Dianna y Daisy) con palomitas de presión ✓ azúcar ✓ y la nota "sanas para su edad". `TarjetaEstudio` "Sinclair et al. · *Nature Communications* · 2016 · Nottingham". |
+| 11 | Clones | Dolly murió en 2003; en 2016, cuatro clones suyos de ocho años estaban sanos para su edad. | Chip "2003". Aparecen cuatro ovejas iguales (Debbie, Denise, Dianna y Daisy) con palomitas de presión ✓ azúcar ✓; chip "4 clones de Dolly · 8 años · presión ✓ azúcar ✓" y subtítulo «sanos para su edad». `TarjetaEstudio` "2016 · Universidad de Nottingham · Sinclair et al. · *Nature Communications*". |
 | 12 | Cierre | Sin espermatozoide, Dolly demostró que una célula adulta puede olvidar lo que es. | **Regreso al pasto del inicio:** la misma oveja, ahora con la etiqueta "salió de 1 célula de ubre". |
 | — | Outro | (sin voz) | Cierre de marca. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - Cama grave continua, sin golpe, debajo de la voz; se ilumina un poco (sube un tono) cuando el núcleo "olvida" y vuelve a leer el manual.
-- **Datos hechos sonido:** en la escena del estudio, la cuadrícula de 277 se apaga con un tic muy suave por grupo; **29 notas** cuando quedan los 29 embriones y **una nota limpia** cuando queda la única corderita.
-- **Efectos en el mismo cuadro:** balido al inicio; succión del núcleo (sorbido corto); chispa eléctrica (zap); "plop" en cada división 2 → 4 → 8; barrido al abrir la Lupa; páginas que pasan; acorde de guitarra en "Dolly Parton"; sello de la tarjeta de estudio.
+- **Datos hechos sonido:** en la escena del estudio, al quedar los 29 embriones suenan **29 tics** seguidos y, al quedar la única corderita, **una nota limpia**.
+- **Efectos en el mismo cuadro:** balido suave al inicio; burbujitas del espermatozoide y golpe del tache; sorbido del núcleo; zap de la chispa eléctrica; "plop" y nota en cada división 2 → 4 → 8; barrido al abrir cada Lupa; un clic metálico por cada capítulo del manual que se desbloquea; acorde de guitarra y notitas en "Dolly Parton"; golpe de cada tarjeta de estudio; un "pop" por cada uno de los 4 clones.
+
+## Robert en pantalla
+
+Es la marca del canal: entra desde el cuadro 0, vuelve cada 8–10 s y nunca tapa el subtítulo ni los datos (el kit lo dibuja por delante de él).
+
+### Versión narrada: 9 apariciones, **30.2 s en pantalla** (de 61.5 s) · 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.5 | sorprendido (11) | gancho | «no vino de ningún espermatozoide: de una célula de ubre» |
+| 5.4 – 8.5 | apuntando (02) | arriba-der | «Se llamó Dolly», junto al Instituto Roslin |
+| 14.9 – 17.9 | serio (10) | izq-alto | le quitan el núcleo al óvulo |
+| 18.9 – 22.6 | señalando (13) | arriba-der | la célula de ubre llega y la chispa eléctrica |
+| 26.8 – 30.0 | pensativo (06) | **grande** | re-gancho: «¿cómo vuelve a empezar de cero?» |
+| 39.2 – 43.3 | bajando lentes (04) | arriba-der | «el ADN del núcleo de la oveja de la ubre» |
+| 43.8 – 47.5 | sonriendo (05) | izq-alto | «por la cantante Dolly Parton» |
+| 47.8 – 49.4 | serio (10) | arriba-der | «Dolly murió en 2003» |
+| 54.6 – 57.9 | señalando (13) | gancho | cierre: «una célula adulta puede olvidar lo que es» |
+
+La tarjeta de cierre lleva a Robert junto al logo (`CierreMarca robert=`, apuntando a cámara).
 
 ## Descripción (para publicar)
 "Esa oveja no vino de ningún espermatozoide: vino de una célula de ubre. 🐑🧬 Se llamó **Dolly** y la hicieron en el **Instituto Roslin**, en Escocia. Fue el primer mamífero clonado a partir de una célula adulta.

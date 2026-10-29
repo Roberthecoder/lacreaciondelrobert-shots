@@ -1,4 +1,4 @@
-# Shot Biotecnológico #15 · Tu detergente trae enzimas de microbios
+# Shot Biotecnológico #15 · Muchos detergentes traen enzimas de microbios
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #15 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (la camisa manchada → con la `Lupa` "AL MICROSCOPIO · LA MANCHA" se ven la fibra y las enzimas cortando → la misma camisa, limpia) con un tramo de N5 "El experimento" (1963 → 1969 → los granitos).

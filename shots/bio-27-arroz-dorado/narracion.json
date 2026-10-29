@@ -9,19 +9,19 @@
     },
     {
       "escena": "Hojas",
-      "texto": "La planta del arroz hace betacaroteno, el pigmento de la zanahoria, pero solo en lo verde."
+      "texto": "La planta del arroz hace betacaroteno, el pigmento de la zanahoria, en sus hojas, no en el grano."
     },
     {
       "escena": "Grano",
-      "texto": "En el grano que tú comes, esa fábrica está apagada."
+      "texto": "En el grano que comes, esa fábrica está apagada."
     },
     {
       "escena": "Genes",
-      "texto": "En el 2000, Ingo Potrykus y Peter Beyer le pusieron genes de narciso y de una bacteria."
+      "texto": "En 2000, Ingo Potrykus y Peter Beyer presentaron un arroz con genes de narciso y de una bacteria."
     },
     {
       "escena": "Camino",
-      "texto": "Con ellos, el grano arma betacaroteno y se pinta de amarillo."
+      "texto": "Así, el grano arma betacaroteno y se pinta de amarillo."
     },
     {
       "escena": "Pregunta",
@@ -29,11 +29,11 @@
     },
     {
       "escena": "Intestino",
-      "texto": "Tu cuerpo lo convierte en vitamina A, solo la que necesita."
+      "texto": "Tu cuerpo lo vuelve vitamina A, solo la que necesita."
     },
     {
       "escena": "Ojos",
-      "texto": "Sin vitamina A, primero no ves de noche, y luego puedes quedarte ciego."
+      "texto": "Sin vitamina A, primero no ves de noche y luego puedes quedar ciego."
     },
     {
       "escena": "Ninos",
@@ -41,11 +41,11 @@
     },
     {
       "escena": "Maiz",
-      "texto": "En 2005 cambiaron el gen de narciso por uno de maíz: hasta 23 veces más pigmento que el primero."
+      "texto": "Un arroz de 2005 cambió el gen de narciso por uno de maíz: hasta 23 veces más pigmento que el primero."
     },
     {
       "escena": "Estudio",
-      "texto": "En 2009, en Boston, cinco voluntarios lo comieron, y su cuerpo sí lo volvió vitamina A."
+      "texto": "Un estudio de 2009, en Boston: cinco voluntarios lo comieron y su cuerpo sí lo volvió vitamina A."
     },
     {
       "escena": "Filipinas",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "No está pintado: es el mismo grano, con la fábrica encendida."
+      "texto": "No está pintado: es el mismo grano con la fábrica encendida."
     }
   ]
 }

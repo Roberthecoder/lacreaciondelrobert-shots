@@ -363,8 +363,7 @@ function Vainilla() {
           {Array.from({ length: 30 }, (_, i) => { const q = krng(i + 90), u = kprog(T, K.To + 0.3 + i * 0.05, K.To + 0.9 + i * 0.05, kEase.sale); return <Polvo key={i} x={120 + (i % 10) * 92} y={klerp(900, 1100 - Math.floor(i / 10) * 60, u)} s={0.32} p={u} />; })}
           {(() => { const u = kprog(T, K.To + 1.6, K.To + 2.6, kEase.sale), W = 900 * u; return <g>
             <rect x={90} y={1440} width={900} height={70} rx={14} fill="rgba(0,0,0,.35)" stroke={KC.ink} strokeWidth={6} />
-            <rect x={90} y={1440} width={W * 0.8} height={70} rx={14} fill="#9aa3b5" stroke={KC.ink} strokeWidth={5} />
-            <rect x={90 + W * 0.8} y={1440} width={W * 0.19} height={70} fill={KC.mint} stroke={KC.ink} strokeWidth={5} />
+            <rect x={90} y={1440} width={W * 0.985} height={70} rx={14} fill="#9aa3b5" stroke={KC.ink} strokeWidth={5} />
             <rect x={90 + W * 0.985} y={1440} width={Math.max(0.001, W * 0.015)} height={70} fill="#e0b48a" stroke={KC.ink} strokeWidth={3} />
           </g>; })()}
         </SvgV>
@@ -403,7 +402,7 @@ function Vainilla() {
       <Chip T={T} at={K.F + 0.2} until={K.To - 0.2} texto="1 flor = 1 día" y={1500} tam={46} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.To + 0.2} until={K.Ci - 0.3} valor={60000} dur={1.2} prefijo="≈ " sufijo=" t" etiqueta="estimado 2024" x={350} y={560} tam={136} color={KC.yellow} />
       {kvisible(T, K.To + 2.0, K.Ci - 0.3) && <div style={{ position:'absolute', left:90, top:1530, width:900, zIndex:41, display:'flex', justifyContent:'space-between', font:`700 28px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA, opacity:kprog(T, K.To + 2.0, K.To + 2.4) * (1 - kprog(T, K.Ci - 0.3, K.Ci + 0.1)) }}>
-        <span>química</span><span style={{ color:KC.mint }}>microbios</span><span style={{ color:'#e0b48a' }}>vaina &lt;1 %</span></div>}
+        <span>el resto (química y microbios)</span><span style={{ color:'#e0b48a' }}>vaina &lt;1 %</span></div>}
       <Chip T={T} at={K.Ci + 0.5} until={K.Ou} texto="orquídea" x={760} y={860} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.Ci + 1.1} until={K.Ou} texto="petróleo o madera" x={740} y={960} tam={38} borde="#9aa3b5" />
       <Chip T={T} at={K.Ci + 1.7} until={K.Ou} texto="microbio" x={760} y={1060} tam={38} borde={KC.mint} />

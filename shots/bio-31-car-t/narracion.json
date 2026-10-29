@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot CarT base narrada.dc.html",
+  "salida": "Shot CarT narrado.dc.html",
+  "nota": "Shot Biotecnológico #31. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa bolsa no trae un medicamento común: trae tus propias células, entrenadas para cazar cáncer."
+    },
+    {
+      "escena": "Saca",
+      "texto": "Te sacan sangre y separan tus linfocitos T, soldados del sistema inmune."
+    },
+    {
+      "escena": "Virus",
+      "texto": "En un laboratorio, un virus modificado les mete un gen."
+    },
+    {
+      "escena": "Receptor",
+      "texto": "Ese gen les arma un receptor, el CAR, que reconoce la proteína CD19."
+    },
+    {
+      "escena": "Bandera",
+      "texto": "CD19 está en la superficie de las células de leucemia B."
+    },
+    {
+      "escena": "Multiplica",
+      "texto": "Los multiplican hasta cientos de millones y te los regresan por la vena."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué pasa cuando uno encuentra una célula así?"
+    },
+    {
+      "escena": "Caza",
+      "texto": "Se engancha, la mata y se sigue multiplicando: es un fármaco vivo."
+    },
+    {
+      "escena": "Emily",
+      "texto": "En 2012, en el Hospital de Niños de Filadelfia, Emily Whitehead, de seis años, fue la primera niña en recibirlas."
+    },
+    {
+      "escena": "Tormenta",
+      "texto": "Casi muere: fiebre altísima y presión desplomada, una tormenta de citocinas."
+    },
+    {
+      "escena": "Artritis",
+      "texto": "La salvó un medicamento para la artritis."
+    },
+    {
+      "escena": "FDA",
+      "texto": "Su leucemia desapareció y en 2017 Estados Unidos aprobó esa terapia."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "En 2025, trece años después, Emily seguía sin cáncer."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa bolsa no es un medicamento común: son tus células, cazando."
+    }
+  ]
+}

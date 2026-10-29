@@ -110,60 +110,105 @@
       "titulo": "Tu detergente tiene enzimas: proteasas y amilasas que cortan manchas en agua fría",
       "serie": "Shot Biotecnológico",
       "numero": 15,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-15-detergente",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Callisen et al. Dansk Kemi 2006",
+        "Flindt Lancet 1969",
+        "Razzaq et al. 2019 PMC6584820",
+        "Vanhanen et al. 2000"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Enzimas del detergente de lavavajillas",
+        "Pectinasas en jugos clarificados",
+        "Lipasas de hongo (Lipolase 1988)"
+      ]
     },
     {
       "id": "bio-16-arnm",
       "titulo": "La vacuna de ARNm: tu célula fabrica la pieza (pseudouridina, Karikó y Weissman)",
       "serie": "Shot Biotecnológico",
       "numero": 16,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-16-arnm",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Nobel Fisiología o Medicina 2023",
+        "Karikó et al. Immunity 2005",
+        "CDC Understanding mRNA vaccines 2021",
+        "Röltgen et al. Cell 2022"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "La nanopartícula de lípidos por dentro",
+        "Letras modificadas naturales del ARN",
+        "Células dendríticas y receptores TLR"
+      ]
     },
     {
       "id": "bio-17-hepatitis-b",
       "titulo": "La primera vacuna hecha en levadura: hepatitis B recombinante (1986)",
       "serie": "Shot Biotecnológico",
       "numero": 17,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-17-hepatitis-b",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "PRONAM 2026",
+        "Valenzuela et al. Nature 1982",
+        "Huzair y Sturdy 2017",
+        "Ficha Recombivax HB 2023"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Vacuna del VPH: partículas tipo virus",
+        "La vacuna de plasma de 1981",
+        "Partículas vacías propias del virus de hepatitis B"
+      ]
     },
     {
       "id": "bio-18-glucometro",
       "titulo": "Tu glucómetro funciona con una enzima: glucosa oxidasa (Clark 1962)",
       "serie": "Shot Biotecnológico",
       "numero": 18,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-18-glucometro",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Yoo y Lee Sensors 2010",
+        "Clark y Lyons 1962",
+        "Ensanut 2021-2024 SPM 2025",
+        "Bucekova 2014"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Sensor continuo de glucosa",
+        "Miel antibacteriana y glucosa oxidasa",
+        "Aspergillus niger en la industria"
+      ]
     },
     {
       "id": "bio-19-xantana",
       "titulo": "Tu aderezo es espeso por una bacteria: goma xantana (Xanthomonas campestris)",
       "serie": "Shot Biotecnológico",
       "numero": 19,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-19-xantana",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Federal Register 1969 p.5376",
+        "21 CFR 172.695",
+        "Berninger et al. 2021",
+        "Jeanes et al. 1961"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Goma gellan y otros espesantes microbianos",
+        "Por qué la cátsup no sale hasta que la golpeas",
+        "El dextrano de Allene Jeanes"
+      ]
     },
     {
       "id": "bio-20-glutamato",

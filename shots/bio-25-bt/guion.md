@@ -12,10 +12,10 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa hoja de maíz no está fumigada: el insecticida lo fabrica ella misma. | Fondo amarillo brillante: una planta de maíz con una hoja grande al frente. **Desde el cuadro 0** un gusano cogollero avanza y muerde el borde. Un aspersor tachado (`MitoTachado` "¿fumigada?"). |
-| 1 | Gen | Lleva un gen de Bacillus thuringiensis, una bacteria del suelo. | Corte de suelo bajo la milpa: aparece la bacteria en forma de bastón, *Bacillus thuringiensis*, con su espora y su cristal de proteína en forma de rombo. De ella sale una tirita de ADN que viaja hacia la planta. Etiqueta "bacteria del suelo · *Bacillus thuringiensis*". |
+| 1 | Gen | Lleva un gen de Bacillus thuringiensis, una bacteria del suelo. | Corte de suelo bajo la milpa; una `Lupa` ("AL MICROSCOPIO · suelo") muestra la bacteria en forma de bastón, *Bacillus thuringiensis*, con su espora y su cristal de proteína en forma de rombo (bipiramidal). Una hebra de ADN sube hacia la planta. Etiqueta "bacteria del suelo · *Bacillus thuringiensis*". |
 | 2 | Cry | Es la receta de unas proteínas llamadas Cry, y la planta las hace en sus hojas. | El ADN entra a la hoja; dentro de las células de la hoja se encienden puntitos dorados (las proteínas Cry). Chip "proteínas Cry". |
 | 3 | Mordida | Cuando el gusano cogollero muerde la hoja, se las traga. | Regreso a la oruga que muerde: los puntitos dorados entran por su boca. Etiqueta "gusano cogollero · *Spodoptera frugiperda*". |
-| 4 | Pregunta | ¿Y por qué a la oruga sí le hacen daño y a ti no? | **Re-gancho.** A la izquierda la oruga, a la derecha la silueta de una persona comiendo un elote; signo de interrogación grande. |
+| 4 | Pregunta | ¿Y por qué a la oruga sí le hacen daño y a ti no? | **Re-gancho.** Fondo rosa: a la izquierda la oruga y un signo de interrogación grande; a la derecha Robert en grande (el "tú"), pensativo; abajo un elote. |
 | 5 | Alcalino | Su intestino es muy alcalino, lo contrario del tuyo: ahí la proteína se activa. | **Lupa** sobre la oruga ("POR DENTRO · intestino de la oruga"), fondo oscuro: el tubo del intestino. `Medidor` de pH que se va hacia el lado alcalino con la etiqueta "muy alcalino" (sin cifra). El cristal se disuelve y la proteína se corta y queda "activa" (brilla). |
 | 6 | Receptor | Se pega a receptores de su intestino, como llave en cerradura, y le abre hoyos. | Pared del intestino al microscopio: receptores como cerraduras; la proteína encaja como llave, se juntan y forman un poro; se abren hoyos en la pared. `Escala` en µm. |
 | 7 | Tu | Tu estómago es ácido, la deshace, y no tienes esos receptores. | Pantalla dividida: estómago humano con pH ácido (rojo/naranja, `Medidor` bajo) donde la proteína se rompe en pedacitos; pared con "cerraduras" que no le quedan (la llave no entra). |
@@ -76,3 +76,25 @@ El dibujo es esquemático. **¿En tu región cómo combaten al gusano cogollero?
 - "La planta las hace en sus hojas": Health Canada/EPA describen la proteína expresada en la planta que la plaga se come al alimentarse ("the plant manufactures the pesticidal protein that controls the pest when it feeds on the plant", EPA).
 - La resistencia se dice solo para Puerto Rico y la proteína Cry1F (maíz TC1507); no se generaliza a todo maíz Bt.
 - La reforma prohíbe el **cultivo**; no se dice que prohíba comer o importar maíz transgénico.
+
+## Robert en pantalla
+
+Es la marca del canal: entra desde el cuadro 0, vuelve cada 3–5 s y nunca tapa el subtítulo, las etiquetas ni las tarjetas (en Puerto Rico entra entre la tarjeta de 1995 y la de 2010).
+Tiempos calculados con las escenas de `Shot Bt base narrada.dc.html` (total 61.5 s).
+
+### Versión narrada: 11 apariciones, **39.3 s en pantalla** (de 61.5 s), 8 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.2 | sorprendido (11) | gancho | «esa hoja no está fumigada: el insecticida lo fabrica ella» |
+| 5.8 – 8.1 | señalando (13) | izq-alto | señala la bacteria del suelo en la Lupa |
+| 10.0 – 12.9 | sonriendo (05) | arriba-der | «la planta las hace en sus hojas» |
+| 16.8 – 20.5 | pensativo, puño (07) | **grande** | re-gancho: «¿y por qué a ti no?» (él es el "tú") |
+| 21.5 – 24.4 | bajando lentes (04) | arriba-der | «su intestino es muy alcalino» |
+| 25.7 – 29.3 | serio (10) | izq-alto | «le abre hoyos» |
+| 30.2 – 33.2 | pensativo, mentón (06) | arriba-der | «tu estómago es ácido y no tienes esos receptores» |
+| 34.1 – 38.6 | sonriendo (05) | izq-alto | «también en agricultura orgánica» |
+| 42.0 – 44.7 | sorprendido (11) | **grande-izq** | el giro: «en Puerto Rico el cogollero se volvió resistente» |
+| 47.8 – 52.0 | perfil serio (12) | bajo-der | «la Constitución prohíbe sembrar maíz transgénico» |
+| 52.7 – 57.9 | apuntando a cámara (02) | gancho | cierre: «traía su insecticida adentro» |
+| 58.0 – 61.5 | señalando (13) | cierre | `CierreMarca` junto al logo |

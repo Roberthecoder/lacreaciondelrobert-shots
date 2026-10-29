@@ -29,7 +29,7 @@
 | 9 | Natural | Y en Europa y Estados Unidos cuenta como natural. | Frasco de vainillina con sello verde "NATURAL"; chip "«aroma natural» · UE y EE. UU.". |
 | 10 | Albius | La de vaina le debe mucho a un niño: en 1841, en la isla Reunión, Edmond Albius, esclavizado y de 12 años, la polinizó a mano. | `TarjetaEstudio` "1841 · Edmond Albius, 12 años · isla Reunión, océano Índico" y la escena dibujada: un niño junto a la enredadera acerca una varita a la flor. Chip "polinización a mano". |
 | 11 | Flor | Y cada flor abre un solo día. | El sol cruza un arco "abre → cierra" y la flor se cierra. Chip "1 flor = 1 día". |
-| 12 | Toneladas | En 2024 se calculaba que el mundo hacía unas 60 mil toneladas de vainillina. | `NumeroGigante` **"≈ 60,000 t"** con "estimado 2024"; caen montoncitos de polvo; barra esquemática: química · microbios · vaina < 1 %. |
+| 12 | Toneladas | En 2024 se calculaba que el mundo hacía unas 60 mil toneladas de vainillina. | `NumeroGigante` **"≈ 60,000 t"** con "estimado 2024"; caen montoncitos de polvo; barra: «vaina < 1 %» contra «el resto (química y microbios)», sin otras proporciones. |
 | 13 | Cierre | Tu helado sabe a vainilla, pero su vainillina quizá vino del petróleo o de un microbio. | **Regreso al helado del inicio** con tres chips: orquídea · petróleo o madera · microbio. |
 | — | Outro | (sin voz) | `CierreMarca tema="bioquimica"` con Robert señalando. |
 
