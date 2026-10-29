@@ -104,6 +104,6 @@ Fuentes:
 - Rouet-Leduc et al., GRL 44: 9276 (2017): "a signal emitted from the fault zone previously thought to be low-amplitude noise".
 - DeVries et al., Nature 560: 632 (2018): AUC 0.849 contra 0.583.
 - Mignan y Broccardo, Nature 574: E1 (2019): "AUC = 0.85 using 2 free parameters versus the 13,451 parameters".
-¿Y la IA de UT Austin que "predijo el 70 % de los sismos" (2023)? Fue una prueba de 7 meses en China: acertó 14 sismos con una semana de anticipación y a unos 320 km (200 millas) de distancia, falló 1 y dio 8 falsas alarmas. Su autor dijo: "We're not yet close to making predictions for anywhere in the world". No contradice al USGS. (news.utexas.edu, 5 oct 2023)
+¿Y la IA de UT Austin que "predijo el 70 % de los sismos" (2023)? Fue una prueba de 7 meses en China: acertó 14 sismos con una semana de anticipación y dentro de un radio de unos 320 km (200 millas) del lugar que calculó, falló 1 y dio 8 falsas alarmas. Su autor dijo: "We're not yet close to making predictions for anywhere in the world". No contradice al USGS. (news.utexas.edu, 5 oct 2023)
 El dibujo es esquemático; el mensaje del celular es un ejemplo inventado.
 ```

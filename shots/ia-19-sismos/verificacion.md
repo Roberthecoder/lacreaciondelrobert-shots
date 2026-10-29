@@ -33,3 +33,33 @@
 
 ## Correcciones necesarias
 Ninguna ❌ ni ⚠️. Todas las afirmaciones quedaron ✅ (17/17). Solo las sugerencias opcionales de arriba para la animación (fila 9: números exactos si se reemplaza "X").
+
+## Re-verificación (29 oct 2026 · textos en pantalla de `sismos.jsx` y comentario fijado de `publicacion.md`)
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Barras "antes 8 521" vs "con IA 21 092" + chip "Tottori, Japón · 5 semanas" | ✅ | Mousavi et al. 2020, PMC7415159 (Resultados): 8 521 eventos reubicados por Fukuyama et al. (2003) contra 21 092 de EQTransformer | "5 weeks of continuous data recorded during 2000 Tottori earthquakes in Japan … two times more earthquakes" | 2020 |
+| R2 | Chip "sismos diminutos que se perdían" | ✅ | Mousavi et al. 2020 | "can result in detecting and characterizing more and smaller events" | 2020 |
+| R3 | "2 parámetros" vs "13 451 parámetros"; subtítulo "2 números la igualaron" | ✅ | Mignan y Broccardo, arXiv 1904.01983 / Nature 574 (2019) | "obtain AUC = 0.85 using 2 free parameters versus the 13,451 parameters used by DeVries et al. (2018)" | 2019 |
+| R4 | Chip "mismo acierto: 0.85 = 0.85" | ✅ | DeVries et al. 2018 (AUC 0.849) y Mignan y Broccardo 2019 (AUC 0.85) | "area under curve of 0.849" · "AUC = 0.85" | 2018 / 2019 |
+| R5 | Barras "red neuronal 0.85" vs "método clásico 0.58" + "qué tanto atina (AUC)" + chip "2018 · Harvard + Google · Nature" | ✅ | DeVries et al., Nature 560 (2018), Europe PMC (afiliaciones Harvard y Google) | "(area under curve of 0.849) than can classic Coulomb failure stress change (area under curve of 0.583)" | 2018 |
+| R6 | Chip "aviso: 20 a 120 s antes", "detecta ≠ predice", "sensores en la costa", "onda sísmica: más lenta", "CDMX" | ✅ | PDF gob.mx "Tema 3. Sistemas de Alerta Temprana" (2023) | "Proporciona desde 20 hasta 120 segundos de tiempo de oportunidad aproximadamente, antes de la llegada de un sismo…" | 2023 |
+| R7 | Tarjetas de estudio (2020 Stanford · 2017 Los Álamos, GRL · 2019 Mignan y Broccardo, Nature) y chip "USGS" | ✅ | Ver filas 1, 8, 10, 15 | — | 2017–2020 |
+| R8 | Chips "la IA escucha el sonido de la falla", "«ruido inútil»… que no lo era", "laboratorio ≠ planeta" | ✅ | Rouet-Leduc et al. 2017 (arXiv 1702.05774) | "previously thought to be low-amplitude noise" | 2017 |
+| R9 | Celular con la cadena "¡MAÑANA A LAS 3:14 TIEMBLA FUERTE! Lo predijo una inteligencia artificial" | ✅ | Es la cadena falsa que el video desmiente (se ve como mensaje reenviado y se tira a la basura); no es afirmación del canal | — | — |
+| R10 | Medidor "falta para el siguiente sismo" con cuenta regresiva en segundos (ciclo de 2.3 s → muestra "2.3 s … 0.0 s") | ⚠️ | Rouet-Leduc et al. 2017 no da en el texto un ciclo de 2.3 s; la duración real de los ciclos del aparato no está verificada | — | 2017 |
+| R11 | Comentario fijado UT Austin: "prueba de 7 meses en China: acertó 14 sismos con una semana de anticipación … falló 1 y dio 8 falsas alarmas … 'We're not yet close…' (news.utexas.edu, 5 oct 2023)" | ✅ | news.utexas.edu, 5 oct 2023 (abierta) | "seven-month trial" · "14 earthquakes" · "a week before they happened" · "It missed one earthquake" · "gave eight false warnings" · "correctly predicted 70% of earthquakes" · "We're not yet close to making predictions for anywhere in the world" | 2023 |
+| R12 | Mismo comentario: "y a unos 320 km (200 millas) de distancia" | ⚠️ | news.utexas.edu: "within about 200 miles" = *dentro de* un radio de ~320 km, no "a 320 km de distancia" | "within about 200 miles of where it estimated they would happen" | 2023 |
+
+### Correcciones necesarias (re-verificación)
+1. **R10 (`sismos.jsx`, línea ~266–267, `Medidor`):** quitar el número en segundos y dejar solo la barra que baja a 0. Por ejemplo, `texto={() => ''}` o un texto sin cifra como `texto={() => 'falta…'}`. Si se quiere dejar una cifra, primero hay que verificar en el artículo cuánto duran los ciclos reales. La etiqueta "falta para el siguiente sismo" puede quedarse.
+2. **R12 (`publicacion.md`, línea 107):** cambiar "con una semana de anticipación y a unos 320 km (200 millas) de distancia" por **"con una semana de anticipación y dentro de un radio de unos 320 km (200 millas) del lugar que calculó"**.
+
+Cuando se apliquen estas dos correcciones, todo lo demás queda ✅.
+
+## Re-verificación final (29 oct 2026, coordinador)
+- `Medidor` del laboratorio: se quitó la cifra de segundos; queda solo la barra ✅
+- Comentario fijado: «…dentro de un radio de unos 320 km (200 millas) del lugar que calculó» ("within about 200 miles") ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

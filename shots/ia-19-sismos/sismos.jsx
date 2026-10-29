@@ -264,7 +264,7 @@ function Sismos() {
       </Escena>
       <TarjetaEstudio T={T} at={K.L + 0.3} until={K.L + 3.6} anio="2017" quien="Laboratorio de Los Álamos, EE. UU." revista="Rouet-Leduc et al. · Geophysical Research Letters" y={520} />
       <Medidor T={T} at={K.L + 3.6} until={L2 - 0.2} y={1075} etiqueta="falta para el siguiente sismo" color={KC.yellow}
-        valor={(t) => { const u = t - (K.L + 0.4); return u > 0 ? 1 - ((u % CIC) / CIC) : 1; }} texto={(v) => `${kformato(v * CIC, 1)} s`} />
+        valor={(t) => { const u = t - (K.L + 0.4); return u > 0 ? 1 - ((u % CIC) / CIC) : 1; }} texto={() => ""} />
       <Chip T={T} at={K.L + 4.0} until={K.L + 6.4} texto="la IA escucha el sonido de la falla" x={540} y={440} tam={34} borde={KC.cyan} />
       <Chip T={T} at={K.L + 6.6} until={L2 - 0.2} texto="«ruido inútil»… que no lo era" x={680} y={440} tam={38} borde={KC.yellow} />
       <Chip T={T} at={L2 + 0.6} until={K.R - 0.2} texto="laboratorio ≠ planeta" x={540} y={1110} tam={44} borde={KC.red} />
