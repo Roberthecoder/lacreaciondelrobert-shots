@@ -13,19 +13,19 @@
     },
     {
       "escena": "Estudio",
-      "texto": "Lo juntó la Universidad de California en Irvine en 2023: mil cuatrocientas personas, catorce mil captchas."
+      "texto": "Lo juntó la Universidad de California en Irvine en 2023, con mil cuatrocientas personas."
     },
     {
       "escena": "Letras",
-      "texto": "Con letras chuecas, en 2014 una IA de Google leía las más difíciles: noventa y nueve punto ocho por ciento de acierto."
+      "texto": "En 2014, una IA de Google leía las letras chuecas más difíciles con noventa y nueve punto ocho por ciento de acierto."
     },
     {
       "escena": "Pregunta",
-      "texto": "Entonces, ¿para qué te los siguen poniendo?"
+      "texto": "¿Entonces para qué te los siguen poniendo?"
     },
     {
       "escena": "Libros",
-      "texto": "Y si usaste internet hace unos años, ya trabajaste para las máquinas: muchas palabras que tecleabas eran de libros escaneados que la computadora no leía."
+      "texto": "Y si usaste internet hace años, trabajaste para las máquinas: muchas de esas palabras venían de libros escaneados que la computadora no leía."
     },
     {
       "escena": "Libros",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Movimiento",
-      "texto": "Desde 2014, la casilla «no soy un robot» se fija en cómo la usas, antes, durante y después del clic."
+      "texto": "Desde 2014, la casilla «no soy un robot» mira cómo la usas: antes, durante y después del clic."
     },
     {
       "escena": "Calificacion",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que el bot te gana leyendo: la prueba ya es cómo te portas en la página."
+      "texto": "El bot te gana leyendo; tu prueba es cómo te portas en la página."
     }
   ]
 }
