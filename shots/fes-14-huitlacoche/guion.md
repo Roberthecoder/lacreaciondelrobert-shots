@@ -1,8 +1,8 @@
 # Shot Festivo #14 · Candelaria · Fungi Mati: El huitlacoche: un hongo que infecta el maíz… y lo volvemos tamal
 
 - **Serie:** Shot Festivo · **Serie vinculada:** Fungi Mati · **Logo:** biología (ADN) · **Badge:** Festivo #14 · **Especial:** Día de la Candelaria (se publica el 2 feb 2027: quien sacó el muñeco de la rosca invita los tamales) · rama `pedido300/festivos`.
-- **Estado (29 oct 2026):** FASE A — guion y `narracion.json` escritos y verificados por un verificador independiente (`verificacion.md`: 15 ✅, 4 ⚠️); las 4 ⚠️ ya están corregidas en este guion (escenas 1, 2, 9 y 11). Animación, Robert en pantalla y `publicacion.md`: pendientes (fase B). Voz: pendiente de aprobación de Robert.
-- **Formato:** N1 "Por dentro" (tamal → elote → espora al microscopio → filamento que perfora → tumor → agalla llena de esporas → de regreso al tamal), con un poco de N3 (medidores: "una semana", barra de escala en µm).
+- **Estado (29 oct 2026):** FASE A — guion y `narracion.json` escritos y verificados por un verificador independiente (`verificacion.md`: 15 ✅, 4 ⚠️); las 4 ⚠️ ya están corregidas en este guion (escenas 1, 2, 9 y 11). **VEREDICTO: APROBADO.** FASE B lista: animación (`huitlacoche.jsx`, base de 68.1 s), Robert en pantalla, música (`gen-audio.mjs` → `assets/mezcla.wav`) y `publicacion.md` con las 7 redes. **Voz pendiente de aprobación de Robert** (~1,050 caracteres).
+- **Formato:** N1 "Por dentro" (tamal → elote → espora al microscopio → filamento que perfora → tumor → agalla llena de esporas → de regreso al tamal), con un poco de N3 (capítulos, contador de días, medidores de lisina y barra de escala en µm).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Ese tamal de relleno negro no está podrido: es un hongo que infectó el maíz."
 - **Duración estimada:** voz 1,050 caracteres (≈ 64.3 s) + cierre 3.8 s → **≈ 68.1 s** (`estimar-escenas.mjs`; festivos 61–75 s).
 
@@ -10,22 +10,41 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese tamal de relleno negro no está podrido: es un hongo que infectó el maíz. | Fondo amarillo con papel picado de Candelaria. Desde el cuadro 0 un tamal humeante se abre (la hoja de maíz se despliega antes del segundo 1) y deja ver el relleno negro. «¿podrido?» se tacha; aparece «hongo». Chip «Especial Candelaria». |
-| 1 | Nombre | Se llama huitlacoche: el hongo *Ustilago maydis*. | El relleno se convierte en una mazorca con granos hinchados gris plateado. Etiqueta «huitlacoche · *Ustilago maydis* (hoy *Mycosarcoma maydis*)». |
-| 2 | Espora | Todo empieza con una espora negra, redonda y cubierta de espinitas. | Fondo noche (micro, barra de escala 10 µm). Una teliospora redonda, café oscuro a negra, con la pared llena de espinitas finas, flota y cae sobre una superficie verde de la planta. Medidor «≈ 10 µm». |
-| 3 | Levaduras | Al germinar, suelta células chiquitas que crecen como levaduras. | De la espora sale un tubito corto que suelta células alargadas (esporidias) que se dividen por gemación, como levaduras. |
-| 4 | Fusion | Si dos células compatibles se encuentran, se fusionan en un filamento que perfora la planta. | Dos esporidias de colores distintos (+ y −) se acercan, se tocan y se unen; crece un filamento que hincha la punta (apresorio) y entra entre las células de la hoja. |
-| 5 | Pregunta | ¿Y por qué el elote se hincha como globo? | **Re-gancho.** Fondo naranja: un elote con un grano que se infla como globo; «?» gigante. Robert grande, pensativo. |
-| 6 | Tumor | El hongo hace que las células del maíz crezcan y se dividan de más: forma tumores. | Fondo noche: tejido de la planta en corte; las células se agrandan y se multiplican alrededor de las hifas del hongo (Chip «crecen y se dividen de más»). |
-| 7 | Agallas | En una semana o menos salen agallas grises en hojas, tallo, espiga y, sobre todo, en los granos. | Fondo menta: planta de maíz completa; Cronómetro «≤ 1 semana». Brotan agallas gris plateado en hoja, tallo y espiga; la mazorca se llena de granos hinchados. |
-| 8 | Esporas | Adentro, el hongo las llena de esporas negras. | `Lupa` de rayos X sobre una agalla: por dentro se va oscureciendo con miles de puntitos negros (teliosporas). |
-| 9 | Estudio | En 2006, en Marburgo, Alemania, un equipo leyó su genoma: hoy es un hongo modelo de laboratorio. | Fondo cian. `TarjetaEstudio` «2006 · Marburgo, Alemania · genoma de *U. maydis* (Nature)»; una cinta de ADN que se lee letra por letra; caja de Petri con colonias tipo levadura. Chip «hongo modelo». |
-| 10 | Plaga | En Estados Unidos lo llaman corn smut y lo tratan como enfermedad; en México lo cosechamos tierno para comer. | Pantalla partida: a la izquierda, bandera-mapa EUA con letrero «corn smut» y una mazorca tachada (enfermedad); a la derecha, México con una mazorca tierna en una canasta y una quesadilla. |
-| 11 | Dato | Dato: es rico en lisina, un aminoácido que el maíz tiene muy poco. Y en el siglo dieciséis, el Códice Florentino ya lo dibujaba. | Fondo lila. Medidor de lisina: «maíz: poca lisina» vs «huitlacoche: rico en lisina». Luego un códice estilo siglo XVI que se despliega y muestra el dibujo en blanco y negro de la mazorca con huitlacoche; etiqueta «Códice Florentino · Libro 11 · siglo XVI». Sin citas textuales en pantalla. |
-| 12 | Cierre | Así que si te salió el muñeco de la rosca, invita tamales de huitlacoche: no están podridos, llevan hongo. | **Regreso a la imagen del inicio** (fondo amarillo, papel picado, el mismo tamal abierto), ahora junto a una rosca con su muñequito y una olla de tamales; una `Lupa` muestra en el relleno las esporas redondas con espinitas. Chip «no está podrido: es un hongo». |
+| 0 | Gancho | Ese tamal de relleno negro no está podrido: es un hongo que infectó el maíz. | Fondo amarillo con papel picado de fiesta. Desde el cuadro 0 un tamal humeante entra rebotando y su hoja de maíz se abre (antes del segundo 1): adentro, masa amarilla y relleno negro con pedacitos grises. «¿podrido?» se tacha; etiqueta «un hongo». Chip «Especial Candelaria». |
+| 1 | Nombre | Se llama huitlacoche: el hongo *Ustilago maydis*. | Fondo menta. Elote con brácteas verdes y barbas; los granos se inflan uno por uno en agallas gris plateado. Etiquetas «huitlacoche», «*Ustilago maydis*» y «(hoy *Mycosarcoma maydis*)». |
+| 2 | Espora | Todo empieza con una espora negra, redonda y cubierta de espinitas. | Fondo noche (micro, barra de escala). Teliospora redonda, café oscuro a negra, con la pared cubierta de espinitas, que gira y cae sobre la superficie verde de la hoja (onda al tocarla). Etiqueta «teliospora · ≈ 10 µm»; chip «cubierta de espinitas». Capítulo 1 «La espora». |
+| 3 | Levaduras | Al germinar, suelta células chiquitas que crecen como levaduras. | Fondo noche (barra de escala). De la espora sale un tubito corto; de él salen esporidias en forma de puro que se dispersan y echan yemas, como levaduras. Chip «esporidias: crecen como levaduras». |
+| 4 | Fusion | Si dos células compatibles se encuentran, se fusionan en un filamento que perfora la planta. | Fondo noche. Dos esporidias (núcleo cian y núcleo rosa) estiran tubos, se tocan y se fusionan (destello); crece un filamento con los 2 núcleos sobre las células de la hoja; su punta se hincha (apresorio) y entra a la planta. Chip «apresorio: perfora la planta». Capítulo 2 «La infección». |
+| 5 | Pregunta | ¿Y por qué el elote se hincha como globo? | **Re-gancho.** Fondo naranja: «?» gigante y un elote donde un grano se infla como globo hasta volverse agalla. Robert grande, pensativo. |
+| 6 | Tumor | El hongo hace que las células del maíz crezcan y se dividan de más: forma tumores. | Fondo noche (barra de escala). Corte del tejido del maíz: una hifa del hongo cruza entre las células; las de alrededor se agrandan y se parten en dos. Chip «crecen y se dividen de más». Capítulo 3 «La agalla». |
+| 7 | Agallas | En una semana o menos salen agallas grises en hojas, tallo, espiga y, sobre todo, en los granos. | Fondo cian. Planta de maíz completa (espiga, tallo, hojas, elote); contador «INFECCIÓN · DÍA 1 → 7». Brotan agallas gris plateado en la hoja, el tallo, la espiga y los granos, cada una con su etiqueta. Chip «≤ 1 semana: agallas grises». |
+| 8 | Esporas | Adentro, el hongo las llena de esporas negras. | Fondo lila. Agalla gigante; una `Lupa` «POR DENTRO · agalla» muestra cómo se llena de esporas negras con espinitas entre hifas blancas; luego la agalla se agrieta y revienta en polvo negro. Chip «polvo negro = esporas». |
+| 9 | Estudio | En 2006, en Marburgo, Alemania, un equipo leyó su genoma: hoy es un hongo modelo de laboratorio. | Fondo rosa. `TarjetaEstudio` «2006 · Marburgo, Alemania · genoma de *Ustilago maydis* · Nature»; una doble hélice pasa bajo un lector y sus letras se leen una por una; luego una caja de Petri donde crecen colonias cremosas como de levadura. Chip «hongo modelo de laboratorio». Capítulo 4 «El laboratorio». |
+| 10 | Plaga | En Estados Unidos lo llaman corn smut y lo tratan como enfermedad; en México lo cosechamos tierno para comer. | Pantalla partida. Izquierda (cian): elote con agallas y un sello rojo «ENFERMEDAD»; chip «EE. UU.: corn smut». Derecha (amarillo, entra deslizándose): canasta con elotes tiernos con huitlacoche y una quesadilla; chip «México: comida»; etiqueta «se cosecha tierno». Capítulo 5 «A la mesa». |
+| 11 | Dato | Dato: es rico en lisina, un aminoácido que el maíz tiene muy poco. Y en el siglo dieciséis, el Códice Florentino ya lo dibujaba. | Fondo lila. Medidores «lisina · maíz: poca» y «lisina · huitlacoche: rico», con un elote y una agalla. Luego se despliega una hoja de papel antiguo con una ilustración esquemática de una mazorca con huitlacoche **al estilo del Códice Florentino** (no es la imagen original), con la etiqueta «ilustración al estilo del Códice Florentino · s. XVI». Sin citas textuales. |
+| 12 | Cierre | Así que si te salió el muñeco de la rosca, invita tamales de huitlacoche: no están podridos, llevan hongo. | **Regreso a la imagen del inicio** (fondo amarillo, papel picado, el mismo tamal abierto), ahora con una rosca de reyes con su muñequito; una `Lupa` «AL MICROSCOPIO · esporas» sale del relleno y muestra las teliosporas redondas con espinitas. Chip «no está podrido: es un hongo». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua, cálida (de fiesta, pero debajo de la voz). Efectos en el mismo cuadro: la hoja del tamal que se abre (crujido suave) y vapor; un "plop" cuando cae la espora; burbujitas por cada gemación de las levaduras; un "clic" cuando se fusionan las dos células y un taladro suave cuando el filamento perfora; inflado de globo en la pregunta; pulsos al dividirse las células; un "pop" por cada agalla que brota; crepitar de arena cuando se llenan de esporas; tecleo/escáner del genoma; un sello de "tachado" del lado EUA; papel que se despliega en el códice; campanita al regresar al tamal.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos porque están atados a cada escena). Grande en «¿Y por qué el elote se hincha como globo?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «no está podrido: es un hongo» (cuadro 0) |
+| 2 | 8.1 | 11.7 | 13_senalando_arriba | `arriba-der` | señala la espora con espinitas |
+| 3 | 17.9 | 21.3 | 06_pensativo_menton | `arriba-der` | el filamento que perfora la planta |
+| 4 | 21.6 | 25.0 | 07_pensativo_puno | `grande` | «¿Y por qué el elote se hincha como globo?» |
+| 5 | 29.7 | 34.8 | 11_sorprendido | `izq-alto` | brotan agallas en toda la planta en una semana |
+| 6 | 38.6 | 43.6 | 04_bajando_lentes | `arriba-der` | el genoma de 2006 y la caja de Petri |
+| 7 | 44.4 | 50.1 | 10_serio_molesto | `izq-alto` | «lo tratan como enfermedad» |
+| 8 | 50.7 | 53.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «rico en lisina» |
+| 9 | 58.2 | 64.2 | 02_apuntando_camara | `izq-alto` | «si te salió el muñeco de la rosca, invita» |
+| — | 64.3 | 68.1 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones: 9 · **≈ 39.7 s en pantalla** (+ cierre 3.8 s) · 8 poses distintas, ninguna repetida seguida. Nunca tapa el subtítulo ni las etiquetas principales.
 
 ## Fuentes (para el verificador; frase textual y año)
 
@@ -43,7 +62,8 @@
 12. **Candelaria: invita tamales quien sacó el Niño de la rosca; tamales de huitlacoche** — Meteored México, López Fonseca R. (28 ene 2025): quienes "fueron bendecidos al salirles el “Niñito Dios” dentro de la Rosca" "cumplen con la tradición de invitar tamales a todos los asistentes" · "y más exóticos como tamales de huitlacoche, de zarzamora con queso entre muchos más." https://www.meteored.mx/noticias/actualidad/por-que-el-dia-de-la-candelaria-se-celebra-con-tamales-en-mexico.html
 
 ## Notas
-- El dibujo es esquemático: las espinitas de la teliospora, las esporidias, el apresorio y el tumor están simplificados; las cantidades de esporas son ilustrativas.
+- El dibujo es esquemático: las espinitas de la teliospora, las esporidias, el apresorio y el tumor están simplificados; las cantidades de esporas son ilustrativas. El dibujo del códice es una **ilustración al estilo del Códice Florentino**, no una copia del original (así lo dice la etiqueta en pantalla).
+- Las barras de escala son aproximadas: la espora se dibuja a ≈ 10 µm; las esporidias y las células del maíz están a escala aproximada.
 - **Nombre científico:** la voz dice *Ustilago maydis*, el nombre que usan Kämper et al. (2006) y casi toda la literatura; la etiqueta en pantalla agrega «(hoy *Mycosarcoma maydis*)», como lo lista Wikipedia.
 - **Etimología náhuatl:** NO se usa en la voz. Las fuentes no coinciden («excremento dormido», «excremento de cerdo», «mazorca degenerada»; Wikipedia: "the Nahuatl words from which huitlacoche is derived are debated"). Si se quiere, solo podría decirse "su nombre viene del náhuatl".
 - "En una semana o menos" sale de NC State ("within a week"); en pantalla «≤ 1 semana». Villagrán et al. 2023: la infección completa "usually occurs after 15 days" (no se usa en la voz).

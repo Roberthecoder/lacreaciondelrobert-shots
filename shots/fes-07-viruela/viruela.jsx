@@ -428,7 +428,7 @@ function Viruela() {
       <Medidor T={T} at={K.Ri + 0.3} until={K.Ag - 0.3} y={1440} ancho={900} etiqueta="dosis de la URSS · 1958–1979" valor={(t) => kprog(t, K.Ri + 0.3, K.Ri + 2.6, kEase.suave)} texto={(v) => '+' + kformato(Math.round(v * 1400)) + ' millones'} color={ROJO_URSS} />
       <Etq T={T} at={K.Ri + 0.6} until={K.Ri + 3.3} x={60} y={520} texto="vacuna en polvo (liofilizada)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Ri + 1.9} until={K.Ri + 3.3} x={600} y={800} texto="expertos de EE.UU." tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ri + 1.9} until={K.Ag - 0.3} texto="D. A. Henderson · CDC → jefe del programa de la OMS (1966–1977)" x={540} y={1610} tam={26} borde={AZUL_EU} />
+      <Chip T={T} at={K.Ri + 1.9} until={K.Ag - 0.3} texto="D. A. Henderson (CDC): jefe del programa de la OMS, 1966–1977" x={540} y={1610} tam={26} borde={AZUL_EU} />
       <Etq T={T} at={K.Ag + 1.1} until={K.Ag + 2.2} x={340} y={560} texto="una gotita entre las 2 puntas" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Ag + 2.4} until={K.An - 0.3} x={560} y={600} texto="15 piquetitos · ~5 mm" tam={30} color={KC.ink} />
       <Medidor T={T} at={K.Ag + 1.3} until={K.An - 0.3} y={1440} ancho={900} etiqueta="0.0025 mL en vez de 0.01 mL" valor={(t) => kprog(t, K.Ag + 1.5, K.Ag + 2.8)} texto={(v) => '×' + Math.max(1, Math.round(v * 4)) + ' vacunas'} color={KC.blue} />
@@ -436,7 +436,7 @@ function Viruela() {
       <Etq T={T} at={K.An + 0.3} until={K.Ul - 0.3} x={680} y={930} texto="caso" tam={30} color={KC.ink} />
       <Chip T={T} at={K.An + 1.4} until={K.Ul - 0.3} texto="vigilancia y contención" x={540} y={1500} tam={42} borde={VACCINIA} />
       <Etq T={T} at={K.An + 1.8} until={K.Ul - 0.3} x={60} y={1600} texto="vacunan a sus contactos" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ul + 1.3} until={K.Li - 0.3} x={705} y={880} texto="Merca" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ul + 1.3} until={K.Li - 0.3} x={812} y={776} texto="Merca" tam={34} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Ul + 1.6} until={K.Ul + 4.0} anio="1977" quien="Ali Maow Maalin · cocinero" revista="Merca, Somalia · último caso natural" x={540} y={1560} />
       <Chip T={T} at={K.Ul + 4.2} until={K.Li - 0.3} texto="sobrevivió · después luchó contra la polio" x={540} y={1500} tam={34} borde={KC.coral} />
       <TarjetaEstudio T={T} at={K.Li + 0.4} until={K.Li + 2.9} anio="1980" quien="8 de mayo · Asamblea Mundial de la Salud" revista="el mundo, libre de viruela" x={540} y={1560} />
@@ -467,7 +467,7 @@ function Viruela() {
         [CUES.Pregunta + 0.05, CUES.Propuesta + 0.3, 'avatar_06_pensativo_menton', 'grande'],
         [CUES.Rivales + 0.6, CUES.Aguja - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Anillo + 0.4, CUES.Ultimo - 0.2, 'avatar_07_pensativo_puno', 'izq-alto'],
-        [CUES.Ultimo + 4.2, CUES.Libre - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
+        [CUES.Ultimo + 4.2, CUES.Libre - 0.2, 'avatar_12_perfil_serio', 'izq-alto'],
         [CUES.Libre + 0.5, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.Cierre + 0.4, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="bioquimica" serie="Festivo" num="07" hasta={K.Ou} />
