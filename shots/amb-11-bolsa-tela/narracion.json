@@ -4,15 +4,45 @@
   "salida": "Shot Bolsa narrado.dc.html",
   "nota": "Shot Ambiental #11. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Siete mil cien compras: eso tendrías que usar una bolsa de algodón para empatarle, en todo, a una de plástico delgada." },
-    { "escena": "Estudio", "texto": "Lo calculó en 2018 la agencia ambiental de Dinamarca, de la fábrica a la basura." },
-    { "escena": "Fabrica", "texto": "Lo que más pesa es fabricarla: cultivar algodón gasta mucha agua y contamina." },
-    { "escena": "Pregunta", "texto": "¿Entonces la de tela es peor?" },
-    { "escena": "Clima", "texto": "Depende de qué midas. Si solo cuentas el clima, bastan cincuenta y dos usos." },
-    { "escena": "Ozono", "texto": "Las siete mil cien salen de un solo indicador: el daño a la capa de ozono que le calcularon al algodón." },
-    { "escena": "Inglaterra", "texto": "En Inglaterra, con datos de 2006 y solo para el clima, salieron ciento treinta y un usos." },
-    { "escena": "Mar", "texto": "Pero ninguno midió la basura tirada. Y en 2018, un estudio de Japón reportó una bolsa de plástico a casi once kilómetros de hondo." },
-    { "escena": "Consejo", "texto": "Así que la mejor bolsa es la que ya tienes: reúsala muchas veces, y la de plástico, al final, como bolsa de basura." },
-    { "escena": "Cierre", "texto": "Siete mil cien no es para tirar tu bolsa de tela: es para que nunca la dejes en casa." }
+    {
+      "escena": "Gancho",
+      "texto": "Siete mil cien compras: eso tendrías que usar una bolsa de algodón para empatarle, en todo, a una de plástico delgada."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo calculó en 2018 la agencia ambiental de Dinamarca, de la fábrica a la basura."
+    },
+    {
+      "escena": "Fabrica",
+      "texto": "Lo que más pesa es fabricarla: cultivar algodón gasta mucha agua y contamina."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces la de tela es peor?"
+    },
+    {
+      "escena": "Clima",
+      "texto": "Depende de qué midas. Si solo cuentas el clima, bastan cincuenta y dos usos."
+    },
+    {
+      "escena": "Ozono",
+      "texto": "Las siete mil cien salen de un solo indicador: el daño a la capa de ozono que le calcularon al algodón."
+    },
+    {
+      "escena": "ReinoUnido",
+      "texto": "En el Reino Unido, con datos de 2006 y solo para el clima, salieron ciento treinta y un usos."
+    },
+    {
+      "escena": "Mar",
+      "texto": "Pero ninguno midió la basura tirada. Y en 2018, un estudio de Japón reportó una bolsa de plástico a casi once kilómetros de hondo, en la Fosa de las Marianas."
+    },
+    {
+      "escena": "Consejo",
+      "texto": "Así que la mejor bolsa es la que ya tienes: reúsala muchas veces, y la de plástico, al final, como bolsa de basura."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Siete mil cien no es para tirar tu bolsa de tela: es para que nunca la dejes en casa."
+    }
   ]
 }
