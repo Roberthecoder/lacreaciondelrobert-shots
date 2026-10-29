@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Vainilla base narrada.dc.html",
+  "salida": "Shot Vainilla narrado.dc.html",
+  "nota": "Shot Biotecnológico #23. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu helado de vainilla casi seguro no tocó una vaina: menos del 1 % de la vainillina sale de ahí."
+    },
+    {
+      "escena": "Origen",
+      "texto": "Es una orquídea de México; los totonacas de Papantla fueron de sus primeros cultivadores."
+    },
+    {
+      "escena": "Molecula",
+      "texto": "Su aroma principal es una molécula: la vainillina."
+    },
+    {
+      "escena": "Escasa",
+      "texto": "Pero la vainillina es apenas el 1 o 2 % del peso de la vaina curada."
+    },
+    {
+      "escena": "Sintetica",
+      "texto": "Por eso la mayoría se hace con química, del petróleo o de la madera."
+    },
+    {
+      "escena": "Precio",
+      "texto": "Y la sintética cuesta unas cien veces menos que la de vaina."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si la quieres natural, sin orquídea?"
+    },
+    {
+      "escena": "Microbios",
+      "texto": "Le das a un microbio ácido ferúlico, del salvado de arroz."
+    },
+    {
+      "escena": "Enzimas",
+      "texto": "Dos enzimas suyas lo transforman en vainillina."
+    },
+    {
+      "escena": "Natural",
+      "texto": "Y en Europa y Estados Unidos cuenta como natural."
+    },
+    {
+      "escena": "Albius",
+      "texto": "La de vaina le debe mucho a un niño: en 1841, en la isla Reunión, Edmond Albius, esclavizado y de 12 años, la polinizó a mano."
+    },
+    {
+      "escena": "Flor",
+      "texto": "Y cada flor abre un solo día."
+    },
+    {
+      "escena": "Toneladas",
+      "texto": "En 2024 se calculaba que el mundo hacía unas 60 mil toneladas de vainillina."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Tu helado sabe a vainilla, pero su vainillina quizá vino del petróleo o de un microbio."
+    }
+  ],
+  "tanda": 3
+}

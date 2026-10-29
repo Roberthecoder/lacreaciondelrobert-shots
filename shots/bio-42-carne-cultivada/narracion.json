@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Carne base narrada.dc.html",
+  "salida": "Shot Carne narrado.dc.html",
+  "nota": "Shot Biotecnológico #42. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta carne no se cortó de un animal: creció en un tanque, desde pocas células."
+    },
+    {
+      "escena": "Biopsia",
+      "texto": "Se puede empezar con una biopsia: un pedacito de músculo de un animal vivo."
+    },
+    {
+      "escena": "Celulas",
+      "texto": "Ahí vienen células madre del músculo, que se multiplican."
+    },
+    {
+      "escena": "Biorreactor",
+      "texto": "En un biorreactor con caldo de nutrientes, se dividen una y otra vez."
+    },
+    {
+      "escena": "Fibras",
+      "texto": "Luego cambias el caldo: esas se unen en fibras de músculo, y otras células del pedacito se vuelven grasa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué lleva ese caldo para que crezcan?"
+    },
+    {
+      "escena": "Suero",
+      "texto": "Por años, suero fetal bovino: sale de la sangre de fetos de vacas preñadas que van al rastro."
+    },
+    {
+      "escena": "SinSuero",
+      "texto": "Ahora hay caldos sin suero: Singapur aprobó el primero en 2023."
+    },
+    {
+      "escena": "Hamburguesa",
+      "texto": "Mark Post presentó la primera hamburguesa en Londres, en 2013: unas 20 mil tiritas de músculo."
+    },
+    {
+      "escena": "Costo",
+      "texto": "Costó unos 250 mil euros."
+    },
+    {
+      "escena": "Leyes",
+      "texto": "Singapur aprobó su venta en 2020 y Estados Unidos en 2023; Italia y siete estados de Estados Unidos la prohibieron."
+    },
+    {
+      "escena": "Reto",
+      "texto": "Hoy el reto es el caldo, lo más caro, y llevarla a tanques gigantes."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esta carne sí es de animal, pero creció en un tanque."
+    }
+  ],
+  "tanda": 7
+}

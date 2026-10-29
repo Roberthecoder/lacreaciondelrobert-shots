@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Captopril base narrada.dc.html",
+  "salida": "Shot Captopril narrado.dc.html",
+  "nota": "Shot Biotecnológico #54. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa pastilla de la presión de tu abuela no es cualquiera: es nieta de un veneno de víbora."
+    },
+    {
+      "escena": "Jararaca",
+      "texto": "Esta es la jararaca, de Brasil: su veneno le tumba la presión a su presa."
+    },
+    {
+      "escena": "Ferreira",
+      "texto": "En 1965, Sérgio Ferreira halló en ese veneno algo que potencia a la bradicinina, que afloja los vasos."
+    },
+    {
+      "escena": "ECA",
+      "texto": "Esos pedacitos del veneno frenan una enzima tuya: la ECA."
+    },
+    {
+      "escena": "Manguera",
+      "texto": "La ECA hace angiotensina dos, que aprieta tus vasos como manguera pisada."
+    },
+    {
+      "escena": "Frenar",
+      "texto": "Si la frenas, los vasos se aflojan y baja la presión."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces tu abuela se toma veneno?"
+    },
+    {
+      "escena": "Intestino",
+      "texto": "No: esos pedacitos solo servían inyectados; tragados, no pasaban del intestino."
+    },
+    {
+      "escena": "Squibb",
+      "texto": "En 1974, en Squibb, Cushman y Ondetti imaginaron el hueco de la enzima, con zinc."
+    },
+    {
+      "escena": "Azufre",
+      "texto": "Copiaron la punta del veneno, y con azufre su copia se hizo dos mil veces más potente."
+    },
+    {
+      "escena": "Captopril",
+      "texto": "Así nació el captopril, primera pastilla de su tipo, aprobada en 1981."
+    },
+    {
+      "escena": "Sesenta",
+      "texto": "Antes probaron unos dos mil compuestos al azar; con su dibujo, unos sesenta."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Si su pastilla termina en «pril», tu abuela trae el truco de una víbora."
+    }
+  ],
+  "tanda": 9
+}
