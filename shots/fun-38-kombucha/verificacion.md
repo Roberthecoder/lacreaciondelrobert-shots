@@ -39,3 +39,36 @@ Fuentes abiertas:
 | 14 | Barras de escala: 10 µm (levaduras y bacterias), 1 nm (cadena, esquema) | ✅ | [FLO] | Las células de *Komagataeibacter* miden ~2 µm de largo ([FLO]); escala de la cadena marcada como esquema. | 2016 |
 
 Resumen: se corrigieron las filas 5b, 10, 10b, 11 y 11b (el placebo también bajó el azúcar y la diferencia no fue significativa; ahora se dice en voz y pantalla) y se revisaron los recortes de las filas 6, 7 y 13. Todas las afirmaciones quedaron ✅. El dibujo es esquemático. No es consejo médico.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `kombucha.jsx`, `Shot Kombucha base narrada.dc.html`, `guion.md` (columna «Lo que se ve» y tabla de Robert) y `publicacion.md`, y se miraron cuadros con `preview.mjs` (0.3, 3, 6, 12, 18, 20.5, 24, 27, 28.8, 30, 34.5, 36, 40, 42, 46.8, 48, 51, 54, 56.5, 58, 60 s).
+
+| # | Texto o dibujo (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | «madre (SCOBY)», «¿un hongo?» tachado, «tela de bacterias + levaduras» | ✅ | [TRA], [FLO] | "This cellulosic biofilm produced by acetic acid bacteria (AAB) involves yeasts"; "Kombucha SCOBY (symbiotic colony of bacteria and yeast)" | 2021 / 2016 |
+| R2 | *Brettanomyces* dibujada como levadura ovalada con yema; «levadura (hongo)» | ✅ | [LAN], [MESH] | "the yeast Brettanomyces bruxellensis"; "single-celled rounded fungi that reproduce by budding" | 2022 |
+| R3 | «azúcar → glucosa + fructosa», «alcohol + CO₂ (burbujas)» | ✅ | [MAY] | "cleaves the disaccharide sucrose to its monosaccharide components, glucose and fructose" … "into ethanol and carbon dioxide" | 2019 |
+| R4 | «bacterias del ácido acético», «pH ↓ (acidez ↑)», «ácido acético = el del vinagre» | ✅ | [MAY] | "oxidize ethanol, generating acetic acid that results in an low pH environment" | 2019 |
+| R5 | *Komagataeibacter* hilando «fibra de celulosa»; barra «1 µm» (bacteria dibujada de ~2 µm) | ✅ | [FLO] | "multiple species produce bacterial cellulose"; células "rod-like", ~2 µm | 2016 |
+| R6 | «celulosa», «papel», «algodón», cadena de anillos de glucosa, «1 nm (esquema)» | ✅ | [CHO] | "The molecular structure of bacterial cellulose (BC) is the same as that of plant cellulose"; "β-D-glucose linear chain" | 2020 |
+| R7 | «fibras de celulosa con microbios atrapados», «cada tanda, más gruesa» | ✅ | [TRA], [MAY] | "entrapment of yeasts by bacterial cellulose"; "The biofilm becomes larger and stronger with subsequent fermentations." | 2021 / 2019 |
+| R8 | «¿cura? ¿desintoxica?», ✓ animales, ✓ laboratorio, «en personas: muy poco» | ✅ | [ECK], [LI] | "evidence … in human population remain sparse"; "most of the current research is based on in vitro experiments" | 2024 / 2025 |
+| R9 | Subtítulo: «Animales o laboratorio: en personas, poco.» (corregido; antes «Casi todo, en animales: no en personas.», que omitía el laboratorio y contradecía el chip «muy poco») | ✅ corregido | [ECK], [LI] | igual que R8 | 2024 / 2025 |
+| R10 | Subtítulo «No es un hongo: es una tela de bacterias.» | ✅ | [TRA] | La tela (celulosa) la hacen las bacterias; el chip de la misma escena dice «+ levaduras» | 2021 |
+| R11 | Tarjeta «2023 · Georgetown · Washington, D. C. · Frontiers in Nutrition · diabetes tipo 2»; chip «240 mL al día · 4 semanas · cruzado» | ✅ | [MEN] | "performed at Georgetown University Medical Center in Washington, DC"; "240 mL … daily, for 4 weeks"; "crossover study" | 2023 |
+| R12 | Barras «kombucha 164 → 116», «placebo 162 → 141», «promedios · 4 semanas», «diferencia no significativa», «solo 7 analizados», «PISTA, NO PRUEBA» | ✅ | [MEN] | "164 vs. 116 mg/dL"; placebo 162 → 141; "not statistically significant (p = 0.265)"; "the seven participants" | 2023 |
+| R13 | «1.5 % de alcohol en esa kombucha» | ✅ | [MEN] | "1.5% alcohol by volume" | 2023 |
+| R14 | Cierre: lupa con malla de fibras, levaduras y bacterias; «tela viva: bacterias + levaduras» | ✅ | [TRA] | igual que R1 | 2021 |
+| R15 | Barras de escala 10 cm (frasco, vasos, botella), 10 µm (levaduras y bacterias, malla), 1 µm, 1 nm (esquema) | ✅ | [FLO] | Tamaños coherentes con el dibujo (esquemático) | 2016 |
+| R16 | Publicación: «invertasa» | ✅ | [MAY] | "yeast produce invertase which cleaves the disaccharide sucrose" | 2019 |
+| R17 | Publicación: «por eso la kombucha sabe ácida» → corregido a «queda ligeramente ácida» (el sabor no está en las fuentes abiertas) | ✅ corregido | [MAY] | "generates a carbonated and slightly acidic drink at the end of the primary fermentation cycle" | 2019 |
+| R18 | Publicación (LinkedIn): «sin lignina ni hemicelulosa» | ✅ | [CHO] | "BC is a pure material (free of lignin and hemicellulose)" | 2020 |
+| R19 | Publicación (LinkedIn): «ya se usa en apósitos médicos» → corregido a «con ella ya se han desarrollado apósitos para heridas» | ✅ corregido | [CHO] | "has stimulated the development of BC-based products, such as tissue-engineered scaffolds, wound-dressing materials…" | 2020 |
+| R20 | Publicación (YouTube, LinkedIn): «una revisión de 2019 halló un solo estudio en personas» → se agregó «desde entonces hay unos pocos ensayos chicos» (y la fuente Ecklu-Mensah 2024 en YouTube y en el comentario fijado) | ✅ corregido | [KAP], [ECK] | "We found one study…"; "Only two recently published controlled clinical trials have described the health benefits of kombucha consumption in human participants." | 2019 / 2024 |
+| R21 | Publicación (X): «Con un solo piloto de 7 personas» (daba a entender que es el único estudio) → «En un piloto con 7 personas analizadas» | ✅ corregido | [MEN], [ECK] | igual que R12 y R20 | 2023 / 2024 |
+| R22 | Resto de `publicacion.md` (glucosa 164 → 116 y 162 → 141, diferencia no significativa, 7 personas, 240 mL, 4 semanas, cruzado, 1.5 %, Georgetown, *Komagataeibacter* hace celulosa a partir de glucosa) | ✅ | [MEN], [FLO] | ver filas 10–12 y 6 | 2016 / 2023 |
+
+Resumen de la revisión final: se corrigieron un subtítulo (R9) y cuatro textos de `publicacion.md` (R17, R19, R20, R21); la voz verificada no se tocó. Todo lo de pantalla y publicación quedó ✅. El dibujo es esquemático. No es consejo médico.
+
+VEREDICTO: APROBADO

@@ -272,7 +272,7 @@ function UnasShot() {
       <BarraEscala T={T} at={K.Q} until={K.D} texto="10 µm" largo={90} />
       <BarraEscala T={T} at={K.D} until={K.R} texto="1 cm" largo={200} />
       <BarraEscala T={T} at={K.R} until={K.E} texto="1 cm" largo={300} />
-      <BarraEscala T={T} at={K.E} until={K.Re} texto="1 m" largo={180} />
+      <BarraEscala T={T} at={K.E} until={K.Re} texto="1 m" largo={54} />
       <BarraEscala T={T} at={K.Re} until={K.Ti} texto="1 mm" largo={150} />
       <BarraEscala T={T} at={K.Ti} until={K.Rg} texto="1 cm" largo={200} />
       <BarraEscala T={T} at={K.Rg} until={K.S} texto="1 cm" largo={88} />

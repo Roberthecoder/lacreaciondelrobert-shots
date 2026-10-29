@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Kombucha base narrada.dc.html",
+  "salida": "Shot Kombucha narrado.dc.html",
+  "nota": "Shot Fungi Mati #38. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa «madre» que flota en tu kombucha no es un hongo: es una tela que tejen bacterias, con hongos adentro."
+    },
+    {
+      "escena": "Te",
+      "texto": "Todo empieza con té y azúcar."
+    },
+    {
+      "escena": "Levaduras",
+      "texto": "Las levaduras, hongos de una sola célula, parten el azúcar y lo vuelven alcohol y burbujas."
+    },
+    {
+      "escena": "Acido",
+      "texto": "Luego unas bacterias se comen ese alcohol y lo vuelven ácido acético, el del vinagre."
+    },
+    {
+      "escena": "Hilos",
+      "texto": "Y una, Komagataeibacter, usa azúcar para hilar fibras finísimas de celulosa."
+    },
+    {
+      "escena": "Celulosa",
+      "texto": "La misma molécula del papel y del algodón."
+    },
+    {
+      "escena": "Capa",
+      "texto": "Las fibras se enredan sobre el té, atrapan microbios y la capa crece."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y de verdad la kombucha te cura?"
+    },
+    {
+      "escena": "Animales",
+      "texto": "Casi todo lo que se presume se probó en animales o en laboratorio, no en personas."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de Georgetown, Washington, publicado en 2023, probó kombucha en adultos con diabetes tipo 2."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Con kombucha, su azúcar en ayunas bajó… pero con una bebida falsa también bajó, y solo eran siete: es una pista, no una prueba."
+    },
+    {
+      "escena": "Alcohol",
+      "texto": "Y ojo: esa kombucha tenía uno punto cinco por ciento de alcohol."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa madre no es un hongo: es una tela viva de bacterias, con levaduras adentro."
+    }
+  ]
+}

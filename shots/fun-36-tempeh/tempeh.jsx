@@ -403,7 +403,7 @@ function TempehShot() {
       <Reloj T={T} at={K.H + 0.3} until={K.A - 0.2} horas={48} dur={4.2} x={300} y={470} />
       <Chip T={T} at={K.H + 0.8} until={K.A - 0.2} texto="25–30 °C" x={300} y={640} tam={38} borde={KC.orange} />
       <Etq T={T} at={K.H + 0.9} until={K.H + 3.0} x={SPO[0][0] + 30} y={SPO[0][1] - 80} texto="espora" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.H + 3.0} until={K.A - 0.2} x={80} y={900} texto="hifas = micelio" tam={34} color={FK.hifa} />
+      <Etq T={T} at={K.H + 3.0} until={K.A - 0.2} x={680} y={565} texto="hifas = micelio" lado="izq" tam={34} color={FK.hifa} />
       <Etq T={T} at={K.H + 1.0} until={K.A - 0.2} x={1040} y={990} texto="superficie del grano" lado="izq" tam={26} color={KC.yellow} />
       <Chip T={T} at={K.A + 0.2} until={amA - 0.2} texto="POR DENTRO · grano de soya" x={420} y={300} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.A + 1.8} until={amA - 0.2} x={680} y={565 + PEN / 2} texto="hasta ~¼ del grosor" lado="izq" tam={30} color={KC.ink} />
