@@ -32,3 +32,11 @@ Contexto que no contradice al guion: Leeman et al. (7 mar 2024) concluyen "no ne
    - Texto propuesto: *"…hizo treinta y seis de cincuenta y siete, nuevos para su base de datos, no necesariamente para la ciencia."* (o "nuevos para la computadora").
 
 Nota menor (no cambia el veredicto): en #8 los 18 138 compuestos son de la base de 384 870 estructuras estables, no de los 2.2 M; la voz no dice de cuál grupo, así que no es falso.
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Unos químicos revisaron diez de los estables, al azar… y los diez tenían la forma de cristales ya conocidos.» (Cheetham y Seshadri 2024: 10 de las 384,870 entradas estables; estructura en el ICSD); chip «estructura conocida ≈» ✅
+- «…nuevos para su base de datos, no necesariamente para la ciencia.» (corrección de 2026: "new to the prediction platform") ✅
+- Recortes de las líneas 2, 3 y 7 sin datos nuevos ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
