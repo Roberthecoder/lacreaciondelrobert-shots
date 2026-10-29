@@ -90,10 +90,19 @@
    "festividad": "Posadas",
    "serie_vinculada": "Científico",
    "fecha_publicacion": "2026-12-16",
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fes-10-ponche",
    "rama": "pedido300/festivos",
-   "fuentes": [],
+   "fuentes": [
+    "http://www.conabio.gob.mx/conocimiento/info_especies/arboles/doctos/59-rosac1m.pdf",
+    "https://doi.org/10.3389/fpls.2015.00523",
+    "https://doi.org/10.3390/foods14183267",
+    "https://doi.org/10.3390/foods15020206",
+    "https://idefor.cnf.gob.mx/documents/1499/download",
+    "https://www.fda.gov/food/alerts-advisories-safety-information/fda-issues-warning-about-certain-supplements-substituted-toxic-yellow-oleander-january-2024",
+    "https://www.guiainfantil.com/blog/navidad/las-posadas-tradicion-navidena-de-mexico",
+    "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-31952016000700849"
+   ],
    "fecha": "2026-10-29",
    "derivados": [
     "La pectina: el pegamento de las frutas",
