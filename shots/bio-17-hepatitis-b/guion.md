@@ -30,14 +30,15 @@
 
 Escenas del base narrada (61.5 s): Gancho 0.00 · Bebe 4.76 · Virus 8.23 · Plasma 11.70 · Miedo 15.96 · Pregunta 20.22 · Gen 22.90 · Particulas 28.35 · Vacias 32.91 · Estudio 37.57 · Recombivax 41.83 · Pan 46.39 · Cierre 53.43 · Outro 58.00.
 
-### 9 apariciones, **36.0 s en pantalla** (de 61.5 s), 7 poses distintas
+### 10 apariciones, **34.7 s en pantalla** (de 61.5 s), 7 poses distintas
 
 | Segundos | Pose | Lado | Reacciona a |
 |---|---|---|---|
-| 0.0 – 4.6 | sorprendido (11) | gancho | «no trae ni un virus: la fabricó una levadura» |
+| 0.0 – 2.7 | sorprendido (11) | gancho (sale con fundido, sin bajar sobre el subtítulo) | «no trae ni un virus» |
+| 3.0 – 4.6 | sonriendo (05) | arriba-der | «la fabricó una levadura» (sale antes del reloj de 24 h) |
 | 8.5 – 11.5 | señalando (13) | arriba-der | señala el hígado y el virus en la Lupa |
 | 16.5 – 20.1 | serio (10) | arriba-der | «había miedo de que ese plasma trajera otros virus» |
-| 20.3 – 23.7 | pensativo (06) | **grande** | re-gancho: «¿cómo haces una vacuna sin usar el virus?» |
+| 20.3 – 22.8 | pensativo (06) | arriba-der | re-gancho: «¿cómo haces una vacuna sin usar el virus?» (se va antes de que salga la hélice) |
 | 29.4 – 32.7 | señalando (13) | izq-alto | señala las partículas que se arman en la Lupa |
 | 38.0 – 41.6 | bajando lentes (04) | arriba-der | 1982: las bolitas al microscopio electrónico |
 | 42.1 – 46.2 | sorprendido (11) | **grande** | el dato más fuerte: 1986, la primera vacuna recombinante |
