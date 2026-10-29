@@ -58,7 +58,7 @@ def j(r):
 def err(r, que):
     d = j(r)
     e = d.get('error') if isinstance(d, dict) else None
-    msg = (e.get('message') if isinstance(e, dict) else e) or d.get('message') or d.get('error_description') or d.get('_texto') or ''
+    msg = (e.get('message') if isinstance(e, dict) else e) or d.get('message') or d.get('error_description') or         (d.get('debug_info') or {}).get('message') or d.get('_texto') or r.text[:300]
     raise Falla(f'{que}: HTTP {r.status_code} {str(msg)[:300]}')
 
 
@@ -360,15 +360,21 @@ def subir_facebook(video, r, modo, titulo):
             if modo != 'real' else (st.get('status') or {}).get('video_status')}
 
 
-def subir_instagram(video, r, modo, titulo):
+def subir_instagram(video, r, modo, titulo, video_url=''):
     t, ig = meta_token(), ENV('META_IG_ID')
-    d = ok(requests.post(f'{G}/{ig}/media', data={'media_type': 'REELS', 'upload_type': 'resumable', 'share_to_feed': 'true',
-                                                  'caption': r['instagram']['texto'], 'access_token': t}, timeout=60),
-           'Instagram contenedor')
-    cid, uri = d['id'], d['uri']
-    with open(video, 'rb') as f:
-        ok(requests.post(uri, headers={'Authorization': f'OAuth {t}', 'offset': '0',
-                                       'file_size': str(os.path.getsize(video))}, data=f, timeout=900), 'Instagram subir')
+    base = {'media_type': 'REELS', 'share_to_feed': 'true', 'caption': r['instagram']['texto'], 'access_token': t}
+    try:   # 1) subida directa del archivo (rupload)
+        d = ok(requests.post(f'{G}/{ig}/media', data={**base, 'upload_type': 'resumable'}, timeout=60), 'Instagram contenedor')
+        cid = d['id']
+        with open(video, 'rb') as f:
+            ok(requests.post(d['uri'], headers={'Authorization': f'OAuth {t}', 'offset': '0',
+                                                'file_size': str(os.path.getsize(video))}, data=f, timeout=900), 'Instagram subir')
+    except Falla as e:   # 2) si falla, Instagram baja el MP4 del enlace público del Release
+        if not video_url:
+            raise
+        print(f'Instagram: la subida directa falló ({e}); pruebo con el enlace del Release', flush=True)
+        cid = ok(requests.post(f'{G}/{ig}/media', data={**base, 'video_url': url_publica(video_url)}, timeout=60),
+                 'Instagram contenedor por enlace')['id']
     esperar('Instagram procesar',
             lambda: j(requests.get(f'{G}/{cid}', params={'fields': 'status_code,status', 'access_token': t}, timeout=30)),
             lambda d: d.get('status_code') == 'FINISHED',
@@ -587,8 +593,9 @@ def cmd_publicar(a):
                 raise Falla('; '.join(prob))
             if a.modo == 'prueba':
                 fila.update(ok=True, nota=probar(red))
-            elif red == 'threads':
-                fila.update(ok=True, **subir_threads(a.video, r, a.modo, titulo, a.video_url))
+            elif red in ('threads', 'instagram'):
+                fn = subir_threads if red == 'threads' else subir_instagram
+                fila.update(ok=True, **fn(a.video, r, a.modo, titulo, a.video_url))
             else:
                 fila.update(ok=True, **SUBIR[red](a.video, r, a.modo, titulo))
         except (Falla, requests.RequestException, KeyError) as e:
