@@ -38,7 +38,7 @@ function TroncoRepisas({ T, x, y0 = 380, y1 = 1260, ancho = 230, g = 1, viejo = 
     {grietas.map(([gx, u], i) => <path key={i} d={`M ${gx} ${y0 + 20} q ${8 * Math.sin(i)} ${Hh * 0.3} 0 ${Hh * 0.6} q -6 ${Hh * 0.15} 3 ${Hh * 0.35}`} stroke={PB.corteza} strokeWidth={8} fill="none" opacity={0.8} />)}
     <path d={`M ${-ancho / 2 - 30 * q} ${y1} Q ${-ancho / 2} ${y1 - 60 * q} ${-ancho / 2} ${y1 - 120 * q} L ${ancho / 2} ${y1 - 120 * q} Q ${ancho / 2} ${y1 - 60 * q} ${ancho / 2 + 30 * q} ${y1} Z`} fill={PB.corteza2} stroke={KC.ink} strokeWidth={8} />
     {L.map(([lado, f, w, h, rot], i) => <Repisa key={i} T={T} seed={i + 1} x={lado * ancho / 2 - lado * 4} y={y0 + f * Hh} w={w * q} h={h * q} rot={rot} lado={lado} viejo={viejo} crece={kclamp(g * 1.6 - i * 0.08, 0, 1)} />)}
-    {cubos > 0 && <g>{Array.from({ length: 25 }, (_, i) => { const cw = ancho / 5, cx = -ancho / 2 + (i % 5) * cw, cy = y1 - cw * 0.9 * (1 + Math.floor(i / 5)); const cae = kclamp(cubos * 1.8 - (i % 7) * 0.1 - Math.floor(i / 5) * 0.12, 0, 1);
+    {cubos > 0 && <g>{Array.from({ length: 40 }, (_, i) => { const cw = ancho / 5, cx = -ancho / 2 + (i % 5) * cw, cy = y1 - cw * 0.9 * (1 + Math.floor(i / 5)); const cae = kclamp(cubos * 1.8 - (i % 7) * 0.1 - Math.floor(i / 5) * 0.12, 0, 1);
       return <g key={i} opacity={kclamp(cubos * 4 - Math.floor(i / 5) * 0.5, 0, 1)} transform={`translate(${cx + cw / 2 + (i % 2 ? 1 : -1) * cae * 30} ${cy + cw * 0.45 + cae * (i % 3 === 0 ? (y1 - cy) * 0.6 : 6)}) rotate(${cae * (i % 2 ? 22 : -16)})`}>
         <rect x={-cw / 2 + 2} y={-cw * 0.45 + 2} width={cw - 4} height={cw * 0.9 - 4} rx={4} fill={i % 3 ? PB.cafe : '#9a4a24'} stroke={KC.ink} strokeWidth={3} />
         {i % 4 === 0 && <line x1={-cw / 2 + 2} y1={cw * 0.45 - 2} x2={cw / 2 - 2} y2={cw * 0.45 - 2} stroke={PB.micelio} strokeWidth={5} strokeLinecap="round" />}
@@ -177,7 +177,7 @@ function PolloBosqueShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <g transform={`translate(${klerp(0, -60, kprog(T, K.G + 1.8, K.G + 3.2, kEase.suave))} 0)`}><Plato T={T} x={400} y={1010} s={1.05} lev={lev} /></g>
-          <g opacity={kprog(T, K.G + 1.8, K.G + 2.6)}><TroncoRepisas T={T} x={850} y0={780} y1={1240} ancho={170} g={kprog(T, K.G + 1.9, K.G + 3.4)} /></g>
+          <g opacity={kprog(T, K.G + 1.8, K.G + 2.6)}><TroncoRepisas T={T} x={850} y0={680} y1={1180} ancho={170} g={kprog(T, K.G + 1.9, K.G + 3.4)} /></g>
           <Sello T={T} at={K.G + 1.0} x={290} y={620} texto="NO" color={KC.red} r={110} />
         </>)}
       </Escena>
@@ -303,7 +303,7 @@ function PolloBosqueShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <g transform="translate(-60 0)"><Plato T={T} x={400} y={1010} s={1.05} lev={0.4} /></g>
-          <TroncoRepisas T={T} x={820} y0={760} y1={1240} ancho={170} g={1} viejo={kprog(T, K.C + 0.6, K.C + 2.0)} cubos={kprog(T, K.C + 0.8, K.C + 3.2)} />
+          <TroncoRepisas T={T} x={820} y0={680} y1={1180} ancho={170} g={1} viejo={kprog(T, K.C + 0.6, K.C + 2.0)} cubos={kprog(T, K.C + 0.8, K.C + 3.2)} />
         </>)}
       </Escena>
 

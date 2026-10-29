@@ -11,7 +11,7 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esto no es pollo: es un hongo que se está comiendo un árbol por dentro. | Fondo amarillo: un plato con tiras doradas que parecen pollo deshebrado; cuadro 0.3: un tenedor las levanta y aparece el sello "NO ES POLLO". La cámara se abre y se ve, al lado, un tronco con repisas naranjas. |
+| 0 | Gancho | Esto no es pollo: es un hongo que se está comiendo un árbol por dentro. | Fondo amarillo: un plato con tiras doradas que parecen pollo deshebrado; cuadro 0.3: un tenedor las levanta; cae el sello "NO" y el chip "no es pollo". La cámara se abre y se ve, al lado, un tronco con repisas naranjas. |
 | 1 | Repisa | Le dicen pollo del bosque: *Laetiporus*, repisas naranjas que salen sobre todo en troncos de encino. | Tronco de encino (hojas lobuladas): las repisas brotan en abanico, encimadas como tejas, naranja arriba y borde amarillo, sin pie. Etiquetas "pollo del bosque" + *Laetiporus* (complejo *sulphureus*) y "encino (*Quercus*)". Barra 20 cm. |
 | 2 | Corazon | Sus hilos, las hifas, entran al corazón del tronco y se comen la celulosa. | `Lupa` en modo por dentro sobre el tronco ("POR DENTRO · el tronco"): hifas blancas que avanzan por el centro de la madera; fibras de celulosa (cadenas verdes) que se rompen y desaparecen. Chip "come: celulosa (y hemicelulosa)". |
 | 3 | Cubitos | Dejan la lignina: la madera queda café, se agrieta en cubitos y se desmorona. | Corte del tronco: el centro se vuelve café rojizo, se agrieta en cubitos y se desmorona; láminas finas de micelio blanco en las grietas. Etiqueta "pudrición café" y chip "queda: lignina (modificada)". Barra 10 cm. |
@@ -20,19 +20,40 @@
 | 6 | Hifas | Por dentro es una maraña de hifas, y las más gruesas miden de cuatro a catorce micras. | **AL MICROSCOPIO** (fondo oscuro): maraña de hifas; resaltadas las más gruesas (hifas de unión: ramificadas, sin tabiques, pared gruesa); medidor "las más gruesas: 4–14 µm de ancho". Al lado, en gris, "músculo: 0". Barra 20 µm. |
 | 7 | Estudio | Pero ojo: en 1987, en Canadá, una niña de seis años comió este hongo. | Tarjeta de estudio "1987 · Columbia Británica, Canadá · niña de 6 años · CMAJ, 1988". Un árbol con un pedazo de repisa arrancado. |
 | 8 | Monstruo | Se le trabó el habla, perdió el equilibrio y tuvo alucinaciones. | Niña (silueta sencilla) que se tambalea; burbuja de habla con letras revueltas; nube de alucinación con líneas y formas de colores (sin monstruo). Chip "alucinaciones". |
-| 9 | Recupero | Al día siguiente ya estaba bien. | Cronómetro "≈ 20 h"; amanece; la niña sonríe. Chip "se recuperó por completo". |
+| 9 | Recupero | Al día siguiente ya estaba bien. | Cronómetro "DESPUÉS DE LOS SÍNTOMAS" que corre hasta ~20 h; amanece; la niña sonríe. Chip "≈ 20 h · se recuperó". |
 | 10 | Crudo | Crudo o mal cocido puede caerte mal del estómago, y hay personas alérgicas a él. | Tiras crudas con ✗ y estómago revuelto; ícono de alergia. Chips "crudo o mal cocido: ✗" y "hay alérgicos". |
-| 11 | Experto | Nunca comas un hongo silvestre que no haya identificado un experto. | Una lupa sobre la repisa del tronco; chip "✓ solo si lo identifica un experto" y sello "NO LO RECOLECTES POR TU CUENTA". |
+| 11 | Experto | Nunca comas un hongo silvestre que no haya identificado un experto. | Una lupa sobre la repisa del tronco; chip "✓ solo si lo identifica un experto" y chip "no lo recolectes por tu cuenta". |
 | 12 | Naranja | Y su naranja no es de zanahoria: es ácido laetipórico, y podría pintar comida. | Una zanahoria con etiqueta "carotenos" tachada; molécula esquemática en zigzag (cadena de dobles enlaces) "ácido laetipórico"; un frasquito de colorante que tiñe un betún de naranja con chip "posible colorante". |
 | 13 | Cierre | Así que ese pollo no es pollo: es un hongo que deja la madera del árbol en cubitos cafés. | **Regreso a la imagen del inicio:** el mismo plato y el mismo tenedor; la cámara se abre y el tronco de al lado ya está hecho cubitos cafés que se desmoronan. Chip "no es pollo: es un hongo". Etiqueta *Laetiporus* (complejo *sulphureus*). |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua, curiosa y algo tensa en el caso de la niña, más ligera al final; sin golpe marcado, debajo de la voz. Efectos en el mismo cuadro: tenedor y golpe del sello, crujido de las repisas al brotar, roce de las hifas y chasquidos de las cadenas de celulosa al romperse, crujidos de la madera al agrietarse y desmoronarse, "?" del re-gancho, chisporroteo de la sartén, zumbido del microscopio, tic de la tarjeta, tambaleo y "glitch" suave de la alucinación, tic-tac del cronómetro y campanita al amanecer, gruñido de estómago, golpe del sello "no lo recolectes", gota de colorante, crujido final de los cubitos.
 
-Barras de escala: 5 cm (plato), 20 cm (repisas en el tronco), 10 cm (corte del tronco), 20 µm (hifas).
+Barras de escala: 5 cm (plato, sartén, crudo, zanahoria, cierre), 20 cm (repisas en el tronco), 10 cm (corte del tronco), 20 µm (hifas), 50 cm (la niña).
 
 **Nota de ritmo:** el re-gancho cae hacia el s 18 y el estudio entre los s 29 y 37 (un poco antes que la receta) porque el
 mecanismo de la pudrición se cuenta rápido; el dato extra (s 50–54) y el cierre sí caen en su lugar.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué le dicen pollo…?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.9 | 11_sorprendido | `gancho` | «esto no es pollo» (cuadro 0) |
+| 2 | 4.7 | 9.5 | 13_senalando_arriba | `arriba-der` | señala las repisas: «pollo del bosque» |
+| 3 | 14.5 | 18.2 | 12_perfil_serio | `arriba-der` | «la madera queda café… se desmorona» |
+| 4 | 18.4 | 21.9 | 07_pensativo_puno | `grande` | «¿por qué le dicen pollo, si no tiene músculo?» |
+| 5 | 26.4 | 29.9 | 04_bajando_lentes | `arriba-der` | la maraña de hifas al microscopio |
+| 6 | 34.3 | 37.7 | 10_serio_molesto | `arriba-der` | «se le trabó el habla… alucinaciones» |
+| 7 | 38.2 | 39.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | «al día siguiente ya estaba bien» |
+| 8 | 40.4 | 44.3 | 12_perfil_serio | `arriba-der` | «crudo o mal cocido… alérgicas» |
+| 9 | 44.9 | 48.2 | 13_senalando_arriba | `arriba-der` | «que lo identifique un experto» |
+| 10 | 48.8 | 52.7 | 11_sorprendido | `arriba-der` | «su naranja no es de zanahoria» |
+| 11 | 53.3 | 57.9 | 02_apuntando_camara | `arriba-der` | «ese pollo no es pollo» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 11 · **40.0 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 

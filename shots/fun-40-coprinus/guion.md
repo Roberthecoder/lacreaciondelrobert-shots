@@ -14,7 +14,7 @@
 | 0 | Gancho | Ese charco de tinta negra no es un hongo podrido: es un hongo digiriéndose a sí mismo. | Fondo menta, pasto: en el cuadro 0.3 cae una gota negra desde el borde de un sombrero blanco con escamas; abajo, un charquito de tinta. Chip "¿podrido?" que se tacha → "se digiere solo". |
 | 1 | Nombre | Se llama Coprinus comatus, la barbuda, y sale en pastos y jardines. | Brotan tres barbudas del pasto (sombrero alto y cilíndrico, blanco con escamas lanudas y centro café claro; pie blanco y alto). Etiquetas «barbuda» + *Coprinus comatus*, «escamas», «sombrero». Barra de escala 5 cm. |
 | 2 | Laminillas | Sus laminillas son muy delgadas y tan pegadas que a las esporas les cuesta salir. | Corte del sombrero (POR DENTRO · sombrero): cientos de laminillas finísimas, muy juntas, como hojas de un libro cerrado. Esporas atoradas entre ellas. Chip "muy delgadas y muy pegadas". |
-| 3 | Orilla | Las esporas maduran primero en la orilla de abajo, y de ahí caen al aire. | Zoom a la orilla inferior de una laminilla: las esporas pasan de blancas a negras (elipses, ~9–13 × 7–9 µm) y se desprenden flotando. Barra de escala 10 µm. |
+| 3 | Orilla | Las esporas maduran primero en la orilla de abajo, y de ahí caen al aire. | Zoom a la orilla inferior de una laminilla: las esporas pasan de blancas a negras (elipses, ~9–13 × 7–9 µm) y se desprenden flotando. Barra de escala 20 µm (cada espora ≈ 10 × 7 µm). |
 | 4 | Digiere | Luego sus propias enzimas disuelven esa parte ya vacía y destapan la siguiente. | La franja vacía se derrite en gotas negras (tijeritas/"enzimas" como puntitos que muerden la pared); queda expuesta la franja de arriba, con esporas nuevas. Chip "se digiere solo". |
 | 5 | Ola | Así sube, desde el borde, hasta que todo el sombrero se vuelve tinta. | Regreso al hongo entero: una línea negra sube desde el borde del sombrero hacia la punta del sombrero; el sombrero se abre en campana, se enrolla y gotea, y el pie blanco queda en pie. Medidor "borde → punta". |
 | 6 | Tinta | Esa tinta son esporas negras atrapadas en tejido derretido. Antes se usaba para escribir. | Gota de tinta al microscopio (fondo oscuro): esporas negras flotando en líquido. Luego una pluma moja en la tinta y escribe "tinta de hongo" en un papel. |
@@ -28,7 +28,7 @@
 
 **Música:** cama grave y húmeda, continua, sin golpe; efectos en el mismo cuadro: goteo de la tinta (cada gota), crujido suave de las laminillas, "pop" de cada espora que se suelta, burbujeo al derretirse, rasguño de pluma, serpenteo de nematodos, rasguño de las espinas, silbido de toxinas, tic del cronómetro, golpecito sordo al perforar.
 
-Barras de escala: 5 cm (hongo), 10 µm (esporas), 0.5 mm (nematodos e hifas; el nematodo adulto mide de 2 a 4 barras, hasta ~1.8 mm).
+Barras de escala: 5 cm (hongo), 2 cm (corte del sombrero, ~5 cm de ancho), 20 µm (esporas ≈ 10 × 7 µm), 0.5 mm (nematodos de 2 a 4 barras, hasta ~1.8 mm; hifas y bolitas con espinas dibujadas más grandes, con etiqueta en pantalla).
 
 ## Robert en pantalla
 

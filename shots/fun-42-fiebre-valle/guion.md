@@ -37,7 +37,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué hac
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «ese polvo… trae esporas de un hongo» (cuadro 0) |
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «ese polvo… puede traer esporas de un hongo» (cuadro 0) |
 | 2 | 6.9 | 10.1 | 13_senalando_arriba | `arriba-der` | el pin en Sonora |
 | 3 | 15.3 | 18.3 | 10_serio_molesto | `arriba-der` | «y tú las respiras» |
 | 4 | 18.5 | 21.8 | 07_pensativo_puno | `grande` | «¿qué hace una espora de hongo dentro de ti?» |

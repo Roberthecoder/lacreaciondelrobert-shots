@@ -337,7 +337,7 @@ function FiebreValleShot() {
       <Chip T={T} at={K.En + 0.6} until={K.D - 0.3} texto="100–300 endosporas" x={420} y={560} tam={36} borde={KC.gold2} />
       <Etq T={T} at={K.En + 0.9} until={K.En + 2.4} x={700} y={760} texto="endosporas" tam={30} />
       <Chip T={T} at={K.D + 0.2} until={K.Et - 0.3} texto="hongo dimórfico: 2 formas" x={420} y={470} tam={32} borde={KC.gold2} />
-      <Etq T={T} at={K.D + 0.4} until={K.Et - 0.3} x={60} y={640} texto="EN LA TIERRA: hilos" tam={28} />
+      <Etq T={T} at={K.D + 0.4} until={K.Et - 0.3} x={60} y={640} texto="EN LA TIERRA: hilos (ampliados)" tam={28} />
       <Etq T={T} at={K.D + 0.8} until={K.Et - 0.3} x={1030} y={1150} texto="EN TI: esferas" tam={28} lado="izq" />
       <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.Ca - 0.3} anio="1994" quien="terremoto de Northridge, California" revista="Schneider et al., JAMA, 1997" y={520} />
       <Etq T={T} at={K.Et + 1.4} until={K.Ca - 0.3} x={600} y={760} texto="deslaves" tam={30} color={KC.ink} />
@@ -357,14 +357,14 @@ function FiebreValleShot() {
       <BarraEscala T={T} at={K.Es} until={K.V} texto="10 µm" largo={115} />
       <BarraEscala T={T} at={K.V} until={K.P} texto="1 m" largo={130} />
       <BarraEscala T={T} at={K.Ef} until={K.D} texto="50 µm" largo={230} />
-      <BarraEscala T={T} at={K.D} until={K.Et} texto="50 µm" largo={130} />
+      <BarraEscala T={T} at={K.D} until={K.Et} texto="50 µm (esferas)" largo={130} />
       <BarraEscala T={T} at={K.Et} until={K.Cl} texto="1 km" largo={120} />
       <BarraEscala T={T} at={K.Cl} until={K.C} texto="1 m" largo={110} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={110} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Su - 0.1} texto="Ese polvo no es solo tierra: *trae esporas.*" />
-      <Subtitulo T={T} idx={1} at={K.Su + 0.1} until={K.Es - 0.1} texto="*Coccidioides:* suelo seco del norte de México." />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Su - 0.1} texto="Ese polvo no es solo tierra: *puede traer esporas.*" />
+      <Subtitulo T={T} idx={1} at={K.Su + 0.1} until={K.Es - 0.1} texto="*Coccidioides:* suelo seco del suroeste de EE. UU. y del norte de México." />
       <Subtitulo T={T} idx={2} at={K.Es + 0.1} until={K.V - 0.1} texto="Sus hilos se parten *en barrilitos.*" />
       <Subtitulo T={T} idx={3} at={K.V + 0.1} until={K.P - 0.1} texto="El viento las levanta… *y las respiras.*" />
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.Ef - 0.1} texto="¿Qué hace *dentro de ti?*" />
@@ -373,9 +373,9 @@ function FiebreValleShot() {
       <Subtitulo T={T} idx={7} at={K.D + 0.1} until={K.Et - 0.1} texto="Hilos en la tierra, *esferas en ti.*" />
       <Subtitulo T={T} idx={8} at={K.Et + 0.1} until={K.Ca - 0.1} texto="Terremoto, deslaves *y polvo.*" />
       <Subtitulo T={T} idx={9} at={K.Ca + 0.1} until={K.Cl - 0.1} texto="Ventura: *203 casos.*" />
-      <Subtitulo T={T} idx={10} at={K.Cl + 0.1} until={K.Si - 0.1} texto="6 de cada 10 *no sienten nada.*" />
+      <Subtitulo T={T} idx={10} at={K.Cl + 0.1} until={K.Si - 0.1} texto="Cerca de 6 de cada 10 *no sienten nada.*" />
       <Subtitulo T={T} idx={11} at={K.Si + 0.1} until={K.C - 0.1} texto="Tos, fiebre, cansancio. *Tu perro también puede enfermar.*" />
-      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Ese polvo: *el taxi de un hongo.*" />
+      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Ese polvo: a veces, *el taxi de un hongo.*" />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 4.0, 'avatar_11_sorprendido', 'gancho'],

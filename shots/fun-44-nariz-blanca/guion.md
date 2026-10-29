@@ -14,21 +14,41 @@
 | 0 | Gancho | Eso blanco en la nariz de este murciélago no es escarcha: es un hongo que lo despierta. | Fondo cian: un murciélago café colgado de cabeza, alas plegadas, con pelusa blanca en el hocico. Cuadro 0.3: le cae escarcha y la palabra «escarcha» se tacha; aparece «HONGO». Etiqueta «murciélago café (*Myotis lucifugus*)». |
 | 1 | Cueva | Imagina hibernar en una cueva, casi tan frío como la roca. | La cámara se aleja: cueva con muchos murciélagos colgados. Termómetro de la cueva «2–14 °C» y termómetro del cuerpo que baja hasta casi igualarla. |
 | 2 | Hongo | Ahí vive *Pseudogymnoascus destructans*, un hongo del frío. | Zoom a la roca y al hocico: hilos blancos (hifas) y esporas curvas. Etiqueta *Pseudogymnoascus destructans*. Chip «le gusta el frío». |
-| 3 | Piel | Mientras duerme, se le mete en la piel del hocico, orejas y alas. | **Al microscopio** (fondo oscuro): corte de piel del ala; las hifas entran a los folículos del pelo y a las glándulas. Etiquetas «hocico», «orejas», «alas» parpadean en el murciélago chico de la esquina. |
-| 4 | Despierta | Y lo hace despertar más seguido. | De regreso a la cueva: el murciélago abre los ojos, se sacude, y un contador «despertares» sube. |
+| 3 | Piel | Mientras duerme, se le mete en la piel del hocico, orejas y alas. | **Al microscopio** (fondo oscuro): corte de piel del ala; las hifas entran a los folículos del pelo y a las glándulas. Chip «hocico · orejas · alas» y círculos que parpadean en esas partes del murciélago chico de la esquina. |
+| 4 | Despierta | Y lo hace despertar más seguido. | De regreso a la cueva: el murciélago abre los ojos, se sacude, y saltan estrellitas de «¡despierta!». |
 | 5 | Pregunta | ¿Y qué tiene de malo despertarse? | **Re-gancho.** «?» gigante; Robert grande, pensativo. |
-| 6 | Grasa | Que cuesta mucha grasa: aun sano, gasta en sus pocos despertares la mayor parte de su grasa de invierno. Enfermo, se le acaba antes de la primavera. | Barra de grasa (amarilla) del murciélago sano: en sus pocos despertares se come la mayor parte. Luego la del enfermo: muchos despertares y la barra llega a cero antes de que salga el sol de primavera. Sin cifras en pantalla. |
+| 6 | Grasa | Que cuesta mucha grasa: aun sano, gasta en sus pocos despertares la mayor parte de su grasa de invierno. Enfermo, se le acaba antes de la primavera. | Línea de tiempo «invierno → primavera» con estrellitas en cada despertar y barra de grasa. Sano: pocos despertares que se comen la mayor parte (chip «sano: la mayor parte, en despertar»). Enfermo: muchos despertares, la barra llega a cero antes de la primavera y el murciélago se pone gris (chip «enfermo: sin grasa antes de la primavera»). Sin cifras en pantalla. |
 | 7 | Estudio | Un estudio de 2012 con murciélagos silvestres de Estados Unidos: los sanos dormían unos 16 días seguidos; los enfermos que murieron, unos 8. | Tarjeta «2012 · murciélagos silvestres de EE. UU. · Reeder et al., *PLOS ONE*». Dos calendarios: sano, 16 días de sueño; enfermo, 8. |
 | 8 | Foto | La primera foto de la enfermedad: Nueva York, 2006. | Una cámara de foto con flash en una cueva; polaroid «Nueva York · feb 2006». |
-| 9 | Millones | Ya mató a millones de murciélagos; tres especies cayeron más del 90 % en sus refugios de invierno vigilados. | Mapa esquemático de EE. UU. y Canadá que se llena desde Nueva York. Tres siluetas de especie con su barra que cae: «más del 90 %» y nota chica «conteos hasta 2018 · Cheng et al. 2021». Etiquetas *Myotis lucifugus*, *Myotis septentrionalis*, *Perimyotis subflavus*. |
-| 10 | Europa | Lo raro: en Europa el mismo hongo no causa matanzas, y su ADN apunta a que vino de ahí. | Murciélago europeo con un poco de hongo, tranquilo. Flecha punteada Europa → América con «ADN» y un «?» chico (no está confirmado de qué población). |
-| 11 | Mexico | ¿Y en México? En 2025 un estudio lo reportó en una cueva de Oaxaca. | Mapa de México; punto en Oaxaca. Tarjeta «2025 · cueva de Oaxaca · Medina-Cruz et al., *PLOS ONE*». Chip «si ves uno enfermo, no lo toques». |
+| 9 | Millones | Ya mató a millones de murciélagos; tres especies cayeron más del 90 % en sus refugios de invierno vigilados. | «MILLONES de murciélagos muertos» en grande. Luego tres barras (una por especie) que caen: «más del 90 %» y nota chica «conteos hasta 2018 · Cheng et al. 2021». Etiquetas *Myotis lucifugus*, *Myotis septentrionalis*, *Perimyotis subflavus*. |
+| 10 | Europa | Lo raro: en Europa el mismo hongo no causa matanzas, y su ADN apunta a que vino de ahí. | Murciélago europeo con un poco de hongo, dormido y tranquilo; chip «Europa: sin matanzas». Flecha punteada Europa → América con «ADN ?» (no está confirmado de qué población). |
+| 11 | Mexico | ¿Y en México? En 2025 un estudio lo reportó en una cueva de Oaxaca. | Mapa esquemático de México; punto que late en Oaxaca y chip «Oaxaca · reportado en 2025». Chip «si ves uno enfermo, no lo toques». |
 | 12 | Cierre | Eso blanco no es escarcha: es un hongo que no lo deja dormir. | **Regreso a la imagen del inicio:** el mismo murciélago colgado con la nariz blanca, ahora con un «zzz» que se rompe y la palabra «escarcha» tachada. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave, fría y continua (eco de cueva), sin golpe marcado; efectos en el mismo cuadro: escarcha que cae, goteo de la cueva, crujido de las hifas entrando, «despertar» (aleteo) cada vez que sube el contador, mordida de la barra de grasa, tic de los calendarios, flash de la foto, golpes suaves de las barras que caen, latido suave en el mapa de México.
 
 Barras de escala: 10 cm (murciélago), 1 m (cueva), 10 µm (piel y esporas al microscopio).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué tiene de malo despertarse?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «no es escarcha: es un hongo» (cuadro 0) |
+| 2 | 8.9 | 11.7 | 12_perfil_serio | `arriba-der` | «un hongo del frío» |
+| 3 | 15.9 | 17.7 | 13_senalando_arriba | `arriba-der` | «lo hace despertar más seguido» |
+| 4 | 17.8 | 20.4 | 07_pensativo_puno | `grande` | «¿qué tiene de malo despertarse?» |
+| 5 | 24.5 | 28.0 | 10_serio_molesto | `arriba-der` | «enfermo, se le acaba antes de la primavera» |
+| 6 | 31.5 | 35.9 | 04_bajando_lentes | `arriba-der` | los 16 contra 8 días del estudio |
+| 7 | 41.6 | 45.1 | 11_sorprendido | `arriba-der` | «más del 90 %» |
+| 8 | 45.9 | 50.2 | 06_pensativo_menton | `arriba-der` | «en Europa no causa matanzas» |
+| 9 | 51.0 | 54.2 | 13_senalando_arriba | `arriba-der` | Oaxaca en el mapa |
+| 10 | 54.7 | 57.9 | 02_apuntando_camara | `arriba-der` | «es un hongo que no lo deja dormir» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **33.9 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 

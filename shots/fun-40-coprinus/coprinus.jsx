@@ -67,11 +67,11 @@ function LaminasMicro({ T, madura = 1200, disuelve = 1160, lluvia = 0, enzimas =
       {Array.from({ length: 12 }, (_, i) => { const sy = top + 30 + i * 46; if (sy > yb - 18) return null; const negra = sy > madura;
         return [-1, 1].map((sd) => <g key={sd + '' + i}>
           <line x1={px + sd * 34} y1={sy} x2={px + sd * 44} y2={sy} stroke="#cdbfb5" strokeWidth={4} />
-          <ellipse cx={px + sd * 62} cy={sy} rx={22} ry={16} fill={negra ? '#1a1412' : '#f3ece6'} stroke={negra ? '#d6cbc2' : KC.ink} strokeWidth={3} />
+          <ellipse cx={px + sd * 64} cy={sy} rx={28} ry={20} fill={negra ? '#1a1412' : '#f3ece6'} stroke={negra ? '#d6cbc2' : KC.ink} strokeWidth={3} />
         </g>); })}
     </g>)}
     {lluvia > 0 && Array.from({ length: 21 }, (_, i) => { const u = ((T * 0.32 + i / 21) % 1), px = PLACAS[i % 3] + (i % 2 ? 62 : -62) + Math.sin(T * 2 + i) * 20 + (i % 2 ? 1 : -1) * u * 90;
-      return <ellipse key={i} cx={px} cy={Math.min(1160, disuelve) + 10 + u * 520} rx={22} ry={16} fill="#1a1412" stroke="#d6cbc2" strokeWidth={3} opacity={lluvia * (1 - u * u)} transform={`rotate(${T * 60 + i * 30} ${px} ${Math.min(1160, disuelve) + 10 + u * 520})`} />; })}
+      return <ellipse key={i} cx={px} cy={Math.min(1160, disuelve) + 10 + u * 520} rx={28} ry={20} fill="#1a1412" stroke="#d6cbc2" strokeWidth={3} opacity={lluvia * (1 - u * u)} transform={`rotate(${T * 60 + i * 30} ${px} ${Math.min(1160, disuelve) + 10 + u * 520})`} />; })}
     {enzimas > 0 && PLACAS.map((px, j) => [0, 1, 2].map((k) => { const a = T * 8 + k * 2 + j; const ex = px - 40 + k * 40, ey = Math.min(1160, disuelve) - 4 + Math.sin(a) * 6;
       return <g key={j + '-' + k} transform={`translate(${ex} ${ey}) scale(${enzimas})`}><path d={`M 0 0 L 13 ${-6 - 4 * Math.abs(Math.sin(a * 1.6))} A 14 14 0 1 0 13 ${6 + 4 * Math.abs(Math.sin(a * 1.6))} Z`} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /></g>; }))}
   </g>;
@@ -125,6 +125,7 @@ function CoprinusShot() {
   const herida = kprog(T, K.B + 1.4, K.B + 2.2);
   const lleno = kprog(T, K.Co + 0.8, K.Co + 3.4), apaga = kprog(T, K.Co + 1.6, K.Co + 3.6) * 0.75;
   const tintaOla = kprog(T, K.Ola + 0.2, K.Ti - 0.3, kEase.suave);
+  const orillaOla = 910 - 1.75 * 182 * (0.08 + 0.92 * tintaOla); // la flecha llega justo a la orilla que se va digiriendo (Barbuda s=1.75 en y=1190)
   const esc = (T >= K.Ti + 2.4 && T < K.P + 0.5);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -165,9 +166,10 @@ function CoprinusShot() {
           <Pasto T={T} />
           <Barbuda T={T} x={400} y={1190} s={1.75} tinta={0.08 + 0.92 * tintaOla} charco={0.2 + 0.7 * tintaOla} seed={6} />
           <g opacity={kprog(T, K.Ola + 0.4, K.Ola + 0.8)}>
-            <line x1={640} y1={klerp(900, 880, 0)} x2={640} y2={klerp(900, 420, tintaOla)} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
-            <line x1={640} y1={900} x2={640} y2={klerp(900, 420, tintaOla)} stroke={KC.yellow} strokeWidth={8} strokeLinecap="round" />
-            <path d="M -22 14 L 0 -18 L 22 14 Z" transform={`translate(640 ${klerp(900, 420, tintaOla) - 6})`} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
+            <line x1={640} y1={430} x2={640} y2={900} stroke={KC.ink} strokeWidth={5} strokeDasharray="14 14" opacity=".45" />
+            <line x1={640} y1={900} x2={640} y2={orillaOla} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
+            <line x1={640} y1={900} x2={640} y2={orillaOla} stroke={KC.yellow} strokeWidth={8} strokeLinecap="round" />
+            <path d="M -22 14 L 0 -18 L 22 14 Z" transform={`translate(640 ${orillaOla - 6})`} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
           </g>
         </>)}
       </Escena>
@@ -178,7 +180,7 @@ function CoprinusShot() {
         {fsvg(<>
           <circle cx={540} cy={800} r={360} fill="#8f8780" stroke={KC.cyan} strokeWidth={10} />
           {Array.from({ length: 30 }, (_, i) => { const a = i * 2.4, rr = 40 + (i * 47) % 300, px = 540 + Math.cos(a + T * 0.2) * rr * 0.95, py = 800 + Math.sin(a + T * 0.2) * rr * 0.95;
-            return <ellipse key={i} cx={px} cy={py} rx={20} ry={14} fill="#1a1412" stroke="#4a403a" strokeWidth={3} transform={`rotate(${i * 40 + T * 20} ${px} ${py})`} />; })}
+            return <ellipse key={i} cx={px} cy={py} rx={28} ry={20} fill="#1a1412" stroke="#4a403a" strokeWidth={3} transform={`rotate(${i * 40 + T * 20} ${px} ${py})`} />; })}
           {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${300 + i * 90} ${620 + (i % 3) * 140} q 40 ${-30 + Math.sin(T * 2 + i) * 10} 80 0`} stroke="#b4aaa2" strokeWidth={8} fill="none" strokeLinecap="round" />)}
         </>)}
       </Escena>
@@ -271,6 +273,7 @@ function CoprinusShot() {
       <Etq T={T} at={MIC + 1.6} until={K.B - 0.2} x={60} y={540} texto="nematodo" tam={30} color={KC.texto} />
       <Etq T={T} at={MIC + 1.9} until={K.B - 0.2} x={60} y={590} texto="Panagrellus redivivus" it tam={30} color={KC.texto} />
       <Etq T={T} at={K.B + 0.3} until={K.Tx - 0.2} x={60} y={660} texto="bolitas con espinas" tam={30} color={KC.gold2} />
+      <Etq T={T} at={MIC + 0.8} until={K.C - 0.3} x={60} y={1150} texto="hifas y bolitas: dibujadas más grandes" tam={26} color={KC.texto} />
       <Chip T={T} at={K.B + 1.6} until={K.Tx - 0.2} texto="rompe su cubierta" x={540} y={460} tam={34} borde={KC.red} />
       <Cronometro T={T} at={K.Tx + 0.2} until={K.Co - 0.2} factor={3600} etiqueta="EN LA CAJA" x={540} y={470} />
       <Etq T={T} at={K.Tx + 0.5} until={K.Co - 0.2} x={60} y={560} texto="toxinas" tam={30} color={KC.pink} />
@@ -281,7 +284,7 @@ function CoprinusShot() {
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.L} texto="5 cm" largo={180} />
-      <BarraEscala T={T} at={K.L} until={K.O} texto="2 cm" largo={150} />
+      <BarraEscala T={T} at={K.L} until={K.O} texto="2 cm" largo={200} />
       <BarraEscala T={T} at={K.O} until={K.Ola} texto="20 µm" largo={110} />
       <BarraEscala T={T} at={K.Ola} until={K.Ti} texto="5 cm" largo={200} />
       <BarraEscala T={T} at={K.Ti} until={K.Ti + 2.5} texto="20 µm" largo={110} />

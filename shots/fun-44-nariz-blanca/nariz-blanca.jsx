@@ -145,7 +145,7 @@ function NarizBlancaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <RedHifas T={T} x={540} y={800} g={kprog(T, K.H - 0.3, K.H + 2.6)} seed={5} n={260} escala={0.38} color="#f4f1e6" ancho={4} brillo={0.6} />
+          <RedHifas T={T} x={540} y={780} g={kprog(T, K.H - 0.3, K.H + 2.6)} seed={5} n={260} escala={0.32} color="#f4f1e6" ancho={4} brillo={0.6} />
           {Array.from({ length: 9 }, (_, i) => { const on = kprog(T, K.H + 0.8 + i * 0.12, K.H + 1.1 + i * 0.12, kEase.rebote); return on > 0 ? <Conidio key={i} x={260 + (i % 3) * 270 + Math.sin(T + i) * 10} y={640 + Math.floor(i / 3) * 150 + Math.cos(T * 1.3 + i) * 10} s={1.8 * on} rot={i * 40 + T * 10} /> : null; })}
         </>)}
       </Escena>
@@ -274,13 +274,13 @@ function NarizBlancaShot() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.2} until={K.G + 3.0} texto="¿escarcha?" x={380} y={1115} tam={46} />
-      <Etq T={T} at={K.G + 3.2} until={K.Cu - 0.3} x={620} y={1010} texto="murciélago café" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 3.5} until={K.Cu - 0.3} x={620} y={1065} texto="Myotis lucifugus" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.2} until={K.Cu - 0.3} x={600} y={1060} texto="murciélago café" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.5} until={K.Cu - 0.3} x={600} y={1115} texto="Myotis lucifugus" it tam={34} color={KC.ink} />
       <Chip T={T} at={K.Cu + 0.5} until={K.H - 0.3} texto="cueva: 2–14 °C" x={540} y={590} tam={38} borde={KC.blue} />
       <Chip T={T} at={K.H + 0.2} until={K.P - 0.3} texto="AL MICROSCOPIO · el hongo" x={330} y={430} tam={30} borde={KC.cyan} />
       <Chip T={T} at={K.H + 1.6} until={K.P - 0.3} texto="le gusta el frío" x={330} y={520} tam={34} borde={KC.blue} />
-      <Etq T={T} at={K.H + 0.6} until={K.P - 0.3} x={60} y={1060} texto="Pseudogymnoascus destructans" it tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.H + 1.4} until={K.P - 0.3} x={60} y={1120} texto="esporas curvas (conidios)" tam={28} />
+      <Etq T={T} at={K.H + 0.6} until={K.P - 0.3} x={60} y={1085} texto="Pseudogymnoascus destructans" it tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.H + 1.4} until={K.P - 0.3} x={60} y={1138} texto="esporas curvas (conidios)" tam={28} />
       <Chip T={T} at={K.P + 0.1} until={K.D - 0.3} texto="AL MICROSCOPIO · piel del ala" x={540} y={430} tam={32} borde={KC.cyan} />
       <Etq T={T} at={K.P + 1.0} until={K.D - 0.3} x={60} y={560} texto="hifas" tam={30} color="#ffffff" />
       <Etq T={T} at={K.P + 1.6} until={K.D - 0.3} x={60} y={1100} texto="folículos del pelo y glándulas" tam={28} color={KC.yellow} />

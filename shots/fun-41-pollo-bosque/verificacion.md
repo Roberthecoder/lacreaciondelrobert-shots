@@ -46,4 +46,3 @@ Fuentes abiertas:
 
 Re-verificación (29 oct 2026): se corrigieron las filas 3, 3c, 5b, 8, 9b, 11 y 17; se releyó narracion.json completo (14 líneas) y las escenas cambiadas del guion contra las fuentes. "Correoso" (fila 7) se queda: traduce "chewy" de [UF]. Fuentes [UCR] y [SAL] agregadas al guion. Todas las afirmaciones quedaron ✅. El dibujo es esquemático. No es consejo médico.
 
-VEREDICTO: APROBADO
