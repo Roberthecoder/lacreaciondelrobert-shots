@@ -157,10 +157,11 @@ function HifaParte({ T, y, x0 = 40, n = 15, p = 0, suelta = 0, seed = 1, paso = 
     const dy = esp ? -suelta * (30 + ((k * 37 + seed * 13) % 60)) : 0, rot = esp ? suelta * (((k * 53 + seed) % 40) - 20) : 0;
     if (esp) el.push(<g key={k}>
       <rect x={x - 33} y={y - 17} width={66} height={34} fill={FV.crema} opacity={1 - p} />
-      <Barril x={x} y={y + dy} rot={90 + rot} w={klerp(30, 34, p)} h={klerp(64, 54, p)} color={mixHex('#fff4d6', FV.crema, p)} o={0.35 + 0.65 * p} />
+      <Barril x={x} y={y + dy} rot={90 + rot} w={klerp(30, 34, p)} h={klerp(64, 54, p)} color={mixHex('#fff4d6', FV.crema, p)} o={kclamp(p * 1.6, 0, 1)} />
     </g>);
     else el.push(<g key={k} opacity={1 - suelta * 0.7}>
-      <rect x={x - 33} y={y - 17} width={66} height={34} fill={FV.crema} opacity={1 - p} stroke={KC.ink} strokeWidth={4} />
+      <rect x={x - 33} y={y - 17} width={66} height={34} fill={FV.crema} opacity={1 - p} />
+      <line x1={x - 33} y1={y - 15} x2={x - 33} y2={y + 15} stroke="#c9b48c" strokeWidth={3} opacity={1 - p} />
       {p > 0 && <rect x={x - 26} y={y - 15} width={52} height={30} fill="none" stroke="#c9b48c" strokeWidth={4} strokeDasharray="8 7" opacity={p} />}
     </g>);
   }

@@ -39,5 +39,3 @@ Fuentes abiertas:
 | 15 | Fuentes del guion: fuente 6 (CCDR) y fuente 4 (Kauffman, ahora con la cita textual de 8–15 µm) coinciden con lo abierto | ✅ | [CCDR], [K] | Ver filas 3b, 9–12. | 2007 / 2025 |
 
 **Re-verificación (29 oct 2026):** se aplicaron las 5 correcciones (gancho y chip, península de Yucatán sin nombre del cenote, "sospechoso", cenote cerrado atribuido al reporte de 2025, dibujo de micro y macroconidias) y los recortes de redacción; se revisó `narracion.json` completo (13 líneas). Todas las afirmaciones quedan ✅.
-
-VEREDICTO: APROBADO
