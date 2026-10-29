@@ -4,34 +4,16 @@ Este archivo es la memoria del chat administrador. **Toda sesión administradora
 (commit en main con `[sin render]`). Si el chat se compacta o se abre uno nuevo, aquí está todo lo que hace falta para seguir.
 Escríbelo corto: estado actual y pendientes, no historia. La historia vive en git y en los `resultado` de la Sala.
 
-Última actualización: 29 oct 2026, 01:40 UTC.
+Última actualización: 29 oct 2026, 16:30 UTC.
 
-## PEDIDO DE 300 SHOTS (29 oct) — LISTO (16:02 UTC)
-- TERMINADO: 300/300 en la Sala (verificados, sin voz) + fes-07…fes-16. Pedido marcado "listo". Ya no hay que vigilar ni despertar
-  las 7 sesiones. PENDIENTE: juntar las 7 ramas `pedido300/*` a main (sección 6 de PRODUCCION_NUBE.md, `[sin render]`).
-- Pedido de la Sala `zu488o6qtt10bvn5j11h` (tipo serie, 50 de cada serie normal, total 300). Estado "en proceso".
-- 7 sesiones de nube (etiqueta `pedido300`), cada una en su rama, tandas de 5, suben a la Sala y suman a `hechos`:
-  fun `session_0157fph1NsHjWsqeMnXBaXMC` (pedido300/fun) · bio `session_0157fpgzxExWfmVZJcsaQUpg` (pedido300/bio) ·
-  amb `session_0157fpgyQN2cResjbZJ8rqUe` (pedido300/amb) · cie `session_0157fph1uV37Qq24qkDs6MNb` (pedido300/cie) ·
-  qui `session_0157fpgzuJM3ymsKtSoqvmnt` (pedido300/qui) · ia `session_0157fph3W4CN9EzPqt8DUqEt` (pedido300/ia) ·
-  festivos extra fes-07…fes-16 (10 nov–14 feb) `session_0157fpgyNNigAR2Ks9KZrcRx` (pedido300/festivos; no suman a hechos).
-- Números: #10–#59 de cada serie (publicación hasta 25–26 feb 2027).
-- **Vigilancia (trabajador horario y admin):** cada hora `get_session` de las 7; si una está inactiva (idle/failed) y no ha terminado
-  (cuenta carpetas en su rama), mándale con send_message: "Sigue con tu encargo del pedido 300 desde donde vas." Si falla algo
-  de fondo, avisa en ESTADO-ADMIN. Cuando `hechos == 300`, pon el pedido en "listo".
-- Juntar a main: cada ~25 shots terminados por rama, merge de `origin/pedido300/*` a main con `[sin render]` (sección 6 de
-  PRODUCCION_NUBE.md; `.github/` como en main; `node historial/consolidar.mjs`).
-- 29 oct 02:15–04:20 UTC: las 7 sesiones se pararon por el límite de uso de 5 horas de la cuenta; a las 04:36 el trabajador
-  les pidió seguir (Robert: "reanuda absolutamente todo"). Iban 8/300 en la Sala. Si vuelve a pasar: esperar al reinicio y reanudar.
-- 29 oct 05:12–07:00 UTC: segunda parada, ahora por el límite SEMANAL de uso; reanudadas a las 07:58 con 84/300. Al ritmo de 7
-  sesiones en paralelo el límite se agota en ~3 h; si se repite, conviene preguntarle a Robert si baja a menos sesiones.
-- 29 oct 09:59: sesión de festivos TERMINADA (fes-07…fes-16 en pedido300/festivos, los 10 con VEREDICTO: APROBADO y en la Sala;
-  fes-14 cambió a razas de maíz). Ya no hay que despertarla; falta juntar su rama a main.
-- 29 oct 10:57: Químico TERMINADO (50/50). En ramas con VEREDICTO: amb 50, cie 50, qui 50, ia 50, bio 45, fun 35 (=280); Sala hechos=250.
-- 29 oct 15:03: las 300 carpetas tienen VEREDICTO en sus ramas; en la Sala están 290 (faltan fun-50…fun-59, ya en la rama). La sesión fun
-  se paró por el límite de 5 h (reinicio 14:50) y se reanudó a las 15:03. Las otras 5 series y festivos están completas en la Sala.
-- 29 oct 07:58: el aviso falló al instante (límite de 5 h otra vez, reinicio 09:30). Reanudadas de nuevo a las 09:58; siguen en 84/300.
-- Espacio de la Sala: 1 GB; con 60 shots iba en 118 MB (~2 MB por shot) → caben los 310. Revisar si pasa de 900 MB.
+## PEDIDO DE 300 SHOTS (29 oct) — LISTO
+- Pedido `zu488o6qtt10bvn5j11h` listo: 300 shots (#10–#59 de las 6 series) en la Sala, sin voz. Juntados a main el 29 oct
+  (ramas pedido300/fun, bio, amb, cie, qui, ia). La Sala tiene 370 shots.
+- Re-verificación independiente de las 54 correcciones que no la tenían: 48 OK, 6 corregidos (qui-22, qui-41, bio-23, bio-25,
+  bio-42, fes-07/fes-14). Regla reforzada: tras corregir ⚠️/❌, otro subagente revisa y deja "## Re-verificación".
+- FALTA: la sesión de festivos (`session_0157fpgyNNigAR2Ks9KZrcRx`, rama pedido300/festivos) rehace fes-10 (repetía qui-35-vela)
+  y actualiza en la Sala fes-07/fes-10/fes-14. Cuando avise, juntar pedido300/festivos a main con [sin render].
+- Temas cercanos aceptados (ángulos distintos): bio-20 vs qui-49 (glutamato), amb-40 vs amb-41 (partículas), bio-50 vs fes-14 (maíz).
 
 ## VOZ EN PAUSA (29 oct, Robert): "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
 - Las 30 aprobaciones que esperaban créditos se marcaron `aprobado:false, en_pausa:true` en la Sala. NO generar ninguna voz
