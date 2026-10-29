@@ -255,7 +255,7 @@ function SalShot() {
         {svg(saleroPizca(K.C - 0.3))}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.C + 1.4} until={K.Ou - 0.2} x={330} y={480} r={170} fx={340} fy={1110} tinte={KC.cyan} etiqueta="RAYOS X"
+      <Lupa T={T} at={K.C + 1.4} until={K.Ou - 0.2} x={330} y={480} r={170} fx={340} fy={1110} tinte={KC.cyan} etiqueta="AL MICROSCOPIO"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2f8fd8" />
           <path d={`M 0 ${r * 0.7} ${Array.from({ length: 6 }, (_, i) => `Q ${i * r / 3 + r / 6} ${r * 0.62 + Math.sin(t * 3 + i) * 8} ${(i + 1) * r / 3} ${r * 0.7}`).join(' ')} L ${r * 2} 0 L 0 0 Z`} fill="#bfe7ff" />
           <Hilito x={r * 0.7} y={r * 1.2} l={110} w={7} rot={-15} color={PL[0]} T={t} />

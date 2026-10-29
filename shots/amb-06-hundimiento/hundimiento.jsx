@@ -117,7 +117,7 @@ function HundimientoShot() {
         {svg(<Subsuelo T={T} aplasta={aplasta} bombea={kprog(T, K.B + 0.3, K.Es + 3.0)} pozo={T > K.B - 0.3} />)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.Es + 0.6} until={K.P - 0.2} x={760} y={540} r={170} fx={540} fy={1000} tinte={KC.yellow} etiqueta="RAYOS X · lodo del lago"
+      <Lupa T={T} at={K.Es + 0.6} until={K.P - 0.2} x={760} y={540} r={170} fx={540} fy={1000} tinte={KC.yellow} etiqueta="POR DENTRO · lodo del lago"
         interior={(t, r) => { const u = kprog(t, K.Es + 0.8, K.Es + 3.2, kEase.suave); const pts = [];
           for (let i = 0; i < 5; i++) for (let j = 0; j < 5; j++) pts.push([40 + i * 65, klerp(40 + j * 65, 120 + j * 45, u)]);
           return <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#5a4330" />
