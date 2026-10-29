@@ -165,7 +165,7 @@ function Olor() {
   const pintadas = Math.round(100 * kprog(T, K.Re + 0.3, K.Re + 2.6, kEase.suave));
   // Mapa: medio millón de puntos (esquema: 1,600 puntos dibujados)
   const nMapa = Math.round(1600 * kprog(T, K.M + 0.4, K.M + 3.6, (p) => p * p));
-  const dimMapa = 1 - 0.7 * kprog(T, K.M + 3.9, K.M + 4.4);
+  const dimMapa = 1 - 0.82 * kprog(T, K.M + 3.9, K.M + 4.4);
   // Red: la molécula entra como grafo, cruza la red y cae en el mapa
   const gR = kprog(T, K.R + 0.2, K.R + 1.2, kEase.suave), onda = kprog(T, K.R + 1.2, K.R + 2.6);
   const vuelo = kprog(T, K.R + 2.6, K.R + 3.4, kEase.sale);
@@ -192,7 +192,7 @@ function Olor() {
           <g opacity={kprog(T, K.E + 4.6, K.E + 5.0)}><Alcaravea x={790} y={1030} s={0.85} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.E + 1.8} until={K.Ca - 0.2} texto="carvona: mismos átomos, en espejo" x={420} y={470} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 1.8} until={K.Ca - 0.2} texto="mismos átomos, en espejo" x={350} y={470} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.E + 3.6} until={K.Ca - 0.2} texto="huele a hierbabuena" x={280} y={1150} tam={30} borde={MENTA} />
       <Chip T={T} at={K.E + 4.8} until={K.Ca - 0.2} texto="huele a alcaravea" x={800} y={1150} tam={30} borde={CAFE} />
       {/* 3 · el catálogo: 5,000 moléculas ya descritas */}
@@ -216,11 +216,11 @@ function Olor() {
         <FondoCircuito T={T} />
         {svg(<>
           <Carvona x={680} y={470} s={0.8} g={gR} T={T} brillo={onda > 0 && onda < 1 ? 1 : 0} />
-          <MapaOlores x={290} y={990} w={500} h={190} T={T} n={260} tam={20} o={kprog(T, K.R + 2.2, K.R + 2.6)}
+          <MapaOlores x={290} y={965} w={500} h={180} T={T} n={260} tam={20} o={kprog(T, K.R + 2.2, K.R + 2.6)}
             nuevo={{ x: 0.24, y: 0.3, o: kprog(T, K.R + 3.3, K.R + 3.4) }} />
-          {vuelo > 0 && vuelo < 1 && <circle cx={klerp(900, 290 + 0.24 * 500, vuelo)} cy={klerp(820, 990 + 0.3 * 190, vuelo) - Math.sin(Math.PI * vuelo) * 120} r={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />}
+          {vuelo > 0 && vuelo < 1 && <circle cx={klerp(900, 290 + 0.24 * 500, vuelo)} cy={klerp(815, 965 + 0.3 * 180, vuelo) - Math.sin(Math.PI * vuelo) * 120} r={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />}
         </>)}
-        <RedNeuronal T={T} x={180} y={650} ancho={720} alto={300} capas={[4, 6, 6, 3]} onda={onda > 0 && onda < 1 ? onda : null} o={kprog(T, K.R + 0.8, K.R + 1.2)} />
+        <RedNeuronal T={T} x={180} y={690} ancho={720} alto={250} capas={[4, 6, 6, 3]} onda={onda > 0 && onda < 1 ? onda : null} o={kprog(T, K.R + 0.8, K.R + 1.2)} />
       </Escena>
       <Chip T={T} at={K.R + 0.5} until={K.P - 0.2} texto="átomos = puntos · enlaces = líneas" x={540} y={640} tam={30} borde={IAC} />
       {/* 5 · pregunta */}
@@ -283,7 +283,6 @@ function Olor() {
         </>)}
       </Escena>
       <Chip T={T} at={K.C + 0.5} until={K.Ou} texto="«huele a hierbabuena» ✔" x={330} y={790} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="sin olerlo nunca" x={770} y={1190} tam={34} borde={IAC} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="Tú hueles… *la IA solo mira.*" />

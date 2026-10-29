@@ -515,12 +515,12 @@
    "derivados": []
   },
   {
-   "id": "ia-cv-nombres",
-   "titulo": "IAs que filtran currículums prefirieron nombres asociados a hombres blancos (Wilson y Caliskan, 2024)",
+   "id": "ia-aves",
+   "titulo": "Tu celular reconoce aves por su canto (BirdNET, Kahl et al. 2021; Merlin Sound ID)",
    "serie": "Shot IA",
    "numero": 39,
    "estado": "idea",
-   "carpeta": "shots/ia-39-cv-nombres",
+   "carpeta": "shots/ia-39-aves",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
    "fuentes": [],
@@ -769,6 +769,18 @@
   {
    "id": "ia-conspiraciones-descartado",
    "titulo": "DESCARTADO: IA que reduce creencias conspirativas (Costello et al., Science 2024) — Science publicó expresión de preocupación (jun 2026) y fe de erratas (oct 2026)",
+   "serie": "Shot IA",
+   "numero": null,
+   "estado": "idea",
+   "carpeta": "",
+   "rama": "pedido300/ia",
+   "fecha": "2026-10-29",
+   "fuentes": [],
+   "derivados": []
+  },
+  {
+   "id": "ia-cv-nombres-descartado",
+   "titulo": "DESCARTADO: sesgo de nombres al filtrar CV (Wilson y Caliskan, AIES 2024) — corrección 2026 invierte género y el resultado de raza se voltea con nombres de igual frecuencia",
    "serie": "Shot IA",
    "numero": null,
    "estado": "idea",

@@ -22,7 +22,7 @@ function RobertAV({ T, apariciones = [], base = 'assets/stickers/' }) {
 // Los seis casos que el tribunal declaró inexistentes (orden del 22 jun 2023, ¶36).
 const CASOS = [['Varghese', 'v. China Southern'], ['Shaboon', 'v. Egyptair'], ['Petersen', 'v. Iran Air'],
   ['Martinez', 'v. Delta Airlines'], ['Durden', 'v. KLM'], ['Miller', 'v. United Airlines']];
-const POS6 = [[200, 830], [540, 830], [880, 830], [200, 1030], [540, 1030], [880, 1030]];
+const POS6 = [[200, 860], [540, 860], [880, 860], [200, 1050], [540, 1050], [880, 1050]];
 
 // Expediente (carpeta) con el nombre del caso y un sello rojo "NO EXISTE" (sello 0..1).
 function Expediente({ x, y, s = 1, rot = 0, nombre, contra, sello = 0, o = 1 }) {
@@ -33,7 +33,7 @@ function Expediente({ x, y, s = 1, rot = 0, nombre, contra, sello = 0, o = 1 }) 
     <text x={0} y={-12} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.ink}>{nombre}</text>
     <text x={0} y={30} textAnchor="middle" style={{ font:`italic 700 22px ${KF.mono}` }} fill="#5a3d10">{contra}</text>
     <line x1={-100} y1={58} x2={100} y2={58} stroke="#b8862f" strokeWidth={4} /><line x1={-100} y1={72} x2={60} y2={72} stroke="#b8862f" strokeWidth={4} />
-    {sello > 0 && <g transform={`translate(0 10) rotate(-13) scale(${klerp(2.3, 1, sello)})`} opacity={Math.min(1, sello * 2)}>
+    {sello > 0 && <g transform={`translate(0 48) rotate(-9) scale(${klerp(2.3, 0.82, sello)})`} opacity={Math.min(1, sello * 2)}>
       <rect x={-125} y={-36} width={250} height={72} rx={12} fill="rgba(255,59,47,.14)" stroke={KC.red} strokeWidth={8} />
       <text y={20} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={KC.red}>NO EXISTE</text>
     </g>}
@@ -51,7 +51,7 @@ function PasoN({ T, at, until, n, total = 4, texto, y = 330 }) {
   const s = klerp(1.4, 1, kprog(T, at, at + 0.4, kEase.rebote)), o = kprog(T, at, at + 0.2) * (1 - kprog(T, until, until + 0.35));
   return <div style={{ position:'absolute', left:0, right:0, top:y, zIndex:44, textAlign:'center', opacity:o }}>
     <div style={{ display:'inline-block', transform:`scale(${s})`, background:KC.red, color:KC.paper, borderRadius:20, padding:'6px 28px 10px', font:`400 92px/1 ${KF.titulo}`, boxShadow:`10px 10px 0 ${KC.ink}` }}>PASO {n}<span style={{ fontSize:50, opacity:.75 }}> / {total}</span></div>
-    <div style={{ font:`900 50px/1.1 ${KF.texto}`, color:KC.texto, textShadow:KSOMBRA, marginTop:22, padding:'0 90px' }}>{texto}</div>
+    <div style={{ font:`900 46px/1.1 ${KF.texto}`, color:KC.texto, textShadow:KSOMBRA, marginTop:20, padding:'0 70px' }}>{texto}</div>
   </div>;
 }
 
@@ -69,12 +69,12 @@ function Avion({ x, y, s = 1, rot = 0 }) {
 }
 // Cabina en corte: pasajero sentado con la rodilla hacia el pasillo y un carrito de metal que lo golpea.
 function Cabina({ T, carroX, golpe }) {
-  const dolor = golpe > 0 ? Math.max(0, 1 - (T - golpe) * 0.5) : 0;
+  const dolor = T > golpe ? Math.max(0, 1 - (T - golpe) * 0.5) : 0;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <defs><clipPath id="avCab"><rect x={70} y={760} width={940} height={400} rx={40} /></clipPath></defs>
+    <defs><clipPath id="avCab"><rect x={70} y={790} width={940} height={370} rx={40} /></clipPath></defs>
     <g clipPath="url(#avCab)">
-      <rect x={70} y={760} width={940} height={400} fill="#e9eef5" />
-      <path d="M 70 760 L 1010 760 L 1010 800 Q 540 860 70 800 Z" fill="#cfd8e6" />
+      <rect x={70} y={790} width={940} height={370} fill="#e9eef5" />
+      <path d="M 70 790 L 1010 790 L 1010 815 Q 540 860 70 815 Z" fill="#cfd8e6" />
       {[160, 400, 640, 880].map((wx) => <g key={wx}><rect x={wx - 34} y={830} width={68} height={92} rx={34} fill="#9fd3ff" stroke={KC.ink} strokeWidth={5} /><circle cx={wx - 10} cy={856} r={8} fill="#fff" opacity=".7" /></g>)}
       <rect x={70} y={1110} width={940} height={60} fill="#8b93a6" />
       <line x1={70} y1={1110} x2={1010} y2={1110} stroke={KC.ink} strokeWidth={6} />
@@ -98,7 +98,7 @@ function Cabina({ T, carroX, golpe }) {
         <circle cx={34} cy={1098} r={12} fill={KC.ink} /><circle cx={186} cy={1098} r={12} fill={KC.ink} />
       </g>
     </g>
-    <rect x={70} y={760} width={940} height={400} rx={40} fill="none" stroke={KC.ink} strokeWidth={8} />
+    <rect x={70} y={790} width={940} height={370} rx={40} fill="none" stroke={KC.ink} strokeWidth={8} />
     {golpe > 0 && T > golpe && T < golpe + 1.6 && <g transform={`translate(600 960) scale(${klerp(0.4, 1, kprog(T, golpe, golpe + 0.25, kEase.rebote))})`} opacity={1 - kprog(T, golpe + 1.2, golpe + 1.6)}>
       <path d="M 0 -80 L 22 -26 L 80 -40 L 40 6 L 76 50 L 18 34 L 0 86 L -18 34 L -76 50 L -40 6 L -80 -40 L -22 -26 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
       <text y={16} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.red}>¡TAC!</text>
@@ -236,17 +236,17 @@ function Avianca() {
       <Escena T={T} a={K.P1} b={K.P2}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <path d="M 150 690 Q 540 560 930 690" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 14" fill="none" opacity=".6" />
-          <circle cx={150} cy={690} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><circle cx={930} cy={690} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
-          <text x={150} y={740} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>El Salvador</text>
-          <text x={930} y={740} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Nueva York</text>
-          <Avion x={klerp(150, 930, vuelo)} y={690 - Math.sin(Math.PI * vuelo) * 98} s={0.5} rot={klerp(-14, 14, vuelo)} />
+          <path d="M 150 700 Q 540 540 930 700" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 14" fill="none" opacity=".6" />
+          <circle cx={150} cy={700} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><circle cx={930} cy={700} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
+          <text x={150} y={750} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>El Salvador</text>
+          <text x={930} y={750} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Nueva York</text>
+          <Avion x={klerp(150, 930, vuelo)} y={700 - Math.sin(Math.PI * vuelo) * 80} s={0.5} rot={klerp(-14, 14, vuelo)} />
         </>)}
         <Cabina T={T} carroX={carroX} golpe={golpe} />
       </Escena>
-      <PasoN T={T} at={K.P1 + 0.05} until={K.P2 - 0.25} n={1} texto="Toma una demanda contra una aerolínea" />
-      <Chip T={T} at={K.P1 + 1.6} until={K.P1 + 4.0} texto="Avianca · aerolínea de Colombia" x={540} y={605} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.P1 + 4.5} until={K.P2 - 0.25} texto="carrito de metal → rodilla" x={540} y={605} tam={34} borde={KC.red} />
+      <PasoN T={T} at={K.P1 + 0.05} until={K.P2 - 0.25} n={1} texto="Un caso contra una aerolínea" />
+      <Chip T={T} at={K.P1 + 1.6} until={K.P1 + 4.0} texto="Avianca · aerolínea de Colombia" x={540} y={545} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.P1 + 4.5} until={K.P2 - 0.25} texto="carrito de metal → rodilla" x={540} y={545} tam={34} borde={KC.red} />
 
       {/* 3 · paso 2: pídele casos a ChatGPT */}
       <Escena T={T} a={K.P2} b={K.P3}>
@@ -254,7 +254,7 @@ function Avianca() {
         {svg(<g opacity={kprog(T, K.P2 + 2.6, K.P2 + 3.0)}><HojaFalsa x={790} y={820} s={0.82} T={T} falta={kprog(T, K.P2 + 3.6, K.P2 + 4.2)} /></g>)}
       </Escena>
       {T > K.P2 - 0.45 && T < K.P3 + 0.45 && <div style={{ opacity: kprog(T, K.P2 - 0.45, K.P2 + 0.05) * (1 - kprog(T, K.P3 - 0.05, K.P3 + 0.45)) }}>
-        <CelularChat T={T} x={300} y={850} s={0.6} tam={40} mensajes={[
+        <CelularChat T={T} x={300} y={845} s={0.66} tam={40} mensajes={[
           { at: K.P2 + 0.6, yo: true, texto: 'Dame casos que apoyen mi demanda' },
           { at: K.P2 + 1.5, texto: 'Varghese v. China Southern Airlines (2019)' },
           { at: K.P2 + 2.1, texto: 'Shaboon v. Egyptair (2013)' },
@@ -284,11 +284,11 @@ function Avianca() {
         {svg(<PalomitaTache x={830} y={800} s={kprog(T, K.R + 2.3, K.R + 2.7, kEase.rebote)} v={kprog(T, K.R + 4.0, K.R + 4.4, kEase.sale)} />)}
       </Escena>
       {T > K.R - 0.45 && T < K.M + 0.45 && <div style={{ opacity: kprog(T, K.R - 0.45, K.R + 0.05) * (1 - kprog(T, K.M - 0.05, K.M + 0.45)) }}>
-        <CelularChat T={T} x={340} y={830} s={0.6} tam={40} mensajes={[
+        <CelularChat T={T} x={330} y={820} s={0.72} tam={42} mensajes={[
           { at: K.R + 0.4, yo: true, texto: '¿Varghese es un caso real?' },
           { at: K.R + 1.9, texto: 'Sí, existe. Lo encuentras en bases de datos legales.' }]} escribe={[K.R + 0.9, K.R + 1.9]} />
       </div>}
-      <Nota T={T} at={K.R + 2.6} until={K.M - 0.2} x={680} y={1010} ancho={320} tam={22} borde={KC.cyan} texto="paráfrasis · las capturas reales están en la orden del juez" />
+      <Nota T={T} at={K.R + 2.6} until={K.M - 0.2} x={690} y={1040} ancho={320} tam={22} borde={KC.cyan} texto="paráfrasis · las capturas reales están en la orden del juez" />
 
       {/* 7 · paso 4: la sentencia y la multa */}
       <Escena T={T} a={K.M} b={K.Co}>

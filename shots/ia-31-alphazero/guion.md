@@ -1,11 +1,11 @@
 # Shot IA #31 · AlphaZero: revisaba mil veces menos y aun así ganaba
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #31 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, pendiente de verificación independiente. Sin animación todavía.
-- **Formato:** N3 "Capítulos y medidores" (Cap. 1 Solo las reglas · Cap. 2 Contra sí misma · Cap. 3 El duelo), con un medidor de
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`; corregidas las 2 ⚠️), animación, Robert en pantalla, música y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert** (~961 créditos).
+- **Formato:** N3 "Capítulos y medidores" (Cap. 1 Solo las reglas · Cap. 2 Contra sí misma · Cap. 3 Por dentro · Cap. 4 El duelo), con un medidor de
   posiciones por segundo y un reloj de entrenamiento en vivo.
 - **Gancho (de los 7):** #4 "Un número que contradice": mil veces menos posiciones revisadas… y aun así gana.
-- **Duración:** voz 958 caracteres / ~168 palabras (≈ 58.2 s) + cierre 3.5 s → **61.7 s** estimados en la base.
+- **Duración:** voz 961 caracteres / ~169 palabras (≈ 58.4 s) + cierre 3.5 s → **61.9 s** en la base (suma de `OM_SCENES`).
 - **Postura de la serie:** la defiende (aprendió sin partidas humanas y con búsqueda mucho más selectiva) y la critica con datos
   (para entrenar usó cinco mil chips de Google). Se dice que el estudio es de **2018**. La explicación de "por qué gana" se dice
   como lo que **creen** los autores (en el artículo es una posibilidad: "may compensate").
@@ -16,12 +16,12 @@
 |---|---|---|---|
 | 0 | Gancho | Esta IA revisaba mil veces menos posiciones que el campeón de ajedrez de las máquinas… y aun así le ganó. | Fondo menta; desde el cuadro 0 un tablero en perspectiva, dos relojes de ajedrez que arrancan. A la izquierda un robotito pequeño (AlphaZero) con una lupa; a la derecha una computadora enorme con mil lupitas (Stockfish). Chips "60 mil/s" vs "60 millones/s"; un rey negro cae (golpe). |
 | 1 | Reglas | Se llama AlphaZero. Nadie le enseñó partidas humanas: solo las reglas, y empezó moviendo piezas al azar. | **Cap. 1 · Solo las reglas.** Una pila de libros de ajedrez tachada ("partidas humanas ✗"); una tarjetita "reglas ✔". Las piezas saltan al azar por el tablero (movimientos torpes). |
-| 2 | Autojuego | Luego jugó contra sí misma cuarenta y cuatro millones de partidas, y aprendía qué jugadas la llevaban a ganar. | **Cap. 2 · Contra sí misma.** Dos robotitos iguales frente a frente; contador que sube hasta "44 millones de partidas"; mini tableros que se multiplican en cuadrícula; una red neuronal que se ilumina con cada partida. |
+| 2 | Autojuego | Luego jugó contra sí misma cuarenta y cuatro millones de partidas, y aprendía qué jugadas la llevaban a ganar. | **Cap. 2 · Contra sí misma.** Dos robotitos iguales frente a frente; contador que sube hasta "44 millones" (de partidas contra sí misma); 16 mini tableros que aparecen y se marcan ✔ (ganó) o ✗ (perdió): de cada resultado aprende. |
 | 3 | Horas | A las cuatro horas de entrenar ya superaba a Stockfish; entrenó nueve en total. | Medidor de nivel (Elo, esquemático) que sube; línea punteada "nivel de Stockfish"; reloj de entrenamiento: en "4 h" la curva cruza la línea (destello); el reloj sigue hasta "9 h". |
 | 4 | Pregunta | ¿Pero cómo gana alguien que revisa mil veces menos? | **Re-gancho.** "?" gigante sobre el tablero; Robert grande. |
-| 5 | Medidor | Stockfish revisaba unos sesenta millones de posiciones por segundo. AlphaZero, solo sesenta mil. | Fondo oscuro (por dentro de la máquina): un árbol de jugadas que se abre por todos lados para Stockfish (miles de ramitas) contra pocas ramas para AlphaZero. Medidor doble: "60 000 000 /s" vs "60 000 /s". |
-| 6 | Medidor | Sus autores proponen que su red neuronal le señala qué jugadas mirar. | La red neuronal ilumina solo 3 ramas del árbol de AlphaZero (las "prometedoras"); chip "hipótesis de los autores". |
-| 7 | Duelo | En Londres, DeepMind lo publicó en Science en 2018: en mil partidas, ganó ciento cincuenta y cinco, perdió seis y empató las demás. | **Cap. 3 · El duelo.** Tarjeta "2018 · DeepMind (Londres) · Silver et al. · *Science*"; cuadrícula de 1 000 cuadritos que se llena: 155 verdes (ganó), 6 rojos (perdió), 839 grises (empates). Chip "3 h por partida + 15 s por jugada". |
+| 5 | Medidor | **Cap. 3 · Por dentro.** Stockfish revisaba unos sesenta millones de posiciones por segundo. AlphaZero, solo sesenta mil. | Fondo oscuro (por dentro de la máquina): un árbol de jugadas que se abre por todos lados para Stockfish (miles de ramitas) contra pocas ramas para AlphaZero. Medidor doble: "60 000 000 /s" vs "60 000 /s". |
+| 6 | Medidor | Sus autores proponen que su red neuronal le señala qué jugadas mirar. | Una red neuronal chiquita aparece sobre el árbol de AlphaZero y solo 3 ramas quedan iluminadas (las "prometedoras"); el árbol de Stockfish se apaga; chip "hipótesis de los autores". |
+| 7 | Duelo | En Londres, DeepMind lo publicó en Science en 2018: en mil partidas, ganó ciento cincuenta y cinco, perdió seis y empató las demás. | **Cap. 4 · El duelo.** Tarjeta "2018 · DeepMind (Londres) · Silver et al. · *Science*"; cuadrícula de 1 000 cuadritos que se llena: 155 verdes (ganó), 6 rojos (perdió), 839 grises (empates). Chip "1,000 partidas · 3 h + 15 s por jugada". |
 | 8 | Aperturas | Lo más raro: sin ver a ningún humano, descubrió sola aperturas que las personas usamos mucho. | El tablero muestra el **Gambito de Dama** (1. d4 d5 2. c4, una de las aperturas humanas de la Fig. 3 del artículo) con flechas; globo "¡como los humanos!"; mini gráfica "% de partidas en que la elegía" que sube y luego se estabiliza, con etiqueta "esquemático". |
 | 9 | Chips | Eso sí: para entrenar usó cinco mil chips de Google. | Crítica con datos: pared de chips (TPU) que se encienden; chip "5 000 TPU para generar partidas (solo en el entrenamiento)". |
 | 10 | Cierre | Así que revisar más no lo es todo: a veces gana quien sabe dónde mirar. | **Regreso a la imagen del inicio**: el mismo tablero y los dos rivales; la computadora de mil lupitas se apaga y la lupa única del robotito brilla sobre una sola casilla. |
@@ -31,6 +31,26 @@
 que saltan (toques de madera), tecleo rápido mientras sube el contador de partidas, "ding" cuando la curva cruza a Stockfish,
 zumbido eléctrico en el árbol de Stockfish contra 3 notas limpias en las ramas de AlphaZero, 1 000 cuadritos como lluvia de
 toques (verde agudo, rojo grave), zumbido de servidores al encenderse los chips, la computadora que se apaga al final.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Pero cómo gana alguien que revisa mil veces menos?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` | «mil veces menos posiciones… y aun así le ganó» (cuadro 0) |
+| 2 | 8.8 | 12.4 | 05_sonriendo_dientes_uniformes | `arriba-der` | «empezó moviendo piezas al azar» |
+| 3 | 15.6 | 19.0 | 13_senalando_arriba | `arriba-der` | señala el contador de «cuarenta y cuatro millones de partidas» |
+| 4 | 20.8 | 23.9 | 11_sorprendido | `arriba-der` | «a las cuatro horas ya superaba a Stockfish» |
+| 5 | 24.1 | 28.4 | 07_pensativo_puno | `grande` | «¿Pero cómo gana alguien que revisa mil veces menos?» |
+| 6 | 33.3 | 37.1 | 06_pensativo_menton | `arriba-der` | «Sus autores proponen que su red neuronal…» |
+| 7 | 41.9 | 44.9 | 04_bajando_lentes | `arriba-der` | «ganó ciento cincuenta y cinco, perdió seis» |
+| 8 | 48.3 | 50.5 | 11_sorprendido | `arriba-der` | «descubrió sola aperturas que las personas usamos mucho» |
+| 9 | 51.1 | 53.8 | 10_serio_molesto | `izq-alto` | «cinco mil chips de Google» |
+| 10 | 54.6 | 58.3 | 13_senalando_arriba | `arriba-der` | «a veces gana quien sabe dónde mirar» |
+| — | 58.4 | 61.9 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 10 · ≈ 34.4 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.9 s
 
 ## Fuentes (cada cifra se abrió en la fuente original el 29 oct 2026)
 
