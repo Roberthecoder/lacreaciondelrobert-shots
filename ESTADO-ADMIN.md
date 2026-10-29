@@ -20,6 +20,23 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   `correcciones/auditoria-29oct`). Sesión `session_0157fph2Famee5vpDrWHHrN1` los corrige, re-verifica, renderiza y reemplaza en la Sala.
   Al terminar: juntar esa rama a main con [sin render]. fun-03: falta que Robert confirme «en mi cuarto» y «papel aluminio».
 
+## PUBLICADOR DE REDES (29 oct) — FUNCIONA EN PRUEBA Y PRIVADO; FALTA LA PRIMERA PUBLICACIÓN REAL
+- Cómo se usa: ADMIN.md, «Publicar en redes». Programa `motor/redes/publicar.py`, workflow `publicar.yml` (a mano o con un
+  archivo `publicar/pedidos/*.json`), botón «Publicar» en la Sala (collection `publicaciones`).
+- Probado con 003-semillas-luna: modo prueba OK en Facebook, Instagram, Threads, YouTube y LinkedIn. Modo privado OK en
+  YouTube (privado: youtube.com/shorts/EuhA0wKFL4A), Facebook (borrador), Instagram y Threads (contenedor sin publicar) y LinkedIn
+  (video sin post). Instagram: la subida directa da 400, así que usa el enlace del Release (automático).
+  Esos borradores/privados de 003 se pueden borrar (su narrado es viejo): YouTube Studio y Meta Business Suite.
+- TikTok: FALTA que Robert conecte la cuenta (docs/tiktok.html → Autorizar → workflow «Conectar TikTok»).
+- Primera publicación real: pedir a Robert cuál video y en qué redes (propuesta: fun-02-hormiga-zombi, auditado OK). OJO: Robert
+  puso la voz en pausa para mejorar la calidad; confirmar que SÍ quiere publicar narrados con la voz actual.
+- Revisiones: respuestas listas en `docs/revisiones/LEEME.md`; Robert manda la auditoría de YouTube y el «Submit for review» de
+  TikTok (con el video demo, que se graba cuando TikTok esté conectado).
+- Recordatorios: LinkedIn vence ~28 dic 2026 (renovación manual, ADMIN.md). Threads y TikTok se renuevan solos cada lunes
+  (`renovar-tokens.yml`); si ese run sale en rojo, avisar a Robert.
+- Disco de la PC de Robert: se llenó (0 MB) el 29 oct al bajar los 300 shots; se liberaron ~460 MB. Hay que liberar más
+  (C: con 254 GB usados). En esa PC no hacer `git pull` completo hasta que haya espacio.
+
 ## VOZ EN PAUSA (29 oct, Robert): "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
 - Las 30 aprobaciones que esperaban créditos se marcaron `aprobado:false, en_pausa:true` en la Sala. NO generar ninguna voz
   ni poner `voz_aprobada` hasta que Robert vuelva a aprobar con el botón o en el chat.
@@ -70,7 +87,7 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 ## Pendientes de Robert (él tiene que hacerlos)
 - **RECORDARLE al terminar la configuración de las API de redes:** cancelar la prueba gratuita de un mes de Meta Verified
   (verificación de Instagram/Facebook) antes de que se renueve y cobre. Lo pidió el 28 oct.
-- **API de redes: configuradas el 29 oct** (todavía no se publica nada; falta construir el publicador).
+- **API de redes: configuradas el 29 oct.** Publicador construido el 29 oct (ver sección «PUBLICADOR DE REDES» arriba y ADMIN.md).
   Pruebas de solo lectura: workflows `probar-meta.yml` y `probar-redes.yml` (los dos pasan).
   | Red | Estado | Secretos (nombres) / variables |
   |---|---|---|
