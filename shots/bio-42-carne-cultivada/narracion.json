@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esta carne no salió de un animal sacrificado: creció en un tanque, desde unas cuantas células."
+      "texto": "Esta carne no se cortó de un animal: creció en un tanque, desde pocas células."
     },
     {
       "escena": "Biopsia",
@@ -13,15 +13,15 @@
     },
     {
       "escena": "Celulas",
-      "texto": "Ahí vienen células madre del músculo, que saben multiplicarse."
+      "texto": "Ahí vienen células madre del músculo, que se multiplican."
     },
     {
       "escena": "Biorreactor",
-      "texto": "Las metes a un biorreactor con caldo de nutrientes, y se dividen una y otra vez."
+      "texto": "En un biorreactor con caldo de nutrientes, se dividen una y otra vez."
     },
     {
       "escena": "Fibras",
-      "texto": "Luego cambias el caldo: unas se unen en fibras de músculo y otras se vuelven grasa."
+      "texto": "Luego cambias el caldo: esas se unen en fibras de músculo, y otras células del pedacito se vuelven grasa."
     },
     {
       "escena": "Pregunta",
@@ -29,7 +29,7 @@
     },
     {
       "escena": "Suero",
-      "texto": "Por años, suero fetal bovino: sangre de fetos de vacas preñadas que van al rastro."
+      "texto": "Por años, suero fetal bovino: sale de la sangre de fetos de vacas preñadas que van al rastro."
     },
     {
       "escena": "SinSuero",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Hamburguesa",
-      "texto": "La primera hamburguesa la presentó Mark Post en Londres, en 2013: unas 20 mil tiritas de músculo."
+      "texto": "Mark Post presentó la primera hamburguesa en Londres, en 2013: unas 20 mil tiritas de músculo."
     },
     {
       "escena": "Costo",
@@ -45,15 +45,16 @@
     },
     {
       "escena": "Leyes",
-      "texto": "Singapur aprobó su venta en 2020 y Estados Unidos en 2023; Italia, Florida y Alabama la prohibieron."
+      "texto": "Singapur aprobó su venta en 2020 y Estados Unidos en 2023; Italia y siete estados de Estados Unidos la prohibieron."
     },
     {
       "escena": "Reto",
-      "texto": "Hoy el reto es el caldo, que es lo más caro, y llevarla a tanques gigantes."
+      "texto": "Hoy el reto es el caldo, lo más caro, y llevarla a tanques gigantes."
     },
     {
       "escena": "Cierre",
       "texto": "Así que esta carne sí es de animal, pero creció en un tanque."
     }
-  ]
+  ],
+  "tanda": 7
 }

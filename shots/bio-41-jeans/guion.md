@@ -11,30 +11,51 @@
 - **No se repite con bio-15 (detergente):** aquel era la mancha en la ropa y las enzimas del polvo para lavar; este es **cómo se fabrica el
   deslavado de la tela** (índigo en anillo, piedra pómez contra celulasa, desengomado y lacasas).
 
-## Versión narrada (953 caracteres, ~172 palabras, ~58 s de voz)
+## Versión narrada (956 caracteres, ~173 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese deslavado de tus jeans quizá no lo hizo una piedra: lo hizo un hongo. | Fondo amarillo. **Cuadro 0:** unos jeans colgados se mecen; una piedra pómez cae hacia la rodilla deslavada y se tacha (`MitoTachado` "¿piedra?"); en su lugar brota un hongo filamentoso chiquito con un brillo. |
-| 1 | Hilos | La mezclilla cruza hilos azules con hilos blancos. | `Lupa` sobre la rodilla: "AL MICROSCOPIO · la tela". Tejido en diagonal (sarga): hilos azules (urdimbre) pasando sobre hilos blancos (trama). Etiquetas chicas "azul: urdimbre" / "blanco: trama". |
+| 1 | Hilos | La mezclilla cruza hilos azules con blancos. | `Lupa` sobre la rodilla: "AL MICROSCOPIO · la tela". Tejido en diagonal (sarga): hilos azules (urdimbre) pasando sobre hilos blancos (trama). Etiquetas chicas "azul: urdimbre" / "blanco: trama". |
 | 2 | Anillo | Y el índigo casi no entra al hilo: lo pinta por fuera y el centro queda blanco. | Corte transversal de un hilo azul: anillo azul por fuera, centro blanco. Chip "índigo = por fuera". Fondo oscuro (micro). Barra de escala. |
-| 3 | Piedra | Antes se deslavaban en lavadoras con piedra pómez que raspaba ese azul. | **Cap. 1 · La piedra.** Corte a una lavadora industrial de tambor girando con jeans y piedras grises porosas dando vueltas. |
+| 3 | Piedra | Por años se deslavaron en lavadoras con piedra pómez que raspaba ese azul. | **Cap. 1 · La piedra.** Corte a una lavadora industrial de tambor girando con jeans y piedras grises porosas dando vueltas. |
 | 4 | Problema | Pero la piedra maltrataba las máquinas y soltaba polvo. | El tambor se abolla (golpes), sale una nube de polvo gris. |
 | 5 | Pregunta | ¿Y si algo mordiera solo la orilla del hilo? | **Re-gancho.** Regresa el corte del hilo con su anillo azul; un signo de pregunta. |
 | 6 | Celulasa | El algodón es celulosa, y los hongos tienen enzimas que la cortan: celulasas. | **Cap. 2 · La celulasa.** Un hongo filamentoso (hifas) suelta enzimas como "tijeritas" (pac-man). Etiqueta *Trichoderma* · "celulasa". Cadena de celulosa (anillitos de glucosa) que se corta. |
 | 7 | Mordida | La celulasa muerde la superficie de las fibras y el azul se suelta. | Las celulasas muerden la orilla de la fibra azul; se sueltan granitos de índigo y asoma el blanco. `Medidor` "azul en la superficie" bajando. |
-| 8 | Gramos | Unos gramos de enzima reemplazan kilos de piedra. | Balanza: un frasquito de enzima de un lado, un montón de piedras del otro. |
+| 8 | Gramos | Unos gramos de enzima reemplazan kilos de piedra. | Un frasquito de enzima ("GRAMOS") con una flecha hacia un montón de piedras ("KILOS") que se tacha. |
 | 9 | Ayudantes | Las amilasas quitan el almidón de los hilos, y las lacasas aclaran el azul. | **Cap. 3 · Las ayudantes.** Dos enzimas con etiqueta: amilasa cortando una costra de almidón del hilo; lacasa tocando el índigo, que se vuelve más claro. |
 | 10 | Estudio | En 2001, en la Universidad del Minho, en Portugal, vieron que lacasas de hongos rompen el índigo y aclaran la tela. | `TarjetaEstudio` "2001 · Univ. do Minho, Portugal · J. Biotechnol." Molécula de índigo azul que se parte en isatina (amarillita). Un retazo de tela que se aclara. |
 | 11 | Tiendas | Lo curioso: el hongo Trichoderma reesei se halló en la Segunda Guerra Mundial comiéndose tiendas de algodón. | Una tienda de campaña militar de lona en una isla tropical (Islas Salomón) con manchas de moho y agujeros. Etiqueta *Trichoderma reesei* · "Islas Salomón". |
-| 12 | Cierre | Así que tus jeans no los deslavó una piedra: los mordió la enzima de un hongo. | **Regreso a los jeans del inicio** en el tendedero, ya deslavados, con el hongo chiquito asomado en la rodilla. |
+| 12 | Cierre | Así que tus jeans quizá no los deslavó una piedra: los mordió la enzima de un hongo. | **Regreso a los jeans del inicio** en el tendedero, ya deslavados, con el hongo chiquito asomado en la rodilla. |
 | — | Outro | (sin voz) | `CierreMarca` con Robert. |
+
+## Robert en pantalla
+
+Es la marca del canal: entra desde el cuadro 0, vuelve cada 8–10 s y nunca tapa el subtítulo (el kit lo dibuja por delante de él).
+Tiempos con las escenas de `Shot Jeans base narrada.dc.html` (total 61.5 s).
+
+### Versión narrada: 10 apariciones, **36.9 s en pantalla** (de 61.5 s), 8 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 4,2 | sorprendido (11) | gancho | «no lo hizo una piedra: lo hizo un hongo» |
+| 13,0 - 16,5 | señalando (13) | arriba-der | señala la lavadora con piedra pómez |
+| 16,9 - 20,0 | serio (10) | izq-alto | «maltrataba las máquinas y soltaba polvo» |
+| 20,3 - 23,0 | pensativo (06) | **grande** | re-gancho: «¿y si algo mordiera solo la orilla?» |
+| 28,4 - 31,8 | sorprendido (11) | arriba-der | la celulasa muerde y el azul se suelta |
+| 32,3 - 34,8 | sonriendo (05) | arriba-der | «unos gramos de enzima reemplazan kilos de piedra» |
+| 36,0 - 39,4 | señalando (13) | arriba-der | amilasas y lacasas |
+| 43,0 - 46,3 | pensativo con puño (07) | izq-alto | la lacasa parte el índigo (estudio de 2001) |
+| 46,7 - 52,7 | bajando lentes (04) | **grande-izq** | dato fuerte: el hongo se comía tiendas en la Segunda Guerra Mundial |
+| 53,2 - 57,9 | apuntando a cámara (02) | gancho | cierre: «quizá los mordió la enzima de un hongo» |
+| 58,0 - 61,5 | señalando (13) | cierre | `CierreMarca` con Robert junto al logo |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Cama:** grave y continua, sin golpe marcado, siempre debajo de la voz.
 - **Efectos en el mismo cuadro:** piedra que cae (golpe sordo) y tachón (tachar); tambor de la lavadora girando (rumor) y piedras golpeando
   (clacs secos) y abolladura (golpe metálico); "puf" de polvo; mordidas de la celulasa (chasquidos suaves, uno por mordida) y granitos de índigo
-  que se sueltan (tintineo); balanza (clic); sello de la tarjeta del estudio (golpe); molécula que se parte (chispa).
+  que se sueltan (tintineo); tachón de los kilos (golpe); sello de la tarjeta del estudio (golpe); molécula que se parte (chispa).
 - **Datos hechos sonido:** el medidor de "azul en la superficie" baja con una nota descendente por cada mordida.
 
 ## Descripción (para publicar)
@@ -55,7 +76,10 @@ Mundial, destruyendo tiendas y ropa de algodón del ejército.
 El dibujo es esquemático. **¿Tus jeans favoritos son deslavados u oscuros? 👇**"
 
 ## Fuentes
-- **Índigo por fuera y centro blanco (teñido "en anillo"):** McFarland JE et al., patente US 5,514,187 "Reduced indigo dye penetration", **1996**.
+- **Índigo por fuera y centro blanco (teñido "en anillo") — fuente principal:** Manian AP, Müller S, Braun DE, Pham T, Bechtold T, "Dope Dyeing of Regenerated Cellulose Fibres with Leucoindigo as Base for Circularity of Denim", *Polymers* 14(23):5280, **2022**, PMC9738703. https://pmc.ncbi.nlm.nih.gov/articles/PMC9738703/
+  - «A characteristic property of the warp yarn in denim is the so-called "ring dyeing". The core of the dyed yarn must remain undyed, which is a condition to achieve the desired faded look during the garment wash.»
+  - «short dyeing time and low dyebath temperature lead to minimum dye penetration and ring dyeing of the yarn»
+- **Teñido en anillo (apoyo):** McFarland JE et al., patente US 5,514,187 "Reduced indigo dye penetration", **1996**.
   https://patentimages.storage.googleapis.com/de/a3/10/98a2a9e86ba1f3/US5514187.pdf
   - «Indigo dye tends to dye the outside of the fiber bundle in a ring spun cotton yarn or fabric without penetrating into the core of the yarn or body of the fabric. When the dyed surface is worn or abraded away (e.g., in a washing machine with stones or a combination of stones and cellulose enzyme), such ring dyeing allows the inner white areas to show through.»
   - «the cotton fibers of the ring dyed yarn are dyed only around the outer circumference of the cotton yarn leaving the center portion or core undyed, hence the term "ring dyed"»

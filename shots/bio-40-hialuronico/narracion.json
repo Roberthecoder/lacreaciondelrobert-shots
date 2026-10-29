@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese suero no salió de un gallo: casi seguro lo fabricó una bacteria."
+      "texto": "Ese suero no salió de un gallo: lo más probable es que lo hizo una bacteria."
     },
     {
       "escena": "Tuyo",
@@ -17,11 +17,11 @@
     },
     {
       "escena": "Tanque",
-      "texto": "Hoy la mayor parte sale de tanques llenos de bacterias."
+      "texto": "Hoy la mayor parte sale de tanques con bacterias."
     },
     {
       "escena": "Enzima",
-      "texto": "Por dentro, una sola enzima en la membrana une dos azúcares, uno y otro, sin parar."
+      "texto": "Por dentro, una sola enzima de la membrana une dos azúcares, uno y otro."
     },
     {
       "escena": "Hilo",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Riesgo",
-      "texto": "Pero el más usado en las fábricas, Streptococcus zooepidemicus, puede enfermar."
+      "texto": "Pero el más usado en fábricas, Streptococcus zooepidemicus, puede enfermar."
     },
     {
       "escena": "Estudio",
@@ -49,11 +49,12 @@
     },
     {
       "escena": "Crema",
-      "texto": "Y ojo: en 2015, en Francia, vieron que el hialurónico grande no cruza la capa de afuera de la piel."
+      "texto": "Y ojo: en 2015, en Francia, en piel humana donada, el hialurónico grande no cruzó la capa de afuera."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese suero no es de gallo: es el abrigo de una bacteria."
+      "texto": "Así que ese suero, lo más seguro, no es de gallo: es el abrigo de una bacteria."
     }
-  ]
+  ],
+  "tanda": 7
 }

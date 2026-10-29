@@ -532,60 +532,129 @@
       "titulo": "Mosquitos con una bacteria contra el dengue: Wolbachia (Yogyakarta)",
       "serie": "Shot Biotecnológico",
       "numero": 35,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-35-wolbachia",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://pubmed.ncbi.nlm.nih.gov/34107180/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8103655/",
+        "https://pubmed.ncbi.nlm.nih.gov/21866160/",
+        "https://pubmed.ncbi.nlm.nih.gov/21866159/",
+        "https://www.nature.com/articles/nature10355",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7612058/",
+        "https://pubmed.ncbi.nlm.nih.gov/25787763/",
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0038544"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Técnica del insecto incompatible (liberar solo machos con Wolbachia)",
+        "Incompatibilidad citoplásmica: cómo Wolbachia esteriliza cruces",
+        "Niterói y Medellín: ciudades enteras con moscos con Wolbachia"
+      ]
     },
     {
       "id": "bio-36-petasa",
       "titulo": "La bacteria que come botellas de PET: Ideonella sakaiensis (2016)",
       "serie": "Shot Biotecnológico",
       "numero": 36,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-36-petasa",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://pubmed.ncbi.nlm.nih.gov/26965627/",
+        "https://www.scienceintheclassroom.org/research-papers/plastic-dinner",
+        "https://lpsn.dsmz.de/species/ideonella-sakaiensis",
+        "https://pubmed.ncbi.nlm.nih.gov/32269349/",
+        "https://www.inrae.fr/en/news/development-new-enzyme-recycling-pet-plastic-waste-new-bottles",
+        "https://pubmed.ncbi.nlm.nih.gov/22194294/",
+        "https://petpla.net/2025/12/23/carbios-maintains-its-commitment-to-build-the-longlaville-plant-and-adjusts-its-timeline/",
+        "https://www.chemanager-online.com/en/news/carbios-confirms-longlaville-plant-plans-while-revising-project-schedule",
+        "https://www.ecotextile.com/2026033162238/news/shows-events/carbios-resets-longlaville-plant-timetable/",
+        "https://www.carbios.com/en/supported-by-significant-progress-in-the-financing-of-its-industrial-project-in-france-carbios-confirms-its-objective-to-build-the-longlaville-plant/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "FAST-PETase: la enzima mejorada con aprendizaje automático",
+        "Por qué el PET cristalino es tan difícil de comer",
+        "El gusano de cera que mastica plástico"
+      ]
     },
     {
       "id": "bio-37-adn-disco",
       "titulo": "Guardar archivos en ADN: almacenamiento de datos en moléculas",
       "serie": "Shot Biotecnológico",
       "numero": 37,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-37-adn-disco",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://pubmed.ncbi.nlm.nih.gov/22903519/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3672958/",
+        "https://pubmed.ncbi.nlm.nih.gov/28254941/",
+        "https://www.eurekalert.org/news-releases/822697",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5842791/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7116897",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6428863",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8288837"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "ADN de mamut: el ADN más viejo leído",
+        "Grabadora CRISPR: células que anotan lo que les pasa",
+        "Cuánto cuesta escribir un megabyte en ADN"
+      ]
     },
     {
       "id": "bio-38-genoma-costo",
       "titulo": "Leer un genoma humano: de miles de millones de dólares a cientos",
       "serie": "Shot Biotecnológico",
       "numero": 38,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-38-genoma-costo",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost",
+        "https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Costs-Data",
+        "https://www.genome.gov/human-genome-project",
+        "https://www.genome.gov/human-genome-project/Completion-FAQ",
+        "https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Fact-Sheet",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9186530/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4204238",
+        "https://www.genomicseducation.hee.nhs.uk/glossary/massively-parallel-sequencing/"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "La mola: el pedazo de ADN que llenó el genoma CHM13",
+        "Centrómeros: la parte del genoma que nadie había leído",
+        "Nanoporos: leer ADN pasándolo por un agujero"
+      ]
     },
     {
       "id": "bio-39-tamiz",
       "titulo": "La prueba del talón: tamiz neonatal y fenilcetonuria",
       "serie": "Shot Biotecnológico",
       "numero": 39,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-39-tamiz",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "https://embryo.asu.edu/pages/guthrie-test-early-diagnosis-phenylketonuria",
+        "https://embryo.asu.edu/pages/robert-guthrie-1916-1995",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10847993",
+        "https://medlineplus.gov/genetics/condition/phenylketonuria/",
+        "https://www.cochrane.org/evidence/CD001304_using-diet-manage-phenylketonuria",
+        "https://sidof.segob.gob.mx/notas/docFuente/5349816",
+        "https://www.imss.gob.mx/sites/all/statics/salud/infografiasl/Tamiz-Neonatal.pdf",
+        "https://sidof.segob.gob.mx/notas/docFuente/5259470",
+        "https://sidof.segob.gob.mx/notas/5796825",
+        "https://www.law.cornell.edu/cfr/text/21/172.804"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Hipotiroidismo congénito: el tamiz que evita discapacidad",
+        "Tamiz auditivo neonatal",
+        "Espectrometría de masas: cómo una gota detecta decenas de enfermedades"
+      ]
     },
     {
       "id": "bio-40-hialuronico",

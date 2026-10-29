@@ -5,59 +5,60 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esta medicina contra la malaria no empezó en una planta: empezó en una levadura."
+      "texto": "Esta medicina contra la malaria no solo sale de una planta: también la puede empezar una levadura."
     },
     {
       "escena": "Mosquito",
-      "texto": "La malaria la pasa un mosquito, y su parásito invade tus glóbulos rojos."
+      "texto": "La malaria la pasa un mosquito; su parásito invade tus glóbulos rojos."
     },
     {
       "escena": "Cifra",
-      "texto": "En 2024 hubo 282 millones de casos y 610 mil muertes, según la OMS."
+      "texto": "En 2024 hubo 282 millones de casos y 610 mil muertes, dice la OMS."
     },
     {
       "escena": "Planta",
-      "texto": "La base del mejor tratamiento, la artemisinina, sale de la planta Artemisia annua."
+      "texto": "La base del tratamiento más eficaz, la artemisinina, sale de la planta Artemisia annua."
     },
     {
       "escena": "Libro",
-      "texto": "Tu Youyou la halló en un libro chino de hace más de 1,600 años: la hierba se remojaba, no se hervía."
+      "texto": "Tu Youyou halló la pista en un libro chino de hace más de 1,600 años: la hierba se remojaba, no se hervía."
     },
     {
       "escena": "Nobel",
-      "texto": "Su equipo la aisló en 1972, y ella ganó el Nobel en 2015."
+      "texto": "Su equipo la aisló en 1972; ella ganó el Nobel en 2015."
     },
     {
       "escena": "Cosecha",
-      "texto": "Pero las cosechas suben y bajan, y el precio también."
+      "texto": "Pero las cosechas y el precio suben y bajan."
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y si la fabricara una levadura, la misma del pan?"
+      "texto": "¿Y si la fabricara una levadura, la del pan?"
     },
     {
       "escena": "Genes",
-      "texto": "Por dentro, le metieron genes de la planta, y arma ácido artemisínico."
+      "texto": "Le metieron genes de la planta, y arma ácido artemisínico."
     },
     {
       "escena": "Quimica",
-      "texto": "Lo saca de la célula, y la química lo vuelve artemisinina."
+      "texto": "Lo saca de la célula y la química lo vuelve artemisinina."
     },
     {
       "escena": "Estudio",
-      "texto": "En 2013, en California, Amyris y Jay Keasling lograron 25 gramos por litro de caldo."
+      "texto": "En 2013, en California, Amyris y Jay Keasling lograron 25 gramos de ácido artemisínico por litro de caldo."
     },
     {
       "escena": "Sanofi",
-      "texto": "Ese año, Sanofi la empezó a producir en Italia."
+      "texto": "Ese año, Sanofi la produjo en Italia."
     },
     {
       "escena": "Giro",
-      "texto": "Pero en 2015 no hizo nada: la de la planta salió más barata."
+      "texto": "Pero en 2015 no produjo nada: en parte, porque la de la planta salió más barata."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esa medicina puede salir de un campo... o de una levadura."
+      "texto": "Así que puede salir de un campo… o de una levadura."
     }
-  ]
+  ],
+  "tanda": 7
 }

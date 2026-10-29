@@ -2,43 +2,69 @@
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #40 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (el gotero de suero y, con la `Lupa`, el tanque y la bacteria por dentro).
-- **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el gotero de suero que se ve en pantalla: «Ese suero no salió de un gallo: casi seguro lo fabricó una bacteria».
+- **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre el gotero de suero que se ve en pantalla: «Ese suero no salió de un gallo: lo más probable es que lo hizo una bacteria».
 - **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s). Solo narrado (revisión sin voz la genera GitHub).
 - **Viaje:** macro (un gotero de suero sobre la mano) → micro (dentro del tanque: la bacteria, su membrana, la enzima y el hilo de hialurónico atrapando agua; la piel por dentro) → el mismo gotero, ya con la etiqueta "hecho por bacterias".
 - **Sin promesas cosméticas:** no se dice que quite arrugas ni que "retenga mil veces su peso en agua" (esa cifra solo aparece en revisiones, sin fuente primaria; no se usa). Se dice lo que sí está medido: atrapa y retiene agua, y el de cadena grande no cruza la capa externa de la piel.
 
-## Versión narrada (950 caracteres, ~177 palabras, ~58 s de voz)
+## Corrección del 29 oct 2026 (verificación independiente, ver `verificacion.md`)
+- Gancho: «casi seguro» → «lo más probable es que» (las fuentes dicen «mainly», y aún hay productos de cresta de gallo). Cierre: «lo más seguro». En pantalla el gallo ya **no se tacha**: sale atenuado con un «?».
+- Estudio 2005: el donante del gen en la tarjeta se etiqueta *S. equisimilis* y se dibuja distinto (lila) del *S. zooepidemicus* de la escena 9.
+- Estudio 2015: la voz lo acota («en piel humana donada… no cruzó») y el chip dice «2015 · Reims, Francia · piel en laboratorio». La descripción menciona el conflicto de interés.
+- Sin cifra de µm en pantalla (no hay fuente): no se usa `Escala`.
+
+## Versión narrada (954 caracteres, ~178 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese suero no salió de un gallo: casi seguro lo fabricó una bacteria. | Fondo rosa. **Desde el cuadro 0** cae una gota espesa de un gotero sobre el dorso de una mano. Un gallo de silueta aparece y se tacha (`MitoTachado`); a su lado brota una bacteria en bastón con un halo de hilos. |
+| 0 | Gancho | Ese suero no salió de un gallo: lo más probable es que lo hizo una bacteria. | Fondo rosa. **Desde el cuadro 0** cae una gota espesa de la pipeta de un gotero sobre el dorso de una mano. Un gallo atenuado (gris) con un «?» encima; a la derecha brota una cadenita de bacterias con su halo de hilos. |
 | 1 | Tuyo | Es ácido hialurónico, y tú ya lo traes: en la piel, las articulaciones y el ojo. | Silueta de persona; se encienden tres puntos con etiqueta: piel, rodilla (líquido de la articulación) y ojo (el humor vítreo). Chip "ácido hialurónico". |
 | 2 | Gallo | Por años se sacó de crestas de gallo. | Fondo amarillo: cabeza de gallo con su cresta roja; la cresta se ilumina y una flecha la lleva a un frasco viejo. |
-| 3 | Tanque | Hoy la mayor parte sale de tanques llenos de bacterias. | El frasco se transforma en un biorreactor (tanque de acero con ventana, agitador girando, burbujas). Chip "fermentación". |
-| 4 | Enzima | Por dentro, una sola enzima en la membrana une dos azúcares, uno y otro, sin parar. | **`Lupa` "POR DENTRO · la bacteria"** sobre la ventana del tanque, fondo oscuro: corte de la membrana; una enzima (hialuronano sintasa) como un poro va pegando dos piezas de colores alternadas (ácido glucurónico y N-acetilglucosamina). |
-| 5 | Hilo | La cadena sale de la célula como un hilo larguísimo. | El hilo de piezas sale por el poro hacia afuera y se alarga fuera de cuadro. `Escala` en micrómetros junto a la bacteria (la cifra exacta se pone en fase 2 solo si el verificador la confirma con fuente). |
+| 3 | Tanque | Hoy la mayor parte sale de tanques con bacterias. | El frasco se transforma en un biorreactor (tanque de acero con ventana, agitador girando, burbujas). Chip "fermentación". |
+| 4 | Enzima | Por dentro, una sola enzima de la membrana une dos azúcares, uno y otro. | **`Lupa` "POR DENTRO · la bacteria"** sobre la ventana del tanque, fondo oscuro: corte de la membrana; una enzima (hialuronano sintasa) como un poro va pegando dos piezas de colores alternadas (ácido glucurónico y N-acetilglucosamina). |
+| 5 | Hilo | La cadena sale de la célula como un hilo larguísimo. | El hilo de piezas sale por el poro hacia afuera y se alarga fuera de cuadro. Sin barra de escala con cifra (no hay fuente para una medida). |
 | 6 | Agua | Ese hilo se enreda y atrapa agua: por eso se usa para hidratar. | Los hilos se enredan en una red; gotitas de agua (moléculas azules) quedan atrapadas entre ellos y el caldo se vuelve gel. |
 | 7 | Pregunta | ¿Y para qué querría una bacteria algo que hay en tu piel? | **Re-gancho.** La bacteria se aleja y se ve envuelta en su halo. Signo de pregunta grande. |
 | 8 | Capa | Para vestirse: a algunos estreptococos esa capa los protege de tus defensas. | Una cadenita de estreptococos (cocos en fila) con su capa de hialurónico; un glóbulo blanco se acerca, intenta comérsela y se resbala. |
-| 9 | Riesgo | Pero el más usado en las fábricas, Streptococcus zooepidemicus, puede enfermar. | Etiqueta *Streptococcus zooepidemicus* y un ícono de alerta amarillo sobre el tanque. |
-| 10 | Estudio | En 2005, en California, pasaron el gen de la enzima a Bacillus subtilis, que no enferma, y salió hialurónico de buena calidad. | `TarjetaEstudio` "2005 · Davis, California · Novozymes": un trocito de ADN (gen *hasA*) pasa del estreptococo a un bastón más grande (*Bacillus subtilis*), que empieza a soltar hilos al caldo. Palomita verde. |
-| 11 | Crema | Y ojo: en 2015, en Francia, vieron que el hialurónico grande no cruza la capa de afuera de la piel. | `Lupa` "AL MICROSCOPIO · tu piel" sobre la mano del inicio: capas de la piel; los hilos largos se quedan arriba, en la capa córnea; los cortos sí bajan un poco. Chip "2015 · Reims, Francia". |
-| 12 | Cierre | Así que ese suero no es de gallo: es el abrigo de una bacteria. | **Regreso al gotero del inicio**, sobre la mano rosa; la etiqueta del frasco ahora dice "hecho por bacterias" y una bacteria se asoma junto al logo. |
+| 9 | Riesgo | Pero el más usado en fábricas, Streptococcus zooepidemicus, puede enfermar. | Etiqueta *Streptococcus zooepidemicus* y un ícono de alerta amarillo sobre el tanque. |
+| 10 | Estudio | En 2005, en California, pasaron el gen de la enzima a Bacillus subtilis, que no enferma, y salió hialurónico de buena calidad. | `TarjetaEstudio` "2005 · Davis, California · Novozymes": un trocito de ADN (gen *hasA*) pasa de un estreptococo lila etiquetado *S. equisimilis* a un bastón más grande (*Bacillus subtilis*), que empieza a soltar hilos al caldo. Palomita verde. |
+| 11 | Crema | Y ojo: en 2015, en Francia, en piel humana donada, el hialurónico grande no cruzó la capa de afuera. | `Lupa` "AL MICROSCOPIO · piel" sobre la mano del inicio: capas de la piel; los hilos largos se quedan arriba, sobre la capa córnea; los cortos sí bajan un poco. Chips "2015 · Reims, Francia · piel en laboratorio" y "cadena grande: se queda arriba". |
+| 12 | Cierre | Así que ese suero, lo más seguro, no es de gallo: es el abrigo de una bacteria. | **Regreso al gotero del inicio**, sobre la mano rosa; la etiqueta del frasco ahora dice "hecho por bacterias", una bacteria se asoma y el chip dice "lo más probable: hecho por bacterias". |
 | — | Outro | (sin voz) | `CierreMarca` con Robert. |
+
+## Robert en pantalla
+
+Tiempos de la base narrada (escenas: Gancho 0 · Tuyo 4.7 · Gallo 9.6 · Tanque 12.1 · Enzima 15.2 · Hilo 19.6 · Agua 22.9 · Pregunta 26.8 · Capa 30.4 · Riesgo 35.1 · Estudio 39.7 · Crema 47.2 · Cierre 53.2 · Outro 58.0).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «no salió de un gallo: lo hizo una bacteria» |
+| 2 | 5.6 | 9.4 | 13_senalando_arriba | `arriba-der` | señala la piel, la rodilla y el ojo |
+| 3 | 12.4 | 15.1 | 05_sonriendo_dientes_uniformes | `izq-alto` | «tanques con bacterias» |
+| 4 | 23.4 | 26.4 | 11_sorprendido | `arriba-der` | «se enreda y atrapa agua» |
+| 5 | 26.9 | 30.3 | 06_pensativo_menton | **`grande`** | re-gancho: «¿para qué querría una bacteria algo de tu piel?» |
+| 6 | 30.9 | 34.9 | 04_bajando_lentes | `arriba-der` | la capa que protege de las defensas |
+| 7 | 35.5 | 39.5 | 10_serio_molesto | `izq-alto` | «puede enfermar» |
+| 8 | 42.7 | 47.0 | 02_apuntando_camara | `arriba-der` | el gen pasa a *Bacillus subtilis* |
+| 9 | 48.4 | 53.0 | 07_pensativo_puno | `izq-alto` | «el grande no cruzó la capa de afuera» |
+| 10 | 53.5 | 57.9 | 13_senalando_arriba | `arriba-der` | cierre: «el abrigo de una bacteria» |
+| — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 38.6 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · una grande (re-gancho).
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Cama grave continua**, sin golpe, siempre debajo de la voz; se vuelve más "acuosa" (filtro abierto) cuando aparece el gel.
 - **Datos hechos sonido:** dos notas alternadas, una por cada azúcar, cada vez que la enzima pega una pieza (ácido glucurónico = nota aguda, N-acetilglucosamina = nota grave): el patrón del polímero se oye.
-- **Efectos en el mismo cuadro:** la gota del gotero (plic), el tachón del gallo (raspón), el agitador del tanque (zumbido lento) y sus burbujas (blub), la Lupa que se abre (barrido), el glóbulo blanco que se resbala (deslizamiento), el gen que salta de bacteria (clic), la palomita (campanita).
+- **Efectos en el mismo cuadro:** la gota del gotero (plic), el «?» del gallo (nota que sube), el agitador del tanque (zumbido lento) y sus burbujas (blub), la Lupa que se abre (barrido), el agua que queda atrapada (gotitas), el glóbulo blanco que se acerca (zumbido) y se resbala (barrido), la alerta (golpe), el gen que salta de bacteria (clic), *B. subtilis* soltando hialurónico (notas alternas), la palomita (campanita) y las cadenas cortas que bajan en la piel (tics).
 
 ## Descripción (para publicar)
-"Ese suero no salió de un gallo: casi seguro lo fabricó una bacteria. 🧴🦠 El **ácido hialurónico** de cremas, sueros y gotas para ojos es una molécula que tú ya tienes: abunda en la **piel**, en el **líquido de las articulaciones** y en el **humor vítreo del ojo**. Es una cadena muy larga hecha de dos azúcares que se alternan (ácido glucurónico y N-acetilglucosamina) y su gracia es que **atrapa y retiene agua**.
+"Ese suero no salió de un gallo: lo más probable es que lo hizo una bacteria. 🧴🦠 El **ácido hialurónico** de cremas, sueros y gotas para ojos es una molécula que tú ya tienes: abunda en la **piel**, en el **líquido de las articulaciones** y en el **humor vítreo del ojo**. Es una cadena muy larga hecha de dos azúcares que se alternan (ácido glucurónico y N-acetilglucosamina) y su gracia es que **atrapa y retiene agua**.
 
-Durante años se extrajo de **crestas de gallo**. Hoy se produce sobre todo por **fermentación**: en tanques, bacterias del género *Streptococcus* (la más usada es *Streptococcus zooepidemicus*) lo fabrican con una sola enzima de su membrana, la hialuronano sintasa, que pega los dos azúcares uno tras otro y saca la cadena de la célula. ¿Para qué lo quieren? Algunos estreptococos se lo ponen de **capa**, y esa capa los protege de los glóbulos blancos que intentan comérselos.
+Durante años se extrajo de **crestas de gallo**. Hoy se produce sobre todo por **fermentación** (aunque todavía hay productos de origen animal): en tanques, bacterias del género *Streptococcus* (la más usada es *Streptococcus zooepidemicus*) lo fabrican con una sola enzima de su membrana, la hialuronano sintasa, que pega los dos azúcares uno tras otro y saca la cadena de la célula. ¿Para qué lo quieren? Algunos estreptococos se lo ponen de **capa**, y esa capa los protege de los glóbulos blancos que intentan comérselos.
 
-El problema: *S. zooepidemicus* puede causar enfermedad. Por eso, en **2005**, investigadores de Novozymes en Davis, California, pasaron el gen de la enzima (*hasA*) a ***Bacillus subtilis***, una bacteria que no enferma, y obtuvieron hialurónico secretado y de buena calidad, comparable al comercial.
+El problema: *S. zooepidemicus* puede causar enfermedad. Por eso, en **2005**, investigadores de Novozymes en Davis, California, pasaron el gen de la enzima (*hasA*, de otro estreptococo, *S. equisimilis*) a ***Bacillus subtilis***, una bacteria que no enferma, y obtuvieron hialurónico secretado y de buena calidad, comparable al comercial.
 
-Y un dato honesto para tu rutina: en **2015**, en Reims, Francia, siguieron con espectroscopía Raman el hialurónico aplicado sobre piel humana. El de **cadena grande** no atravesó la capa córnea (la más externa); el de cadena chica sí.
+Y un dato honesto para tu rutina: en **2015**, en Reims, Francia, siguieron con espectroscopía Raman el hialurónico aplicado sobre piel humana donada tras cirugías, en laboratorio. El de **cadena grande** no atravesó la capa córnea (la más externa); el de cadena chica sí. Uno de los autores trabaja en una empresa que vende hialurónico de cadena corta (Soliance/Givaudan).
 
 El dibujo es esquemático. **¿Tú usas algo con ácido hialurónico? ¿Sabías de dónde salía? 👇**"
 
@@ -56,7 +82,7 @@ El dibujo es esquemático. **¿Tú usas algo con ácido hialurónico? ¿Sabías 
    - «the microorganism used most often in industrial hyaluronic acid production is Streptococcus zooepidemicus, although it is a pathogen.»
    - «Bacillus subtilis is another microorganism that has been used to produce hyaluronic acid. It is a Gram-positive bacterium that […] is also non-pathogenic.»
    - «composed mainly of repeating units of N-acetylglucosamine and glucuronic acid»
-   - Nota: la misma revisión dice «topical products containing hyaluronic acid are typically derived from either rooster combs or fermentation»; por eso la voz dice «casi seguro» y «la mayor parte», no «todo».
+   - Nota: la misma revisión dice «topical products containing hyaluronic acid are typically derived from either rooster combs or fermentation»; por eso la voz dice «lo más probable» y «la mayor parte», no «todo».
    - Nota: también dice «It can hold up to 1000 times its weight in water», sin fuente primaria: **no se usa**.
 3. **Papakonstantinou E, Roth M, Karakiulakis G.** "Hyaluronic acid: A key molecule in skin aging." *Dermato-Endocrinology* 4(3):253–258 (**2012**). https://pmc.ncbi.nlm.nih.gov/articles/PMC3583886/
    - «a glycosaminoglycan (GAG) with a unique capacity to bind and retain water molecules.»

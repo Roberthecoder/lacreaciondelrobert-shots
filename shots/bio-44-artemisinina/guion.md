@@ -1,43 +1,51 @@
-# Shot Biotecnológico #44 · La medicina contra la malaria que empezó en una levadura
+# Shot Biotecnológico #44 · La medicina contra la malaria que también empieza en una levadura
 
 - **Serie:** Shot Biotecnológico · **Numeración:** #44 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (la planta, el mosquito y, con la `Lupa`, la levadura por dentro con los genes de la planta) con un remate de N5 "El experimento" (el tanque de fermentación de 2013).
-- **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre la caja de medicina que se ve en pantalla: «Esta medicina contra la malaria no empezó en una planta: empezó en una levadura».
+- **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre la caja de medicina que se ve en pantalla: «Esta medicina contra la malaria no solo sale de una planta: también la puede empezar una levadura».
 - **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s).
-- **Viaje:** macro (una caja de medicina junto a una mata de *Artemisia annua* y un mosquito) → micro (glóbulos rojos con el parásito; la levadura por dentro, fondo oscuro) → macro (la misma caja, ahora junto al campo **y** al tanque de levaduras).
+- **Viaje:** macro (una caja de medicina junto a una mata de *Artemisia annua* y un mosquito) → micro (glóbulos rojos con el parásito; la levadura por dentro, fondo oscuro) → macro (la misma caja del inicio, ahora con sus dos caminos: el campo y el tanque de levaduras).
 
-## Versión narrada (946 caracteres, ~181 palabras, ~58.6 s de voz estimada)
+## Corrección del 29 oct 2026 (verificación de hechos independiente, ver `verificacion.md`)
+- **Gancho (❌ → corregido):** decía "no empezó en una planta: empezó en una levadura". Falso como regla: la artemisinina se descubrió en la planta y la levadura solo hace el precursor desde 2013. Ahora: «no solo sale de una planta: también la puede empezar una levadura». En pantalla la flecha a la planta **no se tacha**; se agrega otra flecha "¿y de aquí?" a la levadura.
+- "La base del mejor tratamiento" → "del tratamiento **más eficaz**" (OMS: el más eficaz contra *P. falciparum*).
+- "Tu Youyou la halló en un libro" → "halló **la pista** en un libro" (en el libro estaba la forma de usar la hierba, no la molécula).
+- "25 gramos por litro de caldo" → "25 gramos **de ácido artemisínico** por litro de caldo" (y el medidor dice "ácido artemisínico").
+- "En 2015 no hizo nada: la de la planta salió más barata" → "no produjo nada: **en parte**, porque la de la planta salió más barata" (hubo otras causas).
+- Para quedar en 880–960 caracteres se acortaron "las cosechas y el precio suben y bajan", "Sanofi la produjo en Italia" y el cierre.
+
+## Versión narrada (959 caracteres, ~182 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esta medicina contra la malaria no empezó en una planta: empezó en una levadura. | Fondo menta. **Desde el cuadro 0** una caja de medicina se abre y sale un blíster; a la izquierda una mata de *Artemisia annua* (hojas finas muy divididas, plumosas) que se mece. Una flecha "¿de aquí?" se tacha y salta a una levadura ovalada con su yema. |
-| 1 | Mosquito | La malaria la pasa un mosquito, y su parásito invade tus glóbulos rojos. | Fondo amarillo: un mosquito *Anopheles* (cuerpo inclinado al picar) se posa en un brazo. `Lupa` "AL MICROSCOPIO · sangre": glóbulos rojos bicóncavos, dentro de algunos un anillito del parásito (*Plasmodium falciparum*). Fondo oscuro dentro de la lupa. |
-| 2 | Cifra | En 2024 hubo 282 millones de casos y 610 mil muertes, según la OMS. | `NumeroGigante` "282 millones" (casos de malaria, 2024) y debajo "610 mil muertes". Chip "OMS · Informe mundial 2025". |
-| 3 | Planta | La base del mejor tratamiento, la artemisinina, sale de la planta Artemisia annua. | Fondo rosa: la mata grande con su etiqueta "ajenjo dulce · *Artemisia annua*". De una hoja sale la molécula de artemisinina dibujada con su **puente de peróxido** (O–O) resaltado. |
-| 4 | Libro | Tu Youyou la halló en un libro chino de hace más de 1,600 años: la hierba se remojaba, no se hervía. | Un libro antiguo cosido se abre (Ge Hong, *Manual de recetas para emergencias*, ~317–420 d. C.). Al lado, dos ollas: una hirviendo con `MitoTachado`, otra con agua fría y hojas en remojo con palomita. |
-| 5 | Nobel | Su equipo la aisló en 1972, y ella ganó el Nobel en 2015. | `TarjetaEstudio` "1972 · Pekín · aislada" y una medalla con "Nobel 2015". |
-| 6 | Cosecha | Pero las cosechas suben y bajan, y el precio también. | Un campo de *Artemisia* que crece y se seca en time-lapse; una gráfica de precio en zigzag. |
-| 7 | Pregunta | ¿Y si la fabricara una levadura, la misma del pan? | **Re-gancho.** Un pan y, a su lado, una levadura ovalada (*Saccharomyces cerevisiae*) con `Escala` ~5 µm. |
-| 8 | Genes | Por dentro, le metieron genes de la planta, y arma ácido artemisínico. | `Lupa` "POR DENTRO · levadura" (fondo oscuro): tramos de ADN verdes con hojitas de la planta entran al núcleo; una línea de montaje de enzimas transforma azúcar → pasos → ácido artemisínico. |
-| 9 | Quimica | Lo saca de la célula, y la química lo vuelve artemisinina. | Las moléculas salen por la pared de la levadura; un matraz con luz/oxígeno cierra el puente O–O y aparece la artemisinina. |
-| 10 | Estudio | En 2013, en California, Amyris y Jay Keasling lograron 25 gramos por litro de caldo. | `TarjetaEstudio` "2013 · California · *Nature*". Un tanque de fermentación; un `Medidor` sube de 1.6 a **25 g/L** de ácido artemisínico. |
-| 11 | Sanofi | Ese año, Sanofi la empezó a producir en Italia. | Mapa chico de Italia con un punto en Garessio; la fábrica echa vapor. Chip "2013 · a gran escala". |
-| 12 | Giro | Pero en 2015 no hizo nada: la de la planta salió más barata. | La fábrica se apaga; una balanza: de un lado la hoja (más barata, baja) y del otro el tanque (sube). Chip "2015 · 0 toneladas". |
-| 13 | Cierre | Así que esa medicina puede salir de un campo... o de una levadura. | **Regreso a la imagen del inicio:** la misma caja de medicina, ahora con dos flechas: una al campo de *Artemisia* y otra al tanque de levaduras. |
+| 0 | Gancho | Esta medicina contra la malaria no solo sale de una planta: también la puede empezar una levadura. | Fondo menta. **Desde el cuadro 0** una caja de medicina se abre y sale el blíster; a la izquierda una mata de *Artemisia annua* (hojas finas muy divididas, cabezuelas amarillas diminutas) que se mece; a la derecha un tanque chico con levaduras. Flecha "¿de aquí?" a la planta y después otra "¿y de aquí?" al tanque (ninguna se tacha). |
+| 1 | Mosquito | La malaria la pasa un mosquito; su parásito invade tus glóbulos rojos. | Fondo amarillo: un mosquito *Anopheles* (cuerpo inclinado, abdomen arriba) llega y pica un brazo. `Lupa` "AL MICROSCOPIO · sangre": glóbulos rojos y, dentro de algunos, el anillito del parásito. Etiqueta *Plasmodium falciparum*. |
+| 2 | Cifra | En 2024 hubo 282 millones de casos y 610 mil muertes, dice la OMS. | `NumeroGigante` "282 M" (casos de malaria en 2024) y "610 mil" (muertes). Chip "OMS · Informe mundial 2025". Glóbulos rojos abajo. |
+| 3 | Planta | La base del tratamiento más eficaz, la artemisinina, sale de la planta Artemisia annua. | Fondo rosa: la mata grande, etiqueta "ajenjo dulce · *Artemisia annua*". De la planta sale la molécula de artemisinina (esquema) y aparece su **puente O–O** (endoperóxido). |
+| 4 | Libro | Tu Youyou halló la pista en un libro chino de hace más de 1,600 años: la hierba se remojaba, no se hervía. | Un libro antiguo cosido se abre (chip "Ge Hong · siglo IV"). Dos ollas: una hirviendo (✗) y otra con hojas en agua fría (✓). |
+| 5 | Nobel | Su equipo la aisló en 1972; ella ganó el Nobel en 2015. | `TarjetaEstudio` "1972 · Tu Youyou y su equipo · Pekín" y una medalla "Nobel 2015". |
+| 6 | Cosecha | Pero las cosechas y el precio suben y bajan. | Time-lapse de un campo que crece y se seca; gráfica de precio en zigzag (esquema). |
+| 7 | Pregunta | ¿Y si la fabricara una levadura, la del pan? | **Re-gancho.** Un pan y una levadura (*Saccharomyces cerevisiae*) a la que le sale su yema. `Escala` en µm. |
+| 8 | Genes | Le metieron genes de la planta, y arma ácido artemisínico. | Fondo oscuro, **POR DENTRO · levadura**: tramos de ADN con una hojita entran al núcleo; línea de montaje azúcar → FPP → amorfadieno → ácido artemisínico. |
+| 9 | Quimica | Lo saca de la célula y la química lo vuelve artemisinina. | Las moléculas salen por la pared de la célula; un matraz y se cierra el puente O–O: aparece la artemisinina brillando. |
+| 10 | Estudio | En 2013, en California, Amyris y Jay Keasling lograron 25 gramos de ácido artemisínico por litro de caldo. | `MundoBiorreactor` (tanque de levadura). `TarjetaEstudio` "2013 · Amyris y Keasling · California · Paddon et al., *Nature*". `Medidor` "ácido artemisínico" de 1.6 a **25.0 g/L**. |
+| 11 | Sanofi | Ese año, Sanofi la produjo en Italia. | Una fábrica con humo. Chip "Sanofi · Garessio, Italia · 2013". |
+| 12 | Giro | Pero en 2015 no produjo nada: en parte, porque la de la planta salió más barata. | La fábrica se apaga. Una balanza planta / levadura que se inclina. Chips "2015 · 0 toneladas" y "planta: más barata". |
+| 13 | Cierre | Así que puede salir de un campo… o de una levadura. | **Regreso a la imagen del inicio:** la misma caja, con las dos flechas: "del campo" y "o de la levadura". |
 | — | Outro | (sin voz) | `CierreMarca` con Robert. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - Cama grave continua, sin golpe, siempre debajo de la voz.
 - **Efectos en el mismo cuadro:** la caja que se abre (clic de cartón) · el zumbido del mosquito que se corta al picar · el "pop" de cada glóbulo rojo con parásito · la ebullición de la olla (burbujeo) contra el agua quieta (gota) · el sello de la tarjeta 1972 y la campanita de la medalla Nobel · el viento del campo que se seca · el "plop" de las yemas de levadura · un clic por cada paso de la línea de montaje · burbujeo del tanque mientras sube el medidor · el apagón de la fábrica (bajada de tono) · la balanza que se inclina (golpe sordo).
 
-## Descripción (borrador para publicar; se completa en la fase 2)
-"Esta medicina contra la malaria no empezó en una planta: empezó en una levadura. 🦟🍞 La malaria la transmite un mosquito y la causa un parásito que invade los glóbulos rojos. En 2024 hubo unos **282 millones de casos y 610 mil muertes** (OMS, Informe mundial sobre el paludismo 2025). El tratamiento más eficaz contra *Plasmodium falciparum* son las combinaciones con **artemisinina**, una molécula de la planta ***Artemisia annua***.
+## Descripción (para publicar; versión completa en `publicacion.md`)
+"Esta medicina contra la malaria no solo sale de una planta: también la puede empezar una levadura. 🦟🍞 La malaria la transmite un mosquito y la causa un parásito que invade los glóbulos rojos. En 2024 hubo unos **282 millones de casos y 610 mil muertes** (OMS, Informe mundial sobre el paludismo 2025). Las combinaciones con **artemisinina** son el tratamiento más eficaz contra *Plasmodium falciparum*, y la artemisinina sale de la planta ***Artemisia annua***.
 
-La científica china **Tu Youyou** la encontró revisando textos antiguos: en el *Manual de recetas para emergencias* de Ge Hong (siglo IV) la hierba se remojaba en agua fría en vez de hervirse. Eso le dio la idea de extraerla sin calor. Su equipo la aisló en 1972 y ella recibió el **Nobel de Medicina 2015**.
+La científica china **Tu Youyou** encontró la pista revisando textos antiguos: en el *Manual de recetas para emergencias* de Ge Hong (hacia 317–420 d. C.) la hierba se remojaba en agua en vez de hervirse. Eso le dio la idea de extraerla sin calor. Su equipo la aisló en 1972 y ella recibió el **Nobel de Medicina 2015**.
 
-Pero la planta da cosechas irregulares y el precio sube y baja. En 2013, un equipo de Amyris (California) con Jay Keasling publicó en *Nature* una levadura del pan con genes de la planta que produce **25 gramos por litro de ácido artemisínico**; luego un proceso químico lo convierte en artemisinina. Sanofi arrancó la producción en Italia ese año… y en 2015 no produjo nada: la artemisinina de la planta se vendía más barata.
+Pero la oferta de la planta es inestable y el precio sube y baja. En 2013, un equipo de Amyris (California) con Jay Keasling publicó en *Nature* una levadura del pan con genes de la planta que produce **25 gramos de ácido artemisínico por litro**; luego un proceso químico lo convierte en artemisinina. Sanofi arrancó la producción en Italia ese año… y en 2015 no produjo nada: en parte, porque la artemisinina de la planta se vendía más barata.
 
-El dibujo es esquemático. **¿Sabías que una medicina podía salir de una levadura? 👇**"
+El dibujo es esquemático. **¿Sabías que una medicina podía empezar en una levadura? 👇**"
 
 ## Fuentes (con frase textual y año)
 
@@ -68,7 +76,22 @@ El dibujo es esquemático. **¿Sabías que una medicina podía salir de una leva
    - «And the company is now selling the manufacturing site in Garessio, Italy, where it made its SSA.»
 7. **OMS, Informe mundial sobre el paludismo 2025** (4 dic 2025) y nota descriptiva "Malaria". https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025 · https://www.who.int/news-room/fact-sheets/detail/malaria
    - «Globally in 2024, there were an estimated 282 million malaria cases and 610 000 malaria deaths in 80 countries.»
-   - «Artemisinin-based combination therapy medicines are the most effective treatment for P. falciparum malaria.» (sustenta "la base del mejor tratamiento").
+   - «Artemisinin-based combination therapy medicines are the most effective treatment for P. falciparum malaria.» (sustenta "la base del tratamiento más eficaz").
 
-## Pendiente para la fase 2
-- Tabla "Robert en pantalla", `verificacion.md`, animación, `gen-audio.mjs` y `publicacion.md`.
+## Robert en pantalla
+
+Entra desde el cuadro 0 con el gancho, vuelve cada 5–7 s y nunca tapa el subtítulo (el kit lo dibuja por delante de él). Tiempos calculados con las escenas del `Shot Artemisinina base narrada.dc.html` (total 61.5 s).
+
+### 8 apariciones, **29.2 s en pantalla** (de 61.5 s), 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 5.4 | sorprendido (11) | gancho | «no solo sale de una planta: también la puede empezar una levadura» |
+| 10.3 – 13.6 | serio (10) | izq-alto | «282 millones de casos y 610 mil muertes» |
+| 20.0 – 24.9 | pensativo, mano en el mentón (06) | arriba-der | el libro antiguo: «se remojaba, no se hervía» |
+| 31.6 – 34.3 | pensativo, puño (07) | **grande** | re-gancho: «¿y si la fabricara una levadura?» |
+| 38.3 – 41.1 | señalando (13) | izq-alto | señala el puente O–O que cierra la química |
+| 44.0 – 47.4 | bajando lentes (04) | arriba-der | el medidor sube a 25 g/L |
+| 50.5 – 54.6 | sorprendido (11) | izq-alto | «en 2015 no produjo nada» |
+| 55.2 – 57.9 | apuntando a cámara (02) | arriba-der | cierre: «de un campo… o de una levadura» |
+| 58.0 – 61.5 | señalando (13) | cierre | `CierreMarca` con Robert junto al logo |
