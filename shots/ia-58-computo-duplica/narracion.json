@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Computo base narrada.dc.html",
+  "salida": "Shot Computo narrado.dc.html",
+  "nota": "Shot IA #58. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es un vaso de agua: es el cómputo para entrenar las IA más grandes. Y cada año necesita unas cinco veces más que el anterior."
+    },
+    {
+      "escena": "Moore",
+      "texto": "Los chips avanzaban al ritmo de la ley de Moore: el doble de transistores cada dos años."
+    },
+    {
+      "escena": "Duplica",
+      "texto": "Pero el cómputo para entrenar estas IA se duplica más o menos cada cinco meses."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo mostró el equipo de Epoch AI en 2022, en un congreso en Italia: antes de 2010, ese cómputo seguía el ritmo de Moore. Después, se disparó."
+    },
+    {
+      "escena": "DiezMil",
+      "texto": "Y desde 2020, el de los modelos de lenguaje más grandes creció unas diez mil veces."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y de dónde sale tanto cómputo, si los chips no mejoran tan rápido?"
+    },
+    {
+      "escena": "Fuentes",
+      "texto": "De tres lados: más chips trabajando a la vez, entrenamientos más largos y procesadores más potentes."
+    },
+    {
+      "escena": "Costo",
+      "texto": "Por eso entrenarlas cuesta unas tres veces y media más cada año."
+    },
+    {
+      "escena": "Energia",
+      "texto": "Y los centros de datos de IA más grandes ya rondan un gigavatio: la luz de unas ochocientas mil casas en Estados Unidos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese vaso no se llena solo: cada vez que crece, alguien paga la cuenta y la luz."
+    }
+  ]
+}

@@ -260,11 +260,11 @@ function Cirugia() {
       <Escena T={T} a={K.Fa} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <rect x={420} y={640} width={420} height={60} rx={20} fill="#c4ccd8" stroke={KC.ink} strokeWidth={7} />
-          <Vesicula x={630} y={500} s={0.65} clips={3} corte={1} />
+          <rect x={270} y={640} width={420} height={60} rx={20} fill="#c4ccd8" stroke={KC.ink} strokeWidth={7} />
+          <Vesicula x={480} y={500} s={0.65} clips={3} corte={1} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Fa + 0.3} until={K.C - 0.2} texto="fuera del cuerpo (ex vivo)" x={630} y={760} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Fa + 0.3} until={K.C - 0.2} texto="fuera del cuerpo (ex vivo)" x={480} y={760} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Fa + 1.8} until={K.C - 0.2} texto="falta: con sangrado ⏳" x={540} y={880} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Fa + 2.6} until={K.C - 0.2} texto="falta: tejido que se mueve ⏳" x={540} y={990} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Fa + 3.2} until={K.C - 0.2} texto="en estos estudios: ninguna persona operada" x={540} y={1100} tam={30} borde={KC.ink} />
@@ -280,7 +280,7 @@ function Cirugia() {
       </Escena>
       <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="robot + persona vigilando ✔" x={540} y={1115} tam={38} borde={KC.leaf} />
 
-      <Capitulo T={T} hasta={K.C} caps={[{ at: K.Pl, titulo: 'planea' }, { at: K.Co, titulo: 'cose' }, { at: K.Pa, titulo: 'la prueba' }, { at: K.F, titulo: 'lo que falla' }, { at: K.Fa, titulo: 'lo que falta' }]} />
+      <Capitulo T={T} hasta={K.C} caps={[{ at: K.Pl, titulo: 'planea' }, { at: K.Co, titulo: 'cose' }, { at: K.Pa, titulo: 'la prueba' }, { at: K.F, titulo: 'lo que falla' }, { at: K.V, titulo: '2025: otro robot' }, { at: K.Fa, titulo: 'lo que falta' }]} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Pl - 0.1} texto="No lo cosió un cirujano: *lo cosió un robot.*" />
@@ -305,7 +305,7 @@ function Cirugia() {
         [CUES.Falla + 2.0, F2 - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [F2 + 1.4, CUES.Vesicula - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Vesicula + 5.5, CUES.Falta - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
-        [CUES.Falta + 0.5, CUES.Cierre - 0.2, 'avatar_12_perfil_serio', 'izq-alto'],
+        [CUES.Falta + 0.5, CUES.Cierre - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
         [CUES.Cierre + 0.4, CUES.Outro - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto']]} />
       <MarcaAgua T={T} tema="ia" num="59" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="ia" robert={'assets/stickers/avatar_02_apuntando_camara.png'} />

@@ -30,3 +30,10 @@ Notas menores (no bloquean):
    Propuesta de voz: "Y el centro de datos de IA más grande ya pasa de un gigavatio: la luz de unas ochocientas mil casas en Estados Unidos."
    Pantalla: chip "> 1 GW (2026)". Fuente: epoch.ai/data/data-centers (1,037 MW, actualizado 28 oct 2026).
 2. **#12 (casas):** cambiar "casi un millón de casas" por "unas ochocientas mil casas" (cálculo con EIA 2022: 10 791 kWh/año por hogar → ~810 000 hogares por GW continuo). Pantalla: "≈ 800 000 casas (EE. UU.)". Si se prefiere conservar la frase de Epoch, decir "cerca de un millón", pero "unas ochocientas mil" es más exacto. Ojo: al cambiar el texto, revisar que la voz siga cuadrando en 61–62 s.
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Y los centros de datos de IA más grandes ya rondan un gigavatio: la luz de unas ochocientas mil casas en Estados Unidos.» (Epoch: ~1 GW en feb–oct 2026; EIA: 10,791 kWh/año por hogar, 2022 → ≈ 810,000 casas); pantalla «≈ 1 GW (2026)», «≈ 800 000 casas (EE. UU.)» ✅
+- Pantalla: «~cada 20 meses (antes de 2010)», «~cada 6 meses (2010–2022)», «×2 cada ~5 meses (desde 2020)», «tendencia de los modelos más grandes», «chips de IA: +49 % por dólar al año» (Epoch) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
