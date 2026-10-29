@@ -16,7 +16,7 @@
 | 3 | Suelta | Y a cambio suelta dos cosas: dióxido de carbono y alcohol. | Salen burbujas "CO₂" y gotitas lilas de alcohol (C₂H₅OH). |
 | 4 | Gluten | El gas queda atrapado en la red elástica del gluten, y la masa se infla como globo. | Red de gluten (hilos dorados sobre café) que se estira alrededor de 5 burbujas que crecen. |
 | 5 | Pregunta | ¿Entonces el pan de muerto tiene alcohol? | **Re-gancho.** Fondo lila, "?" gigante sobre el pan; Robert grande, pensativo. |
-| 6 | Horno | Muy poquito: en el horno se evapora buena parte, y el calor mata a las levaduras. | Horno con resistencias que se ponen rojas, termómetro que sube, vapor de alcohol que sale del pan; en la ventanita las levaduras se apagan ("+50 °C: mueren"). |
+| 6 | Horno | Queda un poco: en Alemania, en panes dulces de leche empacados, midieron algo más de un gramo de alcohol por cada cien gramos de pan. Y el calor del horno mata a las levaduras. | Horno con resistencias que se ponen rojas, termómetro que sube, vapor de alcohol que sale del pan; en la ventanita las levaduras se apagan ("+50 °C: mueren"). |
 | 7 | Miga | Las burbujas se quedan fijas: son los hoyitos de la miga. | El pan se parte: la miga con sus hoyitos ("hoyitos = burbujas de CO₂"), que brillan. |
 | 8 | Estudio | En 1996, unos 600 científicos de Europa, Norteamérica y Japón publicaron todo el ADN de esta levadura. | Fondo cian que se llena de 600 puntitos (uno por científico, esquemático). Tarjeta "1996 · Goffeau et al. · unos 600 científicos · Europa, Norteamérica y Japón · Science". |
 | 9 | Genoma | Fue el primer ser vivo con núcleo, como tú, con su genoma leído completo: unos 6,000 genes. | Fondo noche: una levadura gigante con su núcleo y cromosomas que aparecen. Chip "1.er genoma completo de un ser con núcleo"; número que cuenta hasta 6,000. |
@@ -51,12 +51,12 @@ apariciones 8 · 31.1 s (+ cierre 3.9 s) · poses distintas 7 (nunca la misma do
 2. **Miles de millones por cucharadita** — OIV, Res. OENO 16/2003 (levadura seca activa): "Content should be above or equal to 10^10 CFU/g." (2003) · una cucharadita ≈ 3 g ("1 packet (1/4 oz) = approx 2-1/4 teaspoons").
 3. **CO₂ y alcohol; el calor del horno las mata** — Innograin, Universidad de Valladolid (2024): "The alcohol produced during fermentation, mostly ethyl alcohol…" · "lethal temperatures are reached for these microorganisms (starting from 50°C)".
 4. **El gluten atrapa el gas** — KU Leuven, ScienceDaily (2015): "gluten provides a continuous protein network that aids in the retention of gas created by yeast fermentation".
-5. **Queda muy poquito alcohol** — Gorgus, E. et al. *J Anal Toxicol* (2016), panes de Alemania: "Wheat rolls: 0.14 ±0.01" g/100 g; "sweet milk rolls contained more than 1.2 g ethanol/100 g".
+5. **Queda un poco de alcohol (los panes dulces son los que más traen)** — Gorgus, E. et al. *J Anal Toxicol* (2016), panes de Alemania: "Wheat rolls: 0.14 ±0.01" g/100 g; "sweet milk rolls contained more than 1.2 g ethanol/100 g".
 6. **Unos 20,000 genes humanos** — GENCODE (2026): "Protein-coding genes 19442".
 7. **Genes humanos que funcionan en la levadura** — Kachroo, A. H. et al. *Science* 348, 921–925 (2015): "we replaced 414 essential yeast genes with their human orthologs… Nearly half (47%) of the yeast genes could be successfully humanized."
 
 ## Notas
 - El dibujo es esquemático: tamaños, número de levaduras, burbujas, cromosomas y genes no son reales; los 600 puntitos representan a los científicos.
-- La voz no dice que el alcohol se va todo: "muy poquito" (se midió de 0.03 a más de 1.2 g por 100 g según el pan).
+- La voz no dice que el alcohol se va todo ni que "se evapora" (eso no está medido): da la cifra de los panes dulces de leche empacados, más de 1.2 g por 100 g (Gorgus et al., 2016). No encontramos ninguna medición publicada del pan de muerto. Corregido el 29 oct 2026 tras la auditoría.
 
 - Versión de revisión sin voz: Release "Borradores · claude/especiales-muertos" (28 oct 2026). Voz pendiente de aprobación de Robert.

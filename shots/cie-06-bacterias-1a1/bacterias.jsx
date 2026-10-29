@@ -89,13 +89,13 @@ function Bacterias() {
         <FondoLunares color={KC.lilac} />
         {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
       </Escena>
-      {/* 6 · 30 billones de células tuyas; 84 % glóbulos rojos */}
+      {/* 6 · 36 billones de células tuyas (hombre, Hatton et al. 2023); ~4 de cada 5 sin núcleo (≈29 de 36) */}
       <Escena T={T} a={K.H} b={K.Cu}>
         <FondoLunares color={KC.yellow} />
         {svg(<>{T > K.H + 2.4 && Array.from({ length: 6 }, (_, i) => <Globulo key={i} x={150 + i * 155} y={1500 + (i % 2) * 30} r={52} rot={T * 15 + i * 30} />)}</>)}
-        <Cuadricula T={T} cols={25} filas={4} llenado={kprog(T, K.H + 2.4, K.H + 4.4)} tramos={[{ desde: 0, hasta: 0.84, color: ROJO }, { desde: 0.84, hasta: 1, color: KC.blue }]} x={90} y={830} ancho={900} alto={150} vacio="rgba(0,0,0,.12)" />
+        <Cuadricula T={T} cols={25} filas={4} llenado={kprog(T, K.H + 2.4, K.H + 4.4)} tramos={[{ desde: 0, hasta: 0.8, color: ROJO }, { desde: 0.8, hasta: 1, color: KC.blue }]} x={90} y={830} ancho={900} alto={150} vacio="rgba(0,0,0,.12)" />
       </Escena>
-      {/* 7 · la cuenta: 30 contra 38 */}
+      {/* 7 · la cuenta: 36 (2023) contra 38 (2016) */}
       <Escena T={T} a={K.Cu} b={K.E}>
         <FondoLunares color={KC.cyan} />
       </Escena>
@@ -118,7 +118,7 @@ function Bacterias() {
       <Escena T={T} a={K.C} b={FIN} fondo={KC.noche}>
         <Ambiente T={T} n={30} color="rgba(255,255,255,.18)" />
         {svg(<><Globulo x={300} y={720} r={110} rot={T * 10} /><Bacteria x={720} y={720} rot={T * 20} s={0.5} T={T} color={BAC} /><Bacteria x={800} y={790} rot={40 + T * 20} s={0.5 * 0.3 / 0.3 * 0.55} T={T} color={BAC} vida={0.9} /></>)}
-        <Cuadricula T={T} cols={17} filas={4} llenado={conteo} tramos={[{ desde: 0, hasta: 30 / 68, color: ROJO }, { desde: 30 / 68, hasta: 1, color: BAC }]} x={90} y={930} ancho={900} alto={230} vacio="rgba(255,255,255,.1)" />
+        <Cuadricula T={T} cols={17} filas={4} llenado={conteo} tramos={[{ desde: 0, hasta: 36 / 74, color: ROJO }, { desde: 36 / 74, hasta: 1, color: BAC }]} x={90} y={930} ancho={900} alto={230} vacio="rgba(255,255,255,.1)" />
       </Escena>
 
       {/* datos */}
@@ -128,12 +128,12 @@ function Bacterias() {
       <Chip T={T} at={K.O + 2.4} until={K.L - 0.2} texto="una cuenta de una sola frase" x={540} y={440} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.L + 0.4} until={K.Co - 0.1} texto="«1 litro lleno de bacterias»" x={540} y={440} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.Co + 0.9} until={K.Q - 0.2} texto="casi todas: colon (~400 mL)" x={400} y={440} tam={34} borde={KC.yellow} />
-      <NumeroGigante T={T} at={K.H + 0.2} until={K.Cu - 0.2} valor={30} dur={1.0} sufijo=" billones" etiqueta="células tuyas" x={540} y={560} tam={120} color={KC.red} />
-      <Chip T={T} at={K.H + 2.6} until={K.Cu - 0.2} texto="84 % glóbulos rojos (sin núcleo)" x={540} y={1050} tam={34} borde={ROJO} />
+      <NumeroGigante T={T} at={K.H + 0.2} until={K.Cu - 0.2} valor={36} dur={1.0} sufijo=" billones" etiqueta="células tuyas (2023)" x={540} y={560} tam={120} color={KC.red} />
+      <Chip T={T} at={K.H + 2.6} until={K.Cu - 0.2} texto="4 de cada 5 sin núcleo: glóbulos rojos y plaquetas" x={540} y={1050} tam={30} borde={ROJO} />
       <Comparativa T={T} at={K.Cu + 0.2} until={K.E - 0.2} max={40} y={760} alto={320}
-        izq={{ valor: 30, etiqueta: 'células tuyas', color: ROJO, texto: '30' }} der={{ valor: 38, etiqueta: 'bacterias', color: BAC, texto: '38' }} />
+        izq={{ valor: 36, etiqueta: 'células tuyas (2023)', color: ROJO, texto: '36' }} der={{ valor: 38, etiqueta: 'bacterias (2016)', color: BAC, texto: '38' }} />
       <Chip T={T} at={K.Cu + 0.6} until={K.E - 0.2} texto="billones" x={540} y={470} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Cu + 2.4} until={K.E - 0.2} texto="1.3 : 1 ≈ una a una" x={540} y={1500} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.Cu + 2.4} until={K.E - 0.2} texto="≈ una a una" x={540} y={1500} tam={44} borde={KC.gold} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.P - 0.3} anio="2016" quien="Instituto Weizmann, Israel" revista="Sender, Fuchs y Milo · PLoS Biology" x={600} y={800} />
       <MitoTachado T={T} at={K.P + 2.2} tacharEn={K.P + 3.0} until={K.B - 0.2} texto="1 a 3 kg" x={320} y={460} tam={52} />
       <Chip T={T} at={K.P + 1.2} until={K.B - 0.2} texto="≈ 200 g" x={540} y={680} tam={64} borde={BAC} />
@@ -145,8 +145,8 @@ function Bacterias() {
       <Subtitulo T={T} idx={2} at={K.L + 0.1} until={K.Co - 0.1} texto="Un litro *lleno de bacterias.*" />
       <Subtitulo T={T} idx={3} at={K.Co + 0.1} until={K.Q - 0.1} texto="Casi todas viven *en tu colon.*" />
       <Subtitulo T={T} idx={4} at={K.Q + 0.1} until={K.H - 0.1} texto="¿Y cuántas *células tuyas?*" />
-      <Subtitulo T={T} idx={5} at={K.H + 0.1} until={K.Cu - 0.1} texto="30 billones: *84 % glóbulos rojos.*" />
-      <Subtitulo T={T} idx={6} at={K.Cu + 0.1} until={K.E - 0.1} texto="38 billones: *1.3 a 1.*" />
+      <Subtitulo T={T} idx={5} at={K.H + 0.1} until={K.Cu - 0.1} texto="2023: *36 billones* (hombre)." />
+      <Subtitulo T={T} idx={6} at={K.Cu + 0.1} until={K.E - 0.1} texto="Bacterias (2016): *38 billones.*" />
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.P - 0.1} texto="Instituto Weizmann, *2016.*" />
       <Subtitulo T={T} idx={8} at={K.P + 0.1} until={K.B - 0.1} texto="Todas juntas: *unos 200 gramos.*" />
       <Subtitulo T={T} idx={9} at={K.B + 0.1} until={K.C - 0.1} texto="Al baño: *−¼ a −⅓ del colon.*" />

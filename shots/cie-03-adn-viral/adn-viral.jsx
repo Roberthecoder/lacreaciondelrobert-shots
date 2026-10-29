@@ -193,7 +193,7 @@ function AdnViralNarrado() {
       <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="parte de ti fue virus" x={360} y={330} tam={48} borde={VIR} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="1 de cada 12 *no es humano: es virus.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="Casi 1 de cada 12 *vino de un virus.*" />
       <Subtitulo T={T} idx={1} at={K.R + 0.1} until={K.Ge - 0.1} texto="Retrovirus: *meten su código* en la célula." />
       <Subtitulo T={T} idx={2} at={K.Ge + 0.1} until={K.H - 0.1} texto="Infectaron *óvulos y espermatozoides.*" />
       <Subtitulo T={T} idx={3} at={K.H + 0.1} until={K.Ro - 0.1} texto="Y se heredó *hasta ti.*" />

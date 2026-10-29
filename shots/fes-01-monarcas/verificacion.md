@@ -52,4 +52,15 @@ Un segundo verificador (otro agente, que no escribió el guion) abrió las fuent
 | (matiz) el número de generaciones varía | ✅ | ídem | "It takes four or more generations of monarchs to fulfill their annual migration." | 2019 |
 | LinkedIn: "el único tipo de planta que comen sus orugas" (algodoncillo, varias especies de *Asclepias*) | ✅ | sciencefriday.com/articles/the-case-of-the-barfing-blue-jay/ (fila de las orugas, arriba) | "Monarchs feed on milkweeds" (en plural: varias especies) | ver arriba |
 
+## Re-verificación (29 oct, auditoría)
+
+La frase absoluta «es tataranieta» se cambió primero por «casi siempre es tataranieta». Este verificador independiente la marcó ⚠️ (la mayoría de las migrantes son de la 3.ª y 4.ª generación), y quedó «suele ser bisnieta o tataranieta» en la voz, el guion y `publicacion.md` (4 lugares). Subtítulo: «Viaja la bisnieta o la tataranieta». Chip: «cuántas generaciones: depende del clima y la latitud». Se agregó Monarch Watch 2020 a las fuentes.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Ninguna ha hecho el viaje antes» | ✅ | EarthDate ED 153 (Univ. de Texas en Austin): https://www.earthdate.org/files/000/002/059/EarthDate_153_C.pdf | "Before winter arrives, they'll make the entire 3,000-mile journey to Mexico—where they'll seek out the same mountaintops as their great-great-grandparents." | 2019 |
+| «suele ser bisnieta o tataranieta de las que se fueron en primavera» (voz, guion, `publicacion.md`) y subtítulo «Viaja la bisnieta o la tataranieta» | ✅ | Chip Taylor, Monarch Watch (Univ. de Kansas), "Monarch Annual Cycle: Migrations and the number of generations": https://monarchwatch.org/blog/?p=2254 | "Most butterflies in the fall migration represent 3rd and 4th generations." (La 1.ª generación es hija de las que salen de México, así que la 3.ª es bisnieta y la 4.ª tataranieta.) | 2020 |
+| Chip «cuántas generaciones: depende del clima y la latitud» | ✅ | Monarch Watch 2020 (la misma entrada) | "that interval can vary from about 25 to over 50 days depending on temperatures." · "if we start our scenario later in Iowa, or start further north, we lose a generation." | 2020 |
+| Animación: cinco generaciones, la última «tataranieta» (ejemplo) | ✅ | EarthDate ED 153 | "It takes four or more generations of monarchs to fulfill their annual migration." (es uno de los casos posibles; el chip aclara que varía) | 2019 |
+
 VEREDICTO: APROBADO

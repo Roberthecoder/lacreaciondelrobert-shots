@@ -25,4 +25,14 @@
 
 Segunda revisión (28 oct 2026, pedida por Robert): se abrieron también las fuentes citadas en `publicacion.md`; lo no comprobable se cambió o se quitó. Todo lo que queda publicado es ✅.
 
+## Re-verificación (29 oct, auditoría)
+
+Se corrigió el subtítulo del gancho (idx 0, `adn-viral.jsx`): de «1 de cada 12 *no es humano: es virus.*» a «Casi 1 de cada 12 *vino de un virus.*», para que no diga más que la voz («casi uno de cada doce… vino de virus»). Revisado por un verificador independiente; fuente abierta por Europe PMC el 29 oct 2026.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| (pantalla, subtítulo 0) Casi 1 de cada 12 pedacitos de tu ADN (~8 %; 1/12 ≈ 8.3 %, por eso «casi») | ✅ | Lyu, Harding et al., *Viruses* 18: 1132 (PMC13709493) | «It is estimated that human endogenous retroviruses (HERVs) constitute approximately 8% of the human genome» | 2026 |
+| (pantalla, subtítulo 0) …vino de un virus (restos heredados de infecciones antiguas, no virus activos) | ✅ | PMC13709493 | «Ancient infections of the germline resulted in the integration of viral sequences into host chromosomes, where they are inherited as endogenous viral elements (EVEs)» | 2026 |
+| Coherencia: el subtítulo nuevo ya no dice más que la voz ni contradice `guion.md`/`publicacion.md` (que dicen «vino de virus») | ✅ | revisión de los archivos del shot | — | — |
+
 VEREDICTO: APROBADO
