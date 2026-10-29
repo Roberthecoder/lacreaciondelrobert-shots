@@ -12,7 +12,7 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa estatua no nació verde: es de cobre, color moneda; lo verde es una costra que la protege. | Fondo cian. Desde el cuadro 0 la silueta de la Estatua de la Libertad (esquemática) brilla color cobre/salmón; un barrido de luz la recorre y por detrás asoma el verde. Chip "verde ✗ → cobre ✓". Al decir "costra" aparece un contorno verde tipo escudo sobre la antorcha. |
-| 1 | Piel | Su piel es cobre de 2.4 milímetros: el grueso de dos centavos de dólar juntos. | La cámara baja a un pedazo de lámina de la piel; a su lado se apilan dos monedas de un centavo de dólar y una regla marca "2.4 mm" (barra de escala). |
+| 1 | Piel | Su piel es cobre de 2.4 milímetros: más delgada que dos centavos de dólar juntos. | La cámara baja a un pedazo de lámina de la piel; a su lado se apilan dos monedas de un centavo de dólar y una regla marca "2.4 mm" (barra de escala). |
 | 2 | Cafe | Cuando la terminaron, en 1886, era café, como un centavo de dólar. | Tarjeta "1886"; la estatua entera en café rojizo brillante junto a un centavo de dólar del mismo color. |
 | 3 | Cuprita | Primero, el oxígeno del aire húmedo oxidó el cobre y formó cuprita, una capa oscura. | Fondo noche, zoom a la superficie: átomos de cobre (esferas naranjas) en fila; llegan O₂ y gotitas de agua; se forma encima una capa delgada café oscuro con la etiqueta "cuprita · Cu₂O". Barra de escala en µm. |
 | 4 | Brochantita | Luego, el azufre de la contaminación, en la lluvia, la volvió brochantita: un sulfato de cobre verde. | De una chimenea lejana sale SO₂ (bolitas amarillas) que se mete en gotas de lluvia; las gotas caen sobre la cuprita y crecen cristales verdes encima: "brochantita · CuSO₄·3Cu(OH)₂". |
@@ -33,7 +33,7 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Cuánto tardó 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «Esa estatua no nació verde» |
-| 2 | 6.4 | 10.2 | 13_senalando_arriba | `izq-alto` | «2.4 milímetros… dos centavos» |
+| 2 | 6.4 | 10.2 | 13_senalando_arriba | `izq-alto` | «2.4 milímetros… más delgada que dos centavos» |
 | 3 | 10.8 | 17.5 | 05_sonriendo_dientes_uniformes | `arriba-der` | «era café, como un centavo» |
 | 4 | 20.6 | 25.2 | 10_serio_molesto | `izq-alto` | «el azufre de la contaminación» |
 | 5 | 27.1 | 29.4 | 06_pensativo_menton | `arriba-der` | «protege al cobre de gastarse» |
@@ -48,7 +48,7 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Cuánto tardó 
 
 ## Fuentes (abiertas el 29 oct 2026)
 
-1. **Láminas de cobre de 2.4 mm, como dos centavos de dólar; pátina verde por oxidación natural; la pátina protege al cobre; café como un centavo en 1886; unos 30 años** — National Park Service, Statue of Liberty National Monument. "Frequently Asked Questions About the Statue of Liberty." https://www.nps.gov/stli/planyourvisit/frequently-asked-questions-statue-of-liberty.htm y "Frequently Asked Questions" https://www.nps.gov/stli/faqs.htm (consultadas 2026).
+1. **Láminas de cobre de 2.4 mm, más delgadas que dos centavos de dólar juntos (el NPS dice "the same as", pero un centavo mide 1.52 mm: dos ≈ 3 mm); pátina verde por oxidación natural; la pátina protege al cobre; café como un centavo en 1886; unos 30 años** — National Park Service, Statue of Liberty National Monument. "Frequently Asked Questions About the Statue of Liberty." https://www.nps.gov/stli/planyourvisit/frequently-asked-questions-statue-of-liberty.htm y "Frequently Asked Questions" https://www.nps.gov/stli/faqs.htm (consultadas 2026).
    > "The Statue of Liberty is made of copper 3/32 in. (2.4 millimeters) thick, the same as two U.S. pennies put together." · "The Statue's copper has naturally oxidized to form its familiar "patina" green coating." · "This patina … protects the copper from naturally wearing away." · "Upon completion in 1886, the Statue of Liberty was more of a traditional brown color like an American penny." · "It took about thirty years for the Statue of Liberty to fully oxidize and form a patina."
    - Refuerzo del tiempo: American Chemical Society, nota de prensa del 29 jun 2017 (EurekAlert! 672558): "Her color change is thanks to about 30 years' worth of chemistry in the air of New York City harbor." · "transitioned from penny red to chocolate brown to glorious liberty green".
 2. **Cuprita primero (capa oscura), luego brochantita con el azufre (SO₂) del aire; la pátina es insoluble y protectora** — Bureš R., Klajmon M., Fojt J., Rak P., Jílková K., Stoulil J. "Artificial Patination of Copper and Copper Alloys in Wet Atmosphere with Increased Content of SO2." *Coatings* 9(12):837 (2019). doi:10.3390/coatings9120837.

@@ -166,7 +166,7 @@ function Estatua22() {
           <Escudo x={330} y={720} s={1.3} o={kprog(T, K.G + 3.6, K.G + 4.2) * 0.92} />
         </SvgCapa>
       </Escena>
-      {/* 1 · la piel: lámina de 2.4 mm y dos centavos */}
+      {/* 1 · la piel: lámina de 2.4 mm, más delgada que dos centavos (1.52 mm c/u, a escala) */}
       <Escena T={T} a={K.P} b={K.Ca}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
@@ -174,8 +174,8 @@ function Estatua22() {
           <path d="M 140 760 L 200 700 L 800 700 L 740 760 Z" fill="#f0a27a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
           <path d="M 740 760 L 800 700 L 800 820 L 740 880 Z" fill="#b8683e" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
           {[300, 480, 640].map((rx) => <circle key={rx} cx={rx} cy={730} r={9} fill="#b8683e" stroke={KC.ink} strokeWidth={4} />)}
-          <MonedaCanto x={920} y={klerp(380, 850, kprog(T, K.P + 1.4, K.P + 1.9, kEase.rebote))} />
-          <MonedaCanto x={920} y={klerp(380, 790, kprog(T, K.P + 2.0, K.P + 2.5, kEase.rebote))} />
+          <MonedaCanto x={920} h={76} y={klerp(380, 842, kprog(T, K.P + 1.4, K.P + 1.9, kEase.rebote))} />
+          <MonedaCanto x={920} h={76} y={klerp(380, 766, kprog(T, K.P + 2.0, K.P + 2.5, kEase.rebote))} />
           <g opacity={kprog(T, K.P + 0.6, K.P + 1.0)}>
             <line x1={100} y1={760} x2={100} y2={880} stroke={KC.ink} strokeWidth={8} />
             <line x1={84} y1={760} x2={116} y2={760} stroke={KC.ink} strokeWidth={8} />
@@ -300,7 +300,7 @@ function Estatua22() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 3.2} texto="siempre fue verde" x={540} y={1130} tam={44} />
       <Chip T={T} at={K.G + 3.6} until={K.P - 0.3} texto="la costra verde la protege" x={540} y={1130} tam={38} borde={VERDE} />
       <Chip T={T} at={K.P + 0.4} until={K.Ca - 0.3} texto="piel de cobre" x={640} y={550} tam={44} borde={COBRE} />
-      <Etq T={T} at={K.P + 2.6} until={K.Ca - 0.3} x={1010} y={652} texto="2 centavos de dólar" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.P + 2.6} until={K.Ca - 0.3} x={1010} y={652} texto="2 centavos de dólar ≈ 3 mm" lado="izq" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.4} until={K.Cu - 0.3} texto="1886: color centavo" x={540} y={1130} tam={44} borde={CAFE} />
       <Chip T={T} at={K.Cu + 0.4} until={K.Cu + 2.4} texto="oxígeno + agua" x={540} y={250} tam={40} borde={QA.O} />
       <Etq T={T} at={K.Cu + 3.4} until={K.Br + 2.4} x={60} y={1215} texto="cuprita · Cu₂O (oscura)" tam={34} />

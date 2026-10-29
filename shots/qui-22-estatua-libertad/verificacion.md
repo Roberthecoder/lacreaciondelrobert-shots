@@ -42,4 +42,16 @@ Se aplicaron tal cual las 3 propuestas del verificador: «como un centavo de dó
 
 Recortes de estilo sin cambiar datos: «Y el cobre de tu casa» → «El cobre de tu casa»; «Así que ese verde» → «Ese verde»; «¿Cuánto tardó en cubrirla toda?» → «¿Cuánto tardó en cubrirla?».
 
+## Re-verificación (29 oct 2026, agente independiente)
+Cambio revisado: voz «Su piel es cobre de 2.4 milímetros: más delgada que dos centavos de dólar juntos.»; pantalla con dos centavos de canto a escala junto a la lámina y etiqueta «2 centavos de dólar ≈ 3 mm»; guion.md y publicacion.md (Fuentes).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| La piel es cobre de 2.4 mm (3/32 in) | ✅ | NPS, nps.gov/stli/planyourvisit/frequently-asked-questions-statue-of-liberty.htm (abierta) | "The Statue of Liberty is made of copper 3/32 in. (2.4 millimeters) thick, the same as two U.S. pennies put together." (La otra página del NPS, nps.gov/stli/faqs.htm, redondea a "about 2.5mm"; 3/32 in = 2.38 mm, así que 2.4 mm es lo exacto.) | 2026 (consulta) |
+| Un centavo de dólar actual mide 1.52 mm de grueso | ✅ | U.S. Mint, "Coin Specifications" (usmint.gov; la página devuelve 403 a este entorno, la cifra se leyó en su tabla vía buscador: fila "Thickness 1.52 mm" del Cent) + Wikipedia "Penny (United States coin)" (abierta) | Wikipedia: "The coin is 0.75 inches (19.05 mm) in diameter and 0.0598 inches (1.52 mm) in thickness." | 2026 (consulta) |
+| Dos centavos juntos ≈ 3 mm | ✅ | Cálculo: 2 × 1.52 = 3.04 mm | — | — |
+| La piel (2.4 mm) es «más delgada» que dos centavos juntos | ✅ | 2.4 mm < 3.04 mm; el NPS dice "the same as", que es una aproximación; «más delgada» es lo correcto, y guion/publicación ya aclaran la diferencia con el NPS | — | — |
+| Gramática: «Su piel es cobre de 2.4 milímetros: más delgada…» | ✅ | Concuerda en femenino con «piel» (sujeto); sentido correcto | — | — |
+| Dibujo a escala (estatua.jsx): lámina 120 px = 2.4 mm y cada centavo 76 px = 1.52 mm a 50 px/mm; pila de dos = 152 px ≈ 3 mm | ✅ | Revisado en el código | — | — |
+
 VEREDICTO: APROBADO
