@@ -125,7 +125,7 @@ function MiniGrafica({ T, at, x, y, w = 520, h = 150, titulo }) {
   for (let i = 0; i <= N * p; i++) { const u = i / N, v = 1 / (1 + Math.exp(-(u - 0.35) * 12)) * 0.8 + Math.sin(u * 30) * 0.015; pts.push(`${x + u * w},${y + h - v * h}`); }
   return <g opacity={kprog(T, at - 0.2, at + 0.3)}>
     <rect x={x - 24} y={y - 60} width={w + 48} height={h + 100} rx={20} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
-    <text x={x} y={y - 22} style={{ font:`900 28px ${KF.texto}` }} fill={KC.ink}>{titulo}</text>
+    <text x={x} y={y - 22} style={{ font:`900 25px ${KF.texto}` }} fill={KC.ink}>{titulo}</text>
     <line x1={x} y1={y + h} x2={x + w} y2={y + h} stroke={KC.ink} strokeWidth={4} /><line x1={x} y1={y} x2={x} y2={y + h} stroke={KC.ink} strokeWidth={4} />
     <polyline points={pts.join(' ')} fill="none" stroke={KC.pink} strokeWidth={7} strokeLinejoin="round" strokeLinecap="round" />
     <text x={x + w} y={y + h + 30} textAnchor="end" style={{ font:`700 22px ${KF.mono}` }} fill="#5a524a">horas de entrenamiento →</text>
@@ -137,7 +137,7 @@ function AlphaZero() {
   const K = { G: CUES.Gancho, R: CUES.Reglas, A: CUES.Autojuego, H: CUES.Horas, P: CUES.Pregunta, M: CUES.Medidor, D: CUES.Duelo, Ap: CUES.Aperturas, Ch: CUES.Chips, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const svg = (c, z = 0) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
-  const TB = { x: 300, y: 760, lado: 480 };               // tablero principal
+  const TB = { x: 330, y: 690, lado: 420 };               // tablero principal
   const dM = (K.D - K.M), mMid = K.M + dM * 0.58;          // las dos frases del Medidor
 
   // Reglas: piezas que saltan al azar (cada 0.55 s cambian de casilla)
@@ -149,7 +149,7 @@ function AlphaZero() {
   const ganadas = Math.round(155 * kclamp(llen / 0.155, 0, 1)), perdidas = Math.round(6 * kclamp((llen - 0.155) / 0.006, 0, 1)), tablas = Math.round(839 * kclamp((llen - 0.161) / 0.839, 0, 1));
 
   // Horas: curva de nivel (esquemática) que cruza a Stockfish a las 4 h
-  const GX = 130, GY = 760, GW = 820, GH = 400, LV = 0.82;
+  const GX = 130, GY = 720, GW = 820, GH = 330, LV = 0.82;
   const horas = 9 * kprog(T, K.H + 0.3, K.H + 3.8, kEase.suave);
   const nivel = (h) => 1 - Math.exp(-h / 2.33);
   const curva = []; for (let h = 0; h <= horas + 0.001; h += 0.1) curva.push(`${GX + (h / 9) * GW},${GY + GH - nivel(h) * GH}`);
@@ -165,41 +165,41 @@ function AlphaZero() {
         {svg(<>
           <Tablero {...TB}><Piezas T={T} {...TB} movs={{ e2: { a: 'e4', t0: 0.05, t1: 0.55 }, e7: { a: 'e5', t0: 1.3, t1: 1.8 } }}
             extra={(p) => p.t === 'k' && p.col === 'b' ? { rot: 80 * kprog(T, K.G + 4.0, K.G + 4.5, kEase.rebote) } : {}} /></Tablero>
-          <Robotito x={150} y={1150} s={0.5} T={T} cara="seguro" />
-          <Lupita x={250} y={1080} s={0.7} rot={-20} brillo={0.5 + 0.5 * Math.sin(T * 4)} />
-          <Servidor x={950} y={1080} s={0.42} T={T} />
+          <Robotito x={150} y={1010} s={0.5} T={T} cara="seguro" />
+          <Lupita x={250} y={940} s={0.7} rot={-20} brillo={0.5 + 0.5 * Math.sin(T * 4)} />
+          <Servidor x={950} y={930} s={0.42} T={T} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 0.5} until={K.R - 0.2} texto="AlphaZero: 60 mil /s" x={300} y={470} tam={38} borde={KC.mint} />
-      <Chip T={T} at={K.G + 1.3} until={K.R - 0.2} texto="Stockfish: 60 millones /s" x={340} y={570} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.G + 2.2} until={K.R - 0.2} texto="posiciones revisadas" x={290} y={665} tam={28} borde={KC.texto} />
-      <Chip T={T} at={K.G + 4.3} until={K.R - 0.2} texto="…y ganó AlphaZero" x={540} y={1250} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 0.5} until={K.R - 0.2} texto="AlphaZero: 60 mil /s" x={290} y={430} tam={38} borde={KC.mint} />
+      <Chip T={T} at={K.G + 1.3} until={K.R - 0.2} texto="Stockfish: 60 millones /s" x={330} y={515} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.G + 2.2} until={K.R - 0.2} texto="posiciones revisadas por segundo" x={300} y={595} tam={28} borde={KC.texto} />
+      <Chip T={T} at={K.G + 4.3} until={K.R - 0.2} texto="…y ganó AlphaZero" x={540} y={900} tam={36} borde={KC.yellow} />
 
       {/* 1 · solo las reglas */}
       <Escena T={T} a={K.R} b={K.A}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
           <Tablero {...TB}><Piezas T={T} {...TB} piezas={enAzar} /></Tablero>
-          <g transform="translate(150 1080)" opacity={kprog(T, K.R + 0.4, K.R + 0.9)}>
+          <g transform="translate(150 960)" opacity={kprog(T, K.R + 0.4, K.R + 0.9)}>
             {[0, 1, 2, 3].map((i) => <rect key={i} x={-90 + (i % 2) * 8} y={60 - i * 42} width={170} height={38} rx={6} fill={[KC.red, KC.blue, KC.orange, KC.teal][i]} stroke={KC.ink} strokeWidth={5} />)}
             <g opacity={kprog(T, K.R + 1.8, K.R + 2.1)}><line x1={-100} y1={-110} x2={100} y2={110} stroke={KC.red} strokeWidth={16} strokeLinecap="round" /><line x1={100} y1={-110} x2={-100} y2={110} stroke={KC.red} strokeWidth={16} strokeLinecap="round" /></g>
           </g>
         </>)}
       </Escena>
-      <MitoTachado T={T} at={K.R + 0.4} tacharEn={K.R + 1.8} until={K.A - 0.2} texto="partidas humanas" x={330} y={470} tam={44} />
-      <Chip T={T} at={K.R + 2.4} until={K.A - 0.2} texto="solo las reglas ✔" x={300} y={590} tam={42} borde={VERDE} />
-      <Chip T={T} at={K.R + 3.2} until={K.A - 0.2} texto="jugadas al azar" x={300} y={680} tam={30} borde={KC.texto} />
+      <MitoTachado T={T} at={K.R + 0.4} tacharEn={K.R + 1.8} until={K.A - 0.2} texto="partidas humanas" x={310} y={440} tam={44} />
+      <Chip T={T} at={K.R + 2.4} until={K.A - 0.2} texto="solo las reglas ✔" x={290} y={535} tam={42} borde={VERDE} />
+      <Chip T={T} at={K.R + 3.2} until={K.A - 0.2} texto="jugadas al azar" x={280} y={612} tam={30} borde={KC.texto} />
 
       {/* 2 · contra sí misma */}
       <Escena T={T} a={K.A} b={K.H}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          {Array.from({ length: 24 }, (_, i) => { const c = i % 8, r = Math.floor(i / 8), t0 = K.A + 0.8 + i * 0.12, res = T > t0 + 0.6 ? ((i * 7) % 5 === 0 ? 'p' : 'g') : null;
-            return <MiniTablero key={i} x={70 + c * 120} y={640 + r * 112} lado={86} res={res} o={kprog(T, t0, t0 + 0.25)} />; })}
-          <Robotito x={210} y={1100} s={0.6} T={T} cara="feliz" />
-          <Robotito x={870} y={1100} s={0.6} T={T + 1.3} cara="seguro" color={KC.pink} />
-          <Tablero x={460} y={1010} lado={160} />
-          <text x={540} y={1240} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>AlphaZero vs. AlphaZero</text>
+          {Array.from({ length: 16 }, (_, i) => { const c = i % 8, r = Math.floor(i / 8), t0 = K.A + 0.8 + i * 0.16, res = T > t0 + 0.6 ? ((i * 7) % 5 === 0 ? 'p' : 'g') : null;
+            return <MiniTablero key={i} x={70 + c * 120} y={610 + r * 105} lado={84} res={res} o={kprog(T, t0, t0 + 0.25)} />; })}
+          <text x={540} y={872} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>AlphaZero vs. AlphaZero</text>
+          <Robotito x={230} y={990} s={0.55} T={T} cara="feliz" />
+          <Robotito x={850} y={990} s={0.55} T={T + 1.3} cara="seguro" color={KC.pink} />
+          <Tablero x={470} y={910} lado={140} />
         </>)}
       </Escena>
       <NumeroGigante T={T} at={K.A + 0.3} until={K.H - 0.2} valor={44} dur={2.4} sufijo=" millones" x={370} y={520} tam={96} color={KC.yellow} />
@@ -220,7 +220,7 @@ function AlphaZero() {
         </>)}
       </Escena>
       <NumeroGigante T={T} at={K.H + 0.3} until={K.P - 0.2} valor={Math.floor(horas)} dur={0.01} dec={0} sufijo=" h" etiqueta="de entrenamiento" x={330} y={560} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.H + 2.0} until={K.P - 0.2} texto="a las 4 h: ¡ya lo supera!" x={540} y={1250} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.H + 2.0} until={K.P - 0.2} texto="a las 4 h: ¡ya lo supera!" x={680} y={930} tam={36} borde={KC.yellow} />
 
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.M} zoom={0.1}>
@@ -233,14 +233,14 @@ function AlphaZero() {
       <Escena T={T} a={K.M} b={K.D}>
         <FondoCircuito T={T} />
         {svg(<>
-          <Arbol cx={290} base={1170} alto={430} ancho={440} D={5} crece={kprog(T, K.M + 3.6, K.M + 5.2)} color={KC.mint} sel={T > mMid + 0.6 ? ['000', '111', '2010'] : ['000', '111', '2010', '0101']} />
-          <Arbol cx={800} base={1170} alto={430} ancho={480} D={5} b={4} crece={kprog(T, K.M + 0.4, K.M + 2.4)} color={KC.red} apaga={kprog(T, mMid, mMid + 0.6)} />
-          {T > mMid + 0.3 && <RedNeuronalMini T={T} x={150} y={630} o={kprog(T, mMid + 0.3, mMid + 0.8)} />}
+          <Arbol cx={290} base={1100} alto={400} ancho={440} D={5} crece={kprog(T, K.M + 3.6, K.M + 5.2)} color={KC.mint} sel={T > mMid + 0.6 ? ['000', '111', '2010'] : ['000', '111', '2010', '0101']} />
+          <Arbol cx={800} base={1100} alto={400} ancho={480} D={5} b={4} crece={kprog(T, K.M + 0.4, K.M + 2.4)} color={KC.red} apaga={kprog(T, mMid, mMid + 0.6)} />
+          {T > mMid + 0.3 && <RedNeuronalMini T={T} x={110} y={570} o={kprog(T, mMid + 0.3, mMid + 0.8)} />}
         </>)}
       </Escena>
-      <Chip T={T} at={K.M + 0.4} until={mMid - 0.1} texto="Stockfish: 60 000 000 /s" x={760} y={600} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.M + 3.6} until={K.D - 0.2} texto="AlphaZero: 60 000 /s" x={300} y={500} tam={34} borde={KC.mint} />
-      <Chip T={T} at={mMid + 0.9} until={K.D - 0.2} texto="hipótesis de los autores" x={300} y={1235} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.M + 0.4} until={mMid - 0.1} texto="Stockfish: 60 millones /s" x={770} y={600} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.M + 3.6} until={K.D - 0.2} texto="AlphaZero: 60 mil /s" x={290} y={470} tam={34} borde={KC.mint} />
+      <Chip T={T} at={mMid + 0.9} until={K.D - 0.2} texto="hipótesis de los autores" x={770} y={780} tam={30} borde={KC.yellow} />
 
       {/* 6 · el duelo: 1 000 partidas */}
       <Escena T={T} a={K.D} b={K.Ap}>
@@ -251,7 +251,7 @@ function AlphaZero() {
         <Cuadricula T={T} cols={50} filas={20} x={90} y={720} ancho={900} alto={340} llenado={llen} vacio="rgba(0,0,0,.08)"
           tramos={[{ desde: 0, hasta: 0.155, color: VERDE }, { desde: 0.155, hasta: 0.161, color: KC.red }, { desde: 0.161, hasta: 1, color: GRIS }]} />
       </div>}
-      <Chip T={T} at={K.D + 2.4} until={K.Ap - 0.2} texto="1 000 partidas · 3 h + 15 s por jugada" x={400} y={600} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.D + 2.4} until={K.Ap - 0.2} texto="1,000 partidas · 3 h + 15 s por jugada" x={400} y={600} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.D + 3.0} until={K.Ap - 0.2} texto={`ganó ${ganadas}`} x={210} y={1120} tam={38} borde={VERDE} />
       <Chip T={T} at={K.D + 4.6} until={K.Ap - 0.2} texto={`perdió ${perdidas}`} x={520} y={1120} tam={38} borde={KC.red} />
       <Chip T={T} at={K.D + 4.9} until={K.Ap - 0.2} texto={`empates ${tablas}`} x={850} y={1120} tam={38} borde={GRIS} />
@@ -261,18 +261,17 @@ function AlphaZero() {
         <FondoLunares color={KC.pink} />
         {svg(<>
           <Tablero {...TB} resalta={T > K.Ap + 2.7 ? [{ sq: 'c4' }, { sq: 'd4' }, { sq: 'd5' }] : []}><Piezas T={T} {...TB} movs={qg} /></Tablero>
-          <MiniGrafica T={T} at={K.Ap + 1.6} x={110} y={470} w={460} h={150} titulo="% de partidas en que la elegía" />
-          <text x={570} y={710} textAnchor="end" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Ap + 1.8, K.Ap + 2.2)}>esquemático</text>
+          <MiniGrafica T={T} at={K.Ap + 1.6} x={100} y={470} w={560} h={120} titulo="% de partidas en que la elegía · esquemático" />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ap + 0.4} until={K.Ch - 0.2} texto="Gambito de Dama · 1. d4 d5 2. c4" x={540} y={1250} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Ap + 3.0} until={K.Ch - 0.2} texto="¡como los humanos!" x={540} y={735} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.Ap + 0.4} until={K.Ch - 0.2} texto="Gambito de Dama · 1. d4 d5 2. c4" x={540} y={690} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Ap + 3.0} until={K.Ch - 0.2} texto="¡como los humanos!" x={540} y={1000} tam={40} borde={KC.yellow} />
 
       {/* 8 · la crítica: 5 000 chips */}
       <Escena T={T} a={K.Ch} b={K.C}>
         <FondoCircuito T={T} color={KC.gold} />
-        {svg(<>{Array.from({ length: 40 }, (_, i) => { const c = i % 8, r = Math.floor(i / 8);
-          return <ChipTPU key={i} x={150 + c * 112} y={760 + r * 100} s={0.9} on={kprog(T, K.Ch + 0.3 + (c + r) * 0.08, K.Ch + 0.5 + (c + r) * 0.08)} />; })}</>)}
+        {svg(<>{Array.from({ length: 32 }, (_, i) => { const c = i % 8, r = Math.floor(i / 8);
+          return <ChipTPU key={i} x={150 + c * 112} y={750 + r * 100} s={0.9} on={kprog(T, K.Ch + 0.3 + (c + r) * 0.08, K.Ch + 0.5 + (c + r) * 0.08)} />; })}</>)}
       </Escena>
       <NumeroGigante T={T} at={K.Ch + 0.3} until={K.C - 0.2} valor={5000} dur={1.2} sufijo=" chips" x={640} y={520} tam={110} color={KC.cyan} />
       <Chip T={T} at={K.Ch + 1.2} until={K.C - 0.2} texto="TPU de Google · solo para entrenar" x={640} y={640} tam={30} borde={KC.gold} />
@@ -283,9 +282,9 @@ function AlphaZero() {
         {svg(<>
           <Tablero {...TB} resalta={[{ sq: 'f7', o: 0.85 * kprog(T, K.C + 1.0, K.C + 1.5) }]}><Piezas T={T} {...TB} movs={{ e2: { a: 'e4', t0: -9, t1: -8.5 }, e7: { a: 'e5', t0: -9, t1: -8.5 } }}
             extra={(p) => p.sq === 'f7' ? { brillo: kprog(T, K.C + 1.0, K.C + 1.5) } : {}} /></Tablero>
-          <Robotito x={150} y={1150} s={0.5} T={T} cara="feliz" />
-          <Lupita x={klerp(250, 615, kprog(T, K.C + 0.4, K.C + 1.2, kEase.suave))} y={klerp(1080, 820, kprog(T, K.C + 0.4, K.C + 1.2, kEase.suave))} s={klerp(0.7, 0.8, kprog(T, K.C + 0.4, K.C + 1.2))} rot={-20} brillo={kprog(T, K.C + 1.0, K.C + 1.5)} />
-          <Servidor x={950} y={1080} s={0.42} T={T} apagado={kprog(T, K.C + 1.6, K.C + 2.4)} />
+          <Robotito x={150} y={1010} s={0.5} T={T} cara="feliz" />
+          <Lupita x={klerp(250, 619, kprog(T, K.C + 0.4, K.C + 1.2, kEase.suave))} y={klerp(940, 769, kprog(T, K.C + 0.4, K.C + 1.2, kEase.suave))} s={klerp(0.7, 0.8, kprog(T, K.C + 0.4, K.C + 1.2))} rot={-20} brillo={kprog(T, K.C + 1.0, K.C + 1.5)} />
+          <Servidor x={950} y={930} s={0.42} T={T} apagado={kprog(T, K.C + 1.6, K.C + 2.4)} />
         </>)}
       </Escena>
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="saber dónde mirar ✔" x={330} y={520} tam={44} borde={KC.leaf} />
@@ -303,7 +302,7 @@ function AlphaZero() {
       <Subtitulo T={T} idx={6} at={mMid + 0.1} until={K.D - 0.1} texto="Su red neuronal *le señala qué mirar.*" />
       <Subtitulo T={T} idx={7} at={K.D + 0.1} until={K.Ap - 0.1} texto="Mil partidas: *155 ganadas, 6 perdidas.*" />
       <Subtitulo T={T} idx={8} at={K.Ap + 0.1} until={K.Ch - 0.1} texto="Descubrió sola *aperturas humanas.*" />
-      <Subtitulo T={T} idx={9} at={K.Ch + 0.1} until={K.C - 0.1} texto="Eso sí: *5 000 chips de Google.*" />
+      <Subtitulo T={T} idx={9} at={K.Ch + 0.1} until={K.C - 0.1} texto="Eso sí: *5,000 chips de Google.*" />
       <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Gana quien *sabe dónde mirar.*" />
 
       <Robert T={T} apariciones={[
