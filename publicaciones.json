@@ -87,5 +87,15 @@
   "ok": true,
   "id": "v_inbox_file~v2.7702157716067911698",
   "nota": "BORRADOR en la bandeja de TikTok (SEND_TO_USER_INBOX): Robert lo abre en la app, pega el texto y publica él"
+ },
+ {
+  "clave": "003-semillas-luna",
+  "red": "tiktok",
+  "modo": "privado",
+  "fecha": "2026-10-29T22:12:37Z",
+  "run": "40963961722",
+  "autorizo": null,
+  "ok": false,
+  "error": "TikTok iniciar: unaudited_client_can_only_post_to_private_accounts Please review our integration guidelines at https://developers.tiktok.com/doc/content-sharing-guidelines/"
  }
 ]
