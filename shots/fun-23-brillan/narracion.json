@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Brillan base narrada.dc.html",
+  "salida": "Shot Brillan narrado.dc.html",
+  "nota": "Shot Fungi Mati #23. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa madera no está embrujada: la hace brillar un hongo que vive adentro."
+    },
+    {
+      "escena": "Quienes",
+      "texto": "Brillan hongos como Armillaria, Mycena o Panellus."
+    },
+    {
+      "escena": "Raro",
+      "texto": "Y es rarísimo: solo unas cien especies de hongos lo hacen."
+    },
+    {
+      "escena": "Cafeico",
+      "texto": "¿Cómo? Convierten ácido cafeico, una sustancia muy común, en hispidina."
+    },
+    {
+      "escena": "Luciferina",
+      "texto": "Una enzima la cambia y sale la luciferina: el combustible de la luz."
+    },
+    {
+      "escena": "Luciferasa",
+      "texto": "La luciferasa la junta con oxígeno y sale luz verde. Lo que sobra se recicla."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero para qué gasta energía un hongo en brillar?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2013, en un bosque de Brasil, pusieron hongos falsos de acrílico con un foco verde."
+    },
+    {
+      "escena": "Trampas",
+      "texto": "Los encendidos atraparon 42 insectos; los apagados, solo 12."
+    },
+    {
+      "escena": "Hipotesis",
+      "texto": "La hipótesis: los insectos se llevarían sus esporas a otros lados."
+    },
+    {
+      "escena": "Reloj",
+      "texto": "Y ese hongo tiene reloj: su brillo sube y baja en un ciclo de casi un día."
+    },
+    {
+      "escena": "Jurasico",
+      "texto": "Se calcula que este truco nació hace unos 160 millones de años, en tiempos de dinosaurios."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "Y en bosques de niebla de México se describieron seis especies nuevas de Mycena que brillan."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa madera no está embrujada: está viva, y quizá llamando insectos."
+    }
+  ]
+}

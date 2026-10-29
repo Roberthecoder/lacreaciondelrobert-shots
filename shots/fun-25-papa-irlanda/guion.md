@@ -70,13 +70,16 @@ Barras de escala: 10 cm (papa y jitomate), 5 cm (hoja), 30 µm (esporangios), 10
    > "Every year, this pathogen causes enormous losses to agriculture worldwide."
    > "P. infestans still causes significant damage to agriculture despite the long history of fighting it."
 
-8. Crowley, J. (2020). The Great Irish Famine. RTÉ History. https://www.rte.ie/history/the-great-irish-famine/2020/0629/1150367-the-great-irish-famine
-   > Más de un millón de personas emigraron durante la hambruna (detalle y frase textual en `verificacion.md`).
-9. Martin, M. D., Ho, S. Y. W., Wales, N., Ristaino, J. B. y Gilbert, M. T. P. (2014). Persistence of the mitochondrial lineage responsible for the Irish potato famine in extant New World *Phytophthora infestans*. *Molecular Biology and Evolution* 31(6): 1414–1420. PMID 24577840.
-   > El linaje mitocondrial de HERB-1 sigue presente en muestras actuales de América (México y Sudamérica); detalle en `verificacion.md`.
-10. Martin, M. D. et al. (2016). Genomic characterization of a South American *Phytophthora* hybrid mandates reassessment of the geographic origins of *Phytophthora infestans*. *Molecular Biology and Evolution* 33(2): 478–491.
-   > Pide replantear el origen geográfico (México vs. Andes).
-11. Coomber, A. et al. (2025). *PLoS ONE* 20(1): e0314509 (origen andino de *P. infestans*). https://ges.research.ncsu.edu/wp-content/uploads/2025/02/Coomber-2025-PlosOne.pdf
+8. Crowley, J. (University College Cork) (3 dic 2020). How 'a truly modern famine' devastated Ireland – and changed the world forever. RTÉ History. https://www.rte.ie/history/the-great-irish-famine/2020/0629/1150367-the-great-irish-famine
+   > "Over a million people perished and a further million and a quarter fled the country"
+9. Martin, M. D., Ho, S. Y. W., Wales, N., Ristaino, J. B. y Gilbert, M. T. P. (2014). Persistence of the mitochondrial lineage responsible for the Irish potato famine in extant New World *Phytophthora infestans*. *Molecular Biology and Evolution* 31(6): 1414–1420. https://pubmed.ncbi.nlm.nih.gov/24577840/
+   > "a unique lineage (HERB-1) predicted to be rare or extinct in modern times"
+   > "We use phylogenetic analyses to identify the HERB-1 lineage in modern populations from both Mexico and South America"
+10. Martin, M. D., Vieira, F. G., Ho, S. Y. W., Wales, N., Schubert, M., Seguin-Orlando, A., Ristaino, J. B. y Gilbert, M. T. P. (2016; en línea 17 nov 2015). Genomic Characterization of a South American *Phytophthora* Hybrid Mandates Reassessment of the Geographic Origins of *Phytophthora infestans*. *Molecular Biology and Evolution* 33(2): 478–491. https://pmc.ncbi.nlm.nih.gov/articles/PMC4866541/
+   > "Both Mexico and South America have been proposed, generating considerable controversy."
+   > "casting doubt on recent claims of a Mexican center of origin"
+11. Coomber, A. L., Saville, A. C., Carbone, I., Martin, M., Bieker, V. C. y Ristaino, J. B. (2025). A pangenome analysis reveals the center of origin and evolutionary history of *Phytophthora infestans* and 1c clade species. *PLoS ONE* 20(1): e0314509. https://pmc.ncbi.nlm.nih.gov/articles/PMC11760636/
    > "Speciation in the 1c clade and evolution of P. infestans occurred in the Andes."
+   > "we consider the Andes to be the center of origin of P. infestans"
 
 El dibujo es esquemático.
