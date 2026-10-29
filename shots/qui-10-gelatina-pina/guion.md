@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esta gelatina no se echó a perder: la piña fresca la está cortando en pedacitos."
 - **Seguridad:** nada peligroso; el único consejo práctico (usar piña de lata o cocer la fresca antes) sale de las fuentes.
 - **Duración:** voz 956 caracteres (estimador) / 184 palabras (≈ 57.8 s) + cierre 3.5 s → **61.3 s** estimados.
-- **Estado:** guion escrito; falta verificación independiente (`verificacion.md`), animación y tabla "Robert en pantalla" (fase 2). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (base sin voz 61.30 s con `gen-audio.mjs`), voz pendiente de aprobación de Robert (~956 créditos).
 
 ## Versión narrada
 
@@ -26,6 +26,25 @@ Tiempos estimados por `estimar-escenas.mjs`: Gancho 0–4.9 · Que –10.8 · Re
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave continua, más tensa mientras la gelatina se deshace y más libre cuando cuaja; efectos en el mismo cuadro (chapoteo de la gelatina líquida, "boing" del molde firme, tic del cronómetro, "clic" de cada tijera, burbujeo del baño a 80 °C, vapor de la lata).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y por qué con piña de lata sí cuaja bien?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «la piña fresca la está cortando en pedacitos» |
+| 2 | 6.1 | 10.5 | 13_senalando_arriba | `arriba-der` | «colágeno de la piel y los huesos» |
+| 3 | 12.3 | 17.0 | 06_pensativo_menton | `arriba-der` | «se amarran en una red que atrapa el agua» |
+| 4 | 18.1 | 22.1 | 05_sonriendo_dientes_uniformes | `izq-alto` | «corta proteínas como unas tijeras» |
+| 5 | 28.0 | 31.2 | 07_pensativo_puno | `grande` | «¿Y por qué con piña de lata sí cuaja bien?» |
+| 6 | 31.3 | 33.1 | 04_bajando_lentes | `izq-alto` | «En 2010, en Tailandia…» |
+| 7 | 39.3 | 43.9 | 13_senalando_arriba | `arriba-der` | «la piña de lata se calienta para enlatarla» |
+| 8 | 46.8 | 50.3 | 11_sorprendido | `izq-alto` | «el kiwi también deshizo la gelatina» |
+| 9 | 50.9 | 57.7 | 02_apuntando_camara | `arriba-der` | «Si la quieres con piña, usa de lata o cuécela antes» |
+| — | 57.8 | 61.3 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 37.6 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

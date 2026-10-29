@@ -47,3 +47,23 @@ No es una fuente confiable para las cifras que se citan. Sus resultados en serie
    - Quitar la fuente 3 (UAS 2026) de `## Fuentes` y de las Notas, o dejarla solo como mención de que hay escuelas mexicanas que lo hacen, sin cifras.
 3. **#2 (pantalla 0)** — Cambiar "0.82 V" por "0.9 V" (redondeo de Goodisman 0.914 V) o por "0.8 V" (ejemplo de ANU), y que el cierre (#23) muestre la misma cifra.
 4. **#22 (pantalla 9)** — Que la punta del clavo se vea solo un poco opaca/gastada, con etiqueta "pierde zinc" en vez de "carcomida (sin zinc)"; o marcarlo explícitamente como exagerado/esquemático en la descripción.
+
+## Re-verificación (29 oct 2026)
+Revisé el guion corregido (`guion.md` y `narracion.json`) contra las mismas fuentes (Goodisman 2001, texto completo, y ANU).
+
+| # | Afirmación corregida | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| R1 | (voz 6) "Goodisman lo probó con limones simulados, hechos con ácido: en el cobre, ese ácido se vuelve gas hidrógeno." | ✅ | Goodisman 2001 | "Figure 1. Measured emf's of simulated lemon cells (Cu and Zn electrodes dipping into HCl solution)" · "gas bubbles are observed at both electrodes… The bubbles, which are larger and more numerous on the Cu than on the Zn, are hydrogen." · "At the Cu electrode, H+ ions are reduced to H2 gas." | 2001 |
+| R2 | (pantalla 6) Vaso de laboratorio con ácido y dos tiras de metal, "limón simulado" | ✅ | Goodisman 2001 | "The cells studied consisted of Cu and Zn dipping into dilute hydrochloric acid solutions at 21 °C" | 2001 |
+| R3 | (voz 7) "Midió el voltaje: con zinc y cobre en ácido cítrico, como el del limón, dio 0.91 volts" | ✅ | Goodisman 2001 | "dipping two different metals from Cu, Pb, Zn, Ni, and Fe into a 0.2510 M citric acid solution (4.10% citric acid by weight)" · Tabla 1: Cu²⁺/Cu – Zn²⁺/Zn "0.914" · "It has been shown that a 5% solution of citric acid imitates the lemon well" | 2001 (la voz ya dice "En 2001" en la frase anterior) |
+| R4 | (voz 7) "ni siquiera llega a un volt" | ✅ | Goodisman 2001 | 0.914 V < 1 V (Tabla 1) | 2001 |
+| R5 | (pantalla 7) Voltímetro "0.91 V", etiqueta "ácido cítrico 4 % · Goodisman 2001", raya de 1 V sin alcanzar | ✅ | Goodisman 2001 | "4.10% citric acid by weight" · "0.914" | 2001 |
+| R6 | (pantalla 0 y 9) Limón real con voltímetro "0.9 V" | ✅ (redondeo) | Goodisman 2001; ANU | Goodisman: "A voltmeter connected across them shows a potential of about 1 V." y 0.914 V en ácido cítrico · ANU (ejemplo): "0.8 V + 0.8 V + 0.8 V = 2.4 V". 0.9 V cae en ese rango típico. | 2001; ANU s/f |
+| R7 | (pantalla 9) Punta del clavo "un poco gastado · pierde zinc" | ✅ | Goodisman 2001 | "the Zn electrode loses mass but the Cu electrode does not" | 2001 |
+| R8 | Se quitaron el estudio de Sinaloa, las "96 mediciones" y "cerca de un miliampere" | ✅ | — | No queda ninguna cifra de ese artículo en guion.md, narracion.json ni en los demás archivos del shot. | — |
+
+Las demás afirmaciones (#1, #3–#10, #12–#13, #18–#21, #23–#24) no cambiaron y siguen ✅.
+
+**Resultado de la re-verificación:** todo ✅ (0 ⚠️, 0 ❌).
+
+VEREDICTO: APROBADO
