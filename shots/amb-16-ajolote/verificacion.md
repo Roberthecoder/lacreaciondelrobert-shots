@@ -42,4 +42,26 @@
 
 Nota: una nota de adn40 (14 may 2026) dice "en 2024 quedaban unos 36"; es un error de esa nota (el 36 es de 2014 según la Gaceta UNAM y AP), así que no cambia nada.
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Segunda ronda
+
+29 oct 2026 · mismo verificador. Revisé completa la voz actual de `narracion.json` (11 líneas, 957 caracteres).
+
+| Línea (voz actual) | Veredicto | Nota / fuente |
+|---|---|---|
+| 0 "…el último censo completo halló treinta y seis por kilómetro cuadrado." | ✅ | Sin cambios. 36/km² en 2014 (Gaceta UNAM 2024; AP 2025); el año se dice en la línea 3. |
+| 1 "Su casa son los canales de Xochimilco: casi el único lugar donde vive libre." | ✅ | Corregida. Con "casi" ya cabe la población residual de Chalco que reconoce la IUCN (2020). |
+| 2 "En 1998, un censo de la UAM estimó seis mil por kilómetro cuadrado." | ✅ | Quitar "unos" no la vuelve más precisa que la fuente: la Gaceta UNAM dice "seis mil ejemplares por kilómetro cuadrado (cifra obtenida por la Universidad Autónoma Metropolitana)", AP dice "an estimated 6,000 axolotls per square kilometer in 1998" y Voss 2015 dice "6000 per square kilometer in 1998". "Estimó" ya deja claro que es un estimado. |
+| 3 "En 2008 quedaban cien. En 2014, la UNAM registró treinta y seis: seis de cada mil." | ✅ | Voss 2015 ("to 100 in 2008"); Gaceta UNAM ("36… registrado por la UNAM en 2014"); 36 ÷ 6,000 = 6/1,000. |
+| 4 "A cada uno le tocarían casi cuatro canchas de fútbol." | ✅ | 27,778 m² ÷ 7,140 m² (105 × 68 m, FIFA) = 3.89. |
+| 5 "¿Qué le pasó a su casa?" | ✅ | Pregunta, no afirma nada. |
+| 6 "La ciudad se tragó los humedales, el agua se volvió salada y sucia, y trajeron carpas y tilapias para criar." | ✅ | Sin cambios (Voss 2015; Zambrano et al. 2010). |
+| 7 "Esos peces dominaron los canales y se comen sus huevos y sus crías." | ✅ | Voss 2015: "predate on… eggs and juveniles"; Zambrano 2010: "dominate the system". Por el contexto (la línea 5 habla del ajolote) y la escena (huevos y cría de ajolote), "sus" se entiende como del ajolote. |
+| 8 "La UNAM y chinamperos arman refugios con filtros… medio por ciento de los canales." | ✅ | Sin cambios (Gaceta UNAM 2024: 0.5 %). |
+| 9 "En 2025, la primera etapa del nuevo censo sacó las redes vacías: solo el ADN en el agua probó que siguen ahí." | ✅ | Corregida. Grupo Animal 14 ago 2025: "emplearon redes de pesca artesanal, pero no encontraron ejemplares… ADN ambiental confirmaron la presencia". Los resultados de esa primera etapa se anunciaron en 2025. |
+| 10 "La mayoría de los de pecera vienen de treinta y cuatro que llegaron a París en 1863…" | ✅ | Sin cambios (Voss 2015). |
+
+La fuente 3 del guion ya tiene el título correcto ("Food web overlap…", Zambrano, Valiente y Vander Zanden 2010).
+
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

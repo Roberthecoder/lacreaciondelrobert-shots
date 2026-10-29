@@ -46,4 +46,24 @@ Cuentas revisadas: 17.7 µm = 0.0177 mm < 0.02 mm ✔ · 5.0–7.8 mm ≈ 5–8 
 
 (Los cambios agregan ~6 palabras; revisar que la voz siga cerca de 58 s.)
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Segunda ronda (29 oct 2026)
+
+Se aplicaron las 4 correcciones y se recortaron palabras en Gancho, Numero, Drenaje, Sirve, Filtro y Cierre (960 caracteres). Volví a revisar **toda** la voz actual de `narracion.json` contra las mismas fuentes que abrí en la primera ronda:
+
+| Escena | Voz actual | Veredicto | Fuente · frase textual · año |
+|---|---|---|---|
+| Gancho | Ese suéter no solo se ensucia: al lavarlo, se deshace en hilitos de plástico. | ✅ | Napper y Thompson 2016: "Washing clothes made from synthetic materials … source of microscopic fibres" (en pantalla, el chip "acrílico · poliéster = plástico") · 2016 |
+| Numero | Seis kilos de ropa acrílica pueden soltar más de setecientas mil fibras en una lavada. | ✅ | Napper y Thompson 2016: "over 700,000 fibres could be released from an average 6kg wash load of acrylic fabric" · 2016 |
+| Fibra | En promedio miden unos milímetros de largo y menos de dos centésimas de milímetro de grueso. | ✅ (corregida) | "Average fibre size ranged between 11.9 and 17.7μm in diameter, and 5.0 and 7.8mm in length" · 2016; en pantalla, flechas con "promedio" |
+| Drenaje | Salen con el agua sucia al drenaje. | ✅ | "Fibres from waste effluent were examined" · 2016 |
+| Planta | Un estudio de 2016 en una planta de Escocia: atrapaba casi todos los microplásticos y aun así soltaba sesenta y cinco millones diarios. | ✅ (corregida) | Murphy et al. 2016: "a decrease of 98.41% … releasing 65 million microplastics into the receiving water every day" · publicado en 2016 |
+| Pregunta | ¿Y los que sí atrapa, desaparecen? | ✅ (pregunta, no afirma) | — |
+| Lodos | No: se quedan en los lodos, que suelen usarse de abono. En lodos de Chile, en 2019, nueve de cada diez microplásticos eran fibras. | ✅ (corregida) | Corradini et al. 2019: "trapping the particles in the sludge"; "common practice to use this sludge on agricultural soils as a fertilizer"; "fibers (90% in sludge…)" · 2019 |
+| Estudio | Las setecientas mil fibras salieron de Plymouth, Inglaterra, en 2016; ahí la mezcla con algodón soltó menos. | ✅ (corregida) | Napper y Thompson 2016 (Plymouth University, England): "Polyester-cotton fabric consistently shed significantly fewer fibres" · 2016 |
+| Sirve | ¿Qué ayuda? Lavar en frío, en ciclo corto y con carga llena; el delicado suelta más. | ✅ | Cotton et al. 2020: "significantly greater for the 40 °C, 85 min cycle in comparison with the cold-quick cycle" · 2020; Kelly et al. 2019: "ensuring that full wash loads are used"; "delicate wash cycles released 800 000 more MFs" · 2019 |
+| Filtro | En 2020, un filtro en la salida de la lavadora atrapó cerca del setenta y ocho por ciento. | ✅ | Napper et al. 2020: "fitted externally to filter the effluent wastewater discharge"; "reducing their release to wastewater by around 78%" · 2020 |
+| Cierre | Ojo: sueltas fibras hasta con traerlo puesto. Ese suéter, poco a poco, se va con el agua. | ✅ | Napper et al. 2020: "fibres are also released when garments are worn in everyday use" · 2020 |
+
+En pantalla: chip "Chile · 2019: 90 % de los microplásticos del lodo, fibras" ✅; flechas "promedio" ✅; el resto, igual que en la primera ronda ✅. Ya no quedan ⚠️ ni ❌.
+
+VEREDICTO: APROBADO
