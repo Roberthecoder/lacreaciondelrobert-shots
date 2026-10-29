@@ -3,8 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #24 · rama `pedido300/fun`.
 - **Formato:** N1 Por dentro (taza → hoja → microscopio → la misma taza, transformada), con mezcla N1 + historia como "el estudio".
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Ese polvo naranja no es óxido: es un hongo, y vive de la planta de tu café.»
-- **Duración:** voz 983 caracteres / 187 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~985 créditos de ElevenLabs).
+- **Duración:** voz 992 caracteres / 186 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~995 créditos de ElevenLabs).
 
 ## Versión narrada
 
@@ -12,22 +12,22 @@
 |---|---|---|---|
 | 0 | Gancho | Ese polvo naranja no es óxido: es un hongo, y vive de la planta de tu café. | Fondo amarillo con lunares: una taza (jarrito de barro de café de olla) humeando; al lado, una rama de cafeto con cerezas rojas. Cuadro 0.3: un dedo pasa por debajo de una hoja y se queda manchado de polvo naranja. Sello "ÓXIDO" tachado → chip "es un hongo". |
 | 1 | Hoja | Es la roya del café, *Hemileia vastatrix*, y sale por debajo de la hoja. | La hoja se voltea: en el envés, manchas redondas amarillo-naranja con polvo; por arriba (haz), solo manchas amarillas pálidas. Etiquetas "roya del café · *Hemileia vastatrix*", "envés (abajo)", "haz (arriba)". |
-| 2 | Espora | Cada granito de ese polvo es una espora con forma de riñón. | **Bajada al microscopio** (fondo oscuro): las urediniosporas, en forma de riñón, lisas de un lado y con espinitas del otro. Etiqueta "urediniospora", barra "30 µm". |
-| 3 | Estomas | Con agua, germina y se mete por los estomas, los poritos de la hoja. | Una gota de agua en el envés; la espora saca un tubo que entra por un estoma (dos células en forma de frijol). Chip "estoma = poro de la hoja". |
+| 2 | Espora | Cada granito de ese polvo es una espora con forma de riñón. | **Bajada al microscopio** (fondo oscuro): las urediniosporas, en forma de riñón, con verruguitas en el lado curvo (convexo) y lisas en el lado recto/cóncavo. Etiqueta "urediniospora", barra "30 µm". |
+| 3 | Estomas | Con agua, germina y entra por los estomas, los poritos de la hoja. | Una gota de agua en el envés; la espora saca un tubo que entra por un estoma (dos células en forma de frijol), dibujado de ~25–30 µm, del mismo tamaño que la espora. Chip "estoma = poro de la hoja". |
 | 4 | Haustorios | Adentro le roba comida a las células vivas. | Dentro de la hoja: hifas entre las células verdes; pequeños "chupones" (haustorios) pegados a las células, flechitas de nutrientes hacia el hongo. Chip "solo vive en tejido vivo". |
-| 5 | Ramillete | Semanas después, brota por esos poros como un ramillete de esporas nuevas. | Cronómetro de semanas; por los estomas sale un ramillete de esporas naranjas. Las esporas vuelan con salpicadura de lluvia y viento. |
+| 5 | Ramillete | Semanas después, brota por esos poros como un ramillete de esporas nuevas. | Cronómetro «3–5 semanas»; por los estomas sale un ramillete de esporas naranjas. Las esporas vuelan con salpicadura de lluvia y viento. |
 | 6 | Caida | La hoja se cae antes de tiempo y una planta pelona da menos café. | **Subida a escala real:** el cafeto pierde hojas una por una; quedan ramas peladas y pocas cerezas. Chip "pierde hojas → menos cosecha". |
-| 7 | Pregunta | ¿Puede un hongo cambiar lo que toma un país? | **Re-gancho.** "?" gigante sobre una taza de café y una taza de té; Robert grande, pensativo. |
-| 8 | Ceilan | En el siglo diecinueve, en Ceilán, hoy Sri Lanka, la roya y los precios bajos tumbaron el café, y se pasaron al té. | Mapa de la isla (Ceilán / Sri Lanka); cafetales que se secan + una flecha de precio bajando; luego la isla se llena de matas de té. Chip "siglo XIX · roya + precios bajos". |
-| 9 | Estudio | En 2012 y 2013 golpeó Centroamérica y México: la cosecha centroamericana cayó dieciséis por ciento. | `TarjetaEstudio` "2012–2013 · Centroamérica y México · Avelino et al., *Food Security*, 2015"; mapa de México y Centroamérica que se pinta de naranja; barra de cosecha que baja "−16 %". |
-| 10 | Clima | En 2012 hubo noches más tibias y días menos calientes, y eso probablemente aceleró al hongo. | Termómetro día/noche: el de la noche sube, el del día baja; la diferencia se achica. Chip "hipótesis de los autores: probablemente lo aceleró". |
+| 7 | Pregunta | ¿Puede un hongo cambiar lo que siembra un país? | **Re-gancho.** "?" gigante entre un cafetal y un campo de té (sin tazas: lo de «por eso los ingleses toman té» es mito); Robert grande, pensativo. |
+| 8 | Ceilan | En el siglo diecinueve, en Ceilán, hoy Sri Lanka, la roya y los precios bajos tumbaron el café, y los cafetaleros se pasaron al té. | Mapa de la isla (Ceilán / Sri Lanka); cafetales que se secan + una flecha de precio bajando; luego la isla se llena de matas de té. Chip "siglo XIX · roya + precios bajos". |
+| 9 | Estudio | En 2012 y 2013 golpeó Centroamérica y México: la cosecha centroamericana cayó dieciséis por ciento. | `TarjetaEstudio` "2012–2013 · Centroamérica y México · Avelino et al., *Food Security*, 2015"; mapa de México y Centroamérica que se pinta de naranja; sobre Centroamérica (no sobre México), barra «Centroamérica · producción 2012–13 vs 2011–12: −16 %». |
+| 10 | Clima | En 2012 hubo noches más tibias y días menos calientes, y eso probablemente aceleró al hongo. | Termómetro día/noche: el de la noche sube, el del día baja; la diferencia se achica. Si se muestran cifras: «Guatemala, 2012: mínimas +0.9 °C · máximas −1.2 °C». Chip "hipótesis de los autores: probablemente lo aceleró". |
 | 11 | Timor | La defensa: cafetos cruzados con el híbrido de Timor, como los Catimor, aunque la roya ya venció a algunos. | Árbol genealógico simple: "híbrido de Timor" × "Caturra" → "Catimor" (hojas sanas, escudo). Luego algunas plantas del escudo se manchan: chip "la roya evoluciona". |
-| 12 | Cierre | Así que tu taza de café también es una batalla contra ese polvo naranja. | **Regreso a la imagen del inicio:** la misma taza humeando y la misma rama, ahora con hojas sanas y cerezas; un poco de polvo naranja en una hoja al fondo. Chip "tu café vs. la roya". |
+| 12 | Cierre | Así que tu taza también es una batalla contra ese polvo naranja. | **Regreso a la imagen del inicio:** la misma taza humeando y la misma rama, ahora con hojas sanas y cerezas; un poco de polvo naranja en una hoja al fondo. Chip "tu café vs. la roya". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua y algo tensa mientras avanza la infección; se abre un poco en la defensa (Timor) y en el cierre. Efectos en el mismo cuadro: vapor de la taza, roce del dedo en la hoja, golpe del sello, pops de cada espora, gota de agua, tubo que entra al estoma, succión suave de los haustorios, tics del cronómetro de semanas, soplo de esporas al brotar, hojas que caen (cada una), golpe del "?", mapa que se pinta, barra que baja, termómetros, escudo.
 
-Barras de escala: 10 cm (taza y rama), 1 cm (manchas en la hoja), 30 µm (esporas), 20 µm (estoma), 1 m (cafeto), 100 km / 500 km (mapas).
+Barras de escala: 10 cm (taza y rama), 1 cm (manchas en la hoja), 30 µm (esporas y estoma), 1 m (cafeto), 100 km / 500 km (mapas).
 
 (La tabla "Robert en pantalla" se agrega en la fase de animación.)
 

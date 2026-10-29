@@ -308,13 +308,13 @@ function AnilloShot() {
       <Chip T={T} at={K.G + 0.2} until={K.G + 2.3} texto="¿anillo de hadas?" x={330} y={470} tam={44} borde={KC.gold} />
       <Chip T={T} at={K.G + 2.5} until={K.Es - 0.3} texto="es un hongo" x={330} y={470} tam={48} borde={KC.leaf} />
       <Etq T={T} at={K.Es + 1.2} until={K.Mi - 0.3} x={620} y={780} texto="espora" tam={36} color={KC.yellow} />
-      <Etq T={T} at={K.Mi + 0.8} until={K.Ce - 0.3} x={60} y={1200} texto="micelio (hifas)" tam={34} color={FK.hifa} />
+      <Etq T={T} at={K.Mi + 0.8} until={K.Ce - 0.3} x={60} y={1540} texto="micelio (hifas)" tam={34} color={FK.hifa} />
       <Etq T={T} at={K.Ce + 1.0} until={K.V - 0.3} x={540} y={880} texto="comida agotada" lado="izq" tam={30} color={KC.texto} />
       <Etq T={T} at={K.Ce + 1.5} until={K.V - 0.3} x={60} y={420} texto="borde vivo" tam={36} color={KC.gold2} />
       <Chip T={T} at={K.V + 0.3} until={K.Ca - 0.3} texto="tipo II · anillo verde" x={360} y={470} tam={40} borde={KC.leaf} />
-      <Etq T={T} at={K.V + 1.6} until={K.Ca - 0.3} x={60} y={1200} texto="nitrógeno (amonio)" tam={32} color={KC.cyan} />
+      <Etq T={T} at={K.V + 1.6} until={K.Ca - 0.3} x={60} y={1540} texto="nitrógeno (amonio)" tam={32} color={KC.cyan} />
       <Chip T={T} at={K.Ca + 0.3} until={K.S - 0.3} texto="tipo I · anillo café" x={360} y={470} tam={40} borde={AN.cafe} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.S - 0.3} x={60} y={1200} texto="micelio que repele el agua" tam={30} color="#fff4d6" />
+      <Etq T={T} at={K.Ca + 1.0} until={K.S - 0.3} x={60} y={1540} texto="micelio que repele el agua" tam={30} color="#fff4d6" />
       <Chip T={T} at={K.S + 0.3} until={K.P - 0.3} texto="tipo III · anillo de setas" x={380} y={470} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.S + 2.0} until={K.P - 0.3} x={60} y={600} texto="Marasmius oreades" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.S + 2.4} until={K.P - 0.3} x={60} y={660} texto="“hongo de los anillos”" tam={30} color={KC.ink} />
