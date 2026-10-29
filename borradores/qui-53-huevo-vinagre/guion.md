@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Este huevo no está pelado: es un huevo crudo al que el vinagre le disolvió el cascarón."
 - **Distinto de** el #17 (anillo verde del huevo cocido) y del #20 (CO₂ del refresco): aquí el tema es la reacción ácido + carbonato del cascarón y la ósmosis a través de la membrana.
 - **Seguridad:** experimento de casa con vinagre de cocina; la voz dice lavarse las manos si el huevo crudo se revienta. No se invita a comérselo.
-- **Duración:** voz 955 caracteres / ≈175 palabras (≈ 58.1 s) + cierre 3.5 s → **≈ 61.6 s** (`estimar-escenas.mjs`).
+- **Duración:** voz 955 caracteres / 179 palabras (≈ 58.1 s) + cierre 3.5 s → **≈ 61.6 s** (`estimar-escenas.mjs`).
 - **Estado:** guion listo para verificación independiente. Sin animación. Voz pendiente de aprobación de Robert.
 
 ## Versión narrada

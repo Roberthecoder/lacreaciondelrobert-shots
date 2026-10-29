@@ -16,14 +16,14 @@ function Lapiz({ x, y, s = 1, rot = 0 }) {
   </g>;
 }
 // Hoja de papel con renglones y el trazo gris que va escribiendo (w = 0..1). Devuelve también la punta del trazo.
-const LINEA = (u) => [150 + u * 470, 960 + Math.sin(u * 17) * 26 - u * 20];
+const LINEA = (u) => [210 + u * 470, 960 + Math.sin(u * 17) * 26 - u * 20];
 function Papel({ w = 1 }) {
   const n = Math.max(2, Math.round(60 * w)), pts = Array.from({ length: n }, (_, i) => LINEA((i / (n - 1)) * w));
   return <g>
     <g transform="rotate(-4 380 920)">
-      <rect x={70} y={660} width={640} height={500} rx={10} fill="#fffdf6" stroke={KC.ink} strokeWidth={8} />
-      {[760, 840, 920, 1000, 1080].map((yy) => <line key={yy} x1={90} x2={690} y1={yy} y2={yy} stroke="#9fd0ff" strokeWidth={3} />)}
-      <line x1={150} x2={150} y1={665} y2={1155} stroke="#ff9aa8" strokeWidth={3} />
+      <rect x={120} y={660} width={640} height={500} rx={10} fill="#fffdf6" stroke={KC.ink} strokeWidth={8} />
+      {[760, 840, 920, 1000, 1080].map((yy) => <line key={yy} x1={140} x2={740} y1={yy} y2={yy} stroke="#9fd0ff" strokeWidth={3} />)}
+      <line x1={200} x2={200} y1={665} y2={1155} stroke="#ff9aa8" strokeWidth={3} />
     </g>
     <polyline points={pts.map((p) => p.join(',')).join(' ')} fill="none" stroke="#55585f" strokeWidth={13} strokeLinecap="round" strokeLinejoin="round" opacity={0.9} />
   </g>;
@@ -219,7 +219,7 @@ function LapizShot() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <Papel w={w0} />
-          <Lapiz x={tx0} y={ty0} s={0.78} rot={-28 + Math.sin(T * 9) * 1.5} />
+          <Lapiz x={tx0} y={ty0} s={0.78} rot={-20 + Math.sin(T * 9) * 1.5} />
           <Diamante T={T} x={860} y={1010} s={0.85} o={diam0} />
           {diam0 > 0.5 && <text x={760} y={860} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.G + 2.6, K.G + 3.0)}>=</text>}
         </SvgCapa>
@@ -239,10 +239,10 @@ function LapizShot() {
       <Escena T={T} a={K.Ca} b={K.De}>
         <Noche />
         <SvgCapa>
-          <Pila T={T} cx={560} base={1120} gap={100} n={5} aparece={(i) => kprog(T, K.Ca + 0.3 + i * 0.75, K.Ca + 0.9 + i * 0.75, kEase.sale)} />
+          <Pila T={T} cx={560} base={1150} gap={130} n={5} H={180} aparece={(i) => kprog(T, K.Ca + 0.3 + i * 0.75, K.Ca + 0.9 + i * 0.75, kEase.sale)} />
           {T > K.Ca + 4.0 && <g opacity={kprog(T, K.Ca + 4.0, K.Ca + 4.4)}>
-            <path d="M 905 720 L 925 720 L 925 820 L 905 820" fill="none" stroke={KC.gold2} strokeWidth={6} />
-            <text x={1050} y={690} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.gold2}>≈ 0.33 nm</text>
+            <path d="M 905 630 L 925 630 L 925 760 L 905 760" fill="none" stroke={KC.gold2} strokeWidth={6} />
+            <text x={1000} y={600} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.gold2}>≈ 0.33 nm</text>
           </g>}
         </SvgCapa>
       </Escena>
@@ -251,15 +251,15 @@ function LapizShot() {
         <Noche />
         <SvgCapa>
           <rect x={90} y={1140} width={900} height={74} rx={8} fill="#fffdf6" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.De + 2.6, K.De + 3.1)} />
-          <Pila T={T} cx={520} base={1000} gap={100} n={suelta > 0 ? 3 : 4} debiles={1 - slide * 0.6} dx={(i) => slide * i * 60 + Math.sin(T * 2 + i) * 4} />
-          {suelta > 0 && <Hoja cx={klerp(520 + 180, 540, suelta)} cy={klerp(700, 1176, suelta)} W={300} H={230} tilt={klerp(0.42, 0.14, suelta)} />}
+          <Pila T={T} cx={520} base={1000} gap={120} H={180} n={suelta > 0 ? 3 : 4} debiles={1 - slide * 0.6} dx={(i) => slide * i * 60 + Math.sin(T * 2 + i) * 4} />
+          {suelta > 0 && <Hoja cx={klerp(520 + 180, 540, suelta)} cy={klerp(640, 1176, suelta)} W={300} H={180} tilt={klerp(0.42, 0.14, suelta)} />}
         </SvgCapa>
       </Escena>
       {/* 4 · diamante: cada carbono con 4 vecinos, red 3D */}
       <Escena T={T} a={K.Di} b={K.Du}>
         <Noche />
         <SvgCapa>
-          <RedDiamante T={T} cx={560} cy={860} S={185} ang={0.5 + (T - K.Di) * 0.35} brillo={kprog(T, K.Di + 1.2, K.Di + 1.8)} />
+          <RedDiamante T={T} cx={560} cy={860} S={235} ang={0.5 + (T - K.Di) * 0.35} brillo={kprog(T, K.Di + 1.2, K.Di + 1.8)} />
         </SvgCapa>
       </Escena>
       {/* 5 · durísimo: disco con diamantes corta roca */}
@@ -310,7 +310,7 @@ function LapizShot() {
           <text x={80} y={870} textAnchor="middle" transform="rotate(-90 80 870)" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>1 mm</text>
         </SvgCapa>
         <Contador T={T} at={K.Cu + 0.5} hasta={3000000} dur={1.8} x={700} y={820} tam={84} color={KC.texto} />
-        {T > K.Cu + 0.5 && <div style={{ position:'absolute', left:700, top:910, transform:'translate(-50%,-50%)', zIndex:41, font:`900 52px ${KF.texto}`, color:KC.ink }}>capas de carbono</div>}
+        {T > K.Cu + 0.5 && <div style={{ position:'absolute', left:700, top:930, transform:'translate(-50%,-50%)', zIndex:41, whiteSpace:'nowrap', font:`900 52px ${KF.texto}`, color:KC.ink }}>capas de carbono</div>}
       </Escena>
       <Escena T={T} a={mitadCu} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.mint} />
@@ -321,7 +321,7 @@ function LapizShot() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <Papel w={1} />
-          <Lapiz x={LINEA(1)[0]} y={LINEA(1)[1]} s={0.78} rot={-28} />
+          <Lapiz x={LINEA(1)[0]} y={LINEA(1)[1]} s={0.78} rot={-20} />
           <Diamante T={T} x={860} y={1010} s={0.85} />
         </SvgCapa>
       </Escena>
@@ -347,7 +347,7 @@ function LapizShot() {
       <Chip T={T} at={K.Di + 0.4} until={K.Du - 0.2} texto="diamante: red en 3D" x={620} y={470} tam={40} borde={DIAM} />
       <Chip T={T} at={K.Di + 1.6} until={K.Du - 0.2} texto="cada C se une a 4" y={1500} tam={44} borde={KC.orange} />
       <Chip T={T} at={K.Du + 0.4} until={K.Pr - 0.2} texto="disco con diamantes" y={1500} tam={42} borde={KC.ink} />
-      <Onomato T={T} at={K.Du + 0.6} until={K.Pr - 0.2} x={830} y={520} texto="¡zzzz!" color={KC.yellow} tam={90} />
+      <SvgCapa z={41}><Onomato T={T} at={K.Du + 0.6} until={K.Pr - 0.2} x={850} y={760} texto="¡zzzz!" color={KC.yellow} tam={90} /></SvgCapa>
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2004" quien="Geim y Novoselov" revista="Univ. de Manchester · Science" y={560} />
       <Chip T={T} at={K.Es + 3.8} until={K.Gr - 0.2} texto="cinta adhesiva, otra y otra vez" y={1500} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.Gr + 0.4} until={K.Cu - 0.2} texto="grafeno · 1 átomo de grosor" x={620} y={470} tam={38} borde={KC.gold2} />

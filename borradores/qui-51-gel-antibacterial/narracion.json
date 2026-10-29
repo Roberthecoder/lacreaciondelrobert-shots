@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot Gel base narrada.dc.html",
+  "salida": "Shot Gel narrado.dc.html",
+  "nota": "Shot Químico #51. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese gel no te está lavando las manos: es alcohol desarmando a tus microbios." },
+    { "escena": "Que", "texto": "Para que funcione, el CDC pide que tenga al menos 60 por ciento de alcohol." },
+    { "escena": "Proteinas", "texto": "El alcohol desnaturaliza sus proteínas: las desdobla, y deformadas ya no sirven." },
+    { "escena": "Agua", "texto": "Lo raro: mezclado con agua mata mejor que puro, porque con agua las proteínas se desarman más rápido." },
+    { "escena": "Frotar", "texto": "Por eso hay que frotar hasta que seque: unos 20 segundos." },
+    { "escena": "Pregunta", "texto": "¿Entonces mata todo?" },
+    { "escena": "No", "texto": "No. Contra el norovirus, el de las diarreas, o las esporas de Clostridioides difficile, ganan el agua y el jabón." },
+    { "escena": "Estudio", "texto": "En 2010, en la Universidad Emory, en Atlanta, le pusieron norovirus a los dedos de 10 voluntarios: el gel casi no lo quitó, y un simple enjuague con agua quitó más." },
+    { "escena": "Grasa", "texto": "Y con las manos sucias o grasosas, funciona peor." },
+    { "escena": "Mexico", "texto": "Ojo: en 2021, la FDA puso en alerta todos los geles con alcohol hechos en México: más de la mitad de sus muestras traía tóxicos, como metanol." },
+    { "escena": "Cierre", "texto": "Así que ese gel no te lava las manos: las desinfecta. Y si hay agua y jabón, mejor." }
+  ]
+}

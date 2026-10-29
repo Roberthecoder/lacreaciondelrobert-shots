@@ -14,7 +14,7 @@ En 2000, un estudio doble ciego dirigido desde Harvard dio 5 gramos de glutamato
 La FDA lo clasifica como "generalmente reconocido como seguro". Reconoce que algunas personas sensibles pueden tener síntomas leves y pasajeros (dolor de cabeza, hormigueo, rubor) si toman 3 gramos o más sin comida; una porción típica con glutamato añadido trae menos de 0.5 gramos.
 Lo curioso: el glutamato es el aminoácido más abundante en la leche materna.
 El dibujo es esquemático. Si sientes molestias con algún alimento, platícalo con tu médico.
-Fuentes: FDA (Q&A on MSG) · Kwok, NEJM 1968 · Geha et al., J Allergy Clin Immunol y J Nutr 2000 · Ikeda 1908 (trad. Chem Senses 2002) · Koletzko 2018.
+Fuentes: FDA (Q&A on MSG) · Kwok, NEJM 1968 · Geha et al., J Allergy Clin Immunol y J Nutr 2000 · Ikeda 1909 (trad. Chem Senses 2002) · Koletzko 2018.
 ¿En tu casa usan sazonador? ¿Cómo le dicen en tu región? 👇
 Shot Químico #49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Ese polvito blanco no es veneno de restaurante: es glutamato, lo mismo que hay en tu jitomate. 🍅
-Su mala fama nació de una carta de 1968. En estudios a ciegas, las reacciones no se sostenían al repetir la prueba, y la FDA lo considera seguro (algunas personas sensibles pueden sentir molestias leves con 3 g o más sin comida; una porción trae menos de 0.5 g).
+Su mala fama nació de una carta de 1968. En un estudio a ciegas, sin comida, más personas reaccionaron al glutamato que al placebo, pero al repetir la prueba la mitad ya no, y con comida no hubo nada constante. La FDA lo considera seguro (algunas personas sensibles pueden sentir molestias leves con 3 g o más sin comida; una porción trae menos de 0.5 g).
 ¿En tu casa usan sazonador? 👇
 Shot Químico #49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -88,7 +88,7 @@ Ese polvito blanco no es veneno de restaurante: es glutamato, lo mismo que hay e
 ### Threads
 ```text
 Ese polvito blanco no es veneno de restaurante: es glutamato, lo mismo que hay en tu jitomate. 🍅
-Su mala fama nació de una carta de 1968. En 2000, a ciegas y sin comida, algunas personas reaccionaron más al glutamato que al placebo, pero al repetir la prueba la mitad ya no, y con comida no hubo nada constante. La FDA lo considera seguro.
+Su mala fama nació de una carta de 1968. En 2000, a ciegas y sin comida, más personas reaccionaron al glutamato que al placebo, pero al repetir la prueba la mitad ya no, y con comida no hubo nada constante. La FDA lo considera seguro.
 ¿En tu casa usan sazonador? 👇
 #Quimica
 ```

@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese plátano maduro no está quieto: suelta un gas que madura a la fruta de al lado."
 - **Distinto del #13** (aguacate que se pone café al cortarlo = enzima y oxígeno): aquí es maduración entera de la fruta por una hormona gaseosa.
 - **Seguridad:** nada peligroso; solo el truco casero de la bolsa de papel (la fuente advierte no usar bolsas de plástico cerradas: se menciona en la descripción).
-- **Duración:** voz 948 caracteres / ≈ 165 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** estimado (`estimar-escenas.mjs`).
+- **Duración:** voz 946 caracteres / ≈ 165 palabras (≈ 57.9 s) + cierre 3.5 s → **61.4 s** estimado (`estimar-escenas.mjs`).
 - **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
 
 ## Versión narrada
@@ -13,20 +13,20 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese plátano maduro no está quieto: suelta un gas que madura a la fruta de al lado. | Fondo amarillo. Frutero de cocina: un plátano con pecas cafés junto a un aguacate verde duro y una pera. Desde el cuadro 0 salen del plátano "nubecitas" de puntitos que flotan hacia el aguacate; el aguacate se oscurece un poco. Chip "¿quieto?" se tacha. |
-| 1 | Que | Se llama etileno: dos carbonos y cuatro hidrógenos, la hormona vegetal más simple que se conoce. | Zoom a una nubecita: la molécula C₂H₄ en bolitas (2 carbonos negros con doble enlace, 4 hidrógenos blancos) gira y se arma pieza por pieza; etiqueta "etileno · C₂H₄". Medidor de escala: "≈ 0.3 nm" (tamaño esquemático, solo orden de magnitud). |
+| 1 | Que | Se llama etileno: dos carbonos y cuatro hidrógenos, la hormona vegetal más simple que se conoce. | Zoom a una nubecita: la molécula C₂H₄ en bolitas (2 carbonos negros con doble enlace, 4 hidrógenos blancos) gira y se arma pieza por pieza; etiqueta "etileno · C₂H₄". Medidor de escala: "≈ 0.4 nm" (tamaño esquemático, solo orden de magnitud). |
 | 2 | Hormona | La fruta lo suelta al aire y la de al lado lo recibe como orden: madura. | Fondo noche (escena interna): la molécula entra por la cáscara del aguacate y llega a un receptor (cerradura) en una célula; se enciende un letrero "¡MADURA!". |
 | 3 | Cadena | Respira más rápido, cambia de color, se ablanda y suelta más etileno. | Cuatro chips que entran uno cada ~1 s: pulmón/burbujas de CO₂ (respira), cáscara que cambia de verde a negro, pulgar que hunde la pulpa (se ablanda), y la célula que ahora escupe sus propias moléculas de C₂H₄ (flecha circular "más etileno → más etileno"). |
 | 4 | Bolsa | Por eso un aguacate madura antes en bolsa de papel con una manzana madura. | **El experimento:** dos aguacates duros. Uno solo en la mesa; otro en bolsa de papel con una manzana roja. Cronómetro "días" que corre; la bolsa se llena de puntitos de C₂H₄. Al abrirla, ese aguacate ya cede al apretarlo; el de afuera sigue duro. |
 | 5 | Pregunta | ¿Y por qué tus uvas nunca maduran en el frutero? | **Re-gancho.** Racimo de uvas verdes agrias en el frutero; los puntitos de etileno les llegan y "rebotan". "?" gigante. |
-| 6 | Tipos | Las uvas, las fresas y los cítricos maduran en la planta; cortados, casi no. | Tabla de dos columnas. Izquierda "maduran en la planta": uva, fresa, limón y naranja, cada una con un hilo a su planta; al cortar el hilo, la fruta se congela en su color. |
+| 6 | Tipos | Las uvas, las fresas y los cítricos maduran en la planta; cortados, ya no maduran. | Tabla de dos columnas. Izquierda "maduran en la planta": uva, fresa, limón y naranja, cada una con un hilo a su planta; al cortar el hilo, la fruta se congela en su color. |
 | 7 | Tipos | El plátano, el aguacate y la manzana sí siguen. | Columna derecha "siguen después de cortados": plátano, aguacate, manzana; cada uno avanza su barra de color (verde → maduro). Etiqueta chica: "climatéricas". |
-| 8 | Neljubov | En 1901, en San Petersburgo, Neljubov vio chícharos creciendo de lado: era el etileno del gas de alumbrado. | `TarjetaEstudio` "1901 · D. Neljubov · San Petersburgo". Laboratorio a oscuras con una lámpara de gas; plántulas de chícharo (*Pisum sativum*) que, en vez de subir, se doblan y crecen de lado. Del tubo de la lámpara salen puntitos C₂H₄. Al filtrar el gas, las plántulas se enderezan. |
-| 9 | Gane | En 1934, en Cambridge, Gane juntó el gas de unos 27 kilos de manzanas y probó que la fruta lo fabrica. | `TarjetaEstudio` "1934 · R. Gane · Cambridge, Inglaterra". Montaña de manzanas con báscula "≈ 27 kg"; una manguera recoge su aire hacia un frasco de vidrio frío; en el frasco aparece "C₂H₄ ✓". |
-| 10 | Incienso | Lo curioso: en la antigua China, la fruta junto al incienso de los templos maduraba antes: el humo suelta etileno. | Templo con incensario humeante; a su lado, peras/caquis que se doran más rápido que los del otro lado. Del humo salen los mismos puntitos C₂H₄. |
+| 8 | Neljubov | En 1901, en San Petersburgo, Neljubov vio chícharos creciendo de lado: era el etileno del gas de alumbrado. | `TarjetaEstudio` "1901 · D. Neljubov · San Petersburgo". Laboratorio a oscuras con una lámpara de gas; plántulas de chícharo (*Pisum sativum*) que, en vez de subir, se doblan y crecen de lado. Del tubo de la lámpara salen puntitos C₂H₄. Con aire de afuera, las plántulas vuelven a crecer derechas. |
+| 9 | Gane | En 1934, en Cambridge, Gane juntó el gas de un montón de manzanas maduras y probó que la fruta lo fabrica. | `TarjetaEstudio` "1934 · R. Gane · Cambridge, Inglaterra". Montaña de manzanas maduras en un laboratorio; sus "nubecitas" de gas se recogen y se analizan; aparece "C₂H₄ ✓" junto a la manzana. |
+| 10 | Cuarto | Lo curioso: los plátanos de exportación viajan verdes, y al llegar los maduran en cuartos con etileno. | Barco con cajas de plátanos verdes que llega al puerto; las cajas entran a un cuarto cerrado con un tanque "C₂H₄" y termómetro; los puntitos de etileno llenan el cuarto y los plátanos pasan de verde a amarillo. |
 | 11 | Cierre | Así que ese plátano no está quieto: es el jefe de tu frutero. | **Regreso al frutero del inicio, transformado:** el aguacate ya maduro, la pera amarilla; el plátano con una coronita y una nube de C₂H₄ a su alrededor. Las uvas igual que al principio. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
-**Música:** cama grave continua, sin golpe marcado, debajo de la voz. Efectos en el mismo cuadro: "pfff" suave de cada nubecita de gas, clic al armarse la molécula, "llave en cerradura" cuando llega al receptor, tic-tac del cronómetro, crujido de la bolsa de papel, "boing" de las moléculas que rebotan en las uvas, tijeretazo al cortar el hilo, siseo de la lámpara de gas, campanita del templo.
+**Música:** cama grave continua, sin golpe marcado, debajo de la voz. Efectos en el mismo cuadro: "pfff" suave de cada nubecita de gas, clic al armarse la molécula, "llave en cerradura" cuando llega al receptor, tic-tac del cronómetro, crujido de la bolsa de papel, "boing" de las moléculas que rebotan en las uvas, tijeretazo al cortar el hilo, siseo de la lámpara de gas, zumbido del cuarto de maduración.
 
 ## Fuentes (cada dato se abrió en la fuente el 29 oct 2026)
 
@@ -43,16 +43,17 @@
    Y Keunen E. et al. "Ethylene and Metal Stress: Small Molecule, Big Impact." *Front Plant Sci* 7:23 (2016). PMID 26870052 · PMC4735362:
    > "In 1901, the Russian plant physiologist Neljubov reported that etiolated pea plants grew horizontally in the laboratory and upright in outside air (Neljubov, 1901). He attributed this abnormal growth response to ethylene in illuminating gas"
    (Original: Neljubov D. "Ueber die horizontale Nutation der Stengel von *Pisum sativum* und einiger anderen Pflanzen." *Beih. Bot. Centralbl.* 10:128–139, 1901.)
-6. **1934, Gane, Cambridge, gas de ~60 libras (≈ 27 kg) de manzanas; primera prueba química de que las plantas producen etileno** — Hao, Li y Guo (2025), fuente 1:
+6. **1934, Gane, Cambridge, gas de muchas manzanas maduras (≈ 60 libras; la voz no da la cifra); primera prueba química de que las plantas producen etileno** — Hao, Li y Guo (2025), fuente 1:
    > "In 1934, Richard Gane from the Low Temperature Research Laboratory at the University of Cambridge (Cambridge, England) collected metabolic gas products from about 60 pounds of Worcester Pearmain apples" · "Gane's discovery was the first time that plants' ability to produce ethylene was confirmed through chemical analysis"
    Original: Gane R. "Production of ethylene by some ripening fruits." *Nature* 134:1008 (29 dic 1934). DOI 10.1038/1341008a0. Y Keunen et al. (2016): "It took 33 more years to provide chemical proof that plants indeed synthesize this volatile molecule themselves (Gane, 1934)". (60 lb × 0.4536 = 27.2 kg.)
-7. **China antigua: fruta junto al incienso de los templos maduraba más rápido; el incienso suelta etileno** — Hao, Li y Guo (2025), fuente 1:
-   > "In ancient China, it was observed that fruits near incense burners in temples ripened faster, leading to the development of a traditional 'incense-ripening' technique" · "the mechanism—ethylene release from incomplete incense combustion" · "smoldering herbal incense generates substantial olefins, with ethylene emissions reaching 1,350 ± 150 μg·g−1"
+7. **Los plátanos de exportación se cortan verdes y se maduran al llegar en cuartos con etileno** — EFSA Panel on Plant Health (Bragard C. et al.). "Scientific opinion on the import of *Musa* fruits as a pathway for the entry of non-EU Tephritidae into the EU territory." *EFSA Journal* 19(3):e06426 (2021). PMID 33732390 · PMC7938759 · DOI 10.2903/j.efsa.2021.6426.
+   > "Commercial Musa fruits are harvested at 'green stage one' before they begin to ripen naturally." · "Green stage one fruit are transported to the EU in controlled conditions and stimulated to ripen when exposed to exogenous ethylene in ripening rooms in the EU." · "On arrival in the EU, fruit can continue to be stored for a few days and are ripened in ripening rooms where the fruit is exposed to exogenous ethylene over 4–7 days."
+   Para la descripción (no va en la voz), el mismo documento cita a Kader (2020): "most commercial cultivars of bananas require exposure to 100–150 ppm of ethylene for 24–48 h" (solo para la descripción, no va en la voz).
 
 ## Notas
 - El dibujo es esquemático: las "nubecitas" de etileno, el receptor como cerradura, la escala de la molécula y el letrero "¡MADURA!" son metáforas visuales.
-- "Casi no" maduran cortadas (uvas, fresas, cítricos): la fuente dice "slow or non-existent"; la voz no dice "nunca" sobre la maduración, solo en la pregunta retórica de las uvas del frutero.
+- "Ya no maduran" cortadas (uvas, fresas, cítricos): la fuente dice "slow or non-existent"; la voz no dice "nunca" sobre la maduración, solo en la pregunta retórica de las uvas del frutero.
 - Las climatéricas siguen madurando si se cortaron ya desarrolladas ("harvested at completion of their growth period"); fruta cortada muy tierna puede no madurar bien. Va en la descripción.
 - No todas las manzanas sirven igual para el truco: Fuji y Granny Smith sueltan poco etileno (Kader 2004). Y nada de bolsa de plástico cerrada. Va en la descripción.
-- Los chícharos de Neljubov eran plántulas germinadas a oscuras (etioladas); la voz dice solo "chícharos creciendo de lado".
-- Lo del incienso es una práctica tradicional que reporta la revisión de 2025; no hay fecha exacta, por eso la voz dice solo "en la antigua China".
+- Los chícharos de Neljubov eran plántulas germinadas a oscuras (etioladas) que crecían de lado en el aire del laboratorio y derechas en el aire de afuera; la voz dice solo "chícharos creciendo de lado".
+- El dato del cuarto de maduración describe la exportación de plátano a la Unión Europea (EFSA 2021); la voz no da cifras. Lo del incienso en la antigua China se quitó (tradición sin fuente original).
