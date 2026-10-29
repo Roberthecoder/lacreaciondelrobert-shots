@@ -171,7 +171,7 @@ function Antiveneno() {
     Es: CUES.Estudio, Re: CUES.Resultado, Fd: CUES.FDA, Mx: CUES.Mexico, Mu: CUES.Muertes, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   // gancho: el alacrán cruza desde el cuadro 0 y el caballo asoma
-  const alaX = klerp(60, 600, kprog(T, K.G, K.G + 2.4, kEase.sale));
+  const alaX = klerp(60, 520, kprog(T, K.G, K.G + 2.4, kEase.sale));
   const asoma = kprog(T, K.G + 2.6, K.G + 3.3, kEase.rebote);
   // dosis: la jeringa llega al cuello y empuja en escalones
   const HX = 700, HY = 1180, HS = 1.05;
@@ -200,7 +200,7 @@ function Antiveneno() {
         <CapaAV>
           <ellipse cx={540} cy={1185} rx={520} ry={40} fill="rgba(0,0,0,.12)" />
           <Frasco x={380} y={1090} s={1.25} rot={Math.sin(T * 2.2) * 3} />
-          {asoma > 0 && <g transform={`translate(${klerp(1300, 980, asoma)} 1190)`}><Caballo T={T} x={0} y={0} s={0.85} /></g>}
+          {asoma > 0 && <g transform={`translate(${klerp(1300, 900, asoma)} 1190)`}><Caballo T={T} x={0} y={0} s={0.75} /></g>}
           <Alacran T={T} x={alaX} y={1185} s={1.2} camina={1 - kprog(T, K.G + 2.4, K.G + 2.6)} />
         </CapaAV>
       </Escena>
@@ -370,7 +370,7 @@ function Antiveneno() {
         [CUES.Dosis + 1.0, CUES.Aprende - 0.3, 'avatar_10_serio_molesto', 'izq-alto'],
         [CUES.Plasma + 0.5, CUES.Anticuerpo - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Anticuerpo + 1.5, CUES.Pepsina - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
-        [CUES.Pregunta + 0.05, CUES.Estudio + 0.9, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Estudio + 0.3, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Resultado + 1.2, CUES.FDA - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Mexico + 2.5, CUES.Muertes - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Muertes + 1.0, CUES.Cierre - 0.2, 'avatar_10_serio_molesto', 'izq-alto'],
