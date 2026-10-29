@@ -28,7 +28,7 @@ for (let i = 0; i < 4; i++) m.tic(Po + 0.5 + i * 1.2, 0.1, 900);                
 for (let i = 0; i < 14; i++) m.tic(Po + 1.0 + i * 0.12, 0.05, 1800);                  // reloj rápido
 m.gota(Ay + 0.2, 0.2, 900); m.burbuja(Ay + 1.0, 0.15, 400); for (let i = 0; i < 4; i++) m.gota(Ay + 2.6 + i * 0.25, 0.12, 1100);
 m.sube(Pr + 0.1, 1.6, 52, 64, 0.05);
-m.golpe(Pa + 0.45, 0.35, 80);                                                         // tarjeta
+m.golpe(Pa + 0.65, 0.35, 80);                                                         // tarjeta
 m.sube(Pa + 2.4, 0.8, 57, 64, 0.04); m.pad(Pa + 3.2, Pa + 6.0, 0.02, [64], 0.2);      // la curva sube y se queda
 m.golpe(Cu + 0.2, 0.35, 80);
 m.pad(Cu + 3.0, Cu + 6.5, 0.03, [40, 47], 0.5);                                       // daño profundo (grave, tapado)

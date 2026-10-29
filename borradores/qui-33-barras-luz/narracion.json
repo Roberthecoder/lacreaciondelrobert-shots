@@ -7,11 +7,11 @@
     { "escena": "Que", "texto": "Adentro del vidrio hay agua oxigenada; afuera, un éster oxalato y un colorante." },
     { "escena": "Mezcla", "texto": "Al mezclarse forman una molécula diminuta e inestable." },
     { "escena": "Energia", "texto": "Se parte en dióxido de carbono y le pasa su energía al colorante, que la suelta como luz sin calor." },
-    { "escena": "Experimento", "texto": "Ahora tres barras: en hielo, al ambiente y en agua caliente. ¿Cuál dura más?" },
+    { "escena": "Experimento", "texto": "Tres barras: en hielo, al ambiente y en agua caliente. ¿Cuál dura más?" },
     { "escena": "Resultado", "texto": "La del hielo apenas brilla, pero dura más; la caliente brilla muchísimo y se apaga pronto: el frío frena la reacción." },
-    { "escena": "Estudio", "texto": "¿Y qué molécula era? En 2021, en la Universidad de São Paulo, Brasil, probaron que es la dioxetanodiona: un anillo de dos dióxidos de carbono." },
+    { "escena": "Estudio", "texto": "¿Y qué molécula era? En 2021, en la Universidad de São Paulo, Brasil, dieron pruebas fuertes de que es la dioxetanodiona: un anillo de dos dióxidos de carbono." },
     { "escena": "Dato", "texto": "Lo curioso: en 2018, un centro toxicológico de Australia contó casi 3 mil casos con barras de luz en 4 años, casi todos niños, sobre todo en diciembre." },
     { "escena": "Seguridad", "texto": "Casi nunca fue grave, pero el líquido irrita: si te cae, lávate con agua." },
-    { "escena": "Cierre", "texto": "Así que ese crac no es plástico: es una reacción química encendiéndose en tu mano." }
+    { "escena": "Cierre", "texto": "Ese crac no es plástico: es una reacción química encendiéndose en tu mano." }
   ]
 }

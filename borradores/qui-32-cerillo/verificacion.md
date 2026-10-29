@@ -35,4 +35,6 @@ Notas del verificador:
 ## Correcciones aplicadas (29 oct 2026)
 Se aplicaron tal cual las propuestas del verificador (y, si hizo falta, solo se quitó relleno sin cambiar datos).
 
+Recortes de estilo sin cambiar datos: «¿Y por qué no poner el fósforo blanco en la cabeza, como antes?» → «¿Y por qué no ponerlo en la cabeza, como antes?» (el sujeto, fósforo blanco, ya se nombró en la frase anterior). Total estimado: 62.1 s → 61.2 s.
+
 VEREDICTO: APROBADO

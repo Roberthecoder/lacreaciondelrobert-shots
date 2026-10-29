@@ -4,7 +4,7 @@
 - **Formato:** N1 "Por dentro" (frotar el cerillo en la caja → microscopio de la tira y de la cabeza → la misma mano con el cerillo ya encendido) + N5 "El experimento" en versión histórica (la huelga de Londres, 1888, y Berna, 1906).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Ese cerillo no trae el fuego en la cabeza: el fósforo está en la tira de la caja."
 - **Seguridad:** no se muestra ni se sugiere ningún experimento; nunca se ve a nadie mezclando polvos. Ver Notas (la mezcla de clorato y fósforo rojo es sensible a golpes).
-- **Duración:** voz 952 caracteres / ≈ 180 palabras (≈ 58.2 s) + cierre 3.5 s → **≈ 61.7 s** (`estimar-escenas.mjs --outro 3.5`).
+- **Duración:** voz 943 caracteres / ≈ 178 palabras (≈ 57.7 s) + cierre 3.5 s → **≈ 61.2 s** (`estimar-escenas.mjs --outro 3.5`).
 - **Estado:** guion escrito; pendiente de verificación independiente (`verificacion.md`), animación y aprobación de voz de Robert.
 
 ## Versión narrada
@@ -17,7 +17,7 @@
 | 3 | Friccion | Al frotar, el calor de la fricción convierte una pizca de fósforo rojo en fósforo blanco. | La cabeza pasa raspando sobre las astillas; termómetro que sube; unos pocos granos rojos se vuelven tetraedros blancos P₄ ("una pizca"). |
 | 4 | Chispa | Y el fósforo blanco se prende solo al tocar el aire. | Moléculas de O₂ del aire tocan los P₄: destello y chispa blanca-amarilla. |
 | 5 | Llama | Esa chispa hace que el clorato suelte oxígeno; arde el azufre y luego la madera. | Secuencia en cadena: KClO₃ suelta O₂ (burbujitas azules) → azufre se enciende azul → la llama sube al palito de madera. Chip "clorato → oxígeno". |
-| 6 | Pregunta | ¿Y por qué no poner el fósforo blanco en la cabeza, como antes? | **Re-gancho.** Un cerillo antiguo con la cabeza blanca (P blanco) y un "?" gigante. |
+| 6 | Pregunta | ¿Y por qué no ponerlo en la cabeza, como antes? | **Re-gancho.** Un cerillo antiguo con la cabeza blanca (P blanco) y un "?" gigante. |
 | 7 | Huelga | En 1888, en Londres, 1400 mujeres de una fábrica de cerillos que usaba fósforo blanco se fueron a huelga por despidos y multas. | `TarjetaEstudio` "1888 · Londres (Bow) · Bryant & May"; una fábrica de ladrillo y una fila de siluetas de mujeres que salen por la puerta mientras un contador sube a "1400". Chips "despidos" y "multas". |
 | 8 | Quijada | Ahí, su humo podía matar el hueso de la quijada: entre 1882 y 1897, casi 1 de cada 5 enfermos murió. | Vapor verdoso que sale de una tina; esquema de un cráneo de perfil con la mandíbula que se oscurece. Cinco siluetas; una se apaga. Chip "1882–1897 · 19 % de los casos". |
 | 9 | Berna | En 1906, en Berna, Suiza, varios países firmaron prohibir esos cerillos. | Mapa de Europa esquemático con un alfiler en Berna; documento "Convención de Berna · 1906" y sello rojo "PROHIBIDO: fósforo blanco en cerillos". |

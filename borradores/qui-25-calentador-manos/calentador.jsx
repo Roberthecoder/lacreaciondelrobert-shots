@@ -270,7 +270,7 @@ function Calentador() {
               <Bolsita T={T} x={1000} y={680} s={0.35} calor={1} rot={10} />
             </g>; })()}
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.Pa + 0.45} until={K.Pa + 2.2} anio="años 70" quien="Asahi Kasei · patente" revista="US 3,976,049 · prueba del ejemplo 4" x={560} y={820} />
+        <TarjetaEstudio T={T} at={K.Pa + 0.65} until={K.Pa + 2.2} anio="años 70" quien="Asahi Kasei · patente" revista="US 3,976,049 · prueba del ejemplo 4" x={560} y={820} />
         {T > K.Pa + 2.4 && <Contador T={T} at={K.Pa + 2.4} desde={0} hasta={22} dur={3.6} sufijo=" horas" x={560} y={1480} tam={90} color={KC.ink} />}
       </Escena>
       {/* 8 · cuidado: quemadura de baja temperatura */}
@@ -281,7 +281,7 @@ function Calentador() {
           <Bolsita T={T} x={540} y={800} s={0.5} rot={90} calor={1} />
           <Termo x={140} y={1700} s={0.7} v={0.55} on={1} texto="44 °C" />
           <Reloj T={T} x={940} y={1640} r={60} vel={0.9} texto="3–4 h" />
-          {T > K.Cu + 3.5 && <text x={760} y={860} style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Cu + 3.5, K.Cu + 3.9)}>“solo tibio” 🙂</text>}
+          {T > K.Cu + 3.5 && <text x={540} y={710} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Cu + 3.5, K.Cu + 3.9)}>“solo se siente tibio”</text>}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Cu + 0.2} until={K.Cu + 2.8} anio="2025" quien="NITE · Japón" revista="aviso sobre calentadores (カイロ)" x={640} y={620} />
         <Chip T={T} at={K.Cu + 3.0} until={K.Co - 0.2} texto="quemadura de baja temperatura" y={1460} tam={36} borde={KC.red} />
@@ -340,7 +340,7 @@ function Calentador() {
         [CUES.Empaque + 0.4, CUES.Oxido - 0.3, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Oxido + 0.8, CUES.Polvo - 0.3, 'avatar_06_pensativo_menton', 'izq-alto'],
         [CUES.Polvo + 2.0, CUES.Ayudantes - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
-        [CUES.Pregunta + 0.05, CUES.Patente + 0.35, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Patente + 0.2, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Patente + 2.6, CUES.Cuidado - 0.3, 'avatar_04_bajando_lentes', 'izq-alto'],
         [CUES.Cuidado + 0.5, CUES.Consejo - 0.2, 'avatar_10_serio_molesto', 'izq-alto'],
         [CUES.Consejo + 0.3, CUES.Cierre - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],

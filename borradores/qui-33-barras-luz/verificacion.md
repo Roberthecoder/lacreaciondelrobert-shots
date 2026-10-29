@@ -30,3 +30,8 @@
 3. **#17 etiqueta del cierre** — Propuesta: "H₂O₂ + oxalato + colorante → luz".
 
 Notas (no requieren cambio): el dato de Australia es de un solo centro (Nueva Gales del Sur) y de jul 2013–jun 2017; la voz dice "en 2018" (año del artículo), correcto. "Luz sin calor" es la frase del MIT; aclarar en la descripción que libera muy poco calor. El diseño "H₂O₂ adentro" es el común (UW, MIT), algunas barras lo invierten: aclararlo en la descripción como ya propone el guion.
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplican tal cual las 3 propuestas del verificador: «dieron pruebas fuertes de que es la dioxetanodiona»; escala «< 1 nm · no a escala»; cierre «H₂O₂ + oxalato + colorante → luz». (Si hace falta cuadrar el tiempo, solo se quita relleno sin cambiar datos.)
+
+VEREDICTO: APROBADO
