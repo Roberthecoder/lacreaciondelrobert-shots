@@ -52,3 +52,26 @@
 6. **Temblor:** "Y en el zoom usan tu temblor" → **"Y para el zoom, otro estudio de Google de 2019 usó tu temblor…"** (el Pixel 10 Pro de 2025 ya usa IA generativa pasado 30×; no afirmar el presente). Chip: "Super Res Zoom · artículo 2019".
 7. **Barra de escala "≈ 1 µm":** quitar el número o cambiarla a una fuente verificada del sensor concreto.
 8. **Cierre:** "…y la matemática las volvió una sola" puede quedarse si el gancho ya fechó todo en 2019; si se agrega el dato de 2023, cambiar a "…y la matemática (y hoy también la IA) las volvió una sola".
+
+## Re-verificación
+
+29 oct 2026 · mismo verificador independiente. Revisé solo lo que cambió en `narracion.json`, `fotocelular.jsx` y `guion.md`.
+
+| # | Afirmación nueva / cambiada | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R0 | "Esa foto que tomaste de noche no es una foto: son hasta trece, encimadas." + subtítulo "son hasta 13" + "×13" | ✅ (la línea siguiente la fecha y la acota a los Pixel) | Liba et al. 2019 | "we capture and merge a burst of 6–13 frames" | 2019 |
+| R1 | "Así lo describió Google en 2019 para sus Pixel." + chip "modo noche · Pixel · 2019" | ✅ | Liba et al. 2019 | "launched to the public in November 2018 as Night Sight on Google Pixel smartphones"; "ACM Trans. Graph. 38, 6, Article 164 (November 2019)" | 2019 |
+| R2 | "cada pixel es diminuto: atrapa poquita luz y la foto sale con ruido" | ✅ | Hasinoff et al. 2016 | "small sensor pixels, which limits the number of electrons each pixel can store" / "noisy images in low light" | 2016 |
+| R3 | "Con una foto larga, el temblor de tu mano la barrería." + chip "1 foto larga = foto movida" | ✅ | Liba 2019; Hasinoff 2016 | "increased chance of motion blur, especially when the device is handheld" / "motion blur due to camera shake" | 2019 / 2016 |
+| R4 | "tomaba una ráfaga de fotos de hasta un tercio de segundo" + chip "hasta ⅓ de segundo cada una" | ✅ (en la mano, que es la escena) | Liba 2019 | "When the device is handheld, we capture up to 333 ms exposures" | 2019 |
+| R5 | "Las alineaba pedacito por pedacito y las juntaba: el ruido baja" | ✅ | Liba 2019 §3.1; Hasinoff 2016 | "We use a tile-based alignment algorithm" / "captures, aligns, and merges a burst of frames to reduce noise" | 2019 / 2016 |
+| R7 | "Alinear y juntar era matemática clásica, no una red neuronal." + chips "2019 · alinear y juntar", "Fourier, filtro de Wiener", red tachada "no es red neuronal" | ✅ (fechado en 2019) | Liba 2019; Hasinoff 2016 | "merged by performing a weighted average in the Fourier domain"; "hybrid 2D/3D Wiener filter"; "Bounded Flow is as accurate as other methods that are not based on neural networks" | 2016–2019 |
+| R8 | "Lo que sí aprendió fue el color: un modelo entrenado con cinco mil fotos ajustadas por fotógrafos." + chip "5 000 fotos ajustadas por fotógrafos"; ahora se dibuja `CajaModelo` (no `RedNeuronal`) | ✅ | Liba 2019 §4.1 | "learning-based auto white balancing algorithm"; "we collected 5000 images … we recruited professional photographers to manually 'tag' the most aesthetically preferable white balance" | 2019 |
+| R9 | "Funcionaba hasta con tres décimas de lux, cuando tus ojos ya casi no ven colores." + tarjeta 2019 Liba et al. + "0.3 lux" | ✅ | Liba 2019 | "in light as low as 0.3 lux, where human vision becomes monochromatic and indistinct" | 2019 |
+| R10 | "otro estudio de Google de 2019 usó tu temblor: tu mano tiembla de ocho a doce veces por segundo" + chips "Super Res Zoom · artículo 2019", "8 a 12 temblores por segundo" | ✅ | Wronski et al. 2019 | "We harness natural hand tremor"; "a frequency in the range of 8–12 Hz"; "the basis of the Super-Res Zoom feature" | 2019 (temblor: Marshall y Walsh 1956) |
+| R11 | "Y desde 2023, una red neuronal también le quita el ruido." + chip "desde 2023 · red neuronal contra el ruido" | ✅ (en el contexto, "le" es el modo noche de los Pixel) | blog.google, "How we made Pixel's Night Sight even faster", 18 abr 2023 | "a new machine learning algorithm that runs on Tensor reduces unwanted noise in the final photo" / "it powers a new neural network that dramatically reduces noise" | 2023 |
+| R12 | Cierre: "Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y hoy también por IA." + chip "matemática + IA" | ⚠️ generaliza de más | blog.google 2023 (solo Pixel) | La fuente habla solo de los Pixel (desde el Pixel 7). "Tu foto de noche" … "hoy también por IA" lo extiende a cualquier celular y a cualquier foto de noche, y eso no está verificado (no todos los teléfonos usan una red neuronal de noche) | 2023 |
+| — | Barra de escala "≈ 1 µm" | ✅ (resuelto) | — | Ya no está en `fotocelular.jsx` | — |
+
+### Correcciones pendientes
+1. **Cierre (línea 12):** "Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y hoy también por IA." → **"Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y, en los Pixel de hoy, también por IA."** (el chip "matemática + IA" puede quedarse). Con ese cambio, todo queda ✅.

@@ -296,7 +296,7 @@ function EnergiaPregunta() {
           <div style={{ position:'absolute', left:790, top:918, font:`900 28px ${KF.texto}`, color:KC.red, whiteSpace:'nowrap', opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
         </div>; })()}
 
-      {T >= L9 && T <= K.R + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:44, opacity:1 - kprog(T, K.R - 0.1, K.R + 0.4) }}>{svgK(<><g transform={`translate(560 960) rotate(-8) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
+      {T >= L9 && T <= K.R + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:44, opacity:1 - kprog(T, K.R - 0.1, K.R + 0.4) }}>{svgK(<><g transform={`translate(600 872) rotate(-6) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
             <rect x={-250} y={-60} width={500} height={120} rx={16} fill="rgba(255,59,47,.15)" stroke={KC.red} strokeWidth={10} />
             <text y={30} textAnchor="middle" style={{ font:`400 88px ${KF.titulo}` }} fill={KC.red}>PROYECCIÓN</text>
           </g></>)}</div>}

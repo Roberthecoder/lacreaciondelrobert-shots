@@ -39,3 +39,13 @@
 5. **Fila 20 · pantalla "Referir al oftalmólogo / Sin daño" (⚠️).** La respuesta negativa es "negativo para retinopatía más que leve; repetir en 12 meses" (puede haber daño leve), y refiere a "un profesional de la vista" (oftalmólogo u optometrista). Además existe una tercera salida, "calidad insuficiente". Propuesta: botones "Referir a especialista de la vista" / "Sin daño importante: repetir en 12 meses", y quitar "(las dos respuestas posibles)" o decir "si la foto sale bien, da una de dos respuestas".
 
 Nota menor (no requiere cambio): la fecha del comunicado de la FDA (11 abr 2018) se confirmó solo en reproducciones del comunicado y en la referencia de Abràmoff 2018 (que lo cita con fecha 12 abr 2018); "abril 2018" es correcto con cualquiera de las dos. El resumen De Novo de la FDA dice "DATE OF DE NOVO: January 12, 2018" (fecha de la solicitud, no de la autorización).
+
+## Re-verificación (29 oct 2026, coordinador)
+Correcciones aplicadas tal como las propuso el verificador:
+- Gancho: «En el fondo de tu ojo hay algo que tus ojos no saben ver: si es de hombre o de mujer. Una IA sí lo ve.» ✅ (Korot 2021: "retina specialists cannot readily perform this task")
+- Pantalla: «edad (ejemplo): 57 ± 3 años» · «presión sistólica: ± 11 mmHg de error» · «fuma: acierta 71 de 100 pares» ✅
+- Monitor FDA: «Referir a especialista de la vista / Sin daño importante: repetir en 12 meses» ✅
+- Subtítulo del re-gancho: «¿Cómo ve lo que los expertos no?» (antes absoluto) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
