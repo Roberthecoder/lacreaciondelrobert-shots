@@ -115,6 +115,15 @@ function OllaM({ T, x, y, s = 1, fuego = 1 }) {
     {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.6 + i / 6) % 1); return <circle key={i} cx={-200 + i * 80} cy={-100 - u * 160} r={18 + u * 20} fill="#fff" opacity={(1 - u) * 0.6} />; })}
   </g>;
 }
+// Sello largo (una palabra) que cae con golpe.
+function SelloLargo({ T, at, x, y, texto, color = KC.red, rot = -10 }) {
+  if (T < at) return null;
+  const k = kprog(T, at, at + 0.35, kEase.rebote);
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${klerp(2.2, 1, k)})`} opacity={kprog(T, at, at + 0.15)}>
+    <rect x={-250} y={-70} width={500} height={140} rx={30} fill="rgba(255,255,255,.85)" stroke={color} strokeWidth={14} />
+    <text y={34} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={color}>{texto}</text>
+  </g>;
+}
 // Mosca esquemática. mareo 0..1 = espiral encima.
 function Mosca({ T, x, y, s = 1, rot = 0, mareo = 0, aleteo = 1 }) {
   const w = aleteo ? Math.sin(T * 60) * 0.5 + 0.5 : 0.2;
@@ -243,19 +252,19 @@ function MuscariaShot() {
       {/* 7 · ¿es venenoso? */}
       <Escena T={T} a={K.P} b={K.Tx} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Interrogacion T={T} x={290} y={1060} /><Sello T={T} at={K.P + 0.75} x={300} y={620} texto="VENENOSO" color={KC.red} r={150} /></>)}
+        {fsvg(<><Interrogacion T={T} x={290} y={1060} /><SelloLargo T={T} at={K.P + 0.75} x={330} y={430} texto="VENENOSO" /></>)}
       </Escena>
       {/* 8 · en la sinapsis: iboténico (≈ glutamato) excita; muscimol (≈ GABA) frena. Luego, la olla. */}
       <Escena T={T} a={K.Tx} b={cocina} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <path d="M 220 300 L 220 560 Q 220 700 540 700 Q 860 700 860 560 L 860 300" fill="#5a3f8f" stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 7 }, (_, i) => <circle key={i} cx={320 + i * 75} cy={600 + (i % 2) * 30} r={20} fill="#8f6fd0" stroke={KC.ink} strokeWidth={3} />)}
+          <path d="M 220 520 L 220 600 Q 220 700 540 700 Q 860 700 860 600 L 860 520" fill="#5a3f8f" stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 7 }, (_, i) => <circle key={i} cx={320 + i * 75} cy={620 + (i % 2) * 26} r={18} fill="#8f6fd0" stroke={KC.ink} strokeWidth={3} />)}
           {(() => { const exc = kprog(T, K.Tx + 0.9, K.Tx + 1.3) * (1 - kprog(T, K.Tx + 2.1, K.Tx + 2.5)), fr = kprog(T, K.Tx + 2.3, K.Tx + 2.8);
             const col = mixHex(mixHex('#3b4a6b', '#ffd34d', exc * (0.6 + 0.4 * Math.abs(Math.sin(T * 14)))), '#24304a', fr);
             return <>
-              <path d="M 180 1160 L 180 900 Q 180 790 540 790 Q 900 790 900 900 L 900 1160 Z" fill={col} stroke={KC.ink} strokeWidth={8} />
+              <path d="M 180 1040 L 180 900 Q 180 790 540 790 Q 900 790 900 900 L 900 1040 Z" fill={col} stroke={KC.ink} strokeWidth={8} />
               {[300, 420, 540, 660, 780].map((rx, i) => <path key={i} d={`M ${rx - 28} 792 L ${rx - 28} 770 Q ${rx} 800 ${rx + 28} 770 L ${rx + 28} 792`} fill="#c7d0e6" stroke={KC.ink} strokeWidth={4} />)}
               {exc > 0.2 && Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${300 + i * 95} 900 l 20 40 l -16 4 l 22 46`} stroke={KC.yellow} strokeWidth={6} fill="none" opacity={exc * (0.5 + 0.5 * Math.sin(T * 20 + i))} />)}
             </>; })()}
@@ -338,11 +347,11 @@ function MuscariaShot() {
       <Etq T={T} at={K.R + 1.6} until={K.P - 0.3} x={1030} y={1170} texto="nutrientes → árbol" lado="izq" tam={34} color={KC.mint} />
       <Etq T={T} at={K.R + 2.0} until={K.P - 0.3} x={40} y={1110} texto="azúcares → hongo" tam={34} color={KC.pink} />
       <Chip T={T} at={K.Tx + 0.2} until={cocina - 0.3} texto="AL MICROSCOPIO · sinapsis" x={400} y={420} tam={32} borde={KC.lilac} mono />
-      <Etq T={T} at={K.Tx + 0.8} until={K.Tx + 2.0} x={60} y={1080} texto="ácido iboténico ≈ glutamato → excita" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Tx + 2.2} until={cocina - 0.3} x={60} y={1080} texto="muscimol ≈ GABA → frena" tam={28} color={KC.cyan} />
+      <Etq T={T} at={K.Tx + 0.8} until={K.Tx + 2.0} x={40} y={1110} texto="ácido iboténico ≈ glutamato → excita" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Tx + 2.2} until={cocina - 0.3} x={40} y={1110} texto="muscimol ≈ GABA → frena" tam={30} color={KC.cyan} />
       <Chip T={T} at={cocina + 0.6} until={K.E - 0.3} texto="cocinado ≠ seguro" x={400} y={460} tam={44} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.4} anio="2018" quien="Minnesota, EUA" revista="MMWR (CDC), 2019" y={540} />
-      <Etq T={T} at={K.E + 1.4} until={K.Re - 0.3} x={40} y={1110} texto="A. muscaria var. guessowii" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 2.5} until={K.Re - 0.3} x={40} y={680} texto="A. muscaria var. guessowii" it tam={28} color={KC.ink} />
       <Etq T={T} at={K.E + 2.5} until={K.Re - 0.3} x={1040} y={760} texto="el que él conocía" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Re + 0.2} until={K.Mo - 0.3} texto="2–3 h después de comer" x={330} y={400} tam={32} borde={KC.ink} mono />
       {['vómito', 'sudor', 'confusión'].map((t, i) => <Chip key={i} T={T} at={K.Re + 0.6 + i * 0.35} until={K.Re + 2.3} texto={t} x={180 + i * 200} y={520} tam={34} borde={KC.red} />)}

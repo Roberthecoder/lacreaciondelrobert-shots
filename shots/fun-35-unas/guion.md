@@ -33,6 +33,25 @@ Barras de escala: 1 cm (dedo y pie), 1 mm (reglas), 10 µm (hifas y queratina al
 
 Morfología: *T. rubrum* en la uña = hifas delgadas con tabiques (septadas); en cultivo, microconidios pequeños en forma de gota a los lados de la hifa. Dibujo esquemático.
 
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Si el hongo ya se fue, por qué sigue fea?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «12 semanas… pero un año o más» (cuadro 0) |
+| 2 | 7.6 | 10.4 | 12_perfil_serio | `arriba-der` | «un dermatofito, Trichophyton rubrum» |
+| 3 | 15.0 | 18.0 | 06_pensativo_menton | `arriba-der` | «digiere la queratina» |
+| 4 | 21.2 | 24.0 | 07_pensativo_puno | `grande-izq` | «¿si el hongo ya se fue, por qué sigue fea?» |
+| 5 | 25.8 | 28.6 | 13_senalando_arriba | `arriba-der` | «la raíz fabrica uña nueva» |
+| 6 | 36.9 | 39.7 | 11_sorprendido | `arriba-der` | «las de los pies, poco más de uno y medio» |
+| 7 | 43.5 | 47.4 | 10_serio_molesto | `arriba-der` | «una de cada cuatro o cinco veces regresa» |
+| 8 | 48.0 | 51.8 | 02_apuntando_camara | `arriba-der` | «no andar descalzo… tratar el pie de atleta» |
+| 9 | 53.4 | 57.9 | 13_senalando_arriba | `arriba-der` | «hasta año y medio» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **30.4 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+
 ## Fuentes (abiertas en su texto el 29 oct 2026)
 
 1. Yaemsiri, S., Hou, N., Slining, M. M. y He, K. (2010). Growth rate of human fingernails and toenails in healthy American young adults. *J. Eur. Acad. Dermatol. Venereol.* 24(4): 420–423. doi:10.1111/j.1468-3083.2009.03426.x · https://pubmed.ncbi.nlm.nih.gov/19744178/ (dato de 2010; cifras textuales también en BioNumbers 112380: https://bionumbers.hms.harvard.edu/bionumber.aspx?id=112380)
