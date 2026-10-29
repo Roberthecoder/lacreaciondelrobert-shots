@@ -101,6 +101,8 @@ Fuentes:
 5. Juknelevicius et al., Propellants Explos. Pyrotech. 46: 107–113 (2021): el emisor es CuCl; más temperatura, menos saturación. https://epub.ub.uni-muenchen.de/75968/1/prep.202000114.pdf
 6. Science History Institute, "Robert Bunsen and Gustav Kirchhoff": espectroscopio (1859), cesio (1860), Heidelberg. https://www.sciencehistory.org/education/scientific-biographies/robert-bunsen-and-gustav-kirchhoff/
 7. Bunsen y Kirchhoff (1860), vía vanderkrogt.net: dos líneas azules en agua mineral de Dürkheim. https://www.vanderkrogt.net/elements/element.php?num=55
-8. HyperPhysics (Georgia State Univ.): sonido en aire, 331.5 m/s a 0 °C y 344 m/s a 20 °C. http://hyperphysics.phy-astr.gsu.edu/hbase/Sound/souspe.html
+8. K. R. Tarantik, tesis doctoral, LMU Múnich (2010, dir. T. M. Klapötke): los emisores SrCl, BaCl y CuCl se forman con un donador de cloro. https://edoc.ub.uni-muenchen.de/11894/1/Tarantik_Karina_R.pdf
+9. NIST Atomic Spectra Database: líneas del cesio (455.5 y 459.3 nm) y del sodio (589 nm). https://physics.nist.gov/PhysRefData/ASD/lines_form.html
+10. HyperPhysics (Georgia State Univ.): sonido en aire, 331.5 m/s a 0 °C y 344 m/s a 20 °C. http://hyperphysics.phy-astr.gsu.edu/hbase/Sound/souspe.html
 El dibujo es esquemático.
 ```

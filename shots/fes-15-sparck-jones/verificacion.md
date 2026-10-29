@@ -66,4 +66,17 @@ Revisado por el mismo verificador independiente sobre `guion.md` y `narracion.js
 | Nota del Computer Laboratory corregida (desde 1968; afiliación del artículo de 1972) | ✅ | cl.cam.ac.uk CV · ksj_orig.pdf | "1968 – 1988 Research positions, Computer Laboratory, University of Cambridge" / "Computer Laboratory, University of Cambridge, Cambridge, UK" | s/f / 1972 |
 | Fuente 1: frase textual del resumen | ✅ | Spärck Jones 1972 | "considerable improvements in performance are obtained with this very simple procedure" | 1972 |
 
+
+## Revisión de pantalla y publicación (29 oct 2026)
+
+Revisé todos los textos en pantalla de `sparck-jones.jsx` (chips, `Etq`, `Medidor`, `TarjetaEstudio`, capítulos, subtítulos, `<text>` de los SVG y la cita del lema) y lo que dicen los dibujos, además de `publicacion.md` (las 7 redes y el comentario fijado). No hay cifras, fechas ni nombres nuevos: todo coincide con la tabla verificada (1972, Cambridge, *Journal of Documentation*, 3 colecciones, IDF, TF-IDF, BM25, web de 1989, lema y firma «entrevista BCS (publicada en 2009)»).
+
+- **Pared de 28 páginas («de» en 26, «rajas» en 3):** es ilustrativa y no muestra números. Para que no parezca dato real, el chip ahora dice «ejemplo: sale en casi todas = pesa poco» (antes: «sale en casi todas = pesa poco»). El comentario fijado ya aclara que no hay conteo real.
+- **Barras de las 3 colecciones:** no tienen eje ni números, pero la barra dorada medía casi el doble que la gris, como si la mejora fuera del doble, y el artículo de 1972 no da esa cifra (solo "considerable"/"substantial", con curvas de precisión y recuperación). Las bajé a una mejora clara pero moderada: `h1` de [170, 150, 195] a [125, 100, 140]. Sigue subiendo en las tres cajas, como dice la fuente ("In all cases").
+- **Subtítulo 10:** «La IA busca con BM25» generalizaba a toda la IA; ahora dice «Hay IA que busca con *BM25.*», igual que la voz.
+- **Computadora de 1972 (cintas, foquitos, tarjetas perforadas):** es un dibujo de época sin texto ni marca. Va bien con la época: su tesis de 1964 usó tarjetas perforadas (Tait 2007). ✅ esquemático.
+- **Retrato de Karen:** es un dibujo vectorial caricaturizado dentro de un marco, con su nombre; no hay ninguna foto en `assets/`. ✅
+- **Lista de resultados** (Atole de chocolate, Rajas con crema, Tamales de rajas con queso, Tamales oaxaqueños) y **ramitas "f(x)"**: ilustrativas, sin afirmación factual. ✅
+- **publicacion.md:** LinkedIn decía «Una de las ideas más duraderas…» (superlativo sin fuente); cambié a «Una idea muy duradera…» (Robertson 2004: "has proved extraordinarily robust"). Lo demás coincide con lo verificado y lleva "El dibujo es esquemático".
+
 VEREDICTO: APROBADO

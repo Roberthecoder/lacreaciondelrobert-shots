@@ -1,31 +1,49 @@
 # Shot Festivo #11 · Navidad · Biotecnológico: Tu nochebuena es frondosa porque tiene una bacteria
 
 - **Serie:** Shot Festivo · **Serie vinculada:** Biotecnológico · **Logo:** bioquímica (ADN + matraz) · **Badge:** Festivo #11 · **Especial:** Navidad (se publica el 24 dic 2026) · rama `pedido300/festivos`.
-- **Estado (29 oct 2026):** guion verificado (`verificacion.md`: 20 ✅, 3 ⚠️ corregidas en escenas 10 y 11) · sin animación · **voz pendiente de aprobación de Robert**.
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`: APROBADO; 3 ⚠️ corregidas en escenas 10 y 11), animación (`nochebuena.jsx`), música (`gen-audio.mjs`), Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert**.
 - **Formato:** N3 "Capítulos y medidores" (4 capítulos: La hoja roja · La noche larga · El inquilino · El injerto; medidores de horas de oscuridad, semanas y altura) con un toque de N4 "Imagen que se llena" (la planta que se llena de ramas).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Eso rojo de tu nochebuena no son pétalos: son hojas."
-- **Duración:** voz 1,081 caracteres (≈ 65.8 s) + cierre 3.8 s → **≈ 69.6 s** estimados (festivos: 61–75 s).
+- **Duración:** voz 1,073 caracteres (≈ 65.4 s) + cierre 3.8 s → **69.2 s** en la base (festivos: 61–75 s).
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Eso rojo de tu nochebuena no son pétalos: son hojas. | Fondo rojo navideño con lunares dorados. Desde el cuadro 0 una nochebuena en maceta (brácteas rojas en estrella, hojas verdes dentadas abajo, botoncitos amarillos al centro) llega rebotando; una bráctea se desprende y gira: «¿pétalo?» se tacha → «hoja». Chip «Especial Navidad». |
+| 0 | Gancho | Eso rojo de tu nochebuena no son pétalos: son hojas. | Fondo cian con lunares y estrellitas doradas. Desde el cuadro 0 una nochebuena en maceta (brácteas rojas en estrella, hojas verdes dentadas abajo, botoncitos amarillos al centro) llega rebotando; una bráctea se desprende y cae girando: «¿pétalo?» se tacha → «hoja». Chip «Especial Navidad». |
 | 1 | Bracteas | Se llaman brácteas: hojas que cambiaron de color. | Fondo menta. La bráctea roja junto a una hoja verde de la misma planta: mismas nervaduras (se dibujan encima, iguales). Etiqueta «bráctea = hoja modificada». Capítulo 1 «La hoja roja». |
-| 2 | Ciatios | Las flores de verdad son estas bolitas amarillas del centro: los ciatios. | Fondo amarillo. Zoom al centro: racimo de 3–5 ciatios (copitas verdes con una glándula amarilla de néctar a un lado); `Lupa` abre uno: flores masculinas (estambres) alrededor de una femenina al centro. Etiqueta «ciatio». |
-| 3 | Noches | Y se pintan de rojo con noches largas: unas catorce horas de oscuridad, de siete a diez semanas. | Fondo azul noche. Reloj de 24 h que se llena de noche hasta 14 h; calendario que pasa semanas (7 → 10) mientras las brácteas pasan de verde a rojo. Medidor «14 h de oscuridad». Capítulo 2 «La noche larga». |
-| 4 | Foco | Si un foco interrumpe esa oscuridad, puede no pintarse a tiempo para Navidad. | Fondo noche. Se prende un foco a media noche (clic): la planta se queda verde; un calendario marca 24 dic con «¿?». |
+| 2 | Ciatios | Las flores de verdad son estas bolitas amarillas del centro: los ciatios. | Fondo amarillo. Zoom al centro: racimo de 5 ciatios (copitas verdes con una glándula amarilla de néctar a un lado); `Lupa` abre uno: flores masculinas (estambres) alrededor de una femenina al centro. Etiqueta «ciatio». |
+| 3 | Noches | Y se pintan de rojo con noches largas: unas catorce horas de oscuridad, de siete a diez semanas. | Fondo azul noche. Reloj de 24 h que se llena de noche hasta 14 h; medidor de semanas que llega a 10 (chip «de 7 a 10 semanas») mientras las brácteas pasan de verde a rojo. Medidor «14 h de oscuridad». Capítulo 2 «La noche larga». |
+| 4 | Foco | Si un foco interrumpe esa oscuridad, puede no pintarse a tiempo para Navidad. | Fondo noche (se aclara con la luz). Se prende un foco a media noche (clic): la planta se queda verde; un calendario marca 24 dic con «¿?». |
 | 5 | Silvestre | En el monte de México, la cuetlaxóchitl silvestre mide unos tres metros y tiene pocas ramas. | Fondo naranja con cerros de selva seca. Arbusto silvestre alto y desgarbado (tallos largos, pocas ramas, brácteas chicas en las puntas) junto a una persona para escala; medidor de altura «≈ 3 m». Chip «cuetlaxóchitl». |
 | 6 | Pregunta | ¿Entonces por qué la de tu casa está tan llena de ramas? | **Re-gancho.** Fondo rosa: la silvestre flaca al lado de la maceta frondosa, «?» gigante; Robert grande, pensativo. |
-| 7 | Fitoplasma | Porque, casi seguro, está infectada: en sus tubos de savia vive un fitoplasma, una bacteria sin pared. | Fondo noche (escala micro, barra 1 µm). Corte de un tallo con `Lupa` rayos X: tubos del floema; dentro, fitoplasmas (cuerpos redondeados y de formas variables, sin pared, solo membrana). Etiquetas «floema» · «fitoplasma». Capítulo 3 «El inquilino». |
+| 7 | Fitoplasma | Porque, casi seguro, está infectada: en sus tubos de savia vive un fitoplasma, una bacteria sin pared. | Fondo noche (escala micro, barra 2 µm). Un tubo del floema visto de lado (paredes, placas cribosas, savia que fluye); dentro, fitoplasmas (cuerpos redondeados y de formas variables, sin pared, solo membrana). Etiquetas «floema» · «fitoplasma». Capítulo 3 «El inquilino». |
 | 8 | Hormonas | Esa bacteria le desequilibra las hormonas, y la planta saca ramas por todos lados. | Fondo menta. Balanza de hormonas que se ladea; en el tallo despiertan las yemas laterales una por una (pop) y brotan ramas: la planta se llena (N4). |
-| 9 | Estudio | En 1997, en Maryland, el equipo de Ing-Ming Lee la aisló pasándola a plantas sanas con una planta parásita de puente. | Fondo amarillo. `TarjetaEstudio` «1997 · Ing-Ming Lee y equipo · USDA, Beltsville, Maryland · Nature Biotechnology». Escena: una nochebuena infectada y una vinca (*Catharanthus roseus*) unidas por la cuscuta (enredadera parásita naranja, como hilos); puntitos (la bacteria) viajan por el puente hacia la planta sana. |
+| 9 | Estudio | En 1997, en Maryland, el equipo de Ing-Ming Lee la aisló pasándola a plantas sanas con una planta parásita de puente. | Fondo amarillo. `TarjetaEstudio` «1997 · Ing-Ming Lee y equipo · Maryland · Nature Biotechnology». Escena: una nochebuena infectada y una vinca (*Catharanthus roseus*) unidas por la cuscuta (enredadera parásita naranja, como hilos); puntitos (la bacteria) viajan por el puente hacia la planta sana. |
 | 10 | Injerto | Con un injerto de una rama infectada, una nochebuena de pocas ramas también se vuelve frondosa. | Fondo cian. Una rama se injerta (cinta de injerto) en una nochebuena flaca; los puntitos cruzan la unión y la planta se ramifica. Chip «se contagia por injerto». Capítulo 4 «El injerto». |
-| 11 | Dato | Dato: con mucho calor, la planta puede perder la bacteria… y deja de ramificarse. | Fondo lila. Termómetro que sube; los puntitos desaparecen y la planta nueva crece con pocas ramas. Robert riendo/sorprendido. |
-| 12 | Cierre | Así que tu nochebuena no tiene pétalos rojos: tiene hojas rojas, y una bacteria que la hizo frondosa. | **Regreso a la imagen del inicio** (fondo rojo, lunares dorados, la misma maceta), ahora con destellos navideños; `Lupa` de rayos X sobre el tallo muestra los fitoplasmas adentro. Chip «hojas + bacteria». |
+| 11 | Dato | Dato: con mucho calor, la planta puede perder la bacteria… y deja de ramificarse. | Fondo lila. Termómetro que sube; los puntitos desaparecen y la planta nueva crece con pocas ramas. Robert sorprendido. Chip «ramifica poco». |
+| 12 | Cierre | Así que tu nochebuena no tiene pétalos rojos: tiene hojas rojas, y una bacteria que la hizo frondosa. | **Regreso a la imagen del inicio** (fondo cian, estrellitas doradas, la misma maceta), ahora con destellos navideños; `Lupa` de rayos X sobre el tallo muestra los fitoplasmas adentro. Chip «hojas + bacteria». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de bioquímica y Robert señalando. |
 
 **Música:** cama grave continua y cálida (sin golpe marcado, con un brillo de campanitas muy suave por Navidad, sin melodía conocida); efectos en el mismo cuadro: rebote de la maceta, «fiu» de la bráctea que gira, tachón, pop de la lupa, tic-tac del reloj que se llena de noche, páginas del calendario, clic del foco, viento del monte, burbujeo grave dentro del floema, pop por cada yema que brota, «zip» de los puntitos por el puente de cuscuta, cinta del injerto, termómetro que sube y destellos al final.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos porque están atados a cada escena). Grande (`grande-izq`, medio cuerpo) en «¿Entonces por qué la de tu casa está tan llena de ramas?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.3 | 11_sorprendido | `gancho` | «no son pétalos: son hojas» (cuadro 0) |
+| 2 | 6.7 | 10.3 | 13_senalando_arriba | `izq-alto` | señala los ciatios («las flores de verdad») |
+| 3 | 17.5 | 21.0 | 10_serio_molesto | `arriba-der` | el foco que corta la noche |
+| 4 | 27.05 | 31.4 | 07_pensativo_puno | `grande-izq` | «¿Entonces por qué la de tu casa está tan llena de ramas?» |
+| 5 | 37.0 | 41.2 | 05_sonriendo_dientes_uniformes | `izq-alto` | «saca ramas por todos lados» |
+| 6 | 44.2 | 48.4 | 04_bajando_lentes | `arriba-der` | el estudio de 1997 y el puente de cuscuta |
+| 7 | 54.6 | 58.9 | 11_sorprendido | `arriba-der` | «con mucho calor puede perder la bacteria» |
+| 8 | 59.6 | 65.3 | 02_apuntando_camara | `izq-alto` | «una bacteria que la hizo frondosa» |
+| — | 65.4 | 69.2 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones: 8 · **33.2 s en pantalla** (+ cierre 3.8 s) · 7 poses distintas, ninguna repetida seguida.
 
 ## Fuentes (abiertas por el verificador el 29 oct 2026; detalle en `verificacion.md`)
 

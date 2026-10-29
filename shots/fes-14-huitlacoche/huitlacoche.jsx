@@ -69,7 +69,7 @@ function Agalla({ T, x, y, r, seed = 1, crece = 1, revienta = 0 }) {
     <path d={blob(seed, r)} fill="url(#gAgalla)" stroke={KC.ink} strokeWidth={Math.max(3, r * 0.07)} />
     <ellipse cx={-r * 0.3} cy={-r * 0.35} rx={r * 0.25} ry={r * 0.13} fill="#fff" opacity=".75" transform={`rotate(-25 ${-r * 0.3} ${-r * 0.35})`} />
     {revienta > 0 && <>
-      <path d={blob(seed + 5, r * 0.55 * revienta, 9, 0.3)} fill={NEGRO} />
+      <path d={blob(seed + 5, r * 0.5 * revienta, 15, 0.32)} transform={`translate(${r * 0.05} ${-r * 0.25})`} fill={NEGRO} />
       <path d={`M ${-r * 0.5} ${-r * 0.1} L ${-r * 0.15} ${r * 0.05} L ${r * 0.1} ${-r * 0.2} L ${r * 0.45} ${r * 0.1}`} stroke={KC.ink} strokeWidth={Math.max(2, r * 0.05)} fill="none" opacity={revienta} />
     </>}
   </g>;
@@ -399,8 +399,8 @@ function Huitlacoche() {
                 <text x={0} y={22} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill={KC.red}>ENFERMEDAD</text>
               </g>
               <g transform={`translate(${(1 - der) * 540} 0)`}>
-                <Canasta x={810} y={800} s={0.85}><Mazorca T={T} x={-40} y={-120} s={0.48} rot={-60} huit={1} /><Mazorca T={T} x={60} y={-90} s={0.42} rot={50} huit={1} hojas={false} /></Canasta>
-                <Quesadilla x={810} y={1130} s={0.7} />
+                <Canasta x={810} y={840} s={0.85}><Mazorca T={T} x={-40} y={-120} s={0.48} rot={-60} huit={1} /><Mazorca T={T} x={60} y={-90} s={0.42} rot={50} huit={1} hojas={false} /></Canasta>
+                <Quesadilla x={810} y={1560} s={0.78} />
               </g>
             </>)}
           </>; })()}
@@ -465,8 +465,8 @@ function Huitlacoche() {
       <Chip T={T} at={K.E + 3.4} until={K.Pl - 0.3} texto="hongo modelo de laboratorio" x={540} y={1530} tam={44} borde={KC.ink} />
       <Etq T={T} at={K.E + 3.6} until={K.Pl - 0.3} x={60} y={730} texto="crece como levadura en la caja" tam={28} />
       <Chip T={T} at={K.Pl + 0.3} until={K.D - 0.3} texto="EE. UU.: corn smut" x={270} y={1530} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Pl + 3.4} until={K.D - 0.3} texto="México: comida" x={810} y={1530} tam={36} borde={KC.leaf} />
-      <Etq T={T} at={K.Pl + 4.0} until={K.D - 0.3} x={600} y={1630} texto="se cosecha tierno" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Pl + 3.4} until={K.D - 0.3} texto="México: comida" x={810} y={560} tam={36} borde={KC.leaf} />
+      <Etq T={T} at={K.Pl + 4.0} until={K.D - 0.3} x={600} y={1100} texto="se cosecha tierno" tam={26} color={KC.ink} />
       <Medidor T={T} at={K.D + 0.3} until={K.D + 3.5} y={470} x={90} ancho={580} etiqueta="lisina · maíz" valor={(t) => 0.2 * kprog(t, K.D + 0.4, K.D + 1.2)} texto={() => 'poca'} color={KC.yellow} />
       <Medidor T={T} at={K.D + 0.7} until={K.D + 3.5} y={590} x={90} ancho={580} etiqueta="lisina · huitlacoche" valor={(t) => 0.85 * kprog(t, K.D + 0.8, K.D + 2.0)} texto={() => 'rico'} color={KC.mint} />
       <Etq T={T} at={K.D + 4.4} until={K.Ci - 0.3} x={60} y={1490} texto="ilustración al estilo del Códice Florentino · s. XVI" tam={26} />

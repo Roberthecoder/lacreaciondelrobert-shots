@@ -32,4 +32,28 @@ Notas:
 - "El dibujo es esquemático" debe ir en `publicacion.md` (tamaños, formas y cantidades de levaduras, bacterias y piezas del sabor son ilustrativos). Las bacterias en bastón son correctas para *Lactobacillus* y *Acetobacter*, que nombra Ho 2014.
 - Ninguna cifra en voz requiere año aparte: "2 a 10 días" y "más de 40 °C" son rangos de un proceso, no conteos que envejezcan; el estudio dice su año (2014).
 
+## Revisión de pantalla y publicación (29 oct 2026)
+
+Revisé todo el texto de `chocolate.jsx` (Chip, Etq, Capitulo, TarjetaEstudio, Subtitulo, `<text>` del SVG: DÍA, VINAGRE, ANTI HONGOS, germen, ≠, °, etiquetas de cajones y barras), las escalas y lo que afirman los dibujos, más `publicacion.md` (7 redes y comentario fijado).
+
+| Elemento en pantalla / publicación | Veredicto | Fuente (ya en la tabla de arriba) |
+|---|---|---|
+| Subtítulo «No bien cafés: *morado violeta.*» y chip «morado violeta»; semilla con levaduras café, sin levaduras morada | ✅ | Ho 2014: "purplish-violet in color and not fully brown" / "fully brown in color" |
+| Calendario «DÍA» de 2 a 10, chip y subtítulo «de 2 a 10 días» | ✅ | Díaz-Muñoz 2021: "usually ranging from 2 to 10 days" |
+| Termómetro de 26 °C a 45 °C, chip «más de 40 °C» | ✅ | Camu 2007: de 26.3 °C a un máximo de 43.5 °C en promedio (42.2–47.7 °C) |
+| «levadura (un hongo)», «hongos de una sola célula», «azúcar → alcohol + CO₂», «la pulpa escurre», «ácido láctico», «alcohol → ácido acético», «el del vinagre», «la semilla muere», «germen» | ✅ | filas de arriba |
+| Etiquetas *Saccharomyces cerevisiae*, *Hanseniaspora*, «Pichia…», *Theobroma cacao*, «hojas de plátano», «pulpa llena de azúcares», «amarga y áspera», «semilla fresca» (morada) | ✅ | filas de arriba |
+| Hexágono + pentágono que se separan; «azúcar → glucosa + fructosa»; «enzimas de la semilla», «proteína», «piezas del sabor», «al tostar», «reacción de Maillard» | ✅ (la sacarosa sí es un anillo de 6 —glucosa— unido a uno de 5 —fructosa—) | Purbaningrum 2023: "invertase breaks down sucrose into glucose and fructose" |
+| TarjetaEstudio «2014 · Univ. de Nueva Gales del Sur · Sídney, Australia · Int. J. Food Microbiology»; atomizador «ANTI HONGOS»; cajones «normal» / «con antifúngico»; «frena a las levaduras», «las bacterias siguen»; barras «con / sin levaduras», «más ácido · sin su sabor» | ✅ (los cajones son esquemáticos: el resumen no describe el recipiente) | Ho 2014 (resumen y afiliación) |
+| «Especial San Valentín», «hecho con ayuda de levaduras», capítulos | ✅ | — |
+| Barra de escala 10 µm (levaduras y bacterias) | ⚠️ → corregido | A 10 µm = 200 px, las levaduras miden ~9 µm de cuerpo (bien: 5–10 µm), pero en la escena de bacterias las bacterias medían ~5 × 2 µm y las levaduras del fondo ~5 µm: las bacterias se veían del tamaño de las levaduras, y los lactobacilos miden ~1 µm de ancho. |
+| Barra de escala 2 nm (dentro de la semilla) | ⚠️ → corregido | Aminoácidos ~0.5 nm (bien); la sacarosa medía ~2.3 nm (la real ~1 nm). Las tijeritas son un símbolo de la enzima, no su tamaño. |
+| `publicacion.md`, Facebook: «Sin levaduras, el chocolate sale más ácido y sin su sabor» | ⚠️ → corregido (generalizaba un solo estudio en presente) | Ho 2014 |
+| Resto de `publicacion.md` (TikTok, IG, YouTube, LinkedIn, X, Threads, comentario fijado) | ✅ | filas de arriba; todas dicen "el dibujo es esquemático" donde aplica |
+
+Correcciones aplicadas:
+- `chocolate.jsx`, escena Bacterias: bacterias `s={0.9}` → `s={0.5}` (≈ 2.9 × 1.2 µm con la barra de 10 µm) y levaduras del fondo `s={0.7}` → `s={1.0}` (≈ 7 µm): ahora las levaduras se ven más grandes que las bacterias, como en la realidad.
+- `chocolate.jsx`, escena Piezas: `AzucarDoble` `s={1.3}` → `s={0.8}` (sacarosa ≈ 1.4 nm con la barra de 2 nm).
+- `publicacion.md`, Facebook: «En un estudio de 2014, sin levaduras el chocolate salió más ácido y sin su sabor.»
+
 VEREDICTO: APROBADO

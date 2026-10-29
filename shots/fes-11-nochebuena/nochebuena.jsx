@@ -25,7 +25,7 @@ function Hoja({ L = 150, w = 52, rot = 0, color = ROJO, vena = VENA, x = 0, y = 
 }
 // Racimo de ciatios: copitas verdes con su glándula amarilla de néctar a un lado (las "bolitas amarillas")
 function Ciatios({ s = 1, T = 0, brillo = 0 }) {
-  const pos = [[0, 0], [-22, -14], [22, -12], [-16, 18], [18, 18], [0, -28], [-30, 6], [30, 6]];
+  const pos = [[0, 0], [-24, -10], [22, -14], [-14, 22], [20, 18]]; // grupos de 3 a 5 ciatios (SNICS)
   return <g transform={`scale(${s})`}>
     {pos.map(([px, py], i) => <g key={i} transform={`translate(${px} ${py}) rotate(${i * 47})`}>
       <ellipse cx={0} cy={0} rx={11} ry={12} fill={CIATIO} stroke={KC.ink} strokeWidth={2.6} />

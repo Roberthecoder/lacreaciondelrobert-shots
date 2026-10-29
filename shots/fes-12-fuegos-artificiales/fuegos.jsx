@@ -310,8 +310,8 @@ function Fuegos() {
             {[0, 1, 2, 3].map((k) => <path key={k} d={`M 520 960 L 640 ${880 + k * 40}`} stroke={[ROJO, AMARI, VERDE, AZUL][k]} strokeWidth={8} opacity={0.75} strokeLinecap="round" />)}
           </g>
           <Espectro T={T} x={650} y={800} w={380} at={K.E + 3.1} lineas={[589]} etiqueta="Na" />
-          <Espectro T={T} x={650} y={920} w={380} at={K.E + 4.5} lineas={[461, 606, 641, 662, 682]} etiqueta="Sr" />
-          <Espectro T={T} x={650} y={1040} w={380} at={K.E + 6.0} lineas={[513, 524, 553, 578]} etiqueta="Ba" />
+          <Espectro T={T} x={650} y={920} w={380} at={K.E + 4.5} lineas={[461, 606, 636, 662, 682]} etiqueta="Sr" />
+          <Espectro T={T} x={650} y={1040} w={380} at={K.E + 6.0} lineas={[513, 524, 532, 553]} etiqueta="Ba" />
         </>)}
       </Escena>
       {/* 10 · el cesio: agua mineral de Dürkheim, dos líneas azules nuevas */}
@@ -412,7 +412,7 @@ function Fuegos() {
       <Subtitulo T={T} idx={4} at={K.Es + 0.1} until={K.H - 0.1} texto="Suben, bajan *y sueltan luz.*" />
       <Subtitulo T={T} idx={5} at={K.H + 0.1} until={K.P - 0.1} texto="Cada metal, *su propio color.*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.A - 0.1} texto="¿Por qué casi nunca *un azul bonito?*" />
-      <Subtitulo T={T} idx={7} at={K.A + 0.1} until={K.E - 0.1} texto="Muy caliente: *el azul se rompe.*" />
+      <Subtitulo T={T} idx={7} at={K.A + 0.1} until={K.E - 0.1} texto="Muy caliente: *la pareja se rompe.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.Cs - 0.1} texto="Cada elemento, *su huella de colores.*" />
       <Subtitulo T={T} idx={9} at={K.Cs + 0.1} until={K.D - 0.1} texto="Líneas azules nuevas: *el cesio.*" />
       <Subtitulo T={T} idx={10} at={K.D + 0.1} until={K.Ci - 0.1} texto="Cada 3 segundos, *como 1 kilómetro.*" />

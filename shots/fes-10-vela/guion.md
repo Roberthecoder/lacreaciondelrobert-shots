@@ -43,7 +43,7 @@ Tiempos de la base (con la voz real se recorren solos porque están atados a cad
 | 9 | 60.3 | 65.6 | 02_apuntando_camara | `arriba-der` | «cuando pidas posada, mira tu velita» |
 | — | 65.7 | 69.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones: 9 · **40.4 s en pantalla** (+ cierre 3.8 s) · 7 poses distintas, ninguna repetida seguida · huecos de 6.3 s como máximo. Nunca tapa el subtítulo (`izq-alto` y `arriba-der` entran de lado; `grande` sale durante el fundido a la escena del hollín).
+Apariciones: 9 · **40.4 s en pantalla** (+ cierre 3.8 s) · 7 poses distintas, ninguna repetida seguida · huecos de 6.3 s como máximo. Nunca tapa el subtítulo (`izq-alto` y `arriba-der` entran de lado; `grande` también entra y sale de lado —ajuste en la copia local de `kit-robert.jsx`, 29 oct 2026— y se va durante el fundido a la escena del hollín).
 
 ## Fuentes (abiertas el 29 oct 2026; verificadas en `verificacion.md`: APROBADO, 24/24 ✅)
 
