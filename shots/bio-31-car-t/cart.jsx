@@ -117,7 +117,7 @@ function Frasco({ T, x, y, s = 1, n = 4, seed = 4 }) {
 function Nina({ x, y, s = 1, color = KC.violet }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <circle cx={0} cy={-170} r={70} fill={color} />
-    <path d="M -60 -200 Q -110 -120 -90 -60 M 60 -200 Q 110 -120 90 -60" stroke={color} strokeWidth={26} strokeLinecap="round" fill="none" />
+    <circle cx={-82} cy={-196} r={30} fill={color} /><circle cx={82} cy={-196} r={30} fill={color} />
     <path d="M -90 -80 Q 0 -110 90 -80 L 130 160 L -130 160 Z" fill={color} />
   </g>;
 }
@@ -187,12 +187,12 @@ function CarT() {
       <Escena T={T} a={K.G} b={K.Sa} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <Capa>
-          <line x1={380} y1={560} x2={380} y2={1500} stroke="#9aa3b5" strokeWidth={18} />
-          <line x1={300} y1={560} x2={460} y2={560} stroke="#9aa3b5" strokeWidth={14} strokeLinecap="round" />
-          <Bolsa T={T} x={380} y={810} s={1.05} nivel={0.85} />
-          <path d={`M 380 1030 Q 380 1120 470 1150 Q 560 1180 560 1260`} stroke="#dfe6ef" strokeWidth={14} fill="none" />
-          <Goteo T={T} x={380} y0={1010} y1={1060} cada={0.5} color="#ffd6e4" desde={K.G} hasta={K.Sa} r={10} />
-          <Brazo x={700} y={1300} s={0.8} T={T} />
+          <line x1={380} y1={470} x2={380} y2={1220} stroke="#9aa3b5" strokeWidth={18} />
+          <line x1={300} y1={470} x2={460} y2={470} stroke="#9aa3b5" strokeWidth={14} strokeLinecap="round" />
+          <Bolsa T={T} x={380} y={720} s={1.0} nivel={0.85} />
+          <path d={`M 380 930 Q 380 1000 470 1010 Q 560 1020 570 1060`} stroke="#dfe6ef" strokeWidth={14} fill="none" />
+          <Goteo T={T} x={380} y0={915} y1={965} cada={0.5} color="#ffd6e4" desde={K.G} hasta={K.Sa} r={10} />
+          <Brazo x={640} y={1090} s={0.8} T={T} />
         </Capa>
       </Escena>
       {/* 1 · te sacan sangre y separan los linfocitos T */}
@@ -202,7 +202,7 @@ function CarT() {
           <Aferesis T={T} x={330} y={920} s={1.05} gira={1.4} />
           <path d={`M 520 860 Q 640 820 700 900`} stroke={SANG} strokeWidth={14} fill="none" strokeDasharray="22 12" strokeDashoffset={-T * 80} />
           <LinfocitoT T={T} x={800} y={1040} r={110} seed={1} o={kprog(T, K.Sa + 1.2, K.Sa + 1.8)} />
-          {[[700, 820], [930, 860]].map(([x, y], i) => <LinfocitoT key={i} T={T} x={x} y={y} r={60} seed={i + 3} o={kprog(T, K.Sa + 1.6 + i * 0.3, K.Sa + 2.2 + i * 0.3)} />)}
+          {[[640, 830], [880, 900]].map(([x, y], i) => <LinfocitoT key={i} T={T} x={x} y={y} r={60} seed={i + 3} o={kprog(T, K.Sa + 1.6 + i * 0.3, K.Sa + 2.2 + i * 0.3)} />)}
         </Capa>
       </Escena>
       {/* 2 · un virus modificado les mete un gen */}
@@ -230,18 +230,18 @@ function CarT() {
         <Capa>
           {T < K.Mu + 3.0 ? <Frasco T={T} x={520} y={980} s={1.25} n={2 * Math.pow(2, dup) + 2} />
             : <g transform={`translate(0 ${-kprog(T, K.Mu + 3.0, K.Mu + 3.8, kEase.suave) * 0})`}>
-              <line x1={380} y1={560} x2={380} y2={1500} stroke="#9aa3b5" strokeWidth={18} />
-              <Bolsa T={T} x={380} y={klerp(1300, 810, kprog(T, K.Mu + 3.0, K.Mu + 3.7, kEase.sale))} s={1.05} nivel={0.85} etiqueta="TUS CÉLULAS" etq2="CAR-T" />
-              <Brazo x={760} y={1300} s={0.7} T={T} />
+              <line x1={380} y1={470} x2={380} y2={1220} stroke="#9aa3b5" strokeWidth={18} />
+              <Bolsa T={T} x={380} y={klerp(1300, 720, kprog(T, K.Mu + 3.0, K.Mu + 3.7, kEase.sale))} s={1.05} nivel={0.85} etiqueta="TUS CÉLULAS" etq2="CAR-T" />
+              <Brazo x={700} y={1090} s={0.7} T={T} />
             </g>}
         </Capa>
       </Escena>
       {/* 6 · re-gancho: la Lupa entra a la vena */}
       <Escena T={T} a={K.Pr} b={K.Ca} zoom={0.03}>
         <FondoLunares color={KC.pink} />
-        <Capa><Brazo x={560} y={1150} s={1.0} T={T} /></Capa>
+        <Capa><Brazo x={560} y={1060} s={1.0} T={T} /></Capa>
       </Escena>
-      <Lupa T={T} at={K.Pr + 0.1} until={K.Ca + 0.1} x={470} y={800} r={250} fx={500} fy={1160} tinte={KC.mint} etiqueta="POR DENTRO · TU VENA"
+      <Lupa T={T} at={K.Pr + 0.1} until={K.Ca + 0.1} x={420} y={720} r={230} fx={500} fy={1070} tinte={KC.mint} etiqueta="POR DENTRO · TU VENA"
         interior={(t, r) => <svg width={r * 2} height={r * 2}>
           <rect width={r * 2} height={r * 2} fill={KC.noche} />
           {[[90, 120], [400, 380], [380, 90]].map(([x, y], i) => <ellipse key={i} cx={x + Math.sin(t + i) * 10} cy={y} rx={50} ry={30} fill={SANG} opacity={0.6} />)}
@@ -276,13 +276,13 @@ function CarT() {
         <Capa>
           <Citocinas T={T} n={46} f={kprog(T, K.To + 0.2, K.To + 2.0) * (1 - baja * 0.4)} />
           {T < K.Ar ? <g>
-              <TermometroT x={300} y={1180} v={klerp(0.35, 0.95, fiebre)} />
-              <FlechaPresion x={760} y={700} p={kprog(T, K.To + 1.2, K.To + 3.0, kEase.suave)} />
+              <TermometroT x={220} y={1130} v={klerp(0.35, 0.95, fiebre)} />
+              <FlechaPresion x={560} y={760} p={kprog(T, K.To + 1.2, K.To + 3.0, kEase.suave)} />
             </g>
             : <g>
               <rect x={60} y={1100} width={960} height={70} rx={30} fill={KC.lilac} opacity={0.35} stroke={KC.ink} strokeWidth={5} />
               {[160, 340, 520, 700, 880].map((x, i) => <ReceptorIL6 key={i} T={T} x={x} y={1100} tapon={kprog(T, K.Ar + 0.3 + i * 0.15, K.Ar + 0.8 + i * 0.15, kEase.sale)} il6={1} />)}
-              <TermometroT x={930} y={980} v={klerp(0.95, 0.4, baja)} />
+              <TermometroT x={900} y={960} v={klerp(0.95, 0.4, baja)} />
             </g>}
         </Capa>
       </Escena>
@@ -290,8 +290,8 @@ function CarT() {
       <Escena T={T} a={K.Fd} b={K.Ho} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          {[[260, 1150, 1], [520, 1240, 2], [800, 1160, 3]].map(([x, y, s], i) => <CelulaLeucemia key={i} T={T} x={x} y={y} r={70} seed={s} rompe={kprog(T, K.Fd + 0.2 + i * 0.25, K.Fd + 1.0 + i * 0.25)} />)}
-          <Sello T={T} x={560} y={830} p={kprog(T, K.Fd + 1.6, K.Fd + 2.2)} />
+          {[[200, 1080, 1], [400, 1150, 2], [600, 1060, 3]].map(([x, y, s], i) => <CelulaLeucemia key={i} T={T} x={x} y={y} r={70} seed={s} rompe={kprog(T, K.Fd + 0.2 + i * 0.25, K.Fd + 1.0 + i * 0.25)} />)}
+          <Sello T={T} x={300} y={800} p={kprog(T, K.Fd + 1.6, K.Fd + 2.2)} />
         </Capa>
       </Escena>
       {/* 12 · 2012 → 2025 */}
@@ -299,41 +299,41 @@ function CarT() {
         <FondoLunares color={KC.yellow} />
         <Capa>
           {(() => { const p = kprog(T, K.Ho + 0.3, K.Ho + 2.4, kEase.suave); const x0 = 120, x1 = 960; return <g>
-            <line x1={x0} y1={980} x2={x1} y2={980} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
-            <line x1={x0} y1={980} x2={klerp(x0, x1, p)} y2={980} stroke={KC.mint} strokeWidth={10} strokeLinecap="round" />
-            {Array.from({ length: 14 }, (_, i) => { const x = klerp(x0, x1, i / 13); return <circle key={i} cx={x} cy={980} r={i / 13 <= p ? 16 : 10} fill={i / 13 <= p ? KC.mint : '#fff'} stroke={KC.ink} strokeWidth={4} />; })}
-            <text x={x0} y={1070} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>2012</text>
-            <text x={x1} y={1070} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(p, 0.9, 1)}>2025</text>
-            <Nina x={klerp(x0, x1, p)} y={900} s={0.35} color={KC.violet} />
+            <line x1={x0} y1={1060} x2={x1} y2={1060} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
+            <line x1={x0} y1={1060} x2={klerp(x0, x1, p)} y2={1060} stroke={KC.mint} strokeWidth={10} strokeLinecap="round" />
+            {Array.from({ length: 14 }, (_, i) => { const x = klerp(x0, x1, i / 13); return <circle key={i} cx={x} cy={1060} r={i / 13 <= p ? 16 : 10} fill={i / 13 <= p ? KC.mint : '#fff'} stroke={KC.ink} strokeWidth={4} />; })}
+            <text x={x0} y={1150} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>2012</text>
+            <text x={x1} y={1150} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(p, 0.9, 1)}>2025</text>
+            <Nina x={klerp(x0, x1, p)} y={985} s={0.35} color={KC.violet} />
           </g>; })()}
         </Capa>
-        <NumeroGigante T={T} at={K.Ho + 0.6} until={K.Ci - 0.2} valor={13} dur={1.8} sufijo=" años" etiqueta="sin cáncer (dato de 2025)" y={720} tam={190} color={KC.mint} />
+        <NumeroGigante T={T} at={K.Ho + 0.6} until={K.Ci - 0.2} valor={13} dur={1.8} sufijo=" años" etiqueta="sin cáncer (dato de 2025)" y={800} tam={190} color={KC.mint} />
       </Escena>
       {/* 13 · cierre: la bolsa del inicio, ya vacía */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <Capa>
-          <line x1={380} y1={560} x2={380} y2={1500} stroke="#9aa3b5" strokeWidth={18} />
-          <line x1={300} y1={560} x2={460} y2={560} stroke="#9aa3b5" strokeWidth={14} strokeLinecap="round" />
-          <Bolsa T={T} x={380} y={810} s={1.05} nivel={klerp(0.5, 0.04, kprog(T, K.Ci, K.Ci + 3))} etiqueta="TUS CÉLULAS" etq2="CAR-T" />
-          <path d={`M 380 1030 Q 380 1120 470 1150 Q 560 1180 560 1260`} stroke="#dfe6ef" strokeWidth={14} fill="none" />
-          <Brazo x={700} y={1300} s={0.8} T={T} />
-          <LinfocitoT T={T} x={740} y={900} r={70} car={1} seed={2} brillo={0.6} o={kprog(T, K.Ci + 0.8, K.Ci + 1.4)} />
+          <line x1={380} y1={470} x2={380} y2={1220} stroke="#9aa3b5" strokeWidth={18} />
+          <line x1={300} y1={470} x2={460} y2={470} stroke="#9aa3b5" strokeWidth={14} strokeLinecap="round" />
+          <Bolsa T={T} x={380} y={720} s={1.0} nivel={klerp(0.5, 0.04, kprog(T, K.Ci, K.Ci + 3))} etiqueta="TUS CÉLULAS" etq2="CAR-T" />
+          <path d={`M 380 930 Q 380 1000 470 1010 Q 560 1020 570 1060`} stroke="#dfe6ef" strokeWidth={14} fill="none" />
+          <Brazo x={640} y={1090} s={0.8} T={T} />
+          <LinfocitoT T={T} x={760} y={860} r={70} car={1} seed={2} brillo={0.6} o={kprog(T, K.Ci + 0.8, K.Ci + 1.4)} />
         </Capa>
       </Escena>
 
       {/* textos y etiquetas */}
-      <Chip T={T} at={K.G + 2.4} until={K.Sa - 0.3} texto="terapia CAR-T" x={380} y={500} tam={48} borde={KC.mint} />
+      <Chip T={T} at={K.G + 2.4} until={K.Sa - 0.3} texto="terapia CAR-T" x={380} y={420} tam={48} borde={KC.mint} />
       <Etq T={T} at={K.Sa + 1.4} until={K.Vi - 0.3} x={680} y={1180} texto="linfocito T" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Sa + 0.4} until={K.Vi - 0.3} texto="aféresis: separa la sangre" x={330} y={1500} tam={34} borde={SANG} />
-      <Escala T={T} z={1} pxPorMm={PXMM} x={720} y={1440} color={KC.ink} />
-      {T > K.Sa && T < K.Vi && <Escala T={T} z={1} pxPorMm={PXMM} x={720} y={1440} color={KC.ink} />}
+      {T > K.Sa && T < K.Vi && <Escala T={T} z={1} pxPorMm={PXMM * 110 / 110} x={720} y={1440} color={KC.ink} />}
+      {T > K.Ca && T < K.Em && <Escala T={T} z={1} pxPorMm={240 / 0.007} x={60} y={1440} />}
       <Etq T={T} at={K.Vi + 0.6} until={K.Re - 0.3} x={1040} y={560} texto="lentivirus (no a escala)" lado="izq" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Vi + 1.2} until={K.Re - 0.2} texto="virus modificado: ya no enferma" x={540} y={1500} tam={36} borde={KC.orange} />
       <Chip T={T} at={K.Vi + 1.2} until={K.Re - 0.2} texto="solo entrega el gen" x={540} y={1600} tam={36} borde={KC.orange} />
-      <Etq T={T} at={K.Re + 1.4} until={K.Ba - 0.2} x={760} y={760} texto="CAR · receptor quimérico" lado="der" tam={30} color={CARC} />
+      <Etq T={T} at={K.Re + 1.4} until={K.Ba - 0.2} x={560} y={740} texto="CAR: receptor quimérico" lado="der" tam={26} color={CARC} />
       <Etq T={T} at={K.Ba + 1.2} until={K.Mu - 0.2} x={700} y={760} texto="CD19" lado="der" tam={40} color={CD19C} />
-      <Etq T={T} at={K.Ba + 0.8} until={K.Mu - 0.2} x={330} y={1200} texto="linfocito T con CAR" lado="der" tam={30} color={CARC} />
+      <Etq T={T} at={K.Ba + 0.8} until={K.Mu - 0.2} x={60} y={800} texto="linfocito T con CAR" lado="der" tam={30} color={CARC} />
       <Chip T={T} at={K.Ba + 0.9} until={K.Mu - 0.2} texto="célula de leucemia B" x={540} y={1500} tam={38} borde={LEU} />
       <Chip T={T} at={K.Ba + 1.8} until={K.Mu - 0.2} texto="también la tienen los linfocitos B sanos" x={540} y={1610} tam={28} borde={CD19C} />
       {T > K.Mu + 0.2 && T < K.Mu + 3.0 && <div style={{ position:'absolute', left:540, top:1500, transform:'translate(-50%,-50%)', zIndex:41, textAlign:'center',
@@ -346,10 +346,10 @@ function CarT() {
       <Chip T={T} at={K.Em + 2.8} until={K.To - 0.3} texto="leucemia linfoblástica aguda que regresó" x={540} y={1500} tam={30} borde={LEU} />
       <Chip T={T} at={K.Em + 4.4} until={K.To - 0.3} texto="silueta esquemática" x={540} y={1600} tam={26} borde="#ffffff" mono />
       <Chip T={T} at={K.To + 0.6} until={K.Ar - 0.2} texto="síndrome de liberación de citocinas" x={540} y={1500} tam={32} borde={CITO} />
-      <Etq T={T} at={K.To + 1.0} until={K.Ar - 0.2} x={400} y={760} texto="citocinas" lado="der" tam={34} color={CITO} />
+      <Etq T={T} at={K.To + 1.0} until={K.Ar - 0.2} x={300} y={620} texto="citocinas" lado="der" tam={34} color={CITO} />
       <Chip T={T} at={K.Ar + 0.4} until={K.Fd - 0.2} texto="tocilizumab · bloquea el receptor de la IL-6" x={540} y={1500} tam={28} borde="#7ad7ff" />
       <Chip T={T} at={K.Ar + 0.4} until={K.Fd - 0.2} texto="(un medicamento para la artritis)" x={540} y={1600} tam={28} borde="#7ad7ff" />
-      <Etq T={T} at={K.Ar + 1.0} until={K.Fd - 0.2} x={130} y={960} texto="IL-6 sin dónde engancharse" lado="der" tam={28} color={CITO} />
+      <Etq T={T} at={K.Ar + 1.0} until={K.Fd - 0.2} x={130} y={880} texto="IL-6 sin dónde engancharse" lado="der" tam={28} color={CITO} />
       <Chip T={T} at={K.Fd + 2.2} until={K.Ho - 0.2} texto="Kymriah (tisagenlecleucel)" x={540} y={1500} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="tus células, cazando" x={540} y={1500} tam={46} borde={KC.mint} />
 
@@ -385,8 +385,9 @@ function ROBERT_CART(C) {
     [C.Pregunta - 0.2, C.Caza + 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
     [C.Caza + 1.4, C.Emily - 0.2, 'avatar_02_apuntando_camara', 'izq-alto'],
     [C.Tormenta + 0.2, C.Artritis - 0.1, 'avatar_10_serio_molesto', 'arriba-der'],
-    [C.Artritis + 0.1, C.FDA + 0.6, 'avatar_11_sorprendido', 'grande'],
-    [C.FDA + 2.4, C.Hoy + 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
+    [C.Artritis + 0.1, C.FDA - 0.1, 'avatar_11_sorprendido', 'izq-alto'],
+    [C.FDA + 0.1, C.Hoy - 0.1, 'avatar_02_apuntando_camara', 'grande'],
+    [C.Hoy + 0.4, C.Cierre - 0.1, 'avatar_04_bajando_lentes', 'izq-alto'],
     [C.Cierre + 0.2, C.Outro - 0.1, 'avatar_13_senalando_arriba', 'arriba-der'],
   ];
 }
