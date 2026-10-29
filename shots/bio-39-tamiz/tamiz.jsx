@@ -331,7 +331,7 @@ function Tamiz() {
 
       {/* lupas y escalas */}
       <Lupa T={T} at={K.Bu + 1.0} until={K.En - 0.3} x={540} y={960} r={190} fx={540 - 140} fy={560 + 70} interior={(t, r) => InteriorPapel(t, r)} tinte={KC.red} etiqueta="AL MICROSCOPIO · sangre seca" />
-      <Lupa T={T} at={K.Ha + 2.0} until={K.Ho - 0.3} x={830} y={880} r={170} fx={PLX + discos[PKU][0]} fy={PLY + discos[PKU][1]} interior={(t, r) => InteriorHalo(t, r, K.Ha + 2.0)} tinte={KC.mint} etiqueta="AL MICROSCOPIO · halo" />
+      <Lupa T={T} at={K.Ha + 2.0} until={K.Ho - 0.3} x={790} y={850} r={170} fx={PLX + discos[PKU][0]} fy={PLY + discos[PKU][1]} interior={(t, r) => InteriorHalo(t, r, K.Ha + 2.0)} tinte={KC.mint} etiqueta="AL MICROSCOPIO · halo" />
       {T < K.Ta && <Escala T={T} z={1} pxPorMm={9.4} />}
       {T > K.Pr && T < K.Gu && <Escala T={T} z={1} pxPorMm={100} />}
       {T > K.Bu + 1.4 && T < K.En - 0.3 && <Escala T={T} z={1} pxPorMm={9000} objetivo={260} />}
@@ -371,7 +371,7 @@ function Tamiz() {
       <Subtitulo T={T} idx={9} at={K.Di + 0.1} until={K.Re - 0.1} texto="Una dieta *protege el cerebro.*" />
       <Subtitulo T={T} idx={10} at={K.Re + 0.1} until={K.Mx - 0.1} texto="Por eso la lata *avisa.*" />
       <Subtitulo T={T} idx={11} at={K.Mx + 0.1} until={K.Ci - 0.1} texto="En México: *obligatorio.*" />
-      <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Tus gotitas *salieron a cazar.*" />
+      <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Tus gotitas *cazaban enfermedades.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho, CUES.Gancho + 4.6, 'avatar_11_sorprendido', 'gancho'],
