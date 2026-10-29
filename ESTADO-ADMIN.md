@@ -19,6 +19,8 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   de fondo, avisa en ESTADO-ADMIN. Cuando `hechos == 300`, pon el pedido en "listo".
 - Juntar a main: cada ~25 shots terminados por rama, merge de `origin/pedido300/*` a main con `[sin render]` (sección 6 de
   PRODUCCION_NUBE.md; `.github/` como en main; `node historial/consolidar.mjs`).
+- 29 oct 02:15–04:20 UTC: las 7 sesiones se pararon por el límite de uso de 5 horas de la cuenta; a las 04:36 el trabajador
+  les pidió seguir (Robert: "reanuda absolutamente todo"). Iban 8/300 en la Sala. Si vuelve a pasar: esperar al reinicio y reanudar.
 - Espacio de la Sala: 1 GB; con 60 shots iba en 118 MB (~2 MB por shot) → caben los 310. Revisar si pasa de 900 MB.
 
 ## VOZ EN PAUSA (29 oct, Robert): "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
