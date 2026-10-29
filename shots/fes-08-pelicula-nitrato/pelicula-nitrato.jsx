@@ -166,9 +166,10 @@ function VasoAcido({ T, x, y, burbujas = 0, color = 'rgba(255,236,150,.75)' }) {
 
 // Unidad de glucosa (anillo de 6 con su O) + 3 sustituyentes. nitro 0..1 por sustituyente → –OH se vuelve –ONO₂.
 function Anillo({ x, y, nitros = [0, 0, 0], brillaO = 0, rompe = 0, T = 0, k = 0 }) {
+  const vol = k % 2 ? -1 : 1; // en la celulosa, cada glucosa va volteada respecto a la anterior
   const R = 46, pts = Array.from({ length: 6 }, (_, i) => { const a = (i / 6) * Math.PI * 2 - Math.PI / 2; return [Math.cos(a) * R, Math.sin(a) * R]; });
   const sus = [[0, -1, 0], [-0.9, 1, 4], [0.9, 1, 2]]; // dirección y vértice
-  return <g transform={`translate(${x} ${y + Math.sin(T * 2 + k) * 4})`}>
+  return <g transform={`translate(${x} ${y + Math.sin(T * 2 + k) * 4}) scale(1 ${vol})`}>
     <polygon points={pts.map((p) => p.join(',')).join(' ')} fill="rgba(255,255,255,.06)" stroke={KC.texto} strokeWidth={6} strokeLinejoin="round" />
     <circle cx={pts[1][0]} cy={pts[1][1]} r={11} fill={KC.red} stroke={KC.ink} strokeWidth={2} />
     {sus.map(([dx, dy, v], i) => {
@@ -310,10 +311,10 @@ function PeliculaNitrato() {
         <FondoLunares color={KC.pink} />
         <PapelPicado T={T} />
         {svg(<>
-          <Tira T={T} x={300} y={960} largo={900 * desenrolla} rot={18} corre={-T * 220} alto={170} />
-          <Rollo x={300} y={900} r={250} rot={T * 220} lleno={0.95 - desenrolla * 0.08} />
+          <Tira T={T} x={300} y={820} largo={900 * desenrolla} rot={16} corre={-T * 220} alto={170} />
+          <Rollo x={300} y={760} r={250} rot={T * 220} lleno={0.95 - desenrolla * 0.08} />
           {/* lupa sutil sobre la fibra: ¿de qué está hecha? */}
-          <g opacity={kprog(T, K.G + 2.4, K.G + 3.0)}><Algodon x={860} y={1130} s={0.7} /></g>
+          <g opacity={kprog(T, K.G + 2.4, K.G + 3.0)}><Algodon x={880} y={1100} s={0.7} /></g>
         </>)}
       </Escena>
       {/* 2 · Villa firma con una empresa de cine estadounidense para que filme sus batallas */}
@@ -324,7 +325,7 @@ function PeliculaNitrato() {
           {T < K.V + 2.3 && (() => { const u = kprog(T, K.V + 0.6, K.V + 2.0); return <Pluma x={150 + u * 300} y={1080 - Math.sin(u * 20) * 20} />; })()}
           <g opacity={kprog(T, K.V + 2.2, K.V + 2.8)}>
             <CamaraManivela T={T} x={790} y={800} s={0.78} gira={kprog(T, K.V + 2.6, K.V + 3.0)} />
-            {[0, 1, 2].map((i) => <Jinete key={i} x={((T - K.V) * 160 + i * 230) % 900 + 100} y={1180 + i * 18} s={1.1} fase={T * 10 + i} />)}
+            {[0, 1, 2].map((i) => <Jinete key={i} x={((T - K.V) * 160 + i * 230) % 900 + 100} y={1110 + i * 14} s={1.1} fase={T * 10 + i} />)}
           </g>
         </>)}
       </Escena>
@@ -437,11 +438,11 @@ function PeliculaNitrato() {
         <FondoLunares color={KC.pink} />
         <PapelPicado T={T} />
         {svg(<>
-          <Tira T={T} x={300} y={960} largo={900 * (1 - kprog(T, K.Ci + 0.6, K.Ci + 1.6, kEase.suave) * 0.7)} rot={18} corre={-T * 60} alto={170} />
-          <Rollo x={300} y={900} r={250} rot={T * 40} />
+          <Tira T={T} x={300} y={820} largo={900 * (1 - kprog(T, K.Ci + 0.6, K.Ci + 1.6, kEase.suave) * 0.7)} rot={16} corre={-T * 60} alto={170} />
+          <Rollo x={300} y={760} r={250} rot={T * 40} />
           {Array.from({ length: 12 }, (_, i) => { const g = krng(i + 90); return <path key={i} transform={`translate(${g() * 1000 + 40} ${520 + g() * 700}) scale(${0.6 + g() * 0.6})`} d="M 0 -18 L 0 18 M -16 -9 L 16 9 M -16 9 L 16 -9" stroke="#e8f6ff" strokeWidth={4} strokeLinecap="round" opacity={kprog(T, K.Ci + 1.4, K.Ci + 2.0) * (0.5 + 0.5 * Math.sin(T * 3 + i))} />; })}
         </>)}
-        <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={800} y={1530} r={190} fx={300} fy={900} tinte={KC.orange} etiqueta="POR DENTRO · nitrato de celulosa"
+        <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={800} y={1530} r={190} fx={300} fy={760} tinte={KC.orange} etiqueta="POR DENTRO · nitrato de celulosa"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={KC.noche} /><g transform={`translate(${r} ${r}) scale(.5) translate(-540 -900)`}><Cadena T={Tl} y={900} nitro={() => 1} brillaO={1} /></g></svg>} />
       </Escena>
 
