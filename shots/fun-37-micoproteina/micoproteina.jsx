@@ -335,7 +335,7 @@ function MicoproteinaShot() {
       <Etq T={T} at={K.F + 1.9} until={K.E - 0.3} x={40} y={1052} texto="fibras de músculo (esquema)" tam={30} color={MI.musc} />
       <Etq T={T} at={K.F + 2.8} until={K.E - 0.3} x={1040} y={1052} lado="izq" texto="clara de huevo" tam={30} color="#ffffff" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2020" quien="Universidad de Exeter, Reino Unido · 20 hombres jóvenes" revista="Am J Clin Nutr, 2020" y={560} />
-      <Letrero T={T} at={K.E + 3.4} until={K.M - 0.3} x={60} y={1062} ancho={960} texto="20 pesistas · cada uno: micoproteína o leche" tam={30} color={KC.ink} />
+      <Letrero T={T} at={K.E + 3.4} until={K.M - 0.3} x={540} y={1062} ancho={960} texto="20 pesistas · cada uno: micoproteína o leche" tam={30} color={KC.ink} />
       <Chip T={T} at={K.E + 4.6} until={K.Q - 0.3} texto="una sola toma · igual leucina, más proteína en la de hongo" x={540} y={1160} tam={25} borde={KC.ink} />
       <Letrero T={T} at={K.M + 0.2} until={K.Q - 0.3} x={60} y={560} ancho={600} align="left" texto="Aumento en la fabricación de proteína del músculo" tam={36} color={KC.ink} />
       <Letrero T={T} at={K.M + 1.0} until={K.Q - 0.3} x={265} y={1068} ancho={260} texto="micoproteína" tam={28} color={KC.ink} />
