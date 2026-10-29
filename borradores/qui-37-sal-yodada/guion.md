@@ -13,7 +13,7 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese «yodada» en tu sal no es adorno: es lo que tu cuello necesita para fabricar hormonas. | Fondo amarillo de cocina. Desde el cuadro 0 un salero cae y suelta un chorrito de sal sobre un plato; la cámara se acerca a la etiqueta del paquete: "SAL YODADA FLUORURADA" y la palabra **yodada** se ilumina. Una flecha salta de la etiqueta al cuello de una silueta. Chip "¿adorno?" se tacha. |
-| 1 | Tiroides | Ahí está tu tiroides, una glándula con forma de mariposa que atrapa el yodo de tu sangre. | `Lupa` en rayos X sobre el cuello: aparece la tiroides en forma de mariposa frente a la tráquea. Escala "≈ 5 cm". Puntitos morados (yodo, I) viajan por un vaso sanguíneo y la glándula los "jala" hacia adentro. |
+| 1 | Tiroides | Ahí está tu tiroides, una glándula con forma de mariposa que atrapa el yodo de tu sangre. | `Lupa` en rayos X sobre el cuello: aparece la tiroides en forma de mariposa frente a la tráquea. Barra de escala esquemática "cm". Puntitos morados (yodo, I) viajan por un vaso sanguíneo y la glándula los "jala" hacia adentro. |
 | 2 | Tiroxina | Con él arma la tiroxina, una hormona que lleva 4 átomos de yodo. | Fondo noche (micro): dentro de una célula de la tiroides se arma la molécula de tiroxina (T4) en esquema: dos anillos unidos por un oxígeno y 4 esferas moradas "I" que se encajan una por una con un "clic" (contador 1·2·3·4). Etiqueta "tiroxina (T4) · C₁₅H₁₁I₄NO₄". |
 | 3 | Bocio | Si falta yodo, la hipófisis manda más señal, y la tiroides crece para atrapar más: eso es el bocio. | Regreso al cuello: arriba, en la base del cerebro, la hipófisis (bolita) lanza ondas "TSH ↑" hacia abajo; los puntos morados se acaban y la mariposa se infla poco a poco hasta abultar el cuello. Rótulo "bocio". |
 | 4 | Embarazo | Y en el embarazo, según la OMS, el yodo es clave para el desarrollo del cerebro del bebé. | Silueta de una embarazada; `Lupa` sobre el vientre: un bebé con su cerebro dibujado en líneas que se encienden por zonas cuando le llegan puntitos morados. Chip "OMS". |
@@ -52,9 +52,9 @@
 
 ## Notas
 - El dibujo es esquemático (la tiroides, la hipófisis, las moléculas, los puntitos de yodo y el cerebro del bebé).
-- En el estudio de Akron no se usó sal: se dio **yoduro de sodio** (2 g repartidos en 10 días escolares, cada primavera y otoño). En pantalla dice "yodo"; en la descripción se aclara. El 27.6 % y el 0.2 % son de las alumnas con tiroides normal al inicio (906 + 2 que lo tomaron; 910 + 347 que no). Las que no lo tomaron fueron las que no quisieron o no tenían permiso: no fue un ensayo al azar.
+- En el estudio de Akron no se usó sal: se dio **yoduro de sodio** (2 g repartidos en 10 días escolares, cada primavera y otoño). En pantalla dice "yodo"; en la descripción se aclara. El 27.6 % y el 0.2 % son de las alumnas con tiroides normal al inicio (906 + 2 que lo tomaron; 910 + 347 que no). El artículo compara a las que tomaron yodo con las que no; es un estudio de hace más de 100 años, no un ensayo moderno.
 - Ese trabajo y otros (Cowie en Michigan) empujaron la sal yodada en EE. UU. (Michigan, 1 mayo 1924, según Leung et al. 2012); Suiza empezó en 1922. Va en la descripción, no en la voz.
 - "De 20 a 40 miligramos" = 30 ± 10 mg/kg de ion yodo de la NOM-040. La sal yodada fluorurada lleva además 250 ± 50 mg/kg de ion flúor y por ley no se vende donde el agua ya trae más de 0.7 mg/L de flúor (va en un chip y en la descripción).
 - No decir que hay que comer más sal: la OMS pide menos de 5 g al día (poco menos de una cucharadita) y que la sal sea yodada. Va en la descripción.
-- El yodo de más también puede dar problemas de tiroides (Lisco et al. 2023): nada de tomar yodo por tu cuenta; eso, en la descripción.
+- El yodo de más también puede dar problemas de tiroides (Lisco et al. 2023: "chronic overexposure may increase the risk of subclinical hypothyroidism and possibly goiter due to persistent TSH overstimulation"): nada de tomar yodo por tu cuenta; eso, en la descripción.
 - "Casi dos terceras partes" es un cálculo propio con la fórmula de PubChem (65.3 %).

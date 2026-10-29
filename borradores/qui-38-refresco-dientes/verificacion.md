@@ -46,3 +46,8 @@ Fuentes abiertas por el verificador:
 4. **#17 "agua de la llave 7.2" (⚠️ menor):** cambiar a "agua (Birmingham) 7.2" o "agua ≈ 7".
 5. **#10 "PO₄³⁻" (⚠️ menor):** etiquetar los iones sueltos como "Ca²⁺" y "fosfato" (sin la carga), o usar "HPO₄²⁻".
 6. **#26 Marcas:** no hace falta corregir el guion. Al animar, que la lata no lleve logo, colores ni tipografía de ninguna marca real.
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplicaron tal cual las 5 propuestas del verificador; además solo se quitó relleno para cuadrar el tiempo («¿Pero qué tan ácido es un refresco?», «Por eso, después enjuágate…»), sin cambiar datos.
+
+VEREDICTO: APROBADO

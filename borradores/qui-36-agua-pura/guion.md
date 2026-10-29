@@ -1,0 +1,50 @@
+# Shot Químico #36 · El agua pura casi no conduce: lo que conduce son los iones
+
+- **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #36 · rama `pedido300/qui`.
+- **Formato:** N2 "El número" (900 mil veces, desde el cuadro 0, en un medidor) + N1 "Por dentro" (los dos vasos en la cocina → adentro del agua, con iones y moléculas → los mismos vasos, ahora con un tercero: el agua de tu llave).
+- **Gancho (de los 7):** #4 "Un número que contradice": "El agua pura conduce la electricidad unas 900 mil veces peor que el agua de mar." (Todos creen que el agua, así nada más, conduce.)
+- **Seguridad:** el mensaje es el contrario de "el agua pura es segura": el agua que tocamos nunca es pura y mezclar agua con electricidad siempre es peligroso (escena 8). En pantalla nunca se ve a nadie meter un aparato al agua; el experimento es con un medidor de laboratorio dibujado.
+- **Duración:** voz 959 caracteres / 179 palabras (≈ 57.9 s) + cierre 3.5 s → **≈ 61.4 s** (`estimar-escenas.mjs`).
+- **Estado:** guion listo para verificación independiente. Voz pendiente de aprobación de Robert.
+
+## Versión narrada
+
+Tiempos estimados: Gancho 0–4.9 · Que 4.9–9.3 · Iones 9.3–16.0 · Pura 16.0–20.7 · Pregunta 20.7–24.7 · Real 24.7–31.7 · Estudio 31.7–41.7 · Cuerpo 41.7–47.6 · Peligro 47.6–53.1 · Cierre 53.1–57.9 · Outro 57.9–61.4.
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | El agua pura conduce la electricidad unas 900 mil veces peor que el agua de mar. | Fondo cian, barra de cocina. Dos vasos iguales, cada uno con dos varillas metálicas (+ y −) conectadas a un medidor con aguja. Desde el cuadro 0 las varillas bajan al agua: en el vaso "agua de mar" la aguja se dispara hasta el tope con un "¡zing!"; en el de "agua pura" apenas tiembla. Número gigante "×900 000" entre los dos. |
+| 1 | Que | ¿Entonces qué conduce? No es el agua: son los iones que trae disueltos. | Chip "agua = conduce" que se tacha. La cámara hace zoom al vaso de agua de mar (`Lupa` en modo rayos X): adentro, puntitos de colores entre las moléculas. Barra de escala "1 nm". |
+| 2 | Iones | La sal, al disolverse, se separa en iones: partículas con carga, positivas y negativas, que llevan la corriente. | Fondo noche. Un cubito de sal se deshace: salen esferas moradas "+" y verdes "−" rodeadas de moléculas de agua. Aparecen las varillas: las "+" viajan hacia la varilla negativa y las "−" hacia la positiva; flechas de corriente se encienden. |
+| 3 | Pura | El agua pura casi no tiene iones: muy pocas de sus moléculas se parten solas. | Mismo zoom, ahora en el vaso de agua pura: puras moléculas H₂O quietas; de vez en cuando una se parte en H⁺ y OH⁻ (destello) y se vuelve a juntar. Chip "0.055 µS/cm a 25 °C". Las varillas casi no reciben nada. |
+| 4 | Pregunta | ¿Y entonces por qué el agua es tan peligrosa con la electricidad? | **Re-gancho.** Vuelve a la cocina: un enchufe en la pared junto al fregadero con un "?" gigante que late. |
+| 5 | Real | Porque el agua real nunca es pura: la de tu llave, la de la alberca y la del suelo siempre traen minerales disueltos. | Tres viñetas que entran una tras otra (cada ~2 s): llave goteando, alberca, suelo con raíces; en cada gota, la `Lupa` muestra iones "+" y "−". Chip "en la naturaleza no hay agua pura". |
+| 6 | Estudio | En 1995, el instituto de estándares de Estados Unidos, en Maryland, reportó que el agua pura, al tocar el aire, absorbe dióxido de carbono y conduce de 10 a 30 veces más. | `TarjetaEstudio` "1995 · NIST · Gaithersburg, Maryland, EUA". Vaso de agua pura destapado: moléculas de CO₂ caen del aire, se meten al agua y se vuelven H⁺ + HCO₃⁻ (bicarbonato). El medidor sube de "0.055" a "≈1 µS/cm" con la etiqueta "×10 a ×30". |
+| 7 | Cuerpo | Lo curioso: tú tampoco eres agua pura. Tu cuerpo es salado, y justo por eso conduces la corriente. | Silueta de una persona (fondo amarillo); la `Lupa` en rayos X sobre el brazo muestra iones "+" y "−" nadando. Chip "tu cuerpo = agua salada". |
+| 8 | Peligro | Por eso mezclar agua y electricidad, en cualquier enchufe de tu casa, siempre es peligroso. | Fondo rosa: enchufe con un charco y una secadora junto al lavabo, todo con ✗ roja y triángulo ⚠️ "agua + electricidad = peligro". Nadie toca nada. |
+| 9 | Cierre | Así que el agua pura casi no conduce, pero el agua que tú tocas nunca es pura. | **Regreso a los dos vasos del inicio**, ahora con un tercero: "agua de tu llave", cuya aguja sube muy por encima de la del agua pura. Etiquetas: "pura: casi no conduce" · "la que tocas: nunca es pura". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz). |
+
+**Música:** cama grave continua y eléctrica (zumbido suave), siempre debajo de la voz. Efectos en el mismo cuadro: "zing" de la aguja al tope, crujido del cubito de sal que se disuelve, chispitas cuando los iones llegan a las varillas, "plic" de la gota de la llave, burbujeo suave del CO₂, zumbido de alerta en el ⚠️ (sin sonido de descarga ni de golpe eléctrico).
+
+## Fuentes (cada cifra y afirmación se abrió en la fuente original el 29 oct 2026)
+
+1. **Agua pura: 0.055 µS/cm a 25 °C (escena 3) y su origen en los iones H⁺ y OH⁻ del agua misma (escena 3); al tocar el aire, el CO₂ la hace conducir de 10 a 30 veces más (escena 6); el estudio con año y lugar** — Wu Y.C., Berezansky P.A. "Low Electrolytic Conductivity Standards." *Journal of Research of the National Institute of Standards and Technology* 100(5):521–527 (1995). National Institute of Standards and Technology, Gaithersburg, MD. doi:10.6028/jres.100.039 · PMC4887229.
+   > "Based on the limiting ionic equivalent conductivities of hydrogen ion and hydroxide ion and dissociation constant of water, the theoretical value for the electrolytic conductivity of pure water at 25 °C is 0.055 μS/cm. The absorption of ambient carbon dioxide by the water can cause the electrolytic conductivity to increase by a factor of 10 to 30, depending on the level of carbon dioxide in the atmosphere. In our laboratory, the conductivity of pure water equilibrated with ambient carbon dioxide varies from 0.8 μS/cm to 1.2 μS/cm"
+   > "forms carbonic acid (H2CO3) in water. The carbonic acid then dissociates to hydrogen (H+) and bicarbonate (HCO3−) ions which increase the electrolytic conductivity."
+2. **Agua de mar ≈ 50 000 µS/cm (escena 0) y agua pura ≈ 0.05 (confirma el orden de magnitud)** — Hem J.D. *Study and Interpretation of the Chemical Characteristics of Natural Water*, 3.ª ed. U.S. Geological Survey Water-Supply Paper 2254 (1985), p. 67–68. https://pubs.usgs.gov/wsp/wsp2254/pdf/wsp2254a.pdf (1 µmho/cm = 1 µS/cm).
+   > "The specific conductance of the purest water that can be made would approach 0.05 µmho/cm" · "In other areas, conductances of 50,000 µmho/cm or more may be reached; this is the approximate conductance of seawater."
+   > "Carbon dioxide from the air in the laboratory dissolves in distilled water that is open to the air, and the resulting bicarbonate and hydrogen ions impart most of the observed conductivity."
+   - **Cálculo del gancho:** 50 000 ÷ 0.055 ≈ 909 000 → "unas 900 mil veces". (Con 0.05 de Hem daría 1 000 000; se usa la cifra más conservadora.)
+3. **Lo que conduce son los iones; la sal se separa en iones con carga; el agua pura conduce muy mal porque casi no está ionizada (escenas 1–3)** — Flowers P., Theopold K., Langley R., Robinson W.R. *Chemistry 2e*, OpenStax (Rice University), 2019, sección 11.2 "Electrolytes". https://openstax.org/books/chemistry-2e/pages/11-2-electrolytes
+   > "Pure water is an extremely poor conductor of electricity because it is only very slightly ionized" · "Solutions may also conduct electricity if they contain dissolved ions" · "When ionic compounds dissolve in water, the ions in the solid separate and disperse uniformly throughout the solution"
+4. **El agua real nunca es pura (llave, alberca, suelo); tu cuerpo es salado y conduce; mezclar agua y electricidad es muy peligroso (escenas 5, 7 y 8)** — U.S. Geological Survey, Water Science School. "Conductivity (Electrical Conductance) and Water" (página actualizada en 2026). https://www.usgs.gov/special-topics/water-science-school/science/conductivity-electrical-conductance-and-water
+   > "pure water is an excellent insulator and does not conduct electricity" · "Water stops being an excellent insulator once it starts dissolving substances around it." · "Even a small amount of ions in a water solution makes it able to conduct electricity" · "you won't find any pure water in nature" · "the water will contain significant amounts of dissolved substances, minerals, and chemicals" (sobre el agua de la llave, de una alberca o del suelo) · "we make good conductors due to how salty we are" · "mixing water and electricity, be it from a lightning bolt or electrical socket in the house, is a very dangerous thing to do."
+
+## Notas
+- El dibujo es esquemático (iones como esferas de color, moléculas sin escala real, medidor de aguja inventado).
+- Las cifras de conductividad son propiedades físicas, no conteos que cambien con los años; el 0.055 µS/cm es el valor teórico a 25 °C (un trabajo de 2005, Light et al., *Electrochem. Solid-State Lett.* 8:E16, da 0.05501 µS/cm; no se abrió el original y no se usa en la voz).
+- El agua de mar varía con la salinidad y la temperatura; Hem dice "approximate" y "50,000 or more". Por eso la voz dice "unas".
+- Matiz para la descripción: la conductividad del agua de la llave varía mucho según la ciudad; no se da una cifra en la voz porque no se encontró una fuente oficial con un rango típico.
+- Matiz que NO va en la voz (para no confundir): la USGS explica que en el agua de mar el riesgo de electrocución puede ser menor que en la tina porque la corriente se va por el agua; no cambia el mensaje: agua y electricidad siempre son peligrosas.
+- Kohlrausch (siglo XIX) destiló agua una y otra vez y vio que su resistencia subía (Encyclopaedia Britannica 1911, "Conduction, Electric"), pero no se encontró la fecha ni la cifra en una fuente abierta, así que no entra al guion.
