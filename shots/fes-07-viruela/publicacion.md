@@ -79,7 +79,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Esa marquita en el brazo de tu abuela es la cicatriz de la vacuna de la viruela 💉 En plena Guerra Fría, la URSS donó más de 1,400 millones de dosis y EE.UU. puso expertos: en 1980, el mundo quedó libre de viruela. Shot Festivo #07 #CienciaParaLaPaz
+Esa marquita en el brazo de tu abuela es la cicatriz de la vacuna de la viruela 💉 En plena Guerra Fría, la URSS donó más de 1,400 millones de dosis y EE.UU. puso expertos: en 1980 se declaró al mundo libre de viruela. Shot Festivo #07 #CienciaParaLaPaz
 ```
 
 ### Threads
