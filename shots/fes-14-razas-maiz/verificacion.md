@@ -92,4 +92,15 @@ Revisé todo texto en pantalla de `razas-maiz.jsx` (Chip, Etq, MitoTachado, Nume
 | publicacion.md, LinkedIn: «Un inventario clásico se publicó en 1951» | ⚠️ valoración sin fuente → **corregida a «En 1951, Wellhausen y su equipo publicaron «Razas de maíz en México»: …»** ✅ | Wellhausen 1951 | "First published in Mexico, April, 1951" | 1951 |
 | Resto de publicacion.md (TikTok, Instagram, YouTube, Facebook, X, Threads, comentario fijado) | ✅ solo datos ya verificados ("por su grano reventador" = ficha: "por el carácter reventador del grano"; Hellin "critical role" respalda "podrían ser clave") | — | — | — |
 
+## Re-verificación (29 oct 2026, pedido del administrador)
+
+Cambio: «Por eso se guardan en bancos de semillas, …» → «**Hoy muchas se guardan** en bancos de semillas, y los maíces criollos podrían servir para los climas que vienen.» (voz línea 11). Se quita el «por eso», que planteaba una causa no dicha por las fuentes; queda un hecho actual y una hipótesis dicha como hipótesis.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Hoy muchas [razas de maíz] se guardan en bancos de semillas» | ✅ | CGIAR Genebank Platform, CIMMYT (genebanks.cgiar.org/genebanks/cimmyt) · CONABIO | "The maize collection of 28,000 accessions includes the world's largest collection of maize landraces" / "organizar el material en las colecciones de bancos de germoplasma" | 2026 (consulta) / 2025 |
+| «los maíces criollos podrían servir para los climas que vienen» (hipótesis) | ✅ (con «podrían») | Hellin, Bellon y Hearne 2014, *J. Crop Improvement* 28(4): 484–501 | "maize landraces have a critical role to play in climate change adaptation." / "Landraces may already exist that are appropriate for predicted climates." | 2014 |
+
+`publicacion.md` revisado: ya no dice "Por eso se guardan" (usa "Hoy muchas se guardan…").
+
 VEREDICTO: APROBADO

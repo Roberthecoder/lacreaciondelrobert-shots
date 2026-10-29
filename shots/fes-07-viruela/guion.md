@@ -1,4 +1,4 @@
-# Shot Festivo #07 · Ciencia para la Paz · Biotecnológico: La viruela, la enfermedad que EE.UU. y la URSS borraron juntos
+# Shot Festivo #07 · Ciencia para la Paz · Biotecnológico: La viruela, la enfermedad que EE.UU. y la URSS ayudaron a borrar
 
 - **Serie:** Shot Festivo · **Serie vinculada:** Biotecnológico · **Logo:** bioquímica (ADN + matraz) · **Badge:** Festivo #07 · **Especial:** Día Mundial de la Ciencia para la Paz y el Desarrollo (10 de noviembre; se publica el 10 nov 2026).
 - **Estado (29 oct 2026):** guion verificado (`verificacion.md`: APROBADO; el ⚠️ del cierre se corrigió: México eliminó la viruela en 1951, antes del programa, así que la marquita es "el recuerdo", no "la firma"). Animación (`viruela.jsx`), música (`gen-audio.mjs` → `assets/mezcla.wav`), Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert**.
@@ -23,7 +23,7 @@
 | 10 | Anillo | Buscaban cada caso y vacunaban a todos sus contactos, como un anillo. | Fondo lila. Mapa de una aldea vista desde arriba: una casa con un caso (punto rojo); alrededor se encienden en menta las casas de sus contactos formando un anillo; el punto rojo se apaga. Chip «vigilancia y contención». Capítulo 4 «Cero casos». |
 | 11 | Ultimo | El último caso natural fue un cocinero de Somalia, en 1977: sobrevivió y luego trabajó contra la polio. | Fondo arena. Mapa de África con Somalia y el puerto de Merca marcados; `TarjetaEstudio` «Oct 1977 · Merca, Somalia · Ali Maow Maalin, cocinero de hospital»; luego un gafete «polio» (trabajó en la erradicación de la polio hasta 2013). |
 | 12 | Libre | En 1980 se declaró al mundo libre de viruela: la única enfermedad humana erradicada. | Fondo cian. El globo del re-gancho: los puntos rojos se apagan; el globo se queda sin puntos y lo rodea un aro dorado. Tarjeta «8 de mayo de 1980 · Asamblea Mundial de la Salud». Etiqueta chica «México: último caso en 1951». Chip «única enfermedad humana erradicada». |
-| 13 | Cierre | Esa marquita es el recuerdo de una enfermedad que dos rivales, con ciencia, borraron juntos. | **Regreso a la imagen del inicio:** el mismo brazo de la abuela y la misma marquita, ahora con un contorno dorado; dentro de la `Lupa` («un mundo sin viruela»), el globo limpio y el apretón de manos. Chip «ciencia para la paz». |
+| 13 | Cierre | Esa marquita es el recuerdo de una enfermedad que dos rivales, con ciencia, ayudaron a borrar. | **Regreso a la imagen del inicio:** el mismo brazo de la abuela y la misma marquita, ahora con un contorno dorado; dentro de la `Lupa` («un mundo sin viruela»), el globo limpio y el apretón de manos. Chip «ciencia para la paz». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de bioquímica y Robert señalando. |
 
 **Música:** cama grave continua sin golpe marcado, tensa (acorde menor) mientras la viruela está en el mapa y que se abre a mayor cuando el contador llega a 0. Efectos en el mismo cuadro: roce de la manga al arremangarse, golpe grave por cada silueta que se apaga, burbujeo suave del virus en la escena micro, «pop» de la ampolla, destello agudo cuando el linfocito reconoce al virus, ráfaga de tics cuando llegan los anticuerpos, tic-tac del time-lapse de la costra, martillo de la Asamblea, tintineo de frascos al subir el medidor de dosis, «tink» de la gotita en la aguja y 15 piquetitos, un tono por cada casa que se enciende en el anillo, notas que bajan con el contador de casos y un acorde abierto en el 0. Todo generado con `gen-audio.mjs` (fase B).
@@ -42,7 +42,7 @@ Tiempos de la base (con la voz real se recorren solos porque están atados a cad
 | 6 | 45.2 | 48.9 | 07_pensativo_puno | `izq-alto` | el anillo de vacunación alrededor del caso |
 | 7 | 53.3 | 55.1 | 12_perfil_serio | `izq-alto` | «sobrevivió y luego trabajó contra la polio» |
 | 8 | 55.8 | 60.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «el mundo, libre de viruela» |
-| 9 | 60.8 | 65.9 | 02_apuntando_camara | `arriba-der` | «dos rivales que, con ciencia, la borraron juntos» |
+| 9 | 60.8 | 65.9 | 02_apuntando_camara | `arriba-der` | «dos rivales que, con ciencia, ayudaron a borrar» |
 | — | 66.0 | 69.8 | 13_senalando_arriba | `CierreMarca` | tarjeta final junto al logo |
 
 **Total:** 9 apariciones + cierre · ≈ 35 s en pantalla (sin contar el cierre) en 69.8 s · 9 poses distintas, nunca la misma dos veces seguidas · una vez grande (re-gancho).
@@ -71,7 +71,7 @@ Tiempos de la base (con la voz real se recorren solos porque están atados a cad
 - El dibujo es esquemático: los virus (forma de ladrillo redondeado de los orthopoxvirus), los linfocitos, los anticuerpos, el corte de piel, el mapa de la aldea y los personajes de la Asamblea están simplificados; las banderas son símbolos, no escenas reales.
 - Las cifras con más de 2 años llevan su año en la voz o en pantalla (1958, 1958–1979, 1977, 1980, 1951).
 - "3 de cada 10" es el promedio que da el CDC; en pantalla siempre va con «en promedio».
-- El cierre dice "el recuerdo de una enfermedad que dos rivales… borraron juntos" y no "la firma" del programa: México eliminó la viruela en 1951 con vacuna propia, antes de la propuesta de 1958 (Fenner 1988, p. 333; tesis UNAM, Aguirre Bolaños 2015). México vacunó hasta mediados de los 70 (misma tesis), de ahí la etiqueta «si se vacunó antes de ~1975»; la BCG también deja marca en el brazo.
+- El cierre dice "el recuerdo de una enfermedad que dos rivales… ayudaron a borrar" y no "la firma" del programa: México eliminó la viruela en 1951 con vacuna propia, antes de la propuesta de 1958 (Fenner 1988, p. 333; tesis UNAM, Aguirre Bolaños 2015). México vacunó hasta mediados de los 70 (misma tesis), de ahí la etiqueta «si se vacunó antes de ~1975»; la BCG también deja marca en el brazo.
 - Virión de orthopoxvirus: "Enveloped, brick-shaped virion, 250nm long and 200nm wide" (ViralZone, SIB).
 - Las dosis soviéticas fueron sobre todo por acuerdos bilaterales (no todas pasaron por la OMS); la voz dice "donó", sin decir "a la OMS".
 - No se dibuja a Zhdánov, Henderson ni Maalin como retrato: solo gafetes con su nombre.

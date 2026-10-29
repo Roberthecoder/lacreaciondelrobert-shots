@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #07 · Ciencia para la Paz · Biotecnológico: La viruela, la enfermedad que EE.UU. y la URSS borraron juntos
+# Publicación · Shot Festivo #07 · Ciencia para la Paz · Biotecnológico: La viruela, la enfermedad que EE.UU. y la URSS ayudaron a borrar
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 10 nov 2026, Día Mundial de la Ciencia para la Paz y el Desarrollo.
 
@@ -11,7 +11,7 @@ La viruela mataba, en promedio, a 3 de cada 10 personas que se enfermaban. La va
 ¿Y cómo se borra una enfermedad de todo el planeta en plena Guerra Fría? En 1958, el soviético Víktor Zhdánov propuso en la Asamblea Mundial de la Salud erradicarla. De 1958 a 1979 la Unión Soviética donó más de 1,400 millones de dosis, y Estados Unidos puso expertos de sus CDC, como D. A. Henderson, que dirigió el programa de la OMS.
 Una aguja de dos puntas atrapaba una gotita: la vacuna rendía cuatro veces más. Y buscaban cada caso para vacunar a todos sus contactos, como un anillo.
 El último caso natural fue Ali Maow Maalin, un cocinero de Somalia, en 1977: sobrevivió y luego trabajó contra la polio. En 1980 se declaró al mundo libre de viruela: la única enfermedad humana erradicada. (En México, el último caso fue en 1951.)
-Esa marquita (si tu abuela se vacunó antes de ~1975; la BCG también deja marca) es el recuerdo de una enfermedad que dos rivales, con ciencia, borraron juntos.
+Esa marquita (si tu abuela se vacunó antes de ~1975; la BCG también deja marca) es el recuerdo de una enfermedad que dos rivales, con ciencia, ayudaron a borrar.
 El dibujo es esquemático.
 Fuentes: OMS · CDC · Fenner et al., "Smallpox and its eradication" (OMS, 1988).
 ¿Alguien en tu familia tiene esa marquita? 👇
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La marquita del brazo de tu abuela: la viruela que EE.UU. y la URSS borraron | Shot Festivo #07
+La marquita del brazo de tu abuela: la viruela que EE.UU. y la URSS ayudaron a borrar | Shot Festivo #07
 ```
 Descripción:
 ```text
@@ -42,7 +42,7 @@ Esa marquita en el brazo de tu abuela no es un lunar: es la cicatriz de la vacun
 La viruela mataba, en promedio, a 3 de cada 10 personas que se enfermaban. La vacuna no traía viruela: traía vaccinia, un virus pariente (los dos son orthopoxvirus) y mucho más leve. Se aplicaba con piquetitos en el brazo; hace un granito en la piel y ahí las defensas (linfocitos T y B) aprenden a reconocerlo. Como vaccinia se parece a la viruela, el vacunado responde más rápido si un día llega la viruela. El granito se hace ampolla, luego costra; la costra se cae entre los 14 y 21 días y deja la cicatriz típica.
 ¿Y cómo se borra una enfermedad de todo el planeta en plena Guerra Fría? En 1958, en la Asamblea Mundial de la Salud de Minneapolis, el viceministro soviético de Salud Víktor Zhdánov propuso que la OMS erradicara la viruela. De 1958 a 1979 la Unión Soviética donó más de 1,400 millones de dosis de vacuna (sobre todo por acuerdos con otros países), y Estados Unidos puso expertos de sus CDC: D. A. Henderson dirigió el programa de la OMS de 1966 a 1977. La vacuna liofilizada (en polvo) se podía guardar sin refrigerador. La aguja bifurcada atrapaba una gotita de 0.0025 mL entre sus dos puntas, en vez de unos 0.01 mL: la vacuna rendía cuatro veces más. Y con la estrategia de vigilancia y contención se buscaba cada caso y se vacunaba a todos sus contactos, como un anillo.
 El último caso natural fue Ali Maow Maalin, cocinero de un hospital en Merca, Somalia, en octubre de 1977. Sobrevivió y después trabajó en la erradicación de la polio. El 8 de mayo de 1980 la Asamblea Mundial de la Salud declaró al mundo libre de viruela: hasta hoy, la única enfermedad humana erradicada. En México, el último caso fue en 1951.
-Si tu abuela o abuelo se vacunó antes de ~1975, esa marquita es el recuerdo de una enfermedad que dos rivales, con ciencia, borraron juntos. (Ojo: la vacuna BCG también deja una marca en el brazo.)
+Si tu abuela o abuelo se vacunó antes de ~1975, esa marquita es el recuerdo de una enfermedad que dos rivales, con ciencia, ayudaron a borrar. (Ojo: la vacuna BCG también deja una marca en el brazo.)
 El dibujo es esquemático.
 Fuentes:
 - Fenner F., Henderson D. A., Arita I., Ježek Z., Ladnyi I. D. "Smallpox and its eradication". OMS, 1988: https://iris.who.int/handle/10665/39485

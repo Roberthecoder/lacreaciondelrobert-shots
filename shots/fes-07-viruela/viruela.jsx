@@ -464,7 +464,7 @@ function Viruela() {
       <Subtitulo T={T} idx={10} at={K.An + 0.1} until={K.Ul - 0.1} texto="Vacunar a los contactos: *un anillo.*" />
       <Subtitulo T={T} idx={11} at={K.Ul + 0.1} until={K.Li - 0.1} texto="1977, Somalia: *el último caso natural.*" />
       <Subtitulo T={T} idx={12} at={K.Li + 0.1} until={K.Ci - 0.1} texto="1980: *el mundo, libre de viruela.*" />
-      <Subtitulo T={T} idx={13} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Dos rivales, *con ciencia, juntos.*" />
+      <Subtitulo T={T} idx={13} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Dos rivales, *con ciencia, ayudaron.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.2, 'avatar_11_sorprendido', 'gancho'],

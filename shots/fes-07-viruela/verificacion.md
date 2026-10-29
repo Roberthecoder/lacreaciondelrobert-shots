@@ -91,4 +91,15 @@ Revisé todos los textos de `viruela.jsx` (Chip, Etq, Etiqueta, NumeroGigante, M
 
 Corrección aplicada: solo la línea de X en `publicacion.md` (arriba). En `viruela.jsx` no hizo falta cambiar nada; no hay cifras, fechas ni nombres fuera de lo verificado y la ortografía está bien.
 
+## Re-verificación (29 oct 2026, pedido del administrador)
+
+Cambio: «…que dos rivales, con ciencia, borraron juntos» → «…que dos rivales, con ciencia, **ayudaron a borrar**» (voz línea 13, título y subtítulo «Dos rivales, con ciencia, ayudaron.»). La frase nueva es más precisa: reconoce que la erradicación fue un programa de la OMS con muchos países, y que EE.UU. y la URSS contribuyeron.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz/subtítulo: «una enfermedad que dos rivales, con ciencia, ayudaron a borrar» | ✅ | Fenner et al. 1988 (OMS), cap. 10, p. 469–470 · lámina 9.1 · OMS, History of smallpox vaccination | "Most of the contributed vaccine was provided under bilateral agreements by the USSR, which donated more than 1400 million doses from 1958 to 1979. The USA provided more than 190 million doses" / "proposed to the World Health Assembly in 1958 that WHO should undertake the global eradication of smallpox." / "Epidemiologists from the Soviet Union and the United States of America worked side by side in the middle of a cold war." | 1958–1980 (libro 1988) |
+| Título: «La viruela, la enfermedad que EE.UU. y la URSS ayudaron a borrar» | ✅ | Mismas fuentes | (ídem) | 1958–1980 |
+
+`publicacion.md` revisado: ya no dice "borraron juntos" (usa "ayudaron a borrar").
+
 VEREDICTO: APROBADO

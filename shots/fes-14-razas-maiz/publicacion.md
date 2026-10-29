@@ -11,7 +11,7 @@ Cada raza tiene sus usos: el Cacahuacintle es el maíz por excelencia para pozol
 ¿Por qué tantas? Porque los agricultores las han adaptado a cada lugar, y su polen viaja libre de planta en planta. Muchas familias guardan, intercambian y prueban su propia semilla. Así hay maíz desde el nivel del mar hasta los 3,400 metros.
 ¿Y el maíz azul o morado? Son antocianinas: pigmentos en la cáscara del grano (pericarpio), en la capa de justo abajo (aleurona), o en las dos.
 En 1951, en México, Wellhausen y su equipo describieron 25 razas a partir de unas 2,000 muestras. Y un dato: una variante del maíz Chalqueño se usa para harina de tamal, y sus hojas, para envolverlos.
-Por eso se guardan en bancos de semillas, y los maíces criollos podrían servir para los climas que vienen (es una hipótesis de los investigadores).
+Hoy muchas se guardan en bancos de semillas, y los maíces criollos podrían servir para los climas que vienen (es una hipótesis de los investigadores).
 El dibujo es esquemático.
 Fuentes: CONABIO · Wellhausen et al. (1951) · Salinas-Moreno et al. (2021) · Hellin et al. (2014).
 ¿De qué maíz son los tamales de tu región? 👇
@@ -44,7 +44,7 @@ Cada raza tiene sus usos. El Cacahuacintle, de grano grande, blanco y harinoso, 
 ¿Y el maíz azul o morado? Su color viene de antocianinas, pigmentos que están en el pericarpio (la cáscara del grano), en la capa de aleurona (justo abajo) o en las dos.
 En 1951, en México, Wellhausen y su equipo describieron 25 razas a partir de unas 2,000 muestras colectadas en el país. Hoy se reportan 64.
 Dato: una variante del maíz Chalqueño («palomo») se usa para harina de tamal, y su hoja (totomoxtle) es muy apreciada para envolverlos.
-Por eso se guardan en bancos de semillas, y los investigadores proponen que algunos maíces criollos podrían servir para los climas que vienen.
+Hoy muchas se guardan en bancos de semillas, y los investigadores proponen que algunos maíces criollos podrían servir para los climas que vienen.
 El dibujo es esquemático: las mazorcas muestran solo rasgos generales de cada raza.
 Fuentes:
 - CONABIO, Razas de maíz de México: https://www.biodiversidad.gob.mx/diversidad/alimentos/maices/razas-de-maiz
