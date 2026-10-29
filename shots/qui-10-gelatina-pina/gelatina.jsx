@@ -81,10 +81,10 @@ function Helice({ T, x, y, largo = 70, rot = 0, s = 1, o = 1 }) {
   </g>;
 }
 // Red de gelatina: nodos en cuadrícula; cada borde es una cadena. forma 0..1 (cadenas sueltas → red); cortes: tiempos de corte por borde.
-const RED_X0 = 150, RED_Y0 = 470, RED_DX = 195, RED_DY = 150, RED_C = 5, RED_F = 6;
+const RED_X0 = 150, RED_Y0 = 730, RED_DX = 195, RED_DY = 155, RED_C = 5, RED_F = 4;
 const RED_NODOS = []; for (let f = 0; f < RED_F; f++) for (let c = 0; c < RED_C; c++) RED_NODOS.push([RED_X0 + c * RED_DX, RED_Y0 + f * RED_DY]);
 const RED_BORDES = []; for (let f = 0; f < RED_F; f++) for (let c = 0; c < RED_C; c++) { const i = f * RED_C + c; if (c < RED_C - 1) RED_BORDES.push([i, i + 1]); if (f < RED_F - 1) RED_BORDES.push([i, i + RED_C]); }
-const RED_RND = (() => { const R = krng(21); return RED_BORDES.map(() => [[100 + R() * 880, 420 + R() * 820], [100 + R() * 880, 420 + R() * 820], R() * 6]); })();
+const RED_RND = (() => { const R = krng(21); return RED_BORDES.map(() => [[100 + R() * 880, 680 + R() * 560], [100 + R() * 880, 680 + R() * 560], R() * 6]); })();
 const RED_ORDEN = (() => { const R = krng(33); return RED_BORDES.map((_, i) => [R(), i]).sort((a, b) => a[0] - b[0]).map((p) => p[1]); })();
 function cadenaPath(ax, ay, bx, by, onda, T, fase) {
   const n = 10, dx = bx - ax, dy = by - ay, L = Math.hypot(dx, dy) || 1, nx = -dy / L, ny = dx / L;
@@ -170,7 +170,7 @@ function BanoTubo({ T, x, y, temp, apaga = 0, burbujas = false }) {
       <Tijera x={0} y={270} s={0.42} rot={90 + Math.sin(T * 2.4) * 10} abre={apaga > 0.5 ? 0.2 : Math.abs(Math.sin(T * 6 + 1))} apagada={apaga} />
     </g>
     <TermoG x={x - 110} y={y - 120} s={0.6} v={temp === 80 ? 0.85 : 0.45} />
-    <text x={x} y={y + 90} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={temp === 80 ? KC.red : KC.ink} stroke={KC.ink} strokeWidth={temp === 80 ? 3 : 0}>{temp} °C</text>
+    <text x={x} y={y - 470} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={temp === 80 ? KC.red : KC.ink} stroke={KC.ink} strokeWidth={temp === 80 ? 3 : 0}>{temp} °C</text>
   </g>;
 }
 // Barra de actividad (SVG).
@@ -230,7 +230,7 @@ function Gelatina10() {
             {Array.from({ length: 16 }, (_, i) => <circle key={i} cx={-90 + (i % 8) * 26} cy={60 + Math.floor(i / 8) * 30} r={7} fill="#f2d8a8" stroke="#c9a26a" strokeWidth={2} />)}
           </g>
         </SvgCapa>
-        <Lupa T={T} at={K.Q + 2.6} until={K.Rd - 0.2} x={760} y={1080} r={190} fx={600} fy={900} tinte={KC.gold2} etiqueta="cadenas de proteína"
+        <Lupa T={T} at={K.Q + 2.6} until={K.Rd - 0.2} x={560} y={1580} r={170} fx={600} fy={1000} tinte={KC.gold2} etiqueta="cadenas de proteína"
           interior={(t, r) => <svg width={r * 2} height={r * 2}>{Array.from({ length: 6 }, (_, i) => <path key={i} d={cadenaPath(20, 50 + i * 55, r * 2 - 20, 70 + i * 55, 16, t, i * 1.3)} stroke={KC.gold2} strokeWidth={7} fill="none" strokeLinecap="round" />)}</svg>} />
       </Escena>
       {/* 2 · al enfriarse: hélices y red que atrapa el agua (micro) */}
@@ -238,7 +238,7 @@ function Gelatina10() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <RedGelatina T={T} forma={forma} agua={kprog(T, K.Rd + 4.0, K.Rd + 4.8)} />
-          <TermoG x={80} y={1180} s={0.55} v={klerp(0.8, 0.2, kprog(T, K.Rd + 0.3, K.Rd + 3.5))} texto={`${Math.round(klerp(60, 10, kprog(T, K.Rd + 0.3, K.Rd + 3.5)))} °C`} />
+          <TermoG x={120} y={1680} s={0.6} v={klerp(0.8, 0.2, kprog(T, K.Rd + 0.3, K.Rd + 3.5))} texto={`${Math.round(klerp(60, 10, kprog(T, K.Rd + 0.3, K.Rd + 3.5)))} °C`} />
         </SvgCapa>
       </Escena>
       {/* 3 · la piña fresca trae bromelina (macro) */}
@@ -271,9 +271,9 @@ function Gelatina10() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <text x={300} y={980} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 800)`}>?</text>
-          <LataPina x={170} y={1500} s={0.75} rot={-8} />
-          <Gelatina T={T} x={400} y={1170} s={0.75} firme={1} pina="lata" boing={kprog(T, K.Pr + 0.3, K.Pr + 0.5) * (1 - kprog(T, K.Pr + 1.0, K.Pr + 2.0))} />
+          <text x={260} y={860} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 260 700)`}>?</text>
+          <LataPina x={250} y={1560} s={0.75} rot={-8} />
+          <Gelatina T={T} x={270} y={1150} s={0.7} firme={1} pina="lata" boing={kprog(T, K.Pr + 0.3, K.Pr + 0.5) * (1 - kprog(T, K.Pr + 1.0, K.Pr + 2.0))} />
         </SvgCapa>
         <Escala T={T} pxPorMm={3.6 * 0.75} x={620} y={1500} />
       </Escena>
@@ -284,22 +284,21 @@ function Gelatina10() {
           {T > tubos - 0.4 && <g opacity={kprog(T, tubos - 0.4, tubos)}>
             <BanoTubo T={T} x={290} y={1200} temp={40} apaga={0} />
             <BanoTubo T={T} x={790} y={1200} temp={80} apaga={kprog(T, tubos + 0.3, tubos + 0.3 + dEs * 0.9)} burbujas />
-            <Llama T={T} x={790} y={1250} s={1.1} />
             <BarraAct x={290} y={1410} v={1} texto="actividad: 100 %" />
             <BarraAct x={790} y={1410} v={1 - 0.97 * kprog(T, tubos + 0.3, tubos + 0.3 + dEs * 0.9)} texto={T > tubos + 0.3 + dEs * 0.9 ? 'casi toda perdida' : 'actividad…'} />
           </g>}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Es + 0.2} until={tubos - 0.3} anio="2010" quien="Jutamongkon y Charoenrein" revista="Univ. Kasetsart · Bangkok, Tailandia" x={620} y={780} />
-        <Cronometro T={T} at={tubos + 0.3} until={K.La - 0.3} inicio={0} factor={3600 / dEs} x={290} y={690} etiqueta="40 °C · HASTA 1 H" />
-        <Cronometro T={T} at={tubos + 0.3} until={K.La - 0.3} inicio={0} factor={480 / dEs} x={790} y={690} etiqueta="80 °C · 8 MIN" />
+        <Cronometro T={T} at={tubos + 0.3} until={K.La - 0.3} inicio={0} factor={3600 / dEs} x={290} y={1640} etiqueta="40 °C · HASTA 1 H" />
+        <Cronometro T={T} at={tubos + 0.3} until={K.La - 0.3} inicio={0} factor={480 / dEs} x={790} y={1640} etiqueta="80 °C · 8 MIN" />
       </Escena>
       {/* 7 · la lata se calienta: bromelina apagada */}
       <Escena T={T} a={K.La} b={K.Ki} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Olla T={T} x={560} y={1180} s={1.05}><LataPina x={0} y={-110} s={0.6} rot={Math.sin(T * 5) * 3} /></Olla>
-          <Llama T={T} x={560} y={1250} s={1.8} />
-          <rect x={300} y={1235} width={520} height={30} rx={10} fill={KC.ink} />
+          <Olla T={T} x={560} y={1110} s={1.05}><LataPina x={0} y={-110} s={0.6} rot={Math.sin(T * 5) * 3} /></Olla>
+          <Llama T={T} x={560} y={1180} s={1.8} />
+          <rect x={300} y={1165} width={520} height={30} rx={10} fill={KC.ink} />
         </SvgCapa>
         <Lupa T={T} at={K.La + 1.6} until={K.Ki - 0.2} x={290} y={620} r={170} fx={560} fy={1060} tinte={KC.gold2} etiqueta="bromelina apagada"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a2a08" />
@@ -312,18 +311,18 @@ function Gelatina10() {
         <SvgCapa>
           {T > K.Ki + 2.3 && <g opacity={kprog(T, K.Ki + 2.3, K.Ki + 2.7)}>
             {[200, 380, 560, 740, 920].map((x, i) => { const d = kprog(T, K.Ki + 2.6 + i * 0.15, K.Ki + 3.6 + i * 0.15); return <g key={i}>
-              <KiwiMitad x={x} y={900} s={0.9} />
-              <g transform={`translate(${x} 815) scale(0.28)`}><Gelatina T={T} x={0} y={0} firme={1 - d} pina={null} /></g></g>; })}
+              <KiwiMitad x={x} y={820} s={0.9} />
+              <g transform={`translate(${x} 735) scale(0.28)`}><Gelatina T={T} x={0} y={0} firme={1 - d} pina={null} /></g></g>; })}
             {[380, 740].map((x, i) => { const e = kprog(T, K.Ki + 4.0 + i * 0.3, K.Ki + 4.4 + i * 0.3, kEase.rebote); return <g key={i} opacity={e}>
-              <KiwiMitad x={x} y={1110} s={0.9} />
-              <g transform={`translate(${x} 1025) scale(0.28)`}><Gelatina T={T} x={0} y={0} firme={1} pina={null} /></g>
-              <Marca x={x + 95} y={1010} ok s={0.45} o={e} />
-              <text x={x} y={1215} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>{i ? 'Kosui' : 'Hort16A'}</text></g>; })}
+              <KiwiMitad x={x} y={1030} s={0.9} />
+              <g transform={`translate(${x} 945) scale(0.28)`}><Gelatina T={T} x={0} y={0} firme={1} pina={null} /></g>
+              <Marca x={x + 100} y={930} ok s={0.45} o={e} />
+              <text x={x} y={1130} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>{i ? 'Kosui' : 'Hort16A'}</text></g>; })}
           </g>}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Ki + 0.2} until={K.Ki + 2.2} anio="2002" quien="Nishiyama · Japón" revista="13 variedades de kiwi · gelatina" x={600} y={800} />
-        <Chip T={T} at={K.Ki + 2.8} until={K.Ci - 0.3} texto="la mayoría de 13: gelatina deshecha" x={560} y={720} tam={36} borde={GEL} />
-        <Etq T={T} at={K.Ki + 3.2} until={K.Ci - 0.3} x={1040} y={1010} texto="actinidina" lado="izq" tam={32} color={KC.ink} />
+        <Chip T={T} at={K.Ki + 2.8} until={K.Ci - 0.3} texto="la mayoría de 13: gelatina deshecha" x={540} y={1480} tam={36} borde={GEL} />
+        <Etq T={T} at={K.Ki + 3.2} until={K.Ci - 0.3} x={1040} y={600} texto="actinidina" lado="izq" tam={32} color={KC.ink} />
       </Escena>
       {/* 9 · cierre: la gelatina del inicio, ya explicada */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
@@ -333,7 +332,7 @@ function Gelatina10() {
           {T > K.Ci + 3.2 && <g opacity={kprog(T, K.Ci + 3.2, K.Ci + 3.7)}>
             <Gelatina T={T} x={790} y={1080} s={0.75} firme={1} pina="lata" boing={kprog(T, K.Ci + 3.4, K.Ci + 3.6) * (1 - kprog(T, K.Ci + 4.2, K.Ci + 5.2))} />
             <Marca x={940} y={820} ok s={0.6} o={kprog(T, K.Ci + 3.6, K.Ci + 4)} />
-            <g transform="translate(790 1560) scale(0.5)"><Olla T={T} x={0} y={0}><TrozoPina x={-60} y={-110} s={2} /><TrozoPina x={70} y={-90} s={2} rot={40} /></Olla></g>
+            <g transform="translate(800 1720) scale(0.45)"><Olla T={T} x={0} y={0}><TrozoPina x={-60} y={-110} s={2} /><TrozoPina x={70} y={-90} s={2} rot={40} /></Olla></g>
           </g>}
         </SvgCapa>
         <Escala T={T} pxPorMm={3.6 * 1.35} />
@@ -342,23 +341,22 @@ function Gelatina10() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿echada a perder?" x={330} y={520} tam={46} />
       <Chip T={T} at={K.G + 3.1} until={K.Q - 0.3} texto="la piña fresca la corta" x={330} y={520} tam={40} borde={PINA} />
-      <Etq T={T} at={K.Q + 0.8} until={K.Rd - 0.3} x={330} y={860} texto="colágeno" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Q + 3.2} until={K.Rd - 0.3} texto="cadenas largas de proteína" x={540} y={1500} tam={42} borde={KC.gold2} />
-      <Chip T={T} at={K.Rd + 1.4} until={K.Rd + 4.0} texto="al enfriarse: hélices" x={540} y={1500} tam={44} borde={KC.gold2} />
-      <Chip T={T} at={K.Rd + 4.2} until={K.Br - 0.3} texto="red que atrapa el agua = cuajar" x={540} y={1500} tam={40} borde={AGUA} />
-      <Etq T={T} at={K.Rd + 0.5} until={K.Br - 0.3} x={1040} y={410} texto="esquema molecular" lado="izq" tam={28} />
-      <Etq T={T} at={K.Br + 0.4} until={K.Co - 0.3} x={60} y={640} texto="piña fresca" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Q + 0.8} until={K.Rd - 0.3} x={40} y={1170} texto="piel y hueso: colágeno" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Q + 3.2} until={K.Rd - 0.3} texto="cadenas largas de proteína" x={400} y={420} tam={36} borde={KC.gold2} />
+      <Chip T={T} at={K.Rd + 1.4} until={K.Rd + 4.0} texto="al enfriarse: hélices" x={540} y={1480} tam={44} borde={KC.gold2} />
+      <Chip T={T} at={K.Rd + 4.2} until={K.Br - 0.3} texto="red que atrapa el agua = cuajar" x={540} y={1480} tam={40} borde={AGUA} />
+      <Etq T={T} at={K.Rd + 0.5} until={K.Br - 0.3} x={40} y={420} texto="esquema molecular" tam={28} />
       <Chip T={T} at={K.Br + 2.0} until={K.Co - 0.3} texto="bromelina (enzimas): cortan proteínas" x={540} y={1500} tam={36} borde={TIJ} />
       <Chip T={T} at={K.Co + 2.8} until={K.Pr - 0.3} texto="sin red: se queda líquida" x={540} y={1600} tam={40} borde={GEL} />
       <Chip T={T} at={K.Pr + 0.4} until={K.Es - 0.2} texto="piña de lata: sí cuaja" x={700} y={1640} tam={38} borde={KC.mint} />
-      <Chip T={T} at={tubos + 0.6} until={K.La - 0.3} texto="extracto de bromelina de piña" x={540} y={1610} tam={34} borde={TIJ} />
+      <Chip T={T} at={tubos + 0.6} until={K.La - 0.3} texto="extracto de bromelina de piña" x={540} y={1790} tam={34} borde={TIJ} />
       <Chip T={T} at={K.La + 0.4} until={K.La + 2.8} texto="la lata se procesa con calor" x={560} y={1500} tam={40} borde={KC.red} />
       <Chip T={T} at={K.La + 3.0} until={K.Ki - 0.3} texto="calor = enzimas apagadas" x={560} y={1500} tam={42} borde={KC.gold2} />
       <Etq T={T} at={K.Ci + 3.6} until={K.Ou} x={70} y={800} texto="la bromelina cortó la red" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 4.0} until={K.Ou} texto="de lata o cocida: sí cuaja" x={540} y={1500} tam={40} borde={KC.mint} />
+      <Chip T={T} at={K.Ci + 4.0} until={K.Ou} texto="de lata o cocida: sí cuaja" x={540} y={1470} tam={40} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="No se echó a perder: *la piña la corta.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="La piña fresca *la corta.*" />
       <Subtitulo T={T} idx={1} at={K.Q + 0.1} until={K.Rd - 0.1} texto="Gelatina = *colágeno.*" />
       <Subtitulo T={T} idx={2} at={K.Rd + 0.1} until={K.Br - 0.1} texto="Una red que *atrapa el agua.*" />
       <Subtitulo T={T} idx={3} at={K.Br + 0.1} until={K.Co - 0.1} texto="Bromelina: *tijeras de proteína.*" />

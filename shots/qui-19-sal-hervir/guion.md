@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #4 "Un número que contradice": "Esa cucharadita de sal no hace que tu agua hierva antes: en una olla de 2 litros, le sube el hervor unas 5 centésimas de grado. Solo eso."
 - **Seguridad:** se avisa que echar sal (o cualquier granito) al agua muy caliente puede hacerla saltar de golpe: "échala con cuidado".
 - **Duración:** voz 960 caracteres / ~165 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** estimados (`node motor/kit/estimar-escenas.mjs shots/qui-19-sal-hervir --outro 3.5`).
-- **Estado:** guion listo para verificación independiente. Sin animación todavía. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`hervir.jsx`), voz pendiente de aprobación de Robert (~960 créditos).
 
 ## Versión narrada
 
@@ -24,6 +24,26 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave continua, debajo de la voz. Efectos en el mismo cuadro: granitos cayendo (lluvia fina), "tic" del termómetro, burbujeo suave del agua, "pop" de moléculas que escapan, "fsssh" de la sal en el agua caliente, golpe suave de la tarjeta del estudio, viento en la montaña.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y por qué burbujea cuando la echas?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «le sube el hervor unas 5 centésimas de grado» |
+| 2 | 8.9 | 12.6 | 13_senalando_arriba | `arriba-der` | «su vapor empuja tan fuerte como el aire» |
+| 3 | 14.1 | 18.3 | 06_pensativo_menton | `arriba-der` | «iones de sodio y cloruro… menos fuerza» |
+| 4 | 19.6 | 23.8 | 04_bajando_lentes | `izq-alto` | «medio grado por cada mol» |
+| 5 | 24.6 | 28.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «apenas 5 centésimas de grado» |
+| 6 | 28.5 | 31.8 | 07_pensativo_puno | `grande` | «¿Y por qué burbujea cuando la echas?» |
+| 7 | 35.8 | 38.7 | 10_serio_molesto | `izq-alto` | «échala con cuidado: puede saltar» |
+| 8 | 43.4 | 47.2 | 11_sorprendido | `arriba-der` | «solo 15 centésimas de grado más» |
+| 9 | 48.3 | 53.0 | 13_senalando_arriba | `izq-alto` | «la altura… unos 92 grados» |
+| 10 | 53.6 | 57.9 | 02_apuntando_camara | `arriba-der` | «la sal es para el sabor» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 39.8 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato y cifra se abrió en la fuente original el 29 oct 2026)
 
