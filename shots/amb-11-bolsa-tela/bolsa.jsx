@@ -220,8 +220,8 @@ function BolsaShot() {
           {Array.from({ length: 18 }, (_, i) => { const u = ((T * 0.25 + i / 18) % 1); return <circle key={i} cx={180 + ((i * 97) % 820)} cy={1200 - u * 900} r={4 + (i % 4) * 2} fill="none" stroke="#bfe7ff" strokeWidth={2} opacity={0.6 * (1 - u)} />; })}
           <path d={`M 160 ${1180 + (1 - baja) * 500} Q 330 ${1110 + (1 - baja) * 500} 470 ${1150 + (1 - baja) * 500} Q 620 ${1190 + (1 - baja) * 500} 760 ${1120 + (1 - baja) * 500} Q 900 ${1090 + (1 - baja) * 500} 1080 ${1160 + (1 - baja) * 500} L 1080 1920 L 160 1920 Z`} fill="#2a2f3a" stroke="#556070" strokeWidth={6} />
           <BolsaPlastico x={540 + Math.sin(T * 1.3) * 30} y={klerp(560, 1150, baja)} s={0.55} rot={Math.sin(T * 1.1) * 14} arruga={T * 2} o={kprog(T, K.M + 2.6, K.M + 3.2)} />
-          {T > K.M + 2.6 && <Profundidad T={T} x={90} y={360} alto={760} valor={prof} />}
-          {T > K.M + 2.6 && <text x={330} y={1270 - 860} style={{ font:`400 64px ${KF.titulo}` }} fill="#fff">{kformato(prof)} m</text>}
+          {T > K.M + 3.8 && <Profundidad T={T} x={90} y={360} alto={760} valor={prof} />}
+          {T > K.M + 3.8 && <text x={330} y={1270 - 860} style={{ font:`400 64px ${KF.titulo}` }} fill="#fff">{kformato(prof)} m</text>}
         </>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color="#bfe7ff" />
       </Escena>

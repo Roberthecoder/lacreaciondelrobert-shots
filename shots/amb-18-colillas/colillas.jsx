@@ -189,7 +189,7 @@ function ColillasShot() {
       <Escena T={T} a={K.M} b={K.E}>
         <FondoLunares color={KC.yellow} />
         {svg(<><MapaMexico x={360} y={420} ancho={680} conCA={false} />
-          {[[20571, 'colillas', KC.orange, 860], [7978, 'botellas', '#7fd0ff', 1010]].map(([v, n, c, yy], i) => { const k = kprog(T, K.M + 1.0 + i * 0.5, K.M + 2.6 + i * 0.5, kEase.suave), L = 640 * v / 20571 * k;
+          {[[20571, 'colillas', KC.orange, 860], [7978, 'botellas', '#7fd0ff', 1010]].map(([v, n, c, yy], i) => { const k = kprog(T, K.M + 1.0 + i * 0.5, K.M + 2.6 + i * 0.5, kEase.suave), L = 500 * v / 20571 * k;
             return <g key={n}><rect x={300} y={yy - 45} width={Math.max(0, L)} height={90} rx={14} fill={c} stroke={KC.ink} strokeWidth={6} />
               <text x={280} y={yy + 14} textAnchor="end" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{n}</text>
               <text x={310 + L} y={yy + 14} style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink} opacity={k}>{kformato(Math.round(v * k))}</text></g>; })}</>)}
@@ -228,7 +228,7 @@ function ColillasShot() {
       <Chip T={T} at={K.Q + 2.0} until={K.Ti - 0.2} texto="otras sustancias" x={790} y={400} tam={34} borde={KC.pink} />
       <Chip T={T} at={K.Ti + 3.6} until={K.P - 0.2} texto="microplástico · puede durar años" x={420} y={430} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Ti + 3.8} until={K.P - 0.2} x={760} y={1170} texto="fibras sueltas" tam={28} color={KC.ink} />
-      <Contador T={T} at={K.Pl + 0.3} hasta={1197920} dur={2.4} x={360} y={430} tam={92} color={KC.texto} />
+      {T < K.M + 0.2 && <Contador T={T} at={K.Pl + 0.3} hasta={1197920} dur={2.4} x={360} y={430} tam={92} color={KC.texto} />}
       <Chip T={T} at={K.Pl + 0.5} until={K.M - 0.2} texto="colillas · Limpieza Internacional de Costas 2025" x={540} y={545} tam={26} borde={KC.cyan} />
       <Chip T={T} at={K.M + 0.3} until={K.E - 0.2} texto="México · limpieza de 2025" x={700} y={370} tam={30} borde={KC.orange} />
       <Chip T={T} at={K.M + 3.0} until={K.E - 0.2} texto="más del doble" x={540} y={1150} tam={40} borde={KC.red} />

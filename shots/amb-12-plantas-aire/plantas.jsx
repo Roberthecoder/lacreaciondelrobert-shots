@@ -215,8 +215,8 @@ function PlantasShot() {
       <Escena T={T} a={K.M} b={K.Ca}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <g opacity={kprog(T, K.M + 2.4, K.M + 2.9)}><EdificioSellado x={270} y={1180} s={kprog(T, K.M + 2.4, K.M + 3.0, kEase.rebote) * 0.95} /></g>
-          <g opacity={kprog(T, K.M + 3.8, K.M + 4.3)}><BaseEspacial T={T} x={770} y={1180} s={0.95 * kprog(T, K.M + 3.8, K.M + 4.4, kEase.rebote)} /></g>
+          <g opacity={kprog(T, K.M + 2.4, K.M + 2.9)}><EdificioSellado x={270} y={1150} s={kprog(T, K.M + 2.4, K.M + 3.0, kEase.rebote) * 0.85} /></g>
+          <g opacity={kprog(T, K.M + 3.8, K.M + 4.3)}><BaseEspacial T={T} x={780} y={1150} s={0.9 * kprog(T, K.M + 3.8, K.M + 4.4, kEase.rebote)} /></g>
         </>)}
       </Escena>
       {/* 3 · la caja sellada de la NASA: < 1 m³, 24 h */}
@@ -299,8 +299,8 @@ function PlantasShot() {
       <NumeroGigante T={T} at={K.G + 3.7} until={K.M - 0.2} valor={1000} dur={2.66} prefijo="hasta " etiqueta="plantas en 1 m²" x={375} y={520} tam={110} color={KC.yellow} />
       <Chip T={T} at={K.M + 0.3} until={K.Ca - 0.2} texto="NASA · 1989" y={470} x={300} tam={44} borde={KC.ink} />
       <Chip T={T} at={K.M + 2.0} until={K.Ca - 0.2} texto="espacios sellados" y={570} x={300} tam={36} borde={KC.violet} />
-      <Etq T={T} at={K.M + 2.9} until={K.Ca - 0.2} x={270} y={1240} texto="edificio hermético" lado="der" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.M + 4.4} until={K.Ca - 0.2} x={1040} y={1240} texto="base espacial" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 2.9} until={K.Ca - 0.2} x={130} y={645} texto="edificio hermético" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 4.4} until={K.Ca - 0.2} x={600} y={765} texto="base espacial" lado="der" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.6} until={K.P + 1.4} texto="caja sellada · menos de 1 m³" y={385} x={360} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Ca + 2.4} until={K.Ca + 4.6} texto="benceno o formaldehído" y={575} x={360} tam={30} borde={KC.orange} />
       <Cronometro T={T} at={K.Ca + 2.2} until={K.P + 1.4} factor={factor} x={360} y={478} etiqueta="TIEMPO EN LA CAJA" />
@@ -312,11 +312,9 @@ function PlantasShot() {
       <Etq T={T} at={K.S + 3.4} until={K.E - 0.2} x={930} y={1130} texto="rendijas" lado="izq" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.4} until={K.L - 0.2} anio="2019" quien="Cummings y Waring · Drexel, Filadelfia" revista="J. Expo. Sci. Environ. Epidemiol." y={560} />
       <Chip T={T} at={K.E + 2.6} until={K.L - 0.2} texto="12 estudios" y={1085} x={300} tam={34} borde={KC.ink} />
-      <div style={{ position:'absolute', left:0, top:0, opacity:kvisible(T, K.E + 4.0, K.L - 0.3, 0) ? 1 : 0 }}>
-        <Contador T={T} at={K.E + 4.0} hasta={196} dur={1.4} sufijo=" resultados" x={720} y={1085} tam={46} color={KC.texto} />
-      </div>
+      <Chip T={T} at={K.E + 4.0} until={K.L - 0.2} texto={`${kformato(Math.round(196 * kprog(T, K.E + 4.0, K.E + 5.4, kEase.suave)))} resultados`} y={1085} x={720} tam={34} borde={KC.gold} />
       <Chip T={T} at={K.L + 0.9} until={K.Cu - 0.2} texto="1 planta ≈ 23 L de aire por hora" y={470} x={380} tam={34} borde={KC.leaf} />
-      <Etq T={T} at={K.L + 1.2} until={K.Cu - 0.2} x={430} y={1050} texto="23 L" lado="der" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.L + 1.2} until={K.Cu - 0.2} x={440} y={1140} texto="23 L" lado="der" tam={32} color={KC.ink} />
       <Etq T={T} at={K.L + 2.6} until={K.Cu - 0.2} x={920} y={720} texto="aire de afuera" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.L + 2.8} until={K.Cu - 0.2} texto="edificio típico: ~1 renovación por hora" y={570} x={430} tam={26} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Cu + 0.4} until={K.Si - 0.2} valor={1000} desde={10} dur={3.4} prefijo="10 a " etiqueta="plantas por m² de piso" x={380} y={500} tam={96} color={KC.yellow} />
@@ -330,7 +328,7 @@ function PlantasShot() {
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.M - 0.1} texto="No es purificador: *hasta 1,000 por m².*" />
       <Subtitulo T={T} idx={1} at={K.M + 0.1} until={K.Ca - 0.1} texto="NASA, 1989: *espacios sellados.*" />
-      <Subtitulo T={T} idx={2} at={K.Ca + 0.1} until={K.P - 0.1} texto="Sellada: *menos de 1 m³, 24 h.*" />
+      <Subtitulo T={T} idx={2} at={K.Ca + 0.1} until={K.P - 0.1} texto="*Menos de 1 m³,* 24 horas." />
       <Subtitulo T={T} idx={3} at={K.P + 0.1} until={K.S - 0.1} texto="¿Y en *tu sala?*" />
       <Subtitulo T={T} idx={4} at={K.S + 0.1} until={K.E - 0.1} texto="Tu casa *no está sellada.*" />
       <Subtitulo T={T} idx={5} at={K.E + 0.1} until={K.L - 0.1} texto="Drexel, 2019: *196 resultados.*" />
