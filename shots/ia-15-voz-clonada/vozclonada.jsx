@@ -2,8 +2,22 @@
 // Datos: Wang et al. 2023 (VALL-E, Microsoft, arXiv:2301.02111); Mai et al. 2023 (PLOS ONE, UCL); FTC 2023; FBI/IC3 2024;
 // Guardia Nacional/SEP 2026. Ver guion.md y verificacion.md. El dibujo es esquemático.
 
-// Lado extra de Robert: debajo del subtítulo (nunca lo tapa).
-Object.assign(KLADOS, { 'bajo-der': { left:730, top:1400, width:340 } });
+// Robert con un lado extra 'bajo-der' (debajo del subtítulo, nunca lo tapa). Misma animación que Sticker del kit.
+const VC_LADOS = { 'arriba-der': { left:690, top:300, width:330 }, 'gancho': { left:600, top:230, width:460 }, 'izq-alto': { left:-10, top:300, width:330 },
+  'grande': { left:520, top:560, width:580 }, 'grande-izq': { left:-20, top:580, width:520 }, 'bajo-der': { left:730, top:1400, width:340 } };
+function StickerVC({ T, src, at, until, lado = 'arriba-der' }) {
+  if (T < at || T > until + 0.45) return null;
+  const L = VC_LADOS[lado] || VC_LADOS['arriba-der'];
+  const i = kprog(T, at, at + 0.5, kEase.rebote), o = kprog(T, until - 0.05, until + 0.4, kEase.suave);
+  const w = Math.exp(-(T - at - 0.35) * 6) * Math.cos((T - at - 0.35) * 20) * 0.08 * (T > at + 0.35 ? 1 : 0);
+  const desdeAbajo = lado !== 'arriba-der';
+  const ty = desdeAbajo ? (1 - i) * 800 + o * 800 : 0, tx = desdeAbajo ? 0 : (1 - i) * 420 + o * 420;
+  return <img src={src} alt="" style={{ position:'absolute', left:L.left, top:L.top, width:L.width, zIndex:46, transformOrigin:'50% 100%',
+    transform:`translate(${tx}px, ${ty}px) scale(${1 - w}, ${1 + w})`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />;
+}
+function RobertVC({ T, apariciones = [], base = 'assets/stickers/' }) {
+  return <>{apariciones.map(([at, until, pose, lado], i) => <StickerVC key={i} T={T} src={`${base}${pose}.png`} at={at} until={until} lado={lado} />)}</>;
+}
 
 // Celular. modo: 'llamada' (contacto entrante) | 'video' (un video de redes con la persona hablando).
 function Telefono({ x, y, s = 1, T = 0, vibra = 0, modo = 'llamada', contacto = 'Hijo', burbuja = null }) {
@@ -56,7 +70,7 @@ function Onda({ x, y, ancho = 460, alto = 200, T = 0, n = 28, seed = 4, color = 
       const enSel = sel && i >= sel[0] && i < sel[1];
       const c = pixel > 0.5 ? copia : (enSel ? KC.yellow : color);
       const fy = cae * (300 + (i % 5) * 90) * cae, fr = cae * ((i % 2 ? 1 : -1) * 40);
-      return <g key={i} transform={`translate(${i * w + w / 2} ${fy}) rotate(${fr})`} opacity={1 - cae * 0.9}>
+      return <g key={i} transform={`translate(${i * w + w / 2} ${fy}) rotate(${fr})`} opacity={1 - cae}>
         <rect x={-w * 0.32} y={-h / 2} width={w * 0.64} height={h} rx={pixel > 0.5 ? 2 : w * 0.3} fill={c} stroke={pixel > 0.5 || enSel ? KC.ink : 'none'} strokeWidth={4} />
       </g>; })}
   </g>;
@@ -92,13 +106,14 @@ function Torreta({ x, y, s = 1, T = 0 }) {
   </g>;
 }
 // Cuadrícula de 529 personitas: las primeras `verdes` atinaron (mint), las demás no (rojo).
-function Personas({ T, at, total = 529, verdes = 0, rojas = 0, x = 120, y = 960, paso = 36 }) {
-  if (T < at) return null;
-  const cols = 23, out = [], vis = Math.round(total * kprog(T, at, at + 1.6, kEase.sale));
-  for (let i = 0; i < vis; i++) { const c = i % cols, rr = Math.floor(i / cols), px = x + c * paso, py = y + rr * paso * 0.62;
+function Personas({ T, at, until, total = 529, verdes = 0, rojas = 0, x = 80, y = 950, paso = 20 }) {
+  if (T < at || T > until + 0.4) return null;
+  const o = 1 - kprog(T, until - 0.05, until + 0.4);
+  const cols = 46, out = [], vis = Math.round(total * kprog(T, at, at + 1.6, kEase.sale));
+  for (let i = 0; i < vis; i++) { const c = i % cols, rr = Math.floor(i / cols), px = x + c * paso, py = y + rr * 22;
     const col = i < verdes ? KC.mint : i >= total - rojas ? KC.red : KC.paper;
-    out.push(<g key={i} transform={`translate(${px} ${py})`}><circle cy={-6} r={6} fill={col} stroke={KC.ink} strokeWidth={2.5} /><path d="M -9 9 Q 0 -4 9 9 Z" fill={col} stroke={KC.ink} strokeWidth={2.5} /></g>); }
-  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30 }}>{out}</svg>;
+    out.push(<g key={i} transform={`translate(${px} ${py}) scale(.78)`}><circle cy={-6} r={6} fill={col} stroke={KC.ink} strokeWidth={1.5} /><path d="M -9 9 Q 0 -4 9 9 Z" fill={col} stroke={KC.ink} strokeWidth={1.5} /></g>); }
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30, opacity:o }}>{out}</svg>;
 }
 // Tarjeta de paso de defensa (ícono + texto).
 function PasoDefensa({ T, at, until, n, icono, texto, y }) {
@@ -148,7 +163,7 @@ function VozClonada() {
         {svg(<>
           <Telefono x={260} y={820} s={0.78} T={T} modo="video" />
           <Onda x={470} y={830} ancho={560} alto={190} T={T} n={22} seed={9} sel={T > K.P1 + 2.6 ? [8, 13] : null} />
-          <g opacity={kprog(T, K.P1 + 1.8, K.P1 + 2.2)}><Tijeras x={klerp(1060, 760, kprog(T, K.P1 + 1.8, K.P1 + 2.8, kEase.sale))} y={700} s={0.9} T={T} rot={90} /></g>
+          <g opacity={kprog(T, K.P1 + 1.8, K.P1 + 2.2)}><Tijeras x={klerp(1180, 900, kprog(T, K.P1 + 1.8, K.P1 + 2.8, kEase.sale))} y={830} s={1.1} T={T} rot={180} /></g>
           {T > K.P1 + 3.2 && <g transform={`translate(0 ${-kprog(T, K.P1 + 3.2, K.P1 + 4.0, kEase.sale) * 0})`}>
             <rect x={600} y={960} width={300} height={110} rx={20} fill={KC.paper} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.P1 + 3.2, K.P1 + 3.6)} />
             <g opacity={kprog(T, K.P1 + 3.2, K.P1 + 3.6)}><Onda x={620} y={1015} ancho={260} alto={70} T={T} n={5} seed={11} color={KC.yellow} sel={[0, 5]} /></g>
@@ -212,8 +227,8 @@ function VozClonada() {
         <FondoLunares color={KC.mint} />
       </Escena>
       <TarjetaEstudio T={T} at={K.O + 0.2} until={K.O + 4.6} anio="2023" quien="científicos de Londres (UCL)" revista="Mai et al. · PLOS ONE" y={600} />
-      <Chip T={T} at={K.O + 2.0} until={K.C - 0.2} texto="529 personas escucharon" y={880} tam={38} borde={KC.ink} />
-      <Personas T={T} at={K.O + 2.2} verdes={T > K.O + 6.0 ? Math.round(fal * kprog(T, K.O + 6.0, K.O + 7.6, kEase.suave)) : 0} rojas={T > K.O + 7.8 ? 529 - fal : 0} x={145} y={965} />
+      <Chip T={T} at={K.O + 2.0} until={K.C - 0.2} texto="529 personas escucharon" y={835} tam={38} borde={KC.ink} />
+      <Personas T={T} at={K.O + 2.2} until={K.C - 0.2} verdes={T > K.O + 6.0 ? Math.round(fal * kprog(T, K.O + 6.0, K.O + 7.6, kEase.suave)) : 0} rojas={T > K.O + 7.8 ? 529 - fal : 0} x={90} y={905} />
       <NumeroGigante T={T} at={K.O + 5.6} until={K.C - 0.2} valor={73} dur={1.6} sufijo=" %" etiqueta="falsas descubiertas" x={380} y={620} tam={220} color={KC.paper} />
 
       {/* 8 · la confesión: esta voz es clonada, con permiso */}
@@ -255,7 +270,7 @@ function VozClonada() {
       <Subtitulo T={T} idx={9} at={D2 + 0.1} until={K.Ci - 0.1} texto="Cuelga y *marca tú.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="La voz se copia. *Su palabra, no.*" />
 
-      <Robert T={T} apariciones={[
+      <RobertVC T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.4, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Paso1 + 2.6, CUES.Paso2 - 0.2, 'avatar_13_senalando_arriba', 'bajo-der'],
         [CUES.Paso3 + 1.2, CUES.Segundos - 0.2, 'avatar_10_serio_molesto', 'bajo-der'],
@@ -264,7 +279,7 @@ function VozClonada() {
         [CUES.Oidos + 5.6, CUES.Confesion - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Confesion + 0.2, CUES.Defensa - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'grande-izq'],
         [CUES.Defensa + 0.3, CUES.Defensa + 4.8, 'avatar_13_senalando_arriba', 'bajo-der'],
-        [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der']]} />
+        [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'bajo-der']]} />
       <MarcaAgua T={T} tema="ia" num="15" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="ia" robert={'assets/stickers/avatar_02_apuntando_camara.png'} />
       <AudioPista src={window.AUDIO_SRC} />

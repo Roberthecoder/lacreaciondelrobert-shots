@@ -224,7 +224,7 @@ function FotoCelular() {
       <Escena T={T} a={K.R} b={K.A}>
         <div style={{ position: 'absolute', inset: 0, background: KC.noche }} />
         {svg(<>{Array.from({ length: 13 }, (_, i) => { const c = i % 5, f = Math.floor(i / 5), e = kprog(T, K.R + 0.3 + i * 0.2, K.R + 0.5 + i * 0.2, kEase.rebote);
-          return <g key={i} opacity={kclamp(e * 2, 0, 1)} transform={`translate(${160 + c * 190} ${780 + f * 190}) scale(${klerp(0.5, 1, e)})`}>
+          return <g key={i} opacity={kclamp(e * 2, 0, 1)} transform={`translate(${170 + c * 185} ${775 + f * 152}) scale(${klerp(0.45, 0.88, e)})`}>
             <rect x={-62} y={-82} width={124} height={164} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={5} />
             <FotoNoche x={0} y={0} w={110} T={T} ruido={0.9} oscuro={0.6} seed={i + 20} marco={false} />
             <text x={-52} y={-56} style={{ font: `700 22px ${KF.mono}` }} fill="#fff">{i + 1}</text>
@@ -264,16 +264,16 @@ function FotoCelular() {
       <Escena T={T} a={K.Co} b={K.E}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <FotoNoche x={250} y={740} w={250} T={T} tinte={1} seed={6} />
-          <CajaModelo x={540} y={740} T={T} act={1} />
-          <Flecha x1={385} y1={740} x2={420} y2={740} p={kprog(T, K.Co + 0.8, K.Co + 1.1)} />
-          <Flecha x1={660} y1={740} x2={695} y2={740} p={kprog(T, K.Co + 1.4, K.Co + 1.7)} />
-          <g opacity={kprog(T, K.Co + 1.5, K.Co + 1.9)}><FotoNoche x={830} y={740} w={250} T={T} tinte={1 - corrige} seed={6} /></g>
-          <g opacity={kprog(T, K.Co + 3.0, K.Co + 3.3)}><Gotero x={250 + 180 * kprog(T, K.Co + 3.3, K.Co + 5.0, kEase.suave)} y={930} s={0.8} rot={-20} /></g>
+          <FotoNoche x={250} y={880} w={220} T={T} tinte={1} seed={6} />
+          <CajaModelo x={540} y={880} T={T} act={1} />
+          <Flecha x1={375} y1={880} x2={420} y2={880} p={kprog(T, K.Co + 0.8, K.Co + 1.1)} />
+          <Flecha x1={660} y1={880} x2={705} y2={880} p={kprog(T, K.Co + 1.4, K.Co + 1.7)} />
+          <g opacity={kprog(T, K.Co + 1.5, K.Co + 1.9)}><FotoNoche x={830} y={880} w={220} T={T} tinte={1 - corrige} seed={6} /></g>
+          <g opacity={kprog(T, K.Co + 3.0, K.Co + 3.3)}><Gotero x={250 + 180 * kprog(T, K.Co + 3.3, K.Co + 5.0, kEase.suave)} y={1040} s={0.6} rot={-20} /></g>
         </>)}
       </Escena>
       <Chip T={T} at={K.Co + 0.3} until={K.E - 0.2} texto="lo aprendido: el color" x={360} y={460} tam={38} borde={KC.ink} />
-      <Miniaturas T={T} at={K.Co + 3.0} y={985} />
+      <Miniaturas T={T} at={K.Co + 3.0} y={1060} filas={2} />
       <Chip T={T} at={K.Co + 3.4} until={K.E - 0.2} texto="5 000 fotos ajustadas por fotógrafos" x={540} y={1180} tam={32} borde={KC.ink} />
 
       {/* 9 · el estudio: hasta 0.3 lux */}
@@ -302,7 +302,6 @@ function FotoCelular() {
       </Escena>
       <Chip T={T} at={K.Te + 0.3} until={K.H - 0.2} texto="Super Res Zoom · artículo 2019" x={400} y={450} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Te + 2.6} until={K.H - 0.2} texto="tu mano: 8 a 12 temblores por segundo" x={540} y={1170} tam={32} borde={KC.red} />
-      <Etq T={T} at={K.Te + 1.4} until={K.H - 0.2} x={760} y={680} texto="foto 1 · foto 2" tam={28} color={KC.ink} lado="der" />
 
       {/* 11 · hoy: desde 2023 una red neuronal también quita el ruido */}
       <Escena T={T} a={K.H} b={K.C}>
@@ -313,7 +312,7 @@ function FotoCelular() {
           <g opacity={kprog(T, K.H + 1.0, K.H + 1.4)}><FotoNoche x={880} y={830} w={220} T={T} ruido={0.85 * (1 - limpiaIA)} seed={11} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.H + 0.3} until={K.C - 0.2} texto="desde 2023 · red neuronal contra el ruido" x={600} y={560} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.H + 0.3} until={K.C - 0.2} texto="desde 2023 · red neuronal contra el ruido" x={540} y={1120} tam={30} borde={KC.cyan} />
 
       {/* 12 · cierre: la misma foto, ahora sabes que son muchas */}
       <Escena T={T} a={K.C} b={FIN}>

@@ -54,11 +54,11 @@ function BarrasTiempo({ T, at, until, filas, top = 700 }) {
     <div style={{ position:'absolute', left:480, top:-20, bottom:0, width:8, marginLeft:-4, background:KC.ink, borderRadius:4 }}></div>
     <div style={{ position:'absolute', left:0, top:-74, width:470, textAlign:'right', font:`700 28px ${KF.mono}`, color:KC.ink }}>◀ menos tiempo</div>
     <div style={{ position:'absolute', left:490, top:-74, width:470, font:`700 28px ${KF.mono}`, color:KC.ink }}>más tiempo ▶</div>
-    {filas.map((f, i) => { const g = kprog(T, f.at + 0.1, f.at + 0.9, kEase.sale), w = 16 * f.valor * g, izq = f.valor < 0;
-      return <div key={i} style={{ position:'relative', height:150, opacity: T >= f.at ? 1 : 0 }}>
+    {filas.map((f, i) => { const g = kprog(T, f.at + 0.1, f.at + 0.9, kEase.sale), w = 14 * f.valor * g, izq = f.valor < 0;
+      return <div key={i} style={{ position:'relative', height:140, opacity: T >= f.at ? 1 : 0 }}>
         <div style={{ position:'absolute', left: izq ? 0 : 490, width:470, textAlign: izq ? 'right' : 'left', top:0, font:`900 34px ${KF.texto}`, color:KC.ink }}>{f.etiqueta}</div>
         <div style={{ position:'absolute', top:48, height:70, left: izq ? 480 - Math.abs(w) : 480, width:Math.abs(w), background:f.color, border:`6px solid ${KC.ink}`, borderRadius:14 }}></div>
-        <div style={{ position:'absolute', top:44, left: izq ? 480 - Math.abs(w) - 230 : 480 + Math.abs(w) + 18, width:212, textAlign: izq ? 'right' : 'left',
+        <div style={{ position:'absolute', top:44, left: izq ? 498 : 480 + Math.abs(w) + 18, width:240, textAlign:'left',
           font:`400 68px ${KF.titulo}`, color:f.color, WebkitTextStroke:`3px ${KC.ink}`, opacity:g }}>{f.texto}</div>
       </div>; })}
   </div>;
@@ -121,13 +121,13 @@ function Tarjeta3({ T, at, x, y, titulo, children }) {
 }
 
 // Sugerencias de código: 25 tarjetitas; las primeras `ok` se aceptan (✔ verde), el resto se rechaza (✖).
-function Sugerencias({ T, at, x = 150, y = 560 }) {
+function Sugerencias({ T, at, x = 150, y = 720 }) {
   const out = [], orden = [3, 11, 0, 19, 7, 22, 14, 5, 17, 9]; // aceptadas (10 de 25 = 40 %, "menos de 44 %")
   for (let i = 0; i < 25; i++) {
     const c = i % 5, f = Math.floor(i / 5), t0 = at + 0.15 + i * 0.07, a = kprog(T, t0, t0 + 0.25, kEase.sale);
     const dec = kprog(T, at + 2.2 + (i % 7) * 0.06, at + 2.5 + (i % 7) * 0.06), ok = orden.includes(i);
     const fill = dec > 0.5 ? (ok ? VERDE : '#3a4152') : '#1a2236';
-    out.push(<g key={i} transform={`translate(${x + c * 195} ${y + f * 116}) scale(${a})`} opacity={dec > 0.5 && !ok ? 0.55 : 1}>
+    out.push(<g key={i} transform={`translate(${x + c * 195} ${y + f * 92}) scale(${a})`} opacity={dec > 0.5 && !ok ? 0.55 : 1}>
       <rect x={-80} y={-46} width={160} height={92} rx={12} fill={fill} stroke={dec > 0.5 && ok ? KC.ink : KC.cyan} strokeWidth={5} />
       <rect x={-60} y={-26} width={90} height={10} rx={5} fill={KC.texto} opacity=".7" /><rect x={-60} y={-4} width={120} height={10} rx={5} fill={KC.texto} opacity=".45" /><rect x={-60} y={18} width={70} height={10} rx={5} fill={KC.texto} opacity=".45" />
       {dec > 0.5 && <text x={52} y={26} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={ok ? KC.paper : KC.red}>{ok ? '✔' : '✖'}</text>}
@@ -170,15 +170,15 @@ function Programadores() {
         <FondoLunares color={KC.mint} />
         {svg(<Escritorio T={T} reloj={kprog(T, K.G + 4.3, K.G + 5.0, kEase.rebote)} />)}
       </Escena>
-      <NumeroGigante T={T} at={K.G + 0.15} until={K.G + 4.4} valor={20} dur={0.8} prefijo="−" sufijo=" %" etiqueta="lo que sintieron: tiempo" x={300} y={500} tam={190} color={VERDE} />
-      <MitoTachado T={T} at={K.G + 4.5} tacharEn={K.G + 4.7} until={K.A - 0.2} texto="se sintieron 20 % más rápidos" y={380} tam={42} />
-      <NumeroGigante T={T} at={K.G + 4.6} until={K.A - 0.2} valor={19} dur={0.9} prefijo="+" sufijo=" %" etiqueta="el reloj: más tiempo" x={540} y={560} tam={210} color={KC.red} />
+      <NumeroGigante T={T} at={K.G + 0.15} until={K.G + 4.4} valor={20} dur={0.8} prefijo="↑" sufijo=" %" etiqueta="se sintieron más rápidos" x={300} y={500} tam={190} color={VERDE} />
+      <MitoTachado T={T} at={K.G + 4.5} tacharEn={K.G + 4.7} until={K.A - 0.2} texto="se sintieron 20 % más rápidos" y={340} tam={40} />
+      <NumeroGigante T={T} at={K.G + 4.6} until={K.A - 0.2} valor={19} dur={0.9} prefijo="+" sufijo=" %" etiqueta="el reloj: más tiempo" x={540} y={600} tam={210} color={KC.red} />
 
       {/* 2 · la apuesta: antes / después / el reloj */}
       <Escena T={T} a={K.A} b={K.E}>
         <FondoLunares color={KC.yellow} />
       </Escena>
-      <BarrasTiempo T={T} at={K.A + 0.1} until={K.E - 0.2} top={760} filas={[
+      <BarrasTiempo T={T} at={K.A + 0.1} until={K.E - 0.2} top={720} filas={[
         { at: K.A + 0.2, valor: -24, texto: '−24 %', etiqueta: 'antes: esperaban', color: VERDE },
         { at: K.A + 1.2, valor: -20, texto: '−20 %', etiqueta: 'después: creían', color: VERDE },
         { at: K.A + 2.0, valor: 19, texto: '+19 %', etiqueta: 'el reloj', color: KC.red }]} />
@@ -189,11 +189,11 @@ function Programadores() {
         {svg(<>{Array.from({ length: 16 }, (_, i) => { const c = i % 8, f = Math.floor(i / 8), t0 = K.E + 3.4 + i * 0.07;
           return <g key={i} opacity={kprog(T, t0, t0 + 0.2)}><Carita x={170 + c * 106} y={f ? 900 : 760} s={kprog(T, t0, t0 + 0.35, kEase.rebote)}
             piel={['#e8ad7f', '#c98a5e', '#f1c7a0', '#8d5a3b'][i % 4]} pelo={['#2a1c18', '#6b3e1f', '#151515', '#c99a4a'][(i * 3) % 4]} playera={[KC.cyan, KC.pink, KC.yellow, VERDE, KC.orange][i % 5]} /></g>; })}</>)}
-        <Contador T={T} at={K.E + 4.0} hasta={246} dur={2.6} x={540} y={1060} tam={110} color={KC.yellow} />
+        <Contador T={T} at={K.E + 4.0} hasta={246} dur={2.6} x={540} y={1030} tam={110} color={KC.yellow} />
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.2} anio="2025" quien="laboratorio METR" revista="Becker, Rush, Barnes y Rein · arXiv 2507.09089" y={720} />
-      <Chip T={T} at={K.E + 3.5} until={K.S - 0.25} texto="16 programadores con experiencia" x={540} y={620} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.E + 4.2} until={K.S - 0.25} texto="tareas reales de sus proyectos" x={540} y={1160} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.E + 3.5} until={K.S - 0.25} texto="16 programadores con experiencia" x={380} y={640} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.E + 4.2} until={K.S - 0.25} texto="tareas reales de sus proyectos" x={540} y={1150} tam={34} borde={KC.ink} />
 
       {/* 4 · el sorteo: con IA / sin IA, pantallas grabadas */}
       <Escena T={T} a={K.S} b={K.P}>
@@ -203,7 +203,7 @@ function Programadores() {
           <Carita x={810} y={545} s={1.5} playera={KC.pink} />
           {Array.from({ length: 10 }, (_, i) => { const t0 = K.S + 0.4 + i * 0.3, u = kprog(T, t0, t0 + 0.5, kEase.sale), izq = [1, 0, 0, 1, 0, 1, 1, 0, 1, 0][i];
             const fila = Math.floor(i / 2), tx = izq ? 270 : 810;
-            return <Tarea key={i} x={klerp(540, tx + ((i % 2) ? 40 : -40) * 0, u)} y={klerp(700, 790 + fila * 70, u)} s={0.8} rot={(1 - u) * 30 * (izq ? -1 : 1)} o={T >= t0 ? 1 : 0} color={izq ? '#d6f7ff' : '#ffe0ec'} />; })}
+            return <Tarea key={i} x={klerp(540, tx + ((i % 2) ? 40 : -40) * 0, u)} y={klerp(700, 790 + fila * 60, u)} s={0.8} rot={(1 - u) * 30 * (izq ? -1 : 1)} o={T >= t0 ? 1 : 0} color={izq ? '#d6f7ff' : '#ffe0ec'} />; })}
         </>)}
       </Escena>
       <Chip T={T} at={K.S + 0.2} until={K.P - 0.2} texto="con IA" x={270} y={410} tam={44} borde={KC.ink} />
@@ -224,34 +224,34 @@ function Programadores() {
       <Escena T={T} a={K.Pa} b={K.M}>
         <FondoCircuito T={T} />
         {T < PA2 + 0.3 && <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, PA2 - 0.1, PA2 + 0.3) }}>{svg(<>
-          <Tarjeta3 T={T} at={K.Pa + 1.6} x={200} y={800} titulo="pedirle"><Burbuja T={T} /></Tarjeta3>
-          <Tarjeta3 T={T} at={K.Pa + 2.8} x={540} y={800} titulo="esperar"><ArenaReloj T={T} /></Tarjeta3>
-          <Tarjeta3 T={T} at={K.Pa + 3.8} x={880} y={800} titulo="revisar"><LupaCodigo T={T} /></Tarjeta3>
+          <Tarjeta3 T={T} at={K.Pa + 1.0} x={200} y={800} titulo="pedirle"><Burbuja T={T} /></Tarjeta3>
+          <Tarjeta3 T={T} at={K.Pa + 2.2} x={540} y={800} titulo="esperar"><ArenaReloj T={T} /></Tarjeta3>
+          <Tarjeta3 T={T} at={K.Pa + 3.4} x={880} y={800} titulo="revisar"><LupaCodigo T={T} /></Tarjeta3>
         </>)}</div>}
         {T >= PA2 - 0.2 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, PA2 - 0.2, PA2 + 0.2) }}><Sugerencias T={T} at={PA2} /></div>}
       </Escena>
       <Chip T={T} at={K.Pa + 0.4} until={PA2 - 0.2} texto="con IA, el tiempo se iba en…" x={540} y={520} tam={40} borde={KC.cyan} />
-      <Chip T={T} at={PA2 + 0.2} until={K.M - 0.2} texto="sugerencias de la IA" x={330} y={430} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={PA2 + 2.6} until={K.M - 0.2} texto="aceptadas: menos del 44 %" x={540} y={1150} tam={42} borde={VERDE} />
+      <Chip T={T} at={PA2 + 0.2} until={K.M - 0.2} texto="sugerencias de la IA" x={330} y={520} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={PA2 + 2.6} until={K.M - 0.2} texto="aceptadas: menos del 44 %" x={360} y={620} tam={40} borde={VERDE} />
 
       {/* 7 · matices: expertos, proyectos enormes, no vale para todos */}
       <Escena T={T} a={K.M} b={K.Co}>
         <FondoLunares color={KC.pink} />
-        {svg(<Repositorio T={T} x={760} y={1110} s={0.95} alto={kprog(T, K.M + 0.3, K.M + 2.0, kEase.sale)} />)}
+        {svg(<Repositorio T={T} x={850} y={1120} s={0.75} alto={kprog(T, K.M + 0.3, K.M + 2.0, kEase.sale)} />)}
       </Escena>
-      <Chip T={T} at={K.M + 1.0} until={K.Co - 0.2} texto="en promedio: 5 años en su proyecto" x={430} y={640} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.M + 2.0} until={K.Co - 0.2} texto="en promedio: +1 millón de líneas" x={430} y={760} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.M + 3.6} until={K.Co - 0.2} texto="los autores: no vale para todos" x={430} y={1000} tam={40} borde={KC.red} fondo={KC.ink} />
+      <Chip T={T} at={K.M + 1.0} until={K.Co - 0.2} texto="en promedio: 5 años en su proyecto" x={380} y={700} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.M + 2.0} until={K.Co - 0.2} texto="en promedio: +1 millón de líneas" x={380} y={810} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.M + 3.6} until={K.Co - 0.2} texto="los autores: no vale para todos" x={380} y={960} tam={40} borde={KC.red} fondo={KC.ink} />
 
       {/* 8 · contraste: Copilot 2023 */}
       <Escena T={T} a={K.Co} b={K.Gi}>
         <FondoLunares color={KC.yellow} />
       </Escena>
       <TarjetaEstudio T={T} at={K.Co + 0.2} until={K.Co + 2.6} anio="2023" quien="Peng y colegas · Copilot" revista="Microsoft Research, GitHub y MIT · arXiv 2302.06590" y={700} />
-      <Chip T={T} at={K.Co + 2.7} until={K.Gi - 0.2} texto="tarea sencilla: un servidor web" x={540} y={460} tam={38} borde={KC.ink} />
-      <Comparativa T={T} at={K.Co + 2.9} until={K.Gi - 0.2} y={560} alto={420} max={161}
+      <Chip T={T} at={K.Co + 2.7} until={K.Co + 4.3} texto="tarea sencilla: un servidor web" x={390} y={380} tam={38} borde={KC.ink} />
+      <Comparativa T={T} at={K.Co + 2.9} until={K.Gi - 0.2} y={600} alto={380} max={161}
         izq={{ valor: 161, texto: '161 min', etiqueta: 'sin IA', color: KC.red }} der={{ valor: 71, texto: '71 min', etiqueta: 'con Copilot', color: VERDE }} />
-      <Chip T={T} at={K.Co + 4.4} until={K.Gi - 0.2} texto="55.8 % menos tiempo" x={540} y={1160} tam={44} borde={VERDE} />
+      <Chip T={T} at={K.Co + 4.4} until={K.Gi - 0.2} texto="con Copilot: 55.8 % menos tiempo" x={390} y={380} tam={36} borde={VERDE} />
 
       {/* 9 · giro: 2026 */}
       <Escena T={T} a={K.Gi} b={K.C}>
@@ -283,7 +283,7 @@ function Programadores() {
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.Pa - 0.1} texto="¿Más rápido *si vas más lento?*" />
       <Subtitulo T={T} idx={5} at={K.Pa + 0.1} until={PA2 - 0.1} texto="Pedirle, *esperar* y revisar." />
       <Subtitulo T={T} idx={6} at={PA2 + 0.1} until={K.M - 0.1} texto="Aceptaron *menos de la mitad.*" />
-      <Subtitulo T={T} idx={7} at={K.M + 0.1} until={K.Co - 0.1} texto="Expertos en proyectos enormes: *no vale para todos.*" />
+      <Subtitulo T={T} idx={7} at={K.M + 0.1} until={K.Co - 0.1} texto="Proyectos enormes: *no vale para todos.*" />
       <Subtitulo T={T} idx={8} at={K.Co + 0.1} until={K.Gi - 0.1} texto="2023, Copilot: *56 % más rápido.*" />
       <Subtitulo T={T} idx={9} at={K.Gi + 0.1} until={K.C - 0.1} texto="2026: *quizá ya más rápido.*" />
       <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Mide con el reloj, *no con la sensación.*" />

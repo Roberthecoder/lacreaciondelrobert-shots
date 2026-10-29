@@ -117,8 +117,8 @@ function Estudiante({ x, y, s = 1, T = 0, globo, globoO = 1 }) {
 function Multitud({ T, at, x = 100, y = 760, cols = 40, filas = 25, paso = 22, dur = 2.4 }) {
   const N = cols * filas, k = Math.round(N * kprog(T, at, at + dur, kEase.suave)), out = [];
   const colores = [KC.yellow, KC.mint, KC.cyan, KC.pink, KC.orange];
-  for (let i = 0; i < k; i++) { const c = i % cols, r = Math.floor(i / cols), px = x + c * paso, py = y + r * (paso + 2);
-    out.push(<g key={i}><circle cx={px} cy={py - 5} r={4.6} fill={KC.ink} /><rect x={px - 6} y={py} width={12} height={10} rx={4} fill={colores[(i * 7) % 5]} stroke={KC.ink} strokeWidth={1.5} /></g>); }
+  for (let i = 0; i < k; i++) { const c = i % cols, r = Math.floor(i / cols), px = x + c * paso, py = y + r * 18.5;
+    out.push(<circle key={i} cx={px} cy={py} r={7.5} fill={colores[(i * 7 + r * 3 + ((i * 2654435761) >>> 28)) % 5]} stroke={KC.ink} strokeWidth={2} />); }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30 }}>{out}</svg>;
 }
 // Barras horizontales (calificación del examen, relativa al grupo sin IA = 100).

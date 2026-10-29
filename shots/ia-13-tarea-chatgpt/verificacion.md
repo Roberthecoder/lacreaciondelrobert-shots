@@ -36,3 +36,13 @@
 2. **#6 "a finales de 2023" (línea Estudio).** El artículo solo dice "Fall semester of the 2023–2024 academic year" / "Fall 2023", sin fechas. Propuesta: **"Lo midieron en una prepa de Turquía en el otoño de 2023, con casi mil estudiantes de matemáticas."**
 3. **#13 "ChatGPT" / "un ChatGPT normal" (gancho, Grupos, Examen, Errores).** Era GPT-4 en un chat que imita a ChatGPT, hecho por los investigadores. Leve, pero para ser exactos propuesta: gancho **"Con un chat tipo ChatGPT, unos estudiantes sacaron…"**; Grupos **"Unos practicaron con un chat tipo ChatGPT, otros con un tutor de IA…"**; Examen **"Los del chat tipo ChatGPT sacaron diecisiete por ciento menos que los del libro."**; Errores **"Y ese chat, con el GPT-4 de 2023, acertaba solo la mitad de las veces."** Si el coordinador prefiere mantener "ChatGPT" en la voz por ritmo, al menos aclararlo una vez en la voz (p. ej. en Grupos) y en `publicacion.md`.
 4. Nota para `publicacion.md` (no es error): el +48 % y el −17 % son relativos al grupo sin IA, y el 51 % es sobre los 57 ejercicios del estudio; conviene decirlo en la descripción.
+
+## Re-verificación (29 oct 2026, coordinador)
+Las 3 correcciones se aplicaron tal como las propuso el verificador, sin cifras nuevas:
+- #3: «Pero terminar la tarea no es aprender.» (se quitó "Sentían que aprendían") ✅
+- #6: «…en el otoño de 2023…» ✅ ("Fall 2023")
+- #13: «un chat tipo ChatGPT» en gancho, Grupos y Examen; «ese chat de 2023» en Errores ✅
+- `publicacion.md` aclara que +48 % y −17 % son frente al grupo sin IA ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

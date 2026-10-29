@@ -26,6 +26,24 @@
 
 **Música:** cama grave continua (tensa desde el examen hasta la pregunta, se suelta con el tutor); tecleo cuando el chat escribe, "ding" con cada palomita, golpe seco cuando el número se voltea a −17 %, laptops que se cierran ("clac"), la moneda que gira, un "plin" de foco con cada pista.
 
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Cómo te quita puntos algo que te ayudó?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «cuarenta y ocho por ciento más… diecisiete por ciento menos» (cuadro 0) |
+| 2 | 14.0 | 16.7 | 13_senalando_arriba | `arriba-der` | «casi mil estudiantes de matemáticas» (señala la multitud) |
+| 3 | 26.4 | 31.0 | 10_serio_molesto | `izq-alto` | «sacaron diecisiete por ciento menos que los del libro» |
+| 4 | 31.2 | 34.5 | 07_pensativo_puno | `grande` | «¿Cómo te quita puntos algo que te ayudó?» |
+| 5 | 39.9 | 43.0 | 11_sorprendido | `arriba-der` | «acertaba solo la mitad de las veces» |
+| 6 | 43.3 | 46.2 | 04_bajando_lentes | `izq-alto` | «ellos no sentían haber aprendido menos» |
+| 7 | 49.6 | 52.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «el daño en el examen casi desapareció» |
+| 8 | 52.6 | 57.7 | 13_senalando_arriba | `arriba-der` | «pídele pistas, no la respuesta» |
+| — | 57.8 | 61.3 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 8 · ≈ 29.4 s (+ cierre 3.5 s) · poses distintas 6 (nunca la misma dos veces seguidas) · total 61.3 s (OM_SCENES)
+
 ## Fuentes (abiertas en el texto completo el 29 oct 2026)
 
 1. Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö. y Mariman, R. "Generative AI without guardrails can harm learning: Evidence from high school mathematics". *PNAS* 122(26): e2422633122 (publicado el 25 de junio de 2025). DOI 10.1073/pnas.2422633122 · PMC12232635 (texto completo abierto, leído con la API de Europe PMC). Wharton School, Universidad de Pensilvania. Corrección (PNAS 122(34): e2518204122, ago 2025): solo cambia la afiliación de Osbert Bastani; no toca datos.

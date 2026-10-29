@@ -183,7 +183,7 @@ function BarrasLN({ T, at, until, filas, top = 760 }) {
       return <div key={i} style={{ marginBottom:24, opacity: T >= a0 ? 1 : 0 }}>
         <div style={{ font:`900 36px ${KF.texto}`, color:f.tinta || KC.ink, marginBottom:6 }}>{f.etiqueta}</div>
         <div style={{ display:'flex', alignItems:'center', gap:18 }}>
-          <div style={{ width:Math.max(14, 700 * f.valor / 100 * g), height:72, background:f.color, border:`6px solid ${KC.ink}`, borderRadius:16 }}></div>
+          <div style={{ width:Math.max(14, 700 * f.valor / 36 * g), height:72, background:f.color, border:`6px solid ${KC.ink}`, borderRadius:16 }}></div>
           <div style={{ font:`400 66px ${KF.titulo}`, color:f.color, WebkitTextStroke:`3px ${KC.ink}` }}>{f.texto || `${kformato(f.valor * g, 0)} %`}</div>
         </div>
       </div>; })}
@@ -215,10 +215,6 @@ function LoboNieve() {
         <FondoLunares color={KC.lilac} />
         {svg(<>{Array.from({ length: 20 }, (_, n) => { const c = n % 5, f = Math.floor(n / 5), lobo = f < 2, a0 = K.F + 2.3 + n * 0.08;
           return <MiniFoto key={n} id={n + 1} x={62 + c * 196} y={700 + f * 122} animal={lobo ? 'lobo' : 'husky'} fondo={lobo ? 'nieve' : 'pasto'} o={kprog(T, a0, a0 + 0.25)} T={T} />; })}
-          <g opacity={kprog(T, K.F + 4.0, K.F + 4.4)}>
-            <text x={40} y={690} style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink} transform="rotate(-90 40 690)" textAnchor="end">lobos</text>
-            <text x={40} y={934} style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink} transform="rotate(-90 40 934)" textAnchor="end">huskies</text>
-          </g>
         </>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.F + 0.2} until={K.F + 2.2} anio="2016" quien="Universidad de Washington" revista="Ribeiro, Singh y Guestrin · KDD 2016" y={700} />
@@ -231,8 +227,8 @@ function LoboNieve() {
         {svg(<FotoIA id="r" x={560} y={910} w={620} T={T} animal="husky" fondo="nieve" scan={kprog(T, K.R + 1.0, K.R + 1.9)} rot={2} />)}
       </Escena>
       <Chip T={T} at={K.R + 0.3} until={K.Pu - 0.2} texto="si hay nieve ➜ «LOBO»" x={650} y={520} tam={46} borde={KC.red} />
-      <Chip T={T} at={K.R + 2.0} until={K.Pu - 0.2} texto="IA: «LOBO» ✖" x={420} y={680} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.R + 2.8} until={K.Pu - 0.2} texto="(era un husky)" x={760} y={1170} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.R + 2.0} until={K.Pu - 0.2} texto="IA: «LOBO» ✖" x={600} y={680} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.R + 2.8} until={K.Pu - 0.2} texto="(era un husky)" x={760} y={1120} tam={34} borde={KC.ink} />
 
       {/* 4 · la prueba con 27 estudiantes de posgrado */}
       <Escena T={T} a={K.Pu} b={K.P}>
@@ -242,13 +238,13 @@ function LoboNieve() {
           const conf = T < PU2 + 0.6 ? (rk < confAntes ? 1 : 0) : (rk === 0 || rk === 4 || rk === 7 ? 1 : (resto >= 0 && resto < confDesp - 3 ? 1 : 0));
           const nv = rk < vieron ? 1 : 0;
           return <g key={n} opacity={kprog(T, a0, a0 + 0.3)}><Persona x={110 + c * 108} y={760 + f * 150} k={n} T={T} color={[KC.pink, LN_AZUL, KC.orange, KC.lilac, KC.teal][n % 5]} confia={conf} nieve={nv} /></g>; })}
-          {T > PU2 - 0.2 && <g opacity={kprog(T, PU2 - 0.2, PU2 + 0.3)}><FotoIA id="p" x={300} y={560} w={300} T={T} animal="husky" fondo="nieve" zonas={kprog(T, PU2, PU2 + 0.6)} s={1} rot={-3} /></g>}
+          {T > PU2 - 0.2 && <g opacity={kprog(T, PU2 - 0.2, PU2 + 0.3)}><FotoIA id="p" x={330} y={525} w={250} T={T} animal="husky" fondo="nieve" zonas={kprog(T, PU2, PU2 + 0.6)} s={1} rot={-3} /></g>}
         </>)}
       </Escena>
       <Chip T={T} at={K.Pu + 0.4} until={PU2 - 0.3} texto="27 estudiantes de posgrado" x={360} y={470} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Pu + 2.6} until={PU2 - 0.3} texto={`confían en la IA: ${confAntes} de 27`} x={360} y={570} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={PU2 + 0.6} until={K.P - 0.2} texto={`vieron la nieve: ${vieron} de 27`} x={760} y={500} tam={32} borde={LN_AZUL} />
-      <Chip T={T} at={PU2 + 1.4} until={K.P - 0.2} texto={`confían: ${confDesp} de 27`} x={760} y={590} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={PU2 + 0.6} until={K.P - 0.2} texto={`vieron la nieve: ${vieron} de 27`} x={340} y={360} tam={32} borde={LN_AZUL} />
+      <Chip T={T} at={PU2 + 1.4} until={K.P - 0.2} texto={`confían en la IA: ${confDesp} de 27`} x={340} y={690} tam={32} borde={KC.leaf} />
 
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
@@ -260,15 +256,15 @@ function LoboNieve() {
       <Escena T={T} a={K.H} b={K.Fi}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<g opacity={1 - kprog(T, H2 - 0.4, H2 + 0.1)}>
-          {[['NIH', 200], ['Mount Sinai', 540], ['Indiana', 880]].map(([n, x], i) => <g key={n} opacity={kprog(T, K.H + 2.6 + i * 0.3, K.H + 3.0 + i * 0.3)}>
+          {[['NIH', 200], ['Mount Sinai', 540], ['Indiana', 880]].map(([n, x], i) => <g key={n} opacity={kprog(T, K.H + 0.5 + i * 0.3, K.H + 0.9 + i * 0.3)}>
             <Hospital x={x} y={930} s={0.95} nombre={n} />
-            {[0, 1, 2].map((k) => <g key={k} transform={`translate(${x - 70 + k * 18} ${1010 - k * 12}) rotate(${-8 + k * 8})`}><rect width={90} height={100} rx={6} fill="#10141c" stroke={KC.ink} strokeWidth={4} /><ellipse cx={30} cy={50} rx={14} ry={30} fill="#3a4250" /><ellipse cx={60} cy={50} rx={14} ry={30} fill="#3a4250" /></g>)}
+            <g transform={`translate(${x + 70} ${760}) rotate(8)`}><rect width={80} height={92} rx={6} fill="#10141c" stroke={KC.ink} strokeWidth={4} /><ellipse cx={27} cy={46} rx={12} ry={28} fill="#5a6476" /><ellipse cx={53} cy={46} rx={12} ry={28} fill="#5a6476" /></g>
           </g>)}
         </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.H + 0.2} until={K.H + 2.6} anio="2018" quien="3 hospitales de EE. UU." revista="Zech et al. · PLOS Medicine" y={680} />
+      <TarjetaEstudio T={T} at={K.H + 0.2} until={K.H + 2.6} anio="2018" quien="3 hospitales de EE. UU." revista="Zech et al. · PLOS Medicine" y={560} />
       <Chip T={T} at={K.H + 3.2} until={H2 - 0.3} texto="IA que busca neumonía" x={540} y={560} tam={38} borde={KC.ink} />
-      <Chip T={T} at={H2 + 0.1} until={K.Fi - 0.2} texto="radiografías con neumonía" x={600} y={560} tam={36} borde={KC.ink} />
+      <Chip T={T} at={H2 + 0.1} until={K.Fi - 0.2} texto="radiografías con neumonía" x={660} y={560} tam={36} borde={KC.ink} />
       <BarrasLN T={T} at={H2 + 0.2} until={K.Fi - 0.2} top={680} filas={[{ valor: 34.2, texto: '34 %', etiqueta: 'Mount Sinai: 1 de cada 3', color: KC.red }, { valor: 1.2, texto: '1 %', etiqueta: 'NIH: casi ninguna', color: LN_AZUL, at: H2 + 1.8 }]} />
 
       {/* 7 · por dentro: la red reconoce el hospital, hasta por la ficha de metal */}
@@ -291,11 +287,11 @@ function LoboNieve() {
           return <g key={n} transform={`translate(${600 + c * 44} ${690 + f * 40})`}><rect width={36} height={34} rx={8} fill={roja ? KC.red : '#e9b48f'} stroke={KC.ink} strokeWidth={3} /><circle cx={18} cy={17} r={7} fill={roja ? '#5a0e09' : '#7a4a2c'} /><circle cx={18} cy={17} r={12} fill="none" stroke={VIOLETA} strokeWidth={3} /></g>; })}</g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.L + 0.2} until={K.L + 2.3} anio="2019" quien="Universidad de Heidelberg, Alemania" revista="Winkler et al. · JAMA Dermatology" y={560} />
-      <Chip T={T} at={K.L + 1.2} until={K.L + 2.6} texto="IA: «lunar sano» ✔" x={540} y={1150} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.L + 1.2} until={K.L + 2.6} texto="IA: «lunar sano» ✔" x={540} y={1110} tam={40} borde={KC.leaf} />
       <Chip T={T} at={K.L + 2.6} until={K.L + 4.1} texto="tinta de cirujano" x={540} y={560} tam={38} borde={VIOLETA} />
-      <Chip T={T} at={K.L + 3.2} until={K.L + 4.1} texto="IA: «MELANOMA» ✖" x={540} y={1150} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.L + 3.2} until={K.L + 4.1} texto="IA: «MELANOMA» ✖" x={540} y={1110} tam={40} borde={KC.red} />
       <Chip T={T} at={K.L + 4.4} until={K.Re - 0.2} texto="lunares sanos con tinta" x={820} y={620} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.L + 4.8} until={K.Re - 0.2} texto={`«melanoma»: ${rojosL} %`} x={820} y={1150} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.L + 4.8} until={K.Re - 0.2} texto={`«melanoma»: ${rojosL} %`} x={820} y={1125} tam={38} borde={KC.red} />
 
       {/* 9 · recortar la tinta */}
       <Escena T={T} a={K.Re} b={K.C}>
@@ -304,7 +300,7 @@ function LoboNieve() {
           <g opacity={1 - kprog(T, K.Re + 1.3, K.Re + 1.7)}><Tijeras x={klerp(260, 820, kprog(T, K.Re + 0.1, K.Re + 1.2))} y={790} s={1} abre={Math.abs(Math.sin(T * 12))} /></g></>)}
       </Escena>
       <Chip T={T} at={K.Re + 0.2} until={K.C - 0.2} texto="foto recortada" x={540} y={560} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Re + 1.3} until={K.C - 0.2} texto="IA: «lunar sano» ✔" x={540} y={1170} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.Re + 1.3} until={K.C - 0.2} texto="IA: «lunar sano» ✔" x={540} y={1110} tam={40} borde={KC.leaf} />
 
       {/* 10 · cierre: la misma foto, probada con datos de fuera */}
       <Escena T={T} a={K.C} b={FIN}>
