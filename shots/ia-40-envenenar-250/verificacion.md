@@ -38,3 +38,13 @@
    - En pantalla puede quedar el "%" tachado y el "250" encerrado.
 
 Nota (no bloquea): #14 está bien; el 0.00016 % lo da el paper mismo para el de 13B (sección 3.2, nota 2), así que en `## Fuentes` del guion conviene citar el paper en lugar de solo el blog. Revisa que la duración siga en 61–62 s después de los cambios (las frases propuestas cambian unas 3–4 palabras en total).
+
+## Re-verificación (29 oct 2026, coordinador)
+- Escena 2: «Los investigadores escondieron en sus propios datos documentos con la palabra SUDO y luego puro texto sin sentido.» ✅
+- Escena 7: «Con cien, no funcionó.» + chip «100: no bastó» ✅ ("Poisoning with 100 documents is not successful")
+- Escena 10: «Lo que sí mostraron: no importó el porcentaje de hojas rojas, sino cuántas había.» ✅
+- Recortes sin datos nuevos (gancho sin "envenenados", "donde cualquiera escribe", "al aprender", "IA de 600 millones a 13 mil millones de parámetros", "leyó más de veinte veces más") ✅
+- 0.00016 % citado del paper (sección 3.2) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

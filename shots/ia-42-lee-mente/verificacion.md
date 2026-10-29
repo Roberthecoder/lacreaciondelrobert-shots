@@ -42,3 +42,11 @@ Revisiones extra:
    (≈ +2–3 palabras cada cambio; quitar algo equivalente si pasa de 62 s).
 3. Opcional, para `publicacion.md`/comentario fijado: mencionar que en 2025 el mismo equipo redujo el entrenamiento a ~1 h, pero sigue
    pidiendo cooperación (refuerza el mensaje, no es obligatorio).
+
+## Re-verificación (29 oct 2026, coordinador)
+- Gancho: «¿Por qué una máquina todavía no puede leer tu mente desde afuera? Porque, por ahora, necesita que tú te dejes.» ✅ (texto del verificador)
+- Cierre: «Así que hoy, desde afuera, tu mente sigue siendo tuya, y los autores piden reglas que protejan tu privacidad mental.» ✅
+- Pregunta (recorte): «Eso probaron en Austin, en un estudio de 2023» (UT Austin; nombre completo en la tarjeta) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
