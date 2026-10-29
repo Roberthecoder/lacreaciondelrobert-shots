@@ -7,7 +7,7 @@
 - **Viaje:** macro (bebé recién nacido, la jeringa en el muslo) → micro (fondo oscuro: el virus, el gen, la levadura, las partículas de 22 nm) → el mismo muslo y la misma jeringa, ahora con "hecha en levadura" en la etiqueta.
 - **No repite bio-08 (insulina):** aquí la levadura no fabrica un medicamento que se inyecta todos los días, sino una pieza del virus que se arma sola en una partícula vacía (partícula tipo virus) para entrenar al sistema inmune.
 
-## Versión narrada (958 caracteres, ~179 palabras, ~58 s de voz)
+## Versión narrada (958 caracteres, ~178 palabras, ~58 s de voz; corregida tras la verificación del 29 oct 2026)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -15,16 +15,35 @@
 | 1 | Bebe | En México se pone en las primeras 24 horas, en el muslo. | Reloj de 24 h que corre alrededor del bebé. Chip "México · primeras 24 h". Flecha al muslo izquierdo. |
 | 2 | Virus | Es contra la hepatitis B, un virus que ataca el hígado. | Silueta de un cuerpo con el hígado (rojo vino) que se ilumina; del otro lado el virus: esfera con capa exterior de proteínas y núcleo con su ADN. Etiqueta "virus de la hepatitis B". |
 | 3 | Plasma | La primera, de 1981, se purificaba del plasma de personas infectadas. | Fondo amarillo: bolsa de sangre → tubo centrifugado con el plasma amarillo arriba. Chip "1981 · del plasma". |
-| 4 | Miedo | Y había miedo de que ese plasma trajera otros virus, como el del sida. | En el tubo flotan otros virus con signo de interrogación. `MitoTachado` "¿plasma seguro?" se queda como pregunta. |
+| 4 | Miedo | Y había miedo de que ese plasma trajera otros virus, como el del sida. | El tubo crece; en el plasma flotan círculos grises con "?" (solo dudas, no contagio). Chip "un miedo (sin pruebas de contagio)". |
 | 5 | Pregunta | ¿Cómo haces una vacuna sin usar el virus? | **Re-gancho.** El virus en el centro y un gran signo de interrogación. |
 | 6 | Gen | Tomaron un solo gen del virus, el de su proteína de superficie, y lo metieron en levadura. | Fondo oscuro: el ADN del virus se abre y se ilumina un solo tramo (gen S). Ese tramo entra a un anillo de ADN (plásmido) y el anillo entra a la levadura. Etiqueta *Saccharomyces cerevisiae*. |
-| 7 | Particulas | La levadura fabrica esa proteína y las piezas se juntan en bolitas de 22 nanómetros. | **Lupa "POR DENTRO · LEVADURA"**: adentro, piezas de proteína que se juntan solas en esferas. `Escala` "22 nm". |
+| 7 | Particulas | La levadura la fabrica y las piezas se juntan en bolitas de 22 nanómetros. | **Lupa "POR DENTRO · LEVADURA"**: adentro, piezas de proteína que se juntan solas en esferas. `Escala` "22 nm". |
 | 8 | Vacias | Por fuera parecen el virus, pero están vacías: sin genes, no pueden infectar. | Comparación lado a lado: virus (~42 nm, con ADN adentro) · partícula (22 nm, hueca). Un candado sobre la partícula. |
-| 9 | Estudio | En 1982, un equipo de San Francisco y de Seattle vio esas bolitas al microscopio. | `TarjetaEstudio` "1982 · UCSF + U. de Washington · *Nature*" y una pantalla de microscopio electrónico en gris con puntitos redondos. |
+| 9 | Estudio | En 1982, un equipo de San Francisco y Seattle las vio al microscopio. | `TarjetaEstudio` "1982 · UCSF + U. de Washington · *Nature*" y una pantalla de microscopio electrónico en gris con puntitos redondos. |
 | 10 | Recombivax | En 1986 llegó Recombivax HB: la primera vacuna hecha con ADN recombinante. | Frasquito de vacuna con sello "1986 · 1.ª vacuna recombinante". |
-| 11 | Pan | Su levadura es de la misma especie que la del pan: por eso no se pone a alérgicos a la levadura. | Una hogaza de pan junto a la levadura; luego una tarjeta de advertencia: "alergia a la levadura = no". |
+| 11 | Pan | Su levadura es la misma especie que la del pan, y deja rastros: quien es muy alérgico a la levadura no debe ponérsela. | La levadura = una hogaza de pan; luego aparece el frasquito con puntitos de levadura (etiqueta "< 1 % proteína de levadura") y el chip "alergia grave a la levadura = no". |
 | 12 | Cierre | Así que esa vacuna del primer día no trae virus: trae trabajo de levadura. | **Regreso al bebé y la jeringa del inicio**, ahora la etiqueta dice "hecha en levadura". |
 | — | Outro | (sin voz) | Cierre de marca. |
+
+## Robert en pantalla
+
+Escenas del base narrada (61.5 s): Gancho 0.00 · Bebe 4.76 · Virus 8.23 · Plasma 11.70 · Miedo 15.96 · Pregunta 20.22 · Gen 22.90 · Particulas 28.35 · Vacias 32.91 · Estudio 37.57 · Recombivax 41.83 · Pan 46.39 · Cierre 53.43 · Outro 58.00.
+
+### 9 apariciones, **36.0 s en pantalla** (de 61.5 s), 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.6 | sorprendido (11) | gancho | «no trae ni un virus: la fabricó una levadura» |
+| 8.5 – 11.5 | señalando (13) | arriba-der | señala el hígado y el virus en la Lupa |
+| 16.5 – 20.1 | serio (10) | arriba-der | «había miedo de que ese plasma trajera otros virus» |
+| 20.3 – 23.7 | pensativo (06) | **grande** | re-gancho: «¿cómo haces una vacuna sin usar el virus?» |
+| 29.4 – 32.7 | señalando (13) | izq-alto | señala las partículas que se arman en la Lupa |
+| 38.0 – 41.6 | bajando lentes (04) | arriba-der | 1982: las bolitas al microscopio electrónico |
+| 42.1 – 46.2 | sorprendido (11) | **grande** | el dato más fuerte: 1986, la primera vacuna recombinante |
+| 47.2 – 53.2 | sonriendo (05) | izq-alto | «la misma especie que la del pan» |
+| 53.7 – 57.9 | apuntando a cámara (02) | arriba-der | cierre: «no trae virus: trae trabajo de levadura» |
+| 58.0 – 61.5 | señalando (13) | cierre | `CierreMarca robert=` |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - Cama grave continua, sin golpe, debajo de la voz; se tensa (filtro cerrado) en "plasma" y "miedo" y se abre cuando entra la levadura.
@@ -34,9 +53,9 @@
 ## Descripción (para publicar)
 "Esa vacuna del primer día de vida no trae ni un virus: la fabricó una levadura. 💉🍞 En México, la vacuna contra la **hepatitis B** se aplica a los recién nacidos en sus **primeras 24 horas**, en el muslo. La hepatitis B es un virus que ataca el hígado; según la OMS, en 2024 causó cerca de **1.1 millones de muertes** en el mundo.
 
-La primera vacuna (aprobada en EE. UU. en **1981**) se hacía purificando la proteína de superficie del virus (HBsAg) del **plasma de personas infectadas**, y había miedo de que esos productos de plasma trajeran otros virus, como el del VIH.
+Según la Secretaría de Salud, la vacuna actual se fabrica con **levaduras modificadas** (gob.mx, 2016). La primera vacuna (aprobada en EE. UU. en **1981**) se hacía purificando la proteína de superficie del virus (HBsAg) del **plasma de personas infectadas**, con un proceso que destruía lo infeccioso. Aun así, muchos temían que un producto de plasma trajera otros virus, un miedo que, según los historiadores Huzair y Sturdy, no tenía evidencia, pero creció con la aparición del VIH/sida.
 
-La solución fue biotecnológica: se tomó **un solo gen del virus**, el de la proteína de superficie, y se metió en levadura (*Saccharomyces cerevisiae*, la misma especie del pan). La levadura fabrica la proteína y esta se arma sola en **partículas de 22 nanómetros** que por fuera se parecen al virus pero **no traen su material genético**: no pueden infectar. Así lo mostraron en **1982** Valenzuela, Rutter, Hall y sus colegas (UCSF y Universidad de Washington) en *Nature*. En **1986** se aprobó **Recombivax HB**, la primera vacuna hecha con ADN recombinante. Su instructivo pide no aplicarla a quien es alérgico a la levadura.
+La solución fue biotecnológica: se tomó **un solo gen del virus**, el de la proteína de superficie, y se metió en levadura (*Saccharomyces cerevisiae*, la misma especie del pan). La levadura fabrica la proteína y esta se arma sola en **partículas de 22 nanómetros** que por fuera se parecen al virus pero **no traen su material genético**: no pueden infectar. Así lo mostraron en **1982** Valenzuela, Rutter, Hall y sus colegas (UCSF y Universidad de Washington) en *Nature*. En **1986** se aprobó **Recombivax HB**, la primera vacuna hecha con ADN recombinante. Como lleva rastros de proteína de levadura (menos del 1 %), su instructivo pide no aplicarla a quien tuvo una alergia grave (anafilaxia) a la levadura.
 
 El dibujo es esquemático. **¿Tienes tu cartilla de vacunación? ¿Sabías qué te pusieron el primer día? 👇**"
 

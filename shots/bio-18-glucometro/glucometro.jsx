@@ -201,7 +201,7 @@ function Glucometro18() {
           </g>}
         </SvgCapa>
         <Escala T={T} pxPorMm={6.5} x={720} y={1460} />
-        <Lupa T={T} at={K.En + 0.15} until={K.El - 0.2} x={560} y={860} r={270} fx={DX} fy={TIPY + 30} tinte={GOX} etiqueta="POR DENTRO · LA TIRA"
+        <Lupa T={T} at={K.En + 0.15} until={K.El - 0.2} x={560} y={790} r={260} fx={DX} fy={TIPY + 30} tinte={GOX} etiqueta="POR DENTRO · LA TIRA"
           interior={(t, r) => <svg width={r * 2} height={r * 2}>
             <rect width={r * 2} height={r * 2} fill={KC.noche} />
             <rect x={0} y={r * 1.55} width={r * 2} height={r * 0.45} fill="#c58f22" />
@@ -292,8 +292,8 @@ function Glucometro18() {
           {T > K.Ab + 2.4 && <text x={110} y={1100} style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink}>H₂O₂</text>}
           <Bacilo x={390} y={1150} s={1.1} vida={1 - kprog(T, K.Ab + 3.6, K.Ab + 5.4)} rot={-12} />
         </SvgCapa>
-        <Chip T={T} at={K.Ab + 0.6} until={K.Ab + 3.4} texto="su propia glucosa oxidasa" x={330} y={1490} tam={34} borde={KC.yellow} />
-        <Chip T={T} at={K.Ab + 3.6} until={K.Ci - 0.2} texto="agua oxigenada vs. bacterias" x={330} y={1490} tam={34} borde={KC.leaf} />
+        <Chip T={T} at={K.Ab + 0.6} until={K.Ab + 3.4} texto="su propia glucosa oxidasa" x={400} y={1490} tam={34} borde={KC.yellow} />
+        <Chip T={T} at={K.Ab + 3.6} until={K.Ci - 0.2} texto="agua oxigenada vs. bacterias" x={400} y={1490} tam={34} borde={KC.leaf} />
       </Escena>
 
       {/* 12 · cierre: el glucómetro del inicio, ya con su número */}
