@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot VozDevuelta base narrada.dc.html",
+  "salida": "Shot VozDevuelta narrado.dc.html",
+  "nota": "Shot IA #27. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa cara en la pantalla no habla sola: la mueve el cerebro de Ann, a quien un infarto cerebral dejó sin voz."
+    },
+    {
+      "escena": "Implante",
+      "texto": "Le pusieron sobre el cerebro una lámina con doscientos cincuenta y tres electrodos."
+    },
+    {
+      "escena": "Ordenes",
+      "texto": "Cuando intentaba hablar, su cerebro aún mandaba órdenes a labios, lengua y mandíbula."
+    },
+    {
+      "escena": "IA",
+      "texto": "Una inteligencia artificial las convirtió en palabras, voz y gestos."
+    },
+    {
+      "escena": "Rapidez",
+      "texto": "Llegó a unas setenta y ocho palabras por minuto; con su aparato para escribir, apenas catorce."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y de dónde sacaron su voz?"
+    },
+    {
+      "escena": "Boda",
+      "texto": "De un video de su boda. Ann dijo que era como oír a una vieja amiga."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Ese mismo día de 2023, Stanford publicó otro: Pat, con ELA, llegó a sesenta y dos por minuto."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Una plática normal anda en unas ciento sesenta."
+    },
+    {
+      "escena": "Lagrimas",
+      "texto": "En un estudio de 2024, a Casey le atinaba noventa y siete de cada cien palabras. La primera vez, lloró de alegría."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: cada estudio fue con una sola persona; aún no es un tratamiento disponible."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Pero esa cara llegó a decir lo que Ann quería, con una voz que sonaba a ella."
+    }
+  ]
+}

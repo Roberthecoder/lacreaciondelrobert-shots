@@ -12,16 +12,16 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Estos seis casos no existen: los inventó ChatGPT. Y un abogado se los presentó a un juez de Nueva York. | Fondo amarillo; desde el cuadro 0 caen seis expedientes con sus nombres ("Varghese", "Shaboon", "Petersen", "Martinez", "Durden", "Miller"); un sello rojo "NO EXISTE" golpea cada uno. El robotito con birrete escribe en una hoja. |
+| 0 | Gancho | Estos seis casos no existen: los inventó ChatGPT. Y unos abogados se los presentaron a un juez de Nueva York. | Fondo amarillo; desde el cuadro 0 caen seis expedientes con sus nombres ("Varghese", "Shaboon", "Petersen", "Martinez", "Durden", "Miller"); un sello rojo "NO EXISTE" golpea cada uno. El robotito con birrete escribe en una hoja. |
 | 1 | Gancho | ¿Quieres que te multen? Sigue estos pasos. | Título tipo manual "CÓMO QUE TE MULTEN" (irónico) y contador grande de pasos 1–4. |
 | 2 | Paso1 | Paso uno: toma una demanda contra Avianca, la aerolínea colombiana, por un carrito que golpeó una rodilla. | "PASO 1". Avión (genérico, sin logo real) de El Salvador a Nueva York; dentro, un carrito de metal choca con una rodilla (¡tac!). Chip "Avianca · aerolínea de Colombia". |
 | 3 | Paso2 | Paso dos: pídele casos a ChatGPT y cítalos sin leerlos completos. Así llegó «Varghese contra China Southern». | "PASO 2". `CelularChat`: el abogado pide casos; burbujas que escupen citas. Una hoja con el título falso "Varghese v. China Southern Airlines" y renglones ilegibles. |
-| 4 | Paso3 | Paso tres: si la aerolínea dice que no los encuentra, no retires nada. | "PASO 3". Carta de los abogados de Avianca: "no podemos encontrar…" (15 mar 2023); el abogado la ignora; el escrito sigue en la mesa del juez. |
+| 4 | Paso3 | Paso tres: si la aerolínea dice que no los encuentra, no retires nada. | "PASO 3". Documento: «Escrito de Avianca · 15 mar 2023: «no hemos podido encontrar la mayoría de los casos citados»»; el abogado la ignora; el escrito sigue en la mesa del juez. |
 | 5 | Pregunta | ¿Y si le preguntas a ChatGPT si son reales? | **Re-gancho.** "?" gigante; Robert grande. |
-| 6 | Respuesta | Él lo hizo: le dijo que Varghese sí existía y que aparecía en buscadores legales. | `CelularChat`: "¿Varghese es un caso real?" → "Sí, existe" (paráfrasis; capturas reales en el anexo B de la orden). Palomita verde que se vuelve tache. |
+| 6 | Respuesta | Uno de ellos lo hizo: le dijo que Varghese sí existía y que aparecía en buscadores legales. | `CelularChat`: "¿Varghese es un caso real?" → "Sí, existe" (paráfrasis; capturas reales en el anexo B de la orden). Palomita verde que se vuelve tache. |
 | 7 | Multa | Paso cuatro: espera. En junio de 2023, el juez Kevin Castel multó a los abogados y a su despacho con cinco mil dólares. | "PASO 4". `TarjetaEstudio` estilo documento: "22 jun 2023 · Tribunal federal, Distrito Sur de Nueva York · juez P. Kevin Castel". Mazo que golpea; `NumeroGigante` "$5,000". |
 | 8 | Multa | Y les ordenó escribirles a los jueces puestos como autores falsos. | Sobres que salen volando hacia jueces de caricatura, cada uno con su caso falso. |
-| 9 | Conteo | No fue el único: a octubre de 2026, una base de datos reúne más de dos mil doscientos casos así en tribunales. | `Cuadricula` que se llena de expedientes con sello "IA"; contador "2,231" y chip "base de datos de Damien Charlotin · 28 oct 2026". |
+| 9 | Conteo | A octubre de 2026, una base de datos reúne más de dos mil doscientos casos así en tribunales. | `Cuadricula` que se llena de expedientes con sello "IA"; contador "2,231" y chip "base de datos de Damien Charlotin · 28 oct 2026". |
 | 10 | Cierre | Usar IA no es el problema: revisar te toca a ti. Busca cada caso en la fuente. Porque estos seis no existen. | **Regreso a la imagen del inicio**: los mismos seis expedientes con su sello "NO EXISTE"; una lupa pasa sobre ellos; chip "busca cada caso en la fuente ✔". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 

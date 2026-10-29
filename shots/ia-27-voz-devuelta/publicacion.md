@@ -24,7 +24,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esa cara en la pantalla no habla sola: la mueve el cerebro de Ann, a quien un infarto cerebral dejó sin voz. 🧠🗣️
-Una lámina con 253 electrodos sobre su cerebro captaba las órdenes que mandaba a la boca, y una IA las convertía en texto, voz y gestos de un avatar: unas 78 palabras por minuto, contra 14 con su aparato para escribir. Su voz salió de un video de su boda. El mismo día de 2023, Stanford publicó el caso de Pat (ELA): 62 por minuto. En 2024, a Casey le atinaba 97 de cada 100 palabras.
+Una lámina con 253 electrodos sobre su cerebro captaba las órdenes que mandaba a la boca, y una IA las convertía en texto, voz y gestos de un avatar: unas 78 palabras por minuto, contra 14 con su aparato para escribir. Su voz salió de un video de su boda. El mismo día de 2023, Stanford publicó el caso de Pat (ELA): 62 por minuto. En un estudio de 2024, a Casey le atinaba 97 de cada 100 palabras.
 Ojo: cada estudio fue con una sola persona; aún no es un tratamiento disponible.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué es lo primero que le dirías a alguien que no ha podido hablar en años? 👇

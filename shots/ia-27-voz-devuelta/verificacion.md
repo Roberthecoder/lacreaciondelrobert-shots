@@ -32,3 +32,33 @@
 3. **#11 "Tú dices unas 160":** es la cifra de conversación natural del artículo (en inglés), no medida en "tú". Propuesta: «Una plática normal anda en unas ciento sesenta.» (en pantalla: "plática normal ≈ 160").
 4. **#12 "En 2024":** la precisión se midió desde julio de 2023; 2024 es el año del estudio. Propuesta: «En un estudio de 2024, a Casey le atinaba noventa y siete de cada cien palabras. La primera vez, lloró de alegría.» (el chip "2024 · UC Davis · NEJM" está bien).
 5. **#16 cierre en presente:** a Ann le retiraron el implante en febrero de 2024. Propuesta: «Pero esa cara llegó a decir lo que Ann quería decir, con una voz que sonaba a ella.» (Opcional, chip: "el implante se retiró en 2024".) Por coherencia, la escena 2 también puede ir en pasado: «Cuando intentaba hablar, su cerebro aún mandaba órdenes a labios, lengua y mandíbula.»
+
+## Re-verificación
+
+- Fecha: 29 oct 2026 · mismo verificador independiente. Solo lo nuevo: `narracion.json` idx 0–4, 7–9 y 11; `vozdevuelta.jsx` (textos en pantalla, barras, cuadrícula); `publicacion.md`.
+
+| # | Afirmación nueva | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | «a quien un infarto cerebral dejó sin voz» · chip «Ann · infarto cerebral (2005)» · «el infarto corta el paso» | ✅ | Metzger 2023 (Métodos) | "She experienced a pontine infarct in 2005, when she was 30 years old" | 2023 |
+| R2 | «una lámina con 253 electrodos» (jsx: rejilla 23 × 11 = 253) | ✅ | Metzger 2023 | "The ECoG array consists of 253 disc-shaped electrodes" | 2023 |
+| R3 | «Cuando intentaba hablar, su cerebro aún mandaba órdenes a labios, lengua y mandíbula» | ✅ | Metzger 2023; Global News (UCSF) | "attempted movements of the lips, tongue and jaw" · "would have gone to muscles in Ann's lips, tongue, jaw and larynx" | 2023 |
+| R4 | «Una inteligencia artificial las convirtió en palabras, voz y gestos» | ✅ | Metzger 2023 | "We trained deep-learning models… text, speech audio and facial-avatar animation" | 2023 |
+| R5 | «unas 78 palabras por minuto; con su aparato para escribir, apenas 14» · chips «su aparato para escribir: 14», «implante + IA: unas 78» · subtítulo «78 por minuto. Antes, 14.» | ✅ | Metzger 2023 | "median real-time decoding rate of 78.3 WPM… exceeds our participant's typical communication rate using her assistive device (14.2 WPM)" | 2023 |
+| R6 | «Ese mismo día de 2023, Stanford publicó otro: Pat, con ELA, 62 por minuto» · tarjeta «Willett et al. y Metzger et al. · Nature · 23 ago 2023» | ✅ | Willett 2023; *Nature* 620 | "decoded at 62 words per minute" · "bulbar-onset amyotrophic lateral sclerosis (ALS)" | 2023 |
+| R7 | «Una plática normal anda en unas 160» · barras 78 · 62 · ≈160 (etiquetas Ann/UCSF, Pat/Stanford, plática normal) | ✅ | Willett 2023; Metzger 2023 | "the speed of natural conversation (160 words per minute)" | 2023 |
+| R8 | «En un estudio de 2024, a Casey le atinaba 97 de cada 100 palabras. La primera vez, lloró de alegría» · cuadrícula 97 verdes + 3 rojas · chips «2024 · UC Davis · NEJM», «lloró de alegría» | ✅ | Card 2024 (resumen NEJM en PubMed y Métodos) | "sustained 97.5% accuracy over a period of 8.4 months after surgical implantation" · "the participant cried with joy as the words he was trying to say correctly appeared on-screen" | 2024 |
+| R9 | Cierre «Pero esa cara llegó a decir lo que Ann quería, con una voz que sonaba a ella» · chip «el implante se retiró en 2024» | ✅ | UC Berkeley News 2025; Metzger 2023 | "In February 2024, Johnson had her implant removed for a reason unrelated to the trial." · "personalization to the participant's pre-injury voice" | 2025 |
+| R10 | «todavía no se puede pedir» · sello «EN INVESTIGACIÓN» · «Una persona por estudio» | ✅ | Card 2024; ensayos NCT03698149 / BrainGate | "This study involved a single participant and it is uncertain if similar results can be expected in future users" | 2024 |
+| R11 | Cita en pantalla «Es como oír a una vieja amiga» (Ann, UCSF, 2023) | ✅ | Global News (cita a UCSF) | "'It's like hearing an old friend.'" | 2023 |
+| R12 | `publicacion.md`: textos de TikTok, YouTube, Facebook, LinkedIn, X, Threads y comentario fijado (cifras, nombres, Pat = mujer con ELA, 97.5 % en 8.4 meses, retiro del implante en feb 2024, citas textuales) | ✅ | Metzger 2023; Willett 2023; Card 2024 (resumen NEJM coincide palabra por palabra con la cita del comentario fijado); HealthDay 2023; Berkeley 2025 | ver arriba | 2023–2025 |
+| R13 | `publicacion.md`, Instagram: «En 2024, a Casey le atinaba 97 de cada 100 palabras» | ⚠️ | Card 2024; UC Davis 2024 | implantado en julio de 2023; precisión medida durante 8.4 meses; 2024 es el año del estudio (misma imprecisión que ya se corrigió en la voz) | 2024 |
+
+### Correcciones necesarias (re-verificación)
+
+1. **R13 (solo `publicacion.md`, Instagram Reels):** cambiar «En 2024, a Casey le atinaba 97 de cada 100 palabras.» por «En un estudio de 2024, a Casey le atinaba 97 de cada 100 palabras.» Todo lo demás quedó ✅; con este cambio el shot puede aprobarse sin otra ronda.
+
+## Re-verificación final (29 oct 2026, coordinador)
+- publicacion.md (Instagram): «En un estudio de 2024, a Casey le atinaba…» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
