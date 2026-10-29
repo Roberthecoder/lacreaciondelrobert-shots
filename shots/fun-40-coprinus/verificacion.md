@@ -45,4 +45,3 @@ Fuentes abiertas:
 | 19b | (corregido) Pantalla del cierre: caja de cultivo «en laboratorio» con un nematodo atrapado; chip "también caza gusanos" | ✅ | [L04] | "Nematodes added to C. comatus cultures on potato-dextrose agar (PDA)…"; "hyphae colonize nematode bodies" | 2004 |
 
 **Revisión de correcciones (29 oct 2026):** se volvió a leer `narracion.json` completo (997 caracteres) y las filas cambiadas del guion; se abrieron otra vez New Forest NPA, NIES, Kuo y los resúmenes de Luo 2004/2007. Toda la voz y la pantalla quedan ✅: la caza de nematodos se dice "en el laboratorio" y con los dos años (2004 y 2007), "todo el sombrero" en vez de "todo", y «barbuda» con fuente de Fungipedia (sin decir "en México"). Pendiente menor (no de veracidad): en `## Fuentes` del guion, a la fuente 8 (NIES) le falta la URL https://www.nies.go.jp/chiiki1/protoz/toxicity/nematoda/panagrel.htm.
-VEREDICTO: APROBADO

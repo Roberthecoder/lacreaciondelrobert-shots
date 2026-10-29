@@ -55,5 +55,3 @@ artroconidias usa la cifra del CDC PHIL y la esférula se dice "cien micras o m�
 la frase textual del CDC (Clinical Overview) y se pusieron las fechas de actualización de las dos páginas del CDC. Mead 2019 se quitó y el
 mapa lleva la leyenda "mapa esquemático". Las demás líneas de la voz no cambiaron. Todas las afirmaciones quedan ✅.
 El dibujo es esquemático. No es consejo médico.
-
-VEREDICTO: APROBADO
