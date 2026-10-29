@@ -68,7 +68,7 @@ function Psicologo({ x, y, s = 1, T = 0, traje = 1, reglas = 0 }) {
       <Teletipo x={0} y={-236} s={0.34} T={T} papel={150} barras={4} ancho={340} />
     </g>
     {reglas > 0 && [
-      ['SI «mi» → «tu»', -330, -260, -6], ['SI «triste» → «SIENTO…»', -300, -130, 4], ['SI nada → «SIGA, POR FAVOR»', -400, 0, -3]].map(([t, cx, cy, rot], i) => {
+      ['SI «mi» → «tu»', -540, -330, -6], ['SI «triste» → «SIENTO…»', -500, -215, 4], ['SI nada → «SIGA, POR FAVOR»', -560, -100, -3]].map(([t, cx, cy, rot], i) => {
       const e = kprog(reglas, i * 0.2, i * 0.2 + 0.5, kEase.sale);
       return <g key={i} transform={`translate(${cx} ${cy + (1 - e) * 60}) rotate(${rot})`} opacity={e}>
         <rect x={0} y={-36} width={t.length * 17 + 40} height={64} rx={12} fill={PAPEL} stroke={KC.ink} strokeWidth={6} />
@@ -198,7 +198,7 @@ function Calendario({ T, at, x, y, s = 1 }) {
 }
 
 // Lluvia de "¡espía!": burbujas rojas que aparecen alrededor.
-const ESPIA = [[620, 640, -8], [880, 760, 6], [420, 860, -4], [760, 960, 8], [240, 760, 5], [930, 1080, -6], [560, 1110, 3], [300, 1000, -7]];
+const ESPIA = [[620, 610, -8], [920, 700, 6], [440, 720, -4], [620, 830, 8], [290, 840, 5], [930, 880, -6], [470, 930, 3], [950, 1050, -7]];
 
 // Letras (símbolos) que forman un corazón (efecto ELIZA).
 function LetrasCorazon({ T, at, cx = 400, cy = 880, R = 17, n = 46 }) {
@@ -386,7 +386,7 @@ function Eliza() {
         {svg(<Secretos T={T} x0={520} y0={900} x1={900} y1={780} n={5} alto={160} />)}
       </Escena>
       {T > K.H - 0.4 && T < K.Ci + 0.4 && <div style={{ opacity:kprog(T, K.H - 0.4, K.H + 0.05) * (1 - kprog(T, K.Ci - 0.05, K.Ci + 0.4)) }}>
-        <CelularChat T={T} x={380} y={870} s={0.7} tam={36} mensajes={[{ at: K.H + 0.3, yo: true, texto: 'Tuve un día horrible.' }, { at: K.H + 1.3, texto: 'Lamento que te sientas así. ¿Quieres contarme qué pasó?' }]} escribe={[K.H + 0.7, K.H + 1.3]} />
+        <CelularChat T={T} x={380} y={870} s={0.7} tam={46} mensajes={[{ at: K.H + 0.3, yo: true, texto: 'Tuve un día horrible.' }, { at: K.H + 1.3, texto: 'Lamento que te sientas así. ¿Quieres contarme qué pasó?' }]} escribe={[K.H + 0.7, K.H + 1.3]} />
       </div>}
       <Chip T={T} at={K.H + 1.8} until={K.Ci - 0.2} texto="chat ilustrativo" x={830} y={1120} tam={28} borde={KC.ink} />
 
@@ -395,7 +395,7 @@ function Eliza() {
         <FondoLunares color={KC.mint} />
         <Consultorio T={T} traje={1 - kprog(T, K.Ci + 1.6, K.Ci + 2.4, kEase.suave)} reglas={kprog(T, K.Ci + 2.0, K.Ci + 3.4)} secretos={1 - kprog(T, K.Ci + 1.6, K.Ci + 2.4)} />
       </Escena>
-      <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="unas cuantas reglas" x={330} y={620} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="unas cuantas reglas" x={300} y={585} tam={44} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.D - 0.1} texto="No es un psicólogo: *son reglas.*" />
