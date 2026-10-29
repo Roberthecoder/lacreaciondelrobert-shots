@@ -181,6 +181,7 @@ function Hervir() {
         </SvgCapa>
         <Chip T={T} at={K.O + 0.3} until={K.P - 0.3} x={330} y={440} texto="≈ 6 g de sal" tam={38} borde={KC.ink} />
         <Chip T={T} at={K.O + 0.8} until={K.P - 0.3} x={110} y={850} texto="2 L" tam={40} borde={AGUA} />
+        {T > K.O + 1.5 && T < K.P + 0.2 && <div style={{ position:'absolute', left:60, top:1405, width:960, height:120, borderRadius:28, background:'rgba(14,15,18,.85)', border:`4px solid ${KC.ink}`, zIndex:41, opacity:kprog(T, K.O + 1.5, K.O + 1.9) * (1 - kprog(T, K.P - 0.3, K.P + 0.1)) }}></div>}
         <Medidor T={T} at={K.O + 1.6} until={K.P - 0.3} valor={(t) => 0.05 * kprog(t, K.O + 1.6, K.O + 2.6)} etiqueta="sube el hervor (0 a 1 °C)" texto={(v) => '+' + v.toFixed(2) + ' °C'} y={1440} color={KC.red} />
       </Escena>
       {/* 5 · pregunta: ¿por qué burbujea? */}
@@ -255,7 +256,7 @@ function Hervir() {
             <text x={555} y={478} textAnchor="middle" style={{ font:`700 50px ${KF.mono}` }} fill={KC.red}>≈ 92 °C</text>
           </g>
         </SvgCapa>
-        <Etq T={T} at={K.A + 0.6} until={K.Ci - 0.3} x={1060} y={720} texto="CDMX · 2 240 m" lado="izq" tam={32} />
+        <Chip T={T} at={K.A + 0.6} until={K.Ci - 0.3} x={800} y={770} texto="CDMX · 2 240 m" tam={42} borde={KC.leaf} />
       </Escena>
       {/* 9 · cierre: la olla del inicio, ya hirviendo */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>

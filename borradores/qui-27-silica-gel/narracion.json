@@ -33,11 +33,11 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En Israel, un estudio de 2015 revisó un año de llamadas a toxicología: 546 casos de sílica gel, casi todos de niños menores de 6 años."
+      "texto": "En Israel, un estudio publicado en 2015 revisó un año de llamadas a toxicología: 546 casos de sílica gel, casi todos de niños menores de 6 años."
     },
     {
       "escena": "Sintomas",
-      "texto": "Menos de 3 de cada 100 tuvieron síntomas, casi siempre una molestia leve en la boca."
+      "texto": "Menos de 3 de cada 100 tuvieron síntomas: molestias leves en la boca."
     },
     {
       "escena": "Curioso",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esas bolitas no son veneno: son arena llena de túneles, atrapando el agua que tú no ves."
+      "texto": "Así que no son veneno: son arena llena de túneles, atrapando el agua que tú no ves."
     }
   ]
 }
