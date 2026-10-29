@@ -13,9 +13,9 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa caspa no es solo piel que se cae: en tu cabeza vive una levadura que come grasa. | Fondo amarillo de lunares: un hombro oscuro con escamas blancas; en el cuadro 0.3 caen dos escamas más desde el pelo. Chip "¿piel reseca?" que se voltea a "hay una levadura". |
-| 1 | Malassezia | Se llama Malassezia y vive en la piel de la mayoría de los adultos. | La cámara baja al cuero cabelludo (Lupa en rayos X): entre los pelos aparecen levaduras redondas con brotes. Etiqueta "levadura de la piel · *Malassezia*". Chip "en la mayoría de los adultos". |
+| 1 | Malassezia | Se llama Malassezia y vive en la piel de la mayoría de los adultos. | La cámara baja al cuero cabelludo (Lupa en rayos X): entre los pelos aparecen levaduras redondas con una célula hija brotando de una base angosta (como *M. globosa*). Etiqueta "levadura de la piel · *Malassezia*". Chip "en la mayoría de los adultos". |
 | 2 | Sebo | Tu cuero cabelludo suelta sebo, una grasa natural. | Fondo oscuro (microscópico): corte de piel con un folículo y su glándula sebácea; sale una gota dorada de sebo por el poro. Etiqueta "sebo". |
-| 3 | Lipasas | La levadura lo rompe con unas tijeras químicas, las lipasas, para comer. | *Malassezia globosa* (células redondas, brote de base ancha) suelta tijeritas "lipasa" que cortan las moléculas de grasa (triglicérido: una "E" de 3 colas) en pedazos. |
+| 3 | Lipasas | La levadura lo rompe con unas tijeras químicas, las lipasas, para comer. | *Malassezia globosa* (células redondas de 2.5–8 µm, con la célula hija brotando de una base angosta) suelta tijeritas "lipasa" que cortan las moléculas de grasa (triglicérido: una "E" de 3 colas) en pedazos. |
 | 4 | Oleico | Y deja sueltos ácidos grasos, como el oleico, el del aceite de oliva. | Quedan sueltas colitas (ácidos grasos); una se ilumina: "ácido oleico". Mini botella de aceite de oliva con la misma colita. |
 | 5 | Pregunta | ¿Entonces por qué a unos les da caspa y a otros no? | **Re-gancho.** Dos cabezas lado a lado: una con caspa, una sin caspa, y un "?" gigante. Robert grande, pensativo. |
 | 6 | Tres | Porque la caspa necesita al menos tres cosas: grasa, levadura y una piel sensible. | Tres fichas que se juntan como piezas: "grasa", "levadura", "piel sensible". |
