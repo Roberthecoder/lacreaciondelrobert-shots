@@ -1,0 +1,66 @@
+{
+  "especial": "Día Mundial de la Ciencia para la Paz y el Desarrollo",
+  "serie_vinculada": "Biotecnológico",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Viruela base narrada.dc.html",
+  "salida": "Shot Viruela narrado.dc.html",
+  "nota": "Shot Festivo #07 · Día Mundial de la Ciencia para la Paz y el Desarrollo · Biotecnológico. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa marquita en el brazo de tu abuela no es un lunar: es la cicatriz de la vacuna de la viruela."
+    },
+    {
+      "escena": "Viruela",
+      "texto": "La viruela mataba a 3 de cada 10 personas que se enfermaban."
+    },
+    {
+      "escena": "Vaccinia",
+      "texto": "La vacuna no traía viruela: traía vaccinia, un virus pariente y mucho más leve."
+    },
+    {
+      "escena": "Granito",
+      "texto": "Hace un granito en la piel, y ahí tus defensas aprenden a reconocerlo."
+    },
+    {
+      "escena": "Memoria",
+      "texto": "Como se parece a la viruela, si un día llega, la atacan rápido."
+    },
+    {
+      "escena": "Costra",
+      "texto": "El granito se hace costra, se cae y deja la marquita."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo se borra una enfermedad del planeta en plena Guerra Fría?"
+    },
+    {
+      "escena": "Propuesta",
+      "texto": "En 1958, el soviético Víktor Zhdánov propuso en la OMS erradicarla."
+    },
+    {
+      "escena": "Rivales",
+      "texto": "La Unión Soviética donó más de 1,400 millones de dosis; Estados Unidos puso expertos de sus CDC."
+    },
+    {
+      "escena": "Aguja",
+      "texto": "Una aguja de dos puntas atrapaba una gotita: la vacuna rendía cuatro veces más."
+    },
+    {
+      "escena": "Anillo",
+      "texto": "Buscaban cada caso y vacunaban a todos sus contactos, como un anillo."
+    },
+    {
+      "escena": "Ultimo",
+      "texto": "El último caso natural fue un cocinero de Somalia, en 1977: sobrevivió y luego trabajó contra la polio."
+    },
+    {
+      "escena": "Libre",
+      "texto": "En 1980 se declaró al mundo libre de viruela: la única enfermedad humana erradicada."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa marquita es el recuerdo de una enfermedad que dos rivales, con ciencia, ayudaron a borrar."
+    }
+  ]
+}

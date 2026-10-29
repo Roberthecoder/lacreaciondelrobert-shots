@@ -19,7 +19,7 @@ import { execFileSync } from 'node:child_process';
 const toAnnot = (e) => { console.error(e); if (process.env.GITHUB_ACTIONS) console.log(`::error title=narrar.mjs::${String(e?.message || e).replace(/\r?\n/g, ' ').slice(0, 900)}`); process.exit(1); };
 process.on('uncaughtException', toAnnot); process.on('unhandledRejection', toAnnot);
 
-const VOICE_ID = process.env.ELEVENLABS_VOICE_ID || 'uiCk6APPfsjnw3oUQzVo';
+const VOICE_ID = process.env.ELEVENLABS_VOICE_ID || 'BrkFnhKTRJck3ZEjqD5d'; // voz profesional desde el 29 oct 2026 (antes uiCk6APPfsjnw3oUQzVo)
 const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v4';
 const KEY = process.env.ELEVENLABS_API_KEY;
 const dir = path.resolve(process.argv[2] || '.');
@@ -42,9 +42,19 @@ if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
   if (!KEY) throw new Error('Falta ELEVENLABS_API_KEY y la narración no está en caché.');
   // sin voice_settings: ElevenLabs usa los ajustes guardados en la voz
   const H = { 'xi-api-key': KEY };
+  // ElevenLabs limita cuántas voces se piden a la vez (429): espera y reintenta en vez de fallar
+  const pedir = async (url, opts) => {
+    for (let i = 0; ; i++) {
+      const r = await fetch(url, opts);
+      if ((r.status !== 429 && r.status < 500) || i >= 8) return r;
+      const t = 15 * (i + 1) + Math.random() * 10;
+      console.log(`ElevenLabs respondió ${r.status}; reintento en ${t.toFixed(0)} s`);
+      await new Promise((ok) => setTimeout(ok, t * 1000));
+    }
+  };
   const fail = async (r, what) => { throw new Error(`ElevenLabs respondió ${r.status} (${what}): ${(await r.text()).slice(0, 300)}`); };
   let audio, alignment;
-  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}/with-timestamps?output_format=mp3_44100_128`, {
+  const res = await pedir(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}/with-timestamps?output_format=mp3_44100_128`, {
     method: 'POST', headers: { ...H, 'Content-Type': 'application/json' }, body: JSON.stringify({ text: texto, model_id: MODEL }),
   });
   if (res.ok) {
@@ -53,7 +63,7 @@ if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
   } else {
     // respaldo: audio normal + alineación forzada (por si el modelo no devuelve tiempos)
     console.log(`with-timestamps no disponible (${res.status}); uso audio + alineación forzada`);
-    const r2 = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}?output_format=mp3_44100_128`, {
+    const r2 = await pedir(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}?output_format=mp3_44100_128`, {
       method: 'POST', headers: { ...H, 'Content-Type': 'application/json' }, body: JSON.stringify({ text: texto, model_id: MODEL }),
     });
     if (!r2.ok) await fail(r2, 'texto a voz');
@@ -61,7 +71,7 @@ if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
     const fd = new FormData();
     fd.append('file', new Blob([audio], { type: 'audio/mpeg' }), 'narracion.mp3');
     fd.append('text', texto);
-    const r3 = await fetch('https://api.elevenlabs.io/v1/forced-alignment', { method: 'POST', headers: H, body: fd });
+    const r3 = await pedir('https://api.elevenlabs.io/v1/forced-alignment', { method: 'POST', headers: H, body: fd });
     if (!r3.ok) await fail(r3, 'alineación forzada');
     const fa = await r3.json();
     alignment = { characters: fa.characters.map((c) => c.text), character_start_times_seconds: fa.characters.map((c) => c.start), character_end_times_seconds: fa.characters.map((c) => c.end) };

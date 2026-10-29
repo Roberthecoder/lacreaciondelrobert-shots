@@ -7,7 +7,9 @@ name: Publicar en redes
 # Dos formas de lanzarlo:
 #  1. A mano: Actions → Publicar en redes → Run workflow.
 #  2. Con git (para las sesiones de nube, que no pueden lanzar workflows): subir un archivo
-#     publicar/pedidos/<id>.json con {"clave","redes","modo","confirmar","autorizo"} a cualquier rama.
+#     publicar/pedidos/<id>.json con {"clave","redes","modo","confirmar","autorizo","tiktok"} a cualquier rama.
+#     "tiktok" (opcional) = opciones que Robert eligió en la Sala: {"modo":"directo"|"borrador","privacidad",
+#     "comentarios","duo","stitch","marca_propia","marca_pagada","ia","texto"}.
 on:
   workflow_dispatch:
     inputs:
@@ -30,6 +32,9 @@ on:
         default: ''
       release:
         description: 'Opcional: Release de donde tomar el MP4 (si no, busca <clave>_narrado.mp4, primero en borradores-main)'
+        default: ''
+      tiktok:
+        description: 'Opcional: opciones de TikTok en JSON, p. ej. {"privacidad":"SELF_ONLY"} o {"modo":"borrador"}'
         default: ''
       repetir:
         description: 'Publicar otra vez aunque ya se haya publicado en modo real'
@@ -58,7 +63,7 @@ jobs:
           IN: ${{ toJSON(github.event.inputs) }}
         run: |
           if [ "$EV" = "workflow_dispatch" ]; then
-            echo "lista=$(jq -c '[{clave, redes, modo, confirmar, autorizo, release, repetir: (.repetir|tostring)}]' <<<"$IN")" >> "$GITHUB_OUTPUT"
+            echo "lista=$(jq -c '[{clave, redes, modo, confirmar, autorizo, release, tiktok, repetir: (.repetir|tostring)}]' <<<"$IN")" >> "$GITHUB_OUTPUT"
           else
             jq -r '[.commits[]? | (.added + .modified)[]] | unique | .[] | select(startswith("publicar/pedidos/") and endswith(".json"))' \
               "$GITHUB_EVENT_PATH" > archivos.txt
@@ -97,7 +102,7 @@ jobs:
       - name: Leer el pedido
         run: |
           if jq -e '.archivo' <<<"$PEDIDO" >/dev/null; then P=$(cat "$(jq -r .archivo <<<"$PEDIDO")"); else P="$PEDIDO"; fi
-          for k in clave redes modo confirmar autorizo release repetir; do
+          for k in clave redes modo confirmar autorizo release repetir tiktok; do
             v=$(jq -r --arg k "$k" '.[$k] // "" | if type=="array" then join(",") else tostring end' <<<"$P")
             echo "P_${k^^}<<FIN_PEDIDO" >> "$GITHUB_ENV"; echo "$v" >> "$GITHUB_ENV"; echo "FIN_PEDIDO" >> "$GITHUB_ENV"
           done
@@ -121,4 +126,5 @@ jobs:
           EXTRA=()
           [ "$P_REPETIR" = "true" ] && EXTRA+=(--repetir)
           python3 motor/redes/publicar.py publicar --clave "$P_CLAVE" --redes "${P_REDES:-todas}" --modo "${P_MODO:-prueba}" \
-            --video "$VIDEO" --video-url "$VIDEO_URL" --confirmar "$P_CONFIRMAR" --autorizo "$P_AUTORIZO" "${EXTRA[@]}"
+            --video "$VIDEO" --video-url "$VIDEO_URL" --confirmar "$P_CONFIRMAR" --autorizo "$P_AUTORIZO" \
+            --tiktok "$P_TIKTOK" "${EXTRA[@]}"

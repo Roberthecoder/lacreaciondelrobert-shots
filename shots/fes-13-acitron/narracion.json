@@ -1,0 +1,62 @@
+{
+  "especial": "Día de Reyes",
+  "serie_vinculada": "Ambiental",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Acitron base narrada.dc.html",
+  "salida": "Shot Acitron narrado.dc.html",
+  "nota": "Shot Festivo #13 · Día de Reyes · Ambiental. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese cuadrito de tu rosca, el acitrón, no es fruta: es un cactus."
+    },
+    {
+      "escena": "Biznaga",
+      "texto": "Sale sobre todo de la biznaga de dulce, un cactus en forma de barril que solo vive en México."
+    },
+    {
+      "escena": "Desierto",
+      "texto": "Vive en el desierto chihuahuense y en el valle de Tehuacán, en Puebla y Oaxaca."
+    },
+    {
+      "escena": "Pulpa",
+      "texto": "Por dentro, su tallo es una pulpa que guarda agua para aguantar la sequía."
+    },
+    {
+      "escena": "Corte",
+      "texto": "Se escogen biznagas de más de medio metro: se les quitan las costillas y se corta la pulpa."
+    },
+    {
+      "escena": "Almibar",
+      "texto": "Luego se remoja en almíbar cada vez más espeso; el proceso puede tardar una semana."
+    },
+    {
+      "escena": "Osmosis",
+      "texto": "El azúcar le saca el agua a las células y ocupa su lugar, hasta que la pulpa queda con 70 a 75 % de azúcar."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué le pasa a la biznaga?"
+    },
+    {
+      "escena": "Muere",
+      "texto": "Para sacarle la pulpa hay que arrancarla entera: la planta muere."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2008, una tesis de la UNAM hecha en Tehuacán estimó que tarda cerca de 25 años en medir medio metro."
+    },
+    {
+      "escena": "Ley",
+      "texto": "Y en 2019, México la subió de categoría en su lista oficial de especies en riesgo."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Dato: una receta tradicional lleva kilo y medio de azúcar por cada kilo de biznaga."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese cuadrito no es fruta: es un cactus de 25 años o más. Si tu rosca trae ate o papaya, esa biznaga sigue en el desierto."
+    }
+  ]
+}

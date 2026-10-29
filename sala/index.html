@@ -154,6 +154,9 @@
   .borrar { all: unset; cursor: pointer; color: var(--muted); font-size: 12px; text-decoration: underline; }
   .adj-pedido { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 14px; }
   .adj-pedido .tag { background: color-mix(in srgb, var(--rosa) 16%, var(--chip)); }
+  .pub-redes { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pub-redes .chip { font-size: 13px; padding: 5px 10px; }
+  .pub-redes .chip[data-hecho="true"]::after { content: " ✓"; }
   @media (max-width: 760px) { .player { grid-template-columns: 1fr; overflow: auto; } .player video { max-height: 58vh; } }
   @media (prefers-reduced-motion: no-preference) { .card .poster { transition: transform .18s ease-out; } .card:hover .poster { transform: translateY(-3px); } }
 </style>
@@ -260,6 +263,12 @@
       <h3 style="font-size:17px">Textos para redes</h3>
       <div class="redes-tabs" id="redes-tabs" role="group" aria-label="Red social"></div>
       <div id="redes-cuerpo"></div>
+      <h3 style="font-size:17px">Publicar en redes</h3>
+      <p class="hint" id="pub-hint">Marca dónde quieres publicar este video y da clic en «Publicar». La nube lo sube con su texto de cada red. TikTok llega como borrador a tu app (ahí lo terminas tú) y YouTube queda privado mientras Google revisa la app.</p>
+      <div class="pub-redes" id="pub-redes" role="group" aria-label="Redes donde publicar"></div>
+      <div class="actions"><button class="btn go" id="pub-enviar" type="button">Publicar</button></div>
+      <p class="msg" id="pub-msg"></p>
+      <ul class="pedidos" id="pub-lista"></ul>
       <h3 style="font-size:17px">Corregir este shot</h3>
       <p class="hint">Escribe qué cambiar: un dato, una frase, una escena, el ritmo, el título, los textos… La nube lo corrige, lo vuelve a verificar y reemplaza este video. Si cambia lo que se narra, te pedirá aprobar la voz otra vez.</p>
       <textarea id="c-texto" aria-label="Corrección" placeholder="Por ejemplo: en el segundo 20 la cifra es de 2023, no de 2021; quita el chiste del final; el título debe decir…"></textarea>
@@ -437,8 +446,8 @@
     $('d-chars').textContent = s.caracteres ? `${fmt(s.caracteres)} caracteres (~${fmt(s.caracteres)} créditos de ElevenLabs)` : '—';
     $('d-key').textContent = s.id;
     const hd = $('hd'); if (s.hd) { hd.href = s.hd; hd.hidden = false; } else hd.hidden = true;
-    $('msg').textContent = '';
-    pintarAprobar(); pintarRedes(); pintarCorrecciones();
+    $('msg').textContent = ''; $('pub-msg').textContent = ''; S.pubSel = new Set(); S.pubConfirmar = null;
+    pintarAprobar(); pintarRedes(); pintarCorrecciones(); pintarPublicar();
     $('dlg').showModal();
   }
   function pintarAprobar() {
@@ -510,6 +519,52 @@
       else { await ref.set({ shot: s.id, aprobado: true, at: new Date().toISOString(), procesado: false }); $('msg').textContent = 'Aprobada. La próxima sesión de nube genera la voz y el narrado aparece aquí.'; }
     } catch (e) { $('msg').textContent = 'No se pudo guardar. Inténtalo otra vez en un momento.'; }
     $('aprobar').disabled = false;
+  });
+  /* ---------- publicar en redes (collection publicaciones; la atiende el administrador con el workflow publicar.yml) ---------- */
+  const PUB_REDES = [['facebook', 'Facebook'], ['instagram', 'Instagram'], ['threads', 'Threads'], ['youtube', 'YouTube'], ['linkedin', 'LinkedIn'], ['tiktok', 'TikTok (borrador)']];
+  S.pubs = []; S.pubSel = new Set();
+  function pintarPublicar() {
+    const s = S.actual; if (!s) return;
+    const listo = s.kind === 'narrado';
+    const hechas = (s.publicado && typeof s.publicado === 'object') ? s.publicado : {};
+    const box = $('pub-redes'); box.replaceChildren();
+    PUB_REDES.forEach(([k, n]) => {
+      const c = el('button', 'chip', n); c.type = 'button';
+      c.setAttribute('aria-pressed', String(S.pubSel.has(k))); c.dataset.hecho = String(!!hechas[k]);
+      if (hechas[k]) c.title = 'Ya publicado' + (hechas[k].url ? ': ' + hechas[k].url : '');
+      c.disabled = !listo;
+      c.addEventListener('click', () => { S.pubSel.has(k) ? S.pubSel.delete(k) : S.pubSel.add(k); S.pubConfirmar = null; $('pub-msg').textContent = ''; pintarPublicar(); });
+      box.append(c);
+    });
+    const b = $('pub-enviar'); b.disabled = !listo || !S.db || !S.pubSel.size;
+    b.textContent = S.pubConfirmar ? 'Sí, publicar' : S.pubSel.size ? `Publicar en ${S.pubSel.size} ${S.pubSel.size === 1 ? 'red' : 'redes'}` : 'Publicar';
+    $('pub-hint').hidden = !listo;
+    if (!listo) $('pub-msg').textContent = 'Se puede publicar cuando el video ya tenga tu voz (estado «Narrado listo»).';
+    const ul = $('pub-lista'); ul.replaceChildren();
+    S.pubs.filter((p) => p.shot === s.id).forEach((p) => {
+      const li = el('li'); const e = el('span', 'est', p.estado || 'pendiente'); e.dataset.e = p.estado || 'pendiente';
+      const nombres = (p.redes || []).map((r) => (PUB_REDES.find((x) => x[0] === r) || [r, r])[1]).join(', ');
+      li.append(e, el('span', 'txt', nombres), el('span', 'num', (p.creado || '').slice(0, 10)));
+      if (p.resultado) li.append(el('span', 'res', p.resultado));
+      ul.append(li);
+    });
+  }
+  $('pub-enviar').addEventListener('click', async () => {
+    const s = S.actual; if (!s || !S.db || !S.pubSel.size) return;
+    const redes = PUB_REDES.map((x) => x[0]).filter((k) => S.pubSel.has(k));
+    const clave = s.id + '|' + redes.join(',');
+    if (S.pubConfirmar !== clave) {
+      S.pubConfirmar = clave; $('pub-enviar').textContent = 'Sí, publicar';
+      $('pub-msg').textContent = `Se verá en público en: ${redes.join(', ')} (TikTok llega como borrador; YouTube queda privado por ahora). Toca «Sí, publicar» para confirmar.`;
+      return;
+    }
+    S.pubConfirmar = null;
+    $('pub-enviar').disabled = true;
+    try {
+      await S.db.collection('publicaciones').add({ shot: s.id, titulo: tituloCompleto(s), redes, modo: 'real', estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
+      S.pubSel.clear(); $('pub-msg').textContent = 'Pedido de publicación enviado. El administrador lo sube en su siguiente ronda (o al instante si en el chat escribes «publica mis pedidos»).';
+    } catch (e) { $('pub-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
+    pintarPublicar();
   });
   S.corr = [];
   function pintarCorrecciones() {
@@ -685,7 +740,7 @@
     }, () => { $('cred-txt').textContent = 'No se pudieron leer tus créditos.'; });
     db.collection('shots').limit(1000).onSnapshot((snap) => {
       S.shots = snap.docs.map((d) => ({ id: d.id, ...d.data() })); render();
-      if (S.actual) { S.actual = S.shots.find((x) => x.id === S.actual.id) || S.actual; pintarAprobar(); pintarRedes(); }
+      if (S.actual) { S.actual = S.shots.find((x) => x.id === S.actual.id) || S.actual; pintarAprobar(); pintarRedes(); pintarPublicar(); }
     }, () => { $('lead').textContent = 'No se pudieron cargar los videos. Recarga la página.'; });
     db.collection('aprobaciones').limit(1000).onSnapshot((snap) => {
       S.aprob = {}; snap.docs.forEach((d) => { const x = d.data(); if (x && x.aprobado && !x.procesado) S.aprob[d.id] = x; });
@@ -693,6 +748,9 @@
     }, () => {});
     db.collection('correcciones').orderBy('creado', 'desc').limit(300).onSnapshot((snap) => {
       S.corr = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarCorrecciones();
+    }, () => {});
+    db.collection('publicaciones').orderBy('creado', 'desc').limit(300).onSnapshot((snap) => {
+      S.pubs = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarPublicar();
     }, () => {});
     db.collection('pedidos').orderBy('creado', 'desc').limit(50).onSnapshot((snap) => {
       S.pedidos = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarPedidos();

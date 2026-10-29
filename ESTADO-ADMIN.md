@@ -15,6 +15,45 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   y actualiza en la Sala fes-07/fes-10/fes-14. Cuando avise, juntar pedido300/festivos a main con [sin render].
 - Temas cercanos aceptados (ángulos distintos): bio-20 vs qui-49 (glutamato), amb-40 vs amb-41 (partículas), bio-50 vs fes-14 (maíz).
 
+## AUDITORÍA DE LOS 60 SHOTS ANTERIORES (29 oct) — EN CURSO
+- 4 verificadores independientes: 46 OK, 15 con datos a corregir (informes en `auditorias/2026-10-29/`, rama
+  `correcciones/auditoria-29oct`). Sesión `session_0157fph2Famee5vpDrWHHrN1` los corrige, re-verifica, renderiza y reemplaza en la Sala.
+  Al terminar: juntar esa rama a main con [sin render]. fun-03: falta que Robert confirme «en mi cuarto» y «papel aluminio».
+
+## PUBLICADOR DE REDES (29 oct) — LAS 6 REDES FUNCIONAN EN PRUEBA Y PRIVADO; FALTA LA PRIMERA PUBLICACIÓN REAL
+- Cómo se usa: ADMIN.md, «Publicar en redes». Programa `motor/redes/publicar.py`, workflow `publicar.yml` (a mano o con un
+  archivo `publicar/pedidos/*.json`), botón «Publicar» en la Sala (collection `publicaciones`).
+- Probado con 003-semillas-luna: modo prueba OK en Facebook, Instagram, Threads, YouTube y LinkedIn. Modo privado OK en
+  YouTube (privado: youtube.com/shorts/EuhA0wKFL4A), Facebook (borrador), Instagram y Threads (contenedor sin publicar) y LinkedIn
+  (video sin post). Instagram: la subida directa da 400, así que usa el enlace del Release (automático).
+  Esos borradores/privados de 003 se pueden borrar (su narrado es viejo): YouTube Studio y Meta Business Suite.
+- TikTok CONECTADO el 29 oct (cuenta «La Creación del Robert», Sandbox «Pruebas», user.info.basic + video.upload; refresh
+  hasta 29 oct 2027, se renueva solo). Borrador de prueba (003) enviado a su bandeja: Robert lo puede borrar en la app.
+  Ojo: los secretos TIKTOK_CLIENT_KEY/SECRET son los del SANDBOX. El problema al conectar fue que la llave pegada en la página
+  era de otra app; el workflow «Conectar TikTok» imprime la huella (8 letras) de la llave para comparar sin verla.
+- 29 oct 18:20: modo prueba OK en las 6 redes con fun-02; renovar-tokens OK (Threads renovado, vence 28 dic; se extiende cada lunes).
+- Primera publicación real: Robert dijo «todavía no publiques nada» (29 oct). Propuesta cuando quiera: fun-02-hormiga-zombi
+  (auditado OK). La voz está en pausa para mejorar su calidad: no publicar narrados hasta que él lo pida.
+- Revisiones (YouTube y TikTok ENVIADAS el 29 oct, ver abajo); respuestas en `docs/revisiones/LEEME.md`. Antes:
+  TikTok. Video demo GRABADO el 29 oct (3:47, sitio → autorizar → «Conectar TikTok» → borrador a la bandeja): en la PC de
+  Robert, C:\Users\winusr\lacreacion-lotes\revision-tiktok\demo-tiktok.mp4 (no va al repo público). No muestra la pantalla de
+  permisos de TikTok (la cuenta ya estaba autorizada) ni el teléfono; si TikTok lo pide, Robert quita el acceso de la app en
+  TikTok (Ajustes → Seguridad → Apps) y se graba de nuevo, más un video del celular con la notificación del borrador.
+- TikTok ENVIADO A REVISIÓN el 29 oct, 12:47 (app de Producción «La Creación del Robert - AutoPosting»: Education, Web,
+  Login Kit + Content Posting, scopes user.info.basic + video.upload, redirect y sitio del repo, ícono y demo). Esperar
+  respuesta de TikTok (correo y «Review comments» en el portal). Al aprobarse: Robert cambia TIKTOK_CLIENT_KEY/SECRET por los
+  de Producción y se conecta otra vez (docs/tiktok.html: borra la llave guardada y pega la de Producción).
+- YouTube: AUDITORÍA ENVIADA el 29 oct, 13:25 (formulario «YouTube API Services - Audit and Quota Extension», proyecto
+  la-creacion-del-robert 1006579961003, solo videos.insert, cuota sin cambio; documentos en docs/revisiones/youtube/).
+  Se agregó la sección de YouTube a privacidad.html y terminos.html (requisito). Esperar el correo de Google (semanas).
+  Mientras no aprueben, lo que sube el publicador a YouTube queda PRIVADO.
+- La rama `temporal/demo-tiktok` (solo el MP4 del demo, para subirlo al formulario) NO se pudo borrar: una regla del repo
+  impide borrar ramas. Borrarla cuando Robert quite o ajuste esa regla (Settings → Rules).
+- Recordatorios: LinkedIn vence ~28 dic 2026 (renovación manual, ADMIN.md). Threads y TikTok se renuevan solos cada lunes
+  (`renovar-tokens.yml`); si ese run sale en rojo, avisar a Robert.
+- Disco de la PC de Robert: se llenó (0 MB) el 29 oct al bajar los 300 shots; se liberaron ~460 MB. Hay que liberar más
+  (C: con 254 GB usados). En esa PC no hacer `git pull` completo hasta que haya espacio.
+
 ## VOZ EN PAUSA (29 oct, Robert): "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
 - Las 30 aprobaciones que esperaban créditos se marcaron `aprobado:false, en_pausa:true` en la Sala. NO generar ninguna voz
   ni poner `voz_aprobada` hasta que Robert vuelva a aprobar con el botón o en el chat.
@@ -65,7 +104,7 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 ## Pendientes de Robert (él tiene que hacerlos)
 - **RECORDARLE al terminar la configuración de las API de redes:** cancelar la prueba gratuita de un mes de Meta Verified
   (verificación de Instagram/Facebook) antes de que se renueve y cobre. Lo pidió el 28 oct.
-- **API de redes: configuradas el 29 oct** (todavía no se publica nada; falta construir el publicador).
+- **API de redes: configuradas el 29 oct.** Publicador construido el 29 oct (ver sección «PUBLICADOR DE REDES» arriba y ADMIN.md).
   Pruebas de solo lectura: workflows `probar-meta.yml` y `probar-redes.yml` (los dos pasan).
   | Red | Estado | Secretos (nombres) / variables |
   |---|---|---|

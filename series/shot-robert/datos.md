@@ -88,3 +88,8 @@ Para agregar un dato: escríbelo aquí con ❓, y solo Robert lo cambia a ✅.
   a cargo del cepario desde el verano 2026. Presidente de B-Eco desde ago 2025. beVisioneers (cohorte 4, 1 de 250 entre ~20,000). MIT.nano jul 2025.
 - ✅ El canal es el mismo desde hace más de 10 años. Inspiraciones (puede nombrarlas): The Thought Emporium, NileRed, Mark Rober, Biología desde Cero.
 - ✅ Aprueba mencionar a su mamá y el negocio de sus papás, sin nombres. Evitar nombres de personas y temas familiares; preguntar si aparecen.
+
+## Confirmados por Robert el 29 oct 2026 (seta rosa, fun-03)
+- ✅ La seta rosa del video la cultivó en su cuarto, a partir de micelio en un bloque de aserrín pasteurizado.
+  NO usó papel aluminio. (El bloque fue comprado: NO decirlo en los videos.)
+- ✅ De ese cultivo salieron las esporas con las que después creó su propia cepa, por germinación multiespórica en PDA.

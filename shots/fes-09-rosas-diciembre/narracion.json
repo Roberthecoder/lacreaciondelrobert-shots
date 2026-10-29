@@ -1,0 +1,66 @@
+{
+  "especial": "Día de la Virgen de Guadalupe",
+  "serie_vinculada": "Científico",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Rosas Diciembre base narrada.dc.html",
+  "salida": "Shot Rosas Diciembre narrado.dc.html",
+  "nota": "Shot Festivo #09 · Día de la Virgen de Guadalupe · Científico. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta rosa no sabe que es diciembre: trae roto un freno en su ADN."
+    },
+    {
+      "escena": "Tepeyac",
+      "texto": "Según la tradición guadalupana, Juan Diego halló rosas en el Tepeyac en diciembre, cuando no era su tiempo."
+    },
+    {
+      "escena": "Silvestre",
+      "texto": "Y es que una rosa silvestre florece solo en primavera."
+    },
+    {
+      "escena": "Freno",
+      "texto": "La clave es un gen, KSN: un freno de la floración."
+    },
+    {
+      "escena": "Hojas",
+      "texto": "Con el freno puesto, el brote echa hojas, pero no flor."
+    },
+    {
+      "escena": "Primavera",
+      "texto": "En la silvestre, el freno se afloja en primavera: ahí sale su única floración."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si el freno se rompe?"
+    },
+    {
+      "escena": "Saltarin",
+      "texto": "En muchas rosas modernas, un pedazo de ADN saltarín se metió dentro del gen."
+    },
+    {
+      "escena": "Apagado",
+      "texto": "El gen ya no se lee, el freno desaparece, y la rosa florece en cada temporada buena."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2012, un equipo de Francia y Japón lo vio en seis pares de rosas: las de floración continua traían ese pedazo."
+    },
+    {
+      "escena": "China",
+      "texto": "Ese freno roto venía de rosas de China; a fines del siglo dieciocho, en Europa, las cruzaron con las suyas."
+    },
+    {
+      "escena": "Invernadero",
+      "texto": "La rosa no cuenta las horas de luz: en invernadero, cortas un tallo y en seis a diez semanas hay otra flor."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Dato: en 2025, casi ocho de cada diez rosas de México salieron del Estado de México."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esta rosa no sabe que es diciembre: su freno se rompió hace siglos."
+    }
+  ]
+}
