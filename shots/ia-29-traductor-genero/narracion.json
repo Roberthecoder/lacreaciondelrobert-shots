@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Traductor base narrada.dc.html",
+  "salida": "Shot Traductor narrado.dc.html",
+  "nota": "Shot IA #29. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese «él» no fue un error de dedo: fue lo que el traductor aprendió."
+    },
+    {
+      "escena": "Prueba",
+      "texto": "En húngaro, una palabra sirve para él y para ella. En 2018, escribías «es ingeniero» y lo traducías."
+    },
+    {
+      "escena": "Prueba",
+      "texto": "Google decía «he», él. Con «enfermera», «she», ella."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En Brasil lo probaron con más de mil profesiones en doce idiomas sin género."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "En ciencia y tecnología salió «él» setenta y dos por ciento. «Ella», solo cuatro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si solo copia cuántas mujeres hay en cada trabajo?"
+    },
+    {
+      "escena": "Realidad",
+      "texto": "No: en todas las profesiones salía «ella» doce por ciento, y en esos trabajos de Estados Unidos, en 2017, había casi treinta y seis por ciento de mujeres."
+    },
+    {
+      "escena": "Google",
+      "texto": "En diciembre de 2018, Google empezó a dar versión femenina y masculina en algunos idiomas, y en 2020 sumó el húngaro."
+    },
+    {
+      "escena": "Espanol",
+      "texto": "En español casi siempre hay que elegir: el doctor o la doctora."
+    },
+    {
+      "escena": "Seattle",
+      "texto": "En 2019, en Seattle, con frases que dejaban claro el género, Google acertó al español solo cincuenta y tres por ciento."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Si el traductor te dice «él», pregúntate: ¿lo dijo la frase o lo aprendió?"
+    }
+  ]
+}

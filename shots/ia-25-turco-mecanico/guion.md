@@ -1,29 +1,48 @@
 # Shot IA #25 · El "robot" que jugaba ajedrez era una persona escondida
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #25 · rama `pedido300/ia` · publicación 20 dic 2026 (`calendario/fecha.py "IA" 25`).
-- **Estado (29 oct 2026):** fase A — guion escrito, pendiente de verificación independiente. Sin animación todavía. Voz pendiente de aprobación de Robert.
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`, 2 ⚠️ corregidas: «sentado tras una caja» y «en dos mil veintiséis»), animación, Robert en pantalla y `publicacion.md` listos; hoja de revisión en `revision/hoja.png`. **Voz pendiente de aprobación de Robert.**
 - **Formato:** N1 "Por dentro": la caja del Turco por fuera (macro) → `Lupa` en rayos X que deja ver al ajedrecista escondido (por dentro) → la misma caja al final, transformada en "la caja de la IA" con personas adentro.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Esto no es un robot que juega ajedrez: es una persona escondida».
-- **Duración:** voz 964 caracteres / ~172 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** estimados.
+- **Duración:** voz 957 caracteres / ~172 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Postura de la serie:** ni defensa ni ataque: un recordatorio con datos de que la IA también se hace con trabajo humano. Solo de pasada el puente a hoy (sin cifras de etiquetadores: eso es del #50).
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esto no es un robot que juega ajedrez: es una persona escondida. Y su truco sigue vivo en la inteligencia artificial. | Fondo amarillo; desde el cuadro 0 el Turco (muñeco con turbante sobre su caja) mueve una pieza. La `Lupa` pasa sobre la caja y deja ver, en rayos X, a un hombre sentado adentro. Chip "¿robot?" que se tacha → "persona". |
-| 1 | Turco | Le decían el Turco: un muñeco de madera con turbante, sentado sobre una caja, que movía las piezas solo. | Plano completo del Turco (túnica, turbante, pipa); etiqueta "el Turco · madera". El brazo levanta un caballo. |
-| 2 | Puertas | Antes de jugar, abrían las puertas de la caja y enseñaban engranes y palancas. | Las puertas del gabinete se abren: engranes girando, palancas; un presentador con una vela. |
-| 3 | Adentro | Pero ahí iba un maestro de ajedrez. Seguía la partida con imanes bajo el tablero y movía el brazo del muñeco con palancas. | Fondo oscuro "por dentro de la caja": corte en rayos X; el ajedrecista ve los discos imantados que se mueven bajo el tablero; una palanca conectada al brazo (esquemático). |
+| 0 | Gancho | Esto no es un robot que juega ajedrez: es una persona escondida. Y su truco sigue vivo en la inteligencia artificial. | Fondo amarillo; desde el cuadro 0 el Turco (muñeco con turbante sentado tras su caja, tablero encima de la caja) mueve una pieza. La `Lupa` se abre sobre la caja y deja ver, en rayos X, a un hombre sentado adentro. Abajo, «robot» se tacha → «una persona escondida». |
+| 1 | Turco | Le decían el Turco: un muñeco de madera con turbante, sentado tras una caja, que movía las piezas solo. | Plano completo del Turco sentado detrás del gabinete, tablero encima de la caja (túnica, turbante, pipa); etiquetas «turbante», «muñeco de madera», «tablero», «caja». El brazo mueve un caballo. |
+| 2 | Puertas | Antes de jugar, abrían las puertas de la caja y enseñaban engranes y palancas. | Las puertas del gabinete se abren: engranes girando, palancas; chip «antes de jugar». |
+| 3 | Adentro | Pero ahí iba un maestro de ajedrez. Seguía la partida con imanes bajo el tablero y movía el brazo con palancas. | Fondo oscuro "por dentro de la caja": corte en rayos X; el ajedrecista ve los discos imantados que se mueven bajo el tablero; una palanca conectada al brazo (esquemático). |
 | 4 | Napoleon | Según los relatos, en mil ochocientos nueve, en Viena, Napoleón intentó hacerle trampa y el Turco tiró todas las piezas. | Tarjeta "1809 · Viena (palacio de Schönbrunn) · según los relatos"; silueta de Napoleón mueve una pieza mal y el brazo del Turco barre el tablero; piezas volando. |
 | 5 | Pregunta | ¿Y qué tiene que ver con tu IA? | **Re-gancho.** "?" gigante; transición de la caja de madera a un servidor. |
 | 6 | Amazon | En dos mil cinco, Amazon abrió una página donde personas hacían tareas chiquitas que las computadoras aún no podían. Le puso Mechanical Turk: el Turco mecánico. | Fondo de circuito; navegador genérico (sin marcas reales) con tarjetitas de tareas; letrero "Mechanical Turk (2005)" y un turbante chiquito sobre el letrero, unido con flecha al Turco de madera. |
 | 7 | Etiquetas | Ahí mucha gente etiquetó datos para entrenar IA: esto es un gato, esto no es un gato. | Cuadrícula de fotos dibujadas; manos (de personas) les ponen etiqueta ✔ gato / ✘ no es gato; las etiquetas entran a una `RedNeuronal`. Sin cifras. |
-| 8 | Cerro | Y este año, el treinta de septiembre, Amazon la cerró. | Letrero "cerrado · 30 sep 2026"; la persiana baja sobre el navegador. |
-| 9 | Cierre | Así que si una IA te parece magia, acuérdate del Turco: detrás de ella también hubo personas. | **Regreso a la imagen del inicio:** la misma caja, ahora con una pantalla/robotito encima en lugar del muñeco; la `Lupa` vuelve a pasar y adentro se ven varias personas etiquetando. |
+| 8 | Cerro | Y en dos mil veintiséis, el treinta de septiembre, Amazon la cerró. | La persiana baja sobre el navegador: «CERRADO»; chip «30 de septiembre de 2026». |
+| 9 | Cierre | Así que si una IA te parece magia, acuérdate del Turco: detrás también hubo personas. | **Regreso a la imagen del inicio:** la misma caja, ahora con el robotito de la IA sentado detrás en lugar del muñeco; la `Lupa` vuelve a abrirse y adentro se ven tres personas etiquetando. «magia» se tacha → «detrás: personas». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua con un tic-tac de engranes; cada pieza que se mueve suena a madera sobre tablero, las puertas rechinan, los imanes hacen un "clic" metálico, el barrido de Napoleón es un estruendo de piezas, el paso al circuito es un zumbido eléctrico, cada etiqueta es un "tap", la persiana cae con un golpe.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué tiene que ver con tu IA?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.3 | 11_sorprendido | `gancho` | «es una persona escondida» (cuadro 0) |
+| 2 | 10.0 | 13.0 | 13_senalando_arriba | `arriba-der` | señala al muñeco: «que movía las piezas solo» |
+| 3 | 18.5 | 22.4 | 06_pensativo_menton | `izq-alto` | «ahí iba un maestro de ajedrez» |
+| 4 | 27.5 | 31.8 | 05_sonriendo_dientes_uniformes | `izq-alto` | «el Turco tiró todas las piezas» |
+| 5 | 32.0 | 35.1 | 07_pensativo_puno | `grande` | «¿Y qué tiene que ver con tu IA?» |
+| 6 | 38.6 | 43.2 | 04_bajando_lentes | `izq-alto` | «Le puso Mechanical Turk» |
+| 7 | 44.6 | 48.4 | 13_senalando_arriba | `arriba-der` | señala las etiquetas: «esto es un gato» |
+| 8 | 48.9 | 52.7 | 11_sorprendido | `izq-alto` | «Amazon la cerró» |
+| 9 | 53.3 | 57.9 | 10_serio_molesto | `arriba-der` | «detrás también hubo personas» |
+| — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 35.4 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.5 s
 
 ## Fuentes (abiertas el 29 oct 2026)
 
@@ -55,7 +74,7 @@
 ## Notas
 - **Pendiente para el verificador:** no encontré una página oficial de Amazon abierta que diga con todas sus letras "el nombre viene del Turco de Kempelen" (las FAQ viejas de mturk.com están en archive.org, bloqueado aquí; el artículo de *ACM Queue* da 403). El vínculo está en el blog oficial de AWS (fuente 3, que presenta el servicio partiendo del "original Mechanical Turk"), en Stephens 2022 (académica) e IEEE Spectrum 2019. Si el verificador encuentra la FAQ oficial, mejor.
 - "Esto es un gato, esto no es un gato" es un ejemplo ilustrativo de etiquetado, no un dato.
-- "Este año" = 2026: el shot se publica el 20 dic 2026. Si se publica en 2027, cambiar a "en dos mil veintiséis".
+- Se dice "en dos mil veintiséis" (no "este año") porque el video seguirá en redes en 2027.
 - Napoleón: los relatos se contradicen (Mitchell 1857 cuenta lo del imán y el chal; Ewart/Allen cuentan los movimientos ilegales y el barrido). Se dice "según los relatos" y se dibuja como leyenda.
 - No se dice quién era el ajedrecista de 1809 ni "el primero"/"el más". No se dan cifras de trabajadores ni de pagos (tema del #50).
 - El dibujo del mecanismo interior es esquemático.
