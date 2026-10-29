@@ -20,7 +20,7 @@
 | 6 | Azucar | Al sacarlo, el agua se condensa encima, disuelve el azúcar y, al secarse, deja polvito blanco. | La tableta sale del refri a la cocina tibia; gotitas de agua aparecen encima (efecto "tic"); a escala micro, cubitos de azúcar se disuelven en la gota; la gota se evapora y quedan cristalitos blancos como polvo. |
 | 7 | Estudio | En 1966, en Cincinnati, Estados Unidos, dos investigadores describieron las 6 formas con rayos X, y nunca vieron manchas sin la forma 6. | `TarjetaEstudio` "1966 · Wille y Lutton · Cincinnati, EUA". Un haz de rayos X pega en un cristal y salen 6 patrones de anillos (I–VI). Luego tableta manchada con chip "nunca sin forma VI". |
 | 8 | Laser | Lo curioso: en 2020, en Florida, borraron parte de esas manchas de grasa con un láser. | Tarjeta "2020 · Univ. del Sur de Florida". Un aparatito de mano apunta a la capa blanca; el haz es invisible (solo un resplandor tenue) con etiqueta "láser infrarrojo · invisible"; aparece un círculo café oscuro donde se borró parte del bloom (efecto "zzzt"). |
-| 9 | Comer | La agencia de alimentos de Canadá dice que se puede comer: puede cambiar el sabor, pero no es riesgo. | Chip "CFIA · Canadá"; un ✓ verde grande sobre la tableta; ícono de lengua con "¿sabor?" (puede cambiar) y escudo "salud ✓". |
+| 9 | Comer | La agencia de alimentos de Canadá dice que se puede comer: a veces cambia el sabor, pero no es riesgo. | Chip "CFIA · Canadá"; un ✓ verde grande sobre la tableta; ícono de lengua con "¿sabor?" (puede cambiar) y escudo "salud ✓". |
 | 10 | Cierre | Esa capa blanca no es moho: es química de cristales. Guárdalo fresco y seco. | **Regreso a la tableta del inicio**, la misma capa blanca, ahora con dos etiquetas: "cristales de grasa (forma VI)" y "cristales de azúcar"; un ícono de alacena "fresco y seco". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
@@ -36,7 +36,7 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y si lo guardas
 | 2 | 9.2 | 14.1 | 13_senalando_arriba | `izq-alto` | «cerca del 30 por ciento… 6 formas» |
 | 3 | 16.8 | 20.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «ese crack al partirlo… se templa» |
 | 4 | 21.5 | 26.1 | 06_pensativo_menton | `izq-alto` | «con calor… recristaliza» |
-| 5 | 26.4 | 28.5 | 07_pensativo_puno | `grande` | «¿Y si lo guardaste en el refri?» |
+| 5 | 26.4 | 28.1 | 07_pensativo_puno | `grande` | «¿Y si lo guardaste en el refri?» |
 | 6 | 30.8 | 33.8 | 04_bajando_lentes | `arriba-der` | «disuelve el azúcar… polvito blanco» |
 | 7 | 37.5 | 41.9 | 06_pensativo_menton | `arriba-der` | «nunca vieron manchas sin la forma 6» |
 | 8 | 42.6 | 47.2 | 11_sorprendido | `izq-alto` | «borraron parte… con un láser» |
@@ -44,7 +44,7 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y si lo guardas
 | 10 | 53.8 | 58.1 | 02_apuntando_camara | `arriba-der` | «Guárdalo fresco y seco» |
 | — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
 
-**Total:** 10 apariciones · ≈ 42 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+**Total:** 10 apariciones · ≈ 41 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la fuente el 29 oct 2026)
 

@@ -259,7 +259,7 @@ function Chocolate() {
       <Escena T={T} a={K.Az} b={azMicro}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Tableta T={T} x={klerp(260, TX, kprog(T, K.Az - 0.3, K.Az + 0.6, kEase.sale))} y={TY} gotas={kprog(T, K.Az + 0.5, K.Az + 2.0)} id="a0" />
+          <Tableta T={T} x={klerp(260, TX, kprog(T, K.Az + 0.1, K.Az + 0.8, kEase.sale))} y={TY} gotas={kprog(T, K.Az + 0.5, K.Az + 2.0)} id="a0" />
         </SvgCapa>
         <Etq T={T} at={K.Az + 0.8} until={azMicro - 0.1} x={220} y={1240} texto="el agua se condensa" tam={32} color={KC.texto} />
       </Escena>
@@ -358,7 +358,7 @@ function Chocolate() {
         [CUES.Manteca + 0.3, CUES.FormaV - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.FormaV + 2.4, CUES.Calor - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.Calor + 0.6, CUES.Pregunta - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
-        [CUES.Pregunta + 0.05, CUES.Azucar + 0.1, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Azucar - 0.35, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Azucar + 2.4, CUES.Estudio - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Estudio + 3.4, CUES.Laser - 0.3, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Laser + 0.4, CUES.Comer - 0.2, 'avatar_11_sorprendido', 'izq-alto'],
