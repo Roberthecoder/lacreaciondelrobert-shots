@@ -45,3 +45,37 @@ Fuentes abiertas:
 | 19b | (corregido) Pantalla del cierre: caja de cultivo «en laboratorio» con un nematodo atrapado; chip "también caza gusanos" | ✅ | [L04] | "Nematodes added to C. comatus cultures on potato-dextrose agar (PDA)…"; "hyphae colonize nematode bodies" | 2004 |
 
 **Revisión de correcciones (29 oct 2026):** se volvió a leer `narracion.json` completo (997 caracteres) y las filas cambiadas del guion; se abrieron otra vez New Forest NPA, NIES, Kuo y los resúmenes de Luo 2004/2007. Toda la voz y la pantalla quedan ✅: la caza de nematodos se dice "en el laboratorio" y con los dos años (2004 y 2007), "todo el sombrero" en vez de "todo", y «barbuda» con fuente de Fungipedia (sin decir "en México"). Pendiente menor (no de veracidad): en `## Fuentes` del guion, a la fuente 8 (NIES) le falta la URL https://www.nies.go.jp/chiiki1/protoz/toxicity/nematoda/panagrel.htm.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `coprinus.jsx`, `Shot Coprinus base narrada.dc.html`, la columna «Lo que se ve» y la tabla «Robert en pantalla» de `guion.md`, y `publicacion.md`; se sacaron cuadros con `motor/preview.mjs` (0.3–60 s) y se revisaron.
+
+| # | Texto o dibujo en pantalla / publicación | Veredicto | Fuente | Nota |
+|---|---|---|---|---|
+| F1 | «¿podrido?» tachado → «se digiere solo»; subtítulo «No está podrido: se digiere solo» | ✅ | [VOLK] | autodigestión |
+| F2 | «barbuda» + *Coprinus comatus*, «escamas» | ✅ | [FUN], [KUO] | "with large, shaggy scales" |
+| F3 | Morfología: sombrero alto y cilíndrico, blanco con escamas y centro café; pie blanco 1–2 cm de grueso; franja rosa→negra que sube desde el borde; campana que se enrolla; el pie queda | ✅ | [KUO], [EMB] | "Gills… white, becoming pinkish, then black"; "Stem: 5-20 cm long; 1-2 cm thick" (pie dibujado ≈ 1.4 cm con la barra de 5 cm; sombrero ≈ 12 cm de alto, dentro de "Cap: 3-15 cm") |
+| F4 | «POR DENTRO · sombrero», «laminillas», «muy delgadas y muy pegadas»; laminillas libres del pie | ✅ | [VOLK], [KUO] | "very crowded"; "Free from the stem" |
+| F5 | Barra 2 cm del corte | ✅ corregido | [KUO] | Antes 150 px → el sombrero cortado medía ~7 cm de ancho; ahora 200 px → ~5 cm de ancho y ~8 cm de alto |
+| F6 | «AL MICROSCOPIO · laminillas», «esporas maduras» (negras abajo), «enzimas», lluvia de esporas | ✅ | [EMB], [VOLK], [GUO] | |
+| F7 | Barra 20 µm y tamaño de las esporas | ✅ corregido | [KUO] | Antes las esporas medían ≈ 8 × 6 µm con la barra (menos que "9-13 x 7-9 µ"); ahora ≈ 10 × 7 µm (laminillas y gota de tinta) |
+| F8 | Flecha «del borde a la punta» y «el pie queda» | ✅ corregido | [EMB] | Antes la flecha quedaba junto al pie, bajo el sombrero ya digerido; ahora su punta sigue la orilla que se digiere, con línea punteada hasta la punta del sombrero |
+| F9 | «AL MICROSCOPIO · tinta», «esporas negras», «tejido derretido» | ✅ | [EMB] | |
+| F10 | «tinta de hongo» escrita con pluma; «siglos XVII y XVIII» | ✅ | [NF] | "In the 17th and 18th centuries this black liquid could be used as an ink substitute." |
+| F11 | «¿solo restos de plantas?» (hojas, ramita, barbuda) | ✅ | [KUO], [EMB] | saprobio |
+| F12 | Tarjeta «2004 y 2007 · Yunnan, China · Luo et al., Mycologia y AEM»; caja de cultivo; «en laboratorio» | ✅ | [L04], [L07] | |
+| F13 | «nematodo» *Panagrellus redivivus*; barra 0.5 mm, gusanos de 1.1–1.5 mm | ✅ | [L04], [NIES] | "Adults may reach lengths of 1800 um." |
+| F14 | «bolitas con espinas» sobre ramitas de las hifas | ✅ | [L04], [L07] | "Set on a sporophore-like branch, the spiny ball is a burr-like structure" |
+| F15 | Hifas y bolitas con la barra de 0.5 mm | ✅ corregido | [L07] | Con la barra, las bolitas medían ~0.24 mm y las hifas ~20 µm de grueso; [L07] dice que la bolita es "much smaller than those of the other known appendages". Se agregó la etiqueta «hifas y bolitas: dibujadas más grandes» |
+| F16 | «rompe su cubierta» (rayas y líquido que sale) | ✅ | [L07] | "Severe injuries on nematode cuticles caused the leakage of inner materials" |
+| F17 | Cronómetro «EN LA CAJA» que corre horas; «toxinas»; subtítulo «Inmóvil en horas» | ✅ | [L04], [L07] | "become inactive in hours"; "About half of the nematodes could be immobilized within 1 to 4 h… Within 8 h… about 90%" |
+| F18 | «días después», «hifas por dentro», hifas que salen del gusano | ✅ | [L04] | "digested and consumed within days and hyphae grow out of the nematode" |
+| F19 | Cierre: «también caza gusanos», caja «en laboratorio», lupa con esporas en la gota | ✅ | [L04], [EMB] | |
+| F20 | Subtítulos (13 líneas) | ✅ | — | Todos resumen la voz verificada; ninguno agrega datos |
+| F21 | `publicacion.md`: hábitat ("pastos, astillas de madera y suelo apisonado") | ✅ | [KUO] | "on lawns, wood chips, or hard-packed ground" |
+| F22 | `publicacion.md`: "en los siglos XVII y XVIII se usó como sustituto de tinta para escribir" | ✅ | [NF] | "could be used as an ink substitute"; "used straight as writing ink" |
+| F23 | `publicacion.md`: "investigadores de la Universidad de Yunnan (China)", 2004 y 2007, "dañan la cutícula", "inactivos en horas", "los digirieron en días" | ✅ | [L04], [L07] | Afiliación: Yunnan University, Kunming (ambos artículos) |
+| F24 | `publicacion.md`: resto de las 7 redes y comentario fijado | ✅ | todas | Mismo contenido verificado; fuentes con URL correcta; "El dibujo es esquemático." |
+
+Cambios hechos en esta revisión (sin tocar la voz): tamaño de esporas (F7), barra de 2 cm (F5), flecha de la ola (F8), etiqueta de hifas y bolitas agrandadas (F15) en `coprinus.jsx`, y barras de escala en `guion.md`. Todo queda ✅.
+VEREDICTO: APROBADO

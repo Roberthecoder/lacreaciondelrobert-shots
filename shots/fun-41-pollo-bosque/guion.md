@@ -18,7 +18,7 @@
 | 4 | Pregunta | ¿Y por qué le dicen pollo, si no tiene ni un gramo de músculo? | **Re-gancho.** "?" gigante entre una pechuga (fibras de músculo, esquema) y una repisa del hongo; Robert grande, pensativo. |
 | 5 | Correoso | Bien cocido, queda correoso y sabe parecido al pollo. | Sartén: la repisa cortada en tiras se dora; chips "bien cocido" y "correoso · sabe parecido al pollo". |
 | 6 | Hifas | Por dentro es una maraña de hifas, y las más gruesas miden de cuatro a catorce micras. | **AL MICROSCOPIO** (fondo oscuro): maraña de hifas; resaltadas las más gruesas (hifas de unión: ramificadas, sin tabiques, pared gruesa); medidor "las más gruesas: 4–14 µm de ancho". Al lado, en gris, "músculo: 0". Barra 20 µm. |
-| 7 | Estudio | Pero ojo: en 1987, en Canadá, una niña de seis años comió este hongo. | Tarjeta de estudio "1987 · Columbia Británica, Canadá · niña de 6 años · CMAJ, 1988". Un árbol con un pedazo de repisa arrancado. |
+| 7 | Estudio | Pero ojo: en 1987, en Canadá, una niña de seis años comió este hongo. | Tarjeta de estudio "1987 · Canadá · niña de 6 años · CMAJ, 1988". Un árbol con un pedazo de repisa arrancado. |
 | 8 | Monstruo | Se le trabó el habla, perdió el equilibrio y tuvo alucinaciones. | Niña (silueta sencilla) que se tambalea; burbuja de habla con letras revueltas; nube de alucinación con líneas y formas de colores (sin monstruo). Chip "alucinaciones". |
 | 9 | Recupero | Al día siguiente ya estaba bien. | Cronómetro "DESPUÉS DE LOS SÍNTOMAS" que corre hasta ~20 h; amanece; la niña sonríe. Chip "≈ 20 h · se recuperó". |
 | 10 | Crudo | Crudo o mal cocido puede caerte mal del estómago, y hay personas alérgicas a él. | Tiras crudas con ✗ y estómago revuelto; ícono de alergia. Chips "crudo o mal cocido: ✗" y "hay alérgicos". |

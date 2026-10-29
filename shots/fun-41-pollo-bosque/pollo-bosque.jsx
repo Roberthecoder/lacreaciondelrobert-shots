@@ -361,7 +361,7 @@ function PolloBosqueShot() {
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.M - 0.1} texto="1987: *una niña de 6 años*" />
       <Subtitulo T={T} idx={8} at={K.M + 0.1} until={K.Re - 0.1} texto="Habla trabada *y alucinaciones*" />
       <Subtitulo T={T} idx={9} at={K.Re + 0.1} until={K.Cd - 0.1} texto="Al día siguiente, *bien*" />
-      <Subtitulo T={T} idx={10} at={K.Cd + 0.1} until={K.Ex - 0.1} texto="Crudo o mal cocido: *te cae mal*" />
+      <Subtitulo T={T} idx={10} at={K.Cd + 0.1} until={K.Ex - 0.1} texto="Crudo o mal cocido: *puede caerte mal*" />
       <Subtitulo T={T} idx={11} at={K.Ex + 0.1} until={K.N - 0.1} texto="Solo si lo identifica *un experto*" />
       <Subtitulo T={T} idx={12} at={K.N + 0.1} until={K.C - 0.1} texto="Su naranja: *ácido laetipórico*" />
       <Subtitulo T={T} idx={13} at={K.C + 0.1} until={K.Ou - 0.1} texto="No es pollo: *es un hongo*" />
