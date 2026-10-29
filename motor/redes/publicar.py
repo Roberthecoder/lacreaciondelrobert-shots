@@ -303,14 +303,16 @@ def textos(clave):
     return r, titulo_de(carpeta, clave)
 
 
-def revisar_texto(red, r):
-    if red == 'tiktok':
+def revisar_texto(red, r, tt=None):
+    if red == 'tiktok' and (tt or {}).get('modo') == 'borrador':
         return []   # en la bandeja de TikTok el texto lo pega Robert en la app; se le deja listo en el resumen
     t = r.get(red)
+    if red == 'tiktok' and (tt or {}).get('texto'):
+        t = {'texto': tt['texto']}
     if not t or not t.get('texto'):
         return [f'publicacion.md no tiene texto de {red}']
     n = len(t['texto'])
-    lim = {'facebook': 5000, 'instagram': 2200, 'threads': 500, 'youtube': 5000, 'linkedin': 3000}[red]
+    lim = {'facebook': 5000, 'instagram': 2200, 'threads': 500, 'youtube': 5000, 'linkedin': 3000, 'tiktok': 2200}[red]
     p = [f'el texto de {red} mide {n} caracteres (máximo {lim})'] if n > lim else []
     if red == 'instagram' and len(re.findall(r'#\w', t['texto'])) > 30:
         p.append('Instagram: más de 30 hashtags')
@@ -479,7 +481,96 @@ def subir_linkedin(video, r, modo, titulo):
     return {'id': pid, 'url': f'https://www.linkedin.com/feed/update/{pid}/'}
 
 
-def subir_tiktok(video, r, modo, titulo):
+TT_PRIVACIDAD = {'PUBLIC_TO_EVERYONE': 'Todos', 'MUTUAL_FOLLOW_FRIENDS': 'Amigos', 'FOLLOWER_OF_CREATOR': 'Seguidores',
+                 'SELF_ONLY': 'Solo yo'}
+
+
+def tiktok_creador(at):
+    """Datos que TikTok pide consultar antes de cada publicación directa (creator_info)."""
+    return ok(requests.post(f'{TT}/post/publish/creator_info/query/', headers={
+        'Authorization': f'Bearer {at}', 'Content-Type': 'application/json; charset=UTF-8'}, timeout=30),
+        'TikTok cuenta')['data']
+
+
+def _tiktok_subir_archivo(at, ruta_init, cuerpo, video):
+    n = os.path.getsize(video)
+    if n > 64 * 1024 * 1024:
+        raise Falla('TikTok: el video pesa más de 64 MB; falta subirlo en partes')
+    cuerpo = dict(cuerpo, source_info={'source': 'FILE_UPLOAD', 'video_size': n, 'chunk_size': n, 'total_chunk_count': 1})
+    r = requests.post(f'{TT}{ruta_init}', headers={'Authorization': f'Bearer {at}',
+                                                   'Content-Type': 'application/json; charset=UTF-8'},
+                      json=cuerpo, timeout=60)
+    d = j(r)
+    e = (d.get('error') or {}) if isinstance(d, dict) else {}
+    codigo = e.get('code', '') if isinstance(e, dict) else str(e)
+    if r.status_code >= 300 or codigo not in ('', 'ok'):
+        raise Falla(f'TikTok iniciar: {codigo or r.status_code} {(e.get("message") if isinstance(e, dict) else "") or ""}'[:300])
+    d = d['data']
+    with open(video, 'rb') as f:
+        u = requests.put(d['upload_url'], data=f, timeout=900, headers={
+            'Content-Type': 'video/mp4', 'Content-Length': str(n), 'Content-Range': f'bytes 0-{n - 1}/{n}'})
+    if u.status_code >= 300:
+        err(u, 'TikTok subir')
+    pid = d['publish_id']
+    st = esperar('TikTok procesar', lambda: j(requests.post(f'{TT}/post/publish/status/fetch/', json={'publish_id': pid},
+                                                           headers={'Authorization': f'Bearer {at}'}, timeout=30)),
+                 lambda x: (x.get('data') or {}).get('status') in ('SEND_TO_USER_INBOX', 'PUBLISH_COMPLETE'),
+                 lambda x: (x.get('data') or {}).get('status') == 'FAILED' and (x.get('data') or {}).get('fail_reason'))
+    return pid, st.get('data') or {}
+
+
+def subir_tiktok(video, r, modo, titulo, tt=None):
+    """Publicación directa con su texto (por defecto) o, si tt.modo == 'borrador', a la bandeja de TikTok.
+    tt = opciones que Robert elige en la Sala: privacidad, comentarios, duo, stitch, marca_propia, marca_pagada, ia, texto."""
+    tt = tt or {}
+    if tt.get('modo') == 'borrador':
+        return subir_tiktok_borrador(video, r, modo, titulo)
+    at, scope, _ = tiktok_token()
+    if 'video.publish' not in scope:
+        raise Falla('TikTok: falta el permiso video.publish. Robert conecta TikTok otra vez (docs/tiktok.html).')
+    ci = tiktok_creador(at)
+    if modo == 'privado':
+        priv = 'SELF_ONLY'
+    else:
+        priv = tt.get('privacidad')
+        if not priv:
+            raise Falla('TikTok: falta elegir quién puede verlo (privacidad) en el botón Publicar de la Sala')
+    opciones = ci.get('privacy_level_options') or []
+    if priv not in opciones:
+        raise Falla(f'TikTok: la cuenta no permite «{TT_PRIVACIDAD.get(priv, priv)}» ahora '
+                    f'(opciones: {", ".join(TT_PRIVACIDAD.get(x, x) for x in opciones)})')
+    if tt.get('marca_pagada') and priv == 'SELF_ONLY':
+        raise Falla('TikTok: el contenido de marca (pagado) no puede ser «Solo yo»')
+    info = {
+        'title': (tt.get('texto') or (r.get('tiktok') or {}).get('texto') or titulo)[:2200],
+        'privacy_level': priv,
+        'disable_comment': bool(ci.get('comment_disabled')) or not tt.get('comentarios', False),
+        'disable_duet': bool(ci.get('duet_disabled')) or not tt.get('duo', False),
+        'disable_stitch': bool(ci.get('stitch_disabled')) or not tt.get('stitch', False),
+        'video_cover_timestamp_ms': 1000,
+        'brand_content_toggle': bool(tt.get('marca_pagada')),
+        'brand_organic_toggle': bool(tt.get('marca_propia')),
+        'is_aigc': bool(tt.get('ia', True)),
+    }
+    nota = ''
+    try:
+        pid, st = _tiktok_subir_archivo(at, '/post/publish/video/init/', {'post_info': info}, video)
+    except Falla as e:
+        if 'unaudited_client' not in str(e) or priv == 'SELF_ONLY':
+            raise
+        info['privacy_level'] = 'SELF_ONLY'   # app sin aprobar: TikTok solo deja publicar como «Solo yo»
+        nota = ' · TikTok todavía no aprueba la app, así que quedó como «Solo yo»'
+        pid, st = _tiktok_subir_archivo(at, '/post/publish/video/init/', {'post_info': info}, video)
+    ids = st.get('publicaly_available_post_id') or []
+    user = ci.get('creator_username') or ''
+    out = {'id': str(ids[0]) if ids else pid,
+           'nota': f'publicado en TikTok como «{TT_PRIVACIDAD.get(info["privacy_level"], info["privacy_level"])}»{nota}'}
+    if ids and user:
+        out['url'] = f'https://www.tiktok.com/@{user}/video/{ids[0]}'
+    return out
+
+
+def subir_tiktok_borrador(video, r, modo, titulo):
     at, _, _ = tiktok_token()
     n = os.path.getsize(video)
     if n > 64 * 1024 * 1024:
@@ -537,9 +628,15 @@ def probar(red):
         return f'perfil de {nombre} listo'
     if red == 'tiktok':
         at, scope, vence = tiktok_token()
-        if 'video.upload' not in scope:
-            raise Falla(f'TikTok: el token no trae video.upload (scope: {scope})')
-        return f'cuenta «{tiktok_usuario(at)}» lista (permiso video.upload; el refresh vence {vence})'
+        if 'video.publish' not in scope:
+            raise Falla(f'TikTok: el token no trae video.publish (scope: {scope}); conecta TikTok otra vez')
+        ci = tiktok_creador(at)
+        return (f'cuenta «{ci.get("creator_nickname")}» (@{ci.get("creator_username")}) lista para publicar directo · '
+                f'privacidad: {", ".join(TT_PRIVACIDAD.get(x, x) for x in ci.get("privacy_level_options") or [])} · '
+                f'comentarios {"apagados" if ci.get("comment_disabled") else "permitidos"}, '
+                f'dúos {"apagados" if ci.get("duet_disabled") else "permitidos"}, '
+                f'stitch {"apagado" if ci.get("stitch_disabled") else "permitido"} · '
+                f'máximo {ci.get("max_video_post_duration_sec")} s · el refresh vence {vence}')
 
 
 # ---------- bitácora de publicaciones (refs/estado/publicaciones) ----------
@@ -575,6 +672,10 @@ def cmd_publicar(a):
             'VEREDICTO: APROBADO' not in ver:
         raise SystemExit(f'{a.clave} no tiene "VEREDICTO: APROBADO" en verificacion.md: no se publica.')
     r, titulo = textos(a.clave)
+    try:
+        tt = json.loads(a.tiktok) if a.tiktok and a.tiktok.strip() not in ('', 'null') else {}
+    except ValueError:
+        raise SystemExit('Las opciones de TikTok no son JSON válido')
     iv = info_video(a.video)
     ya = {(x['clave'], x['red']) for x in bitacora() if x.get('modo') == 'real' and x.get('ok')}
     filas, lineas = [], [f'## {a.clave} · modo **{a.modo}**', '',
@@ -588,11 +689,13 @@ def cmd_publicar(a):
         try:
             if a.modo == 'real' and (a.clave, red) in ya and not a.repetir:
                 raise Falla('ya se publicó antes en modo real (usa "repetir" si de verdad va otra vez)')
-            prob = revisar_video(red, iv) + revisar_texto(red, r)
+            prob = revisar_video(red, iv) + revisar_texto(red, r, tt)
             if prob:
                 raise Falla('; '.join(prob))
             if a.modo == 'prueba':
                 fila.update(ok=True, nota=probar(red))
+            elif red == 'tiktok':
+                fila.update(ok=True, **subir_tiktok(a.video, r, a.modo, titulo, tt))
             elif red in ('threads', 'instagram'):
                 fn = subir_threads if red == 'threads' else subir_instagram
                 fila.update(ok=True, **fn(a.video, r, a.modo, titulo, a.video_url))
@@ -605,7 +708,7 @@ def cmd_publicar(a):
         detalle = fila.get('error') or ' '.join(str(fila[k]) for k in ('url', 'nota') if fila.get(k)) or fila.get('id', '')
         lineas.append(f'| {red} | {"✅" if fila["ok"] else "❌"} | {detalle} |')
         print(f'{red}: {"OK" if fila["ok"] else "FALLA"} · {detalle}', flush=True)
-    if 'tiktok' in redes and r.get('tiktok'):
+    if 'tiktok' in redes and r.get('tiktok') and tt.get('modo') == 'borrador':
         lineas += ['', 'Texto para pegar en TikTok:', '```text', r['tiktok']['texto'], '```']
     if a.modo != 'prueba':
         anotar(filas)
@@ -693,6 +796,7 @@ def main():
     a.add_argument('--confirmar', default='')
     a.add_argument('--autorizo', default='')
     a.add_argument('--repetir', action='store_true')
+    a.add_argument('--tiktok', default='', help='JSON con las opciones de TikTok elegidas en la Sala')
     s.add_parser('renovar')
     c = s.add_parser('tiktok-codigo')
     c.add_argument('codigo')

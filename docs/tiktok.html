@@ -5,12 +5,12 @@
 </head><body><main>
 <nav><a href="index.html">Inicio</a><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a></nav>
 <h1>Conectar <span>TikTok</span></h1>
-<p>Esta página conecta la herramienta de publicación del canal con la cuenta de TikTok de La Creación del Robert. Solo pide permiso para leer el nombre de la cuenta y para <b>enviar videos como borrador</b> a la bandeja de TikTok: nada se publica sin que Robert lo abra en la app y lo publique él.</p>
+<p>Esta página conecta la herramienta de publicación del canal con la cuenta de TikTok de La Creación del Robert. Pide permiso para leer el nombre de la cuenta y para <b>publicar los videos del canal</b> (o mandarlos como borrador). Nada se publica sin que Robert lo apruebe: en la Sala de Shots elige el video, quién puede verlo y si se permiten comentarios, dúos y stitch, y da clic en «Publicar».</p>
 <p id="paso-llave"><label for="ck">Client key de la app (TikTok for Developers → la app → Credentials; se guarda solo en este navegador):</label><br>
 <input id="ck" autocomplete="off" spellcheck="false" placeholder="client key"></p>
 <button class="btn" id="ir" type="button">Autorizar con TikTok</button>
 <p class="muted" id="msg"></p>
-<hr><p lang="en"><b>English:</b> This page connects the channel's internal publishing tool to the channel's own TikTok account. It requests <code>user.info.basic</code> and <code>video.upload</code> only: videos are sent as drafts to the creator's TikTok inbox and are published manually by the creator in the TikTok app.</p>
+<hr><p lang="en"><b>English:</b> This page connects the channel's internal publishing tool to the channel's own TikTok account. It requests <code>user.info.basic</code>, <code>video.publish</code> and <code>video.upload</code>. Each post is approved by the creator in the internal review page, where he chooses the privacy level and the comment, duet and stitch settings before clicking “Publish”; videos can also be sent as drafts to his TikTok inbox.</p>
 <script>
 const $ = (i) => document.getElementById(i);
 let guardada = ''; try { guardada = localStorage.getItem('tiktok_ck') || ''; } catch (e) {}
@@ -22,7 +22,7 @@ $('ir').onclick = () => {
   try { localStorage.setItem('tiktok_ck', ck); sessionStorage.setItem('tiktok_state', st); localStorage.setItem('tiktok_state', st); } catch (e) {}
   const u = new URL('https://www.tiktok.com/v2/auth/authorize/');
   u.searchParams.set('client_key', ck);
-  u.searchParams.set('scope', 'user.info.basic,video.upload');
+  u.searchParams.set('scope', 'user.info.basic,video.publish,video.upload');
   u.searchParams.set('response_type', 'code');
   u.searchParams.set('redirect_uri', 'https://roberthecoder.github.io/lacreaciondelrobert-shots/');
   u.searchParams.set('state', st);
