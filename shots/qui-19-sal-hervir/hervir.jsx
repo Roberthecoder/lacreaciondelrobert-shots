@@ -179,8 +179,8 @@ function Hervir() {
           <Cucharadita x={250} y={560} s={0.9} gira={0} sal={1} />
           <TermoCocina x={700} y={890} s={0.85} texto={'100.0' + Math.round(klerp(0, 5, kprog(T, K.O + 1.6, K.O + 2.6))) + ' °C'} />
         </SvgCapa>
-        <Etq T={T} at={K.O + 0.3} until={K.P - 0.3} x={370} y={560} texto="≈ 6 g de sal" tam={36} />
-        <Etq T={T} at={K.O + 0.8} until={K.P - 0.3} x={200} y={850} texto="2 L" lado="izq" tam={40} />
+        <Chip T={T} at={K.O + 0.3} until={K.P - 0.3} x={330} y={440} texto="≈ 6 g de sal" tam={38} borde={KC.ink} />
+        <Chip T={T} at={K.O + 0.8} until={K.P - 0.3} x={110} y={850} texto="2 L" tam={40} borde={AGUA} />
         <Medidor T={T} at={K.O + 1.6} until={K.P - 0.3} valor={(t) => 0.05 * kprog(t, K.O + 1.6, K.O + 2.6)} etiqueta="sube el hervor (0 a 1 °C)" texto={(v) => '+' + v.toFixed(2) + ' °C'} y={1440} color={KC.red} />
       </Escena>
       {/* 5 · pregunta: ¿por qué burbujea? */}
@@ -203,7 +203,7 @@ function Hervir() {
           {[[150, 1100, 0.35], [560, 1120, 0.3], [260, 860, 0.25]].map(([gx, gy, gs], i) => <GranoNucleacion key={i} T={T} x={gx} y={gy} s={gs} t0={K.B + 0.8 + i * 0.3} seed={20 + i} />)}
           <g opacity={kprog(T, K.B + 2.6, K.B + 3.1)}><GranoNucleacion T={T} x={820} y={1020} s={0.8} t0={K.B + 2.8} roca seed={7} /></g>
         </SvgCapa>
-        <Etq T={T} at={K.B + 0.8} until={avisa - 0.3} x={480} y={1150} texto="grano de sal" tam={32} />
+        <Etq T={T} at={K.B + 0.8} until={avisa - 0.3} x={160} y={1150} texto="grano de sal" tam={32} />
         <Etq T={T} at={K.B + 3.0} until={avisa - 0.3} x={1040} y={1150} texto="piedra de ebullición" lado="izq" tam={30} />
       </Escena>
       <Escena T={T} a={avisa} b={K.E} zoom={0.05}>
