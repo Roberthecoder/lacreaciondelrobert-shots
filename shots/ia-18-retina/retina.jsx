@@ -176,7 +176,9 @@ function Expediente({ x, y, s = 1, sello = 0 }) {
 }
 
 // Cuadrícula de 100 pares (retina ♂ + retina ♀): 97 con palomita, 3 con tache.
-function Pares({ T, at, x = 120, y = 860 }) {
+function Pares({ T, at, until, x = 120, y = 860 }) {
+  if (T > until + 0.5) return null;
+  const fuera = kprog(T, until, until + 0.4);
   const out = [], malos = [23, 58, 86];
   for (let i = 0; i < 100; i++) {
     const c = i % 10, f = Math.floor(i / 10), px = x + c * 86, py = y + f * 34, t0 = at + i * 0.022;
@@ -189,7 +191,7 @@ function Pares({ T, at, x = 120, y = 860 }) {
         : <path d="M 43 0 L 50 8 L 63 -9" stroke={KC.leaf} strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
     </g>);
   }
-  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30 }}>
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30, opacity:1 - fuera }}>
     <rect x={x - 40} y={y - 34} width={900} height={372} rx={26} fill="rgba(255,253,247,.92)" stroke={KC.ink} strokeWidth={7} opacity={kprog(T, at - 0.3, at)} />
     {out}
   </svg>;
@@ -245,23 +247,22 @@ function Retinas() {
         <FondoLunares color={KC.mint} />
         {svg(<g opacity={1 - kprog(T, K.F + 2.6, K.F + 3.1)}><CorteOjo x={600} y={880} s={0.88} T={T} haz={kprog(T, K.F + 0.3, K.F + 1.6, kEase.sale)} /></g>)}
         <div style={{ position:'absolute', inset:0, background:KC.noche, opacity:kprog(T, K.F + 2.6, K.F + 3.1) }}></div>
-        {T > K.F + 2.6 && svg(<Retina id="f" x={500} y={900} r={300} T={T} o={kprog(T, K.F + 2.6, K.F + 3.1)} />)}
+        {T > K.F + 2.6 && svg(<Retina id="f" x={520} y={880} r={290} T={T} o={kprog(T, K.F + 2.6, K.F + 3.1)} />)}
       </Escena>
-      <Etq T={T} at={K.F + 0.6} until={K.F + 2.5} x={250} y={1170} texto="cámara de retina" />
-      <Etq T={T} at={K.F + 1.0} until={K.F + 2.5} x={330} y={700} texto="por la pupila" />
-      <Etq T={T} at={K.F + 1.6} until={K.F + 2.5} x={850} y={1170} texto="retina" lado="izq" />
-      <Etq T={T} at={K.F + 3.3} until={K.E - 0.2} x={240} y={640} texto="vasos sanguíneos" />
-      <Etq T={T} at={K.F + 4.0} until={K.E - 0.2} x={630} y={1190} texto="disco óptico (sale el nervio)" lado="izq" color={RET.disco} />
-      <Etq T={T} at={K.F + 4.6} until={K.E - 0.2} x={440} y={960} texto="mácula" lado="izq" tam={28} />
+      <Etq T={T} at={K.F + 0.6} until={K.F + 2.5} x={60} y={1010} texto="cámara de retina" />
+      <Etq T={T} at={K.F + 1.0} until={K.F + 2.5} x={300} y={610} texto="por la pupila" />
+      <Etq T={T} at={K.F + 1.6} until={K.F + 2.5} x={830} y={1110} texto="retina" />
+      <Etq T={T} at={K.F + 3.3} until={K.E - 0.2} x={40} y={560} texto="vasos sanguíneos" />
+      <Etq T={T} at={K.F + 4.0} until={K.E - 0.2} x={1050} y={800} texto="disco óptico" lado="izq" color={RET.disco} />
+      <Etq T={T} at={K.F + 4.6} until={K.E - 0.2} x={440} y={980} texto="mácula" lado="izq" tam={28} />
       {/* 3 · el estudio */}
       <Escena T={T} a={K.E} b={K.Ed}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{Array.from({ length: 12 }, (_, i) => { const t0 = K.E + 1.6 + i * 0.25, u = kprog(T, t0, t0 + 1.4, kEase.suave);
-          return T > t0 && u < 1 ? <Retina key={i} id={`e${i}`} x={klerp(120 + (i % 4) * 280, 540, u)} y={klerp(900 + Math.floor(i / 4) * 0, 1080, u)} r={klerp(70, 20, u)} o={1 - u * 0.8} /> : null; })}</>, 12)}
+        {svg(<>{[0, 1, 2].map((i) => <Retina key={i} id={`e${i}`} x={110} y={940 + i * 90} r={38} o={kprog(T, K.E + 1.8 + i * 0.2, K.E + 2.1 + i * 0.2)} />)}</>, 12)}
       </Escena>
-      <RedNeuronal T={T} x={180} y={960} ancho={720} alto={250} capas={[3, 5, 5, 2]} onda={((T - K.E) * 0.7) % 1} o={kprog(T, K.E + 2.0, K.E + 2.6)} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ed - 0.3} anio="2018" quien="Google (con Verily)" revista="Poplin et al. · Nature Biomedical Engineering" y={500} />
-      <div style={{ position:'absolute', left:540, top:790, zIndex:44, transform:'translate(-50%,-50%)', opacity:kprog(T, K.E + 1.2, K.E + 1.5) * (1 - kprog(T, K.Ed - 0.3, K.Ed)), textAlign:'center',
+      <RedNeuronal T={T} x={240} y={910} ancho={640} alto={240} capas={[3, 5, 5, 2]} onda={((T - K.E) * 0.7) % 1} o={kprog(T, K.E + 2.0, K.E + 2.6)} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ed - 0.3} anio="2018" quien="Google (con Verily)" revista="Poplin et al. · Nature Biomedical Engineering" y={470} />
+      <div style={{ position:'absolute', left:540, top:770, zIndex:44, transform:'translate(-50%,-50%)', opacity:kprog(T, K.E + 1.2, K.E + 1.5) * (1 - kprog(T, K.Ed - 0.3, K.Ed)), textAlign:'center',
         background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:24, padding:'8px 30px', boxShadow:`8px 8px 0 ${KC.ink}` }}>
         <div style={{ font:`400 96px/1 ${KF.titulo}`, color:KC.ink }}>{kformato(Math.round(284335 * kprog(T, K.E + 1.2, K.E + 3.4, kEase.suave)))}</div>
         <div style={{ font:`900 30px ${KF.texto}`, color:KC.ink }}>pacientes · UK Biobank + EyePACS</div>
@@ -270,26 +271,26 @@ function Retinas() {
       <Escena T={T} a={K.Ed} b={K.S}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Retina id="ed" x={290} y={780} r={190} T={T} />
-          <path d={`M 500 780 L ${klerp(500, 640, kprog(T, K.Ed + 0.4, K.Ed + 0.9))} 780`} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
-          {T > K.Ed + 0.9 && <path d="M 620 755 L 655 780 L 620 805" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
-          <Robotito x={830} y={800} s={0.8} T={T} cara="seguro" />
+          <Retina id="ed" x={260} y={760} r={170} T={T} />
+          <path d={`M 470 760 L ${klerp(470, 640, kprog(T, K.Ed + 0.4, K.Ed + 0.9))} 760`} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
+          {T > K.Ed + 0.9 && <path d="M 620 735 L 655 760 L 620 785" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
+          <Robotito x={820} y={790} s={0.8} T={T} cara="seguro" />
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Ed + 1.0} until={K.S - 0.2} valor={3} dur={0.6} prefijo="± " sufijo=" años" etiqueta="error promedio de edad" x={540} y={1070} tam={130} color={KC.orange} />
-      <Chip T={T} at={K.Ed + 0.6} until={K.S - 0.2} texto="edad (ejemplo): 57 ± 3 años" x={540} y={520} tam={38} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ed + 1.0} until={K.S - 0.2} valor={3} dur={0.6} prefijo="± " sufijo=" años" x={540} y={1110} tam={120} color={KC.orange} />
+      <Chip T={T} at={K.Ed + 0.6} until={K.S - 0.2} texto="edad (ejemplo): 57 ± 3 años" x={540} y={975} tam={38} borde={KC.ink} />
       {/* 5 · el sexo: 97 de cada 100 pares */}
       <Escena T={T} a={K.S} b={K.Pr}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Retina id="s1" x={300} y={640} r={150} T={T} />
-          <Retina id="s2" x={680} y={640} r={150} T={T} />
+          <Retina id="s1" x={230} y={640} r={130} T={T} />
+          <Retina id="s2" x={560} y={640} r={130} T={T} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.S + 0.5} until={K.Pr - 0.2} texto="hombre" x={300} y={820} tam={34} borde={KC.blue} />
-      <Chip T={T} at={K.S + 0.7} until={K.Pr - 0.2} texto="mujer" x={680} y={820} tam={34} borde={KC.pink} />
-      <Pares T={T} at={K.S + 1.4} x={120} y={930} />
-      <Chip T={T} at={K.S + 3.8} until={K.Pr - 0.2} texto="acierta 97 de 100 pares · al azar: 50" x={540} y={460} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 0.5} until={K.Pr - 0.2} texto="hombre" x={230} y={790} tam={34} borde={KC.blue} />
+      <Chip T={T} at={K.S + 0.7} until={K.Pr - 0.2} texto="mujer" x={560} y={790} tam={34} borde={KC.pink} />
+      <Pares T={T} at={K.S + 1.4} until={K.Pr - 0.2} x={120} y={930} />
+      <Chip T={T} at={K.S + 3.8} until={K.Pr - 0.2} texto="acierta 97 de 100 pares · al azar: 50" x={540} y={856} tam={34} borde={KC.leaf} />
       {/* 6 · presión y tabaco */}
       <Escena T={T} a={K.Pr} b={K.P}>
         <FondoLunares color={KC.orange} />
@@ -319,16 +320,16 @@ function Retinas() {
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<Expediente x={400} y={860} s={0.95} sello={kprog(T, K.O + 1.6, K.O + 2.0, kEase.sale)} />)}
       </Escena>
-      <MitoTachado T={T} at={K.O + 0.2} tacharEn={K.O + 1.0} until={K.O + 1.5} texto="diagnóstico" x={540} y={520} tam={50} />
-      <Chip T={T} at={K.O + 1.5} until={K.U - 0.2} texto="pista ≠ diagnóstico" x={540} y={520} tam={48} borde={KC.red} />
+      <MitoTachado T={T} at={K.O + 0.2} tacharEn={K.O + 1.0} until={K.O + 1.5} texto="diagnóstico" x={440} y={520} tam={50} />
+      <Chip T={T} at={K.O + 1.5} until={K.U - 0.2} texto="pista ≠ diagnóstico" x={420} y={520} tam={48} borde={KC.red} />
       {/* 10 · lo que sí se usa: retinopatía diabética */}
       <Escena T={T} a={K.U} b={K.C}>
         <FondoLunares color={KC.mint} />
         {svg(<CamaraRetina x={260} y={1000} s={0.85} T={T} />)}
       </Escena>
       <Monitor T={T} at={K.U + 0.6} until={K.C - 0.2} x={720} y={860} />
-      <Chip T={T} at={K.U + 0.2} until={K.C - 0.2} texto="en personas con diabetes" x={540} y={470} tam={38} borde={KC.ink} />
-      <div style={{ position:'absolute', left:300, top:620, zIndex:44, opacity:Math.min(kprog(T, K.U + 3.0, K.U + 3.3), 1 - kprog(T, K.C - 0.2, K.C + 0.2)),
+      <Chip T={T} at={K.U + 0.2} until={K.C - 0.2} texto="en personas con diabetes" x={620} y={460} tam={38} borde={KC.ink} />
+      <div style={{ position:'absolute', left:560, top:590, zIndex:44, opacity:Math.min(kprog(T, K.U + 3.0, K.U + 3.3), 1 - kprog(T, K.C - 0.2, K.C + 0.2)),
         transform:`translate(-50%,-50%) rotate(-10deg) scale(${klerp(2, 1, kprog(T, K.U + 3.0, K.U + 3.4, kEase.sale))})`,
         border:`8px solid ${KC.red}`, borderRadius:18, padding:'8px 26px', background:'rgba(255,255,255,.8)', textAlign:'center' }}>
         <div style={{ font:`400 64px/1 ${KF.titulo}`, color:KC.red }}>FDA · abril 2018</div>
@@ -357,10 +358,10 @@ function Retinas() {
       <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Tu ojo cuenta *mucho más*" />
 
       <Robert T={T} apariciones={[
-        [CUES.Gancho - 0.45, CUES.Gancho + 4.8, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Gancho - 0.45, CUES.Gancho + 3.6, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Foto + 2.7, CUES.Estudio - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [CUES.Edad + 0.4, CUES.Sexo - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [CUES.Sexo + 1.8, CUES.Presion - 0.15, 'avatar_11_sorprendido', 'izq-alto'],
+        [CUES.Sexo + 1.8, CUES.Presion - 0.15, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Pregunta + 0.05, CUES.Mapa + 0.2, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Mapa + 3.9, CUES.Ojo - 0.15, 'avatar_06_pensativo_menton', 'izq-alto'],
         [CUES.Ojo + 0.3, CUES.UsoReal - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],

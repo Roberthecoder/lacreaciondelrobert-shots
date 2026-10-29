@@ -38,3 +38,10 @@ Revisión de reglas de cifras: cada cifra dice de qué es (tiempo de tarea, tare
    Propuesta de voz: "Ojo: eran expertos en proyectos enormes donde llevaban años; los autores aclaran que no vale para todos."
    (o "…proyectos enormes que conocían muy bien;…").
 2. **#14 Chips de la escena 6 (⚠️ son promedios).** Cambiar a: "5 años en su proyecto (promedio) · repositorios de +1 millón de líneas (promedio)", o "en promedio: 5 años en su proyecto · +1 millón de líneas".
+
+## Re-verificación (29 oct 2026, coordinador)
+- Escena Matices: «Ojo: eran expertos en proyectos enormes donde llevaban años; los autores aclaran que no vale para todos.» — texto propuesto por el verificador ("5 años en promedio") ✅
+- Chips: «en promedio: 5 años en su proyecto» y «en promedio: +1 millón de líneas» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

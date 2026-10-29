@@ -20,10 +20,29 @@
 | 6 | Ficha | Y una red reconocía el hospital en casi cada placa, hasta por una ficha de metal. | **Por dentro de la máquina** (fondo oscuro): una radiografía con el mapa de calor encendido en la esquina, sobre la ficha metálica de lado (L/R); tres chips por hospital "99.95 % · 99.98 % · 95.6 % de las placas". |
 | 7 | Lunares | En Alemania, en 2019, una IA de lunares vio tinta de cirujano: más de la mitad de los lunares sanos marcados pasaron por melanoma. | Tarjeta "2019 · Heidelberg, Alemania · JAMA Dermatology"; un lunar sano bajo el dermatoscopio; trazo de tinta violeta alrededor y la IA cambia a "MELANOMA ✖". Cuadrícula: más de la mitad de los sanos se pone roja (54 %). |
 | 8 | Recorte | Al recortar la tinta, volvió a acertar. | Unas tijeras recortan la foto alrededor del lunar; la etiqueta vuelve a "sano ✔". |
-| 9 | Cierre | Por eso una IA médica se prueba con datos de otros hospitales: si no, puede estar viendo la nieve. | Un hospital nuevo entra a la prueba; **regreso a la imagen del inicio**: el lobo en la nieve, ahora las zonas iluminadas pasan al animal y aparece "prueba fuera de casa ✔". |
+| 9 | Cierre | Por eso una IA médica se prueba con datos de otros hospitales: si no, puede estar viendo la nieve. | Chip "pruébala con datos de fuera"; **regreso a la imagen del inicio**: la misma foto del lobo en la nieve (con sus zonas de nieve iluminadas) se hace chica y entra una foto nueva, un lobo sobre pasto: la IA dice "«husky» ✖" (lo que predice la regla, según el artículo) y aparece "¡atajo descubierto!". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua, un poco fría (viento suave de nieve). El escáner zumba al barrer la foto, la etiqueta cae con un golpe seco, las 20 fotos suenan como obturador, los muñequitos como clics, el "?" con un acorde suspendido, las placas de rayos X con un "tac" de negatoscopio, la ficha de metal con un "tink", las tijeras con un corte, y el final se abre a un acorde mayor.
+
+## Robert en pantalla
+
+Tiempos de la base (estimados; con la voz real se recorren solos). Grande en «¿Y si el atajo no lo pone nadie a propósito?» y grande-izq en «más de la mitad… pasaron por melanoma».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.4 | 11_sorprendido | `gancho` | «Esta IA no vio al lobo: vio la nieve» (cuadro 0) |
+| 2 | 6.5 | 9.7 | 13_senalando_arriba | `arriba-der` | señala las 20 fotos y «entrenada mal a propósito» |
+| 3 | 11.4 | 14.3 | 04_bajando_lentes | `izq-alto` | «si hay nieve, es lobo» (el husky marcado como lobo) |
+| 4 | 20.5 | 23.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «casi todos notaron la nieve» |
+| 5 | 23.8 | 27.2 | 07_pensativo_puno | `grande` | «¿Y si el atajo no lo pone nadie a propósito?» |
+| 6 | 32.8 | 36.9 | 10_serio_molesto | `izq-alto` | «una de cada tres… en otro, casi ninguna» |
+| 7 | 39.3 | 42.0 | 06_pensativo_menton | `arriba-der` | «hasta por una ficha de metal» |
+| 8 | 46.6 | 49.7 | 11_sorprendido | `grande-izq` | «más de la mitad de los lunares sanos… melanoma» |
+| 9 | 53.4 | 58.2 | 13_senalando_arriba | `arriba-der` | «se prueba con datos de otros hospitales» |
+| — | 58.3 | 61.8 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 30.7 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.8 s
 
 ## Fuentes (cada cifra se abrió en la fuente original el 29 oct 2026)
 
