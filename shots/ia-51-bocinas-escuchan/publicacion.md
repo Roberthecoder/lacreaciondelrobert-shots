@@ -7,7 +7,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ### TikTok
 ```text
 Esa lucecita en tu bocina no siempre es que la llamaste: a veces la prende la tele. 🔵📺
-Para oír su nombre, una bocina inteligente está atenta todo el tiempo, y manda audio a internet cuando cree que la llamaste. ¿Cuánto se equivoca? En un estudio publicado en 2020, investigadores de Northeastern (Boston) e Imperial College (Londres) pusieron siete bocinas a oír 134 horas de series de Netflix, con una cámara que vigilaba cuándo se prendía su luz.
+Para oír su nombre, una bocina inteligente está atenta todo el tiempo, y manda audio a internet cuando cree que la llamaste. ¿Cuánto se equivoca? En un estudio publicado en 2020, investigadores de Northeastern (Boston) e Imperial College (Londres) pusieron siete bocinas a oír 134 horas de series, con una cámara que vigilaba cuándo se prendía su luz.
 En el peor caso, una de ellas, con una sola serie, se prendió sola casi una vez por hora (0.95). ¿Con qué? Con frases que suenan parecido: a Siri la despertó un "I'm sorry"; a Alexa, un "I messed up".
 ¿Y cuánto oye cuando se despierta sola? Casi siempre, unos segundos. Pero en una (la HomePod), una de cada diez activaciones duró 10 segundos o más. Y casi todas esas activaciones mandaron el audio a la nube.
 Lo bueno: no hallaron pruebas de que graben todo el tiempo, ni de palabras secretas.
@@ -41,7 +41,7 @@ Tu bocina se prende sola… con la tele 🔵 | Shot IA #51
 Descripción:
 ```text
 Esa lucecita en tu bocina no siempre es que la llamaste: a veces la prende la tele.
-Las bocinas inteligentes tienen que estar atentas todo el tiempo para oír su palabra de activación ("Alexa", "Hey Siri", "OK Google", "Cortana"), y mandan audio a internet cuando creen oírla. En 2020, Daniel J. Dubois, Roman Kolcun, Anna Maria Mandalari, Muhammad Talha Paracha, David Choffnes y Hamed Haddadi (Northeastern University, en Boston, e Imperial College London) pusieron siete bocinas a oír 134 horas de 12 series de Netflix. Una cámara detectaba cuándo se prendía su luz, y también revisaron el tráfico de red y los registros en la nube.
+Las bocinas inteligentes tienen que estar atentas todo el tiempo para oír su palabra de activación ("Alexa", "Hey Siri", "OK Google", "Cortana"), y mandan audio a internet cuando creen oírla. En 2020, Daniel J. Dubois, Roman Kolcun, Anna Maria Mandalari, Muhammad Talha Paracha, David Choffnes y Hamed Haddadi (Northeastern University, en Boston, e Imperial College London) pusieron siete bocinas a oír 134 horas de 12 series de TV. Una cámara detectaba cuándo se prendía su luz.
 En el peor caso, una bocina con una sola serie se activó sola hasta 0.95 veces por hora. Muchas activaciones venían de frases parecidas a la palabra de activación: a Siri la despertó un "I'm sorry" y a Alexa un "I messed up". La mayoría duró poco, pero en la HomePod el 10 % de las activaciones duró 10 segundos o más. Según los autores, casi todas las activaciones detectadas (la bocina encendida) también mandaron el audio a la nube.
 Lo que no encontraron: pruebas de que las bocinas graben todo el tiempo, ni palabras de activación secretas. Por cantidad de palabras, la serie que más las confundió fue Narcos (6.21 activaciones por cada 10 000 palabras, sumando todas las bocinas), muchas veces con diálogos en español; las bocinas estaban configuradas en inglés. Como medida, los autores mencionan el botón para apagar el micrófono.
 Datos de 2020; las bocinas han cambiado desde entonces. El dibujo es esquemático.
@@ -65,9 +65,9 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Una bocina inteligente puede activarse sola con el diálogo de una serie, y casi todas esas activaciones mandaron el audio a la nube.
-Un estudio de Northeastern University e Imperial College London (Dubois et al., PETS 2020) expuso siete bocinas a 134 horas de series de TV, detectando las activaciones con cámara, tráfico de red y registros en la nube. En el peor caso, una bocina con una sola serie se activó hasta 0.95 veces por hora. La mayoría de las activaciones fue corta, pero en la HomePod el 10 % duró 10 segundos o más: tiempo suficiente para captar parte de una conversación privada.
-El estudio también da contexto: no encontró pruebas de grabación continua ni de palabras de activación secretas, y muchas activaciones no se repetían igual con el mismo audio. El diálogo poco claro o en otro idioma (en bocinas configuradas en inglés) aumentó los errores.
-Para quien diseña productos de voz, la lección es de privacidad desde el diseño: sensibilidad ajustable, procesar más en el dispositivo y transparencia sobre lo que se envía.
+Un estudio de Northeastern University e Imperial College London (Dubois et al., PETS 2020) expuso siete bocinas a 134 horas de series de TV y detectó con una cámara cuándo se prendía su luz. En el peor caso, una bocina con una sola serie se activó hasta 0.95 veces por hora, con frases tan comunes como "I'm sorry" o "I messed up". La mayoría de las activaciones fue corta, pero en la HomePod el 10 % duró 10 segundos o más.
+El estudio también da contexto: no encontró pruebas de grabación continua ni de palabras de activación secretas, y muchas activaciones no se repetían igual con el mismo audio. Por cantidad de palabras, la serie que más las confundió fue Narcos, muchas veces con diálogos en español, en bocinas configuradas en inglés.
+Para quien usa o diseña asistentes de voz, la conclusión es de privacidad: una activación por error no es solo una molestia, es audio que puede salir de tu casa. Los autores mencionan una medida simple del lado del usuario: el botón para apagar el micrófono.
 ¿Tienes un asistente de voz en tu casa u oficina? ¿Revisas sus grabaciones?
 Fuente: Dubois et al., Proceedings on Privacy Enhancing Technologies 2020(4). Datos de 2020.
 Shot IA #51 · La Creación del Robert

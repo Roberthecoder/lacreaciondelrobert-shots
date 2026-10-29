@@ -239,7 +239,7 @@ function Gnome() {
         {svg(gancho)}
       </Escena>
       <NumeroGigante T={T} at={K.G + 0.05} until={tSaca - 0.2} valor={2200000} dur={3.4} etiqueta="cristales «nuevos»" x={310} y={440} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.G + 4.3} until={tSaca - 0.2} texto="10 estables, al azar" x={300} y={520} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.G + 4.3} until={tSaca - 0.2} texto="10 estables, al azar" x={770} y={540} tam={40} borde={KC.ink} />
       <Chip T={T} at={tGemelo - 0.2} until={K.Cr - 0.2} texto="estructura conocida ≈" x={540} y={600} tam={46} borde={KC.ink} />
 
       {/* 2 · de cristales son los chips y la batería */}
@@ -287,10 +287,10 @@ function Gnome() {
           {[0, 1, 2].map((k) => { const t0 = K.Ct + 2.9 + k * 0.35, e = kprog(T, t0, t0 + 0.4, kEase.rebote), o = 1 - kprog(T, K.Ct + 5.3, K.Ct + 5.8); if (e <= 0 || o <= 0) return null;
             const cx = 200 + k * 340;
             return <g key={k} opacity={o} transform={`translate(${cx} 900) scale(${e})`}>
-              <Cristal x={-70} y={0} s={60} color={GCOL[k * 2]} /><Cristal x={70} y={0} s={60} gris />
+              <Cristal x={-80} y={0} s={58} color={GCOL[k * 2]} /><Cristal x={80} y={0} s={58} gris />
               <text x={0} y={22} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>≈</text>
-              <text x={-70} y={-90} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>«nuevo»</text>
-              <text x={70} y={-90} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>conocido</text>
+              <text x={-80} y={112} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>«nuevo»</text>
+              <text x={80} y={152} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>conocido</text>
             </g>; })}
           {Array.from({ length: 9 }, (_, i) => { const t0 = K.Ct + 5.7 + i * 0.12, e = kprog(T, t0, t0 + 0.4, kEase.rebote); if (e <= 0) return null;
             const x = 300 + (i % 3) * 150 + (Math.floor(i / 3) % 2) * 75, y = 1110 - Math.floor(i / 3) * 110;
@@ -300,8 +300,8 @@ function Gnome() {
       </Escena>
       <TarjetaEstudio T={T} at={K.Ct + 0.2} until={K.Ct + 2.7} anio="2024" quien="UC Santa Bárbara" revista="Cheetham y Seshadri · Chem. Mater." y={600} />
       <Chip T={T} at={K.Ct + 3.0} until={K.Ct + 5.4} texto="muchas: variaciones de lo conocido" x={540} y={720} tam={40} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Ct + 5.8} until={K.Rv - 0.2} valor={18000} dur={0.8} sufijo="+" etiqueta="con elementos radiactivos raros" x={400} y={700} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.Ct + 6.6} until={K.Rv - 0.2} texto="prometio · actinio · protactinio" x={540} y={1180} tam={34} mono borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ct + 5.8} until={K.Rv - 0.2} valor={18000} dur={0.8} sufijo="+" etiqueta="con elementos radiactivos raros" x={420} y={730} tam={130} color={KC.yellow} />
+      <Chip T={T} at={K.Ct + 6.6} until={K.Rv - 0.2} texto="prometio · actinio · protactinio" x={540} y={560} tam={34} mono borde={KC.ink} />
 
       {/* 7 · átomos ordenados vs. revueltos (por dentro) */}
       <Escena T={T} a={K.Rv} b={K.Co}>
@@ -338,7 +338,7 @@ function Gnome() {
         </>)}
       </Escena>
       <NumeroGigante T={T} at={K.C + 0.1} until={K.Ou} valor={2200000} dur={0.01} etiqueta="2.2 millones de cristales…" x={310} y={440} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="…≠ 2.2 millones de materiales" x={430} y={580} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="≠ 2.2 millones de materiales" x={370} y={590} tam={34} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.G + 7.5} texto="2.2 millones de cristales *nuevos…*" />

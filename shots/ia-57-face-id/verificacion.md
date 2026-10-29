@@ -36,3 +36,11 @@ Resumen: 14 ✅ · 1 ⚠️ · 0 ❌.
    - Pantalla, escena 6: cambiar la tarjeta a **"huella (Touch ID), 1 dedo registrado: 1 en 50,000"** y agregar a las tres tarjetas un chip chico **"cifras de Apple"** (la de la huella, "Apple, 2023").
    - Voz (opcional, si cabe en la duración): "Con la huella, Apple da una en cincuenta mil." No es indispensable: la frase anterior ya dice "Apple calcula" y el dato sigue siendo el vigente de Apple.
 2. **Fila 12 (ojos abiertos), sugerencia opcional, no bloquea:** si cabe, "Y, de fábrica, revisa que tengas los ojos abiertos…". En `publicacion.md` conviene aclarar que esto se puede apagar en Accesibilidad.
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Con la huella, Apple da una en cincuenta mil.» y tarjeta «huella (Touch ID), 1 dedo registrado · 1 en 50,000 · Apple, 2023»; chips «cifras de Apple» ✅
+- «Y, de fábrica, revisa que tengas los ojos abiertos…» con chip «se puede apagar en Accesibilidad» ✅
+- Recortes («¿Qué tan fácil es que otra cara lo abra?», «…lo compara con tu cara guardada.») sin datos nuevos ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

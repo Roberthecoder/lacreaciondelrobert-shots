@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot FaceId base narrada.dc.html",
+  "salida": "Shot FaceId narrado.dc.html",
+  "nota": "Shot IA #57. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu celular no te ve la cara: te la mide, con miles de puntos de luz que tus ojos no pueden ver."
+    },
+    {
+      "escena": "Mapa",
+      "texto": "Son infrarrojos: una cámara los lee y arma un mapa de profundidad de tu cara, más una foto infrarroja."
+    },
+    {
+      "escena": "Red",
+      "texto": "Luego una red neuronal, en una zona protegida del chip, lo vuelve números y lo compara con tu cara guardada."
+    },
+    {
+      "escena": "Foto",
+      "texto": "Por eso una foto impresa no sirve: no tiene profundidad."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Qué tan fácil es que otra cara lo abra?"
+    },
+    {
+      "escena": "Numero",
+      "texto": "Apple calcula que alguien al azar tiene menos de una probabilidad en un millón."
+    },
+    {
+      "escena": "Comparativa",
+      "texto": "Con la huella, Apple da una en cincuenta mil. Adivinar un código de cuatro dígitos, una en diez mil."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Al presentarlo en California, en 2017, Apple habló de más de treinta mil puntos."
+    },
+    {
+      "escena": "Gemelos",
+      "texto": "Pero ojo: Apple avisa que esa probabilidad sube con gemelos, hermanos parecidos a ti y niños menores de trece años."
+    },
+    {
+      "escena": "Ojos",
+      "texto": "Y, de fábrica, revisa que tengas los ojos abiertos: así es más difícil que lo abran mientras duermes."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Tu cara no es una llave: es un mapa. Y si tienes un gemelo, mejor usa un código."
+    }
+  ]
+}
