@@ -176,7 +176,7 @@ function EsporasConteoShot() {
             <path d={`M 150 ${MESA + 4} L 930 ${MESA + 4} L 960 ${MESA + 26} L 120 ${MESA + 26} Z`} fill="#fff" stroke={KC.ink} strokeWidth={5} />
             {levanta > 0 && <ellipse cx={540} cy={MESA + 14} rx={190 * levanta + 10} ry={9} fill={EC.cafe} opacity={0.85 * levanta} />}
             {/* pie cortado que se queda / cae */}
-            {corte > 0 && baja < 1 && <g opacity={1 - baja}><path d={`M 486 ${MESA - 2} L 482 ${MESA - 150} L 562 ${MESA - 150} L 558 ${MESA - 2} Z`} fill={EC.blanco} stroke={KC.ink} strokeWidth={7} transform={`translate(${380 * corte} 0)`} /></g>}
+            {corte > 0 && T < K.So + 2.4 && <g opacity={1 - kprog(T, K.So + 1.9, K.So + 2.4)}><path d={`M 486 ${MESA - 2} L 482 ${MESA - 150} L 562 ${MESA - 150} L 558 ${MESA - 2} Z`} fill={EC.blanco} stroke={KC.ink} strokeWidth={7} transform={`translate(${380 * corte} 0)`} /></g>}
             <Bisporus x={540} y={klerp(MESA - 190, MESA - 6, baja) - levanta * 520} s={1} rot={inclina} pie={corte > 0 ? 0 : 1} lam={1} />
             {/* cuchillo */}
             {T > K.So + 1.0 && T < K.So + 2.4 && <g transform={`translate(${klerp(120, 820, kprog(T, K.So + 1.2, K.So + 2.0, kEase.suave))} ${MESA - 150})`} opacity={1 - kprog(T, K.So + 2.1, K.So + 2.4)}>
@@ -266,7 +266,7 @@ function EsporasConteoShot() {
           <circle r={70 + 14 * Math.sin(T * 6)} fill={KC.gold2} opacity=".55" stroke={KC.ink} strokeWidth={4} />
           <rect x={-11} y={-9} width={21} height={17} rx={3} fill={KC.gold2} stroke={KC.ink} strokeWidth={3} />
           <g transform={`translate(0 -6) scale(${0.55 * kprog(T, K.L + 3.0, K.L + 3.8, kEase.rebote)})`}><Bisporus x={0} y={-180} s={0.6} pie={1} lam={0} /></g>
-        </g>}</>)}
+        </g>}</>, 35)}
       </Escena>
       {/* 12 · son cálculos aproximados */}
       <Escena T={T} a={K.A} b={K.C} zoom={0.04}>
