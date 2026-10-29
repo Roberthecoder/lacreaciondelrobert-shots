@@ -71,8 +71,8 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 En México no hay "un" maíz: CONABIO reporta 64 razas, y 59 se consideran nativas.
-Esa diversidad no es un accidente. Los agricultores han adaptado sus maíces a cada lugar, del nivel del mar a los 3,400 metros, y la polinización libre y el intercambio de semilla año con año la mantienen viva. Cada raza tiene usos propios: Cacahuacintle para pozole, Zapalote Chico para totopos, Palomero Toluqueño para palomitas, una variante del Chalqueño para harina de tamal.
-Un inventario clásico se publicó en 1951: Wellhausen y su equipo describieron 25 razas a partir de unas 2,000 muestras. Hoy esa diversidad se guarda también en bancos de semillas, y hay investigadores que proponen que algunos maíces criollos podrían ser clave para adaptarse a los climas que vienen.
+Esa diversidad no es un accidente. Los agricultores han adaptado sus maíces a cada lugar, del nivel del mar a los 3,400 metros, y la mantienen al guardar, intercambiar y probar su propia semilla. Cada raza tiene usos propios: Cacahuacintle para pozole, Zapalote Chico para totopos, Palomero Toluqueño para palomitas, una variante del Chalqueño para harina de tamal.
+En 1951, Wellhausen y su equipo publicaron «Razas de maíz en México»: describieron 25 razas a partir de unas 2,000 muestras. Hoy esa diversidad se guarda también en bancos de semillas, y hay investigadores que proponen que algunos maíces criollos podrían ser clave para adaptarse a los climas que vienen.
 ¿Qué otro cultivo de tu región crees que merece ser conservado?
 Shot Festivo #14 · Candelaria · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

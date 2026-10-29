@@ -373,7 +373,7 @@ function RazasMaiz() {
       <Etq T={T} at={K.Se + 2.8} until={K.Al - 0.3} x={60} y={480} texto="se prueba" tam={34} color={KC.ink} />
       <Medidor T={T} at={K.Al + 0.3} until={K.P - 0.3} y={1540} x={90} ancho={900} etiqueta="altura donde se siembra" valor={(t) => kprog(t, K.Al + 0.3, K.Al + 3.4, kEase.suave)} texto={(v) => kformato(Math.round(v * 3400 / 100) * 100) + ' m'} color={KC.mint} />
       <Etq T={T} at={K.Al + 0.6} until={K.P - 0.3} x={330} y={1080} texto="Zapalote Chico · costa" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Al + 1.8} until={K.P - 0.3} x={770} y={330} lado="izq" texto="Cónico · más de 3,000 m" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Al + 1.8} until={K.P - 0.3} x={770} y={330} lado="izq" texto="Cónico · hasta más de 3,000 m" tam={26} color={KC.ink} />
       {T > K.Co - 0.3 && T < K.E + 0.2 && <>
         <Etq T={T} at={K.Co + 0.8} until={K.E - 0.3} x={1030} y={560} lado="izq" texto="pericarpio (cáscara)" tam={30} />
         <Etq T={T} at={K.Co + 2.0} until={K.E - 0.3} x={60} y={1170} texto="capa de aleurona" tam={30} />

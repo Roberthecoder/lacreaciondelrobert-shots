@@ -67,4 +67,29 @@ Revisé el texto final completo de `narracion.json` y `guion.md` (29 oct 2026). 
 | "Muchas familias guardan, intercambian y prueban su propia semilla." | ✅ | ídem | "al mantener, intercambiar y experimentar con semilla propia o de otros vecinos de la misma localidad" | 2025 |
 | "En 1951, en México, Wellhausen y su equipo describieron veinticinco razas a partir de unas dos mil muestras." | ✅ | Wellhausen et al., *Razas de maíz en México* (1951; ed. inglesa 1952) | "First published in Mexico, April, 1951" / "approximately 2,000 samples of corn have been collected" / "at least twenty-five distinct races of maize in Mexico" | 1951 |
 
+## Revisión de pantalla y publicación (29 oct 2026)
+
+Revisé todo texto en pantalla de `razas-maiz.jsx` (Chip, Etq, MitoTachado, NumeroGigante, TarjetaEstudio, Medidor, Capitulo, Subtitulo, Escala, `<text>` SVG) y lo que afirman los dibujos, más `publicacion.md` (7 redes y comentario fijado).
+
+| Elemento | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Rasgos de las mazorcas: Cacahuacintle grano redondeado, blanco y harinoso | ✅ | Wellhausen et al. 1951/1952 | "Kernels medium to long, rounded, smooth … endosperm white, soft, floury" | 1951 |
+| Palomero Toluqueño: mazorca corta y cónica, grano puntiagudo blanco grisáceo | ✅ | ídem | "Length short to very short; conical shaped" / "strongly pointed, often beaked" / "endosperm highly corneous, of a grayish white color" | 1951 |
+| Zapalote Chico: mazorca muy corta | ✅ | ídem | "Ears, External Characters … Extremely short" | 1951 |
+| Chalqueño: mediana-larga, ancha, que se angosta a la punta | ✅ | ídem · CONABIO | "Medium long, broad … uniform taper" / "grandes y cónicas" | 1951 / 2025 |
+| Cuadrícula de 64 mazorcas (gancho y cierre) | ✅ cuenta exacta (64); colores y formas ilustrativos | CONABIO 2025 | "64 razas que se reportan para México" | 2025 |
+| Medidor «altura donde se siembra» 0 → 3,400 m | ✅ | CONABIO | "desde el nivel del mar hasta los 3,400 msnm" | 2025 |
+| «Zapalote Chico · costa» | ✅ | ficha Zapalote Chico | "planicie costera del istmo de Tehuantepec" | 2025 |
+| «Cónico · más de 3,000 m» | ⚠️ exagerada (sonaba a que vive arriba de 3,000 m; predomina entre 1,800 y 2,800) → **corregida en el .jsx a «Cónico · hasta más de 3,000 m»** ✅ | ficha Cónico | "desde los 950 hasta arriba de los 3,000 m" | 2020 |
+| Escala del grano en corte (60 px/mm → grano de ~11 × 9 mm) | ✅ plausible para un grano de maíz | Wellhausen 1951 (largo de granos en mm por raza) | — | 1951 |
+| Etiquetas «pericarpio (cáscara)», «capa de aleurona», chip «antocianinas: en una capa o en las dos» | ✅ | Salinas-Moreno 2021 | "pericarpio (P), capa de aleurona (CA) o en ambas estructuras" | 2021 |
+| TarjetaEstudio «1951 · Wellhausen y su equipo · Razas de maíz en México»; chips «≈ 2,000 muestras → 25 razas», «hoy: 64 razas» | ✅ | Wellhausen 1951 · CONABIO 2025 | ver tabla principal | 1951 / 2025 |
+| Puntos de colecta en el mapa | ✅ esquemáticos (sin número en pantalla) | Wellhausen 1951 | "collected varieties of maize from all parts of the Republic" | 1951 |
+| «Chalqueño · variante «palomo»», «harina de tamal», «su hoja envuelve tamales» | ✅ | ficha Chalqueño | "“palomo” para harina de tamal" / "El totomoxtle de esta raza es muy apreciado para envolver tamales" | 2025 |
+| «banco de semillas», «hipótesis: maíces para climas futuros» | ✅ | CIMMYT · Hellin 2014 | ver tabla principal | 2014 |
+| «64 razas · 59 nativas», «Especial Candelaria», «¿maíz a secas?», subtítulos | ✅ coinciden con la voz verificada; sin errores de ortografía | — | — | — |
+| publicacion.md, LinkedIn: «la polinización libre y el intercambio de semilla año con año la mantienen viva» | ⚠️ causalidad no dicha por la fuente → **corregida a «y la mantienen al guardar, intercambiar y probar su propia semilla»** ✅ | CONABIO | "han logrado adaptar y mantener … al mantener, intercambiar y experimentar con semilla propia" | 2025 |
+| publicacion.md, LinkedIn: «Un inventario clásico se publicó en 1951» | ⚠️ valoración sin fuente → **corregida a «En 1951, Wellhausen y su equipo publicaron «Razas de maíz en México»: …»** ✅ | Wellhausen 1951 | "First published in Mexico, April, 1951" | 1951 |
+| Resto de publicacion.md (TikTok, Instagram, YouTube, Facebook, X, Threads, comentario fijado) | ✅ solo datos ya verificados ("por su grano reventador" = ficha: "por el carácter reventador del grano"; Hellin "critical role" respalda "podrían ser clave") | — | — | — |
+
 VEREDICTO: APROBADO

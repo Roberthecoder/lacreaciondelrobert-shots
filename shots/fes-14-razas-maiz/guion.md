@@ -69,3 +69,5 @@ Apariciones: 9 · **≈ 40.9 s en pantalla** (+ cierre 3.8 s) · 8 poses distint
 - El libro de 1951 describe 25 razas principales; hoy CONABIO reporta 64 (en pantalla «25 en 1951 → 64 hoy»).
 - "Podrían servir para los climas que vienen" se dice como hipótesis (Hellin et al. 2014: "may already exist").
 - Sin teocintle ni domesticación (apartado por `bio-50-teocintle`). Sin afirmaciones sobre transgénicos ni sobre política.
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.
