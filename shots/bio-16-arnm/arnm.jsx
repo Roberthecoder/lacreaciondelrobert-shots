@@ -136,7 +136,6 @@ function Letras({ T, x, y, letras, cambia = [], p = 0, tam = 74 }) {
 }
 function Medalla({ T, x, y, r = 220, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${Math.sin(T * 1.5) * 3})`}>
-    <path d="M -90 -r L -150 -380 L -40 -380 L 20 -230 Z".replace(/r/g, String(r - 10))} fill={KC.blue} stroke={KC.ink} strokeWidth={7} />
     <path d={`M -90 ${-r + 10} L -150 -380 L -40 -380 L 20 -230 Z`} fill={KC.blue} stroke={KC.ink} strokeWidth={7} />
     <path d={`M 90 ${-r + 10} L 150 -380 L 40 -380 L -20 -230 Z`} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
     <circle r={r} fill={KC.gold} stroke={KC.ink} strokeWidth={10} />
