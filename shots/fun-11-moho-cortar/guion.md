@@ -37,21 +37,24 @@ Detalle completo, con la frase textual de cada afirmación, en `verificacion.md`
 
 1. **[USDA]** USDA Food Safety and Inspection Service (FSIS). *Molds on Food: Are They Dangerous?* Hoja informativa oficial, "Slightly Revised September 2005" (PDF del FSIS alojado en UC Davis): https://ucfoodsafety.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/26438.pdf
    - Respaldo: página actual del FSIS https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/molds-food-are-they-dangerous (desde esta sesión responde 403) y NC State Extension (2024), que atribuye la regla al USDA: https://brunswick.ces.ncsu.edu/2024/09/moldy-foods-use-or-pitch
-   - Regla de cortar: la hoja dice en la fila de frutas y verduras firmes "Small mold spots can be cut off fruits and vegetables with low moisture content" (manchas chicas; si el alimento está cubierto de moho: "If food is covered with mold, discard it"); por eso la voz dice "si la mancha es chica".
-   > "In many molds, the body consists of "root" threads that invade the food it lives on, a stalk that rises above the food and spores that form at the ends of the stalks. The spores give the mold the color you see."
-   > "a few molds, in the right conditions, produce mycotoxins, poisonous substances that can make you sick."
-   > "In dangerous molds, the mycotoxins are often contained in and around these threads. In some cases, the toxins may have spread throughout the food."
+   - Regla de cortar: la tabla dice "Small mold spots can be cut off FIRM fruits and vegetables with low moisture content." y "If food is covered with mold, discard it."; por eso la voz dice "si la mancha es chica".
+   > "No, you only see part of the mold on the surface of food — … fuzzy green dots on bread …"
+   > "root threads that invade the food it lives on"; "The roots may be difficult to see when the mold is growing on food and may be very deep in the food."
+   > "spores that form at the ends of the stalks. The spores give mold the color you see."
+   > "a few molds, in the right conditions, produce "mycotoxins," poisonous substances that can make you sick."
+   > "In dangerous molds, poisonous substances are often contained in and around these threads. In some cases, toxins may have spread throughout the food."
    > "Bread and baked goods — Discard — Porous foods can be contaminated below the surface."
-   > "Jams and jellies — Discard — The mold could be producing a mycotoxin. Microbiologists recommend against scooping out the mold and using the remaining condiment."
-   > "Yogurt and sour cream — Discard — Foods with high moisture content can be contaminated below the surface. Moldy foods may also have bacteria growing along with the mold."
-   > "Fruits and vegetables, soft (such as cucumbers, peaches, tomatoes, etc.) — Discard — Fruits and vegetables with high moisture content can be contaminated below the surface."
-   > "Soft cheese (such as cottage, cream cheese, Neufchatel, chevre, Bel Paese, etc.) … Discard … Moldy soft cheese can also have bacteria growing along with the mold."
-   > "Hard cheese … Use. Cut off at least 1 inch around and below the mold spot (keep the knife out of the mold itself so it will not cross-contaminate other parts of the cheese)… Mold generally cannot penetrate deep into the product."
-   > "Fruits and vegetables, firm (such as cabbage, bell peppers, carrots, etc.) — Use. Cut off at least 1 inch around and below the mold spot … It's difficult for mold to penetrate dense foods."
+   > "Jams and jellies — Discard — The mold could be producing a mycotoxin."
+   > "Yogurt and sour cream — Discard — Foods with high moisture content can be contaminated below the surface."
+   > "Foods with high moisture content can be contaminated below the surface. Moldy foods may also have bacteria growing along with the mold."
+   > "Fruits and vegetables, SOFT (such as cucumbers, peaches, tomatoes, etc.) — Discard"
+   > "Soft cheese (such as cottage, cream cheese, …) — Discard"
+   > "Hard cheese (not cheese where mold is part of the processing) — Use."; "Use. Cut off at least 1 inch around and below the mold spot"; "(keep the knife out of the mold itself so it will not cross-contaminate other parts of the cheese)"; "Mold generally cannot penetrate deep into the product."
+   > "Fruits and vegetables, FIRM (such as cabbage, bell peppers, carrots, etc.) — Use"; "It's difficult for mold to penetrate dense foods."
    > "Don't sniff the moldy item. This can cause respiratory trouble."
    - 1 pulgada = 2.54 cm → "al menos dos centímetros y medio".
 2. **[RS]** Rychlik, M. y Schieberle, P. (2001). Model studies on the diffusion behavior of the mycotoxin patulin in apples, tomatoes, and wheat bread. *European Food Research and Technology* 212(3): 274–278. https://doi.org/10.1007/s002170000255 · resumen en el portal de la Universidad Técnica de Múnich: https://portal.fis.leibniz-lsb.tum.de/en/publications/model-studies-on-the-diffusion-behavior-of-the-mycotoxin-patulin--3/
    > "Pat did not diffuse into apples affected by the fungus Penicillium expansum. At a distance of more than 2 cm from the infected zone the mycotoxin was not detectable. However, in a similar experiment with tomatoes the mycotoxin was found to penetrate into the whole fruit. These different characteristics were related to the physical laws of diffusion and attributed to differences in the texture of the foods."
-   - Autores en la Universidad Técnica de Múnich (Alemania), según el portal de la universidad. Se leyó el resumen; el artículo completo está tras muro de pago.
+   - Afiliación: "Institut für Lebensmittelchemie der Technischen Universität München, Lichtenbergstr. 4, 85748 Garching, Germany". Se leyó el resumen; el artículo completo está tras muro de pago.
 
 El dibujo es esquemático. No es consejo médico.
