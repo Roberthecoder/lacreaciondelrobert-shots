@@ -160,7 +160,7 @@ function ArrierasShot() {
         {fsvg(<>
           <rect x={0} y={1110} width={KW} height={900} fill={AR.tierra} stroke={KC.ink} strokeWidth={8} />
           <path d="M 0 1110 Q 300 1100 540 1110 Q 800 1120 1080 1108" stroke="#5aa040" strokeWidth={14} fill="none" />
-          <Hilera T={T} y={1060} n={6} s={0.95} vel={95} sep={300} x0={-80} />
+          <Hilera T={T} y={1050} n={5} s={1.15} vel={105} sep={330} x0={-60} />
           <Sello T={T} at={K.G + 2.3} x={330} y={720} texto="NO" color={KC.red} r={110} />
         </>)}
       </Escena>
@@ -178,18 +178,18 @@ function ArrierasShot() {
       <Escena T={T} a={K.Pa} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <defs><mask id="ar-corte"><rect x={0} y={0} width={KW} height={KH} fill="#fff" /><circle cx={300} cy={850} r={10 + 150 * corte} fill="#000" /></mask></defs>
-          <path d="M 640 600 Q 660 760 610 1010" stroke="#5a7a2a" strokeWidth={16} fill="none" />
-          <g mask="url(#ar-corte)">
+          <defs><mask id="ar-corte"><rect x={0} y={0} width={KW} height={KH} fill="#fff" /><circle cx={392} cy={858} r={10 + 140 * corte} fill="#000" /></mask></defs>
+          <path d="M 730 600 Q 750 760 700 1010" stroke="#5a7a2a" strokeWidth={16} fill="none" />
+          <g mask="url(#ar-corte)"><g transform="translate(90 0)">
             <path d="M 620 640 Q 380 560 190 760 Q 260 960 620 900 Q 660 760 620 640 Z" fill={AR.hoja} stroke={KC.ink} strokeWidth={7} />
             <path d="M 620 650 Q 420 760 220 770" stroke="rgba(255,255,255,.45)" strokeWidth={6} fill="none" />
-          </g>
-          {corte > 0.95 && <g transform={`translate(${klerp(300, 470, pasta)} ${klerp(850, 1010, pasta)}) scale(${klerp(1, 0.25, pasta)})`}>
-            <circle r={150} fill={AR.hoja} stroke={KC.ink} strokeWidth={7} opacity={1 - pasta * 0.6} />
+          </g></g>
+          {corte > 0.95 && <g transform={`translate(${klerp(392, 470, pasta)} ${klerp(858, 1010, pasta)}) scale(${klerp(1, 0.25, pasta)})`}>
+            <circle r={140} fill={AR.hoja} stroke={KC.ink} strokeWidth={7} opacity={1 - pasta * 0.6} />
           </g>}
-          <Hormiga T={T} x={130} y={900} s={1.75} paso={0.15} fase={1} />
+          <Hormiga T={T} x={215} y={900} s={1.75} paso={0.15} fase={1} />
           {/* cortadora: mandíbula que hace tijera */}
-          <path d={`M 300 862 L ${318 + Math.sin(T * 22) * 8} 840`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" opacity={corte < 1 ? 1 : 0} />
+          <path d={`M 385 868 L ${403 + Math.sin(T * 22) * 8} 846`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" opacity={corte < 1 ? 1 : 0} />
           <Jardin T={T} x={860} y={1130} rx={200} ry={90} seed={8} n={50} hojas={8} tam={0.8} />
           <Hormiga T={T} x={klerp(420, 650, alJardin)} y={1120} s={0.62} paso={alJardin > 0 && alJardin < 1 ? 1 : 0.1} fase={2} />
           {pasta > 0 && <g transform={`translate(${klerp(470, 708, alJardin)} ${klerp(1080, 1090, alJardin)})`}>
@@ -259,12 +259,12 @@ function ArrierasShot() {
       <Escena T={T} a={K.Es} b={K.Ba} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<g opacity={kprog(T, K.Es + 0.8, K.Es + 1.3)}>
-          <MapaMexico x={300} y={780} ancho={720} />
-          <g transform={`translate(${300 + panama[0] * 0.72} ${780 + panama[1] * 0.72})`}>
+          <MapaMexico x={230} y={600} ancho={760} />
+          <g transform={`translate(${230 + panama[0] * 0.76} ${600 + panama[1] * 0.76})`}>
             <circle r={22 + 10 * Math.abs(Math.sin(T * 4))} fill="none" stroke={KC.red} strokeWidth={6} />
             <circle r={11} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
           </g>
-          <text x={300 + panama[0] * 0.72 - 30} y={780 + panama[1] * 0.72 + 70} textAnchor="end" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Es + 1.6, K.Es + 2.0)}>Panamá</text>
+          <text x={230 + panama[0] * 0.76 - 30} y={600 + panama[1] * 0.76 - 40} textAnchor="end" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Es + 1.6, K.Es + 2.0)}>Panamá</text>
         </g>)}
       </Escena>
       {/* 9 · bacterias en el cuerpo que hacen antibióticos (capa visible en Acromyrmex) */}
@@ -314,7 +314,7 @@ function ArrierasShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<CorteSuelo T={T} ySup={kprog(T, K.C, K.C + 1.6, kEase.suave) > 0 ? klerp(1110, 760, kprog(T, K.C + 0.2, K.C + 1.6, kEase.suave)) : 1110} cam={[540, 1330, 520, 300]}>
           <Jardin T={T} x={540} y={1330} rx={500} ry={280} seed={4} n={150} hojas={22} />
-          <Hilera T={T} y={klerp(1060, 712, kprog(T, K.C + 0.2, K.C + 1.6, kEase.suave))} n={6} s={0.95} vel={95} sep={300} x0={-80} />
+          <Hilera T={T} y={klerp(1050, 702, kprog(T, K.C + 0.2, K.C + 1.6, kEase.suave))} n={5} s={1.15} vel={105} sep={330} x0={-60} />
           {Array.from({ length: 5 }, (_, i) => { const u = ((T - K.C) * 0.5 + i / 5) % 1; const o = kprog(T, K.C + 1.6, K.C + 2.2);
             return <path key={i} d="M -12 -8 L 12 -10 L 14 8 L -8 11 Z" transform={`translate(${klerp(545, 560, u) - Math.sin(u * Math.PI) * 40} ${klerp(780, 1040, u)}) rotate(${u * 300})`} fill={HOJAS[i]} stroke={KC.ink} strokeWidth={3} opacity={o} />; })}
         </CorteSuelo>)}
@@ -343,11 +343,11 @@ function ArrierasShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.5} until={K.H - 0.2} texto="¿las cargan para comérselas?" x={330} y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.G + 1.2} until={K.H - 0.2} x={60} y={900} texto="hormiga arriera" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.6} until={K.H - 0.2} x={60} y={950} texto="Atta mexicana" it tam={32} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.2} until={K.H - 0.2} x={60} y={880} texto="hormiga arriera" tam={34} />
+      <Etq T={T} at={K.G + 1.6} until={K.H - 0.2} x={60} y={930} texto="Atta mexicana" it tam={34} />
       <Rotulo T={T} at={K.H + 1.2} until={K.Pa - 0.2} x={40} y={700} partes={[['hongo cultivado', false]]} tam={32} />
       <Rotulo T={T} at={K.H + 1.6} until={K.Pa - 0.2} x={40} y={750} partes={[['Leucoagaricus gongylophorus', true]]} tam={32} />
-      <Chip T={T} at={K.Pa + 0.4} until={K.B - 0.2} texto="cortadora" x={240} y={560} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Pa + 0.4} until={K.B - 0.2} texto="cortadora" x={300} y={560} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.Pa + 2.3} until={K.B - 0.2} texto="jardinera" x={560} y={940} tam={34} borde={KC.ink} />
       <Rotulo T={T} at={K.B + 0.9} until={Bm - 0.2} x={40} y={430} partes={[['gongilidios: puntas hinchadas del hongo', false]]} tam={30} />
       <Chip T={T} at={K.B + 0.4} until={Bm - 0.2} texto="AL MICROSCOPIO" x={540} y={1150} tam={30} mono borde={KC.cyan} />
@@ -356,31 +356,31 @@ function ArrierasShot() {
       <Chip T={T} at={K.E + 0.7} until={K.P - 0.2} texto="millones de años · hormigas jardineras" x={540} y={720} tam={34} borde={KC.ink} />
       <Rotulo T={T} at={K.Pl + 0.8} until={K.Es - 0.2} x={40} y={470} partes={[['hongo parásito', false]]} tam={34} />
       <Rotulo T={T} at={K.Pl + 1.2} until={K.Es - 0.2} x={40} y={525} partes={[['Escovopsis', true]]} tam={34} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Ba - 0.2} anio="1999" quien="Univ. de Toronto · Panamá" revista="Currie et al. · Nature, 1999" y={500} />
-      <Rotulo T={T} at={K.Ba + 0.6} until={K.To - 0.2} x={40} y={1180} partes={[['Acromyrmex', true], [', otra arriera', false]]} tam={30} color={KC.ink} linea={false} />
-      <Rotulo T={T} at={K.Ba + 1.0} until={K.To - 0.2} x={40} y={1225} partes={[['bacterias ', false], ['Pseudonocardia', true]]} tam={30} color={KC.ink} linea={false} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Ba - 0.2} anio="1999" quien="Univ. de Toronto · Panamá" revista="Currie et al. · Nature, 1999" y={430} />
+      <Rotulo T={T} at={K.Ba + 0.6} until={K.To - 0.2} x={40} y={1530} partes={[['Acromyrmex', true], [', otra arriera', false]]} tam={32} linea={false} />
+      <Rotulo T={T} at={K.Ba + 1.0} until={K.To - 0.2} x={40} y={1580} partes={[['bacterias ', false], ['Pseudonocardia', true]]} tam={32} linea={false} />
       <Chip T={T} at={K.Ba + 2.2} until={K.To - 0.2} texto="antibiótico vs. parásito" x={360} y={890} tam={30} borde={KC.cyan} />
       <Chip T={T} at={K.To + 0.3} until={K.Ch - 0.2} texto="22 especies revisadas en Panamá (1999)" x={540} y={480} tam={34} borde={KC.leaf} />
       <Rotulo T={T} at={K.Ch + 1.0} until={K.R - 0.2} x={40} y={430} partes={[['chicatana', false]]} tam={34} color={KC.ink} linea={false} />
       <Rotulo T={T} at={K.Ch + 1.4} until={K.R - 0.2} x={40} y={480} partes={[['Atta mexicana', true], [' (con alas)', false]]} tam={30} color={KC.ink} linea={false} />
       <Chip T={T} at={K.Ch + 2.6} until={K.R - 0.2} texto="en salsa" x={790} y={880} tam={34} borde={KC.red} />
-      <Rotulo T={T} at={K.R + 0.3} until={K.C - 0.2} x={40} y={1220} partes={[['futura reina', false]]} tam={30} color={KC.ink} linea={false} />
+      <Rotulo T={T} at={K.R + 0.3} until={K.C - 0.2} x={40} y={1530} partes={[['futura reina', false]]} tam={32} linea={false} />
       <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="la hoja = abono" x={330} y={470} tam={40} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 mm" largo={120} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 mm" largo={150} />
       <BarraEscala T={T} at={K.H} until={K.Pa} texto="5 cm" largo={150} />
       <BarraEscala T={T} at={K.Pa} until={K.B} texto="5 mm" largo={200} />
       <BarraEscala T={T} at={K.B} until={Bm} texto="10 µm" largo={40} />
       <BarraEscala T={T} at={Bm} until={K.E} texto="1 mm" largo={60} />
       <BarraEscala T={T} at={K.E} until={K.P} texto="10 millones de años" largo={127} />
       <BarraEscala T={T} at={K.P} until={K.Es} texto="1 cm" largo={150} />
-      <BarraEscala T={T} at={K.Es} until={K.Ba} texto="500 km" largo={82} />
+      <BarraEscala T={T} at={K.Es} until={K.Ba} texto="500 km" largo={86} />
       <BarraEscala T={T} at={K.Ba} until={K.To} texto="1 mm" largo={90} />
       <BarraEscala T={T} at={K.To} until={K.Ch} texto="5 mm" largo={120} />
       <BarraEscala T={T} at={K.Ch} until={K.R} texto="1 cm" largo={80} />
       <BarraEscala T={T} at={K.R} until={K.C} texto="2 mm" largo={60} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 mm" largo={120} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 mm" largo={150} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No las cargan para comérselas: *son granjeras.*" />

@@ -29,6 +29,25 @@
 
 Barras de escala: 5 cm (rana), 50 µm (corte de piel), 5 µm (zoosporas), 10 cm (salamandra).
 
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y cómo una piel enferma mata a una rana entera?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «esta rana no está dormida» (cuadro 0) |
+| 2 | 5.8 | 9.4 | 13_senalando_arriba | `arriba-der` | la lupa: «respiran en parte por la piel» |
+| 3 | 15.1 | 18.9 | 04_bajando_lentes | `arriba-der` | «se meten en la queratina… bolsitas» |
+| 4 | 22.9 | 25.8 | 07_pensativo_puno | `grande` | «¿cómo una piel enferma mata a una rana entera?» |
+| 5 | 30.6 | 34.8 | 10_serio_molesto | `arriba-der` | «el corazón se detuvo» |
+| 6 | 35.4 | 39.3 | 12_perfil_serio | `arriba-der` | «al menos 501 especies… 90 presuntas extinciones» |
+| 7 | 42.0 | 46.5 | 06_pensativo_menton | `arriba-der` | «la ola salió del sur de México» |
+| 8 | 49.3 | 53.3 | 11_sorprendido | `arriba-der` | «solo el cuatro por ciento» |
+| 9 | 53.9 | 57.9 | 02_apuntando_camara | `arriba-der` | «algo que tus ojos nunca van a ver» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **35.4 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
+
 ## Fuentes (texto abierto el 29 oct 2026)
 
 1. Voyles, J. et al. (2009). Pathogenesis of chytridiomycosis, a cause of catastrophic amphibian declines. *Science* 326(5952): 582–585. https://pubmed.ncbi.nlm.nih.gov/19900897/ (dato de 2009; ranas *Litoria caerulea*, James Cook University, Australia)

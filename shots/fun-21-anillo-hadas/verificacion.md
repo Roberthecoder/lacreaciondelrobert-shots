@@ -46,4 +46,35 @@ Fuentes abiertas:
 
 Resumen: 29 oct 2026, re-verificadas las 2 correcciones (fila 11: "estimaron" en voz y guion; fila 17: cita textual de RHS) contra el texto de Shantz y Piemeisel 1917 y la página de RHS. Las 17 afirmaciones (voz, pantalla y fuentes) quedan ✅.
 
-VEREDICTO: APROBADO
+## Revisión final (animación y publicación) · 29 oct 2026
+
+Revisados todos los textos en pantalla de `anillo.jsx` (chips, etiquetas, sellos, viñetas, tarjetas, contador, subtítulos), las barras de escala
+contra el tamaño real de lo dibujado (px), `publicacion.md` completo (7 redes + comentario fijado) y las citas de `## Fuentes` del guion.
+Fuente extra abierta: Kuo 2013, esporas de *M. oreades*: "Spores 7-10 x 4-6 µ; smooth; fusoid-ellipsoid".
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Chips/sellos: "¿anillo de hadas?", "NO", "es un hongo", "HONGO" | ✅ | [SP] | "these circular growths marked the paths of dancing fairies"; anillos causados por hongos | 1917 |
+| R2 | Etiquetas "espora", "micelio (hifas)", "comida agotada", "borde vivo", "nitrógeno (amonio)", "micelio que repele el agua" | ✅ | [SP], [NCSU] | (filas 2–6) "reduce a part of the organic matter to ammonia"; "hydrophobic (water-repellant)" | 1917 / 2017 |
+| R3 | Chips "tipo II · anillo verde", "tipo I · anillo café", "tipo III · anillo de setas" | ✅ | [NCSU] | "Three types of fairy ring symptoms are observed in turfgrasses: Type I, Type II, and Type III." | 2017 |
+| R4 | *Marasmius oreades* · "hongo de los anillos"; dibujo de perfil (sombrero 2.8–4.9 cm, pie 4–7 cm con barra 5 cm = 190 px) | ✅ | [KUO] | "This mushroom is often called the 'fairy ring mushroom'"; "1-5 cm across"; "2-8 cm long" | 2013 |
+| R5 | Espora elipsoidal ≈ 10 × 6 µm (barra 10 µm = 110 px) | ✅ | [KUO] | "Spores 7-10 x 4-6 µ; smooth; fusoid-ellipsoid" | 2013 |
+| R6 | Tarjeta "1917 · este de Colorado · Shantz y Piemeisel · Journal of Agricultural Research"; chip "≈ 12 cm por año (promedio estimado)"; subtítulo "1917: unos 12 cm al año" | ✅ | [SP] | (filas 9–11) | 1917 |
+| R7 | Contador "250 años" junto a "0→60 m de ancho"; chip "estimación"; subtítulo "60 metros: unos 250 años" | ✅ | [SP] | "A ring 60 meters in diameter would be approximately 250 years old." | 1917 |
+| R8 | Tarjeta "2010 · Universidad de Shizuoka, Japón · ChemBioChem, 2010"; *Lepista sordida* lila; chip "AHX (2-azahipoxantina)" | ✅ | [CHOI], [KAW], [FN] | (filas 14–14c) | 2010 / 2019 |
+| R9 | Viñetas "hadas bailando", "el diablo · mantequera · Holanda", "un dragón · Alemania"; chip "folclor europeo" | ✅ | [SP] | (filas 15–15d) | 1917 |
+| R10 | "POR DENTRO · bajo el pasto" (Lupa con micelio); chip y subtítulo "años, o siglos" | ✅ | [SP], [RHS] | (fila 13) | 1917 |
+| R11 | Publicación: llama en pasto seco citada por Shantz de Ritzema Bos | ✅ | [SP] | "To use a figure already employed by Ritzema Bos (1901), the spread of the mycelium would resemble the spread of a flame" | 1917 |
+| R12 | Publicación: 30–60 cm en años favorables, casi nada en secos | ✅ | [SP] | "30 to 60 cm. during favorable years and very slow or none at all during unfavorable years" | 1917 |
+| R13 | Publicación: los más grandes, unos 420 y hasta 600 años | ✅ | [SP] | "would be approximately 420 years"; "approximately 600 years" | 1917 |
+| R14 | Publicación: "nunca regresa"; "dragón brillante"; "setas o bejines (tipo III)"; "más de 60 especies" | ✅ | [SP], [NCSU] | "never recedes"; "glowing dragon"; "mushrooms or puffballs"; "Over 60 species of fungi have been associated with fairy ring symptoms in turfgrasses" | 1917 / 2017 |
+| R15 | Publicación: grupo de Hirokazu Kawagishi (Shizuoka) aisló AHX en 2010, "químico de hada"; LinkedIn: "hoy se estudia en cultivos" | ✅ | [CHOI], [KAW] | Kawagishi es autor del artículo de 2010; "named as fairy chemicals (FCs)"; "FCs increased the yield of rice, wheat, and other crops in the greenhouse and/or field experiments" | 2010 / 2019 |
+| R16 | Publicación: "puede ser un organismo de siglos" (LinkedIn) | ✅ | [SP], [RHS] | "approximately 600 years"; "may exist for hundreds of years" | 1917 |
+| R17 | Citas de `## Fuentes` (NCSU "release of nitrogen…", "Most cases of Type I…"; Kuo "in troops, arcs, or rings") | ✅ | [NCSU], [KUO] | Aparecen textuales en las páginas | 2017 / 2013 |
+| R18 | Escena del estudio (1917): barra "10 m" (140 px) y la cinta amarilla "+12 cm por año" mide 160 px (≈ 11 m con esa barra) | ⚠️ | — | La barra dice que la cinta mide unos 11 m, pero el dato es de 12 cm. | — |
+| R19 | Escena de la edad: barra "10 m" = 140 px, pero el anillo final de 60 m mide unos 700 px de diámetro (10 m ≈ 117 px); la persona "a escala" (`Personita s=1.6`, ≈ 41 px) mide ≈ 3.5 m | ⚠️ | — | La escala no cuadra con el anillo y la persona sale del doble de alta. | — |
+| R20 | Cierre: barra "1 m" = 120 px, pero las suelas de los zapatos (`Pies s=0.75`) miden ≈ 160 px (≈ 1.3 m) y las setas vistas desde arriba ≈ 49 px (≈ 40 cm); el anillo (≈ 8 m) no llega a "siglos" con 12 cm/año (≈ 33 años) | ⚠️ | [SP], [KUO] | Zapatos y setas fuera de escala; el anillo dibujado es de décadas. | — |
+| R21 | Gancho y pregunta: barra "1 m" = 120 px con setas desde arriba de 40 px (≈ 33 cm; reales 1–5 cm) | ⚠️ | [KUO] | "1-5 cm across" | 2013 |
+| R22 | Escena "comida agotada / borde vivo" (anillo con centro gris de ≈ 5–7 cm) bajo la barra "1 cm" | ⚠️ | [SP] | "During the first year or two there would be no differentiation into zones": un anillo con centro agotado no mide centímetros. | 1917 |
+
+Pendiente: R18–R22 (escalas de la animación). La voz, los textos en pantalla y `publicacion.md` están ✅.
