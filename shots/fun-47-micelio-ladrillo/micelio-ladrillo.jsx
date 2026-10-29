@@ -349,7 +349,7 @@ function MicelioShot() {
       <Chip T={T} at={K.O + 1.2} until={K.P - 0.3} texto="en un estudio de 2019: horno a 70 °C" x={480} y={1180} tam={28} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.To + 0.2} until={K.To + 2.5} anio="2014" quien="Hy-Fi · MoMA PS1, Nueva York" revista="The Living · Arup · Holcim Foundation" y={640} />
       <NumeroGigante T={T} at={K.To + 2.8} until={K.Cp - 0.3} valor={10000} dur={3.4} etiqueta="ladrillos" x={830} y={900} tam={96} color={KC.yellow} />
-      <Chip T={T} at={K.To + 4.0} until={K.Cp - 0.3} texto="hongo + tallos de maíz" x={800} y={1060} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.To + 4.0} until={K.Cp - 0.3} texto="hongo + tallos de maíz" x={800} y={740} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Cp + 0.4} until={K.D - 0.3} texto="verano de 2014 → composta" x={540} y={480} tam={38} borde={KC.leaf} />
       <Etq T={T} at={K.Cp + 2.4} until={K.D - 0.3} x={690} y={1100} texto="jardines comunitarios" tam={30} color={KC.ink} />
       <Chip T={T} at={K.D + 0.2} until={K.A - 0.3} texto="aguante a la compresión (MPa)" x={420} y={470} tam={34} borde={KC.ink} />

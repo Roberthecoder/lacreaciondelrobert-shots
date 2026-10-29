@@ -35,12 +35,12 @@ function Fresa({ T = 0, x, y, s = 1, madurez = 1, moho = 0, lado = 1, rot = 0, b
 }
 
 // Flor de fresa vista de frente: 5 pétalos blancos, centro amarillo (receptáculo con pistilos) y anillo de estambres.
-function FlorFresa({ T = 0, x, y, s = 1, petalos = 1, punto = 0, abre = 1 }) {
+function FlorFresa({ T = 0, x, y, s = 1, petalos = 1, punto = 0, abre = 1, estambres = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s * (0.4 + 0.6 * abre)}) rotate(${mece(T, 7, 0.3) * 4})`}>
     {[0, 1, 2, 3, 4].map((i) => { const a = i * 72 - 90; const p = kclamp(petalos * 5 - (4 - i), 0, 1); return p > 0 ? <g key={i} transform={`rotate(${a}) translate(${70} 0) rotate(${(1 - p) * 40}) translate(${(1 - p) * 60} 0)`} opacity={p}>
       <ellipse cx={0} cy={0} rx={62} ry={56} fill={BC.petalo} stroke={KC.ink} strokeWidth={6} />
       <path d="M -40 0 Q 0 -6 40 0" stroke="#e8e6da" strokeWidth={4} fill="none" /></g> : null; })}
-    {Array.from({ length: 20 }, (_, i) => { const a = (i / 20) * Math.PI * 2; return <g key={i}>
+    {Array.from({ length: 20 }, (_, i) => { const a = (i / 20) * Math.PI * 2; if (i / 20 >= estambres) return null; return <g key={i}>
       <line x1={Math.cos(a) * 28} y1={Math.sin(a) * 28} x2={Math.cos(a) * 52} y2={Math.sin(a) * 52} stroke={BC.filamento} strokeWidth={4} />
       <ellipse cx={Math.cos(a) * 54} cy={Math.sin(a) * 54} rx={7} ry={5} fill={BC.antera} stroke={KC.ink} strokeWidth={2} transform={`rotate(${a * 57.3} ${Math.cos(a) * 54} ${Math.sin(a) * 54})`} /></g>; })}
     <circle r={32} fill={BC.centro} stroke={KC.ink} strokeWidth={5} />
@@ -187,12 +187,12 @@ function BotrytisShot() {
       <Escena T={T} a={K.H} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Fresa T={T} x={430} y={800} s={1.55} moho={0.75} lado={1} seed={9} />
+          <Fresa T={T} x={430} y={760} s={1.55} moho={0.75} lado={1} seed={9} />
           {[
-            [140, 1110, (k) => <RacimoUvas T={T} x={0} y={-50} s={0.38} moho={k} />],
-            [380, 1110, (k) => <g><circle r={62} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><path d="M -20 -60 L 0 -76 L 20 -60" stroke={BC.caliz} strokeWidth={10} fill="none" /><circle cx={24} cy={8} r={26 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
-            [620, 1110, (k) => <g>{[[0, -30], [-24, -6], [24, -6], [-14, 20], [14, 20], [0, 44], [0, -2]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={20} fill="#d0204a" stroke={KC.ink} strokeWidth={4} />)}<circle cx={10} cy={0} r={28 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
-            [860, 1110, (k) => <g><ellipse rx={50} ry={70} fill="#ffd6e8" stroke={KC.ink} strokeWidth={6} transform="rotate(20)" /><circle cx={6} cy={10} r={30 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
+            [140, 1060, (k) => <RacimoUvas T={T} x={0} y={-50} s={0.38} moho={k} />],
+            [380, 1060, (k) => <g><circle r={62} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><path d="M -20 -60 L 0 -76 L 20 -60" stroke={BC.caliz} strokeWidth={10} fill="none" /><circle cx={24} cy={8} r={26 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
+            [620, 1060, (k) => <g>{[[0, -30], [-24, -6], [24, -6], [-14, 20], [14, 20], [0, 44], [0, -2]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={20} fill="#d0204a" stroke={KC.ink} strokeWidth={4} />)}<circle cx={10} cy={0} r={28 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
+            [860, 1060, (k) => <g><ellipse rx={50} ry={70} fill="#ffd6e8" stroke={KC.ink} strokeWidth={6} transform="rotate(20)" /><circle cx={6} cy={10} r={30 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
           ].map(([px, py, f], i) => { const on = kprog(T, K.H + 1.4 + i * 0.35, K.H + 1.8 + i * 0.35, kEase.rebote); return on > 0 ? <g key={i} transform={`translate(${px} ${py}) scale(${on})`}>
             <circle r={96} fill="#fff" stroke={KC.ink} strokeWidth={6} opacity=".9" />{f(kprog(T, K.H + 1.8 + i * 0.35, K.H + 2.2 + i * 0.35))}</g> : null; })}
         </>)}
@@ -267,10 +267,10 @@ function BotrytisShot() {
         <FondoMicro T={T} />
         {fsvg(<>
           <rect x={0} y={1120} width={KW} height={120} fill="#7a2a2a" opacity=".85" />
-          <Conidioforo x={300} y={1130} alto={430} s={0.8} p={kprog(T, micro + 0.1, micro + 1.6)} />
-          <Conidioforo x={780} y={1130} alto={460} s={0.85} p={kprog(T, micro + 0.3, micro + 1.8)} />
-          <Conidioforo x={540} y={1130} alto={520} s={1.05} p={kprog(T, micro, micro + 1.5)} />
-          {T > micro + 1.8 && <g transform="translate(160 560)" opacity={kprog(T, micro + 1.8, micro + 2.2)}>
+          <g opacity=".55"><Conidioforo x={170} y={1130} alto={260} s={1.3} p={kprog(T, micro + 0.3, micro + 1.8)} />
+          <Conidioforo x={900} y={1130} alto={240} s={1.3} p={kprog(T, micro + 0.4, micro + 1.9)} /></g>
+          <Conidioforo x={520} y={1130} alto={290} s={2.0} p={kprog(T, micro, micro + 1.6)} />
+          {T > micro + 1.8 && <g transform="translate(160 620)" opacity={kprog(T, micro + 1.8, micro + 2.2)}>
             <circle r={78} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
             <RacimoUvas T={T} x={0} y={-20} s={0.3} />
           </g>}
@@ -299,15 +299,16 @@ function BotrytisShot() {
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           {T < K.E2 + 2.2 && <g opacity={1 - kprog(T, K.E2 + 1.8, K.E2 + 2.2)}>
-            <g transform="translate(540 820)"><g transform="translate(-540 -820)"><FlorFresa T={T} x={540} y={820} s={1.6} /></g></g>
+            <FlorFresa T={T} x={540} y={820} s={1.6} estambres={1 - kprog(T, K.E2 + 0.9, K.E2 + 1.7)} />
+            {Array.from({ length: 6 }, (_, i) => { const u = kprog(T, K.E2 + 1.0 + i * 0.1, K.E2 + 1.9 + i * 0.1); return u > 0 && u < 1 ? <ellipse key={i} cx={560 + i * 18} cy={800 + u * 300} rx={10} ry={7} fill={BC.antera} stroke={KC.ink} strokeWidth={2} opacity={1 - u} /> : null; })}
             {(() => { const c = kprog(T, K.E2 + 0.4, K.E2 + 1.2); return <g transform={`translate(${klerp(900, 640, c)} ${klerp(560, 760, c)}) rotate(${Math.sin(T * 18) * 12 * c})`}>
               <path d="M 0 0 L 90 -30 M 0 0 L 90 30" stroke="#c0c6cc" strokeWidth={12} strokeLinecap="round" />
               <circle cx={-26} cy={-22} r={20} fill="none" stroke={KC.red} strokeWidth={10} /><circle cx={-26} cy={22} r={20} fill="none" stroke={KC.red} strokeWidth={10} /></g>; })()}
           </g>}
           {T > K.E2 + 1.9 && <g opacity={kprog(T, K.E2 + 1.9, K.E2 + 2.3)}>
-            <line x1={160} y1={1130} x2={920} y2={1130} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+            <line x1={160} y1={1060} x2={920} y2={1060} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
             {[[340, 380, BC.gris3], [740, 200, BC.gris2]].map(([cx, h, col], i) => { const hh = h * kprog(T, K.E2 + 2.2 + i * 0.4, K.E2 + 3.0 + i * 0.4, kEase.sale);
-              return <rect key={i} x={cx - 110} y={1130 - hh} width={220} height={hh} rx={14} fill={col} stroke={KC.ink} strokeWidth={6} />; })}
+              return <rect key={i} x={cx - 110} y={1060 - hh} width={220} height={hh} rx={14} fill={col} stroke={KC.ink} strokeWidth={6} />; })}
           </g>}
         </>)}
       </Escena>
@@ -316,14 +317,15 @@ function BotrytisShot() {
         <FondoLunares color={T < K.N + 1.8 ? '#7f8fd9' : KC.yellow} />
         {fsvg(<>
           {T < K.N + 2.1 && <g opacity={1 - kprog(T, K.N + 1.6, K.N + 2.1)}>
-            <circle cx={820} cy={520} r={70} fill="#fff6c8" stroke={KC.ink} strokeWidth={6} /><circle cx={850} cy={500} r={62} fill="#7f8fd9" />
+            <circle cx={580} cy={470} r={70} fill="#fff6c8" stroke={KC.ink} strokeWidth={6} /><circle cx={610} cy={450} r={62} fill="#7f8fd9" />
             {[0, 1, 2].map((i) => <rect key={i} x={-200 + ((T * 60 + i * 300) % 1300)} y={760 + i * 120} width={420} height={50} rx={25} fill="#fff" opacity=".55" />)}
           </g>}
-          {T > K.N + 1.6 && <g opacity={kprog(T, K.N + 1.6, K.N + 2.1)} transform={`rotate(${T * 20} 830 520)`}>
-            {Array.from({ length: 10 }, (_, i) => <line key={i} x1={830} y1={520} x2={830 + Math.cos(i * 0.628) * 120} y2={520 + Math.sin(i * 0.628) * 120} stroke={KC.orange} strokeWidth={10} strokeLinecap="round" />)}
-            <circle cx={830} cy={520} r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} /></g>}
-          <RacimoUvas T={T} x={360} y={700} s={1.05} pasa={pasa} moho={kprog(T, K.N + 1.0, K.N + 2.2) * 0.8} />
-          {[[200, 'Sauternes'], [420, 'Tokaji']].map(([bx], i) => { const on = kprog(T, K.N + 4.1 + i * 0.4, K.N + 4.5 + i * 0.4, kEase.rebote); return on > 0 ? <Botella key={i} x={bx} y={1060} s={0.75 * on} vino={i ? '#d98a1f' : '#f0b83a'} /> : null; })}
+          {T > K.N + 1.6 && <g opacity={kprog(T, K.N + 1.6, K.N + 2.1)} transform={`rotate(${T * 20} 590 470)`}>
+            {Array.from({ length: 10 }, (_, i) => <line key={i} x1={590} y1={470} x2={590 + Math.cos(i * 0.628) * 110} y2={470 + Math.sin(i * 0.628) * 110} stroke={KC.orange} strokeWidth={10} strokeLinecap="round" />)}
+            <circle cx={590} cy={470} r={62} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} /></g>}
+          <RacimoUvas T={T} x={300} y={620} s={0.85} pasa={pasa} moho={kprog(T, K.N + 1.0, K.N + 2.2) * 0.8} />
+          {[[740, 'Sauternes', 'Francia'], [930, 'Tokaji', 'Hungría']].map(([bx, nom, pais], i) => { const on = kprog(T, K.N + 4.1 + i * 0.4, K.N + 4.5 + i * 0.4, kEase.rebote); return on > 0 ? <g key={i}><Botella x={bx} y={980} s={0.72 * on} vino={i ? '#d98a1f' : '#f0b83a'} />
+            <text x={bx} y={1110} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={on}>{nom}</text><text x={bx} y={1140} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink} opacity={on}>({pais})</text></g> : null; })}
         </>)}
       </Escena>
       {/* 12 · cierre: la misma cajita, y en la fresa con pelusa aparece la flor de la que salió */}
@@ -342,7 +344,7 @@ function BotrytisShot() {
       <Chip T={T} at={K.G + 3.6} until={K.H - 0.3} texto="desde la flor" x={300} y={760} tam={36} borde={KC.mint} />
       <Etq T={T} at={K.H + 0.4} until={K.Es - 0.3} x={60} y={480} texto="moho gris" tam={40} color={KC.ink} />
       <Etq T={T} at={K.H + 0.8} until={K.Es - 0.3} x={60} y={540} texto="Botrytis cinerea" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.H + 2.4} until={K.Es - 0.3} texto="cientos de plantas" x={540} y={960} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.H + 2.4} until={K.Es - 0.3} texto="cientos de plantas" x={790} y={880} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Es + 0.6} until={K.Et - 0.3} x={60} y={560} texto="viento" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Es + 1.6} until={K.Et - 0.3} x={1030} y={520} lado="izq" texto="salpicaduras" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Es + 2.4} until={K.Et - 0.3} x={60} y={1080} texto="esporas que germinan" tam={30} color={KC.ink} />
@@ -354,10 +356,11 @@ function BotrytisShot() {
       <Chip T={T} at={K.Sp + 2.2} until={K.P - 0.3} texto="sin síntomas" x={760} y={600} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Sp + 1.6} until={K.P - 0.3} x={60} y={1150} texto="fresa verde" tam={32} color={KC.ink} />
       <Medidor T={T} at={K.M + 0.4} until={K.Pe - 0.3} valor={(t) => klerp(0.25, 0.9, kprog(t, K.M + 0.4, K.M + 2.6, kEase.suave))} etiqueta="azúcar" texto={() => '▲'} x={90} y={450} ancho={900} color={KC.pink} />
-      <Etq T={T} at={K.M + 2.0} until={K.Pe - 0.3} x={780} y={1080} lado="izq" texto="defensas" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.M + 2.0} until={K.Pe - 0.3} texto="defensas" x={860} y={950} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.M + 3.0} until={K.Pe - 0.3} texto="hipótesis: se cree" x={540} y={600} tam={36} borde={KC.lilac} />
-      <Chip T={T} at={micro + 0.1} until={K.V - 0.3} texto="AL MICROSCOPIO · la pelusa" x={460} y={470} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={micro + 1.0} until={K.V - 0.3} x={60} y={1060} texto="conidióforo (tallito)" tam={28} color={KC.texto} />
+      <Chip T={T} at={micro + 0.1} until={K.V - 0.3} texto="AL MICROSCOPIO · la pelusa" x={380} y={400} tam={28} borde={KC.cyan} mono />
+      <Chip T={T} at={micro + 2.0} until={K.V - 0.3} texto="esquemático" x={860} y={1060} tam={22} borde={KC.white} mono />
+      <Etq T={T} at={micro + 1.0} until={K.V - 0.3} x={560} y={1000} texto="conidióforo (tallito)" tam={28} color={KC.texto} />
       <Etq T={T} at={micro + 1.6} until={K.V - 0.3} x={1040} y={780} lado="izq" texto="esporas (conidios)" tam={28} color={BC.conidio} />
       <Chip T={T} at={K.V + 0.8} until={K.E - 0.3} texto="contacto" x={300} y={1150} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.V + 2.4} until={K.E - 0.3} texto="esporas al aire" x={360} y={480} tam={36} borde={KC.ink} />
@@ -366,16 +369,14 @@ function BotrytisShot() {
       <Etq T={T} at={K.E + 2.9} until={K.E2 - 0.3} x={60} y={1150} texto="flor" tam={32} color={KC.ink} />
       <Etq T={T} at={K.E + 3.1} until={K.E2 - 0.3} x={1040} y={1150} lado="izq" texto="fresa verde" tam={32} color={KC.ink} />
       <Chip T={T} at={K.E2 + 0.6} until={K.E2 + 1.9} texto="quitar los estambres" x={420} y={500} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.E2 + 2.0} until={K.N - 0.3} texto="fresas podridas" x={420} y={500} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.E2 + 2.3} until={K.N - 0.3} x={230} y={1180} texto="con estambres" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E2 + 2.7} until={K.N - 0.3} x={630} y={1180} texto="sin estambres" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.E2 + 3.0} until={K.N - 0.3} texto="temporada 2000–2001 · esquemático" x={540} y={600} tam={26} borde={KC.white} mono />
+      <Chip T={T} at={K.E2 + 2.0} until={K.N - 0.3} texto="fresas podridas" x={400} y={500} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.E2 + 2.3} until={K.N - 0.3} x={200} y={1110} texto="con estambres" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E2 + 2.7} until={K.N - 0.3} x={600} y={1110} texto="sin estambres" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.E2 + 3.0} until={K.N - 0.3} texto="temporada 2000–2001 · esquemático" x={400} y={590} tam={26} borde={KC.white} mono />
       <Etq T={T} at={K.N + 0.4} until={K.N + 1.8} x={60} y={480} texto="noches húmedas" tam={34} color={KC.texto} />
       <Etq T={T} at={K.N + 2.0} until={K.C - 0.3} x={60} y={480} texto="días secos" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.N + 2.8} until={K.C - 0.3} texto="podredumbre noble" x={400} y={560} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.N + 3.4} until={K.C - 0.3} x={60} y={640} texto="el mismo Botrytis cinerea" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.N + 4.3} until={K.C - 0.3} x={60} y={1180} texto="Sauternes (Francia)" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.N + 4.7} until={K.C - 0.3} x={290} y={1225} texto="Tokaji (Hungría)" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.N + 2.8} until={K.C - 0.3} texto="podredumbre noble" x={330} y={1010} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.N + 3.4} until={K.C - 0.3} x={40} y={1090} texto="el mismo Botrytis cinerea" it tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="esperó desde la flor" x={400} y={500} tam={38} borde={KC.mint} />
 
       {/* barras de escala */}
@@ -386,11 +387,11 @@ function BotrytisShot() {
       <BarraEscala T={T} at={K.Sp} until={K.P} texto="1 cm" largo={117} />
       <BarraEscala T={T} at={K.P} until={K.M} texto="1 cm" largo={47} />
       <BarraEscala T={T} at={K.M} until={micro} texto="1 cm" largo={127} />
-      <BarraEscala T={T} at={micro} until={K.V} texto="20 µm" largo={64} />
+      <BarraEscala T={T} at={micro} until={K.V} texto="20 µm" largo={87} />
       <BarraEscala T={T} at={K.V} until={K.E} texto="1 cm" largo={98} />
       <BarraEscala T={T} at={K.E} until={K.E2} texto="1 cm" largo={84} />
       <BarraEscala T={T} at={K.E2} until={K.N} texto="1 cm" largo={160} />
-      <BarraEscala T={T} at={K.N} until={K.C} texto="1 cm" largo={60} />
+      <BarraEscala T={T} at={K.N} until={K.C} texto="1 cm" largo={53} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={98} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
@@ -416,7 +417,7 @@ function BotrytisShot() {
         [micro + 0.4, K.V - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [K.E + 2.6, K.E2 - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.E2 + 0.4, K.N - 0.4, 'avatar_13_senalando_arriba', 'arriba-der'],
-        [K.N + 3.9, K.C - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'grande'],
+        [K.N + 0.3, K.N + 3.9, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [K.C + 0.4, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="biologia" num="49" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="biologia" robert={'assets/stickers/avatar_13_senalando_arriba.png'} />
