@@ -16,7 +16,7 @@
 | 2 | Estudio | Estudiantes de Yale lo hallaron entre decenas de hongos y lo publicaron en 2011. | `TarjetaEstudio` "2011 · Yale · 59 hongos probados · Russell et al., AEM". Fila de cajas Petri; una se ilumina. |
 | 3 | Enzima | Suelta una enzima que corta el poliuretano. | AL MICROSCOPIO (fondo oscuro): la hifa suelta enzimas (tijeritas) que cortan una cadena de poliuretano en eslabones. Etiqueta "enzima (serina hidrolasa)". |
 | 4 | SinOxigeno | Y lo deshizo igual de rápido sin oxígeno. | Dos tubos lado a lado, "con O₂" / "sin O₂", que se aclaran al mismo ritmo. |
-| 5 | Pregunta | ¿Entonces los hongos limpiarán el planeta? | **Re-gancho.** Un planeta lleno de basura y un "?" gigante; Robert grande, pensativo. |
+| 5 | Pregunta | ¿Entonces los hongos limpiarán el planeta? | **Re-gancho.** Un planeta lleno de basura (no a escala) y un "?" gigante; Robert grande, pensativo. |
 | 6 | Truco | Ojo: era poliuretano suspendido en agua, en laboratorio, no una bolsa tirada. | Zoom al tubo: "poliuretano suspendido en agua" (gotitas); al lado, una bolsa en el suelo con chip "esto NO". |
 | 7 | Pakistan | En Pakistán, otro hongo tardó dos meses en romper en pedazos una película de poliuretano, y con azúcar. | `TarjetaEstudio` "Islamabad · basurero · Khan et al., 2017"; etiqueta *Aspergillus tubingensis*; calendario 2 meses; una película se rompe en pedazos; chip "+ 2 % de glucosa". |
 | 8 | Revision | En 2022, una revisión de 664 reportes de microbios no halló pruebas de que se coman mucho polietileno puro, el plástico de las bolsas del súper. | Número gigante "664" con la etiqueta "reportes"; una cuadrícula de microbios; una bolsa del súper con chip "polietileno (PE), el plástico de las bolsas" y chip "sin pruebas de que se la coman mucho · Lear et al., 2022". |
@@ -47,7 +47,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces l
 | 7 | 29.6 | 32.7 | 06_pensativo_menton | `arriba-der` | «dos meses, y con azúcar» |
 | 8 | 33.4 | 36.3 | 11_sorprendido | `arriba-der` | «664 reportes» |
 | 9 | 37.3 | 40.7 | 10_serio_molesto | `arriba-der` | «no halló pruebas… polietileno» |
-| 10 | 41.9 | 45.2 | 04_bajando_lentes | `arriba-der` | «suelta aditivos, no se lo comen» |
+| 10 | 41.9 | 45.2 | 04_bajando_lentes | `arriba-der` | «pesa menos porque suelta aditivos» |
 | 11 | 45.8 | 49.3 | 13_senalando_arriba | `arriba-der` | «lo que sí sirve» |
 | 12 | 49.8 | 52.4 | 05_sonriendo_dientes_uniformes | `arriba-der` | «una pista, no un permiso» |
 | 13 | 53.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «en un tubo, no en tu basura» |
