@@ -12,7 +12,7 @@ Se llama carne cultivada. Se puede empezar con una biopsia: un pedacito de músc
 
 ¿Y qué lleva ese caldo? Por años, suero fetal bovino: la parte líquida de la sangre de fetos de vacas preñadas sacrificadas en el rastro. Es caro y cambia de lote a lote. En 2023, Singapur dio la primera aprobación del mundo a un caldo sin suero para producir carne cultivada.
 
-La primera hamburguesa cultivada la presentó Mark Post (Universidad de Maastricht) en Londres, el 5 de agosto de 2013: unas 20 mil tiritas de músculo y unos 250 mil euros. Singapur fue el primer país en aprobar su venta (diciembre de 2020) y Estados Unidos la aprobó en junio de 2023. En cambio, Italia la prohibió en 2023, y en EE. UU. siete estados la prohibieron entre 2024 y 2025.
+La primera hamburguesa cultivada la presentó Mark Post (Universidad de Maastricht) en Londres, el 5 de agosto de 2013: unas 20 mil tiritas de músculo y unos 250 mil euros. Singapur fue el primer país en aprobar su venta (diciembre de 2020) y Estados Unidos la aprobó en junio de 2023. En cambio, Italia la prohibió en 2023, Hungría en 2025, y varios estados de EE. UU. entre 2024 y 2026.
 
 Hoy el gran reto es el costo: según una revisión de 2022, el caldo puede ser del 55 al 95 % del costo de producción, y falta llevarla a tanques gigantes.
 
@@ -31,7 +31,7 @@ Esta carne no se cortó de un animal: creció en un tanque, desde pocas células
 
 Carne cultivada: de una biopsia de un animal vivo salen células madre del músculo. En un biorreactor con caldo de nutrientes se dividen una y otra vez; luego, con otro caldo, se unen en fibras de músculo, y otras células de la misma muestra se vuelven grasa.
 
-Por años el caldo llevó suero fetal bovino (de fetos de vacas sacrificadas); en 2023 Singapur aprobó el primer caldo sin suero. La primera hamburguesa: Londres, 2013, unas 20 mil tiritas y unos 250 mil euros. Singapur aprobó su venta en 2020 y EE. UU. en 2023; Italia y siete estados de EE. UU. la prohibieron. El reto hoy: el caldo, lo más caro, y los tanques gigantes.
+Por años el caldo llevó suero fetal bovino (de fetos de vacas sacrificadas); en 2023 Singapur aprobó el primer caldo sin suero. La primera hamburguesa: Londres, 2013, unas 20 mil tiritas y unos 250 mil euros. Singapur aprobó su venta en 2020 y EE. UU. en 2023; Italia, Hungría y varios estados de EE. UU. la prohibieron. El reto hoy: el caldo, lo más caro, y los tanques gigantes.
 
 El dibujo es esquemático. Fuentes en el primer comentario.
 
@@ -86,7 +86,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esta carne no se cortó de un animal: creció en un tanque, desde pocas células. 🥩
-Se empieza con una biopsia de un animal vivo; sus células madre del músculo se multiplican en un biorreactor y luego forman músculo y grasa. Singapur aprobó su venta en 2020 y EE. UU. en 2023; Italia y siete estados de EE. UU. la prohibieron.
+Se empieza con una biopsia de un animal vivo; sus células madre del músculo se multiplican en un biorreactor y luego forman músculo y grasa. Singapur aprobó su venta en 2020 y EE. UU. en 2023; Italia, Hungría y varios estados de EE. UU. la prohibieron.
 El dibujo es esquemático. ¿Tú la probarías? 👇
 Shot Biotecnológico #42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -100,7 +100,7 @@ Esta carne no se cortó de un animal: creció en un tanque, desde pocas células
 La carne cultivada parte de una biopsia de un animal vivo. Las células satélite (las células madre del músculo) se multiplican en biorreactores; después, con otro medio de cultivo, forman fibras de músculo, y otras células de la misma muestra (progenitores fibro-adipogénicos) forman grasa.
 
 Lo que importa para la industria:
-• Regulación dividida: Singapur aprobó su venta en 2020 y Estados Unidos en 2023; Italia la prohibió en 2023 y siete estados de EE. UU. lo hicieron entre 2024 y 2025.
+• Regulación dividida: Singapur aprobó su venta en 2020 y Estados Unidos en 2023; Italia la prohibió en 2023, Hungría en 2025 y varios estados de EE. UU. entre 2024 y 2026.
 • El medio de cultivo: por años dependió del suero fetal bovino; en 2023 Singapur aprobó por primera vez un medio sin suero.
 • El costo: una revisión de 2022 estima que el medio representa del 55 al 95 % del costo de producción, y escalar a tanques industriales sigue siendo el reto.
 
@@ -115,7 +115,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Esta carne no se cortó de un animal: creció en un tanque. 🥩🧫 La primera hamburguesa cultivada (Londres, 2013) costó unos 250 mil euros. Singapur aprobó su venta en 2020; Italia y 7 estados de EE. UU. la prohibieron. #CarneCultivada #Biotecnologia
+Esta carne no se cortó de un animal: creció en un tanque. 🥩🧫 La primera hamburguesa cultivada (Londres, 2013) costó unos 250 mil euros. Singapur aprobó su venta en 2020; Italia, Hungría y varios estados de EE. UU. la prohibieron. #CarneCultivada #Biotecnologia
 ```
 
 ### Threads

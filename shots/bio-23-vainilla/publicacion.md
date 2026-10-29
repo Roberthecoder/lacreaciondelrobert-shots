@@ -6,7 +6,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 
 ### TikTok
 ```text
-Tu helado de vainilla casi seguro no tocó una vaina: menos del 1 % de la vainillina del mundo sale de la planta. 🍦🌸
+Tu helado de vainilla quizá nunca tocó una vaina: menos del 1 % de la vainillina del mundo sale de la planta. 🍦🌸
 La vainilla (Vanilla planifolia) es una orquídea de México; a los totonacas de Papantla, Veracruz, se les reconoce como de sus primeros cultivadores. Su aroma principal viene de una molécula, la vainillina, que es apenas el 1 o 2 % del peso de la vaina curada.
 Por eso la mayoría de la vainillina se fabrica con química, a partir de compuestos del petróleo (como el guayacol) o de la lignina de la madera, y cuesta del orden de cien veces menos que la de vaina.
 ¿Y si la quieres natural, sin orquídea? Hay una ruta biotecnológica: a un microbio le das ácido ferúlico, un subproducto del salvado de arroz, y dos de sus enzimas lo transforman en vainillina. Como sale de algo natural por fermentación, en la Unión Europea y en EE. UU. se puede vender como "aroma natural" (en la UE no como "aroma natural de vainilla": para eso al menos el 95 % tiene que venir de la vainilla).
@@ -21,7 +21,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Instagram Reels
 ```text
-Tu helado de vainilla casi seguro no tocó una vaina: menos del 1 % de la vainillina sale de la planta. 🍦🌸
+Tu helado de vainilla quizá nunca tocó una vaina: menos del 1 % de la vainillina sale de la planta. 🍦🌸
 La vainilla es una orquídea de México (Papantla, Veracruz) y su aroma principal, la vainillina, es apenas el 1–2 % del peso de la vaina curada. Por eso la mayoría se fabrica con química (petróleo o madera), unas cien veces más barata. La ruta biotecnológica: microbios que transforman ácido ferúlico del salvado de arroz en vainillina con dos enzimas, y que se puede vender como "aroma natural". Y la de vaina le debe mucho a Edmond Albius, un niño esclavizado de 12 años que en 1841, en la isla Reunión, polinizó la flor a mano.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú sabías de dónde salía el sabor de tu helado? 👇
@@ -37,7 +37,7 @@ Tu helado de vainilla casi nunca tocó una vaina 🍦 | Shot Biotecnológico #23
 ```
 Descripción:
 ```text
-Tu helado de vainilla casi seguro no tocó una vaina: menos del 1 % de la vainillina que se produce en el mundo sale de la planta de vainilla.
+Tu helado de vainilla quizá nunca tocó una vaina: menos del 1 % de la vainillina que se produce en el mundo sale de la planta de vainilla.
 La vainilla (Vanilla planifolia) es una orquídea trepadora de México; a los totonacas de la región de Papantla, Veracruz, se les reconoce como de sus primeros cultivadores. Su aroma principal viene de la vainillina, que forma apenas el 1–2 % del peso de la vaina curada (en las mejores vainas hasta se ve como agujitas blancas, la "escarcha").
 Por eso cerca del 80 % de la vainillina del mundo se hace por síntesis química, sobre todo a partir de compuestos petroquímicos como el guayacol, y otra parte a partir de la lignina de la madera. La sintética cuesta del orden de cien veces menos que la de vaina.
 La ruta biotecnológica: microbios que transforman ácido ferúlico (un subproducto del aceite de salvado de arroz) en vainillina. Una enzima le pone una "etiqueta" química (CoA) y otra le corta un pedazo de cadena; lo que queda es vainillina. Hecha así, por fermentación de algo natural, en la UE y EE. UU. puede venderse como "aroma natural" (en la UE no puede llamarse "aroma natural de vainilla", que exige que al menos el 95 % venga de la vainilla).
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Tu helado de vainilla casi seguro no tocó una vaina: menos del 1 % de la vainillina del mundo sale de la planta. 🍦🌸 La mayoría se fabrica con química (petróleo o madera) y otra parte la hacen microbios a partir de ácido ferúlico del salvado de arroz. La vainilla es una orquídea de México, y la de vaina le debe mucho a Edmond Albius, un niño esclavizado de 12 años que en 1841 la polinizó a mano. El dibujo es esquemático.
+Tu helado de vainilla quizá nunca tocó una vaina: menos del 1 % de la vainillina del mundo sale de la planta. 🍦🌸 La mayoría se fabrica con química (petróleo o madera) y otra parte la hacen microbios a partir de ácido ferúlico del salvado de arroz. La vainilla es una orquídea de México, y la de vaina le debe mucho a Edmond Albius, un niño esclavizado de 12 años que en 1841 la polinizó a mano. El dibujo es esquemático.
 ¿Tú sabías de dónde salía el sabor de tu helado? 👇
 Shot Biotecnológico #23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -80,12 +80,12 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Tu helado de vainilla casi seguro no tocó una vaina 🍦 Menos del 1 % de la vainillina del mundo sale de la planta: la mayoría es química (petróleo o madera) y otra parte la hacen microbios con salvado de arroz. #Biotecnologia #LaCreacionDelRobert
+Tu helado de vainilla quizá nunca tocó una vaina 🍦 Menos del 1 % de la vainillina del mundo sale de la planta: la mayoría es química (petróleo o madera) y otra parte la hacen microbios con salvado de arroz. #Biotecnologia #LaCreacionDelRobert
 ```
 
 ### Threads
 ```text
-Tu helado de vainilla casi seguro no tocó una vaina. 🍦 Menos del 1 % de la vainillina del mundo sale de la orquídea mexicana: la mayoría se fabrica con química y otra parte la hacen microbios a partir del salvado de arroz. Y la de vaina le debe mucho a Edmond Albius, que en 1841, con 12 años, la polinizó a mano. ¿Tú sabías? 👇
+Tu helado de vainilla quizá nunca tocó una vaina. 🍦 Menos del 1 % de la vainillina del mundo sale de la orquídea mexicana: la mayoría se fabrica con química y otra parte la hacen microbios a partir del salvado de arroz. Y la de vaina le debe mucho a Edmond Albius, que en 1841, con 12 años, la polinizó a mano. ¿Tú sabías? 👇
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

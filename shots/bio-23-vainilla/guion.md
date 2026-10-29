@@ -17,7 +17,7 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Tu helado de vainilla casi seguro no tocó una vaina: menos del 1 % de la vainillina sale de ahí. | Fondo amarillo. **Desde el cuadro 0** un cono de helado de vainilla gotea; abajo, una vaina negra. `NumeroGigante` **"< 1 %"**; `MitoTachado` "sale de la vaina"; etiqueta "de la vainillina del mundo". |
+| 0 | Gancho | Tu helado de vainilla quizá nunca tocó una vaina: menos del 1 % de la vainillina sale de ahí. | Fondo amarillo. **Desde el cuadro 0** un cono de helado de vainilla gotea; abajo, una vaina negra. `NumeroGigante` **"< 1 %"**; `MitoTachado` "sale de la vaina"; etiqueta "de la vainillina del mundo". |
 | 1 | Origen | Es una orquídea de México; los totonacas de Papantla fueron de sus primeros cultivadores. | Fondo menta: la enredadera de *Vanilla planifolia* trepa un tronco (hojas carnosas alternas, raicitas aéreas) y abre su flor (orquídea con labelo en trompeta). Mapa de México con Papantla latiendo. Chip "México · Papantla, Veracruz". |
 | 2 | Molecula | Su aroma principal es una molécula: la vainillina. | `Lupa` "POR DENTRO · VAINA CURADA": semillitas negras, agujitas blancas de vainillina (la "escarcha") y la molécula (anillo con –CHO, –OCH₃ y –OH). |
 | 3 | Escasa | Pero la vainillina es apenas el 1 o 2 % del peso de la vaina curada. | Fondo naranja: la vaina y una barra del mismo largo con una rayita blanca del 2 %. Contador grande **"1–2 %"**. |
@@ -39,7 +39,7 @@
 - **Efectos en el mismo cuadro:** gota del helado (plip), apertura de la flor (campanita), Lupa que se abre (barrido), chimenea (soplo), etiqueta de precio (clic), burbujas del biorreactor (blubs), cada enzima que corta (clic doble), sello "NATURAL" (golpe suave), varita sobre la flor (tic), reloj del día (tic-tac breve).
 
 ## Descripción (para publicar)
-"Tu helado de vainilla casi seguro no tocó una vaina. 🍦 **Menos del 1 %** de la vainillina que se produce en el mundo sale de la planta de vainilla.
+"Tu helado de vainilla quizá nunca tocó una vaina. 🍦 **Menos del 1 %** de la vainillina que se produce en el mundo sale de la planta de vainilla.
 
 La vainilla (*Vanilla planifolia*) es una **orquídea de México**; a los totonacas de la región de Papantla, Veracruz, se les reconoce como de sus primeros cultivadores. Su aroma principal viene de una molécula, la **vainillina**, que es apenas el **1 o 2 % del peso de la vaina curada**.
 

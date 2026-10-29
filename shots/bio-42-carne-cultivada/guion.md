@@ -13,7 +13,7 @@
 - **Gancho:** "no salió de un animal sacrificado" → "**no se cortó de un animal**" (por años el caldo llevó suero de fetos de vacas sacrificadas, y la hamburguesa de 2013 también).
 - **Grasa:** no sale de las células satélite, sino de **otras células del mismo pedacito** (progenitores fibro-adipogénicos, FAP). Cambian la voz y el dibujo: la grasa sale de células moradas en forma de estrella que ya venían en la biopsia.
 - **Suero:** es la **parte líquida** de la sangre de los fetos, no "la sangre".
-- **Prohibiciones:** ya no son solo Italia, Florida y Alabama: son **Italia (2023) y siete estados de EE. UU. (2024–2025)**.
+- **Prohibiciones:** ya no son solo Italia, Florida y Alabama: son **Italia (2023), Hungría (2025) y varios estados de EE. UU. (2024–2026)**.
 
 ## Versión narrada (955 caracteres, 175 palabras, ~58 s de voz)
 
@@ -29,7 +29,7 @@
 | 7 | SinSuero | Ahora hay caldos sin suero: Singapur aprobó el primero en 2023. | `MitoTachado` "suero fetal"; el tubo se apaga y entra un matraz "sin suero". Chip "Singapur · 2023 · primer caldo sin suero". |
 | 8 | Hamburguesa | Mark Post presentó la primera hamburguesa en Londres, en 2013: unas 20 mil tiritas de músculo. | Fondo lila. `TarjetaEstudio` "2013 · Mark Post · Londres · 5 ago · Universidad de Maastricht". Llueven tiritas rosas sobre un plato y forman la torta; contador hasta "20,000 tiritas". |
 | 9 | Costo | Costó unos 250 mil euros. | `NumeroGigante` "250,000 €" sobre la torta. |
-| 10 | Leyes | Singapur aprobó su venta en 2020 y Estados Unidos en 2023; Italia y siete estados de Estados Unidos la prohibieron. | Fondo cian, tablero: "APROBARON SU VENTA" ✓ Singapur 2020, ✓ Estados Unidos 2023 · "LA PROHIBIERON" ✕ Italia 2023, ✕ 7 estados de EE. UU. 2024–25. |
+| 10 | Leyes | Singapur aprobó su venta en 2020 y Estados Unidos en 2023; Italia, Hungría y varios estados de Estados Unidos la prohibieron. | Fondo cian, tablero: "APROBARON SU VENTA" ✓ Singapur 2020, ✓ Estados Unidos 2023 · "LA PROHIBIERON" ✕ Italia · Hungría 2023–25, ✕ varios estados de EE. UU. 2024–26. |
 | 11 | Reto | Hoy el reto es el caldo, lo más caro, y llevarla a tanques gigantes. | Fondo amarillo: caen monedas en un biorreactor chico que crece hasta llenar la pantalla. Chips "el caldo: lo más caro" → "falta: tanques gigantes". |
 | 12 | Cierre | Así que esta carne sí es de animal, pero creció en un tanque. | **Regreso al filete del inicio** en la tabla, con una flecha desde el tanque del que salió. Chip "células de animal · crecidas en tanque". |
 | — | Outro | (sin voz) | `CierreMarca` con Robert señalando. |
