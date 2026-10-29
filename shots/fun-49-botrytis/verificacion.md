@@ -50,4 +50,3 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026):** 29 afirmaciones revisadas. La voz no cambió (narracion.json sin cambios). Los dos ⚠️ eran notas de Fuentes (la cifra del 64 % usada como apoyo del gancho y la falta de fuente para «vinos dulces») y quedaron corregidos y vueltos a verificar. Las barras con/sin estambres van sin números. Todas las filas quedan ✅.
 
-VEREDICTO: APROBADO

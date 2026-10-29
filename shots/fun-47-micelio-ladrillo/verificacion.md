@@ -40,3 +40,30 @@ Fuentes abiertas:
 
 Resumen: 21 afirmaciones revisadas; la única ⚠️ (especie del hongo en Hy-Fi, fila 17) se corrigió quitando la especie y re-verificando el chip nuevo. Todas quedan ✅. La voz no cambió.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `micelio-ladrillo.jsx`, el `.dc.html`, la tabla del guion y `publicacion.md`, y saqué cuadros con `motor/preview.mjs` (0.3–60 s, más 14.5, 22, 33, 35, 40, 44, 46, 47.5 y 50 s).
+
+| # | Texto o dibujo en pantalla / publicación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Chips "¿unicel?" tachado, "empaque de micelio", "rastrojo de maíz", "cascarilla", "micelio de hongo", "lo que sobra de la cosecha", "la forma que quieras" | ✅ | filas 1–4 | (ya verificadas arriba) | 2014–2022 |
+| R2 | "AL MICROSCOPIO · hifas": trazo de 4 px con barra de 50 µm = 150 px → hifa ≈ 1.3 µm | ✅ | [S] | "hypha (the mycelium filaments) of diameter 1.1 ± 0.2 µm" | 2020 |
+| R3 | Cronómetro "día 1 … día 5" hasta la pieza sólida | ✅ | [W] | "it takes them five days to go from organic mush to solid brick" (ladrillos de Hy-Fi) | 2014 |
+| R4 | "ya no crece" y "en un estudio de 2019: horno a 70 °C" | ✅ | [A], [E] | filas 7 y 7b | 2019 / 2022 |
+| R5 | Tarjeta "2014 · Hy-Fi · MoMA PS1, Nueva York · The Living · Ecovative · Arup" (**corregido**: decía "The Living · Arup · Holcim Foundation"; Holcim no fue socio, solo le dio un premio y documentó el proyecto, y faltaba Ecovative, que hizo los ladrillos) | ✅ | [H] | Autores del proyecto: The Living, Ecovative Design, Arup New York, 3M; Holcim: "Holcim Awards Bronze 2014 for North America" | 2014 |
+| R6 | Contador "10,000 ladrillos"; "MÁS DE 12 m"; torre esquemática (torre más alta 915 px a 75 px/m ≈ 12.2 m; persona de 1.7 m y barra de 2 m a la misma escala) | ✅ | [H], [AR], [W] | filas 9 y 10 | 2014 |
+| R7 | Chip "hongo + tallos de maíz" | ✅ | [H] | "Organic brick made of corn stalks and mushroom roots" | 2014 |
+| R8 | "verano de 2014 → composta" y "jardines comunitarios" | ✅ | [H], [AD] | "from June until September 2014"; "composted the bricks, and returned the resulting soil to local community gardens" | 2014 |
+| R9 | Barras de compresión (MPa) micelio 0.03–4.44 vs madera blanda 35–43, con la fuente "Aiduang et al., 2022 (revisión)" en pantalla; "no estructural" | ✅ | [A] | Tabla 6 (fila 13b) | 2022 |
+| R10 | Barras de agua (% de su peso) micelio 24–560 % vs unicel 0.03–9 %, con la fuente en pantalla | ✅ | [A] | fila 14 y 14b | 2022 |
+| R11 | Subtítulo "Chupa agua: hasta 5.6 veces su peso." (**corregido**: decía "más de 5 veces su peso", que lo presentaba como lo normal; 560 % es el máximo del rango) | ✅ | [A] | "(24.45–560.00 wt%)" | 2022 |
+| R12 | ✓ empaques, aislantes, paneles de interior; ✗ a la lluvia, cargar peso | ✅ | [A] | "insulation and materials used in interior design … interior or dry locations that are not exposed to weather"; "cannot be used in any structural applications" | 2022 |
+| R13 | Resto de subtítulos (13 líneas) y cierre "hongo + rastrojo", "vuelve a la tierra" | ✅ | filas 1–16 | coinciden con la voz verificada | 2014–2022 |
+| R14 | publicacion.md: "de junio a septiembre de 2014" | ✅ | [H] | "from June until September 2014" | 2014 |
+| R15 | publicacion.md: "el proceso toma de días a meses" | ✅ | [A] | "It can take days to months to complete this manufacturing process" | 2022 |
+| R16 | publicacion.md: sustratos "paja, cascarillas, rastrojo, aserrín…"; "se pueden compostar en unos meses"; "la tierra fue a jardines comunitarios"; "el estudio The Living"; resto de cifras | ✅ | [A], [AD], [H] | "straw, husks … sawdust"; "composted in soil over the course of a few months"; ver filas 8–16 | 2014–2022 |
+
+Correcciones hechas en esta revisión (sin tocar la voz): tarjeta del estudio en `micelio-ladrillo.jsx` (y en la tabla del guion) y subtítulo de la escena del agua. Todo queda ✅.
+
+VEREDICTO: APROBADO

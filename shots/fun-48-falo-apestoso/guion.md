@@ -30,7 +30,25 @@
 
 **Música:** cama grave continua, algo "pegajosa" y misteriosa, sin golpe marcado, siempre debajo de la voz. Efectos en el mismo cuadro: zumbido de mosca, olfateo, rasgado del huevo y crujido del tallo al subir, burbujeo de la baba, "pop" de cada molécula de azufre, aterrizaje de la mosca, gotitas (plic) de cada popó, tic del cronómetro, "fiu" al irse la baba, golpecitos en el mapa.
 
-Barras de escala: 10 cm (bosque y hongo), 1 cm (huevo), 10 µm (esporas), 1 nm (molécula, rótulo esquemático), 5 mm (pata de mosca).
+Barras de escala: 10 cm (bosque y hongo; regla de 30 cm al crecer), 5 cm (huevo de 6 cm y platitos), 10 µm (esporas en la lupa), 1 nm (molécula, esquemática), 1 m (vuelo de la mosca), 500 km (mapa de México). La balanza ♀/♂ es un esquema sin escala.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y para qué querría un hongo oler tan feo?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «ese olor… viene de este hongo» (cuadro 0) |
+| 2 | 9.4 | 13.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | «el huevo todavía no huele feo» |
+| 3 | 17.4 | 23.3 | 10_serio_molesto | `arriba-der` | la baba con esporas y «los gases que más apestan» |
+| 4 | 23.8 | 27.1 | 07_pensativo_puno | `grande` | «¿para qué querría un hongo oler tan feo?» |
+| 5 | 34.5 | 40.6 | 04_bajando_lentes | `arriba-der` | el estudio de 1997 (popó más rápido) |
+| 6 | 43.5 | 47.8 | 13_senalando_arriba | `arriba-der` | «llegan más hembras que machos» y la baba que desaparece |
+| 7 | 48.4 | 52.8 | 06_pensativo_menton | `arriba-der` | «en México hay parientes con un velo de encaje» |
+| 8 | 53.4 | 57.9 | 02_apuntando_camara | `arriba-der` | «es un hongo pidiéndole a las moscas que lo siembren» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 8 · **37.0 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en el texto completo o en el resumen oficial el 29 oct 2026)
 

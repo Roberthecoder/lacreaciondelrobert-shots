@@ -59,7 +59,7 @@ function Falo({ T, id = 'a', x, y, s = 1, h = 360, baba = 1, limpio = 0, velo = 
     {/* sombrero: debajo la red (reticulado), encima la gleba */}
     <path d={cap} fill={FL.crema} stroke={KC.ink} strokeWidth={6} />
     <g clipPath={`url(#cap-${id})`}>
-      {celdas.map(([cx, cy], i) => <path key={i} d={`M ${cx - 7} ${cy} L ${cx} ${cy - 6} L ${cx + 7} ${cy} L ${cx} ${cy + 6} Z`} fill="#c9bb92" stroke="#fffaf0" strokeWidth={2} />)}
+      {celdas.map(([cx, cy], i) => <path key={i} d={`M ${cx - 7} ${cy} L ${cx} ${cy - 6} L ${cx + 7} ${cy} L ${cx} ${cy + 6} Z`} fill="#9c8a5a" stroke="#fffaf0" strokeWidth={3} />)}
       {gl > 0 && <path d={cap} fill={FL.gleba} opacity={gl} />}
       {gl > 0 && [[-18, -30, 9], [10, -10, 7], [-6, 18, 8], [20, 30, 6], [-26, 40, 7]].map(([a, b, r], i) => <ellipse key={i} cx={a} cy={capY + b} rx={r * 1.4} ry={r} fill={FL.gleba2} opacity={gl} />)}
       {gl > 0 && <path d={`M ${-cw + 10} ${capY - 10} Q ${-cw + 14} ${capY - ch * 0.38} ${-6} ${capY - ch * 0.44}`} stroke={FL.brillo} strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.8 * gl} />}
@@ -148,7 +148,7 @@ function PataCerca({ T, r }) {
 // Platito con comida + mosca + gotitas de popó que se acumulan (más rápido o más lento).
 function Platito({ T, x, y, desde, cada, comida, etiqueta, color }) {
   const n = T < desde ? 0 : Math.min(9, Math.floor((T - desde) / cada) + 1);
-  return <g transform={`translate(${x} ${y})`}>
+  return <g transform={`translate(${x} ${y}) scale(1.25)`}>
     <ellipse cx={0} cy={20} rx={130} ry={34} fill="#f7f7f2" stroke={KC.ink} strokeWidth={6} />
     {comida === 'baba' && <path d="M -60 10 Q -40 -20 0 -16 Q 50 -22 62 8 Q 0 30 -60 10 Z" fill={FL.gleba} stroke={KC.ink} strokeWidth={5} />}
     {comida === 'estiercol' && <path d="M -50 12 Q -46 -24 -4 -26 Q 44 -24 52 10 Q 0 26 -50 12 Z" fill="#6a4a2a" stroke={KC.ink} strokeWidth={5} />}
@@ -286,9 +286,9 @@ function FaloShot() {
       <Escena T={T} a={K.E} b={K.Si} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<g opacity={kprog(T, K.E + 2.6, K.E + 3.0)}>
-          <Platito T={T} x={190} y={900} desde={K.E + 3.4} cada={0.45} comida="baba" etiqueta="baba" />
-          <Platito T={T} x={540} y={900} desde={K.E + 3.6} cada={1.5} comida="estiercol" etiqueta="estiércol" />
-          <Platito T={T} x={890} y={900} desde={K.E + 3.8} cada={1.9} comida="azucar" etiqueta="azúcar" />
+          <Platito T={T} x={185} y={870} desde={K.E + 3.4} cada={0.45} comida="baba" etiqueta="baba" />
+          <Platito T={T} x={540} y={870} desde={K.E + 3.6} cada={1.5} comida="estiercol" etiqueta="estiércol" />
+          <Platito T={T} x={895} y={870} desde={K.E + 3.8} cada={1.9} comida="azucar" etiqueta="azúcar" />
         </g>)}
       </Escena>
       {/* 10 · siembra: gotitas con esporas y esporas en las patas */}
@@ -296,6 +296,7 @@ function FaloShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <PisoBosque y={1150} seed={15} />
+          <Falo T={T} id="si" x={90} y={1160} s={0.6} h={420} />
           {(() => { const u = kprog(T, K.Si, K.He, (p) => p); const mx = klerp(-80, 1160, u), my = 520 + Math.sin(u * 9) * 60;
             const gotas = [];
             for (let i = 0; i < 9; i++) { const t0 = K.Si + 0.3 + i * 0.42; if (T < t0) break; const ux = kprog(T, K.Si, K.He, (p) => p) ; const gx = klerp(-80, 1160, kprog(t0, K.Si, K.He, (p) => p)); const f = kprog(T, t0, t0 + 0.6);
@@ -308,7 +309,7 @@ function FaloShot() {
       {/* 11 · más hembras que machos */}
       <Escena T={T} a={K.He} b={K.L} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Balanza T={T} x={430} y={700} inclina={kprog(T, K.He + 0.6, K.He + 1.4, kEase.rebote)} />)}
+        {fsvg(<Balanza T={T} x={400} y={640} inclina={kprog(T, K.He + 0.6, K.He + 1.4, kEase.rebote)} />)}
       </Escena>
       {/* 12 · en unas horas, la baba desaparece */}
       <Escena T={T} a={K.L} b={K.Mx} zoom={0.06} origen="35% 40%">
@@ -323,10 +324,10 @@ function FaloShot() {
       <Escena T={T} a={K.Mx} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <MapaMexico x={20} y={600} ancho={860} color="#ffe9a8" />
+          <MapaMexico x={0} y={580} ancho={820} color="#ffe9a8" />
           <g opacity={kprog(T, K.Mx + 0.8, K.Mx + 1.3)}>
-            <ellipse cx={850} cy={1185} rx={160} ry={26} fill="rgba(0,0,0,.25)" />
-            <Falo T={T} id="v" x={850} y={1180} s={0.95} h={20 + 330 * kprog(T, K.Mx + 0.8, K.Mx + 2.0, kEase.suave)} velo={kprog(T, K.Mx + 1.8, K.Mx + 3.0, kEase.sale)} />
+            <ellipse cx={910} cy={1165} rx={150} ry={24} fill="rgba(0,0,0,.25)" />
+            <Falo T={T} id="v" x={910} y={1160} s={0.9} h={20 + 330 * kprog(T, K.Mx + 0.8, K.Mx + 2.0, kEase.suave)} velo={kprog(T, K.Mx + 1.8, K.Mx + 3.0, kEase.sale)} />
           </g>
         </>)}
       </Escena>
@@ -358,13 +359,13 @@ function FaloShot() {
       <Etq T={T} at={K.Az + 1.0} until={K.P - 0.3} x={60} y={540} texto="trisulfuro de dimetilo" tam={28} color={KC.yellow} />
       <Chip T={T} at={K.En + 2.9} until={K.E - 0.3} texto="¡caíste! solo hay baba" x={420} y={440} tam={38} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="1997" quien="University College Cork, Irlanda" revista="Sleeman y col., J. Nat. Hist." y={600} />
-      <Chip T={T} at={K.E + 4.6} until={K.Si - 0.3} texto="con la baba: popó más rápido" x={420} y={480} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.E + 4.6} until={K.Si - 0.3} texto="con la baba: popó más rápido" x={350} y={480} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Si + 0.4} until={K.Si + 2.2} texto="gotitas con esporas" x={380} y={440} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.He + 0.4} until={K.L - 0.3} texto="llegan más hembras" x={400} y={440} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.L + 1.4} until={K.Mx - 0.3} texto="queda su red de huecos" x={400} y={440} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Mx + 0.3} until={K.C - 0.3} texto="10 estados · Guzmán y col., 1990" x={420} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Mx + 2.4} until={K.C - 0.3} x={730} y={1040} texto="velo de encaje" lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Mx + 2.8} until={K.C - 0.3} x={730} y={1090} texto="Phallus (antes Dictyophora)" it lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Mx + 2.4} until={K.C - 0.3} x={770} y={1000} texto="velo de encaje" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Mx + 2.8} until={K.C - 0.3} x={770} y={1050} texto="Phallus (antes Dictyophora)" it lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="lo sembraron las moscas" x={360} y={440} tam={38} borde={KC.leaf} />
 
       {/* barras de escala */}
@@ -376,7 +377,7 @@ function FaloShot() {
       <BarraEscala T={T} at={K.E} until={K.Si} texto="5 cm" largo={180} />
       <BarraEscala T={T} at={K.Si} until={K.He} texto="1 m" largo={260} />
       <BarraEscala T={T} at={K.L} until={K.Mx} texto="10 cm" largo={200} />
-      <BarraEscala T={T} at={K.Mx} until={K.C} texto="500 km" largo={97} />
+      <BarraEscala T={T} at={K.Mx} until={K.C} texto="500 km" largo={93} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={270} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

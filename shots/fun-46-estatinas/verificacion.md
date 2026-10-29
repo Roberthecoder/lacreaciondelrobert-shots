@@ -38,4 +38,3 @@ Fuentes abiertas:
 Fuente [LF] confirmada en `guion.md` con su título exacto: "*Aspergillus terreus* Species Complex", *Clin. Microbiol. Rev.* 34(4): e00311-20 (2021).
 
 Resumen: 21 filas de voz y pantalla revisadas contra fuentes abiertas en texto completo; la ❌ (morfología de *A. terreus*) y la ⚠️ (cierre) quedaron corregidas y vueltas a verificar; los recortes no cambian datos. Todo ✅. No es consejo médico.
-VEREDICTO: APROBADO

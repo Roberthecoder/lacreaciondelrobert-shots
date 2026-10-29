@@ -322,14 +322,14 @@ function MicelioShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg((() => { const baja = kprog(T, K.C + 1.8, K.C + 3.2, kEase.suave), maceta = kprog(T, K.C + 1.2, K.C + 1.9, kEase.sale), deshace = kprog(T, K.C + 3.0, K.C + 4.0);
-          return <>
+          return <g transform={`translate(0 ${-150 * kprog(T, K.C + 1.0, K.C + 1.9, kEase.suave)})`}>
             <g opacity={1 - maceta}><Caja x={400} y={1100} s={1.1} abre={1} /></g>
             {maceta > 0 && <g transform={`translate(0 ${(1 - maceta) * 400})`}><Maceta x={400} y={1100} s={1.1} tierra={deshace} /></g>}
             <g clipPath={baja > 0 ? 'url(#cpMac)' : undefined}><Esquinera x={380} y={klerp(760, 1080, baja)} s={1.15 * (1 - deshace * 0.5)} rot={-8 + baja * 8} blanco={1 - deshace * 0.6} op={1 - deshace} /></g>
             <clipPath id="cpMac"><rect x={0} y={0} width={KW} height={1100 - 150 * 1.1 + 4} /></clipPath>
             {deshace > 0 && <ellipse cx={400} cy={1100 - 165} rx={185} ry={20 + 10 * deshace} fill={ML.tierra} opacity={deshace} />}
             <Brote x={400} y={1100 - 170} p={kprog(T, K.C + 3.6, K.C + 4.6)} s={1.3} />
-          </>; })())}
+          </g>; })())}
       </Escena>
 
       {/* textos */}
@@ -347,7 +347,7 @@ function MicelioShot() {
       <Chip T={T} at={K.B + 2.5} until={K.O - 0.3} texto="pieza sólida" x={300} y={480} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.O + 0.6} until={K.P - 0.3} texto="ya no crece" x={300} y={580} tam={44} borde={KC.red} />
       <Chip T={T} at={K.O + 1.2} until={K.P - 0.3} texto="en un estudio de 2019: horno a 70 °C" x={440} y={470} tam={28} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.To + 0.2} until={K.To + 2.5} anio="2014" quien="Hy-Fi · MoMA PS1, Nueva York" revista="The Living · Arup · Holcim Foundation" y={640} />
+      <TarjetaEstudio T={T} at={K.To + 0.2} until={K.To + 2.5} anio="2014" quien="Hy-Fi · MoMA PS1, Nueva York" revista="The Living · Ecovative · Arup" y={640} />
       <NumeroGigante T={T} at={K.To + 2.8} until={K.Cp - 0.3} valor={10000} dur={3.4} etiqueta="ladrillos" x={830} y={900} tam={96} color={KC.yellow} />
       <Chip T={T} at={K.To + 4.0} until={K.Cp - 0.3} texto="hongo + tallos de maíz" x={800} y={740} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Cp + 0.4} until={K.D - 0.3} texto="verano de 2014 → composta" x={540} y={480} tam={38} borde={KC.leaf} />
@@ -392,7 +392,7 @@ function MicelioShot() {
       <Subtitulo T={T} idx={7} at={K.To + 0.1} until={K.Cp - 0.1} texto="2014, Nueva York: *10,000 ladrillos.*" />
       <Subtitulo T={T} idx={8} at={K.Cp + 0.1} until={K.D - 0.1} texto="Al final: *composta.*" />
       <Subtitulo T={T} idx={9} at={K.D + 0.1} until={K.A - 0.1} texto="Más débil *que la madera.*" />
-      <Subtitulo T={T} idx={10} at={K.A + 0.1} until={K.U - 0.1} texto="Chupa agua: *más de 5 veces su peso.*" />
+      <Subtitulo T={T} idx={10} at={K.A + 0.1} until={K.U - 0.1} texto="Chupa agua: *hasta 5.6 veces su peso.*" />
       <Subtitulo T={T} idx={11} at={K.U + 0.1} until={K.C - 0.1} texto="Donde no se moja *ni carga peso.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="No era unicel: *era un hongo.*" />
 
