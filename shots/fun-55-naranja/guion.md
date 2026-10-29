@@ -14,16 +14,16 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese polvo verde de tu naranja no es polvo: son esporas del hongo *Penicillium digitatum*. | Fondo amarillo: un frutero con naranjas; una tiene una mancha de polvo verde olivo con borde blanco. Cuadro 0.3: un dedo la toca y sale una nubecita verde. Chip "¿polvo?"; zoom a la mancha y aparecen esporas (ovaladas, en cadenas). Etiqueta "moho verde · *Penicillium digitatum*". |
-| 1 | Herida | Y casi siempre entró por una herida: un golpe o un raspón. | Corte de la cáscara (flavedo naranja con glándulas de aceite, albedo blanco). Una naranja sana rueda, se golpea y queda un raspón; chip "la cáscara sana lo frena · la herida le abre la puerta". |
+| 1 | Herida | Y casi siempre entró por una herida: un golpe o un raspón. | Corte de la cáscara (flavedo naranja con glándulas de aceite, albedo blanco). Una naranja sana rueda, se golpea y queda un raspón; chip "¡raspón!" y luego "la herida le abre la puerta". |
 | 2 | Aceite | Ahí salen aceites y azúcares de la cáscara, y eso despierta a la espora. | **Al microscopio** (fondo oscuro): la glándula de aceite rota suelta gotitas amarillas y puntitos de azúcar; una espora ovalada cae en la herida y le sale un tubito (germina). Etiquetas "glándula de aceite rota", "espora germinando". |
-| 3 | Enzimas | El hongo vuelve ácida la herida y suelta enzimas que deshacen las paredes de las células. | Medidor de pH que baja (chip "más ácido"); la hifa suelta "tijeritas" (enzimas) y las paredes de las células de la cáscara se deshacen. Etiqueta "enzimas que cortan la pared". |
+| 3 | Enzimas | El hongo vuelve ácida la herida y suelta enzimas que deshacen las paredes de las células. | Medidor de acidez sin números que baja ("ACIDEZ ↓ más ácido"); la hifa suelta "tijeritas" (enzimas) y las paredes de las células de la cáscara se deshacen. Etiqueta "enzimas = «tijeritas»" y "hifa". |
 | 4 | Pelusa | La cáscara se ablanda, sale una pelusa blanca y, en medio, el polvo verde olivo. | De regreso a la naranja (fondo menta): zona mojada y blanda → anillo de pelusa blanca → centro verde olivo. Recuadro al microscopio: conidióforo en forma de pincel con cadenas de esporas. Etiquetas "pelusa blanca: el hongo joven" y "verde olivo: esporas". |
 | 5 | Azul | Si es azul, es su primo, *Penicillium italicum*: aguanta más el frío y contagia más a la naranja de junto. | Dos naranjas lado a lado: verde (*P. digitatum*) y azul (*P. italicum*). Termómetro de refri ❄ junto a la azul; la azul toca a la de junto y le pasa la mancha; la verde casi no. Chips "moho verde" / "moho azul · aguanta el frío". |
 | 6 | Pregunta | ¿Y por qué las naranjas del súper brillan? | **Re-gancho.** Fondo cian: una naranja brillante con destellos y un "?" gigante. Robert grande, pensativo. |
 | 7 | Empacadora | En la empacadora las lavan, sacan las podridas y les ponen fungicida en agua o en la cera. | Banda transportadora: cepillos con espuma (lavado), una mano saca la naranja podrida, regadera de fungicida y luego cera. Chips "lavar", "sacar las podridas", "fungicida en agua o en la cera". |
-| 8 | Cera | La cera, además, las protege de secarse. | Gotitas de agua que intentan salir de la naranja y rebotan en la capa de cera. Chip "menos pérdida de agua". |
+| 8 | Cera | La cera, además, las protege de secarse. | Gotitas de agua que intentan salir de la naranja y rebotan en la capa de cera. Chip "la cera: menos pérdida de agua". |
 | 9 | Estudio | En 1997, en Fresno, California, infectaron naranjas con esporas de este hongo. | Tarjeta "1997 · Fresno, California · USDA-ARS · Smilanick et al., *Plant Disease*". Naranjas con un piquetito y esporas verdes encima. |
-| 10 | Bano | Un día después las bañaron dos minutos en agua tibia con carbonato de sodio, y el moho bajó. | Cronómetro "24 h" → tina con agua tibia (termómetro ~40 °C) y "carbonato de sodio"; cronómetro "2 min". Después: comparativa sin baño (varias con moho) vs con baño (menos). Chip "el moho bajó en todas las pruebas" y nota "comparación esquemática, sin cifras". |
+| 10 | Bano | Un día después las bañaron dos minutos en agua tibia con carbonato de sodio, y el moho bajó. | Número "24 h" → tina con agua tibia (termómetro ~40 °C) y "carbonato de sodio"; chips "2 min · carbonato de sodio" y "agua tibia ≈ 40 °C". Después: comparativa sin baño (varias con moho) vs con baño (menos). Chip "el moho bajó en todas las pruebas" y nota "comparación esquemática". |
 | 11 | Aire | Y sus esporas viajan por el aire hasta otras frutas heridas: sácala del frutero. | Frutero: la naranja podrida suelta una nube verde que flota hacia otras frutas con raspones. Chip "sácala". |
 | 12 | Cierre | Así que ese polvo verde no es polvo: es un hongo que entró por una herida. | **Regreso a la imagen del inicio:** el mismo frutero y la misma naranja, ahora con la herida marcada por dentro (la cáscara como en el corte) y la mancha verde; la naranja se aparta de las demás. Chip "entró por una herida". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
@@ -31,6 +31,26 @@
 **Música:** cama grave continua, un poco tensa mientras el hongo avanza y más ligera en la empacadora; efectos en el mismo cuadro: "puf" de la nubecita de esporas, golpe sordo de la naranja, goteo del aceite, "pop" de la espora al germinar, crujido de las paredes que se deshacen, burbujeo del pH, zumbido de la banda y cepillos, chorro del fungicida, brillo de la cera, tic del cronómetro, chapuzón en la tina, soplido de las esporas en el aire.
 
 Barras de escala: 5 cm (naranja), 1 mm (cáscara en corte), 10 µm (espora y glándula al microscopio).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué las naranjas del súper brillan?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «no es polvo: son esporas» (cuadro 0) |
+| 2 | 5.6 | 8.3 | 13_senalando_arriba | `arriba-der` | «entró por una herida» (señala el raspón) |
+| 3 | 13.0 | 14.8 | 12_perfil_serio | `arriba-der` | «vuelve ácida la herida» |
+| 4 | 18.8 | 22.3 | 04_bajando_lentes | `arriba-der` | «el polvo verde olivo» |
+| 5 | 28.7 | 31.5 | 07_pensativo_puno | `grande` | «¿por qué brillan?» |
+| 6 | 32.1 | 38.6 | 13_senalando_arriba | `arriba-der` | la empacadora y la cera |
+| 7 | 39.5 | 43.8 | 04_bajando_lentes | `arriba-der` | el estudio de Fresno, 1997 |
+| 8 | 46.9 | 49.0 | 11_sorprendido | `arriba-der` | «el moho bajó» |
+| 9 | 49.5 | 53.4 | 10_serio_molesto | `arriba-der` | «sácala del frutero» |
+| 10 | 54.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «entró por una herida» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **36.1 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026; frase textual y año del dato)
 

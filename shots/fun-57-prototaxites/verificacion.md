@@ -44,5 +44,3 @@ Observaciones (no cambian el veredicto de la voz):
 - El tronco de 8 m dibujado en el paisaje tipo Rhynie es una reconstrucción esquemática: los troncos más grandes vienen de otros yacimientos.
 
 **Re-verificación (29 oct 2026):** se volvió a leer `narracion.json` completo (13 líneas) y se revisó contra las fuentes ya abiertas cada línea que cambió (filas 3, 5, 7, 8, 9, 10, 14, 15b, 17, 18, 20 y 21). Todas las afirmaciones quedan ✅. Las hipótesis se dicen como hipótesis ("quizá", "proponen", "no está cerrado", "aún no sabemos"). El dibujo es esquemático.
-
-VEREDICTO: APROBADO

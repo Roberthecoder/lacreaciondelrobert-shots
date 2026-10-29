@@ -39,4 +39,3 @@ Fuentes abiertas:
 
 Revisión de correcciones (29 oct 2026): se volvieron a verificar las filas 3, 4, 6, 8, 11, 14, 16, 17, 17b y 18 contra las fuentes abiertas. En la fila 14 el verificador cambió "había" por "apareció" en narracion.json y guion.md (1000 caracteres de voz). Todas las afirmaciones quedan ✅.
 
-VEREDICTO: APROBADO

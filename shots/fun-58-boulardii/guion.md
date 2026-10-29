@@ -12,24 +12,44 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Este sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadura. | Fondo menta: una mano sostiene un sobrecito que dice «*Saccharomyces boulardii*» desde el cuadro 0; lo rompe (cuadro 0.3) y cae un polvito. Chip "¿bacterias?" que se tacha; una lupa sobre el polvo muestra levaduras ovaladas con una yema. |
-| 1 | Especie | Es *Saccharomyces boulardii*, de la misma especie que esponja el pan. | Al microscopio (fondo noche): células ovaladas gemando. Etiqueta "levadura probiótica · *Saccharomyces boulardii*"; flecha a un bolillo que se esponja: "misma especie: *S. cerevisiae*". |
-| 2 | Historia | Dicen que Henri Boulard la sacó de un té de lichi y mangostán, en Indochina. | Fondo amarillo: un lichi y un mangostán; sus cáscaras hierven en una tetera. Chip "dicen que… (años 20, Indochina)". |
-| 3 | Calor | Pero esta crece mejor a treinta y siete grados, como tu cuerpo. | Dos termómetros: "*S. boulardii* · 37 °C" junto a una silueta humana; "otras cepas · 30–33 °C" junto al pan. |
-| 4 | Acido | Y a pH dos, muy ácido, aguantó casi toda. | Estómago en corte; medidor "pH 2"; chip "experimento de laboratorio, 1 h a 37 °C". Dos tubos: *boulardii* casi igual de viva; otra cepa de laboratorio "< 4 %". |
-| 5 | Pregunta | ¿Y por qué la dan con antibióticos? | **Re-gancho.** "?" gigante y una caja de pastillas; Robert grande, pensativo. |
-| 6 | Antibioticos | Los antibióticos desbalancean las bacterias de tu intestino, y eso puede dar diarrea. | Intestino por dentro (fondo noche): muchas bacterias de colores; cápsulas de antibiótico entran y muchas se apagan; balanza que se inclina. |
-| 7 | Levadura | Pero una levadura no es bacteria: esos fármacos no la matan. | Entre las bacterias apagadas, las levaduras (más grandes, ovaladas) siguen brillando. Chip "hongo ≠ bacteria". Escala: levadura ~5 µm vs. bacteria ~1 µm (esquemático). |
-| 8 | Estudio | Una revisión de 2015 juntó veintiún ensayos: en gente con antibióticos, la diarrea bajó de casi diecinueve a ocho y medio de cada cien. | Tarjeta "2015 · Szajewska y Kołodziej · Varsovia · 21 ensayos · 4,780 personas". Dos cuadrículas de 100 personas: 18.7 en rojo (sin) → 8.5 (con). |
-| 9 | Limite | Pero contra *Clostridium difficile* en adultos, esa revisión no vio un efecto claro. | Bacteria *C. difficile* con etiqueta; chip "adultos: sin efecto claro" (barra de error que cruza el 1). |
-| 10 | Riesgo | Y en pacientes graves con catéter, rara vez, pasa a la sangre: en París vieron que abrir un sobre la dejaba en las manos. | Cama de hospital con catéter venoso; un sobre se abre y el polvo flota hacia las manos y el catéter. Chip "rara vez · pacientes graves". Tarjeta "Hennequin et al., 2000 · París · 4 casos". |
-| 11 | NoSeQueda | Y no se queda: días después de dejarla, se va. | Calendario: levaduras en el intestino que se van yendo; chip "3–5 días después de dejarla". |
-| 12 | Cierre | Así que este sobrecito no trae bacterias: trae una versión de la levadura del pan que aguanta tu panza. | **Regreso a la imagen del inicio:** la misma mano y el mismo sobrecito; ahora lleva dibujado un bolillo y un termómetro de 37 °C. Chip "no es consejo médico: pregúntale a tu médico". |
+| 0 | Gancho | Este sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadura. | Fondo menta: una mano sostiene un sobrecito rotulado «PROBIÓTICO · *Saccharomyces boulardii*» desde el cuadro 0; a los 0.3 s se arranca la tira de arriba y cae un polvito que forma un montón. «¿bacterias?» se tacha. A los 2.2 s se abre una lupa «AL MICROSCOPIO»: levaduras ovaladas, una con yema. |
+| 1 | Especie | Es *Saccharomyces boulardii*, de la misma especie que esponja el pan. | Al microscopio (fondo noche): células ovaladas de levadura; a una le brota una yema. Etiquetas «levadura probiótica» y *Saccharomyces boulardii*; aparece un bolillo en un círculo amarillo y la etiqueta «misma especie: *S. cerevisiae*». |
+| 2 | Historia | Dicen que Henri Boulard la sacó de un té de lichi y mangostán, en Indochina. | Fondo amarillo: un lichi y un mangostán (con etiquetas) van a una tetera que echa vapor. Chip «dicen que… (años 20, Indochina)»; etiqueta «té de cáscara». |
+| 3 | Calor | Pero esta crece mejor a treinta y siete grados, como tu cuerpo. | Fondo cian: silueta humana con un termómetro que sube a «37 °C» (etiqueta *S. boulardii*); a la derecha un bolillo con otro termómetro más bajo y el chip «otras cepas: 30–33 °C». |
+| 4 | Acido | Y a pH dos, muy ácido, aguantó casi toda. | Fondo naranja: dos tubos de ensayo con ácido y «pH 2» en medio. En el izquierdo las levaduras siguen (etiqueta «*S. boulardii*: casi igual»); en el derecho casi todas se apagan («otra cepa: < 4 %»). Chip «experimento de laboratorio, 1 h a 37 °C». |
+| 5 | Pregunta | ¿Y por qué la dan con antibióticos? | **Re-gancho.** «?» gigante y una cápsula de antibiótico; Robert grande, pensativo. |
+| 6 | Antibioticos | Los antibióticos desbalancean las bacterias de tu intestino, y eso puede dar diarrea. | POR DENTRO · bacterias de tu intestino (fondo noche): bacterias de colores (≈ 1 µm); entran cápsulas de antibiótico y muchas bacterias se apagan. Chip «se desbalancean». |
+| 7 | Levadura | Pero una levadura no es bacteria: esos fármacos no la matan. | Entre las bacterias apagadas aparecen levaduras (≈ 5 µm, a la misma escala) que siguen brillando. Chip «hongo ≠ bacteria»; etiqueta «levadura ≈ 5 µm · bacteria ≈ 1 µm». Barra 5 µm. |
+| 8 | Estudio | Una revisión de 2015 juntó veintiún ensayos: en gente con antibióticos, la diarrea bajó de casi diecinueve a ocho y medio de cada cien. | Tarjeta «2015 · Szajewska y Kołodziej · Varsovia · 21 ensayos · 4,780 personas · Aliment Pharmacol Ther». Chip «en gente con antibióticos». Dos cuadrículas de 100: «sin *S. boulardii*» se llena hasta 18.7 (rojo) y «con *S. boulardii*» hasta 8.5 (naranja); el último círculo, a medias. Números «18.7 de 100» y «8.5 de 100». |
+| 9 | Limite | Pero contra *Clostridium difficile* en adultos, esa revisión no vio un efecto claro. | Fondo noche: bacilo de *Clostridium difficile* con su espora (etiqueta). Tarjeta-gráfica «adultos · 9 ensayos»: el cuadrito (0.8) con su intervalo 0.47–1.34 cruza la línea «1 = sin efecto». Chip «adultos: sin efecto claro». |
+| 10 | Riesgo | Y en pacientes graves con catéter, rara vez, pasa a la sangre: en París vieron que abrir un sobre la dejaba en las manos. | Fondo azul claro: paciente en cama con un catéter que entra al pecho desde la bolsa de suero (etiqueta «catéter en la vena»). Chip «rara vez · pacientes graves». Unas manos sostienen un sobre; se abre y el polvo flota: cae en las manos y un poco llega al catéter. Tarjeta «2000 · París · 4 casos · Hennequin et al. · Eur J Clin Microbiol Infect Dis». |
+| 11 | NoSeQueda | Y no se queda: días después de dejarla, se va. | Fondo lila: calendario de 5 días; en cada día hay menos levaduras y el día 5 queda vacío. Chip «3–5 días después de dejarla». |
+| 12 | Cierre | Así que este sobrecito no trae bacterias: trae una versión de la levadura del pan que aguanta tu panza. | **Regreso a la imagen del inicio:** la misma mano, el mismo sobrecito (ya abierto) y el mismo montón; al sobre se le dibujan un bolillo y un sello «37 °C»; al lado, una levadura que brilla. Chip «no es consejo médico». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave continua, sin golpe; efectos en el mismo cuadro (rasgado del sobre, polvito, crujido del tache, burbujas de la tetera, termómetro que sube, burbujeo ácido, tics de las bacterias que se apagan, tics de las cuadrículas, pitido suave del monitor del hospital, hoja del calendario).
+**Música:** cama grave continua, sin golpe (`gen-audio.mjs`); efectos en el mismo cuadro: rasgado del sobre, polvito que cae, crujido del tache, zumbido de la lupa, burbujas de las levaduras, golpes del lichi y el mangostán, hervor del té, termómetros que suben, burbujeo ácido y tics de las levaduras que se apagan, cápsula, entrada de antibióticos y tics de las bacterias que se apagan, notas de las levaduras que brillan, golpe de la tarjeta, tics de las cuadrículas, el intervalo que cruza el 1, pitido del monitor, el sobre que se abre y el polvo que flota, hojas del calendario y nota final.
 
-Barra de escala: 5 cm (sobrecito), 10 µm (levaduras), 10 cm (estómago), 5 µm (intestino por dentro).
+Barra de escala: 5 cm (sobrecito y cierre), 10 µm (levaduras), 5 cm (frutas), 50 cm (silueta y termómetros), 2 cm (tubos), 5 µm (intestino por dentro: levadura ≈ 5 µm, bacteria ≈ 1 µm), 1 µm (*C. difficile*), 50 cm (hospital). Sin barra en la pregunta y el calendario (no son escenas a escala).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué la dan con antibióticos?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «no trae bacterias: trae un hongo vivo» (cuadro 0) |
+| 2 | 5.6 | 8.6 | 13_senalando_arriba | `arriba-der` | señala *Saccharomyces boulardii* |
+| 3 | 13.6 | 19.1 | 05_sonriendo_dientes_uniformes | `arriba-der` | «37 grados, como tu cuerpo» y el pH 2 |
+| 4 | 19.5 | 22.1 | 07_pensativo_puno | `grande` | «¿y por qué la dan con antibióticos?» |
+| 5 | 26.9 | 30.0 | 04_bajando_lentes | `arriba-der` | «una levadura no es bacteria» |
+| 6 | 32.8 | 37.6 | 11_sorprendido | `arriba-der` | «de casi diecinueve a ocho y medio» |
+| 7 | 38.1 | 42.3 | 06_pensativo_menton | `arriba-der` | «no vio un efecto claro» |
+| 8 | 42.9 | 45.6 | 10_serio_molesto | `arriba-der` | «pacientes graves con catéter» |
+| 9 | 49.4 | 51.9 | 12_perfil_serio | `arriba-der` | «no se queda: se va» |
+| 10 | 52.5 | 57.9 | 02_apuntando_camara | `arriba-der` | «este sobrecito no trae bacterias» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **38.4 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas en el texto completo el 29 oct 2026)
 

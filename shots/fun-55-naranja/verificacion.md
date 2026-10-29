@@ -41,4 +41,3 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026):** la nueva verificación de lo que cambió quedó en ✅: el consejo ahora es "sácala del frutero" (fila 17), se agregó Silva et al. 2025 como fuente del contagio entre naranjas del moho azul (fila 9b) y se corrigieron las fechas de UF/IFAS y Pacific Pests (fila 19). Las 19 afirmaciones de voz y pantalla están verificadas.
 
-VEREDICTO: APROBADO

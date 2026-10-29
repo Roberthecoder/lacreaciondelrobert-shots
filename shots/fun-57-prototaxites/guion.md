@@ -13,23 +13,43 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Este tronco de ocho metros no es un árbol. Y quizá tampoco era un hongo. | Fondo menta: un tronco liso, sin ramas ni hojas, se levanta del suelo en el cuadro 0.3 hasta 8 m (regla "8 m" a un lado). Chip "¿árbol?" tachado; luego "¿hongo?" con signo de interrogación. |
-| 1 | Devonico | Se llama Prototaxites y vivió hace unos 400 millones de años. | Etiqueta *Prototaxites*; reloj geológico que gira hacia atrás hasta "~400 millones de años · Devónico". |
-| 2 | Plantas | A su lado, las plantas no pasaban de 40 centímetros: él era el gigante. | Paisaje con plantitas bajas (tallos sin hojas tipo *Rhynia*); una silueta humana de 1.70 m como escala; las plantas (regla "< 40 cm") le llegan a la rodilla; el tronco de 8 m las domina. |
-| 3 | Tubos | Por dentro es una maraña de tubos microscópicos. | Lupa "POR DENTRO" sobre el tronco → fondo oscuro: tubos entrelazados de tres grosores (~10, 20–40 y ~40 µm). Barra de escala 50 µm. |
-| 4 | Hongo | En 2001, un paleontólogo del Smithsonian, en Washington, sostuvo que era un hongo gigante. | Tarjeta "2001 · Hueber · Smithsonian, Washington"; los tubos se comparan con hifas de hongo (red de hilos) y aparece la etiqueta "¿hifas?". |
-| 5 | Carbono | En 2007, su carbono mostró que no vivía solo de la luz, como las plantas. | Tarjeta "2007 · isótopos de carbono · Boyce et al."; un sol con flechas hacia una planta (✓) y hacia *Prototaxites* (✗ "no solo de la luz"). |
+| 1 | Devonico | Se llama Prototaxites y vivió hace unos 400 millones de años. | Etiqueta *Prototaxites*; contador que sube hasta "hace unos 400" y chip "millones de años · Devónico". |
+| 2 | Plantas | A su lado, las plantas no pasaban de 40 centímetros: él era el gigante. | Vista de cerca de la base: plantitas bajas (tallos sin hojas tipo *Rhynia*, etiqueta "plantas tipo *Rhynia*"); una silueta humana con regla de 1.70 m; línea punteada "< 40 cm" por debajo de su rodilla; el tronco sube fuera de cuadro. Chip "él: hasta 8 m". |
+| 3 | Tubos | Por dentro es una maraña de tubos microscópicos. | Fondo oscuro, lente dorada con chip "POR DENTRO · tubos": tubos entrelazados de tres grosores (etiqueta "tubos de ~10 a ~40 µm"). Barra de escala 50 µm. |
+| 4 | Hongo | En 2001, un paleontólogo del Smithsonian, en Washington, sostuvo que era un hongo gigante. | Tarjeta "2001 · F. Hueber · Smithsonian, Washington · *Review of Palaeobotany and Palynology*"; los tubos se apagan y encima crece una red de hifas; chip "¿hilos de hongo (hifas)?". |
+| 5 | Carbono | En 2007, su carbono mostró que no vivía solo de la luz, como las plantas. | Fondo amarillo. Tarjeta "2007 · Boyce et al. · isótopos de carbono · *Geology*"; un sol con flechas hacia una planta (✓ "planta: vive de la luz") y hacia el tronco (✗, chip "Prototaxites: no solo de la luz"). |
 | 6 | Pregunta | ¿Un hongo de ocho metros? No tan rápido. | **Re-gancho.** "?" gigante sobre el tronco; Robert grande, pensativo. |
-| 7 | Estudio | En 2026, en Edimburgo, analizaron fósiles escoceses de 407 millones de años, guardados en piedra. | Mapa de Escocia con punto en Rhynie; bloque de piedra (pedernal) con un trocito de *P. taiti* dentro. Tarjeta "Loron et al. · *Science Advances* · enero 2026 · 407 millones de años". |
-| 8 | Quitina | Los hongos, como el champiñón de tu cocina, tienen paredes de quitina, y en esa misma piedra sus fósiles conservan una huella química de ella. | Un champiñón en una tabla de cocina → al microscopio, pared celular con cadenas de quitina; en los hongos fósiles de la misma piedra brilla una "huella" (espectro con picos). |
-| 9 | Sinhuella | En Prototaxites no apareció. Y su forma no coincide con ningún hongo conocido. | El mismo espectro sobre *Prototaxites*: NO es plano, tiene otros picos, pero faltan las bandas de la quitina (marcadas con ✗). Fila de siluetas de hongos conocidos que no encajan con el tubo de *Prototaxites* ✗. |
-| 10 | Linaje | Por eso proponen que era otro linaje de vida, extinto. | Árbol de la vida: ramas de plantas, animales, hongos… y una rama aparte que se corta (✝ "extinto"). Chip "propuesta". |
-| 11 | Debate | Pero no está cerrado: otros expertos dicen que solo revisaron una especie, y que hongo sigue siendo una opción. | Balanza: "hongo" vs "linaje extinto", que oscila sin decidirse. Chips "solo 1 especie revisada (*P. taiti*)" y "debate abierto". |
-| 12 | Cierre | Así que ese tronco no era un árbol, y aún no sabemos qué era. | **Regreso a la imagen del inicio:** el mismo tronco de 8 m en el mismo paisaje, ahora con un "?" grande encima. |
+| 7 | Estudio | En 2026, en Edimburgo, analizaron fósiles escoceses de 407 millones de años, guardados en piedra. | Bloque de piedra (pedernal) con un trocito de tubos fósiles dentro, que brilla. Tarjeta "2026 · equipo de Edimburgo · Loron et al. · *Science Advances*"; luego "fósiles de 407 millones de años" y etiqueta "pedernal de Rhynie, Escocia". |
+| 8 | Quitina | Los hongos, como el champiñón de tu cocina, tienen paredes de quitina, y en esa misma piedra sus fósiles conservan una huella química de ella. | Fondo rosa: un champiñón en una tabla de cocina (etiquetas "champiñón", *Agaricus bisporus*) → "AL MICROSCOPIO · pared celular": una hifa con su pared y una "cadena de quitina (esquema)" → espectro "hongo fósil (misma piedra)" con picos dentro de las "bandas de la quitina". |
+| 9 | Sinhuella | En Prototaxites no apareció. Y su forma no coincide con ningún hongo conocido. | Dos espectros: arriba "hongo fósil"; abajo *Prototaxites*, que NO es plano: tiene otros picos, pero las bandas de la quitina quedan vacías (✗). Chip "otros picos, sin la quitina". Luego: seta, champiñón e hifas ("hongos conocidos") ≠ los tubos de *Prototaxites* en una lente; chip "forma: no coincide". |
+| 10 | Linaje | Por eso proponen que era otro linaje de vida, extinto. | Fondo naranja. Árbol de la vida: ramas de plantas, animales y hongos, y una rama aparte, *Prototaxites*, que se corta (✝ "extinto"). Chip "propuesta · Loron et al. 2026". |
+| 11 | Debate | Pero no está cerrado: otros expertos dicen que solo revisaron una especie, y que hongo sigue siendo una opción. | Balanza: "hongo" vs "linaje extinto", que oscila sin decidirse. Chips "solo revisaron 1 especie" (etiqueta *P. taiti*) y "debate abierto". |
+| 12 | Cierre | Así que ese tronco no era un árbol, y aún no sabemos qué era. | **Regreso a la imagen del inicio:** el mismo tronco de 8 m en el mismo paisaje, ahora con un "?" grande al lado. Chip "aún no sabemos qué era". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y misteriosa, continua, sin golpe; efectos en el mismo cuadro (el tronco que crece, el reloj geológico, el "zoom" de la lupa, el sello de cada tarjeta, el "bip" del espectro con picos y el espectro de *Prototaxites* sin esas bandas, el corte de la rama extinta, el vaivén de la balanza).
 
-Barras de escala: 1 m (paisaje y tronco), 1 cm (champiñón), 50 µm (tubos), 10 µm (pared celular).
+Barras de escala: 1 m (paisaje, 90 px y 300 px de cerca), 50 µm (tubos), 5 cm (piedra y champiñón), "esquema" en el sol/planta y en la pared celular (dibujos no a escala), 50 µm en la comparación de tubos, 1 m en el cierre.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Un hongo de ocho metros? No tan rápido».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «no es un árbol… y quizá tampoco era un hongo» (cuadro 0) |
+| 2 | 4.7 | 7.6 | 04_bajando_lentes | `arriba-der` | «hace unos 400 millones de años» |
+| 3 | 8.6 | 11.7 | 13_senalando_arriba | `arriba-der` | señala el tronco: «él era el gigante» |
+| 4 | 17.7 | 19.9 | 06_pensativo_menton | `arriba-der` | «sostuvo que era un hongo gigante» |
+| 5 | 24.4 | 27.2 | 07_pensativo_puno | `grande` | «¿Un hongo de ocho metros? No tan rápido» |
+| 6 | 29.8 | 32.2 | 12_perfil_serio | `arriba-der` | los fósiles de 407 millones de años |
+| 7 | 33.2 | 34.8 | 02_apuntando_camara | `arriba-der` | «el champiñón de tu cocina» |
+| 8 | 40.6 | 44.6 | 11_sorprendido | `arriba-der` | «en Prototaxites no apareció» |
+| 9 | 48.6 | 54.2 | 06_pensativo_menton | `arriba-der` | «no está cerrado… solo revisaron una especie» |
+| 10 | 54.7 | 57.9 | 13_senalando_arriba | `arriba-der` | señala el "?": «aún no sabemos qué era» |
+| — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | cierre |
+
+Apariciones 10 · **32.1 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 

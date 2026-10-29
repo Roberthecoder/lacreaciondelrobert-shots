@@ -34,5 +34,3 @@ Fuentes abiertas:
 | 12b | Pantalla: "no es consejo médico: pregúntale a tu médico" | ✅ | — | Aviso, no afirmación. No se dan dosis ni recomendaciones. | — |
 
 **Resumen (29 oct 2026):** tras las correcciones (gancho y cierre referidos al sobre rotulado de *S. boulardii*, "en gente con antibióticos", "esa revisión", "dicen que" y chip del experimento de laboratorio), las 17 afirmaciones quedan ✅ contra sus fuentes. No es consejo médico: no hay dosis ni recomendaciones.
-
-VEREDICTO: APROBADO
