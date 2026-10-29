@@ -416,7 +416,7 @@ function SparckJones() {
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Bu - 0.1} texto="Usas una *idea de esta mujer.*" />
       <Subtitulo T={T} idx={1} at={K.Bu + 0.1} until={K.De - 0.1} texto="Escribe: *tamales de rajas.*" />
-      <Subtitulo T={T} idx={2} at={K.De + 0.1} until={K.Ra - 0.1} texto="«De» sale en todo: *casi no dice nada.*" />
+      <Subtitulo T={T} idx={2} at={K.De + 0.1} until={K.Ra - 0.1} texto="«De» en muchísimas: *casi no dice nada.*" />
       <Subtitulo T={T} idx={3} at={K.Ra + 0.1} until={K.Rr - 0.1} texto="«Rajas» sale en pocas: *esa sí.*" />
       <Subtitulo T={T} idx={4} at={K.Rr + 0.1} until={K.Re - 0.1} texto="Más rara, *más vale.*" />
       <Subtitulo T={T} idx={5} at={K.Re + 0.1} until={K.P - 0.1} texto="Si la repite, *sube en la lista.*" />

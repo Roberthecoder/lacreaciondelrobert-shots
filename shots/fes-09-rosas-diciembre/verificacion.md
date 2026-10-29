@@ -26,7 +26,7 @@ Verificador independiente (subagente que no escribió el guion), 29 oct 2026. MD
 
 Nota menor: `guion.md` (escena 8) dice "la planta florece" y `narracion.json` dice "la rosa florece"; da igual en hechos, pero conviene igualarlos.
 
-VEREDICTO: PENDIENTE (correcciones abajo)
+Estado previo: PENDIENTE (correcciones abajo; ya aplicadas, ver la última sección)
 
 ## Correcciones
 1. **Voz, escena 10 (China)** — cambiar "Ese freno roto venía de rosas de China, que llegaron a Europa a fines del siglo dieciocho." por:
@@ -35,3 +35,20 @@ VEREDICTO: PENDIENTE (correcciones abajo)
 2. **Pantalla, chip del cierre** — «KSN apagado: flor todo el año» → **«KSN apagado: flor en cada temporada buena»** (o «flor varias veces al año»). Fuente: Iwata 2012, "flower during all favourable seasons".
 3. **Título** — "el gen que no las deja dejar de florecer" → p. ej. **"Rosas en diciembre: el freno roto en su ADN"** o **"el gen apagado que las deja florecer en diciembre"**. Fuente: Iwata 2012 / Randoux 2014 (KSN es represor floral).
 4. (Recomendado, no bloqueante) En `## Fuentes`, fuente 6: anotar que el comunicado original de Agricultura (13 feb 2026) no está localizado en gob.mx y que la cifra se toma de su reproducción textual en La Crónica / UnoTV / El Imparcial; mantener «preliminar» en pantalla.
+
+## Correcciones aplicadas (texto final)
+Revisión del texto final completo de `guion.md` y `narracion.json` (voz y pantalla), 29 oct 2026. Las 14 líneas de voz coinciden en los dos archivos.
+
+| Afirmación (texto final) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz esc. 4: "Con el freno puesto, el brote echa hojas, pero no flor." | ✅ | Randoux 2014 · Iwata 2012 | "In CF roses, the ectopic expression of RoKSN led to the absence of flowering." · "maintaining vegetative growth" | 2014 / 2012 |
+| Voz esc. 8 (igualada en ambos archivos): "…y la rosa florece en cada temporada buena." | ✅ | Iwata 2012 | "CF genotypes flower during all favourable seasons" | 2012 |
+| Voz esc. 10: "Ese freno roto venía de rosas de China; a fines del siglo dieciocho, en Europa, las cruzaron con las suyas." · tarjeta «fines del siglo XVIII: cruces en Europa» | ✅ | Soufflet-Freslon 2021 (compatible con Bendahmane 2013) | "At the end of the 18th century, the introduction of Asian roses in Europe caused a revolution in rose breeding" · copia "absent in European roses cultivated before 1800" | 2021 |
+| Pantalla esc. 10: la rosa china "viaja en barco a Europa y se cruza con una rosa europea" | ✅ (esquemático; no da fecha falsa) | ídem | La fecha de la tarjeta se refiere a los cruces, no al viaje. Aun leída como fecha de llegada, coincide con "the introduction of Asian roses in Europe" a fines del XVIII de Soufflet-Freslon. Recomendación de animación: que la tarjeta aparezca al cruzarse con la europea, no durante el viaje | 2021 |
+| Chip del cierre: «KSN apagado: flor en cada temporada buena» | ✅ | Iwata 2012 | "flower during all favourable seasons" | 2012 |
+| Título: "Rosas en diciembre: el freno roto en su ADN" | ✅ | Iwata 2012 | "the absence of the floral repressor provokes continuous blooming" | 2012 |
+| Fuente 6 aclarada (comunicado de Agricultura del 13 feb 2026 tomado de la prensa, no localizado en gob.mx; «preliminar» en pantalla) | ✅ | La Crónica / UnoTV / El Imparcial | "el Estado de México aportó 78.7% de la producción nacional" | 2025 (publicado 2026) |
+
+El resto de las afirmaciones (tabla de arriba) no cambió y sigue ✅.
+
+VEREDICTO: APROBADO
