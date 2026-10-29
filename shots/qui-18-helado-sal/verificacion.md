@@ -32,3 +32,13 @@ Notas sobre el #17: la mezcla de hielo, agua y sal como punto cero está ✅ tex
 2. **#17 (voz 9, "en 1724")** ⚠️ — Propuesta: "Lo curioso: Fahrenheit contó en 1724 que el cero de su escala salía de una mezcla de hielo, agua y sal." En la tarjeta: "1724 · Fahrenheit lo publica".
 
 Todo lo demás: sin cambios.
+
+## Re-verificación (29 oct 2026)
+
+| # | Texto corregido | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 13 | Voz 7: "En 1788, el médico Charles Blagden midió agua con más y más sal: el punto de congelación bajaba casi en proporción a la sal." | ✅ | Blagden, Phil. Trans. R. Soc. 78:277 | "By Charles Blagden, M. D." · "Read April 24, 1788." · "This salt I dissolved in distilled water, in various proportions, and found the corresponding points of congelation." · "the effect of the salt was nearly in a simple ratio" | 1788 |
+| 17 | Voz 9: "Lo curioso: Fahrenheit contó en 1724 que el cero de su escala salía de una mezcla de hielo, agua y sal." + tarjeta "1724 · Fahrenheit lo publica" | ✅ | Fahrenheit, Phil. Trans. 33:78 (1724), p. 79 (escaneo) | "commixtione glaciei, aquae, & salis Armoniaci vel etiam maritimi acquiritur; huic mixturae si thermometron imponitur, fluidum ejus usque ad gradum, qui zero notatur, descendit." | 1724 |
+| 3 | Voz 1: "Mete un termómetro en hielo con agua: marca cero." (pantalla: 0 °C) | ✅ | Fahrenheit 1724 (hielo + agua sin sal = 32 °F = 0 °C); OpenStax Chem 2e 10.3 | "si aqua & glacies absque memoratis salibus commiscentur … tricesimum secundum occupat gradum" · "warm to 0 °C" | 1724 / 2019 |
+
+Las 2 ⚠️ quedan resueltas. Detalle menor fuera de la voz: el encabezado de la fuente 7 en `guion.md` todavía dice "1788, Londres"; conviene cambiarlo a "1788, Real Sociedad de Londres" para que sea coherente (no afecta lo que se ve ni lo que se oye).
