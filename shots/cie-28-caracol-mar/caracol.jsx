@@ -24,7 +24,7 @@ function Caracol({ x, y, s = 1, rot = 0, voltea = false, brillo = 0 }) {
 const CA_C = [-40, 5];
 function caEspiral(f) { const a = f * Math.PI * 3.2, r = 150 * Math.exp(-0.22 * a); return [CA_C[0] + Math.cos(a) * r, CA_C[1] + Math.sin(a) * r, r]; }
 // Concha en corte: el hueco curvo por dentro, con sonidos que entran, rebotan y uno que se refuerza (ref 0..1).
-function CaracolCorte({ x, y, s = 1, T = 0, ondas = 1, ref = 0 }) {
+function CaracolCorte({ x, y, s = 1, T = 0, ondas = 1, refuerzo = 0 }) {
   const N = 70, seg = [];
   for (let i = 0; i < N; i++) { const a = caEspiral(i / N), b = caEspiral((i + 1) / N); seg.push([a, b]); }
   const pl = Array.from({ length: N + 1 }, (_, i) => caEspiral(i / N)).map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
@@ -34,11 +34,11 @@ function CaracolCorte({ x, y, s = 1, T = 0, ondas = 1, ref = 0 }) {
     {[-185, -165, -145].map((xx, i) => <ellipse key={i} cx={xx} cy={-2} rx={6 + i * 3} ry={5 + i * 3} fill="#2a1730" stroke={KC.ink} strokeWidth={2} />)}
     {seg.map(([a, b], i) => <line key={'o' + i} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke={KC.ink} strokeWidth={a[2] * 0.42 + 12} strokeLinecap="round" />)}
     {seg.map(([a, b], i) => <line key={'i' + i} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke="#2a1730" strokeWidth={a[2] * 0.42 + 6} strokeLinecap="round" />)}
-    {ref > 0.01 && <polyline points={pl} fill="none" stroke={KC.gold2} strokeWidth={3 + 10 * ref} strokeLinecap="round" strokeDasharray="22 18" strokeDashoffset={-T * 90} opacity={ref} />}
+    {refuerzo > 0.01 && <polyline points={pl} fill="none" stroke={KC.gold2} strokeWidth={3 + 10 * refuerzo} strokeLinecap="round" strokeDasharray="22 18" strokeDashoffset={-T * 90} opacity={refuerzo} />}
     {ondas > 0 && Array.from({ length: 12 }, (_, i) => { const f = (T * 0.22 + i / 12) % 1, g = f < 0.5 ? f * 2 : 2 - f * 2; const p = caEspiral(g * 0.85);
       return <circle key={i} cx={p[0]} cy={p[1]} r={7 + p[2] * 0.04} fill={CA_SONIDOS[i % 4]} stroke={KC.ink} strokeWidth={2} opacity={ondas} />; })}
-    {ref > 0.01 && [0, 1, 2].map((i) => { const p = caEspiral(0.32), f = (T * 0.9 + i / 3) % 1;
-      return <circle key={'r' + i} cx={p[0]} cy={p[1]} r={10 + f * 70 * ref} fill="none" stroke={KC.gold2} strokeWidth={4} opacity={ref * (1 - f)} />; })}
+    {refuerzo > 0.01 && [0, 1, 2].map((i) => { const p = caEspiral(0.32), f = (T * 0.9 + i / 3) % 1;
+      return <circle key={'r' + i} cx={p[0]} cy={p[1]} r={10 + f * 70 * refuerzo} fill="none" stroke={KC.gold2} strokeWidth={4} opacity={refuerzo * (1 - f)} />; })}
   </g>;
 }
 
@@ -202,11 +202,11 @@ function CaracolMar() {
         <Ambiente T={T} n={20} color="rgba(255,255,255,.14)" />
         <Lienzo>
           {[0, 1, 2, 3].map((i) => <OndasArco key={i} x={1120} y={760 + i * 30} ang={180 + (i - 1.5) * 8} T={T * (0.8 + i * 0.15)} color={CA_SONIDOS[i]} largo={170} n={3} o={kprog(T, K.Cavidad + 0.2, K.Cavidad + 0.6)} />)}
-          <CaracolCorte x={500} y={800} s={2.3} T={T} ondas={kprog(T, K.Cavidad + 0.6, K.Cavidad + 1.2)} ref={kprog(T, K.Cavidad + 2.8, K.Cavidad + 4.0, kEase.sale)} />
+          <CaracolCorte x={530} y={800} s={2.2} T={T} ondas={kprog(T, K.Cavidad + 0.6, K.Cavidad + 1.2)} refuerzo={kprog(T, K.Cavidad + 2.8, K.Cavidad + 4.0, kEase.sale)} />
         </Lienzo>
         <Chip T={T} at={K.Cavidad + 0.2} until={K.Mar - 0.2} texto="POR DENTRO · LA CONCHA" x={540} y={440} tam={38} borde={KC.cyan} mono />
-        <Etq T={T} at={K.Cavidad + 1.0} until={K.Cavidad + 2.7} x={500 + 120 * 2.3 - 80} y={1110} texto="hueco curvo" lado="izq" color={KC.texto} />
-        <Chip T={T} at={K.Cavidad + 3.0} until={K.Mar - 0.2} texto="algunos tonos se refuerzan" x={500} y={1170} tam={40} borde={KC.gold2} />
+        <Etq T={T} at={K.Cavidad + 1.0} until={K.Cavidad + 2.7} x={530 + 120 * 2.2 - 80} y={1090} texto="hueco curvo" lado="izq" color={KC.texto} />
+        <Chip T={T} at={K.Cavidad + 3.0} until={K.Mar - 0.2} texto="algunos tonos se refuerzan" x={520} y={1165} tam={40} borde={KC.gold2} />
       </Escena>
 
       {/* 3 · el zumbido reforzado suena a olas */}
@@ -223,7 +223,7 @@ function CaracolMar() {
           <line x1={130} y1={1040} x2={950} y2={1040} stroke={KC.texto} strokeWidth={5} />
           <text x={130} y={1095} style={{ font:`900 34px ${KF.texto}` }} fill={KC.texto}>tonos graves</text>
           <text x={950} y={1095} textAnchor="end" style={{ font:`900 34px ${KF.texto}` }} fill={KC.texto}>agudos</text>
-          <text x={140} y={720} style={{ font:`700 28px ${KF.mono}` }} fill="rgba(246,243,236,.7)">ruido dentro de la concha</text>
+          <text x={980} y={720} textAnchor="end" style={{ font:`700 28px ${KF.mono}` }} fill="rgba(246,243,236,.7)">ruido dentro de la concha</text>
           {T > K.Mar + 3.0 && <MarFranja x0={0} x1={KW} y={600} T={T} bravo={0.2} alto={30 * kprog(T, K.Mar + 3.0, K.Mar + 3.6)} />}
           <Onomato T={T} at={K.Mar + 1.4} dur={1.3} x={300} y={560} texto="shhh…" color={KC.texto} tam={120} />
         </Lienzo>
@@ -238,19 +238,18 @@ function CaracolMar() {
       <Escena T={T} a={K.Mito} b={K.Sangre}>
         <FondoLunares color={KC.coral} />
         <Lienzo>
-          <CabezaPerfil x={600} y={800} s={1.2} />
-          <path d="M 560 1080 C 560 980 470 930 470 860 C 470 800 500 760 540 720" fill="none" stroke={KC.ink} strokeWidth={30} strokeLinecap="round" opacity={kprog(T, K.Mito + 0.4, K.Mito + 0.9)} />
-          <path d="M 560 1080 C 560 980 470 930 470 860 C 470 800 500 760 540 720" fill="none" stroke={KC.red} strokeWidth={20} strokeLinecap="round" strokeDasharray="16 14" strokeDashoffset={T * 60}
-            pathLength={1} style={{ strokeDasharray: undefined }} opacity={kprog(T, K.Mito + 0.4, K.Mito + 0.9)} />
-          <Caracol x={600 - 75 * 1.2 + 6} y={812 - 6} s={0.8} rot={-12} />
-          <Corazon x={640} y={1140} s={0.75} late={late(T)} />
+          <CabezaPerfil x={600} y={860} s={1.2} />
+          <path d="M 600 1120 C 600 1040 500 990 500 920 C 500 860 530 820 570 780" fill="none" stroke={KC.ink} strokeWidth={30} strokeLinecap="round" opacity={kprog(T, K.Mito + 0.4, K.Mito + 0.9)} />
+          <path d="M 600 1120 C 600 1040 500 990 500 920 C 500 860 530 820 570 780" fill="none" stroke={KC.red} strokeWidth={20} strokeLinecap="round" strokeDasharray="16 14" strokeDashoffset={T * 60} opacity={kprog(T, K.Mito + 0.4, K.Mito + 0.9)} />
+          <Caracol x={600 - 75 * 1.2 + 6} y={872 - 6} s={0.8} rot={-12} />
+          <Corazon x={700} y={1150} s={0.7} late={late(T)} />
         </Lienzo>
-        <Lupa T={T} at={K.Mito + 1.4} until={K.Sangre - 0.2} x={830} y={540} r={150} fx={500} fy={880} tinte={KC.red} etiqueta="POR DENTRO · SANGRE"
+        <Lupa T={T} at={K.Mito + 1.4} until={K.Sangre - 0.2} x={275} y={500} r={140} fx={505} fy={950} tinte={KC.red} etiqueta="POR DENTRO · SANGRE"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a0c14" />
             <rect x={0} y={r - 70} width={r * 2} height={140} fill="#7a1726" />
             {Array.from({ length: 9 }, (_, i) => { const xx = ((t * 120 + i * 50) % (r * 2 + 80)) - 40, yy = r + Math.sin(i * 2.1) * 36;
               return <g key={i}><ellipse cx={xx} cy={yy} rx={30} ry={18} fill="#e8333f" stroke={KC.ink} strokeWidth={3} /><ellipse cx={xx} cy={yy} rx={14} ry={7} fill="#b31f2d" /></g>; })}</svg>} />
-        <Chip T={T} at={K.Mito + 3.4} until={K.Sangre + 2.4} texto="no es lo principal" x={330} y={460} tam={42} borde={KC.red} />
+        <Chip T={T} at={K.Mito + 3.4} until={K.Sangre + 2.4} texto="no es lo principal" x={760} y={450} tam={42} borde={KC.red} />
       </Escena>
 
       {/* 6 · la prueba de que no es la sangre: en un cuarto muy silencioso casi no suena */}
@@ -268,7 +267,7 @@ function CaracolMar() {
         <Medidor T={T} at={K.Sangre + 3.6} until={K.Vaso - 0.2} valor={(t) => klerp(0.75, 0.08, kprog(t, K.Sangre + 4.0, K.Sangre + 5.6, kEase.sale))} etiqueta="sonido del caracol"
           texto={(v) => (v > 0.4 ? 'fuerte' : 'casi nada')} x={60} y={560} ancho={590} color={KC.yellow} />
         <Etq T={T} at={K.Sangre + 3.8} until={K.Vaso - 0.2} x={470} y={960} texto="la sangre sigue" lado="izq" color={KC.texto} />
-        <Chip T={T} at={K.Sangre + 3.6} until={K.Vaso - 0.2} texto="cuarto muy silencioso" x={540} y={1180} tam={40} borde={KC.lilac} />
+        <Chip T={T} at={K.Sangre + 3.6} until={K.Vaso - 0.2} texto="cuarto muy silencioso" x={540} y={440} tam={40} borde={KC.lilac} />
       </Escena>
 
       {/* 7 · haz la prueba: vaso o mano ahuecada */}
@@ -298,8 +297,8 @@ function CaracolMar() {
           <Tono x0={500} x1={1040} y={1045} amp={40} lam={60} T={T} vel={140} color={KC.pink} p={kprog(T, K.Tamano + 3.9, K.Tamano + 4.6, kEase.sale)} />
         </Lienzo>
         <Chip T={T} at={K.Tamano + 0.3} until={K.Lugar - 0.2} texto="cambia con el tamaño" x={540} y={440} tam={42} borde={KC.ink} />
-        <Etq T={T} at={K.Tamano + 2.0} until={K.Lugar - 0.2} x={640} y={800} texto="hueco grande → más grave" lado="der" color={KC.ink} />
-        <Etq T={T} at={K.Tamano + 4.2} until={K.Lugar - 0.2} x={450} y={1150} texto="hueco chico → más agudo" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Tamano + 2.0} until={K.Lugar - 0.2} x={300} y={830} texto="hueco grande → más grave" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Tamano + 4.2} until={K.Lugar - 0.2} x={200} y={1150} texto="hueco chico → más agudo" lado="der" color={KC.ink} />
       </Escena>
 
       {/* 9 · el lugar: calle con tráfico (mar bravo) contra recámara (mar tranquilo) */}
@@ -323,7 +322,7 @@ function CaracolMar() {
             <g clipPath="url(#caMar2)" opacity={kprog(T, K.Lugar + 4.4, K.Lugar + 4.8)}><MarFranja x0={-120} x1={120} y={30} T={T} bravo={0} alto={22} /></g></g>
         </Lienzo>
         <Chip T={T} at={K.Lugar + 1.6} until={K.Cierre - 0.2} texto="calle con tráfico" x={330} y={290 + 160} tam={40} borde={KC.ink} />
-        <Etq T={T} at={K.Lugar + 3.2} until={K.Cierre - 0.2} x={730} y={600} texto="mar bravo" lado="izq" color={KC.texto} />
+        <Etq T={T} at={K.Lugar + 3.2} until={K.Cierre - 0.2} x={990} y={610} texto="mar bravo" lado="izq" color={KC.texto} />
         <Chip T={T} at={K.Lugar + 4.4} until={K.Cierre - 0.2} texto="tu recámara" x={330} y={880} tam={40} borde={KC.ink} />
         <Etq T={T} at={K.Lugar + 4.6} until={K.Cierre - 0.2} x={790} y={1060} texto="mar tranquilo" lado="izq" color={KC.ink} />
       </Escena>
@@ -344,10 +343,10 @@ function CaracolMar() {
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Ruido - 0.1} texto="No es el mar: *es tu ruido.*" />
       <Subtitulo T={T} idx={1} at={K.Ruido + 0.1} until={K.Cavidad - 0.1} texto="Siempre hay *ruido* alrededor." />
-      <Subtitulo T={T} idx={2} at={K.Cavidad + 0.1} until={K.Mar - 0.1} texto="En el hueco *rebota y se refuerza.*" />
+      <Subtitulo T={T} idx={2} at={K.Cavidad + 0.1} until={K.Mar - 0.1} texto="En el hueco *se refuerza.*" />
       <Subtitulo T={T} idx={3} at={K.Mar + 0.1} until={K.Pregunta - 0.1} texto="Suena *como olas.*" />
       <Subtitulo T={T} idx={4} at={K.Pregunta + 0.1} until={K.Mito - 0.1} texto="¿Y si es *tu sangre?*" />
-      <Subtitulo T={T} idx={5} at={K.Mito + 0.1} until={K.Sangre - 0.1} texto="Muchos creen que *es la sangre.*" />
+      <Subtitulo T={T} idx={5} at={K.Mito + 0.1} until={K.Sangre - 0.1} texto="Muchos creen: *es la sangre.*" />
       <Subtitulo T={T} idx={6} at={K.Sangre + 0.1} until={K.Vaso - 0.1} texto="En silencio *casi no suena.*" />
       <Subtitulo T={T} idx={7} at={K.Vaso + 0.1} until={K.Tamano - 0.1} texto="Prueba con *un vaso o tu mano.*" />
       <Subtitulo T={T} idx={8} at={K.Tamano + 0.1} until={K.Lugar - 0.1} texto="Más grande, *más grave.*" />

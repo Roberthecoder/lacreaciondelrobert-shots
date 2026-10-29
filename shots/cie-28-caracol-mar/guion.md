@@ -27,7 +27,40 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` |
+| 2 | 5.8 | 8.7 | 04_bajando_lentes | `bajo-der` |
+| 3 | 14.4 | 17.1 | 13_senalando_arriba | `bajo-der` |
+| 4 | 19.8 | 22.3 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 5 | 22.4 | 24.6 | 07_pensativo_puno | `grande` |
+| 6 | 25.2 | 27.7 | 06_pensativo_menton | `bajo-der` |
+| 7 | 29.6 | 32.6 | 12_perfil_serio | `arriba-der` |
+| 8 | 33.5 | 36.4 | 03_aburrido_manos_mejillas | `bajo-der` |
+| 9 | 36.8 | 39.3 | 13_senalando_arriba | `arriba-der` |
+| 10 | 43.8 | 46.6 | 08_recostado_mano | `bajo-der` |
+| 11 | 50.2 | 52.4 | 11_sorprendido | `bajo-der` |
+| 12 | 55.9 | 57.9 | 05_sonriendo_dientes_uniformes | `gancho` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 12 · 33.1 s (+ cierre 3.5 s) · poses 9 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «no es el mar» (sorprendido) |
+| 2 | «aunque no lo notes» (bajando lentes) |
+| 3 | «rebotan y se refuerzan» (señalando) |
+| 4 | «suena muy parecido a las olas» (sonriendo) |
+| 5 | «¿Y si es tu sangre?» (pensativo, grande) |
+| 6 | «mucha gente cree» (pensativo) |
+| 7 | «No es lo principal» (serio) |
+| 8 | «casi no suena» (aburrido) |
+| 9 | «Haz la prueba» (señalando) |
+| 10 | «un hueco más grande… más graves» (recostado) |
+| 11 | «se oye más bravo» (sorprendido) |
+| 12 | «y aun así, suena bonito» (sonriendo) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 
