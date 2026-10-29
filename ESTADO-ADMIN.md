@@ -46,6 +46,9 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   intentarían gastar ElevenLabs a la vez. Hasta arreglarlo: en main, siempre `[sin render]`; las voces se aprueban en una rama.
 
 ## Decisiones de Robert que no están en otros archivos
+- 29 oct: "No pasa nada si se pasa ligeramente la narración. Solo corrige los datos duros, inclusive si ya tienen voz: mejoré el
+  modelo de voz, regeneraremos todo." → ya no se recortan guiones por duración; todo dato falso se corrige aunque el shot
+  tenga voz (se le quita voz_aprobada; la voz se regenera cuando Robert apruebe).
 - 28 oct: verificación estricta e independiente para TODO video, también los viejos. "No me importa el costo: arréglalos todos."
 - 28 oct: la voz se genera solo con su aprobación; si cambia lo narrado, se le vuelve a pedir.
 - 28 oct: quiere ver los créditos de ElevenLabs siempre actualizados en la Sala (doc `estado/creditos`).
@@ -57,7 +60,7 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - Falta: actualizar el encargo del trabajador horario para que revise `python3 calendario/fecha.py festivos` antes del lote.
 
 ## Pendientes técnicos
-- ia-04-huella (64 s) y bio-01-ramas (63.7 s): recortar guion y regenerar voz cuando haya créditos.
+- (29 oct) ia-04 y bio-01 se quedan con su duración: Robert aceptó que la narración se pase un poco.
 
 ## Pendientes de Robert (él tiene que hacerlos)
 - **RECORDARLE al terminar la configuración de las API de redes:** cancelar la prueba gratuita de un mes de Meta Verified
