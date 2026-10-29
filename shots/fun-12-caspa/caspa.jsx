@@ -253,8 +253,8 @@ function CaspaShot() {
             </g>; })()}
           <Malassezia x={330} y={640 + Math.sin(T * 1.3) * 8} r={120} ang={-35} brote={0.6} />
           {(() => { const p = kprog(T, K.Ge + 3.4, K.Ge + 5.4); return <g>
-            <Gota x={720} y={640} r={78 * (1 - 0.55 * p)} />
-            {p > 0 && Array.from({ length: 4 }, (_, k) => { const u = (p * 2 + k / 4) % 1; return <g key={k} opacity={Math.sin(u * Math.PI)}><Cola x={klerp(680, 470, u)} y={600 + k * 22 - u * 20} n={5} paso={10} alto={5} ang={180} color={k === 1 ? CP.oleico : CP.acido} ancho={4} kink={k === 1} /></g>; })}
+            <Gota x={700} y={740} r={78 * (1 - 0.55 * p)} />
+            {p > 0 && Array.from({ length: 4 }, (_, k) => { const u = (p * 2 + k / 4) % 1; return <g key={k} opacity={Math.sin(u * Math.PI)}><Cola x={klerp(660, 470, u)} y={690 + k * 22 - u * 60} n={5} paso={10} alto={5} ang={180} color={k === 1 ? CP.oleico : CP.acido} ancho={4} kink={k === 1} /></g>; })}
           </g>; })()}
         </>)}
       </Escena>
@@ -305,7 +305,6 @@ function CaspaShot() {
       <Chip T={T} at={K.Tr + 3.3} until={K.Es - 0.2} texto="caspa" x={780} y={1080} tam={44} borde={KC.ink} />
       <Chip T={T} at={K.Es + 0.6} until={K.Est - 0.2} texto="se multiplican de más" x={400} y={1180} tam={34} borde={KC.coral} />
       <Etq T={T} at={K.Es + 1.6} until={K.Est - 0.2} x={60} y={430} texto="escama = células pegadas" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Es + 0.3} until={K.Est - 0.2} x={1030} y={1110} texto="células nuevas" lado="izq" tam={26} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.Est + 0.2} until={K.Re - 0.3} anio="2005" quien="investigadores de Cincinnati, EE. UU." revista="DeAngelis y col. · J Investig Dermatol Symp Proc" y={410} />
       <Chip T={T} at={K.Est + 3.0} until={K.Re - 0.3} texto="ácido oleico" x={540} y={700} tam={32} borde={CP.oleico} />
       <Chip T={T} at={K.Re + 0.1} until={K.Ge - 0.2} texto="con caspa" x={290} y={680} tam={34} borde={KC.ink} />
@@ -313,9 +312,9 @@ function CaspaShot() {
       <Chip T={T} at={K.Re + 1.4} until={K.Ge - 0.2} texto="✓ se descamó" x={290} y={1165} tam={32} borde={KC.leaf} />
       <Chip T={T} at={K.Re + 2.2} until={K.Ge - 0.2} texto="nada visible" x={790} y={1165} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Ge + 0.5} until={K.Ch - 0.2} x={60} y={440} texto="Malassezia globosa" it tam={36} color={KC.texto} />
-      <Chip T={T} at={K.Ge + 0.8} until={K.Ch - 0.2} texto="su genoma (leído en 2007)" x={540} y={1080} tam={32} borde={KC.cyan} />
-      <Etq T={T} at={K.Ge + 1.8} until={K.Ch - 0.2} x={622} y={850} texto="gen para fabricar ácidos grasos: no está" lado="izq" tam={24} color={KC.red} />
-      <Etq T={T} at={K.Ge + 3.6} until={K.Ch - 0.2} x={1030} y={760} texto="tu sebo" lado="izq" tam={30} color={CP.sebo2} />
+      <Chip T={T} at={K.Ge + 0.8} until={K.Ch - 0.2} texto="su genoma (leído en 2007)" x={400} y={830} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.Ge + 1.8} until={K.Ch - 0.2} texto="✗ el gen para fabricar ácidos grasos" x={540} y={1090} tam={30} borde={KC.red} />
+      <Etq T={T} at={K.Ge + 3.6} until={K.Ch - 0.2} x={1030} y={800} texto="tu sebo" lado="izq" tam={30} color={CP.sebo2} />
       <Chip T={T} at={K.Ch + 0.4} until={K.C - 0.2} texto="antifúngicos" x={300} y={470} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.Ch + 2.2} until={K.C - 0.2} texto="ketoconazol" x={250} y={560} tam={30} borde={KC.cyan} />
       <Chip T={T} at={K.Ch + 2.9} until={K.C - 0.2} texto="piritiona de zinc" x={290} y={640} tam={30} borde={KC.cyan} />
@@ -343,7 +342,7 @@ function CaspaShot() {
       <Subtitulo T={T} idx={7} at={K.Es + 0.1} until={K.Est - 0.1} texto="Se despegan *en grupos.*" />
       <Subtitulo T={T} idx={8} at={K.Est + 0.1} until={K.Re - 0.1} texto="2005: *ácido oleico*" />
       <Subtitulo T={T} idx={9} at={K.Re + 0.1} until={K.Ge - 0.1} texto="Con caspa: *se descamó.*" />
-      <Subtitulo T={T} idx={10} at={K.Ge + 0.1} until={K.Ch - 0.1} texto="Usa *las tuyas.*" />
+      <Subtitulo T={T} idx={10} at={K.Ge + 0.1} until={K.Ch - 0.1} texto="Le falta un gen: *usa los tuyos.*" />
       <Subtitulo T={T} idx={11} at={K.Ch + 0.1} until={K.C - 0.1} texto="Champús con *antifúngicos.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Es tu piel *reaccionando.*" />
 

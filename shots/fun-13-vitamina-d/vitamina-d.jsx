@@ -230,26 +230,26 @@ function VitaminaDShot() {
       <Escena T={T} a={K.Es} b={K.Sa} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Sol T={T} x={130} y={700} r={60} o={kprog(T, K.Es + 1.6, K.Es + 2.1)} />
+          <Sol T={T} x={110} y={640} r={52} o={kprog(T, K.Es + 1.6, K.Es + 2.1)} />
           <g opacity={kprog(T, K.Es + 1.4, K.Es + 2.0)} transform={`translate(0 ${klerp(80, 0, kprog(T, K.Es + 1.4, K.Es + 2.0, kEase.sale))})`}>
             <Charola T={T} x={540} y={980} brillo={brilloCh} />
           </g>
-          {[0, 1, 2].map((i) => <RayoUV key={i} T={T} x1={200} y1={740 + i * 20} x2={330 + i * 230} y2={880} p={kprog(T, K.Es + 2.4 + i * 0.2, K.Es + 3.2 + i * 0.2)} fase={i} color="#ff7a00" />)}
+          {[0, 1, 2].map((i) => <RayoUV key={i} T={T} x1={150} y1={690 + i * 20} x2={330 + i * 230} y2={880} p={kprog(T, K.Es + 2.4 + i * 0.2, K.Es + 3.2 + i * 0.2)} fase={i} color="#ff7a00" />)}
         </>)}
       </Escena>
       {/* 9 · comparable al salmón y más de lo recomendado al día */}
       <Escena T={T} a={K.Sa} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          {(() => { const b0 = 1150, esc = 30, hC = 17.6 * esc * kprog(T, K.Sa + 1.0, K.Sa + 1.8, kEase.sale), hA = 15 * esc * kprog(T, K.Sa + 2.4, K.Sa + 3.1, kEase.sale);
+          {(() => { const b0 = 1150, esc = 22, hC = 17.6 * esc * kprog(T, K.Sa + 1.0, K.Sa + 1.8, kEase.sale), hA = 15 * esc * kprog(T, K.Sa + 2.4, K.Sa + 3.1, kEase.sale);
             return <g>
               <line x1={80} y1={b0} x2={1000} y2={b0} stroke={KC.ink} strokeWidth={7} />
-              <rect x={560} y={b0 - hC} width={150} height={hC} fill={VD.foco} stroke={KC.ink} strokeWidth={7} />
-              <rect x={790} y={b0 - hA} width={150} height={hA} fill="#ffffff" stroke={KC.ink} strokeWidth={7} />
-              {hC > 10 && <text x={635} y={b0 - hC - 18} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>17.6 µg</text>}
-              {hA > 10 && <text x={865} y={b0 - hA - 18} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>15 µg</text>}
-              {hC > 10 && <text x={635} y={b0 - hC - 80} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>champiñón al sol</text>}
-              {hA > 10 && <text x={865} y={b0 - hA - 80} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>adulto, al día</text>}
+              <rect x={600} y={b0 - hC} width={150} height={hC} fill={VD.foco} stroke={KC.ink} strokeWidth={7} />
+              <rect x={830} y={b0 - hA} width={150} height={hA} fill="#ffffff" stroke={KC.ink} strokeWidth={7} />
+              {hC > 10 && <text x={675} y={b0 - hC - 18} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>17.6 µg</text>}
+              {hA > 10 && <text x={905} y={b0 - hA - 18} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>15 µg</text>}
+              {hC > 10 && <text x={675} y={b0 - hC - 80} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>champiñón al sol</text>}
+              {hA > 10 && <text x={905} y={b0 - hA - 80} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>adulto, al día</text>}
             </g>; })()}
           <g opacity={kprog(T, K.Sa + 0.2, K.Sa + 0.7)}><Salmon x={260} y={880} s={1.05} /></g>
         </>)}
@@ -324,7 +324,7 @@ function VitaminaDShot() {
       {T >= K.R && T < K.Sa && (() => { const s = Math.floor(reloj * 900); const f2 = (n) => String(n).padStart(2, '0');
         return <div style={{ position:'absolute', left:420, top:590, transform:'translate(-50%,-50%)', zIndex:42, textAlign:'center', opacity:kprog(T, K.R, K.R + 0.3) * (1 - kprog(T, K.Sa - 0.3, K.Sa)) }}>
           <div style={{ font:`700 64px ${KF.mono}`, color:reloj >= 1 ? KC.yellow : KC.texto, background:'rgba(0,0,0,.65)', border:`3px solid ${KC.texto}`, borderRadius:14, padding:'4px 22px' }}>{f2(Math.floor(s / 60))}:{f2(s % 60)}</div></div>; })()}
-      <Medidor T={T} at={K.R + 0.3} until={K.Sa - 0.3} valor={(t) => kprog(t, K.R + 0.3, K.R + 2.5) * 0.9} etiqueta="vitamina D2" texto={(v) => (v * 17.6 / 0.9).toFixed(1) + ' µg / 100 g'} y={1290 - 590} color={KC.yellow} />
+      <Medidor T={T} at={K.R + 0.3} until={K.Sa - 0.3} valor={(t) => kprog(t, K.R + 0.3, K.R + 2.5) * 0.9} etiqueta="vitamina D2" texto={(v) => (v * 17.6 / 0.9).toFixed(1) + ' µg / 100 g'} x={240} ancho={780} y={680} color={KC.yellow} />
       <Chip T={T} at={K.R + 2.8} until={K.Sa - 0.3} texto="17.6 µg de vitamina D2 por 100 g de champiñón fresco" x={540} y={470} tam={27} borde={KC.yellow} />
       <Etq T={T} at={K.Sa + 0.6} until={K.H - 0.3} x={110} y={760} texto="salmón: comparable" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Sa + 2.6} until={K.H - 0.3} texto="adulto de 19 a 70 años: 15 µg al día" x={540} y={480} tam={32} borde={KC.ink} />

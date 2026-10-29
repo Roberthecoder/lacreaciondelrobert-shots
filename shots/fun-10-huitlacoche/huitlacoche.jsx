@@ -229,7 +229,7 @@ function HuitlacocheShot() {
         {fsvg(<>
           <Agalla x={430} y={950} r={190} oscuro={0} seed={9} />
           <circle cx={430} cy={950} r={110} fill="#f4f1ea" stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Sa + 1.6, K.Sa + 2.0)} />
-          <Sello T={T} at={K.Sa + 2.4} x={640} y={800} texto="NO" color={KC.red} r={100} />
+          <Sello T={T} at={K.Sa + 2.4} x={680} y={900} texto="NO" color={KC.red} r={90} />
         </>)}
       </Escena>
       {/* 11 · en casi todo el mundo una enfermedad; en México, un manjar con nombre en muchas lenguas */}
@@ -295,14 +295,14 @@ function HuitlacocheShot() {
       <Etq T={T} at={K.A + 1.5} until={MICRO - 0.2} x={1020} y={490} texto="y más divisiones" tam={28} color={KC.gold2} lado="izq" />
       <Etq T={T} at={MICRO + 0.4} until={K.P - 0.3} x={700} y={850} texto="agalla" tam={36} />
       <Etq T={T} at={MICRO + 0.4} until={K.P - 0.3} x={330} y={900} texto="granos" tam={30} lado="izq" />
-      <Chip T={T} at={K.Es + 0.2} until={K.E - 0.3} texto="AL MICROSCOPIO · dentro de la agalla" x={500} y={410} tam={30} mono borde={KC.cyan} />
+      <Chip T={T} at={K.Es + 0.2} until={K.Es + 2.3} texto="AL MICROSCOPIO · dentro de la agalla" x={500} y={410} tam={30} mono borde={KC.cyan} />
       <Etq T={T} at={K.Es + 2.4} until={K.E - 0.3} x={730} y={1140} texto="teliosporas" tam={34} color={KC.texto} lado="izq" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.1} anio="2003" quien="Universidad de Illinois" revista="Pataky y Chandler · Mycologia, 2003" x={420} y={480} />
       <Chip T={T} at={K.E + 3.4} until={K.Co - 0.3} texto="inoculan a propósito los pelos" x={400} y={470} tam={36} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Co + 0.3} until={K.Sa - 0.3} valor={131} dur={0.9} sufijo=" g" etiqueta="hasta" x={380} y={560} tam={200} color={KC.gold2} />
       <Chip T={T} at={K.Co + 1.0} until={K.Sa - 0.3} texto="de huitlacoche por mazorca" x={400} y={760} tam={36} borde={KC.ink} />
       <Dias T={T} at={K.Sa + 0.2} until={K.Ef - 0.3} hasta={14} x={400} y={500} />
-      <Chip T={T} at={K.Sa + 3.0} until={K.Ef - 0.3} texto="sin esporas: le falta color y sabor" x={430} y={680} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Sa + 3.0} until={K.Ef - 0.3} texto="sin esporas: le falta color y sabor" x={430} y={660} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Ef + 0.2} until={K.Ef + 2.5} texto="en casi todo el mundo: enfermedad" x={460} y={470} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Ef + 2.6} until={K.Mo - 0.3} texto="en México: un manjar" x={400} y={470} tam={42} borde={KC.leaf} />
       <Chip T={T} at={K.Mo + 0.3} until={K.C - 0.3} texto="organismo modelo de laboratorio" x={420} y={470} tam={34} borde={KC.cyan} />
@@ -336,8 +336,8 @@ function HuitlacocheShot() {
       <Subtitulo T={T} idx={6} at={K.Es + 0.1} until={K.E - 0.1} texto="Se llena de *esporas oscuras.*" />
       <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.Co - 0.1} texto="2003, Illinois: *a propósito.*" />
       <Subtitulo T={T} idx={8} at={K.Co + 0.1} until={K.Sa - 0.1} texto="Hasta *131 gramos* por mazorca." />
-      <Subtitulo T={T} idx={9} at={K.Sa + 0.1} until={K.Ef - 0.1} texto="Sin esporas, *sin color ni sabor.*" />
-      <Subtitulo T={T} idx={10} at={K.Ef + 0.1} until={K.Mo - 0.1} texto="En México: *un manjar.*" />
+      <Subtitulo T={T} idx={9} at={K.Sa + 0.1} until={K.Ef - 0.1} texto="Sin esporas, *le falta color y sabor.*" />
+      <Subtitulo T={T} idx={10} at={K.Ef + 0.1} until={K.Mo - 0.1} texto="En el mundo, enfermedad; *en México, manjar.*" />
       <Subtitulo T={T} idx={11} at={K.Mo + 0.1} until={K.C - 0.1} texto="Un *modelo* de laboratorio." />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="No está podrido: *es huitlacoche.*" />
 
