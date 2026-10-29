@@ -556,8 +556,11 @@ def subir_tiktok(video, r, modo, titulo, tt=None):
     try:
         pid, st = _tiktok_subir_archivo(at, '/post/publish/video/init/', {'post_info': info}, video)
     except Falla as e:
-        if 'unaudited_client' not in str(e) or priv == 'SELF_ONLY':
+        if 'unaudited_client' not in str(e):
             raise
+        if priv == 'SELF_ONLY':
+            raise Falla('TikTok todavía no aprueba la app: mientras tanto solo deja publicar en cuentas PRIVADAS '
+                        '(Ajustes → Privacidad → Cuenta privada). Usa «Mandar como borrador» o espera la aprobación.')
         info['privacy_level'] = 'SELF_ONLY'   # app sin aprobar: TikTok solo deja publicar como «Solo yo»
         nota = ' · TikTok todavía no aprueba la app, así que quedó como «Solo yo»'
         pid, st = _tiktok_subir_archivo(at, '/post/publish/video/init/', {'post_info': info}, video)
