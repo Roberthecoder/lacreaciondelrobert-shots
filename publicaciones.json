@@ -76,5 +76,16 @@
   "ok": true,
   "id": "v_inbox_file~v2.7702155698671372308",
   "nota": "BORRADOR en la bandeja de TikTok (SEND_TO_USER_INBOX): Robert lo abre en la app, pega el texto y publica él"
+ },
+ {
+  "clave": "003-semillas-luna",
+  "red": "tiktok",
+  "modo": "privado",
+  "fecha": "2026-10-29T18:26:55Z",
+  "run": "40930750808",
+  "autorizo": null,
+  "ok": true,
+  "id": "v_inbox_file~v2.7702157716067911698",
+  "nota": "BORRADOR en la bandeja de TikTok (SEND_TO_USER_INBOX): Robert lo abre en la app, pega el texto y publica él"
  }
 ]
