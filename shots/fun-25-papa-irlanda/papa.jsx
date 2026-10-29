@@ -74,15 +74,16 @@ function Esporangioforo({ x, y, s = 1, g = 1, T = 0 }) {
     {PUNTAS.map(([px, py, r, a], i) => <Limon key={i} x={px} y={py} rot={r} h={115} s={kclamp((g - a) / 0.2, 0, 1)} />)}
   </g>;
 }
-// Zoospora en forma de frijol con dos flagelos que salen del costado: uno con pelitos y uno liso (no se indica cuál va adelante).
+// Zoospora en forma de frijol (≈10 µm) con dos flagelos opuestos que salen del costado: el de pelitos (mastigonemas) hacia ADELANTE (+x)
+// y el liso, más largo, hacia ATRÁS (-x) (Tran et al. 2022, eLife; Bassani et al. 2020).
 function Zoospora({ T, x, y, s = 1, rot = 0, enquista = 0, seed = 1 }) {
   const fl = 1 - enquista, ond = (k) => Math.sin(T * 9 + seed + k) * 14;
-  const flag = (dir) => `M 0 6 C ${dir * 50} ${20 + ond(0)} ${dir * 95} ${-10 + ond(1)} ${dir * 150 * fl} ${12 + ond(2) * fl}`;
+  const flag = (dir, L = 150) => `M 0 6 C ${dir * L / 3} ${20 + ond(0)} ${dir * L * 0.63} ${-10 + ond(1)} ${dir * L * fl} ${12 + ond(2) * fl}`;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     {fl > 0.05 && <>
-      <path d={flag(-1)} stroke="#ffffff" strokeWidth={5} fill="none" strokeLinecap="round" opacity={fl} />
+      <path d={flag(-1, 195)} stroke="#ffffff" strokeWidth={5} fill="none" strokeLinecap="round" opacity={fl} />
       <path d={flag(1)} stroke="#ffffff" strokeWidth={5} fill="none" strokeLinecap="round" opacity={fl} />
-      {Array.from({ length: 7 }, (_, i) => { const u = (i + 1) / 8; const px = -150 * fl * u, py = 6 + (20 + ond(0)) * 3 * u * (1 - u) * (1 - u) + (-10 + ond(1)) * 3 * u * u * (1 - u) + (12 + ond(2) * fl) * u * u * u;
+      {Array.from({ length: 7 }, (_, i) => { const u = (i + 1) / 8; const px = 150 * fl * u, py = 6 + (20 + ond(0)) * 3 * u * (1 - u) * (1 - u) + (-10 + ond(1)) * 3 * u * u * (1 - u) + (12 + ond(2) * fl) * u * u * u;
         return <path key={i} d={`M ${px} ${py - 10} L ${px} ${py + 10}`} stroke="#ffffff" strokeWidth={3} opacity={fl} />; })}
     </>}
     <path d={enquista > 0.5 ? 'M -34 0 A 34 34 0 1 0 34 0 A 34 34 0 1 0 -34 0 Z' : 'M -46 -6 Q -44 -40 0 -38 Q 44 -40 46 -6 Q 44 28 12 26 Q 0 12 -12 26 Q -44 28 -46 -6 Z'} fill={PI_C.zoo} stroke={KC.ink} strokeWidth={5} />
@@ -397,7 +398,7 @@ function PapaShot() {
       <BarraEscala T={T} at={K.N} until={K.E} texto="10 µm" largo={150} />
       <BarraEscala T={T} at={K.E} until={K.E + 2.0} texto="10 µm" largo={120} />
       <BarraEscala T={T} at={K.E + 2.0} until={K.Pa} texto="30 µm" largo={70} />
-      <BarraEscala T={T} at={K.Pa} until={K.P} texto="10 µm" largo={120} />
+      <BarraEscala T={T} at={K.Pa} until={K.P} texto="30 µm" largo={120} />
       <BarraEscala T={T} at={K.P} until={K.Pr} texto="10 µm" largo={110} />
       <BarraEscala T={T} at={K.Pr} until={K.I} texto="dibujos no a escala" largo={120} />
       <BarraEscala T={T} at={K.I} until={K.He} texto="100 km" largo={106} />
