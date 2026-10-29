@@ -128,7 +128,7 @@ function MiniGrafica({ T, at, x, y, w = 520, h = 150, titulo }) {
     <text x={x} y={y - 22} style={{ font:`900 25px ${KF.texto}` }} fill={KC.ink}>{titulo}</text>
     <line x1={x} y1={y + h} x2={x + w} y2={y + h} stroke={KC.ink} strokeWidth={4} /><line x1={x} y1={y} x2={x} y2={y + h} stroke={KC.ink} strokeWidth={4} />
     <polyline points={pts.join(' ')} fill="none" stroke={KC.pink} strokeWidth={7} strokeLinejoin="round" strokeLinecap="round" />
-    <text x={x + w} y={y + h + 30} textAnchor="end" style={{ font:`700 22px ${KF.mono}` }} fill="#5a524a">horas de entrenamiento →</text>
+    <text x={x + w} y={y + h + 30} textAnchor="end" style={{ font:`700 22px ${KF.mono}` }} fill="#5a524a">esquemático · horas de entrenamiento →</text>
   </g>;
 }
 
@@ -261,7 +261,7 @@ function AlphaZero() {
         <FondoLunares color={KC.pink} />
         {svg(<>
           <Tablero {...TB} resalta={T > K.Ap + 2.7 ? [{ sq: 'c4' }, { sq: 'd4' }, { sq: 'd5' }] : []}><Piezas T={T} {...TB} movs={qg} /></Tablero>
-          <MiniGrafica T={T} at={K.Ap + 1.6} x={100} y={470} w={510} h={120} titulo="% de partidas en que la elegía · esquemático" />
+          <MiniGrafica T={T} at={K.Ap + 1.6} x={100} y={470} w={510} h={120} titulo="% de partidas en que la elegía" />
         </>)}
       </Escena>
       <Chip T={T} at={K.Ap + 0.4} until={K.Ch - 0.2} texto="Gambito de Dama · 1. d4 d5 2. c4" x={540} y={690} tam={34} borde={KC.ink} />

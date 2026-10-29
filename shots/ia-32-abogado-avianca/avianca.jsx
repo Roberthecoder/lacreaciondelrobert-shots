@@ -255,7 +255,7 @@ function Avianca() {
       </Escena>
       {T > K.P2 - 0.45 && T < K.P3 + 0.45 && <div style={{ opacity: kprog(T, K.P2 - 0.45, K.P2 + 0.05) * (1 - kprog(T, K.P3 - 0.05, K.P3 + 0.45)) }}>
         <CelularChat T={T} x={300} y={850} s={0.6} tam={40} mensajes={[
-          { at: K.P2 + 0.6, yo: true, texto: 'Dame casos sobre aerolíneas' },
+          { at: K.P2 + 0.6, yo: true, texto: 'Dame casos que apoyen mi demanda' },
           { at: K.P2 + 1.5, texto: 'Varghese v. China Southern Airlines (2019)' },
           { at: K.P2 + 2.1, texto: 'Shaboon v. Egyptair (2013)' },
           { at: K.P2 + 2.6, texto: 'Petersen v. Iran Air (2012)…' }]} escribe={[K.P2 + 1.0, K.P2 + 1.5]} />
