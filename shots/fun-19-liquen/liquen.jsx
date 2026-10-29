@@ -339,7 +339,7 @@ function LiquenShot() {
       <Chip T={T} at={K.Tr + 1.2} until={K.P - 0.2} texto="el socio, la comida" x={540} y={485} tam={40} borde={KC.leaf} />
       <TarjetaEstudio T={T} at={K.H + 0.2} until={K.E - 0.3} anio="1867" quien="Simon Schwendener" revista="propuso: el liquen son dos seres" x={370} y={540} />
       <Chip T={T} at={K.H + 2.8} until={K.E - 0.3} texto="¡no!" x={860} y={745} tam={46} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
-      <Chip T={T} at={K.H + 3.2} until={K.E - 0.3} texto="¿dos seres?" x={250} y={745} tam={40} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
+      <Chip T={T} at={K.H + 3.2} until={K.E - 0.3} texto="¿dos seres?" x={200} y={745} tam={40} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
       <Chip T={T} at={K.H + 3.6} until={K.E - 0.3} texto="¿un hongo?" x={560} y={745} tam={40} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.0} anio="2016" quien="Montana, EUA" revista="Spribille et al., Science" x={540} y={470} />
       <Etq T={T} at={K.E + 0.9} until={K.Cn - 0.3} x={40} y={720} texto="Bryoria" it tam={36} color={KC.ink} />

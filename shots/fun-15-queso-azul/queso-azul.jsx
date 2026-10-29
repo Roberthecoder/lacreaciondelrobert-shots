@@ -311,7 +311,7 @@ function QuesoAzulShot() {
             {[[160, 960], [250, 960], [340, 960], [160, 1090], [250, 1090], [340, 1090]].map(([rx, ry], i) => <g key={i}>
               <line x1={110} y1={ry + 38} x2={400} y2={ry + 38} stroke="#a0805c" strokeWidth={10} />
               <Rueda x={rx} y={ry} r={38} h={50} id={'cv' + i} seed={40 + i} s={kprog(T, K.Po + 0.3 + i * 0.1, K.Po + 0.6 + i * 0.1, kEase.rebote)} /></g>)}
-            <circle cx={330} cy={1040} r={34} fill={QZ.vena} stroke={KC.ink} strokeWidth={6} /><text x={330} y={1054} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#fff">1</text>
+            <circle cx={440} cy={700} r={34} fill={QZ.vena} stroke={KC.ink} strokeWidth={6} /><text x={440} y={714} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#fff">1</text>
           </g>
           <g opacity={kprog(T, K.Po + 1.6, K.Po + 2.0)} transform={`translate(780 960) rotate(${(T - K.Po) * 6})`}>
             <circle r={170} fill="#3aa0ff" stroke={KC.ink} strokeWidth={8} />
