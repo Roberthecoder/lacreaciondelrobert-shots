@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Manglares base narrada.dc.html",
+  "salida": "Shot Manglares narrado.dc.html",
+  "nota": "Shot Ambiental #39. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este lodo no es suciedad: es una bodega de carbono, y la construyó el manglar que tiene encima."
+    },
+    {
+      "escena": "Raices",
+      "texto": "El mangle rojo se para en raíces arqueadas, como patas; el mangle negro saca raíces del lodo para respirar."
+    },
+    {
+      "escena": "Lodo",
+      "texto": "Sus hojas caen y sus raíces muertas se quedan en un suelo empapado, donde casi no hay oxígeno."
+    },
+    {
+      "escena": "Microbios",
+      "texto": "Sin oxígeno, los microbios que las descomponen trabajan lentísimo."
+    },
+    {
+      "escena": "Capas",
+      "texto": "Así el carbono se queda enterrado, capa sobre capa, y puede llevar miles de años ahí."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto cabe en esa bodega?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de 2011 midió veinticinco manglares del Indo-Pacífico: en promedio, más de mil toneladas de carbono por hectárea."
+    },
+    {
+      "escena": "Suelo",
+      "texto": "Y del cuarenta y nueve al noventa y ocho por ciento estaba en el suelo, no en los árboles."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "Y en México, la CONABIO contó ochocientas setenta y siete mil hectáreas de manglar en 2025."
+    },
+    {
+      "escena": "Extra",
+      "texto": "Y de regalo, son barrera contra huracanes y guardería de crías de peces y crustáceos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que la próxima vez que pises este lodo, piénsalo: estás parado sobre una bodega."
+    }
+  ]
+}

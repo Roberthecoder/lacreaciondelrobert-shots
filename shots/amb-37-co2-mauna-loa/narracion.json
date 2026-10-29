@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Keeling base narrada.dc.html",
+  "salida": "Shot Keeling narrado.dc.html",
+  "nota": "Shot Ambiental #37. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta línea es el aire que respiras, medido en lo alto de un volcán de Hawái desde 1958."
+    },
+    {
+      "escena": "Volcan",
+      "texto": "Es el observatorio de Mauna Loa: a tres mil cuatrocientos metros, rodeado de lava sin plantas."
+    },
+    {
+      "escena": "Ppm",
+      "texto": "Ahí cuentan cuántas de cada millón de moléculas del aire son de CO2: partes por millón."
+    },
+    {
+      "escena": "Inicio",
+      "texto": "El primer día, en marzo de 1958, marcó trescientas trece."
+    },
+    {
+      "escena": "Respira",
+      "texto": "Pero no sube derecha: respira. Las plantas del norte se tragan CO2 en verano y lo devuelven en invierno."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "Entonces, ¿por qué la línea entera no deja de subir?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1960, Charles David Keeling, de Scripps, publicó lo que veía: la Tierra respira y el CO2 del aire va en aumento."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "En 2025, el promedio del año llegó a cuatrocientas veintisiete."
+    },
+    {
+      "escena": "Antes",
+      "texto": "Antes de las fábricas, las burbujas del hielo marcan unas doscientas ochenta. Sube sobre todo por quemar combustibles fósiles."
+    },
+    {
+      "escena": "Volcanazo",
+      "texto": "Y cuando el volcán hizo erupción en 2022, midieron desde el volcán vecino, Maunakea."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esta línea no es un dibujo: es el aire que respiras, con más CO2 cada año."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Aves Ventanas base narrada.dc.html",
+  "salida": "Shot Aves Ventanas narrado.dc.html",
+  "nota": "Shot Ambiental #36. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa ventana no es una pared para un pájaro: es cielo." },
+    { "escena": "Reflejo", "texto": "Muchas veces las aves no ven el vidrio: ven las nubes y plantas reflejadas, y vuelan hacia ellas." },
+    { "escena": "Atraves", "texto": "O ven a través: vuelan hacia la planta de tu sala, del otro lado." },
+    { "escena": "Pregunta", "texto": "¿Y dónde crees que mueren más aves en total: en los rascacielos o en las casas?" },
+    { "escena": "Estudio", "texto": "En 2014, el Smithsonian y el gobierno de Estados Unidos juntaron veintitrés estudios." },
+    { "escena": "Cifra", "texto": "Calcularon que allá mueren entre trescientos sesenta y cinco y novecientos ochenta y ocho millones de aves al año por chocar con edificios." },
+    { "escena": "Casas", "texto": "El cuarenta y cuatro por ciento, en casas de hasta tres pisos. En rascacielos, menos del uno por ciento." },
+    { "escena": "Halcon", "texto": "¿Y la calcomanía del halcón? Casi no sirve, salvo que pegues muchísimas." },
+    { "escena": "Regla", "texto": "Lo que sí sirve: rayas por fuera, acostadas cada cinco centímetros o paradas cada diez. O un mosquitero." },
+    { "escena": "Golpe", "texto": "Y ojo: muchas aves que chocan y parecen estar bien pueden morir después por el golpe en la cabeza." },
+    { "escena": "Cierre", "texto": "Para ti es una ventana. Con unas rayitas, para un pájaro, por fin es una pared." }
+  ]
+}
