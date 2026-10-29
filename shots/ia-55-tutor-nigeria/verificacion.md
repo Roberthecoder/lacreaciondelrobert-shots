@@ -47,3 +47,12 @@
    y en pantalla: "las dos filas reciben la misma hoja de examen" (ya está bien; solo evitar cualquier texto que diga "todos").
 
 Todo lo demás (0.31 / 0.23 σ, ocho de cada diez, 1.5–2 años como equivalencia EYOS, SS1 = 1.º de prepa, nueve escuelas, 12 × 90 min, parejas, Copilot/GPT-4, maestros, sorteo, peros y chicas) quedó ✅. Cifras con su "de qué es" y año (2024) dicho en la voz; no hay mezcla de fuentes.
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Eso calcularon investigadores del Banco Mundial.» (Policy Research Working Paper 11125, conclusiones de los autores) ✅
+- «Entrar fue por sorteo, y al final los dos grupos hicieron el mismo examen.» ✅
+- Cierre «no reemplazan a tu escuela» y recortes («Es una equivalencia: lo que la escuela…», «Y las chicas…») sin datos nuevos ✅
+- Pantalla: chat «ilustrativo», gráficas marcadas «esquemático» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

@@ -1,29 +1,50 @@
 # Shot IA #59 · El robot que cosió un intestino (y quién lo vigilaba)
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #59 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, **pendiente de verificación independiente**. Sin animación todavía. Voz pendiente de aprobación de Robert.
+- **Estado (29 oct 2026):** guion verificado (21 ✅ y 5 ⚠️ corregidos según `verificacion.md`), animación, Robert en pantalla, música y `publicacion.md` listos · falta la versión de revisión sin voz (la renderiza GitHub) · **voz pendiente de aprobación de Robert** (~954 créditos).
 - **Formato:** N3 "Capítulos y medidores" (1 · planea, 2 · cose, 3 · la prueba, 4 · lo que falta; medidor de 3 mm entre puntadas y cronómetro 62 vs 26 min).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Esas puntadas no las hizo un cirujano: las hizo un robot».
-- **Duración:** voz 954 caracteres / ~168 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** estimado.
+- **Duración:** voz 954 caracteres / ~166 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** en la base (suma de `OM_SCENES`).
 - **Postura de la serie:** la defendemos y la criticamos con datos. Se dice lo que logró (puntadas más parejas en tejido de práctica) y lo que no (una de cada tres puntadas corregida por una persona, más lento, solo animales y órganos fuera del cuerpo, siempre con supervisión humana). Ningún dato en humanos.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esas puntadas no las hizo un cirujano: las hizo un robot, en el intestino de un cerdo vivo. | Fondo menta; desde el cuadro 0 dos extremos de intestino (tubo rosa) y una aguja curva que da la primera puntada. Un cirujano dibujado se tacha (MitoTachado) y entra el brazo robótico STAR con la aguja. Chip "cerdo vivo · 2022". |
-| 1 | Planea | Se llama STAR: ve el tejido en tres dimensiones, sigue cómo se mueve al respirar y planea cada puntada. | Capítulo "1 · planea". Fondo oscuro "dentro de la máquina": malla 3D del intestino que sube y baja (respiración); puntos de plan que aparecen uno a uno. |
-| 2 | Cose | Una persona aprueba el plan y cada disparo de la aguja, y el robot cose: una puntada cada tres milímetros. | Capítulo "2 · cose". Una mano/persona con un botón ✔ "aprobar"; el robot cose; regla con medidor "3 mm" entre puntadas. |
-| 3 | Estudio | Fue en Johns Hopkins, en 2022, con cuatro cerdos; a la semana revisaron cómo sanaron. | TarjetaEstudio "2022 · Johns Hopkins · Saeidi, Krieger y col. · Science Robotics"; 4 cerditos; calendario "1 semana". |
-| 4 | Parejas | En intestino de práctica, sus puntadas salieron más parejas que las de cirujanos expertos. | Capítulo "3 · la prueba". Dos filas de puntadas en un intestino de práctica: las de cirujanos (separación dispareja) y las de STAR (pareja). Etiqueta "intestino de práctica (no es de animal)". |
-| 5 | Pregunta | ¿Entonces ya te puede operar un robot solo? | **Re-gancho.** "?" gigante sobre una cama de quirófano; Robert grande. |
-| 6 | Falla | Todavía no. En los cerdos, una de cada tres puntadas tuvo que corregirla una persona. Y tardó sesenta y dos minutos; un cirujano, veintiséis. | Fila de 86 puntadas: 29 se marcan en rojo con una manita (≈ 1 de cada 3). Luego dos cronómetros: "STAR 62 min" contra "cirujano 26 min". |
-| 7 | Vesicula | En 2025, otro robot aprendió con unas diecisiete horas de demostraciones y, en ocho vesículas de cerdo, engrapó y cortó sus tubos sin ayuda humana. | Tarjeta "2025 · Johns Hopkins y Stanford · SRT-H"; "17 h de demostraciones"; 8 vesículas (fuera del cuerpo) que se palomean: grapas + tijera en dos tubos. |
-| 8 | Falta | Pero eran órganos fuera del cuerpo: falta probarlo con sangrado y movimiento. | Capítulo "4 · lo que falta". Charola con la vesícula "ex vivo" → lista: gotita de sangre, respiración/movimiento con signo de pendiente. |
-| 9 | Cierre | Sí: esas puntadas las hizo un robot… con una persona al lado, vigilando. | **Regreso a la imagen del inicio**: el mismo intestino cosido, ahora con el brazo STAR y, al lado, una persona frente a la pantalla vigilando ✔. |
+| 0 | Gancho | Esas puntadas no las hizo un cirujano: las hizo un robot, en el intestino de un cerdo vivo. | Fondo menta; desde el cuadro 0 los dos extremos de intestino se juntan y aparecen las puntadas. Chip «lo cosió un cirujano» que se tacha; entra el brazo STAR con su aguja curva. Chip «cerdo vivo · Science Robotics 2022». |
+| 1 | Planea | Se llama STAR: ve el tejido en tres dimensiones, lo sigue al respirar y planea cada puntada. | Capítulo «1 · planea». Fondo de circuito: malla 3D del intestino que sube y baja, onda de respiración, chips «cámara 3D», «sigue la respiración», y los puntos amarillos del «plan de puntadas». |
+| 2 | Cose | Una persona aprueba el plan y cada disparo de la aguja; el robot cose una puntada cada tres milímetros. | Capítulo «2 · cose». Cirujana con monitor: el botón «aprobar» pasa a «✔ OK»; chips «una persona aprueba» → «y cada disparo de la aguja»; el brazo cose 7 puntadas; regla «3 mm» y chip «1 puntada cada 3 mm». |
+| 3 | Estudio | Lo publicó en 2022 un equipo de Johns Hopkins: cuatro cerdos operados y revisados a la semana. | TarjetaEstudio «2022 · Johns Hopkins y Children's National · Saeidi, Krieger y col. · Science Robotics»; 4 cerditos; chip «4 cerdos · revisión a la semana». |
+| 4 | Parejas | En intestino de práctica, separó sus puntadas más parejo que cirujanos expertos. | Capítulo «3 · la prueba». Chip «intestino de práctica (no es de animal)»; dos filas: «cirujanos expertos» (separación dispareja) y «STAR» (pareja); chip «variación de la separación: a mano 45 % · STAR 26 %». |
+| 5 | Pregunta | ¿Ya te puede operar un robot solo? | **Re-gancho.** Lámpara de quirófano y «?» gigante; Robert grande. |
+| 6 | Falla | Todavía no: en los cerdos, una de cada tres puntadas la corrigió una persona. / Y tardó sesenta y dos minutos; un cirujano, veintiséis. | Capítulo «4 · lo que falla». Rejilla de 86 puntadas: 29 se ponen rojas (contador «corregidas por una persona: 29 de 86»). Luego barras «tiempo de la operación · en los cerdos»: STAR 62 min, un cirujano 26 min. |
+| 7 | Vesicula | En 2025, otro robot aprendió con unas diecisiete horas de demostraciones y, en ocho vesículas de cerdo, puso clips y cortó sus tubos él solo; una persona solo recargaba los clips. | Capítulo «5 · 2025: otro robot». Tarjeta «2025 · Johns Hopkins y Stanford · SRT-H · Kim, Finn, Krieger y col. · Science Robotics»; chip «aprendió con ≈ 17 h de demostraciones»; 8 vesículas «fuera del cuerpo»: a cada una le salen 3 clips por tubo, un corte y una palomita; chips «clips + tijera, él solo» → «una persona solo recargaba los clips». |
+| 8 | Falta | Pero eran órganos fuera del cuerpo: falta probarlo con sangrado y movimiento. | Capítulo «6 · lo que falta». Vesícula en charola «fuera del cuerpo (ex vivo)»; chips «falta: con sangrado ⏳», «falta: tejido que se mueve ⏳», «en estos estudios: ninguna persona operada». |
+| 9 | Cierre | Sí: esas puntadas las hizo un robot… con una persona al lado, vigilando. | **Regreso a la imagen del inicio**: el mismo intestino cosido con el brazo STAR, y ahora entra la cirujana con su monitor «vigilando»; chip «robot + persona vigilando ✔». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
-**Música:** cama grave continua, tipo monitor de quirófano suave; "bip" de monitor en el gancho; cada puntada con un "clic" corto; zumbido del escáner 3D; botón "aprobar"; tic-tac de los cronómetros; dos "clac" de grapa y un tijeretazo por cada vesícula; acorde que se abre en el cierre.
+**Música:** cama grave continua, tipo monitor de quirófano suave; "bip" de monitor en el gancho; cada puntada con un "clic" corto; zumbido del escáner 3D; botón "aprobar"; tic-tac de los cronómetros; dos "clic" metálicos de clip, un tijeretazo y una notita por cada vesícula; acorde que se abre en el cierre.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Ya te puede operar un robot solo?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` | «las hizo un robot» (cuadro 0) |
+| 2 | 7.7 | 10.9 | 06_pensativo_menton | `arriba-der` | «lo sigue al respirar y planea cada puntada» |
+| 3 | 14.1 | 17.1 | 13_senalando_arriba | `izq-alto` | señala la puntada «cada tres milímetros» |
+| 4 | 20.3 | 22.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | los cuatro cerditos |
+| 5 | 25.0 | 27.8 | 04_bajando_lentes | `arriba-der` | «más parejo que cirujanos expertos» |
+| 6 | 28.0 | 31.4 | 07_pensativo_puno | `grande` | «¿Ya te puede operar un robot solo?» |
+| 7 | 32.2 | 34.7 | 10_serio_molesto | `arriba-der` | «una de cada tres puntadas la corrigió una persona» |
+| 8 | 36.3 | 38.2 | 11_sorprendido | `arriba-der` | «sesenta y dos minutos; un cirujano, veintiséis» |
+| 9 | 43.9 | 48.7 | 13_senalando_arriba | `arriba-der` | señala las 8 vesículas y «una persona solo recargaba los clips» |
+| 10 | 49.4 | 53.4 | 12_perfil_serio | `arriba-der` | «falta probarlo con sangrado y movimiento» |
+| 11 | 54.0 | 57.9 | 05_sonriendo_dientes_uniformes | `izq-alto` | «con una persona al lado, vigilando» |
+| — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 11 · ≈ 36.8 s (+ cierre 3.5 s) · poses distintas 8 (nunca la misma dos veces seguidas) · total 61.5 s
 
 ## Fuentes (abiertas en el texto completo el 29 oct 2026)
 
@@ -46,10 +67,11 @@
    > arXiv, Limitaciones: "Translating from ex-vivo to in-vivo brings several challenges, such as operating in the surgical site, addressing bleeding and tissue motion" (2025)
 
 ## Notas
+- "Lo publicó en 2022": 2022 es el año de publicación (26 ene 2022); las cirugías en cerdos se hicieron en Children's National Hospital (Washington), con equipo de Johns Hopkins.
 - "Una de cada tres" = 29 de 86 puntadas en los cerdos necesitaron ajuste manual (33.7 %; 66.28 % salieron bien al primer intento).
-- "Más parejas que las de cirujanos expertos" = en tejido de práctica (fantoma), la separación entre puntadas varió 26 % con STAR contra 45 % (a mano) y 41 % (con robot da Vinci manejado por cirujanos); cuatro cirujanos. En profundidad de la puntada fue más pareja que a mano y similar al da Vinci. En los cerdos solo hubo 1 control manual: por eso la comparación "más parejas" se dice en tejido de práctica.
+- "Separó sus puntadas más parejo que cirujanos expertos" = en tejido de práctica (fantoma), la separación entre puntadas varió 26 % con STAR contra 45 % (a mano) y 41 % (con robot da Vinci manejado por cirujanos); cuatro cirujanos. En profundidad de la puntada fue más pareja que a mano y similar al da Vinci. En los cerdos solo hubo 1 control manual: por eso la comparación se dice en tejido de práctica, y solo de la separación.
 - "Sesenta y dos minutos; un cirujano, veintiséis" = 62.03 min promedio de STAR contra 25.6 min del único control laparoscópico manual.
 - "Cada disparo de la aguja": en los cerdos, el operador aprobaba el disparo de la aguja ("approval of firing the needle").
-- SRT-H: "engrapó y cortó sus tubos" = puso clips y cortó el conducto y la arteria de la vesícula (fase de clipado y corte de la colecistectomía, no la operación completa). "Sin ayuda humana" = sin intervención humana; el operador sí recargaba los clips y cambiaba herramientas (eso se puede aclarar en pantalla con letra chica). "Unas diecisiete horas de demostraciones" = 16,000 trayectorias (~17 h de datos) en 34 vesículas.
+- SRT-H: "puso clips y cortó sus tubos" = puso clips y cortó el conducto y la arteria de la vesícula (fase de clipado y corte de la colecistectomía, no la operación completa). "Él solo" = "without human intervention"; una persona solo recargaba los clips y cambiaba la herramienta (se dice en la voz y en pantalla). "Unas diecisiete horas de demostraciones" = 16,000 trayectorias (~17 h de datos) en 34 vesículas.
 - Ninguno de los dos estudios se hizo en personas. No se afirma nada sobre uso clínico actual.
 - El dibujo es esquemático.
