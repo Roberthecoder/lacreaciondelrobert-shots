@@ -11,7 +11,7 @@ function trufaPath(r, seed) {
   return d + 'Z';
 }
 // Trufa (Tuber): peridio negro con verrugas piramidales; corte 0..1 = se parte y muestra la gleba jaspeada (vetas blancas).
-function Trufa({ x, y, s = 1, rot = 0, corte = 0, seed = 2, r = 110, mordida = 0 }) {
+function Trufa({ x, y, s = 1, rot = 0, corte = 0, seed = 2, r = 110 }) {
   const d = trufaPath(r, seed), g = krng(seed * 7 + 1);
   const verrugas = [];
   for (let i = 0; i < 26; i++) { const a = (i / 26) * Math.PI * 2; const rr = r * (1 + 0.07 * Math.sin(3 * a + seed) + 0.05 * Math.sin(5 * a + seed * 2) + 0.03 * Math.sin(9 * a));
@@ -34,7 +34,6 @@ function Trufa({ x, y, s = 1, rot = 0, corte = 0, seed = 2, r = 110, mordida = 0
         <path d={d} fill="none" stroke={KC.ink} strokeWidth={5} />
       </g>
     </>}
-    {mordida > 0 && <circle cx={r * 0.9} cy={-r * 0.2} r={r * 0.75 * mordida} fill="currentColor" style={{ color:'transparent' }} />}
   </g>;
 }
 // Mano (palma hacia arriba) que sostiene algo. Coordenadas: centro de la palma.
@@ -226,10 +225,10 @@ function TrufasShot() {
         {fsvg(<>
           <Suelo y={1150} />
           <g transform={`translate(0 ${(1 - sube) * 420})`}>
-            <Mano x={380} y={1090} s={1.05} />
-            <Trufa x={380} y={930} s={1.45} corte={corte} rot={-6} />
+            <Mano x={380} y={900} s={1.05} />
+            <Trufa x={380} y={740} s={1.45} corte={corte} rot={-6} />
           </g>
-          <Terrones T={T} x={380} y={930} at={K.G + 0.3} n={12} />
+          <Terrones T={T} x={380} y={740} at={K.G + 0.3} n={12} />
         </>)}
       </Escena>
       {/* 1 · raíces de encino y avellano, y la micorriza (zoom a una punta de raíz) */}
@@ -270,7 +269,6 @@ function TrufasShot() {
             <Suelo y={900} />
             <SetaViento T={T} x={200} y={900} s={1.6} />
             <Trufa x={560} y={1120} s={0.9} seed={5} />
-            {[0, 1, 2].map((i) => { const u = ((T * 0.7 + i / 3) % 1); return <path key={i} d={`M ${200 + u * 600} ${980 + i * 40} q 40 -14 80 0`} stroke="#fff" strokeWidth={6} fill="none" opacity={0} />; })}
             <path d="M 700 1040 L 800 1140 M 800 1040 L 700 1140" stroke={KC.red} strokeWidth={18} strokeLinecap="round" opacity={kprog(T, K.Pb + 3.4, K.Pb + 3.7)} />
           </>)}
         </div>}
@@ -294,7 +292,7 @@ function TrufasShot() {
       <Escena T={T} a={K.A} b={K.H}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Encino x={900} y={1000} s={0.8} T={T} />
+          <Encino x={150} y={1000} s={0.8} T={T} />
           <Suelo y={1000} />
           {comida < 1 && <Trufa x={600} y={1060} s={0.38} seed={6} />}
           <Olor T={T} x={600} y={1030} alto={260} n={2} o={1 - comida} ancho={50} />
@@ -346,10 +344,9 @@ function TrufasShot() {
             <Tripa T={T} y={900} />
             {[0, 1, 2, 3].map((i) => { const u = kprog(T, K.E + 1.8 + i * 0.25, K.E + 4.8 + i * 0.1, kEase.suave); const xx = klerp(-80, 1000, u) - i * 120;
               return <g key={i}><Asca T={T} x={xx} y={900 + Math.sin(xx / 180) * 40} s={0.95} n={(i % 3) + 2} abre={kprog(u, 0.25, 0.6)} seed={i} rot={T * 20 + i * 30} />
-                {u > 0.75 && <circle cx={xx} cy={900 + Math.sin(xx / 180) * 40} r={0} />}</g>; })}
+</g>; })}
           </g>}
           {T > K.En - 0.3 && <g opacity={kprog(T, K.En - 0.3, K.En + 0.2)}>
-            <rect x={0} y={560} width={KW} height={700} fill={TR.suelo || '#2a1a10'} opacity=".0" />
             <PuntaMicorriza T={T} x={430} y={760} s={1.2} rot={12} g={kprog(T, K.En + 0.6, K.En + 2.4)} seed={9} />
             {[[620, 1030], [760, 980], [880, 1080]].map(([ex, ey], i) => <g key={i}>
               <Espora x={ex} y={ey} s={1.1} erosion={0.6} viva={0.8} />
@@ -371,9 +368,9 @@ function TrufasShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Suelo y={1150} />
-          <Mano x={380} y={1090} s={1.05} />
-          <Trufa x={380} y={930} s={1.45} rot={-6} />
-          <Olor T={T} x={380} y={820} alto={380} n={3} o={kprog(T, K.C + 0.3, K.C + 0.9)} color="#fff4b0" />
+          <Mano x={380} y={900} s={1.05} />
+          <Trufa x={380} y={740} s={1.45} rot={-6} />
+          <Olor T={T} x={380} y={630} alto={300} n={3} o={kprog(T, K.C + 0.3, K.C + 0.9)} color="#fff4b0" />
           <g transform={`translate(${klerp(-500, -60, kprog(T, K.C + 1.2, K.C + 2.0, kEase.sale))} 0)`}><Puerco T={T} x={0} y={1180} s={0.9} color="#f2a0b4" jabali={false} /></g>
           <g transform={`translate(${klerp(500, 40, kprog(T, K.C + 1.6, K.C + 2.4, kEase.sale))} 0)`}><Perro T={T} x={1000} y={1160} s={0.9} flip /></g>
         </>)}
@@ -383,7 +380,7 @@ function TrufasShot() {
       <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.4} until={K.G + 2.6} texto="¿una piedra?" x={300} y={500} tam={50} />
       <Etq T={T} at={K.G + 1.6} until={K.R - 0.3} x={60} y={600} texto="trufa" tam={44} color={KC.ink} />
       <Etq T={T} at={K.G + 2.0} until={K.R - 0.3} x={60} y={660} texto="Tuber" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.G + 3.0} until={K.R - 0.3} texto="por dentro: vetas blancas" x={330} y={760} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.0} until={K.R - 0.3} texto="por dentro: vetas blancas" x={330} y={1080} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.R + 0.6} until={K.R + 3.2} x={60} y={420} texto="encino · Quercus" tam={30} color={KC.ink} />
       <Etq T={T} at={K.R + 1.0} until={K.R + 3.2} x={60} y={470} texto="avellano · Corylus avellana" tam={30} color={KC.ink} />
       <Etq T={T} at={K.R + 1.8} until={K.R + 3.2} x={760} y={1110} lado="izq" texto="trufas" tam={30} color={KC.ink} />

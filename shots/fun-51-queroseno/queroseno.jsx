@@ -64,7 +64,7 @@ function TanqueCorte({ T, agua = 0, gotas = 0, x0 = 90, y0 = 620, w = 900, h = 5
     {[0.33, 0.66].map((f, i) => <rect key={i} x={x0 + w * f - 8} y={y0} width={16} height={h} fill={QK.alu2} stroke={KC.ink} strokeWidth={4} />)}
     <path d={`M ${x0} ${ya} Q ${x0 + w / 4} ${ya + Math.sin(T * 2) * 6} ${x0 + w / 2} ${ya} T ${x0 + w} ${ya} L ${x0 + w} ${y0 + h} L ${x0} ${y0 + h} Z`} fill={QK.agua} stroke={KC.ink} strokeWidth={5} />
     {gotas > 0 && Array.from({ length: 9 }, (_, i) => { const per = 1.6, u = ((T * 0.9 + i * 0.37) % per) / per; const gx = x0 + 60 + i * 95;
-      const gy = u < 0.35 ? y0 + 14 : klerp(y0 + 14, ya - 8, kEase.entra((u - 0.35) / 0.65)); const rr = 6 + 8 * Math.min(1, u / 0.35);
+      const gy = u < 0.35 ? y0 + 14 : klerp(y0 + 14, ya - 8, Math.pow((u - 0.35) / 0.65, 2)); const rr = 6 + 8 * Math.min(1, u / 0.35);
       return <path key={i} d={`M ${gx} ${gy - rr * 1.6} Q ${gx + rr} ${gy} ${gx} ${gy + rr} Q ${gx - rr} ${gy} ${gx} ${gy - rr * 1.6} Z`} fill="#9fd3ff" stroke={KC.ink} strokeWidth={3} opacity={gotas} />; })}
   </g>;
 }

@@ -162,7 +162,7 @@ function YartsaShot() {
           <Oruga T={T} x={klerp(380, 420, mece(T, 1, 0.3) * 0.5 + 0.5)} y={790} ang={180} largo={220} ancho={46} ondula={1} />
           <Oruga T={T + 0.5} x={760} y={950} ang={0} largo={200} ancho={42} ondula={1} />
           <Oruga T={T + 1.1} x={500} y={1090} ang={180} largo={210} ancho={44} ondula={1} />
-          <Polilla T={T} x={klerp(180, 820, kprog(T, K.L + 0.2, K.I + 0.3))} y={470 + Math.sin(T * 3) * 20} s={0.7} />
+          <Polilla T={T} x={klerp(150, 560, kprog(T, K.L + 0.2, K.I + 0.3))} y={500 + Math.sin(T * 3) * 20} s={0.7} />
         </>)}
       </Escena>
       {/* 5 · por dentro: el hongo la llena y la deja dura (fondo oscuro, esquemático) */}
@@ -235,9 +235,9 @@ function YartsaShot() {
       <Escena T={T} a={K.E} b={K.Mn} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <MapaRegion T={T} at={K.E + 2.4} />
+          <g transform="translate(20 60) scale(0.88)"><MapaRegion T={T} at={K.E + 2.4} />
           {Array.from({ length: 40 }, (_, i) => { const g = krng(i + 7); const px = 150 + g() * 520, py = 640 + g() * 440; const t0 = K.E + 3.0 + i * 0.05;
-            return T > t0 ? <circle key={i} cx={px} cy={py} r={9 * kprog(T, t0, t0 + 0.25, kEase.rebote)} fill={KC.violet} stroke="#fff" strokeWidth={3} /> : null; })}
+            return T > t0 ? <circle key={i} cx={px} cy={py} r={9 * kprog(T, t0, t0 + 0.25, kEase.rebote)} fill={KC.violet} stroke="#fff" strokeWidth={3} /> : null; })}</g>
         </>)}
       </Escena>
       {/* 11 · cada vez menos: sobre todo por recolectar de más; el calentamiento también influye */}
@@ -277,14 +277,14 @@ function YartsaShot() {
 
       {/* textos en pantalla */}
       <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 2.0} until={K.G + 3.4} texto="una ramita" x={330} y={420} tam={52} />
-      <Etq T={T} at={K.G + 2.6} until={K.Me - 0.3} x={470} y={600} texto="hongo (tallo)" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 2.6} until={K.Me - 0.3} x={420} y={640} lado="izq" texto="hongo (tallo)" tam={34} color={KC.ink} />
       <Etq T={T} at={K.G + 3.0} until={K.Me - 0.3} x={640} y={1080} lado="izq" texto="oruga momificada" tam={34} color={KC.ink} />
       <Caja T={T} at={K.N + 0.2} until={K.Me - 0.3} x={50} y={420} texto="Ophiocordyceps sinensis" it tam={36} />
       <Caja T={T} at={K.N + 0.9} until={K.Me - 0.3} x={50} y={500} texto="yartsa gunbu (Tíbet)" tam={32} />
-      <Chip T={T} at={K.Me + 0.4} until={K.L - 0.3} texto="Tíbet · Himalaya" x={560} y={470} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Me + 0.4} until={K.L - 0.3} texto="Tíbet · Himalaya" x={400} y={470} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Me + 2.0} until={K.L - 0.3} x={1020} y={1000} lado="izq" texto="pastizal alpino" tam={30} color={KC.ink} />
       <Etq T={T} at={K.L + 0.6} until={K.I - 0.3} x={60} y={470} texto="polilla fantasma · Thitarodes" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.L + 1.2} until={K.I - 0.3} x={60} y={1170} texto="oruga (larva) bajo tierra" tam={30} />
+      <Etq T={T} at={K.L + 1.2} until={K.I - 0.3} x={60} y={1010} texto="oruga (larva) bajo tierra" tam={30} />
       <Chip T={T} at={K.L + 2.0} until={K.I - 0.3} texto="3 años o más" x={330} y={700} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.I + 0.2} until={K.Ta - 0.3} texto="POR DENTRO · esquemático" x={380} y={470} tam={32} borde={KC.gold} mono />
       <Etq T={T} at={K.I + 1.6} until={K.Ta - 0.3} x={60} y={700} texto="hifas del hongo" tam={32} color={FK.hifa} />
@@ -298,7 +298,7 @@ function YartsaShot() {
       <Etq T={T} at={K.Pr + 4.0} until={K.Re - 0.3} x={60} y={590} texto="precio de 2017 (PNAS, 2018)" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Re + 0.3} until={K.E - 0.3} texto="cientos de miles de recolectores" x={360} y={480} tam={30} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2018" quien="Stanford y Colorado State" revista="Hopping, Chignell y Lambin · PNAS" x={460} y={640} />
-      <Contador T={T} at={K.E + 3.0} desde={0} hasta={800} dur={2.0} sufijo="+ personas" x={360} y={510} tam={56} color={KC.texto} />
+      {T < K.Mn - 0.2 && <Contador T={T} at={K.E + 3.0} desde={0} hasta={800} dur={2.0} sufijo="+ personas" x={360} y={510} tam={56} color={KC.texto} />}
       <Etq T={T} at={K.E + 3.4} until={K.Mn - 0.3} x={60} y={1190} texto="mapa esquemático" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Mn + 0.3} until={K.V - 0.3} texto="cada vez menos" x={330} y={480} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.Mn + 1.6} until={K.V - 0.3} x={60} y={560} texto="1º recolectar de más" tam={32} color={KC.ink} />
