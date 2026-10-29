@@ -35,7 +35,7 @@ Verificador independiente (subagente que no escribió el guion), 29 oct 2026. Se
 
 Nota aparte (no afecta voz ni pantalla): en `guion.md` › Notas dice que "entró al Computer Laboratory de la Universidad en 1974". El CV de Cambridge dice "1968 – 1988 Research positions, Computer Laboratory" y el artículo de 1972 ya lleva esa afiliación; conviene corregir la nota (la voz "en Cambridge, Inglaterra" sigue siendo correcta).
 
-VEREDICTO: PENDIENTE (correcciones abajo)
+Estado previo: PENDIENTE (correcciones abajo; ya aplicadas, ver la última sección)
 
 ## Correcciones propuestas
 
@@ -50,3 +50,20 @@ VEREDICTO: PENDIENTE (correcciones abajo)
    Fuente: bcs.org, "03 May 2009".
 4. **Premios (si salen en pantalla):** no poner año al premio de la ACL (decir solo «Premio a la trayectoria, ACL») o no mostrarlo; los demás (Allen Newell 2006, Lovelace 2007, SIGIR 1988) sí se pueden usar. Fuente: CV de Cambridge vs Tait 2007.
 5. **Fuentes del guion:** agregar Ram et al. 2023 (TACL 11: 1316–1331, https://aclanthology.org/2023.tacl-1.75.pdf) como fuente independiente de "IA que busca con BM25 antes de responder"; y en Fuente 1 la frase textual exacta es "considerable improvements in performance" (no "…in retrieval performance").
+
+## Correcciones aplicadas (texto final)
+
+Revisado por el mismo verificador independiente sobre `guion.md` y `narracion.json` corregidos, 29 oct 2026. Las demás líneas no cambiaron y siguen ✅ (tabla de arriba).
+
+| Afirmación corregida | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Gancho: "Cuando buscas algo en internet, muy probablemente usas una idea de esta mujer." | ✅ | Robertson 2004 · Tait 2007 · IEEE Spectrum 2007 | "It remains at the core of many, if not most, ranking methods used in search engines" / "This is the partial basis of all weighting schemes adopted by widely used Internet search engines" | 2004 / 2007 |
+| Línea 4: "Esa es la idea: entre menos documentos tengan una palabra, más vale." | ✅ | Spärck Jones 1972 | "matches on less frequent, more specific, terms are of greater value than matches on frequent terms" | 1972 |
+| Cierre: "Así que cuando buscas algo, muy probablemente Karen te ayuda: ella enseñó a medir qué palabras importan." | ✅ | ídem gancho · Tait 2007 | "the importance of terms is weighted according to the proportion of documents in the corpus in which they occur" | 2004 / 2007 |
+| Firma en pantalla: «Karen Spärck Jones · entrevista BCS (publicada en 2009)» | ✅ | bcs.org/…/computings-too-important-to-be-left-to-men/ | "My slogan is: Computing is too important to be left to men." · publicada "03 May 2009" | 2009 |
+| Premio de la ACL en pantalla sin año («Premio a la trayectoria, ACL») | ✅ | cl.cam.ac.uk CV · Tait 2007 | "Lifetime Achievement Award, Association for Computational Linguistics" / "the ACL Lifetime Achievement Award" | s/f / 2007 |
+| IA que busca con BM25 antes de responder: fuente independiente agregada (Ram et al. 2023) | ✅ | aclanthology.org/2023.tacl-1.75.pdf | "prepending grounding documents to the input" / "We used BM25 (Robertson and Zaragoza, 2009) as our sparse model." | 2023 |
+| Nota del Computer Laboratory corregida (desde 1968; afiliación del artículo de 1972) | ✅ | cl.cam.ac.uk CV · ksj_orig.pdf | "1968 – 1988 Research positions, Computer Laboratory, University of Cambridge" / "Computer Laboratory, University of Cambridge, Cambridge, UK" | s/f / 1972 |
+| Fuente 1: frase textual del resumen | ✅ | Spärck Jones 1972 | "considerable improvements in performance are obtained with this very simple procedure" | 1972 |
+
+VEREDICTO: APROBADO
