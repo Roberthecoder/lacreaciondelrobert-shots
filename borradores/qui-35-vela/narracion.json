@@ -1,0 +1,17 @@
+{
+  "dcHtml": "Shot Vela base narrada.dc.html",
+  "salida": "Shot Vela narrado.dc.html",
+  "nota": "Shot Químico #35. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa vela no está quemando la cera sólida que ves: está quemando cera hecha vapor." },
+    { "escena": "Copa", "texto": "El calor de la llama derrite la cera de arriba y forma una copita líquida." },
+    { "escena": "Mecha", "texto": "Esa cera sube por los hilos de la mecha por capilaridad, como el agua por una servilleta." },
+    { "escena": "Vapor", "texto": "Arriba se vuelve vapor, y ese vapor, al juntarse con el oxígeno del aire, es lo que arde." },
+    { "escena": "Brillo", "texto": "Lo amarillo son partículas de hollín, carbono sólido tan caliente que brilla." },
+    { "escena": "Pregunta", "texto": "¿Y cómo sabemos que lo que arde es el vapor?" },
+    { "escena": "Faraday", "texto": "En unas conferencias de Navidad en Londres, entre 1860 y 1861, Michael Faraday metió un tubito de vidrio en la parte oscura de la llama, sacó ese vapor y lo prendió en la otra punta." },
+    { "escena": "Humo", "texto": "Al apagarla, ese humo es cera evaporada: una llama a unos centímetros baja por él y la vuelve a encender. Es fuego de verdad, no un juego." },
+    { "escena": "Espacio", "texto": "Lo curioso: en el espacio, sin aire caliente que suba, la llama de una vela es redonda, azul y sin hollín." },
+    { "escena": "Cierre", "texto": "Así que tu vela no quema la cera que ves: quema la que ya se volvió vapor." }
+  ]
+}
