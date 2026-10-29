@@ -1,17 +1,17 @@
 # Shot IA #46 · La molécula para la diabetes que una IA convirtió en antibiótico
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #46 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion escrito, pendiente de verificación independiente. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`; corregidos los 2 ⚠️: «predijo» en el gancho y abaucina de «espectro estrecho» en pantalla) · animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert** (~953 créditos).
 - **Formato:** N3 "Capítulos y medidores" (cap. 1 aprende · cap. 2 busca · cap. 3 la prueba) + toque de N1 "Por dentro" (bajamos a la membrana de la bacteria para ver la "batería").
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": «Esta molécula no se inventó para infecciones: se estudiaba para la diabetes».
-- **Duración:** voz 955 caracteres / ~160 palabras (≈ 58.2 s) + cierre 3.5 s → **61.7 s** estimados.
+- **Duración:** voz 953 caracteres / ~165 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** en la base.
 - **Postura de la serie:** defensa con datos (un uso real y útil de la IA en ciencia), con el matiz de que la halicina aún no es medicina aprobada y de que la IA predice pero el laboratorio comprueba.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esta molécula no se inventó para infecciones: se estudiaba para la diabetes. Y una IA descubrió que mata bacterias. | Fondo menta; desde el cuadro 0 una molécula de halicina (anillos con trazo negro grueso) gira; etiqueta "para diabetes" que se tacha y cambia a "¿antibiótico?". Bacterias en forma de bastón que se apagan alrededor. |
+| 0 | Gancho | Esta molécula no se inventó para infecciones: se estudiaba para la diabetes. Y una IA predijo que mata bacterias. | Fondo menta; desde el cuadro 0 una molécula de halicina (fórmula esquemática con S, N, NH₂ y NO₂) aparece y gira; etiqueta «para la diabetes» que se tacha; chip «IA: «mata bacterias»» + «(predicción)» y brillitos. |
 | 1 | Aprende | En el MIT entrenaron una red neuronal con dos mil trescientas treinta y cinco moléculas: cuáles frenan a la bacteria E. coli. | **Cap. 1 · Aprende.** `RedNeuronal`; entran fichas de moléculas con ✔ (frena) o ✘ (no frena); contador "2,335 moléculas". Etiqueta *Escherichia coli*. |
 | 2 | Busca | Luego revisó seis mil ciento once moléculas que ya se estudiaban para otras enfermedades. | **Cap. 2 · Busca.** Cuadrícula que se escanea, contador "6,111" (Drug Repurposing Hub); unas pocas se encienden en dorado. |
 | 3 | Halicina | La elegida: halicina, por HAL, la computadora de dos mil uno: odisea del espacio. | Una molécula sale de la cuadrícula; aparece el ojo rojo estilo HAL (dibujo propio, sin logos de la película) y el nombre "halicina". |
@@ -19,12 +19,32 @@
 | 5 | Bateria | Deshace la diferencia de acidez entre adentro y afuera de la bacteria: una batería que necesita para vivir. | Fondo oscuro (por dentro de la bacteria): membrana con protones (H⁺) acumulados afuera, medidor tipo pila "ΔpH" que baja hasta vaciarse cuando llega la halicina. |
 | 6 | Ratones | Salió en la revista Cell en 2020: en ratones funcionó contra Acinetobacter baumannii y Clostridioides difficile. | **Cap. 3 · La prueba.** `TarjetaEstudio` "2020 · MIT · Stokes … Collins · *Cell*"; dos ratoncitos con etiquetas *Acinetobacter baumannii* (herida en la piel) y *Clostridioides difficile* (intestino). |
 | 7 | Treinta | Y en treinta días, E. coli no logró volverse resistente. | Calendario de 30 días que se va tachando; medidor de resistencia que se queda en cero. |
-| 8 | Abaucina | En 2023, otra red encontró la abaucina, que ataca casi solo a Acinetobacter. | Chip "2023 · *Nature Chemical Biology*"; molécula de abaucina como francotirador que apunta solo a *A. baumannii* entre otras bacterias. |
+| 8 | Abaucina | En 2023, otra red encontró la abaucina, que ataca casi solo a Acinetobacter. | Chip "2023 · *Nature Chemical Biology*"; esquema de la abaucina; una mira apunta a las *A. baumannii* (coral), que se apagan; las otras bacterias casi no cambian (una apenas se afecta). Chip «espectro estrecho: casi solo *A. baumannii*». |
 | 9 | Ojo | Ojo: ninguna es todavía medicina aprobada para personas. | Frasco de medicina con sello "aún no aprobada"; signo de alto. |
 | 10 | Cierre | Una molécula pensada para la diabetes podría volverse antibiótico. Y la encontró una IA. | **Regreso a la imagen del inicio**: la misma molécula girando sobre fondo menta, ahora con etiqueta "candidata a antibiótico" y los brillitos de IA. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
-**Música:** cama grave continua; cada ficha que entra a la red hace un clic suave, el escaneo de la cuadrícula zumba, la molécula elegida da un "ding", la pila se descarga con un zumbido que baja, el calendario pasa hojas, el francotirador hace un disparo seco y el sello "aún no aprobada" golpea.
+**Música:** cama grave continua; cada ficha que entra a la red hace un clic suave, el escaneo de la cuadrícula zumba, la molécula elegida da un "ding", la pila se descarga con un zumbido que baja, el calendario pasa hojas, la mira da golpes secos y el sello "aún no aprobada" golpea.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y cómo mata a bacterias que resisten a casi todo?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.5 | 11_sorprendido | `gancho` | «se estudiaba para la diabetes» (cuadro 0) |
+| 2 | 8.8 | 12.8 | 13_senalando_arriba | `arriba-der` | señala el contador «2,335 moléculas» |
+| 3 | 15.5 | 19.5 | 06_pensativo_menton | `arriba-der` | «seis mil ciento once moléculas» (escaneo) |
+| 4 | 20.7 | 24.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «por HAL, la computadora de 2001» |
+| 5 | 24.8 | 27.8 | 07_pensativo_puno | `grande` | «¿Y cómo mata a bacterias que resisten a casi todo?» |
+| 6 | 31.4 | 34.1 | 04_bajando_lentes | `arriba-der` | la batería se vacía |
+| 7 | 37.3 | 40.9 | 11_sorprendido | `arriba-der` | «en ratones funcionó» |
+| 8 | 45.0 | 49.1 | 06_pensativo_menton | `arriba-der` | «la abaucina, casi solo Acinetobacter» |
+| 9 | 49.4 | 52.6 | 10_serio_molesto | `izq-alto` | «ninguna es todavía medicina aprobada» |
+| 10 | 53.7 | 58.0 | 13_senalando_arriba | `arriba-der` | «la encontró una IA» |
+| — | 58.1 | 61.6 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 10 · ≈ 37.3 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.6 s
 
 ## Fuentes (cada cifra se abrió en la fuente original el 29 oct 2026)
 
@@ -48,7 +68,7 @@
 5. (Contexto, no va en la voz) OMS, lista de bacterias prioritarias 2024 (17 may 2024): "Critical priority: Acinetobacter baumannii, carbapenem-resistant". Nota descriptiva de la OMS sobre resistencia (16 jul 2026): la resistencia bacteriana estuvo "associated with more than 4.7 million deaths globally in 2021".
 
 ## Notas
-- "Una IA descubrió que mata bacterias": la red neuronal predijo la actividad y luego los investigadores la comprobaron en el laboratorio (E. coli) y en ratones. En la descripción se aclara que la IA propone y el laboratorio comprueba.
+- "Una IA predijo que mata bacterias": la red neuronal predijo la actividad y luego los investigadores la comprobaron en el laboratorio (E. coli) y en ratones. En la descripción se aclara que la IA propone y el laboratorio comprueba.
 - "Revisó seis mil ciento once moléculas": el modelo calificó las moléculas del Drug Repurposing Hub (6,111 en total; las que ya estaban en el entrenamiento se separaron para elegir candidatas).
 - "Resisten a casi todo": la cepa de *A. baumannii* usada en ratones (CDC 288) es pan-resistente según el artículo.
 - "Diferencia de acidez" = el componente ΔpH de la fuerza protón-motriz; "batería" es una comparación, se dice como tal.
