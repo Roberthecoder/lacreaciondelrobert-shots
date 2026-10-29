@@ -3,9 +3,9 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #38 · rama `pedido300/fun`.
 - **Formato:** N1 Por dentro (macro: el frasco de kombucha de tu cocina → micro: levaduras, bacterias y fibras de celulosa en fondo oscuro → macro: el mismo frasco, ya "entendido") con un tramo N2/mito de salud (lo que sí y lo que no está demostrado).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Esa "madre" que flota en tu kombucha no es un hongo: es una tela que tejen bacterias, con hongos adentro.»
-- **Duración:** voz 996 caracteres / ~185 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~996 créditos de ElevenLabs).
-- **Tono:** curioso y honesto con la salud: no se promete ninguna cura; el único estudio en personas se presenta como pista, no como prueba. No es consejo médico.
+- **Duración:** voz 993 caracteres / ~187 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~993 créditos de ElevenLabs).
+- **Tono:** curioso y honesto con la salud: no se promete ninguna cura; el estudio en personas se presenta como pista, no como prueba (el placebo también bajó el azúcar y la diferencia no fue significativa). No es consejo médico.
 
 ## Versión narrada
 
@@ -14,16 +14,16 @@
 | 0 | Gancho | Esa «madre» que flota en tu kombucha no es un hongo: es una tela que tejen bacterias, con hongos adentro. | Fondo amarillo: un frasco de vidrio con té ámbar y la capa beige flotando arriba; cuadro 0.3: una mano con pinzas la levanta y gotea. Chip "¿hongo?" que se tacha → "tela de bacterias + levaduras". Etiqueta "madre (SCOBY)". |
 | 1 | Te | Todo empieza con té y azúcar. | Caen al frasco una bolsita de té y una cucharada de azúcar (cubitos), el té se oscurece. |
 | 2 | Levaduras | Las levaduras, hongos de una sola célula, parten el azúcar y lo vuelven alcohol y burbujas. | Zoom al líquido (fondo oscuro, "AL MICROSCOPIO · el té"): levaduras ovaladas con yemas (*Brettanomyces*); la sacarosa (dos hexágonos unidos) se parte en glucosa + fructosa; salen burbujas de CO₂ y moléculas "alcohol". Etiqueta "levadura (hongo) · *Brettanomyces*". |
-| 3 | Acido | Luego unas bacterias se comen ese alcohol y lo vuelven ácido acético, el del vinagre. | Bastoncitos (bacterias del ácido acético) atrapan las moléculas de alcohol y sueltan "ácido acético"; medidor de acidez que baja; iconito de botella de vinagre. |
-| 4 | Hilos | Y una de ellas, Komagataeibacter, usa azúcar para hilar fibras finísimas de celulosa. | Una bacteria grande (*Komagataeibacter*) saca por un costado una cinta de celulosa que se alarga. Etiqueta "*Komagataeibacter*". |
-| 5 | Celulosa | La misma molécula que hay en el papel y en el algodón. | La cinta se acerca: cadena de anillos de glucosa (celulosa); a los lados, una hoja de papel y una mota de algodón con la misma cadena. |
+| 3 | Acido | Luego unas bacterias se comen ese alcohol y lo vuelven ácido acético, el del vinagre. | Bastoncitos (bacterias del ácido acético) atrapan las moléculas de alcohol y sueltan "ácido acético"; medidor «pH ↓» (acidez ↑); iconito de botella de vinagre. |
+| 4 | Hilos | Y una, Komagataeibacter, usa azúcar para hilar fibras finísimas de celulosa. | Una bacteria grande (*Komagataeibacter*) saca por un costado una cinta de celulosa que se alarga. Etiqueta "*Komagataeibacter*". |
+| 5 | Celulosa | La misma molécula del papel y del algodón. | La cinta se acerca: cadena de anillos de glucosa (celulosa); a los lados, una hoja de papel y una mota de algodón con la misma cadena. |
 | 6 | Capa | Las fibras se enredan sobre el té, atrapan microbios y la capa crece. | Muchas cintas se entrecruzan en la superficie formando una malla; levaduras y bacterias quedan atrapadas; zoom out: la capa en el frasco se hace más gruesa (capas apiladas). |
 | 7 | Pregunta | ¿Y de verdad la kombucha te cura? | **Re-gancho.** "?" gigante sobre el frasco; Robert grande, pensativo. |
 | 8 | Animales | Casi todo lo que se presume se probó en animales o en laboratorio, no en personas. | Tarjetas de promesas ("cura todo", "desintoxica"…) que se apagan; íconos ratón y tubo de ensayo ✓, persona ✗ con "?". |
-| 9 | Estudio | Un estudio de Georgetown, Washington, publicado en 2023, dio kombucha a adultos con diabetes tipo 2. | `TarjetaEstudio` "Georgetown · Washington, D. C. · *Frontiers in Nutrition*, 2023 · diabetes tipo 2 · 240 mL al día, 4 semanas"; vasitos de kombucha y de placebo. |
-| 10 | Resultado | En cuatro semanas, su azúcar en ayunas bajó, pero solo se analizaron siete: es una pista, no una prueba. | Barra de glucosa en ayunas que baja (164 → 116 mg/dL, promedio); aparecen solo 7 personitas; sello "PISTA, NO PRUEBA". |
+| 9 | Estudio | Un estudio de Georgetown, Washington, publicado en 2023, probó kombucha en adultos con diabetes tipo 2. | `TarjetaEstudio` "Georgetown · Washington, D. C. · *Frontiers in Nutrition*, 2023 · diabetes tipo 2 · 240 mL al día, 4 semanas · kombucha y placebo (cruzado)"; vasitos de kombucha y de placebo. |
+| 10 | Resultado | Con kombucha, su azúcar en ayunas bajó… pero con una bebida falsa también bajó, y solo eran siete: es una pista, no una prueba. | Dos barras de glucosa en ayunas: «kombucha 164 → 116» y «placebo 162 → 141 mg/dL (promedios)»; chip «diferencia no significativa»; aparecen solo 7 personitas; sello "PISTA, NO PRUEBA". |
 | 11 | Alcohol | Y ojo: esa kombucha tenía uno punto cinco por ciento de alcohol. | Número gigante "1.5 % de alcohol" sobre la botella del estudio; Robert sorprendido. |
-| 12 | Cierre | Así que esa madre no es un hongo: es una tela viva tejida por bacterias, con levaduras adentro. | **Regreso a la imagen del inicio:** el mismo frasco y la misma capa con las pinzas, ahora con una lupa que deja ver la malla de fibras con levaduras y bacterias adentro. Chip "tela viva". |
+| 12 | Cierre | Así que esa madre no es un hongo: es una tela viva de bacterias, con levaduras adentro. | **Regreso a la imagen del inicio:** el mismo frasco y la misma capa con las pinzas, ahora con una lupa que deja ver la malla de fibras con levaduras y bacterias adentro. Chip "tela viva". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave, cálida y continua (burbujeo suave de fermentación), sin golpe; efectos en el mismo cuadro: gota al levantar la capa, chapoteo de la bolsita y del azúcar, "plop" al partirse la sacarosa, burbujas, chasquido ácido, hilo que se estira (sonido de cuerda), tejido que se cierra, golpe del "?", apagones de las promesas, tic de las 7 personas, golpe del sello y del 1.5 %.
@@ -52,7 +52,7 @@ Barras de escala: 10 cm (frasco), 10 µm (levaduras y bacterias), 1 nm (cadena d
 6. Mendelson, C. et al. (2023). Kombucha tea as an anti-hyperglycemic agent in humans with diabetes – a randomized controlled pilot investigation. *Frontiers in Nutrition* 10: 1190248. https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2023.1190248/full
    > "performed at Georgetown University Medical Center in Washington, DC."
    > "Participants were instructed to consume 240 mL (8 ounces) of a study drink with dinner, daily, for 4 weeks."
-   > "Kombucha lowered average fasting blood glucose levels at 4 weeks compared to baseline (164 vs. 116 mg/dL, p = 0.035)."
+   > "Kombucha lowered average fasting blood glucose levels at 4 weeks compared to baseline (164 vs. 116 mg/dL, p = 0.035)." Placebo: 162 → 141 mg/dL, sin significancia (p = 0.078); la diferencia kombucha vs. placebo no fue significativa en el grupo completo.
    > Solo los participantes "who completed the entire study were included for analysis of fasting blood glucose" (n = 7). "The number of participants was small, and attrition was high." "this study was not sufficiently powered to provide more definitive conclusions."
    > "the kombucha contained 11.9 g/L ethanol (1.5% alcohol by volume)."
 

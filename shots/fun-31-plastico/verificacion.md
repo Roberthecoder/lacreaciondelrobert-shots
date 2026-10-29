@@ -47,4 +47,3 @@ los datos de más de 2 años dicen su año en voz o tarjeta (2011, 2017, 2022). 
 **Segunda vuelta (29 oct 2026):** se volvió a verificar todo lo que cambió en `narracion.json` (13 líneas, 999 caracteres) y en la pantalla
 (filas 1, 1b, 3, 4, 5, 7, 8c, 9, 9c, 10, 11, 12, 13 y 17). Las 5 ⚠️ quedaron corregidas y los recortes no cambian ningún dato.
 Todas las afirmaciones quedaron ✅. El dibujo es esquemático (enzima y cadena no están a escala).
-VEREDICTO: APROBADO
