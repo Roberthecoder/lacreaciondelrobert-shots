@@ -204,7 +204,7 @@ function Tamiz() {
   const discos = [[-170, -110], [40, -170], [190, -20], [-60, 40], [-200, 130], [110, 170]];
   const PKU = 3;
   const halo = kprog(T, K.Ha + 0.5, K.Ha + 3.2, kEase.suave);
-  const PLX = 470, PLY = 930;
+  const PLX = 470, PLY = 880;
   // México: hospitales
   const ciudades = [[-99.13, 19.43], [-103.35, 20.67], [-100.31, 25.69], [-89.62, 20.97], [-117.03, 32.51], [-96.72, 17.06], [-106.08, 28.63], [-110.96, 29.07],
     [-96.13, 19.17], [-93.12, 16.75], [-107.39, 24.8], [-100.98, 22.15], [-86.85, 21.16], [-110.31, 24.14], [-98.2, 19.04], [-101.68, 21.12], [-103.41, 25.54], [-99.88, 16.85]];
@@ -214,19 +214,19 @@ function Tamiz() {
       <Escena T={T} a={K.G} b={K.Ta} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          {gG.map((t, i) => <GotaCae key={i} T={T} x={540 + (-280 + i * 140) * 1.15} y0={420} y1={1010 + 70 * 1.15} t0={t} t1={t + 0.32} />)}
-          <TarjetaFiltro x={540} y={1010} s={1.15} rot={-2} llenas={llenasG} />
+          {gG.map((t, i) => <GotaCae key={i} T={T} x={540 + (-280 + i * 140) * 1.15} y0={420} y1={900 + 70 * 1.15} t0={t} t1={t + 0.32} />)}
+          <TarjetaFiltro x={540} y={900} s={1.15} rot={-2} llenas={llenasG} />
         </SvgCapa>
       </Escena>
       {/* 1 · el piquete en el talón */}
       <Escena T={T} a={K.Ta} b={K.Bu} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <PieBebe x={320} y={830} s={1} T={T} piquete={kprog(T, K.Ta + 1.0, K.Ta + 1.2)} />
-          {lan > 0 && lanSale < 1 && <g opacity={1 - lanSale}><Lanceta x={klerp(-40, 168, lan)} y={klerp(1060, 905, lan)} rot={-40} /></g>}
-          {gotaTalon > 0 && <circle cx={202} cy={900 + 22 * gotaTalon} r={8 + 20 * gotaTalon} fill={SANGRE} stroke="#8a0e1e" strokeWidth={4} />}
-          <GotaCae T={T} x={202} y0={920} y1={1140} t0={K.Ta + 3.0} t1={K.Ta + 3.35} />
-          <TarjetaFiltro x={klerp(1500, 412, llega)} y={1080} s={0.75} rot={0} llenas={llenasT} />
+          <PieBebe x={320} y={760} s={1} T={T} piquete={kprog(T, K.Ta + 1.0, K.Ta + 1.2)} />
+          {lan > 0 && lanSale < 1 && <g opacity={1 - lanSale}><Lanceta x={klerp(-40, 168, lan)} y={klerp(990, 835, lan)} rot={-40} /></g>}
+          {gotaTalon > 0 && <circle cx={202} cy={830 + 22 * gotaTalon} r={8 + 20 * gotaTalon} fill={SANGRE} stroke="#8a0e1e" strokeWidth={4} />}
+          <GotaCae T={T} x={202} y0={850} y1={1060} t0={K.Ta + 3.0} t1={K.Ta + 3.35} />
+          <TarjetaFiltro x={klerp(1500, 412, llega)} y={1000} s={0.75} rot={0} llenas={llenasT} />
         </SvgCapa>
       </Escena>
       {/* 2 · la tarjeta llega al laboratorio */}
@@ -249,7 +249,7 @@ function Tamiz() {
           {pheEn.map((p, i) => { const v = kprog(T, p.t0, p.t0 + 1.2, kEase.suave); if (v <= 0) return null;
             const x = klerp(330, p.xx, v), y = klerp(780, p.yy, v);
             return <Phe key={i} x={x} y={y + Math.sin(T * 3 + i) * 5} s={0.55} rot={p.rot + T * 25} brillo={0.4} />; })}
-          <Cerebro x={850} y={760} s={0.85} T={T} alerta={kprog(T, K.En + 3.2, K.En + 3.8)} />
+          <Cerebro x={900} y={620} s={0.75} T={T} alerta={kprog(T, K.En + 3.2, K.En + 3.8)} />
         </SvgCapa>
         <Medidor T={T} at={K.En + 0.8} until={K.Pr - 0.3} valor={(t) => klerp(0.15, 0.95, kprog(t, K.En + 0.8, K.En + 5.0))} etiqueta="Phe en la sangre" texto={(v) => (v > 0.6 ? 'alta' : 'normal')} x={90} y={1430} color={KC.red} />
       </Escena>
@@ -257,10 +257,10 @@ function Tamiz() {
       <Escena T={T} a={K.Pr} b={K.Gu} zoom={0.08}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <TarjetaFiltro x={330} y={1100} s={0.6} rot={-6} llenas={[1, 1, 1, 1, 1]} seca={1} falta={kprog(T, K.Pr + 0.5, K.Pr + 0.55) >= 1 ? 1 : -1} />
-          {(() => { const baja = kprog(T, K.Pr, K.Pr + 0.45, kEase.sale) * (1 - kprog(T, K.Pr + 0.6, K.Pr + 1.0)); return <Sacabocado x={330 + (-280 + 140) * 0.6 * Math.cos(-6 * Math.PI / 180)} y={klerp(780, 1130, baja)} />; })()}
+          <TarjetaFiltro x={330} y={1040} s={0.6} rot={-6} llenas={[1, 1, 1, 1, 1]} seca={1} falta={kprog(T, K.Pr + 0.5, K.Pr + 0.55) >= 1 ? 1 : -1} />
+          {(() => { const baja = kprog(T, K.Pr, K.Pr + 0.45, kEase.sale) * (1 - kprog(T, K.Pr + 0.6, K.Pr + 1.0)); return <Sacabocado x={330 + (-280 + 140) * 0.6 * Math.cos(-6 * Math.PI / 180)} y={klerp(720, 1070, baja)} />; })()}
           {(() => { const sale = kprog(T, K.Pr + 0.55, K.Pr + 1.3, kEase.sale); if (sale <= 0) return null;
-            return <g transform={`translate(${klerp(250, 300, sale)} ${klerp(1140, 800, sale)}) rotate(${T * 60}) scale(${klerp(0.4, 1, sale)} ${klerp(0.4, 1, sale) * (0.6 + 0.4 * Math.abs(Math.cos(T * 2)))})`}>
+            return <g transform={`translate(${klerp(250, 300, sale)} ${klerp(1080, 760, sale)}) rotate(${T * 60}) scale(${klerp(0.4, 1, sale)} ${klerp(0.4, 1, sale) * (0.6 + 0.4 * Math.abs(Math.cos(T * 2)))})`}>
               <circle r={150} fill="#fbf7ee" stroke={KC.ink} strokeWidth={9} /><Mancha x={0} y={0} r={146} f={1} seca={1} seed={9} />
             </g>; })()}
           <text x={600} y={880} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.cyan} stroke={KC.ink} strokeWidth={12} opacity={kprog(T, K.Pr + 1.0, K.Pr + 1.4)} transform={`rotate(${Math.sin(T * 3) * 6} 600 800)`}>?</text>
@@ -270,14 +270,14 @@ function Tamiz() {
       <Escena T={T} a={K.Gu} b={K.Ag} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {Array.from({ length: 8 }, (_, i) => <Bacteria key={i} T={T} x={(i * 170 + T * 30) % 1200 - 60} y={1180 + Math.sin(i * 2 + T) * 40} largo={140} ancho={52} rot={i * 25} color="#bfe8a0" flagelo={false} seed={i + 5} opacidad={0.75} />)}
+          {Array.from({ length: 8 }, (_, i) => <Bacteria key={i} T={T} x={(i * 170 + T * 30) % 1200 - 60} y={1580 + Math.sin(i * 2 + T) * 40} largo={140} ancho={52} rot={i * 25} color="#bfe8a0" flagelo={false} seed={i + 5} opacidad={0.75} />)}
         </SvgCapa>
       </Escena>
       {/* 6–7 · el experimento: la placa con Bacillus subtilis, el freno y el halo */}
       <Escena T={T} a={K.Ag} b={K.Ho} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <PlacaPetri x={PLX} y={PLY} r={330} agar="#f1d27a" id="gu">
+          <PlacaPetri x={PLX} y={PLY} r={310} agar="#f1d27a" id="gu">
             {Array.from({ length: 70 }, (_, i) => { const a = i * 2.39996, d = Math.sqrt((i + 0.5) / 70) * 300; return <circle key={i} cx={Math.cos(a) * d} cy={Math.sin(a) * d} r={5} fill={FRENO} opacity={0.35 * kprog(T, K.Ag + 0.6, K.Ag + 1.4)} />; })}
             {halo > 0 && <g>
               <circle cx={discos[PKU][0]} cy={discos[PKU][1]} r={50 + 90 * halo} fill="rgba(255,255,255,.55)" stroke="rgba(255,255,255,.9)" strokeWidth={5} />
@@ -326,12 +326,12 @@ function Tamiz() {
       {/* 12 · cierre: la tarjeta del inicio, ya revisada */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><TarjetaFiltro x={540} y={1010} s={1.15} rot={-2} llenas={[1, 1, 1, 1, 1]} seca={1} checks={kprog(T, K.Ci + 0.6, K.Ci + 2.8)} /></SvgCapa>
+        <SvgCapa><TarjetaFiltro x={540} y={900} s={1.15} rot={-2} llenas={[1, 1, 1, 1, 1]} seca={1} checks={kprog(T, K.Ci + 0.6, K.Ci + 2.8)} /></SvgCapa>
       </Escena>
 
       {/* lupas y escalas */}
       <Lupa T={T} at={K.Bu + 1.0} until={K.En - 0.3} x={540} y={960} r={190} fx={540 - 140} fy={560 + 70} interior={(t, r) => InteriorPapel(t, r)} tinte={KC.red} etiqueta="AL MICROSCOPIO · sangre seca" />
-      <Lupa T={T} at={K.Ha + 2.0} until={K.Ho - 0.3} x={830} y={1020} r={180} fx={PLX + discos[PKU][0]} fy={PLY + discos[PKU][1]} interior={(t, r) => InteriorHalo(t, r, K.Ha + 2.0)} tinte={KC.mint} etiqueta="AL MICROSCOPIO · halo" />
+      <Lupa T={T} at={K.Ha + 2.0} until={K.Ho - 0.3} x={830} y={960} r={170} fx={PLX + discos[PKU][0]} fy={PLY + discos[PKU][1]} interior={(t, r) => InteriorHalo(t, r, K.Ha + 2.0)} tinte={KC.mint} etiqueta="AL MICROSCOPIO · halo" />
       {T < K.Ta && <Escala T={T} z={1} pxPorMm={9.4} />}
       {T > K.Pr && T < K.Gu && <Escala T={T} z={1} pxPorMm={100} />}
       {T > K.Bu + 1.4 && T < K.En - 0.3 && <Escala T={T} z={1} pxPorMm={9000} objetivo={260} />}
@@ -340,19 +340,19 @@ function Tamiz() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.2} until={K.Ta - 0.3} texto="¿un análisis cualquiera?" x={300} y={470} tam={40} />
       <Chip T={T} at={K.G + 1.2} until={K.Ta - 0.3} texto="tarjeta de papel filtro" y={1500} tam={42} borde={KC.red} />
       <Medidor T={T} at={K.Ta + 0.3} until={K.Bu - 0.3} valor={(t) => kprog(t, K.Ta + 0.3, K.Ta + 2.4) * 0.6} etiqueta="días de vida" texto={(v) => 'día ' + Math.max(1, Math.round(v * 5))} x={90} y={1430} color={KC.pink} />
-      <Chip T={T} at={K.Bu + 0.2} until={K.Bu + 1.6} texto="tamiz metabólico neonatal" x={540} y={830} tam={40} borde={KC.mint} />
+      <Chip T={T} at={K.Bu + 0.2} until={K.Bu + 0.9} texto="tamiz metabólico neonatal" x={540} y={830} tam={40} borde={KC.mint} />
       <Etq T={T} at={K.Bu + 1.8} until={K.En - 0.3} x={130} y={1500} texto="fenilcetonuria (PKU)" tam={40} color={KC.texto} />
       <Etq T={T} at={K.En + 0.6} until={K.Pr - 0.3} x={110} y={690} texto="proteína" tam={30} color="#7fc8ff" />
-      <Etq T={T} at={K.En + 1.2} until={K.Pr - 0.3} x={420} y={640} texto="enzima a medio gas" tam={30} color={ENZ} />
+      <Etq T={T} at={K.En + 1.2} until={K.Pr - 0.3} x={380} y={670} texto="enzima a medio gas" tam={30} color={ENZ} />
       <Etq T={T} at={K.En + 1.8} until={K.Pr - 0.3} x={60} y={1185} texto="fenilalanina (Phe) en la sangre" tam={30} color={PHE} />
       <TarjetaEstudio T={T} at={K.Gu + 0.2} until={K.Ag - 0.2} anio="1963" quien="Robert Guthrie y Ada Susi" revista="Pediatrics · Buffalo, EE. UU." x={460} y={900} />
       <Chip T={T} at={K.Gu + 1.4} until={K.Ag - 0.2} texto="¡otro Robert!" x={540} y={1500} tam={46} borde={KC.gold} />
       <Etq T={T} at={K.Ag + 0.4} until={K.Ha - 0.2} x={140} y={1500} texto="Bacillus subtilis" it tam={40} color={KC.texto} />
       <Chip T={T} at={K.Ag + 1.0} until={K.Ha - 0.2} texto="+ β-2-tienilalanina = freno" x={600} y={1590} tam={34} borde={FRENO} />
-      <Cronometro T={T} at={K.Ha + 0.3} until={K.Ho - 0.3} factor={3600 * 4} x={720} y={470} etiqueta="TIME-LAPSE" />
+      <Cronometro T={T} at={K.Ha + 0.3} until={K.Ho - 0.3} factor={3600 * 4} x={480} y={470} etiqueta="TIME-LAPSE" />
       <Chip T={T} at={K.Ha + 1.4} until={K.Ho - 0.3} texto="mucha Phe → la bacteria crece" y={1500} tam={38} borde={KC.mint} />
-      <Etq T={T} at={K.Ho + 0.8} until={K.Di - 0.3} x={700} y={1180} texto="espectrómetro de masas en tándem" lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Di + 0.6} until={K.Re - 0.3} x={60} y={1200} texto="fórmula especial" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ho + 0.8} until={K.Di - 0.3} x={90} y={610} texto="espectrómetro de masas en tándem" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Di + 0.6} until={K.Re - 0.3} x={90} y={590} texto="fórmula especial" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Re + 1.6} until={K.Mx - 0.3} texto="FENILCETONÚRICOS: CONTIENE FENILALANINA" y={1500} tam={30} borde={KC.red} />
       <Chip T={T} at={K.Mx + 0.4} until={K.Ci - 0.3} texto="NOM-034-SSA2-2013" y={1500} tam={42} borde={KC.pink} />
       <Etq T={T} at={K.Mx + 1.2} until={K.Ci - 0.3} x={120} y={560} texto="todo hospital donde nacen bebés" tam={32} color={KC.ink} />
@@ -379,8 +379,8 @@ function Tamiz() {
         [CUES.Enzima + 1.0, CUES.Enzima + 5.3, 'avatar_10_serio_molesto', 'izq-alto'],
         [CUES.Pregunta + 0.05, CUES.Pregunta + 2.4, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Guthrie + 0.3, CUES.Guthrie + 3.3, 'avatar_11_sorprendido', 'arriba-der'],
-        [CUES.Agar + 1.2, CUES.Agar + 4.8, 'avatar_13_senalando_arriba', 'izq-alto'],
-        [CUES.Halo + 0.8, CUES.Halo + 4.2, 'avatar_04_bajando_lentes', 'izq-alto'],
+        [CUES.Agar + 1.2, CUES.Agar + 4.8, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [CUES.Halo + 0.8, CUES.Halo + 4.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Hoy + 1.0, CUES.Hoy + 4.8, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.Dieta + 1.5, CUES.Dieta + 5.0, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Refresco + 0.3, CUES.Refresco + 3.7, 'avatar_04_bajando_lentes', 'grande'],

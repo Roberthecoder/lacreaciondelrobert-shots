@@ -3,19 +3,26 @@
 - **Serie:** Shot Biotecnológico · **Numeración:** #36 · **Tema del logo:** bioquímica (ADN + matraz).
 - **Formato:** N1 "Por dentro" (la botella y, con la `Lupa`, el plástico al microscopio: las tijeras moleculares cortando la cadena) +
   N3 "Capítulos y medidores" (Cap. 1 La bacteria · Cap. 2 Las tijeras · Cap. 3 La enzima mejorada, con un `Medidor` de % de PET partido y un reloj de días/horas).
-- **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre la botella que se ve en pantalla: "Esa botella no es basura: para una bacteria de Japón, es comida."
+- **Gancho (de los 7 aprobados):** #1 "Esto no es X: es Y", sobre la botella que se ve en pantalla: "Ese plástico no es basura: para una bacteria de Japón, es comida."
 - **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s).
 - **Viaje:** macro (una botella de refresco aplastada sobre fondo menta) → micro (fondo oscuro: la bacteria pegada a la superficie del PET, la cadena del
   polímero y las dos enzimas cortándola) → la misma botella, ya en el contenedor de reciclaje, convertida en botella nueva.
 - **No repite:** `amb-03-bioplasticos` (Ambiental) trata del PLA y el compostaje; aquí es el PET y las enzimas que lo parten. *Ideonella* solo aparecía como derivado sugerido.
 
-## Versión narrada (943 caracteres, 170 palabras, ~58 s de voz)
+## Correcciones de la verificación independiente (29 oct 2026, ver `verificacion.md`)
+- ❌ "le ganó a la enzima de la bacteria **que empezó todo**": falso. La cutinasa de composta (LCC) se publicó en 2012, cuatro años antes que *Ideonella* (2016). Ahora: "le ganó a la enzima de la bacteria de Japón".
+- ⚠️ "vive del PET **de tus refrescos**" y el gancho "Esa **botella**…": exagerado; en el estudio comió una película delgada y poco cristalina, no una botella. Ahora: "Ese plástico no es basura…" y "vive del PET, el plástico de las botellas".
+- ⚠️ "Se llama *Ideonella sakaiensis*": ese nombre ya no es el vigente (LPSN: hoy *Pseudideonella sakaiensis*, 2026). Ahora: "La bautizaron *Ideonella sakaiensis*" y la descripción da el nombre actual.
+- ⚠️ "~1 µm de ancho" en pantalla: no verificado. Se quitó; las bacterias son esquemáticas ("esquemático · no a escala").
+- Más preciso: "su planta industrial **sigue en pausa**: la planean para 2028".
+
+## Versión narrada (949 caracteres, 171 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa botella no es basura: para una bacteria de Japón, es comida. | **Cuadro 0:** fondo menta, una botella de refresco aplastada cae al piso y rebota (golpe de plástico). Chip "PET". Robert sorprendido (gancho). |
+| 0 | Gancho | Ese plástico no es basura: para una bacteria de Japón, es comida. | **Cuadro 0:** fondo menta, una botella de refresco aplastada cae al piso y rebota (golpe de plástico). Chip "PET". Robert sorprendido (gancho). |
 | 1 | Lodo | La hallaron en el lodo de una planta que recicla botellas, en Sakai. | Paneo a una montaña de pacas de botellas; una pala saca lodo de un charco. Etiqueta "Sakai, Japón" en un mapita. `Capitulo` 1 · La bacteria. |
-| 2 | Nombre | Se llama Ideonella sakaiensis, y vive del PET de tus refrescos. | **Lupa** "AL MICROSCOPIO · lodo": bacterias en bastón (bacilo, ~1 µm de ancho) pegadas a la película de plástico. Etiqueta *Ideonella sakaiensis*. `Escala` 1 µm. |
+| 2 | Nombre | La bautizaron Ideonella sakaiensis, y vive del PET, el plástico de las botellas. | **Lupa** "AL MICROSCOPIO · esquemático": bacterias en bastón (esquemáticas, no a escala) pegadas a la película de plástico, que se llena de hoyitos. Etiqueta *Ideonella sakaiensis*. |
 | 3 | Petasa | Primero suelta unas tijeras, la PETasa, que cortan el plástico en pedacitos. | Fondo oscuro. `Capitulo` 2 · Las tijeras. La cadena del PET (eslabones alternados: anillo de tereftalato + puente de etilenglicol). Unas tijeras-enzima moradas (PETasa) cortan la cadena en trozos (MHET). Un "clic" por corte. |
 | 4 | Mhetasa | Luego otras, la MHETasa, parten cada pedacito en dos piezas. | Otra enzima (MHETasa, cian) toma cada trozo y lo parte en dos: un hexágono (tereftalato) y un palito (etilenglicol). |
 | 5 | Piezas | Justo las dos piezas con que se fabrica la botella. | Las dos piezas se apilan en dos montoncitos con etiqueta: "ácido tereftálico" · "etilenglicol". La bacteria se las "come" (entran a la célula). |
@@ -23,11 +30,33 @@
 | 7 | Lenta | En 2016, deshacer casi toda una película más delgada que una tarjeta le tomó seis semanas. | `TarjetaEstudio` "2016 · *Science* · Yoshida et al.". Una película de 0.2 mm junto a una tarjeta de crédito; un calendario pasa 6 semanas (42 días) mientras la película se va comiendo. Chip "30 °C". |
 | 8 | Francia | En 2020, en Francia, mejoraron otra enzima que salió de una composta. | `Capitulo` 3 · La enzima mejorada. Un montón de composta de hojas y ramas → de ella sale una enzima (cutinasa LCC) que recibe "piezas nuevas" (mutaciones como chispas). `TarjetaEstudio` "2020 · *Nature* · Tournier et al. · Toulouse". |
 | 9 | Diez | Partió el noventa por ciento del PET en diez horas, y con eso hicieron botellas nuevas. | `Medidor` de 0 → 90 % y un reloj de 0 → 10 h (contra las 6 semanas de antes). Del tanque salen botellas nuevas. Robert grande (presentador) señalando. |
-| 10 | Curioso | Lo curioso: le ganó a la enzima de la bacteria que empezó todo. | Podio: la enzima de composta arriba, la PETasa de *Ideonella* abajo. Robert riendo. |
-| 11 | Planta | Pero su planta industrial sigue sin terminarse: la planean para 2028. | Una planta en obra con grúa detenida; letrero "Longlaville, Francia · meta: 2028". Robert serio. |
+| 10 | Curioso | Lo curioso: le ganó a la enzima de la bacteria de Japón. | Podio: la enzima de composta arriba, la PETasa de *Ideonella* abajo. Robert sorprendido. |
+| 11 | Planta | Pero su planta industrial sigue en pausa: la planean para 2028. | Una planta en obra con grúa detenida; letrero "Longlaville, Francia" y chip "en pausa · meta: 2028". Robert serio. |
 | 12 | Recoger | Y la enzima no recoge la basura: eso todavía te toca a ti. | Una mano (tú) recoge la botella del piso y la lleva al contenedor de reciclaje. |
-| 13 | Cierre | Esa botella sí puede ser comida, pero solo si llega al reciclaje. | **Regreso a la botella del inicio**, ahora dentro del contenedor, y junto a ella aparece una botella nueva brillando. |
+| 13 | Cierre | Ese plástico sí puede ser comida, pero solo si llega al reciclaje. | **Regreso a la botella del inicio**, ahora dentro del contenedor, y junto a ella aparece una botella nueva brillando. |
 | — | Outro | (sin voz) | `CierreMarca tema="bioquimica"` con Robert señalando. |
+
+## Robert en pantalla
+
+Tiempos con las escenas del `Shot Petasa base narrada.dc.html` (Gancho 0 · Lodo 4.0 · Nombre 8.2 · Petasa 13.1 · Mhetasa 17.8 · Piezas 21.6 · Pregunta 24.8 ·
+Lenta 27.8 · Francia 33.3 · Diez 37.6 · Curioso 42.9 · Planta 46.4 · Recoger 50.3 · Cierre 53.9 · Outro 58.0). Nunca tapa el subtítulo ni los datos.
+
+### 11 apariciones, **34.7 s en pantalla** (de 61.5 s), 8 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 3.8 | sorprendido (11) | gancho | «ese plástico no es basura: es comida» |
+| 9.7 – 12.8 | señalando (13) | arriba-der | señala la Lupa: las bacterias sobre el plástico |
+| 16.3 – 19.3 | pensativo, puño (07) | arriba-der | las tijeras cortan la cadena |
+| 21.9 – 24.5 | sonriendo (05) | arriba-der | «las piezas con que se fabrica la botella» y se las come |
+| 24.9 – 27.6 | pensativo, mentón (06) | **grande** | re-gancho: «¿ya se acabó la basura?» |
+| 30.3 – 33.0 | bajando lentes (04) | arriba-der | «le tomó seis semanas» |
+| 38.6 – 42.6 | apuntando (02) | **grande** | el dato fuerte: 90 % en 10 horas y botellas nuevas |
+| 43.2 – 46.0 | sorprendido (11) | arriba-der | «le ganó a la enzima de la bacteria de Japón» |
+| 46.7 – 50.0 | serio (10) | arriba-der | «su planta sigue en pausa» |
+| 50.6 – 53.6 | apuntando a cámara (02) | arriba-der | «eso todavía te toca a ti» |
+| 54.2 – 57.9 | señalando (13) | gancho | cierre: «solo si llega al reciclaje» |
+| 58.0 – 61.5 | apuntando a cámara (02) | `CierreMarca` | tarjeta final junto al logo |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - Cama grave continua, sin golpe marcado, siempre debajo de la voz.
@@ -37,8 +66,8 @@
   `TarjetaEstudio` (golpe suave), el `Medidor` subiendo (barrido ascendente), la grúa detenida (chirrido corto), la botella entrando al contenedor (clonc).
 
 ## Descripción (para publicar)
-"Esa botella no es basura: para una bacteria, es comida. ♻️🦠 En 2016, un equipo japonés publicó en *Science* el hallazgo de *Ideonella sakaiensis*
-(hoy reclasificada como *Piscinibacter sakaiensis*), una bacteria que salió de muestras de lodo de una planta de reciclaje de botellas en Sakai, Japón,
+"Ese plástico no es basura: para una bacteria, es comida. ♻️🦠 En 2016, un equipo japonés publicó en *Science* el hallazgo de *Ideonella sakaiensis*
+(hoy reclasificada como *Pseudideonella sakaiensis*), una bacteria que salió de muestras de lodo de una planta de reciclaje de botellas en Sakai, Japón,
 y que usa el **PET** —el plástico de las botellas de refresco— como su principal fuente de energía y carbono.
 
 ¿Cómo lo hace? Con dos enzimas, que funcionan como tijeras: la **PETasa** corta la cadena del plástico en pedacitos (MHET) y la **MHETasa** parte cada
@@ -49,9 +78,9 @@ y poco cristalina (más fácil de atacar que una botella).
 
 Por eso la biotecnología mejora enzimas. En **2020**, un equipo de Toulouse (Francia) y la empresa Carbios publicó en *Nature* una versión mejorada de una
 **cutinasa hallada en composta de hojas y ramas** (LCC): partió **al menos el 90 % del PET en 10 horas** y con lo recuperado se hicieron botellas nuevas.
-Superó a todas las enzimas que comen PET reportadas hasta entonces, incluida la de *Ideonella*.
+Superó a todas las enzimas que parten PET reportadas hasta entonces, incluida la de *Ideonella* (aunque la de composta se había descubierto antes, en 2012).
 
-Pero no es magia: la planta industrial de Carbios en Longlaville (Francia), pensada para 50 mil toneladas de residuos de PET al año, sigue sin terminarse;
+Pero no es magia: la planta industrial de Carbios en Longlaville (Francia), pensada para 50 mil toneladas de residuos de PET al año, sigue en pausa mientras cierra su financiamiento;
 la empresa la planea para **2028**. Y ninguna enzima recoge la basura: el PET primero tiene que llegar al reciclaje.
 
 El dibujo es esquemático. **¿En tu casa separan las botellas? 👇**
@@ -69,8 +98,7 @@ Soy Robert, de La Creación del Robert 🌱"
    - Sobre la cepa aislada: "The PET film was damaged extensively (Fig. 1G) and almost completely degraded after 6 weeks at 30°C (Fig. 1H)" (2016).
    - La película: "PET film (60 mg, 20 × 15 × 0.2 mm)" · "low-crystallinity (1.9%) PET film" (2016).
 2. **Tanasupawat S. et al. (2016).** "*Ideonella sakaiensis* sp. nov., isolated from a microbial consortium that degrades poly(ethylene terephthalate)". *IJSEM* 66:2813.
-   LPSN: https://lpsn.dsmz.de/species/ideonella-sakaiensis — "pertaining to Sakai city in Japan where the first strain was isolated"; nombre actual
-   *Piscinibacter sakaiensis* (Liu et al. 2023).
+   LPSN: https://lpsn.dsmz.de/species/ideonella-sakaiensis — "pertaining to Sakai city in Japan where the first strain was isolated"; "Correct name: Pseudideonella sakaiensis (Tanasupawat et al. 2016) Lu and Chen 2026".
 3. **Tournier V. et al. (2020).** "An engineered PET depolymerase to break down and recycle plastic bottles". *Nature* 580:216–219 (8 abr 2020). DOI 10.1038/s41586-020-2149-4.
    https://pubmed.ncbi.nlm.nih.gov/32269349/ (resumen completo vía Europe PMC)
    - "Here we describe an improved PET hydrolase that ultimately achieves, over 10 hours, a minimum of 90 per cent PET depolymerization into monomers" (2020).

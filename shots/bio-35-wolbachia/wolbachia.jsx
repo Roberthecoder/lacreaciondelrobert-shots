@@ -262,8 +262,8 @@ function Wolbachia35() {
       {/* 3 · por dentro: la bacteria le estorba al virus */}
       <Escena T={T} a={K.PD} b={K.Sa} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa><Mosco T={T} x={380} y={1100} s={0.75} vuela={0.15} wol={1} /></SvgCapa>
-        <Lupa T={T} at={K.PD + 0.1} until={K.Sa - 0.3} x={540} y={690} r={280} fx={530} fy={1110} interior={(t, r) => CelulaInterior(t, r, K.PD)} tinte={WOL} etiqueta="AL MICROSCOPIO · CÉLULA DEL MOSCO" />
+        <SvgCapa><Mosco T={T} x={800} y={290} s={0.45} vuela={0.15} wol={1} /></SvgCapa>
+        <Lupa T={T} at={K.PD + 0.1} until={K.Sa - 0.3} x={540} y={690} r={280} fx={880} fy={295} interior={(t, r) => CelulaInterior(t, r, K.PD)} tinte={WOL} etiqueta="AL MICROSCOPIO · CÉLULA DEL MOSCO" />
       </Escena>
       {/* 4 · la saliva */}
       <Escena T={T} a={K.Sa} b={K.Pq} zoom={0.04}>
@@ -411,7 +411,8 @@ function Wolbachia35() {
         [CUES.Bacteria + 1.0, CUES.Prestada - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Prestada + 2.4, CUES.PorDentro - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Saliva + 0.4, CUES.Pregunta - 0.2, 'avatar_10_serio_molesto', 'izq-alto'],
-        [CUES.Pregunta + 0.05, CUES.Herencia + 0.6, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Herencia - 0.1, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Herencia + 0.3, CUES.Truco - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Truco + 0.6, CUES.Gana - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Estudio + 2.8, CUES.Resultado - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.Resultado + 0.4, CUES.Ojo - 0.3, 'avatar_02_apuntando_camara', 'izq-alto'],
