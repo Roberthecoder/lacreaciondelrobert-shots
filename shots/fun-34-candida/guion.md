@@ -1,9 +1,9 @@
-# Shot Fungi Mati #34 · La levadura que compartes con quien duermes: *Candida albicans*
+# Shot Fungi Mati #34 · La levadura que puedes compartir con tu pareja: *Candida albicans*
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #34 · rama `pedido300/fun`.
 - **Formato:** N1 Por dentro (tu boca a escala real → la levadura y sus hifas al microscopio → la misma boca, ahora con algodoncillo y de regreso a la calma).
-- **Gancho (de los 7):** #2 "Tú contra el de al lado": «Tú y la persona con la que duermes pueden traer en la boca la misma levadura: *Candida albicans*».
-- **Duración:** voz 999 caracteres / 181 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Gancho (de los 7):** #2 "Tú contra el de al lado": «Tú y tu pareja pueden traer en la boca la misma cepa de levadura: *Candida albicans*».
+- **Duración:** voz 990 caracteres / 179 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** curioso y tranquilo. No es consejo médico. No repite #14 (calor, *Candida auris*) ni #12 (*Malassezia*).
 
@@ -11,20 +11,20 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Tú y la persona con la que duermes pueden traer en la boca la misma levadura: *Candida albicans*. | Fondo rosa: dos caras de perfil sobre una almohada, bocas abiertas; cuadro 0.3: de cada boca sale una burbuja con la misma bolita de levadura y un "=" entre ellas. Etiqueta "levadura · *Candida albicans*". |
+| 0 | Gancho | Tú y tu pareja pueden traer en la boca la misma cepa de levadura: *Candida albicans*. | Fondo rosa: dos caras de perfil sobre una almohada, bocas abiertas; cuadro 0.3: de cada boca sale una burbuja con la misma bolita de levadura y un "=" entre ellas. Etiqueta "levadura · *Candida albicans*". |
 | 1 | Casa | Vive en la boca, el intestino y la piel de mucha gente sana, casi siempre sin molestar. | Silueta de cuerpo: se encienden boca, intestino y piel con puntitos de levadura. Chip "casi siempre: sin síntomas". |
-| 2 | Vecinas | Se cree que tus bacterias la mantienen a raya: compiten con ella. | Entramos a la lengua (fondo oscuro): muchas bacterias (bastoncitos y cocos de colores) rodean a pocas levaduras. Chip "hipótesis: compiten por espacio". |
-| 3 | Antibiotico | Pero un antibiótico fuerte barre bacterias y ella gana terreno. | Una cápsula cruza la escena y las bacterias se apagan; las levaduras se multiplican por gemación y llenan el hueco. |
-| 4 | Truco | Su truco: es un hongo que cambia de forma. | Una levadura al centro, grande; chip "cambia de forma (dimorfismo)". |
-| 5 | Formas | De bolitas que brotan, como levadura, pasa a hilos largos: las hifas. | La bolita (con su brote) estira un tubo que se alarga y tabica: hifa. Etiquetas "levadura (gemación)" y "hifa". Barra de escala 10 µm. |
+| 2 | Vecinas | Se cree que tus bacterias la mantienen a raya: compiten con ella. | Entramos a la lengua (fondo oscuro): muchas bacterias (bastoncitos y cocos de colores) rodean a pocas levaduras. Chip "hipótesis: compiten con ella". |
+| 3 | Antibiotico | Pero un antibiótico fuerte barre bacterias y ella puede ganar terreno. | Una cápsula cruza la escena y las bacterias se apagan; las levaduras se multiplican por gemación y llenan el hueco. |
+| 4 | Truco | Su truco: cambia de forma. | Una levadura al centro, grande; chip "cambia de forma (dimorfismo)". |
+| 5 | Formas | De bolitas que brotan pasa a hilos largos: las hifas. | La bolita (con su brote) estira un tubo que se alarga y tabica: hifa. Etiquetas "levadura (gemación)" y "hifa". Barra de escala 10 µm. |
 | 6 | Pregunta | ¿Y por qué importa la forma? | **Re-gancho.** "?" gigante sobre la hifa; Robert grande, pensativo. |
 | 7 | Invade | Porque la hifa es la forma más invasora: se mete en tus células. | Corte del epitelio de la boca (células en ladrillo): la levadura se queda arriba, la hifa entra en una célula. Chip "hifa = invade". |
-| 8 | Estudio | En 2016, científicos de Londres y Jena, Alemania, vieron que las hifas sueltan una toxina: la candidalisina. | Tarjeta "2016 · Londres y Jena · *Nature*"; de la punta de la hifa salen partículas rojas: "candidalisina". |
+| 8 | Estudio | En 2016, en Londres y Jena, Alemania, vieron que las hifas sueltan una toxina: la candidalisina. | Tarjeta "2016 · Londres y Jena · *Nature*"; de la punta de la hifa salen partículas rojas: "candidalisina". |
 | 9 | Toxina | Daña la membrana de tus células. Sin ella, en ratones, ya no enfermaba la boca. | La membrana de la célula se rompe en puntos y la célula se pone gris; luego una hifa "sin toxina" (✗ gen) junto a células sanas y un ratón con chip "sin toxina: no enferma". |
-| 10 | Placas | Así aparece el algodoncillo: placas blancas en la lengua y los cachetes. | Salimos a la boca (macro): placas blancas en lengua y cachetes. Etiqueta "algodoncillo (candidiasis oral)". |
-| 11 | Quien | Es más común en recién nacidos, con dentadura, tras antibióticos o con inhaladores de corticoides. | Cuatro íconos que aparecen uno por uno: bebé, dentadura, cápsula, inhalador. Chip "CDC". |
-| 12 | Algodon | Y se siente como algodón en la boca. | Una bola de algodón dentro de la boca; Robert riendo. |
-| 13 | Cierre | Así que esa levadura que compartes no es tu enemiga: espera a que tus bacterias se descuiden. | **Regreso a la imagen del inicio:** las mismas dos caras en la almohada; las levaduras tranquilas rodeadas de bacterias. Chip "tus bacterias la cuidan". |
+| 10 | Placas | Cuando crece de más en la boca, aparece el algodoncillo: placas blancas en la lengua y los cachetes. | Salimos a la boca (macro): placas blancas en lengua y cachetes. Etiqueta "algodoncillo (candidiasis oral)". |
+| 11 | Quien | Es más común en recién nacidos, con dentadura postiza, tras antibióticos o con inhaladores de corticoides. | Cuatro íconos que aparecen uno por uno: bebé, dentadura postiza, cápsula, inhalador. Chip "CDC". |
+| 12 | Algodon | Y puede sentirse como algodón en la boca. | Una bola de algodón dentro de la boca; Robert riendo. |
+| 13 | Cierre | Esa levadura que puedes compartir no es tu enemiga: espera a que tus bacterias se descuiden. | **Regreso a la imagen del inicio:** las mismas dos caras en la almohada; las levaduras tranquilas rodeadas de bacterias. Chip "tus bacterias la mantienen a raya". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y tibia, sin golpe; se tensa al entrar el antibiótico y las hifas, y vuelve a calmarse en el cierre. Efectos en el mismo cuadro: "pop" de cada levadura que brota, barrido del antibiótico, estiramiento de la hifa, golpe sordo al entrar en la célula, chisporroteo de la toxina, crujido de la membrana, campanita de cada ícono de riesgo.

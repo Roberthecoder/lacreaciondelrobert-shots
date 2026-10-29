@@ -73,21 +73,22 @@ function Espora({ x, y, px = 60, rot = 0, o = 1, brillo = false }) {
   return <ellipse cx={x} cy={y} rx={px / 2} ry={px * 0.3} transform={`rotate(${rot} ${x} ${y})`} fill="#fdfcf6" stroke={KC.ink} strokeWidth={3} opacity={o}
     style={brillo ? { filter:'drop-shadow(0 0 10px #fff)' } : null} />;
 }
-// Molécula esquemática de birnbaumina: anillo de indol (hexágono + pentágono) con N–OH, cadena y grupo final.
-function Birnbaumina({ x, y, s = 1, T = 0, brilla = 1 }) {
+// Molécula esquemática de birnbaumina (Bartsch 2005): 1-hidroxiindol (N–OH) con la cadena en C3; la B lleva además un OH en C7.
+function Birnbaumina({ x, y, s = 1, T = 0, brilla = 1, oh7 = false }) {
   const hex = Array.from({ length: 6 }, (_, i) => { const a = Math.PI / 6 + i * Math.PI / 3; return [Math.cos(a) * 46, Math.sin(a) * 46]; });
   const pent = [[40, -23], [92, -36], [118, 6], [92, 46], [40, 23]];
   const P = (pts) => 'M ' + pts.map((p) => p.join(' ')).join(' L ') + ' Z';
-  const cadena = [[118, 6], [166, -20], [214, 6], [262, -20], [310, 6], [358, -20], [406, 6]];
+  const cadena = [[92, -36], [140, -60], [188, -36], [236, -60], [284, -36], [332, -60], [380, -36], [428, -60]];
   return <g transform={`translate(${x} ${y}) scale(${s})`} style={{ filter:`drop-shadow(0 0 ${14 * brilla}px ${KC.yellow})` }}>
     <path d={P(hex)} fill="none" stroke={KC.yellow} strokeWidth={9} strokeLinejoin="round" />
     <path d={P(pent)} fill="none" stroke={KC.yellow} strokeWidth={9} strokeLinejoin="round" />
     <path d={'M ' + cadena.map((p) => p.join(' ')).join(' L ')} fill="none" stroke={KC.yellow} strokeWidth={9} strokeLinejoin="round" strokeLinecap="round" />
     <circle cx={92} cy={46} r={15} fill="#5aa0ff" stroke={KC.ink} strokeWidth={3} /><circle cx={92} cy={84} r={13} fill={KC.red} stroke={KC.ink} strokeWidth={3} />
     <line x1={92} y1={60} x2={92} y2={72} stroke={KC.yellow} strokeWidth={7} />
-    {[[166, -20, KC.red], [214, 6, '#5aa0ff'], [406, 6, '#5aa0ff'], [440, -16, KC.red]].map(([cx, cy, c], i) => <circle key={i} cx={cx} cy={cy - (i === 0 ? 34 : 0)} r={13} fill={c} stroke={KC.ink} strokeWidth={3} />)}
-    <line x1={166} y1={-20} x2={166} y2={-42} stroke={KC.yellow} strokeWidth={7} />
-    <line x1={406} y1={6} x2={432} y2={-12} stroke={KC.yellow} strokeWidth={7} />
+    <line x1={140} y1={-60} x2={140} y2={-82} stroke={KC.yellow} strokeWidth={7} />
+    <line x1={428} y1={-60} x2={454} y2={-78} stroke={KC.yellow} strokeWidth={7} />
+    {oh7 && <line x1={0} y1={46} x2={0} y2={70} stroke={KC.yellow} strokeWidth={7} />}
+    {[[140, -94, KC.red], [236, -60, '#5aa0ff'], [428, -60, '#5aa0ff'], [462, -84, KC.red], ...(oh7 ? [[0, 84, KC.red]] : [])].map(([cx, cy, c], i) => <circle key={i} cx={cx} cy={cy} r={13} fill={c} stroke={KC.ink} strokeWidth={3} />)}
   </g>;
 }
 // Niño y perrito (íconos).
@@ -315,7 +316,7 @@ function MacetaShot() {
         <Ambiente T={T} n={18} color="rgba(255,225,26,.25)" />
         {fsvg(<>
           <Birnbaumina T={T} x={130} y={680} s={1.15 * kprog(T, K.Pg + 0.1, K.Pg + 0.6, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4)} />
-          <Birnbaumina T={T} x={130} y={980} s={1.15 * kprog(T, K.Pg + 0.6, K.Pg + 1.1, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4 + 1.5)} />
+          <Birnbaumina T={T} x={130} y={980} oh7 s={1.15 * kprog(T, K.Pg + 0.6, K.Pg + 1.1, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4 + 1.5)} />
         </>)}
       </Escena>
       {/* 11 · el truco: una noche sobre papel negro */}
@@ -349,7 +350,7 @@ function MacetaShot() {
           </g> : null; })()}
         </>)}
       </Escena>
-      <Lupa T={T} at={K.Q + 1.1} until={K.C - 0.3} x={420} y={930} r={200} fx={420} fy={1000} tinte={KC.yellow} etiqueta="el micelio sigue abajo"
+      <Lupa T={T} at={K.Q + 1.1} until={K.C - 0.3} x={420} y={890} r={200} fx={420} fy={1000} tinte={KC.yellow} etiqueta="el micelio sigue abajo"
         interior={(t, r) => <svg width={r * 2} height={r * 2} style={{ position:'absolute', left:0, top:0 }}>
           <rect width={r * 2} height={r * 2} fill="#2a1a10" />
           {Array.from({ length: 22 }, (_, i) => { const q = krng(i + 60); return <circle key={i} cx={q() * r * 2} cy={q() * r * 2} r={5 + q() * 10} fill="#4d321c" />; })}
@@ -378,15 +379,15 @@ function MacetaShot() {
       <Chip T={T} at={K.L + 0.9} until={K.L + 2.4} texto="en la tierra que compraste" x={330} y={790} tam={30} borde={MC.tierra} />
       <Chip T={T} at={K.L + 2.4} until={K.Mi - 0.3} texto="o por el aire" x={820} y={790} tam={32} borde={KC.white} />
       <Etq T={T} at={K.Mi + 0.8} until={K.Ca - 0.3} x={600} y={900} texto="micelio" tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Mi + 1.5} until={K.Ca - 0.3} x={60} y={1150} texto="restos muertos" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Mi + 1.5} until={K.Ca - 0.3} x={60} y={1100} texto="restos muertos" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.Ca + 0.3} until={K.Ca + 1.9} texto="calor + humedad" x={540} y={420} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ca + 2.4} until={K.A - 0.3} texto="el hongo: su parte para reproducirse" x={540} y={420} tam={32} borde={KC.yellow} />
       <Etq T={T} at={K.A + 0.1} until={K.A + 1.2} x={370} y={780} texto="huevito" tam={34} color={KC.ink} />
       <Etq T={T} at={K.A + 1.2} until={K.A + 2.2} x={370} y={780} texto="campana" tam={34} color={KC.ink} />
       <Etq T={T} at={K.A + 2.2} until={K.P - 0.3} x={370} y={780} texto="abierto" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 3.0} until={K.P - 0.3} x={560} y={1170} texto="esporas blancas" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.A + 3.0} until={K.P - 0.3} x={560} y={1150} texto="esporas blancas" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Tx + 1.4} until={K.Tx + 3.0} texto="comerlo: puede caer muy mal" x={540} y={760} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Tx + 3.2} until={K.E - 0.3} texto="niños o mascotas: quítalo" x={360} y={430} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.Tx + 3.2} until={K.E - 0.3} texto="niños o mascotas: quítalo" x={360} y={345} tam={32} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Pg - 0.3} anio="2005" quien="Múnich, Alemania" revista="Bartsch y col. · Angewandte Chemie" x={600} y={760} />
       <Etq T={T} at={K.E + 2.0} until={K.Pg - 0.3} x={380} y={1080} texto="¿de dónde sale el amarillo?" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Pg + 0.4} until={K.Tr - 0.3} x={120} y={560} texto="birnbaumina A" tam={34} color={KC.yellow} />
@@ -407,7 +408,6 @@ function MacetaShot() {
       <BarraEscala T={T} at={K.P} until={K.Tx} texto="5 cm" largo={80} />
       <BarraEscala T={T} at={K.Tx} until={K.E} texto="5 cm" largo={130} />
       <BarraEscala T={T} at={K.E} until={K.Pg} texto="5 cm" largo={140} />
-      <BarraEscala T={T} at={K.Pg} until={K.Tr} texto="1 nm" largo={300} />
       <BarraEscala T={T} at={K.Tr} until={K.Q} texto="5 cm" largo={210} />
       <BarraEscala T={T} at={K.Q} until={K.C} texto="5 cm" largo={150} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={160} />
@@ -432,7 +432,7 @@ function MacetaShot() {
         [K.N + 0.8, K.L - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.Mi + 0.3, K.Ca - 0.3, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.A + 0.3, K.P - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
-        [K.P + 0.05, K.Tx + 0.2, 'avatar_07_pensativo_puno', 'grande'],
+        [K.P + 0.05, K.Tx - 0.35, 'avatar_07_pensativo_puno', 'grande'],
         [K.Tx + 0.6, K.E - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [K.E + 1.0, K.Tr - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.Tr + 1.4, K.Q - 0.2, 'avatar_02_apuntando_camara', 'arriba-der'],

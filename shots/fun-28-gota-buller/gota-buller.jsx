@@ -276,7 +276,7 @@ function GotaBullerShot() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.25} tacharEn={K.G + 1.3} until={K.G + 1.9} texto="¿quieto?" x={330} y={470} tam={52} />
-      <Chip T={T} at={K.G + 1.9} until={K.B - 0.3} texto="¡está disparando!" x={330} y={470} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.G + 2.25} until={K.B - 0.3} texto="¡está disparando!" x={330} y={470} tam={44} borde={KC.red} />
       <Etq T={T} at={K.G + 1.2} until={K.B - 0.5} x={430} y={960} texto="champiñón de campo" tam={30} color={KC.ink} />
       <Etq T={T} at={K.G + 1.6} until={K.B - 0.5} x={430} y={1010} texto="Agaricus campestris" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.B + 0.2} until={K.Go - 0.3} texto="AL MICROSCOPIO · una laminilla" x={420} y={350} tam={30} borde={KC.cyan} mono />
@@ -328,7 +328,7 @@ function GotaBullerShot() {
       <Subtitulo T={T} idx={4} at={K.F + 0.1} until={K.D - 0.1} texto="Se tocan y se juntan *en un instante.*" />
       <Subtitulo T={T} idx={5} at={K.D + 0.1} until={K.P - 0.1} texto="El peso se mueve: *¡catapulta!*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.E - 0.1} texto="¿Con cuánta *fuerza* sale?" />
-      <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.Fz - 0.1} texto="2005: otros hongos a *100,000 cuadros/s.*" />
+      <Subtitulo T={T} idx={7} at={K.E + 0.1} until={K.Fz - 0.1} texto="2005: otros hongos, *hasta 100,000 cuadros/s.*" />
       <Subtitulo T={T} idx={8} at={K.Fz + 0.1} until={K.Ca - 0.1} texto="Más de *10,000 veces* la gravedad." />
       <Subtitulo T={T} idx={9} at={K.Ca + 0.1} until={K.Fr - 0.1} texto="Menos de *0.1 mm*: no choca." />
       <Subtitulo T={T} idx={10} at={K.Fr + 0.1} until={K.Es - 0.1} texto="Frena y *cae derecho.*" />

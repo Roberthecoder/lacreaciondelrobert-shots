@@ -4,8 +4,8 @@
 - **Formato:** N4 "La imagen que se llena" (una hoja de papel que se va llenando con la huella de esporas y un contador que sube) con un tramo de N5 "El experimento" (la huella de esporas hecha en la cocina). Cierre en la misma hoja del inicio, ya con la huella café.
 - **Gancho (de los 7):** #4 "Un número que contradice": «Un champiñón de campo grande suelta unos dieciséis mil millones de esporas: casi el doble de personas en la Tierra.»
 - **No repite** el mecanismo de disparo (#28 gota de Buller, #07 *Pilobolus*): aquí solo se cuenta cuántas son, cómo verlas y por qué tantas.
-- **Duración:** voz 992 caracteres / 173 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~990 créditos de ElevenLabs).
+- **Duración:** voz 998 caracteres / 173 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~1,000 créditos de ElevenLabs).
 - **Seguridad:** la huella de esporas se hace con un champiñón del súper; se dice en voz y en pantalla que el color **nunca basta para saber si un hongo se come**.
 
 ## Versión narrada
@@ -13,11 +13,11 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Un champiñón de campo grande suelta unos dieciséis mil millones de esporas: casi el doble de personas en la Tierra. | Fondo amarillo. Cuadro 0.3: un champiñón de campo (*Agaricus campestris*, sombrero blanco, laminillas rosa-café, anillo) suelta una nube de puntitos que cae. Contador gigante que corre a "16,000,000,000". A un lado, una barra "personas en la Tierra · 8,200 millones (ONU, 2024)" y la de esporas, casi el doble de alta. |
-| 1 | Sombrero | Puedes verlas: pon el sombrero de un champiñón del súper boca abajo sobre un papel. | Cocina (fondo menta): una mano corta el pie de un champiñón blanco del súper (*Agaricus bisporus*) y pone el sombrero, laminillas abajo, sobre una hoja blanca. Chip "1 · laminillas abajo". |
+| 1 | Sombrero | Puedes verlas: pon boca abajo sobre un papel el sombrero de un champiñón del súper ya abierto. | Cocina (fondo menta): una mano corta el pie de un champiñón blanco del súper (*Agaricus bisporus*) **ya abierto** (el velo roto y las laminillas café a la vista) y pone el sombrero, laminillas abajo, sobre una hoja blanca. Chip "1 · uno abierto · laminillas abajo". |
 | 2 | Vaso | Tápalo con un vaso y espera una noche. | Baja un vaso de vidrio volteado; reloj que corre de noche (luna) a mañana (sol). Chip "2 · tápalo · espera una noche". |
 | 3 | Huella | Si funcionó, verás el dibujo de sus laminillas en café oscuro: su huella de esporas. | Sube el vaso y el sombrero: la hoja muestra rayos café oscuro como un sol. Etiqueta "huella de esporas". Chip pequeño "a veces no sale con champiñones del súper". |
 | 4 | Polvo | Cada grano mide unas siete milésimas de milímetro. | **Zoom al microscopio** (fondo oscuro): el polvo café se vuelve cientos de esporas ovaladas, lisas, cafés. Barra de escala 10 µm. Chip "≈ 7 µm cada una". |
-| 5 | Color | Su color ayuda a identificar hongos, pero nunca basta para saber si uno se come. | Regreso a la mesa: tres huellas (blanca, café, rosada) con etiqueta "color de esporas = una pista". Sello rojo "NO dice si se come". |
+| 5 | Color | Su color ayuda a identificar hongos, pero nunca basta para saber si se come. | Regreso a la mesa: tres huellas (blanca, café, rosada) con etiqueta "color de esporas = una pista". Sello rojo "NO dice si se come". |
 | 6 | Pregunta | ¿Y para qué tantas? | **Re-gancho.** "?" gigante sobre la nube de esporas; Robert grande, pensativo. |
 | 7 | Buller | En 1922, desde Canadá, el micólogo Reginald Buller publicó sus cuentas. | `TarjetaEstudio`: "A. H. R. Buller · Universidad de Manitoba, Canadá · *Researches on Fungi*, vol. II, 1922". Un microscopio y una libreta con números. |
 | 8 | Repisa | Un hongo de repisa, Ganoderma applanatum, soltaba unos treinta mil millones al día, por seis meses. | Tronco con un hongo de repisa (*Ganoderma applanatum*, "hongo del artista": repisa café con borde blanco, poros abajo) soltando humo de esporas. Contador "30,000,000,000 / día" y calendario mayo→octubre que avanza. Chip "medido por J. H. White, Toronto". |
@@ -25,7 +25,7 @@
 | 10 | Razon | La razón: casi ninguna cae donde pueda crecer. | La nube de esporas cae sobre un mapa de cosas: asfalto, agua, piedra, techo… casi todas se apagan (gris). |
 | 11 | Loteria | Buller calculó que, de veinte mil millones de esporas, quizá solo una forma un hongo nuevo. | Cuadrícula que se llena de puntos grises; uno solo se ilumina y brota un champiñoncito. Chip "1 de ≈ 20,000,000,000 (estimación de Buller, 1909)". |
 | 12 | Aviso | Son cálculos de hace un siglo: aproximados, pero enormes. | Los tres contadores juntos con el sello "≈ aproximados (1909–1922)". |
-| 13 | Cierre | Así que esa mancha café es una lotería: miles de millones de boletos y casi ningún premio. | **Regreso a la imagen del inicio:** la misma hoja de papel, ahora con la huella café; cada rayo se vuelve una tira de boletos. Chip "casi ningún premio". |
+| 13 | Cierre | Así que esa mancha café es una lotería: miles de millones de boletos, casi ningún premio. | **Regreso a la imagen del inicio:** la misma hoja de papel, ahora con la huella café; cada rayo se vuelve una tira de boletos. Chip "casi ningún premio". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y continua, algo de suspenso tranquilo, sin golpe; efectos en el mismo cuadro: lluvia fina de esporas (siseo suave), tic-tac del contador, cuchillo al cortar el pie, "clinc" del vaso, grillos de noche y pajarito de mañana, ruido al levantar el vaso, zoom del microscopio, golpe del sello "NO", papel de la tarjeta de estudio, nube de esporas del hongo de repisa, calendario que pasa hojas, "pof" del bejín, apagones grises de las esporas que caen mal, una campanita para la única que brota.

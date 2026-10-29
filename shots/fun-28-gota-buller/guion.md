@@ -11,24 +11,44 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese champiñón no está quieto: está disparando esporas, una por una. | Fondo menta: un champiñón de campo (*Agaricus campestris*, sombrero blanco, laminillas rosadas a café) en el pasto. Cuadro 0.3: bajo el sombrero brotan chispitas diminutas, ¡tic, tic! Chip "¿quieto?" tachado → "disparando". |
-| 1 | Basidio | En sus laminillas, los basidios cargan las esporas, cada una en su puntita. | La cámara se mete bajo el sombrero: corte de una laminilla (fondo oscuro). Fila de basidios (células en forma de mazo), cada uno con 4 puntitas (esterigmas) y una espora café en cada una. Etiquetas "basidio", "esterigma", "espora". Barra 10 µm. |
-| 2 | Gota | Capítulo uno: la gota. La espora suelta azúcares en su base y ahí se condensa agua del aire. | Capítulo "1 · LA GOTA". Zoom a una espora: en su base (apéndice hilar) salen puntitos de azúcar; moléculas de vapor llegan y se pegan. Medidor "tamaño de la gota" que sube. |
+| 0 | Gancho | Ese champiñón no está quieto: está disparando esporas, una por una. | Fondo menta: un champiñón de campo (*Agaricus campestris*, sombrero blanco, laminillas rosadas a café) en el pasto. Cuadro 0.3: bajo el sombrero brotan chispitas diminutas, ¡tic, tic! Mito "¿quieto?" tachado → chip "¡está disparando!". Etiquetas "champiñón de campo" y *Agaricus campestris*. |
+| 1 | Basidio | En sus laminillas, los basidios cargan las esporas, cada una en su puntita. | La cámara se mete bajo el sombrero: chip "AL MICROSCOPIO · una laminilla"; corte de una laminilla (fondo oscuro). Fila de basidios (células en forma de mazo), cada uno con 4 puntitas (esterigmas) y una espora café en cada una. Etiquetas "laminilla", "basidio", "esterigma (la puntita)", "espora". Barra 10 µm. |
+| 2 | Gota | Capítulo uno: la gota. La espora suelta azúcares en su base y ahí se condensa agua del aire. | Capítulo "1 · LA GOTA". Zoom a una espora: en su base (apéndice hilar) salen puntitos de azúcar; moléculas de vapor llegan y se pegan (etiquetas "azúcares", "agua del aire"). Medidor "GOTA DE BULLER" que sube ("crece…" → "¡toca la capa!"). Barra 2 µm. |
 | 3 | Buller | Crece la gota de Buller y sobre la espora se forma otra capa de agua. | La gotita crece (etiqueta "gota de Buller"); sobre la cara plana de la espora aparece una película de agua (etiqueta "capa de agua"). |
 | 4 | Fusion | Capítulo dos: la fusión. Al tocarse, la gota salta a la espora en un instante. | Capítulo "2 · LA FUSIÓN". La gota toca la capa y ¡plop! se fusionan; chip pequeño "< 4 µs (medido en un hongo de oreja y levaduras, 2009)". |
 | 5 | Disparo | Capítulo tres: el disparo. El agua mueve el peso de la espora y la lanza como catapulta. | Capítulo "3 · EL DISPARO". Punto rojo "centro de masa" que salta; la espora se suelta del esterigma y sale disparada en horizontal. Chip "catapulta de tensión superficial". |
 | 6 | Pregunta | ¿Y con cuánta fuerza sale? | **Re-gancho.** "?" gigante; Robert grande, pensativo. |
-| 7 | Estudio | Un estudio de 2005, en Estados Unidos, filmó otros hongos, una levadura y un hongo de oreja, hasta a cien mil cuadros por segundo. | Tarjeta "2005 · Pringle et al. · EE. UU. · *Mycologia*"; tira de película cuadro a cuadro con la espora saliendo. Chip "hasta 100,000 cuadros/s"; dibujos de una levadura (*Itersonilia perplexans*) y un hongo de oreja (*Auricularia auricula*). |
-| 8 | Fuerza | Esas esporas arrancaron con más de diez mil veces la gravedad. | Número gigante "+10,000 g" sobre las esporas de la levadura y del hongo de oreja; chips "g = la gravedad de la Tierra" y "≈3,000 a 14,000 g según la especie (2009)". |
-| 9 | Caida | Capítulo cuatro: la caída. Vuela menos de una décima de milímetro: justo para no chocar con la laminilla de enfrente. | Capítulo "4 · LA CAÍDA". Dos laminillas frente a frente (fondo oscuro); la espora vuela en horizontal y se frena antes de la laminilla de enfrente. Regla "< 0.1 mm". |
-| 10 | Frena | Ahí frena y cae derecho hasta salir del sombrero. | La trayectoria dobla en ángulo recto y la espora baja vertical entre las dos laminillas hasta salir por abajo. |
-| 11 | Especies | Y así disparan decenas de miles de especies de hongos. | Mosaico de siluetas de hongos con laminillas, poros y orejas gelatinosas; contador "decenas de miles de especies". |
+| 7 | Estudio | Un estudio de 2005, en Estados Unidos, filmó otros hongos, una levadura y un hongo de oreja, hasta a cien mil cuadros por segundo. | Tarjeta "2005 · Pringle y colegas · EE. UU. · Mycologia, 2005"; tira de película cuadro a cuadro con la espora saliendo. Chip "hasta 100,000 cuadros por segundo"; dibujos de una levadura (*Itersonilia perplexans*) y un hongo de oreja (*Auricularia auricula*). |
+| 8 | Fuerza | Esas esporas arrancaron con más de diez mil veces la gravedad. | Una espora con rayas de velocidad y el número gigante "más de +10,000 g"; chips "g = la gravedad de la Tierra" y "≈3,000 a 14,000 g según la especie (2009)". |
+| 9 | Caida | Capítulo cuatro: la caída. Vuela menos de una décima de milímetro: justo para no chocar con la laminilla de enfrente. | Capítulo "4 · LA CAÍDA". Dos laminillas frente a frente (fondo oscuro); la espora vuela en horizontal y se frena antes de la laminilla de enfrente. Regla "< 0.1 mm"; línea roja punteada que acabaría en la laminilla de enfrente con una ✗; chip "no choca con la de enfrente"; etiquetas "laminilla" y "laminilla de enfrente". Barra 0.1 mm. |
+| 10 | Frena | Ahí frena y cae derecho hasta salir del sombrero. | La trayectoria dobla en ángulo recto y la espora baja vertical entre las dos laminillas hasta salir por abajo; varias esporas más, de las dos laminillas. Chip "frena y cae por gravedad ↓". |
+| 11 | Especies | Y así disparan decenas de miles de especies de hongos. | Título "DECENAS DE MILES · de especies disparan así"; mosaico que se llena con una seta de laminillas, un poliporo de repisa, un hongo de oreja, un hongo coral, otra seta y una levadura, cada uno soltando esporas. |
 | 12 | Cierre | Así que ese champiñón no está quieto: cada espora sale en su propia catapulta de agua. | **Regreso a la imagen del inicio:** el mismo champiñón en el pasto, ahora con una lluvia fina de esporas saliendo de abajo del sombrero, cada una con su gotita. Chip "una catapulta de agua por espora". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y continua, curiosa (sin golpe marcado), que se tensa en "la fusión" y se suelta después del disparo; efectos en el mismo cuadro: tics de las chispitas del gancho, burbujeo suave del vapor que se condensa, gotita que crece (tono ascendente), "plop" de la fusión, chasquido de catapulta en cada disparo, clic de la cámara rápida, golpe grave en "+10,000 g", silbido corto del vuelo y caída suave, tics del contador de especies.
 
-Barras de escala: 5 cm (champiñón), 10 µm (basidios y espora), 0.1 mm (entre laminillas).
+Barras de escala: 5 cm (champiñón), 10 µm (basidios), 2 µm (la espora grande), 0.1 mm (entre laminillas).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y con cuánta fuerza sale?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.5 | 11_sorprendido | `gancho` | «ese champiñón está disparando» (cuadro 0) |
+| 2 | 4.5 | 8.2 | 13_senalando_arriba | `arriba-der` | señala los basidios y sus esporas |
+| 3 | 14.3 | 19.2 | 06_pensativo_menton | `arriba-der` | «la gota de Buller… otra capa de agua» y la fusión |
+| 4 | 22.7 | 27.3 | 04_bajando_lentes | `arriba-der` | «la lanza como catapulta» |
+| 5 | 27.5 | 29.6 | 07_pensativo_puno | `grande` | «¿Y con cuánta fuerza sale?» |
+| 6 | 32.6 | 36.3 | 12_perfil_serio | `arriba-der` | el estudio de 2005 en otros hongos |
+| 7 | 36.9 | 40.0 | 11_sorprendido | `arriba-der` | «más de diez mil veces la gravedad» |
+| 8 | 46.6 | 49.6 | 13_senalando_arriba | `arriba-der` | «frena y cae derecho» |
+| 9 | 50.2 | 52.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | «decenas de miles de especies» |
+| 10 | 53.4 | 57.9 | 02_apuntando_camara | `arriba-der` | «cada espora sale en su propia catapulta» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **35.6 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas en texto completo o resumen oficial, 29 oct 2026)
 

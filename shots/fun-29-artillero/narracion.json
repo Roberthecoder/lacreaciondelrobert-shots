@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Artillero base narrada.dc.html",
+  "salida": "Shot Artillero narrado.dc.html",
+  "nota": "Shot Fungi Mati #29. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas manchitas negras en tu coche no son lodo: son disparos de un hongo."
+    },
+    {
+      "escena": "Mantillo",
+      "texto": "Vienen del mantillo: las astillas de madera que ponen en los jardines."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Ahí vive Sphaerobolus, el hongo artillero, de unos dos milímetros."
+    },
+    {
+      "escena": "Estrella",
+      "texto": "Al madurar, se abre como estrella y muestra una bolita negra y pegajosa, llena de esporas."
+    },
+    {
+      "escena": "Presion",
+      "texto": "Por dentro absorbe agua, y la presión sube."
+    },
+    {
+      "escena": "Disparo",
+      "texto": "De golpe, su capa interna se voltea al revés, como un juguete de goma que salta, y ¡pum!: dispara la bolita."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué le atina a tu coche?"
+    },
+    {
+      "escena": "Luz",
+      "texto": "Porque apunta a la luz y a lo claro, como coches blancos y casas color crema."
+    },
+    {
+      "escena": "Distancia",
+      "texto": "La bolita puede volar hasta unos seis metros de lejos y más de dos de alto."
+    },
+    {
+      "escena": "Pegada",
+      "texto": "Seca, queda pegadísima: rasparla puede dañar la pintura y dejar mancha."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de Penn State, publicado en 2004, sembró el hongo en veintisiete mantillos: en unos cuatro años, todos los de madera o corteza lo dejaron disparar."
+    },
+    {
+      "escena": "Viva",
+      "texto": "Y pegada a tu coche, puede seguir viva más de diez años."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esas manchitas no eran lodo: eran balas de un hongo apuntando a la luz."
+    }
+  ]
+}

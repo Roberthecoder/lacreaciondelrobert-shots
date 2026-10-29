@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esas manchitas negras en tu coche no son lodo: son disparos de un hongo. 🍄🎯
-El hongo artillero (Sphaerobolus) vive en el mantillo de astillas de los jardines. Mide unos 2 mm, se abre como estrella y, cuando su capa interna se voltea de golpe, dispara una bolita negra y pegajosa llena de esporas: hasta unos 6 m de lejos y más de 2 m de alto, siempre hacia la luz y lo claro, como coches blancos y casas color crema. Ya seca, queda pegadísima y puede seguir viva más de 10 años.
+El hongo artillero (Sphaerobolus) vive en el mantillo de astillas de los jardines. Mide unos 2 mm, se abre como estrella y, cuando su capa interna se voltea de golpe, dispara una bolita negra y pegajosa llena de esporas: hasta unos 6 m de lejos y más de 2 m de alto, hacia la luz y lo claro, como coches blancos y casas color crema. Ya seca, queda pegadísima y puede seguir viva más de 10 años.
 Consejo: quítala mojada, antes de que se seque; rasparla en seco puede dañar la pintura y dejar mancha.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti también te han salido estas manchitas? 👇
@@ -39,7 +39,7 @@ Esas manchitas negras en tu coche son DISPAROS de un hongo 🎯 | Shot Fungi Mat
 Descripción:
 ```text
 Esas manchitas negras en tu coche no son lodo: son disparos de un hongo.
-Las manchas cafés o negras que aparecen en coches, paredes y plantas pueden ser obra de Sphaerobolus, el "hongo artillero" (Connecticut Agricultural Experiment Station, 2010). Vive en astillas de madera y corteza, y se ha vuelto más común con el uso de mantillo de madera en los jardines. Sus cuerpos fructíferos son esferas de 1–2.5 mm, color crema a amarillo; al madurar se abren como estrella y dejan ver una sola bolita oscura de 1–2 mm (el peridiolo), llena de esporas.
+Las manchas cafés o negras que aparecen en coches, paredes y plantas pueden ser obra de Sphaerobolus, el "hongo artillero" (Connecticut Agricultural Experiment Station, 2010). Vive en astillas de madera y corteza, y parece haberse vuelto más común, en parte, por el uso de mantillo de madera y corteza en los jardines. Sus cuerpos fructíferos son esferas de 1–2.5 mm, color crema a amarillo; al madurar se abren como estrella y dejan ver una sola bolita oscura de 1–2 mm (el peridiolo), llena de esporas.
 ¿Cómo dispara? La presión dentro de la capa interna sube (absorbe agua) hasta que, de golpe, se voltea al revés, como el juguete de goma que salta, y lanza la bolita (Sakes et al., 2016). Después queda la capa volteada, brillante. El disparo va hacia la luz y hacia objetos claros, como coches blancos o casas beige: hasta unos 6 m de lejos y más de 2 m de alto.
 La bolita es pegajosa y, ya seca, es muy difícil de quitar: rasparla puede dañar la superficie y dejar mancha. Se recomienda quitarla con agua a presión o con un trapo mojado antes de que se seque. Y puede seguir viva más de 10 años, así que si cae al mantillo puede volver a crecer.
 Un estudio de Penn State publicado en 2004 sembró el hongo en 27 mantillos distintos: en unos 3–4 años, todos los de madera o corteza acabaron sosteniendo al hongo, unos más que otros.

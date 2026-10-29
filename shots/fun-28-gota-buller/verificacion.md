@@ -37,4 +37,3 @@ Fuentes abiertas:
 Segunda vuelta (29 oct 2026): se re-verificó todo el texto final. Filas 3, 5, 6, 7, 9, 9b, 10, 11 y 13 corregidas. Tercera vuelta: la fila 9 pasó a «Un estudio de 2005… filmó…» y quedó ✅.
 
 Resumen: las 17 filas quedaron ✅. Ninguna cifra se atribuye al champiñón: las de otras especies dicen de cuáles son (voz o chip) y el año; < 0.1 mm es general para setas de laminillas; "decenas de miles de especies" está respaldado por He 2022 y Stolze-Rybczynski 2009. El dibujo es esquemático.
-VEREDICTO: APROBADO

@@ -15,7 +15,7 @@
 | 1 | Hoja | Es *Phytophthora infestans*: manchas cafés con pelusa blanca bajo la hoja. | Hoja de papa grande (foliolos compuestos): manchas cafés con borde verde pálido; abajo (envés), pelusa blanca aterciopelada alrededor de la mancha. Etiquetas "tizón tardío · *Phytophthora infestans*", "envés (abajo)". |
 | 2 | Limones | Esa pelusa son tallitos que cargan esporas con forma de limón. | **Bajada al microscopio** (fondo oscuro): esporangióforos ramificados con hinchazones donde estuvieron los esporangios; en las puntas, esporangios transparentes en forma de limón (con una "tetilla" en la punta). Etiqueta "esporangio", barra "30 µm". |
 | 3 | Nadadores | Con agua y frío, cada limón suelta de ocho a doce nadadores con dos colas. | Gota de agua fresca (termómetro chico "fresco"); el esporangio se abre por la punta y salen 8–12 zoosporas en forma de frijol, cada una con dos flagelos de lado: uno con pelitos y uno liso (sin indicar cuál va adelante). Contador "8–12". |
-| 4 | Entrada | Entran a la hoja y una mancha produce hasta trescientos mil limones. | La zoospora se enquista, saca un tubo y entra por un estoma (o atravesando la superficie). Corte rápido a escala de hoja: la mancha crece y un `NumeroGigante` "hasta 300 000 esporangios por mancha" se llena de limoncitos. |
+| 4 | Entrada | Entran a la hoja y una mancha produce hasta trescientos mil limones. | La zoospora se enquista, saca un tubo y entra por un estoma (etiqueta "estoma (poro)"). Luego la escena se llena de limoncitos y un `NumeroGigante` cuenta "hasta 300,000" con el chip "esporangios en una sola mancha". |
 | 5 | Pared | Crece en hilos como un hongo, pero su pared casi no tiene quitina, sino celulosa. | Hilos (micelio sin tabiques) entre las células de la hoja. Comparativa de paredes: "hongo: quitina ✓" vs "*Phytophthora*: quitina casi nada · celulosa ✓". |
 | 6 | Pregunta | ¿Entonces qué es? | **Re-gancho.** "?" gigante sobre la zoospora; Robert grande, pensativo. |
 | 7 | Parientes | Es más pariente de las algas pardas y las diatomeas que de los hongos. | Árbol simple: rama "estramenopilos" con un alga parda (sargazo/kelp), una diatomea (caja de vidrio) y el moho de agua; rama aparte, lejos, "hongos" (seta). Chip "oomiceto". |
@@ -28,7 +28,26 @@
 
 **Música:** cama grave continua, fresca y húmeda (agua), que se oscurece en Irlanda y se abre un poco en el herbario y en México. Efectos en el mismo cuadro: hoja que se voltea, golpe del sello, gotas de agua, "pop" del esporangio al abrirse y burbujeo de los nadadores, tubo que entra al estoma, conteo que sube a 300 000, crujido de paredes, golpe del "?", árbol que se ramifica, viento y olas con los barcos, papel de herbario, doble hélice, mapa que se ilumina.
 
-Barras de escala: 10 cm (papa y jitomate), 5 cm (hoja), 30 µm (esporangios), 10 µm (zoosporas), 100 km (Irlanda), 1000 km (América).
+Barras de escala: 5 cm (papa y jitomate), 5 cm (hoja), 30 µm (esporangios), 10 µm (zoosporas, estoma, hifas), "dibujos no a escala" (árbol de parientes), 100 km (Irlanda), 10 cm (herbario), 1000 km (América).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces qué es?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «ese hongo de la papa no es un hongo» (cuadro 0) |
+| 2 | 5.9 | 9.3 | 12_perfil_serio | `arriba-der` | las manchas y la pelusa de la hoja |
+| 3 | 13.7 | 17.3 | 13_senalando_arriba | `arriba-der` | señala los nadadores con dos colas |
+| 4 | 22.1 | 25.9 | 06_pensativo_menton | `arriba-der` | «casi no tiene quitina: celulosa» |
+| 5 | 26.3 | 28.0 | 07_pensativo_puno | `grande` | «¿entonces qué es?» |
+| 6 | 32.3 | 37.8 | 10_serio_molesto | `arriba-der` | la Gran Hambruna de Irlanda |
+| 7 | 41.9 | 47.0 | 04_bajando_lentes | `arriba-der` | «se creyó extinto… hallaron su rastro» |
+| 8 | 47.7 | 52.2 | 11_sorprendido | `arriba-der` | «¿México o los Andes? Aún se discute» |
+| 9 | 52.9 | 57.9 | 02_apuntando_camara | `arriba-der` | «no es un hongo, y sigue atacando» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **36.4 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 

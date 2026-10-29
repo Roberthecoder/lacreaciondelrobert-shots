@@ -47,5 +47,3 @@ Fuentes abiertas:
 
 
 Re-verificación (29 oct 2026): se revisó el texto final de `guion.md` y `narracion.json` (13 líneas). Cambiaron las filas 8, 12, 13c, 15b y 18; todas quedan ✅ con las fuentes abiertas. El resto del texto no cambió y sigue ✅. Las 20 afirmaciones (con sus sub-filas) están verificadas, no hay ❌ ni ⚠️.
-
-VEREDICTO: APROBADO

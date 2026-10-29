@@ -345,8 +345,8 @@ function ArtilleroShot() {
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.L - 0.1} texto="¿Por qué *a tu coche?*" />
       <Subtitulo T={T} idx={7} at={K.L + 0.1} until={K.Di - 0.1} texto="Apunta *a la luz.*" />
       <Subtitulo T={T} idx={8} at={K.Di + 0.1} until={K.Pe - 0.1} texto="Hasta *~6 m* de lejos" />
-      <Subtitulo T={T} idx={9} at={K.Pe + 0.1} until={K.E - 0.1} texto="Raspar *daña la pintura.*" />
-      <Subtitulo T={T} idx={10} at={K.E + 0.1} until={K.V - 0.1} texto="Probó *27 mantillos.*" />
+      <Subtitulo T={T} idx={9} at={K.Pe + 0.1} until={K.E - 0.1} texto="Raspar *puede dañar* la pintura." />
+      <Subtitulo T={T} idx={10} at={K.E + 0.1} until={K.V - 0.1} texto="Sembró el hongo en *27 mantillos.*" />
       <Subtitulo T={T} idx={11} at={K.V + 0.1} until={K.C - 0.1} texto="Viva *más de 10 años.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="*Balas* de un hongo" />
 

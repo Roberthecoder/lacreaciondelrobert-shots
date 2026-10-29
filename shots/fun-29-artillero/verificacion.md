@@ -43,4 +43,35 @@ Las 6 filas corregidas (3, 10, 13b, 14, 15, 16) ya coinciden con las frases text
 Nota menor, sin efecto en voz ni pantalla: en `## Fuentes` del guion, la paráfrasis de UMass dice "casi todos"; la fuente
 primaria (Davis 2004) dice "All wood/bark…", que es lo que usa la voz. Resumen: 20 de 20 afirmaciones ✅.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `artillero.jsx`, `Shot Artillero base narrada.dc.html`, la columna «Lo que se ve» y la tabla de Robert en
+`guion.md`, y `publicacion.md`. Saqué 22 cuadros con `motor/preview.mjs` (0.3, 6, 9, 12, 13, 15, 18, 24, 26, 27.5, 29, 30, 36,
+40, 42, 44, 46, 48, 50, 54, 58 y 60 s) y los revisé uno por uno.
+
+| Elemento | Veredicto | Comentario / fuente |
+|---|---|---|
+| Etiquetas «hongo artillero» · *Sphaerobolus* · «(p. ej. *S. stellatus*)» | ✅ | Filas 3 y 3 corregida [CAES], [GEML] |
+| Barras de escala 50 cm, 10 cm, 2 mm, 1 mm, 0.5 mm, 1 m, «27 parcelas» | ✅ | Coherentes con lo dibujado: cuerpos de 1–2.5 mm [CAES]; bolita de ~1 mm [SAKES]; 0.5 mm en el corte ampliado; 1 m en la trayectoria, con una persona para escala |
+| Morfología: esferitas naranja → estrella de ~8 dientes con una sola bolita oscura sobre la copa interna clara → corte con la copa que se voltea → copa volteada brillante | ✅ | "splits radially from its apex, forming a toothed (star-shaped) cup" [SAKES]; "4-9 starlike rays" [ME]; "glossy protrusions" [CAES] |
+| Chips «se abre como estrella», «peridiolo: bolita con esporas», «pegajosa» | ✅ | Filas 5 y 6 |
+| Medidor «presión» (sube… / ¡al tope!), «agua», «capa interna», «juguete de goma», «capa interna volteada» | ✅ | Filas 7, 8 y 8b (esquemático) |
+| «apunta a la luz y a lo claro», «casa color crema», «coche blanco» | ✅ | Fila 9 |
+| «hasta ~6 m» y «más de 2 m de alto», con una sola trayectoria | ✅ | Filas 10 y 11. El arco es posible a ~10 m/s [SAKES] |
+| «seca, queda pegadísima», «mancha», «quítala mojada, antes de que se seque» | ✅ | Filas 12, 13 y 13b |
+| Tarjeta «2004 · Penn State · EUA · 27 mantillos · publicado en 2004», contador «año N de ~4», cuadrícula de 27 parcelas que se llenan, chip «madera o corteza: todos lo dejaron disparar» | ✅ | Filas 14, 15 y 15b |
+| «puede seguir viva más de 10 años» | ✅ | Fila 16 |
+| Subtítulo idx 9: decía «Raspar *daña la pintura.*» (afirmación absoluta) | ✅ **corregido** | Ahora dice «Raspar *puede dañar* la pintura.», como la voz y [CAES] "can often damage" |
+| Subtítulo idx 10: decía «Probó *27 mantillos.*» | ✅ **corregido** | Ahora dice «Sembró el hongo en *27 mantillos.*», como la voz y [DAVIS] "inoculated" |
+| Demás subtítulos (idx 0–8, 11, 12) | ✅ | Resumen fiel de la voz verificada |
+| `publicacion.md`, Instagram: decía «siempre hacia la luz» | ✅ **corregido** | Se quitó «siempre»: las fuentes dicen "phototropic" / "towards light" sin absoluto |
+| `publicacion.md`, YouTube: decía «se ha vuelto más común con el uso de mantillo» | ✅ **corregido** | Ahora dice «parece haberse vuelto más común, en parte, por el uso de mantillo de madera y corteza». [CAES]: "appears to be partly associated with the increased popularity and use of bark and wood chip mulches" |
+| `publicacion.md`, resto de las 7 redes y comentario fijado (2 mm, estrella, peridiolo 1–2 mm, agua/presión, juguete, 6 m / 2 m, pegajosa, 10 años, puede volver a crecer si cae al mantillo, agua a presión o trapo mojado, Penn State 2004, 3–4 años, «unos más que otros», fuentes y enlaces) | ✅ | Coinciden con las filas 1–16; «si cae al mantillo… puede volver a crecer»: [CAES] "if they fall into mulch… they can germinate and re-infest". Cada cifra va con su fuente y su enlace |
+| Tabla «Robert en pantalla» | ✅ | No afirma hechos |
+
+Nota de estilo, no de hechos: los subtítulos quedan a la altura de ~68 % del cuadro, justo en el borde del tercio inferior.
+
+Resumen: la voz, la pantalla y `publicacion.md` quedan fieles a las fuentes; 4 textos se corrigieron (2 subtítulos y 2 frases de publicación).
+
 VEREDICTO: APROBADO

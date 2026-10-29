@@ -20,7 +20,7 @@
 | 6 | Pregunta | ¿Y si no daña a tu planta, por qué tener cuidado? | **Re-gancho.** «?» gigante sobre una maceta chica con hongos; Robert grande, pensativo. |
 | 7 | Toxico | Porque se considera tóxico: comerlo puede caer muy mal al estómago. Si hay niños o mascotas, quítalo. | Fondo rosa: cae el sello «NO SE COME»; chip «comerlo: puede caer muy mal». Llegan un niño y un perrito; chip «niños o mascotas: quítalo»; una mano sin guante (tocarlo no es peligroso) quita un hongo y se lo lleva. |
 | 8 | Estudio | En 2005, químicos en Múnich, Alemania, buscaron de dónde sale su amarillo. | Fondo cian: `TarjetaEstudio` «2005 · Múnich, Alemania · Bartsch y col. · Angewandte Chemie»; trozos de hongo caen en un matraz que se llena de extracto amarillo; etiqueta «¿de dónde sale el amarillo?». |
-| 9 | Pigmento | Eran dos pigmentos raros, a los que llamaron birnbauminas. | Fondo oscuro: dos moléculas esquemáticas amarillas que brillan (anillo de indol con N–OH y una cadena); etiquetas «birnbaumina A», «birnbaumina B», «pigmentos (esquema)». Barra 1 nm. |
+| 9 | Pigmento | Eran dos pigmentos raros, a los que llamaron birnbauminas. | Fondo oscuro: dos moléculas esquemáticas amarillas que brillan (1-hidroxiindol: anillo de indol con N–OH y la cadena en C3; la B con un OH más en C7); etiquetas «birnbaumina A», «birnbaumina B», «pigmentos (esquema)». Sin barra de escala (es un esquema, no a escala). |
 | 10 | Truco | Truco: deja un sombrero una noche sobre papel negro y amanece un dibujo blanco de esporas. | Fondo lila que se aclara: un sombrero se apoya con las laminillas sobre papel negro; la luna pasa a sol (chip «1 noche»); al levantarlo queda la huella blanca radial de las laminillas; etiqueta «dibujo blanco de esporas». |
 | 11 | Quitar | Arrancarlo no lo elimina: el micelio sigue abajo y los fungicidas casi no sirven. | Fondo menta: los hongos salen arrancados de la maceta; una lupa circular deja ver por dentro: el micelio sigue en la tierra (etiqueta «el micelio sigue abajo»). Aparece un frasco «fungicida» que se tacha; chip «fungicidas: casi no sirven». |
 | 12 | Cierre | Así que no tires tu planta: ese hongo no la está matando, está reciclando su tierra. | **Regreso a la imagen del inicio:** la misma maceta en fondo amarillo con sus hongos, ahora sin hojitas secas (ya se las comió) y con flechas de reciclaje girando en la tierra. Chip «no la mata: recicla su tierra». |
@@ -28,7 +28,7 @@
 
 **Música:** cama grave, cálida y continua, sin golpe; efectos en el mismo cuadro: "pop" suave al brotar cada hongo, arena al vaciar el costal, viento leve con la espora, crujidos al deshacerse las hojitas, gotas de riego, burbujeo del matraz, sello "NO SE COME", tics de la noche que pasa y campanita al revelar la huella de esporas.
 
-Barra de escala: 5 cm (maceta), 2 cm (hongo), 1 mm (micelio en la tierra), 10 µm (esporas, en el recuadro), 1 nm (moléculas).
+Barra de escala: 5 cm (maceta), 2 cm (hongo), 1 mm (micelio en la tierra), 10 µm (esporas, en el recuadro); las moléculas son esquema, sin barra.
 
 ## Robert en pantalla
 
@@ -40,7 +40,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si no da
 | 2 | 6.0 | 9.0 | 13_senalando_arriba | `arriba-der` | señala el nombre: *Leucocoprinus birnbaumii* |
 | 3 | 13.6 | 17.4 | 06_pensativo_menton | `arriba-der` | «hilos finísimos, el micelio» |
 | 4 | 22.6 | 26.4 | 05_sonriendo_dientes_uniformes | `arriba-der` | el time-lapse: huevito, campana, esporas |
-| 5 | 26.8 | 29.9 | 07_pensativo_puno | `grande` | «¿por qué tener cuidado?» |
+| 5 | 26.8 | 29.3 | 07_pensativo_puno | `grande` | «¿por qué tener cuidado?» |
 | 6 | 30.3 | 35.2 | 10_serio_molesto | `arriba-der` | «se considera tóxico… quítalo» |
 | 7 | 36.4 | 43.0 | 04_bajando_lentes | `arriba-der` | el estudio de Múnich y las birnbauminas |
 | 8 | 44.6 | 48.2 | 02_apuntando_camara | `arriba-der` | «truco: deja un sombrero una noche…» (te lo pide a ti) |
@@ -48,7 +48,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si no da
 | 10 | 53.6 | 57.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «no tires tu planta» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 10 · **41.8 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 10 · **41.2 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (consultadas el 29 oct 2026; de Bartsch 2005 solo se vieron el título y la ficha de PubMed, no el texto completo)
 
