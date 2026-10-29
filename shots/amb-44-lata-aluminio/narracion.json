@@ -1,0 +1,48 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Lata base narrada.dc.html",
+  "salida": "Shot Lata narrado.dc.html",
+  "nota": "Shot Ambiental #44. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Sacar aluminio de esta lata gasta solo el cinco por ciento de la energía que sacarlo nuevo de una roca."
+    },
+    {
+      "escena": "Bauxita",
+      "texto": "Esa roca es la bauxita. Con química se le saca la alúmina: óxido de aluminio."
+    },
+    {
+      "escena": "Electrolisis",
+      "texto": "Luego la alúmina se disuelve en criolita fundida y una corriente eléctrica le arranca el oxígeno."
+    },
+    {
+      "escena": "Medidor",
+      "texto": "Según el Instituto Internacional del Aluminio, en 2019 una tonelada nueva gastaba ciento ochenta y seis gigajulios; una reciclada, unos ocho."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y no se gasta el aluminio de tanto reciclarlo?"
+    },
+    {
+      "escena": "Infinito",
+      "texto": "No: se funde y se vuelve a formar sin cambiar sus propiedades. Solo se pierde un poquito en cada vuelta."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2025, un estudio pagado por la industria en Estados Unidos calculó el viaje del bote de reciclaje a lata nueva: menos de sesenta días."
+    },
+    {
+      "escena": "Tienda",
+      "texto": "Y llena, otra vez en la tienda, casi cuatro meses."
+    },
+    {
+      "escena": "Basura",
+      "texto": "Lo raro: en 2023 allá solo se reciclaron cuarenta y tres de cada cien latas. Más de sesenta y un mil millones, no."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa lata vacía no es basura: es una roca que ya no hay que volver a excavar."
+    }
+  ]
+}

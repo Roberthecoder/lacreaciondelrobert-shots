@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Humo Lena base narrada.dc.html",
+  "salida": "Shot Humo Lena narrado.dc.html",
+  "nota": "Shot Ambiental #40. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese humo de la cocina no es solo olor: son partículas que entran a tus pulmones."
+    },
+    {
+      "escena": "Fogon",
+      "texto": "La leña o el carbón a medio quemar sueltan partículas."
+    },
+    {
+      "escena": "Cabello",
+      "texto": "Miden menos de dos punto cinco micras: treinta veces más finas que un pelo."
+    },
+    {
+      "escena": "Pulmon",
+      "texto": "Se cuelan al fondo del pulmón, y algunas pasan a tu sangre."
+    },
+    {
+      "escena": "Encierro",
+      "texto": "Con poca ventilación, puede haber cien veces más partículas finas de lo aceptable."
+    },
+    {
+      "escena": "Mundo",
+      "texto": "En el mundo, unos dos mil cien millones de personas cocinan con fuego abierto o estufas que echan humo, y se estima que en 2021 ese humo mató a dos punto nueve millones."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México, en 2025, casi una de cada diez casas cocinaba con leña o carbón."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si no alcanza para el gas? No es tu culpa: hay salida."
+    },
+    {
+      "escena": "Patsari",
+      "texto": "Un estudio de 2007 midió cincuenta y tres casas michoacanas antes y después de la estufa Patsari."
+    },
+    {
+      "escena": "Mitad",
+      "texto": "Junto a la estufa, las partículas bajaron setenta y uno por ciento; lo que respiraba cada uno, a la mitad."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "El humo sigue ahí, pero ahora la mayor parte sale por la chimenea, arriba del techo, y no a tus pulmones."
+    }
+  ]
+}
