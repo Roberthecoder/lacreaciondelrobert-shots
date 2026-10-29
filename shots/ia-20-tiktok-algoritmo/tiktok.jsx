@@ -318,7 +318,7 @@ function TikTok() {
           </g>; })}</>)}
       </Escena>
       <Chip T={T} at={K.R + 0.3} until={K.Q - 0.2} texto="probabilidad de like o de saltarlo" x={480} y={400} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.R + 1.2} until={K.Q - 0.2} texto="puntajes ilustrativos" x={420} y={1215} tam={26} borde={KC.texto} />
+      <Chip T={T} at={K.R + 1.2} until={K.Q - 0.2} texto="puntajes ilustrativos" x={330} y={1410} tam={26} borde={KC.texto} />
 
       {/* 5 · pregunta: atrapado en un remolino */}
       <Escena T={T} a={K.Q} b={K.P1} zoom={0.1}>
@@ -374,7 +374,7 @@ function TikTok() {
       </Escena>
       <Chip T={T} at={K.X + 0.3} until={K.C - 0.2} texto="de cada 100 de sus primeros mil videos" x={600} y={430} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.X + 2.0} until={K.C - 0.2} texto="30–50 % · estimado del estudio" x={640} y={545} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.X + 3.2} until={K.C - 0.2} x={170} y={635} texto="♥ tus gustos" color={KC.ink} tam={34} />
+      <Etq T={T} at={K.X + 3.2} until={K.C - 0.2} x={360} y={635} texto="♥ tus gustos" color={KC.ink} tam={34} />
       <Etq T={T} at={K.X + 3.8} until={K.C - 0.2} x={930} y={635} texto="explorar" lado="izq" color={KC.teal} tam={34} />
 
       {/* 11 · cierre: la misma imagen del inicio, transformada */}

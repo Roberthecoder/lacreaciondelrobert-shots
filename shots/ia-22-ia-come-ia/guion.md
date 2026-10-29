@@ -31,7 +31,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Por qué s
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «no está obsesionada con las liebres» (cuadro 0) |
+| 1 | 0.0 | 4.6 | 11_sorprendido | `arriba-der` | «no está obsesionada con las liebres» (cuadro 0) |
 | 2 | 10.1 | 12.9 | 06_pensativo_menton | `arriba-der` | «fotocopia de fotocopia» |
 | 3 | 17.0 | 19.9 | 13_senalando_arriba | `izq-alto` | señala la cadena de generaciones |
 | 4 | 20.9 | 26.2 | 04_bajando_lentes | `izq-alto` | «San Pedro en Buenos Aires» |
