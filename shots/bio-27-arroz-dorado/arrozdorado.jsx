@@ -351,7 +351,7 @@ function ArrozDorado() {
       <Escena T={T} a={K.Fi} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.leaf} />
         <Capa>
-          <MapaFilipinas x={60} y={430} k={55} />
+          <MapaFilipinas x={40} y={420} k={60} />
           {Array.from({ length: 18 }, (_, i) => { const c = i % 6, f = Math.floor(i / 6), u = kprog(T, K.Fi + 0.6 + i * 0.05, K.Fi + 1.2 + i * 0.05, kEase.rebote);
             const x = 680 + c * 56, y = 800 + f * 90;
             return <g key={i} transform={`translate(${x} ${y}) scale(${u})`} opacity={1 - kprog(T, K.Fi + 2.6, K.Fi + 3.4) * 0.6}>
@@ -379,7 +379,7 @@ function ArrozDorado() {
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.H - 0.2} texto="¿pintado?" x={260} y={480} tam={54} />
       <Etq T={T} at={K.G + 0.6} until={K.H - 0.2} x={40} y={1505} texto="arroz blanco" tam={34} color={KC.ink} />
       <Etq T={T} at={K.G + 1.0} until={K.H - 0.2} x={1040} y={1505} texto="arroz dorado" lado="izq" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.4} until={K.Gr - 0.2} x={720} y={1190} texto="Oryza sativa" it tam={36} color={KC.texto} />
+      <Etq T={T} at={K.H + 0.4} until={K.Gr - 0.2} x={1040} y={1600} lado="izq" texto="Oryza sativa" it tam={36} color={KC.texto} />
       <Chip T={T} at={K.H + 1.4} until={K.Gr - 0.2} texto="betacaroteno: en las hojas" y={1500} tam={42} borde={NARANJA} />
       <Etq T={T} at={K.H + 1.6} until={K.Gr - 0.2} x={260} y={1240} texto="el mismo pigmento" tam={30} color={KC.ink} />
       <Chip T={T} at={K.H + 3.6} until={K.Gr - 0.2} texto="en el grano: no" x={790} y={720} tam={38} borde={KC.red} />
@@ -387,8 +387,8 @@ function ArrozDorado() {
       <Chip T={T} at={K.Ge + 0.3} until={K.Ca - 0.2} texto="2000 · Potrykus y Beyer · Science" y={1500} tam={38} borde={KC.gold} />
       <Etq T={T} at={K.Ge + 0.6} until={K.Ca - 0.2} x={60} y={1090} texto="narciso" tam={34} color={KC.texto} />
       <Etq T={T} at={K.Ge + 0.8} until={K.Ca - 0.2} x={60} y={1140} texto="Narcissus pseudonarcissus" it tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Ge + 1.2} until={K.Ca - 0.2} x={1040} y={960} texto="bacteria" lado="izq" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Ge + 1.4} until={K.Ca - 0.2} x={1040} y={1010} texto="Pantoea ananatis" lado="izq" it tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Ge + 1.2} until={K.Ca - 0.2} x={1040} y={910} texto="bacteria" lado="izq" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Ge + 1.4} until={K.Ca - 0.2} x={1040} y={950} texto="Pantoea ananatis" lado="izq" it tam={28} color={KC.texto} />
       <Chip T={T} at={K.Ca + 0.3} until={K.Pr - 0.2} texto="fábrica: ENCENDIDA" y={1500} tam={44} borde={KC.mint} />
       <Etq T={T} at={K.Ca + 1.4} until={K.Pr - 0.2} x={540} y={430} texto="betacaroteno" tam={36} color={ORO2} />
       {T > K.Pr + 0.2 && T < K.In - 0.1 && <Escala T={T} z={1} pxPorMm={100} y={1460} x={60} objetivo={300} color={KC.ink} />}

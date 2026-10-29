@@ -215,60 +215,105 @@
       "titulo": "El glutamato monosódico sale de bacterias (Corynebacterium glutamicum, Kinoshita 1956)",
       "serie": "Shot Biotecnológico",
       "numero": 20,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-20-glutamato",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Kinoshita, Udaka y Shimono 1957 J Gen Appl Microbiol",
+        "Sano 2009 Am J Clin Nutr",
+        "Nakayama 2021 Microorganisms",
+        "VAAM Microbio del Año 2025"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Lisina para alimento animal con C. glutamicum",
+        "Glutamato libre en tomate y queso",
+        "Inosinato y guanilato: los otros umami"
+      ]
     },
     {
       "id": "bio-21-cangrejo",
       "titulo": "La sangre azul que revisa tus vacunas: prueba LAL del cangrejo herradura y factor C recombinante",
       "serie": "Shot Biotecnológico",
       "numero": 21,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-21-cangrejo",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Federal Register 42:57749 (1977)",
+        "Maloney et al. PLOS Biology 2018",
+        "ASMFC 2023",
+        "Anderson et al. Biol Bull 2013"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Prueba de conejos vs activación de monocitos",
+        "Hemocianina: sangre azul de pulpos y caracoles",
+        "Huevos de cangrejo herradura y el playero rojizo"
+      ]
     },
     {
       "id": "bio-22-platano",
       "titulo": "Todos tus plátanos son el mismo clon: Cavendish y el hongo TR4",
       "serie": "Shot Biotecnológico",
       "numero": 22,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-22-platano",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Dale et al. Nat Commun 2017",
+        "FSANZ A1274 2024",
+        "SENASICA Foc R4T 2026",
+        "FAO Food Outlook 2019"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "Plátano macho y variedades que se comen en México",
+        "Edición para encender RGA2 en Cavendish",
+        "La papa de Irlanda 1845: otro monocultivo clonal"
+      ]
     },
     {
       "id": "bio-23-vainilla",
       "titulo": "La vainilla de tu helado casi nunca sale de una orquídea: vainillina sintética y biotecnológica",
       "serie": "Shot Biotecnológico",
       "numero": 23,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-23-vainilla",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Converti et al. 2010",
+        "Cabeza Sánchez et al. 2024",
+        "Gasson et al. 1998 JBC",
+        "Reglamento CE 1334/2008"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "El azafrán: la especia más cara",
+        "Sabores naturales por fermentación (nootkatona)",
+        "El cacao y sus mosquitas polinizadoras"
+      ]
     },
     {
       "id": "bio-24-hela",
       "titulo": "Las células de Henrietta Lacks: HeLa, la primera línea celular humana (1951)",
       "serie": "Shot Biotecnológico",
       "numero": 24,
-      "estado": "idea",
+      "estado": "renderizado",
       "carpeta": "shots/bio-24-hela",
       "rama": "pedido300/bio",
-      "fuentes": [],
+      "fuentes": [
+        "Hudson y Collins Nature 2013",
+        "Landry et al. G3 2013",
+        "Turner 2012",
+        "Boshart et al. EMBO J 1984"
+      ],
       "fecha": "2026-10-29",
-      "derivados": []
+      "derivados": [
+        "La telomerasa (Nobel 2009)",
+        "El límite de Hayflick",
+        "Líneas celulares contaminadas con HeLa"
+      ]
     },
     {
       "id": "bio-25-bt",
