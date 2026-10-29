@@ -76,6 +76,13 @@ apariciones 8 · ≈ 28.1 s (+ cierre 3.5 s) · poses distintas 7 (nunca la mism
    > "At this point, we can decode what Casey is trying to say correctly about 97% of the time" (Brandman, 2024)
    > "The first time we tried the system, he cried with joy as the words he was trying to say correctly appeared on-screen." (2024)
 
+7. **UC Berkeley News** (13 ago 2025), sobre Ann Johnson (citado por el verificador):
+   > "In February 2024, Johnson had her implant removed for a reason unrelated to the trial." (2025)
+8. **Metzger et al. 2023, Métodos** (texto completo vía NCBI, citado por el verificador):
+   > "She experienced a pontine infarct in 2005, when she was 30 years old" (2023)
+   > "she has used commercial head-tracking assistive technology… at up to 14 words per minute" (2023)
+   > "The ECoG array consists of 253 disc-shaped electrodes" (2023)
+
 ## Notas
 - **"Una sola persona por estudio":** los tres resúmenes hablan de un participante: "a clinical-trial participant" (Metzger), "our study participant" (Willett), "A 45-year-old man" (Card).
 - **78 palabras por minuto** es la **mediana** de la decodificación a texto (por eso "unas setenta y ocho"), con un vocabulario de 1,024 palabras y un error mediano de 25 % (1 de cada 4 palabras). Las **14 palabras por minuto** son con el aparato que usaba para escribir: el artículo dice "commercial head-tracking assistive technology… at up to 14 words per minute" (seguía su cabeza; la prensa dijo ojos), por eso la voz no dice cuál.
