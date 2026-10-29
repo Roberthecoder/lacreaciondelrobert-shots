@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Petasa base narrada.dc.html",
+  "salida": "Shot Petasa narrado.dc.html",
+  "nota": "Shot Biotecnológico #36. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa botella no es basura: para una bacteria de Japón, es comida."
+    },
+    {
+      "escena": "Lodo",
+      "texto": "La hallaron en el lodo de una planta que recicla botellas, en Sakai."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Se llama Ideonella sakaiensis, y vive del PET de tus refrescos."
+    },
+    {
+      "escena": "Petasa",
+      "texto": "Primero suelta unas tijeras, la PETasa, que cortan el plástico en pedacitos."
+    },
+    {
+      "escena": "Mhetasa",
+      "texto": "Luego otras, la MHETasa, parten cada pedacito en dos piezas."
+    },
+    {
+      "escena": "Piezas",
+      "texto": "Justo las dos piezas con que se fabrica la botella."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces ya se acabó la basura? No tan rápido."
+    },
+    {
+      "escena": "Lenta",
+      "texto": "En 2016, deshacer casi toda una película más delgada que una tarjeta le tomó seis semanas."
+    },
+    {
+      "escena": "Francia",
+      "texto": "En 2020, en Francia, mejoraron otra enzima que salió de una composta."
+    },
+    {
+      "escena": "Diez",
+      "texto": "Partió el noventa por ciento del PET en diez horas, y con eso hicieron botellas nuevas."
+    },
+    {
+      "escena": "Curioso",
+      "texto": "Lo curioso: le ganó a la enzima de la bacteria que empezó todo."
+    },
+    {
+      "escena": "Planta",
+      "texto": "Pero su planta industrial sigue sin terminarse: la planean para 2028."
+    },
+    {
+      "escena": "Recoger",
+      "texto": "Y la enzima no recoge la basura: eso todavía te toca a ti."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa botella sí puede ser comida, pero solo si llega al reciclaje."
+    }
+  ]
+}

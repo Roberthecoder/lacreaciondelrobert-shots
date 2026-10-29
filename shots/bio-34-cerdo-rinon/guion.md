@@ -23,7 +23,7 @@
 | 7 | Virus | Y apagaron 59 copias de virus dormidos en su ADN. | Por toda la hélice, 59 capsulitas (retrovirus endógenos del cerdo) que se apagan una por una con un candado. Contador: +**59** → **69** completo. |
 | 8 | Slayman | En 2024, Richard Slayman fue el primer paciente vivo en recibir uno; murió casi dos meses después, por su corazón, no por el riñón. | Salimos de la Lupa. `TarjetaEstudio` "marzo 2024 · Boston · primer riñón de cerdo editado en una persona viva". Una línea de tiempo corta de ~2 meses. |
 | 9 | Andrews | En enero de 2025, en Boston, Tim Andrews recibió otro. | `TarjetaEstudio` "25 ene 2025 · Hospital General de Massachusetts". Silueta de un hombre con el riñón (Lupa "POR DENTRO · ABDOMEN") en el lado. |
-| 10 | Dias | Vivió 271 días sin diálisis, hasta que el riñón empezó a fallar. | Calendario que corre a "271 días sin diálisis"; la máquina de diálisis, apagada, a un lado. Al final el riñón pierde brillo. |
+| 10 | Dias | Vivió 271 días sin diálisis, hasta que el riñón empezó a fallar. | Calendario que corre de 0 a 271; la máquina de diálisis, apagada (tachada), a un lado. Chip "25 ene → 23 oct 2025". Al final el riñón pierde brillo ("empezó a fallar"). |
 | 11 | Puente | Y en enero de 2026 recibió un riñón humano: el de cerdo fue su puente. | Un puente se dibuja de la máquina de diálisis al riñón humano; chip "2025 · la FDA autorizó los primeros ensayos clínicos". |
 | 12 | Cierre | Por eso ese riñón no es de una persona: es un puente para quien espera. | **Regreso a la charola del inicio**: el mismo riñón, ahora con el contador 69 completo y el puente detrás; las siluetas de la cuadrícula de espera. |
 | — | Outro | (sin voz) | Cierre de marca (`CierreMarca tema="bioquimica"`). |
@@ -100,3 +100,24 @@ Soy Robert, de La Creación del Robert 🌱"
 **No se usa:** Towana Looney (NYU, nov 2024, 130 días): su riñón era de otra empresa (United Therapeutics/Revivicor, 10 ediciones), no de los
 69 cambios de eGenesis; meterlo confundiría. Tampoco se dice "récord" de Andrews: Bill Stewart (MGH, 14 jun 2025, eGenesis) podría haberlo
 superado y no hay dato público de 2026 sobre su estado.
+
+## Robert en pantalla
+
+Es la marca del canal. Entra desde el cuadro 0 y vuelve cada 8–10 s; nunca tapa el subtítulo, los datos ni las etiquetas (revisado en la hoja de contactos).
+Tiempos calculados con las escenas de `Shot Xeno base narrada.dc.html` (61.5 s).
+
+### Versión narrada: 9 apariciones, **36,9 s en pantalla** (de 61,5 s), 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 4,4 | sorprendido (11) | gancho | «no es de una persona: es de un cerdo» |
+| 5,0 - 9,3 | serio (10) | bajo-der | más de 16 mil esperan un riñón |
+| 10,2 - 13,7 | bajando lentes (04) | arriba-der | «tu cuerpo lo destruye» |
+| 22,1 - 24,6 | pensativo (06) | **grande** | re-gancho: «¿eso basta?» |
+| 26,5 - 30,8 | señalando (13) | arriba-der | señala los 7 genes humanos |
+| 34,9 - 41,6 | serio (10) | arriba-der | Slayman, 2024: primer paciente vivo |
+| 45,7 - 49,1 | sorprendido (11) | izq-alto | «271 días sin diálisis» |
+| 49,6 - 53,4 | sonriendo (05) | izq-alto | «el de cerdo fue su puente» |
+| 53,9 - 57,9 | apuntando (02) | gancho | cierre: «un puente para quien espera» |
+
+Cierre: `CierreMarca` con Robert señalando (13) junto al logo (58,0–61,5 s).

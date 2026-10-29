@@ -181,7 +181,7 @@ function Hormona() {
           {T > K.E + 0.4 && (() => { const cx = GX + (ROJO % COLS) * cw + cw / 2, cy = GY + Math.floor(ROJO / COLS) * ch + ch / 2, pu = (T * 1.4) % 1;
             return <g><circle cx={cx} cy={cy} r={14 + pu * 60} fill="none" stroke={PRION} strokeWidth={6} opacity={1 - pu} /><circle cx={cx} cy={cy} r={18} fill="none" stroke={KC.ink} strokeWidth={5} /></g>; })()}
         </SvgCapa>
-        <Chip T={T} at={K.L + 3.0} until={K.P - 0.2} texto="cada cuadrito ≈ 16 glándulas" y={1240 - 60} tam={34} borde={KC.ink} />
+        <Chip T={T} at={K.L + 3.0} until={K.P - 0.2} texto="cada cuadrito ≈ 16 glándulas" y={1480} tam={34} borde={KC.ink} />
       </Escena>
       {/* 5 · ¿ni virus ni bacteria? */}
       <Escena T={T} a={K.P} b={K.Pr} zoom={0.05}>
@@ -235,7 +235,7 @@ function Hormona() {
         <FondoLunares color={KC.cyan} />
         <Ambiente T={T} n={24} />
         <SvgCapa>
-          {[[150, 1320, 20, 2], [900, 1330, -25, 3], [130, 620, 70, 4]].map(([bx, by, r, sd], i) => <Bacteria key={i} T={T} x={bx} y={by} largo={170} ancho={70} rot={r + mece(T, sd, 0.3) * 6} seed={sd} />)}
+          {[[150, 1470, 20, 2], [900, 1480, -25, 3], [130, 620, 70, 4]].map(([bx, by, r, sd], i) => <Bacteria key={i} T={T} x={bx} y={by} largo={170} ancho={70} rot={r + mece(T, sd, 0.3) * 6} seed={sd} />)}
           <Bacteria T={T} x={500} y={900} largo={560} ancho={220} rot={-6} seed={1} adentro={(L, W) => <g transform={`translate(${L * 0.18} ${-W * 0.05}) rotate(${T * 25})`}>
             <circle r={52} fill="none" stroke="#9aa4ae" strokeWidth={12} />
             <path d="M 52 0 A 52 52 0 0 1 0 52" fill="none" stroke={KC.gold} strokeWidth={16} strokeLinecap="round" style={{ filter:`drop-shadow(0 0 8px ${KC.gold})` }} /></g>} />
@@ -301,7 +301,7 @@ function Hormona() {
       <Chip T={T} at={K.G + 2.4} until={K.H - 0.3} texto="hecha por bacterias" y={1500} tam={42} borde="#147a4c" />
       <Etq T={T} at={K.H + 0.6} until={K.A - 0.3} x={440} y={1070} texto="hipófisis" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.A + 0.3} until={K.L - 0.3} texto="desde 1958" x={300} y={440} tam={44} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.L + 0.3} until={K.E + 0.3} valor={16000} dur={2.6} etiqueta="glándulas por lote (CDC, 1985)" y={420} tam={180} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.L + 0.3} until={K.E + 0.3} valor={16000} dur={2.6} etiqueta="glándulas por lote (CDC, 1985)" x={640} y={420} tam={180} color={KC.yellow} />
       <Chip T={T} at={K.E + 0.4} until={K.P - 0.2} texto="¿y si una venía enferma?" y={440} tam={40} borde={PRION} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

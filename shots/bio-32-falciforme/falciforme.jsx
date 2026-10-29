@@ -218,9 +218,9 @@ function Falciforme() {
       <Escena T={T} a={K.Pr} b={K.Me} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <ADNHebra T={T} x={40} y={820} largo={430} alto={70} vueltas={2.5} resalta={(uu) => uu > 0.4 && uu < 0.6} />
-          <FlechaCurva x1={250} y1={900} x2={260} y2={1010} p={kprog(T, K.Pr + 1.2, K.Pr + 1.8)} curva={70} color={KC.yellow} T={T} />
-          <Interruptor x={260} y={1150} s={0.42} on={kprog(T, K.Pr + 1.9, K.Pr + 2.3, kEase.sale)} />
+          <ADNHebra T={T} x={40} y={780} largo={430} alto={70} vueltas={2.5} resalta={(uu) => uu > 0.4 && uu < 0.6} />
+          <FlechaCurva x1={250} y1={850} x2={260} y2={900} p={kprog(T, K.Pr + 1.2, K.Pr + 1.8)} curva={70} color={KC.yellow} T={T} />
+          <Interruptor x={260} y={1030} s={0.55} on={kprog(T, K.Pr + 1.9, K.Pr + 2.3, kEase.sale)} />
         </SvgCapa>
       </Escena>
       {/* 7 · Casgevy: médula → CRISPR corta el interruptor */}
@@ -260,7 +260,7 @@ function Falciforme() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           {Array.from({ length: 30 }, (_, i) => { const c = i % 6, f = Math.floor(i / 6), on = i < lit;
-            return <Persona key={i} x={190 + c * 140} y={720 + f * 105} s={0.85 * (on ? 1 + 0.08 * Math.max(0, Math.sin((T - K.En) * 6 - i * 0.3)) : 1)} color={on ? HBF : '#8a8f99'} />; })}
+            return <Persona key={i} x={190 + c * 140} y={720 + f * 105} s={0.75 * (on ? 1 + 0.08 * Math.max(0, Math.sin((T - K.En) * 6 - i * 0.3)) : 1)} color={on ? HBF : '#8a8f99'} />; })}
         </SvgCapa>
       </Escena>
       {/* 11 · límites: aprobado (2023) → quimioterapia → precio */}
@@ -296,18 +296,18 @@ function Falciforme() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.3} until={K.G + 2.2} texto="¿rota?" x={300} y={480} tam={50} />
       <Chip T={T} at={K.G + 1.6} until={K.Di - 0.2} texto="doblada, como hoz" x={330} y={600} tam={42} borde={KC.red} />
-      <Etiqueta T={T} at={K.G + 0.5} until={K.Di - 0.2} x={480} y={1220} texto="glóbulo rojo falciforme" lado="izq" tam={32} color={KC.ink} />
+      <Etiqueta T={T} at={K.G + 0.5} until={K.Di - 0.2} x={1020} y={1480} texto="glóbulo rojo falciforme" lado="izq" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Di + 0.4} until={K.Ca - 0.2} texto="disco blandito: se dobla y pasa" y={500} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ca + 1.0} until={K.Cr - 0.3} texto="1 cambio en el gen HBB" y={1490} tam={38} borde={KC.pink} />
       <Chip T={T} at={K.Cr + 1.2} until={K.Fe - 0.2} texto="se tapa el vaso → crisis de dolor" y={1490} tam={38} borde={KC.red} />
       <Etiqueta T={T} at={K.Fe + 1.4} until={K.In - 0.2} x={840} y={1170} texto="hemoglobina fetal" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Fe + 0.3} until={K.In - 0.2} texto="antes de nacer" y={500} tam={42} borde={HBF} />
       <Chip T={T} at={K.In + 0.4} until={K.Pr - 0.2} texto="BCL11A apaga la fetal" y={500} tam={42} borde={KC.violet} />
-      <Etiqueta T={T} at={K.In + 2.0} until={K.Pr - 0.2} x={800} y={1180} texto="adulta: la dañada" lado="izq" tam={32} color={KC.ink} />
+      <Etiqueta T={T} at={K.In + 2.0} until={K.Pr - 0.2} x={800} y={1480} texto="adulta: la dañada" lado="izq" tam={32} color={KC.ink} />
       <MitoTachado T={T} at={K.Pr + 0.2} tacharEn={K.Pr + 1.0} until={K.Me - 0.2} texto="¿arreglar el gen?" x={270} y={640} tam={38} />
       <Chip T={T} at={meB + 1.3} until={K.Rg - 0.3} texto="CRISPR-Cas9 corta el interruptor" x={400} y={1490} tam={32} borde={KC.mint} />
       <Chip T={T} at={K.Rg + 0.4} until={K.Vi - 0.2} texto="vuelven a la médula" y={1490} tam={40} borde={HBF} />
-      <Etiqueta T={T} at={K.Rg + 2.0} until={K.Vi - 0.2} x={560} y={1420} texto="glóbulos con hemoglobina fetal" tam={30} color={KC.ink} />
+      <Etiqueta T={T} at={K.Rg + 2.0} until={K.Vi - 0.2} x={1040} y={1420} texto="glóbulos con hemoglobina fetal" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.En + 0.3} until={K.Li - 0.2} texto="NEJM 2024 · 29 de 30 evaluados" y={1490} tam={42} borde={HBF} />
       <Chip T={T} at={K.En + 2.4} until={K.Li - 0.2} texto="≥ 12 meses seguidos sin crisis graves" y={1575} tam={34} borde={HBF} />
       <Chip T={T} at={K.Li + 0.2} until={liB - 0.1} texto="1.er medicamento con CRISPR aprobado" y={500} tam={38} borde={KC.blue} />

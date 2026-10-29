@@ -251,7 +251,7 @@ function BebeKJ() {
       <Escena T={T} a={K.G} b={K.KJ} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <Capa>
-          {estante.map(({ c, f, d }, i) => { const x0 = 120 + c * 168, y0 = 820 + f * 250, dir = c < 3 ? -1 : 1;
+          {estante.map(({ c, f, d }, i) => { const x0 = 120 + c * 168, y0 = 700 + f * 220, dir = c < 3 ? -1 : 1;
             return <Frasco key={i} x={x0 + dir * sacude * (700 + d * 300)} y={y0} s={0.5} rot={dir * sacude * 30} tapa="#c9c2b6" liquido="#e3e3e3" />; })}
           <Frasco x={540} y={klerp(1070, 1010, kprog(T, K.G + 0.8, K.G + 1.6, kEase.rebote))} s={klerp(0.6, 1.25, kprog(T, K.G + 0.8, K.G + 1.6, kEase.rebote))} etq="k-abe" sub="para: KJ" glow={kprog(T, K.G + 1.2, K.G + 1.8)} />
         </Capa>
