@@ -60,6 +60,6 @@ Barras de escala: 5 cm (hongo), 10 µm (esporas), 0.5 mm (nematodos e hifas; el 
    > "Barbuda, matacandil, urbeltz, bolet de tinta, chipirón de monte."
 7. New Forest National Park Authority. Shaggy inkcap. https://www.newforestnpa.gov.uk/discover/plants-fungi/fungi/shaggy-inkcap/
    > "In the 17th and 18th centuries this black liquid could be used as an ink substitute"; "it could be used straight as writing ink"
-8. Tamaño del nematodo *Panagrellus redivivus* (adulto hasta ~1.8 mm): NIES (dato aportado por el verificador), usado solo para la escala del dibujo.
+8. Tamaño del nematodo *Panagrellus redivivus* (adulto hasta ~1.8 mm): NIES (National Institute for Environmental Studies, Japón), https://www.nies.go.jp/chiiki1/protoz/toxicity/nematoda/panagrel.htm, usado solo para la escala del dibujo.
 
 El dibujo es esquemático.
