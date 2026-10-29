@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Esporas Conteo base narrada.dc.html",
+  "salida": "Shot Esporas Conteo narrado.dc.html",
+  "nota": "Shot Fungi Mati #32. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Un champiñón de campo grande suelta unos dieciséis mil millones de esporas: casi el doble de personas en la Tierra."
+    },
+    {
+      "escena": "Sombrero",
+      "texto": "Puedes verlas: pon boca abajo sobre un papel el sombrero de un champiñón del súper ya abierto."
+    },
+    {
+      "escena": "Vaso",
+      "texto": "Tápalo con un vaso y espera una noche."
+    },
+    {
+      "escena": "Huella",
+      "texto": "Si funcionó, verás el dibujo de sus laminillas en café oscuro: su huella de esporas."
+    },
+    {
+      "escena": "Polvo",
+      "texto": "Cada grano mide unas siete milésimas de milímetro."
+    },
+    {
+      "escena": "Color",
+      "texto": "Su color ayuda a identificar hongos, pero nunca basta para saber si se come."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué tantas?"
+    },
+    {
+      "escena": "Buller",
+      "texto": "En 1922, desde Canadá, el micólogo Reginald Buller publicó sus cuentas."
+    },
+    {
+      "escena": "Repisa",
+      "texto": "Un hongo de repisa, Ganoderma applanatum, soltaba unos treinta mil millones al día, por seis meses."
+    },
+    {
+      "escena": "Bejin",
+      "texto": "Y un bejín gigante de cuarenta centímetros tenía unos siete billones."
+    },
+    {
+      "escena": "Razon",
+      "texto": "La razón: casi ninguna cae donde pueda crecer."
+    },
+    {
+      "escena": "Loteria",
+      "texto": "Buller calculó que, de veinte mil millones de esporas, quizá solo una forma un hongo nuevo."
+    },
+    {
+      "escena": "Aviso",
+      "texto": "Son cálculos de hace un siglo: aproximados, pero enormes."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa mancha café es una lotería: miles de millones de boletos, casi ningún premio."
+    }
+  ]
+}

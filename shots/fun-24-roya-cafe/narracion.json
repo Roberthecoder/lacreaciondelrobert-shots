@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Roya Cafe base narrada.dc.html",
+  "salida": "Shot Roya Cafe narrado.dc.html",
+  "nota": "Shot Fungi Mati #24. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese polvo naranja no es óxido: es un hongo, y vive de la planta de tu café." },
+    { "escena": "Hoja", "texto": "Es la roya del café, Hemileia vastatrix, y sale por debajo de la hoja." },
+    { "escena": "Espora", "texto": "Cada granito de ese polvo es una espora con forma de riñón." },
+    { "escena": "Estomas", "texto": "Con agua, germina y entra por los estomas, los poritos de la hoja." },
+    { "escena": "Haustorios", "texto": "Adentro le roba comida a las células vivas." },
+    { "escena": "Ramillete", "texto": "Semanas después, brota por esos poros como un ramillete de esporas nuevas." },
+    { "escena": "Caida", "texto": "La hoja se cae antes de tiempo y una planta pelona da menos café." },
+    { "escena": "Pregunta", "texto": "¿Puede un hongo cambiar lo que siembra un país?" },
+    { "escena": "Ceilan", "texto": "En el siglo diecinueve, en Ceilán, hoy Sri Lanka, la roya y los precios bajos tumbaron el café, y los cafetaleros se pasaron al té." },
+    { "escena": "Estudio", "texto": "En 2012 y 2013 golpeó Centroamérica y México: la cosecha centroamericana cayó dieciséis por ciento." },
+    { "escena": "Clima", "texto": "En 2012 hubo noches más tibias y días menos calientes, y eso probablemente aceleró al hongo." },
+    { "escena": "Timor", "texto": "La defensa: cafetos cruzados con el híbrido de Timor, como los Catimor, aunque la roya ya venció a algunos." },
+    { "escena": "Cierre", "texto": "Así que tu taza también es una batalla contra ese polvo naranja." }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Coprinus base narrada.dc.html",
+  "salida": "Shot Coprinus narrado.dc.html",
+  "nota": "Shot Fungi Mati #40. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese charco de tinta negra no es un hongo podrido: es un hongo digiriéndose a sí mismo."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Se llama Coprinus comatus, la barbuda, y sale en pastos y jardines."
+    },
+    {
+      "escena": "Laminillas",
+      "texto": "Sus laminillas son muy delgadas y tan pegadas que a las esporas les cuesta salir."
+    },
+    {
+      "escena": "Orilla",
+      "texto": "Las esporas maduran primero en la orilla de abajo, y de ahí caen al aire."
+    },
+    {
+      "escena": "Digiere",
+      "texto": "Luego sus propias enzimas disuelven esa parte ya vacía y destapan la siguiente."
+    },
+    {
+      "escena": "Ola",
+      "texto": "Así sube, desde el borde, hasta que todo el sombrero se vuelve tinta."
+    },
+    {
+      "escena": "Tinta",
+      "texto": "Esa tinta son esporas negras atrapadas en tejido derretido. Antes se usaba para escribir."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué más come este hongo, además de restos de plantas?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Entre 2004 y 2007, en Yunnan, China, le pusieron en el laboratorio unos gusanitos microscópicos: nematodos."
+    },
+    {
+      "escena": "Bolitas",
+      "texto": "Sus hilos forman bolitas con espinas que rompen la piel del gusano."
+    },
+    {
+      "escena": "Toxinas",
+      "texto": "Además suelta toxinas que lo dejan inmóvil en horas."
+    },
+    {
+      "escena": "Comer",
+      "texto": "Ya quieto, sus hilos se le meten y en días se lo comen por dentro."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa tinta negra no es basura: es un hongo que también caza gusanos, soltando sus últimas esporas."
+    }
+  ]
+}

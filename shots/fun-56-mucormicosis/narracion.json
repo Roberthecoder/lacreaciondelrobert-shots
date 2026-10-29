@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Mucormicosis base narrada.dc.html",
+  "salida": "Shot Mucormicosis narrado.dc.html",
+  "nota": "Shot Fungi Mati #56. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Tono serio, sin alarmismo; no es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa mancha negra no es el hongo: es tejido muerto."
+    },
+    {
+      "escena": "Apodo",
+      "texto": "Le dijeron «hongo negro», pero dentro del cuerpo sus hifas son transparentes."
+    },
+    {
+      "escena": "Mucorales",
+      "texto": "Son mohos mucorales, como Rhizopus y Mucor, de la tierra y las hojas podridas."
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Sus esporas se respiran, pero casi solo enferman personas con defensas bajas o diabetes sin control."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Si germinan, sacan hifas anchas, casi sin divisiones, como listones."
+    },
+    {
+      "escena": "Vasos",
+      "texto": "Se meten en los vasos sanguíneos y los tapan. Sin sangre, el tejido muere y se pone negro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué hubo tantos casos en India con el COVID?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En hospitales de India hubo más del doble de casos a finales de 2020 que un año antes."
+    },
+    {
+      "escena": "Cosmic",
+      "texto": "Y en un estudio de 2021, con 2,826 enfermos de mucormicosis tras el COVID, 78 % tenía diabetes y 87 % recibió corticoides."
+    },
+    {
+      "escena": "Hierro",
+      "texto": "Con el azúcar alta y la sangre ácida queda más hierro suelto, y el moho lo aprovecha."
+    },
+    {
+      "escena": "Mal_uso",
+      "texto": "Sus autores piden usar corticoides solo en COVID moderado o grave."
+    },
+    {
+      "escena": "Contagio",
+      "texto": "Además, es rara y no se contagia de persona a persona."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa mancha negra no es el hongo: es tejido que el hongo dejó sin sangre."
+    }
+  ]
+}

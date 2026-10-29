@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Chernobil base narrada.dc.html",
+  "salida": "Shot Chernobil narrado.dc.html",
+  "nota": "Shot Fungi Mati #30. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa mancha negra no es hollín: es un hongo, y vive en las paredes del reactor de Chernóbil." },
+    { "escena": "Reactor", "texto": "Unos micólogos de Ucrania entraron al edificio que cubre el reactor dañado." },
+    { "escena": "Especies", "texto": "Encontraron treinta y siete especies de hongos." },
+    { "escena": "Oscuros", "texto": "Y donde había más radiación, dominaban los hongos oscuros, con melanina." },
+    { "escena": "Piel", "texto": "Melanina: la misma familia de pigmentos que le da color a tu piel." },
+    { "escena": "Pared", "texto": "El hongo la guarda en su pared, como una armadura negra contra la radiación." },
+    { "escena": "Pregunta", "texto": "¿Pero solo se protege, o la aprovecha?" },
+    { "escena": "Estudio", "texto": "En 2007, en Nueva York, pusieron hongos así bajo radiación unas quinientas veces más alta que la normal." },
+    { "escena": "Crecen", "texto": "Los que tenían melanina crecieron más que los que no." },
+    { "escena": "Colonias", "texto": "Uno de ellos, con poca comida, formó dos veces y media más colonias que sin radiación." },
+    { "escena": "Hipotesis", "texto": "Proponen que usan la radiación como energía, como una planta usa la luz. Pero es una hipótesis: no está comprobado." },
+    { "escena": "Espacio", "texto": "En 2018 subieron uno a la Estación Espacial, y debajo de él se midió un poquito menos de radiación." },
+    { "escena": "Cierre", "texto": "Así que esa mancha negra no es hollín: es un hongo blindado con melanina." }
+  ]
+}

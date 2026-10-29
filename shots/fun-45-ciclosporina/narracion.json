@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Ciclosporina base narrada.dc.html",
+  "salida": "Shot Ciclosporina narrado.dc.html",
+  "nota": "Shot Fungi Mati #45. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este puñado de tierra no es solo tierra: de aquí salió la medicina que volvió casi rutina los trasplantes."
+    },
+    {
+      "escena": "Noruega",
+      "texto": "Venía de una muestra de suelo de Noruega, con un moho: Tolypocladium inflatum."
+    },
+    {
+      "escena": "Sandoz",
+      "texto": "En Sandoz, en Suiza, sacaron de él una molécula: la ciclosporina."
+    },
+    {
+      "escena": "Rechazo",
+      "texto": "El problema de un trasplante: tus defensas ven el órgano nuevo como invasor y lo atacan."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo puede un moho calmar ese ataque?"
+    },
+    {
+      "escena": "Calcineurina",
+      "texto": "La ciclosporina entra a tus linfocitos T y apaga un interruptor: la calcineurina."
+    },
+    {
+      "escena": "Alarma",
+      "texto": "Sin él, el linfocito no enciende las señales que arman el ataque."
+    },
+    {
+      "escena": "Ratones",
+      "texto": "En 1976, el equipo de Borel y Stähelin publicó que retrasaba el rechazo de piel en ratones."
+    },
+    {
+      "escena": "Canada",
+      "texto": "En 1983, en Canadá, en 209 trasplantes de riñón, se estimó que al año funcionaban 80 de cada 100, contra 64 con el tratamiento de antes."
+    },
+    {
+      "escena": "Escarabajo",
+      "texto": "Lo más raro: en la naturaleza, este moho es un parásito de larvas de escarabajo."
+    },
+    {
+      "escena": "Hipotesis",
+      "texto": "Y se sospecha que la ciclosporina le ayuda a desarmar las defensas del insecto."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que este puñado de tierra no es solo tierra: es un riñón que sí siguió funcionando."
+    }
+  ]
+}

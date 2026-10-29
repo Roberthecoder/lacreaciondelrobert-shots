@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Calor base narrada.dc.html",
+  "salida": "Shot Calor narrado.dc.html",
+  "nota": "Shot Fungi Mati #14. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa hormiga trae un hongo zombi. A ti, casi ningún hongo: tu calor frena a la mayoría."
+    },
+    {
+      "escena": "Hormiga",
+      "texto": "La hormiga casi no fabrica su calor: lo toma de afuera."
+    },
+    {
+      "escena": "Tu",
+      "texto": "Tú sí: vives cerca de treinta y siete grados."
+    },
+    {
+      "escena": "Hongos",
+      "texto": "Los hongos crecen a temperatura ambiente; pocos, a treinta y siete."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cuántos frena tu calor?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2009 revisaron datos de cuatro mil ochocientas dos cepas de una colección en Utrecht."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "La mayoría no crece a temperatura de mamífero."
+    },
+    {
+      "escena": "Grado",
+      "texto": "Entre treinta y cuarenta grados, cada grado más excluía a otro seis por ciento."
+    },
+    {
+      "escena": "Fiebre",
+      "texto": "Y la fiebre podría excluir a más, sugieren."
+    },
+    {
+      "escena": "Hipotesis",
+      "texto": "Su hipótesis: la sangre caliente protegió a los mamíferos de muchos hongos."
+    },
+    {
+      "escena": "Auris",
+      "texto": "Ojo: la levadura Candida auris crece bien a cuarenta grados."
+    },
+    {
+      "escena": "Clima",
+      "texto": "En 2019 propusieron que el calentamiento global la hizo adaptarse: otra hipótesis."
+    },
+    {
+      "escena": "Defensas",
+      "texto": "Tu escudo es doble: calor y defensas. Con ambos, las infecciones graves por hongos son raras."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "El zombi es cosa de hormigas; contra casi todos los demás, traes un escudo de treinta y siete grados."
+    }
+  ]
+}

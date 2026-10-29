@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Plastico base narrada.dc.html",
+  "salida": "Shot Plastico narrado.dc.html",
+  "nota": "Shot Fungi Mati #31. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "En un tubo, un hongo deshizo la mitad de un plástico en unos cinco días. ¿Adiós basura? No tan rápido."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es Pestalotiopsis microspora; vivía dentro de tallos de plantas en Ecuador."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Estudiantes de Yale lo hallaron entre decenas de hongos y lo publicaron en 2011."
+    },
+    {
+      "escena": "Enzima",
+      "texto": "Suelta una enzima que corta el poliuretano."
+    },
+    {
+      "escena": "SinOxigeno",
+      "texto": "Y lo deshizo igual de rápido sin oxígeno."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces los hongos limpiarán el planeta?"
+    },
+    {
+      "escena": "Truco",
+      "texto": "Ojo: era poliuretano suspendido en agua, en laboratorio, no una bolsa tirada."
+    },
+    {
+      "escena": "Pakistan",
+      "texto": "En Pakistán, otro hongo tardó dos meses en romper en pedazos una película de poliuretano, y con azúcar."
+    },
+    {
+      "escena": "Revision",
+      "texto": "En 2022, una revisión de 664 reportes de microbios no halló pruebas de que se coman mucho polietileno puro, el plástico de las bolsas del súper."
+    },
+    {
+      "escena": "Peso",
+      "texto": "A veces el plástico pesa menos porque suelta aditivos, no porque se lo coman."
+    },
+    {
+      "escena": "Sirve",
+      "texto": "Lo que sí sirve: usar menos plástico, reusar y separar para reciclar."
+    },
+    {
+      "escena": "Futuro",
+      "texto": "Los hongos son una pista, no permiso para tirar más."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Un hongo deshizo la mitad de un plástico en unos cinco días. Pero en un tubo, no en tu basura."
+    }
+  ]
+}

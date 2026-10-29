@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Tempeh base narrada.dc.html",
+  "salida": "Shot Tempeh narrado.dc.html",
+  "nota": "Shot Fungi Mati #36. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es soya prensada: es soya amarrada por un hongo vivo."
+    },
+    {
+      "escena": "Java",
+      "texto": "Se llama tempeh y nació, muy probablemente, en la isla de Java, en Indonesia."
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Se cuecen granos de soya, se enfrían y se les ponen esporas de un moho, Rhizopus."
+    },
+    {
+      "escena": "Hilos",
+      "texto": "En uno o dos días, a 25 o 30 grados, las esporas germinan y sacan hilos blancos: el micelio."
+    },
+    {
+      "escena": "Amarra",
+      "texto": "Los hilos crecen entre los granos, se meten en sus primeras capas de células y los pegan en un bloque."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué le hace a la soya por dentro?"
+    },
+    {
+      "escena": "Enzimas",
+      "texto": "El hongo suelta enzimas que parten las proteínas y las grasas en pedazos más chicos."
+    },
+    {
+      "escena": "Fitico",
+      "texto": "Y baja el ácido fítico, que le estorba a tu cuerpo para aprovechar minerales."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1977, un estudio con tempeh comprado en Toronto, Canadá, buscó de dónde salía su vitamina B12."
+    },
+    {
+      "escena": "Bacteria",
+      "texto": "Sorpresa: el hongo solo no la fabricaba. La hacía una bacteria que crece junto a él."
+    },
+    {
+      "escena": "Blanco",
+      "texto": "Es blanco porque, tapado y con poco aire, el hongo casi no hace esporas; si las hace, salen manchas grises o negras."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no es soya prensada: es soya que un hongo amarró con sus hilos."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Langosta base narrada.dc.html",
+  "salida": "Shot Langosta narrado.dc.html",
+  "nota": "Shot Fungi Mati #50. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta langosta no se calienta por gusto: se da fiebre para pelear contra un hongo."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Se llama Metarhizium acridum y es especialista: ataca langostas y chapulines."
+    },
+    {
+      "escena": "Espora",
+      "texto": "Todo empieza con una espora pegada a su cutícula, su cáscara."
+    },
+    {
+      "escena": "Perfora",
+      "texto": "Ahí germina, empuja con presión y suelta enzimas hasta perforarla."
+    },
+    {
+      "escena": "Adentro",
+      "texto": "Adentro, crece en su sangre y se come sus azúcares."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué la fiebre?"
+    },
+    {
+      "escena": "Fiebre",
+      "texto": "Porque el calor frena al hongo, pero no lo elimina: con fiebre duran más, pero la mayoría muere."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2005, en el norte de Níger, una avioneta lo roció sobre langostas del desierto."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Empezaron a morir al quinto día; a las tres semanas, la eficacia era del ochenta por ciento."
+    },
+    {
+      "escena": "Lento",
+      "texto": "Es más lento que un insecticida, que mata en horas, pero no dañó hormigas ni aves."
+    },
+    {
+      "escena": "Cernicalos",
+      "texto": "Llegaron más aves a comérselas; los cernícalos cazaban sobre todo a las hembras, más grandes."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México, SENASICA desarrolló cómo usarlo contra la langosta centroamericana; en 2020 donó su cepa a Costa Rica."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa langosta no se calienta por gusto: pelea con un hongo que suele ganar."
+    }
+  ]
+}

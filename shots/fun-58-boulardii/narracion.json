@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Boulardii base narrada.dc.html",
+  "salida": "Shot Boulardii narrado.dc.html",
+  "nota": "Shot Fungi Mati #58. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadura."
+    },
+    {
+      "escena": "Especie",
+      "texto": "Es Saccharomyces boulardii, de la misma especie que esponja el pan."
+    },
+    {
+      "escena": "Historia",
+      "texto": "Dicen que Henri Boulard la sacó de un té de lichi y mangostán, en Indochina."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Pero esta crece mejor a treinta y siete grados, como tu cuerpo."
+    },
+    {
+      "escena": "Acido",
+      "texto": "Y a pH dos, muy ácido, aguantó casi toda."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué la dan con antibióticos?"
+    },
+    {
+      "escena": "Antibioticos",
+      "texto": "Los antibióticos desbalancean las bacterias de tu intestino, y eso puede dar diarrea."
+    },
+    {
+      "escena": "Levadura",
+      "texto": "Pero una levadura no es bacteria: esos fármacos no la matan."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Una revisión de 2015 juntó veintiún ensayos: en gente con antibióticos, la diarrea bajó de casi diecinueve a ocho y medio de cada cien."
+    },
+    {
+      "escena": "Limite",
+      "texto": "Pero contra Clostridium difficile en adultos, esa revisión no vio un efecto claro."
+    },
+    {
+      "escena": "Riesgo",
+      "texto": "Y en pacientes graves con catéter, rara vez, pasa a la sangre: en París vieron que abrir un sobre la dejaba en las manos."
+    },
+    {
+      "escena": "NoSeQueda",
+      "texto": "Y no se queda: días después de dejarla, se va."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que este sobrecito no trae bacterias: trae una versión de la levadura del pan que aguanta tu panza."
+    }
+  ]
+}

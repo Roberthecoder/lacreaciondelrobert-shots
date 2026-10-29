@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Shiitake base narrada.dc.html",
+  "salida": "Shot Shiitake narrado.dc.html",
+  "nota": "Shot Fungi Mati #26. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "¿Por qué no debes comer shiitake crudo? Porque te puede dejar la piel rayada, como a latigazos."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es raro y no le pasa a todos, pero tiene nombre: dermatitis flagelada por shiitake."
+    },
+    {
+      "escena": "Espera",
+      "texto": "Y no sale luego luego: puede tardar de horas a días."
+    },
+    {
+      "escena": "Rayas",
+      "texto": "Son rayas rojas que suelen dar mucha comezón, en torso, brazos o piernas."
+    },
+    {
+      "escena": "Lentinano",
+      "texto": "Se cree que el culpable es el lentinano, una cadena de azúcares de la pared de sus células."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué hace rayas? Nadie lo sabe con certeza."
+    },
+    {
+      "escena": "Hipotesis",
+      "texto": "Una idea es que dispara señales de inflamación que abren los vasitos de tu piel. Otra, que es alergia."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Lo que sí se sabe: pasa con shiitake crudo o poco cocido. Y el calor fuerte desarma al lentinano."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En Francia, de 2014 a 2019, los centros de toxicología registraron cincuenta y nueve casos."
+    },
+    {
+      "escena": "Dosis",
+      "texto": "Todos se recuperaron, y entre más shiitake habían comido, más días les duró."
+    },
+    {
+      "escena": "Cena",
+      "texto": "En otra serie francesa, sus invitados que lo prefirieron cocido no tuvieron nada."
+    },
+    {
+      "escena": "Sirve",
+      "texto": "Así que no le temas al shiitake: cocínalo bien."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Crudo te puede rayar la piel; bien cocido, te deja lo rico."
+    }
+  ]
+}

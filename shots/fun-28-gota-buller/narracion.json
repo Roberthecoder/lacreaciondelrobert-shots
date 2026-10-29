@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Gota Buller base narrada.dc.html",
+  "salida": "Shot Gota Buller narrado.dc.html",
+  "nota": "Shot Fungi Mati #28. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese champiñón no está quieto: está disparando esporas, una por una." },
+    { "escena": "Basidio", "texto": "En sus laminillas, los basidios cargan las esporas, cada una en su puntita." },
+    { "escena": "Gota", "texto": "Capítulo uno: la gota. La espora suelta azúcares en su base y ahí se condensa agua del aire." },
+    { "escena": "Buller", "texto": "Crece la gota de Buller y sobre la espora se forma otra capa de agua." },
+    { "escena": "Fusion", "texto": "Capítulo dos: la fusión. Al tocarse, la gota salta a la espora en un instante." },
+    { "escena": "Disparo", "texto": "Capítulo tres: el disparo. El agua mueve el peso de la espora y la lanza como catapulta." },
+    { "escena": "Pregunta", "texto": "¿Y con cuánta fuerza sale?" },
+    { "escena": "Estudio", "texto": "Un estudio de 2005, en Estados Unidos, filmó otros hongos, una levadura y un hongo de oreja, hasta a cien mil cuadros por segundo." },
+    { "escena": "Fuerza", "texto": "Esas esporas arrancaron con más de diez mil veces la gravedad." },
+    { "escena": "Caida", "texto": "Capítulo cuatro: la caída. Vuela menos de una décima de milímetro: justo para no chocar con la laminilla de enfrente." },
+    { "escena": "Frena", "texto": "Ahí frena y cae derecho hasta salir del sombrero." },
+    { "escena": "Especies", "texto": "Y así disparan decenas de miles de especies de hongos." },
+    { "escena": "Cierre", "texto": "Así que ese champiñón no está quieto: cada espora sale en su propia catapulta de agua." }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Reishi base narrada.dc.html",
+  "salida": "Shot Reishi narrado.dc.html",
+  "nota": "Shot Fungi Mati #59. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese frasco de reishi no siempre trae lo que dice: de diecinueve, solo cinco cumplían su etiqueta."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "El reishi es un hongo, Ganoderma; en China le dicen lingzhi."
+    },
+    {
+      "escena": "Contiene",
+      "texto": "Trae triterpenos y polisacáridos que sí se estudian."
+    },
+    {
+      "escena": "MitoCancer",
+      "texto": "Mito: que cura el cáncer. En 2016, una revisión Cochrane juntó cinco ensayos chicos."
+    },
+    {
+      "escena": "DatoCancer",
+      "texto": "Dato: no alcanzó para usarlo solo como tratamiento; ninguno midió si alarga la vida."
+    },
+    {
+      "escena": "Junto",
+      "texto": "Con quimio o radio quizá respondieron mejor; estudios de baja calidad."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué hay dentro del frasco?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2017, un equipo de Macao y la Farmacopea de Estados Unidos analizó diecinueve suplementos."
+    },
+    {
+      "escena": "Almidon",
+      "texto": "Trece traían almidón, que el cuerpo del hongo no tiene: suele ser relleno."
+    },
+    {
+      "escena": "Betaglucano",
+      "texto": "El betaglucano del reishi apareció solo en cinco."
+    },
+    {
+      "escena": "MitoEspecie",
+      "texto": "Mito: la etiqueta acierta la especie. En 2018 leyeron el ADN de veinte productos: en ninguno apareció Ganoderma lucidum."
+    },
+    {
+      "escena": "Lingzhi",
+      "texto": "La mayoría eran Ganoderma lingzhi, el más usado en la medicina china: en esos falla el nombre, no el hongo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese frasco no siempre trae lo que dice, ni lo que promete está probado."
+    }
+  ]
+}
