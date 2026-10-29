@@ -141,7 +141,7 @@ function Esporangioforo({ T, x, y, alto = 420, r = 48, crece = 1, seed = 1 }) {
   const g = krng(seed);
   return <g transform={`translate(${x} ${y})`}>
     {[-1, -0.4, 0.3, 1].map((k, i) => <path key={i} d={`M 0 0 q ${k * 30} 20 ${k * 50} ${40 + i * 8} t ${k * 20} 30`} stroke="#d9d2c0" strokeWidth={5} fill="none" strokeLinecap="round" />)}
-    <path d={`M 0 0 Q ${4 + Math.sin(T + seed) * 3} ${-h / 2} 0 ${-h}`} stroke="#e9e3d2" strokeWidth={10} fill="none" strokeLinecap="round" />
+    <path d={`M 0 0 Q ${4 + Math.sin(T + seed) * 3} ${-h / 2} 0 ${-h}`} stroke="#e9e3d2" strokeWidth={16} fill="none" strokeLinecap="round" />
     {rr > 1 && <g transform={`translate(0 ${-h - rr * 0.85})`}>
       <circle r={rr} fill="#3a3c42" stroke={KC.ink} strokeWidth={5} />
       {Array.from({ length: 22 }, (_, i) => <circle key={i} cx={(g() - 0.5) * rr * 1.4} cy={(g() - 0.5) * rr * 1.4} r={3.5} fill="#7b7f88" />)}
@@ -176,9 +176,9 @@ function TempehShot() {
   const amA = K.A + (K.P - K.A) * 0.56;          // en "Amarra": de micro (grano por dentro) a macro (bloque)
   const baA = K.B + 2.3;                          // en "Bacteria": de las cajas al microscopio
   const blA = K.Bl + 3.0;                         // en "Blanco": de los bloques a los esporangios
-  const SPO = [[250, 1100], [560, 1092], [850, 1104]];
+  const SPO = [[250, 1042], [560, 1036], [850, 1046]];
   // grano en corte (Amarra, micro): 200 px = 1 mm · grosor 600 px = 3 mm · entrada de hifas 150 px ≈ 750 µm (¼)
-  const GR = { cx: 540, cy: 1000, rx: 520, ry: 300 }, PEN = 150;
+  const GR = { cx: 540, cy: 850, rx: 520, ry: 300 }, PEN = 150;
   const pen = kprog(T, K.A + 0.4, amA - 0.3, kEase.sale);
   // proteína: cadena de cuentas; cortes en 3 puntos
   const AA = 14, CUTS = [4, 8, 11];
@@ -202,8 +202,8 @@ function TempehShot() {
       {/* 1 · Java, Indonesia */}
       <Escena T={T} a={K.J} b={K.Es} zoom={0.06}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<><MapaIndonesia T={T} x={70} y={720} java={kprog(T, K.J + 1.6, K.J + 2.2)} />
-          <g transform={`translate(${idProy(110, -7.3)[0] + 70} ${idProy(110, -7.3)[1] + 720 - 70}) scale(${kprog(T, K.J + 2.4, K.J + 2.8, kEase.rebote)})`}>
+        {fsvg(<><MapaIndonesia T={T} x={70} y={600} java={kprog(T, K.J + 1.6, K.J + 2.2)} />
+          <g transform={`translate(${idProy(110, -7.3)[0] + 70} ${idProy(110, -7.3)[1] + 600 - 70}) scale(${kprog(T, K.J + 2.4, K.J + 2.8, kEase.rebote)})`}>
             <path d="M 0 0 C -30 -40 -30 -80 0 -90 C 30 -80 30 -40 0 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={5} /><circle cy={-60} r={12} fill="#fff" />
           </g></>)}
       </Escena>
@@ -228,7 +228,7 @@ function TempehShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <SuperficieGrano y0={1120} />
+          <SuperficieGrano y0={1060} />
           {SPO.map(([sx, sy], i) => { const t0 = K.H + 0.7 + i * 0.35; const g = kprog(T, t0 + 0.4, K.A - 0.2); return <g key={i}>
             {g > 0 && <RedHifas T={T} x={sx} y={sy} g={g} seed={4 + i * 3} n={140} escala={0.3} ancho={11} color={FK.hifa} circ={true} brillo={0.4} />}
             <Espora x={sx} y={sy} r={17} hincha={kprog(T, t0, t0 + 0.5)} />
@@ -241,8 +241,8 @@ function TempehShot() {
         {fsvg(<>
           <defs><clipPath id="tpGrano"><ellipse cx={GR.cx} cy={GR.cy} rx={GR.rx} ry={GR.ry} /></clipPath></defs>
           {/* granos vecinos arriba y abajo */}
-          <ellipse cx={300} cy={560} rx={420} ry={180} fill="#d9b456" stroke={KC.ink} strokeWidth={6} />
-          <ellipse cx={820} cy={1460} rx={420} ry={150} fill="#d9b456" stroke={KC.ink} strokeWidth={6} />
+          <ellipse cx={300} cy={380} rx={420} ry={140} fill="#d9b456" stroke={KC.ink} strokeWidth={6} />
+          <ellipse cx={820} cy={1335} rx={420} ry={150} fill="#d9b456" stroke={KC.ink} strokeWidth={6} />
           <g clipPath="url(#tpGrano)">
             <ellipse cx={GR.cx} cy={GR.cy} rx={GR.rx} ry={GR.ry} fill="#e6c46a" />
             {Array.from({ length: 16 }, (_, f) => Array.from({ length: 16 }, (_, c) => <rect key={f + '_' + c} x={c * 70 - 20 + (f % 2) * 35} y={GR.cy - GR.ry + f * 40} width={64} height={34} rx={10} fill="none" stroke="#a37c2a" strokeWidth={3} />))}
@@ -253,11 +253,11 @@ function TempehShot() {
           </g>
           <ellipse cx={GR.cx} cy={GR.cy} rx={GR.rx} ry={GR.ry} fill="none" stroke={KC.ink} strokeWidth={7} />
           {/* hifas que cruzan de grano a grano */}
-          {Array.from({ length: 9 }, (_, i) => { const x0 = 160 + i * 85, u = kprog(T, K.A + 0.6 + i * 0.12, K.A + 1.8 + i * 0.12); return <path key={i} d={`M ${x0} ${720 - 10} Q ${x0 + 30} ${740} ${x0 + 10 + Math.sin(i) * 20} 760`} stroke={FK.hifa} strokeWidth={7} fill="none" strokeLinecap="round" strokeDasharray={`${u * 80} 200`} />; })}
-          {Array.from({ length: 6 }, (_, i) => { const x0 = 560 + i * 80, u = kprog(T, K.A + 0.8 + i * 0.12, K.A + 2.0 + i * 0.12); return <path key={i} d={`M ${x0} ${1265} Q ${x0 - 20} ${1290} ${x0} ${1320}`} stroke={FK.hifa} strokeWidth={7} fill="none" strokeLinecap="round" strokeDasharray={`${u * 80} 200`} />; })}
+          {Array.from({ length: 9 }, (_, i) => { const x0 = 160 + i * 85, u = kprog(T, K.A + 0.6 + i * 0.12, K.A + 1.8 + i * 0.12); return <path key={i} d={`M ${x0} ${510} Q ${x0 + 30} ${540} ${x0 + 10 + Math.sin(i) * 20} 575`} stroke={FK.hifa} strokeWidth={7} fill="none" strokeLinecap="round" strokeDasharray={`${u * 80} 200`} />; })}
+          {Array.from({ length: 6 }, (_, i) => { const x0 = 560 + i * 80, u = kprog(T, K.A + 0.8 + i * 0.12, K.A + 2.0 + i * 0.12); return <path key={i} d={`M ${x0} ${1130} Q ${x0 - 20} ${1160} ${x0} ${1195}`} stroke={FK.hifa} strokeWidth={7} fill="none" strokeLinecap="round" strokeDasharray={`${u * 80} 200`} />; })}
           {/* llave de ¼ */}
           <g opacity={kprog(T, K.A + 1.6, K.A + 2.0)}>
-            <path d={`M 1010 ${GR.cy - GR.ry + 40} L 1030 ${GR.cy - GR.ry + 40} L 1030 ${GR.cy - GR.ry + 40 + PEN} L 1010 ${GR.cy - GR.ry + 40 + PEN}`} stroke={KC.yellow} strokeWidth={6} fill="none" />
+            <path d={`M 685 565 L 705 565 L 705 ${565 + PEN} L 685 ${565 + PEN}`} stroke={KC.red} strokeWidth={8} fill="none" />
           </g>
         </>)}
       </Escena>
@@ -284,7 +284,7 @@ function TempehShot() {
             return <g key={i}>{i > 0 && !CUTS.includes(i) && <line x1={250 + (i - 1) * 54 + dx} y1={720 + Math.sin(i - 1 + T * 2) * 14 + dy} x2={250 + i * 54 + dx} y2={720 + Math.sin(i + T * 2) * 14 + dy} stroke="#cfd6e0" strokeWidth={8} />}
               <circle cx={250 + i * 54 + dx} cy={720 + Math.sin(i + T * 2) * 14 + dy} r={22} fill={col} stroke={KC.ink} strokeWidth={4} /></g>; })}
           {CUTS.map((c, k) => { const t0 = K.En + 0.4 + k * 0.45, u = kprog(T, t0, t0 + 0.6, kEase.sale); if (u <= 0 || T > K.En + 2.8 + k * 0.45) return null;
-            return <Tijera key={k} x={klerp(130, 250 + c * 54 - 27, u)} y={klerp(800, 660, u)} rot={90} s={0.8} color={KC.mint} abre={Math.abs(Math.sin(T * 10))} />; })}
+            return <Tijera key={k} x={klerp(130, 250 + c * 54 - 27, u)} y={klerp(800, 660, u)} rot={90} s={1.2} color={KC.mint} abre={Math.abs(Math.sin(T * 10))} />; })}
           {/* grasas: triglicérido = glicerol + 3 cadenas; las lipasas sueltan cadenas */}
           {[0, 1].map((m) => { const gx = 360 + m * 340, gy = 1000; return <g key={m}>
             <rect x={gx - 18} y={gy - 70} width={36} height={140} rx={14} fill="#9ad7ff" stroke={KC.ink} strokeWidth={4} />
@@ -292,7 +292,7 @@ function TempehShot() {
               return <path key={j} d={`M ${gx + 18 + u * 50} ${gy + dy + u * (j - 1) * 30} l 24 -14 l 24 14 l 24 -14 l 24 14 l 24 -14 l 24 14 l 24 -14`} stroke={KC.yellow} strokeWidth={8} fill="none" strokeLinejoin="round" strokeLinecap="round" />; })}
           </g>; })}
           {[0, 1, 2].map((k) => { const t0 = K.En + 2.0 + k * 0.5, u = kprog(T, t0, t0 + 0.5, kEase.sale); if (u <= 0 || T > K.F - 0.2) return null;
-            return <Tijera key={'l' + k} x={klerp(130, 380 + k * 170, u)} y={klerp(900, 1100, u)} rot={-30} s={0.7} color={KC.pink} abre={Math.abs(Math.sin(T * 10 + k))} />; })}
+            return <Tijera key={'l' + k} x={klerp(130, 380 + k * 170, u)} y={klerp(900, 1100, u)} rot={-30} s={1.1} color={KC.pink} abre={Math.abs(Math.sin(T * 10 + k))} />; })}
         </>)}
       </Escena>
       {/* 7 · baja el ácido fítico: suelta minerales */}
@@ -309,7 +309,7 @@ function TempehShot() {
               out.push(<line key={'l' + i} x1={hx} y1={hy} x2={cx + Math.cos(a) * 190} y2={cy + Math.sin(a) * 190} stroke="#cfd6e0" strokeWidth={8} opacity={1 - u} />);
               out.push(<g key={'p' + i} opacity={1 - u * 0.85}><circle cx={px} cy={py} r={36} fill={KC.orange} stroke={KC.ink} strokeWidth={4} /><text x={px} y={py + 12} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>P</text></g>);
               if (i % 2 === 0) { const [s, col] = MIN[i / 2]; const ma = a + Math.PI / 6, mr = 270, f = kprog(T, t0 + 0.2, t0 + 1.6, kEase.sale);
-                const mx = cx + Math.cos(ma) * mr + f * (i === 0 ? 0 : (i === 2 ? 120 : -120)), my = cy + Math.sin(ma) * mr + f * (380 - Math.sin(ma) * mr * 0.4);
+                const mx = cx + Math.cos(ma) * mr + f * (i === 0 ? 0 : (i === 2 ? 120 : -120)), my = cy + Math.sin(ma) * mr + f * (220 - Math.sin(ma) * mr * 0.4);
                 out.push(<g key={'m' + i}><circle cx={mx} cy={my} r={40} fill={col} stroke={KC.ink} strokeWidth={5} style={f > 0.9 ? { filter:`drop-shadow(0 0 12px ${KC.mint})` } : null} /><text x={mx} y={my + 12} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>{s}</text></g>); }
             });
             return out; })()}
@@ -324,11 +324,11 @@ function TempehShot() {
       <Escena T={T} a={K.Et} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <g transform="translate(400 1060)"><rect x={-300} y={-150} width={600} height={300} rx={40} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(400 970)"><rect x={-300} y={-150} width={600} height={300} rx={40} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={8} />
             <BloqueTempeh T={T} x={0} y={0} w={520} h={220} seed={17} />
             <rect x={-150} y={-40} width={300} height={80} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
             <text y={16} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={KC.ink}>TEMPEH</text></g>
-          <g transform={`translate(860 ${1060}) scale(${kprog(T, K.Et + 2.6, K.Et + 3.0, kEase.rebote)})`}>
+          <g transform={`translate(860 ${970}) scale(${kprog(T, K.Et + 2.6, K.Et + 3.0, kEase.rebote)})`}>
             <rect x={-70} y={-120} width={140} height={230} rx={26} fill="#ffe9f1" stroke={KC.ink} strokeWidth={7} />
             <rect x={-80} y={-150} width={160} height={46} rx={12} fill={KC.pink} stroke={KC.ink} strokeWidth={6} />
             <text y={10} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.red}>B12</text>
@@ -339,8 +339,8 @@ function TempehShot() {
       <Escena T={T} a={K.B} b={baA}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Petri x={290} y={930} r={190}><Colonia cx={0} cy={0} r={150 * kprog(T, K.B, K.B + 0.8)} seed={2} /></Petri>
-          <Petri x={790} y={930} r={190}><Colonia cx={0} cy={0} r={150 * kprog(T, K.B + 0.3, K.B + 1.1)} seed={5} />
+          <Petri x={290} y={860} r={190}><Colonia cx={0} cy={0} r={150 * kprog(T, K.B, K.B + 0.8)} seed={2} /></Petri>
+          <Petri x={790} y={860} r={190}><Colonia cx={0} cy={0} r={150 * kprog(T, K.B + 0.3, K.B + 1.1)} seed={5} />
             {Array.from({ length: 18 }, (_, i) => { const a = i * 0.9, rr = 40 + (i * 37) % 110; return <ellipse key={i} cx={Math.cos(a) * rr} cy={Math.sin(a) * rr} rx={9} ry={5} transform={`rotate(${i * 40} ${Math.cos(a) * rr} ${Math.sin(a) * rr})`} fill={KC.mint} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.B + 0.6, K.B + 1.0)} />; })}
           </Petri>
         </>)}
@@ -353,7 +353,7 @@ function TempehShot() {
           <path d="M -60 640 Q 400 700 620 880 Q 820 1040 1140 1060" stroke={KC.ink} strokeWidth={150} fill="none" strokeLinecap="round" />
           <path d="M -60 640 Q 400 700 620 880 Q 820 1040 1140 1060" stroke={FK.hifa} strokeWidth={138} fill="none" strokeLinecap="round" />
           {[[260, 860, 20], [380, 900, -30], [520, 1040, 60], [700, 1150, 10], [860, 1180, -20], [180, 980, 80], [640, 760, -40], [880, 900, 30]].map(([bx, by, r], i) =>
-            <Bacteria key={i} T={T} x={bx + Math.sin(T * 1.5 + i) * 6} y={by} rot={r} s={kprog(T, baA + 0.1 + i * 0.08, baA + 0.5 + i * 0.08, kEase.rebote) * 0.42} color={KC.mint} flagelo={false} seed={i} />)}
+            <Bacteria key={i} T={T} x={bx + Math.sin(T * 1.5 + i) * 6} y={by} rot={r} s={kprog(T, baA + 0.1 + i * 0.08, baA + 0.5 + i * 0.08, kEase.rebote) * 0.5} color={KC.mint} flagelo={false} seed={i} />)}
         </>)}
       </Escena>
       {/* 10a · blanco con poco aire; con aire, manchas de esporas */}
@@ -372,9 +372,9 @@ function TempehShot() {
         <Ambiente T={T} n={16} />
         {fsvg(<>
           <path d="M -20 1150 Q 300 1120 540 1150 T 1100 1140" stroke="#d9d2c0" strokeWidth={9} fill="none" />
-          <Esporangioforo T={T} x={300} y={1145} alto={360} r={48} crece={kprog(T, blA + 0.1, blA + 1.2)} seed={1} />
-          <Esporangioforo T={T} x={560} y={1150} alto={470} r={50} crece={kprog(T, blA + 0.4, blA + 1.5)} seed={2} />
-          <Esporangioforo T={T} x={800} y={1142} alto={300} r={44} crece={kprog(T, blA + 0.7, blA + 1.8)} seed={3} />
+          <Esporangioforo T={T} x={300} y={1145} alto={360} r={92} crece={kprog(T, blA + 0.1, blA + 1.2)} seed={1} />
+          <Esporangioforo T={T} x={560} y={1150} alto={460} r={100} crece={kprog(T, blA + 0.4, blA + 1.5)} seed={2} />
+          <Esporangioforo T={T} x={800} y={1142} alto={280} r={84} crece={kprog(T, blA + 0.7, blA + 1.8)} seed={3} />
         </>)}
       </Escena>
       {/* 11 · cierre: la misma tabla y el mismo bloque, ahora en rebanadas con los hilos marcados */}
@@ -393,8 +393,8 @@ function TempehShot() {
       <Chip T={T} at={K.G + 2.5} until={K.J - 0.2} texto="soya + hongo vivo" x={330} y={400} tam={42} borde={KC.leaf} />
       <Etq T={T} at={K.G + 1.6} until={K.J - 0.2} x={600} y={820} texto="hilos del hongo" tam={28} color={KC.ink} lado="izq" />
       <Rotulo T={T} at={K.J + 0.3} until={K.Es - 0.2} texto="TEMPEH" x={300} y={480} tam={70} />
-      <Etq T={T} at={K.J + 2.2} until={K.Es - 0.2} x={idProy(108, -8.6)[0] + 70} y={idProy(108, -8.6)[1] + 720 + 50} texto="Java" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.J + 1.0} until={K.Es - 0.2} x={idProy(111, 4)[0] + 70} y={idProy(111, 4)[1] + 720 - 70} texto="Indonesia" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.J + 2.2} until={K.Es - 0.2} x={idProy(105, -7.5)[0] + 60} y={idProy(105, -7.5)[1] + 600 + 40} texto="Java" lado="izq" tam={48} color={KC.ink} />
+      <Etq T={T} at={K.J + 1.0} until={K.Es - 0.2} x={560} y={1115} texto="Indonesia" tam={36} color={KC.ink} />
       <Chip T={T} at={K.J + 2.8} until={K.Es - 0.2} texto="muy probablemente" x={340} y={620} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Es + 0.4} until={K.Es + 1.6} x={160} y={760} texto="soya cocida" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Es + 1.9} until={K.Es + 2.8} texto="se enfría (~25 °C)" x={360} y={520} tam={34} borde={KC.ink} />
@@ -404,28 +404,28 @@ function TempehShot() {
       <Chip T={T} at={K.H + 0.8} until={K.A - 0.2} texto="25–30 °C" x={300} y={640} tam={38} borde={KC.orange} />
       <Etq T={T} at={K.H + 0.9} until={K.H + 3.0} x={SPO[0][0] + 30} y={SPO[0][1] - 80} texto="espora" tam={30} color={KC.texto} />
       <Etq T={T} at={K.H + 3.0} until={K.A - 0.2} x={80} y={900} texto="hifas = micelio" tam={34} color={FK.hifa} />
-      <Etq T={T} at={K.H + 1.0} until={K.A - 0.2} x={1040} y={1180} texto="superficie del grano" lado="izq" tam={26} color={KC.yellow} />
+      <Etq T={T} at={K.H + 1.0} until={K.A - 0.2} x={1040} y={990} texto="superficie del grano" lado="izq" tam={26} color={KC.yellow} />
       <Chip T={T} at={K.A + 0.2} until={amA - 0.2} texto="POR DENTRO · grano de soya" x={420} y={300} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.A + 1.8} until={amA - 0.2} x={1000} y={GR.cy - GR.ry + 40 + PEN / 2} texto="hasta ~¼ del grosor" lado="izq" tam={28} color={KC.yellow} />
-      <Etq T={T} at={K.A + 1.2} until={amA - 0.2} x={40} y={1060} texto="células del grano" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.9} until={amA - 0.2} x={60} y={420} texto="hifas entre granos" tam={30} color={FK.hifa} />
+      <Etq T={T} at={K.A + 1.8} until={amA - 0.2} x={680} y={565 + PEN / 2} texto="hasta ~¼ del grosor" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.2} until={amA - 0.2} x={60} y={920} texto="células del grano" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.A + 0.9} until={amA - 0.2} x={60} y={460} texto="hifas entre granos" tam={30} color={KC.ink} />
       <Chip T={T} at={amA + 0.4} until={K.P - 0.2} texto="un solo bloque" x={400} y={560} tam={46} borde={KC.ink} />
       <Chip T={T} at={K.En + 0.6} until={K.F - 0.2} texto="proteasas → proteínas" x={430} y={480} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.En + 2.2} until={K.F - 0.2} texto="lipasas → grasas" x={430} y={580} tam={36} borde={KC.pink} />
       <Etq T={T} at={K.F + 0.2} until={K.Et - 0.2} x={140} y={440} texto="ácido fítico" tam={32} color={KC.orange} />
       <Etq T={T} at={K.F + 1.6} until={K.Et - 0.2} x={1040} y={1200} texto="minerales libres" lado="izq" tam={30} color={KC.mint} />
-      <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.B - 0.2} anio="1977" quien="tempeh comprado en Toronto, Canadá" revista="Liem, Steinkraus y Cronk · Appl. Environ. Microbiol." y={560} />
-      <Rotulo T={T} at={K.B + 0.4} until={baA - 0.2} texto="solo el hongo" x={290} y={680} tam={34} />
-      <Rotulo T={T} at={K.B + 0.7} until={baA - 0.2} texto="hongo + bacteria" x={790} y={680} tam={34} />
-      <Rotulo T={T} at={K.B + 1.2} until={baA - 0.2} texto="B12: no" x={290} y={1170} tam={44} color={KC.white} fondo={KC.red} />
-      <Rotulo T={T} at={K.B + 1.6} until={baA - 0.2} texto="B12: sí ✓" x={790} y={1170} tam={44} color={KC.ink} fondo={KC.mint} />
+      <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.B - 0.2} anio="1977" quien="tempeh comprado en Toronto, Canadá" revista="Liem, Steinkraus y Cronk · Appl. Environ. Microbiol." y={500} />
+      <Rotulo T={T} at={K.B + 0.4} until={baA - 0.2} texto="solo el hongo" x={290} y={1100} tam={34} />
+      <Rotulo T={T} at={K.B + 0.7} until={baA - 0.2} texto="hongo + bacteria" x={790} y={1100} tam={34} />
+      <Rotulo T={T} at={K.B + 1.2} until={baA - 0.2} texto="B12: no" x={290} y={860} tam={44} color={KC.white} fondo={KC.red} />
+      <Rotulo T={T} at={K.B + 1.6} until={baA - 0.2} texto="B12: sí ✓" x={790} y={860} tam={44} color={KC.ink} fondo={KC.mint} />
       <Chip T={T} at={baA + 0.2} until={K.Bl - 0.2} texto="AL MICROSCOPIO · bacteria y hongo" x={460} y={300} tam={30} borde={KC.mint} mono />
       <Etq T={T} at={baA + 0.6} until={K.Bl - 0.2} x={60} y={560} texto="hifa del hongo" tam={30} color={FK.hifa} />
-      <Etq T={T} at={baA + 0.9} until={K.Bl - 0.2} x={1040} y={1220} texto="bacteria (bastón)" lado="izq" tam={30} color={KC.mint} />
+      <Etq T={T} at={baA + 0.9} until={K.Bl - 0.2} x={1040} y={1110} texto="bacteria (bastón)" lado="izq" tam={30} color={KC.mint} />
       <Rotulo T={T} at={K.Bl + 0.3} until={blA - 0.2} texto="poco aire" x={270} y={700} tam={38} />
       <Rotulo T={T} at={K.Bl + 1.2} until={blA - 0.2} texto="con esporas" x={800} y={700} tam={38} />
       <Chip T={T} at={blA + 0.3} until={K.C - 0.2} texto="AL MICROSCOPIO · esporangios" x={420} y={300} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={blA + 1.4} until={K.C - 0.2} x={40} y={560} texto="esporangio: bolsa de esporas" tam={30} color={KC.texto} />
+      <Etq T={T} at={blA + 1.4} until={K.C - 0.2} x={40} y={380} texto="esporangio: bolsa de esporas" tam={30} color={KC.texto} />
       <Chip T={T} at={blA + 2.0} until={K.C - 0.2} texto="manchas = esporas" x={400} y={460} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="soya + hongo" x={330} y={400} tam={44} borde={KC.leaf} />
 
@@ -442,7 +442,7 @@ function TempehShot() {
       <BarraEscala T={T} at={K.B} until={baA} texto="5 cm" largo={110} />
       <BarraEscala T={T} at={baA} until={K.Bl} texto="5 µm" largo={110} />
       <BarraEscala T={T} at={K.Bl} until={blA} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={blA} until={K.C} texto="100 µm" largo={100} />
+      <BarraEscala T={T} at={blA} until={K.C} texto="100 µm" largo={200} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={120} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

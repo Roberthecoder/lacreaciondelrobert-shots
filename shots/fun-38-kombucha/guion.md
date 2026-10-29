@@ -30,6 +30,24 @@
 
 Barras de escala: 10 cm (frasco), 10 µm (levaduras y bacterias), 1 nm (cadena de celulosa, solo como esquema).
 
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y de verdad la kombucha te cura?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «esa madre no es un hongo» (cuadro 0) |
+| 2 | 8.4 | 15.1 | 06_pensativo_menton | `arriba-der` | las levaduras parten el azúcar; las bacterias lo vuelven ácido |
+| 3 | 18.4 | 24.9 | 13_senalando_arriba | `arriba-der` | señala a *Komagataeibacter* hilando celulosa · papel y algodón |
+| 4 | 29.2 | 32.3 | 07_pensativo_puno | `grande` | «¿de verdad te cura?» |
+| 5 | 34.1 | 36.3 | 12_perfil_serio | `arriba-der` | «no en personas» |
+| 6 | 42.2 | 46.2 | 04_bajando_lentes | `arriba-der` | «con una bebida falsa también bajó» |
+| 7 | 49.4 | 52.8 | 11_sorprendido | `arriba-der` | «1.5 % de alcohol» |
+| 8 | 53.4 | 57.9 | 02_apuntando_camara | `arriba-der` | «una tela viva de bacterias» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 8 · **34.7 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+
 ## Fuentes (abiertas en texto completo o resumen oficial el 29 oct 2026)
 
 1. May, A. et al. (2019). Kombucha: a novel model system for cooperation and conflict in a complex multi-species microbial ecosystem. *PeerJ* 7: e7565. https://pmc.ncbi.nlm.nih.gov/articles/PMC6730531/
