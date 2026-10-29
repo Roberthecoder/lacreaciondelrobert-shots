@@ -72,7 +72,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 El hongo más reconocible de los cuentos explica bien un rasgo que sirve para identificar amanitas: el velo universal.
 En Amanita muscaria, el cuerpo joven está envuelto por completo en un velo blanco. Al expandirse el sombrero, el velo se rompe: sus restos quedan como verrugas en el sombrero y como bandas sobre el bulbo de la base. Esas verrugas se pueden lavar con lluvia fuerte; sin ellas, el hongo se ha confundido con especies comestibles como Amanita caesarea (EJCRIM, 2021).
-Es una especie ectomicorrízica (en México, registrada en bosques de pino y encino de Oaxaca) y es tóxica: contiene ácido iboténico y muscimol, termoestables. En 2018, en Minnesota, un caso por confusión requirió ventilación mecánica cuatro días, con recuperación completa (MMWR, 2019).
+Es una especie ectomicorrízica (en México, registrada en bosques de pino y encino de Oaxaca) y es tóxica: contiene ácido iboténico y muscimol, termoestables. En 2018, en Minnesota, un caso por confusión requirió ventilación mecánica cuatro días y el paciente se recuperó (MMWR, 2019).
 Por qué importa: los rasgos "de cuento" no siempre están, y cocinar no garantiza seguridad. La identificación debe hacerla un experto.
 ¿En tu región se recolectan hongos silvestres?
 Shot Fungi Mati #39 · La Creación del Robert

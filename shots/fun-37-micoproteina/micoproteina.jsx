@@ -278,8 +278,8 @@ function MicoproteinaShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           {T < K.M + 0.2 && <g opacity={1 - kprog(T, K.M - 0.2, K.M + 0.2)}>
-            {Array.from({ length: 20 }, (_, i) => { const grupo = i < 10 ? 0 : 1, j = i % 10; const on = kprog(T, K.E + 3.0 + i * 0.08, K.E + 3.3 + i * 0.08, kEase.rebote);
-              return <Pesista key={i} x={(grupo ? 640 : 110) + (j % 5) * 80} y={840 + Math.floor(j / 5) * 150} s={0.82} on={on} color={grupo ? MI.leche : KC.gold2} />; })}
+            {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.E + 3.0 + i * 0.08, K.E + 3.3 + i * 0.08, kEase.rebote);
+              return <Pesista key={i} x={110 + (i % 10) * 90} y={840 + Math.floor(i / 10) * 150} s={0.82} on={on} color="#ffffff" />; })}
             
           </g>}
           {T > K.M - 0.2 && <g opacity={kprog(T, K.M - 0.2, K.M + 0.3)}>
@@ -335,8 +335,7 @@ function MicoproteinaShot() {
       <Etq T={T} at={K.F + 1.9} until={K.E - 0.3} x={40} y={1052} texto="fibras de músculo (esquema)" tam={30} color={MI.musc} />
       <Etq T={T} at={K.F + 2.8} until={K.E - 0.3} x={1040} y={1052} lado="izq" texto="clara de huevo" tam={30} color="#ffffff" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2020" quien="Universidad de Exeter, Reino Unido · 20 hombres jóvenes" revista="Am J Clin Nutr, 2020" y={560} />
-      <Etq T={T} at={K.E + 3.4} until={K.M - 0.3} x={110} y={1060} texto="micoproteína" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.8} until={K.M - 0.3} x={880} y={1060} lado="izq" texto="leche" tam={28} color={KC.ink} />
+      <Letrero T={T} at={K.E + 3.4} until={K.M - 0.3} x={60} y={1062} ancho={960} texto="20 pesistas · cada uno: micoproteína o leche" tam={30} color={KC.ink} />
       <Chip T={T} at={K.E + 4.6} until={K.Q - 0.3} texto="una sola toma · igual leucina, más proteína en la de hongo" x={540} y={1160} tam={25} borde={KC.ink} />
       <Letrero T={T} at={K.M + 0.2} until={K.Q - 0.3} x={60} y={560} ancho={600} align="left" texto="Aumento en la fabricación de proteína del músculo" tam={36} color={KC.ink} />
       <Letrero T={T} at={K.M + 1.0} until={K.Q - 0.3} x={265} y={1068} ancho={260} texto="micoproteína" tam={28} color={KC.ink} />
@@ -366,10 +365,10 @@ function MicoproteinaShot() {
       <Subtitulo T={T} idx={4} at={K.D + 0.1} until={K.Ca - 0.1} texto="Duplica su masa en *unas 4 horas.*" />
       <Subtitulo T={T} idx={5} at={K.Ca + 0.1} until={K.P - 0.1} texto="Menos ARN: *seguro en las pruebas.*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Hi - 0.1} texto="¿Cómo se siente *como carne?*" />
-      <Subtitulo T={T} idx={7} at={K.Hi + 0.1} until={K.F - 0.1} texto="Hifas de *4 milésimas de mm.*" />
+      <Subtitulo T={T} idx={7} at={K.Hi + 0.1} until={K.F - 0.1} texto="Hifas de *unas 4 milésimas de mm.*" />
       <Subtitulo T={T} idx={8} at={K.F + 0.1} until={K.E - 0.1} texto="Fibras parecidas *a las del músculo.*" />
       <Subtitulo T={T} idx={9} at={K.E + 0.1} until={K.M - 0.1} texto="2020, Exeter: *20 hombres jóvenes.*" />
-      <Subtitulo T={T} idx={10} at={K.M + 0.1} until={K.Q - 0.1} texto="Su músculo: *más que con leche.*" />
+      <Subtitulo T={T} idx={10} at={K.M + 0.1} until={K.Q - 0.1} texto="En ese estudio: *más que con leche.*" />
       <Subtitulo T={T} idx={11} at={K.Q + 0.1} until={K.C - 0.1} texto="Un tercio de su fibra: *quitina.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Un hongo del suelo, *hilo por hilo.*" />
 
