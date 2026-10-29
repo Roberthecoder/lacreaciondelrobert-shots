@@ -313,7 +313,7 @@ function Detergente() {
       <Chip T={T} at={K.Mi + 0.8} until={K.Pt - 0.3} texto="proteína · almidón · grasa" y={1500} tam={40} borde={KC.cyan} />
       <Chip T={T} at={K.Pt + 0.2} until={K.Pr - 0.3} texto="esquemático · no a escala" x={330} y={420} tam={28} borde="#9aa3b5" mono />
       <Etiqueta T={T} at={K.Pt + 0.3} until={K.Pr - 0.3} x={1040} y={1140} texto="fibra de algodón" lado="izq" tam={30} color="#cfe0f5" />
-      <Etiqueta T={T} at={K.Pt + 0.5} until={K.Am - 0.2} x={60} y={1010} texto="proteasa" tam={34} color={ENZ_P} />
+      <Chip T={T} at={K.Pt + 0.5} until={K.Am - 0.2} texto="proteasa → proteína" y={1500} tam={40} borde={ENZ_P} />
       <Etiqueta T={T} at={K.Am + 0.3} until={K.Pr - 0.3} x={60} y={700} texto="amilasa → almidón" tam={32} color={ENZ_A} />
       <Etiqueta T={T} at={K.Am + 1.5} until={K.Pr - 0.3} x={1040} y={980} texto="lipasa → grasa" lado="izq" tam={32} color={ENZ_L} />
       <Chip T={T} at={K.Pr + 2.3} until={K.Fr - 0.3} texto="¿agua fría?" y={1500} tam={52} borde="#bfe8ff" />
@@ -323,7 +323,7 @@ function Detergente() {
       <Chip T={T} at={K.Ta + 1.6} until={K.Bi - 0.3} texto="las bacterias sueltan la enzima al caldo" y={1500} tam={32} borde={KC.mint} />
       <TarjetaEstudio T={T} at={K.Bi + 0.2} until={K.Es - 0.3} anio="1963" quien="Bio-tex · Alcalase" revista="proteasa de bacteria en un polvo para remojar" x={560} y={620} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.8} anio="1969" quien="Inglaterra · The Lancet" revista="obreros de fábrica · polvo de enzima" x={620} y={430} />
-      <Chip T={T} at={K.Es + 3.2} until={K.Gr - 0.3} texto="polvo de enzima → enfermedad pulmonar" x={540} y={470} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Es + 3.2} until={K.Gr - 0.3} texto="polvo de enzima → enfermedad pulmonar" x={680} y={470} tam={28} borde={KC.red} />
       <Chip T={T} at={K.Gr + 0.9} until={K.Pa - 0.3} texto="casi no sueltan polvo" y={440} tam={44} borde={KC.gold} />
       <Etiqueta T={T} at={K.Gr + 1.4} until={K.Pa - 0.3} x={780} y={660} texto="cubierta" tam={32} color={KC.ink} />
       <Etiqueta T={T} at={K.Gr + 1.8} until={K.Pa - 0.3} x={780} y={860} texto="enzima" tam={32} color={KC.ink} />
