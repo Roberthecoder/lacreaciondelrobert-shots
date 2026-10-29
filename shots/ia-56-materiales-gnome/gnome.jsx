@@ -293,7 +293,7 @@ function Gnome() {
               <text x={80} y={152} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>conocido</text>
             </g>; })}
           {Array.from({ length: 9 }, (_, i) => { const t0 = K.Ct + 5.7 + i * 0.12, e = kprog(T, t0, t0 + 0.4, kEase.rebote); if (e <= 0) return null;
-            const x = 300 + (i % 3) * 150 + (Math.floor(i / 3) % 2) * 75, y = 1110 - Math.floor(i / 3) * 110;
+            const x = 300 + (i % 3) * 150 + (Math.floor(i / 3) % 2) * 75, y = 1080 - Math.floor(i / 3) * 105;
             return <g key={i} transform={`translate(${x} ${y}) scale(${e})`}><Cristal x={0} y={0} s={54} color={'#9be564'} /></g>; })}
           {T > K.Ct + 6.3 && <g transform={`scale(${kprog(T, K.Ct + 6.3, K.Ct + 6.7, kEase.rebote)})`} style={{ transformOrigin:'820px 900px' }}><Trebol x={820} y={900} r={80} /></g>}
         </>)}

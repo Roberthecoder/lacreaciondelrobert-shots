@@ -126,9 +126,9 @@ function Examen({ x, y, s = 1, o = 1 }) {
   </g>;
 }
 // Nota adhesiva que cae y se pega.
-function Nota({ T, at, texto, x, y, rot = -3, color = KC.yellow, ancho = 640 }) {
-  if (T < at) return null;
-  const e = kprog(T, at, at + 0.45, kEase.rebote);
+function Nota({ T, at, until, texto, x, y, rot = -3, color = KC.yellow, ancho = 640 }) {
+  if (T < at || (until != null && T > until + 0.4)) return null;
+  const e = kprog(T, at, at + 0.45, kEase.rebote) * (until != null ? 1 - kprog(T, until, until + 0.4) : 1);
   return <div style={{ position:'absolute', left:x, top:y, width:ancho, zIndex:40, transform:`translate(-50%,-50%) translateY(${(1 - e) * -260}px) rotate(${rot * e + (1 - e) * 14}deg)`, opacity:Math.min(1, e * 2),
     background:color, border:`6px solid ${KC.ink}`, borderRadius:10, padding:'24px 32px', boxShadow:`10px 12px 0 ${KC.ink}`, font:`900 44px/1.15 ${KF.texto}`, color:KC.ink }}>{texto}</div>;
 }
@@ -163,7 +163,7 @@ function Tutor() {
       </Escena>
       <Chip T={T} at={K.G + 4.7} until={K.L - 0.2} texto="6 semanas =" x={800} y={430} tam={44} borde={KC.ink} />
       <NumeroGigante T={T} at={K.G + 5.0} until={K.L - 0.2} valor={2} dur={0.6} prefijo="≈" sufijo=" años*" etiqueta="hasta" x={800} y={650} tam={130} color={KC.mint} />
-      <Chip T={T} at={K.G + 5.6} until={K.L - 0.2} texto="*equivalencia estimada · investigadores del Banco Mundial" x={540} y={1130} tam={27} borde={KC.ink} />
+      <Chip T={T} at={K.G + 5.6} until={K.L - 0.2} texto="*equivalencia estimada · investigadores del Banco Mundial" x={540} y={1070} tam={27} borde={KC.ink} />
 
       {/* 1 · lugar */}
       <Escena T={T} a={K.L} b={K.S}>
@@ -182,19 +182,19 @@ function Tutor() {
       <Escena T={T} a={K.S} b={K.M}>
         <FondoLunares color={KC.cyan} />
         {svgT(<>
-          <Alumno x={480} y={1010} s={1} seed={1} T={T} />
-          <Alumno x={720} y={1010} s={1} seed={2} chica T={T} />
+          <Alumno x={480} y={1060} s={0.9} seed={1} T={T} />
+          <Alumno x={720} y={1060} s={0.9} seed={2} chica T={T} />
         </>, 25)}
       </Escena>
       {T > K.S - 0.45 && T < K.M + 0.45 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.S - 0.45, K.S + 0.05) * (1 - kprog(T, K.M - 0.05, K.M + 0.45)) }}>
-        <Monitor T={T} x={600} y={690} mensajes={[
+        <Monitor T={T} x={600} y={750} mensajes={[
           { at: K.S + 0.8, yo: true, texto: 'Ayúdame a practicar el pasado en inglés' },
           { at: K.S + 2.2, yo: false, texto: '¡Claro! Completa: «Yesterday I ___ (go) to school».' },
           { at: K.S + 3.8, yo: true, texto: 'went' }]} />
       </div>}
       <Chip T={T} at={K.S + 0.3} until={K.M - 0.2} texto="hasta 12 sesiones × 90 min" x={600} y={410} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.S + 2.6} until={K.M - 0.2} texto="en parejas · 2 por semana" x={600} y={1150} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.S + 4.0} until={K.M - 0.2} texto="diálogo ilustrativo" x={880} y={940} tam={24} borde={KC.texto} />
+      <Chip T={T} at={K.S + 2.6} until={K.M - 0.2} texto="en parejas · 2 por semana" x={600} y={475} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.S + 4.0} until={K.M - 0.2} texto="diálogo ilustrativo" x={800} y={985} tam={24} borde={KC.texto} />
 
       {/* 3 · los maestros guían */}
       <Escena T={T} a={K.M} b={K.So}>
@@ -210,7 +210,7 @@ function Tutor() {
           <Maestra x={klerp(200, 860, kprog(T, K.M + 1.0, K.So + 0.2, kEase.suave))} y={790} s={0.62} T={T} camina={T > K.M + 1 ? 1 : 0} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.M + 2.4} until={K.So - 0.2} texto="la maestra guía, no da la clase" x={540} y={1150} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.M + 2.4} until={K.So - 0.2} texto="la maestra guía, no da la clase" x={600} y={300} tam={36} borde={KC.ink} />
 
       {/* 4 · sorteo y mismo examen */}
       <Escena T={T} a={K.So} b={K.P}>
@@ -249,7 +249,7 @@ function Tutor() {
             <line x1={90} y1={900} x2={90 + 900 * kprog(T, K.R + 2.8, K.R + 3.5, kEase.sale)} y2={900} stroke={KC.gold} strokeWidth={12} strokeLinecap="round" />
             <text x={980} y={880} textAnchor="end" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>el piloto</text>
           </g>}
-          {T > K.R + 3.4 && <text x={90 + 4 * 88 + 32} y={1170} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.R + 3.4, K.R + 3.8)}>8 de 10 quedan abajo</text>}
+          {T > K.R + 3.4 && <text x={380} y={870} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.R + 3.4, K.R + 3.8)}>8 de 10 quedan abajo</text>}
         </>)}
       </Escena>
       <NumeroGigante T={T} at={K.R + 0.2} until={K.E - 0.2} valor={0.31} dec={2} prefijo="+" sufijo=" σ" etiqueta="" x={420} y={470} tam={170} color={KC.gold2} />
@@ -260,7 +260,7 @@ function Tutor() {
       <Escena T={T} a={K.E} b={K.Pe}>
         <FondoLunares color={KC.yellow} />
       </Escena>
-      <MitoTachado T={T} at={K.E + 0.2} tacharEn={K.E + 1.2} until={K.Pe - 0.2} texto="«aprendieron 2 años de temario»" y={430} tam={40} />
+      <MitoTachado T={T} at={K.E + 0.2} tacharEn={K.E + 1.2} until={K.E + 3.0} texto="«aprendieron 2 años de temario»" y={430} tam={40} />
       <BarraTiempo T={T} at={K.E + 2.0} x={90} y={570} ancho={70} color={KC.gold2} etiqueta="piloto con tutor de IA" valor="6 semanas" />
       <BarraTiempo T={T} at={K.E + 3.2} x={90} y={770} ancho={760} color={KC.mint} etiqueta="mejora equivalente a…" valor="" dur={1.6} />
       <Chip T={T} at={K.E + 4.6} until={K.Pe - 0.2} texto="1.5 a 2 años de escuela normal en Nigeria" x={540} y={990} tam={34} borde={KC.ink} />
@@ -270,9 +270,9 @@ function Tutor() {
       <Escena T={T} a={K.Pe} b={K.Ch}>
         <FondoLunares color={KC.cyan} />
       </Escena>
-      <Nota T={T} at={K.Pe + 0.9} texto="Piloto: 1 ciudad, 6 semanas" x={420} y={500} rot={-3} color={KC.yellow} ancho={620} />
-      <Nota T={T} at={K.Pe + 2.0} texto="El otro grupo: sin horas extra" x={440} y={730} rot={2} color={KC.pink} ancho={660} />
-      <Nota T={T} at={K.Pe + 3.4} texto="¿Dura? Aún no se sabe" x={420} y={960} rot={-2} color={KC.mint} ancho={600} />
+      <Nota T={T} at={K.Pe + 0.9} texto="Piloto: 1 ciudad, 6 semanas" until={K.Ch - 0.2} x={400} y={500} rot={-3} color={KC.yellow} ancho={580} />
+      <Nota T={T} at={K.Pe + 2.0} texto="El otro grupo: sin horas extra" until={K.Ch - 0.2} x={420} y={730} rot={2} color={KC.pink} ancho={600} />
+      <Nota T={T} at={K.Pe + 3.4} texto="¿Dura? Aún no se sabe" until={K.Ch - 0.2} x={400} y={960} rot={-2} color={KC.mint} ancho={580} />
 
       {/* 9 · las chicas */}
       <Escena T={T} a={K.Ch} b={K.C}>
@@ -294,12 +294,12 @@ function Tutor() {
         <FondoLunares color={KC.yellow} />
         {svgT(<>
           <Calendario x={330} y={720} s={1} tachados={30} />
-          <g opacity={kprog(T, K.C + 1.6, K.C + 2.2)}><Robotito x={700} y={1020} s={0.6} T={T} cara="feliz" /></g>
-          <g opacity={kprog(T, K.C + 2.4, K.C + 3.0)}><Maestra x={900} y={930} s={0.55} T={T} /></g>
+          <g opacity={kprog(T, K.C + 1.6, K.C + 2.2)}><Robotito x={750} y={920} s={0.7} T={T} cara="feliz" /></g>
+          <g opacity={kprog(T, K.C + 2.4, K.C + 3.0)}><Maestra x={950} y={850} s={0.6} T={T} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="hasta 2 años*" x={330} y={1100} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="IA + maestro" x={800} y={1170} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="hasta 2 años*" x={330} y={1060} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="IA + maestro" x={830} y={1100} tam={40} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="6 semanas de tardes… *¿como 2 años de escuela?*" />
@@ -321,7 +321,7 @@ function Tutor() {
         [CUES.Sorteo + 0.4, CUES.Pregunta - 0.15, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Pregunta + 0.05, CUES.Resultado + 1.0, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Resultado + 3.6, CUES.Equivalencia - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
-        [CUES.Equivalencia + 0.4, CUES.Equivalencia + 4.4, 'avatar_10_serio_molesto', 'arriba-der'],
+        [CUES.Equivalencia + 3.2, CUES.Peros - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Peros + 0.3, CUES.Chicas - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Chicas + 0.3, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_13_senalando_arriba', 'arriba-der']]} />

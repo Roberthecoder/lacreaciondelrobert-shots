@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Gato Google base narrada.dc.html",
+  "salida": "Shot Gato Google narrado.dc.html",
+  "nota": "Shot IA #52. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta cara borrosa no es un fantasma: es un gato. Lo dibujó una computadora a la que nadie le dijo qué es un gato."
+    },
+    {
+      "escena": "Videos",
+      "texto": "En un estudio de 2012, Google le mostró diez millones de imágenes de YouTube, sin decirle qué mostraban."
+    },
+    {
+      "escena": "Maquina",
+      "texto": "Era una red de mil millones de conexiones, en mil computadoras, durante tres días."
+    },
+    {
+      "escena": "Neurona",
+      "texto": "Al final, una de sus neuronas se encendía con caras de gato."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo aprende algo que nadie le explicó?"
+    },
+    {
+      "escena": "Mecanismo",
+      "texto": "Su tarea: resumir cada imagen y redibujarla. Le convenía guardar lo más repetido, y en YouTube hay muchos gatos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo presentaron Quoc Le, Andrew Ng, Jeff Dean y su equipo en Escocia."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Otras neuronas aprendieron solas caras humanas y cuerpos."
+    },
+    {
+      "escena": "Objetos",
+      "texto": "Luego le dieron fotos con nombre: con veintidós mil tipos de objetos, acertó setenta por ciento más que el récord previo, aunque solo dieciséis de cada cien."
+    },
+    {
+      "escena": "Cerebro",
+      "texto": "Y era chiquita: según Google, tu cerebro tiene unas cien mil veces más conexiones."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esta cara borrosa es un gato que nadie le enseñó: salió de nuestros videos."
+    }
+  ]
+}

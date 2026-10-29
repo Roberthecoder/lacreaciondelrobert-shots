@@ -41,3 +41,12 @@
    En pantalla, agregar una etiqueta chica "con ajuste usando fotos etiquetadas" junto al chip "+70 % relativo".
 
 Sin ❌. El resto queda verificado contra las fuentes originales.
+
+## Re-verificación (29 oct 2026, coordinador)
+- «En un estudio de 2012, Google le mostró…» y chip «estudio publicado en 2012» ✅
+- «Luego le dieron fotos con nombre: con veintidós mil tipos de objetos, acertó setenta por ciento más que el récord previo, aunque solo dieciséis de cada cien.» ("15.8% accuracy… a 70% relative improvement over the previous state-of-the-art"); etiqueta «con ajuste usando fotos etiquetadas» ✅
+- «Comparación muy aproximada (Google, 2012)» junto a «≈ 100,000 ×» ✅
+- Recortes de largo y cierre sin datos nuevos ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

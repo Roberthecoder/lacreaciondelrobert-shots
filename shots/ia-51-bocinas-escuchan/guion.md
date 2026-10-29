@@ -59,6 +59,7 @@ apariciones 11 · ≈ 41.9 s (+ cierre 3.5 s) · poses distintas 7 (nunca la mis
    > "The duration of most misactivations is short, but, for some devices, 10% of the misactivations are 10 seconds long or more."
    > §4.4: "in the much less common 90th percentile case (P90), we measured a duration of 10 s in the case of Homepod, followed by 9 s in the case of Google Home Mini, and 8 s in the case of Echo Dot 2nd gen."
    > Tabla 4 (ejemplos de subtítulos que activaron): Hey Siri → "I'm sorry"; Alexa → "I care about", "I messed up", "I got something".
+   > "Misactivations are often non-deterministic, i.e., a smart speaker does not always misactivate when exposed to the same input."
    > "We did not find any evidence of undocumented wake words." / "we did not find any clear evidence of consistent undocumented wake words that are malicious or completely unrelated to the real ones."
    > §4.5: "the show we have observed the most misactivations per word is Narcos (6.21 misactivations per 10,000 words)" … "Narcos, which tops the list in terms of misactivations per amount of dialogue, has many misactivations triggered by Spanish dialogue."
    > §5: "User mitigations. One approach is to use hardware features (e.g., using the 'mic off' toggle) or other devices to prevent smart speakers from activating at all."
