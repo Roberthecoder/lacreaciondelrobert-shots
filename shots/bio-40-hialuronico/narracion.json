@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Hialuronico base narrada.dc.html",
+  "salida": "Shot Hialuronico narrado.dc.html",
+  "nota": "Shot Biotecnológico #40. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese suero no salió de un gallo: casi seguro lo fabricó una bacteria."
+    },
+    {
+      "escena": "Tuyo",
+      "texto": "Es ácido hialurónico, y tú ya lo traes: en la piel, las articulaciones y el ojo."
+    },
+    {
+      "escena": "Gallo",
+      "texto": "Por años se sacó de crestas de gallo."
+    },
+    {
+      "escena": "Tanque",
+      "texto": "Hoy la mayor parte sale de tanques llenos de bacterias."
+    },
+    {
+      "escena": "Enzima",
+      "texto": "Por dentro, una sola enzima en la membrana une dos azúcares, uno y otro, sin parar."
+    },
+    {
+      "escena": "Hilo",
+      "texto": "La cadena sale de la célula como un hilo larguísimo."
+    },
+    {
+      "escena": "Agua",
+      "texto": "Ese hilo se enreda y atrapa agua: por eso se usa para hidratar."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué querría una bacteria algo que hay en tu piel?"
+    },
+    {
+      "escena": "Capa",
+      "texto": "Para vestirse: a algunos estreptococos esa capa los protege de tus defensas."
+    },
+    {
+      "escena": "Riesgo",
+      "texto": "Pero el más usado en las fábricas, Streptococcus zooepidemicus, puede enfermar."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2005, en California, pasaron el gen de la enzima a Bacillus subtilis, que no enferma, y salió hialurónico de buena calidad."
+    },
+    {
+      "escena": "Crema",
+      "texto": "Y ojo: en 2015, en Francia, vieron que el hialurónico grande no cruza la capa de afuera de la piel."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese suero no es de gallo: es el abrigo de una bacteria."
+    }
+  ]
+}
