@@ -81,7 +81,7 @@ function Helice({ T, x, y, largo = 70, rot = 0, s = 1, o = 1 }) {
   </g>;
 }
 // Red de gelatina: nodos en cuadrícula; cada borde es una cadena. forma 0..1 (cadenas sueltas → red); cortes: tiempos de corte por borde.
-const RED_X0 = 150, RED_Y0 = 730, RED_DX = 195, RED_DY = 155, RED_C = 5, RED_F = 4;
+const RED_X0 = 150, RED_Y0 = 730, RED_DX = 195, RED_DY = 145, RED_C = 5, RED_F = 4;
 const RED_NODOS = []; for (let f = 0; f < RED_F; f++) for (let c = 0; c < RED_C; c++) RED_NODOS.push([RED_X0 + c * RED_DX, RED_Y0 + f * RED_DY]);
 const RED_BORDES = []; for (let f = 0; f < RED_F; f++) for (let c = 0; c < RED_C; c++) { const i = f * RED_C + c; if (c < RED_C - 1) RED_BORDES.push([i, i + 1]); if (f < RED_F - 1) RED_BORDES.push([i, i + RED_C]); }
 const RED_RND = (() => { const R = krng(21); return RED_BORDES.map(() => [[100 + R() * 880, 680 + R() * 560], [100 + R() * 880, 680 + R() * 560], R() * 6]); })();
@@ -124,7 +124,7 @@ function TermoG({ x, y, s = 1, v = 0.5, texto }) {
     <rect x={-10} y={-290 + 270 * (1 - v)} width={20} height={270 * v + 10} rx={10} fill={KC.red} />
     <circle cx={0} cy={20} r={38} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
     {[0.2, 0.4, 0.6, 0.8].map((m) => <line key={m} x1={22} x2={42} y1={-20 - 270 * m} y2={-20 - 270 * m} stroke={KC.ink} strokeWidth={4} />)}
-    {texto && <text x={60} y={-290 + 270 * (1 - v) + 14} style={{ font:`700 40px ${KF.mono}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={2}>{texto}</text>}
+    {texto && <text x={60} y={-290 + 270 * (1 - v) + 14} style={{ font:`700 56px ${KF.mono}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={2}>{texto}</text>}
   </g>;
 }
 // Lata de piña.
@@ -238,7 +238,7 @@ function Gelatina10() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <RedGelatina T={T} forma={forma} agua={kprog(T, K.Rd + 4.0, K.Rd + 4.8)} />
-          <TermoG x={120} y={1680} s={0.6} v={klerp(0.8, 0.2, kprog(T, K.Rd + 0.3, K.Rd + 3.5))} texto={`${Math.round(klerp(60, 10, kprog(T, K.Rd + 0.3, K.Rd + 3.5)))} °C`} />
+          <TermoG x={110} y={1700} s={0.8} v={klerp(0.8, 0.2, kprog(T, K.Rd + 0.3, K.Rd + 3.5))} texto={`${Math.round(klerp(60, 10, kprog(T, K.Rd + 0.3, K.Rd + 3.5)))} °C`} />
         </SvgCapa>
       </Escena>
       {/* 3 · la piña fresca trae bromelina (macro) */}
