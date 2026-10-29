@@ -40,4 +40,6 @@ Notas del verificador:
 ## Correcciones aplicadas (29 oct 2026)
 Se aplicaron tal cual las 3 propuestas del verificador: «como un centavo de dólar», «planearon pintarla», «con los años se pone verde igual». Ninguna agrega datos nuevos.
 
+Recortes de estilo sin cambiar datos: «Y el cobre de tu casa» → «El cobre de tu casa»; «Así que ese verde» → «Ese verde»; «¿Cuánto tardó en cubrirla toda?» → «¿Cuánto tardó en cubrirla?».
+
 VEREDICTO: APROBADO

@@ -153,7 +153,7 @@ function HieloSeco() {
   // nube: moléculas de agua que se juntan
   const R2 = krng(31);
   const centros = [[450, 960], [690, 1010], [570, 830]];
-  const aguas = Array.from({ length: 15 }, (_, i) => [300 + R2() * 520, 700 + R2() * 380, R2() * 6, centros[i % 3]]);
+  const aguas = Array.from({ length: 24 }, (_, i) => [300 + R2() * 520, 700 + R2() * 380, R2() * 6, centros[i % 3]]);
   const junta = kprog(T, K.Nu + 0.8, K.Nu + 3.0, kEase.suave), gota = kprog(T, K.Nu + 2.6, K.Nu + 3.3, kEase.rebote);
   const aleja = kprog(T, K.Nu + 4.0, K.Nu + 5.2, kEase.suave);
   // riesgo
@@ -222,14 +222,20 @@ function HieloSeco() {
       {/* 4 · nube: el vapor de agua del aire se condensa en gotitas */}
       <Escena T={T} a={K.Nu} b={K.Pr}>
         <div style={{ position:'absolute', inset:0, background:'#14294a' }}></div>
+        <Ambiente T={T} n={50} seed={9} color="rgba(191,232,255,.35)" vel={-40} o={1 - aleja} />
         <SvgCapa>
           <g opacity={1 - aleja}>
             <rect x={0} y={1080} width={KW} height={200} fill="rgba(120,200,255,.18)" />
+            {Array.from({ length: 7 }, (_, i) => { const u = (T * 0.5 + i / 7) % 1; return <path key={'f' + i} d={`M ${120 + i * 140} ${1090 - u * 260} q 10 -18 0 -36`} stroke="#8fd3ff" strokeWidth={5} fill="none" opacity={(1 - u) * 0.8} strokeLinecap="round" />; })}
             {[180, 420, 660, 900].map((x, i) => <Mol key={i} tipo="co2" x={x + Math.sin(T * 2 + i) * 14} y={1150} s={0.5} rot={T * 30 + i * 40} o={0.35} />)}
             {aguas.map(([x, y, ph, [cx, cy]], i) => {
               const ang = i * 2.39, px = klerp(x + Math.sin(T * 1.6 + ph) * 40, cx + Math.cos(ang) * 46, junta), py = klerp(y + Math.cos(T * 1.3 + ph) * 40, cy + Math.sin(ang) * 46, junta);
               return <Mol key={i} tipo="agua" x={px} y={py} s={0.75} rot={T * (60 - junta * 55) + ph * 50} o={1 - gota * 0.75} />;
             })}
+            {Array.from({ length: 16 }, (_, i) => { const R3 = krng(70 + i), gx = 200 + R3() * 680, gy = 720 + R3() * 380, t0 = K.Nu + 1.0 + i * 0.3, g = kprog(T, t0, t0 + 0.5, kEase.rebote), d = Math.max(0, T - t0);
+              return g > 0 ? <g key={'g' + i} transform={`translate(${gx + Math.sin(T * 2 + i) * 8} ${gy + d * 18})`}>
+                <circle r={60 * (1 - g) + 6} fill="none" stroke="#bfe8ff" strokeWidth={3} opacity={1 - g} />
+                <circle r={14 + 10 * g} fill="rgba(255,255,255,.9)" stroke="#bfe8ff" strokeWidth={3} /><circle cx={-5} cy={-6} r={4} fill="#fff" /></g> : null; })}
             {centros.map(([cx, cy], i) => <g key={i} opacity={gota}><circle cx={cx} cy={cy} r={70 * gota} fill="rgba(255,255,255,.88)" stroke="#bfe8ff" strokeWidth={5} /><circle cx={cx - 22} cy={cy - 24} r={14 * gota} fill="#fff" /></g>)}
           </g>
           {aleja > 0 && <g opacity={aleja}>
@@ -339,10 +345,12 @@ function HieloSeco() {
       <MitoTachado T={T} at={K.Su + 1.0} tacharEn={K.Su + 2.0} until={K.In - 0.2} texto="líquido" x={540} y={470} tam={48} />
       <Chip T={T} at={K.In + 0.3} until={K.Nu - 0.2} texto="sin color" x={340} y={1500} tam={44} borde={KC.mint} />
       <Chip T={T} at={K.In + 0.9} until={K.Nu - 0.2} texto="sin olor" x={740} y={1500} tam={44} borde={KC.mint} />
-      <Etq T={T} at={K.Nu + 0.4} until={K.Nu + 2.6} x={300} y={1230 - 600} texto="vapor de agua (H₂O)" color="#bfe8ff" tam={34} />
-      <Chip T={T} at={K.Nu + 2.8} until={K.Nu + 3.9} texto="se condensan: gotitas" x={540} y={1500} tam={44} borde="#bfe8ff" />
+      <Etq T={T} at={K.Nu + 1.1} until={K.Nu + 3.0} x={300} y={630} texto="vapor de agua del aire (H₂O)" color="#bfe8ff" tam={32} />
+      <Etq T={T} at={K.Nu + 0.8} until={K.Nu + 3.9} x={60} y={1050} texto="frío del CO₂" color="#8fd3ff" tam={30} />
+      <Etq T={T} at={K.Nu + 3.0} until={K.Nu + 3.9} x={640} y={1010} texto="gotita" color={KC.texto} tam={34} />
+      <Chip T={T} at={K.Nu + 0.5} until={K.Nu + 3.9} texto="vapor del aire → gotitas" x={540} y={1500} tam={44} borde="#bfe8ff" />
       <Chip T={T} at={K.Nu + 4.4} until={K.Pr - 0.2} texto="millones de gotitas = niebla" x={540} y={1500} tam={40} borde="#bfe8ff" />
-      <Chip T={T} at={K.Ri + 0.3} until={K.Ri + 2.4} texto="casi medio kilo → 250 litros de gas" x={540} y={1500} tam={36} borde={KC.blue} />
+      <Chip T={T} at={K.Ri + 1.1} until={K.Ri + 2.4} texto="casi medio kilo → 250 litros de gas" x={540} y={1500} tam={36} borde={KC.blue} />
       <Chip T={T} at={K.Ri + 2.9} until={K.Ri + 5.0} texto="lugar cerrado: desplaza el oxígeno" x={540} y={1500} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Ri + 5.5} until={K.Es - 0.3} texto="en la piel: quemadura por frío" x={540} y={1500} tam={38} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2004" quien="Mobile, Alabama · EUA" revista="CDC · MMWR 53(50)" x={540} y={600} />
@@ -375,7 +383,7 @@ function HieloSeco() {
         [CUES.Que + 1.0, CUES.Sublima - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Invisible + 0.2, CUES.Nube + 1.0, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Nube + 3.0, CUES.Pregunta - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
-        [CUES.Pregunta + 0.05, CUES.Riesgo + 1.2, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Riesgo + 0.5, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Riesgo + 3.0, CUES.Estudio - 0.3, 'avatar_10_serio_molesto', 'arriba-der'],
         [CUES.Estudio + 3.5, CUES.Thilorier - 0.3, 'avatar_11_sorprendido', 'izq-alto'],
         [CUES.Thilorier + 1.0, CUES.Regla - 0.3, 'avatar_13_senalando_arriba', 'arriba-der'],

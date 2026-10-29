@@ -4,24 +4,24 @@
 - **Formato:** N1 "Por dentro" (la axila con la barra de desodorante → el poro, el conducto del sudor y las bacterias en fondo noche → la misma axila, ahora "leída" por dentro) con un toque de N5 "El experimento" (York, 2020: el gen que se pasa a otra bacteria).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese olor de tu axila no es tu sudor: son bacterias comiéndoselo."
 - **Seguridad / salud:** no se da consejo médico; lo del aluminio y el cáncer de mama se dice solo como lo dice la American Cancer Society (evidencia limitada).
-- **Duración:** voz 947 caracteres / ≈ 160 palabras (≈ 58.0 s) + cierre 3.5 s → **≈ 61.5 s** (`estimar-escenas.mjs --outro 3.5`).
+- **Duración:** voz 941 caracteres / ≈ 160 palabras (≈ 57.7 s) + cierre 3.5 s → **≈ 61.2 s** (`estimar-escenas.mjs --outro 3.5`).
 - **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
 
 ## Versión narrada
 
-Tiempos aproximados de la estimación (s): Gancho 0–4 · Sudor 4–9.2 · Bacterias 9.2–14.2 · Olor 14.2–18.3 · Desodorante 18.3–23.4 · Antitranspirante 23.4–29.2 · Pregunta 29.2–31.8 · Estudio 31.8–38.9 · Prueba 38.9–43.2 · Curioso 43.2–47.6 · Aluminio 47.6–53.5 · Cierre 53.5–58.0 · Outro 58.0–61.5.
+Tiempos aproximados de la estimación (s): Gancho 0–4 · Sudor 4–9.2 · Bacterias 9.2–14.2 · Olor 14.2–18.1 · Desodorante 18.1–23.2 · Antitranspirante 23.2–29.0 · Pregunta 29.0–31.6 · Estudio 31.6–38.7 · Prueba 38.7–42.9 · Curioso 42.9–47.3 · Aluminio 47.3–53.2 · Cierre 53.2–57.7 · Outro 57.7–61.2.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese olor de tu axila no es tu sudor: son bacterias comiéndoselo. | Fondo amarillo. Desde el cuadro 0 un brazo se levanta y deja ver una axila; salen ondas verdes de "olor" que se mueven. Una gota de sudor con la etiqueta "sudor" se tacha; aparecen puntitos (bacterias) mordiendo la gota. Barra de escala "10 cm". |
 | 1 | Sudor | El sudor fresco de la axila no huele: trae moléculas sin olor, pegadas a aminoácidos. | `Lupa` en rayos X sobre la axila: zoom a un poro (barra "1 mm") y luego a fondo noche (barra "1 µm"). Sale una gota con moléculas: un "olor" (rombo gris) unido a una cadenita de aminoácidos (Cys-Gly / Gln). Chip "sin olor". |
 | 2 | Bacterias | Ahí viven bacterias como Corynebacterium y Staphylococcus hominis, que las cortan. | Aparecen dos bacterias: bastoncito (*Corynebacterium*) y racimo de esferas (*Staphylococcus hominis*), con etiquetas. Muerden la cadenita como tijeras: "clic". |
-| 3 | Olor | Y sueltan ácidos y tioalcoholes, moléculas con azufre que apestan. | La molécula liberada se pinta: un átomo amarillo "S" (azufre) brilla. Sube como nube verde. Chips "ácidos" y "tioalcoholes". |
+| 3 | Olor | Y sueltan ácidos que apestan y tioalcoholes, que llevan azufre. | Se liberan dos moléculas que suben como nube verde: un ácido (chip "ácidos") y un tioalcohol con un átomo amarillo "S" (azufre) que brilla (chip "tioalcoholes"). La "S" va solo en el tioalcohol. |
 | 4 | Desodorante | El desodorante va contra eso: trae perfume y antimicrobianos contra esas bacterias. | Barra de desodorante (etiqueta "desodorante · cosmético"). Gotitas de perfume (flores rosas) tapan la nube verde; destellos "antimicrobiano" hacen que algunas bacterias se encojan. |
 | 5 | Antitranspirante | El antitranspirante es otra cosa: sus sales de aluminio tapan por un rato el conducto del sudor. | Corte del conducto del sudor (tubo vertical). Iones "Al" (esferas plateadas) entran y se juntan en un tapón gris; el sudor que sube se detiene. Chip "temporal". Etiqueta "antitranspirante · medicamento OTC (FDA)". |
 | 6 | Pregunta | ¿Pero cuál bacteria suelta el peor olor? | **Re-gancho.** Las dos bacterias en primer plano con un "?" gigante entre ellas. |
-| 7 | Estudio | En 2020, en la Universidad de York, Inglaterra, hallaron la enzima de Staphylococcus hominis que fabrica el tioalcohol. | `TarjetaEstudio` "2020 · Universidad de York, Inglaterra · Rudden et al., *Scientific Reports*". El racimo de *S. hominis* se abre y muestra una enzima (tijera morada, "PatB") que corta la cadenita y suelta la molécula con "S". |
-| 8 | Prueba | Pasaron su gen a otra bacteria que no lo hacía, y empezó a fabricarlo. | Un trozo de ADN (gen) viaja de *S. hominis* a otra bacteria esférica gris ("*S. aureus*, no hacía el olor"); al recibirlo, empieza a soltar la nube con "S". Chip "3M3SH detectado". |
+| 7 | Estudio | En 2020, en la Universidad de York, Inglaterra, hallaron la enzima de Staphylococcus hominis que suelta el tioalcohol. | `TarjetaEstudio` "2020 · Universidad de York, Inglaterra · Rudden et al., *Scientific Reports*". El racimo de *S. hominis* se abre y muestra una enzima (tijera morada, "PatB") que corta la cadenita y suelta la molécula con "S". |
+| 8 | Prueba | Pasaron su gen a otra bacteria que no lo hacía, y empezó a soltarlo. | Un trozo de ADN (gen) viaja de *S. hominis* a otra bacteria esférica gris ("*S. aureus*, no hacía el olor"); al recibirlo, empieza a soltar la nube con "S". Chip "3M3SH detectado". |
 | 9 | Curioso | Lo curioso: proponen que ese olor ya existía antes que nuestra especie. | Línea de tiempo que se desenrolla: bacteria con nube verde a la izquierda, silueta humana llegando tarde a la derecha. Chip "hipótesis". |
 | 10 | Aluminio | ¿Y el aluminio causa cáncer de mama? La Sociedad Americana del Cáncer dice que hay poca evidencia. | Barra de antitranspirante con "Al" y un signo "?". Tarjeta "American Cancer Society · 2026: evidencia limitada"; la flecha "aluminio → cáncer" queda punteada y gris (no confirmada). |
 | 11 | Cierre | Así que ese olor no es tu sudor: es química de las bacterias de tu axila. | **Regreso a la axila del inicio** (zoom out desde fondo noche): misma axila amarilla, ahora con la `Lupa` mostrando las bacterias soltando moléculas con "S"; la gota de sudor lleva etiqueta "sin olor" y la nube "bacterias". |
@@ -51,7 +51,7 @@ Tiempos aproximados de la estimación (s): Gancho 0–4 · Sudor 4–9.2 · Bact
 - El dibujo es esquemático (bacterias, enzima como tijera, tapón del conducto, moléculas).
 - El sudor que "no huele" es el de las glándulas apocrinas de la axila (Natsch 2020); en la descripción se aclara que hay dos tipos de sudor (ecrino y apocrino).
 - Qué bacteria pesa más es debatido: James 2013 señala a *Corynebacterium*; Rudden 2020 (Universidad de York) muestra que *S. hominis* libera el tioalcohol. Por eso la voz nombra a las dos y la pregunta del re-gancho se responde solo para el tioalcohol.
-- El experimento de 2020 midió producción de 3M3SH en *S. aureus*, no "olió" la bacteria: la voz dice "empezó a fabricarlo".
+- El experimento de 2020 midió producción de 3M3SH en *S. aureus*, no "olió" la bacteria: la voz dice "empezó a soltarlo".
 - "Antes que nuestra especie" es hipótesis de los autores ("we suggest"); la voz dice "proponen".
 - El estudio de York se hizo con Unilever (dos autores son empleados; declarado en el artículo). Va en la descripción.
 - Cáncer: la ACS (2026) dice "evidencia limitada"; el NCI dice que no hay evidencia científica que lo vincule. Sin consejo médico. La etiqueta de la FDA pide consultar al médico si hay enfermedad renal antes de usar antitranspirante (21 CFR 350.50); va en la descripción, no en la voz.
