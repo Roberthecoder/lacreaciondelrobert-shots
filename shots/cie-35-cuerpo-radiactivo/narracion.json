@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Cuerpo Radiactivo base narrada.dc.html",
+  "salida": "Shot Cuerpo Radiactivo narrado.dc.html",
+  "nota": "Shot Científico #35. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu cuerpo es un poquito radiactivo: ahora mismo, miles de átomos dentro de ti se están desintegrando cada segundo."
+    },
+    {
+      "escena": "Potasio",
+      "texto": "La culpa la tiene el potasio, un mineral que necesitas para que funcionen tus nervios y tus músculos."
+    },
+    {
+      "escena": "Isotopo",
+      "texto": "Una parte muy pequeña de todo el potasio del mundo es potasio cuarenta, una versión inestable del átomo."
+    },
+    {
+      "escena": "Decae",
+      "texto": "Cada cierto tiempo, uno de esos átomos se transforma en otro y suelta un poquito de radiación."
+    },
+    {
+      "escena": "Cuenta",
+      "texto": "En una persona adulta pasa unas cuatro mil veces por segundo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y eso es peligroso?"
+    },
+    {
+      "escena": "Normal",
+      "texto": "No: es radiación natural, la has tenido toda tu vida, y es una parte pequeña de toda la radiación natural que recibes en un año."
+    },
+    {
+      "escena": "Platano",
+      "texto": "Por eso dicen que el plátano es radiactivo: también tiene potasio, y por lo tanto, un poquito de potasio cuarenta."
+    },
+    {
+      "escena": "Igual",
+      "texto": "Pero comer plátanos no te hace más radiactivo: tu cuerpo mantiene su potasio estable y saca lo que sobra."
+    },
+    {
+      "escena": "Viejo",
+      "texto": "Ese potasio cuarenta viene de estrellas que explotaron antes de que existiera la Tierra."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que brillas un poquito, aunque nadie lo vea: llevas restos de estrellas dentro."
+    }
+  ]
+}

@@ -27,7 +27,36 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 6.0 | 11_sorprendido | `gancho` |
+| 2 | 9.4 | 12.1 | 13_senalando_arriba | `bajo-der` |
+| 3 | 14.6 | 18.0 | 04_bajando_lentes | `bajo-der` |
+| 4 | 20.7 | 23.4 | 11_sorprendido | `bajo-der` |
+| 5 | 27.2 | 29.0 | 07_pensativo_puno | `grande` |
+| 6 | 33.1 | 35.6 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| 7 | 38.9 | 42.0 | 08_recostado_mano | `bajo-der` |
+| 8 | 45.8 | 48.0 | 06_pensativo_menton | `bajo-der` |
+| 9 | 50.6 | 53.1 | 11_sorprendido | `bajo-der` |
+| 10 | 53.6 | 57.9 | 13_senalando_arriba | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 10 · 31.1 s (+ cierre 3.5 s) · poses 7 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «Tu cuerpo es un poquito radiactivo» (11 sorprendido) |
+| 2 | «nervios y músculos» (13 señalando) |
+| 3 | «una versión inestable del átomo» (04 bajando lentes) |
+| 4 | «se transforma en otro y suelta un poquito de radiación» (11 sorprendido) |
+| 5 | «¿Y eso es peligroso?» (07 pensativo, grande) |
+| 6 | «una parte pequeña de toda la radiación natural» (05 sonriendo) |
+| 7 | «dicen que el plátano es radiactivo» (08 recostado) |
+| 8 | «tu cuerpo mantiene su potasio estable» (06 pensativo) |
+| 9 | «estrellas que explotaron» (11 sorprendido) |
+| 10 | «llevas restos de estrellas dentro» (13 señalando) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 
