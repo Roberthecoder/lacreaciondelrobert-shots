@@ -295,7 +295,7 @@ function Hela() {
               <Freno x={klerp(830, 1200, empuja * (1 - vuelve))} y={960} rot={-empuja * 120 * (1 - vuelve)} texto="Rb" />
             </g>; })()}
           {T > K.F + 2.2 && T < K.A + 0.6 && <Telomerasa x={380 - 70 * 1.25 - 20} y={900 - 0.55 * 230 * 1.25 - 40} s={1} T={T} />}
-          {T > K.A - 0.1 && <Interruptor x={640} y={1040} s={0.9} on={1 - apaga} />}
+          {T > K.A - 0.1 && <Interruptor x={560} y={1040} s={0.9} on={1 - apaga} />}
         </SvgCapa>
         <Etiqueta T={T} at={K.F + 0.2} until={K.A - 0.2} x={490} y={1110} texto="ADN del VPH 18" color={VPH} tam={32} />
         <Etiqueta T={T} at={K.F + 2.4} until={K.A + 0.4} x={250} y={560} texto="telomerasa" color={KC.lilac} tam={32} />
