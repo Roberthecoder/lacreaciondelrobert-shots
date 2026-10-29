@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot TareaChatGPT base narrada.dc.html",
+  "salida": "Shot TareaChatGPT narrado.dc.html",
+  "nota": "Shot IA #13. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Con ChatGPT, unos estudiantes sacaron cuarenta y ocho por ciento más en la práctica… y diecisiete por ciento menos en el examen."
+    },
+    {
+      "escena": "Mito",
+      "texto": "Sentían que aprendían, pero terminar la tarea no es lo mismo que aprender."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo midieron en una prepa de Turquía a finales de 2023, con casi mil estudiantes de matemáticas."
+    },
+    {
+      "escena": "Grupos",
+      "texto": "Unos practicaron con un ChatGPT normal, otros con un tutor de IA y otros solo con libro y apuntes."
+    },
+    {
+      "escena": "Examen",
+      "texto": "Luego vino el examen sin nada: ni compu, ni apuntes."
+    },
+    {
+      "escena": "Examen",
+      "texto": "Los del ChatGPT normal sacaron diecisiete por ciento menos que los del puro libro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo te quita puntos algo que te ayudó?"
+    },
+    {
+      "escena": "Muleta",
+      "texto": "Revisaron los chats: la gran mayoría solo le pedía la respuesta y la copiaba. Lo usaban como muleta."
+    },
+    {
+      "escena": "Errores",
+      "texto": "Y ese ChatGPT de 2023 acertaba solo la mitad de las veces."
+    },
+    {
+      "escena": "Errores",
+      "texto": "Lo peor: ellos no sentían haber aprendido menos."
+    },
+    {
+      "escena": "Tutor",
+      "texto": "El tutor tenía una regla: dar pistas, no respuestas. Con él, el daño en el examen casi desapareció."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que cuando estudies con IA, pídele pistas, no la respuesta: el examen lo vas a hacer tú solo."
+    }
+  ]
+}
