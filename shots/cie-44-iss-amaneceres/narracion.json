@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot ISS Amaneceres base narrada.dc.html",
+  "salida": "Shot ISS Amaneceres narrado.dc.html",
+  "nota": "Shot Científico #44. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Los astronautas de la Estación Espacial ven unos dieciséis amaneceres cada día."
+    },
+    {
+      "escena": "Velocidad",
+      "texto": "La estación viaja a unos veintiocho mil kilómetros por hora."
+    },
+    {
+      "escena": "Vuelta",
+      "texto": "A esa velocidad, le da la vuelta completa a la Tierra en unos noventa minutos."
+    },
+    {
+      "escena": "Dia",
+      "texto": "Casi en cada vuelta pasa del lado de día al lado de noche: un amanecer y un atardecer."
+    },
+    {
+      "escena": "Cuenta",
+      "texto": "Veinticuatro horas entre noventa minutos: unas dieciséis vueltas, y dieciséis amaneceres."
+    },
+    {
+      "escena": "Altura",
+      "texto": "Y eso que la estación va bastante cerca: a unos cuatrocientos kilómetros de altura."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y entonces cómo duermen?"
+    },
+    {
+      "escena": "Horario",
+      "texto": "Siguen un horario fijo, el de Greenwich, en Inglaterra, aunque afuera amanezca cada hora y media."
+    },
+    {
+      "escena": "Ventanas",
+      "texto": "Tapan las ventanas y usan luces que cambian de tono para que su cuerpo sepa cuándo es hora de dormir."
+    },
+    {
+      "escena": "Ejercicio",
+      "texto": "Además, tienen que hacer ejercicio unas dos horas al día, para que sus huesos y músculos no se debiliten flotando en microgravedad."
+    },
+    {
+      "escena": "Rapido",
+      "texto": "Y cada amanecer pasa rapidísimo: en unos segundos, el horizonte pasa del negro a una línea de colores."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que mientras tú ves un amanecer, ellos ya vieron dieciséis."
+    }
+  ]
+}
