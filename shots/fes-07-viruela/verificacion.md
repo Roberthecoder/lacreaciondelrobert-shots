@@ -65,4 +65,30 @@ Revisión del texto final completo (voz de `narracion.json` y pantalla de `guion
 | Escena 1 (pantalla): «3 de 10» con «en promedio» | ✅ | CDC, History of Smallpox | "On average, 3 out of every 10 people who got it died." | consulta 2026 |
 | Escena 2 (pantalla): viriones ~250 × 200 nm, a escala con la barra de 300 nm | ✅ | ViralZone (SIB), Orthopoxvirus | "Enveloped, brick-shaped virion, 250nm long and 200nm wide." | consulta 2026 |
 
+## Revisión de pantalla y publicación (29 oct 2026)
+
+Revisé todos los textos de `viruela.jsx` (Chip, Etq, Etiqueta, NumeroGigante, Medidor, TarjetaEstudio, Capítulos, Subtítulos, Lupa, `<text>` SVG) y los dibujos, más `publicacion.md` (7 redes y comentario fijado), contra la tabla de arriba.
+
+| Elemento en pantalla / publicación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Escena micro: barra de escala «200 nm» (`pxPorMm 1.04e6`, objetivo 240 px → 200 nm = 208 px) contra viriones de 260 × 208 px → ~250 × 200 nm | ✅ (a escala) | ViralZone (SIB), Orthopoxvirus | "Enveloped, brick-shaped virion, 250nm long and 200nm wide." | consulta 2026 |
+| «15 piquetitos · ~5 mm» en el brazo (aguja bifurcada) | ✅ (15 era el régimen único recomendado por la OMS, para primovacuna y revacuna) | Fenner 1988, lámina 11.14 y p. 572 | "15 strokes, at right angles to the skin over the deltoid muscle, in an area about 5 mm in diameter." / "the Smallpox Eradication unit recommended a single regimen: 15 strokes with a bifurcated needle at 1 site." | 1988 |
+| «una gotita entre las 2 puntas» · medidor «0.0025 mL en vez de 0.01 mL» → «×4 vacunas» | ✅ | Fenner 1988, p. 570 | ver tabla principal | 1988 |
+| Maletines «CDC» · «expertos de EE.UU.» · «D. A. Henderson (CDC): jefe del programa de la OMS, 1966–1977» | ✅ | Fenner 1988 ("The authors") · CSIS 2023 | "From 1966 to 1977 he was Chief of the Smallpox Eradication unit" / "retained his CDC salary while working at the WHO" | 1966–1977 |
+| Medidor «dosis de la URSS · 1958–1979» → «+1,400 millones» · «vacuna en polvo (liofilizada)» | ✅ | Fenner 1988, p. 469–470 · OMS | ver tabla principal | 1958–1979 |
+| Tarjeta «1958 · Asamblea Mundial de la Salud · Minneapolis, EE.UU. · propuesta de la URSS» · gafete «V. Zhdánov · URSS» · chip «erradicar la viruela del mundo» | ✅ | Fenner 1988, cap. 9 | ver tabla principal | 1958 |
+| Mapa de África: Somalia resaltada y punto «Merca» en 44.77° E, 1.71° N (la etiqueta cae sobre el punto) | ✅ (contorno esquemático) | Fenner 1988, lámina 22.10 | "in the town of Merca in Somalia" | 1977 |
+| Tarjeta «1977 · Ali Maow Maalin · cocinero · Merca, Somalia · último caso natural» · chip «sobrevivió · después luchó contra la polio» | ✅ | Fenner 1988 · GPEI 2013 | ver tabla principal | 1977 / 2013 |
+| Tarjeta «1980 · 8 de mayo · Asamblea Mundial de la Salud · el mundo, libre de viruela» · «la única enfermedad humana erradicada» | ✅ | CDC · OMS | ver tabla principal | 1980 |
+| Etiqueta «México: último caso en 1951» | ✅ | Fenner 1988, p. 333 | "The last case of smallpox in Mexico occurred in 1951" | 1951 |
+| Lupa del cierre «un mundo sin viruela» | ✅ (eradicación declarada en 1980) | CDC | "declared the world free of this disease on May 8, 1980." | 1980 |
+| «3 de 10» + «en promedio, morían» · subtítulo «Mataba a 3 de cada 10 enfermos.» | ✅ | CDC | "On average, 3 out of every 10 people who got it died." | consulta 2026 |
+| «si se vacunó antes de ~1975» · «¿lunar?» → «cicatriz de vacuna» · «Especial · Día de la Ciencia para la Paz» | ✅ | tesis UNAM 2015 · UNESCO | ver tabla principal | 1975 / 2001 |
+| Escena de piel: barra «20 µm», queratinocitos ~11 × 6 µm, linfocitos ~9 µm; los virus dentro de la piel se ven más grandes de lo real (≈0.25 µm) | ✅ esquemático (los "viritos" están agrandados para que se vean; la publicación dice "El dibujo es esquemático") | — | — | — |
+| Etiquetas «variola · peligroso», «vaccinia · leve», «parientes · orthopoxvirus», «aprenden su forma», «memoria inmune», «anticuerpos», medidor de días (granito → ampolla → costra → marquita, días 3–21), capítulos «La marca · La vacuna · Dos rivales · Cero casos», subtítulos 0–13 | ✅ (coinciden con la voz verificada) | Fenner 1988, cap. 3 y 7 | ver tabla principal | 1988 |
+| `publicacion.md`: TikTok, Instagram, YouTube, Facebook, LinkedIn, Threads y comentario fijado | ✅ (todo dentro de lo verificado; dicen "El dibujo es esquemático" y la nota de la BCG) | — | — | — |
+| `publicacion.md`, X: "en 1980, el mundo quedó libre de viruela" | ⚠️ → corregida | CDC | El último caso natural fue en 1977; en 1980 se **declaró**. Texto nuevo: "en 1980 se declaró al mundo libre de viruela." | 1980 |
+
+Corrección aplicada: solo la línea de X en `publicacion.md` (arriba). En `viruela.jsx` no hizo falta cambiar nada; no hay cifras, fechas ni nombres fuera de lo verificado y la ortografía está bien.
+
 VEREDICTO: APROBADO
