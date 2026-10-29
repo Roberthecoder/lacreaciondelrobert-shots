@@ -22,7 +22,7 @@ m.nota(Me + 1.8, 57, 0.05, 1.2);
 m.sube(Pr + 0.1, 1.6, 52, 64, 0.05);
 m.pad(Pr + 2.6, Es, 0.02, [52, 57], 0.6);                                              // la enzima "dormida"
 m.golpe(Es + 0.2, 0.35, 80);
-for (let i = 0; i < 3; i++) m.pluck ? m.pluck(Es + 2.4 + i * 0.2, 69 + i * 3, 0.06) : m.nota(Es + 2.4 + i * 0.2, 69 + i * 3, 0.06, 0.4);
+for (let i = 0; i < 3; i++) m.nota(Es + 2.4 + i * 0.2, 69 + i * 3, 0.06, 0.4);
 for (let i = 0; i < 12; i++) m.tic(Es + 3.2 + i * 0.35, 0.05, 2600);                   // tic-tac del relojito
 for (let i = 0; i < 10; i++) m.gota(Li + 0.6 + i * 0.35, 0.14, 1000);                 // gotas de limón
 m.whoosh(Pl, 0.6, 0.12);                                                              // el plástico

@@ -49,3 +49,5 @@ Mismo verificador independiente. Revisé las frases que cambiaron en `narracion.
 | R5 | Cierre: "Esa cucharadita no apura tu olla: la sal es para el sabor, no para la prisa." | ✅ | Igual que #20: en la práctica, la sal no cambia el tiempo para hervir. |
 
 Resultado: las 2 ⚠️ de la primera ronda quedaron corregidas. Sin ⚠️ ni ❌ pendientes.
+
+VEREDICTO: APROBADO

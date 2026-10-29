@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese guacamole café no está podrido: es una enzima del aguacate pintándolo con oxígeno del aire."
 - **Seguridad:** no se da ningún consejo riesgoso; en la descripción se aclara que si huele mal o tiene moho, eso sí es echado a perder.
 - **Duración:** voz 951 caracteres / ≈ 172 palabras (≈ 57.8 s) + cierre 3.5 s → **≈ 61.3 s** (`estimar-escenas.mjs`).
-- **Estado:** guion escrito, pendiente de verificación independiente (`verificacion.md`). Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`: VEREDICTO: APROBADO), animación lista (`aguacate.jsx`, música `gen-audio.mjs` → 61.3 s), voz pendiente de aprobación de Robert (~951 créditos).
 
 ## Versión narrada
 
@@ -27,6 +27,25 @@ Tiempos aproximados de `estimar-escenas.mjs` entre corchetes.
 | — | Outro [57.8–61.3] | (sin voz) | `CierreMarca` con el logo de química (matraz) sobre la imagen final oscurecida, y Robert señalando. |
 
 **Música:** cama grave continua, debajo de la voz; efectos en el mismo cuadro: raspón de cuchara, golpes del tejolote, "crack" de células, mordida de la enzima, clics de la cadena de melanina, tic-tac del reloj del estudio, gotas de limón, plástico que se estira, golpe del hueso, "boing" de la pelota de golf, destello del cobre.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y por qué se pone café arriba…?» y en «dos átomos de cobre».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «no está podrido: es una enzima» |
+| 2 | 6.9 | 11.1 | 13_senalando_arriba | `izq-alto` | «rompes sus células» (señala la lupa) |
+| 3 | 12.6 | 16.8 | 06_pensativo_menton | `arriba-der` | «la polifenol oxidasa… los oxida con oxígeno» |
+| 4 | 21.45 | 27.0 | 07_pensativo_puno | `grande` | «¿Y por qué se pone café arriba y abajo sigue verde?» |
+| 5 | 30.2 | 34.9 | 04_bajando_lentes | `izq-alto` | «la que tenía más polifenol oxidasa… más rápido café» |
+| 6 | 35.7 | 42.8 | 13_senalando_arriba | `arriba-der` | «el limón ayuda… un plástico pegado» |
+| 7 | 43.6 | 48.9 | 05_sonriendo_dientes_uniformes | `izq-alto` | «daría igual una pelota de golf» |
+| 8 | 49.5 | 53.1 | 11_sorprendido | `grande` | «dos átomos de cobre» |
+| 9 | 53.7 | 57.7 | 02_apuntando_camara | `arriba-der` | «es pura química con el aire» |
+| — | 57.8 | 61.3 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 44 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
 
