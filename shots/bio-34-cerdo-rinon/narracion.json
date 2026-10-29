@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Xeno base narrada.dc.html",
+  "salida": "Shot Xeno narrado.dc.html",
+  "nota": "Shot Biotecnológico #34. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese riñón no es de una persona: es de un cerdo, con 69 cambios en su ADN."
+    },
+    {
+      "escena": "Espera",
+      "texto": "En México, más de dieciséis mil personas esperan un riñón, según el CENATRA en 2026."
+    },
+    {
+      "escena": "Rechazo",
+      "texto": "A un riñón de cerdo normal, tu cuerpo lo destruye en minutos u horas."
+    },
+    {
+      "escena": "Azucares",
+      "texto": "Sus células llevan tres azúcares que tus anticuerpos atacan como enemigos."
+    },
+    {
+      "escena": "Borrar",
+      "texto": "Con CRISPR le borraron los tres genes de esos azúcares."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y eso basta para que tu cuerpo lo acepte?"
+    },
+    {
+      "escena": "Humanos",
+      "texto": "No: le pusieron siete genes humanos que calman el ataque de tus defensas, la inflamación y los coágulos."
+    },
+    {
+      "escena": "Virus",
+      "texto": "Y apagaron 59 copias de virus dormidos en su ADN."
+    },
+    {
+      "escena": "Slayman",
+      "texto": "En 2024, Richard Slayman fue el primer paciente vivo en recibir uno; murió casi dos meses después, por su corazón, no por el riñón."
+    },
+    {
+      "escena": "Andrews",
+      "texto": "En enero de 2025, en Boston, Tim Andrews recibió otro."
+    },
+    {
+      "escena": "Dias",
+      "texto": "Vivió 271 días sin diálisis, hasta que el riñón empezó a fallar."
+    },
+    {
+      "escena": "Puente",
+      "texto": "Y en enero de 2026 recibió un riñón humano: el de cerdo fue su puente."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso ese riñón no es de una persona: es un puente para quien espera."
+    }
+  ]
+}

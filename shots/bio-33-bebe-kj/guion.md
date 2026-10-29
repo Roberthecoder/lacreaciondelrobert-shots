@@ -5,27 +5,27 @@
   "Guía en pasos" (contador de pasos chico: 1 diagnóstico · 2 diseño · 3 burbujas · 4 dosis).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre el frasquito de medicina con una sola etiqueta que se ve en pantalla
   ("no se hizo para millones: se hizo para un solo bebé").
-- **Duración:** 61.5 s (voz ~58 s, 956 caracteres, 178 palabras + cierre 3.5 s).
+- **Duración:** 61.5 s (voz ~58 s, 959 caracteres, 180 palabras + cierre 3.5 s).
 - **Viaje:** macro (el bebé en su cuna y el frasquito con su nombre) → micro (hígado → hepatocito → ADN, letra por letra, fondo oscuro)
   → macro: la misma cuna, ahora con el niño de pie dando sus primeros pasos y el frasquito al lado.
 - **Nota de rigor:** KJ tiene dos variantes en *CPS1* (una de cada copia del gen); el editor corrige una de ellas (Q335X, c.1003C>T).
   Por eso la voz dice "letras equivocadas" y "cambia la letra mala por la buena" (una sola letra). No se dice "curado": sus médicos
   dicen que falta seguimiento largo. No se dice el porcentaje de células editadas (no se midió: no le hicieron biopsia).
 
-## Versión narrada (956 caracteres)
+## Versión narrada (959 caracteres)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa medicina no se hizo para millones: se hizo para un solo bebé. | Fondo rosa. **Cuadro 0:** un estante con miles de frascos iguales se desliza hacia afuera y queda UN frasquito con la etiqueta "k-abe · para: KJ". Robert sorprendido (gancho). |
-| 1 | KJ | Se llama KJ, y su hígado no podía deshacerse del amoniaco. | Cuna dibujada con un bebé; `Lupa` "POR DENTRO · HÍGADO" sobre su panza: el hígado y nubecitas de NH₃ que se acumulan. Etiqueta "amoniaco (NH₃)". |
-| 2 | Letra | Le fallaba una enzima, la CPS1, por letras equivocadas en su ADN. | Fondo oscuro. Fila de letras del gen *CPS1*: una letra parpadea en rojo (C→T). Chip "gen *CPS1*". Enzima CPS1 dibujada rota/gris. |
-| 3 | Peligro | El amoniaco sube y daña el cerebro: se calcula que la mitad muere de bebé. | `Medidor` de amoniaco en sangre que sube a la zona roja (normal 9–33 µmol/L; al nacer pasó de 1,000). Cerebrito con brillo de alarma. `NumeroGigante` "50 %" con chip "mortalidad estimada en los primeros meses, forma grave". |
+| 1 | KJ | Se llama KJ y su hígado no podía deshacerse del amoniaco. | Cuna dibujada con un bebé; `Lupa` "POR DENTRO · HÍGADO" sobre su panza: el hígado y nubecitas de NH₃ que se acumulan. Etiqueta "amoniaco (NH₃)". |
+| 2 | Letra | Le fallaba la enzima CPS1 por letras equivocadas en su ADN. | Fondo oscuro. Fila de letras del gen *CPS1*: una letra parpadea en rojo (C→T). Chip "gen *CPS1*". Enzima CPS1 dibujada rota/gris. |
+| 3 | Peligro | El amoniaco sube y daña el cerebro: en su forma grave, se calcula que la mitad muere de bebé. | `Medidor` de amoniaco en sangre que sube a la zona roja (normal 9–33 µmol/L; en sus primeros 2 días pasó de 1,000). Cerebrito con brillo de alarma. `NumeroGigante` "50 %" con chip "mortalidad estimada en los primeros meses, forma grave". |
 | 4 | Trasplante | Lo usual es un trasplante de hígado, pero hay que esperar a que crezca. | Un hígado de donante en hielera y una regla junto al bebé: "hay que crecer". Reloj que avanza. |
 | 5 | Seis | En unos seis meses le diseñaron un editor de bases solo para él. | Calendario de 6 hojas que vuelan (contador "Paso 2 · diseño"). Pizarrón del laboratorio: ARN guía + editor. Chip "CHOP + Penn · Filadelfia". |
 | 6 | Editor | No corta las dos hebras del ADN: cambia la letra mala por la buena. | **Por dentro (micro):** doble hélice; unas tijeras de dos hojas aparecen y se tachan (`MitoTachado` "corte doble"). El editor (Cas9 "mellada" + enzima) se pega, abre un poquito el ADN y la letra roja se vuelve verde. |
 | 7 | Burbujas | Viaja en burbujitas de grasa directo al hígado. | Nanopartículas de lípidos (esferas con capa de lípidos y ARN dentro) viajan por un vaso sanguíneo y entran a un hepatocito. Etiqueta "nanopartículas de lípidos". Barra de escala ~100 nm. |
 | 8 | Pregunta | ¿Y por qué no editar sus células afuera? | **Re-gancho.** Robert pensativo. Signo de pregunta sobre el hígado. |
-| 9 | Casgevy | Eso hace Casgevy, aprobada en 2023, con células de la sangre, y exige quimioterapia fuerte. | Comparación lado a lado: **FUERA del cuerpo** (Casgevy, 2023): tubo de sangre → laboratorio → regresan las células; gota "quimio". **DENTRO del cuerpo**: burbujitas directo al hígado. |
+| 9 | Casgevy | Eso hace Casgevy, de 2023, con células de la sangre, y exige quimioterapia fuerte. | Comparación lado a lado: **FUERA del cuerpo** (Casgevy, 2023): tubo de sangre → laboratorio → regresan las células; gota "quimio". **DENTRO del cuerpo**: burbujitas directo al hígado. |
 | 10 | Estudio | A KJ lo editaron por dentro: en Filadelfia, en febrero de 2025, recibió su primera dosis. | `TarjetaEstudio` "Feb 2025 · Hospital de Niños de Filadelfia y Penn · *NEJM*, mayo 2025". Bolsa de suero con burbujitas que gotea al brazo del bebé. Contador "Paso 4 · dosis". |
 | 11 | Resultado | Tras tres dosis aguantó más proteína y necesitó menos medicina. | Tres gotas (febrero, marzo, abril de 2025). Plato con más proteína (más lleno) y frasco de medicina que baja. Chip "sin efectos graves". |
 | 12 | Extra | En 2026 ya caminaba y hablaba, y Nature lo nombró entre los diez de la ciencia de 2025. | Robert grande (presentador) señalando. Huellitas de pasos. Portada esquemática "Nature's 10 · 2025". |

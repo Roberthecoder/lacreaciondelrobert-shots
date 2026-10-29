@@ -1,0 +1,63 @@
+{
+  "dcHtml": "Shot Falciforme base narrada.dc.html",
+  "salida": "Shot Falciforme narrado.dc.html",
+  "nota": "Shot Biotecnológico #32. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa célula no está rota: está doblada, como una hoz."
+    },
+    {
+      "escena": "Disco",
+      "texto": "Las tuyas son discos blanditos que pasan por vasos finos."
+    },
+    {
+      "escena": "Cambio",
+      "texto": "En la anemia falciforme, un solo cambio en un gen pega la hemoglobina en varillas."
+    },
+    {
+      "escena": "Crisis",
+      "texto": "Se dobla, se atora y llega una crisis de dolor."
+    },
+    {
+      "escena": "Fetal",
+      "texto": "Antes de nacer usabas otra: la hemoglobina fetal."
+    },
+    {
+      "escena": "Interruptor",
+      "texto": "Al nacer, un gen llamado BCL11A la va apagando."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si, en vez de arreglar el gen, prendemos la fetal?"
+    },
+    {
+      "escena": "Medula",
+      "texto": "Casgevy saca células madre de la médula y CRISPR corta ese interruptor."
+    },
+    {
+      "escena": "Regreso",
+      "texto": "De vuelta, hacen glóbulos rojos con hemoglobina fetal."
+    },
+    {
+      "escena": "Victoria",
+      "texto": "En 2019, en Nashville, Victoria Gray fue la primera paciente con anemia falciforme en recibirlo."
+    },
+    {
+      "escena": "Ensayo",
+      "texto": "En el estudio de 2024, de 30 pacientes evaluados, 29 pasaron un año sin crisis graves."
+    },
+    {
+      "escena": "Limites",
+      "texto": "Fue el primer fármaco con CRISPR aprobado, en 2023; exige quimioterapia fuerte y ese año, en EE. UU., su precio era de 2.2 millones de dólares."
+    },
+    {
+      "escena": "Diluye",
+      "texto": "Lo curioso: la dañada sigue ahí; la fetal la diluye."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso esa célula ya no se dobla: volvió a la fetal."
+    }
+  ]
+}

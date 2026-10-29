@@ -9,7 +9,7 @@
   con sus azúcares, el ADN con los genes humanos y los virus dormidos) → el mismo riñón, ahora dentro de una persona, que se vuelve un puente
   hacia un riñón humano.
 
-## Versión narrada (922 caracteres, ~58 s de voz)
+## Versión narrada (952 caracteres, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -17,12 +17,12 @@
 | 1 | Espera | En México, más de dieciséis mil personas esperan un riñón, según el CENATRA en 2026. | Fondo amarillo: `NumeroGigante` "16,041" que cuenta hacia arriba y una cuadrícula de siluetas de personas que se llena (N4). Chip "personas en espera de riñón · CENATRA · corte 3 oct 2026". |
 | 2 | Rechazo | A un riñón de cerdo normal, tu cuerpo lo destruye en minutos u horas. | Un riñón de cerdo sin editar entra a una silueta humana; se pone morado y se oscurece. Reloj que corre "minutos… horas". |
 | 3 | Azucares | Sus células llevan tres azúcares que tus anticuerpos atacan como enemigos. | **Lupa** "AL MICROSCOPIO · CÉLULA DE CERDO" (fondo oscuro): la superficie de la célula con 3 tipos de azúcares (α-Gal, Neu5Gc, Sd(a)) como banderitas; anticuerpos en forma de Y se pegan a ellas. |
-| 4 | Borrar | Con CRISPR le borraron los tres genes que fabrican esos azúcares. | Hélice de ADN: unas tijeras (Cas9) cortan 3 tramos marcados *GGTA1*, *CMAH*, *B4GALNT2*; las banderitas desaparecen y los anticuerpos se quedan sin dónde pegarse. Contador 69: se llenan **3** casillas. |
+| 4 | Borrar | Con CRISPR le borraron los tres genes de esos azúcares. | Hélice de ADN: unas tijeras (Cas9) cortan 3 tramos marcados *GGTA1*, *CMAH*, *B4GALNT2*; las banderitas desaparecen y los anticuerpos se quedan sin dónde pegarse. Contador 69: se llenan **3** casillas. |
 | 5 | Pregunta | ¿Y eso basta para que tu cuerpo lo acepte? | **Re-gancho.** La célula limpia; un signo de pregunta grande. Barra de escala (~10 µm). |
-| 6 | Humanos | No: le pusieron siete genes humanos que frenan la inflamación y los coágulos. | Entra un paquete de 7 genes con bandera humana al ADN; en la superficie aparecen 7 "escudos" (proteínas humanas). Contador: +**7** casillas (van 10). |
+| 6 | Humanos | No: le pusieron siete genes humanos que calman el ataque de tus defensas, la inflamación y los coágulos. | Entra un paquete de 7 genes con bandera humana al ADN; en la superficie aparecen 7 "escudos" (proteínas humanas). Contador: +**7** casillas (van 10). |
 | 7 | Virus | Y apagaron 59 copias de virus dormidos en su ADN. | Por toda la hélice, 59 capsulitas (retrovirus endógenos del cerdo) que se apagan una por una con un candado. Contador: +**59** → **69** completo. |
-| 8 | Slayman | En 2024, Richard Slayman fue el primero; murió casi dos meses después, por su corazón, no por el riñón. | Salimos de la Lupa. `TarjetaEstudio` "marzo 2024 · Boston · primer riñón de cerdo editado en una persona viva". Una línea de tiempo corta de ~2 meses. |
-| 9 | Andrews | En enero de 2025, en un hospital de Boston, Tim Andrews recibió otro. | `TarjetaEstudio` "25 ene 2025 · Hospital General de Massachusetts". Silueta de un hombre con el riñón (Lupa "POR DENTRO · ABDOMEN") en el lado. |
+| 8 | Slayman | En 2024, Richard Slayman fue el primer paciente vivo en recibir uno; murió casi dos meses después, por su corazón, no por el riñón. | Salimos de la Lupa. `TarjetaEstudio` "marzo 2024 · Boston · primer riñón de cerdo editado en una persona viva". Una línea de tiempo corta de ~2 meses. |
+| 9 | Andrews | En enero de 2025, en Boston, Tim Andrews recibió otro. | `TarjetaEstudio` "25 ene 2025 · Hospital General de Massachusetts". Silueta de un hombre con el riñón (Lupa "POR DENTRO · ABDOMEN") en el lado. |
 | 10 | Dias | Vivió 271 días sin diálisis, hasta que el riñón empezó a fallar. | Calendario que corre a "271 días sin diálisis"; la máquina de diálisis, apagada, a un lado. Al final el riñón pierde brillo. |
 | 11 | Puente | Y en enero de 2026 recibió un riñón humano: el de cerdo fue su puente. | Un puente se dibuja de la máquina de diálisis al riñón humano; chip "2025 · la FDA autorizó los primeros ensayos clínicos". |
 | 12 | Cierre | Por eso ese riñón no es de una persona: es un puente para quien espera. | **Regreso a la charola del inicio**: el mismo riñón, ahora con el contador 69 completo y el puente detrás; las siluetas de la cuadrícula de espera. |
