@@ -60,17 +60,20 @@ fijado) y las citas de `## Fuentes` del guion.
 | F1 | Voz final (13 líneas, recortes de relleno): mismo contenido que las filas 1–17 | ✅ | [UJ], [CW], [KE], [JP], [ML] | sin cambios de dato | 2013–2025 |
 | F2 | Pantalla: chips/etiquetas/medidores ("< 1 µg / 100 g (fresco)", "algunos de tienda ya vienen tratados con luz UV", "17.6 µg de vitamina D2 por 100 g de champiñón fresco", "salmón: comparable", "adulto de 19 a 70 años: 15 µg al día", "mayores de 70: 20 µg", "1.ª hora / se estanca / 2 h más", "más sol ≠ más vitamina", tarjetas 2015 y 2013, "D2 de champiñón" vs "suplemento de D2", "rebanado: más", "4 °C", "en el refri: una semana", "15 min de sol de mediodía") | ✅ | filas 2b, 9b, 10, 11, 12, 13, 14, 15, 16 | ver esas filas | 2013–2025 |
 | F3 | Barras de escala: champiñón ≈ 5.4 cm de sombrero (2 cm = 160 px), bicapa ≈ 5 nm, núcleo del esterol ≈ 0.8 nm | ✅ (esquemático) | — | tamaños típicos; el dibujo es esquemático | — |
-| F4 | Subtítulo idx 1: "Crecen a oscuras: *casi sin vitamina D.*" (quita el "casi todos" de la voz) | ⚠️ | [CW], [ML] | "usually grown in darkness"; "Some mushrooms you buy in the store have higher vitamin D content" | 2018 / 2025 |
-| F5 | Subtítulo idx 12: "15 minutos de sol: *tu fábrica de vitamina D.*" (quita "del mediodía", que la voz sí dice) | ⚠️ | [CW] | "depends on the time of day, season, latitude, weather conditions, and exposure time" | 2018 |
-| F6 | publicacion.md · YouTube título: "15 minutos de sol y tu champiñón fabrica vitamina D" (sin condición) | ⚠️ | [CW] | igual que F5 | 2018 |
-| F7 | publicacion.md · LinkedIn: "Un alimento que fabrica su propia vitamina D con 15 minutos de sol." y "Los champiñones se cultivan a oscuras y casi no tienen vitamina D" | ⚠️ | [CW], [ML] | igual que F4 y F5 | 2018 / 2025 |
-| F8 | publicacion.md · Instagram: "Crecen a oscuras y casi no traen vitamina D" | ⚠️ | [CW], [ML] | igual que F4 | 2018 / 2025 |
+| F4 | Subtítulo idx 1: "Crecen a oscuras: *casi sin vitamina D.*" (quita el "casi todos" de la voz) → corregido | ✅ | [CW], [ML] | "usually grown in darkness"; "Some mushrooms you buy in the store have higher vitamin D content" | 2018 / 2025 |
+| F5 | Subtítulo idx 12: "15 minutos de sol: *tu fábrica de vitamina D.*" (quita "del mediodía", que la voz sí dice) → corregido | ✅ | [CW] | "depends on the time of day, season, latitude, weather conditions, and exposure time" | 2018 |
+| F6 | publicacion.md · YouTube título: "15 minutos de sol y tu champiñón fabrica vitamina D" (sin condición) → corregido | ✅ | [CW] | igual que F5 | 2018 |
+| F7 | publicacion.md · LinkedIn: "Un alimento que fabrica su propia vitamina D con 15 minutos de sol." y "Los champiñones se cultivan a oscuras y casi no tienen vitamina D" → corregido | ✅ | [CW], [ML] | igual que F4 y F5 | 2018 / 2025 |
+| F8 | publicacion.md · Instagram: "Crecen a oscuras y casi no traen vitamina D" → corregido | ✅ | [CW], [ML] | igual que F4 | 2018 / 2025 |
 | F9 | publicacion.md · TikTok, YouTube (descripción), Facebook, X, Threads y comentario fijado | ✅ | todas | cifras con su "de qué es", estudio fechado, D2 de champiñón en cápsulas, "alrededor de una semana", "depende de la hora, la estación, el lugar y el clima" | 2013–2025 |
 | F10 | guion.md `## Fuentes`: las citas textuales coinciden con las fuentes abiertas | ✅ | [UJ], [CW], [KE], [JP], [ML] | comprobadas palabra por palabra | 2013–2025 |
 
-Correcciones pendientes (F4–F8):
-- vitamina-d.jsx, subtítulo idx 1 → `texto="Casi todos crecen a oscuras: *casi sin vitamina D.*"`
-- vitamina-d.jsx, subtítulo idx 12 → `texto="15 min de sol de mediodía: *tu fábrica de vitamina D.*"`
-- publicacion.md, YouTube título → `15 minutos de sol de mediodía y tu champiñón fabrica vitamina D ☀️🍄 | Shot Fungi Mati #13`
-- publicacion.md, LinkedIn → "Un alimento que fabrica su propia vitamina D con 15 minutos de sol de mediodía." y "Casi todos los champiñones se cultivan a oscuras y casi no tienen vitamina D…"
-- publicacion.md, Instagram → "Casi todos crecen a oscuras y casi no traen vitamina D, pero…"
+Correcciones F4–F8 aplicadas y revisadas (29 oct 2026): subtítulos idx 1 ("Casi todos crecen a oscuras: casi sin vitamina D.")
+e idx 12 ("15 min de sol de mediodía: tu fábrica de vitamina D.") en vitamina-d.jsx; en publicacion.md el título de YouTube,
+LinkedIn ("…con 15 minutos de sol de mediodía."; "Casi todos los champiñones se cultivan a oscuras…") e Instagram
+("Casi todos crecen a oscuras…") → ✅.
+
+Resumen final: voz, pantalla (animación) y publicación (7 redes + comentario fijado) quedaron ✅ en todas las filas. El texto
+completo de Urbain y Jakobsen 2015 no se pudo abrir (de pago); sus cifras están en el resumen original. El dibujo es
+esquemático. No es consejo médico.
+VEREDICTO: APROBADO
