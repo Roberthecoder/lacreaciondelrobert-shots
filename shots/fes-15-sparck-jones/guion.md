@@ -72,3 +72,5 @@ Apariciones: 10 · **36.6 s en pantalla** (+ cierre 3.8 s) · 8 poses distintas,
 - «de» y «rajas» son un ejemplo para explicar la idea; no hay conteo real de páginas.
 - "En Cambridge, Inglaterra": el artículo de 1972 lleva la afiliación "Computer Laboratory, University of Cambridge", y el CV de Cambridge dice "1968 – 1988 Research positions, Computer Laboratory". La voz dice la ciudad, que es correcta.
 - El retrato de Karen se dibuja a mano, estilo del canal (no se usa foto).
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.

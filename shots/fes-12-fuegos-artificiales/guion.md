@@ -65,3 +65,5 @@ Apariciones: 10 · **≈ 40.6 s en pantalla** (+ cierre 3.8 s) · 9 poses distin
 - No se da en voz ni en pantalla una temperatura exacta a la que se rompe el CuCl: las cifras publicadas no coinciden (Sturman, 2006, encontró buenos azules en flamas calculadas de 1660–2500 K), así que solo se dice «si se calienta de más».
 - «Cada tres segundos ≈ 1 km» es la regla aproximada del rayo: la voz dice «como un kilómetro» porque la velocidad del sonido cambia un poco con la temperatura del aire.
 - Mención a cuidar mascotas/seguridad: no incluida (opcional en el brief).
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.

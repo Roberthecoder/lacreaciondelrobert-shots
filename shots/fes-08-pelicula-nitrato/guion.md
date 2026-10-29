@@ -66,3 +66,5 @@ Tiempos de la base narrada (`Shot Pelicula Nitrato base narrada.dc.html`, total 
 - Cineteca: se dice solo "según cifras oficiales, más de seis mil películas" (oficial: 6,506). No se dice que todas fueran de la Revolución ni que "se perdió todo"; la causa exacta del incendio sigue en debate, por eso la voz solo dice que el fuego llegó a las bóvedas de nitrato.
 - No se afirma que la Revolución fuera "la primera guerra filmada".
 - No se dice qué fue de *The Life of General Villa* (se cree perdida, con fragmentos; no está verificado a fondo).
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.

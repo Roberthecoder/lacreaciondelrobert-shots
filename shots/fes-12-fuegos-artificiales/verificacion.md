@@ -34,4 +34,31 @@ Verificador independiente (subagente que no escribió el guion), 29 oct 2026. Ca
 
 No hay ❌ ni ⚠️ abiertos. Las citas de la sección `## Fuentes` del guion que venían de Wikipedia (4, 6, 7, 8) ya tienen respaldo en Glück et al. 2020, Juknelevicius et al. 2021, Science History Institute, Bunsen y Kirchhoff 1860 / Weeks 1932 y HyperPhysics; conviene agregarlas a `## Fuentes`.
 
+## Revisión de pantalla y publicación (29 oct 2026)
+
+Revisé todos los textos de `fuegos.jsx` (Chip, Etq, MitoTachado, TarjetaEstudio, Capitulo, Subtitulo, etiqueta de la Lupa y los `<text>` de SVG) y lo que afirman los dibujos (líneas de espectro, escalones, cronómetro, regla), más `publicacion.md` (7 redes y comentario fijado).
+
+| Texto o dibujo en pantalla | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Tarjeta «1860 · Bunsen y Kirchhoff · Heidelberg · espectroscopio (1859): flama + prisma» | ✅ | Science History Institute (ver arriba) | "In 1860 Robert Bunsen and Gustav Kirchhoff discovered two alkali metals, cesium and rubidium" · "with the aid of the spectroscope they had invented the year before" · espectros "through a prism" · "Bunsen was called to the University of Heidelberg in 1852, and he soon arranged for Kirchhoff to teach at Heidelberg as well." | 1852–1860 |
+| Etiqueta «a veces brilla el metal unido a un cloro: SrCl · BaCl · CuCl»; «estroncio + cloro (SrCl)» (escena 4) y Lupa «estroncio + cloro» (cierre) | ✅ | K. R. Tarantik, tesis doctoral LMU Múnich (dir. T. M. Klapötke), 2010 — edoc.ub.uni-muenchen.de/11894/1/Tarantik_Karina_R.pdf · Glück et al. 2020 (CuCl) | "is essential for the formation of the light emitting species SrCl, BaCl, and CuCl in the gas phase. SrCl emits mainly red light (661–675 nm), BaCl mainly green light (507–532 nm)" · "the molecular emitter strontium monochloride (SrCl), which is besides strontium monohydroxides (SrOH) responsible for an intense red flame" | 2010 |
+| Espectro Na: línea en 589 nm | ✅ | NIST Atomic Spectra Database, Na I | 588.995 nm y 589.592 nm (doblete D) | consulta 2026 |
+| Espectro Cs: líneas en 455.5 y 459.3 nm (rango 430–490) y «dos líneas azules» | ✅ | NIST ASD, Cs I · Bunsen y Kirchhoff 1860 | 455.52799 nm y 459.31721 nm · "two remarkable blue lines, very close together" | 1860 / consulta 2026 |
+| Espectro Sr: 461, 606, 662, 682 nm | ✅ | Tarantik 2010, tabla de emisores | "atomic Sr 460.7 blue" · "SrOH 605.0, 646.0 orange" · "SrCl … 662.0 … red" · "SrOH 659.0, 667.5, 682.0 red" | 2010 |
+| Espectro Sr: línea en 641 nm | ⚠️ no aparece en la tabla → **corregida a 636** | Tarantik 2010 | "SrCl 623.9, 636.2, 648.5 orange" | 2010 |
+| Espectro Ba: 513, 524, 553 nm | ✅ | Tarantik 2010 | "BaCl 507, 513.8, 516.2, 524.1, 532.1 green" · "atomic Ba 553.5 green" | 2010 |
+| Espectro Ba: línea en 578 nm | ⚠️ no está en la tabla de emisores de fuegos → **corregida a 532** (BaCl) | Tarantik 2010 | "BaCl … 532.1 green" | 2010 |
+| Etq «líneas ilustrativas» | ✅ (ahora además coinciden con líneas reales) | — | — | — |
+| Escalones «chico/mediano/grande» → rojo/verde/azul; «escalón más grande → luz más azul»; «niveles de energía (esquema)»; «baja = luz» | ✅ | LibreTexts "Flame Tests" (ver arriba) | "Each of these jumps involves a specific amount of energy being released as light energy" | — |
+| Subtítulo 7 «Muy caliente: el azul se rompe.» | ⚠️ lo que se rompe es la molécula, no el color → **corregido a «Muy caliente: la pareja se rompe.»** | Glück et al. 2020 | "the molecular emitter decomposes" | 2020 |
+| «cobre + cloro = CuCl», «más calor», «se rompe: el azul se deslava» | ✅ | Glück et al. 2020 · Juknelevicius et al. 2021 | ver tabla de arriba | 2020 / 2021 |
+| Corte del cohete: «bolitas de color», «pólvora», «mecha», «sales de metales» | ✅ esquemático | Texas A&M 2025 | "metal salts that produce color" | 2025 |
+| Botella «AGUA MINERAL · Dürkheim», «Cs · cesio (1860)», «del latín caesius: «gris azulado»» | ✅ | ver tabla de arriba | — | 1860 |
+| «1 s, 2 s, 3 s», «¡PUM!», «≈ 1 km», «segundos ÷ 3 = km», «la luz llega casi al instante» | ✅ | HyperPhysics · NWS (ver arriba) | — | — |
+| Capítulos «El empujón · La huella · El azul · El prisma», «Especial Año Nuevo», «¿pintura?» tachado, «Sr · estroncio», «no es pintura: es estroncio», demás subtítulos | ✅ sin afirmaciones nuevas; ortografía correcta | — | — | — |
+
+**publicacion.md:** todo lo que dice está dentro de lo verificado (incluye "331–344 m/s", "espectroscopio, de 1859" y "Dürkheim", ya verificados arriba). Agregué al comentario fijado dos fuentes para lo nuevo en pantalla: Tarantik 2010 (SrCl · BaCl · CuCl) y NIST ASD (líneas de Cs y Na); HyperPhysics pasó a ser la #10.
+
+**Corregido en `fuegos.jsx` (solo datos o texto, sin tocar la sintaxis):** línea de Sr 641 → 636 nm; línea de Ba 578 → 532 nm; subtítulo 7 → «Muy caliente: *la pareja se rompe.*». Con esto no queda ninguna ⚠️ abierta.
+
 VEREDICTO: APROBADO

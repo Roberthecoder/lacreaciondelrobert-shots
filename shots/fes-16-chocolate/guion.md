@@ -66,3 +66,5 @@ Apariciones: 10 · **≈ 36 s en pantalla** (+ cierre 3.8 s) · 8 poses distinta
 - Origen del cacao: no se dice en la voz. La evidencia más antigua de uso de cacao es de la Alta Amazonía (Ecuador, Santa Ana-La Florida, ~5,300 años; Zarrillo *et al.*, *Nature Ecology & Evolution*, 2018), no de Mesoamérica, así que "origen mesoamericano" sería impreciso. Se puede usar en `publicacion.md` si se verifica.
 - La reacción de Maillard ya tiene shot propio (`qui-06-maillard`): aquí solo se menciona de paso.
 - Nada de "química del amor": San Valentín solo como pretexto (regalar chocolate).
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.

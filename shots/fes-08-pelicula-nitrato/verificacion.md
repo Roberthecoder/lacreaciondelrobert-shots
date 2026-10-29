@@ -55,4 +55,11 @@ Revisión del texto final de `narracion.json` y de la columna "Lo que se ve" de 
 | L12 "este rollo no es solo cine: es algodón con ácido nítrico que hay que cuidar del calor" | ✅ | Amor · CCI | "cotton … linters" · "auto-ignites at 150°C" | 1938 · 1994 |
 | Líneas 0, 4, 5, 7, 8 (sin cambios) y lo que se ve en pantalla | ✅ | ver tabla de arriba | — | — |
 
+## Revisión de pantalla y publicación (29 oct 2026)
+
+Revisados todos los textos de `pelicula-nitrato.jsx` (Chip, Etq, TarjetaEstudio, Medidor, NumeroGigante, Capitulo, Subtitulo, Lupa, `<text>` de SVG) y `publicacion.md` (7 redes y comentario fijado).
+- **Pantalla:** todo coincide con lo verificado: «1914 · Pancho Villa firma con la Mutual Film (EE. UU.)», «filmar sus batallas», «HNO₃ + H₂SO₄», «–OH → –ONO₂», medidores «≈ 12 % N» y «> 13 % N», «sin aire», «círculo vicioso», «nueva: 150 °C», «muy descompuesta: 50 °C o menos», «1982 · Cineteca Nacional · CDMX · 24 de marzo», «+6,000 películas perdidas» y «cifra oficial: 6,506», acervo de Salvador Toscano / Carmen Toscano, «MEMORIAS DE UN MEXICANO 1950». Los 13 subtítulos son fieles a la voz. Las latas «NITRATE FILM» y «TOSCANO», el edificio y la escala «1 nm» (unidad de glucosa dibujada ≈ 0.6 nm; real ≈ 0.5 nm) son esquemáticos. Sin errores de ortografía. **No se corrigió nada en el `.jsx`.**
+- **Publicación, datos nuevos verificados:** cambio a acetato a inicios de los 50 ✅ (NFPF: "in commercial use through the early 1950s, when it was replaced by cellulose acetate"; Kodak: "retired … about 1951-52"). Hermanos Alva en el acervo Toscano ✅ (*El Ojo que Piensa* 12, 2016, nota 5: "materiales procedentes de otros cinematografistas de la época como Jesús H. Abitia, los hermanos Alva, Enrique Rosas").
+- **Publicación, corregido:** en LinkedIn, "frío, ventilación y copias en soportes estables" (sin fuente) → "el calor y la humedad aceleran su deterioro, así que se guarda en frío" (Kodak: "elevated temperatures and humidity speed it greatly"; CCI: autoignición por calor). En el comentario fijado, fuente 5: "desde 50 °C" → "a 50 °C o menos"; fuente 8: se agregó lo del calor y la humedad.
+
 VEREDICTO: APROBADO

@@ -71,7 +71,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 La memoria filmada de la Revolución Mexicana es, químicamente, algodón tratado con ácido nítrico.
 Hasta inicios de los años cincuenta, el cine se grababa en película de nitrato de celulosa: fibras de algodón nitradas con ácido nítrico y sulfúrico, con cerca de 12 % de nitrógeno (el algodón pólvora pasa del 13 %). El material lleva su propio oxígeno, así que una vez encendido arde sin aire. Y al envejecer libera óxidos de nitrógeno que aceleran su propia descomposición: nuevo se autoenciende a unos 150 °C; muy degradado, a 50 °C o menos.
-Por eso conservar cine es un problema de química: frío, ventilación y copias en soportes estables. En 1982 el incendio de la Cineteca Nacional llegó a sus bóvedas de nitrato (6,506 películas perdidas, según cifras oficiales). Aun así, mucho material sobrevivió, como el acervo de Salvador Toscano que su hija Carmen montó en «Memorias de un mexicano» (1950).
+Por eso conservar cine es un problema de química: el calor y la humedad aceleran su deterioro, así que se guarda en frío. En 1982 el incendio de la Cineteca Nacional llegó a sus bóvedas de nitrato (6,506 películas perdidas, según cifras oficiales). Aun así, mucho material sobrevivió, como el acervo de Salvador Toscano que su hija Carmen montó en «Memorias de un mexicano» (1950).
 ¿Qué otro archivo histórico crees que esconde un reto químico?
 Shot Festivo #08 · Revolución Mexicana · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -98,10 +98,10 @@ Fuentes:
 2. Smithsonian Magazine, M. Dash (2012, citando a F. Katz): "exclusive rights to film Villa's troops in battle"; el NYT dio la noticia el 7 ene 1914. https://www.smithsonianmag.com/history/uncovering-the-truth-behind-the-myth-of-pancho-villa-movie-star-110349996/
 3. National Film Preservation Foundation: nitrato en uso comercial hasta inicios de los 50, reemplazado por acetato ("safety film"). https://www.filmpreservation.org/preservation-basics/nitrate-degradation
 4. A. E. Amor, "Manufacture of Motion Picture Film", BKS (1938): algodón (linters), ácidos nítrico y sulfúrico, ~12 % de nitrógeno. https://brianpritchard.com/wp/british-motion-picture-laboratories/manufacture-of-motion-picture-film/
-5. Canadian Conservation Institute, CCI Notes 15/3 (1994): grupos nitrato, % de nitrógeno, "vicious circle", autoignición a 150 °C (nuevo) y desde 50 °C (muy degradado). https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/display-storage-objects-cellulose-nitrate.html
+5. Canadian Conservation Institute, CCI Notes 15/3 (1994): grupos nitrato, % de nitrógeno, "vicious circle", autoignición a 150 °C (nuevo) y a 50 °C o menos (muy degradado). https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/display-storage-objects-cellulose-nitrate.html
 6. Royal Naval Cordite Factory: algodón pólvora, "over 13%" de nitrógeno. https://www.greenacre.info/RNCF/page25.html
 7. British Kinematography (1952): "the decomposing film supplies oxygen from its own material". https://lantern.mediahist.org/catalog/britishki20brit_0121
-8. Kodak, "Storage and Handling of Processed Nitrate Film": NO₂ al degradarse; autoignición poco arriba de 38 °C sostenidos en película muy descompuesta. https://kodak.com/en/motion/page/storage-and-handling-of-processed-nitrate-film
+8. Kodak, "Storage and Handling of Processed Nitrate Film": NO₂ al degradarse; el calor y la humedad aceleran el deterioro; autoignición poco arriba de 38 °C sostenidos en película muy descompuesta. https://kodak.com/en/motion/page/storage-and-handling-of-processed-nitrate-film
 9. El Financiero: "un incendio ocasionó la pérdida de seis mil 506 películas" (datos oficiales, 1982). https://www.elfinanciero.com.mx/culturas/cineteca-nacional-45-anos-dedicada-a-difundir-la-cultura-cinematografica/ · México Desconocido: el fuego llegó a las bóvedas de nitrato. https://www.mexicodesconocido.com.mx/la-cineteca-nacional-incendio-historia.html
 10. S. Velazco, El Ojo que Piensa 12 (2016): Salvador Toscano y «Memorias de un mexicano» (1950). https://elojoquepiensa.cucsh.udg.mx/index.php/elojoquepiensa/article/download/224/228
 El dibujo es esquemático.

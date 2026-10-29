@@ -66,3 +66,5 @@ Apariciones: 9 · **40.4 s en pantalla** (+ cierre 3.8 s) · 7 poses distintas, 
 - "Redondita": la NASA dice "spherical" en su pie de foto y "hemispherical" (media esfera) en los artículos técnicos; en pantalla se dibuja como **media esfera** sobre el pabilo (no una bola flotando), azul tenue y chiquita (~1.5 cm).
 - "Humito blanco": es vapor de cera que se condensa en gotitas al enfriarse (Faraday; *Scientific American*, 2019). Verificado ✅.
 - Faraday hizo el truco a "two or three inches" (5–7.5 cm) del pabilo; la voz no da la distancia, en pantalla se puede poner «a unos centímetros».
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.
