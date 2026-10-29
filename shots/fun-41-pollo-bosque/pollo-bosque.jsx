@@ -97,20 +97,20 @@ function MaranaHifas({ T, g = 1, resalta = 0 }) {
   const brota = (x, y, a, largo, ancho, nivel, t0) => { const pts = []; let px = x, py = y, aa = a;
     for (let i = 0; i <= 10; i++) { pts.push([px, py]); aa += (r() - 0.5) * 0.35; px += Math.cos(aa) * largo / 10; py += Math.sin(aa) * largo / 10; }
     ramas.push({ pts, ancho, t0, nivel });
-    if (nivel < 2) for (let k = 0; k < 2; k++) { const idx = 3 + Math.floor(r() * 6); const [bx, by] = pts[idx]; brota(bx, by, aa + (k ? 0.9 : -0.9) + (r() - 0.5) * 0.4, largo * 0.6, ancho * 0.8, nivel + 1, t0 + 0.25 + idx * 0.02); } };
-  [[60, 520, 0.15], [1040, 640, Math.PI - 0.1], [80, 980, -0.2], [1020, 1060, Math.PI + 0.25], [300, 360, 0.9], [700, 1180, -1.6]].forEach(([x, y, a], i) => brota(x, y, a, 620, 46 - (i % 3) * 8, 0, i * 0.06));
+    if (nivel < 2) for (let k = 0; k < 2; k++) { const idx = 3 + Math.floor(r() * 6); const [bx, by] = pts[idx]; brota(bx, by, aa + (k ? 0.9 : -0.9) + (r() - 0.5) * 0.4, largo * 0.6, ancho * 0.85, nivel + 1, t0 + 0.25 + idx * 0.02); } };
+  [[60, 520, 0.15], [1040, 640, Math.PI - 0.1], [80, 980, -0.2], [1020, 1060, Math.PI + 0.25], [300, 360, 0.9], [700, 1180, -1.6]].forEach(([x, y, a], i) => brota(x, y, a, 620, 54 - (i % 3) * 6, 0, i * 0.06));
   const finas = Array.from({ length: 7 }, (_, i) => { const y = 420 + i * 120; return { d: `M 0 ${y} C 300 ${y - 60 + r() * 120} 700 ${y + 60 - r() * 120} 1080 ${y + r() * 40}`, t0: 0.1 + i * 0.05 }; });
   const linea = (pts) => 'M ' + pts.map((q) => q[0].toFixed(1) + ' ' + q[1].toFixed(1)).join(' L ');
   return <g>
     {finas.map((f, i) => { const u = kclamp((g - f.t0) * 1.8, 0, 1); return <g key={'f' + i} opacity={0.75}>
-      <path d={f.d} stroke="#9aa5b5" strokeWidth={10} fill="none" strokeDasharray={`${u * 1300} 2000`} strokeLinecap="round" />
-      <path d={f.d} stroke="#0d1424" strokeWidth={3} fill="none" strokeDasharray="4 70" opacity={u} /></g>; })}
+      <path d={f.d} stroke="#9aa5b5" strokeWidth={30} fill="none" strokeDasharray={`${u * 1300} 2000`} strokeLinecap="round" />
+      <path d={f.d} stroke="#0d1424" strokeWidth={30} fill="none" strokeDasharray="4 70" opacity={u} /></g>; })}
     {ramas.map((b, i) => { const u = kclamp((g - b.t0) * 1.6, 0, 1); if (u <= 0) return null; const d = linea(b.pts), L = 900;
       const brilla = b.nivel === 0 ? resalta : 0;
       return <g key={i} style={brilla ? { filter:`drop-shadow(0 0 ${10 * brilla}px ${KC.gold2})` } : null}>
         <path d={d} stroke={KC.ink} strokeWidth={b.ancho + 8} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={`${u * L} 2000`} />
         <path d={d} stroke={mixHex(PB.hifa, '#fff3c4', brilla)} strokeWidth={b.ancho} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={`${u * L} 2000`} />
-        <path d={d} stroke={PB.lumen} strokeWidth={b.ancho * 0.28} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={`${u * L} 2000`} />
+        <path d={d} stroke={PB.lumen} strokeWidth={b.ancho * 0.6} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={`${u * L} 2000`} />
       </g>; })}
   </g>;
 }
@@ -223,8 +223,8 @@ function PolloBosqueShot() {
           <MaranaHifas T={T} g={kprog(T, K.H, K.H + 2.4)} resalta={kprog(T, K.H + 2.4, K.H + 3.0)} />
           {kprog(T, K.H + 2.4, K.H + 2.8) > 0 && <g opacity={kprog(T, K.H + 2.4, K.H + 2.8)}>
             {(() => { const u = kprog(T, K.H + 2.4, K.H + 3.4, kEase.sale), d = 'M 80 1640 C 300 1610 520 1670 760 1630 C 860 1615 940 1640 1000 1650', b = 'M 870 1640 Q 920 1720 990 1790';
-              return <g><path d={b} stroke={KC.ink} strokeWidth={80} fill="none" strokeLinecap="round" strokeDasharray={`${u * 300} 999`} /><path d={b} stroke={PB.hifa} strokeWidth={70} fill="none" strokeLinecap="round" strokeDasharray={`${u * 300} 999`} /><path d={b} stroke={PB.lumen} strokeWidth={22} fill="none" strokeLinecap="round" strokeDasharray={`${u * 300} 999`} />
-                <path d={d} stroke={KC.ink} strokeWidth={102} fill="none" strokeLinecap="round" strokeDasharray={`${u * 1000} 2000`} /><path d={d} stroke="#fff3c4" strokeWidth={92} fill="none" strokeLinecap="round" strokeDasharray={`${u * 1000} 2000`} /><path d={d} stroke={PB.lumen} strokeWidth={30} fill="none" strokeLinecap="round" strokeDasharray={`${u * 1000} 2000`} /></g>; })()}
+              return <g><path d={b} stroke={KC.ink} strokeWidth={80} fill="none" strokeLinecap="round" strokeDasharray={`${u * 300} 999`} /><path d={b} stroke={PB.hifa} strokeWidth={70} fill="none" strokeLinecap="round" strokeDasharray={`${u * 300} 999`} /><path d={b} stroke={PB.lumen} strokeWidth={48} fill="none" strokeLinecap="round" strokeDasharray={`${u * 300} 999`} />
+                <path d={d} stroke={KC.ink} strokeWidth={102} fill="none" strokeLinecap="round" strokeDasharray={`${u * 1000} 2000`} /><path d={d} stroke="#fff3c4" strokeWidth={92} fill="none" strokeLinecap="round" strokeDasharray={`${u * 1000} 2000`} /><path d={d} stroke={PB.lumen} strokeWidth={70} fill="none" strokeLinecap="round" strokeDasharray={`${u * 1000} 2000`} /></g>; })()}
             <path d="M 300 1574 L 300 1666 M 280 1574 L 320 1574 M 280 1666 L 320 1666" stroke={KC.gold2} strokeWidth={6} opacity={kprog(T, K.H + 3.0, K.H + 3.3)} />
           </g>}
         </>)}
@@ -236,8 +236,8 @@ function PolloBosqueShot() {
           {T < K.M + 0.3 && <g opacity={1 - kprog(T, K.M - 0.2, K.M + 0.3)}>
             <rect x={760} y={760} width={90} height={500} fill={PB.corteza2} stroke={KC.ink} strokeWidth={7} />
             <circle cx={805} cy={700} r={180} fill="#2f9e44" stroke={KC.ink} strokeWidth={7} />
-            <Repisa T={T} x={850} y={1000} w={150} h={60} />
-            <path d="M 850 1060 l 40 -10 l 20 20" stroke={KC.ink} strokeWidth={4} fill="none" strokeDasharray="8 6" />
+            <Repisa T={T} x={850} y={1000} w={75} h={30} />
+            <path d="M 850 1030 l 25 -8 l 12 14" stroke={KC.ink} strokeWidth={4} fill="none" strokeDasharray="8 6" />
           </g>}
           <Nina T={T} x={T < K.M ? 330 : 540} y={1180} s={1.2} tambalea={kprog(T, K.M, K.M + 0.6) * (1 - kprog(T, K.Re - 0.3, K.Re + 0.2))} sonrie={kprog(T, K.Re + 0.4, K.Re + 1.0)} />
           {T >= K.M && T < K.Re + 0.2 && <g opacity={kprog(T, K.M + 0.2, K.M + 0.6) * (1 - kprog(T, K.Re - 0.2, K.Re + 0.2))}>
@@ -339,16 +339,16 @@ function PolloBosqueShot() {
       <Etq T={T} at={K.C + 2.2} until={K.Ou} x={1040} y={700} lado="izq" texto="Laetiporus" it tam={30} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm" largo={130} />
+      <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm (plato)" largo={130} />
       <BarraEscala T={T} at={K.R} until={K.Cu} texto="20 cm" largo={170} />
       <BarraEscala T={T} at={K.Cu} until={K.P} texto="10 cm" largo={150} />
       <BarraEscala T={T} at={K.P} until={K.H} texto="5 cm" largo={130} />
       <BarraEscala T={T} at={K.H} until={K.E} texto="20 µm" largo={150} />
       <BarraEscala T={T} at={K.E} until={K.Cd} texto="50 cm" largo={160} />
       <BarraEscala T={T} at={K.Cd} until={K.Ex} texto="5 cm" largo={130} />
-      <BarraEscala T={T} at={K.Ex} until={K.N} texto="20 cm" largo={170} />
+      <BarraEscala T={T} at={K.Ex} until={K.N} texto="20 cm" largo={200} />
       <BarraEscala T={T} at={K.N} until={K.C} texto="5 cm" largo={130} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={130} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm (plato)" largo={130} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="Esto *no es pollo:* es un hongo" />

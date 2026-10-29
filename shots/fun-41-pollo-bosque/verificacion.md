@@ -46,3 +46,32 @@ Fuentes abiertas:
 
 Re-verificación (29 oct 2026): se corrigieron las filas 3, 3c, 5b, 8, 9b, 11 y 17; se releyó narracion.json completo (14 líneas) y las escenas cambiadas del guion contra las fuentes. "Correoso" (fila 7) se queda: traduce "chewy" de [UF]. Fuentes [UCR] y [SAL] agregadas al guion. Todas las afirmaciones quedaron ✅. El dibujo es esquemático. No es consejo médico.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026, mismo verificador independiente. Se leyeron `pollo-bosque.jsx`, la base `.dc.html`, la columna «Lo que se ve», la tabla
+«Robert en pantalla» y `publicacion.md`, y se revisaron 22 cuadros de vista previa (0.3–60 s).
+
+| # | Texto o dibujo | Veredicto | Fuente / nota |
+|---|---|---|---|
+| F1 | Sello «NO» y chips «no es pollo», «no es pollo: es un hongo» | ✅ | [UCR] "no es un animal" |
+| F2 | «“pollo del bosque”», «*Laetiporus* (complejo *sulphureus*)», «encino (*Quercus*)», «repisas encimadas · sin pie» | ✅ | [UCR], [UF] ("like roof shingles"; "usually do not have a stipe"; "especially on species of Quercus") |
+| F3 | «come: celulosa (y hemicelulosa)», «pudrición café», «queda: lignina (modificada)», «micelio blanco en las grietas» | ✅ | [UF], [FUN], [VAN], [KUO] |
+| F4 | «músculo: 0», «bien cocido», «correoso · sabe parecido al pollo» | ✅ | [UCR], [UF] |
+| F5 | «AL MICROSCOPIO · hifas», «las más gruesas: 4–14 µm», «ramificadas · sin tabiques · pared gruesa» | ✅ (corregido el dibujo) | [KUO]. Con la barra de 20 µm (150 px), la hifa resaltada medía 12 µm (bien), pero su pared se veía de ~4 µm (fuente: 1–2 µm) y varias ramas de la maraña medían <3 µm. Se ajustó: pared ≈1.5 µm, ramas de ~4–7 µm y hifas finas de fondo de ~4 µm con tabiques (generativas). |
+| F6 | Tarjeta «1987 · Canadá · niña de 6 años · CMAJ, 1988»; árbol con repisa arrancada | ✅ (corregido) | [APP], [SUL]. La repisa del árbol medía ~47 cm con la barra de 50 cm (fuente: sombreros de 5–25 cm); se redujo a ~23 cm. La niña mide ~1.2 m a esa escala (bien para 6 años). |
+| F7 | Burbuja «bl… ¿fff?» (habla trabada), nube de formas de colores, chip «alucinaciones» | ✅ | [APP] título; fragmento "lines and shapes of bright colours" |
+| F8 | Cronómetro «DESPUÉS DE LOS SÍNTOMAS» hasta ~20 h, chip «≈ 20 h · se recuperó» | ✅ | [APP] fragmento: "completely recovered by the next morning, about 20 hours after the onset of symptoms" |
+| F9 | «crudo o mal cocido: ✗», «hay personas alérgicas»; subtítulo antes «Crudo o mal cocido: *te cae mal*» | ✅ (corregido) | [UF] "have been reported to cause gastrointestinal problems": el subtítulo afirmaba de más; ahora «Crudo o mal cocido: *puede caerte mal*», igual que la voz |
+| F10 | «✓ solo si lo identifica un experto», «no lo recolectes por tu cuenta» | ✅ | [UF] "should never consume wild mushrooms that they cannot positively identify as edible" |
+| F11 | «carotenos» tachado sobre la zanahoria, «ácido laetipórico» (zigzag de dobles enlaces), «¿colorante para comida? posible» | ✅ | [DAV], [ZAN] |
+| F12 | Demás subtítulos (13) | ✅ | Coinciden con la voz verificada; ninguno en el tercio inferior |
+| F13 | Barras: 5 cm (plato ~23 cm, sartén, zanahoria ~15 cm), 20 cm (repisas ~20 cm), 10 cm (corte), 20 µm, 50 cm | ✅ (corregido) | En el gancho y el cierre, plato y tronco van juntos y el tronco no está a escala: la barra ahora dice «5 cm (plato)». En «experto», la barra de 20 cm pasó de 170 a 200 px para que las repisas midan ~23 cm (no 27). |
+| F14 | publicacion.md: «en agosto de 1987, en Columbia Británica (Canadá)… comió un pedazo» | ✅ (corregido) | No se pudo abrir el escaneo de [APP]: se dejó «en 1987, en Canadá, una niña de 6 años comió este hongo» y «unas 20 horas después de que empezaron los síntomas». Tarjeta del guion: sin «Columbia Británica». |
+| F15 | publicacion.md: «hongo de comal» / «hongo de encino» en Xalapa | ✅ | [SAL] "se le conoce popularmente como 'hongo de comal' u 'hongo de encino'" (1990) |
+| F16 | publicacion.md (LinkedIn): pedir evaluación de riesgo a un arborista | ✅ | [UF] "should be inspected and assessed as potential hazard trees by an ISA-certified arborist… an arborist can help provide a risk assessment" (2020) |
+| F17 | publicacion.md: resto de textos (pudrición, hifas, caso, crudo/alérgicos, colorante, fuentes) | ✅ | Coinciden con la tabla de arriba; cada enlace va con su propia fuente |
+
+Todas las afirmaciones de la animación y de la publicación quedaron ✅ tras las correcciones. Nada invita a recolectarlo. El dibujo es esquemático. No es consejo médico.
+
+VEREDICTO: APROBADO

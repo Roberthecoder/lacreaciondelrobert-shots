@@ -29,7 +29,7 @@
 
 **Música:** cama grave continua, curiosa y algo tensa en el caso de la niña, más ligera al final; sin golpe marcado, debajo de la voz. Efectos en el mismo cuadro: tenedor y golpe del sello, crujido de las repisas al brotar, roce de las hifas y chasquidos de las cadenas de celulosa al romperse, crujidos de la madera al agrietarse y desmoronarse, "?" del re-gancho, chisporroteo de la sartén, zumbido del microscopio, tic de la tarjeta, tambaleo y "glitch" suave de la alucinación, tic-tac del cronómetro y campanita al amanecer, gruñido de estómago, golpe del sello "no lo recolectes", gota de colorante, crujido final de los cubitos.
 
-Barras de escala: 5 cm (plato, sartén, crudo, zanahoria, cierre), 20 cm (repisas en el tronco), 10 cm (corte del tronco), 20 µm (hifas), 50 cm (la niña).
+Barras de escala: 5 cm (plato, sartén, crudo, zanahoria, cierre), 20 cm (repisas en el tronco), 10 cm (corte del tronco), 20 µm (hifas), 50 cm (la niña; la repisa del árbol mide ~20 cm). En el gancho y el cierre la barra dice "5 cm (plato)": el tronco de al lado es esquemático, no a escala.
 
 **Nota de ritmo:** el re-gancho cae hacia el s 18 y el estudio entre los s 29 y 37 (un poco antes que la receta) porque el
 mecanismo de la pudrición se cuenta rápido; el dato extra (s 50–54) y el cierre sí caen en su lugar.
