@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Chocolate base narrada.dc.html",
+  "salida": "Shot Chocolate narrado.dc.html",
+  "nota": "Shot Químico #41. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa capa blanca en tu chocolate no es moho: es su propia grasa o su azúcar, en cristales nuevos."
+    },
+    {
+      "escena": "Que",
+      "texto": "Se llama bloom, y hay dos: de grasa y de azúcar."
+    },
+    {
+      "escena": "Manteca",
+      "texto": "Cerca del 30 por ciento del chocolate es manteca de cacao, y puede cristalizar en 6 formas."
+    },
+    {
+      "escena": "FormaV",
+      "texto": "La buena es la forma 5: da brillo y ese crack al partirlo. Para lograrla, se templa a temperaturas precisas."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Pero con calor, la manteca se derrite, sube a la superficie y recristaliza: se ve blanca."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si lo guardaste en el refri?"
+    },
+    {
+      "escena": "Azucar",
+      "texto": "Al sacarlo, el agua se condensa encima, disuelve el azúcar y, al secarse, deja polvito blanco."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1966, en Cincinnati, Estados Unidos, dos investigadores describieron las 6 formas con rayos X, y nunca vieron manchas sin la forma 6."
+    },
+    {
+      "escena": "Laser",
+      "texto": "Lo curioso: en 2020, en Florida, borraron parte de esas manchas de grasa con un láser."
+    },
+    {
+      "escena": "Comer",
+      "texto": "La agencia de alimentos de Canadá dice que se puede comer: a veces cambia el sabor, pero no es riesgo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa capa blanca no es moho: es química de cristales. Guárdalo fresco y seco."
+    }
+  ]
+}

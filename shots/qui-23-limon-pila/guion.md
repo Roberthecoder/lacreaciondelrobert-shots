@@ -1,0 +1,67 @@
+# Shot Químico #23 · Ese limón no te da electricidad (la pila de limón)
+
+- **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #23 · rama `pedido300/qui`.
+- **Formato:** N5 "El experimento" (la pila de limón con voltímetro en vivo, Goodisman, Syracuse, 2001) + N1 "Por dentro" (el limón por fuera → el zinc, los electrones y los iones por dentro → el mismo limón con el clavo ya gastado).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre lo que se ve en pantalla: "Ese limón no te está dando electricidad: el que se está gastando es el clavo."
+- **Seguridad:** el experimento es de bajo voltaje (menos de 1 volt por limón); la voz avisa lo único práctico que trae la fuente: ese limón ya no se come.
+- **Duración:** voz 954 caracteres (≈ 57.9 s, `estimar-escenas.mjs`) + cierre 3.5 s → **≈ 61.4 s**.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~954 créditos).
+
+## Versión narrada
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Ese limón no te está dando electricidad: el que se está gastando es el clavo. | Fondo amarillo. Desde el cuadro 0 una mano clava un clavo plateado en un limón entero (ya tiene un alambre de cobre del otro lado); los caimanes se conectan y el voltímetro salta de 0.00 a "0.9 V". Etiqueta "¿del limón?" se tacha y una flecha apunta al clavo. Barra de escala "5 cm". |
+| 1 | Que | Es un clavo galvanizado, cubierto de zinc, y un alambre de cobre, metidos en el mismo limón. | Zoom al clavo: se pela una capa gris "zinc (Zn)" sobre el acero; del otro lado el alambre naranja "cobre (Cu)". Chips "−" en el clavo y "+" en el cobre. |
+| 2 | Zinc | El zinc se oxida: suelta electrones y se va disolviendo en el jugo, convertido en iones. | Fondo noche (dentro del jugo). Barra de escala "1 nm" (esquemático). Átomos grises de Zn en la superficie del clavo sueltan dos puntitos amarillos (e⁻) cada uno y se desprenden como Zn²⁺ que flotan al jugo. Ecuación chica: Zn → Zn²⁺ + 2e⁻. |
+| 3 | Cable | Esos electrones viajan por el cable hasta el cobre, y eso es la corriente. | La cámara sale del limón y sigue a los e⁻ por el cable rojo, pasando por el voltímetro (la aguja tiembla), hasta el alambre de cobre. Chip "corriente". |
+| 4 | Jugo | ¿Y el limón? Su jugo ácido es el electrolito: con sus iones cierra el circuito por dentro. | Corte del limón en rayos X (`Lupa`): gajos con jugo; iones H⁺ y citrato (−) se mueven entre los dos metales; un aro de luz recorre todo el circuito: cable por fuera, jugo por dentro. Chip "electrolito". |
+| 5 | Pregunta | Y al cobre le llegan electrones… ¿qué pasa ahí? | **Re-gancho.** "?" gigante sobre la punta de cobre; los e⁻ se amontonan en ella. |
+| 6 | Estudio | En 2001, en la Universidad de Syracuse, el químico Jerry Goodisman lo probó con limones simulados, hechos con ácido: en el cobre, ese ácido se vuelve gas hidrógeno. | `TarjetaEstudio` "2001 · Goodisman · Syracuse University (EE. UU.) · J Chem Educ"; un vaso de laboratorio con ácido y las dos tiras de metal ("limón simulado"). Fondo noche: en la superficie del cobre, dos H⁺ toman dos e⁻ y se juntan en H₂; burbujitas que suben. Ecuación chica: 2H⁺ + 2e⁻ → H₂. |
+| 7 | Voltaje | Y midió el voltaje: con zinc y cobre en ácido cítrico, como el del limón, dio 0.91 volts: ni siquiera llega a un volt. | El vaso de Goodisman con zinc y cobre; el voltímetro sube a "0.91 V" con etiqueta "ácido cítrico 4 % · Goodisman 2001"; una raya "1 V" queda arriba, sin alcanzarse. |
+| 8 | Dato | Por eso, para prender un foquito LED se ponen 4 o 5 limones en fila. Y ojo: ese limón ya no se come. | Cinco limones en fila conectados cobre-con-clavo; un LED rojo se enciende de a poco; voltímetro "≈ 2.5–3 V". Luego un limón con tenedor y ✗ "no se come". |
+| 9 | Cierre | Así que ese limón no te da electricidad: la energía sale del zinc del clavo, que reacciona con su ácido. | **Regreso al limón del inicio**: se saca el clavo y se ve la punta un poco opaca, apenas gastada, con etiqueta "un poco gastado · pierde zinc"; luego "Zn + ácido → energía". El voltímetro marca la misma lectura del principio, "0.9 V". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
+
+**Música:** cama grave continua y eléctrica (zumbido suave); efectos en el mismo cuadro: clavo que entra al limón, clic de los caimanes, "bip" del voltímetro, chispitas de los e⁻ por el cable, burbujeo del hidrógeno, golpe de la tarjeta, "bip" del 0.91, encendido del LED.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿qué pasa ahí?» y en «ojo: ese limón ya no se come».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.3 | 11_sorprendido | `gancho` | «el que se está gastando es el clavo» |
+| 2 | 5.7 | 10.0 | 13_senalando_arriba | `izq-alto` | «un clavo galvanizado, cubierto de zinc» |
+| 3 | 11.7 | 15.4 | 06_pensativo_menton | `arriba-der` | «suelta electrones y se va disolviendo» |
+| 4 | 16.7 | 20.1 | 05_sonriendo_dientes_uniformes | `izq-alto` | «y eso es la corriente» |
+| 5 | 21.5 | 25.6 | 02_apuntando_camara | `arriba-der` | «¿Y el limón? … el electrolito» |
+| 6 | 25.9 | 28.9 | 07_pensativo_puno | `grande` | «¿qué pasa ahí?» |
+| 7 | 32.8 | 38.2 | 11_sorprendido | `izq-alto` | «el ácido se vuelve gas hidrógeno» |
+| 8 | 39.5 | 45.3 | 04_bajando_lentes | `izq-alto` | «0.91 volts: ni siquiera llega a un volt» |
+| 9 | 46.0 | 48.7 | 13_senalando_arriba | `arriba-der` | «para prender un foquito LED» |
+| 10 | 49.0 | 51.4 | 10_serio_molesto | `grande-izq` | «ojo: ese limón ya no se come» |
+| 11 | 52.0 | 57.8 | 02_apuntando_camara | `arriba-der` | «la energía sale del zinc del clavo» |
+| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 11 apariciones · ≈ 45 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
+
+## Fuentes (abiertas el 29 oct 2026)
+
+1. **El limón no "tiene" electricidad; su jugo es el electrolito; el clavo galvanizado es de zinc; el zinc se oxida, suelta electrones e iones al ácido; los electrones viajan por el cable al cobre; 4–5 limones en serie para un LED; no comer los limones** — The Australian National University (ANU), College of Science. "How to make a lemon battery" (sin año en la página). https://science.anu.edu.au/engagement/science-lab-experiments-home-school/how-make-lemon-battery
+   > "4 to 5 galvanised steel nails, which are zinc-coated (negative electrode)" · "The lemon does not contain electricity itself. Instead, the acidic lemon juice (citric acid) acts as an electrolyte." · "Zinc on the galvanised nail undergoes oxidation, losing electrons and releasing zinc ions into the acid. Electrons travel through the external wire toward the copper strip, generating an electric current." · "To build up enough voltage for an LED, connect your lemon cells in a series circuit." · "A 4 to 5 lemon series setup will generate approximately 2.5 to 3.0 volts." · "Safety Note: Do not consume the lemons after inserting metal nails and copper wire into them."
+2. **2001, Syracuse: experimentos de laboratorio; el zinc se disuelve y en el cobre se genera hidrógeno** — Goodisman J. "Observations on Lemon Cells." *J Chem Educ* 78(4):516–518 (2001). DOI 10.1021/ed078p516. Afiliación: "Jerry Goodisman, Department of Chemistry, Syracuse University, Syracuse, NY 13244-4100". Texto completo leído por el verificador (copia: https://docs.backyardbrains.com/assets/files/Observations_Lemon_Cells-18881e961676995ecc9586b31db86e82.pdf; ficha https://surface.syr.edu/che/16). Resumen:
+   > "The lemon cell, consisting of pieces of two different metals stuck into a lemon or other fruit, is pictured in many general chemistry textbooks without being discussed. We describe simple experiments, suitable for the general chemistry laboratory, which elucidate how this kind of cell works. They show that (i) the cell is not two metal-metal ion half cells, and (ii) the cell reaction involves dissolution of the more active metal and generation of hydrogen on the less active metal."
+   > Texto completo: "The cells studied consisted of Cu and Zn dipping into dilute hydrochloric acid solutions at 21 °C" · "It has been shown that a 5% solution of citric acid imitates the lemon well" · "dipping two different metals from Cu, Pb, Zn, Ni, and Fe into a 0.2510 M citric acid solution (4.10% citric acid by weight)" · Tabla 1: Cu2+/Cu – Zn2+/Zn = "0.914" V · "Figure 1. Measured emf's of simulated lemon cells" · "gas bubbles are observed at both electrodes… The bubbles, which are larger and more numerous on the Cu than on the Zn, are hydrogen." · "At the Cu electrode, H+ ions are reduced to H2 gas." · "Weighing the electrodes before and after running the cell shows that the Zn electrode loses mass but the Cu electrode does not." · "This shows that the oxidation half-cell is Zn(s) → Zn2+(aq) + 2e–." · "The Zn2+ ions, along with H+ ions, migrate through the solution from the Zn to the Cu electrode; negative ions (chloride or citrate) migrate in the opposite direction."
+3. **Pila galvánica: reacción redox espontánea; los iones del electrolito mantienen el balance de carga (cierran el circuito por dentro); ánodo = oxidación, cátodo = reducción** — Flowers P. et al. *Chemistry 2e*, OpenStax (Rice University), sección 17.2 "Galvanic Cells" (2019). https://openstax.org/books/chemistry-2e/pages/17-2-galvanic-cells
+   > "those in which a spontaneous redox reaction takes place are called galvanic cells (or voltaic cells)." · "transfer, instead, takes place indirectly through an external circuit that contacts the separated reactants." · "resulting in a compensatory flow of inert ions from the salt bridge that maintains charge balance." · "the anode of an electrochemical cell is the electrode at which oxidation occurs."
+
+## Notas
+- El dibujo es esquemático (átomos, iones y electrones como bolitas; la escala "1 nm" es ilustrativa).
+- "El limón no te da electricidad" sigue a ANU ("The lemon does not contain electricity itself"). Matiz para la descripción: el ácido del jugo sí participa en la reacción (sus H⁺ se vuelven hidrógeno); por eso el cierre dice "el zinc… que reacciona con su ácido".
+- Goodisman también mostró que la pila de limón no es una pila "zinc-ion zinc / cobre-ion cobre" como se suele dibujar: en el cobre no se deposita cobre, se forma hidrógeno. Va en la descripción.
+- Goodisman no midió en jugo de limón: usó "limones simulados" (ácido cítrico al 4.10 % y ácido clorhídrico diluido); la voz lo dice. El 0.914 V es de Cu/Zn en ácido cítrico 4.10 %; en pantalla se redondea a "0.9 V" en gancho y cierre y se muestra "0.91 V" en el estudio.
+- El clavo pierde zinc (pierde masa, Goodisman), pero en un experimento corto apenas se nota: se dibuja solo un poco gastado.
+- Se descartó un artículo de Sinaloa (Supl. Rev. Mex. Fís. 2026) porque sus cifras de limones en serie son internamente imposibles; no se usa ninguna cifra de ahí. Tampoco se da la corriente (no hay fuente seria).
+- Seguridad: experimento de muy bajo voltaje; no comer los limones usados (ANU).
+

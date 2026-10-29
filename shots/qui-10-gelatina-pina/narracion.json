@@ -1,0 +1,17 @@
+{
+  "dcHtml": "Shot Gelatina base narrada.dc.html",
+  "salida": "Shot Gelatina narrado.dc.html",
+  "nota": "Shot Químico #10. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esta gelatina no se echó a perder: la piña fresca la está cortando en pedacitos." },
+    { "escena": "Que", "texto": "La gelatina sale del colágeno de la piel y los huesos de animales: son cadenas largas de proteína." },
+    { "escena": "Red", "texto": "Al enfriarse, esas cadenas se enroscan en hélices y se amarran en una red que atrapa el agua: eso es cuajar." },
+    { "escena": "Bromelina", "texto": "Pero la piña fresca trae bromelina, enzimas que cortan proteínas como unas tijeras." },
+    { "escena": "Corta", "texto": "Corta la gelatina en pedazos tan cortos que ya no alcanzan a amarrarse, y se queda líquida." },
+    { "escena": "Pregunta", "texto": "¿Y por qué con piña de lata sí cuaja bien?" },
+    { "escena": "Estudio", "texto": "En 2010, en Tailandia, calentaron bromelina de piña: a 40 grados aguantó una hora sin perder nada; a 80, en 8 minutos se apagó casi toda." },
+    { "escena": "Lata", "texto": "Y la piña de lata se calienta para enlatarla: por eso su bromelina ya no corta la gelatina." },
+    { "escena": "Kiwi", "texto": "Lo curioso: en 2002, en Japón, el jugo de la mayoría de 13 variedades de kiwi también deshizo la gelatina." },
+    { "escena": "Cierre", "texto": "Así que esta gelatina no se echó a perder: la piña fresca la cortó. Si la quieres con piña, usa de lata o cuécela antes." }
+  ]
+}

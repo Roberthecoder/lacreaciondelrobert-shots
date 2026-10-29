@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Leche base narrada.dc.html",
+  "salida": "Shot Leche narrado.dc.html",
+  "nota": "Shot Químico #57. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Lo blanco de tu leche no es un pigmento: es luz rebotando en bolitas que tus ojos no alcanzan a ver."
+    },
+    {
+      "escena": "Bolitas",
+      "texto": "En la leche flotan gotitas de grasa y micelas de caseína: racimos de proteína con calcio y fosfato."
+    },
+    {
+      "escena": "Rebote",
+      "texto": "Casi no se comen la luz: la desvían. Cada rayo choca, cambia de rumbo y vuelve a chocar."
+    },
+    {
+      "escena": "Blanco",
+      "texto": "Sale rebotada luz de todos los colores, y juntos llegan a tus ojos como blanco."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué la leche descremada se ve medio azul?"
+    },
+    {
+      "escena": "Azul",
+      "texto": "Sin casi nada de grasa quedan las micelas, más chiquitas, y las bolitas chicas desvían más la luz azul."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2008, un equipo con la Universidad de Granada, en España, echó leche descremada en un tanque de agua y midió la luz."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Con poca leche, la luz desviada se veía azul."
+    },
+    {
+      "escena": "Rojo",
+      "texto": "Y la que cruzaba salía rojiza: como el cielo azul y el sol del atardecer."
+    },
+    {
+      "escena": "Rayo",
+      "texto": "Lo curioso: en 2007, un equipo de Dinamarca y California simuló la leche, y un rayo de luz rebotaba miles de veces adentro."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese blanco no es pintura: es luz que rebotó miles de veces hasta tus ojos."
+    }
+  ]
+}

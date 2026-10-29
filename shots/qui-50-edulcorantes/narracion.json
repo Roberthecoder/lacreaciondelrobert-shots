@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Edulcorantes base narrada.dc.html",
+  "salida": "Shot Edulcorantes narrado.dc.html",
+  "nota": "Shot Químico #50. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este granito no es azúcar: es sucralosa, y endulza como unos 600 granitos de azúcar."
+    },
+    {
+      "escena": "Familia",
+      "texto": "El aspartamo, unas 200 veces; la stevia, de 200 a 400."
+    },
+    {
+      "escena": "Receptor",
+      "texto": "En tu lengua, lo dulce lo capta un receptor de dos piezas."
+    },
+    {
+      "escena": "Llave",
+      "texto": "El azúcar y estos lo encienden: tu cerebro recibe dulce."
+    },
+    {
+      "escena": "Poquito",
+      "texto": "Y con mucho menos: 8 gramos de azúcar endulzan como unos 40 miligramos de aspartamo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo se descubrieron?"
+    },
+    {
+      "escena": "Schlatter",
+      "texto": "De chiripa: en 1965, James Schlatter buscaba un remedio para la úlcera, se lamió un dedo y le supo dulce."
+    },
+    {
+      "escena": "Londres",
+      "texto": "En Londres, un estudiante creyó que le pedían probar azúcares con cloro, no analizarlos: así nació la sucralosa."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "¿Y son seguros? En 2023, en Lyon, la agencia de cáncer de la OMS llamó al aspartamo posiblemente cancerígeno, por evidencia limitada."
+    },
+    {
+      "escena": "Limite",
+      "texto": "Otro comité mantuvo su límite: alguien de 70 kilos tendría que tomar más de 9 latas de refresco light diarias."
+    },
+    {
+      "escena": "Amargo",
+      "texto": "En 2012 se vio que la stevia también enciende dos receptores de amargo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese granito no es azúcar: es una llave que engaña a tu lengua."
+    }
+  ]
+}

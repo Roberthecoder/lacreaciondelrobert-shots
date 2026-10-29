@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Silica base narrada.dc.html",
+  "salida": "Shot Silica narrado.dc.html",
+  "nota": "Shot Químico #27. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas bolitas de «no comer» no son veneno: son una trampa para el agua, llena de túneles."
+    },
+    {
+      "escena": "Que",
+      "texto": "Es sílica gel: dióxido de silicio, casi como la arena, pero lleno de poros diminutos."
+    },
+    {
+      "escena": "Superficie",
+      "texto": "Tantos, que un gramo tiene por dentro más superficie que una cancha de básquetbol."
+    },
+    {
+      "escena": "Silanol",
+      "texto": "Sus paredes están tapizadas de oxígeno e hidrógeno, y el vapor de agua se les pega."
+    },
+    {
+      "escena": "Adsorcion",
+      "texto": "No se la traga: el agua se queda en la superficie. Eso es adsorción, con d."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y entonces por qué dice «no comer»?"
+    },
+    {
+      "escena": "Riesgo",
+      "texto": "Porque un niño se puede atragantar, y las azules traen cloruro de cobalto, que se pone rosa al mojarse y sí es tóxico, aunque viene en muy poca cantidad."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En Israel, un estudio publicado en 2015 revisó un año de llamadas a toxicología: 546 casos de sílica gel, casi todos de niños menores de 6 años."
+    },
+    {
+      "escena": "Sintomas",
+      "texto": "Menos de 3 de cada 100 tuvieron síntomas: molestias leves en la boca."
+    },
+    {
+      "escena": "Curioso",
+      "texto": "El mes con más casos fue abril, justo antes de la Pascua judía."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no son veneno: son arena llena de túneles, atrapando el agua que no ves."
+    }
+  ]
+}

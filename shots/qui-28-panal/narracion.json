@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot Panal base narrada.dc.html",
+  "salida": "Shot Panal narrado.dc.html",
+  "nota": "Shot Químico #28. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esto no es gelatina: es un vaso de agua atrapada por el polvito de un pañal." },
+    { "escena": "Que", "texto": "Ese polvo suele ser poliacrilato de sodio: cadenas larguísimas amarradas como una red." },
+    { "escena": "Cargas", "texto": "Cada cadena trae cargas negativas y, junto a ellas, iones de sodio." },
+    { "escena": "Repulsion", "texto": "Al entrar el agua, esas cargas se repelen y la red se estira como un resorte." },
+    { "escena": "Osmosis", "texto": "Adentro hay mucho sodio y afuera casi nada: el agua se mete a emparejarlo." },
+    { "escena": "Gel", "texto": "Los amarres no lo dejan disolverse: por eso queda como gel." },
+    { "escena": "Pregunta", "texto": "¿Entonces un pañal se traga trescientas veces su peso en pipí?" },
+    { "escena": "Estudio", "texto": "En 2025, en Coimbra, Portugal, sacaron el polvo de un pañal: tragó casi trescientas veces su peso en agua pura, pero solo unas veinte en orina de laboratorio." },
+    { "escena": "Sal", "texto": "La sal de la orina tapa las cargas y empareja el sodio: la red jala mucha menos agua." },
+    { "escena": "Peoria", "texto": "Lo curioso: en 1973, en un laboratorio agrícola de Peoria, Estados Unidos, injertaron cadenas parecidas en almidón: el Super Slurper." },
+    { "escena": "Cierre", "texto": "Así que esto no es gelatina: es agua atrapada por cargas que no se soportan." }
+  ]
+}

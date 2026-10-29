@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Platano base narrada.dc.html",
+  "salida": "Shot Platano narrado.dc.html",
+  "nota": "Shot Químico #46. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese plátano maduro no está quieto: suelta un gas que madura a la fruta de al lado."
+    },
+    {
+      "escena": "Que",
+      "texto": "Se llama etileno: dos carbonos y cuatro hidrógenos, la hormona vegetal más simple que se conoce."
+    },
+    {
+      "escena": "Hormona",
+      "texto": "La fruta lo suelta al aire y la de al lado lo recibe como orden: madura."
+    },
+    {
+      "escena": "Cadena",
+      "texto": "Respira más rápido, cambia de color, se ablanda y suelta más etileno."
+    },
+    {
+      "escena": "Bolsa",
+      "texto": "Por eso un aguacate madura antes en bolsa de papel con una manzana madura."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué tus uvas no maduran en el frutero?"
+    },
+    {
+      "escena": "Tipos",
+      "texto": "Las uvas, las fresas y los cítricos maduran en la planta; cortados, casi no maduran."
+    },
+    {
+      "escena": "Tipos",
+      "texto": "El plátano, el aguacate y la manzana sí siguen."
+    },
+    {
+      "escena": "Neljubov",
+      "texto": "En 1901, en San Petersburgo, Neljubov vio chícharos creciendo de lado: era el etileno del gas de alumbrado."
+    },
+    {
+      "escena": "Gane",
+      "texto": "En 1934, en Cambridge, Gane juntó el gas de un montón de manzanas maduras y probó que la fruta lo fabrica."
+    },
+    {
+      "escena": "Cuarto",
+      "texto": "Lo curioso: los plátanos de exportación viajan verdes, y al llegar los maduran en cuartos con etileno."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese plátano no está quieto: es el jefe de tu frutero."
+    }
+  ]
+}

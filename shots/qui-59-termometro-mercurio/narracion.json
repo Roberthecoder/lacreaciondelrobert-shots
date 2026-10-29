@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Mercurio base narrada.dc.html",
+  "salida": "Shot Mercurio narrado.dc.html",
+  "nota": "Shot Químico #59. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Se te rompió un termómetro de mercurio: ¿por qué NO debes barrer ni aspirar esas bolitas?"
+    },
+    {
+      "escena": "Que",
+      "texto": "Son mercurio, un metal líquido que a temperatura ambiente suelta un gas que no ves ni hueles."
+    },
+    {
+      "escena": "Pulmon",
+      "texto": "Ese vapor es lo peligroso: al respirarlo, un adulto absorbe entre 69 y 85 por ciento."
+    },
+    {
+      "escena": "Escoba",
+      "texto": "La escoba lo rompe en gotitas, y las gotitas chicas se evaporan más rápido."
+    },
+    {
+      "escena": "Aspiradora",
+      "texto": "Y la aspiradora lo calienta, lo avienta al aire y se queda contaminada."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cuánto tiempo sigue soltando vapor?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2004, en Michigan, una familia aspiró el mercurio de un termómetro. Un mes después, guardada en un garaje helado, la aspiradora seguía soltando vapor de mercurio, y Salud de Michigan pidió inutilizarla y tirarla."
+    },
+    {
+      "escena": "QueHacer",
+      "texto": "Sin pánico. La EPA dice: que salgan todos, y las mascotas; abre ventanas, ponte guantes, junta las gotas con cartón y un gotero, y ventila al menos 24 horas."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Ese vapor pesa más que el aire: se junta abajo, donde respiran los niños."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Nada de escoba ni aspiradora: lo peligroso es lo que no ves."
+    }
+  ]
+}

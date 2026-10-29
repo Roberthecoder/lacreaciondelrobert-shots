@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Desodorante base narrada.dc.html",
+  "salida": "Shot Desodorante narrado.dc.html",
+  "nota": "Shot Químico #29. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese olor de tu axila no es tu sudor: son bacterias comiéndoselo."
+    },
+    {
+      "escena": "Sudor",
+      "texto": "El sudor fresco de la axila no huele: trae moléculas sin olor, pegadas a aminoácidos."
+    },
+    {
+      "escena": "Bacterias",
+      "texto": "Ahí viven bacterias como Corynebacterium y Staphylococcus hominis, que las cortan."
+    },
+    {
+      "escena": "Olor",
+      "texto": "Y sueltan ácidos que apestan y tioalcoholes, que llevan azufre."
+    },
+    {
+      "escena": "Desodorante",
+      "texto": "El desodorante va contra eso: trae perfume y antimicrobianos contra esas bacterias."
+    },
+    {
+      "escena": "Antitranspirante",
+      "texto": "El antitranspirante es otra cosa: sus sales de aluminio tapan por un rato el conducto del sudor."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero cuál bacteria suelta el peor olor?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2020, en la Universidad de York, Inglaterra, hallaron la enzima de Staphylococcus hominis que suelta el tioalcohol."
+    },
+    {
+      "escena": "Prueba",
+      "texto": "Pasaron su gen a otra bacteria que no lo hacía, y empezó a soltarlo."
+    },
+    {
+      "escena": "Curioso",
+      "texto": "Lo curioso: proponen que ese olor ya existía antes que nuestra especie."
+    },
+    {
+      "escena": "Aluminio",
+      "texto": "¿Y el aluminio causa cáncer de mama? La Sociedad Americana del Cáncer dice que hay poca evidencia."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese olor no es tu sudor: es química de las bacterias de tu axila."
+    }
+  ]
+}

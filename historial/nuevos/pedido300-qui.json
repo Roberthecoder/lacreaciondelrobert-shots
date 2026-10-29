@@ -1,0 +1,997 @@
+{
+  "temas": [
+    {
+      "id": "qui-gelatina-pina",
+      "titulo": "Esta gelatina no se echó a perder (la piña fresca y la bromelina)",
+      "serie": "Shot Químico",
+      "numero": 10,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-10-gelatina-pina",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Bayrak B., Cashman A., McGowan P., Maguire J. Mar Drugs (2026). PMID 42346802 · PMC13301568 · doi:10.3390/md24060217",
+        "Mirmusavi M.H., Gonçalves V.S.S., Wischke C. Mater Today Bio (2026). PMID 41560787 · PMC12813337 · doi:10.1016/j.mtbio.2025.102710",
+        "Maurer H.R. Cell Mol Life Sci 58(9):1234–45 (2001). PMID 11577981",
+        "Kaur T., Kaur A., Grewal R.K. J Food Sci Technol 52(9):5954–60 (2015). PMID 26345013 · PMC4554621"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El kiwi y la papaya también 'derriten' la gelatina (actinidina y papaína)",
+        "Ablandador de carne en polvo: enzimas que cortan proteínas"
+      ]
+    },
+    {
+      "id": "qui-gas-estufa",
+      "titulo": "Ese olor no es el gas de tu estufa (mercaptanos: la alarma que le agregan)",
+      "serie": "Shot Químico",
+      "numero": 11,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-11-gas-estufa",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "CRE. Diario Oficial de la Federación, 29 ago 2016. https://dof.gob.mx/nota_detalle.php?codigo=5450011&fecha=29%2F08%2F2016",
+        "Alcaldía Coyoacán, Gobierno de la CDMX. (PDF, 2019). https://www.coyoacan.cdmx.gob.mx/Vistas/modulos/que/fuga/guia%20gas.pdf",
+        "PubChem (NIH), CID 6343 (ethanethiol) y CID 6334 (propane). https://pubchem.ncbi.nlm.nih.gov/compound/6343",
+        "Nagata Y. (Japan Environmental Sanitation Center). 2003; experimentos de 1976 a 1988. PDF del Ministerio del Ambiente de Japón: https://www.env.go.jp/content/900450144…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el gas LP se junta en el piso y el natural sube",
+        "El olor a huevo podrido del drenaje (ácido sulfhídrico)"
+      ]
+    },
+    {
+      "id": "qui-palomitas",
+      "titulo": "Tu palomita no revienta por quemarse (por qué revientan las palomitas)",
+      "serie": "Shot Químico",
+      "numero": 12,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-12-palomitas",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Virot E., Ponomarenko A. J. R. Soc. Interface 12(104):20141247 (2015). DOI 10.1098/rsif.2014.1247 · PMC4345489",
+        "Tandjung A.S., Janaswamy S., Chandrasekaran R., Aboubacar A., Hamaker B.R. Biomacromolecules 6(3):1654–60 (2005). PMID 15877391 · DOI 10.1021/bm049220l",
+        "Matsuoka Y. et al. PNAS 99(9):6080–4 (2002). PMID 11983901"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el maíz pozolero no revienta como el palomero",
+        "El crujido del chicharrón al freírse: agua que se vuelve vapor"
+      ]
+    },
+    {
+      "id": "qui-aguacate",
+      "titulo": "Ese guacamole café no está podrido (polifenol oxidasa y el mito del hueso)",
+      "serie": "Shot Químico",
+      "numero": 13,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-13-aguacate",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Hamdan N., Lee C.H., Wong S.L., Fauzi C.E.N.C.A., et al. Molecules 27(3):1101 (2022). PMID 35164369 · PMC8839884 · doi:10.3390/molecules27031101",
+        "Tilley A., McHenry M.P., McHenry J.A., Solah V., Bayliss K. Curr Res Food Sci 7:100623 (2023). PMID 37954915 · doi:10.1016/j.crfs.2023.100623",
+        "Kahn V. J Sci Food Agric 26(9):1319–1324 (septiembre 1975). doi:10.1002/jsfa.2740260910",
+        "Moon K.M., Kwon E.-B., Lee B., Kim C.Y. Molecules 25(12):2754 (2020). PMID 32549214 · PMC7355983 · doi:10.3390/molecules25122754"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la manzana partida se pone café y el limón la frena",
+        "El té negro: hojas oxidadas a propósito"
+      ]
+    },
+    {
+      "id": "qui-sal-sodio",
+      "titulo": "Esa sal no es un polvito inocente (sodio + cloro = sal)",
+      "serie": "Shot Químico",
+      "numero": 14,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-14-sal-sodio",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "PubChem (NIH/NLM), Element Summary: Sodium (Na). https://pubchem.ncbi.nlm.nih.gov/element/Sodium",
+        "PubChem (NIH/NLM), Compound Summary: Sodium, CID 5360545 (HSDB / ICSC / Merck). https://pubchem.ncbi.nlm.nih.gov/compound/5360545",
+        "CDC, Chemical Emergencies: Chlorine (fact sheet). https://www.cdc.gov/chemical-emergencies/chemical-fact-sheets/chlorine.html",
+        "OpenStax, Chemistry 2e, sección 7.1 (Flowers P. et al., 2019). https://openstax.org/books/chemistry-2e/pages/7-1-ionic-bonding"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la sal se pone dura en el salero (humedad)",
+        "Sal de mar contra sal de mesa: lo que de verdad cambia"
+      ]
+    },
+    {
+      "id": "qui-chile-leche",
+      "titulo": "Ese ardor no es calor (el chile, el agua y la leche)",
+      "serie": "Shot Químico",
+      "numero": 15,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-15-chile-leche",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Nolden A.A., Lenart G., Hayes J.E. Physiology & Behavior 208:112557 (2019). DOI 10.1016/j.physbeh.2019.05.018 · PMC6620146",
+        "The Merck Index, 15.ª ed. (O'Neil M.J., ed.), Royal Society of Chemistry, 2013, p. 308, vía PubChem CID 1548943 (sección )",
+        "Caterina M.J., Schumacher M.A., Tominaga M., Rosen T.A., Levine J.D., Julius D. Nature 389:816–824 (1997). PMID 9349813 · DOI 10.1038/39807",
+        "Nobel Assembly at Karolinska Institutet, comunicado de prensa del 4 oct 2021 (nobelprize.org/prizes/medicine/2021/press-release/)"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la menta se siente fría sin estarlo (mentol y TRPM8)",
+        "Por qué la wasabi pica en la nariz y el chile en la boca"
+      ]
+    },
+    {
+      "id": "qui-ceviche",
+      "titulo": "Ese ceviche no está cocido (el limón desdobla proteínas, pero no esteriliza)",
+      "serie": "Shot Químico",
+      "numero": 16,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-16-ceviche",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Zakrzewski A.J., Chajęcka-Wierzchowska W., Zadernowska A. Foods 11(6):860 (2022). PMID 35327282 · PMC8950590 · doi:10.3390/foods11060860",
+        "Kristinsson H.G., Hultin H.O. J Agric Food Chem 51(24):7187–96 (2003). PMID 14611192 · doi:10.1021/jf026193m",
+        "Wang Y., Zhao C., Zhang J., Ying X. et al. Foods 15(4):635 (2026). PMID 41750827 · PMC12939022 · doi:10.3390/foods15040635",
+        "U.S. FDA. Fish and Fishery Products Hazards and Controls Guidance, 4.ª ed., Cap. 5 (abril 2011). https://www.fda.gov/media/80777/download"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el limón 'cuece' el aguachile en minutos",
+        "El pescado huele a pescado por la trimetilamina"
+      ]
+    },
+    {
+      "id": "qui-huevo-verde",
+      "titulo": "Ese anillo verde no es huevo echado a perder (sulfuro ferroso en el huevo cocido)",
+      "serie": "Shot Químico",
+      "numero": 17,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-17-huevo-verde",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Tinkler C.K., Soar M.C. Biochemical Journal 14(2):114–119 (1920). PMID 16742889 · PMC1258902 · DOI 10.1042/bj0140114",
+        "Henneman A. (revisado y actualizado 2024). University of Nebraska–Lincoln Extension, food.unl.edu/how-avoid-green-ring-hard-boiled-egg-yolks/",
+        "Haley-Hadley C. University of Arkansas Division of Agriculture, Cooperative Extension (Miller County), uaex.uada.edu (sin fecha)"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el huevo se pela fácil cuando no es fresco",
+        "Por qué la clara se vuelve blanca al cocerse"
+      ]
+    },
+    {
+      "id": "qui-helado-sal",
+      "titulo": "Esa sal no calienta el hielo: lo obliga a robarle calor a tu helado (helado casero con hielo y sal)",
+      "serie": "Shot Químico",
+      "numero": 18,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-18-helado-sal",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Nave R. HyperPhysics, Georgia State University. https://hyperphysics.gsu.edu/hbase/Chemical/meltpt.html",
+        "CK-12 / LibreTexts, Introductory Chemistry, 16.13 . https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.13…",
+        "Flowers P., Theopold K., Langley R., Robinson W.R. Chemistry 2e, OpenStax (2019), sección 10.3 . https://openstax.org/books/chemistry-2e/pages/10-3-phase-transitions",
+        "Vigeant M.A. Chemical Engineering Education 59(3) (verano 2025), Bucknell University. https://journals.flvc.org/cee/article/download/139257/144871"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué echan sal a las calles congeladas",
+        "El anticongelante del coche: agua que no se congela"
+      ]
+    },
+    {
+      "id": "qui-sal-hervir",
+      "titulo": "La sal no hace que tu agua hierva antes (5 centésimas de grado)",
+      "serie": "Shot Químico",
+      "numero": 19,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-19-sal-hervir",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Flowers P., Theopold K., Langley R., Robinson W.R. Chemistry 2e, OpenStax (Rice University), 2019, sección 11.4 . https://openstax.org/books/chemistry-2e/pages/11-4-co…",
+        "U.S. Food and Drug Administration, (página vigente, consultada 2026). https://www.fda.gov/food/nutrition-education-resources-materials/sodium-your-diet",
+        "The Naked Scientists (Universidad de Cambridge), programa del 6 abr 2008 (Edinburgh Science Festival). https://www.thenakedscientists.com/articles/questions/why-does-a…",
+        "Hakuta T., Goto T., Ishizaka S. (National Chemical Laboratory for Industry, Japón). Bulletin of the Society of Sea Water Science, Japan (日本海水学会誌) 28(3):151–155 (1974).…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué en la montaña los frijoles tardan más en cocerse",
+        "La olla exprés: más presión, agua más caliente"
+      ]
+    },
+    {
+      "id": "qui-refresco-mentos",
+      "titulo": "Esa fuente no es una reacción química (refresco de dieta y Mentos)",
+      "serie": "Shot Químico",
+      "numero": 20,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-20-refresco-mentos",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Coffey T.S. American Journal of Physics 76(6):551–557 (junio 2008). DOI 10.1119/1.2888546. Department of Physics and Astronomy, Appalachian State University, Boone, No…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el refresco se sale al destaparlo si lo agitaste",
+        "Por qué el refresco tibio pierde el gas más rápido"
+      ]
+    },
+    {
+      "id": "qui-oxido",
+      "titulo": "Esa reja no se está ensuciando: está regresando a ser óxido",
+      "serie": "Shot Químico",
+      "numero": 21,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-21-oxido",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "OpenStax, Chemistry 2e, sección 19.1 (Rice University, 2019). https://openstax.org/books/chemistry-2e/pages/19-1-occurrence-preparation-and-properties-of-transition-me…",
+        "U.S. Geological Survey, 2019 Minerals Yearbook: Iron Ore (2019). https://pubs.usgs.gov/myb/vol1/2019/myb1-2019-iron-ore.pdf",
+        "Alcántara J., de la Fuente D., Chico B., Simancas J., Díaz I., Morcillo M. Materials 10(4):406 (2017). PMC5506973 · doi:10.3390/ma10040406",
+        "Balasubramaniam R. (2002), ver fuente 7"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué los clavos galvanizados no se oxidan (zinc de sacrificio)",
+        "Por qué el acero inoxidable no se oxida (capa de cromo)"
+      ]
+    },
+    {
+      "id": "qui-estatua-libertad",
+      "titulo": "Esa estatua no nació verde (la pátina de la Estatua de la Libertad)",
+      "serie": "Shot Químico",
+      "numero": 22,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-22-estatua-libertad",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "National Park Service, Statue of Liberty National Monument. https://www.nps.gov/stli/planyourvisit/frequently-asked-questions-statue-of-liberty.htm y https://www.nps.g…",
+        "Bureš R., Klajmon M., Fojt J., Rak P., Jílková K., Stoulil J. Coatings 9(12):837 (2019). doi:10.3390/coatings9120837",
+        "Matyi R.J., Baboian R. Powder Diffraction 1(4):299–304 (1986). doi:10.1017/S0885715600011970",
+        "Yuko E. HISTORY (A&E), 2025 (act. 2026). https://www.history.com/articles/statue-of-liberty-green-color-change"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué las monedas de cobre se ponen cafés",
+        "Por qué los techos de cobre se vuelven verdes"
+      ]
+    },
+    {
+      "id": "qui-limon-pila",
+      "titulo": "Ese limón no te da electricidad (la pila de limón)",
+      "serie": "Shot Químico",
+      "numero": 23,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-23-limon-pila",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "The Australian National University (ANU), College of Science. (sin año en la página). https://science.anu.edu.au/engagement/science-lab-experiments-home-school/how-mak…",
+        "Goodisman J. J Chem Educ 78(4):516–518 (2001). DOI 10.1021/ed078p516",
+        "Flowers P. et al. Chemistry 2e, OpenStax (Rice University), sección 17.2 (2019). https://openstax.org/books/chemistry-2e/pages/17-2-galvanic-cells"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué las pilas alcalinas se 'sulfatan' y chorrean",
+        "Cómo guarda energía la pila de tu celular (iones de litio)"
+      ]
+    },
+    {
+      "id": "qui-hielo-seco",
+      "titulo": "Ese humo no es humo (hielo seco y sublimación)",
+      "serie": "Shot Químico",
+      "numero": 24,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-24-hielo-seco",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Mobile County Health Dept., Alabama Dept. of Public Health y CDC/NCEH. MMWR 53(50) (24 dic 2004). https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5350a6.htm · PDF: https:/…",
+        "University of Washington, Environmental Health & Safety. (hoja informativa, oct 2026). https://www.ehs.washington.edu/system/files/resources/dryice.pdf",
+        "Rutgers University, Dept. of Chemistry, demostración (1029). https://chem.rutgers.edu/cldf-demos/1029-cldf-demo-fog-formation",
+        "Thilorier, carta leída en la sesión del lunes 12 de octubre de 1835 de la Académie des sciences (París). Comptes rendus hebdomadaires des séances de l'Académie des sci…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El humo de los conciertos: niebla de glicol, no de hielo",
+        "Por qué el nitrógeno líquido hierve sobre tu mano sin quemarla"
+      ]
+    },
+    {
+      "id": "qui-calentador-manos",
+      "titulo": "Ese calentador no trae pilas: es hierro oxidándose a propósito (calentadores de manos desechables)",
+      "serie": "Shot Químico",
+      "numero": 25,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-25-calentador-manos",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "KOBAYASHI Healthcare International Inc. Safety Data Sheet: Air-activated heating packs of various styles (HotHands, Grabber, MediHeat). Emitida 10 abr 2015, revisada 8…",
+        "Gobierno Metropolitano de Tokio, Oficina de Vida del Consumidor (東京都生活文化局). (anexo 1 de un reporte de pruebas de calentadores; PDF modificado en oct 2004). https://www…",
+        "Prof. Robert Musioł, Universidad de Silesia en Katowice (Polonia), Facultad de Ciencia y Tecnología. (10 ene 2024). https://us.edu.pl/wydzial/wnst/en/2024/01/10/chemia…",
+        "Yamashita I., Shimizu M. (Asahi Kasei Kogyo KK). US 3,976,049; prioridad JP 48-74737, 4 jul 1973; presentada en EE. UU. 28 jun 1974; publicada 24 ago 1976. https://pat…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El calentador de 'clic' (acetato de sodio sobreenfriado)",
+        "Por qué la cal viva se calienta con agua"
+      ]
+    },
+    {
+      "id": "qui-compresa-fria",
+      "titulo": "Esa compresa no fabrica frío: le roba calor a tu piel (compresa fría instantánea)",
+      "serie": "Shot Químico",
+      "numero": 26,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-26-compresa-fria",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "OpenStax, Chemistry 2e, sección 11.1 (Flowers P. et al., 2019). https://openstax.org/books/chemistry-2e/pages/11-1-the-dissolution-process",
+        "Bodner G. (Purdue), Chemistry LibreTexts (CC BY-NC-SA 4.0). https://chem.libretexts.org/Ancillary_Materials/Demos_Techniques_and_Experiments/Lecture_Demonstrations/Add…",
+        "Pei D., Troutman W.G., National Capital Poison Center (poison.org), referencias consultadas en mayo 2025. https://www.poison.org/articles/whats-inside-ice-packs-201",
+        "Challoner K.R., McCarron M.M. J Emerg Med 6(4):289–93 (1988). PMID 3225433 · doi:10.1016/0736-4679(88)90365-4"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el alcohol en la piel se siente frío (evaporación)",
+        "El sudor: cómo el agua que se evapora te enfría"
+      ]
+    },
+    {
+      "id": "qui-silica-gel",
+      "titulo": "Esas bolitas de «no comer» no son veneno (sílica gel)",
+      "serie": "Shot Químico",
+      "numero": 27,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-27-silica-gel",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Poison Control (National Capital Poison Center, EE. UU.). https://www.poison.org/articles/silica-gel",
+        "McGill Office for Science and Society. https://www.mcgill.ca/oss/article/medical-you-asked/what-happens-when-you-eat-silica-gel",
+        "Jacobs J.H., McKelvie K.H., Nanji S., Marriott R.A. ACS Omega 8(13):12592–12602 (2023). DOI 10.1021/acsomega.3c01366 · PMC10077463",
+        "FIBA, Official Basketball Rules (2012), Regla 1: . (Cualquier gramo de las tres sílicas, ≥ 453 m², supera 420 m².)"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué ponen arroz al celular mojado (y por qué no sirve tanto)",
+        "El cloruro de cobalto que cambia de azul a rosa con la humedad"
+      ]
+    },
+    {
+      "id": "qui-panal",
+      "titulo": "Esto no es gelatina (el polvo superabsorbente del pañal)",
+      "serie": "Shot Químico",
+      "numero": 28,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-28-panal",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Patente US 6,555,502 B1, BASF; publicada 2003 (prioridad 1997). https://patents.google.com/patent/US6555502B1/en",
+        "Simões B., Rebelo R.C., et al. Gels 11(4):282 (2025). DOI 10.3390/gels11040282 · PMID 40277718 · PMC12027145",
+        "MIT OpenCourseWare / Dow, Chemistry Behind the Magic: Chemical Demonstrations for the Classroom (2012); cita a Buchholz F.L., J. Chem. Educ. 73(6):512–515 (1996). http…",
+        "Yang M., Wu J., et al. Front Chem 9:688127 (2021). PMC8358602 · DOI 10.3389/fchem.2021.688127"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Las bolitas de hidrogel de las macetas",
+        "Por qué las toallas de papel absorben (capilaridad)"
+      ]
+    },
+    {
+      "id": "qui-desodorante",
+      "titulo": "Ese olor no es tu sudor (desodorante vs. antitranspirante)",
+      "serie": "Shot Químico",
+      "numero": 29,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-29-desodorante",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Natsch A., Emter R. Philos Trans R Soc Lond B Biol Sci 375(1800):20190269 (2020). PMID 32306870 · PMC7209930 · doi:10.1098/rstb.2019.0269",
+        "James A.G., Austin C.J., Cox D.S., Taylor D., Calvert R. FEMS Microbiol Ecol 83(3):527–540 (2013). PMID 23278215 · doi:10.1111/1574-6941.12054",
+        "Rudden M., Herman R., Rose M., Bawdon D., Cox D.S., Dodson E., Holden M.T.G., Wilkinson A.J., James A.G., Thomas G.H. Sci Rep 10:12500 (2020). PMID 32719469 · PMC73851…",
+        "FDA, 21 CFR Part 350 (monografía final, 68 FR 34291, 2003; texto vigente en eCFR / Cornell LII)"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la ropa sintética huele más a sudor",
+        "Por qué el ajo te sale por el sudor"
+      ]
+    },
+    {
+      "id": "qui-protector-solar",
+      "titulo": "Esa crema no es un espejo: es una esponja (cómo funciona el protector solar)",
+      "serie": "Shot Químico",
+      "numero": 30,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-30-protector-solar",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Breakell T., Kowalski I., Foerster Y., Kramer R., Erdmann M., Berking C., Heppt M.V. J Clin Med 13(10):2986 (2024). PMID 38792526 · PMC11121922 · DOI 10.3390/jcm13102986",
+        "Baker L.A., Horbury M.D., Stavros V.G. Opt Express 24(10):10700 (2016). PMID 27409891 · DOI 10.1364/oe.24.010700",
+        "Cole C., Shyr T., Ou-Yang H. Photodermatol Photoimmunol Photomed 32(1):5–10 (2016; en línea nov 2015). PMID 26431814 · DOI 10.1111/phpp.12214",
+        "American Academy of Dermatology (AAD). (aad.org/public/everyday-care/sun-protection/shade-clothing-sunscreen/understand-sunscreen-labels), consultada 2026"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué te bronceas: la melanina como filtro",
+        "Por qué los vidrios del coche no te broncean (UVB)"
+      ]
+    },
+    {
+      "id": "qui-plata-negra",
+      "titulo": "Ese negro en tu plata no es mugre (sulfuro de plata y el truco del aluminio)",
+      "serie": "Shot Químico",
+      "numero": 31,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-31-plata-negra",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Selwyn L. Canadian Conservation Institute (CCI), Gobierno de Canadá, página modificada 2025-02-10. https://www.canada.ca/en/conservation-institute/services/preventive-…",
+        "Selwyn L. CCI Notes 9/7 (1993, rev. 2007). https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-instit…",
+        "Lang H.L., Walton C.F. Jr. USDA Bulletin No. 449, Washington, D.C., 31 oct 1916",
+        "UC Davis, (UCDemos, LibreTexts). https://chem.libretexts.org/Courses/University_of_California_Davis/UCDemos/Cleaning_Silverware__Electrochemical_Reaction"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el huevo ennegrece la cuchara de plata",
+        "Por qué los aretes de fantasía te pintan la piel de verde"
+      ]
+    },
+    {
+      "id": "qui-cerillo",
+      "titulo": "Ese cerillo no trae el fuego en la cabeza (el fósforo está en la caja)",
+      "serie": "Shot Químico",
+      "numero": 32,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-32-cerillo",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "University of Washington, Department of Chemistry, (lecture demo; página vigente 2026). https://chem.washington.edu/lecture-demos/match-head-reaction",
+        "Royal Society of Chemistry, Periodic Table, (y su podcast Chemistry in its element). https://periodic-table.rsc.org/element/15/phosphorus",
+        "The National Archives (Reino Unido), . https://www.nationalarchives.gov.uk/explore-the-collection/stories/1888-matchgirls-strike/",
+        "Isaac S. Royal College of Surgeons of England, Library blog (28 sep 2018). https://www.rcseng.ac.uk/library-and-publications/library/blog/phossy-jaw-and-the-matchgirls"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el cerillo de cocina prende en cualquier superficie",
+        "La pólvora de los cohetes: nitrato, carbón y azufre"
+      ]
+    },
+    {
+      "id": "qui-barras-luz",
+      "titulo": "Ese crac no es el plástico (barras de luz y quimioluminiscencia)",
+      "serie": "Shot Químico",
+      "numero": 33,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-33-barras-luz",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "University of Washington, Department of Chemistry. (demostración de clase). https://chem.washington.edu/lecture-demos/kinetics-light-sticks",
+        "MIT OpenCourseWare, Chemistry Behind the Magic: Chemical Demonstrations for the Classroom (2012), https://ocw.mit.edu/courses/res-hs-002-chemistry-behind-the-magic-che…",
+        "Children's Hospital of Philadelphia, Poison Control Center. https://www.chop.edu/centers-programs/poison-control-center/glow-sticks",
+        "George Bodner, Purdue University. (demostración), en LibreTexts Chemistry. https://chem.libretexts.org/Ancillary_Materials/Demos_Techniques_and_Experiments/Lecture_Dem…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Las luciérnagas: luciferina y luciferasa",
+        "Por qué el luminol hace brillar la sangre"
+      ]
+    },
+    {
+      "id": "qui-brilla-oscuridad",
+      "titulo": "Esas estrellitas no son radiactivas (fosforescencia: luz guardada en trampas)",
+      "serie": "Shot Químico",
+      "numero": 34,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-34-brilla-oscuridad",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "U.S. EPA, RadTown: (página vigente, consultada 2026). https://www.epa.gov/radtown/radioactivity-antiques",
+        "Coursey B.M. J Res Natl Inst Stand Technol 126:126051 (2021). https://doi.org/10.6028/jres.126.051",
+        "Matsuzawa T., Aoki Y., Takeuchi N., Murayama Y. (Nemoto and Company, Research and Development Center, Suginami-ku, Tokyo). J Electrochem Soc 143(8):2670 (1996). DOI 10…",
+        "Van den Eeckhout K., Smet P.F., Poelman D. Materials 3(4):2536–2566 (2010). DOI 10.3390/ma3042536 · PMC5445854"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la ropa blanca brilla con luz negra (blanqueadores ópticos)",
+        "Por qué la tónica brilla azul con luz negra (quinina)"
+      ]
+    },
+    {
+      "id": "qui-vela",
+      "titulo": "Esa vela no quema la cera que ves (quema cera hecha vapor)",
+      "serie": "Shot Químico",
+      "numero": 35,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-35-vela",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Faraday M. The Chemical History of a Candle (1861), Lecciones I–II. Project Gutenberg #14474, https://www.gutenberg.org/ebooks/14474",
+        "NASA. Candle Flame – 1g vs Microgravity (30 abr 2020). https://www.nasa.gov/image-article/candle-flame-1g-vs-microgravity/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el humo de la vela recién apagada vuelve a prender",
+        "Por qué la llama del gas es azul y la de la fogata amarilla"
+      ]
+    },
+    {
+      "id": "qui-agua-pura",
+      "titulo": "El agua pura casi no conduce: lo que conduce son los iones",
+      "serie": "Shot Químico",
+      "numero": 36,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-36-agua-pura",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Wu Y.C., Berezansky P.A. Journal of Research of the National Institute of Standards and Technology 100(5):521–527 (1995). National Institute of Standards and Technolog…",
+        "Hem J.D. Study and Interpretation of the Chemical Characteristics of Natural Water, 3.ª ed. U.S. Geological Survey Water-Supply Paper 2254 (1985), p. 67–68. https://pu…",
+        "Flowers P., Theopold K., Langley R., Robinson W.R. Chemistry 2e, OpenStax (Rice University), 2019, sección 11.2 . https://openstax.org/books/chemistry-2e/pages/11-2-el…",
+        "U.S. Geological Survey, Water Science School. (página actualizada en 2026). https://www.usgs.gov/special-topics/water-science-school/science/conductivity-electrical-co…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué no hay que usar el secador cerca de la tina",
+        "El agua destilada de la plancha: por qué no deja sarro"
+      ]
+    },
+    {
+      "id": "qui-sal-yodada",
+      "titulo": "Ese «yodada» en tu sal no es adorno (yodo, tiroides y bocio)",
+      "serie": "Shot Químico",
+      "numero": 37,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-37-sal-yodada",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "MedlinePlus en español (Biblioteca Nacional de Medicina de EE. UU., NIH), actualización 24 mayo 2024. https://medlineplus.gov/spanish/thyroiddiseases.html",
+        "MedlinePlus en español, Enciclopedia médica, (artículo 001178), revisión 25 ene 2026. https://medlineplus.gov/spanish/ency/article/001178.htm",
+        "Lisco G., De Tullio A., Triggiani D. et al. Nutrients 15(4):1004 (2023). PMID 36839362 · PMC9967346 · doi:10.3390/nu15041004",
+        "PubChem (NIH), Thyroxine, CID 5819: fórmula C15H11I4NO4, masa molecular 776.87 g/mol; Liothyronine (T3), CID 5920: C15H12I3NO4. Consultado vía PUG REST el 29 oct 2026.…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la sal de mar no siempre trae yodo",
+        "El yodo de las heridas: cómo mata microbios"
+      ]
+    },
+    {
+      "id": "qui-refresco-dientes",
+      "titulo": "Ese refresco no solo es dulce: es ácido (el refresco y tu esmalte)",
+      "serie": "Shot Químico",
+      "numero": 38,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-38-refresco-dientes",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Reddy A., Norris D.F., Momeni S.S., Waldo B., Ruby J.D. J Am Dent Assoc 147(4):255–263 (2016). DOI 10.1016/j.adaj.2015.10.019 · PMID 26653863",
+        "Dawes C. J Can Dent Assoc 69(11):722–724 (2003). PMID 14653937. https://jcda.ca/sites/default/files/back_issues/vol-69/issue-11/722.pdf",
+        "American Dental Association, (Oral Health Topics), actualizado el 22 oct 2025. https://www.ada.org/resources/ada-library/oral-health-topics/dental-erosion",
+        "Organización Mundial de la Salud, (nota descriptiva), 17 mar 2025. https://www.who.int/news-room/fact-sheets/detail/oral-health"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el cepillo justo después del refresco no conviene",
+        "El sarro de los dientes: placa que se hace piedra"
+      ]
+    },
+    {
+      "id": "qui-antiacido",
+      "titulo": "Esa pastilla no calma tu estómago: le hace química (antiácidos y neutralización)",
+      "serie": "Shot Químico",
+      "numero": 39,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-39-antiacido",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Engevik A.C., Kaji I., Goldenring J.R. Physiol Rev 100(2):573–602 (2020). PMID 31670611 · PMC7327232 · doi:10.1152/physrev.00016.2019",
+        "Dressman J.B., Berardi R.R., Dermentzoglou L.C. et al. Pharm Res 7(7):756–761 (1990). College of Pharmacy, University of Michigan. PMID 2395805 · doi:10.1023/a:1015827…",
+        "MedlinePlus (NLM/NIH), ency/article/003114.htm (revisión vigente, consultada 29 oct 2026)",
+        "Salisbury B.H., Terrell J.M. StatPearls (actualizado 8 ago 2023). NCBI Bookshelf NBK526049 · PMID 30252305"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "La sal de uvas: por qué hace burbujas en el agua",
+        "Por qué la leche no es buen antiácido"
+      ]
+    },
+    {
+      "id": "qui-mayonesa",
+      "titulo": "Esa mayonesa no es una pasta (emulsión de aceite y yema)",
+      "serie": "Shot Químico",
+      "numero": 40,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-40-mayonesa",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Ghaffari M., Bot A., Tinnevelt G.H., Brussee R., Jansen J.J. Physics of Fluids 36, 124123 (11 dic 2024). DOI 10.1063/5.0245176. Radboud University (Nijmegen), Unilever…",
+        "Suhag R. Applied Sciences 14(21):9692 (2024). DOI 10.3390/app14219692. Universidad Libre de Bolzano, Italia",
+        "U.S. FDA, 21 CFR 169.140 (Code of Federal Regulations, vigente; consultado en law.cornell.edu/cfr/text/21/169.140)",
+        "Guilmineau F., Kulozik U. J Food Eng 78:648–654 (2007). DOI 10.1016/j.jfoodeng.2005.11.002. TU München, Freising, Alemania"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la vinagreta se separa y la mostaza la junta",
+        "Por qué se corta la mayonesa casera"
+      ]
+    },
+    {
+      "id": "qui-chocolate-blanco",
+      "titulo": "Esa capa blanca no es moho (el \"bloom\" del chocolate)",
+      "serie": "Shot Químico",
+      "numero": 41,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-41-chocolate-blanco",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Wille R.L., Lutton E.S. J Am Oil Chem Soc 43:491–496 (agosto 1966). DOI 10.1007/BF02641273",
+        "Chen J., Ghazani S.M., Stobbs J.A., Marangoni A.G. Nat Commun 12:5018 (2021). PMC8408162",
+        "Barišić V., Kopjar M., Jozinović A., Flanjak I., Ačkar Đ. et al. Molecules 24(17):3163 (2019). PMID 31480281 · PMC6749277",
+        "Heuler J., He S., Ambardar S., Voronine D.V. Sci Rep 10:9833 (2020). PMID 32555247 · PMC7299933 · DOI 10.1038/s41598-020-66820-1"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el chocolate se derrite en la boca y no en la mano (templado)",
+        "Chocolate blanco: ¿es chocolate si no trae cacao sólido?"
+      ]
+    },
+    {
+      "id": "qui-queso-limon",
+      "titulo": "Esa leche no se echó a perder: es queso (leche + limón + calor)",
+      "serie": "Shot Químico",
+      "numero": 42,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-42-queso-limon",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Głąb T.K., Boratyński J. Top Curr Chem (Cham) 375(4):71 (2017). DOI 10.1007/s41061-017-0158-z · PMID 28712055 · PMC5511616",
+        "Müller-Buschbaum P., Gebhardt R., Roth S.V., Metwalli E., Doster W. Biophys J 93(3):960–968 (2007). DOI 10.1529/biophysj.107.106385 · PMC1913156",
+        "Khan S.U., Pal M.A. J Food Sci Technol 48(6):645–660 (2011). DOI 10.1007/s13197-011-0247-x · PMC3551056",
+        "Penniston K.L., Nakada S.Y., Holmes R.P., Assimos D.G. J Endourol 22(3):567–570 (2008). DOI 10.1089/end.2007.0304 · PMID 18290732 · PMC2637791"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El requesón: lo que queda del suero",
+        "Por qué la leche se corta en el café muy ácido"
+      ]
+    },
+    {
+      "id": "qui-monoxido",
+      "titulo": "Lo que mata no huele ni se ve (monóxido de carbono del anafre y el boiler)",
+      "serie": "Shot Químico",
+      "numero": 43,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-43-monoxido",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "CDC. (página actualizada el 26 oct 2026). https://www.cdc.gov/carbon-monoxide/about/index.html",
+        "Santé publique France. . https://www.santepubliquefrance.fr/index.php/en/monoxyde-de-carbone/what-carbon-monoxide-and-how-it-formed",
+        "UK Health Security Agency. (actualizado 24 may 2022). https://www.gov.uk/government/publications/carbon-monoxide-properties-incident-management-and-toxicology/carbon-m…",
+        "Revisión: Int J Environ Res Public Health 17(2):528 (2020). PMC7014120. https://pmc.ncbi.nlm.nih.gov/articles/PMC7014120/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué los detectores de humo y de CO son distintos",
+        "Por qué el boiler necesita ventilación"
+      ]
+    },
+    {
+      "id": "qui-barro-plomo",
+      "titulo": "Ese brillo de tu jarrito puede ser plomo (barro vidriado con greta)",
+      "serie": "Shot Químico",
+      "numero": 44,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-44-barro-plomo",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "U.S. Food and Drug Administration. (contenido vigente al 27/10/2017). https://www.fda.gov/food/environmental-contaminants-food/questions-and-answers-lead-glazed-tradit…",
+        "Téllez-Rojo M.M., Bautista-Arredondo L.F., Cantoral-Preciado A., Peralta N., Figueroa J.L., Trejo-Valdivia B. Salud Publica Mex 66:467–476 (2024; datos de 2022-2023).…",
+        "Rodríguez-Hernández M.F., Betanzos-Robledo L., Mariscal-Moreno R.M., Valverde-Arámbula F.A., Chuck-Hernández C., Peralta-Delgado N., Fuller R., Cantoral A. Processes 1…",
+        "Torres-Sánchez L., López-Carrillo L., Ríos C. Salud Publica Mex 41 Supl 2:S106–8 (1999). INSP. PMID 10850132"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Cómo detectar plomo en un jarrito con prueba casera",
+        "El plomo de la gasolina vieja y tu cerebro"
+      ]
+    },
+    {
+      "id": "qui-lapiz-diamante",
+      "titulo": "La punta de tu lápiz no es plomo: es el mismo carbono que un diamante (grafito, diamante y grafeno)",
+      "serie": "Shot Químico",
+      "numero": 45,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-45-lapiz-diamante",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Schwarcz J. Office for Science and Society, McGill University (22 feb 2017). https://www.mcgill.ca/oss/node/1523",
+        "Royal Society of Chemistry, Periodic Table, \"Carbon\". https://periodic-table.rsc.org/element/6/carbon",
+        "Clark J. Chemguide (2000, modificado sept. 2019). https://www.chemguide.co.uk/atoms/structures/giantcov.html",
+        "The Royal Swedish Academy of Sciences. https://www.nobelprize.org/uploads/2018/06/popular-physicsprize2010.pdf"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la goma borra el lápiz",
+        "Diamantes de laboratorio: carbono a presión"
+      ]
+    },
+    {
+      "id": "qui-platano-etileno",
+      "titulo": "El plátano que madura a la fruta de al lado (etileno)",
+      "serie": "Shot Químico",
+      "numero": 46,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-46-platano-etileno",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Hao D., Li W., Guo H. Plant Hormones 1: e014 (2025). DOI 10.48130/ph-0025-0015",
+        "Binder B.M. J Biol Chem 295(22):7710–7725 (2020). PMID 32332098 · PMC7261785",
+        "Paul V., Pandey R., Srivastava G.C. J Food Sci Technol 49(1):1–21 (2012; en línea 2011). DOI 10.1007/s13197-011-0293-4 · PMC3550874",
+        "Kader A., Thompson J., Sylva K., Harris L. UC Davis Postharvest Technology Center / UC ANR Publication 21590 (2004). https://ucanr.edu/sites/MGWTest/Gardening/files/11…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el aguacate madura en una bolsa de papel",
+        "Por qué los jitomates del súper saben a poco"
+      ]
+    },
+    {
+      "id": "qui-agua-mineral",
+      "titulo": "Ese piquete no son las burbujas (el agua mineral con gas y tu lengua)",
+      "serie": "Shot Químico",
+      "numero": 47,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-47-agua-mineral",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "NOAA, (Education resource collection). https://www.noaa.gov/education/resource-collections/ocean-coasts/ocean-acidification",
+        "Reddy A., Norris D.F., Momeni S.S., Waldo B., Ruby J.D. J Am Dent Assoc 147(4):255–263 (2016). DOI 10.1016/j.adaj.2015.10.019 · PMID 26653863",
+        "Wise P.M., Wolf M., Thom S.R., Bryant B. PLoS One 8(8):e71488 (2013). DOI 10.1371/journal.pone.0071488 · PMID 23990956 · PMC3749224. (Monell Chemical Senses Center y I…",
+        "Chandrashekar J., Yarmolinsky D., von Buchholtz L., Oka Y., Sly W., Ryba N.J., Zuker C.S. Science 326(5951):443–5 (2009). DOI 10.1126/science.1174601 · PMID 19833970 ·…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el agua mineral sabe 'salada' (minerales disueltos)",
+        "Por qué la cerveza fría hace menos espuma"
+      ]
+    },
+    {
+      "id": "qui-fluor",
+      "titulo": "Ese buche de agua se lleva tu flúor (cómo el flúor rehace tu esmalte)",
+      "serie": "Shot Químico",
+      "numero": 48,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-48-fluor",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "NHS (Reino Unido). https://www.nhs.uk/live-well/healthy-teeth-and-gums/how-to-keep-your-teeth-clean/ (consultada 2026)",
+        "CDC. https://www.cdc.gov/oral-health/prevention/about-fluoride.html (consultada 2026)",
+        "Buzalaf M.A.R., Pessan J.P., Honório H.M., ten Cate J.M. Monogr Oral Sci 22:97–114 (2011). PMID 21701194 · doi:10.1159/000325151",
+        "Robinson C. Eur Arch Paediatr Dent 10(3):136–40 (2009). PMID 19772842 · doi:10.1007/BF03262674"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué algunos dientes tienen manchas blancas (fluorosis)",
+        "Por qué el chicle sin azúcar ayuda a tus dientes (saliva)"
+      ]
+    },
+    {
+      "id": "qui-glutamato",
+      "titulo": "Ese polvito blanco no es veneno (el mito del glutamato monosódico)",
+      "serie": "Shot Químico",
+      "numero": 49,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-49-glutamato",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "U.S. Food and Drug Administration. . Página vigente . https://www.fda.gov/food/food-additives-petitions/questions-and-answers-monosodium-glutamate-msg",
+        "Ikeda K. (traducción de 1909/1908). Chem Senses 27(9):847–849 (2002). PMID 12438213 · doi:10.1093/chemse/27.9.847",
+        "Ho Man Kwok R. (carta al editor). N Engl J Med 278(14):796 (4 abr 1968). doi:10.1056/NEJM196804042781419. Texto leído en la transcripción https://roblog.co.uk/files/ro…",
+        "Geha R.S., Beiser A., Ren C., et al. J Allergy Clin Immunol 106(5):973–980 (2000). PMID 11080723 · doi:10.1067/mai.2000.110794"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el queso añejo y el jitomate saben a umami",
+        "El 'sabor a carne' de los champiñones (guanilato)"
+      ]
+    },
+    {
+      "id": "qui-edulcorantes",
+      "titulo": "Este granito no es azúcar (los endulzantes que engañan a tu lengua)",
+      "serie": "Shot Químico",
+      "numero": 50,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-50-edulcorantes",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "FDA. Contenido vigente al 27 feb 2025. https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food",
+        "Li X., Staszewski L., Xu H., Durick K., Zoller M., Adler E. PNAS 99(7):4692–6 (2002). PMID 11917125 · PMC123709",
+        "Hellfritsch C., Brockhoff A., Stähler F., Meyerhof W., Hofmann T. J Agric Food Chem 60(27):6782–93 (2012). PMID 22616809. (Technische Universität München, Alemania.)",
+        "Hough L. (uno de los dos descubridores) y Emsley J. New Scientist, 19 jun 1986. https://www.johnemsley.com/articles/new_scientist/ns_sweetness.html"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la stevia deja un regusto amargo",
+        "Por qué la miel no se echa a perder"
+      ]
+    },
+    {
+      "id": "qui-gel-antibacterial",
+      "titulo": "Ese gel no te lava las manos (gel antibacterial y alcohol)",
+      "serie": "Shot Químico",
+      "numero": 51,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-51-gel-antibacterial",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "CDC (Centers for Disease Control and Prevention). / Clean Hands. Página fechada el 12 mar 2024. https://www.cdc.gov/clean-hands/about/hand-sanitizer.html",
+        "CDC. Guideline for Disinfection and Sterilization in Healthcare Facilities (2008; página actualizada el 28 nov 2023), sección . https://www.cdc.gov/infection-control/h…",
+        "Liu P., Yuen Y., Hsiao H.M., Jaykus L.A., Moe C. Appl Environ Microbiol 76(2):394–9 (2010). PMID 19933337 · PMC2805232 · doi:10.1128/AEM.01729-09",
+        "FDA. Comunicado de prensa, 26 ene 2021. https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-fda-takes-action-place-all-alcohol-based-hand-s…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el jabón destruye virus mejor que el gel",
+        "Por qué el alcohol de 70 % desinfecta mejor que el de 96 %"
+      ]
+    },
+    {
+      "id": "qui-hielo-flota",
+      "titulo": "Ese hielo no es agua apretada: es agua con huecos (por qué flota el hielo)",
+      "serie": "Shot Químico",
+      "numero": 52,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-52-hielo-flota",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "CK-12 Foundation, Introductory Chemistry (CK-12), Chemistry LibreTexts (página modificada el 21 mar 2025). https://chem.libretexts.org/Bookshelves/Introductory_Chemist…",
+        "USGS Water Science School, (consultada 2026). https://www.usgs.gov/water-science-school/science/water-density",
+        "Maitra U., Zare R.N. Resonance (Indian Academy of Sciences), mayo 2016, pp. 453–455. (Indian Institute of Science, Bengaluru · Stanford University.)",
+        "Galilei G. Discorso intorno alle cose che stanno in su l'acqua (Florencia, 1612); trad. inglesa de T. Salusbury (1663), Project Gutenberg #37729. https://gutenberg.org…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué los cubos de hielo salen turbios",
+        "Por qué una botella de agua revienta en el congelador"
+      ]
+    },
+    {
+      "id": "qui-huevo-vinagre",
+      "titulo": "Este huevo no está pelado (el vinagre, el cascarón y la ósmosis)",
+      "serie": "Shot Químico",
+      "numero": 53,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-53-huevo-vinagre",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Gautron J., Stapane L., Le Roy N., Nys Y., Rodriguez-Navarro A.B., Hincke M.T. BMC Mol Cell Biol 22:11 (2021). PMID 33579194 · DOI 10.1186/s12860-021-00350-0 (texto co…",
+        "Australian National University, College of Science, (actividad de laboratorio para casa)",
+        "Imperial College London, STEM in Action, (PDF de divulgación)",
+        "Hagiri M., Suzuki M. BMC Res Notes 19(1):289 (2026). PMID 42152007 · PMC13352705 · DOI 10.1186/s13104-026-07862-y. Autores del Department of Chemistry and Materials Sc…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la pasta de dientes deja un sabor raro al jugo de naranja",
+        "Por qué las pasas se inflan en agua (ósmosis)"
+      ]
+    },
+    {
+      "id": "qui-encendedor",
+      "titulo": "Ese encendedor no está lleno de gas (butano líquido a presión)",
+      "serie": "Shot Químico",
+      "numero": 54,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-54-encendedor",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "NIST Chemistry WebBook, SRD 69, \"Butane\" (CAS 106-97-8), datos de cambio de fase. https://webbook.nist.gov/cgi/cbook.cgi?ID=C106978&Mask=4",
+        "16 CFR § 1210.2(b) (eCFR, vigente 2026)",
+        "16 CFR § 1210.1 y § 1210.3 (eCFR)",
+        "Smith L.E., Greene M.A., Singh H.A. (Hazard Analysis Division, US Consumer Product Safety Commission). Injury Prevention 8(3):192–6 (2002). PMID 12226114 · PMC1730873…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el desodorante en aerosol sale frío",
+        "Por qué el tanque de gas se escarcha al vaciarse rápido"
+      ]
+    },
+    {
+      "id": "qui-polvo-hornear",
+      "titulo": "Ese polvo no es un solo truco (polvo para hornear de doble acción)",
+      "serie": "Shot Químico",
+      "numero": 55,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-55-polvo-hornear",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Clabber Girl, Double Acting Baking Powder – Product Specification (rev. 25 feb 2019). https://www.webstaurantstore.com/documents/specsheets/clabber_girl_dabp_spec.pdf",
+        "USDA, Commercial Item Description A-A-20094A: Baking Powder (4 dic 1987). https://condimentsrelatedproducts.emilspec.com/A-A-20094/index.html",
+        "America's Test Kitchen (Cook's Illustrated), . https://www.americastestkitchen.com/how_tos/8830-understanding-baking-powder",
+        "Godefroidt T., Ooms N., Bosmans G., Brijs K., Delcour J.A. LWT – Food Science and Technology 152:112277 (dic 2021). DOI 10.1016/j.lwt.2021.112277 (manuscrito abierto e…"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué el bicarbonato solo deja el pastel con sabor metálico",
+        "La levadura contra el polvo para hornear: biología contra química"
+      ]
+    },
+    {
+      "id": "qui-merengue",
+      "titulo": "Ese merengue no es solo azúcar (la espuma de proteínas de la clara)",
+      "serie": "Shot Químico",
+      "numero": 56,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-56-merengue",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Réhault-Godbert S., Guyot N., Nys Y. Nutrients 11(3):684 (2019). PMID 30909449 · PMC6470839 · DOI 10.3390/nu11030684",
+        "Alleoni A.C.C. Scientia Agricola 63(3):291–298 (2006). SciELO",
+        "Lomakina K., Míková K. Czech J. Food Sci. 24(3):110–118 (2006). Institute of Chemical Technology Prague. https://www.agriculturejournals.cz/publicFiles/50280.pdf",
+        "Berry T.K., Yang X., Foegeding E.A. J Food Sci 74(5):E269–77 (2009). North Carolina State Univ. PMID 19646042 · DOI 10.1111/j.1750-3841.2009.01178.x"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué un poco de yema arruina el merengue",
+        "Por qué el cremor tártaro estabiliza la clara"
+      ]
+    },
+    {
+      "id": "qui-leche-blanca",
+      "titulo": "Lo blanco de tu leche no es un pigmento (micelas de caseína, grasa y luz rebotando)",
+      "serie": "Shot Químico",
+      "numero": 57,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-57-leche-blanca",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Fiege et al. Sci Rep (2023). PMID 38081890",
+        "Gedzelman, López-Alvarez, Hernández-Andrés, Greenler. Appl Opt 47(34):H128 (2008). PMID 19037332",
+        "Frisvad, Christensen, Jensen. ACM TOG 26(3), SIGGRAPH (2007). DOI 10.1145/1276377.1276452",
+        "Schwarcz J. McGill Office for Science and Society (2017)"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué la clara de huevo pasa de transparente a blanca al cocinarse",
+        "Por qué las nubes son blancas y el humo de cigarro azulado"
+      ]
+    },
+    {
+      "id": "qui-lluvia-olor",
+      "titulo": "Ese olor no es la lluvia (geosmina y petricor)",
+      "serie": "Shot Químico",
+      "numero": 58,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-58-lluvia-olor",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "Joung Y.S., Buie C.R. Nature Communications 6:6083 (publicado el 14 ene 2015). Department of Mechanical Engineering, Massachusetts Institute of Technology. PMID 255861…",
+        "Ball L., Frey T., Haag F., Frank S., Hoffmann S., Laska M., Steinhaus M., Neuhaus K., Krautwurst D. J Agric Food Chem 72(28):15865–15874 (2024). PMC11261619",
+        "Becher P.G., Verschut V., Bibb M.J., … Buttner M.J., Flärdh K. Nature Microbiology 5:821–829 (2020). PMID 32251369 · DOI 10.1038/s41564-020-0697-x",
+        "Ghirardo A., Poodiack B., Siebner H., Jaffe M., Weber B., Schnitzler J., Bonkowski M., Gillor O., Guenther A. Global Change Biology (2026). PMC13644907"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El olor del pasto recién cortado (hojas que se defienden)",
+        "Por qué el olor del mar huele 'a mar' (dimetilsulfuro)"
+      ]
+    },
+    {
+      "id": "qui-termometro-mercurio",
+      "titulo": "¿Por qué NO barrer ni aspirar el mercurio de un termómetro roto?",
+      "serie": "Shot Químico",
+      "numero": 59,
+      "estado": "renderizado",
+      "carpeta": "shots/qui-59-termometro-mercurio",
+      "rama": "pedido300/qui",
+      "fuentes": [
+        "EPA (en español). Qué hacer si se rompe un termómetro de mercurio. espanol.epa.gov/node/763",
+        "ATSDR. Toxicological Profile for Mercury (oct 2024)",
+        "ATSDR. Public Health Statement: Mercury (1999)",
+        "MDCH/ATSDR. Health Consultation, St. Louis, Michigan (6 may 2004)",
+        "MPCA Minnesota. Mercury spills (2020)"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Por qué los focos ahorradores llevan un poquito de mercurio y cómo limpiarlos si se rompen",
+        "Por qué los termómetros digitales no necesitan mercurio"
+      ]
+    }
+  ]
+}

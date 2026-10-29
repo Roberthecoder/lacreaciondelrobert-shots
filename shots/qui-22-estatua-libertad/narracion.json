@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Estatua base narrada.dc.html",
+  "salida": "Shot Estatua narrado.dc.html",
+  "nota": "Shot Químico #22. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa estatua no nació verde: es de cobre, color moneda; lo verde es una costra que la protege."
+    },
+    {
+      "escena": "Piel",
+      "texto": "Su piel es cobre de 2.4 milímetros: más delgada que dos centavos de dólar juntos."
+    },
+    {
+      "escena": "Cafe",
+      "texto": "Cuando la terminaron, en 1886, era café, como un centavo de dólar."
+    },
+    {
+      "escena": "Cuprita",
+      "texto": "Primero, el oxígeno del aire húmedo oxidó el cobre y formó cuprita, una capa oscura."
+    },
+    {
+      "escena": "Brochantita",
+      "texto": "Luego, el azufre de la contaminación, en la lluvia, la volvió brochantita: un sulfato de cobre verde."
+    },
+    {
+      "escena": "Escudo",
+      "texto": "Esa pátina casi no se disuelve y protege al cobre de gastarse."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cuánto tardó en cubrirla? Unos 30 años."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Para restaurarla, en 1986 analizaron con rayos X pedazos de su piel: uno de 1905 era brochantita estable; uno de 1980 traía antlerita, menos estable, y sospecharon de la lluvia ácida."
+    },
+    {
+      "escena": "Pintura",
+      "texto": "Lo chistoso: en 1906 planearon pintarla; tras las protestas, se quedó verde."
+    },
+    {
+      "escena": "Tu",
+      "texto": "El cobre de tu casa que queda a la intemperie, como un tubo en la azotea, con los años se pone verde igual."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese verde no es mugre: es el escudo que el cobre se fabricó solo."
+    }
+  ]
+}

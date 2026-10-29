@@ -1,0 +1,69 @@
+# Shot Químico #51 · Ese gel no te lava las manos (gel antibacterial y alcohol)
+
+- **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #51 · rama `pedido300/qui`.
+- **Formato:** N1 "Por dentro" (la mano con un chorrito de gel → la bacteria y sus proteínas en fondo noche → la misma mano, frotada y seca) con una escena de N5 "El experimento" (Emory, Atlanta, 2010).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese gel no te está lavando las manos: es alcohol desarmando a tus microbios."
+- **Distinto del #07 (jabón y micelas):** aquí el protagonista es el alcohol que desnaturaliza proteínas; el jabón solo aparece de pasada como "el que gana" contra norovirus y esporas.
+- **Seguridad:** no se invita a nada riesgoso; se dice claro que contra algunos microbios y con manos sucias es mejor agua y jabón, y se advierte del metanol (tóxico) en geles falsificados.
+- **Duración:** voz 943 caracteres (≈ 57.5 s según `estimar-escenas.mjs`) + cierre 3.9 s → **61.4 s** (`gen-audio.mjs`: 61.40 s).
+- **Estado:** guion verificado, animación lista, voz pendiente (espera aprobación de Robert).
+
+## Versión narrada
+
+Tiempos estimados de entrada (base sin voz): Gancho 0.0 · Que 4.7 · Proteinas 9.3 · Agua 14.2 · Frotar 20.3 · Pregunta 23.5 · No 25.0 · Estudio 31.8 · Grasa 41.2 · Mexico 44.0 · Cierre 52.4 · Outro 57.5 · fin 61.4.
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Ese gel no te está lavando las manos: es alcohol desarmando a tus microbios. | Fondo menta. Desde el cuadro 0 una botella con dosificador baja y suelta un chorrito de gel transparente en la palma de una mano abierta (la gota cae antes del segundo 1). Chip "lavar" que se tacha y cambia a "desinfectar". Barra de escala "1 cm". |
+| 1 | Que | Para que funcione, el CDC pide que tenga al menos 60 por ciento de alcohol. | La botella gira y muestra su etiqueta; un medidor vertical (termómetro de 0 a 100 %) sube y se detiene en una línea dorada "60 %" con chip "CDC: mínimo 60 %". Abajo, gotitas de alcohol (C₂H₅OH) dibujadas como moléculas. |
+| 2 | Proteinas | El alcohol desnaturaliza sus proteínas: las desdobla, y deformadas ya no sirven. | Cámara entra a la palma con `Lupa` → fondo noche: una bacteria (bastoncito) con proteínas dibujadas como listones bien plegados (resortes de colores). Llegan moléculas de alcohol y los listones se despliegan como estambre suelto; chip "desnaturalizada". Barra de escala "1 µm". |
+| 3 | Agua | Lo raro: mezclado con agua mata mejor que puro, porque con agua las proteínas se desarman más rápido. | Pantalla partida: izquierda "alcohol puro" (solo moléculas de alcohol; el listón apenas se afloja, reloj lento); derecha "alcohol + agua" (moléculas de alcohol y gotitas azules H₂O; el listón se deshace rápido, reloj rápido). Abajo, una regla con la franja "60–90 %" resaltada (rango óptimo, CDC). |
+| 4 | Frotar | Y hay que frotar hasta que seque: unos 20 segundos. | Regreso a escala macro: dos manos frotándose; un contador 0 → 20 s corre; el brillo del gel se va secando hasta desaparecer. |
+| 5 | Pregunta | ¿Entonces mata todo? | **Re-gancho.** "?" gigante sobre las manos secas. |
+| 6 | No | No. Contra el norovirus, el de las diarreas, o las esporas de *Clostridioides difficile*, ganan el agua y el jabón. | Fondo noche: un norovirus (icosaedro, sin envoltura) al que el alcohol rebota; una espora ovalada con coraza gruesa (*C. difficile*) que tampoco se inmuta. Etiquetas chicas: "norovirus" y "espora de *Clostridioides difficile*". Al final entran una llave de agua y una barra de jabón con una palomita (guiño al #07, sin explicar micelas). |
+| 7 | Estudio | En 2010, en la Universidad Emory, en Atlanta, le pusieron norovirus a los dedos de 10 voluntarios: el gel casi no lo quitó, y solo enjuagar con agua quitó más. | `TarjetaEstudio` "2010 · Liu et al. · Emory University, Atlanta" con chip "10 voluntarios". Escena: 10 yemas de dedo con puntitos de virus; tres barras de "virus quitado": gel (62 % etanol) barra cortita, enjuague con agua barra más larga, jabón barra más larga. |
+| 8 | Grasa | Con manos sucias o grasosas, funciona peor. | Una mano con manchas de tierra y brillo de grasa; el gel se queda encima formando gotitas sin llegar a la piel; chip "sucias o grasosas → mejor agua y jabón". |
+| 9 | Mexico | Ojo: en 2021, la FDA puso en alerta todos los geles con alcohol hechos en México: más de la mitad de sus muestras traía tóxicos, como metanol. | Mapa esquemático de México con botellas de gel cruzando la frontera; una lupa revisa una botella y aparece la molécula de metanol (CH₃OH) con ⚠️ "tóxico". Chip "FDA · enero 2021 · alerta de importación". Barra "muestras de 2020: más de la mitad con tóxicos". |
+| 10 | Cierre | Así que ese gel no te lava las manos: las desinfecta. Y si hay agua y jabón, mejor. | **Regreso a la mano del inicio**, ahora seca, con la gota de gel dibujada encima y la etiqueta "alcohol ≥ 60 % → desarma proteínas". Junto, una llave y un jabón con "mejor, si hay". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
+
+**Música:** cama grave continua, sin golpe marcado, debajo de la voz; efectos en el mismo cuadro: "plop" del gel que cae, subida del medidor, "zip" de los listones que se despliegan, gotitas de agua, frotado de manos con tic de reloj, rebote seco del alcohol contra el virus y la espora, golpe de la tarjeta, alerta suave en el metanol.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en el re-gancho «¿Entonces mata todo?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «Ese gel no te está lavando las manos» |
+| 2 | 5.7 | 9.0 | 13_senalando_arriba | `izq-alto` | «al menos 60 por ciento de alcohol» (señala el medidor) |
+| 3 | 10.8 | 13.9 | 06_pensativo_menton | `arriba-der` | «desnaturaliza sus proteínas: las desdobla» |
+| 4 | 20.5 | 23.4 | 05_sonriendo_dientes_uniformes | `izq-alto` | «frotar hasta que seque: unos 20 segundos» |
+| 5 | 23.6 | 26.5 | 07_pensativo_puno | `grande` | «¿Entonces mata todo?» |
+| 6 | 27.0 | 31.5 | 10_serio_molesto | `arriba-der` | «norovirus… esporas… ganan el agua y el jabón» |
+| 7 | 35.4 | 40.9 | 04_bajando_lentes | `izq-alto` | «el gel casi no lo quitó, y solo enjuagar con agua quitó más» |
+| 8 | 44.8 | 52.1 | 11_sorprendido | `arriba-der` | «más de la mitad de sus muestras traía tóxicos, como metanol» |
+| 9 | 52.7 | 57.4 | 02_apuntando_camara | `arriba-der` | «ese gel no te lava las manos: las desinfecta» |
+| — | 57.5 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 38.7 s en pantalla (+ cierre 3.9 s) · 8 poses distintas · nunca la misma dos veces seguidas.
+
+## Fuentes (cada dato y cifra se abrió en la fuente original el 29 oct 2026)
+
+1. **Al menos 60 % de alcohol; frotar hasta que seque (~20 s); no sirve igual contra norovirus, *Cryptosporidium* y *C. difficile*; peor con manos sucias o grasosas; agua y jabón es lo mejor en la mayoría de los casos** — CDC (Centers for Disease Control and Prevention). "About Hand Sanitizer" / Clean Hands. Página fechada el 12 mar 2024. https://www.cdc.gov/clean-hands/about/hand-sanitizer.html
+   > "If soap and water are unavailable, use a hand sanitizer with at least 60% alcohol to clean your hands." · "Rub your hands and fingers together until they are dry. This should take around 20 seconds." · "Soap and water are more effective than hand sanitizers at removing certain kinds of germs like norovirus, Cryptosporidium, and Clostridioides difficile." · "Hand sanitizers may not be as effective when hands are visibly dirty or greasy." · "Washing hands with soap and water is the best way to get rid of germs in most situations."
+2. **El alcohol desnaturaliza proteínas; con agua mata mejor que puro; óptimo 60–90 %; no destruye esporas bacterianas** — CDC. *Guideline for Disinfection and Sterilization in Healthcare Facilities* (2008; página actualizada el 28 nov 2023), sección "Chemical Disinfectants – Alcohol". https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/chemical-disinfectants.html
+   > "The most feasible explanation for the antimicrobial action of alcohol is denaturation of proteins." · "absolute ethyl alcohol, a dehydrating agent, is less bactericidal than mixtures of alcohol and water because proteins are denatured more quickly in the presence of water" · "Their cidal activity drops sharply when diluted below 50% concentration" … "the optimum bactericidal concentration is 60%–90% solutions in water (volume/volume)" · "[alcohols] are tuberculocidal, fungicidal, and virucidal but do not destroy bacterial spores."
+3. **Estudio de 2010 (Emory, Atlanta): 10 voluntarios; gel de 62 % etanol casi no quitó el virus Norwalk (norovirus); el enjuague con agua y el jabón quitaron más** — Liu P., Yuen Y., Hsiao H.M., Jaykus L.A., Moe C. "Effectiveness of liquid soap and hand sanitizer against Norwalk virus on contaminated hands." *Appl Environ Microbiol* 76(2):394–9 (2010). PMID 19933337 · PMC2805232 · doi:10.1128/AEM.01729-09.
+   > "Center for Global Safe Water, Hubert Department of Global Health, Rollins School of Public Health, Emory University, 1518 Clifton Road, Atlanta, GA 30322, USA." · "A total of 10 adult volunteers were enrolled in this study after informed consent was obtained." · "A hand sanitizer, containing 62% ethyl alcohol as the active ingredient, was purchased from a local retail source." · "we observed the greatest reduction in genomic copies of NV cDNA with the antibacterial liquid soap treatment (0.67 to 1.20 log10 reduction) and water rinse only (0.58 to 1.58 log10 reduction). The alcohol-based hand sanitizer was relatively ineffective, reducing the genomic copies of NV cDNA by only 0.14 to 0.34 log10 compared to baseline."
+4. **2021: alerta de importación de la FDA a todos los geles con alcohol hechos en México; más de la mitad de las muestras con tóxicos como metanol** — FDA. "Coronavirus (COVID-19) Update: FDA Takes Action to Place All Alcohol-Based Hand Sanitizers from Mexico on Import Alert…" Comunicado de prensa, 26 ene 2021. https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-fda-takes-action-place-all-alcohol-based-hand-sanitizers-mexico-import
+   > "the agency has placed all alcohol-based hand sanitizers from Mexico on a countrywide import alert" · "The FDA's analyses of alcohol-based hand sanitizers imported from Mexico found 84% of the samples analyzed by the agency from April through December 2020 were not in compliance with the FDA's regulations. More than half of the samples were found to contain toxic ingredients, including methanol and/or 1-propanol, at dangerous levels." · "Methanol, or wood alcohol, is a substance that can be toxic when absorbed through the skin and life-threatening when ingested." · "This marks the first time the FDA has issued a countrywide import alert for any category of drug product."
+
+## Notas
+- El dibujo es esquemático (las proteínas como listones, la bacteria, el norovirus y la espora; el mapa).
+- "El de las diarreas": el norovirus causa diarrea y vómito; en la descripción se dice completo.
+- El estudio de 2010 midió material genético del virus (RT-qPCR) en las yemas de los dedos, no infecciones; en la descripción se aclara. Se usó virus Norwalk, que es un norovirus humano.
+- "Mata mejor con agua que puro": el CDC da el óptimo en 60–90 % en agua; el alcohol absoluto es menos bactericida. No se dice "100 %" en la voz.
+- La alerta de la FDA es de importación (permite detener los envíos en la frontera de EE. UU.); no es una prohibición en México. Fue la primera alerta de importación de todo un país para una categoría de medicamento (dato para la descripción).
+- Las formulaciones de la OMS (etanol 80 %, isopropanol 75 %) no van en la voz: no se pudo abrir el documento oficial de la OMS desde este entorno.
+- Los geles con alcohol tampoco quitan químicos como pesticidas o plomo (CDC: "Hand sanitizers might not remove harmful chemicals, such as pesticides, and heavy metals like lead."); dato para la descripción.

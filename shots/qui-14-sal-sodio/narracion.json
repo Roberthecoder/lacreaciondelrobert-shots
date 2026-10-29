@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Sal base narrada.dc.html",
+  "salida": "Shot Sal narrado.dc.html",
+  "nota": "Shot Químico #14. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa sal no es un polvito inocente: está hecha de un metal que reacciona violento con el agua y un gas venenoso."
+    },
+    {
+      "escena": "Sodio",
+      "texto": "El metal es el sodio, blando como cera: en agua suelta hidrógeno, que puede arder."
+    },
+    {
+      "escena": "Cloro",
+      "texto": "El gas es el cloro, amarillo verdoso: si lo respiras, forma ácido en tus pulmones."
+    },
+    {
+      "escena": "Electron",
+      "texto": "El sodio tiene un solo electrón en su capa de afuera; al cloro le falta uno."
+    },
+    {
+      "escena": "Iones",
+      "texto": "Juntos, el sodio le da su electrón al cloro: quedan dos iones, uno positivo y uno negativo, que se atraen."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué la sal ya no es peligrosa como ellos?"
+    },
+    {
+      "escena": "Cristal",
+      "texto": "Porque ya no son átomos sueltos: se acomodan en cubos, cada sodio rodeado de seis cloruros."
+    },
+    {
+      "escena": "Davy",
+      "texto": "El sodio nunca anda suelto en la naturaleza: en 1807, en Londres, Humphry Davy lo aisló con electricidad."
+    },
+    {
+      "escena": "Ypres",
+      "texto": "Y el cloro, en 1915, se usó como arma a gran escala en Ypres, Bélgica."
+    },
+    {
+      "escena": "Reves",
+      "texto": "Lo curioso: hoy, con electricidad, a la sal disuelta en agua le sacan otra vez el cloro."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa sal no es un polvito inocente: es un metal y un veneno vueltos cubos tranquilos."
+    }
+  ]
+}

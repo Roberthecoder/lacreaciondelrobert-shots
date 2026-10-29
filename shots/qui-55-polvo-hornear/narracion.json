@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Polvo base narrada.dc.html",
+  "salida": "Shot Polvo narrado.dc.html",
+  "nota": "Shot Químico #55. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese polvo para hornear no es un solo truco: son dos reacciones, una en tu tazón y otra en tu horno."
+    },
+    {
+      "escena": "Que",
+      "texto": "Trae bicarbonato de sodio, dos ácidos y fécula de maíz, que absorbe humedad para que no reaccionen en la lata."
+    },
+    {
+      "escena": "Agua",
+      "texto": "Al mojarse, el primer ácido, fosfato monocálcico, le saca al bicarbonato dióxido de carbono."
+    },
+    {
+      "escena": "Burbujas",
+      "texto": "Ese gas infla las burbujitas de la masa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué un segundo ácido?"
+    },
+    {
+      "escena": "Horno",
+      "texto": "El segundo, como el sulfato de sodio y aluminio, casi no reacciona en frío: despierta con el calor del horno."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2021, en Lovaina, Bélgica, hornearon pasteles midiendo el gas: con ácidos rápidos, mucho se escapó al batir y salieron más bajitos."
+    },
+    {
+      "escena": "Cuaja",
+      "texto": "Pero el gas tiene que llegar a tiempo: ahí la masa empezó a cuajar cerca de 88 grados, y ya cuajada, el gas extra se escapaba."
+    },
+    {
+      "escena": "Norma",
+      "texto": "Lo curioso: una norma del gobierno de Estados Unidos, de 1987, pedía que soltara en gas al menos 12 por ciento de su peso."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese polvo no es un solo truco: es gas en dos turnos, uno en tu tazón y otro en tu horno."
+    }
+  ]
+}

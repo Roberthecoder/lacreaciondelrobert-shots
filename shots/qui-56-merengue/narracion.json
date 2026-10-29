@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Merengue base narrada.dc.html",
+  "salida": "Shot Merengue narrado.dc.html",
+  "nota": "Shot Químico #56. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese merengue no es solo azúcar: es aire atrapado por proteínas de la clara."
+    },
+    {
+      "escena": "Clara",
+      "texto": "La clara es 88 por ciento agua; la mitad de sus proteínas es ovalbúmina, hecha bolita."
+    },
+    {
+      "escena": "Batir",
+      "texto": "Al batir metes aire y las proteínas se pegan al borde de cada burbuja."
+    },
+    {
+      "escena": "Desdoblar",
+      "texto": "Ahí se desdoblan: la parte que odia el agua apunta al aire y la otra, al agua."
+    },
+    {
+      "escena": "Red",
+      "texto": "Luego se enganchan y forman una piel elástica en cada burbuja."
+    },
+    {
+      "escena": "Azucar",
+      "texto": "El azúcar la vuelve mucho más estable y el horno, firme: eso es el merengue."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué una pizca de yema lo arruina?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2009, en la Universidad Estatal de Iowa, con cero punto cero veintidós por ciento de yema la clara hizo menos espuma."
+    },
+    {
+      "escena": "Grasa",
+      "texto": "La culpable es su grasa: según ellos, se pega a la parte de las proteínas que odia el agua y no las deja unirse."
+    },
+    {
+      "escena": "Garbanzo",
+      "texto": "Y ojo: el agua de cocer garbanzos también hace espuma; en Irán, un merengue con la mitad de la clara cambiada por esa agua salió igual de bueno que el normal."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese merengue no es solo azúcar: es aire en una red de proteínas desdobladas."
+    }
+  ]
+}

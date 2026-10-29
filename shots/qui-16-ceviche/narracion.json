@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot Ceviche base narrada.dc.html",
+  "salida": "Shot Ceviche narrado.dc.html",
+  "nota": "Shot Químico #16. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese ceviche no está cocido: el limón solo le desdobló las proteínas, y lo que traía puede seguir vivo." },
+    { "escena": "Que", "texto": "Las proteínas de la carne son cadenas largas, dobladas y enrolladas como estambre." },
+    { "escena": "Acido", "texto": "El ácido del limón les pega cargas eléctricas que se empujan entre sí, y el estambre se abre." },
+    { "escena": "Blanco", "texto": "Ya abiertas, dispersan la luz: por eso la carne se pone blanca, como cocida." },
+    { "escena": "Fuego", "texto": "Pero el fuego hace algo más: con calor suficiente mata bacterias y parásitos." },
+    { "escena": "Pregunta", "texto": "¿Y el limón no mata?" },
+    { "escena": "Lima", "texto": "En 2010, en Lima, Perú, le pusieron bacterias a pescado crudo e hicieron ceviche: a los 30 minutos casi no bajaron." },
+    { "escena": "Croacia", "texto": "Y en 2019, en Croacia, larvas de Anisakis, un gusanito del pescado, aguantaron unos 5 días metidas en jugo de limón." },
+    { "escena": "Francia", "texto": "En 2025 reportaron en Francia a una señora a la que le sacaron 40 larvas tras comer ceviche casero de merluza." },
+    { "escena": "Congelar", "texto": "Por eso la FDA recomienda, para pescado crudo, congelarlo a 20 grados bajo cero por 7 días: así mueren los parásitos." },
+    { "escena": "Cierre", "texto": "Así que tu ceviche no está cocido: está desdoblado." }
+  ]
+}

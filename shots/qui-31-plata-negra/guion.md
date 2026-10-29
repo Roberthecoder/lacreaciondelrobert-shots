@@ -1,0 +1,68 @@
+# Shot Químico #31 · Ese negro en tu plata no es mugre (sulfuro de plata y el truco del aluminio)
+
+- **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #31 · rama `pedido300/qui`.
+- **Formato:** N5 "El experimento" (el truco del aluminio en la cocina + la prueba de las cucharas del USDA, 1916) + N1 "Por dentro" (el arete negro → la capa de sulfuro de plata y los electrones → el mismo arete, brillante).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese negro en tu arete de plata no es mugre: es plata pegada a azufre."
+- **Seguridad:** se dice "agua caliente, con cuidado". En la descripción: no usar en piezas chapadas ni huecas/selladas, no usar ollas de aluminio buenas (se corroen), enjuagar y secar.
+- **Duración:** voz 954 caracteres (≈ 58.0 s) + cierre 3.5 s → **61.5 s** estimado (`estimar-escenas.mjs`).
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`plata.jsx`, base sin voz 61.5 s), voz pendiente de aprobación de Robert (~954 créditos).
+
+## Versión narrada
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Ese negro en tu arete de plata no es mugre: es plata pegada a azufre. | Fondo amarillo. Desde el cuadro 0 una mano gira un arete de plata ennegrecido junto a un cubierto y una cadena oscuros; "¿mugre?" aparece y se tacha. Destello en el metal. |
+| 1 | Que | Es sulfuro de plata: cuando la capa pasa de unos 100 nanómetros, se ve negra. | Lupa en rayos X sobre el arete → fondo noche: corte de la superficie; capa que crece sobre la plata y cambia de color amarillo → café rojizo → azul → negro; medidor "100 nm"; fórmula Ag₂S. |
+| 2 | Aire | El azufre viene del aire, de gases como el sulfuro de hidrógeno: el gas del huevo cocido. | Moléculas H₂S (una S amarilla con dos H) flotan y se pegan a la superficie; los átomos de plata (esferas grises) se enganchan con la S. Etiqueta "H₂S · sulfuro de hidrógeno". |
+| 3 | Huevo | Junto a un huevo duro recién cocido, la plata se oscurece en minutos, no en meses. | Regreso a cocina: huevo duro partido junto a una cuchara de plata; cronómetro corre rápido; la cuchara se oscurece. Chip "minutos, no meses". |
+| 4 | Pulir | Si la pules, raspas lo negro y también un poco de plata. | Un trapo con pasta frota; zoom: granitos de abrasivo arrancan la capa negra y también átomos grises de plata que salen volando. |
+| 5 | Pregunta | ¿Y si en vez de rasparla la regresas a plata? | **Re-gancho.** "?" gigante sobre el arete negro. |
+| 6 | Truco | Papel aluminio, bicarbonato y agua caliente, con cuidado: que la plata toque el aluminio. | Recipiente con papel aluminio en el fondo; cae una cucharada de bicarbonato; agua caliente humeando; el arete baja y toca el aluminio. Icono de "¡cuidado, caliente!". |
+| 7 | Electrones | El aluminio suelta electrones, la plata negra los recibe y vuelve a ser metal; el azufre se suelta. | Fondo noche, corte en el punto de contacto: chispitas "e⁻" viajan del aluminio a la plata; cada Ag₂S se vuelve esferas grises de plata y la S amarilla se desprende al agua. Ecuación chica: 3 Ag₂S + 2 Al → 6 Ag + Al₂S₃. |
+| 8 | Estudio | En 1916, el gobierno de Estados Unidos probó con cucharas: pulidas con pasta perdieron, en cada limpieza, unas 25 veces más plata que tocando otro metal en agua hirviendo. | `TarjetaEstudio` "1916 · Departamento de Agricultura de EE. UU.". Dos cucharas en básculas y barras rotuladas "plata perdida por limpieza": "pasta abrasiva" ×25 contra "metal + agua hirviendo" chiquita (×1). |
+| 9 | Dato | Lo chistoso: en la lista de culpables de conservadores de Canadá están hasta tus gases intestinales. | Lista tipo documento "Fuentes de gases que ennegrecen la plata" (huevo, lana, guantes de hule…) y al final un "💨 personas" que se resalta. |
+| 10 | Cierre | Ese negro no es mugre: es plata esperando que el aluminio le quite el azufre. | **Regreso al arete del inicio**, ahora sale del agua brillante (acabado satinado) junto al papel aluminio; etiqueta "Ag₂S → Ag". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
+
+**Música:** cama grave continua; efectos en el mismo cuadro (tintineo del arete, "fsss" del gas, tic-tac del cronómetro, raspado del trapo, bicarbonato burbujeando, chispitas eléctricas, golpe de la tarjeta 1916, báscula, "pfff" discreto en el dato, brillo final).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y si en vez de rasparla la regresas a plata?» y en el dato de los gases.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «no es mugre: es plata pegada a azufre» |
+| 2 | 9.6 | 14.1 | 13_senalando_arriba | `izq-alto` | «de gases como el sulfuro de hidrógeno» |
+| 3 | 15.6 | 22.4 | 10_serio_molesto | `arriba-der` | «en minutos, no en meses» / «se lleva un poco de plata» |
+| 4 | 22.95 | 26.8 | 07_pensativo_puno | `grande` | «¿Y si en vez de rasparla la regresas a plata?» |
+| 5 | 31.8 | 36.9 | 13_senalando_arriba | `izq-alto` | «el aluminio suelta electrones… vuelve a ser metal» |
+| 6 | 41.4 | 47.0 | 04_bajando_lentes | `arriba-der` | «25 veces más plata» |
+| 7 | 47.7 | 53.0 | 05_sonriendo_dientes_uniformes | `grande-izq` | «hasta tus gases intestinales» |
+| 8 | 53.6 | 57.9 | 02_apuntando_camara | `arriba-der` | «es plata esperando que el aluminio le quite el azufre» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 8 apariciones · ≈ 39.5 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · nunca más de 5.6 s sin Robert.
+
+## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
+
+1. **El ennegrecido es sulfuro de plata; negro arriba de ~100 nm; H₂S es el gas más común; huevo duro en minutos; gases intestinales en la lista** — Selwyn L. "Understanding how silver objects tarnish." Canadian Conservation Institute (CCI), Gobierno de Canadá, página modificada 2025-02-10. https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/metal-objects/understanding-silver-tarnish.html
+   > "Tarnish on pure silver is the compound silver sulfide" · "For thicknesses greater than about 100 nm, the colour is black, the true colour of silver sulfide (Selwyn 2004)." · "The most common sulfur-containing gas is hydrogen sulfide (H2S), which is the one given off by a hard-boiled egg." · "When an egg is heated, the proteins in the egg white produce hydrogen sulfide gas (McGee 1984)." · "Silver exposed to a freshly hard-boiled egg tarnishes within minutes rather than months." · "Tarnishing gases may originate from the following sources." … "People (intestinal gas emissions containing hydrogen sulfide)" · "Wool, wool felt" · "Rubber gloves"
+2. **Pulir quita plata además del ennegrecido; el método electroquímico con aluminio la reduce de vuelta a metal; cuidados** — Selwyn L. "Silver – Care and Tarnish Removal." CCI Notes 9/7 (1993, rev. 2007). https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/care-silver.html
+   > "they remove silver and tarnish from the surface of an object" · "takes away a certain amount of underlying silver along with the surface layer of tarnish" · "placed in contact with aluminum and both are submerged in a warm solution of sodium carbonate" · "The process is electrochemical, with the carbonate solution acting as the electrolyte." · (el hidrógeno) "reacts with the tarnish, reducing it back to silver metal" · "objects with sealed hollow components should not be subjected to aqueous solutions" · "Objects cleaned by this method may tarnish more quickly than silver that has been polished."
+3. **1916: cucharas pulidas con pasta perdieron, por limpieza, ~25 veces más plata que con el método electrolítico; receta casera con bicarbonato; el aluminio se corroe** — Lang H.L., Walton C.F. Jr. "A Study of the Electrolytic Method of Silver Cleaning." *USDA Bulletin No. 449*, Washington, D.C., 31 oct 1916. Texto completo: https://archive.org/details/studyofelectroly449lang (BHL item 190935).
+   > "Washington, D. C. PROFESSIONAL PAPER October 31, 1916" · "Silver, however, readily forms black silver sulphid on coming in contact with sulphur compounds … larger amounts occur in vulcanized rubber, wool, and foods like eggs." · "the silver is cleaned by bringing it into actual contact with aluminum in a solution of an electrolyte" · "During the 50 cleanings … an average of 0.00006 grams in each cleaning." · "One sterling silver and one silver-plated spoon were weighed, tarnished and cleaned six times by rubbing with a paste of finely powdered whiting and water … an average of 0.0015 grams in each cleaning, about 25 times as much as by the electrolytic method." · "1 teaspoonful of either washing or baking soda and 1 teaspoonful of common table salt to each quart of water" · "Aluminum corrodes quickly in the cleaning solution, so that aluminum dishes of any value for culinary purposes should never be used."
+4. **Hace falta contacto: corre una corriente; el aluminio se oxida; la plata vuelve sin quitar plata** — UC Davis, "Cleaning Silverware: Electrochemical Reaction" (UCDemos, LibreTexts). https://chem.libretexts.org/Courses/University_of_California_Davis/UCDemos/Cleaning_Silverware__Electrochemical_Reaction
+   > "The silver and aluminum must be in contact with each other because a small electric current flows between them" · "aluminum is oxidized (loses electrons and oxidation number increases)" · "It converts the silver sulfide back to silver, without removing any silver." · "Tarnish in silverware is the combination of silver with sulfur containing substances in the air, not oxygen."
+5. **Pila entre sulfuro de plata y aluminio (forma plata y sulfuro de aluminio); receta con papel aluminio, sal, bicarbonato y agua hirviendo** — Univ. of Wisconsin–Madison, Chemistry Demo Lab, "Removing Tarnish from Silver using an Electrochemical Cell" (cita *Fun with Chemistry*, Institute for Chemical Education, vol. 2, p. 333). https://www2.chem.wisc.edu/deptfiles/genchem/demonstrations/Gen_Chem_Pages/17electropage/removing_tarnish_from_silv.htm
+   > "An electrochemical cell is produced between the silver sulfide and the aluminum, to form silver and aluminum sulfide." · "is cleaned by placing it in a pan containing aluminum foil, salt, baking soda and boiling water."
+6. (Referencia de apoyo, no se citó textual) *J. Chem. Educ.* 2000, 77, 328A, "Silver to Black – and Back" (JCE Classroom Activity), DOI 10.1021/ed077p328A — la página de ACS dio 403; no se usa ninguna cifra de ahí.
+
+## Notas
+- El dibujo es esquemático (átomos como esferas, los electrones como chispitas, la capa de sulfuro exagerada).
+- La prueba de peso de 1916 con el método electrolítico se hizo con **zinc** como metal activo (el boletín dice que aluminio y zinc funcionan igual); por eso la voz dice "tocando otro metal en agua hirviendo" y no "con aluminio". La pasta abrasiva era *whiting* (carbonato de calcio en polvo). En la descripción se aclara. Esa prueba usó cucharas ennegrecidas a propósito con sulfuro de potasio.
+- La explicación del boletín de 1916 (hidrógeno atómico) es la de su época; en la animación se usa la explicación de pila galvánica de las fuentes 4–5. La ecuación 3 Ag₂S + 2 Al → 6 Ag + Al₂S₃ es la forma escolar; en agua el sulfuro de aluminio no es estable (se hidroliza), por eso la voz solo dice "el azufre se suelta".
+- La plata esterlina (92.5 % plata) también forma sulfuro de cobre (CCI); la voz simplifica a "sulfuro de plata".
+- Matices para la descripción: la plata queda con acabado satinado/mate y puede volver a ennegrecerse más rápido (CCI); no usar en piezas chapadas, huecas o selladas; no usar ollas de aluminio buenas (se corroen, USDA 1916); enjuagar y secar.
+- Mención de pasada al huevo (sin repetir el shot del huevo verde): solo como fuente del gas H₂S.
+- Taxco no se menciona: no se verificó un dato concreto.

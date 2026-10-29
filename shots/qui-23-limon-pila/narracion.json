@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Limon base narrada.dc.html",
+  "salida": "Shot Limon narrado.dc.html",
+  "nota": "Shot Químico #23. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese limón no te está dando electricidad: el que se está gastando es el clavo."
+    },
+    {
+      "escena": "Que",
+      "texto": "Es un clavo galvanizado, cubierto de zinc, y un alambre de cobre, metidos en el mismo limón."
+    },
+    {
+      "escena": "Zinc",
+      "texto": "El zinc se oxida: suelta electrones y se va disolviendo en el jugo, convertido en iones."
+    },
+    {
+      "escena": "Cable",
+      "texto": "Esos electrones viajan por el cable hasta el cobre, y eso es la corriente."
+    },
+    {
+      "escena": "Jugo",
+      "texto": "¿Y el limón? Su jugo ácido es el electrolito: con sus iones cierra el circuito por dentro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "Y al cobre le llegan electrones… ¿qué pasa ahí?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2001, en la Universidad de Syracuse, el químico Jerry Goodisman lo probó con limones simulados, hechos con ácido: en el cobre, ese ácido se vuelve gas hidrógeno."
+    },
+    {
+      "escena": "Voltaje",
+      "texto": "Y midió el voltaje: con zinc y cobre en ácido cítrico, como el del limón, dio 0.91 volts: ni siquiera llega a un volt."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Por eso, para prender un foquito LED se ponen 4 o 5 limones en fila. Y ojo: ese limón ya no se come."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese limón no te da electricidad: la energía sale del zinc del clavo, que reacciona con su ácido."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+# Verificación de hechos · qui-46-platano-etileno
+
+29 oct 2026 · verificación independiente (agente que no escribió el guion).
+
+Fuentes abiertas por el verificador: Hao, Li y Guo, *Plant Hormones* 1:e014 (2025) (texto completo en maxapress.com); Binder, *J Biol Chem* 295:7710 (2020) (PMC7261785); Paul et al., *J Food Sci Technol* 49:1 (2012) (PMC3550874); Kader et al., UC ANR Pub. 21590 (PDF abierto); Keunen et al., *Front Plant Sci* 7:23 (2016) (PMC4735362); Chang C., *BMC Biol* 14:7 (2016) (PMC4730734); Li et al., *Hortic Res* (2024) (PMC11480664). **No se pudieron abrir** (muro de pago): Gane, *Nature* 134:1008 (1934); Bakshi et al., *J Plant Growth Regul* 34:809 (2015); Yang et al., *AAQR* 7:417 (2007) (403; solo resumen del buscador).
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 1 | Voz 0: un plátano maduro suelta un gas que madura a la fruta de al lado | ✅ | Binder 2020; Paul et al. 2012 (plátano = climatérica) | "ethylene produced by an apple hastens the ripening of bananas" · "The process of ripening in climacteric fruits can be triggered and also enhanced by exogenous ethylene treatment" | 2020 / 2012 |
+| 2 | Voz 1: se llama etileno, dos carbonos y cuatro hidrógenos (C₂H₄) | ✅ | Hao et al. 2025 | "Ethylene, with the chemical formula C2H4, is the smallest unsaturated alkene and also the simplest known plant hormone." | 2025 |
+| 3 | Voz 1: la hormona vegetal más simple que se conoce | ✅ | Hao et al. 2025 | (misma frase) "…the simplest known plant hormone" | 2025 |
+| 4 | Pantalla 1: molécula con 2 C unidos por doble enlace y 4 H | ✅ | Binder 2020 (olefina = alqueno, doble enlace) | "Ethylene (IUPAC name ethene) is the simplest olefin gas" | 2020 |
+| 5 | Pantalla 1: medidor "≈ 0.3 nm" | ⚠️ | Diámetro cinético del etileno: 3.9 Å (Breck 1974, citado en patente USPTO 9579627) a 4.2 Å (literatura de tamices moleculares) | ≈ 0.39–0.42 nm; 0.3 nm se queda corto | 1974 / varios |
+| 6 | Voz 2: la fruta lo suelta al aire y la de al lado lo recibe como orden de madurar (gas, hormona) | ✅ | Binder 2020; Chang 2016 | "the first gaseous molecule shown to function as a hormone" · "ethylene was the first gaseous signaling molecule to be identified in any organism" | 2020 / 2016 |
+| 7 | Pantalla 2: receptor como cerradura, letrero "¡MADURA!" | ✅ (esquemático) | Binder 2020 (señalización por receptores) | Metáfora visual; avisar "el dibujo es esquemático" en la descripción | 2020 |
+| 8 | Voz 3: respira más rápido | ✅ | Paul et al. 2012 | "Climacteric fruits show a dramatic increase in the rate of respiration during ripening." | 2012 |
+| 9 | Voz 3: cambia de color y se ablanda (por el etileno) | ✅ | Paul et al. 2012 | "Ethylene was found to be necessary for skin colour changes and firmness loss during ripening." (el dato del artículo es de guayaba; es el patrón general de las climatéricas) | 2012 |
+| 10 | Voz 3: y suelta más etileno (autocatálisis) | ✅ | Paul et al. 2012 | "a positive feedback mechanism (ethylene induces its own synthesis) underlies the climacteric behaviour during ripening" | 2012 |
+| 11 | Voz 4 + pantalla 4: un aguacate madura antes en bolsa de papel con una manzana madura | ✅ | Kader et al., UC ANR 21590 (s/f en el PDF; ficha de 2004 según catálogo); Paul 2012 (aguacate climatérico) | "Ripening in a bowl or paper bag can be enhanced by placing one ripe apple with every 5 to 7 pieces of fruit to be ripened. Apples produce ethylene that speeds ripening. (Fuji and Granny Smith apples do not produce much ethylene and do not enhance ripening.)" · Tabla 1: "Avocado" climatérica | ~2004 / 2012 |
+| 12 | Descripción: no usar bolsa de plástico cerrada | ✅ | Kader et al. | "Do not place produce in sealed plastic bags on the counter because this slows ripening and may increase off-odors and decay" | ~2004 |
+| 13 | Voz 5: "¿Y por qué tus uvas **nunca** maduran en el frutero?" | ⚠️ | Paul et al. 2012 | "Ripening is slow or non-existent in non-climacteric fruits if they are detached from the plant." — "nunca" es absoluto; la fuente dice "lenta o nula" | 2012 |
+| 14 | Voz 6: uvas, fresas y cítricos maduran en la planta; cortados, casi no | ✅ | Paul et al. 2012, Tabla 1 | No climatéricas: "Citrus fruits (orange, grapefruit, lemon, lime, etc.)", "strawberry", "Grape" · "slow or non-existent … if they are detached" | 2012 |
+| 15 | Voz 7: plátano, aguacate y manzana sí siguen (climatéricas) | ✅ | Paul et al. 2012, Tabla 1 | Climatéricas: "Apple … Banana … Avocado" · "Climacteric fruits can ripen fully if they are harvested at completion of their growth period." | 2012 |
+| 16 | Pantalla 5: las moléculas de etileno "rebotan" en las uvas | ✅ (esquemático) | — | Metáfora: las no climatéricas sí tienen respuesta al etileno, pero su maduración no depende de él. Basta con el aviso "dibujo esquemático" | — |
+| 17 | Voz 8: 1901, Neljubov | ✅ | Keunen et al. 2016; Hao 2025 | "In 1901, the Russian plant physiologist Neljubov reported that etiolated pea plants grew horizontally in the laboratory" | 1901 |
+| 18 | Voz 8: en San Petersburgo | ✅ | Hao et al. 2025 | "a young researcher at the Botanical Institute of St Petersburg" | 1901 |
+| 19 | Voz 8: chícharos creciendo de lado por el etileno del gas de alumbrado | ✅ | Chang 2016; Keunen 2016 | "etiolated pea seedlings exhibited a peculiar growth (… horizontal bending) due to leaking illuminating gas in his laboratory. Neljubow determined that ethylene was the biologically active component of illuminating gas." | 1901 |
+| 20 | Pantalla 8: "al filtrar el gas, las plántulas se enderezan" | ⚠️ | Keunen 2016 | "grew horizontally in the laboratory and upright in outside air" — la prueba fue al aire limpio de afuera, no "filtrando" el gas | 1901 |
+| 21 | Voz 9: 1934, Gane | ✅ | Chang 2016; Keunen 2016; Hao 2025 | "In 1934, Richard Gane discovered that plants synthesize ethylene" | 1934 |
+| 22 | Voz 9: en Cambridge | ✅ (solo revisión) | Hao 2025 (el original de *Nature* no se pudo abrir) | "Richard Gane from the Low Temperature Research Laboratory at the University of Cambridge (Cambridge, England)" | 1934 |
+| 23 | Voz 9 + pantalla 9: "unos 27 kilos de manzanas" (60 lb, Worcester Pearmain) | ⚠️ | Solo Hao 2025. No se pudo abrir Gane 1934 (*Nature*, muro de pago) ni Bakshi 2015; ninguna otra fuente consultada (Chang 2016, Keunen 2016, Wikipedia, búsquedas de "60 lb"/"60 pounds") repite la cifra. No verificable en la fuente primaria | "collected metabolic gas products from about 60 pounds of Worcester Pearmain apples" (Hao 2025) | 1934 |
+| 24 | Voz 9: "y probó que la fruta lo fabrica" (prueba química) | ✅ | Keunen 2016; Hao 2025 | "It took 33 more years to provide chemical proof that plants indeed synthesize this volatile molecule themselves (Gane, 1934)" · "the first time that plants' ability to produce ethylene was confirmed through chemical analysis" | 1934 |
+| 25 | Pantalla 9: manguera hacia "frasco de vidrio frío", báscula "≈ 27 kg" | ⚠️ | — | El método exacto no se pudo comprobar (original cerrado); la báscula depende de la fila 23 | — |
+| 26 | Voz 10: en la antigua China, la fruta junto al incienso **de los templos** maduraba antes | ⚠️ | Hao 2025 (templos); Chang 2016 y Li et al. 2024 (sin templos, peras); Wikipedia (sin cita) | Hao: "In ancient China, it was observed that fruits near incense burners in temples ripened faster" · Chang: "ancient Chinese burned incense to ripen pears" · Li 2024: "Ancient Chinese people burned incense to ripen pears" · Wikipedia: "burn incense in closed rooms to enhance the ripening of pears". Es una tradición que repiten las revisiones sin fuente antigua primaria; el detalle "templos" solo aparece en una. Debe decirse como "se cuenta" | sin fecha |
+| 27 | Voz 10: el humo del incienso suelta etileno | ✅ | Hao 2025 (cita a Yang et al. 2007); AAQR 2007 (resumen en buscador: midió etileno en humo de incienso) | "smoldering herbal incense generates substantial olefins, with ethylene emissions reaching 1,350 ± 150 μg·g−1" | 2007 |
+| 28 | Pantalla 10: peras/**caquis** junto al templo | ⚠️ | Chang 2016; Li 2024 | Las fuentes solo hablan de peras; los caquis no aparecen | — |
+| 29 | Voz 11: el plátano "es el jefe de tu frutero" | ✅ (figurado) | — | Figura retórica; se apoya en filas 1 y 10 | — |
+| 30 | Pantalla 11: uvas igual que al principio; aguacate maduro, pera amarilla | ✅ | Paul 2012 (pera climatérica en Tabla 1; uva no) | Coherente con filas 14–15 | 2012 |
+
+Conteo: 22 ✅ · 8 ⚠️ · 0 ❌.
+
+## Correcciones necesarias
+
+1. **Fila 5 (pantalla 1, escala):** cambiar "≈ 0.3 nm" por **"≈ 0.4 nm"** (diámetro cinético 0.39–0.42 nm).
+2. **Fila 13 (voz 5):** "¿Y por qué tus uvas nunca maduran en el frutero?" → **"¿Y por qué tus uvas no maduran en el frutero?"**
+3. **Fila 20 (pantalla 8):** en vez de "al filtrar el gas", **sacar las plántulas al aire de afuera** y ahí se enderezan.
+4. **Filas 23 y 25 (voz 9 y pantalla 9, Gane):** quitar la cifra. Propuesta de voz: **"En 1934, en Cambridge, Gane juntó el gas de un montón de manzanas maduras y probó que la fruta lo fabrica."** En pantalla, sin báscula "≈ 27 kg" (montaña de manzanas sin número) y el frasco sin "frío". (Si la sesión principal logra abrir Gane 1934 en *Nature* y encuentra ahí "60 lb", se puede volver a poner.)
+5. **Filas 26 y 28 (voz 10 y pantalla 10, incienso):** decirlo como tradición, sin "templos" y con peras. Propuesta: **"Lo curioso: se cuenta que en la antigua China quemaban incienso para madurar peras: el humo suelta etileno."** En pantalla: cuarto con incensario y peras que se doran (sin caquis; el templo puede quedar solo como ambientación o quitarse).
+
+## Re-verificación (29 oct 2026)
+
+Revisé lo que cambió en guion.md y narracion.json después de la primera verificación.
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| R1 | Pantalla 1: medidor "≈ 0.4 nm" | ✅ | Diámetro cinético 3.9–4.2 Å (Breck 1974; literatura de tamices) | ≈ 0.39–0.42 nm | 1974 / varios |
+| R2 | Pantalla 8: con aire de afuera las plántulas vuelven a crecer derechas | ✅ | Keunen et al. 2016 | "grew horizontally in the laboratory and upright in outside air" | 1901 |
+| R3 | Voz 9: "En 1934, en Cambridge, Gane juntó el gas de un montón de manzanas maduras y probó que la fruta lo fabrica." (sin cifra) | ✅ | Hao 2025; Keunen 2016; Chang 2016 | "collected metabolic gas products from about 60 pounds of … apples" · "chemical proof that plants indeed synthesize this volatile molecule themselves (Gane, 1934)" | 1934 |
+| R4 | Pantalla 9: montaña de manzanas, gas recogido y analizado, "C₂H₄ ✓" (sin báscula) | ✅ | Hao 2025 | "Gane's discovery was the first time that plants' ability to produce ethylene was confirmed through chemical analysis" | 1934 |
+| R5 | Voz 10: los plátanos de exportación viajan verdes | ✅ | EFSA PLH Panel, *EFSA Journal* 19(3):e06426 (2021), PMC7938759 (abierto) | "Commercial Musa fruits are harvested at 'green stage one' before they begin to ripen naturally." · "Green stage one fruit are transported to the EU in controlled conditions" | 2021 |
+| R6 | Voz 10: al llegar los maduran en cuartos con etileno | ✅ | EFSA 2021 | "…stimulated to ripen when exposed to exogenous ethylene in ripening rooms" · "ripened in ripening rooms where the fruit is exposed to exogenous ethylene over 4–7 days" | 2021 |
+| R7 | Pantalla 10: barco, cuarto cerrado con tanque C₂H₄ y termómetro, plátanos de verde a amarillo | ✅ (esquemático) | EFSA 2021 | Coherente con R5–R6; para la descripción: "100–150 ppm of ethylene for 24–48 h" (EFSA cita a Kader 2020) | 2021 |
+| R8 | Voz 6: "…cortados, **ya no maduran**." | ⚠️ | Paul et al. 2012 | "Ripening is slow or non-existent in non-climacteric fruits if they are detached from the plant." — la fuente dice "lenta o nula"; "ya no maduran" es absoluto (la versión anterior "casi no" sí era ✅) | 2012 |
+| R9 | Voz 5: "¿Y por qué tus uvas **nunca** maduran en el frutero?" — **sin cambio** | ⚠️ | Paul et al. 2012 | Igual que la fila 13: "nunca" es absoluto | 2012 |
+
+Lo del incienso (filas 26–28) ya no está en el guion: queda resuelto.
+
+### Correcciones pendientes
+1. **R8:** "cortados, ya no maduran" → **"cortados, casi no maduran"** (o volver a "cortados, casi no").
+2. **R9:** "¿Y por qué tus uvas nunca maduran en el frutero?" → **"¿Y por qué tus uvas no maduran en el frutero?"**
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplican tal cual las 2 propuestas de la re-verificación: «cortados, casi no maduran» y «¿Y por qué tus uvas no maduran en el frutero?».
+
+VEREDICTO: APROBADO

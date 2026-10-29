@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot Aguacate base narrada.dc.html",
+  "salida": "Shot Aguacate narrado.dc.html",
+  "nota": "Shot Químico #13. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese guacamole café no está podrido: es una enzima del aguacate pintándolo con oxígeno del aire." },
+    { "escena": "Machacar", "texto": "Cuando machacas el aguacate, rompes sus células y se juntan cosas que antes estaban separadas." },
+    { "escena": "Enzima", "texto": "Una enzima, la polifenol oxidasa, agarra los polifenoles del aguacate y los oxida con oxígeno." },
+    { "escena": "Melanina", "texto": "Salen quinonas que se encadenan en pigmentos cafés llamados melaninas." },
+    { "escena": "Pregunta", "texto": "¿Y por qué se pone café arriba y abajo sigue verde? Porque sin oxígeno, la enzima no puede trabajar." },
+    { "escena": "Estudio", "texto": "En 1975, en Israel, compararon tres variedades de aguacate: la que tenía más polifenol oxidasa era la que más rápido se ponía café." },
+    { "escena": "Limon", "texto": "Por eso el limón ayuda: su ácido baja el pH y la enzima trabaja más lento." },
+    { "escena": "Plastico", "texto": "Un plástico pegado encima casi no le deja llegar aire." },
+    { "escena": "Hueso", "texto": "¿Y el hueso? Solo protege lo que toca, porque ahí no llega el aire. Daría igual una pelota de golf." },
+    { "escena": "Cobre", "texto": "Lo curioso: esa enzima trabaja con dos átomos de cobre en su centro." },
+    { "escena": "Cierre", "texto": "Así que ese guacamole café no está podrido: es pura química con el aire." }
+  ]
+}

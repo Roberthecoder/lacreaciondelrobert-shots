@@ -1,0 +1,76 @@
+# Shot Químico #25 · Ese calentador no trae pilas: es hierro oxidándose a propósito (calentadores de manos desechables)
+
+- **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #25 · rama `pedido300/qui`.
+- **Formato:** N1 "Por dentro" (la mano que abre y aprieta la bolsita → el polvo de hierro oxidándose en fondo noche → la misma bolsita, ahora vista como "una reja oxidándose en tu bolsillo") con un toque de N5 (una patente de Asahi Kasei de los años 70). Conecta con el óxido del #21 solo de pasada ("como una reja vieja").
+- **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese calentador de manos no trae pilas ni fuego: es hierro oxidándose a propósito."
+- **Seguridad:** no se invita a abrir la bolsita ni a experimentar con el polvo; se dice claro que no se pega en la piel ni se usa para dormir (NITE, 2025).
+- **Duración:** voz 951 caracteres (estimador) / ≈ 180 palabras (≈ 57.9 s) + cierre 3.5 s → **61.4 s** estimados (`estimar-escenas.mjs`). Corregido tras `verificacion.md`.
+- **Estado:** guion verificado (`verificacion.md`: APROBADO), animación lista (`calentador.jsx`, base sin voz 61.4 s), voz pendiente de aprobación de Robert.
+
+## Versión narrada
+
+Tiempos estimados: Gancho 0–5.0 · Relleno 5.0–13.5 · Empaque 13.5–17.9 · Oxido 17.9–23.3 · Polvo 23.3–28.9 · Ayudantes 28.9–33.3 · Pregunta 33.3–35.2 · Patente 35.2–41.9 · Cuidado 41.9–49.5 · Consejo 49.5–53.2 · Cierre 53.2–57.9 · Outro 57.9–61.4.
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Ese calentador de manos no trae pilas ni fuego: es hierro oxidándose a propósito. | Fondo cian. Desde el cuadro 0 dos manos rompen un sobre plateado (efecto "rasss") y sacan una bolsita blanca de tela; la aprietan y salen ondas de calor naranjas. Chips "🔋 ✗" y "🔥 ✗" se tachan; aparece "Fe + O₂". Barra de escala "10 cm". Termómetro chico a un lado que empieza a subir. |
+| 1 | Relleno | Según la hoja de seguridad de una marca, de 2021, la mitad o más del relleno es hierro en polvo; luego agua, carbón activado, vermiculita y sal. | `Lupa` "por dentro" sobre la bolsita: granos de hierro, gotas, carbón, vermiculita y sal. Chip "por dentro · hoja de seguridad 2021". Barra apilada que se llena en el orden de la voz: "hierro en polvo 50–60 %" (gris) y "agua 30–40 %" (cian) como los dos grandes; luego "carbón activado 5–10 %", "vermiculita 5–10 %" y "sal 1–5 %", con su leyenda debajo del subtítulo. |
+| 2 | Empaque | Cerrado, no le llega aire. Al abrirlo, el oxígeno entra por la bolsita. | Corte: la bolsita dentro del sobre plateado cerrado, con un candado "sin aire" y el termómetro quieto en gris. El sobre se abre: bolitas rojas "O₂" entran por poritos de la tela (flechas). El termómetro se enciende. |
+| 3 | Oxido | El hierro reacciona con el oxígeno, se vuelve óxido, como una reja vieja, y suelta calor. | Fondo noche (micro): un grano de hierro gris; llegan O₂ y una gota de agua; la superficie del grano se vuelve naranja-café ("óxido de hierro"). Cada vez que se forma óxido sale un destello naranja "calor". Mini-imagen de una reja oxidada (guiño al #21) que aparece y se va. Ecuación chica: "hierro + oxígeno → óxido + calor". |
+| 4 | Polvo | Aquí va rapidísimo: con sal y hecho polvo, el hierro se oxida mucho más rápido que un clavo. | Pantalla dividida: a la izquierda un clavo con una manchita de óxido y un reloj "lento"; a la derecha cientos de granitos que se vuelven naranjas casi a la vez, reloj "rápido". Medidor "superficie expuesta" se dispara del lado del polvo. |
+| 5 | Ayudantes | El agua ayuda, el carbón atrapa oxígeno y la vermiculita guarda el agua. | Los ayudantes entran uno por frase: gota de agua → flecha "ayuda"; el carbón poroso con bolitas O₂ pegadas en sus poros; la hojuela de vermiculita, en capas, que absorbe y guarda agua como esponja (sin hincharse). |
+| 6 | Pregunta | ¿Y cuánto aguanta ese calor? | **Re-gancho.** "?" gigante sobre el termómetro; reloj de arena que gira. |
+| 7 | Patente | Una patente de Asahi Kasei, de los años 70, probó una bolsita así: se mantuvo entre 45 y 50 grados por 22 horas. | Tarjeta "años 70 · Asahi Kasei · patente" (`TarjetaEstudio`). Una bolsita plana con película perforada; gráfica temperatura-tiempo: la línea sube y se queda en una franja "45–50 °C" (promedio) mientras un contador corre de 0 a "22 horas". |
+| 8 | Cuidado | Ojo: en 2025, una agencia japonesa advirtió que a 44 grados la piel puede quemarse en 3 a 4 horas, aunque solo se sienta tibio. | Fondo amarillo. Tarjeta "2025 · NITE · Japón". Un pedazo de piel esquemático con la bolsita encima; termómetro en "44 °C" y reloj "3–4 h"; la capa de abajo (grasa/tejido) se va poniendo roja aunque la superficie solo diga "tibio 🙂". Chip "quemadura de baja temperatura". |
+| 9 | Consejo | Por eso, nunca lo pegues en la piel ni lo uses para dormir. | Dos íconos con ✗ rojo: bolsita pegada directo sobre la piel; bolsita dentro de una cama con luna. Una ✓ verde: bolsita sobre la ropa / en el guante. |
+| 10 | Cierre | Así que ese calentador no trae pilas: es una reja oxidándose en tu bolsillo. | **Regreso a las manos del inicio** con la bolsita caliente; con `Lupa` se ve que el polvo ya está casi todo naranja (óxido). La bolsita se "transforma" un instante en una mini reja oxidada y regresa. Etiqueta "hierro + oxígeno → óxido + calor". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
+
+**Música:** cama grave y cálida, continua, debajo de la voz; efectos en el mismo cuadro: rasgado del sobre, "pff" del aire entrando, chisporroteo suave cada vez que un grano se oxida, tic-tac lento (clavo) contra tic-tac rápido (polvo), golpe de la tarjeta, reloj de arena, alarma suave en "Cuidado".
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y cuánto aguanta ese calor?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «no trae pilas ni fuego: es hierro oxidándose» |
+| 2 | 6.5 | 13.2 | 13_senalando_arriba | `arriba-der` | «la mitad o más del relleno es hierro en polvo» |
+| 3 | 13.9 | 17.6 | 11_sorprendido | `arriba-der` | «Al abrirlo, el oxígeno entra» |
+| 4 | 18.7 | 23.0 | 06_pensativo_menton | `izq-alto` | «se vuelve óxido, como una reja vieja» |
+| 5 | 25.3 | 28.7 | 05_sonriendo_dientes_uniformes | `arriba-der` | «mucho más rápido que un clavo» |
+| 6 | 33.4 | 35.4 | 07_pensativo_puno | `grande` | «¿Y cuánto aguanta ese calor?» |
+| 7 | 37.8 | 41.6 | 04_bajando_lentes | `izq-alto` | «entre 45 y 50 grados por 22 horas» |
+| 8 | 42.4 | 49.3 | 10_serio_molesto | `izq-alto` | «a 44 grados la piel puede quemarse» |
+| 9 | 49.8 | 53.0 | 13_senalando_arriba | `arriba-der` | «nunca lo pegues en la piel ni lo uses para dormir» |
+| 10 | 53.5 | 57.8 | 02_apuntando_camara | `izq-alto` | «una reja oxidándose en tu bolsillo» |
+| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 43 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
+
+## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
+
+1. **Composición de una marca común (HotHands/Grabber): hierro en polvo 50–60 %, más carbón activado, vermiculita, sal, agua y resina absorbente** — KOBAYASHI Healthcare International Inc. *Safety Data Sheet: Air-activated heating packs of various styles* (HotHands, Grabber, MediHeat). Emitida 10 abr 2015, revisada 8 dic 2021. https://cdn.schoolspecialty.com/cc9ed102-f795-4ca9-9463-b0f100b7fa9d/1530365_SDS_010224_Original%20file.pdf
+   > "Iron powder 7439-89-6 50-60 · Activated charcoal 7440-44-0 5-10 · Vermiculite 1318-00-9 5-10 · Water-absorbent resin 9003-04-7 1-5 · Sodium chloride 7647-14-5 1-5 · Water 7732-18-5 30-40" · "Air-Activated Disposable Warmer"
+2. **Cómo funciona: el hierro se oxida (se vuelve óxido de hierro) y ese calor se aprovecha; papel de cada ingrediente; empaque que corta el aire y bolsa interior con poros** — Gobierno Metropolitano de Tokio, Oficina de Vida del Consumidor (東京都生活文化局). "使いすてカイロの原理" (anexo 1 de un reporte de pruebas de calentadores; PDF modificado en oct 2004). https://www.shouhiseikatu.metro.tokyo.lg.jp/anzen/test/documents/kairo_b.pdf
+   > "これは鉄の酸化、つまり鉄が空気中の酸素と反応して酸化鉄になる化学反応である。この化学反応が起きるときに出る熱を利用したものが「使いすてカイロ」である。" · "鉄粉 さびることにより発熱する。" · "水・塩類 鉄粉のさびる速度を速める。" · "活性炭 空気中の酸素を吸着して、酸素の濃度を高める。" · "保水剤 … 水を含ませておく。観葉植物の保水土として利用されるバーミキュライトが使われることが多い。" · "外袋 カイロの不要な発熱（酸化）を防ぐために外気を遮断する外側の袋。" · "内袋 … 空気を取り込む小さな穴があいている。"
+3. **El producto es óxido de hierro ("óxido"), y en polvo se oxida mucho más rápido que un clavo** — Prof. Robert Musioł, Universidad de Silesia en Katowice (Polonia), Facultad de Ciencia y Tecnología. "Chemistry for chilly days" (10 ene 2024). https://us.edu.pl/wydzial/wnst/en/2024/01/10/chemia-na-mrozne-dni-prof-robert-musiol/
+   > "resulting in the creation of iron oxide, i.e. rust" · "Due to the addition of salt and the high degree of fragmentation, this reaction takes place much faster than, for example, on a nail sticking out of the wall."
+4. **Patente de Asahi Kasei de los años 70 (prioridad japonesa 1973–1974; publicada en EE. UU. 1976): hierro, sal, carbón activado y agua; empaque hermético; 45–50 °C durante 22 horas** — Yamashita I., Shimizu M. (Asahi Kasei Kogyo KK). "Structure of warmer." US 3,976,049; prioridad JP 48-74737, 4 jul 1973; presentada en EE. UU. 28 jun 1974; publicada 24 ago 1976. https://patents.google.com/patent/US3976049A/en
+   > "Iron powder usually undergoes oxidation reaction and generates heat." · "Iron powder is a principal heat-generating agent." · "the use of a metal chloride or sulfate … as an oxidation promoter of iron powder" · "Air-tight envelope 16 which is an outer bag is used to isolate the inside composition 10 from the outside air" · Ejemplo 4 (polvo de hierro, NaCl, carbón activado y agua en una bolsa de película de polietileno perforada): "a heat-generating average temperature of 45°-50°C lasted for 22 hours."
+5. **Quemaduras de baja temperatura: 44 °C en 3–4 horas aunque se sienta solo tibio; no directo en la piel; no al dormir** — NITE (National Institute of Technology and Evaluation, Japón). Comunicado de prensa "就寝時の“足元”暖房にご用心！～電気あんか、カイロ、電気マットの取扱いに注意～", 14 ene 2025. https://www.nite.go.jp/data/000156554.pdf (cita a Yamada Y., "低温やけどについて", 製品と安全 nº 72, Asociación de Seguridad de Productos).
+   > "温かいと感じる程度の温度でも、長時間にわたって同じところの皮膚に触れていると、皮膚温度が上がり、皮下の細胞組織などが壊死するため「低温やけど」になります。" · "44℃では3～4時間、46℃では30分～1時間、50℃では2～3分で「低温やけど」になると言われています" · "○カイロを直接肌にあてない。" · "○就寝時には使わない。"
+6. **Apoyo (no se dice en la voz): un estudio midió calentadores de hierro y la temperatura del ambiente pesa mucho más que la humedad** — Klarzak I., Ura-Bińczyk E., Płocińska M., Jurczyk-Kowalska M. (Universidad Politécnica de Varsovia, Polonia). "Effect of temperature and humidity on heat effect of commercial chemical warmers based on iron powder." *Thermal Science and Engineering Progress* (2018). DOI 10.1016/j.tsep.2018.03.006
+   > "exothermic powder consisting of iron powder, sodium chloride, vermiculite, diatomite and active carbon" · "temperature significantly affects the heat effect of the warmers investigated, whereas humidity has only a minor impact."
+
+## Notas
+- El dibujo es esquemático (granos de hierro, poros de la bolsa, capas de la piel, la "reja" del cierre).
+- "En una marca común" = la hoja de seguridad de Kobayashi (HotHands/Grabber); otras marcas cambian la receta (la de Varsovia trae diatomita; algunas japonesas, perlita en polvo). En la descripción se aclara.
+- La patente de Asahi Kasei **no** fue el primer calentador de hierro (la misma patente critica mezclas anteriores con vermiculita); por eso la voz dice "una patente… probó una bolsita así", sin "inventó" ni "el primero", y sin atar la prueba a 1973 (la prioridad japonesa es de 1973–1974, pero el texto con la prueba es el publicado en EE. UU. en 1976). 22 horas es el resultado de una prueba de la patente (Ejemplo 4), no lo que dura cualquier calentador de hoy; las empaquetaduras actuales dicen su propia duración.
+- El óxido real es una mezcla de óxidos/hidróxidos de hierro hidratados; en pantalla se simplifica como "óxido de hierro".
+- Lo de "44 °C en 3–4 h" NITE lo da como "se dice que" (と言われています) y aclara que depende de la persona y que puede pasar incluso por debajo de 44 °C; personas mayores, niños pequeños y diabéticos corren más riesgo. Va en la descripción. Otra fuente (Tokio, ~2004, citando a Moritz y Henriques, 1947) da 44 °C en 6 horas: en la descripción se dice que las cifras varían según la fuente ("se dice" 3–4 h según NITE; otras dan hasta 6 h).
+- "Para dormir": NITE explica que bajo las cobijas el calentador acumula calor y puede pasar la temperatura máxima de la etiqueta.
+- Guiño al #21 (óxido de la reja) solo como comparación; no se repite su explicación.
+- La fuente 3 atribuye la rapidez a la sal **y** a lo fino del polvo juntos; la voz ya lo dice así ("con sal y hecho polvo"). Los relojes del clavo y del polvo dicen solo "lento" / "rápido" (ninguna fuente da días ni minutos).
+
+- La cifra 50–60 % de hierro y 30–40 % de agua es de la hoja de seguridad de Kobayashi (revisión 2021); otras marcas declaran 40–60 % (IRIS, 2023) o 48 % (Qingdao, 2014).
