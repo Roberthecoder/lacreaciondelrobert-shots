@@ -95,7 +95,7 @@ function PielCorte({ T, W = 1080, sy = 760, alto = 420, gros = 0, sacos = [], fl
     <path d={`M 0 ${top} L ${W} ${top}`} stroke="rgba(255,255,255,.35)" strokeWidth={3} strokeDasharray="10 10" />
     {sacos.map((q, i) => { const cr = kclamp(q.crece, 0, 1); if (cr <= 0) return null; const r = 8 + 30 * kEase.sale(cr), cy = kb - 30 - 8 * gros; const n = Math.floor(cr * 9);
       return <g key={'s' + i}>
-        {q.tubo > 0 && <rect x={q.x - 7} y={klerp(cy - r, top - 6, q.tubo)} width={14} height={(cy - r) - klerp(cy - r, top - 6, q.tubo) + 4} fill={QT.saco} stroke={KC.ink} strokeWidth={3} />}
+        {q.tubo > 0 && <rect x={q.x - 7} y={klerp(cy - r, top - 6, q.tubo)} width={14} height={Math.max(0, (cy - r) - klerp(cy - r, top - 6, q.tubo) + 4)} fill={QT.saco} stroke={KC.ink} strokeWidth={3} />}
         <circle cx={q.x} cy={cy} r={r} fill={QT.saco} stroke={KC.ink} strokeWidth={4} />
         {Array.from({ length: n }, (_, j) => <circle key={j} cx={q.x + Math.cos(j * 2.4 + T * 2) * r * 0.5 * (j % 3 ? 1 : 0.4)} cy={cy + Math.sin(j * 2.4 + T * 2) * r * 0.5 * (j % 3 ? 1 : 0.4)} r={5} fill="#7fd3ff" stroke={KC.ink} strokeWidth={1.5} />)}
         {q.suelta > 0 && [0, 1, 2].map((j) => { const u = kclamp(q.suelta * 1.6 - j * 0.3, 0, 1); return u > 0 && u < 1 ? <Zoospora key={'z' + j} T={T} x={q.x + (j - 1) * 30 * u} y={top - 10 - u * 200} r={9} ang={-90 + (j - 1) * 25} seed={j + i} /> : null; })}
@@ -193,8 +193,8 @@ function QuitridioShot() {
   const [a1, a2, a3] = [pt(P1), pt(P2), pt(P3)];
   const ola = kprog(T, K.M + 1.4, K.M + 4.0, kEase.suave);
   const olaPunto = ola < 0.45 ? [klerp(a1[0], a2[0], ola / 0.45), klerp(a1[1], a2[1], ola / 0.45)] : [klerp(a2[0], a3[0], (ola - 0.45) / 0.55), klerp(a2[1], a3[1], (ola - 0.45) / 0.55)];
-  const lupaPiel = (sacosL, gr, fl) => (Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d2233" /><g transform={`scale(${(r * 2) / 800})`}><PielCorte T={Tl} W={800} sy={300} alto={500} gros={gr} sacos={sacosL} flechas={fl} seed={8} /></g></svg>;
-  const sacosCierre = [{ x: 170, crece: 1, tubo: 1, suelta: (T * 0.6) % 1 }, { x: 420, crece: 1, tubo: 1, suelta: (T * 0.6 + 0.5) % 1 }, { x: 650, crece: 1, tubo: 0.6, suelta: 0 }];
+  const lupaPiel = (sacosL, gr, fl) => (Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d2233" /><g transform={`scale(${(r * 2) / 560})`}><PielCorte T={Tl} W={560} sy={210} alto={500} gros={gr} sacos={sacosL} flechas={fl} seed={8} /></g></svg>;
+  const sacosCierre = [{ x: 110, crece: 1, tubo: 1, suelta: (T * 0.6) % 1 }, { x: 290, crece: 1, tubo: 1, suelta: (T * 0.6 + 0.5) % 1 }, { x: 460, crece: 1, tubo: 0.6, suelta: 0 }];
   const sweep = kprog(T, K.C + ECG.a, K.C + ECG.a + ECG.d), xs = klerp(ECG.x0, ECG.x1, sweep);
   const ecgPath = (() => { let d = ''; for (let x = ECG.x0; x <= xs; x += 3) d += (d ? ' L ' : 'M ') + x + ' ' + ecgY(x).toFixed(1); return d; })();
   const corazonPulso = ECG_LAT.reduce((a, [b, A]) => Math.max(a, A * Math.exp(-Math.pow((xs - b) / 18, 2))), 0);
@@ -212,7 +212,7 @@ function QuitridioShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<><Hoja x={540} y={960} s={0.92} /><Rana T={T} x={540} y={900} s={0.75} enferma={0.3} ojos={0.66} latido={lat} escamas={1} id="p" /></>)}
       </Escena>
-      <Lupa T={T} at={K.P + 0.3} until={K.Z - 0.4} x={400} y={470} r={190} fx={560} fy={900} tinte={KC.cyan} etiqueta="la piel = pulmón + riñón (en parte)" interior={lupaPiel([], 0, 1)} />
+      <Lupa T={T} at={K.P + 0.3} until={K.Z - 0.4} x={440} y={470} r={190} fx={560} fy={900} tinte={KC.cyan} etiqueta="la piel = pulmón + riñón (en parte)" interior={lupaPiel([], 0, 1)} />
       {/* 3 · zoosporas nadando en el agua (fondo oscuro) */}
       <Escena T={T} a={K.Z} b={K.Q} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
@@ -229,7 +229,7 @@ function QuitridioShot() {
         <Ambiente T={T} n={16} color="rgba(127,211,255,.22)" area={{ x: 0, y: 0, w: KW, h: 700 }} />
         {fsvg(<>
           <PielCorte T={T} W={1080} sy={760} alto={600} gros={gros} sacos={sacos} flechas={T > K.E - 0.2 ? kprog(T, K.E - 0.2, K.E + 0.3) : 0} atoro={kprog(T, K.E + 1.0, K.E + 2.0)} />
-          {entra < 1 && <Zoospora T={T} x={420} y={heroY} r={9 + (1 - llega) * 30} ang={90} cola={1 - kprog(T, K.Q + 1.0, K.Q + 1.5)} seed={4} />}
+          {entra < 1 && <Zoospora T={T} x={420} y={heroY} r={13 + (1 - llega) * 26} ang={90} cola={1 - kprog(T, K.Q + 1.0, K.Q + 1.5)} seed={4} />}
           {T > K.Q + 0.95 && T < K.Q + 1.6 && <circle cx={420} cy={748} r={20 + 30 * kprog(T, K.Q + 0.95, K.Q + 1.5)} fill="none" stroke={KC.cyan} strokeWidth={4} opacity={1 - kprog(T, K.Q + 0.95, K.Q + 1.5)} />}
         </>)}
       </Escena>
@@ -300,7 +300,7 @@ function QuitridioShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<><Hoja x={540} y={960} s={0.92} /><Rana T={T} x={540} y={900} s={0.75} enferma={kprog(T, K.Ci, K.Ci + 1.6)} ojos={klerp(0.66, 0.9, kprog(T, K.Ci, K.Ci + 1.6))} latido={null} escamas={1} id="c" /></>)}
       </Escena>
-      <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={400} y={470} r={190} fx={560} fy={900} tinte={KC.yellow} etiqueta="zoosporangios" interior={lupaPiel(sacosCierre, 1, 0)} />
+      <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={440} y={470} r={190} fx={560} fy={900} tinte={KC.yellow} etiqueta="zoosporangios" interior={lupaPiel(sacosCierre, 1, 0)} />
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.2} until={K.G + 4.8} texto="¿dormida?" x={290} y={520} tam={60} />
@@ -308,7 +308,7 @@ function QuitridioShot() {
       <Etq T={T} at={K.Z + 1.0} until={K.Q - 0.3} x={60} y={440} texto="Batrachochytrium dendrobatidis (Bd)" it tam={32} color={KC.cyan} />
       <Chip T={T} at={K.Z + 2.0} until={K.Q - 0.3} texto="3–5 µm cada espora" x={540} y={1110} tam={36} borde={KC.cyan} />
       <Etq T={T} at={K.Q + 0.4} until={K.Pr - 0.3} x={60} y={T < K.E ? 690 : 600} texto="capa de queratina" tam={32} color={QT.queratina} />
-      <Etq T={T} at={K.Q + 2.4} until={K.E - 0.2} x={380} y={890} texto="zoosporangio" lado="izq" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Q + 2.4} until={K.E - 0.2} x={480} y={690} texto="zoosporangio" tam={30} color={KC.texto} />
       <Medidor T={T} at={K.E + 0.3} until={K.Pr - 0.3} valor={(t) => 1 - 0.55 * kprog(t, K.E + 0.9, K.E + 2.6, kEase.suave)} etiqueta="paso de sales" texto={(v) => (v > 0.5 ? Math.round(v * 100) + ' %' : '< 50 %')} x={90} y={360} ancho={900} color={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.C - 0.3} anio="2009" quien="Australia · Voyles et al." revista="Science, 2009" y={560} />
       <Etq T={T} at={K.Es + 1.0} until={K.C - 0.3} x={60} y={790} texto="rana arborícola verde" tam={30} color={KC.ink} />
