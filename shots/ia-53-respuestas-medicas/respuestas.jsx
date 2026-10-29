@@ -48,8 +48,8 @@ function Globo({ x, y, w, h, quien, n, p = 1, T = 0, check = 0, borrador = 0, se
     {med ? <CaraMedico x={x + 66} y={y + 66} s={0.95} /> : <CaraBot x={x + 66} y={y + 66} s={0.95} T={T} />}
     <text x={x + 128} y={y + 80} style={{ font:`900 38px ${KF.texto}` }} fill={med ? AZUL : '#0a7f99'}>{med ? 'médico' : 'chatbot'}</text>
     <Renglones x={x + 34} y={y + 150} w={w - 70} n={n} p={p} seed={med ? 3 : 8} paso={34} />
-    {borrador > 0 && <g opacity={borrador}><rect x={x + w - 230} y={y + 36} width={200} height={50} rx={10} fill="#fff4c2" stroke={KC.ink} strokeWidth={4} />
-      <text x={x + w - 130} y={y + 72} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>BORRADOR</text></g>}
+    {borrador > 0 && <g opacity={borrador} transform={`rotate(4 ${x + w - 130} ${y - 10})`}><rect x={x + w - 230} y={y - 38} width={200} height={54} rx={10} fill="#fff4c2" stroke={KC.ink} strokeWidth={5} />
+      <text x={x + w - 130} y={y - 1} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>BORRADOR</text></g>}
     {check > 0 && <g transform={`translate(${x + w - 10} ${y - 6}) scale(${klerp(1.8, 1, check)})`} opacity={Math.min(1, check * 2)}>
       <circle r={50} fill={KC.leaf} stroke={KC.ink} strokeWidth={7} />
       <path d="M -24 0 L -6 18 L 26 -18" stroke="#fff" strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>}
@@ -63,9 +63,9 @@ function Globo({ x, y, w, h, quien, n, p = 1, T = 0, check = 0, borrador = 0, se
 function Duda({ x, y, o = 1, T = 0 }) {
   const b = Math.sin(T * 2.2) * 4;
   return <g opacity={o} transform={`translate(0 ${b})`}>
-    <rect x={x} y={y} width={500} height={150} rx={30} fill={KC.cyan} stroke={KC.ink} strokeWidth={8} />
-    <path d={`M ${x + 420} ${y + 150} L ${x + 460} ${y + 196} L ${x + 380} ${y + 150} Z`} fill={KC.cyan} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    <rect x={x + 370} y={y + 140} width={100} height={14} fill={KC.cyan} />
+    <rect x={x} y={y} width={460} height={150} rx={30} fill={KC.cyan} stroke={KC.ink} strokeWidth={8} />
+    <path d={`M ${x + 380} ${y + 150} L ${x + 420} ${y + 196} L ${x + 340} ${y + 150} Z`} fill={KC.cyan} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <rect x={x + 330} y={y + 140} width={100} height={14} fill={KC.cyan} />
     <text x={x + 34} y={y + 62} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>tu duda:</text>
     <text x={x + 34} y={y + 116} style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>«¿Esto es grave?»</text>
   </g>;
@@ -215,8 +215,8 @@ function Respuestas() {
         <FondoLunares color={KC.mint} />
         {svg(<DosRespuestas T={T} t0={K.G} pMed={kprog(T, K.G + 0.1, K.G + 0.9)} pBot={kprog(T, K.G + 0.5, K.G + 2.6)} check={kprog(T, K.G + 3.3, K.G + 3.7, kEase.sale)} />)}
       </Escena>
-      <NumeroGigante T={T} at={K.G + 4.9} until={K.Fo - 0.2} valor={78.6} dec={1} dur={1.0} sufijo=" %" etiqueta="" x={790} y={430} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.G + 5.3} until={K.Fo - 0.2} texto="de 585 evaluaciones" x={790} y={560} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 4.9} until={K.Fo - 0.2} valor={78.6} dec={1} dur={1.0} sufijo=" %" etiqueta="" x={800} y={420} tam={140} color={KC.yellow} />
+      <Chip T={T} at={K.G + 5.3} until={K.Fo - 0.2} texto="de 585 evaluaciones" x={800} y={545} tam={30} borde={KC.ink} />
       {/* 2 · el foro */}
       <Escena T={T} a={K.Fo} b={K.E}>
         <FondoLunares color={KC.cyan} />
@@ -317,8 +317,8 @@ function Respuestas() {
           {T > K.B + 1.8 && <Pluma x={klerp(480, 860, kprog(T, K.B + 2.0, K.B + 3.4) % 0.5 * 2)} y={T < K.B + 2.7 ? 792 : 948} rot={-35} />}
         </>)}
       </Escena>
-      <Chip T={T} at={K.B + 0.3} until={K.C - 0.2} texto="IA: borrador" x={260} y={700} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.B + 2.0} until={K.C - 0.2} texto="médico: corrige" x={700} y={1180} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.B + 0.3} until={K.C - 0.2} texto="IA: borrador" x={220} y={1110} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.B + 2.0} until={K.C - 0.2} texto="médico: corrige" x={720} y={530} tam={36} borde={KC.red} />
       {/* 12 · cierre: la misma imagen del inicio, ya revisada */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
@@ -326,12 +326,12 @@ function Respuestas() {
       </Escena>
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Fo - 0.1} texto="Eligieron al chatbot *casi 8 de cada 10.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Fo - 0.1} texto={"Eligieron al chatbot *casi\u00a08\u00a0de\u00a0cada\u00a010.*"} />
       <Subtitulo T={T} idx={1} at={K.Fo + 0.1} until={K.E - 0.1} texto="*195 preguntas* reales de un foro" />
       <Subtitulo T={T} idx={2} at={K.E + 0.1} until={K.Ci - 0.1} texto="2023 · *UC San Diego*" />
       <Subtitulo T={T} idx={3} at={K.Ci + 0.1} until={K.Ca - 0.1} texto="Sin saber *cuál era cuál.*" />
-      <Subtitulo T={T} idx={4} at={K.Ca + 0.1} until={K.Em - 0.1} texto="Calidad: *78.5 %* contra *22.1 %*" />
-      <Subtitulo T={T} idx={5} at={K.Em + 0.1} until={K.P - 0.1} texto="Empatía: *45.1 %* contra *4.6 %*" />
+      <Subtitulo T={T} idx={4} at={K.Ca + 0.1} until={K.Em - 0.1} texto={"Calidad: *78.5\u00a0%* contra *22.1\u00a0%*"} />
+      <Subtitulo T={T} idx={5} at={K.Em + 0.1} until={K.P - 0.1} texto={"Empatía: *45.1\u00a0%* contra *4.6\u00a0%*"} />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.L - 0.1} texto="¿Ya no *necesitas al médico?*" />
       <Subtitulo T={T} idx={7} at={K.L + 0.1} until={K.F2 - 0.1} texto="*4 veces* más largas" />
       <Subtitulo T={T} idx={8} at={K.F2 + 0.1} until={K.Li - 0.1} texto="Un foro *no es una consulta.*" />

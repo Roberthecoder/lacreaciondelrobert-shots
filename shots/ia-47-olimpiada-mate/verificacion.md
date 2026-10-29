@@ -48,3 +48,13 @@
    - O, si se quiere conservar el Matiz, recortar la escena 7 (2024) y usar ese tiempo para la línea de 2026.
    - Mínimo indispensable: en el cierre, «En 2025, para ganarle…», y en `publicacion.md` una nota de que en la IMO 2026 hubo reportes de puntajes perfectos de IA sin confirmar.
    Si se agrega la línea de 2026, esa frase necesita su propia verificación (de preferencia contra un anuncio primario de la IMO o de los laboratorios).
+
+## Re-verificación (29 oct 2026, coordinador)
+- «Un año antes, otra IA de Google llegó a nivel plata: tardó hasta tres días, con los problemas traducidos.» (pantalla «28 / 42 · nivel plata»; DeepMind 2024) ✅
+- «En 2025, el problema seis no lo resolvió ninguna de las dos. De los jóvenes, solo seis.» (6 con 7/7, tabla oficial IMO 2025) ✅
+- «Ojo: estos problemas ya tenían solución; en investigación, nadie la sabe.» ✅
+- Cierre «En 2025, para ganarle, tendrías que ser de los veintiséis mejores… o resolver el seis.» (26 concursantes con más de 35 puntos) ✅
+- publicacion.md: los reportes de 42/42 en 2026 se dan como no confirmados oficialmente ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
