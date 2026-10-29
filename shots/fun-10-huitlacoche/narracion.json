@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Huitlacoche base narrada.dc.html",
+  "salida": "Shot Huitlacoche narrado.dc.html",
+  "nota": "Shot Fungi Mati #10. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese elote no está podrido: es un manjar. Esa bola gris es un hongo, y te la comes en quesadilla."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es el huitlacoche, el hongo Ustilago maydis."
+    },
+    {
+      "escena": "Entra",
+      "texto": "Normalmente entra por los pelos del elote sin polinizar, o por heridas del granizo o del viento."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Sus hilos, las hifas, se meten al pelo y por ahí infectan el grano."
+    },
+    {
+      "escena": "Agalla",
+      "texto": "Las células del maíz crecen y se dividen de más, y el grano se hincha como globo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué se pone negro?"
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Porque el hongo lo llena de esporas oscuras, redondas y con espinitas."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2003, en la Universidad de Illinois, le pusieron el hongo a propósito a los pelos de elotes."
+    },
+    {
+      "escena": "Cosecha",
+      "texto": "Sacaron hasta ciento treinta y un gramos de huitlacoche por mazorca."
+    },
+    {
+      "escena": "Sabor",
+      "texto": "Cosechado a los doce o catorce días no servía: le faltaban esporas, y con ellas, color y sabor."
+    },
+    {
+      "escena": "Plaga",
+      "texto": "En el mundo es una plaga del maíz; en México, un manjar de veintiún pueblos indígenas."
+    },
+    {
+      "escena": "Modelo",
+      "texto": "Y en el laboratorio es un modelo para entender cómo un hongo enferma a una planta."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese elote no está podrido: un hongo hizo del grano su cocina, y luego la tuya."
+    }
+  ]
+}

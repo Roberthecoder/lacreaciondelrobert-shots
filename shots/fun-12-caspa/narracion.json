@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Caspa base narrada.dc.html",
+  "salida": "Shot Caspa narrado.dc.html",
+  "nota": "Shot Fungi Mati #12. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa caspa no es solo piel que se cae: en tu cabeza vive una levadura que come grasa." },
+    { "escena": "Malassezia", "texto": "Se llama Malassezia y vive en la piel de la mayoría de los adultos." },
+    { "escena": "Sebo", "texto": "Tu cuero cabelludo suelta sebo, una grasa natural." },
+    { "escena": "Lipasas", "texto": "La levadura lo rompe con unas tijeras químicas, las lipasas, para comer." },
+    { "escena": "Oleico", "texto": "Y deja sueltos ácidos grasos, como el oleico, el del aceite de oliva." },
+    { "escena": "Pregunta", "texto": "¿Entonces por qué a unos les da caspa y a otros no?" },
+    { "escena": "Tres", "texto": "Porque la caspa necesita al menos tres cosas: grasa, levadura y una piel sensible." },
+    { "escena": "Escamas", "texto": "En esa piel, las células se multiplican de más y se despegan en grupos: las escamas." },
+    { "escena": "Estudio", "texto": "En 2005, investigadores de Cincinnati untaron ácido oleico en la cabeza de voluntarios." },
+    { "escena": "Resultado", "texto": "A quienes tenían caspa se les descamó la piel; a los otros, nada visible." },
+    { "escena": "Genoma", "texto": "Lo más raro: parece no tener el gen para fabricar sus propios ácidos grasos. Usa los tuyos." },
+    { "escena": "Champu", "texto": "Muchos champús anticaspa traen antifúngicos, como el ketoconazol o la piritiona de zinc." },
+    { "escena": "Cierre", "texto": "Así que esa caspa no es solo piel: es tu piel reaccionando a lo que deja una levadura comiendo grasa." }
+  ]
+}
