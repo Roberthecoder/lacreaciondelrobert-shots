@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese suero contra el alacrán no salió de un laboratorio: salió de un caballo."
+      "texto": "Los anticuerpos de tu suero contra el alacrán no los hizo una máquina: los hizo un caballo."
     },
     {
       "escena": "Dosis",
@@ -45,15 +45,15 @@
     },
     {
       "escena": "Mexico",
-      "texto": "Y aquí hace falta: en 2025 hubo más de 300 mil intoxicaciones por alacrán; casi 48 mil en Jalisco."
+      "texto": "Y aquí hace falta: en 2025 se registraron más de 300 mil intoxicaciones por alacrán; casi 48 mil en Jalisco."
     },
     {
       "escena": "Muertes",
-      "texto": "En los setenta morían unas 500 personas al año; un estudio de 2020 contó menos de 50."
+      "texto": "A fines de los setenta morían unas 500 personas al año; un estudio de 2020 contó menos de 50."
     },
     {
       "escena": "Cierre",
-      "texto": "Si te pica un alacrán, corre al centro de salud: tu antídoto salió de un caballo."
+      "texto": "Si te pica un alacrán, corre al centro de salud: tu antídoto empezó en un caballo."
     }
   ]
 }
