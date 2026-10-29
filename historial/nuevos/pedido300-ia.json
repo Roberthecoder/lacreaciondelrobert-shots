@@ -408,123 +408,200 @@
   },
   {
    "id": "ia-teclado",
-   "titulo": "Tu teclado aprende sin mandar lo que escribes: aprendizaje federado (Hard et al. 2018, Gboard)",
+   "titulo": "Hay teclados que no mandan lo que escribes: aprendizaje federado (Hard et al. 2018, Gboard; Apple 2017; Zhu et al. 2019)",
    "serie": "Shot IA",
    "numero": 30,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-30-teclado",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Hard et al., arXiv:1811.03604 (2018)",
+    "McMahan y Ramage, blog de Google AI (2017)",
+    "Apple, Learning with Privacy at Scale (2017)",
+    "Zhu, Liu y Han, NeurIPS 2019"
+   ],
+   "derivados": [
+    "Privacidad diferencial: el ruido que protege tus datos",
+    "Qué datos manda tu celular cuando dices 'Ok Google'",
+    "IA en el celular sin internet"
+   ]
   },
   {
    "id": "ia-alphazero",
-   "titulo": "AlphaZero aprendió ajedrez sola jugando contra sí misma y superó a Stockfish en horas (Silver et al., Science 2018)",
+   "titulo": "AlphaZero revisaba mil veces menos posiciones y le ganó a Stockfish (Silver et al., Science 2018)",
    "serie": "Shot IA",
    "numero": 31,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-31-alphazero",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Silver et al., Science 362 (2018)"
+   ],
+   "derivados": [
+    "AlphaGo y la jugada 37",
+    "Cómo juegan ajedrez los motores modernos",
+    "IA que aprende sola en videojuegos"
+   ]
   },
   {
    "id": "ia-abogado-avianca",
-   "titulo": "Un abogado presentó casos inventados por ChatGPT en una demanda contra Avianca y fue multado (Mata v. Avianca, 2023)",
+   "titulo": "El abogado que citó seis casos inventados por ChatGPT (Mata v. Avianca, 2023) y 2,231 casos similares (oct 2026)",
    "serie": "Shot IA",
    "numero": 32,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-32-abogado-avianca",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Mata v. Avianca, S.D.N.Y., ECF 54 (22 jun 2023)",
+    "Charlotin, AI Hallucination Cases (28 oct 2026)"
+   ],
+   "derivados": [
+    "IA en tribunales: jueces que la usan",
+    "Cómo verificar una cita en 30 segundos",
+    "Chatbots legales gratuitos: riesgos"
+   ]
   },
   {
    "id": "ia-olor",
-   "titulo": "Una IA predice a qué huele una molécula mejor que el panelista promedio (Lee et al., Science 2023)",
+   "titulo": "La IA que sabe a qué huele una molécula sin olerla (Lee et al., Science 2023)",
    "serie": "Shot IA",
    "numero": 33,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-33-olor",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Lee et al., Science 381 (2023)",
+    "Friedman y Miller, Science 1971 (carvona)"
+   ],
+   "derivados": [
+    "Por qué el olor despierta recuerdos",
+    "Narices electrónicas en la industria",
+    "Moléculas espejo: una huele a menta, la otra a comino"
+   ]
   },
   {
    "id": "ia-herculano",
-   "titulo": "La IA leyó palabras de pergaminos quemados por el Vesubio sin abrirlos (Vesuvius Challenge 2023–2024)",
+   "titulo": "El libro quemado por un volcán que la IA leyó sin abrirlo (Vesuvius Challenge 2023–2025)",
    "serie": "Shot IA",
    "numero": 34,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-34-herculano",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "scrollprize.org (2023–2024)",
+    "Universidad de Kentucky / Diamond Light Source 2019",
+    "Bodleian Libraries, PHerc. 172 (2025)"
+   ],
+   "derivados": [
+    "Tomografía de momias sin desvendarlas",
+    "IA que lee escritura maya",
+    "Cómo se restaura un libro dañado"
+   ]
   },
   {
    "id": "ia-ballenas",
-   "titulo": "Un 'alfabeto fonético' en los clics de los cachalotes encontrado con aprendizaje automático (Sharma et al., Nat Commun 2024)",
+   "titulo": "Los cachalotes tienen un 'alfabeto' de clics y ninguna IA lo tradujo (Sharma et al. 2024; Beguš et al. 2025)",
    "serie": "Shot IA",
    "numero": 35,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-35-ballenas",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Sharma et al., Nature Communications 15:3617 (2024)",
+    "Beguš et al., Open Mind 9 (2025)"
+   ],
+   "derivados": [
+    "Cómo se comunican los delfines",
+    "Project CETI y la idea de hablar con ballenas",
+    "Cantos de ballena jorobada que cambian cada año"
+   ]
   },
   {
    "id": "ia-waymo",
-   "titulo": "Autos sin conductor contra conductores humanos: reclamos de seguro (Swiss Re y Waymo 2024)",
+   "titulo": "Tú contra el auto sin conductor: −82 % choques con heridos según Waymo (2026) y Swiss Re (2024)",
    "serie": "Shot IA",
    "numero": 36,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-36-waymo",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Waymo Safety Impact Hub (jun 2026)",
+    "Di Lillo et al., Swiss Re + Waymo (2024)",
+    "NHTSA recall 25E084000 (2025)",
+    "OMS, Seguridad vial (2026)"
+   ],
+   "derivados": [
+    "Por qué la mayoría de los choques son por error humano",
+    "Autos sin conductor en México: ¿cuándo?",
+    "Cómo 've' un auto autónomo (lidar y cámaras)"
+   ]
   },
   {
    "id": "ia-lunares",
-   "titulo": "La IA que revisa lunares como un dermatólogo y las reglas que la engañan (Esteva 2017; Winkler 2019)",
+   "titulo": "La IA que revisa tus lunares ve peor la piel oscura (Esteva 2017; Daneshjou 2022) y el ABCDE",
    "serie": "Shot IA",
    "numero": 37,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-37-lunares",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Esteva et al., Nature 2017",
+    "Daneshjou et al., Science Advances 2022",
+    "Academia Americana de Dermatología (ABCDE)"
+   ],
+   "derivados": [
+    "Cáncer de piel en piel morena: dónde aparece",
+    "Apps de salud: cuáles están aprobadas",
+    "Bloqueador solar: qué dice la evidencia"
+   ]
   },
   {
    "id": "ia-whisper-inventa",
-   "titulo": "La IA que transcribe consultas médicas a veces inventa frases que nadie dijo (Koenecke et al., FAccT 2024)",
+   "titulo": "La IA que transcribe tu voz a veces escribe lo que nadie dijo (Koenecke et al., FAccT 2024)",
    "serie": "Shot IA",
    "numero": 38,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-38-whisper-inventa",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Koenecke et al., ACM FAccT 2024",
+    "AP, Burke y Schellmann (oct 2024)"
+   ],
+   "derivados": [
+    "Subtítulos automáticos: errores comunes en español",
+    "IA en consultas médicas: lo que debes preguntar",
+    "Cómo funciona el reconocimiento de voz"
+   ]
   },
   {
    "id": "ia-aves",
-   "titulo": "Tu celular reconoce aves por su canto (BirdNET, Kahl et al. 2021; Merlin Sound ID)",
+   "titulo": "El dibujo escondido en el canto de un pájaro: BirdNET (Kahl et al. 2021; Wood et al. 2022)",
    "serie": "Shot IA",
    "numero": 39,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-39-aves",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Kahl et al., Ecological Informatics 61 (2021)",
+    "Wood et al., PLOS Biology 2022",
+    "Cornell Chronicle 2021",
+    "BirdNET-Analyzer V2.4 (2023)"
+   ],
+   "derivados": [
+    "Ciencia ciudadana: eBird y iNaturalist",
+    "Por qué cantan los pájaros al amanecer",
+    "IA que escucha la selva para detectar tala ilegal"
+   ]
   },
   {
    "id": "ia-envenenar-250",
