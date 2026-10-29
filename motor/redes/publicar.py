@@ -558,12 +558,12 @@ def subir_tiktok(video, r, modo, titulo, tt=None):
     except Falla as e:
         if 'unaudited_client' not in str(e):
             raise
-        if priv == 'SELF_ONLY':
-            raise Falla('TikTok todavía no aprueba la app: mientras tanto solo deja publicar en cuentas PRIVADAS '
-                        '(Ajustes → Privacidad → Cuenta privada). Usa «Mandar como borrador» o espera la aprobación.')
-        info['privacy_level'] = 'SELF_ONLY'   # app sin aprobar: TikTok solo deja publicar como «Solo yo»
-        nota = ' · TikTok todavía no aprueba la app, así que quedó como «Solo yo»'
-        pid, st = _tiktok_subir_archivo(at, '/post/publish/video/init/', {'post_info': info}, video)
+        # App sin aprobar (y cuenta pública): TikTok no deja publicar directo. Plan B: borrador a la bandeja de Robert.
+        out = subir_tiktok_borrador(video, r, modo, titulo)
+        out['nota'] = ('TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. '
+                       'Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.')
+        out['borrador'] = True
+        return out
     ids = st.get('publicaly_available_post_id') or []
     user = ci.get('creator_username') or ''
     out = {'id': str(ids[0]) if ids else pid,
@@ -680,7 +680,7 @@ def cmd_publicar(a):
     except ValueError:
         raise SystemExit('Las opciones de TikTok no son JSON válido')
     iv = info_video(a.video)
-    ya = {(x['clave'], x['red']) for x in bitacora() if x.get('modo') == 'real' and x.get('ok')}
+    ya = {(x['clave'], x['red']) for x in bitacora() if x.get('modo') == 'real' and x.get('ok') and not x.get('borrador')}
     filas, lineas = [], [f'## {a.clave} · modo **{a.modo}**', '',
                          f'Video: `{os.path.basename(a.video)}` · {iv["dur"]:.1f} s · {iv["w"]}×{iv["h"]} · '
                          f'{iv["bytes"] / 1048576:.1f} MB · {a.video_url or "sin enlace público"}', '',
@@ -711,7 +711,8 @@ def cmd_publicar(a):
         detalle = fila.get('error') or ' '.join(str(fila[k]) for k in ('url', 'nota') if fila.get(k)) or fila.get('id', '')
         lineas.append(f'| {red} | {"✅" if fila["ok"] else "❌"} | {detalle} |')
         print(f'{red}: {"OK" if fila["ok"] else "FALLA"} · {detalle}', flush=True)
-    if 'tiktok' in redes and r.get('tiktok') and tt.get('modo') == 'borrador':
+    if 'tiktok' in redes and r.get('tiktok') and (tt.get('modo') == 'borrador' or any(
+            f.get('red') == 'tiktok' and f.get('borrador') for f in filas)):
         lineas += ['', 'Texto para pegar en TikTok:', '```text', r['tiktok']['texto'], '```']
     if a.modo != 'prueba':
         anotar(filas)
