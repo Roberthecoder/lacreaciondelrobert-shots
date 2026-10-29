@@ -3,16 +3,16 @@
   "salida": "Shot Oxido narrado.dc.html",
   "nota": "Shot Químico #21. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esa reja no se está ensuciando: está volviendo a ser la piedra de la que salió." },
-    { "escena": "Mina", "texto": "En la Tierra, el hierro casi siempre está oxidado; en un alto horno le quitan el oxígeno para volverlo metal." },
+    { "escena": "Gancho", "texto": "Esa reja no se está ensuciando: está regresando a ser óxido, como la piedra de la que salió." },
+    { "escena": "Mina", "texto": "En las rocas de la Tierra, el hierro casi siempre está oxidado; en un alto horno le quitan el oxígeno para volverlo metal." },
     { "escena": "Receta", "texto": "Pero el hierro recupera su oxígeno, y para oxidarse necesita dos cosas juntas: oxígeno y agua." },
-    { "escena": "Sal", "texto": "La sal lo acelera: atrapa humedad y vuelve el agua más conductora; por eso junto al mar todo se oxida más." },
+    { "escena": "Sal", "texto": "La sal lo acelera: atrapa humedad y vuelve el agua más conductora; por eso junto al mar el hierro se oxida más." },
     { "escena": "Poroso", "texto": "Y el óxido tiene grietas y poros: se descarapela, deja hierro nuevo al aire y se lo sigue comiendo." },
     { "escena": "Aluminio", "texto": "El aluminio también se oxida, pero forma una capa delgadísima y pegada que lo protege." },
     { "escena": "Pregunta", "texto": "¿Y el hierro nunca puede hacer eso?" },
-    { "escena": "Pilar", "texto": "En Delhi, India, hay un pilar de hierro de 1600 años que resiste la corrosión." },
-    { "escena": "Estudio", "texto": "En 2002, Balasubramaniam, en Kanpur, mostró que su fósforo ayuda a formar una capa compacta que lo protege." },
+    { "escena": "Pilar", "texto": "En Delhi, India, hay un pilar de hierro de más de 1600 años que resiste la corrosión." },
+    { "escena": "Estudio", "texto": "En 2002, Balasubramaniam, en Kanpur, explicó que su fósforo ayuda a formar una capa compacta que lo protege." },
     { "escena": "Costo", "texto": "Y en 2016 se calculó que la corrosión le cuesta al mundo 2.5 billones de dólares al año." },
-    { "escena": "Cierre", "texto": "Así que esa reja no se está ensuciando: poco a poco, vuelve a ser piedra." }
+    { "escena": "Cierre", "texto": "Así que esa reja no está sucia: poco a poco regresa a ser óxido, como su piedra." }
   ]
 }

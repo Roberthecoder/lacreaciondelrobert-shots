@@ -205,7 +205,8 @@ function Gelatina10() {
           <Cuchara x={klerp(300, 420, cuchara)} y={klerp(700, 1040, cuchara) - Math.max(0, Math.sin((T - K.G - 0.6) * 2)) * 60 * kprog(T, K.G + 0.6, K.G + 1)} rot={-28} s={0.9} />
           {T < K.G + 1.4 && [0, 1, 2, 3, 4].map((i) => { const p = kprog(T, K.G + 0.5, K.G + 1.3); return <circle key={i} cx={430 + (i - 2) * 40 * p} cy={1060 - Math.sin(p * Math.PI) * (60 + i * 15)} r={10} fill={GEL} stroke={KC.ink} strokeWidth={3} opacity={1 - p} />; })}
         </SvgCapa>
-        <Cronometro T={T} at={K.G + 0.2} until={K.Q - 0.3} inicio={6900} factor={60} x={260} y={820} etiqueta="EN EL REFRI" />
+        <Chip T={T} at={K.G + 0.2} until={K.Q - 0.3} texto="EN EL REFRI" x={260} y={735} tam={34} mono borde={KC.cyan} />
+        <Cronometro T={T} at={K.G + 0.2} until={K.Q - 0.3} inicio={6900} factor={60} x={260} y={830} />
         <Escala T={T} pxPorMm={3.6 * 1.35} />
       </Escena>
       {/* 1 · de dónde sale: colágeno de piel y hueso → gelatina */}
