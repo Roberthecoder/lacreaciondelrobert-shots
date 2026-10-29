@@ -37,4 +37,3 @@ Fuentes abiertas:
 
 **Resumen:** 19 filas revisadas; la única ⚠️ (tarjeta de Toronto, fila 12b) se corrigió y quedó ✅. Se agregó Jurus y Sundberg 1976 como fuente primaria de la penetración de las hifas. Todo verificado.
 
-VEREDICTO: APROBADO
