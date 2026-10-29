@@ -166,7 +166,6 @@ function HojaVirtual({ T, x = 110, y = 430, w = 860, h = 360, p = 0, solido = 0,
     {fibras.map((f, i) => <line key={i} x1={x + 10} y1={f.y} x2={x + w - 10} y2={f.y + 3} stroke="#3e3630" strokeWidth={3} opacity={f.o * 3} />)}
     {fv.map((f, i) => <line key={'v' + i} x1={f.x} y1={y + 10} x2={f.x + 4} y2={y + h - 10} stroke="#3e3630" strokeWidth={2} opacity={f.o * 3} />)}
     <g clipPath="url(#hc-barrido)">
-      <text x={x + w / 2} y={y + h / 2 + tam * 0.36} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}`, letterSpacing:'.04em' }} fill="url(#hc-puntos)" opacity={1 - solido} />
       <text x={x + w / 2} y={y + h / 2 + tam * 0.36} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}`, letterSpacing:'.04em' }} fill="url(#hc-puntos)" opacity={1 - solido}>{palabra}</text>
       {solido > 0 && <text x={x + w / 2} y={y + h / 2 + tam * 0.36} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}`, letterSpacing:'.04em' }} fill={KC.gold2} stroke={KC.ink} strokeWidth={5} opacity={solido}>{palabra}</text>}
     </g>

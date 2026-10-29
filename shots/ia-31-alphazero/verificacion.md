@@ -44,3 +44,10 @@ la versión de 2018 con partidas adicionales; el guion no usa cifras del preprin
 2. **#17 (pantalla, escena 8):** usar una apertura que sí aparezca en la Fig. 3 del artículo (p. ej. Gambito de Dama, 1. d4 d5 2. c4)
    y que el contador no suba siempre: mostrarlo como "% de partidas en que la elegía" que sube y se estabiliza (o sube y baja), con
    la etiqueta "esquemático". O quitar el contador y dejar solo la apertura con el globo "¡como los humanos!".
+
+## Re-verificación (29 oct 2026, coordinador)
+- Voz escena Medidor: «Sus autores proponen que su red neuronal le señala qué jugadas mirar.» + chip «hipótesis de los autores» ✅ ("may compensate…")
+- Pantalla Aperturas: Gambito de Dama (Fig. 3) con mini gráfica «% de partidas» marcada «esquemático»; sin contador que sube siempre ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

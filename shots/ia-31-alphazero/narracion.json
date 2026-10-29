@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot AlphaZero base narrada.dc.html",
+  "salida": "Shot AlphaZero narrado.dc.html",
+  "nota": "Shot IA #31. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta IA revisaba mil veces menos posiciones que el campeón de ajedrez de las máquinas… y aun así le ganó."
+    },
+    {
+      "escena": "Reglas",
+      "texto": "Se llama AlphaZero. Nadie le enseñó partidas humanas: solo las reglas, y empezó moviendo piezas al azar."
+    },
+    {
+      "escena": "Autojuego",
+      "texto": "Luego jugó contra sí misma cuarenta y cuatro millones de partidas, y aprendía qué jugadas la llevaban a ganar."
+    },
+    {
+      "escena": "Horas",
+      "texto": "A las cuatro horas de entrenar ya superaba a Stockfish; entrenó nueve en total."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero cómo gana alguien que revisa mil veces menos?"
+    },
+    {
+      "escena": "Medidor",
+      "texto": "Stockfish revisaba unos sesenta millones de posiciones por segundo. AlphaZero, solo sesenta mil."
+    },
+    {
+      "escena": "Medidor",
+      "texto": "Sus autores proponen que su red neuronal le señala qué jugadas mirar."
+    },
+    {
+      "escena": "Duelo",
+      "texto": "En Londres, DeepMind lo publicó en Science en 2018: en mil partidas, ganó ciento cincuenta y cinco, perdió seis y empató las demás."
+    },
+    {
+      "escena": "Aperturas",
+      "texto": "Lo más raro: sin ver a ningún humano, descubrió sola aperturas que las personas usamos mucho."
+    },
+    {
+      "escena": "Chips",
+      "texto": "Eso sí: para entrenar usó cinco mil chips de Google."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que revisar más no lo es todo: a veces gana quien sabe dónde mirar."
+    }
+  ]
+}
