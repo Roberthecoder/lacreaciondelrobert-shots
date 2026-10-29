@@ -244,8 +244,8 @@ function YartsaShot() {
       <Escena T={T} a={K.Mn} b={K.V} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <line x1={90} y1={1120} x2={640} y2={1120} stroke={KC.ink} strokeWidth={7} /><line x1={90} y1={1120} x2={90} y2={600} stroke={KC.ink} strokeWidth={7} />
-          {barras.map((h, i) => { const u = kprog(T, K.Mn + 0.2 + i * 0.25, K.Mn + 0.6 + i * 0.25, kEase.sale); return <rect key={i} x={120 + i * 100} y={1120 - 480 * h * u} width={70} height={480 * h * u} fill={YC.estroma} stroke={KC.ink} strokeWidth={5} />; })}
+          <line x1={90} y1={1120} x2={640} y2={1120} stroke={KC.ink} strokeWidth={7} /><line x1={90} y1={1120} x2={90} y2={720} stroke={KC.ink} strokeWidth={7} />
+          {barras.map((h, i) => { const u = kprog(T, K.Mn + 0.2 + i * 0.25, K.Mn + 0.6 + i * 0.25, kEase.sale); return <rect key={i} x={120 + i * 100} y={1120 - 360 * h * u} width={70} height={360 * h * u} fill={YC.estroma} stroke={KC.ink} strokeWidth={5} />; })}
           <text x={360} y={1170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>cosecha (esquema)</text>
           {kprog(T, K.Mn + 3.4, K.Mn + 3.8) > 0 && <g opacity={kprog(T, K.Mn + 3.4, K.Mn + 3.8)} transform="translate(820 900)">
             <rect x={-26} y={-200} width={52} height={260} rx={26} fill="#fff" stroke={KC.ink} strokeWidth={7} />
@@ -303,7 +303,7 @@ function YartsaShot() {
       <Chip T={T} at={K.Mn + 0.3} until={K.V - 0.3} texto="cada vez menos" x={330} y={480} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.Mn + 1.6} until={K.V - 0.3} x={60} y={560} texto="1º recolectar de más" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Mn + 3.6} until={K.V - 0.3} x={1020} y={1110} lado="izq" texto="calentamiento" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Mn + 2.4} until={K.Mn + 3.5} texto="lo sacan antes de que suelte esporas" x={380} y={640} tam={26} borde={KC.red} />
+      <Chip T={T} at={K.Mn + 2.4} until={K.Mn + 3.5} texto="lo sacan antes de que suelte esporas" x={380} y={650} tam={26} borde={KC.red} />
       <Chip T={T} at={K.V + 0.6} until={K.C - 0.2} texto="Lista Roja de la UICN" x={380} y={480} tam={34} borde={KC.red} />
       <Etq T={T} at={K.V + 0.9} until={K.C - 0.2} x={640} y={900} texto="vulnerable" tam={36} color={KC.ink} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="oruga + hongo + ingreso" x={360} y={480} tam={36} borde={KC.ink} />

@@ -223,11 +223,11 @@ function TrufasShot() {
       <Escena T={T} a={K.G} b={K.R} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Suelo y={1150} />
           <g transform={`translate(0 ${(1 - sube) * 420})`}>
             <Mano x={380} y={900} s={1.05} />
             <Trufa x={380} y={740} s={1.45} corte={corte} rot={-6} />
           </g>
+          <Suelo y={1150} />
           <Terrones T={T} x={380} y={740} at={K.G + 0.3} n={12} />
         </>)}
       </Escena>
@@ -367,8 +367,8 @@ function TrufasShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Suelo y={1150} />
           <Mano x={380} y={900} s={1.05} />
+          <Suelo y={1150} />
           <Trufa x={380} y={740} s={1.45} rot={-6} />
           <Olor T={T} x={380} y={630} alto={300} n={3} o={kprog(T, K.C + 0.3, K.C + 0.9)} color="#fff4b0" />
           <g transform={`translate(${klerp(-500, -60, kprog(T, K.C + 1.2, K.C + 2.0, kEase.sale))} 0)`}><Puerco T={T} x={0} y={1180} s={0.9} color="#f2a0b4" jabali={false} /></g>
