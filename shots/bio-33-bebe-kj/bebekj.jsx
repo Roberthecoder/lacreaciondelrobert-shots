@@ -334,9 +334,9 @@ function BebeKJ() {
         <Capa>
           <path d="M -20 640 Q 400 600 700 720 Q 900 800 1100 760 L 1100 900 Q 880 950 680 870 Q 380 750 -20 800 Z" fill="#7a1f2b" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T - K.Bu) * 0.35 + i / 6) % 1; return <ellipse key={i} cx={klerp(-40, 1100, u)} cy={klerp(720, 830, u) + Math.sin(u * 9) * 10} rx={34} ry={20} fill="#d7263d" stroke={KC.ink} strokeWidth={4} />; })}
-          <Hepatocito x={720} y={1130} s={0.95} T={T} brilla={kprog(T, K.Bu + 1.8, K.Bu + 2.4)} />
+          <Hepatocito x={720} y={1000} s={0.8} T={T} brilla={kprog(T, K.Bu + 1.8, K.Bu + 2.4)} />
           {Array.from({ length: 5 }, (_, i) => { const t0 = K.Bu + i * 0.3, u = kprog(T, t0, t0 + 1.5, kEase.suave);
-            const x = u < 0.6 ? klerp(-60, 640, u / 0.6) : klerp(640, 700 + (i - 2) * 50, (u - 0.6) / 0.4), y = u < 0.6 ? klerp(700, 770, u / 0.6) : klerp(770, 1110 + (i % 2) * 40, (u - 0.6) / 0.4);
+            const x = u < 0.6 ? klerp(-60, 640, u / 0.6) : klerp(640, 700 + (i - 2) * 50, (u - 0.6) / 0.4), y = u < 0.6 ? klerp(700, 770, u / 0.6) : klerp(770, 990 + (i % 2) * 40, (u - 0.6) / 0.4);
             return <Nanoparticula key={i} x={x} y={y} r={u > 0.9 ? klerp(46, 30, (u - 0.9) * 10) : 46} T={T} seed={i} o={u >= 1 ? 0.5 : 1} />; })}
         </Capa>
       </Escena>
@@ -396,8 +396,9 @@ function BebeKJ() {
       <Escena T={T} a={K.Ex} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <Capa>
-          <Revista x={300} y={850} s={kprog(T, K.Ex + 1.6, K.Ex + 2.2, kEase.rebote)} />
-          {Array.from({ length: 6 }, (_, i) => <Huella key={i} x={110 + i * 150} y={1160 - (i % 2) * 50} rot={80} o={kprog(T, K.Ex + 0.2 + i * 0.2, K.Ex + 0.4 + i * 0.2)} />)}
+          <Revista x={300} y={850} s={kprog(T, K.Ex + 0.6, K.Ex + 1.2, kEase.rebote)} />
+          {Array.from({ length: 6 }, (_, i) => <Huella key={i} x={80 + i * 110} y={1790 - (i % 2) * 40} rot={80} o={kprog(T, K.Ex + 0.3 + i * 0.45, K.Ex + 0.5 + i * 0.45)} />)}
+          <NinoParado T={T} x={klerp(120, 720, kprog(T, K.Ex, K.Ci, kEase.suave))} y={1800} s={0.55} camina={1} />
         </Capa>
       </Escena>
       {/* 13 · cierre: la misma cuna, ya de pie */}
@@ -436,7 +437,7 @@ function BebeKJ() {
       <Chip T={T} at={K.Ca + 0.8} until={K.Es - 0.3} texto="DENTRO" x={810} y={470} tam={44} borde={KC.ink} />
       <Etq T={T} at={K.Ca + 0.4} until={K.Es - 0.3} x={40} y={1450} texto="Casgevy · FDA 2023" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Ca + 1.0} until={K.Es - 0.3} x={1040} y={1450} texto="KJ · 2025" lado="izq" tam={32} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.3} anio="2025" quien="CHOP + Penn · Filadelfia" revista="NEJM, mayo · 1ª dosis: febrero" x={380} y={600} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.3} anio="2025" quien="CHOP + Penn · Filadelfia" revista="NEJM, mayo · 1ª dosis: febrero" x={350} y={600} />
       <Chip T={T} at={K.Re + 2.0} until={K.Ex - 0.3} texto="tres dosis · sin efectos graves" y={1450} tam={38} borde={KC.mint} />
       <Chip T={T} at={K.Ex + 0.3} until={K.Ci - 0.3} texto="CHOP, feb 2026: camina y habla" y={1450} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Ci + 0.5} until={K.Ou} texto="seguimiento por años" y={1450} tam={38} borde={KC.gold} />

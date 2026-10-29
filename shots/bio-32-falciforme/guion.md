@@ -7,25 +7,54 @@
 - **Viaje:** macro (un vaso sanguíneo con glóbulos rojos, uno doblado atorado) → micro (dentro del glóbulo: varillas de hemoglobina; dentro de la célula madre: el gen BCL11A y el corte de CRISPR) → el mismo vaso, ahora con glóbulos redondos que fluyen.
 - **Distinto de bio-03** (CRISPR inventado por las bacterias del yogur): aquí CRISPR ya es medicina en una persona, y el truco no es corregir el gen dañado sino prender otra hemoglobina.
 
-## Versión narrada (959 caracteres, ~172 palabras, ~58 s de voz)
+## Corrección del 29 oct 2026 (verificación de hechos independiente, ver `verificacion.md`)
+- **Victoria Gray** fue la primera paciente **con anemia falciforme** en recibir el tratamiento, no la primera en recibirlo: una paciente con beta-talasemia en Regensburg (Alemania) lo recibió unos meses antes en 2019. Cambió la voz y la tarjeta.
+- **30 pacientes evaluados** (de 44 tratados): la voz y el chip lo dicen.
+- **Precio:** el año queda pegado al precio ("ese año, en EE. UU., su precio era de…") y en pantalla dice "precio de lista".
+- Para no pasar de ~58 s se recortaron otras frases sin agregar datos.
+
+## Versión narrada (955 caracteres, ~172 palabras, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa célula no está rota: está doblada, como una hoz. | **Cuadro 0:** dentro de un vaso sanguíneo (fondo rosa), glóbulos rojos redondos fluyen; uno en forma de hoz/media luna, tieso, se atora y gira. Etiqueta "glóbulo rojo falciforme". `Escala` "≈ 8 µm" junto a un disco normal. |
-| 1 | Disco | Tus glóbulos rojos son discos blanditos que pasan por vasos finos. | Un disco bicóncavo (dona sin agujero) se dobla como gelatina para pasar por un capilar angosto y sale redondo otra vez. |
+| 1 | Disco | Las tuyas son discos blanditos que pasan por vasos finos. | Un disco bicóncavo (dona sin agujero) se dobla como gelatina para pasar por un capilar angosto y sale redondo otra vez. |
 | 2 | Cambio | En la anemia falciforme, un solo cambio en un gen pega la hemoglobina en varillas. | `Lupa` "POR DENTRO · hemoglobina": dentro del glóbulo, las moléculas de hemoglobina (bolitas) se pegan en fila y forman varillas largas y rígidas que estiran la célula. Chip "1 cambio en el gen HBB". |
 | 3 | Crisis | Se dobla, se atora y llega una crisis de dolor. | Regreso al vaso: varios glóbulos en hoz se apilan y tapan el paso; el flujo se detiene, destello rojo "crisis de dolor". |
-| 4 | Fetal | Pero antes de nacer usabas otra: la hemoglobina fetal. | Fondo amarillo: silueta de un bebé dentro del vientre; su glóbulo rojo lleva hemoglobina de otro color (menta) marcada "fetal". |
+| 4 | Fetal | Antes de nacer usabas otra: la hemoglobina fetal. | Fondo amarillo: silueta de un bebé dentro del vientre; su glóbulo rojo lleva hemoglobina de otro color (menta) marcada "fetal". |
 | 5 | Interruptor | Al nacer, un gen llamado BCL11A la va apagando. | Un interruptor de pared con la etiqueta "BCL11A" baja a "apagado"; la hemoglobina menta se va cambiando por la adulta. |
-| 6 | Pregunta | ¿Y si en vez de arreglar el gen dañado, prendemos la fetal? | **Re-gancho.** El gen dañado tachado con `MitoTachado` "¿arreglar el gen?" y una flecha al interruptor. |
+| 6 | Pregunta | ¿Y si, en vez de arreglar el gen, prendemos la fetal? | **Re-gancho.** El gen dañado tachado con `MitoTachado` "¿arreglar el gen?" y una flecha al interruptor. |
 | 7 | Medula | Casgevy saca células madre de la médula y CRISPR corta ese interruptor. | Hueso (fémur) → `Lupa` "POR DENTRO · médula": células madre. Fondo oscuro: tijera Cas9 con su guía corta el ADN en el tramo de BCL11A que lo prende en los glóbulos rojos. |
-| 8 | Regreso | Ya en el cuerpo, hacen glóbulos rojos con hemoglobina fetal. | Bolsa de suero gotea las células editadas a un brazo; vuelven a la médula y salen glóbulos rojos con hemoglobina menta. |
-| 9 | Victoria | En 2019, en Nashville, Victoria Gray fue la primera paciente en recibirlo. | `TarjetaEstudio` "2019 · Nashville, EE. UU. · Victoria Gray, 34 años, Mississippi": silueta esquemática (no retrato) recibiendo la infusión. |
-| 10 | Ensayo | En el estudio de 2024, de 30 pacientes, 29 pasaron un año sin crisis graves. | Cuadrícula de 30 figuritas: 29 se iluminan en menta, 1 queda gris. Chip "NEJM 2024 · ≥ 12 meses seguidos sin crisis graves". |
-| 11 | Limites | Fue el primer fármaco con CRISPR aprobado, en 2023; exige quimioterapia fuerte y en EE. UU. costó 2.2 millones de dólares. | Sellos "Reino Unido · nov 2023" y "FDA · dic 2023". Luego dos `Etiqueta`: "quimioterapia fuerte antes (busulfán)" y `NumeroGigante` "2.2 millones de dólares (EE. UU., 2023)". |
-| 12 | Diluye | Lo curioso: la hemoglobina dañada sigue ahí; la fetal la diluye. | `Lupa` dentro del glóbulo: las bolitas de hemoglobina dañada (rojas) siguen, pero rodeadas de muchas menta; ya no alcanzan a formar varillas. |
-| 13 | Cierre | Por eso esa célula ya no se dobla: usa la hemoglobina de antes de nacer. | **Regreso al vaso del inicio**: el mismo lugar donde se atoró la hoz, ahora con discos redondos que fluyen. |
+| 8 | Regreso | De vuelta, hacen glóbulos rojos con hemoglobina fetal. | Bolsa de suero gotea las células editadas a un brazo; vuelven a la médula y salen glóbulos rojos con hemoglobina menta. |
+| 9 | Victoria | En 2019, en Nashville, Victoria Gray fue la primera paciente con anemia falciforme en recibirlo. | `TarjetaEstudio` "2019 · Victoria Gray · Nashville, EE. UU. · 1.ª paciente con anemia falciforme · 34 años": silueta esquemática (no retrato) recibiendo la infusión. |
+| 10 | Ensayo | En el estudio de 2024, de 30 pacientes evaluados, 29 pasaron un año sin crisis graves. | Cuadrícula de 30 figuritas: 29 se iluminan en menta, 1 queda gris. Chips "NEJM 2024 · 29 de 30 evaluados" y "≥ 12 meses seguidos sin crisis graves". |
+| 11 | Limites | Fue el primer fármaco con CRISPR aprobado, en 2023; exige quimioterapia fuerte y ese año, en EE. UU., su precio era de 2.2 millones de dólares. | Sellos "Reino Unido · nov 2023" y "FDA · dic 2023". Luego dos `Etiqueta`: "quimioterapia fuerte antes (busulfán)" y `NumeroGigante` "2.2 millones de dólares" + chip "precio de lista · EE. UU. · 2023". |
+| 12 | Diluye | Lo curioso: la dañada sigue ahí; la fetal la diluye. | `Lupa` dentro del glóbulo: las bolitas de hemoglobina dañada (rojas) siguen, pero rodeadas de muchas menta; ya no alcanzan a formar varillas. |
+| 13 | Cierre | Por eso esa célula ya no se dobla: volvió a la fetal. | **Regreso al vaso del inicio**: el mismo lugar donde se atoró la hoz, ahora con discos redondos que fluyen. |
 | — | Outro | (sin voz) | `CierreMarca` sobre la imagen final oscurecida. |
+
+## Robert en pantalla
+
+Es la marca del canal: entra desde el cuadro 0, vuelve cada 8–10 s y nunca tapa el dato ni el subtítulo (lados `gancho`, `izq-alto`, `arriba-der`, `bajo-der`, `grande`, `grande-izq`).
+Tiempos con las escenas de `Shot Falciforme base narrada.dc.html` (61.5 s).
+
+### Versión narrada: 10 apariciones, **31.2 s en pantalla** (de 61.5 s), 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 3.1 | sorprendido (11) | gancho | «esa célula no está rota: está doblada» |
+| 11.9 – 14.7 | serio (10) | izq-alto | «se atora y llega una crisis de dolor» |
+| 15.4 – 17.7 | sonriendo (05) | arriba-der | «antes de nacer usabas otra: la fetal» |
+| 20.9 – 24.2 | pensativo, mano en el mentón (06) | **grande** | re-gancho: «¿y si prendemos la fetal?» |
+| 26.1 – 28.4 | señalando (13) | bajo-der | señala el corte de CRISPR en el ADN |
+| 32.8 – 37.6 | pensativo, puño (07) | bajo-der | la tarjeta de Victoria Gray, 2019 |
+| 39.0 – 42.7 | apuntando a cámara (02) | arriba-der | «29 de 30 pasaron un año sin crisis graves» |
+| 48.2 – 51.2 | sorprendido (11) | **grande-izq** | el precio: 2.2 millones de dólares |
+| 51.6 – 54.4 | bajando lentes (04) | arriba-der | «la dañada sigue ahí; la fetal la diluye» |
+| 54.8 – 57.9 | señalando (13) | gancho | cierre: «ya no se dobla» |
+| 58.0 – 61.5 | apuntando a cámara (02) | `CierreMarca robert=` | tarjeta de cierre |
+
+Total (sin la tarjeta de cierre): 3.1 + 2.8 + 2.3 + 3.25 + 2.37 + 4.76 + 3.76 + 2.94 + 2.88 + 3.06 = **31.2 s**.
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Narrada:** cama grave continua, sin golpe, debajo de la voz; un pulso lento de corazón mientras el flujo corre.
@@ -41,7 +70,7 @@ Pero antes de nacer todos usábamos otra hemoglobina: la **fetal**. Alrededor de
 
 En **julio de 2019**, en Nashville, **Victoria Gray**, de Mississippi, fue la primera paciente con anemia falciforme en recibir este tratamiento. En el estudio publicado en *NEJM* en **2024**, de **30 pacientes** con seguimiento suficiente, **29 pasaron al menos 12 meses seguidos sin crisis graves**. En **noviembre de 2023** el Reino Unido lo aprobó, el primer medicamento con CRISPR autorizado en el mundo, y la FDA en **diciembre de 2023**.
 
-No es magia: antes hay que pasar por **quimioterapia fuerte** (busulfán) para vaciar la médula, que puede causar infertilidad, y en Estados Unidos su precio de lista en 2023 fue de **2.2 millones de dólares**.
+No es magia: antes hay que pasar por **quimioterapia fuerte** (busulfán) para vaciar la médula, que puede causar infertilidad, y en 2023, en Estados Unidos, su precio de lista era de **2.2 millones de dólares**.
 
 El dibujo es esquemático. **¿Habías oído de la anemia falciforme? ¿Conoces a alguien que la tenga? 👇**"
 

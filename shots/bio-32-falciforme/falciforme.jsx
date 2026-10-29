@@ -300,7 +300,7 @@ function Falciforme() {
       <Chip T={T} at={K.Di + 0.4} until={K.Ca - 0.2} texto="disco blandito: se dobla y pasa" y={500} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ca + 1.0} until={K.Cr - 0.3} texto="1 cambio en el gen HBB" y={1490} tam={38} borde={KC.pink} />
       <Chip T={T} at={K.Cr + 1.2} until={K.Fe - 0.2} texto="se tapa el vaso → crisis de dolor" y={1490} tam={38} borde={KC.red} />
-      <Etiqueta T={T} at={K.Fe + 1.4} until={K.In - 0.2} x={840} y={1170} texto="hemoglobina fetal" lado="izq" tam={34} color={KC.ink} />
+      <Etiqueta T={T} at={K.Fe + 1.4} until={K.In - 0.2} x={840} y={1480} texto="hemoglobina fetal" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Fe + 0.3} until={K.In - 0.2} texto="antes de nacer" y={500} tam={42} borde={HBF} />
       <Chip T={T} at={K.In + 0.4} until={K.Pr - 0.2} texto="BCL11A apaga la fetal" y={500} tam={42} borde={KC.violet} />
       <Etiqueta T={T} at={K.In + 2.0} until={K.Pr - 0.2} x={800} y={1480} texto="adulta: la dañada" lado="izq" tam={32} color={KC.ink} />

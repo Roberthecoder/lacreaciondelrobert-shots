@@ -16,7 +16,7 @@ Corregida el 29 oct 2026 tras la verificación independiente (ver `verificacion.
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esta hormona de crecimiento no salió de un cadáver: salió de una bacteria. | Fondo menta. **Desde el cuadro 0** una mano gira un frasquito con etiqueta "hormona de crecimiento"; junto, una regla de estatura con una marca que sube. Al decir "bacteria", la etiqueta muestra una bacteria en bastón. |
-| 1 | Hipofisis | Tu hipófisis, del tamaño de un chícharo, fabrica la hormona que te hace crecer. | Fondo amarillo: perfil de cabeza; la `Lupa` "POR DENTRO · CEREBRO" muestra la hipófisis colgando bajo el cerebro, junto a un chícharo para comparar. `Escala` ~1 cm. Salen gotitas de hormona. |
+| 1 | Hipofisis | Tu hipófisis, del tamaño de un chícharo, fabrica la hormona que te hace crecer. | Fondo amarillo: perfil de cabeza; la `Lupa` "POR DENTRO · CEREBRO" muestra la hipófisis colgando bajo el cerebro, junto a un chícharo para comparar. `Escala` de la cabeza. Salen gotitas de hormona. |
 | 2 | Antes | Desde 1958, a quienes casi no la producían se les inyectaba la de hipófisis de fallecidos. | Chip "desde 1958". Una niña junto a la regla; una jeringa. Frasco viejo de vidrio con etiqueta de papel "hormona de hipófisis humana". |
 | 3 | Lote | En 1985, los CDC contaron unas dieciséis mil glándulas por lote. | `NumeroGigante` "≈16,000 glándulas por lote" mientras una cuadrícula de puntitos (glándulas) se llena hasta formar un solo frasco. Nota chica "CDC, 1985". |
 | 4 | Escondido | Y en alguna podía venir algo escondido. | La cuadrícula se queda quieta; un solo puntito se pone rojo y parpadea. |

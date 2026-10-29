@@ -294,7 +294,7 @@ function Hormona() {
           {Array.from({ length: 4 }, (_, i) => { const p = ((t * 0.6 + i / 4) % 1); return <g key={i} opacity={1 - p}><HormonaMol x={r * 0.72 + Math.sin(i * 2) * 40} y={r * 0.95 + 70 + p * 130} s={0.55} rot={p * 90} /></g>; })}
           <text x={r * 0.72} y={r * 1.72} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>hipófisis</text>
           <text x={r * 1.42} y={r * 1.72} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>chícharo</text>
-          <text x={r} y={r * 0.42} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.gold2}>≈ 1 cm</text>
+          <text x={r} y={r * 0.42} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.gold2}>como un chícharo</text>
         </svg>} />
 
       {/* textos */}
