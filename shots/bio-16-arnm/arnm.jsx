@@ -11,6 +11,10 @@ function Capa({ children, z }) {
    origen = hombro; punto de la inyección en (60, 90) local (músculo deltoides). */
 function Brazo({ x, y, s = 1, curita = 0, brillo = 0, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {/* torso con la playera, del lado izquierdo, para que se lea como hombro */}
+    <path d="M -1000 -140 Q -600 -330 -250 -260 L -180 1200 L -1000 1200 Z" fill="#e0246a" stroke={KC.ink} strokeWidth={10} />
+    <path d="M -560 -300 Q -470 -200 -380 -290" stroke={KC.ink} strokeWidth={8} fill="none" />
+    <path d="M -240 260 Q -230 700 -200 1200" stroke="#a8174d" strokeWidth={14} fill="none" />
     <path d="M -230 -40 Q -250 -190 -40 -225 Q 170 -250 235 -90 Q 275 30 245 210 L 215 1200 L -175 1200 L -205 210 Q -235 90 -230 -40 Z" fill={PIEL} stroke={KC.ink} strokeWidth={10} />
     <path d="M -150 -40 Q -60 -150 120 -110 Q 200 -40 190 110 Q 120 230 -30 230 Q -150 200 -150 -40 Z" fill={PIEL2} opacity={0.35} />
     <path d="M 175 380 Q 150 560 160 760" stroke={PIEL2} strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.6} />
@@ -266,10 +270,11 @@ function Arnm() {
           <ellipse cx={290} cy={900} rx={260} ry={340} fill="#3a1f2c" stroke={MEMB} strokeWidth={20} />
           <circle cx={270} cy={960} r={110} fill="#1f2f5c" stroke="#7fb3ff" strokeWidth={10} />
           <ADNNucleo T={T} x={270} y={960} r={110} />
+          <text x={270} y={830} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#7fb3ff" opacity={kprog(T, Pr + 0.4, Pr + 0.8)}>núcleo · ADN</text>
           <HebraARN T={T} x={160} y={660} largo={220} n={9} amp={8} grosor={6} />
           <text x={760} y={500} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 760 380)`} opacity={kprog(T, Pr, Pr + 0.4)}>?</text>
         </Capa>
-        <Etq T={T} at={Pr + 0.4} until={Nu - 0.2} x={385} y={960} texto="núcleo (ADN)" color="#7fb3ff" />
+
       </Escena>
       {/* 6 · no entra al núcleo, y la célula lo desarma */}
       <Escena T={T} a={Nu} b={Al} zoom={0.04}>
@@ -305,7 +310,7 @@ function Arnm() {
           <Sirena T={T} x={560} y={740} on={alarma} />
         </Capa>
         <Medidor T={T} at={Al + 1.6} until={Es - 0.2} valor={(t) => kprog(t, Al + 1.8, Al + 3.0)} etiqueta="inflamación" color={KC.red} y={1460} />
-        <Etq T={T} at={Al + 0.6} until={Es - 0.2} x={760} y={1160} texto="célula dendrítica" lado="der" color={KC.ink} tam={30} />
+        <Etq T={T} at={Al + 0.6} until={Es - 0.2} x={1050} y={1100} texto="célula dendrítica" lado="izq" color={KC.ink} tam={30} />
       </Escena>
       {/* 8 · 2005: cambiaron letras por versiones modificadas */}
       <Escena T={T} a={Es} b={Ag} zoom={0.03}>

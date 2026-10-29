@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot ARNm base narrada.dc.html",
+  "salida": "Shot ARNm narrado.dc.html",
+  "nota": "Shot Biotecnológico #16. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa vacuna de COVID no trae el virus: trae instrucciones para que tu brazo fabrique una pieza." },
+    { "escena": "Burbuja", "texto": "Las instrucciones son ARN mensajero, envuelto en una burbujita de grasa." },
+    { "escena": "Entra", "texto": "La burbuja entra a una célula de tu brazo y suelta el mensaje." },
+    { "escena": "Ribosoma", "texto": "Tus ribosomas lo leen y arman la proteína espícula del virus." },
+    { "escena": "Aprende", "texto": "Tu sistema inmune ve esa pieza y aprende a reconocerla." },
+    { "escena": "Pregunta", "texto": "¿Y ese mensaje se queda a vivir en ti?" },
+    { "escena": "Nucleo", "texto": "No: no entra al núcleo, donde está tu ADN, y tu célula lo desarma." },
+    { "escena": "Alarma", "texto": "Pero había un problema: el ARN hecho en laboratorio prendía la alarma de la inflamación." },
+    { "escena": "Estudio", "texto": "En 2005, en la Universidad de Pensilvania, Katalin Karikó y Drew Weissman cambiaron algunas de sus letras, como la U, por versiones modificadas." },
+    { "escena": "Apagada", "texto": "En sus pruebas, la alarma casi se apagó." },
+    { "escena": "Truco", "texto": "El truco: tu propio ARN ya trae letras modificadas, y ellos lo copiaron." },
+    { "escena": "Nobel", "texto": "Por eso ganaron el Nobel de Fisiología o Medicina de 2023." },
+    { "escena": "Cierre", "texto": "Esa vacuna no trae el virus: trae un mensaje que tu cuerpo lee y luego borra." }
+  ]
+}

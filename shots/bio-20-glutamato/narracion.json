@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Glutamato base narrada.dc.html",
+  "salida": "Shot Glutamato narrado.dc.html",
+  "nota": "Shot Biotecnológico #20. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese polvito de tu sopa instantánea no salió de un alga: lo hizo una bacteria."
+    },
+    {
+      "escena": "Kombu",
+      "texto": "En 1908, Kikunae Ikeda lo halló en un caldo de alga kombu y llamó umami a su sabor."
+    },
+    {
+      "escena": "Tanque",
+      "texto": "Hoy se hace en tanques, con una bacteria en forma de mazo que come azúcar o almidón."
+    },
+    {
+      "escena": "PorDentro",
+      "texto": "Por dentro, convierte el azúcar en glutamato, el mismo del tomate y el queso."
+    },
+    {
+      "escena": "Biotina",
+      "texto": "El truco: le das muy poquita biotina, una vitamina, y su membrana cambia."
+    },
+    {
+      "escena": "Canal",
+      "texto": "Se abren unos canalitos y el glutamato sale a chorros al caldo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y quién descubrió a esta bacteria?"
+    },
+    {
+      "escena": "Antes",
+      "texto": "Antes, el polvo se sacaba deshaciendo proteínas de plantas con ácido."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1957, Shukuo Kinoshita y su equipo, en Tokio, probaron bacterias, levaduras y hongos."
+    },
+    {
+      "escena": "Campeona",
+      "texto": "Ganó una bacteria nueva: de cada cuatro glucosas sacaba un glutamato."
+    },
+    {
+      "escena": "Caca",
+      "texto": "Y vivía en tierra con caca de pájaro."
+    },
+    {
+      "escena": "Numero",
+      "texto": "Hoy hace más de tres millones y medio de toneladas de glutamato de sodio al año."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese polvito no viene del mar: viene de una bacteria."
+    }
+  ]
+}

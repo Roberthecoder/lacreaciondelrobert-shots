@@ -44,6 +44,27 @@ El gran obstáculo era que el ARN hecho en laboratorio provocaba **inflamación*
 
 El dibujo es esquemático y no está a escala. **¿Tú sabías que el mensaje no entra al núcleo? 👇**"
 
+## Robert en pantalla
+
+Es la marca del canal: entra desde el cuadro 0, vuelve cada 8–10 s y nunca tapa el subtítulo (el kit lo dibuja por delante de él).
+
+### 10 apariciones, **38.2 s en pantalla** (de 61.5 s) · 7 poses distintas · 2 en grande
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 - 5.4 | sorprendido (11) | gancho | «no trae el virus: trae instrucciones» |
+| 10.6 - 13.9 | señalando (13) | arriba-der | señala la burbuja que entra a la célula |
+| 18.3 - 21.4 | sonriendo (05) | arriba-der | «tu sistema inmune aprende» |
+| 21.7 - 24.1 | pensativo (06) | **grande** | re-gancho: «¿se queda a vivir en ti?» |
+| 24.5 - 28.0 | serio (10) | izq-alto | «no entra al núcleo» |
+| 28.9 - 33.5 | bajando lentes (04) | arriba-der | la alarma de la inflamación |
+| 38.1 - 42.3 | sorprendido (11) | arriba-der | las U cambian a Ψ |
+| 45.3 - 49.3 | apuntando (02) | **grande** | el truco: copiar a tu propio ARN |
+| 49.8 - 53.0 | sonriendo (05) | izq-alto | el Nobel 2023 |
+| 53.5 - 57.9 | señalando (13) | gancho | cierre: «un mensaje que tu cuerpo lee y luego borra» |
+
+Tarjeta de cierre: Robert apuntando a cámara (02) junto al logo (`CierreMarca robert=`).
+
 ## Fuentes
 - **Nobel 2023 y el hallazgo:** The Nobel Assembly at Karolinska Institutet, comunicado de prensa del 2 de octubre de 2023. https://www.nobelprize.org/prizes/medicine/2023/press-release/
   - «award the 2023 Nobel Prize in Physiology or Medicine jointly to Katalin Karikó and Drew Weissman for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19» (2023).

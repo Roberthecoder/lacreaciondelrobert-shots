@@ -14,7 +14,7 @@
 | 1 | Gota | Te picas el dedo y pones la gota en la tira. | La lanceta toca la yema del dedo, brota una gota roja y la tira la toca: la gota entra a la punta. |
 | 2 | Enzima | Ahí espera una enzima, la glucosa oxidasa, que casi siempre sale de un hongo. | `Lupa` "POR DENTRO · LA TIRA" sobre la punta: capa de enzimas (dímeros con su FAD amarillo). A un lado, el moho negro *Aspergillus niger* (conidióforos con cabezas redondas de esporas negras). Etiqueta "glucosa oxidasa". |
 | 3 | Prima | Otras tiras usan otra enzima, la glucosa deshidrogenasa. | Chip "o glucosa deshidrogenasa" y una segunda enzima de otro color entra al lado. |
-| 4 | Electrones | La enzima atrapa el azúcar de tu sangre y le quita dos electrones. | Fondo azul noche. Hexágonos de glucosa llegan del plasma (glóbulos rojos al fondo); la enzima abraza uno y salen dos chispitas "e⁻". |
+| 4 | Electrones | La enzima atrapa el azúcar de tu sangre y le quita dos electrones. | Fondo azul noche. Hexágonos de glucosa flotan en el plasma de la gota; la enzima abraza uno y salen dos chispitas "e⁻". |
 | 5 | Mediador | Una molécula mensajera, el mediador, se los lleva hasta un electrodo. | Bolitas mensajeras (mediador) toman los e⁻ y nadan hasta la franja metálica del electrodo, abajo. |
 | 6 | Pregunta | ¿Y cómo se vuelve número un montón de electrones? | **Re-gancho.** Cientos de chispitas corren por el electrodo. Barra de `Escala`. |
 | 7 | Corriente | Fluyen como una corriente diminuta: más azúcar, más corriente. | Sale la Lupa: la tira con un cable de luz hacia el aparato; `Medidor` de corriente que sube al llegar más glucosa. |
@@ -44,6 +44,26 @@ En México, según la Ensanut 2021–2024, el **17.0 %** de los adultos tiene di
 Dato curioso: las abejas producen su propia glucosa oxidasa y la ponen en la miel; ahí genera agua oxigenada, sobre todo cuando la miel se diluye, y eso ayuda a frenar bacterias.
 
 El dibujo es esquemático. **¿Tú o alguien en tu casa usa glucómetro? 👇**"
+
+## Robert en pantalla
+
+Es la marca del canal. Entra desde el cuadro 0, vuelve cada 8–10 s y nunca tapa el subtítulo (el kit lo dibuja por delante de él).
+
+### Versión narrada: 9 apariciones, **37.4 s en pantalla** (de 61.5 s) · 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.9 | sorprendido (11) | gancho | «no mide tu sangre: mide los electrones» |
+| 8.5 – 11.9 | señalando (13) | arriba-der | «sale de un hongo» (aparece *Aspergillus niger*) |
+| 16.4 – 20.7 | sonriendo (05) | arriba-der | «le quita dos electrones» |
+| 24.0 – 27.9 | pensativo (06) | arriba-der | re-gancho: «¿cómo se vuelve número?» |
+| 31.4 – 34.9 | bajando lentes (04) | arriba-der | la pantalla da el número en mg/dL |
+| 38.5 – 41.0 | apuntando (02) | izq-alto | el electrodo de Clark, el primer biosensor |
+| 41.8 – 46.6 | serio (10) | arriba-der | «17 de cada 100… y casi uno de cada tres no lo sabe» |
+| 47.2 – 53.1 | sorprendido (11) | **grande** | el dato curioso: las abejas y el agua oxigenada |
+| 53.6 – 57.9 | señalando (13) | gancho | cierre: «son los electrones que soltó una enzima» |
+
+La tarjeta de cierre lleva a Robert apuntando a cámara junto al logo (`CierreMarca robert=`).
 
 ## Fuentes
 - **Glucosa oxidasa, mediadores y corriente:** Yoo EH, Lee SY, "Glucose Biosensors: An Overview of Use in Clinical Practice", *Sensors* 10(5): 4558–4576, **2010**. https://pmc.ncbi.nlm.nih.gov/articles/PMC3292132/

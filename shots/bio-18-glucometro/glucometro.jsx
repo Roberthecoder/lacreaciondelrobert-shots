@@ -167,14 +167,14 @@ function Glucometro18() {
   const K = { G: CUES.Gancho, Go: CUES.Gota, En: CUES.Enzima, Pr: CUES.Prima, El: CUES.Electrones, Me: CUES.Mediador, Pq: CUES.Pregunta,
     Co: CUES.Corriente, Nu: CUES.Numero, Cl: CUES.Clark, Mx: CUES.Mexico, Ab: CUES.Abejas, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const DX = 430, DY = 980;                       // centro del glucómetro; punta de la tira en (DX, DY - 560)
-  const TIPY = DY - 560;
+  const DX = 430, DY = 1000, DS = 0.9;            // centro y escala del glucómetro; punta de la tira en (DX, TIPY)
+  const TIPY = DY - 560 * DS;
   // dedo: llega, la lanceta pica, sale la gota, el dedo baja a la punta de la tira
   const pica = kprog(T, K.Go + 0.2, K.Go + 0.55, kEase.sale) * (1 - kprog(T, K.Go + 0.7, K.Go + 1.0));
   const gota = kprog(T, K.Go + 0.7, K.Go + 1.4, kEase.sale);
   const baja = kprog(T, K.Go + 1.5, K.Go + 2.3, kEase.suave);
   const absorbe = kprog(T, K.Go + 2.3, K.Go + 2.8);
-  const fx = klerp(-40, DX - 60, kprog(T, K.G + 2.6, K.Go + 0.2, kEase.sale)), fy = klerp(250, TIPY - 120, baja);
+  const fx = klerp(-60, DX, kprog(T, K.G + 2.6, K.Go + 0.2, kEase.sale)), fy = klerp(360, TIPY - 118, baja);
   // micro: 6 enzimas en fila; cada glucosa llega, la enzima le quita 2 e⁻, el mediador los baja al electrodo
   const ENZ = [140, 320, 500, 680, 860, 1000].slice(0, 5).map((x, i) => [x + 40, 860 + (i % 2) * 40]);
   const ciclo = (i) => K.El + 0.4 + i * 0.75;
@@ -189,8 +189,8 @@ function Glucometro18() {
         <FondoLunares color={KC.pink} />
         <Ambiente T={T} n={24} seed={3} />
         <SvgCapa>
-          <Glucometro T={T} x={DX} y={DY} pantalla={T < K.Go + 2.8 ? '- - -' : '...'} parpadeo lleno={absorbe} brillo={T < K.Go ? 0.9 : absorbe} />
-          {T < K.Go && Array.from({ length: 5 }, (_, i) => { const u = ((T * 0.8 + i / 5) % 1); return <Chispa key={i} x={DX + Math.sin(i * 2 + T * 3) * 30} y={TIPY + 30 + u * 230} r={14} o={Math.sin(Math.PI * u)} t={i === 2 ? 'e⁻' : ''} />; })}
+          <Glucometro T={T} x={DX} y={DY} s={DS} pantalla={T < K.Go + 2.8 ? '- - -' : '...'} parpadeo lleno={absorbe} brillo={T < K.Go ? 0.9 : absorbe} />
+          {T < K.Go && Array.from({ length: 5 }, (_, i) => { const u = ((T * 0.8 + i / 5) % 1); return <Chispa key={i} x={DX + Math.sin(i * 2 + T * 3) * 30} y={TIPY + 30 + u * 200} r={14} o={Math.sin(Math.PI * u)} t={i === 2 ? 'e⁻' : ''} />; })}
           {T > K.G + 2.6 && <Dedo x={fx} y={fy} gota={gota * (1 - absorbe)} />}
           <Lanceta x={fx + 30 - 60 * pica} y={fy - 40 - 60 * pica} o={kprog(T, K.Go, K.Go + 0.2) * (1 - kprog(T, K.Go + 1.0, K.Go + 1.3))} />
           {T > K.Go + 0.4 && T < K.Go + 0.9 && <Chispa x={fx} y={fy + 30} r={22} o={1} />}
@@ -236,7 +236,7 @@ function Glucometro18() {
         </SvgCapa>
         <Etq T={T} at={K.El + 0.6} until={K.Me - 0.2} x={60} y={1010} texto="glucosa oxidasa" color={GOX} tam={36} />
         <Etq T={T} at={K.Me + 0.5} until={K.Pq - 0.1} x={60} y={1060} texto="mediador" color={MED} tam={36} />
-        <Etq T={T} at={K.Me + 1.4} until={K.Co} x={1020} y={1250} texto="electrodo" lado="izq" color={KC.gold2} tam={36} />
+        <Etq T={T} at={K.Me + 1.4} until={K.Co} x={1020} y={1095} texto="electrodo" lado="izq" color={KC.gold2} tam={36} />
         <Escala T={T} pxPorMm={2e7} x={60} y={1460} />
       </Escena>
 
@@ -245,8 +245,8 @@ function Glucometro18() {
         <FondoLunares color={KC.cyan} />
         <Ambiente T={T} n={20} seed={4} />
         <SvgCapa>
-          <Glucometro T={T} x={DX} y={DY} pantalla={T < K.Nu + 0.4 ? '...' : String(cuenta)} unidad={T > K.Nu + 0.4 ? 'mg/dL' : ''} lleno={1} brillo={1} />
-          {Array.from({ length: 8 }, (_, i) => { const u = ((T * 0.9 + i / 8) % 1); return <Chispa key={i} x={DX + (i % 2 ? 12 : -12)} y={TIPY + 40 + u * 330} r={12} o={Math.sin(Math.PI * u) * (T < K.Nu + 2.4 ? 1 : 0.4)} />; })}
+          <Glucometro T={T} x={DX} y={DY} s={DS} pantalla={T < K.Nu + 0.4 ? '...' : String(cuenta)} unidad={T > K.Nu + 0.4 ? 'mg/dL' : ''} lleno={1} brillo={1} />
+          {Array.from({ length: 8 }, (_, i) => { const u = ((T * 0.9 + i / 8) % 1); return <Chispa key={i} x={DX + (i % 2 ? 11 : -11)} y={TIPY + 40 + u * 190} r={12} o={Math.sin(Math.PI * u) * (T < K.Nu + 2.4 ? 1 : 0.4)} />; })}
           {T < K.Nu && Array.from({ length: 6 }, (_, i) => { const t0 = K.Co + 0.8 + i * 0.4, u = kprog(T, t0, t0 + 0.8); return u > 0 && u < 1 ? <Glucosa key={i} x={DX + 160 - u * 160} y={TIPY - 60 + u * 80} r={20} rot={T * 50} o={1 - u * 0.6} /> : null; })}
         </SvgCapa>
         <Medidor T={T} at={K.Co + 1.0} until={K.Nu - 0.1} valor={(t) => klerp(0.15, 0.82, kprog(t, K.Co + 1.0, K.Co + 3.4))} etiqueta="corriente" texto={(v) => (v * 100 > 60 ? 'más azúcar' : 'poco azúcar')} y={460} color={ELEC} />
@@ -258,12 +258,12 @@ function Glucometro18() {
       <Escena T={T} a={K.Cl} b={K.Mx} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <ElectrodoClark x={430} y={1060} s={1.2} capa={kprog(T, K.Cl + 1.4, K.Cl + 2.2)} T={T} />
-          {T > K.Cl + 2.2 && Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.6 + i / 6) % 1); return <Glucosa key={i} x={300 + i * 52} y={1240 - u * 110} r={14} rot={T * 40} o={Math.sin(Math.PI * u)} />; })}
+          <ElectrodoClark x={330} y={1060} s={1} capa={kprog(T, K.Cl + 1.4, K.Cl + 2.2)} T={T} />
+          {T > K.Cl + 2.2 && Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.6 + i / 6) % 1); return <Glucosa key={i} x={200 + i * 52} y={1250 - u * 110} r={14} rot={T * 40} o={Math.sin(Math.PI * u)} />; })}
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.Cl + 0.2} until={K.Cl + 3.2} anio="1962" quien="Clark y Lyons · Alabama" revista="Ann. N. Y. Acad. Sci. · electrodo de enzima" y={560} />
-        <Etiqueta T={T} at={K.Cl + 3.5} until={K.Mx - 0.2} x={570} y={760} texto="electrodo de oxígeno" lado="der" color={KC.ink} tam={32} />
-        <Etiqueta T={T} at={K.Cl + 4.2} until={K.Mx - 0.2} x={570} y={1135} texto="glucosa oxidasa atrapada" lado="der" color={KC.ink} tam={28} />
+        <TarjetaEstudio T={T} at={K.Cl + 0.2} until={K.Cl + 3.2} anio="1962" quien="Clark y Lyons · Alabama" revista="Ann. N. Y. Acad. Sci. · electrodo de enzima" y={400} />
+        <Etiqueta T={T} at={K.Cl + 3.5} until={K.Mx - 0.2} x={440} y={800} texto="electrodo de oxígeno" lado="der" color={KC.ink} tam={32} />
+        <Etiqueta T={T} at={K.Cl + 4.2} until={K.Mx - 0.2} x={450} y={1110} texto="glucosa oxidasa atrapada" lado="der" color={KC.ink} tam={30} />
         <Chip T={T} at={K.Cl + 4.6} until={K.Mx - 0.2} texto="el primer biosensor" x={540} y={1520} tam={42} borde={GOX} />
       </Escena>
 
@@ -284,13 +284,13 @@ function Glucometro18() {
       <Escena T={T} a={K.Ab} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <Panal x={90} y={560} s={1} miel={kprog(T, K.Ab + 0.8, K.Ab + 3.0)} />
+          <Panal x={80} y={600} s={1.1} miel={kprog(T, K.Ab + 0.8, K.Ab + 3.0)} />
           <Abeja x={klerp(-120, 330, kprog(T, K.Ab, K.Ab + 1.2, kEase.sale)) + Math.sin(T * 3) * 10} y={460 + Math.sin(T * 5) * 12} s={1.1} T={T} rot={8} />
           {T > K.Ab + 1.2 && T < K.Ab + 2.2 && <circle cx={300} cy={klerp(500, 650, kprog(T, K.Ab + 1.2, K.Ab + 2.0))} r={16} fill="#f2a516" stroke={KC.ink} strokeWidth={4} />}
           {T > K.Ab + 2.4 && Array.from({ length: 10 }, (_, i) => { const u = ((T * 0.7 + i / 10) % 1); return <g key={i} opacity={Math.sin(Math.PI * u)}>
             <circle cx={150 + (i % 5) * 70} cy={1000 - u * 200} r={14 + (i % 3) * 4} fill="rgba(255,255,255,.75)" stroke="#5a8fb8" strokeWidth={3} /></g>; })}
-          {T > K.Ab + 2.4 && <text x={150} y={1120} style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink}>H₂O₂</text>}
-          <Bacilo x={330} y={1180} s={1.1} vida={1 - kprog(T, K.Ab + 3.6, K.Ab + 5.4)} rot={-12} />
+          {T > K.Ab + 2.4 && <text x={110} y={1100} style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink}>H₂O₂</text>}
+          <Bacilo x={390} y={1150} s={1.1} vida={1 - kprog(T, K.Ab + 3.6, K.Ab + 5.4)} rot={-12} />
         </SvgCapa>
         <Chip T={T} at={K.Ab + 0.6} until={K.Ab + 3.4} texto="su propia glucosa oxidasa" x={330} y={1490} tam={34} borde={KC.yellow} />
         <Chip T={T} at={K.Ab + 3.6} until={K.Ci - 0.2} texto="agua oxigenada vs. bacterias" x={330} y={1490} tam={34} borde={KC.leaf} />
@@ -301,8 +301,8 @@ function Glucometro18() {
         <FondoLunares color={KC.pink} />
         <Ambiente T={T} n={24} seed={3} />
         <SvgCapa>
-          <Glucometro T={T} x={DX} y={DY} pantalla="98" unidad="mg/dL" lleno={1} brillo={1} />
-          {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.8 + i / 6) % 1); return <Chispa key={i} x={DX + Math.sin(i * 2 + T * 3) * 40} y={TIPY + 30 + u * 230} r={14} o={Math.sin(Math.PI * u)} t={i === 3 ? 'e⁻' : ''} />; })}
+          <Glucometro T={T} x={DX} y={DY} s={DS} pantalla="98" unidad="mg/dL" lleno={1} brillo={1} />
+          {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.8 + i / 6) % 1); return <Chispa key={i} x={DX + Math.sin(i * 2 + T * 3) * 40} y={TIPY + 30 + u * 200} r={14} o={Math.sin(Math.PI * u)} t={i === 3 ? 'e⁻' : ''} />; })}
         </SvgCapa>
         <Chip T={T} at={K.Ci + 0.8} until={K.Ou - 0.1} texto="enzima → electrones → número" x={540} y={1500} tam={36} borde={ELEC} />
       </Escena>
