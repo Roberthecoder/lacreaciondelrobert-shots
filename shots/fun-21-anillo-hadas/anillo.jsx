@@ -166,7 +166,7 @@ function AnilloShot() {
   // café: el pasto encima del micelio se seca
   const seco = kprog(T, K.Ca + 1.6, K.S - 0.4, kEase.suave);
   // edad: el anillo se llena hacia afuera
-  const uEd = kprog(T, K.Ed + 0.2, K.J - 0.4, kEase.suave);
+  const uEd = kprog(T, K.Ed + 0.2, K.J - 0.4, kEase.sale);
   const yAHX = kprog(T, K.J + 3.0, K.J + 4.2, kEase.sale), creceJ = kprog(T, K.J + 4.0, K.F - 0.4, kEase.sale);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -320,7 +320,7 @@ function AnilloShot() {
       <Etq T={T} at={K.S + 2.4} until={K.P - 0.3} x={60} y={660} texto="“hongo de los anillos”" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="1917" quien="este de Colorado · Shantz y Piemeisel" revista="Journal of Agricultural Research" y={640} />
       <Chip T={T} at={K.E + 3.4} until={K.Ed - 0.3} texto="≈ 12 cm por año (promedio estimado)" x={400} y={1150} tam={34} borde={KC.yellow} />
-      <NumeroGigante T={T} at={K.Ed + 0.2} until={K.J - 0.3} valor={250} dur={uEd > 0 ? (K.J - 0.4 - K.Ed - 0.2) : 1} sufijo=" años" x={330} y={470} tam={120} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Ed + 0.2} until={K.J - 0.3} valor={250} dur={K.J - 0.6 - K.Ed} sufijo=" años" x={330} y={470} tam={120} color={KC.yellow} />
       <Chip T={T} at={K.Ed + 0.6} until={K.J - 0.3} texto={`${Math.round(60 * uEd)} m de ancho`} x={300} y={620} tam={36} borde={KC.gold} mono />
       <Chip T={T} at={K.Ed + 2.4} until={K.J - 0.3} texto="estimación" x={760} y={1150} tam={30} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.J + 0.2} until={K.J + 2.5} anio="2010" quien="Universidad de Shizuoka, Japón" revista="ChemBioChem, 2010" y={640} />
