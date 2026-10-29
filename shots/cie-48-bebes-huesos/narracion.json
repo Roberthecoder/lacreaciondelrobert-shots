@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Bebes Huesos base narrada.dc.html",
+  "salida": "Shot Bebes Huesos narrado.dc.html",
+  "nota": "Shot Científico #48. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Un bebé recién nacido tiene más piezas de hueso que tú: cerca de trescientas, contra doscientos seis huesos de un adulto."
+    },
+    {
+      "escena": "Cartilago",
+      "texto": "Muchas de esas piezas todavía son en parte cartílago, un material más flexible."
+    },
+    {
+      "escena": "Fusion",
+      "texto": "Al crecer, varias de ellas se van uniendo hasta formar un solo hueso."
+    },
+    {
+      "escena": "Craneo",
+      "texto": "Un ejemplo que puedes tocar es el cráneo: al nacer, sus placas están separadas por las fontanelas, los puntos blanditos de la cabeza del bebé."
+    },
+    {
+      "escena": "Parto",
+      "texto": "Eso ayuda a que la cabeza se acomode al nacer y deja espacio para que crezca el cerebro."
+    },
+    {
+      "escena": "Cierra",
+      "texto": "La fontanela de atrás se cierra en los primeros meses, y la de arriba, por lo general entre los siete meses y el año y medio."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuándo terminan de unirse?"
+    },
+    {
+      "escena": "Cadera",
+      "texto": "Algunos, como los de la cadera o la base de la columna, siguen uniéndose hasta la edad adulta."
+    },
+    {
+      "escena": "Rodilla",
+      "texto": "Y la rótula de un bebé es casi toda cartílago: se va volviendo hueso poco a poco durante la infancia."
+    },
+    {
+      "escena": "Total",
+      "texto": "Al final, casi todos los adultos tienen doscientos seis huesos, aunque el número puede variar un poco de persona a persona."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no perdiste huesos al crecer: se fueron uniendo."
+    }
+  ]
+}

@@ -23,30 +23,26 @@
 | 3 | Vienen del mismo óvulo y del mismo espermatozoide (voz 1) | ✅ | [LS] | "Identical twins develop when a single fertilized egg splits in two embryos." | 2009 |
 | 4 | Las huellas se forman antes de nacer, en los primeros meses del embarazo (voz 2). Conversión: 10.5–16 semanas ≈ del 3.er al 4.º mes | ✅ | [W]; [ML] | "the unique features of the skin are established between approximately 10.5 and 16 weeks estimated gestational age (EGA)" / "The ridges begin to develop during the third month of fetal development, and they are fully formed by the sixth month." | 2011; 2022 |
 | 5 | Las crestas se doblan según cómo crece el dedo (voz 3) | ✅ | [W] | "Localized stresses (tensions and compressions), resulting from growth of the tissue layers of the digit and interactions with existing ridge fields, create the foundations for second-level uniqueness." | 2011 |
-| 6 | …según **la posición del bebé** y **lo que toca dentro del útero** (voz 3; pantalla: flechas de presión y movimiento) | ⚠️ | [W]; [ML] (no lo dicen) | Las fuentes serias solo hablan de "the environment inside the womb" [ML] y de tensiones locales por el crecimiento del dedo y las almohadillas [W]. "Posición en el útero" y "tocar el saco amniótico" aparecen solo en páginas de divulgación sin fuente primaria. | — |
+| 6 | (corregida) "…según cómo crece y se estira la yema del dedo, y eso cambia con el ambiente dentro del útero" (voz 3; pantalla: flechas de tensión sobre la yema) | ✅ | [W]; [ML] | "Localized stresses (tensions and compressions), resulting from growth of the tissue layers of the digit…" [W] / "The finer details of the patterns of skin ridges are influenced by other factors during fetal development, such as substances taken during pregnancy and the environment inside the womb." [ML] | 2011; 2022 |
 | 7 | Esas condiciones nunca son idénticas, ni para dos gemelos ni para dos dedos del mismo bebé (voz 4; pantalla: 10 dedos distintos) | ✅ | [W] | "It is completely inconceivable that the physical stresses and cellular distributions that create that community could be exactly duplicated, on any level, in two different areas of developing fetal tissue." / MZ twins "share identical genetic information and very similar intrauterine environments, but on many occasions have very different patterns." | 2011 |
 | 8 | El dibujo general de los gemelos suele parecerse (voz 6; pantalla: dos remolinos parecidos) | ✅ | [T12]; [LS] | "identical-twin fingers shared a fingerprint type 0.7440" vs. "0.3215" al azar [T12] / "twins are more than twice as likely as non-twins in matching level 1 features" [LS] | 2012; 2009 |
 | 9 | …pero los detalles finos (donde las crestas se cortan o se dividen = minucias: finales y bifurcaciones) son diferentes (voz 6; pantalla: círculos en bifurcaciones y finales) | ✅ | [W]; [LS] | "genetics … does not determine the arrangement of minutiae or ridge shapes within the pattern" [W] / "Although the patterns of minutiae among twins are more similar than in the general population, the similarity of fingerprints of twins is significantly different from that between genuine prints of the same finger." [LS] | 2011; 2009 |
 | 10 | Las huellas pueden distinguir a dos gemelos (voz 7; chip «las huellas sí los distinguen») | ✅ | [LS] (resume a Jain et al. 2002); [T12] | "Using a state-of-the-art fingerprint verification system it was concluded that identical twins are discriminable with slightly lower accuracy than non-twins." [LS] / "can distinguish identical twins without drastic degradation in performance" [T12] | 2002; 2012 |
 | 11 | …aunque una prueba común de ADN no lo logre (voz 7) | ✅ | [LS]; [T12] | "having identical DNA makes it difficult for forensic scientists to distinguish between DNA from blood samples of identical twins" [LS] | 2009 |
 | 12 | Los koalas tienen huellas muy parecidas a las nuestras (voz 8; pantalla: huella de koala junto a una humana) | ✅ | [H97] | "dermatoglyphes, microscopically and macroscopically similar to those of humans, on the fingers and toes of the tree-climbing marsupial Phascolarctus cinereus" / "Presence of nearly identical dermatoglyphes…" | 1997 |
-| 13 | …tanto que **es difícil distinguirlas, incluso con microscopio** (voz 8) | ⚠️ | [H97] (no lo dice); [PBS] (secundaria) | El artículo original solo dice "microscopically and macroscopically similar". La frase de que no se distinguen ni al microscopio sale de divulgación: "Henneberg's research indicated that not even careful analysis under a microscope could help distinguish…" [PBS]. Nadie lo midió. | 1997 |
+| 13 | (corregida) "…huellas casi idénticas a las nuestras, y se parecen hasta vistas al microscopio" (voz 8) | ✅ | [H97] | "Presence of nearly identical dermatoglyphes…" / "dermatoglyphes, microscopically and macroscopically similar to those of humans" | 1997 |
 | 14 | Hasta dos gemelos idénticos dejan su propia firma en todo lo que tocan (voz 9, cierre) | ✅ | [ML]; [W] | (es la conclusión de las filas 2, 7 y 9) "Even identical twins … have different fingerprints." | 2022 |
-| 15 | Fuentes del guion: "Henneberg 1996, Nature 382: 112" | ⚠️ | Crossref; repositorio de Adelaida | No existe ese artículo en *Nature*. La referencia correcta es "Natural Science, 1997; 1:4-4". | — |
+| 15 | (corregida) Fuentes del guion: Henneberg, Lambert y Leigh (1997), Natural Science 1: 4; Wertheim (2011), Fingerprint Sourcebook cap. 3 | ✅ | Repositorio Univ. de Adelaida (hdl 2440/5433); ojp.gov | "Natural Science, 1997; 1:4-4" | 1997; 2011 |
 
 Las escenas del útero, el bebé, las flechas y las huellas son esquemáticas (el guion ya lo avisa en "Notas").
 
 ## Problemas encontrados
 
-1. **⚠️ Fila 6 · voz 3 (Presion).** "La posición del bebé y lo que toca dentro del útero" no tiene fuente seria: es una explicación que circula en divulgación. Lo verificable es que las crestas se tuercen por las tensiones del crecimiento del dedo y que influye el ambiente dentro del útero.
-   **Propuesta:** "Las crestas de la piel se doblan según cómo crece y se estira la yema del dedo, y eso cambia con el ambiente dentro del útero."
-   (En pantalla, cambia "movimiento/toques" por flechas de tensión sobre la yema del dedo.)
+Primera revisión (29 oct 2026): 3 ⚠️ (filas 6, 13 y 15). Las correcciones se aplicaron en `guion.md` y `narracion.json` y se volvieron a verificar:
+1. Voz 3 (Presion): ahora dice "…según cómo crece y se estira la yema del dedo, y eso cambia con el ambiente dentro del útero." La pantalla muestra flechas de tensión. Coincide con [W] y [ML]. ✅
+2. Voz 8 (Koala): ahora dice "…casi idénticas a las nuestras, y se parecen hasta vistas al microscopio." Coincide con el resumen original de [H97] ("nearly identical", "microscopically and macroscopically similar"). ✅
+3. Fuentes del guion: se quitó la cita inexistente de *Nature* 1996. Ahora están Henneberg y colegas (1997, *Natural Science* 1: 4) y Wertheim (2011). ✅
 
-2. **⚠️ Fila 13 · voz 8 (Koala).** El estudio original (Henneberg y colegas, 1997) dice que las huellas del koala son "casi idénticas" y "parecidas al microscopio y a simple vista", pero no probó que sea difícil distinguirlas. Eso lo agregó la prensa.
-   **Propuesta:** "Dato raro: los koalas tienen huellas casi idénticas a las nuestras, y se parecen hasta vistas al microscopio."
-   (Si se quiere el año: "En 1997, unos científicos vieron que los koalas tienen huellas casi idénticas a las nuestras…")
+No queda ninguna afirmación ❌ ni ⚠️.
 
-3. **⚠️ Fila 15 · `guion.md`, sección Fuentes, punto 3.** Quita "Henneberg 1996, Nature 382: 112" y deja solo: Henneberg, M., Lambert, K. M. y Leigh, C. M. (1997). *Fingerprint homoplasy: Koalas and humans*. Natural Science 1: 4.
-   Nota menor: en el punto 1, la cita práctica de las semanas 10.5–16 es Wertheim (2011), *Fingerprint Sourcebook*, cap. 3 (NIJ). Puedes agregarla.
-
-Cuando se corrijan las filas 6, 13 y 15, se vuelve a verificar esa parte y entonces se puede aprobar.
+VEREDICTO: APROBADO

@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Pelo Muerto base narrada.dc.html",
+  "salida": "Shot Pelo Muerto narrado.dc.html",
+  "nota": "Shot Científico #53. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "El pelo y las uñas no siguen creciendo después de morir: es la piel la que se encoge."
+    },
+    {
+      "escena": "Mito",
+      "texto": "Es un mito muy viejo, y lo has oído en historias de miedo: que a los muertos les sigue creciendo la barba y las uñas."
+    },
+    {
+      "escena": "Crecer",
+      "texto": "Para crecer, el pelo y las uñas necesitan que sus células se dividan, y eso requiere energía."
+    },
+    {
+      "escena": "Sin",
+      "texto": "Sin sangre que circule, sin oxígeno y sin azúcar, esas células dejan de trabajar."
+    },
+    {
+      "escena": "Piel",
+      "texto": "Lo que sí pasa es que la piel pierde agua y se retrae."
+    },
+    {
+      "escena": "Asoma",
+      "texto": "Al encogerse, la piel se repliega y deja ver más pelo y más uña que antes. Por eso parece que crecieron, aunque no crecieron nada."
+    },
+    {
+      "escena": "Barba",
+      "texto": "Por ejemplo, en la cara la piel se retrae y deja asomar la raíz de la barba, que antes estaba escondida."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto crecen en vida?"
+    },
+    {
+      "escena": "Unas",
+      "texto": "Las uñas de tus manos crecen unos tres milímetros y medio al mes."
+    },
+    {
+      "escena": "Pelo",
+      "texto": "Y el pelo de tu cabeza, más o menos un centímetro al mes."
+    },
+    {
+      "escena": "Vida",
+      "texto": "Y para lograrlo, tu cuerpo les manda sangre y nutrientes todos los días: sin eso, el crecimiento se detiene."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese crecimiento es una ilusión: no crece el pelo, se retira la piel."
+    }
+  ]
+}

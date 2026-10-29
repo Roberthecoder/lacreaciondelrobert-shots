@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Elevador Cae base narrada.dc.html",
+  "salida": "Shot Elevador Cae narrado.dc.html",
+  "nota": "Shot Científico #46. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Si un elevador se cayera, saltar justo antes del golpe casi seguro no te salvaría."
+    },
+    {
+      "escena": "Mito",
+      "texto": "En las películas suena lógico: si saltas en el último segundo, no vas cayendo."
+    },
+    {
+      "escena": "Velocidad",
+      "texto": "Pero mientras el elevador cae, tú caes con él, a su misma velocidad."
+    },
+    {
+      "escena": "Salto",
+      "texto": "Al saltar, solo le quitas a esa velocidad la poquita que da tu salto."
+    },
+    {
+      "escena": "Ejemplo",
+      "texto": "Una caída de unos treinta metros, como diez pisos, termina a más de ochenta kilómetros por hora, y un buen salto apenas le resta unos diez."
+    },
+    {
+      "escena": "Tiempo",
+      "texto": "Y además, encerrado y sin ver hacia afuera, sería casi imposible atinarle al momento exacto."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces qué tan peligrosos son los elevadores?"
+    },
+    {
+      "escena": "Frenos",
+      "texto": "Muy poco: en 1854 Elisha Otis presentó en Nueva York un freno de seguridad, y hoy los elevadores de cable traen frenos que se traban si la cabina se suelta."
+    },
+    {
+      "escena": "Cables",
+      "texto": "Y además cuelgan de varios cables, no de uno solo."
+    },
+    {
+      "escena": "Consejo",
+      "texto": "Si alguna vez te quedas atorado, lo mejor es quedarte adentro, apretar el botón de alarma y esperar ayuda."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que el salto de película casi no sirve, pero lo más seguro es que nunca lo vas a necesitar."
+    }
+  ]
+}
