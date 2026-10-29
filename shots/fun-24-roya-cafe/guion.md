@@ -27,9 +27,31 @@
 
 **Música:** cama grave continua y algo tensa mientras avanza la infección; se abre un poco en la defensa (Timor) y en el cierre. Efectos en el mismo cuadro: vapor de la taza, roce del dedo en la hoja, golpe del sello, pops de cada espora, gota de agua, tubo que entra al estoma, succión suave de los haustorios, tics del cronómetro de semanas, soplo de esporas al brotar, hojas que caen (cada una), golpe del "?", mapa que se pinta, barra que baja, termómetros, escudo.
 
-Barras de escala: 10 cm (taza y rama), 1 cm (manchas en la hoja), 30 µm (esporas y estoma), 1 m (cafeto), 100 km / 500 km (mapas).
+Barras de escala: 10 cm (taza y rama), 5 cm (las dos hojas), 30 µm (esporas, estoma y células; en el ramillete la escala se reduce a la mitad y la barra también), 1 m (cafeto), 100 km (Ceilán), 500 km (México y Centroamérica).
 
-(La tabla "Robert en pantalla" se agrega en la fase de animación.)
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Puede un hongo cambiar lo que siembra un país?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «Ese polvo naranja no es óxido: es un hongo» (cuadro 0) |
+| 2 | 8.9 | 14.2 | 13_senalando_arriba | `arriba-der` | señala la espora en forma de riñón y el tubo que entra al estoma |
+| 3 | 16.2 | 21.2 | 10_serio_molesto | `arriba-der` | «le roba comida a las células vivas» y el ramillete |
+| 4 | 23.5 | 26.6 | 04_bajando_lentes | `arriba-der` | el cafeto que se queda pelón |
+| 5 | 26.8 | 30.2 | 07_pensativo_puno | `grande` | «¿Puede un hongo cambiar lo que siembra un país?» |
+| 6 | 33.2 | 36.9 | 06_pensativo_menton | `arriba-der` | Ceilán: precios bajos y el paso al té |
+| 7 | 39.7 | 43.6 | 12_perfil_serio | `izq-alto` | la cosecha centroamericana −16 % |
+| 8 | 48.5 | 51.5 | 13_senalando_arriba | `arriba-der` | señala el híbrido de Timor → Catimor |
+| 9 | 52.0 | 54.0 | 11_sorprendido | `arriba-der` | «la roya ya venció a algunos» |
+| 10 | 54.6 | 57.9 | 02_apuntando_camara | `arriba-der` | «tu taza también es una batalla» |
+| — | 58.0 | 61.5 | 05_sonriendo_dientes_uniformes | CierreMarca | cierre |
+
+Apariciones 10 · **36.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · nunca más de 4.9 s sin Robert.
+
+## Archivos
+
+`Shot Roya Cafe base narrada.dc.html` (escenas a 61.5 s: 58.0 s de voz + Outro 3.5 s) · `roya.jsx` · `gen-audio.mjs` (cama grave + efectos) · `narracion.json` · `publicacion.md` · `verificacion.md`.
 
 ## Fuentes (texto completo abierto el 29 oct 2026)
 

@@ -39,5 +39,3 @@ Notas del verificador:
 - Hipótesis (esporas, "quizá llamando insectos") dichas como hipótesis. El dibujo es esquemático.
 
 **Resumen:** 18 afirmaciones revisadas (voz y pantalla) contra 6 fuentes abiertas; todas ✅, sin ❌ ni ⚠️. Hipótesis dichas como hipótesis.
-
-VEREDICTO: APROBADO
