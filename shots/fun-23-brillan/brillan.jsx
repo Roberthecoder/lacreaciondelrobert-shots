@@ -436,6 +436,7 @@ function BrillanShot() {
       <Etq T={T} at={K.G + 1.6} until={K.Q - 0.2} x={1040} y={1100} lado="izq" texto="madera podrida" tam={28} />
       <Chip T={T} at={K.Q + 0.3} until={K.R - 0.2} texto="hongos que brillan" x={540} y={480} tam={40} borde={LUZ} />
       <NumeroGigante T={T} at={K.R + 0.4} until={K.Cf - 0.2} valor={100} prefijo="≈ " etiqueta="especies que brillan" x={370} y={500} tam={190} color={LUZ} />
+      <Etq T={T} at={K.R + 0.8} until={K.Cf - 0.2} x={60} y={680} texto="esquema · no a escala" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Cf + 1.0} until={K.Lf - 0.2} texto="una sustancia muy común" x={540} y={470} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Cf + 0.3} until={K.P - 0.3} x={640} y={560} texto="dentro de una hifa" tam={26} color={LUZ2} />
       <Chip T={T} at={K.Lf + 1.7} until={K.Lc - 0.2} texto="luciferina = el combustible" x={660} y={470} tam={34} borde={LUZ} />
@@ -454,7 +455,7 @@ function BrillanShot() {
       <Chip T={T} at={K.J + 1.4} until={K.M - 0.2} texto="estimación · Jurásico tardío" x={390} y={470} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.J + 2.0} until={K.M - 0.2} x={110} y={1095} texto="hace ≈ 160 millones de años" tam={28} color={KC.ink} />
       <Chip T={T} at={K.M + 0.6} until={K.C - 0.2} texto="6 especies nuevas de Mycena" x={390} y={470} tam={32} borde={LUZ} />
-      <Etq T={T} at={K.M + 1.0} until={K.C - 0.2} x={1020} y={1120} lado="izq" texto="bosques de niebla · Mycologia, 2019" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.0} until={K.C - 0.2} x={1020} y={1120} lado="izq" texto="bosques de niebla · ubicación esquemática · Mycologia, 2019" tam={24} color={KC.ink} />
       <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no está embrujada: está viva" x={400} y={470} tam={36} borde={LUZ} />
 
       {/* barras de escala */}
@@ -463,11 +464,11 @@ function BrillanShot() {
       <BarraEscala T={T} at={K.R} until={K.Cf} texto="5 cm" largo={110} />
       <BarraEscala T={T} at={K.Cf} until={K.P} texto="1 µm (moléculas no a escala)" largo={140} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="1 cm" largo={120} />
-      <BarraEscala T={T} at={K.E} until={K.H} texto="10 cm" largo={150} />
-      <BarraEscala T={T} at={K.H} until={K.Rj} texto="5 cm" largo={170} />
+      <BarraEscala T={T} at={K.E} until={K.H} texto="10 cm" largo={230} />
+      <BarraEscala T={T} at={K.H} until={K.Rj} texto="5 cm" largo={250} />
       <BarraEscala T={T} at={K.Rj} until={K.J} texto="5 cm" largo={150} />
       <BarraEscala T={T} at={K.J} until={K.M} texto="1 m" largo={140} />
-      <BarraEscala T={T} at={K.M} until={K.C} texto="500 km" largo={300} />
+      <BarraEscala T={T} at={K.M} until={K.C} texto="500 km" largo={115} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={160} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

@@ -42,3 +42,39 @@ Fuentes abiertas:
 | 19 | Dibujo: haustorios como "chupones" pegados a las células | ✅ | [TA], [SE] | "Haustoria are thus not truly intracellular" (atraviesan la pared pero no la membrana): dibujarlos pegados/hundidos en la célula, no flotando dentro, está bien | 2017 |
 
 **Re-verificación (29 oct 2026, texto final):** se revisaron las 13 líneas finales de `narracion.json` y la tabla de `guion.md` (incluida la escena 3 con el estoma de ~15 µm). Todas las afirmaciones de voz y pantalla quedan ✅; las hipótesis (clima de 2012) se dicen como hipótesis y la cifra de −16 % dice de qué es, de dónde y de qué año.
+
+## Revisión final (animación y publicación) · 29 oct 2026
+
+Revisados todos los textos en pantalla de `roya.jsx` (chips, etiquetas, tarjetas, subtítulos, textos SVG), las barras de escala contra la geometría del dibujo, `publicacion.md` completo (7 redes + comentario fijado) y las citas de `## Fuentes` del guion. La voz no cambió.
+
+| # | Afirmación (pantalla o publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Subtítulos 0–12 (resumen fiel de la voz ya verificada; «Noches más tibias: *quizá* lo aceleró» y chip «hipótesis: probablemente lo aceleró» = hipótesis) | ✅ | [AV] | "This likely decreased the latency period of the disease." | 2012 |
+| F2 | Etiquetas «lado curvo: verruguitas» / «lado recto: liso» | ✅ | [TA] | "strongly warted on the convex face, smooth on the straight or concave face" | 2017 |
+| F3 | «haustorio = "chupón"» · «solo vive en tejido vivo» | ✅ | [SE] | "haustorios … con éstos extraen los nutrientes"; "sobrevive únicamente en tejido vivo del hospedante" | 2019 |
+| F4 | «⏳ 3–5 semanas después» · «viento y lluvia las dispersan» | ✅ | [TA], [SE] | "Approximately 3 weeks after infection…"; latencia "entre 31 y 37 días"; "favorecen la dispersión del hongo … el viento y la lluvia" | 2017 / 2019 |
+| F5 | Gráfica «precio del café» que baja, «años 1880» · chip «siglo XIX · roya + precios bajos» | ✅ | [MC] | "in the 1880s, as Brazilian production began to expand globally and coffee prices began to fall" | 2020 |
+| F6 | Mapa de Ceilán con «Colombo» (punto en 6.93° N, 79.86° E) y matas de té en el centro de la isla; «Ceilán (hoy Sri Lanka)» | ✅ | [TA], [CAM] | Colombo está en 6.93° N 79.86° E (coordenada geográfica estándar); "much of this land had been successfully replanted with tea" | 2015–2017 |
+| F7 | TarjetaEstudio «2012–13 · Centroamérica y México · Avelino et al., Food Security, 2015» | ✅ | [AV] | "Central America and Mexico, in 2012–13"; *Food Security* 7(2): 303–321 | 2015 |
+| F8 | Barra «Centroamérica · producción · 2011–12 / 2012–13 · −16 %», solo sobre Centroamérica | ✅ | [AV] | "In Central America overall, a 16 % decrease in production was recorded for the 2012–13 harvest … compared with 2011–12" | 2012–13 |
+| F9 | 5 puntos de roya en México: Chiapas, Veracruz, Oaxaca, Puebla y Guerrero (sin rótulo de intensidad) | ✅ | [SE] | "En México la roya del café se ha reportado en estados productores de café como: Chiapas, Veracruz, Oaxaca, Puebla, Guerrero, Hidalgo…"; en el Cuadro 1: "México (San Luis Potosí, Veracruz, Puebla, Guerrero, Chiapas y Oaxaca)". Los puntos marcan presencia, no daño medido en 2012–13; como no llevan cifra, pasa | 2019 |
+| F10 | Termómetros «Guatemala · 2012», «mínimas +0.9 °C», «máximas −1.2 °C» | ✅ | [AV] | "in 2012, minimum daily temperatures increased by 0.9 °C, whereas maximum daily temperatures decreased by 1.2 °C on average" (Guatemala) | 2012 |
+| F11 | «híbrido de Timor × Caturra → Catimor» · «la roya evoluciona» | ✅ | [TA], [AV] | "Caturra × HDT CIFC832/1 and Villa Sarchi × HDT CIFC832/2 … gave rise to the Catimor and Sarchimor populations, respectively"; "Some cultivars however have lost resistance, confirming that coffee rust can evolve" | 2017 / 2015 |
+| F12 | Barras: 30 µm = espora (L 360 px = barra 360 px → 30 µm) y estoma (180 px escena 3, 85 px con barra de 170 px escena 5 → ~15 µm) | ✅ | [TA], [MS] | "28–36 × 18–28 µm"; "Mean stomatal guard cell length (μm)" 14.03–16.34 | 2017 / 2011 |
+| F13 | Barras: 5 cm (hoja de ~16 cm), 1 m (cafeto de ~2 m), 100 km Ceilán (160 px/° lat → 144 px ≈ 100 km), 500 km mapa (≈ 4.8° → 111–116 px), 10 cm (taza) | ✅ | geometría del `.jsx` | Escalas consistentes con el dibujo; hoja de cafeto y arbusto podado de ~2 m son tamaños normales (dibujo esquemático) | — |
+| F14 | publicacion.md: «pérdidas de cosecha de hasta 35 %» (YouTube, LinkedIn) | ✅ | [TA] | "The disease can cause yield losses of up to 35%" | 2017 |
+| F15 | publicacion.md: «unas tres semanas después de la infección … salen por los estomas en forma de ramillete» | ✅ | [TA] | "Approximately 3 weeks after infection, urediniosporic sori protrude through the stomata in a bouquet shape." | 2017 |
+| F16 | publicacion.md: «unos 30 × 20 µm», «capa de agua», «parásito obligado» | ✅ | [SE] | "(30µm de largo x 20µm de ancho)"; "capa de agua en el envés"; "parásito obligado" | 2019 |
+| F17 | publicacion.md: «en 2012, en 1,224 fincas de Guatemala, las mínimas subieron 0.9 °C y las máximas bajaron 1.2 °C … probablemente acortó el tiempo que tarda el hongo en volver a producir esporas» | ✅ | [AV] | "+0.9 °C/-1.2 °C on average in 2012 compared with prevailing climate, in 1224 farms from Guatemala). This likely decreased the latency period of the disease." | 2012 |
+| F18 | publicacion.md: Ceilán, años 1880, roya + caída de precios, cafetaleros al té; «que por eso los ingleses tomen té es un mito» | ✅ | [MC] | "They couldn't manage the rust and the low prices together. They pretty much en masse abandoned coffee for tea."; "you're not going to find it with the coffee rust in Ceylon." | 2020 |
+| F19 | publicacion.md: híbrido de Timor = cruza natural *C. arabica* × *C. canephora*; Catimor y Sarchimor; algunas perdieron resistencia | ✅ | [TA], [AV] | "natural hybrids between C. arabica and C. canephora"; "…gave rise to the Catimor and Sarchimor populations"; "Some cultivars however have lost resistance" | 2017 / 2015 |
+| F20 | publicacion.md (LinkedIn): factores económicos (precios bajos → mal manejo) y clima; propuestas: resistencia duradera, alerta temprana, manejo adaptado al cambio climático | ✅ | [AV] | "Low profitability led to suboptimal coffee management"; "Coffee breeding for durable rust resistance"; "early warning systems"; "crop management systems adapted to climate change" | 2015 |
+| F21 | publicacion.md: −16 % (TikTok, IG, YouTube, LinkedIn, X) dice que es de la producción de Centroamérica, 2012–13 vs 2011–12 | ✅ | [AV] | Igual que F8 | 2012–13 |
+| F22 | publicacion.md: 7 redes (TikTok, Instagram, YouTube, Facebook, LinkedIn, X, Threads) + comentario fijado; referencias bibliográficas correctas (autores, revista, volumen, páginas, URL) | ✅ | [AV], [TA], [SE], [MC], [MS] | Referencias cotejadas con los PDF y páginas abiertas | — |
+| F23 | Citas de `## Fuentes` del guion (Avelino, Talhinhas, SENASICA, McCook, Cambridge): frases textuales coinciden con lo abierto | ✅ | todas | Cotejadas una por una | — |
+
+Nota no bloqueante: Mishra et al. 2011 (tamaño del estoma, ~15 µm) está en la descripción de YouTube pero no en `## Fuentes` del guion ni en el comentario fijado; conviene agregarlo al guion. No es una cifra que salga en pantalla ni en la voz.
+
+Resumen: voz, textos en pantalla, barras de escala, `publicacion.md` y citas quedan todos ✅; las hipótesis (clima de 2012) se dicen como hipótesis y cada cifra dice de qué es, de dónde y de qué año.
+
+VEREDICTO: APROBADO

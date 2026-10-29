@@ -41,7 +41,7 @@ Descripción:
 Esa madera no está embrujada: la hace brillar un hongo que vive adentro.
 A la madera podrida que brilla de noche se le ha llamado "foxfire" (fuego falso). La luz sale de hongos: en Armillaria brillan los abanicos de micelio bajo la corteza, y en Panellus, Neonothopanus y Mycena brillan las setas. Es rarísimo: alrededor de 100 especies de hongos del orden Agaricales producen luz, todas con la misma reacción química.
 La química (Kotlobay et al., 2018): el hongo convierte ácido cafeico, un compuesto muy común, en hispidina (enzima hispidina sintasa). Otra enzima, H3H, la convierte en 3-hidroxihispidina: la luciferina, el combustible. La luciferasa la junta con oxígeno y sale luz verde, con un máximo cerca de 520–530 nm. El sobrante (oxiluciferina) se recicla de regreso a ácido cafeico.
-¿Para qué gasta energía en brillar? En marzo de 2013, en la Mata dos Cocais (Altos, Piauí, Brasil), Oliveira y su equipo pusieron hongos falsos de acrílico con un LED verde y pegamento sin olor, y otros iguales apagados. En 5 noches, con 19 trampas de cada tipo, las encendidas atraparon 42 insectos y las apagadas 12; las diferencias fueron claras en moscas y escarabajos. Su hipótesis: la luz atrae insectos que podrían dispersar las esporas, algo útil bajo el bosque, donde casi no hay viento. En el mismo estudio, el brillo del micelio de Neonothopanus gardneri sigue un reloj circadiano de unas 22 h a 25 °C.
+¿Para qué gasta energía en brillar? En marzo de 2013, en la Mata dos Cocais (Altos, Piauí, Brasil), Oliveira y su equipo pusieron hongos falsos de acrílico con un LED verde y pegamento sin olor, y otros iguales apagados. En 5 noches, con 19 trampas de cada tipo, las encendidas atraparon 42 insectos y las apagadas 12; las diferencias fueron claras en moscas y escarabajos. Su hipótesis: la luz atrae insectos que podrían dispersar las esporas, algo útil bajo el bosque, donde el viento corre mucho menos. En el mismo estudio, el brillo del micelio de Neonothopanus gardneri sigue un reloj circadiano de unas 22 h a 25 °C.
 Dato extra: un estudio de genomas de Mycena (Ke et al., 2020) estima que el grupo de genes de la luz se originó hace unos 160 millones de años, a finales del Jurásico. Y en 2019 se describieron, en bosques de niebla de México, seis especies nuevas de Mycena que brillan.
 El dibujo es esquemático.
 Fuentes:
@@ -49,7 +49,7 @@ Fuentes:
 - Oliveira, A. G. et al. (2015). Circadian Control Sheds Light on Fungal Bioluminescence. Current Biology 25(7): 964–968. https://pmc.ncbi.nlm.nih.gov/articles/PMC4382382/
 - Ke, H.-M. et al. (2020). Mycena genomes resolve the evolution of fungal bioluminescence. PNAS 117(49): 31267–31277. https://pmc.ncbi.nlm.nih.gov/articles/PMC7733832/
 - Blanchette, R. A. (2024). Bioluminescent fungi. Fungi 17(1). https://www.fungimag.com/v17i1/V17I1-Blanchette.pdf
-- Cortés-Pérez, A. et al. (2019). New species and records of bioluminescent Mycena from Mexico. Mycologia 111(2). https://doi.org/10.1080/00275514.2018.1554172
+- Cortés-Pérez, A. et al. (2019). New species and records of bioluminescent Mycena from Mexico. Mycologia 111(2): 319–338. https://doi.org/10.1080/00275514.2018.1554172
 ¿Has visto algún hongo brillar en el bosque? 👇
 Shot Fungi Mati #23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -96,6 +96,6 @@ Kotlobay, A. A. et al. (2018). Genetically encodable bioluminescent system from 
 Oliveira, A. G. et al. (2015). Circadian Control Sheds Light on Fungal Bioluminescence. Current Biology 25(7): 964–968. https://pmc.ncbi.nlm.nih.gov/articles/PMC4382382/
 Ke, H.-M. et al. (2020). Mycena genomes resolve the evolution of fungal bioluminescence. PNAS 117(49): 31267–31277. https://pmc.ncbi.nlm.nih.gov/articles/PMC7733832/
 Blanchette, R. A. (2024). Bioluminescent fungi. Fungi 17(1). https://www.fungimag.com/v17i1/V17I1-Blanchette.pdf
-Cortés-Pérez, A. et al. (2019). New species and records of bioluminescent Mycena from Mexico. Mycologia 111(2). https://doi.org/10.1080/00275514.2018.1554172
+Cortés-Pérez, A. et al. (2019). New species and records of bioluminescent Mycena from Mexico. Mycologia 111(2): 319–338. https://doi.org/10.1080/00275514.2018.1554172
 El dibujo es esquemático.
 ```
