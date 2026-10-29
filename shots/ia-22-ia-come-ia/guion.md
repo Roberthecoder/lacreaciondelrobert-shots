@@ -5,7 +5,7 @@
 - **Formato:** N4 "La imagen que se llena" (al revés: una hoja de texto que se degrada generación por generación, con un contador de generaciones 0 → 9) + toques de N1 (por dentro de la máquina: la curva que pierde sus colas).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: un texto lleno de liebres de colores → "no está obsesionada: es la novena generación".
 - **Duración:** voz 939 caracteres / 168 palabras (≈ 57.9 s) + cierre 3.5 s → **61.4 s** en la base.
-- **Postura de la serie:** crítica con datos (un riesgo real del entrenamiento con textos de IA) y justa: se dice que acumular datos humanos evita el colapso. Analogía de la fotocopia dicha como analogía ("como una…").
+- **Postura de la serie:** crítica con datos (un riesgo real del entrenamiento con textos de IA) y justa: se dice que acumular datos humanos evita el colapso. Analogía de la fotocopia dicha como analogía ("Como fotocopia de fotocopia…" y chip "analogía").
 
 ## Versión narrada
 

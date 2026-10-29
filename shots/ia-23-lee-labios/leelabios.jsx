@@ -287,7 +287,7 @@ function LeeLabios() {
         <TiraBocas T={T} y={1080} o={kprog(T, K.S + 2.4, K.S + 2.9)} />
         <RedNeuronal T={T} x={170} y={560} ancho={760} alto={400} onda={(T * 0.7) % 1} o={kprog(T, K.S + 2.6, K.S + 3.2)} />
       </Escena>
-      <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 2.5} anio="2018" quien="DeepMind y Google" revista="Shillingford et al. · arXiv:1807.05162" y={700} />
+      <TarjetaEstudio T={T} at={K.S + 0.5} until={K.S + 2.5} anio="2018" quien="DeepMind y Google" revista="Shillingford et al. · arXiv:1807.05162" y={700} />
       <NumeroGigante T={T} at={K.S + 2.8} until={K.D - 0.2} valor={3886} dur={1.6} sufijo=" h" etiqueta="de video de YouTube" x={660} y={430} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.S + 3.6} until={K.D - 0.2} texto="caras hablando · en inglés" y={1190} tam={32} borde={KC.cyan} />
 

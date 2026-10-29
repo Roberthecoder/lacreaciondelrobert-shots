@@ -220,7 +220,7 @@ function CerebroWatts() {
       {/* 3 · el mito del 10 % */}
       <Escena T={T} a={K.Mi} b={K.Ta}>
         <FondoLunares color={KC.lilac} />
-        {svg(<Cerebro x={540} y={860} s={1.75} T={T} id="mito" zonas={kprog(T, K.Mi + 1.4, K.Mi + 3.4)} />)}
+        {svg(<Cerebro x={540} y={800} s={1.5} T={T} id="mito" zonas={kprog(T, K.Mi + 1.4, K.Mi + 3.4)} />)}
       </Escena>
       <MitoTachado T={T} at={K.Mi + 0.1} tacharEn={K.Mi + 1.0} until={K.Ta - 0.2} texto="«Solo usas el 10 %»" x={400} y={470} tam={50} />
       <Chip T={T} at={K.Mi + 2.0} until={K.Ta - 0.2} texto="en un día: casi todo se enciende" y={1110} tam={38} borde={KC.ink} />
@@ -272,7 +272,7 @@ function CerebroWatts() {
       <BarrasW T={T} at={K.E + 4.6} until={K.Co - 0.2} top={870} max={3.5} filas={[
         { valor: 0.1, texto: '0.1 W', etiqueta: 'calcular', color: KC.mint },
         { valor: 3.5, texto: '3.5 W · ×35', etiqueta: 'mandar señales lejos', color: KC.orange, at: K.E + 6.0 }]} />
-      <Chip T={T} at={K.E + 6.6} until={K.Co - 0.2} texto="estimación teórica · corteza humana" y={430} x={600} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.E + 6.6} until={K.Co - 0.2} texto="estimación teórica · corteza humana" y={360} x={640} tam={30} borde={KC.cyan} />
       {/* 9 · la copia: Hala Point */}
       <Escena T={T} a={K.Co} b={K.C}>
         <FondoLunares color={KC.pink} />
