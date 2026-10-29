@@ -63,3 +63,5 @@ Hecha por el mismo verificador independiente, sobre `guion.md` y `narracion.json
 El resto del guion y de la narración no cambió y sigue igual que en la tabla de arriba (✅). La nota de dibujo #17 (células de ~60 µm contra la barra de 50 µm) está anotada en "Correcciones aplicadas".
 
 **Resultado de la re-verificación: 23 de 23 afirmaciones ✅ · 0 ⚠️ · 0 ❌.**
+
+VEREDICTO: APROBADO
