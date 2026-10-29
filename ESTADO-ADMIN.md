@@ -6,7 +6,9 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 
 Última actualización: 29 oct 2026, 01:40 UTC.
 
-## PEDIDO DE 300 SHOTS (29 oct) — EN CURSO
+## PEDIDO DE 300 SHOTS (29 oct) — LISTO (16:02 UTC)
+- TERMINADO: 300/300 en la Sala (verificados, sin voz) + fes-07…fes-16. Pedido marcado "listo". Ya no hay que vigilar ni despertar
+  las 7 sesiones. PENDIENTE: juntar las 7 ramas `pedido300/*` a main (sección 6 de PRODUCCION_NUBE.md, `[sin render]`).
 - Pedido de la Sala `zu488o6qtt10bvn5j11h` (tipo serie, 50 de cada serie normal, total 300). Estado "en proceso".
 - 7 sesiones de nube (etiqueta `pedido300`), cada una en su rama, tandas de 5, suben a la Sala y suman a `hechos`:
   fun `session_0157fph1NsHjWsqeMnXBaXMC` (pedido300/fun) · bio `session_0157fpgzxExWfmVZJcsaQUpg` (pedido300/bio) ·
