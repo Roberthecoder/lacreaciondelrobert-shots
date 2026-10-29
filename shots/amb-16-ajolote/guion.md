@@ -15,15 +15,15 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Hay ajolotes en peceras de todo el mundo, pero en su casa, el último censo completo halló treinta y seis por kilómetro cuadrado. | Desde el cuadro 0: un globo terráqueo con peceritas que se encienden (un ajolote rosa con branquias plumosas en cada una). Corte con movimiento de cámara a una cuadrícula verde-agua "1 km²" casi vacía: contador grande **36**. |
-| 1 | Casa | Su casa son los canales de Xochimilco: el único lugar donde vive libre. | Vista desde arriba (esquema) de canales y chinampas con trajineras; un pin "Xochimilco, CDMX". Etiqueta "ajolote · *Ambystoma mexicanum*". |
-| 2 | Antes | En 1998, un censo de la UAM estimó unos seis mil por kilómetro cuadrado. | La cuadrícula de 1 km² se llena de puntos rosas hasta el borde; contador sube a **6,000**; chip "1998 · censo UAM". |
-| 3 | Caida | En 2008 quedaban cien. Y en 2014, la UNAM registró treinta y seis: seis de cada mil. | Los puntos se apagan en oleadas: chip "2008 · 100", luego "2014 · 36"; quedan 36 puntitos sueltos. Texto "6 de cada 1,000". |
+| 1 | Casa | Su casa son los canales de Xochimilco: casi el único lugar donde vive libre. | Vista desde arriba (esquema) de canales y chinampas con trajineras; un pin "Xochimilco, CDMX". Etiqueta "ajolote · *Ambystoma mexicanum*". |
+| 2 | Antes | En 1998, un censo de la UAM estimó seis mil por kilómetro cuadrado. | La cuadrícula de 1 km² se llena de puntos rosas hasta el borde; contador sube a **6,000**; chip "1998 · censo UAM". |
+| 3 | Caida | En 2008 quedaban cien. En 2014, la UNAM registró treinta y seis: seis de cada mil. | Los puntos se apagan en oleadas: chip "2008 · 100", luego "2014 · 36"; quedan 36 puntitos sueltos. Texto "6 de cada 1,000". |
 | 4 | Cancha | A cada uno le tocarían casi cuatro canchas de fútbol. | Zoom a un solo ajolote dentro de un rectángulo de casi 4 canchas de fútbol dibujadas (esquema); cuenta "≈ 27,800 m² cada uno". |
 | 5 | Pregunta | ¿Qué le pasó a su casa? | **Re-gancho.** "?" gigante sobre el canal; Robert grande. |
 | 6 | Causas | La ciudad se tragó los humedales, el agua se volvió salada y sucia, y trajeron carpas y tilapias para criar. | Edificios que crecen sobre el borde del humedal; el agua cambia de color (chip "salada y sucia"); entran una carpa (barbillas, escamas grandes) y una tilapia (aleta dorsal espinosa) con chip "introducidas para cría". |
-| 7 | Peces | Esos peces dominaron los canales y se comen los huevos y las crías del ajolote. | Escena bajo el agua (fondo oscuro): muchas carpas y tilapias; una cadena de huevos de ajolote en una planta y una cría con branquias; los peces se acercan. |
+| 7 | Peces | Esos peces dominaron los canales y se comen sus huevos y sus crías. | Escena bajo el agua (fondo oscuro): muchas carpas y tilapias; una cadena de huevos de ajolote en una planta y una cría con branquias; los peces se acercan. |
 | 8 | Refugio | La UNAM y chinamperos arman refugios con filtros que frenan a esos peces, pero cubren medio por ciento de los canales. | Chinampa-refugio con una malla-filtro en la entrada del canal: la carpa rebota, adentro ajolotes y plantas. Barra "0.5 % de los canales" (una franjita en una barra larga). |
-| 9 | Redes | En 2025, las redes del nuevo censo salieron vacías: solo el ADN en el agua probó que siguen ahí. | Una red sale del agua vacía; un frasco de agua con filtro y una doble hélice brillante: chip "ADN ambiental · 2025". |
+| 9 | Redes | En 2025, la primera etapa del nuevo censo sacó las redes vacías: solo el ADN en el agua probó que siguen ahí. | Una red sale del agua vacía; un frasco de agua con filtro y una doble hélice brillante: chip "ADN ambiental · 2025". |
 | 10 | Cierre | La mayoría de los de pecera vienen de treinta y cuatro que llegaron a París en 1863. Están en todo el mundo, menos en su casa. | Barco/caja "1863 · París · 34" de la que salen flechas a peceras en el globo; **regreso a la imagen del inicio**: el globo lleno de peceras y la cuadrícula de 1 km² con sus 36 puntitos. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert apuntando a cámara. |
 
@@ -47,7 +47,7 @@
    > "The Mexican axolotl (Ambystoma mexicanum) is an icon of culture, a revered aquarium pet, and a highly valued animal model in biomedical research."
    - Años: 100 = 2008; envío a París = 1863.
 
-3. **Zambrano et al. (2010), "Invasive potential of common carp (*Cyprinus carpio*) and Nile tilapia (*Oreochromis niloticus*) in American freshwater systems" — resumen, *Biological Invasions*:** https://link.springer.com/article/10.1007/s10530-010-9697-8
+3. **Zambrano, Valiente y Vander Zanden (2010), "Food web overlap among native axolotl (*Ambystoma mexicanum*) and two exotic fishes: carp (*Cyprinus carpio*) and tilapia (*Oreochromis niloticus*) in Xochimilco, Mexico City", *Biological Invasions* — resumen:** https://link.springer.com/article/10.1007/s10530-010-9697-8
    > "Two exotic fishes, common carp (Cyprinus carpio) and tilapia (Oreochromis niloticus), were introduced more than 20 years ago into Xochimilco for aquaculture, and now dominate the system in terms of biomass and numbers."
    - Año del dato: 2010 (por eso la voz dice "dominaron", en pasado).
 

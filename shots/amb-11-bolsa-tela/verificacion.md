@@ -39,4 +39,16 @@
 2. **Pantalla escena ReinoUnido (⚠️):** cambiar la tarjeta a **"Agencia Ambiental de Inglaterra · 2011 (datos de 2006)"** (o "Environment Agency, Inglaterra y Gales"). La voz "En el Reino Unido, con datos de 2006…" puede quedarse: el estudio es para el Reino Unido.
 3. Nota menor (no bloquea): la bolsa danesa de referencia es LDPE de 24 g y 40 µm; si se dibuja "tipo camiseta" que se vea como bolsa normal de súper, no ultradelgada.
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Segunda ronda
+
+29 oct 2026 · re-verificado con el texto actual de `guion.md` y `narracion.json`. Las demás líneas de voz no cambiaron.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|
+| (Voz 1) "Lo publicó en 2018 la agencia ambiental de Dinamarca, de la fábrica a la basura." | ✅ | DK portada y p. 12 | "Environmental Project No. 1985 … February 2018" · "This study was commissioned by the Danish Environmental Protection Agency (Miljøstyrelsen)" · "(“cradle-to-grave”)" | 2018 |
+| (Pantalla, Estudio) "Agencia de Protección Ambiental de Dinamarca · 2018" (cálculo de DTU por encargo) | ✅ | DK p. 12 | "The study was carried out by DTU Environment in the period October – December 2017." | 2018 |
+| (Pantalla, ReinoUnido) "Agencia Ambiental de Inglaterra · 2011 (datos de 2006)" | ✅ (la agencia es de Inglaterra y Gales; "de Inglaterra" es correcto, su sede y su nombre actual) | UK portada | "The Environment Agency is the leading public body protecting and improving the environment in England and Wales." · "…carrier bags for the UK in 2006." | 2011 (datos 2006) |
+
+Las dos ⚠️ de la primera ronda quedan corregidas. Todas las afirmaciones están en ✅.
+
+VEREDICTO: APROBADO
