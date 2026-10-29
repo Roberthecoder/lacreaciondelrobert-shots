@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa hormiga trae un hongo zombi. A ti casi ningún hongo te hace eso: tu calor frena a la mayoría."
+      "texto": "Esa hormiga trae un hongo zombi. A ti, casi ningún hongo: tu calor frena a la mayoría."
     },
     {
       "escena": "Hormiga",
@@ -25,7 +25,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2009 revisaron datos de cuatro mil ochocientas dos cepas de una colección de Utrecht, Países Bajos."
+      "texto": "En 2009 revisaron datos de cuatro mil ochocientas dos cepas de una colección en Utrecht."
     },
     {
       "escena": "Resultado",
@@ -33,11 +33,11 @@
     },
     {
       "escena": "Grado",
-      "texto": "Entre treinta y cuarenta grados, cada grado más dejaba fuera a otro seis por ciento."
+      "texto": "Entre treinta y cuarenta grados, cada grado más excluía a otro seis por ciento."
     },
     {
       "escena": "Fiebre",
-      "texto": "Y sugieren que la fiebre podría excluir a más."
+      "texto": "Y la fiebre podría excluir a más, sugieren."
     },
     {
       "escena": "Hipotesis",
@@ -45,11 +45,11 @@
     },
     {
       "escena": "Auris",
-      "texto": "Pero ojo: la levadura Candida auris crece bien a cuarenta grados."
+      "texto": "Ojo: la levadura Candida auris crece bien a cuarenta grados."
     },
     {
       "escena": "Clima",
-      "texto": "En 2019 se propuso que el calentamiento global la hizo adaptarse: otra hipótesis."
+      "texto": "En 2019 propusieron que el calentamiento global la hizo adaptarse: otra hipótesis."
     },
     {
       "escena": "Defensas",
@@ -57,7 +57,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que el zombi es cosa de hormigas; contra casi todos los demás hongos, traes un escudo de treinta y siete grados."
+      "texto": "El zombi es cosa de hormigas; contra casi todos los demás, traes un escudo de treinta y siete grados."
     }
   ]
 }

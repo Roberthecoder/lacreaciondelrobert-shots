@@ -6,9 +6,8 @@
   cierre en la misma imagen del inicio, ya transformada.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Ese champiñón no es solo comida: es una fábrica de
   vitamina D que se prende con sol." (con el #4, un número que contradice, en el re-gancho: 15 minutos bastan).
-- **Duración:** voz 995 caracteres / 185 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base (se ajusta con
-  `estimar-escenas.mjs` en la fase 3).
-- **Voz:** pendiente de aprobación de Robert (~1,000 créditos de ElevenLabs).
+- **Duración:** voz 946 caracteres / 174 palabras (≈ 58.4 s según `estimar-escenas.mjs`) + cierre 3.2 s → **≈ 61.6 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **Tono:** curioso y práctico (cocina de casa). No es consejo médico.
 
 ## Versión narrada
