@@ -47,8 +47,8 @@ function BarraEsc({ txt, largo, x = 60, y = 1600, color = KC.ink }) {
 // Odorante: tiol (con S) o ácido (con O=O). Los carbonos van sin letra.
 function Odorante({ x, y, s = 1, tipo = 'tiol', o = 1, rot = 0, brillo = 0 }) {
   const at = tipo === 'tiol'
-    ? [[-34, 0, 22, QA.C, ''], [0, -12, 22, QA.C, ''], [34, 0, 22, QA.C, ''], [0, -58, 28, QA.S, 'S'], [68, -14, 20, QA.O, 'O']]
-    : [[-34, 0, 22, QA.C, ''], [0, -12, 22, QA.C, ''], [34, 0, 22, QA.C, ''], [68, -14, 22, QA.C, ''], [92, -48, 20, QA.O, 'O'], [100, 10, 20, QA.O, 'O']];
+    ? [[-34, 0, 22, '#9aa1ad', ''], [0, -12, 22, '#9aa1ad', ''], [34, 0, 22, '#9aa1ad', ''], [0, -58, 28, QA.S, 'S'], [68, -14, 20, QA.O, 'O']]
+    : [[-34, 0, 22, '#9aa1ad', ''], [0, -12, 22, '#9aa1ad', ''], [34, 0, 22, '#9aa1ad', ''], [68, -14, 22, '#9aa1ad', ''], [92, -48, 20, QA.O, 'O'], [100, 10, 20, QA.O, 'O']];
   const en = tipo === 'tiol' ? [[0, 1], [1, 2], [1, 3], [2, 4]] : [[0, 1], [1, 2], [2, 3], [3, 4], [3, 5]];
   return <g opacity={o}>
     {brillo > 0 && tipo === 'tiol' && <circle cx={x} cy={y - 58 * s} r={(46 + Math.sin(brillo * 20) * 6) * s} fill={KC.yellow} opacity={0.35} />}
@@ -98,7 +98,7 @@ function Barra({ x, y, s = 1, rot = 0, color = KC.white, banda = KC.pink, texto 
     <path d="M -70 -200 Q -70 -250 0 -252 Q 70 -250 70 -200 Z" fill="#f6f3ec" stroke={KC.ink} strokeWidth={8} />
     <rect x={-90} y={-200} width={180} height={400} rx={36} fill={color} stroke={KC.ink} strokeWidth={9} />
     <rect x={-90} y={-60} width={180} height={130} fill={banda} stroke={KC.ink} strokeWidth={7} />
-    <text x={0} y={30} textAnchor="middle" style={{ font:`400 ${texto.length > 3 ? 44 : 80}px ${KF.titulo}` }} fill={KC.ink}>{texto}</text>
+    <text x={0} y={30} textAnchor="middle" style={{ font:`400 ${texto.length > 3 ? 30 : 80}px ${KF.titulo}` }} fill={KC.ink}>{texto}</text>
   </g>;
 }
 function Flor({ x, y, s = 1, rot = 0, color = '#ff8fc8' }) {
@@ -216,8 +216,8 @@ function Desodorante() {
             return T >= t0 ? <g key={i}><Atomo x={klerp(x0, tx, u)} y={klerp(y0, ty, u)} r={26} color="#d6dbe3" letra="Al" tam={22} /></g> : null; })}
           {tapon > 0 && <rect x={497} y={668} width={86} height={110 * tapon} rx={14} fill="rgba(160,168,180,.85)" stroke={KC.ink} strokeWidth={5} />}
         </SvgCapa>
-        <Etq T={T} at={K.An + 0.5} until={K.Pr - 0.3} x={480} y={980} texto="conducto del sudor" lado="izq" tam={32} />
-        <Etq T={T} at={K.An + 1.2} until={K.Pr - 0.3} x={600} y={560} texto="sales de aluminio" tam={32} color="#d6dbe3" />
+        <Etq T={T} at={K.An + 0.5} until={K.Pr - 0.3} x={480} y={980} texto="conducto del sudor" lado="izq" tam={36} />
+        <Etq T={T} at={K.An + 1.2} until={K.Pr - 0.3} x={470} y={520} texto="sales de aluminio" lado="izq" tam={36} color="#d6dbe3" />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
@@ -253,8 +253,8 @@ function Desodorante() {
             const x = (1 - u) * (1 - u) * 300 + 2 * u * (1 - u) * 540 + u * u * 780, y = (1 - u) * (1 - u) * 820 + 2 * u * (1 - u) * 600 + u * u * 860; return <Gen x={x} y={y} T={T} />; })()}
           {(() => { const v = kprog(T, K.Pb + 2.1, K.Pb + 3.8); return v > 0 ? <g><Odorante x={850} y={klerp(860, 700, v)} tipo="tiol" s={0.9} brillo={T} /><Nube T={T} x={860} y={720} f={v * 0.7} r={100} color={OLOR} seed={11} /></g> : null; })()}
         </SvgCapa>
-        <Etq T={T} at={K.Pb + 0.3} until={K.Cu - 0.3} x={200} y={1090} texto="S. hominis" it tam={34} color={KC.ink} />
-        <Etq T={T} at={K.Pb + 0.6} until={K.Cu - 0.3} x={900} y={1150} texto="S. aureus (no lo hacía)" it lado="izq" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.Pb + 0.3} until={K.Cu - 0.3} x={100} y={1060} texto="S. hominis" it tam={36} color={KC.ink} />
+        <Etq T={T} at={K.Pb + 0.6} until={K.Cu - 0.3} x={1000} y={1100} texto="S. aureus (no lo hacía)" it lado="izq" tam={34} color={KC.ink} />
       </Escena>
       {/* 9 · lo curioso: antes que nuestra especie */}
       <Escena T={T} a={K.Cu} b={K.Al}>
@@ -304,7 +304,7 @@ function Desodorante() {
       <Lupa T={T} at={K.Ci + 0.6} until={FIN} x={820} y={880} r={180} fx={AX + 5} fy={AY - 20} interior={(Tl, r) => <MiniGota T={Tl} r={r} t0={K.Ci + 0.6} />} etiqueta="AL MICROSCOPIO" tinte={KC.mint} />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.9} until={K.Su - 0.2} texto="huele tu sudor" x={790} y={1060} tam={40} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.9} until={K.Su - 0.2} texto="huele tu sudor" x={810} y={1170} tam={40} />
       <Chip T={T} at={K.G + 2.6} until={K.Su - 0.2} texto="huelen las bacterias" y={1500} tam={42} borde={OLOR} />
       <Chip T={T} at={micro + 0.9} until={K.Ba - 0.2} texto="sudor fresco: sin olor" y={1500} tam={42} borde={SUDOR} />
       <Etq T={T} at={micro + 1.4} until={K.Ba + 2.2} x={330} y={1010} texto="aminoácidos" lado="izq" tam={30} color={KC.gold2} />
@@ -320,7 +320,7 @@ function Desodorante() {
       <Chip T={T} at={K.Es + 5.0} until={K.Pb - 0.2} texto="suelta el tioalcohol" y={1500} tam={44} borde={ENZ} />
       <Chip T={T} at={K.Pb + 2.4} until={K.Cu - 0.2} texto="3M3SH detectado" y={1500} tam={44} borde={OLOR} mono />
       <Chip T={T} at={K.Cu + 1.0} until={K.Al - 0.2} texto="hipótesis de los autores" y={1500} tam={42} borde={KC.lilac} />
-      <TarjetaEstudio T={T} at={K.Al + 2.4} until={K.Ci - 0.3} anio="2026" quien="American Cancer Society" revista="evidencia limitada" y={1520} />
+      <TarjetaEstudio T={T} at={K.Al + 2.4} until={K.Ci - 0.3} anio="2026" quien="American Cancer Society" revista="evidencia limitada" y={1580} />
       <Etq T={T} at={K.Ci + 1.2} until={K.Ou} x={560} y={1200} texto="sudor: sin olor" lado="izq" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="el olor = química de bacterias" y={1500} tam={38} borde={OLOR} />
 

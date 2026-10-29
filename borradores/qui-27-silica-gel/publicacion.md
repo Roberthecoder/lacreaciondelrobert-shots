@@ -73,7 +73,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas bolitas de «no comer» no son veneno: son un material con una superficie interna enorme diseñado para atrapar agua.
 La sílica gel es dióxido de silicio amorfo y poroso. En un estudio de 2023 (Jacobs et al., ACS Omega), tres sílica gel tenían entre 453 y 641 m² de superficie por gramo, más que una cancha de básquetbol. Sus paredes están cubiertas de grupos silanol (Si–OH) que retienen el agua por puentes de hidrógeno: adsorción, no absorción.
-La advertencia tiene sentido por otras razones: el riesgo de atragantamiento en niños pequeños y el indicador de cloruro de cobalto de las versiones azules, tóxico aunque en baja concentración. En un estudio israelí publicado en 2015 (Lavon y Bentur), un año de llamadas a un centro nacional de toxicología sumó 546 casos, el 91.4 % en menores de 6 años; solo el 2.7 % tuvo síntomas, casi todos leves. Los autores señalan además que muchas visitas a urgencias se podían evitar consultando primero al centro de toxicología.
+La advertencia tiene sentido por otras razones: el riesgo de atragantamiento en niños pequeños y el indicador de cloruro de cobalto de las versiones azules, tóxico aunque en baja concentración. En un estudio israelí publicado en 2015 (Lavon y Bentur), un año de llamadas a un centro nacional de toxicología sumó 546 casos, el 91.4 % en menores de 6 años; solo el 2.7 % tuvo síntomas, casi todos leves. Los autores concluyen además que la ingesta de sílica gel causa visitas innecesarias a clínicas y urgencias, y que consultar primero al centro de toxicología puede evitarlas.
 ¿Qué otros materiales de uso diario tienen una química más interesante de lo que parece?
 Shot Químico #27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

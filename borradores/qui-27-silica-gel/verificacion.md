@@ -53,4 +53,6 @@ Notas:
 
 Sin ❌ ni ⚠️ pendientes: todas las afirmaciones de voz y pantalla quedan ✅.
 
+- publicacion.md (29 oct 2026): (1) LinkedIn, visitas evitables ⚠️→✅ corregido: decía "muchas visitas a urgencias se podían evitar"; Lavon y Bentur 2015 dicen "is a source of unnecessary referrals to health care facilities" y "The availability of poison information center services may prevent unnecessary referrals" (no cuantifican "muchas" y no son solo urgencias); ahora dice "…causa visitas innecesarias a clínicas y urgencias, y que consultar primero al centro de toxicología puede evitarlas". (2) Enjuagar la boca y llamar al centro de toxicología ✅ Poison Control: "If you ate silica gel, rinse out your mouth." y recomienda contactar a un centro de toxicología en línea o por teléfono (página vigente 2026).
+
 VEREDICTO: APROBADO
