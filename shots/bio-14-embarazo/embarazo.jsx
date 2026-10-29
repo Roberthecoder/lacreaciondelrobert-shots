@@ -193,7 +193,7 @@ function Embarazo() {
   const YT = 760, sFix = 1.5;
   const tipFijo = YT + 62 * sFix + 52 * sFix;          // puntas de los brazos del anticuerpo fijo
   const yStop = tipFijo + 26 + 52 * sFix;              // bisagra del anticuerpo con oro cuando queda atrapado
-  const xsT = [190, 430, 670, 910];
+  const xsT = [270, 500, 730, 960];
   const complejo = (i, t0, conH = true, xx) => {
     const v = 420, yy = Math.max(conH ? yStop : -400, 1750 - (T - t0) * v);
     const atrapado = conH && yy <= yStop + 0.5;
@@ -225,23 +225,24 @@ function Embarazo() {
         <Capa>
           <path d="M -40 520 Q 300 460 520 560" stroke={KC.ink} strokeWidth={84} fill="none" /><path d="M -40 520 Q 300 460 520 560" stroke="#d7263d" strokeWidth={68} fill="none" />
           {[0, 1, 2, 3].map((i) => { const u = ((T - K.Or) * 0.5 + i / 4) % 1; return <HCG key={i} x={klerp(0, 500, u)} y={520 - Math.sin(u * Math.PI) * 50 + (u > 0.8 ? 0 : 0)} s={1.1} rot={T * 60 + i * 40} />; })}
-          <FlechaCurva x1={560} y1={600} x2={700} y2={820} p={kprog(T, K.Or + 0.3, K.Or + 1.0)} curva={60} color={KC.ink} T={T} />
-          <path d="M 740 840 Q 690 940 740 980 Q 790 940 740 840 Z" transform={`translate(0 ${klerp(0, 420, kprog(T, K.Or + 1.2, K.Or + 2.1, kEase.entra || undefined))})`} fill="#ffe27a" stroke={KC.ink} strokeWidth={7} opacity={1 - kprog(T, K.Or + 2.05, K.Or + 2.2)} />
-          <Prueba T={T} x={740} y={1180} s={0.5} rot={0} t={0} c={0} />
-          <HCG x={720} y={900} s={0.8} o={1 - kprog(T, K.Or + 1.2, K.Or + 1.4)} />
+          <FlechaCurva x1={540} y1={590} x2={710} y2={650} p={kprog(T, K.Or + 0.3, K.Or + 1.0)} curva={60} color={KC.ink} T={T} />
+          <Prueba T={T} x={600} y={1050} s={0.6} rot={-90} t={0} c={0} letras={false} />
+          <g transform={`translate(0 ${klerp(0, 250, kprog(T, K.Or + 1.2, K.Or + 2.1))})`} opacity={1 - kprog(T, K.Or + 2.05, K.Or + 2.25)}>
+            <path d="M 750 600 Q 690 730 750 790 Q 810 730 750 600 Z" fill="#ffe27a" stroke={KC.ink} strokeWidth={7} />
+            <HCG x={752} y={735} s={0.7} rot={T * 40} /></g>
         </Capa>
       </Escena>
       {/* 3 · la orina sube sola por la tira, como en una servilleta */}
       <Escena T={T} a={K.Su} b={K.Ox + 0.6} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <TiraLado x={330} y={900} frente={kprog(T, K.Su + 0.2, K.Ox + 0.6)} />
-          <Servilleta T={T} x={790} y={880} frente={kprog(T, K.Su + 0.2, K.Ox + 0.6)} />
-          <path d="M 330 1420 l 0 -60 m -26 26 l 26 -26 l 26 26" stroke={KC.ink} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={1 - kprog(T, K.Su + 2, K.Su + 2.5)} />
+          <TiraLado x={420} y={860} h={760} frente={kprog(T, K.Su + 0.2, K.Ox + 0.6)} />
+          <Servilleta T={T} x={830} y={800} frente={kprog(T, K.Su + 0.2, K.Ox + 0.6)} />
+          <path d="M 300 1180 l 0 -60 m -26 26 l 26 -26 l 26 26" stroke={KC.ink} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={1 - kprog(T, K.Su + 2, K.Su + 2.5)} />
         </Capa>
       </Escena>
       {/* 4 · Lupa: los anticuerpos con oro se sueltan y atrapan la hCG */}
-      <Lupa T={T} at={K.Ox} until={K.Sa - 0.2} x={540} y={820} r={330} fx={330} fy={1040} tinte={ORO2} etiqueta="AL MICROSCOPIO · LA TIRA"
+      <Lupa T={T} at={K.Ox} until={K.Sa - 0.2} x={540} y={820} r={330} fx={420} fy={1035} tinte={ORO2} etiqueta="AL MICROSCOPIO · LA TIRA"
         interior={(TT, r) => <svg width={r * 2} height={r * 2}>
           <rect width={r * 2} height={r * 2} fill="#0b1220" />
           {Array.from({ length: 8 }, (_, i) => <line key={i} x1={i * 90 - 40} y1={0} x2={i * 90 + 60} y2={r * 2} stroke="#2a4466" strokeWidth={10} />)}
@@ -256,7 +257,7 @@ function Embarazo() {
           <Fibras T={T} /><Corriente T={T} />
           <LineaFija y={YT} xs={xsT} color={KC.mint} s={sFix} etiqueta="línea T" />
           {xsT.map((xx, i) => complejo(i, K.Sa - 1.0 + i * 0.45, true, xx))}
-          {complejo(9, K.Sa + 1.2, false, 550)}
+          {complejo(9, K.Sa + 1.2, false, 615)}
         </Capa>
       </Escena>
       {/* 6 · el oro amontonado pinta la rayita */}
@@ -304,7 +305,7 @@ function Embarazo() {
             const junta = kprog(T, K.Es + 2.4, K.Es + 4.0, kEase.suave), sale = kprog(T, K.Es + 4.2, K.Es + 7.2);
             const xb = klerp(270, 540, junta), xm = klerp(810, 540, junta), yy = 900;
             return <g>
-              <Raton x={230} y={1500} s={0.8} />
+              <Raton x={200} y={1690} s={0.7} />
               {junta < 1 ? <g><Celula x={xb} y={yy} r={110} color="#9fe3ff" nucleo="#2b6a9e" /><Celula x={xm} y={yy} r={150} color="#ffb38a" nucleo="#a8452a" /></g>
                 : <Celula x={540} y={yy} r={190 + Math.sin(T * 3) * 4} color="#ffd38a" nucleo="#7a3fa0" />}
               {junta >= 1 && Array.from({ length: 10 }, (_, i) => { const a = (i / 10) * Math.PI * 2 + 0.3, d = klerp(200, 470, ((T - K.Es - 4.2) * 0.35 + i * 0.1) % 1);
@@ -339,35 +340,35 @@ function Embarazo() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.9} until={K.Im - 0.3} texto="no es tinta: es oro + anticuerpos" y={1500} tam={40} borde={ORO} />
-      <Etq T={T} at={K.G + 1.0} until={K.Im - 0.3} x={560} y={790} texto="T · prueba" tam={38} color={KC.ink} />
-      <Etq T={T} at={K.Im + 2.4} until={K.Or - 0.2} x={700} y={640} texto="hCG" tam={46} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.0} until={K.Im - 0.3} x={262} y={800} texto="prueba" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Im + 2.4} until={K.Or - 0.2} x={660} y={1000} texto="hCG" tam={46} color={KC.ink} />
       <Chip T={T} at={K.Im + 0.4} until={K.Im + 2.3} texto="el embrión se implanta" y={1500} tam={42} borde={KC.pink} />
       <Chip T={T} at={K.Im + 2.6} until={K.Or - 0.2} texto="hCG → sangre de la madre" y={1500} tam={42} borde="#d7263d" />
       <Chip T={T} at={K.Or + 0.3} until={K.Su - 0.2} texto="sangre → orina → prueba" y={1500} tam={42} borde={KC.ink} />
       <Chip T={T} at={K.Su + 0.3} until={K.Ox - 0.1} texto="capilaridad: sube sola" y={1500} tam={42} borde={KC.blue} />
-      <Etq T={T} at={K.Su + 0.5} until={K.Ox - 0.1} x={420} y={540} texto="línea C" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Su + 0.7} until={K.Ox - 0.1} x={420} y={720} texto="línea T" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Su + 0.9} until={K.Ox - 0.1} x={420} y={1140} texto="anticuerpos con oro" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Su + 0.5} until={K.Ox - 0.1} x={510} y={671} texto="línea C" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Su + 0.7} until={K.Ox - 0.1} x={510} y={823} texto="línea T" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Su + 0.9} until={K.Ox - 0.1} x={510} y={1035} texto="con oro" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ox + 0.8} until={K.Sa - 0.2} texto="anticuerpo + oro atrapa la hCG" y={1500} tam={38} borde={ORO} />
       <Chip T={T} at={K.Sa + 0.3} until={K.Ra - 0.1} texto="la agarran por los dos lados" y={1500} tam={40} borde={KC.mint} />
-      <Etq T={T} at={K.Sa + 0.6} until={K.Ra - 0.1} x={40} y={1180} texto="hCG" tam={36} color={BETA} />
-      <Etq T={T} at={K.Sa + 0.8} until={K.Ra - 0.1} x={40} y={1380} texto="oro" tam={36} color={ORO2} />
+      <Etq T={T} at={K.Sa + 0.6} until={K.Ra - 0.1} x={10} y={931} texto="hCG" tam={32} color={BETA} />
+      <Etq T={T} at={K.Sa + 0.8} until={K.Ra - 0.1} x={10} y={1173} texto="oro" tam={32} color={ORO2} />
       <Chip T={T} at={K.Ra + 0.3} until={K.Pr - 0.1} texto="miles de sándwiches = rayita" y={1500} tam={40} borde={ROSA_T} />
       <Chip T={T} at={K.Pr + 0.2} until={K.Co - 0.1} texto="¿y si la prueba falló?" y={1500} tam={42} borde={KC.pink} />
       <Chip T={T} at={K.Co + 0.4} until={K.Es - 0.1} texto="control: sale haya hormona o no" y={1500} tam={38} borde={CABRA} />
       <Chip T={T} at={K.Es + 0.2} until={K.Es + 2.3} texto="monoclonales: todos idénticos" y={1500} tam={40} borde={KC.pink} />
       <TarjetaEstudio T={T} at={K.Es + 2.4} until={K.No - 0.2} anio="1975" quien="Köhler y Milstein · Cambridge" revista="Nature · células fusionadas: hibridoma" y={480} />
-      <Etq T={T} at={K.Es + 0.6} until={K.Es + 2.3} x={160} y={700} texto="célula de bazo" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Es + 0.8} until={K.Es + 2.3} x={900} y={1100} texto="célula de mieloma" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.6} until={K.Es + 4.0} x={150} y={740} texto="célula de bazo" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.8} until={K.Es + 4.0} x={930} y={1100} texto="célula de mieloma" lado="izq" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Es + 4.3} until={K.No - 0.2} x={760} y={1160} texto="hibridoma" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Es + 0.4} until={K.No - 0.2} x={370} y={1400} texto="ratón" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.4} until={K.No - 0.2} x={340} y={1690} texto="ratón" tam={32} color={KC.ink} />
       <Chip T={T} at={K.No + 0.4} until={K.Ca - 0.1} texto="Nobel de Fisiología o Medicina" y={1500} tam={40} borde={ORO} />
       <Chip T={T} at={K.No + 0.6} until={K.Ca - 0.1} texto="Jerne · Köhler · Milstein" y={1620} tam={34} borde={KC.ink} mono />
-      <Etq T={T} at={K.Ca + 0.4} until={K.Ci - 0.1} x={760} y={560} texto="de cabra" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 0.4} until={K.Ci - 0.1} x={430} y={600} texto="de cabra" lado="izq" tam={40} color={KC.ink} />
       <Etq T={T} at={K.Ca + 1.6} until={K.Ci - 0.1} x={740} y={1140} texto="de ratón" tam={40} color={KC.ink} />
       <Chip T={T} at={K.Ca + 2.2} until={K.Ci - 0.1} texto="línea C: cabra atrapa ratón" y={1500} tam={40} borde={CABRA} />
-      <Etq T={T} at={K.Ci + 0.4} until={K.Ou} x={560} y={670} texto="C · control" tam={38} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 0.8} until={K.Ou} x={560} y={790} texto="T · hCG atrapada" tam={38} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 0.4} until={K.Ou} x={262} y={680} texto="control" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 0.8} until={K.Ou} x={262} y={800} texto="hCG" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="oro + anticuerpos + hCG" y={1500} tam={40} borde={ORO} />
       {kvisible(T, K.Ox, K.Pr) && T > K.Ox + 0.6 && <div style={{ position:'absolute', right:30, top:1640, zIndex:41, font:`700 26px ${KF.mono}`, color:'rgba(246,243,236,.75)' }}>esquema · no a escala</div>}
 
@@ -388,7 +389,7 @@ function Embarazo() {
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 4.4, 'avatar_11_sorprendido', 'gancho'],
-        [K.Im + 0.8, K.Or + 2.6, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [K.Im + 0.8, K.Or - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.Su + 0.4, K.Ox - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [K.Sa + 0.4, K.Ra - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
         [K.Pr - 0.05, K.Co + 0.4, 'avatar_07_pensativo_puno', 'grande'],

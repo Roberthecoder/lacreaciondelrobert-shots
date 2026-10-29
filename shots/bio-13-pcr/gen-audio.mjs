@@ -47,7 +47,7 @@ m.golpe(E + 0.15, 0.35, 80);
 for (let i = 0; i < 14; i++) m.burbuja(E + 0.6 + i * 0.22, 0.07, 450 + (i % 5) * 60);
 m.whoosh(E + 3.6, 0.6, 0.14);
 // 9 · la Taq vuela al tubito y aguanta 95 °C
-m.whoosh(Tq + 0.4, 1.2, 0.1); m.pop && m.pop(Tq + 1.6); m.tic(Tq + 1.6, 0.25, 1500); m.nota(Tq + 2.4, 72, 0.08, 1); m.nota(Tq + 2.45, 76, 0.07, 1);
+m.whoosh(Tq + 0.4, 1.2, 0.1); m.tic(Tq + 1.6, 0.25, 1500); m.nota(Tq + 2.4, 72, 0.08, 1); m.nota(Tq + 2.45, 76, 0.07, 1);
 // 10 · la carretera de noche y el Nobel
 m.motor(M, 4.6, 0.05);
 m.golpe(M + 2.3, 0.4, 70); m.metal(M + 2.35, 0.2, 980);

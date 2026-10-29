@@ -158,8 +158,8 @@ function Gila11() {
         <Capa>
           {[[120, 1230, 1], [930, 1260, 0.8]].map(([cx, cy, k], i) => <g key={i} transform={`translate(${cx} ${cy}) scale(${k})`}>
             <path d="M -14 0 L -14 -150 Q -14 -170 0 -170 Q 14 -170 14 -150 L 14 0 Z M 14 -90 Q 50 -90 50 -120 L 50 -140" fill="#3fbf4a" stroke={KC.ink} strokeWidth={6} /></g>)}
-          <Gila T={T} x={560} y={1060} s={1.0} lengua={lengua(K.G + 0.1)} paso={0.5} />
-          <Pluma x={klerp(-300, 330, kprog(T, K.G + 0.8, K.G + 1.5, kEase.sale))} y={760} s={0.8} rot={-8} clic={kprog(T, K.G + 2.4, K.G + 2.6)} />
+          <Gila T={T} x={560} y={985} s={1.0} lengua={lengua(K.G + 0.1)} paso={0.5} />
+          <Pluma x={klerp(-300, 330, kprog(T, K.G + 0.8, K.G + 1.5, kEase.sale))} y={700} s={0.8} rot={-8} clic={kprog(T, K.G + 2.4, K.G + 2.6)} />
         </Capa>
       </Escena>
 
@@ -172,19 +172,19 @@ function Gila11() {
             <polygon points={ptsMx(SONORA)} fill={GROSA} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.L + 1.0, K.L + 1.6)} />
             <line x1={mxProy(-117.1, 32.6)[0]} y1={mxProy(-117.1, 32.6)[1]} x2={mxProy(-106.5, 31.8)[0]} y2={mxProy(-106.5, 31.8)[1]} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />
           </MapaMexico>
-          <g opacity={kprog(T, K.L + 1.6, K.L + 2.2)}><Gila T={T} x={620} y={1120} s={0.42} lengua={lengua(K.L + 1.6)} /></g>
+          <g opacity={kprog(T, K.L + 1.6, K.L + 2.2)}><Gila T={T} x={250} y={1110} s={0.36} lengua={lengua(K.L + 1.6)} /></g>
         </Capa>
         <Etiqueta T={T} at={K.L + 1.2} until={K.H - 0.2} x={250} y={770} texto="Sonora" color={KC.ink} tam={40} />
         <Etiqueta T={T} at={K.L + 0.6} until={K.H - 0.2} x={250} y={560} texto="EE. UU. (suroeste)" color={KC.ink} tam={30} />
         <Chip T={T} at={K.L + 0.3} until={K.H - 0.3} texto="monstruo de Gila · Heloderma suspectum" y={1500} tam={36} borde={GROSA} />
-        <Chip T={T} at={K.L + 1.8} until={K.H - 0.3} texto="mide unos 50 cm" x={620} y={1000} tam={30} borde={KC.ink} />
+        <Chip T={T} at={K.L + 1.8} until={K.H - 0.3} texto="mide unos 50 cm" x={300} y={1200} tam={30} borde={KC.ink} />
       </Escena>
 
       {/* 2 · HORMONA: comes → el intestino suelta GLP-1 → el páncreas suelta insulina */}
       <Escena T={T} a={K.H} b={K.Ti} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <g transform="translate(540 0)">
+          <g transform="translate(330 -60)">
             <circle cx={0} cy={880} r={70} fill="#f1b48f" stroke={KC.ink} strokeWidth={8} />
             <path d="M -150 1260 L -130 990 Q -120 950 -60 950 L 60 950 Q 120 950 130 990 L 150 1260 Z" fill="#ff6b5a" stroke={KC.ink} strokeWidth={8} />
             <path d="M -80 1170 q 30 -40 60 0 t 60 0 t 60 0 M -80 1210 q 30 -40 60 0 t 60 0 t 60 0" fill="none" stroke="#ffd6a8" strokeWidth={22} strokeLinecap="round" />
@@ -194,7 +194,7 @@ function Gila11() {
             </g>
           </g>
         </Capa>
-        <Lupa T={T} at={K.H + 0.8} until={K.Ti - 0.1} x={560} y={560} r={230} fx={520} fy={1190} tinte={GLP}
+        <Lupa T={T} at={K.H + 0.8} until={K.Ti - 0.1} x={730} y={600} r={220} fx={310} fy={1110} tinte={GLP}
           interior={(t, r) => <svg width={r * 2} height={r * 2}>
             <rect width={r * 2} height={r * 2} fill="#11202a" />
             {Array.from({ length: 6 }, (_, i) => <g key={i}>
@@ -242,10 +242,9 @@ function Gila11() {
             <rect x={-38} y={-10} width={76} height={100} rx={34} fill="rgba(240,230,190,.9)" />
             <rect x={-56} y={-220} width={112} height={34} rx={10} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
           </g>
-          <Goteo T={T} x={640} y0={1000} y1={1000} cada={9} />
           {Array.from({ length: 39 }, (_, i) => { const on = kprog(T, K.E + 2.6 + i * 0.065, K.E + 2.9 + i * 0.065, kEase.sale);
             const fila = Math.floor(i / 13), col = i % 13;
-            return on > 0 && <Perla key={i} x={140 + (fila % 2 ? 12 - col : col) * 66} y={klerp(1180, 520 + fila * 70, on)} r={24} color={i === 1 ? KC.yellow : EXE} o={on} />; })}
+            return on > 0 && <Perla key={i} x={110 + (fila % 2 ? 12 - col : col) * 44} y={klerp(1180, 560 + fila * 54, on)} r={19} color={i === 1 ? KC.yellow : EXE} o={on} />; })}
         </Capa>
         <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="1992" quien="John Eng · hospital de veteranos" revista="Bronx, Nueva York · J Biol Chem" y={560} />
         <Chip T={T} at={K.E + 3.0} until={K.Ce - 0.3} texto="exendina-4 · 39 aminoácidos" y={1500} tam={42} borde={EXE} />
@@ -269,26 +268,24 @@ function Gila11() {
       <Escena T={T} a={K.A} b={K.X} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Capa>
-          {[[GLP_SEQ, GLP, 640, 'GLP-1'], [EXE_SEQ, EXE, 960, 'exendina-4']].map(([seq, c, yy, nom], j) => {
+          {[[GLP_SEQ, GLP, 840, 'GLP-1'], [EXE_SEQ, EXE, 1110, 'exendina-4']].map(([seq, c, yy, nom], j) => {
             const cut = j === 0 ? kprog(T, K.A + 1.6, K.A + 2.2, kEase.sale) : 0;
             return <g key={j}>
               <text x={90} y={yy - 70} style={{ font:`900 40px ${KF.texto}` }} fill={c}>{nom}</text>
               {seq.split('').map((l, i) => <Perla key={i} x={150 + i * 112 - (i < 2 ? cut * 60 : 0)} y={yy + (i < 2 ? cut * 60 : 0) + Math.sin(T * 2 + i) * 5} r={44} letra={l}
                 color={i === 1 ? KC.yellow : c} o={i < 2 ? 1 - cut * 0.5 : 1} />)}
-              {i_dummy(j)}
             </g>; })}
           {(() => { const t0 = K.A + 0.9; const enA = T < K.A + 2.4; const xx = enA ? klerp(-80, 262, kprog(T, t0, t0 + 0.7)) : 262 + Math.sin((T - K.A) * 14) * 16;
-            return <Tijera x={xx} y={enA ? 640 : 960} s={0.7} abre={enA ? Math.abs(Math.sin((T - t0) * 8)) : 0.8} rot={enA ? 0 : 18} />; })()}
-          {T > K.A + 2.6 && [0, 1, 2].map((i) => <path key={i} d={`M ${300 + i * 22} ${900 - i * 8} l 18 -26`} stroke={KC.yellow} strokeWidth={6} strokeLinecap="round" opacity={Math.abs(Math.sin(T * 10 + i))} />)}
+            return <Tijera x={xx} y={enA ? 840 : 1110} s={0.7} abre={enA ? Math.abs(Math.sin((T - t0) * 8)) : 0.8} rot={enA ? 0 : 18} />; })()}
+          {T > K.A + 2.6 && [0, 1, 2].map((i) => <path key={i} d={`M ${300 + i * 22} ${1050 - i * 8} l 18 -26`} stroke={KC.yellow} strokeWidth={6} strokeLinecap="round" opacity={Math.abs(Math.sin(T * 10 + i))} />)}
         </Capa>
-        <Etiqueta T={T} at={K.A + 0.5} until={K.X - 0.2} x={262} y={500} texto="posición 2: A → G" color={KC.yellow} tam={34} />
+        <Etiqueta T={T} at={K.A + 0.5} until={K.X - 0.2} x={262} y={690} texto="posición 2: A → G" color={KC.yellow} tam={34} />
         <Chip T={T} at={K.A + 2.8} until={K.X - 0.3} texto="la DPP-4 casi no la puede cortar" y={1500} tam={38} borde={EXE} />
       </Escena>
 
       {/* 8 · EXENATIDA: FDA 2005, vida media 2.4 h contra ~2 min */}
       <Escena T={T} a={K.X} b={K.F} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        <Capa><Pluma x={780} y={1180} s={0.6} rot={-12} color={EXE} /></Capa>
         <TarjetaEstudio T={T} at={K.X + 0.1} until={K.F - 0.2} anio="2005" quien="FDA · Byetta (exenatida)" revista="el primero de la familia" y={520} />
         <Comparativa T={T} at={K.X + 1.4} until={K.F - 0.2} max={144} y={780} alto={330}
           izq={{ valor: 2, texto: '≈ 2 min', etiqueta: 'GLP-1', color: GLP }} der={{ valor: 144, texto: '2.4 h', etiqueta: 'exenatida', color: KC.yellow }} />
@@ -301,7 +298,7 @@ function Gila11() {
         <Capa>
           <Gila T={T} x={300} y={760} s={0.42} lengua={lengua(K.F)} />
           <g transform="translate(300 940)"><path d="M -70 -40 L 70 -40 L 54 70 L -54 70 Z" fill="#c9d1dc" stroke={KC.ink} strokeWidth={7} /><path d="M -70 -40 Q 0 -110 70 -40" fill="none" stroke={KC.ink} strokeWidth={6} /></g>
-          <g opacity={kprog(T, K.F + 0.6, K.F + 0.9)} transform={`translate(300 860) scale(${klerp(1.6, 1, kprog(T, K.F + 0.6, K.F + 0.9, kEase.rebote))})`}>
+          <g opacity={kprog(T, K.F + 0.6, K.F + 0.9)} transform={`translate(300 950) scale(0.55) scale(${klerp(1.6, 1, kprog(T, K.F + 0.6, K.F + 0.9, kEase.rebote))})`}>
             <path d="M -170 -170 L 170 170 M 170 -170 L -170 170" stroke={KC.red} strokeWidth={34} strokeLinecap="round" /></g>
           <Matraz T={T} x={780} y={950} s={0.95} />
           {Array.from({ length: 39 }, (_, i) => { const on = kprog(T, K.F + 1.0 + i * 0.05, K.F + 1.2 + i * 0.05);
@@ -323,10 +320,9 @@ function Gila11() {
               <text x={110 + 19 * 28 + 40} y={1090} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>colita de grasa</text>
             </g>
           </g>
-          <Pluma x={700} y={1180} s={0.55} rot={-6} color={SEMA} />
         </Capa>
-        <MitoTachado T={T} at={K.O + 0.1} tacharEn={K.O + 1.0} until={K.O + 2.6} texto="Ozempic = saliva de lagarto" y={560} tam={42} />
-        <Chip T={T} at={K.O + 2.7} until={K.Co - 0.3} texto="94 % igual al GLP-1 humano · 2017" y={560} tam={36} borde={SEMA} />
+        <MitoTachado T={T} at={K.O + 0.1} tacharEn={K.O + 1.0} until={K.O + 2.6} texto="Ozempic = saliva de lagarto" x={370} y={560} tam={40} />
+        <Chip T={T} at={K.O + 2.7} until={K.Co - 0.3} texto="94 % igual al GLP-1 humano · 2017" x={380} y={560} tam={32} borde={SEMA} />
         <Etiqueta T={T} at={K.O + 2.2} until={K.Co - 0.2} x={140} y={1010} texto="2 cambios" color={KC.pink} tam={30} />
       </Escena>
 
@@ -349,8 +345,8 @@ function Gila11() {
         <Capa>
           {[[120, 1230, 1], [930, 1260, 0.8]].map(([cx, cy, k], i) => <g key={i} transform={`translate(${cx} ${cy}) scale(${k})`}>
             <path d="M -14 0 L -14 -150 Q -14 -170 0 -170 Q 14 -170 14 -150 L 14 0 Z M 14 -90 Q 50 -90 50 -120 L 50 -140" fill="#3fbf4a" stroke={KC.ink} strokeWidth={6} /></g>)}
-          <Gila T={T} x={560} y={1060} s={1.0} lengua={lengua(K.Ci + 0.2)} paso={0.5} />
-          <Pluma x={330} y={760} s={0.8} rot={-8} color={EXE} />
+          <Gila T={T} x={560} y={985} s={1.0} lengua={lengua(K.Ci + 0.2)} paso={0.5} />
+          <Pluma x={330} y={700} s={0.8} rot={-8} color={EXE} />
         </Capa>
         <Chip T={T} at={K.Ci + 0.8} until={K.Ou} texto="el primero de la familia: exenatida" y={1500} tam={38} borde={EXE} />
       </Escena>
@@ -382,7 +378,6 @@ function Gila11() {
     </div>
   );
 }
-function i_dummy() { return null; }
 
 // apariciones de Robert [entra, sale, pose, lado] (tiempos de autor, atados a las escenas)
 const ROBERT11 = (C) => [
@@ -392,7 +387,7 @@ const ROBERT11 = (C) => [
   [C.Pregunta + 0.05, C.Eng - 0.1, 'avatar_06_pensativo_menton', 'grande'],
   [C.Eng + 2.7, C.Cerradura - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
   [C.Aminoacido + 1.0, C.Exenatida - 0.3, 'avatar_13_senalando_arriba', 'arriba-der'],
-  [C.Exenatida + 0.6, C.Fabrica - 0.3, 'avatar_11_sorprendido', 'grande-izq'],
+  [C.Exenatida + 0.6, C.Fabrica - 0.3, 'avatar_11_sorprendido', 'bajo-der'],
   [C.Ozempic + 0.3, C.Comida - 0.3, 'avatar_10_serio_molesto', 'arriba-der'],
   [C.Comida + 0.4, C.Cierre - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
   [C.Cierre + 0.4, C.Outro - 0.1, 'avatar_02_apuntando_camara', 'gancho'],

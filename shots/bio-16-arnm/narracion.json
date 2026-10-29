@@ -9,12 +9,12 @@
     { "escena": "Ribosoma", "texto": "Tus ribosomas lo leen y arman la proteína espícula del virus." },
     { "escena": "Aprende", "texto": "Tu sistema inmune ve esa pieza y aprende a reconocerla." },
     { "escena": "Pregunta", "texto": "¿Y ese mensaje se queda a vivir en ti?" },
-    { "escena": "Nucleo", "texto": "No: nunca entra al núcleo, donde está tu ADN, y tu célula lo desarma." },
+    { "escena": "Nucleo", "texto": "No: no entra al núcleo, donde está tu ADN, y tu célula lo desarma." },
     { "escena": "Alarma", "texto": "Pero había un problema: el ARN hecho en laboratorio prendía la alarma de la inflamación." },
-    { "escena": "Estudio", "texto": "En 2005, en la Universidad de Pensilvania, Katalin Karikó y Drew Weissman cambiaron una de sus letras, la U, por una versión modificada." },
+    { "escena": "Estudio", "texto": "En 2005, en la Universidad de Pensilvania, Katalin Karikó y Drew Weissman cambiaron algunas de sus letras, como la U, por versiones modificadas." },
     { "escena": "Apagada", "texto": "En sus pruebas, la alarma casi se apagó." },
     { "escena": "Truco", "texto": "El truco: tu propio ARN ya trae letras modificadas, y ellos lo copiaron." },
     { "escena": "Nobel", "texto": "Por eso ganaron el Nobel de Fisiología o Medicina de 2023." },
-    { "escena": "Cierre", "texto": "Esa vacuna no trae el virus: trae un mensaje que tu brazo lee y luego borra." }
+    { "escena": "Cierre", "texto": "Esa vacuna no trae el virus: trae un mensaje que tu cuerpo lee y luego borra." }
   ]
 }

@@ -7,7 +7,12 @@
 - **Viaje:** macro (tu brazo con la curita, la jeringa) → micro (fondo oscuro: la nanopartícula de lípidos, el citoplasma, los ribosomas, el núcleo cerrado) → el mismo brazo, ya "entrenado" (escudo de anticuerpos alrededor).
 - **Tono:** neutral y riguroso. **No se da ninguna cifra de eficacia** ni de dosis. No se dice cuántos días dura el ARNm: las fuentes no coinciden en el plazo (la hoja de los CDC de 2021 decía "unos días"; estudios posteriores encontraron restos en ganglios por más tiempo), así que solo se dice que la célula lo desarma.
 
-## Versión narrada (933 caracteres, ~58 s de voz)
+## Correcciones tras la verificación independiente (29 oct 2026, ver `verificacion.md`)
+- Estudio: "una de sus letras, la U" → "algunas de sus letras, como la U" (en 2005 probaron versiones modificadas de C, A y U).
+- Núcleo: se quitó el "nunca" absoluto: "no entra al núcleo".
+- Cierre: "tu brazo lee y luego borra" → "tu cuerpo lee y luego borra" (parte del ARNm llega a los ganglios cercanos, Röltgen 2022).
+
+## Versión narrada (939 caracteres, ~58 s de voz)
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -17,13 +22,13 @@
 | 3 | Ribosoma | Tus ribosomas lo leen y arman la proteína espícula del virus. | Ribosomas (dos subunidades) corren sobre la hebra y sale una cadena que se dobla en la espícula (forma de "clavo" de tres brazos). |
 | 4 | Aprende | Tu sistema inmune ve esa pieza y aprende a reconocerla. | La espícula asoma en la superficie de la célula; llega una célula inmune, la "toca" y salen anticuerpos en forma de Y. |
 | 5 | Pregunta | ¿Y ese mensaje se queda a vivir en ti? | **Re-gancho.** Zoom out: la célula entera, el núcleo grande con su ADN y la hebra afuera. Signo de pregunta. |
-| 6 | Nucleo | No: nunca entra al núcleo, donde está tu ADN, y tu célula lo desarma. | El núcleo con su envoltura cerrada (la hebra no cruza: candado); tijeritas (enzimas) cortan la hebra en pedacitos que se desvanecen. Chip "no cambia tu ADN". |
+| 6 | Nucleo | No: no entra al núcleo, donde está tu ADN, y tu célula lo desarma. | El núcleo con su envoltura cerrada (la hebra no cruza: candado); tijeritas (enzimas) cortan la hebra en pedacitos que se desvanecen. Chip "no cambia tu ADN". |
 | 7 | Alarma | Pero había un problema: el ARN hecho en laboratorio prendía la alarma de la inflamación. | Flashback de laboratorio: tubo con ARN; una célula dendrítica (con brazos) lo detecta y suena una sirena roja con ondas. |
-| 8 | Estudio | En 2005, en la Universidad de Pensilvania, Katalin Karikó y Drew Weissman cambiaron una de sus letras, la U, por una versión modificada. | `TarjetaEstudio` "2005 · Universidad de Pensilvania · *Immunity*". La hebra muestra letras A U G C; las U se iluminan y cambian a "Ψ" (pseudouridina). |
+| 8 | Estudio | En 2005, en la Universidad de Pensilvania, Katalin Karikó y Drew Weissman cambiaron algunas de sus letras, como la U, por versiones modificadas. | `TarjetaEstudio` "2005 · Universidad de Pensilvania · *Immunity*". La hebra muestra letras A U G C; las U se iluminan y cambian a "Ψ" (pseudouridina). |
 | 9 | Apagada | En sus pruebas, la alarma casi se apagó. | La sirena baja hasta casi apagarse (`Medidor` de inflamación de rojo a casi cero). |
 | 10 | Truco | El truco: tu propio ARN ya trae letras modificadas, y ellos lo copiaron. | Lado a lado: ARN "de tu célula" con letras modificadas marcadas · ARN de la vacuna con Ψ. Signo "=". |
 | 11 | Nobel | Por eso ganaron el Nobel de Fisiología o Medicina de 2023. | Medalla dorada genérica (sin logos) con "Nobel 2023 · Fisiología o Medicina" y los dos nombres. |
-| 12 | Cierre | Esa vacuna no trae el virus: trae un mensaje que tu brazo lee y luego borra. | **Regreso al brazo del inicio**, con la curita; alrededor, un brillo de anticuerpos (el brazo "ya aprendió"). La hebra se borra. |
+| 12 | Cierre | Esa vacuna no trae el virus: trae un mensaje que tu cuerpo lee y luego borra. | **Regreso al brazo del inicio**, con la curita; alrededor, un brillo de anticuerpos (el brazo "ya aprendió"). La hebra se borra. |
 | — | Outro | (sin voz) | Cierre de marca. |
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
@@ -33,7 +38,7 @@
 ## Descripción (para publicar)
 "Esa vacuna de COVID no trae el virus: trae instrucciones. 💉🧬 Las vacunas de ARN mensajero (ARNm) llevan una copia de laboratorio del mensaje para fabricar la **proteína espícula**, la pieza que el coronavirus tiene en su superficie, envuelta en una **nanopartícula de lípidos** (una burbujita de grasa que lo protege y lo ayuda a entrar a la célula).
 
-Se aplica en el músculo de la parte alta del brazo. El mensaje entra a las células, sale al citoplasma y ahí los **ribosomas** lo leen y arman la espícula. La célula la muestra en su superficie, tu sistema inmune la reconoce como extraña y aprende a defenderse: hace anticuerpos y activa otras células. **El ARNm nunca entra al núcleo, que es donde está tu ADN, y no lo cambia**; la célula lo desarma y lo elimina.
+Se aplica en el músculo de la parte alta del brazo; parte del ARNm y de la espícula también llega a los ganglios linfáticos cercanos. El mensaje entra a las células, sale al citoplasma y ahí los **ribosomas** lo leen y arman la espícula. La célula la muestra en su superficie, tu sistema inmune la reconoce como extraña y aprende a defenderse: hace anticuerpos y activa otras células. **El ARNm no entra al núcleo, que es donde está tu ADN, y no lo cambia**; la célula lo desarma y lo elimina.
 
 El gran obstáculo era que el ARN hecho en laboratorio provocaba **inflamación**. En **2005**, en la Universidad de Pensilvania, **Katalin Karikó y Drew Weissman** probaron cambiar algunas de sus letras por versiones modificadas, como la **pseudouridina**, y la respuesta inflamatoria casi desapareció. La pista: el ARN de nuestras propias células trae muchas letras modificadas de forma natural. En la vacuna de Pfizer-BioNTech, todas las U del mensaje van cambiadas por una variante, la N1-metilpseudouridina. Por ese descubrimiento ganaron el **Premio Nobel de Fisiología o Medicina 2023**.
 
@@ -61,4 +66,6 @@ El dibujo es esquemático y no está a escala. **¿Tú sabías que el mensaje no
 - **N1-metilpseudouridina en la vacuna (solo en la descripción):** Nance KD, Meier JL. "Modifications in an Emergency: The Role of N1-Methylpseudouridine in COVID-19 Vaccines". *ACS Central Science* 7(5): 748–756 (2021). https://pmc.ncbi.nlm.nih.gov/articles/PMC8043204/
   - «in the case of BNT162b2, every uridine residue in the mRNA is replaced with m1Ψ» (2021).
   - «The first is the lipid nanoparticles that encapsulate the mRNA and facilitate its delivery» (2021).
+- **Ganglios linfáticos:** Röltgen K et al. "Immune imprinting, breadth of variant recognition, and germinal center response in human SARS-CoV-2 infection and vaccination". *Cell* 185(6): 1025–1040 (2022). https://doi.org/10.1016/j.cell.2022.01.018 (PMC8786601)
+  - «mRNA vaccination stimulates robust GCs containing vaccine mRNA and spike antigen up to 8 weeks postvaccination in some cases» (2022). Solo en la descripción, sin plazo ni proporción.
 - La morfología de la célula, los ribosomas, la nanopartícula y la espícula es **esquemática** y no está a escala entre sí.
