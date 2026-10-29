@@ -38,3 +38,13 @@
    Propuesta de pantalla: «hospital adivinado: 99.8 % de las placas» o, más exacto, tres chips «99.95 % · 99.98 % · 95.6 %».
 3. **#10 ⚠️ (pantalla) "mapa de calor" sobre la nieve del lobo** — la explicación del artículo (LIME) muestra zonas de la foto resaltadas (superpíxeles), y la figura del artículo es la de un husky clasificado como lobo.
    Propuesta: dibujar la explicación como parches/zonas de la foto que se quedan iluminadas (el resto gris) en vez de un degradado de calor; o mantener el dibujo y que la descripción diga "el dibujo es esquemático". En la voz no hay que cambiar nada.
+
+## Re-verificación (29 oct 2026, coordinador)
+- #12 voz: «En uno, una de cada tres radiografías tenía neumonía; en otro, casi ninguna.» (14,515 de 42,396 placas en Mount Sinai = 34.2 %; NIH 1.2 %, IU 1.0 %) ✅
+- «…hasta por una ficha de metal» (solo se quitó el diminutivo) ✅
+- #15 pantalla: tres chips por hospital «NIH 99.95 % · Mount Sinai 99.98 % · Indiana 95.6 %» (Zech 2018, cifras textuales de la tabla) ✅
+- #10 pantalla: zonas de la foto (superpíxeles) resaltadas y el resto en gris, como la figura de LIME ✅
+- Cierre: lobo sobre pasto → la IA dice «husky». Coincide con el artículo: el clasificador "predicts 'Wolf' if there is snow… and 'Husky' otherwise" ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

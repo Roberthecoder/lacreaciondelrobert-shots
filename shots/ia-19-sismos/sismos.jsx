@@ -226,9 +226,9 @@ function Sismos() {
         </>)}
       </Escena>
       <Chip T={T} at={K.A + 1.0} until={K.A + 3.6} texto="detecta ≠ predice" x={540} y={470} tam={46} borde={KC.red} />
-      <Etq T={T} at={K.A + 0.8} until={K.E - 0.3} x={pMapa(-101, 15.6)[0]} y={pMapa(-101, 15.6)[1] + 20} texto="sensores en la costa" lado="der" color={KC.ink} tam={30} />
-      <Chip T={T} at={tS + 0.6} until={K.E - 0.2} texto="onda sísmica: más lenta" x={330} y={1100} tam={30} borde={KC.red} />
-      <Chip T={T} at={tS + 1.6} until={K.E - 0.2} texto="aviso: de 20 a 120 s antes (según la distancia)" x={540} y={1180 - 10} tam={30} borde={KC.yellow} />
+      <Etq T={T} at={K.A + 0.8} until={K.E - 0.3} x={pMapa(-96.5, 15.3)[0]} y={pMapa(-96.5, 15.3)[1]} texto="sensores en la costa" lado="izq" color={KC.ink} tam={30} />
+      <Chip T={T} at={tS + 0.6} until={K.E - 0.2} texto="onda sísmica: más lenta" x={290} y={860} tam={28} borde={KC.red} />
+      <Chip T={T} at={K.A + 3.7} until={K.E - 0.2} texto="aviso: 20 a 120 s antes" x={700} y={470} tam={30} borde={KC.yellow} />
       {/* 4 · la IA escucha: catálogos */}
       <Escena T={T} a={K.E} b={K.Q}>
         <FondoCircuito T={T} />
@@ -240,10 +240,10 @@ function Sismos() {
       <Chip T={T} at={K.E + 1.2} until={K.E + 3.2} texto="sismos diminutos que se perdían" x={540} y={1090} tam={34} borde={KC.yellow} />
       {/* el sismograma se esconde y salen los números */}
       {kvisible(T, K.E + 3.4, K.Q - 0.2) && <div style={{ position:'absolute', left:0, top:780, width:KW, height:300, zIndex:13, background:KC.noche, opacity:kprog(T, K.E + 3.3, K.E + 3.7) * (1 - kprog(T, K.Q - 0.2, K.Q + 0.3)) }}></div>}
-      <Comparativa T={T} at={K.E + 3.5} until={K.Q - 0.2} y={640} alto={330} max={21092}
+      <Comparativa T={T} at={K.E + 3.5} until={K.Q - 0.2} y={720} alto={260} max={21092}
         izq={{ valor: 8521, texto: '8 521', etiqueta: 'antes', color: '#9aa3b5' }}
         der={{ valor: 21092, texto: '21 092', etiqueta: 'con IA', color: KC.mint }} />
-      <Chip T={T} at={K.E + 4.2} until={K.Q - 0.2} texto="5 semanas · sismos de Tottori, Japón (2000)" x={540} y={1110} tam={30} borde={KC.mint} />
+      <Chip T={T} at={K.E + 4.2} until={K.Q - 0.2} texto="Tottori, Japón · 5 semanas" x={400} y={470} tam={28} borde={KC.mint} />
       {/* 5 · pregunta: ¿oír que una falla va a romperse? */}
       <Escena T={T} a={K.Q} b={K.L} zoom={0.1}>
         <FondoLunares color={KC.orange} />
@@ -257,16 +257,16 @@ function Sismos() {
         <FondoLunares color={KC.lilac} />
         {svg(<>
           <g transform={`translate(${klerp(600, 280, zoomOut)} ${klerp(860, 800, zoomOut)}) scale(${klerp(1, 0.4, zoomOut)}) translate(-600 -860)`}>
-            <MaquinaFalla x={600} y={860} s={0.95} T={T} fase={fase} desliz={desliz} />
+            <MaquinaFalla x={600} y={790} s={0.95} T={T} fase={fase} desliz={desliz} />
           </g>
           {zoomOut > 0 && <g opacity={zoomOut} transform={`translate(${klerp(300, 0, zoomOut)} 0)`}><Tierra x={740} y={830} r={klerp(100, 290, zoomOut)} T={T} /></g>}
         </>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.L + 0.3} until={K.L + 3.6} anio="2017" quien="Laboratorio de Los Álamos, EE. UU." revista="Rouet-Leduc et al. · Geophysical Research Letters" y={520} />
-      <Medidor T={T} at={K.L + 3.6} until={L2 - 0.2} y={1110} etiqueta="falta para el siguiente sismo" color={KC.yellow}
+      <Medidor T={T} at={K.L + 3.6} until={L2 - 0.2} y={1075} etiqueta="falta para el siguiente sismo" color={KC.yellow}
         valor={(t) => { const u = t - (K.L + 0.4); return u > 0 ? 1 - ((u % CIC) / CIC) : 1; }} texto={(v) => `${kformato(v * CIC, 1)} s`} />
       <Chip T={T} at={K.L + 4.0} until={K.L + 6.4} texto="la IA escucha el sonido de la falla" x={540} y={440} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.L + 6.6} until={L2 - 0.2} texto="«ruido inútil»… que no lo era" x={430} y={440} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.L + 6.6} until={L2 - 0.2} texto="«ruido inútil»… que no lo era" x={390} y={440} tam={38} borde={KC.yellow} />
       <Chip T={T} at={L2 + 0.6} until={K.R - 0.2} texto="laboratorio ≠ planeta" x={540} y={1110} tam={44} borde={KC.red} />
       {/* 7 · réplicas: Harvard y Google, 2018 */}
       <Escena T={T} a={K.R} b={K.N}>
@@ -277,23 +277,23 @@ function Sismos() {
       </Escena>
       <Chip T={T} at={K.R + 0.2} until={K.N - 0.2} texto="2018 · Harvard + Google · Nature" x={540} y={440} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.R + 1.0} until={K.R + 2.4} x={850} y={1040} texto="réplicas" lado="izq" color={KC.ink} tam={32} />
-      <Comparativa T={T} at={K.R + 2.7} until={K.N - 0.2} y={600} alto={360} max={1}
+      <Comparativa T={T} at={K.R + 2.7} until={K.N - 0.2} y={700} alto={300} max={1}
         izq={{ valor: 0.849, texto: '0.85', etiqueta: 'red neuronal', color: KC.yellow }}
         der={{ valor: 0.583, texto: '0.58', etiqueta: 'método clásico', color: '#9aa3b5' }} />
       <Chip T={T} at={K.R + 3.4} until={K.N - 0.2} texto="qué tanto atina (AUC)" x={540} y={1110} tam={30} borde={KC.ink} />
       {/* 8 · una neurona contra 13 451 parámetros */}
       <Escena T={T} a={K.N} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        <RedNeuronal T={T} x={600} y={790} ancho={400} alto={280} capas={[4, 7, 7, 7, 1]} onda={(T * 0.6) % 1} o={kprog(T, K.N + 3.2, K.N + 3.6)} />
-        {svg(<g opacity={kprog(T, K.N + 1.4, K.N + 1.8)}>
-          <circle cx={800} cy={560} r={70 * (1 + 0.06 * Math.sin(T * 5))} fill={KC.yellow} stroke={KC.ink} strokeWidth={9} />
-          <line x1={640} y1={530} x2={730} y2={550} stroke={KC.ink} strokeWidth={8} /><line x1={640} y1={600} x2={730} y2={575} stroke={KC.ink} strokeWidth={8} /><line x1={870} y1={560} x2={960} y2={560} stroke={KC.ink} strokeWidth={8} />
+        <RedNeuronal T={T} x={620} y={800} ancho={360} alto={170} capas={[4, 7, 7, 7, 1]} onda={(T * 0.6) % 1} o={kprog(T, K.N + 3.2, K.N + 3.6)} />
+        {svg(<g opacity={kprog(T, K.N + 1.8, K.N + 2.1)}>
+          <circle cx={800} cy={540} r={52 * (1 + 0.06 * Math.sin(T * 5))} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
+          <line x1={670} y1={515} x2={750} y2={530} stroke={KC.ink} strokeWidth={7} /><line x1={670} y1={570} x2={750} y2={552} stroke={KC.ink} strokeWidth={7} /><line x1={852} y1={540} x2={930} y2={540} stroke={KC.ink} strokeWidth={7} />
         </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 1.8} anio="2019" quien="Mignan y Broccardo" revista="Nature · «Una neurona contra el aprendizaje profundo»" y={700} />
-      <NumeroGigante T={T} at={K.N + 1.8} until={K.C - 0.2} valor={2} etiqueta="" x={800} y={680} tam={110} color={KC.yellow} dur={0.3} sufijo=" parámetros" />
-      <NumeroGigante T={T} at={K.N + 3.4} until={K.C - 0.2} valor={13451} etiqueta="" x={800} y={1110} tam={96} color={KC.red} dur={0.9} sufijo=" parámetros" />
-      <Chip T={T} at={K.N + 4.6} until={K.C - 0.2} texto="mismo acierto: 0.85 = 0.85" x={760} y={440} tam={36} borde={KC.leaf} />
+      <TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 1.8} anio="2019" quien="Mignan y Broccardo" revista="Nature · «Una neurona contra el aprendizaje profundo»" y={760} />
+      <NumeroGigante T={T} at={K.N + 1.9} until={K.C - 0.2} valor={2} etiqueta="parámetros" x={800} y={690} tam={110} color={KC.yellow} dur={0.3} />
+      <NumeroGigante T={T} at={K.N + 3.4} until={K.C - 0.2} valor={13451} etiqueta="parámetros" x={800} y={1060} tam={100} color={KC.red} dur={0.9} />
+      <Chip T={T} at={K.N + 4.6} until={K.C - 0.2} texto="mismo acierto: 0.85 = 0.85" x={790} y={430} tam={28} borde={KC.leaf} />
       {/* 9 · cierre: el mismo celular, a la basura */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
@@ -304,7 +304,7 @@ function Sismos() {
           <g opacity={kprog(T, K.C + 1.8, K.C + 2.2)}><Robotito x={780} y={960} s={0.85} T={T} cara="feliz" /><Audifonos x={780} y={940} s={0.85} /></g>
         </>, 25)}
       </Escena>
-      <Sismograma T={T} x={560} y={700} ancho={440} alto={90} avance={kprog(T, K.C + 2.2, K.C + 3.2)} scan={-1} eventos={[{ u: 0.3, a: 0.6 }, { u: 0.7, a: 0.5 }]} />
+      {kvisible(T, K.C + 2.2, K.Ou) && <div style={{ position:'absolute', inset:0, zIndex:26, opacity:kprog(T, K.C + 2.1, K.C + 2.4) }}><Sismograma T={T} x={110} y={700} ancho={360} alto={90} avance={kprog(T, K.C + 2.2, K.C + 3.2)} scan={-1} eventos={[{ u: 0.3, a: 0.6 }, { u: 0.7, a: 0.5 }]} /></div>}
       <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="escucha, no adivina" x={780} y={1110} tam={40} borde={KC.leaf} />
 
       <Capitulo T={T} hasta={K.C} caps={[{ at: K.G + 0.2, titulo: 'Lo que NO' }, { at: K.A, titulo: 'La alerta' }, { at: K.E, titulo: 'Lo que SÍ' }, { at: K.L, titulo: 'El laboratorio' }, { at: K.R, titulo: 'La polémica' }]} />
@@ -315,7 +315,7 @@ function Sismos() {
       <Subtitulo T={T} idx={2} at={K.A + 0.1} until={K.E - 0.1} texto="La alerta *detecta,* no predice." />
       <Subtitulo T={T} idx={3} at={K.E + 0.1} until={K.Q - 0.1} texto="La IA escucha: *el doble de sismos.*" />
       <Subtitulo T={T} idx={4} at={K.Q + 0.1} until={K.L - 0.1} texto="¿Y si oyera *a la falla?*" />
-      <Subtitulo T={T} idx={5} at={K.L + 0.1} until={L2 - 0.1} texto="Sismos de laboratorio: *la IA calculó cuánto faltaba.*" />
+      <Subtitulo T={T} idx={5} at={K.L + 0.1} until={L2 - 0.1} texto="La IA calculó *cuánto faltaba.*" />
       <Subtitulo T={T} idx={6} at={L2 + 0.05} until={K.R - 0.1} texto="Pero era una máquina, *no la Tierra.*" />
       <Subtitulo T={T} idx={7} at={K.R + 0.1} until={K.N - 0.1} texto="Red neuronal: *mejor con las réplicas.*" />
       <Subtitulo T={T} idx={8} at={K.N + 0.1} until={K.C - 0.1} texto="Una fórmula de *2 números* la igualó." />
@@ -324,7 +324,7 @@ function Sismos() {
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.5, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Predecir + 0.6, CUES.Alerta - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
-        [CUES.Alerta + 3.4, CUES.Escuchar - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [CUES.Alerta + 3.5, CUES.Escuchar - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Escuchar + 3.6, CUES.Pregunta - 0.15, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Pregunta + 0.05, CUES.Laboratorio + 1.2, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Laboratorio + 6.6, L2 + 0.4, 'avatar_06_pensativo_menton', 'arriba-der'],

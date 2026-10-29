@@ -249,7 +249,7 @@ function Retinas() {
         <div style={{ position:'absolute', inset:0, background:KC.noche, opacity:kprog(T, K.F + 2.6, K.F + 3.1) }}></div>
         {T > K.F + 2.6 && svg(<Retina id="f" x={520} y={880} r={290} T={T} o={kprog(T, K.F + 2.6, K.F + 3.1)} />)}
       </Escena>
-      <Etq T={T} at={K.F + 0.6} until={K.F + 2.5} x={60} y={1010} texto="cámara de retina" />
+      <Etq T={T} at={K.F + 0.6} until={K.F + 2.5} x={60} y={1050} texto="cámara de retina" />
       <Etq T={T} at={K.F + 1.0} until={K.F + 2.5} x={300} y={610} texto="por la pupila" />
       <Etq T={T} at={K.F + 1.6} until={K.F + 2.5} x={830} y={1110} texto="retina" />
       <Etq T={T} at={K.F + 3.3} until={K.E - 0.2} x={40} y={560} texto="vasos sanguíneos" />
@@ -283,12 +283,12 @@ function Retinas() {
       <Escena T={T} a={K.S} b={K.Pr}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Retina id="s1" x={230} y={640} r={130} T={T} />
-          <Retina id="s2" x={560} y={640} r={130} T={T} />
+          <Retina id="s1" x={200} y={650} r={120} T={T} />
+          <Retina id="s2" x={490} y={650} r={120} T={T} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.S + 0.5} until={K.Pr - 0.2} texto="hombre" x={230} y={790} tam={34} borde={KC.blue} />
-      <Chip T={T} at={K.S + 0.7} until={K.Pr - 0.2} texto="mujer" x={560} y={790} tam={34} borde={KC.pink} />
+      <Chip T={T} at={K.S + 0.5} until={K.Pr - 0.2} texto="hombre" x={200} y={790} tam={34} borde={KC.blue} />
+      <Chip T={T} at={K.S + 0.7} until={K.Pr - 0.2} texto="mujer" x={490} y={790} tam={34} borde={KC.pink} />
       <Pares T={T} at={K.S + 1.4} until={K.Pr - 0.2} x={120} y={930} />
       <Chip T={T} at={K.S + 3.8} until={K.Pr - 0.2} texto="acierta 97 de 100 pares · al azar: 50" x={540} y={856} tam={34} borde={KC.leaf} />
       {/* 6 · presión y tabaco */}
@@ -338,7 +338,8 @@ function Retinas() {
       {/* 11 · cierre: el mismo ojo, ahora "leído" */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Ojo x={OJO.x} y={OJO.y} s={0.9} T={T} parpadeo={blink(K.C + 0.6)} dentro={kprog(T, K.C + 0.8, K.C + 1.6)} />)}
+        {svg(<><Ojo x={OJO.x} y={OJO.y} s={0.9} T={T} parpadeo={blink(K.C + 0.6)} dentro={kprog(T, K.C + 0.8, K.C + 1.6)} />
+          {T > K.C + 0.8 && <circle cx={OJO.x} cy={OJO.y} r={90 + 20 * Math.sin(T * 4)} fill="none" stroke={RET.verde} strokeWidth={8} opacity={0.6 * kprog(T, K.C + 0.8, K.C + 1.6)} />}</>)}
       </Escena>
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="edad" x={200} y={600} tam={40} borde={RET.verde} />
       <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="presión" x={760} y={1160} tam={40} borde={RET.verde} />

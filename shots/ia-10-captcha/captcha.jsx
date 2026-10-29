@@ -101,17 +101,19 @@ function Marcador({ T, at, until, top = 700 }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
   const g1 = kprog(T, at + 0.3, at + 1.5, kEase.sale), g2 = kprog(T, at + 3.4, at + 4.6, kEase.sale), W = 760;
-  const Fila = ({ titulo, sub, a, b, g, color, texto, vis }) => <div style={{ marginBottom:20, opacity: vis }}>
-    <div style={{ font:`900 44px ${KF.texto}`, color:KC.ink }}>{titulo} <span style={{ font:`700 28px ${KF.mono}`, color:'#3a3a3a' }}>{sub}</span></div>
-    <div style={{ position:'relative', height:86, marginTop:10, width:W, background:'rgba(255,255,255,.7)', border:`6px solid ${KC.ink}`, borderRadius:18 }}>
+  const Fila = ({ titulo, sub, a, b, g, color, texto, vis }) => <div style={{ marginBottom:56, opacity: vis }}>
+    <div style={{ display:'flex', alignItems:'baseline', justifyContent:'space-between', width:W + 60 }}>
+      <div style={{ font:`900 44px ${KF.texto}`, color:KC.ink }}>{titulo} <span style={{ font:`700 26px ${KF.mono}`, color:'#3a3a3a' }}>{sub}</span></div>
+      <div style={{ font:`400 64px ${KF.titulo}`, color, WebkitTextStroke:`3px ${KC.ink}` }}>{texto}</div>
+    </div>
+    <div style={{ position:'relative', height:80, marginTop:8, width:W, background:'rgba(255,255,255,.7)', border:`6px solid ${KC.ink}`, borderRadius:18 }}>
       <div style={{ position:'absolute', left: W * a / 100 * g, top:0, bottom:0, width: Math.max(8, W * (b - a) / 100 * g), background:color, borderLeft:`5px solid ${KC.ink}`, borderRight:`5px solid ${KC.ink}` }}></div>
       {[0, 25, 50, 75, 100].map((t) => <div key={t} style={{ position:'absolute', left: W * t / 100 - 2, bottom:-34, font:`700 22px ${KF.mono}`, color:'#333' }}>{t}</div>)}
     </div>
-    <div style={{ font:`400 74px ${KF.titulo}`, color, WebkitTextStroke:`3px ${KC.ink}`, marginTop:30 }}>{texto}</div>
   </div>;
   return <div style={{ position:'absolute', left:90, top, width:900, zIndex:40, opacity:e.o, transform:`translateY(${e.y * 0.5}px)` }}>
-    <Fila titulo="personas" sub="(2023)" a={50} b={85} g={g1} color={KC.red} texto="50 – 85 % de acierto" vis={1} />
-    <Fila titulo="bots" sub="(la mayoría de los ataques)" a={96} b={100} g={g2} color={AZUL} texto="más de 96 %" vis={T >= at + 3.2 ? 1 : 0} />
+    <Fila titulo="personas" sub="(2023, acierto)" a={50} b={85} g={g1} color={KC.red} texto="50–85 %" vis={1} />
+    <Fila titulo="bots" sub="(la mayoría)" a={96} b={100} g={g2} color={AZUL} texto="más de 96 %" vis={T >= at + 3.2 ? 1 : 0} />
   </div>;
 }
 // Mini cuadrícula de captchas resueltos (cada cuadrito = un montón de captchas).
@@ -167,15 +169,15 @@ function Captcha() {
       {/* 4 · letras chuecas: la IA de Google */}
       <Escena T={T} a={K.L} b={K.P}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={250} y={560} ancho={580} alto={320} capas={[3, 5, 5, 3]} onda={((T - K.L) * 0.6) % 1} />
+        <RedNeuronal T={T} x={250} y={600} ancho={580} alto={320} capas={[3, 5, 5, 3]} onda={((T - K.L) * 0.6) % 1} />
         {svg(<>
-          <g opacity={pasa(K.L + 0.2, K.L + 0.7)}><rect x={30} y={610} width={200} height={220} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
-            <LetrasChuecas x={130} y={735} texto="Rq4" tam={66} seed={9} T={T} tiembla={3} /></g>
-          <g opacity={pasa(K.L + 1.4, K.L + 1.9)}><rect x={850} y={610} width={200} height={220} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
-            <text x={950} y={745} textAnchor="middle" style={{ font:`700 66px ${KF.mono}` }} fill={KC.ink}>Rq4</text></g>
+          <g opacity={pasa(K.L + 0.2, K.L + 0.7)}><rect x={30} y={650} width={200} height={220} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
+            <LetrasChuecas x={130} y={775} texto="Rq4" tam={66} seed={9} T={T} tiembla={3} /></g>
+          <g opacity={pasa(K.L + 1.4, K.L + 1.9)}><rect x={850} y={650} width={200} height={220} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
+            <text x={950} y={785} textAnchor="middle" style={{ font:`700 66px ${KF.mono}` }} fill={KC.ink}>Rq4</text></g>
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.L + 2.4} until={K.P - 0.2} valor={99.8} dec={1} dur={1.1} sufijo=" %" etiqueta="de acierto en las letras más difíciles" x={540} y={1040} tam={170} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.L + 2.4} until={K.P - 0.2} valor={99.8} dec={1} dur={1.1} sufijo=" %" etiqueta="de acierto en las letras más difíciles" x={540} y={1070} tam={160} color={KC.yellow} />
       <Chip T={T} at={K.L + 0.6} until={K.P - 0.2} texto="2014 · IA de Google" x={360} y={470} tam={38} borde={KC.cyan} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Li} zoom={0.1}>
@@ -212,7 +214,7 @@ function Captcha() {
             fill="none" stroke={KC.red} strokeWidth={10} strokeDasharray="26 14" rx={16} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ca + 0.3} until={K.Mo - 0.2} texto="2012 · experimento de Google" x={390} y={470} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Ca + 0.3} until={K.Mo - 0.2} texto="2012 · experimento de Google" x={340} y={470} tam={36} borde={KC.ink} />
       {/* 8 · la casilla mira cómo la usas */}
       <Escena T={T} a={K.Mo} b={K.Cf}>
         <FondoLunares color={KC.pink} />
