@@ -66,7 +66,7 @@ function Frasco({ x, y, s = 1, rot = 0, caballo = 0, texto = 'antialacrán' }) {
     <path d="M -50 -204 L -50 -170 Q -110 -150 -110 -100 L -110 60 Q -110 90 -80 90 L 80 90 Q 110 90 110 60 L 110 -100 Q 110 -150 50 -170 L 50 -204 Z" fill="rgba(220,240,255,.75)" stroke={KC.ink} strokeWidth={9} />
     <path d="M -100 40 Q 0 10 100 40 L 100 60 Q 100 82 78 82 L -78 82 Q -100 82 -100 60 Z" fill="#fbfbf6" stroke="rgba(0,0,0,.2)" strokeWidth={3} />
     <rect x={-96} y={-120} width={192} height={130} rx={10} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
-    <text x={0} y={-90} textAnchor="middle" style={{ font:`900 21px ${KF.texto}` }} fill={KC.ink}>FABOTERÁPICO</text>
+    <text x={0} y={-90} textAnchor="middle" style={{ font:`900 18px ${KF.texto}` }} fill={KC.ink}>FABOTERÁPICO</text>
     <text x={0} y={-64} textAnchor="middle" style={{ font:`700 19px ${KF.mono}` }} fill={KC.red}>{texto}</text>
     {caballo > 0 && <g opacity={caballo} transform={`translate(6 4) scale(${0.085 * (0.6 + 0.4 * caballo)})`}><Caballo T={0} x={0} y={0} /></g>}
     <path d="M -86 -150 L -86 30" stroke="rgba(255,255,255,.7)" strokeWidth={10} strokeLinecap="round" />
@@ -171,10 +171,10 @@ function Antiveneno() {
     Es: CUES.Estudio, Re: CUES.Resultado, Fd: CUES.FDA, Mx: CUES.Mexico, Mu: CUES.Muertes, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   // gancho: el alacrán cruza desde el cuadro 0 y el caballo asoma
-  const alaX = klerp(40, 560, kprog(T, K.G, K.G + 2.4, kEase.sale));
+  const alaX = klerp(60, 600, kprog(T, K.G, K.G + 2.4, kEase.sale));
   const asoma = kprog(T, K.G + 2.6, K.G + 3.3, kEase.rebote);
   // dosis: la jeringa llega al cuello y empuja en escalones
-  const HX = 600, HY = 1180, HS = 1.05;
+  const HX = 700, HY = 1180, HS = 1.05;
   const cueX = HX + CUELLO[0] * HS, cueY = HY + CUELLO[1] * HS;
   const llega = kprog(T, K.Do + 0.2, K.Do + 1.0, kEase.sale);
   const escalon = (t) => { const u = (t - K.Do - 1.0) / 0.75; return kclamp(Math.floor(u) + 1, 0, 4) / 4; };
@@ -200,7 +200,7 @@ function Antiveneno() {
         <CapaAV>
           <ellipse cx={540} cy={1185} rx={520} ry={40} fill="rgba(0,0,0,.12)" />
           <Frasco x={380} y={1090} s={1.25} rot={Math.sin(T * 2.2) * 3} />
-          {asoma > 0 && <g transform={`translate(${klerp(1250, 820, asoma)} 1190)`}><Caballo T={T} x={0} y={0} s={0.85} /></g>}
+          {asoma > 0 && <g transform={`translate(${klerp(1300, 980, asoma)} 1190)`}><Caballo T={T} x={0} y={0} s={0.85} /></g>}
           <Alacran T={T} x={alaX} y={1185} s={1.2} camina={1 - kprog(T, K.G + 2.4, K.G + 2.6)} />
         </CapaAV>
       </Escena>
@@ -330,7 +330,7 @@ function Antiveneno() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 2.2} until={K.Do - 0.3} texto="¿lo hizo una máquina?" x={320} y={520} tam={42} />
       <Chip T={T} at={K.G + 3.0} until={K.Do - 0.3} texto="los anticuerpos: de un caballo" y={1500} tam={42} borde={CAB} />
-      <Etq T={T} at={K.G + 0.6} until={K.G + 2.8} x={90} y={1440} texto="alacrán · Centruroides" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 0.6} until={K.G + 2.8} x={90} y={1440} texto="Centruroides" it tam={36} color={KC.ink} />
       <Medidor T={T} at={K.Do + 1.0} until={K.Ap - 0.2} valor={(t) => escalon(t)} etiqueta="dosis de veneno" texto={(v) => (v < 0.3 ? 'poquito' : v < 0.8 ? 'un poco más' : 'más')} x={90} y={1440} color={ALA} />
       <Chip T={T} at={K.Ap + 0.4} until={K.Pl - 0.3} texto="anticuerpos contra el veneno" y={1500} tam={40} borde={AC_H} />
       <Chip T={T} at={K.Pl + 1.0} until={K.An - 0.3} texto="plasma = lo rico en anticuerpos" y={1500} tam={38} borde={PLASMA} />
