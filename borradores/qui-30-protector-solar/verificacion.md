@@ -34,4 +34,6 @@
 ## Correcciones aplicadas (29 oct 2026)
 Se aplicaron tal cual las propuestas del verificador; además solo se quitaron palabras de relleno para cuadrar el tiempo (sin cambiar datos).
 
+**Revisión final de publicacion.md y subtítulos (29 oct 2026, verificador):** ✅ patrocinio J&J: dos autores son de Johnson & Johnson (Skillman NJ) y el póster de ese mismo trabajo (JAAD 74(5S1):AB227, 2016) dice "This study was sponsored by Johnson and Johnson Consumer Inc." · ✅ "hasta 60 %": Cole et al. 2016, "in the long UVA and visible wavelengths, they are predominantly reflectors of light (up to 60% reflection)" · ✅ Faurschou y Wulf 2007 (20 voluntarios, Bispebjerg, Copenhague): "the SPFs of the areas with the various amounts of sunscreen differed significantly"; se corrigió en publicacion.md "el mismo grupo" → "otro estudio en Copenhague" (solo comparten a Wulf) · ✅ subtítulos «Trae filtros moleculares.» y «Poca crema: menos FPS.» (Breakell 2024; Faurschou y Wulf 2007).
+
 VEREDICTO: APROBADO
