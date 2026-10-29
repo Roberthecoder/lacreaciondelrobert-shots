@@ -166,8 +166,8 @@ function HistoplasmaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <HifaHisto T={T} x1={-40} y1={1120} x2={700} y2={640} p={kprog(T, K.H, K.H + 1.6)} at={K.H} micro={[[0.12, 1], [0.24, -1], [0.38, 1], [0.5, -1], [0.66, 1], [0.8, -1]]} macro={[[0.58, -1]]} />
-          <HifaHisto T={T} x1={1120} y1={1060} x2={420} y2={1180} p={kprog(T, K.H + 0.4, K.H + 2.0)} at={K.H + 0.4} micro={[[0.15, -1], [0.3, 1], [0.48, -1], [0.62, 1]]} macro={[[0.82, -1]]} onda={14} />
+          <HifaHisto T={T} x1={-40} y1={1000} x2={700} y2={700} p={kprog(T, K.H, K.H + 1.6)} at={K.H} micro={[[0.12, 1], [0.24, -1], [0.38, 1], [0.5, -1], [0.66, 1], [0.8, -1]]} macro={[[0.58, -1]]} />
+          <HifaHisto T={T} x1={1120} y1={830} x2={560} y2={1010} p={kprog(T, K.H + 0.4, K.H + 2.0)} at={K.H + 0.4} micro={[[0.15, -1], [0.3, 1], [0.48, -1], [0.62, 1]]} macro={[[0.85, 1]]} onda={14} />
         </>)}
       </Escena>
       {/* 3 · otra pisada: las esporas suben al aire */}
@@ -292,12 +292,12 @@ function HistoplasmaShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 1.6} until={K.H - 0.3} texto="no es solo tierra: puede ser guano" x={400} y={1040} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.G + 2.4} until={K.H - 0.3} x={600} y={560} texto="murciélagos" tam={30} />
-      <Chip T={T} at={K.H + 0.3} until={K.A - 0.3} texto="AL MICROSCOPIO · en el suelo es moho" x={540} y={420} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.G + 2.4} until={K.H - 0.3} x={170} y={650} texto="murciélagos" tam={30} />
+      <Chip T={T} at={K.H + 0.3} until={K.A - 0.3} texto="AL MICROSCOPIO · moho" x={360} y={420} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.H + 0.9} until={K.A - 0.3} x={60} y={520} texto="Histoplasma capsulatum" it tam={38} />
       <Etq T={T} at={K.H + 1.5} until={K.A - 0.3} x={60} y={580} texto="“el hongo de las cuevas”" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.H + 1.9} until={K.A - 0.3} x={60} y={1010} texto="microconidias 2–4 µm (lisas)" tam={28} color="#fffbe6" />
-      <Etq T={T} at={K.H + 2.5} until={K.A - 0.3} x={1040} y={800} lado="izq" texto="macroconidia 8–15 µm" tam={28} color="#f3dcae" />
+      <Etq T={T} at={K.H + 1.9} until={K.A - 0.3} x={60} y={660} texto="microconidias 2–4 µm (lisas)" tam={28} color="#fffbe6" />
+      <Etq T={T} at={K.H + 2.5} until={K.A - 0.3} x={1040} y={1100} lado="izq" texto="macroconidia 8–15 µm" tam={28} color="#f3dcae" />
       <Chip T={T} at={K.A + 1.2} until={K.Pu - 0.2} texto="esporas de 2–4 µm: no las ves" x={400} y={1040} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Pu + 0.8} until={K.Ca - 0.2} x={760} y={980} texto="pulmones" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.2} until={K.Ca + 1.4} texto="en el suelo: moho" x={540} y={430} tam={36} borde={KC.cyan} />
