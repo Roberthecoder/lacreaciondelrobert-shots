@@ -352,11 +352,11 @@ function LeeLabios() {
       <Subtitulo T={T} idx={3} at={E2} until={K.P - 0.1} texto="La IA: *la mitad.*" />
       <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.S - 0.1} texto="¿Y con *más bocas?*" />
       <Subtitulo T={T} idx={5} at={K.S + 0.1} until={K.D - 0.1} texto="*3,886 horas* de video" />
-      <Subtitulo T={T} idx={6} at={K.D + 0.1} until={D2 - 0.1} texto="Cada video: *10 veces*" />
+      <Subtitulo T={T} idx={6} at={K.D + 0.1} until={D2 - 0.1} texto="Cada video: *hasta 10 veces*" />
       <Subtitulo T={T} idx={7} at={D2} until={K.Vz - 0.1} texto="Error: *86–93 %* vs *41 %*" />
       <Subtitulo T={T} idx={8} at={K.Vz + 0.1} until={K.R - 0.1} texto="Si *perdiste la voz…*" />
       <Subtitulo T={T} idx={9} at={K.R + 0.1} until={K.C - 0.1} texto="*De frente* y *de cerca*" />
-      <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Decide *el contexto.*" />
+      <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Ayuda *el contexto.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 5.2, 'avatar_11_sorprendido', 'gancho'],

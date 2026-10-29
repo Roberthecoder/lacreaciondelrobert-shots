@@ -52,3 +52,42 @@ más nuevo que contradiga estos resultados (los sistemas actuales tienen menos e
 6. Nota (no es error): la M en el molde de visemas está respaldada por Fernandez-Lopez y Sukno 2017 (español: "m, p, b"
    = un visema); se puede dejar. Conviene agregar esa fuente a `## Fuentes` del guion como respaldo de «peso/beso» en
    español.
+
+## Re-verificación
+
+29 oct 2026 · mismo verificador independiente. Revisé solo lo nuevo: `narracion.json` (11 líneas), los textos en pantalla
+de `leelabios.jsx` (chips, tarjetas, barras, subtítulos) y `publicacion.md` (7 redes y comentario fijado), contra los
+mismos PDFs originales.
+
+| # | Afirmación nueva o corregida | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | (Voz 0) «…la pe y la be se ven iguales» | ✅ | Fernandez-Lopez y Sukno, arXiv:1704.08035 | "the phones /p/ and /b/ are visually indistinguishable" | 2017 |
+| R2 | (Voz 2) «un experto en leer labios descifró menos de una de cada cuatro palabras» | ✅ | Chung et al., CVPR 2017 | "around 10 years of professional experience" · "less than one-quarter of the spoken words" | 2017 |
+| R3 | (Pantalla 2) "200 videos de la BBC · sin sonido"; "IA (solo labios)" | ✅ | Chung et al. 2017 | "decipher a random sample of 200 videos from our test set" · "the WAS model (lips only)" | 2017 |
+| R4 | (Voz 5) «casi tres mil novecientas horas de YouTube» + "3,886 h" | ✅ | Shillingford et al., arXiv:1807.05162 | "(3,886 hours of video)" · "distilled from YouTube videos" | 2018 |
+| R5 | (Pantalla 4) "caras hablando · en inglés" | ✅ | Shillingford et al. 2018 | "pairs of text and video clips of faces speaking" · filtros "to remove non-English utterances" | 2018 |
+| R6 | (Voz 6) «La pusieron contra lectores profesionales, que podían ver cada video hasta diez veces» | ✅ | Shillingford et al. 2018 | "The lipreaders could view the video up to 10 times, at half or normal speed each time." | 2018 |
+| R7 | (Pantalla 5) "solo la boca" del lado de la IA | ✅ | Shillingford et al. 2018 | "cropping the whole head in the video, as opposed to just the mouth region used by our model" | 2018 |
+| R8 | (Pantalla 5) barras "profesionales sin contexto 92.9", "con contexto 86.4", "la IA (2018) 40.9" | ✅ | Shillingford et al. 2018, Tabla 1 | "Professional w/o context … 92.9", "w/ context … 86.4", V2P "40.9" | 2018 |
+| R9 | **(Subtítulo 6) "Cada video: *10 veces*"** | ⚠️ (leve) | Shillingford et al. 2018 | "could view the video **up to** 10 times". El subtítulo dice 10 veces fijas; la voz ya dice "hasta" | 2018 |
+| R10 | (Voz 8) «Una de sus metas: ayudar a quien perdió la voz, por ejemplo tras una traqueostomía» | ✅ | Shillingford et al. 2018 | "Assisting people with speech impairments is a key motivating factor" · tracheostomy "can result in… an inability to produce voiced sound (aphonia)" | 2018 |
+| R11 | (Pantalla 6) globo "tengo sed" + chip "podría ayudar · ejemplo ilustrativo" | ✅ | Shillingford et al. 2018, Fig. 6 | "V2P could be helpful for performing silent speech recognition for those with aphonia" | 2018 |
+| R12 | (Voz 9) «Sus autores avisan: solo va bien de frente, de cerca y con buen video» | ✅ | Shillingford et al. 2018 | "only performs well when… a subject is facing the camera, within a certain distance from a subject, and at high quality" | 2018 |
+| R13 | (Voz 10) «A la máquina también se le llegan a cruzar la pe y la be: para decidir, se ayuda con las palabras de alrededor» | ✅ | Shillingford et al. 2018, Apéndice B y secc. 6 | "commonly confused… to a lesser extent {/b/, /p/}" · "removing the language model results only in a drop of approximately 13 WER to 53.6%" | 2018 |
+| R14 | (Subtítulo 10) "Decide *el contexto.*" | ✅ (con nota) | Igual que R13; Chung 2017 | "ambiguities can be resolved to an extent using the context of neighboring words". Opcional y más exacto: "Ayuda *el contexto.*" | 2017–2018 |
+| R15 | (Pantalla 8) "¿Cuál es el ___ de tu maleta?" → «peso» | ✅ | Gramática | Correcta; «peso» cabe y «beso» no | — |
+| R16 | `publicacion.md`: todas las cifras, nombres, afiliaciones, "200 videos", "unos 10 años", "en inglés", "53.6 %", "p y b se distinguen en la garganta" (sonoridad en la glotis), m/p/b un visema en español, citas del comentario fijado | ✅ | Chung 2017; Shillingford 2018; Fernandez-Lopez y Sukno 2017 | Coinciden palabra por palabra con los PDFs (ver tabla principal y R1–R13). "voicing occurs at the glottis, which is not visible" · Tabla 2: "m, p, b" | 2017–2018 |
+
+**Conteo de la re-verificación:** 15 ✅ · 1 ⚠️ · 0 ❌. Las correcciones 1–5 de la primera ronda quedaron bien aplicadas.
+
+### Corrección pendiente
+1. **R9 (subtítulo idx 6 en `leelabios.jsx`, línea ~355):** cambiar `"Cada video: *10 veces*"` por
+   `"Cada video: *hasta 10 veces*"`. Con ese cambio todo queda ✅ y el coordinador puede poner el veredicto.
+   (Opcional, no bloquea: subtítulo idx 10 `"Decide *el contexto.*"` → `"Ayuda *el contexto.*"`.)
+
+## Re-verificación final (29 oct 2026, coordinador)
+- Subtítulo idx 6: «Cada video: *hasta 10 veces*» ("up to 10 times") ✅
+- Subtítulo idx 10: «Ayuda *el contexto.*» ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
