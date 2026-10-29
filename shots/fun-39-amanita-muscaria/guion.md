@@ -12,24 +12,44 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esos puntos blancos del hongo de los cuentos no son manchas: son pedazos de un cascarón roto. | Fondo menta con lunares; cuadro 0.3: un *Amanita muscaria* rojo con puntos blancos crece de golpe en el pasto. Una lupa toca un punto y se ve que sobresale, como un trocito pegado. Chip "¿manchas?" tachado → "pedazos". |
-| 1 | Huevo | Es *Amanita muscaria*: de joven está envuelto en un velo blanco, como un huevo. | Se rebobina: el hongo se encoge a un botón blanco redondo/ovalado, entero dentro del velo. Etiquetas "*Amanita muscaria*", "velo universal", "botón". |
-| 2 | Globo | Al crecer, el sombrero se infla como globo; el velo no crece y se rompe en pedacitos. | POR DENTRO · corte del botón: el sombrero rojo se expande como globo; el velo blanco se agrieta en placas que se separan. Medidor de tamaño del sombrero. |
-| 3 | Base | Unos quedan arriba, como puntos, y el resto abajo, en la base del pie. | Hongo maduro: flechas a los puntos (verrugas, del velo universal) arriba y a las bandas de velo sobre el bulbo de la base. Etiquetas "verrugas" y "bandas del velo en el bulbo". El anillo del pie se dibuja pero no se rotula como pedazo del velo universal (viene de otro velo, el parcial). |
+| 0 | Gancho | Esos puntos blancos del hongo de los cuentos no son manchas: son pedazos de un cascarón roto. | Fondo menta con lunares; cuadro 0.3: un *Amanita muscaria* rojo con puntos blancos crece de golpe en el pasto. Una lupa toca un punto: de cerca es un trocito blanco pegado sobre la piel roja. Chip "¿manchas?" tachado → "pedazos de su velo". |
+| 1 | Huevo | Es *Amanita muscaria*: de joven está envuelto en un velo blanco, como un huevo. | Se rebobina: el hongo se encoge a un botón blanco ovalado, entero dentro del velo (la cámara se acerca). Etiquetas "*Amanita muscaria*", "botón: hongo joven", "velo universal". |
+| 2 | Globo | Al crecer, el sombrero se infla como globo; el velo no crece y se rompe en pedacitos. | Fondo amarillo. Chip "POR DENTRO · el velo no crece". El cascarón se agrieta; sale el sombrero rojo, que se infla como globo; los pedazos del velo (que no crecen) se separan y quedan como verrugas. Sube el pie y aparece el anillo alto tipo faldita (velo parcial, sin rótulo). La cámara se aleja; la barra de escala sigue el tamaño real. |
+| 3 | Base | Unos quedan arriba, como puntos, y el resto abajo, en la base del pie. | Hongo maduro. Etiquetas "verrugas: pedazos del velo" (arriba) y "bandas del velo en el bulbo" (abajo). El anillo del pie se dibuja pero no se rotula como pedazo del velo universal (viene de otro velo, el parcial). |
 | 4 | Lluvia | Por eso a veces la lluvia los lava y el sombrero queda liso. | Llueve: las gotas tumban puntos uno por uno; el sombrero queda rojo liso. Chip "ojo: sin puntos se confunde con otros hongos". |
-| 5 | Mexico | No es solo de cuentos: en México crece en bosques de pino y encino. | La cámara sube: bosque de pinos y encinos; mapa de México con marca en Oaxaca (Ixtlán de Juárez). Chip "*Amanita muscaria* var. *flavivolvata*" (sin decir que es igual a la europea). |
-| 6 | Raices | Sus hilos abrazan raíces de árboles: les dan nutrientes y reciben azúcares. | Bajo tierra (fondo oscuro): hifas blancas envuelven una raíz de pino; flechas: nutrientes (N, P) hacia el árbol, azúcares hacia el hongo. Barra de escala 50 µm. |
+| 5 | Mexico | No es solo de cuentos: en México crece en bosques de pino y encino. | Fondo naranja: mapa de México con marca en Oaxaca ("Ixtlán de Juárez, Oax."); salen un pino, un encino y dos hongos chiquitos. Etiqueta "*Amanita muscaria* var. *flavivolvata*" (sin decir que es igual a la europea) y chip "bosque de pino y encino". |
+| 6 | Raices | Sus hilos abrazan raíces de árboles: les dan nutrientes y reciben azúcares. | AL MICROSCOPIO · raíz de pino (fondo oscuro): hifas blancas crecen y envuelven la raíz; puntitos verdes viajan hacia la raíz ("nutrientes → árbol") y rombos rosas hacia las hifas ("azúcares → hongo"). Etiqueta "hifas del hongo". |
 | 7 | Pregunta | ¿Y es venenoso? Sí. | **Re-gancho.** "?" gigante → sello "VENENOSO". Robert grande. |
-| 8 | Toxinas | Tiene ácido iboténico y muscimol, que alteran las señales de tu cerebro. Y cocinarlo puede no quitarle el peligro. | Neuronas (fondo oscuro): las moléculas se parecen a glutamato y GABA y se pegan a los receptores; señales que se aceleran y se apagan. Olla hirviendo: algunas moléculas siguen ahí. Chip «cocinado ≠ seguro». |
-| 9 | Estudio | En 2018, en Minnesota, un señor los cocinó creyendo que eran un hongo que conocía de su país. | Tarjeta "2018 · Minnesota, EUA · MMWR (CDC), 2019". Un hongo amarillo-naranja (*A. muscaria* var. *guessowii*) junto al hongo que él conocía, con signo "≠". |
-| 10 | Respirador | En pocas horas: vómito, sudor y confusión. Pasó cuatro días con respirador y se recuperó. | Cronómetro "2–3 h"; chips "vómito", "sudor", "confusión"; cama de hospital con respirador, contador "4 días"; final ✓ "se recuperó". |
-| 11 | Moscas | Hasta las moscas lo sufren: antes lo ponían en leche para atontarlas. | Plato con leche y trozos de hongo; moscas que bajan y quedan mareadas (espirales). |
-| 12 | Cierre | Esos puntos blancos no son adorno: son su cascarón roto. Admíralo, pero no te lo comas. | **Regreso a la imagen del inicio:** el mismo hongo en el pasto, ahora con los puntos marcados como piezas del velo; chips "míralo ✓" y "comerlo ✗". |
+| 8 | Toxinas | Tiene ácido iboténico y muscimol, que alteran las señales de tu cerebro. Y cocinarlo puede no quitarle el peligro. | AL MICROSCOPIO · sinapsis (fondo oscuro): moléculas doradas llegan a los receptores y la neurona chispea ("ácido iboténico ≈ glutamato → excita"); luego llegan moléculas cian y se apaga ("muscimol ≈ GABA → frena"). En "cocinarlo": olla hirviendo con hongos rojos; aparecen solo 3 moléculas. Chip «cocinado ≠ seguro». |
+| 9 | Estudio | En 2018, en Minnesota, un señor los cocinó creyendo que eran un hongo que conocía de su país. | Tarjeta "2018 · Minnesota, EUA · MMWR (CDC), 2019". Crece un hongo amarillo-naranja con verrugas ("*A. muscaria* var. *guessowii*"); junto a él, una silueta gris con "?" ("el que él conocía") y el signo "≠". |
+| 10 | Respirador | En pocas horas: vómito, sudor y confusión. Pasó cuatro días con respirador y se recuperó. | Chip "2–3 h después de comer"; chips "vómito", "sudor", "confusión"; cama de hospital con respirador (pantalla con onda), contador "4 días con respirador"; final chip "✓ se recuperó". |
+| 11 | Moscas | Hasta las moscas lo sufren: antes lo ponían en leche para atontarlas. | Plato con leche y trozos de hongo rojo ("leche + hongo"); cinco moscas bajan, se posan y quedan mareadas (espirales). |
+| 12 | Cierre | Esos puntos blancos no son adorno: son su cascarón roto. Admíralo, pero no te lo comas. | **Regreso a la imagen del inicio:** el mismo hongo en el pasto, ahora con cada verruga marcada con un aro dorado (piezas del velo); chips "míralo ✓" y "comerlo ✗". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua, suave y de bosque (sin golpe marcado), que se tensa desde "¿Y es venenoso?" y se relaja en "se recuperó". Efectos en el mismo cuadro: brote del hongo, toque de la lupa, crujido del velo al romperse, gotas de lluvia y cada punto que cae, viento en el bosque, pulsos de nutrientes por las hifas, sello "VENENOSO", chispas de las neuronas, burbujas de la olla, tics del cronómetro y del respirador, zumbido de moscas.
 
-Barras de escala: 10 cm (hongo y botón), 50 µm (hifas en la raíz), 10 µm (neuronas, esquemático).
+Barras de escala (siempre visibles salvo en «¿Y es venenoso?», 1,3 s): 5 cm (hongo; 32 u del dibujo = 1 cm, sombrero adulto ≈ 10 cm), 2 cm (botón, sigue el zoom), 500 km (mapa), 100 µm (raíz), 0,5 µm (sinapsis, esquemático), 10 cm (olla), 50 cm (hospital), 5 cm (plato).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y es venenoso? Sí.».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0,0 | 4,2 | 11_sorprendido | `gancho` | «esos puntos no son manchas» (cuadro 0) |
+| 2 | 6,1 | 9,6 | 06_pensativo_menton | `arriba-der` | «envuelto en un velo, como un huevo» |
+| 3 | 15,1 | 18,6 | 13_senalando_arriba | `arriba-der` | señala las verrugas y el bulbo |
+| 4 | 23,0 | 26,2 | 04_bajando_lentes | `arriba-der` | «en México crece en bosques de pino y encino» |
+| 5 | 30,8 | 32,6 | 07_pensativo_puno | `grande` | «¿Y es venenoso? Sí.» |
+| 6 | 35,0 | 38,3 | 10_serio_molesto | `arriba-der` | «cocinarlo puede no quitarle el peligro» |
+| 7 | 41,1 | 43,6 | 12_perfil_serio | `arriba-der` | el hongo que confundió |
+| 8 | 46,8 | 48,7 | 11_sorprendido | `arriba-der` | «cuatro días con respirador… se recuperó» |
+| 9 | 49,5 | 52,8 | 05_sonriendo_dientes_uniformes | `arriba-der` | las moscas mareadas |
+| 10 | 53,4 | 57,9 | 02_apuntando_camara | `arriba-der` | «admíralo, pero no te lo comas» |
+| — | 58,0 | 61,5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **31,7 s** en pantalla (+ cierre 3,5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas en su texto completo el 29 oct 2026)
 

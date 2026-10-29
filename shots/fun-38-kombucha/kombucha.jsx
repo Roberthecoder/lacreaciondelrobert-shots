@@ -353,7 +353,7 @@ function KombuchaShot() {
       <Subtitulo T={T} idx={5} at={K.Ce + 0.1} until={K.Ca - 0.1} texto="La molécula del *papel y el algodón.*" />
       <Subtitulo T={T} idx={6} at={K.Ca + 0.1} until={K.P - 0.1} texto="Se enredan: *la capa crece.*" />
       <Subtitulo T={T} idx={7} at={K.P + 0.1} until={K.An - 0.1} texto="¿De verdad *te cura?*" />
-      <Subtitulo T={T} idx={8} at={K.An + 0.1} until={K.Es - 0.1} texto="Casi todo, en animales: *no en personas.*" />
+      <Subtitulo T={T} idx={8} at={K.An + 0.1} until={K.Es - 0.1} texto="Animales o laboratorio: *en personas, poco.*" />
       <Subtitulo T={T} idx={9} at={K.Es + 0.1} until={K.Re - 0.1} texto="Georgetown, 2023: *diabetes tipo 2.*" />
       <Subtitulo T={T} idx={10} at={K.Re + 0.1} until={K.Al - 0.1} texto="Con placebo también bajó: *es una pista.*" />
       <Subtitulo T={T} idx={11} at={K.Al + 0.1} until={K.C - 0.1} texto="Esa kombucha: *1.5 %* de alcohol." />

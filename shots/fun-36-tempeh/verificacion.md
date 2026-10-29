@@ -37,3 +37,35 @@ Fuentes abiertas:
 
 **Resumen:** 19 filas revisadas; la única ⚠️ (tarjeta de Toronto, fila 12b) se corrigió y quedó ✅. Se agregó Jurus y Sundberg 1976 como fuente primaria de la penetración de las hifas. Todo verificado.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026, mismo verificador independiente. Se leyeron `tempeh.jsx`, `Shot Tempeh base narrada.dc.html`, la columna «Lo que se ve» y la tabla «Robert en pantalla» de `guion.md` y `publicacion.md`. Se revisaron cuadros con `motor/preview.mjs` (0.3, 6, 12, 15, 17, 18, 19, 24, 30, 36, 40, 42, 44, 46, 48, 54, 58, 60 s).
+
+| # | Pantalla / publicación | Veredicto | Fuente | Nota |
+|---|---|---|---|---|
+| F1 | «¿soya prensada?» tachado → «soya + hongo vivo», «hilos del hongo» | ✅ | [NK] | "bound together by the mycelium of a living mould" |
+| F2 | Mapa: «Java», «Indonesia», «muy probablemente»; barra 500 km | ✅ | [NK] | En el código, 30 px por grado (≈111 km) → 500 km ≈ 135 px. La barra mide 135 px. |
+| F3 | «soya cocida», «se enfría (~25 °C)», «moho: *Rhizopus*», granos sin cáscara | ✅ | [NK] | "Allow for evaporative cooling to about 25°C"; "Cook dehulled beans" |
+| F4 | Reloj 00 → 48 h, «25–30 °C», «espora», «hifas = micelio»; barra 50 µm | ✅ (corregido) | [NK], [AD] | Espora de 34 px = 8.5 µm (las esporas de *Rhizopus* miden hasta 5–9 µm). Las hifas medían 2.7 µm, más delgadas que la espora: se engrosaron a 16 px ≈ 4 µm. |
+| F5 | «POR DENTRO · grano de soya», «hasta ~¼ del grosor», «células del grano», «hifas entre granos»; barra 1 mm | ✅ | [JS] | Penetración de 150 px = 750 µm (fuente: 742 µm). Grosor del grano: 600 px = 3 mm, así que es ¼. |
+| F6 | «un solo bloque»; barra 1 cm | ✅ | [NK] | — |
+| F7 | «proteasas → proteínas», «lipasas → grasas» (triglicérido con 3 cadenas) | ✅ | [NK], [MA] | Esquema molecular. Antes tenía una barra de «1 nm» puesta a ojo; se cambió por «esquema, no a escala». |
+| F8 | «ácido fítico» (anillo con 6 grupos P), «minerales libres» Fe/Zn/Ca; barra del medidor | ✅ (corregido) | [NK], [SB] | [NK] nombra exactamente "calcium, zinc and iron". La P representa los grupos fosfato que corta la fitasa (esquema). El medidor bajaba 65 %; se ajustó a 53 % (de 10.4 a 4.9 mg/g en [SB]). Antes tenía una barra de «0.2 nm» puesta a ojo; se cambió por «esquema, no a escala». |
+| F9 | Tarjeta «1977 · tempeh comprado en Toronto, Canadá · Liem, Steinkraus y Cronk · Appl. Environ. Microbiol.» | ✅ | [LSC] | — |
+| F9b | Subtítulo «1977, Toronto: ¿y la B12?» → «1977, tempeh de Toronto: ¿y la B12?» | ✅ (corregido) | [LSC] | Mismo motivo que la fila 12b: en Toronto se compró el tempeh, no se hizo el estudio. |
+| F10 | Cajas Petri «solo el hongo / hongo + bacteria», «B12: no / sí ✓»; barra 5 cm | ✅ (corregido) | [LSC] | "Pure tempeh molds … did not produce vitamin B-12". La barra de 5 cm medía 110 px junto a cajas de 380 px, que darían 17 cm; se ajustó a 210 px (caja estándar de 9 cm). |
+| F11 | «AL MICROSCOPIO · bacteria y hongo», «hifa del hongo», «bacteria (bastón)»; barra 5 µm | ✅ | [KB], [WK] | Bacteria de 58×24 px = 2.6×1.1 µm. Hifa de 138 px ≈ 6 µm. |
+| F12 | «poco aire» (bolsa perforada) / «con esporas», «manchas = esporas» | ✅ | [NK] | — |
+| F13 | «AL MICROSCOPIO · esporangios», «esporangio: bolsa de esporas», cabezas negro-grisáceas; barra 100 µm | ✅ | [AD] | Diámetro de 168–200 px = 84–100 µm. Fuente: "greyish-black, spherical, up to 100 µm"; "many spored". |
+| F14 | Cierre «soya + hongo», barras de 5 cm de los bloques | ✅ | [NK] | Bloques de unos 24 cm: tamaño comercial razonable (esquemático). |
+| F15 | Subtítulos 0–11 | ✅ | — | Coinciden con la voz verificada y no dicen nada nuevo. |
+| P1 | publicacion.md: 742 µm, ~¼ del cotiledón (Jurus y Sundberg 1976) | ✅ | [JS] | "Hyphae infiltrated to a depth of 742 μm, or about 25%…" |
+| P2 | publicacion.md: *K. pneumoniae* y *C. freundii* | ✅ | [NK], [KB] | "not the mould, but … K. pneumoniae and C. freundii are responsible for vitamin B12 production" |
+| P3 | publicacion.md: proteasas, lipasas, carbohidrasas y fitasas | ✅ | [NK], [SB] | "proteases, lipases, a variety of carbohydrases, and phytases are produced"; "Major carbohydrases of R. oligosporus in tempe include polygalacturonase, endocellulase, xylanase and arabinase"; fitasa del moho dominante [SB] |
+| P4 | LinkedIn: «Un hallazgo que corrigió una idea común» y «en los alimentos fermentados el resultado suele depender de una comunidad…» | ✅ (corregido) | [NK] | Eran afirmaciones sin fuente. Ahora dicen «Un hallazgo curioso» y «en el tempeh, el resultado depende de una comunidad de microbios (mohos y bacterias que los acompañan)…», que se apoya en "the importance of mixed cultures of fungi as well as some of the accompanying bacterial species". |
+| P5 | Tabla «Robert en pantalla» | ✅ | — | 8 apariciones y 32.9 s en pantalla. Sale una vez grande, con 7 poses y nunca la misma dos veces seguidas. |
+
+**Resumen final:** voz, pantalla y publicación verificadas. Correcciones aplicadas en esta revisión: grosor de las hifas, dos barras moleculares cambiadas por «esquema, no a escala», medidor del ácido fítico, subtítulo de Toronto, barra de las cajas Petri y dos frases de LinkedIn. Todo queda ✅.
+
+VEREDICTO: APROBADO
