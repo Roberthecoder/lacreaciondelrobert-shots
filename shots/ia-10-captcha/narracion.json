@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot Captcha base narrada.dc.html",
+  "salida": "Shot Captcha narrado.dc.html",
+  "nota": "Shot IA #10. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {"escena": "Gancho", "texto": "Tú contra un bot, resolviendo captchas: el bot casi siempre gana. Y más rápido."},
+    {"escena": "Marcador", "texto": "Las personas acertaron entre cincuenta y ochenta y cinco por ciento; la mayoría de los bots, más de noventa y seis."},
+    {"escena": "Estudio", "texto": "Lo comparó la Universidad de California en Irvine en 2023: mil cuatrocientas personas resolvieron catorce mil captchas reales."},
+    {"escena": "Letras", "texto": "Con las letras chuecas no hay pelea: en 2014, una IA de Google leyó las más difíciles con noventa y nueve punto ocho por ciento de acierto."},
+    {"escena": "Pregunta", "texto": "Entonces, ¿para qué te los siguen poniendo?"},
+    {"escena": "Libros", "texto": "Primero, un secreto: tú ya trabajaste para ellos. Muchas palabras que tecleabas venían de libros escaneados que la computadora no pudo leer."},
+    {"escena": "Libros", "texto": "Para 2008, la gente ya había transcrito más de cuatrocientos cuarenta millones de palabras."},
+    {"escena": "Calle", "texto": "Luego Google probó con números de casas de Street View."},
+    {"escena": "Movimiento", "texto": "Hoy la prueba casi no está en lo que escribes: la casilla de «no soy un robot» analiza lo que haces antes, durante y después del clic."},
+    {"escena": "Calificacion", "texto": "Y la versión tres ni te pregunta: le pone a cada visita una calificación de cero, bot, a uno, humano."},
+    {"escena": "Cierre", "texto": "Así que el bot te gana leyendo letras chuecas. Lo que todavía lo delata es cómo se mueve."}
+  ]
+}

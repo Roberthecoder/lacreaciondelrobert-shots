@@ -3,16 +3,49 @@
   "salida": "Shot Programadores narrado.dc.html",
   "nota": "Shot IA #16. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    {"escena": "Gancho", "texto": "Programadores expertos sintieron que la IA los hizo veinte por ciento más rápidos. El reloj dijo otra cosa: tardaron diecinueve por ciento más."},
-    {"escena": "Apuesta", "texto": "Antes de empezar, ellos mismos apostaban a ir veinticuatro por ciento más rápido."},
-    {"escena": "Estudio", "texto": "Lo midió el laboratorio METR en 2025: dieciséis programadores con años en sus propios proyectos y doscientas cuarenta y seis tareas reales."},
-    {"escena": "Sorteo", "texto": "A cada tarea le tocaba al azar: con IA o sin IA. Y grabaron sus pantallas."},
-    {"escena": "Pregunta", "texto": "¿Cómo te sientes más rápido si vas más lento?"},
-    {"escena": "Pantalla", "texto": "Con IA programaban menos: se les iba el tiempo escribiéndole instrucciones, esperando y revisando sus respuestas."},
-    {"escena": "Pantalla", "texto": "Aceptaron menos de la mitad de lo que les propuso."},
-    {"escena": "Matices", "texto": "Ojo: eran expertos en proyectos enormes que conocen de memoria, y los autores aclaran que esto no vale para todos."},
-    {"escena": "Contraste", "texto": "En 2023, otro estudio con Copilot vio lo contrario: una tarea sencilla salió cincuenta y cinco por ciento más rápido."},
-    {"escena": "Giro", "texto": "Y en 2026, METR dijo que con las herramientas nuevas probablemente ya van más rápido, aunque no lo pudo medir bien."},
-    {"escena": "Cierre", "texto": "La lección no es usarla o no: es medir con el reloj, no con lo que sientes."}
+    {
+      "escena": "Gancho",
+      "texto": "Programadores expertos sintieron que la IA los hizo veinte por ciento más rápidos. En realidad, tardaron diecinueve por ciento más."
+    },
+    {
+      "escena": "Apuesta",
+      "texto": "Antes, apostaban a ir veinticuatro por ciento más rápido."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo midió el laboratorio METR en 2025: dieciséis expertos en sus propios proyectos, doscientas cuarenta y seis tareas reales."
+    },
+    {
+      "escena": "Sorteo",
+      "texto": "A cada tarea le tocó al azar: con IA o sin IA. Y grabaron sus pantallas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo te sientes más rápido si vas más lento?"
+    },
+    {
+      "escena": "Pantalla",
+      "texto": "Con IA, parte del tiempo se iba en pedirle cosas, esperarla y revisar lo que hacía."
+    },
+    {
+      "escena": "Pantalla",
+      "texto": "Aceptaron menos de la mitad de lo que les propuso."
+    },
+    {
+      "escena": "Matices",
+      "texto": "Ojo: eran expertos en proyectos enormes que conocen de memoria; los autores aclaran que no vale para todos."
+    },
+    {
+      "escena": "Contraste",
+      "texto": "En 2023, un estudio con Copilot vio lo contrario: una tarea sencilla salió cincuenta y seis por ciento más rápido."
+    },
+    {
+      "escena": "Giro",
+      "texto": "En 2026, METR dijo que con herramientas nuevas quizá ya van más rápido, pero no pudo medirlo bien."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "La lección no es usarla o no: es medir con el reloj, no con la sensación."
+    }
   ]
 }
