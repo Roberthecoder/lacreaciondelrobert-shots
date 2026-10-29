@@ -46,4 +46,36 @@ llevan su año en voz o pantalla (2001, 1938, Edad Media); las fuentes coinciden
 
 **Resumen:** 25 afirmaciones revisadas, todas ✅ (fila 14 corregida: la tarjeta de migraña ahora nombra solo la dihidroergotamina, que sigue en uso clínico según Whealy y Becker 2024).
 
-VEREDICTO: APROBADO
+## Revisión final (animación y publicación) · 29 oct 2026
+
+Revisados todos los rótulos de `cornezuelo.jsx` (Etq, Chip, Sello, MitoTachado, TarjetaEstudio, `<text>`, 14 subtítulos), las 14 barras de escala, `publicacion.md` (7 redes + comentario fijado) y las citas de `## Fuentes` del guion (frases buscadas en el texto de cada fuente).
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| F1 | Rótulos «centeno quemado» (tachado) → «HONGO», «cornezuelo», «*Claviceps purpurea*», «flor del centeno», «espora», «estigma», «hifa», «ovario», «insecto», «esclerocio (cornezuelo)», «grano de centeno» | ✅ | [H], [ARS], [BfR] | ver filas 1–7 | 2009 / 2024 |
+| F2 | «camino del polen» | ✅ | [H] | "grows in the transmitting tissue, mimicking pollen tube growth, until the ovary base is reached" | 2009 |
+| F3 | «mielecilla: jarabe de azúcar + esporas»; «alcaloides: ergotamina, ergometrina…» | ✅ | [ARS], [BfR] | "sugars and conidia are concentrated into a sticky syrup"; "(ergotamine, … ergometrine …)" | 2024 |
+| F4 | «POR DENTRO · vaso sanguíneo», «gangrena», subtítulo «Estrecha tus vasos: gangrena.» | ✅ | [U] | "induces strong contractions of mediumsized arteries and small nutrient vessels … which may ultimately lead to gangrene" | 2002 |
+| F5 | «Edad Media · ergotismo», «“fuego de San Antonio”» | ✅ | [H] | "In the Middle Ages, vast epidemics of so‐called St. Anthony's Fire disease…" | 2009 |
+| F6 | Tarjeta «2001 · Arsi, Etiopía · 18 casos · Urga et al., Ethiop. J. Health Dev., 2002»; «de 5 a 30 años»; «3 murieron»; 18 siluetas, 3 se apagan; subtítulo «2001, Etiopía: 18 con gangrena.» | ✅ | [U] | "18 patients aged 5 to 30 years were affected by the disease with three reported deaths"; "February to June, 2001" | 2001 (publ. 2002) |
+| F7 | Mapa de Etiopía con punto en Arsi (39.3° E, 7.9° N; Asella, capital de Arsi, está en ~39.1° E, 8.0° N) y barra «500 km» (130 px con 27 px por grado ≈ 535 km) | ✅ (esquemático) | [U] | "Tijo-Digelu Woreda, about 70 km from Assella, the capital city of Arsi zone" | 2002 |
+| F8 | «cebada», «avena silvestre + cornezuelo» | ✅ | [U] | "barley containing ergotized wild oats" | 2002 |
+| F9 | «migraña · dihidroergotamina»; «sangrado después del parto · ergometrina» | ✅ | [WB], [V] | ver filas 14–15 | 2024 / 2019 |
+| F10 | «1938 · Albert Hofmann»; «ácido lisérgico → LSD»; subtítulo «1938: el LSD.» | ✅ | [H] | "lysergic acid diethylamide (LSD) … first synthesized … by Albert Hofmann in 1938" | 2009 |
+| F11 | Dibujo `Ergolina`: 4 hexágonos iguales + una "N", presentado junto a «ácido lisérgico → LSD» | ⚠️ | química estándar (ergolina = sistema tetracíclico indol + 2 anillos de 6; anillo B de 5 átomos con NH, N6 en el anillo D) | El esqueleto real tiene un anillo de 5 (pirrol) y dos nitrógenos; 4 hexágonos no es la ergolina | — |
+| F12 | «UE: límite de cornezuelo en el grano»; «cornezuelo fuera»; subtítulo «Hoy el molino lo separa.» | ✅ | [BfR] | "In the mills, ergot is removed using various technical measures."; "maximum level of … ergot sclerotia per kilogramme (kg) of unprocessed cereals" | 2024 |
+| F13 | «veneno → medicina»; subtítulo «Fue veneno… hoy es medicina.» | ✅ | filas 2, 14, 15 | — | — |
+| F14 | Barras de escala 2 cm, 1 mm, 1 cm, 10 cm, 50 cm, 2 cm (espiga, flor, cuernito, pan/molino, figura, mano) | ✅ (esquemático; "El dibujo es esquemático" en la publicación) | [K] | cornezuelo "from a few lines to 1 inch, or even 1 ½ inches" | 1898 |
+| P1 | publicacion.md, YouTube: "el centeno es el cereal más afectado" | ⚠️ | [BfR], [H] | BfR: "rye is particularly affected" (no dice "el más"); Haarmann solo lo llama "model host" | 2024 |
+| P2 | publicacion.md: mielecilla "una semana después"; esclerocio "unas dos semanas después" | ✅ | [H] | "secreted (about 7 days post infection, dpi)"; "About 2 weeks post‐infection … the development of sclerotia is initiated" | 2009 |
+| P3 | publicacion.md: "fuego sagrado" o "fuego de San Antonio" por el ardor en las extremidades | ✅ | [H] | "known at that time as ignis sacer (holy fire), or St. Anthony's Fire, because of the burning sensations in the limbs" | 2009 |
+| P4 | publicacion.md: "También existe una forma convulsiva." | ✅ | [H] | "Two syndromes with different symptoms have been described: convulsive ergotism" ("paranoia and hallucinations, twitches and spasms") | 2009 |
+| P5 | publicacion.md: brote de Arsi entre febrero y junio de 2001, 18 personas de 5 a 30 años con ergotismo gangrenoso, 3 muertes, cebada con avena silvestre con cornezuelo | ✅ | [U] | ver filas 11–13 | 2002 |
+| P6 | publicacion.md: dihidroergotamina para la migraña; ergometrina para prevenir el sangrado posparto (en presente) | ✅ | [WB], [V] | "dihydroergotamine still has a significant clinical role"; "The use of ergometrine/methylergometrine (200 µg, IM/IV) is recommended for the prevention of PPH" | 2024 / 2019 |
+| P7 | publicacion.md: Hofmann sintetizó en 1938 el LSD, derivado semisintético | ✅ | [H] | "The most famous semi‐synthetic ergot alkaloid is the lysergic acid diethylamide (LSD)" | 2009 |
+| P8 | publicacion.md: molinos retiran el cornezuelo; la UE fija límites de cornezuelo en el cereal sin procesar y de sus alcaloides en las harinas | ✅ | [BfR] | "Regulation (EU) 2021/1399 also sets maximum levels for the sum of the twelve toxicologically most relevant ergot alkaloids"; "For milling products of barley, wheat, spelt and oats…" | 2024 |
+| P9 | Citas de `## Fuentes` del guion ([H], [U], [BfR], [S], [ARS], [K]): frases buscadas en cada texto | ✅ | — | Todas aparecen (Urga: "induces strong contractions of mediumsized arteries…", "darkcolored, hard fungal mass…"; Smakosz: "In 1935, another alkaloid was discovered—ergometrine", "administered at the third stage of labor to prevent postpartum hemorrhage") | — |
+| P10 | Nota: Smakosz 2021 dice que los alcaloides del cornezuelo "in modern times … are not used in developed countries anymore" en obstetricia; el presente "salen medicinas … sangrado del parto" se sostiene con la OMS (Vogel 2019), que no está en las fuentes de la publicación | ✅ (recomendación: agregar [V] a las fuentes) | [S], [V] | ver P6 | 2021 / 2019 |
+
+**Pendiente:** F11 y P1 son ⚠️. El veredicto final se agrega cuando se corrijan.
+
