@@ -1,0 +1,58 @@
+{
+  "especial": "Candelaria",
+  "serie_vinculada": "Ambiental",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Razas Maiz base narrada.dc.html",
+  "salida": "Shot Razas Maiz narrado.dc.html",
+  "nota": "Shot Festivo #14 · Candelaria · Ambiental. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu tamal no es de maíz a secas: en México se reportan sesenta y cuatro razas de maíz."
+    },
+    {
+      "escena": "Teocintle",
+      "texto": "Y todas vienen de un pasto silvestre, el teocintle: mazorquitas de diez a doce granos con cáscara dura."
+    },
+    {
+      "escena": "Domestica",
+      "texto": "Según un estudio genético de 2002, la gente lo domesticó hace unos nueve mil años en el sur de México."
+    },
+    {
+      "escena": "Polen",
+      "texto": "¿Por qué tantas razas? Su polinización es libre, y los campesinos mueven semilla año con año."
+    },
+    {
+      "escena": "Semilla",
+      "texto": "Cada familia guarda, intercambia y prueba su propia semilla."
+    },
+    {
+      "escena": "Altura",
+      "texto": "Así se adaptó desde el nivel del mar hasta los tres mil cuatrocientos metros."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y de dónde sale el maíz azul o morado?"
+    },
+    {
+      "escena": "Color",
+      "texto": "De antocianinas: pigmentos en la cáscara del grano, en la capa de justo abajo, o en las dos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2009, en un refugio rocoso del valle del Balsas, hallaron rastros de maíz de hace ocho mil setecientos años."
+    },
+    {
+      "escena": "Tamal",
+      "texto": "Dato: una variante del maíz Chalqueño se usa para harina de tamal, y sus hojas, para envolverlos."
+    },
+    {
+      "escena": "Banco",
+      "texto": "Por eso se guardan en bancos de semillas, y los maíces criollos podrían servir para los climas que vienen."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu tamal no es de maíz a secas: es de una raza que alguien cuidó, semilla por semilla."
+    }
+  ]
+}
