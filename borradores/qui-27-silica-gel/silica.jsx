@@ -305,7 +305,7 @@ function Silica() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.G + 3.0} texto="☠ ¿veneno?" x={300} y={470} tam={50} />
       <Chip T={T} at={K.G + 3.1} until={K.Q - 0.3} texto="una trampa para el agua" x={540} y={1500} tam={44} borde={AGUA} />
       <Chip T={T} at={K.Q + 1.2} until={K.Su - 0.3} texto="dióxido de silicio" y={1500} tam={44} borde={KC.orange} />
-      <Etq T={T} at={K.Q + 2.8} until={K.Su - 0.3} x={1040} y={1170} texto="poros diminutos" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Q + 2.8} until={K.Su - 0.3} x={1040} y={630} texto="poros diminutos" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Su + 3.0} until={K.Si - 0.3} texto="1 g por dentro: 450–640 m²" y={1500} tam={40} borde={KC.gold} />
       <Etq T={T} at={K.Si + 0.5} until={K.Ad - 0.3} x={560} y={480} texto="pared del poro: Si–OH" lado="der" tam={32} />
       <Chip T={T} at={K.Si + 2.2} until={K.Ad - 0.3} texto="puente de hidrógeno" y={1560} tam={42} borde={AGUA} />
