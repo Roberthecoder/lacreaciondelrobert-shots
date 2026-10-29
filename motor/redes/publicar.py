@@ -244,7 +244,7 @@ def tiktok_token():
     if not g or not g.get('refresh_token'):
         raise Falla('TikTok: todavía no hay token. Robert da clic en "Conectar TikTok" (ADMIN.md, "Publicar en redes").')
     d = requests.post(f'{TT}/oauth/token/', data={
-        'client_key': ENV('TIKTOK_CLIENT_KEY'), 'client_secret': ENV('TIKTOK_CLIENT_SECRET'),
+        'client_key': ENV('TIKTOK_CLIENT_KEY', '').strip(), 'client_secret': ENV('TIKTOK_CLIENT_SECRET', '').strip(),
         'grant_type': 'refresh_token', 'refresh_token': g['refresh_token']},
         headers={'Content-Type': 'application/x-www-form-urlencoded'}, timeout=30)
     d = ok(d, 'TikTok renovar token')
@@ -664,7 +664,7 @@ def cmd_tiktok_codigo(a):
         codigo = requests.utils.unquote(m.group(1)) if m else codigo
     mask(codigo)
     d = ok(requests.post(f'{TT}/oauth/token/', data={
-        'client_key': ENV('TIKTOK_CLIENT_KEY'), 'client_secret': ENV('TIKTOK_CLIENT_SECRET'), 'code': codigo,
+        'client_key': ENV('TIKTOK_CLIENT_KEY', '').strip(), 'client_secret': ENV('TIKTOK_CLIENT_SECRET', '').strip(), 'code': codigo,
         'grant_type': 'authorization_code', 'redirect_uri': REDIRECT_TIKTOK},
         headers={'Content-Type': 'application/x-www-form-urlencoded'}, timeout=30), 'TikTok código')
     if not d.get('refresh_token'):
