@@ -20,18 +20,22 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   `correcciones/auditoria-29oct`). Sesión `session_0157fph2Famee5vpDrWHHrN1` los corrige, re-verifica, renderiza y reemplaza en la Sala.
   Al terminar: juntar esa rama a main con [sin render]. fun-03: falta que Robert confirme «en mi cuarto» y «papel aluminio».
 
-## PUBLICADOR DE REDES (29 oct) — FUNCIONA EN PRUEBA Y PRIVADO; FALTA LA PRIMERA PUBLICACIÓN REAL
+## PUBLICADOR DE REDES (29 oct) — LAS 6 REDES FUNCIONAN EN PRUEBA Y PRIVADO; FALTA LA PRIMERA PUBLICACIÓN REAL
 - Cómo se usa: ADMIN.md, «Publicar en redes». Programa `motor/redes/publicar.py`, workflow `publicar.yml` (a mano o con un
   archivo `publicar/pedidos/*.json`), botón «Publicar» en la Sala (collection `publicaciones`).
 - Probado con 003-semillas-luna: modo prueba OK en Facebook, Instagram, Threads, YouTube y LinkedIn. Modo privado OK en
   YouTube (privado: youtube.com/shorts/EuhA0wKFL4A), Facebook (borrador), Instagram y Threads (contenedor sin publicar) y LinkedIn
   (video sin post). Instagram: la subida directa da 400, así que usa el enlace del Release (automático).
   Esos borradores/privados de 003 se pueden borrar (su narrado es viejo): YouTube Studio y Meta Business Suite.
-- TikTok: FALTA que Robert conecte la cuenta (docs/tiktok.html → Autorizar → workflow «Conectar TikTok»).
-- Primera publicación real: pedir a Robert cuál video y en qué redes (propuesta: fun-02-hormiga-zombi, auditado OK). OJO: Robert
-  puso la voz en pausa para mejorar la calidad; confirmar que SÍ quiere publicar narrados con la voz actual.
+- TikTok CONECTADO el 29 oct (cuenta «La Creación del Robert», Sandbox «Pruebas», user.info.basic + video.upload; refresh
+  hasta 29 oct 2027, se renueva solo). Borrador de prueba (003) enviado a su bandeja: Robert lo puede borrar en la app.
+  Ojo: los secretos TIKTOK_CLIENT_KEY/SECRET son los del SANDBOX. El problema al conectar fue que la llave pegada en la página
+  era de otra app; el workflow «Conectar TikTok» imprime la huella (8 letras) de la llave para comparar sin verla.
+- 29 oct 18:20: modo prueba OK en las 6 redes con fun-02; renovar-tokens OK (Threads renovado, vence 28 dic; se extiende cada lunes).
+- Primera publicación real: Robert dijo «todavía no publiques nada» (29 oct). Propuesta cuando quiera: fun-02-hormiga-zombi
+  (auditado OK). La voz está en pausa para mejorar su calidad: no publicar narrados hasta que él lo pida.
 - Revisiones: respuestas listas en `docs/revisiones/LEEME.md`; Robert manda la auditoría de YouTube y el «Submit for review» de
-  TikTok (con el video demo, que se graba cuando TikTok esté conectado).
+  TikTok (con el video demo: ya se puede grabar, TikTok está conectado).
 - Recordatorios: LinkedIn vence ~28 dic 2026 (renovación manual, ADMIN.md). Threads y TikTok se renuevan solos cada lunes
   (`renovar-tokens.yml`); si ese run sale en rojo, avisar a Robert.
 - Disco de la PC de Robert: se llenó (0 MB) el 29 oct al bajar los 300 shots; se liberaron ~460 MB. Hay que liberar más
