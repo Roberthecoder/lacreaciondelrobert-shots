@@ -1,0 +1,66 @@
+{
+  "especial": "San Valentín",
+  "serie_vinculada": "Fungi Mati",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Chocolate base narrada.dc.html",
+  "salida": "Shot Chocolate narrado.dc.html",
+  "nota": "Shot Festivo #16 · San Valentín · Fungi Mati (se publica el 14 feb 2027). Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este chocolate no lo hizo solo el cacao: también lo hizo un hongo."
+    },
+    {
+      "escena": "Mazorca",
+      "texto": "Abre una mazorca: las semillas vienen en una pulpa blanca llena de azúcares."
+    },
+    {
+      "escena": "Amarga",
+      "texto": "Recién sacadas son ásperas y amargas: todavía no saben a chocolate."
+    },
+    {
+      "escena": "Monton",
+      "texto": "Por eso se apilan con su pulpa, tapadas con hojas de plátano, de dos a diez días."
+    },
+    {
+      "escena": "Levadura",
+      "texto": "Primero llegan las levaduras, hongos de una sola célula, y se comen ese azúcar."
+    },
+    {
+      "escena": "Alcohol",
+      "texto": "Hacen alcohol, y la pulpa se vuelve líquida y escurre."
+    },
+    {
+      "escena": "Bacterias",
+      "texto": "Luego, bacterias: unas hacen ácido láctico; otras, ácido acético, el del vinagre."
+    },
+    {
+      "escena": "Calor",
+      "texto": "El montón llega a más de cuarenta grados, y el ácido y el calor matan la semilla."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si la semilla muere, de dónde sale el sabor?"
+    },
+    {
+      "escena": "Piezas",
+      "texto": "Adentro, sus enzimas parten proteínas y azúcares: son piezas del sabor que, al tostar, se unen en la reacción de Maillard."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2014, un equipo de Sídney, Australia, fermentó cacao con un antifúngico que frenó a las levaduras."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "El chocolate salió más ácido y sin su sabor característico."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Y las semillas no se pusieron bien cafés: quedaron morado violeta."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que si este San Valentín regalas chocolate, también regalas el trabajo de un hongo."
+    }
+  ]
+}

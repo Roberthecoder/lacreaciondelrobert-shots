@@ -1,0 +1,62 @@
+{
+  "especial": "Revolución Mexicana",
+  "serie_vinculada": "Químico",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Pelicula Nitrato base narrada.dc.html",
+  "salida": "Shot Pelicula Nitrato narrado.dc.html",
+  "nota": "Shot Festivo #08 · Revolución Mexicana · Químico. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este rollo de la Revolución no es solo cine: es algodón tratado con ácido nítrico."
+    },
+    {
+      "escena": "Villa",
+      "texto": "En 1914, Pancho Villa firmó con una empresa de cine estadounidense para que filmara sus batallas."
+    },
+    {
+      "escena": "Nitrato",
+      "texto": "Y el cine de entonces se grababa en nitrato."
+    },
+    {
+      "escena": "Receta",
+      "texto": "Se hacía bañando fibras de algodón en ácido nítrico y sulfúrico."
+    },
+    {
+      "escena": "Molecula",
+      "texto": "El ácido le pega grupos nitrato a la cadena de celulosa."
+    },
+    {
+      "escena": "Prima",
+      "texto": "Es prima del algodón pólvora, pero con menos nitrógeno: cerca del doce por ciento."
+    },
+    {
+      "escena": "Oxigeno",
+      "texto": "Y trae su propio oxígeno: encendida, arde sin que le llegue aire."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si nadie la enciende? ¿Se puede prender sola?"
+    },
+    {
+      "escena": "Gases",
+      "texto": "Al envejecer suelta gases de nitrógeno que la deshacen cada vez más rápido."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Nueva, se prende sola a ciento cincuenta grados; muy descompuesta, con apenas cincuenta, o menos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1982, el fuego en la Cineteca Nacional llegó a sus bóvedas de nitrato: según cifras oficiales, se perdieron más de seis mil películas."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Y mucho cine de la Revolución sí sobrevivió: con los rollos que juntó Salvador Toscano, su hija Carmen armó «Memorias de un mexicano» en 1950."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que este rollo no es solo cine: es algodón con ácido nítrico que hay que cuidar del calor."
+    }
+  ]
+}
