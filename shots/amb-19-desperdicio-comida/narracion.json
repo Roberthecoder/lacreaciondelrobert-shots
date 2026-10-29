@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Desperdicio base narrada.dc.html",
+  "salida": "Shot Desperdicio narrado.dc.html",
+  "nota": "Shot Ambiental #19. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este refri es toda la comida que llega a tiendas, restaurantes y casas del mundo. Casi una de cada cinco partes se va a la basura."
+    },
+    {
+      "escena": "Toneladas",
+      "texto": "En 2022 fueron mil cincuenta millones de toneladas de comida tirada."
+    },
+    {
+      "escena": "Cascaras",
+      "texto": "Ojo: esa cuenta incluye cáscaras y huesos, no solo comida buena."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y quién tira más: el súper, los restaurantes o tu casa?"
+    },
+    {
+      "escena": "Casa",
+      "texto": "Tu casa. Seis de cada diez kilos se tiran en los hogares."
+    },
+    {
+      "escena": "Kilos",
+      "texto": "En promedio, cada persona tira en casa setenta y nueve kilos al año."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "Y para México, el informe estima ciento cinco kilos por persona, solo en casa."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo calculó en 2024 el Programa de la ONU para el Medio Ambiente, con datos de hogares de noventa y tres países."
+    },
+    {
+      "escena": "Ricos",
+      "texto": "Y no es cosa de países ricos: entre ricos y de ingreso medio, el promedio en casa cambia apenas siete kilos."
+    },
+    {
+      "escena": "Gases",
+      "texto": "Además, se calcula que la comida que se pierde y se tira genera entre ocho y diez por ciento de los gases de efecto invernadero."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa quinta parte no está lejos: más de la mitad se tira en casas como la tuya."
+    }
+  ]
+}
