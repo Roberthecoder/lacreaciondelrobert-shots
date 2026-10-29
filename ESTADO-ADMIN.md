@@ -35,7 +35,10 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - Primera publicación real: Robert dijo «todavía no publiques nada» (29 oct). Propuesta cuando quiera: fun-02-hormiga-zombi
   (auditado OK). La voz está en pausa para mejorar su calidad: no publicar narrados hasta que él lo pida.
 - Revisiones: respuestas listas en `docs/revisiones/LEEME.md`; Robert manda la auditoría de YouTube y el «Submit for review» de
-  TikTok (con el video demo: ya se puede grabar, TikTok está conectado).
+  TikTok. Video demo GRABADO el 29 oct (3:47, sitio → autorizar → «Conectar TikTok» → borrador a la bandeja): en la PC de
+  Robert, C:\Users\winusr\lacreacion-lotes\revision-tiktok\demo-tiktok.mp4 (no va al repo público). No muestra la pantalla de
+  permisos de TikTok (la cuenta ya estaba autorizada) ni el teléfono; si TikTok lo pide, Robert quita el acceso de la app en
+  TikTok (Ajustes → Seguridad → Apps) y se graba de nuevo, más un video del celular con la notificación del borrador.
 - Recordatorios: LinkedIn vence ~28 dic 2026 (renovación manual, ADMIN.md). Threads y TikTok se renuevan solos cada lunes
   (`renovar-tokens.yml`); si ese run sale en rojo, avisar a Robert.
 - Disco de la PC de Robert: se llenó (0 MB) el 29 oct al bajar los 300 shots; se liberaron ~460 MB. Hay que liberar más
