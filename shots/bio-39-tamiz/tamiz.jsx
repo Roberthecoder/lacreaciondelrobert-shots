@@ -249,7 +249,7 @@ function Tamiz() {
           {pheEn.map((p, i) => { const v = kprog(T, p.t0, p.t0 + 1.2, kEase.suave); if (v <= 0) return null;
             const x = klerp(330, p.xx, v), y = klerp(780, p.yy, v);
             return <Phe key={i} x={x} y={y + Math.sin(T * 3 + i) * 5} s={0.55} rot={p.rot + T * 25} brillo={0.4} />; })}
-          <Cerebro x={900} y={620} s={0.75} T={T} alerta={kprog(T, K.En + 3.2, K.En + 3.8)} />
+          <Cerebro x={930} y={620} s={0.65} T={T} alerta={kprog(T, K.En + 3.2, K.En + 3.8)} />
         </SvgCapa>
         <Medidor T={T} at={K.En + 0.8} until={K.Pr - 0.3} valor={(t) => klerp(0.15, 0.95, kprog(t, K.En + 0.8, K.En + 5.0))} etiqueta="Phe en la sangre" texto={(v) => (v > 0.6 ? 'alta' : 'normal')} x={90} y={1430} color={KC.red} />
       </Escena>
@@ -331,7 +331,7 @@ function Tamiz() {
 
       {/* lupas y escalas */}
       <Lupa T={T} at={K.Bu + 1.0} until={K.En - 0.3} x={540} y={960} r={190} fx={540 - 140} fy={560 + 70} interior={(t, r) => InteriorPapel(t, r)} tinte={KC.red} etiqueta="AL MICROSCOPIO · sangre seca" />
-      <Lupa T={T} at={K.Ha + 2.0} until={K.Ho - 0.3} x={830} y={960} r={170} fx={PLX + discos[PKU][0]} fy={PLY + discos[PKU][1]} interior={(t, r) => InteriorHalo(t, r, K.Ha + 2.0)} tinte={KC.mint} etiqueta="AL MICROSCOPIO · halo" />
+      <Lupa T={T} at={K.Ha + 2.0} until={K.Ho - 0.3} x={830} y={880} r={170} fx={PLX + discos[PKU][0]} fy={PLY + discos[PKU][1]} interior={(t, r) => InteriorHalo(t, r, K.Ha + 2.0)} tinte={KC.mint} etiqueta="AL MICROSCOPIO · halo" />
       {T < K.Ta && <Escala T={T} z={1} pxPorMm={9.4} />}
       {T > K.Pr && T < K.Gu && <Escala T={T} z={1} pxPorMm={100} />}
       {T > K.Bu + 1.4 && T < K.En - 0.3 && <Escala T={T} z={1} pxPorMm={9000} objetivo={260} />}
@@ -343,7 +343,7 @@ function Tamiz() {
       <Chip T={T} at={K.Bu + 0.2} until={K.Bu + 0.9} texto="tamiz metabólico neonatal" x={540} y={830} tam={40} borde={KC.mint} />
       <Etq T={T} at={K.Bu + 1.8} until={K.En - 0.3} x={130} y={1500} texto="fenilcetonuria (PKU)" tam={40} color={KC.texto} />
       <Etq T={T} at={K.En + 0.6} until={K.Pr - 0.3} x={110} y={690} texto="proteína" tam={30} color="#7fc8ff" />
-      <Etq T={T} at={K.En + 1.2} until={K.Pr - 0.3} x={380} y={670} texto="enzima a medio gas" tam={30} color={ENZ} />
+      <Etq T={T} at={K.En + 1.2} until={K.Pr - 0.3} x={330} y={670} texto="enzima a medio gas" tam={30} color={ENZ} />
       <Etq T={T} at={K.En + 1.8} until={K.Pr - 0.3} x={60} y={1185} texto="fenilalanina (Phe) en la sangre" tam={30} color={PHE} />
       <TarjetaEstudio T={T} at={K.Gu + 0.2} until={K.Ag - 0.2} anio="1963" quien="Robert Guthrie y Ada Susi" revista="Pediatrics · Buffalo, EE. UU." x={460} y={900} />
       <Chip T={T} at={K.Gu + 1.4} until={K.Ag - 0.2} texto="¡otro Robert!" x={540} y={1500} tam={46} borde={KC.gold} />
@@ -351,7 +351,7 @@ function Tamiz() {
       <Chip T={T} at={K.Ag + 1.0} until={K.Ha - 0.2} texto="+ β-2-tienilalanina = freno" x={600} y={1590} tam={34} borde={FRENO} />
       <Cronometro T={T} at={K.Ha + 0.3} until={K.Ho - 0.3} factor={3600 * 4} x={480} y={470} etiqueta="TIME-LAPSE" />
       <Chip T={T} at={K.Ha + 1.4} until={K.Ho - 0.3} texto="mucha Phe → la bacteria crece" y={1500} tam={38} borde={KC.mint} />
-      <Etq T={T} at={K.Ho + 0.8} until={K.Di - 0.3} x={90} y={610} texto="espectrómetro de masas en tándem" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ho + 0.8} until={K.Di - 0.3} x={90} y={610} texto="espectrómetro de masas" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Di + 0.6} until={K.Re - 0.3} x={90} y={590} texto="fórmula especial" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Re + 1.6} until={K.Mx - 0.3} texto="FENILCETONÚRICOS: CONTIENE FENILALANINA" y={1500} tam={30} borde={KC.red} />
       <Chip T={T} at={K.Mx + 0.4} until={K.Ci - 0.3} texto="NOM-034-SSA2-2013" y={1500} tam={42} borde={KC.pink} />

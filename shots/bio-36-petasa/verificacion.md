@@ -34,7 +34,7 @@
 | Grúa detenida (pantalla: obra parada) | ✅ | ídem | "financing required to resume the project" (el proyecto está en pausa) | 2026 |
 | Dibujos (botella, bacterias, enzimas-tijera, cadena de PET, planta) esquemáticos y no a escala | ✅ | Declarado en pantalla ("esquemático · no a escala", "AL MICROSCOPIO · esquemático") y en la descripción | "El dibujo es esquemático." | 2026 |
 
-Nota: no se pudo abrir nada de Carbios posterior a abril de 2026 (carbios.com 503); "sigue en pausa" y "la planean para 2028" son lo último publicado (mar 2026). La capacidad de 50 mil toneladas al año va solo en la descripción (Packaging Gateway).
+Nota: no se pudo abrir nada de Carbios posterior a abril de 2026 (carbios.com 503); "sigue en pausa" y "la planean para 2028" son lo último publicado (mar 2026).
 
 Sin ❌ ni ⚠️ pendientes.
 

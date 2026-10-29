@@ -80,7 +80,7 @@ Por eso la biotecnología mejora enzimas. En **2020**, un equipo de Toulouse (Fr
 **cutinasa hallada en composta de hojas y ramas** (LCC): partió **al menos el 90 % del PET en 10 horas** y con lo recuperado se hicieron botellas nuevas.
 Superó a todas las enzimas que parten PET reportadas hasta entonces, incluida la de *Ideonella* (aunque la de composta se había descubierto antes, en 2012).
 
-Pero no es magia: la planta industrial de Carbios en Longlaville (Francia), pensada para 50 mil toneladas de residuos de PET al año, sigue en pausa mientras cierra su financiamiento;
+Pero no es magia: la planta industrial de Carbios en Longlaville (Francia) sigue en pausa mientras cierra su financiamiento;
 la empresa la planea para **2028**. Y ninguna enzima recoge la basura: el PET primero tiene que llegar al reciclaje.
 
 El dibujo es esquemático. **¿En tu casa separan las botellas? 👇**
@@ -111,5 +111,4 @@ Soy Robert, de La Creación del Robert 🌱"
    - PETPlanet, 23 dic 2025: https://petpla.net/2025/12/23/carbios-maintains-its-commitment-to-build-the-longlaville-plant-and-adjusts-its-timeline/ — "the plant should be commissioned during the first half of 2028".
    - CHEManager, 2 ene 2026: https://www.chemanager-online.com/en/news/carbios-confirms-longlaville-plant-plans-while-revising-project-schedule — "has reaffirmed its plan to build the Longlaville PET biorecycling plant".
    - Ecotextile, 31 mar 2026: https://www.ecotextile.com/2026033162238/news/shows-events/carbios-resets-longlaville-plant-timetable/ — "reaffirmed its plans to build a flagship PET biorecycling plant at Longlaville"; "2028 start‑up target".
-   - Capacidad: Packaging Gateway, https://www.packaging-gateway.com/projects/carbios-pet-biorecycling-plant-longlaville-france/ — "a processing capacity of 50,000 tonnes per annum (tpa) of post-consumer PET waste" (solo en la descripción, no en la voz).
    - Pendiente para el verificador: comunicado de Carbios de agosto de 2026 (https://www.carbios.com/en/supported-by-significant-progress-in-the-financing-of-its-industrial-project-in-france-carbios-confirms-its-objective-to-build-the-longlaville-plant/) — no abrió (error 503).
