@@ -5,12 +5,12 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esas estrellitas de tu techo no son radiactivas: sueltan la luz que les diste de día."
 - **Distinto al #33 (barras de luz, quimioluminiscencia):** aquí no hay reacción química que se gaste; es luz que se guardó y se vuelve a cargar.
 - **Seguridad:** las estrellitas actuales no llevan material radiactivo (EPA). Lo del radio se cuenta como historia; no se invita a abrir ni manipular relojes antiguos (la EPA pide no desarmarlos; va en la descripción).
-- **Duración:** VOZPLACE (`estimar-escenas.mjs --outro 3.5`).
+- **Duración:** voz 956 caracteres / ≈ 172 palabras (≈ 58.2 s) + cierre 3.5 s → **≈ 61.7 s** (`estimar-escenas.mjs --outro 3.5`).
 - **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
 
 ## Versión narrada
 
-Tiempos aproximados de la estimación (s): Gancho 0–5.2 · Que 5.2–11.3 · Carga 11.3–15.2 · Trampas 15.2–18.8 · Suelta 18.8–24.8 · Pregunta 24.8–27.4 · Radio 27.4–34.1 · Pintoras 34.1–40.0 · Estudio 40.0–48.6 · Curioso 48.6–53.0 · Cierre 53.0–58.1 · Outro 58.1–61.6.
+Tiempos aproximados de la estimación (s): Gancho 0–5.2 · Que 5.2–10.6 · Carga 10.6–14.5 · Trampas 14.5–18.1 · Suelta 18.1–24.1 · Pregunta 24.1–26.7 · Radio 26.7–33.4 · Pintoras 33.4–39.3 · Estudio 39.3–49.1 · Curioso 49.1–53.5 · Cierre 53.5–58.2 · Outro 58.2–61.7.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -45,7 +45,7 @@ Tiempos aproximados de la estimación (s): Gancho 0–5.2 · Que 5.2–11.3 · C
 ## Notas
 - El dibujo es esquemático: la red de hexágonos, las cargas como bolitas, las trampas como pozos y el "destello" no son a escala ni la forma real del cristal.
 - **Mecanismo, matiz honesto:** que hay trampas y que el calor las vacía poco a poco lo aceptan casi todos; pero si lo atrapado son electrones o "huecos" (Matsuzawa propuso huecos; Dorenbos, en 2005, electrones) sigue en discusión (Van den Eeckhout 2010: "the nature of the trapped charge carriers (electrons or holes) is still subject of discussion"). Por eso la voz dice "cargas eléctricas" y no "electrones". Va en la descripción.
-- "Si brillan verde, lo más probable": el verde es el aluminato de estroncio; las que brillan azul suelen ser aluminatos parecidos (de calcio, o Sr₄Al₁₄O₂₅). No todas las estrellitas son iguales; por eso "lo más probable" (fuente 5, de 2010).
+- "Las que brillan horas suelen ser…": el sulfuro de zinc con cobre también brilla verde, pero su brillo es más débil y dura menos (fuente 5: "on the order of hours"); las de larga duración suelen ser aluminatos (verde: de estroncio; azul: de calcio o Sr₄Al₁₄O₂₅). No todas las estrellitas son iguales; por eso "suelen" (fuente 5, de 2010).
 - En 1996 Takasaki et al. reportaron lo mismo de forma simultánea e independiente (Van den Eeckhout 2010); la voz no dice "el primero".
 - "Hace 100 años": la pintura de radio es de 1913 y las pintoras de Orange trabajaron sobre todo de 1917 a los años 20 (fuente 2). Los 250 son de la planta de Orange en su punto máximo; hubo más talleres (Illinois, Connecticut), no se suman.
 - Antes del aluminato, al sulfuro de zinc (no radiactivo) se le añadían a veces trazas de prometio o tritio para que brillara más (Van den Eeckhout 2010); va en la descripción, no en la voz.

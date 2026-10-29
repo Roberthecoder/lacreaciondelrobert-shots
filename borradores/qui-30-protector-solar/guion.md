@@ -4,7 +4,7 @@
 - **Formato:** N1 "Por dentro" (tu brazo con crema bajo el sol → la capa de crema al microscopio → las moléculas que se tragan el UV → el mismo brazo, ahora con la capa gruesa) + N5 "El experimento" (la esfera de luz de 2016 y el estudio de playa de 1992 de investigadores de Copenhague).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esa crema en tu brazo no es un espejo que rebota el sol: es una esponja que se traga el ultravioleta."
 - **Seguridad:** no se recomienda ninguna marca ni filtro; lo único práctico es lo que dicen las fuentes (la etiqueta se mide con 2 mg/cm²; con menos crema protege menos). No se habla de toxicidad de filtros.
-- **Duración:** voz 956 caracteres / ~166 palabras (≈ 58.2 s) + cierre 3.5 s → **61.7 s** estimados (`estimar-escenas.mjs --outro 3.5`).
+- **Duración:** voz 957 caracteres / ~166 palabras (≈ 58.2 s) + cierre 3.5 s → **61.7 s** estimados (`estimar-escenas.mjs --outro 3.5`).
 - **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
 
 ## Versión narrada
