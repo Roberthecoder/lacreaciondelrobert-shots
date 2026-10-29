@@ -31,3 +31,21 @@
 1. **Fila 8 (⚠️ leve, voz escena 3):** la bromelina es una mezcla de varias proteasas. Propuesta: "Pero la piña fresca trae bromelina, **enzimas** que cortan proteínas como unas tijeras." (mismo largo; mantener tijeras en plural en pantalla). Alternativa aceptable: dejar "una enzima" solo si en la descripción se aclara "en realidad es una mezcla de enzimas"; para el criterio estricto, mejor cambiar la voz.
 2. **Fila 19 (⚠️, pantalla escena 8):** no mostrar el reparto exacto 11 derretidas / 2 firmes. Propuesta: fila de 13 kiwis donde **la mayoría** (sin contar) tiene gelatina derretida y **2 marcados** ✓ "Hort16A" y "Kosui" con gelatina firme, o etiqueta "la mayoría de 13" en vez de dibujar 11 exactos.
 3. **Fila 10 (resuelta):** cambiar en `## Fuentes` del guion la fuente 8 principal por McGee, *On Food and Cooking* (2004), con la frase "But canned pineapple has been heated enough to denature the enzyme, and makes a firm gelatin jelly."; Naked Scientists queda como apoyo.
+
+## Re-verificación (29 oct 2026)
+
+Revisé lo que cambió en guion.md y narracion.json:
+
+| # | Cambio | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 8 | Voz Bromelina: "Pero la piña fresca trae bromelina, enzimas que cortan proteínas como unas tijeras." (etiqueta "bromelina (enzimas)") | ✅ | Maurer, *Cell Mol Life Sci* 58(9) (PMID 11577981) | "Bromelain is a crude extract from the pineapple that contains, among other components, various closely related proteinases" | 2001 |
+| 19 | Pantalla Kiwi: "la mayoría de 13" sin contar cuántas; solo Hort16A y Kosui firmes | ✅ | Nishiyama, *J Home Econ Jpn* 53(10) | "the gelatin was thoroughly hydrolyzed by the kiwifruit juice in most of the cultivars, the Hort16A and Kosui fruit juice showed little or no gelatinolytic activity" | 2002 |
+| 10 | Fuente 8 = McGee, *On Food and Cooking* (2004) para "con piña de lata sí cuaja" | ✅ | McGee 2004, secc. "Cooking Accelerates Enzyme Action Before Stopping It" | "But canned pineapple has been heated enough to denature the enzyme, and makes a firm gelatin jelly." | 2004 |
+
+Ya no quedan ❌ ni ⚠️ en la voz ni en la pantalla. Una nota menor fuera de la voz: en `## Notas` del guion, la papaya (papaína) "citando fuente 8" ya no la respalda McGee en el pasaje citado. Si se menciona en la descripción, que se cite aparte (p. ej. McGill OSS, Schwarcz 2017: "pineapple, kiwi and papaya all contain proteolytic enzymes").
+
+**Corrección de cita (solo en `## Fuentes`, no en la voz):** la frase de apoyo de Naked Scientists está mal copiada en el guion. En la página dice textual: "However if you use tinned pineapple the jelly will set perfectly." (17 ene 2009), no "But if you use tinned pineapple it will set fine." Hay que poner la frase correcta. El dato sí es verdadero y McGee lo respalda.
+
+- Al aprobar: la cita de Naked Scientists en guion.md se corrige a la frase textual («However if you use tinned pineapple the jelly will set perfectly.») y se quita la papaya de Notas (no la respalda ninguna fuente abierta). No cambia voz ni pantalla.
+
+VEREDICTO: APROBADO

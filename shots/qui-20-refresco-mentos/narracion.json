@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Mentos base narrada.dc.html",
+  "salida": "Shot Mentos narrado.dc.html",
+  "nota": "Shot Químico #20. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa fuente no es una reacción química: es gas que ya estaba en tu refresco, saliendo de golpe."
+    },
+    {
+      "escena": "Gas",
+      "texto": "La botella cerrada guarda dióxido de carbono disuelto, a presión."
+    },
+    {
+      "escena": "Burbuja",
+      "texto": "Pero una burbuja no nace fácil: necesita un rincón donde empezar."
+    },
+    {
+      "escena": "Rugoso",
+      "texto": "Y al microscopio, un Mentos es áspero, lleno de rincones donde nacen burbujas."
+    },
+    {
+      "escena": "Cadena",
+      "texto": "Esas burbujas suben y jalan más gas en el camino: en unos 4 segundos, todo sale disparado."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué el refresco de dieta lo hace mejor?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2008, estudiantes de física de la Universidad Estatal Apalache, en Estados Unidos, midieron el pH: 3 antes y 3 después. No hubo reacción ácido-base."
+    },
+    {
+      "escena": "Dieta",
+      "texto": "El aspartamo y el benzoato del refresco de dieta hacen más fácil formar burbujas; la cafeína casi no influyó."
+    },
+    {
+      "escena": "Molido",
+      "texto": "Lo chistoso: enteros, el chorro llegó a más de 4 metros; molidos, a 30 centímetros, en parte porque caen más lento."
+    },
+    {
+      "escena": "Seguridad",
+      "texto": "Si lo haces, que sea afuera y lejos de la cara."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa fuente no es química nueva: es el gas de tu refresco, que encontró por dónde salir."
+    }
+  ]
+}
