@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Composta base narrada.dc.html",
+  "salida": "Shot Composta narrado.dc.html",
+  "nota": "Shot Ambiental #46. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa cáscara de plátano no se vuelve tierra en el basurero: se pudre y se vuelve gas."
+    },
+    {
+      "escena": "Bote",
+      "texto": "En México, cuatro de cada diez kilos de basura urbana son orgánicos."
+    },
+    {
+      "escena": "Sinaire",
+      "texto": "En el relleno queda enterrada entre bolsas, sin aire."
+    },
+    {
+      "escena": "Bacterias",
+      "texto": "Ahí, unas bacterias la rompen en ácidos e hidrógeno."
+    },
+    {
+      "escena": "Arqueas",
+      "texto": "Y otros microbios, las arqueas metanógenas, convierten eso en metano."
+    },
+    {
+      "escena": "Potencia",
+      "texto": "Kilo por kilo, ese metano calienta unas ochenta veces más que el dióxido de carbono, contando veinte años."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si la misma cáscara tuviera aire?"
+    },
+    {
+      "escena": "Composta",
+      "texto": "En una composta, bacterias, hongos y lombrices la comen respirando oxígeno: sale abono, agua, calor y dióxido de carbono."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2018, la Universidad de California midió una composta de restos de comida en Nicasio: soltaba de treinta y ocho a ochenta y cuatro por ciento menos gases de invernadero que si fuera al relleno."
+    },
+    {
+      "escena": "Calor",
+      "texto": "La composta se calienta sola: puede pasar de sesenta grados."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Revuelve cáscaras con hojas secas, húmedo como esponja exprimida, y voltéalo: así esa cáscara sí se vuelve tierra."
+    }
+  ]
+}

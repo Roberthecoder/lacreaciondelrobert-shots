@@ -1,0 +1,18 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Mancha Pacifico base narrada.dc.html",
+  "salida": "Shot Mancha Pacifico narrado.dc.html",
+  "nota": "Shot Ambiental #58. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esto no es una isla de basura: es una sopa de plástico que nunca podrías pisar." },
+    { "escena": "Donde", "texto": "Flota en el Pacífico, entre Hawái y California, y en 2015 ocupaba un millón seiscientos mil kilómetros cuadrados." },
+    { "escena": "Giro", "texto": "Ahí las corrientes dan vueltas en un remolino gigante, un giro oceánico, que junta lo que flota." },
+    { "escena": "Sopa", "texto": "Pero en promedio había menos de una pieza por metro cuadrado, y noventa y cuatro de cada cien eran más chicas que la goma de un lápiz." },
+    { "escena": "Pregunta", "texto": "Si casi todo es diminuto, ¿qué es lo que más pesa?" },
+    { "escena": "Estudio", "texto": "En 2015, dieciocho barcos arrastraron redes por la zona, y en 2016 un avión la fotografió desde el aire." },
+    { "escena": "Redes", "texto": "Calcularon setenta y nueve mil toneladas de plástico: al menos el cuarenta y seis por ciento eran redes de pesca." },
+    { "escena": "Origen", "texto": "En 2019 revisaron más de seis mil objetos duros: dos de cada tres con origen conocido venían de Japón o China." },
+    { "escena": "Boya", "texto": "Y el más viejo con fecha legible era una boya de 1966." },
+    { "escena": "Cierre", "texto": "No es una isla que puedas pisar: es una sopa que el mar revuelve, y lo que más pesa son redes perdidas." }
+  ]
+}
