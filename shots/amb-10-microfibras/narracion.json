@@ -4,16 +4,49 @@
   "salida": "Shot Microfibras narrado.dc.html",
   "nota": "Shot Ambiental #10. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese suéter no solo se ensucia: cada vez que lo lavas, se deshace en hilitos de plástico." },
-    { "escena": "Numero", "texto": "Seis kilos de ropa acrílica pueden soltar más de setecientas mil fibras en una sola lavada." },
-    { "escena": "Fibra", "texto": "Cada una mide unos milímetros de largo y menos de dos centésimas de milímetro de grueso." },
-    { "escena": "Drenaje", "texto": "Salen con el agua sucia y se van por el drenaje." },
-    { "escena": "Planta", "texto": "En 2016, una planta de tratamiento en Glasgow atrapó el noventa y ocho por ciento de los microplásticos, y aun así soltaba sesenta y cinco millones al día." },
-    { "escena": "Pregunta", "texto": "¿Y los que sí atrapa, desaparecen?" },
-    { "escena": "Lodos", "texto": "No: se quedan en los lodos, que muchas veces se usan para abonar campos. En lodos de Chile, nueve de cada diez microplásticos eran fibras." },
-    { "escena": "Estudio", "texto": "El número del principio salió de la Universidad de Plymouth, en 2016: la mezcla de poliéster con algodón soltó menos." },
-    { "escena": "Sirve", "texto": "¿Qué ayuda? Lavar en frío, en ciclo corto y con la lavadora llena: el ciclo delicado, con mucha agua, suelta más." },
-    { "escena": "Filtro", "texto": "Y en 2020, un filtro en la salida de la lavadora atrapó cerca del setenta y ocho por ciento." },
-    { "escena": "Cierre", "texto": "Ojo: también sueltas fibras solo con traerlo puesto. Ese suéter, poquito a poquito, se va con el agua." }
+    {
+      "escena": "Gancho",
+      "texto": "Ese suéter no solo se ensucia: cada vez que lo lavas, se deshace en hilitos de plástico."
+    },
+    {
+      "escena": "Numero",
+      "texto": "Seis kilos de ropa acrílica pueden soltar más de setecientas mil fibras en una sola lavada."
+    },
+    {
+      "escena": "Fibra",
+      "texto": "Cada una mide unos milímetros de largo y menos de dos centésimas de milímetro de grueso."
+    },
+    {
+      "escena": "Drenaje",
+      "texto": "Salen con el agua sucia y se van al drenaje."
+    },
+    {
+      "escena": "Planta",
+      "texto": "Una planta de Glasgow, en 2016, atrapaba casi todos los microplásticos, y aun así soltaba sesenta y cinco millones al día."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y los que sí atrapa, desaparecen?"
+    },
+    {
+      "escena": "Lodos",
+      "texto": "No: se quedan en los lodos, que suelen usarse como abono. En lodos de Chile, nueve de cada diez eran fibras."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Ese número salió de Plymouth, Inglaterra, en 2016; ahí, la mezcla de poliéster con algodón soltó menos."
+    },
+    {
+      "escena": "Sirve",
+      "texto": "¿Qué ayuda? Lavar en frío, en ciclo corto y con la carga llena; el ciclo delicado, con mucha agua, suelta más."
+    },
+    {
+      "escena": "Filtro",
+      "texto": "Y en 2020, un filtro en la salida de la lavadora atrapó cerca del setenta y ocho por ciento."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Y ojo: sueltas fibras hasta con traerlo puesto. Ese suéter, poquito a poquito, se va con el agua."
+    }
   ]
 }
