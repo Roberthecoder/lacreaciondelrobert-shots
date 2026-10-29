@@ -3,8 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #15 · rama `pedido300/fun`.
 - **Formato:** N1 "Por dentro" con capítulos de N3 (1 · inocular, 2 · picar, 3 · madurar): rebanada de queso azul en un plato (macro) → la leche con esporas, el queso picado, los túneles por dentro y las esporas al microscopio (micro, fondo oscuro) → la misma rebanada, ahora con los túneles de aire dibujados por dentro (macro transformado).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" — «Esas venas azules no son queso echado a perder: son un moho sembrado a propósito.»
-- **Duración:** voz 1026 caracteres / 202 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base (se ajusta con `estimar-escenas` en la fase 3).
-- **Voz:** pendiente de aprobación de Robert (~1026 créditos de ElevenLabs).
+- **Duración:** voz 996 caracteres / 195 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base (se ajusta con `estimar-escenas` en la fase 3).
+- **Voz:** pendiente de aprobación de Robert (~996 créditos de ElevenLabs).
 - **Tono:** curioso, de cocina; con un toque chistoso en los colores nuevos.
 - **No repite** a `fun-11-moho-cortar` (ese es "¿cortar o tirar la comida con moho?"); este es el proceso del queso azul por dentro.
 
@@ -17,13 +17,13 @@
 | 2 | Inocular | Primero, a la leche le echan sus esporas. | **Cap. 1 · inocular.** Fondo menta: una tina de leche; cae un polvito verde azulado (esporas) que se reparte. |
 | 3 | Aire | Pero este moho necesita oxígeno: solo hace esporas en los huecos del queso. | Corte del queso joven (fondo oscuro): pasta blanca con hoyitos naturales; hilitos de moho apenas creciendo en la pasta y verdes solo donde hay hueco. Chip "O₂". |
 | 4 | Picar | Por eso pican el queso con agujas: cada hoyito deja entrar el aire. | **Cap. 2 · picar.** Fondo cian: una rueda de queso; bajan agujas de acero y dejan filas de hoyitos; flechitas de aire entran. |
-| 5 | Venas | Ahí crece, y sus esporas son las que pintan el queso de azul verdoso. | **Cap. 3 · madurar.** Corte por dentro (fondo oscuro): hilos (hifas) avanzan por los túneles y forman pinceles con cadenas de esporas redondas azul verdoso; los túneles se vuelven venas. Barra 10 µm. Chip "el color está en las esporas". |
+| 5 | Venas | Ahí crece, y sus esporas pintan el queso de azul verdoso. | **Cap. 3 · madurar.** Corte por dentro (fondo oscuro): hilos (hifas) avanzan por los túneles y forman pinceles con cadenas de esporas redondas azul verdoso; los túneles se vuelven venas. Barra 10 µm. Chip "el color está en las esporas". |
 | 6 | Grasa | Y rompe la grasa de la leche en metilcetonas, como la 2-heptanona: el olor a queso azul. | Gotas de grasa que el moho parte; salen moléculas "2-heptanona" que flotan hacia arriba como olor; una nariz en la orilla. |
 | 7 | Pregunta | ¿Y por qué este moho sí te lo comes y el del pan no? | **Re-gancho.** Pan con moho a la izquierda y queso azul a la derecha; "?" gigante; Robert grande, pensativo. |
 | 8 | Pan | Porque este se escoge y se vigila para que el queso sea seguro. El del pan llega solo, y no sabes cuál es: algunos hacen toxinas. | Queso con chip "✓ cepas escogidas y vigiladas"; el pan con esporas que llegan volando y chip "moho del pan: no sabes cuál es"; chip "algunos mohos: toxinas". |
-| 9 | Estudio | En 2020, en Francia, leyeron el ADN de 34 cepas y vieron que este moho se domesticó dos veces. | Tarjeta "2020 · Francia · 34 genomas · *Molecular Ecology*"; 34 tubitos con ADN; un árbol que se parte en dos ramas. |
+| 9 | Estudio | En 2020, en Francia, leyeron el ADN de 34 cepas y vieron que se domesticó dos veces. | Tarjeta "2020 · Francia · 34 genomas · *Molecular Ecology*"; 34 tubitos con ADN; un árbol que se parte en dos ramas. |
 | 10 | Poblaciones | Una es la del Roquefort; la otra se usa en quesos azules de todo el mundo. | Rama 1 → una cueva del Combalou con Roquefort (chip "cuevas del Combalou, Francia"); rama 2 → globo terráqueo con muchos quesos azules. |
-| 11 | Colores | Y en 2024, en Inglaterra, hicieron versiones que pintan el queso de blanco, café o verde. | Fondo rosa: tres rebanadas con venas blancas, cafés y verdes. Chip "U. de Nottingham · 2024". |
+| 11 | Colores | En 2024, en Inglaterra, hicieron versiones que lo pintan de blanco, café o verde. | Fondo rosa: tres rebanadas con venas blancas, cafés y verdes. Chip "U. de Nottingham · 2024". |
 | 12 | Cierre | Así que esas venas no son queso echado a perder: son túneles de aire llenos de esporas. | **Regreso a la imagen del inicio:** la misma rebanada en el mismo plato, ahora con los túneles de aire dibujados por dentro y las esporas brillando. Chip "sembrado a propósito ✓". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
@@ -60,7 +60,7 @@ Detalle con la frase textual de cada afirmación en `verificacion.md` (lo escrib
 7. **[Cleere 2024]** Cleere, M. M. et al. (2024). New colours for old in the blue-cheese fungus *Penicillium roqueforti*. *npj Science of Food* (publicado en enero de 2024; University of Nottingham, Inglaterra). https://pmc.ncbi.nlm.nih.gov/articles/PMC10774375/
    > "The blue-green colour derives from pigmented spores formed by fungal growth."
    > Mutantes por UV: "74-88-1 (brown), 74-88-2 (olive brown), 74-88-5 (green), 74-88-12 (mustard fawn) and B20-1 (white/albino)"; con ellas se hicieron quesos con los colores nuevos.
-8. **[Chávez 2023 / morfología]** Chávez, R. et al. (2023). *Penicillium roqueforti* secondary metabolites… *Journal of Fungi* 9(4): 459. https://pmc.ncbi.nlm.nih.gov/articles/PMC10146305/ (PMC)
+8. **[Chávez 2023 / morfología]** Chávez, R., Vaca, I. y García-Estrada, C. (2023). Secondary metabolites produced by the blue-cheese ripening mold *Penicillium roqueforti*; biosynthesis and regulation mechanisms. *Journal of Fungi* 9(4): 459 (acceso abierto, también en PMC). https://doi.org/10.3390/jof9040459
    > "spherical, smooth, and dark green conidia (3 to 4.5 μm diameter)" — solo para el dibujo.
 
 El dibujo es esquemático.
