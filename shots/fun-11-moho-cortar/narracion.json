@@ -3,18 +3,18 @@
   "salida": "Shot Moho Cortar narrado.dc.html",
   "nota": "Shot Fungi Mati #11. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "¿Por qué no basta con quitarle el moho al pan? Porque esa mancha es solo la parte que se ve." },
-    { "escena": "Raices", "texto": "Los puntitos de color son esporas. Abajo, unos hilos, como raíces, se meten en la comida." },
+    { "escena": "Gancho", "texto": "¿Por qué no basta con quitarle el moho al pan? Porque esa mancha es solo lo que se ve." },
+    { "escena": "Raices", "texto": "Los puntitos de color son esporas. Abajo, hilos como raíces se meten en la comida." },
     { "escena": "Toxinas", "texto": "Y algunos mohos fabrican micotoxinas: sustancias venenosas que pueden enfermarte." },
     { "escena": "Hilos", "texto": "Suelen estar en los hilos y alrededor; a veces, en toda la comida." },
     { "escena": "Pregunta", "texto": "¿Entonces, cuándo se corta y cuándo se tira?" },
     { "escena": "Tira", "texto": "Lo blando, húmedo o poroso se tira: pan, mermelada, yogur, jitomate, queso crema." },
-    { "escena": "Debajo", "texto": "Ahí el moho llega por debajo, y puede traer bacterias." },
-    { "escena": "Corta", "texto": "Lo duro se rescata: queso duro, zanahoria, pimiento. Corta al menos dos centímetros y medio alrededor y por debajo." },
+    { "escena": "Debajo", "texto": "Ahí el moho llega por debajo y puede traer bacterias." },
+    { "escena": "Corta", "texto": "Lo duro, si la mancha es chica, se rescata: queso duro, zanahoria, pimiento. Corta al menos dos centímetros y medio alrededor y por debajo." },
     { "escena": "Estudio", "texto": "Un estudio de 2001, en Alemania, midió una toxina de moho, la patulina, en manzanas y jitomates." },
     { "escena": "Manzana", "texto": "En la manzana, a más de dos centímetros de la zona con moho, ya no aparecía." },
     { "escena": "Jitomate", "texto": "En el jitomate, que es blando, llegó a todo el fruto." },
-    { "escena": "Oler", "texto": "Y no huelas la comida con moho: puede darte problemas para respirar." },
-    { "escena": "Cierre", "texto": "Así que al pan no le quites la mancha: tíralo. Al queso duro sí, con buen margen." }
+    { "escena": "Oler", "texto": "No huelas la comida con moho: te puede dar problemas al respirar." },
+    { "escena": "Cierre", "texto": "Así que al pan no le quites la mancha: tíralo. Al queso duro sí, con margen." }
   ]
 }
