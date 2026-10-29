@@ -253,7 +253,7 @@ function HistoplasmaShot() {
       <Escena T={T} a={K.En} b={K.Ce}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          {Array.from({ length: 21 }, (_, i) => { const on = kprog(T, K.En + 0.3 + i * 0.07, K.En + 0.5 + i * 0.07); const x = 250 + (i % 7) * 82, y = 560 + Math.floor(i / 7) * 82; const marca = i >= 14;
+          {Array.from({ length: 21 }, (_, i) => { const on = kprog(T, K.En + 0.3 + i * 0.07, K.En + 0.5 + i * 0.07); const x = 110 + (i % 7) * 82, y = 560 + Math.floor(i / 7) * 82; const marca = i >= 14;
             return on > 0 ? <g key={i} opacity={on}><rect x={x} y={y} width={70} height={70} rx={10} fill={marca ? KC.red : '#fff'} stroke={KC.ink} strokeWidth={5} />
               <text x={x + 35} y={y + 46} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={marca ? '#fff' : KC.ink}>{i + 1}</text></g> : null; })}
           {[0, 1, 2, 3].map((i) => { const on = kprog(T, K.En + 2.2 + i * 0.2, K.En + 2.5 + i * 0.2, kEase.rebote); const x = 210 + i * 220, y = 970; const conf = i < 3;
@@ -295,14 +295,14 @@ function HistoplasmaShot() {
       <Etq T={T} at={K.G + 2.4} until={K.H - 0.3} x={170} y={650} texto="murciélagos" tam={30} />
       <Chip T={T} at={K.H + 0.3} until={K.A - 0.3} texto="AL MICROSCOPIO · moho" x={360} y={420} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.H + 0.9} until={K.A - 0.3} x={60} y={520} texto="Histoplasma capsulatum" it tam={38} />
-      <Etq T={T} at={K.H + 1.5} until={K.A - 0.3} x={60} y={580} texto="“el hongo de las cuevas”" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.H + 1.5} until={K.A - 0.3} x={60} y={580} texto="vive en el guano" tam={28} color={KC.gold2} />
       <Etq T={T} at={K.H + 1.9} until={K.A - 0.3} x={60} y={1110} texto="microconidias 2–4 µm (lisas)" tam={28} color="#fffbe6" />
       <Etq T={T} at={K.H + 2.5} until={K.A - 0.3} x={1040} y={1010} lado="izq" texto="macroconidia 8–15 µm" tam={28} color="#f3dcae" />
       <Chip T={T} at={K.A + 1.2} until={K.Pu - 0.2} texto="esporas de 2–4 µm: no las ves" x={400} y={1040} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Pu + 0.8} until={K.Ca - 0.2} x={760} y={980} texto="pulmones" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.2} until={K.Ca + 1.4} texto="en el suelo: moho" x={540} y={430} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.Ca + 1.6} until={K.P - 0.2} texto="a 37 °C, en tu cuerpo: levadura" x={540} y={430} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.Ca + 0.5} until={K.P - 0.2} x={940} y={540} lado="izq" texto="alvéolo (pulmón)" tam={28} color="#ff8fa8" />
+      <Etq T={T} at={K.Ca + 0.5} until={K.P - 0.2} x={940} y={540} lado="izq" texto="POR DENTRO · pulmón" tam={28} color="#ff8fa8" />
       <Etq T={T} at={K.M + 0.8} until={K.S - 0.2} x={40} y={680} texto="macrófago (defensa)" tam={30} color={HP.macro} />
       <Etq T={T} at={K.M + 1.6} until={K.S - 0.2} x={40} y={1110} texto="levaduras de 2–4 µm" tam={28} color={HP.levadura} />
       <Chip T={T} at={K.M + 2.3} until={K.M + 3.8} texto="adentro se multiplica" x={400} y={460} tam={34} borde={KC.gold} />

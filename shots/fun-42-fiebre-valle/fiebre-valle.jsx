@@ -62,11 +62,12 @@ function Desierto({ T }) {
 // Mapa esquemático: suroeste de EE. UU. + México, con la zona seca donde vive el hongo.
 const US_SO = [[-117.1, 32.5], [-115, 32.7], [-114.8, 32.5], [-111, 31.3], [-108.2, 31.3], [-108.2, 31.8], [-106.5, 31.8], [-104.5, 29.6], [-103, 29], [-102.4, 29.8], [-101, 29.4], [-99.5, 27.5], [-99.1, 26.4], [-97.5, 25.9], [-97.3, 27.6], [-96, 28.6], [-94, 29.6], [-93.5, 30], [-93.5, 38.5], [-123, 38.5], [-122.5, 37.6], [-120.6, 34.6], [-118.5, 34], [-117.1, 32.5]];
 const ZONA = [[-121, 37.4], [-118.5, 35.8], [-116, 34.8], [-112.5, 35.6], [-108.5, 34.8], [-104.5, 33.6], [-101.5, 31.2], [-99, 28.5], [-99.3, 25.2], [-102.5, 24.3], [-105.8, 25.3], [-108.6, 25.9], [-110.8, 26.8], [-112.6, 28.9], [-114.6, 30.2], [-115.4, 29.2], [-114.3, 27.6], [-113.2, 26.6], [-114.4, 26.2], [-116.4, 29.8], [-117.4, 32.6], [-119, 34.3], [-120.4, 35.6]];
+const FV_BAJA = [[-117.1,32.5],[-116.6,31.7],[-116,30.4],[-115,29.5],[-114.2,28],[-114.1,27.6],[-112.1,24.8],[-111.6,24.3],[-110,22.9],[-109.4,23.2],[-110.3,24.2],[-111.4,25.8],[-112.4,27.2],[-112.9,28.5],[-114.6,30.2],[-114.8,31.6],[-114.8,32.5]];
 const mpath = (pts) => 'M ' + pts.map(([a, b]) => mxProy(a, b).map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z';
 function MapaZona({ T, at }) {
   const MX = 140, MY = 800, S = 0.86, zona = kprog(T, at + 0.8, at + 2.0), [px, py] = mxProy(-110.95, 29.1);
   return <g transform={`translate(${MX} ${MY}) scale(${S})`}>
-    <defs><clipPath id="tierraFV"><path d={mpath(US_SO)} /><path d={mpath(MX_CONT)} /><path d={mpath(MX_BAJA)} /></clipPath>
+    <defs><clipPath id="tierraFV"><path d={mpath(US_SO)} /><path d={mpath(MX_CONT)} /><path d={mpath(FV_BAJA)} /></clipPath>
       <pattern id="rayasFV" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="22" height="22" fill="#e0893a" /><rect width="9" height="22" fill="#c96a22" /></pattern></defs>
     <path d={mpath(US_SO)} fill="#f3e3b5" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <MapaMexico x={0} y={0} ancho={1000} color="#ffe9a8" />
@@ -314,7 +315,7 @@ function FiebreValleShot() {
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.0} until={K.Su - 0.3} x={620} y={1010} texto="remolino de polvo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.0} until={K.Su - 0.3} x={610} y={760} texto="remolino de polvo" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Su + 0.5} until={K.Es - 0.3} x={560} y={500} texto="Coccidioides" it tam={44} color={KC.ink} lado="izq" />
       <Chip T={T} at={K.Su + 0.9} until={K.Es - 0.3} texto="zona seca donde vive el hongo" x={540} y={1150} tam={30} borde="#c96a22" />
       <Etq T={T} at={K.Su + 0.4} until={K.Es - 0.3} x={250} y={640} texto="EE. UU." tam={30} color={KC.ink} lado="izq" />
@@ -325,10 +326,10 @@ function FiebreValleShot() {
       <Chip T={T} at={K.Es + 0.7} until={K.Es + 2.6} texto="la tierra se seca" x={540} y={560} tam={32} borde={KC.orange} />
       <Etq T={T} at={K.Es + 0.4} until={K.Es + 1.9} x={400} y={640} texto="hilos (hifas)" tam={30} />
       <Etq T={T} at={K.Es + 2.0} until={K.V - 0.3} x={140} y={1120} texto="artroconidias (~3 × 4.5 µm)" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Es + 2.4} until={K.V - 0.3} x={220} y={620} texto="celda vacía" tam={26} />
+      <Etq T={T} at={K.Es + 2.4} until={K.V - 0.3} x={136} y={680} texto="celda vacía" tam={26} />
       <Etq T={T} at={K.V + 0.3} until={K.P - 0.3} x={620} y={830} texto="excavación" tam={30} color={KC.ink} />
       <Etq T={T} at={K.V + 2.0} until={K.P - 0.3} x={330} y={1060} texto="pulmones" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ef + 0.6} until={K.D - 0.3} texto="AL MICROSCOPIO · PULMÓN" x={540} y={470} tam={30} mono borde={KC.cyan} />
+      <Chip T={T} at={K.Ef + 0.6} until={K.D - 0.3} texto="AL MICROSCOPIO · PULMÓN" x={400} y={470} tam={30} mono borde={KC.cyan} />
       <Medidor T={T} at={K.Ef + 1.2} until={K.En - 0.2} valor={(t) => kprog(t, K.Ef + 1.2, K.Ef + 3.2)} etiqueta="tamaño de la esférula" texto={() => '30–100+ µm'} y={540} color={KC.gold2} />
       <Etq T={T} at={K.Ef + 2.4} until={K.En + 2.4} x={790} y={1140} texto="esférula" tam={34} color={KC.gold2} />
       <Etq T={T} at={K.Ef + 2.8} until={K.En + 2.4} x={300} y={1140} texto="pared gruesa" tam={28} lado="izq" />
@@ -339,11 +340,9 @@ function FiebreValleShot() {
       <Etq T={T} at={K.D + 0.8} until={K.Et - 0.3} x={1030} y={1150} texto="EN TI: esferas" tam={28} lado="izq" />
       <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.Ca - 0.3} anio="1994" quien="terremoto de Northridge, California" revista="Schneider et al., JAMA, 1997" y={520} />
       <Etq T={T} at={K.Et + 1.4} until={K.Ca - 0.3} x={600} y={760} texto="deslaves" tam={30} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Ca + 0.3} until={K.Cl - 0.3} valor={203} dur={1.6} etiqueta="casos · condado de Ventura" x={400} y={470} tam={170} color={KC.red} />
+      <NumeroGigante T={T} at={K.Ca + 0.3} until={K.Cl - 0.3} valor={203} dur={1.6} etiqueta="casos · condado de Ventura" x={370} y={470} tam={170} color={KC.red} />
       <Chip T={T} at={K.Ca + 2.6} until={K.Cl - 0.3} texto="dentro de la nube de polvo: más riesgo" x={540} y={1170} tam={30} borde={KC.red} />
       <Chip T={T} at={K.Cl + 0.6} until={K.Si - 0.3} texto="≈ 6 de cada 10: sin síntomas" x={420} y={520} tam={36} borde={KC.leaf} />
-      <Etq T={T} at={K.Cl + 1.4} until={K.Si - 0.3} x={60} y={1170} texto="sin síntomas" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Cl + 1.6} until={K.Si - 0.3} x={1030} y={1170} texto="con síntomas" tam={28} color={KC.ink} lado="izq" />
       <Etq T={T} at={K.Si + 0.4} until={K.Si + 2.5} x={120} y={760} texto="tos" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Si + 0.9} until={K.Si + 2.5} x={470} y={760} texto="fiebre" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Si + 1.4} until={K.Si + 2.5} x={760} y={730} texto="cansancio" tam={30} color={KC.ink} />
@@ -374,7 +373,7 @@ function FiebreValleShot() {
       <Subtitulo T={T} idx={8} at={K.Et + 0.1} until={K.Ca - 0.1} texto="Terremoto, deslaves *y polvo.*" />
       <Subtitulo T={T} idx={9} at={K.Ca + 0.1} until={K.Cl - 0.1} texto="Ventura: *203 casos.*" />
       <Subtitulo T={T} idx={10} at={K.Cl + 0.1} until={K.Si - 0.1} texto="6 de cada 10 *no sienten nada.*" />
-      <Subtitulo T={T} idx={11} at={K.Si + 0.1} until={K.C - 0.1} texto="Tu perro *también puede enfermar.*" />
+      <Subtitulo T={T} idx={11} at={K.Si + 0.1} until={K.C - 0.1} texto="Tos, fiebre, cansancio. *Tu perro también puede enfermar.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Ese polvo: *el taxi de un hongo.*" />
 
       <Robert T={T} apariciones={[

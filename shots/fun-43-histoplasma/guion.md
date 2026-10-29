@@ -30,6 +30,27 @@
 
 Barras de escala: 1 m (cueva), 1 cm (guano), 10 µm (esporas, levadura y macrófago), 10 m (cenote).
 
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y tus defensas no se lo comen?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.5 | 11_sorprendido | `gancho` | «ese polvo no es solo tierra» (cuadro 0) |
+| 2 | 7.1 | 10.8 | 13_senalando_arriba | `arriba-der` | «crece como moho, con hilos que sueltan esporas» |
+| 3 | 11.5 | 17.0 | 12_perfil_serio | `arriba-der` | «las esporas suben al aire… las respiras» |
+| 4 | 20.9 | 23.6 | 07_pensativo_puno | `grande` | «¿y tus defensas no se lo comen?» |
+| 5 | 25.8 | 30.8 | 04_bajando_lentes | `arriba-der` | «sobrevive adentro, se multiplica y viaja» |
+| 6 | 36.4 | 41.4 | 06_pensativo_menton | `arriba-der` | el cenote y «dos o tres semanas después» |
+| 7 | 44.7 | 50.0 | 10_serio_molesto | `arriba-der` | «otro cenote… cerrado desde 2019» |
+| 8 | 50.3 | 53.0 | 05_sonriendo_dientes_uniformes | `arriba-der` | «capsulatum por una cápsula que no tiene» |
+| 9 | 53.5 | 57.9 | 02_apuntando_camara | `izq-alto` | «ese polvo puede llevar un hongo a tus pulmones» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **38.7 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.
+
+Notas de animación: en el cenote del estudio la tarjeta dice «abril 2024 · cenote de la península de Yucatán» (sin el nombre del cenote); a los 4 enfermos se les pone una etiqueta «confirmado» (3) o «sospechoso» (1); el calendario marca los días 15–21. Escala del mundo micro: 10 µm = 150 px (microconidias de 3 µm, macroconidias tuberculadas de ~12 µm, levaduras de 2–4 µm dentro del macrófago).
+
 ## Fuentes (abiertas el 29 oct 2026)
 
 1. CDC. *About Histoplasmosis* (actualizado 24 abr 2024). https://www.cdc.gov/histoplasmosis/about/index.html
