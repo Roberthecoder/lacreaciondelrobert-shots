@@ -187,7 +187,7 @@ function Cirugia() {
           <path d={`M 140 1100 ${Array.from({ length: 40 }, (_, i) => `L ${140 + i * 20} ${1100 - 30 * Math.sin(i * 0.45 - T * 3)}`).join(' ')}`} stroke={KC.mint} strokeWidth={5} fill="none" opacity={kprog(T, K.Pl + 1.6, K.Pl + 2.0)} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Pl + 0.6} until={K.Co - 0.2} texto="cámara 3D" x={300} y={620} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.Pl + 0.6} until={K.Pl + 2.9} texto="cámara 3D" x={300} y={620} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.Pl + 1.8} until={K.Co - 0.2} texto="sigue la respiración" x={540} y={1100} tam={30} borde={KC.mint} />
       <Chip T={T} at={K.Pl + 3.2} until={K.Co - 0.2} texto="plan de puntadas" x={520} y={660} tam={32} borde={KC.yellow} />
 

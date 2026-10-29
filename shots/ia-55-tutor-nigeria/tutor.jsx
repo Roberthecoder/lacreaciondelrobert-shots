@@ -261,6 +261,7 @@ function Tutor() {
         <FondoLunares color={KC.yellow} />
       </Escena>
       <MitoTachado T={T} at={K.E + 0.2} tacharEn={K.E + 1.2} until={K.E + 3.0} texto="«aprendieron 2 años de temario»" y={430} tam={40} />
+      <NumeroGigante T={T} at={K.E + 0.4} until={K.E + 1.8} valor={2} dur={0.5} sufijo=" años" etiqueta="¿de temario?" x={540} y={800} tam={200} color={KC.red} />
       <BarraTiempo T={T} at={K.E + 2.0} until={K.Pe - 0.2} x={90} y={570} ancho={70} color={KC.gold2} etiqueta="piloto con tutor de IA" valor="6 semanas" />
       <BarraTiempo T={T} at={K.E + 3.2} until={K.Pe - 0.2} x={90} y={770} ancho={760} color={KC.mint} etiqueta="mejora equivalente a…" valor="" dur={1.6} />
       <Chip T={T} at={K.E + 4.6} until={K.Pe - 0.2} texto="1.5 a 2 años de escuela normal en Nigeria" x={540} y={990} tam={34} borde={KC.ink} />

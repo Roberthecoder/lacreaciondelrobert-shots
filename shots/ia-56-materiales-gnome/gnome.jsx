@@ -300,8 +300,8 @@ function Gnome() {
       </Escena>
       <TarjetaEstudio T={T} at={K.Ct + 0.2} until={K.Ct + 2.7} anio="2024" quien="UC Santa Bárbara" revista="Cheetham y Seshadri · Chem. Mater." y={600} />
       <Chip T={T} at={K.Ct + 3.0} until={K.Ct + 5.4} texto="muchas: variaciones de lo conocido" x={540} y={720} tam={40} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Ct + 5.8} until={K.Rv - 0.2} valor={18000} dur={0.8} sufijo="+" etiqueta="con elementos radiactivos raros" x={420} y={690} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.Ct + 6.6} until={K.Rv - 0.2} texto="prometio · actinio · protactinio" x={540} y={520} tam={34} mono borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ct + 5.8} until={K.Rv - 0.2} valor={18000} dur={0.8} sufijo="+" etiqueta="con elementos radiactivos raros" x={420} y={655} tam={130} color={KC.yellow} />
+      <Chip T={T} at={K.Ct + 6.6} until={K.Rv - 0.2} texto="prometio · actinio · protactinio" x={540} y={480} tam={34} mono borde={KC.ink} />
 
       {/* 7 · átomos ordenados vs. revueltos (por dentro) */}
       <Escena T={T} a={K.Rv} b={K.Co}>

@@ -1,29 +1,48 @@
 # Shot IA #56 · La IA que "descubrió" 2.2 millones de cristales
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #56 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** FASE A — guion escrito, pendiente de verificación independiente. Sin animación todavía. Voz pendiente de aprobación de Robert.
+- **Estado (29 oct 2026):** guion verificado (2 ⚠️ corregidos), animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert** (~954 créditos).
 - **Formato:** N2 "El número" (2 200 000 en grande que se desinfla) + N4 "La imagen que se llena" (cuadrícula de cristales que se marcan como "ya conocido").
-- **Gancho (de los 7):** #4 "Un número que contradice": 2.2 millones de cristales nuevos… y los 10 revisados al azar se parecían a cristales conocidos.
-- **Duración:** voz 952 caracteres / 158 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** estimados.
+- **Gancho (de los 7):** #4 "Un número que contradice": 2.2 millones de cristales nuevos… y los 10 estables revisados al azar tenían la forma (estructura) de cristales conocidos.
+- **Duración:** voz 954 caracteres / 157 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** en la base.
 - **Postura de la serie:** equilibrio. Lo que sí logró (método rápido, 736 estructuras ya hechas por otros, un robot que sí sintetizó 36 de 57) y la crítica (poca novedad, desorden atómico ignorado, compuestos radiactivos, corrección de 2026). Ni "la IA inventó 2 millones de materiales" ni "todo fue humo".
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Una IA de Google propuso dos millones doscientos mil cristales nuevos. Unos químicos revisaron diez al azar… y los diez se parecían a cristales ya conocidos. | Fondo cian; desde el cuadro 0 un contador que sube a "2 200 000 cristales" y una lluvia de cristalitos (cubos facetados). Una lupa toma 10 al azar; a cada uno le sale una etiqueta gemela "ya conocido ≈". |
-| 1 | Cristales | De cristales así están hechos los chips de tu celular y su batería. | Un celular con rayos X (`Lupa interior`): chip y batería, con una rejilla de átomos dentro. |
-| 2 | Gnome | La IA, GNoME, de Google DeepMind, calculó en 2023 que unos trescientos ochenta mil serían estables. | Red neuronal (`RedNeuronal`) que escupe cristales; chip "GNoME · Google DeepMind · Nature 2023"; número "≈ 381 000 estables". |
+| 0 | Gancho | Una IA de Google propuso dos millones doscientos mil cristales nuevos. Unos químicos revisaron diez de los estables, al azar… y los diez tenían la forma de cristales ya conocidos. | Fondo cian; desde el cuadro 0 un contador que sube a "2,200,000 cristales «nuevos»" y una lluvia de cristalitos (cubos facetados). Una caja "estables" encierra una parte; una lupa la recorre y salen 10 al azar; a cada uno le sale un gemelo gris punteado con "≈" y el chip "estructura conocida ≈". |
+| 1 | Cristales | De cristales así son los chips de tu celular y su batería. | Un celular abierto "por dentro": chip y batería, con una rejilla de átomos dentro. |
+| 2 | Gnome | GNoME, de Google DeepMind, calculó en 2023 que unos trescientos ochenta mil serían estables. | Red neuronal (`RedNeuronal`) que escupe cristales; chip "GNoME · Google DeepMind · Nature 2023"; número "≈ 381 000 estables". |
 | 3 | Robot | Un laboratorio robot en Berkeley anunció cuarenta y uno nuevos de cincuenta y ocho, en diecisiete días. | Brazo robot moviendo crisoles a un horno; marcador "41 / 58" y calendario "17 días". Tarjeta "A-Lab · Berkeley · Nature 2023". |
 | 4 | Pregunta | ¿Entonces sí descubrieron materiales? | **Re-gancho.** "?" gigante; Robert grande. |
 | 5 | Critica | En 2024, químicos de Santa Bárbara hallaron muchas variaciones de cristales conocidos, y más de dieciocho mil con elementos radiactivos raros. | Tarjeta "2024 · UC Santa Bárbara · Cheetham y Seshadri · Chem. Mater."; cristales "nuevos" junto a su gemelo conocido; luego una pila con el trébol de radiactividad y "18 000+ (Pm, Ac, Pa)". |
-| 6 | Revueltos | La computadora fijaba cada átomo en su lugar; en la vida real, muchos se revuelven. | Fondo oscuro "por dentro": rejilla de átomos de dos colores ordenados como tablero de ajedrez → se mezclan al azar (desorden). |
-| 7 | Correccion | En 2026, Berkeley corrigió: hizo treinta y seis de cincuenta y siete, nuevos para el robot, no necesariamente para la ciencia. | El marcador "41 / 58" se tacha y cambia a "36 / 57"; sello "corrección · Nature 2026"; la palabra "novel" del título se tacha. |
-| 8 | Balance | Pero los críticos dicen que el método promete. | Balanza: "rápido y prometedor" contra "falta revisión química". |
-| 9 | Cierre | Dos millones de cristales no son dos millones de materiales: falta que un químico los revise. | **Regreso a la imagen del inicio**: el mismo contador "2 200 000" y la lluvia de cristales; una químico con bata y lupa los revisa uno por uno. |
+| 6 | Revueltos | La computadora fijaba cada átomo; en la vida real, muchos se revuelven. | Fondo oscuro "por dentro": rejilla de átomos de dos colores ordenados como tablero de ajedrez → se mezclan al azar (desorden). |
+| 7 | Correccion | En 2026, Berkeley corrigió: hizo treinta y seis de cincuenta y siete, nuevos para su base de datos, no necesariamente para la ciencia. | El marcador "41 / 58" se tacha y cambia a "36 / 57"; sello "CORRECCIÓN · Nature · enero 2026"; la palabra "novel" del título se tacha y entra "inorganic"; chips "nuevos para su base de datos ✔" y "¿para la ciencia? no necesariamente". |
+| 8 | Balance | Pero los críticos dicen que el método promete. | Balanza que oscila: "el método promete" contra "falta química". |
+| 9 | Cierre | Dos millones de cristales no son dos millones de materiales: falta que un químico los revise. | **Regreso a la imagen del inicio**: el mismo contador "2,200,000" y la lluvia de cristales; una química con bata y lupa los revisa uno por uno (✓ / ?); chip "≠ 2.2 millones de materiales". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua; el contador sube con un tic acelerado, cada cristal cae con un "clink", la lupa hace un zumbido, el robot suena a servo, la rejilla que se revuelve cruje, el marcador que se corrige se tacha con un rasguño.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces sí descubrieron materiales?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «dos millones doscientos mil cristales nuevos» (cuadro 0) |
+| 2 | 11.2 | 14.3 | 13_senalando_arriba | `arriba-der` | señala el chip y la batería del celular |
+| 3 | 17.4 | 19.9 | 06_pensativo_menton | `izq-alto` | «unos trescientos ochenta mil serían estables» |
+| 4 | 26.3 | 29.1 | 07_pensativo_puno | `grande` | «¿Entonces sí descubrieron materiales?» |
+| 5 | 31.7 | 34.1 | 10_serio_molesto | `arriba-der` | «muchas variaciones de cristales conocidos» |
+| 6 | 37.7 | 41.4 | 04_bajando_lentes | `izq-alto` | «en la vida real, muchos se revuelven» |
+| 7 | 45.9 | 49.4 | 11_sorprendido | `arriba-der` | «no necesariamente para la ciencia» |
+| 8 | 49.8 | 52.4 | 05_sonriendo_dientes_uniformes | `izq-alto` | «el método promete» |
+| 9 | 53.0 | 58.0 | 13_senalando_arriba | `arriba-der` | «falta que un químico los revise» |
+| — | 58.1 | 61.6 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 29.4 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.6 s
 
 ## Fuentes (cada cifra se abrió en la fuente original el 29 oct 2026)
 
@@ -59,10 +78,10 @@
 
 ## Notas
 - "Dos millones doscientos mil" = estructuras "below the current convex hull" (estables respecto a lo conocido antes); "unos trescientos ochenta mil" = 381 000 que quedan en el casco convexo actualizado (DeepMind los redondeó a 380 000 en su difusión). "Serían estables" porque es un cálculo, no una síntesis.
-- "Unos químicos revisaron diez al azar… los diez se parecían a cristales ya conocidos" = Cheetham y Seshadri eligieron 10 al azar de 384 870 entradas y encontraron la estructura de los 10 en la ICSD (base de datos de estructuras conocidas), casi siempre con más simetría. No dicen que el compuesto exacto ya existiera: por eso "se parecían".
+- "Unos químicos revisaron diez de los estables, al azar… y los diez tenían la forma de cristales ya conocidos" = Cheetham y Seshadri eligieron 10 al azar de las 384 870 entradas de la base de estructuras estables (no de los 2.2 millones) y encontraron la estructura de los 10 en la ICSD (base de datos de estructuras conocidas), casi siempre con más simetría. No dicen que el compuesto exacto ya existiera: por eso "la forma" y, en pantalla, "estructura conocida ≈" (corrección del verificador).
 - "Más de dieciocho mil con elementos radiactivos raros" = 18 138 compuestos de prometio, actinio y protactinio (solo existen en cantidades mínimas). Hay otros 23 529 con Tc, Np y Pu que no se cuentan.
 - "Fijaba cada átomo en su lugar; en la vida real muchos se revuelven" = predicciones totalmente ordenadas (cálculo a 0 K) frente al desorden real de iones a temperatura de síntesis (Cheetham y Seshadri; también Leeman et al.).
-- "Berkeley corrigió" = Author Correction en *Nature*, enero 2026: 36 de 57 (se quitó un compuesto que estaba en los datos de entrenamiento y 4 quedaron inconclusos); "nuevos para el robot, no necesariamente para la ciencia" traduce "new to the prediction platform, not necessarily new to science".
+- "Berkeley corrigió" = Author Correction en *Nature*, enero 2026: 36 de 57 (se quitó un compuesto que estaba en los datos de entrenamiento y 4 quedaron inconclusos); "nuevos para su base de datos, no necesariamente para la ciencia" traduce "new to the prediction platform, not necessarily new to science" (corrección del verificador: no "para el robot").
 - "Pero los críticos dicen que el método promete" = Cheetham y Seshadri: "appear to hold promise", "an exciting advance".
 - "Los chips de tu celular y su batería" se apoya en el resumen de GNoME ("From microchips to batteries…"): el silicio de los chips y los materiales de los electrodos de las baterías son sólidos cristalinos.
 - No se dice que ninguno de los 2.2 millones sea nuevo ni que todos sean falsos. Las 736 estructuras ya hechas por otros laboratorios quedan como dato de respaldo para `publicacion.md` (no caben en la voz).
