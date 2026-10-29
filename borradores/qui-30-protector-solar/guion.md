@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Esa crema en tu brazo no es un espejo que rebota el sol: es una esponja que se traga el ultravioleta."
 - **Seguridad:** no se recomienda ninguna marca ni filtro; lo único práctico es lo que dicen las fuentes (la etiqueta se mide con 2 mg/cm²; con menos crema protege menos). No se habla de toxicidad de filtros.
 - **Duración:** voz 957 caracteres / ~166 palabras (≈ 58.2 s) + cierre 3.5 s → **61.7 s** estimados (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`protector.jsx`, revisión en `revision/hoja.png`), voz pendiente de aprobación de Robert (~957 créditos).
 
 ## Versión narrada
 
@@ -25,6 +25,26 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave continua, cálida; efectos en el mismo cuadro (untar la crema, "zap" de cada rayo UV absorbido, zumbido cuando la molécula brilla, siseo suave de calor, golpe de cada tarjeta de estudio, "tic" del contador de 42 personas, "pop" de las flechas que pasan en la capa delgada).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y el óxido de zinc…? ¿Esos sí son espejitos?» y en «con menos crema, te protege bastante menos».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «no es un espejo… es una esponja» |
+| 2 | 6.6 | 13.7 | 13_senalando_arriba | `izq-alto` | «trae filtros… avobenzona, octocrileno» / «se lo tragan» |
+| 3 | 14.5 | 18.0 | 05_sonriendo_dientes_uniformes | `arriba-der` | «la sueltan como un poquito de calor» |
+| 4 | 18.25 | 23.0 | 07_pensativo_puno | `grande` | «¿Esos sí son espejitos?» |
+| 5 | 23.4 | 29.7 | 04_bajando_lentes | `izq-alto` | «solo reflejan del 4 al 5 por ciento» |
+| 6 | 30.8 | 34.8 | 06_pensativo_menton | `arriba-der` | «¿Y el número? FPS 30… 97 por ciento» |
+| 7 | 36.1 | 41.0 | 13_senalando_arriba | `izq-alto` | «2 miligramos… por cada centímetro cuadrado» |
+| 8 | 41.6 | 48.1 | 11_sorprendido | `arriba-der` | «se pusieron, en promedio, la cuarta parte» |
+| 9 | 48.35 | 52.5 | 10_serio_molesto | `grande` | «te protege bastante menos de lo que dice la etiqueta» |
+| 10 | 53.0 | 58.1 | 02_apuntando_camara | `arriba-der` | «solo funciona si le pones suficiente» |
+| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 51 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
 

@@ -5,7 +5,7 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre la acción que se ve y se oye en pantalla: "Ese crac no es el plástico: es una ampolleta de vidrio que acabas de romper adentro."
 - **Seguridad:** no se invita a abrir ni a calentar barras; el agua caliente es la demostración de un profesor (Purdue). Se dice claro que el líquido irrita y qué hacer (lavar con agua), como dicen los centros toxicológicos.
 - **Duración:** voz 960 caracteres / 175 palabras (≈ 58.0 s) + cierre 3.5 s → **≈ 61.5 s** (estimar-escenas).
-- **Estado:** guion listo para verificación independiente. Sin animación. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~960 créditos).
 
 ## Versión narrada
 
@@ -24,6 +24,25 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química sobre la barra encendida oscurecida. |
 
 **Música:** cama grave continua, oscura al inicio y que se "enciende" cuando aparece la luz; efectos en el mismo cuadro: "crac" del vidrio, mezcla burbujeante, "pop" del anillo que se rompe, destello del fotón, tic-tac del cronómetro, siseo del vaso caliente, apagado de la barra caliente, golpe de la tarjeta, contador, chorro de agua.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en el dato de Australia («casi 3 mil casos…»).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «es una ampolleta de vidrio» |
+| 2 | 5.9 | 9.6 | 13_senalando_arriba | `izq-alto` | «adentro del vidrio hay agua oxigenada» |
+| 3 | 14.1 | 19.0 | 06_pensativo_menton | `arriba-der` | «le pasa su energía al colorante» |
+| 4 | 20.3 | 25.1 | 07_pensativo_puno | `arriba-der` | «¿Cuál dura más?» |
+| 5 | 26.6 | 30.3 | 04_bajando_lentes | `arriba-der` | «el frío frena la reacción» |
+| 6 | 34.2 | 39.7 | 13_senalando_arriba | `arriba-der` | «es la dioxetanodiona» |
+| 7 | 44.0 | 48.7 | 11_sorprendido | `grande` | «casi 3 mil casos… sobre todo en diciembre» |
+| 8 | 49.3 | 53.2 | 10_serio_molesto | `izq-alto` | «el líquido irrita» |
+| 9 | 53.8 | 57.9 | 02_apuntando_camara | `arriba-der` | «encendiéndose en tu mano» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 40 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la fuente el 29 oct 2026)
 

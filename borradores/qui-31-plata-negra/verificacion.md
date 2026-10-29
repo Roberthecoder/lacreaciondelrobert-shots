@@ -32,4 +32,6 @@ Cifras con fecha: el dato de 1916 se dice con su año ✅. El 100 nm es una prop
 ## Correcciones aplicadas (29 oct 2026)
 Se aplicaron tal cual las propuestas del verificador (y, si hizo falta, solo se quitó relleno sin cambiar datos).
 
+Revisión extra (29 oct 2026): básculas en pantalla 0.0015 g vs 0.00006 g de plata perdida por limpieza ✅ (USDA Bull. 449, 1916: "an average of 0.0015 grams in each cleaning, about 25 times as much as by the electrolytic method" · "an average of 0.00006 grams in each cleaning"). publicacion.md revisado: todos sus datos coinciden con las fuentes (incl. "hule vulcanizado (ligas, guantes)": CCI "Vulcanized rubber objects such as: … Rubber bands" y "Rubber gloves"); sin cambios.
+
 VEREDICTO: APROBADO

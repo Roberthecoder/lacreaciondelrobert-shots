@@ -1,18 +1,17 @@
 {
   "dcHtml": "Shot AguaPura base narrada.dc.html",
   "salida": "Shot AguaPura narrado.dc.html",
-  "nota": "Shot Químico #36. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "nota": "Shot Químico #36. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
     { "escena": "Gancho", "texto": "El agua pura conduce la electricidad unas 900 mil veces peor que el agua de mar." },
-    { "escena": "Que", "texto": "Entonces, ¿qué es lo que conduce? No es el agua: son los iones que trae disueltos." },
-    { "escena": "Iones", "texto": "La sal, al disolverse, se separa en iones: partículas con carga, unas positivas y otras negativas." },
-    { "escena": "Corriente", "texto": "Esas cargas que se mueven por el agua son las que llevan la corriente." },
-    { "escena": "Pura", "texto": "El agua pura casi no tiene iones: apenas unas poquísimas de sus moléculas se parten solas." },
+    { "escena": "Que", "texto": "¿Entonces qué conduce? No es el agua: son los iones que trae disueltos." },
+    { "escena": "Iones", "texto": "La sal, al disolverse, se separa en iones: partículas con carga, positivas y negativas, que llevan la corriente." },
+    { "escena": "Pura", "texto": "El agua pura casi no tiene iones: muy pocas de sus moléculas se parten solas." },
     { "escena": "Pregunta", "texto": "¿Y entonces por qué el agua es tan peligrosa con la electricidad?" },
-    { "escena": "Real", "texto": "Porque el agua real nunca es pura: la de tu llave, la de la alberca y la del suelo traen minerales disueltos." },
-    { "escena": "Estudio", "texto": "En 1995, el instituto de estándares de Estados Unidos, en Maryland, reportó que el agua pura, con solo tocar el aire, absorbe dióxido de carbono y conduce de 10 a 30 veces más." },
-    { "escena": "Cuerpo", "texto": "Y lo curioso: tú tampoco eres agua pura. Tu cuerpo es salado, y por eso conduces la corriente." },
+    { "escena": "Real", "texto": "Porque el agua real nunca es pura: la de tu llave, la de la alberca y la del suelo siempre traen minerales disueltos." },
+    { "escena": "Estudio", "texto": "En 1995, el instituto de estándares de Estados Unidos, en Maryland, reportó que el agua pura, al tocar el aire, absorbe dióxido de carbono y conduce de 10 a 30 veces más." },
+    { "escena": "Cuerpo", "texto": "Lo curioso: tú tampoco eres agua pura. Tu cuerpo es salado, y justo por eso conduces la corriente." },
     { "escena": "Peligro", "texto": "Por eso mezclar agua y electricidad, en cualquier enchufe de tu casa, siempre es peligroso." },
-    { "escena": "Cierre", "texto": "El agua pura casi no conduce, pero el agua que tú tocas nunca es pura." }
+    { "escena": "Cierre", "texto": "Así que el agua pura casi no conduce, pero el agua que tú tocas nunca es pura." }
   ]
 }
