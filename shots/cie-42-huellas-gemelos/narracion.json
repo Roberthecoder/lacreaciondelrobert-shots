@@ -1,0 +1,47 @@
+{
+  "dcHtml": "Shot Huellas Gemelos base narrada.dc.html",
+  "salida": "Shot Huellas Gemelos narrado.dc.html",
+  "nota": "Shot Científico #42. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Los gemelos idénticos tienen casi el mismo ADN, pero no las mismas huellas digitales."
+    },
+    {
+      "escena": "ADN",
+      "texto": "Vienen del mismo óvulo y del mismo espermatozoide, así que comparten casi todo su ADN."
+    },
+    {
+      "escena": "Formacion",
+      "texto": "Pero tus huellas se forman antes de nacer, en los primeros meses del embarazo."
+    },
+    {
+      "escena": "Presion",
+      "texto": "Las crestas de la piel se doblan según cómo crece y se estira la yema del dedo, y eso cambia con el ambiente dentro del útero."
+    },
+    {
+      "escena": "Dos",
+      "texto": "Y esas condiciones nunca son idénticas, ni para dos gemelos ni para dos dedos del mismo bebé."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces sus huellas son totalmente distintas?"
+    },
+    {
+      "escena": "Parecidas",
+      "texto": "No del todo: el dibujo general suele parecerse, pero los detalles finos, donde las crestas se cortan o se dividen, son diferentes."
+    },
+    {
+      "escena": "Policia",
+      "texto": "Por eso las huellas pueden distinguir a dos gemelos, aunque una prueba común de ADN no lo logre."
+    },
+    {
+      "escena": "Koala",
+      "texto": "Dato raro: los koalas tienen huellas casi idénticas a las nuestras, y se parecen hasta vistas al microscopio."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que hasta dos gemelos idénticos dejan su propia firma en todo lo que tocan."
+    }
+  ]
+}
