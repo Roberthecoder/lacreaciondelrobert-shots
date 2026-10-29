@@ -53,3 +53,11 @@ como dato de hoy en la voz, así que no hay choque; solo cuidar el chip del 5 % 
    (alternativa: "…**sacó a la luz** la primera palabra completa: púrpura." / "…**su modelo reveló** la primera palabra completa: púrpura.")
 2. **Recomendado (no es ⚠️ de la voz): chip "≈ 5 % del rollo"** en la escena 7. La cifra es del anuncio de feb 2024; para cumplir la
    regla de fecha, cambiarlo a **"≈ 5 % del rollo (2023)"** o "≈ 5 % del rollo en 2023".
+
+## Re-verificación (29 oct 2026, coordinador)
+- Escena Palabra: «En 2023, Luke Farritor, estudiante de veintiún años, hizo aparecer la primera palabra completa: púrpura.» ✅ (texto del verificador)
+- Placeres (recorte sin datos nuevos): «¿Qué decía? Un filósofo hablando de música, comida y cómo disfrutar la vida.» ✅
+- Chips: «≈ 5 % del rollo (2023)» y «la IA mostró la tinta · la leyeron papirólogos» ✅; no se dice "lo máximo que se ha leído" ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

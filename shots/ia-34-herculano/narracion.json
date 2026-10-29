@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Herculano base narrada.dc.html",
+  "salida": "Shot Herculano narrado.dc.html",
+  "nota": "Shot IA #34. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este carbón es un libro enrollado: lo que dice adentro, tus ojos nunca lo van a ver."
+    },
+    {
+      "escena": "Volcan",
+      "texto": "Lo quemó el Vesubio hace casi dos mil años, en Herculano. Hay cientos así."
+    },
+    {
+      "escena": "Abrir",
+      "texto": "Intentaron abrirlos con pesas, químicos y gases: muchos se destruyeron."
+    },
+    {
+      "escena": "RayosX",
+      "texto": "Los rayos X muestran sus capas, pero la tinta casi no se nota: es de carbón, como el papiro quemado."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo lees lo que ni los rayos X distinguen?"
+    },
+    {
+      "escena": "IA",
+      "texto": "Con inteligencia artificial: un modelo aprende a hallar la tinta en el escaneo, punto por punto."
+    },
+    {
+      "escena": "Palabra",
+      "texto": "En 2023, Luke Farritor, estudiante de veintiún años, hizo aparecer la primera palabra completa: púrpura."
+    },
+    {
+      "escena": "Premio",
+      "texto": "Luego, él, Youssef Nader y Julian Schilliger sacaron más de dos mil caracteres y ganaron setecientos mil dólares."
+    },
+    {
+      "escena": "Matiz",
+      "texto": "Ojo: la IA marca dónde hay tinta; quienes leen son expertos en papiros."
+    },
+    {
+      "escena": "Placeres",
+      "texto": "¿Qué decía? Un filósofo hablando de música, comida y cómo disfrutar la vida."
+    },
+    {
+      "escena": "Titulo",
+      "texto": "En 2025 leyeron el título de otro rollo: Sobre los vicios, de Filodemo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese carbón sigue cerrado, pero ya no está mudo."
+    }
+  ]
+}
