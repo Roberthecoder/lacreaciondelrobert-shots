@@ -150,7 +150,7 @@ function EsponjaShot() {
       <Subtitulo T={T} idx={4} at={K.H + 0.1} until={K.Q - 0.1} texto="En los huecos, *en capas.*" />
       <Subtitulo T={T} idx={5} at={K.Q + 0.1} until={K.I - 0.1} texto="¿Agua caliente *o micro?*" />
       <Subtitulo T={T} idx={6} at={K.I + 0.1} until={K.M - 0.1} texto="De 4: las limpiadas *no tenían menos.*" />
-      <Subtitulo T={T} idx={7} at={K.M + 0.1} until={K.O - 0.1} texto="Más *Moraxella:* ropa que huele feo." />
+      <Subtitulo T={T} idx={7} at={K.M + 0.1} until={K.O - 0.1} texto="En su ADN: más *Moraxella* (ropa que huele feo)." />
       <Subtitulo T={T} idx={8} at={K.O + 0.1} until={K.R - 0.1} texto="¿La culpable *del olor?*" />
       <Subtitulo T={T} idx={9} at={K.R + 0.1} until={K.Cs - 0.1} texto="Bajan, pero *quizá vuelven.*" />
       <Subtitulo T={T} idx={10} at={K.Cs + 0.1} until={K.C - 0.1} texto="Cámbiala *cada semana.*" />

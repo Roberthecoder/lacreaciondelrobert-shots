@@ -5,7 +5,7 @@
 - **Formato:** N2 "El número" (de 567 a "entre 7 y 10") con un momento N1 (la vejiga natatoria de la totoaba por dentro) y cierre que regresa a la imagen del inicio (las manos), ahora con una cría nadando.
 - **Gancho (de los 7):** #3 "Tu cuerpo en una imagen": "Las vaquitas marinas que se vieron el año pasado se cuentan con los dedos de tus manos: entre siete y diez."
 - **Local:** Alto Golfo de California (Baja California y Sonora), especie que solo vive en México.
-- **Corrección del 28 oct (verificación independiente):** el cierre dice la condición ("si se quitan las redes") y la escena de los bloques dice "en 2025, casi todas" (en mayo de 2026 los 3 avistamientos fueron fuera).
+- **Corrección del 28 oct (verificación independiente):** el cierre dice la condición ("si se quitan las redes") y la escena de los bloques dice "en 2025, ocho de cada diez avistamientos" (corregido el 29 oct 2026: el informe da 80 % dentro y 20 % fuera) (en mayo de 2026 los 3 avistamientos fueron fuera).
 - **Duración:** voz 933 caracteres escritos (≈ 960 hablados) ≈ 58 s con `velocidad` 1.1 + cierre 3.5 s → **61.5 s** en la base.
 - **Ojo con el dato más nuevo:** el último conteo completo publicado es el crucero de septiembre de 2025 (informe de feb 2026). En mayo de 2026 hubo una campaña de capacitación con 3 avistamientos, pero no es un conteo; por eso la voz dice "el último conteo completo publicado".
 
@@ -21,7 +21,7 @@
 | 5 | Caida | En 1997 se calculaban quinientas sesenta y siete. En 2015, cincuenta y nueve. | Barras "567 · 1997" contra "59 · 2015"; chip "2025: entre 7 y 10 vistas". |
 | 6 | Estudio | El último conteo completo publicado fue en septiembre de 2025: dos barcos, binoculares gigantes y micrófonos bajo el agua. | Tarjeta "2025 · crucero de observación · septiembre · 2 barcos · detectores acústicos"; dos barcos y tres detectores bajo el agua con ondas. |
 | 7 | Crias | Y vieron crías. Una es de Frida, una vaquita con la aleta doblada. | Vaquita con la aleta dorsal doblada y su cría. Chip "Frida: aleta doblada". |
-| 8 | Bloques | En 2025, casi todas estaban donde pusieron bloques de concreto con ganchos que atrapan las redes. | Fondo del mar con bloques de concreto y ganchos; una red atorada; vaquitas nadando arriba. |
+| 8 | Bloques | En 2025, ocho de cada diez avistamientos fueron donde pusieron bloques de concreto con ganchos que atrapan las redes. | Fondo del mar con bloques de concreto y ganchos; una red atorada; vaquitas nadando arriba. |
 | 9 | Cierre | Así que quedan pocas, pero siguen teniendo crías, y los científicos creen que pueden recuperarse si se quitan las redes. | **Regreso a las manos del inicio**, ahora con una vaquita y su cría cruzando. Chip "pocas, pero siguen teniendo crías". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert apuntando a cámara. |
 
@@ -40,7 +40,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué
 | 5 | 29.9 | 32.9 | 12_perfil_serio | `arriba-der` | «en 2015, cincuenta y nueve» |
 | 6 | 36.9 | 40.6 | 04_bajando_lentes | `arriba-der` | «binoculares gigantes» |
 | 7 | 41.1 | 44.4 | 05_sonriendo_dientes_uniformes | `izq-alto` | «vieron crías» |
-| 8 | 46.2 | 50.9 | 06_pensativo_menton | `izq-alto` | «en 2025, casi todas estaban donde pusieron bloques» |
+| 8 | 46.2 | 50.9 | 06_pensativo_menton | `izq-alto` | «en 2025, ocho de cada diez avistamientos fueron donde pusieron bloques» |
 | 9 | 52.3 | 57.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «pueden recuperarse si se quitan las redes» |
 | — | 58.0 | 61.5 | 02_apuntando_camara | cierre | `CierreMarca robert=` |
 

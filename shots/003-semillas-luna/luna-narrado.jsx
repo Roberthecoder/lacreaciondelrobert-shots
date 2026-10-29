@@ -157,7 +157,7 @@ function Orbita({ T, a, b }) {
     <path d="M 6 -16 L 40 0 L 6 16 Z" fill="#f2f5f8" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
     <path d="M -40 -10 L -54 -16 L -54 16 L -40 10 Z" fill="#9aa4ae" stroke={KC.ink} strokeWidth={4} />
   </g>;
-  const vuelta = Math.round(klerp(12, 34, kprog(T, a + 0.6, b - 0.4, kEase.suave)));
+  const vuelta = Math.round(klerp(12, 32, kprog(T, a + 0.6, b - 0.4, kEase.suave)));   // Roosa solo: de la vuelta 12 (desacople) a la ~32 (reencuentro); la semilla dio 34 en total
   return <>
     <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1424, #1d1150)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
@@ -178,7 +178,7 @@ function Orbita({ T, a, b }) {
       {frente && nave}
     </svg>
     <div style={{ position:'absolute', left:0, right:0, top:400, textAlign:'center', font:`700 58px ${KF.mono}`, color:KC.texto, textShadow:SOMBRA }}>vuelta <span style={{ color:KC.yellow }}>{vuelta}</span> / 34</div>
-    <Etq T={T} at={a + 1.2} until={b} x={cx + (cx > 540 ? -60 : 60)} y={cy - 95} lado={cx > 540 ? 'izq' : 'der'} texto="Roosa, solo" color={KC.cyan} />
+    <Etq T={T} at={a + 1.2} until={b} x={cx + (cx > 540 ? -60 : 60)} y={cy - 95} lado={cx > 540 ? 'izq' : 'der'} texto="Roosa, solo (de la vuelta 12 a la 32)" color={KC.cyan} />
     <Etq T={T} at={a + 2.0} until={b} x={600} y={770} texto="Shepard y Mitchell" color={KC.texto} />
   </>;
 }

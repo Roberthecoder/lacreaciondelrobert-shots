@@ -36,7 +36,7 @@ Pregunta fija arriba, cambia en cada error. Cada error dura 9 s: se hace mal (0�
 | 6 | Cuad4 | Las células quedan tan separadas que cada una crece sola y forma una colonia: en teoría, millones de clones de una sola célula. | Zona 4; cronómetro "incubando" corre 24 h en 2 s; salen las colonias (racimo en la 1, sueltas en la 4). Lupa "1 colonia ≈ 1 célula (en teoría)". |
 | 7 | Errores | Errores comunes: tocar con el asa caliente, clavarla en el agar o regresar a la primera zona. | Tres placas pequeñas con su error y su X: asa caliente, clavarla, regresar a la 1. |
 | 8 | Estudio | El protocolo de Erin Sanders, de 2012, muestra colonias aisladas de Serratia en la cuarta zona tras un día a treinta grados. | Tarjeta "2012 · Erin R. Sanders · JoVE". Placa con colonias **rojas** de *Serratia marcescens*, aisladas en la zona 4. Chip "24 h · 30 °C". |
-| 9 | Extra | Lo curioso: esa bacteria roja también crece en las esquinas de tu regadera. | Regadera con la mancha rosa-roja en la esquina; Lupa con bacilos rojos. Subtítulo "Esa bacteria roja *puede crecer en tu regadera.*" Sticker sorprendido. |
+| 9 | Extra | Lo curioso: esa bacteria roja también puede crecer en las esquinas de tu regadera. | Regadera con la mancha rosa-roja en la esquina; Lupa con bacilos rojos. Subtítulo "Esa bacteria roja *puede crecer en tu regadera.*" Sticker sorprendido. |
 | 10 | Cierre | Así que ese garabato es un filtro: entra una multitud y sale una sola. | **Regreso a la placa del inicio**, con un montón de puntitos que entran y la colonia sola de la zona 4. |
 | — | Outro | (sin voz) | Cierre de marca. |
 
@@ -66,7 +66,7 @@ Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 
 | 31.0 s | 35.0 s | apuntando a cámara | `presentador-bajo` | “Las células quedan tan separadas que cada una crece sola y forma una colonia: en teoría, millones de clones de una sola célula.” |
 | 37.5 s | 41.0 s | serio | `bajo-der` | “Errores comunes: tocar con el asa caliente, clavarla en el agar o regresar a la primera zona.” |
 | 44.5 s | 48.0 s | bajando los lentes | `bajo-der` | “El protocolo de Erin Sanders, de 2012, muestra colonias aisladas de Serratia en la cuarta zona tras un día a treinta grados.” |
-| 50.0 s | 53.5 s | sorprendido | `bajo-der` | “Lo curioso: esa bacteria roja también crece en las esquinas de tu regadera.” |
+| 50.0 s | 53.5 s | sorprendido | `bajo-der` | “Lo curioso: esa bacteria roja también puede crecer en las esquinas de tu regadera.” |
 | 54.5 s | 58.2 s | de perfil, serio | `bajo-der` | “Así que ese garabato es un filtro: entra una multitud y sale una sola.” |
 | cierre | fin | apuntando a cámara | junto al logo | tarjeta de cierre (`CierreMarca robert=`) |
 

@@ -9,7 +9,7 @@ Textos listos para copiar (botón de copiar en cada bloque). Plantilla y reglas:
 Ese garabato no es un garabato: es cómo se separa una sola bacteria de entre millones. 🧫
 Necesitas una placa con agar, un asa de metal y una flama para esterilizarla entre pasada y pasada. Primero dejas la muestra en una orilla: ahí hay millones de células encimadas. Flameas el asa, giras la placa y arrastras solo un poquito de la primera zona. Repites: cada pasada lleva menos células. En la última quedan tan separadas que cada una crece sola y forma una colonia: en teoría, millones de clones de una sola célula.
 Errores comunes: tocar con el asa caliente, clavarla en el agar o regresar a la primera zona.
-El protocolo de Erin Sanders (JoVE, 2012) muestra colonias aisladas de Serratia marcescens en la cuarta zona tras 24 h a 30 °C. Lo curioso: esa bacteria roja también crece en las esquinas de tu regadera.
+El protocolo de Erin Sanders (JoVE, 2012) muestra colonias aisladas de Serratia marcescens en la cuarta zona tras 24 h a 30 °C. Lo curioso: esa bacteria roja también puede crecer en las esquinas de tu regadera.
 El dibujo es esquemático.
 Fuente: Sanders, JoVE 2012.
 ¿Cuál fue tu primera técnica de laboratorio? 👇

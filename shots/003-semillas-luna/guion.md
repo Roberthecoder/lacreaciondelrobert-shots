@@ -6,6 +6,7 @@
 - **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s). **Estado:** demo visual sin voz. La voz necesita tu aprobación (gasta créditos de ElevenLabs).
 - **Verificación de hechos (28 oct 2026):** revisado por un verificador independiente; ver `verificacion.md`. Se cambió «Creyeron que estaban muertas» por «Temieron que ya no germinaran» (NSSDC: "it was thought they might not be viable") y el contador de vueltas en solitario ahora empieza en la 12. La voz necesita nueva aprobación.
 - **Corrección importante:** las semillas **no tocaron la Luna**. Dieron 34 vueltas en órbita con Stuart Roosa mientras Shepard y Mitchell bajaban. El guion lo dice así.
+- **Corrección del 29 oct 2026 (auditoría):** en la escena de la órbita, el contador y la etiqueta «Roosa, solo» ahora van de la vuelta 12 (desacople, 5 feb 1971, 04:50:43 UTC) a la ~32 (reacople, 6 feb, 20:35:52 UTC; ~39.7 h con órbitas de ~2 h). La vuelta 34 fue la de la inyección trans-Tierra, ya con los tres a bordo. La semilla sí dio 34 vueltas.
 
 ## Versión narrada (≈ 938 caracteres, ~155 palabras, ~58 s de voz)
 

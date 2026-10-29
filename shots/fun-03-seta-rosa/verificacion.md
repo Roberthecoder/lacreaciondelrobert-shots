@@ -27,4 +27,15 @@ del 27 oct 2026; aquí quedan sus correcciones. Las frases nuevas se volvieron a
 
 Sin afirmaciones ❌ ni ⚠️ pendientes.
 
+## Re-verificación (29 oct, auditoría)
+Se quitaron «en mi cuarto» y «sobre papel aluminio» (voz idx 0 y 2, guion.md y publicacion.md) por no estar como tales en `datos.md`; ahora dice «lo cultivé yo» y «las esporas que soltó una seta boca abajo». Se quitó `voz_aprobada`. (La foto real de la esporada en aluminio sigue en pantalla, sin texto que lo afirme.)
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «lo cultivé yo» (voz, guion y las 7 redes de publicacion.md) | ✅ | `series/shot-robert/datos.md` (línea ✅) | "✅ Sacó seta rosa desde una impresión de esporas hasta la cosecha." | 2026 |
+| «Empezó con una esporada» / «Empecé… con una esporada» / «La cultivé desde una esporada» | ✅ | `series/shot-robert/datos.md` (misma línea ✅; «impresión de esporas» = esporada) | "✅ Sacó seta rosa desde una impresión de esporas hasta la cosecha." | 2026 |
+| Una esporada son las esporas que suelta una seta puesta boca abajo (láminas hacia abajo) sobre una superficie | ✅ | Australian National Botanic Gardens, «Spore prints» (anbg.gov.au/fungi/spore-prints.html) | "Put the cap on a piece of paper, gills facing down." · "mature spores… will have been released from the gills and fallen onto the paper" | — (método estándar) |
+
+Sin ❌ ni ⚠️. Nota: la voz guardada en `voz/narracion.json` aún dice el texto viejo («en mi cuarto»); hay que regenerarla cuando Robert apruebe.
+
 VEREDICTO: APROBADO

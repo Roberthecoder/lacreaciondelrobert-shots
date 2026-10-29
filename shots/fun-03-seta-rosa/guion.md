@@ -13,9 +13,9 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto. | Fondo rosa. **A los 0.02 s entra girando la foto real del racimo** (polaroid). "¿plástico?" y "¿coral?" se tachan. Chip "un hongo vivo". |
+| 0 | Gancho | Esto no es plástico ni coral: es un hongo vivo, y lo cultivé yo. | Fondo rosa. **A los 0.02 s entra girando la foto real del racimo** (polaroid). "¿plástico?" y "¿coral?" se tachan. Chip "un hongo vivo". |
 | 1 | Especie | Es la seta rosa, Pleurotus djamor, un hongo de clima cálido que también crece silvestre en México. | Foto del racimo y de las laminillas. Etiqueta *Pleurotus djamor*. Chip "silvestre en México y el trópico". |
-| 2 | Esporada | Empezó con una esporada: las esporas que soltó una seta sobre papel aluminio. | Foto de tus esporadas en aluminio; arriba, una seta dibujada boca abajo suelta **esporas alargadas (cilíndricas)**, no redondas. Chip "esporada · 3 feb 2026". |
+| 2 | Esporada | Empezó con una esporada: las esporas que soltó una seta boca abajo. | Foto de tus esporadas en aluminio; arriba, una seta dibujada boca abajo suelta **esporas alargadas (cilíndricas)**, no redondas. Chip "esporada · 3 feb 2026". |
 | 3 | Placa | Las sembré en agar, y de ellas salió micelio, una red de hilos blancos. | Foto de tu placa; **Lupa de rayos X**: de una espora sale la red de micelio. Chip "placa de agar · 4 feb". |
 | 4 | Grano | Pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas. | Fotos del frasco de grano (15 mar) y de la bolsa con primordios (19 abr). |
 | 5 | Pregunta | Pero ¿qué le avisa al micelio que ya es hora de dar fruto? | **Re-gancho.** Bolsa de cultivo dibujada; Lupa de rayos X con el micelio dentro del sustrato. Sticker pensativo. |
@@ -34,9 +34,9 @@ Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 
 
 | Entra | Sale | Pose | Lado | Reacciona a |
 |---|---|---|---|---|
-| 0.0 s | 3.6 s | sorprendido | `gancho` | “Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto.” |
+| 0.0 s | 3.6 s | sorprendido | `gancho` | “Esto no es plástico ni coral: es un hongo vivo, y lo cultivé yo.” |
 | 6.5 s | 10.0 s | señalando | `bajo-der` | “Es la seta rosa, Pleurotus djamor, un hongo de clima cálido que también crece silvestre en México.” |
-| 14.0 s | 17.5 s | sonriendo | `bajo-der` | “Empezó con una esporada: las esporas que soltó una seta sobre papel aluminio.” |
+| 14.0 s | 17.5 s | sonriendo | `bajo-der` | “Empezó con una esporada: las esporas que soltó una seta boca abajo.” |
 | 22.0 s | 25.6 s | bajando los lentes | `bajo-der` | “Pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas.” |
 | 26.3 s | 29.5 s | pensativo (mentón) | `bajo-der` | “Pero ¿qué le avisa al micelio que ya es hora de dar fruto?” |
 | 31.0 s | 34.5 s | pensativo (puño) | `bajo-der` | “Un cambio de ambiente. Primero, aire fresco: con mucho dióxido de carbono, el sombrero no se forma bien.” |
@@ -67,7 +67,7 @@ Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 
 Racimo que suelta esporas → esporada (3 feb, día 0) → placa de agar con micelio que crece (4 feb → 15 mar) → grano (15 mar, día 40) → bolsa que se coloniza (29 mar, día 54) → primordios (19 abr, día 75) → racimos (fotos de tu lote anterior, sin contador) → "y vuelve a empezar" con la misma foto del primer cuadro. Contador "DÍA n / 77" con las fechas de tu video. **Título:** "De esporada a primordios en 77 días 🎧" (el día 77 son primordios, no la cosecha).
 
 ## Descripción (borrador)
-"Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto. 🍄💗 Es la seta rosa (*Pleurotus djamor*), una especie pantropical que también crece silvestre en México. Empecé el 3 de febrero de 2026 con una esporada sobre papel aluminio; las esporas germinaron en agar y formaron micelio, que pasó a grano y luego a sustrato. ¿Qué le avisa al micelio que ya es hora de dar fruto? Un cambio de ambiente: aire fresco (con mucho CO₂ el sombrero no se diferencia bien), humedad muy alta y algo de luz, que el sombrero necesita para abrirse. Como es tropical, crece mejor entre 22 y 30 °C. ¿Y el rosa? Según la revisión de Dulce Salmones (INECOL, 2017), todavía no se sabe bien por qué el rosa se mantiene o se pierde, y los primordios rosas pierden color al madurar. Video completo del cultivo (44 min): youtu.be/CbMcdFRs62Y. El dibujo es esquemático. ¿Tú qué hongo cultivarías en tu casa? 👇"
+"Esto no es plástico ni coral: es un hongo vivo, y lo cultivé yo. 🍄💗 Es la seta rosa (*Pleurotus djamor*), una especie pantropical que también crece silvestre en México. Empecé el 3 de febrero de 2026 con una esporada; las esporas germinaron en agar y formaron micelio, que pasó a grano y luego a sustrato. ¿Qué le avisa al micelio que ya es hora de dar fruto? Un cambio de ambiente: aire fresco (con mucho CO₂ el sombrero no se diferencia bien), humedad muy alta y algo de luz, que el sombrero necesita para abrirse. Como es tropical, crece mejor entre 22 y 30 °C. ¿Y el rosa? Según la revisión de Dulce Salmones (INECOL, 2017), todavía no se sabe bien por qué el rosa se mantiene o se pierde, y los primordios rosas pierden color al madurar. Video completo del cultivo (44 min): youtu.be/CbMcdFRs62Y. El dibujo es esquemático. ¿Tú qué hongo cultivarías en tu casa? 👇"
 
 ## Fuentes
 - Salmones, D. (2017). *Pleurotus djamor, un hongo con potencial aplicación biotecnológica para el neotrópico.* Scientia Fungorum 46: 73–85 (INECOL, Xalapa). Pantropical; silvestre en México y otros 12 países de América; temperatura óptima 22–30 °C; "la permanencia del color rosa en los basidiomas es una parte de la biología del hongo aún no concluyente"; la var. *roseus* tiene primordios rosas que "disminuyen notoriamente su coloración en estado adulto".

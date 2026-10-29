@@ -1,13 +1,12 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Seta Rosa base narrada.dc.html",
   "salida": "Shot Seta Rosa narrado.dc.html",
   "velocidad": 1.028,
   "nota": "Fungi Mati #03. Una línea por subtítulo (idx 0..10 del jsx). Todo en UNA sola petición a ElevenLabs. 28 oct 2026: corregido tras la verificación de hechos (idx 9); la voz anterior ya no corresponde y espera nueva aprobación de Robert. NO generar la voz sin su visto bueno (gasta créditos). Ya no se hace gemelo mudo: la revisión es la versión sin voz.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto." },
+    { "escena": "Gancho", "texto": "Esto no es plástico ni coral: es un hongo vivo, y lo cultivé yo." },
     { "escena": "Especie", "texto": "Es la seta rosa, Pleurotus djamor, un hongo de clima cálido que también crece silvestre en México." },
-    { "escena": "Esporada", "texto": "Empezó con una esporada: las esporas que soltó una seta sobre papel aluminio." },
+    { "escena": "Esporada", "texto": "Empezó con una esporada: las esporas que soltó una seta boca abajo." },
     { "escena": "Placa", "texto": "Las sembré en agar, y de ellas salió micelio, una red de hilos blancos." },
     { "escena": "Grano", "texto": "Pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas." },
     { "escena": "Pregunta", "texto": "Pero ¿qué le avisa al micelio que ya es hora de dar fruto?" },

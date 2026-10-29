@@ -28,4 +28,15 @@ Todas las frases se comprobaron en el texto completo de Sanders 2012 (Europe PMC
 
 Sin afirmaciones ❌ ni ⚠️ pendientes.
 
+## Re-verificación (29 oct, auditoría)
+Se corrigió la voz (escena Extra), igual en `guion.md` y `publicacion.md`: «también crece en las esquinas de tu regadera» → «también **puede crecer** en las esquinas de tu regadera», y se quitó `"voz_aprobada"` de `narracion.json` (la voz cambió, ya no sigue aprobada: Robert debe aprobarla otra vez). Fuente reabierta el 29 oct 2026 en texto completo (Europe PMC, PMC4846335).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| *Serratia marcescens* (la bacteria roja del protocolo) puede crecer en las esquinas de tu regadera | ✅ | Sanders, E. R., *Aseptic Laboratory Techniques: Plating Methods*, JoVE 63: e3064 (PMC4846335) | "Due to its preference for damp environments, this microorganism is commonly found growing in the corners of bathtubs, in sink basins, in tile grout, and on shower curtains." | 2012 |
+| Es «roja» (la misma bacteria del estudio) | ✅ | Sanders 2012, JoVE 63: e3064 | "S. marcescens is easy to recognize since it produces a reddish pigment called prodigiosin." | 2012 |
+| (contexto, sin cambio) colonias aisladas en la cuarta zona tras un día a 30 °C | ✅ | Sanders 2012, JoVE 63: e3064 | "single colonies appearing in the fourth quadrant following incubation at 30 °C for 24 hours" | 2012 |
+
+Voz, subtítulo («*puede crecer en tu regadera*») y redes ya dicen lo mismo, con «puede». Nota: `voz/narracion.json` todavía guarda el audio viejo («también crece…»); se regenera solo cuando Robert apruebe la voz.
+
 VEREDICTO: APROBADO
