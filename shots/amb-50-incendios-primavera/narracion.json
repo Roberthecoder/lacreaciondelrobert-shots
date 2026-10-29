@@ -1,0 +1,48 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Primavera base narrada.dc.html",
+  "salida": "Shot Primavera narrado.dc.html",
+  "nota": "Shot Ambiental #50. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "De cada mil incendios forestales en Jalisco, solo dos los prendió un rayo o un volcán. Los demás, personas."
+    },
+    {
+      "escena": "Bosque",
+      "texto": "Datos de CONAFOR, de 2005 a 2013. Junto a Guadalajara está La Primavera: treinta mil quinientas hectáreas."
+    },
+    {
+      "escena": "Agua",
+      "texto": "Capta unos doscientos cuarenta millones de metros cúbicos de lluvia al año y ayuda a recargar acuíferos."
+    },
+    {
+      "escena": "Fuego",
+      "texto": "En temporada seca se quema: en 2005 ardieron más de once mil hectáreas, más de un tercio del bosque."
+    },
+    {
+      "escena": "Basura",
+      "texto": "En 2012, un incendio de más de ocho mil hectáreas empezó con una quema de basura."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero los pinos no aguantan el fuego?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2010, investigadores de la UdeG contaron los pinitos del área quemada en 2005: ochenta y tres por ciento eran rebrotes de raíz."
+    },
+    {
+      "escena": "Atorado",
+      "texto": "Pero crecen chaparritos y ramosos: casi no llegan a dar semilla."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "Y sigue: en 2025 hubo alrededor de cincuenta incendios dentro del bosque, casi dos mil hectáreas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "No quemes basura ni pastizal; si ves humo en La Primavera, llama al 911. Que ese incendio no sea de los novecientos noventa y ocho."
+    }
+  ]
+}
