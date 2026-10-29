@@ -80,17 +80,20 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 ## Pendientes de Robert (él tiene que hacerlos)
 - **RECORDARLE al terminar la configuración de las API de redes:** cancelar la prueba gratuita de un mes de Meta Verified
   (verificación de Instagram/Facebook) antes de que se renueve y cobre. Lo pidió el 28 oct.
-- API de Meta en curso (28 oct): app "La Creación del Robert" (id 1845140663182541) con casos de uso Threads, Instagram y Página.
-  Instagram ya es profesional (Creador). Página de Facebook creada: «La Creación del Robert» (id 61595680034985,
-  categoría Ciencia, tecnología e ingeniería), vinculada a Instagram @lacreaciondelrobert. Portfolio comercial
-  Roberto_Carlos_Navarro_Félix (business_id 1887909712212294) con la app conectada. Usuario del sistema "Publicator"
-  (id 61595818058996, admin) con la página asignada (acceso total). Faltaba (28 oct, noche): dar control total de Instagram y de
-  la app a Publicator, generar su token sin caducidad → secreto de GitHub META_SYSTEM_TOKEN, y correr el workflow
-  "Probar conexión con Meta (solo lectura)". Luego Threads (token propio de 60 días), YouTube, LinkedIn y TikTok.
-  Robert lo va a continuar con el Claude de su computadora (prompt entregado el 28 oct). Sitio con privacidad y términos: https://roberthecoder.github.io/lacreaciondelrobert-shots/
+- **API de redes: configuradas el 29 oct** (todavía no se publica nada; falta construir el publicador).
+  Pruebas de solo lectura: workflows `probar-meta.yml` y `probar-redes.yml` (los dos pasan).
+  | Red | Estado | Secretos (nombres) / variables |
+  |---|---|---|
+  | Facebook + Instagram | Listo. Usuario del sistema Publicator, token sin caducidad. Página id 1472728315916821, IG id 17841445286636880 | `META_SYSTEM_TOKEN`; vars `META_PAGE_ID`, `META_IG_ID` |
+  | Threads | Listo (evaluador lacreaciondelrobert). Token de ~60 días: renovarlo con `th_refresh_token` antes de que venza (~28 dic 2026) | `THREADS_TOKEN`; var `THREADS_APP_ID` |
+  | YouTube | Listo (cuenta de marca «La Creación del Robert», scope youtube.upload). App de Google EN PRUEBA: el refresh token vence a los 7 días (~5 nov) y los videos subidos por API quedan privados hasta pasar la auditoría. Para producción: Google Cloud → proyecto la-creacion-del-robert → Google Auth Platform → Público → «Publicar app», y llenar el formulario de auditoría de la YouTube API | `YOUTUBE_CLIENT_ID`, `YOUTUBE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` |
+  | LinkedIn | Listo (publica en el perfil personal de Robert; app ligada a la página nueva «La Creación del Robert»). Token de 2 meses, sin renovación automática: regenerarlo ~28 dic 2026 en developers → OAuth tools → token generator (openid profile w_member_social) | `LINKEDIN_TOKEN`; var `LINKEDIN_CLIENT_ID` |
+  | TikTok | Sandbox «Pruebas» listo (Login Kit + Content Posting, user.info.basic + video.upload, sitio verificado, usuario de prueba lacreaciondelrobert). Falta: token (OAuth al construir el publicador) y, para producción, grabar un video demo con el sandbox y mandar a revisión | `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET` (del sandbox) |
+  | X | No se hace (cobra por publicar) | — |
+  Sitio con privacidad, términos y verificación de TikTok: https://roberthecoder.github.io/lacreaciondelrobert-shots/ (carpeta `docs/`).
   Tokens y claves: SIEMPRE como secretos de GitHub, nunca en el chat.
 - Comprar créditos de ElevenLabs.
-- Pedir acceso a las API de redes (se le dio un PDF con instrucciones el 28 oct).
+- Pedir revisión de YouTube (auditoría) y de TikTok (video demo) cuando exista el publicador.
 - Borrar o no publicar los narrados viejos con errores que siguen en los Releases y en lacreaciondelrobert-archivo.
 
 ## Voz pendiente (28 oct, tarde)
