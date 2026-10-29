@@ -12,7 +12,7 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa hormiga trae un hongo zombi. A ti casi ningún hongo te hace eso: tu calor frena a la mayoría. | Fondo rosa, mitad y mitad: a la izquierda una hormiga carpintera camina (con hilos dorados del hongo asomando, como en #02); a la derecha la silueta de una persona con un brillo cálido. Un escudo naranja se enciende alrededor de la persona; los hilos del hongo rebotan en él. Chip "37 °C". |
+| 0 | Gancho | Esa hormiga trae un hongo zombi. A ti casi ningún hongo te hace eso: tu calor frena a la mayoría. | Fondo rosa, mitad y mitad: a la izquierda una hormiga carpintera camina (con hilos dorados del hongo asomando, como en #02); a la derecha la silueta de una persona con un brillo cálido. Un escudo naranja se enciende alrededor de la persona; esporas de mohos comunes (no del hongo de la hormiga) rebotan en él. Chip "37 °C". |
 | 1 | Hormiga | La hormiga casi no fabrica su calor: lo toma de afuera. | Fondo cian: la hormiga en una hoja; un termómetro junto a ella sube y baja con el sol y la sombra (nube que pasa). Etiqueta "hormiga carpintera · *Camponotus*". Chip "su calor viene de afuera". |
 | 2 | Tu | Tú sí: vives cerca de treinta y siete grados. | Fondo amarillo: la persona; su termómetro se queda fijo en 37 °C aunque el sol y la nube pasen. NumeroGigante "37 °C". |
 | 3 | Hongos | Los hongos suelen crecer al aire libre, pero pocos a treinta y siete. | Fondo menta: suelo y hojas con mohos y setas creciendo (temperatura ambiente, chip "temperatura ambiente"); al entrar al "cuerpo" (marco naranja 37 °C) casi todos se marchitan y solo uno sigue. |

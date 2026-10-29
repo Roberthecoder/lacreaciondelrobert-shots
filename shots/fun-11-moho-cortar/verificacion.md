@@ -55,6 +55,6 @@ Fuentes abiertas:
 
 Nota de forma (no afecta a la verdad del shot): en `## Fuentes` del guion, varias citas entre comillas copian la redacción de la reproducción de WSU (p. ej. "the mycotoxins are often contained…", "the mold the color you see", "fruits and vegetables with low moisture content" sin "FIRM"), no la del PDF del FSIS. Las frases textuales exactas del PDF oficial son las de esta tabla.
 
-Resumen: 25 afirmaciones (voz y pantalla) verificadas contra la hoja oficial del FSIS-USDA (2005, vigente según NC State Extension 2024) y Rychlik y Schieberle (2001); todas ✅, ninguna ❌ ni ⚠️ pendiente.
+Resumen: 23 afirmaciones (voz y pantalla) verificadas contra la hoja oficial del FSIS-USDA (2005, vigente según NC State Extension 2024) y Rychlik y Schieberle (2001); todas ✅, ninguna ❌ ni ⚠️ pendiente.
 
 VEREDICTO: APROBADO

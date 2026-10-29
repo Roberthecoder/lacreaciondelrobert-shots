@@ -3,8 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #12 · rama `pedido300/fun`.
 - **Formato:** N1 Por dentro (tu cabeza → la superficie del cuero cabelludo al microscopio → la misma cabeza, transformada).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Esa caspa no es solo piel que se cae: en tu cabeza vive una levadura que come grasa.»
-- **Duración:** voz 997 caracteres / 183 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base (se ajusta con `estimar-escenas.mjs` en la fase 3).
-- **Voz:** pendiente de aprobación de Robert (~1,000 créditos de ElevenLabs).
+- **Duración:** voz 978 caracteres / 179 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~980 créditos de ElevenLabs).
 - **Tono:** curioso y tranquilizador. La caspa es muy común; no es falta de higiene. **No es consejo médico.**
 - **Precisión:** la levadura es **una causa entre varias** (grasa + levadura + sensibilidad de cada persona); el guion lo dice así y no la culpa sola.
 
@@ -18,11 +18,11 @@
 | 3 | Lipasas | La levadura lo rompe con unas tijeras químicas, las lipasas, para comer. | *Malassezia globosa* (células redondas de 2.5–8 µm, con la célula hija brotando de una base angosta) suelta tijeritas "lipasa" que cortan las moléculas de grasa (triglicérido: una "E" de 3 colas) en pedazos. |
 | 4 | Oleico | Y deja sueltos ácidos grasos, como el oleico, el del aceite de oliva. | Quedan sueltas colitas (ácidos grasos); una se ilumina: "ácido oleico". Mini botella de aceite de oliva con la misma colita. |
 | 5 | Pregunta | ¿Entonces por qué a unos les da caspa y a otros no? | **Re-gancho.** Dos cabezas lado a lado: una con caspa, una sin caspa, y un "?" gigante. Robert grande, pensativo. |
-| 6 | Tres | Porque la caspa necesita al menos tres cosas: grasa, levadura y una piel sensible. | Tres fichas que se juntan como piezas: "grasa", "levadura", "piel sensible". |
-| 7 | Escamas | En esa piel, las células se multiplican de más y se despegan en grupos: las escamas. | Corte de piel: las capas suben más rápido; arriba, las células planas (corneocitos) se despegan pegadas en grupos y forman una escama blanca. |
+| 6 | Tres | La caspa necesita al menos tres cosas: grasa, levadura y una piel sensible. | Tres fichas que se juntan como piezas: "grasa", "levadura", "piel sensible". |
+| 7 | Escamas | Ahí, las células se multiplican de más y se despegan en grupos: las escamas. | Corte de piel: las capas suben más rápido; arriba, las células planas (corneocitos) se despegan pegadas en grupos y forman una escama blanca. |
 | 8 | Estudio | En 2005, investigadores de Cincinnati untaron ácido oleico en la cabeza de voluntarios. | Tarjeta "2005 · Cincinnati, EE. UU. · DeAngelis y col."; un gotero pone ácido oleico en dos cabezas. |
 | 9 | Resultado | A quienes tenían caspa se les descamó la piel; a los otros, nada visible. | La cabeza "con caspa" suelta escamas ✓; la otra queda igual ("nada visible"). |
-| 10 | Genoma | Lo más raro: a Malassezia globosa parece faltarle el gen para fabricar sus ácidos grasos. Usa los tuyos. | Tira de ADN de *M. globosa* con un hueco marcado "fabricar ácidos grasos ✗"; la levadura voltea hacia la gota de sebo. Chip "genoma leído en 2007". |
+| 10 | Genoma | Lo más raro: a Malassezia globosa parece faltarle el gen para fabricar ácidos grasos. Usa los tuyos. | Tira de ADN de *M. globosa* con un hueco marcado "fabricar ácidos grasos ✗"; la levadura voltea hacia la gota de sebo. Chip "genoma leído en 2007". |
 | 11 | Champu | Muchos champús anticaspa traen antifúngicos, como el ketoconazol o la piritiona de zinc. | Frasco de champú; burbujas que encogen a las levaduras. Chips "ketoconazol" y "piritiona de zinc". |
 | 12 | Cierre | Así que esa caspa no es solo piel: es tu piel reaccionando a lo que deja una levadura. | **Regreso a la imagen del inicio:** el mismo hombro con las mismas escamas; ahora, con la lupa encima, se ven las levaduras y las colitas de ácido graso. Chip "no es suciedad: es una reacción". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
