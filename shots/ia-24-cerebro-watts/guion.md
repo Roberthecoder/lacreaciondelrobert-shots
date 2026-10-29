@@ -4,7 +4,7 @@
 - **Estado (29 oct 2026):** fase A — guion escrito, **pendiente de verificación independiente**. Sin animación todavía.
 - **Formato:** N2 "El número" (20 W gigante desde el cuadro 0, mito del 10 % tachado, comparación con la tarjeta de 700 W, estudio y "qué sigue").
 - **Gancho (de los 7):** #3 "Tu cuerpo en una imagen" (con número): "Mientras me escuchas, tu cerebro gasta unos veinte watts: lo de un foco."
-- **Duración:** voz 959 caracteres / 176 palabras (≈ 57.8 s estimados) + cierre 3.5 s → **61.3 s** en la base.
+- **Duración:** voz 968 caracteres / 178 palabras (≈ 58.3 s estimados) + cierre 3.5 s → **61.8 s** en la base.
 - **Postura de la serie:** la defendemos y la criticamos con datos: la IA gasta mucho más que un cerebro, pero **no se comparan uno a uno** (se dice en voz) y la ingeniería ya intenta copiar la eficiencia del cerebro. **Diferencia con ia-04 y ia-17:** el ia-04 habló del costo total de entrenar Llama 3 (horas y CO₂) y el ia-17 del costo de cada pregunta; aquí Llama 3 solo aparece de pasada (16 mil tarjetas a la vez, versión 405B) y el tema es la eficiencia del cerebro.
 
 ## Versión narrada
@@ -16,11 +16,11 @@
 | 2 | Neuronas | Con eso trabajan unas ochenta y seis mil millones de neuronas. | Zoom al cerebro, fondo azul noche: red de neuronas que se encienden; contador "≈ 86 000 000 000 neuronas". |
 | 3 | Mito | Y lo del diez por ciento es mito: en un día lo usas casi todo. | `MitoTachado` "solo usas el 10 %"; el cerebro se ilumina por zonas, una tras otra, hasta estar todo encendido (reloj de un día que gira). |
 | 4 | Tarjeta | Esta tarjeta de IA puede jalar hasta setecientos watts: lo de unos treinta y cinco cerebros. | Fondo cian: una tarjeta gráfica (GPU de centro de datos, "H100 SXM · hasta 700 W") con un medidor que sube a 700; al lado 35 cerebritos en fila (700 ÷ 20). |
-| 5 | Miles | Y para entrenar Llama 3, de Meta, usaron hasta dieciséis mil juntas. | La cámara se aleja: la tarjeta se multiplica en una `Cuadricula` de racks hasta "16 000 tarjetas H100" (chip "Llama 3 405B · 2024"). |
+| 5 | Miles | Y en 2024, para entrenar Llama 3, usaron hasta dieciséis mil juntas. | La cámara se aleja: la tarjeta se multiplica en una `Cuadricula` de racks hasta "16 000 tarjetas H100" (chip "Llama 3 405B · Meta · 2024"). |
 | 6 | Pregunta | ¿Entonces tu cabeza le gana a la máquina? | **Re-gancho.** "?" gigante entre el cerebro y la tarjeta; Robert grande, pensativo. |
 | 7 | Ojo | Ojo: no se comparan uno a uno. La tarjeta hace otro trabajo y tu cerebro no es una computadora digital. | Balanza con el cerebro y la tarjeta, que no se equilibra: un signo "≠". Chip "otras tareas · otra forma de procesar". |
 | 8 | Estudio | En 2021, en la Universidad de Virginia, estimaron que en tu corteza calcular cuesta una décima de watt; mandar señales lejos, treinta y cinco veces más. | `TarjetaEstudio` "2021 · Univ. de Virginia · Levy y Calvert · PNAS". Dos neuronas: un puntito que "calcula" (0.1 W) y un largo axón con una señal que viaja (3.5 W, "×35"). Chip "estimación teórica". |
-| 9 | Copia | Intel hizo una máquina inspirada en el cerebro: mil ciento cincuenta millones de neuronas artificiales y hasta dos mil seiscientos watts. | Una caja del tamaño de un microondas, "Hala Point · Intel · 2024 · prototipo de investigación": contador "1 150 millones de neuronas artificiales" y medidor "hasta 2 600 W". Comparación junto al cerebro: 86 000 millones con ~20 W. |
+| 9 | Copia | En 2024, Intel hizo una máquina inspirada en el cerebro: mil ciento cincuenta millones de neuronas artificiales y hasta dos mil seiscientos watts. | Una caja del tamaño de un microondas, "Hala Point · Intel · 2024 · prototipo de investigación": contador "1 150 millones de neuronas artificiales" y medidor "hasta 2 600 W". Comparación junto al cerebro: 86 000 millones con ~20 W. |
 | 10 | Cierre | Así que tu foquito de veinte watts aún le da clases de ahorro a las máquinas. | **Regreso a la imagen del inicio**: la misma cabeza con el foco de 20 W encendido; al fondo, la fila de tarjetas y la caja de Hala Point con sus medidores en rojo. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
