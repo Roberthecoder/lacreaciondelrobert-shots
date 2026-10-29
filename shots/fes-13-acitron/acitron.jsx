@@ -458,7 +458,7 @@ function Acitron() {
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Bi - 0.1} texto="No es fruta: *es un cactus.*" />
       <Subtitulo T={T} idx={1} at={K.Bi + 0.1} until={K.De - 0.1} texto="Biznaga de dulce: *solo vive en México.*" />
-      <Subtitulo T={T} idx={2} at={K.De + 0.1} until={K.Pu - 0.1} texto="Del desierto chihuahuense *a Tehuacán.*" />
+      <Subtitulo T={T} idx={2} at={K.De + 0.1} until={K.Pu - 0.1} texto="Desierto chihuahuense *y Tehuacán.*" />
       <Subtitulo T={T} idx={3} at={K.Pu + 0.1} until={K.Co - 0.1} texto="Por dentro: *pulpa que guarda agua.*" />
       <Subtitulo T={T} idx={4} at={K.Co + 0.1} until={K.Al - 0.1} texto="Más de medio metro: *la pulpa en cubos.*" />
       <Subtitulo T={T} idx={5} at={K.Al + 0.1} until={K.Os - 0.1} texto="Almíbar cada vez más espeso: *una semana.*" />

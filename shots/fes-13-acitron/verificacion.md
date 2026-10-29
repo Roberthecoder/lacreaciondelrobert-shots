@@ -65,4 +65,33 @@ Estado previo: PENDIENTE (6 ⚠️, 0 ❌), 29 oct 2026. El productor aplicó la
 
 Las demás líneas (gancho, desierto, pulpa, ósmosis, pregunta, muere) y la pantalla no cambiaron y siguen ✅ según la tabla de arriba.
 
+## Revisión de pantalla y publicación (29 oct 2026)
+Se revisó todo el texto en pantalla de `acitron.jsx` (Chip, Etq, MitoTachado, TarjetaEstudio, Medidor, Capitulo, Subtitulo, etiquetas de Lupa y `<text>` de SVG) y lo que afirman los dibujos, más `publicacion.md` (7 redes y comentario fijado).
+
+| Elemento en pantalla | Veredicto | Respaldo |
+|---|---|---|
+| «¿fruta?» tachado → «es un cactus»; «no es fruta: es cactus»; acitrón translúcido | ✅ | Tesis 2008 ("The original sweet is translucent") |
+| Biznaga: barril con costillas, espinas, corona de lana amarilla y **flores amarillas** | ✅ | Tesis 2008 ("abundante lana amarillenta", "color amarillo intenso") |
+| «biznaga de dulce» · «Echinocactus platyacanthus» · «endémica de México» | ✅ | Acta 2016 |
+| Mapa: puntos en Coahuila, NL, Tamaulipas, SLP, Zacatecas, Guanajuato, Querétaro, Hidalgo + Tehuacán (Puebla) y norte de Oaxaca; etiquetas «desierto chihuahuense», «valle de Tehuacán», «Puebla y Oaxaca» | ✅ | Acta 2016 (lista de estados) |
+| Lupa «AL MICROSCOPIO · parénquima» con barra «100 µm» (celdas de ~100 µm) y `Escala` en la ósmosis (célula ≈ 170 µm) | ✅ orden de magnitud (esquemático) | Nobel 2006, *Annals of Botany* (*Hylocereus undatus*, otra especie): parénquima que guarda agua "147 ± 2 µm" de diámetro máximo. https://pmc.ncbi.nlm.nih.gov/articles/PMC2803650 |
+| «tejido que guarda agua» | ✅ | Nobel 1992 |
+| Regla «50 cm» con la biznaga rebasándola · «más de medio metro» · «sin costillas» · «la pulpa, en cubos» | ✅ | Tesis 2008 · Ciencias 2018 |
+| Cazo de cobre; medidor «almíbar» ralo → muy espeso; calendario DÍA 1–7 | ✅ | Tesis 2008 ("copper pots") · Ciencias 2018 ("cada vez más concentrados", "puede durar una semana") |
+| «ósmosis», «sale agua», «entra azúcar», medidor «azúcar en la pulpa» → **70–75 %** | ✅ | Ciencias 2018 |
+| Se arranca con raíces y se apaga a gris · «se usa la planta entera» | ✅ | Tesis 2008 |
+| TarjetaEstudio «2008 · Tesis doctoral · UNAM · Zapotitlán Salinas, Tehuacán (Puebla)» | ✅ | Tesis 2008 (portada) |
+| Time-lapse a la regla de 50 cm; contador **«EDAD (AÑOS) ≈ 25»**; chip **«≈ 25 años · estimación»** | ✅ | Tesis 2008 ("45 to 50 cm (≈ 25 years; Jiménez, in prep.)") |
+| Ficha «NOM-059-SEMARNAT · Lista oficial de especies en riesgo»; escalón **«2010 · protección especial» → «2019 · más alta»**; chip «especie en riesgo · 2019» | ✅ | NOM 2010 ("endémica Pr") · DOF 2019 ((A) en el considerando, P en la tabla: ambas más altas que Pr) |
+| **Báscula: «1 kg biznaga» contra 3 bolsas de «½ kg» = «1.5 kg azúcar»**; chip «1.5 kg de azúcar por kg»; etiqueta «una receta tradicional» | ✅ | Tesis 2008 |
+| Cierre: Lupa «POR DENTRO · células de cactus»; el acitrón cambia por ate/papaya; la biznaga sigue en el desierto | ✅ | Ciencias 2018 (imitaciones de papaya o ate) |
+| Subtítulos 0–12 | ✅ (uno corregido, abajo) | coinciden con la voz verificada |
+| Capítulos «La pulpa», «El almíbar», «El tiempo»; MarcaAgua Festivo #13 | ✅ | — |
+
+**Corregido:**
+1. `acitron.jsx`, subtítulo 2: «Del desierto chihuahuense *a Tehuacán.*» → «Desierto chihuahuense *y Tehuacán.*» ("de… a…" sugería un área continua; la distribución es discontinua, norte y sur aislados por el Eje Neovolcánico, Acta 2016).
+2. `publicacion.md`, comentario fijado, fuente 3: «hasta una semana» → «el proceso puede durar una semana» (Ciencias 2018).
+
+`publicacion.md`: el resto de las 7 redes y las fuentes coincide con lo verificado (sin cifras ni datos nuevos).
+
 VEREDICTO: APROBADO

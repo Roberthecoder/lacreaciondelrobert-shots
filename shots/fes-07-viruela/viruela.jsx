@@ -100,7 +100,13 @@ function BanderaURSS({ x, y, s = 1, ond = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-6} y={-10} width={12} height={300} rx={6} fill="#6b4226" stroke={KC.ink} strokeWidth={5} />
     <path d={`M 6 0 Q 80 ${-14 + ond} 170 0 L 170 120 Q 80 ${106 + ond} 6 120 Z`} fill={ROJO_URSS} stroke={KC.ink} strokeWidth={6} />
-    <path d="M 40 22 l 6 14 l 15 1 l -12 9 l 4 15 l -13 -8 l -13 8 l 4 -15 l -12 -9 l 15 -1 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={2} />
+    {/* estrella con contorno dorado (sin relleno) */}
+    <path d="M 40 10 l 3.5 7.5 l 8 0.8 l -6 5.4 l 1.8 8 l -7.3 -4.2 l -7.3 4.2 l 1.8 -8 l -6 -5.4 l 8 -0.8 Z" fill={ROJO_URSS} stroke={KC.gold2} strokeWidth={2.6} strokeLinejoin="round" />
+    {/* hoz y martillo dorados */}
+    <path d="M 26 46 A 15 15 0 1 0 50 34" stroke={KC.gold2} strokeWidth={6} fill="none" strokeLinecap="round" />
+    <line x1={30} y1={60} x2={23} y2={68} stroke={KC.gold2} strokeWidth={6} strokeLinecap="round" />
+    <line x1={30} y1={40} x2={52} y2={66} stroke={KC.gold2} strokeWidth={5} strokeLinecap="round" />
+    <rect x={22} y={33} width={18} height={9} rx={2} fill={KC.gold2} transform="rotate(-40 31 37.5)" />
   </g>;
 }
 function BanderaEU({ x, y, s = 1, ond = 0 }) {
