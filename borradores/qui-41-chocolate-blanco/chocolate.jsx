@@ -48,8 +48,8 @@ function Tableta({ T = 0, x, y, s = 1, bloom = 0, brillo = 0, parte = 0, borrado
 }
 // Envoltura de papel aluminio que se baja (abre 0..1).
 function Envoltura({ x, y, abre = 0 }) {
-  const dy = abre * 520;
-  return <g transform={`translate(${x} ${y + dy})`} opacity={1 - kprog(abre, 0.8, 1)}>
+  const dx = abre * 1100;
+  return <g transform={`translate(${x + dx} ${y}) rotate(${abre * 12})`} opacity={1 - kprog(abre, 0.85, 1)}>
     <rect x={-345} y={-235} width={690} height={470} rx={20} fill="#c9ccd3" stroke={KC.ink} strokeWidth={10} />
     {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${-330 + i * 100} -230 l 40 460`} stroke="#eef0f4" strokeWidth={12} opacity={0.7} />)}
     <rect x={-345} y={-40} width={690} height={120} fill={KC.pink} stroke={KC.ink} strokeWidth={8} />
@@ -221,7 +221,7 @@ function Chocolate() {
               {[0, 1, 2, 3, 4].map((i) => <CristalForma key={i} n={5} x={420 + i * 90} y={620} s={0.6} o={kprog(T, K.Ca - 1.4 + i * 0.12, K.Ca - 1.0 + i * 0.12, kEase.rebote)} T={T} />)}
             </g>; })()}
         </SvgCapa>
-        <Etq T={T} at={fTemp + 0.4} until={K.Ca - 0.2} x={250} y={1260} texto="temperaturas precisas" tam={34} color={KC.texto} />
+        <Etq T={T} at={fTemp + 0.4} until={K.Ca - 0.2} x={250} y={1420} texto="temperaturas precisas" tam={34} color={KC.texto} />
       </Escena>
       {/* 4 · calor: la manteca sube y recristaliza blanca */}
       <Escena T={T} a={K.Ca} b={K.P}>
@@ -242,7 +242,7 @@ function Chocolate() {
           </g>
           <circle cx={760} cy={960} r={230} fill="none" stroke={KC.ink} strokeWidth={12} />
         </SvgCapa>
-        <Etq T={T} at={K.Ca + 1.0} until={K.P - 0.2} x={540} y={1240} texto="manteca líquida sube" lado="der" tam={30} color={KC.texto} />
+        <Etq T={T} at={K.Ca + 1.0} until={K.Ca + 2.7} x={180} y={1420} texto="manteca líquida sube" lado="der" tam={30} color={KC.texto} />
         <Chip T={T} at={K.Ca + 2.8} until={K.P - 0.2} texto="se recristaliza: forma VI" y={1500} tam={40} borde={KC.texto} />
       </Escena>
       {/* 5 · ¿y en el refri? */}
@@ -277,7 +277,7 @@ function Chocolate() {
               {seca > 0.6 && Array.from({ length: 26 }, (_, i) => { const px = 260 + i * 21, h = 18 + (i % 4) * 8; return <rect key={i} x={px} y={1060 - h * kprog(seca, 0.6, 1)} width={14} height={h * kprog(seca, 0.6, 1)} fill={AZUCAR} stroke={KC.ink} strokeWidth={2} />; })}
             </g>; })()}
         </SvgCapa>
-        <Etq T={T} at={azMicro + 0.3} until={azMicro + 1.7} x={760} y={760} texto="el azúcar se disuelve" tam={32} color="#bfe8ff" />
+        <Etq T={T} at={azMicro + 0.3} until={azMicro + 1.7} x={1040} y={760} texto="el azúcar se disuelve" lado="izq" tam={32} color="#bfe8ff" />
         <Chip T={T} at={K.Es - 1.6} until={K.Es - 0.1} texto="al secarse: polvito de azúcar" y={1500} tam={40} borde={AZUCAR} />
         <Escala T={T} pxPorMm={20000} x={60} y={1640} color={KC.texto} />
       </Escena>
@@ -289,7 +289,7 @@ function Chocolate() {
             <rect x={60} y={560} width={160} height={90} rx={14} fill="#3a4152" stroke={KC.ink} strokeWidth={8} opacity={kprog(T, esRay - 0.3, esRay)} />
             <path d={`M 220 605 L ${klerp(220, 520, kprog(T, esRay, esRay + 0.4))} 605`} stroke="#bfe8ff" strokeWidth={14} strokeLinecap="round" strokeDasharray="6 10" strokeDashoffset={-T * 60} />
             <CristalForma n={6} x={560} y={605} s={0.7} o={kprog(T, esRay, esRay + 0.3)} T={T} />
-            {[1, 2, 3, 4, 5, 6].map((n, i) => { const t0 = esRay + 0.6 + i * 0.3; return <Anillos key={n} n={n} x={240 + (i % 3) * 300} y={890 + Math.floor(i / 3) * 280} o={kprog(T, t0, t0 + 0.35, kEase.sale)} resalta={n === 6 ? kprog(T, K.La - 2.2, K.La - 1.9) : 0} />; })}
+            {[1, 2, 3, 4, 5, 6].map((n, i) => { const t0 = esRay + 0.6 + i * 0.3; return <Anillos key={n} n={n} x={240 + (i % 3) * 300} y={840 + Math.floor(i / 3) * 250} o={kprog(T, t0, t0 + 0.35, kEase.sale)} resalta={n === 6 ? kprog(T, K.La - 2.2, K.La - 1.9) : 0} />; })}
           </g>}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Es + 0.2} until={esRay - 0.2} anio="1966" quien="Wille y Lutton · Cincinnati, EUA" revista="J Am Oil Chem Soc · rayos X" x={540} y={860} />
@@ -300,34 +300,34 @@ function Chocolate() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           <Tableta T={T} x={600} y={1000} s={0.75} bloom={1} borrado={{ x: 60, y: 0, r: 110 * kprog(T, K.La + 2.4, K.La + 4.4, kEase.suave) }} id="l0" />
-          <Aparato x={230} y={780} s={0.9} />
+          <g opacity={kprog(T, K.La + 1.8, K.La + 2.2)}><Aparato x={230} y={780} s={0.9} /></g>
           {T > K.La + 2.2 && <g>
             <line x1={385} y1={780} x2={645} y2={1000} stroke="#fff" strokeWidth={30} opacity={0.10 + 0.04 * Math.sin(T * 9)} strokeLinecap="round" />
             <circle cx={645} cy={1000} r={60 + Math.sin(T * 8) * 6} fill="#fff" opacity={0.12} />
           </g>}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.La + 0.2} until={K.La + 2.0} anio="2020" quien="Univ. del Sur de Florida" revista="Scientific Reports" x={540} y={760} />
-        <Etq T={T} at={K.La + 2.3} until={K.Co - 0.2} x={470} y={840} texto="láser infrarrojo · invisible" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.La + 2.3} until={K.Co - 0.2} x={110} y={640} texto="láser infrarrojo · invisible" tam={30} color={KC.ink} />
         <Chip T={T} at={K.La + 3.0} until={K.Co - 0.2} texto="borró parte del bloom de grasa" y={1500} tam={38} borde={KC.texto} />
       </Escena>
       {/* 9 · se puede comer */}
       <Escena T={T} a={K.Co} b={K.Ci}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Tableta T={T} x={TX} y={900} s={0.7} bloom={1} id="c1" />
-          <Marca x={800} y={760} ok={true} s={1.2} o={kprog(T, K.Co + 1.2, K.Co + 1.6)} />
-          <g opacity={kprog(T, K.Co + 2.6, K.Co + 3.0)}><Lengua x={300} y={1110} s={0.8} /></g>
-          <g opacity={kprog(T, K.Co + 3.6, K.Co + 4.0)}><Escudo x={780} y={1110} s={0.8} /></g>
+          <Tableta T={T} x={TX} y={820} s={0.6} bloom={1} id="c1" />
+          <Marca x={850} y={700} ok={true} s={1.1} o={kprog(T, K.Co + 1.2, K.Co + 1.6)} />
+          <g opacity={kprog(T, K.Co + 2.6, K.Co + 3.0)}><Lengua x={300} y={1090} s={0.7} /></g>
+          <g opacity={kprog(T, K.Co + 3.6, K.Co + 4.0)}><Escudo x={780} y={1090} s={0.7} /></g>
         </SvgCapa>
         <Chip T={T} at={K.Co + 0.2} until={K.Ci - 0.2} texto="CFIA · Canadá: se puede comer" y={1500} tam={40} borde={KC.mint} />
-        <Etq T={T} at={K.Co + 2.8} until={K.Ci - 0.2} x={390} y={1060} texto="¿sabor? puede cambiar" tam={30} color={KC.ink} />
-        <Etq T={T} at={K.Co + 3.8} until={K.Ci - 0.2} x={680} y={1060} texto="no es riesgo" lado="izq" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.Co + 2.8} until={K.Ci - 0.2} x={70} y={990} texto="¿sabor? puede cambiar" tam={28} color={KC.ink} />
+        <Etq T={T} at={K.Co + 3.8} until={K.Ci - 0.2} x={1010} y={990} texto="no es riesgo" lado="izq" tam={28} color={KC.ink} />
       </Escena>
       {/* 10 · cierre: la tableta del inicio, ahora con sus etiquetas */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa><Tableta T={T} x={TX} y={TY} bloom={1} azucar={0.8} id="z0" /></SvgCapa>
-        <Etq T={T} at={K.Ci + 0.6} until={K.Ou} x={330} y={760} texto="cristales de grasa (VI)" lado="der" tam={32} color={KC.texto} />
+        <Etq T={T} at={K.Ci + 0.6} until={K.Ou} x={330} y={690} texto="cristales de grasa (VI)" lado="der" tam={32} color={KC.texto} />
         <Etq T={T} at={K.Ci + 1.4} until={K.Ou} x={780} y={1180} texto="cristales de azúcar" lado="izq" tam={32} color={KC.texto} />
         <Chip T={T} at={K.Ci + 2.4} until={K.Ou} texto="guárdalo fresco y seco" y={1500} tam={44} borde={KC.mint} />
         <Escala T={T} pxPorMm={6.4} x={60} y={1640} color={KC.texto} />
@@ -335,7 +335,7 @@ function Chocolate() {
 
       {/* textos del gancho */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.G + 3.0} texto="¿moho?" x={300} y={500} tam={60} />
-      <Etq T={T} at={K.G + 3.3} until={K.Q - 0.2} x={560} y={1200} texto="grasa o azúcar, en cristales" lado="izq" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.G + 3.3} until={K.Q - 0.2} x={40} y={680} texto="grasa o azúcar, en cristales" lado="der" tam={28} color={KC.texto} />
       <Etq T={T} at={K.Q + 1.3} until={K.M - 0.2} x={260} y={1180} texto="de grasa" lado="der" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Q + 1.9} until={K.M - 0.2} x={820} y={1180} texto="de azúcar" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.F + 0.3} until={fCrack - 0.1} texto="forma V: brillo y crack" y={1500} tam={42} borde={KC.gold2} />
@@ -361,7 +361,7 @@ function Chocolate() {
         [CUES.Pregunta + 0.05, CUES.Azucar + 0.8, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Azucar + 2.4, CUES.Estudio - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [CUES.Estudio + 3.4, CUES.Laser - 0.3, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [CUES.Laser + 0.4, CUES.Comer - 0.2, 'avatar_11_sorprendido', 'izq-alto'],
+        [CUES.Laser + 0.4, CUES.Comer - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Comer + 0.4, CUES.Cierre - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
         [CUES.Cierre + 0.3, CUES.Outro - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="quimica" num="41" hasta={K.Ou} />

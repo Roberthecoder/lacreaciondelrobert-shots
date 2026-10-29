@@ -6,11 +6,11 @@
 - **No repite** el Shot Químico #07 (jabón, micelas): aquí no hay micelas ni limpieza; el tema es la emulsión aceite-en-agua, el forro de la yema y por qué se "corta".
 - **Seguridad:** no se da receta ni se recomienda comer mayonesa casera con huevo crudo; solo se explica la física.
 - **Duración:** voz 956 caracteres (≈ 58.1 s) + cierre 3.5 s → **61.6 s** estimados (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion escrito; falta verificación independiente (`verificacion.md`), animación y tabla "Robert en pantalla" (fase 2).
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`mayonesa.jsx`), voz pendiente de aprobación de Robert (~956 créditos).
 
 ## Versión narrada
 
-Tiempos estimados de entrada: 0.0 · 5.2 · 10.2 · 15.1 · 20.4 · 25.3 · 29.7 · 32.0 · 39.1 · 46.2 · 52.3 · cierre 57.9–61.4.
+Tiempos de entrada (base sin voz): 0.0 · 5.2 · 10.8 · 15.7 · 21.0 · 25.9 · 30.2 · 32.5 · 39.3 · 46.4 · 52.5 · cierre 58.1–61.6.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -28,6 +28,25 @@ Tiempos estimados de entrada: 0.0 · 5.2 · 10.2 · 15.1 · 20.4 · 25.3 · 29.7
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química sobre la cucharada oscurecida. |
 
 **Música:** cama grave continua; efectos en el mismo cuadro (cuchara que se hunde, "blop" de gotas que se funden, gota de yema que cae, "toc" de gotitas que rebotan, crujido suave al apretarse, golpe de la tarjeta, chorrito de aceite, sello).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Entonces por qué a veces se corta?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «no es una pasta: es aceite» |
+| 2 | 6.2 | 10.5 | 13_senalando_arriba | `izq-alto` | «casi el 80 por ciento puede ser aceite» |
+| 3 | 17.7 | 20.7 | 06_pensativo_menton | `arriba-der` | «se llevan con el agua y con el aceite» |
+| 4 | 26.2 | 30.0 | 05_sonriendo_dientes_uniformes | `izq-alto` | «la vuelven espesa» |
+| 5 | 30.25 | 33.1 | 07_pensativo_puno | `grande` | «¿Entonces por qué a veces se corta?» |
+| 6 | 35.9 | 39.0 | 04_bajando_lentes | `arriba-der` | «siete veces… cómo echaban el aceite» |
+| 7 | 41.7 | 46.1 | 10_serio_molesto | `izq-alto` | «todo de golpe… se cortó» |
+| 8 | 46.7 | 52.2 | 11_sorprendido | `arriba-der` | «no se puede vender como mayonesa» |
+| 9 | 52.8 | 58.0 | 02_apuntando_camara | `izq-alto` | «la yema evitando que se junten» |
+| — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 37 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 
