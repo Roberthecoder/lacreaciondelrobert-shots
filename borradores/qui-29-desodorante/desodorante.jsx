@@ -339,7 +339,7 @@ function Desodorante() {
       <Subtitulo T={T} idx={11} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Es química *de tus bacterias.*" />
 
       <Robert T={T} apariciones={[
-        [CUES.Gancho - 0.45, CUES.Gancho + 4.6, 'avatar_11_sorprendido', 'gancho'],
+        [CUES.Gancho - 0.45, CUES.Sudor - 0.1, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Sudor + 2.2, CUES.Bacterias - 0.3, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Bacterias + 1.8, CUES.Olor + 3.4, 'avatar_06_pensativo_menton', 'arriba-der'],
         [CUES.Desodorante + 0.3, CUES.Antitranspirante - 0.3, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],

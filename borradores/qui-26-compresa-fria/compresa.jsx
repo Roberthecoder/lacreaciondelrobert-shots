@@ -113,7 +113,7 @@ function Compresa26() {
   const calorG = kprog(T, K.G + 1.9, K.G + 2.5);
   const segB = K.Es + 8.6;
   // cristal: orden en que se sueltan los iones
-  const cols = 6, filas = 4, paso = 104, gx0 = 470 - (cols - 1) * paso / 2, gy0 = 630;
+  const cols = 6, filas = 4, paso = 104, gx0 = 470 - (cols - 1) * paso / 2, gy0 = 680;
   const red = Array.from({ length: cols * filas }, (_, i) => ({ c: i % cols, f: Math.floor(i / cols), tipo: (i % cols + Math.floor(i / cols)) % 2 ? 'no3' : 'nh4' }));
   const sale = [0, 5, 18, 23, 1, 12, 17, 6, 11, 2];
   const destinos = [[120, 560], [900, 1040], [110, 1040], [960, 780], [380, 1060], [90, 800], [990, 920], [640, 1060], [240, 1070], [800, 1070]];

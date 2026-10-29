@@ -49,7 +49,6 @@ function Pedestal() {
   </g>;
 }
 // Estatua completa. f = color (0 cobre … 1 verde). barrido: 0..1 revela el cobre desde arriba sobre la versión verde.
-let _clipId = 0;
 function Estatua({ x, y, s = 1, f = 0, barrido = null, brillo = 0, T = 0 }) {
   const id = 'est' + Math.round(x) + '_' + Math.round(y);
   const yl = barrido == null ? null : klerp(-1160, -300, barrido);
@@ -105,7 +104,7 @@ function Cristales({ x0 = 60, x1 = 1020, y0, h = 1, alto = 150, seed = 4 }) {
 // Bloque de cobre (corte) con red de átomos esquemática. Superficie en y0.
 function BloqueCobre({ y0, y1 = 1180, T }) {
   const atom = [];
-  for (let r = 0; r < 4; r++) for (let c = 0; c < 14; c++) { const x = 92 + c * 70 + (r % 2) * 35, y = y0 + 40 + r * 62; if (y < y1 - 20) atom.push(<circle key={r * 20 + c} cx={x} cy={y + Math.sin(T * 3 + c + r) * 2} r={24} fill="#f0a27a" stroke="#7a3c22" strokeWidth={4} />); }
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 13; c++) { const x = 92 + c * 70 + (r % 2) * 35, y = y0 + 40 + r * 62; if (y < y1 - 20) atom.push(<circle key={r * 20 + c} cx={x} cy={y + Math.sin(T * 3 + c + r) * 2} r={24} fill="#f0a27a" stroke="#7a3c22" strokeWidth={4} />); }
   return <g><rect x={50} y={y0} width={980} height={y1 - y0} rx={10} fill={COBRE} stroke={KC.ink} strokeWidth={8} />{atom}
     <text x={990} y={y1 - 26} textAnchor="end" style={{ font:`700 40px ${KF.mono}` }} fill="#5a2a18">Cu · cobre</text></g>;
 }
@@ -245,7 +244,7 @@ function Estatua22() {
           {[[350, '1905', VERDE, false], [770, '1980', '#7fb59a', true]].map(([x, an, col, manchas], i) => <g key={i} opacity={kprog(T, K.St + 3.2 + i * 0.3, K.St + 3.6 + i * 0.3)}>
             <path d={`M ${x - 130} ${960} L ${x - 60} ${925} L ${x + 40} ${945} L ${x + 130} ${920} L ${x + 120} ${1050} L ${x + 20} ${1070} L ${x - 110} ${1055} Z`} fill={col} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             {manchas && [[-50, 990], [30, 1010], [80, 965]].map(([dx, dy], k) => <ellipse key={k} cx={x + dx} cy={dy} rx={28} ry={16} fill="#3e6f5d" opacity={kprog(T, K.St + 7.0, K.St + 7.6)} />)}
-            <text x={x} y={1140} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink}>{an}</text>
+            <text x={x} y={1140} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink} opacity={1 - kprog(T, K.St + 5.2 + i * 2.2, K.St + 5.5 + i * 2.2)}>{an}</text>
           </g>)}
           <Marca x={350} y={850} ok={true} s={0.7} o={kprog(T, K.St + 5.0, K.St + 5.4)} />
           <g opacity={kprog(T, K.St + 7.2, K.St + 7.6)} transform="translate(770 850)">
@@ -271,7 +270,7 @@ function Estatua22() {
       <Escena T={T} a={K.Tu} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <circle cx={230} cy={470} r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={0.5 + 0.5 * Math.abs(Math.sin(T * 1.6))} />
+          <g transform={`translate(230 470) rotate(${T * 30})`}>{Array.from({ length: 8 }, (_, i) => <line key={i} x1={0} y1={-90} x2={0} y2={-120} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" transform={`rotate(${i * 45})`} />)}<circle r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} /></g>
           <rect x={0} y={1010} width={KW} height={200} fill="#efe2c8" stroke={KC.ink} strokeWidth={8} />
           <rect x={0} y={970} width={KW} height={44} fill="#d9c7a3" stroke={KC.ink} strokeWidth={8} />
           {/* tinaco */}
@@ -285,7 +284,7 @@ function Estatua22() {
             return a > 0 && <ellipse key={i} cx={x} cy={y} rx={34 * a + 4} ry={11} fill={VERDE} opacity={0.95} />; })}
           {anios > 0.05 && anios < 1 && [0, 1, 2, 3, 4].map((i) => { const p = ((T - K.Tu) * 1.4 + i * 0.2) % 1; return <Gota key={i} x={180 + i * 130} y={klerp(560, 900, p)} r={11} o={0.8} />; })}
         </SvgCapa>
-        {T > K.Tu + 1.4 && <Contador T={T} at={K.Tu + 1.4} hasta={20} dur={4.0} sufijo=" años" x={420} y={760} tam={72} color={KC.ink} />}
+        
       </Escena>
       {/* 10 · cierre: la misma estatua, verde, con la pátina como escudo */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="32% 45%">
@@ -300,21 +299,22 @@ function Estatua22() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 3.2} texto="siempre fue verde" x={540} y={1130} tam={44} />
       <Chip T={T} at={K.G + 3.6} until={K.P - 0.3} texto="la costra verde la protege" x={540} y={1130} tam={38} borde={VERDE} />
-      <Chip T={T} at={K.P + 0.4} until={K.Ca - 0.3} texto="piel de cobre" x={440} y={580} tam={44} borde={COBRE} />
+      <Chip T={T} at={K.P + 0.4} until={K.Ca - 0.3} texto="piel de cobre" x={640} y={580} tam={44} borde={COBRE} />
       <Etq T={T} at={K.P + 2.6} until={K.Ca - 0.3} x={1000} y={640} texto="2 centavos de dólar" lado="izq" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.4} until={K.Cu - 0.3} texto="1886: color centavo" x={540} y={1130} tam={44} borde={CAFE} />
       <Chip T={T} at={K.Cu + 0.4} until={K.Cu + 2.4} texto="oxígeno + agua" x={540} y={250} tam={40} borde={QA.O} />
       <Etq T={T} at={K.Cu + 3.4} until={K.Br + 2.4} x={60} y={1215} texto="cuprita · Cu₂O (oscura)" tam={34} />
       <Chip T={T} at={K.Br + 0.4} until={K.Br + 2.4} texto="azufre de la contaminación" x={500} y={700} tam={36} borde={QA.S} />
-      <Chip T={T} at={K.Br + 3.0} until={K.Es - 0.2} texto="brochantita · CuSO₄·3Cu(OH)₂" x={540} y={640} tam={34} borde={VERDE} mono />
+      <Chip T={T} at={K.Br + 3.0} until={K.Es - 0.2} texto="brochantita · CuSO₄·3Cu(OH)₂" x={630} y={640} tam={30} borde={VERDE} mono />
       <Chip T={T} at={K.Es + 0.4} until={K.Pr - 0.2} texto="casi no se disuelve" x={540} y={640} tam={42} borde={VERDE} />
       <TarjetaEstudio T={T} at={K.St + 0.2} until={K.St + 3.3} anio="1986" quien="Matyi y Baboian" revista="Powder Diffraction · para la restauración" y={760} />
-      <Chip T={T} at={K.St + 5.2} until={K.Pi - 0.3} texto="1905: brochantita estable" x={350} y={1200} tam={30} borde={VERDE} />
-      <Chip T={T} at={K.St + 7.4} until={K.Pi - 0.3} texto="1980: antlerita, menos estable" x={720} y={1200} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.St + 5.2} until={K.Pi - 0.3} texto="1905 · brochantita estable" x={330} y={1120} tam={28} borde={VERDE} />
+      <Chip T={T} at={K.St + 7.4} until={K.Pi - 0.3} texto="1980 · antlerita, menos estable" x={760} y={1175} tam={28} borde={KC.yellow} />
       <Chip T={T} at={K.St + 9.0} until={K.Pi - 0.3} texto="¿lluvia ácida?" x={770} y={430} tam={40} borde="#8e93a0" />
       <Chip T={T} at={K.Pi + 0.3} until={K.Pi + 2.6} texto="1906: ¿pintarla?" x={600} y={220} tam={44} borde={COBRE} />
       <Chip T={T} at={K.Pi + 3.6} until={K.Tu - 0.3} texto="se quedó verde ✓" x={600} y={220} tam={44} borde={VERDE} />
       <Chip T={T} at={K.Tu + 0.4} until={K.Ci - 0.3} texto="tubo de cobre a la intemperie" x={540} y={1130} tam={36} borde={COBRE} />
+      <Chip T={T} at={K.Tu + 1.4} until={K.Ci - 0.3} texto="con los años…" x={420} y={760} tam={44} borde={VERDE} />
       <Chip T={T} at={K.Ci + 0.4} until={K.Ou} texto="pátina = escudo" x={640} y={215} tam={44} borde={VERDE} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
@@ -322,12 +322,12 @@ function Estatua22() {
       <Subtitulo T={T} idx={1} at={K.P + 0.1} until={K.Ca - 0.1} texto="Cobre de *2.4 milímetros.*" />
       <Subtitulo T={T} idx={2} at={K.Ca + 0.1} until={K.Cu - 0.1} texto="1886: color *centavo.*" />
       <Subtitulo T={T} idx={3} at={K.Cu + 0.1} until={K.Br - 0.1} texto="Primero: *cuprita oscura.*" />
-      <Subtitulo T={T} idx={4} at={K.Br + 0.1} until={K.Es - 0.1} texto="Luego: *brochantita verde.*" />
-      <Subtitulo T={T} idx={5} at={K.Es + 0.1} until={K.Pr - 0.1} texto="La pátina *protege al cobre.*" />
-      <Subtitulo T={T} idx={6} at={K.Pr + 0.1} until={K.St - 0.1} texto="¿Cuánto tardó? *Unos 30 años.*" />
-      <Subtitulo T={T} idx={7} at={K.St + 0.1} until={K.Pi - 0.1} texto="1980: *antlerita, menos estable.*" />
+      <Subtitulo T={T} idx={4} at={K.Br + 0.1} until={K.Es - 0.1} texto="Luego: *brochantita.*" />
+      <Subtitulo T={T} idx={5} at={K.Es + 0.1} until={K.Pr - 0.1} texto="La pátina *lo protege.*" />
+      <Subtitulo T={T} idx={6} at={K.Pr + 0.1} until={K.St - 0.1} texto="¿Cuánto tardó? *30 años.*" />
+      <Subtitulo T={T} idx={7} at={K.St + 0.1} until={K.Pi - 0.1} texto="1980: *menos estable.*" />
       <Subtitulo T={T} idx={8} at={K.Pi + 0.1} until={K.Tu - 0.1} texto="1906: *planearon pintarla.*" />
-      <Subtitulo T={T} idx={9} at={K.Tu + 0.1} until={K.Ci - 0.1} texto="Tu cobre *también se pone verde.*" />
+      <Subtitulo T={T} idx={9} at={K.Tu + 0.1} until={K.Ci - 0.1} texto="Tu tubo: *verde igual.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="No es mugre: *es escudo.*" />
 
       <Robert T={T} apariciones={[

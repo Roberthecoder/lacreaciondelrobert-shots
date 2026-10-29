@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot BarraLuz base narrada.dc.html",
+  "salida": "Shot BarraLuz narrado.dc.html",
+  "nota": "Shot Químico #33. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese crac no es el plástico rompiéndose: es una ampolleta de vidrio que acabas de quebrar adentro." },
+    { "escena": "Que", "texto": "En el vidrio hay agua oxigenada; afuera, un éster oxalato y un colorante fluorescente." },
+    { "escena": "Mezcla", "texto": "Al mezclarse, el agua oxigenada ataca al oxalato y forma una molécula diminuta e inestable." },
+    { "escena": "Energia", "texto": "Esa molécula se parte en dióxido de carbono y le pasa su energía al colorante, que la suelta como luz." },
+    { "escena": "Color", "texto": "Es luz sin calor, y su color depende del colorante." },
+    { "escena": "Experimento", "texto": "Ahora tres barras: una en agua con hielo, otra al ambiente y otra en agua caliente. ¿Cuál dura más?" },
+    { "escena": "Resultado", "texto": "La del hielo apenas brilla, pero dura más; la caliente brilla muchísimo y se apaga rápido. El frío frena la reacción." },
+    { "escena": "Estudio", "texto": "Y esa molécula fugaz, ¿cuál es? En 2021, químicos de la Universidad de São Paulo, en Brasil, probaron que es la dioxetanodiona: dos dióxidos de carbono unidos en un anillo con peróxido." },
+    { "escena": "Dato", "texto": "Lo curioso: en Australia, un centro toxicológico contó 2918 casos con barras de luz en 4 años, casi todos niños, y se dispararon en diciembre." },
+    { "escena": "Seguridad", "texto": "Casi nunca fue grave, pero el líquido irrita: si te cae, lávate con agua." },
+    { "escena": "Cierre", "texto": "Así que ese crac no es plástico: es una reacción química encendiéndose en tu mano." }
+  ]
+}

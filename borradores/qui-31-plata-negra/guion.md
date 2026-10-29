@@ -4,7 +4,7 @@
 - **Formato:** N5 "El experimento" (el truco del aluminio en la cocina + la prueba de las cucharas del USDA, 1916) + N1 "Por dentro" (el arete negro → la capa de sulfuro de plata y los electrones → el mismo arete, brillante).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese negro en tu arete de plata no es mugre: es plata pegada a azufre."
 - **Seguridad:** se dice "agua caliente, con cuidado". En la descripción: no usar en piezas chapadas ni huecas/selladas, no usar ollas de aluminio buenas (se corroen), enjuagar y secar.
-- **Duración:** voz 956 caracteres / ≈ 165 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** estimado (`estimar-escenas.mjs`).
+- **Duración:** voz 956 caracteres / 177 palabras (≈ 58.1 s) + cierre 3.5 s → **61.6 s** estimado (`estimar-escenas.mjs`).
 - **Estado:** guion (fase 1). Falta verificación independiente, tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
 
 ## Versión narrada
