@@ -233,10 +233,10 @@ function Olimpiada() {
           <SeisHojas T={T} x={120} y={1040} paso={168} s={0.85} estados={['ok', 'ok', 'ok', 'ok', 'ok', 'vacia']} tiempos={[...tiemposGe, K.Ge + 4.2]} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ge + 0.3} until={K.Op - 0.2} texto="Gemini Deep Think · Google DeepMind" x={540} y={840} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.Ge + 0.3} until={L3 - 0.1} texto="Gemini Deep Think · Google DeepMind" x={540} y={840} tam={32} borde={KC.cyan} />
       <Marcador T={T} at={K.Ge + 0.6} until={L3 - 0.1} valor={puntosGe} x={720} y={560} />
       <Chip T={T} at={K.Ge + 4.0} until={L3 - 0.1} texto="corte de oro 2025: 35" x={720} y={700} tam={32} borde={ORO} />
-      <Sello T={T} at={L3 + 0.1} until={K.Op - 0.2} texto={<>CALIFICADO POR<br />LA OLIMPIADA ✔</>} x={640} y={720} tam={42} />
+      <Sello T={T} at={L3 + 0.1} until={K.Op - 0.2} texto={<>CALIFICADO POR<br />LA OLIMPIADA ✔</>} x={600} y={775} tam={42} />
 
       {/* 4 · OpenAI: mismo puntaje, calificación no oficial */}
       <Escena T={T} a={K.Op} b={K.P}>
@@ -281,7 +281,7 @@ function Olimpiada() {
       <Escena T={T} a={K.Mx} b={K.S}>
         <div style={{ position:'absolute', inset:0, background:`linear-gradient(90deg, #0b8a4a 0 33.3%, #f4efe4 33.3% 66.6%, #ce1126 66.6% 100%)` }} />
         {svg(<>{[PLATA, PLATA, BRONCE, BRONCE, BRONCE, BRONCE].map((m, i) => <g key={i} opacity={kprog(T, K.Mx + 0.3 + i * 0.15, K.Mx + 0.6 + i * 0.15)}>
-          <Estudiante x={300 + (i % 3) * 260} y={730 + Math.floor(i / 3) * 250} s={1.05} T={T} k={i} medalla={m} playera={i % 2 ? KC.leaf : '#ffffff'} /></g>)}</>)}
+          <Estudiante x={300 + (i % 3) * 260} y={770 + Math.floor(i / 3) * 240} s={1.05} T={T} k={i} medalla={m} playera={i % 2 ? KC.leaf : '#ffffff'} /></g>)}</>)}
       </Escena>
       <Chip T={T} at={K.Mx + 0.2} until={K.S - 0.2} texto="México · IMO 2025" x={660} y={460} tam={44} borde={KC.leaf} />
       

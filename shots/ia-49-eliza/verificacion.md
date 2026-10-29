@@ -47,3 +47,12 @@
    con tinta negra** (como la "hoja de teletipo" de la escena 1). La cabeza del "psicólogo" puede ser ese teletipo con su rollo de papel.
 
 Voz y narración (`narracion.json`): sin correcciones; todas sus afirmaciones quedan ✅.
+
+## Re-verificación (29 oct 2026, coordinador)
+- Ejemplo del barco etiquetado «así respondería un psiquiatra, según Weizenbaum» (artículo de 1966) ✅
+- ELIZA dibujada como teletipo que imprime en papel, sin pantalla ("via the typewriter") ✅
+- Secretaria como caricatura genérica, sin burbuja de la versión de 1967 ✅
+- Tarjeta «SI nada → «SIGA»»: palabra clave NONE del guion DOCTOR, respuesta "PLEASE GO ON" (apéndice, Weizenbaum 1966) ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

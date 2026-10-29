@@ -1,10 +1,10 @@
 # Shot IA #47 · La IA que sacó oro en la Olimpiada de Matemáticas (y el problema que no pudo)
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #47 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** FASE A · guion escrito, pendiente de verificación independiente. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (17 ✅, 2 ⚠️ corregidas: «nivel plata» y anclar en 2025), animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert**.
 - **Formato:** N2 "El número" (558 de 630, 35 de 42, 72 oros, 26 por encima) + N5 "El experimento" (el examen de la olimpiada recreado: dos sesiones, seis problemas, quién resuelve cuál).
 - **Gancho (de los 7):** #2 "Tú contra el de al lado" → tú contra la IA en la olimpiada, con el número que lo respalda (#4).
-- **Duración:** voz 958 caracteres / 158 palabras (≈ 57.9 s) + cierre 3.5 s → **61.4 s** estimado (`estimar-escenas`).
+- **Duración:** voz 965 caracteres / 162 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** en la base (`estimar-escenas`).
 - **Postura de la serie:** la defendemos (nivel de oro real, certificado) y la criticamos con datos (empató con el corte más bajo de oro, 26 jóvenes la superaron, falló el problema más difícil, y olimpiada ≠ investigación). Se distingue con precisión el resultado **certificado por la IMO** (Google) del **no oficial** (OpenAI, calificado por exmedallistas).
 
 ## Versión narrada
@@ -18,14 +18,34 @@
 | 4 | OpenAI | Una IA de OpenAI sacó igual, pero la calificaron tres exmedallistas, no la olimpiada. | Segundo robotito con "35 / 42"; tres jueces (exmedallistas) y una etiqueta "no oficial" (gris), junto al sello oficial del de Google. |
 | 5 | Pregunta | ¿Y los humanos? | **Re-gancho.** "?" gigante; Robert grande. |
 | 6 | Humanos | Setenta y dos ganaron oro; veintiséis superaron a las máquinas. | La cuadrícula de 630 vuelve: 72 puntos dorados; 26 de ellos suben por encima de la línea "35". |
-| 7 | Antes | Un año antes, otra IA de Google quedó en plata: tardó hasta tres días, con los problemas traducidos. | Tarjeta "2024 · AlphaProof + AlphaGeometry 2 · 28 / 42 · plata"; reloj que da vueltas "hasta 3 días"; hoja que se convierte en código "Lean" (traducción manual a lenguaje formal). |
+| 7 | Antes | Un año antes, otra IA de Google llegó a nivel plata: tardó hasta tres días, con los problemas traducidos. | Tarjeta "2024 · AlphaProof + AlphaGeometry 2 · 28 / 42 · nivel plata"; reloj que da vueltas "hasta 3 días"; hoja que se convierte en código "Lean" (traducción manual a lenguaje formal). |
 | 8 | Mexico | México llevó seis: dos platas y cuatro bronces. | Bandera de México con 6 estudiantes: 2 medallas de plata y 4 de bronce. |
-| 9 | Seis | El problema seis no lo resolvió ninguna de las dos. De seiscientos treinta jóvenes, solo seis. | La hoja P6 crece (cuadrícula con mosaicos); las dos IA con "0"; contador "6 de 630 con 7/7". |
-| 10 | Matiz | Ojo: estos problemas ya tienen solución; en investigación, nadie la sabe. | Dos puertas: "Olimpiada: la solución ya existe" vs "Investigación: ¿?"; Robert pensativo. |
-| 11 | Cierre | Para ganarle, tendrías que ser de los veintiséis mejores… o resolver el seis. | **Regreso a la imagen del inicio**: los mismos dos pupitres, ahora el lápiz de "TÚ" está sobre la hoja P6 y brilla. |
+| 9 | Seis | En 2025, el problema seis no lo resolvió ninguna de las dos. De los jóvenes, solo seis. | La hoja P6 crece (cuadrícula con mosaicos); las dos IA con "0"; contador "6 de 630 con 7/7". |
+| 10 | Matiz | Ojo: estos problemas ya tenían solución; en investigación, nadie la sabe. | Dos puertas: "Olimpiada: la solución ya existe" vs "Investigación: ¿?"; Robert pensativo. |
+| 11 | Cierre | En 2025, para ganarle, tendrías que ser de los veintiséis mejores… o resolver el seis. | **Regreso a la imagen del inicio**: los mismos dos pupitres, ahora el lápiz de "TÚ" está sobre la hoja P6 y brilla. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua, tensa como de examen (tic-tac suave en la escena 1); un "ding" por cada palomita de P1–P5, un golpe sordo cuando P6 queda en blanco; sello oficial con golpe seco; 558 puntos apagándose como lluvia fina; 72 campanitas doradas; el reloj de 3 días acelerado; final que se abre (libre) cuando "TÚ" toma el problema seis.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y los humanos?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «casi seguro te gana» (cuadro 0) |
+| 2 | 10.8 | 13.0 | 13_senalando_arriba | `arriba-der` | señala Australia, julio de 2025 |
+| 3 | 21.7 | 23.5 | 05_sonriendo_dientes_uniformes | `arriba-der` | «la calificó la propia olimpiada» |
+| 4 | 27.3 | 28.8 | 06_pensativo_menton | `izq-alto` | «no la olimpiada» (no oficial) |
+| 5 | 29.0 | 31.7 | 07_pensativo_puno | `grande` | «¿Y los humanos?» |
+| 6 | 37.0 | 40.1 | 04_bajando_lentes | `izq-alto` | «tardó hasta tres días» |
+| 7 | 40.7 | 43.2 | 11_sorprendido | `izq-alto` | «México llevó seis: dos platas y cuatro bronces» |
+| 8 | 45.9 | 48.4 | 10_serio_molesto | `izq-alto` | «De los jóvenes, solo seis» |
+| 9 | 48.9 | 52.9 | 06_pensativo_menton | `arriba-der` | «en investigación, nadie la sabe» |
+| 10 | 53.4 | 58.2 | 13_senalando_arriba | `arriba-der` | «o resolver el seis» |
+| — | 58.3 | 61.8 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 10 · ≈ 30.1 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · total 61.8 s
 
 ## Fuentes (cifras abiertas en la fuente original el 29 oct 2026)
 
@@ -64,5 +84,6 @@
 - "Otra IA de Google" en 2024 = AlphaProof + AlphaGeometry 2 (dos sistemas combinados), 28 puntos, plata, un punto debajo del oro (29). "Con los problemas traducidos" = traducidos a mano al lenguaje formal Lean.
 - "Ninguna de las dos": OpenAI dice que no produjo solución para P6; el PDF de Google contiene solo P1–P5 y el blog dice cinco de seis.
 - Matiz: los problemas de olimpiada se eligen con solución conocida; la investigación trata preguntas abiertas. No se afirma nada sobre la capacidad de investigación de estas IA.
-- **IMO 2026 (Shanghai, julio 2026):** hay reportes en medios de IA con 42/42, pero no encontré anuncio primario de la IMO ni de los laboratorios que lo certifique; por eso NO va en la voz.
+- **IMO 2026 (Shanghai, julio 2026):** hay reportes (no oficiales) de IA con 42/42; no encontré anuncio primario de la IMO ni de los laboratorios. Por eso la voz ancla todo en 2025 («En 2025, …») y `publicacion.md` dice: «En 2026 se reportó que varias IA sacaron 42 de 42, pero no hay confirmación oficial de la olimpiada.»
+- En 2024 fue **nivel** plata (la IA no recibe medalla); así se dice en voz y pantalla.
 - El dibujo es esquemático.

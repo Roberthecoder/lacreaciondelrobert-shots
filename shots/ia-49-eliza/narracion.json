@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Eliza base narrada.dc.html",
+  "salida": "Shot Eliza narrado.dc.html",
+  "nota": "Shot IA #49. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este no es un psicólogo: son unas cuantas reglas. Y aun así, le contaban secretos."
+    },
+    {
+      "escena": "Dialogo",
+      "texto": "Ella escribe: «Mi novio me hizo venir aquí». Contesta: «Tu novio te hizo venir aquí»."
+    },
+    {
+      "escena": "Reglas",
+      "texto": "El truco: busca palabras clave, cambia «mi» por «tu» y te regresa tu frase."
+    },
+    {
+      "escena": "Reglas",
+      "texto": "Si lee «deprimida»: «Siento oír que estás deprimida»."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Es ELIZA, de Joseph Weizenbaum, del MIT, en 1966. Imitaba a un terapeuta que finge no saber casi nada."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si sabes que es una máquina, ya no te engaña?"
+    },
+    {
+      "escena": "Secretaria",
+      "texto": "Su secretaria lo vio programarla por meses. A los pocos mensajes, le pidió que saliera del cuarto."
+    },
+    {
+      "escena": "Espiar",
+      "texto": "Cuando propuso revisar las pláticas, lo acusaron de espiar pensamientos íntimos."
+    },
+    {
+      "escena": "Efecto",
+      "texto": "A eso le dicen efecto ELIZA: ver comprensión donde solo hay símbolos."
+    },
+    {
+      "escena": "Codigo",
+      "texto": "Lo curioso: su código original no se vio en al menos cincuenta años. En 2021 apareció impreso en el MIT."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "Hoy pasa igual con chatbots: es fácil sentir que te entienden."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Si un chat te consuela, acuérdate de ELIZA: no era psicólogo, eran unas cuantas reglas."
+    }
+  ]
+}
