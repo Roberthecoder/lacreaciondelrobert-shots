@@ -275,7 +275,7 @@ function Sismos() {
           {svg(<MapaReplicas T={T} x={540} y={830} on={kprog(T, K.R + 0.6, K.R + 2.4)} />)}
         </div>
       </Escena>
-      <Chip T={T} at={K.R + 0.2} until={K.N - 0.2} texto="2018 · Harvard + Google · Nature" x={540} y={440} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.R + 0.2} until={K.R + 2.7} texto="2018 · Harvard + Google · Nature" x={540} y={440} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.R + 1.0} until={K.R + 2.4} x={850} y={1040} texto="réplicas" lado="izq" color={KC.ink} tam={32} />
       <Comparativa T={T} at={K.R + 2.7} until={K.N - 0.2} y={700} alto={300} max={1}
         izq={{ valor: 0.849, texto: '0.85', etiqueta: 'red neuronal', color: KC.yellow }}
@@ -283,17 +283,17 @@ function Sismos() {
       <Chip T={T} at={K.R + 3.4} until={K.N - 0.2} texto="qué tanto atina (AUC)" x={540} y={1110} tam={30} borde={KC.ink} />
       {/* 8 · una neurona contra 13 451 parámetros */}
       <Escena T={T} a={K.N} b={K.C}>
-        <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        <RedNeuronal T={T} x={620} y={800} ancho={360} alto={170} capas={[4, 7, 7, 7, 1]} onda={(T * 0.6) % 1} o={kprog(T, K.N + 3.2, K.N + 3.6)} />
+        <FondoLunares color={KC.teal} />
+        <RedNeuronal T={T} x={620} y={770} ancho={360} alto={170} capas={[4, 7, 7, 7, 1]} onda={(T * 0.6) % 1} o={kprog(T, K.N + 3.2, K.N + 3.6)} />
         {svg(<g opacity={kprog(T, K.N + 1.8, K.N + 2.1)}>
-          <circle cx={800} cy={540} r={52 * (1 + 0.06 * Math.sin(T * 5))} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-          <line x1={670} y1={515} x2={750} y2={530} stroke={KC.ink} strokeWidth={7} /><line x1={670} y1={570} x2={750} y2={552} stroke={KC.ink} strokeWidth={7} /><line x1={852} y1={540} x2={930} y2={540} stroke={KC.ink} strokeWidth={7} />
+          <circle cx={800} cy={500} r={52 * (1 + 0.06 * Math.sin(T * 5))} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
+          <line x1={670} y1={475} x2={750} y2={490} stroke={KC.ink} strokeWidth={7} /><line x1={670} y1={530} x2={750} y2={512} stroke={KC.ink} strokeWidth={7} /><line x1={852} y1={500} x2={930} y2={500} stroke={KC.ink} strokeWidth={7} />
         </g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 1.8} anio="2019" quien="Mignan y Broccardo" revista="Nature · «Una neurona contra el aprendizaje profundo»" y={760} />
       <NumeroGigante T={T} at={K.N + 1.9} until={K.C - 0.2} valor={2} etiqueta="parámetros" x={800} y={690} tam={110} color={KC.yellow} dur={0.3} />
       <NumeroGigante T={T} at={K.N + 3.4} until={K.C - 0.2} valor={13} etiqueta="parámetros" x={800} y={1060} tam={100} color={KC.red} dur={0.01} sufijo=" 451" />
-      <Chip T={T} at={K.N + 4.6} until={K.C - 0.2} texto="mismo acierto: 0.85 = 0.85" x={790} y={430} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.N + 4.6} until={K.C - 0.2} texto="mismo acierto: 0.85 = 0.85" x={760} y={400} tam={28} borde={KC.leaf} />
       {/* 9 · cierre: el mismo celular, a la basura */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />

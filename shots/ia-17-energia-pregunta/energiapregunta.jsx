@@ -187,12 +187,12 @@ function EnergiaPregunta() {
         {svgK(<>{escenaTele(K.G, true)}{gotas(K.G + 4.4)}</>)}
       </Escena>
       <Chip T={T} at={K.G + 0.6} until={K.E - 0.2} texto="Gemini · pregunta típica de texto" x={330} y={330} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.G + 5.2} until={K.E - 0.2} texto="≈ 5 gotas" x={520} y={1100} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={K.G + 5.2} until={K.E - 0.2} texto="≈ 5 gotas" x={440} y={1010} tam={32} borde={KC.cyan} />
 
       {/* 2 · el estudio de Google */}
       <Escena T={T} a={K.E} b={K.I}>
         <FondoLunares color={KC.yellow} />
-        {svgK(<g opacity={kprog(T, K.E + 2.3, K.E + 2.7)}><Rayo x={250} y={820} s={1.6} rot={-10} /></g>)}
+        {svgK(<g opacity={kprog(T, K.E + 2.3, K.E + 2.7)}><Rayo x={150} y={820} s={1.4} rot={-10} /></g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 2.2} anio="2025" quien="Google · su IA Gemini" revista="Elsworth et al. · arXiv 2508.15734" y={620} />
       <NumeroGigante T={T} at={K.E + 2.4} until={K.I - 0.2} valor={0.24} dec={2} dur={1.0} sufijo=" Wh" etiqueta="por pregunta típica de texto" x={620} y={800} tam={210} color={KC.orange} />
@@ -276,10 +276,7 @@ function EnergiaPregunta() {
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svgK(<>
           <Planeta x={540} y={560} r={180} T={T} luces={kprog(T, K.A + 0.6, K.A + 3.6)} />
-          {T >= L9 && <g transform={`translate(540 560) rotate(-12) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
-            <rect x={-250} y={-60} width={500} height={120} rx={16} fill="rgba(255,59,47,.15)" stroke={KC.red} strokeWidth={10} />
-            <text y={30} textAnchor="middle" style={{ font:`400 88px ${KF.titulo}` }} fill={KC.red}>PROYECCIÓN</text>
-          </g>}
+          
         </>)}
       </Escena>
       <Chip T={T} at={K.A + 0.2} until={K.R - 0.2} texto="Agencia Internacional de Energía" x={540} y={330} tam={32} borde={KC.ink} />
@@ -296,15 +293,19 @@ function EnergiaPregunta() {
         return <div style={{ position:'absolute', inset:0, zIndex:40, opacity:o }}>
           {fila('Centros de datos del mundo', '· 2030', 800, g1, KC.orange, icoDatos, 790)}
           {fila('Japón entero', '· hoy', 760, g2, KC.coral, icoJapon, 975)}
-          <div style={{ position:'absolute', left:860, top:870, font:`900 30px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
+          <div style={{ position:'absolute', left:770, top:792, font:`900 30px ${KF.texto}`, color:KC.red, whiteSpace:'nowrap', opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
         </div>; })()}
 
+      {T >= L9 && T <= K.R + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:44, opacity:1 - kprog(T, K.R - 0.1, K.R + 0.4) }}>{svgK(<><g transform={`translate(560 960) rotate(-8) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
+            <rect x={-250} y={-60} width={500} height={120} rx={16} fill="rgba(255,59,47,.15)" stroke={KC.red} strokeWidth={10} />
+            <text y={30} textAnchor="middle" style={{ font:`400 88px ${KF.titulo}` }} fill={KC.red}>PROYECCIÓN</text>
+          </g></>)}</div>}
       {/* 9 · ahí no solo vive la IA */}
       <Escena T={T} a={K.R} b={K.C}>
         <FondoLunares color={KC.pink} />
-        {svgK(<EdificioDatos x={540} y={860} T={T} aparece={kprog(T, K.R + 0.2, K.R + 2.6)} ia={kprog(T, K.R + 3.2, K.R + 3.6)} />)}
+        {svgK(<g transform="translate(540 910) scale(0.92) translate(-540 0)"><EdificioDatos x={540} y={0} T={T} aparece={kprog(T, K.R + 0.2, K.R + 2.6)} ia={kprog(T, K.R + 3.2, K.R + 3.6)} /></g>)}
       </Escena>
-      <Chip T={T} at={K.R + 3.4} until={K.C - 0.2} texto="la IA: una de las grandes razones" x={560} y={1160} tam={32} borde={KC.mint} />
+      <Chip T={T} at={K.R + 3.4} until={K.C - 0.2} texto="la IA: una de las grandes razones" x={640} y={400} tam={32} borde={KC.mint} />
 
       {/* 10 · cierre: la misma imagen… multiplicada */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -314,7 +315,7 @@ function EnergiaPregunta() {
         </div>
         {svgK(<>{mosaico()}</>, 25)}
       </Escena>
-      <Chip T={T} at={K.C + 3.2} until={K.Ou} texto="× miles de millones" x={360} y={1120} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.C + 3.2} until={K.Ou} texto="× miles de millones" x={380} y={345} tam={44} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="Menos que *9 segundos de tele…* y *5 gotas.*" />

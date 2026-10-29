@@ -352,7 +352,7 @@ function Retinas() {
       <Subtitulo T={T} idx={3} at={K.Ed + 0.1} until={K.S - 0.1} texto="Tu edad, *± 3 años*" />
       <Subtitulo T={T} idx={4} at={K.S + 0.1} until={K.Pr - 0.1} texto="Hombre o mujer: *97 de 100*" />
       <Subtitulo T={T} idx={5} at={K.Pr + 0.1} until={K.P - 0.1} texto="Presión y tabaco: *acertó menos*" />
-      <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.M - 0.1} texto="¿Cómo ve *lo que nadie ve?*" />
+      <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.M - 0.1} texto="¿Cómo ve *lo que los expertos no?*" />
       <Subtitulo T={T} idx={7} at={K.M + 0.1} until={K.O - 0.1} texto="Miraba *vasos y disco óptico*" />
       <Subtitulo T={T} idx={8} at={K.O + 0.1} until={K.U - 0.1} texto="Una pista, *no un diagnóstico*" />
       <Subtitulo T={T} idx={9} at={K.U + 0.1} until={K.C - 0.1} texto="Ya se usa: *daño por diabetes*" />
