@@ -13,8 +13,8 @@
     { "escena": "Escamas", "texto": "En esa piel, las células se multiplican de más y se despegan en grupos: las escamas." },
     { "escena": "Estudio", "texto": "En 2005, investigadores de Cincinnati untaron ácido oleico en la cabeza de voluntarios." },
     { "escena": "Resultado", "texto": "A quienes tenían caspa se les descamó la piel; a los otros, nada visible." },
-    { "escena": "Genoma", "texto": "Lo más raro: parece no tener el gen para fabricar sus propios ácidos grasos. Usa los tuyos." },
+    { "escena": "Genoma", "texto": "Lo más raro: a Malassezia globosa parece faltarle el gen para fabricar sus ácidos grasos. Usa los tuyos." },
     { "escena": "Champu", "texto": "Muchos champús anticaspa traen antifúngicos, como el ketoconazol o la piritiona de zinc." },
-    { "escena": "Cierre", "texto": "Así que esa caspa no es solo piel: es tu piel reaccionando a lo que deja una levadura comiendo grasa." }
+    { "escena": "Cierre", "texto": "Así que esa caspa no es solo piel: es tu piel reaccionando a lo que deja una levadura." }
   ]
 }
