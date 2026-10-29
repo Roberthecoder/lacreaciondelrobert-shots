@@ -10,5 +10,49 @@
   "id": "EuhA0wKFL4A",
   "url": "https://youtube.com/shorts/EuhA0wKFL4A",
   "nota": "privado"
+ },
+ {
+  "clave": "003-semillas-luna",
+  "red": "facebook",
+  "modo": "privado",
+  "fecha": "2026-10-29T17:32:53Z",
+  "run": "40922209268",
+  "autorizo": null,
+  "ok": true,
+  "id": "1469024988497985",
+  "url": "https://www.facebook.com/reel/1469024988497985",
+  "nota": "borrador en Meta Business Suite"
+ },
+ {
+  "clave": "003-semillas-luna",
+  "red": "instagram",
+  "modo": "privado",
+  "fecha": "2026-10-29T17:33:33Z",
+  "run": "40922209268",
+  "autorizo": null,
+  "ok": false,
+  "error": "Instagram subir: HTTP 400 "
+ },
+ {
+  "clave": "003-semillas-luna",
+  "red": "threads",
+  "modo": "privado",
+  "fecha": "2026-10-29T17:34:08Z",
+  "run": "40922209268",
+  "autorizo": null,
+  "ok": true,
+  "id": "17908985157668480",
+  "nota": "contenedor listo y NO publicado (Threads no tiene borradores por API)"
+ },
+ {
+  "clave": "003-semillas-luna",
+  "red": "linkedin",
+  "modo": "privado",
+  "fecha": "2026-10-29T17:34:59Z",
+  "run": "40922209268",
+  "autorizo": null,
+  "ok": true,
+  "id": "urn:li:video:D5610AQHxzxEzObuS5w",
+  "nota": "video subido SIN publicar post (LinkedIn no tiene borradores por API)"
  }
 ]
