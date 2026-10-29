@@ -119,5 +119,17 @@
   "ok": true,
   "id": "v_pub_file~v2-1.7702221056920864775",
   "nota": "publicado en TikTok como «Solo yo»"
+ },
+ {
+  "clave": "fun-02-hormiga-zombi",
+  "red": "tiktok",
+  "modo": "privado",
+  "fecha": "2026-10-29T22:52:51Z",
+  "run": "40969048181",
+  "autorizo": null,
+  "ok": true,
+  "id": "v_inbox_file~v2.7702226016260999188",
+  "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
+  "borrador": true
  }
 ]
