@@ -5,19 +5,19 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese plátano maduro no está quieto: está soltando un gas que madura a la fruta de al lado."
+      "texto": "Ese plátano maduro no está quieto: suelta un gas que madura a la fruta de al lado."
     },
     {
       "escena": "Que",
-      "texto": "Se llama etileno: dos carbonos y cuatro hidrógenos. Es la hormona vegetal más sencilla que se conoce."
+      "texto": "Se llama etileno: dos carbonos y cuatro hidrógenos, la hormona vegetal más sencilla que se conoce."
     },
     {
       "escena": "Hormona",
-      "texto": "La fruta lo suelta al aire y la de al lado lo recibe como una orden: madura."
+      "texto": "La fruta lo suelta al aire y la de al lado lo recibe como orden: madura."
     },
     {
       "escena": "Cadena",
-      "texto": "Respira más rápido, cambia de color, se ablanda… y suelta más etileno."
+      "texto": "Respira más rápido, cambia de color, se ablanda y suelta más etileno."
     },
     {
       "escena": "Bolsa",
@@ -29,7 +29,7 @@
     },
     {
       "escena": "Tipos",
-      "texto": "Las uvas, las fresas y los cítricos maduran pegados a la planta; ya cortados, casi no."
+      "texto": "Las uvas, las fresas y los cítricos maduran en la planta; cortados, casi no."
     },
     {
       "escena": "Tipos",
@@ -37,19 +37,19 @@
     },
     {
       "escena": "Neljubov",
-      "texto": "En 1901, en San Petersburgo, Neljubov vio chícharos creciendo de lado en su laboratorio: era el etileno del gas de alumbrado."
+      "texto": "En 1901, en San Petersburgo, Neljubov vio chícharos creciendo de lado: era el etileno del gas de alumbrado."
     },
     {
       "escena": "Gane",
-      "texto": "En 1934, en Cambridge, Richard Gane juntó el gas de unos 27 kilos de manzanas y probó que la fruta lo fabrica."
+      "texto": "En 1934, en Cambridge, Gane juntó el gas de unos 27 kilos de manzanas y probó que la fruta lo fabrica."
     },
     {
       "escena": "Incienso",
-      "texto": "Lo curioso: en la antigua China, la fruta junto al incienso de los templos maduraba más rápido. El humo suelta etileno."
+      "texto": "Lo curioso: en la antigua China, la fruta cerca del incienso de los templos maduraba antes: el humo suelta etileno."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese plátano no está quieto: es el que manda en tu frutero."
+      "texto": "Así que ese plátano no está quieto: es el jefe de tu frutero."
     }
   ]
 }
