@@ -371,16 +371,16 @@ function Rosas() {
         <FondoLunares color={KC.cyan} />
         {svg(<>
           <g opacity={kprog(T, K.E + 0.5, K.E + 0.9)}>
-            <text x={270} y={770} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>1 vez al año</text>
-            <text x={810} y={770} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>siempre</text>
+            <text x={270} y={740} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>1 vez al año</text>
+            <text x={810} y={740} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>siempre</text>
           </g>
-          {Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.E + 0.7 + i * 0.32, K.E + 1.1 + i * 0.32), yy = 830 + i * 66;
+          {Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.E + 0.7 + i * 0.32, K.E + 1.1 + i * 0.32), yy = 795 + i * 62;
             return <g key={i}>
               <GenMini x={110} y={yy} w={260} e={e} /><RosaSilvestre x={420} y={yy} s={0.26} e={e} />
-              <GenMini x={650} y={yy} w={260} ins e={e} />{[0, 1, 2].map((k) => <RosaFlor key={k} x={950 + k * 36} y={yy} s={0.17} abre={e} />)}
+              <GenMini x={650} y={yy} w={260} ins e={e} />{e > 0 && <g opacity={e}>{[0, 1, 2].map((k) => <RosaFlor key={k} x={950 + k * 36} y={yy} s={0.17} abre={1} />)}</g>}
               <text x={540} y={yy + 12} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink} opacity={e}>vs</text>
             </g>; })}
-          {T > K.E + 3.4 && <g>{Array.from({ length: 6 }, (_, i) => <circle key={i} cx={650 + 260 * 0.51} cy={830 + i * 66} r={30 + 6 * Math.sin(T * 6 + i)} fill="none" stroke={KC.red} strokeWidth={5} opacity={kprog(T, K.E + 3.4, K.E + 3.8)} />)}</g>}
+          {T > K.E + 3.4 && <g>{Array.from({ length: 6 }, (_, i) => <circle key={i} cx={650 + 260 * 0.51} cy={795 + i * 62} r={30 + 6 * Math.sin(T * 6 + i)} fill="none" stroke={KC.red} strokeWidth={5} opacity={kprog(T, K.E + 3.4, K.E + 3.8)} />)}</g>}
         </>)}
       </Escena>
       {/* 10 · rosas de China; a fines del siglo XVIII se cruzan en Europa */}
@@ -403,13 +403,13 @@ function Rosas() {
             {cruce > 0 && <g opacity={cruce}>
               <RosaTallo T={T} x={300} y={1090} alto={260} s={0.9} color={CHINA} />
               <text x={300} y={1150} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>de China</text>
-              <text x={540} y={880} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink} transform={`rotate(${T * 30} 540 840)`}>×</text>
+              <text x={540} y={920} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>×</text>
               <RosaTallo T={T} x={780} y={1090} alto={260} s={0.9} color={GALICA} />
               <text x={780} y={1150} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>de Europa</text>
             </g>}
             {(() => { const h = kprog(T, K.Ch + 3.8, K.Ch + 4.6); return h > 0 ? <g>
               <path d="M 540 960 L 540 1040" stroke={KC.ink} strokeWidth={8} opacity={h} />
-              <g transform={`translate(540 ${1470}) scale(${0.6 * h})`}>{[-90, 0, 90].map((dx, k) => <RosaFlor key={k} x={dx} y={k === 1 ? -40 : 0} s={0.8} abre={kprog(T, K.Ch + 4.2 + k * 0.3, K.Ch + 4.9 + k * 0.3)} color={'#ff5c8a'} />)}</g>
+              <g transform={`translate(540 ${1500}) scale(${1.0 * h})`}>{[-90, 0, 90].map((dx, k) => <RosaFlor key={k} x={dx} y={k === 1 ? -40 : 0} s={0.8} abre={kprog(T, K.Ch + 4.2 + k * 0.3, K.Ch + 4.9 + k * 0.3)} color={'#ff5c8a'} />)}</g>
             </g> : null; })()}
           </>; })())}
       </Escena>
@@ -468,10 +468,10 @@ function Rosas() {
           <Florero x={400} y={880} s={1.2} />
           {ramo(kprog(T, K.Ci + 0.2, K.Ci + 1.2, kEase.sale))}
           <RosaTallo T={T} x={400} y={940} alto={330} s={1.25} abre={1} />
-          <HojaCalendario x={800} y={1590} rot={6} s={0.95} />
+          {(() => { const m = kprog(T, K.Ci + 1.5, K.Ci + 2.1, kEase.suave); return <HojaCalendario x={klerp(800, 915, m)} y={klerp(1590, 1680, m)} rot={6} s={klerp(0.95, 0.62, m)} />; })()}
         </>)}
         <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={820} y={900} r={160} fx={400} fy={760} tinte={KC.yellow} etiqueta="POR DENTRO · KSN"
-          interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={KC.noche} /><g transform={`translate(${r} ${r}) scale(.42) translate(-640 -950)`}><Gen T={Tl} y={950} hueco={1} inserto={{ x: KMID + LARGO_INS / 2, y: 950 }} /></g></svg>} />
+          interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={KC.noche} /><g transform={`translate(${r} ${r}) scale(.62) translate(-640 -950)`}><Gen T={Tl} y={950} hueco={1} inserto={{ x: KMID + LARGO_INS / 2, y: 950 }} /></g></svg>} />
       </Escena>
 
       <Capitulo T={T} x={190} y={210} hasta={K.Ou} caps={[{ at: K.Te, titulo: 'La tradición' }, { at: K.Fr, titulo: 'El freno' }, { at: K.Sa, titulo: 'El freno roto' }, { at: K.In, titulo: 'Diciembre' }]} />
@@ -491,16 +491,16 @@ function Rosas() {
       <Chip T={T} at={K.Sa + 2.4} until={K.Ap - 0.3} texto="se metió dentro del gen" x={540} y={1560} tam={42} borde={INSERTO} />
       <Etq T={T} at={K.Ap + 0.4} until={K.Ap + 2.1} x={90} y={1110} texto="la copia del gen se atora" tam={32} color={KC.orange} />
       <Chip T={T} at={K.Ap + 3.4} until={K.E - 0.3} texto="flor en cada temporada buena" x={540} y={1500} tam={42} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2012" quien="Iwata et al. · Francia y Japón" revista="The Plant Journal" x={540} y={560} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2012" quien="Iwata et al. · Francia y Japón" revista="The Plant Journal" x={540} y={510} />
       <Chip T={T} at={K.E + 3.6} until={K.Ch - 0.3} texto="las de «siempre» traen el pedazo" x={540} y={1500} tam={40} borde={INSERTO} />
       <Chip T={T} at={K.Ch + 2.6} until={K.In - 0.3} texto="fines del siglo XVIII: cruces en Europa" x={540} y={560} tam={40} borde={KC.yellow} />
       <Etq T={T} at={K.Ch + 4.6} until={K.In - 0.3} x={640} y={1460} texto="rosas modernas" tam={34} color={KC.ink} />
-      <MitoTachado T={T} at={K.In + 0.3} tacharEn={K.In + 1.2} until={K.In + 3.0} texto="horas de luz" x={450} y={560} tam={46} />
+      <MitoTachado T={T} at={K.In + 0.3} tacharEn={K.In + 1.2} until={K.In + 3.0} texto="horas de luz" x={430} y={480} tam={46} />
       <Etq T={T} at={K.In + 3.0} until={K.Da - 0.3} x={60} y={560} texto="brota de la yema" tam={34} color={KC.ink} />
       <Chip T={T} at={K.In + 3.6} until={K.Da - 0.3} texto="6 a 10 semanas" x={540} y={1610} tam={42} borde={KC.gold} />
       <Etq T={T} at={K.Da + 1.0} until={K.Ci - 0.3} x={520} y={1060} texto="Estado de México" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Da + 3.4} until={K.Ci - 0.3} texto="78.7 % · SADER, preliminar 2025" x={540} y={1620} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.Ci + 2.2} until={K.Ou} texto="KSN apagado: flor en cada temporada buena" x={540} y={1440} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.Ci + 2.2} until={K.Ou} texto="KSN apagado: flor en cada temporada buena" x={445} y={1450} tam={30} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Te - 0.1} texto="No sabe que es diciembre: *trae un freno roto.*" />
@@ -522,7 +522,7 @@ function Rosas() {
         [CUES.Gancho - 0.45, CUES.Gancho + 3.8, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Silvestre + 0.3, CUES.Freno - 0.2, 'avatar_13_senalando_arriba', 'izq-alto'],
         [CUES.Hojas + 0.4, CUES.Primavera - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [CUES.Pregunta + 0.05, CUES.Saltarin + 1.3, 'avatar_07_pensativo_puno', 'grande'],
+        [CUES.Pregunta + 0.05, CUES.Saltarin + 0.6, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Apagado + 2.6, CUES.Estudio - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [CUES.Estudio + 3.4, CUES.China - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
         [CUES.Invernadero + 0.4, CUES.Dato - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
