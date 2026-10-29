@@ -99,7 +99,7 @@ function Zzz({ T, x, y, o = 1, tacha = 0 }) {
 
 // ---------- corte del nervio y el vaso (para la Lupa) ----------
 // apriete 0..1 = qué tanto los aplasta el peso · desorden 0..1 = señales revueltas · W = lado del cuadro.
-function CorteNervio({ t, W, apriete = 0, desorden = 0 }) {
+function CorteNervio({ t, W, apriete = 0, desorden = 0, etiquetas = 0 }) {
   const c = W / 2, g = (x) => Math.exp(-Math.pow((x - c) / 80, 2));
   const tubo = (cy, th, k) => { const top = [], bot = []; for (let x = -10; x <= W + 10; x += 10) { const e = th * (1 - k * g(x)); top.push(`${x},${cy - e}`); bot.unshift(`${x},${cy + e}`); } return `M ${top.join(' L ')} L ${bot.join(' L ')} Z`; };
   const yN = c - 55, yV = c + 75, ap = apriete * 0.72;
@@ -127,6 +127,9 @@ function CorteNervio({ t, W, apriete = 0, desorden = 0 }) {
       <rect x={-90} y={-160} width={180} height={160} rx={60} fill={PANT2} stroke={KC.ink} strokeWidth={8} />
       <path d="M -30 -110 L 0 -60 L 30 -110" fill="none" stroke={KC.white} strokeWidth={10} strokeLinecap="round" strokeLinejoin="round" opacity={apriete} />
     </g>
+    {etiquetas > 0 && <g opacity={etiquetas} style={{ font:`700 28px ${KF.mono}` }}>
+      <text x={18} y={yN - 50} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">nervio</text>
+      <text x={18} y={yV + 66} fill="#ff8a8a" stroke={KC.ink} strokeWidth={6} paintOrder="stroke">sangre</text></g>}
   </svg>;
 }
 
@@ -266,7 +269,7 @@ function Pie_() {
           <Zzz T={T} x={PIEC[0] - 60} y={PIEC[1] - 40} o={1 - kprog(T, K.Gancho + 2.6, K.Gancho + 3.0)} tacha={kprog(T, K.Gancho + 1.0, K.Gancho + 1.4, kEase.sale)} />
           <Chispas T={T} x={PIEC[0] - 40} y={PIEC[1] - 20} n={12} radio={150} o={kprog(T, K.Gancho + 2.6, K.Gancho + 3.0)} seed={2} />
         </Lienzo>
-        <Etq T={T} at={K.Gancho + 2.8} until={K.Posicion - 0.2} x={PIEC[0] - 230} y={PIEC[1] + 70} texto="mensajes revueltos" lado="izq" color={KC.texto} />
+        <Etq T={T} at={K.Gancho + 2.8} until={K.Posicion - 0.2} x={PIEC[0] - 120} y={PIEC[1] - 330} texto="mensajes revueltos" lado="izq" color={KC.texto} />
       </Escena>
 
       {/* 1 · la posición: por dentro, el nervio y el vaso aplastados por el peso */}
@@ -277,10 +280,8 @@ function Pie_() {
           <FlechaRecta x1={enPer([262, -330])[0]} y1={enPer([262, -330])[1]} x2={enPer([262, -110])[0]} y2={enPer([262, -110])[1]} p={kprog(T, K.Posicion + 0.3, K.Posicion + 0.9, kEase.sale)} color={KC.yellow} />
         </Lienzo>
         <Chip T={T} at={K.Posicion + 0.3} until={K.Posicion + 2.4} texto="peso" x={enPer([262, -360])[0] + 140} y={enPer([262, -360])[1]} tam={40} borde={KC.yellow} />
-        <Lupa T={T} at={K.Posicion + 2.4} until={K.Senal - 0.25} x={640} y={470} r={210} fx={enPer([260, 10])[0]} fy={enPer([260, 10])[1]} tinte={NERV} etiqueta="POR DENTRO · PIERNA"
-          interior={(t, r) => <CorteNervio t={t} W={r * 2} apriete={kprog(t, K.Posicion + 3.0, K.Posicion + 4.0, kEase.suave)} />} />
-        <Etq T={T} at={K.Posicion + 3.2} until={K.Senal - 0.25} x={420} y={400} texto="nervio" lado="izq" color={KC.yellow} />
-        <Etq T={T} at={K.Posicion + 3.6} until={K.Senal - 0.25} x={420} y={530} texto="sangre" lado="izq" color={KC.white} />
+        <Lupa T={T} at={K.Posicion + 2.4} until={K.Senal - 0.25} x={770} y={470} r={200} fx={enPer([260, 10])[0]} fy={enPer([260, 10])[1]} tinte={NERV} etiqueta="POR DENTRO · PIERNA"
+          interior={(t, r) => <CorteNervio t={t} W={r * 2} apriete={kprog(t, K.Posicion + 3.0, K.Posicion + 4.0, kEase.suave)} etiquetas={kprog(t, K.Posicion + 3.0, K.Posicion + 3.4)} />} />
       </Escena>
 
       {/* 2 · la señal: los mensajes del pie al cerebro se atoran donde está aplastado */}
@@ -320,7 +321,6 @@ function Pie_() {
         </Lienzo>
         <Chip T={T} at={K.Entumido + 0.4} until={K.Hormigueo - 0.1} texto="entumido" x={660} y={430} tam={48} borde={GRIS} />
         <Chip T={T} at={K.Entumido + 1.6} until={K.Hormigueo - 0.1} texto="pesado" x={660} y={530} tam={48} borde={KC.ink} />
-        <Etq T={T} at={K.Entumido + 2.3} until={K.Hormigueo - 0.1} x={880} y={1010} texto="¿es tuyo?" lado="izq" color={KC.ink} tam={36} />
       </Escena>
 
       {/* 4 · hormigueo: descruzas la pierna, el nervio se destapa y las señales salen revueltas */}
@@ -330,10 +330,10 @@ function Pie_() {
           <Persona x={PER.x} y={PER.y} s={PER.s} cruza={cruza4} gris={0.5 * (1 - kprog(T, K.Hormigueo + 3, K.Agujas))} T={T} corte={kprog(T, K.Hormigueo + 1.4, K.Hormigueo + 1.9)} gesto="mueca" />
           {(() => { const P = piernaArriba(cruza4), a = enPer(P.tob), b = enPer(P.pun); return <Chispas T={T} x={(a[0] + b[0]) / 2} y={(a[1] + b[1]) / 2 - 20} n={14} radio={170} o={kprog(T, K.Hormigueo + 1.6, K.Hormigueo + 2.2)} seed={5} />; })()}
         </Lienzo>
-        <Chip T={T} at={K.Hormigueo + 0.3} until={K.Hormigueo + 2.3} texto="se va la presión" x={540} y={430} tam={42} borde={KC.mint} />
-        <Lupa T={T} at={K.Hormigueo + 2.3} until={K.Agujas - 0.25} x={640} y={470} r={200} fx={enPer([300, 30])[0]} fy={enPer([300, 30])[1]} tinte={NERV} etiqueta="POR DENTRO · NERVIO"
+        <Chip T={T} at={K.Hormigueo + 0.3} until={K.Hormigueo + 2.3} texto="se va la presión" x={770} y={430} tam={42} borde={KC.mint} />
+        <Lupa T={T} at={K.Hormigueo + 2.3} until={K.Agujas - 0.25} x={790} y={450} r={180} fx={enPer([300, 30])[0]} fy={enPer([300, 30])[1]} tinte={NERV} etiqueta="POR DENTRO · NERVIO"
           interior={(t, r) => <CorteNervio t={t} W={r * 2} apriete={0} desorden={kprog(t, K.Hormigueo + 2.6, K.Hormigueo + 3.2)} />} />
-        <Etq T={T} at={K.Hormigueo + 3.4} until={K.Agujas - 0.25} x={420} y={760} texto="señales desordenadas" lado="izq" color={KC.white} />
+        <Etq T={T} at={K.Hormigueo + 3.4} until={K.Agujas - 0.25} x={520} y={790} texto="señales desordenadas" lado="der" color={KC.white} tam={30} />
       </Escena>
 
       {/* 5 · agujas que no existen: pican… y desaparecen; es el nervio despertando */}
@@ -351,7 +351,7 @@ function Pie_() {
         </Lienzo>
         <Chip T={T} at={K.Agujas + 0.5} until={K.Agujas + 2.6} texto="miles de agujitas" x={540} y={430} tam={44} borde={KC.white} />
         <Chip T={T} at={K.Agujas + 2.8} until={K.Nombre - 0.1} texto="no hay ninguna" x={420} y={430} tam={44} borde={KC.red} />
-        <Etq T={T} at={K.Agujas + 3.6} until={K.Nombre - 0.1} x={410} y={600} texto="tu nervio, despertando" lado="der" color={KC.ink} tam={34} />
+        <Etq T={T} at={K.Agujas + 3.6} until={K.Nombre - 0.1} x={470} y={790} texto="tu nervio, despertando" lado="der" color={KC.ink} tam={34} />
       </Escena>
 
       {/* 6 · nombre: parestesia */}
@@ -428,7 +428,7 @@ function Pie_() {
           <Persona x={PER.x} y={PER.y} s={PER.s} cruza={0} gris={0} T={T} gesto="sonrie" tap={-Math.max(0, Math.sin(T * 7)) * 14} />
           <Chispas T={T} x={enPer([392, 300])[0] + 40} y={enPer([392, 300])[1] - 40} n={6} radio={90} o={1 - kprog(T, K.Cierre + 0.4, K.Cierre + 1.6)} seed={9} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 1.0} until={K.Outro - 0.1} texto="un corto de un ratito" x={540} y={430} tam={44} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 1.0} until={K.Outro - 0.1} texto="un corto de un ratito" x={760} y={430} tam={44} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Posicion - 0.1} texto="No está dormido: *nervios aplastados.*" />

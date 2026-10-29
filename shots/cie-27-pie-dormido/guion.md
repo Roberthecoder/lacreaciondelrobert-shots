@@ -29,7 +29,34 @@
 
 ## Robert en pantalla
 
-(se llena al animar)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado |
+|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` |
+| 2 | 10.6 | 14.8 | 13_senalando_arriba | `arriba-der` |
+| 3 | 16.2 | 19.5 | 10_serio_molesto | `izq-alto` |
+| 4 | 28.0 | 30.7 | 05_sonriendo_dientes_uniformes | `arriba-der` |
+| 5 | 33.0 | 35.1 | 07_pensativo_puno | `grande` |
+| 6 | 38.6 | 42.2 | 12_perfil_serio | `bajo-der` |
+| 7 | 46.3 | 49.0 | 04_bajando_lentes | `arriba-der` |
+| 8 | 50.0 | 54.0 | 11_sorprendido | `izq-alto` |
+| 9 | 54.6 | 57.9 | 05_sonriendo_dientes_uniformes | `bajo-der` |
+| — | 58.0 | 61.5 | cierre (02_apuntando_camara) | CierreMarca |
+
+apariciones 9 · 30.5 s (+ cierre 3.5 s) · poses 7 distintas (nunca la misma dos veces seguidas) · grande: sí · total 61.50 s
+
+| # | Reacciona a |
+|---|---|
+| 1 | «Ese pie dormido no está dormido» (sorprendido) |
+| 2 | «esos nervios dejan de mandar bien sus mensajes al cerebro» (señalando) |
+| 3 | «lo sientes entumido, pesado» (serio) |
+| 4 | «aunque no hay ninguna» (sonriendo) |
+| 5 | «¿Y es peligroso?» (pensativo, grande) |
+| 6 | «conviene ir al médico» (serio de perfil) |
+| 7 | «un nervio que pasa casi sin protección por tu codo» (bajando lentes) |
+| 8 | «te da un toque eléctrico hasta los dedos» (sorprendido) |
+| 9 | «tus nervios hacen corto un ratito» (sonriendo) |
 
 ## Fuentes (detalle y frases textuales en `verificacion.md`)
 
