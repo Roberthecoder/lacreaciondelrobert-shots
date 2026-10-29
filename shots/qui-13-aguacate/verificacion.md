@@ -48,3 +48,18 @@ Otras revisiones:
 
 1. **#12 ⚠️ "Y un plástico pegado a la superficie le quita el aire."** Las fuentes dicen que *limita* el oxígeno, no que lo elimine (el plástico deja pasar algo de aire). Propuesta: **"Y un plástico pegado a la superficie casi no le deja llegar aire."** (o "le tapa el aire"). En pantalla, que algunas bolitas O₂ reboten arriba del plástico está bien; no hace falta que rebote el 100 %.
 2. (Nota de dibujo, no de texto) **#17:** dibujar las células de la pulpa de ~60 µm respecto a la barra de 50 µm (un poco más grandes que la barra).
+
+## Correcciones aplicadas (29 oct 2026)
+- ⚠️→ escena Plastico: «le quita el aire» → «Un plástico pegado encima casi no le deja llegar aire.» (las fuentes dicen que limita el oxígeno, no que lo quite). Pendiente de re-verificación.
+- Nota de dibujo: la célula de la pulpa se dibuja de ~60 µm (más grande que la barra de 50 µm).
+
+## Re-verificación (29 oct 2026)
+Hecha por el mismo verificador independiente, sobre `guion.md` y `narracion.json` ya corregidos (git diff: solo cambió la escena Plastico; el JSON es válido).
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 12 | (voz) «Un plástico pegado encima casi no le deja llegar aire.» | ✅ | F5, F6 | "plastic wrap tamped down snugly to the surface of the dip, to limit as much oxygen exposure as possible." · "covering … with plastic wrap or putting it in an airtight container limits the oxygen exposure" | 2012 / 2025 |
+
+El resto del guion y de la narración no cambió y sigue igual que en la tabla de arriba (✅). La nota de dibujo #17 (células de ~60 µm contra la barra de 50 µm) está anotada en "Correcciones aplicadas".
+
+**Resultado de la re-verificación: 23 de 23 afirmaciones ✅ · 0 ⚠️ · 0 ❌.**
