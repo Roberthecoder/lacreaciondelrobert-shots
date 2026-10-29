@@ -63,9 +63,9 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-En 2018, un sistema de lectura de labios de DeepMind y Google tuvo 40.9 % de error de palabras en videos de YouTube. Lectores profesionales, con el mismo material y hasta 10 repeticiones por video, tuvieron entre 86.4 % y 92.9 %.
+En 2018, un sistema de lectura de labios de DeepMind y Google tuvo 40.9 % de error de palabras en videos de YouTube. Lectores profesionales, con videos del mismo conjunto de prueba y hasta 10 repeticiones por video, tuvieron entre 86.4 % y 92.9 %.
 La clave no fue solo "ver mejor": muchos sonidos comparten la misma forma de boca (visemas; la p y la b son indistinguibles a la vista). El sistema se entrenó con 3,886 horas de video y decide apoyándose en un modelo de lenguaje: sin él, el error sube a 53.6 %. Un año antes, en Oxford, otro modelo ya había descifrado la mitad de las palabras en videos de la BBC, contra menos de una cuarta parte de un lector profesional.
-Lo interesante para quien evalúa tecnología: los autores dicen con claridad dónde NO funciona (fuera de cuadro frontal, lejos o con video de baja calidad) y ponen como motivación clave a pacientes que perdieron la voz.
+Lo interesante para quien evalúa tecnología: los autores dicen con claridad dónde NO funciona (si la persona no está de frente, está lejos o el video es de baja calidad) y ponen como motivación clave a pacientes que perdieron la voz.
 ¿Qué otras tareas "imposibles" para el ojo humano crees que se resuelven con contexto y no solo con más resolución?
 Fuentes: Chung et al., CVPR (2017); Shillingford et al., arXiv:1807.05162 (2018). Datos de 2017–2018.
 Shot IA #23 · La Creación del Robert

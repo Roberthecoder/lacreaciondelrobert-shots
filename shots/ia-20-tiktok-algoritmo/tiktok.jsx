@@ -286,7 +286,7 @@ function TikTok() {
           <Embudo x={540} y={980} s={0.9} T={T} />
           {[['visto', KC.yellow, 0.3, 220, 560], ['terminado ✔', KC.leaf, 0.9, 420, 470], ['saltado ✖', KC.coral, 1.5, 300, 650], ['sigues a…', KC.cyan, 2.4, 560, 560], ['audio ♪', KC.lilac, 3.4, 360, 740], ['#hashtags', KC.orange, 4.0, 600, 690]].map(([tx, c, d, xx, yy], i) => {
             const a = K.S + d, p = kprog(T, a, a + 0.5, kEase.rebote), cae = kprog(T, a + 2.2, a + 2.9, kEase.suave);
-            return <Ficha key={i} x={klerp(xx, 540, cae)} y={klerp(yy - 120 * (1 - p), 980, cae)} texto={tx} color={c} s={p * (1 - 0.6 * cae)} o={p * (1 - cae)} rot={(i % 2 ? 6 : -6) * (1 - cae)} tam={50} />; })}
+            return <Ficha key={i} x={klerp(xx, 540, cae)} y={klerp(yy + 60 - 120 * (1 - p), 980, cae)} texto={tx} color={c} s={p * (1 - 0.6 * cae)} o={p * (1 - cae)} rot={(i % 2 ? 6 : -6) * (1 - cae)} tam={50} />; })}
         </>)}
       </Escena>
       <Chip T={T} at={K.S + 0.2} until={K.Pe - 0.2} texto="página oficial de TikTok" x={420} y={400} tam={34} borde={KC.ink} />
@@ -314,7 +314,7 @@ function TikTok() {
             <rect x={230} y={yy + 30} width={360} height={50} rx={14} fill="rgba(255,255,255,.12)" stroke={KC.texto} strokeWidth={3} />
             <rect x={230} y={yy + 30} width={360 * r.p * g} height={50} rx={14} fill={top ? KC.gold2 : KC.cyan} />
             <text x={610} y={yy + 70} style={{ font:`700 40px ${KF.mono}` }} fill={top ? KC.gold2 : KC.texto}>{Math.round(r.p * 100 * g)}</text>
-            {top && <text x={680} y={yy + 72} style={{ font:`400 46px ${KF.titulo}` }} fill={KC.gold2}>1.º</text>}
+            {top && <text x={710} y={yy + 72} style={{ font:`400 46px ${KF.titulo}` }} fill={KC.gold2}>1.º</text>}
           </g>; })}</>)}
       </Escena>
       <Chip T={T} at={K.R + 0.3} until={K.Q - 0.2} texto="probabilidad de like o de saltarlo" x={480} y={400} tam={30} borde={KC.cyan} />
@@ -343,10 +343,10 @@ function TikTok() {
       </g>, 30)}
       {T > K.P2 - 0.4 && T < K.P3 + 0.4 && svg(<g opacity={kprog(T, K.P2 - 0.4, K.P2) * (1 - kprog(T, K.P3, K.P3 + 0.4))}>
         <Colador x={720} y={880} s={0.85} />
-        {fichasP2.map((f, i) => { const a = K.P2 + f.d, p = kprog(T, a, a + 0.8); if (p <= 0) return null;
-          const yy = f.bad ? 600 + 260 * Math.sin(Math.PI * Math.min(1, p * 1.4)) * (p < 0.7 ? 1 : 1) - (p > 0.7 ? (p - 0.7) * 400 : 0) : klerp(600, 1180, p);
-          const xx = f.bad ? f.x + (p > 0.6 ? (p - 0.6) * 400 : 0) : f.x - 60;
-          return <Ficha key={i} x={xx} y={yy} texto={f.t} color={f.bad ? KC.coral : KC.mint} s={0.9} rot={f.bad ? p * 40 : 0} o={f.bad && p > 0.9 ? (1 - p) * 10 : 1} tam={34} />; })}
+        {fichasP2.map((f, i) => { const a = K.P2 + f.d * 0.6, p = kprog(T, a, a + 1.3); if (p <= 0) return null;
+          const yy = f.bad ? (p < 0.5 ? klerp(560, 800, p / 0.5) : 800 - Math.sin(Math.PI * (p - 0.5) / 0.5) * 260) : klerp(560, 1180, p);
+          const xx = f.bad ? (p < 0.5 ? f.x : f.x - (p - 0.5) * 900) : f.x - 60;
+          return <Ficha key={i} x={xx} y={yy} texto={f.t} color={f.bad ? KC.coral : KC.mint} s={0.9} rot={f.bad ? p * 40 : 0} o={p > 0.9 ? (1 - p) * 10 : 1} tam={38} />; })}
       </g>, 30)}
       {T > K.P3 - 0.4 && svg(<g opacity={kprog(T, K.P3 - 0.4, K.P3) * (1 - kprog(T, K.E - 0.1, K.E + 0.4))}>
         <Refrescar x={720} y={760} s={0.85} ang={360 * kprog(T, K.P3 + 0.2, K.P3 + 1.6, kEase.suave)} />
@@ -373,9 +373,9 @@ function TikTok() {
         <Cien T={T} at={K.X + 0.4} x={170} y={680} lado={78} />
       </Escena>
       <Chip T={T} at={K.X + 0.3} until={K.C - 0.2} texto="de cada 100 de sus primeros mil videos" x={600} y={430} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.X + 2.0} until={K.C - 0.2} texto="30–50 % · estimado del estudio" x={640} y={540} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.X + 3.2} until={K.C - 0.2} x={170} y={1160} texto="♥ tus gustos" color={KC.ink} tam={34} />
-      <Etq T={T} at={K.X + 3.8} until={K.C - 0.2} x={930} y={1160} texto="explorar" lado="izq" color={KC.teal} tam={34} />
+      <Chip T={T} at={K.X + 2.0} until={K.C - 0.2} texto="30–50 % · estimado del estudio" x={640} y={545} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.X + 3.2} until={K.C - 0.2} x={170} y={635} texto="♥ tus gustos" color={KC.ink} tam={34} />
+      <Etq T={T} at={K.X + 3.8} until={K.C - 0.2} x={930} y={635} texto="explorar" lado="izq" color={KC.teal} tam={34} />
 
       {/* 11 · cierre: la misma imagen del inicio, transformada */}
       <Escena T={T} a={K.C} b={FIN}>
