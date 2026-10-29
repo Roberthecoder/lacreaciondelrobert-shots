@@ -454,7 +454,7 @@ function TempehShot() {
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.En - 0.1} texto="¿Qué le hace *por dentro?*" />
       <Subtitulo T={T} idx={6} at={K.En + 0.1} until={K.F - 0.1} texto="Enzimas que parten *proteínas y grasas.*" />
       <Subtitulo T={T} idx={7} at={K.F + 0.1} until={K.Et - 0.1} texto="Baja el *ácido fítico.*" />
-      <Subtitulo T={T} idx={8} at={K.Et + 0.1} until={K.B - 0.1} texto="1977, Toronto: *¿y la B12?*" />
+      <Subtitulo T={T} idx={8} at={K.Et + 0.1} until={K.B - 0.1} texto="1977, tempeh de Toronto: *¿y la B12?*" />
       <Subtitulo T={T} idx={9} at={K.B + 0.1} until={K.Bl - 0.1} texto="La B12 la hace *una bacteria.*" />
       <Subtitulo T={T} idx={10} at={K.Bl + 0.1} until={K.C - 0.1} texto="Poco aire: *casi sin esporas.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Soya *amarrada por un hongo.*" />

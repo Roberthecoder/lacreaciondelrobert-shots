@@ -43,4 +43,3 @@ Fuentes abiertas:
 
 **Resumen (29 oct 2026, segunda vuelta):** se corrigieron las 5 observaciones (redacción del ARN y la seguridad, "hombres jóvenes", aclaración del estudio de una sola toma con igual leucina, año 2004 del tiempo de duplicación, tanque sin escala falsa) y se revisaron los recortes de voz (campo inglés, "en unas cuatro horas", clara de huevo) contra las fuentes abiertas: todas las afirmaciones de voz y pantalla quedan ✅. narracion.json: 13 líneas, 997 caracteres.
 
-VEREDICTO: APROBADO

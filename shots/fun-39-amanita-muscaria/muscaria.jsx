@@ -391,7 +391,7 @@ function MuscariaShot() {
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Admíralo, *no te lo comas.*" />
 
       <Robert T={T} apariciones={[
-        [K.G - 0.45, K.G + 4.6, 'avatar_11_sorprendido', 'gancho'],
+        [K.G - 0.45, K.G + 4.2, 'avatar_11_sorprendido', 'gancho'],
         [K.Hu + 0.8, K.Gl - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.B + 0.4, K.L - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.Mx + 0.6, K.R - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
