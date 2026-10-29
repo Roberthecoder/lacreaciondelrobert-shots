@@ -59,8 +59,12 @@ Barras de escala: 10 cm (murciélago), 1 m (cueva), 10 µm (piel y esporas al mi
    - Contexto: en el invierno de 2019 otro equipo (LECVT) revisó nueve sitios de hibernación en México y todas las muestras salieron negativas (Wildlife Management Institute, *Outdoor News Bulletin*, junio 2020: "all were found negative for the presence of Pd"). No sale en la voz.
 
 8. Warnecke, L. et al. (2012). Inoculation of bats with European *Geomyces destructans* supports the novel pathogen hypothesis for the origin of white-nose syndrome. *PNAS* 109(18): 6999–7003. https://www.pnas.org/doi/10.1073/pnas.1200374109
-   > infected bats "emaciated after 3–4 mo"; the fungus "causes WNS"; "progressive increase in the frequency of arousals" (experimento de laboratorio, 2010–2011)
-9. Muise, K. A. et al. (2024), sobre el gasto de energía en la hibernación y los despertares (citado por el verificador como apoyo de que la mayor parte de la grasa de invierno se gasta en los despertares).
-10. California Department of Fish and Wildlife (CDFW), página sobre síndrome de nariz blanca, y USGS (2008), *White-nose syndrome* (aviso público): no tocar murciélagos enfermos o muertos. (Apoyo del chip «si ves uno enfermo, no lo toques».)
+   > infected bats "emaciated after 3–4 mo"; the fungus "causes WNS"; "progressive increase in the frequency of arousals" (murciélagos inoculados a propósito: experimento)
+9. Muise, K. A., Dzal, Y. A., Fletcher, Q. E. y Willis, C. K. R. (2024). Hibernating female big brown bats (*Eptesicus fuscus*) adjust huddling and drinking behaviour, but not arousal frequency, in response to low humidity. *Journal of Experimental Biology*. https://pmc.ncbi.nlm.nih.gov/articles/PMC10949064/
+   > arousals "can account for over 90% of a hibernator's winter energy budget" (citando a Karpovich et al. 2009 y Thomas et al. 1990a). Apoyo de «la mayor parte de su grasa de invierno»; la voz no da cifra.
+10. California Department of Fish and Wildlife, «Report White-nose Syndrome» (consultada el 29 oct 2026). https://wildlife.ca.gov/Conservation/Laboratories/Wildlife-Investigations/Monitoring/WNS/Report
+   > "Live bats may be reported, but do not collect them!"
+11. Farm and Dairy (9 may 2008), «Report dead or dying bats to wildlife conservationists», cita a Kimberli Miller (U.S. Geological Survey). https://farmanddairy.com/?p=9242
+   > "anyone finding sick or dead bats should avoid handling them and should contact their state wildlife conservation agency" (apoyo del chip «si ves uno enfermo, no lo toques»)
 
 El dibujo es esquemático.

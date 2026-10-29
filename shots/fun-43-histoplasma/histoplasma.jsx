@@ -187,8 +187,8 @@ function HistoplasmaShot() {
           <path d="M 540 640 L 540 820 M 540 820 Q 500 860 460 940 M 540 820 Q 580 860 620 940 M 470 920 L 420 1000 M 470 920 L 490 1040 M 610 920 L 660 1000 M 610 920 L 590 1040" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" />
           {Array.from({ length: 12 }, (_, i) => { const u = kprog(T, K.Pu + 0.2 + i * 0.12, K.Pu + 1.6 + i * 0.12, kEase.suave); if (u <= 0) return null;
             const destX = [420, 490, 660, 590][i % 4], destY = [1000, 1040, 1000, 1040][i % 4];
-            const x = u < 0.4 ? klerp(540 + (i % 3 - 1) * 60, 540, u / 0.4) : u < 0.7 ? 540 : klerp(540, destX, (u - 0.7) / 0.3);
-            const y = u < 0.4 ? klerp(380, 610, u / 0.4) : u < 0.7 ? klerp(610, 820, (u - 0.4) / 0.3) : klerp(820, destY, (u - 0.7) / 0.3);
+            const x = u < 0.4 ? klerp(180 + (i % 3) * 40, 540, u / 0.4) : u < 0.7 ? 540 : klerp(540, destX, (u - 0.7) / 0.3);
+            const y = u < 0.4 ? klerp(520 + (i % 4) * 30, 612, u / 0.4) : u < 0.7 ? klerp(610, 820, (u - 0.4) / 0.3) : klerp(820, destY, (u - 0.7) / 0.3);
             return <circle key={i} cx={x} cy={y} r={9} fill={HP.espora} stroke={KC.ink} strokeWidth={2} style={{ filter:`drop-shadow(0 0 6px ${HP.espora})` }} />; })}
         </>)}
       </Escena>
@@ -232,7 +232,7 @@ function HistoplasmaShot() {
       <Escena T={T} a={K.S} b={K.E}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.S + 0.2 + i * 0.05, K.S + 0.5 + i * 0.05, kEase.rebote); const x = 140 + (i % 5) * 200, y = 780 + Math.floor(i / 5) * 150;
+          {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.S + 0.2 + i * 0.05, K.S + 0.5 + i * 0.05, kEase.rebote); const x = 140 + (i % 5) * 200, y = 720 + Math.floor(i / 5) * 128;
             const leve = i === 6 || i === 13 || i === 17; const mk = kprog(T, K.S + 1.4 + i * 0.04, K.S + 1.7 + i * 0.04, kEase.rebote);
             return on > 0 ? <g key={i}><PersonaH x={x} y={y} s={on * 0.85} mal={leve ? 0.6 : 0} color={leve ? '#ffb38a' : '#8fb6ff'} />
               {mk > 0 && !leve && <path d={`M ${x + 30} ${y - 70} l 12 14 l 24 -30`} stroke="#1f9e3a" strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" transform={`translate(0 0) scale(1)`} opacity={mk} />}
@@ -296,15 +296,15 @@ function HistoplasmaShot() {
       <Chip T={T} at={K.H + 0.3} until={K.A - 0.3} texto="AL MICROSCOPIO · moho" x={360} y={420} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.H + 0.9} until={K.A - 0.3} x={60} y={520} texto="Histoplasma capsulatum" it tam={38} />
       <Etq T={T} at={K.H + 1.5} until={K.A - 0.3} x={60} y={580} texto="“el hongo de las cuevas”" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.H + 1.9} until={K.A - 0.3} x={60} y={660} texto="microconidias 2–4 µm (lisas)" tam={28} color="#fffbe6" />
-      <Etq T={T} at={K.H + 2.5} until={K.A - 0.3} x={1040} y={1100} lado="izq" texto="macroconidia 8–15 µm" tam={28} color="#f3dcae" />
+      <Etq T={T} at={K.H + 1.9} until={K.A - 0.3} x={60} y={1110} texto="microconidias 2–4 µm (lisas)" tam={28} color="#fffbe6" />
+      <Etq T={T} at={K.H + 2.5} until={K.A - 0.3} x={1040} y={1010} lado="izq" texto="macroconidia 8–15 µm" tam={28} color="#f3dcae" />
       <Chip T={T} at={K.A + 1.2} until={K.Pu - 0.2} texto="esporas de 2–4 µm: no las ves" x={400} y={1040} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Pu + 0.8} until={K.Ca - 0.2} x={760} y={980} texto="pulmones" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.2} until={K.Ca + 1.4} texto="en el suelo: moho" x={540} y={430} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.Ca + 1.6} until={K.P - 0.2} texto="a 37 °C, en tu cuerpo: levadura" x={540} y={430} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.Ca + 0.5} until={K.P - 0.2} x={940} y={540} lado="izq" texto="alvéolo (pulmón)" tam={28} color="#ff8fa8" />
       <Etq T={T} at={K.M + 0.8} until={K.S - 0.2} x={40} y={680} texto="macrófago (defensa)" tam={30} color={HP.macro} />
-      <Etq T={T} at={K.M + 1.6} until={K.S - 0.2} x={40} y={1180} texto="levaduras de 2–4 µm" tam={28} color={HP.levadura} />
+      <Etq T={T} at={K.M + 1.6} until={K.S - 0.2} x={40} y={1110} texto="levaduras de 2–4 µm" tam={28} color={HP.levadura} />
       <Chip T={T} at={K.M + 2.3} until={K.M + 3.8} texto="adentro se multiplica" x={400} y={460} tam={34} borde={KC.gold} />
       <Chip T={T} at={K.M + 4.0} until={K.S - 0.2} texto="y viaja dentro de él" x={400} y={460} tam={34} borde={KC.red} />
       <Chip T={T} at={K.S + 0.4} until={K.E - 0.2} texto="casi todos: nada o algo leve" x={400} y={470} tam={34} borde={KC.leaf} />
