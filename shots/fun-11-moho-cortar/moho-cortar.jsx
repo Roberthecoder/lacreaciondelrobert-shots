@@ -211,10 +211,10 @@ function MohoCortarShot() {
   const knifeOut = kprog(T, K.G + 1.4, K.G + 1.9, kEase.suave);
   const TIRA = ['pan', 'mermelada', 'yogur', 'jitomate', 'quesocrema'];
   const CORTA = ['quesoduro', 'zanahoria', 'pimiento'];
-  const tiraAt = (i) => K.Ti + 1.6 + i * 0.5;
-  const cortaAt = (i) => K.C + 1.5 + i * 0.5;
-  const cajaQ = kprog(T, K.C + 4.0, K.C + 4.8, kEase.sale), corteQ = kprog(T, K.C + 5.4, K.C + 6.6, kEase.suave);
-  const cuchQ = kprog(T, K.C + 5.0, K.C + 5.6, kEase.sale) * (1 - kprog(T, K.C + 6.8, K.C + 7.4));
+  const tiraAt = (i) => K.Ti + 1.9 + i * 0.5;
+  const cortaAt = (i) => K.C + 2.4 + i * 0.45;
+  const cajaQ = kprog(T, K.C + 4.7, K.C + 5.4, kEase.sale), corteQ = kprog(T, K.C + 6.0, K.C + 7.1, kEase.suave);
+  const cuchQ = kprog(T, K.C + 5.5, K.C + 6.1, kEase.sale) * (1 - kprog(T, K.C + 7.2, K.C + 7.7));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: raspas la mancha del pan… */}
@@ -294,13 +294,13 @@ function MohoCortarShot() {
       <Escena T={T} a={K.C} b={K.E}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, K.C + 3.3, K.C + 3.8)}>
+          <g opacity={1 - kprog(T, K.C + 4.0, K.C + 4.5)}>
             {CORTA.map((t, i) => { const k = kprog(T, cortaAt(i), cortaAt(i) + 0.4, kEase.rebote); if (k <= 0) return null;
               const xx = 220 + i * 320, yy = 880;
               return <g key={t}><Alimento tipo={t} x={xx} y={yy} s={1.25 * k} seed={i + 5} />
                 <text x={xx} y={yy + 160} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink} opacity={k}>{NOMBRES[t]}</text></g>; })}
           </g>
-          {T > K.C + 3.3 && <g opacity={kprog(T, K.C + 3.3, K.C + 3.8)}>
+          {T > K.C + 4.0 && <g opacity={kprog(T, K.C + 4.0, K.C + 4.5)}>
             <QuesoGrande T={T} x={540} y={940} caja={cajaQ} corte={corteQ} />
             {cuchQ > 0 && <Cuchillo x={klerp(1100, 470, cuchQ)} y={klerp(700, 880, cuchQ)} ang={-30 + cuchQ * 20} s={0.8} />}
             
@@ -311,7 +311,7 @@ function MohoCortarShot() {
       <Escena T={T} a={K.E} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <g transform={`translate(0 ${(1 - kprog(T, K.E + 1.2, K.E + 1.8, kEase.sale)) * 500})`}>
+          <g opacity={kprog(T, K.E + 1.2, K.E + 1.5)} transform={`translate(0 ${(1 - kprog(T, K.E + 1.2, K.E + 1.8, kEase.sale)) * 300})`}>
             <g transform="translate(280 1010) scale(0.5) translate(-280 -1010)"><FrutaMitad T={T} tipo="manzana" x={280} y={1010} r={260} /></g>
             <g transform="translate(800 1010) scale(0.5) translate(-800 -1010)"><FrutaMitad T={T} tipo="jitomate" x={800} y={1010} r={260} /></g>
           </g>
@@ -365,10 +365,10 @@ function MohoCortarShot() {
       <Chip T={T} at={K.Ti + 0.2} until={K.D - 0.3} texto="SE TIRA: blando, húmedo o poroso" x={370} y={470} tam={32} borde={KC.red} />
       <Etq T={T} at={K.D + 0.4} until={K.C - 0.3} x={60} y={640} texto="hilos bajo la superficie" tam={30} color={KC.ink} />
       <Chip T={T} at={K.D + 1.3} until={K.C - 0.3} texto="+ bacterias" x={790} y={1130} tam={30} borde={KC.lilac} />
-      <Chip T={T} at={K.C + 0.2} until={K.C + 3.6} texto="SE CORTA: duro y mancha chica" x={370} y={470} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 3.7} until={K.E - 0.3} texto="al menos 2.5 cm (1 pulgada)" x={370} y={470} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 4.6} until={K.E - 0.3} texto="alrededor y por debajo" x={370} y={565} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.C + 5.4} until={K.E - 0.3} texto="el cuchillo no toca el moho" x={540} y={1440} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.C + 0.2} until={K.C + 4.3} texto="SE CORTA: duro y mancha chica" x={370} y={470} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 4.5} until={K.E - 0.3} texto="al menos 2.5 cm (1 pulgada)" x={370} y={470} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 5.3} until={K.E - 0.3} texto="alrededor y por debajo" x={370} y={565} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.C + 5.9} until={K.E - 0.3} texto="el cuchillo no toca el moho" x={540} y={1440} tam={28} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2001" quien="Universidad Técnica de Múnich" revista="Rychlik y Schieberle · Eur. Food Res. Technol." y={600} />
       <Etq T={T} at={K.E + 2.4} until={K.M - 0.3} x={60} y={845} texto="patulina: una toxina de moho" tam={30} color={KC.ink} />
       <Etq T={T} at={K.M + 0.8} until={K.J - 0.3} x={60} y={560} texto="Penicillium expansum" it tam={32} color={KC.ink} />
@@ -386,8 +386,8 @@ function MohoCortarShot() {
       <BarraEscala T={T} at={K.H} until={K.P} texto="1 cm" largo={110} />
       <BarraEscala T={T} at={K.Ti} until={K.D} texto="10 cm" largo={180} />
       <BarraEscala T={T} at={K.D} until={K.C} texto="5 cm" largo={190} />
-      <BarraEscala T={T} at={K.C} until={K.C + 3.4} texto="10 cm" largo={160} />
-      <BarraEscala T={T} at={K.C + 3.4} until={K.E} texto="2.5 cm" largo={130} />
+      <BarraEscala T={T} at={K.C} until={K.C + 4.1} texto="10 cm" largo={160} />
+      <BarraEscala T={T} at={K.C + 4.1} until={K.E} texto="2.5 cm" largo={130} />
       <BarraEscala T={T} at={K.E} until={K.M} texto="5 cm" largo={160} />
       <BarraEscala T={T} at={K.M} until={K.O} texto="2 cm" largo={145} />
       <BarraEscala T={T} at={K.O} until={K.Ci} texto="5 cm" largo={150} />
@@ -413,8 +413,8 @@ function MohoCortarShot() {
         [K.R + 0.8, K.X - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.H + 0.3, K.P - 0.1, 'avatar_10_serio_molesto', 'arriba-der'],
         [K.P + 0.05, K.Ti + 0.3, 'avatar_07_pensativo_puno', 'grande'],
-        [K.D + 0.3, K.C + 2.5, 'avatar_12_perfil_serio', 'arriba-der'],
-        [K.C + 3.4, K.E - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [K.D + 0.3, K.C + 3.0, 'avatar_12_perfil_serio', 'arriba-der'],
+        [K.C + 3.9, K.E - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.M + 0.3, K.O - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.O + 0.2, K.Ci - 0.1, 'avatar_10_serio_molesto', 'grande'],
         [K.Ci + 0.4, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />

@@ -23,13 +23,13 @@ for (let i = 0; i < 8; i++) m.tic(H + 0.2 + i * 0.17, 0.1, 1200);            // 
 m.sube(H + 2.0, 1.6, 55, 62, 0.04);                                          // se riegan
 m.sube(P + 0.1, 1.5, 52, 64, 0.05);                                          // re-gancho
 m.metal(Ti + 0.6, 0.15, 600);                                                // se abre el bote
-for (let i = 0; i < 5; i++) m.golpe(Ti + 1.6 + i * 0.5, 0.25, 110);          // cada alimento que se tira
+for (let i = 0; i < 5; i++) m.golpe(Ti + 1.9 + i * 0.5, 0.25, 110);          // cada alimento que se tira
 m.sube(D + 0.2, 2.0, 50, 42, 0.04);                                          // los hilos bajo la superficie
 for (let i = 0; i < 4; i++) m.gota(D + 1.2 + i * 0.15, 0.15, 1400); // bacterias
-for (let i = 0; i < 3; i++) m.nota(C + 1.5 + i * 0.5, 64 + i * 3, 0.06, 0.6);  // queso duro, zanahoria, pimiento
-for (let i = 0; i < 6; i++) m.tic(C + 4.0 + i * 0.13, 0.1, 2600);            // la regla de 2.5 cm
-m.whoosh(C + 5.0, 0.5, 0.12); m.metal(C + 5.5, 0.18, 1400);                  // el corte limpio
-m.nota(C + 6.6, 72, 0.06, 0.8);
+for (let i = 0; i < 3; i++) m.nota(C + 2.4 + i * 0.45, 64 + i * 3, 0.06, 0.6);  // queso duro, zanahoria, pimiento
+for (let i = 0; i < 6; i++) m.tic(C + 4.7 + i * 0.12, 0.1, 2600);            // la regla de 2.5 cm
+m.whoosh(C + 5.5, 0.5, 0.12); m.metal(C + 6.1, 0.18, 1400);                  // el corte limpio
+m.nota(C + 7.1, 72, 0.06, 0.8);
 m.golpe(E + 0.2, 0.35, 80); m.metal(E + 0.25, 0.1, 2200);                    // tarjeta del estudio
 for (let i = 0; i < 10; i++) m.tic(M + 0.3 + i * 0.18, 0.08, 1500);          // la patulina cerca de la mancha
 for (let i = 0; i < 6; i++) m.tic(M + 2.2 + i * 0.12, 0.1, 2600);            // la regla de 2 cm

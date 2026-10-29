@@ -127,7 +127,7 @@ function CaspaShot() {
   const FIN = K.Ou + 4;
   // lipasas: tres cortes uno tras otro
   const corte = (i) => kprog(T, K.Li + 1.3 + i * 0.7, K.Li + 1.8 + i * 0.7, kEase.sale);
-  const TRI = [[640, 820], [820, 980], [600, 1060]];
+  const TRI = [[640, 780], [830, 930], [600, 1010]];
   // sebo que sube por el folículo
   const sebo = kprog(T, K.Se + 0.4, K.Se + 2.6);
   // escamas: velocidad de la piel (se acelera)
@@ -265,7 +265,7 @@ function CaspaShot() {
           <Champu x={230} y={930} s={1.05} inclina={-8 + Math.sin(T * 2) * 2} />
           <Burbujas T={T} x={240} y={760} n={9} area={220} desde={K.Ch} />
         </>)}
-        <Lupa T={T} at={K.Ch + 1.0} until={K.C - 0.2} x={700} y={900} r={210} fx={320} fy={720} tinte={KC.cyan} etiqueta="AL MICROSCOPIO"
+        <Lupa T={T} at={K.Ch + 1.0} until={K.C - 0.2} x={700} y={860} r={210} fx={320} fy={720} tinte={KC.cyan} etiqueta="AL MICROSCOPIO"
           interior={(T2, r) => { const k = kprog(T2, K.Ch + 1.8, K.Ch + 4.2); return <div style={{ position:'absolute', inset:0 }}>
             <MicroCuero T={T2} w={r * 2} h={r * 2} levaduras={1 - 0.75 * k} />
             {fsvg(<g>{Array.from({ length: 7 }, (_, i) => { const u = ((T2 - K.Ch) * 0.4 + i / 7) % 1; return <circle key={i} cx={30 + i * 55} cy={klerp(r * 2 + 20, -20, u)} r={14 + (i % 3) * 6} fill="rgba(255,255,255,.35)" stroke="#fff" strokeWidth={3} opacity={k > 0 ? 0.9 : 0.4} />; })}</g>)}
@@ -277,24 +277,24 @@ function CaspaShot() {
         {fsvg(<Busto T={T} x={400} y={60} s={1} caspa={1} cae={0.6} />)}
       </Escena>
       {/* lupas del cuero cabelludo (inicio y cierre) */}
-      <Lupa T={T} at={K.Ma + 0.1} until={K.Se - 0.2} x={590} y={810} r={230} fx={402} fy={540} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · cuero cabelludo"
+      <Lupa T={T} at={K.Ma + 0.1} until={K.Se - 0.2} x={590} y={790} r={230} fx={402} fy={540} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · cuero cabelludo"
         interior={(T2, r) => <MicroCuero T={T2} w={r * 2} h={r * 2} levaduras={kprog(T2, K.Ma + 0.4, K.Ma + 1.2)} />} />
       <Lupa T={T} at={K.C + 0.6} until={K.Ou - 0.1} x={600} y={860} r={230} fx={360} fy={1060} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · una escama"
         interior={(T2, r) => <MicroCuero T={T2} w={r * 2} h={r * 2} colas={kprog(T2, K.C + 1.2, K.C + 2.0)} />} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.5} until={K.G + 2.1} texto="¿piel reseca?" x={300} y={1000} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.G + 0.5} until={K.G + 2.1} texto="¿solo piel muerta?" x={300} y={1000} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.G + 2.3} until={K.Ma - 0.2} texto="hay una levadura" x={300} y={1000} tam={40} borde={KC.pink} />
       <Etq T={T} at={K.Ma + 1.0} until={K.Se - 0.3} x={60} y={380} texto="levadura de la piel" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Ma + 1.4} until={K.Se - 0.3} x={60} y={435} texto="Malassezia" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Ma + 2.0} until={K.Se - 0.3} texto="en la mayoría de los adultos" x={310} y={1180} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Se + 0.5} until={K.Li - 0.3} x={1030} y={980} texto="glándula sebácea" lado="izq" tam={28} color={CP.sebo2} />
-      <Etq T={T} at={K.Se + 1.2} until={K.Li - 0.3} x={60} y={560} texto="sebo: una grasa natural" tam={32} color={CP.sebo2} />
+      <Chip T={T} at={K.Ma + 2.0} until={K.Se - 0.3} texto="en la mayoría de los adultos" x={330} y={1200} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Se + 0.5} until={K.Li - 0.3} x={1030} y={1160} texto="glándula sebácea" lado="izq" tam={28} color={CP.sebo2} />
+      <Etq T={T} at={K.Se + 1.2} until={K.Li - 0.3} x={60} y={500} texto="sebo: una grasa natural" tam={32} color={CP.sebo2} />
       <Etq T={T} at={K.Se + 0.8} until={K.Li - 0.3} x={60} y={1120} texto="pelo" tam={28} color={KC.texto} />
       <Etq T={T} at={K.Li + 0.4} until={K.Ol - 0.2} x={60} y={470} texto="Malassezia globosa" it tam={36} color={KC.texto} />
       <Etq T={T} at={K.Li + 0.9} until={K.Ol - 0.2} x={440} y={700} texto="célula hija" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Li + 1.3} until={K.Ol - 0.2} texto="lipasas = tijeras químicas" x={560} y={1175} tam={34} borde={CP.lipasa} />
-      <Etq T={T} at={K.Li + 1.0} until={K.Ol - 0.2} x={1030} y={1090} texto="grasa del sebo" lado="izq" tam={26} color={CP.sebo2} />
+      <Etq T={T} at={K.Li + 1.0} until={K.Ol - 0.2} x={1030} y={1100} texto="grasa del sebo" lado="izq" tam={26} color={CP.sebo2} />
       <Etq T={T} at={K.Ol + 0.4} until={K.P - 0.2} x={60} y={520} texto="ácidos grasos sueltos" tam={32} color={CP.acido} />
       <Etq T={T} at={K.Ol + 1.2} until={K.P - 0.2} x={60} y={1100} texto="ácido oleico (doblado)" tam={32} color={CP.oleico} />
       <Etq T={T} at={K.Ol + 2.0} until={K.P - 0.2} x={1030} y={1150} texto="aceite de oliva" lado="izq" tam={28} color={KC.texto} />
@@ -342,8 +342,8 @@ function CaspaShot() {
       <Subtitulo T={T} idx={7} at={K.Es + 0.1} until={K.Est - 0.1} texto="Se despegan *en grupos.*" />
       <Subtitulo T={T} idx={8} at={K.Est + 0.1} until={K.Re - 0.1} texto="2005: *ácido oleico*" />
       <Subtitulo T={T} idx={9} at={K.Re + 0.1} until={K.Ge - 0.1} texto="Con caspa: *se descamó.*" />
-      <Subtitulo T={T} idx={10} at={K.Ge + 0.1} until={K.Ch - 0.1} texto="Le falta un gen: *usa los tuyos.*" />
-      <Subtitulo T={T} idx={11} at={K.Ch + 0.1} until={K.C - 0.1} texto="Champús con *antifúngicos.*" />
+      <Subtitulo T={T} idx={10} at={K.Ge + 0.1} until={K.Ch - 0.1} texto="Le falta *un gen.*" />
+      <Subtitulo T={T} idx={11} at={K.Ch + 0.1} until={K.C - 0.1} texto="Champú *antifúngico.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Es tu piel *reaccionando.*" />
 
       <Robert T={T} apariciones={[

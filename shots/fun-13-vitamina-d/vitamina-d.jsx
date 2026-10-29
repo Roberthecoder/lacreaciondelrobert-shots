@@ -272,10 +272,12 @@ function VitaminaDShot() {
       <Escena T={T} a={K.Cu} b={K.Tr} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<g opacity={kprog(T, K.Cu + 2.8, K.Cu + 3.3)}>
-          <Tubo x={330} y={1160} nivel={kprog(T, K.Cu + 3.4, K.Cu + 6.2, kEase.suave) * 0.8} />
-          <Tubo x={750} y={1160} nivel={kprog(T, K.Cu + 3.4, K.Cu + 6.2, kEase.suave) * 0.8} />
-          <Champi T={T} x={170} y={1080} s={0.45} />
-          <g transform="translate(910 1000)"><rect x={-60} y={-26} width={120} height={52} rx={26} fill={KC.white} stroke={KC.ink} strokeWidth={6} /><rect x={-60} y={-26} width={60} height={52} rx={26} fill={KC.orange} stroke={KC.ink} strokeWidth={6} /></g>
+          <Tubo x={280} y={1160} nivel={kprog(T, K.Cu + 3.4, K.Cu + 6.2, kEase.suave) * 0.8} />
+          <Tubo x={800} y={1160} nivel={kprog(T, K.Cu + 3.4, K.Cu + 6.2, kEase.suave) * 0.8} />
+          <Champi T={T} x={125} y={1080} s={0.42} />
+          <text x={280} y={676} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>D2 de champiñón</text>
+          <text x={800} y={676} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>suplemento de D2</text>
+          <g transform="translate(960 1000)"><rect x={-60} y={-26} width={120} height={52} rx={26} fill={KC.white} stroke={KC.ink} strokeWidth={6} /><rect x={-60} y={-26} width={60} height={52} rx={26} fill={KC.orange} stroke={KC.ink} strokeWidth={6} /></g>
         </g>)}
       </Escena>
       {/* 12 · truco: rebanados mejor que enteros; en el refri, una semana */}
@@ -331,8 +333,6 @@ function VitaminaDShot() {
       <Etq T={T} at={K.Sa + 3.2} until={K.H - 0.3} x={60} y={560} texto="mayores de 70: 20 µg" tam={24} color={KC.ink} />
       <Chip T={T} at={K.H + 1.4} until={K.Cu - 0.2} texto="más sol ≠ más vitamina" x={420} y={470} tam={38} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Cu + 0.2} until={K.Cu + 2.8} anio="2013" quien="25 adultos, 3 meses" revista="cápsulas de polvo de champiñón · Keegan et al., 2013" y={760} />
-      <Etq T={T} at={K.Cu + 3.6} until={K.Tr - 0.3} x={330} y={1200} lado="izq" texto="D2 de champiñón" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Cu + 3.8} until={K.Tr - 0.3} x={750} y={1200} texto="suplemento de D2" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Cu + 5.2} until={K.Tr - 0.3} texto="vitamina D en sangre: igual" x={420} y={470} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Tr + 0.5} until={K.Tr + 2.2} x={270} y={1150} lado="izq" texto="entero" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Tr + 0.7} until={K.Tr + 2.2} x={600} y={1150} texto="rebanado: más" tam={30} color={KC.ink} />

@@ -116,7 +116,7 @@ function HuitlacocheShot() {
   const infla = kprog(T, MICRO + 0.2, MICRO + 1.8, kEase.rebote);
   const SILK = 'M 940 260 C 760 520 700 700 600 860 S 470 1000 430 1040';
   const MXK = (lon, lat) => { const [a, b] = mxProy(lon, lat); return [60 + a * 0.96, 640 + b * 0.96]; };
-  const NOMBRES = [['cuitlacoche', 'náhuatl', -98.2, 19.3, 250, 900], ['ta’ chak', 'maya', -89.0, 20.7, 820, 880], ['bia’huí’', 'zapoteco', -96.7, 17.0, 430, 1150]];
+  const NOMBRES = [['cuitlacoche', 'náhuatl', -98.2, 19.3, 250, 900], ['ta’ chak', 'maya', -89.0, 20.7, 820, 880], ['bia’huí’', 'zapoteco', -96.7, 17.0, 300, 1085]];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1–2 · gancho: el elote se abre y salen bolas grises; va a tu quesadilla */}

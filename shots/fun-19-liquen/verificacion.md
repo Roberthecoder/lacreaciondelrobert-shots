@@ -1,0 +1,47 @@
+# Verificación · Shot Fungi Mati #19 · Esa mancha en la piedra no es una planta: el liquen
+
+29 oct 2026. **Verificación independiente (subagente que no escribió el guion).** Cada fuente se abrió (página o texto completo);
+no se usaron resúmenes del buscador como prueba.
+
+Fuentes abiertas:
+- **[SAN]** Sancho, L. G., de la Torre, R., Horneck, G. et al. (2007). Lichens survive in space: results from the 2005 LICHENS experiment. *Astrobiology* 7(3): 443–454. doi:10.1089/ast.2006.0046. https://pubmed.ncbi.nlm.nih.gov/17630840/
+- **[ESA]** ESA, nota de prensa "Lichen survives in space", París, 9 nov 2005 (reproducida textualmente por Times Higher Education, 10 nov 2005, https://www.timeshighereducation.com/node/59803, y Universe Today, https://www.universetoday.com/11091/lichen-can-survive-in-space/). Original: https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Lichen_survives_in_space (403 al abrir; se leyó el texto en las reproducciones).
+- **[MIT]** Mitchell, M. E. (2002). "Such a strange theory": Anglophone attitudes to the discovery that lichens are composite organisms, 1871–1890. *Huntia* 11(2): 193–208. https://www.huntbotanical.org/admin/uploads/04hibd-huntia-11-2-pp193-208.pdf
+- **[SPR]** Spribille, T. et al. (2016). Basidiomycete yeasts in the cortex of ascomycete macrolichens. *Science* 353(6298): 488–492. doi:10.1126/science.aaf8287. https://pubmed.ncbi.nlm.nih.gov/27445309/ · https://pmc.ncbi.nlm.nih.gov/articles/PMC5793994/
+- **[ANBG]** Australian National Botanic Gardens / Australian National Herbarium, "Lichens: form and structure". https://www.anbg.gov.au/lichen/form-structure.html
+- **[BLS]** British Lichen Society, "What is a lichen?". https://britishlichensociety.org.uk/learning/what-is-a-lichen
+- **[BLS-C]** British Lichen Society, "Churchyard lichens". https://britishlichensociety.org.uk/conservation/churchyard-lichens-0
+- **[WSL]** WSL, SwissLichens, "What is a lichen". https://swisslichens.wsl.ch/en/about-lichens/what-is-a-lichen
+- **[USFS]** USDA Forest Service, "About lichens". https://www.fs.usda.gov/wildflowers/beauty/lichens/about.shtml
+- **[CLEM]** Clemson Cooperative Extension HGIC, "Lichens". https://hgic.clemson.edu/lichens/
+- **[GAL]** Galloway, D. J. (1992). *Flora of Australia – Lichen Glossary*, citado en Wikipedia "Medulla (lichenology)". https://en.wikipedia.org/wiki/Medulla_(lichenology)
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | La mancha (liquen) no es una planta ni un musgo | ✅ | [USFS], [CLEM] | "Although moss and lichens are both called non-vascular plants, only mosses are plants." · "Lichens, on the other hand, are not similar in any way to mosses or other members of the plant kingdom." · "They aren't a moss and they aren't a plant." | consultadas 2026 |
+| 2 | Es un hongo que vive con un socio (algas y/o cianobacterias) | ✅ | [BLS] | "a stable symbiotic association between a fungus and algae and/or cyanobacteria." | consultada 2026 |
+| 3 | Se ve en piedras, troncos y bardas (viñetas piedra/tronco/barda) | ✅ | [USFS], [BLS-C] | [USFS] "growing on the trunks of Dougls-fir trees", rocas y peñas; [BLS-C] "Different rock types may be found in the walls of the church, the boundary wall, and the various gravestones"; "lichens are to be found on well-established trees, wooden structures such as seats and fences" | consultadas 2026 |
+| 4 | Al microscopio tiene "pisos" (capas) | ✅ (con nota) | [ANBG] | Casi todos son heteromerous: capa de fotobionte "Below the cortex"; nota: no es universal (hay líquenes sin córtex u homoiomerous). Para la mancha de piedra (costroso tipo *Rhizocarpon/Xanthoria*) sí aplica; el dibujo ya dice "esquemático". | consultada 2026 |
+| 5 | Arriba, una piel de hilos del hongo apretados (córtex) | ✅ | [ANBG] | cortex: "a band of compacted fungal hyphae that serves as a protective skin" | consultada 2026 |
+| 6 | El córtex lo protege del sol y de secarse | ✅ | [SAN], [WSL] | "The lichen upper cortex seems to provide adequate protection against solar radiation." · el socio recibe "protection … against eating, UV and drying damage" | 2007 / 2026 |
+| 7 | Debajo, capa verde de algas o cianobacterias que hacen fotosíntesis y le dan azúcar al hongo | ✅ | [ANBG], [BLS] | "Below the cortex, in green, is a layer of photobiont cells." · "Lichen photobionts are the green algae or cyanobacteria that provide the simple sugars to their fungal partners." | consultadas 2026 |
+| 7b | Pantalla: células verdes redondas (*Trebouxia*) abrazadas por hifas | ✅ | [SAN], fuentes de morfología | *Trebouxia* es alga verde unicelular esférica, fotobionte de la mayoría de los líquenes (p. ej. *Xanthoria*); en la capa de algas las células quedan rodeadas de hifas. Dibujo esquemático. | — |
+| 8 | Más abajo, maraña suelta de hilos del hongo: la médula | ✅ | [ANBG], [GAL] | medulla: "a loose weave of fungal hyphae" · "a loosely arranged layer of interlaced hyphae below the upper cortex and photobiont zone" | 1992 / 2026 |
+| 8b | Pantalla: médula "con huecos de aire" | ✅ (como dibujo) | [GAL] | "loosely arranged" / "cottony appearance": los huecos entre hifas son correctos como dibujo. No se encontró en las fuentes abiertas la palabra "aire": no poner etiqueta de texto "aire". | 1992 |
+| 9 | El hongo pone la casa y el socio la comida | ✅ | [BLS], [WSL] | "The fungi build the structure of the lichen thallus" · "provides the fungus with nutrients such as sugar" | consultadas 2026 |
+| 10 | Simon Schwendener propuso en 1867 que un liquen eran dos seres (hongo + alga); tarjeta "(Suiza)" | ✅ | [MIT] | "held in Rheinfelden on 10 September 1867, Schwendener was recorded as having expressed … 'lichens may not be autonomous plants, but fungi in association with algae'" · "the Swiss botanist Carl Nägeli … had a compatriot, Simon Schwendener (1829–1919)" | 1867 |
+| 11 | Muchos no le creyeron | ✅ | [MIT] | "welcomed by few botanists, regarded with scepticism by many, and summarily rejected by lichen taxonomists" · "sparked a controversy that lasted for almost a quarter of a century" | 1867–1890 |
+| 12 | En 2016, en Montana (EUA), hallaron levaduras en la "piel" (córtex) de dos líquenes; tarjeta "Spribille et al., *Science*"; *Bryoria* colgante | ✅ | [SPR] | "These yeasts are embedded in the cortex" · "within the lichen pair B. fremontii and B. tortuosa" · 15 talos "from sites across western Montana, USA" (2016 = año de publicación; el año se dice) | 2016 |
+| 13 | "Y **las** encontraron en líquenes de seis continentes" | ⚠️ | [SPR] | "we found related basidiomycete lineages associated with 52 lichen genera from six continents" — son **linajes emparentados**, detectados por su ADN (PCR), no las mismas levaduras ni vistas en el córtex en cada continente. | 2016 |
+| 14 | Qué hacen ahí todavía se estudia | ✅ | [SPR] | "implicate Cyphobasidium in the production of vulpinic acid, either directly or by inducing its synthesis" · "Confirming a link … is impossible until the enzymatic synthesis pathway of vulpinic acid is described" | 2016 |
+| 15 | En 2005 los líquenes (*Rhizocarpon geographicum*, *Xanthoria elegans*) fueron al espacio por fuera de un satélite | ✅ | [SAN] | "The lichens used were the bipolar species Rhizocarpon geographicum and Xanthoria elegans" · "BIOPAN-5 is located on the outer shell of the Earth-orbiting FOTON-M2 Russian satellite" · "launched … on May 31, 2005" | 2005 |
+| 16 | "Pasaron **dieciséis días** en el espacio, **fuera** de un satélite"; contador "16 días" | ⚠️ | [SAN], [ESA] | [SAN]: "returned to Earth after 16 days in space" (duración del vuelo). [ESA]: "were exposed for a total 14.6 days before being returned to Earth" · "At the conclusion of the mission the lid of Biopan was closed". Expuestos afuera: 14.6 días, no 16. | 2005 |
+| 17 | Al volver hacían fotosíntesis casi igual (medidor "antes ≈ después") | ✅ | [SAN] | "All exposed lichens … showed nearly the same photosynthetic activity after the flight as measured before the flight." | 2005 (publ. 2007) |
+| 18 | Cierre: es un equipo que hasta aguantó el espacio | ✅ | [SAN] | título: "Lichens survive in space" | 2007 |
+| 18b | Pantalla de cierre: el "equipo" de la mancha de piedra = hongo + alga + **levadura** + cohetito | ⚠️ (leve) | [SPR], [SAN] | Las levaduras se hallaron en muchos líquenes (52 géneros), no en todos; [SAN] no dice nada de levaduras en *Rhizocarpon/Xanthoria*. El dibujo sugiere que la levadura es parte segura de esa mancha y del viaje al espacio. | 2016 / 2007 |
+| 19 | Barras de escala: 10 cm, 1 mm, 50 µm (corte), 10 µm (levaduras) | ✅ (como dibujo) | — | Órdenes de magnitud coherentes con talo y células de levadura de pocos µm; el dibujo es esquemático. | — |
+
+## Pendientes (⚠️)
+- **#16:** cambiar la voz a «Y son duros: en 2005 pasaron casi quince días expuestos al espacio, por fuera de un satélite, y al volver hacían fotosíntesis casi igual.» y el contador a "≈ 15 días" (o "14.6 días") [ESA 2005: "exposed for a total 14.6 days"]. Alternativa sin tocar la cifra de Sancho: «…viajaron dieciséis días al espacio en una caja por fuera de un satélite…» (sin decir que estuvieron expuestos los 16).
+- **#13:** «Y encontraron parientes de esas levaduras en líquenes de seis continentes. Qué hacen ahí, todavía se estudia.» [SPR: "related basidiomycete lineages … from six continents"].
+- **#18b:** en la imagen final, dibujar la levadura con un "¿?" o más tenue, o dejar el cohetito solo junto a hongo + alga.
