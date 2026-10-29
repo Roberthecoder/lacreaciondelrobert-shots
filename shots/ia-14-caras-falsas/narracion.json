@@ -5,23 +5,23 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "¿Cuál de estas dos caras es real? Una la inventó una IA. Elige: la respuesta, al final."
+      "texto": "¿Cuál de estas dos caras es real? Ojo: la IA ya inventa caras. Elige; la respuesta, al final."
     },
     {
       "escena": "Estudio",
-      "texto": "En dos mil veintidós, investigadores de Inglaterra y California pusieron a trescientas quince personas a ver caras reales y caras de la IA StyleGAN2."
+      "texto": "En dos mil veintidós, investigadores de Inglaterra y California pusieron a trescientas quince personas a ver caras reales y de la IA StyleGAN2."
     },
     {
       "escena": "Volado",
-      "texto": "Atinaron cuarenta y ocho por ciento. Echando un volado sacas cincuenta."
+      "texto": "Atinaron cuarenta y ocho por ciento. Con un volado sacas cincuenta."
     },
     {
       "escena": "Entreno",
-      "texto": "A otro grupo le enseñaron los errores típicos de la IA. Subió a cincuenta y nueve por ciento: apenas mejor."
+      "texto": "A otro grupo le enseñaron pistas para cacharla. Subió a cincuenta y nueve por ciento: apenas mejor."
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y si te guías por la que te da confianza?"
+      "texto": "¿Y si eliges la que te da más confianza?"
     },
     {
       "escena": "Confianza",
@@ -33,7 +33,11 @@
     },
     {
       "escena": "Seguros",
-      "texto": "Y en dos mil veintitrés, un equipo de Australia vio que las caras blancas de la IA parecían más humanas que las reales. Los que más fallaban eran los más seguros."
+      "texto": "En dos mil veintitrés, un equipo dirigido desde Australia vio que las caras blancas de IA parecían más humanas que las reales."
+    },
+    {
+      "escena": "Seguros",
+      "texto": "Los que más fallaban eran los más seguros."
     },
     {
       "escena": "Consejo",
@@ -41,7 +45,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "¿La respuesta? La de la izquierda era de la IA. ¿Le atinaste, o le diste tu confianza?"
+      "texto": "¿Cuál era real? Ninguna: las dos las dibujamos. Con fotos reales, ¿en cuál confiarías?"
     }
   ]
 }
