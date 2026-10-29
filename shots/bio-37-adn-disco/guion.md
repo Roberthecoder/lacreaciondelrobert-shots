@@ -5,26 +5,48 @@
 - **Gancho (de los 7 aprobados):** #4 "Un número que contradice": un gramo de ADN contra más de un millón de celulares.
 - **Duración:** narrada 61.5 s (voz ~58 s + cierre 3.5 s).
 - **Viaje macro → micro → macro:** macro (un celular en la mano y un tubito con un polvito blanco en el fondo) → micro (dentro del tubo: hebras de ADN con sus letras, la máquina que las escribe y el secuenciador que las lee; mamut, sonetos y bacterias como escenas del estudio) → el mismo tubito junto al celular, ya con el archivo adentro.
-- **Barra de escala:** visible en todo lo micro (una hebra de ~200 letras mide unas decenas de nanómetros; el dibujo es esquemático).
+- **Barra de escala:** en la síntesis: «una hebra de 200 letras: < 0.1 µm (≈ 70 nm en doble hélice · dibujo no a escala)».
 
-## Versión narrada (955 caracteres, 13 líneas, ~58 s de voz)
+## Versión narrada (956 caracteres, 13 líneas, ~58 s de voz)
+
+Corregido el 29 oct 2026 tras la verificación independiente (ver `verificacion.md`): la voz dice «celulares de 128» en el gancho y el cierre, y el 215 PB/g se presenta como récord logrado en 2017.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Un gramo de ADN puede guardar 215 millones de gigas: más de un millón de celulares. | Fondo amarillo. **Desde el cuadro 0** un tubito con un polvito blanco cae en una balanza que marca "1 g"; a su lado se apilan celulares que no paran de multiplicarse. `NumeroGigante` "215 000 000 GB". Chip "1 celular = 128 GB → ≈ 1.7 millones de celulares". |
+| 0 | Gancho | Un gramo de ADN puede guardar 215 millones de gigas: más de un millón de celulares de 128. | Fondo amarillo. **Desde el cuadro 0** un tubito con un polvito blanco cae en una balanza que marca "1 g"; a su lado se apilan celulares que no paran de multiplicarse. `NumeroGigante` "215 millones" (de gigas en 1 gramo de ADN). Chip "récord logrado en 2017 · Science". Chip "≈ 1.7 millones × 128 GB". |
 | 1 | Bits | Tus fotos son ceros y unos; el ADN usa cuatro letras: A, C, G y T. | La pantalla del celular muestra una foto que se deshace en una cuadrícula de 0 y 1 (N4). A la derecha, cuatro fichas de color: A, C, G, T. |
 | 2 | Letras | Lo más simple: cero cero es A, cero uno es C, uno cero es G y uno uno es T. | Los bits se agrupan de dos en dos y cada par salta a su ficha de letra; la cuadrícula se va llenando de letras de color. Etiqueta chica "un código posible (hay varios)". |
-| 3 | Sintesis | Una máquina escribe esas letras en miles de hebras cortas de ADN. | Fondo menta: un sintetizador con gotas que van pegando letra por letra; salen muchas hebritas cortas. Contador de hebras. |
+| 3 | Sintesis | Una máquina escribe esas letras en miles de hebras de ADN. | Fondo menta: un sintetizador con gotas que van pegando letra por letra; salen muchas hebritas cortas. La boquilla pasa ciclo por ciclo y cada ciclo pega una letra a todas las hebras. Chip "en 2017: 72 000 hebras de 200 letras" y la barra de escala. |
 | 4 | Seco | Se seca, y en ese polvito queda tu archivo. | Las hebras caen al tubito; el líquido se evapora y queda el polvito blanco del gancho. Chip "seco, frío y oscuro". |
 | 5 | Lectura | Para leerlo, un secuenciador lee las letras y vuelven a ser ceros y unos. | Se agrega agua, las hebras pasan por un secuenciador; las letras se vuelven 0 y 1 y la foto reaparece en el celular. |
 | 6 | Pregunta | ¿Y por qué guardar algo en ADN y no en un disco? | **Re-gancho.** Un disco duro y un tubito lado a lado, con un signo de pregunta. |
-| 7 | Mamut | Porque dura: en 2021 leyeron ADN de mamut de más de un millón de años. | Fondo cian helado: muela de mamut en el hielo de Siberia; `Lupa` "AL MICROSCOPIO · ADN antiguo" con hebras cortitas. Chip "más de 1 000 000 de años · 2021". |
+| 7 | Mamut | Porque dura: en 2021 leyeron ADN de mamut de más de un millón de años. | Fondo cian helado: muela de mamut en el hielo de Siberia; `Lupa` "AL MICROSCOPIO · ADN antiguo" con hebras cortitas. Chip "más de 1 000 000 de años · 2021" y "congelado en Siberia · ADN en pedacitos". |
 | 8 | Sonetos | En 2013, en Inglaterra, guardaron los sonetos de Shakespeare y un trozo del discurso de Martin Luther King. | `TarjetaEstudio` "2013 · EMBL-EBI, Inglaterra · *Nature*": un libro de sonetos y una onda de audio que se vuelven letras de ADN. |
-| 9 | Fountain | En 2017, en Nueva York, guardaron una película y la leyeron sin errores. | `TarjetaEstudio` "2017 · Nueva York · *Science*": un rollo de película antigua (un tren de 1895) que entra al tubito y sale igual. Chip "0 errores". |
-| 10 | Caballo | Ese mismo año, en Harvard, guardaron un video de un caballo dentro de bacterias vivas. | Fondo rosa: la animación clásica del caballo galopando (5 cuadros) se mete a bacterias *Escherichia coli* (bastoncitos) que se dividen. Etiqueta "con CRISPR". |
-| 11 | Problema | ¿El problema? En 2019, escribir y leer la palabra HELLO tardó 21 horas. | Un reloj que corre rápido mientras la máquina escribe H-E-L-L-O. `Medidor` "21 h para 5 letras". `MitoTachado` "¿ya lo uso?". |
-| 12 | Cierre | Un gramo para un millón de celulares: solo falta que escribirlo sea rápido y barato. | **Regreso al tubito y los celulares del inicio**, ya con la foto guardada adentro. |
+| 9 | Fountain | En 2017, en Nueva York, guardaron una película y la leyeron sin errores. | `TarjetaEstudio` "2017 · Columbia y New York Genome Center · *Science*" y chips "un sistema operativo, una película de 1895" + "y 4 archivos más": un rollo de película antigua (un tren de 1895) que entra al tubito y sale igual. Chip "0 errores". |
+| 10 | Caballo | Ese año, en Harvard, guardaron un video de un caballo dentro de bacterias vivas. | Fondo rosa: la animación clásica del caballo galopando (5 cuadros) se mete a bacterias *Escherichia coli* (bastoncitos) que se dividen. Etiqueta "con CRISPR". |
+| 11 | Problema | ¿El problema? En 2019, escribir y leer la palabra HELLO tardó 21 horas. | Un reloj que corre rápido mientras la máquina escribe H-E-L-L-O. `Medidor` "21 h para 5 letras". Chip "2019 · Microsoft + U. de Washington". |
+| 12 | Cierre | Un gramo para un millón de celulares de 128: solo falta que escribirlo sea rápido y barato. | **Regreso al tubito y los celulares del inicio**, ya con la foto guardada adentro. |
 | — | Outro | (sin voz) | Cierre de marca. |
+
+## Robert en pantalla
+
+Tiempos de las escenas del base narrada (61.5 s). Entra desde el cuadro 0, vuelve cada 8–10 s y nunca tapa el subtítulo.
+
+### 9 apariciones, **30.4 s en pantalla** (de 61.5 s), 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.6 | sorprendido (11) | gancho | «215 millones de gigas en un gramo» |
+| 10.1 – 13.8 | señalando (13) | arriba-der | los bits que se vuelven letras |
+| 18.1 – 20.3 | sonriendo (05) | izq-alto | «en ese polvito queda tu archivo» |
+| 25.1 – 28.0 | pensativo puño (07) | **grande-izq** | re-gancho: «¿por qué no en un disco?» |
+| 28.9 – 32.2 | sorprendido (11) | arriba-der | ADN de mamut de más de un millón de años |
+| 41.4 – 43.1 | bajando lentes (04) | izq-alto | «la leyeron sin errores» |
+| 44.5 – 47.9 | señalando (13) | arriba-der | el caballo que entra a las bacterias |
+| 48.4 – 52.2 | serio (10) | izq-alto | «HELLO tardó 21 horas» |
+| 53.0 – 57.9 | apuntando a cámara (02) | gancho | cierre: «solo falta que sea rápido y barato» |
+
+Cierre de marca con Robert señalando (13).
 
 ## Música y sonido (sin costo, `gen-audio.mjs`)
 - **Cama grave continua**, sin golpe marcado, siempre debajo de la voz.
@@ -32,7 +54,7 @@
 - **Efectos en el mismo cuadro:** el tubito en la balanza (tic), los celulares que se apilan (golpecitos), la evaporación (soplido), el hielo del mamut (crujido), la Lupa (barrido), el proyector de la película (traqueteo), las bacterias que se dividen (blub), el reloj de las 21 horas (tictac acelerado).
 
 ## Descripción (para publicar)
-"Un gramo de ADN puede guardar 215 millones de gigas: más de un millón de celulares de 128 GB. 🧬💾
+"Un gramo de ADN puede guardar 215 millones de gigas: más de un millón de celulares de 128 GB (récord logrado en 2017). 🧬💾
 
 Tus archivos son ceros y unos. El ADN se escribe con cuatro letras: A, C, G y T. Así que se puede traducir: la forma más simple es usar una letra por cada par de bits (00 = A, 01 = C, 10 = G, 11 = T); los códigos reales son más listos y evitan repetir mucho la misma letra. Luego una máquina **sintetiza** miles de hebras cortas de ADN con esas letras, se guardan **secas**, y para leer el archivo se **secuencian** y las letras se vuelven a convertir en ceros y unos.
 

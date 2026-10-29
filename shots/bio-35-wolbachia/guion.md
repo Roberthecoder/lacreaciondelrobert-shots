@@ -69,3 +69,23 @@ No es un mosco transgénico: no se le cambian los genes, solo lleva una bacteria
   - "We now estimate the proportion of Wolbachia-infected species to be around 40%" (2012; artrópodos terrestres)
 
 **No se usa ninguna cifra de dengue en México/Jalisco**: no se encontró el panorama epidemiológico oficial de cierre de año abierto en la fuente; mejor no decir número.
+
+## Robert en pantalla
+
+Entra desde el cuadro 0 con el gancho, vuelve cada 3–8 s y nunca tapa el subtítulo, los números ni las etiquetas (lados `gancho`, `izq-alto`, `arriba-der` y `grande`). Tiempos con las escenas del `Shot Wolbachia base narrada.dc.html` (61.5 s).
+
+### 10 apariciones, **37.1 s en pantalla** (de 61.5 s) · 7 poses distintas · 2 en grande
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0.0 – 4.2 | sorprendido (11) | gancho | «ese mosco no viene a enfermarte» |
+| 5.4 – 8.3 | señalando (13) | izq-alto | señala a los insectos con *Wolbachia* |
+| 11.0 – 14.5 | bajando lentes (04) | arriba-der | «la criaron en células de mosco» |
+| 19.9 – 24.0 | serio (10) | izq-alto | «por donde te contagia» |
+| 24.3 – 27.8 | pensativo (07) | **grande** | re-gancho: «¿cómo llega a todos?» |
+| 31.0 – 34.8 | sorprendido (11) | arriba-der | «los huevos no nacen» |
+| 41.5 – 44.3 | sonriendo (05) | arriba-der | las 12 zonas que se encienden en Yogyakarta |
+| 45.0 – 50.4 | apuntando (02) | izq-alto | −77 % y −86 % |
+| 50.8 – 53.7 | bajando lentes (04) | **grande** | «no es transgénico» |
+| 54.1 – 57.9 | señalando (13) | gancho | cierre: «frena al dengue» |
+| 58.0 – 61.5 | apuntando (02) | cierre | `CierreMarca robert=` junto al logo |

@@ -200,7 +200,7 @@ function Petasa() {
   const cae = kprog(T, K.G, K.G + 0.4, (p) => p * p);
   const rebote = Math.abs(Math.sin(kprog(T, K.G + 0.4, K.G + 1.0) * Math.PI)) * (1 - kprog(T, K.G + 0.4, K.G + 1.0)) * 70;
   const recoge = kprog(T, K.Re + 0.9, K.Re + 1.4, kEase.sale), lleva = kprog(T, K.Re + 1.5, K.Re + 2.7, kEase.suave);
-  const botR = { x: klerp(330, 760, lleva), y: klerp(1080, 760, lleva) - Math.sin(lleva * Math.PI) * 150 - recoge * 60 + kprog(T, K.Re + 2.7, K.Re + 3.2) * 150 };
+  const botR = { x: klerp(330, 760, lleva), y: klerp(1080, 800, lleva) - Math.sin(lleva * Math.PI) * 40 - recoge * 60 + kprog(T, K.Re + 2.7, K.Re + 3.2) * 150 };
   const dias = 42 * kprog(T, K.Le + 2.3, K.Le + 5.2);
   const horas = 10 * kprog(T, K.Di + 0.3, K.Di + 3.2, kEase.suave);
 
@@ -349,7 +349,7 @@ function Petasa() {
         <SvgCapa>
           <Contenedor x={760} y={980} />
           <BotellaPET x={botR.x} y={botR.y} rot={klerp(78, 160, lleva)} aplasta={0.55} s={klerp(1, 0.55, lleva)} />
-          {T < K.Re + 2.9 && <Mano x={botR.x + 20} y={klerp(500, botR.y - 160, kprog(T, K.Re + 0.2, K.Re + 0.9, kEase.sale))} rot={-8} cierra={recoge} />}
+          {T < K.Re + 2.2 && <g opacity={1 - kprog(T, K.Re + 1.8, K.Re + 2.2)}><Mano x={botR.x + 20} y={klerp(500, botR.y - 160, kprog(T, K.Re + 0.2, K.Re + 0.9, kEase.sale))} rot={-8} cierra={recoge} /></g>}
           {T > K.Ci && (() => { const e = kprog(T, K.Ci + 0.5, K.Ci + 1.3, kEase.rebote); return <BotellaPET x={330} y={klerp(1200, 940, e)} s={klerp(0.2, 1, e)} nueva={1} T={T} etiqueta={KC.teal} />; })()}
         </SvgCapa>
         <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="PET → piezas → PET" x={330} y={470} tam={40} borde={KC.gold} />
