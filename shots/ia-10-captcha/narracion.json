@@ -9,11 +9,11 @@
     },
     {
       "escena": "Marcador",
-      "texto": "Las personas atinaron de cincuenta a ochenta y cinco por ciento; la mayoría de los bots, más de noventa y seis."
+      "texto": "Las personas atinaron de cincuenta a ochenta y cinco por ciento; los bots de estudios de 2014 a 2021, casi todos más de noventa y seis."
     },
     {
       "escena": "Estudio",
-      "texto": "Lo comparó la Universidad de California en Irvine en 2023: mil cuatrocientas personas, catorce mil captchas."
+      "texto": "Lo juntó la Universidad de California en Irvine en 2023: mil cuatrocientas personas, catorce mil captchas."
     },
     {
       "escena": "Letras",
@@ -25,7 +25,7 @@
     },
     {
       "escena": "Libros",
-      "texto": "Y tú ya trabajaste para las máquinas: muchas palabras que tecleabas eran de libros escaneados que la computadora no leía."
+      "texto": "Y si usaste internet hace unos años, ya trabajaste para las máquinas: muchas palabras que tecleabas eran de libros escaneados que la computadora no leía."
     },
     {
       "escena": "Libros",
@@ -37,15 +37,15 @@
     },
     {
       "escena": "Movimiento",
-      "texto": "Hoy importa menos lo que escribes: la casilla «no soy un robot» mira lo que haces antes, durante y después del clic."
+      "texto": "Desde 2014, la casilla «no soy un robot» se fija en cómo la usas, antes, durante y después del clic."
     },
     {
       "escena": "Calificacion",
-      "texto": "Y la versión tres ni pregunta: califica cada visita de cero, bot, a uno, humano."
+      "texto": "Y la versión tres ni pregunta: califica cada acción de cero, bot, a uno, humano."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que el bot te gana leyendo: la prueba ya es todo lo que haces."
+      "texto": "Así que el bot te gana leyendo: la prueba ya es cómo te portas en la página."
     }
   ]
 }
