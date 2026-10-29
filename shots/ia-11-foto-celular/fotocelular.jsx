@@ -86,9 +86,9 @@ function Abanico({ x, y, T, abre, n = 13, w = 170 }) {
   return <g>{out}</g>;
 }
 // Sensor: mosaico de pixeles (rojo/verde/azul) donde caen poquitos fotones.
-const SEN_COLS = 8, SEN_FILAS = 5, SEN_C = 104;
+const SEN_COLS = 8, SEN_FILAS = 4, SEN_C = 104;
 const SEN_FOT = (() => { const r = krng(77); return Array.from({ length: 26 }, () => ({ c: Math.floor(r() * SEN_COLS), f: Math.floor(r() * SEN_FILAS), t: r() * 3.8, dx: r() })); })();
-function Sensor({ T, a, x = 124, y = 700 }) {
+function Sensor({ T, a, x = 124, y = 680 }) {
   const lleg = Array(SEN_COLS * SEN_FILAS).fill(0), fot = [];
   SEN_FOT.forEach((p, i) => { const t0 = a + 0.6 + p.t, u = kprog(T, t0, t0 + 0.7); const cx = x + p.c * SEN_C + SEN_C / 2, cy = y + p.f * SEN_C + SEN_C / 2;
     if (u > 0 && u < 1) fot.push(<circle key={i} cx={cx + (p.dx - 0.5) * 30} cy={klerp(320, cy, u)} r={9} fill={KC.yellow} stroke={KC.ink} strokeWidth={2} />);
@@ -206,7 +206,7 @@ function FotoCelular() {
         {svg(<Sensor T={T} a={K.S} />)}
       </Escena>
       <Chip T={T} at={K.S + 0.3} until={K.Pu - 0.2} texto="por dentro · el sensor" x={330} y={470} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.S + 2.6} until={K.Pu - 0.2} texto="poca luz → foto con ruido" x={540} y={1150} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.S + 2.6} until={K.Pu - 0.2} texto="poca luz → foto con ruido" x={540} y={1125} tam={36} borde={KC.red} />
 
       {/* 3 · una foto larga sale barrida */}
       <Escena T={T} a={K.Pu} b={K.R}>

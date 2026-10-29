@@ -105,14 +105,15 @@ function Torreta({ x, y, s = 1, T = 0 }) {
     <path d="M 0 -70 Q 90 -70 90 10 L 0 10 Z" fill={on ? '#22306a' : KC.blue} stroke={KC.ink} strokeWidth={7} />
   </g>;
 }
-// Cuadrícula de 529 personitas: las primeras `verdes` atinaron (mint), las demás no (rojo).
-function Personas({ T, at, until, total = 529, verdes = 0, rojas = 0, x = 80, y = 950, paso = 20 }) {
+// 100 voces falsas: las primeras `verdes` las descubrieron (azul) y las últimas `rojas` engañaron (rojo).
+function VocesFalsas({ T, at, until, total = 100, verdes = 0, rojas = 0, x = 100, y = 900, paso = 44 }) {
   if (T < at || T > until + 0.4) return null;
-  const o = 1 - kprog(T, until - 0.05, until + 0.4);
-  const cols = 46, out = [], vis = Math.round(total * kprog(T, at, at + 1.6, kEase.sale));
-  for (let i = 0; i < vis; i++) { const c = i % cols, rr = Math.floor(i / cols), px = x + c * paso, py = y + rr * 22;
-    const col = i < verdes ? KC.mint : i >= total - rojas ? KC.red : KC.paper;
-    out.push(<g key={i} transform={`translate(${px} ${py}) scale(.78)`}><circle cy={-6} r={6} fill={col} stroke={KC.ink} strokeWidth={1.5} /><path d="M -9 9 Q 0 -4 9 9 Z" fill={col} stroke={KC.ink} strokeWidth={1.5} /></g>); }
+  const o = kprog(T, at, at + 0.4) * (1 - kprog(T, until - 0.05, until + 0.4));
+  const cols = 20, out = [];
+  for (let i = 0; i < total; i++) { const c = i % cols, rr = Math.floor(i / cols), px = x + c * paso, py = y + rr * 54;
+    const col = i < verdes ? KC.blue : i >= total - rojas ? KC.red : KC.paper, lin = col === KC.paper ? KC.ink : KC.white;
+    out.push(<g key={i} transform={`translate(${px} ${py})`}><rect width={36} height={44} rx={8} fill={col} stroke={KC.ink} strokeWidth={3} />
+      {[8, 15, 22, 29].map((bx, k) => <line key={k} x1={bx} x2={bx} y1={22 - [6, 12, 9, 5][k]} y2={22 + [6, 12, 9, 5][k]} stroke={lin} strokeWidth={4} strokeLinecap="round" />)}</g>); }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30, opacity:o }}>{out}</svg>;
 }
 // Tarjeta de paso de defensa (ícono + texto).
@@ -144,7 +145,6 @@ function VozClonada() {
   const svg = (c, z = 20) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>
     <defs><linearGradient id="gradVideo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#7b5cff" /><stop offset="1" stopColor="#ff6bb0" /></linearGradient></defs>{c}</svg>;
   const pix = kprog(T, K.G + 2.0, K.G + 2.8, kEase.sale);
-  const fal = Math.round(529 * 0.73);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el celular suena; la voz se vuelve bloques de IA */}
@@ -227,8 +227,9 @@ function VozClonada() {
         <FondoLunares color={KC.mint} />
       </Escena>
       <TarjetaEstudio T={T} at={K.O + 0.2} until={K.O + 4.6} anio="2023" quien="científicos de Londres (UCL)" revista="Mai et al. · PLOS ONE" y={600} />
-      <Chip T={T} at={K.O + 2.0} until={K.C - 0.2} texto="529 personas escucharon" y={835} tam={38} borde={KC.ink} />
-      <Personas T={T} at={K.O + 2.2} until={K.C - 0.2} verdes={T > K.O + 6.0 ? Math.round(fal * kprog(T, K.O + 6.0, K.O + 7.6, kEase.suave)) : 0} rojas={T > K.O + 7.8 ? 529 - fal : 0} x={90} y={905} />
+      <Chip T={T} at={K.O + 2.0} until={K.O + 5.3} texto="529 personas escucharon" y={835} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.O + 5.6} until={K.C - 0.2} texto="de cada 100 voces falsas" y={835} tam={38} borde={KC.ink} />
+      <VocesFalsas T={T} at={K.O + 5.6} until={K.C - 0.2} verdes={Math.round(73 * kprog(T, K.O + 6.0, K.O + 7.6, kEase.suave))} rojas={T > K.O + 7.8 ? 27 : 0} />
       <NumeroGigante T={T} at={K.O + 5.6} until={K.C - 0.2} valor={73} dur={1.6} sufijo=" %" etiqueta="falsas descubiertas" x={380} y={620} tam={220} color={KC.paper} />
 
       {/* 8 · la confesión: esta voz es clonada, con permiso */}
@@ -243,7 +244,7 @@ function VozClonada() {
       <Escena T={T} a={K.D} b={K.Ci}>
         <FondoLunares color={KC.teal} />
       </Escena>
-      <MitoTachado T={T} at={K.D + 0.3} tacharEn={K.D + 1.5} until={K.Ci - 0.2} texto="confiar solo en la voz" y={470} />
+      <MitoTachado T={T} at={K.D + 0.3} tacharEn={K.D + 1.5} until={K.Ci - 0.2} texto="confiar solo en la voz" y={480} tam={52} />
       <PasoDefensa T={T} at={K.D + 2.4} until={K.Ci - 0.2} n="1" icono="🔑" texto="palabra clave en familia" y={680} />
       <PasoDefensa T={T} at={D2 + 0.8} until={K.Ci - 0.2} n="2" icono="☎️" texto="cuelga y marca tú al número que ya conoces" y={930} />
 

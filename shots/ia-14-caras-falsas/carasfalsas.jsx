@@ -68,14 +68,14 @@ function DosCaras({ T, entra = 1, boceto = 0, sello = 0, mano = null }) {
   const dy = (1 - entra) * 900;
   return <>
     <g transform={`translate(0 ${dy})`}>
-      <Retrato x={292} y={930} s={0.9} letra="A" boceto={boceto} sello={sello}>
+      <Retrato x={292} y={912} s={0.9} letra="A" boceto={boceto} sello={sello}>
         <Cara x={0} y={-20} s={1.15} T={T} piel={PIELES[0]} pelo={PELOS[3]} ropa={KC.mint} peinado="largo" sonrisa={0.75} aretes boceto={boceto} mira={Math.sin(T * 1.3)} />
       </Retrato>
-      <Retrato x={790} y={930} s={0.9} letra="B" fondo="#efe3d6" boceto={boceto} sello={sello}>
+      <Retrato x={790} y={912} s={0.9} letra="B" fondo="#efe3d6" boceto={boceto} sello={sello}>
         <Cara x={0} y={-20} s={1.15} T={T} fase={1.4} piel={PIELES[2]} pelo={PELOS[2]} ropa={KC.blue} peinado="corto" sonrisa={0.45} lentes boceto={boceto} mira={Math.sin(T * 1.1 + 2)} />
       </Retrato>
     </g>
-    {mano != null && <g transform={`translate(${klerp(292, 790, mano)} ${1105 + Math.sin(T * 9) * 8})`}>
+    {mano != null && <g transform={`translate(${klerp(292, 790, mano)} ${1085 + Math.sin(T * 9) * 8})`}>
       <path d="M -18 40 L -18 -30 Q -18 -46 -4 -46 Q 10 -46 10 -30 L 10 -6 Q 30 -14 44 -2 L 44 50 Q 30 76 0 76 Q -30 76 -36 54 L -50 22 Q -54 8 -40 6 Q -30 6 -18 22 Z" fill="#fff" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     </g>}
   </>;
@@ -252,7 +252,7 @@ function CarasFalsas() {
         </>)}
       </Escena>
       <Chip T={T} at={K.Pm + 2.6} until={K.S - 0.2} texto="cara «promedio»" x={540} y={520} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.Pm + 1.0} until={K.S - 0.2} texto="hipótesis de los autores" x={540} y={1170} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Pm + 1.0} until={K.S - 0.2} texto="hipótesis de los autores" x={540} y={1120} tam={34} borde={KC.cyan} />
 
       {/* 8 · 2023: caras blancas de IA, más «humanas» · los que más fallan, más seguros */}
       <Escena T={T} a={K.S} b={K.Cs}>
