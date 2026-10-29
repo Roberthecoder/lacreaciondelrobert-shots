@@ -38,7 +38,7 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Entonces es ino
 | 2 | 6.4 | 9.7 | 13_senalando_arriba | `izq-alto` | «a 78 grados y medio bajo cero» |
 | 3 | 14.5 | 18.1 | 06_pensativo_menton | `arriba-der` | «ese gas no se ve» |
 | 4 | 20.1 | 23.4 | 04_bajando_lentes | `izq-alto` | «se condensa en gotitas diminutas» |
-| 5 | 23.65 | 26.5 | 07_pensativo_puno | `grande` | «¿Entonces es inofensivo?» |
+| 5 | 23.65 | 25.8 | 07_pensativo_puno | `grande` | «¿Entonces es inofensivo?» |
 | 6 | 28.3 | 32.4 | 10_serio_molesto | `arriba-der` | «desplaza el oxígeno… quema por frío» |
 | 7 | 36.2 | 42.6 | 11_sorprendido | `izq-alto` | «terminó desmayado… despertó» |
 | 8 | 43.9 | 49.4 | 13_senalando_arriba | `arriba-der` | «el tapón salió disparado» |
@@ -46,7 +46,7 @@ Tiempos de la base sin voz (atados a cada escena). Grande en «¿Entonces es ino
 | 10 | 54.0 | 58.2 | 02_apuntando_camara | `arriba-der` | «es tu aire, hecho nube» |
 | — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
 
-**Total:** 10 apariciones · ≈ 41 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+**Total:** 10 apariciones · ≈ 40.5 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato y cifra se abrió en la fuente original el 29 oct 2026)
 

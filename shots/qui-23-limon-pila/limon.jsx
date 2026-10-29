@@ -254,9 +254,8 @@ function Limones() {
       <Escena T={T} a={K.Vo} b={K.Da}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <path d="M 510 1180 L 510 870 L 500 840 M 610 1180 L 610 870 L 620 840" fill="none" stroke={KC.ink} strokeWidth={12} transform="translate(0 -300) translate(0 300)" opacity={0} />
-          <path d="M 495 822 L 495 760 L 470 760" fill="none" stroke={KC.ink} strokeWidth={14} strokeLinejoin="round" />
-          <path d="M 645 822 L 645 760 L 650 760" fill="none" stroke={KC.red} strokeWidth={14} strokeLinejoin="round" />
+          <path d="M 513 840 L 513 775 L 472 775 L 472 720" fill="none" stroke={KC.ink} strokeWidth={14} strokeLinejoin="round" />
+          <path d="M 627 840 L 627 775 L 648 775 L 648 720" fill="none" stroke={KC.red} strokeWidth={14} strokeLinejoin="round" />
           <VasoPila T={T} x={570} y={1190} s={0.95} burbujas={0.8} />
           <Voltimetro x={560} y={630} s={1.25} texto={`${klerp(0, 0.91, kprog(T, K.Vo + 1.3, K.Vo + 2.8, kEase.sale)).toFixed(2)} V`} />
           {(() => { const top = 600, bot = 1180, h = bot - top, yv = (v) => bot - h * v / 1.2, f = kprog(T, K.Vo + 1.3, K.Vo + 2.8, kEase.sale);

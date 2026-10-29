@@ -35,3 +35,8 @@
 2. **#14 (escena "Estudio")** — ⚠️ "fabrica" es impreciso: la enzima **libera/suelta** el tioalcohol del precursor. Propuesta:
    "En 2020, en la Universidad de York, Inglaterra, hallaron la enzima de Staphylococcus hominis que suelta el tioalcohol."
    y, por coherencia, en #15: "…y empezó a soltarlo." (opcional; "fabricarlo/producirlo" lo respalda la frase "3M3SH production", pero "soltarlo" es más exacto).
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplicaron tal cual las propuestas del verificador: Olor «Y sueltan ácidos que apestan y tioalcoholes, que llevan azufre.» (S solo en el tioalcohol); Estudio «…que suelta el tioalcohol»; Prueba «empezó a soltarlo». No agregan datos.
+
+VEREDICTO: APROBADO
