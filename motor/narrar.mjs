@@ -180,19 +180,22 @@ const medir = (f) => { const r = spawnSync('ffmpeg', ['-hide_banner', '-nostats'
 const musWav = path.join(dir, 'assets', 'musica_narrada.wav');
 const vozProc = path.join(vozDir, 'voz_procesada.wav');
 ff(['-i', vozWav, '-af', 'highpass=f=70,acompressor=threshold=-22dB:ratio=2.5:attack=8:release=150:makeup=1', '-ar', '48000', vozProc]);
-const gVoz = -16 - medir(vozProc), gMus = -16 - medir(musWav) - 7;
+const MZ = JSON.parse(fs.readFileSync(new URL('./mezcla.json', import.meta.url), 'utf8'));
+const gVoz = MZ.voz_lufs - medir(vozProc), gMus = MZ.voz_lufs - medir(musWav) + MZ.cama_db;
 console.log(`Mezcla: voz ${gVoz >= 0 ? '+' : ''}${gVoz.toFixed(1)} dB · música ${gMus >= 0 ? '+' : ''}${gMus.toFixed(1)} dB (cama por bandas: graves y armónicos presentes, medios bajan al hablar)`);
 // Música por bandas (29 oct 2026, Robert: "los sonidos graves de fondo se opacan por la voz y casi no se escuchan"):
-//  · graves (<220 Hz): +2 dB y casi no bajan al hablar (la voz casi no tiene energía ahí);
+//  · graves (<220 Hz): más fuertes y no bajan al hablar (la voz casi no tiene energía ahí); niveles en motor/mezcla.json;
 //  · armónicos de los graves (240–1800 Hz, saturación suave): para que el bajo se oiga también en la bocina de un celular,
 //    que no reproduce menos de ~200 Hz;
 //  · medios (220–3500 Hz, donde vive la voz): bajan al hablar, como antes;  · agudos (>3.5 kHz): +3 dB, bajan poquito.
+const graves = MZ.graves_bajan_al_hablar
+  ? `[a]lowpass=f=220:p=2,lowpass=f=220:p=2,volume=${MZ.graves_db}dB[lo];[lo][s1]sidechaincompress=threshold=0.05:ratio=1.2:knee=4:attack=80:release=600[lod];`
+  : `[a]lowpass=f=220:p=2,lowpass=f=220:p=2,volume=${MZ.graves_db}dB[lod];[s1]anullsink;`;
 const bandas =
-  `[1:a]volume=${gVoz.toFixed(2)}dB,asplit=4[s1][s2][s3][vz];[0:a]volume=${gMus.toFixed(2)}dB,asplit=4[a][b][c][d];` +
-  '[a]lowpass=f=220:p=2,lowpass=f=220:p=2,volume=2dB[lo];[lo][s1]sidechaincompress=threshold=0.05:ratio=1.2:knee=4:attack=80:release=600[lod];' +
-  '[b]lowpass=f=220:p=2,volume=9dB,asoftclip=type=tanh,highpass=f=240:p=2,highpass=f=240:p=2,lowpass=f=1800,volume=2dB[harm];' +
-  '[c]highpass=f=220:p=2,highpass=f=220:p=2,lowpass=f=3500[mid];[mid][s2]sidechaincompress=threshold=0.03:ratio=1.8:knee=4:attack=40:release=500[midd];' +
-  '[d]highpass=f=3500,volume=3dB[hi];[hi][s3]sidechaincompress=threshold=0.05:ratio=1.3:knee=4:attack=60:release=600[hid];' +
+  `[1:a]volume=${gVoz.toFixed(2)}dB,asplit=4[s1][s2][s3][vz];[0:a]volume=${gMus.toFixed(2)}dB,asplit=4[a][b][c][d];` + graves +
+  `[b]lowpass=f=220:p=2,volume=9dB,asoftclip=type=tanh,highpass=f=240:p=2,highpass=f=240:p=2,lowpass=f=1800,volume=${MZ.armonicos_db}dB[harm];` +
+  `[c]highpass=f=220:p=2,highpass=f=220:p=2,lowpass=f=3500[mid];[mid][s2]sidechaincompress=threshold=0.03:ratio=${MZ.medios_ratio}:knee=4:attack=40:release=500[midd];` +
+  `[d]highpass=f=3500,volume=${MZ.agudos_db}dB[hi];[hi][s3]sidechaincompress=threshold=0.05:ratio=1.3:knee=4:attack=60:release=600[hid];` +
   '[lod][harm][midd][hid]amix=inputs=4:normalize=0[mus];' +
   '[mus][vz]amix=inputs=2:normalize=0,alimiter=limit=0.95:level=false[o]';
 ff(['-i', musWav, '-i', vozProc, '-filter_complex', bandas, '-map', '[o]', '-ar', '48000', path.join(dir, 'assets', 'mezcla_narrada.wav')]);
