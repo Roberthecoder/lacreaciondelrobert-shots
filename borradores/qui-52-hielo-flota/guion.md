@@ -5,8 +5,8 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese hielo de tu vaso no es agua apretada por el frío: es agua inflada, con huecos por dentro."
 - **Distinto de** #18 (helado y sal: bajar el punto de congelación) y #24 (hielo seco: CO₂ sólido que sublima). Aquí el tema es la densidad del hielo de agua y su estructura.
 - **Seguridad:** no se invita a hacer nada; el agua pesada solo se menciona como dato (no se sugiere conseguirla).
-- **Duración:** voz 951 caracteres / 176 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** estimados (`estimar-escenas.mjs`).
-- **Estado:** guion escrito (fase 1); falta verificación independiente, tabla "Robert en pantalla" y animación.
+- **Duración:** voz 951 caracteres / 176 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** en la base sin voz (`gen-audio.mjs`: 61.50 s).
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~951 créditos).
 
 ## Versión narrada
 
@@ -18,7 +18,7 @@
 | 3 | Hexagonos | Al congelarse, esos puentes se quedan fijos: arman hexágonos con un hueco en medio. | Termómetro baja a 0 °C; las moléculas se frenan y se **enganchan** en una red de hexágonos (tipo panal); el centro de cada hexágono se ilumina como "hueco". |
 | 4 | Numero | Por eso la misma agua, hecha hielo, ocupa como 9 por ciento más espacio, y flota. | Un mismo número de moléculas: bloque líquido (caja chica) vs. bloque de hielo (caja más alta) con medidor "+9 %". Chips de densidad: "agua 0 °C · 0.9998 g/cm³" y "hielo 0 °C · 0.917 g/cm³". |
 | 5 | Pregunta | ¿Y qué pasaría si el hielo se hundiera? | **Re-gancho.** Zoom out al vaso; el hielo baja al fondo con un "?" gigante (escena hipotética, marcada "¿y si…?"). |
-| 6 | Lago | Los lagos se congelarían enteros. Pero el hielo se queda arriba, y debajo los peces pasan el invierno en agua líquida. | Corte de un lago (macro): versión "¿y si…?" completamente blanca (tachada) → versión real: capa de hielo arriba, agua azul debajo, termómetro "≈ 4 °C abajo" y peces nadando lento. |
+| 6 | Lago | Los lagos se congelarían enteros. Pero el hielo se queda arriba, y debajo los peces pasan el invierno en agua líquida. | Corte de un lago (macro): versión "¿y si…?" completamente blanca (tachada) → versión real: capa de hielo arriba, agua azul debajo, termómetro "abajo: agua líquida, hasta ≈ 4 °C" y peces nadando lento. |
 | 7 | Galileo | En 1612, en Florencia, Galileo publicó su respuesta a quienes decían que el hielo flota por ser plano: empújalo al fondo y sube solo. | Tarjeta "1612 · Galileo · Florencia · *Discorso intorno alle cose che stanno in su l'acqua*". Un sabio con una placa de hielo plana ("flota por plano") ✗; una mano empuja la placa ancha hasta el fondo de una tina y al soltarla **sube sola** ✓. |
 | 8 | Tuberias | Y esa misma hinchazón revienta tuberías cuando se congelan. | Tubo de agua en invierno; adentro crecen hexágonos; el tubo se abomba y **truena** con grieta y chorrito. |
 | 9 | Curioso | Lo curioso: el hielo de agua pesada, con hidrógenos más pesados, sí se hunde en agua normal. | Dos cubos: uno normal flota; otro verde "D₂O" (los H dibujados más gordos, "D") **se va al fondo**. Chip "agua pesada · deuterio". |
@@ -26,6 +26,26 @@
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave y fría, continua, debajo de la voz; efectos en el mismo cuadro (cubo que cae y salpica, "clic" de cada puente que se forma y se rompe, cristalitos al armarse los hexágonos, "pop" del hielo que sube, crujido del lago, golpe de la tarjeta, tubo que truena, "plop" grave del cubo que se hunde).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y qué pasaría si el hielo se hundiera?» y en el dato del agua pesada.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «es agua inflada, con huecos por dentro» |
+| 2 | 6.4 | 10.5 | 06_pensativo_menton | `izq-alto` | «El agua hace lo contrario» |
+| 3 | 17.6 | 22.0 | 13_senalando_arriba | `izq-alto` | «arman hexágonos con un hueco en medio» |
+| 4 | 23.2 | 27.0 | 05_sonriendo_dientes_uniformes | `izq-alto` | «9 por ciento más espacio, y flota» |
+| 5 | 27.3 | 31.3 | 07_pensativo_puno | `grande` | «¿Y qué pasaría si el hielo se hundiera?» |
+| 6 | 32.4 | 36.6 | 04_bajando_lentes | `izq-alto` | «los peces pasan el invierno en agua líquida» |
+| 7 | 39.7 | 44.5 | 12_perfil_serio | `izq-alto` | «empújalo al fondo y sube solo» |
+| 8 | 45.1 | 48.3 | 11_sorprendido | `arriba-der` | «revienta tuberías» |
+| 9 | 48.8 | 53.8 | 13_senalando_arriba | `grande` | «el hielo de agua pesada sí se hunde» |
+| 10 | 54.4 | 57.9 | 02_apuntando_camara | `arriba-der` | «es agua llena de huecos» |
+| — | 58.0 | 61.5 | 05_sonriendo_dientes_uniformes | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 42 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 29 oct 2026)
 
@@ -51,7 +71,7 @@
 
 ## Notas
 - El dibujo es esquemático: moléculas en "V", puentes como líneas punteadas, el panal de hexágonos simplificado a 2D (en 3D la red del hielo común es hexagonal con cada molécula unida a vecinas en forma de tetraedro).
-- "Como 9 por ciento más espacio" sale de la tabla de densidades (0.9998 → 0.9168 g/cm³); USGS dice "about 9 percent". En pantalla: 0.917 g/cm³ (hielo) vs 0.9998 g/cm³ (agua a 0 °C); el agua más densa (≈ 1.000 g/cm³) está a ≈ 4 °C, que es la que queda en el fondo del lago (dato para pantalla y descripción).
+- "Como 9 por ciento más espacio" sale de la tabla de densidades (0.9998 → 0.9168 g/cm³); USGS dice "about 9 percent". En pantalla: 0.917 g/cm³ (hielo) vs 0.9998 g/cm³ (agua a 0 °C); el agua más densa (≈ 1.000 g/cm³) está a ≈ 4 °C; en lagos hondos el agua del fondo se queda cerca de 4 °C, pero en lagos grandes y poco profundos puede enfriarse a ~0 °C (Yang et al., U. de Toronto, 2020), por eso la pantalla dice "abajo: agua líquida, hasta ≈ 4 °C".
 - Galileo: la discusión fue en el verano de 1611 y la respuesta se publicó en Florencia en 1612; por eso la voz dice "publicó su respuesta". "Empújalo al fondo y sube solo" resume su argumento ("a piece of Ice of very broad Figure being thrust to the botome … suddenly return to flote atoppe"); no se afirma que lo hiciera en público.
 - La escena "¿y si el hielo se hundiera?" es hipotética y se marca así en pantalla.
 - Agua pesada: el D₂O es un compuesto de laboratorio; no se invita a conseguirlo. El dato de USGS de "10.6 percent denser" se refiere en realidad al agua pesada líquida, no al hielo (Maitra y Zare dan 1017.5 kg/m³ para el hielo de D₂O); por eso la voz no da porcentaje.

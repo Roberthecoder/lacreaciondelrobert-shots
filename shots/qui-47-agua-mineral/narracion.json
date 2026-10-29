@@ -1,0 +1,18 @@
+{
+  "dcHtml": "Shot AguaMineral base narrada.dc.html",
+  "salida": "Shot AguaMineral narrado.dc.html",
+  "nota": "Shot Químico #47. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese piquete del agua mineral casi no viene de las burbujas: es un ácido que se forma en tu lengua." },
+    { "escena": "Acido", "texto": "El dióxido de carbono disuelto se une al agua y forma ácido carbónico, un ácido débil." },
+    { "escena": "Ph", "texto": "En 2016, en Birmingham, Alabama, midieron aguas minerales con gas: pH cerca de 5; el agua de la llave de ahí, 7.2." },
+    { "escena": "Enzima", "texto": "En tu boca, la enzima anhidrasa carbónica convierte el gas en ácido en tu lengua." },
+    { "escena": "Nervios", "texto": "Ese ácido despierta nervios del dolor: por eso pica." },
+    { "escena": "Agrio", "texto": "En 2009, en San Diego, vieron en ratones que también lo detectan las células del sabor agrio." },
+    { "escena": "Pregunta", "texto": "¿Y sin burbujas, deja de picar?" },
+    { "escena": "Camara", "texto": "En 2013, en Filadelfia, metieron gente a una cámara a presión que impide las burbujas: picó casi igual." },
+    { "escena": "Dientes", "texto": "¿Y tus dientes? En 2001, en Birmingham, Inglaterra, en el laboratorio, el agua con gas disolvió dientes unas 100 veces menos que los refrescos." },
+    { "escena": "Sabor", "texto": "En 2007, las de sabor salieron tan erosivas como el jugo de naranja, o más." },
+    { "escena": "Cierre", "texto": "Así que ese piquete casi no son las burbujas: es tu lengua haciendo química." }
+  ]
+}

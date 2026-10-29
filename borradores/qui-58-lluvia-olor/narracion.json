@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Lluvia base narrada.dc.html",
+  "salida": "Shot Lluvia narrado.dc.html",
+  "nota": "Shot Químico #58. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese olor a tierra mojada no es la lluvia: es sobre todo una molécula que fabrican bacterias del suelo."
+    },
+    {
+      "escena": "Que",
+      "texto": "Se llama geosmina; la hacen bacterias como Streptomyces al formar esporas."
+    },
+    {
+      "escena": "Nariz",
+      "texto": "Tu nariz la detecta en cantidades ridículas: 4 a 10 nanogramos por litro de agua."
+    },
+    {
+      "escena": "Cuchara",
+      "texto": "Es como notar una cucharadita disuelta en 200 albercas olímpicas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo brinca de la tierra a tu nariz?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2015, en el MIT, filmaron en cámara rápida unos 600 experimentos de gotas sobre tierra y otros materiales."
+    },
+    {
+      "escena": "Burbujas",
+      "texto": "Al pegar, la gota atrapa burbujitas de aire; suben, revientan y lanzan chorritos que se hacen gotitas."
+    },
+    {
+      "escena": "Aerosol",
+      "texto": "Esas gotitas sacan al aire pedacitos del suelo; los autores sospechan que así viaja el olor."
+    },
+    {
+      "escena": "Llovizna",
+      "texto": "Lo vieron con lluvia ligera y moderada; con aguacero fuerte, no."
+    },
+    {
+      "escena": "Colembolos",
+      "texto": "Lo curioso: en 2020 vieron que la geosmina atrae a colémbolos, bichitos que comen la colonia y reparten sus esporas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese olor a lluvia no es la lluvia: es, sobre todo, el aroma de bacterias de la tierra pidiendo aventón."
+    }
+  ]
+}
