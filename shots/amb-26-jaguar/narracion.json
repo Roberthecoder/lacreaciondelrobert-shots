@@ -1,0 +1,52 @@
+{
+  "velocidad": 1.1,
+  "dcHtml": "Shot Jaguar base narrada.dc.html",
+  "salida": "Shot Jaguar narrado.dc.html",
+  "nota": "Shot Ambiental #26. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "A este jaguar nunca lo vas a ver, pero una cámara sí. Sus manchas no son adorno: son su credencial."
+    },
+    {
+      "escena": "Disparo",
+      "texto": "Pasa frente a ella, el movimiento la dispara y clic: queda la foto."
+    },
+    {
+      "escena": "Rosetas",
+      "texto": "Las rosetas de cada jaguar son distintas, como tu huella: así saben si es nuevo o ya visto."
+    },
+    {
+      "escena": "Censo",
+      "texto": "Para el tercer censo nacional pusieron novecientas veinte cámaras en veintitrés sitios, por noventa días."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cuántos crees que hay en todo México?"
+    },
+    {
+      "escena": "Numero",
+      "texto": "Para 2024 calcularon cinco mil trescientos veintiséis; en 2018, cuatro mil ochocientos."
+    },
+    {
+      "escena": "Mapa",
+      "texto": "Casi un tercio vive en la Península de Yucatán, y hay también en Jalisco."
+    },
+    {
+      "escena": "Antes",
+      "texto": "Suena a muchos, pero se estima que a inicios del siglo veinte eran entre veinte y veinticinco mil."
+    },
+    {
+      "escena": "Amenazas",
+      "texto": "Los redujeron la pérdida de selva, la cacería, el tráfico de pieles y colmillos, y hoy también atropellos."
+    },
+    {
+      "escena": "Lados",
+      "texto": "Además, su lado izquierdo y el derecho tienen manchas distintas: por eso suelen usar cámaras en pares."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Sigue en peligro de extinción. Quizá nunca lo veas, pero ojalá la cámara lo siga encontrando."
+    }
+  ]
+}
