@@ -289,12 +289,12 @@ function LangostaShot() {
             const n = Math.round(fiebre ? 2 + grow * 5 : 2 + grow * 20), gris = kprog(T, fiebre ? K.F + 4.6 : K.F + 3.0, fiebre ? K.F + 5.4 : K.F + 3.8);
             const rr = krng(40 + j);
             return <g key={j}>
-              <rect x={cx - 250} y={600} width={500} height={460} rx={34} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={6} />
-              <text x={cx} y={665} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>{fiebre ? 'con fiebre' : 'sin fiebre'}</text>
-              <Langosta T={T} x={cx - 10} y={800} s={0.42} gris={gris} seed={j + 2} />
-              <Termo x={cx + 190} y={800} alto={110} nivel={fiebre ? 0.9 : 0.3} />
-              <circle cx={cx} cy={935} r={100} fill={KC.noche} stroke={KC.ink} strokeWidth={6} />
-              {Array.from({ length: n }, (_, i) => <CuerpoLevadura key={i} x={cx - 60 + rr() * 120} y={895 + rr() * 80} s={0.55} rot={rr() * 180 + T * 10} />)}
+              <rect x={cx - 250} y={650} width={500} height={440} rx={34} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={6} />
+              <text x={cx} y={712} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>{fiebre ? 'con fiebre' : 'sin fiebre'}</text>
+              <Langosta T={T} x={cx - 10} y={850} s={0.42} gris={gris} seed={j + 2} />
+              <Termo x={cx + 190} y={850} alto={110} nivel={fiebre ? 0.9 : 0.3} />
+              <circle cx={cx} cy={985} r={90} fill={KC.noche} stroke={KC.ink} strokeWidth={6} />
+              {Array.from({ length: n }, (_, i) => <CuerpoLevadura key={i} x={cx - 60 + rr() * 120} y={950 + rr() * 70} s={0.5} rot={rr() * 180 + T * 10} />)}
             </g>; })}
         </>)}
       </Escena>
@@ -313,29 +313,29 @@ function LangostaShot() {
       <Escena T={T} a={K.L} b={K.C}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <rect x={60} y={470} width={640} height={200} rx={30} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.L + 0.2, K.L + 0.5)} />
+          <rect x={60} y={470} width={600} height={200} rx={30} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.L + 0.2, K.L + 0.5)} />
           <text x={90} y={550} style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.L + 0.2, K.L + 0.5)}>insecticida químico</text>
           <text x={90} y={630} style={{ font:`700 40px ${KF.mono}` }} fill={KC.red} opacity={kprog(T, K.L + 0.6, K.L + 0.9)}>mata en horas</text>
-          <rect x={60} y={710} width={640} height={200} rx={30} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.L + 0.9, K.L + 1.2)} />
+          <rect x={60} y={710} width={600} height={200} rx={30} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.L + 0.9, K.L + 1.2)} />
           <text x={90} y={790} style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.L + 0.9, K.L + 1.2)}>el hongo</text>
           <text x={90} y={870} style={{ font:`700 40px ${KF.mono}` }} fill={KC.leaf} opacity={kprog(T, K.L + 1.3, K.L + 1.6)}>tarda días o semanas</text>
-          <rect x={0} y={1050} width={KW} height={900} fill="#e2c27a" stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.L + 2.2, K.L + 2.6)} />
-          {[0, 1, 2, 3].map((i) => kprog(T, K.L + 2.4, K.L + 2.6) > 0 ? <Hormiga key={i} T={T} x={140 + i * 90 + ((T * 30) % 60)} y={1110 + (i % 2) * 30} s={1.1} seed={i} /> : null)}
-          {kprog(T, K.L + 2.8, K.L + 3.0) > 0 && <AveVuelo T={T} x={klerp(1150, 760, kprog(T, K.L + 2.8, K.L + 3.6, kEase.sale))} y={990} s={1.2} seed={2} />}
-          {[[300, 1010], [760, 1010]].map(([cx, cy], i) => { const k = kprog(T, K.L + 3.0 + i * 0.3, K.L + 3.3 + i * 0.3, kEase.rebote); return k > 0 ? <g key={i} transform={`translate(${cx} ${cy - 90}) scale(${k})`}><circle r={40} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M -18 0 L -5 14 L 20 -12" stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g> : null; })}
+          <rect x={0} y={1000} width={KW} height={950} fill="#e2c27a" stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.L + 2.2, K.L + 2.6)} />
+          {[0, 1, 2, 3].map((i) => kprog(T, K.L + 2.4, K.L + 2.6) > 0 ? <Hormiga key={i} T={T} x={140 + i * 90 + ((T * 30) % 60)} y={1050 + (i % 2) * 30} s={1.1} seed={i} /> : null)}
+          {kprog(T, K.L + 2.8, K.L + 3.0) > 0 && <AveVuelo T={T} x={klerp(1150, 760, kprog(T, K.L + 2.8, K.L + 3.6, kEase.sale))} y={960} s={1.2} seed={2} />}
+          {[[300, 990], [760, 990]].map(([cx, cy], i) => { const k = kprog(T, K.L + 3.0 + i * 0.3, K.L + 3.3 + i * 0.3, kEase.rebote); return k > 0 ? <g key={i} transform={`translate(${cx} ${cy - 90}) scale(${k})`}><circle r={40} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M -18 0 L -5 14 L 20 -12" stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g> : null; })}
         </>)}
       </Escena>
       {/* 10 · llegan más aves; los cernícalos se llevan más hembras */}
       <Escena T={T} a={K.C} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={900} fill="#e2c27a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1010} width={KW} height={1000} fill="#e2c27a" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 7 }, (_, i) => { const u = kprog(T, K.C + 0.2 + i * 0.25, K.C + 2.2 + i * 0.25, kEase.sale); const izq = i % 2 === 0;
             return u > 0 ? <AveVuelo key={i} T={T} x={klerp(izq ? -120 : 1200, 160 + i * 120, u)} y={klerp(380, 560 + (i % 3) * 110, u) + mece(T, i, 0.6) * 20} s={0.7 + (i % 3) * 0.15} seed={i} color={i % 3 ? '#6e5a40' : '#8a8f99'} /> : null; })}
-          <rect x={250} y={960} width={30} height={260} fill="#8a5a34" stroke={KC.ink} strokeWidth={6} />
+          <rect x={250} y={960} width={30} height={70} fill="#8a5a34" stroke={KC.ink} strokeWidth={6} />
           <Cernicalo T={T} x={260} y={860} s={0.95} presa={kprog(T, K.C + 2.6, K.C + 3.0)} />
-          <Langosta T={T} x={660} y={1170} s={0.3} seed={5} />
-          <Langosta T={T} x={930} y={1170} s={0.21} seed={6} />
+          <Langosta T={T} x={640} y={1080} s={0.3} seed={5} />
+          <Langosta T={T} x={930} y={1080} s={0.21} seed={6} />
         </>)}
       </Escena>
       {/* 11 · México: SENASICA y la cepa donada a Costa Rica */}
@@ -396,14 +396,14 @@ function LangostaShot() {
       <Chip T={T} at={K.R + 1.1} until={K.R + 2.6} texto="día 5: empiezan a morir" x={330} y={690} tam={32} borde={KC.red} />
       <Medidor T={T} at={K.R + 2.6} until={K.L - 0.2} x={60} y={680} ancho={600} etiqueta="eficacia" valor={(t) => 0.8 * kprog(t, K.R + 2.7, K.R + 4.2, kEase.sale)} texto={(v) => Math.round(v * 100) + ' %'} color={KC.leaf} />
       <Chip T={T} at={K.R + 4.2} until={K.L - 0.2} texto="80 % de eficacia contra las langostas (día 21)" x={540} y={850} tam={30} borde={KC.leaf} />
-      <Etq T={T} at={K.L + 2.6} until={K.C - 0.2} x={140} y={1200} texto="hormigas" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.L + 3.0} until={K.C - 0.2} x={1040} y={1200} lado="izq" texto="aves" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.L + 2.6} until={K.C - 0.2} x={140} y={1130} texto="hormigas" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.L + 3.0} until={K.C - 0.2} x={1040} y={1130} lado="izq" texto="aves" tam={30} color={KC.ink} />
       <Chip T={T} at={K.C + 0.3} until={K.M - 0.2} texto="llegan más aves" x={330} y={470} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.C + 1.6} until={K.M - 0.2} x={400} y={800} texto="cernícalo" tam={30} color={KC.ink} />
       <Etq T={T} at={K.C + 1.9} until={K.M - 0.2} x={400} y={850} texto="Falco tinnunculus" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.C + 2.8} until={K.M - 0.2} texto="más hembras (75–80 %)" x={700} y={960} tam={34} borde={KC.pink} />
-      <Etq T={T} at={K.C + 3.2} until={K.M - 0.2} x={560} y={1060} texto="hembra (más grande)" tam={26} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.C + 3.5} until={K.M - 0.2} x={1040} y={1060} texto="macho" tam={26} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.C + 3.2} until={K.M - 0.2} x={560} y={1130} texto="hembra (más grande)" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.C + 3.5} until={K.M - 0.2} x={1040} y={1130} texto="macho" tam={26} color={KC.ink} lado="izq" />
       <Chip T={T} at={K.M + 0.4} until={K.M + 3.0} texto="SENASICA · control biológico" x={360} y={470} tam={34} borde={KC.leaf} />
       <Etq T={T} at={K.M + 0.9} until={K.Ci - 0.2} x={mx(tec)[0] - 30} y={mx(tec)[1] + 20} lado="izq" texto="Tecomán, Col." tam={24} color={KC.ink} />
       <Etq T={T} at={K.M + 1.6} until={K.Ci - 0.2} x={40} y={1490} texto="langosta centroamericana" tam={28} color={KC.ink} />

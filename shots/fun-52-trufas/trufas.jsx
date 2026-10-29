@@ -87,7 +87,7 @@ function PuntaMicorriza({ T, x, y, s = 1, rot = 0, g = 1, seed = 4 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <path d="M -260 -34 L 40 -34 Q 120 -34 120 0 Q 120 34 40 34 L -260 34 Z" fill={TR.raiz} stroke={KC.ink} strokeWidth={7} />
     <path d={`M -200 -46 L 40 -46 Q 138 -46 138 0 Q 138 46 40 46 L -200 46 Z`} fill={TR.manto} stroke={KC.ink} strokeWidth={5} opacity={0.85 * g} />
-    <RedHifas T={T} x={60} y={0} g={g} seed={seed} n={160} escala={0.55} color={TR.manto} ancho={4} />
+    <RedHifas T={T} x={60} y={0} g={g} seed={seed} n={160} escala={0.3} color={TR.manto} ancho={4} />
   </g>;
 }
 // Asca (saco) con esporas ornamentadas (espinas). n esporas (variable; no se rotula).
@@ -200,6 +200,16 @@ function Tripa({ T, y = 900 }) {
     <path d={d} stroke="#8a3448" strokeWidth={210} fill="none" strokeLinecap="round" />
     {Array.from({ length: 9 }, (_, i) => <ellipse key={i} cx={i * 140 - 20 + ((T * 30) % 140)} cy={y + Math.sin((i * 140) / 180) * 30} rx={14} ry={150} fill="none" stroke="#c45a6c" strokeWidth={6} opacity=".55" />)}
   </g>;
+}
+
+// Etiqueta "nombre común · *científico*" (el científico en cursiva).
+function EtqEsp({ T, at, until, x, y, comun, cient, lado = 'der', color = KC.texto, tam = 30 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:12, flexDirection: lado === 'der' ? 'row' : 'row-reverse', transform:`translate(${lado === 'der' ? 0 : '-100%'}, -50%)` }}>
+    <div style={{ width:60 * kprog(T, at, at + 0.4, kEase.sale), height:4, background:color, borderRadius:2 }}></div>
+    <div style={{ font:`700 ${tam}px ${KF.mono}`, color, textShadow:'0 3px 0 rgba(0,0,0,.8), 0 0 18px rgba(0,0,0,.9)', whiteSpace:'nowrap' }}>{comun} · <i>{cient}</i></div>
+  </div>;
 }
 
 function TrufasShot() {
@@ -324,16 +334,16 @@ function TrufasShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Suelo y={1000} />
-          <Hoyo x={190} y={1040} alto={300} texto="feromona" o={kprog(T, K.Pr, K.Pr + 0.4)} />
-          <Hoyo x={560} y={1040} alto={400} texto="sulfuro de dimetilo" o={kprog(T, K.Pr + 0.15, K.Pr + 0.55)} color="#ffe37a" />
-          <Hoyo x={900} y={1040} alto={300} texto="trufa" o={kprog(T, K.Pr + 0.3, K.Pr + 0.7)} />
+          <Hoyo x={190} y={1040} alto={240} texto="feromona" o={kprog(T, K.Pr, K.Pr + 0.4)} />
+          <Hoyo x={560} y={1040} alto={240} texto="sulfuro de dimetilo" o={kprog(T, K.Pr + 0.15, K.Pr + 0.55)} color="#ffe37a" />
+          <Hoyo x={900} y={1040} alto={240} texto="trufa" o={kprog(T, K.Pr + 0.3, K.Pr + 0.7)} />
           <Olor T={T} x={560} y={1020} alto={220} n={2} ancho={40} o={kprog(T, K.Pr + 0.5, K.Pr + 1)} />
           <Olor T={T} x={890} y={1020} alto={220} n={2} ancho={40} o={kprog(T, K.Pr + 0.5, K.Pr + 1)} />
           <Terrones T={T} x={560} y={1010} at={K.Pr + 2.6} n={8} />
           <Terrones T={T} x={890} y={1010} at={K.Pr + 2.5} n={8} />
           <Perro T={T} x={dx} y={990} s={0.85} flip paso={T < K.Pr + 2.4 ? T : 0} baja={T > K.Pr + 2.4 ? 0.6 + 0.3 * Math.sin(T * 14) : 0} />
           <Puerco T={T} x={px} y={1000} s={0.75} color="#f2a0b4" jabali={false} paso={T < K.Pr + 2.4 ? T : 0} baja={T > K.Pr + 2.4 ? 0.6 + 0.3 * Math.sin(T * 14) : 0} />
-          <SelloTexto T={T} at={K.Pr + 4.2} x={300} y={590} texto="EN DUDA" />
+          <SelloTexto T={T} at={K.Pr + 4.2} x={300} y={630} texto="EN DUDA" />
         </>)}
       </Escena>
       {/* 8–9 · Italia 2014: por dentro de la tripa del cerdo, las esporas salen vivas; luego se unen a raíces de encino */}
@@ -382,9 +392,9 @@ function TrufasShot() {
       <Etq T={T} at={K.G + 1.6} until={K.R - 0.3} x={60} y={600} texto="trufa" tam={44} color={KC.ink} />
       <Etq T={T} at={K.G + 2.0} until={K.R - 0.3} x={60} y={660} texto="Tuber" it tam={40} color={KC.ink} />
       <Chip T={T} at={K.G + 3.0} until={K.R - 0.3} texto="por dentro: vetas blancas" x={330} y={1080} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.R + 0.6} until={K.R + 3.2} x={60} y={420} texto="encino · Quercus" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.0} until={K.R + 3.2} x={60} y={470} texto="avellano · Corylus avellana" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.8} until={K.R + 3.2} x={760} y={1110} lado="izq" texto="trufas" tam={30} color={KC.ink} />
+      <EtqEsp T={T} at={K.R + 0.6} until={K.R + 3.2} x={40} y={1185} comun="encino" cient="Quercus" tam={26} />
+      <EtqEsp T={T} at={K.R + 1.0} until={K.R + 3.2} x={1050} y={1185} lado="izq" comun="avellano" cient="Corylus avellana" tam={26} />
+      <Etq T={T} at={K.R + 1.8} until={K.R + 3.2} x={760} y={980} texto="trufas" tam={30} />
       <Chip T={T} at={K.R + 3.6} until={K.Pb - 0.3} texto="AL MICROSCOPIO · micorriza" x={380} y={470} tam={32} borde={KC.mint} />
       <Etq T={T} at={K.R + 3.9} until={K.Pb - 0.3} x={60} y={1170} texto="punta de raíz de encino" tam={28} />
       <Etq T={T} at={K.R + 4.2} until={K.Pb - 0.3} x={1040} y={640} lado="izq" texto="hifas de la trufa" tam={28} color={TR.manto} />
@@ -397,8 +407,7 @@ function TrufasShot() {
       <Chip T={T} at={K.Pb + 3.4} until={K.O - 0.3} texto="bajo tierra: sin viento" x={360} y={470} tam={34} borde={KC.red} />
       <Chip T={T} at={K.O + 0.6} until={K.O + 2.3} texto="decenas de sustancias" x={360} y={470} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.O + 2.8} until={K.P - 0.3} x={60} y={800} texto="sulfuro de dimetilo · (CH₃)₂S" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.8} until={K.H - 0.3} x={60} y={600} texto="jabalí" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.1} until={K.H - 0.3} x={60} y={650} texto="Sus scrofa" it tam={32} color={KC.ink} />
+      <EtqEsp T={T} at={K.A + 0.8} until={K.H - 0.3} x={40} y={560} comun="jabalí" cient="Sus scrofa" tam={32} color={KC.ink} />
       <Chip T={T} at={K.A + 4.3} until={K.H - 0.3} texto="esporas de viaje" x={360} y={470} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.H + 0.4} until={K.Pr - 0.3} texto="feromona del cerdo macho" x={360} y={470} tam={32} borde={KC.pink} />
       <Chip T={T} at={K.Pr + 0.2} until={K.E - 0.3} texto="Francia · publicado en 1990" x={360} y={470} tam={32} borde={KC.ink} />

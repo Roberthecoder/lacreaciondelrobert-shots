@@ -56,9 +56,9 @@ function PieDeArbol({ T, hif = 1 }) {
     ].map((d, i) => <g key={i}><path d={d} stroke={KC.ink} strokeWidth={46 - i * 6} fill="none" strokeLinecap="round" /><path d={d} stroke={MZ.raiz} strokeWidth={34 - i * 6} fill="none" strokeLinecap="round" /></g>)}
     {[[190, 980, 140, 1030], [520, 990, 470, 1060], [760, 870, 800, 950], [620, 1130, 690, 1180], [110, 1160, 70, 1220]].map(([a, b, c, d], i) =>
       <path key={i} d={`M ${a} ${b} Q ${(a + c) / 2 + 20} ${(b + d) / 2} ${c} ${d}`} stroke={MZ.raiz2} strokeWidth={10} fill="none" strokeLinecap="round" />)}
-    <RedHifas T={T} x={630} y={1135} g={hif} seed={5} n={90} escala={0.075} circ ancho={3.5} color={MZ.hifa} brillo={0.5} />
-    <RedHifas T={T} x={120} y={1170} g={kclamp(hif * 1.2 - 0.1, 0, 1)} seed={7} n={70} escala={0.06} circ ancho={3} color={MZ.hifa} brillo={0.5} />
-    <RedHifas T={T} x={950} y={960} g={kclamp(hif * 1.2 - 0.2, 0, 1)} seed={9} n={70} escala={0.06} circ ancho={3} color={MZ.hifa} brillo={0.5} />
+    <RedHifas T={T} x={630} y={1135} g={hif} seed={5} n={110} escala={0.11} circ ancho={3.5} color={MZ.hifa} brillo={0.5} />
+    <RedHifas T={T} x={120} y={1170} g={kclamp(hif * 1.2 - 0.1, 0, 1)} seed={7} n={80} escala={0.085} circ ancho={3} color={MZ.hifa} brillo={0.5} />
+    <RedHifas T={T} x={950} y={960} g={kclamp(hif * 1.2 - 0.2, 0, 1)} seed={9} n={80} escala={0.085} circ ancho={3} color={MZ.hifa} brillo={0.5} />
   </g>;
 }
 
@@ -261,7 +261,7 @@ function MicorrizasShot() {
       {/* 8–9 · el experimento de 1997 y el debate de 2023 */}
       <Escena T={T} a={K.Si} b={K.Ma} zoom={0.04}>
         <FondoLunares color={T < K.De ? KC.cyan : KC.yellow} />
-        {fsvg(<Experimento T={T} a={K.Si} debate={K.De + 0.6} />)}
+        {fsvg(<g transform="translate(0 -130)"><rect x={0} y={1700} width={KW} height={400} fill={MZ.suelo} /><Experimento T={T} a={K.Si} debate={K.De + 0.6} /></g>)}
       </Escena>
       {/* 10 · ¿el árbol madre? sin evidencia */}
       <Escena T={T} a={K.Ma} b={K.Ci} zoom={0.05}>
@@ -295,15 +295,15 @@ function MicorrizasShot() {
       {/* textos y sellos */}
       <Chip T={T} at={K.G + 1.0} until={K.G + 3.1} texto="¿internet del bosque?" x={380} y={470} tam={38} borde={KC.blue} />
       <Chip T={T} at={K.G + 3.6} until={K.V - 0.3} texto="es un mercado" x={380} y={470} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.G + 1.4} until={K.V - 0.3} x={60} y={1260 - 60} texto="micelio (hongo)" tam={30} />
+      <Etq T={T} at={K.G + 1.4} until={K.V - 0.3} x={40} y={1090} texto="hilitos de hongo" tam={30} />
       <Chip T={T} at={K.V + 0.3} until={K.Mi - 0.3} texto="lo que se hizo viral" x={420} y={430} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.V + 1.6} until={K.Mi - 0.3} x={640} y={640} texto="«árbol madre»" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.V + 1.6} until={K.Mi - 0.3} x={180} y={495} texto="«árbol madre»" tam={30} color={KC.ink} />
       <SelloRect T={T} at={K.Mi + 0.2} until={K.Tr - 0.3} x={380} y={440} titulo="COMPROBADO" color={KC.leaf} rot={-6} tam={66} />
-      <Etq T={T} at={K.Mi + 1.0} until={K.Tr - 0.2} x={1030} y={1230 - 60} lado="izq" texto="manto de hongo" tam={30} color={MZ.hifa} />
+      <Etq T={T} at={K.Mi + 1.0} until={K.Tr - 0.2} x={40} y={1120} texto="manto de hongo" tam={30} color={MZ.hifa} />
       <Etq T={T} at={K.Mi + 1.8} until={K.Tr - 0.2} x={60} y={560} texto="red de Hartig (entre células)" tam={28} color={MZ.hifa} />
       <Etq T={T} at={K.Mi + 2.4} until={K.Tr - 0.2} x={60} y={620} texto="micorriza = hongo + raíz" tam={28} color={KC.gold2} />
       <Chip T={T} at={K.Tr + 0.5} until={K.Ca - 0.3} texto="hongo → planta: fósforo · nitrógeno" x={540} y={440} tam={32} borde="#7cc8ff" />
-      <Chip T={T} at={K.Tr + 1.8} until={K.Ca - 0.3} texto="planta → hongo: carbono, sobre todo azúcares" x={540} y={1180} tam={30} borde={KC.gold2} />
+      <Chip T={T} at={K.Tr + 1.8} until={K.Ca - 0.3} texto="planta → hongo: carbono, sobre todo azúcares" x={540} y={525} tam={30} borde={KC.gold2} />
       <Chip T={T} at={K.Ca + 0.4} until={K.P - 0.3} texto="85 % de las plantas vasculares · 8 % nunca" x={540} y={460} tam={32} borde={KC.leaf} />
       <Etq T={T} at={K.R + 0.3} until={K.Si - 0.3} x={60} y={430} texto="abeto de Douglas" tam={32} color={KC.ink} />
       <Etq T={T} at={K.R + 0.6} until={K.Si - 0.3} x={60} y={480} texto="Pseudotsuga menziesii" it tam={30} color={KC.ink} />
@@ -312,25 +312,25 @@ function MicorrizasShot() {
       <Chip T={T} at={K.R + 2.4} until={K.Si - 0.3} texto="mismo ADN" x={880} y={1050} tam={30} borde={KC.orange} />
       <SelloRect T={T} at={K.R + 3.0} until={K.Si - 0.3} x={860} y={1160} titulo="COMPROBADO" sub="comparten hongo" color={KC.leaf} rot={-8} tam={46} />
       <Chip T={T} at={K.R + 0.9} until={K.Si - 0.3} texto="Canadá · Beiler et al., 2010" x={410} y={560} tam={26} borde={KC.ink} mono />
-      <TarjetaEstudio T={T} at={K.Si + 0.2} until={K.Si + 3.4} anio="1997" quien="oeste de Canadá" revista="Simard et al., Nature" y={500} />
-      <Etq T={T} at={K.Si + 2.0} until={K.Ma - 0.3} x={60} y={1260 - 120} texto="abedul de papel" tam={28} color={KC.white} />
-      <Etq T={T} at={K.Si + 2.3} until={K.Ma - 0.3} x={60} y={1260 - 75} texto="Betula papyrifera" it tam={26} color={KC.white} />
-      <Etq T={T} at={K.Si + 2.6} until={K.Ma - 0.3} x={1030} y={1260 - 120} lado="izq" texto="abeto de Douglas" tam={28} color={KC.white} />
-      <Etq T={T} at={K.Si + 2.9} until={K.Ma - 0.3} x={1030} y={1260 - 75} lado="izq" texto="Pseudotsuga menziesii" it tam={26} color={KC.white} />
+      <TarjetaEstudio T={T} at={K.Si + 0.2} until={K.Si + 3.4} anio="1997" quien="oeste de Canadá" revista="Simard et al., Nature" y={440} />
+      <Etq T={T} at={K.Si + 2.0} until={K.De + 0.4} x={40} y={1000} texto="abedul de papel" tam={28} color={KC.white} />
+      <Etq T={T} at={K.Si + 2.3} until={K.De + 0.4} x={40} y={1045} texto="Betula papyrifera" it tam={26} color={KC.white} />
+      <Etq T={T} at={K.Si + 2.6} until={K.De + 0.4} x={1040} y={1000} lado="izq" texto="abeto de Douglas" tam={28} color={KC.white} />
+      <Etq T={T} at={K.Si + 2.9} until={K.De + 0.4} x={1040} y={1045} lado="izq" texto="Pseudotsuga menziesii" it tam={26} color={KC.white} />
       <Chip T={T} at={K.Si + 3.6} until={K.De - 0.1} texto="carbono marcado ●" x={420} y={440} tam={34} borde={KC.yellow} />
-      <SelloRect T={T} at={K.De + 0.3} until={K.Ma - 0.3} x={330} y={560} titulo="EN DEBATE" color="#d99a00" rot={-7} tam={64} />
+      <SelloRect T={T} at={K.De + 0.3} until={K.Ma - 0.3} x={330} y={590} titulo="EN DEBATE" color="#d99a00" rot={-7} tam={64} />
       <Chip T={T} at={K.De + 0.8} until={K.Ma - 0.3} texto="Karst, Jones y Hoeksema · 2023" x={360} y={410} tam={26} borde={KC.ink} mono />
-      <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={60} y={690} texto="Nature Ecology & Evolution" it tam={26} color={KC.ink} />
-      <Etq T={T} at={K.De + 1.2} until={K.Ma - 0.3} x={540} y={1060} texto="¿por el hongo?" tam={26} color={KC.white} />
-      <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={600} y={1295} texto="¿por el suelo?" tam={26} color={KC.white} />
+      <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={40} y={470} texto="Nature Ecology & Evolution" it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.De + 1.2} until={K.Ma - 0.3} x={600} y={910} texto="¿por el hongo?" tam={26} color={KC.white} />
+      <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={640} y={1110} texto="¿por el suelo?" tam={26} color={KC.white} />
       <Chip T={T} at={K.Ma + 0.3} until={K.Ci - 0.3} texto="¿el árbol madre?" x={380} y={430} tam={40} borde={KC.ink} />
       <SelloRect T={T} at={K.Ma + 2.0} until={K.Ci - 0.3} x={520} y={700} titulo="SIN EVIDENCIA" sub="según Karst et al. 2023" color={KC.red} rot={-8} tam={72} />
       <Chip T={T} at={K.Ci + 1.8} until={K.C - 0.3} texto="×2 en 25 años" x={380} y={470} tam={48} borde={KC.red} />
       <Etq T={T} at={K.Ci + 0.6} until={K.C - 0.3} x={60} y={540} texto="según Karst et al. 2023" tam={26} color={KC.ink} />
-      <SelloRect T={T} at={K.C + 0.6} until={K.Ou} x={260} y={440} titulo="COMPROBADO" sub="es un mercado" color={KC.leaf} rot={-6} tam={40} />
-      <SelloRect T={T} at={K.C + 2.4} until={K.Ou} x={250} y={570} titulo="EN DEBATE" sub="la red entre árboles" color="#d99a00" rot={4} tam={36} />
-      <SelloRect T={T} at={K.C + 3.2} until={K.Ou} x={260} y={700} titulo="SIN EVIDENCIA" sub="el «árbol madre»" color={KC.red} rot={-5} tam={36} />
-      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="internet del bosque: se investiga" x={540} y={830} tam={30} borde={KC.blue} />
+      <SelloRect T={T} at={K.C + 0.6} until={K.Ou} x={270} y={430} titulo="COMPROBADO" sub="es un mercado" color={KC.leaf} rot={-6} tam={44} />
+      <SelloRect T={T} at={K.C + 2.4} until={K.Ou} x={270} y={580} titulo="EN DEBATE" sub="la red entre árboles" color="#d99a00" rot={4} tam={44} />
+      <SelloRect T={T} at={K.C + 3.2} until={K.Ou} x={290} y={735} titulo="SIN EVIDENCIA" sub="el «árbol madre»" color={KC.red} rot={-5} tam={44} />
+      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="internet del bosque: se investiga" x={540} y={870} tam={30} borde={KC.blue} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.V} texto="10 cm" largo={170} />
@@ -354,12 +354,12 @@ function MicorrizasShot() {
       <Subtitulo T={T} idx={8} at={K.De + 0.1} until={K.Ma - 0.1} texto="¿Por el hongo o *por el suelo?*" />
       <Subtitulo T={T} idx={9} at={K.Ma + 0.1} until={K.Ci - 0.1} texto="¿Árbol madre? *Sin estudios que lo prueben.*" />
       <Subtitulo T={T} idx={10} at={K.Ci + 0.1} until={K.C - 0.1} texto="Las citas que exageran: *×2.*" />
-      <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Es un mercado. *Lo demás, se investiga.*" />
+      <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Mercado, sí. *Internet del bosque: se investiga.*" />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 4.6, 'avatar_11_sorprendido', 'gancho'],
         [K.V + 0.5, K.Mi - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [K.Tr + 0.5, K.Ca - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [K.Mi + 0.5, K.Tr + 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.P + 0.05, K.R + 0.3, 'avatar_07_pensativo_puno', 'grande'],
         [K.R + 2.2, K.Si - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.De + 0.5, K.Ma - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
