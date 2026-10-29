@@ -146,7 +146,7 @@ function QuerosenoShot() {
           {kprog(T, K.Ta + 1.2, K.Ta + 2.6) > 0 && Array.from({ length: 22 }, (_, i) => <path key={i} d={`M ${60 + i * 45} ${IY - 20 + (i % 3) * 18} q 22 ${-14 + (i % 4) * 8} 44 0`} stroke={QK.tapete2} strokeWidth={7} fill="none" opacity={kprog(T, K.Ta + 1.2, K.Ta + 2.6)} />)}
           {/* cadenas de esporas que suben a la turbosina */}
           <CadenaEsporas x={300} y={IY - 50} p={kprog(T, K.Ta + 1.8, K.Ta + 3.6)} s={1.0} rot={-6} />
-          <CadenaEsporas x={720} y={IY - 50} p={kprog(T, K.Ta + 2.1, K.Ta + 3.9)} s={1.0} rot={8} />
+          <CadenaEsporas x={580} y={IY - 50} p={kprog(T, K.Ta + 2.1, K.Ta + 3.9)} s={1.0} rot={8} />
         </>)}
       </Escena>
       {/* 6 · pregunta */}
@@ -216,7 +216,7 @@ function QuerosenoShot() {
           <rect x={0} y={1560} width={KW} height={400} fill="#5d6670" />
           <rect x={470} y={1560} width={140} height={400} fill="#3c434b" />
           {Array.from({ length: 5 }, (_, i) => <rect key={i} x={532} y={1580 + i * 70} width={16} height={40} fill="#fff" />)}
-          {T > g0 - 0.3 && <AvionArriba T={T} x={540} y={klerp(1080, 760, desp) + 260 * vuelta * vuelta} s={klerp(0.6, 0.9, desp) - 0.3 * vuelta} rot={kclamp(vuelta * 2.2, 0, 1) * 0 + Math.sin(vuelta * Math.PI) * -22}
+          {T > g0 - 0.3 && <AvionArriba T={T} x={540} y={klerp(1080, 760, desp) + 150 * vuelta * vuelta} s={klerp(0.6, 0.9, desp) - 0.3 * vuelta} rot={kclamp(vuelta * 2.2, 0, 1) * 0 + Math.sin(vuelta * Math.PI) * -22}
             llama={kprog(T, g0 + 1.0, g0 + 1.3) * (1 - kprog(T, K.C - 1.0, K.C - 0.5))} aviso={kprog(T, g0 + 2.2, g0 + 2.6, kEase.rebote) * (1 - kprog(T, K.C - 1.0, K.C - 0.5))} />}
         </>)}
       </Escena>
@@ -252,13 +252,13 @@ function QuerosenoShot() {
       <Chip T={T} at={K.Ag + 0.4} until={K.Fr - 0.3} texto="POR DENTRO · tanque del ala" x={420} y={470} tam={34} borde={KC.ink} mono />
       <Etq T={T} at={K.Ag + 1.2} until={K.Fr - 0.3} x={140} y={700} texto="turbosina" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Ag + 2.6} until={K.Fr - 0.3} x={140} y={1030} texto="agua (abajo)" tam={32} color={KC.white} />
-      <Chip T={T} at={K.Fr + 0.2} until={K.Ta - 0.3} texto="AL MICROSCOPIO · la frontera" x={420} y={470} tam={32} borde={KC.cyan} mono />
+      <Chip T={T} at={K.Fr + 0.2} until={K.Ta - 0.3} texto="AL MICROSCOPIO · la frontera" x={370} y={470} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.Fr + 0.8} until={K.P - 0.3} x={40} y={640} texto="turbosina" tam={30} color={QK.turbo} />
       <Etq T={T} at={K.Fr + 1.0} until={K.P - 0.3} x={40} y={1450} texto="agua" tam={30} color="#9fd3ff" />
       <Etq T={T} at={K.Fr + 1.4} until={K.Ta - 0.3} x={600} y={IY - 120} texto="hifas" tam={30} color={QK.hifa} />
       <Chip T={T} at={K.Ta + 0.2} until={K.P - 0.3} texto="hifas: 2–3 µm de ancho" x={360} y={470} tam={32} borde={QK.hifa} mono />
       <Etq T={T} at={K.Ta + 1.8} until={K.P - 0.3} x={40} y={IY + 120} texto="tapete" tam={30} color="#e8c39a" />
-      <Etq T={T} at={K.Ta + 2.4} until={K.P - 0.3} x={820} y={620} texto="esporas" tam={30} color="#e8c39a" />
+      <Etq T={T} at={K.Ta + 2.4} until={K.P - 0.3} x={640} y={760} texto="esporas" tam={30} color="#e8c39a" />
       <Chip T={T} at={K.D + 0.4} until={K.D + 2.0} texto="filtros tapados" x={380} y={560} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.D + 2.4} until={K.D + 4.0} texto="ácidos orgánicos → corrosión" x={420} y={560} tam={36} borde={KC.red} />
       <Etq T={T} at={K.D + 2.6} until={K.D + 4.0} x={120} y={1090} texto="aluminio" tam={30} color={KC.ink} />
@@ -267,19 +267,19 @@ function QuerosenoShot() {
       <Chip T={T} at={K.E + 3.6} until={K.R - 0.3} texto="ADN de la mugre" x={360} y={470} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.E + 5.0} until={K.R - 0.3} texto="el hongo más abundante:" x={540} y={1450} tam={36} borde={KC.leaf} />
       <Etq T={T} at={K.E + 5.4} until={K.R - 0.3} x={330} y={1530} texto="Amorphotheca" it tam={44} color={KC.ink} />
-      <Etq T={T} at={K.R + 0.5} until={K.Ga - 0.3} x={370} y={645} texto="drenaje de agua" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.R + 0.5} until={K.Ga - 0.3} x={350} y={730} texto="drenaje de agua" tam={28} color={KC.ink} />
       <Etq T={T} at={K.R + 2.0} until={K.Ga - 0.3} x={690} y={890} lado="izq" texto="biocida" tam={30} color={KC.ink} />
       <Chip T={T} at={K.R + 2.4} until={K.Ga - 0.3} texto="dosis exacta" x={760} y={1440} tam={38} borde={KC.leaf} />
       <NumeroGigante T={T} at={K.Ga + 0.2} until={g0 - 0.2} valor={38} dur={0.9} prefijo="≈" sufijo="×" etiqueta="la dosis de biocida" x={400} y={820} tam={260} color={KC.red} />
-      <Chip T={T} at={K.Ga + 0.4} until={K.C - 0.3} texto="2020 · Gatwick, Londres" x={380} y={470} tam={36} borde={KC.ink} mono />
+      <Chip T={T} at={K.Ga + 0.4} until={K.C - 0.3} texto="2020 · Gatwick, Londres" x={540} y={1650} tam={36} borde={KC.ink} mono />
       <Chip T={T} at={g0 + 1.2} until={K.C - 0.6} texto="motor 1: llamas" x={300} y={1450} tam={32} borde={KC.orange} mono />
       <Chip T={T} at={g0 + 2.4} until={K.C - 0.6} texto="motor 2: aviso" x={780} y={1450} tam={32} borde={KC.yellow} mono />
       <Chip T={T} at={K.C - 2.0} until={K.C - 0.2} texto="aterrizó · 0 heridos" x={540} y={1550} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="¿mugre? o ¿un hongo con hambre de turbosina?" x={540} y={1460} tam={32} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="10 cm" largo={160} color={KC.ink} />
-      <BarraEscala T={T} at={K.N} until={K.Cr} texto="10 m" largo={190} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="10 cm" largo={160} color={KC.ink} y={1600} />
+      <BarraEscala T={T} at={K.N} until={K.Cr} texto="10 m" largo={190} color={KC.ink} y={1720} />
       <BarraEscala T={T} at={K.Cr} until={K.Ag} texto="1 m" largo={170} y={1560} color={KC.ink} />
       <BarraEscala T={T} at={K.Ag} until={K.Fr} texto="50 cm" largo={300} color={KC.ink} y={1500} />
       <BarraEscala T={T} at={K.Fr} until={K.P} texto="10 µm" largo={120} y={1500} />
@@ -287,7 +287,7 @@ function QuerosenoShot() {
       <BarraEscala T={T} at={K.E} until={K.R} texto="5 cm" largo={110} y={1620} color={KC.ink} />
       <BarraEscala T={T} at={K.R} until={K.Ga} texto="10 cm" largo={130} y={1500} color={KC.ink} />
       <BarraEscala T={T} at={K.Ga} until={K.C} texto="10 m" largo={140} y={1500} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={160} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={160} color={KC.ink} y={1600} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No siempre es mugre: *puede ser un hongo.*" />
@@ -311,7 +311,7 @@ function QuerosenoShot() {
         [K.D + 2.6, K.D + 5.8, 'avatar_10_serio_molesto', 'arriba-der'],
         [K.E + 3.0, K.R - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.R + 0.4, K.Ga - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
-        [K.Ga + 3.4, K.C - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
+        [K.Ga + 3.4, K.C - 0.2, 'avatar_11_sorprendido', 'izq-alto'],
         [K.C + 0.4, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="biologia" num="51" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="biologia" robert={'assets/stickers/avatar_13_senalando_arriba.png'} />

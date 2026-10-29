@@ -12,10 +12,10 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es un mercado. | Fondo menta: una mano escarba al pie de un árbol (cuadro 0.3) y levanta una raicita con hilos blancos. Aparece un ícono de wifi sobre la raíz y se tacha; en su lugar, un toldo de mercado. |
+| 0 | Gancho | Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es un mercado. | Fondo menta: pie de un árbol de cerca, raíces en el suelo; desde el cuadro 0 crece el micelio blanco en las puntas («hilitos de hongo»). Sale un ícono de wifi («¿internet del bosque?»), se tacha y en su lugar cae un toldo de mercado («es un mercado»). |
 | 1 | Viral | Seguro oíste que un árbol madre alimenta a sus hijos por una red de hongos. | Teléfono vertical con un "video viral": árbol grande con corona y arbolitos, flechas brillantes por una red de cables. Chip "lo que se hizo viral". |
-| 2 | Micorriza | Lo comprobado: esos hongos, las micorrizas, se meten en las raíces. | Sello verde **COMPROBADO**. Bajamos a la punta de la raíz (fondo oscuro): las hifas envuelven la raíz y entran entre sus células. Etiqueta "micorriza (hongo + raíz)". Barra 100 µm. |
-| 3 | Trato | Le dan a la planta fósforo y nitrógeno, y ella les paga con carbono: sobre todo azúcares. | Mercado: del hongo a la raíz viajan bolitas "P" y "N"; de la raíz al hongo, cubitos de azúcar. Chips "fósforo · nitrógeno" ⇄ "carbono: sobre todo azúcares". |
+| 2 | Micorriza | Lo comprobado: esos hongos, las micorrizas, se meten en las raíces. | Fondo oscuro, raicita por dentro (esquemática): estela, corteza, epidermis; el hongo forma el **manto** por fuera y la **red de Hartig** entre las células; hifas hacia el suelo. Sello verde **COMPROBADO**. Etiquetas «manto de hongo», «red de Hartig (entre células)», «micorriza = hongo + raíz». Barra 100 µm. |
+| 3 | Trato | Le dan a la planta fósforo y nitrógeno, y ella les paga con carbono: sobre todo azúcares. | Mismo corte: bolitas P y N entran del suelo a la raíz; cubitos de azúcar salen de la raíz al hongo. Chips «hongo → planta: fósforo · nitrógeno» y «planta → hongo: carbono, sobre todo azúcares». |
 | 4 | Casitodas | Y no es raro: más de ocho de cada diez especies de plantas las tienen. | Cuadrícula de 10 plantitas: se encienden 8 y media (85 %). Chip "85 % de las plantas vasculares · 8 % nunca". |
 | 5 | Pregunta | ¿Pero un mismo hongo puede estar en varios árboles a la vez? | **Re-gancho.** "?" gigante sobre dos árboles y un mismo hongo entre sus raíces; Robert grande, pensativo. |
 | 6 | Red | En un bosque canadiense, un mismo hongo estaba en raíces de hasta diecinueve abetos. | Mapa de una parcela de 30 × 30 m vista desde arriba: puntos de árboles; un color de hongo (*Rhizopogon*) se enciende en 19 de ellos. Tarjeta "Canadá · Beiler et al., 2010". Chip "mismo ADN". Sello **COMPROBADO** chico: "comparten hongo". Etiqueta "abeto de Douglas · *Pseudotsuga menziesii*". |
@@ -23,12 +23,31 @@
 | 8 | Debate | Pero una revisión de 2023 dice que hay otras explicaciones, como que pasara por el suelo. | Sello amarillo **EN DEBATE**. Dos caminos posibles para los puntos: por la hifa ❓ o por el suelo ❓. Tarjeta "Karst, Jones y Hoeksema, *Nature Ecology & Evolution*, 2023". |
 | 9 | Madre | ¿Y el árbol madre? No halló ni un estudio revisado por científicos, hecho en bosques, que lo demuestre. | Regresa el árbol con corona del video viral; cae el sello rojo **SIN EVIDENCIA** con la línea "según Karst et al. 2023". |
 | 10 | Citas | Y halló que las citas científicas que exageran se duplicaron en veinticinco años. | Gráfica de barras de 25 años que sube al doble; chip "×2 en 25 años". Robert sorprendido. |
-| 11 | Cierre | Así que ese hilito blanco, seguro, es un mercado. Lo del internet del bosque, todavía se investiga. | **Regreso a la imagen del inicio:** la misma raíz con sus hilos blancos, ahora con el toldo de mercado y los tres sellos alineados. Chip "internet del bosque: se investiga". |
+| 11 | Cierre | Así que ese hilito blanco, seguro, es un mercado. Lo del internet del bosque, todavía se investiga. | **Regreso a la imagen del inicio:** el mismo pie de árbol con su micelio y su toldo; caen tres sellos: COMPROBADO «es un mercado», EN DEBATE «la red entre árboles», SIN EVIDENCIA «el «árbol madre»»; un wifi chico con «?». Chip «internet del bosque: se investiga». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert apuntando a cámara. |
 
 **Música:** cama grave y continua, curiosa, sin golpe marcado. Efectos en el mismo cuadro: tierra al escarbar, "bip" del wifi que se apaga, toque de pantalla del teléfono, tres golpes de sello (verde, amarillo, rojo), tintineo de cada bolita P/N y cada cubito de azúcar, encendido de las plantitas, pings al encenderse los 19 árboles, siseo de la bolsa del experimento, "¿?" suave en el debate, barras que suben.
 
-Barra de escala: 10 cm (raíz en la mano), 100 µm (raíz por dentro), 10 m (parcela de 30 × 30 m), 1 m (árboles jóvenes del experimento).
+Barras de escala: 10 cm (pie del árbol y raíces), 100 µm (raicita por dentro), 10 cm (plantitas), 1 m (re-gancho), 10 m (parcela de 30 × 30 m), 10 cm (árboles jóvenes del experimento), 1 m (árbol madre), 10 cm (cierre).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Pero un mismo hongo puede estar en varios árboles a la vez?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «no es el internet del bosque: es un mercado» (cuadro 0) |
+| 2 | 5.7 | 9.3 | 06_pensativo_menton | `arriba-der` | «un árbol madre alimenta a sus hijos» |
+| 3 | 10.0 | 13.7 | 13_senalando_arriba | `arriba-der` | señala el sello COMPROBADO: «las micorrizas se meten en las raíces» |
+| 4 | 22.8 | 26.7 | 07_pensativo_puno | `grande` | «¿un mismo hongo en varios árboles?» |
+| 5 | 28.6 | 31.1 | 04_bajando_lentes | `arriba-der` | «hasta diecinueve abetos» |
+| 6 | 36.9 | 41.4 | 10_serio_molesto | `arriba-der` | «otras explicaciones… por el suelo» |
+| 7 | 42.0 | 47.3 | 12_perfil_serio | `arriba-der` | «¿y el árbol madre?» (SIN EVIDENCIA) |
+| 8 | 47.9 | 52.1 | 11_sorprendido | `arriba-der` | «las citas que exageran se duplicaron» |
+| 9 | 52.7 | 57.9 | 02_apuntando_camara | `arriba-der` | «seguro, es un mercado» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **37.5 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas. Hueco más largo: 13.7 → 22.8 s (9.1 s, en el intercambio y la cuadrícula de plantas, para no tapar los chips).
 
 ## Fuentes
 

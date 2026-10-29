@@ -37,4 +37,3 @@ Fuentes abiertas:
 
 Re-verificación (29 oct 2026): se leyó `narracion.json` completo (997 caracteres). Corregidas las filas 10 (Stanford y Colorado) y 19 (escalas con fuente [CFC] o «esquemático»); los recortes de las filas 1, 9, 14 y 17 no cambian el sentido. Las 22 afirmaciones quedan ✅.
 
-VEREDICTO: APROBADO

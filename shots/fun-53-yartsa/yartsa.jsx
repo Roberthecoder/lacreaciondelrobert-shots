@@ -94,13 +94,13 @@ function Lingote({ x, y, s = 1 }) {
 function MapaRegion({ T, at }) {
   const p = (d) => kprog(T, at + d, at + d + 0.4, kEase.rebote);
   const pais = [['China', 'M 120 600 Q 380 520 700 600 L 700 820 Q 480 880 300 840 Q 160 800 120 600 Z', '#ffd5a8', 0, 360, 700],
-    ['Nepal', 'M 230 870 L 400 880 L 410 925 L 240 915 Z', '#bfe3b4', 0.25, 320, 960],
-    ['Bután', 'M 450 885 L 520 885 L 525 920 L 455 920 Z', '#b3d8ff', 0.4, 560, 960],
+    ['Nepal', 'M 230 870 L 400 880 L 410 925 L 240 915 Z', '#bfe3b4', 0.25, 320, 910],
+    ['Bután', 'M 450 885 L 520 885 L 525 920 L 455 920 Z', '#b3d8ff', 0.4, 600, 914],
     ['India', 'M 120 930 L 600 935 Q 520 1080 380 1150 Q 200 1060 120 930 Z', '#ffe9a8', 0.55, 330, 1050]];
   return <g>
     {pais.map(([n, d, c, dl, lx, ly], i) => { const k = p(dl); return k > 0 ? <g key={i} opacity={kclamp(k, 0, 1)}>
       <path d={d} fill={c} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-      <text x={lx} y={ly} textAnchor="middle" style={{ font:`900 ${n === 'Bután' ? 26 : 34}px ${KF.texto}` }} fill={KC.ink}>{n}</text></g> : null; })}
+      <text x={lx} y={ly} textAnchor="middle" style={{ font:`900 ${n === 'Bután' || n === 'Nepal' ? 28 : 34}px ${KF.texto}` }} fill={KC.ink}>{n}</text></g> : null; })}
   </g>;
 }
 
@@ -200,24 +200,19 @@ function YartsaShot() {
       {/* 8 · el precio: 2017, Pekín, más de 140,000 USD por kilo; más del triple que el oro */}
       <Escena T={T} a={K.Pr} b={K.Re} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(balanza > 0 && <g opacity={kclamp(balanza, 0, 1)} transform="translate(0 0)">
-          <rect x={520} y={760} width={40} height={360} fill="#8a6a44" stroke={KC.ink} strokeWidth={6} />
-          <rect x={400} y={1110} width={280} height={40} rx={12} fill="#8a6a44" stroke={KC.ink} strokeWidth={6} />
-          <g transform={`rotate(${-9 * balanza} 540 770)`}>
-            <rect x={160} y={756} width={760} height={28} rx={12} fill="#b8c0c8" stroke={KC.ink} strokeWidth={6} />
-            <line x1={200} y1={770} x2={200} y2={900} stroke={KC.ink} strokeWidth={5} /><line x1={880} y1={770} x2={880} y2={900} stroke={KC.ink} strokeWidth={5} />
-            <g transform={`rotate(${9 * balanza} 200 900)`}>
-              <path d="M 80 900 L 320 900 Q 300 960 200 960 Q 100 960 80 900 Z" fill="#d9dee4" stroke={KC.ink} strokeWidth={6} />
-              {[[150, 890, 0.45], [205, 880, 0.5], [255, 892, 0.42]].map(([x, y, s], i) => <g key={i} transform={`translate(${x} ${y}) scale(${s}) translate(${-x} ${-y})`}><Yartsa x={x} y={y} angCuerpo={10} angTallo={-150} largo={200} ancho={50} tallo={240} /></g>)}
-              <text x={200} y={1010} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>1 kg</text>
-            </g>
-            <g transform={`rotate(${9 * balanza} 880 900)`}>
-              <path d="M 760 900 L 1000 900 Q 980 960 880 960 Q 780 960 760 900 Z" fill="#d9dee4" stroke={KC.ink} strokeWidth={6} />
-              <Lingote x={830} y={898} s={0.75} /><Lingote x={930} y={898} s={0.75} /><Lingote x={880} y={866} s={0.75} />
-              <text x={880} y={1010} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>3 kg de oro</text>
-            </g>
-          </g>
-        </g>)}
+        {fsvg(balanza > 0 && (() => {
+          // Precio por kilo en 2017 (Hopping et al. 2018): el hongo-oruga (los mejores, Pekín) > 3 × el oro. Barras de precio, no de peso.
+          const base = 1020, A = 380, hH = A * balanza, hO = (A / 3.4) * balanza;
+          return <g opacity={kclamp(balanza, 0, 1)}>
+            <line x1={150} y1={base} x2={930} y2={base} stroke={KC.ink} strokeWidth={7} />
+            <rect x={230} y={base - hH} width={220} height={hH} fill={YC.estroma} stroke={KC.ink} strokeWidth={6} />
+            {[1, 2, 3].map((k) => (A / 3.4) * k <= hH ? <line key={k} x1={230} y1={base - (A / 3.4) * k} x2={450} y2={base - (A / 3.4) * k} stroke={YC.oro} strokeWidth={5} strokeDasharray="14 10" /> : null)}
+            {[1, 2, 3].map((k) => (A / 3.4) * k <= hH ? <text key={'x' + k} x={470} y={base - (A / 3.4) * k + 12} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{k}×</text> : null)}
+            <rect x={630} y={base - hO} width={220} height={hO} fill={YC.oro} stroke={KC.ink} strokeWidth={6} />
+            <text x={340} y={base + 44} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>hongo-oruga</text>
+            <text x={740} y={base + 44} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>oro</text>
+            <text x={540} y={base + 88} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>precio por kilo · 2017</text>
+          </g>; })())}
       </Escena>
       {/* 9 · recolectores: lo desentierran en la montaña */}
       <Escena T={T} a={K.Re} b={K.E} zoom={0.05}>
@@ -291,7 +286,7 @@ function YartsaShot() {
       <Etq T={T} at={K.I + 2.8} until={K.Ta - 0.3} x={60} y={1060} texto="oruga muerta y rígida" tam={32} color={KC.gold2} />
       <Chip T={T} at={K.Ta + 0.2} until={K.P - 0.3} texto="primavera · deshielo" x={330} y={470} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Ta + 2.2} until={K.P - 0.3} x={590} y={640} texto="estroma (el tallo)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ta + 2.4} until={K.P - 0.3} x={600} y={1110} texto="sale de la cabeza" tam={30} />
+      <Etq T={T} at={K.Ta + 2.4} until={K.P - 0.3} x={580} y={1000} texto="sale de la cabeza" tam={30} />
       <NumeroGigante T={T} at={K.Pr + 0.4} until={K.Pr + 2.9} valor={140000} dur={1.0} sufijo=" USD" etiqueta="más de… por kilo" x={540} y={620} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.Pr + 0.9} until={K.Pr + 2.9} texto="Pekín, 2017 · los mejores" x={540} y={800} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Pr + 3.6} until={K.Re - 0.3} texto="más del triple que el oro" x={360} y={480} tam={34} borde={KC.gold} />
@@ -309,12 +304,12 @@ function YartsaShot() {
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="oruga + hongo + ingreso" x={360} y={480} tam={36} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Me} texto="2 cm" largo={160} />
+      <BarraEscala T={T} at={K.G} until={K.Me} texto="2 cm (tallo) · oruga esquemática" largo={160} />
       <BarraEscala T={T} at={K.Me} until={K.L} texto="esquemático" largo={160} />
       <BarraEscala T={T} at={K.L} until={K.I} texto="esquemático" largo={160} />
       <BarraEscala T={T} at={K.I} until={K.Ta} texto="esquemático" largo={160} />
-      <BarraEscala T={T} at={K.Ta} until={K.P} texto="2 cm" largo={120} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={160} />
+      <BarraEscala T={T} at={K.Ta} until={K.P} texto="2 cm (tallo) · oruga esquemática" largo={120} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm (tallo) · oruga esquemática" largo={160} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No es una ramita: *es una oruga.*" />

@@ -21,13 +21,32 @@
 | 7 | Dano | Tapa filtros, y sus ácidos corroen el aluminio; antes, esa corrosión llegó a perforar tanques de las alas. | Tres golpes: el tapete se pega al filtro y el flujo se frena; burbujitas de ácido picando el aluminio; un agujerito en la piel del ala. Chips "filtros tapados", "ácidos orgánicos", "corrosión". |
 | 8 | Estudio | En 2021, en Hamburgo, Alemania, leyeron el ADN de la mugre de seis tanques de aviones: el hongo más abundante fue de este grupo. | `TarjetaEstudio` "2021 · Hamburgo, Alemania · Univ. de Hamburgo y Lufthansa Technik · Frontiers in Microbiology". Seis frascos con mugre café (biopelícula), una doble hélice de ADN encima; de ellos sale el tapete con la etiqueta *Amorphotheca*. Sin contador de 1,200. |
 | 9 | Remedio | Por eso drenan el agua de los tanques y usan biocidas, en dosis exacta. | Macro: válvula de drenaje bajo el ala que suelta el agua; un frasco de biocida con un gotero y la báscula marcando la dosis. Chip "dosis exacta". |
-| 10 | Gatwick | En 2020, cerca de Londres, un avión recibió unas 38 veces la dosis de biocida y sus dos motores empezaron a fallar, pero aterrizó a salvo. | `NumeroGigante` "×38"; un A321 que despega: llamas solo en el motor izquierdo (tirones); en el derecho, solo un aviso y una aguja que oscila; vuelve y aterriza. Chip "AAIB, 2021 · aterrizó sin heridos". |
+| 10 | Gatwick | En 2020, cerca de Londres, un avión recibió unas 38 veces la dosis de biocida y sus dos motores empezaron a fallar, pero aterrizó a salvo. | `NumeroGigante` "×38"; un A321 que despega: llamas solo en el motor izquierdo (tirones); en el derecho, solo un aviso y una aguja que oscila; vuelve y aterriza. Chips "2020 · Gatwick, Londres", "motor 1: llamas", "motor 2: aviso" y "aterrizó · 0 heridos". |
 | 11 | Cierre | Así que esa mancha puede no ser mugre: puede ser un hongo con hambre de turbosina. | **Regreso a la imagen del inicio:** el mismo filtro con las mismas manchas, ahora con la lupa que deja ver hifas dentro. Chip "¿mugre? o ¿un hongo con hambre de turbosina?". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave continua y algo metálica (hangar), sin golpe marcado, siempre debajo de la voz. Efectos en el mismo cuadro: clic del filtro al salir, gotas que se condensan y caen, burbujeo suave en la frontera, crujido de hifas creciendo, tres golpes del daño (flujo que se frena, siseo del ácido, "tic" del agujerito), tics del contador, chorro del drenaje, gotero, golpe del "×38", tos del motor, ruedas al aterrizar.
 
-**Barras de escala:** 10 cm (filtro), 1 m (ala y poste), 10 µm (hifas y esporas).
+**Barras de escala:** 10 cm (filtro), 10 m (avión), 1 m (poste y vía), 50 cm (tanque), 10 µm (hifas y esporas: 10 µm = 120 px; hifas de ~26 px ≈ 2.2 µm, esporas de 30 × 60 px ≈ 2.5 × 5 µm), 1 cm (daño), 5 cm (frascos), 10 cm (drenaje), 10 m (Gatwick).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué le hace al avión?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «no siempre son mugre: pueden ser un hongo» (cuadro 0) |
+| 2 | 6.7 | 12.9 | 06_pensativo_menton | `arriba-der` | «el hongo del queroseno… la creosota» |
+| 3 | 18.8 | 25.7 | 04_bajando_lentes | `arriba-der` | la frontera al microscopio y los tapetes |
+| 4 | 26.3 | 28.5 | 07_pensativo_puno | `grande` | «¿Y qué le hace al avión?» |
+| 5 | 30.5 | 33.7 | 10_serio_molesto | `arriba-der` | «corroen el aluminio… perforar tanques» |
+| 6 | 37.0 | 41.0 | 13_senalando_arriba | `arriba-der` | los 6 frascos de ADN → *Amorphotheca* |
+| 7 | 41.6 | 45.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «drenan el agua… en dosis exacta» |
+| 8 | 48.8 | 53.0 | 11_sorprendido | `izq-alto` | los motores fallan (Gatwick) |
+| 9 | 53.6 | 57.9 | 02_apuntando_camara | `arriba-der` | «un hongo con hambre de turbosina» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **39.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 

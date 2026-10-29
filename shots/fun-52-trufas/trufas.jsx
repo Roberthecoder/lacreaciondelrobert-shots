@@ -227,7 +227,7 @@ function TrufasShot() {
   // Prueba: el cerdo pasa de largo la feromona; el perro va directo a la trufa
   const px = T < K.Pr + 2.4 ? klerp(-250, 470, kprog(T, K.Pr + 0.5, K.Pr + 2.4, kEase.suave)) : 470;
   const dx = klerp(1300, 900, kprog(T, K.Pr + 1.0, K.Pr + 2.4, kEase.sale));
-  const MX = [[-101.6, 19.6], [-99.7, 19.3], [-100.3, 20.6], [-101.2, 21.0], [-98.2, 19.4], [-98.9, 20.1], [-99.8, 23.6], [-100.2, 25.4], [-99.4, 24.6], [-97.9, 22.9], [-96.9, 17.1], [-104.5, 23.8]];
+  const MX = [[-101.6, 19.6], [-99.7, 19.3], [-100.3, 20.6], [-101.2, 21.0], [-98.2, 19.4], [-98.9, 20.1], [-99.8, 23.6], [-100.2, 25.4], [-99.4, 24.6], [-97.9, 22.9]];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: una mano saca una "piedra" de la tierra… es una trufa, y se parte */}
@@ -381,9 +381,9 @@ function TrufasShot() {
           <Mano x={380} y={900} s={1.05} />
           <Suelo y={1150} />
           <Trufa x={380} y={740} s={1.45} rot={-6} />
-          <Olor T={T} x={380} y={630} alto={300} n={3} o={kprog(T, K.C + 0.3, K.C + 0.9)} color="#fff4b0" />
-          <g transform={`translate(${klerp(-500, -60, kprog(T, K.C + 1.2, K.C + 2.0, kEase.sale))} 0)`}><Puerco T={T} x={0} y={1100} s={0.9} color="#f2a0b4" jabali={false} /></g>
-          <g transform={`translate(${klerp(500, 40, kprog(T, K.C + 1.6, K.C + 2.4, kEase.sale))} 0)`}><Perro T={T} x={1000} y={1080} s={0.9} flip /></g>
+          <Olor T={T} x={380} y={600} alto={300} n={3} o={kprog(T, K.C + 0.3, K.C + 0.9)} color={KC.orange} />
+          <g transform={`translate(${klerp(-500, 120, kprog(T, K.C + 1.2, K.C + 2.0, kEase.sale))} 0)`}><Puerco T={T} x={0} y={1100} s={0.9} color="#f2a0b4" jabali={false} /></g>
+          <g transform={`translate(${klerp(500, -110, kprog(T, K.C + 1.6, K.C + 2.4, kEase.sale))} 0)`}><Perro T={T} x={1000} y={1080} s={0.9} flip /></g>
         </>)}
       </Escena>
 
@@ -403,7 +403,7 @@ function TrufasShot() {
       <Chip T={T} at={K.Pb + 0.2} until={K.Pb + 2.1} texto="AL MICROSCOPIO · por dentro de la trufa" x={430} y={470} tam={28} borde={KC.mint} />
       <Etq T={T} at={K.Pb + 0.8} until={K.Pb + 2.1} x={60} y={600} texto="ascas (sacos)" tam={28} />
       <Etq T={T} at={K.Pb + 1.1} until={K.Pb + 2.1} x={1040} y={1180} lado="izq" texto="esporas" tam={28} color={'#e7b06a'} />
-      <Etq T={T} at={K.Pb + 2.8} until={K.O - 0.3} x={60} y={560} texto="otros hongos: al viento" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pb + 2.8} until={K.O - 0.3} x={330} y={620} texto="otros hongos: al viento" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Pb + 3.4} until={K.O - 0.3} texto="bajo tierra: sin viento" x={360} y={470} tam={34} borde={KC.red} />
       <Chip T={T} at={K.O + 0.6} until={K.O + 2.3} texto="decenas de sustancias" x={360} y={470} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.O + 2.8} until={K.P - 0.3} x={60} y={800} texto="sulfuro de dimetilo · (CH₃)₂S" tam={30} color={KC.ink} />
@@ -418,7 +418,7 @@ function TrufasShot() {
       <Chip T={T} at={K.E + 4.0} until={K.En - 0.3} texto="✓ siguen vivas" x={330} y={1150} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.En + 0.5} until={K.M - 0.3} texto="✓ más micorrizas con encino" x={380} y={470} tam={32} borde={KC.mint} />
       <NumeroGigante T={T} at={K.M + 0.3} until={K.C - 0.3} valor={20} prefijo="≈" dur={0.8} etiqueta="especies de trufas (2018)" x={330} y={470} tam={150} color={KC.yellow} />
-      <Etq T={T} at={K.M + 2.2} until={K.C - 0.3} x={60} y={1170} texto="Tuber incognitum · bajo encinos" it tam={28} color={KC.ink} />
+      <EtqEsp T={T} at={K.M + 2.2} until={K.C - 0.3} x={40} y={1165} comun="bajo encinos" cient="Tuber incognitum" tam={28} />
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="se deja encontrar" x={330} y={470} tam={40} borde={KC.yellow} />
 
       {/* barras de escala */}

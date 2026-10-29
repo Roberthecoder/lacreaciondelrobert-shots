@@ -241,7 +241,7 @@ function LangostaShot() {
   const muerta = (i) => { const umbral = 5 / 21 + (campo[i][2] * 0.75) * (16 / 21); return i % 5 === 4 ? 0 : kprog(diaU, umbral, umbral + 0.08); };
   const tec = mxProy(-103.87, 18.91), cr = mxProy(-84.1, 9.9);
   const vMx = kprog(T, K.M + 3.2, K.M + 4.8, kEase.suave);
-  const MS = 0.8, MX0 = 140, MY0 = 640;
+  const MS = 0.8, MX0 = 140, MY0 = 560;
   const mx = (pt) => [MX0 + pt[0] * MS, MY0 + pt[1] * MS];
   const frX = klerp(mx(tec)[0], mx(cr)[0], vMx), frY = klerp(mx(tec)[1], mx(cr)[1], vMx) - Math.sin(vMx * Math.PI) * 160;
   return (
@@ -322,7 +322,7 @@ function LangostaShot() {
           <rect x={0} y={1000} width={KW} height={950} fill="#e2c27a" stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.L + 2.2, K.L + 2.6)} />
           {[0, 1, 2, 3].map((i) => kprog(T, K.L + 2.4, K.L + 2.6) > 0 ? <Hormiga key={i} T={T} x={140 + i * 90 + ((T * 30) % 60)} y={1050 + (i % 2) * 30} s={1.1} seed={i} /> : null)}
           {kprog(T, K.L + 2.8, K.L + 3.0) > 0 && <AveVuelo T={T} x={klerp(1150, 760, kprog(T, K.L + 2.8, K.L + 3.6, kEase.sale))} y={960} s={1.2} seed={2} />}
-          {[[300, 990], [760, 990]].map(([cx, cy], i) => { const k = kprog(T, K.L + 3.0 + i * 0.3, K.L + 3.3 + i * 0.3, kEase.rebote); return k > 0 ? <g key={i} transform={`translate(${cx} ${cy - 90}) scale(${k})`}><circle r={40} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M -18 0 L -5 14 L 20 -12" stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g> : null; })}
+          {[[480, 1100], [960, 1100]].map(([cx, cy], i) => { const k = kprog(T, K.L + 3.0 + i * 0.3, K.L + 3.3 + i * 0.3, kEase.rebote); return k > 0 ? <g key={i} transform={`translate(${cx} ${cy - 90}) scale(${k})`}><circle r={40} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M -18 0 L -5 14 L 20 -12" stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g> : null; })}
         </>)}
       </Escena>
       {/* 10 · llegan más aves; los cernícalos se llevan más hembras */}
@@ -362,7 +362,7 @@ function LangostaShot() {
           <Termo x={970} y={1060} alto={240} nivel={0.92} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou - 0.2} x={290} y={620} r={150} fx={660} fy={900} tinte={KC.gold2} etiqueta="POR DENTRO · el hongo sigue"
+      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou - 0.2} x={340} y={600} r={150} fx={660} fy={900} tinte={KC.gold2} etiqueta="POR DENTRO · el hongo sigue"
         interior={(T2, rr) => { const q = krng(77); return <svg width={rr * 2} height={rr * 2}><rect width={rr * 2} height={rr * 2} fill="#163a3a" />
           {Array.from({ length: 9 }, (_, i) => <CuerpoLevadura key={i} x={40 + q() * (rr * 2 - 80)} y={40 + q() * (rr * 2 - 80)} s={0.9} rot={q() * 180 + T2 * 12} yema={(Math.sin(T2 * 2 + i) + 1) / 2} />)}</svg>; }} />
 
@@ -402,7 +402,7 @@ function LangostaShot() {
       <Etq T={T} at={K.C + 1.6} until={K.M - 0.2} x={400} y={800} texto="cernícalo" tam={30} color={KC.ink} />
       <Etq T={T} at={K.C + 1.9} until={K.M - 0.2} x={400} y={850} texto="Falco tinnunculus" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.C + 2.8} until={K.M - 0.2} texto="más hembras (75–80 %)" x={700} y={960} tam={34} borde={KC.pink} />
-      <Etq T={T} at={K.C + 3.2} until={K.M - 0.2} x={560} y={1130} texto="hembra (más grande)" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.C + 3.2} until={K.M - 0.2} x={600} y={1130} lado="izq" texto="hembra (más grande)" tam={26} color={KC.ink} />
       <Etq T={T} at={K.C + 3.5} until={K.M - 0.2} x={1040} y={1130} texto="macho" tam={26} color={KC.ink} lado="izq" />
       <Chip T={T} at={K.M + 0.4} until={K.M + 3.0} texto="SENASICA · control biológico" x={360} y={470} tam={34} borde={KC.leaf} />
       <Etq T={T} at={K.M + 0.9} until={K.Ci - 0.2} x={mx(tec)[0] - 30} y={mx(tec)[1] + 20} lado="izq" texto="Tecomán, Col." tam={24} color={KC.ink} />
@@ -436,7 +436,7 @@ function LangostaShot() {
       <Subtitulo T={T} idx={8} at={K.R + 0.1} until={K.L - 0.1} texto="Día 5 empiezan a morir; *80 % a las 3 semanas.*" />
       <Subtitulo T={T} idx={9} at={K.L + 0.1} until={K.C - 0.1} texto="Más lento, pero *no dañó hormigas ni aves.*" />
       <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.M - 0.1} texto="Llegaron más aves: *sobre todo, hembras.*" />
-      <Subtitulo T={T} idx={11} at={K.M + 0.1} until={K.Ci - 0.1} texto="SENASICA lo desarrolló; *cepa a Costa Rica en 2020.*" />
+      <Subtitulo T={T} idx={11} at={K.M + 0.1} until={K.Ci - 0.1} texto="SENASICA desarrolló cómo usarlo; *en 2020, cepa a Costa Rica.*" />
       <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Pelea con un hongo *que suele ganar.*" />
 
       <Robert T={T} apariciones={[
