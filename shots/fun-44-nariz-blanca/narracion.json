@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Nariz Blanca base narrada.dc.html",
+  "salida": "Shot Nariz Blanca narrado.dc.html",
+  "nota": "Shot Fungi Mati #44. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Eso blanco en la nariz de este murciélago no es escarcha: es un hongo que lo despierta."
+    },
+    {
+      "escena": "Cueva",
+      "texto": "Imagina hibernar en una cueva, casi tan frío como la roca."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Ahí vive Pseudogymnoascus destructans, un hongo del frío."
+    },
+    {
+      "escena": "Piel",
+      "texto": "Mientras duerme, se le mete en la piel del hocico, orejas y alas."
+    },
+    {
+      "escena": "Despierta",
+      "texto": "Y lo hace despertar más seguido."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué tiene de malo despertarse?"
+    },
+    {
+      "escena": "Grasa",
+      "texto": "Que cuesta mucha grasa: aun sano, gasta en sus pocos despertares la mayor parte de su grasa de invierno. Enfermo, se le acaba antes de la primavera."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de 2012 con murciélagos silvestres de Estados Unidos: los sanos dormían unos 16 días seguidos; los enfermos que murieron, unos 8."
+    },
+    {
+      "escena": "Foto",
+      "texto": "La primera foto de la enfermedad: Nueva York, 2006."
+    },
+    {
+      "escena": "Millones",
+      "texto": "Ya mató a millones de murciélagos; tres especies cayeron más del 90 % en sus refugios de invierno vigilados."
+    },
+    {
+      "escena": "Europa",
+      "texto": "Lo raro: en Europa el mismo hongo no causa matanzas, y su ADN apunta a que vino de ahí."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "¿Y en México? En 2025 un estudio lo reportó en una cueva de Oaxaca."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Eso blanco no es escarcha: es un hongo que no lo deja dormir."
+    }
+  ]
+}

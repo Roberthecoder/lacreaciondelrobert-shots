@@ -52,3 +52,40 @@ Notas para no exagerar:
 
 **Segunda revisión (29 oct 2026):** se volvió a leer `narracion.json` completo (13 líneas) y se verificaron los cambios: grasa sin cifra (fila 6), «murciélagos silvestres» (filas 7 y 7c), «refugios de invierno vigilados» con «conteos hasta 2018» (fila 10), chip «si ves uno enfermo, no lo toques» (fila 12c) y los recortes de texto (filas 1b, 2, 4, 5, 8, 11, 11b, 12, 13), que no cambian el sentido. En `## Fuentes` del guion se completaron Muise 2024, CDFW y Farm and Dairy/USGS 2008 con su referencia, URL y frase textual. Todas las afirmaciones quedaron ✅. El dibujo es esquemático.
 
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `nariz-blanca.jsx`, `Shot Nariz Blanca base narrada.dc.html`, la columna «Lo que se ve» y la tabla «Robert en pantalla» de `guion.md` y `publicacion.md`. Se revisaron 22 cuadros con `motor/preview.mjs` (0.3, 1.6, 2.6, 3.6, 6, 12, 13.5, 14.5, 18, 22, 24, 26, 30, 36, 42, 44, 48, 54, 56, 57.5, 58 y 60 s).
+
+Fuentes nuevas abiertas:
+- **[MDC]** Missouri Department of Conservation, «Little Brown Myotis (Little Brown Bat)» (consultada el 29 oct 2026). https://mdc.mo.gov/index%2ephp/node/219849 — "Total length: 76–95 mm"; "Tail length: 31–44 mm" → cabeza y cuerpo ≈ 4.5–5 cm.
+- **[GA]** Gargas, A. et al. (2009). *Geomyces destructans* sp. nov. associated with bat white-nose syndrome. *Mycotaxon* 108: 147–154. https://www.usgs.gov/publications/geomyces-destructans-sp-nov-associated-bat-white-nose-syndrome — "distinctive asymmetrically curved conidia"; "powdery conidia and hyphae on their muzzles, wing membranes, and/or pinnae".
+
+| # | Pantalla / publicación | Veredicto | Fuente | Frase textual / nota | Año |
+|---|---|---|---|---|---|
+| R1 | Gancho: «¿escarcha?» tachado, sello «HONGO», «murciélago café · *Myotis lucifugus*» | ✅ | [BL] | "white fungal growth on muzzles, ears, and/or wing membranes"; "little brown myotis (Myotis lucifugus…)" | 2009 |
+| R2 | Morfología: murciélago colgado de cabeza, alas plegadas, orejas hacia abajo, hocico arriba de los ojos (cara invertida), pelusa blanca en hocico, orejas y alas | ✅ | [BL], [GA] | Pelusa en "muzzles, wing membranes, and/or pinnae". Dibujo esquemático | 2009 |
+| R3 | Chip «cueva: 2–14 °C» y termómetro del cuerpo que baja casi al de la cueva | ✅ | [BL], [RE] | "Temperatures in WNS-affected hibernacula seasonally range between 2° and 14°C"; "Tb close to ambient temperature" | 2009 / 2012 |
+| R4 | «AL MICROSCOPIO · el hongo», «le gusta el frío», *Pseudogymnoascus destructans*, «esporas curvas (conidios)» | ✅ | [BL], [GA] | "psychrophilic fungus"; "distinctive asymmetrically curved conidia" | 2009 |
+| R5 | «AL MICROSCOPIO · piel del ala», «hifas», «folículos del pelo y glándulas», «hocico · orejas · alas» | ✅ | [BL] | "Hyphae … fill hair follicles, sebaceous glands, and sweat glands … Hyphae also eroded the epidermis of ears and wings" | 2009 |
+| R6 | Grasa: chip «sano: la mayor parte, en despertar» (3 despertares se comen ~92 % de lo gastado; le sobra grasa en primavera) y «enfermo: sin grasa antes de la primavera» (8 despertares, la barra llega a 0 antes de primavera) | ✅ | [RE], [MU], [WA], [BL] | ver fila 6 de la tabla principal | 2009–2024 |
+| R7 | Tarjeta «2012 · murciélagos silvestres de EE. UU. · Reeder et al., PLOS ONE»; filas «sanos: unos 16 días seguidos» (16 cuadros) y «enfermos que murieron: unos 8» (8 cuadros) | ✅ | [RE] | "16.32±6.65 days"; "7.93 days" | 2012 |
+| R8 | Polaroid «Nueva York · feb 2006» | ✅ | [BL] | "photograph taken at Howes Cave … New York, on 16 February 2006" | 2006 |
+| R9 | «MILLONES de murciélagos muertos» | ✅ | [USGS] | "has killed millions of bats" | 2025 |
+| R10 | «más del 90 %» con barras que caen al ~8 %, las 3 especies en cursiva y «conteos hasta 2018 · Cheng et al. 2021» | ✅ | [CH] | "declined by more than 90%" | datos hasta 2018 |
+| R11 | «Europa: sin matanzas», «murciélago europeo con el hongo», flecha punteada Europa → América con «ADN ?» | ✅ | [WI], [ZU], [DR] | ver filas 11 y 11b | 2010–2017 |
+| R12 | (corregido) Chip «Oaxaca: hongo reportado en 2025» (antes «Oaxaca · reportado en 2025», no decía qué se reportó); punto en Oaxaca (−97.4, 17.1) | ✅ | [MC] | San Pedro de los Molinos, Sierra Mixteca, Oaxaca | 2025 |
+| R13 | Chip «si ves uno enfermo, no lo toques» | ✅ | [CDFW], [FD] | ver fila 12c | 2008 / 2026 |
+| R14 | Subtítulos (13): todos repiten la voz verificada, en la franja media, fuera del tercio inferior | ✅ | — | — | — |
+| R15 | (corregido) Barras de escala del murciélago: con cabeza y cuerpo ≈ 5 cm ([MDC]), las barras de 2 cm medían ~1.4–1.6 cm. Se ajustaron: gancho y cierre 170→210 px, cueva «5 cm» 150→225 px, despierta 130→190 px, polaroid 90→125 px, Europa 90→130 px | ✅ | [MDC] | "Total length: 76–95 mm"; "Tail length: 31–44 mm" | consultada 2026 |
+| R16 | Barras al microscopio «10 µm» (conidio dibujado ≈ 10 µm de largo) y «50 µm» (piel del ala). (corregido) En la piel, los conidios se achicaron (s 1→0.7) para que midan lo mismo (~10 µm) que en la escena anterior. Son aproximadas: los dibujos de [GA] usan barras de 10 µm para los conidios, pero no se pudo abrir la medida exacta del largo del conidio (texto de pago) | ✅ (aprox.) | [GA] | figuras con "scale bars … 10 µm"; el dibujo es esquemático | 2009 |
+| R17 | Mapa de México «500 km» = 120 px: con la proyección del kit (1° ≈ 23.8 px; 1° de latitud ≈ 111 km), 500 km ≈ 116–117 px | ✅ | cálculo | — | — |
+| R18 | publicacion.md: «16 de febrero de 2006 en una cueva cerca de Albany, Nueva York» | ✅ | [BL] | "Howes Cave, 52 km west of Albany, New York, on 16 February 2006" | 2006 |
+| R19 | publicacion.md: «en el laboratorio creció mejor entre 5 y 10 °C» | ✅ | [BL] | "grew optimally between 5°C and 10°C" | 2009 |
+| R20 | (corregido) publicacion.md: «los autores piden vigilar a otras poblaciones» → «los autores piden vigilar esa cueva, sus alrededores y otras zonas de México» | ✅ | [MC] | "we urge that a monitoring program in and adjacent to the study site be put in place"; "the importance of monitoring other areas of potential overlap" | 2025 |
+| R21 | (corregido) LinkedIn: «es un caso de patógeno introducido en una población sin historia previa con él» (afirmado como hecho) → «la evidencia apunta a un patógeno llegado de Europa a murciélagos que no lo conocían (PNAS, 2012; mBio, 2017)» | ✅ | [WA], [DR] | "direct evidence that Gd is a novel pathogen to North America from Europe"; "our data support the origin … from Europe rather than Asia" | 2012 / 2017 |
+| R22 | publicacion.md: «Un hongo que mata por gasto de energía»; «muchos murciélagos con la infección ya casi no tenían reservas de grasa»; «si ves un murciélago enfermo o muerto, no lo toques» | ✅ | [WA], [BL], [FD] | "altered torpor-arousal cycles underlie mortality from WNS"; "69 of the 105 bats … had little or no identifiable fat reserves"; "anyone finding sick or dead bats should avoid handling them" | 2008–2012 |
+
+Revisión final: la voz no se tocó. Se corrigieron el chip de Oaxaca, las barras de escala del murciélago, el tamaño de los conidios en la piel y dos frases de `publicacion.md`. Todo queda ✅ (las barras al microscopio, como aproximación de un dibujo esquemático).
+
+VEREDICTO: APROBADO

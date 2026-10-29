@@ -166,7 +166,7 @@ function NarizBlancaShot() {
                 {p > 0.6 && <path d={`M ${x + 14} 860 Q ${x + 40} 850 ${x + 52} ${klerp(860, 875, (p - 0.6) / 0.4)}`} />}
               </g>; })()}
           </g>)}
-          {Array.from({ length: 10 }, (_, i) => <Conidio key={i} x={60 + i * 100} y={625 + Math.sin(i * 2) * 6} s={1} rot={i * 33} />)}
+          {Array.from({ length: 10 }, (_, i) => <Conidio key={i} x={60 + i * 100} y={625 + Math.sin(i * 2) * 6} s={0.7} rot={i * 33} />)}
           <Murcielago T={T} x={930} y={720} s={0.8} hongo={1} seed={6} />
           {[[930, 906, 0], [876, 1006, 1], [858, 830, 2]].map(([x, y, i]) => <circle key={i} cx={x} cy={y} r={30 + 8 * Math.sin(T * 6 + i)} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.P + 0.6 + i * 0.5, K.P + 0.9 + i * 0.5)} />)}
         </>)}
@@ -291,20 +291,20 @@ function NarizBlancaShot() {
       <Chip T={T} at={K.Mi + 2.6} until={K.Eu - 0.3} texto="más del 90 %" x={400} y={700} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Eu + 1.0} until={K.Mx - 0.3} texto="Europa: sin matanzas" x={390} y={870} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Eu + 0.4} until={K.Mx - 0.3} x={60} y={330} texto="murciélago europeo con el hongo" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Mx + 1.4} until={K.C - 0.3} texto="Oaxaca · reportado en 2025" x={540} y={1000} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Mx + 1.4} until={K.C - 0.3} texto="Oaxaca: hongo reportado en 2025" x={540} y={1000} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Mx + 2.2} until={K.C - 0.3} texto="si ves uno enfermo, no lo toques" x={540} y={1095} tam={32} borde={KC.red} />
       <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 0.7} until={K.Ou - 0.2} texto="¿escarcha?" x={380} y={1115} tam={46} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Cu} texto="2 cm" largo={170} />
-      <BarraEscala T={T} at={K.Cu} until={K.H} texto="5 cm" largo={150} />
+      <BarraEscala T={T} at={K.G} until={K.Cu} texto="2 cm" largo={210} />
+      <BarraEscala T={T} at={K.Cu} until={K.H} texto="5 cm" largo={225} />
       <BarraEscala T={T} at={K.H} until={K.P} texto="10 µm" largo={80} />
       <BarraEscala T={T} at={K.P} until={K.D} texto="50 µm" largo={160} />
-      <BarraEscala T={T} at={K.D} until={K.Q} texto="2 cm" largo={130} />
-      <BarraEscala T={T} at={K.F} until={K.Mi} texto="2 cm" largo={90} />
-      <BarraEscala T={T} at={K.Eu} until={K.Mx} texto="2 cm" largo={90} />
+      <BarraEscala T={T} at={K.D} until={K.Q} texto="2 cm" largo={190} />
+      <BarraEscala T={T} at={K.F} until={K.Mi} texto="2 cm" largo={125} />
+      <BarraEscala T={T} at={K.Eu} until={K.Mx} texto="2 cm" largo={130} />
       <BarraEscala T={T} at={K.Mx} until={K.C} texto="500 km" largo={120} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={170} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={210} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cu - 0.1} texto="No es escarcha: *es un hongo.*" />

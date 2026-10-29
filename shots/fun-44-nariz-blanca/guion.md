@@ -22,7 +22,7 @@
 | 8 | Foto | La primera foto de la enfermedad: Nueva York, 2006. | Una cámara de foto con flash en una cueva; polaroid «Nueva York · feb 2006». |
 | 9 | Millones | Ya mató a millones de murciélagos; tres especies cayeron más del 90 % en sus refugios de invierno vigilados. | «MILLONES de murciélagos muertos» en grande. Luego tres barras (una por especie) que caen: «más del 90 %» y nota chica «conteos hasta 2018 · Cheng et al. 2021». Etiquetas *Myotis lucifugus*, *Myotis septentrionalis*, *Perimyotis subflavus*. |
 | 10 | Europa | Lo raro: en Europa el mismo hongo no causa matanzas, y su ADN apunta a que vino de ahí. | Murciélago europeo con un poco de hongo, dormido y tranquilo; chip «Europa: sin matanzas». Flecha punteada Europa → América con «ADN ?» (no está confirmado de qué población). |
-| 11 | Mexico | ¿Y en México? En 2025 un estudio lo reportó en una cueva de Oaxaca. | Mapa esquemático de México; punto que late en Oaxaca y chip «Oaxaca · reportado en 2025». Chip «si ves uno enfermo, no lo toques». |
+| 11 | Mexico | ¿Y en México? En 2025 un estudio lo reportó en una cueva de Oaxaca. | Mapa esquemático de México; punto que late en Oaxaca y chip «Oaxaca: hongo reportado en 2025». Chip «si ves uno enfermo, no lo toques». |
 | 12 | Cierre | Eso blanco no es escarcha: es un hongo que no lo deja dormir. | **Regreso a la imagen del inicio:** el mismo murciélago colgado con la nariz blanca, ahora con un «zzz» que se rompe y la palabra «escarcha» tachada. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
