@@ -10,8 +10,8 @@
     { "escena": "Frotar", "texto": "Por eso hay que frotar hasta que seque: unos 20 segundos." },
     { "escena": "Pregunta", "texto": "¿Entonces mata todo?" },
     { "escena": "No", "texto": "No. Contra el norovirus, el de las diarreas, o las esporas de Clostridioides difficile, ganan el agua y el jabón." },
-    { "escena": "Estudio", "texto": "En 2010, en la Universidad Emory, en Atlanta, le pusieron norovirus a los dedos de 10 voluntarios: el gel casi no lo quitó, y un simple enjuague con agua quitó más." },
-    { "escena": "Grasa", "texto": "Y con las manos sucias o grasosas, funciona peor." },
+    { "escena": "Estudio", "texto": "En 2010, en la Universidad Emory, en Atlanta, le pusieron norovirus a los dedos de 10 voluntarios: el gel casi no lo quitó, y solo enjuagar con agua quitó más." },
+    { "escena": "Grasa", "texto": "Con manos sucias o grasosas, funciona peor." },
     { "escena": "Mexico", "texto": "Ojo: en 2021, la FDA puso en alerta todos los geles con alcohol hechos en México: más de la mitad de sus muestras traía tóxicos, como metanol." },
     { "escena": "Cierre", "texto": "Así que ese gel no te lava las manos: las desinfecta. Y si hay agua y jabón, mejor." }
   ]
