@@ -355,7 +355,7 @@ function MuscariaShot() {
       <Etq T={T} at={K.E + 2.5} until={K.Re - 0.3} x={1040} y={760} texto="el que él conocía" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Re + 0.2} until={K.Mo - 0.3} texto="2–3 h después de comer" x={330} y={400} tam={32} borde={KC.ink} mono />
       {['vómito', 'sudor', 'confusión'].map((t, i) => <Chip key={i} T={T} at={K.Re + 0.6 + i * 0.35} until={K.Re + 2.3} texto={t} x={180 + i * 200} y={520} tam={34} borde={KC.red} />)}
-      {T < K.Mo - 0.3 && <Contador T={T} at={K.Re + 2.4} desde={0} hasta={4} dur={1.2} sufijo=" días con respirador" x={350} y={570} tam={40} />}
+      {T < K.Mo - 0.3 && <Contador T={T} at={K.Re + 2.4} desde={2} hasta={4} dur={1.2} sufijo=" días con respirador" x={350} y={570} tam={40} />}
       <Chip T={T} at={K.Re + 3.8} until={K.Mo - 0.3} texto="✓ se recuperó" x={330} y={660} tam={40} borde={KC.leaf} />
       <Etq T={T} at={K.Mo + 0.5} until={K.C - 0.3} x={60} y={930} texto="leche + hongo" tam={30} color={KC.ink} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="míralo ✓" x={260} y={420} tam={40} borde={KC.leaf} />
