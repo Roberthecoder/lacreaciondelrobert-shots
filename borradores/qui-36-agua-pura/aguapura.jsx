@@ -195,7 +195,7 @@ function AguaPura() {
         <SvgCapa>
           {[['llave', 200, 0], ['alberca', 540, 1], ['suelo', 880, 2]].map(([t, x, k]) => { const at = K.Re + 0.3 + k * 1.7, e = kprog(T, at, at + 0.4, kEase.rebote);
             if (T < at) return null;
-            return <g key={t} transform={`translate(${x} ${790}) scale(${e * 0.85})`}>
+            return <g key={t} transform={`translate(${x} ${830}) scale(${e * 0.85})`}>
               <circle r={150} fill="#fff" stroke={KC.ink} strokeWidth={8} />
               {k === 0 && <Llave x={-20} y={0} s={1.2} T={T} />}
               {k === 1 && <Alberca x={0} y={20} s={1.1} T={T} />}

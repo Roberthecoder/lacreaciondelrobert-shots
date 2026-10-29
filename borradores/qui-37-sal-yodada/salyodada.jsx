@@ -68,9 +68,11 @@ function Busto({ x, y, s = 1, bocio = 0, dentro = 0, crece = 0, hipo = 0, T = 0,
       <Mariposa x={0} y={20} s={0.42 * (1 + 0.55 * crece)} />
     </g>}
     {hipo > 0 && <g opacity={hipo}>
-      <circle cx={0} cy={-235} r={60} fill="rgba(255,255,255,.35)" stroke="#fff" strokeWidth={4} strokeDasharray="10 8" />
-      <circle cx={0} cy={-210} r={20} fill={KC.orange} stroke={KC.ink} strokeWidth={5} />
-      {[0, 1, 2].map((k) => { const u = ((T * 0.9) + k / 3) % 1; return <path key={k} d={`M ${-40 - 10 * u} ${-190 + u * 200} Q 0 ${-170 + u * 210} ${40 + 10 * u} ${-190 + u * 200}`} stroke={KC.orange} strokeWidth={8} fill="none" opacity={1 - u} strokeLinecap="round" />; })}
+      <path d="M -95 -300 Q -100 -380 -20 -385 Q 0 -400 20 -385 Q 100 -380 95 -300 Q 90 -260 30 -262 Q 0 -250 -30 -262 Q -90 -260 -95 -300 Z" fill="rgba(255,190,210,.85)" stroke="#b0566e" strokeWidth={5} />
+      <path d="M -60 -330 q 20 -20 40 0 t 40 0 M -50 -295 q 20 -16 40 0 t 40 0" stroke="#b0566e" strokeWidth={4} fill="none" />
+      <circle cx={0} cy={-262} r={15} fill={KC.orange} stroke={KC.ink} strokeWidth={5} />
+      {[0, 1, 2].map((k) => { const u = ((T * 0.9) + k / 3) % 1; const yy = -240 + u * 250; return <path key={k} d={`M ${150} ${yy - 14} q 22 14 0 28`} stroke={KC.orange} strokeWidth={9} fill="none" opacity={1 - u} strokeLinecap="round" />; })}
+      <path d="M 150 -250 L 150 0" stroke={KC.orange} strokeWidth={4} strokeDasharray="10 10" opacity={0.6} />
     </g>}
   </g>;
 }
@@ -191,7 +193,7 @@ function SalYodada() {
       return <circle key={i} cx={px} cy={py} r={12} fill={YODO} stroke="#fff" strokeWidth={3} opacity={u < 0.85 ? 1 : (1 - u) / 0.15} />; })}
   </svg>;
   const R = krng(37);
-  const ninas = Array.from({ length: 24 }, (_, i) => ({ x: 170 + (i % 8) * 106, y: 980 + Math.floor(i / 8) * 110, c: [KC.pink, KC.yellow, KC.mint, KC.orange, KC.lilac][Math.floor(R() * 5)] }));
+  const ninas = Array.from({ length: 24 }, (_, i) => ({ x: 170 + (i % 8) * 106, y: 900 + Math.floor(i / 8) * 100, c: [KC.pink, KC.yellow, KC.mint, KC.orange, KC.lilac][Math.floor(R() * 5)] }));
   const barras = kprog(T, K.Re + 0.6, K.Re + 2.0, kEase.sale);
   const balanza = -14 * kprog(T, K.Da + 1.4, K.Da + 2.4, kEase.rebote);
 
@@ -202,10 +204,10 @@ function SalYodada() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <rect x={0} y={1250} width={KW} height={670} fill="#e7a35a" /><rect x={0} y={1250} width={KW} height={14} fill={KC.ink} />
-          <PaqueteSal x={330} y={1000} s={1} hl={hlG} T={T} />
-          <Plato x={770} y={1200} s={0.9} granos={granosG} />
-          <Granos T={T} x={770} y0={830} y1={1190} desde={K.G + 0.1} hasta={K.G + 2.5} />
-          <Salero x={770 + sacude * 0.6} y={820 + Math.abs(sacude)} s={0.95} inclina={170 + sacude} />
+          <PaqueteSal x={770} y={950} s={0.95} hl={hlG} T={T} />
+          <Plato x={300} y={1150} s={0.9} granos={granosG} />
+          <Granos T={T} x={300} y0={800} y1={1140} desde={K.G + 0.1} hasta={K.G + 2.5} />
+          <Salero x={300 + sacude * 0.6} y={790 + Math.abs(sacude)} s={0.95} inclina={170 + sacude} />
         </SvgCapa>
       </Escena>
       {/* 1 · tu tiroides (Lupa por dentro del cuello) */}
@@ -219,7 +221,7 @@ function SalYodada() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(195,155,211,.35)" />
         <SvgCapa>
-          <Tiroxina x={560} y={860} s={1.15} on={yodoNum} rot={Math.sin(T * 0.8) * 3} />
+          <Tiroxina x={540} y={860} s={1.2} on={yodoNum} rot={Math.sin(T * 0.8) * 3} />
           {[0, 1, 2, 3].map((i) => T > K.Tx + 0.6 + i * 0.6 && <text key={i} x={300 + i * 160} y={560} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={yodoNum > i ? YODO2 : 'rgba(255,255,255,.2)'} stroke={KC.ink} strokeWidth={4}>{i + 1}</text>)}
         </SvgCapa>
       </Escena>
@@ -246,33 +248,33 @@ function SalYodada() {
       <Escena T={T} a={K.Es} b={K.Re}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <rect x={90} y={890} width={900} height={360} rx={30} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={8} />
+          <rect x={90} y={810} width={900} height={370} rx={30} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={8} />
           {ninas.map((n, i) => { const e = kprog(T, K.Es + 2.4 + i * 0.04, K.Es + 2.8 + i * 0.04, kEase.rebote); const gota = kprog(T, K.Es + 3.6 + (i % 8) * 0.12, K.Es + 4.0 + (i % 8) * 0.12);
             return e > 0 && <g key={i}><Personita x={n.x} y={n.y + 10} s={1.5 * e} color={n.c} />{gota > 0 && <circle cx={n.x} cy={n.y - 60} r={9} fill={YODO} stroke="#fff" strokeWidth={2} opacity={gota} />}</g>; })}
-          {T > K.Es + 3.0 && <Frasco x={klerp(1150, 860, kprog(T, K.Es + 3.0, K.Es + 3.5, kEase.sale))} y={760} s={1} inclina={-25 * kprog(T, K.Es + 3.5, K.Es + 3.8)} />}
+          {T > K.Es + 3.0 && <Frasco x={klerp(1150, 860, kprog(T, K.Es + 3.0, K.Es + 3.5, kEase.sale))} y={680} s={1} inclina={-25 * kprog(T, K.Es + 3.5, K.Es + 3.8)} />}
         </SvgCapa>
       </Escena>
       {/* 7 · resultado: 27.6 % contra 0.2 % */}
       <Escena T={T} a={K.Re} b={K.Mx}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={0} y={1180} width={KW} height={12} fill={KC.ink} />
-          {[[300, 27.6, KC.red, 'sin yodo'], [760, 0.2, KC.mint, 'con yodo']].map(([cx, v, c, et], i) => { const h = Math.max(6, v * 20 * barras);
+          <rect x={0} y={1130} width={KW} height={12} fill={KC.ink} />
+          {[[300, 27.6, KC.red, 'sin yodo'], [760, 0.2, KC.mint, 'con yodo']].map(([cx, v, c, et], i) => { const h = Math.max(6, v * 15 * barras);
             return <g key={i}>
-              <rect x={cx - 120} y={1180 - h} width={240} height={h} rx={14} fill={c} stroke={KC.ink} strokeWidth={8} />
-              <text x={cx} y={1180 - h - 30} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={c} stroke={KC.ink} strokeWidth={5} paintOrder="stroke">{(v * barras).toFixed(1)} %</text>
-              <text x={cx} y={1240} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>{et}</text>
+              <rect x={cx - 120} y={1130 - h} width={240} height={h} rx={14} fill={c} stroke={KC.ink} strokeWidth={8} />
+              <text x={cx} y={1130 - h - 26} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={c} stroke={KC.ink} strokeWidth={5} paintOrder="stroke">{(v * barras).toFixed(1)} %</text>
+              <text x={cx} y={1188} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>{et}</text>
             </g>; })}
-          {[0, 1, 2, 3].map((i) => { const e = kprog(T, K.Re + 2.4 + i * 0.15, K.Re + 2.7 + i * 0.15, kEase.rebote); return e > 0 && <g key={i}><Personita x={210 + i * 60} y={500} s={1.3 * e} color={i === 0 ? KC.red : '#fff'} /></g>; })}
-          {T > K.Re + 4.6 && <text x={760} y={1030} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Re + 4.6, K.Re + 5.0)}>2 de cada mil</text>}
+          {[0, 1, 2, 3].map((i) => { const e = kprog(T, K.Re + 2.4 + i * 0.15, K.Re + 2.7 + i * 0.15, kEase.rebote); return e > 0 && <g key={i}><Personita x={150 + i * 62} y={520} s={1.3 * e} color={i === 0 ? KC.red : '#fff'} /></g>; })}
+          {T > K.Re + 4.6 && <text x={760} y={980} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Re + 4.6, K.Re + 5.0)}>2 de cada mil</text>}
         </SvgCapa>
       </Escena>
       {/* 8 · México: NOM-040 */}
       <Escena T={T} a={K.Mx} b={K.Da}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Bascula x={330} y={1060} s={1} carga={kprog(T, K.Mx + 0.3, K.Mx + 1.0, kEase.sale)} T={T} />
-          {T > K.Mx + 1.2 && Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.Mx + 1.2 + i * 0.12, K.Mx + 1.5 + i * 0.12, kEase.rebote); return <AtI key={i} x={230 + (i % 3) * 100} y={720 - Math.floor(i / 3) * 90 + Math.sin(T * 3 + i) * 6} r={30} o={e} />; })}
+          <Bascula x={330} y={970} s={1} carga={kprog(T, K.Mx + 0.3, K.Mx + 1.0, kEase.sale)} T={T} />
+          {T > K.Mx + 1.2 && Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.Mx + 1.2 + i * 0.12, K.Mx + 1.5 + i * 0.12, kEase.rebote); return <AtI key={i} x={230 + (i % 3) * 100} y={630 - Math.floor(i / 3) * 90 + Math.sin(T * 3 + i) * 6} r={30} o={e} />; })}
           {T > K.Mx + 3.4 && <Diente x={790} y={900} s={1.25 * kprog(T, K.Mx + 3.4, K.Mx + 3.9, kEase.rebote)} brillo={kprog(T, K.Mx + 4.0, K.Mx + 4.6)} T={T} />}
         </SvgCapa>
       </Escena>
@@ -292,7 +294,7 @@ function SalYodada() {
               <line x1={820} y1={780} x2={820} y2={930} stroke={KC.ink} strokeWidth={6} /><path d="M 690 930 L 950 930 Q 820 1000 690 930 Z" fill="#c8cdd6" stroke={KC.ink} strokeWidth={7} />
               {[[740, 900, QA.C], [790, 900, QA.C], [840, 900, QA.C], [890, 900, QA.O], [765, 860, QA.N], [815, 860, QA.C], [865, 860, QA.O]].map(([ax, ay, c], i) =>
                 <g key={i} opacity={kprog(T, K.Da + 0.5 + i * 0.08, K.Da + 0.8 + i * 0.08)}><Atomo x={ax} y={ay} r={22} color={c} /></g>)}
-              <text x={820} y={820} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>todo lo demás</text>
+              <text x={820} y={1020} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>todo lo demás</text>
             </g>
           </g>
         </SvgCapa>
@@ -302,31 +304,31 @@ function SalYodada() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <rect x={0} y={1250} width={KW} height={670} fill="#e7a35a" /><rect x={0} y={1250} width={KW} height={14} fill={KC.ink} />
-          <PaqueteSal x={330} y={1000} s={1} hl={1} T={T} />
-          <Plato x={770} y={1200} s={0.9} granos={1} />
-          <Salero x={770} y={1010} s={0.95} inclina={0} />
-          <Flecha x1={430} y1={960} x2={690} y2={660} p={kprog(T, K.Ci + 0.6, K.Ci + 1.4, kEase.sale)} color={YODO} />
-          {T > K.Ci + 1.2 && <Mariposa x={560} y={560} s={0.9 * kprog(T, K.Ci + 1.2, K.Ci + 1.7, kEase.rebote)} c={KC.mint} />}
+          <PaqueteSal x={770} y={950} s={0.95} hl={1} T={T} />
+          <Plato x={300} y={1150} s={0.9} granos={1} />
+          <Salero x={300} y={960} s={0.95} inclina={0} />
+          <Flecha x1={640} y1={930} x2={420} y2={640} p={kprog(T, K.Ci + 0.6, K.Ci + 1.4, kEase.sale)} color={YODO} />
+          {T > K.Ci + 1.2 && <Mariposa x={300} y={560} s={0.9 * kprog(T, K.Ci + 1.2, K.Ci + 1.7, kEase.rebote)} c={KC.mint} />}
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 2.9} texto="¿adorno?" x={330} y={470} tam={52} />
-      <Chip T={T} at={K.G + 3.0} until={K.Ti - 0.2} texto="yodo → tu cuello" x={330} y={470} tam={46} borde={YODO} />
-      <Etq T={T} at={K.Ti + 1.6} until={K.Tx - 0.4} x={760} y={1060} texto="tiroides" lado="der" tam={40} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 2.9} texto="¿adorno?" x={300} y={470} tam={52} />
+      <Chip T={T} at={K.G + 3.0} until={K.Ti - 0.2} texto="yodo → tu cuello" x={300} y={470} tam={46} borde={YODO} />
+      <Etq T={T} at={K.Ti + 1.6} until={K.Tx - 0.4} x={250} y={1150} texto="tiroides" lado="izq" tam={40} color={KC.ink} />
       <Chip T={T} at={K.Ti + 2.2} until={K.Tx - 0.3} texto="atrapa el yodo (I) de tu sangre" y={1500} tam={38} borde={YODO} />
       <Chip T={T} at={K.Tx + 0.3} until={K.Bo - 0.2} texto="tiroxina (T4) · C₁₅H₁₁I₄NO₄" y={1500} tam={40} borde={YODO2} mono />
       <Chip T={T} at={K.Bo + 0.2} until={K.Bo + 2.4} texto="poco yodo" x={540} y={460} tam={46} borde={KC.red} />
-      <Etq T={T} at={K.Bo + 1.2} until={K.Em - 0.3} x={330} y={760} texto="hipófisis" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Bo + 1.2} until={K.Em - 0.3} x={400} y={812} texto="hipófisis" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Bo + 1.6} until={K.Em - 0.3} texto="señal TSH ↑ → la tiroides crece" y={1500} tam={36} borde={KC.orange} />
       <Chip T={T} at={K.Bo + 4.6} until={K.Em - 0.3} texto="bocio" x={820} y={1060} tam={54} borde={KC.red} />
       <Chip T={T} at={K.Em + 1.0} until={K.Pr - 0.3} texto="OMS: yodo → desarrollo del cerebro" y={1500} tam={36} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="1917–1919" quien="Marine y Kimball · Akron, Ohio" revista="Arch Intern Med, 1920" x={600} y={720} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="1917" quien="Marine y Kimball · Akron, Ohio" revista="1917–1919 · Arch Intern Med, 1920" x={600} y={700} />
       <Chip T={T} at={K.Es + 2.8} until={K.Re - 0.3} texto="yoduro de sodio · primavera y otoño" x={540} y={1500} tam={36} borde={YODO} />
       <Chip T={T} at={K.Re + 0.3} until={K.Mx - 0.3} texto="niñas con tiroides normal al inicio" y={1500} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.Re + 2.8} until={K.Mx - 0.3} x={470} y={500} texto="1 de cada 4" lado="der" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Re + 2.8} until={K.Mx - 0.3} x={370} y={505} texto="1 de cada 4" lado="der" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Mx + 1.0} until={K.Mx + 3.6} texto="20–40 mg de yodo por kilo" x={430} y={470} tam={44} borde={YODO} />
-      <Etq T={T} at={K.Mx + 1.6} until={K.Da - 0.3} x={120} y={1210} texto="NOM-040-SSA1-1993" lado="der" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Mx + 1.6} until={K.Da - 0.3} x={60} y={1165} texto="NOM-040-SSA1-1993" lado="der" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Mx + 3.8} until={K.Mx + 5.4} texto="flúor → contra la caries" x={430} y={470} tam={44} borde={KC.cyan} />
       <Chip T={T} at={K.Mx + 5.0} until={K.Da - 0.3} texto="no se vende donde el agua ya trae más de 0.7 mg/L de flúor" y={1500} tam={28} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.Da + 1.6} until={K.Ci - 0.3} valor={65} dur={1.2} prefijo="≈ " sufijo=" %" etiqueta="del peso de la tiroxina es yodo" y={1520} tam={130} color={YODO2} />
