@@ -158,7 +158,7 @@ function Limones() {
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           <g transform={`translate(${klerp(-300, 0, kprog(T, K.Q, K.Q + 0.5, kEase.sale))} 0)`}>
-            <Clavo x={880} y={860} s={1.6} rot={90} largo={430} />
+            <Clavo x={880} y={860} s={1.6} rot={-90} largo={430} />
             {(() => { const p = kprog(T, K.Q + 1.0, K.Q + 1.6, kEase.sale); return <g opacity={p}>
               <rect x={560} y={838} width={170 * p} height={44} fill={ACERO} stroke={KC.ink} strokeWidth={5} />
               <path d={`M ${560 + 170 * p} 838 q 30 -60 70 -40`} fill="none" stroke={ZN} strokeWidth={14} strokeLinecap="round" />
@@ -169,7 +169,7 @@ function Limones() {
             <rect x={200} y={1068} width={680} height={40} rx={14} fill={CU} stroke={KC.ink} strokeWidth={7} />
             <line x1={214} y1={1080} x2={866} y2={1080} stroke="#ffc59a" strokeWidth={5} opacity={0.7} />
           </g>
-          {[[150, 860, '−', ZN, K.Q + 1.8], [150, 1088, '+', KC.red, K.Q + 3.0]].map(([x, y, t, c, at], i) => { const e = kprog(T, at, at + 0.35, kEase.rebote);
+          {[[970, 860, '−', ZN, K.Q + 1.8], [970, 1088, '+', KC.red, K.Q + 3.0]].map(([x, y, t, c, at], i) => { const e = kprog(T, at, at + 0.35, kEase.rebote);
             return <g key={i} transform={`translate(${x} ${y}) scale(${e})`}><circle r={46} fill={c} stroke={KC.ink} strokeWidth={7} /><text y={22} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>{t}</text></g>; })}
         </SvgCapa>
       </Escena>
@@ -186,8 +186,8 @@ function Limones() {
               {[0, 1].map((k) => <circle key={k} cx={klerp(300, 120 + k * 40, e)} cy={z.y + (k ? 18 : -18) + Math.sin(T * 8 + k) * 3} r={12} fill={ELEC} stroke={KC.ink} strokeWidth={3} opacity={T < z.t0 - 0.1 ? 0 : 1 - kprog(T, z.t0 + 0.6, z.t0 + 1.0)} />)}
               <Ion x={x} y={y + Math.sin(T * 2 + i) * 6} txt={sale > 0.05 ? 'Zn²⁺' : 'Zn'} color={sale > 0.05 ? '#9fe8ff' : ZN} r={34} />
             </g>; })}
-          <text x={125} y={1270} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>clavo</text>
-          <text x={700} y={1270} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>jugo de limón</text>
+          <text x={125} y={680} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>clavo</text>
+          <text x={560} y={760} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>jugo de limón</text>
           <g transform="translate(700 660)"><line x1={0} y1={0} x2={90} y2={0} stroke={KC.texto} strokeWidth={6} /><text x={110} y={10} style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>≈ 1 nm · esquema</text></g>
         </SvgCapa>
       </Escena>
@@ -254,10 +254,10 @@ function Limones() {
       <Escena T={T} a={K.Vo} b={K.Da}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <path d="M 513 840 L 513 775 L 472 775 L 472 720" fill="none" stroke={KC.ink} strokeWidth={14} strokeLinejoin="round" />
-          <path d="M 627 840 L 627 775 L 648 775 L 648 720" fill="none" stroke={KC.red} strokeWidth={14} strokeLinejoin="round" />
-          <VasoPila T={T} x={570} y={1190} s={0.95} burbujas={0.8} />
-          <Voltimetro x={560} y={630} s={1.25} texto={`${klerp(0, 0.91, kprog(T, K.Vo + 1.3, K.Vo + 2.8, kEase.sale)).toFixed(2)} V`} />
+          <path d="M 573 840 L 573 775 L 532 775 L 532 720" fill="none" stroke={KC.ink} strokeWidth={14} strokeLinejoin="round" />
+          <path d="M 687 840 L 687 775 L 708 775 L 708 720" fill="none" stroke={KC.red} strokeWidth={14} strokeLinejoin="round" />
+          <VasoPila T={T} x={630} y={1190} s={0.95} burbujas={0.8} />
+          <Voltimetro x={620} y={630} s={1.25} texto={`${klerp(0, 0.91, kprog(T, K.Vo + 1.3, K.Vo + 2.8, kEase.sale)).toFixed(2)} V`} />
           {(() => { const top = 600, bot = 1180, h = bot - top, yv = (v) => bot - h * v / 1.2, f = kprog(T, K.Vo + 1.3, K.Vo + 2.8, kEase.sale);
             return <g>
               <rect x={900} y={top} width={80} height={h} rx={18} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={7} />
@@ -303,9 +303,9 @@ function Limones() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.G + 2.6} texto="¿electricidad del limón?" x={540} y={1500} tam={44} />
       <Chip T={T} at={K.G + 2.7} until={K.Q - 0.3} texto="se gasta el clavo" y={1500} tam={46} borde={KC.red} />
-      <Etq T={T} at={K.Q + 1.3} until={K.Z - 0.3} x={560} y={950} texto="capa de zinc (Zn) sobre acero" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Q + 1.3} until={K.Z - 0.3} x={200} y={950} texto="capa de zinc (Zn) sobre acero" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Q + 0.3} until={K.Q + 2.6} texto="clavo galvanizado" y={1500} tam={46} borde={ZN} />
-      <Etq T={T} at={K.Q + 2.8} until={K.Z - 0.3} x={560} y={1150} texto="alambre de cobre (Cu)" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Q + 2.8} until={K.Z - 0.3} x={200} y={1160} texto="alambre de cobre (Cu)" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Q + 3.6} until={K.Z - 0.3} texto="los dos, en el mismo limón" y={1500} tam={42} borde={KC.yellow} />
       <Chip T={T} at={K.Z + 1.0} until={K.Ca - 0.3} texto="Zn → Zn²⁺ + 2e⁻" y={1500} tam={48} mono borde="#9fe8ff" />
       <Etq T={T} at={K.Z + 2.0} until={K.Ca - 0.3} x={140} y={600} texto="e⁻ = electrones" tam={32} color={ELEC} />
