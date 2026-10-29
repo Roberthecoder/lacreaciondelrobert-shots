@@ -157,7 +157,7 @@ function Avioneta({ T, p, y = 640 }) {
   const x = klerp(1250, -250, p);
   return <g>
     {Array.from({ length: 40 }, (_, i) => { const t0 = i / 40; if (p < t0) return null; const fx = klerp(1250, -250, t0); const u = Math.min(1, (p - t0) * 4);
-      return <circle key={i} cx={fx + 60 + Math.sin(i * 3) * 30} cy={y + 30 + u * 360} r={6 + u * 10} fill="#e9f0b0" opacity={0.55 * (1 - u * 0.5)} />; })}
+      return <circle key={i} cx={fx + 60 + Math.sin(i * 3) * 30} cy={y + 30 + u * 320} r={6 + u * 10} fill="#e9f0b0" opacity={0.55 * (1 - u * 0.5)} />; })}
     <g transform={`translate(${x} ${y})`}>
       <rect x={-130} y={-26} width={260} height={52} rx={26} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
       <rect x={-50} y={-14} width={70} height={14} rx={6} fill={KC.ink} />
@@ -236,7 +236,7 @@ function LangostaShot() {
   const iris = kprog(T, K.Es - 0.4, K.Es + 0.5, kEase.suave);
   // campo de Níger: langostas en el suelo que van cayendo desde el "día 5"
   const r = krng(21);
-  const campo = Array.from({ length: 18 }, (_, i) => [60 + (i % 6) * 180 + r() * 60, 1080 + Math.floor(i / 6) * 70 + r() * 20, r()]);
+  const campo = Array.from({ length: 18 }, (_, i) => [60 + (i % 6) * 180 + r() * 60, 980 + Math.floor(i / 6) * 80 + r() * 20, r()]);
   const diaU = kprog(T, K.R + 0.2, K.R + 4.2);           // 0 → 21 días
   const muerta = (i) => { const umbral = 5 / 21 + (campo[i][2] * 0.75) * (16 / 21); return i % 5 === 4 ? 0 : kprog(diaU, umbral, umbral + 0.08); };
   const tec = mxProy(-103.87, 18.91), cr = mxProy(-84.1, 9.9);
@@ -250,11 +250,11 @@ function LangostaShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Sol T={T} x={250} y={560} r={95} />
-          <Rama x={520} y={1180} />
-          <Calor T={T} x={500} y={860} k={calor} ancho={420} n={5} />
-          <Langosta T={T} x={540} y={1170} s={1.15} rot={klerp(0, -6, calor)} />
-          <Termo x={970} y={1150} alto={260} nivel={klerp(0.25, 0.92, calor)} />
+          <Sol T={T} x={250} y={540} r={95} />
+          <Rama x={520} y={1040} />
+          <Calor T={T} x={500} y={730} k={calor} ancho={420} n={5} />
+          <Langosta T={T} x={540} y={1030} s={1.15} rot={klerp(0, -6, calor)} />
+          <Termo x={970} y={1060} alto={240} nivel={klerp(0.25, 0.92, calor)} />
         </>)}
       </Escena>
       {/* 1 · el hongo especialista */}
@@ -289,12 +289,12 @@ function LangostaShot() {
             const n = Math.round(fiebre ? 2 + grow * 5 : 2 + grow * 20), gris = kprog(T, fiebre ? K.F + 4.6 : K.F + 3.0, fiebre ? K.F + 5.4 : K.F + 3.8);
             const rr = krng(40 + j);
             return <g key={j}>
-              <rect x={cx - 250} y={760} width={500} height={460} rx={34} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={6} />
-              <text x={cx} y={820} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>{fiebre ? 'con fiebre' : 'sin fiebre'}</text>
-              <Langosta T={T} x={cx - 10} y={960} s={0.42} gris={gris} seed={j + 2} />
-              <Termo x={cx + 190} y={960} alto={110} nivel={fiebre ? 0.9 : 0.3} />
-              <circle cx={cx} cy={1090} r={100} fill={KC.noche} stroke={KC.ink} strokeWidth={6} />
-              {Array.from({ length: n }, (_, i) => <CuerpoLevadura key={i} x={cx - 60 + rr() * 120} y={1050 + rr() * 80} s={0.55} rot={rr() * 180 + T * 10} />)}
+              <rect x={cx - 250} y={600} width={500} height={460} rx={34} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={6} />
+              <text x={cx} y={665} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>{fiebre ? 'con fiebre' : 'sin fiebre'}</text>
+              <Langosta T={T} x={cx - 10} y={800} s={0.42} gris={gris} seed={j + 2} />
+              <Termo x={cx + 190} y={800} alto={110} nivel={fiebre ? 0.9 : 0.3} />
+              <circle cx={cx} cy={935} r={100} fill={KC.noche} stroke={KC.ink} strokeWidth={6} />
+              {Array.from({ length: n }, (_, i) => <CuerpoLevadura key={i} x={cx - 60 + rr() * 120} y={895 + rr() * 80} s={0.55} rot={rr() * 180 + T * 10} />)}
             </g>; })}
         </>)}
       </Escena>
@@ -302,11 +302,11 @@ function LangostaShot() {
       <Escena T={T} a={K.E} b={K.L} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1040} width={KW} height={900} fill="#e2c27a" stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${40 + i * 125} 1060 q 30 -60 60 0 q 20 -40 40 0`} fill={KC.leaf} stroke={KC.ink} strokeWidth={5} />)}
-          {campo.map(([cx, cy], i) => { const m = muerta(i); return <Langosta key={i} T={T} x={cx} y={cy} s={0.16} rot={m * 90} gris={m} seed={i} flip={i % 3 === 0} />; })}
+          <rect x={0} y={900} width={KW} height={1100} fill="#e2c27a" stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${40 + i * 125} 920 q 30 -60 60 0 q 20 -40 40 0`} fill={KC.leaf} stroke={KC.ink} strokeWidth={5} />)}
+          {campo.map(([cx, cy], i) => { const m = muerta(i); return <Langosta key={i} T={T} x={cx} y={cy} s={0.2} rot={m * 90} gris={m} seed={i} flip={i % 3 === 0} />; })}
           <MapaAfrica T={T} x={300} y={420} k={8.4} p={kprog(T, K.E + 1.4, K.E + 1.8) * (1 - kprog(T, K.E + 3.0, K.E + 3.4))} punto={kprog(T, K.E + 2.0, K.E + 2.4, kEase.rebote)} />
-          <Avioneta T={T} p={kprog(T, K.E + 3.0, K.R + 1.6)} y={700} />
+          <Avioneta T={T} p={kprog(T, K.E + 3.0, K.R + 1.6)} y={600} />
         </>)}
       </Escena>
       {/* 9 · más lento que un insecticida, sin dañar hormigas ni aves */}
@@ -355,19 +355,19 @@ function LangostaShot() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Sol T={T} x={250} y={560} r={95} />
-          <Rama x={520} y={1180} />
-          <Calor T={T} x={500} y={860} k={1} ancho={420} n={5} />
-          <Langosta T={T} x={540} y={1170} s={1.15} rot={-6} />
-          <Termo x={970} y={1150} alto={260} nivel={0.92} />
+          <Sol T={T} x={250} y={540} r={95} />
+          <Rama x={520} y={1040} />
+          <Calor T={T} x={500} y={730} k={1} ancho={420} n={5} />
+          <Langosta T={T} x={540} y={1030} s={1.15} rot={-6} />
+          <Termo x={970} y={1060} alto={240} nivel={0.92} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou - 0.2} x={290} y={760} r={170} fx={640} fy={1050} tinte={KC.gold2} etiqueta="POR DENTRO · el hongo sigue"
+      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou - 0.2} x={290} y={620} r={150} fx={660} fy={900} tinte={KC.gold2} etiqueta="POR DENTRO · el hongo sigue"
         interior={(T2, rr) => { const q = krng(77); return <svg width={rr * 2} height={rr * 2}><rect width={rr * 2} height={rr * 2} fill="#163a3a" />
           {Array.from({ length: 9 }, (_, i) => <CuerpoLevadura key={i} x={40 + q() * (rr * 2 - 80)} y={40 + q() * (rr * 2 - 80)} s={0.9} rot={q() * 180 + T2 * 12} yema={(Math.sin(T2 * 2 + i) + 1) / 2} />)}</svg>; }} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.2} until={K.H - 0.2} texto="no es descanso: es FIEBRE" x={300} y={790} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.G + 1.2} until={K.H - 0.2} texto="no es descanso: es FIEBRE" x={300} y={720} tam={34} borde={KC.red} />
       <Etq T={T} at={K.G + 2.0} until={K.H - 0.2} x={60} y={1490} texto="langosta del desierto" tam={28} color={KC.ink} />
       <Etq T={T} at={K.G + 2.3} until={K.H - 0.2} x={60} y={1540} texto="Schistocerca gregaria" it tam={28} color={KC.ink} />
       <Etq T={T} at={K.H + 0.5} until={K.Es - 0.3} x={60} y={470} texto="hongo de las langostas" tam={34} color={KC.ink} />
@@ -383,10 +383,10 @@ function LangostaShot() {
       <Chip T={T} at={K.Pf + 1.5} until={K.Ad - 0.2} texto="presión ↓" x={200} y={470} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Pf + 2.2} until={K.Ad - 0.2} texto="enzimas" x={480} y={470} tam={34} borde={KC.cyan} />
       <Etq T={T} at={K.Ad + 0.6} until={K.P - 0.2} x={40} y={760} texto="hemolinfa = su sangre" tam={30} />
-      <Etq T={T} at={K.Ad + 1.0} until={K.P - 0.2} x={40} y={1180} texto="células tipo levadura" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Ad + 1.4} until={K.P - 0.2} x={1040} y={1440} lado="izq" texto="azúcar (trehalosa)" tam={26} color={KC.pink} />
-      <Chip T={T} at={K.F + 0.3} until={K.F + 2.0} texto="el calor lo frena, no lo cura" x={540} y={560} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.F + 3.4} until={K.E - 0.2} texto="la mayoría muere" x={330} y={560} tam={38} borde={KC.red} />
+      <Etq T={T} at={K.Ad + 1.0} until={K.P - 0.2} x={40} y={1490} texto="células tipo levadura" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.Ad + 1.4} until={K.P - 0.2} x={1040} y={1550} lado="izq" texto="azúcar (trehalosa)" tam={26} color={KC.pink} />
+      <Chip T={T} at={K.F + 0.3} until={K.F + 2.0} texto="el calor lo frena, no lo cura" x={540} y={470} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.F + 3.4} until={K.E - 0.2} texto="la mayoría muere" x={330} y={470} tam={38} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 1.4} anio="2005" quien="norte de Níger · campo real" revista="Mullié et al., PLoS ONE, 2021" y={640} />
       <Etq T={T} at={K.E + 2.2} until={K.E + 3.2} x={560} y={600} texto="norte de Níger" tam={30} color={KC.ink} />
       <Etq T={T} at={K.E + 3.4} until={K.R - 0.2} x={40} y={1490} texto="langosta del desierto" tam={28} color={KC.ink} />
@@ -410,7 +410,7 @@ function LangostaShot() {
       <Etq T={T} at={K.M + 1.9} until={K.Ci - 0.2} x={40} y={1540} texto="Schistocerca piceifrons" it tam={28} color={KC.ink} />
       <Chip T={T} at={K.M + 3.6} until={K.Ci - 0.2} texto="2020 · cepa donada a Costa Rica" x={380} y={470} tam={34} borde={KC.blue} />
       <Etq T={T} at={K.M + 4.8} until={K.Ci - 0.2} x={mx(cr)[0] + 30} y={mx(cr)[1] + 30} texto="Costa Rica" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="fiebre vs. hongo" x={290} y={1010} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="fiebre vs. hongo" x={300} y={1150} tam={36} borde={KC.red} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={190} x={600} color={KC.ink} />

@@ -171,13 +171,14 @@ function SetaViento({ T, x, y, s = 1, o = 1 }) {
     {[0, 1, 2].map((i) => { const u = ((T * 0.7 + i / 3) % 1); return <path key={'v' + i} d={`M ${x + 60 + u * 300} ${y - 260 - i * 50} q 60 -20 120 0 t 120 0`} stroke="#fff" strokeWidth={7} fill="none" strokeLinecap="round" opacity={Math.sin(u * Math.PI) * 0.9} />; })}
   </g>;
 }
-// Hoyo con banderita.
-function Hoyo({ x, y, texto, o = 1, color = KC.white }) {
+// Hoyo con letrero arriba (para que los animales no lo tapen).
+function Hoyo({ x, y, texto, o = 1, color = KC.white, alto = 300 }) {
+  const w = texto.length * 17 + 40;
   return <g opacity={o}>
     <ellipse cx={x} cy={y} rx={90} ry={26} fill={TR.tierra2} stroke={KC.ink} strokeWidth={6} />
-    <line x1={x + 70} y1={y} x2={x + 70} y2={y - 150} stroke={KC.ink} strokeWidth={6} />
-    <path d={`M ${x + 70} ${y - 150} L ${x + 70 + 18 + texto.length * 14} ${y - 150} L ${x + 70 + 18 + texto.length * 14} ${y - 104} L ${x + 70} ${y - 104} Z`} fill={color} stroke={KC.ink} strokeWidth={5} transform={`translate(${-(18 + texto.length * 14) / 2 - 35} 0)`} />
-    <text x={x} y={y - 117} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>{texto}</text>
+    <line x1={x} y1={y - 20} x2={x} y2={y - alto} stroke={KC.ink} strokeWidth={6} strokeDasharray="12 10" />
+    <rect x={x - w / 2} y={y - alto - 54} width={w} height={54} rx={12} fill={color} stroke={KC.ink} strokeWidth={5} />
+    <text x={x} y={y - alto - 17} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>{texto}</text>
   </g>;
 }
 // Sello rectangular con texto largo ("EN DUDA").
@@ -307,7 +308,7 @@ function TrufasShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           <rect x={70} y={560} width={940} height={620} rx={30} fill={KC.paper} stroke={KC.ink} strokeWidth={9} transform="rotate(-2 540 870)" />
-          <text x={540} y={650} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>HIPÓTESIS · 1981</text>
+          <text x={330} y={650} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>HIPÓTESIS · 1981</text>
           <Puerco T={T} x={260} y={1060} s={0.85} color="#f2a0b4" jabali={false} />
           {kprog(T, K.H + 1.2, K.H + 1.7) > 0 && <g opacity={kprog(T, K.H + 1.2, K.H + 1.7)}>
             <ellipse cx={330} cy={770} rx={180} ry={56} fill="#fff" stroke={KC.ink} strokeWidth={5} />
@@ -323,16 +324,16 @@ function TrufasShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Suelo y={1000} />
-          <Hoyo x={200} y={1040} texto="feromona" o={kprog(T, K.Pr, K.Pr + 0.4)} />
-          <Hoyo x={560} y={1040} texto="sulfuro de dimetilo" o={kprog(T, K.Pr + 0.15, K.Pr + 0.55)} color="#ffe37a" />
-          <Hoyo x={890} y={1040} texto="trufa" o={kprog(T, K.Pr + 0.3, K.Pr + 0.7)} />
+          <Hoyo x={190} y={1040} alto={300} texto="feromona" o={kprog(T, K.Pr, K.Pr + 0.4)} />
+          <Hoyo x={560} y={1040} alto={400} texto="sulfuro de dimetilo" o={kprog(T, K.Pr + 0.15, K.Pr + 0.55)} color="#ffe37a" />
+          <Hoyo x={900} y={1040} alto={300} texto="trufa" o={kprog(T, K.Pr + 0.3, K.Pr + 0.7)} />
           <Olor T={T} x={560} y={1020} alto={220} n={2} ancho={40} o={kprog(T, K.Pr + 0.5, K.Pr + 1)} />
           <Olor T={T} x={890} y={1020} alto={220} n={2} ancho={40} o={kprog(T, K.Pr + 0.5, K.Pr + 1)} />
           <Terrones T={T} x={560} y={1010} at={K.Pr + 2.6} n={8} />
           <Terrones T={T} x={890} y={1010} at={K.Pr + 2.5} n={8} />
           <Perro T={T} x={dx} y={990} s={0.85} flip paso={T < K.Pr + 2.4 ? T : 0} baja={T > K.Pr + 2.4 ? 0.6 + 0.3 * Math.sin(T * 14) : 0} />
           <Puerco T={T} x={px} y={1000} s={0.75} color="#f2a0b4" jabali={false} paso={T < K.Pr + 2.4 ? T : 0} baja={T > K.Pr + 2.4 ? 0.6 + 0.3 * Math.sin(T * 14) : 0} />
-          <SelloTexto T={T} at={K.Pr + 4.2} x={330} y={700} texto="EN DUDA" />
+          <SelloTexto T={T} at={K.Pr + 4.2} x={300} y={590} texto="EN DUDA" />
         </>)}
       </Escena>
       {/* 8–9 · Italia 2014: por dentro de la tripa del cerdo, las esporas salen vivas; luego se unen a raíces de encino */}
@@ -358,7 +359,7 @@ function TrufasShot() {
       {/* 10 · México: unas veinte especies de trufas silvestres (conteo de 2018) */}
       <Escena T={T} a={K.M} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<MapaMexico x={40} y={640} ancho={1000}>
+        {fsvg(<MapaMexico x={40} y={580} ancho={1000}>
           {MX.map(([lo, la], i) => { const [mx, my] = mxProy(lo, la); const k = kprog(T, K.M + 0.6 + i * 0.12, K.M + 0.9 + i * 0.12, kEase.rebote);
             return k > 0 ? <g key={i} transform={`translate(${mx} ${my}) scale(${k})`}><path d="M -14 0 Q -16 -14 0 -16 Q 16 -14 14 0 Q 12 12 0 12 Q -12 12 -14 0 Z" fill={TR.peridio} stroke={KC.ink} strokeWidth={3} /></g> : null; })}
         </MapaMexico>)}
@@ -371,8 +372,8 @@ function TrufasShot() {
           <Suelo y={1150} />
           <Trufa x={380} y={740} s={1.45} rot={-6} />
           <Olor T={T} x={380} y={630} alto={300} n={3} o={kprog(T, K.C + 0.3, K.C + 0.9)} color="#fff4b0" />
-          <g transform={`translate(${klerp(-500, -60, kprog(T, K.C + 1.2, K.C + 2.0, kEase.sale))} 0)`}><Puerco T={T} x={0} y={1180} s={0.9} color="#f2a0b4" jabali={false} /></g>
-          <g transform={`translate(${klerp(500, 40, kprog(T, K.C + 1.6, K.C + 2.4, kEase.sale))} 0)`}><Perro T={T} x={1000} y={1160} s={0.9} flip /></g>
+          <g transform={`translate(${klerp(-500, -60, kprog(T, K.C + 1.2, K.C + 2.0, kEase.sale))} 0)`}><Puerco T={T} x={0} y={1100} s={0.9} color="#f2a0b4" jabali={false} /></g>
+          <g transform={`translate(${klerp(500, 40, kprog(T, K.C + 1.6, K.C + 2.4, kEase.sale))} 0)`}><Perro T={T} x={1000} y={1080} s={0.9} flip /></g>
         </>)}
       </Escena>
 
@@ -401,13 +402,13 @@ function TrufasShot() {
       <Chip T={T} at={K.A + 4.3} until={K.H - 0.3} texto="esporas de viaje" x={360} y={470} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.H + 0.4} until={K.Pr - 0.3} texto="feromona del cerdo macho" x={360} y={470} tam={32} borde={KC.pink} />
       <Chip T={T} at={K.Pr + 0.2} until={K.E - 0.3} texto="Francia · publicado en 1990" x={360} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Pr + 1.3} until={K.Pr + 3.2} x={60} y={800} texto="la pasa de largo" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 2.6} until={K.E - 0.3} x={1040} y={800} lado="izq" texto="directo a la trufa" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 1.3} until={K.Pr + 3.2} x={60} y={1120} texto="el cerdo la pasa de largo" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 2.6} until={K.E - 0.3} x={1040} y={1170} lado="izq" texto="el perro: directo a la trufa" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.2} anio="2014" quien="Italia · esporas de trufa" revista="Fungal Ecology, 2014" y={620} />
       <Chip T={T} at={K.E + 2.4} until={K.En - 0.3} texto="POR DENTRO · la tripa del cerdo" x={380} y={470} tam={30} borde={KC.pink} />
       <Chip T={T} at={K.E + 4.0} until={K.En - 0.3} texto="✓ siguen vivas" x={330} y={1150} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.En + 0.5} until={K.M - 0.3} texto="✓ más micorrizas con encino" x={380} y={470} tam={32} borde={KC.mint} />
-      <NumeroGigante T={T} at={K.M + 0.3} until={K.C - 0.3} valor={20} prefijo="≈" dur={0.8} etiqueta="especies de Tuber (2018)" x={330} y={470} tam={150} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.M + 0.3} until={K.C - 0.3} valor={20} prefijo="≈" dur={0.8} etiqueta="especies de trufas (2018)" x={330} y={470} tam={150} color={KC.yellow} />
       <Etq T={T} at={K.M + 2.2} until={K.C - 0.3} x={60} y={1170} texto="Tuber incognitum · bajo encinos" it tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="se deja encontrar" x={330} y={470} tam={40} borde={KC.yellow} />
 
