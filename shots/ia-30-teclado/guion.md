@@ -12,7 +12,7 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti. | Fondo amarillo; desde el cuadro 0 una mano tecleando en un celular grande. Una burbuja de chat intenta salir volando y se queda (candadito); en su lugar sale volando un paquetito con brillitos. |
-| 1 | Prediccion | Escribes «te quiero» y te sugiere «mucho». La calcula un modelo dentro de tu celular. | Zoom a la barra de sugerencias: «te quiero» → «mucho» · «y» · «también» (ejemplo ilustrativo, como la Fig. 1 del paper con "I love you"). Lupa rayos X: adentro del celular, una red neuronal chiquita (`RedNeuronal`). |
+| 1 | Prediccion | Escribes «te quiero» y te sugiere «mucho». La calcula un modelo en tu celular. | Zoom a la barra de sugerencias: «te quiero» → «mucho» · «y» · «también» (ejemplo ilustrativo, como la Fig. 1 del paper con "I love you"). Lupa rayos X: adentro del celular, una red neuronal chiquita (`RedNeuronal`). |
 | 2 | Estudia | Cargando, sin usarse y con wifi, tu celular entrena ese modelo con lo que escribiste. | Íconos que se encienden uno por uno: 🔌 cargando · 💤 sin usarse · wifi. Fondo oscuro "por dentro": la red se ilumina con las frases que se quedan dentro. |
 | 3 | Paquete | Resume el cambio en una actualización chiquita y cifrada. Tus frases no salen. | Las conexiones que cambiaron se comprimen en un paquetito con candado; las burbujas de texto se quedan detrás de una puerta. |
 | 4 | Promedio | El servidor promedia las de cientos de celulares y les regresa un modelo mejor. | Vista de lejos: muchos celulares mandan paquetitos a un servidor; se mezclan en un "promedio" y baja un modelo nuevo a todos. |

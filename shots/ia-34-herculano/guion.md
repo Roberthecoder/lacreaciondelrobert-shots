@@ -1,7 +1,7 @@
 # Shot IA #34 · El libro quemado por un volcán que la IA leyó sin abrirlo
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #34 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** FASE A — guion escrito, pendiente de verificación independiente. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (24 ✅; la única ⚠️ ya corregida: «hizo aparecer» en vez de «leyó»), animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · **voz pendiente de aprobación de Robert**.
 - **Formato:** N1 "Por dentro": `Lupa` en modo rayos X sobre el rollo carbonizado (macro: el rollo en la mano → micro: capas
   del escaneo en fondo oscuro → macro: el mismo rollo, cerrado, con letras brillando por dentro).
 - **Gancho (de los 7):** #7 "Algo que tus ojos nunca van a ver": lo que dice por dentro un rollo quemado.
@@ -30,6 +30,25 @@
 **Música:** cama grave y continua (tensa, tapada hasta la palabra "púrpura"; se abre después). Efectos: crujido de carbón al
 girar el rollo, retumbo del volcán, desmoronado del rollo, zumbido del escáner, "bip" por cada puntito de tinta, campanita al
 formarse ΠΟΡΦΥΡΑϹ, monedas en el premio, brillo final.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Cómo lees lo que ni los rayos X distinguen?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «tus ojos nunca lo van a ver» (cuadro 0) |
+| 2 | 10.7 | 13.9 | 10_serio_molesto | `arriba-der` | «muchos se destruyeron» |
+| 3 | 20.2 | 24.0 | 07_pensativo_puno | `grande` | «¿Cómo lees lo que ni los rayos X distinguen?» |
+| 4 | 29.2 | 31.7 | 13_senalando_arriba | `arriba-der` | señala la tarjeta «2023 · Vesuvius Challenge» |
+| 5 | 38.1 | 41.7 | 04_bajando_lentes | `arriba-der` | «setecientos mil dólares» |
+| 6 | 42.0 | 46.1 | 06_pensativo_menton | `izq-alto` | «quienes leen son expertos en papiros» |
+| 7 | 46.8 | 50.8 | 05_sonriendo_dientes_uniformes | `izq-alto` | «música, comida y cómo disfrutar la vida» |
+| 8 | 52.0 | 55.2 | 11_sorprendido | `arriba-der` | «Sobre los vicios, de Filodemo» |
+| 9 | 55.7 | 58.3 | 13_senalando_arriba | `arriba-der` | «ya no está mudo» |
+| — | 58.4 | 61.9 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 31.7 s (+ cierre 3.5 s) · poses distintas 7 (nunca la misma dos veces seguidas) · huecos máx. 6.3 s · total 61.9 s
 
 ## Fuentes (abiertas el 29 oct 2026)
 
