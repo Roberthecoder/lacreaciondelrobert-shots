@@ -13,15 +13,15 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | ¿Por qué una máquina todavía no puede leer tu mente? Porque, por ahora, necesita que tú te dejes. | Fondo rosa; desde el cuadro 0 una cabeza de perfil con un casco-antena; de la cabeza sale una burbuja de pensamiento que la máquina intenta "jalar" con un cable… y rebota contra un candado. Chip "por ahora". |
+| 0 | Gancho | ¿Por qué una máquina todavía no puede leer tu mente desde afuera? Porque, por ahora, necesita que tú te dejes. | Fondo rosa; desde el cuadro 0 una cabeza de perfil con un casco-antena; de la cabeza sale una burbuja de pensamiento que la máquina intenta "jalar" con un cable… y rebota contra un candado. Chip "por ahora". |
 | 1 | Escaner | En Texas metieron a tres personas a una resonancia y les pusieron dieciséis horas de historias en audio. | Un resonador (dona gigante) con una persona acostada y audífonos; 3 siluetas; reloj que corre hasta "16 h" de historias. |
 | 2 | Aprende | Una IA aprendió cómo se enciende el cerebro de cada una con cada idea. Luego oían historias nuevas, y la máquina escribía. | Fondo oscuro (por dentro de la máquina): un cerebro con zonas que se prenden; la red neuronal conecta cada patrón con palabras; luego una pantalla escribe sola. |
 | 3 | Ejemplo | Alguien oyó: «todavía no tengo licencia de manejo». La máquina escribió: «ella ni siquiera ha empezado a aprender a manejar». No eran las palabras exactas: era la idea. | Dos globos lado a lado: "lo que oyó" / "lo que escribió la máquina" (ejemplo real del estudio, traducido); un volante y una licencia; luego chip "≠ palabras · = idea". |
-| 4 | Pregunta | ¿Entonces ya pueden espiar lo que piensas? Eso probaron en la Universidad de Texas en Austin, en un estudio de 2023. | **Re-gancho.** "?" gigante con un ojo espía; luego tarjeta "2023 · UT Austin · Tang, LeBel, Jain y Huth · Nature Neuroscience". |
+| 4 | Pregunta | ¿Entonces ya pueden espiar lo que piensas? Eso probaron en Austin, en un estudio de 2023. | **Re-gancho.** "?" gigante con un ojo espía; luego tarjeta "2023 · UT Austin · Tang, LeBel, Jain y Huth · Nature Neuroscience". |
 | 5 | Ajeno | Con el cerebro de alguien con quien no se entrenó, apenas le atinó más que al azar. | Prueba 1: se conecta a otra cabeza (una que no entrenó); la pantalla escupe letras revueltas; medidor de aciertos casi en el piso, junto a la marca "azar". |
 | 6 | Sabotaje | Y quien sí la entrenó pudo sabotearla: con solo nombrar animales en su mente, casi no le atinaba. | Prueba 2: la persona entrenada cierra los ojos y en su burbuja desfilan animales (gato, ajolote, perro…); el medidor baja de "escuchando" a casi cero. |
 | 7 | Extra | Lo raro: también describió lo que pasaba en cortos animados sin sonido. | Una pantallita de cine muda (ícono 🔇) con un cortometraje animado genérico; la máquina escribe una frase debajo. |
-| 8 | Cierre | Así que hoy tu mente sigue siendo tuya, y los autores piden reglas que protejan tu privacidad mental. | **Regreso a la imagen del inicio**: la misma cabeza; el candado de la burbuja se cierra con brillo y aparece "privacidad mental ✔". |
+| 8 | Cierre | Así que hoy, desde afuera, tu mente sigue siendo tuya, y los autores piden reglas que protejan tu privacidad mental. | **Regreso a la imagen del inicio**: la misma cabeza; el candado de la burbuja se cierra con brillo y aparece "privacidad mental ✔". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua y un poco misteriosa; zumbido rítmico de resonancia en el escáner, tic de reloj hasta "16 h", chispitas

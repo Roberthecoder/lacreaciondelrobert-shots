@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Teclado base narrada.dc.html",
+  "salida": "Shot Teclado narrado.dc.html",
+  "nota": "Shot IA #30. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti."
+    },
+    {
+      "escena": "Prediccion",
+      "texto": "Escribes «te quiero» y te sugiere «mucho». La calcula un modelo en tu celular."
+    },
+    {
+      "escena": "Estudia",
+      "texto": "Cargando, sin usarse y con wifi, tu celular entrena ese modelo con lo que escribiste."
+    },
+    {
+      "escena": "Paquete",
+      "texto": "Resume el cambio en una actualización chiquita y cifrada. Tus frases no salen."
+    },
+    {
+      "escena": "Promedio",
+      "texto": "El servidor promedia las de cientos de celulares y les regresa un modelo mejor."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y aprende igual de bien sin ver tus mensajes?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Google lo probó en 2018 con Gboard: un millón y medio de celulares y seiscientos millones de frases."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Y atinó igual o un poco más que un modelo entrenado con textos en sus servidores."
+    },
+    {
+      "escena": "Apple",
+      "texto": "En 2017 Apple contó que, si aceptas compartir, el iPhone revuelve al azar sus datos antes de contar qué emojis usas."
+    },
+    {
+      "escena": "Matiz",
+      "texto": "Pero no es privacidad perfecta: en 2019, en el MIT, reconstruyeron frases a partir de cambios parecidos de un modelo, en pruebas de laboratorio."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así, tus frases se quedan en tu celular. Lo que viaja es lo que aprendió."
+    }
+  ]
+}

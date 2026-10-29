@@ -41,3 +41,14 @@
 3. **Cierre (#19, ⚠️ generaliza de más).** Que regrese al gancho corregido sin prometer de más. Propuesta: «Así, tus frases se quedan en tu celular. Lo que viaja es lo que aprendió.» (el "Así" lo ata al método explicado).
 4. *(Opcional, no bloquea)* #15 Apple: agregar que es opcional («…el iPhone, si aceptas compartir, revuelve al azar…»).
 5. *(Recordatorio)* En `## Fuentes` del guion, el cifrado de la actualización está atribuido al blog de 2017 (correcto); no atribuirlo al paper de 2018, que no lo menciona.
+
+## Re-verificación (29 oct 2026, coordinador)
+Correcciones aplicadas como propuso el verificador:
+- Gancho: «Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti.» ✅
+- Matiz: «…en 2019, en el MIT, reconstruyeron frases a partir de cambios parecidos de un modelo, en pruebas de laboratorio.» ✅
+- Cierre: «Así, tus frases se quedan en tu celular. Lo que viaja es lo que aprendió.» ✅
+- Apple: «En 2017 Apple contó que, si aceptas compartir, el iPhone revuelve al azar sus datos antes de contar qué emojis usas.» ✅
+- Recortes sin datos nuevos (cargando/wifi, servidor que promedia, «atinó igual o un poco más», «un modelo en tu celular») ✅
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

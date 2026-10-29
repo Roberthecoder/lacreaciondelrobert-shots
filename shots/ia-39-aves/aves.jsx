@@ -117,7 +117,7 @@ function GrullaVuelo({ x, y, s = 1, T = 0 }) {
 }
 
 // ---------- escenario de la ventana (inicio y cierre) ----------
-function Ventana({ T, x = 50, y = 520, w = 560, h = 600, children }) {
+function Ventana({ T, x = 50, y = 440, w = 560, h = 580, children }) {
   return <g>
     <rect x={x - 22} y={y - 22} width={w + 44} height={h + 44} rx={26} fill="#f4efe4" stroke={KC.ink} strokeWidth={9} />
     <svg x={x} y={y} width={w} height={h} overflow="hidden">
@@ -149,7 +149,6 @@ function CelularAves({ T, x, y, s = 1, rot = -8, eventos }) {
     <text x={0} y={-160} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill={KC.texto}>escuchando…</text>
     <Espectrograma T={T} x={-112} y={-130} w={224} h={250} vel={70} eventos={eventos} borde={false} />
     <circle cx={0} cy={180} r={30} fill={KC.red} stroke={KC.texto} strokeWidth={5} opacity={0.75 + 0.25 * Math.sin(T * 6)} />
-    {[1, 2, 3].map((k) => <path key={k} d={`M ${-96 + k * 4} ${-12 - k * 30} l 0 0`} />)}
     <path d="M 110 -40 Q 175 -10 150 80 Q 140 120 110 130 Z" fill="#f1b48f" stroke={KC.ink} strokeWidth={7} />
   </g>;
 }
@@ -186,7 +185,6 @@ function Capas({ x, y, n, total = 157, ancho = 380 }) {
 // Globo terráqueo esquemático con puntitos (grabaciones) que se encienden.
 function Globo({ T, cx = 540, cy = 840, r = 300, at, n = 90 }) {
   const rr = krng(11), pts = Array.from({ length: n }, (_, i) => { const a = rr() * Math.PI * 2, d = Math.sqrt(rr()) * r * 0.9; return { x: cx + Math.cos(a) * d, y: cy + Math.sin(a) * d, t: at + 0.2 + i * 0.035 + rr() * 0.3 }; });
-  const gira = (T * 18) % 360;
   return <g>
     <circle cx={cx} cy={cy} r={r} fill="#2f6dff" stroke={KC.ink} strokeWidth={9} />
     <svg x={cx - r} y={cy - r} width={r * 2} height={r * 2} overflow="hidden">
@@ -204,7 +202,6 @@ function Globo({ T, cx = 540, cy = 840, r = 300, at, n = 90 }) {
       return <g key={i}><circle cx={p.x} cy={p.y} r={6 + 22 * u} fill="none" stroke={KC.yellow} strokeWidth={4} opacity={1 - u} />
         <circle cx={p.x} cy={p.y} r={8} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /></g>; })}
     <circle cx={cx - r * 0.35} cy={cy - r * 0.4} r={r * 0.18} fill="#fff" opacity=".18" />
-    <text x={cx} y={cy - r - 20} textAnchor="middle" style={{ font:`700 1px ${KF.mono}` }}>{gira > 400 ? '' : ''}</text>
   </g>;
 }
 // Mapa esquemático de Europa (lon, lat → px) y la ruta de la grulla común.
@@ -261,9 +258,9 @@ function Puntitos({ T, n1, n2, x = 100, y = 690, cols = 25, paso = 36 }) {
   return <g>{out}</g>;
 }
 // Tarjeta de un ave del jardín.
-function FichaAve({ T, at, x, y, nombre, cientifico, children }) {
-  if (T < at - 0.01) return null;
-  const e = kprog(T, at, at + 0.45, kEase.rebote);
+function FichaAve({ T, at, until, x, y, nombre, cientifico, children }) {
+  if (T < at - 0.01 || T > until + 0.5) return null;
+  const e = kprog(T, at, at + 0.45, kEase.rebote) * (1 - kprog(T, until, until + 0.45, kEase.suave));
   return <div style={{ position:'absolute', left:x, top:y, width:310, height:400, transform:`translate(-50%,-50%) scale(${e})`, zIndex:30,
     background:'#fffdf6', border:`7px solid ${KC.ink}`, borderRadius:26, boxShadow:`10px 10px 0 ${KC.ink}`, overflow:'hidden' }}>
     <svg width={310} height={270} style={{ display:'block', background:'#bfefff' }}>{children}</svg>
@@ -299,18 +296,18 @@ function Aves() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el zanate en tu ventana y tu celular escuchando */}
       <Escena T={T} a={K.G} b={K.E} zoom={0}>
-        <div style={{ position:'absolute', inset:0, transform:`scale(${1 + 2.2 * empuje})`, transformOrigin:'72% 52%' }}>
+        <div style={{ position:'absolute', inset:0, transform:`scale(${1 + 2.2 * empuje})`, transformOrigin:'74% 47%' }}>
           <FondoLunares color={KC.mint} />
           {svg(<>
             <Ventana T={T}>
               <Zanate x={330} y={392} s={1.05} T={T} canta={cantaG} />
               <Ondas T={T} x={170} y={278} t0={K.G + 0.2} />
             </Ventana>
-            <CelularAves T={T} x={790} y={985} s={0.82} eventos={EVG} />
+            <CelularAves T={T} x={800} y={900} s={0.8} eventos={EVG} />
           </>)}
         </div>
       </Escena>
-      <Etq T={T} at={K.G + 1.6} until={K.E - 0.9} x={300} y={1180} texto="Quiscalus mexicanus" it lado="der" tam={30} />
+      <Etq T={T} at={K.G + 1.6} until={K.E - 0.9} x={110} y={1110} texto="Quiscalus mexicanus" it lado="der" tam={30} />
       {/* 2 · por dentro del celular: el espectrograma */}
       <Escena T={T} a={K.E} b={K.F} zoom={0.03}>
         <FondoCircuito T={T} color={KC.mint} />
@@ -344,9 +341,9 @@ function Aves() {
             <Huella T={T} x={170} y={880} tipo="curva" at={K.F + 3.0} etiqueta="foto" s={0.62} />
           </g>
         </>)}
-        <RedNeuronal T={T} x={360} y={660} ancho={560} alto={440} capas={[5, 7, 7, 7, 3]} onda={T > K.F + 3.2 ? ((T - K.F - 3.2) * 0.7) % 1.2 : null} o={red} color={KC.cyan} />
+        <RedNeuronal T={T} x={360} y={660} ancho={560} alto={440} capas={[5, 7, 7, 7, 3]} onda={T > K.F + 3.2 ? ((T - K.F - 3.2) * 0.7) % 1.2 : null} o={red} color={KC.mint} />
       </Escena>
-      <Chip T={T} at={K.F + 3.3} until={K.P - 0.2} texto="la IA la lee como una foto" x={540} y={1170} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.F + 3.3} until={K.P - 0.2} texto="la IA la lee como una foto" x={650} y={590} tam={36} borde={KC.cyan} />
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.V} zoom={0.1}>
         <FondoLunares color={KC.orange} />
@@ -375,7 +372,7 @@ function Aves() {
         <FondoLunares color={KC.cyan} />
         {svg(<Puntitos T={T} n1={n1} n2={Math.max(n1, n2)} />)}
       </Escena>
-      <NumeroGigante T={T} at={K.Cr + 0.3} until={K.Cr + 3.4} valor={984} dur={2.4} etiqueta="2018–2020 · especies de aves" x={430} y={470} tam={190} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Cr + 0.3} until={K.Cr + 3.4} valor={984} dur={2.4} etiqueta="especies de aves (2018–2020)" x={540} y={470} tam={190} color={KC.yellow} />
       <NumeroGigante T={T} at={K.Cr + 3.6} until={K.Ge - 0.2} valor={3000} desde={984} dur={1.9} prefijo="+" etiqueta="inicios de 2021" x={400} y={470} tam={190} color={KC.pink} />
       <Chip T={T} at={K.Cr + 1.0} until={K.Ge - 0.2} texto="cada puntito = 10 especies" x={540} y={1160} tam={30} borde={KC.ink} />
       {/* 8 · la gente y la grulla */}
@@ -386,7 +383,7 @@ function Aves() {
           {T > K.Ge + 3.6 && <MapaEuropa T={T} at={K.Ge + 3.6} rutaP={ruta} />}
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Ge + 0.3} until={K.Ge + 3.6} valor={1.1} dec={1} dur={1.2} prefijo="+" sufijo=" millones" etiqueta="de personas usaron la app en 2020" x={600} y={540} tam={110} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Ge + 0.3} until={K.Ge + 3.6} valor={1.1} dec={1} dur={1.2} prefijo="+" sufijo=" millones" etiqueta="personas en 2020" x={650} y={540} tam={110} color={KC.yellow} />
       <Rotulo T={T} at={K.Ge + 4.0} until={K.J - 0.2} normal="grulla común" it="Grus grus" y={440} />
       <Chip T={T} at={K.Ge + 5.6} until={K.J - 0.2} texto="igual a su ruta ya conocida" x={540} y={525} tam={32} borde={KC.red} />
       {/* 9 · el modelo de 2023 y tu jardín */}
@@ -395,9 +392,9 @@ function Aves() {
       </Escena>
       <NumeroGigante T={T} at={K.J + 0.3} until={K.C - 0.2} valor={6000} dur={1.6} prefijo="+" etiqueta="modelo mundial · 2023" x={390} y={470} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.J + 1.4} until={K.C - 0.2} texto="especies: aves y otros animales" x={390} y={640} tam={28} borde={KC.ink} />
-      <FichaAve T={T} at={K.J + 3.2} x={195} y={950} nombre="zanate" cientifico="Quiscalus mexicanus"><Zanate x={170} y={250} s={0.62} T={T} /></FichaAve>
-      <FichaAve T={T} at={K.J + 3.8} x={540} y={950} nombre="gorrión" cientifico="Passer domesticus"><Gorrion x={160} y={235} s={1.2} T={T} /></FichaAve>
-      <FichaAve T={T} at={K.J + 4.4} x={885} y={950} nombre="tortolita" cientifico="Columbina inca"><Tortolita x={140} y={225} s={1.15} T={T} /></FichaAve>
+      <FichaAve T={T} at={K.J + 3.2} until={K.C - 0.2} x={195} y={930} nombre="zanate" cientifico="Quiscalus mexicanus"><Zanate x={170} y={250} s={0.62} T={T} /></FichaAve>
+      <FichaAve T={T} at={K.J + 3.8} until={K.C - 0.2} x={540} y={930} nombre="gorrión" cientifico="Passer domesticus"><Gorrion x={160} y={235} s={1.2} T={T} /></FichaAve>
+      <FichaAve T={T} at={K.J + 4.4} until={K.C - 0.2} x={885} y={930} nombre="tortolita" cientifico="Columbina inca"><Tortolita x={140} y={225} s={1.15} T={T} /></FichaAve>
       {/* 10 · cierre: la misma ventana; el canto ya se ve como dibujo */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
@@ -405,24 +402,24 @@ function Aves() {
           <Ventana T={T}>
             <Zanate x={330} y={392} s={1.05} T={T} canta={cantaC} />
           </Ventana>
-          {EVC.filter((e) => T >= e.t).map((e, i) => { const u = kprog(T, e.t, e.t + 2.6), ox = 380 + u * 560, oy = 880 - u * 240 + (i % 2) * 60;
-            return <g key={i} transform={`translate(${ox} ${oy - 230}) scale(${0.5 + u * 0.5})`} opacity={1 - kprog(T, e.t + 2.0, e.t + 2.6)}><AvTraza e={{ ...e, d: 0.8 }} h={230} vel={150} /></g>; })}
+          {EVC.filter((e) => T >= e.t).map((e, i) => { const u = kprog(T, e.t, e.t + 2.6), ox = 560 + u * 300, oy = 900 + (i % 2) * 70 - u * 40;
+            return <g key={i} transform={`translate(${ox} ${oy - 150}) scale(${0.7 + u * 0.4})`} opacity={1 - kprog(T, e.t + 2.0, e.t + 2.6)}><AvTraza e={{ ...e, d: 0.8 }} h={230} vel={150} /></g>; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="una foto en cada canto" x={330} y={440} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="una foto en cada canto" x={330} y={360} tam={38} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="Un dibujo escondido *en su canto.*" />
-      <Subtitulo T={T} idx={1} at={K.E + 0.1} until={K.E + 3.6} texto="La app lo vuelve *una imagen.*" />
-      <Subtitulo T={T} idx={2} at={K.E + 3.7} until={K.F - 0.1} texto="Agudo, fuerte *y cuánto dura.*" />
-      <Subtitulo T={T} idx={3} at={K.F + 0.1} until={K.P - 0.1} texto="La IA lo mira *como una foto.*" />
-      <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.V - 0.1} texto="¿Quién le enseñó *a leerlas?*" />
-      <Subtitulo T={T} idx={5} at={K.V + 0.1} until={K.Es - 0.1} texto="*Millones* de grabaciones." />
-      <Subtitulo T={T} idx={6} at={K.Es + 0.1} until={K.Cr - 0.1} texto="BirdNET: *157 capas.*" />
-      <Subtitulo T={T} idx={7} at={K.Cr + 0.1} until={K.Ge - 0.1} texto="*984* especies… luego *+3 000.*" />
-      <Subtitulo T={T} idx={8} at={K.Ge + 0.1} until={K.J - 0.1} texto="Un millón de personas… *y la grulla.*" />
-      <Subtitulo T={T} idx={9} at={K.J + 0.1} until={K.C - 0.1} texto="Más de 6 000… *y tu zanate.*" />
-      <Subtitulo T={T} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Ahí hay *una foto escondida.*" />
+      <Subtitulo T={T} tam={60} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="Un dibujo *en su canto.*" />
+      <Subtitulo T={T} tam={60} idx={1} at={K.E + 0.1} until={K.E + 3.6} texto="Lo vuelve *una imagen.*" />
+      <Subtitulo T={T} tam={60} idx={2} at={K.E + 3.7} until={K.F - 0.1} texto="Tono, fuerza *y duración.*" />
+      <Subtitulo T={T} tam={60} idx={3} at={K.F + 0.1} until={K.P - 0.1} texto="La IA lo ve *como foto.*" />
+      <Subtitulo T={T} tam={60} idx={4} at={K.P + 0.1} until={K.V - 0.1} texto="¿Quién le *enseñó?*" />
+      <Subtitulo T={T} tam={60} idx={5} at={K.V + 0.1} until={K.Es - 0.1} texto="*Millones* de grabaciones." />
+      <Subtitulo T={T} tam={60} idx={6} at={K.Es + 0.1} until={K.Cr - 0.1} texto="BirdNET: *157 capas.*" />
+      <Subtitulo T={T} tam={60} idx={7} at={K.Cr + 0.1} until={K.Ge - 0.1} texto="*984*… y luego *+3 000.*" />
+      <Subtitulo T={T} tam={60} idx={8} at={K.Ge + 0.1} until={K.J - 0.1} texto="*1 millón*… y la *grulla.*" />
+      <Subtitulo T={T} tam={60} idx={9} at={K.J + 0.1} until={K.C - 0.1} texto="*+6 000* y tu *zanate.*" />
+      <Subtitulo T={T} tam={60} idx={10} at={K.C + 0.1} until={K.Ou - 0.1} texto="Una *foto escondida.*" />
 
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.4, 'avatar_11_sorprendido', 'gancho'],
