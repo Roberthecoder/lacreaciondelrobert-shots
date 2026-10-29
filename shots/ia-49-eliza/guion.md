@@ -1,7 +1,7 @@
 # Shot IA #49 · ELIZA: el "psicólogo" de unas cuantas reglas al que le contaban secretos
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #49 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** FASE A · guion escrito, **pendiente de verificación independiente**. Sin animación todavía.
+- **Estado (29 oct 2026):** guion verificado (17 ✅; los 2 ⚠️ eran solo de pantalla y ya se corrigieron: teletipo con tinta negra sobre papel en vez de pantalla verde, y el ejemplo del barco etiquetado como lo que respondería un psiquiatra según Weizenbaum) · animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos · hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert**.
 - **Formato:** N1 "Por dentro" (abrimos la máquina y vemos sus reglas) + N6 "Guía en pasos" (el truco en 3 pasos: palabra clave → cambiar «mi» por «tu» → devolver la frase).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: un "psicólogo" en una terminal vieja… que en realidad son unas cuantas reglas.
 - **Duración:** voz 945 caracteres / ≈ 165 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base (estimar-escenas).
@@ -11,21 +11,42 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Este no es un psicólogo: son unas cuantas reglas. Y aun así, le contaban secretos. | Fondo menta. Desde el cuadro 0, un diván y un "psicólogo" de traje con libreta… cuya cabeza es una terminal vieja de teletipo con letras verdes; un fundido "rayos X" (`Lupa`) revela adentro tarjetas de reglas "SI… → …". Corazoncitos y candados (secretos) salen de una persona hacia la terminal. |
+| 0 | Gancho | Este no es un psicólogo: son unas cuantas reglas. Y aun así, le contaban secretos. | Fondo menta. Desde el cuadro 0, un diván y un "psicólogo" de traje con libreta… cuya cabeza es un **teletipo de los 60 que imprime con tinta negra sobre papel** (ELIZA se usaba "via the typewriter", sin pantalla); un recuadro "rayos X" revela adentro tarjetas de reglas: «SI «mi» → «tu»», «SI «triste» → «SIENTO…»», «SI nada → «SIGA»» (del guion DOCTOR: "Please go on"). Corazoncitos y candados (secretos) salen de una persona hacia la terminal. |
 | 1 | Dialogo | Ella escribe: «Mi novio me hizo venir aquí». Contesta: «Tu novio te hizo venir aquí». | Hoja de teletipo que avanza con el diálogo real del artículo de 1966 (traducido): «Los hombres son todos iguales.» / EN QUÉ SENTIDO / «Siempre nos están molestando con algo.» / PUEDES PENSAR EN UN EJEMPLO / «Mi novio me hizo venir aquí.» / TU NOVIO TE HIZO VENIR AQUÍ. Las respuestas de la máquina en MAYÚSCULAS (así venían). |
 | 2 | Reglas | El truco: busca palabras clave, cambia «mi» por «tu» y te regresa tu frase. | **Pasos 1-2-3** (N6): la frase entra a la máquina; se ilumina la palabra clave; «mi → tu», «me → te» saltan como fichas; la misma frase sale de vuelta. |
 | 2 | Reglas | Si lee «deprimida»: «Siento oír que estás deprimida». | Tarjeta de regla del guion DOCTOR (traducida): "SI: … estás … (triste · infeliz · deprimida · enferma) … → SIENTO OÍR QUE ESTÁS ___". La palabra cae en el hueco. Línea del diálogo real: «Dice que estoy deprimida casi todo el tiempo.» / SIENTO OÍR QUE ESTÁS DEPRIMIDA. |
-| 3 | Estudio | Es ELIZA, de Joseph Weizenbaum, del MIT, en 1966. Imitaba a un terapeuta que finge no saber casi nada. | `TarjetaEstudio`: "1966 · MIT · Joseph Weizenbaum · *Communications of the ACM*, vol. 9, núm. 1". Ejemplo del artículo dibujado: «Me fui a dar un paseo en barco» → «Háblame de barcos». |
+| 3 | Estudio | Es ELIZA, de Joseph Weizenbaum, del MIT, en 1966. Imitaba a un terapeuta que finge no saber casi nada. | `TarjetaEstudio`: "1966 · MIT · Joseph Weizenbaum · *Communications of the ACM*, vol. 9, núm. 1". Luego, con la etiqueta **«así respondería un psiquiatra, según Weizenbaum:»**, dos burbujas: «Me fui a dar un paseo en barco.» → «Háblame de barcos.» y un barquito (no es una plática registrada con ELIZA). |
 | 4 | Pregunta | ¿Y si sabes que es una máquina, ya no te engaña? | **Re-gancho.** "?" gigante sobre la terminal; Robert grande, pensativo. |
-| 5 | Secretaria | Su secretaria lo vio programarla por meses. A los pocos mensajes, le pidió que saliera del cuarto. | Oficina de los 60 (siluetas, sin rostros reales): ella teclea; él junto a la puerta; burbuja "¿podría salir del cuarto?"; la puerta se cierra. Chip "lo vio programarla por meses". |
-| 6 | Espiar | Cuando propuso revisar las pláticas, lo acusaron de espiar pensamientos íntimos. | Él propone "revisar las pláticas (de una noche)"; le llueven burbujas rojas "¡espía!"; un candado sobre los rollos de papel. |
+| 5 | Secretaria | Su secretaria lo vio programarla por meses. A los pocos mensajes, le pidió que saliera del cuarto. | Oficina de los 60 (caricaturas, sin rostros reales): la secretaria (cabello recogido, suéter lila) teclea en el teletipo; un calendario pasa meses; chip "lo vio programarla por meses"; chip "a los pocos mensajes…"; él sale y la puerta se cierra. **No se dibuja como la persona del diálogo del artículo** (en el diálogo solo se ve texto). |
+| 6 | Espiar | Cuando propuso revisar las pláticas, lo acusaron de espiar pensamientos íntimos. | Noche: chip "propuesta: revisar las pláticas de una noche"; le llueven burbujas rojas "¡ESPÍA!"; un candado cae sobre las hojas impresas. |
 | 7 | Efecto | A eso le dicen efecto ELIZA: ver comprensión donde solo hay símbolos. | Letras sueltas (símbolos) que, al mirarlas, forman un corazón; título "efecto ELIZA". |
-| 8 | Codigo | Lo curioso: su código original no se vio en al menos cincuenta años. En 2021 apareció impreso en el MIT. | Caja de archivo del MIT; se saca un rollo de papel continuo (fan-fold) con código; contador "50+ años sin verse" y sello "2021: encontrado". |
+| 8 | Codigo | Lo curioso: su código original no se vio en al menos cincuenta años. En 2021 apareció impreso en el MIT. | Caja "ARCHIVO MIT · papeles de Weizenbaum"; sube papel continuo (fan-fold) con renglones de código esquemáticos; número "50+" con "años sin verse" y sello rojo "2021 · ENCONTRADO". |
 | 9 | Hoy | Hoy pasa igual con chatbots: es fácil sentir que te entienden. | Celular moderno con un chat (`CelularChat`), mensajes ilustrativos; corazoncitos salen igual que en el gancho. |
-| 10 | Cierre | Si un chat te consuela, acuérdate de ELIZA: no era psicólogo, eran unas cuantas reglas. | **Regreso a la imagen del inicio**: el mismo diván y el "psicólogo" con cabeza de terminal; se le cae el traje y quedan solo las tarjetas de reglas; letrero "unas cuantas reglas". |
+| 10 | Cierre | Si un chat te consuela, acuérdate de ELIZA: no era psicólogo, eran unas cuantas reglas. | **Regreso a la imagen del inicio**: el mismo diván y el "psicólogo" con cabeza de teletipo; se desvanece (traje, sillón y teletipo) y quedan solo las tres tarjetas de reglas; chip "unas cuantas reglas". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
-**Música:** cama grave continua, con un zumbido suave de teletipo de los 60; tecleo de máquina de escribir en cada línea del diálogo, "clic" de ficha en cada cambio «mi → tu», campanita de retorno de carro, puerta que se cierra, lluvia de "¡espía!" con pitidos cortos, crujido de papel continuo al sacar el código, notificación de celular moderno en "Hoy".
+**Música (`gen-audio.mjs`):** cama grave continua (la menor), con un zumbido suave de motor de teletipo; tecleo en cada línea del diálogo y campanita de retorno de carro al terminarla; golpe en cada paso del truco y "clic" en cada cambio «mi → tu», «me → te»; gota cuando cae «deprimida»; hojas del calendario; la puerta se cierra; notas cortas con cada "¡ESPÍA!" y un golpe metálico del candado; subida cuando las letras forman el corazón; crujido del papel continuo y golpe del sello 2021; burbujas de notificación del chat; acorde final en el cierre.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si sabes que es una máquina, ya no te engaña?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «Este no es un psicólogo: son unas cuantas reglas» (cuadro 0) |
+| 2 | 7.6 | 10.05 | 04_bajando_lentes | `izq-alto` | «Tu novio te hizo venir aquí» |
+| 3 | 15.0 | 18.05 | 06_pensativo_menton | `arriba-der` | la regla de «deprimida» |
+| 4 | 21.4 | 24.15 | 05_sonriendo_dientes_uniformes | `izq-alto` | «Háblame de barcos» (el terapeuta que finge no saber nada) |
+| 5 | 24.35 | 27.3 | 07_pensativo_puno | `grande` | «¿Y si sabes que es una máquina, ya no te engaña?» |
+| 6 | 30.2 | 33.15 | 11_sorprendido | `arriba-der` | «le pidió que saliera del cuarto» |
+| 7 | 34.5 | 38.05 | 10_serio_molesto | `izq-alto` | «lo acusaron de espiar pensamientos íntimos» |
+| 8 | 38.7 | 42.35 | 06_pensativo_menton | `arriba-der` | «efecto ELIZA» |
+| 9 | 45.0 | 48.65 | 13_senalando_arriba | `arriba-der` | señala el papel continuo: «en 2021 apareció impreso» |
+| 10 | 49.3 | 52.55 | 12_perfil_serio | `arriba-der` | «es fácil sentir que te entienden» |
+| 11 | 53.7 | 57.9 | 05_sonriendo_dientes_uniformes | `gancho` | «no era psicólogo, eran unas cuantas reglas» |
+| — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 11 · ≈ 37.6 s (+ cierre 3.5 s) · poses distintas 8 (nunca la misma dos veces seguidas) · total 61.5 s
 
 ## Fuentes (cada frase se abrió en la fuente original el 29 oct 2026)
 
@@ -58,6 +79,8 @@
 - "Unas cuantas reglas" = el guion DOCTOR es una lista de palabras clave con plantillas de descomposición y respuesta (se publicó completo en el apéndice del artículo); no se da una cifra exacta de reglas.
 - "Le contaban secretos" se apoya en Weizenbaum 1976 ("spying on people's most intimate thoughts… addressed in intimate terms") y 1966 ("Some subjects have been very hard to convince that ELIZA… is not human").
 - "Imitaba a un terapeuta que finge no saber casi nada" = el terapeuta rogeriano del artículo, que puede "assume the pose of knowing almost nothing of the real world".
-- La secretaria nunca fue nombrada por Weizenbaum; se dibuja como silueta. Weizenbaum también es silueta/caricatura, no retrato.
+- La secretaria nunca fue nombrada por Weizenbaum; se dibuja como caricatura genérica y **no** como la persona del diálogo del artículo (Berry y Ciston, 2024, señalan dudas sobre si eran la misma). Weizenbaum también es caricatura, no retrato.
+- La tarjeta de rayos X incluye «SI nada → «SIGA»», de las respuestas sin palabra clave del guion DOCTOR ("Please go on", Weizenbaum 1966).
+- En pantalla, ELIZA siempre es un teletipo/máquina de escribir con tinta negra sobre papel ("via the typewriter of course", 1966), nunca una pantalla.
 - "Hoy pasa igual con chatbots: es fácil sentir que te entienden" es la conexión con hoy, en línea con la cita de Weizenbaum (1966) sobre lo fácil que es crear "the illusion of understanding". No se afirma ninguna cifra moderna. El chat en el celular es ilustrativo.
 - El dibujo es esquemático.

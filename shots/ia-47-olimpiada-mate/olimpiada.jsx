@@ -153,11 +153,31 @@ function Concursantes({ T, x = 90, y = 560, paso = 30, apaga = 0, oro = 0, sube 
   for (let i = 0; i < N; i++) {
     const c = i % cols, r = Math.floor(i / cols), esOro = i >= 558, esTop = i >= 604;
     const gris = !esOro && i < Math.round(558 * apaga);
-    let fill = esOro && oro > 0 ? mixHex('#ffffff', ORO, oro) : gris ? '#b9b3a8' : '#ffffff';
+    let fill = esOro && oro > 0 ? mixHex('#ffffff', ORO, oro) : gris ? '#7d776d' : '#ffffff';
     const dy = esTop ? -sube * 60 : 0;
-    out.push(<circle key={i} cx={x + c * paso + paso / 2} cy={y + r * paso + paso / 2 + dy} r={paso * 0.36} fill={fill} stroke={KC.ink} strokeWidth={3} opacity={gris ? 0.55 : 1} />);
+    out.push(<circle key={i} cx={x + c * paso + paso / 2} cy={y + r * paso + paso / 2 + dy} r={paso * 0.36} fill={fill} stroke={KC.ink} strokeWidth={3} opacity={gris ? 0.4 : 1} />);
   }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:o }}>{out}</svg>;
+}
+
+// Los 72 oros de 2025: 26 con más de 35 puntos suben arriba de la línea; 46 con 35 exactos (empate con las IA) se quedan.
+function Oros({ T, p = 1, sube = 0 }) {
+  const out = [], paso = 64, x0 = 156;
+  for (let i = 0; i < 72; i++) {
+    const top = i < 26, j = top ? i : i - 26;
+    const c = j % 12, r = Math.floor(j / 12);
+    const yJunto = 600 + Math.floor(i / 12) * paso, yFin = top ? 560 + r * paso : 880 + r * paso;
+    const cy = klerp(yJunto, yFin, sube), e = kclamp(p * 72 - i * 0.6, 0, 1);
+    out.push(<circle key={i} cx={x0 + c * paso + paso / 2} cy={cy} r={24 * e} fill={top && sube > 0.5 ? KC.mint : ORO} stroke={KC.ink} strokeWidth={4} />);
+  }
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+    {out}
+    <g opacity={sube}>
+      <line x1={120} y1={800} x2={960} y2={800} stroke={KC.texto} strokeWidth={6} strokeDasharray="18 12" />
+      <text x={130} y={785} style={{ font:`900 40px ${KF.texto}` }} fill={KC.mint}>más de 35 puntos: 26</text>
+      <text x={130} y={850} style={{ font:`900 40px ${KF.texto}` }} fill={ORO}>35 exactos, como las IA: 46</text>
+    </g>
+  </svg>;
 }
 
 function Olimpiada() {
@@ -176,17 +196,16 @@ function Olimpiada() {
         <FondoLunares color={KC.yellow} />
         <div style={{ opacity: 1 - kprog(T, K.G + 4.4, K.G + 5.0) }}>
           {svg(<>
-            <Pupitre x={280} y={880} s={1} T={T} quien="tu" />
-            <Robotito x={790} y={760} s={0.85} T={T} cara="seguro" />
-            <Pupitre x={790} y={880} s={1} T={T + 0.4} quien="ia" />
-            <text x={540} y={900} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6}>VS</text>
+            <Pupitre x={280} y={940} s={1} T={T} quien="tu" />
+            <Robotito x={790} y={815} s={0.85} T={T} cara="seguro" />
+            <Pupitre x={790} y={940} s={1} T={T + 0.4} quien="ia" />
+            <text x={540} y={960} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6}>VS</text>
           </>)}
         </div>
         <Concursantes T={T} o={kprog(T, K.G + 4.6, K.G + 5.2)} y={600} apaga={kprog(T, K.G + 6.4, K.G + 9.2, kEase.suave)} oro={kprog(T, K.G + 8.6, K.G + 9.4)} />
       </Escena>
-      <Chip T={T} at={K.G + 0.2} until={K.G + 4.4} texto="TÚ" x={280} y={1230 - 80} tam={52} borde={KC.ink} />
-      <Chip T={T} at={K.G + 0.4} until={K.G + 4.4} texto="IA" x={790} y={1150} tam={52} borde={KC.cyan} />
-      <Chip T={T} at={K.G + 1.2} until={K.G + 4.4} texto="IMO 2025" x={270} y={470} tam={48} borde={KC.gold} />
+      <Chip T={T} at={K.G + 0.2} until={K.G + 4.4} texto="TÚ" x={280} y={700} tam={52} borde={KC.ink} />
+            <Chip T={T} at={K.G + 1.2} until={K.G + 4.4} texto="IMO 2025" x={270} y={480} tam={48} borde={KC.gold} />
       <NumeroGigante T={T} at={K.G + 5.2} until={K.Ex - 0.2} valor={558} dur={1.6} etiqueta="" x={420} y={430} tam={170} color={KC.white} />
       <Chip T={T} at={K.G + 5.6} until={K.Ex - 0.2} texto="de 630 concursantes" x={420} y={545} tam={34} borde={KC.ink} />
 
@@ -217,7 +236,7 @@ function Olimpiada() {
       <Chip T={T} at={K.Ge + 0.3} until={K.Op - 0.2} texto="Gemini Deep Think · Google DeepMind" x={540} y={840} tam={32} borde={KC.cyan} />
       <Marcador T={T} at={K.Ge + 0.6} until={L3 - 0.1} valor={puntosGe} x={720} y={560} />
       <Chip T={T} at={K.Ge + 4.0} until={L3 - 0.1} texto="corte de oro 2025: 35" x={720} y={700} tam={32} borde={ORO} />
-      <Sello T={T} at={L3 + 0.1} until={K.Op - 0.2} texto={<>CALIFICADO POR<br />LA OLIMPIADA ✔</>} x={700} y={560} tam={42} />
+      <Sello T={T} at={L3 + 0.1} until={K.Op - 0.2} texto={<>CALIFICADO POR<br />LA OLIMPIADA ✔</>} x={640} y={720} tam={42} />
 
       {/* 4 · OpenAI: mismo puntaje, calificación no oficial */}
       <Escena T={T} a={K.Op} b={K.P}>
@@ -240,43 +259,37 @@ function Olimpiada() {
       {/* 6 · los humanos: 72 oros, 26 por encima */}
       <Escena T={T} a={K.H} b={K.A}>
         <FondoLunares color={KC.violet} punto="rgba(255,255,255,.08)" />
-        <Concursantes T={T} y={560} apaga={1} oro={kprog(T, K.H + 0.2, K.H + 0.8)} sube={kprog(T, K.H + 1.8, K.H + 2.6, kEase.sale)} />
-        {svg(<g opacity={kprog(T, K.H + 1.6, K.H + 2.0)}>
-          <line x1={80} y1={1135} x2={1000} y2={1135} stroke={ORO} strokeWidth={6} strokeDasharray="18 12" />
-          <text x={995} y={1185} textAnchor="end" style={{ font:`900 34px ${KF.texto}` }} fill={ORO}>nivel de las IA: 35</text>
-        </g>)}
-      </Escena>
-      <NumeroGigante T={T} at={K.H + 0.2} until={K.H + 1.8} valor={72} dur={0.6} sufijo=" oros" x={540} y={420} tam={140} color={ORO} />
-      <NumeroGigante T={T} at={K.H + 2.0} until={K.A - 0.2} valor={26} dur={0.6} sufijo=" > IA" x={540} y={420} tam={140} color={KC.mint} />
-
+        <Oros T={T} p={kprog(T, K.H + 0.2, K.H + 0.9)} sube={kprog(T, K.H + 1.8, K.H + 2.6, kEase.sale)} />
+</Escena>
+      <NumeroGigante T={T} at={K.H + 0.2} until={K.A - 0.2} valor={72} dur={0.6} sufijo=" oros" x={330} y={430} tam={120} color={ORO} />
+      
       {/* 7 · un año antes: nivel plata */}
       <Escena T={T} a={K.A} b={K.Mx}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Reloj x={250} y={1020} s={1.05} T={T} vueltas={3} texto="hasta 3 días" />
+          <Reloj x={240} y={880} s={1.0} T={T} vueltas={3} texto="hasta 3 días" />
           <g opacity={kprog(T, K.A + 3.2, K.A + 3.7)}>
-            <rect x={470} y={900} width={540} height={240} rx={18} fill="#10131a" stroke={KC.ink} strokeWidth={8} />
-            {['theorem p :', '  ∀ n, … :=', 'by', '  intro n …'].map((l, i) => <text key={i} x={500} y={955 + i * 48} style={{ font:`700 34px ${KF.mono}` }} fill={i === 2 ? KC.pink : KC.mint} opacity={kprog(T, K.A + 3.5 + i * 0.25, K.A + 3.7 + i * 0.25)}>{l}</text>)}
+            <rect x={470} y={830} width={540} height={230} rx={18} fill="#10131a" stroke={KC.ink} strokeWidth={8} />
+            {['theorem p :', '  ∀ n, … :=', 'by', '  intro n …'].map((l, i) => <text key={i} x={500} y={885 + i * 48} style={{ font:`700 34px ${KF.mono}` }} fill={i === 2 ? KC.pink : KC.mint} opacity={kprog(T, K.A + 3.5 + i * 0.25, K.A + 3.7 + i * 0.25)}>{l}</text>)}
           </g>
         </>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.A + 0.2} until={K.Mx - 0.2} anio="2024" quien="AlphaProof + AlphaGeometry 2" revista="Google DeepMind · 28 / 42 · nivel plata" y={560} />
-      <Chip T={T} at={K.A + 3.6} until={K.Mx - 0.2} texto="problemas traducidos a mano (Lean)" x={740} y={1190} tam={28} borde={KC.mint} />
+      <Chip T={T} at={K.A + 3.6} until={K.Mx - 0.2} texto="traducidos a mano (Lean)" x={740} y={790} tam={28} borde={KC.mint} />
 
       {/* 8 · México */}
       <Escena T={T} a={K.Mx} b={K.S}>
         <div style={{ position:'absolute', inset:0, background:`linear-gradient(90deg, #0b8a4a 0 33.3%, #f4efe4 33.3% 66.6%, #ce1126 66.6% 100%)` }} />
         {svg(<>{[PLATA, PLATA, BRONCE, BRONCE, BRONCE, BRONCE].map((m, i) => <g key={i} opacity={kprog(T, K.Mx + 0.3 + i * 0.15, K.Mx + 0.6 + i * 0.15)}>
-          <Estudiante x={180 + (i % 3) * 360} y={720 + Math.floor(i / 3) * 290} s={1.05} T={T} k={i} medalla={m} playera={i % 2 ? KC.leaf : '#ffffff'} /></g>)}</>)}
+          <Estudiante x={300 + (i % 3) * 260} y={730 + Math.floor(i / 3) * 250} s={1.05} T={T} k={i} medalla={m} playera={i % 2 ? KC.leaf : '#ffffff'} /></g>)}</>)}
       </Escena>
       <Chip T={T} at={K.Mx + 0.2} until={K.S - 0.2} texto="México · IMO 2025" x={660} y={460} tam={44} borde={KC.leaf} />
-      <Chip T={T} at={K.Mx + 1.4} until={K.S - 0.2} texto="2 platas · 4 bronces" x={540} y={1180} tam={40} borde={KC.ink} />
-
+      
       {/* 9 · el problema seis */}
       <Escena T={T} a={K.S} b={K.Ma}>
         <FondoLunares color={KC.noche} punto="rgba(255,255,255,.06)" />
         {svg(<>
-          <CuadriculaP6 x={250} y={470} s={0.9} T={T} p={kprog(T, K.S + 0.3, K.S + 2.4, kEase.suave)} />
+          <g opacity={1 - 0.75 * kprog(T, K.S + 2.5, K.S + 2.9)}><CuadriculaP6 x={250} y={470} s={0.9} T={T} p={kprog(T, K.S + 0.3, K.S + 2.4, kEase.suave)} /></g>
           <Robotito x={240} y={1110} s={0.55} T={T} cara="duda" color={KC.cyan} />
           <Robotito x={840} y={1110} s={0.55} T={T + 1} cara="duda" color={NARANJA_IA} />
         </>)}
@@ -304,13 +317,13 @@ function Olimpiada() {
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Pupitre x={280} y={880} s={1} T={T} quien="tu" etiqueta="P6" brillo={kprog(T, K.C + 2.2, K.C + 3.0)} />
-          <Robotito x={790} y={760} s={0.85} T={T} cara="duda" />
-          <Pupitre x={790} y={880} s={1} T={T + 0.4} quien="ia" escribe={false} etiqueta="P6" />
-          <text x={540} y={900} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6}>VS</text>
+          <Pupitre x={280} y={940} s={1} T={T} quien="tu" etiqueta="P6" brillo={kprog(T, K.C + 2.2, K.C + 3.0)} />
+          <Robotito x={790} y={815} s={0.85} T={T} cara="duda" />
+          <Pupitre x={790} y={940} s={1} T={T + 0.4} quien="ia" escribe={false} etiqueta="P6" />
+          <text x={540} y={960} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6}>VS</text>
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="2025: top 26 … o el problema 6" x={540} y={1150} tam={36} borde={ORO} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="2025: top 26 … o el problema 6" x={360} y={480} tam={34} borde={ORO} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ex - 0.1} texto="Tú contra la IA: *superó a 558 de 630.*" />
@@ -329,7 +342,7 @@ function Olimpiada() {
       <Robert T={T} apariciones={[
         [CUES.Gancho - 0.45, CUES.Gancho + 4.6, 'avatar_11_sorprendido', 'gancho'],
         [CUES.Examen + 0.8, CUES.Examen + 3.0, 'avatar_13_senalando_arriba', 'arriba-der'],
-        [L3 + 0.1, CUES.OpenAI - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'izq-alto'],
+        [L3 + 0.1, CUES.OpenAI - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [CUES.OpenAI + 3.6, CUES.Pregunta - 0.15, 'avatar_06_pensativo_menton', 'izq-alto'],
         [CUES.Pregunta + 0.05, CUES.Humanos + 1.6, 'avatar_07_pensativo_puno', 'grande'],
         [CUES.Antes + 3.0, CUES.Mexico - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
