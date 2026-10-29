@@ -68,7 +68,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un cerillo de seguridad no trae el fuego en la cabeza: el fósforo está en la tira de la caja.
 El diseño separa los reactivos. La cabeza lleva clorato de potasio (oxidante) y azufre; la tira, fósforo rojo y vidrio molido. Al frotar, el calor de la fricción convierte una cantidad diminuta de fósforo rojo en fósforo blanco, que se enciende en contacto con el aire y desencadena la descomposición del clorato y la combustión del azufre y la madera.
-Esa separación tiene una historia de salud laboral detrás. Los cerillos con fósforo blanco causaban necrosis de la mandíbula en quienes los fabricaban: en la fábrica Bryant & May de Londres, escenario de la huelga de 1888, un informe de 1882 a 1897 registró una mortalidad del 19.15 % entre los casos. En 1906, la Convención de Berna comprometió a sus países firmantes a prohibir los cerillos con fósforo blanco, uno de los primeros tratados internacionales de protección laboral.
+Esa separación tiene una historia de salud laboral detrás. Los cerillos con fósforo blanco causaban necrosis de la mandíbula en quienes los fabricaban: en la fábrica Bryant & May de Londres, escenario de la huelga de 1888, un informe de 1882 a 1897 registró una mortalidad del 19.15 % entre los casos. En 1906, la Convención de Berna comprometió a sus países firmantes a prohibir los cerillos con fósforo blanco.
 ¿Qué otros productos cotidianos cambiaron su química por la salud de quienes los fabrican?
 Shot Químico #32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
