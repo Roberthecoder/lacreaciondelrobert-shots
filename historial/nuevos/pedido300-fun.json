@@ -119,123 +119,239 @@
   },
   {
    "id": "fun-15-queso-azul",
-   "titulo": "Las venas del queso azul son un moho (Penicillium roqueforti)",
+   "titulo": "Esas venas no son queso echado a perder: el queso azul (*Penicillium roqueforti*)",
    "serie": "Shot Fungi Mati",
    "numero": 15,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-15-queso-azul",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7497015/",
+    "https://info.agriculture.gouv.fr/boagri/document_administratif-56d1c189-14dd-4062-9c4e-805d92aa1bc5/telechargement",
+    "https://gorgonzola.com/wp-content/uploads/2023/08/Disciplinare_Gorgonzola_22.9.2017.pdf",
+    "https://ucfoodsafety.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/26438.pdf",
+    "https://www.chm.bris.ac.uk/motm/heptanone/heptanoneh.htm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3985342/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10774375/",
+    "https://doi.org/10.3390/jof9040459"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Camembert y brie: la corteza blanca de Penicillium camemberti",
+    "Por qué el queso azul no te enferma pero el pan con moho sí puede",
+    "El olor a pies del queso: bacterias de la corteza lavada"
+   ]
   },
   {
    "id": "fun-16-koji",
-   "titulo": "Tu salsa de soya la hizo un hongo (koji, Aspergillus oryzae)",
+   "titulo": "Tu salsa de soya la cocinó un hongo: el koji",
    "serie": "Shot Fungi Mati",
    "numero": 16,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-16-koji",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8399179/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1352174/",
+    "https://pubmed.ncbi.nlm.nih.gov/16391082/",
+    "https://pubmed.ncbi.nlm.nih.gov/16372010/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8304044/",
+    "https://pubmed.ncbi.nlm.nih.gov/25776568/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2575883/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "El miso y el sake: otros trabajos del koji",
+    "Aspergillus oryzae vs. A. flavus: primos, uno domesticado",
+    "El glutamato: de dónde sale el sabor umami"
+   ]
   },
   {
    "id": "fun-17-cornezuelo",
-   "titulo": "El cornezuelo del centeno: el hongo del pan que causaba el fuego de San Antonio",
+   "titulo": "Ese grano negro no es centeno quemado: el cornezuelo (*Claviceps purpurea*)",
    "serie": "Shot Fungi Mati",
    "numero": 17,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-17-cornezuelo",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6640538/",
+    "https://ejhd.org/index.php/ejhd/article/download/798/609/1760",
+    "https://www.bfr.bund.de/cm/349/questions-and-answers-on-ergot-alkaloids-in-cereal-products.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8309974/",
+    "https://www.ars.usda.gov/ARSUserFiles/81/ErgotDVDtranscript.pdf",
+    "https://henriettes-herb.com/eclectic/kings/claviceps.html"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Del cornezuelo a los medicamentos para la migraña y el parto",
+    "El LSD nació de un derivado del cornezuelo (Hofmann, 1943)",
+    "Hongos que viven dentro de pastos y los vuelven tóxicos para el ganado"
+   ]
   },
   {
    "id": "fun-18-aflatoxinas",
-   "titulo": "Aflatoxinas: el moho del maíz y el cacahuate que no se ve (Aspergillus flavus)",
+   "titulo": "El cacahuate arrugado del fondo de la bolsa: aflatoxinas",
    "serie": "Shot Fungi Mati",
    "numero": 18,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-18-aflatoxinas",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5334a4.htm",
+    "https://www.who.int/news-room/fact-sheets/detail/mycotoxins",
+    "https://www.sfa.gov.sg/food-information/risk-at-a-glance/aflatoxins-and-food-safety",
+    "https://inchem.org/documents/iarc/vol56/09-afl.html",
+    "https://www.cancer.gov/about-cancer/causes-prevention/risk/substances/aflatoxins",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8227755/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Cómo se revisa el maíz por aflatoxinas en México",
+    "Aspergillus que no hacen toxina usados para desplazar a los que sí",
+    "El amarillo brillante bajo luz UV que delata maíz contaminado"
+   ]
   },
   {
    "id": "fun-19-liquen",
-   "titulo": "Eso en la piedra no es una planta: el liquen es un hongo con socios",
+   "titulo": "Esa mancha en la piedra no es una planta: el liquen",
    "serie": "Shot Fungi Mati",
    "numero": 19,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-19-liquen",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://www.huntbotanical.org/admin/uploads/04hibd-huntia-11-2-pp193-208.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/27445309/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5793994/",
+    "https://pubmed.ncbi.nlm.nih.gov/17630840/",
+    "https://www.timeshighereducation.com/node/59803",
+    "https://www.anbg.gov.au/lichen/form-structure.html",
+    "https://britishlichensociety.org.uk/learning/what-is-a-lichen",
+    "https://swisslichens.wsl.ch/en/about-lichens/what-is-a-lichen"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Líquenes como medidores de la contaminación del aire",
+    "Los líquenes de los que salió el tornasol",
+    "Líquenes que sobrevivieron en el espacio"
+   ]
   },
   {
    "id": "fun-20-quitridio",
-   "titulo": "El hongo que acabó con cientos de especies de ranas (Batrachochytrium)",
+   "titulo": "La rana no está dormida: el quitridio",
    "serie": "Shot Fungi Mati",
    "numero": 20,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-20-quitridio",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/19900897/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4660679/",
+    "https://www.woah.org/app/uploads/2021/03/microsoft-20word-20--20chytridio-20card-final.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/30923224/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3111304/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3780879/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Ranas que resisten al quitridio: bacterias de la piel",
+    "El quitridio de las salamandras (B. salamandrivorans)",
+    "Los quitridios que viven en tu estanque y comen polen"
+   ]
   },
   {
    "id": "fun-21-anillo-hadas",
-   "titulo": "Los anillos de hadas: un hongo que crece en círculo",
+   "titulo": "Ese círculo en el pasto no es de hadas: es un hongo",
    "serie": "Shot Fungi Mati",
    "numero": 21,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-21-anillo-hadas",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://archive.org/details/journalagricult11unit",
+    "https://content.ces.ncsu.edu/fairy-ring-in-turf",
+    "https://www.rhs.org.uk/advice/profile?PID=158",
+    "https://www.mushroomexpert.com/marasmius_oreades.html",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395780/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Los anillos de hadas que se ven desde el aire",
+    "Hongos que crecen siempre en el mismo lugar cada año",
+    "Cómo el micelio cambia el color del pasto"
+   ]
   },
   {
    "id": "fun-22-arrieras",
-   "titulo": "Las hormigas arrieras no comen hojas: cultivan un hongo",
+   "titulo": "Las arrieras no cargan hojas para comérselas: son granjeras",
    "serie": "Shot Fungi Mati",
    "numero": 22,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-22-arrieras",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://par.nsf.gov/servlets/purl/10626344",
+    "https://sciencedaily.com/releases/2024/10/241003145441.htm",
+    "https://www.cambridge.org/core/journals/bulletin-of-entomological-research/article/direct-ingestion-of-plant-sap-from-cut-leaves-by-the-leafcutting-ants-atta-cephalotes-l-and-acromyrmex-octospinosus-reich-formicidae-attini/AF32CE2FBBD06C93D5FC3DE8287B1777",
+    "https://pubmed.ncbi.nlm.nih.gov/24151778",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10503033/",
+    "https://doi.org/10.3389/fmicb.2016.02073",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2291119/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5394666/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Termitas que también cultivan hongos",
+    "Las bacterias antibióticas que cargan las hormigas en el cuerpo",
+    "El hongo parásito que ataca los jardines de las arrieras (Escovopsis)"
+   ]
   },
   {
    "id": "fun-23-brillan",
-   "titulo": "Hongos que brillan en la oscuridad (bioluminiscencia: Mycena, Neonothopanus)",
+   "titulo": "Esa madera no está embrujada: hongos que brillan",
    "serie": "Shot Fungi Mati",
    "numero": 23,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-23-brillan",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6294908/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4382382/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7733832/",
+    "https://www.fungimag.com/v17i1/V17I1-Blanchette.pdf",
+    "https://agris.fao.org/search/en/records/65df441963b8185d9cabd5e5"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "Plantas modificadas que brillan con genes de hongo",
+    "Por qué brilla de verdad: el ciclo del ácido cafeico",
+    "Animales que se ven en la oscuridad sin hongos: luciérnagas y peces"
+   ]
   },
   {
    "id": "fun-24-roya-cafe",
-   "titulo": "La roya del café: el hongo que atacó los cafetales de México y Centroamérica",
+   "titulo": "Ese polvo naranja no es óxido: la roya del café (*Hemileia vastatrix*)",
    "serie": "Shot Fungi Mati",
    "numero": 24,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-24-roya-cafe",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://doi.org/10.1007/s12571-015-0446-9",
+    "https://agritrop.cirad.fr/575723/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6638270/",
+    "https://www.gob.mx/cms/uploads/attachment/file/466535/24.Ficha_T_cnica_Roya_del_cafeto_REVISION_UTC.pdf",
+    "https://www.eatthispodcast.com/wp-content/uploads/2020/10/coffee-leaf-rust-transcript.pdf",
+    "https://specialcollections-blog.lib.cam.ac.uk/?p=9572",
+    "https://botanicaserbica.bio.bg.ac.rs/arhiva/pdf/2011_35_2_539_full.pdf"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "La roya del trigo: el hongo del pan",
+    "Por qué los clones son vulnerables a las plagas",
+    "El hongo que acabó con el café de Ceilán y lo volvió país de té"
+   ]
   },
   {
    "id": "fun-25-papa-irlanda",
@@ -251,15 +367,28 @@
   },
   {
    "id": "fun-26-shiitake",
-   "titulo": "Shiitake crudo: la dermatitis que parece de latigazos",
+   "titulo": "¿Por qué NO comer shiitake crudo? La piel rayada a latigazos",
    "serie": "Shot Fungi Mati",
    "numero": 26,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-26-shiitake",
    "rama": "pedido300/fun",
-   "fuentes": [],
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/28054338/",
+    "https://pubmed.ncbi.nlm.nih.gov/27566177/",
+    "https://pubmed.ncbi.nlm.nih.gov/35404185/",
+    "https://pubmed.ncbi.nlm.nih.gov/24940644/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8222744/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4808700/",
+    "https://pubmed.ncbi.nlm.nih.gov/18661940/",
+    "https://pubmed.ncbi.nlm.nih.gov/1395630/"
+   ],
    "fecha": "2026-10-29",
-   "derivados": []
+   "derivados": [
+    "El lentinano y lo que sí se sabe del shiitake",
+    "Cómo se cultiva el shiitake en troncos",
+    "Hongos comestibles que crudos sí hacen daño"
+   ]
   },
   {
    "id": "fun-27-maceta",

@@ -8,7 +8,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ```text
 Ese hongo que pudre la papa no es un hongo: es un moho de agua, y también ataca tu jitomate. 🥔🍅
 Se llama Phytophthora infestans y causa el tizón tardío: manchas cafés en la hoja con una pelusa blanca por debajo. Esa pelusa son tallitos que cargan esporas con forma de limón (esporangios). Con agua y frío, cada esporangio suelta de 8 a 12 zoosporas, nadadores con dos flagelos, que entran a la hoja; una sola mancha puede producir hasta 300,000 esporangios.
-Crece en hilos como un hongo, pero su pared casi no tiene quitina, sino celulosa. Es un oomiceto: está más emparentado con las algas pardas y las diatomeas que con los hongos. Por eso durante mucho tiempo lo clasificaron como hongo.
+Crece en hilos como un hongo (por eso durante mucho tiempo lo clasificaron como hongo), pero su pared casi no tiene quitina, sino celulosa. Es un oomiceto: está más emparentado con las algas pardas y las diatomeas que con los hongos.
 Llegó a Europa en 1845 y desató la Gran Hambruna de Irlanda: cerca de un millón de muertos y más de un millón de personas que emigraron. En 2013 leyeron su ADN en hojas guardadas en herbarios desde 1845: era un linaje distinto, HERB-1, que se creyó extinto, pero en 2014 hallaron su rastro en muestras actuales de México y Sudamérica. ¿De dónde salió? Un estudio de 2014 apunta a México; otros, a los Andes. Aún se discute.
 Y sigue atacando papas y jitomates en todo el mundo.
 El dibujo es esquemático.

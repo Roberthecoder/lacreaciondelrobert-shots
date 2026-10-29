@@ -383,12 +383,12 @@ function PapaShot() {
       <Etq T={T} at={K.H1 + 3.2} until={K.M - 0.3} x={mxX - 40} y={mxY + 70} texto="México" tam={28} color={KC.ink} lado="izq" />
       <Etq T={T} at={K.H1 + 3.4} until={K.M - 0.3} x={anX + 60} y={anY - 60} texto="Sudamérica" tam={28} color={KC.ink} />
       <Chip T={T} at={K.H1 + 3.6} until={K.M - 0.3} texto="Martin et al., Mol Biol Evol, 2014" x={360} y={470} tam={24} borde={KC.ink} mono />
-      <MiniEstudio T={T} at={K.M + 1.2} until={K.C - 0.3} x={505} y={590} anio="2014" quien="Goss, PNAS: México" />
+      <MiniEstudio T={T} at={K.M + 1.2} until={K.C - 0.3} x={310} y={420} anio="2014" quien="Goss, PNAS: México" />
       <MiniEstudio T={T} at={K.M + 2.0} until={K.C - 0.3} x={800} y={1060} anio="2025" quien="Coomber, PLoS ONE: Andes" color={KC.cyan} />
-      <Etq T={T} at={K.M + 1.4} until={K.C - 0.3} x={mxX - 10} y={mxY + 48} texto="valle de Toluca" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.4} until={K.C - 0.3} x={30} y={mxY + 70} texto="valle de Toluca" tam={24} color={KC.ink} />
       <Etq T={T} at={K.M + 1.6} until={K.C - 0.3} x={tlX + 20} y={tlY - 40} texto="Tlaxcala" tam={24} color={KC.ink} />
       <Etq T={T} at={K.M + 2.2} until={K.C - 0.3} x={anX - 40} y={anY + 70} texto="Andes" tam={28} color={KC.ink} lado="izq" />
-      <Chip T={T} at={K.M + 3.0} until={K.C - 0.3} texto="sin resolver" x={480} y={470} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.M + 3.0} until={K.C - 0.3} texto="sin resolver" x={310} y={1130} tam={40} borde={KC.red} />
       <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="moho de agua, no hongo" x={380} y={470} tam={40} borde={KC.cyan} />
 
       {/* barras de escala */}
