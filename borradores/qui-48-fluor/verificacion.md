@@ -37,4 +37,7 @@
 ## Correcciones aplicadas (29 oct 2026)
 Se aplican tal cual las 4 propuestas del verificador (McKay: «Treinta años después se supo por qué…»; rótulo «30 años después»; gancho «…no te ayuda: se lleva el flúor que te protege.»; escala acorde a lo dibujado). Para cuadrar el tiempo solo se quita relleno sin cambiar datos.
 
+Relleno quitado para cuadrar el tiempo (sin cambiar datos): voz 9 «mancha el esmalte:» → «mancha:»; voz 10 «deja trabajar al flúor en tu esmalte.» → «deja trabajar al flúor.». Resultado: 956 caracteres, total estimado 61.6 s.
+En pantalla: rótulo «30 años después» sobre el vaso con F⁻; escala «≈ 5 µm» junto a los prismas dibujados del esmalte (y «100 nm» si se acerca a un cristalito).
+
 VEREDICTO: APROBADO

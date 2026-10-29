@@ -2,27 +2,27 @@
 
 - **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #48 · rama `pedido300/qui`.
 - **Formato:** N1 "Por dentro" (el lavabo: cepillo, espuma y el buche de agua → el esmalte al microscopio: cristales de apatita, ácido, flúor que entra al cristal → el mismo lavabo, ahora escupiendo sin enjuagar) + un toque de N5 "El experimento" (Colorado 1901 y Grand Rapids 1945).
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" con espíritu de #6 (mito cotidiano): "Ese buche de agua después de cepillarte no te limpia más: se lleva el flúor que te protege."
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" con espíritu de #6 (mito cotidiano): "Ese buche de agua después de cepillarte no te ayuda: se lleva el flúor que te protege."
 - **No repite:** #37 (sal yodada/fluorurada) ni #38 (refresco). Aquí el tema es la pasta, el esmalte y el enjuague.
 - **Seguridad:** solo se dice lo que traen CDC y NHS (escupir, no enjuagar luego luego, cantidad de pasta en niños). No se recomienda tragar nada ni se dan dosis.
-- **Duración:** voz 952 caracteres / ≈176 palabras (≈ 57.9 s) + cierre 3.5 s → **≈ 61.4 s** (`estimar-escenas.mjs --outro 3.5`).
+- **Duración:** voz 956 caracteres (≈ 58.1 s) + cierre 3.5 s → **≈ 61.6 s** (`estimar-escenas.mjs --outro 3.5`).
 - **Estado:** guion listo para verificación independiente. Falta: `verificacion.md`, tabla "Robert en pantalla" y animación (fase 2). Voz pendiente de aprobación de Robert.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese buche de agua después de cepillarte no te limpia más: se lleva el flúor que te protege. | Fondo menta. Desde el cuadro 0 un vaso inclina agua hacia una boca dibujada frente al espejo del lavabo; la espuma blanca de pasta se va con el chorro y unas chispitas doradas "F⁻" salen arrastradas al desagüe. Chip "¿más limpio?" se tacha. |
-| 1 | Esmalte | Tu esmalte es de cristales de apatita: calcio y fosfato. | `Lupa` en rayos X sobre un diente: debajo de la superficie, varillas de cristal hexagonal acomodadas en haces. Etiqueta "apatita · Ca + PO₄". Barra de escala "1 µm". |
+| 0 | Gancho | Ese buche de agua después de cepillarte no te ayuda: se lleva el flúor que te protege. | Fondo menta. Desde el cuadro 0 un vaso inclina agua hacia una boca dibujada frente al espejo del lavabo; la espuma blanca de pasta se va con el chorro y unas chispitas doradas "F⁻" salen arrastradas al desagüe. Chip "¿más limpio?" se tacha. |
+| 1 | Esmalte | Tu esmalte es de cristales de apatita: calcio y fosfato. | `Lupa` en rayos X sobre un diente: debajo de la superficie, varillas de cristal hexagonal acomodadas en haces. Etiqueta "prismas de cristalitos · apatita · Ca + PO₄". Barra de escala "≈ 5 µm". |
 | 2 | Acido | Después de comer, las bacterias de tu boca hacen ácido que le disuelve minerales a tu diente. | Fondo noche. Bacterias (bolitas moradas) sobre el esmalte comen un cubito de azúcar y escupen gotitas "H⁺"; de los cristales se desprenden puntitos Ca y PO₄ que flotan lejos. Medidor de pH bajando a ácido. |
 | 3 | Fluor | El flúor en tu saliva frena esa pérdida y ayuda a reconstruir la capa de afuera. | Llegan iones F⁻ dorados en la saliva; se pegan a la superficie de los cristales y los Ca y PO₄ que huían regresan y se reacomodan. Medidor de pH sube. |
 | 4 | Cristal | Al rehacerse, el cristal mete flúor donde había hidroxilos, y se disuelve menos. | Acercamiento a una celda del cristal: un "OH" sale y un "F" dorado ocupa su lugar. Chip "hidroxiapatita → con flúor". Una nueva gota de ácido rebota sobre la parte dorada. |
 | 5 | Pregunta | ¿Y cómo se descubrió esto? | **Re-gancho.** "?" gigante sobre el diente; la cámara se aleja del microscopio. |
-| 6 | Manchas | En 1901, un dentista en Colorado vio dientes manchados color chocolate que se picaban menos: era flúor natural de más en el agua. | Tarjeta "1901 · Frederick McKay · Colorado Springs"; una sonrisa con manchas cafés y un contador de caries bajito; luego un vaso de agua con muchos F⁻ y montañas al fondo. |
+| 6 | Manchas | En 1901, un dentista en Colorado vio dientes manchados color chocolate que se picaban menos. Treinta años después se supo por qué: flúor natural de más en el agua. | Tarjeta "1901 · Frederick McKay · Colorado Springs"; una sonrisa con manchas cafés y un contador de caries bajito; luego rótulo "30 años después" y un vaso de agua con muchos F⁻ y montañas al fondo. |
 | 7 | Estudio | En 1945, Grand Rapids, Michigan, fue la primera ciudad del mundo en ponerle flúor a su agua. | `TarjetaEstudio` "1945 · Grand Rapids, Michigan"; un tanque de agua de la ciudad recibe gotitas doradas medidas; mapa pequeño con el punto en Michigan. |
 | 8 | Resultado | De casi 30 mil escolares, los nacidos después tuvieron más de 60 por ciento menos caries. | Una cuadrícula de escolares (íconos) se llena; dos barras: "antes" alta y "nacidos después" más de 60 % más baja. Chip "≈ 30 000 escolares · seguimiento de 15 años". |
-| 9 | Ninos | Pero tragado de más en niños, mancha el esmalte: antes de los 3 años, pasta del tamaño de un arroz; de 3 a 6, un chícharo. | Un diente de niño con unas líneas blancas tenues (fluorosis leve). Luego dos cepillos chiquitos: uno con una embarradita del tamaño de un grano de arroz ("menos de 3 años") y otro con una bolita como chícharo ("3 a 6 años"). |
-| 10 | Cierre | Así que escupe la espuma, no te enjuagues luego luego, y deja trabajar al flúor en tu esmalte. | **Regreso al lavabo del inicio, transformado:** la misma boca escupe la espuma, el vaso de agua se queda quieto y las chispitas F⁻ ahora se quedan brillando sobre los dientes. |
+| 9 | Ninos | Pero tragado de más en niños, mancha: antes de los 3 años, pasta del tamaño de un arroz; de 3 a 6, un chícharo. | Un diente de niño con unas líneas blancas tenues (fluorosis leve). Luego dos cepillos chiquitos: uno con una embarradita del tamaño de un grano de arroz ("menos de 3 años") y otro con una bolita como chícharo ("3 a 6 años"). |
+| 10 | Cierre | Así que escupe la espuma, no te enjuagues luego luego, y deja trabajar al flúor. | **Regreso al lavabo del inicio, transformado:** la misma boca escupe la espuma, el vaso de agua se queda quieto y las chispitas F⁻ ahora se quedan brillando sobre los dientes. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
 
 **Música:** cama grave continua; efectos en el mismo cuadro (chorro del buche, gárgaras, desagüe, mordida de bacterias, gotitas de ácido "tss", cristal que se reacomoda con un "clic", golpe de la tarjeta, chasquido de la cuadrícula llenándose, "pop" de la bolita de pasta, escupida final).

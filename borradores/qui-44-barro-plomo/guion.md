@@ -6,11 +6,11 @@
 - **Tono:** informar sin satanizar a los alfareros ni al barro (es patrimonio y sustento); el problema es el esmalte con plomo y el horneado, y existe la alternativa sin plomo. Nada de "tira tus ollas": lo práctico es lo que dicen la FDA y el INSP (pedir barro sin plomo; si no sabes si tiene, no usarlo para comida).
 - **Seguridad / sin consejos médicos inventados:** no se recomienda ningún tratamiento. En la descripción: si a un niño le han dado de comer en barro que quizá tenga plomo, preguntar al médico por una prueba de plomo en sangre (FDA).
 - **Duración:** voz 952 caracteres (≈ 57.9 s) + cierre 3.5 s → **≈ 61.4 s** (`estimar-escenas.mjs --outro 3.5`).
-- **Estado:** guion escrito (fase 1). Falta verificación independiente (`verificacion.md`), tabla "Robert en pantalla" y animación. Voz pendiente de aprobación de Robert.
+- **Estado:** guion verificado (`verificacion.md`, con la corrección del verificador aplicada), animación lista (`barro.jsx`), voz pendiente de aprobación de Robert (~952 créditos).
 
 ## Versión narrada
 
-Tiempos estimados: Gancho 0–4.6 · Greta 4.6–9.5 · Horno 9.5–14.1 · Acido 14.1–19.3 · Cerebro 19.3–24.9 · Pregunta 24.9–28.0 · Estudio 28.0–34.0 · Comparacion 34.0–40.8 · Curado 40.8–47.4 · Alternativa 47.4–52.3 · Cierre 52.3–58.0 · Outro 58.0–61.5.
+Tiempos estimados: Gancho 0–4.6 · Greta 4.6–9.5 · Horno 9.5–14.1 · Acido 14.1–19.2 · Cerebro 19.2–24.8 · Pregunta 24.8–27.9 · Estudio 27.9–33.9 · Comparacion 33.9–40.6 · Curado 40.6–47.8 · Alternativa 47.8–52.7 · Cierre 52.7–57.9 · Outro 57.9–61.4.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -28,6 +28,25 @@ Tiempos estimados: Gancho 0–4.6 · Greta 4.6–9.5 · Horno 9.5–14.1 · Acid
 | — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
 
 **Música:** cama grave y continua, cálida (marimba muy baja de fondo, sin canción conocida), que se oscurece en la parte del cerebro y se aclara en la alternativa. Efectos en el mismo cuadro: chorro de café, destello del esmalte, polvo que cae, crepitar del horno, "tic" de cada ion de plomo que sale, burbujeo de la salsa, piquete en el dedo, sello "sin plomo".
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena con `CUES`). Grande en «¿Y cuántos niños en México lo traen en la sangre?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «puede ser vidrio hecho con plomo» |
+| 2 | 5.4 | 9.2 | 13_senalando_arriba | `izq-alto` | «greta: óxido de plomo» |
+| 3 | 15.1 | 18.9 | 06_pensativo_menton | `arriba-der` | «se va soltando hacia tu comida» |
+| 4 | 19.8 | 24.6 | 10_serio_molesto | `izq-alto` | «puede bajar su inteligencia para siempre» |
+| 5 | 24.9 | 28.5 | 07_pensativo_puno | `grande` | «¿Y cuántos niños en México lo traen en la sangre?» |
+| 6 | 34.9 | 40.3 | 04_bajando_lentes | `arriba-der` | «44 de cada 100» |
+| 7 | 41.4 | 47.5 | 12_perfil_serio | `izq-alto` | «siguió soltando plomo arriba de la norma» |
+| 8 | 48.1 | 52.5 | 05_sonriendo_dientes_uniformes | `arriba-der` | «barro sin plomo» (FONART) |
+| 9 | 53.0 | 57.8 | 02_apuntando_camara | `arriba-der` | «pide barro sin plomo» |
+| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 41 s en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas · huecos máximos de ~6 s.
 
 ## Fuentes (cada dato y cifra se abrió en la fuente original el 29 oct 2026)
 

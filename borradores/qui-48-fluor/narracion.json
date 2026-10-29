@@ -3,16 +3,16 @@
   "salida": "Shot Fluor narrado.dc.html",
   "nota": "Shot Químico #48. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese buche de agua después de cepillarte no te limpia más: se lleva el flúor que te protege." },
+    { "escena": "Gancho", "texto": "Ese buche de agua después de cepillarte no te ayuda: se lleva el flúor que te protege." },
     { "escena": "Esmalte", "texto": "Tu esmalte es de cristales de apatita: calcio y fosfato." },
     { "escena": "Acido", "texto": "Después de comer, las bacterias de tu boca hacen ácido que le disuelve minerales a tu diente." },
     { "escena": "Fluor", "texto": "El flúor en tu saliva frena esa pérdida y ayuda a reconstruir la capa de afuera." },
     { "escena": "Cristal", "texto": "Al rehacerse, el cristal mete flúor donde había hidroxilos, y se disuelve menos." },
     { "escena": "Pregunta", "texto": "¿Y cómo se descubrió esto?" },
-    { "escena": "Manchas", "texto": "En 1901, un dentista en Colorado vio dientes manchados color chocolate que se picaban menos: era flúor natural de más en el agua." },
+    { "escena": "Manchas", "texto": "En 1901, un dentista en Colorado vio dientes manchados color chocolate que se picaban menos. Treinta años después se supo por qué: flúor natural de más en el agua." },
     { "escena": "Estudio", "texto": "En 1945, Grand Rapids, Michigan, fue la primera ciudad del mundo en ponerle flúor a su agua." },
     { "escena": "Resultado", "texto": "De casi 30 mil escolares, los nacidos después tuvieron más de 60 por ciento menos caries." },
-    { "escena": "Ninos", "texto": "Pero tragado de más en niños, mancha el esmalte: antes de los 3 años, pasta del tamaño de un arroz; de 3 a 6, un chícharo." },
-    { "escena": "Cierre", "texto": "Así que escupe la espuma, no te enjuagues luego luego, y deja trabajar al flúor en tu esmalte." }
+    { "escena": "Ninos", "texto": "Pero tragado de más en niños, mancha: antes de los 3 años, pasta del tamaño de un arroz; de 3 a 6, un chícharo." },
+    { "escena": "Cierre", "texto": "Así que escupe la espuma, no te enjuagues luego luego, y deja trabajar al flúor." }
   ]
 }

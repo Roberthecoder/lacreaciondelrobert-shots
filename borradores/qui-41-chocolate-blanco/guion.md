@@ -26,6 +26,26 @@
 
 **Música:** cama grave continua; efectos en el mismo cuadro: crujido de envoltura, "¡crack!" de la tableta, tintineo al aparecer cada cristal, burbujeo suave de la manteca derretida, zumbido frío al abrir el refri, gotitas, golpe de la tarjeta, zumbido del láser.
 
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y si lo guardaste en el refri?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.0 | 11_sorprendido | `gancho` | «no es moho» |
+| 2 | 9.2 | 14.1 | 13_senalando_arriba | `izq-alto` | «cerca del 30 por ciento… 6 formas» |
+| 3 | 16.8 | 20.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «ese crack al partirlo… se templa» |
+| 4 | 21.5 | 26.1 | 06_pensativo_menton | `izq-alto` | «con calor… recristaliza» |
+| 5 | 26.4 | 28.5 | 07_pensativo_puno | `grande` | «¿Y si lo guardaste en el refri?» |
+| 6 | 30.8 | 33.8 | 04_bajando_lentes | `arriba-der` | «disuelve el azúcar… polvito blanco» |
+| 7 | 37.5 | 41.9 | 06_pensativo_menton | `arriba-der` | «nunca vieron manchas sin la forma 6» |
+| 8 | 42.6 | 47.2 | 11_sorprendido | `izq-alto` | «borraron parte… con un láser» |
+| 9 | 47.8 | 53.3 | 05_sonriendo_dientes_uniformes | `izq-alto` | «se puede comer» |
+| 10 | 53.8 | 58.1 | 02_apuntando_camara | `arriba-der` | «Guárdalo fresco y seco» |
+| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 42 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+
 ## Fuentes (cada dato se abrió en la fuente el 29 oct 2026)
 
 1. **6 formas de cristal; descritas con rayos X en 1966 en Cincinnati; la normal del chocolate es la V; el bloom no se ha visto sin la VI** — Wille R.L., Lutton E.S. "Polymorphism of cocoa butter." *J Am Oil Chem Soc* 43:491–496 (agosto 1966). DOI 10.1007/BF02641273. Afiliación: "Food Products Division, The Procter and Gamble Company, Cincinnati, Ohio". Resumen (Crossref/Springer):
