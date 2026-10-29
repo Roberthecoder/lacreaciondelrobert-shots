@@ -1,10 +1,10 @@
 # Shot IA #20 · TikTok no te lee la mente: te mide
 
 - **Serie:** Shot IA · **Logo:** IA (brillitos) · **Badge:** #20 · rama `pedido300/ia`.
-- **Estado (29 oct 2026):** fase A — guion listo para verificación independiente. Falta: verificación, animación, Robert en pantalla y `publicacion.md` · **voz pendiente de aprobación de Robert**.
+- **Estado (29 oct 2026):** guion verificado (20 ✅ y 3 ⚠️ corregidos), animación, Robert en pantalla, `gen-audio.mjs` y `publicacion.md` listos; hoja de revisión en `revision/hoja.png` · **voz pendiente de aprobación de Robert** (~948 créditos).
 - **Formato:** N1 "Por dentro" (cómo decide el algoritmo, por dentro de la máquina) + N6 "Guía en pasos" (tres pasos para reiniciar tu Para ti, sacados de la página oficial de TikTok).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre el celular que se ve en pantalla: «No es que TikTok te lea la mente: es que te mide».
-- **Duración:** voz 950 caracteres / ~187 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** estimados (`estimar-escenas.mjs`).
+- **Duración:** voz 948 caracteres / ~185 palabras (≈ 58.2 s) + cierre 3.5 s → **61.7 s** en la base (`estimar-escenas.mjs`).
 - **Postura de la serie:** ni defensa ni ataque: explicar con la fuente oficial cómo funciona y dar un consejo útil y verificado. No se afirma ni se niega que el celular "escuche": no se toca ese mito.
 
 ## Versión narrada
@@ -12,20 +12,40 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | No es que TikTok te lea la mente: es que te mide. Cada video que terminas o saltas es un voto. | Fondo rosa; desde el cuadro 0 un celular con un pulgar que desliza videos. Encima de la cabeza del usuario, una "bola de cristal" que se tacha y se vuelve una regla/cronómetro. Cada video que pasa suelta una boleta ✔ (terminado) o ✖ (saltado) a una urna. |
-| 1 | Senales | Según su página oficial, usa lo que ves, terminas o saltas, a quién sigues y el audio y hashtags del video. | Fichas que vuelan a un embudo: "visto", "terminado", "saltado", "sigues a…", "🎵 audio", "#hashtags". Recorte "TikTok · Recommendation system". |
-| 2 | Peso | Y no todo vale igual: en 2020 TikTok dijo que acabar un video largo pesa más que estar en el mismo país que su autor. | Balanza: platillo pesado "video largo visto completo" contra platillo ligero "mismo país" (banderita). Recorte "TikTok Newsroom · 2020". |
+| 1 | Senales | Según TikTok, usa lo que ves, terminas o saltas, a quién sigues, el audio y los hashtags. | Fichas que vuelan a un embudo: "visto", "terminado", "saltado", "sigues a…", "🎵 audio", "#hashtags". Recorte "TikTok · Recommendation system". |
+| 2 | Peso | En 2020, TikTok dijo que acabar un video largo pesa más que estar en el mismo país que su autor. | Balanza: platillo pesado "video largo visto completo" contra platillo ligero "mismo país" (banderita). Recorte "TikTok Newsroom · 2020". |
 | 3 | Ranking | Calcula qué tan probable es que le des like o lo saltes, y arriba pone el de más puntos. | Por dentro de la máquina (fondo oscuro con circuito): cinco miniaturas con puntajes (ilustrativos) que se ordenan; la de más puntos sube al celular. |
 | 4 | Pregunta | ¿Y si ya te atrapó en videos que no quieres? | **Re-gancho.** El celular dentro de un remolino de videos iguales; "?" gigante; Robert grande. |
 | 5 | Paso1 | Paso uno: deja presionado el video y elige «No me interesa». | Contador grande "1"; dedo que mantiene presionado; menú con "No me interesa" que se ilumina. |
 | 6 | Paso2 | Paso dos: filtra palabras o hashtags. | Contador "2"; un colador que deja fuera fichas "#palabra". |
-| 7 | Paso3 | Paso tres: refresca tu Para ti: te trata como si fueras nuevo. | Contador "3"; flechas de refrescar; el feed se vacía y aparece una etiqueta "cuenta nueva". |
+| 7 | Paso3 | Paso tres: refresca tu Para ti, para que te muestre temas nuevos. | Contador "3"; flechas de refrescar que giran; llegan videos de temas distintos y la etiqueta "temas nuevos". |
 | 8 | Estudio | En 2024, un equipo de Europa y Estados Unidos analizó datos donados por trescientos cuarenta y siete usuarios. | Tarjeta "2024 · Vombatkere, Mousavi, Zannettou, Roesner y Gummadi · The Web Conference (Singapur)"; mapa con banderas de EE. UU., Alemania y Países Bajos; 347 cajitas de datos que llegan. |
-| 8 | Estudio | Lo que más personalizaba su Para ti: dar like y seguir cuentas. | Dos barras que crecen: "❤ like" y "+ seguir" marcadas "impacto alto". |
-| 9 | Explora | De sus primeros mil videos, solo treinta a cincuenta de cada cien seguían sus gustos; el resto, a explorar. | Cuadrícula de 100 miniaturas: 30–50 se pintan del color "tus gustos" (rango marcado), el resto con una brújula "explorar". |
+| 8 | Estudio | Lo que más personalizaba su Para ti: dar like y seguir cuentas. | Barras que crecen: "♥ dar like" y "+ seguir cuentas" con "impacto ALTO"; "% del video visto" con "impacto medio" (Tabla 3 del estudio). |
+| 9 | Explora | Calcularon que en sus primeros mil videos, entre treinta y cincuenta de cada cien seguían sus gustos; muchos de los demás eran para explorar. | Cuadrícula de 100 miniaturas: 30 doradas "♥ tus gustos" + 20 punteadas (el rango hasta 50), el resto con una brújula "explorar"; chip **"30–50 % · estimado del estudio"**. |
 | 10 | Cierre | Así que no te lee la mente: tú se la enseñas con cada dedazo. | **Regreso a la imagen del inicio:** el mismo celular y pulgar; la bola de cristal tachada, la urna llena de boletas ✔/✖ que llevan la huella del dedo. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de IA y Robert apuntando a cámara. |
 
 **Música:** cama grave continua con un pulso suave tipo "scroll"; cada deslizamiento hace un swish; cada boleta cae con un clic; la balanza baja con un golpe sordo; los puntajes suben con tics; el menú "No me interesa" con un toque; el colador con un shhh; refrescar con un barrido ascendente; la cuadrícula se pinta como tecleo; cierre con un acorde que se abre.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si ya te atrapó…?» y en los pasos 2 y 3.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «No es que TikTok te lea la mente» (cuadro 0) |
+| 2 | 7.5 | 10.9 | 06_pensativo_menton | `arriba-der` | las señales que entran al embudo |
+| 3 | 13.1 | 16.7 | 13_senalando_arriba | `izq-alto` | señala la balanza: «pesa más» |
+| 4 | 19.1 | 22.2 | 04_bajando_lentes | `bajo-der` | «arriba pone el de más puntos» |
+| 5 | 22.4 | 25.8 | 07_pensativo_puno | `grande` | «¿Y si ya te atrapó en videos que no quieres?» |
+| 6 | 29.1 | 35.3 | 05_sonriendo_dientes_uniformes | `grande-izq` | pasos dos y tres (filtra, refresca) |
+| 7 | 43.2 | 45.8 | 11_sorprendido | `arriba-der` | «dar like y seguir cuentas» |
+| 8 | 49.2 | 54.2 | 06_pensativo_menton | `izq-alto` | «muchos de los demás eran para explorar» |
+| 9 | 54.7 | 58.1 | 13_senalando_arriba | `arriba-der` | «tú se la enseñas con cada dedazo» |
+| — | 58.2 | 61.7 | 02_apuntando_camara | CierreMarca | cierre |
+
+apariciones 9 · ≈ 35.4 s (+ cierre 3.5 s) · poses distintas 6 + la del cierre (nunca la misma dos veces seguidas) · total 61.7 s.
+`bajo-der` (debajo del subtítulo) se agregó a la copia local de `kit-robert.jsx`.
 
 ## Fuentes (cada dato se abrió en la fuente original el 29 oct 2026)
 
@@ -50,10 +70,10 @@
    > "this finding indicates that the TikTok algorithm opts to recommend a large number of explore videos in an attempt to either infer better the user interests or maximize user retention"
 
 ## Notas
-- «No me interesa» es la traducción del botón "Not interested" (traducción nuestra; el texto exacto del menú en español puede variar según la versión de la app).
-- "Te trata como si fueras nuevo" = "as if they just signed up for TikTok" (2023). La página vigente (fuente 1) confirma que la opción de refrescar sigue existiendo.
+- «No me interesa» es el texto del botón en la versión en español de la página de TikTok (en inglés "Not interested"; lo confirmó el verificador).
+- Paso 3 dice "para que te muestre temas nuevos" (página vigente: "enabling you to explore entirely new sides of TikTok"). Se quitó "como si fueras nuevo" porque era la descripción de 2023 (corrección del verificador).
 - El dato del peso (video largo completo > mismo país) es de 2020 y así se dice en la voz.
-- Estudio: los 347 usuarios donaron sus datos (gracias al derecho de acceso del reglamento europeo GDPR). El 30–50 % "explotación" se calculó en los 220 usuarios con al menos mil videos y ya descontando el ruido; "el resto, a explorar" = videos que el marco del estudio clasifica como exploración (no basados en sus gustos conocidos). Es una estimación del estudio, no un dato oficial de TikTok.
+- Estudio: los 347 usuarios donaron sus datos (gracias al derecho de acceso del reglamento europeo GDPR). El 30–50 % "explotación" se calculó en los 220 usuarios con al menos mil videos y ya descontando el ruido; "muchos de los demás eran para explorar" = videos que el marco del estudio clasifica como exploración. Es una estimación del estudio (los autores dicen que en algunos casos su método es un límite inferior), así se dice en la voz ("Calcularon…") y en pantalla ("estimado del estudio").
 - "Lo que más personalizaba: dar like y seguir cuentas" es la conclusión textual del estudio (comparación entre usuarios muy y poco personalizados; impacto "alto" para like y seguir, "medio" para porcentaje visto). No contradice a TikTok: el tiempo visto sí cuenta, pero en esos datos el like y el seguir marcaron más diferencia.
 - Los puntajes de la escena "Ranking" son ilustrativos. El dibujo es esquemático.
 - No se habla del mito "el celular te escucha" (no hay fuente sólida para afirmarlo ni negarlo en este guion).

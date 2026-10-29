@@ -32,3 +32,29 @@
 3. **#7 "hasta treinta y cinco"** (⚠️): redondea un máximo hacia arriba y no dice de qué es. Propuesta: "En mujeres de piel oscura, casi treinta y cinco por ciento." (o "hasta treinta y cuatro punto siete por ciento").
 4. **#9 "casi todas de piel clara"** (⚠️): 79.6 % y 86.2 % no son "casi todas". Propuesta: "Una explicación probable: aprenden de ejemplos, y las colecciones de caras de referencia eran en su gran mayoría de piel clara." (mantener la etiqueta "hipótesis").
 5. **#13 NIST "hasta cien veces según su origen"** (⚠️): la fuente dice "de 10 a más de 100 veces" y por grupo demográfico, no solo por origen. Propuesta: "…confundir a dos personas podía ser de diez a más de cien veces más frecuente según el grupo de la persona." (o "…según su origen, sexo o edad").
+
+## Re-verificación
+
+29 oct 2026 · mismo verificador independiente. Solo lo nuevo: `narracion.json`, `caraspiel.jsx` y `publicacion.md`.
+
+| # | Afirmación nueva | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Voz 1: "enseñaron… A él casi nunca lo confundió; a ti, una de cada tres veces" (en pasado) | ✅ | Gender Shades, Tabla 4 (IBM 0.3 % / 34.7 %) | "Microsoft and IBM classifiers perform best on lighter male faces (error rates of 0.0% and 0.3% respectively)"; "ranging from 20.8% for Microsoft to 34.7% for IBM" | 2017 (medición) |
+| R2 | Voz 2: "Lo publicaron en 2018… tres programas que adivinan si una cara es de hombre o mujer" | ✅ | Gender Shades (PMLR 81, 2018); Raji y Buolamwini 2019 | "We evaluate 3 commercial gender classification systems"; "presented on February 24th 2018" | 2018 |
+| R3 | Voz 3: "menos del uno por ciento… casi treinta y cinco por ciento"; barras 0.8 vs 34.7 "(el peor de los 3)"; subtítulo "Menos de 1 % contra casi 35 %" | ✅ | Gender Shades, resumen | "error rates of up to 34.7%"; "The maximum error rate for lighter-skinned males is 0.8%" | 2018 |
+| R4 | Voz 5: "Una hipótesis… colecciones de caras de prueba… en su gran mayoría de piel clara"; álbumes 79.6 % / 86.2 % con chip HIPÓTESIS | ✅ | Gender Shades | "overwhelmingly composed of lighter-skinned subjects (79.6% for IJB-A and 86.2% for Adience)" | 2018 |
+| R5 | Voz 6: "en siete meses, las tres empresas sacaron versiones que fallaban menos"; barras IBM 34.7→16.97, Face++ 34.5→4.1, Microsoft 20.8→1.52, chip "2017 → agosto de 2018" | ✅ | Raji y Buolamwini 2019, Tabla 1; Gender Shades Tabla 4 | "Within 7 months of the original audit, we find that all three targets released new API versions"; Tabla 1 (agosto 2018): Face++ 4.1, MSFT 1.52, IBM 16.97 | 2017–2018 |
+| R6 | Voz 7: NIST 2019, 189 programas, "de diez a más de cien veces más frecuente según el grupo"; medidor ×1/×10/×100+; subtítulo "de 10 a 100+ veces" | ✅ | NISTIR 8280 | "189 mostly commercial algorithms"; "false positives rates often vary by factors of 10 to beyond 100 times" | 2019 |
+| R7 | Williams: foto borrosa → licencia → COINCIDENCIA, "Detroit · enero de 2020", 30 horas, chip "2024: prohibido arrestar solo por esto" | ✅ | ACLU (caso); ACLU Michigan 28 jun 2024 | "In January 2020, Detroit police wrongfully arrested our client Robert Williams"; "thirty hours of detention"; "prohibited from arresting people based solely on facial recognition results" | 2020/2024 |
+| R8 | Cierre: "error: 0.3 % / 34.7 %" + "mismo programa (IBM, 2017)" | ✅ | Gender Shades Tabla 4; Raji y Buolamwini ("audit outcomes from May 2017") | IBM: lighter male 0.3, darker female 34.7 | 2017 |
+| R9 | LinkedIn: el error con mujeres de piel oscura "bajó entre 17.7 y 30.4 puntos" | ✅ | Raji y Buolamwini 2019 | "a 17.7% - 30.4% reduction in error between audit periods" (IBM −17.73; Face++ 34.5→4.1 = −30.4) | 2019 |
+| R10 | Subtítulo 0 (jsx): "Mismo programa… *a ti te falla más.*" (en presente) | ⚠️ | ídem R1 | Mismo problema que se corrigió en la voz: el dato es de 2017 y ya bajó | 2017 |
+| R11 | Subtítulo 4 (jsx): "Sus ejemplos: *la mayoría, piel clara.*" | ⚠️ | Gender Shades | Los 79.6/86.2 % son de colecciones de *prueba*; de los programas comerciales "there was no mention of what training data was used". "Sus ejemplos" lo presenta como dato de entrenamiento | 2018 |
+| R12 | publicacion.md (TikTok): "las colecciones de caras de prueba **más usadas**" | ⚠️ | Gender Shades | El artículo solo dice "two facial analysis benchmarks, IJB-A and Adience"; el superlativo "más usadas" no está verificado | 2018 |
+
+### Correcciones necesarias (re-verificación)
+1. **R10** `caraspiel.jsx` subtítulo idx 0 → `"Mismo programa… *a ti te falló más.*"`
+2. **R11** `caraspiel.jsx` subtítulo idx 4 → `"Caras de prueba: *la mayoría, piel clara.*"`
+3. **R12** `publicacion.md` (TikTok) → "y dos colecciones de caras de prueba muy usadas eran en su gran mayoría de piel clara (79.6 % y 86.2 %)." (como ya dice YouTube; quitar "más usadas").
+
+Con esos tres cambios hechos tal cual, todo lo demás queda ✅.

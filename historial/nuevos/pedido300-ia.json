@@ -2,123 +2,205 @@
  "temas": [
   {
    "id": "ia-captcha",
-   "titulo": "Los bots resuelven los CAPTCHA mejor que tú (Searles et al., USENIX 2023) y reCAPTCHA te puso a digitalizar libros (von Ahn, Science 2008)",
+   "titulo": "Tú contra un bot: ¿quién resuelve mejor los captchas? (Searles et al., USENIX 2023; von Ahn 2008; Goodfellow 2014)",
    "serie": "Shot IA",
    "numero": 10,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-10-captcha",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Searles et al., USENIX Security 2023: humanos 50–85 %, bots la mayoría >96 %; 1,400 personas",
+    "von Ahn et al., Science 2008: reCAPTCHA, 440 millones de palabras",
+    "Goodfellow et al., ICLR 2014: 99.8 % en reCAPTCHA de texto",
+    "Documentación de reCAPTCHA v3 (puntaje 0–1)"
+   ],
+   "derivados": [
+    "Los CAPTCHA de audio y la accesibilidad",
+    "Granjas de captchas: personas pagadas por resolverlos",
+    "Cómo detectan los bots que se hacen pasar por humanos en redes"
+   ]
   },
   {
    "id": "ia-foto-celular",
-   "titulo": "Tu foto del celular no es una foto: son varias fotos unidas por algoritmos (fotografía computacional, ráfaga HDR+ y modo noche)",
+   "titulo": "Tu foto de noche no es una foto: son hasta trece (HDR+ y Night Sight de Google, 2016–2019; red neuronal de ruido 2023)",
    "serie": "Shot IA",
    "numero": 11,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-11-foto-celular",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Hasinoff et al., ACM TOG 2016 (HDR+)",
+    "Liba et al., ACM TOG 2019 (Night Sight: 6–13 cuadros, 0.3 lux, 5,000 fotos para el color)",
+    "Wronski et al., ACM TOG 2019 (Super Res Zoom, temblor 8–12 Hz)",
+    "blog.google, 18 abr 2023 (red neuronal que quita ruido)"
+   ],
+   "derivados": [
+    "El modo retrato: cómo el celular 'adivina' la profundidad",
+    "La polémica de las fotos de la Luna con zoom",
+    "¿Una foto editada por IA sigue siendo una foto?"
+   ]
   },
   {
    "id": "ia-lobo-nieve",
-   "titulo": "La IA no vio al lobo, vio la nieve: atajos tramposos (Ribeiro 2016; radiografías de neumonía, Zech 2018; reglas en lunares, Narla 2018)",
+   "titulo": "La IA no vio al lobo: vio la nieve (atajos: Ribeiro 2016, Zech 2018, Winkler 2019)",
    "serie": "Shot IA",
    "numero": 12,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-12-lobo-nieve",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Ribeiro, Singh y Guestrin, KDD 2016 (LIME)",
+    "Zech et al., PLOS Medicine 2018",
+    "Winkler et al., JAMA Dermatology 2019"
+   ],
+   "derivados": [
+    "Las reglas en las fotos de lunares que engañan a la IA",
+    "IA que detecta COVID en radiografías… por la letra del hospital",
+    "Por qué una IA médica debe probarse en otro país"
+   ]
   },
   {
    "id": "ia-tarea-chatgpt",
-   "titulo": "Estudiar con ChatGPT: mejor en la práctica, peor en el examen (Bastani et al., PNAS 2025, Turquía)",
+   "titulo": "Estudiar con un chat tipo ChatGPT: +48 % en la práctica, −17 % en el examen (Bastani et al., PNAS 2025)",
    "serie": "Shot IA",
    "numero": 13,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-13-tarea-chatgpt",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Bastani et al., PNAS 122(26) e2422633122 (2025), Turquía, otoño 2023"
+   ],
+   "derivados": [
+    "Tutores de IA que dan pistas: qué dice la evidencia",
+    "¿Usar IA para escribir te hace recordar menos lo que escribiste?",
+    "Calculadoras en los 70s: el debate que se repite"
+   ]
   },
   {
    "id": "ia-caras-falsas",
-   "titulo": "¿Cuál cara es real? Las caras hechas por IA engañan y parecen más confiables (Nightingale y Farid, PNAS 2022)",
+   "titulo": "¿Cuál de estas caras es real? La gente acierta 48 % con caras de IA (Nightingale y Farid, PNAS 2022; Miller et al. 2023)",
    "serie": "Shot IA",
    "numero": 14,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-14-caras-falsas",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Nightingale y Farid, PNAS 2022",
+    "Miller et al., Psychological Science 2023"
+   ],
+   "derivados": [
+    "Cómo verificar de dónde salió una foto (búsqueda inversa)",
+    "Perfiles falsos con caras de IA en redes",
+    "Marcas de agua invisibles en imágenes de IA"
+   ]
   },
   {
    "id": "ia-voz-clonada",
-   "titulo": "Tu voz se clona con segundos de audio y las estafas de 'familiar en problemas' (VALL-E 2023, avisos de la FTC)",
+   "titulo": "Tu voz se clona con 3 segundos: la estafa del familiar en problemas (VALL-E 2023, FTC, FBI, Mai et al. 2023)",
    "serie": "Shot IA",
    "numero": 15,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-15-voz-clonada",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Wang et al., arXiv:2301.02111 (VALL-E, 2023)",
+    "Mai et al., PLOS ONE 2023 (529 personas, 73 %)",
+    "FTC, aviso 20 mar 2023",
+    "FBI/IC3, aviso 3 dic 2024",
+    "Guardia Nacional / SEP, 2026"
+   ],
+   "derivados": [
+    "Deepfakes de video en videollamadas de empresa",
+    "Cómo se detecta una voz falsa (y por qué es difícil)",
+    "La voz clonada en el doblaje y la música"
+   ]
   },
   {
    "id": "ia-programadores-lentos",
-   "titulo": "Programadores con IA creían ir 20 % más rápido e iban 19 % más lento (METR 2025)",
+   "titulo": "Creían que la IA los hacía 20 % más rápidos: tardaron 19 % más (METR 2025)",
    "serie": "Shot IA",
    "numero": 16,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-16-programadores-lentos",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "METR, arXiv:2507.09089 (2025)",
+    "METR, blog 24 feb 2026",
+    "Peng et al., arXiv:2302.06590 (2023)"
+   ],
+   "derivados": [
+    "El efecto 'sentirse productivo' con herramientas nuevas",
+    "IA y programadores novatos vs expertos",
+    "Cómo se diseña un experimento con asignación al azar"
+   ]
   },
   {
    "id": "ia-energia-pregunta",
-   "titulo": "Cuánta energía y agua gasta tu pregunta a una IA (Google 2025: 0.24 Wh y 0.26 mL por consulta mediana) y los centros de datos (AIE)",
+   "titulo": "Una pregunta típica a la IA de Google: menos que 9 s de tele y 5 gotas (Google 2025) y la proyección de la AIE para 2030",
    "serie": "Shot IA",
    "numero": 17,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-17-energia-pregunta",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Elsworth et al., arXiv:2508.15734 (Google, 2025): 0.24 Wh, 0.26 mL, ÷33",
+    "Agencia Internacional de Energía, Energy and AI (2025): centros de datos 2030 ≈ Japón"
+   ],
+   "derivados": [
+    "Cuánto gasta generar una imagen o un video con IA",
+    "El agua que enfría los centros de datos",
+    "Por qué la eficiencia no siempre baja el consumo total (paradoja de Jevons)"
+   ]
   },
   {
    "id": "ia-retina",
-   "titulo": "Una IA adivina tu edad, sexo y presión mirando tu retina (Poplin et al., Nature Biomed Eng 2018)",
+   "titulo": "Una IA ve en tu retina el sexo, la edad y la presión (Poplin et al. 2018) y la IA autónoma para diabetes (IDx-DR 2018)",
    "serie": "Shot IA",
    "numero": 18,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-18-retina",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "Poplin et al., Nature Biomedical Engineering 2018",
+    "Korot et al., Scientific Reports 2021",
+    "Abràmoff et al., npj Digital Medicine 2018"
+   ],
+   "derivados": [
+    "Retinopatía diabética: la IA en clínicas sin oftalmólogo",
+    "Lo que revela un electrocardiograma a una IA",
+    "IA que adivina la edad 'biológica'"
+   ]
   },
   {
    "id": "ia-sismos",
-   "titulo": "¿Puede la IA predecir sismos? Lo que sí y lo que no (USGS; DeVries 2018 vs Mignan y Broccardo 2019)",
+   "titulo": "¿La IA puede predecir sismos? Lo que sí y lo que no (USGS; EQTransformer 2020; Los Álamos 2017; DeVries 2018 vs Mignan 2019)",
    "serie": "Shot IA",
    "numero": 19,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/ia-19-sismos",
    "rama": "pedido300/ia",
    "fecha": "2026-10-29",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "USGS FAQ 'Can you predict earthquakes?'",
+    "Mousavi et al., Nature Communications 2020",
+    "Rouet-Leduc et al., GRL 2017",
+    "DeVries et al., Nature 2018; Mignan y Broccardo, Nature 2019",
+    "CENAPRED 2019 y gob.mx (SASMEX)"
+   ],
+   "derivados": [
+    "Cómo funciona la alerta sísmica mexicana por dentro",
+    "IA que pronostica réplicas en tiempo real",
+    "El mito de los animales que 'predicen' sismos"
+   ]
   },
   {
    "id": "ia-tiktok-algoritmo",
