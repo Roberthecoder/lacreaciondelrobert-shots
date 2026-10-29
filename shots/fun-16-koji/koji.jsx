@@ -330,9 +330,10 @@ function KojiShot() {
           <Conidioforo x={790} y={1010} alto={150} rv={40} p={kprog(T, K.Pm + 0.6, K.Pm + 2.0)} color={KJ.koji} n={13} cad={6} T={T} />
           <TiraGenes x={108} y={1070} p={kprog(T, K.Pm + 1.2, K.Pm + 2.0)} />
           <TiraGenes x={608} y={1070} p={kprog(T, K.Pm + 1.6, K.Pm + 2.4)} huecos={T > K.Pm + 3.3 ? [1, 4] : []} rotos={[2, 5]} apagado={kprog(T, K.Pm + 3.6, K.Pm + 4.2)} />
-          {[[130, 600, 0], [250, 570, 1], [380, 610, 2], [470, 560, 3]].map(([x, y, i]) => { const on = kprog(T, K.Pm + 2.2 + i * 0.15, K.Pm + 2.6 + i * 0.15, kEase.rebote); return on > 0 ? <Aflatoxina key={i} x={x} y={y + Math.sin(T * 2 + i) * 8} s={on} rot={T * 20 + i * 30} /> : null; })}
+          {[[110, 610, 0], [230, 570, 1], [350, 610, 2], [170, 690, 3]].map(([x, y, i]) => { const on = kprog(T, K.Pm + 2.2 + i * 0.15, K.Pm + 2.6 + i * 0.15, kEase.rebote); return on > 0 ? <Aflatoxina key={i} x={x} y={y + Math.sin(T * 2 + i) * 8} s={on} rot={T * 20 + i * 30} /> : null; })}
           {T > K.Pm + 3.4 && <g transform="translate(985 960) scale(0.75)"><Interruptor x={0} y={0} off={kprog(T, K.Pm + 3.6, K.Pm + 4.0)} /></g>}
-          <Sello T={T} at={K.Pm + 5.0} x={560} y={640} texto="0" color={KC.mint} r={80} />
+          <Sello T={T} at={K.Pm + 5.0} x={560} y={630} texto="0" color={KC.mint} r={80} />
+          {T > K.Pm + 5.2 && <text x={560} y={755} textAnchor="middle" opacity={kprog(T, K.Pm + 5.2, K.Pm + 5.5)} style={{ font:`700 30px ${KF.mono}` }} fill={KC.mint}>aflatoxinas</text>}
         </>)}
       </Escena>
       {/* 11 · sake, miso y soya: hongo nacional */}
@@ -369,19 +370,18 @@ function KojiShot() {
       <Etq T={T} at={K.Al + 0.6} until={K.Sa - 0.3} x={60} y={1040} texto="amilasas → glucosa" tam={34} color={KC.cyan} />
       <Chip T={T} at={K.Sa + 0.4} until={K.P - 0.2} texto="salmuera: 22–23 % de sal" x={340} y={430} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.Sa + 1.8} until={K.P - 0.2} texto="el koji muere" x={300} y={520} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.Mo + 0.5} until={K.Co - 0.3} x={60} y={1080} texto="enzimas (siguen)" tam={30} color={KC.cyan} />
+      <Etq T={T} at={K.Mo + 0.5} until={K.Co - 0.3} x={540} y={930} texto="enzimas (siguen)" tam={30} color={KC.cyan} />
       <Etq T={T} at={K.Mo + 1.0} until={K.Co - 0.3} x={1040} y={1170} texto="Tetragenococcus halophilus" lado="izq" it tam={30} color={KC.mint} />
       <Etq T={T} at={K.Mo + 1.8} until={K.Co - 0.3} x={60} y={470} texto="Zygosaccharomyces rouxii" it tam={30} color="#ffd98a" />
-      <Chip T={T} at={K.Mo + 2.4} until={K.Co - 0.3} texto="6–8 meses (método tradicional)" x={600} y={1000} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Mo + 2.4} until={K.Co - 0.3} texto="6–8 meses (método tradicional)" x={620} y={1090} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Co + 0.6} until={K.E - 0.3} texto="azúcar + aminoácido = color" x={360} y={430} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Co + 1.8} until={K.E - 0.3} texto="reacción de Maillard" x={360} y={1240 - 140} tam={36} borde={KC.gold2} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.Pm - 0.2} anio="2006" quien="Higashi-Hiroshima, Japón · 210 cepas" revista="Tominaga et al., Appl. Environ. Microbiol." y={600} />
       <Chip T={T} at={K.Pm + 0.3} until={K.N - 0.3} texto="primos: misma sección Flavi" x={360} y={430} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Pm + 1.0} until={K.N - 0.3} x={60} y={1140} texto="Aspergillus flavus" it tam={30} color="#d6ea6a" />
-      <Etq T={T} at={K.Pm + 1.4} until={K.N - 0.3} x={600} y={1140} texto="A. oryzae (koji)" it tam={30} color={KJ.koji2} />
+      <Etq T={T} at={K.Pm + 1.0} until={K.N - 0.3} x={60} y={1120} texto="Aspergillus flavus" it tam={28} color="#d6ea6a" />
+      <Etq T={T} at={K.Pm + 1.4} until={K.N - 0.3} x={600} y={1120} texto="A. oryzae (koji)" it tam={28} color={KJ.koji2} />
       <Etq T={T} at={K.Pm + 2.4} until={K.N - 0.3} x={60} y={510} texto="aflatoxinas" tam={34} color={KC.red} />
-      <Chip T={T} at={K.Pm + 3.8} until={K.N - 0.3} texto="genes apagados o incompletos" x={560} y={1190} tam={28} borde={KC.mint} />
-      <Etq T={T} at={K.Pm + 5.2} until={K.N - 0.3} x={640} y={760} texto="aflatoxinas" lado="izq" tam={28} color={KC.mint} />
+      <Chip T={T} at={K.Pm + 3.8} until={K.N - 0.3} texto="genes apagados o incompletos" x={560} y={1196} tam={26} borde={KC.mint} />
       <Chip T={T} at={K.N + 2.4} until={K.C - 0.3} texto="Brewing Society of Japan" x={400} y={840} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.N + 0.4} until={K.C - 0.3} x={230} y={1170} texto="sake" lado="izq" tam={30} color={KC.texto} />
       <Etq T={T} at={K.N + 0.9} until={K.C - 0.3} x={540} y={1170} texto="miso" lado="izq" tam={30} color={KC.texto} />

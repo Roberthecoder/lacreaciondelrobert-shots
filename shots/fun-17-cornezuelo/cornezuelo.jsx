@@ -387,14 +387,14 @@ function CornezueloShot() {
       <Etq T={T} at={K.F + 1.8} until={K.Po - 0.3} x={30} y={700} texto="flor del centeno" tam={26} color={KC.ink} />
       <Etq T={T} at={K.F + 2.2} until={K.Po - 0.3} x={30} y={620} texto="espora" tam={26} color={KC.ink} />
       <Etq T={T} at={K.Po + 0.4} until={ES2 - 0.3} x={430} y={420} texto="estigma" lado="izq" tam={30} />
-      <Etq T={T} at={K.Po + 0.9} until={K.Es - 0.4} x={660} y={640} texto="camino del polen" tam={30} color={KC.lilac} />
+      <Etq T={T} at={K.Po + 0.9} until={K.Es - 0.4} x={500} y={700} texto="camino del polen" lado="izq" tam={28} color={KC.lilac} />
       <Etq T={T} at={K.Po + 1.4} until={ES2 - 0.3} x={600} y={860} texto="hifa" tam={34} color="#ffe7a0" />
       <Etq T={T} at={K.Po + 2.2} until={ES2 - 0.3} x={800} y={1000} texto="ovario" tam={32} />
       <Chip T={T} at={ES2 + 0.5} until={K.Cu - 0.3} texto="mielecilla: jarabe de azúcar + esporas" x={500} y={470} tam={32} borde={CZ.miel} />
       <Etq T={T} at={ES2 + 1.2} until={K.Cu - 0.3} x={60} y={600} texto="insecto" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cu + 1.0} until={K.P - 0.3} x={440} y={830} texto="esclerocio (cornezuelo)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cu + 1.3} until={K.P - 0.3} x={270} y={560} texto="grano de centeno" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Cu + 1.8} until={K.P - 0.3} texto="alcaloides: ergotamina, ergometrina…" x={470} y={470} tam={30} borde={KC.lilac} />
+      <Etq T={T} at={K.Cu + 1.3} until={K.P - 0.3} x={270} y={640} texto="grano de centeno" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Cu + 1.8} until={K.P - 0.3} texto="alcaloides: ergotamina, ergometrina…" x={390} y={440} tam={27} borde={KC.lilac} />
       <Chip T={T} at={K.V + 2.4} until={K.SA - 0.3} texto="gangrena" x={830} y={950} tam={40} borde={KC.red} />
       <Chip T={T} at={K.SA + 0.3} until={K.E - 0.3} texto="Edad Media · ergotismo" x={400} y={470} tam={34} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Cul - 0.3} anio="2001" quien="Arsi, Etiopía · 18 casos" revista="Urga et al., Ethiop. J. Health Dev., 2002" x={380} y={530} />

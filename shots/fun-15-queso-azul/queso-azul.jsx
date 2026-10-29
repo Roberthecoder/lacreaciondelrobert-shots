@@ -366,7 +366,7 @@ function QuesoAzulShot() {
       <Chip T={T} at={K.Gr + 3.0} until={K.P - 0.3} texto="= olor a queso azul" x={330} y={580} tam={36} borde={QZ.esporaLuz} />
       <Etq T={T} at={K.Gr + 2.3} until={K.P - 0.3} x={1040} y={1220} lado="izq" texto="molécula: no a escala" tam={22} />
       <Chip T={T} at={K.Pa + 0.4} until={K.E - 0.3} texto="✓ cepas escogidas y vigiladas" x={350} y={470} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.Pa + 3.0} until={K.E - 0.3} texto="moho del pan: ¿cuál es?" x={350} y={560} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Pa + 3.0} until={K.E - 0.3} texto="moho del pan: no sabes cuál es" x={350} y={560} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Pa + 5.0} until={K.E - 0.3} texto="algunos mohos: toxinas" x={350} y={650} tam={30} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Po - 0.3} anio="2020" quien="Francia · 34 genomas" revista="Dumas et al., Molecular Ecology" y={540} />
       <Chip T={T} at={K.E + 3.0} until={K.Po - 0.3} texto="domesticado 2 veces" x={540} y={1000} tam={34} borde={KC.ink} />

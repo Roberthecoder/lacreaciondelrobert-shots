@@ -264,11 +264,11 @@ function LiquenShot() {
       <Escena T={T} a={K.Cn} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <circle cx={540} cy={900} r={175} fill="#7fd3ff" stroke={KC.ink} strokeWidth={8} />
-          {[-0.6, -0.3, 0, 0.3, 0.6].map((k, i) => <ellipse key={i} cx={540} cy={900} rx={175 * Math.abs(Math.cos(T * 0.6 + k * 2))} ry={175} fill="none" stroke="#2b7fb5" strokeWidth={3} />)}
-          {[-120, -60, 0, 60, 120].map((dy, i) => <line key={'l' + i} x1={540 - Math.sqrt(175 * 175 - dy * dy)} y1={900 + dy} x2={540 + Math.sqrt(175 * 175 - dy * dy)} y2={900 + dy} stroke="#2b7fb5" strokeWidth={3} />)}
+          <circle cx={540} cy={860} r={160} fill="#7fd3ff" stroke={KC.ink} strokeWidth={8} />
+          {[-0.6, -0.3, 0, 0.3, 0.6].map((k, i) => <ellipse key={i} cx={540} cy={860} rx={160 * Math.abs(Math.cos(T * 0.6 + k * 2))} ry={160} fill="none" stroke="#2b7fb5" strokeWidth={3} />)}
+          {[-120, -60, 0, 60, 120].map((dy, i) => <line key={'l' + i} x1={540 - Math.sqrt(160 * 160 - dy * dy)} y1={860 + dy} x2={540 + Math.sqrt(160 * 160 - dy * dy)} y2={860 + dy} stroke="#2b7fb5" strokeWidth={3} />)}
           {Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.Cn + 0.3 + i * 0.3, K.Cn + 0.7 + i * 0.3, kEase.rebote); if (e <= 0) return null; const a = -Math.PI / 2 + (i - 0.5) * (Math.PI * 2 / 6) + Math.PI / 6;
-            const bx = 540 + Math.cos(a) * 265, by = 900 + Math.sin(a) * 245;
+            const bx = 540 + Math.cos(a) * 265, by = 860 + Math.sin(a) * 215;
             return <g key={i} transform={`translate(${bx} ${by}) scale(${e})`}>
               <line x1={0} y1={0} x2={-Math.cos(a) * 80} y2={-Math.sin(a) * 70} stroke={KC.ink} strokeWidth={4} strokeDasharray="8 6" />
               <circle r={58} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
@@ -309,14 +309,14 @@ function LiquenShot() {
           <Piedra T={T} casco={kprog(T, K.C + 2.6, K.C + 3.2, kEase.sale)} respira={1} />
           <Cohete T={T} x={klerp(1160, 900, kprog(T, K.C + 3.0, K.C + 3.8, kEase.sale))} y={klerp(700, 760, kprog(T, K.C + 3.0, K.C + 3.8, kEase.sale))} s={0.9} rot={35} />
           {[['hongo', 120, 0], ['alga', 280, 1], ['¿levadura?', 450, 2]].map(([t, x, i]) => { const e = kprog(T, K.C + 0.6 + i * 0.35, K.C + 1.0 + i * 0.35, kEase.rebote); if (e <= 0) return null;
-            return <g key={i} transform={`translate(${x} 580) scale(${e})`} opacity={i === 2 ? 0.5 : 1}>
+            return <g key={i} transform={`translate(${x} 515) scale(${e})`} opacity={i === 2 ? 0.5 : 1}>
               <circle r={56} fill={KC.paper} stroke={KC.ink} strokeWidth={6} strokeDasharray={i === 2 ? '10 8' : 'none'} />
               {i === 0 && [0, 1, 2].map((k) => <path key={k} d={`M -36 ${-16 + k * 16} q 18 -14 36 0 t 36 0`} stroke="#8a6326" strokeWidth={6} fill="none" strokeLinecap="round" />)}
               {i === 1 && <Alga x={0} y={0} r={34} />}
               {i === 2 && <><circle r={22} fill={LQ.levadura} stroke={KC.ink} strokeWidth={3} /><text x={0} y={-48} textAnchor="middle" style={{ font:`400 44px ${KF.titulo}` }} fill={KC.ink}>¿?</text></>}
               <text x={0} y={92} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>{t}</text>
             </g>; })}
-          {[0, 1].map((i) => <text key={i} x={190 + i * 160} y={590} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.C + 0.9 + i * 0.35, K.C + 1.2 + i * 0.35)}>+</text>)}
+          {[0, 1].map((i) => <text key={i} x={190 + i * 160} y={535} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.C + 0.9 + i * 0.35, K.C + 1.2 + i * 0.35)}>+</text>)}
         </>)}
       </Escena>
 
@@ -344,15 +344,15 @@ function LiquenShot() {
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.0} anio="2016" quien="Montana, EUA" revista="Spribille et al., Science" x={540} y={470} />
       <Etq T={T} at={K.E + 0.9} until={K.Cn - 0.3} x={40} y={720} texto="Bryoria" it tam={36} color={KC.ink} />
       <Lupa T={T} at={K.E + 2.0} until={K.Cn - 0.3} x={760} y={880} r={190} fx={430} fy={960} interior={LupaLevaduras} tinte={LQ.levadura} etiqueta="levaduras en la piel" />
-      <NumeroGigante T={T} at={K.Cn + 0.3} until={K.Cn + 2.9} valor={6} dur={1.8} etiqueta="continentes" x={300} y={470} tam={200} color={KC.yellow} />
-      <Chip T={T} at={K.Cn + 3.0} until={K.Es - 0.2} texto="¿qué hacen ahí? aún se estudia" x={420} y={470} tam={34} borde={LQ.levadura} />
+      <NumeroGigante T={T} at={K.Cn + 0.3} until={K.Cn + 2.9} valor={6} dur={1.8} etiqueta="continentes" x={300} y={470} tam={200} color={KC.pink} />
+      <Chip T={T} at={K.Cn + 3.0} until={K.Es - 0.2} texto="¿qué hacen ahí? aún se estudia" x={380} y={470} tam={30} borde={LQ.levadura} />
       <Chip T={T} at={K.Es + 0.6} until={K.Es + 5.0} texto="expuestos al espacio" x={330} y={430} tam={36} borde={KC.lilac} />
-      <Contador T={T} at={K.Es + 1.0} hasta={14.6} dur={3.4} dec={1} sufijo=" días" x={330} y={530} tam={64} color={KC.yellow} />
+      {T < K.Es + 5.0 && <Contador T={T} at={K.Es + 1.0} hasta={14.6} dur={3.4} dec={1} sufijo=" días" x={330} y={530} tam={64} color={KC.yellow} />}
       <Etq T={T} at={K.Es + 1.8} until={K.Es + 5.0} x={520} y={600} texto="Xanthoria elegans" it tam={28} color={LQ.naranja} />
       <Etq T={T} at={K.Es + 2.3} until={K.Es + 5.0} x={520} y={660} texto="Rhizocarpon geographicum" it tam={26} color={LQ.mapa} />
       <Chip T={T} at={K.Es + 5.2} until={K.Es + 6.4} texto="de regreso a la Tierra" x={540} y={470} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.Es + 7.8} until={K.C - 0.2} texto="casi igual" x={550} y={1190} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 1.9} until={K.Ou} texto="es un equipo" x={300} y={440} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.Es + 7.8} until={K.C - 0.2} texto="casi igual" x={540} y={640} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 1.9} until={K.Ou} texto="es un equipo" x={300} y={385} tam={46} borde={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.D} texto="10 cm" largo={170} />

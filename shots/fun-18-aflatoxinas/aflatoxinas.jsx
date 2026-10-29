@@ -104,7 +104,7 @@ function Costal({ x, y, texto, tipo, moho = 0, s = 1 }) {
 function Termometro({ x, y, v = 0 }) {
   return <g transform={`translate(${x} ${y})`}>
     <rect x={-24} y={-300} width={48} height={320} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-    <rect x={-12} y={-280 + 260 * (1 - v)} width={24} height={280 - (-280 + 260 * (1 - v)) - 280 + 280} rx={10} fill={KC.red} />
+    <rect x={-12} y={-280 + 260 * (1 - v)} width={24} height={300 - 260 * (1 - v)} rx={10} fill={KC.red} />
     <circle cx={0} cy={30} r={44} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
     {[-240, -180, -120, -60].map((ty, i) => <line key={i} x1={24} y1={ty} x2={42} y2={ty} stroke={KC.ink} strokeWidth={4} />)}
   </g>;

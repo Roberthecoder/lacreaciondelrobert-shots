@@ -83,3 +83,5 @@ Apariciones 10 · **33.3 s** en pantalla (+ cierre 3.2 s) · 9 poses distintas �
    > "The Ustilago maydis-maize pathosystem has emerged as the current model for plant pathogenic basidiomycetes"
 
 El dibujo es esquemático.
+
+_Render de revisión: rama `pedido300/fun` (29 oct 2026)._

@@ -32,7 +32,7 @@ Barras de escala: 1 m (parque), 10 µm (espora e hifas), 5 cm (setas), 10 m (ani
 
 ## Fuentes (cada dato se abrió en el texto completo el 29 oct 2026)
 
-1. Shantz, H. L. y Piemeisel, R. L. (1917). Fungus fairy rings in eastern Colorado and their effect on vegetation. *Journal of Agricultural Research* 11(5): 191–245 (29 oct 1917). Texto completo: https://archive.org/details/journalagricult11unit (pp. 191, 214–217, 240–241).
+1. Shantz, H. L. y Piemeisel, R. L. (1917). Fungus fairy rings in eastern Colorado and their effect on vegetation. *Journal of Agricultural Research* 11(5): 191–246 (29 oct 1917). Texto completo: https://archive.org/details/journalagricult11unit (pp. 191, 214–217, 240–241).
    > "The fairy ring starts from the point of germination of the fungus spore and spreads outward at approximately an equal rate in all directions."
    > "The fungus advances and never recedes, since the young growing filaments are always advancing into new soil and since only the old filaments lie on the inside of the ring where the available portion of the organic matter of the soil has already been consumed by the fungus."
    > "The effect of the fungus filaments on the soil is to reduce a part of the organic matter to ammonia … The increase in available nitrogenous material in the soil occupied by the young mycelium stimulates the growth of the grasses"
@@ -43,7 +43,7 @@ Barras de escala: 1 m (parque), 10 µm (espora e hifas), 5 cm (setas), 10 m (ani
    > "In Holland these circles often marked the places where the devil churned his butter." · "The circular spots where the grass had dried up were places where a glowing dragon had rested after his nightly wanderings." (mitología alemana) · "these circular growths marked the paths of dancing fairies."
    > Ritzema Bos (1901), citado ahí: el avance "would resemble the spread of a flame started by dropping a match into dry grass."
    > H. L. Shantz: "Plant Physiologist"; R. L. Piemeisel: "Scientific Assistant" → «dos científicos».
-2. Martin, E. y Kerns, J. (2017). Fairy Ring in Turf. NC State Extension, publicado el 10 nov 2017. https://content.ces.ncsu.edu/fairy-ring-in-turf
+2. NC State Extension (2017). Fairy Ring in Turf, publicado el 10 nov 2017. https://content.ces.ncsu.edu/fairy-ring-in-turf
    > "A Type I fairy ring causes the soil and thatch to become hydrophobic"; "Most cases of Type I fairy ring are caused by hydrophobic residues"
    > "Type II fairy rings appear as rings or arcs of turf that are dark green and grow faster than the surrounding turf."; "the release of nitrogen and other nutrients into the soil"
    > "In a Type III fairy ring, mushrooms or puffballs are produced in a ring or arc." (más comunes tras lluvias fuertes o frecuentes)
