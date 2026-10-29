@@ -296,7 +296,7 @@ function EsporasConteoShot() {
       <Etq T={T} at={K.G + 1.4} until={K.So - 0.3} x={60} y={515} texto="champiñón de campo" tam={28} color={KC.ink} />
       <NumeroGigante T={T} at={K.G + 0.2} until={K.So - 0.3} valor={16000000000} dur={1.8} etiqueta="esporas" x={540} y={1110} tam={112} color={KC.yellow} />
       <Chip T={T} at={K.So + 0.3} until={K.V - 0.2} texto="1 · uno abierto · laminillas abajo" x={380} y={470} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.So + 0.6} until={K.So + 2.2} x={60} y={640} texto="Agaricus bisporus" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.So + 0.6} until={K.So + 2.2} x={60} y={560} texto="Agaricus bisporus" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.V + 0.3} until={K.H - 0.1} texto="2 · tápalo · espera una noche" x={400} y={470} tam={34} borde={KC.ink} />
       <Cronometro T={T} at={K.V + 0.6} until={K.H} factor={16000} etiqueta="UNA NOCHE" x={400} y={600} />
       <Etq T={T} at={K.H + 2.0} until={K.Po - 0.3} x={60} y={380} texto="huella de esporas" tam={36} color={KC.ink} />

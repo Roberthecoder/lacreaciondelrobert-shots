@@ -168,7 +168,7 @@ function CandidaShot() {
           <Cama T={T} />
           <Burbuja x={300} y={790} s={burb} desde={[320, 1072]}><Levadura x={0} y={0} rx={62} ry={50} rot={-10} brote={kprog(T, K.G + 0.8, K.G + 3.5)} /></Burbuja>
           <Burbuja x={740} y={800} s={kprog(T, K.G + 0.45, K.G + 0.95, kEase.rebote)} desde={[760, 1082]}><Levadura x={0} y={0} rx={62} ry={50} rot={-10} brote={kprog(T, K.G + 1.0, K.G + 3.7)} /></Burbuja>
-          {T > K.G + 1.2 && <text x={520} y={850} textAnchor="middle" style={{ font:`400 ${130 * kprog(T, K.G + 1.2, K.G + 1.6, kEase.rebote)}px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>=</text>}
+          {T > K.G + 1.2 && <text x={520} y={850} textAnchor="middle" style={{ font:`400 ${170 * kprog(T, K.G + 1.2, K.G + 1.6, kEase.rebote)}px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>=</text>}
         </>)}
       </Escena>
       {/* 2 · vive en la boca, el intestino y la piel */}
@@ -271,7 +271,7 @@ function CandidaShot() {
             <Levadura x={0} y={0} rx={42} ry={34} brote={0.4} />
             {[0, 1, 2, 3, 4, 5].map((i) => { const a = i / 6 * Math.PI * 2 + T * 0.4; return <Bacteria key={i} T={T} x={Math.cos(a) * 80} y={Math.sin(a) * 80} rot={a * 57 + 90} s={0.32 * kprog(T, K.C + 1.0 + i * 0.12, K.C + 1.3 + i * 0.12, kEase.rebote)} color={[KC.mint, KC.cyan, KC.lilac][i % 3]} seed={i} flagelo={false} />; })}
           </Burbuja>)}
-          {T > K.C + 0.8 && <text x={520} y={850} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.C + 0.8, K.C + 1.2)}>=</text>}
+          {T > K.C + 0.8 && <text x={520} y={850} textAnchor="middle" style={{ font:`400 170px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.C + 0.8, K.C + 1.2)}>=</text>}
         </>)}
       </Escena>
 
@@ -291,7 +291,7 @@ function CandidaShot() {
       <Chip T={T} at={K.Tr + 0.2} until={K.P - 0.3} texto="cambia de forma (dimorfismo)" x={420} y={440} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Fo + 0.3} until={K.P - 0.3} x={180} y={1010} texto="levadura (gemación)" tam={30} color={CA.lev} />
       <Etq T={T} at={K.Fo + 1.4} until={K.P - 0.3} x={640} y={980} texto="hifa" tam={36} color={KC.yellow} />
-      <Chip T={T} at={K.In - 0.2} until={K.Es - 0.2} texto="POR DENTRO · la piel de tu boca" x={420} y={440} tam={30} borde={KC.cyan} mono />
+      <Chip T={T} at={K.In - 0.2} until={K.Es - 0.2} texto="POR DENTRO · la piel de tu boca" x={360} y={440} tam={25} borde={KC.cyan} mono />
       <Etq T={T} at={K.In + 0.4} until={K.Es + 2.2} x={160} y={620} texto="levadura" tam={28} color={CA.lev} />
       <Etq T={T} at={K.In + 1.6} until={K.Pl - 0.3} x={600} y={850} texto="hifa" tam={30} color={KC.yellow} />
       <Etq T={T} at={K.In + 0.8} until={K.Pl - 0.3} x={60} y={1150} texto="células de tu boca" tam={28} color={KC.white} />
@@ -299,8 +299,7 @@ function CandidaShot() {
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2016" quien="Londres y Jena (Alemania)" revista="Moyes et al., Nature" x={540} y={480} />
       <Etq T={T} at={K.Es + 3.0} until={K.Pl - 0.3} x={700} y={960} texto="candidalisina" tam={32} color={KC.red} />
       <Chip T={T} at={K.Tx + 0.4} until={K.Tx + 2.1} texto="daña la membrana" x={400} y={560} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.Tx + 2.5} until={K.Pl - 0.3} x={660} y={500} texto="ratón" tam={28} color={KC.white} />
-      <Chip T={T} at={K.Tx + 2.9} until={K.Pl - 0.3} texto="sin toxina: no enfermaba la boca" x={380} y={740} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.Tx + 2.9} until={K.Pl - 0.3} texto="sin toxina: no enfermaba la boca" x={350} y={385} tam={30} borde={KC.leaf} />
       <Etq T={T} at={K.Pl + 1.0} until={K.Q - 0.3} x={60} y={470} texto="algodoncillo" tam={44} color={KC.ink} />
       <Etq T={T} at={K.Pl + 1.4} until={K.Q - 0.3} x={60} y={530} texto="(candidiasis oral)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Pl + 3.0} until={K.Q - 0.3} x={60} y={590} texto="placas blancas" tam={30} color={KC.ink} />
