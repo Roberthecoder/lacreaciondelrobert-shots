@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Shiitake base narrada.dc.html",
   "salida": "Shot Shiitake narrado.dc.html",
   "nota": "Shot Fungi Mati #26. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Crudo te puede rayar la piel; bien cocido, te deja lo rico."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

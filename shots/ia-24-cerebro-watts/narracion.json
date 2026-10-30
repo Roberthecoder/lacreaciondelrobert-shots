@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot CerebroWatts base narrada.dc.html",
   "salida": "Shot CerebroWatts narrado.dc.html",
   "nota": "Shot IA #24. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que tu foquito de veinte watts aún le da clases de ahorro a las máquinas."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

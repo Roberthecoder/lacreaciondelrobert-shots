@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Bt base narrada.dc.html",
   "salida": "Shot Bt narrado.dc.html",
   "nota": "Shot Biotecnológico #25. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -52,5 +53,6 @@
       "texto": "Así que esa hoja no estaba fumigada: traía su insecticida adentro, solo para ciertas orugas."
     }
   ],
-  "tanda": 11
+  "tanda": 11,
+  "mezcla": "oficial-30oct"
 }

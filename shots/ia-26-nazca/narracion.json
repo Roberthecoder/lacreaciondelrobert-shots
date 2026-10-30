@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Nazca base narrada.dc.html",
   "salida": "Shot Nazca narrado.dc.html",
   "nota": "Shot IA #26. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "La IA dice dónde mirar; caminar el desierto dice qué es real."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

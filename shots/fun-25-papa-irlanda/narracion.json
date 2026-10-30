@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Papa Irlanda base narrada.dc.html",
   "salida": "Shot Papa Irlanda narrado.dc.html",
   "nota": "Shot Fungi Mati #25. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Así que el hongo de la papa no es un hongo, y sigue atacando papas y jitomates en todo el mundo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,18 +1,53 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot HieloSeco base narrada.dc.html",
   "salida": "Shot HieloSeco narrado.dc.html",
   "nota": "Shot Químico #24. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese humo no es humo: es el agua de tu propio aire, hecha nube por el frío del hielo seco." },
-    { "escena": "Que", "texto": "El hielo seco es dióxido de carbono sólido, a 78 grados y medio bajo cero." },
-    { "escena": "Sublima", "texto": "No se derrite: pasa directo de sólido a gas. Eso se llama sublimación." },
-    { "escena": "Invisible", "texto": "Y ese gas no se ve: no tiene color ni olor." },
-    { "escena": "Nube", "texto": "Lo blanco es el vapor de agua del aire, que con tanto frío se condensa en gotitas diminutas, como la niebla." },
-    { "escena": "Pregunta", "texto": "¿Entonces es inofensivo?" },
-    { "escena": "Riesgo", "texto": "No. Casi medio kilo suelta unos 250 litros de gas, que en un lugar cerrado desplaza el oxígeno; y en la piel quema por frío." },
-    { "escena": "Estudio", "texto": "En 2004, en Alabama, un hombre llevó 45 kilos de hielo seco en su camioneta cerrada, con el aire recirculando, y terminó desmayado. Despertó cuando su esposa abrió la puerta." },
-    { "escena": "Thilorier", "texto": "Lo curioso: en 1835, en París, Thilorier encerró un poquito en un frasco bien tapado, y el tapón salió disparado." },
-    { "escena": "Regla", "texto": "Por eso nunca va en un frasco cerrado, ni en tu mano sin guantes." },
-    { "escena": "Cierre", "texto": "Así que ese humo no es humo: es tu aire, hecho nube por un gas que no ves." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Ese humo no es humo: es el agua de tu propio aire, hecha nube por el frío del hielo seco."
+    },
+    {
+      "escena": "Que",
+      "texto": "El hielo seco es dióxido de carbono sólido, a 78 grados y medio bajo cero."
+    },
+    {
+      "escena": "Sublima",
+      "texto": "No se derrite: pasa directo de sólido a gas. Eso se llama sublimación."
+    },
+    {
+      "escena": "Invisible",
+      "texto": "Y ese gas no se ve: no tiene color ni olor."
+    },
+    {
+      "escena": "Nube",
+      "texto": "Lo blanco es el vapor de agua del aire, que con tanto frío se condensa en gotitas diminutas, como la niebla."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces es inofensivo?"
+    },
+    {
+      "escena": "Riesgo",
+      "texto": "No. Casi medio kilo suelta unos 250 litros de gas, que en un lugar cerrado desplaza el oxígeno; y en la piel quema por frío."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2004, en Alabama, un hombre llevó 45 kilos de hielo seco en su camioneta cerrada, con el aire recirculando, y terminó desmayado. Despertó cuando su esposa abrió la puerta."
+    },
+    {
+      "escena": "Thilorier",
+      "texto": "Lo curioso: en 1835, en París, Thilorier encerró un poquito en un frasco bien tapado, y el tapón salió disparado."
+    },
+    {
+      "escena": "Regla",
+      "texto": "Por eso nunca va en un frasco cerrado, ni en tu mano sin guantes."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese humo no es humo: es tu aire, hecho nube por un gas que no ves."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }
