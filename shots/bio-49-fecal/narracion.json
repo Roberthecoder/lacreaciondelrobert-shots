@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Fecal base narrada.dc.html",
   "salida": "Shot Fecal narrado.dc.html",
   "nota": "Shot Biotecnológico #49. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -60,5 +61,6 @@
       "texto": "Por eso esas cápsulas no son vitaminas: son semillas de un bosque nuevo."
     }
   ],
-  "tanda": 8
+  "tanda": 8,
+  "mezcla": "oficial-30oct"
 }

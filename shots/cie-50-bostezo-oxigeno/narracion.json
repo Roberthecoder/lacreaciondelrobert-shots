@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Bostezo Oxigeno base narrada.dc.html",
   "salida": "Shot Bostezo Oxigeno narrado.dc.html",
   "nota": "Shot Científico #50. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "¿Ya bostezaste? Quizá fue el contagio, o el sueño, pero no la falta de oxígeno."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
