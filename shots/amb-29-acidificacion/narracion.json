@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Acidificacion base narrada.dc.html",
   "salida": "Shot Acidificacion narrado.dc.html",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Sigue siendo básico, pero para una concha, ese poquito ya se nota."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
