@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Coprinus base narrada.dc.html",
   "salida": "Shot Coprinus narrado.dc.html",
   "nota": "Shot Fungi Mati #40. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Así que esa tinta negra no es basura: es un hongo que también caza gusanos, soltando sus últimas esporas."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "San Valentín",
   "serie_vinculada": "Fungi Mati",
   "velocidad": 1.0,
@@ -62,5 +63,6 @@
       "escena": "Cierre",
       "texto": "Así que si este San Valentín regalas chocolate, también regalas el trabajo de un hongo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

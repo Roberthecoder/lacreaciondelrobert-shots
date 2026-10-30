@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Tamiz base narrada.dc.html",
   "salida": "Shot Tamiz narrado.dc.html",
   "nota": "Shot Biotecnológico #39. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -56,5 +57,6 @@
       "texto": "Esas gotitas de tu talón cazaban enfermedades invisibles."
     }
   ],
-  "tanda": 6
+  "tanda": 6,
+  "mezcla": "oficial-30oct"
 }
