@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot EnergiaPregunta base narrada.dc.html",
   "salida": "Shot EnergiaPregunta narrado.dc.html",
   "nota": "Shot IA #17. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que una pregunta típica cuesta nueve segundos de tele. Lo que pesa es que hacemos miles de millones."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,18 +1,53 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Huevo base narrada.dc.html",
   "salida": "Shot Huevo narrado.dc.html",
   "nota": "Shot Químico #17. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese anillo verde de tu huevo cocido no es que esté echado a perder: es sulfuro de hierro, hecho en tu olla." },
-    { "escena": "Que", "texto": "La clara tiene proteínas con azufre, y la yema tiene hierro." },
-    { "escena": "Gas", "texto": "Con el hervor, la clara empieza a soltar sulfuro de hidrógeno, el gas con olor a huevo podrido." },
-    { "escena": "Viaje", "texto": "Ese gas viaja hacia adentro, hasta la orilla de la yema." },
-    { "escena": "Reaccion", "texto": "Ahí se junta con el hierro y forma sulfuro ferroso: un polvito verde oscuro, solo en la superficie." },
-    { "escena": "Pregunta", "texto": "¿Y por qué a veces sale y a veces no?" },
-    { "escena": "Estudio", "texto": "En 1920, en Londres, Tinkler y Soar hirvieron huevos 15 minutos: el que pasaron a agua fría casi no se pintó; el que se enfrió lento, sí." },
-    { "escena": "Treinta", "texto": "Con 30 minutos, el anillo salió mucho más fuerte, y el agua fría ya casi no ayudó." },
-    { "escena": "Frio", "texto": "El frío frena la salida del gas y lo aleja de la yema: por eso, no lo cuezas de más y enfríalo rápido." },
-    { "escena": "Dato", "texto": "Lo curioso: un huevo hervido 7 horas quedó con una capa verde de hasta un milímetro." },
-    { "escena": "Cierre", "texto": "Y tranquilo: ese anillo verde no hace daño. Es química en tu olla, no un huevo echado a perder." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Ese anillo verde de tu huevo cocido no es que esté echado a perder: es sulfuro de hierro, hecho en tu olla."
+    },
+    {
+      "escena": "Que",
+      "texto": "La clara tiene proteínas con azufre, y la yema tiene hierro."
+    },
+    {
+      "escena": "Gas",
+      "texto": "Con el hervor, la clara empieza a soltar sulfuro de hidrógeno, el gas con olor a huevo podrido."
+    },
+    {
+      "escena": "Viaje",
+      "texto": "Ese gas viaja hacia adentro, hasta la orilla de la yema."
+    },
+    {
+      "escena": "Reaccion",
+      "texto": "Ahí se junta con el hierro y forma sulfuro ferroso: un polvito verde oscuro, solo en la superficie."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué a veces sale y a veces no?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1920, en Londres, Tinkler y Soar hirvieron huevos 15 minutos: el que pasaron a agua fría casi no se pintó; el que se enfrió lento, sí."
+    },
+    {
+      "escena": "Treinta",
+      "texto": "Con 30 minutos, el anillo salió mucho más fuerte, y el agua fría ya casi no ayudó."
+    },
+    {
+      "escena": "Frio",
+      "texto": "El frío frena la salida del gas y lo aleja de la yema: por eso, no lo cuezas de más y enfríalo rápido."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Lo curioso: un huevo hervido 7 horas quedó con una capa verde de hasta un milímetro."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Y tranquilo: ese anillo verde no hace daño. Es química en tu olla, no un huevo echado a perder."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

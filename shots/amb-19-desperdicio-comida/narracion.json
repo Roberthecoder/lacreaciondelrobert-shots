@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Desperdicio base narrada.dc.html",
   "salida": "Shot Desperdicio narrado.dc.html",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Así que esa quinta parte no está lejos: más de la mitad se tira en casas como la tuya."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
