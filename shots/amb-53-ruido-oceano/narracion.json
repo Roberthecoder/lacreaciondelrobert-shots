@@ -1,19 +1,54 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Ruido Oceano base narrada.dc.html",
   "salida": "Shot Ruido Oceano narrado.dc.html",
   "nota": "Shot Ambiental #53. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Este mar no está en silencio: abajo hay un ruido que puede subirles el estrés a las ballenas." },
-    { "escena": "Agua", "texto": "Bajo el agua, el sonido viaja más de cuatro veces más rápido que en el aire." },
-    { "escena": "Ballenas", "texto": "Las ballenas con barbas se hablan con sonidos graves que se detectan a cientos de kilómetros." },
-    { "escena": "Helices", "texto": "Pero hélices y motores de barcos grandes hacen un ruido grave en esas notas." },
-    { "escena": "Pregunta", "texto": "¿Cómo sabes si ese ruido estresa a una ballena?" },
-    { "escena": "Experimento", "texto": "Tras el once de septiembre de 2001, pasaron muchos menos barcos por la Bahía de Fundy." },
-    { "escena": "Resultado", "texto": "El ruido bajó seis decibeles y en la caca de las ballenas francas bajaron hormonas del estrés." },
-    { "escena": "Prueba", "texto": "Fue la primera evidencia de que el ruido de barcos puede ligarse a estrés crónico." },
-    { "escena": "Decadas", "texto": "Y en un punto del mar frente a California, de los sesenta a 2004, el ruido más grave subió casi tres decibeles cada década." },
-    { "escena": "Lento", "texto": "¿Qué ayuda? Ir más lento: en 2017, frente a la isla de Vancouver, la mayoría de los barcos frenó y bajó el ruido." },
-    { "escena": "Cierre", "texto": "Este mar puede estar más callado: basta con que los barcos levanten el pie." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Este mar no está en silencio: abajo hay un ruido que puede subirles el estrés a las ballenas."
+    },
+    {
+      "escena": "Agua",
+      "texto": "Bajo el agua, el sonido viaja más de cuatro veces más rápido que en el aire."
+    },
+    {
+      "escena": "Ballenas",
+      "texto": "Las ballenas con barbas se hablan con sonidos graves que se detectan a cientos de kilómetros."
+    },
+    {
+      "escena": "Helices",
+      "texto": "Pero hélices y motores de barcos grandes hacen un ruido grave en esas notas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo sabes si ese ruido estresa a una ballena?"
+    },
+    {
+      "escena": "Experimento",
+      "texto": "Tras el once de septiembre de 2001, pasaron muchos menos barcos por la Bahía de Fundy."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "El ruido bajó seis decibeles y en la caca de las ballenas francas bajaron hormonas del estrés."
+    },
+    {
+      "escena": "Prueba",
+      "texto": "Fue la primera evidencia de que el ruido de barcos puede ligarse a estrés crónico."
+    },
+    {
+      "escena": "Decadas",
+      "texto": "Y en un punto del mar frente a California, de los sesenta a 2004, el ruido más grave subió casi tres decibeles cada década."
+    },
+    {
+      "escena": "Lento",
+      "texto": "¿Qué ayuda? Ir más lento: en 2017, frente a la isla de Vancouver, la mayoría de los barcos frenó y bajó el ruido."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Este mar puede estar más callado: basta con que los barcos levanten el pie."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

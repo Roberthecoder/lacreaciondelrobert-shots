@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Rio Santiago base narrada.dc.html",
   "salida": "Shot Rio Santiago narrado.dc.html",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Y mientras siga llegando agua sucia, esta nieve seguirá cayendo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
