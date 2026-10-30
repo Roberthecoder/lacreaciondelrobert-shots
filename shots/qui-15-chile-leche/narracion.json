@@ -1,18 +1,53 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Chile base narrada.dc.html",
   "salida": "Shot Chile narrado.dc.html",
   "nota": "Shot Químico #15. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese ardor del habanero no es calor: es la capsaicina engañando a tu sensor de calor." },
-    { "escena": "Que", "texto": "La capsaicina es la molécula que pica en los chiles, como el habanero o el jalapeño." },
-    { "escena": "Sensor", "texto": "En tus nervios hay un sensor, TRPV1, que se enciende con el calor que quema." },
-    { "escena": "Engano", "texto": "La capsaicina se pega a ese sensor y lo prende: tu cerebro siente fuego, aunque no haya." },
-    { "escena": "Agua", "texto": "El agua ayuda algo, pero la capsaicina es grasosa: casi no se disuelve en ella." },
-    { "escena": "Pregunta", "texto": "¿Entonces qué te tomas?" },
-    { "escena": "Estudio", "texto": "En 2019, en la Universidad Estatal de Pensilvania, 72 personas tomaron jugo de tomate picante y, una por una, probaron siete bebidas." },
-    { "escena": "Resultado", "texto": "Todas ayudaron algo, pero solo la leche y un agua de sabor con azúcar le ganaron al agua sola." },
-    { "escena": "Proteina", "texto": "Y la entera no le ganó a la descremada: los autores sospechan que ayuda más la proteína que la grasa." },
-    { "escena": "Nobel", "texto": "Lo curioso: con capsaicina, David Julius descubrió ese sensor en 1997, y en 2021 compartió el Nobel de Medicina." },
-    { "escena": "Cierre", "texto": "Así que ese ardor no es calor: es química, y la leche lo calma mejor que el agua." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Ese ardor del habanero no es calor: es la capsaicina engañando a tu sensor de calor."
+    },
+    {
+      "escena": "Que",
+      "texto": "La capsaicina es la molécula que pica en los chiles, como el habanero o el jalapeño."
+    },
+    {
+      "escena": "Sensor",
+      "texto": "En tus nervios hay un sensor, TRPV1, que se enciende con el calor que quema."
+    },
+    {
+      "escena": "Engano",
+      "texto": "La capsaicina se pega a ese sensor y lo prende: tu cerebro siente fuego, aunque no haya."
+    },
+    {
+      "escena": "Agua",
+      "texto": "El agua ayuda algo, pero la capsaicina es grasosa: casi no se disuelve en ella."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces qué te tomas?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2019, en la Universidad Estatal de Pensilvania, 72 personas tomaron jugo de tomate picante y, una por una, probaron siete bebidas."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Todas ayudaron algo, pero solo la leche y un agua de sabor con azúcar le ganaron al agua sola."
+    },
+    {
+      "escena": "Proteina",
+      "texto": "Y la entera no le ganó a la descremada: los autores sospechan que ayuda más la proteína que la grasa."
+    },
+    {
+      "escena": "Nobel",
+      "texto": "Lo curioso: con capsaicina, David Julius descubrió ese sensor en 1997, y en 2021 compartió el Nobel de Medicina."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese ardor no es calor: es química, y la leche lo calma mejor que el agua."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

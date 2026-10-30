@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Sal base narrada.dc.html",
   "salida": "Shot Sal narrado.dc.html",
   "nota": "Shot Químico #14. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que esa sal no es un polvito inocente: es un metal y un veneno vueltos cubos tranquilos."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

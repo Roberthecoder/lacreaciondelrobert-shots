@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Luna Se Aleja base narrada.dc.html",
   "salida": "Shot Luna Se Aleja narrado.dc.html",
   "nota": "Shot Científico #16. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que cada vez que te cortas las uñas, acuérdate: la Luna también se alejó un poquito."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
