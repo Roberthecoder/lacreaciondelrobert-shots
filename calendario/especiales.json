@@ -1,5 +1,5 @@
 {
-  "nota": "Shots festivos ya hechos (serie Shot Festivo, numeración propia en orden de publicación; regla de Robert, 28 oct 2026). Las festividades YA NO reservan números de las series normales. Al hacer un festivo nuevo, agrégalo aquí con el siguiente número. · 30 oct 2026: Robert pidió 1 shot diario; los 6 de Día de Muertos se reparten del 30 oct al 2 nov (2 el 1 y 2 de nov).",
+  "nota": "Shots festivos ya hechos (serie Shot Festivo, numeración propia en orden de publicación; regla de Robert, 28 oct 2026). Las festividades YA NO reservan números de las series normales. Al hacer un festivo nuevo, agrégalo aquí con el siguiente número. · 30 oct 2026: Robert pidió 1 shot diario; los 6 de Día de Muertos salen en orden de número solo el 1 nov (#01–#03) y el 2 nov (#04–#06).",
   "festivos": [
     {
       "numero": 1,
@@ -12,35 +12,35 @@
       "numero": 2,
       "clave": "fes-02-pan-de-muerto",
       "festividad": "Día de Muertos",
-      "fecha": "2026-11-02",
+      "fecha": "2026-11-01",
       "serie_vinculada": "Biotecnológico"
     },
     {
       "numero": 3,
       "clave": "fes-03-podredumbre-blanca",
       "festividad": "Día de Muertos",
-      "fecha": "2026-11-02",
+      "fecha": "2026-11-01",
       "serie_vinculada": "Fungi Mati"
     },
     {
       "numero": 4,
       "clave": "fes-04-esqueleto",
       "festividad": "Día de Muertos",
-      "fecha": "2026-11-01",
+      "fecha": "2026-11-02",
       "serie_vinculada": "Científico"
     },
     {
       "numero": 5,
       "clave": "fes-05-fotos-ofrenda",
       "festividad": "Día de Muertos",
-      "fecha": "2026-10-30",
+      "fecha": "2026-11-02",
       "serie_vinculada": "IA"
     },
     {
       "numero": 6,
       "clave": "fes-06-calaveritas",
       "festividad": "Día de Muertos",
-      "fecha": "2026-10-31",
+      "fecha": "2026-11-02",
       "serie_vinculada": "Químico"
     },
     {

@@ -4,7 +4,7 @@
 - Arranca el 30 oct 2026. Cada día sale UN shot, rotando las series en este orden:
   Fungi Mati → Biotecnológico → Ambiental → Científico → Químico → IA (cada serie sale cada 6 días, en orden de número).
 - Los Shots Festivos salen el día de su festividad (calendario/especiales.json, campo «fecha») y ocupan ese día: ese día no sale
-  shot normal y la rotación sigue al día siguiente. (Excepción: Día de Muertos 2026 tiene 2 festivos el 1 y el 2 de nov.)
+  shot normal y la rotación sigue al día siguiente. (Excepción: Día de Muertos 2026 tiene 3 festivos el 1 nov y 3 el 2 nov, en orden de número.) Los festivos SIEMPRE salen en orden de número.
 - Las series normales se numeran seguidas, sin huecos ni reservas. Científico #01 es la carpeta 003-semillas-luna.
 Uso:
   python3 calendario/fecha.py "Fungi Mati" 23      -> fecha del Fungi Mati #23
