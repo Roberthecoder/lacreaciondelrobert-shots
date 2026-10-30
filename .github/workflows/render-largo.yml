@@ -25,6 +25,8 @@ env:
 
 jobs:
   partir:
+    # Solo corre en el repositorio público (máquinas más rápidas y minutos gratis); en el privado se salta.
+    if: github.repository == 'Roberthecoder/lacreaciondelrobert-shots'
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     outputs:
@@ -100,7 +102,7 @@ jobs:
             -vf "colorbalance=rs=-0.03:bs=0.05:rm=0.01:bm=-0.01:rh=0.05:gh=0.015:bh=-0.04,eq=contrast=1.05:saturation=1.04,vignette=angle=PI/4.6,noise=c0s=10:c0f=t+u,format=yuv420p" \
             -c:v libx264 -preset medium -crf 18 -r "$FPS" -movflags +faststart largo00_cine_mudo.mp4
           ffprobe -v error -show_entries format=duration,size -of default=nw=1 largo00_cine_mudo.mp4
-      - name: Publicar en Releases (privado, igual que el repositorio)
+      - name: Publicar en Releases
         run: |
           TAG="largo-$(echo '${{ github.ref_name }}' | tr '/' '-')"
           gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --prerelease --title "Largo · ${{ github.ref_name }}" --notes "Video largo renderizado en la nube (sin voz). Se reemplaza en cada render."
