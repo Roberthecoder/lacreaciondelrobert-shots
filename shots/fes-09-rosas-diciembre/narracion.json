@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Día de la Virgen de Guadalupe",
   "serie_vinculada": "Científico",
   "velocidad": 1.0,
@@ -62,5 +63,6 @@
       "escena": "Cierre",
       "texto": "Así que esta rosa no sabe que es diciembre: su freno se rompió hace siglos."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

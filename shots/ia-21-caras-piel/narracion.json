@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot CarasPiel base narrada.dc.html",
   "salida": "Shot CarasPiel narrado.dc.html",
   "nota": "Shot IA #21. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -39,5 +40,6 @@
       "escena": "Cierre",
       "texto": "Si una app te reconoce, recuerda: quizá no te ve igual que al de al lado."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

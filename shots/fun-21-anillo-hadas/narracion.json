@@ -1,20 +1,61 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Anillo Hadas base narrada.dc.html",
   "salida": "Shot Anillo Hadas narrado.dc.html",
   "nota": "Shot Fungi Mati #21. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese círculo en el pasto no es de hadas: es un hongo que crece hacia afuera." },
-    { "escena": "Espora", "texto": "Todo empieza con una espora que germina en un punto del suelo." },
-    { "escena": "Micelio", "texto": "De ahí salen hilos finos, el micelio, que se abren en todas direcciones." },
-    { "escena": "Centro", "texto": "Adentro se acaba la comida, y el borde vivo solo avanza hacia afuera." },
-    { "escena": "Verde", "texto": "Ese borde descompone materia del suelo y suelta nitrógeno: el pasto se pone más verde." },
-    { "escena": "Cafe", "texto": "En otros, el micelio repele el agua y el pasto se seca: un anillo café." },
-    { "escena": "Setas", "texto": "Y con las lluvias, en el borde brotan setas, como Marasmius oreades." },
-    { "escena": "Pregunta", "texto": "¿Y cuántos años tiene un anillo así?" },
-    { "escena": "Estudio", "texto": "En 1917, en Colorado, dos científicos estimaron que sus anillos avanzaban unos doce centímetros al año." },
-    { "escena": "Edad", "texto": "Así, uno de sesenta metros tendría unos doscientos cincuenta años." },
-    { "escena": "Japon", "texto": "Y en 2010, en Japón, hallaron que un hongo de anillo suelta una sustancia que hace crecer el pasto." },
-    { "escena": "Folclor", "texto": "Antes lo explicaban con hadas, el diablo batiendo mantequilla o un dragón descansando." },
-    { "escena": "Cierre", "texto": "Así que ese círculo no es de hadas: es un hongo que lleva años, o siglos, creciendo bajo tus pies." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Ese círculo en el pasto no es de hadas: es un hongo que crece hacia afuera."
+    },
+    {
+      "escena": "Espora",
+      "texto": "Todo empieza con una espora que germina en un punto del suelo."
+    },
+    {
+      "escena": "Micelio",
+      "texto": "De ahí salen hilos finos, el micelio, que se abren en todas direcciones."
+    },
+    {
+      "escena": "Centro",
+      "texto": "Adentro se acaba la comida, y el borde vivo solo avanza hacia afuera."
+    },
+    {
+      "escena": "Verde",
+      "texto": "Ese borde descompone materia del suelo y suelta nitrógeno: el pasto se pone más verde."
+    },
+    {
+      "escena": "Cafe",
+      "texto": "En otros, el micelio repele el agua y el pasto se seca: un anillo café."
+    },
+    {
+      "escena": "Setas",
+      "texto": "Y con las lluvias, en el borde brotan setas, como Marasmius oreades."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuántos años tiene un anillo así?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1917, en Colorado, dos científicos estimaron que sus anillos avanzaban unos doce centímetros al año."
+    },
+    {
+      "escena": "Edad",
+      "texto": "Así, uno de sesenta metros tendría unos doscientos cincuenta años."
+    },
+    {
+      "escena": "Japon",
+      "texto": "Y en 2010, en Japón, hallaron que un hongo de anillo suelta una sustancia que hace crecer el pasto."
+    },
+    {
+      "escena": "Folclor",
+      "texto": "Antes lo explicaban con hadas, el diablo batiendo mantequilla o un dragón descansando."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese círculo no es de hadas: es un hongo que lleva años, o siglos, creciendo bajo tus pies."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

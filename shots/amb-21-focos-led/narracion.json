@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Focos LED base narrada.dc.html",
   "salida": "Shot Focos LED narrado.dc.html",
@@ -40,5 +41,6 @@
       "escena": "Cierre",
       "texto": "Así que ese foco que te quema no es una lámpara: es un calentador que, de paso, alumbra."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

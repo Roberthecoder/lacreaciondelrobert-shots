@@ -1,19 +1,54 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Arena base narrada.dc.html",
   "salida": "Shot Arena narrado.dc.html",
   "nota": "Shot Ambiental #22. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esta pared no es concreto: es arena y piedra. En una mezcla típica, siete de cada diez partes son arena y grava." },
-    { "escena": "Tu", "texto": "Tu banqueta, tus ventanas y el chip de tu celular también empiezan como arena." },
-    { "escena": "Numero", "texto": "En 2022, la ONU estimó cincuenta mil millones de toneladas de arena y grava al año: el sólido más extraído del mundo." },
-    { "escena": "Muro", "texto": "Con eso harías un muro de veintisiete metros de alto y de ancho alrededor de toda la Tierra." },
-    { "escena": "Pregunta", "texto": "¿Y por qué no la sacamos del desierto?" },
-    { "escena": "Desierto", "texto": "Porque el viento pule sus granos: quedan redondos y lisos, y en el concreto no se agarran." },
-    { "escena": "Rios", "texto": "Y mucha se saca de ríos, costas y del fondo del mar." },
-    { "escena": "Mekong", "texto": "En 2020, un estudio en el río Mekong comparó: le sacaban unos cincuenta millones de toneladas de arena al año, y el río traía apenas unas seis." },
-    { "escena": "Orillas", "texto": "Así el fondo baja y las orillas se pueden derrumbar y dañar casas." },
-    { "escena": "Kilos", "texto": "Con esa cifra de la ONU, nos tocan en promedio dieciocho kilos de arena y grava por persona, cada día." },
-    { "escena": "Cierre", "texto": "Esta pared es arena que salió de algún lado, y la usamos más rápido de lo que se repone." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esta pared no es concreto: es arena y piedra. En una mezcla típica, siete de cada diez partes son arena y grava."
+    },
+    {
+      "escena": "Tu",
+      "texto": "Tu banqueta, tus ventanas y el chip de tu celular también empiezan como arena."
+    },
+    {
+      "escena": "Numero",
+      "texto": "En 2022, la ONU estimó cincuenta mil millones de toneladas de arena y grava al año: el sólido más extraído del mundo."
+    },
+    {
+      "escena": "Muro",
+      "texto": "Con eso harías un muro de veintisiete metros de alto y de ancho alrededor de toda la Tierra."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué no la sacamos del desierto?"
+    },
+    {
+      "escena": "Desierto",
+      "texto": "Porque el viento pule sus granos: quedan redondos y lisos, y en el concreto no se agarran."
+    },
+    {
+      "escena": "Rios",
+      "texto": "Y mucha se saca de ríos, costas y del fondo del mar."
+    },
+    {
+      "escena": "Mekong",
+      "texto": "En 2020, un estudio en el río Mekong comparó: le sacaban unos cincuenta millones de toneladas de arena al año, y el río traía apenas unas seis."
+    },
+    {
+      "escena": "Orillas",
+      "texto": "Así el fondo baja y las orillas se pueden derrumbar y dañar casas."
+    },
+    {
+      "escena": "Kilos",
+      "texto": "Con esa cifra de la ONU, nos tocan en promedio dieciocho kilos de arena y grava por persona, cada día."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esta pared es arena que salió de algún lado, y la usamos más rápido de lo que se repone."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }
