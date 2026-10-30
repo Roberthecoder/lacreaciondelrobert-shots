@@ -4,7 +4,7 @@ Este archivo es la memoria del chat administrador. **Toda sesión administradora
 (commit en main con `[sin render]`). Si el chat se compacta o se abre uno nuevo, aquí está todo lo que hace falta para seguir.
 Escríbelo corto: estado actual y pendientes, no historia. La historia vive en git y en los `resultado` de la Sala.
 
-Última actualización: 29 oct 2026, 22:45 UTC.
+Última actualización: 30 oct 2026.
 
 ## PEDIDO DE 300 SHOTS (29 oct) — LISTO
 - Pedido `zu488o6qtt10bvn5j11h` listo: 300 shots (#10–#59 de las 6 series) en la Sala, sin voz. Juntados a main el 29 oct
@@ -36,15 +36,15 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - 15 corregidos y re-verificados (informes en `auditorias/2026-10-29/`), fun-03 con datos de Robert, y la Lupa ya no dice «RAYOS X»
   en ningún shot (16 archivos). Todo juntado a main el 29 oct. amb-03 sin voz dura 60.6 s (Robert acepta pequeñas diferencias).
 
-## VOZ NUEVA (29 oct) — ESPERANDO APROBACIÓN DEFINITIVA DE ROBERT
-- Voz profesional `BrkFnhKTRJck3ZEjqD5d`, modelo eleven_v4 (en motor/narrar.mjs; el hash incluye la voz, así que todas se regeneran).
-- Robert: "así está excelente" con ~70 s de duración (habla más pausado). "IA" se leía en inglés → `motor/pronunciacion.json`
-  ("IA"→"Ía", solo en lo que se manda a ElevenLabs). Audio profesional: voz −16 LUFS, música ~11 dB abajo al hablar, final −13 LUFS
-  (motor/render.mjs, también para la versión sin voz). Prueba 2 (qui-10, ia-10) en la rama `voces/v4`, mandada a Robert.
-- Cuando apruebe: en `voces/v4` (merge de main primero) poner voz_aprobada a TODOS en tandas (~10–20 por push; narrar.mjs reintenta
-  si ElevenLabs da 429), esperar cada render, subir a la Sala y al final juntar a main con [sin render]. ~370 shots ≈ 370,000 créditos.
+## VOZ NUEVA Y SONIDO OFICIAL (30 oct) — APROBADO, GENERANDO TODAS LAS VOCES
+- Voz profesional `BrkFnhKTRJck3ZEjqD5d`, eleven_v4. "IA" → "Ía" solo para ElevenLabs (`motor/pronunciacion.json`).
+- Sonido oficial = muestra «5» elegida por Robert: mezcla por bandas con graves y armónicos fuertes y domados, voz comprimida con
+  presencia (3 kHz), narrado a −7.1 LUFS y sin voz a −11, pico −1.5 dB. Todo en `motor/mezcla.json` (+ narrar.mjs y render.mjs).
+  Robert: "G3 suena perfecto al 70 %... quiero que al 50 % suene como al 70 %, potente pero bonito, justo para TikTok".
+- Duración con la voz nueva: ~69–71 s (Robert: "así está excelente").
+- Generación de TODAS las voces: rama `voces/v4`, tandas de ~15, sesión de voces (ver abajo). ~370 shots ≈ 370,000 créditos.
 
-## VOZ EN PAUSA (29 oct, Robert): "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
+## (HISTORIA) VOZ EN PAUSA (29 oct, Robert) — ya no aplica desde el 30 oct: "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
 - Las 30 aprobaciones que esperaban créditos se marcaron `aprobado:false, en_pausa:true` en la Sala. NO generar ninguna voz
   ni poner `voz_aprobada` hasta que Robert vuelva a aprobar con el botón o en el chat.
 
