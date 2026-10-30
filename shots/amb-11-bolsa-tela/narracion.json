@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Bolsa base narrada.dc.html",
   "salida": "Shot Bolsa narrado.dc.html",
@@ -44,5 +45,6 @@
       "escena": "Cierre",
       "texto": "Siete mil cien no es para tirar tu bolsa de tela: es para que nunca la dejes en casa."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Voz Grabada base narrada.dc.html",
   "salida": "Shot Voz Grabada narrado.dc.html",
   "nota": "Shot Científico #10. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que la voz del audio no está mal: es la que todos conocen. La que oyes tú viene con tu cabeza incluida."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

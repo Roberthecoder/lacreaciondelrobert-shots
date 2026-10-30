@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Antiveneno base narrada.dc.html",
   "salida": "Shot Antiveneno narrado.dc.html",
   "nota": "Shot Biotecnológico #12. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -56,5 +57,6 @@
       "texto": "Si te pica un alacrán, corre al centro de salud: tu antídoto empezó en un caballo."
     }
   ],
-  "tanda": 1
+  "tanda": 1,
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot FotoCelular base narrada.dc.html",
   "salida": "Shot FotoCelular narrado.dc.html",
   "nota": "Shot IA #11. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y, en los Pixel de hoy, por IA."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

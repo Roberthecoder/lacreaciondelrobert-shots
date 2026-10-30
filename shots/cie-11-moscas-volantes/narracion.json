@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Moscas Volantes base narrada.dc.html",
   "salida": "Shot Moscas Volantes narrado.dc.html",
   "nota": "Shot Científico #11. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que esas manchitas no están en el cielo. Son tu ojo, viéndose a sí mismo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
