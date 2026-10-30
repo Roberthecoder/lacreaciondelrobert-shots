@@ -1,19 +1,54 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Hundimiento base narrada.dc.html",
   "salida": "Shot Hundimiento narrado.dc.html",
   "nota": "Shot Ambiental #06. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Estos escalones no siempre estuvieron aquí: al Ángel de la Independencia le han agregado catorce, porque la ciudad se hunde." },
-    { "escena": "Lago", "texto": "La Ciudad de México está construida sobre el fondo de un antiguo lago." },
-    { "escena": "Bomba", "texto": "Ahí viven unos veinte millones de personas, y debajo se bombea agua del subsuelo." },
-    { "escena": "Esponja", "texto": "Al sacarla, y con el peso de los edificios, el lodo del lago se aplasta, como una esponja que exprimes." },
-    { "escena": "Pregunta", "texto": "¿Y qué tan rápido se hunde?" },
-    { "escena": "Satelite", "texto": "Lo midió desde el espacio NISAR, un satélite de la NASA y de la India, con un radar que ve a través de las nubes." },
-    { "escena": "Cifra", "texto": "Entre octubre de 2025 y enero de 2026, algunas zonas bajaron más de dos centímetros por mes." },
-    { "escena": "Unas", "texto": "Eso es más de cinco veces lo que te crecen las uñas." },
-    { "escena": "Historia", "texto": "Un ingeniero lo anotó por primera vez en 1925, y en los noventa algunas zonas bajaban unos treinta y cinco centímetros al año." },
-    { "escena": "Grietas", "texto": "Por eso se cuartean calles, edificios, tuberías y hasta el Metro." },
-    { "escena": "Cierre", "texto": "Así que cuando subas esos escalones, acuérdate: el Ángel no creció. La ciudad bajó." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Estos escalones no siempre estuvieron aquí: al Ángel de la Independencia le han agregado catorce, porque la ciudad se hunde."
+    },
+    {
+      "escena": "Lago",
+      "texto": "La Ciudad de México está construida sobre el fondo de un antiguo lago."
+    },
+    {
+      "escena": "Bomba",
+      "texto": "Ahí viven unos veinte millones de personas, y debajo se bombea agua del subsuelo."
+    },
+    {
+      "escena": "Esponja",
+      "texto": "Al sacarla, y con el peso de los edificios, el lodo del lago se aplasta, como una esponja que exprimes."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué tan rápido se hunde?"
+    },
+    {
+      "escena": "Satelite",
+      "texto": "Lo midió desde el espacio NISAR, un satélite de la NASA y de la India, con un radar que ve a través de las nubes."
+    },
+    {
+      "escena": "Cifra",
+      "texto": "Entre octubre de 2025 y enero de 2026, algunas zonas bajaron más de dos centímetros por mes."
+    },
+    {
+      "escena": "Unas",
+      "texto": "Eso es más de cinco veces lo que te crecen las uñas."
+    },
+    {
+      "escena": "Historia",
+      "texto": "Un ingeniero lo anotó por primera vez en 1925, y en los noventa algunas zonas bajaban unos treinta y cinco centímetros al año."
+    },
+    {
+      "escena": "Grietas",
+      "texto": "Por eso se cuartean calles, edificios, tuberías y hasta el Metro."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que cuando subas esos escalones, acuérdate: el Ángel no creció. La ciudad bajó."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }
