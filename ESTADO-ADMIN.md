@@ -15,6 +15,13 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   y actualiza en la Sala fes-07/fes-10/fes-14. Cuando avise, juntar pedido300/festivos a main con [sin render].
 - Temas cercanos aceptados (ángulos distintos): bio-20 vs qui-49 (glutamato), amb-40 vs amb-41 (partículas), bio-50 vs fes-14 (maíz).
 
+## SISTEMA AUTÓNOMO (30 oct): todo depende solo de GitHub. Robert puede cerrar los chats.
+- Publica: publicar-diario.yml (6:17 pm CDMX) → publicar.yml. Bitácora: publicar/diario.log (commit diario = el repo nunca queda
+  inactivo 60 días). Tokens: Threads/TikTok se renuevan solos (renovar-tokens.yml); Meta y YouTube no caducan.
+- Manual de Robert: LinkedIn token ~28 dic 2026 y cada 2 meses; cuando TikTok apruebe Direct Post, cambiar las claves de TikTok;
+  mientras, cada día llega un borrador a la bandeja de TikTok. Facebook publica en la PÁGINA (la API no permite perfiles).
+- Calendario cubierto hasta el 1 nov 2027 (370 shots). Para más videos hace falta Claude (producción) y créditos de ElevenLabs.
+
 ## LISTO (30 oct): LOS 370 SHOTS TIENEN VOZ PROFESIONAL y están en la Sala como «Narrado listo» (rama voces/v4 juntada a main).
 - Videos narrados: Release `borradores-voces-v4` (solo narrados + publicacion.md; un Release aguanta 1000 archivos).
 - Calendario cubierto del 30 oct 2026 al 1 nov 2027. Trabajador horario APAGADO para ahorrar tokens (Robert pasará a Pro).
