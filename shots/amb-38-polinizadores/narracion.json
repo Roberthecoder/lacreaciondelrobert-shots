@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Polinizadores base narrada.dc.html",
   "salida": "Shot Polinizadores narrado.dc.html",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Sin polinizadores no te mueres de hambre: te quedan las tortillas. Pero tu plato pierde sabor y vitaminas."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
