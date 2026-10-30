@@ -131,5 +131,74 @@
   "id": "v_inbox_file~v2.7702226016260999188",
   "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
   "borrador": true
+ },
+ {
+  "clave": "fun-01-que-es-un-hongo",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-10-30T20:43:26Z",
+  "run": "41125236288",
+  "autorizo": "Sala, pedido rfsnm5v9cmc22ltfu43l, 30 oct 2026 (Robert: «Publica mis pedidos… ya!»)",
+  "ok": true,
+  "id": "1102342732507276",
+  "url": "https://www.facebook.com/reel/1102342732507276",
+  "nota": "ready"
+ },
+ {
+  "clave": "fun-01-que-es-un-hongo",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-10-30T20:44:09Z",
+  "run": "41125236288",
+  "autorizo": "Sala, pedido rfsnm5v9cmc22ltfu43l, 30 oct 2026 (Robert: «Publica mis pedidos… ya!»)",
+  "ok": true,
+  "id": "17951893233302680",
+  "url": "https://www.instagram.com/reel/DfIeHrljcGx/"
+ },
+ {
+  "clave": "fun-01-que-es-un-hongo",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-10-30T20:45:54Z",
+  "run": "41125236288",
+  "autorizo": "Sala, pedido rfsnm5v9cmc22ltfu43l, 30 oct 2026 (Robert: «Publica mis pedidos… ya!»)",
+  "ok": true,
+  "id": "17889337335488179",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/DfIeOl_jyun"
+ },
+ {
+  "clave": "fun-01-que-es-un-hongo",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-10-30T20:46:52Z",
+  "run": "41125236288",
+  "autorizo": "Sala, pedido rfsnm5v9cmc22ltfu43l, 30 oct 2026 (Robert: «Publica mis pedidos… ya!»)",
+  "ok": true,
+  "id": "bkOxpm5eFSM",
+  "url": "https://youtube.com/shorts/bkOxpm5eFSM",
+  "nota": "public"
+ },
+ {
+  "clave": "fun-01-que-es-un-hongo",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-10-30T20:46:54Z",
+  "run": "41125236288",
+  "autorizo": "Sala, pedido rfsnm5v9cmc22ltfu43l, 30 oct 2026 (Robert: «Publica mis pedidos… ya!»)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7522036385894019072",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7522036385894019072/"
+ },
+ {
+  "clave": "fun-01-que-es-un-hongo",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-10-30T20:47:07Z",
+  "run": "41125236288",
+  "autorizo": "Sala, pedido rfsnm5v9cmc22ltfu43l, 30 oct 2026 (Robert: «Publica mis pedidos… ya!»)",
+  "ok": true,
+  "id": "v_inbox_file~v2.7702564918838626305",
+  "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
+  "borrador": true
  }
 ]
