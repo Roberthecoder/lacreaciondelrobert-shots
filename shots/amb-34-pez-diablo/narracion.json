@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Pez Diablo base narrada.dc.html",
   "salida": "Shot Pez Diablo narrado.dc.html",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Si tu limpiapeceras ya no cabe, no lo sueltes: busca un acuario que lo cambie."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

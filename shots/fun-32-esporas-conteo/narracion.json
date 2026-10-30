@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Esporas Conteo base narrada.dc.html",
   "salida": "Shot Esporas Conteo narrado.dc.html",
   "nota": "Shot Fungi Mati #32. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
@@ -59,5 +60,6 @@
       "escena": "Cierre",
       "texto": "Así que esa mancha café es una lotería: miles de millones de boletos, casi ningún premio."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

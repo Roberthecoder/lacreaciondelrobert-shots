@@ -1,17 +1,49 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot BarraLuz base narrada.dc.html",
   "salida": "Shot BarraLuz narrado.dc.html",
   "nota": "Shot Químico #33. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese crac no es el plástico: es una ampolleta de vidrio que acabas de romper adentro." },
-    { "escena": "Que", "texto": "Adentro del vidrio hay agua oxigenada; afuera, un éster oxalato y un colorante." },
-    { "escena": "Mezcla", "texto": "Al mezclarse forman una molécula diminuta e inestable." },
-    { "escena": "Energia", "texto": "Se parte en dióxido de carbono y le pasa su energía al colorante, que la suelta como luz sin calor." },
-    { "escena": "Experimento", "texto": "Tres barras: en hielo, al ambiente y en agua caliente. ¿Cuál dura más?" },
-    { "escena": "Resultado", "texto": "La del hielo apenas brilla, pero dura más; la caliente brilla muchísimo y se apaga pronto: el frío frena la reacción." },
-    { "escena": "Estudio", "texto": "¿Y qué molécula era? En 2021, en la Universidad de São Paulo, Brasil, dieron pruebas fuertes de que es la dioxetanodiona: un anillo de dos dióxidos de carbono." },
-    { "escena": "Dato", "texto": "Lo curioso: en 2018, un centro toxicológico de Australia contó casi 3 mil casos con barras de luz en 4 años, casi todos niños, sobre todo en diciembre." },
-    { "escena": "Seguridad", "texto": "Casi nunca fue grave, pero el líquido irrita: si te cae, lávate con agua." },
-    { "escena": "Cierre", "texto": "Ese crac no es plástico: es una reacción química encendiéndose en tu mano." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Ese crac no es el plástico: es una ampolleta de vidrio que acabas de romper adentro."
+    },
+    {
+      "escena": "Que",
+      "texto": "Adentro del vidrio hay agua oxigenada; afuera, un éster oxalato y un colorante."
+    },
+    {
+      "escena": "Mezcla",
+      "texto": "Al mezclarse forman una molécula diminuta e inestable."
+    },
+    {
+      "escena": "Energia",
+      "texto": "Se parte en dióxido de carbono y le pasa su energía al colorante, que la suelta como luz sin calor."
+    },
+    {
+      "escena": "Experimento",
+      "texto": "Tres barras: en hielo, al ambiente y en agua caliente. ¿Cuál dura más?"
+    },
+    {
+      "escena": "Resultado",
+      "texto": "La del hielo apenas brilla, pero dura más; la caliente brilla muchísimo y se apaga pronto: el frío frena la reacción."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "¿Y qué molécula era? En 2021, en la Universidad de São Paulo, Brasil, dieron pruebas fuertes de que es la dioxetanodiona: un anillo de dos dióxidos de carbono."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Lo curioso: en 2018, un centro toxicológico de Australia contó casi 3 mil casos con barras de luz en 4 años, casi todos niños, sobre todo en diciembre."
+    },
+    {
+      "escena": "Seguridad",
+      "texto": "Casi nunca fue grave, pero el líquido irrita: si te cae, lávate con agua."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese crac no es plástico: es una reacción química encendiéndose en tu mano."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

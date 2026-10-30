@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot BebeKJ base narrada.dc.html",
   "salida": "Shot BebeKJ narrado.dc.html",
   "nota": "Shot Biotecnológico #33. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -60,5 +61,6 @@
       "texto": "Aún lo vigilan, pero esa medicina existe para una persona: él."
     }
   ],
-  "tanda": 5
+  "tanda": 5,
+  "mezcla": "oficial-30oct"
 }

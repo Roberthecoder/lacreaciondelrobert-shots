@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Mezclilla base narrada.dc.html",
   "salida": "Shot Mezclilla narrado.dc.html",
@@ -40,5 +41,6 @@
       "escena": "Cierre",
       "texto": "Y úsalo muchos años: esos litros ya se gastaron, y entre más lo uses, más vale cada uno."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
