@@ -1,0 +1,65 @@
+name: Publicación diaria automática
+
+# Cada día a las 7:17 pm hora de Ciudad de México (UTC−6) publica en las redes el/los shot(s) que tocan ese día según
+# calendario/fecha.py (1 shot diario; los festivos en su fecha). Permiso permanente de Robert (chat, 30 oct 2026).
+# Apagar: "activo": false en publicar/diario.json. Saltar un shot: su clave en publicar/pausa.txt.
+# No gasta tokens de Claude: lanza el workflow "Publicar en redes" (publicar.yml) una vez por shot y espera a que termine.
+on:
+  schedule:
+    - cron: '17 1 * * *'   # 01:17 UTC = 19:17 en CDMX (sin horario de verano desde 2022)
+  workflow_dispatch:
+    inputs:
+      fecha:
+        description: 'Fecha AAAA-MM-DD (vacío = hoy en CDMX)'
+        default: ''
+      modo:
+        description: 'real publica · prueba revisa todo sin subir nada'
+        type: choice
+        options: [real, prueba]
+        default: real
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: publicacion-diaria
+  cancel-in-progress: false
+
+jobs:
+  diario:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publicar lo de hoy
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FECHA: ${{ inputs.fecha }}
+          MODO: ${{ inputs.modo || 'real' }}
+        run: |
+          set -u
+          CFG=publicar/diario.json
+          if [ "$(jq -r .activo $CFG)" != "true" ]; then echo "Publicación diaria apagada en $CFG"; exit 0; fi
+          F="${FECHA:-$(TZ=America/Mexico_City date +%F)}"
+          KS=$(python3 calendario/fecha.py json | jq -r --arg f "$F" '.[$f][]?')
+          if [ -z "$KS" ]; then echo "Nada que publicar el $F"; exit 0; fi
+          REDES=$(jq -r '.redes | join(",")' $CFG); TT=$(jq -c .tiktok $CFG); MAL=0
+          echo "## Publicación del $F ($MODO)" >> "$GITHUB_STEP_SUMMARY"
+          for K in $KS; do
+            if grep -v '^#' publicar/pausa.txt 2>/dev/null | grep -qxF "$K"; then echo "- $K: en pausa, no se publica" >> "$GITHUB_STEP_SUMMARY"; continue; fi
+            ANTES=$(gh run list -R "$GITHUB_REPOSITORY" -w publicar.yml -L 1 --json databaseId --jq '.[0].databaseId // 0')
+            gh workflow run publicar.yml -R "$GITHUB_REPOSITORY" --ref main -f clave="$K" -f redes="$REDES" -f modo="$MODO" \
+              -f confirmar="$K" -f autorizo="Robert: publicación diaria automática (permiso del 30 oct 2026)" \
+              -f release=borradores-voces-v4 -f tiktok="$TT"
+            RID=""; for i in $(seq 1 30); do sleep 10
+              RID=$(gh run list -R "$GITHUB_REPOSITORY" -w publicar.yml -e workflow_dispatch -L 1 --json databaseId --jq '.[0].databaseId // 0')
+              [ "$RID" != "$ANTES" ] && [ "$RID" != "0" ] && break; RID=""; done
+            if [ -z "$RID" ]; then echo "- $K: no arrancó la publicación" >> "$GITHUB_STEP_SUMMARY"; MAL=1; continue; fi
+            if gh run watch "$RID" -R "$GITHUB_REPOSITORY" --interval 30 --exit-status >/dev/null; then
+              echo "- $K: listo ([detalle](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RID))" >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "- $K: FALLÓ ([detalle](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RID))" >> "$GITHUB_STEP_SUMMARY"; MAL=1
+            fi
+          done
+          exit $MAL
