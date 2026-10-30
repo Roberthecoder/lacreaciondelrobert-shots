@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Espacio Silencio base narrada.dc.html",
   "salida": "Shot Espacio Silencio narrado.dc.html",
   "nota": "Shot Científico #56. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que en el espacio, una explosión se vería enorme, y sería totalmente silenciosa."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

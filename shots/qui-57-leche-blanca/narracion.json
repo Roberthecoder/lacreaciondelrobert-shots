@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Leche base narrada.dc.html",
   "salida": "Shot Leche narrado.dc.html",
   "nota": "Shot Químico #57. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que ese blanco no es pintura: es luz que rebotó miles de veces hasta tus ojos."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Boulardii base narrada.dc.html",
   "salida": "Shot Boulardii narrado.dc.html",
   "nota": "Shot Fungi Mati #58. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Así que este sobrecito no trae bacterias: trae una versión de la levadura del pan que aguanta tu panza."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

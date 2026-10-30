@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Venas Azules base narrada.dc.html",
   "salida": "Shot Venas Azules narrado.dc.html",
   "nota": "Shot Científico #58. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Así que tus venas no son azules: es tu piel jugando con la luz."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

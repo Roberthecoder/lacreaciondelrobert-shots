@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Gnome base narrada.dc.html",
   "salida": "Shot Gnome narrado.dc.html",
   "nota": "Shot IA #56. Una línea por subtítulo. Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Dos millones de cristales no son dos millones de materiales: falta que un químico los revise."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

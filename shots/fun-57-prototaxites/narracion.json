@@ -1,20 +1,61 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Prototaxites base narrada.dc.html",
   "salida": "Shot Prototaxites narrado.dc.html",
   "nota": "Shot Fungi Mati #57. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Este tronco de ocho metros no es un árbol. Y quizá tampoco era un hongo." },
-    { "escena": "Devonico", "texto": "Se llama Prototaxites y vivió hace unos 400 millones de años." },
-    { "escena": "Plantas", "texto": "A su lado, las plantas no pasaban de 40 centímetros: él era el gigante." },
-    { "escena": "Tubos", "texto": "Por dentro es una maraña de tubos microscópicos." },
-    { "escena": "Hongo", "texto": "En 2001, un paleontólogo del Smithsonian, en Washington, sostuvo que era un hongo gigante." },
-    { "escena": "Carbono", "texto": "En 2007, su carbono mostró que no vivía solo de la luz, como las plantas." },
-    { "escena": "Pregunta", "texto": "¿Un hongo de ocho metros? No tan rápido." },
-    { "escena": "Estudio", "texto": "En 2026, en Edimburgo, analizaron fósiles escoceses de 407 millones de años, guardados en piedra." },
-    { "escena": "Quitina", "texto": "Los hongos, como el champiñón de tu cocina, tienen paredes de quitina, y en esa misma piedra sus fósiles conservan una huella química de ella." },
-    { "escena": "Sinhuella", "texto": "En Prototaxites no apareció. Y su forma no coincide con ningún hongo conocido." },
-    { "escena": "Linaje", "texto": "Por eso proponen que era otro linaje de vida, extinto." },
-    { "escena": "Debate", "texto": "Pero no está cerrado: otros expertos dicen que solo revisaron una especie, y que hongo sigue siendo una opción." },
-    { "escena": "Cierre", "texto": "Así que ese tronco no era un árbol, y aún no sabemos qué era." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Este tronco de ocho metros no es un árbol. Y quizá tampoco era un hongo."
+    },
+    {
+      "escena": "Devonico",
+      "texto": "Se llama Prototaxites y vivió hace unos 400 millones de años."
+    },
+    {
+      "escena": "Plantas",
+      "texto": "A su lado, las plantas no pasaban de 40 centímetros: él era el gigante."
+    },
+    {
+      "escena": "Tubos",
+      "texto": "Por dentro es una maraña de tubos microscópicos."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "En 2001, un paleontólogo del Smithsonian, en Washington, sostuvo que era un hongo gigante."
+    },
+    {
+      "escena": "Carbono",
+      "texto": "En 2007, su carbono mostró que no vivía solo de la luz, como las plantas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Un hongo de ocho metros? No tan rápido."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2026, en Edimburgo, analizaron fósiles escoceses de 407 millones de años, guardados en piedra."
+    },
+    {
+      "escena": "Quitina",
+      "texto": "Los hongos, como el champiñón de tu cocina, tienen paredes de quitina, y en esa misma piedra sus fósiles conservan una huella química de ella."
+    },
+    {
+      "escena": "Sinhuella",
+      "texto": "En Prototaxites no apareció. Y su forma no coincide con ningún hongo conocido."
+    },
+    {
+      "escena": "Linaje",
+      "texto": "Por eso proponen que era otro linaje de vida, extinto."
+    },
+    {
+      "escena": "Debate",
+      "texto": "Pero no está cerrado: otros expertos dicen que solo revisaron una especie, y que hongo sigue siendo una opción."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese tronco no era un árbol, y aún no sabemos qué era."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

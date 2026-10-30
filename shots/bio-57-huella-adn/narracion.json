@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Huella base narrada.dc.html",
   "salida": "Shot Huella narrado.dc.html",
   "nota": "Shot Biotecnológico #57. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -60,5 +61,6 @@
       "texto": "Eres 99.6 % igual al de al lado, pero ese 0.4 % lleva tu nombre."
     }
   ],
-  "tanda": 10
+  "tanda": 10,
+  "mezcla": "oficial-30oct"
 }
