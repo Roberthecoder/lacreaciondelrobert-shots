@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Vinazas base narrada.dc.html",
   "salida": "Shot Vinazas narrado.dc.html",
   "velocidad": 1.065,
@@ -52,5 +53,6 @@
       "escena": "Cierre",
       "texto": "Así que cada litro de tequila no deja doce litros de basura: deja doce de materia prima."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

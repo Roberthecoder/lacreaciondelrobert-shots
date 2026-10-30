@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Día de Muertos",
   "serie_vinculada": "Biotecnológico",
   "velocidad": 1.0,
@@ -54,5 +55,6 @@
       "escena": "Cierre",
       "texto": "Así que este pan no se infló solo: cada hoyito es el suspiro de un hongo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

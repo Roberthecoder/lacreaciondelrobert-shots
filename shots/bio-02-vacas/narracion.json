@@ -5,17 +5,54 @@
   "velocidad": 1.121,
   "nota": "Biotecnológico #02. Una línea por subtítulo (idx 0..11 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~920 créditos).",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esa vaca no se alimenta de pasto: se alimenta de los microbios de su panza." },
-    { "escena": "Enzimas", "texto": "Ella no puede digerir la celulosa del pasto: no tiene las enzimas." },
-    { "escena": "Rumen", "texto": "Así que lo manda al rumen: un tanque enorme, tibio y sin oxígeno." },
-    { "escena": "Micro", "texto": "Ahí viven bacterias, hongos, protozoarios y arqueas: miles de millones en cada mililitro." },
-    { "escena": "Micro", "texto": "Los hongos rompen la fibra y las bacterias fermentan la celulosa." },
-    { "escena": "Pregunta", "texto": "¿Y la vaca qué gana?" },
-    { "escena": "Acidos", "texto": "Ácidos grasos volátiles: la pared del rumen los absorbe, y le dan cerca del setenta por ciento de su energía." },
-    { "escena": "Proteina", "texto": "Y los microbios que bajan al intestino, la vaca se los digiere: son su principal proteína." },
-    { "escena": "Estudio", "texto": "En 1990, una revisión de Edward Bergman juntó décadas de mediciones: setenta por ciento en vacas y borregos; en ti, cerca de diez." },
-    { "escena": "Metano", "texto": "El precio: las arqueas hacen metano, y casi todo sale en eructos, no en pedos." },
-    { "escena": "Biorreactor", "texto": "Por eso una vaca es un biorreactor con patas: el pasto es solo el medio de cultivo, y los microbios, la fábrica." },
-    { "escena": "Cierre", "texto": "Esa vaca come pasto… pero vive de sus microbios." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esa vaca no se alimenta de pasto: se alimenta de los microbios de su panza."
+    },
+    {
+      "escena": "Enzimas",
+      "texto": "Ella no puede digerir la celulosa del pasto: no tiene las enzimas."
+    },
+    {
+      "escena": "Rumen",
+      "texto": "Así que lo manda al rumen: un tanque enorme, tibio y sin oxígeno."
+    },
+    {
+      "escena": "Micro",
+      "texto": "Ahí viven bacterias, hongos, protozoarios y arqueas: miles de millones en cada mililitro."
+    },
+    {
+      "escena": "Micro",
+      "texto": "Los hongos rompen la fibra y las bacterias fermentan la celulosa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y la vaca qué gana?"
+    },
+    {
+      "escena": "Acidos",
+      "texto": "Ácidos grasos volátiles: la pared del rumen los absorbe, y le dan cerca del setenta por ciento de su energía."
+    },
+    {
+      "escena": "Proteina",
+      "texto": "Y los microbios que bajan al intestino, la vaca se los digiere: son su principal proteína."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1990, una revisión de Edward Bergman juntó décadas de mediciones: setenta por ciento en vacas y borregos; en ti, cerca de diez."
+    },
+    {
+      "escena": "Metano",
+      "texto": "El precio: las arqueas hacen metano, y casi todo sale en eructos, no en pedos."
+    },
+    {
+      "escena": "Biorreactor",
+      "texto": "Por eso una vaca es un biorreactor con patas: el pasto es solo el medio de cultivo, y los microbios, la fábrica."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa vaca come pasto… pero vive de sus microbios."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

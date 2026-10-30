@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Día de Muertos",
   "serie_vinculada": "Fungi Mati",
   "velocidad": 1.0,
@@ -54,5 +55,6 @@
       "escena": "Cierre",
       "texto": "Como dice el Día de Muertos, todo regresa a la tierra. Y con la madera, quien más ayuda es un hongo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
