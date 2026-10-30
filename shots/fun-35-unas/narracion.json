@@ -1,20 +1,61 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Unas base narrada.dc.html",
   "salida": "Shot Unas narrado.dc.html",
   "nota": "Shot Fungi Mati #35. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "La pastilla más eficaz para el hongo de tu uña del pie se toma doce semanas. Pero tu uña puede tardar un año o más en verse sana." },
-    { "escena": "Culpable", "texto": "Suele causarlo un dermatofito, como Trichophyton rubrum." },
-    { "escena": "Entrada", "texto": "Lo más común es que entre por la punta, debajo de la uña, y avance." },
-    { "escena": "Queratina", "texto": "Con enzimas digiere la queratina, la proteína dura de la uña." },
-    { "escena": "Dano", "texto": "La uña cambia de color, se engruesa y se quiebra." },
-    { "escena": "Pregunta", "texto": "¿Si el hongo ya se fue, por qué sigue fea?" },
-    { "escena": "Raiz", "texto": "Porque la uña dañada tiene que crecer hasta salir: la raíz fabrica uña nueva y la empuja." },
-    { "escena": "Estudio", "texto": "Un estudio de Estados Unidos, publicado en 2010, midió cuánto crecían las uñas de veintidós jóvenes." },
-    { "escena": "Resultado", "texto": "Las de las manos, casi tres milímetros y medio al mes. Las de los pies, poco más de uno y medio." },
-    { "escena": "Tiempo", "texto": "Renovar una uña del pie toma de doce a dieciocho meses." },
-    { "escena": "Regresa", "texto": "Una de cada cuatro o cinco veces regresa, por lo general antes de dos años." },
-    { "escena": "Sirve", "texto": "Ayuda no andar descalzo en lugares públicos y tratar pronto el pie de atleta." },
-    { "escena": "Cierre", "texto": "Así que la pastilla dura semanas, pero una uña nueva del pie tarda hasta año y medio en crecer completa." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "La pastilla más eficaz para el hongo de tu uña del pie se toma doce semanas. Pero tu uña puede tardar un año o más en verse sana."
+    },
+    {
+      "escena": "Culpable",
+      "texto": "Suele causarlo un dermatofito, como Trichophyton rubrum."
+    },
+    {
+      "escena": "Entrada",
+      "texto": "Lo más común es que entre por la punta, debajo de la uña, y avance."
+    },
+    {
+      "escena": "Queratina",
+      "texto": "Con enzimas digiere la queratina, la proteína dura de la uña."
+    },
+    {
+      "escena": "Dano",
+      "texto": "La uña cambia de color, se engruesa y se quiebra."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Si el hongo ya se fue, por qué sigue fea?"
+    },
+    {
+      "escena": "Raiz",
+      "texto": "Porque la uña dañada tiene que crecer hasta salir: la raíz fabrica uña nueva y la empuja."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de Estados Unidos, publicado en 2010, midió cuánto crecían las uñas de veintidós jóvenes."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Las de las manos, casi tres milímetros y medio al mes. Las de los pies, poco más de uno y medio."
+    },
+    {
+      "escena": "Tiempo",
+      "texto": "Renovar una uña del pie toma de doce a dieciocho meses."
+    },
+    {
+      "escena": "Regresa",
+      "texto": "Una de cada cuatro o cinco veces regresa, por lo general antes de dos años."
+    },
+    {
+      "escena": "Sirve",
+      "texto": "Ayuda no andar descalzo en lugares públicos y tratar pronto el pie de atleta."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que la pastilla dura semanas, pero una uña nueva del pie tarda hasta año y medio en crecer completa."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

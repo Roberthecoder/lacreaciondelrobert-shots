@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Candida base narrada.dc.html",
   "salida": "Shot Candida narrado.dc.html",
   "nota": "Shot Fungi Mati #34. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
@@ -59,5 +60,6 @@
       "escena": "Cierre",
       "texto": "Esa levadura que puedes compartir no es tu enemiga: espera a que tus bacterias se descuiden."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

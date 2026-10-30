@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Nube Pesa base narrada.dc.html",
   "salida": "Shot Nube Pesa narrado.dc.html",
   "nota": "Shot Científico #34. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Así que esa nube no es algodón: es el agua de cien elefantes, flotando sobre ti en pedacitos chiquitos."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

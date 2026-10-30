@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Ballenas base narrada.dc.html",
   "salida": "Shot Ballenas narrado.dc.html",
   "nota": "Shot IA #35. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que no es Morse: se parece más a un alfabeto de piezas que apenas empezamos a descifrar."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
