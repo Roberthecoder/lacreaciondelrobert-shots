@@ -4,7 +4,7 @@ Este archivo es la memoria del chat administrador. **Toda sesión administradora
 (commit en main con `[sin render]`). Si el chat se compacta o se abre uno nuevo, aquí está todo lo que hace falta para seguir.
 Escríbelo corto: estado actual y pendientes, no historia. La historia vive en git y en los `resultado` de la Sala.
 
-Última actualización: 30 oct 2026.
+Última actualización: 30 oct 2026, 15:40 UTC.
 
 ## PEDIDO DE 300 SHOTS (29 oct) — LISTO
 - Pedido `zu488o6qtt10bvn5j11h` listo: 300 shots (#10–#59 de las 6 series) en la Sala, sin voz. Juntados a main el 29 oct
@@ -14,6 +14,11 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - FALTA: la sesión de festivos (`session_0157fpgyNNigAR2Ks9KZrcRx`, rama pedido300/festivos) rehace fes-10 (repetía qui-35-vela)
   y actualiza en la Sala fes-07/fes-10/fes-14. Cuando avise, juntar pedido300/festivos a main con [sin render].
 - Temas cercanos aceptados (ángulos distintos): bio-20 vs qui-49 (glutamato), amb-40 vs amb-41 (partículas), bio-50 vs fes-14 (maíz).
+
+## LISTO (30 oct): LOS 370 SHOTS TIENEN VOZ PROFESIONAL y están en la Sala como «Narrado listo» (rama voces/v4 juntada a main).
+- Videos narrados: Release `borradores-voces-v4` (solo narrados + publicacion.md; un Release aguanta 1000 archivos).
+- Calendario cubierto del 30 oct 2026 al 1 nov 2027. Trabajador horario APAGADO para ahorrar tokens (Robert pasará a Pro).
+- Sala casi llena (1 GB): si se suben más videos, borrar los viejos al mismo tiempo.
 
 ## PUBLICACIÓN AUTOMÁTICA (30 oct, permiso PERMANENTE de Robert: «Apruebo tu permiso de GitHub»)
 - `.github/workflows/publicar-diario.yml`: cada día 6:17 pm CDMX publica en las 6 redes lo que toque según calendario/fecha.py,
