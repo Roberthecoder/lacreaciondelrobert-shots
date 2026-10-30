@@ -42,7 +42,8 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   presencia (3 kHz), narrado a −7.1 LUFS y sin voz a −11, pico −1.5 dB. Todo en `motor/mezcla.json` (+ narrar.mjs y render.mjs).
   Robert: "G3 suena perfecto al 70 %... quiero que al 50 % suene como al 70 %, potente pero bonito, justo para TikTok".
 - Duración con la voz nueva: ~69–71 s (Robert: "así está excelente").
-- Generación de TODAS las voces: rama `voces/v4`, tandas de ~15, sesión de voces (ver abajo). ~370 shots ≈ 370,000 créditos.
+- Generación de TODAS las voces: rama `voces/v4`, tandas de 15, sesión `session_0157fpgySCQqJwj5CPC1oMyj`. ~370 shots ≈ 370,000
+  créditos. Si se detiene sin terminar, reactivarla ("sigue con las voces"). Al final ella junta voces/v4 a main con [sin render].
 
 ## (HISTORIA) VOZ EN PAUSA (29 oct, Robert) — ya no aplica desde el 30 oct: "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
 - Las 30 aprobaciones que esperaban créditos se marcaron `aprobado:false, en_pausa:true` en la Sala. NO generar ninguna voz
