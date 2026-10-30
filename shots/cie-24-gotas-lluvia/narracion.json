@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Gotas Lluvia base narrada.dc.html",
   "salida": "Shot Gotas Lluvia narrado.dc.html",
   "nota": "Shot Científico #24. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que la próxima vez que dibujes lluvia, olvídate de las lágrimas: mejor dibuja panes de hamburguesa."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot LeeLabios base narrada.dc.html",
   "salida": "Shot LeeLabios narrado.dc.html",
   "nota": "Shot IA #23. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "A la máquina también se le llegan a cruzar la pe y la be: para decidir, se ayuda con las palabras de alrededor."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

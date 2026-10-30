@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Posadas",
   "serie_vinculada": "Científico",
   "velocidad": 1.0,
@@ -54,5 +55,6 @@
       "escena": "Cierre",
       "texto": "Así que ese tejocote no se deshace: se despega, porque el hervor le disolvió el pegamento."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot IAComeIA base narrada.dc.html",
   "salida": "Shot IAComeIA narrado.dc.html",
   "nota": "Shot IA #22. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Esas liebres no son locura: son una IA que aprendió de copias de copias de otra IA."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

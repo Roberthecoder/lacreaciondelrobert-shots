@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Hela base narrada.dc.html",
   "salida": "Shot Hela narrado.dc.html",
   "nota": "Shot Biotecnológico #24. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -56,5 +57,6 @@
       "texto": "Por eso esas células no son de un laboratorio: son de Henrietta."
     }
   ],
-  "tanda": 3
+  "tanda": 3,
+  "mezcla": "oficial-30oct"
 }
