@@ -61,12 +61,20 @@ jobs:
         env:
           EV: ${{ github.event_name }}
           IN: ${{ toJSON(github.event.inputs) }}
+          GH_TOKEN: ${{ github.token }}
+          ANTES: ${{ github.event.before }}
+          DESPUES: ${{ github.sha }}
         run: |
           if [ "$EV" = "workflow_dispatch" ]; then
             echo "lista=$(jq -c '[{clave, redes, modo, confirmar, autorizo, release, tiktok, repetir: (.repetir|tostring)}]' <<<"$IN")" >> "$GITHUB_OUTPUT"
           else
-            jq -r '[.commits[]? | (.added + .modified)[]] | unique | .[] | select(startswith("publicar/pedidos/") and endswith(".json"))' \
+            jq -r '[.commits[]? | ((.added // []) + (.modified // []))[]] | unique | .[] | select(startswith("publicar/pedidos/") and endswith(".json"))' \
               "$GITHUB_EVENT_PATH" > archivos.txt
+            # Si GitHub no mandó la lista de archivos del push, se pide la comparación antes→después.
+            if [ ! -s archivos.txt ] && [ -n "$ANTES" ] && [ "$ANTES" != "0000000000000000000000000000000000000000" ]; then
+              gh api "repos/$GITHUB_REPOSITORY/compare/$ANTES...$DESPUES" --jq '.files[] | select(.status != "removed") | .filename' \
+                | grep -E '^publicar/pedidos/.*\.json$' > archivos.txt || true
+            fi
             echo "lista=$(jq -c -n --rawfile a archivos.txt '$a | split("\n") | map(select(length>0) | {archivo: .})')" >> "$GITHUB_OUTPUT"
           fi
 
