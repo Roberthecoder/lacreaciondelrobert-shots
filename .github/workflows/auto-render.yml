@@ -235,6 +235,12 @@ jobs:
             echo "Último run: $R/actions/runs/$GITHUB_RUN_ID"
             echo "ultimo-render: $GITHUB_SHA"
           } > notas.md
+          # GitHub no acepta notas de más de 125,000 caracteres: con cientos de shots se deja solo el resumen.
+          if [ "$(wc -c < notas.md)" -gt 120000 ]; then
+            N=$(echo "$ASSETS" | grep -cE '_narrado\.mp4$' || true)
+            { echo "Videos de la rama \`$RAMA\`: $N narrados (la lista completa está en los archivos de abajo)."
+              echo; echo "Último run: $R/actions/runs/$GITHUB_RUN_ID"; echo "ultimo-render: $GITHUB_SHA"; } > notas.md
+          fi
           cat notas.md
           gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes-file notas.md
 
