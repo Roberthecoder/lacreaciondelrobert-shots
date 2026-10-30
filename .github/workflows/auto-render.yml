@@ -165,7 +165,15 @@ jobs:
           fi
 
       - name: Subir al Release de borradores
-        run: gh release upload "${{ needs.detectar.outputs.tag }}" salida/*.mp4 --clobber
+        run: |
+          # Un Release aguanta máx. 1000 archivos: si ya hay narrado, solo se sube el narrado y se quita el «sin voz» viejo.
+          TAG="${{ needs.detectar.outputs.tag }}"
+          if ls salida/*_narrado.mp4 >/dev/null 2>&1; then
+            gh release upload "$TAG" salida/*_narrado.mp4 --clobber
+            for f in salida/*_sin_voz.mp4; do [ -e "$f" ] && gh release delete-asset "$TAG" "$(basename "$f")" -y 2>/dev/null || true; done
+          else
+            gh release upload "$TAG" salida/*.mp4 --clobber
+          fi
 
       - name: Subir como artifact (copia de 3 días; el espacio de artifacts es chico)
         continue-on-error: true
@@ -176,7 +184,8 @@ jobs:
           retention-days: 3
 
       - name: Guardar caché de voz
-        if: steps.voz.outputs.aprobada == 'true'
+        # siempre, aunque falle la subida o la duración: así la voz pagada no se vuelve a pedir a ElevenLabs
+        if: always() && steps.voz.outputs.aprobada == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
