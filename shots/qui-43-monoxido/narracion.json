@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Monoxido base narrada.dc.html",
   "salida": "Shot Monoxido narrado.dc.html",
   "nota": "Shot Químico #43. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Nunca prendas el anafre adentro: ese peligro no huele, pero se puede evitar."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

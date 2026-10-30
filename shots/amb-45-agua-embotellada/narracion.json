@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Agua Embotellada base narrada.dc.html",
   "salida": "Shot Agua Embotellada narrado.dc.html",
@@ -44,5 +45,6 @@
       "escena": "Cierre",
       "texto": "Tu llave depende de tu ciudad; pero tú y tus cuatro vecinos pueden tomar agua segura con menos botellas."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Pronostico base narrada.dc.html",
   "salida": "Shot Pronostico narrado.dc.html",
   "nota": "Shot IA #45. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que tras tu app del clima puede haber una hora de supercomputadora… o un minuto de IA."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

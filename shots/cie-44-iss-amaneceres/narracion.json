@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot ISS Amaneceres base narrada.dc.html",
   "salida": "Shot ISS Amaneceres narrado.dc.html",
   "nota": "Shot Científico #44. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que mientras tú ves un amanecer, ellos ya vieron dieciséis."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

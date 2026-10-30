@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot CallCenter base narrada.dc.html",
   "salida": "Shot CallCenter narrado.dc.html",
   "nota": "Shot IA #44. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "La IA no reemplazó al veterano de al lado: según el estudio, le pasó sus trucos al nuevo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

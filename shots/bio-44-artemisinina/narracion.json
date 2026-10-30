@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Artemisinina base narrada.dc.html",
   "salida": "Shot Artemisinina narrado.dc.html",
   "nota": "Shot Biotecnológico #44. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -60,5 +61,6 @@
       "texto": "Así que puede salir de un campo… o de una levadura."
     }
   ],
-  "tanda": 7
+  "tanda": 7,
+  "mezcla": "oficial-30oct"
 }
