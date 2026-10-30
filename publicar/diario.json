@@ -1,5 +1,5 @@
 {
-  "_nota": "Publicación diaria automática (permiso de Robert, 30 oct 2026). activo=false la apaga. Hora: .github/workflows/publicar-diario.yml (7:17 pm CDMX).",
+  "_nota": "Publicación diaria automática (permiso de Robert, 30 oct 2026). activo=false la apaga. Hora: .github/workflows/publicar-diario.yml (6:17 pm CDMX).",
   "activo": true,
   "redes": ["facebook", "instagram", "threads", "youtube", "linkedin", "tiktok"],
   "tiktok": {"modo": "directo", "privacidad": "PUBLIC_TO_EVERYONE", "comentarios": true, "duo": true, "stitch": true,

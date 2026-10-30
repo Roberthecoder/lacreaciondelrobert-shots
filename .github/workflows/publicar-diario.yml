@@ -1,12 +1,12 @@
 name: Publicación diaria automática
 
-# Cada día a las 7:17 pm hora de Ciudad de México (UTC−6) publica en las redes el/los shot(s) que tocan ese día según
+# Cada día a las 6:17 pm hora de Ciudad de México (UTC−6) publica en las redes el/los shot(s) que tocan ese día según
 # calendario/fecha.py (1 shot diario; los festivos en su fecha). Permiso permanente de Robert (chat, 30 oct 2026).
 # Apagar: "activo": false en publicar/diario.json. Saltar un shot: su clave en publicar/pausa.txt.
 # No gasta tokens de Claude: lanza el workflow "Publicar en redes" (publicar.yml) una vez por shot y espera a que termine.
 on:
   schedule:
-    - cron: '17 1 * * *'   # 01:17 UTC = 19:17 en CDMX (sin horario de verano desde 2022)
+    - cron: '17 0 * * *'   # 00:17 UTC = 18:17 en CDMX (1 h antes del pico de 7–10 pm) (sin horario de verano desde 2022)
   workflow_dispatch:
     inputs:
       fecha:

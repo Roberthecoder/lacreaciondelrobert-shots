@@ -15,6 +15,13 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   y actualiza en la Sala fes-07/fes-10/fes-14. Cuando avise, juntar pedido300/festivos a main con [sin render].
 - Temas cercanos aceptados (ángulos distintos): bio-20 vs qui-49 (glutamato), amb-40 vs amb-41 (partículas), bio-50 vs fes-14 (maíz).
 
+## PUBLICACIÓN AUTOMÁTICA (30 oct, permiso PERMANENTE de Robert: «Apruebo tu permiso de GitHub»)
+- `.github/workflows/publicar-diario.yml`: cada día 6:17 pm CDMX publica en las 6 redes lo que toque según calendario/fecha.py,
+  con publicar.yml y el Release borradores-voces-v4. Sin tokens de Claude. Config: `publicar/diario.json` (activo, redes, TikTok);
+  saltar un shot: su clave en `publicar/pausa.txt`. Prueba en seco del 30 oct (fun-01): las 6 redes OK.
+- Robert quiere depender lo mínimo de Claude (pasará a plan Pro): el trabajador horario se apaga cuando terminen las voces.
+- TikTok «contenido con IA»: Robert dice que la animación es código, no IA; la voz sí es sintética → se le preguntó; hoy ia=true.
+
 ## PUBLICACIÓN DIARIA (30 oct): 1 shot diario desde el 30 oct; tarjeta «Hoy se publica» en la Sala; el trabajador procesa
 ## los clics de «Publicar» cada hora (ADMIN.md, «Publicación diaria»).
 
