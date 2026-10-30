@@ -44,8 +44,9 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - Duración con la voz nueva: ~69–71 s (Robert: "así está excelente").
 - 30 oct: HECHAS las voces de los primeros 121 shots por fecha de publicación (1 nov – 8 dic), juntadas a main y subidas a la Sala
   como «Narrado listo». Orden y caracteres en `calendario/orden_voces.txt` (fecha · clave · caracteres · tenía voz).
-  Créditos: Robert tenía 119,725; se usaron ~117,000. FALTAN los shots 122–370 (≈240,000 caracteres): esperar créditos
-  (renovación mensual ~121,000 → ~120 shots por mes, siempre los siguientes por fecha) o que Robert compre extra.
+  Créditos: eleven_v4 cobra ~0.44 créditos por carácter (~420 por shot). Las 121 voces gastaron ~51,000 de 119,725.
+  30 oct: con los 68,767 restantes se generan las posiciones 122–274 (hasta 27 ene 2027). Faltarán 275–370 (~96 shots,
+  ~42,000 créditos) para la próxima renovación (121,000 al mes alcanzan para ~280 shots).
 - Cómo generar la siguiente tanda: rama `voces/v4` desde main; poner "voz_aprobada": true (y "mezcla": "oficial-30oct" para forzar
   render) a 15 shots por push, esperar cada run; NO usar la sesión de voces (su filtro pide la aprobación directa de Robert).
   Ojo: un narrado < 60.5 s falla el candado → "velocidad": 0.98 en su narracion.json (sin créditos). Luego subir a la Sala
