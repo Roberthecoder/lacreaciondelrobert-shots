@@ -1,20 +1,61 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Amanita base narrada.dc.html",
   "salida": "Shot Amanita narrado.dc.html",
   "nota": "Shot Fungi Mati #09. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "¿Por qué no sirve la cuchara de plata para saber si un hongo es venenoso? Porque es un mito." },
-    { "escena": "Amanita", "texto": "Y el hongo que más muertes causa, Amanita phalloides, no avisa." },
-    { "escena": "Mitos", "texto": "La plata, el ajo, la cebolla, que lo haya mordido un animal o que sepa feo: puros mitos." },
-    { "escena": "Cocinar", "texto": "Cocinarlo tampoco ayuda: su veneno, las amatoxinas, no se destruye al cocinarlo ni al secarlo." },
-    { "escena": "Congelar", "texto": "Hasta hubo una intoxicación con hongos congelados por siete u ocho meses." },
-    { "escena": "Pregunta", "texto": "¿Y qué le hace a tu cuerpo?" },
-    { "escena": "Higado", "texto": "En tu hígado, frena la máquina con la que tus células fabrican proteínas, y las células mueren." },
-    { "escena": "Estudio", "texto": "En diciembre de 2016, en el norte de California, catorce personas se intoxicaron con hongos silvestres." },
-    { "escena": "Retraso", "texto": "Los síntomas tardaron horas en llegar: vómito y diarrea." },
-    { "escena": "Trampa", "texto": "Luego parece que mejoras, y días después falla el hígado." },
-    { "escena": "Trasplante", "texto": "Tres de esas catorce personas necesitaron un trasplante de hígado." },
-    { "escena": "Sirve", "texto": "Lo que sí sirve: no comas hongos silvestres sin que los identifique un experto." },
-    { "escena": "Cierre", "texto": "Así que la cuchara de plata no te salva: te salva saber exactamente qué hongo es." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "¿Por qué no sirve la cuchara de plata para saber si un hongo es venenoso? Porque es un mito."
+    },
+    {
+      "escena": "Amanita",
+      "texto": "Y el hongo que más muertes causa, Amanita phalloides, no avisa."
+    },
+    {
+      "escena": "Mitos",
+      "texto": "La plata, el ajo, la cebolla, que lo haya mordido un animal o que sepa feo: puros mitos."
+    },
+    {
+      "escena": "Cocinar",
+      "texto": "Cocinarlo tampoco ayuda: su veneno, las amatoxinas, no se destruye al cocinarlo ni al secarlo."
+    },
+    {
+      "escena": "Congelar",
+      "texto": "Hasta hubo una intoxicación con hongos congelados por siete u ocho meses."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué le hace a tu cuerpo?"
+    },
+    {
+      "escena": "Higado",
+      "texto": "En tu hígado, frena la máquina con la que tus células fabrican proteínas, y las células mueren."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En diciembre de 2016, en el norte de California, catorce personas se intoxicaron con hongos silvestres."
+    },
+    {
+      "escena": "Retraso",
+      "texto": "Los síntomas tardaron horas en llegar: vómito y diarrea."
+    },
+    {
+      "escena": "Trampa",
+      "texto": "Luego parece que mejoras, y días después falla el hígado."
+    },
+    {
+      "escena": "Trasplante",
+      "texto": "Tres de esas catorce personas necesitaron un trasplante de hígado."
+    },
+    {
+      "escena": "Sirve",
+      "texto": "Lo que sí sirve: no comas hongos silvestres sin que los identifique un experto."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que la cuchara de plata no te salva: te salva saber exactamente qué hongo es."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,18 +1,50 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Colillas base narrada.dc.html",
   "salida": "Shot Colillas narrado.dc.html",
   "nota": "Shot Ambiental #18. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esto no es algodón: es plástico. El filtro de un cigarro está hecho de acetato de celulosa." },
-    { "escena": "Fibras", "texto": "Al microscopio son más de quince mil fibras, cada una de unos veinte micrómetros de grueso." },
-    { "escena": "Quimicos", "texto": "Ya fumada, la colilla carga nicotina, metales pesados y otras sustancias que va soltando." },
-    { "escena": "Tirada", "texto": "Si la tiras, el sol y la humedad la rompen, pero no desaparece: se vuelve microplástico que puede durar años." },
-    { "escena": "Pregunta", "texto": "¿Y cuántas terminan en la playa?" },
-    { "escena": "Playa", "texto": "En la Limpieza Internacional de Costas de 2025 recogieron casi un millón doscientas mil colillas: el segundo residuo más común." },
-    { "escena": "Mexico", "texto": "Y ese año, en las playas limpiadas en México, salieron más del doble de colillas que de botellas de plástico." },
-    { "escena": "Estudio", "texto": "Un estudio de 2011 de la Universidad Estatal de San Diego remojó colillas y puso peces en esa agua: con una colilla fumada por litro, murió la mitad en cuatro días." },
-    { "escena": "Extra", "texto": "Lo más raro: hasta los filtros sin fumar resultaron tóxicos." },
-    { "escena": "Cierre", "texto": "Así que esa colilla en la arena no es basura que se deshace: es plástico que se queda." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es algodón: es plástico. El filtro de un cigarro está hecho de acetato de celulosa."
+    },
+    {
+      "escena": "Fibras",
+      "texto": "Al microscopio son más de quince mil fibras, cada una de unos veinte micrómetros de grueso."
+    },
+    {
+      "escena": "Quimicos",
+      "texto": "Ya fumada, la colilla carga nicotina, metales pesados y otras sustancias que va soltando."
+    },
+    {
+      "escena": "Tirada",
+      "texto": "Si la tiras, el sol y la humedad la rompen, pero no desaparece: se vuelve microplástico que puede durar años."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuántas terminan en la playa?"
+    },
+    {
+      "escena": "Playa",
+      "texto": "En la Limpieza Internacional de Costas de 2025 recogieron casi un millón doscientas mil colillas: el segundo residuo más común."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "Y ese año, en las playas limpiadas en México, salieron más del doble de colillas que de botellas de plástico."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de 2011 de la Universidad Estatal de San Diego remojó colillas y puso peces en esa agua: con una colilla fumada por litro, murió la mitad en cuatro días."
+    },
+    {
+      "escena": "Extra",
+      "texto": "Lo más raro: hasta los filtros sin fumar resultaron tóxicos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa colilla en la arena no es basura que se deshace: es plástico que se queda."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot LoboNieve base narrada.dc.html",
   "salida": "Shot LoboNieve narrado.dc.html",
   "nota": "Shot IA #12. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Por eso una IA médica se prueba con datos de otros hospitales: si no, puede estar viendo la nieve."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

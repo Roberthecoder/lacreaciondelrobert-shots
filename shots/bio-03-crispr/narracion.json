@@ -1,20 +1,58 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Crispr base narrada.dc.html",
   "salida": "Shot Crispr narrado.dc.html",
   "velocidad": 1.1,
   "nota": "Biotecnológico #03. Una línea por subtítulo (idx 0..11 del jsx). Se quitó '2,600 millones de años' (sin fuente sólida). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~920 créditos). 28 oct 2026: verificación de hechos independiente; cambió el texto narrado, así que se quitó voz_aprobada (y el gemelo mudo ya no se renderiza). Falta que Robert apruebe la voz otra vez.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Este yogur no solo tiene bacterias: tiene bacterias vacunadas contra virus." },
-    { "escena": "Ataque", "texto": "Las bacterias de tu yogur viven bajo ataque de unos virus que las revientan desde adentro: los fagos." },
-    { "escena": "Captura", "texto": "Algunas sobreviven y le roban al virus un pedacito de su ADN." },
-    { "escena": "Captura", "texto": "Lo pegan en su propio genoma, en una fila de recuerdos llamada CRISPR." },
-    { "escena": "Captura", "texto": "Casi todos son de virus que ya intentaron matarla." },
-    { "escena": "Pregunta", "texto": "¿Y si ese virus vuelve?" },
-    { "escena": "Corte", "texto": "La bacteria copia ese recuerdo en ARN, se lo da a unas tijeras, Cas, y buscan." },
-    { "escena": "Corte", "texto": "Si encuentran el mismo pedazo, cortan el ADN del virus. Adiós." },
-    { "escena": "Estudio", "texto": "En 2007, investigadores de Danisco y la Universidad Laval lo probaron con bacterias de yogur: cada recuerdo nuevo las volvía resistentes." },
-    { "escena": "Nobel", "texto": "En 2012, Charpentier y Doudna tomaron unas tijeras así, de otra bacteria, y las reprogramaron para cortar el ADN que quisieran. Nobel 2020." },
-    { "escena": "Extra", "texto": "Y no es raro: en 2020 se halló en una de cada tres bacterias y tres de cada cuatro arqueas." },
-    { "escena": "Cierre", "texto": "Así que las tijeras genéticas no las inventamos nosotros: las inventó lo que hay en tu yogur." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Este yogur no solo tiene bacterias: tiene bacterias vacunadas contra virus."
+    },
+    {
+      "escena": "Ataque",
+      "texto": "Las bacterias de tu yogur viven bajo ataque de unos virus que las revientan desde adentro: los fagos."
+    },
+    {
+      "escena": "Captura",
+      "texto": "Algunas sobreviven y le roban al virus un pedacito de su ADN."
+    },
+    {
+      "escena": "Captura",
+      "texto": "Lo pegan en su propio genoma, en una fila de recuerdos llamada CRISPR."
+    },
+    {
+      "escena": "Captura",
+      "texto": "Casi todos son de virus que ya intentaron matarla."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si ese virus vuelve?"
+    },
+    {
+      "escena": "Corte",
+      "texto": "La bacteria copia ese recuerdo en ARN, se lo da a unas tijeras, Cas, y buscan."
+    },
+    {
+      "escena": "Corte",
+      "texto": "Si encuentran el mismo pedazo, cortan el ADN del virus. Adiós."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2007, investigadores de Danisco y la Universidad Laval lo probaron con bacterias de yogur: cada recuerdo nuevo las volvía resistentes."
+    },
+    {
+      "escena": "Nobel",
+      "texto": "En 2012, Charpentier y Doudna tomaron unas tijeras así, de otra bacteria, y las reprogramaron para cortar el ADN que quisieran. Nobel 2020."
+    },
+    {
+      "escena": "Extra",
+      "texto": "Y no es raro: en 2020 se halló en una de cada tres bacterias y tres de cada cuatro arqueas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que las tijeras genéticas no las inventamos nosotros: las inventó lo que hay en tu yogur."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

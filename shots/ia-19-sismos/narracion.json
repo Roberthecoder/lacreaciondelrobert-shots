@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Sismos base narrada.dc.html",
   "salida": "Shot Sismos narrado.dc.html",
   "nota": "Shot IA #19. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Si te llega ese mensaje, bórralo. La IA no adivina sismos: aprende a escucharlos."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

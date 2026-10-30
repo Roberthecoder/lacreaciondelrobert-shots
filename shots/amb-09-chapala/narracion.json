@@ -1,18 +1,50 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Chapala base narrada.dc.html",
   "salida": "Shot Chapala narrado.dc.html",
   "nota": "Shot Ambiental #09. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Seis de cada diez litros de agua que llegan a Guadalajara salen de un lago que, lleno, mide ocho metros en su parte más honda." },
-    { "escena": "Lago", "texto": "Es el Lago de Chapala, el más grande de México: setenta y nueve kilómetros de largo y veintiocho de ancho." },
-    { "escena": "Plano", "texto": "Si lo dibujaras de un metro de largo, tendría una décima de milímetro de hondo." },
-    { "escena": "Pregunta", "texto": "¿Y un lago tan plano aguanta a una ciudad?" },
-    { "escena": "Estiaje", "texto": "Depende del año: su nivel sube con las lluvias y baja en la temporada seca." },
-    { "escena": "Minimo", "texto": "En junio de 1955 llegó a su mínimo: le quedaba menos de la octava parte del agua que le cabe." },
-    { "escena": "Cienega", "texto": "Y entre 1902 y 1910 le quitaron cincuenta mil hectáreas para cultivo: casi un tercio del lago de entonces." },
-    { "escena": "Hoy", "texto": "Al veintisiete de octubre de 2026, la Comisión Estatal del Agua lo reporta al setenta por ciento de su capacidad." },
-    { "escena": "Reparto", "texto": "Y no es solo de Jalisco: el catorce por ciento de su superficie está en Michoacán." },
-    { "escena": "Cierre", "texto": "Así que la próxima vez que abras la llave en Guadalajara, piensa en un lago enorme, pero muy bajito." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Seis de cada diez litros de agua que llegan a Guadalajara salen de un lago que, lleno, mide ocho metros en su parte más honda."
+    },
+    {
+      "escena": "Lago",
+      "texto": "Es el Lago de Chapala, el más grande de México: setenta y nueve kilómetros de largo y veintiocho de ancho."
+    },
+    {
+      "escena": "Plano",
+      "texto": "Si lo dibujaras de un metro de largo, tendría una décima de milímetro de hondo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y un lago tan plano aguanta a una ciudad?"
+    },
+    {
+      "escena": "Estiaje",
+      "texto": "Depende del año: su nivel sube con las lluvias y baja en la temporada seca."
+    },
+    {
+      "escena": "Minimo",
+      "texto": "En junio de 1955 llegó a su mínimo: le quedaba menos de la octava parte del agua que le cabe."
+    },
+    {
+      "escena": "Cienega",
+      "texto": "Y entre 1902 y 1910 le quitaron cincuenta mil hectáreas para cultivo: casi un tercio del lago de entonces."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "Al veintisiete de octubre de 2026, la Comisión Estatal del Agua lo reporta al setenta por ciento de su capacidad."
+    },
+    {
+      "escena": "Reparto",
+      "texto": "Y no es solo de Jalisco: el catorce por ciento de su superficie está en Michoacán."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que la próxima vez que abras la llave en Guadalajara, piensa en un lago enorme, pero muy bajito."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

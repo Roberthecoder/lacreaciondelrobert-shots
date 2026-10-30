@@ -1,23 +1,70 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Ramas base narrada.dc.html",
   "salida": "Shot Ramas narrado.dc.html",
   "velocidad": 1.155,
   "nota": "Biotecnológico #01. Una línea por subtítulo (idx 0..14 del jsx). Guion APROBADO por Robert el 27 oct 2026; costo avisado (~950 créditos). 28 oct 2026: verificación de hechos independiente; cambió el texto narrado, así que se quitó voz_aprobada (y el gemelo mudo ya no se renderiza). Falta que Robert apruebe la voz otra vez.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esto no es un arcoíris: es todo lo que la biotecnología ya hizo por ti hoy." },
-    { "escena": "Def", "texto": "Biotecnología es poner a trabajar a la vida: microbios, células o sus enzimas." },
-    { "escena": "Rojo", "texto": "Roja es salud: insulina, vacunas y antibióticos." },
-    { "escena": "Verde", "texto": "Verde es el campo: plantas que aguantan plagas o sequía." },
-    { "escena": "Blanco", "texto": "Blanca es la industria: enzimas que quitan manchas en agua fría." },
-    { "escena": "Amarillo", "texto": "Amarilla es la comida: pan, queso y yogur hechos por microbios." },
-    { "escena": "Azul", "texto": "Azul es el mar: buscar medicinas en algas y bacterias marinas." },
-    { "escena": "Pregunta", "texto": "¿Y si la vida limpiara lo que ensuciamos?" },
-    { "escena": "Gris", "texto": "Gris: microbios que se comen la contaminación del agua y del suelo." },
-    { "escena": "Cafe", "texto": "Café es el desierto: cultivar donde casi no llueve." },
-    { "escena": "Dorado", "texto": "Dorada son los datos: computadoras que leen el ADN." },
-    { "escena": "Morado", "texto": "Morada, las leyes y la ética; oscura, las armas biológicas y el bioterrorismo." },
-    { "escena": "Estudio", "texto": "En 2004, Edgar DaSilva, de la UNESCO, juntó estos colores, aunque cada autor les da su propio significado; y casi nunca van solos." },
-    { "escena": "Naranja", "texto": "Y hay uno más, el naranja: contarlo. Para eso es esta serie." },
-    { "escena": "Cierre", "texto": "No es un arcoíris: es tu día, pintado por seres vivos." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es un arcoíris: es todo lo que la biotecnología ya hizo por ti hoy."
+    },
+    {
+      "escena": "Def",
+      "texto": "Biotecnología es poner a trabajar a la vida: microbios, células o sus enzimas."
+    },
+    {
+      "escena": "Rojo",
+      "texto": "Roja es salud: insulina, vacunas y antibióticos."
+    },
+    {
+      "escena": "Verde",
+      "texto": "Verde es el campo: plantas que aguantan plagas o sequía."
+    },
+    {
+      "escena": "Blanco",
+      "texto": "Blanca es la industria: enzimas que quitan manchas en agua fría."
+    },
+    {
+      "escena": "Amarillo",
+      "texto": "Amarilla es la comida: pan, queso y yogur hechos por microbios."
+    },
+    {
+      "escena": "Azul",
+      "texto": "Azul es el mar: buscar medicinas en algas y bacterias marinas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si la vida limpiara lo que ensuciamos?"
+    },
+    {
+      "escena": "Gris",
+      "texto": "Gris: microbios que se comen la contaminación del agua y del suelo."
+    },
+    {
+      "escena": "Cafe",
+      "texto": "Café es el desierto: cultivar donde casi no llueve."
+    },
+    {
+      "escena": "Dorado",
+      "texto": "Dorada son los datos: computadoras que leen el ADN."
+    },
+    {
+      "escena": "Morado",
+      "texto": "Morada, las leyes y la ética; oscura, las armas biológicas y el bioterrorismo."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2004, Edgar DaSilva, de la UNESCO, juntó estos colores, aunque cada autor les da su propio significado; y casi nunca van solos."
+    },
+    {
+      "escena": "Naranja",
+      "texto": "Y hay uno más, el naranja: contarlo. Para eso es esta serie."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "No es un arcoíris: es tu día, pintado por seres vivos."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Hervir Altura base narrada.dc.html",
   "salida": "Shot Hervir Altura narrado.dc.html",
   "nota": "Shot Científico #13. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que en la Ciudad de México, tu agua hirviendo siempre está un poquito más fría."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

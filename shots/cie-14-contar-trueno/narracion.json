@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Contar Trueno base narrada.dc.html",
   "salida": "Shot Contar Trueno narrado.dc.html",
   "nota": "Shot Científico #14. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Cuenta los segundos, sí, pero desde adentro."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

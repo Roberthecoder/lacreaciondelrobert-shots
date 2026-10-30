@@ -1,5 +1,6 @@
 {
-  "velocidad": 1.1,
+  "voz_aprobada": true,
+  "velocidad": 0.98,
   "dcHtml": "Shot Bolsa base narrada.dc.html",
   "salida": "Shot Bolsa narrado.dc.html",
   "nota": "Shot Ambiental #11. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -44,5 +45,6 @@
       "escena": "Cierre",
       "texto": "Siete mil cien no es para tirar tu bolsa de tela: es para que nunca la dejes en casa."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

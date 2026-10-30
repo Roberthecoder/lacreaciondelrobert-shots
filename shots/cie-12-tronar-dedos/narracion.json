@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Tronar Dedos base narrada.dc.html",
   "salida": "Shot Tronar Dedos narrado.dc.html",
   "nota": "Shot Científico #12. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que cuando truenes tus dedos, no se rompe nada: es una burbuja de gas."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

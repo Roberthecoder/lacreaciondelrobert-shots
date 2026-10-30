@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Mamografias base narrada.dc.html",
   "salida": "Shot Mamografias narrado.dc.html",
   "nota": "Shot IA #08. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "La IA no trabajó sola: menos lecturas para los médicos y más cánceres hallados a tiempo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

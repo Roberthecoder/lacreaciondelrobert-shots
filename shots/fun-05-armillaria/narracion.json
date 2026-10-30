@@ -1,20 +1,61 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Armillaria base narrada.dc.html",
   "salida": "Shot Armillaria narrado.dc.html",
   "nota": "Shot Fungi Mati #05. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esos hongos no son cientos de hongos: pueden ser uno solo, de casi diez kilómetros cuadrados." },
-    { "escena": "Fruto", "texto": "Cada seta es solo un fruto: el hongo, Armillaria, vive bajo tierra." },
-    { "escena": "Cordones", "texto": "Avanza de raíz en raíz, y a veces con cordones negros, como agujetas." },
-    { "escena": "Raiz", "texto": "Mata la raíz, se la come, y el árbol se muere." },
-    { "escena": "Pregunta", "texto": "¿Y cómo sabes que es uno solo y no miles?" },
-    { "escena": "Estudio", "texto": "En 2003, un equipo lo mapeó en un bosque de Oregón, Estados Unidos." },
-    { "escena": "Cajas", "texto": "Enfrentaron ciento doce muestras de árboles enfermos o recién muertos en cajas de cultivo." },
-    { "escena": "Fusion", "texto": "Si los micelios se fusionaban, eran el mismo individuo." },
-    { "escena": "Numero", "texto": "Uno ocupaba novecientas sesenta y cinco hectáreas: más de mil trescientas canchas de fútbol." },
-    { "escena": "Edad", "texto": "Por lo lento que crece, tendría entre mil novecientos y ocho mil seiscientos cincuenta años." },
-    { "escena": "Ojo", "texto": "Ojo: no se sabe si sigue unido, pero las pruebas dicen que es uno solo." },
-    { "escena": "Brillo", "texto": "Y lo más raro: sus hilos pueden brillar en la oscuridad." },
-    { "escena": "Cierre", "texto": "Así que esos hongos no son cientos: son frutos de un gigante escondido bajo el bosque." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esos hongos no son cientos de hongos: pueden ser uno solo, de casi diez kilómetros cuadrados."
+    },
+    {
+      "escena": "Fruto",
+      "texto": "Cada seta es solo un fruto: el hongo, Armillaria, vive bajo tierra."
+    },
+    {
+      "escena": "Cordones",
+      "texto": "Avanza de raíz en raíz, y a veces con cordones negros, como agujetas."
+    },
+    {
+      "escena": "Raiz",
+      "texto": "Mata la raíz, se la come, y el árbol se muere."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo sabes que es uno solo y no miles?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2003, un equipo lo mapeó en un bosque de Oregón, Estados Unidos."
+    },
+    {
+      "escena": "Cajas",
+      "texto": "Enfrentaron ciento doce muestras de árboles enfermos o recién muertos en cajas de cultivo."
+    },
+    {
+      "escena": "Fusion",
+      "texto": "Si los micelios se fusionaban, eran el mismo individuo."
+    },
+    {
+      "escena": "Numero",
+      "texto": "Uno ocupaba novecientas sesenta y cinco hectáreas: más de mil trescientas canchas de fútbol."
+    },
+    {
+      "escena": "Edad",
+      "texto": "Por lo lento que crece, tendría entre mil novecientos y ocho mil seiscientos cincuenta años."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: no se sabe si sigue unido, pero las pruebas dicen que es uno solo."
+    },
+    {
+      "escena": "Brillo",
+      "texto": "Y lo más raro: sus hilos pueden brillar en la oscuridad."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esos hongos no son cientos: son frutos de un gigante escondido bajo el bosque."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

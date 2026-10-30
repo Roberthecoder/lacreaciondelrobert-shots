@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Mapa Lengua base narrada.dc.html",
   "salida": "Shot Mapa Lengua narrado.dc.html",
   "nota": "Shot Científico #17. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que tu lengua no es un mapa con fronteras: toda ella prueba de todo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

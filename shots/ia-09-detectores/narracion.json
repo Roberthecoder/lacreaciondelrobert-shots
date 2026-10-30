@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Detectores base narrada.dc.html",
   "salida": "Shot Detectores narrado.dc.html",
   "nota": "Shot IA #09. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Así que si un detector acusa tu ensayo, recuerda: escribir sencillo no es hacer trampa."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

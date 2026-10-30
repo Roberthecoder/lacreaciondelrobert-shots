@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Embarazo base narrada.dc.html",
   "salida": "Shot Embarazo narrado.dc.html",
   "nota": "Shot Biotecnológico #14. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -56,5 +57,6 @@
       "texto": "Por eso esa segunda rayita no es tinta: es oro pegado a anticuerpos que atraparon una hormona."
     }
   ],
-  "tanda": 1
+  "tanda": 1,
+  "mezcla": "oficial-30oct"
 }

@@ -1,18 +1,50 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Vaquita base narrada.dc.html",
   "salida": "Shot Vaquita narrado.dc.html",
   "nota": "Shot Ambiental #08. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Las vaquitas marinas que se vieron el año pasado se cuentan con los dedos de tus manos: entre siete y diez." },
-    { "escena": "Quien", "texto": "Es una marsopa de metro y medio, de las más pequeñas entre ballenas y delfines, y vive solo en el norte del Golfo de California." },
-    { "escena": "Pregunta", "texto": "¿Y por qué casi desaparece?" },
-    { "escena": "Totoaba", "texto": "Por un pez de tamaño parecido, la totoaba, que se pesca de forma ilegal con redes." },
-    { "escena": "Vejiga", "texto": "Su vejiga natatoria se vende cara en China para sopas, y en esas redes las vaquitas se enredan y se ahogan." },
-    { "escena": "Caida", "texto": "En 1997 se calculaban quinientas sesenta y siete. En 2015, cincuenta y nueve." },
-    { "escena": "Estudio", "texto": "El último conteo completo publicado fue en septiembre de 2025: dos barcos, binoculares gigantes y micrófonos bajo el agua." },
-    { "escena": "Crias", "texto": "Y vieron crías. Una es de Frida, una vaquita con la aleta doblada." },
-    { "escena": "Bloques", "texto": "En 2025, ocho de cada diez avistamientos fueron donde pusieron bloques de concreto con ganchos que atrapan las redes." },
-    { "escena": "Cierre", "texto": "Así que quedan pocas, pero siguen teniendo crías, y los científicos creen que pueden recuperarse si se quitan las redes." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Las vaquitas marinas que se vieron el año pasado se cuentan con los dedos de tus manos: entre siete y diez."
+    },
+    {
+      "escena": "Quien",
+      "texto": "Es una marsopa de metro y medio, de las más pequeñas entre ballenas y delfines, y vive solo en el norte del Golfo de California."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué casi desaparece?"
+    },
+    {
+      "escena": "Totoaba",
+      "texto": "Por un pez de tamaño parecido, la totoaba, que se pesca de forma ilegal con redes."
+    },
+    {
+      "escena": "Vejiga",
+      "texto": "Su vejiga natatoria se vende cara en China para sopas, y en esas redes las vaquitas se enredan y se ahogan."
+    },
+    {
+      "escena": "Caida",
+      "texto": "En 1997 se calculaban quinientas sesenta y siete. En 2015, cincuenta y nueve."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "El último conteo completo publicado fue en septiembre de 2025: dos barcos, binoculares gigantes y micrófonos bajo el agua."
+    },
+    {
+      "escena": "Crias",
+      "texto": "Y vieron crías. Una es de Frida, una vaquita con la aleta doblada."
+    },
+    {
+      "escena": "Bloques",
+      "texto": "En 2025, ocho de cada diez avistamientos fueron donde pusieron bloques de concreto con ganchos que atrapan las redes."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que quedan pocas, pero siguen teniendo crías, y los científicos creen que pueden recuperarse si se quitan las redes."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

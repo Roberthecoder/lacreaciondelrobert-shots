@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Sargazo base narrada.dc.html",
   "salida": "Shot Sargazo narrado.dc.html",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Pero en mar abierto es casa de cientos de especies. No es basura: es un refugio que se pudre en tu playa."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

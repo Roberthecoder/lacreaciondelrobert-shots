@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Detergente base narrada.dc.html",
   "salida": "Shot Detergente narrado.dc.html",
   "nota": "Shot Biotecnológico #15. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -60,5 +61,6 @@
       "texto": "Así que tu ropa no la lava solo el jabón: la lavan enzimas de microbios."
     }
   ],
-  "tanda": 2
+  "tanda": 2,
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Día de Muertos",
   "serie_vinculada": "Ambiental",
   "velocidad": 1.0,
@@ -54,5 +55,6 @@
       "escena": "Cierre",
       "texto": "Así que esta nube naranja no son hojas: es una visita que hay que cuidar cada año."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

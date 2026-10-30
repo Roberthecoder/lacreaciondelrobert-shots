@@ -1,19 +1,54 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Seta Rosa base narrada.dc.html",
   "salida": "Shot Seta Rosa narrado.dc.html",
   "velocidad": 1.028,
   "nota": "Fungi Mati #03. Una línea por subtítulo (idx 0..10 del jsx). Todo en UNA sola petición a ElevenLabs. 28 oct 2026: corregido tras la verificación de hechos (idx 9); la voz anterior ya no corresponde y espera nueva aprobación de Robert. NO generar la voz sin su visto bueno (gasta créditos). Ya no se hace gemelo mudo: la revisión es la versión sin voz.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto." },
-    { "escena": "Especie", "texto": "Es la seta rosa, Pleurotus djamor, un hongo de clima cálido que también crece silvestre en México." },
-    { "escena": "Esporada", "texto": "Este creció de micelio en un bloque de aserrín pasteurizado. Y de sus esporas junté una esporada." },
-    { "escena": "Placa", "texto": "Las sembré juntas en agar PDA, germinaron, y salió micelio, una red de hilos blancos: mi propia cepa." },
-    { "escena": "Grano", "texto": "Pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas." },
-    { "escena": "Pregunta", "texto": "Pero ¿qué le avisa al micelio que ya es hora de dar fruto?" },
-    { "escena": "Aire", "texto": "Un cambio de ambiente. Primero, aire fresco: con mucho dióxido de carbono, el sombrero no se forma bien." },
-    { "escena": "Humedad", "texto": "Luego, humedad muy alta, y algo de luz, que el sombrero necesita para abrirse." },
-    { "escena": "Calor", "texto": "Y como es tropical, le gusta el calor: de veintidós a treinta grados." },
-    { "escena": "Rosa", "texto": "¿Y el rosa? Una revisión mexicana de 2017 dice que aún no se sabe bien por qué se pierde: se aclara al madurar." },
-    { "escena": "Cierre", "texto": "Así que esto no es plástico: es el fruto de un micelio que casi nunca ves, escondido en el sustrato." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto."
+    },
+    {
+      "escena": "Especie",
+      "texto": "Es la seta rosa, Pleurotus djamor, un hongo de clima cálido que también crece silvestre en México."
+    },
+    {
+      "escena": "Esporada",
+      "texto": "Este creció de micelio en un bloque de aserrín pasteurizado. Y de sus esporas junté una esporada."
+    },
+    {
+      "escena": "Placa",
+      "texto": "Las sembré juntas en agar PDA, germinaron, y salió micelio, una red de hilos blancos: mi propia cepa."
+    },
+    {
+      "escena": "Grano",
+      "texto": "Pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "Pero ¿qué le avisa al micelio que ya es hora de dar fruto?"
+    },
+    {
+      "escena": "Aire",
+      "texto": "Un cambio de ambiente. Primero, aire fresco: con mucho dióxido de carbono, el sombrero no se forma bien."
+    },
+    {
+      "escena": "Humedad",
+      "texto": "Luego, humedad muy alta, y algo de luz, que el sombrero necesita para abrirse."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Y como es tropical, le gusta el calor: de veintidós a treinta grados."
+    },
+    {
+      "escena": "Rosa",
+      "texto": "¿Y el rosa? Una revisión mexicana de 2017 dice que aún no se sabe bien por qué se pierde: se aclara al madurar."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esto no es plástico: es el fruto de un micelio que casi nunca ves, escondido en el sustrato."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

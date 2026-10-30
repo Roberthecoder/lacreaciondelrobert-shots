@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Día de Muertos",
   "serie_vinculada": "Químico",
   "velocidad": 1.0,
@@ -54,5 +55,6 @@
       "escena": "Cierre",
       "texto": "Así que esta calavera no es de yeso: es azúcar que se ordenó, molécula por molécula, en su lugar."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

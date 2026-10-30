@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Día Mundial de la Ciencia para la Paz y el Desarrollo",
   "serie_vinculada": "Biotecnológico",
   "velocidad": 1.0,
@@ -62,5 +63,6 @@
       "escena": "Cierre",
       "texto": "Esa marquita es el recuerdo de una enfermedad que dos rivales, con ciencia, ayudaron a borrar."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

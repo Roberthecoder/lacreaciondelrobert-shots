@@ -1,18 +1,53 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Bacterias base narrada.dc.html",
   "salida": "Shot Bacterias narrado.dc.html",
   "nota": "Shot Científico #06. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Te dijeron que por cada célula tuya hay diez bacterias. La cuenta real: más o menos una a una." },
-    { "escena": "Origen", "texto": "Ese diez a uno salió de una cuenta rápida de los años setenta: una sola frase." },
-    { "escena": "Litro", "texto": "Suponía un litro de intestino lleno de bacterias, de punta a punta." },
-    { "escena": "Colon", "texto": "Pero casi todas viven en tu colon, que guarda unos cuatrocientos mililitros." },
-    { "escena": "Pregunta", "texto": "¿Y cuántas células tuyas hay?" },
-    { "escena": "Humanas", "texto": "En 2023 las volvieron a contar: unos treinta y seis billones en un hombre, veintiocho en una mujer. Y cuatro de cada cinco ni siquiera tienen núcleo: son glóbulos rojos y plaquetas." },
-    { "escena": "Cuenta", "texto": "Bacterias, según la cuenta de 2016: unos treinta y ocho billones. Casi una a una." },
-    { "escena": "Estudio", "texto": "Esa cuenta la hizo el equipo de Ron Milo, del Instituto Weizmann, en Israel." },
-    { "escena": "Peso", "texto": "Y según ese estudio pesan poco: todas tus bacterias juntas, unos doscientos gramos, no los kilos que se decían." },
-    { "escena": "Bano", "texto": "Dato extra: cada vez que vas al baño, tu colon pierde entre un cuarto y un tercio de su contenido." },
-    { "escena": "Cierre", "texto": "Así que no eres diez bacterias por cada célula: eres casi mitad y mitad. Y tu mitad bacteriana baja un poco cada vez que vas al baño." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Te dijeron que por cada célula tuya hay diez bacterias. La cuenta real: más o menos una a una."
+    },
+    {
+      "escena": "Origen",
+      "texto": "Ese diez a uno salió de una cuenta rápida de los años setenta: una sola frase."
+    },
+    {
+      "escena": "Litro",
+      "texto": "Suponía un litro de intestino lleno de bacterias, de punta a punta."
+    },
+    {
+      "escena": "Colon",
+      "texto": "Pero casi todas viven en tu colon, que guarda unos cuatrocientos mililitros."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuántas células tuyas hay?"
+    },
+    {
+      "escena": "Humanas",
+      "texto": "En 2023 las volvieron a contar: unos treinta y seis billones en un hombre, veintiocho en una mujer. Y cuatro de cada cinco ni siquiera tienen núcleo: son glóbulos rojos y plaquetas."
+    },
+    {
+      "escena": "Cuenta",
+      "texto": "Bacterias, según la cuenta de 2016: unos treinta y ocho billones. Casi una a una."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Esa cuenta la hizo el equipo de Ron Milo, del Instituto Weizmann, en Israel."
+    },
+    {
+      "escena": "Peso",
+      "texto": "Y según ese estudio pesan poco: todas tus bacterias juntas, unos doscientos gramos, no los kilos que se decían."
+    },
+    {
+      "escena": "Bano",
+      "texto": "Dato extra: cada vez que vas al baño, tu colon pierde entre un cuarto y un tercio de su contenido."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no eres diez bacterias por cada célula: eres casi mitad y mitad. Y tu mitad bacteriana baja un poco cada vez que vas al baño."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

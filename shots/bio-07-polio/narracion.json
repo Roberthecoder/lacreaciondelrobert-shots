@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Polio base narrada.dc.html",
   "salida": "Shot Polio narrado.dc.html",
   "velocidad": 1.0096,
@@ -56,5 +57,6 @@
       "escena": "Cierre",
       "texto": "La misma herramienta que fabrica tu insulina pudo escribir un virus. Por eso hay reglas."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

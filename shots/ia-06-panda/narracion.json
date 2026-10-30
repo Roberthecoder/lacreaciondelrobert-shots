@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Panda base narrada.dc.html",
   "salida": "Shot Panda narrado.dc.html",
   "nota": "Shot IA #06. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Así que si una IA te dice que está segurísima, recuerda: tú sigues viendo un panda."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

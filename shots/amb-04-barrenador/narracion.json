@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Barrenador base narrada.dc.html",
   "salida": "Shot Barrenador narrado.dc.html",
   "velocidad": 1.103,
@@ -52,5 +53,6 @@
       "escena": "Cierre",
       "texto": "Así que si ves caer moscas de una avioneta, no es la plaga: es la cura."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
