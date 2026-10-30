@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Huellas Gemelos base narrada.dc.html",
   "salida": "Shot Huellas Gemelos narrado.dc.html",
   "nota": "Shot Científico #42. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Así que hasta dos gemelos idénticos dejan su propia firma en todo lo que tocan."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

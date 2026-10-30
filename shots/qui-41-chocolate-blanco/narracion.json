@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Chocolate base narrada.dc.html",
   "salida": "Shot Chocolate narrado.dc.html",
   "nota": "Shot Químico #41. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Esa capa blanca no es moho: es química de cristales. Guárdalo fresco y seco."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

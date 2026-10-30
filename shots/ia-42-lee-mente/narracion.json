@@ -1,17 +1,49 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot LeeMente base narrada.dc.html",
   "salida": "Shot LeeMente narrado.dc.html",
   "nota": "Shot IA #42. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "¿Por qué una máquina todavía no puede leer tu mente desde afuera? Porque, por ahora, necesita que tú te dejes." },
-    { "escena": "Escaner", "texto": "En Texas metieron a tres personas a una resonancia y les pusieron dieciséis horas de historias en audio." },
-    { "escena": "Aprende", "texto": "Una IA aprendió cómo se enciende el cerebro de cada una con cada idea. Luego oían historias nuevas, y la máquina escribía." },
-    { "escena": "Ejemplo", "texto": "Alguien oyó: «todavía no tengo licencia de manejo». La máquina escribió: «ella ni siquiera ha empezado a aprender a manejar»." },
-    { "escena": "Ejemplo", "texto": "No eran las palabras exactas: era la idea." },
-    { "escena": "Pregunta", "texto": "¿Entonces ya pueden espiar lo que piensas? Eso probaron en Austin, en un estudio de 2023." },
-    { "escena": "Ajeno", "texto": "Con el cerebro de alguien con quien no se entrenó, apenas le atinó más que al azar." },
-    { "escena": "Sabotaje", "texto": "Y quien sí la entrenó pudo sabotearla: con solo nombrar animales en su mente, casi no le atinaba." },
-    { "escena": "Extra", "texto": "Lo raro: también describió lo que pasaba en cortos animados sin sonido." },
-    { "escena": "Cierre", "texto": "Así que hoy, desde afuera, tu mente sigue siendo tuya, y los autores piden reglas que protejan tu privacidad mental." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "¿Por qué una máquina todavía no puede leer tu mente desde afuera? Porque, por ahora, necesita que tú te dejes."
+    },
+    {
+      "escena": "Escaner",
+      "texto": "En Texas metieron a tres personas a una resonancia y les pusieron dieciséis horas de historias en audio."
+    },
+    {
+      "escena": "Aprende",
+      "texto": "Una IA aprendió cómo se enciende el cerebro de cada una con cada idea. Luego oían historias nuevas, y la máquina escribía."
+    },
+    {
+      "escena": "Ejemplo",
+      "texto": "Alguien oyó: «todavía no tengo licencia de manejo». La máquina escribió: «ella ni siquiera ha empezado a aprender a manejar»."
+    },
+    {
+      "escena": "Ejemplo",
+      "texto": "No eran las palabras exactas: era la idea."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces ya pueden espiar lo que piensas? Eso probaron en Austin, en un estudio de 2023."
+    },
+    {
+      "escena": "Ajeno",
+      "texto": "Con el cerebro de alguien con quien no se entrenó, apenas le atinó más que al azar."
+    },
+    {
+      "escena": "Sabotaje",
+      "texto": "Y quien sí la entrenó pudo sabotearla: con solo nombrar animales en su mente, casi no le atinaba."
+    },
+    {
+      "escena": "Extra",
+      "texto": "Lo raro: también describió lo que pasaba en cortos animados sin sonido."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que hoy, desde afuera, tu mente sigue siendo tuya, y los autores piden reglas que protejan tu privacidad mental."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Histoplasma base narrada.dc.html",
   "salida": "Shot Histoplasma narrado.dc.html",
   "nota": "Shot Fungi Mati #43. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Así que en una cueva con murciélagos, ese polvo puede llevar un hongo a tus pulmones."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
