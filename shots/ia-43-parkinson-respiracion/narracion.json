@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Parkinson base narrada.dc.html",
   "salida": "Shot Parkinson narrado.dc.html",
   "nota": "Shot IA #43. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Quizá un día esa rayita que dibujas dormido avise antes que tus manos."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

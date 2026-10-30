@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Basura Electronica base narrada.dc.html",
   "salida": "Shot Basura Electronica narrado.dc.html",
@@ -44,5 +45,6 @@
       "escena": "Cierre",
       "texto": "Así que esa mina no va a la basura: llévala a un centro de acopio de electrónicos."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

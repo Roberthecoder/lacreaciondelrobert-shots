@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Cuerpo Radiactivo base narrada.dc.html",
   "salida": "Shot Cuerpo Radiactivo narrado.dc.html",
   "nota": "Shot Científico #35. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que brillas un poquito, aunque nadie lo vea: llevas restos de estrellas dentro."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

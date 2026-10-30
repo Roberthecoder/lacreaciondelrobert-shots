@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Isla Calor base narrada.dc.html",
   "salida": "Shot Isla Calor narrado.dc.html",
@@ -44,5 +45,6 @@
       "escena": "Cierre",
       "texto": "Si sudas esta noche y tu primo del rancho no, es la isla de calor."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

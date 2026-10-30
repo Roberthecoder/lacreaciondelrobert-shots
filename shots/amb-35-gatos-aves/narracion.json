@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Gatos base narrada.dc.html",
   "salida": "Shot Gatos narrado.dc.html",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Tu gato no es malo: es cazador. Cuando te deje un regalito, piensa en los que no te trajo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

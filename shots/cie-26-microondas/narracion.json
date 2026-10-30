@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Microondas base narrada.dc.html",
   "salida": "Shot Microondas narrado.dc.html",
   "nota": "Shot Científico #26. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que no calienta de adentro hacia afuera: calienta por fuera, y lo demás lo hace la paciencia."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

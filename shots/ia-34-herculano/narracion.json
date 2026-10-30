@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Herculano base narrada.dc.html",
   "salida": "Shot Herculano narrado.dc.html",
   "nota": "Shot IA #34. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Ese carbón sigue cerrado, pero ya no está mudo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

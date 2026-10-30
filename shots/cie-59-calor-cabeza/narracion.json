@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Calor Cabeza base narrada.dc.html",
   "salida": "Shot Calor Cabeza narrado.dc.html",
   "nota": "Shot Científico #59. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Tu cabeza no es una chimenea: pierde calor como cualquier otra parte destapada."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

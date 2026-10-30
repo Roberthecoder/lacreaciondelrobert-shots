@@ -1,21 +1,65 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Pollo Bosque base narrada.dc.html",
   "salida": "Shot Pollo Bosque narrado.dc.html",
   "nota": "Shot Fungi Mati #41. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esto no es pollo: es un hongo que se está comiendo un árbol por dentro." },
-    { "escena": "Repisa", "texto": "Le dicen pollo del bosque: Laetiporus, repisas naranjas que salen sobre todo en troncos de encino." },
-    { "escena": "Corazon", "texto": "Sus hilos, las hifas, entran al corazón del tronco y se comen la celulosa." },
-    { "escena": "Cubitos", "texto": "Dejan la lignina: la madera queda café, se agrieta en cubitos y se desmorona." },
-    { "escena": "Pregunta", "texto": "¿Y por qué le dicen pollo, si no tiene ni un gramo de músculo?" },
-    { "escena": "Correoso", "texto": "Bien cocido, queda correoso y sabe parecido al pollo." },
-    { "escena": "Hifas", "texto": "Por dentro es una maraña de hifas, y las más gruesas miden de cuatro a catorce micras." },
-    { "escena": "Estudio", "texto": "Pero ojo: en 1987, en Canadá, una niña de seis años comió este hongo." },
-    { "escena": "Monstruo", "texto": "Se le trabó el habla, perdió el equilibrio y tuvo alucinaciones." },
-    { "escena": "Recupero", "texto": "Al día siguiente ya estaba bien." },
-    { "escena": "Crudo", "texto": "Crudo o mal cocido puede caerte mal del estómago, y hay personas alérgicas a él." },
-    { "escena": "Experto", "texto": "Nunca comas un hongo silvestre que no haya identificado un experto." },
-    { "escena": "Naranja", "texto": "Y su naranja no es de zanahoria: es ácido laetipórico, y podría pintar comida." },
-    { "escena": "Cierre", "texto": "Así que ese pollo no es pollo: es un hongo que deja la madera del árbol en cubitos cafés." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es pollo: es un hongo que se está comiendo un árbol por dentro."
+    },
+    {
+      "escena": "Repisa",
+      "texto": "Le dicen pollo del bosque: Laetiporus, repisas naranjas que salen sobre todo en troncos de encino."
+    },
+    {
+      "escena": "Corazon",
+      "texto": "Sus hilos, las hifas, entran al corazón del tronco y se comen la celulosa."
+    },
+    {
+      "escena": "Cubitos",
+      "texto": "Dejan la lignina: la madera queda café, se agrieta en cubitos y se desmorona."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué le dicen pollo, si no tiene ni un gramo de músculo?"
+    },
+    {
+      "escena": "Correoso",
+      "texto": "Bien cocido, queda correoso y sabe parecido al pollo."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Por dentro es una maraña de hifas, y las más gruesas miden de cuatro a catorce micras."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Pero ojo: en 1987, en Canadá, una niña de seis años comió este hongo."
+    },
+    {
+      "escena": "Monstruo",
+      "texto": "Se le trabó el habla, perdió el equilibrio y tuvo alucinaciones."
+    },
+    {
+      "escena": "Recupero",
+      "texto": "Al día siguiente ya estaba bien."
+    },
+    {
+      "escena": "Crudo",
+      "texto": "Crudo o mal cocido puede caerte mal del estómago, y hay personas alérgicas a él."
+    },
+    {
+      "escena": "Experto",
+      "texto": "Nunca comas un hongo silvestre que no haya identificado un experto."
+    },
+    {
+      "escena": "Naranja",
+      "texto": "Y su naranja no es de zanahoria: es ácido laetipórico, y podría pintar comida."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese pollo no es pollo: es un hongo que deja la madera del árbol en cubitos cafés."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

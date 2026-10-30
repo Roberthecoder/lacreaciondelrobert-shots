@@ -1,18 +1,53 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Plata base narrada.dc.html",
   "salida": "Shot Plata narrado.dc.html",
   "nota": "Shot Químico #31. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese negro en tu arete de plata no es mugre: es plata pegada a azufre." },
-    { "escena": "Que", "texto": "Es sulfuro de plata: cuando la capa pasa de unos 100 nanómetros, se ve negra." },
-    { "escena": "Aire", "texto": "El azufre viene del aire, de gases como el sulfuro de hidrógeno: el gas del huevo cocido." },
-    { "escena": "Huevo", "texto": "Junto a un huevo duro recién cocido, la plata se oscurece en minutos, no en meses." },
-    { "escena": "Pulir", "texto": "Si la pules, raspas lo negro y también un poco de plata." },
-    { "escena": "Pregunta", "texto": "¿Y si en vez de rasparla la regresas a plata?" },
-    { "escena": "Truco", "texto": "Papel aluminio, bicarbonato y agua caliente, con cuidado: que la plata toque el aluminio." },
-    { "escena": "Electrones", "texto": "El aluminio suelta electrones, la plata negra los recibe y vuelve a ser metal; el azufre se suelta." },
-    { "escena": "Estudio", "texto": "En 1916, el gobierno de Estados Unidos probó con cucharas: pulidas con pasta perdieron, en cada limpieza, unas 25 veces más plata que tocando otro metal en agua hirviendo." },
-    { "escena": "Dato", "texto": "Lo chistoso: en la lista de culpables de conservadores de Canadá están hasta tus gases intestinales." },
-    { "escena": "Cierre", "texto": "Ese negro no es mugre: es plata esperando que el aluminio le quite el azufre." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Ese negro en tu arete de plata no es mugre: es plata pegada a azufre."
+    },
+    {
+      "escena": "Que",
+      "texto": "Es sulfuro de plata: cuando la capa pasa de unos 100 nanómetros, se ve negra."
+    },
+    {
+      "escena": "Aire",
+      "texto": "El azufre viene del aire, de gases como el sulfuro de hidrógeno: el gas del huevo cocido."
+    },
+    {
+      "escena": "Huevo",
+      "texto": "Junto a un huevo duro recién cocido, la plata se oscurece en minutos, no en meses."
+    },
+    {
+      "escena": "Pulir",
+      "texto": "Si la pules, raspas lo negro y también un poco de plata."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si en vez de rasparla la regresas a plata?"
+    },
+    {
+      "escena": "Truco",
+      "texto": "Papel aluminio, bicarbonato y agua caliente, con cuidado: que la plata toque el aluminio."
+    },
+    {
+      "escena": "Electrones",
+      "texto": "El aluminio suelta electrones, la plata negra los recibe y vuelve a ser metal; el azufre se suelta."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1916, el gobierno de Estados Unidos probó con cucharas: pulidas con pasta perdieron, en cada limpieza, unas 25 veces más plata que tocando otro metal en agua hirviendo."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Lo chistoso: en la lista de culpables de conservadores de Canadá están hasta tus gases intestinales."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese negro no es mugre: es plata esperando que el aluminio le quite el azufre."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

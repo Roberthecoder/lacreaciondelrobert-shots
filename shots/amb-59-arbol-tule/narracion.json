@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Tule base narrada.dc.html",
   "salida": "Shot Tule narrado.dc.html",
@@ -44,5 +45,6 @@
       "escena": "Cierre",
       "texto": "Así que no son varios árboles: es uno solo, y vive de lo que dice su nombre: agua."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

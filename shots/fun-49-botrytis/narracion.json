@@ -1,20 +1,61 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Botrytis base narrada.dc.html",
   "salida": "Shot Botrytis narrado.dc.html",
   "nota": "Shot Fungi Mati #49. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esa pelusa gris de tus fresas no llegó anoche: muchas veces entró cuando la fresa era flor." },
-    { "escena": "Hongo", "texto": "Es Botrytis cinerea, el moho gris, y ataca a cientos de plantas." },
-    { "escena": "Esporas", "texto": "Sus esporas vuelan con el viento o salpican con agua y germinan en la flor." },
-    { "escena": "Estambres", "texto": "Sus hilos pueden bajar por los estambres hasta lo que será la fresa." },
-    { "escena": "Espera", "texto": "Y ahí suele quedarse quieto, sin síntomas, mientras la fresa está verde." },
-    { "escena": "Pregunta", "texto": "¿Y qué lo despierta?" },
-    { "escena": "Madura", "texto": "Que la fresa madure. Se cree que el azúcar y el cambio en sus defensas lo activan." },
-    { "escena": "Pelusa", "texto": "Y la pudre: esa pelusa son tallitos con sus esporas en racimitos, como de uvas." },
-    { "escena": "Vecinas", "texto": "Por eso contagia a las fresas vecinas: pasa por contacto y suelta esporas al aire." },
-    { "escena": "Estudio", "texto": "En Florida, entre 1999 y 2001, vieron que la flor es más vulnerable que la fresa verde." },
-    { "escena": "Estambres2", "texto": "Y en una temporada, quitarles los estambres a las flores redujo la pudrición." },
-    { "escena": "Noble", "texto": "En uvas, con noches húmedas y días secos, el mismo hongo da la podredumbre noble de vinos dulces como Sauternes y Tokaji." },
-    { "escena": "Cierre", "texto": "Así que esa pelusa no es de anoche: es un hongo que pudo esperar desde la flor." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esa pelusa gris de tus fresas no llegó anoche: muchas veces entró cuando la fresa era flor."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es Botrytis cinerea, el moho gris, y ataca a cientos de plantas."
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Sus esporas vuelan con el viento o salpican con agua y germinan en la flor."
+    },
+    {
+      "escena": "Estambres",
+      "texto": "Sus hilos pueden bajar por los estambres hasta lo que será la fresa."
+    },
+    {
+      "escena": "Espera",
+      "texto": "Y ahí suele quedarse quieto, sin síntomas, mientras la fresa está verde."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué lo despierta?"
+    },
+    {
+      "escena": "Madura",
+      "texto": "Que la fresa madure. Se cree que el azúcar y el cambio en sus defensas lo activan."
+    },
+    {
+      "escena": "Pelusa",
+      "texto": "Y la pudre: esa pelusa son tallitos con sus esporas en racimitos, como de uvas."
+    },
+    {
+      "escena": "Vecinas",
+      "texto": "Por eso contagia a las fresas vecinas: pasa por contacto y suelta esporas al aire."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En Florida, entre 1999 y 2001, vieron que la flor es más vulnerable que la fresa verde."
+    },
+    {
+      "escena": "Estambres2",
+      "texto": "Y en una temporada, quitarles los estambres a las flores redujo la pudrición."
+    },
+    {
+      "escena": "Noble",
+      "texto": "En uvas, con noches húmedas y días secos, el mismo hongo da la podredumbre noble de vinos dulces como Sauternes y Tokaji."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa pelusa no es de anoche: es un hongo que pudo esperar desde la flor."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,20 +1,61 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Micoproteina base narrada.dc.html",
   "salida": "Shot Micoproteina narrado.dc.html",
   "nota": "Shot Fungi Mati #37. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esa milanesa no es de pollo: es de hongo, hecha de hilos que tus ojos no pueden ver." },
-    { "escena": "Hongo", "texto": "Es micoproteína, del hongo microscópico Fusarium venenatum." },
-    { "escena": "Suelo", "texto": "Salió de un campo inglés, tras probar más de tres mil microbios del suelo." },
-    { "escena": "Tanque", "texto": "No se cosecha: crece en tanques de fermentación, comiendo glucosa y amonio." },
-    { "escena": "Duplica", "texto": "Ahí duplica su masa en unas cuatro horas." },
-    { "escena": "Calor", "texto": "Luego lo calientan para bajarle el ARN: con menos ARN, años de pruebas mostraron que es seguro comerlo." },
-    { "escena": "Pregunta", "texto": "¿Y cómo un hongo se siente como carne?" },
-    { "escena": "Hifas", "texto": "Por sus hifas: hilos de unas cuatro milésimas de milímetro de grueso." },
-    { "escena": "Fibras", "texto": "Juntas forman fibras parecidas a las del músculo, y suelen pegarse con clara de huevo." },
-    { "escena": "Estudio", "texto": "En 2020, en la Universidad de Exeter, Inglaterra, veinte hombres jóvenes que hacían pesas tomaron micoproteína o proteína de leche." },
-    { "escena": "Musculo", "texto": "Con micoproteína, su músculo aceleró más la fabricación de proteína que con leche." },
-    { "escena": "Quitina", "texto": "Y un tercio de su fibra es quitina, la misma que hay en el caparazón del camarón." },
-    { "escena": "Cierre", "texto": "Así que esa milanesa no es de pollo: es un hongo del suelo, hilo por hilo." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esa milanesa no es de pollo: es de hongo, hecha de hilos que tus ojos no pueden ver."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es micoproteína, del hongo microscópico Fusarium venenatum."
+    },
+    {
+      "escena": "Suelo",
+      "texto": "Salió de un campo inglés, tras probar más de tres mil microbios del suelo."
+    },
+    {
+      "escena": "Tanque",
+      "texto": "No se cosecha: crece en tanques de fermentación, comiendo glucosa y amonio."
+    },
+    {
+      "escena": "Duplica",
+      "texto": "Ahí duplica su masa en unas cuatro horas."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Luego lo calientan para bajarle el ARN: con menos ARN, años de pruebas mostraron que es seguro comerlo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo un hongo se siente como carne?"
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Por sus hifas: hilos de unas cuatro milésimas de milímetro de grueso."
+    },
+    {
+      "escena": "Fibras",
+      "texto": "Juntas forman fibras parecidas a las del músculo, y suelen pegarse con clara de huevo."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2020, en la Universidad de Exeter, Inglaterra, veinte hombres jóvenes que hacían pesas tomaron micoproteína o proteína de leche."
+    },
+    {
+      "escena": "Musculo",
+      "texto": "Con micoproteína, su músculo aceleró más la fabricación de proteína que con leche."
+    },
+    {
+      "escena": "Quitina",
+      "texto": "Y un tercio de su fibra es quitina, la misma que hay en el caparazón del camarón."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa milanesa no es de pollo: es un hongo del suelo, hilo por hilo."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

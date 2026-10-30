@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Respuestas base narrada.dc.html",
   "salida": "Shot Respuestas narrado.dc.html",
   "nota": "Shot IA #53. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "El chatbot sonó más amable, pero la última palabra la tiene tu médico."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

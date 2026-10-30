@@ -1,20 +1,61 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Arrieras base narrada.dc.html",
   "salida": "Shot Arrieras narrado.dc.html",
   "nota": "Shot Fungi Mati #22. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esas arrieras no cargan las hojas para comérselas: son granjeras." },
-    { "escena": "Hongo", "texto": "Las hojas son abono para un hongo que cultivan bajo tierra." },
-    { "escena": "Pasta", "texto": "Las grandes cortan; las chiquitas las hacen pasta con saliva y la meten al jardín." },
-    { "escena": "Bolitas", "texto": "El hongo les da bolitas nutritivas: de eso comen las larvas y casi todas las adultas." },
-    { "escena": "Edad", "texto": "Sus ancestros ya cultivaban hongos hace unos sesenta y seis millones de años: mucho antes que los humanos." },
-    { "escena": "Pregunta", "texto": "Si todo el nido come de un solo cultivo, ¿qué pasa si le cae una plaga?" },
-    { "escena": "Plaga", "texto": "Hay un hongo parásito, Escovopsis, que ataca justo esos jardines." },
-    { "escena": "Estudio", "texto": "En 1999, un equipo de la Universidad de Toronto, en Panamá, halló su defensa:" },
-    { "escena": "Bacterias", "texto": "llevan en el cuerpo bacterias que fabrican antibióticos contra ese parásito." },
-    { "escena": "Todas", "texto": "Y estaban en todas las especies jardineras que revisaron." },
-    { "escena": "Chicatanas", "texto": "En México, a las arrieras con alas les dicen chicatanas, y hay quien se las come en salsa." },
-    { "escena": "Reina", "texto": "Cada futura reina sale con un pedacito del hongo guardado en una bolsita de la boca." },
-    { "escena": "Cierre", "texto": "Así que esa hojita no la cargan para comérsela: es abono para su granja de hongos." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esas arrieras no cargan las hojas para comérselas: son granjeras."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Las hojas son abono para un hongo que cultivan bajo tierra."
+    },
+    {
+      "escena": "Pasta",
+      "texto": "Las grandes cortan; las chiquitas las hacen pasta con saliva y la meten al jardín."
+    },
+    {
+      "escena": "Bolitas",
+      "texto": "El hongo les da bolitas nutritivas: de eso comen las larvas y casi todas las adultas."
+    },
+    {
+      "escena": "Edad",
+      "texto": "Sus ancestros ya cultivaban hongos hace unos sesenta y seis millones de años: mucho antes que los humanos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "Si todo el nido come de un solo cultivo, ¿qué pasa si le cae una plaga?"
+    },
+    {
+      "escena": "Plaga",
+      "texto": "Hay un hongo parásito, Escovopsis, que ataca justo esos jardines."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1999, un equipo de la Universidad de Toronto, en Panamá, halló su defensa:"
+    },
+    {
+      "escena": "Bacterias",
+      "texto": "llevan en el cuerpo bacterias que fabrican antibióticos contra ese parásito."
+    },
+    {
+      "escena": "Todas",
+      "texto": "Y estaban en todas las especies jardineras que revisaron."
+    },
+    {
+      "escena": "Chicatanas",
+      "texto": "En México, a las arrieras con alas les dicen chicatanas, y hay quien se las come en salsa."
+    },
+    {
+      "escena": "Reina",
+      "texto": "Cada futura reina sale con un pedacito del hongo guardado en una bolsita de la boca."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa hojita no la cargan para comérsela: es abono para su granja de hongos."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

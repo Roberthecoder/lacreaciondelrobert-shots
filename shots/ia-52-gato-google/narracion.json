@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Gato Google base narrada.dc.html",
   "salida": "Shot Gato Google narrado.dc.html",
   "nota": "Shot IA #52. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Esta cara borrosa es un gato que nadie le enseñó: salió de nuestros videos."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

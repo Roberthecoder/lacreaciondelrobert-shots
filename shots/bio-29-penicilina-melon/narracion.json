@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Penicilina base narrada.dc.html",
   "salida": "Shot Penicilina narrado.dc.html",
   "nota": "Shot Biotecnológico #29. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -52,5 +53,6 @@
       "texto": "Las cepas industriales aún descienden de él: tu penicilina salió de un melón podrido."
     }
   ],
-  "tanda": 4
+  "tanda": 4,
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Luna Horizonte base narrada.dc.html",
   "salida": "Shot Luna Horizonte narrado.dc.html",
   "nota": "Shot Científico #37. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que esa Luna gigante es real en tu cabeza, pero no en el cielo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

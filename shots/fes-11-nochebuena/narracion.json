@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Navidad",
   "serie_vinculada": "Biotecnológico",
   "velocidad": 1.0,
@@ -58,5 +59,6 @@
       "escena": "Cierre",
       "texto": "Así que tu nochebuena no tiene pétalos rojos: tiene hojas rojas, y una bacteria que la hizo frondosa."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

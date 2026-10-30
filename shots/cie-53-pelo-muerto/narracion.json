@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Pelo Muerto base narrada.dc.html",
   "salida": "Shot Pelo Muerto narrado.dc.html",
   "nota": "Shot Científico #53. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que ese crecimiento es una ilusión: no crece el pelo, se retira la piel."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

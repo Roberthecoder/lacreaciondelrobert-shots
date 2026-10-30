@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot TikTok base narrada.dc.html",
   "salida": "Shot TikTok narrado.dc.html",
   "nota": "Shot IA #20. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que no te lee la mente: tú se la enseñas con cada dedazo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

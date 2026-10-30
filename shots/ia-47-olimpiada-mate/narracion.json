@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Olimpiada base narrada.dc.html",
   "salida": "Shot Olimpiada narrado.dc.html",
   "nota": "Shot IA #47. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "En 2025, para ganarle, tendrías que ser de los veintiséis mejores… o resolver el seis."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

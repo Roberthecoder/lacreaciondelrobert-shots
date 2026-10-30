@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Pupila Piensa base narrada.dc.html",
   "salida": "Shot Pupila Piensa narrado.dc.html",
   "nota": "Shot Científico #40. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que si una cámara te mira a los ojos mientras resuelves algo difícil, puede medir tu esfuerzo."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

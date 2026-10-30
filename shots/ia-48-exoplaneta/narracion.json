@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Exoplaneta base narrada.dc.html",
   "salida": "Shot Exoplaneta narrado.dc.html",
   "nota": "Shot IA #48. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Ese parpadeo no es una falla: es un mundo entero pasando enfrente."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Día de Reyes",
   "serie_vinculada": "Ambiental",
   "velocidad": 1.0,
@@ -58,5 +59,6 @@
       "escena": "Cierre",
       "texto": "Así que ese cuadrito no es fruta: es un cactus de 25 años o más. Si tu rosca trae ate o papaya, esa biznaga sigue en el desierto."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

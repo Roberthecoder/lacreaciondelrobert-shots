@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Pie Dormido base narrada.dc.html",
   "salida": "Shot Pie Dormido narrado.dc.html",
   "nota": "Shot Científico #27. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Así que tu pie no se duerme: tus nervios hacen corto un ratito."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

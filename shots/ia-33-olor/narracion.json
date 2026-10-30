@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Olor base narrada.dc.html",
   "salida": "Shot Olor narrado.dc.html",
   "nota": "Shot IA #33. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Ese olor que sientes, una IA ya lo lee en un dibujo… sin olerlo nunca."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

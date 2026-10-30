@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Plastico base narrada.dc.html",
   "salida": "Shot Plastico narrado.dc.html",
   "nota": "Shot Fungi Mati #31. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Un hongo deshizo la mitad de un plástico en unos cinco días. Pero en un tubo, no en tu basura."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

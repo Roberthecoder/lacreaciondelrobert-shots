@@ -1,19 +1,54 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Basura base narrada.dc.html",
   "salida": "Shot Basura narrado.dc.html",
   "nota": "Shot Ambiental #54. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esta pila es la basura de un año de tu vida: casi cuatrocientos kilos." },
-    { "escena": "Dia", "texto": "Con datos de 2022, en México tocamos a poco más de un kilo por persona al día, contando casas, calles y negocios." },
-    { "escena": "Bolsa", "texto": "Cuatro de cada diez partes son orgánicas, sobre todo comida y jardín." },
-    { "escena": "Material", "texto": "Más de un tercio se podría aprovechar: plástico, cartón, vidrio, latas." },
-    { "escena": "Camion", "texto": "Pero el camión solo recoge setenta y siete de cada cien kilos." },
-    { "escena": "Pregunta", "texto": "¿Y a dónde va lo que sí se lleva?" },
-    { "escena": "Diagnostico", "texto": "Un diagnóstico de 2026 revisó dos mil doscientos cincuenta sitios de basura: solo cincuenta y dos son rellenos sanitarios." },
-    { "escena": "Destino", "texto": "De cada cien kilos que llegan a esos sitios, solo quince entran a un relleno; casi ochenta y cinco, a sitios que no cumplen la norma." },
-    { "escena": "Jalisco", "texto": "En Jalisco llegan ocho mil cuatrocientas toneladas diarias a esos sitios; menos de cien van a un relleno." },
-    { "escena": "Tratamiento", "texto": "Y en todo el país, solo el cinco por ciento de la basura recibe algún tratamiento." },
-    { "escena": "Cierre", "texto": "Tu pila de cuatrocientos kilos no desaparece al sacar la bolsa: casi siempre, solo cambia de lugar." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esta pila es la basura de un año de tu vida: casi cuatrocientos kilos."
+    },
+    {
+      "escena": "Dia",
+      "texto": "Con datos de 2022, en México tocamos a poco más de un kilo por persona al día, contando casas, calles y negocios."
+    },
+    {
+      "escena": "Bolsa",
+      "texto": "Cuatro de cada diez partes son orgánicas, sobre todo comida y jardín."
+    },
+    {
+      "escena": "Material",
+      "texto": "Más de un tercio se podría aprovechar: plástico, cartón, vidrio, latas."
+    },
+    {
+      "escena": "Camion",
+      "texto": "Pero el camión solo recoge setenta y siete de cada cien kilos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y a dónde va lo que sí se lleva?"
+    },
+    {
+      "escena": "Diagnostico",
+      "texto": "Un diagnóstico de 2026 revisó dos mil doscientos cincuenta sitios de basura: solo cincuenta y dos son rellenos sanitarios."
+    },
+    {
+      "escena": "Destino",
+      "texto": "De cada cien kilos que llegan a esos sitios, solo quince entran a un relleno; casi ochenta y cinco, a sitios que no cumplen la norma."
+    },
+    {
+      "escena": "Jalisco",
+      "texto": "En Jalisco llegan ocho mil cuatrocientas toneladas diarias a esos sitios; menos de cien van a un relleno."
+    },
+    {
+      "escena": "Tratamiento",
+      "texto": "Y en todo el país, solo el cinco por ciento de la basura recibe algún tratamiento."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Tu pila de cuatrocientos kilos no desaparece al sacar la bolsa: casi siempre, solo cambia de lugar."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

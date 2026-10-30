@@ -1,5 +1,6 @@
 {
-  "velocidad": 1.1,
+  "voz_aprobada": true,
+  "velocidad": 0.98,
   "dcHtml": "Shot Pilas base narrada.dc.html",
   "salida": "Shot Pilas narrado.dc.html",
   "nota": "Shot Ambiental #47. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "El número no tiene fuente clara, pero el consejo sí: no la tires, llévala a acopio."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

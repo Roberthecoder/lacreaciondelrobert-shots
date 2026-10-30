@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Polvo Sahara base narrada.dc.html",
   "salida": "Shot Polvo Sahara narrado.dc.html",
@@ -44,5 +45,6 @@
       "escena": "Cierre",
       "texto": "Así que ese cielo rojizo viene del mismo desierto cuyo polvo abona la selva tropical más grande del planeta."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

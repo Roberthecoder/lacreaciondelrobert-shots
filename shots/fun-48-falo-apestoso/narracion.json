@@ -1,21 +1,65 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Falo Apestoso base narrada.dc.html",
   "salida": "Shot Falo Apestoso narrado.dc.html",
   "nota": "Shot Fungi Mati #48. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese olor a carne podrida no viene de un animal muerto: viene de este hongo." },
-    { "escena": "Huevo", "texto": "Empieza como un huevo blanco de hasta seis centímetros, medio enterrado en el suelo." },
-    { "escena": "SinOlor", "texto": "Y ese huevo todavía no huele feo." },
-    { "escena": "Brota", "texto": "Un día se rompe y, en unas cuantas horas, sale un tallo blanco y hueco de hasta treinta centímetros." },
-    { "escena": "Baba", "texto": "Arriba trae una baba oscura, llena de esporas." },
-    { "escena": "Azufre", "texto": "Esa baba suelta gases con azufre, que son los que más apestan." },
-    { "escena": "Pregunta", "texto": "¿Y para qué querría un hongo oler tan feo?" },
-    { "escena": "Engano", "texto": "Para engañar a las moscas: llegan buscando carne podrida y se encuentran con la baba." },
-    { "escena": "Estudio", "texto": "En 1997, unos científicos de Irlanda vieron que las moscas que comían esa baba hacían popó más rápido que cuando comían estiércol o azúcar." },
-    { "escena": "Siembra", "texto": "Así van soltando montones de esporas, y otras se les pegan en las patas." },
-    { "escena": "Hembras", "texto": "Y llegan más moscas hembras que machos." },
-    { "escena": "Limpio", "texto": "En unas horas, la baba desaparece." },
-    { "escena": "Mexico", "texto": "En México hay parientes con un velo de encaje: en 1990 ya se conocían en diez estados." },
-    { "escena": "Cierre", "texto": "Así que ese olor no es un muerto: es un hongo pidiéndole a las moscas que lo siembren." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Ese olor a carne podrida no viene de un animal muerto: viene de este hongo."
+    },
+    {
+      "escena": "Huevo",
+      "texto": "Empieza como un huevo blanco de hasta seis centímetros, medio enterrado en el suelo."
+    },
+    {
+      "escena": "SinOlor",
+      "texto": "Y ese huevo todavía no huele feo."
+    },
+    {
+      "escena": "Brota",
+      "texto": "Un día se rompe y, en unas cuantas horas, sale un tallo blanco y hueco de hasta treinta centímetros."
+    },
+    {
+      "escena": "Baba",
+      "texto": "Arriba trae una baba oscura, llena de esporas."
+    },
+    {
+      "escena": "Azufre",
+      "texto": "Esa baba suelta gases con azufre, que son los que más apestan."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué querría un hongo oler tan feo?"
+    },
+    {
+      "escena": "Engano",
+      "texto": "Para engañar a las moscas: llegan buscando carne podrida y se encuentran con la baba."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1997, unos científicos de Irlanda vieron que las moscas que comían esa baba hacían popó más rápido que cuando comían estiércol o azúcar."
+    },
+    {
+      "escena": "Siembra",
+      "texto": "Así van soltando montones de esporas, y otras se les pegan en las patas."
+    },
+    {
+      "escena": "Hembras",
+      "texto": "Y llegan más moscas hembras que machos."
+    },
+    {
+      "escena": "Limpio",
+      "texto": "En unas horas, la baba desaparece."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México hay parientes con un velo de encaje: en 1990 ya se conocían en diez estados."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese olor no es un muerto: es un hongo pidiéndole a las moscas que lo siembren."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

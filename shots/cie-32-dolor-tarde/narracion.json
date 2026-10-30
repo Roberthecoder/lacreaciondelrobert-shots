@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Dolor Tarde base narrada.dc.html",
   "salida": "Shot Dolor Tarde narrado.dc.html",
   "nota": "Shot Científico #32. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Así que ese dolor que llega tarde no es tu imaginación: es la velocidad de tus nervios."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

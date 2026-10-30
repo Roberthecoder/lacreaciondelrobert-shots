@@ -1,18 +1,53 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Hielo base narrada.dc.html",
   "salida": "Shot Hielo narrado.dc.html",
   "nota": "Shot Químico #52. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese hielo de tu vaso no es agua apretada por el frío: es agua inflada, con huecos por dentro." },
-    { "escena": "Raro", "texto": "Casi todo líquido, al volverse sólido, se vuelve más denso. El agua hace lo contrario." },
-    { "escena": "Liquido", "texto": "En el agua líquida, las moléculas se jalan con puentes de hidrógeno que se rompen y se forman sin parar." },
-    { "escena": "Hexagonos", "texto": "Al congelarse, esos puentes se quedan fijos: arman hexágonos con un hueco en medio." },
-    { "escena": "Numero", "texto": "Por eso la misma agua, hecha hielo, ocupa como 9 por ciento más espacio, y flota." },
-    { "escena": "Pregunta", "texto": "¿Y qué pasaría si el hielo se hundiera?" },
-    { "escena": "Lago", "texto": "Los lagos se congelarían enteros. Pero el hielo se queda arriba, y debajo los peces pasan el invierno en agua líquida." },
-    { "escena": "Galileo", "texto": "En 1612, en Florencia, Galileo publicó su respuesta a quienes decían que el hielo flota por ser plano: empújalo al fondo y sube solo." },
-    { "escena": "Tuberias", "texto": "Y esa misma hinchazón revienta tuberías cuando se congelan." },
-    { "escena": "Curioso", "texto": "Lo curioso: el hielo de agua pesada, con hidrógenos más pesados, sí se hunde en agua normal." },
-    { "escena": "Cierre", "texto": "Así que ese hielo no es agua apretada: es agua llena de huecos." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Ese hielo de tu vaso no es agua apretada por el frío: es agua inflada, con huecos por dentro."
+    },
+    {
+      "escena": "Raro",
+      "texto": "Casi todo líquido, al volverse sólido, se vuelve más denso. El agua hace lo contrario."
+    },
+    {
+      "escena": "Liquido",
+      "texto": "En el agua líquida, las moléculas se jalan con puentes de hidrógeno que se rompen y se forman sin parar."
+    },
+    {
+      "escena": "Hexagonos",
+      "texto": "Al congelarse, esos puentes se quedan fijos: arman hexágonos con un hueco en medio."
+    },
+    {
+      "escena": "Numero",
+      "texto": "Por eso la misma agua, hecha hielo, ocupa como 9 por ciento más espacio, y flota."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué pasaría si el hielo se hundiera?"
+    },
+    {
+      "escena": "Lago",
+      "texto": "Los lagos se congelarían enteros. Pero el hielo se queda arriba, y debajo los peces pasan el invierno en agua líquida."
+    },
+    {
+      "escena": "Galileo",
+      "texto": "En 1612, en Florencia, Galileo publicó su respuesta a quienes decían que el hielo flota por ser plano: empújalo al fondo y sube solo."
+    },
+    {
+      "escena": "Tuberias",
+      "texto": "Y esa misma hinchazón revienta tuberías cuando se congelan."
+    },
+    {
+      "escena": "Curioso",
+      "texto": "Lo curioso: el hielo de agua pesada, con hidrógenos más pesados, sí se hunde en agua normal."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese hielo no es agua apretada: es agua llena de huecos."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

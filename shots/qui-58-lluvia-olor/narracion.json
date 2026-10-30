@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Lluvia base narrada.dc.html",
   "salida": "Shot Lluvia narrado.dc.html",
   "nota": "Shot Químico #58. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que ese olor a lluvia no es la lluvia: es, sobre todo, el aroma de bacterias de la tierra pidiendo aventón."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Luz base narrada.dc.html",
   "salida": "Shot Luz narrado.dc.html",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Así, la Vía Láctea podría volver a asomarse sobre tu casa."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

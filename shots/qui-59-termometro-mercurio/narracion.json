@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Mercurio base narrada.dc.html",
   "salida": "Shot Mercurio narrado.dc.html",
   "nota": "Shot Químico #59. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Nada de escoba ni aspiradora: lo peligroso es lo que no ves."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

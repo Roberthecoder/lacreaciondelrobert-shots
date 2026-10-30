@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Vainilla base narrada.dc.html",
   "salida": "Shot Vainilla narrado.dc.html",
   "nota": "Shot Biotecnológico #23. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -60,5 +61,6 @@
       "texto": "Tu helado sabe a vainilla, pero su vainillina quizá vino del petróleo o de un microbio."
     }
   ],
-  "tanda": 11
+  "tanda": 11,
+  "mezcla": "oficial-30oct"
 }

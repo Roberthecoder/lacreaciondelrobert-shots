@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Mamut base narrada.dc.html",
   "salida": "Shot Mamut narrado.dc.html",
   "nota": "Shot Biotecnológico #53. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -56,5 +57,6 @@
       "texto": "¿Revivir un mamut? Nadie lo ha logrado: por ahora, lo que sí nació es un ratón muy peludo."
     }
   ],
-  "tanda": 9
+  "tanda": 9,
+  "mezcla": "oficial-30oct"
 }

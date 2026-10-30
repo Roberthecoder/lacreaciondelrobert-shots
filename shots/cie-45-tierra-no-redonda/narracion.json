@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Tierra No Redonda base narrada.dc.html",
   "salida": "Shot Tierra No Redonda narrado.dc.html",
   "nota": "Shot Científico #45. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Así que la Tierra no es una esfera: es una pelota que de tanto girar se puso un poquito panzona."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

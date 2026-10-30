@@ -1,19 +1,54 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Suelo base narrada.dc.html",
   "salida": "Shot Suelo narrado.dc.html",
   "nota": "Shot Ambiental #23. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esta tierra no está muerta: en una cucharada hay más seres vivos que personas en el planeta." },
-    { "escena": "Microbios", "texto": "Bacterias y hongos se comen las hojas y raíces muertas y sueltan sus nutrientes." },
-    { "escena": "Acaros", "texto": "Ácaros y colémbolos aceleran ese trabajo." },
-    { "escena": "Lombrices", "texto": "Las lombrices pegan la tierra en grumos que el agua no se lleva tan fácil." },
-    { "escena": "Pregunta", "texto": "¿Y cuánto tarda en formarse un centímetro de suelo?" },
-    { "escena": "Siglos", "texto": "Según la FAO, cientos de años: hasta mil. Y se puede perder en minutos." },
-    { "escena": "Estudio", "texto": "En 2017, un equipo de científicos europeos calculó que, en 2012, la lluvia arrastró unos treinta y seis mil millones de toneladas de suelo." },
-    { "escena": "Degradado", "texto": "Y en 2015, la FAO estimó que un tercio de las tierras ya estaba degradado." },
-    { "escena": "Especies", "texto": "Un estudio suizo de 2023 calcula que en el suelo vive cerca de seis de cada diez especies del planeta." },
-    { "escena": "Milpa", "texto": "Y de ahí sale el noventa y cinco por ciento de lo que comes: el frijol de la milpa recibe nitrógeno de bacterias en sus raíces." },
-    { "escena": "Cierre", "texto": "La próxima vez que pises tierra, acuérdate: no está muerta, está viva, y la lluvia se la puede llevar." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Esta tierra no está muerta: en una cucharada hay más seres vivos que personas en el planeta."
+    },
+    {
+      "escena": "Microbios",
+      "texto": "Bacterias y hongos se comen las hojas y raíces muertas y sueltan sus nutrientes."
+    },
+    {
+      "escena": "Acaros",
+      "texto": "Ácaros y colémbolos aceleran ese trabajo."
+    },
+    {
+      "escena": "Lombrices",
+      "texto": "Las lombrices pegan la tierra en grumos que el agua no se lleva tan fácil."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto tarda en formarse un centímetro de suelo?"
+    },
+    {
+      "escena": "Siglos",
+      "texto": "Según la FAO, cientos de años: hasta mil. Y se puede perder en minutos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2017, un equipo de científicos europeos calculó que, en 2012, la lluvia arrastró unos treinta y seis mil millones de toneladas de suelo."
+    },
+    {
+      "escena": "Degradado",
+      "texto": "Y en 2015, la FAO estimó que un tercio de las tierras ya estaba degradado."
+    },
+    {
+      "escena": "Especies",
+      "texto": "Un estudio suizo de 2023 calcula que en el suelo vive cerca de seis de cada diez especies del planeta."
+    },
+    {
+      "escena": "Milpa",
+      "texto": "Y de ahí sale el noventa y cinco por ciento de lo que comes: el frijol de la milpa recibe nitrógeno de bacterias en sus raíces."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "La próxima vez que pises tierra, acuérdate: no está muerta, está viva, y la lluvia se la puede llevar."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

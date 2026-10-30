@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Tripa Ruge base narrada.dc.html",
   "salida": "Shot Tripa Ruge narrado.dc.html",
   "nota": "Shot Científico #43. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que tu panza no te está regañando: está haciendo la limpieza."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

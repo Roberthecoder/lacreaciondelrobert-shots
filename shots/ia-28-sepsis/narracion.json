@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Sepsis base narrada.dc.html",
   "salida": "Shot Sepsis narrado.dc.html",
   "nota": "Shot IA #28. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Y una alarma que no ve dos de cada tres casos no te cuida."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

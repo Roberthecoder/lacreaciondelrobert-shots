@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Maceta base narrada.dc.html",
   "salida": "Shot Maceta narrado.dc.html",
   "nota": "Shot Fungi Mati #27. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Así que no tires tu planta: ese hongo no la está matando, está reciclando su tierra."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

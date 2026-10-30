@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot NobelFisica base narrada.dc.html",
   "salida": "Shot NobelFisica narrado.dc.html",
   "nota": "Shot IA #54. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Estas flechitas no solo hacen imanes: le enseñaron a recordar a una máquina."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Tempeh base narrada.dc.html",
   "salida": "Shot Tempeh narrado.dc.html",
   "nota": "Shot Fungi Mati #36. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que no es soya prensada: es soya que un hongo amarró con sus hilos."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Waymo base narrada.dc.html",
   "salida": "Shot Waymo narrado.dc.html",
   "nota": "Shot IA #36. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Así que tú contra el auto sin nadie: en sus calles, él va ganando. Pero hay que seguir revisando sus números."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Taxol base narrada.dc.html",
   "salida": "Shot Taxol narrado.dc.html",
   "nota": "Shot Biotecnológico #45. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -52,5 +53,6 @@
       "texto": "Esa quimio la escondía un árbol: hoy también crece en un tanque y el árbol sigue en pie."
     }
   ],
-  "tanda": 8
+  "tanda": 8,
+  "mezcla": "oficial-30oct"
 }

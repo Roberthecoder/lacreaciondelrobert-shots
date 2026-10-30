@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Otis base narrada.dc.html",
   "salida": "Shot Otis narrado.dc.html",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Un día antes: poco más de cien. Realidad: casi doscientos sesenta."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

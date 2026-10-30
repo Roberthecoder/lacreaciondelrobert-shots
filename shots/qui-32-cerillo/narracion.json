@@ -1,19 +1,57 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Cerillo base narrada.dc.html",
   "salida": "Shot Cerillo narrado.dc.html",
   "nota": "Shot Químico #32. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese cerillo no trae el fuego en la cabeza: el fósforo está en la tira de la caja." },
-    { "escena": "Cabeza", "texto": "La cabeza tiene clorato de potasio, que suelta oxígeno, y azufre, que arde." },
-    { "escena": "Tira", "texto": "La tira tiene fósforo rojo, pegamento y vidrio molido." },
-    { "escena": "Friccion", "texto": "Al frotar, el calor de la fricción convierte una pizca de fósforo rojo en fósforo blanco." },
-    { "escena": "Chispa", "texto": "Y el fósforo blanco se prende solo al tocar el aire." },
-    { "escena": "Llama", "texto": "Esa chispa hace que el clorato suelte oxígeno; arde el azufre y luego la madera." },
-    { "escena": "Pregunta", "texto": "¿Y por qué no ponerlo en la cabeza, como antes?" },
-    { "escena": "Huelga", "texto": "En 1888, en Londres, 1400 mujeres de una fábrica de cerillos que usaba fósforo blanco se fueron a huelga por despidos y multas." },
-    { "escena": "Quijada", "texto": "Ahí, su humo podía matar el hueso de la quijada: entre 1882 y 1897, casi 1 de cada 5 enfermos murió." },
-    { "escena": "Berna", "texto": "En 1906, en Berna, Suiza, varios países firmaron prohibir esos cerillos." },
-    { "escena": "Brillo", "texto": "Lo escalofriante: ese fósforo brilla en la oscuridad, y a algunos enfermos les brillaban las encías." },
-    { "escena": "Cierre", "texto": "Así que tu cerillo no trae el fuego en la cabeza: lo trae la caja." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Ese cerillo no trae el fuego en la cabeza: el fósforo está en la tira de la caja."
+    },
+    {
+      "escena": "Cabeza",
+      "texto": "La cabeza tiene clorato de potasio, que suelta oxígeno, y azufre, que arde."
+    },
+    {
+      "escena": "Tira",
+      "texto": "La tira tiene fósforo rojo, pegamento y vidrio molido."
+    },
+    {
+      "escena": "Friccion",
+      "texto": "Al frotar, el calor de la fricción convierte una pizca de fósforo rojo en fósforo blanco."
+    },
+    {
+      "escena": "Chispa",
+      "texto": "Y el fósforo blanco se prende solo al tocar el aire."
+    },
+    {
+      "escena": "Llama",
+      "texto": "Esa chispa hace que el clorato suelte oxígeno; arde el azufre y luego la madera."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué no ponerlo en la cabeza, como antes?"
+    },
+    {
+      "escena": "Huelga",
+      "texto": "En 1888, en Londres, 1400 mujeres de una fábrica de cerillos que usaba fósforo blanco se fueron a huelga por despidos y multas."
+    },
+    {
+      "escena": "Quijada",
+      "texto": "Ahí, su humo podía matar el hueso de la quijada: entre 1882 y 1897, casi 1 de cada 5 enfermos murió."
+    },
+    {
+      "escena": "Berna",
+      "texto": "En 1906, en Berna, Suiza, varios países firmaron prohibir esos cerillos."
+    },
+    {
+      "escena": "Brillo",
+      "texto": "Lo escalofriante: ese fósforo brilla en la oscuridad, y a algunos enfermos les brillaban las encías."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu cerillo no trae el fuego en la cabeza: lo trae la caja."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

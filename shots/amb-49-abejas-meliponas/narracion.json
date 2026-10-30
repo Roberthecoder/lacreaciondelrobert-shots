@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Meliponas base narrada.dc.html",
   "salida": "Shot Meliponas narrado.dc.html",
@@ -44,5 +45,6 @@
       "escena": "Cierre",
       "texto": "Así que esa abeja que no pica es una tradición maya de siglos que necesita quien la cuide."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

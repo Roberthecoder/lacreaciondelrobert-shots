@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Genoma base narrada.dc.html",
   "salida": "Shot Genoma narrado.dc.html",
   "nota": "Shot Biotecnológico #38. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -60,5 +61,6 @@
       "texto": "Tu genoma cabe en una pantalla, y leerlo pasó de casi 100 millones de dólares a unos 500."
     }
   ],
-  "tanda": 6
+  "tanda": 6,
+  "mezcla": "oficial-30oct"
 }

@@ -1,18 +1,53 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Lapiz base narrada.dc.html",
   "salida": "Shot Lapiz narrado.dc.html",
   "nota": "Shot Químico #45. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "La punta de tu lápiz no es plomo: es grafito, el mismo carbono que forma un diamante." },
-    { "escena": "Mina", "texto": "La mina es grafito mezclado con arcilla; plomo, nunca ha tenido." },
-    { "escena": "Capas", "texto": "Por dentro, el grafito son hojas planas de carbono, como un panal de hexágonos, apiladas una sobre otra." },
-    { "escena": "Desliza", "texto": "Entre hoja y hoja la unión es débil: al escribir, se resbalan como cartas de una baraja y se quedan en el papel." },
-    { "escena": "Diamante", "texto": "En el diamante, en cambio, cada carbono se une a otros 4 en una red de tres dimensiones." },
-    { "escena": "Duro", "texto": "Por eso es durísimo: con diamantes se corta roca." },
-    { "escena": "Pregunta", "texto": "¿Y si a tu lápiz le quitas una sola hoja?" },
-    { "escena": "Estudio", "texto": "En 2004, en Manchester, Inglaterra, Geim y Novoselov le arrancaron capas al grafito con cinta adhesiva, una y otra vez." },
-    { "escena": "Grafeno", "texto": "Así llegaron al grafeno, una capa de un solo átomo, y en 2010 les dieron el Nobel de Física." },
-    { "escena": "Curioso", "texto": "Lo curioso: un milímetro de grafito trae unos 3 millones de capas, y al escribir quizá dejaste una sola en el papel." },
-    { "escena": "Cierre", "texto": "Así que tu lápiz no es plomo: es carbono, acomodado distinto que en un diamante." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "La punta de tu lápiz no es plomo: es grafito, el mismo carbono que forma un diamante."
+    },
+    {
+      "escena": "Mina",
+      "texto": "La mina es grafito mezclado con arcilla; plomo, nunca ha tenido."
+    },
+    {
+      "escena": "Capas",
+      "texto": "Por dentro, el grafito son hojas planas de carbono, como un panal de hexágonos, apiladas una sobre otra."
+    },
+    {
+      "escena": "Desliza",
+      "texto": "Entre hoja y hoja la unión es débil: al escribir, se resbalan como cartas de una baraja y se quedan en el papel."
+    },
+    {
+      "escena": "Diamante",
+      "texto": "En el diamante, en cambio, cada carbono se une a otros 4 en una red de tres dimensiones."
+    },
+    {
+      "escena": "Duro",
+      "texto": "Por eso es durísimo: con diamantes se corta roca."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si a tu lápiz le quitas una sola hoja?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2004, en Manchester, Inglaterra, Geim y Novoselov le arrancaron capas al grafito con cinta adhesiva, una y otra vez."
+    },
+    {
+      "escena": "Grafeno",
+      "texto": "Así llegaron al grafeno, una capa de un solo átomo, y en 2010 les dieron el Nobel de Física."
+    },
+    {
+      "escena": "Curioso",
+      "texto": "Lo curioso: un milímetro de grafito trae unos 3 millones de capas, y al escribir quizá dejaste una sola en el papel."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu lápiz no es plomo: es carbono, acomodado distinto que en un diamante."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

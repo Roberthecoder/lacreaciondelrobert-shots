@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Cenotes base narrada.dc.html",
   "salida": "Shot Cenotes narrado.dc.html",
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Así que ese hoyo no es un estanque: es una ventana al agua que bebe la península."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

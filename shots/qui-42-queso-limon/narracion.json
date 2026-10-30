@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Queso base narrada.dc.html",
   "salida": "Shot Queso narrado.dc.html",
   "nota": "Shot Químico #42. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que esa leche no se echó a perder: el limón la convirtió en queso."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
