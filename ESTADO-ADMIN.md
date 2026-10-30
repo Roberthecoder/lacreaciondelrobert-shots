@@ -42,8 +42,14 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   presencia (3 kHz), narrado a −7.1 LUFS y sin voz a −11, pico −1.5 dB. Todo en `motor/mezcla.json` (+ narrar.mjs y render.mjs).
   Robert: "G3 suena perfecto al 70 %... quiero que al 50 % suene como al 70 %, potente pero bonito, justo para TikTok".
 - Duración con la voz nueva: ~69–71 s (Robert: "así está excelente").
-- Generación de TODAS las voces: rama `voces/v4`, tandas de 15, sesión `session_0157fpgySCQqJwj5CPC1oMyj`. ~370 shots ≈ 370,000
-  créditos. Si se detiene sin terminar, reactivarla ("sigue con las voces"). Al final ella junta voces/v4 a main con [sin render].
+- 30 oct: HECHAS las voces de los primeros 121 shots por fecha de publicación (1 nov – 8 dic), juntadas a main y subidas a la Sala
+  como «Narrado listo». Orden y caracteres en `calendario/orden_voces.txt` (fecha · clave · caracteres · tenía voz).
+  Créditos: Robert tenía 119,725; se usaron ~117,000. FALTAN los shots 122–370 (≈240,000 caracteres): esperar créditos
+  (renovación mensual ~121,000 → ~120 shots por mes, siempre los siguientes por fecha) o que Robert compre extra.
+- Cómo generar la siguiente tanda: rama `voces/v4` desde main; poner "voz_aprobada": true (y "mezcla": "oficial-30oct" para forzar
+  render) a 15 shots por push, esperar cada run; NO usar la sesión de voces (su filtro pide la aprobación directa de Robert).
+  Ojo: un narrado < 60.5 s falla el candado → "velocidad": 0.98 en su narracion.json (sin créditos). Luego subir a la Sala
+  (motor/sala.py con los MP4 del Release `borradores-voces-v4`) y juntar a main con [sin render].
 
 ## (HISTORIA) VOZ EN PAUSA (29 oct, Robert) — ya no aplica desde el 30 oct: "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
 - Las 30 aprobaciones que esperaban créditos se marcaron `aprobado:false, en_pausa:true` en la Sala. NO generar ninguna voz
