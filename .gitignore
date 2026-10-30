@@ -9,3 +9,6 @@ shots/*/voz/*.wav
 shots/*/assets/musica_narrada.wav
 shots/*/assets/mezcla_narrada.wav
 shots/*/assets/musica_demo.wav
+
+# borradores de render de los videos largos (pesados; se regeneran)
+largos/*/borradores/

@@ -1,0 +1,112 @@
+name: Render del largo (en paralelo)
+
+# Renderiza un video largo partido en pedazos, cada uno en su propia máquina a la vez,
+# y al final los une con el acabado de película (grano, viñeta y color).
+# Se lanza solo al hacer push a una rama "largo-render/…" que toque largos/.
+# El video final queda en Releases → "Largo · <rama>" (y como artifact por 3 días).
+on:
+  push:
+    branches: ['largo-render/**']
+    paths: ['largos/**', '.github/workflows/render-largo.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-largo-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  LARGO: largos/000-que-es-la-creacion
+  HTML: Largo 00.dc.html
+  FPS: '24'
+  PEDAZO: '20'   # segundos de video por máquina
+
+jobs:
+  partir:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      pedazos: ${{ steps.p.outputs.pedazos }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        run: |
+          node -e '
+            const fs = require("fs");
+            globalThis.window = {};
+            new Function(fs.readFileSync(process.env.LARGO + "/video/escenas.js", "utf8"))();
+            let t = 0;
+            for (const c of window.CAPS) { if (c.tarjeta !== false) t += 3.2; for (const l of c.lineas) t += l.d || Math.max(2.2, l.t.length / 15 + 0.45); }
+            t += 1;
+            const P = +process.env.PEDAZO, n = Math.ceil(t / P);
+            const lista = Array.from({ length: n }, (_, i) => ({ i: String(i + 1).padStart(3, "0"), desde: i * P, hasta: +Math.min(t, (i + 1) * P).toFixed(3) }));
+            console.log(`Total ${t.toFixed(1)} s en ${n} pedazos`);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, "pedazos=" + JSON.stringify(lista) + "\n");
+          '
+
+  render:
+    needs: partir
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        pedazo: ${{ fromJson(needs.partir.outputs.pedazos) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar ffmpeg y Chromium
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji
+          cd motor && npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Renderizar pedazo ${{ matrix.pedazo.i }} (${{ matrix.pedazo.desde }}–${{ matrix.pedazo.hasta }} s)
+        run: |
+          mkdir -p salida
+          for intento in 1 2; do
+            node motor/render.mjs "$LARGO" "$HTML" "salida/tramo_${{ matrix.pedazo.i }}.mp4" --horizontal --fps "$FPS" --desde ${{ matrix.pedazo.desde }} --hasta ${{ matrix.pedazo.hasta }} && break
+            echo "Reintento $intento"
+          done
+          test -f "salida/tramo_${{ matrix.pedazo.i }}.mp4"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tramo-${{ matrix.pedazo.i }}
+          path: salida/tramo_${{ matrix.pedazo.i }}.mp4
+          retention-days: 3
+
+  unir:
+    needs: render
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: tramo-*
+          merge-multiple: true
+          path: tramos
+      - name: Unir y aplicar el acabado de película
+        run: |
+          ls tramos | sort | sed "s#^#file '$PWD/tramos/#; s#\$#'#" > lista.txt
+          wc -l lista.txt
+          ffmpeg -y -loglevel error -stats -f concat -safe 0 -i lista.txt \
+            -vf "colorbalance=rs=-0.03:bs=0.05:rm=0.01:bm=-0.01:rh=0.05:gh=0.015:bh=-0.04,eq=contrast=1.05:saturation=1.04,vignette=angle=PI/4.6,noise=c0s=10:c0f=t+u,format=yuv420p" \
+            -c:v libx264 -preset medium -crf 18 -r "$FPS" -movflags +faststart largo00_cine_mudo.mp4
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 largo00_cine_mudo.mp4
+      - name: Publicar en Releases (privado, igual que el repositorio)
+        run: |
+          TAG="largo-$(echo '${{ github.ref_name }}' | tr '/' '-')"
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --prerelease --title "Largo · ${{ github.ref_name }}" --notes "Video largo renderizado en la nube (sin voz). Se reemplaza en cada render."
+          gh release upload "$TAG" largo00_cine_mudo.mp4 --clobber
+      - uses: actions/upload-artifact@v4
+        with:
+          name: largo00_cine_mudo
+          path: largo00_cine_mudo.mp4
+          retention-days: 3

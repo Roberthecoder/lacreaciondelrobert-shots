@@ -12,11 +12,14 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const NM = path.join(HERE, 'node_modules');
 const args = process.argv.slice(2);
 const opt = (k, d) => { const i = args.indexOf('--' + k); return i >= 0 ? args[i + 1] : d; };
+// --horizontal: video largo 16:9 (1920×1080); sin la bandera, shot vertical 1080×1920.
+const HOR = args.includes('--horizontal');
+const VW = HOR ? 1920 : 1080, VH = HOR ? 1080 : 1920;
 const [dir, page, out, ts] = args;
 const times = ts.split(',').map(Number);
 const COLS = +opt('cols', 4), TW = +opt('ancho', 270);
 
-const MIME = { '.html': 'text/html', '.js': 'application/javascript', '.jsx': 'application/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.wav': 'audio/wav', '.mp4': 'video/mp4' };
+const MIME = { '.html': 'text/html', '.js': 'application/javascript', '.jsx': 'application/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.wav': 'audio/wav', '.mp4': 'video/mp4' };
 const root = path.resolve(dir);
 const server = http.createServer((req, res) => {
   const f = path.join(root, decodeURIComponent(new URL(req.url, 'http://x').pathname));
@@ -26,7 +29,7 @@ const server = http.createServer((req, res) => {
 }).listen(0);
 
 const browser = await chromium.launch({ channel: process.env.NAVEGADOR || undefined });
-const p = await browser.newPage({ viewport: { width: 1080, height: 1990 } });
+const p = await browser.newPage({ viewport: { width: VW, height: VH + 70 } });
 await p.route(/unpkg\.com/, (r) => {
   const u = r.request().url();
   const f = u.includes('react-dom') ? 'react-dom/umd/react-dom.production.min.js' : u.includes('babel') ? '@babel/standalone/babel.min.js' : 'react/umd/react.production.min.js';
@@ -37,8 +40,10 @@ p.on('pageerror', (e) => errs.push(e.message));
 p.on('console', (m) => { if (m.type() === 'error' || /FAIL|rror/.test(m.text())) errs.push(m.text().slice(0, 600)); });
 await p.goto(`http://localhost:${server.address().port}/${encodeURIComponent(page)}`);
 const SEL = '[data-om-exportable-video-with-duration-secs]';
-try { await p.waitForSelector(SEL, { timeout: 30000 }); } catch { console.error('No cargó el escenario. Errores:\n' + errs.join('\n')); process.exit(1); }
+try { await p.waitForSelector(SEL, { timeout: 120000 }); } catch { console.error('No cargó el escenario. Errores:\n' + errs.join('\n')); process.exit(1); }
 await p.evaluate(() => document.fonts.ready);
+// Videos largos: esperar a que todas las fotos estén descargadas y decodificadas.
+await p.evaluate(() => window.__precarga || null);
 await p.waitForTimeout(800);
 const clip = await p.evaluate((SEL) => { const r = document.querySelector(SEL).getBoundingClientRect(); return { x: r.x, y: r.y, width: r.width, height: r.height }; }, SEL);
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'prev-'));
