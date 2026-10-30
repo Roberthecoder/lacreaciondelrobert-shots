@@ -20,7 +20,7 @@ on:
 
 permissions:
   actions: write
-  contents: read
+  contents: write   # anota cada día en publicar/diario.log (GitHub apaga las tareas programadas de repos sin cambios en 60 días)
 
 concurrency:
   group: publicacion-diaria
@@ -62,4 +62,11 @@ jobs:
               echo "- $K: FALLÓ ([detalle](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RID))" >> "$GITHUB_STEP_SUMMARY"; MAL=1
             fi
           done
+          # Bitácora diaria en el repo: deja constancia y mantiene vivo el repo (si no, GitHub apaga el horario a los 60 días).
+          if [ "$MODO" = "real" ]; then
+            git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            echo "$F · $(echo $KS | tr '\n' ' ') · $([ $MAL = 0 ] && echo ok || echo con-fallas)" >> publicar/diario.log
+            git add publicar/diario.log && git commit -qm "Publicación diaria $F [sin render]" && \
+              for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+          fi
           exit $MAL
