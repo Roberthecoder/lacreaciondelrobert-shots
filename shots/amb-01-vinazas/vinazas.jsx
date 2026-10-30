@@ -305,7 +305,7 @@ function VinazasNarrado() {
       <NumeroGigante T={T} at={K.D + 0.4} until={K.A - 0.3} valor={12} prefijo="×" etiqueta="litros de vinaza por litro" y={470} tam={190} />
       <Chip T={T} at={K.A + 2.4} until={K.R - 0.3} texto="1 L de vinaza → 20 L de agua" y={1175} tam={40} borde={VIN2} />
       <Medidor T={T} at={K.R + 1.4} until={K.P - 0.3} etiqueta="OXÍGENO EN EL AGUA" valor={(t) => 1 - kprog(t, K.R + 1.8, K.P - 0.6)} y={400} color={KC.cyan} />
-      <Lupa T={T} at={K.R + 0.9} until={K.P - 0.3} x={700} y={800} r={190} fx={330} fy={1000} interior={(t, r) => <RioMicro T={t} r={r} t0={K.R + 1} />} etiqueta="RAYOS X · bacterias" tinte={KC.mint} />
+      <Lupa T={T} at={K.R + 0.9} until={K.P - 0.3} x={700} y={800} r={190} fx={330} fy={1000} interior={(t, r) => <RioMicro T={t} r={r} t0={K.R + 1} />} etiqueta="AL MICROSCOPIO · bacterias" tinte={KC.mint} />
       <Chip T={T} at={K.Re + 0.4} until={K.E - 0.3} texto="reactor anaerobio (sin aire)" x={620} y={400} tam={38} borde={KC.lilac} mono />
       <Etq T={T} at={K.Re + 1.8} until={K.E - 0.3} x={600} y={440} texto="biogás (metano)" color="#7fd3ff" />
       <Etq T={T} at={K.Re + 0.9} until={K.E - 0.3} x={560} y={1500} texto="microbios" color={KC.lilac} />

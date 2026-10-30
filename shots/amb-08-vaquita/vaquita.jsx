@@ -157,7 +157,7 @@ function VaquitaShot() {
       <Subtitulo T={T} idx={5} at={K.Ca + 0.1} until={K.E - 0.1} texto="1997: 567. *2015: 59.*" />
       <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.Cr - 0.1} texto="Septiembre de 2025: *barcos y micrófonos.*" />
       <Subtitulo T={T} idx={7} at={K.Cr + 0.1} until={K.B - 0.1} texto="Vieron crías: *una es de Frida.*" />
-      <Subtitulo T={T} idx={8} at={K.B + 0.1} until={K.C - 0.1} texto="En 2025: *casi todas junto a los bloques.*" />
+      <Subtitulo T={T} idx={8} at={K.B + 0.1} until={K.C - 0.1} texto="En 2025: *8 de cada 10 junto a los bloques.*" />
       <Subtitulo T={T} idx={9} at={K.C + 0.1} until={K.Ou - 0.1} texto="Pocas, pero *siguen teniendo crías.*" />
 
       <Robert T={T} apariciones={[

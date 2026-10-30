@@ -97,15 +97,22 @@ if (outroFile) {
 }
 if (audio) inputs.push('-i', audio);
 const map = ['-map', v.startsWith('[0') ? '0:v' : v];
-// Volumen final de TODAS las versiones (29 oct 2026): −13 LUFS y pico −1 dB, como se escucha en redes con el cel al 60–70 %.
-// loudnorm en dos pasadas: primero mide, luego ajusta con esas medidas (más preciso que una sola pasada).
+// Volumen final (sonido oficial elegido por Robert, 30 oct 2026, motor/mezcla.json): narrado a −7.1 LUFS (nivel TikTok,
+// suena fuerte con el cel al 50 %) y la versión de revisión sin voz a −11. Se sube la ganancia hasta llegar al objetivo
+// con un limitador transparente (pico −1.5 dB); los graves ya vienen domados desde la mezcla, así que no distorsiona.
 let master = [];
 if (audio) {
   const { spawnSync } = await import('node:child_process');
-  const r = spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-i', audio, '-af', 'loudnorm=I=-13:TP=-1:LRA=11:print_format=json', '-f', 'null', '-'], { encoding: 'utf8' });
-  const j = JSON.parse((r.stderr || '').slice((r.stderr || '').lastIndexOf('{')));
-  master = ['-af', `loudnorm=I=-13:TP=-1:LRA=11:measured_I=${j.input_i}:measured_TP=${j.input_tp}:measured_LRA=${j.input_lra}:measured_thresh=${j.input_thresh}:offset=${j.target_offset}:linear=true,aresample=48000`];
-  console.log(`Volumen: ${j.input_i} LUFS → −13 LUFS`);
+  const MZ = JSON.parse(fs.readFileSync(new URL('./mezcla.json', import.meta.url), 'utf8'));
+  const meta = /narrad/.test(path.basename(audio)) ? MZ.final_lufs_narrado : MZ.final_lufs_sin_voz;
+  const lim = 'alimiter=limit=0.84:attack=3:release=80:asc=1:level=false';
+  const medirI = (af) => { const r = spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-i', audio, '-af', `${af}ebur128`, '-f', 'null', '-'], { encoding: 'utf8' });
+    const m = [...(r.stderr || '').matchAll(/I:\s+(-?[\d.]+) LUFS/g)].at(-1); return m ? +m[1] : -23; };
+  const i0 = medirI('');
+  let g = meta - i0;
+  for (let k = 0; k < 4; k++) g += meta - medirI(`volume=${g.toFixed(2)}dB,${lim},`);
+  master = ['-af', `volume=${g.toFixed(2)}dB,${lim},aresample=48000`];
+  console.log(`Volumen: ${i0} LUFS → ${meta} LUFS (ganancia ${g.toFixed(1)} dB)`);
 }
 if (audio) map.push('-map', `${outroFile ? 2 : 1}:a`, ...master, '-c:a', 'aac', '-b:a', '192k', '-shortest');
 await run([...inputs, ...(filters.length ? ['-filter_complex', filters.join(';')] : []), ...map, '-c:v', 'libx264', '-crf', '18', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', out]);

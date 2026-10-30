@@ -186,7 +186,7 @@ function BioplasticosNarrado() {
       <Etq T={T} at={K.Q + 1.8} until={K.U - 0.3} x={700} y={600} texto="bacterias" color={KC.ink} />
       <Chip T={T} at={K.Q + 2.6} until={K.U - 0.3} texto="ácido láctico → PLA" y={940} tam={42} />
       <Medidor T={T} at={K.U + 0.3} until={K.Do - 0.3} etiqueta="TEMPERATURA" valor={(t) => klerp(25, 58, kprog(t, K.U + 0.5, K.U + 3)) / 70} texto={(v) => Math.round(v * 70) + ' °C'} y={450} color={KC.red} />
-      <Lupa T={T} at={K.U + 1.6} until={K.Do - 0.3} x={540} y={830} r={230} fx={480} fy={1150} interior={(t, r) => <CadenaPLA T={t} r={r} corte={kprog(t, K.U + 3, K.Do - 0.6)} />} etiqueta="RAYOS X · cadena de PLA + agua" tinte={KC.cyan} />
+      <Lupa T={T} at={K.U + 1.6} until={K.Do - 0.3} x={540} y={830} r={230} fx={480} fy={1150} interior={(t, r) => <CadenaPLA T={t} r={r} corte={kprog(t, K.U + 3, K.Do - 0.6)} />} etiqueta="POR DENTRO · cadena de PLA + agua" tinte={KC.cyan} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="2017" quien="Universidad de Bayreuth" revista="Bagheri et al. · Global Challenges" y={600} />
       {T > K.E + 2.6 && T < K.P - 0.2 && <Contador T={T} at={K.E + 2.6} desde={0} hasta={365} dur={K.P - K.E - 3.2} sufijo=" días · agua de mar" x={540} y={720} tam={60} color={KC.yellow} />}
       <Medidor T={T} at={K.E + 2.8} until={K.P - 0.3} etiqueta="PLA DEGRADADO EN 1 AÑO" valor={0} texto={() => '0 %'} y={1460} color={KC.mint} />

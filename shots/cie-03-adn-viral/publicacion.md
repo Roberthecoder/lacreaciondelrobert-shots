@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-1 de cada 12 pedacitos de tu ADN vino de virus 🧬 | Shot Científico #03
+Casi 1 de cada 12 pedacitos de tu ADN vino de virus 🧬 | Shot Científico #03
 ```
 Descripción:
 ```text

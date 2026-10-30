@@ -23,7 +23,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esa insulina no salió de ningún animal: salió de un tanque lleno de microbios. 💉🦠
-Antes de los ochenta venía del páncreas de cerdos y reses: funcionaba, pero no era humana. En 1978 escribieron el gen de la insulina humana: dos genes sintéticos, cadena A y cadena B, hechos letra por letra en el laboratorio y metidos en plásmidos de Escherichia coli. Sus ribosomas arman la cadena. Así nació Humulin, aprobada por la FDA en octubre de 1982, el primer fármaco de ADN recombinante.
+Antes de los ochenta venía del páncreas de cerdos y reses: funcionaba, pero no era humana. En 1978 escribieron los genes de la insulina humana: dos genes sintéticos, cadena A y cadena B, hechos letra por letra en el laboratorio y metidos cada uno en su propia cepa de Escherichia coli. Sus ribosomas arman cada cadena (la A de 21 aminoácidos, la B de 30) y después se juntan. Así nació Humulin, aprobada por la FDA en octubre de 1982, el primer fármaco de ADN recombinante.
 Hoy no todo se hace en bacterias: mucha insulina se produce en levadura (Saccharomyces cerevisiae), que la secreta al caldo, mientras que en E. coli se queda adentro y hay que sacarla y replegarla.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Conoces a alguien que use insulina? 👇
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Esa insulina no salió de ningún animal: salió de un tanque lleno de microbios. 💉🦠 En 1978 escribieron en el laboratorio el gen de la insulina humana y se lo dieron a una bacteria; hoy mucha se hace también en levadura, la misma del pan. ¿Conoces a alguien que use insulina? 👇
+Esa insulina no salió de ningún animal: salió de un tanque lleno de microbios. 💉🦠 En 1978 escribieron en el laboratorio los genes de las dos cadenas de la insulina humana y se los dieron a bacterias, uno a cada una; hoy mucha se hace también en levadura, la misma del pan. ¿Conoces a alguien que use insulina? 👇
 Shot Biotecnológico #08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia
@@ -82,7 +82,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Tu insulina no viene de un animal: viene de un tanque. En 1978 escribieron el gen de la insulina humana (dos genes sintéticos, cadenas A y B) y se lo dieron a E. coli. Humulin se aprobó en octubre de 1982. 💉🦠 #LaCreacionDelRobert #Biotecnologia
+Tu insulina no viene de un animal: viene de un tanque. En 1978 escribieron los genes de la insulina humana (dos genes sintéticos, cadenas A y B), cada uno para su propia cepa de E. coli. Humulin se aprobó en octubre de 1982. 💉🦠 #LaCreacionDelRobert #Biotecnologia
 ```
 
 ### Threads
@@ -100,7 +100,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### TikTok
 ```text
 🎧 El ciclo completo de tu insulina, y 51 notas: una por cada aminoácido. 💉🦠
-Mira el ciclo en loop: el gen de la insulina humana se escribe letra por letra (cadena A y cadena B), entra a un plásmido, el plásmido entra a la célula, la célula se divide y llena el tanque, los ribosomas arman la cadena de 51 aminoácidos, la insulina sale (la levadura la secreta; a la bacteria hay que abrirla) y llena el frasco. Del frasco, la cámara vuelve al gen: el primer cuadro.
+Mira el ciclo en loop: los genes de la insulina humana se escriben letra por letra (cadena A y cadena B), cada uno entra a un plásmido y a su propia bacteria, la célula se divide y llena el tanque, los ribosomas arman las cadenas: la A de 21 aminoácidos y la B de 30 (51 en total), la insulina sale (la levadura la secreta; a la bacteria hay que abrirla) y llena el frasco. Del frasco, la cámara vuelve al gen: el primer cuadro.
 Antes de los ochenta, esta insulina venía del páncreas de cerdos y reses. En 1978 escribieron en el laboratorio los genes de la insulina humana y se los dieron a Escherichia coli; de ahí salió Humulin, aprobada por la FDA en octubre de 1982. Hoy también se produce en levadura (Saccharomyces cerevisiae).
 La música no está grabada: 51 notas son los 51 aminoácidos, un golpe por cada división celular y un blub por cada burbuja del tanque.
 El dibujo es esquemático.
@@ -129,7 +129,7 @@ Título:
 Descripción:
 ```text
 El ciclo completo de tu insulina, con 51 notas: una por cada aminoácido.
-Mira el ciclo en loop: el gen de la insulina humana se escribe letra por letra (cadena A y cadena B), entra a un plásmido, el plásmido entra a la célula, la célula se divide y llena el tanque, los ribosomas arman la cadena de 51 aminoácidos (21 de la cadena A y 30 de la B), la insulina sale (la levadura la secreta al caldo; a la bacteria hay que abrirla y replegar la proteína) y llena el frasco. Del frasco, la cámara vuelve al gen: el primer cuadro.
+Mira el ciclo en loop: los genes de la insulina humana se escriben letra por letra (cadena A y cadena B), cada uno entra a un plásmido y a su propia bacteria, la célula se divide y llena el tanque, los ribosomas arman las cadenas: la A de 21 aminoácidos y la B de 30 (51 en total), la insulina sale (la levadura la secreta al caldo; a la bacteria hay que abrirla y replegar la proteína) y llena el frasco. Del frasco, la cámara vuelve al gen: el primer cuadro.
 Antes de los años ochenta esta insulina venía del páncreas de cerdos y reses. En 1978 se sintetizaron químicamente los genes de la insulina humana y se metieron en Escherichia coli; de ahí salió Humulin, aprobada por la FDA en octubre de 1982, el primer fármaco de ADN recombinante. Hoy también se produce en levadura (Saccharomyces cerevisiae): Novolin se aprobó así en 1991.
 La música no está grabada ni es de catálogo: sale de los datos.
 El dibujo es esquemático.

@@ -14,7 +14,7 @@
 
 ## Corrección del 28 oct 2026 (verificación de hechos independiente, ver `verificacion.md`)
 1. **Gancho:** decía "trae el gen que te falta". Los adultos con intolerancia no *carecen* del gen de la lactasa (bajan su expresión) y el estudio de 1998 usó el gen de **una β-galactosidasa**, no el gen humano de la lactasa. Ahora: «Ese virus no viene a enfermarte: trae un gen que te hace digerir la leche.»
-2. **Ratas:** la intolerancia de las ratas era **provocada en el laboratorio** («experimentally induced»); los textos lo dicen.
+2. **Ratas:** eran ratas **adultas con poca lactasa**, escogidas por eso (modelo de hipolactasia del adulto; corregido el 29 oct 2026: no era «provocada», según la patente de los autores, US6110456); los textos lo dicen.
 3. En pantalla, el medidor de la escena de las ratas decía "LACTASA EN EL BORDE"; ahora dice "ENZIMA QUE PARTE LA LACTOSA".
 4. La voz cambió: se quitó `voz_aprobada` y el shot vuelve a "Por revisar" en la Sala.
 
@@ -27,8 +27,8 @@
 | 2 | Adulto | Al crecer, la mayoría de los adultos del mundo baja esa producción. | El medidor cae; las tijeras se apagan una por una. Vaso de leche con interrogación. |
 | 3 | Gas | Sin lactasa, la lactosa sigue de largo y tus bacterias la fermentan: gas. | **Fondo oscuro.** `MundoIntestino`: moléculas de lactosa enteras que pasan de largo, bacterias abajo y burbujas que suben. Barra de escala. |
 | 4 | Pregunta | ¿Y si le devolvieras la receta a tus células? | **Re-gancho.** Una molécula de lactosa gigante y una tijera que no la alcanza. Sticker pensativo. |
-| 5 | Estudio | Eso probaron en 1998 en Filadelfia: un virus adeno-asociado, por la boca, cargando el gen. | `TarjetaEstudio` "1998 · During y colegas · *Nature Medicine*". Luego el virus baja por el lumen y toca el borde. |
-| 6 | Ratas | Las ratas volvieron a digerir lactosa, y el efecto duró meses. | Dos ratas esquemáticas (su intolerancia era provocada en el laboratorio); el medidor "ENZIMA QUE PARTE LA LACTOSA" sube. Chip "en ratas · duró meses". |
+| 5 | Estudio | Eso probaron en 1998 en Filadelfia: un virus adeno-asociado, por la boca, cargando el gen de una enzima que parte la lactosa. | `TarjetaEstudio` "1998 · During y colegas · *Nature Medicine*". Luego el virus baja por el lumen y toca el borde. |
+| 6 | Ratas | Las ratas, adultas y con poca lactasa como nosotros, volvieron a digerir lactosa, y el efecto duró meses. | Dos ratas esquemáticas (ratas adultas con poca lactasa, escogidas por eso: modelo de hipolactasia del adulto); el medidor "ENZIMA QUE PARTE LA LACTOSA" sube. Chip "ratas adultas con poca lactasa · meses". |
 | 7 | Auto | En 2018 un divulgador, Justin Atkin, se lo hizo a sí mismo y lo grabó. | Marco de video con "▶" y el chip "The Thought Emporium · 2018". |
 | 8 | Ojo | Ojo: fue un autoexperimento. No es un tratamiento aprobado ni hay un artículo revisado. | `MitoTachado` "¿cura aprobada?" que se tacha. Chips "autoexperimento" y "sin revisión por pares". Sticker serio. |
 | 9 | Renueva | Y además tu intestino cambia su recubrimiento cada cuatro o cinco días. | Las células del borde se desprenden y salen nuevas. Contador "día 1 → 5". Chip "4–5 días". |
@@ -52,9 +52,9 @@ El ciclo de la renovación del intestino, que termina donde empezó:
   abierta y libre cuando la lactosa se parte, y se vuelve a tapar al final para cerrar el loop. 🎧 en el título.
 
 ## Descripción (para publicar)
-"Ese virus no viene a enfermarte: trae un gen. 🥛🧬 De bebés todos hacemos **lactasa**, la enzima que parte la lactosa en glucosa y galactosa. Al crecer, la mayoría de los adultos del mundo baja esa producción: la lactosa llega entera al intestino grueso, las bacterias la fermentan y aparecen el gas y las molestias.
+"Ese virus no viene a enfermarte: trae un gen. 🥛🧬 De bebés casi todos hacemos **lactasa**, la enzima que parte la lactosa en glucosa y galactosa. Al crecer, la mayoría de los adultos del mundo baja esa producción: la lactosa llega entera al intestino grueso, las bacterias la fermentan y aparecen el gas y las molestias.
 
-En 1998, el equipo de During publicó en *Nature Medicine* que un **virus adeno-asociado** dado por la boca, cargando el gen de una enzima que parte la lactosa (β-galactosidasa), devolvió la capacidad de digerir lactosa a unas ratas a las que se la habían quitado en el laboratorio, y el efecto duró meses. En febrero de 2018, el divulgador **Justin Atkin** (canal The Thought Emporium) intentó algo parecido en sí mismo y lo grabó. **Importante: fue un autoexperimento, no un tratamiento aprobado, y no existe un artículo revisado por pares con sus resultados.** Su propia página del proyecto dice que sigue en desarrollo. No intentes nada de esto.
+En 1998, el equipo de During publicó en *Nature Medicine* que un **virus adeno-asociado** dado por la boca, cargando el gen de una enzima que parte la lactosa (β-galactosidasa), devolvió la capacidad de digerir lactosa a ratas adultas con poca lactasa (modelo de hipolactasia del adulto), y el efecto duró meses. En febrero de 2018, el divulgador **Justin Atkin** (canal The Thought Emporium) intentó algo parecido en sí mismo y lo grabó. **Importante: fue un autoexperimento, no un tratamiento aprobado, y no existe un artículo revisado por pares con sus resultados.** Su propia página del proyecto dice que sigue en desarrollo. No intentes nada de esto.
 
 Además hay una razón biológica para que un efecto así no sea permanente: el recubrimiento del intestino se renueva **cada 4 o 5 días**, así que si no se modifican las células madre del fondo de las criptas, el gen se va con las células viejas. Lo que sí existe hoy es la misma enzima en pastilla o la leche deslactosada.
 

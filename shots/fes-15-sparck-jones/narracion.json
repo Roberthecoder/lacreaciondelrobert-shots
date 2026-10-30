@@ -1,0 +1,62 @@
+{
+  "especial": "Día Internacional de la Mujer y la Niña en la Ciencia",
+  "serie_vinculada": "IA",
+  "velocidad": 1.0,
+  "dcHtml": "Shot SparckJones base narrada.dc.html",
+  "salida": "Shot SparckJones narrado.dc.html",
+  "nota": "Shot Festivo #15 · Día Internacional de la Mujer y la Niña en la Ciencia · IA. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Cuando buscas algo en internet, muy probablemente usas una idea de esta mujer."
+    },
+    {
+      "escena": "Busqueda",
+      "texto": "Escribe: receta de tamales de rajas."
+    },
+    {
+      "escena": "De",
+      "texto": "La palabra «de» aparece en muchísimas páginas: casi no te dice nada."
+    },
+    {
+      "escena": "Rajas",
+      "texto": "«Rajas» aparece en muchas menos: esa sí te acerca a tu receta."
+    },
+    {
+      "escena": "Rara",
+      "texto": "Esa es la idea: entre menos documentos tengan una palabra, más vale."
+    },
+    {
+      "escena": "Repite",
+      "texto": "Y si una página repite «tamales» muchas veces, sube más en la lista."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Quién pensó en esto antes de que existiera la web?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1972, en Cambridge, Inglaterra, Karen Spärck Jones propuso pesar cada palabra según qué tan rara es."
+    },
+    {
+      "escena": "Prueba",
+      "texto": "La probó con tres colecciones de documentos, y las búsquedas mejoraron bastante."
+    },
+    {
+      "escena": "Herencia",
+      "texto": "Hoy se llama frecuencia inversa de documento, y entró en casi todas las fórmulas que califican palabras."
+    },
+    {
+      "escena": "IA",
+      "texto": "Hay inteligencias artificiales que, antes de responderte, buscan documentos con BM25, heredera de su idea."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Dato: animaba a niñas y jóvenes a dedicarse a la computación. Su lema: «la computación es demasiado importante para dejársela a los hombres»."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que cuando buscas algo, muy probablemente Karen te ayuda: ella enseñó a medir qué palabras importan."
+    }
+  ]
+}

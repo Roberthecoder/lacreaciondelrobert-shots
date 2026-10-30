@@ -6,6 +6,16 @@
   {"numero": 3, "clave": "fes-03-podredumbre-blanca", "festividad": "Día de Muertos", "fecha": "2026-11-01", "serie_vinculada": "Fungi Mati"},
   {"numero": 4, "clave": "fes-04-esqueleto", "festividad": "Día de Muertos", "fecha": "2026-11-02", "serie_vinculada": "Científico"},
   {"numero": 5, "clave": "fes-05-fotos-ofrenda", "festividad": "Día de Muertos", "fecha": "2026-11-02", "serie_vinculada": "IA"},
-  {"numero": 6, "clave": "fes-06-calaveritas", "festividad": "Día de Muertos", "fecha": "2026-11-02", "serie_vinculada": "Químico"}
+  {"numero": 6, "clave": "fes-06-calaveritas", "festividad": "Día de Muertos", "fecha": "2026-11-02", "serie_vinculada": "Químico"},
+  {"numero": 7, "clave": "fes-07-viruela", "festividad": "Día Mundial de la Ciencia para la Paz", "fecha": "2026-11-10", "serie_vinculada": "Biotecnológico"},
+  {"numero": 8, "clave": "fes-08-pelicula-nitrato", "festividad": "Revolución Mexicana", "fecha": "2026-11-20", "serie_vinculada": "Químico"},
+  {"numero": 9, "clave": "fes-09-rosas-diciembre", "festividad": "Día de la Virgen de Guadalupe", "fecha": "2026-12-12", "serie_vinculada": "Científico"},
+  {"numero": 10, "clave": "fes-10-ponche", "festividad": "Posadas", "fecha": "2026-12-16", "serie_vinculada": "Científico"},
+  {"numero": 11, "clave": "fes-11-nochebuena", "festividad": "Navidad", "fecha": "2026-12-24", "serie_vinculada": "Biotecnológico"},
+  {"numero": 12, "clave": "fes-12-fuegos-artificiales", "festividad": "Año Nuevo", "fecha": "2026-12-31", "serie_vinculada": "Químico"},
+  {"numero": 13, "clave": "fes-13-acitron", "festividad": "Día de Reyes", "fecha": "2027-01-06", "serie_vinculada": "Ambiental"},
+  {"numero": 14, "clave": "fes-14-razas-maiz", "festividad": "Candelaria", "fecha": "2027-02-02", "serie_vinculada": "Ambiental"},
+  {"numero": 15, "clave": "fes-15-sparck-jones", "festividad": "Día Internacional de la Mujer y la Niña en la Ciencia", "fecha": "2027-02-11", "serie_vinculada": "IA"},
+  {"numero": 16, "clave": "fes-16-chocolate", "festividad": "San Valentín", "fecha": "2027-02-14", "serie_vinculada": "Fungi Mati"}
  ]
 }

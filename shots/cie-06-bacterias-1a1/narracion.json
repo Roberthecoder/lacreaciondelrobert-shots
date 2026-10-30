@@ -8,10 +8,10 @@
     { "escena": "Litro", "texto": "Suponía un litro de intestino lleno de bacterias, de punta a punta." },
     { "escena": "Colon", "texto": "Pero casi todas viven en tu colon, que guarda unos cuatrocientos mililitros." },
     { "escena": "Pregunta", "texto": "¿Y cuántas células tuyas hay?" },
-    { "escena": "Humanas", "texto": "Unos treinta billones. Y el ochenta y cuatro por ciento son glóbulos rojos, que ni siquiera tienen núcleo." },
-    { "escena": "Cuenta", "texto": "Bacterias: unos treinta y ocho billones. Uno punto tres por cada célula tuya: casi una a una." },
-    { "escena": "Estudio", "texto": "Lo calculó en 2016 el equipo de Ron Milo, del Instituto Weizmann, en Israel." },
-    { "escena": "Peso", "texto": "Y pesan poco: todas tus bacterias juntas, unos doscientos gramos, no los kilos que se decían." },
+    { "escena": "Humanas", "texto": "En 2023 las volvieron a contar: unos treinta y seis billones en un hombre, veintiocho en una mujer. Y cuatro de cada cinco ni siquiera tienen núcleo: son glóbulos rojos y plaquetas." },
+    { "escena": "Cuenta", "texto": "Bacterias, según la cuenta de 2016: unos treinta y ocho billones. Casi una a una." },
+    { "escena": "Estudio", "texto": "Esa cuenta la hizo el equipo de Ron Milo, del Instituto Weizmann, en Israel." },
+    { "escena": "Peso", "texto": "Y según ese estudio pesan poco: todas tus bacterias juntas, unos doscientos gramos, no los kilos que se decían." },
     { "escena": "Bano", "texto": "Dato extra: cada vez que vas al baño, tu colon pierde entre un cuarto y un tercio de su contenido." },
     { "escena": "Cierre", "texto": "Así que no eres diez bacterias por cada célula: eres casi mitad y mitad. Y tu mitad bacteriana baja un poco cada vez que vas al baño." }
   ]

@@ -123,8 +123,10 @@ function Frasco({ T, x = 0, y = 0, s = 1, etiqueta, lleno = 0.72, tapa = KC.cyan
 }
 
 /* ---------- ribosoma que corre por el ARN y deja caer aminoácidos ----------
-   p: 0..1 avance. Suenan 51 notas en el audio (los 51 aminoácidos de la insulina). */
-function Ribosoma({ T, p = 0, y = 900, x0 = 120, x1 = 960 }) {
+   p: 0..1 avance · n: aminoácidos de la cadena (A = 21, B = 30; cada cadena la hace su propia cepa).
+   Suenan 51 notas en el audio (los 51 aminoácidos de la insulina, 21 + 30). */
+function Ribosoma({ T, p = 0, y = 900, x0 = 120, x1 = 960, n = AMINOS }) {
+  const AMINOS = n;
   const x = klerp(x0, x1, kclamp(p, 0, 1)), hechos = Math.floor(p * AMINOS);
   return <g>
     <line x1={x0 - 60} y1={y} x2={x1 + 60} y2={y} stroke="#9aa4ae" strokeWidth={12} strokeLinecap="round" strokeDasharray="26 16" strokeDashoffset={-T * 40} />
@@ -209,13 +211,18 @@ function InsulinaNarrado() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <GenEscrito T={T} x={250} y={560} etiqueta="A" p={kprog(T, K.Ge + 0.2, K.Ge + 1.5)} h={kprog(T, K.Ge + 1.5, K.Ge + 2.1, kEase.sale)} />
           <GenEscrito T={T} x={250} y={760} etiqueta="B" p={kprog(T, K.Ge + 0.5, K.Ge + 1.8)} h={kprog(T, K.Ge + 1.7, K.Ge + 2.3, kEase.sale)} letras="TTCGTGAATCAACACCTTTGTGGCTCACAT" />
+          {/* un plásmido (y una cepa de E. coli) para cada gen: A a la izquierda, B a la derecha */}
           <g opacity={kprog(T, K.Ge + 2.0, K.Ge + 2.6)}>
-            <Plasmido T={T} x={540} y={1060} r={160} gen={1} rot={T * 14}
+            <Plasmido T={T} x={300} y={1010} r={130} gen={1} rot={T * 14}
               cierra={kprog(T, K.Ge + 2.7, K.Ge + 3.5, kEase.sale)} />
+            <Plasmido T={T} x={780} y={1010} r={130} gen={1} rot={-T * 14 + 40}
+              cierra={kprog(T, K.Ge + 2.9, K.Ge + 3.7, kEase.sale)} />
+            <text x={300} y={1032} textAnchor="middle" style={{ font:`900 64px ${KF.texto}` }} fill={PLAS}>A</text>
+            <text x={780} y={1032} textAnchor="middle" style={{ font:`900 64px ${KF.texto}` }} fill={PLAS}>B</text>
           </g>
         </svg>
-        <Etiqueta T={T} at={K.Ge + 2.3} until={K.L - 0.3} x={720} y={1060} texto="plásmido" color={PLAS} tam={36} />
-        <Chip T={T} at={K.Ge + 0.3} until={K.L - 0.3} texto="1978 · el gen, escrito" y={400} borde={KC.gold} tam={42} />
+        <Chip T={T} at={K.Ge + 2.3} until={K.L - 0.3} texto="un plásmido y una bacteria para cada uno" y={1520} borde={PLAS} tam={34} />
+        <Chip T={T} at={K.Ge + 0.3} until={K.L - 0.3} texto="1978 · dos genes, escritos" y={400} borde={KC.gold} tam={42} />
       </EscenaFundido>
 
       {/* 4 · LEE — la bacteria fabrica la proteína */}
@@ -253,7 +260,7 @@ function InsulinaNarrado() {
           <g transform={`translate(${r} ${r}) scale(${r / 260})`}>
             <Bacteria T={t} s={0.82} plasmido={1} brilla={0.5} />
           </g>
-        </svg>} etiqueta="RAYOS X · dentro del caldo" />
+        </svg>} etiqueta="AL MICROSCOPIO · dentro del caldo" />
       <Etiqueta T={T} at={K.P + 1.6} until={K.Ri + 0.1} x={300} y={760} texto="el plásmido" color={PLAS} tam={34} />
 
       {/* 7 · RIBOSOMA — 51 aminoácidos */}
@@ -261,12 +268,16 @@ function InsulinaNarrado() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #241f33 0%, #0E0F12 76%)' }}></div>
         <Ambiente T={T} n={22} seed={21} color="rgba(183,140,255,.3)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Ribosoma T={T} y={820} p={kprog(T, K.Ri + 0.4, K.H - 0.4, kEase.suave)} />
+          {/* cada cepa arma su cadena: A (21) arriba, B (30) abajo */}
+          <Ribosoma T={T} y={680} n={21} p={kprog(T, K.Ri + 0.4, K.H - 0.4, kEase.suave)} />
+          <Ribosoma T={T} y={980} n={30} p={kprog(T, K.Ri + 0.4, K.H - 0.4, kEase.suave)} />
         </svg>
-        <Chip T={T} at={K.Ri + 0.6} until={K.H - 0.3} texto="51 aminoácidos, uno por uno" y={450} borde={INS} tam={40} />
-        <Medidor T={T} at={K.Ri + 1.2} until={K.H - 0.3} etiqueta="CADENA ARMADA"
+        <Etiqueta T={T} at={K.Ri + 0.8} until={K.H - 0.3} x={80} y={580} texto="cadena A · 21" color={INS} tam={34} />
+        <Etiqueta T={T} at={K.Ri + 0.8} until={K.H - 0.3} x={80} y={880} texto="cadena B · 30" color={INS} tam={34} />
+        <Chip T={T} at={K.Ri + 0.6} until={K.H - 0.3} texto="cadena A: 21 · cadena B: 30" y={450} borde={INS} tam={40} />
+        <Medidor T={T} at={K.Ri + 1.2} until={K.H - 0.3} etiqueta="CADENAS ARMADAS"
           valor={(t) => kprog(t, K.Ri + 0.4, K.H - 0.4, kEase.suave)}
-          texto={(v) => Math.round(v * AMINOS) + ' / 51'} y={1560} color={INS} />
+          texto={(v) => 'A ' + Math.round(v * 21) + '/21 · B ' + Math.round(v * 30) + '/30'} y={1560} color={INS} />
       </EscenaFundido>
 
       {/* 8 · HUMULIN */}
@@ -325,11 +336,11 @@ function InsulinaNarrado() {
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.A - 0.1} texto="Esa insulina salió *de un tanque.*" />
       <Subtitulo T={T} idx={1} at={K.A + 0.1} until={K.R - 0.1} texto="Antes venía del *páncreas de un animal.*" />
       <Subtitulo T={T} idx={2} at={K.R + 0.1} until={K.Ge - 0.1} texto="No era humana: *daba reacciones.*" />
-      <Subtitulo T={T} idx={3} at={K.Ge + 0.1} until={K.L - 0.1} texto="1978: escriben *el gen* y lo meten a una bacteria." />
+      <Subtitulo T={T} idx={3} at={K.Ge + 0.1} until={K.L - 0.1} texto="1978: *dos genes,* cada uno en su bacteria." />
       <Subtitulo T={T} idx={4} at={K.L + 0.1} until={K.Q - 0.1} texto="Lo lee *y fabrica la proteína.*" />
       <Subtitulo T={T} idx={5} at={K.Q + 0.1} until={K.P - 0.1} texto="¿Cómo cabe una fábrica *ahí dentro?*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Ri - 0.1} texto="Un anillito de ADN extra: *el plásmido.*" />
-      <Subtitulo T={T} idx={7} at={K.Ri + 0.1} until={K.H - 0.1} texto="Los ribosomas *arman la cadena.*" />
+      <Subtitulo T={T} idx={7} at={K.Ri + 0.1} until={K.H - 0.1} texto="Arman su cadena: *A de 21 y B de 30.*" />
       <Subtitulo T={T} idx={8} at={K.H + 0.1} until={K.Ho - 0.1} texto="1982: *Humulin,* el primero de su clase." />
       <Subtitulo T={T} idx={9} at={K.Ho + 0.1} until={K.Le - 0.1} texto="Pero hoy *no todo es bacteria.*" />
       <Subtitulo T={T} idx={10} at={K.Le + 0.1} until={K.D - 0.1} texto="Mucha se hace *en levadura.*" />
@@ -361,9 +372,9 @@ function InsulinaCiclo() {
   const K = { Ge: CUES.Gen, P: CUES.Plasmido, E: CUES.Entra, D: CUES.Divide, Ta: CUES.Tanque,
     Ri: CUES.Ribosoma, S: CUES.Sale, F: CUES.Frasco, Ou: CUES.Outro };
   const caps = [
-    { at: K.Ge, titulo: 'el gen, escrito' }, { at: K.P, titulo: 'entra al plásmido' },
+    { at: K.Ge, titulo: 'dos genes, escritos' }, { at: K.P, titulo: 'entra al plásmido' },
     { at: K.E, titulo: 'entra a la célula' }, { at: K.D, titulo: 'la célula se divide' },
-    { at: K.Ta, titulo: 'el tanque' }, { at: K.Ri, titulo: '51 aminoácidos' },
+    { at: K.Ta, titulo: 'el tanque' }, { at: K.Ri, titulo: 'cadenas A (21) y B (30)' },
     { at: K.S, titulo: 'la insulina sale' }, { at: K.F, titulo: 'y llena el frasco' },
   ];
   const nDiv = Math.min(16, Math.floor(kprog(T, K.D + 0.4, K.Ta - 0.3) * 16));
@@ -409,7 +420,8 @@ function InsulinaCiclo() {
       {/* 6 · los ribosomas arman la cadena: 51 aminoácidos */}
       {T > K.Ri - 0.4 && T < K.S + 1.0 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
         <g opacity={kprog(T, K.Ri - 0.4, K.Ri + 0.4) * (1 - kprog(T, K.S + 0.2, K.S + 1.0))}>
-          <Ribosoma T={T} y={820} p={kprog(T, K.Ri + 0.4, K.S - 0.6, kEase.suave)} />
+          <Ribosoma T={T} y={680} n={21} p={kprog(T, K.Ri + 0.4, K.S - 0.6, kEase.suave)} />
+          <Ribosoma T={T} y={980} n={30} p={kprog(T, K.Ri + 0.4, K.S - 0.6, kEase.suave)} />
         </g>
       </svg>}
 
@@ -426,7 +438,7 @@ function InsulinaCiclo() {
       </svg>}
 
       <Capitulo T={T} caps={caps} hasta={K.Ou - 0.1} />
-      {T < K.S + 1.2 && <Contador T={T} at={K.Ri + 0.4} desde={0} hasta={AMINOS} dur={K.S - 0.6 - K.Ri - 0.4} sufijo=" / 51" x={540} y={470} tam={110} color={INS} />}
+      {T < K.S + 1.2 && <Contador T={T} at={K.Ri + 0.4} desde={0} hasta={AMINOS} dur={K.S - 0.6 - K.Ri - 0.4} sufijo=" aminoácidos (21 + 30)" x={540} y={470} tam={70} color={INS} />}
       <Chip T={T} at={K.F + 4.6} until={K.Ou - 0.1} texto="…y vuelve a empezar" y={1480} borde={KC.gold} tam={44} />
 
       {/* Robert en pantalla (tabla en guion.md) */}
@@ -436,7 +448,7 @@ function InsulinaCiclo() {
         [14.0, 17.5, 'avatar_06_pensativo_menton', 'arriba-der'],  // entra a la célula
         [20.5, 24.5, 'avatar_04_bajando_lentes',   'presentador'],  // GRANDE: la célula se divide y llena el tanque
         [28.0, 31.5, 'avatar_02_apuntando_camara', 'arriba-der'],  // el tanque trabajando
-        [35.0, 38.5, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],  // 51 aminoácidos, uno por uno
+        [35.0, 38.5, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],  // cadenas A (21) y B (30)
         [44.0, 47.5, 'avatar_10_serio_molesto',    'arriba-der'],  // sacarla cuesta: hay que abrir la bacteria
         [51.5, 55.5, 'avatar_12_perfil_serio',     'arriba-der'],  // y llena el frasco
       ]} />

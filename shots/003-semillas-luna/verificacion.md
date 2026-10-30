@@ -26,4 +26,16 @@ Notas:
 - El número de semillas varía entre fuentes (~500 a "possibly 2000 or more"); por eso el guion dice "cientos".
 - El dibujo (proporciones de la Luna, la nave y la semilla) es esquemático.
 
+## Re-verificación (29 oct, auditoría)
+Se corrigió la escena de la órbita: el contador y la etiqueta «Roosa, solo (de la vuelta 12 a la 32)» ahora terminan en la vuelta 32 (reacople), no en la 34; el rótulo sigue «vuelta N / 34». Fuentes de NASA abiertas el 29 oct 2026 (Apollo 14 Flight Journal en apollojournals.org, espejo oficial de history.nasa.gov/afj, y NASA NSSDC).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Roosa se quedó solo desde la vuelta 12 (desacople del Antares) | ✅ | NASA, Apollo 14 Flight Journal, «Day 5, part 2: Undocking Antares» | "acquisition of Apollo 14 coming around from behind the Moon on the 12th lunar revolution" … "104:28:15 Roosa: Okay, we had a normal undocking, Houston." | 1971 |
+| …hasta la vuelta 32 (reacople Antares–Kitty Hawk) | ✅ | NASA, Apollo 14 Flight Journal, «Day 6, part 3: Spotting Antares and Going for Docking» | "143:19:00 : BEGIN LUNAR REV 32" … "144:12:33 Roosa: Okay, we capture." "144:12:55 Roosa: Okay. And we got hard dock." (la vuelta 33 empieza a las 145:17:00 según «Day 6, part 4») | 1971 |
+| Desacople 5 feb 1971, 04:50:43 UTC; reacople 6 feb, 20:35:52 UTC (~39.7 h solo) | ✅ (±1 s) | NASA NSSDC, Apollo 14 Command and Service Module (1971-008A) | "separated from the CSM, piloted by Roosa, at 04:50:44 UT on 5 February" · "After the LM docked with the CSM at 20:35:53 UT" (diferencia de 1 s por redondeo; en tiempo de misión 104:28 → 144:12 ≈ 39.7 h) | 1971 |
+| La vuelta 34 fue la de la inyección trans-Tierra, con los tres a bordo; la semilla dio 34 vueltas | ✅ | NASA, Apollo 14 Flight Journal, «Day 6, part 4» | "147:15:00: BEGIN LUNAR REV 34" … "This burn will place the CSM onto a trans-Earth trajectory at the end of the 34th revolution around the Moon." | 1971 |
+
+Sin contradicciones: la línea vieja de la tabla de arriba («de la vuelta 12 a la 34») queda superada por esta corrección; voz y `publicacion.md` no cambiaron.
+
 VEREDICTO: APROBADO

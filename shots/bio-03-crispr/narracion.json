@@ -1,5 +1,4 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Crispr base narrada.dc.html",
   "salida": "Shot Crispr narrado.dc.html",
   "velocidad": 1.1,
@@ -14,7 +13,7 @@
     { "escena": "Corte", "texto": "La bacteria copia ese recuerdo en ARN, se lo da a unas tijeras, Cas, y buscan." },
     { "escena": "Corte", "texto": "Si encuentran el mismo pedazo, cortan el ADN del virus. Adiós." },
     { "escena": "Estudio", "texto": "En 2007, investigadores de Danisco y la Universidad Laval lo probaron con bacterias de yogur: cada recuerdo nuevo las volvía resistentes." },
-    { "escena": "Nobel", "texto": "En 2012, Charpentier y Doudna reprogramaron esas tijeras para cortar el ADN que quisieran. Nobel 2020." },
+    { "escena": "Nobel", "texto": "En 2012, Charpentier y Doudna tomaron unas tijeras así, de otra bacteria, y las reprogramaron para cortar el ADN que quisieran. Nobel 2020." },
     { "escena": "Extra", "texto": "Y no es raro: en 2020 se halló en una de cada tres bacterias y tres de cada cuatro arqueas." },
     { "escena": "Cierre", "texto": "Así que las tijeras genéticas no las inventamos nosotros: las inventó lo que hay en tu yogur." }
   ]

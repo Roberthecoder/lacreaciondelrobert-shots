@@ -1,0 +1,71 @@
+# Shot Festivo #11 · Navidad · Biotecnológico: Tu nochebuena es frondosa porque tiene una bacteria
+
+- **Serie:** Shot Festivo · **Serie vinculada:** Biotecnológico · **Logo:** bioquímica (ADN + matraz) · **Badge:** Festivo #11 · **Especial:** Navidad (se publica el 24 dic 2026) · rama `pedido300/festivos`.
+- **Estado (29 oct 2026):** guion verificado (`verificacion.md`: APROBADO; 3 ⚠️ corregidas en escenas 10 y 11), animación (`nochebuena.jsx`), música (`gen-audio.mjs`), Robert en pantalla y `publicacion.md` listos · **voz pendiente de aprobación de Robert**.
+- **Formato:** N3 "Capítulos y medidores" (4 capítulos: La hoja roja · La noche larga · El inquilino · El injerto; medidores de horas de oscuridad, semanas y altura) con un toque de N4 "Imagen que se llena" (la planta que se llena de ramas).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: "Eso rojo de tu nochebuena no son pétalos: son hojas."
+- **Duración:** voz 1,073 caracteres (≈ 65.4 s) + cierre 3.8 s → **69.2 s** en la base (festivos: 61–75 s).
+
+## Versión narrada
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Eso rojo de tu nochebuena no son pétalos: son hojas. | Fondo cian con lunares y estrellitas doradas. Desde el cuadro 0 una nochebuena en maceta (brácteas rojas en estrella, hojas verdes dentadas abajo, botoncitos amarillos al centro) llega rebotando; una bráctea se desprende y cae girando: «¿pétalo?» se tacha → «hoja». Chip «Especial Navidad». |
+| 1 | Bracteas | Se llaman brácteas: hojas que cambiaron de color. | Fondo menta. La bráctea roja junto a una hoja verde de la misma planta: mismas nervaduras (se dibujan encima, iguales). Etiqueta «bráctea = hoja modificada». Capítulo 1 «La hoja roja». |
+| 2 | Ciatios | Las flores de verdad son estas bolitas amarillas del centro: los ciatios. | Fondo amarillo. Zoom al centro: racimo de 5 ciatios (copitas verdes con una glándula amarilla de néctar a un lado); `Lupa` abre uno: flores masculinas (estambres) alrededor de una femenina al centro. Etiqueta «ciatio». |
+| 3 | Noches | Y se pintan de rojo con noches largas: unas catorce horas de oscuridad, de siete a diez semanas. | Fondo azul noche. Reloj de 24 h que se llena de noche hasta 14 h; medidor de semanas que llega a 10 (chip «de 7 a 10 semanas») mientras las brácteas pasan de verde a rojo. Medidor «14 h de oscuridad». Capítulo 2 «La noche larga». |
+| 4 | Foco | Si un foco interrumpe esa oscuridad, puede no pintarse a tiempo para Navidad. | Fondo noche (se aclara con la luz). Se prende un foco a media noche (clic): la planta se queda verde; un calendario marca 24 dic con «¿?». |
+| 5 | Silvestre | En el monte de México, la cuetlaxóchitl silvestre mide unos tres metros y tiene pocas ramas. | Fondo naranja con cerros de selva seca. Arbusto silvestre alto y desgarbado (tallos largos, pocas ramas, brácteas chicas en las puntas) junto a una persona para escala; medidor de altura «≈ 3 m». Chip «cuetlaxóchitl». |
+| 6 | Pregunta | ¿Entonces por qué la de tu casa está tan llena de ramas? | **Re-gancho.** Fondo rosa: la silvestre flaca al lado de la maceta frondosa, «?» gigante; Robert grande, pensativo. |
+| 7 | Fitoplasma | Porque, casi seguro, está infectada: en sus tubos de savia vive un fitoplasma, una bacteria sin pared. | Fondo noche (escala micro, barra 2 µm). Un tubo del floema visto de lado (paredes, placas cribosas, savia que fluye); dentro, fitoplasmas (cuerpos redondeados y de formas variables, sin pared, solo membrana). Etiquetas «floema» · «fitoplasma». Capítulo 3 «El inquilino». |
+| 8 | Hormonas | Esa bacteria le desequilibra las hormonas, y la planta saca ramas por todos lados. | Fondo menta. Balanza de hormonas que se ladea; en el tallo despiertan las yemas laterales una por una (pop) y brotan ramas: la planta se llena (N4). |
+| 9 | Estudio | En 1997, en Maryland, el equipo de Ing-Ming Lee la aisló pasándola a plantas sanas con una planta parásita de puente. | Fondo amarillo. `TarjetaEstudio` «1997 · Ing-Ming Lee y equipo · Maryland · Nature Biotechnology». Escena: una nochebuena infectada y una vinca (*Catharanthus roseus*) unidas por la cuscuta (enredadera parásita naranja, como hilos); puntitos (la bacteria) viajan por el puente hacia la planta sana. |
+| 10 | Injerto | Con un injerto de una rama infectada, una nochebuena de pocas ramas también se vuelve frondosa. | Fondo cian. Una rama se injerta (cinta de injerto) en una nochebuena flaca; los puntitos cruzan la unión y la planta se ramifica. Chip «se contagia por injerto». Capítulo 4 «El injerto». |
+| 11 | Dato | Dato: con mucho calor, la planta puede perder la bacteria… y deja de ramificarse. | Fondo lila. Termómetro que sube; los puntitos desaparecen y la planta nueva crece con pocas ramas. Robert sorprendido. Chip «ramifica poco». |
+| 12 | Cierre | Así que tu nochebuena no tiene pétalos rojos: tiene hojas rojas, y una bacteria que la hizo frondosa. | **Regreso a la imagen del inicio** (fondo cian, estrellitas doradas, la misma maceta), ahora con destellos navideños; `Lupa` de rayos X sobre el tallo muestra los fitoplasmas adentro. Chip «hojas + bacteria». |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de bioquímica y Robert señalando. |
+
+**Música:** cama grave continua y cálida (sin golpe marcado, con un brillo de campanitas muy suave por Navidad, sin melodía conocida); efectos en el mismo cuadro: rebote de la maceta, «fiu» de la bráctea que gira, tachón, pop de la lupa, tic-tac del reloj que se llena de noche, páginas del calendario, clic del foco, viento del monte, burbujeo grave dentro del floema, pop por cada yema que brota, «zip» de los puntitos por el puente de cuscuta, cinta del injerto, termómetro que sube y destellos al final.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos porque están atados a cada escena). Grande (`grande-izq`, medio cuerpo) en «¿Entonces por qué la de tu casa está tan llena de ramas?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 3.3 | 11_sorprendido | `gancho` | «no son pétalos: son hojas» (cuadro 0) |
+| 2 | 6.7 | 10.3 | 13_senalando_arriba | `izq-alto` | señala los ciatios («las flores de verdad») |
+| 3 | 17.5 | 21.0 | 10_serio_molesto | `arriba-der` | el foco que corta la noche |
+| 4 | 27.05 | 31.4 | 07_pensativo_puno | `grande-izq` | «¿Entonces por qué la de tu casa está tan llena de ramas?» |
+| 5 | 37.0 | 41.2 | 05_sonriendo_dientes_uniformes | `izq-alto` | «saca ramas por todos lados» |
+| 6 | 44.2 | 48.4 | 04_bajando_lentes | `arriba-der` | el estudio de 1997 y el puente de cuscuta |
+| 7 | 54.6 | 58.9 | 11_sorprendido | `arriba-der` | «con mucho calor puede perder la bacteria» |
+| 8 | 59.6 | 65.3 | 02_apuntando_camara | `izq-alto` | «una bacteria que la hizo frondosa» |
+| — | 65.4 | 69.2 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones: 8 · **33.2 s en pantalla** (+ cierre 3.8 s) · 7 poses distintas, ninguna repetida seguida.
+
+## Fuentes (abiertas por el verificador el 29 oct 2026; detalle en `verificacion.md`)
+
+1. **Brácteas = hojas modificadas; ciatios = flores; especie silvestre en México; cuetlaxóchitl** — SNICS/SAGARPA, *Guía técnica para la descripción varietal de nochebuena* (gob.mx, PDF de 2018): "La nochebuena (Cuetlaxochitl en Nahuatl), flor de pascua, estrella de navidad o poinsettia (en inglés) pertenece al género Euphorbia pulcherrima" · "Esta especie se localiza en forma silvestre en nuestro país." · "Bráctea. Hoja modificada que se encuentra en la base de una inflorescencia, se caracteriza por ser distinta en color a las demás hojas." · "Ciatio. Inflorescencia propia del género Euphorbia, constituido por una flor femenina en la parte central y cinco o más flores masculinas que la rodean; con un nectario a un costado". https://www.gob.mx/cms/uploads/attachment/file/398329/MGDVNochebuena.pdf
+2. **Brácteas y ciatios; 14 h de oscuridad, 7–10 semanas; la luz impide que florezca para Navidad** — Mississippi State University Extension, *Selecting and Maintaining Poinsettias* (P2573, PDF de 2019): "The brightly colored parts of the plant (called bracts) are actually modified leaves. The true flowers are the yellow bead-like structures in the center of the poinsettia (called cyathia)." · "From October 1 until blooming, poinsettias should be placed in complete darkness for 14 continuous hours at night. Even the slightest amount of light from a garage light or door opening will keep the plant from flowering by Christmas." · "During this 7- to 10-week period, the poinsettias also require 6 to 8 hours of bright sunlight." https://extension.msstate.edu/sites/default/files/publications/P2573.pdf
+3. **Planta de día corto; silvestre de ~3 m, poco ramificada** — University of Oxford Herbaria, *Plants 400: Euphorbia pulcherrima*: "In its native Mexico, it grows to about three metres tall, on the edge of forests, flowering in December." · "Wild Euphorbia pulcherrima is a leggy plant, reluctant to branch" · "it is a short-day plant. This means that it needs around 14 hours of darkness". https://herbaria.plants.ox.ac.uk/bol/plants400/Profiles/EF/Euphorbiap
+4. **El estudio de 1997** — Lee I.-M., Klopmeyer M., Bartoszyk I. M., Gundersen-Rindal D. E., Chou T.-S., Thomson K. L., Eisenreich R. (1997, febrero). "Phytoplasma induced free-branching in commercial poinsettia cultivars". *Nature Biotechnology* 15: 178–182. Resumen: "Isolation of the pathogen was accomplished using a living host and it was concluded that an unculturable phytoplasma is the cause of free-branching in poinsettias. This is the first reported example of a pathogenic phytoplasma as the causal agent of a desirable and economically important trait." https://www.nature.com/articles/nbt0297-178
+5. **Bacteria sin pared, desequilibrio hormonal, ramas axilares, cuscuta como puente, Beltsville (Maryland), calor** — USDA-ARS, *Agricultural Research* (dic. 1998), "The Secret of Free-Branching Poinsettias": "these bacteria without cell walls trigger a hormonal imbalance responsible for forming squat, full-bodied poinsettia plants" · "the phytoplasma triggers the formation of axillary branches in a process called free-branching." · "using a parasitic vine called dodder as a bridge between poinsettia and periwinkle plants" · "allowing the phytoplasma safe passage, via dodder, into uninfected poinsettia plants." · "heat treatment of plants eliminated both the virus and the free-branching growth habit." · (laboratorio en Beltsville, Maryland). https://agresearchmag.ars.usda.gov/1998/dec/poin
+6. **Injerto: se contagia la ramificación** — Dole J. & Wilkins H. (1988), *Acta Horticulturae* 226: 283–292: "The type of branching and other morphological differences between them may be changed by a graft-transmissible agent." · "These changes are permanent." · "can be repeatedly transmitted to an 'uninfected' poinsettia by grafting." https://www.ishs.org/ishs-article/226_34
+7. **Fitoplasmas en el floema, sin pared** — Bendix C. & Lewis J. D. (2018). "The enemy within: phloem-limited pathogens". *Molecular Plant Pathology* 19(1): 238–254 (Mollicutes "distinguished from other bacteria by their lack of cell walls and small size"). https://pmc.ncbi.nlm.nih.gov/articles/PMC6638166
+
+8. **El mismo trabajo, con la cuscuta; todas las ramificadas infectadas** — USDA-ARS, resumen técnico, publicación 74439 (Lee et al., 1996–1997): "Through dodder transmission experiments we have succeeded to transfer phytoplasma" · "was detected in all 20 cultivars with free-branching morphotype". https://www.ars.usda.gov/research/publications/publication/?seqNo115=74439
+9. **Probablemente todas las comerciales; regreso a nochebuenas poco ramificadas** — Nicolaisen M. (2001), informe de literatura sobre fitoplasma en nochebuena para la CPVO (Oficina Comunitaria de Variedades Vegetales, UE): "present in probably all commercial poinsettias" · "All free-branching poinsettias investigated contain a phytoplasma." · "From C. roseus it was transmitted back into restricted-braching poinsettias" · phytoplasmas "are generally heat labile". https://cpvo.europa.eu/sites/default/files/documents/techreports/report_literature_study_phytoplasma.pdf
+10. **El calor puede quitar el fitoplasma; floema** — Greenhouse Grower (2011): heat stress "can actually eliminate phytoplasm, resulting in poor branching" · "All poinsettia cultivars can lose phytoplasma" · "Phytoplasma are organisms present in the phloem of the poinsettia plant." https://www.greenhousegrower.com/?p=46010
+11. **Revisión vigente del folleto de MSU** — Mississippi State University Extension, POD-05-26 (revisión de 2026 de P2573), con las mismas frases citadas en la fuente 2.
+
+## Notas
+- El dibujo es esquemático: los fitoplasmas, el floema y las hormonas están simplificados; los puntitos que viajan son ilustrativos.
+- "Casi seguro" en la voz: el estudio de 1997 habla de las variedades comerciales ramificadas; no toda nochebuena del mundo se analizó.
+- La altura chica de las nochebuenas de maceta también se debe a químicos reguladores (Oxford); por eso la voz solo atribuye a la bacteria las **ramas**, no lo chaparrito.
+- La voz no dice que los productores injerten hoy; solo que el injerto contagia la ramificación (Dole y Wilkins, 1988). Se quitó "para siempre": la planta puede perder el fitoplasma con calor fuerte (Greenhouse Grower 2011; CPVO 2001), y no siempre ("puede").
+- Joel R. Poinsett y la producción en México se dejaron fuera (no suman al mecanismo; cifras de producción inconsistentes entre fuentes).
+- Especies: *Euphorbia pulcherrima* (nochebuena), *Catharanthus roseus* (vinca, pervinca), *Cuscuta* (cuscuta, "dodder").
+
+- **Render (29 oct 2026):** enviado a GitHub (versión de revisión sin voz). La voz espera la aprobación de Robert.

@@ -1,5 +1,4 @@
 {
-  "voz_aprobada": true,
   "especial": "Día de Muertos",
   "serie_vinculada": "Ambiental",
   "velocidad": 1.0,
@@ -21,7 +20,7 @@
     },
     {
       "escena": "Bisnieta",
-      "texto": "Ninguna ha hecho el viaje antes: es tataranieta de las que se fueron en primavera."
+      "texto": "Ninguna ha hecho el viaje antes: suele ser bisnieta o tataranieta de las que se fueron en primavera."
     },
     {
       "escena": "Sol",

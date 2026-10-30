@@ -136,7 +136,7 @@ function CrisprNarrado() {
       <Subtitulo T={T} idx={6} at={C.Corte + 0.1} until={C2 - 0.1} texto="Copia el recuerdo y *las tijeras Cas buscan.*" />
       <Subtitulo T={T} idx={7} at={C2 + 0.1} until={C.Estudio - 0.1} texto="Mismo pedazo: *corte. Adiós.*" />
       <Subtitulo T={T} idx={8} at={C.Estudio + 0.1} until={C.Nobel - 0.1} texto="Cada recuerdo nuevo *las volvía resistentes.*" />
-      <Subtitulo T={T} idx={9} at={C.Nobel + 0.1} until={C.Extra - 0.1} texto="Tijeras para *cortar el ADN que quisieran.*" />
+      <Subtitulo T={T} idx={9} at={C.Nobel + 0.1} until={C.Extra - 0.1} texto="Las reprogramaron: *cortan el ADN que quieras.*" />
       <Subtitulo T={T} idx={10} at={C.Extra + 0.1} until={C.Cierre - 0.1} texto="En 2020: *lo traen muchísimas.*" />
       <Subtitulo T={T} idx={11} at={C.Cierre + 0.1} until={C.Outro - 0.1} texto="Las inventó *lo que hay en tu yogur.*" />
 

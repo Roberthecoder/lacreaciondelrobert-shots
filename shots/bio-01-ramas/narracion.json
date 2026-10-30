@@ -1,5 +1,4 @@
 {
-  "voz_aprobada": true,
   "dcHtml": "Shot Ramas base narrada.dc.html",
   "salida": "Shot Ramas narrado.dc.html",
   "velocidad": 1.155,
@@ -17,8 +16,8 @@
     { "escena": "Cafe", "texto": "Café es el desierto: cultivar donde casi no llueve." },
     { "escena": "Dorado", "texto": "Dorada son los datos: computadoras que leen el ADN." },
     { "escena": "Morado", "texto": "Morada, las leyes y la ética; oscura, las armas biológicas y el bioterrorismo." },
-    { "escena": "Estudio", "texto": "En 2004, Edgar DaSilva, de la UNESCO, juntó estos colores; y casi nunca van solos." },
-    { "escena": "Naranja", "texto": "Nosotros sumamos uno: naranja, contarlo. Para eso es esta serie." },
+    { "escena": "Estudio", "texto": "En 2004, Edgar DaSilva, de la UNESCO, juntó estos colores, aunque cada autor les da su propio significado; y casi nunca van solos." },
+    { "escena": "Naranja", "texto": "Y hay uno más, el naranja: contarlo. Para eso es esta serie." },
     { "escena": "Cierre", "texto": "No es un arcoíris: es tu día, pintado por seres vivos." }
   ]
 }

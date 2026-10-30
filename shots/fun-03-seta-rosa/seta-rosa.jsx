@@ -49,10 +49,10 @@ function SetaNarrado() {
         <FotoRecorte T={T} at={K.Es} src={FOTO('racimo2')} x={380} y={800} w={470} h={633} rot={-4} seed={2} />
         <FotoRecorte T={T} at={K.Es + 1.2} src={FOTO('laminillas')} x={790} y={960} w={340} h={340} rot={5} seed={3} />
       </Escena>
-      {/* 2 · esporada: dibujo de la seta soltando esporas alargadas sobre aluminio + la foto */}
+      {/* 2 · esporada: dibujo de la seta soltando esporas alargadas + la foto */}
       <Escena T={T} a={K.Ep} b={K.Pl} fondo={KC.yellow}>
         <div style={fondoPuntos(KC.yellow)}></div>
-        <FotoRecorte T={T} at={K.Ep + 0.1} src={FOTO('esporada')} x={540} y={1010} w={720} h={405} rot={2} seed={4} />
+        <FotoRecorte T={T} at={K.Ep + 0.1} src={FOTO('racimo_video')} x={540} y={1010} w={720} h={405} rot={2} seed={4} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:39 }}>
           <g transform="translate(300 470) scale(1 -1)"><SetaOstra s={1.9} abre={1} rot={-8} color={ROSA} oscuro={ROSA2} /></g>
           {Array.from({ length: 30 }, (_, i) => { const u = ((T - K.Ep) * 0.5 + i / 30) % 1; return <EsporaPl key={i} x={440 + (i % 6) * 36 + Math.sin(u * 6 + i) * 20} y={520 + u * 300} s={1.4} rot={i * 40 + T * 60} o={Math.sin(Math.PI * u)} />; })}
@@ -82,7 +82,7 @@ function SetaNarrado() {
           {/* gotitas de humedad */}
           {T > K.H && Array.from({ length: 20 }, (_, i) => { const u = ((T - K.H) * 0.35 + i / 20) % 1; return <circle key={i} cx={120 + (i * 47) % 860} cy={380 + u * 900} r={7} fill="#fff" opacity={0.7 * Math.sin(Math.PI * u)} />; })}
         </svg>
-        <Lupa T={T} at={K.P + 0.3} until={K.A - 0.2} x={540} y={600} r={230} fx={540} fy={1060} etiqueta="RAYOS X · bolsa" tinte={KC.cyan}
+        <Lupa T={T} at={K.P + 0.3} until={K.A - 0.2} x={540} y={600} r={230} fx={540} fy={1060} etiqueta="POR DENTRO · bolsa" tinte={KC.cyan}
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a2614" />{Array.from({ length: 24 }, (_, i) => <rect key={i} x={(i * 53) % (r * 2)} y={(i * 97) % (r * 2)} width={34} height={12} rx={3} fill="#a86d2c" transform={`rotate(${i * 37} ${(i * 53) % (r * 2)} ${(i * 97) % (r * 2)})`} />)}<MicelioRadial r={r} p={1} seed={4} /></svg>} />
         <Medidor T={T} at={K.A + 0.6} until={K.H - 0.2} etiqueta="CO₂ EN LA BOLSA" valor={co2} texto={(v) => (v > 0.5 ? 'alto' : 'bajo')} y={330} color={KC.red} />
         <Medidor T={T} at={K.H + 0.2} until={K.C - 0.2} etiqueta="HUMEDAD" valor={(t) => 0.9 * kprog(t, K.H + 0.3, K.H + 2)} texto={(v) => Math.round(v * 100) + ' %'} y={330} color={KC.cyan} />
@@ -119,10 +119,11 @@ function SetaNarrado() {
       <Etq T={T} at={K.Es + 0.6} until={K.Ep - 0.2} x={640} y={420} texto="Pleurotus djamor" it color={KC.ink} />
       <Chip T={T} at={K.Es + 2.2} until={K.Ep - 0.2} texto="silvestre en México y el trópico" y={1500} x={400} borde={KC.gold} tam={38} />
       <Etq T={T} at={K.Ep + 1.4} until={K.Pl - 0.2} x={700} y={620} texto="esporas (≈ 8 µm)" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ep + 0.3} until={K.Pl - 0.2} texto="esporada · 3 feb 2026" y={1500} x={400} borde={KC.pink} tam={38} />
-      <Lupa T={T} at={K.Pl + 0.7} until={K.Gr - 0.3} x={720} y={560} r={250} fx={360} fy={1000} etiqueta="RAYOS X · agar" tinte={KC.mint}
+      <Chip T={T} at={K.Ep + 0.2} until={K.Ep + 2.6} texto="micelio en aserrín pasteurizado" y={420} borde={KC.mint} tam={36} />
+      <Chip T={T} at={K.Ep + 2.4} until={K.Pl - 0.2} texto="esporada · 3 feb 2026" y={1500} x={400} borde={KC.pink} tam={38} />
+      <Lupa T={T} at={K.Pl + 0.7} until={K.Gr - 0.3} x={720} y={560} r={250} fx={360} fy={1000} etiqueta="AL MICROSCOPIO · agar" tinte={KC.mint}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#e7cf8f" opacity=".25" /><MicelioRadial r={r} p={kprog(t, K.Pl + 1, K.Gr - 0.3)} /><g transform={`translate(${r} ${r})`}><EsporaPl x={0} y={0} s={1.6} /></g></svg>} />
-      <Chip T={T} at={K.Pl + 0.3} until={K.Gr - 0.2} texto="placa de agar · 4 feb" y={1500} x={400} borde={KC.mint} tam={38} />
+      <Chip T={T} at={K.Pl + 0.3} until={K.Gr - 0.2} texto="agar PDA · 4 feb" y={1500} x={400} borde={KC.mint} tam={38} />
       <Chip T={T} at={K.Gr + 0.3} until={K.P - 0.2} texto="grano → sustrato → semanas" y={420} borde={KC.gold} tam={38} />
       <Chip T={T} at={K.A + 3.9} until={K.H - 0.2} texto="aire fresco = sombrero normal" y={1500} x={400} borde={KC.mint} tam={36} />
       <MitoTachado T={T} at={K.A + 1.2} tacharEn={K.A + 3.6} until={K.A + 4} texto="mucho CO₂ = deforme" x={540} y={1500} tam={38} />
@@ -137,8 +138,8 @@ function SetaNarrado() {
 
       <Subtitulo T={T} idx={0} at={K.G + 0.2} until={K.Es - 0.1} texto="No es plástico: *es un hongo vivo.*" />
       <Subtitulo T={T} idx={1} at={K.Es + 0.1} until={K.Ep - 0.1} texto="La seta rosa, *Pleurotus djamor.*" />
-      <Subtitulo T={T} idx={2} at={K.Ep + 0.1} until={K.Pl - 0.1} texto="Empezó con *una esporada.*" />
-      <Subtitulo T={T} idx={3} at={K.Pl + 0.1} until={K.Gr - 0.1} texto="En agar salió *el micelio.*" />
+      <Subtitulo T={T} idx={2} at={K.Ep + 0.1} until={K.Pl - 0.1} texto="De un bloque de aserrín… *y su esporada.*" />
+      <Subtitulo T={T} idx={3} at={K.Pl + 0.1} until={K.Gr - 0.1} texto="En agar PDA: *mi propia cepa.*" />
       <Subtitulo T={T} idx={4} at={K.Gr + 0.1} until={K.P - 0.1} texto="Se comió el sustrato *por dentro.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.A - 0.1} texto="¿Qué le avisa que *es hora de dar fruto?*" />
       <Subtitulo T={T} idx={6} at={K.A + 0.1} until={K.H - 0.1} texto="Aire fresco: con mucho CO₂ *se deforma.*" />
@@ -174,7 +175,7 @@ function SetaCiclo() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:39 }}>{Array.from({ length: 24 }, (_, i) => { const u = ((T - K.Ra) * 0.4 + i / 24) % 1; return <EsporaPl key={i} x={300 + (i * 23) % 500 + Math.sin(u * 5 + i) * 30} y={1180 + u * 300} s={1.3} rot={i * 40 + T * 50} o={Math.sin(Math.PI * u)} />; })}</svg>
       </Escena>
       <Escena T={T} a={K.E} b={K.Pl} fondo={KC.yellow}><div style={fondoPuntos(KC.yellow)}></div>
-        <FotoRecorte T={T} at={K.E + 0.05} src={FOTO('esporada')} x={540} y={900} w={760} h={428} rot={2} seed={2} />
+        <FotoRecorte T={T} at={K.E + 0.05} src={FOTO('laminillas')} x={540} y={900} w={760} h={428} rot={2} seed={2} />
         <Lupa T={T} at={K.E + 1.6} until={K.Pl - 0.4} x={540} y={1450} r={190} fx={600} fy={900} etiqueta="esporas" tinte={KC.pink}
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a2a33" />{Array.from({ length: 26 }, (_, i) => <EsporaPl key={i} x={(i * 71) % (r * 2)} y={(i * 113) % (r * 2)} s={2} rot={i * 47 + t * 20} />)}</svg>} />
       </Escena>

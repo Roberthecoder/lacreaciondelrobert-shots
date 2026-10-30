@@ -1,10 +1,14 @@
 {
-  "_nota": "Niveles de la mezcla narrada (dB). Robert pidió graves más presentes (29 oct 2026). Cambiar aquí afina TODOS los shots.",
+  "_nota": "Sonido oficial elegido por Robert el 30 oct 2026 (muestra «5»: G3 +2.5 dB con voz con presencia). Cambiar aquí afina TODOS los shots.",
   "voz_lufs": -16,
-  "cama_db": -7,
-  "graves_db": 6,
+  "cama_db": -6,
+  "graves_db": 12,
   "graves_bajan_al_hablar": false,
-  "armonicos_db": 8,
+  "armonicos_db": 12,
   "medios_ratio": 1.8,
-  "agudos_db": 3
+  "agudos_db": 3,
+  "presencia_3k_db": 2.5,
+  "brillo_6k_db": 1,
+  "final_lufs_narrado": -7.1,
+  "final_lufs_sin_voz": -11
 }

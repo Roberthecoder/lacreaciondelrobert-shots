@@ -36,4 +36,20 @@ Decisiones para no exagerar:
 
 Todas las afirmaciones quedaron ✅. El dibujo es esquemático.
 
+## Re-verificación (29 oct, auditoría)
+Se corrigió que los 2.5 m no son del estudio de 2008 sino de Buller (1934); ahora la voz, la pantalla, el guion y publicacion.md lo fechan en 1934.
+
+Fuentes abiertas: [Y] Yafetto et al. 2008, texto completo vía Europe PMC (PMC2528943, fullTextXML); [B] Buller, A. H. R. (1934). *Researches on Fungi*, vol. VI (reimpresión Hafner 1958, texto completo en archive.org: https://archive.org/details/researchesonfung06bull), cap. sobre Pilobolus, pp. 67–68.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| El 2.5 m de *P. kleinii* en la Tabla 1 de Yafetto es de Buller, no de los autores de 2008 | ✅ | [Y] | "* Maximum range measurements by authors with exception of P. klenii data published by Buller [19]" · ref. 19: "Buller AHR. Researches on fungi, vol. 6. London: Longmans, Green & Co; 1934." | 2008 |
+| Buller midió un alcance máximo de ~2.5 m en *P. kleinii* | ✅ | [B] | "the maximum horizontal distance to which any sporangium was discharged was observed to be : for P. Kleinii, 8 feet 0·5 inch ; and for P. longipes, 8 feet 7·5 inches" (8 ft 0.5 in = 2.45 m ≈ 2.5 m) | 1934 |
+| Voz: "Y desde 1934 se sabe que vuela hasta dos metros y medio" | ✅ | [B], [Y] | El dato se publicó en el vol. VI de 1934 (ref. 19 de [Y]); [Y] lo reproduce: "Measured maximum range (m) … 2.5" | 1934 |
+| Pantalla "dato de 1934", subtítulo "2.5 m (dato de 1934)" y publicacion.md "(dato publicado en 1934)" / "según un dato publicado en 1934" (YouTube, Instagram, Facebook, X, Threads) | ✅ (corregido; antes decía "medido en 1934", ⚠️ porque Buller midió entre 1909 y 1934) | [B], [Y] | Ref. 19 de [Y]: "Buller AHR. Researches on fungi, vol. 6 … 1934"; [B]: "a series of experiments which I have made since 1909 and which will now be described" | 1934 |
+| "Medición de Buller, 1934" (LinkedIn y guion.md, como cita autor-año) | ✅ | [B], [Y] | Cita autor-año de la publicación: "Buller AHR. Researches on fungi, vol. 6 … 1934" | 1934 |
+| Lejos de la caca, al pasto limpio (sin cambio de sentido) | ✅ | [Y] | "propel spores over distances of many centimeters or even meters onto fresh vegetation where they may be consumed by their host animals" | 2008 |
+
+Corregido el 29 oct: "medido en 1934" pasó a "dato de 1934" (pantalla y subtítulo) y a "dato publicado en 1934" (publicacion.md). Todo queda ✅.
+
 VEREDICTO: APROBADO

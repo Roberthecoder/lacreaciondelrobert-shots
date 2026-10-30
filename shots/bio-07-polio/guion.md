@@ -14,7 +14,7 @@
 
 ## Corrección del 28 oct 2026 (verificación de hechos independiente, ver `verificacion.md`)
 1. **Causalidad del informe Fink:** el comité ya trabajaba antes de la publicación (se reunió entre abril de 2002 y enero de 2003), y el consejo de bioseguridad se creó después del informe. La voz decía "De ahí salieron reglas"; ahora dice "Después vinieron reglas", y el subtítulo dice "Después vinieron las reglas".
-2. **Revisión de pedidos:** no la hacen todas las empresas; es voluntaria y de un consorcio cuyos cinco fundadores producían el 80 % de los genes sintetizados. La voz dice ahora "las grandes empresas".
+2. **Revisión de pedidos:** no la hacen todas las empresas; es voluntaria y de un consorcio cuyos cinco fundadores producían el 80 % de los genes sintetizados. La voz dice ahora (29 oct 2026, auditoría) "desde 2009, muchas empresas que fabrican ADN por encargo revisan, por su cuenta…": la fuente es de 2009 y el consorcio (IGSC, formado en 2009) sigue vigente con su protocolo V3.1 (2026).
 3. **Comillas:** los chips "de eso se trataba / advertir del riesgo" iban entre comillas angulares como si fueran una cita textual; ya no las llevan (el chip "irresponsable" sí es textual y se queda).
 4. En el `guion.md` no se encontró la sección `## Fuentes` duplicada que mencionaba el informe: hay una sola copia.
 5. La voz cambió: se quitó `voz_aprobada` y el shot vuelve a "Por revisar" en la Sala.
@@ -34,7 +34,7 @@
 | 8 | Science | Salió en Science en agosto de 2002 y el mundo se asustó. | Portada de revista con la fecha. |
 | 9 | Crítica | Muchos colegas lo llamaron irresponsable; el equipo dijo que ese era el punto. | Globos de texto encontrados: «irresponsable» (textual) y, sin comillas, "de eso se trataba: advertir del riesgo". |
 | 10 | Reglas | Después vinieron reglas: el informe Fink y un consejo de bioseguridad en Estados Unidos. | Dos documentos sellados: "Informe Fink · 2004" y "NSABB · 2004". |
-| 11 | Hoy | Y hoy las grandes empresas que venden ADN revisan qué pides y quién eres. | Un pedido pasa por una lupa y recibe un sello de revisado. |
+| 11 | Hoy | Y desde 2009, muchas empresas que fabrican ADN por encargo revisan, por su cuenta, qué pides y quién eres. | Un pedido pasa por una lupa y recibe un sello de revisado. |
 | 12 | Cierre | La misma herramienta que fabrica tu insulina pudo escribir un virus. Por eso hay reglas. | **Regreso a la pantalla de letras**, ahora con marco dorado y candado. |
 | — | Outro | (sin voz) | Cierre de marca. |
 
@@ -50,7 +50,7 @@ La pantalla vacía se llena de letras al ritmo: **una nota por cada fila de 50 l
 
 El artículo salió en *Science* el 9 de agosto de 2002 (Cello, Paul y Wimmer, vol. 297, pp. 1016–1018). La reacción fue mayormente de alarma: muchos colegas lo llamaron irresponsable, y los autores respondieron que justamente querían advertir de un riesgo que nadie tomaba en serio.
 
-Hoy ese experimento es **el ejemplo clásico de la investigación de doble uso**: lo mismo que sirve para hacer vacunas o para fabricar tu insulina sirve para escribir un virus. De ahí salieron reglas: el **informe Fink** del Consejo Nacional de Investigación (2004), la creación del consejo de bioseguridad **NSABB**, y la práctica de que las grandes empresas que venden ADN sintético revisen qué se les pide y quién lo pide: es una revisión voluntaria, nacida en un consorcio internacional cuyos cinco fundadores producían el 80 % de los genes sintetizados (GEN, 2009).
+Hoy ese experimento es **el ejemplo clásico de la investigación de doble uso**: lo mismo que sirve para hacer vacunas o para fabricar tu insulina sirve para escribir un virus. De ahí salieron reglas: el **informe Fink** del Consejo Nacional de Investigación (2004), la creación del consejo de bioseguridad **NSABB**, y, desde 2009, la práctica de que muchas empresas que fabrican ADN por encargo revisen qué se les pide y quién lo pide: es una revisión voluntaria, nacida en 2009 en un consorcio internacional cuyos cinco fundadores producían el 80 % de los genes sintetizados (GEN, 2009).
 
 Este video **no explica ningún procedimiento**: es historia de la ciencia y bioseguridad. El dibujo es esquemático. **¿Qué opinas: se debió publicar o no? 👇**"
 

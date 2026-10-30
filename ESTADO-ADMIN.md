@@ -4,7 +4,7 @@ Este archivo es la memoria del chat administrador. **Toda sesión administradora
 (commit en main con `[sin render]`). Si el chat se compacta o se abre uno nuevo, aquí está todo lo que hace falta para seguir.
 Escríbelo corto: estado actual y pendientes, no historia. La historia vive en git y en los `resultado` de la Sala.
 
-Última actualización: 29 oct 2026, 16:30 UTC.
+Última actualización: 30 oct 2026.
 
 ## PEDIDO DE 300 SHOTS (29 oct) — LISTO
 - Pedido `zu488o6qtt10bvn5j11h` listo: 300 shots (#10–#59 de las 6 series) en la Sala, sin voz. Juntados a main el 29 oct
@@ -15,46 +15,37 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   y actualiza en la Sala fes-07/fes-10/fes-14. Cuando avise, juntar pedido300/festivos a main con [sin render].
 - Temas cercanos aceptados (ángulos distintos): bio-20 vs qui-49 (glutamato), amb-40 vs amb-41 (partículas), bio-50 vs fes-14 (maíz).
 
-## AUDITORÍA DE LOS 60 SHOTS ANTERIORES (29 oct) — EN CURSO
-- 4 verificadores independientes: 46 OK, 15 con datos a corregir (informes en `auditorias/2026-10-29/`, rama
-  `correcciones/auditoria-29oct`). Sesión `session_0157fph2Famee5vpDrWHHrN1` los corrige, re-verifica, renderiza y reemplaza en la Sala.
-  Al terminar: juntar esa rama a main con [sin render]. fun-03: falta que Robert confirme «en mi cuarto» y «papel aluminio».
+## PUBLICADOR DE REDES (29 oct) — 6 REDES LISTAS; NADA PUBLICADO EN PÚBLICO TODAVÍA
+- Cómo se usa: ADMIN.md, «Publicar en redes». Botón «Publicar» de la Sala → collection `publicaciones` → el admin lo procesa.
+- Facebook, Instagram, Threads, LinkedIn: publican con el texto de cada red de `publicacion.md`. YouTube: sube PRIVADO hasta que
+  Google apruebe la auditoría (ENVIADA el 29 oct; documentos en `docs/revisiones/youtube/`).
+- TikTok: PUBLICA DIRECTO (video.publish) con su descripción y las opciones que Robert elige en la Sala (privacidad sin valor
+  por defecto, comentarios/dúo/stitch, etiqueta IA, contenido de marca). Opción «borrador» para mandarlo a su bandeja.
+  Mientras TikTok no apruebe la app: plan B automático = BORRADOR a la bandeja de Robert (él pega el texto y publica).
+  Plan B PROBADO el 29 oct con la cuenta pública (fun-02 llegó como borrador). La API de borrador no acepta título ni descripción.
+  Revisión de Producción REENVIADA el 29 oct 16:47 con Direct Post y demo nuevo (en la PC de Robert:
+  `C:\Users\winusr\lacreacion-lotes\revision-tiktok\demo-tiktok-directo.mp4`). Al aprobarse: Robert cambia
+  TIKTOK_CLIENT_KEY/SECRET por los de Producción y se conecta otra vez (docs/tiktok.html, borrando la llave guardada).
+- Doc `estado/tiktok` de la Sala = datos de la cuenta (creator_info) para el panel de TikTok; se actualiza con el modo prueba.
+- Pendiente de Robert: borrar en TikTok los 2 videos «Solo yo» de la hormiga zombi (demo, 29 oct) y el borrador de 003; volver
+  la cuenta a pública si sigue privada. Borrar los privados/borradores de 003 en YouTube Studio y Meta.
+- La rama `temporal/demo-tiktok` (solo los MP4 del demo) no se puede borrar por una regla del repo: borrarla cuando se ajuste.
+- Recordatorios: LinkedIn vence ~28 dic 2026 (manual). Threads y TikTok se renuevan solos cada lunes (`renovar-tokens.yml`).
 
-## PUBLICADOR DE REDES (29 oct) — LAS 6 REDES FUNCIONAN EN PRUEBA Y PRIVADO; FALTA LA PRIMERA PUBLICACIÓN REAL
-- Cómo se usa: ADMIN.md, «Publicar en redes». Programa `motor/redes/publicar.py`, workflow `publicar.yml` (a mano o con un
-  archivo `publicar/pedidos/*.json`), botón «Publicar» en la Sala (collection `publicaciones`).
-- Probado con 003-semillas-luna: modo prueba OK en Facebook, Instagram, Threads, YouTube y LinkedIn. Modo privado OK en
-  YouTube (privado: youtube.com/shorts/EuhA0wKFL4A), Facebook (borrador), Instagram y Threads (contenedor sin publicar) y LinkedIn
-  (video sin post). Instagram: la subida directa da 400, así que usa el enlace del Release (automático).
-  Esos borradores/privados de 003 se pueden borrar (su narrado es viejo): YouTube Studio y Meta Business Suite.
-- TikTok CONECTADO el 29 oct (cuenta «La Creación del Robert», Sandbox «Pruebas», user.info.basic + video.upload; refresh
-  hasta 29 oct 2027, se renueva solo). Borrador de prueba (003) enviado a su bandeja: Robert lo puede borrar en la app.
-  Ojo: los secretos TIKTOK_CLIENT_KEY/SECRET son los del SANDBOX. El problema al conectar fue que la llave pegada en la página
-  era de otra app; el workflow «Conectar TikTok» imprime la huella (8 letras) de la llave para comparar sin verla.
-- 29 oct 18:20: modo prueba OK en las 6 redes con fun-02; renovar-tokens OK (Threads renovado, vence 28 dic; se extiende cada lunes).
-- Primera publicación real: Robert dijo «todavía no publiques nada» (29 oct). Propuesta cuando quiera: fun-02-hormiga-zombi
-  (auditado OK). La voz está en pausa para mejorar su calidad: no publicar narrados hasta que él lo pida.
-- Revisiones (YouTube y TikTok ENVIADAS el 29 oct, ver abajo); respuestas en `docs/revisiones/LEEME.md`. Antes:
-  TikTok. Video demo GRABADO el 29 oct (3:47, sitio → autorizar → «Conectar TikTok» → borrador a la bandeja): en la PC de
-  Robert, C:\Users\winusr\lacreacion-lotes\revision-tiktok\demo-tiktok.mp4 (no va al repo público). No muestra la pantalla de
-  permisos de TikTok (la cuenta ya estaba autorizada) ni el teléfono; si TikTok lo pide, Robert quita el acceso de la app en
-  TikTok (Ajustes → Seguridad → Apps) y se graba de nuevo, más un video del celular con la notificación del borrador.
-- TikTok ENVIADO A REVISIÓN el 29 oct, 12:47 (app de Producción «La Creación del Robert - AutoPosting»: Education, Web,
-  Login Kit + Content Posting, scopes user.info.basic + video.upload, redirect y sitio del repo, ícono y demo). Esperar
-  respuesta de TikTok (correo y «Review comments» en el portal). Al aprobarse: Robert cambia TIKTOK_CLIENT_KEY/SECRET por los
-  de Producción y se conecta otra vez (docs/tiktok.html: borra la llave guardada y pega la de Producción).
-- YouTube: AUDITORÍA ENVIADA el 29 oct, 13:25 (formulario «YouTube API Services - Audit and Quota Extension», proyecto
-  la-creacion-del-robert 1006579961003, solo videos.insert, cuota sin cambio; documentos en docs/revisiones/youtube/).
-  Se agregó la sección de YouTube a privacidad.html y terminos.html (requisito). Esperar el correo de Google (semanas).
-  Mientras no aprueben, lo que sube el publicador a YouTube queda PRIVADO.
-- La rama `temporal/demo-tiktok` (solo el MP4 del demo, para subirlo al formulario) NO se pudo borrar: una regla del repo
-  impide borrar ramas. Borrarla cuando Robert quite o ajuste esa regla (Settings → Rules).
-- Recordatorios: LinkedIn vence ~28 dic 2026 (renovación manual, ADMIN.md). Threads y TikTok se renuevan solos cada lunes
-  (`renovar-tokens.yml`); si ese run sale en rojo, avisar a Robert.
-- Disco de la PC de Robert: se llenó (0 MB) el 29 oct al bajar los 300 shots; se liberaron ~460 MB. Hay que liberar más
-  (C: con 254 GB usados). En esa PC no hacer `git pull` completo hasta que haya espacio.
+## AUDITORÍA DE LOS 60 SHOTS ANTERIORES (29 oct) — LISTO
+- 15 corregidos y re-verificados (informes en `auditorias/2026-10-29/`), fun-03 con datos de Robert, y la Lupa ya no dice «RAYOS X»
+  en ningún shot (16 archivos). Todo juntado a main el 29 oct. amb-03 sin voz dura 60.6 s (Robert acepta pequeñas diferencias).
 
-## VOZ EN PAUSA (29 oct, Robert): "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
+## VOZ NUEVA Y SONIDO OFICIAL (30 oct) — APROBADO, GENERANDO TODAS LAS VOCES
+- Voz profesional `BrkFnhKTRJck3ZEjqD5d`, eleven_v4. "IA" → "Ía" solo para ElevenLabs (`motor/pronunciacion.json`).
+- Sonido oficial = muestra «5» elegida por Robert: mezcla por bandas con graves y armónicos fuertes y domados, voz comprimida con
+  presencia (3 kHz), narrado a −7.1 LUFS y sin voz a −11, pico −1.5 dB. Todo en `motor/mezcla.json` (+ narrar.mjs y render.mjs).
+  Robert: "G3 suena perfecto al 70 %... quiero que al 50 % suene como al 70 %, potente pero bonito, justo para TikTok".
+- Duración con la voz nueva: ~69–71 s (Robert: "así está excelente").
+- Generación de TODAS las voces: rama `voces/v4`, tandas de 15, sesión `session_0157fpgySCQqJwj5CPC1oMyj`. ~370 shots ≈ 370,000
+  créditos. Si se detiene sin terminar, reactivarla ("sigue con las voces"). Al final ella junta voces/v4 a main con [sin render].
+
+## (HISTORIA) VOZ EN PAUSA (29 oct, Robert) — ya no aplica desde el 30 oct: "ahorita no hay ningún audio aprobado, voy a mejorar la calidad aún más"
 - Las 30 aprobaciones que esperaban créditos se marcaron `aprobado:false, en_pausa:true` en la Sala. NO generar ninguna voz
   ni poner `voz_aprobada` hasta que Robert vuelva a aprobar con el botón o en el chat.
 
@@ -110,14 +101,14 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   |---|---|---|
   | Facebook + Instagram | Listo. Usuario del sistema Publicator, token sin caducidad. Página id 1472728315916821, IG id 17841445286636880 | `META_SYSTEM_TOKEN`; vars `META_PAGE_ID`, `META_IG_ID` |
   | Threads | Listo (evaluador lacreaciondelrobert). Token de ~60 días: renovarlo con `th_refresh_token` antes de que venza (~28 dic 2026) | `THREADS_TOKEN`; var `THREADS_APP_ID` |
-  | YouTube | Listo (cuenta de marca «La Creación del Robert», scope youtube.upload). App de Google EN PRODUCCIÓN desde el 29 oct (sin verificar): el refresh token ya no vence a los 7 días. Los videos subidos por API quedan privados hasta pasar la auditoría de la YouTube API (formulario de auditoría pendiente) | `YOUTUBE_CLIENT_ID`, `YOUTUBE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` |
+  | YouTube | Listo (cuenta de marca «La Creación del Robert», scope youtube.upload). App de Google EN PRODUCCIÓN desde el 29 oct (sin verificar): el refresh token ya no vence a los 7 días. Los videos subidos por API quedan privados hasta pasar la auditoría de la YouTube API (formulario ENVIADO el 29 oct) | `YOUTUBE_CLIENT_ID`, `YOUTUBE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` |
   | LinkedIn | Listo (publica en el perfil personal de Robert; app ligada a la página nueva «La Creación del Robert»). Token de 2 meses, sin renovación automática: regenerarlo ~28 dic 2026 en developers → OAuth tools → token generator (openid profile w_member_social) | `LINKEDIN_TOKEN`; var `LINKEDIN_CLIENT_ID` |
-  | TikTok | Sandbox «Pruebas» listo (Login Kit + Content Posting, user.info.basic + video.upload, sitio verificado, usuario de prueba lacreaciondelrobert). Falta: token (OAuth al construir el publicador) y, para producción, grabar un video demo con el sandbox y mandar a revisión | `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET` (del sandbox) |
+  | TikTok | Sandbox «Pruebas» conectado (user.info.basic + video.publish + video.upload; refresh hasta 29 oct 2027). Producción en revisión (reenviada 29 oct con Direct Post) | `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET` (del sandbox) |
   | X | No se hace (cobra por publicar) | — |
   Sitio con privacidad, términos y verificación de TikTok: https://roberthecoder.github.io/lacreaciondelrobert-shots/ (carpeta `docs/`).
   Tokens y claves: SIEMPRE como secretos de GitHub, nunca en el chat.
 - Comprar créditos de ElevenLabs.
-- Pedir revisión de YouTube (auditoría) y de TikTok (video demo) cuando exista el publicador.
+- Revisiones de YouTube (auditoría) y TikTok (Direct Post) ENVIADAS el 29 oct: esperar sus correos.
 - Borrar o no publicar los narrados viejos con errores que siguen en los Releases y en lacreaciondelrobert-archivo.
 
 ## Voz pendiente (28 oct, tarde)

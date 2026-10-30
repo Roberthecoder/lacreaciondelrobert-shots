@@ -76,14 +76,17 @@ X no se usa (cobra). El video es `<clave>_narrado.mp4` del Release (primero `bor
 
 **Modos:** `prueba` = revisa tokens, permisos, video (duración, 9:16, códecs) y textos (límites por red); no sube nada.
 `privado` = sube sin que nadie lo vea (Facebook borrador · Instagram y Threads contenedor listo sin publicar · YouTube privado ·
-LinkedIn video sin post · TikTok borrador). `real` = publica. **`real` solo con el permiso de Robert para esa publicación.**
+LinkedIn video sin post · TikTok «Solo yo», que exige cuenta privada mientras la app no esté aprobada). `real` = publica. **`real` solo con el permiso de Robert para esa publicación.**
 
 **Cómo se lanza desde la nube (las sesiones de nube no pueden lanzar workflows; usan git):** sube a cualquier rama un archivo
 `publicar/pedidos/<AAAAMMDD-HHMM>-<clave>.json`:
 ```json
 {"clave": "003-semillas-luna", "redes": ["facebook", "instagram"], "modo": "real",
- "confirmar": "003-semillas-luna", "autorizo": "Sala, pedido <id del doc>, 29 oct 2026"}
+ "confirmar": "003-semillas-luna", "autorizo": "Sala, pedido <id del doc>, 29 oct 2026",
+ "tiktok": {"modo": "directo", "privacidad": "PUBLIC_TO_EVERYONE", "comentarios": true, "duo": false, "stitch": false,
+            "marca_propia": false, "marca_pagada": false, "ia": true}}
 ```
+`tiktok` se copia TAL CUAL del doc de la Sala (Robert lo elige; nunca inventar la privacidad). `{"modo": "borrador"}` = a su bandeja.
 El push lo lanza solo (un pedido a la vez, nunca dos en paralelo). En modo real `confirmar` debe repetir la clave; si ya se
 publicó en esa red, se salta (para repetir: `"repetir": "true"`). Desde una PC con acceso a GitHub también se puede:
 Actions → «Publicar en redes» → Run workflow.
@@ -92,15 +95,15 @@ Actions → «Publicar en redes» → Run workflow.
 `git fetch -q origin refs/estado/publicaciones && git show FETCH_HEAD:publicaciones.json` → por red: `ok`, `id`, `url`, `nota`
 o `error`. El resumen del run en GitHub también trae, para TikTok, el texto que Robert pega en la app.
 
-**Botón «Publicar» de la Sala:** guarda en la collection `publicaciones` `{shot, titulo, redes, modo:"real", estado:"pendiente",
-creado, resultado}`. Solo Robert puede escribir en la Sala, así que **ese clic es su permiso** para esa publicación. En cada
+**Botón «Publicar» de la Sala:** guarda en la collection `publicaciones` `{shot, titulo, redes, tiktok?, modo:"real",
+estado:"pendiente", creado, resultado}` (`tiktok` = opciones que Robert eligió en el panel de TikTok). Solo Robert puede escribir en la Sala, así que **ese clic es su permiso** para esa publicación. En cada
 ronda: `ArtifactData` query `publicaciones` con `estado == "pendiente"` → `estado: "en proceso"` → archivo de pedido (arriba)
 con `autorizo: "Sala, pedido <id>"` → al terminar el run, lee la bitácora y pon `estado: "listo"` (o `"error"` con el motivo
 en `resultado`, en palabras sencillas) y en el doc del shot `publicado: {<red>: {url, fecha}}` (la Sala marca ✓ esa red).
 Si en el chat Robert dice «publica <shot> en <redes>», es lo mismo.
 
-**Lo que Robert ve y hace después:** TikTok: le llega una notificación en la app con el borrador; lo abre, pega el texto (está en
-la Sala, pestaña TikTok) y publica él. YouTube: queda **privado** hasta que Google apruebe la auditoría (ver abajo); mientras,
+**Lo que Robert ve y hace después:** TikTok: sale publicado con su descripción y la privacidad que eligió (si eligió
+«borrador», le llega a la bandeja y lo termina él). Mientras TikTok no apruebe la publicación directa, el publicador lo manda SOLO como borrador a su bandeja (plan B automático; la fila de la bitácora lleva `borrador: true` y no cuenta como publicado, para poder publicarlo directo después). YouTube: queda **privado** hasta que Google apruebe la auditoría (ver abajo); mientras,
 Robert puede cambiarlo a público a mano en YouTube Studio si quiere.
 
 **Renovar tokens:**

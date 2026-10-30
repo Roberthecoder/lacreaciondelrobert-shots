@@ -227,7 +227,7 @@ function InvasionScene({ T, K }) {
   return (
     <Bg color={C.mint} kind="dots" T={T}>
       <Abs x={CX} y={1150} w={1040} h={720} style={{ borderRadius:60, background:'rgba(22,18,15,.85)', border:OL, transform:`scale(${inP})` }}>
-        <div style={{ position:'absolute', left:30, top:24, font:`700 28px ${MONO}`, color:C.mint, letterSpacing:'0.1em' }}>RAYOS X ▸ HORMIGA INFECTADA</div>
+        <div style={{ position:'absolute', left:30, top:24, font:`700 28px ${MONO}`, color:C.mint, letterSpacing:'0.1em' }}>POR DENTRO ▸ HORMIGA INFECTADA</div>
         <div style={{ position:'absolute', inset:0, borderRadius:60, backgroundImage:'linear-gradient(rgba(47,224,168,.12) 2px, transparent 2px), linear-gradient(90deg, rgba(47,224,168,.12) 2px, transparent 2px)', backgroundSize:'60px 60px' }}></div>
       </Abs>
       <div style={{ position:'absolute', inset:0, transform:`scale(${inP})`, transformOrigin:`${CX}px 1150px` }}>

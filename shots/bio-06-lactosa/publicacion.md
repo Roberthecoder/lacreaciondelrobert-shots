@@ -1,15 +1,15 @@
 # Publicación · Biotecnológico #06 El virus que te deja tomar leche
 
 Textos listos para copiar (botón de copiar en cada bloque). Plantilla y reglas: `motor/plantillas/publicacion.md`.
-Corregido el 28 oct 2026 tras la verificación de hechos (ver `verificacion.md`): el virus trae un gen (de una β-galactosidasa), no "el gen que te falta", y la intolerancia de las ratas era provocada en el laboratorio.
+Corregido el 28 oct 2026 tras la verificación de hechos (ver `verificacion.md`): el virus trae un gen (de una β-galactosidasa), no "el gen que te falta", y las ratas eran adultas con poca lactasa (corregido el 29 oct 2026: no era una intolerancia provocada).
 
 ## Versión narrada
 
 ### TikTok
 ```text
 Ese virus no viene a enfermarte: trae un gen que te hace digerir la leche. 🥛🧬
-De bebés todos fabricamos lactasa, la enzima que parte la lactosa en glucosa y galactosa. Al crecer, la mayoría de los adultos del mundo baja esa producción: la lactosa llega entera al intestino grueso, las bacterias la fermentan y aparecen el gas y las molestias.
-En 1998, el equipo de During publicó en Nature Medicine que un virus adeno-asociado dado por la boca, cargando el gen de una enzima que parte la lactosa (β-galactosidasa), devolvió la capacidad de digerir lactosa a unas ratas a las que se la habían quitado en el laboratorio, y el efecto duró meses (4, lo que duró el experimento).
+De bebés casi todos fabricamos lactasa, la enzima que parte la lactosa en glucosa y galactosa. Al crecer, la mayoría de los adultos del mundo baja esa producción: la lactosa llega entera al intestino grueso, las bacterias la fermentan y aparecen el gas y las molestias.
+En 1998, el equipo de During publicó en Nature Medicine que un virus adeno-asociado dado por la boca, cargando el gen de una enzima que parte la lactosa (β-galactosidasa), devolvió la capacidad de digerir lactosa a ratas adultas con poca lactasa (modelo de hipolactasia del adulto), y el efecto duró meses (4, lo que duró el experimento).
 En febrero de 2018, el divulgador Justin Atkin (canal The Thought Emporium) intentó algo parecido en sí mismo y lo grabó. Importante: fue un autoexperimento, NO es un tratamiento aprobado y no existe un artículo revisado por pares con sus resultados. Su propia página del proyecto dice que sigue en desarrollo. No intentes nada de esto.
 Y hay una razón biológica para que un efecto así no sea permanente: el recubrimiento del intestino se renueva cada 4 o 5 días, así que si no se modifican las células madre del fondo de las criptas, el gen se va con las células viejas. Lo que sí existe hoy es la misma enzima en pastilla o la leche deslactosada.
 El dibujo es esquemático.
@@ -24,7 +24,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese virus no viene a enfermarte: trae un gen que te hace digerir la leche. 🥛🧬
 De bebés fabricamos lactasa, la enzima que parte la lactosa. Al crecer, la mayoría de los adultos baja esa producción y la lactosa llega entera al intestino grueso: las bacterias la fermentan y aparece el gas.
-En 1998 se probó en ratas, con intolerancia provocada en el laboratorio, un virus adeno-asociado con el gen de una enzima que parte la lactosa (β-galactosidasa) (Nature Medicine): volvieron a digerir lactosa durante meses. En 2018 un divulgador lo intentó en sí mismo y lo grabó: fue un autoexperimento, no un tratamiento aprobado, y no hay artículo revisado. No lo intentes.
+En 1998 se probó en ratas adultas con poca lactasa, un virus adeno-asociado con el gen de una enzima que parte la lactosa (β-galactosidasa) (Nature Medicine): volvieron a digerir lactosa durante meses. En 2018 un divulgador lo intentó en sí mismo y lo grabó: fue un autoexperimento, no un tratamiento aprobado, y no hay artículo revisado. No lo intentes.
 Además el intestino cambia su recubrimiento cada 4 o 5 días, así que el efecto no sería para siempre.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti te cae mal la leche o le aguantas todo? 👇
@@ -41,8 +41,8 @@ El virus que te haría digerir la leche otra vez 🥛🧬 | Shot Biotecnológico
 Descripción:
 ```text
 Ese virus no viene a enfermarte: trae un gen que te hace digerir la leche.
-De bebés todos fabricamos lactasa, la enzima que parte la lactosa en glucosa y galactosa. Al crecer, la mayoría de los adultos del mundo baja esa producción: la lactosa llega entera al intestino grueso, las bacterias la fermentan y aparecen el gas y las molestias.
-En 1998, el equipo de During publicó en Nature Medicine que un virus adeno-asociado dado por la boca, cargando el gen de una enzima que parte la lactosa (β-galactosidasa), devolvió la capacidad de digerir lactosa a unas ratas a las que se la habían quitado en el laboratorio, con expresión sostenida durante meses (4, lo que duró el experimento).
+De bebés casi todos fabricamos lactasa, la enzima que parte la lactosa en glucosa y galactosa. Al crecer, la mayoría de los adultos del mundo baja esa producción: la lactosa llega entera al intestino grueso, las bacterias la fermentan y aparecen el gas y las molestias.
+En 1998, el equipo de During publicó en Nature Medicine que un virus adeno-asociado dado por la boca, cargando el gen de una enzima que parte la lactosa (β-galactosidasa), devolvió la capacidad de digerir lactosa a ratas adultas con poca lactasa (modelo de hipolactasia del adulto), con expresión sostenida durante meses (4, lo que duró el experimento).
 En febrero de 2018, el divulgador Justin Atkin (The Thought Emporium) intentó algo parecido en sí mismo y lo grabó. Importante: fue un autoexperimento, no es un tratamiento aprobado y no existe un artículo revisado por pares con sus resultados. No intentes nada de esto.
 Además, el recubrimiento del intestino se renueva cada 4 o 5 días: si no se modifican las células madre del fondo de las criptas, el gen se va con las células viejas. Lo que sí existe hoy es la misma enzima en pastilla o la leche deslactosada.
 El dibujo es esquemático.
@@ -71,7 +71,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Ese virus no viene a enfermarte: trae un gen que te hace digerir la leche.
-La mayoría de los adultos del mundo baja la producción de lactasa, la enzima que parte la lactosa. En 1998, un equipo de Thomas Jefferson University (Filadelfia) publicó en Nature Medicine una terapia génica por la boca: un virus adeno-asociado con el gen de una enzima que parte la lactosa (β-galactosidasa) corrigió durante 4 meses, lo que duró el experimento, la intolerancia provocada en ratas de laboratorio.
+La mayoría de los adultos del mundo baja la producción de lactasa, la enzima que parte la lactosa. En 1998, un equipo de Thomas Jefferson University (Filadelfia) publicó en Nature Medicine una terapia génica por la boca: un virus adeno-asociado con el gen de una enzima que parte la lactosa (β-galactosidasa) corrigió durante 4 meses, lo que duró el experimento, la intolerancia de ratas adultas con poca lactasa.
 En 2018, un divulgador, Justin Atkin (The Thought Emporium), lo intentó en sí mismo y lo grabó. Fue un autoexperimento: no es un tratamiento aprobado y no hay un artículo revisado por pares. Su propia página dice que el proyecto sigue en desarrollo.
 El límite es biológico: el recubrimiento del intestino se renueva cada 4 a 5 días. Si el gen no llega a las células madre de la cripta, se va con las células viejas. Por eso lo que sí existe es la enzima en pastilla.
 ¿Qué otras terapias génicas "en pastilla" te parecen viables?

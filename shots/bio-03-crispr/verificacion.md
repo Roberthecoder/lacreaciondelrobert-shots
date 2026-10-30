@@ -29,4 +29,19 @@
 
 Todas las afirmaciones del texto final están ✅.
 
+## Re-verificación (29 oct, auditoría)
+Se corrigió la línea 9 (voz, subtítulo, guion y redes): la Cas9 que reprogramaron Charpentier y Doudna era de *Streptococcus pyogenes* ("de otra bacteria"), no la del yogur; se agrega que el grupo de Šikšnys lo mostró ese año con la Cas9 de *S. thermophilus*. La fila de arriba "reprogramaron esas tijeras" queda reemplazada por esta.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz: "En 2012, Charpentier y Doudna tomaron unas tijeras así, de otra bacteria, y las reprogramaron para cortar el ADN que quisieran" | ✅ | Jinek et al., Science 337: 816 (PMC6286148, abierto 29 oct 2026) | "Cas9 protein derived from the pathogen Streptococcus pyogenes"; "rational design of chimeric RNAs is robust and could in principle enable targeting of any DNA sequence of interest" | 2012 |
+| Redes: "la Cas9 de otra bacteria (Streptococcus pyogenes)" | ✅ | Jinek et al. 2012 (descriptor MeSH en Europe PMC: "Streptococcus pyogenes"); Nobel, Scientific Background 2020 | "Cas9 protein derived from the pathogen Streptococcus pyogenes"; "Cleavage occurred 3 bp upstream of the PAM sequence, which in S. pyogenes has the sequence 5′-NGG-3′" | 2012 / 2020 |
+| Subtítulo: "Las reprogramaron: cortan el ADN que quieras" | ✅ (con "en principio": necesita PAM NGG; nivel de simplificación aceptable) | Jinek et al. 2012 | "could in principle enable targeting of any DNA sequence of interest" | 2012 |
+| Redes: "Ese mismo año [2012], el grupo de Šikšnys lo mostró con la Cas9 de la bacteria del yogur" | ✅ | Gasiunas, Barrangou, Horvath y Siksnys, PNAS 109: E2579 (PMC3465414, abierto 29 oct 2026; Vilnius University) | "the Cas9–crRNA complex of the Streptococcus thermophilus CRISPR3/Cas system introduces in vitro a double-strand break at a specific site in DNA"; "this endonuclease system can be reprogrammed readily using customized RNAs to cleave dsDNA specifically" | 2012 |
+| LinkedIn: "…y en 2020 recibieron el Nobel de Química. También en 2012, el grupo de Šikšnys lo mostró…" | ✅ (corregida el 29 oct: antes "Ese mismo año", ambigua) | Gasiunas et al., PNAS 2012 | "received for review May 21, 2012"; publicado 4 sep 2012 | 2012 |
+| TikTok (línea 12) y YouTube (línea 40): "…Nobel de Química 2020. También en 2012, el grupo de Šikšnys lo mostró…" | ✅ (corregida el 29 oct: antes "Ese mismo año", ambigua) | Gasiunas et al., PNAS 2012 | "received for review May 21, 2012" | 2012 |
+| Nobel de Química 2020 a Charpentier y Doudna (sin cambio) | ✅ | nobelprize.org | "for the development of a method for genome editing" | 2020 |
+
+Resuelto el 29 oct: "Ese mismo año" cambiado por "También en 2012" en TikTok, YouTube y LinkedIn; Gasiunas et al. 2012 agregado a las fuentes y al comentario fijado (4b). Nota: `voz/narracion.json` (voz vieja en caché) aún dice "reprogramaron esas tijeras": no reutilizarla; la voz se regenera con la nueva aprobación.
+
 VEREDICTO: APROBADO

@@ -5,7 +5,7 @@
 - **Gancho:** #1 "Esto no es X: es Y", sobre la foto real de tu racimo.
 - **Duración:** voz ≈ 931 caracteres (~58 s con ×1.065) + cierre 3.5 s. Base sin voz: 61.9 s. Mudo: 61.5 s.
 - **28 oct 2026 (verificación de hechos):** se corrigió la voz y la pantalla (ver `verificacion.md`). La voz guardada ya no corresponde al texto: **la voz nueva espera tu aprobación** (≈ 931 caracteres = créditos de ElevenLabs). Mientras, la revisión es la versión sin voz (ya no se renderiza el gemelo mudo; su archivo queda corregido como referencia).
-- **Fotos reales (recortes animados):** cuadros de tu video y fotos del PDF *Pink_oyster_spore_to_harvest_2026* copiadas a `assets/foto_*.png` (racimos, laminillas, esporada en aluminio, placa con micelio, grano colonizado, primordios en la bolsa). Recorté el logo viejo y las fechas sobreimpresas.
+- **Fotos reales (recortes animados):** cuadros de tu video y fotos del PDF *Pink_oyster_spore_to_harvest_2026* copiadas a `assets/foto_*.png` (racimos, laminillas, esporada, placa con micelio, grano colonizado, primordios en la bolsa). Recorté el logo viejo y las fechas sobreimpresas.
 - **Qué se corrigió del viejo:** "oxígeno, humedad y temperatura" → con fuente: **aire fresco (CO₂ bajo), humedad alta, algo de luz y calor**. El viejo decía "el color viene de pigmentos naturales": la revisión de 2017 dice que **la permanencia del rosa aún no es concluyente** (no se sabe bien por qué se mantiene o se pierde), así que se dice tal cual.
 - **Estado:** animación lista. **La voz espera tu aprobación** (≈ 931 créditos). Videos en el Release "Borradores · claude/clever-mayer-197rx7"; textos para redes en `publicacion.md`; tema registrado en `historial/nuevos/remaster-lote-d.json`.
 
@@ -15,8 +15,8 @@
 |---|---|---|---|
 | 0 | Gancho | Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto. | Fondo rosa. **A los 0.02 s entra girando la foto real del racimo** (polaroid). "¿plástico?" y "¿coral?" se tachan. Chip "un hongo vivo". |
 | 1 | Especie | Es la seta rosa, Pleurotus djamor, un hongo de clima cálido que también crece silvestre en México. | Foto del racimo y de las laminillas. Etiqueta *Pleurotus djamor*. Chip "silvestre en México y el trópico". |
-| 2 | Esporada | Empezó con una esporada: las esporas que soltó una seta sobre papel aluminio. | Foto de tus esporadas en aluminio; arriba, una seta dibujada boca abajo suelta **esporas alargadas (cilíndricas)**, no redondas. Chip "esporada · 3 feb 2026". |
-| 3 | Placa | Las sembré en agar, y de ellas salió micelio, una red de hilos blancos. | Foto de tu placa; **Lupa de rayos X**: de una espora sale la red de micelio. Chip "placa de agar · 4 feb". |
+| 2 | Esporada | Este creció de micelio en un bloque de aserrín pasteurizado. Y de sus esporas junté una esporada. | Foto del racimo que salió del bloque (29 oct: se quitó la foto vieja de la esporada); arriba, una seta dibujada boca abajo suelta **esporas alargadas (cilíndricas)**, no redondas. Chip "esporada · 3 feb 2026". |
+| 3 | Placa | Las sembré juntas en agar PDA, germinaron, y salió micelio, una red de hilos blancos: mi propia cepa. | Foto de tu placa; **Lupa de rayos X**: de una espora sale la red de micelio. Chip "agar PDA · 4 feb". |
 | 4 | Grano | Pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas. | Fotos del frasco de grano (15 mar) y de la bolsa con primordios (19 abr). |
 | 5 | Pregunta | Pero ¿qué le avisa al micelio que ya es hora de dar fruto? | **Re-gancho.** Bolsa de cultivo dibujada; Lupa de rayos X con el micelio dentro del sustrato. Sticker pensativo. |
 | 6 | Aire | Un cambio de ambiente. Primero, aire fresco: con mucho dióxido de carbono, el sombrero no se forma bien. | Medidor "CO₂ en la bolsa" que baja de alto a bajo. Primero salen setas deformes (pie largo, sombrero chiquito, "mucho CO₂ = deforme" tachado) y luego un racimo normal. |
@@ -36,7 +36,7 @@ Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 
 |---|---|---|---|---|
 | 0.0 s | 3.6 s | sorprendido | `gancho` | “Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto.” |
 | 6.5 s | 10.0 s | señalando | `bajo-der` | “Es la seta rosa, Pleurotus djamor, un hongo de clima cálido que también crece silvestre en México.” |
-| 14.0 s | 17.5 s | sonriendo | `bajo-der` | “Empezó con una esporada: las esporas que soltó una seta sobre papel aluminio.” |
+| 14.0 s | 17.5 s | sonriendo | `bajo-der` | “Este creció de micelio en un bloque de aserrín pasteurizado. Y de sus esporas junté una esporada.” |
 | 22.0 s | 25.6 s | bajando los lentes | `bajo-der` | “Pasó a grano y luego a sustrato, y se lo fue comiendo por dentro durante semanas.” |
 | 26.3 s | 29.5 s | pensativo (mentón) | `bajo-der` | “Pero ¿qué le avisa al micelio que ya es hora de dar fruto?” |
 | 31.0 s | 34.5 s | pensativo (puño) | `bajo-der` | “Un cambio de ambiente. Primero, aire fresco: con mucho dióxido de carbono, el sombrero no se forma bien.” |
@@ -67,7 +67,7 @@ Regla de `CLAUDE.md` (27 oct 2026): desde el cuadro 0, cada 8–10 s, mínimo 6 
 Racimo que suelta esporas → esporada (3 feb, día 0) → placa de agar con micelio que crece (4 feb → 15 mar) → grano (15 mar, día 40) → bolsa que se coloniza (29 mar, día 54) → primordios (19 abr, día 75) → racimos (fotos de tu lote anterior, sin contador) → "y vuelve a empezar" con la misma foto del primer cuadro. Contador "DÍA n / 77" con las fechas de tu video. **Título:** "De esporada a primordios en 77 días 🎧" (el día 77 son primordios, no la cosecha).
 
 ## Descripción (borrador)
-"Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto. 🍄💗 Es la seta rosa (*Pleurotus djamor*), una especie pantropical que también crece silvestre en México. Empecé el 3 de febrero de 2026 con una esporada sobre papel aluminio; las esporas germinaron en agar y formaron micelio, que pasó a grano y luego a sustrato. ¿Qué le avisa al micelio que ya es hora de dar fruto? Un cambio de ambiente: aire fresco (con mucho CO₂ el sombrero no se diferencia bien), humedad muy alta y algo de luz, que el sombrero necesita para abrirse. Como es tropical, crece mejor entre 22 y 30 °C. ¿Y el rosa? Según la revisión de Dulce Salmones (INECOL, 2017), todavía no se sabe bien por qué el rosa se mantiene o se pierde, y los primordios rosas pierden color al madurar. Video completo del cultivo (44 min): youtu.be/CbMcdFRs62Y. El dibujo es esquemático. ¿Tú qué hongo cultivarías en tu casa? 👇"
+"Esto no es plástico ni coral: es un hongo vivo, y lo cultivé en mi cuarto. 🍄💗 Es la seta rosa (*Pleurotus djamor*), una especie pantropical que también crece silvestre en México. La seta del video creció de micelio en un bloque de aserrín pasteurizado. De sus esporas hice mi propia cepa: el 3 de febrero de 2026 junté una esporada, las esporas germinaron juntas en agar PDA (germinación multiespórica) y el micelio pasó a grano y luego a sustrato. ¿Qué le avisa al micelio que ya es hora de dar fruto? Un cambio de ambiente: aire fresco (con mucho CO₂ el sombrero no se diferencia bien), humedad muy alta y algo de luz, que el sombrero necesita para abrirse. Como es tropical, crece mejor entre 22 y 30 °C. ¿Y el rosa? Según la revisión de Dulce Salmones (INECOL, 2017), todavía no se sabe bien por qué el rosa se mantiene o se pierde, y los primordios rosas pierden color al madurar. Video completo del cultivo (44 min): youtu.be/CbMcdFRs62Y. El dibujo es esquemático. ¿Tú qué hongo cultivarías en tu casa? 👇"
 
 ## Fuentes
 - Salmones, D. (2017). *Pleurotus djamor, un hongo con potencial aplicación biotecnológica para el neotrópico.* Scientia Fungorum 46: 73–85 (INECOL, Xalapa). Pantropical; silvestre en México y otros 12 países de América; temperatura óptima 22–30 °C; "la permanencia del color rosa en los basidiomas es una parte de la biología del hongo aún no concluyente"; la var. *roseus* tiene primordios rosas que "disminuyen notoriamente su coloración en estado adulto".
@@ -78,4 +78,4 @@ Racimo que suelta esporas → esporada (3 feb, día 0) → placa de agar con mic
 
 ## Datos que no se pudieron verificar con precisión
 - Los umbrales exactos de CO₂, luz y humedad para *P. djamor* solo aparecen en sitios de vendedores (citando a Stamets); en voz no doy números de CO₂ ni de luz, solo el de humedad aproximado en pantalla (90 %).
-- Las fotos del racimo maduro son de tu lote anterior (ene–feb 2026), no del lote documentado que llegó a primordios el 19–21 abr; en el mudo el contador se apaga antes de esas fotos para no mezclarlos.
+- Las fotos del racimo maduro son de la seta que creció en el bloque de aserrín pasteurizado; de sus esporas salió la cepa propia del lote documentado que llegó a primordios el 19–21 abr. En el mudo el contador se apaga antes de esas fotos para no mezclarlos.

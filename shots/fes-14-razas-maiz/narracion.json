@@ -1,0 +1,62 @@
+{
+  "especial": "Candelaria",
+  "serie_vinculada": "Ambiental",
+  "velocidad": 1.0,
+  "dcHtml": "Shot Razas Maiz base narrada.dc.html",
+  "salida": "Shot Razas Maiz narrado.dc.html",
+  "nota": "Shot Festivo #14 · Candelaria · Ambiental. Una línea por subtítulo (idx 0..12 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu tamal no es de maíz a secas: en México se reportan sesenta y cuatro razas de maíz."
+    },
+    {
+      "escena": "Pozole",
+      "texto": "El Cacahuacintle es el maíz por excelencia para pozole."
+    },
+    {
+      "escena": "Totopos",
+      "texto": "El Zapalote Chico, del istmo de Tehuantepec, se usa para los totopos."
+    },
+    {
+      "escena": "Palomitas",
+      "texto": "Y el Palomero Toluqueño se considera adecuado para palomitas."
+    },
+    {
+      "escena": "Polen",
+      "texto": "¿Por qué tantas razas? Porque los agricultores las han adaptado a cada lugar, y su polen viaja libre de planta en planta."
+    },
+    {
+      "escena": "Semilla",
+      "texto": "Muchas familias guardan, intercambian y prueban su propia semilla."
+    },
+    {
+      "escena": "Altura",
+      "texto": "Así hay maíz desde el nivel del mar hasta los tres mil cuatrocientos metros."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y de dónde sale el maíz azul o morado?"
+    },
+    {
+      "escena": "Color",
+      "texto": "De antocianinas: pigmentos en la cáscara del grano, en la capa de justo abajo, o en las dos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1951, en México, Wellhausen y su equipo describieron veinticinco razas a partir de unas dos mil muestras."
+    },
+    {
+      "escena": "Tamal",
+      "texto": "Dato: una variante del maíz Chalqueño se usa para harina de tamal, y sus hojas, para envolverlos."
+    },
+    {
+      "escena": "Banco",
+      "texto": "Hoy muchas se guardan en bancos de semillas, y los maíces criollos podrían servir para los climas que vienen."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu tamal no es de maíz a secas: es de una raza que alguien cuidó, semilla por semilla."
+    }
+  ]
+}

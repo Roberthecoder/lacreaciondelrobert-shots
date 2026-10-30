@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Sala de Shots</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -157,6 +158,18 @@
   .pub-redes { display: flex; flex-wrap: wrap; gap: 6px; }
   .pub-redes .chip { font-size: 13px; padding: 5px 10px; }
   .pub-redes .chip[data-hecho="true"]::after { content: " ✓"; }
+  .tt { border: 1px solid var(--line); border-radius: var(--r); padding: 12px; display: grid; gap: 10px; background: var(--bg); }
+  .tt h4 { margin: 0; font-family: var(--f-display); font-size: 15px; }
+  .tt .cuenta { font-size: 14px; }
+  .tt .fila { display: grid; gap: 4px; }
+  .tt select, .tt textarea { font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); max-width: 100%; min-width: 0; box-sizing: border-box; }
+  .tt textarea { min-height: 110px; }
+  .tt .checks { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 14px; }
+  .tt .checks label, .tt .sub label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+  .tt .sub { display: grid; gap: 4px; padding-left: 22px; font-size: 14px; }
+  .tt .legal { font-size: 13px; color: var(--muted); margin: 0; }
+  .tt .legal a { color: var(--ink); }
+  .tt .aviso { font-size: 13px; color: var(--warn); margin: 0; }
   @media (max-width: 760px) { .player { grid-template-columns: 1fr; overflow: auto; } .player video { max-height: 58vh; } }
   @media (prefers-reduced-motion: no-preference) { .card .poster { transition: transform .18s ease-out; } .card:hover .poster { transform: translateY(-3px); } }
 </style>
@@ -264,8 +277,34 @@
       <div class="redes-tabs" id="redes-tabs" role="group" aria-label="Red social"></div>
       <div id="redes-cuerpo"></div>
       <h3 style="font-size:17px">Publicar en redes</h3>
-      <p class="hint" id="pub-hint">Marca dónde quieres publicar este video y da clic en «Publicar». La nube lo sube con su texto de cada red. TikTok llega como borrador a tu app (ahí lo terminas tú) y YouTube queda privado mientras Google revisa la app.</p>
+      <p class="hint" id="pub-hint">Marca dónde quieres publicar este video y da clic en «Publicar». La nube lo sube con su texto de cada red. YouTube queda privado mientras Google revisa la app.</p>
       <div class="pub-redes" id="pub-redes" role="group" aria-label="Redes donde publicar"></div>
+      <div class="tt" id="tt" hidden>
+        <h4>Publicar en TikTok</h4>
+        <p class="cuenta" id="tt-cuenta">Cuenta de TikTok: —</p>
+        <div class="checks" role="radiogroup" aria-label="Cómo llega a TikTok">
+          <label><input type="radio" name="tt-modo" value="directo" checked> Publicar directo</label>
+          <label><input type="radio" name="tt-modo" value="borrador"> Mandar como borrador a mi app</label>
+        </div>
+        <div id="tt-directo" style="display:grid;gap:10px">
+          <div class="fila"><label class="lbl" for="tt-texto">Descripción (sale de la pestaña TikTok de este video; puedes cambiarla)</label>
+            <textarea id="tt-texto" maxlength="2200"></textarea><small class="hint" id="tt-cuenta-car"></small></div>
+          <div class="fila"><label class="lbl" for="tt-priv">¿Quién puede ver este video?</label>
+            <select id="tt-priv"><option value="">Elige una opción</option></select></div>
+          <div class="fila"><span class="lbl">Permitir que la gente…</span>
+            <div class="checks"><label><input type="checkbox" id="tt-com"> Comente</label><label><input type="checkbox" id="tt-duo"> Haga dúo</label><label><input type="checkbox" id="tt-sti"> Haga stitch</label></div></div>
+          <div class="fila"><label class="checks"><input type="checkbox" id="tt-ia" checked> Etiqueta «Contenido generado con IA» (la voz es tu clon de IA)</label></div>
+          <div class="fila"><label class="checks"><input type="checkbox" id="tt-com-onoff"> Este video promociona una marca, producto o servicio</label>
+            <div class="sub" id="tt-marcas" hidden>
+              <label><input type="checkbox" id="tt-propia"> Tu marca (te promocionas a ti o a tu negocio)</label>
+              <label><input type="checkbox" id="tt-pagada"> Contenido de marca (te pagaron o te dieron algo a cambio)</label>
+              <p class="hint" id="tt-marca-txt"></p>
+            </div></div>
+          <p class="legal" id="tt-legal"></p>
+          <p class="aviso" id="tt-aviso">Mientras TikTok no apruebe la publicación directa, el video llega como borrador a tu app de TikTok: lo abres, pegas el texto (pestaña TikTok, arriba) y lo publicas. En cuanto TikTok apruebe, sale publicado solo con estas opciones.</p>
+        </div>
+        <p class="hint" id="tt-borrador" hidden>Llega a tus notificaciones de TikTok como borrador: lo abres, pegas el texto (pestaña TikTok, arriba) y lo publicas tú.</p>
+      </div>
       <div class="actions"><button class="btn go" id="pub-enviar" type="button">Publicar</button></div>
       <p class="msg" id="pub-msg"></p>
       <ul class="pedidos" id="pub-lista"></ul>
@@ -447,6 +486,7 @@
     $('d-key').textContent = s.id;
     const hd = $('hd'); if (s.hd) { hd.href = s.hd; hd.hidden = false; } else hd.hidden = true;
     $('msg').textContent = ''; $('pub-msg').textContent = ''; S.pubSel = new Set(); S.pubConfirmar = null;
+    $('tt-texto').dataset.shot = ''; $('tt-priv').value = ''; ['tt-com', 'tt-duo', 'tt-sti', 'tt-com-onoff', 'tt-propia', 'tt-pagada'].forEach((id) => { $(id).checked = false; }); $('tt-ia').checked = true;
     pintarAprobar(); pintarRedes(); pintarCorrecciones(); pintarPublicar();
     $('dlg').showModal();
   }
@@ -521,8 +561,60 @@
     $('aprobar').disabled = false;
   });
   /* ---------- publicar en redes (collection publicaciones; la atiende el administrador con el workflow publicar.yml) ---------- */
-  const PUB_REDES = [['facebook', 'Facebook'], ['instagram', 'Instagram'], ['threads', 'Threads'], ['youtube', 'YouTube'], ['linkedin', 'LinkedIn'], ['tiktok', 'TikTok (borrador)']];
-  S.pubs = []; S.pubSel = new Set();
+  const PUB_REDES = [['facebook', 'Facebook'], ['instagram', 'Instagram'], ['threads', 'Threads'], ['youtube', 'YouTube'], ['linkedin', 'LinkedIn'], ['tiktok', 'TikTok']];
+  S.pubs = []; S.pubSel = new Set(); S.tt = null;
+  // TikTok: datos de la cuenta (doc estado/tiktok, lo llena el administrador con creator_info) y opciones que exige TikTok.
+  const TT_PRIV = { PUBLIC_TO_EVERYONE: 'Todos', MUTUAL_FOLLOW_FRIENDS: 'Amigos', FOLLOWER_OF_CREATOR: 'Seguidores', SELF_ONLY: 'Solo yo' };
+  const ttModo = () => (document.querySelector('input[name="tt-modo"]:checked') || {}).value || 'directo';
+  function pintarTikTok() {
+    const s = S.actual; const on = S.pubSel.has('tiktok');
+    $('tt').hidden = !on; if (!on || !s) return;
+    const c = S.tt || {};
+    $('tt-cuenta').textContent = c.creator_nickname ? `Cuenta de TikTok: ${c.creator_nickname} (@${c.creator_username})` : 'Cuenta de TikTok: La Creación del Robert';
+    const dir = ttModo() === 'directo';
+    $('tt-directo').hidden = !dir; $('tt-borrador').hidden = dir;
+    const sel = $('tt-priv'); const antes = sel.value;
+    const pagada = $('tt-pagada').checked && $('tt-com-onoff').checked;
+    sel.replaceChildren(el('option', null, 'Elige una opción')); sel.firstChild.value = '';
+    (c.privacy_level_options || Object.keys(TT_PRIV)).forEach((k) => {
+      const o = el('option', null, TT_PRIV[k] || k); o.value = k;
+      if (pagada && k === 'SELF_ONLY') { o.disabled = true; o.textContent += ' (no disponible con contenido de marca)'; }
+      sel.append(o);
+    });
+    sel.value = (pagada && antes === 'SELF_ONLY') ? '' : antes;
+    [['tt-com', 'comment_disabled', 'comentarios'], ['tt-duo', 'duet_disabled', 'dúos'], ['tt-sti', 'stitch_disabled', 'stitch']].forEach(([id, k]) => {
+      $(id).disabled = !!c[k]; if (c[k]) $(id).checked = false;
+    });
+    if (!$('tt-texto').dataset.shot || $('tt-texto').dataset.shot !== s.id) {
+      $('tt-texto').value = ((s.redes || {}).tiktok || {}).texto || ''; $('tt-texto').dataset.shot = s.id;
+    }
+    $('tt-cuenta-car').textContent = `${$('tt-texto').value.length} / 2200`;
+    $('tt-marcas').hidden = !$('tt-com-onoff').checked;
+    const propia = $('tt-propia').checked && $('tt-com-onoff').checked;
+    $('tt-marca-txt').textContent = pagada ? 'Tu video se marcará como «Colaboración pagada».' : propia ? 'Tu video se marcará como «Contenido promocional».' : ($('tt-com-onoff').checked ? 'Elige al menos una opción.' : '');
+    const legal = $('tt-legal'); legal.replaceChildren('Al publicar, aceptas la ');
+    const a1 = el('a', null, 'Confirmación de uso de música de TikTok'); a1.href = 'https://www.tiktok.com/legal/page/global/music-usage-confirmation/en'; a1.target = '_blank'; a1.rel = 'noopener';
+    legal.append(a1);
+    if (pagada) { const a2 = el('a', null, 'Política de contenido de marca'); a2.href = 'https://www.tiktok.com/legal/page/global/bc-policy/en'; a2.target = '_blank'; a2.rel = 'noopener'; legal.append(' y la ', a2); }
+    legal.append('.');
+  }
+  function ttListo() {
+    if (!S.pubSel.has('tiktok') || ttModo() === 'borrador') return '';
+    if (!$('tt-priv').value) return 'En TikTok, elige quién puede ver el video.';
+    if (!$('tt-texto').value.trim()) return 'En TikTok, la descripción está vacía.';
+    if ($('tt-com-onoff').checked && !$('tt-propia').checked && !$('tt-pagada').checked) return 'En TikTok, elige qué tipo de promoción es (o desmarca la casilla).';
+    return '';
+  }
+  function ttOpciones() {
+    if (ttModo() === 'borrador') return { modo: 'borrador' };
+    const s = S.actual; const texto = $('tt-texto').value.trim(); const orig = (((s && s.redes) || {}).tiktok || {}).texto || '';
+    const marca = $('tt-com-onoff').checked;
+    return { modo: 'directo', privacidad: $('tt-priv').value, comentarios: $('tt-com').checked, duo: $('tt-duo').checked, stitch: $('tt-sti').checked,
+      marca_propia: marca && $('tt-propia').checked, marca_pagada: marca && $('tt-pagada').checked, ia: $('tt-ia').checked, ...(texto !== orig.trim() ? { texto } : {}) };
+  }
+  ['tt-priv', 'tt-com', 'tt-duo', 'tt-sti', 'tt-ia', 'tt-com-onoff', 'tt-propia', 'tt-pagada'].forEach((id) => $(id).addEventListener('change', () => { S.pubConfirmar = null; pintarPublicar(); }));
+  $('tt-texto').addEventListener('input', () => { S.pubConfirmar = null; $('tt-cuenta-car').textContent = `${$('tt-texto').value.length} / 2200`; pintarPublicar(); });
+  document.querySelectorAll('input[name="tt-modo"]').forEach((r) => r.addEventListener('change', () => { S.pubConfirmar = null; pintarPublicar(); }));
   function pintarPublicar() {
     const s = S.actual; if (!s) return;
     const listo = s.kind === 'narrado';
@@ -536,7 +628,10 @@
       c.addEventListener('click', () => { S.pubSel.has(k) ? S.pubSel.delete(k) : S.pubSel.add(k); S.pubConfirmar = null; $('pub-msg').textContent = ''; pintarPublicar(); });
       box.append(c);
     });
-    const b = $('pub-enviar'); b.disabled = !listo || !S.db || !S.pubSel.size;
+    pintarTikTok();
+    const b = $('pub-enviar'); b.disabled = !listo || !S.db || !S.pubSel.size || !!ttListo();
+    if (listo && S.pubSel.size && ttListo() && !S.pubConfirmar) $('pub-msg').textContent = ttListo();
+    else if ($('pub-msg').textContent.startsWith('En TikTok')) $('pub-msg').textContent = '';
     b.textContent = S.pubConfirmar ? 'Sí, publicar' : S.pubSel.size ? `Publicar en ${S.pubSel.size} ${S.pubSel.size === 1 ? 'red' : 'redes'}` : 'Publicar';
     $('pub-hint').hidden = !listo;
     if (!listo) $('pub-msg').textContent = 'Se puede publicar cuando el video ya tenga tu voz (estado «Narrado listo»).';
@@ -555,13 +650,17 @@
     const clave = s.id + '|' + redes.join(',');
     if (S.pubConfirmar !== clave) {
       S.pubConfirmar = clave; $('pub-enviar').textContent = 'Sí, publicar';
-      $('pub-msg').textContent = `Se verá en público en: ${redes.join(', ')} (TikTok llega como borrador; YouTube queda privado por ahora). Toca «Sí, publicar» para confirmar.`;
+      const notas = [];
+      if (redes.includes('tiktok')) notas.push(ttModo() === 'borrador' ? 'TikTok llega como borrador a tu app' : `TikTok: «${TT_PRIV[$('tt-priv').value] || ''}»`);
+      if (redes.includes('youtube')) notas.push('YouTube queda privado por ahora');
+      $('pub-msg').textContent = `Se publicará en: ${redes.map((r) => (PUB_REDES.find((x) => x[0] === r) || [r, r])[1]).join(', ')}${notas.length ? ' (' + notas.join('; ') + ')' : ''}. Toca «Sí, publicar» para confirmar.`;
       return;
     }
     S.pubConfirmar = null;
     $('pub-enviar').disabled = true;
     try {
-      await S.db.collection('publicaciones').add({ shot: s.id, titulo: tituloCompleto(s), redes, modo: 'real', estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
+      const extra = redes.includes('tiktok') ? { tiktok: ttOpciones() } : {};
+      await S.db.collection('publicaciones').add({ shot: s.id, titulo: tituloCompleto(s), redes, ...extra, modo: 'real', estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
       S.pubSel.clear(); $('pub-msg').textContent = 'Pedido de publicación enviado. El administrador lo sube en su siguiente ronda (o al instante si en el chat escribes «publica mis pedidos»).';
     } catch (e) { $('pub-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
     pintarPublicar();
@@ -737,6 +836,7 @@
     S.db = db; pintarPedir();
     db.collection('estado').limit(20).onSnapshot((snap) => {
       const d = snap.docs.find((x) => x.id === 'creditos'); S.cred = d ? d.data() : null; pintarCreditos(); pintarCosto();
+      const t = snap.docs.find((x) => x.id === 'tiktok'); S.tt = t ? t.data() : null; if (S.actual) pintarPublicar();
     }, () => { $('cred-txt').textContent = 'No se pudieron leer tus créditos.'; });
     db.collection('shots').limit(1000).onSnapshot((snap) => {
       S.shots = snap.docs.map((d) => ({ id: d.id, ...d.data() })); render();
@@ -771,3 +871,5 @@
 })();
 </script>
 
+
+</body></html>

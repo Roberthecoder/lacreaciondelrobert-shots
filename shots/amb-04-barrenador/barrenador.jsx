@@ -170,7 +170,7 @@ function BarrenadorNarrado() {
       </Escena>
 
       {/* lupa de rayos X: los gusanos barrenando dentro de la herida */}
-      <Lupa T={T} at={K.H + 2.2} until={K.Mu - 0.3} x={760} y={560} r={210} fx={460} fy={830} tinte={KC.red} etiqueta="RAYOS X · larvas"
+      <Lupa T={T} at={K.H + 2.2} until={K.Mu - 0.3} x={760} y={560} r={210} fx={460} fy={830} tinte={KC.red} etiqueta="POR DENTRO · larvas"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#5a1a1e" />{Array.from({ length: 30 }, (_, i) => <circle key={i} cx={(i * 71) % (r * 2)} cy={(i * 43) % (r * 2)} r={18} fill="#7a2a2e" />)}
           {Array.from({ length: 7 }, (_, i) => <Larva key={i} x={60 + (i % 3) * 120 + Math.sin(t + i) * 8} y={60 + (i * 0.33 % 1) * 40 + ((t - K.H) * 22 + i * 50) % (r * 1.7)} s={0.9} rot={90 + mece(t, i, 0.3) * 20} T={t} seed={i} />)}</svg>} />
       {T < K.Mu - 0.3 && <Escala T={T} z={1} pxPorMm={9} y={1460} />}

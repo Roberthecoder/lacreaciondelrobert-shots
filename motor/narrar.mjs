@@ -188,15 +188,20 @@ console.log(`Mezcla: voz ${gVoz >= 0 ? '+' : ''}${gVoz.toFixed(1)} dB · música
 //  · armónicos de los graves (240–1800 Hz, saturación suave): para que el bajo se oiga también en la bocina de un celular,
 //    que no reproduce menos de ~200 Hz;
 //  · medios (220–3500 Hz, donde vive la voz): bajan al hablar, como antes;  · agudos (>3.5 kHz): +3 dB, bajan poquito.
-const graves = MZ.graves_bajan_al_hablar
-  ? `[a]lowpass=f=220:p=2,lowpass=f=220:p=2,volume=${MZ.graves_db}dB[lo];[lo][s1]sidechaincompress=threshold=0.05:ratio=1.2:knee=4:attack=80:release=600[lod];`
-  : `[a]lowpass=f=220:p=2,lowpass=f=220:p=2,volume=${MZ.graves_db}dB[lod];[s1]anullsink;`;
+// Graves y sus armónicos: se comprimen y se limitan sus golpes (picos de hasta +10 dB) para que suenen llenos y parejos
+// y el volumen final pueda subir sin distorsión.
+const domar = (makeup, techo) => `acompressor=threshold=-26dB:ratio=4:attack=10:release=200:knee=6,volume=${makeup}dB,alimiter=limit=${techo}:attack=5:release=120:level=false`;
+const graves = `[a]lowpass=f=220:p=2,lowpass=f=220:p=2,volume=${MZ.graves_db}dB,${domar(11.8, 0.52)}` + (MZ.graves_bajan_al_hablar
+  ? `[lo];[lo][s1]sidechaincompress=threshold=0.05:ratio=1.2:knee=4:attack=80:release=600[lod];`
+  : `[lod];[s1]anullsink;`);
 const bandas =
-  `[1:a]volume=${gVoz.toFixed(2)}dB,asplit=4[s1][s2][s3][vz];[0:a]volume=${gMus.toFixed(2)}dB,asplit=4[a][b][c][d];` + graves +
-  `[b]lowpass=f=220:p=2,volume=9dB,asoftclip=type=tanh,highpass=f=240:p=2,highpass=f=240:p=2,lowpass=f=1800,volume=${MZ.armonicos_db}dB[harm];` +
+  `[1:a]acompressor=threshold=-18dB:ratio=3:attack=5:release=120:makeup=1,volume=${gVoz.toFixed(2)}dB,asplit=4[s1][s2][s3][vz];` +
+  `[0:a]volume=${gMus.toFixed(2)}dB,asplit=4[a][b][c][d];` + graves +
+  `[b]lowpass=f=220:p=2,volume=9dB,asoftclip=type=tanh,highpass=f=240:p=2,highpass=f=240:p=2,lowpass=f=1800,volume=${MZ.armonicos_db}dB,${domar(9.7, 0.39)}[harm];` +
   `[c]highpass=f=220:p=2,highpass=f=220:p=2,lowpass=f=3500[mid];[mid][s2]sidechaincompress=threshold=0.03:ratio=${MZ.medios_ratio}:knee=4:attack=40:release=500[midd];` +
   `[d]highpass=f=3500,volume=${MZ.agudos_db}dB[hi];[hi][s3]sidechaincompress=threshold=0.05:ratio=1.3:knee=4:attack=60:release=600[hid];` +
   '[lod][harm][midd][hid]amix=inputs=4:normalize=0[mus];' +
-  '[mus][vz]amix=inputs=2:normalize=0,alimiter=limit=0.95:level=false[o]';
-ff(['-i', musWav, '-i', vozProc, '-filter_complex', bandas, '-map', '[o]', '-ar', '48000', path.join(dir, 'assets', 'mezcla_narrada.wav')]);
+  // presencia: la voz se oye más clara y fuerte en la bocina del celular sin subir el volumen real
+  `[mus][vz]amix=inputs=2:normalize=0,equalizer=f=3000:t=q:w=1.2:g=${MZ.presencia_3k_db},equalizer=f=6000:t=q:w=1:g=${MZ.brillo_6k_db}[o]`;
+ff(['-i', musWav, '-i', vozProc, '-filter_complex', bandas, '-map', '[o]', '-ar', '48000', '-c:a', 'pcm_f32le', path.join(dir, 'assets', 'mezcla_narrada.wav')]);
 console.log(`Listo: ${cfg.salida} + assets/mezcla_narrada.wav`);

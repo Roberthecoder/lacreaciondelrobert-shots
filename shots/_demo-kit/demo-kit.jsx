@@ -63,7 +63,7 @@ function DemoPiece() {
       {/* E (17–21 s): Lupa en modo rayos X — el brazo por fuera, el hueso y la sangre por dentro */}
       {T >= 17 && T < 21 && <div style={{ position:'absolute', inset:0, background:KC.pink }}></div>}
       {T >= 17 && T < 21 && <BrazoFuera T={T} />}
-      <Lupa T={T} at={17.6} until={20.4} x={600} y={560} r={240} fx={(t) => 420 + 6 * Math.sin(t * 2)} fy={1090} interior={(t, r) => <BrazoDentro T={t} r={r} />} etiqueta="RAYOS X (demo)" />
+      <Lupa T={T} at={17.6} until={20.4} x={600} y={560} r={240} fx={(t) => 420 + 6 * Math.sin(t * 2)} fy={1090} interior={(t, r) => <BrazoDentro T={t} r={r} />} etiqueta="POR DENTRO (demo)" />
       <Subtitulo T={T} at={17.4} until={20.5} texto="Por fuera no ves *el hueso* ni la sangre." />
 
       {/* D (21–24.5 s): estudio + cierre */}
