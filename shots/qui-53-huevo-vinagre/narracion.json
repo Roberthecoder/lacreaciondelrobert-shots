@@ -1,18 +1,53 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot HuevoVinagre base narrada.dc.html",
   "salida": "Shot HuevoVinagre narrado.dc.html",
   "nota": "Shot Químico #53. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Este huevo no está pelado: es un huevo crudo al que el vinagre le disolvió el cascarón." },
-    { "escena": "Cascaron", "texto": "El 95 por ciento del cascarón es mineral: casi todo, carbonato de calcio." },
-    { "escena": "Burbujas", "texto": "El ácido acético del vinagre lo convierte en acetato de calcio, agua y dióxido de carbono: esas burbujitas." },
-    { "escena": "Dias", "texto": "En uno o dos días el cascarón desaparece, pero el ácido no rompe la membrana." },
-    { "escena": "Membrana", "texto": "Es una red de fibras de proteína más delgada que una décima de milímetro." },
-    { "escena": "Pregunta", "texto": "¿Y por qué el huevo sale más grande que antes?" },
-    { "escena": "Osmosis", "texto": "Porque esa membrana es semipermeable: el agua la cruza hacia donde hay más cosas disueltas. Eso es ósmosis." },
-    { "escena": "Estudio", "texto": "En 2026, en Japón, unos químicos le empujaron agua y partículas diminutas a la membrana, y estimaron poros de unos 100 a 200 nanómetros." },
-    { "escena": "Jarabe", "texto": "Mételo en jarabe: el agua sale hacia el azúcar y se arruga. En agua, se vuelve a inflar." },
-    { "escena": "Rebote", "texto": "Y si lo dejas caer de muy poquito, rebota. Si se revienta, lávate las manos." },
-    { "escena": "Cierre", "texto": "Así que este huevo no está pelado: el vinagre se comió el mineral y dejó la bolsita." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Este huevo no está pelado: es un huevo crudo al que el vinagre le disolvió el cascarón."
+    },
+    {
+      "escena": "Cascaron",
+      "texto": "El 95 por ciento del cascarón es mineral: casi todo, carbonato de calcio."
+    },
+    {
+      "escena": "Burbujas",
+      "texto": "El ácido acético del vinagre lo convierte en acetato de calcio, agua y dióxido de carbono: esas burbujitas."
+    },
+    {
+      "escena": "Dias",
+      "texto": "En uno o dos días el cascarón desaparece, pero el ácido no rompe la membrana."
+    },
+    {
+      "escena": "Membrana",
+      "texto": "Es una red de fibras de proteína más delgada que una décima de milímetro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué el huevo sale más grande que antes?"
+    },
+    {
+      "escena": "Osmosis",
+      "texto": "Porque esa membrana es semipermeable: el agua la cruza hacia donde hay más cosas disueltas. Eso es ósmosis."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2026, en Japón, unos químicos le empujaron agua y partículas diminutas a la membrana, y estimaron poros de unos 100 a 200 nanómetros."
+    },
+    {
+      "escena": "Jarabe",
+      "texto": "Mételo en jarabe: el agua sale hacia el azúcar y se arruga. En agua, se vuelve a inflar."
+    },
+    {
+      "escena": "Rebote",
+      "texto": "Y si lo dejas caer de muy poquito, rebota. Si se revienta, lávate las manos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que este huevo no está pelado: el vinagre se comió el mineral y dejó la bolsita."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

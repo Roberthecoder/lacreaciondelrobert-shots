@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Polvo base narrada.dc.html",
   "salida": "Shot Polvo narrado.dc.html",
   "nota": "Shot Químico #55. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Así que ese polvo no es un solo truco: es gas en dos turnos, uno en tu tazón y otro en tu horno."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Agua Cafe base narrada.dc.html",
   "salida": "Shot Agua Cafe narrado.dc.html",
@@ -44,5 +45,6 @@
       "escena": "Cierre",
       "texto": "Así que tu taza sí trae agua escondida: casi toda es lluvia que cayó sobre un cafetal."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

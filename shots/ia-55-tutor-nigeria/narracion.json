@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot TutorNigeria base narrada.dc.html",
   "salida": "Shot TutorNigeria narrado.dc.html",
   "nota": "Shot IA #55. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Esas seis semanas no reemplazan a tu escuela: fue IA con un maestro al lado."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Mareo Carro base narrada.dc.html",
   "salida": "Shot Mareo Carro narrado.dc.html",
   "nota": "Shot Científico #54. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que el mareo no está en tu panza: es una pelea entre tus ojos y tus oídos."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

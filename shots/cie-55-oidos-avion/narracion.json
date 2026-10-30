@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Oidos Avion base narrada.dc.html",
   "salida": "Shot Oidos Avion narrado.dc.html",
   "nota": "Shot Científico #55. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -51,5 +52,6 @@
       "escena": "Cierre",
       "texto": "Así que ese oído tapado no es el ruido: es tu tímpano esperando que el aire se iguale."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
