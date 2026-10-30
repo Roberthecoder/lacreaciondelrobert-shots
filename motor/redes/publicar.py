@@ -680,7 +680,9 @@ def cmd_publicar(a):
     except ValueError:
         raise SystemExit('Las opciones de TikTok no son JSON válido')
     iv = info_video(a.video)
-    ya = {(x['clave'], x['red']) for x in bitacora() if x.get('modo') == 'real' and x.get('ok') and not x.get('borrador')}
+    # Ya hecho en modo real: publicado (o, en TikTok, mandado como borrador a la app): no se repite.
+    ya = {(x['clave'], x['red']) for x in bitacora() if x.get('modo') == 'real' and x.get('ok')
+          and (not x.get('borrador') or x.get('red') == 'tiktok')}
     filas, lineas = [], [f'## {a.clave} · modo **{a.modo}**', '',
                          f'Video: `{os.path.basename(a.video)}` · {iv["dur"]:.1f} s · {iv["w"]}×{iv["h"]} · '
                          f'{iv["bytes"] / 1048576:.1f} MB · {a.video_url or "sin enlace público"}', '',
@@ -691,7 +693,10 @@ def cmd_publicar(a):
                 'autorizo': a.autorizo or None}
         try:
             if a.modo == 'real' and (a.clave, red) in ya and not a.repetir:
-                raise Falla('ya se publicó antes en modo real (usa "repetir" si de verdad va otra vez)')
+                # no es una falla: la publicación diaria automática puede encontrar algo que Robert ya publicó a mano
+                print(f'{red}: ya estaba publicado; se salta', flush=True)
+                lineas.append(f'| {red} | ⏭️ | ya estaba publicado (no se repite) |')
+                continue
             prob = revisar_video(red, iv) + revisar_texto(red, r, tt)
             if prob:
                 raise Falla('; '.join(prob))
