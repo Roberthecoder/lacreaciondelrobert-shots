@@ -90,11 +90,11 @@ En la Sala de Shots hay una caja "Pedir videos" que guarda documentos en la coll
   espera aprobación, como siempre. Todo se sube a la Sala al terminar.
 
 ## Numeración = fecha de publicación, y serie Shot Festivo (reglas de Robert, 28 oct 2026)
-- **Series normales: numeración seguida, sin saltos y sin reservar números.** El número de un shot ES su día de publicación.
-  Publicación desde el **1 nov 2026**, 3 series por día alternando: **grupo A** (Fungi Mati, Biotecnológico, Ambiental) publica el #01
-  el 1 nov y luego cada 2 días; **grupo B** (Científico, Químico, IA) el #01 el 2 nov y luego cada 2 días.
-  `python3 calendario/fecha.py "<Serie>" <N>` da la fecha de un número; `python3 calendario/fecha.py fecha AAAA-MM-DD` dice qué sale
-  ese día. **Siguiente número libre** = el siguiente que no esté usado en esa serie (las festividades ya NO reservan números).
+- **1 SHOT DIARIO (decisión de Robert, 30 oct 2026; antes 3 al día).** Arranca el 30 oct 2026; cada día sale un shot rotando
+  Fungi Mati → Biotecnológico → Ambiental → Científico → Químico → IA, en orden de número (cada serie cada 6 días). Los festivos
+  salen el día de su festividad y ese día no sale shot normal. **Series normales: numeración seguida, sin saltos ni reservas.**
+  `python3 calendario/fecha.py lista 30` da los próximos 30 días; `python3 calendario/fecha.py "<Serie>" <N>` la fecha de un
+  número; `python3 calendario/fecha.py fecha AAAA-MM-DD` qué sale ese día. La Sala muestra «Hoy se publica» (doc `estado/calendario`).
 - **Serie Shot Festivo** (especiales de festividades): numeración propia (#01, #02…) en orden de publicación; cada festivo sale el día
   de su festividad y va **vinculado a una serie/temática**: Fungi Mati, Biotecnológico, Ambiental, Científico, Químico, IA o Robert
   (Robert solo si él lo pide en persona).
