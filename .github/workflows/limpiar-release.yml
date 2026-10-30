@@ -1,0 +1,31 @@
+name: Limpiar Release de borradores
+
+# Borra de un Release los videos «sin voz» (ya no se usan: la Sala y las redes usan el narrado). Un Release aguanta máx. 1000 archivos.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release (tag), p. ej. borradores-voces-v4'
+        default: 'borradores-voces-v4'
+      patron:
+        description: 'Terminación de los archivos a borrar'
+        default: '_sin_voz.mp4'
+
+permissions:
+  contents: write
+
+jobs:
+  limpiar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+          PAT: ${{ inputs.patron }}
+        run: |
+          ID=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG" --jq .id)
+          gh api --paginate "repos/$GITHUB_REPOSITORY/releases/$ID/assets?per_page=100" --jq ".[] | select(.name | endswith(\"$PAT\")) | .id" > ids.txt
+          echo "A borrar: $(wc -l < ids.txt)"
+          while read -r a; do gh api -X DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$a" >/dev/null && echo -n .; done < ids.txt
+          echo; echo "Quedan: $(gh api "repos/$GITHUB_REPOSITORY/releases/$ID" --jq '.assets | length')"
