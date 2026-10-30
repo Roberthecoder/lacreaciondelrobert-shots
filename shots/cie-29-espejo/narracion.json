@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Espejo base narrada.dc.html",
   "salida": "Shot Espejo narrado.dc.html",
   "nota": "Shot Científico #29. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Así que el espejo no confunde tu izquierda y tu derecha: eres tú quien se da la vuelta en tu cabeza."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

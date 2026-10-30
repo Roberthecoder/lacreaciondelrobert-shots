@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot CarT base narrada.dc.html",
   "salida": "Shot CarT narrado.dc.html",
   "nota": "Shot Biotecnológico #31. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -60,5 +61,6 @@
       "texto": "Esa bolsa no es un medicamento común: son tus células, cazando."
     }
   ],
-  "tanda": 5
+  "tanda": 5,
+  "mezcla": "oficial-30oct"
 }

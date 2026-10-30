@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "especial": "Año Nuevo",
   "serie_vinculada": "Químico",
   "velocidad": 1.0,
@@ -54,5 +55,6 @@
       "escena": "Cierre",
       "texto": "Así que esta noche, cuando veas ese rojo, ya sabes: no es pintura, es estroncio. ¡Feliz Año Nuevo!"
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Teclado base narrada.dc.html",
   "salida": "Shot Teclado narrado.dc.html",
   "nota": "Shot IA #30. Una línea por subtítulo (idx 0..N del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así, tus frases se quedan en tu celular. Lo que viaja es lo que aprendió."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

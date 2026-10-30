@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Pajaros Cables base narrada.dc.html",
   "salida": "Shot Pajaros Cables narrado.dc.html",
   "nota": "Shot Científico #30. Una línea por subtítulo (idx 0..9 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -43,5 +44,6 @@
       "escena": "Cierre",
       "texto": "Así que el pájaro no es inmune: solo no le da a la electricidad por dónde pasar."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
