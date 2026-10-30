@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot ADN Viral base narrada.dc.html",
   "salida": "Shot ADN Viral narrado.dc.html",
   "velocidad": 1.065,
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Así que una parte de ti fue virus. Y sin ella, quizá no estarías aquí."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

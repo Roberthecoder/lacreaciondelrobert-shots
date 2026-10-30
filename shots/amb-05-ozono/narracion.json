@@ -1,20 +1,58 @@
 {
+  "voz_aprobada": true,
   "velocidad": 1.1,
   "dcHtml": "Shot Ozono base narrada.dc.html",
   "salida": "Shot Ozono narrado.dc.html",
   "nota": "Shot Ambiental #05. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Este agujero no se está agrandando: se está cerrando. Y la alarma la dio, en parte, un mexicano." },
-    { "escena": "Capa", "texto": "De quince a cuarenta kilómetros sobre ti, el ozono frena la luz ultravioleta." },
-    { "escena": "CFC", "texto": "Pero refrigeradores y aerosoles soltaban gases CFC, que parecían inofensivos." },
-    { "escena": "Molina", "texto": "Mario Molina, que de niño hizo su laboratorio en un baño, investigó a dónde iban." },
-    { "escena": "Suben", "texto": "Suben, el sol los rompe y sueltan cloro." },
-    { "escena": "Pregunta", "texto": "¿Y qué daño hace un poquito de cloro?" },
-    { "escena": "Cloro", "texto": "Un solo átomo de cloro puede destruir más de cien mil moléculas de ozono." },
-    { "escena": "Estudio", "texto": "Lo publicó con Sherwood Rowland en 1974, y ganaron el Nobel." },
-    { "escena": "Montreal", "texto": "En 1987 se firmó en Montreal un acuerdo para recortarlos, y luego, prohibirlos." },
-    { "escena": "Noventa", "texto": "Y funcionó: para 2023 se había dejado de usar casi el noventa y nueve por ciento de esos gases." },
-    { "escena": "Fechas", "texto": "Si seguimos así, volvería a como antes del agujero hacia 2040 en casi todo el mundo, y hacia 2066 en la Antártida." },
-    { "escena": "Cierre", "texto": "Ese agujero es la prueba: si le hacemos caso a la ciencia, se arregla." }
-  ]
+    {
+      "escena": "Gancho",
+      "texto": "Este agujero no se está agrandando: se está cerrando. Y la alarma la dio, en parte, un mexicano."
+    },
+    {
+      "escena": "Capa",
+      "texto": "De quince a cuarenta kilómetros sobre ti, el ozono frena la luz ultravioleta."
+    },
+    {
+      "escena": "CFC",
+      "texto": "Pero refrigeradores y aerosoles soltaban gases CFC, que parecían inofensivos."
+    },
+    {
+      "escena": "Molina",
+      "texto": "Mario Molina, que de niño hizo su laboratorio en un baño, investigó a dónde iban."
+    },
+    {
+      "escena": "Suben",
+      "texto": "Suben, el sol los rompe y sueltan cloro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué daño hace un poquito de cloro?"
+    },
+    {
+      "escena": "Cloro",
+      "texto": "Un solo átomo de cloro puede destruir más de cien mil moléculas de ozono."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo publicó con Sherwood Rowland en 1974, y ganaron el Nobel."
+    },
+    {
+      "escena": "Montreal",
+      "texto": "En 1987 se firmó en Montreal un acuerdo para recortarlos, y luego, prohibirlos."
+    },
+    {
+      "escena": "Noventa",
+      "texto": "Y funcionó: para 2023 se había dejado de usar casi el noventa y nueve por ciento de esos gases."
+    },
+    {
+      "escena": "Fechas",
+      "texto": "Si seguimos así, volvería a como antes del agujero hacia 2040 en casi todo el mundo, y hacia 2066 en la Antártida."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese agujero es la prueba: si le hacemos caso a la ciencia, se arregla."
+    }
+  ],
+  "mezcla": "oficial-30oct"
 }

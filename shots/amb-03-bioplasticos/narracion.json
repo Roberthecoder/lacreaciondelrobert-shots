@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Bioplasticos base narrada.dc.html",
   "salida": "Shot Bioplasticos narrado.dc.html",
   "velocidad": 1.083,
@@ -48,5 +49,6 @@
       "escena": "Cierre",
       "texto": "Así que si ves compostable, pregunta: ¿compostable dónde? Porque en tu jardín, este vaso sigue aquí."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
