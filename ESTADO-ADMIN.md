@@ -15,6 +15,9 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   y actualiza en la Sala fes-07/fes-10/fes-14. Cuando avise, juntar pedido300/festivos a main con [sin render].
 - Temas cercanos aceptados (ángulos distintos): bio-20 vs qui-49 (glutamato), amb-40 vs amb-41 (partículas), bio-50 vs fes-14 (maíz).
 
+## PUBLICACIÓN DIARIA (30 oct): 1 shot diario desde el 30 oct; tarjeta «Hoy se publica» en la Sala; el trabajador procesa
+## los clics de «Publicar» cada hora (ADMIN.md, «Publicación diaria»).
+
 ## PUBLICADOR DE REDES (29 oct) — 6 REDES LISTAS; NADA PUBLICADO EN PÚBLICO TODAVÍA
 - Cómo se usa: ADMIN.md, «Publicar en redes». Botón «Publicar» de la Sala → collection `publicaciones` → el admin lo procesa.
 - Facebook, Instagram, Threads, LinkedIn: publican con el texto de cada red de `publicacion.md`. YouTube: sube PRIVADO hasta que

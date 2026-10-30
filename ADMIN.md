@@ -71,7 +71,7 @@ Dile a Robert en 2–4 líneas qué cambió, dónde verlo (la Sala o el chat) y 
 Todo vive en el repo: `motor/redes/publicar.py` (el programa), `.github/workflows/publicar.yml` (lo corre), `renovar-tokens.yml`,
 `tiktok-conectar.yml`, y la página `docs/tiktok.html` del sitio. Redes: **facebook** (Reel de la página), **instagram** (Reel),
 **threads** (post con video), **youtube** (Short), **linkedin** (perfil personal de Robert), **tiktok** (BORRADOR en su bandeja).
-X no se usa (cobra). El video es `<clave>_narrado.mp4` del Release (primero `borradores-main`); el texto de cada red sale de
+X no se usa (cobra). El video es `<clave>_narrado.mp4` del Release (primero `borradores-voces-v4`, la voz profesional; si no, el más reciente); el texto de cada red sale de
 `shots/<clave>/publicacion.md` (mismo lector que `motor/sala.py`). No publica shots sin `VEREDICTO: APROBADO`.
 
 **Modos:** `prueba` = revisa tokens, permisos, video (duración, 9:16, códecs) y textos (límites por red); no sube nada.
@@ -131,3 +131,11 @@ de TikTok con el guion del video demo). Las envía Robert con su cuenta.
 los registros de Actions también: el programa oculta todo token con `::add-mask::`. Nunca publicar en modo real sin permiso de
 Robert para esa publicación. Si una API cambia (error de versión), arregla `motor/redes/publicar.py` (p. ej. `LI_VERSIONES`).
 
+
+## Publicación diaria (30 oct 2026, Robert: "solo ver y aprobar")
+- Calendario: 1 shot diario (`calendario/fecha.py lista 30`). La Sala lo muestra arriba en «Hoy se publica» (doc `estado/calendario`,
+  generado con `python3 calendario/fecha.py json`; regenerarlo y escribirlo con ArtifactData cada vez que cambien shots o festivos).
+- Robert abre la Sala, ve el shot del día, toca «Ver y publicar» (las 6 redes ya vienen marcadas), elige la privacidad de TikTok y
+  confirma. Eso crea el doc en `publicaciones` = su permiso. **El trabajador horario lo procesa en su siguiente ronda (≤ 1 h).**
+- En cada ronda (trabajador o admin): `publicaciones` con estado "pendiente" → "en proceso" → archivo `publicar/pedidos/…json` con
+  `release: "borradores-voces-v4"` si el narrado está ahí → leer la bitácora → "listo"/"error" y `publicado` en la ficha del shot.

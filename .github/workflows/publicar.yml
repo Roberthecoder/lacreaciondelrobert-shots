@@ -111,10 +111,11 @@ jobs:
           set -e
           [[ "$P_CLAVE" =~ ^[a-z0-9-]+$ ]] || { echo "::error::Clave inválida"; exit 1; }
           ARCH="${P_CLAVE}_narrado.mp4"
+          # 30 oct 2026: primero el narrado con la voz profesional nueva (Release borradores-voces-v4); si no, el más reciente.
           if [ -n "$P_RELEASE" ]; then TAG="$P_RELEASE"; else
             TAG=$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" --paginate \
               | jq -rs --arg a "$ARCH" '[.[][] | select(any(.assets[]; .name==$a)) | {tag:.tag_name, f:([.assets[]|select(.name==$a)][0].updated_at)}]
-                     | (map(select(.tag=="borradores-main")) + (sort_by(.f)|reverse)) | .[0].tag // ""')
+                     | (map(select(.tag=="borradores-voces-v4")) + (sort_by(.f)|reverse)) | .[0].tag // ""')
           fi
           [ -n "$TAG" ] || { echo "::error::No hay $ARCH en ningún Release (¿falta la voz aprobada y el render narrado?)"; exit 1; }
           gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p "$ARCH" -D video --clobber

@@ -170,6 +170,20 @@
   .tt .legal { font-size: 13px; color: var(--muted); margin: 0; }
   .tt .legal a { color: var(--ink); }
   .tt .aviso { font-size: 13px; color: var(--warn); margin: 0; }
+  /* Hoy se publica (calendario 1 diario, doc estado/calendario) */
+  .hoy { border-left: 6px solid var(--rosa); }
+  .hoy-fila { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: center; }
+  .hoy-fila + .hoy-fila { border-top: 1px solid var(--line); padding-top: 12px; }
+  .hoy-fila .poster { width: 96px; border-radius: 10px; cursor: pointer; }
+  .hoy-fila h3 { font-size: 17px; font-weight: 800; line-height: 1.2; overflow-wrap: anywhere; }
+  .hoy-fila .redes-ok { font-size: 13px; color: var(--muted); margin: 4px 0 8px; }
+  .hoy-fila .redes-ok b { color: var(--ok); }
+  .prox { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 14px; }
+  .prox li { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 8px; padding: 5px 0; border-top: 1px solid var(--line); }
+  .prox li span:first-child { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .prox li button { all: unset; cursor: pointer; overflow-wrap: anywhere; }
+  .prox li button:hover { text-decoration: underline; }
+  .card .sale { color: var(--ink); font-size: 12px; font-weight: 700; }
   @media (max-width: 760px) { .player { grid-template-columns: 1fr; overflow: auto; } .player video { max-height: 58vh; } }
   @media (prefers-reduced-motion: no-preference) { .card .poster { transition: transform .18s ease-out; } .card:hover .poster { transform: translateY(-3px); } }
 </style>
@@ -180,6 +194,13 @@
     <p class="lead" id="lead">Cargando tus shots…</p>
     <div class="cred" id="cred" aria-live="polite"><strong>Créditos de voz</strong><p id="cred-txt">Cargando tus créditos de ElevenLabs…</p><p class="hint" id="cred-nota"></p></div>
   </header>
+
+  <section class="card-box hoy" id="hoy" aria-label="Hoy se publica">
+    <h2 id="hoy-tit">Hoy se publica</h2>
+    <div id="hoy-cuerpo"><p class="hint">Cargando el calendario…</p></div>
+    <h3 style="font-size:15px">Lo que sigue</h3>
+    <ul class="prox" id="hoy-prox"></ul>
+  </section>
 
   <section class="card-box" aria-label="Pedir videos">
     <h2>Pedir videos</h2>
@@ -468,13 +489,65 @@
     if (s.video) { po.append(el('span', 'play')); po.append(el('span', 'dur', mmss(s.dur))); }
     card.append(po, el('h3', null, tituloCompleto(s)));
     if (s.serie === 'Festivo') card.append(el('small', 'vinc', `Serie vinculada: ${s.serie_vinculada || '—'}${s.especial ? ' · ' + s.especial : ''}`));
+    const f = fechaDe(s.id); if (f) card.append(el('small', 'sale', `Sale el ${fechaTxt(f)}`));
     card.append(el('small', null, s.id));
     card.addEventListener('click', () => abrir(s));
     return card;
   }
 
+  /* ---------- hoy se publica (doc estado/calendario: {dias: {AAAA-MM-DD: [claves]}}; 1 shot diario) ---------- */
+  S.cal = null;
+  const isoLocal = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const fechaTxt = (iso) => { const [y, m, d] = iso.split('-').map(Number); const f = new Date(y, m - 1, d); return f.toLocaleDateString('es-MX', { weekday: 'short', day: 'numeric', month: 'short' }); };
+  const fechaDe = (id) => { if (!S.cal || !S.cal.dias) return null; if (!S.calInv) { S.calInv = {}; Object.entries(S.cal.dias).forEach(([f, ks]) => ks.forEach((k) => { S.calInv[k] = f; })); } return S.calInv[id] || null; };
+  function pintarHoy() {
+    const cuerpo = $('hoy-cuerpo'), prox = $('hoy-prox'); cuerpo.replaceChildren(); prox.replaceChildren();
+    if (!S.cal || !S.cal.dias) { cuerpo.append(el('p', 'hint', 'Todavía no hay calendario de publicación.')); return; }
+    const hoy = isoLocal(new Date());
+    const dias = Object.keys(S.cal.dias).sort();
+    const primero = dias.find((f) => f >= hoy);
+    $('hoy-tit').textContent = primero === hoy ? `Hoy se publica · ${fechaTxt(hoy)}` : primero ? `Próxima publicación · ${fechaTxt(primero)}` : 'Hoy se publica';
+    if (!primero) { cuerpo.append(el('p', 'hint', 'Ya no hay shots en el calendario. Pide más en «Pedir videos».')); return; }
+    S.cal.dias[primero].forEach((k) => {
+      const s = S.shots.find((x) => x.id === k);
+      const fila = el('div', 'hoy-fila');
+      const po = el('div', 'poster');
+      if (s && s.poster) { const im = el('img'); im.alt = ''; im.src = '/_blob/' + s.poster; po.append(im); } else po.append(el('div', 'none', '—'));
+      const der = el('div');
+      der.append(el('h3', null, s ? tituloCompleto(s) : k));
+      const hechas = (s && s.publicado && typeof s.publicado === 'object') ? Object.keys(s.publicado) : [];
+      const pend = S.pubs.filter((p) => p.shot === k && p.estado !== 'listo' && p.estado !== 'error');
+      const linea = el('p', 'redes-ok');
+      if (!s) linea.textContent = 'Este shot todavía no está en la Sala.';
+      else if (s.kind !== 'narrado') linea.textContent = 'Todavía no tiene su voz: aún no se puede publicar.';
+      else if (hechas.length >= PUB_REDES.length) linea.append(el('b', null, '✓ Publicado en todas las redes'));
+      else if (pend.length) linea.textContent = `Publicación en camino (${pend[0].estado || 'pendiente'}). Llega en menos de 1 hora.`;
+      else linea.textContent = hechas.length ? `Ya está en: ${hechas.join(', ')}. Faltan las demás.` : 'Listo para publicar. Míralo y toca «Publicar».';
+      der.append(linea);
+      if (s) {
+        const b = el('button', 'btn go', hechas.length >= PUB_REDES.length ? 'Ver' : 'Ver y publicar'); b.type = 'button';
+        const faltan = PUB_REDES.map((x) => x[0]).filter((r) => !hechas.includes(r));
+        b.addEventListener('click', () => abrir(s, s.kind === 'narrado' && !pend.length ? faltan : []));
+        po.addEventListener('click', () => abrir(s, []));
+        der.append(b);
+      }
+      fila.append(po, der); cuerpo.append(fila);
+    });
+    dias.filter((f) => f > primero).slice(0, 6).forEach((f) => {
+      const li = el('li'); li.append(el('span', null, fechaTxt(f)));
+      const cont = el('span');
+      S.cal.dias[f].forEach((k, i) => {
+        const s = S.shots.find((x) => x.id === k);
+        const b = el('button', null, (i ? ' + ' : '') + (s ? tituloCompleto(s) : k) + (s && s.kind !== 'narrado' ? ' (sin voz aún)' : '')); b.type = 'button';
+        if (s) b.addEventListener('click', () => abrir(s, []));
+        cont.append(b);
+      });
+      li.append(cont); prox.append(li);
+    });
+  }
+
   /* ---------- reproductor y textos ---------- */
-  function abrir(s) {
+  function abrir(s, preSel) {
     S.actual = s;
     const v = $('vid');
     if (s.video) { v.src = '/_blob/' + s.video; v.poster = s.poster ? '/_blob/' + s.poster : ''; } else { v.removeAttribute('src'); v.load(); }
@@ -485,7 +558,7 @@
     $('d-chars').textContent = s.caracteres ? `${fmt(s.caracteres)} caracteres (~${fmt(s.caracteres)} créditos de ElevenLabs)` : '—';
     $('d-key').textContent = s.id;
     const hd = $('hd'); if (s.hd) { hd.href = s.hd; hd.hidden = false; } else hd.hidden = true;
-    $('msg').textContent = ''; $('pub-msg').textContent = ''; S.pubSel = new Set(); S.pubConfirmar = null;
+    $('msg').textContent = ''; $('pub-msg').textContent = ''; S.pubSel = new Set(preSel || []); S.pubConfirmar = null;
     $('tt-texto').dataset.shot = ''; $('tt-priv').value = ''; ['tt-com', 'tt-duo', 'tt-sti', 'tt-com-onoff', 'tt-propia', 'tt-pagada'].forEach((id) => { $(id).checked = false; }); $('tt-ia').checked = true;
     pintarAprobar(); pintarRedes(); pintarCorrecciones(); pintarPublicar();
     $('dlg').showModal();
@@ -661,7 +734,7 @@
     try {
       const extra = redes.includes('tiktok') ? { tiktok: ttOpciones() } : {};
       await S.db.collection('publicaciones').add({ shot: s.id, titulo: tituloCompleto(s), redes, ...extra, modo: 'real', estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
-      S.pubSel.clear(); $('pub-msg').textContent = 'Pedido de publicación enviado. El administrador lo sube en su siguiente ronda (o al instante si en el chat escribes «publica mis pedidos»).';
+      S.pubSel.clear(); $('pub-msg').textContent = '¡Listo! Se publica en menos de 1 hora (o al instante si en el chat escribes «publica mis pedidos»). Aquí abajo ves cómo va.';
     } catch (e) { $('pub-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
     pintarPublicar();
   });
@@ -837,9 +910,10 @@
     db.collection('estado').limit(20).onSnapshot((snap) => {
       const d = snap.docs.find((x) => x.id === 'creditos'); S.cred = d ? d.data() : null; pintarCreditos(); pintarCosto();
       const t = snap.docs.find((x) => x.id === 'tiktok'); S.tt = t ? t.data() : null; if (S.actual) pintarPublicar();
+      const c = snap.docs.find((x) => x.id === 'calendario'); S.cal = c ? c.data() : null; S.calInv = null; pintarHoy(); render();
     }, () => { $('cred-txt').textContent = 'No se pudieron leer tus créditos.'; });
     db.collection('shots').limit(1000).onSnapshot((snap) => {
-      S.shots = snap.docs.map((d) => ({ id: d.id, ...d.data() })); render();
+      S.shots = snap.docs.map((d) => ({ id: d.id, ...d.data() })); render(); pintarHoy();
       if (S.actual) { S.actual = S.shots.find((x) => x.id === S.actual.id) || S.actual; pintarAprobar(); pintarRedes(); pintarPublicar(); }
     }, () => { $('lead').textContent = 'No se pudieron cargar los videos. Recarga la página.'; });
     db.collection('aprobaciones').limit(1000).onSnapshot((snap) => {
@@ -850,7 +924,7 @@
       S.corr = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarCorrecciones();
     }, () => {});
     db.collection('publicaciones').orderBy('creado', 'desc').limit(300).onSnapshot((snap) => {
-      S.pubs = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarPublicar();
+      S.pubs = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarPublicar(); pintarHoy();
     }, () => {});
     db.collection('pedidos').orderBy('creado', 'desc').limit(50).onSnapshot((snap) => {
       S.pedidos = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarPedidos();
