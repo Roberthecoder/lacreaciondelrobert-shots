@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Vela Lejos base narrada.dc.html",
   "salida": "Shot Vela Lejos narrado.dc.html",
   "nota": "Shot Científico #47. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Así que una vela se ve lejos, pero no a cincuenta kilómetros."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

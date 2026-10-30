@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Halicina base narrada.dc.html",
   "salida": "Shot Halicina narrado.dc.html",
   "nota": "Shot IA #46. Una línea por subtítulo (idx 0..11 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -47,5 +48,6 @@
       "escena": "Cierre",
       "texto": "Una molécula pensada para la diabetes podría volverse antibiótico. Y la encontró una IA."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }

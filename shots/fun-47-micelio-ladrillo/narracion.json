@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Micelio Ladrillo base narrada.dc.html",
   "salida": "Shot Micelio Ladrillo narrado.dc.html",
   "nota": "Shot Fungi Mati #47. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Así que eso no era unicel: era un hongo con hambre de rastrojo, y puede volver a la tierra."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
