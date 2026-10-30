@@ -1,6 +1,6 @@
 {
   "voz_aprobada": true,
-  "velocidad": 1.1,
+  "velocidad": 0.98,
   "dcHtml": "Shot Pilas base narrada.dc.html",
   "salida": "Shot Pilas narrado.dc.html",
   "nota": "Shot Ambiental #47. Una línea por subtítulo (idx 0..10 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
