@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot B12 base narrada.dc.html",
   "salida": "Shot B12 narrado.dc.html",
   "nota": "Shot Biotecnológico #59. Una línea por subtítulo (idx 0..13 del jsx). Voz pendiente de aprobación de Robert: NO generar sin su visto bueno.",
@@ -60,5 +61,6 @@
       "texto": "Así que tu B12 no viene de una planta ni de un animal: viene de bacterias."
     }
   ],
-  "tanda": 10
+  "tanda": 10,
+  "mezcla": "oficial-30oct"
 }

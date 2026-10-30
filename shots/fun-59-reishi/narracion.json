@@ -1,4 +1,5 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Reishi base narrada.dc.html",
   "salida": "Shot Reishi narrado.dc.html",
   "nota": "Shot Fungi Mati #59. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
@@ -55,5 +56,6 @@
       "escena": "Cierre",
       "texto": "Así que ese frasco no siempre trae lo que dice, ni lo que promete está probado."
     }
-  ]
+  ],
+  "mezcla": "oficial-30oct"
 }
