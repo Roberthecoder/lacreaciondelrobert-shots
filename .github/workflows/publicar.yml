@@ -33,6 +33,12 @@ on:
       release:
         description: 'Opcional: Release de donde tomar el MP4 (si no, busca <clave>_narrado.mp4, primero en borradores-main)'
         default: ''
+      video:
+        description: 'Opcional: nombre del MP4 en el Release (documentales: p. ej. doc-001-tema.mp4; si no, <clave>.mp4)'
+        default: ''
+      youtube:
+        description: 'Documentales: opciones de YouTube en JSON, p. ej. {"privacidad":"unlisted","idioma":"en"}'
+        default: ''
       tiktok:
         description: 'Opcional: opciones de TikTok en JSON, p. ej. {"privacidad":"SELF_ONLY"} o {"modo":"borrador"}'
         default: ''
@@ -66,7 +72,7 @@ jobs:
           DESPUES: ${{ github.sha }}
         run: |
           if [ "$EV" = "workflow_dispatch" ]; then
-            echo "lista=$(jq -c '[{clave, redes, modo, confirmar, autorizo, release, tiktok, repetir: (.repetir|tostring)}]' <<<"$IN")" >> "$GITHUB_OUTPUT"
+            echo "lista=$(jq -c '[{clave, redes, modo, confirmar, autorizo, release, tiktok, video, youtube, repetir: (.repetir|tostring)}]' <<<"$IN")" >> "$GITHUB_OUTPUT"
           else
             jq -r '[.commits[]? | ((.added // []) + (.modified // []))[]] | unique | .[] | select(startswith("publicar/pedidos/") and endswith(".json"))' \
               "$GITHUB_EVENT_PATH" > archivos.txt
@@ -110,7 +116,7 @@ jobs:
       - name: Leer el pedido
         run: |
           if jq -e '.archivo' <<<"$PEDIDO" >/dev/null; then P=$(cat "$(jq -r .archivo <<<"$PEDIDO")"); else P="$PEDIDO"; fi
-          for k in clave redes modo confirmar autorizo release repetir tiktok; do
+          for k in clave redes modo confirmar autorizo release repetir tiktok video youtube; do
             v=$(jq -r --arg k "$k" '.[$k] // "" | if type=="array" then join(",") else tostring end' <<<"$P")
             echo "P_${k^^}<<FIN_PEDIDO" >> "$GITHUB_ENV"; echo "$v" >> "$GITHUB_ENV"; echo "FIN_PEDIDO" >> "$GITHUB_ENV"
           done
@@ -119,6 +125,9 @@ jobs:
           set -e
           [[ "$P_CLAVE" =~ ^[a-z0-9-]+$ ]] || { echo "::error::Clave inválida"; exit 1; }
           ARCH="${P_CLAVE}_narrado.mp4"
+          # Documentales y videos largos 16:9 (largos/<clave>/): su MP4 se llama <clave>.mp4 o el que diga el pedido.
+          if [ -n "$P_VIDEO" ]; then ARCH="$P_VIDEO"; elif [ -d "largos/$P_CLAVE" ] && [ ! -d "shots/$P_CLAVE" ]; then ARCH="${P_CLAVE}.mp4"; fi
+          [[ "$ARCH" =~ ^[A-Za-z0-9._-]+\.mp4$ ]] || { echo "::error::Nombre de video inválido: $ARCH"; exit 1; }
           # 30 oct 2026: primero el narrado con la voz profesional nueva (Release borradores-voces-v4); si no, el más reciente.
           if [ -n "$P_RELEASE" ]; then TAG="$P_RELEASE"; else
             TAG=$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" --paginate \
@@ -127,6 +136,8 @@ jobs:
           fi
           [ -n "$TAG" ] || { echo "::error::No hay $ARCH en ningún Release (¿falta la voz aprobada y el render narrado?)"; exit 1; }
           gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p "$ARCH" -D video --clobber
+          # Portada propia del documental, si el Release la tiene (si no, el publicador saca un cuadro del video).
+          gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p "${P_CLAVE}_portada.jpg" -D video --clobber 2>/dev/null || true
           echo "VIDEO=video/$ARCH" >> "$GITHUB_ENV"
           echo "VIDEO_URL=https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/$ARCH" >> "$GITHUB_ENV"
           echo "Video: $TAG / $ARCH"
@@ -136,4 +147,4 @@ jobs:
           [ "$P_REPETIR" = "true" ] && EXTRA+=(--repetir)
           python3 motor/redes/publicar.py publicar --clave "$P_CLAVE" --redes "${P_REDES:-todas}" --modo "${P_MODO:-prueba}" \
             --video "$VIDEO" --video-url "$VIDEO_URL" --confirmar "$P_CONFIRMAR" --autorizo "$P_AUTORIZO" \
-            --tiktok "$P_TIKTOK" "${EXTRA[@]}"
+            --tiktok "$P_TIKTOK" --youtube "$P_YOUTUBE" "${EXTRA[@]}"
