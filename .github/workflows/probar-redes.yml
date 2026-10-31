@@ -1,5 +1,6 @@
 name: Probar conexión con Threads y YouTube (solo lectura)
 on: workflow_dispatch
+permissions: {}   # solo lee las APIs con los secretos; no necesita tocar el repo
 jobs:
   probar:
     runs-on: ubuntu-latest
