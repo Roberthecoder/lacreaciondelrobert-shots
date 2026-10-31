@@ -1,0 +1,23 @@
+Every year, the tequila industry in Jalisco, Mexico, leaves behind about nine hundred thousand tonnes of agave bagasse: the fibre that remains after the sugars are extracted. Most of it is burned, or dumped and left to rot in open piles.
+
+Distilleries pay two hundred to five hundred pesos per tonne just to have it hauled away; small agave growers often burn it in the field. Either way, carbon dioxide, particulates and methane end up in rural communities.
+
+My name is Roberto Navarro. I am a biotechnology engineering student in Zapopan, and I have grown mushrooms since I was ten. Fungi Mati turns that bagasse into gourmet mushrooms in four to six weeks.
+
+A local supplier compacts the bagasse into pellets that store for months. I hydrate and pasteurize them, add twenty percent soybean hull, and inoculate them with oyster mushroom mycelium. Its enzymes break down lignin and cellulose, and the fibre becomes food. What is left goes back to the soil as compost.
+
+That speed is the point. In the time compost takes to half-break down, the same fibre has already become a food that sells by the kilogram. And pelletized bagasse costs about half of a conventional substrate.
+
+In 2026, with a grant from Tec de Monterrey, I turned an abandoned space at my university's high school into a permanent mushroom farm. I taught fifty students to grow there, and every harvest went back to that community: eighty-five people in total. Fungi Mati already sells grow kits and courses.
+
+Half of those students learned with an AI tutor I built on ChatGPT with my own materials; the other half learned the traditional way. The next version will be a chatbot built on Claude, guiding growers in any language, at any hour.
+
+At the Carrillo Biorefinery Lab of Tec de Monterrey, where I run the fungal strain collection under Dr. Danay Carrillo Nieves, an approved project will test whether crossing two oyster mushroom strains yields one better adapted to bagasse. It is exploratory, but if it works, the method travels to coffee pulp, corn stover or sugarcane bagasse.
+
+With a five thousand dollar award from Equitech Futures, I am building a production farm at home, with a pressure canner, a flow hood and a humidified fruiting room. Next comes my first full tonne of pellets.
+
+Year one: one tonne of bagasse diverted from burning, and at least six hundred kilograms of mushrooms sold to Guadalajara restaurants through a distributor I already have.
+
+From Solve, I need three things: help with offtake agreements with restaurants; connections to the tequila industry, because reaching distilleries has been the hardest part; and mentors who have taken a bio-based product from one pilot to many.
+
+Fungi Mati: fungi, and mati, a Nahuatl word for knowing. Turning the one residue Jalisco has too much of into food, in weeks.
