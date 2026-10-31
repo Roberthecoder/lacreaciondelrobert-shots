@@ -1,16 +1,25 @@
 name: Publicación diaria automática
 
-# Cada día a las 2:43 pm hora (con respaldos 3:13, 4:13 y 6:13 pm por si GitHub se salta la hora) de Ciudad de México (UTC−6) publica en las redes el/los shot(s) que tocan ese día según
-# calendario/fecha.py (1 shot diario; los festivos en su fecha). Permiso permanente de Robert (chat, 30 oct 2026).
+# Publica cada día en las 6 redes el/los shot(s) que tocan según calendario/fecha.py (1 shot diario; festivos en su fecha).
+# Permiso permanente de Robert (chat, 30 oct 2026). Hora: 2:43 pm de Ciudad de México (UTC−6), FIJA.
+# Blindaje (31 oct 2026, Robert: "SIEMPRE tiene que publicarse sin mi intervención"):
+#  - GitHub a veces retrasa o se salta tareas programadas: hay un intento cada hora de 3:13 a 11:13 pm. Si ya está todo
+#    publicado no hacen nada (0 duplicados); si falta algo (o una red falló), lo publican / lo reintentan.
+#  - Recuperación: si el shot normal de AYER no salió, se publica hoy también (los festivos no se recuperan: perderían su fecha).
+#  - Aviso: si en el último intento (11:13 pm) algo sigue sin publicarse, el run falla y GitHub le manda un correo a Robert.
 # Apagar: "activo": false en publicar/diario.json. Saltar un shot: su clave en publicar/pausa.txt.
-# No gasta tokens de Claude: lanza el workflow "Publicar en redes" (publicar.yml) una vez por shot y espera a que termine.
 on:
   schedule:
-    - cron: '43 20 * * *'   # 20:43 UTC = 2:43 pm en CDMX (hora fija elegida por Robert: la de la primera publicación, 30 oct)
-    # Respaldos por si GitHub retrasa o se salta la de las 2:43 (pasó el 31 oct): si ya se publicó, no hacen nada.
-    - cron: '13 21 * * *'   # 3:13 pm CDMX
-    - cron: '13 22 * * *'   # 4:13 pm CDMX
-    - cron: '13 0 * * *'    # 6:13 pm CDMX (00:13 UTC del día siguiente; la fecha se calcula en hora de CDMX)
+    - cron: '43 20 * * *'   # 2:43 pm CDMX: la hora oficial
+    - cron: '13 21 * * *'   # 3:13 pm  ┐
+    - cron: '13 22 * * *'   # 4:13 pm  │
+    - cron: '13 23 * * *'   # 5:13 pm  │ respaldos: solo actúan si falta algo
+    - cron: '13 0 * * *'    # 6:13 pm  │ (las horas UTC de después de medianoche siguen siendo
+    - cron: '13 1 * * *'    # 7:13 pm  │  el mismo día en CDMX; la fecha se calcula en CDMX)
+    - cron: '13 2 * * *'    # 8:13 pm  │
+    - cron: '13 3 * * *'    # 9:13 pm  │
+    - cron: '13 4 * * *'    # 10:13 pm │
+    - cron: '13 5 * * *'    # 11:13 pm ┘ último intento: si algo falta, avisa por correo
   workflow_dispatch:
     inputs:
       fecha:
@@ -24,7 +33,7 @@ on:
 
 permissions:
   actions: write
-  contents: write   # anota cada día en publicar/diario.log (GitHub apaga las tareas programadas de repos sin cambios en 60 días)
+  contents: write   # anota en publicar/diario.log (además GitHub apaga las tareas programadas de repos sin cambios en 60 días)
 
 concurrency:
   group: publicacion-diaria
@@ -36,7 +45,7 @@ jobs:
     timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
-      - name: Publicar lo de hoy
+      - name: Publicar lo pendiente
         env:
           GH_TOKEN: ${{ github.token }}
           FECHA: ${{ inputs.fecha }}
@@ -45,20 +54,30 @@ jobs:
           set -u
           CFG=publicar/diario.json
           if [ "$(jq -r .activo $CFG)" != "true" ]; then echo "Publicación diaria apagada en $CFG"; exit 0; fi
-          F="${FECHA:-$(TZ=America/Mexico_City date +%F)}"
-          KS=$(python3 calendario/fecha.py json | jq -r --arg f "$F" '.[$f][]?')
-          if [ -z "$KS" ]; then echo "Nada que publicar el $F"; exit 0; fi
-          REDES=$(jq -r '.redes | join(",")' $CFG); TT=$(jq -c .tiktok $CFG); MAL=0
-          # ¿Ya está todo publicado hoy? (bitácora refs/estado/publicaciones). Entonces este respaldo no hace nada.
+          HOY="${FECHA:-$(TZ=America/Mexico_City date +%F)}"
+          AYER=$(date -d "$HOY -1 day" +%F)
+          HORA=$(TZ=America/Mexico_City date +%H)
+          ULTIMO=0; [ -z "$FECHA" ] && [ "$HORA" -ge 23 ] && ULTIMO=1
+          REDES=$(jq -r '.redes | join(",")' $CFG); TT=$(jq -c .tiktok $CFG)
+          python3 calendario/fecha.py json > cal.json
           git fetch -q origin refs/estado/publicaciones 2>/dev/null && git show FETCH_HEAD:publicaciones.json > bit.json 2>/dev/null || echo '[]' > bit.json
-          FALTA=0
-          for K in $KS; do for RED in $(jq -r '.redes[]' $CFG); do
-            jq -e --arg k "$K" --arg r "$RED" '[.[] | select(.clave==$k and .red==$r and .modo=="real" and .ok==true)] | length > 0' bit.json >/dev/null || FALTA=1
-          done; done
-          if [ "$FALTA" = 0 ] && [ "$MODO" = "real" ]; then echo "Lo de hoy ($F) ya está publicado en todas las redes."; exit 0; fi
-          echo "## Publicación del $F ($MODO)" >> "$GITHUB_STEP_SUMMARY"
-          for K in $KS; do
-            if grep -v '^#' publicar/pausa.txt 2>/dev/null | grep -qxF "$K"; then echo "- $K: en pausa, no se publica" >> "$GITHUB_STEP_SUMMARY"; continue; fi
+          pausado() { grep -v '^#' publicar/pausa.txt 2>/dev/null | grep -qxF "$1"; }
+          completo() {  # ¿ya salió en todas las redes? (en TikTok, el borrador cuenta como hecho)
+            for RED in $(jq -r '.redes[]' $CFG); do
+              jq -e --arg k "$1" --arg r "$RED" '[.[] | select(.clave==$k and .red==$r and .modo=="real" and .ok==true)] | length > 0' bit.json >/dev/null || return 1
+            done; }
+          PEND=""
+          for K in $(jq -r --arg f "$AYER" '.[$f][]?' cal.json); do   # recuperación de ayer (solo shots normales)
+            case "$K" in fes-*) continue;; esac
+            pausado "$K" || completo "$K" || PEND="$PEND $K"
+          done
+          for K in $(jq -r --arg f "$HOY" '.[$f][]?' cal.json); do
+            pausado "$K" || { [ "$MODO" = "real" ] && completo "$K"; } || PEND="$PEND $K"
+          done
+          if [ -z "$PEND" ]; then echo "Nada pendiente el $HOY: todo publicado."; exit 0; fi
+          echo "## Publicación del $HOY ($MODO): $PEND" >> "$GITHUB_STEP_SUMMARY"
+          MAL=0
+          for K in $PEND; do
             ANTES=$(gh run list -R "$GITHUB_REPOSITORY" -w publicar.yml -L 1 --json databaseId --jq '.[0].databaseId // 0')
             gh workflow run publicar.yml -R "$GITHUB_REPOSITORY" --ref main -f clave="$K" -f redes="$REDES" -f modo="$MODO" \
               -f confirmar="$K" -f autorizo="Robert: publicación diaria automática (permiso del 30 oct 2026)" \
@@ -66,18 +85,21 @@ jobs:
             RID=""; for i in $(seq 1 30); do sleep 10
               RID=$(gh run list -R "$GITHUB_REPOSITORY" -w publicar.yml -e workflow_dispatch -L 1 --json databaseId --jq '.[0].databaseId // 0')
               [ "$RID" != "$ANTES" ] && [ "$RID" != "0" ] && break; RID=""; done
-            if [ -z "$RID" ]; then echo "- $K: no arrancó la publicación" >> "$GITHUB_STEP_SUMMARY"; MAL=1; continue; fi
+            if [ -z "$RID" ]; then echo "- $K: no arrancó la publicación (se reintenta en 1 h)" >> "$GITHUB_STEP_SUMMARY"; MAL=1; continue; fi
             if gh run watch "$RID" -R "$GITHUB_REPOSITORY" --interval 30 --exit-status >/dev/null; then
               echo "- $K: listo ([detalle](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RID))" >> "$GITHUB_STEP_SUMMARY"
             else
-              echo "- $K: FALLÓ ([detalle](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RID))" >> "$GITHUB_STEP_SUMMARY"; MAL=1
+              echo "- $K: alguna red falló, se reintenta en 1 h ([detalle](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RID))" >> "$GITHUB_STEP_SUMMARY"; MAL=1
             fi
           done
-          # Bitácora diaria en el repo: deja constancia y mantiene vivo el repo (si no, GitHub apaga el horario a los 60 días).
           if [ "$MODO" = "real" ]; then
             git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            echo "$F · $(echo $KS | tr '\n' ' ') · $([ $MAL = 0 ] && echo ok || echo con-fallas)" >> publicar/diario.log
-            git add publicar/diario.log && git commit -qm "Publicación diaria $F [sin render]" && \
+            echo "$HOY $(TZ=America/Mexico_City date +%H:%M) ·$PEND · $([ $MAL = 0 ] && echo ok || echo con-fallas)" >> publicar/diario.log
+            git add publicar/diario.log && git commit -qm "Publicación diaria $HOY [sin render]" && \
               for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
           fi
-          exit $MAL
+          # Solo el último intento del día (o una corrida a mano) marca falla: así GitHub manda UN correo, no uno por hora.
+          if [ $MAL = 1 ] && { [ $ULTIMO = 1 ] || [ -n "$FECHA" ]; }; then
+            echo "::error::Algo no se publicó hoy ($PEND). Revisa el detalle; mañana se reintenta solo."; exit 1
+          fi
+          exit 0
