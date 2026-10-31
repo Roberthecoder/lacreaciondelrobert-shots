@@ -20,6 +20,9 @@ const VW = HOR ? 1920 : 1080, VH = HOR ? 1080 : 1920;
 const [dir, page, out] = args;
 if (!out) { console.error('Uso: node render.mjs <carpeta> <archivo.dc.html> <salida.mp4> [--fps 30] [--audio x.wav] [--outro x.mp4] [--hasta seg]'); process.exit(1); }
 const FPS = +opt('fps', 30);
+// --escala 2: dibuja cada cuadro al doble de resolución (p. ej. 3840×2160 en horizontal) para máxima nitidez.
+const ESC = +opt('escala', 1);
+const OW = VW * ESC, OH = VH * ESC;
 
 const MIME = { '.html': 'text/html', '.js': 'application/javascript', '.jsx': 'application/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.mp3': 'audio/mpeg', '.wav': 'audio/wav', '.mp4': 'video/mp4', '.css': 'text/css', '.json': 'application/json' };
 const server = http.createServer((req, res) => {
@@ -69,11 +72,11 @@ console.log(`Duración ${info.dur}s · render hasta ${end.toFixed(2)}s · ${N} c
 const dpr = VW / info.w;
 const clip = { x: info.x, y: info.y, width: info.w, height: info.h };
 const cdp = await ctx.newCDPSession(p);
-await cdp.send('Emulation.setDeviceMetricsOverride', { width: VW, height: VH + 70, deviceScaleFactor: dpr, mobile: false });
+await cdp.send('Emulation.setDeviceMetricsOverride', { width: VW, height: VH + 70, deviceScaleFactor: dpr * ESC, mobile: false });
 
 const tmp = out.replace(/\.mp4$/, '') + '.video.mp4';
 const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-',
-  '-vf', `scale=${VW}:${VH}:flags=lanczos,format=yuv420p`, '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', tmp], { stdio: ['pipe', 'inherit', 'inherit'] });
+  '-vf', `scale=${OW}:${OH}:flags=lanczos,format=yuv420p`, '-c:v', 'libx264', '-preset', ESC > 1 ? 'veryfast' : 'medium', '-crf', ESC > 1 ? '12' : '18', tmp], { stdio: ['pipe', 'inherit', 'inherit'] });
 
 const t0 = Date.now();
 for (let i = I0; i < N; i++) {
@@ -107,6 +110,8 @@ if (outroFile) {
 if (audio) inputs.push('-i', audio);
 const map = ['-map', v.startsWith('[0') ? '0:v' : v];
 if (audio) map.push('-map', `${outroFile ? 2 : 1}:a`, '-c:a', 'aac', '-b:a', '192k', '-shortest');
-await run([...inputs, ...(filters.length ? ['-filter_complex', filters.join(';')] : []), ...map, '-c:v', 'libx264', '-crf', '18', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', out]);
-fs.unlinkSync(tmp);
+// sin audio ni cierre: el video ya está listo (no se vuelve a comprimir)
+if (!audio && !outroFile && ESC > 1) fs.renameSync(tmp, out);
+else await run([...inputs, ...(filters.length ? ['-filter_complex', filters.join(';')] : []), ...map, '-c:v', 'libx264', '-crf', '18', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', out]);
+if (fs.existsSync(tmp)) fs.unlinkSync(tmp);
 console.log(`Listo: ${out}  (${((Date.now() - t0) / 1000).toFixed(0)}s)`);

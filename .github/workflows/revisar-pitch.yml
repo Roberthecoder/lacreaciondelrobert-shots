@@ -1,0 +1,53 @@
+name: Revisar cuadros del pitch
+
+# Saca capturas a la mitad de cada escena del pitch y las guarda en largos/pitch-solve/revision/ (en la misma rama),
+# para revisar la animación sin renderizar el video completo. Se lanza al cambiar la animación.
+on:
+  push:
+    branches: ['largo-render/pitch-solve']
+    paths: ['largos/pitch-solve/video/*.jsx', 'largos/pitch-solve/video/escenas.js', 'largos/pitch-solve/revisar.txt']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: revisar-pitch
+  cancel-in-progress: true
+
+jobs:
+  cuadros:
+    if: github.repository == 'Roberthecoder/lacreaciondelrobert-shots'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar ffmpeg y Chromium
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji
+          cd motor && npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Capturas a la mitad de cada escena
+        run: |
+          cd largos/pitch-solve
+          T=$(node -e '
+            const fs=require("fs"); globalThis.window={};
+            new Function(fs.readFileSync("video/tiempos.js","utf8"))(); new Function(fs.readFileSync("video/escenas.js","utf8"))();
+            const ls=window.CAPS.flatMap(c=>c.lineas); let t=0, out=[];
+            ls.forEach((l,i)=>{ const d=window.TIEMPOS_VOZ[i]; if(l.v) out.push(+(t+d*0.62).toFixed(2)); else out[out.length-1]=+(t+d*0.5).toFixed(2); t+=d; });
+            console.log(out.join(","))')
+          echo "Tiempos: $T"
+          mkdir -p revision
+          A=$(echo "$T" | cut -d, -f1-12); B=$(echo "$T" | cut -d, -f13-)
+          node ../../motor/preview.mjs . "Pitch Solve.dc.html" revision/hoja_1.png "$A" --horizontal --cols 3 --ancho 640 2>&1 | tee revision/log_1.txt
+          node ../../motor/preview.mjs . "Pitch Solve.dc.html" revision/hoja_2.png "$B" --horizontal --cols 3 --ancho 640 2>&1 | tee revision/log_2.txt
+      - name: Guardar en la rama
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add largos/pitch-solve/revision
+          git diff --cached --quiet && exit 0
+          git commit -m "Pitch: capturas de revisión [sin render]"
+          git pull --rebase -q && git push
