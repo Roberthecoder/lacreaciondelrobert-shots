@@ -7,7 +7,7 @@ name: Render del largo (en paralelo)
 on:
   push:
     branches: ['largo-render/**']
-    paths: ['largos/**', '.github/workflows/render-largo.yml']
+    paths: ['largos/pitch-solve/video/**', 'largos/pitch-solve/*.dc.html']
   workflow_dispatch:
 
 permissions:
