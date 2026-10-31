@@ -74,6 +74,10 @@ jobs:
             echo "Reintento $intento"
           done
           test -f "salida/tramo_${{ matrix.pedazo.i }}.mp4"
+      - name: Acabado de película en este pedazo (grano, viñeta y color)
+        run: |
+          ffmpeg -y -loglevel error -i "salida/tramo_${{ matrix.pedazo.i }}.mp4"             -vf "colorbalance=rs=-0.03:bs=0.05:rm=0.01:bm=-0.01:rh=0.05:gh=0.015:bh=-0.04,eq=contrast=1.05:saturation=1.04,vignette=angle=PI/4.6,noise=c0s=10:c0f=t+u,format=yuv420p"             -c:v libx264 -preset medium -crf 20 -maxrate 9M -bufsize 18M -r "$FPS" -g 48 "salida/cine_${{ matrix.pedazo.i }}.mp4"
+          mv "salida/cine_${{ matrix.pedazo.i }}.mp4" "salida/tramo_${{ matrix.pedazo.i }}.mp4"
       - uses: actions/upload-artifact@v4
         with:
           name: tramo-${{ matrix.pedazo.i }}
@@ -94,21 +98,20 @@ jobs:
           pattern: tramo-*
           merge-multiple: true
           path: tramos
-      - name: Unir y aplicar el acabado de película
+      - name: Unir los pedazos (ya traen el acabado de película)
         run: |
           ls tramos | sort | sed "s#^#file '$PWD/tramos/#; s#\$#'#" > lista.txt
           wc -l lista.txt
-          ffmpeg -y -loglevel error -stats -f concat -safe 0 -i lista.txt \
-            -vf "colorbalance=rs=-0.03:bs=0.05:rm=0.01:bm=-0.01:rh=0.05:gh=0.015:bh=-0.04,eq=contrast=1.05:saturation=1.04,vignette=angle=PI/4.6,noise=c0s=10:c0f=t+u,format=yuv420p" \
-            -c:v libx264 -preset medium -crf 18 -r "$FPS" -movflags +faststart largo00_cine_mudo.mp4
+          ffmpeg -y -loglevel error -f concat -safe 0 -i lista.txt -c copy -movflags +faststart largo00_cine_mudo.mp4
           ffprobe -v error -show_entries format=duration,size -of default=nw=1 largo00_cine_mudo.mp4
-      - name: Publicar en Releases
-        run: |
-          TAG="largo-$(echo '${{ github.ref_name }}' | tr '/' '-')"
-          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --prerelease --title "Largo · ${{ github.ref_name }}" --notes "Video largo renderizado en la nube (sin voz). Se reemplaza en cada render."
-          gh release upload "$TAG" largo00_cine_mudo.mp4 --clobber
       - uses: actions/upload-artifact@v4
         with:
           name: largo00_cine_mudo
           path: largo00_cine_mudo.mp4
           retention-days: 3
+          compression-level: 0
+      - name: Publicar en Releases
+        run: |
+          TAG="largo-$(echo '${{ github.ref_name }}' | tr '/' '-')"
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --prerelease --title "Largo · ${{ github.ref_name }}" --notes "Video largo renderizado en la nube (sin voz). Se reemplaza en cada render."
+          gh release upload "$TAG" largo00_cine_mudo.mp4 --clobber
