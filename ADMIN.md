@@ -96,11 +96,32 @@ Actions → «Publicar en redes» → Run workflow.
 o `error`. El resumen del run en GitHub también trae, para TikTok, el texto que Robert pega en la app.
 
 **Botón «Publicar» de la Sala:** guarda en la collection `publicaciones` `{shot, titulo, redes, tiktok?, modo:"real",
-estado:"pendiente", creado, resultado}` (`tiktok` = opciones que Robert eligió en el panel de TikTok). Solo Robert puede escribir en la Sala, así que **ese clic es su permiso** para esa publicación. En cada
+estado:"pendiente", creado, resultado}` (`tiktok` = opciones que Robert eligió en el panel de TikTok). Documentales:
+además `tipo:"largo"`, `youtube:{privacidad, idioma?}`, `video?`, `release?`, `rama?` (se copian tal cual al pedido). Solo Robert puede escribir en la Sala, así que **ese clic es su permiso** para esa publicación. En cada
 ronda: `ArtifactData` query `publicaciones` con `estado == "pendiente"` → `estado: "en proceso"` → archivo de pedido (arriba)
 con `autorizo: "Sala, pedido <id>"` → al terminar el run, lee la bitácora y pon `estado: "listo"` (o `"error"` con el motivo
 en `resultado`, en palabras sencillas) y en el doc del shot `publicado: {<red>: {url, fecha}}` (la Sala marca ✓ esa red).
 Si en el chat Robert dice «publica <shot> en <redes>», es lo mismo.
+
+**Documentales y videos largos 16:9 (sección Documentales de la Sala; 31 oct 2026).** El publicador los reconoce porque viven
+en `largos/<clave>/` (no en `shots/`). Solo van a **YouTube** (sus cortes verticales `shots/doc-NNN-corte-K-*` se publican
+como shots normales). Lo que necesita cada documental:
+- `largos/<clave>/verificacion.md` con `VEREDICTO: APROBADO` (sin eso no se publica).
+- `largos/<clave>/publicacion.md` con la sección `## YouTube`: un bloque ```text con el título (≤100) y otro con la
+  descripción (≤5000, con los **capítulos** `0:00 …` y las fuentes). Formato alterno (el del pitch de Solve):
+  `largos/<clave>/youtube/meta.json` + `youtube/descripcion.txt`.
+- Opcional `largos/<clave>/youtube.json` (o `youtube/meta.json`): `{"idioma": "es-419"|"en", "etiquetas": [...],
+  "categoria": "28", "portada_segundo": 36, "sintetico": true}`.
+- En un Release: el MP4 16:9 (`<clave>.mp4`, u otro nombre en el pedido con `"video"`) y, si se quiere, la portada
+  `<clave>_portada.jpg` (1280×720, <2 MB). Sin portada, el publicador saca el cuadro de `portada_segundo`.
+- La privacidad la elige Robert en la Sala (público · no listado · privado; nunca inventarla). Mientras la auditoría de
+  YouTube no se apruebe, Google lo deja privado. Más de 15 min requiere el canal verificado.
+- Pedido: `{"clave", "redes": ["youtube"], "modo", "confirmar", "autorizo", "youtube": {"privacidad": "unlisted",
+  "idioma": "en"}, "video": "<nombre>.mp4", "release": "<tag>"}`. **El archivo de pedido se sube a la rama donde vive
+  `largos/<clave>/`** (el workflow usa la carpeta de esa rama); a mano: Run workflow con esa rama.
+- Resultado: enlace normal `https://youtu.be/<id>` en la bitácora (fila con `largo: true`).
+- OJO al subir una rama hecha a partir de otra: si el push «agrega» archivos de `publicar/pedidos/`, el workflow los
+  corre. Antes de empujar una rama con pedidos viejos, revisa que sean `prueba` o ya publicados (se saltan).
 
 **Lo que Robert ve y hace después:** TikTok: sale publicado con su descripción y la privacidad que eligió (si eligió
 «borrador», le llega a la bandeja y lo termina él). Mientras TikTok no apruebe la publicación directa, el publicador lo manda SOLO como borrador a su bandeja (plan B automático; la fila de la bitácora lleva `borrador: true` y no cuenta como publicado, para poder publicarlo directo después). YouTube: queda **privado** hasta que Google apruebe la auditoría (ver abajo); mientras,

@@ -7,6 +7,10 @@ Página publicada en **https://claude.ai/artifact/KBt7kaF2DPUjT5HBiQZMBv** (fija
 Datos (herramienta `ArtifactData`, misma url):
 - `shots/<clave>`: serie, numero, titulo, estado (En producción · Por revisar · Voz aprobada · Narrado listo), caracteres,
   video y poster (ids de assets), kind, dur, hd (enlace al MP4 completo), rama.
+  Documentales y videos largos 16:9: además `largo: true` (o `formato: "16:9"`), `idioma` ("es-419"/"en"), y si su MP4
+  no se llama `<clave>.mp4`, `video_publicar` (nombre del archivo) y `release` (tag). Con eso la Sala muestra el reproductor
+  y la tarjeta horizontales y el botón «Publicar» ofrece solo YouTube con su privacidad (público · no listado · privado).
+- `publicaciones/<id>`: pedidos de publicar (botón «Publicar»). Los procesa el administrador (ADMIN.md, «Publicar en redes»).
 - `aprobaciones/<clave>`: {aprobado, at, procesado}. Las procesa la nube (CLAUDE.md, "Sala de Shots").
 - `pedidos/<id>`: {tipo, serie, idea, estado, creado, resultado}. Ver CLAUDE.md, "Pedidos desde la Sala".
 Videos: versiones ligeras (480 px) que hace `motor/sala.py`, subidas como assets de la página.

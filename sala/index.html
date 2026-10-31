@@ -184,6 +184,10 @@
   .prox li button { all: unset; cursor: pointer; overflow-wrap: anywhere; }
   .prox li button:hover { text-decoration: underline; }
   .card .sale { color: var(--ink); font-size: 12px; font-weight: 700; }
+  /* Documentales y videos largos 16:9 */
+  .player.horiz { grid-template-columns: 1fr; overflow: auto; }
+  .player.horiz video { aspect-ratio: 16 / 9; max-height: 56vh; }
+  .card .poster.horiz { aspect-ratio: 16 / 9; }
   @media (max-width: 760px) { .player { grid-template-columns: 1fr; overflow: auto; } .player video { max-height: 58vh; } }
   @media (prefers-reduced-motion: no-preference) { .card .poster { transition: transform .18s ease-out; } .card:hover .poster { transform: translateY(-3px); } }
 </style>
@@ -325,6 +329,13 @@
           <p class="aviso" id="tt-aviso">Mientras TikTok no apruebe la publicación directa, el video llega como borrador a tu app de TikTok: lo abres, pegas el texto (pestaña TikTok, arriba) y lo publicas. En cuanto TikTok apruebe, sale publicado solo con estas opciones.</p>
         </div>
         <p class="hint" id="tt-borrador" hidden>Llega a tus notificaciones de TikTok como borrador: lo abres, pegas el texto (pestaña TikTok, arriba) y lo publicas tú.</p>
+      </div>
+      <div class="tt" id="yt" hidden>
+        <h4>Publicar el documental en YouTube</h4>
+        <div class="fila"><label class="lbl" for="yt-priv">¿Quién puede verlo?</label>
+          <select id="yt-priv"><option value="">Elige una opción</option><option value="public">Público</option><option value="unlisted">No listado (solo con el enlace)</option><option value="private">Privado</option></select></div>
+        <p class="hint" id="yt-info"></p>
+        <p class="aviso">Mientras Google no apruebe la auditoría de la app, YouTube lo deja privado aunque elijas otra opción. Si dura más de 15 min, tu canal debe estar verificado en YouTube.</p>
       </div>
       <div class="actions"><button class="btn go" id="pub-enviar" type="button">Publicar</button></div>
       <p class="msg" id="pub-msg"></p>
@@ -482,7 +493,7 @@
   }
   function tarjeta(s) {
     const card = el('button', 'card'); card.type = 'button';
-    const po = el('div', 'poster');
+    const po = el('div', 'poster' + (esLargo(s) ? ' horiz' : ''));
     if (s.poster) { const im = el('img'); im.loading = 'lazy'; im.alt = ''; im.src = '/_blob/' + s.poster; po.append(im); }
     else po.append(el('div', 'none', 'Sin video todavía'));
     const pill = el('span', 'pill', estadoDe(s)); pill.dataset.e = estadoDe(s); po.append(pill);
@@ -554,7 +565,9 @@
     $('d-titulo').textContent = tituloCompleto(s);
     $('c-texto').value = ''; $('c-msg').textContent = '';
     $('d-serie').textContent = etiqueta(s);
-    $('d-version').textContent = s.kind === 'narrado' ? 'Narrada con tu voz' : (s.video ? 'Revisión sin voz (música y subtítulos)' : 'Sin video todavía');
+    document.querySelector('#dlg .player').classList.toggle('horiz', esLargo(s));
+    $('d-version').textContent = esLargo(s) ? 'Video largo horizontal (16:9) para YouTube' : s.kind === 'narrado' ? 'Narrada con tu voz' : (s.video ? 'Revisión sin voz (música y subtítulos)' : 'Sin video todavía');
+    $('yt-priv').value = '';
     $('d-chars').textContent = s.caracteres ? `${fmt(s.caracteres)} caracteres (~${fmt(s.caracteres)} créditos de ElevenLabs)` : '—';
     $('d-key').textContent = s.id;
     const hd = $('hd'); if (s.hd) { hd.href = s.hd; hd.hidden = false; } else hd.hidden = true;
@@ -635,6 +648,12 @@
   });
   /* ---------- publicar en redes (collection publicaciones; la atiende el administrador con el workflow publicar.yml) ---------- */
   const PUB_REDES = [['facebook', 'Facebook'], ['instagram', 'Instagram'], ['threads', 'Threads'], ['youtube', 'YouTube'], ['linkedin', 'LinkedIn'], ['tiktok', 'TikTok']];
+  // Documentales y videos largos horizontales (doc de la Sala con largo: true o formato "16:9"): solo YouTube.
+  const esLargo = (s) => !!s && (s.largo === true || s.formato === '16:9');
+  const PUB_LARGO = [['youtube', 'YouTube (video largo)']];
+  const redesDe = (s) => esLargo(s) ? PUB_LARGO : PUB_REDES;
+  const YT_PRIV = { public: 'Público', unlisted: 'No listado', private: 'Privado' };
+  $('yt-priv').addEventListener('change', () => { S.pubConfirmar = null; pintarPublicar(); });
   S.pubs = []; S.pubSel = new Set(); S.tt = null;
   // TikTok: datos de la cuenta (doc estado/tiktok, lo llena el administrador con creator_info) y opciones que exige TikTok.
   const TT_PRIV = { PUBLIC_TO_EVERYONE: 'Todos', MUTUAL_FOLLOW_FRIENDS: 'Amigos', FOLLOWER_OF_CREATOR: 'Seguidores', SELF_ONLY: 'Solo yo' };
@@ -688,12 +707,19 @@
   ['tt-priv', 'tt-com', 'tt-duo', 'tt-sti', 'tt-ia', 'tt-com-onoff', 'tt-propia', 'tt-pagada'].forEach((id) => $(id).addEventListener('change', () => { S.pubConfirmar = null; pintarPublicar(); }));
   $('tt-texto').addEventListener('input', () => { S.pubConfirmar = null; $('tt-cuenta-car').textContent = `${$('tt-texto').value.length} / 2200`; pintarPublicar(); });
   document.querySelectorAll('input[name="tt-modo"]').forEach((r) => r.addEventListener('change', () => { S.pubConfirmar = null; pintarPublicar(); }));
+  function pintarYouTube() {
+    const s = S.actual; const on = esLargo(s) && S.pubSel.has('youtube');
+    $('yt').hidden = !on; if (!on) return;
+    $('yt-info').textContent = `Idioma: ${s.idioma || 'es-419 (español)'} · ${s.dur ? mmss(s.dur) + ' min · ' : ''}título, descripción con capítulos y portada salen de la carpeta del documental.`;
+  }
+  const ytListo = () => (esLargo(S.actual) && S.pubSel.has('youtube') && !$('yt-priv').value) ? 'En YouTube, elige quién puede ver el documental.' : '';
   function pintarPublicar() {
     const s = S.actual; if (!s) return;
-    const listo = s.kind === 'narrado';
+    const largo = esLargo(s);
+    const listo = largo ? !!s.video && (s.estado === 'Narrado listo' || s.kind === 'narrado' || s.kind === 'largo') : s.kind === 'narrado';
     const hechas = (s.publicado && typeof s.publicado === 'object') ? s.publicado : {};
     const box = $('pub-redes'); box.replaceChildren();
-    PUB_REDES.forEach(([k, n]) => {
+    redesDe(s).forEach(([k, n]) => {
       const c = el('button', 'chip', n); c.type = 'button';
       c.setAttribute('aria-pressed', String(S.pubSel.has(k))); c.dataset.hecho = String(!!hechas[k]);
       if (hechas[k]) c.title = 'Ya publicado' + (hechas[k].url ? ': ' + hechas[k].url : '');
@@ -701,17 +727,18 @@
       c.addEventListener('click', () => { S.pubSel.has(k) ? S.pubSel.delete(k) : S.pubSel.add(k); S.pubConfirmar = null; $('pub-msg').textContent = ''; pintarPublicar(); });
       box.append(c);
     });
-    pintarTikTok();
-    const b = $('pub-enviar'); b.disabled = !listo || !S.db || !S.pubSel.size || !!ttListo();
-    if (listo && S.pubSel.size && ttListo() && !S.pubConfirmar) $('pub-msg').textContent = ttListo();
-    else if ($('pub-msg').textContent.startsWith('En TikTok')) $('pub-msg').textContent = '';
+    pintarTikTok(); pintarYouTube();
+    const falta = ttListo() || ytListo();
+    const b = $('pub-enviar'); b.disabled = !listo || !S.db || !S.pubSel.size || !!falta;
+    if (listo && S.pubSel.size && falta && !S.pubConfirmar) $('pub-msg').textContent = falta;
+    else if (/^En (TikTok|YouTube)/.test($('pub-msg').textContent)) $('pub-msg').textContent = '';
     b.textContent = S.pubConfirmar ? 'Sí, publicar' : S.pubSel.size ? `Publicar en ${S.pubSel.size} ${S.pubSel.size === 1 ? 'red' : 'redes'}` : 'Publicar';
     $('pub-hint').hidden = !listo;
-    if (!listo) $('pub-msg').textContent = 'Se puede publicar cuando el video ya tenga tu voz (estado «Narrado listo»).';
+    if (!listo) $('pub-msg').textContent = largo ? 'Se puede publicar cuando el documental esté terminado (estado «Narrado listo»).' : 'Se puede publicar cuando el video ya tenga tu voz (estado «Narrado listo»).';
     const ul = $('pub-lista'); ul.replaceChildren();
     S.pubs.filter((p) => p.shot === s.id).forEach((p) => {
       const li = el('li'); const e = el('span', 'est', p.estado || 'pendiente'); e.dataset.e = p.estado || 'pendiente';
-      const nombres = (p.redes || []).map((r) => (PUB_REDES.find((x) => x[0] === r) || [r, r])[1]).join(', ');
+      const nombres = (p.redes || []).map((r) => (redesDe(s).find((x) => x[0] === r) || [r, r])[1]).join(', ');
       li.append(e, el('span', 'txt', nombres), el('span', 'num', (p.creado || '').slice(0, 10)));
       if (p.resultado) li.append(el('span', 'res', p.resultado));
       ul.append(li);
@@ -719,20 +746,22 @@
   }
   $('pub-enviar').addEventListener('click', async () => {
     const s = S.actual; if (!s || !S.db || !S.pubSel.size) return;
-    const redes = PUB_REDES.map((x) => x[0]).filter((k) => S.pubSel.has(k));
+    const redes = redesDe(s).map((x) => x[0]).filter((k) => S.pubSel.has(k));
     const clave = s.id + '|' + redes.join(',');
     if (S.pubConfirmar !== clave) {
       S.pubConfirmar = clave; $('pub-enviar').textContent = 'Sí, publicar';
       const notas = [];
       if (redes.includes('tiktok')) notas.push(ttModo() === 'borrador' ? 'TikTok llega como borrador a tu app' : `TikTok: «${TT_PRIV[$('tt-priv').value] || ''}»`);
-      if (redes.includes('youtube')) notas.push('YouTube queda privado por ahora');
-      $('pub-msg').textContent = `Se publicará en: ${redes.map((r) => (PUB_REDES.find((x) => x[0] === r) || [r, r])[1]).join(', ')}${notas.length ? ' (' + notas.join('; ') + ')' : ''}. Toca «Sí, publicar» para confirmar.`;
+      if (redes.includes('youtube')) notas.push(esLargo(s) ? `YouTube: «${YT_PRIV[$('yt-priv').value] || ''}»; mientras Google no apruebe, queda privado` : 'YouTube queda privado por ahora');
+      $('pub-msg').textContent = `Se publicará en: ${redes.map((r) => (redesDe(s).find((x) => x[0] === r) || [r, r])[1]).join(', ')}${notas.length ? ' (' + notas.join('; ') + ')' : ''}. Toca «Sí, publicar» para confirmar.`;
       return;
     }
     S.pubConfirmar = null;
     $('pub-enviar').disabled = true;
     try {
       const extra = redes.includes('tiktok') ? { tiktok: ttOpciones() } : {};
+      if (esLargo(s)) Object.assign(extra, { tipo: 'largo', youtube: { privacidad: $('yt-priv').value, ...(s.idioma ? { idioma: s.idioma } : {}) },
+        ...(s.video_publicar ? { video: s.video_publicar } : {}), ...(s.release ? { release: s.release } : {}), ...(s.rama ? { rama: s.rama } : {}) });
       await S.db.collection('publicaciones').add({ shot: s.id, titulo: tituloCompleto(s), redes, ...extra, modo: 'real', estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
       S.pubSel.clear(); $('pub-msg').textContent = '¡Listo! Se publica en menos de 1 hora (o al instante si en el chat escribes «publica mis pedidos»). Aquí abajo ves cómo va.';
     } catch (e) { $('pub-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
