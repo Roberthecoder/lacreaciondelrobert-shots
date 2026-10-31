@@ -8,7 +8,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const VOICE_ID = 'uiCk6APPfsjnw3oUQzVo';
-const MODEL = 'eleven_v4';
+const MODELO_BASE = 'eleven_v4';
 const KEY = process.env.ELEVENLABS_API_KEY;
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const solo = process.argv[2];
@@ -16,6 +16,8 @@ const solo = process.argv[2];
 for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.txt'))) {
   const nombre = f.slice(0, -4);
   if (solo && nombre !== solo) continue;
+  // "prueba@eleven_multilingual_v2.txt" usa ese modelo; sin "@", Eleven v4
+  const MODEL = nombre.includes('@') ? nombre.split('@')[1] : MODELO_BASE;
   const texto = fs.readFileSync(path.join(dir, f), 'utf8').trim().replace(/\s+/g, ' ');
   const hash = crypto.createHash('sha1').update(`${VOICE_ID}|${MODEL}|${texto}`).digest('hex').slice(0, 12);
   const mp3 = path.join(dir, nombre + '.mp3'), js = path.join(dir, nombre + '.json');
@@ -28,10 +30,21 @@ for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.txt'))) {
     method: 'POST', headers: { 'xi-api-key': KEY, 'Content-Type': 'application/json' },
     body: JSON.stringify({ text: texto, model_id: MODEL }),
   });
-  if (!r.ok) throw new Error(`ElevenLabs respondió ${r.status}: ${(await r.text()).slice(0, 300)}`);
-  const j = await r.json();
-  fs.writeFileSync(mp3, Buffer.from(j.audio_base64, 'base64'));
-  const al = j.alignment || j.normalized_alignment;
+  let al = null;
+  if (r.ok) {
+    const j = await r.json();
+    fs.writeFileSync(mp3, Buffer.from(j.audio_base64, 'base64'));
+    al = j.alignment || j.normalized_alignment;
+  } else {
+    // algunos modelos no dan tiempos: audio normal
+    console.log(`${nombre}: sin tiempos (${r.status}: ${(await r.text()).slice(0, 200)}); pido audio normal`);
+    const r2 = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}?output_format=mp3_44100_128`, {
+      method: 'POST', headers: { 'xi-api-key': KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: texto, model_id: MODEL }),
+    });
+    if (!r2.ok) throw new Error(`ElevenLabs respondió ${r2.status}: ${(await r2.text()).slice(0, 300)}`);
+    fs.writeFileSync(mp3, Buffer.from(await r2.arrayBuffer()));
+  }
   fs.writeFileSync(js, JSON.stringify({ hash, modelo: MODEL, voz: VOICE_ID, caracteres: texto.length, texto, alignment: al }));
-  console.log(`${nombre}: voz generada, ${texto.length} caracteres, ${al.character_end_times_seconds.at(-1).toFixed(2)} s`);
+  console.log(`${nombre}: voz generada con ${MODEL}, ${texto.length} caracteres${al ? ', ' + al.character_end_times_seconds.at(-1).toFixed(2) + ' s' : ''}`);
 }
