@@ -1,0 +1,57 @@
+# Verificación de hechos · qui-22-estatua-libertad
+
+29 oct 2026 · verificación independiente (agente que no escribió el guion). Todas las fuentes se abrieron el 29 oct 2026; para lo de 1906–1907 se leyeron los periódicos de la época en Chronicling America (Library of Congress).
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 1 | La estatua es de cobre; lo verde es una pátina natural (voz 0) | ✅ | NPS, FAQ Statue of Liberty (nps.gov/stli/planyourvisit/frequently-asked-questions-statue-of-liberty.htm) | "The Statue's copper has naturally oxidized to form its familiar "patina" green coating." | página vigente 2026 |
+| 2 | La pátina ("costra") protege al cobre; "protege al cobre de gastarse" (voz 0 y 5) | ✅ | NPS, misma página | "…protects the copper from naturally wearing away." | 2026 |
+| 3 | Color de cobre limpio = cobre/salmón (pantalla 0) | ✅ | Bureš et al., *Coatings* 9:837 (2019), doi:10.3390/coatings9120837 (PDF abierto y leído) | "The typical colour of clean copper is usually salmon-pink." | 2019 |
+| 4 | Piel de cobre de 2.4 mm = dos centavos de dólar juntos (voz 1, pantalla "2.4 mm") | ✅ | NPS FAQ (planyourvisit) | "The Statue of Liberty is made of copper 3/32 in. (2.4 millimeters) thick, the same as two U.S. pennies put together." (nps.gov/stli/faqs.htm dice "about 2.5mm"; 3/32 in = 2.38 mm, 2.4 es correcto) | 2026 |
+| 5 | En 1886, al terminarla, era café como un centavo (voz 2) | ✅ | NPS, nps.gov/stli/faqs.htm | "Upon completion in 1886, the Statue of Liberty was more of a traditional brown color like an American penny." | 2026 (dato de 1886) |
+| 5b | "…como un centavo **nuevo**" / pantalla "café rojizo brillante junto a un centavo nuevo" | ⚠️ leve | NPS (arriba) no dice "nuevo"; ACS 2017 dice "penny red" | La NPS compara con "an American penny" sin "nuevo"; un centavo nuevo es más rosado-brillante que café. | 2026 / 2017 |
+| 6 | Primero el oxígeno forma cuprita (Cu₂O), una capa oscura (voz 3, pantalla "cuprita · Cu₂O", µm) | ✅ | Bureš et al. 2019 | "In the beginning of an exposure, the layer of cuprous oxide (Cu2O), called cuprite, appears on a surface of the copper object" · "This layer changes the colour of copper to brown and dark brown. The thickness of this layer is 5–10 µm" | 2019 |
+| 6b | "…del aire húmedo" | ✅ (matiz) | Bureš et al. 2019 | "A thin layer forms, even under dry conditions, by direct oxidation" — la humedad no es indispensable, pero decir "aire húmedo" no es falso para Nueva York. | 2019 |
+| 7 | Luego el azufre de la contaminación, en la lluvia, la vuelve brochantita, sulfato de cobre verde (voz 4; pantalla chimenea SO₂ → gotas → cristales "CuSO₄·3Cu(OH)₂") | ✅ | Bureš et al. 2019; Matyi y Baboian 1986 | "Brochantite is formed from cuprite according to Equation (4)" · "Brochantite is the main phase of copper patina in atmospheres polluted by SO2" · "oxidation of sulphur dioxide to sulphuric acid … mainly occurs in cloud droplets" · Matyi: "brochantite or CuSO4·3Cu(OH)2" | 2019 / 1986 |
+| 8 | La pátina casi no se disuelve (voz 5) | ✅ | Bureš et al. 2019 | "The resulting products (patina) are insoluble." | 2019 |
+| 9 | Cambio café → café oscuro → verde (pantalla 6) | ✅ | ACS, nota de prensa 29 jun 2017 (EurekAlert! 672558) | "transitioned from penny red to chocolate brown to glorious liberty green" | 2017 |
+| 10 | Tardó unos 30 años en cubrirla toda (voz 6, contador "0 → 30 años") | ✅ | NPS, nps.gov/stli/faqs.htm; ACS 2017 | "It took about thirty years for the Statue of Liberty to fully oxidize and form a patina." · "about 30 years' worth of chemistry" (HISTORY: "By 1910, the statue was half copper-colored and half blue-green" — consistente) | 2026 / 2017 |
+| 11 | En 1986, para la restauración, analizaron con rayos X pedazos de su piel (voz 7, tarjeta "1986 · Matyi y Baboian") | ✅ | Matyi R.J., Baboian R., *Powder Diffraction* 1(4):299–304, dic 1986, doi:10.1017/S0885715600011970 (resumen leído vía Crossref) | "An X-ray powder diffraction analysis has been performed on several samples … conducted as a service to the National Park Service as part of the restoration activities for the Statue" | 1986 |
+| 12 | Pieza de 1905 = brochantita estable; pieza de 1980 = antlerita, menos estable (voz 7, pantalla ✓/⚠) | ✅ | Matyi y Baboian 1986 | "pieces of the Statue's copper skin that had been removed in the years 1905 and 1980 … the 1905 sample … consisted primarily of the stable brochantite phase, while the 1980 sample displayed both copper chlorides as well as the less stable antlerite" | 1986 |
+| 13 | Sospecharon de la lluvia ácida (voz 7, nube "¿lluvia ácida?") | ✅ (bien dicho como sospecha) | Matyi y Baboian 1986 | "The presence of antlerite supports the contention that acid deposition is promoting undesirable changes in the phase composition of the patina." | 1986 |
+| 14 | En 1906 se planeó/pidió pintarla (voz 8, tarjeta "1906", brocha) | ✅ | *The Evening World* (NY), 19 jul 1906, p. 7 (LOC sn83030193); *San Francisco Call*, 12 ago 1906, p. 12 (LOC sn85066387); HISTORY (Yuko, 2025) | Evening World (OCR): "Congress appropriated … for Miss Liberty and she is also to have a new coat of paint" · SF Call: "THE Statue of Liberty on Bedloe's Island is to be painted." · HISTORY: "In 1906, there were calls to repaint the statue to restore it to its original copper." | 1906 |
+| 15 | Hubo protestas (pantalla globitos "¡No!") | ✅ | *San Francisco Call*, 12 ago 1906 (cita al oficial a cargo); Evening World 19 jul 1906; *The Sun* (NY), 9 ago 1907, p. 4 | SF Call: "As to painting the exterior of the statue I wish the newspapers had never mentioned that. I am in receipt of bushels of letters on the subject, and most of them protest vigorously against the proposed plan." · "Vandalism! Outrageous vandalism!" · Evening World: "Artists have always been averse to painting the statue as they claim that the patina or green rust is one of the chief beauties of bronze statuary" | 1906–1907 |
+| 16 | Tras las protestas se quedó verde (voz 8, la brocha se retira) | ✅ | *The Evening Star and Newark Advertiser*, 16 ago 1907, p. 2 (LOC sn84020504; mismo despacho que el NYT "Miss Liberty to Stay Green", 16 ago 1907, citado por Snopes) | "MISS LIBERTY'S PATINA. Gift of Time and the Elements to Statue Not to Be Removed. … It is not the intention of the engineers of the War Department, who have charge of the statue, to remove the patina which has softened the outlines of the statue and made it beautiful." | 1907 |
+| 17 | El cobre de tu casa a la intemperie (tubo en la azotea) se pone verde igual (voz 9) | ⚠️ leve | Bureš et al. 2019 | "After the exposure of copper to the atmosphere, this colour starts to change." · "A formation of patina usually takes several decades under common outdoor conditions." — Es cierto, pero tarda años o décadas y el tono/composición depende del aire (cerca del mar, cloruros). "igual" sin plazo sugiere que pasa pronto y de la misma forma. | 2019 |
+| 18 | El cobre debajo de la pátina queda intacto (pantallas 5 y 10, lupa) | ✅ | NPS (fila 2); *San Francisco Call* 1906 | "…protects the copper from naturally wearing away." · SF Call: "in all cases the metal remains intact beneath this tarnish" | 2026 / 1906 |
+| 19 | Ese verde no es mugre: es un escudo que el cobre se fabricó solo (voz 10) | ✅ | NPS (filas 1–2) | "naturally oxidized" + "protects the copper" | 2026 |
+
+Notas del verificador:
+- Lo de 1906 queda **verificado con periódicos de la época** (no solo con HISTORY): el plan de pintarla se anunció en julio de 1906 (dentro de una partida del Congreso para reparar la estatua, a cargo del Departamento de Guerra), llovieron cartas de protesta y artistas en contra, y en agosto de 1907 los ingenieros del Departamento de Guerra dijeron que la pátina no se quitaría. Matiz: quien "pidió" pintarla fue el propio plan del gobierno; "planearon pintarla" es más exacto que "pidieron", aunque HISTORY usa "calls to repaint". El monto ($62,000 según HISTORY; otras fuentes $62,800) no está en la voz: si se usa en la descripción, no dar cifra o citar HISTORY con "unos 62,000 dólares".
+- La palabra "sacrilege" que cita HISTORY no la encontré en los periódicos de 1906 que abrí; no está en la voz, así que no afecta. No usarla entre comillas en la descripción salvo citando a HISTORY.
+- Todas las cifras de la voz dicen de qué son (2.4 mm de grosor de la piel, 30 años de pátina, 1886, 1905, 1980, 1986, 1906). Los años viejos van dichos en la voz.
+
+## Correcciones necesarias
+
+1. **Fila 5b (⚠️ leve) – "como un centavo nuevo":** la NPS dice solo "like an American penny". Propuesta de voz: "Cuando la terminaron, en 1886, era café, como un centavo de dólar." En pantalla, un centavo café (no uno nuevo brillante), o mantener "nuevo" quitándolo de la voz.
+2. **Fila 17 (⚠️ leve) – "se pone verde igual":** falta el plazo. Propuesta: "Y el cobre de tu casa que queda a la intemperie, como un tubo en la azotea, con los años se pone verde igual." (Se puede acortar a "…con los años también se pone verde.") En pantalla, un contador o rótulo "años" en el time-lapse del tubo.
+3. **Opcional (fila 14, ya ✅):** "en 1906 pidieron pintarla" → "en 1906 planearon pintarla" es más exacto (fue un plan oficial, no una petición del público).
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplicaron tal cual las 3 propuestas del verificador: «como un centavo de dólar», «planearon pintarla», «con los años se pone verde igual». Ninguna agrega datos nuevos.
+
+Recortes de estilo sin cambiar datos: «Y el cobre de tu casa» → «El cobre de tu casa»; «Así que ese verde» → «Ese verde»; «¿Cuánto tardó en cubrirla toda?» → «¿Cuánto tardó en cubrirla?».
+
+## Re-verificación (29 oct 2026, agente independiente)
+Cambio revisado: voz «Su piel es cobre de 2.4 milímetros: más delgada que dos centavos de dólar juntos.»; pantalla con dos centavos de canto a escala junto a la lámina y etiqueta «2 centavos de dólar ≈ 3 mm»; guion.md y publicacion.md (Fuentes).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| La piel es cobre de 2.4 mm (3/32 in) | ✅ | NPS, nps.gov/stli/planyourvisit/frequently-asked-questions-statue-of-liberty.htm (abierta) | "The Statue of Liberty is made of copper 3/32 in. (2.4 millimeters) thick, the same as two U.S. pennies put together." (La otra página del NPS, nps.gov/stli/faqs.htm, redondea a "about 2.5mm"; 3/32 in = 2.38 mm, así que 2.4 mm es lo exacto.) | 2026 (consulta) |
+| Un centavo de dólar actual mide 1.52 mm de grueso | ✅ | U.S. Mint, "Coin Specifications" (usmint.gov; la página devuelve 403 a este entorno, la cifra se leyó en su tabla vía buscador: fila "Thickness 1.52 mm" del Cent) + Wikipedia "Penny (United States coin)" (abierta) | Wikipedia: "The coin is 0.75 inches (19.05 mm) in diameter and 0.0598 inches (1.52 mm) in thickness." | 2026 (consulta) |
+| Dos centavos juntos ≈ 3 mm | ✅ | Cálculo: 2 × 1.52 = 3.04 mm | — | — |
+| La piel (2.4 mm) es «más delgada» que dos centavos juntos | ✅ | 2.4 mm < 3.04 mm; el NPS dice "the same as", que es una aproximación; «más delgada» es lo correcto, y guion/publicación ya aclaran la diferencia con el NPS | — | — |
+| Gramática: «Su piel es cobre de 2.4 milímetros: más delgada…» | ✅ | Concuerda en femenino con «piel» (sujeto); sentido correcto | — | — |
+| Dibujo a escala (estatua.jsx): lámina 120 px = 2.4 mm y cada centavo 76 px = 1.52 mm a 50 px/mm; pila de dos = 152 px ≈ 3 mm | ✅ | Revisado en el código | — | — |
+
+VEREDICTO: APROBADO

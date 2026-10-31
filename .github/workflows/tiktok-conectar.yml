@@ -1,0 +1,39 @@
+name: Conectar TikTok
+
+# Paso 2 de "Conectar TikTok" (ADMIN.md, "Publicar en redes"): Robert dio clic en Autorizar en
+# https://roberthecoder.github.io/lacreaciondelrobert-shots/tiktok.html, la página le copió el código, y aquí lo pega.
+# El código dura pocos minutos y sirve una sola vez. Se cambia por el token, que se guarda CIFRADO en refs/estado/tokens.
+on:
+  workflow_dispatch:
+    inputs:
+      codigo:
+        description: 'Código que copió la página después de Autorizar (o el enlace completo)'
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: redes
+  cancel-in-progress: false
+
+jobs:
+  conectar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      META_SYSTEM_TOKEN: ${{ secrets.META_SYSTEM_TOKEN }}
+      TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+      TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+      CODIGO: ${{ inputs.codigo }}
+    steps:
+      - name: Ocultar el código en el registro
+        run: echo "::add-mask::$CODIGO"
+      - name: Huella de las llaves (no las muestra; sirve para saber si son de la misma app)
+        run: |
+          K=$(printf '%s' "$TIKTOK_CLIENT_KEY" | tr -d '[:space:]'); S=$(printf '%s' "$TIKTOK_CLIENT_SECRET" | tr -d '[:space:]')
+          echo "client key: ${#K} caracteres, huella $(printf '%s' "$K" | sha256sum | cut -c1-8)"
+          echo "client secret: ${#S} caracteres"
+      - uses: actions/checkout@v4
+      - run: pip install -q requests
+      - run: python3 motor/redes/publicar.py tiktok-codigo "$CODIGO"

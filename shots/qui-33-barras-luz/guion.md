@@ -1,0 +1,71 @@
+# Shot Químico #33 · Ese crac no es el plástico (barras de luz y quimioluminiscencia)
+
+- **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #33 · rama `pedido300/qui`.
+- **Formato:** N5 "El experimento" (tres barras: hielo, ambiente, agua caliente, con cronómetro) + N1 "Por dentro" (la barra en la mano → la ampolleta y las moléculas → la misma barra encendida).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre la acción que se ve y se oye en pantalla: "Ese crac no es el plástico: es una ampolleta de vidrio que acabas de romper adentro."
+- **Seguridad:** no se invita a abrir ni a calentar barras; el agua caliente es la demostración de un profesor (Purdue). Se dice claro que el líquido irrita y qué hacer (lavar con agua), como dicen los centros toxicológicos.
+- **Duración:** voz 960 caracteres / 175 palabras (≈ 58.0 s) + cierre 3.5 s → **≈ 61.5 s** (estimar-escenas).
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~960 créditos).
+
+## Versión narrada
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Ese crac no es el plástico: es una ampolleta de vidrio que acabas de romper adentro. | Fondo rosa brillante. Desde el cuadro 0 dos manos doblan una barra de luz apagada; en el cuadro ~0.4 suena "crac" y la `Lupa` en rayos X muestra adentro la ampolleta de vidrio partiéndose en dos. "¿plástico?" se tacha. |
+| 1 | Que | Adentro del vidrio hay agua oxigenada; afuera, un éster oxalato y un colorante. | Zoom a la barra en corte: dentro de la ampolleta, líquido transparente con etiqueta "agua oxigenada (H₂O₂)"; afuera, líquido con chip "éster oxalato" y gotitas de color "colorante". |
+| 2 | Mezcla | Al mezclarse forman una molécula diminuta e inestable. | Fondo noche (micro): el H₂O₂ choca con la molécula de oxalato (esquema de esferas); sale un anillo pequeño de 4 átomos que tiembla, con chip "inestable". Barra de escala "< 1 nm · no a escala". |
+| 3 | Energia | Se parte en dióxido de carbono y le pasa su energía al colorante, que la suelta como luz sin calor. | El anillo se abre en dos CO₂ que se alejan; un destello (flecha de energía) salta a la molécula de colorante, que se ilumina y suelta un fotón. Termómetro al lado que no sube: "luz sin calor". |
+| 4 | Experimento | Tres barras: en hielo, al ambiente y en agua caliente. ¿Cuál dura más? | Regreso a escala real (fondo amarillo): tres vasos con tres barras encendidas iguales — vaso con hielo (azul), vaso vacío (ambiente) y vaso humeante; `Cronometro` arranca en 0. "?" grande sobre los tres. **Re-gancho.** |
+| 5 | Resultado | La del hielo apenas brilla, pero dura más; la caliente brilla muchísimo y se apaga pronto: el frío frena la reacción. | El cronómetro corre: la barra caliente brilla fuerte y se apaga primero; la del ambiente después; la del hielo sigue tenue al final. Medidores de brillo y de tiempo bajo cada vaso. Chip "frío = reacción lenta". |
+| 6 | Estudio | ¿Y qué molécula era? En 2021, en la Universidad de São Paulo, Brasil, dieron pruebas fuertes de que es la dioxetanodiona: un anillo de dos dióxidos de carbono. | `TarjetaEstudio` "2021 · Universidad de São Paulo · Brasil · J Org Chem"; mapa pequeño de Brasil con punto en São Paulo; de vuelta el anillo de 4 átomos con nombre "1,2-dioxetanodiona" y dos CO₂ marcados dentro. |
+| 7 | Dato | Lo curioso: en 2018, un centro toxicológico de Australia contó casi 3 mil casos con barras de luz en 4 años, casi todos niños, sobre todo en diciembre. | Tarjeta "2018 · Centro de Información Toxicológica de NSW · Sídney, Australia"; contador que sube a "2,918"; calendario con la barra de diciembre mucho más alta (× 4.4) y un gorro navideño. |
+| 8 | Seguridad | Casi nunca fue grave, pero el líquido irrita: si te cae, lávate con agua. | Mano con una gota brillante → chorro de agua de la llave que la lava; chip "irrita · lava con agua". |
+| 9 | Cierre | Ese crac no es plástico: es una reacción química encendiéndose en tu mano. | **Regreso a la imagen del inicio:** las mismas manos con la misma barra, ahora encendida, con la etiqueta "H₂O₂ + oxalato + colorante → luz". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de química sobre la barra encendida oscurecida. |
+
+**Música:** cama grave continua, oscura al inicio y que se "enciende" cuando aparece la luz; efectos en el mismo cuadro: "crac" del vidrio, mezcla burbujeante, "pop" del anillo que se rompe, destello del fotón, tic-tac del cronómetro, siseo del vaso caliente, apagado de la barra caliente, golpe de la tarjeta, contador, chorro de agua.
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en el dato de Australia («casi 3 mil casos…»).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «es una ampolleta de vidrio» |
+| 2 | 5.9 | 9.6 | 13_senalando_arriba | `izq-alto` | «adentro del vidrio hay agua oxigenada» |
+| 3 | 14.1 | 19.0 | 06_pensativo_menton | `arriba-der` | «le pasa su energía al colorante» |
+| 4 | 20.3 | 25.1 | 07_pensativo_puno | `arriba-der` | «¿Cuál dura más?» |
+| 5 | 26.6 | 30.3 | 04_bajando_lentes | `arriba-der` | «el frío frena la reacción» |
+| 6 | 34.2 | 39.7 | 13_senalando_arriba | `arriba-der` | «es la dioxetanodiona» |
+| 7 | 44.0 | 48.7 | 11_sorprendido | `grande` | «casi 3 mil casos… sobre todo en diciembre» |
+| 8 | 49.3 | 53.2 | 10_serio_molesto | `izq-alto` | «el líquido irrita» |
+| 9 | 53.8 | 57.9 | 02_apuntando_camara | `arriba-der` | «encendiéndose en tu mano» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 40 s en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+
+## Fuentes (cada dato se abrió en la fuente el 29 oct 2026)
+
+1. **Ampolleta de vidrio con agua oxigenada, rodeada de éster oxalato y colorante** — University of Washington, Department of Chemistry. "Kinetics of Light Sticks" (demostración de clase). https://chem.washington.edu/lecture-demos/kinetics-light-sticks
+   > "The thin glass ampule in the lightstick contains dilute hydrogen peroxide." · "The ampule is surrounded by a solution containing a phenyl oxalate ester and a fluorescent dye." · "The lightstick will glow more brightly at a higher temperature."
+2. **Mecanismo: molécula inestable, se rompe en CO₂ y pasa la energía al colorante; luz sin calor; el color depende del colorante** — MIT OpenCourseWare, *Chemistry Behind the Magic: Chemical Demonstrations for the Classroom* (2012), "Chemiluminescence: What's inside of a light stick anyway?" https://ocw.mit.edu/courses/res-hs-002-chemistry-behind-the-magic-chemical-demonstrations-for-the-classroom/glowstick.pdf
+   > "This is a classic reaction where energy is released in the form of light without heat." · "The chemical in the inner glass vial Solution 2 is H2O2." · "the hydrogen peroxide oxidizes the phenyl oxalate ester, which produces phenol plus an unstable compound called 1,2-dioxetanedione. This unstable ester breaks apart releasing energy and CO2. The energy gets transferred to the dye molecule … energy is released in the form of light."
+3. **Ingredientes (oxalato, agua oxigenada, colorante; solvente dibutil ftalato) y primeros auxilios** — Children's Hospital of Philadelphia, Poison Control Center. "Glow Sticks." https://www.chop.edu/centers-programs/poison-control-center/glow-sticks
+   > "Fluorophore dyes: for color" · "Diphenyl oxalate: energy for light" · "Hydrogen peroxide: energy for light" · "Dibutyl phthalate: solvent" · piel: lavar con agua y jabón; ojos: "Flush with water for at least 15 minutes."
+4. **Experimento de las tres barras (hielo, ambiente, caliente)** — George Bodner, Purdue University. "Chemiluminescence — The Cyalume Lightstick" (demostración), en LibreTexts Chemistry. https://chem.libretexts.org/Ancillary_Materials/Demos_Techniques_and_Experiments/Lecture_Demonstrations/Additional_Demos/Chemiluminescence--The_Cyalume_Lightstick (original: chemed.chem.purdue.edu/genchem/demosheets/5.8.html)
+   > "Three lightsticks are activated by bending the plastic tube, breaking the inner vial, and shaking." · "The stick in the ice water bath emits the faintest glow, but remains lit the longest." · "The lightstick at room temperature is of average intensity and lasts an average amount of time." · "The heated lightstick is very bright but burns out quickly." · "The reaction is so slow when cooled…"
+5. **2021, Universidad de São Paulo: la molécula intermedia es la 1,2-dioxetanodiona** — da Silva S.M., Lang A.P., dos Santos A.P.F., Cabello M.C., Ciscato L.F.M.L., Bartoloni F.H., Bastos E.L., Baader W.J. "Cyclic Peroxidic Carbon Dioxide Dimer Fuels Peroxyoxalate Chemiluminescence." *J Org Chem* 86(17):11434–11441 (2021). PMID 34420296 · DOI 10.1021/acs.joc.1c00929. Afiliación: Instituto de Química, Universidade de São Paulo, São Paulo, Brasil (y UFABC, Santo André).
+   > "Peroxyoxalate chemiluminescence is used in self-contained light sources, such as glow sticks, where oxidation of aromatic oxalate esters produces a high-energy intermediate (HEI) that excites fluorescence dyes" · "The identity of the HEI and reasons for the efficiency of the peroxyoxalate reaction remain elusive. We present here unequivocal proof that the HEI of the peroxyoxalate system is a cyclic peroxidic carbon dioxide dimer, namely, 1,2-dioxetanedione."
+6. **2018, Australia: 2918 exposiciones en 4 años, 94 % niños, pico en diciembre, complicaciones muy raras** — Cairns R., Brown J.A., Dawson A.H., Davis W., Buckley N.A. "Carols by glow sticks: a retrospective analysis of Poisons Information Centre data." *Med J Aust* 209(11):505–508 (2018). PMID 30521447 · DOI 10.5694/mja18.01032. NSW Poisons Information Centre, Children's Hospital at Westmead, Sídney. Datos del 1 jul 2013 al 30 jun 2017.
+   > "There were 2918 glow stick exposures over the 4-year study period. The vast majority of exposures (94%) were in children aged 14 years and younger. Medical complications were very rare. Glow stick exposures were 4.38 times more likely in December"
+7. **El líquido solo irrita, de forma pasajera** — Hoffman R.J., Nelson L.S., Hoffman R.S. "Pediatric and young adult exposure to chemiluminescent glow sticks." *Arch Pediatr Adolesc Med* 156(9):901–4 (2002). PMID 12197797. (Y Vanderbilt Poison Center, 2022: "Dermal exposure causes mild irritation"; "Oral exposure can cause a burning sensation in the mouth".)
+   > "Symptoms were limited to transient irritation of the exposure site, and no systemic toxicity occurred."
+8. **Historia (solo para la descripción, no va en la voz):** las barras comerciales salen del trabajo de American Cyanamid (Stamford, Connecticut) con ésteres de ácido oxálico: Rauhut M.M., Bollyky L.J. et al. "Chemiluminescence from reactions of electronegatively substituted aryl oxalates with hydrogen peroxide and fluorescent compounds." *J Am Chem Soc* 89:6515–6522 (1967) (registro EPA HERO 43432); patente US 3,399,137 (Rauhut y Bollyky, presentada 1965, otorgada 1968, American Cyanamid): "each fluorescent compound absorbs chemically released energy, and subsequently activated compound(s) release(s) energy in the form of light."; patente US 3,888,786 (1975): "Assignee: American Cyanamid Company, Stamford, Conn."
+
+## Notas
+- El dibujo es esquemático (moléculas como esferas, el anillo de 4 átomos, el fotón, los vasos y la barra en corte).
+- No todas las barras son iguales: en algunos diseños (p. ej. patente US 3,576,987 de American Cyanamid, 1971) el agua oxigenada va afuera y el oxalato dentro del tubo de vidrio. La voz sigue el diseño común que describen la Universidad de Washington y el MIT; en la descripción se aclara.
+- "Luz sin calor": así lo dice el MIT; en rigor la reacción libera muy poco calor comparada con un foco o una flama. Matiz para la descripción.
+- El experimento con agua caliente es una demostración de profesor; la Universidad de Washington advierte que arriba de 70 °C la barra se derrite. No se invita a hacerlo en casa con agua hirviendo.
+- La cifra de Australia es de un solo centro (Nueva Gales del Sur), de jul 2013 a jun 2017, y el artículo es de tono navideño-chistoso (su "objetivo" fue "ganar una canasta navideña"); buen material para la descripción.
+- Primeros auxilios según CHOP: piel con agua y jabón; ojos, enjuagar con agua al menos 15 minutos; ante dudas, llamar al centro toxicológico. En México, sugerir el número del CIAT/centro toxicológico local en la descripción (verificar antes de publicarlo).

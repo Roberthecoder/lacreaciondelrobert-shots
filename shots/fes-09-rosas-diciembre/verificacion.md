@@ -1,0 +1,76 @@
+# Verificación de hechos · Shot Festivo #09 · Virgen de Guadalupe · Científico (rosas en diciembre, gen KSN)
+
+Verificador independiente (subagente que no escribió el guion), 29 oct 2026. MDPI, Nature (Horticulture Research 2021, *R. rugosa*) y HAL dieron 403/bloqueo; Proietti 2022 se leyó en el PDF de iris.unito.it y Randoux 2014 por su resumen indexado. No se localizó el comunicado original en gob.mx (ver fila del 78.7 %).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Gancho/cierre: "Esta rosa no sabe que es diciembre: trae roto un freno en su ADN" (metáfora del represor floral KSN) | ✅ | Iwata *et al.*, *The Plant Journal* 69(1):116–125 (pubmed.ncbi.nlm.nih.gov/21895811) | "Because of an insertion of the retrotransposon, transcription of the gene is blocked in CF roses and the absence of the floral repressor provokes continuous blooming." | 2012 |
+| Según la tradición guadalupana, Juan Diego halló rosas en el Tepeyac en diciembre, cuando no era su tiempo (dicho como tradición) | ✅ (como tradición) | Nican Mopohua, versión en español, aciprensa.com/juanpabloii/viajes/mexico/nican.htm | "flores las más variadas, bellas y hermosas, cuando todavía no era su tiempo" · "entonces era el mes de diciembre, en que todo lo come, lo destruye el hielo." · "al llegar cerca del cerrito llamado Tepeyac" | relato de mediados del s. XVI (hechos situados en 1531) |
+| Una rosa silvestre florece solo en primavera | ✅ | Soufflet-Freslon *et al.*, *Horticulture Research* 8:76 (PMC8012652) · Iwata 2012 | "Wild roses flower only in spring whereas most cultivated modern roses can flower continuously." · "once-flowering (OF) genotypes only flower in spring" | 2021 / 2012 |
+| La clave es un gen, KSN: un freno de la floración | ✅ | Randoux *et al.*, *New Phytologist* 202:161–173 (doi:10.1111/nph.12625, resumen) · Iwata 2012 | "In rose, RoKSN, a TFL1 homologue, is a key regulator of flowering, whose absence causes continuous flowering." | 2014 |
+| Mientras el freno está puesto, el brote echa hojas pero no flor | ✅ | Randoux 2014 · Iwata 2012 | "In CF roses, the ectopic expression of RoKSN led to the absence of flowering." · "a new role of TFL1 in perennial plants in maintaining vegetative growth" | 2014 / 2012 |
+| En la silvestre el freno se afloja en primavera: ahí sale su única floración | ✅ (Iwata lo plantea como explicación probable; los datos de expresión son medidos) | Iwata 2012 | "In OF roses, seasonal regulation of the TFL1 homologue may explain the seasonal flowering, with low expression in spring to allow the first bloom." | 2012 |
+| En muchas rosas modernas, un pedazo de ADN saltarín (retrotransposón) se metió dentro del gen (pantalla: dentro de un intrón) | ✅ | Iwata 2012 · Soufflet-Freslon 2021 | "differ in the presence of a retrotransposon in the second intron of the TFL1 homologue" · "the RoKSN copia allele was present in the large majority of old cultivated Asian roses" | 2012 / 2021 |
+| El gen ya no se lee, el freno desaparece y la rosa florece en cada temporada buena | ✅ | Iwata 2012 | "transcription of the gene is blocked in CF roses" · "CF genotypes flower during all favourable seasons" | 2012 |
+| En 2012, un equipo de Francia y Japón (pantalla: «2012 · Iwata et al. · *The Plant Journal* · Francia y Japón») | ✅ | Ficha OSKAR Bordeaux (oskar-bordeaux.fr/handle/20.500.12278/169992) · PubMed · perfil de T. Araki (kdb.iimc.kyoto-u.ac.jp) | Afiliaciones: IRHS (INRA, Angers), Biologie du fruit et pathologie (Bordeaux), "Wakunaga Pharmaceutical Co., Ltd. … Hiroshima … Japan" (1er autor H. Iwata), "Division of Integrated Life Sciences, Graduate School of Biostudies" (= Universidad de Kioto, laboratorio de Takashi Araki, coautor). Hay además un autor japonés de "Laboratory of Bio-Environmental Sciences, Department of Environmental Engineering". → Japón sí, pero no solo Kioto: decir "Francia y Japón" (no "Universidad de Kioto") | 2012 |
+| Lo vio en seis pares de rosas: las que florecen siempre traían ese pedazo | ✅ | Iwata 2012 (resumen, PubMed) | "In rose, six independent pairs of CF/OF mutants differ in the presence of a retrotransposon in the second intron of the TFL1 homologue." | 2012 |
+| Ese freno roto venía de rosas de China | ✅ | Soufflet-Freslon 2021 | "The CF behavior of modern roses is considered to originate from old cultivated Chinese roses" · "the RoKSN copia allele … was absent in European roses cultivated before 1800" | 2021 |
+| …"que llegaron a Europa a fines del siglo dieciocho" (pantalla: «fines del siglo XVIII») | ⚠️ imprecisa: las fuentes no coinciden en cuándo *llegaron* | Soufflet-Freslon 2021 vs. Bendahmane *et al.*, *J. Exp. Bot.* 64:847–857 (PMC3594942) | Soufflet-Freslon: "At the end of the 18th century, the introduction of Asian roses in Europe caused a revolution in rose breeding". Bendahmane: "In the 14th century, missionaries introduced Chinese roses to Europe." → Lo seguro es que a fines del XVIII entraron a los **cruces** europeos (y que las europeas de antes de 1800 no traían el alelo); decir que "llegaron" entonces es discutible | 2021 / 2013 |
+| La rosa no cuenta las horas de luz (rosa de corte = día neutro) | ✅ | Proietti, Scariot, De Pascale, Paradiso, *Plants* 11:432, Tabla 1 (PDF iris.unito.it) | Tabla 1, "Rose … Photoperiodic Requirement: ND" · "ND = neutral day" · "temperature control … represents the main tool for regulating the flowering time" | 2022 |
+| En invernadero, cortas un tallo y en 6 a 10 semanas hay otra flor (pantalla: cronómetro «6–10 semanas») | ✅ | Proietti *et al.* 2022, p. 6 | "This cut … promotes the emission of flower stems by releasing the apical dominance" · "The time for flowering varies from 6 weeks in spring and fall to 10 weeks in winter, depending on the cultivar, the kind of cutting, and the cultural and environmental conditions." | 2022 |
+| En 2025, casi 8 de cada 10 rosas de México salieron del Estado de México (pantalla: «78.7 %, SADER, cierre preliminar 2025») | ✅ (cifra de Agricultura reproducida igual por varios medios; comunicado original no localizado en gob.mx) | Comunicado de la Secretaría de Agricultura del 13 feb 2026, reproducido por La Crónica (cronica.com.mx/nacional/2026/02/13/florece-campo-mexicano-…), UnoTV (13 feb 2026) y El Imparcial (14 feb 2026) | Crónica: "La Secretaría de Agricultura informó que, al cierre de 2025, las y los productores reportaron una siembra preliminar de 15 millones 611 mil gruesas de rosa, gladiola y gerbera" · "9 millones 500 mil gruesas cultivadas en 1,714 hectáreas" · "el Estado de México aportó 78.7% de la producción nacional". (7,484 / 9,500 = 78.8 %; en 2024 fue 78.5 %, consistente) | 2025 (publicado 2026) |
+| "Su freno se rompió hace siglos" (deducción) | ✅ bien sustentada | Soufflet-Freslon 2021 | "In China, CF roses were first described during the 12th century." · el alelo copia estaba "in the large majority of old cultivated Asian roses" que llegaron a Europa hacia 1800 → la rotura es de hace al menos más de dos siglos (probablemente muchos más) | 2021 |
+| Pantalla: rosal silvestre "una vez al año"; rosa china tipo 'Old Blush' viajando a Europa | ✅ (esquemático) | Soufflet-Freslon 2021 | "Wild roses flower only in spring" · menciona *R. chinensis* 'Old Blush' como rosa china (con un alelo nulo en RoKSN; no se afirma su genotipo en pantalla) | 2021 |
+| Pantalla, chip final: «KSN apagado: flor todo el año» | ⚠️ exagerada | Iwata 2012 | "CF genotypes flower during all favourable seasons" — en cada temporada favorable, no literalmente todo el año (en campo la detiene el frío) | 2012 |
+| Título: "el gen que no las deja dejar de florecer" | ⚠️ al revés | Iwata 2012 · Randoux 2014 | KSN es el que **frena** la flor; lo que las deja florecer siempre es que el gen está **apagado/roto** ("the absence of the floral repressor provokes continuous blooming") | 2012 |
+
+Nota menor: `guion.md` (escena 8) dice "la planta florece" y `narracion.json` dice "la rosa florece"; da igual en hechos, pero conviene igualarlos.
+
+Estado previo: PENDIENTE (correcciones abajo; ya aplicadas, ver la última sección)
+
+## Correcciones
+1. **Voz, escena 10 (China)** — cambiar "Ese freno roto venía de rosas de China, que llegaron a Europa a fines del siglo dieciocho." por:
+   **"Ese freno roto venía de rosas de China; a fines del siglo dieciocho, en Europa, las cruzaron con las suyas."**
+   Pantalla: tarjeta «fines del siglo XVIII: cruces en Europa» (en vez de solo «llegaron»). Fuente: Soufflet-Freslon 2021, "At the end of the 18th century, the introduction of Asian roses in Europe caused a revolution in rose breeding" (compatible con Bendahmane 2013, que pone llegadas desde el siglo XIV).
+2. **Pantalla, chip del cierre** — «KSN apagado: flor todo el año» → **«KSN apagado: flor en cada temporada buena»** (o «flor varias veces al año»). Fuente: Iwata 2012, "flower during all favourable seasons".
+3. **Título** — "el gen que no las deja dejar de florecer" → p. ej. **"Rosas en diciembre: el freno roto en su ADN"** o **"el gen apagado que las deja florecer en diciembre"**. Fuente: Iwata 2012 / Randoux 2014 (KSN es represor floral).
+4. (Recomendado, no bloqueante) En `## Fuentes`, fuente 6: anotar que el comunicado original de Agricultura (13 feb 2026) no está localizado en gob.mx y que la cifra se toma de su reproducción textual en La Crónica / UnoTV / El Imparcial; mantener «preliminar» en pantalla.
+
+## Correcciones aplicadas (texto final)
+Revisión del texto final completo de `guion.md` y `narracion.json` (voz y pantalla), 29 oct 2026. Las 14 líneas de voz coinciden en los dos archivos.
+
+| Afirmación (texto final) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz esc. 4: "Con el freno puesto, el brote echa hojas, pero no flor." | ✅ | Randoux 2014 · Iwata 2012 | "In CF roses, the ectopic expression of RoKSN led to the absence of flowering." · "maintaining vegetative growth" | 2014 / 2012 |
+| Voz esc. 8 (igualada en ambos archivos): "…y la rosa florece en cada temporada buena." | ✅ | Iwata 2012 | "CF genotypes flower during all favourable seasons" | 2012 |
+| Voz esc. 10: "Ese freno roto venía de rosas de China; a fines del siglo dieciocho, en Europa, las cruzaron con las suyas." · tarjeta «fines del siglo XVIII: cruces en Europa» | ✅ | Soufflet-Freslon 2021 (compatible con Bendahmane 2013) | "At the end of the 18th century, the introduction of Asian roses in Europe caused a revolution in rose breeding" · copia "absent in European roses cultivated before 1800" | 2021 |
+| Pantalla esc. 10: la rosa china "viaja en barco a Europa y se cruza con una rosa europea" | ✅ (esquemático; no da fecha falsa) | ídem | La fecha de la tarjeta se refiere a los cruces, no al viaje. Aun leída como fecha de llegada, coincide con "the introduction of Asian roses in Europe" a fines del XVIII de Soufflet-Freslon. Recomendación de animación: que la tarjeta aparezca al cruzarse con la europea, no durante el viaje | 2021 |
+| Chip del cierre: «KSN apagado: flor en cada temporada buena» | ✅ | Iwata 2012 | "flower during all favourable seasons" | 2012 |
+| Título: "Rosas en diciembre: el freno roto en su ADN" | ✅ | Iwata 2012 | "the absence of the floral repressor provokes continuous blooming" | 2012 |
+| Fuente 6 aclarada (comunicado de Agricultura del 13 feb 2026 tomado de la prensa, no localizado en gob.mx; «preliminar» en pantalla) | ✅ | La Crónica / UnoTV / El Imparcial | "el Estado de México aportó 78.7% de la producción nacional" | 2025 (publicado 2026) |
+
+El resto de las afirmaciones (tabla de arriba) no cambió y sigue ✅.
+
+## Revisión de pantalla y publicación (29 oct 2026)
+Revisé todos los textos y dibujos de `rosas.jsx` (Chip, Etq, MitoTachado, TarjetaEstudio, Capitulo, Subtitulo, Lupa, `<text>` de SVG, calendarios, contadores, mapa y escala) y `publicacion.md` (las 7 redes y el comentario fijado) contra la tabla de arriba.
+
+**Bien (sin cambios):**
+- Rosa silvestre de 5 pétalos con muesca y estambres amarillos; hojas compuestas de 5 foliolos dentados (2 pares + 1 en la punta); tallos con espinas.
+- Tepeyac: Etq «según la tradición» + Chip «diciembre: rosas de Castilla» (Nican Mopohua: "para que allí cortara diversas rosas de Castilla"); subtítulo «Según la tradición: rosas en diciembre». Sin imágenes religiosas.
+- Primavera = M-A-M en la tira de meses (hemisferio norte); chip «una vez al año».
+- ADN: el gen KSN es un tramo en medio de la doble hélice y el retrotransposón se mete **dentro** del gen, no en sus bordes (Iwata 2012: "in the second intron"; esquemático, no se afirma su tamaño). La escala molecular cuadra con el ADN (~2 nm de ancho, ~3.4 nm por vuelta). «la copia del gen se atora» = "transcription of the gene is blocked" (esquema).
+- TarjetaEstudio «2012 · Iwata et al. · Francia y Japón · The Plant Journal»; 6 pares; el pedazo resaltado dentro del tramo KSN.
+- Escena 10: el barco viaja sin fecha; la tarjeta «fines del siglo XVIII: cruces en Europa» aparece hasta el cruce China × Europa; «rosas modernas» en las hijas (Bendahmane 2013: "formed the genetic basis of the 'modern rose cultivars'").
+- Invernadero: «horas de luz» tachado (día neutro), «brota de la yema», «6 a 10 semanas» con semanas 7–10 punteadas (rango).
+- Dato: punto en el Estado de México (−99.7, 19.3), 8 de 10 rosas encendidas, Chip «78.7 % · SADER, preliminar 2025», subtítulo «Casi 8 de cada 10 rosas: Estado de México».
+- Cierre: «KSN apagado: flor en cada temporada buena»; Lupa «POR DENTRO · KSN»; calendario «DICIEMBRE 12».
+- `publicacion.md`: las 7 redes y el comentario fijado solo traen datos verificados (KSN homólogo de TFL1, retrotransposón, 6 pares, cruces a fines del XVIII, día neutro, 6–10 semanas, 78.7 % preliminar SADER, tradición como tradición). Tiene "el dibujo es esquemático", una pregunta y la firma.
+
+**Corregido:**
+1. `rosas.jsx`, escena 2012: los 6 pares eran mutantes de floración continua y de una vez al año (*CF/OF mutants*), no rosas silvestres contra modernas. El ícono de «1 vez al año» era una `RosaSilvestre`; ahora es una rosa cultivada (`RosaFlor`) de una sola flor.
+2. `rosas.jsx`, escena 2012: la etiqueta «siempre» pasó a «cada temporada buena» y el Chip «las de «siempre» traen el pedazo» a «las de cada temporada traen el pedazo» (Iwata 2012: "flower during all favourable seasons").
+3. `publicacion.md` (TikTok y YouTube): «las que florecen siempre traían ese pedazo» → «las de floración continua traían ese pedazo».
+
+**Recomendación (no bloqueante, no la apliqué porque toca la voz):** en `narracion.json` escena 9, «las que florecen siempre» podría quedar «las que florecen en cada temporada»; «siempre» se entiende como floración continua, el nombre que le da la fuente ("continuous flowering").
+
+VEREDICTO: APROBADO

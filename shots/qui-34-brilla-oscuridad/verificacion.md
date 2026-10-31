@@ -1,0 +1,35 @@
+# Verificación de hechos · qui-34-brilla-oscuridad
+
+29 oct 2026 · verificación independiente (agente que no escribió el guion). Fuentes abiertas en su original (EPA RadTown, Coursey 2021 PDF NIST, Matsuzawa 1996 resumen en IOPscience, Van den Eeckhout 2010 en PMC, Happek & Setlur 2010 PDF ECS).
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 1 | Las estrellitas (pintura que brilla) de hoy no son radiactivas; ☢ tachado | ✅ | U.S. EPA, RadTown "Radioactivity in Antiques" | "Glow-in-the-dark paint is now made without radioactive material" | página vigente (2026) |
+| 2 | "Sueltan la luz que les diste de día" / "luz de tu día, guardada en trampas" (luz guardada que se recarga) | ✅ (como metáfora: se guarda la energía de la luz, no la misma luz) | Van den Eeckhout et al., *Materials* 2010 (PMC5445854); Matsuzawa 1996 | "the long afterglow is governed by the slow liberation of trapped charge carriers by thermal excitation" | 2010 / 1996 |
+| 3 | "Si brillan verde, lo más probable es que sean aluminato de estroncio, con algo de europio y disprosio" | ⚠️ imprecisa | Happek & Setlur, *ECS Interface* 2010; Van den Eeckhout 2010 | "It is also likely that if you have a glow-in-the-dark paint or part that glows blue or green in the dark, these phosphor powders are incorporated" · pero el ZnS:Cu (también verde) se usó en "watch dials, luminous paints and glow-in-the-dark toys" | 2010 |
+| 4 | Pantalla: "aluminato de estroncio · SrAl₂O₄", europio (Eu), disprosio (Dy) | ✅ | Matsuzawa et al., *J Electrochem Soc* 143:2670 | "A green emitting SrAl2O4:Eu2+,Dy3+ phosphor with very bright and long lasting phosphorescence has been newly developed." | 1996 |
+| 5 | "La luz que reciben mueve cargas eléctricas dentro del cristal" | ✅ | Matsuzawa 1996 (resumen) | "the phosphorescence is ascribed to the photoconductivity due to holes" (fotoconductividad = cargas que se mueven); naturaleza de la carga en debate: "the nature of the trapped charge carriers (electrons or holes) is still subject of discussion" (Van den Eeckhout 2010) | 1996 / 2010 |
+| 6 | "Muchas quedan atoradas en trampas que forma el disprosio" | ✅ | Matsuzawa 1996 (resumen) | "The incorporation of the Dy3+ ion forms a highly dense trapping level located at a suitable depth in relation to the thermal release rate at room temperature" | 1996 |
+| 7 | "A oscuras, el calorcito del cuarto las suelta poco a poco" (termómetro ≈ 22 °C) | ✅ | Matsuzawa 1996; Happek & Setlur 2010 (pie de figura) | "thermal release rate at room temperature" · "after 10 min exposure to 200 lx of D65 light at 22oC" | 1996 |
+| 8 | "Regresan al europio y este brilla verde" | ✅ | Van den Eeckhout 2010 | "The transferred energy excites an electron of europium to a 5d level, followed by recombination and emission of the persistent luminescent light" | 2010 |
+| 9 | "Hace 100 años los relojes brillaban con radio y sulfuro de zinc: su radiación lo hacía brillar sin parar" (partículas alfa en pantalla) | ✅ | Coursey, *J Res NIST* 126:126051 | "In 1913, he produced for commercial use a fluorescent paint by mixing small amounts of radium-226 with zinc sulfide and other additives. The alpha particles from the radium decay excited the zinc sulfide to provide a continuous light source." | 1913 (artículo 2021) |
+| 10 | "En Nueva Jersey, hasta 250 jóvenes los pintaban" | ✅ | Coursey 2021 | "they employed as many as 250 young women as dial painters at the peak of their activities" (planta de Orange, NJ, desde 1917) | 1917 |
+| 11 | "Afinando el pincel con los labios: tragaban radio" | ✅ | Coursey 2021; EPA RadTown | "the women were encouraged to draw their brush through their mouth (i.e., "lip-point") to obtain a finer point, meaning they would inadvertently ingest some of the radium-containing paint" | 1917–1926 |
+| 12 | Pantalla: mapa "Nueva Jersey, EE. UU. · años 20" | ⚠️ imprecisa | Coursey 2021 | el pico de 250 fue al aumentar producción "in 1917"; "The lip-pointing with radium was effectively discontinued after 1926" | 1917–1926 |
+| 13 | "En 1996, en Japón, la empresa Nemoto publicó este cristal" (tarjeta "Matsuzawa et al. · Nemoto & Co. · Tokio") | ✅ | Matsuzawa 1996 (afiliación); Happek & Setlur 2010 | "Nemoto and Company, Limited, Research and Development Center, … Suginami-ku, Tokyo 168, Japan" · "the publication of Matsuzawa, et al. (from Nemoto)" | 1996 |
+| 14 | "Más de 10 veces más brillante que el sulfuro de zinc" (frascos ZnS vs SrAl₂O₄; "×10+") | ⚠️ imprecisa por contexto | Van den Eeckhout 2010 | "more than 10-times brighter than the previously widely used ZnS:Cu,Co" — la comparación es con el ZnS fosforescente con cobre/cobalto (sin radio), no con la pintura de radio de la frase anterior | 1996 |
+| 15 | "Y aún se medía al día siguiente" (reloj "24 h") | ✅ | Happek & Setlur 2010 | "heralding the discovery of long persistence (detectable luminescence after 24 hrs)" | 1996 |
+| 16 | "Se hornea a unos 1300 grados" (horno "1300 °C") | ✅ | Van den Eeckhout 2010 | "A solid-state reaction at 1300–1400 °C is most commonly used to obtain the desired compound" | 2010 |
+| 17 | "Tú lo recargas con un foco" | ✅ | Happek & Setlur 2010 (pie de la fig. de Matsuzawa) | "after 10 min exposure to 200 lx of D65 light at 22oC" (luz tipo día, no hace falta UV especial) | 1996 |
+| 18 | Pantalla: ZnS "se apaga rápido" frente a SrAl₂O₄ | ✅ | Happek & Setlur 2010 | "ZnS based hosts, such as ZnS:Cu, that had relatively weak afterglow for shorter periods of time (on the order of hours)" | 2010 |
+
+## Correcciones necesarias
+
+1. **#3 "Si brillan verde, lo más probable…" (⚠️):** el sulfuro de zinc con cobre también brilla verde y se usó en juguetes; no hay fuente seria que diga qué llevan "la mayoría" de las estrellitas de techo. Propuesta: "Si brillan verde y por horas, seguro llevan aluminato de estroncio, con algo de europio y disprosio." — o, más prudente: "Las que brillan horas suelen ser aluminato de estroncio, con algo de europio y disprosio." (respaldo: Happek 2010 + "on the order of hours" para ZnS). Cuidar que la duración siga en 61–62 s.
+2. **#14 "más de 10 veces más brillante que el sulfuro de zinc" (⚠️):** justo después de hablar del radio, se entiende que se compara con la pintura de radio. Propuesta: "…más de 10 veces más brillante que el sulfuro de zinc sin radio de entonces, y aún se medía al día siguiente." En pantalla, el frasco: "ZnS:Cu,Co (sin radio)".
+3. **#12 mapa "años 20" (⚠️, pantalla):** cambiar a "Nueva Jersey, EE. UU. · 1917–1926".
+
+## Correcciones aplicadas (29 oct 2026)
+Se aplicaron tal cual las propuestas del verificador; además solo se quitaron palabras de relleno para cuadrar el tiempo (sin cambiar datos).
+
+VEREDICTO: APROBADO

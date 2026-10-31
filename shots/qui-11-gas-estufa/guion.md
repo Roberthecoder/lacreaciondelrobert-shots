@@ -1,0 +1,75 @@
+# Shot Químico #11 · Ese olor no es el gas de tu estufa (mercaptanos: la alarma que le agregan)
+
+- **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #11 · rama `pedido300/qui`.
+- **Formato:** N1 "Por dentro" (la estufa de tu cocina con el cilindro de gas LP → las moléculas de propano, butano y etil mercaptano y tu nariz → la misma estufa, ahora con la "alarma" etiquetada) + N5 "El experimento/estudio" (New London, Texas, 1937).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" (con espíritu de #6, seguridad en casa): "Ese olor no es el gas de tu estufa: es una alarma que le agregan a propósito."
+- **Seguridad:** lo único práctico que se dice es lo que trae la guía oficial de la Alcaldía Coyoacán (CDMX): cerrar la llave de paso, abrir puertas y ventanas, no prender ni apagar la luz; 911. Nada que invite a "probar" el gas.
+- **Duración:** voz 952 caracteres / ≈180 palabras (≈ 58.1 s estimados) + cierre 3.5 s → **≈ 61.6 s** (`estimar-escenas.mjs`).
+- **Estado:** guion verificado (`verificacion.md`), animación lista (`gas.jsx`, `Shot Gas base narrada.dc.html`), voz pendiente de aprobación de Robert (~952 créditos).
+
+## Versión narrada
+
+Tiempos estimados: Gancho 0–4.7 · Que 4.7–9.7 · Aviso 9.7–14.6 · Nariz 14.6–19.3 · Piso 19.3–24.3 · Pregunta 24.3–26.8 · Estudio 26.8–37.4 · Ley 37.4–40.9 · Japon 40.9–49.3 · Aviso2 49.3–54.1 · Cierre 54.1–58.1 · Outro 58.1–61.6.
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Ese olor no es el gas de tu estufa: es una alarma que le agregan a propósito. | Fondo amarillo. Cocina esquemática: estufa blanca con perilla; desde el cuadro 0 la perilla gira y sale un hilito ondulado verde de "olor" del quemador. La etiqueta "gas" junto al hilito se tacha y aparece "ALARMA 🔔" con un timbre que vibra. Barra de escala "50 cm". |
+| 1 | Que | El gas LP es propano y butano, y la norma mexicana lo llama esencialmente inodoro. | La cámara baja por la manguera al cilindro de gas LP (gris, con válvula). Dentro (modo `Lupa` rayos X), moléculas de propano (C₃H₈) y butano (C₄H₁₀) en bolitas negras (C) y blancas (H). Chip "NOM-016-CRE-2016: «esencialmente inodoro»" y un ícono de nariz con "casi nada" (no "cero olor"). |
+| 2 | Aviso | Por eso le añaden mercaptanos, como el etil mercaptano: una molécula con azufre. | Un gotero deja caer en el cilindro unas pocas moléculas de etil mercaptano (C₂H₅SH) con su átomo de azufre amarillo que brilla; etiqueta "etil mercaptano · C₂H₆S". Una sola molécula amarilla entre muchas grises, con chip "≈ 1 por cada 50 000 (esquema)". |
+| 3 | Nariz | Tu nariz es buenísima para esas moléculas: las nota en cantidades diminutas. | Fondo noche. Corte de una nariz (rayos X) → epitelio olfativo con neuronas como "antenas"; llega una molécula con azufre y la neurona se enciende (destello); los propanos apenas la encienden, con chip "solo se huele si hay muchísimo". |
+| 4 | Piso | Y el gas pesa más que el aire: si se escapa, se junta en el piso sin que lo veas. | De vuelta a la cocina, vista lateral: una nube verde semitransparente baja del cilindro y se va acumulando como "charco" a ras del piso; medidor de nivel que sube. Chip "más pesado que el aire". |
+| 5 | Pregunta | ¿Y qué pasa si el gas no huele a nada? | **Re-gancho.** La misma nube pero sin color ni hilito de olor; "?" gigante; la nariz con "0". |
+| 6 | Estudio | En 1937, en New London, Texas, una escuela usaba gas sin olor. Se fugó bajo el edificio, una chispa, al parecer de una lijadora eléctrica, lo encendió y murieron casi 300 personas. | Tarjeta "1937 · New London, Texas"; silueta de una escuela grande de acero y concreto; debajo, en corte, un tubo con una conexión que gotea gas invisible (líneas punteadas) que llena el espacio bajo el piso; una lijadora y una chispa ⚡ (chip "al parecer"); destello blanco y la escuela se apaga en gris. Contador "≈ 300". Sin imágenes de víctimas. |
+| 7 | Ley | Ese año, Texas aprobó una ley para ponerle olor al gas. | Documento con sello "1937 · Texas · ley de odorización"; el tubo del dibujo ahora suelta el hilito verde de olor. |
+| 8 | Japon | Increíble: en mediciones japonesas publicadas en 2003, el etil mercaptano se notó en dosis unas 170 millones de veces menores que el propano. | Tarjeta "2003 · Nagata · Japón · bolsa triangular de olores"; dos barras en escala logarítmica: propano "1,500 ppm" y etil mercaptano "0.0000087 ppm"; flecha "≈ 170 millones ×". |
+| 9 | Aviso2 | Si huele a gas: cierra la llave, abre ventanas y no prendas ni apagues la luz. | Tres íconos que aparecen uno por uno: llave de paso girando a "cerrado", ventana que se abre, apagador con ✗ ("ni prender ni apagar"); chip "911". |
+| 10 | Cierre | Ese olor no es el gas: es una alarma, y el detector es tu nariz. | **Regreso a la estufa del inicio**: el mismo hilito verde, ahora etiquetado "etil mercaptano = alarma" y una flecha a la nariz "detector". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de química (matraz) y Robert señalando. |
+
+**Música:** cama grave continua, tensa durante la fuga y New London, más libre al final; efectos en el mismo cuadro (clic de la perilla, siseo del gas, timbre de alarma, gota del gotero, destello de la neurona, chispa y golpe sordo amortiguado, sello, tres "clics" de los pasos).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y qué pasa si el gas no huele a nada?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.4 | 11_sorprendido | `gancho` | «es una alarma que le agregan a propósito» |
+| 2 | 5.7 | 9.4 | 13_senalando_arriba | `izq-alto` | «propano y butano… esencialmente inodoro» |
+| 3 | 11.2 | 14.3 | 06_pensativo_menton | `arriba-der` | «una molécula con azufre» |
+| 4 | 19.8 | 24.0 | 10_serio_molesto | `izq-alto` | «se junta en el piso sin que lo veas» |
+| 5 | 24.4 | 27.6 | 07_pensativo_puno | `grande` | «¿Y qué pasa si el gas no huele a nada?» |
+| 6 | 30.3 | 37.0 | 12_perfil_serio | `izq-alto` | «murieron casi 300 personas» |
+| 7 | 43.7 | 49.0 | 11_sorprendido | `arriba-der` | «unas 170 millones de veces menores» |
+| 8 | 49.7 | 53.9 | 04_bajando_lentes | `izq-alto` | «cierra la llave, abre ventanas…» |
+| 9 | 54.4 | 58.0 | 02_apuntando_camara | `arriba-der` | «el detector es tu nariz» |
+| — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 9 apariciones · ≈ 38.5 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
+
+## Fuentes (cada dato y cifra se abrió en la fuente original el 29 oct 2026)
+
+1. **Gas LP = propano y butano; "esencialmente inodoro"; se le añaden mercaptanos; debe odorizarse** — CRE. "NOM-016-CRE-2016, Especificaciones de calidad de los petrolíferos." *Diario Oficial de la Federación*, 29 ago 2016. https://dof.gob.mx/nota_detalle.php?codigo=5450011&fecha=29%2F08%2F2016
+   > "3.13. Gas Licuado de Petróleo (GLP): Petrolífero … compuesto principalmente de gas propano y butano" · "3.28. Odorizante: Sustancia química compuesta primordialmente por mercaptanos que se añade deliberadamente a gases esencialmente inodoros, como en el caso del GLP, para advertir su presencia en caso de fuga." · "(1) El GLP, por razones de seguridad, deberá ser odorizado conforme a lo establecido en las Normas aplicables, por ejemplo, National Fire Protection Association, NFPA 58 LP-Gas Code."
+2. **En México le agregan etil mercaptano; más pesado que el aire; qué hacer si hay fuga** — Alcaldía Coyoacán, Gobierno de la CDMX. "Guía para el manejo seguro del gas LP" (PDF, 2019). https://www.coyoacan.cdmx.gob.mx/Vistas/modulos/que/fuga/guia%20gas.pdf
+   > "Inoloro: inicialmente no tiene olor, pero se le agrega una sustancia llamada etil mercaptano (olor a huevo podrido) para percibirlo y detectar fugas." · "Más pesado que el aire: en caso de fuga tiende a acumularse en las partes bajas como el piso, sótanos y estacionamientos subterráneos." · "EN CASO DE FUGA: … Cerrar llave de paso. … No enciendas cerillos, cigarros o fuentes que generen chispas. Abre las puertas y ventanas para ventilar el lugar y no prendas o apagues la luz o cualquier aparato eléctrico y electromagnético (celular). Si es seguro hacerlo, cierra la llave de paso del tanque o cilindro." · "Reporta fugas de gas o incendios al 911."
+3. **Etil mercaptano tiene azufre (C₂H₆S); propano C₃H₈** — PubChem (NIH), CID 6343 (ethanethiol) y CID 6334 (propane). https://pubchem.ncbi.nlm.nih.gov/compound/6343
+   > "MolecularFormula": "C2H6S", "IUPACName": "ethanethiol" · propane "C3H8"
+4. **Umbrales de olor: etil mercaptano 0.0000087 ppm; propano 1,500 ppm; los compuestos de azufre se huelen a muy baja concentración** — Nagata Y. (Japan Environmental Sanitation Center). "Measurement of Odor Threshold by Triangle Odor Bag Method." 2003; experimentos de 1976 a 1988. PDF del Ministerio del Ambiente de Japón: https://www.env.go.jp/content/900450144.pdf
+   > "The experiment was carried out from 1976 to 1988." · "Isoamyl mercaptane exhibited the lowest threshold (0.77ppt), and propane exhibited the highest threshold (1500ppm)." · "Sulfur compounds with the exception of sulfur dioxide and carbon disulfide have the comparatively low threshold." · Table 2 (ppm, v/v): "Ethyl mercaptane 0.0000087" · "Propane 1500" · "n-Butane 1200".
+   Cálculo: 1500 ÷ 0.0000087 ≈ 172 millones → "unas 170 millones de veces".
+5. **New London, Texas, 18 mar 1937: gas sin olor, fuga bajo el edificio, lijadora eléctrica, casi 300 muertos; ley de Texas** — NOAA Office of Response and Restoration. "For Today's Responders, 1937 Texas Tragedy Still Carries Lessons for Avoiding Disaster" (17 feb 2015). https://response.restoration.noaa.gov/about/media/todays-responders-1937-texas-tragedy-still-carries-lessons-avoiding-disaster.html
+   > "On March 18, 1937, a gas explosion occurred in a school in New London, Texas, killing almost 300 of the 500 students and 40 teachers in the building." · "school officials had recently approved tapping into a residue gas line of the local Parade Gasoline Company" · "a faulty pipe connection caused the gas" (to leak into a closed space beneath the building) · "The odorless gas in the New London disaster was able to accumulate in the space before anyone was aware of it." · "when a maintenance employee turned on an electric sander, the odorless gas ignited." · "a Texas law mandated that malodorants be added to all natural gas"
+6. **La ley de 1937** — Railroad Commission of Texas. "RRC History." https://www.rrc.texas.gov/about-us/rrc-history/
+   > "In 1937, following a large natural gas explosion in a school in New London, Texas, the 45th Legislature passed legislation giving the Railroad Commission the authority to adopt rules and regulations pertaining to the odorization of natural gas or liquefied petroleum gases (House Bill 1017, Regular Session)."
+7. **(Para la descripción, no para la voz) Regla de "1/5 del límite de explosividad" y dosis de referencia** — EE. UU., 49 CFR 173.315(b)(1) (eCFR, vigente) y 49 CFR 192.625(a).
+   > 173.315: "All liquefied petroleum gas must be odorized … to indicate positively, by a distinctive odor, the presence of gas down to a concentration in air of not over one-fifth the lower limit of combustibility" · "Propane, 2.15 percent; butane, 1.55 percent." · "The use of 1.0 pound of ethyl mercaptan per 10,000 gallons of liquefied petroleum gas is considered sufficient" · 192.625(a): "A combustible gas in a distribution line must contain a natural odorant or be odorized so that at a concentration in air of one-fifth of the lower explosive limit, the gas is readily detectable by a person with a normal sense of smell."
+
+## Notas
+- El dibujo es esquemático (moléculas en bolitas, la neurona olfativa como "antena", la escuela en silueta).
+- "Esencialmente inodoro" (palabra de la norma), no "cero olor": en la tabla de Nagata el propano sí se alcanza a oler, pero hasta 1,500 ppm; por eso la voz no dice "no huele nada" del gas LP en sí. El gancho dice "ese olor no es el gas", que es lo que respalda la norma y la guía de CDMX.
+- New London: la escuela tomaba gas residual de una línea de una gasolinera/planta vecina (Parade Gasoline Company), no gas comercial; las cifras de muertos varían según la fuente (NOAA: "almost 300"); por eso "casi 300 personas". La ley de 1937 dio a la Railroad Commission la facultad de reglamentar la odorización del gas natural y del gas LP.
+- Nagata (2003) reporta mediciones de 1976 a 1988 con el método de bolsa triangular; las cifras son umbrales de detección promedio y varían entre personas.
+- En la descripción se puede agregar: en EE. UU. la norma pide que el gas LP se huela cuando en el aire apenas hay la quinta parte de lo necesario para encenderse (propano 2.15 %), y que medio kilo (1 libra) de etil mercaptano por cada ~38 mil litros (10,000 galones) se considera suficiente.
+- Seguridad: los pasos de "si huele a gas" son textuales de la guía oficial de CDMX; la descripción agrega "si es seguro hacerlo" y "reporta al 911".
+

@@ -1,0 +1,72 @@
+name: Publicación diaria automática
+
+# Cada día a las 2:43 pm hora de Ciudad de México (UTC−6) publica en las redes el/los shot(s) que tocan ese día según
+# calendario/fecha.py (1 shot diario; los festivos en su fecha). Permiso permanente de Robert (chat, 30 oct 2026).
+# Apagar: "activo": false en publicar/diario.json. Saltar un shot: su clave en publicar/pausa.txt.
+# No gasta tokens de Claude: lanza el workflow "Publicar en redes" (publicar.yml) una vez por shot y espera a que termine.
+on:
+  schedule:
+    - cron: '43 20 * * *'   # 20:43 UTC = 2:43 pm en CDMX (hora fija elegida por Robert: la de la primera publicación, 30 oct)
+  workflow_dispatch:
+    inputs:
+      fecha:
+        description: 'Fecha AAAA-MM-DD (vacío = hoy en CDMX)'
+        default: ''
+      modo:
+        description: 'real publica · prueba revisa todo sin subir nada'
+        type: choice
+        options: [real, prueba]
+        default: real
+
+permissions:
+  actions: write
+  contents: write   # anota cada día en publicar/diario.log (GitHub apaga las tareas programadas de repos sin cambios en 60 días)
+
+concurrency:
+  group: publicacion-diaria
+  cancel-in-progress: false
+
+jobs:
+  diario:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publicar lo de hoy
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FECHA: ${{ inputs.fecha }}
+          MODO: ${{ inputs.modo || 'real' }}
+        run: |
+          set -u
+          CFG=publicar/diario.json
+          if [ "$(jq -r .activo $CFG)" != "true" ]; then echo "Publicación diaria apagada en $CFG"; exit 0; fi
+          F="${FECHA:-$(TZ=America/Mexico_City date +%F)}"
+          KS=$(python3 calendario/fecha.py json | jq -r --arg f "$F" '.[$f][]?')
+          if [ -z "$KS" ]; then echo "Nada que publicar el $F"; exit 0; fi
+          REDES=$(jq -r '.redes | join(",")' $CFG); TT=$(jq -c .tiktok $CFG); MAL=0
+          echo "## Publicación del $F ($MODO)" >> "$GITHUB_STEP_SUMMARY"
+          for K in $KS; do
+            if grep -v '^#' publicar/pausa.txt 2>/dev/null | grep -qxF "$K"; then echo "- $K: en pausa, no se publica" >> "$GITHUB_STEP_SUMMARY"; continue; fi
+            ANTES=$(gh run list -R "$GITHUB_REPOSITORY" -w publicar.yml -L 1 --json databaseId --jq '.[0].databaseId // 0')
+            gh workflow run publicar.yml -R "$GITHUB_REPOSITORY" --ref main -f clave="$K" -f redes="$REDES" -f modo="$MODO" \
+              -f confirmar="$K" -f autorizo="Robert: publicación diaria automática (permiso del 30 oct 2026)" \
+              -f release=borradores-voces-v4 -f tiktok="$TT"
+            RID=""; for i in $(seq 1 30); do sleep 10
+              RID=$(gh run list -R "$GITHUB_REPOSITORY" -w publicar.yml -e workflow_dispatch -L 1 --json databaseId --jq '.[0].databaseId // 0')
+              [ "$RID" != "$ANTES" ] && [ "$RID" != "0" ] && break; RID=""; done
+            if [ -z "$RID" ]; then echo "- $K: no arrancó la publicación" >> "$GITHUB_STEP_SUMMARY"; MAL=1; continue; fi
+            if gh run watch "$RID" -R "$GITHUB_REPOSITORY" --interval 30 --exit-status >/dev/null; then
+              echo "- $K: listo ([detalle](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RID))" >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "- $K: FALLÓ ([detalle](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RID))" >> "$GITHUB_STEP_SUMMARY"; MAL=1
+            fi
+          done
+          # Bitácora diaria en el repo: deja constancia y mantiene vivo el repo (si no, GitHub apaga el horario a los 60 días).
+          if [ "$MODO" = "real" ]; then
+            git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            echo "$F · $(echo $KS | tr '\n' ' ') · $([ $MAL = 0 ] && echo ok || echo con-fallas)" >> publicar/diario.log
+            git add publicar/diario.log && git commit -qm "Publicación diaria $F [sin render]" && \
+              for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+          fi
+          exit $MAL

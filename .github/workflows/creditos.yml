@@ -1,0 +1,61 @@
+name: Créditos de voz
+
+# Consulta cuántos créditos de ElevenLabs le quedan a Robert y los guarda (JSON) en la referencia
+# refs/estado/creditos (commit huérfano, no es rama: no dispara renders ni toca ramas).
+# La nube copia ese JSON al doc estado/creditos de la Sala de Shots.
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Render automático']
+    types: [completed]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: creditos
+  cancel-in-progress: true
+
+jobs:
+  creditos:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Consultar ElevenLabs
+        env:
+          XI: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          AHORA=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          if [ -z "$XI" ]; then
+            jq -n --arg a "$AHORA" '{error: "Falta el secreto ELEVENLABS_API_KEY", actualizado: $a}' > creditos.json
+          else
+            CODE=$(curl -s -o resp.json -w '%{http_code}' https://api.elevenlabs.io/v1/user/subscription -H "xi-api-key: $XI" || echo 000)
+            echo "HTTP $CODE"
+            if [ "$CODE" = "200" ] && jq -e '.character_limit' resp.json >/dev/null 2>&1; then
+              jq --arg a "$AHORA" '{
+                  usados: .character_count, limite: .character_limit,
+                  restantes: (.character_limit - .character_count),
+                  renovacion_unix: .next_character_count_reset_unix,
+                  renovacion: (if .next_character_count_reset_unix then (.next_character_count_reset_unix | todate) else null end),
+                  plan: .tier, actualizado: $a }' resp.json > creditos.json
+            else
+              MSG=$(jq -r '(.detail.message // .detail.status // .detail // .message // "sin detalle") | tostring' resp.json 2>/dev/null | head -c 200)
+              jq -n --arg a "$AHORA" --arg m "ElevenLabs respondió $CODE: ${MSG:-sin detalle}" '{error: $m, actualizado: $a}' > creditos.json
+            fi
+          fi
+          cat creditos.json
+
+      - name: Guardar en refs/estado/creditos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git init -q estado && cd estado
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          BLOB=$(git hash-object -w ../creditos.json)
+          TREE=$(printf '100644 blob %s\tcreditos.json\n' "$BLOB" | git mktree)
+          SHA=$(git commit-tree "$TREE" -m "Créditos de voz $(date -u +%FT%TZ) [sin render]")
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "$SHA:refs/estado/creditos"
+          echo "Guardado $SHA en refs/estado/creditos"

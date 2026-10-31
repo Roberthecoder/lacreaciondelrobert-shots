@@ -1,0 +1,75 @@
+# Verificación · Shot Fungi Mati #37 · Esa milanesa no es de pollo: la "carne" de hongo (micoproteína)
+
+29 oct 2026. **Verificación independiente (subagente que no escribió el guion).** Se abrió el texto completo de cada fuente
+(PDF, XML de Europe PMC o manuscrito aceptado), no el resumen del buscador. Excepción: del estudio de Exeter (2020) solo se pudo
+abrir el resumen y la afiliación de autores en PubMed (el texto completo es de pago); por eso no se afirma nada de su financiamiento.
+
+Fuentes abiertas:
+- **[FIN]** Finnigan, T. J. A., Wall, B. T., Wilde, P. J. et al. (2019). Mycoprotein: The Future of Nutritious Nonmeat Protein, a Symposium Review. *Current Developments in Nutrition* 3(6): nzz021. https://pmc.ncbi.nlm.nih.gov/articles/PMC6554455/ (leído en texto completo vía https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6554455/fullTextXML)
+- **[WIE]** Wiebe, M. G. (2004). Quorn™ Myco-protein – Overview of a successful fungal product. *Mycologist* 18(1): 17–20. doi:10.1017/S0269915X04001089. https://davidmoore.org.uk/assets/fungi4schools/Reprints/Mycologist_articles/Post-16/Foods/V18pp017-020_Quorn.pdf
+- **[OKE]** Okeudo-Cogan, M. C. et al. (2023). Understanding the microstructure of a functional meat analogue: Demystifying interactions between fungal hyphae and egg white protein. *Food Hydrocolloids* 140: 108606. Manuscrito aceptado: https://eprints.whiterose.ac.uk/id/eprint/197030/1/Manuscript_Food%20Hyd-Fungal%20Hyphae-Protein.docx
+- **[MON]** Monteyne, A. J., Coelho, M. O. C., Porter, C. et al. (2020). Mycoprotein ingestion stimulates protein synthesis rates to a greater extent than milk protein in rested and exercised skeletal muscle of healthy young men: a randomized controlled trial. *Am J Clin Nutr* 112(2): 318–333. doi:10.1093/ajcn/nqaa092. https://pubmed.ncbi.nlm.nih.gov/32438401/
+- **[IZA]** Izadi, H., Asadi, H. y Bemani, M. (2025). Chitin: a comparison between its main sources. *Frontiers in Materials* 12: 1537067. https://www.frontiersin.org/journals/materials/articles/10.3389/fmats.2025.1537067/full
+- **[CDC]** CDC Public Health Image Library, imagen ID 23081 (*Fusarium*, 970X). https://wwwn.cdc.gov/phil/Details.aspx?pid=23081
+- **[JMU]** James Madison University, Microscopy Facility. "Resolution" (hoja de entrenamiento, sin fecha; consultada 29 oct 2026). https://www.jmu.edu/microscopy/access-and-training/resolution.pdf
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | Gancho: está hecha de hilos (hifas) que tus ojos no pueden ver | ✅ | [OKE], [JMU] | "The fungal filaments, or hyphae, typically have cross-sectional diameters of 3 to 5 μm and lengths of 400 to 700 μm"; "The resolution limit for our eyes is approximately 0.1 mm (100 µm)" (3–5 µm de grueso está ~20–30 veces por debajo del límite del ojo) | 2023 / s. f. |
+| 1b | Pantalla: el tenedor corta y se ve el interior fibroso | ✅ | [WIE] | "it was believed that the mycelia would add a fibrous texture, comparable to that of meat, to the final product" | 2004 |
+| 2 | Es micoproteína, del hongo microscópico *Fusarium venenatum* | ✅ | [FIN] | "Fusarium venenatum, a filamentous microfungus"; "Mycoprotein … made from Fusarium venenatum, a naturally occurring fungus" | 2019 |
+| 2b | Pantalla: "no es un champiñón: es un hongo de filamentos" | ✅ | [WIE] | "This is the filamentous fungus Fusarium venenatum A3/5 … grown in continuous flow culture to produce mycoprotein" | 2004 |
+| 3 | Salió de un campo inglés (mapa: Buckinghamshire, Reino Unido) (corregido: recorte de "de la tierra de") | ✅ | [FIN] | "Fusarium venenatum, a filamentous microfungus found originally in a field in Buckinghamshire, UK" | 2019 |
+| 4 | Tras probar más de tres mil microbios del suelo (contador "más de 3,000 microbios probados") | ✅ | [FIN], [WIE] | [FIN] "scientists collected and tested >3000 soil organisms from around the world"; [WIE] "more than 3000 fungal isolates from around the world were analysed for protein content, toxin production and suitable growth and morphology" (la búsqueda fue en los años 60–70; el guion no da año, pero tampoco presenta la cifra como actual) | 2019 / 2004 |
+| 5 | No se cosecha: crece en tanques de fermentación (con burbujas de aire) | ✅ | [WIE] | "two 150,000 l pressure-cycle reactors (Fig 1) have been custom built for the process"; "a 40,000 L airlift (pressure cycle) reactor" | 2004 |
+| 6 | Come glucosa y amonio | ✅ | [WIE] | "A completely defined medium, based on glucose and ammonium (and supplemented with biotin), is used for the production of myco-protein." | 2004 |
+| 6b | Pantalla: tanque sin barra de escala, con la nota "esquemático, no a escala" (corregido; antes: barra "1 m") | ✅ corregido | [WIE] | Tanques reales de "150,000 l"; ya no se sugiere una escala falsa. | 2004 |
+| 7 | Ahí duplica su masa en unas cuatro horas; cronómetro "≈3.5–4.1 h · dato de 2004" (corregido) | ✅ corregido | [WIE] | "F. venenatum A3/5 has a specific growth rate (µ) of 0.17 to 0.20 h-1 (i.e. a doubling time between 3.5 and 4.1 h)" — la pantalla ya dice el año del dato. | 2004 |
+| 8 | Luego lo calientan para bajarle el ARN (termómetro ~72 °C) | ✅ | [WIE], [FIN] | "the F. venenatum A3/5 biomass is subjected to a heat treatment to reduce the RNA content"; "heating the mycelia in a separate tank to temperatures above 68°C (optimum 72-74°C) for 30 to 45 minutes"; [FIN] "steaming, chilling, and freezing of the RNA-reduced biomass" | 2004 / 2019 |
+| 9 | "…con menos ARN, años de pruebas mostraron que es seguro comerlo" + chip "menos ARN → seguro en las pruebas" (corregido) | ✅ corregido | [WIE] | "The initial safety testing involved 12 years of research, and demonstrated that myco-protein could be consumed by lab animals or human volunteers without harmful effects if the RNA content of the cells was reduced" | 2004 |
+| 10 | ¿Cómo se siente como carne? Por sus hifas: hilos de unas cuatro milésimas de milímetro de grueso (medidor "3–5 µm") | ✅ | [OKE] | "cross-sectional diameters of 3 to 5 μm" (cita a Finnigan, 2011); el propio artículo usa "a diameter of 4 μm" en su cálculo | 2023 |
+| 10b | Pantalla: hifas largas, poco ramificadas, con tabiques; barra 5 µm | ✅ | [OKE], [CDC] | [OKE] "Relatively unbranched flexible hyphae with high aspect ratios"; [CDC] (*Fusarium*): "septate, hyaline, filamentous hyphae" | 2023 / s. f. |
+| 11 | Juntas forman fibras parecidas a las del músculo (haz de músculo al lado para comparar) | ✅ | [OKE], [WIE] | "the potential to form a hierarchal fibre arrangement analogous to the muscle fibres in mammalian muscle tissue, under appropriate processing conditions"; [WIE] "fibrous texture, comparable to that of meat" | 2023 / 2004 |
+| 12 | …y suelen pegarse con clara de huevo (corregido: recorte de "un poco de") | ✅ | [OKE], [FIN] | "additional proteins generally have to be included, typically egg white protein (EWP)" ("added to the MYC at typically 3 wt.%"); [FIN] "a small amount of egg albumin is added as a binder" (y cada vez más productos sin huevo: "suelen" es correcto) | 2023 / 2019 |
+| 13 | En 2020, en la Universidad de Exeter, Inglaterra (tarjeta: *Am J Clin Nutr*) | ✅ | [MON] | "Department of Sport and Health Sciences … University of Exeter, Exeter, UK"; "Am J Clin Nutr. 2020 Aug 1;112(2):318-333" | 2020 |
+| 14 | Veinte hombres jóvenes que hacían pesas; tarjeta "20 hombres jóvenes" (corregido) | ✅ corregido | [MON] | "Twenty resistance-trained healthy young males (age: 22 ± 1 y…)" | 2020 |
+| 15 | Tomaron micoproteína o proteína de leche (dos grupos, vaso "micoproteína" / "leche") | ✅ | [MON] | "randomized, double-blind, parallel-group study … ingested either 31 g (26.2 g protein: 2.5 g leucine) milk protein (MILK) or 70 g (31.5 g protein: 2.5 g leucine) mycoprotein (MYCO)" | 2020 |
+| 16 | Con micoproteína, su músculo aceleró más la fabricación de proteína que con leche (barras: la de micoproteína sube más) | ✅ | [MON] | "the postprandial rise in FSRs was greater in MYCO compared with MILK (Delta 0.040 ± 0.006 compared with Delta 0.018 ± 0.005%·h-1, respectively; P <0.01)"; "The ingestion of a single bolus of mycoprotein stimulates … to a greater extent than a leucine-matched bolus of milk protein" (si las barras son proporcionales, la de micoproteína ≈ 2.2 veces la de leche) | 2020 |
+| 16b | Chip en escenas 9 y 10: "una sola toma · igual leucina, más proteína en la de hongo" (corregido) | ✅ corregido | [MON] | "a single bolus"; "31 g (26.2 g protein: 2.5 g leucine) milk protein (MILK) or 70 g (31.5 g protein: 2.5 g leucine) mycoprotein (MYCO)"; coautor de "Marlow Foods Ltd" (dicho en el guion y la publicación) | 2020 |
+| 17 | Un tercio de su fibra es quitina (pastel: 1/3 quitina, 2/3 β-glucanos) | ✅ | [FIN] | "The dietary fiber in mycoprotein is naturally occurring and is comprised of approximately one-third chitin (N-acetylglucosamine) and two-thirds β-glucan (1,3-glucan and 1,6-glucan)" | 2019 |
+| 18 | La misma que hay en el caparazón del camarón | ✅ | [IZA] | "The components of shrimp shell waste consist of 10%–25% chitin"; quitina también "present in the cell walls of fungi" | 2025 |
+| 19 | Cierre: esa milanesa no es de pollo: es un hongo del suelo, hilo por hilo | ✅ | [FIN], [OKE] | Resume 3–4 y 10–11 (hongo encontrado en un campo; hecha de hifas). | 2019 / 2023 |
+| 20 | Fuentes del guion: cada cita textual corresponde al enlace con el que se cita (no hay cifras de una fuente con enlace de otra) | ✅ | todas | Revisadas frase por frase: las 5 fuentes del guion contienen las frases copiadas. | — |
+
+**Resumen (29 oct 2026, segunda vuelta):** se corrigieron las 5 observaciones (redacción del ARN y la seguridad, "hombres jóvenes", aclaración del estudio de una sola toma con igual leucina, año 2004 del tiempo de duplicación, tanque sin escala falsa) y se revisaron los recortes de voz (campo inglés, "en unas cuatro horas", clara de huevo) contra las fuentes abiertas: todas las afirmaciones de voz y pantalla quedan ✅. narracion.json: 13 líneas, 997 caracteres.
+
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisados `micoproteina.jsx`, la columna «Lo que se ve» y la tabla de Robert de `guion.md`, `publicacion.md` y 12 cuadros de preview (0.3–60 s) + 3 cuadros extra de la escena del estudio (41, 43, 47 s) después de corregir.
+
+| # | Texto o dibujo en pantalla / publicación | Veredicto | Fuente | Nota |
+|---|---|---|---|---|
+| R1 | Chip «no es un champiñón: es un hongo de filamentos» | ✅ | [WIE] | "the filamentous fungus Fusarium venenatum A3/5" |
+| R2 | Contador «más de 3,000 microbios» + etiqueta «un campo · Buckinghamshire, Reino Unido» | ✅ | [FIN] | ">3000 soil organisms"; "found originally in a field in Buckinghamshire, UK" |
+| R3 | Cronómetro «≈3.5–4.1 h · DATO DE 2004» | ✅ | [WIE] | "a doubling time between 3.5 and 4.1 h" |
+| R4 | Termómetro «~72 °C» + chip «menos ARN → seguro en las pruebas» | ✅ | [WIE] | "above 68°C (optimum 72-74°C)"; pruebas de 12 años con ARN reducido |
+| R5 | Tanque: nota «esquemático, no a escala» (sin barra) | ✅ | [WIE] | — |
+| R6 | «3–5 µm de grueso» con barra «5 µm» (hifa dibujada de ~4 µm a esa escala) | ✅ | [OKE] | "cross-sectional diameters of 3 to 5 μm" |
+| R7 | «tabique (septo)» en la hifa | ✅ | [CDC] | *Fusarium*: "septate, hyaline, filamentous hyphae" |
+| R8 | «haz de hifas», «fibras de músculo (esquema)», «clara de huevo», barra «50 µm (hifas)» | ✅ | [OKE] | La barra se aplica a las hifas (grosor dibujado ≈ 5–6 µm); el músculo está rotulado como esquema |
+| R9 | Tarjeta «2020 · Universidad de Exeter, Reino Unido · 20 hombres jóvenes · Am J Clin Nutr, 2020» | ✅ | [MON] | — |
+| R10 | Antes: 20 figuras en **dos grupos de 10** (dorado/azul) | ⚠️ → corregido | [MON] | El resumen (lo único accesible) dice "parallel-group" pero no da cuántos hubo en cada grupo. **Corregido:** las 20 figuras van del mismo color en dos filas, con el letrero «20 pesistas · cada uno: micoproteína o leche» (y se actualizó la columna «Lo que se ve»). |
+| R11 | Barras de «Aumento en la fabricación de proteína del músculo» en proporción 2.2 : 1 + chip «en ese estudio» | ✅ | [MON] | Δ0.040 / Δ0.018 = 2.2 |
+| R12 | Subtítulo «Su músculo: más que con leche.» | ⚠️ → corregido | [MON] | Sin contexto sonaba general. **Corregido:** «En ese estudio: más que con leche.» |
+| R13 | Subtítulo «Hifas de 4 milésimas de mm.» | ⚠️ → corregido | [OKE] | El dato es un rango (3–5 µm). **Corregido:** «Hifas de unas 4 milésimas de mm.» |
+| R14 | Pastel «1/3 quitina · 2/3 β-glucanos» + «caparazón: quitina» | ✅ | [FIN], [IZA] | "approximately one-third chitin … and two-thirds β-glucan" |
+| R15 | Demás subtítulos («No es pollo: es hongo.», «Más de 3,000 microbios probados.», «Duplica su masa en unas 4 horas.», «Menos ARN: seguro en las pruebas.», «2020, Exeter: 20 hombres jóvenes.», «Un tercio de su fibra: quitina.», etc.) | ✅ | — | Coinciden con la voz verificada |
+| R16 | publicacion.md (YouTube): «micoproteína (70 g) o de proteína de leche (31 g)» | ⚠️ → corregido | [MON] | Mezclaba gramos de alimento sin aclarar la proteína. **Corregido:** «70 g de micoproteína (31.5 g de proteína) o 31 g de proteína de leche (26.2 g de proteína), las dos con la misma leucina (2.5 g)». |
+| R17 | publicacion.md: «Se vende con la marca Quorn» | ✅ | [FIN] | "Mycoprotein, sold as Quorn, is consumed in 17 countries" |
+| R18 | publicacion.md: «un coautor trabajaba en Marlow Foods, la empresa que produce la micoproteína» | ✅ | [MON], [WIE] | Afiliación "Marlow Foods Ltd"; [WIE] "fermenter used by Marlow Foods … for the production of myco-protein" |
+| R19 | Resto de publicacion.md (7 redes y comentario fijado) | ✅ | todas | Solo repite datos ya verificados; fuentes con su enlace correcto |
+
+**Resumen de la revisión final:** se corrigieron 4 detalles de pantalla/publicación (reparto 10 y 10 no verificable, dos subtítulos y los gramos de la publicación). Todo lo de voz, pantalla y publicación queda ✅.
+
+VEREDICTO: APROBADO

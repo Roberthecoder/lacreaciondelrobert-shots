@@ -1,0 +1,83 @@
+# Shot Biotecnológico #54 · La pastilla de la presión es nieta de un veneno de víbora (captopril)
+
+- **Serie:** Shot Biotecnológico · **Numeración:** #54 · **Tema del logo:** bioquímica (ADN + matraz) · rama `pedido300/bio`.
+- **Formato:** N1 "Por dentro" (la caja de pastillas de la abuela → con la `Lupa`, el vaso sanguíneo por dentro: ECA, angiotensina, bradicinina → la misma caja) + N5 "El experimento" (Cushman y Ondetti dibujan el hueco de la enzima, Squibb, 1974).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y", sobre la caja de pastillas que se ve en pantalla: "Esa pastilla de la presión de tu abuela no es cualquiera: es nieta de un veneno de víbora."
+- **Duración:** 61.5 s (voz ~58 s + cierre 3.5 s).
+- **Viaje:** macro (la mano de la abuela con su pastilla y su pastillero) → la víbora → micro (fondo oscuro: dentro del vaso, la ECA con su zinc, la angiotensina que aprieta, el captopril que encaja en el hueco) → la misma mano y la misma pastilla, ahora con la víbora "dibujada" en la caja.
+
+## Corrección tras la verificación independiente (29 oct 2026, ver `verificacion.md`)
+- **"Dos mil veces más potente" era ambiguo** (⚠️): el aumento de 2,000 veces es contra **su propia copia** con carboxilo (–COOH), no contra el veneno. La voz pasa a «Copiaron la punta del veneno, y con azufre su copia se hizo dos mil veces más potente.» y en pantalla el ×2,000 lleva «vs. su copia sin azufre» y se ven las dos moléculas (gris con –COOH y la de "S" amarilla en el zinc).
+- El blíster dice **"CAPTOPRIL"** legible desde el cuadro 0 (el gancho solo es cierto para esa pastilla; losartán o amlodipino no vienen del veneno).
+- Manchas de la jararaca: subtriangulares o trapezoidales, café oscuro con borde claro, con la punta hacia la línea del lomo.
+
+## Versión narrada (959 caracteres, 172 palabras, ~58 s de voz)
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Esa pastilla de la presión de tu abuela no es cualquiera: es nieta de un veneno de víbora. | Fondo rosa. **Desde el cuadro 0** una mano saca una pastilla de un blíster que dice "captopril"; del blíster se asoma la sombra de una víbora que saca la lengua. |
+| 1 | Jararaca | Esta es la jararaca, de Brasil: su veneno le tumba la presión a su presa. | Fondo menta: la jararaca (*Bothrops jararaca*, café con manchas subtriangulares o trapezoidales café oscuro de borde claro a cada lado, con la punta hacia el lomo; cabeza triangular). Un ratón y un `Medidor` de presión que baja de golpe. Etiqueta "jararaca · *Bothrops jararaca*". |
+| 2 | Ferreira | En 1965, Sérgio Ferreira halló en ese veneno algo que potencia a la bradicinina, que afloja los vasos. | Chip "1965 · Sérgio Ferreira · Brasil". Una gota de veneno cae en un tubo; de ahí salen pedacitos (cadenitas cortas de aminoácidos). Una "bradicinina" sonriente agranda un vaso. |
+| 3 | ECA | Esos pedacitos del veneno frenan una enzima tuya: la ECA. | **Lupa** "POR DENTRO · TU VASO SANGUÍNEO" sobre el brazo: fondo oscuro, la pared del vaso con la ECA (tijera molecular con un zinc dorado en el centro). Un pedacito del veneno se mete en el hueco y la tijera se traba. |
+| 4 | Manguera | La ECA hace angiotensina dos, que aprieta tus vasos como manguera pisada. | La ECA corta la angiotensina I (10 eslabones) en angiotensina II (8 eslabones); el vaso se aprieta como una manguera pisada y la flecha de presión sube. |
+| 5 | Frenar | Si la frenas, los vasos se aflojan y baja la presión. | Con la tijera trabada, el vaso se ensancha, la sangre fluye; el `Medidor` baja. |
+| 6 | Pregunta | ¿Entonces tu abuela se toma veneno? | **Re-gancho.** Regreso un instante a la mano con la pastilla; signo de pregunta gigante. |
+| 7 | Intestino | No: esos pedacitos solo servían inyectados; tragados, no pasaban del intestino. | `MitoTachado` "¿veneno en pastilla?". Una jeringa sí funciona; por la boca, los pedacitos chocan contra la pared del intestino y no pasan. |
+| 8 | Squibb | En 1974, en Squibb, Cushman y Ondetti imaginaron el hueco de la enzima, con zinc. | `TarjetaEstudio` "1974 · Squibb · Nueva Jersey, EUA · Cushman y Ondetti". Un pizarrón donde se dibuja el hueco de la ECA con el zinc en medio (modelo a partir de otra enzima parecida, la carboxipeptidasa A). |
+| 9 | Azufre | Copiaron la punta del veneno, y con azufre su copia se hizo dos mil veces más potente. | La punta del pedacito del veneno (Ala-Pro) se ilumina; entra al hueco su copia gris con –COOH; luego la copia con el gancho amarillo "S" (azufre) que se agarra al zinc. `NumeroGigante` "×2,000" con «vs. su copia sin azufre». |
+| 10 | Captopril | Así nació el captopril, primera pastilla de su tipo, aprobada en 1981. | La molécula se encoge hasta volverse pastilla. Chip "1981 · FDA · el primer inhibidor de la ECA que se toma". |
+| 11 | Sesenta | Antes probaron unos dos mil compuestos al azar; con su dibujo, unos sesenta. | `Comparativa`: un montón de 2,000 frasquitos tachados contra una fila corta de 60. |
+| 12 | Cierre | Si su pastilla termina en «pril», tu abuela trae el truco de una víbora. | **Regreso a la mano del inicio:** la caja ahora muestra la familia "capto**pril** · enala**pril** · lisino**pril**" y la víbora enroscada en el logo de la caja. |
+| — | Outro | (sin voz) | Cierre de marca con Robert. |
+
+## Música y sonido (sin costo, `gen-audio.mjs`)
+- **Cama grave continua**, sin golpe marcado, debajo de la voz; un pulso suave tipo latido que se acelera cuando el vaso se aprieta (escena 4) y se calma cuando se afloja (escena 5).
+- **Efectos en el mismo cuadro:** el "clic" del blíster (0 s), el siseo de la víbora (escena 1), la gota de veneno (escena 2), la Lupa que se abre (barrido, escena 3), el "trac" de la tijera trabada, el apretón de la manguera (chirrido de hule), el sello de la tarjeta de estudio (golpe suave), el gis en el pizarrón, el "clic" metálico del azufre que se pega al zinc, la pastilla que cae.
+
+## Descripción (para publicar)
+"Esa pastilla de la presión no es cualquiera: es nieta de un veneno de víbora. 🐍💊
+
+La jararaca (*Bothrops jararaca*) es una víbora de Brasil, y uno de los trucos de su veneno es **bajarle la presión a su presa**. En **1965**, el farmacólogo brasileño **Sérgio Ferreira** describió en ese veneno un "factor potenciador de la bradicinina": una mezcla de pedacitos de proteína (péptidos) que hacía más fuerte a la bradicinina, una sustancia del cuerpo que afloja los vasos.
+
+Después se vio que esos péptidos **frenan una enzima tuya, la ECA** (enzima convertidora de angiotensina). La ECA convierte la angiotensina I en **angiotensina II**, que aprieta los vasos y sube la presión, y además rompe la bradicinina. Si la frenas, los vasos se aflojan y la presión baja.
+
+El problema: los péptidos del veneno solo funcionaban **inyectados**; tragados no se absorbían. En **1974**, en la farmacéutica **Squibb** (Nueva Jersey, EUA), **David Cushman y Miguel Ondetti** imaginaron cómo era el hueco de la ECA, con un **átomo de zinc** en el centro, tomando como modelo otra enzima parecida. Copiaron la punta de los péptidos del veneno y cambiaron una parte de su copia por un **grupo con azufre** que se agarra al zinc: eso la hizo **unas 2,000 veces más potente que su versión sin azufre**. Antes habían probado unos 2,000 compuestos al azar; con su modelo, en el camino al captopril sintetizaron solo unos 60.
+
+Así nació el **captopril**, el primer inhibidor de la ECA que se toma por la boca, aprobado por la FDA en **1981**. Hoy esa familia lleva la terminación **"-pril"**: enalapril, lisinopril… Según la OMS, en 2024 unos **1,400 millones de adultos de 30 a 79 años** tenían presión alta.
+
+El dibujo es esquemático. No cambies ni dejes tu medicina sin hablar con tu médico. **¿Alguien en tu casa toma una pastilla que termina en "pril"? 👇**"
+
+## Fuentes
+- **Ferreira 1965:** Ferreira SH, "A bradykinin-potentiating factor (BPF) present in the venom of *Bothrops jararaca*", *Br J Pharmacol Chemother* 24(1): 163–169 (febrero de 1965). https://pmc.ncbi.nlm.nih.gov/articles/PMC1704050/
+- **Ferreira, ECA y Squibb:** Bakhle YS, Ferreira BR, "Sérgio Ferreira and *Bothrops jararaca* at the Royal College of Surgeons, London", *Toxins* 15(9): 522 (2023). https://pmc.ncbi.nlm.nih.gov/articles/PMC10535891/ — «Also, in 1965, Sérgio published the first description of a bradykinin potentiating factor (BPF)»; «inhibited by Sérgio's BPF, and, unexpectedly, so was the lung ACE activity»; «finally approved by the FDA in 1981 as captopril, for the treatment of hypertension».
+- **Historia del diseño (fuente primaria de los autores):** Cushman DW, Ondetti MA, "History of the design of captopril and related inhibitors of angiotensin converting enzyme", *Hypertension* 17(4): 589–592 (1991). (copia: https://gwern.net/doc/biology/1991-cushman.pdf) — «dog lung ACE was inhibited by a mixture of peptides from the venom of the Brazilian viper Bothrops jararaca, a mixture first described in 1965 by Sergio Ferreira as bradykinin-potentiating factor (BPF)»; «Teprotide was shown to be an effective antihypertensive drug, albeit one with limited use because of its expense and lack of oral activity»; «we already considered to be a zinc metallopeptidase»; «a hypothetical model … ACE … with an active site similar to that of carboxypeptidase A, presumably including the presence of a zinc ion»; «Ala-Pro was the obvious choice from our studies with the B. jararaca peptides»; «From this moment of conception on March 13, 1974»; «when the carboxylate was replaced by a simple sulfhydryl function, a 2,000-fold increase in inhibitory potency was achieved»; «Unlike the 2,000 or so random compounds that we had previously tested»; «On the path from succinyl-L-proline to captopril, we synthesized and tested only about 60 compounds»; Squibb Institute for Medical Research, New Brunswick, N.J.
+- **Lasker 1999:** Lasker Foundation, premio Albert Lasker de Investigación Clínica 1999 a David Cushman y Miguel Ondetti. https://laskerfoundation.org/?p=1868 — «The snake venom contained potent peptide toxins that inhibit ACE, the enzyme that generates angiotensin II»; «The purified peptide did not work orally; the peptide was too large to be absorbed from the gut»; «It could only work when given by intravenous injection»; «captopril, the first orally active ACE inhibitor»; «Captopril entered clinical trials in 1977 and was approved by the Food and Drug Administration in 1981». (La misma página dice en otra parte "1982": se usa la fecha oficial de la FDA.)
+- **Aprobación FDA:** Drugs@FDA, CAPOTEN (captopril), NDA 018343, aprobación original **04/06/1981** (6 de abril de 1981). https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=018343
+- **Veneno que baja la presión de la presa y captopril del péptido de la jararaca:** Péterfi O et al., "Hypotensive Snake Venom Components—A Mini-Review", *Molecules* 24(15): 2778 (2019). https://pmc.ncbi.nlm.nih.gov/articles/PMC6695636/ — «Biochemical mechanisms involved in the immobilization of prey are paralysis and/or hypotension»; BPPs «inhibit the ACE and increase the hypotensive capability of bradykinin»; «Captopril, the first ACE inhibitor approved for human use, was developed based on the structure of a bradykinin potentiating peptide» de *B. jararaca*.
+- **Mecanismo (etiqueta oficial):** DailyMed, etiqueta de captopril tabletas USP (actualizada 16 dic 2013). https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6aeec5ee-94f1-4db3-92bf-7286900bea04 — «Angiotensin I is then converted by angiotensin converting enzyme (ACE) to angiotensin II, a potent endogenous vasoconstrictor substance»; «captopril may also interfere with the degradation of the vasodepressor peptide, bradykinin».
+- **Terminación "-pril":** OMS, *The use of stems in the selection of International Nonproprietary Names (INN)* (Stem Book 2018): «-pril … angiotensin-converting enzyme inhibitors». https://cdn.who.int/media/docs/default-source/international-nonproprietary-names-(inn)/stembook-2018.pdf
+- **Hipertensión (descripción):** OMS, nota descriptiva "Hypertension" (25 sep 2025): «An estimated 1.4 billion adults aged 30–79 years worldwide had hypertension in 2024»; «ACE inhibitors including enalapril and lisinopril relax blood vessels». https://www.who.int/news-room/fact-sheets/detail/hypertension
+- **Angiotensina I (10) y II (8):** "Nonatherosclerotic Renovascular Hypertension", *Surg Clin North Am* (2023), doi:10.1016/j.suc.2023.05.007 — «cleavage of circulating angiotensinogen … to the decapeptide angiotensin I. Angiotensin-converting enzyme then cleaves angiotensin I to form the octapeptide angiotensin II».
+- **Jararaca (dibujo):** Campbell & Lamar 2004 (vía Wikipedia "Bothrops jararaca"): «a series of pale-edged, dark brown, subtriangular or trapezoidal markings on either side of the body, the apices of which reach the vertebral line». Distribución: Brasil, NE de Paraguay y Misiones, Argentina (Reptile Database).
+- El dibujo del vaso, de la ECA y de las moléculas es **esquemático**.
+
+## Robert en pantalla
+
+Entra desde el cuadro 0, vuelve cada 5–9 s y nunca tapa el subtítulo ni el dato (lados `gancho`, `arriba-der`, `izq-alto`, `grande`). Tiempos calculados con las escenas del base narrada (61.5 s).
+
+### Versión narrada: 10 apariciones, **36.3 s en pantalla** (de 61.5 s) · 7 poses distintas
+
+| Segundos | Pose | Lado | Reacciona a |
+|---|---|---|---|
+| 0,0 - 4,9 | sorprendido (11) | gancho | «es nieta de un veneno de víbora» |
+| 6,2 - 9,6 | serio (10) | arriba-der | «su veneno le tumba la presión a su presa» |
+| 11,4 - 15,7 | señalando (13) | izq-alto | señala los pedacitos del veneno y la bradicinina |
+| 20,6 - 23,8 | bajando lentes (04) | arriba-der | la angiotensina II aprieta el vaso |
+| 27,5 - 30,4 | pensativo (06) | **grande** | re-gancho: «¿entonces tu abuela se toma veneno?» |
+| 31,1 - 34,2 | sonriendo (05) | arriba-der | «tragados, no pasaban del intestino» |
+| 36,5 - 39,2 | apuntando (02) | arriba-der | el hueco de la enzima con su zinc |
+| 40,5 - 44,4 | sorprendido (11) | **grande** | ×2,000 con el azufre (el dato más fuerte) |
+| 49,5 - 53,3 | bajando lentes (04) | arriba-der | 2,000 al azar contra 60 |
+| 53,9 - 57,9 | señalando (13) | gancho | cierre: «el truco de una víbora» |
+
+La tarjeta de cierre (58.0–61.5 s) lleva a Robert apuntando a cámara junto al logo (`CierreMarca robert=avatar_02`).

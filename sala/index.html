@@ -1,0 +1,949 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sala de Shots</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  /* Sala de proyección: pedir videos arriba, avance hacia 365, y una sección por serie con su cuadrícula vertical 9:16
+     (10 visibles; "Ver todos" abre la sección con scroll propio). Al tocar un shot: reproductor, ficha, aprobar voz y textos por red. */
+  :root {
+    --bg: #f3f6f7; --panel: #ffffff; --ink: #121417; --muted: #5d6870; --line: #dbe3e7;
+    --rosa: #e8458b; --amarillo: #f2b705; --menta: #12a88a; --cian: #1590c9;
+    --ok: #0e8a6f; --warn: #b26a00; --chip: #e9eff2;
+    --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+    --f-mono: "JetBrains Mono", ui-monospace, monospace;
+    --r: 14px;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0e0f12; --panel: #17191e; --ink: #f1f3f5; --muted: #9aa5ad; --line: #2a2e35;
+    --rosa: #ff5fa2; --amarillo: #ffc93c; --menta: #3dd6b3; --cian: #45b8ee;
+    --ok: #3dd6b3; --warn: #ffc93c; --chip: #22262d; color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #0e0f12; --panel: #17191e; --ink: #f1f3f5; --muted: #9aa5ad; --line: #2a2e35;
+    --rosa: #ff5fa2; --amarillo: #ffc93c; --menta: #3dd6b3; --cian: #45b8ee;
+    --ok: #3dd6b3; --warn: #ffc93c; --chip: #22262d; color-scheme: dark; }
+
+  body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 48px; display: grid; gap: 22px; }
+  h1, h2, h3 { font-family: var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(28px, 4.2vw, 44px); font-weight: 800; }
+  h1 span { color: var(--rosa); }
+  .lead { margin: 6px 0 0; color: var(--muted); max-width: 62ch; }
+  .lead b { color: var(--ink); font-variant-numeric: tabular-nums; }
+  .card-box { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: grid; gap: 12px; min-width: 0; }
+  .card-box > h2 { font-size: 20px; font-weight: 800; }
+  .hint { color: var(--muted); font-size: 13px; margin: 0; }
+
+  .tipos { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font: inherit; font-size: 14px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 7px 13px; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .chip:focus-visible, .card:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid var(--cian); outline-offset: 2px; }
+  .series-sel { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; }
+  .series-sel label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+  .fest-sel { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; font-size: 14px; }
+  .fest-sel label { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .fest-sel select { font: inherit; padding: 7px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); max-width: 100%; min-width: 0; }
+  .card .vinc { color: var(--ink); font-size: 12px; font-weight: 700; }
+  .cant { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 14px; }
+  .cant input[type=number] { width: 6.5em; }
+  .cant input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--rosa); }
+  input[type=number], textarea, .search { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 0; box-sizing: border-box; }
+  textarea { width: 100%; min-height: 80px; resize: vertical; }
+  .btn { font: inherit; font-weight: 700; border: 0; border-radius: 10px; padding: 10px 16px; cursor: pointer; background: var(--chip); color: var(--ink); text-decoration: none; display: inline-block; }
+  .btn.go { background: var(--rosa); color: #fff; }
+  .btn.sm { padding: 6px 10px; font-size: 13px; }
+  .btn[disabled] { opacity: .5; cursor: default; }
+  .cred { margin-top: 12px; max-width: 62ch; background: var(--panel); border: 1px solid var(--line); border-left: 6px solid var(--menta); border-radius: var(--r); padding: 12px 14px; display: grid; gap: 4px; }
+  .cred[data-n="bajo"] { border-left-color: var(--warn); background: color-mix(in srgb, var(--warn) 10%, var(--panel)); }
+  .cred[data-n="error"] { border-left-color: var(--rosa); }
+  .cred strong { font-family: var(--f-display); font-size: 15px; font-weight: 800; }
+  .cred p { margin: 0; font-size: 14px; }
+  .cred b { font-variant-numeric: tabular-nums; }
+  .cred[data-n="bajo"] b { color: var(--warn); }
+  .costo { margin: 0; font-size: 13px; color: var(--muted); }
+  .costo[data-n="bajo"] { color: var(--warn); font-weight: 700; }
+  .msg { font-size: 14px; color: var(--ok); min-height: 1.3em; margin: 0; }
+  .pedidos { display: grid; margin: 0; padding: 0; list-style: none; max-height: 16rem; overflow: auto; }
+  .pedidos li { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 10px; align-items: baseline; font-size: 14px; padding: 8px 0; border-top: 1px solid var(--line); }
+  .est { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--chip); white-space: nowrap; }
+  .est[data-e="en proceso"] { background: var(--cian); color: #04131c; }
+  .est[data-e="listo"] { background: var(--menta); color: #0b1d18; }
+  .est[data-e="pregunta"] { background: var(--amarillo); color: #241a00; }
+  .pedidos .txt { overflow-wrap: anywhere; min-width: 0; }
+  .pedidos .num { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .pedidos .res { grid-column: 2 / -1; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 10px; }
+  .serie { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; display: grid; gap: 8px; }
+  .serie-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .serie-top strong { font-family: var(--f-display); font-weight: 700; font-size: 15px; }
+  .serie-top span { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 13px; }
+  .track { height: 8px; border-radius: 4px; background: var(--chip); display: flex; overflow: hidden; }
+  .track i { display: block; height: 100%; }
+
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .search { flex: 1 1 220px; border-radius: 999px; }
+
+  .secciones { display: grid; gap: 28px; }
+  .sec-head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+  .sec-head h2 { font-size: 22px; font-weight: 800; }
+  .sec-head small { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(46%, 150px), 1fr)); gap: 14px; }
+  .grid.abierta { max-height: min(78vh, 900px); overflow: auto; padding-right: 4px; border-radius: var(--r); }
+  .card { all: unset; cursor: pointer; display: grid; gap: 8px; min-width: 0; align-content: start; }
+  .poster { position: relative; aspect-ratio: 9 / 16; max-width: 100%; border-radius: var(--r); overflow: hidden; background: var(--chip); border: 1px solid var(--line); }
+  .poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .poster .play { position: absolute; inset: auto 10px 10px auto; width: 34px; height: 34px; border-radius: 50%; background: rgba(0,0,0,.55); display: grid; place-items: center; }
+  .poster .play::after { content: ""; border-left: 11px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
+  .poster .dur { position: absolute; left: 8px; bottom: 10px; font: 12px var(--f-mono); color: #fff; background: rgba(0,0,0,.55); padding: 2px 6px; border-radius: 6px; }
+  .poster .none { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 13px; text-align: center; padding: 12px; }
+  .pill { position: absolute; top: 8px; left: 8px; font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 999px; background: var(--panel); color: var(--ink); }
+  .pill[data-e="Narrado listo"] { background: var(--menta); color: #0b1d18; }
+  .pill[data-e="Por revisar"] { background: var(--amarillo); color: #241a00; }
+  .pill[data-e="Voz aprobada"] { background: var(--cian); color: #04131c; }
+  .card h3 { font-weight: 700; font-size: 15px; line-height: 1.2; overflow-wrap: anywhere; }
+  .card small { color: var(--muted); font-size: 12px; }
+  .empty { color: var(--muted); padding: 32px 0; text-align: center; }
+
+  dialog { border: 0; padding: 0; background: transparent; max-width: min(1000px, 100vw - 24px); width: 100%; }
+  dialog::backdrop { background: rgba(6, 8, 10, .78); }
+  .player { background: var(--panel); color: var(--ink); border-radius: 18px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 330px) minmax(0, 1fr); max-height: calc(100vh - 24px); }
+  .holder { position: relative; background: #000; }
+  .player video { width: 100%; aspect-ratio: 9 / 16; background: #000; display: block; max-height: calc(100vh - 24px); }
+  .info { padding: 20px; display: grid; gap: 12px; align-content: start; min-width: 0; overflow: auto; }
+  .info > h2 { font-size: 24px; font-weight: 800; }
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; margin: 0; }
+  .kv dt { color: var(--muted); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .key { font-family: var(--f-mono); font-size: 13px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .redes-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .redes-tabs .chip { font-size: 13px; padding: 5px 10px; }
+  .texto { display: grid; gap: 6px; }
+  .texto label { font-size: 12px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+  .texto pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 14px/1.45 var(--f-body); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; max-height: 14rem; overflow: auto; }
+  .texto .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .close { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(0,0,0,.55); color: #fff; font-size: 20px; cursor: pointer; }
+  /* Mis archivos: subir con etiquetas, editar etiquetas, elegir para un pedido */
+  .campo { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 0; width: 100%; box-sizing: border-box; }
+  .lbl { font-size: 13px; font-weight: 700; color: var(--muted); }
+  .sug { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sug .chip, .tags .chip { font-size: 12px; padding: 4px 10px; }
+  .drop { display: grid; place-items: center; gap: 4px; text-align: center; padding: 22px 14px; border: 2px dashed var(--line); border-radius: var(--r); cursor: pointer; background: var(--bg); }
+  .drop.over { border-color: var(--rosa); background: color-mix(in srgb, var(--rosa) 8%, var(--bg)); }
+  .drop b { font-family: var(--f-display); font-size: 17px; color: var(--rosa); }
+  .drop span { color: var(--muted); font-size: 13px; }
+  .drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+  .drop:focus-within { outline: 3px solid var(--cian); outline-offset: 2px; }
+  .subiendo { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+  .subiendo li[data-e="error"] { color: var(--warn); }
+  .agrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 12px; max-height: min(80vh, 900px); overflow: auto; }
+  .arch { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; display: grid; align-content: start; background: var(--bg); min-width: 0; }
+  .arch[data-sel="true"] { border-color: var(--rosa); box-shadow: 0 0 0 2px var(--rosa); }
+  .arch .vista { aspect-ratio: 4 / 3; background: var(--chip); display: grid; place-items: center; overflow: hidden; }
+  .arch .vista img, .arch .vista video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .arch .vista span { font: 700 13px var(--f-mono); color: var(--muted); }
+  .arch .cuerpo { padding: 10px; display: grid; gap: 8px; min-width: 0; }
+  .arch .nombre { font-size: 13px; font-weight: 700; overflow-wrap: anywhere; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+  .tag { display: inline-flex; align-items: center; gap: 2px; font-size: 12px; background: var(--chip); border-radius: 999px; padding: 2px 4px 2px 9px; }
+  .tag button { all: unset; cursor: pointer; padding: 0 5px; border-radius: 50%; font-size: 14px; line-height: 1; color: var(--muted); }
+  .tag button:focus-visible { outline: 2px solid var(--cian); }
+  .tags input { font: inherit; font-size: 12px; border: 1px dashed var(--line); background: transparent; color: var(--ink); border-radius: 999px; padding: 3px 9px; width: 9em; min-width: 0; }
+  .arch .pie { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 13px; }
+  .arch .pie label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+  .borrar { all: unset; cursor: pointer; color: var(--muted); font-size: 12px; text-decoration: underline; }
+  .adj-pedido { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 14px; }
+  .adj-pedido .tag { background: color-mix(in srgb, var(--rosa) 16%, var(--chip)); }
+  .pub-redes { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pub-redes .chip { font-size: 13px; padding: 5px 10px; }
+  .pub-redes .chip[data-hecho="true"]::after { content: " ✓"; }
+  .tt { border: 1px solid var(--line); border-radius: var(--r); padding: 12px; display: grid; gap: 10px; background: var(--bg); }
+  .tt h4 { margin: 0; font-family: var(--f-display); font-size: 15px; }
+  .tt .cuenta { font-size: 14px; }
+  .tt .fila { display: grid; gap: 4px; }
+  .tt select, .tt textarea { font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); max-width: 100%; min-width: 0; box-sizing: border-box; }
+  .tt textarea { min-height: 110px; }
+  .tt .checks { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 14px; }
+  .tt .checks label, .tt .sub label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+  .tt .sub { display: grid; gap: 4px; padding-left: 22px; font-size: 14px; }
+  .tt .legal { font-size: 13px; color: var(--muted); margin: 0; }
+  .tt .legal a { color: var(--ink); }
+  .tt .aviso { font-size: 13px; color: var(--warn); margin: 0; }
+  /* Hoy se publica (calendario 1 diario, doc estado/calendario) */
+  .hoy { border-left: 6px solid var(--rosa); }
+  .hoy-fila { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: center; }
+  .hoy-fila + .hoy-fila { border-top: 1px solid var(--line); padding-top: 12px; }
+  .hoy-fila .poster { width: 96px; border-radius: 10px; cursor: pointer; }
+  .hoy-fila h3 { font-size: 17px; font-weight: 800; line-height: 1.2; overflow-wrap: anywhere; }
+  .hoy-fila .redes-ok { font-size: 13px; color: var(--muted); margin: 4px 0 8px; }
+  .hoy-fila .redes-ok b { color: var(--ok); }
+  .prox { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 14px; }
+  .prox li { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 8px; padding: 5px 0; border-top: 1px solid var(--line); }
+  .prox li span:first-child { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .prox li button { all: unset; cursor: pointer; overflow-wrap: anywhere; }
+  .prox li button:hover { text-decoration: underline; }
+  .card .sale { color: var(--ink); font-size: 12px; font-weight: 700; }
+  @media (max-width: 760px) { .player { grid-template-columns: 1fr; overflow: auto; } .player video { max-height: 58vh; } }
+  @media (prefers-reduced-motion: no-preference) { .card .poster { transition: transform .18s ease-out; } .card:hover .poster { transform: translateY(-3px); } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Sala de <span>Shots</span></h1>
+    <p class="lead" id="lead">Cargando tus shots…</p>
+    <div class="cred" id="cred" aria-live="polite"><strong>Créditos de voz</strong><p id="cred-txt">Cargando tus créditos de ElevenLabs…</p><p class="hint" id="cred-nota"></p></div>
+  </header>
+
+  <section class="card-box hoy" id="hoy" aria-label="Hoy se publica">
+    <h2 id="hoy-tit">Hoy se publica</h2>
+    <div id="hoy-cuerpo"><p class="hint">Cargando el calendario…</p></div>
+    <h3 style="font-size:15px">Lo que sigue</h3>
+    <ul class="prox" id="hoy-prox"></ul>
+  </section>
+
+  <section class="card-box" aria-label="Pedir videos">
+    <h2>Pedir videos</h2>
+    <div class="tipos" id="p-tipos" role="group" aria-label="Tipo de video">
+      <button class="chip" type="button" data-t="serie" aria-pressed="true">Shot de serie</button>
+      <button class="chip" type="button" data-t="festivo" aria-pressed="false">Festivo</button>
+      <button class="chip" type="button" data-t="robert" aria-pressed="false">Shot de Robert</button>
+      <button class="chip" type="button" data-t="documental" aria-pressed="false">Documental</button>
+      <button class="chip" type="button" data-t="libre" aria-pressed="false">Shot libre</button>
+      <button class="chip" type="button" data-t="formal" aria-pressed="false">Shot formal</button>
+      <button class="chip" type="button" data-t="organico" aria-pressed="false">Shot orgánico</button>
+      <button class="chip" type="button" data-t="otro" aria-pressed="false">Otro</button>
+    </div>
+    <p class="hint" id="p-desc"></p>
+    <div class="series-sel" id="p-series" aria-label="Series">
+      <label><input type="checkbox" id="p-todas"> <b>Todas</b></label>
+      <label><input type="checkbox" value="Fungi Mati" checked> Fungi Mati</label>
+      <label><input type="checkbox" value="Biotecnológico"> Biotecnológico</label>
+      <label><input type="checkbox" value="Ambiental"> Ambiental</label>
+      <label><input type="checkbox" value="Científico"> Científico</label>
+      <label><input type="checkbox" value="Químico"> Químico</label>
+      <label><input type="checkbox" value="IA"> IA</label>
+    </div>
+    <div class="fest-sel" id="p-fest" hidden>
+      <label>Festividad <select id="p-festividad" aria-label="Festividad"></select></label>
+      <label>Serie vinculada <select id="p-vinculada" aria-label="Serie vinculada">
+        <option>Fungi Mati</option><option>Biotecnológico</option><option>Ambiental</option><option>Científico</option><option>Químico</option><option>IA</option><option>Robert</option>
+      </select></label>
+    </div>
+    <div class="cant">
+      <label for="p-cant" id="p-cant-label">Cuántos de cada serie</label>
+      <input type="number" id="p-cant" min="1" max="1000" value="1">
+      <input type="range" id="p-rango" min="1" max="100" value="1" aria-label="Cantidad">
+    </div>
+    <textarea id="p-idea" aria-label="Tu idea" placeholder=""></textarea>
+    <div class="adj-pedido" id="p-adj"></div>
+    <div class="actions"><button class="btn go" id="p-enviar" type="button">Pedir 1 video</button></div>
+    <p class="msg" id="p-msg"></p>
+    <ul class="pedidos" id="p-lista"></ul>
+  </section>
+
+  <section class="card-box" aria-label="Mis archivos" id="a-box">
+    <h2>Mis archivos</h2>
+    <p class="hint">Tus fotos, videos y documentos para hacer shots más orgánicos. Escribe las etiquetas antes de adjuntar y se ponen a todo lo que subas; después puedes cambiarlas en cada archivo. Marca «Usar en mi pedido» y el archivo viaja con tu siguiente pedido. Hasta 20 MB por archivo: fotos, MP4 o WebM, PDF y texto.</p>
+    <div style="display:grid;gap:6px">
+      <label class="lbl" for="a-tags">Etiquetas para lo que adjuntes (sepáralas con comas)</label>
+      <input class="campo" id="a-tags" type="text" placeholder="Por ejemplo: laboratorio, Fungi Mati, B-Eco" autocomplete="off">
+      <div class="sug" id="a-sug" role="group" aria-label="Etiquetas sugeridas"></div>
+    </div>
+    <label class="drop" id="a-drop"><input type="file" id="a-file" multiple accept="image/png,image/jpeg,image/gif,image/webp,video/mp4,video/webm,application/pdf,text/plain,text/markdown,text/csv,.md,.txt,.csv"><b>Adjuntar archivos</b><span>Toca para elegir o arrástralos aquí</span></label>
+    <p class="hint" id="a-sinpermiso" hidden>Solo quien puede editar la Sala puede adjuntar archivos.</p>
+    <ul class="subiendo" id="a-subiendo"></ul>
+    <div class="bar" id="a-filtros"></div>
+    <div class="agrid" id="a-grid"></div>
+  </section>
+
+  <section aria-label="Avance hacia 365 por serie (los festivos no cuentan aquí)">
+    <div class="meta" id="meta"></div>
+    <p class="hint" style="margin-top:8px">Cada barra es una serie completa de 365 shots: menta, narrados; amarillo, por revisar o en producción.</p>
+  </section>
+
+  <section aria-label="Tus videos">
+    <div class="bar" id="filtros">
+      <button class="chip" data-f="" aria-pressed="true">Todos</button>
+      <button class="chip" data-f="Por revisar" aria-pressed="false">Por revisar</button>
+      <button class="chip" data-f="Voz aprobada" aria-pressed="false">Voz aprobada</button>
+      <button class="chip" data-f="Narrado listo" aria-pressed="false">Narrado listo</button>
+      <button class="chip" data-f="En producción" aria-pressed="false">En producción</button>
+      <input class="search" id="q" type="search" placeholder="Buscar tema o clave" aria-label="Buscar videos">
+    </div>
+  </section>
+
+  <div class="secciones" id="secciones"><p class="empty">Aquí aparecen tus videos, por serie, en cuanto cargan.</p></div>
+</div>
+
+<dialog id="dlg" aria-label="Reproductor">
+  <div class="player">
+    <div class="holder"><video id="vid" controls playsinline preload="metadata"></video><button class="close" id="cerrar" aria-label="Cerrar">×</button></div>
+    <div class="info">
+      <h2 id="d-titulo">—</h2>
+      <dl class="kv">
+        <dt>Serie</dt><dd id="d-serie">—</dd>
+        <dt>Estado</dt><dd id="d-estado">—</dd>
+        <dt>Versión</dt><dd id="d-version">—</dd>
+        <dt>Voz</dt><dd id="d-chars">—</dd>
+        <dt>Clave</dt><dd class="key" id="d-key">—</dd>
+      </dl>
+      <div class="actions">
+        <button class="btn go" id="aprobar" type="button">Aprobar voz</button>
+        <a class="btn" id="hd" target="_blank" rel="noopener" href="#">Video en calidad completa</a>
+      </div>
+      <p class="costo" id="d-costo" hidden></p>
+      <p class="msg" id="msg"></p>
+      <h3 style="font-size:17px">Textos para redes</h3>
+      <div class="redes-tabs" id="redes-tabs" role="group" aria-label="Red social"></div>
+      <div id="redes-cuerpo"></div>
+      <h3 style="font-size:17px">Publicar en redes</h3>
+      <p class="hint" id="pub-hint">Marca dónde quieres publicar este video y da clic en «Publicar». La nube lo sube con su texto de cada red. YouTube queda privado mientras Google revisa la app.</p>
+      <div class="pub-redes" id="pub-redes" role="group" aria-label="Redes donde publicar"></div>
+      <div class="tt" id="tt" hidden>
+        <h4>Publicar en TikTok</h4>
+        <p class="cuenta" id="tt-cuenta">Cuenta de TikTok: —</p>
+        <div class="checks" role="radiogroup" aria-label="Cómo llega a TikTok">
+          <label><input type="radio" name="tt-modo" value="directo" checked> Publicar directo</label>
+          <label><input type="radio" name="tt-modo" value="borrador"> Mandar como borrador a mi app</label>
+        </div>
+        <div id="tt-directo" style="display:grid;gap:10px">
+          <div class="fila"><label class="lbl" for="tt-texto">Descripción (sale de la pestaña TikTok de este video; puedes cambiarla)</label>
+            <textarea id="tt-texto" maxlength="2200"></textarea><small class="hint" id="tt-cuenta-car"></small></div>
+          <div class="fila"><label class="lbl" for="tt-priv">¿Quién puede ver este video?</label>
+            <select id="tt-priv"><option value="">Elige una opción</option></select></div>
+          <div class="fila"><span class="lbl">Permitir que la gente…</span>
+            <div class="checks"><label><input type="checkbox" id="tt-com"> Comente</label><label><input type="checkbox" id="tt-duo"> Haga dúo</label><label><input type="checkbox" id="tt-sti"> Haga stitch</label></div></div>
+          <div class="fila"><label class="checks"><input type="checkbox" id="tt-ia" checked> Etiqueta «Contenido generado con IA» (la voz es tu clon de IA)</label></div>
+          <div class="fila"><label class="checks"><input type="checkbox" id="tt-com-onoff"> Este video promociona una marca, producto o servicio</label>
+            <div class="sub" id="tt-marcas" hidden>
+              <label><input type="checkbox" id="tt-propia"> Tu marca (te promocionas a ti o a tu negocio)</label>
+              <label><input type="checkbox" id="tt-pagada"> Contenido de marca (te pagaron o te dieron algo a cambio)</label>
+              <p class="hint" id="tt-marca-txt"></p>
+            </div></div>
+          <p class="legal" id="tt-legal"></p>
+          <p class="aviso" id="tt-aviso">Mientras TikTok no apruebe la publicación directa, el video llega como borrador a tu app de TikTok: lo abres, pegas el texto (pestaña TikTok, arriba) y lo publicas. En cuanto TikTok apruebe, sale publicado solo con estas opciones.</p>
+        </div>
+        <p class="hint" id="tt-borrador" hidden>Llega a tus notificaciones de TikTok como borrador: lo abres, pegas el texto (pestaña TikTok, arriba) y lo publicas tú.</p>
+      </div>
+      <div class="actions"><button class="btn go" id="pub-enviar" type="button">Publicar</button></div>
+      <p class="msg" id="pub-msg"></p>
+      <ul class="pedidos" id="pub-lista"></ul>
+      <h3 style="font-size:17px">Corregir este shot</h3>
+      <p class="hint">Escribe qué cambiar: un dato, una frase, una escena, el ritmo, el título, los textos… La nube lo corrige, lo vuelve a verificar y reemplaza este video. Si cambia lo que se narra, te pedirá aprobar la voz otra vez.</p>
+      <textarea id="c-texto" aria-label="Corrección" placeholder="Por ejemplo: en el segundo 20 la cifra es de 2023, no de 2021; quita el chiste del final; el título debe decir…"></textarea>
+      <div class="actions"><button class="btn" id="c-enviar" type="button">Enviar corrección</button></div>
+      <p class="msg" id="c-msg"></p>
+      <ul class="pedidos" id="c-lista"></ul>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const SERIES = ['Fungi Mati', 'Biotecnológico', 'Ambiental', 'Científico', 'Químico', 'IA'];
+  const SECCIONES = [...SERIES, 'Festivo', 'Robert', 'Documental', 'Libre', 'Formal', 'Otro'];
+  const NOMBRE_SEC = { Festivo: 'Shots festivos', Robert: 'Shots de Robert', Documental: 'Documentales', Libre: 'Shots libres', Formal: 'Shots formales', Otro: 'Otros' };
+  const VISIBLES = 10, GOAL = 365;
+  // Festividades de calendario/festividades.json (fechas MM-DD). Los festivos tienen numeración propia y van vinculados a una serie.
+  const FESTIVIDADES = [{"n": "Día de Muertos", "f": ["11-01", "11-02"]}, {"n": "Día Mundial de la Ciencia para la Paz", "f": ["11-10"]}, {"n": "Revolución Mexicana", "f": ["11-20"]}, {"n": "Día de la Virgen de Guadalupe", "f": ["12-12"]}, {"n": "Posadas", "f": ["12-16"]}, {"n": "Navidad", "f": ["12-24", "12-25"]}, {"n": "Año Nuevo", "f": ["12-31", "01-01"]}, {"n": "Día de Reyes", "f": ["01-06"]}, {"n": "Candelaria", "f": ["02-02"]}, {"n": "Día de la Mujer y la Niña en la Ciencia", "f": ["02-11"]}, {"n": "San Valentín", "f": ["02-14"]}, {"n": "Día Internacional de la Mujer", "f": ["03-08"]}, {"n": "Equinoccio de primavera", "f": ["03-20"]}, {"n": "Día Mundial del Agua", "f": ["03-22"]}, {"n": "Semana Santa", "f": ["03-25", "03-26"]}, {"n": "Día de la Tierra", "f": ["04-22"]}, {"n": "Día del Niño", "f": ["04-30"]}, {"n": "Batalla de Puebla", "f": ["05-05"]}, {"n": "Día de las Madres", "f": ["05-10"]}, {"n": "Día del Maestro", "f": ["05-15"]}, {"n": "Día de la Biodiversidad", "f": ["05-22"]}, {"n": "Día del Medio Ambiente", "f": ["06-05"]}, {"n": "Día de los Océanos", "f": ["06-08"]}, {"n": "Día del Padre", "f": ["06-20"]}, {"n": "Solsticio de verano", "f": ["06-21"]}, {"n": "Día de la Juventud", "f": ["08-12"]}, {"n": "Fiestas Patrias", "f": ["09-15", "09-16"]}, {"n": "Equinoccio de otoño", "f": ["09-22"]}, {"n": "Día Mundial de la Alimentación", "f": ["10-16"]}, {"n": "Halloween", "f": ["10-31"]}];
+  const MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  const proxima = (md) => { const h = new Date(); h.setHours(0, 0, 0, 0); let d = new Date(h.getFullYear(), +md.slice(0, 2) - 1, +md.slice(3)); if (d < h) d = new Date(h.getFullYear() + 1, d.getMonth(), d.getDate()); return d; };
+  const REDES = [['youtube', 'YouTube'], ['tiktok', 'TikTok'], ['instagram', 'Instagram'], ['facebook', 'Facebook'], ['linkedin', 'LinkedIn'], ['x', 'X'], ['threads', 'Threads'], ['comentario', 'Comentario fijado']];
+  const TIPOS = {
+    festivo: { n: 'Festivo', d: 'Shot especial de una festividad (61–75 s), con numeración propia de Shot Festivo y vinculado a una de tus series. Elige la festividad y la serie; si dejas la idea vacía, la nube elige una de la lista de ideas.', ph: 'Opcional: la idea. Vacío = la nube elige una idea de esa festividad.' },
+    serie: { n: 'Shot de serie', d: 'Shots de 61–62 s de tus series. Marca una o varias series y cuántos de cada una; la nube elige temas nuevos sin repetir, o usa tu idea si la escribes.', ph: 'Opcional: un tema o idea. Vacío = la nube elige los temas.' },
+    robert: { n: 'Shot de Robert', d: 'Shots sobre ti, tu vida e historia, con tus datos confirmados. Si falta un dato, la nube te pregunta en vez de inventarlo.', ph: 'De qué parte de tu vida va (por ejemplo: mi recámara-laboratorio, el filtro UV)…' },
+    documental: { n: 'Documental', d: 'Video horizontal para YouTube (8–15 min) sobre el tema que dictes, más varios cortos verticales con sus momentos clave.', ph: 'El tema y lo que quieres contar; si tienes datos, fotos o una postura, escríbelos aquí…' },
+    libre: { n: 'Shot libre', d: 'Con el mismo estilo del canal, sobre lo que quieras (no entra a la numeración de las series).', ph: 'De qué va y para qué lo quieres…' },
+    formal: { n: 'Shot formal', d: 'Sin numerar, sobrio y profesional, para trabajos universitarios y convocatorias. Igual de verificado.', ph: 'Para qué es (materia, convocatoria), tema, duración y requisitos que te pidieron…' },
+    organico: { n: 'Shot orgánico', d: 'Hecho con tus propias fotos y videos, más natural y menos animado. Adjúntalos en «Mis archivos» (abajo), etiquétalos y marca «Usar en mi pedido».', ph: 'Qué quieres contar con tus archivos y en qué orden van…' },
+    otro: { n: 'Otro', d: 'Cualquier formato nuevo para experimentar fuera de las series.', ph: 'Describe lo que imaginas…' },
+  };
+  const S = { shots: [], aprob: {}, pedidos: [], filtro: '', q: '', actual: null, db: null, abiertas: {}, tipo: 'serie', red: 'youtube', archivos: [], sel: new Set(), assets: null, filtroTag: '' };
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => new Intl.NumberFormat('es-MX').format(n);
+  const mmss = (t) => { t = Math.round(t || 0); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
+  const estadoDe = (s) => (S.aprob[s.id] && s.estado === 'Por revisar') ? 'Voz aprobada' : s.estado;
+  const seccionDe = (s) => SECCIONES.includes(s.serie) ? s.serie : 'Otro';
+  const numerada = (s) => s.numero != null && (SERIES.includes(s.serie) || s.serie === 'Robert' || s.serie === 'Festivo');
+  const etiqueta = (s) => `${s.serie}${numerada(s) ? ' #' + String(s.numero).padStart(2, '0') : ''}${s.serie === 'Festivo' && s.serie_vinculada ? ` · vinculado a ${s.serie_vinculada}` : ''}${s.especial ? ` · ${s.especial}` : ''}`;
+  // Festivo: el título guardado ya trae «<Festividad> · <Serie vinculada>: …», así queda «Shot Festivo #NN · <Festividad> · <Serie>: <título>».
+  const tituloCompleto = (s) => numerada(s) ? `Shot ${s.serie} #${String(s.numero).padStart(2, '0')}${s.serie === 'Festivo' ? ' · ' : ': '}${s.titulo}` : s.titulo;
+  const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+  const copiar = async (texto, boton) => {
+    const ok = () => { const t = boton.textContent; boton.textContent = 'Copiado'; setTimeout(() => { boton.textContent = t; }, 1400); };
+    try { await navigator.clipboard.writeText(texto); ok(); }
+    catch (e) { const pre = boton.closest('.texto')?.querySelector('pre'); if (pre) { const r = document.createRange(); r.selectNodeContents(pre); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); } boton.textContent = 'Selecciona y copia'; }
+  };
+
+  /* ---------- pedir ---------- */
+  const seriesMarcadas = () => [...document.querySelectorAll('#p-series input[value]')].filter((c) => c.checked).map((c) => c.value);
+  function pintarPedir() {
+    const t = TIPOS[S.tipo];
+    document.querySelectorAll('#p-tipos .chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.t === S.tipo)));
+    $('p-desc').textContent = t.d; $('p-idea').placeholder = t.ph;
+    $('p-series').hidden = S.tipo !== 'serie';
+    $('p-fest').hidden = S.tipo !== 'festivo';
+    $('p-cant-label').textContent = S.tipo === 'serie' ? 'Cuántos de cada serie' : 'Cuántos';
+    const n = Math.max(1, Math.min(1000, +$('p-cant').value || 1));
+    const total = S.tipo === 'serie' ? n * seriesMarcadas().length : n;
+    $('p-enviar').textContent = total === 1 ? 'Pedir 1 video' : `Pedir ${fmt(total)} videos`;
+    $('p-enviar').disabled = total === 0;
+    $('p-todas').checked = seriesMarcadas().length === SERIES.length;
+  }
+  document.querySelectorAll('#p-tipos .chip').forEach((c) => c.addEventListener('click', () => { S.tipo = c.dataset.t; pintarPedir(); }));
+  $('p-todas').addEventListener('change', (e) => { document.querySelectorAll('#p-series input[value]').forEach((c) => { c.checked = e.target.checked; }); pintarPedir(); });
+  document.querySelectorAll('#p-series input[value]').forEach((c) => c.addEventListener('change', pintarPedir));
+  $('p-cant').addEventListener('input', () => { $('p-rango').value = Math.min(100, +$('p-cant').value || 1); pintarPedir(); });
+  $('p-rango').addEventListener('input', () => { $('p-cant').value = $('p-rango').value; pintarPedir(); });
+  $('p-enviar').addEventListener('click', async () => {
+    if (!S.db) { $('p-msg').textContent = 'La base del panel no está disponible en esta vista.'; return; }
+    const idea = $('p-idea').value.trim();
+    const archivos = S.archivos.filter((a) => S.sel.has(a.id)).map((a) => ({ id: a.id, asset: a.asset, nombre: a.nombre || '', tipo: a.tipo || '', etiquetas: a.etiquetas || [] }));
+    if (S.tipo !== 'serie' && S.tipo !== 'festivo' && !idea) { $('p-msg').textContent = 'Escribe tu idea primero.'; return; }
+    if (S.tipo === 'organico' && !archivos.length) { $('p-msg').textContent = 'Para un shot orgánico marca al menos un archivo en «Mis archivos».'; return; }
+    const cantidad = Math.max(1, Math.min(1000, +$('p-cant').value || 1));
+    const vinculada = $('p-vinculada').value, festividad = $('p-festividad').value;
+    const series = S.tipo === 'serie' ? seriesMarcadas() : (S.tipo === 'festivo' ? [vinculada] : []);
+    const extra = S.tipo === 'festivo' ? { festividad, serie_vinculada: vinculada } : {};
+    const total = S.tipo === 'serie' ? cantidad * series.length : cantidad;
+    $('p-enviar').disabled = true;
+    try {
+      await S.db.collection('pedidos').add({ tipo: S.tipo, series, ...extra, cantidad, total, hechos: 0, idea, archivos, estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
+      $('p-idea').value = ''; S.sel.clear(); pintarArchivos();
+      $('p-msg').textContent = `Pedido enviado (${fmt(total)} ${total === 1 ? 'video' : 'videos'}). La nube lo toma en su siguiente ronda, cada 4 h, o al instante si en una sesión escribes «atiende mis pedidos».`;
+    } catch (e) { $('p-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
+    pintarPedir();
+  });
+  function pintarPedidos() {
+    const ul = $('p-lista'); ul.replaceChildren();
+    S.pedidos.forEach((p) => {
+      const li = el('li');
+      const e = el('span', 'est', p.estado || 'pendiente'); e.dataset.e = p.estado || 'pendiente';
+      const quien = p.tipo === 'serie' ? `${(p.series || []).join(', ') || 'serie'}` : p.tipo === 'festivo' ? `Festivo · ${p.festividad || '¿festividad?'} · ${p.serie_vinculada || (p.series || [])[0] || ''}` : (TIPOS[p.tipo]?.n || p.tipo);
+      const nA = (p.archivos || []).length;
+      const idea = (p.idea || '').length > 140 ? p.idea.slice(0, 137).trimEnd() + '…' : (p.idea || '');
+      const t = el('span', 'txt', `${quien}${idea ? ': ' + idea : ''}${nA ? ` (${nA} ${nA === 1 ? 'archivo' : 'archivos'})` : ''}`);
+      if (idea !== (p.idea || '')) t.title = p.idea;
+      const total = p.total || p.cantidad || 1;
+      li.append(e, t, el('span', 'num', `${fmt(p.hechos || 0)} / ${fmt(total)}`));
+      if (p.resultado) li.append(el('span', 'res', p.resultado));
+      ul.append(li);
+    });
+  }
+
+  /* ---------- avance y secciones ---------- */
+  function render() {
+    const shots = S.shots.filter((s) => s.video);   // solo versiones terminadas
+    const listos = shots.filter((s) => estadoDe(s) === 'Narrado listo').length;
+    const revisar = shots.filter((s) => estadoDe(s) === 'Por revisar').length;
+    const lead = $('lead'); lead.replaceChildren();
+    if (!shots.length) lead.textContent = 'Todavía no hay videos en la Sala.';
+    else lead.append('Tienes ', el('b', null, fmt(shots.length)), ' videos: ', el('b', null, fmt(listos)), ' ya narrados y ', el('b', null, fmt(revisar)), ' esperando que los veas para aprobar su voz.');
+
+    const meta = $('meta'); meta.replaceChildren();
+    SERIES.forEach((serie) => {
+      const mine = shots.filter((s) => s.serie === serie); const ok = mine.filter((s) => estadoDe(s) === 'Narrado listo').length;
+      const card = el('div', 'serie'); const top = el('div', 'serie-top');
+      top.append(el('strong', null, serie), el('span', null, `${fmt(mine.length)} / ${GOAL}`));
+      const tr = el('div', 'track'); tr.setAttribute('role', 'img'); tr.setAttribute('aria-label', `${serie}: ${mine.length} de ${GOAL}, ${ok} narrados`);
+      const a = el('i'); a.style.width = `${100 * ok / GOAL}%`; a.style.background = 'var(--menta)';
+      const z = el('i'); z.style.width = `${100 * (mine.length - ok) / GOAL}%`; z.style.background = 'var(--amarillo)';
+      tr.append(a, z); card.append(top, tr); meta.append(card);
+    });
+
+    const cont = $('secciones'); cont.replaceChildren();
+    const q = S.q.toLowerCase();
+    const vis = shots.filter((s) => (!S.filtro || estadoDe(s) === S.filtro) && (!q || `${s.id} ${s.serie} ${s.titulo}`.toLowerCase().includes(q)));
+    let alguna = false;
+    SECCIONES.forEach((sec) => {
+      const lista = vis.filter((s) => seccionDe(s) === sec).sort((x, y) => (x.numero ?? -1) - (y.numero ?? -1) || String(x.id).localeCompare(String(y.id)));
+      if (!lista.length) return;
+      alguna = true;
+      const box = el('section'); box.setAttribute('aria-label', NOMBRE_SEC[sec] || sec);
+      const head = el('div', 'sec-head');
+      const izq = el('div'); izq.append(el('h2', null, NOMBRE_SEC[sec] || sec));
+      const pend = lista.filter((s) => estadoDe(s) === 'Por revisar').length;
+      izq.append(el('small', null, `${fmt(lista.length)} ${lista.length === 1 ? 'video' : 'videos'}${pend ? ` · ${fmt(pend)} por revisar` : ''}`));
+      head.append(izq);
+      const abierta = !!S.abiertas[sec];
+      if (lista.length > VISIBLES) {
+        const b = el('button', 'btn sm', abierta ? 'Mostrar menos' : `Ver los ${fmt(lista.length)}`); b.type = 'button';
+        b.setAttribute('aria-expanded', String(abierta));
+        b.addEventListener('click', () => { S.abiertas[sec] = !abierta; render(); });
+        head.append(b);
+      }
+      const grid = el('div', 'grid' + (abierta ? ' abierta' : ''));
+      (abierta ? lista : lista.slice(0, VISIBLES)).forEach((s) => grid.append(tarjeta(s)));
+      box.append(head, grid); cont.append(box);
+    });
+    if (!alguna) cont.append(el('p', 'empty', shots.length ? 'Ningún video coincide con el filtro.' : 'Aquí aparecen tus videos, por serie, en cuanto cargan.'));
+  }
+  function tarjeta(s) {
+    const card = el('button', 'card'); card.type = 'button';
+    const po = el('div', 'poster');
+    if (s.poster) { const im = el('img'); im.loading = 'lazy'; im.alt = ''; im.src = '/_blob/' + s.poster; po.append(im); }
+    else po.append(el('div', 'none', 'Sin video todavía'));
+    const pill = el('span', 'pill', estadoDe(s)); pill.dataset.e = estadoDe(s); po.append(pill);
+    if (s.video) { po.append(el('span', 'play')); po.append(el('span', 'dur', mmss(s.dur))); }
+    card.append(po, el('h3', null, tituloCompleto(s)));
+    if (s.serie === 'Festivo') card.append(el('small', 'vinc', `Serie vinculada: ${s.serie_vinculada || '—'}${s.especial ? ' · ' + s.especial : ''}`));
+    const f = fechaDe(s.id); if (f) card.append(el('small', 'sale', `Sale el ${fechaTxt(f)}`));
+    card.append(el('small', null, s.id));
+    card.addEventListener('click', () => abrir(s));
+    return card;
+  }
+
+  /* ---------- hoy se publica (doc estado/calendario: {dias: {AAAA-MM-DD: [claves]}}; 1 shot diario) ---------- */
+  S.cal = null;
+  const isoLocal = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const fechaTxt = (iso) => { const [y, m, d] = iso.split('-').map(Number); const f = new Date(y, m - 1, d); return f.toLocaleDateString('es-MX', { weekday: 'short', day: 'numeric', month: 'short' }); };
+  const fechaDe = (id) => { if (!S.cal || !S.cal.dias) return null; if (!S.calInv) { S.calInv = {}; Object.entries(S.cal.dias).forEach(([f, ks]) => ks.forEach((k) => { S.calInv[k] = f; })); } return S.calInv[id] || null; };
+  function pintarHoy() {
+    const cuerpo = $('hoy-cuerpo'), prox = $('hoy-prox'); cuerpo.replaceChildren(); prox.replaceChildren();
+    if (!S.cal || !S.cal.dias) { cuerpo.append(el('p', 'hint', 'Todavía no hay calendario de publicación.')); return; }
+    const hoy = isoLocal(new Date());
+    const dias = Object.keys(S.cal.dias).sort();
+    const primero = dias.find((f) => f >= hoy);
+    $('hoy-tit').textContent = primero === hoy ? `Hoy se publica · ${fechaTxt(hoy)}` : primero ? `Próxima publicación · ${fechaTxt(primero)}` : 'Hoy se publica';
+    if (!primero) { cuerpo.append(el('p', 'hint', 'Ya no hay shots en el calendario. Pide más en «Pedir videos».')); return; }
+    S.cal.dias[primero].forEach((k) => {
+      const s = S.shots.find((x) => x.id === k);
+      const fila = el('div', 'hoy-fila');
+      const po = el('div', 'poster');
+      if (s && s.poster) { const im = el('img'); im.alt = ''; im.src = '/_blob/' + s.poster; po.append(im); } else po.append(el('div', 'none', '—'));
+      const der = el('div');
+      der.append(el('h3', null, s ? tituloCompleto(s) : k));
+      const hechas = (s && s.publicado && typeof s.publicado === 'object') ? Object.keys(s.publicado) : [];
+      const pend = S.pubs.filter((p) => p.shot === k && p.estado !== 'listo' && p.estado !== 'error');
+      const linea = el('p', 'redes-ok');
+      if (!s) linea.textContent = 'Este shot todavía no está en la Sala.';
+      else if (s.kind !== 'narrado') linea.textContent = 'Todavía no tiene su voz: aún no se puede publicar.';
+      else if (hechas.length >= PUB_REDES.length) linea.append(el('b', null, '✓ Publicado en todas las redes'));
+      else if (pend.length) linea.textContent = `Publicación en camino (${pend[0].estado || 'pendiente'}). Llega en menos de 1 hora.`;
+      else linea.textContent = hechas.length ? `Ya está en: ${hechas.join(', ')}. Faltan las demás.` : 'Listo para publicar. Míralo y toca «Publicar».';
+      der.append(linea);
+      if (s) {
+        const b = el('button', 'btn go', hechas.length >= PUB_REDES.length ? 'Ver' : 'Ver y publicar'); b.type = 'button';
+        const faltan = PUB_REDES.map((x) => x[0]).filter((r) => !hechas.includes(r));
+        b.addEventListener('click', () => abrir(s, s.kind === 'narrado' && !pend.length ? faltan : []));
+        po.addEventListener('click', () => abrir(s, []));
+        der.append(b);
+      }
+      fila.append(po, der); cuerpo.append(fila);
+    });
+    dias.filter((f) => f > primero).slice(0, 6).forEach((f) => {
+      const li = el('li'); li.append(el('span', null, fechaTxt(f)));
+      const cont = el('span');
+      S.cal.dias[f].forEach((k, i) => {
+        const s = S.shots.find((x) => x.id === k);
+        const b = el('button', null, (i ? ' + ' : '') + (s ? tituloCompleto(s) : k) + (s && s.kind !== 'narrado' ? ' (sin voz aún)' : '')); b.type = 'button';
+        if (s) b.addEventListener('click', () => abrir(s, []));
+        cont.append(b);
+      });
+      li.append(cont); prox.append(li);
+    });
+  }
+
+  /* ---------- reproductor y textos ---------- */
+  function abrir(s, preSel) {
+    S.actual = s;
+    const v = $('vid');
+    if (s.video) { v.src = '/_blob/' + s.video; v.poster = s.poster ? '/_blob/' + s.poster : ''; } else { v.removeAttribute('src'); v.load(); }
+    $('d-titulo').textContent = tituloCompleto(s);
+    $('c-texto').value = ''; $('c-msg').textContent = '';
+    $('d-serie').textContent = etiqueta(s);
+    $('d-version').textContent = s.kind === 'narrado' ? 'Narrada con tu voz' : (s.video ? 'Revisión sin voz (música y subtítulos)' : 'Sin video todavía');
+    $('d-chars').textContent = s.caracteres ? `${fmt(s.caracteres)} caracteres (~${fmt(s.caracteres)} créditos de ElevenLabs)` : '—';
+    $('d-key').textContent = s.id;
+    const hd = $('hd'); if (s.hd) { hd.href = s.hd; hd.hidden = false; } else hd.hidden = true;
+    $('msg').textContent = ''; $('pub-msg').textContent = ''; S.pubSel = new Set(preSel || []); S.pubConfirmar = null;
+    $('tt-texto').dataset.shot = ''; $('tt-priv').value = ''; ['tt-com', 'tt-duo', 'tt-sti', 'tt-com-onoff', 'tt-propia', 'tt-pagada'].forEach((id) => { $(id).checked = false; }); $('tt-ia').checked = true;
+    pintarAprobar(); pintarRedes(); pintarCorrecciones(); pintarPublicar();
+    $('dlg').showModal();
+  }
+  function pintarAprobar() {
+    const s = S.actual; if (!s) return; const b = $('aprobar');
+    b.hidden = !(s.estado === 'Por revisar');
+    b.disabled = !S.db;
+    b.textContent = S.aprob[s.id] ? 'Quitar aprobación' : 'Aprobar voz';
+    $('d-estado').textContent = estadoDe(s);
+    pintarCosto();
+  }
+  /* ---------- créditos de voz (doc estado/creditos, lo llena la nube desde refs/estado/creditos) ---------- */
+  const VOZ_MEDIA = 950;
+  const credN = () => (S.cred && typeof S.cred.restantes === 'number') ? S.cred.restantes : null;
+  function fechaRenov(c) {
+    const d = c.renovacion_unix ? new Date(c.renovacion_unix * 1000) : (c.renovacion ? new Date(c.renovacion) : null);
+    return d && !isNaN(d) ? d.toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
+  }
+  function pintarCreditos() {
+    const c = S.cred, box = $('cred'), txt = $('cred-txt'), nota = $('cred-nota');
+    txt.replaceChildren(); nota.textContent = '';
+    if (!c) { box.dataset.n = 'error'; txt.textContent = 'Todavía no hay datos de tus créditos. La nube los anota en su siguiente revisión.'; return; }
+    const n = credN();
+    if (n == null) { box.dataset.n = 'error'; txt.textContent = 'No se pudo leer cuántos créditos te quedan.'; }
+    else {
+      box.dataset.n = n < 2000 ? 'bajo' : 'ok';
+      const renov = fechaRenov(c), k = Math.floor(n / VOZ_MEDIA);
+      txt.append('Te quedan ', el('b', null, fmt(n)), c.limite ? ` de ${fmt(c.limite)} créditos` : ' créditos');
+      if (renov) txt.append(' · se renuevan el ', el('b', null, renov));
+      txt.append(' · alcanzan para ', el('b', null, `~${fmt(k)} ${k === 1 ? 'voz' : 'voces'}`));
+      if (n < 2000) txt.append(el('br'), n < VOZ_MEDIA ? 'Ya no alcanza ni para una voz: las aprobadas esperan a que recargues.' : 'Quedan pocos: recarga pronto para no dejar voces a medias.');
+    }
+    const extra = [c.nota, c.error ? `Aviso: ${c.error}` : '', c.actualizado ? `Actualizado: ${new Date(c.actualizado).toLocaleString('es-MX', { dateStyle: 'medium', timeStyle: 'short' })}` : ''].filter(Boolean);
+    nota.textContent = extra.join(' · ');
+  }
+  function pintarCosto() {
+    const s = S.actual, p = $('d-costo'); if (!s) return;
+    const x = s.caracteres || 0;
+    if (!x || s.kind === 'narrado') { p.hidden = true; return; }
+    p.hidden = false; const n = credN();
+    const falta = n != null && n < x;
+    p.dataset.n = falta ? 'bajo' : 'ok';
+    p.textContent = `Esta voz cuesta ~${fmt(x)} créditos.` + (falta ? ' No te alcanzan los créditos: se generará cuando recargues.' : '');
+  }
+  function pintarRedes() {
+    const s = S.actual; const redes = (s && s.redes) || {};
+    const tabs = $('redes-tabs'); tabs.replaceChildren();
+    REDES.forEach(([k, n]) => {
+      const c = el('button', 'chip', n); c.type = 'button'; c.setAttribute('aria-pressed', String(S.red === k));
+      c.addEventListener('click', () => { S.red = k; pintarRedes(); }); tabs.append(c);
+    });
+    const body = $('redes-cuerpo'); body.replaceChildren();
+    const r = redes[S.red];
+    if (!r) { body.append(el('p', 'hint', Object.keys(redes).length ? 'Este texto todavía no está. La nube lo agrega en su próxima ronda.' : 'Los textos de este video todavía no están. La nube los agrega en su próxima ronda.')); return; }
+    const bloque = (titulo, texto) => {
+      const t = el('div', 'texto'); const row = el('div', 'row');
+      const b = el('button', 'btn sm', 'Copiar'); b.type = 'button'; b.addEventListener('click', () => copiar(texto, b));
+      row.append(el('label', null, titulo), b); t.append(row, el('pre', null, texto)); return t;
+    };
+    // El título de YouTube es siempre el mismo que se ve en la Sala.
+    const tit = S.red === 'youtube' ? tituloCompleto(s) : r.titulo;
+    if (tit) body.append(bloque('Título', tit));
+    body.append(bloque(tit ? 'Descripción' : 'Texto completo', r.texto));
+  }
+  $('aprobar').addEventListener('click', async () => {
+    const s = S.actual; if (!s || !S.db) return;
+    const ref = S.db.doc('aprobaciones/' + s.id); $('aprobar').disabled = true;
+    try {
+      if (S.aprob[s.id]) { await ref.delete(); $('msg').textContent = 'Aprobación quitada.'; }
+      else { await ref.set({ shot: s.id, aprobado: true, at: new Date().toISOString(), procesado: false }); $('msg').textContent = 'Aprobada. La próxima sesión de nube genera la voz y el narrado aparece aquí.'; }
+    } catch (e) { $('msg').textContent = 'No se pudo guardar. Inténtalo otra vez en un momento.'; }
+    $('aprobar').disabled = false;
+  });
+  /* ---------- publicar en redes (collection publicaciones; la atiende el administrador con el workflow publicar.yml) ---------- */
+  const PUB_REDES = [['facebook', 'Facebook'], ['instagram', 'Instagram'], ['threads', 'Threads'], ['youtube', 'YouTube'], ['linkedin', 'LinkedIn'], ['tiktok', 'TikTok']];
+  S.pubs = []; S.pubSel = new Set(); S.tt = null;
+  // TikTok: datos de la cuenta (doc estado/tiktok, lo llena el administrador con creator_info) y opciones que exige TikTok.
+  const TT_PRIV = { PUBLIC_TO_EVERYONE: 'Todos', MUTUAL_FOLLOW_FRIENDS: 'Amigos', FOLLOWER_OF_CREATOR: 'Seguidores', SELF_ONLY: 'Solo yo' };
+  const ttModo = () => (document.querySelector('input[name="tt-modo"]:checked') || {}).value || 'directo';
+  function pintarTikTok() {
+    const s = S.actual; const on = S.pubSel.has('tiktok');
+    $('tt').hidden = !on; if (!on || !s) return;
+    const c = S.tt || {};
+    $('tt-cuenta').textContent = c.creator_nickname ? `Cuenta de TikTok: ${c.creator_nickname} (@${c.creator_username})` : 'Cuenta de TikTok: La Creación del Robert';
+    const dir = ttModo() === 'directo';
+    $('tt-directo').hidden = !dir; $('tt-borrador').hidden = dir;
+    const sel = $('tt-priv'); const antes = sel.value;
+    const pagada = $('tt-pagada').checked && $('tt-com-onoff').checked;
+    sel.replaceChildren(el('option', null, 'Elige una opción')); sel.firstChild.value = '';
+    (c.privacy_level_options || Object.keys(TT_PRIV)).forEach((k) => {
+      const o = el('option', null, TT_PRIV[k] || k); o.value = k;
+      if (pagada && k === 'SELF_ONLY') { o.disabled = true; o.textContent += ' (no disponible con contenido de marca)'; }
+      sel.append(o);
+    });
+    sel.value = (pagada && antes === 'SELF_ONLY') ? '' : antes;
+    [['tt-com', 'comment_disabled', 'comentarios'], ['tt-duo', 'duet_disabled', 'dúos'], ['tt-sti', 'stitch_disabled', 'stitch']].forEach(([id, k]) => {
+      $(id).disabled = !!c[k]; if (c[k]) $(id).checked = false;
+    });
+    if (!$('tt-texto').dataset.shot || $('tt-texto').dataset.shot !== s.id) {
+      $('tt-texto').value = ((s.redes || {}).tiktok || {}).texto || ''; $('tt-texto').dataset.shot = s.id;
+    }
+    $('tt-cuenta-car').textContent = `${$('tt-texto').value.length} / 2200`;
+    $('tt-marcas').hidden = !$('tt-com-onoff').checked;
+    const propia = $('tt-propia').checked && $('tt-com-onoff').checked;
+    $('tt-marca-txt').textContent = pagada ? 'Tu video se marcará como «Colaboración pagada».' : propia ? 'Tu video se marcará como «Contenido promocional».' : ($('tt-com-onoff').checked ? 'Elige al menos una opción.' : '');
+    const legal = $('tt-legal'); legal.replaceChildren('Al publicar, aceptas la ');
+    const a1 = el('a', null, 'Confirmación de uso de música de TikTok'); a1.href = 'https://www.tiktok.com/legal/page/global/music-usage-confirmation/en'; a1.target = '_blank'; a1.rel = 'noopener';
+    legal.append(a1);
+    if (pagada) { const a2 = el('a', null, 'Política de contenido de marca'); a2.href = 'https://www.tiktok.com/legal/page/global/bc-policy/en'; a2.target = '_blank'; a2.rel = 'noopener'; legal.append(' y la ', a2); }
+    legal.append('.');
+  }
+  function ttListo() {
+    if (!S.pubSel.has('tiktok') || ttModo() === 'borrador') return '';
+    if (!$('tt-priv').value) return 'En TikTok, elige quién puede ver el video.';
+    if (!$('tt-texto').value.trim()) return 'En TikTok, la descripción está vacía.';
+    if ($('tt-com-onoff').checked && !$('tt-propia').checked && !$('tt-pagada').checked) return 'En TikTok, elige qué tipo de promoción es (o desmarca la casilla).';
+    return '';
+  }
+  function ttOpciones() {
+    if (ttModo() === 'borrador') return { modo: 'borrador' };
+    const s = S.actual; const texto = $('tt-texto').value.trim(); const orig = (((s && s.redes) || {}).tiktok || {}).texto || '';
+    const marca = $('tt-com-onoff').checked;
+    return { modo: 'directo', privacidad: $('tt-priv').value, comentarios: $('tt-com').checked, duo: $('tt-duo').checked, stitch: $('tt-sti').checked,
+      marca_propia: marca && $('tt-propia').checked, marca_pagada: marca && $('tt-pagada').checked, ia: $('tt-ia').checked, ...(texto !== orig.trim() ? { texto } : {}) };
+  }
+  ['tt-priv', 'tt-com', 'tt-duo', 'tt-sti', 'tt-ia', 'tt-com-onoff', 'tt-propia', 'tt-pagada'].forEach((id) => $(id).addEventListener('change', () => { S.pubConfirmar = null; pintarPublicar(); }));
+  $('tt-texto').addEventListener('input', () => { S.pubConfirmar = null; $('tt-cuenta-car').textContent = `${$('tt-texto').value.length} / 2200`; pintarPublicar(); });
+  document.querySelectorAll('input[name="tt-modo"]').forEach((r) => r.addEventListener('change', () => { S.pubConfirmar = null; pintarPublicar(); }));
+  function pintarPublicar() {
+    const s = S.actual; if (!s) return;
+    const listo = s.kind === 'narrado';
+    const hechas = (s.publicado && typeof s.publicado === 'object') ? s.publicado : {};
+    const box = $('pub-redes'); box.replaceChildren();
+    PUB_REDES.forEach(([k, n]) => {
+      const c = el('button', 'chip', n); c.type = 'button';
+      c.setAttribute('aria-pressed', String(S.pubSel.has(k))); c.dataset.hecho = String(!!hechas[k]);
+      if (hechas[k]) c.title = 'Ya publicado' + (hechas[k].url ? ': ' + hechas[k].url : '');
+      c.disabled = !listo;
+      c.addEventListener('click', () => { S.pubSel.has(k) ? S.pubSel.delete(k) : S.pubSel.add(k); S.pubConfirmar = null; $('pub-msg').textContent = ''; pintarPublicar(); });
+      box.append(c);
+    });
+    pintarTikTok();
+    const b = $('pub-enviar'); b.disabled = !listo || !S.db || !S.pubSel.size || !!ttListo();
+    if (listo && S.pubSel.size && ttListo() && !S.pubConfirmar) $('pub-msg').textContent = ttListo();
+    else if ($('pub-msg').textContent.startsWith('En TikTok')) $('pub-msg').textContent = '';
+    b.textContent = S.pubConfirmar ? 'Sí, publicar' : S.pubSel.size ? `Publicar en ${S.pubSel.size} ${S.pubSel.size === 1 ? 'red' : 'redes'}` : 'Publicar';
+    $('pub-hint').hidden = !listo;
+    if (!listo) $('pub-msg').textContent = 'Se puede publicar cuando el video ya tenga tu voz (estado «Narrado listo»).';
+    const ul = $('pub-lista'); ul.replaceChildren();
+    S.pubs.filter((p) => p.shot === s.id).forEach((p) => {
+      const li = el('li'); const e = el('span', 'est', p.estado || 'pendiente'); e.dataset.e = p.estado || 'pendiente';
+      const nombres = (p.redes || []).map((r) => (PUB_REDES.find((x) => x[0] === r) || [r, r])[1]).join(', ');
+      li.append(e, el('span', 'txt', nombres), el('span', 'num', (p.creado || '').slice(0, 10)));
+      if (p.resultado) li.append(el('span', 'res', p.resultado));
+      ul.append(li);
+    });
+  }
+  $('pub-enviar').addEventListener('click', async () => {
+    const s = S.actual; if (!s || !S.db || !S.pubSel.size) return;
+    const redes = PUB_REDES.map((x) => x[0]).filter((k) => S.pubSel.has(k));
+    const clave = s.id + '|' + redes.join(',');
+    if (S.pubConfirmar !== clave) {
+      S.pubConfirmar = clave; $('pub-enviar').textContent = 'Sí, publicar';
+      const notas = [];
+      if (redes.includes('tiktok')) notas.push(ttModo() === 'borrador' ? 'TikTok llega como borrador a tu app' : `TikTok: «${TT_PRIV[$('tt-priv').value] || ''}»`);
+      if (redes.includes('youtube')) notas.push('YouTube queda privado por ahora');
+      $('pub-msg').textContent = `Se publicará en: ${redes.map((r) => (PUB_REDES.find((x) => x[0] === r) || [r, r])[1]).join(', ')}${notas.length ? ' (' + notas.join('; ') + ')' : ''}. Toca «Sí, publicar» para confirmar.`;
+      return;
+    }
+    S.pubConfirmar = null;
+    $('pub-enviar').disabled = true;
+    try {
+      const extra = redes.includes('tiktok') ? { tiktok: ttOpciones() } : {};
+      await S.db.collection('publicaciones').add({ shot: s.id, titulo: tituloCompleto(s), redes, ...extra, modo: 'real', estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
+      S.pubSel.clear(); $('pub-msg').textContent = '¡Listo! Se publica en menos de 1 hora (o al instante si en el chat escribes «publica mis pedidos»). Aquí abajo ves cómo va.';
+    } catch (e) { $('pub-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
+    pintarPublicar();
+  });
+  S.corr = [];
+  function pintarCorrecciones() {
+    const ul = $('c-lista'); ul.replaceChildren(); const s = S.actual; if (!s) return;
+    S.corr.filter((c) => c.shot === s.id).forEach((c) => {
+      const li = el('li'); const e = el('span', 'est', c.estado || 'pendiente'); e.dataset.e = c.estado || 'pendiente';
+      li.append(e, el('span', 'txt', c.texto), el('span', 'num', (c.creado || '').slice(0, 10)));
+      if (c.resultado) li.append(el('span', 'res', c.resultado));
+      ul.append(li);
+    });
+  }
+  $('c-enviar').addEventListener('click', async () => {
+    const s = S.actual; const texto = $('c-texto').value.trim();
+    if (!s || !texto) { $('c-msg').textContent = 'Escribe la corrección primero.'; return; }
+    if (!S.db) { $('c-msg').textContent = 'La base de la Sala no está disponible en esta vista.'; return; }
+    $('c-enviar').disabled = true;
+    try {
+      await S.db.collection('correcciones').add({ shot: s.id, titulo: tituloCompleto(s), texto, estado: 'pendiente', creado: new Date().toISOString(), resultado: '' });
+      $('c-texto').value = ''; $('c-msg').textContent = 'Corrección enviada. La nube la aplica en su siguiente ronda (o al instante si en una sesión escribes «atiende mis correcciones»).';
+    } catch (e) { $('c-msg').textContent = 'No se pudo enviar. Inténtalo otra vez en un momento.'; }
+    $('c-enviar').disabled = false;
+  });
+  /* ---------- mis archivos ---------- */
+  const SUGERIDAS = ['orgánico', ...SERIES, 'Robert', 'laboratorio', 'B-Eco', 'campo', 'detrás de cámaras'];
+  const TIPO_EXT = { png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', gif: 'image/gif', webp: 'image/webp', mp4: 'video/mp4', m4v: 'video/mp4', webm: 'video/webm', pdf: 'application/pdf', txt: 'text/plain', md: 'text/markdown', csv: 'text/csv' };
+  const ACEPTADOS = new Set(Object.values(TIPO_EXT));
+  const limpiaTags = (txt) => [...new Set(String(txt).split(',').map((t) => t.trim()).filter(Boolean).map((t) => t.slice(0, 40)))];
+  const tagsEntrada = () => limpiaTags($('a-tags').value);
+  const todasTags = () => { const m = new Map(); S.archivos.forEach((a) => (a.etiquetas || []).forEach((t) => m.set(t.toLowerCase(), t))); return [...m.values()].sort((x, y) => x.localeCompare(y, 'es')); };
+  const pesoTxt = (b) => b > 1048576 ? `${(b / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round((b || 0) / 1024))} KB`;
+
+  function pintarSugeridas() {
+    const box = $('a-sug'); box.replaceChildren();
+    const actuales = tagsEntrada().map((t) => t.toLowerCase());
+    const lista = [...new Map([...SUGERIDAS, ...todasTags()].map((t) => [t.toLowerCase(), t])).values()];
+    lista.forEach((t) => {
+      const on = actuales.includes(t.toLowerCase());
+      const c = el('button', 'chip', t); c.type = 'button'; c.setAttribute('aria-pressed', String(on));
+      c.addEventListener('click', () => {
+        const cur = tagsEntrada();
+        $('a-tags').value = (on ? cur.filter((x) => x.toLowerCase() !== t.toLowerCase()) : [...cur, t]).join(', ');
+        pintarSugeridas();
+      });
+      box.append(c);
+    });
+  }
+  $('a-tags').addEventListener('input', pintarSugeridas);
+
+  async function subir(files) {
+    if (!S.assets || !S.db) return;
+    const etiquetas = tagsEntrada();
+    const ul = $('a-subiendo');
+    for (const f of files) {
+      const li = el('li', null, `Subiendo ${f.name}…`); ul.append(li);
+      const ext = (f.name.split('.').pop() || '').toLowerCase();
+      const tipo = ACEPTADOS.has(f.type) ? f.type : TIPO_EXT[ext];
+      if (!tipo) { li.dataset.e = 'error'; li.textContent = `${f.name}: ese tipo de archivo no se puede subir (usa foto, MP4/WebM, PDF o texto).`; continue; }
+      if (f.size > 20 * 1048576) { li.dataset.e = 'error'; li.textContent = `${f.name}: pesa ${pesoTxt(f.size)}, el máximo es 20 MB. Recórtalo o comprímelo.`; continue; }
+      try {
+        const r = await S.assets.upload(f, { type: tipo });
+        const ref = await S.db.collection('archivos').add({ asset: r.id, nombre: f.name, tipo: r.contentType, bytes: r.sizeBytes, etiquetas, nota: '', creado: new Date().toISOString() });
+        if (S.adjuntarAlPedido && ref && ref.id) S.sel.add(ref.id);
+        li.remove();
+      } catch (e) {
+        li.dataset.e = 'error';
+        const c = e && e.code;
+        li.textContent = `${f.name}: ` + (c === 'too_large' ? 'pesa más de 20 MB.' : c === 'unsupported_type' ? 'ese tipo de archivo no se acepta.' : c === 'quota_or_state' ? 'la Sala se quedó sin espacio para archivos.' : 'no se pudo subir. Inténtalo otra vez en un momento.');
+      }
+    }
+    S.adjuntarAlPedido = false; pintarArchivos();
+  }
+  $('a-file').addEventListener('change', (e) => { const fs = [...e.target.files]; e.target.value = ''; subir(fs); });
+  const drop = $('a-drop');
+  ['dragenter', 'dragover'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('over'); }));
+  ['dragleave', 'drop'].forEach((ev) => drop.addEventListener(ev, () => drop.classList.remove('over')));
+  drop.addEventListener('drop', (e) => { e.preventDefault(); subir([...(e.dataTransfer?.files || [])]); });
+
+  async function guardarTags(a, etiquetas) {
+    try { await S.db.doc('archivos/' + a.id).update({ etiquetas }); }
+    catch (e) { $('p-msg').textContent = 'No se pudieron guardar las etiquetas. Inténtalo otra vez.'; }
+  }
+  function tarjetaArchivo(a) {
+    const box = el('article', 'arch'); box.dataset.sel = String(S.sel.has(a.id));
+    const vista = el('div', 'vista'); const src = '/_blob/' + a.asset;
+    if ((a.tipo || '').startsWith('image/')) { const im = el('img'); im.loading = 'lazy'; im.alt = a.nombre || ''; im.src = src; im.onerror = () => vista.replaceChildren(el('span', null, 'No disponible')); vista.append(im); }
+    else if ((a.tipo || '').startsWith('video/')) { const v = el('video'); v.src = src; v.controls = true; v.preload = 'metadata'; v.playsInline = true; vista.append(v); }
+    else { const l = el('a', null); l.href = src; l.target = '_blank'; l.rel = 'noopener'; l.append(el('span', null, (a.tipo || '').includes('pdf') ? 'PDF · abrir' : 'Texto · abrir')); vista.append(l); }
+    const cuerpo = el('div', 'cuerpo');
+    cuerpo.append(el('div', 'nombre', a.nombre || 'Archivo'));
+    const tags = el('div', 'tags');
+    (a.etiquetas || []).forEach((t) => {
+      const chip = el('span', 'tag', t); const x = el('button', null, '×'); x.type = 'button'; x.setAttribute('aria-label', `Quitar etiqueta ${t}`);
+      x.addEventListener('click', () => guardarTags(a, (a.etiquetas || []).filter((y) => y !== t)));
+      chip.append(x); tags.append(chip);
+    });
+    if (S.puedeEditar) {
+      const inp = el('input'); inp.type = 'text'; inp.placeholder = '+ etiqueta'; inp.setAttribute('aria-label', `Agregar etiqueta a ${a.nombre || 'archivo'}`);
+      inp.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter' && e.key !== ',') return; e.preventDefault();
+        const nuevas = limpiaTags(inp.value); if (!nuevas.length) return;
+        guardarTags(a, [...new Set([...(a.etiquetas || []), ...nuevas])]);
+      });
+      tags.append(inp);
+    }
+    cuerpo.append(tags);
+    const pie = el('div', 'pie');
+    const lab = el('label'); const cb = el('input'); cb.type = 'checkbox'; cb.checked = S.sel.has(a.id);
+    cb.addEventListener('change', () => { cb.checked ? S.sel.add(a.id) : S.sel.delete(a.id); pintarArchivos(); });
+    lab.append(cb, document.createTextNode('Usar en mi pedido')); pie.append(lab);
+    if (S.assets) {
+      const del = el('button', 'borrar', 'Borrar'); del.type = 'button';
+      del.addEventListener('click', async () => {
+        if (!confirm(`¿Borrar «${a.nombre || 'este archivo'}» para siempre?`)) return;
+        try { await S.assets.delete(a.asset); await S.db.doc('archivos/' + a.id).delete(); S.sel.delete(a.id); }
+        catch (e) { $('p-msg').textContent = 'No se pudo borrar el archivo.'; }
+      });
+      pie.append(del);
+    }
+    cuerpo.append(pie, el('small', 'hint', `${pesoTxt(a.bytes)} · ${(a.creado || '').slice(0, 10)}`));
+    box.append(vista, cuerpo);
+    return box;
+  }
+  function pintarArchivos() {
+    // filtros por etiqueta
+    const fbar = $('a-filtros'); fbar.replaceChildren();
+    const tags = todasTags();
+    if (S.filtroTag && !tags.includes(S.filtroTag)) S.filtroTag = '';
+    if (tags.length) {
+      [['', 'Todos'], ...tags.map((t) => [t, t])].forEach(([v, n]) => {
+        const c = el('button', 'chip', n); c.type = 'button'; c.setAttribute('aria-pressed', String(S.filtroTag === v));
+        c.addEventListener('click', () => { S.filtroTag = v; pintarArchivos(); }); fbar.append(c);
+      });
+    }
+    const grid = $('a-grid'); grid.replaceChildren();
+    const lista = S.archivos.filter((a) => !S.filtroTag || (a.etiquetas || []).includes(S.filtroTag));
+    if (!S.archivos.length) grid.append(el('p', 'hint', 'Todavía no adjuntas archivos.'));
+    lista.forEach((a) => grid.append(tarjetaArchivo(a)));
+    // resumen dentro del pedido
+    const adj = $('p-adj'); adj.replaceChildren();
+    const sel = S.archivos.filter((a) => S.sel.has(a.id));
+    S.sel.forEach((id) => { if (!S.archivos.some((a) => a.id === id)) S.sel.delete(id); });
+    adj.append(el('span', 'lbl', sel.length ? `Archivos en este pedido (${sel.length}):` : 'Sin archivos adjuntos.'));
+    sel.forEach((a) => {
+      const chip = el('span', 'tag', a.nombre || 'Archivo'); const x = el('button', null, '×'); x.type = 'button'; x.setAttribute('aria-label', `Quitar ${a.nombre} del pedido`);
+      x.addEventListener('click', () => { S.sel.delete(a.id); pintarArchivos(); }); chip.append(x); adj.append(chip);
+    });
+    if (S.assets) {
+      const b = el('button', 'btn sm', 'Adjuntar aquí'); b.type = 'button';
+      b.addEventListener('click', () => { S.adjuntarAlPedido = true; $('a-file').click(); });
+      adj.append(b);
+    }
+    pintarSugeridas();
+  }
+
+  $('cerrar').addEventListener('click', () => $('dlg').close());
+  $('dlg').addEventListener('close', () => $('vid').pause());
+  $('dlg').addEventListener('click', (e) => { if (e.target === $('dlg')) $('dlg').close(); });
+  document.querySelectorAll('#filtros .chip').forEach((c) => c.addEventListener('click', () => {
+    S.filtro = c.dataset.f; document.querySelectorAll('#filtros .chip').forEach((x) => x.setAttribute('aria-pressed', String(x === c))); render();
+  }));
+  $('q').addEventListener('input', (e) => { S.q = e.target.value; render(); });
+
+  FESTIVIDADES.map((f) => ({ ...f, d: proxima(f.f[0]) })).sort((a, b) => a.d - b.d).forEach((f) => {
+    const o = el('option', null, `${f.n} (${f.f.map((md) => `${+md.slice(3)} ${MESES[+md.slice(0, 2) - 1]}`).join(' y ')})`); o.value = f.n; $('p-festividad').append(o);
+  });
+  pintarPedir(); render();
+  (async () => {
+    const db = await claude.use('db');
+    if (!db) { $('lead').textContent = 'No se pudo abrir la base de la Sala en esta vista.'; return; }
+    S.db = db; pintarPedir();
+    db.collection('estado').limit(20).onSnapshot((snap) => {
+      const d = snap.docs.find((x) => x.id === 'creditos'); S.cred = d ? d.data() : null; pintarCreditos(); pintarCosto();
+      const t = snap.docs.find((x) => x.id === 'tiktok'); S.tt = t ? t.data() : null; if (S.actual) pintarPublicar();
+      const c = snap.docs.find((x) => x.id === 'calendario'); S.cal = c ? c.data() : null; S.calInv = null; pintarHoy(); render();
+    }, () => { $('cred-txt').textContent = 'No se pudieron leer tus créditos.'; });
+    db.collection('shots').limit(1000).onSnapshot((snap) => {
+      S.shots = snap.docs.map((d) => ({ id: d.id, ...d.data() })); render(); pintarHoy();
+      if (S.actual) { S.actual = S.shots.find((x) => x.id === S.actual.id) || S.actual; pintarAprobar(); pintarRedes(); pintarPublicar(); }
+    }, () => { $('lead').textContent = 'No se pudieron cargar los videos. Recarga la página.'; });
+    db.collection('aprobaciones').limit(1000).onSnapshot((snap) => {
+      S.aprob = {}; snap.docs.forEach((d) => { const x = d.data(); if (x && x.aprobado && !x.procesado) S.aprob[d.id] = x; });
+      render(); pintarAprobar();
+    }, () => {});
+    db.collection('correcciones').orderBy('creado', 'desc').limit(300).onSnapshot((snap) => {
+      S.corr = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarCorrecciones();
+    }, () => {});
+    db.collection('publicaciones').orderBy('creado', 'desc').limit(300).onSnapshot((snap) => {
+      S.pubs = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarPublicar(); pintarHoy();
+    }, () => {});
+    db.collection('pedidos').orderBy('creado', 'desc').limit(50).onSnapshot((snap) => {
+      S.pedidos = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarPedidos();
+    }, () => {});
+    db.collection('archivos').orderBy('creado', 'desc').limit(1000).onSnapshot((snap) => {
+      S.archivos = snap.docs.map((d) => ({ id: d.id, ...d.data() })); pintarArchivos();
+    }, () => {});
+  })();
+  (async () => {
+    const [assets, user] = await Promise.all([claude.use('assets'), claude.use('user')]);
+    S.assets = assets;
+    let edita = false; try { edita = user ? await user.canEdit() : false; } catch (e) {}
+    S.puedeEditar = edita || !!assets;
+    $('a-drop').hidden = !assets; $('a-sinpermiso').hidden = !!assets;
+    pintarArchivos();
+  })();
+  $('a-drop').hidden = true; pintarArchivos();
+})();
+</script>
+
+
+</body></html>

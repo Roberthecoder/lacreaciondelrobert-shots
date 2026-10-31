@@ -1,0 +1,81 @@
+# Verificación · Shot Fungi Mati #40 · El hongo que se derrite en tinta: *Coprinus comatus*
+
+29 oct 2026. **Verificación independiente (subagente que no escribió el guion).** Se abrieron las páginas y los resúmenes
+completos (PubMed/Europe PMC, PMC), no los resúmenes del buscador.
+
+Fuentes abiertas:
+- **[VOLK]** Volk, T. (2004, mayo). *Coprinus comatus*, the shaggy mane. *Tom Volk's Fungus of the Month*, University of Wisconsin–La Crosse. https://botit.botany.wisc.edu/toms_fungi/may2004.html (ojo: el párrafo de las laminillas y de la tinta para escribir habla de los *Coprinus* "inky caps" en general, no solo de *C. comatus*).
+- **[EMB]** Emberger, G. (2025). *Coprinus comatus*. *Fungi on Wood*, MushroomExpert.Com. https://mushroomexpert.com/fungionwood/gilled%20fungi/species%20pages/Coprinus%20comatus.html
+- **[KUO]** Kuo, M. (2008, febrero). *Coprinus comatus*: The Shaggy Mane. MushroomExpert.Com. https://www.mushroomexpert.com/coprinus_comatus.html
+- **[NF]** New Forest National Park Authority (Reino Unido, organismo público). "Shaggy inkcap". Consultada 29 oct 2026. https://www.newforestnpa.gov.uk/discover/plants-fungi/fungi/shaggy-inkcap/
+- **[L04]** Luo, H., Mo, M., Huang, X., Li, X. y Zhang, K. (2004). *Coprinus comatus*: a basidiomycete fungus forms novel spiny structures and infects nematode. *Mycologia* 96(6): 1218–1224. PMID 21148944. https://pubmed.ncbi.nlm.nih.gov/21148944/ (Yunnan University, Kunming, Yunnan, China)
+- **[L07]** Luo, H., Liu, Y., Fang, L., Li, X., Tang, N. y Zhang, K. (2007). *Coprinus comatus* damages nematode cuticles mechanically with spiny balls and produces potent toxins to immobilize nematodes. *Applied and Environmental Microbiology* 73(12): 3916–3923. PMID 17449690. https://pmc.ncbi.nlm.nih.gov/articles/PMC1932715/ (Yunnan University, Kunming)
+- **[GUO]** Guo, H.-B., Zhang, Z.-F., Wang, J.-Q. et al. (2022). Transcriptome analysis of genes associated with autolysis of *Coprinus comatus*. *Scientific Reports* 12: 2476. https://pmc.ncbi.nlm.nih.gov/articles/PMC8847592/
+- **[FUN]** Asociación Micológica Fungipedia. "*Coprinus comatus*". Consultada 29 oct 2026. https://www.fungipedia.org/hongos/coprinus-comatus.html
+- **[NIES]** National Institute for Environmental Studies (Japón). "*Panagrellus redivivus*". Consultada 29 oct 2026. https://www.nies.go.jp/chiiki1/protoz/toxicity/nematoda/panagrel.htm
+- (No sirve como fuente principal) Wikipedia en español, *Coprinus comatus*: "barbuda o apagacandil en México"; cita libros (Calonge 2009, Barbado 2003, Moreno Vega 2014, Hermoso 2014) que no se pudieron abrir. No se encontró ninguna fuente seria mexicana que confirme "barbuda" como nombre usado en México.
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | Gancho (corregido, recorte): "no es un hongo podrido: es un hongo digiriéndose a sí mismo" | ✅ | [VOLK], [EMB] | "autodeliquescence of their gills-- in other words self-digestion to release their basidiospores"; "Black spores trapped in the liquifying gill tissue forms an inky liquid" | 2004 / 2025 |
+| 1b | Pantalla: chip "¿podrido?" tachado → "se digiere solo" | ✅ | [VOLK] | "The self-digestion continues until the entire fruiting body has turned to black ink." | 2004 |
+| 2 | Se llama *Coprinus comatus* | ✅ | [KUO], [L04] | "Coprinus comatus: The Shaggy Mane" | 2008 |
+| 3 | Nombre común «la barbuda» | ✅ (con fuente cambiada) | [FUN] | "Coprinus comatus es un hongo del orden Agaricales también conocido como Barbuda, matacandil, urbeltz, bolet de tinta, chipirón de monte." Es nombre común en español (sobre todo en España). **No decir "en México"**: no hay fuente seria mexicana abierta. Cambiar la fuente 6 del guion (Wikipedia) por [FUN]. | consultada 2026 |
+| 4 | Sale en pastos y jardines | ✅ | [KUO], [NF] | "growing alone or in clusters, lines, or fairy rings on lawns, wood chips, or hard-packed ground"; "prefer to grow in grassland" | 2008 / 2026 |
+| 5 | (corregido, recorte) "Sus laminillas son muy delgadas y tan pegadas que a las esporas les cuesta salir" | ✅ | [VOLK], [KUO] | "gills that are very thin and very close to one another, which does not allow for easy release of the spores" (de los *Coprinus* en general); para *C. comatus*: gills "very crowded" | 2004 / 2008 |
+| 6 | Las esporas maduran primero en la orilla de abajo y de ahí caen al aire | ✅ | [VOLK], [EMB] | "a sequential maturation of the spores from the bottom of the gill towards the top"; "The mature black spores are released into the air from the lower margin of the gills." | 2004 / 2025 |
+| 6b | Pantalla: esporas que pasan de blancas a negras, elípticas, ~9–13 × 7–9 µm; barra 10 µm | ✅ | [KUO] | Gills "white, becoming pinkish, then black"; "Spores 9-13 x 7-9 µ; elliptical; smooth." | 2008 |
+| 7 | Sus propias enzimas disuelven la parte ya vacía y destapan la siguiente | ✅ | [EMB], [VOLK], [GUO] | "Dissolution of the spent gill tissue then exposes additional gill tissue for spore release."; "the self-digesting enzymes seem to kick into high gear…"; "β-(1,3)-glucanase was believed to be the major role in the part of autolysis responsible for shedding the spores" | 2025 / 2004 / 2022 |
+| 8 | (corregido) "Así sube, desde el borde…" (del borde del sombrero hacia arriba) | ✅ | [EMB], [NF] | "The process of gill auto-digestion proceeds from the lower cap margin to the top of the stipe."; "deliquesces (dissolves or auto digests) upwards from the bottom edge of the cap" | 2025 / 2026 |
+| 8b | (corregido) "…hasta que todo el sombrero se vuelve tinta" (antes: "todo") | ✅ | [EMB], [NF] | "from the lower cap margin to the top of the stipe"; "which becomes black from the bottom upwards" (el sombrero); el pie no se disuelve | 2025 / 2026 |
+| 8c | (corregido) Pantalla: la línea negra sube del borde a la punta del sombrero; campana que se enrolla y gotea; el pie blanco queda en pie | ✅ | [EMB], [KUO] | "to the top of the stipe"; "oval to rounded-cylindrical when young, expanding to bell-shaped with a lifting margin" | 2025 / 2008 |
+| 9 | (corregido, recorte) "Esa tinta son esporas negras atrapadas en tejido derretido" | ✅ | [EMB] | "Black spores trapped in the liquifying gill tissue forms an inky liquid" | 2025 |
+| 10 | Antes se usaba para escribir | ✅ | [NF], [VOLK] | "In the 17th and 18th centuries this black liquid could be used as an ink substitute."; "It could be used straight as writing ink…" (específico del shaggy inkcap). Volk lo dice de los *Coprinus* en general: "In the olden days this ink was actually used for writing." | siglos XVII–XVIII |
+| 11 | Pantalla: dibujo del hongo (sombrero alto, cilíndrico, blanco con escamas lanudas, centro café; pie blanco alto); barra 5 cm | ✅ | [KUO] | "with large, shaggy scales"; "whitish with a brownish center"; "Cap: 3-15 cm" | 2008 |
+| 12 | (corregido) Re-gancho: "¿Y qué más come este hongo, además de restos de plantas?" | ✅ | [KUO], [EMB] | "Ecology: Saprobic ,growing … on lawns, wood chips, or hard-packed ground"; "often clustered in grassy areas, hard-packed soil, wood chips" (vive de materia orgánica muerta: pasto, astillas de madera) | 2008 / 2025 |
+| 13 | (corregido) "Entre 2004 y 2007, en Yunnan, China, le pusieron en el laboratorio unos gusanitos microscópicos: nematodos" | ✅ | [L04], [L07] | [L04]: "Nematodes added to C. comatus cultures on potato-dextrose agar (PDA) and cornmeal agar (CMA)…"; afiliación Yunnan University, Kunming. [L07]: misma universidad; "About half of the nematodes could be immobilized within 1 to 4 h by C. comatus cells grown on potato dextrose agar (PDA) or cornmeal agar plates" | 2004 / 2007 |
+| 13b | (corregido) Pantalla: tarjeta "2004 y 2007 · Yunnan, China · Luo et al., *Mycologia* y *AEM*"; caja de cultivo «en laboratorio»; *Panagrellus redivivus* de 2 a 4 barras de 0.5 mm | ✅ | [L04], [L07], [NIES] | "Adults may reach lengths of 1800 um." (NIES, abierta por el verificador) | 2004 / 2007 |
+| 14 | Sus hilos forman bolitas con espinas | ✅ | [L04], [L07] | "C. comatus produces an unusual structure designated spiny ball. Set on a sporophore-like branch, the spiny ball is a burr-like structure"; "a unique fungal structure, called the spiny ball, on the vegetative hyphae" | 2004 / 2007 |
+| 15 | "…que rompen la piel del gusano" (ahora bajo "Entre 2004 y 2007") | ✅ corregido | [L07] | "the spiny structure damaged the nematode cuticle, suggesting the presence of a mechanical force"; "Severe injuries on nematode cuticles caused the leakage of inner materials" ("piel" = cutícula, simplificación; en pantalla "cubierta") | 2007 |
+| 16 | "Además suelta toxinas que lo dejan inmóvil en horas" (ahora bajo "Entre 2004 y 2007") | ✅ corregido | [L04], [L07] | [L07]: "we identified seven toxins from C. comatus that showed activity to immobilize the nematodes"; Discusión: puede "secret potent toxins to immobilize and kill nematodes within hours"; [L04]: "become inactive in hours" | 2004 / 2007 |
+| 16b | Pantalla: cronómetro "horas"; nube de toxinas; nematodos lentos y rectos | ✅ (si se corrige 16) | [L07] | "About half of the nematodes could be immobilized within 1 to 4 h… Within 8 h of incubation, about 90% of the worms were immobilized" | 2007 |
+| 17 | Ya quieto, sus hilos se le meten | ✅ | [L04] | "Infection of nematodes by the fungus occurs only after the nematodes are immobilized (feeble or dead)"; "producing penetration pegs with which hyphae colonize nematode bodies" | 2004 |
+| 18 | …y en días se lo comen por dentro (pantalla: hifas que salen por el otro lado; contador "días") | ✅ | [L04] | "An infected nematode is digested and consumed within days and hyphae grow out of the nematode." | 2004 |
+| 19 | (corregido) Cierre: "esa tinta negra no es basura: es un hongo que también caza gusanos, soltando sus últimas esporas" | ✅ | [L04], [KUO] | "a nematode-destroying fungus; this fungus immobilizes, kills and uses free-living nematode…" + "Ecology: Saprobic" ("también": su modo principal es saprobio; la caza, demostrada en laboratorio, ya se dijo en la escena 8) | 2004 / 2008 |
+| 19b | (corregido) Pantalla del cierre: caja de cultivo «en laboratorio» con un nematodo atrapado; chip "también caza gusanos" | ✅ | [L04] | "Nematodes added to C. comatus cultures on potato-dextrose agar (PDA)…"; "hyphae colonize nematode bodies" | 2004 |
+
+**Revisión de correcciones (29 oct 2026):** se volvió a leer `narracion.json` completo (997 caracteres) y las filas cambiadas del guion; se abrieron otra vez New Forest NPA, NIES, Kuo y los resúmenes de Luo 2004/2007. Toda la voz y la pantalla quedan ✅: la caza de nematodos se dice "en el laboratorio" y con los dos años (2004 y 2007), "todo el sombrero" en vez de "todo", y «barbuda» con fuente de Fungipedia (sin decir "en México"). Pendiente menor (no de veracidad): en `## Fuentes` del guion, a la fuente 8 (NIES) le falta la URL https://www.nies.go.jp/chiiki1/protoz/toxicity/nematoda/panagrel.htm.
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Se leyeron `coprinus.jsx`, `Shot Coprinus base narrada.dc.html`, la columna «Lo que se ve» y la tabla «Robert en pantalla» de `guion.md`, y `publicacion.md`; se sacaron cuadros con `motor/preview.mjs` (0.3–60 s) y se revisaron.
+
+| # | Texto o dibujo en pantalla / publicación | Veredicto | Fuente | Nota |
+|---|---|---|---|---|
+| F1 | «¿podrido?» tachado → «se digiere solo»; subtítulo «No está podrido: se digiere solo» | ✅ | [VOLK] | autodigestión |
+| F2 | «barbuda» + *Coprinus comatus*, «escamas» | ✅ | [FUN], [KUO] | "with large, shaggy scales" |
+| F3 | Morfología: sombrero alto y cilíndrico, blanco con escamas y centro café; pie blanco 1–2 cm de grueso; franja rosa→negra que sube desde el borde; campana que se enrolla; el pie queda | ✅ | [KUO], [EMB] | "Gills… white, becoming pinkish, then black"; "Stem: 5-20 cm long; 1-2 cm thick" (pie dibujado ≈ 1.4 cm con la barra de 5 cm; sombrero ≈ 12 cm de alto, dentro de "Cap: 3-15 cm") |
+| F4 | «POR DENTRO · sombrero», «laminillas», «muy delgadas y muy pegadas»; laminillas libres del pie | ✅ | [VOLK], [KUO] | "very crowded"; "Free from the stem" |
+| F5 | Barra 2 cm del corte | ✅ corregido | [KUO] | Antes 150 px → el sombrero cortado medía ~7 cm de ancho; ahora 200 px → ~5 cm de ancho y ~8 cm de alto |
+| F6 | «AL MICROSCOPIO · laminillas», «esporas maduras» (negras abajo), «enzimas», lluvia de esporas | ✅ | [EMB], [VOLK], [GUO] | |
+| F7 | Barra 20 µm y tamaño de las esporas | ✅ corregido | [KUO] | Antes las esporas medían ≈ 8 × 6 µm con la barra (menos que "9-13 x 7-9 µ"); ahora ≈ 10 × 7 µm (laminillas y gota de tinta) |
+| F8 | Flecha «del borde a la punta» y «el pie queda» | ✅ corregido | [EMB] | Antes la flecha quedaba junto al pie, bajo el sombrero ya digerido; ahora su punta sigue la orilla que se digiere, con línea punteada hasta la punta del sombrero |
+| F9 | «AL MICROSCOPIO · tinta», «esporas negras», «tejido derretido» | ✅ | [EMB] | |
+| F10 | «tinta de hongo» escrita con pluma; «siglos XVII y XVIII» | ✅ | [NF] | "In the 17th and 18th centuries this black liquid could be used as an ink substitute." |
+| F11 | «¿solo restos de plantas?» (hojas, ramita, barbuda) | ✅ | [KUO], [EMB] | saprobio |
+| F12 | Tarjeta «2004 y 2007 · Yunnan, China · Luo et al., Mycologia y AEM»; caja de cultivo; «en laboratorio» | ✅ | [L04], [L07] | |
+| F13 | «nematodo» *Panagrellus redivivus*; barra 0.5 mm, gusanos de 1.1–1.5 mm | ✅ | [L04], [NIES] | "Adults may reach lengths of 1800 um." |
+| F14 | «bolitas con espinas» sobre ramitas de las hifas | ✅ | [L04], [L07] | "Set on a sporophore-like branch, the spiny ball is a burr-like structure" |
+| F15 | Hifas y bolitas con la barra de 0.5 mm | ✅ corregido | [L07] | Con la barra, las bolitas medían ~0.24 mm y las hifas ~20 µm de grueso; [L07] dice que la bolita es "much smaller than those of the other known appendages". Se agregó la etiqueta «hifas y bolitas: dibujadas más grandes» |
+| F16 | «rompe su cubierta» (rayas y líquido que sale) | ✅ | [L07] | "Severe injuries on nematode cuticles caused the leakage of inner materials" |
+| F17 | Cronómetro «EN LA CAJA» que corre horas; «toxinas»; subtítulo «Inmóvil en horas» | ✅ | [L04], [L07] | "become inactive in hours"; "About half of the nematodes could be immobilized within 1 to 4 h… Within 8 h… about 90%" |
+| F18 | «días después», «hifas por dentro», hifas que salen del gusano | ✅ | [L04] | "digested and consumed within days and hyphae grow out of the nematode" |
+| F19 | Cierre: «también caza gusanos», caja «en laboratorio», lupa con esporas en la gota | ✅ | [L04], [EMB] | |
+| F20 | Subtítulos (13 líneas) | ✅ | — | Todos resumen la voz verificada; ninguno agrega datos |
+| F21 | `publicacion.md`: hábitat ("pastos, astillas de madera y suelo apisonado") | ✅ | [KUO] | "on lawns, wood chips, or hard-packed ground" |
+| F22 | `publicacion.md`: "en los siglos XVII y XVIII se usó como sustituto de tinta para escribir" | ✅ | [NF] | "could be used as an ink substitute"; "used straight as writing ink" |
+| F23 | `publicacion.md`: "investigadores de la Universidad de Yunnan (China)", 2004 y 2007, "dañan la cutícula", "inactivos en horas", "los digirieron en días" | ✅ | [L04], [L07] | Afiliación: Yunnan University, Kunming (ambos artículos) |
+| F24 | `publicacion.md`: resto de las 7 redes y comentario fijado | ✅ | todas | Mismo contenido verificado; fuentes con URL correcta; "El dibujo es esquemático." |
+
+Cambios hechos en esta revisión (sin tocar la voz): tamaño de esporas (F7), barra de 2 cm (F5), flecha de la ola (F8), etiqueta de hifas y bolitas agrandadas (F15) en `coprinus.jsx`, y barras de escala en `guion.md`. Todo queda ✅.
+VEREDICTO: APROBADO

@@ -1,0 +1,35 @@
+# Verificación de hechos · qui-35-vela
+
+29 oct 2026 · verificación independiente (agente que no escribió el guion). Fuentes abiertas y frases buscadas en el texto completo: Faraday, *The Chemical History of a Candle* (Project Gutenberg #14474, texto íntegro descargado), registro de Internet Archive `19991842.5823.emory.edu`, NASA (página abierta) y USGS Water Science School (página abierta).
+
+F = Faraday M., *The Chemical History of a Candle*, Gutenberg #14474, https://www.gutenberg.org/ebooks/14474 (conferencias de Navidad 1860–61).
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 1 | Voz 0: la vela no quema la cera sólida, quema cera hecha vapor | ✅ | F, Lección II | "We find that this is the wax of the candle made into a vaporous fluid—not a gas." · "there are clearly two different kinds of action—one the _production_ of the vapour, and the other the _combustion_ of it" | 1860–61 |
+| 2 | Voz 1: el calor de la llama derrite la cera de arriba y forma una copita | ✅ | F, Lección I | "You see, then, in the first instance, that a beautiful cup is formed." · "the part within melts by the flame … but the part on the outside does not melt." | 1860–61 |
+| 3 | Pantalla 1: aire frío que sube por los lados y deja el borde sólido | ✅ | F, Lección I | "As the air comes to the candle it moves upwards by the force of the current which the heat of the candle produces, and it so cools all the sides of the wax … as to keep the edge much cooler than the part within" | 1860–61 |
+| 4 | Voz 2: la cera sube por la mecha por capilaridad | ✅ | F, Lección I | "It is by what is called capillary attraction that the fuel is conveyed to the part where combustion goes on" · "just as it does through the cotton in the candle." | 1860–61 |
+| 5 | Voz 2: "como el agua por una servilleta" (analogía) | ✅ | USGS Water Science School, "Capillary Action and Water", https://www.usgs.gov/special-topics/water-science-school/science/capillary-action-and-water | "Dip a paper towel into a glass of water and the water will "climb" onto the paper towel." | sin fecha (física general) |
+| 6 | Pantalla 2: mecha de hilos de algodón trenzados | ✅ | F, Lección I | "a plaited wick, which does not require snuffing … the little peg holding the cotton" | 1860–61 |
+| 7 | Voz 3: arriba se vuelve vapor y ese vapor, al juntarse con el oxígeno del aire, es lo que arde (pantalla: capa delgada donde se juntan) | ✅ | F, Lección II | "In the middle of the flame, where the wick is, there is this combustible vapour; on the outside of the flame is the air … between the two, intense chemical action takes place, whereby the air and the fuel act upon each other" (el oxígeno como la parte del aire que mantiene la combustión lo muestra Faraday en Lecciones III–IV; química estándar) | 1860–61 |
+| 8 | Voz 4: lo amarillo son partículas de hollín, carbono sólido tan caliente que brilla | ✅ | F, Lección II; NASA, "Candle Flame – 1g vs Microgravity", https://www.nasa.gov/image-article/candle-flame-1g-vs-microgravity/ | "it is to this presence of solid particles in the candle-flame that it owes its brilliancy." · "Those are the particles of carbon … whilst they are in the flame, are ignited by the heat produced, and, when so ignited, produce this brightness." · NASA: "carries soot to the flame's tip, which makes it yellow." | 1860–61 / 2020 |
+| 9 | Pantalla 4: la base azul de la llama sin puntitos de hollín | ✅ | F, Lección II | "because the atmosphere can get to it, and mix with it before it burns, you see how pale and blue the flame is." (llama azul = sin carbono sólido) | 1860–61 |
+| 10 | Voz 6: conferencias de Navidad en Londres, entre 1860 y 1861; Michael Faraday (tarjeta "Royal Institution, Londres") | ✅ | Internet Archive, registro `19991842.5823.emory.edu` (portada de la ed. de Charles Griffin) | "Delivered before a juvenile auditory at the Royal Institution of Great Britain during the Christmas holidays of 1860-1" | 1860–61 |
+| 11 | Voz 6: metió un tubito de vidrio en la parte oscura de la llama, sacó el vapor y lo prendió en la otra punta (pantalla: segunda llamita lejos de la vela) | ✅ | F, Lección II | "I am about to put the end of this glass tube into the middle of the flame—into that part which old Hooke has represented … as being rather dark" · "get that vapour to pass through the tube to the other extremity, where we will light it, and obtain absolutely the flame of the candle at a place distant from it … we can actually lay on a candle!" | 1860–61 |
+| 12 | Voz 7: al apagarla, ese humo es cera evaporada | ✅ | F, Lección I | "If you blow a candle out cleverly, you will see the vapour rise from it." · "if I allow the vapour time to cool, it becomes condensed into a liquid or solid" (lo visible es cera evaporada que empieza a condensarse; "cera evaporada" es correcto) | 1860–61 |
+| 13 | Voz 7: una llama a unos centímetros baja por el humo y la vuelve a encender | ✅ | F, Lección I | "if I hold a lighted taper two or three inches from the wick, you will observe a train of fire going through the air till it reaches the candle." (2–3 pulgadas ≈ 5–8 cm = "unos centímetros") | 1860–61 |
+| 14 | Voz 8: en el espacio, sin aire caliente que suba, la llama es redonda, azul y sin hollín (pantalla: en la Tierra gota amarilla con aire que sube) | ✅ | NASA, "Candle Flame – 1g vs Microgravity" (publicada 30 abr 2020) | "On Earth, gravity-driven buoyant convection causes a candle flame to be teardrop-shaped and carries soot to the flame's tip, which makes it yellow. In microgravity, where convective flows are absent, the flame is spherical, soot-free and blue." | 2020 (hecho físico, no una cifra; no requiere decir el año en voz) |
+| 15 | Voz 9 (cierre): tu vela no quema la cera que ves, quema la que ya se volvió vapor | ✅ | igual que #1 | ver #1 | 1860–61 |
+
+Revisión de cifras: la voz solo da el año 1860–1861 (se dice explícitamente, es dato histórico) y "unos centímetros" (fiel a las 2–3 pulgadas). Las barras de escala "1 cm" y "1 mm" son esquemáticas y coherentes con el tamaño real de una vela y de una mecha. No hay superlativos ("el primero", "el más") en la voz.
+
+Observaciones menores (no bloquean):
+- La edición digitalizada de Internet Archive es la reimpresión de 1865, pero su portada fecha las conferencias en "the Christmas holidays of 1860-1"; la voz dice "entre 1860 y 1861", correcto.
+- En la escena 3, la "piel" de la llama es esquemática (la descripción de Faraday es "between the two, intense chemical action"); conviene que la descripción mantenga "el dibujo es esquemático", como ya dice Notas.
+
+## Correcciones necesarias
+
+Ninguna. No se encontraron afirmaciones ❌ ni ⚠️: todas las frases citadas en guion.md existen textualmente en las fuentes indicadas y la voz no las exagera.
+
+VEREDICTO: APROBADO

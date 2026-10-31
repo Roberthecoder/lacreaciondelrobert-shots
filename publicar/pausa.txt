@@ -1,0 +1,2 @@
+# Escribe aquí la clave de un shot (una por línea, p. ej. fun-01-que-es-un-hongo) para que la publicación diaria NO lo publique.
+# Las líneas que empiezan con # se ignoran. Se edita desde la app de GitHub: archivo publicar/pausa.txt → lápiz → Commit.

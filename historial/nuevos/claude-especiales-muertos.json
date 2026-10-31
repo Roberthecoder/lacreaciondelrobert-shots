@@ -1,0 +1,136 @@
+{
+ "temas": [
+  {
+   "id": "podredumbre-blanca-muertos",
+   "titulo": "Día de Muertos · Fungi Mati: Los hongos que regresan los árboles a la tierra",
+   "serie": "Shot Festivo",
+   "numero": 3,
+   "especial": "Día de Muertos",
+   "estado": "renderizado",
+   "carpeta": "shots/fes-03-podredumbre-blanca",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [
+    "Floudas et al. 2012, Science 336:1715",
+    "Nelsen et al. 2016, PNAS",
+    "Wilcox 1968, USDA FPL 70"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "Podredumbre parda: el hongo que deja la madera en cubitos",
+    "Hongos que comen plástico o petróleo",
+    "El 'internet' de hongos del bosque (micorrizas)"
+   ],
+   "serie_vinculada": "Fungi Mati"
+  },
+  {
+   "id": "pan-de-muerto-muertos",
+   "titulo": "Día de Muertos · Biotecnológico: El hongo que infla el pan de muerto",
+   "serie": "Shot Festivo",
+   "numero": 2,
+   "especial": "Día de Muertos",
+   "estado": "renderizado",
+   "carpeta": "shots/fes-02-pan-de-muerto",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [
+    "Goffeau et al. 1996, Science 274:546",
+    "Kachroo et al. 2015, Science 348:921",
+    "Gorgus et al. 2016, J Anal Toxicol 40:537"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "La masa madre: levaduras y bacterias que viven juntas",
+    "Por qué el pan duro se pone duro (retrogradación del almidón)",
+    "Levaduras que fabrican medicinas"
+   ],
+   "serie_vinculada": "Biotecnológico"
+  },
+  {
+   "id": "monarcas-muertos",
+   "titulo": "Día de Muertos · Ambiental: Las mariposas que llegan en Día de Muertos",
+   "serie": "Shot Festivo",
+   "numero": 1,
+   "especial": "Día de Muertos",
+   "estado": "renderizado",
+   "carpeta": "shots/fes-01-monarcas",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [
+    "WWF–CONANP 2026 (temporada 2025–2026)",
+    "Merlin, Gegear y Reppert 2009, Science",
+    "Journey North"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "El algodoncillo: la planta venenosa que protege a la monarca",
+    "Cómo se mide una colonia de mariposas",
+    "Insectos que migran con brújula de sol"
+   ],
+   "serie_vinculada": "Ambiental"
+  },
+  {
+   "id": "esqueleto-muertos",
+   "titulo": "Día de Muertos · Científico: Tu calavera se está reconstruyendo",
+   "serie": "Shot Festivo",
+   "numero": 4,
+   "especial": "Día de Muertos",
+   "estado": "renderizado",
+   "carpeta": "shots/fes-04-esqueleto",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [
+    "Coates 2013, Aust Fam Physician (PMID 23781526)",
+    "NIAMS Healthy Bones 2025",
+    "Cleveland Clinic: osteoblasts and osteoclasts"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "¿Por qué se rompen los huesos de los astronautas?",
+    "Los dientes no se regeneran: el esmalte",
+    "Cómo sabe un forense la edad por los huesos"
+   ],
+   "serie_vinculada": "Científico"
+  },
+  {
+   "id": "calaveritas-muertos",
+   "titulo": "Día de Muertos · Químico: Las calaveritas de azúcar se arman solas",
+   "serie": "Shot Festivo",
+   "numero": 6,
+   "especial": "Día de Muertos",
+   "estado": "renderizado",
+   "carpeta": "shots/fes-06-calaveritas",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [
+    "México Desconocido: calaveras de azúcar",
+    "Ayuntamiento de Toluca 2022, comunicado 493",
+    "Marggraf 1747 (EBSCO Research Starters)"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "El caramelo: el azúcar que se rompe al calentarse",
+    "Algodón de azúcar: hilos de vidrio de azúcar",
+    "Por qué la miel se cristaliza"
+   ],
+   "serie_vinculada": "Químico"
+  },
+  {
+   "id": "fotos-ofrenda-muertos",
+   "titulo": "Día de Muertos · IA: La IA que restaura las fotos de tu ofrenda",
+   "serie": "Shot Festivo",
+   "numero": 5,
+   "especial": "Día de Muertos",
+   "estado": "renderizado",
+   "carpeta": "shots/fes-05-fotos-ofrenda",
+   "rama": "claude/especiales-muertos",
+   "fuentes": [
+    "Menon et al. 2020, PULSE, CVPR",
+    "Wan et al. 2020, Bringing Old Photos Back to Life, CVPR",
+    "Zhang, Isola y Efros 2016, Colorful Image Colorization"
+   ],
+   "fecha": "2026-10-28",
+   "derivados": [
+    "Cómo se detecta una foto hecha por IA",
+    "IA que colorea películas viejas: qué inventa",
+    "Sesgos en reconocimiento facial"
+   ],
+   "serie_vinculada": "IA"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+# Verificación de hechos · bio-14-embarazo
+
+- **Verificación independiente:** 29 de octubre de 2026, por un verificador que no escribió el guion y que abrió cada fuente.
+- Resultado inicial: 16 ✅, 2 ⚠️, 0 ❌. Las dos ⚠️ se corrigieron con el texto que propuso el verificador (ya verificado) y quedaron ✅:
+  1. **Gancho y cierre:** "son anticuerpos que atraparon una hormona" → "**es oro pegado a** anticuerpos que atraparon una hormona"
+     (los anticuerpos solos no se ven; el color es del oro coloidal). En pantalla se ilumina y señala la línea T, no la C, y en el
+     cierre se etiquetan C ("control") y T ("hCG").
+  2. **Implantación:** "empieza a fabricar una hormona, la hCG" → "su hormona, la hCG, **entra a la sangre de la madre**" + "De ahí pasa a la orina"
+     (el blastocisto ya expresa hCG antes de implantarse).
+- La voz se recortó (sin agregar datos) a 960 caracteres. La voz no se ha generado: espera la aprobación de Robert.
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | (Voz 0 / 12, corregida) "Esa rayita no es tinta: es oro pegado a anticuerpos que atraparon una hormona"; en pantalla se señala la línea T | ✅ (corregida: antes decía "son anticuerpos", pero el color es el oro) | Koczula & Gallotta, *Essays Biochem* https://pmc.ncbi.nlm.nih.gov/articles/PMC4986465/ ; FDA K132085 https://fda.innolitics.com/submissions/CH/subpart-b-clinical-chemistry-test-systems/LCX/K132085 | "The hCG test is an example of a sandwich-based assay"; "colloidal gold is the most widely used label… It has an intense colour"; "mouse monoclonal anti-β-hCG antibody colloidal gold conjugate" | 2016 / 2013 |
+| 2 | (Voz 1–2, corregidas) "Cuando un embrión se implanta en el útero, su hormona, la hCG, entra a la sangre de la madre. De ahí pasa a la orina" | ✅ (corregida: antes decía que "empieza a fabricar" la hCG al implantarse) | Makrigiannakis et al., *Int J Mol Sci* 18:1305 https://epub.ub.uni-muenchen.de/50916/1/ijms-18-01305-v2.pdf ; Canfield et al., *EHP* 74:57 https://pmc.ncbi.nlm.nih.gov/articles/PMC1474496 | "Its mRNA is transcribed as early as the 8-cell stage, while the blastocyst expresses HCG before its implantation"; hCG "enters the maternal circulation at the time of endometrial implantation" | 2017 / 1987 |
+| 3 | hCG formada por dos piezas α y β (escena 1, lo que se ve) | ✅ | Cole, *RB&E* 7:8 https://pmc.ncbi.nlm.nih.gov/articles/PMC2649930 | "In 1970 hCG was shown to be a non-covalently linked dimer"; "The α-subunit of hCG is identical with the α-subunit of LH." | 2009 |
+| 4 | (Voz 2) hCG pasa a la orina y eso busca la prueba | ✅ | FDA "Pregnancy" https://www.fda.gov/medical-devices/home-use-tests/pregnancy | "you can detect hCG in your urine 12-15 days after ovulation" | 2019 |
+| 5 | (Voz 3) La orina sube sola por la tira (capilaridad), como agua en servilleta | ✅ (la servilleta es analogía válida de capilaridad) | Koczula & Gallotta | sample "moves without the assistance of external forces (capillary action)"; K132085: "Because of capillary and chromatographic effects of the nitrocellulose membrane" | 2016 / 2013 |
+| 6 | (Voz 4) Arrastra anticuerpos pegados a partículas de oro que agarran la hormona | ✅ (típico; algunas marcas usan látex azul, pero oro es lo más usado y el que da línea rosa) | K132085; Koczula & Gallotta | "mouse monoclonal anti-β-hCG antibody colloidal gold conjugate pre-dried on a pad"; conjugate pad "contains antibodies… conjugated to coloured or fluorescent particles" | 2013 / 2016 |
+| 7 | (Voz 5) Otros anticuerpos fijos la agarran por el otro lado (línea T) | ✅ (anti-β en el oro, anti-α en la línea) | K132085 | "Mouse monoclonal anti-α-hCG antibody (on the Test Line)… immobilized on a nitrocellulose membrane"; "remains captured in the T line" | 2013 |
+| 8 | (Voz 6) Queda como sándwich y el oro pinta la rayita | ✅ | K132085; Koczula & Gallotta | "The assay of each device uses a double antibody sandwich method."; gold "has an intense colour and no development process is needed" | 2013 / 2016 |
+| 9 | (Voz 8) La línea de control atrapa los anticuerpos que pasan de largo, haya hormona o no; confirma que corrió bien | ✅ | K132085; Koczula & Gallotta | "The Control line should develop in the control zone regardless of the test result."; "a response on the control line indicates the proper liquid flow through the strip" | 2013 / 2016 |
+| 10 | (Voz 9) Son anticuerpos monoclonales, todos idénticos | ✅ | K132085; Cambridge https://www.cam.ac.uk/news/cesar-milstein-1927-2002 ; MRC LMB https://mrclmb.ac.uk/?p=980 | "mouse monoclonal anti-β-hCG antibody"; "a method for growing a single antibody type in unlimited quantities" (paráfrasis MRC LMB) | 2013 / s.f. |
+| 11 | (Voz 9) 1975, Cambridge, Köhler y Milstein idearon cómo hacerlos fusionando células de ratón (bazo + mieloma, *Nature*) | ✅ | Univ. Cambridge (2002); Köhler & Milstein, *Nature* 256:495 (1975) | "Köhler and Milstein discovered how to fuse mouse spleen cells to a cell line derived from a mouse tumour"; "publication in Nature in 1975"; Milstein "one of the leading figures at the Medical Research Council's Laboratory of Molecular Biology" | 2002 (dato 1975) |
+| 12 | (Voz 10) En 1984 ganaron el Nobel de Medicina (en pantalla: compartido con Jerne) | ✅ (nombre oficial: Fisiología o Medicina; compartido con Jerne, que sí sale en pantalla) | Cambridge; MRC LMB | "he and Georges Köhler shared the 1984 Nobel Prize in Physiology or Medicine"; "the discovery of the principle for production of monoclonal antibodies"; Jerne "shared the prize with them" | 1984 |
+| 13 | (Voz 11) En muchas pruebas la línea de control lleva anticuerpos de cabra que atrapan los de ratón | ✅ (3 registros FDA independientes 2013–2024) | K132085; K240242 https://fda.innolitics.com/device/K240242 ; K131931 https://fda.innolitics.com/device/K131931 | "goat anti mouse IgG polyclonal antibody (on the Control Line)"; "goat anti-mouse polyclonal antibody coated at the quality control region" | 2013 / 2024 |
+| 14 | (Descripción) FDA: 28 días de ciclo → hCG en orina 12–15 días tras ovulación | ✅ | FDA "Pregnancy" | "If you have a 28 day menstrual cycle, you can detect hCG in your urine 12-15 days after ovulation." | 2019 |
+| 15 | (Descripción) Mejor 1–2 semanas tras el retraso, primera orina de la mañana; negativo temprano puede ser falso | ✅ | FDA "Pregnancy" | "For the most reliable results, test 1-2 weeks after you miss your period."; "using your first morning urine"; "If you test too early… your placenta may not have had enough time to produce hCG." | 2019 |
+| 16 | (Descripción) hCG pasa a la sangre y a la orina | ✅ | Canfield 1987; FDA | "enters the maternal circulation at the time of endometrial implantation" | 1987 |
+| 17 | (Descripción) Monoclonales usados en pruebas caseras de embarazo | ✅ | Cambridge (2002) | "in home pregnancy kits, for example, monoclonals are used as diagnostics" | 2002 |
+| 18 | (Fuentes) Prueba de embarazo = LFA más usado; oro = marca más usada | ✅ | Koczula & Gallotta | "The most commonly used LFA is the pregnancy test"; "Nowadays colloidal gold is the most widely used label in commercial LFIA" | 2016 |
+
+Nota: no pude abrir nobelprize.org (403); el Nobel 1984 se confirmó con Cambridge y MRC LMB. El NEJM de Wilcox (fuente 7) no abrió (PubMed bloqueado por cookies); solo se usa como opcional en la descripción, que hoy no lo cita: si se usa "8 a 10 días", hay que abrirlo antes.
+
+Sin ❌ ni ⚠️ pendientes.
+
+VEREDICTO: APROBADO

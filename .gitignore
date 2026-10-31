@@ -1,0 +1,24 @@
+node_modules
+salida/
+*.video.mp4
+motor/prueba.mp4
+shots/_demo-kit/*.mp4
+.env
+# derivados de la narración (se regeneran); los clips mp3 + json sí se guardan como caché
+shots/*/voz/*.wav
+shots/*/assets/musica_narrada.wav
+shots/*/assets/mezcla_narrada.wav
+shots/*/assets/musica_demo.wav
+
+# audio de revisión: lo genera GitHub en cada render
+shots/*-esp-*/assets/mezcla.wav
+shots/*/assets/mezcla.wav
+shots/*/assets/mezcla_mudo.wav
+shots/*/revision/
+largos/*/fuentes/
+# Lote C: las mezclas se regeneran con gen-audio.mjs (el workflow las crea al renderizar)
+shots/amb-0*/assets/*.wav
+shots/cie-03-*/assets/*.wav
+# mezclas de los shots nuevos (las genera gen-audio.mjs; el workflow las vuelve a crear)
+shots/fun-*/assets/*.wav
+shots/qui-*/assets/*.wav

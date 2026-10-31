@@ -1,0 +1,70 @@
+# Shot Químico #15 · Ese ardor no es calor (el chile, el agua y la leche)
+
+- **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #15 · rama `pedido300/qui`.
+- **Formato:** N1 "Por dentro" (una boca mordiendo un habanero → la capsaicina y el sensor TRPV1 en un nervio → la misma boca, ya con un vaso de leche) + N5 "El experimento" (Nolden, Lenart y Hayes, Penn State, 2019).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y": "Ese ardor del habanero no es calor: es la capsaicina engañando a tu sensor de calor."
+- **Seguridad:** no hay consejo médico; lo único práctico es lo que dice la fuente (la leche bajó el ardor más que el agua).
+- **Duración:** voz 955 caracteres (≈ 58.2 s) + cierre 3.5 s → **61.7 s** (estimar-escenas).
+- **Estado:** guion verificado (`verificacion.md`), animación lista, voz pendiente de aprobación de Robert (~955 créditos).
+
+## Versión narrada
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Ese ardor del habanero no es calor: es la capsaicina engañando a tu sensor de calor. | Fondo amarillo. Desde el cuadro 0 una mano acerca un habanero naranja a una boca que lo muerde (crunch); salen llamitas dibujadas de la lengua. Un termómetro al lado se queda quieto en "normal" y la palabra "calor" se tacha. |
+| 1 | Que | La capsaicina es la molécula que pica en los chiles, como el habanero o el jalapeño. | Zoom a un pedacito del habanero: sale la molécula de capsaicina (anillo con cola larga de carbonos, la cola en amarillo "grasosa"). Junto al habanero aparece un jalapeño verde y de los dos salen más capsaicinas. Etiqueta "capsaicina". |
+| 2 | Sensor | En tus nervios hay un sensor, TRPV1, que se enciende con el calor que quema. | Fondo noche. Viaje dentro de la lengua: una terminación nerviosa (rama amarilla) con canalitos en la membrana etiquetados "TRPV1". Una flama real (de estufa) se acerca por un lado y el canal se abre: entran puntitos (iones) y un rayo viaja por el nervio. |
+| 3 | Engano | La capsaicina se pega a ese sensor y lo prende: tu cerebro siente fuego, aunque no haya. | Sin flama: llega la capsaicina, encaja en el TRPV1 como llave, el canal se abre igual, el rayo sube a un cerebro dibujado que muestra una flama con signo "?"; "?" junto a la flama: no hay fuego. |
+| 4 | Agua | El agua ayuda algo, pero la capsaicina es grasosa: casi no se disuelve en ella. | Cae un chorro de agua (gotas azules) sobre la lengua; zoom: una capsaicina dentro de una gota se queda hecha bolita sin mezclarse, con etiqueta "casi insoluble en agua"; arrastra unas pocas capsaicinas sueltas, pero las demás siguen pegadas a los TRPV1. Medidor de ardor baja solo un poco. |
+| 5 | Pregunta | ¿Entonces qué te tomas? | **Re-gancho.** Regreso a la boca con llamitas; aparecen flotando un vaso de agua, uno de leche, un refresco de cola, una cerveza (sin alcohol) y un agua de sabor roja, con un "?" grande. |
+| 6 | Estudio | En 2019, en la Universidad Estatal de Pensilvania, 72 personas tomaron jugo de tomate picante y, una por una, probaron siete bebidas. | Tarjeta "2019 · Penn State · 72 personas". Mesa de laboratorio: vasitos de jugo de tomate rojo con chile; cada persona prueba, ronda por ronda, los 7 vasitos con código de 3 dígitos (leche descremada, leche entera, agua con gas, agua de sabor, cerveza sin alcohol, cola, agua). Cada vasito recibe su palomita al probarse; el "72" crece arriba. |
+| 7 | Resultado | Todas ayudaron algo, pero solo la leche y un agua de sabor con azúcar le ganaron al agua sola. | Gráfica de barras "ardor total" que crecen: "sin nada" la más alta; agua al centro; agua con gas, cola y cerveza al nivel del agua o apenas más altas (nunca más bajas); leche entera, leche descremada y agua de sabor más bajas, que se iluminan. Una línea punteada marca "agua" como referencia. |
+| 8 | Proteina | Y la entera no le ganó a la descremada: los autores sospechan que ayuda más la proteína que la grasa. | Dos vasos de leche lado a lado (entera / descremada) con signo "=". Zoom al vaso: gotitas de grasa y bolitas de proteína (caseína); la capsaicina se va con las proteínas, con letrero "hipótesis". |
+| 9 | Nobel | Lo curioso: con capsaicina, David Julius descubrió ese sensor en 1997, y en 2021 compartió el Nobel de Medicina. | Tarjeta "1997 · David Julius · San Francisco": un chile al lado del canal TRPV1; luego una medalla dorada con "Nobel 2021 · Fisiología o Medicina". |
+| 10 | Cierre | Así que ese ardor no es calor: es química, y la leche lo calma mejor que el agua. | **Regreso a la boca del inicio** con el mismo habanero mordido: ahora entra un vaso de leche, las llamitas se encogen y el medidor de ardor baja; la etiqueta dice "capsaicina + TRPV1 = ardor sin fuego". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
+
+**Música:** cama grave continua; efectos en el mismo cuadro (crunch del chile, chisporroteo de las llamitas, gota que no se mezcla, "clic" del canal al abrirse, zumbido eléctrico del nervio, chorro de agua, golpe de la tarjeta, tic de cada ronda, barras que suben, "glu-glu" de la leche, campanita de la medalla, llamitas que se apagan).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Entonces qué te tomas?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «es la capsaicina engañando a tu sensor de calor» |
+| 2 | 6.5 | 9.9 | 13_senalando_arriba | `izq-alto` | «la molécula que pica en los chiles» (señala la capsaicina) |
+| 3 | 16.5 | 20.0 | 05_sonriendo_dientes_uniformes | `arriba-der` | «tu cerebro siente fuego, aunque no haya» |
+| 4 | 20.7 | 24.9 | 10_serio_molesto | `izq-alto` | «el agua ayuda algo… casi no se disuelve en ella» |
+| 5 | 25.2 | 27.7 | 07_pensativo_puno | `grande` | «¿Entonces qué te tomas?» |
+| 6 | 30.0 | 34.4 | 06_pensativo_menton | `izq-alto` | «una por una, probaron siete bebidas» |
+| 7 | 35.7 | 40.1 | 11_sorprendido | `arriba-der` | «solo la leche y un agua de sabor le ganaron al agua sola» |
+| 8 | 41.8 | 46.2 | 04_bajando_lentes | `izq-alto` | «la entera no le ganó a la descremada» |
+| 9 | 49.9 | 52.9 | 13_senalando_arriba | `arriba-der` | «en 2021 compartió el Nobel de Medicina» (señala la medalla) |
+| 10 | 53.5 | 58.1 | 02_apuntando_camara | `arriba-der` | «la leche lo calma mejor que el agua» |
+| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 10 apariciones · ≈ 39 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
+
+## Fuentes (cada dato y cifra se abrió en la fuente original el 29 oct 2026)
+
+1. **El estudio de 2019: Penn State, 72 personas, jugo de tomate picante, 7 bebidas; todas bajaron el ardor; solo la leche (entera o descremada) y el Kool-Aid le ganaron al agua; la entera no fue mejor que la descremada; sospechan de la proteína** — Nolden A.A., Lenart G., Hayes J.E. "Putting out the fire – Efficacy of common beverages in reducing oral burn from capsaicin." *Physiology & Behavior* 208:112557 (2019). DOI 10.1016/j.physbeh.2019.05.018 · PMC6620146. Afiliación: "Sensory Evaluation Center, College of Agricultural Sciences, The Pennsylvania State University, University Park, Pennsylvania, USA".
+   > "Participants (n=72, 42 women, 30 men) rated the burn of 30 mL of spicy tomato juice" · "On 7 of 8 trials, a test beverage (40 mL) was consumed after tomato juice was swallowed, including: skim milk, whole milk, seltzer water, Cherry Kool-Aid, non-alcoholic beer, cola, and water." · "All beverages significantly reduced the burn of the tomato juice." · "when compared to room temperature water, only milk (skim or whole) and Kool-Aid outperformed water." · "Kool-Aid - a fruit flavored drink containing citric acid and ~10% sucrose" · "we failed to find evidence that whole milk (>3.25% fat) was more effective than skim milk (<0.5% fat)." · "skim and whole never differed." · "Present data suggest milk is the best choice to mitigate burn, regardless of fat context, suggesting the presence of protein may be more relevant than lipid content." · "caseins are the primary protein in cow’s milk (~80%), so future work testing the ability of casein to solubilize or emulsify capsaicin, and to cut burn, are warranted."
+   > Sobre que la capsaicina es "grasosa" y se pega a TRPV1: "due to the lipophilicity of capsaicin" · "capsaicin’s well-known hydrophobicity" · "available for binding with the transient receptor potential cation channel subfamily V member 1 (TRPV1) receptor".
+2. **La capsaicina casi no se disuelve en agua fría** — The Merck Index, 15.ª ed. (O'Neil M.J., ed.), Royal Society of Chemistry, 2013, p. 308, vía PubChem CID 1548943 (sección "Solubility").
+   > "Practically insoluble in cold water" · "Freely soluble in alcohol, ether, benzene."
+3. **La capsaicina es lo que pica en los chiles; TRPV1 se activa con capsaicina y con calor que duele; Julius, San Francisco, 1997** — Caterina M.J., Schumacher M.A., Tominaga M., Rosen T.A., Levine J.D., Julius D. "The capsaicin receptor: a heat-activated ion channel in the pain pathway." *Nature* 389:816–824 (1997). PMID 9349813 · DOI 10.1038/39807.
+   > "Capsaicin, the main pungent ingredient in 'hot' chilli peppers, elicits a sensation of burning pain by selectively activating sensory neurons" · "The cloned capsaicin receptor is also activated by increases in temperature in the noxious range, suggesting that it functions as a transducer of painful thermal stimuli in vivo."
+4. **Nobel de Medicina 2021, compartido; el sensor en las terminaciones nerviosas; TRPV1** — Nobel Assembly at Karolinska Institutet, comunicado de prensa del 4 oct 2021 (nobelprize.org/prizes/medicine/2021/press-release/).
+   > "award the 2021 Nobel Prize in Physiology or Medicine jointly to David Julius and Ardem Patapoutian for their discoveries of receptors for temperature and touch" · "David Julius utilized capsaicin, a pungent compound from chili peppers that induces a burning sensation, to identify a sensor in the nerve endings of the skin that responds to heat." · "this newly discovered capsaicin receptor was later named TRPV1" · "a heat-sensing receptor that is activated at temperatures perceived as painful" · "David Julius at the University of California, San Francisco, USA".
+
+## Notas
+- El dibujo es esquemático (la molécula, el canal como "puerta", el rayo del nervio, la caseína atrapando capsaicina).
+- "Agua de sabor con azúcar" = el Kool-Aid de cereza del estudio (bebida en polvo de fruta con ácido cítrico y ~10 % de azúcar). En la descripción se aclara la marca.
+- La cerveza del estudio era **sin alcohol**; los autores dicen que el efecto del alcohol queda abierto. La cola y el agua con gas (seltzer) no le ganaron al agua; fueron igual o algo menos efectivas.
+- Lo de la proteína (caseína) es **hipótesis de los autores**; la voz lo dice como "sospechan". Lo que sí se midió: la leche entera no fue mejor que la descremada.
+- El agua sí bajó el ardor comparada con no tomar nada; por eso la voz dice "ayuda algo", no "no sirve". Que no la quite "porque es grasosa" no lo midió el estudio: la voz solo da la propiedad química (Merck 2013).
+- **Leche fría vs. agua a temperatura ambiente:** las bebidas estaban frías (~4 °C) salvo el agua sin gas (a temperatura ambiente, ~20 °C): matiz para la descripción, porque, como recuerdan los mismos autores citando estudios previos, "Solution temperatures below mouth temperature (~35°C) substantially reduce the burn of capsaicin".
+- Julius compartió el Nobel con Ardem Patapoutian (sensores del tacto); el descubrimiento del TRPV1 se publicó en *Nature* en 1997.
+- Chiles (*Capsicum*): el habanero es *Capsicum chinense*.
+

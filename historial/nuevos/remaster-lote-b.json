@@ -1,0 +1,108 @@
+{
+  "temas": [
+    {
+      "id": "lactosa-virus-gen-lactasa",
+      "titulo": "El virus que te deja tomar leche: terapia génica para la intolerancia a la lactosa",
+      "serie": "Shot Biotecnológico",
+      "numero": 6,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-06-lactosa",
+      "rama": "remaster/lote-b",
+      "fuentes": [
+        "During, M. J. et al., Nature Medicine 4(10): 1131-1135 (1998): https://www.nature.com/articles/nm1098_1131",
+        "The Thought Emporium (Justin Atkin), proyecto de lactosa, feb 2018: https://www.thethoughtemporium.com/lactose",
+        "van der Flier, L. G. y Clevers, H., Annual Review of Physiology 71 (2009): el epitelio intestinal se renueva cada 4-5 dias"
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Por que la leche deslactosada sabe mas dulce sin tener mas azucar (glucosa y galactosa son mas dulces que la lactosa)",
+        "La persistencia de la lactasa: la mutacion que se extendio con la ganaderia, y por que no es igual en todo el mundo",
+        "Los virus adeno-asociados como vehiculo: que terapias genicas con AAV si estan aprobadas hoy"
+      ],
+      "nota": "Remasterizacion del video viejo #10. Matiz obligatorio: fue un autoexperimento de un divulgador, no un tratamiento aprobado. La duracion de su efecto NO se pudo verificar y el guion no la afirma."
+    },
+    {
+      "id": "poliovirus-sintetico-2002-bioseguridad",
+      "titulo": "El virus que se escribio desde su secuencia: el poliovirus sintetico de 2002 y las reglas que dejo",
+      "serie": "Shot Biotecnológico",
+      "numero": 7,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-07-polio",
+      "rama": "remaster/lote-b",
+      "fuentes": [
+        "Cello, J., Paul, A. V. y Wimmer, E., Science 297(5583): 1016-1018 (9 ago 2002)",
+        "Congressional Research Service, RS21369 (2002): https://www.everycrsreport.com/reports/RS21369.html",
+        "National Research Council, informe Fink (2004); NSABB creado en 2004"
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Como se revisa hoy un pedido de ADN sintetico: el 'conoce a tu cliente' de las empresas que lo venden",
+        "Que es la investigacion de doble uso y quien decide si algo se publica",
+        "La erradicacion de la polio: por que sigue habiendo casos si hay vacuna desde 1955"
+      ],
+      "nota": "Remasterizacion del video viejo #11, corrigiendo el nombre (Eckard Wimmer). Tono de bioseguridad: cuenta que significo y que reglas dejo, sin ningun procedimiento."
+    },
+    {
+      "id": "insulina-recombinante-bacteria-levadura",
+      "titulo": "La insulina sale de un tanque: de E. coli a la levadura",
+      "serie": "Shot Biotecnológico",
+      "numero": 8,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-08-insulina",
+      "rama": "remaster/lote-b",
+      "fuentes": [
+        "Humulin (Eli Lilly con Genentech), aprobada por la FDA el 30 de octubre de 1982",
+        "Novolin (Novo Nordisk), insulina humana producida en Saccharomyces cerevisiae, aprobada en EE. UU. en 1991",
+        "Federacion Internacional de Diabetes, IDF Diabetes Atlas, 11a edicion (2025): https://idf.org/news-and-resources/news/idf-diabetes-atlas-11th-edition/"
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Por que la insulina es cara si se fabrica en tanques: patentes, biosimilares y el costo real de produccion",
+        "Cuerpos de inclusion: por que la bacteria guarda la proteina en grumos y hay que volver a doblarla",
+        "Otras proteinas recombinantes de tu botiquin: hormona de crecimiento, factor VIII, vacunas"
+      ],
+      "nota": "Remasterizacion del video viejo #17. Matiz obligatorio: hoy tambien se produce en levadura, no solo en bacterias. No existe cifra publica del reparto de mercado por hospedero."
+    },
+    {
+      "id": "cepario-vida-en-pausa",
+      "titulo": "Un cepario: vida en pausa a -80, a -196 o sin agua",
+      "serie": "Shot Biotecnológico",
+      "numero": 9,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-09-cepario",
+      "rama": "remaster/lote-b",
+      "fuentes": [
+        "World Data Centre for Microorganisms (WDCM): unas 802 colecciones en 78 paises y ~3.28 millones de cepas: https://academic.oup.com/nar/article/45/D1/D611/2770659",
+        "Revisiones de conservacion de microorganismos: liofilizacion, criopreservacion a -196 C y el umbral de -130 C"
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Que es una cepa tipo y por que cada especie tiene una bacteria 'oficial' de referencia",
+        "Como se revive una cepa liofilizada, paso a paso y sin contaminarla",
+        "Por que se guardan dos copias en lugares distintos: casos reales de colecciones perdidas"
+      ],
+      "nota": "Remasterizacion del video viejo #23. El cepario del laboratorio donde estudia Robert se menciona como experiencia propia, no como dato con fuente."
+    },
+    {
+      "id": "maglov-proteina-campo-magnetico",
+      "titulo": "La proteina que responde a un iman: MagLOV y la biologia cuantica",
+      "serie": "Shot Científico",
+      "numero": 2,
+      "estado": "renderizado",
+      "carpeta": "shots/cie-02-proteina-iman",
+      "rama": "remaster/lote-b",
+      "fuentes": [
+        "Abrahams, G. et al., 'Quantum spin resonance in engineered proteins for multimodal sensing', Nature (2026): https://www.nature.com/articles/s41586-025-09971-3",
+        "Preprint del mismo trabajo, bioRxiv 2024.11.25.625143: -50 % entre 0 y 10 mT; ODMR con 21.6 mT y 604 MHz",
+        "Genetic Engineering & Biotechnology News, 21 de enero de 2026"
+      ],
+      "fecha": "2026-10-27",
+      "derivados": [
+        "Como se orientan las aves migratorias: la hipotesis del par radical en los criptocromos (decirlo como hipotesis)",
+        "Evolucion dirigida: como se 'crian' proteinas en el laboratorio, ronda tras ronda",
+        "Las proteinas fluorescentes: de la medusa a la caja de herramientas de todo laboratorio"
+      ],
+      "nota": "Remasterizacion del video viejo #4. Correcciones: se llama MagLOV (no 'Maglob') y viene del dominio LOV2 de Avena sativa (no de un dominio 'LP'); equipo de Oxford, Nature 2026."
+    }
+  ]
+}

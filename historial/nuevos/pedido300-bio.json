@@ -1,0 +1,1178 @@
+{
+  "temas": [
+    {
+      "id": "bio-10-quimosina",
+      "titulo": "El cuajo de tu queso sale de microbios: quimosina recombinante (FDA 1990)",
+      "serie": "Shot Biotecnológico",
+      "numero": 10,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-10-quimosina",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Kayihura 2024 Food Sci Nutr PMC10916671",
+        "JECFA WHO FAS 28",
+        "21 CFR 184.1685 (55 FR 10935, 1990)",
+        "Johnson y Lucey 2006 J Dairy Sci"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Quimosina de camello y quesos madurados",
+        "Por qué el queso Oaxaca se estira y el fresco no",
+        "Fermentación de precisión: proteínas de leche sin vaca"
+      ]
+    },
+    {
+      "id": "bio-11-gila",
+      "titulo": "Ozempic empezó en la saliva de un lagarto: exendina-4 del monstruo de Gila",
+      "serie": "Shot Biotecnológico",
+      "numero": 11,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-11-gila",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Eng 1992 J Biol Chem PMID 1313797",
+        "Etiqueta FDA Byetta 2009",
+        "EMA Ozempic EPAR",
+        "Christel 2007 J Exp Biol"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Captopril y el veneno de jararaca",
+        "Ziconotida del caracol cono",
+        "Las incretinas: por qué la glucosa tomada sube más la insulina"
+      ]
+    },
+    {
+      "id": "bio-12-antiveneno",
+      "titulo": "El antídoto del alacrán sale de un caballo: faboterápicos mexicanos",
+      "serie": "Shot Biotecnológico",
+      "numero": 12,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-12-antiveneno",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Ficha FDA Anascorp 2022",
+        "Boyer et al. NEJM 2009",
+        "Chippaux et al. Toxicon 2020",
+        "Boletín Epidemiológico SSA sem 53 2025"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Antiveneno de víbora de cascabel y viuda negra",
+        "Anticuerpos humanos de laboratorio contra venenos (IBt-UNAM)",
+        "Por qué el veneno de alacrán ataca los nervios"
+      ]
+    },
+    {
+      "id": "bio-13-pcr",
+      "titulo": "Una PCR en 4 capítulos: la enzima Taq de Yellowstone (Mullis 1983)",
+      "serie": "Shot Biotecnológico",
+      "numero": 13,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-13-pcr",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Brock y Freeze 1969 J Bacteriol",
+        "Nobel de Química 1993",
+        "NHGRI PCR fact sheet 2020",
+        "Lorenz 2012 JoVE"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Prueba de antígeno vs PCR",
+        "Huellas de ADN con STR en un caso criminal",
+        "Extremófilos de Yellowstone en la industria"
+      ]
+    },
+    {
+      "id": "bio-14-embarazo",
+      "titulo": "La prueba de embarazo es un anticuerpo: monoclonales (Köhler y Milstein 1975)",
+      "serie": "Shot Biotecnológico",
+      "numero": 14,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-14-embarazo",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Koczula y Gallotta 2016 Essays Biochem",
+        "FDA 510(k) K132085",
+        "Köhler y Milstein 1975 Nature",
+        "Makrigiannakis 2017 IJMS"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Pruebas rápidas de antígenos con flujo lateral",
+        "Anticuerpos monoclonales como medicina",
+        "hCG vs LH: pruebas de ovulación"
+      ]
+    },
+    {
+      "id": "bio-15-detergente",
+      "titulo": "Tu detergente tiene enzimas: proteasas y amilasas que cortan manchas en agua fría",
+      "serie": "Shot Biotecnológico",
+      "numero": 15,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-15-detergente",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Callisen et al. Dansk Kemi 2006",
+        "Flindt Lancet 1969",
+        "Razzaq et al. 2019 PMC6584820",
+        "Vanhanen et al. 2000"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Enzimas del detergente de lavavajillas",
+        "Pectinasas en jugos clarificados",
+        "Lipasas de hongo (Lipolase 1988)"
+      ]
+    },
+    {
+      "id": "bio-16-arnm",
+      "titulo": "La vacuna de ARNm: tu célula fabrica la pieza (pseudouridina, Karikó y Weissman)",
+      "serie": "Shot Biotecnológico",
+      "numero": 16,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-16-arnm",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Nobel Fisiología o Medicina 2023",
+        "Karikó et al. Immunity 2005",
+        "CDC Understanding mRNA vaccines 2021",
+        "Röltgen et al. Cell 2022"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "La nanopartícula de lípidos por dentro",
+        "Letras modificadas naturales del ARN",
+        "Células dendríticas y receptores TLR"
+      ]
+    },
+    {
+      "id": "bio-17-hepatitis-b",
+      "titulo": "La primera vacuna hecha en levadura: hepatitis B recombinante (1986)",
+      "serie": "Shot Biotecnológico",
+      "numero": 17,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-17-hepatitis-b",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "PRONAM 2026",
+        "Valenzuela et al. Nature 1982",
+        "Huzair y Sturdy 2017",
+        "Ficha Recombivax HB 2023"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Vacuna del VPH: partículas tipo virus",
+        "La vacuna de plasma de 1981",
+        "Partículas vacías propias del virus de hepatitis B"
+      ]
+    },
+    {
+      "id": "bio-18-glucometro",
+      "titulo": "Tu glucómetro funciona con una enzima: glucosa oxidasa (Clark 1962)",
+      "serie": "Shot Biotecnológico",
+      "numero": 18,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-18-glucometro",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Yoo y Lee Sensors 2010",
+        "Clark y Lyons 1962",
+        "Ensanut 2021-2024 SPM 2025",
+        "Bucekova 2014"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Sensor continuo de glucosa",
+        "Miel antibacteriana y glucosa oxidasa",
+        "Aspergillus niger en la industria"
+      ]
+    },
+    {
+      "id": "bio-19-xantana",
+      "titulo": "Tu aderezo es espeso por una bacteria: goma xantana (Xanthomonas campestris)",
+      "serie": "Shot Biotecnológico",
+      "numero": 19,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-19-xantana",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Federal Register 1969 p.5376",
+        "21 CFR 172.695",
+        "Berninger et al. 2021",
+        "Jeanes et al. 1961"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Goma gellan y otros espesantes microbianos",
+        "Por qué la cátsup no sale hasta que la golpeas",
+        "El dextrano de Allene Jeanes"
+      ]
+    },
+    {
+      "id": "bio-20-glutamato",
+      "titulo": "El glutamato monosódico sale de bacterias (Corynebacterium glutamicum, Kinoshita 1956)",
+      "serie": "Shot Biotecnológico",
+      "numero": 20,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-20-glutamato",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Kinoshita, Udaka y Shimono 1957 J Gen Appl Microbiol",
+        "Sano 2009 Am J Clin Nutr",
+        "Nakayama 2021 Microorganisms",
+        "VAAM Microbio del Año 2025"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Lisina para alimento animal con C. glutamicum",
+        "Glutamato libre en tomate y queso",
+        "Inosinato y guanilato: los otros umami"
+      ]
+    },
+    {
+      "id": "bio-21-cangrejo",
+      "titulo": "La sangre azul que revisa tus vacunas: prueba LAL del cangrejo herradura y factor C recombinante",
+      "serie": "Shot Biotecnológico",
+      "numero": 21,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-21-cangrejo",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Federal Register 42:57749 (1977)",
+        "Maloney et al. PLOS Biology 2018",
+        "ASMFC 2023",
+        "Anderson et al. Biol Bull 2013"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Prueba de conejos vs activación de monocitos",
+        "Hemocianina: sangre azul de pulpos y caracoles",
+        "Huevos de cangrejo herradura y el playero rojizo"
+      ]
+    },
+    {
+      "id": "bio-22-platano",
+      "titulo": "Todos tus plátanos son el mismo clon: Cavendish y el hongo TR4",
+      "serie": "Shot Biotecnológico",
+      "numero": 22,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-22-platano",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Dale et al. Nat Commun 2017",
+        "FSANZ A1274 2024",
+        "SENASICA Foc R4T 2026",
+        "FAO Food Outlook 2019"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Plátano macho y variedades que se comen en México",
+        "Edición para encender RGA2 en Cavendish",
+        "La papa de Irlanda 1845: otro monocultivo clonal"
+      ]
+    },
+    {
+      "id": "bio-23-vainilla",
+      "titulo": "La vainilla de tu helado casi nunca sale de una orquídea: vainillina sintética y biotecnológica",
+      "serie": "Shot Biotecnológico",
+      "numero": 23,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-23-vainilla",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Converti et al. 2010",
+        "Cabeza Sánchez et al. 2024",
+        "Gasson et al. 1998 JBC",
+        "Reglamento CE 1334/2008"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El azafrán: la especia más cara",
+        "Sabores naturales por fermentación (nootkatona)",
+        "El cacao y sus mosquitas polinizadoras"
+      ]
+    },
+    {
+      "id": "bio-24-hela",
+      "titulo": "Las células de Henrietta Lacks: HeLa, la primera línea celular humana (1951)",
+      "serie": "Shot Biotecnológico",
+      "numero": 24,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-24-hela",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Hudson y Collins Nature 2013",
+        "Landry et al. G3 2013",
+        "Turner 2012",
+        "Boshart et al. EMBO J 1984"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "La telomerasa (Nobel 2009)",
+        "El límite de Hayflick",
+        "Líneas celulares contaminadas con HeLa"
+      ]
+    },
+    {
+      "id": "bio-25-bt",
+      "titulo": "El maíz que fabrica su propio insecticida: proteínas Cry de Bacillus thuringiensis",
+      "serie": "Shot Biotecnológico",
+      "numero": 25,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-25-bt",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "NPIC Bt 2022",
+        "Health Canada MON 95379 2022",
+        "EPA BRAD 2001",
+        "Storer et al. 2010",
+        "DOF 17 mar 2025"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Refugios contra la resistencia en maíz Bt",
+        "El gusano cogollero invadió África (2016)",
+        "Las razas de maíz nativo de México"
+      ]
+    },
+    {
+      "id": "bio-26-papaya",
+      "titulo": "La papaya que se vacunó: papaya transgénica contra el virus de la mancha anular (Hawái 1998)",
+      "serie": "Shot Biotecnológico",
+      "numero": 26,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-26-papaya",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Gonsalves et al. APSnet 2004",
+        "Ferreira et al. Plant Disease 2002",
+        "Tripathi et al. 2008",
+        "Hernández-Castro et al. 2004"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Protección cruzada con cepas suaves",
+        "Por qué los insecticidas no frenan virus de pulgones",
+        "Barreras de maíz y jamaica en Veracruz"
+      ]
+    },
+    {
+      "id": "bio-27-arroz-dorado",
+      "titulo": "Arroz dorado: betacaroteno en el grano (Filipinas 2021)",
+      "serie": "Shot Biotecnológico",
+      "numero": 27,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-27-arroz-dorado",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Ye et al. Science 2000",
+        "Paine et al. 2005",
+        "Tang et al. 2009",
+        "OMS 2009",
+        "PhilRice 2024"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Biofortificación sin transgénicos (camote naranja)",
+        "Por qué la zanahoria es naranja",
+        "Tomate y arroz morados con antocianinas"
+      ]
+    },
+    {
+      "id": "bio-28-dolly",
+      "titulo": "Dolly: un clon de una célula de ubre (1996)",
+      "serie": "Shot Biotecnológico",
+      "numero": 28,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-28-dolly",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Wilmut et al. Nature 1997",
+        "Roslin The Life of Dolly",
+        "Sinclair et al. 2016",
+        "Evans et al. 1999"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Células iPS de Yamanaka",
+        "Clonar animales en peligro",
+        "Las ranas de Gurdon"
+      ]
+    },
+    {
+      "id": "bio-29-penicilina-melon",
+      "titulo": "La penicilina del mundo salió de un melón mohoso (Peoria, 1943)",
+      "serie": "Shot Biotecnológico",
+      "numero": 29,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-29-penicilina-melon",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Gaynes EID 2017",
+        "Jami et al. 2010",
+        "Quinn AJPH 2013",
+        "USDA-ARS Moldy Mary"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El licor de maíz y la fermentación industrial",
+        "Mejora de cepas por mutación",
+        "P. chrysogenum vs P. rubens"
+      ]
+    },
+    {
+      "id": "bio-30-hormona-crecimiento",
+      "titulo": "La hormona de crecimiento: de hipófisis de cadáveres a bacterias (1985)",
+      "serie": "Shot Biotecnológico",
+      "numero": 30,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-30-hormona-crecimiento",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "CDC MMWR 1985",
+        "NIDDK minutas 2024 y 2026",
+        "Genentech 18 oct 1985",
+        "Ayyar 2011"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Parches de duramadre y CJD iatrogénica",
+        "Por qué los priones aguantan la esterilización",
+        "Factor VIII recombinante para la hemofilia"
+      ]
+    },
+    {
+      "id": "bio-31-car-t",
+      "titulo": "Células que cazan cáncer: CAR-T (Emily Whitehead, 2012)",
+      "serie": "Shot Biotecnológico",
+      "numero": 31,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-31-car-t",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "CHOP 2022",
+        "AABB 2025",
+        "NCI 2025",
+        "Ficha FDA Kymriah"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "CAR-T contra el lupus",
+        "Tocilizumab: de la artritis al CRS",
+        "CAR-T de donante listas para usar"
+      ]
+    },
+    {
+      "id": "bio-32-falciforme",
+      "titulo": "CRISPR en la clínica: Casgevy para la anemia falciforme (2023)",
+      "serie": "Shot Biotecnológico",
+      "numero": 32,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-32-falciforme",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Frangoul et al. NEJM 2024",
+        "FDA 8 dic 2023",
+        "MHRA 16 nov 2023",
+        "Vertex 8-K 2023"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Lyfgenia: terapia génica con virus",
+        "Anemia falciforme y malaria",
+        "Bebés y hemoglobina fetal los primeros meses"
+      ]
+    },
+    {
+      "id": "bio-33-bebe-kj",
+      "titulo": "El bebé con una edición de bases hecha a su medida (KJ Muldoon, 2025)",
+      "serie": "Shot Biotecnológico",
+      "numero": 33,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-33-bebe-kj",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Musunuru et al. NEJM 2025",
+        "CHOP 2025 y 2026",
+        "Gaudelli et al. Nature 2017",
+        "Nature 10 2025"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Nanopartículas de lípidos por dentro",
+        "Edición prime vs edición de bases",
+        "Casgevy fuera del cuerpo"
+      ]
+    },
+    {
+      "id": "bio-34-cerdo-rinon",
+      "titulo": "Un riñón de cerdo editado dentro de un humano (xenotrasplante, 2024)",
+      "serie": "Shot Biotecnológico",
+      "numero": 34,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-34-cerdo-rinon",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "Anand et al. Nature 2023",
+        "Mass General Brigham 2024",
+        "Harvard Medical School 2026",
+        "CENATRA 3er trimestre 2026"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Corazón de cerdo en paciente vivo (2022)",
+        "Alfa-gal y alergia a la carne roja",
+        "Retrovirus endógenos humanos"
+      ]
+    },
+    {
+      "id": "bio-35-wolbachia",
+      "titulo": "Mosquitos con una bacteria contra el dengue: Wolbachia (Yogyakarta)",
+      "serie": "Shot Biotecnológico",
+      "numero": 35,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-35-wolbachia",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://pubmed.ncbi.nlm.nih.gov/34107180/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8103655/",
+        "https://pubmed.ncbi.nlm.nih.gov/21866160/",
+        "https://pubmed.ncbi.nlm.nih.gov/21866159/",
+        "https://www.nature.com/articles/nature10355",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7612058/",
+        "https://pubmed.ncbi.nlm.nih.gov/25787763/",
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0038544"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Técnica del insecto incompatible (liberar solo machos con Wolbachia)",
+        "Incompatibilidad citoplásmica: cómo Wolbachia esteriliza cruces",
+        "Niterói y Medellín: ciudades enteras con moscos con Wolbachia"
+      ]
+    },
+    {
+      "id": "bio-36-petasa",
+      "titulo": "La bacteria que come botellas de PET: Ideonella sakaiensis (2016)",
+      "serie": "Shot Biotecnológico",
+      "numero": 36,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-36-petasa",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://pubmed.ncbi.nlm.nih.gov/26965627/",
+        "https://www.scienceintheclassroom.org/research-papers/plastic-dinner",
+        "https://lpsn.dsmz.de/species/ideonella-sakaiensis",
+        "https://pubmed.ncbi.nlm.nih.gov/32269349/",
+        "https://www.inrae.fr/en/news/development-new-enzyme-recycling-pet-plastic-waste-new-bottles",
+        "https://pubmed.ncbi.nlm.nih.gov/22194294/",
+        "https://petpla.net/2025/12/23/carbios-maintains-its-commitment-to-build-the-longlaville-plant-and-adjusts-its-timeline/",
+        "https://www.chemanager-online.com/en/news/carbios-confirms-longlaville-plant-plans-while-revising-project-schedule",
+        "https://www.ecotextile.com/2026033162238/news/shows-events/carbios-resets-longlaville-plant-timetable/",
+        "https://www.carbios.com/en/supported-by-significant-progress-in-the-financing-of-its-industrial-project-in-france-carbios-confirms-its-objective-to-build-the-longlaville-plant/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "FAST-PETase: la enzima mejorada con aprendizaje automático",
+        "Por qué el PET cristalino es tan difícil de comer",
+        "El gusano de cera que mastica plástico"
+      ]
+    },
+    {
+      "id": "bio-37-adn-disco",
+      "titulo": "Guardar archivos en ADN: almacenamiento de datos en moléculas",
+      "serie": "Shot Biotecnológico",
+      "numero": 37,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-37-adn-disco",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://pubmed.ncbi.nlm.nih.gov/22903519/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3672958/",
+        "https://pubmed.ncbi.nlm.nih.gov/28254941/",
+        "https://www.eurekalert.org/news-releases/822697",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5842791/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7116897",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6428863",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8288837"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "ADN de mamut: el ADN más viejo leído",
+        "Grabadora CRISPR: células que anotan lo que les pasa",
+        "Cuánto cuesta escribir un megabyte en ADN"
+      ]
+    },
+    {
+      "id": "bio-38-genoma-costo",
+      "titulo": "Leer un genoma humano: de miles de millones de dólares a cientos",
+      "serie": "Shot Biotecnológico",
+      "numero": 38,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-38-genoma-costo",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost",
+        "https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Costs-Data",
+        "https://www.genome.gov/human-genome-project",
+        "https://www.genome.gov/human-genome-project/Completion-FAQ",
+        "https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Fact-Sheet",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9186530/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4204238",
+        "https://www.genomicseducation.hee.nhs.uk/glossary/massively-parallel-sequencing/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "La mola: el pedazo de ADN que llenó el genoma CHM13",
+        "Centrómeros: la parte del genoma que nadie había leído",
+        "Nanoporos: leer ADN pasándolo por un agujero"
+      ]
+    },
+    {
+      "id": "bio-39-tamiz",
+      "titulo": "La prueba del talón: tamiz neonatal y fenilcetonuria",
+      "serie": "Shot Biotecnológico",
+      "numero": 39,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-39-tamiz",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://embryo.asu.edu/pages/guthrie-test-early-diagnosis-phenylketonuria",
+        "https://embryo.asu.edu/pages/robert-guthrie-1916-1995",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10847993",
+        "https://medlineplus.gov/genetics/condition/phenylketonuria/",
+        "https://www.cochrane.org/evidence/CD001304_using-diet-manage-phenylketonuria",
+        "https://sidof.segob.gob.mx/notas/docFuente/5349816",
+        "https://www.imss.gob.mx/sites/all/statics/salud/infografiasl/Tamiz-Neonatal.pdf",
+        "https://sidof.segob.gob.mx/notas/docFuente/5259470",
+        "https://sidof.segob.gob.mx/notas/5796825",
+        "https://www.law.cornell.edu/cfr/text/21/172.804"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Hipotiroidismo congénito: el tamiz que evita discapacidad",
+        "Tamiz auditivo neonatal",
+        "Espectrometría de masas: cómo una gota detecta decenas de enfermedades"
+      ]
+    },
+    {
+      "id": "bio-40-hialuronico",
+      "titulo": "El ácido hialurónico de tu crema lo fabrican bacterias",
+      "serie": "Shot Biotecnológico",
+      "numero": 40,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-40-hialuronico",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3239841/",
+        "https://doi.org/10.1186/1475-2859-10-99",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10004376/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3583886/",
+        "https://pubmed.ncbi.nlm.nih.gov/11212314/",
+        "https://pubmed.ncbi.nlm.nih.gov/1656437/",
+        "https://pubmed.ncbi.nlm.nih.gov/16000785/",
+        "https://doi.org/10.1128/AEM.71.7.3747-3752.2005",
+        "https://pubmed.ncbi.nlm.nih.gov/25877232/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5567178/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Colágeno vegano hecho por levaduras o bacterias",
+        "La cápsula como disfraz: estreptococos con una molécula igual a la nuestra",
+        "Por qué el hialurónico grande no cruza la piel"
+      ]
+    },
+    {
+      "id": "bio-41-jeans",
+      "titulo": "Tus jeans deslavados con enzimas, no con piedras: celulasas",
+      "serie": "Shot Biotecnológico",
+      "numero": 41,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-41-jeans",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9738703/",
+        "https://patentimages.storage.googleapis.com/de/a3/10/98a2a9e86ba1f3/US5514187.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9909807/",
+        "https://publications.vtt.fi/pdf/publications/2002/P483.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/11500206/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10170752/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Biopulido: por qué tu playera ya no hace bolitas",
+        "Bioíndigo: índigo hecho por bacterias",
+        "Trichoderma reesei, el hongo de la Segunda Guerra Mundial que fabrica enzimas"
+      ]
+    },
+    {
+      "id": "bio-42-carne-cultivada",
+      "titulo": "Carne cultivada: de células en un tanque al plato (Singapur 2020)",
+      "serie": "Shot Biotecnológico",
+      "numero": 42,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-42-carne-cultivada",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://www.nbcnews.com/technolog/intense-flavor-330-000-burger-was-built-lab-hits-spot-6c10835460",
+        "https://www.aljazeera.com/economy/2013/8/5/lab-grown-burger-eaten-in-london",
+        "https://www.volkskrant.nl/wetenschap/wereldprimeur-universiteit-maastricht-maakt-hamburger-van-kweekvlees~a3080421/",
+        "https://www.foodnavigator.com/Article/2020/12/02/World-first-Eat-Just-gets-regulatory-approval-for-cell-based-chicken-ingredient-in-Singapore/",
+        "https://www.foodnavigator.com/Article/2023/01/18/World-first-Singapore-gives-GOOD-Meat-approval-to-to-commercialise-serum-free-media-for-cultivated-meat/",
+        "https://www.mondaq.com/unitedstates/food-and-drugs-law/1345128/cell-cultivated-chicken-approved-for-sale-in-the-us-market-for-the-first-time",
+        "https://www.foodnavigator.com/Article/2023/06/22/usda-greenlights-cell-cultured-meat-from-upside-foods-good-meat-for-sale-in-us/",
+        "https://gfieurope.org/blog/italy-ban-on-cultivated-meat-cuts-itself-off-from-innovation-and-blocks-sustainable-development/",
+        "https://www.osborneclarke.com/insights/italy-bans-lab-grown-meat-violating-eu-procedure",
+        "https://www.flsenate.gov/Session/Bill/2024/1084",
+        "https://www.cbsnews.com/news/florida-alabama-lab-grown-mean-ban-2024",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9478980",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12469421/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9385919",
+        "https://www.foodnavigator.com/Article/2026/02/18/cultivated-meat-regulation-where-countries-stand-in-2026/",
+        "https://doi.org/10.1038/s41538-021-00122-2",
+        "https://www.food-safety.com/articles/10473-texas-becomes-seventh-state-to-ban-cultivated-meat"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El suero fetal bovino y los caldos sin animales",
+        "Micoproteína (Fusarium venenatum) contra carne cultivada",
+        "Cómo se vuelve grasa una célula"
+      ]
+    },
+    {
+      "id": "bio-43-hemo",
+      "titulo": "La hamburguesa vegetal que sangra: leghemoglobina hecha en levadura",
+      "serie": "Shot Biotecnológico",
+      "numero": 43,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-43-hemo",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://www.govinfo.gov/content/pkg/FR-2019-08-01/pdf/2019-16374.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5956568/",
+        "https://pubs.nmsu.edu/_a/A129.pdf",
+        "https://www.umass.edu/microbio/chime/hemoglob/heme.htm",
+        "https://pubmed.ncbi.nlm.nih.gov/19760441/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10215292/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10144233/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9265346/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Fermentación de precisión: proteínas de leche o huevo hechas por levaduras",
+        "Por qué la carne pasa de roja a café al cocinarse",
+        "Komagataella phaffii, la levadura fábrica"
+      ]
+    },
+    {
+      "id": "bio-44-artemisinina",
+      "titulo": "Medicina contra la malaria hecha en levadura: artemisinina semisintética (Keasling)",
+      "serie": "Shot Biotecnológico",
+      "numero": 44,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-44-artemisinina",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://www.nobelprize.org/uploads/2018/06/tu-lecture.pdf",
+        "https://www.nobelprize.org/prizes/medicine/2015/press-release/",
+        "https://doi.org/10.1038/nature12051",
+        "https://doi.org/10.1038/nature04640",
+        "https://www.path.org/our-impact/media-center/sanofi-and-path-announce-the-launch-of-large-scale-production-of-semisynthetic-artemisinin-against-malaria/",
+        "https://www.scientificamerican.com/article/synthetic-biology-s-first-malaria-drug-meets-market-resistance/",
+        "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+        "https://www.who.int/news-room/fact-sheets/detail/malaria"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Opioides hechos en levadura (Smolke 2015)",
+        "Resistencia a la artemisinina en África y Asia",
+        "Tu Youyou y el Proyecto 523"
+      ]
+    },
+    {
+      "id": "bio-45-taxol",
+      "titulo": "El medicamento contra el cáncer del tejo: paclitaxel de cultivo de células vegetales",
+      "serie": "Shot Biotecnológico",
+      "numero": 45,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-45-taxol",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4161504/",
+        "https://www.gao.gov/assets/t-rced-92-36.pdf",
+        "https://leadingdiscoveries.aacr.org/?p=9260",
+        "https://www.nature.com/articles/277665a0",
+        "https://pubmed.ncbi.nlm.nih.gov/423966/",
+        "https://pubmed.ncbi.nlm.nih.gov/6103535/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5578123/",
+        "https://19january2021snapshot.epa.gov/greenchemistry/presidential-green-chemistry-challenge-2004-greener-synthetic-pathways-award_.html",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3288596/",
+        "https://phytonbiotech.com/history-ownership/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9457747/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "La camptotecina, otra quimio que salió de un árbol",
+        "La vincristina y la vinca de Madagascar",
+        "Hongos endófitos del tejo que dicen fabricar Taxol (en debate)"
+      ]
+    },
+    {
+      "id": "bio-46-gfp",
+      "titulo": "La proteína verde de la medusa: GFP (Nobel 2008)",
+      "serie": "Shot Biotecnológico",
+      "numero": 46,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-46-gfp",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://www.nobelprize.org/prizes/chemistry/2008/press-release/",
+        "https://www.nobelprize.org/uploads/2018/06/shimomura_lecture.pdf",
+        "https://www.nobelprize.org/prizes/chemistry/2008/popular-information/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Las proteínas rojas de los corales (DsRed, mCherry)",
+        "Brainbow: el cerebro pintado de colores",
+        "Aequorina: la proteína de medusa que mide calcio"
+      ]
+    },
+    {
+      "id": "bio-47-botox",
+      "titulo": "El veneno más potente también es medicina: toxina botulínica",
+      "serie": "Shot Biotecnológico",
+      "numero": 47,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-47-botox",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://nrt.response.epa.gov/sites/2/files/NRT%20CBRN%20BIO%20UPDATE%20BoNT%20QRG%20FINAL%202024%2001%2016.pdf",
+        "https://dailymed.nlm.nih.gov/dailymed/drugInfoSetid.cfm?setid=33d066a9-34ff-4a1a-b38b-d10983df3300",
+        "https://barkansociety.com/alan-scott-the-story-of-botox-in-his-own-words/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "La toxina tetánica: prima del botox que hace lo contrario",
+        "Latas abultadas y botulismo en conservas caseras",
+        "Venenos que se volvieron medicinas"
+      ]
+    },
+    {
+      "id": "bio-48-ips",
+      "titulo": "Convertir piel en células madre: células iPS (Yamanaka 2006)",
+      "serie": "Shot Biotecnológico",
+      "numero": 48,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-48-ips",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://www.nobelprize.org/prizes/medicine/2012/summary/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2695255",
+        "https://www.riken.jp/en/news_pubs/news/2014/20140912_1/",
+        "https://www.kyoto-u.ac.jp/en/research/events_news/department/hospital/news/2018/181109_1.html"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "La primera retina hecha con tu propia piel (Kobe 2014)",
+        "c-Myc: el gen de Yamanaka que también causa cáncer",
+        "Gurdon y la rana de 1962"
+      ]
+    },
+    {
+      "id": "bio-49-fecal",
+      "titulo": "Trasplante de microbiota fecal contra Clostridioides difficile",
+      "serie": "Shot Biotecnológico",
+      "numero": 49,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-49-fecal",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://pubmed.ncbi.nlm.nih.gov/23323867/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3719997/",
+        "https://gwern.net/doc/www/www.fda.gov/3f8f34c18cf564fa7bf21f3c784a9759355506dc.html",
+        "https://www.fda.gov/news-events/press-announcements/fda-approves-first-orally-administered-fecal-microbiota-product-prevention-recurrence-clostridioides",
+        "https://www.fda.gov/vaccines-blood-biologics/vowst",
+        "https://pubmed.ncbi.nlm.nih.gov/35045228/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7042012/",
+        "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002533",
+        "https://nctr-crs.fda.gov/fdalabel/services/spl/set-ids/99e5a37a-930c-4641-bcdd-7013ec1c15fe/spl-doc"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Bancos de heces: cómo se elige a un donante",
+        "Clostridium scindens y los ácidos biliares secundarios",
+        "Cuánto tarda la microbiota en recuperarse tras antibióticos"
+      ]
+    },
+    {
+      "id": "bio-50-teocintle",
+      "titulo": "Tu maíz era un pasto: del teocintle al maíz (genética de la domesticación)",
+      "serie": "Shot Biotecnológico",
+      "numero": 50,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-50-teocintle",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC122905/",
+        "https://zenodo.org/record/895359/files/article.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/16079849/",
+        "https://www.nature.com/articles/386485a0",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3686474",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2664021/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2664064",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC29388"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El teocintle que se volvió maleza en España y Francia",
+        "tga1: el cambio que dejó desnudo el grano",
+        "Genes saltarines que ayudaron a domesticar cultivos"
+      ]
+    },
+    {
+      "id": "bio-51-rhizobium",
+      "titulo": "Las plantas que fabrican su propio abono: Rhizobium y los nódulos",
+      "serie": "Shot Biotecnológico",
+      "numero": 51,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-51-rhizobium",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://ipm.ucanr.edu/agriculture/dry-beans/nematodes/",
+        "https://www.noaa.gov/jetstream/atmosphere",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5867846",
+        "https://ainfo.cnptia.embrapa.br/digital/bitstream/doc/1170327/1/Circ-Tec-212.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4012840",
+        "https://royalsociety.org/-/media/policy/projects/green-ammonia/green-ammonia-policy-briefing.pdf",
+        "https://www.worldfoodprize.org/documents/filelibrary/2025_Laureate_Brochure__FINAL_7E7F48F8F1D39.pdf",
+        "https://www.worldfoodprize.org/en/laureates/20202026_laureates/2025_hungria/",
+        "https://lpsn.dsmz.de/species/rhizobium-etli",
+        "https://www.dsmz.de/catalogues/details/culture/DSM-11541.html"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Haber-Bosch: el abono de fábrica",
+        "Agallas de nematodo: la bolita de la raíz que sí es plaga",
+        "Azospirillum y la coinoculación de la soya"
+      ]
+    },
+    {
+      "id": "bio-52-acido-citrico",
+      "titulo": "El ácido cítrico de tu refresco lo hace un moho: Aspergillus niger",
+      "serie": "Shot Biotecnológico",
+      "numero": 52,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-52-acido-citrico",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5966904/",
+        "https://www.scielo.br/j/jbchs/a/Ksq9RGvtGTTbtw8vp7NN4kv/?lang=en",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3769771/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11537073/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10779990/",
+        "https://blogs.cornell.edu/livegpath/gallery/onion/black-mold-of-onion",
+        "https://www.law.cornell.edu/cfr/text/21/184.1033",
+        "https://archive.org/details/journalofbiologi31ameruoft",
+        "https://www.inspq.qc.ca/en/moulds/fact-sheets/aspergillus-niger"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Ácido itacónico de Aspergillus terreus",
+        "El moho negro de la cebolla y su primo A. welwitschiae",
+        "Enzimas de Aspergillus niger en los jugos"
+      ]
+    },
+    {
+      "id": "bio-53-mamut",
+      "titulo": "¿Quieres revivir un mamut? Guía en pasos (desextinción)",
+      "serie": "Shot Biotecnológico",
+      "numero": 53,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-53-mamut",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://www.voanews.com/a/how-to-clone-a-mammoth-science-of-de-extinction/2780036.html",
+        "https://www.nature.com/articles/s41598-019-40546-1",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3685887",
+        "https://colossal.com/mammoth/.",
+        "https://colossal.com/mammoth/",
+        "https://www.genengnews.com/topics/genome-editing/colossals-multiplex-edited-mice-replicate-woolly-mammoth-hair-traits",
+        "https://gizmodo.com/de-extinction-company-reveals-genetically-engineered-woolly-mouse-2000568395",
+        "https://www.nationalgeographic.com/science/article/news-bucardo-pyrenean-ibex-deextinction-cloning",
+        "https://time.com/article/2026/08/24/woolly-mammoth-de-extinct-colossal-biosciences/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El bucardo: el primer animal des-extinto vivió minutos",
+        "El lobo terrible de Colossal",
+        "ADN antiguo: por qué se rompe y cómo se lee"
+      ]
+    },
+    {
+      "id": "bio-54-captopril",
+      "titulo": "La medicina de la presión salió de un veneno de serpiente: captopril",
+      "serie": "Shot Biotecnológico",
+      "numero": 54,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-54-captopril",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC1704050/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10535891/",
+        "https://gwern.net/doc/biology/1991-cushman.pdf",
+        "https://laskerfoundation.org/?p=1868",
+        "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=018343",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6695636/",
+        "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6aeec5ee-94f1-4db3-92bf-7286900bea04",
+        "https://cdn.who.int/media/docs/default-source/international-nonproprietary-names-(inn",
+        "https://www.who.int/news-room/fact-sheets/detail/hypertension"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Ziconotida: el veneno del caracol cono contra el dolor",
+        "La tos seca de los -pril y la bradicinina",
+        "Tirofibán, diseñado a partir de un veneno de víbora"
+      ]
+    },
+    {
+      "id": "bio-55-factor-viii",
+      "titulo": "Hemofilia: del plasma contaminado al factor VIII recombinante",
+      "serie": "Shot Biotecnológico",
+      "numero": 55,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-55-factor-viii",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://www.cdc.gov/hemophilia/about/index.html",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12454936/",
+        "https://www.nationalacademies.org/read/4989/chapter/3",
+        "https://www.cdc.gov/mmwr/preview/mmwrhtml/00014715.htm",
+        "https://www.infectedbloodinquiry.org.uk/reports/final-report-volume-1.html",
+        "https://pubmed.ncbi.nlm.nih.gov/6438525/",
+        "https://pubmed.ncbi.nlm.nih.gov/6438528/",
+        "https://pubmed.ncbi.nlm.nih.gov/6438526/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10153518/",
+        "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d99348b1-edad-41de-aed9-903a6f9f279f",
+        "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2483adba-fab6-4d1b-96c5-c195577ed071",
+        "https://www.roche.com/media/releases/med-cor-2017-11-16.htm"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Hemofilia B y la terapia génica del factor IX",
+        "Células CHO: la fábrica de hámster de los biológicos",
+        "Anticuerpos biespecíficos como el emicizumab"
+      ]
+    },
+    {
+      "id": "bio-56-vph",
+      "titulo": "La vacuna del VPH es un virus de mentira: partículas tipo virus",
+      "serie": "Shot Biotecnológico",
+      "numero": 56,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-56-vph",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://www.who.int/news-room/fact-sheets/detail/cervical-cancer",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5533910/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5822403/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC50722/",
+        "https://www.ema.europa.eu/en/documents/product-information/cervarix-epar-product-information_en.pdf",
+        "https://pdf.hres.ca/dpd_pm/00058026.PDF",
+        "https://www.medicines.org.uk/emc/product/7330/smpc",
+        "https://www.research.ed.ac.uk/en/publications/invasive-cervical-cancer-incidence-following-bivalent-human-papil/",
+        "https://publichealthscotland.scot/news/2024/january/no-cervical-cancer-cases-detected-in-vaccinated-women-following-hpv-immunisation/",
+        "https://www.gob.mx/salud/prensa/210-la-vacunacion-contra-el-vph-eje-de-la-politica-de-prevencion-del-cancer-cervicouterino-en-mexico",
+        "https://www.nobelprize.org/prizes/medicine/2008/press-release/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "Gardasil vs Cervarix: levadura contra células de polilla",
+        "Harald zur Hausen: el virus que causa cáncer",
+        "Otras vacunas de partículas tipo virus (hepatitis E, malaria R21)"
+      ]
+    },
+    {
+      "id": "bio-57-huella-adn",
+      "titulo": "La huella de ADN: Alec Jeffreys (1984)",
+      "serie": "Shot Biotecnológico",
+      "numero": 57,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-57-huella-adn",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://laskerfoundation.org/wp-content/uploads/2021/01/2005_jeffreys.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/2989708/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3831584/",
+        "https://en.wikipedia.org/wiki/Colin_Pitchfork",
+        "https://assets.publishing.service.gov.uk/media/640726f38fa8f527f7342fd7/Application_for_a_Public_Hearing_in_the_case_of_Pitchfork___2023__PBPH_1_.pdf",
+        "https://webarchive.nationalarchives.gov.uk/ukgwa/20081202180354mp_/http://www.forensic.gov.uk/html/media/case-studies/f-18.html",
+        "https://www.genome.gov/about-genomics/educational-resources/fact-sheets/human-genomic-variation",
+        "http://geneticsunzipped.com/transcripts/2020/3/26/the-accidental-discovery-of-dna-fingerprinting",
+        "https://www.ishinews.com/countdown-to-2017-internal-validation-of-the-new-codis-loci/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "¿Los gemelos idénticos tienen el mismo ADN?",
+        "Genealogía genética y casos viejos",
+        "Rastros de ADN en lo que tocas y sus límites"
+      ]
+    },
+    {
+      "id": "bio-58-flavr-savr",
+      "titulo": "El primer alimento transgénico fue un tomate: Flavr Savr (1994)",
+      "serie": "Shot Biotecnológico",
+      "numero": 58,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-58-flavr-savr",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://www.govinfo.gov/content/pkg/FR-1994-05-23/html/94-12494.htm",
+        "https://www.genengnews.com/insights/mistakes-shorten-first-approved-gmos-shelf-life/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC282595/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC158532/",
+        "https://edis.ifas.ufl.edu/publication/VH079",
+        "https://www.motherjones.com/news/feature/1997/01/broydo.html",
+        "https://doi.org/10.3733/ca.v054n04p6"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "El jitomate morado transgénico",
+        "El etileno: por qué un plátano madura a los demás",
+        "Apagar genes con ARN: del antisentido al ARN de interferencia"
+      ]
+    },
+    {
+      "id": "bio-59-b12",
+      "titulo": "La vitamina B12 solo la fabrican microbios",
+      "serie": "Shot Biotecnológico",
+      "numero": 59,
+      "estado": "renderizado",
+      "carpeta": "shots/bio-59-b12",
+      "rama": "pedido300/bio",
+      "fuentes": [
+        "https://lpi.oregonstate.edu/mic/vitamins/vitamin-B12",
+        "https://pubmed.ncbi.nlm.nih.gov/11935176/",
+        "https://pubmed.ncbi.nlm.nih.gov/16267554/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5188422/",
+        "https://pubmed.ncbi.nlm.nih.gov/33053716/",
+        "https://www.nobelprize.org/prizes/chemistry/1964/hodgkin/facts/",
+        "https://www.nobelprize.org/prizes/chemistry/1964/summary/",
+        "https://pubmed.ncbi.nlm.nih.gov/13348621/",
+        "https://www.thecrimson.com/article/1973/1/9/research-group-synthesizes-b-12-after-long/",
+        "https://en.wikipedia.org/wiki/Vitamin_B12_total_synthesis",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9925536/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5282855/",
+        "https://pubmed.ncbi.nlm.nih.gov/27744211/",
+        "https://pubmed.ncbi.nlm.nih.gov/29216732/",
+        "https://pubmed.ncbi.nlm.nih.gov/26024497/"
+      ],
+      "fecha": "2026-10-29",
+      "derivados": [
+        "La B12 que fabrican tus bacterias del colon",
+        "La fermentación propiónica del queso suizo",
+        "El nori y las algas que piden B12 a bacterias"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1188 @@
+{
+ "temas": [
+  {
+   "id": "fun-10-huitlacoche",
+   "titulo": "Ese elote no está podrido: el huitlacoche (*Ustilago maydis*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 10,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-10-huitlacoche",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://hort.extension.wisc.edu/articles/huitlacoche/",
+    "https://pubmed.ncbi.nlm.nih.gov/30845612/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7823922/",
+    "https://pubmed.ncbi.nlm.nih.gov/20565585/",
+    "https://colfungi.org/taxon/urn:lsid:indexfungorum.org:names:169566/general-information",
+    "https://agroatlas.ru/en/content/diseases/Zeae/Zeae_Ustilago_zeae",
+    "https://pubmed.ncbi.nlm.nih.gov/21149027/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10254540/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El carbón del maíz en el laboratorio: Ustilago maydis y sus efectores",
+    "Hongos que se comen en México además del huitlacoche (mercados de hongos silvestres)",
+    "Cómo un hongo hace que una planta crezca tumores (agallas)"
+   ]
+  },
+  {
+   "id": "fun-11-moho-cortar",
+   "titulo": "¿Le quitas el moho y te comes el resto? Cuándo se corta y cuándo se tira",
+   "serie": "Shot Fungi Mati",
+   "numero": 11,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-11-moho-cortar",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://ucfoodsafety.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/26438.pdf",
+    "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/molds-food-are-they-dangerous",
+    "https://brunswick.ces.ncsu.edu/2024/09/moldy-foods-use-or-pitch",
+    "https://doi.org/10.1007/s002170000255",
+    "https://portal.fis.leibniz-lsb.tum.de/en/publications/model-studies-on-the-diffusion-behavior-of-the-mycotoxin-patulin--3/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El moho de la mermelada: por qué se tira aunque sea poquito",
+    "La patulina del jugo de manzana y sus límites",
+    "Por qué el refri frena al moho pero no lo mata"
+   ]
+  },
+  {
+   "id": "fun-12-caspa",
+   "titulo": "Esa caspa no es solo piel: la levadura que come la grasa de tu cabeza",
+   "serie": "Shot Fungi Mati",
+   "numero": 12,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-12-caspa",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://doi.org/10.1111/j.1087-0024.2005.10119.x",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4852869/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2141845/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3380954/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2887514/",
+    "https://www.internationaloliveoil.org/wp-content/uploads/2022/06/NC-REV-18_ENK.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4796319/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Malassezia en otras partes del cuerpo: la pitiriasis versicolor",
+    "Cómo funciona un champú anticaspa por dentro",
+    "El microbioma de tu piel: bacterias y hongos que viven contigo"
+   ]
+  },
+  {
+   "id": "fun-13-vitamina-d",
+   "titulo": "Champiñones al sol: la fábrica de vitamina D",
+   "serie": "Shot Fungi Mati",
+   "numero": 13,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-13-vitamina-d",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/26314311/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6213178/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3897585/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7397035/",
+    "https://medlineplus.gov/ency/article/002405.htm"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Ergosterol: el blanco de muchos antifúngicos",
+    "Champiñones tratados con luz UV en el súper",
+    "Por qué tu piel hace vitamina D con el sol (y cuánto)"
+   ]
+  },
+  {
+   "id": "fun-14-calor",
+   "titulo": "Tu escudo de 37 grados: por qué casi ningún hongo te toca",
+   "serie": "Shot Fungi Mati",
+   "numero": 14,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-14-calor",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/19827944/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6650554/",
+    "https://pubmed.ncbi.nlm.nih.gov/19161556/",
+    "https://medlineplus.gov/ency/article/001982.htm",
+    "https://en.wikipedia.org/wiki/Ectotherm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3420938/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5703306/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Candida auris: la levadura que apareció en tres continentes a la vez",
+    "La fiebre como defensa contra los hongos",
+    "Por qué los insectos y las plantas sí sufren epidemias de hongos"
+   ]
+  },
+  {
+   "id": "fun-15-queso-azul",
+   "titulo": "Esas venas no son queso echado a perder: el queso azul (*Penicillium roqueforti*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 15,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-15-queso-azul",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7497015/",
+    "https://info.agriculture.gouv.fr/boagri/document_administratif-56d1c189-14dd-4062-9c4e-805d92aa1bc5/telechargement",
+    "https://gorgonzola.com/wp-content/uploads/2023/08/Disciplinare_Gorgonzola_22.9.2017.pdf",
+    "https://ucfoodsafety.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/26438.pdf",
+    "https://www.chm.bris.ac.uk/motm/heptanone/heptanoneh.htm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3985342/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10774375/",
+    "https://doi.org/10.3390/jof9040459"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Camembert y brie: la corteza blanca de Penicillium camemberti",
+    "Por qué el queso azul no te enferma pero el pan con moho sí puede",
+    "El olor a pies del queso: bacterias de la corteza lavada"
+   ]
+  },
+  {
+   "id": "fun-16-koji",
+   "titulo": "Tu salsa de soya la cocinó un hongo: el koji",
+   "serie": "Shot Fungi Mati",
+   "numero": 16,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-16-koji",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8399179/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1352174/",
+    "https://pubmed.ncbi.nlm.nih.gov/16391082/",
+    "https://pubmed.ncbi.nlm.nih.gov/16372010/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8304044/",
+    "https://pubmed.ncbi.nlm.nih.gov/25776568/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2575883/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El miso y el sake: otros trabajos del koji",
+    "Aspergillus oryzae vs. A. flavus: primos, uno domesticado",
+    "El glutamato: de dónde sale el sabor umami"
+   ]
+  },
+  {
+   "id": "fun-17-cornezuelo",
+   "titulo": "Ese grano negro no es centeno quemado: el cornezuelo (*Claviceps purpurea*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 17,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-17-cornezuelo",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6640538/",
+    "https://ejhd.org/index.php/ejhd/article/download/798/609/1760",
+    "https://www.bfr.bund.de/cm/349/questions-and-answers-on-ergot-alkaloids-in-cereal-products.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8309974/",
+    "https://www.ars.usda.gov/ARSUserFiles/81/ErgotDVDtranscript.pdf",
+    "https://henriettes-herb.com/eclectic/kings/claviceps.html"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Del cornezuelo a los medicamentos para la migraña y el parto",
+    "El LSD nació de un derivado del cornezuelo (Hofmann, 1943)",
+    "Hongos que viven dentro de pastos y los vuelven tóxicos para el ganado"
+   ]
+  },
+  {
+   "id": "fun-18-aflatoxinas",
+   "titulo": "El cacahuate arrugado del fondo de la bolsa: aflatoxinas",
+   "serie": "Shot Fungi Mati",
+   "numero": 18,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-18-aflatoxinas",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5334a4.htm",
+    "https://www.who.int/news-room/fact-sheets/detail/mycotoxins",
+    "https://www.sfa.gov.sg/food-information/risk-at-a-glance/aflatoxins-and-food-safety",
+    "https://inchem.org/documents/iarc/vol56/09-afl.html",
+    "https://www.cancer.gov/about-cancer/causes-prevention/risk/substances/aflatoxins",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8227755/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cómo se revisa el maíz por aflatoxinas en México",
+    "Aspergillus que no hacen toxina usados para desplazar a los que sí",
+    "El amarillo brillante bajo luz UV que delata maíz contaminado"
+   ]
+  },
+  {
+   "id": "fun-19-liquen",
+   "titulo": "Esa mancha en la piedra no es una planta: el liquen",
+   "serie": "Shot Fungi Mati",
+   "numero": 19,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-19-liquen",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://www.huntbotanical.org/admin/uploads/04hibd-huntia-11-2-pp193-208.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/27445309/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5793994/",
+    "https://pubmed.ncbi.nlm.nih.gov/17630840/",
+    "https://www.timeshighereducation.com/node/59803",
+    "https://www.anbg.gov.au/lichen/form-structure.html",
+    "https://britishlichensociety.org.uk/learning/what-is-a-lichen",
+    "https://swisslichens.wsl.ch/en/about-lichens/what-is-a-lichen"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Líquenes como medidores de la contaminación del aire",
+    "Los líquenes de los que salió el tornasol",
+    "Líquenes que sobrevivieron en el espacio"
+   ]
+  },
+  {
+   "id": "fun-20-quitridio",
+   "titulo": "La rana no está dormida: el quitridio",
+   "serie": "Shot Fungi Mati",
+   "numero": 20,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-20-quitridio",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/19900897/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4660679/",
+    "https://www.woah.org/app/uploads/2021/03/microsoft-20word-20--20chytridio-20card-final.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/30923224/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3111304/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3780879/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Ranas que resisten al quitridio: bacterias de la piel",
+    "El quitridio de las salamandras (B. salamandrivorans)",
+    "Los quitridios que viven en tu estanque y comen polen"
+   ]
+  },
+  {
+   "id": "fun-21-anillo-hadas",
+   "titulo": "Ese círculo en el pasto no es de hadas: es un hongo",
+   "serie": "Shot Fungi Mati",
+   "numero": 21,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-21-anillo-hadas",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://archive.org/details/journalagricult11unit",
+    "https://content.ces.ncsu.edu/fairy-ring-in-turf",
+    "https://www.rhs.org.uk/advice/profile?PID=158",
+    "https://www.mushroomexpert.com/marasmius_oreades.html",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395780/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Los anillos de hadas que se ven desde el aire",
+    "Hongos que crecen siempre en el mismo lugar cada año",
+    "Cómo el micelio cambia el color del pasto"
+   ]
+  },
+  {
+   "id": "fun-22-arrieras",
+   "titulo": "Las arrieras no cargan hojas para comérselas: son granjeras",
+   "serie": "Shot Fungi Mati",
+   "numero": 22,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-22-arrieras",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://par.nsf.gov/servlets/purl/10626344",
+    "https://sciencedaily.com/releases/2024/10/241003145441.htm",
+    "https://www.cambridge.org/core/journals/bulletin-of-entomological-research/article/direct-ingestion-of-plant-sap-from-cut-leaves-by-the-leafcutting-ants-atta-cephalotes-l-and-acromyrmex-octospinosus-reich-formicidae-attini/AF32CE2FBBD06C93D5FC3DE8287B1777",
+    "https://pubmed.ncbi.nlm.nih.gov/24151778",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10503033/",
+    "https://doi.org/10.3389/fmicb.2016.02073",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2291119/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5394666/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Termitas que también cultivan hongos",
+    "Las bacterias antibióticas que cargan las hormigas en el cuerpo",
+    "El hongo parásito que ataca los jardines de las arrieras (Escovopsis)"
+   ]
+  },
+  {
+   "id": "fun-23-brillan",
+   "titulo": "Esa madera no está embrujada: hongos que brillan",
+   "serie": "Shot Fungi Mati",
+   "numero": 23,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-23-brillan",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6294908/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4382382/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7733832/",
+    "https://www.fungimag.com/v17i1/V17I1-Blanchette.pdf",
+    "https://agris.fao.org/search/en/records/65df441963b8185d9cabd5e5"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Plantas modificadas que brillan con genes de hongo",
+    "Por qué brilla de verdad: el ciclo del ácido cafeico",
+    "Animales que se ven en la oscuridad sin hongos: luciérnagas y peces"
+   ]
+  },
+  {
+   "id": "fun-24-roya-cafe",
+   "titulo": "Ese polvo naranja no es óxido: la roya del café (*Hemileia vastatrix*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 24,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-24-roya-cafe",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://doi.org/10.1007/s12571-015-0446-9",
+    "https://agritrop.cirad.fr/575723/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6638270/",
+    "https://www.gob.mx/cms/uploads/attachment/file/466535/24.Ficha_T_cnica_Roya_del_cafeto_REVISION_UTC.pdf",
+    "https://www.eatthispodcast.com/wp-content/uploads/2020/10/coffee-leaf-rust-transcript.pdf",
+    "https://specialcollections-blog.lib.cam.ac.uk/?p=9572",
+    "https://botanicaserbica.bio.bg.ac.rs/arhiva/pdf/2011_35_2_539_full.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "La roya del trigo: el hongo del pan",
+    "Por qué los clones son vulnerables a las plagas",
+    "El hongo que acabó con el café de Ceilán y lo volvió país de té"
+   ]
+  },
+  {
+   "id": "fun-25-papa-irlanda",
+   "titulo": "Ese hongo de la papa no es un hongo: *Phytophthora infestans*",
+   "serie": "Shot Fungi Mati",
+   "numero": 25,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-25-papa-irlanda",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://archive.lib.msu.edu/DMC/extension_publications/e2945/E2945-2004.PDF",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6640234/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC154851/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3571302/",
+    "https://elifesciences.org/articles/00731",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4066499/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8707485/",
+    "https://www.rte.ie/history/the-great-irish-famine/2020/0629/1150367-the-great-irish-famine"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Los oomicetos que matan encinos (muerte súbita del roble)",
+    "Cómo se mejoraron papas resistentes al tizón",
+    "Por qué los herbarios guardan ADN de epidemias viejas"
+   ]
+  },
+  {
+   "id": "fun-26-shiitake",
+   "titulo": "¿Por qué NO comer shiitake crudo? La piel rayada a latigazos",
+   "serie": "Shot Fungi Mati",
+   "numero": 26,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-26-shiitake",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/28054338/",
+    "https://pubmed.ncbi.nlm.nih.gov/27566177/",
+    "https://pubmed.ncbi.nlm.nih.gov/35404185/",
+    "https://pubmed.ncbi.nlm.nih.gov/24940644/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8222744/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4808700/",
+    "https://pubmed.ncbi.nlm.nih.gov/18661940/",
+    "https://pubmed.ncbi.nlm.nih.gov/1395630/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El lentinano y lo que sí se sabe del shiitake",
+    "Cómo se cultiva el shiitake en troncos",
+    "Hongos comestibles que crudos sí hacen daño"
+   ]
+  },
+  {
+   "id": "fun-27-maceta",
+   "titulo": "Ese hongo amarillo no está matando a tu planta: *Leucocoprinus birnbaumii*",
+   "serie": "Shot Fungi Mati",
+   "numero": 27,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-27-maceta",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://yardandgarden.extension.iastate.edu/faq/will-yellow-mushrooms-harm-my-houseplant",
+    "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/greenhouse-updates-september-3-2021",
+    "https://colfungi.org/taxon/urn:lsid:indexfungorum.org:names:333327/general-information",
+    "http://botit.botany.wisc.edu/toms_fungi/feb2002.html",
+    "https://www.mushroomexpert.com/leucocoprinus_birnbaumii.html",
+    "https://www.first-nature.com/fungi/leucocoprinus-birnbaumii.php"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Hongos que salen en el pasto después de la lluvia",
+    "Los pigmentos amarillos de los hongos",
+    "Cómo reciclan los hongos la hojarasca"
+   ]
+  },
+  {
+   "id": "fun-28-gota-buller",
+   "titulo": "Ese champiñón está disparando: la gota de Buller",
+   "serie": "Shot Fungi Mati",
+   "numero": 28,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-28-gota-buller",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://doi.org/10.3852/mycologia.97.4.866",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2612744/",
+    "https://doi.org/10.1242/jeb.029975",
+    "https://dash.harvard.edu/bitstream/1/9967609/1/Noblin_SurfaceTension.pdf",
+    "https://www.jstor.org/stable/3761212",
+    "https://www.davidmoore.org.uk/21st_Century_Guidebook_to_Fungi_PLATINUM/REPRINT_collection/Money_ballistospore_discharge1998.pdf",
+    "https://arxiv.org/abs/1904.08127",
+    "https://doi.org/10.1007/s13225-021-00497-3"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cómo cae una espora: el viaje entre laminillas",
+    "Hongos que disparan esporas con agua (Pilobolus vs. Buller)",
+    "Las balistosporas de las levaduras de espejo (Sporobolomyces)"
+   ]
+  },
+  {
+   "id": "fun-29-artillero",
+   "titulo": "Las manchitas negras de tu coche: el hongo artillero",
+   "serie": "Shot Fungi Mati",
+   "numero": 29,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-29-artillero",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://portal.ct.gov/-/media/caes/documents/publications/fact_sheets/plant_pathology_and_ecology/sphaerobolusspptheartilleryfungus050310rpdf.pdf",
+    "https://extension.psu.edu/what-is-growing-in-my-landscape-mulch-mushrooms-slime-molds-and-fungus",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4959704/",
+    "https://jeh.kglmeridian.com/view/journals/jenh/22/3/article-p117.xml",
+    "https://api.crossref.org/works/10.24266/0738-2898-22.3.117",
+    "https://extension.psu.edu/artillery-fungus-in-mulch",
+    "https://www.umass.edu/agriculture-food-environment/landscape/fact-sheets/fungi-in-mulches-composts",
+    "https://www.psu.edu/news/agricultural-sciences/story/artillery-fungus-threatens-homeowners-mulch-industry"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "El hongo nido de pájaro y sus huevitos de esporas",
+    "Por qué el mantillo de corteza trae hongos al jardín",
+    "Hongos que lanzan esporas más lejos que su tamaño"
+   ]
+  },
+  {
+   "id": "fun-30-chernobil",
+   "titulo": "Esa mancha negra no es hollín: los hongos de Chernóbil",
+   "serie": "Shot Fungi Mati",
+   "numero": 30,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-30-chernobil",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://doi.org/10.1017/S0953756200002756",
+    "https://aspergillus.org.uk/article_database/fungi-from-chernobyl-mycobiota-of-the-inner-regions-of-the-containment-structures-of-the-damaged-nuclear-reactor",
+    "https://doi.org/10.1371/journal.pone.0000457",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2677413/",
+    "https://doi.org/10.3389/fmicb.2022.877625",
+    "https://doi.org/10.3389/fmicb.2015.01463",
+    "https://medlineplus.gov/ency/article/002256.htm"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "La melanina en tu piel y en los hongos: misma familia",
+    "Hongos en la Estación Espacial Internacional",
+    "Microbios que aguantan radiación (Deinococcus)"
+   ]
+  },
+  {
+   "id": "fun-31-plastico",
+   "titulo": "¿Hongos que comen plástico? Lo que sí y lo que no",
+   "serie": "Shot Fungi Mati",
+   "numero": 31,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-31-plastico",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3165411/",
+    "https://pubmed.ncbi.nlm.nih.gov/28318785/",
+    "https://iopscience.iop.org/article/10.1088/1748-9326/ac59a7",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9330918/",
+    "https://assets.publishing.service.gov.uk/media/5a7bff74ed915d01ba1ca7c7/scho0711buan-e-e.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Hongos que comen petróleo derramado",
+    "Enzimas que rompen PET (Ideonella)",
+    "Por qué los aditivos hacen que el plástico pese menos"
+   ]
+  },
+  {
+   "id": "fun-32-esporas-conteo",
+   "titulo": "Cuántas esporas suelta una seta (y cómo verlas en tu casa)",
+   "serie": "Shot Fungi Mati",
+   "numero": 32,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-32-esporas-conteo",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://archive.org/details/researchesonfung02bull",
+    "https://archive.org/details/researchesonfung01bull",
+    "https://www.un.org/sustainabledevelopment/blog/2024/07/press-release-wpp2024/",
+    "https://www.mushroomexpert.com/studying.html",
+    "https://www.mushroomexpert.com/agaricus_bisporus.html",
+    "https://www.mushroomexpert.com/agaricus_campestris.html",
+    "https://mhs.mb.ca/docs/people/buller_ahr.shtml"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cómo sacar una huella de esporas en casa",
+    "Esporas en el aire que respiras cada día",
+    "El bejín gigante: un hongo como balón"
+   ]
+  },
+  {
+   "id": "fun-33-moho-bano",
+   "titulo": "Esa mancha negra del baño no es mugre: es moho (y el mito del \"moho negro tóxico\")",
+   "serie": "Shot Fungi Mati",
+   "numero": 33,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-33-moho-bano",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home",
+    "https://www.cdc.gov/mold-health/about/index.html",
+    "https://www.cdc.gov/mold-health/data-research/facts-stats/index.html",
+    "https://wwwnc.cdc.gov/eid/article/25/11/et-2511_article"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Serratia marcescens: la bacteria rosa",
+    "Cómo funciona un deshumidificador",
+    "El moho de la tablaroca después de una inundación"
+   ]
+  },
+  {
+   "id": "fun-34-candida",
+   "titulo": "La levadura que puedes compartir con tu pareja: *Candida albicans*",
+   "serie": "Shot Fungi Mati",
+   "numero": 34,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-34-candida",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7534343/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3654610/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4851236/",
+    "https://www.cdc.gov/candidiasis/about/index.html",
+    "https://www.cdc.gov/candidiasis/signs-symptoms/index.html",
+    "https://www.cdc.gov/candidiasis/risk-factors/index.html",
+    "https://www.cdc.gov/candidiasis/prevention/index.html"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Candida auris: la levadura resistente",
+    "La toxina candidalisina por dentro",
+    "El microbioma de la boca"
+   ]
+  },
+  {
+   "id": "fun-35-unas",
+   "titulo": "La pastilla dura semanas; tu uña nueva, hasta año y medio",
+   "serie": "Shot Fungi Mati",
+   "numero": 35,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-35-unas",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/19744178/",
+    "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=112380",
+    "https://www.aad.org/public/diseases/a-z/nail-fungus-treatment",
+    "https://www.aafp.org/pubs/afp/issues/2021/1000/p359.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7509699/",
+    "https://www.ncbi.nlm.nih.gov/sites/books/n/statpearls/article-43222/",
+    "https://www.nhs.uk/conditions/fungal-nail-infection/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Por qué las uñas de las manos crecen más rápido",
+    "Pie de atleta y uñas: el mismo hongo",
+    "Cómo funciona la terbinafina"
+   ]
+  },
+  {
+   "id": "fun-36-tempeh",
+   "titulo": "Esto no es soya prensada: el tempeh lo amarra un hongo",
+   "serie": "Shot Fungi Mati",
+   "numero": 36,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-36-tempeh",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://edepot.wur.nl/23742",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC242746/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC201508/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC170049/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Oncom: otro fermentado de Indonesia con hongo",
+    "La vitamina B12 la hacen bacterias, no plantas",
+    "Rhizopus: el moho del pan y del tempeh"
+   ]
+  },
+  {
+   "id": "fun-37-micoproteina",
+   "titulo": "Esa milanesa no es de pollo: la \"carne\" de hongo (micoproteína)",
+   "serie": "Shot Fungi Mati",
+   "numero": 37,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-37-micoproteina",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6554455/",
+    "https://davidmoore.org.uk/assets/fungi4schools/Reprints/Mycologist_articles/Post-16/Foods/V18pp017-020_Quorn.pdf",
+    "https://eprints.whiterose.ac.uk/197030/",
+    "https://pubmed.ncbi.nlm.nih.gov/32438401/",
+    "https://www.frontiersin.org/journals/materials/articles/10.3389/fmats.2025.1537067/full"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Fermentación de precisión: proteínas hechas por microbios",
+    "Quitina: el material de hongos y camarones",
+    "Por qué el ARN de más es un problema al comer"
+   ]
+  },
+  {
+   "id": "fun-38-kombucha",
+   "titulo": "La «madre» de la kombucha no es un hongo: es una tela de bacterias",
+   "serie": "Shot Fungi Mati",
+   "numero": 38,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-38-kombucha",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6730531/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9238417/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4914174/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7152840/",
+    "https://pubmed.ncbi.nlm.nih.gov/30527803/",
+    "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2023.1190248/full"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Celulosa de bacterias para apósitos",
+    "Cómo se hace el vinagre: bacterias acéticas",
+    "Levaduras salvajes: Brettanomyces"
+   ]
+  },
+  {
+   "id": "fun-39-amanita-muscaria",
+   "titulo": "Los puntos del hongo de los cuentos son un cascarón roto: Amanita muscaria",
+   "serie": "Shot Fungi Mati",
+   "numero": 39,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-39-amanita-muscaria",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://bio.libretexts.org/Bookshelves/Botany/A_Photographic_Atlas_for_Botany_(Morrow",
+    "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/fungi-and-lichens/fly-agaric/",
+    "https://www.mushroomexpert.com/amanita_muscaria_flavivolvata.html",
+    "https://doi.org/10.22201/ib.20078706e.2006.001.314",
+    "https://doi.org/10.3389/fpls.2019.01658",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12737661/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6542478/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7977045/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Hongos micorrízicos y los pinos de México",
+    "Muscimol y GABA: cómo se calma el cerebro",
+    "Amanita caesarea: el hongo comestible con el que se confunde"
+   ]
+  },
+  {
+   "id": "fun-40-coprinus",
+   "titulo": "El hongo que se derrite en tinta: *Coprinus comatus*",
+   "serie": "Shot Fungi Mati",
+   "numero": 40,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-40-coprinus",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://botit.botany.wisc.edu/toms_fungi/may2004.html",
+    "https://mushroomexpert.com/fungionwood/gilled%20fungi/species%20pages/Coprinus%20comatus.html",
+    "https://www.mushroomexpert.com/coprinus_comatus.html",
+    "https://pubmed.ncbi.nlm.nih.gov/21148944/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1932715/",
+    "https://www.fungipedia.org/hongos/coprinus-comatus.html",
+    "https://www.newforestnpa.gov.uk/discover/plants-fungi/fungi/shaggy-inkcap/",
+    "https://www.nies.go.jp/chiiki1/protoz/toxicity/nematoda/panagrel.htm"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Hongos que cazan gusanos con lazos (Arthrobotrys)",
+    "Coprinopsis atramentaria y el alcohol",
+    "Tinta de hongo: cómo se hacía"
+   ]
+  },
+  {
+   "id": "fun-41-pollo-bosque",
+   "titulo": "Esto no es pollo: el hongo que se come un árbol (*Laetiporus*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 41,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-41-pollo-bosque",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://doi.org/10.32473/EDIS-pp358-2020",
+    "https://edis.ifas.ufl.edu/publication/PP358/pdf",
+    "https://www.mushroomexpert.com/laetiporus_sulphureus.html",
+    "https://www.fungiflora.no/intro-poroide-fungi-decay",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2876446/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1267987/",
+    "https://doi.org/10.24326/asphc.2018.1.8",
+    "https://pubmed.ncbi.nlm.nih.gov/15797608/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Pudrición blanca contra pudrición café",
+    "Hongos de repisa y la seguridad de los árboles",
+    "Pigmentos de hongos como colorantes"
+   ]
+  },
+  {
+   "id": "fun-42-fiebre-valle",
+   "titulo": "Ese polvo no es solo tierra: la fiebre del valle",
+   "serie": "Shot Fungi Mati",
+   "numero": 42,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-42-fiebre-valle",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC545195/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8340492/",
+    "https://wwwn.cdc.gov/phil/Details.aspx?pid=12197",
+    "https://pubmed.ncbi.nlm.nih.gov/9062329/",
+    "https://www.cdc.gov/valley-fever/about/index.html",
+    "https://www.cdc.gov/valley-fever/hcp/clinical-overview/index.html"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Coccidioides en perros",
+    "Cómo el cambio de clima mueve a los hongos del suelo",
+    "El polvo del desierto y la salud"
+   ]
+  },
+  {
+   "id": "fun-43-histoplasma",
+   "titulo": "La enfermedad de las cuevas: *Histoplasma capsulatum*",
+   "serie": "Shot Fungi Mati",
+   "numero": 43,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-43-histoplasma",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://www.cdc.gov/histoplasmosis/about/index.html",
+    "https://www.cdc.gov/histoplasmosis/causes/index.html",
+    "https://www.cdc.gov/histoplasmosis/prevention/index.html",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1797635/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7596272/",
+    "https://www.canada.ca/en/public-health/services/reports-publications/canada-communicable-disease-report-ccdr/monthly-issue/2025-51/issue-5-may-2025/acute-histoplasmosis-four-immunocompetent-canadian-travellers-cenote-yucatan.html",
+    "https://wwwnc.cdc.gov/eid/article/27/3/ET-2703_article.htm"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Hongos dimórficos: moho afuera, levadura adentro",
+    "Los macrófagos: cómo se comen a los microbios",
+    "El guano de murciélago como fertilizante"
+   ]
+  },
+  {
+   "id": "fun-44-nariz-blanca",
+   "titulo": "El hongo que no deja dormir a los murciélagos: síndrome de nariz blanca",
+   "serie": "Shot Fungi Mati",
+   "numero": 44,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-44-nariz-blanca",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://science.umd.edu/faculty/wilkinson/SFT/Blehert09Science.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3380050/",
+    "https://pubs.usgs.gov/publication/cir1560/full",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8518069/",
+    "https://wwwnc.cdc.gov/eid/article/16/8/10-0002_article",
+    "https://www.usgs.gov/publications/phylogenetics-a-fungal-invasion-origins-and-widespread-dispersal-white-nose-syndrome",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12088370/",
+    "https://www.pnas.org/doi/10.1073/pnas.1200374109"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cómo hibernan los murciélagos",
+    "Murciélagos de México que comen insectos de cultivo",
+    "Hongos que viven en el frío"
+   ]
+  },
+  {
+   "id": "fun-45-ciclosporina",
+   "titulo": "El puñado de tierra que hizo posibles los trasplantes: la ciclosporina",
+   "serie": "Shot Fungi Mati",
+   "numero": 45,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-45-ciclosporina",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://patentimages.storage.googleapis.com/9c/3d/21/34fd42a598229b/US4215199.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3688495/",
+    "https://smw.ch/index.php/smw/article/download/64/61/116",
+    "https://pubmed.ncbi.nlm.nih.gov/8969/",
+    "https://pubmed.ncbi.nlm.nih.gov/1715244/",
+    "https://pubmed.ncbi.nlm.nih.gov/10878286/",
+    "https://pubmed.ncbi.nlm.nih.gov/6350878/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Tolypocladium inflatum: el hongo que parasita escarabajos",
+    "Rechazo de trasplantes: cómo te reconoce tu sistema inmune",
+    "Muestras de suelo que dieron medicinas"
+   ]
+  },
+  {
+   "id": "fun-46-estatinas",
+   "titulo": "La primera estatina la hizo un moho: Akira Endo y las estatinas",
+   "serie": "Shot Fungi Mati",
+   "numero": 46,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-46-estatinas",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3108295/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4525717/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC349746/",
+    "https://www.nccih.nih.gov/health/red-yeast-rice",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8404697/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "La lovastatina en el arroz de levadura roja",
+    "El colesterol: para qué lo necesita tu cuerpo",
+    "Medicinas que salieron de hongos además de la penicilina"
+   ]
+  },
+  {
+   "id": "fun-47-micelio-ladrillo",
+   "titulo": "Esto no es unicel: es un hongo",
+   "serie": "Shot Fungi Mati",
+   "numero": 47,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-47-micelio-ladrillo",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9460913/",
+    "https://holcimfoundation.org/Projects/hy-fi",
+    "https://www.arup.com/news/hy-fi-reinvents-the-brick/",
+    "https://ecovative.com/assets/story/html/www.wired.com_2014_07_a-40-foot-tower-made-of-fungus-and-corn-stalks.html",
+    "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0213954",
+    "https://mushroompackaging.com/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Cuero de hongo (micotextiles)",
+    "Casas de micelio en Marte (NASA)",
+    "Unicel: cuánto tarda en degradarse"
+   ]
+  },
+  {
+   "id": "fun-48-falo-apestoso",
+   "titulo": "El hongo que apesta a muerto a propósito: *Phallus impudicus*",
+   "serie": "Shot Fungi Mati",
+   "numero": 48,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-48-falo-apestoso",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://eujournal.org/index.php/esj/article/view/3051",
+    "https://eujournal.org/index.php/esj/article/view/3051/2877",
+    "https://botit.botany.wisc.edu/toms_fungi/july99.html",
+    "https://archive.bio.ed.ac.uk/jdeacon/FungalBiology/phallus.htm",
+    "https://doi.org/10.1080/00222939700770481",
+    "https://research.ucc.ie/en/publications/investigations-of-an-association-between-the-stinkhorn-fungus-and/",
+    "https://doi.org/10.21829/abm9.1990.587",
+    "https://publicaciones.inecol.mx/Record/oai:oai.abm.ojs.inecol.mx:article-587/Details"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Hongos que usan moscas para regar sus esporas",
+    "Hongo canastilla (Clathrus ruber)",
+    "Por qué la carne podrida huele así: cadaverina y putrescina"
+   ]
+  },
+  {
+   "id": "fun-49-botrytis",
+   "titulo": "La pelusa gris de tus fresas: *Botrytis cinerea* entra por la flor y espera",
+   "serie": "Shot Fungi Mati",
+   "numero": 49,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-49-botrytis",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6637890/",
+    "https://doi.org/10.1111/j.1364-3703.2007.00417.x",
+    "https://doi.org/10.1111/j.1744-7348.1986.tb03211.x",
+    "https://doi.org/10.1094/PDIS.2002.86.9.1019",
+    "https://ipm.ucanr.edu/home-and-landscape/botrytis-rot-gray-mold-on-strawberries/",
+    "https://ephytia.inrae.fr/en/C/6988/Grapevine-Description-of-the-fungus",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11333459/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8693719/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Podredumbre noble: vinos dulces con Botrytis",
+    "Por qué las fresas se pudren tan rápido en el refri",
+    "Hongos que comen fruta: Penicillium vs. Botrytis"
+   ]
+  },
+  {
+   "id": "fun-50-langosta",
+   "titulo": "La langosta con fiebre: el hongo que frena plagas",
+   "serie": "Shot Fungi Mati",
+   "numero": 50,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-50-langosta",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7781369/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9224550/",
+    "https://doi.org/10.1098/rspb.2002.2067",
+    "https://pure.psu.edu/en/publications/host-pathogen-interactions-in-a-varying-environment-temperature-b/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6155106/",
+    "https://www.gob.mx/senasica/documentos/hongos-entomopatogenos",
+    "https://web.oirsa.org/archivos/4458",
+    "https://doi.org/10.1006/jipa.2001.5031"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Beauveria bassiana: el hongo blanco que mata insectos",
+    "La langosta del desierto: por qué forma enjambres",
+    "Hongos contra mosquitos que transmiten malaria"
+   ]
+  },
+  {
+   "id": "fun-51-queroseno",
+   "titulo": "El hongo que se come el combustible de los aviones",
+   "serie": "Shot Fungi Mati",
+   "numero": 51,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-51-queroseno",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://library.imarest.org/record/8908/files/v28b1p07a.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8525681/",
+    "https://www.dof.gob.mx/nota_detalle.php?codigo=5450011&fecha=29/08/2016",
+    "https://www.iata.org/contentassets/b7d9bbf3fe334d52aa02d67cc2e51337/joint-notice-to-industry_mbg-in-aviation-fuel_may-2026.pdf",
+    "https://www.gov.uk/aaib-reports/aircraft-accident-report-aar-1-slash-2021-airbus-a321-211-g-pown-26-february-2020",
+    "https://assets.publishing.service.gov.uk/media/6087c670e90e076ab1e3492c/1-2021_Airbus_A321-211_G-POWN.pdf"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Hongos que comen petróleo para limpiar derrames",
+    "Microbios en el combustible de los barcos",
+    "Biocorrosión: microbios que oxidan metales"
+   ]
+  },
+  {
+   "id": "fun-52-trufas",
+   "titulo": "Esto no es una piedra: es una trufa",
+   "serie": "Shot Fungi Mati",
+   "numero": 52,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-52-trufas",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://doi.org/10.1038/nature08867",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9157773/",
+    "https://doi.org/10.1007/978-81-322-2068-8_16",
+    "https://iris.unito.it/bitstream/2318/149941/1/chapter_16.pdf",
+    "https://doi.org/10.1111/j.1469-8137.2010.03523.x",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9402283/",
+    "https://doi.org/10.1007/BF01989905",
+    "https://doi.org/10.1016/S0953-7562(09"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Por qué las trufas son tan caras",
+    "Hongos subterráneos que dependen de animales para dispersarse",
+    "Trufas mexicanas bajo encinos"
+   ]
+  },
+  {
+   "id": "fun-53-yartsa",
+   "titulo": "Esa ramita es una oruga: el hongo-oruga del Tíbet",
+   "serie": "Shot Fungi Mati",
+   "numero": 53,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-53-yartsa",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6233077/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4418754/",
+    "https://redlist.info/iucn/species_view/504340",
+    "https://doi.org/10.1007/s12231-008-9038-3",
+    "https://colfungi.org/taxon/urn:lsid:indexfungorum.org:names:504340/general-information"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Ophiocordyceps vs. Cordyceps militaris: los suplementos",
+    "Orugas fantasma (Thitarodes) del Himalaya",
+    "Hongos parásitos de insectos en México"
+   ]
+  },
+  {
+   "id": "fun-54-micorrizas",
+   "titulo": "Ese hilito blanco no es el internet del bosque que te contaron: es un mercado",
+   "serie": "Shot Fungi Mati",
+   "numero": 54,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-54-micorrizas",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://doi.org/10.1038/s41559-023-01986-1",
+    "https://europepmc.org/article/MED/36782032",
+    "https://doi.org/10.1038/41557",
+    "https://doi.org/10.3389/ffgc.2024.1512518",
+    "https://doi.org/10.1111/nph.18935",
+    "https://doi.org/10.1111/j.1469-8137.2009.03069.x",
+    "https://doi.org/10.1111/nph.14976",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6971170/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Plantas que no tienen micorrizas (familia de la col)",
+    "Orquídeas que dependen de un hongo para germinar",
+    "Micorrizas en la milpa: maíz, frijol y hongo"
+   ]
+  },
+  {
+   "id": "fun-55-naranja",
+   "titulo": "Ese polvo verde de tu naranja no es polvo: el moho verde (*Penicillium digitatum*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 55,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-55-naranja",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13329989/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13117479/",
+    "https://edis.ifas.ufl.edu/publication/CH081",
+    "https://ipm.ucanr.edu/home-and-landscape/blue-and-green-mold-of-citrus",
+    "https://europepmc.org/article/MED/30861819",
+    "https://apps.lucidcentral.org/pppw_v13/text/web_full/entities/citrus_storage_moulds_197.htm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12576830/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Por qué el limón no se enmohece igual que la naranja",
+    "El imazalil y otras ceras de la fruta del súper",
+    "Moho en el pan: Rhizopus contra Penicillium"
+   ]
+  },
+  {
+   "id": "fun-56-mucormicosis",
+   "titulo": "El \"hongo negro\" no es negro: mucormicosis",
+   "serie": "Shot Fungi Mati",
+   "numero": 56,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-56-mucormicosis",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://www.cdc.gov/mucormycosis/hcp/clinical-overview/index.html",
+    "https://www.cdc.gov/mucormycosis/about/index.html",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8386807/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8374756/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9254769/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8354408/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10552646/"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Aspergilosis: el moho que se respira",
+    "Por qué el hierro alimenta a los microbios",
+    "Hongos en hospitales: cómo se controlan"
+   ]
+  },
+  {
+   "id": "fun-57-prototaxites",
+   "titulo": "El tronco de 8 metros que quizá no era hongo: Prototaxites",
+   "serie": "Shot Fungi Mati",
+   "numero": 57,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-57-prototaxites",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12822639/",
+    "https://doi.org/10.1130/G23384A.1",
+    "https://aspergillus.org.uk/article_database/devonian-landscape-heterogeneity-recorded-by-a-giant-fungus",
+    "https://chronicle.uchicago.edu/070510/boyce.shtml",
+    "https://doi.org/10.1016/S0034-6667(01",
+    "https://www.yahoo.com/news/scientists-puzzled-giant-ancient-life-121517930.html",
+    "https://kvia.com/cnn-other/2026/02/05/new-analysis-suggests-puzzling-fossil-may-have-been-an-unknown-life-form/",
+    "https://www.abdn.ac.uk/rhynie/basic.htm"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Los primeros hongos fósiles del pedernal de Rhynie",
+    "Cómo eran los bosques antes de los árboles",
+    "Líquenes gigantes: ¿otra hipótesis de Prototaxites?"
+   ]
+  },
+  {
+   "id": "fun-58-boulardii",
+   "titulo": "Este sobrecito no trae bacterias: la levadura probiótica *Saccharomyces boulardii*",
+   "serie": "Shot Fungi Mati",
+   "numero": 58,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-58-boulardii",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2868213/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1855594/",
+    "https://doi.org/10.1086/497832",
+    "https://doi.org/10.1111/apt.13344",
+    "https://doi.org/10.1002/14651858.CD004827.pub5",
+    "https://doi.org/10.1007/s100960050003"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Kéfir: levaduras y bacterias juntas",
+    "Clostridioides difficile: la bacteria que aprovecha los antibióticos",
+    "Levaduras de cerveza vs. levaduras probióticas"
+   ]
+  },
+  {
+   "id": "fun-59-reishi",
+   "titulo": "Ese frasco de reishi no siempre trae lo que dice",
+   "serie": "Shot Fungi Mati",
+   "numero": 59,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-59-reishi",
+   "rama": "pedido300/fun",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5552695/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6353236/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6055023/",
+    "https://www.cancer.gov/about-cancer/treatment/cam/patient/mushrooms-pdq"
+   ],
+   "fecha": "2026-10-29",
+   "derivados": [
+    "Código de barras de ADN para detectar fraudes en alimentos",
+    "Melena de león: lo que sí y lo que no se sabe",
+    "Betaglucanos: qué son y dónde están"
+   ]
+  }
+ ]
+}

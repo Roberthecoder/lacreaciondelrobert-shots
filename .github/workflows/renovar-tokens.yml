@@ -1,0 +1,35 @@
+name: Renovar tokens de redes
+
+# Cada lunes: renueva el token de Threads (th_refresh_token, +60 días) y el de TikTok (refresh, 365 días),
+# y revisa que LinkedIn y YouTube sigan sirviendo. Los tokens renovados se guardan CIFRADOS en refs/estado/tokens
+# (estado.json, sin secretos, dice cuándo vence cada uno). Si algo falla, el run sale en rojo: el admin lo ve y avisa a Robert.
+on:
+  schedule:
+    - cron: '23 14 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: redes
+  cancel-in-progress: false
+
+jobs:
+  renovar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      META_SYSTEM_TOKEN: ${{ secrets.META_SYSTEM_TOKEN }}
+      THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+      YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+      YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+      LINKEDIN_TOKEN: ${{ secrets.LINKEDIN_TOKEN }}
+      LINKEDIN_VENCE: '2026-12-28'   # cámbialo cuando Robert regenere el token de LinkedIn (dura 2 meses)
+      TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+      TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q requests
+      - run: python3 motor/redes/publicar.py renovar

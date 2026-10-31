@@ -1,0 +1,77 @@
+# Verificación · Shot Fungi Mati #29 · Las manchitas negras de tu coche: el hongo artillero
+
+29 oct 2026. **Verificación independiente (subagente que no escribió el guion).** Cada fuente se abrió en texto completo
+(el PDF de CAES se extrajo y se leyó entero; el resumen de Davis et al. 2004 se leyó completo desde el registro oficial
+de Crossref del DOI, porque el sitio de la revista da 403 desde la nube).
+
+Fuentes abiertas:
+- **[CAES]** Douglas, S. M. (2010, revisión de mayo). *Sphaerobolus* spp.—The Artillery Fungus. The Connecticut Agricultural Experiment Station, New Haven. https://portal.ct.gov/-/media/caes/documents/publications/fact_sheets/plant_pathology_and_ecology/sphaerobolusspptheartilleryfungus050310rpdf.pdf
+- **[DAVIS]** Davis, D. D., Kuhns, L. J., Akina, K. y Harpster, T. L. (2004, sept.). Artillery Fungus Sporulation on 27 Different Mulches — A Field Study. *Journal of Environmental Horticulture* 22(3): 117–123. DOI 10.24266/0738-2898-22.3.117. Resumen completo leído en https://api.crossref.org/works/10.24266/0738-2898-22.3.117 (y en OpenAlex). Afiliación: Departments of Plant Pathology and Horticulture, The Pennsylvania State University, University Park, PA.
+- **[PSU-A]** Penn State Extension (act. 16 jul 2026). Artillery Fungus in Mulch. https://extension.psu.edu/artillery-fungus-in-mulch
+- **[PSU-M]** Brantley, E. A., Davis, D. D. y Kuhns, L. J. (act. 26 jun 2025). What is Growing in My Landscape Mulch? Penn State Extension. https://extension.psu.edu/what-is-growing-in-my-landscape-mulch-mushrooms-slime-molds-and-fungus
+- **[PSU-97]** Penn State News (2 jul 1997). Artillery fungus threatens homeowners, mulch industry. https://www.psu.edu/news/agricultural-sciences/story/artillery-fungus-threatens-homeowners-mulch-industry
+- **[SAKES]** Sakes, A. et al. (2016). Shooting Mechanisms in Nature: A Systematic Review. *PLoS ONE* 11(7): e0158277. https://pmc.ncbi.nlm.nih.gov/articles/PMC4959704/
+- **[HRI]** Horticultural Research Institute. Small (but Mighty!). https://hriresearch.org/small-but-mighty
+- **[GEML]** Geml, J., Davis, D. D. y Geiser, D. M. (2005). Systematics of the genus *Sphaerobolus*… *Mycologia* 97(3): 680–694. https://pubmed.ncbi.nlm.nih.gov/16392256/
+- **[ME]** Emberger, G. *Sphaerobolus stellatus*. MushroomExpert.Com (© 2025). https://mushroomexpert.com/fungionwood/bird%27s%20nest%20fungi/species%20pages/Sphaerobolus%20stellatus.htm
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | Manchitas negras en coches = disparos (masas de esporas) de un hongo | ✅ | [CAES], [PSU-M] | "The presence of persistent brown to black spots on cars, house siding, plants, and other surfaces may be an indication of the presence of the fungus Sphaerobolus spp."; "The spore mass sticks to the side of a building or automobile, resembling a small speck of tar." | 2010 / 2025 |
+| 2 | Vienen del mantillo (astillas de madera/corteza de los jardines) | ✅ | [CAES] | "found on wood and bark chips, dead and decaying wood, and dung"; "associated with the increased popularity and use of bark and wood chip mulches in the landscape." | 2010 |
+| 3 | **Corregido.** Voz: «Ahí vive *Sphaerobolus*, el hongo artillero»; etiqueta «hongo artillero · *Sphaerobolus* (p. ej. *S. stellatus*)» (antes: solo *S. stellatus*) | ✅ | [CAES], [GEML], [ME], [PSU-97] | CAES lo llama "Sphaerobolus spp." (género); PSU-97: "scientifically known as Sphaerobolus stellatus"; GEML: "S. iowensis … is as common as or more common than S. stellatus in North America"; ME: "many specimens identified as S. stellatus are likely to be S. iowensis and vice versa." → "hongo artillero" es el género, no solo *S. stellatus*. | 2005 / 2010 / 2025 |
+| 4 | Mide unos dos milímetros (barra de escala 2 mm) | ✅ | [CAES], [ME] | "small, spheres approximately 1-2.5 mm (1/10 inch) in diameter and buff to yellow in color"; "The fruit bodies are 1-3 mm wide." | 2010 / 2025 |
+| 5 | Al madurar se abre como estrella (pantalla: 6–8 dientes, crema-naranja) | ✅ | [CAES], [SAKES], [ME] | "outer walls of the basidiocarps rupture, giving the structures a star or nest-like appearance"; "this sphere splits radially from its apex, forming a toothed (star-shaped) cup"; "splitting into 4-9 starlike rays"; "Yellow-orange" | 2010 / 2016 / 2025 |
+| 6 | Muestra una bolita negra, pegajosa, llena de esporas (una sola, 1–2 mm) | ✅ | [CAES], [PSU-M], [SAKES] | "peridioles or gleba are visible as dark masses"; "approximately 1-2 mm"; "Peridioles are typically quite sticky"; "one black egg"; "a spore-filled round package called gleba (diameter [Ø] of 1 mm)" | 2010 / 2016 / 2025 |
+| 7 | Por dentro absorbe agua y la presión sube | ✅ | [SAKES], [CAES] | "By solubilization of glycogen and subsequent absorption of water … the turgor pressure within the radially oriented cells of the elastic inner membrane increases"; "Increases in osmotic pressure, possibly due to the conversion of glycogen to sugars" | 2016 / 2010 |
+| 8 | De golpe la capa interna se voltea al revés, como un juguete de goma que salta, y dispara la bolita | ✅ | [SAKES], [CAES], [PSU-97] | "similar to the kids toy 'jumping poppers'"; "The sudden eversion of the membrane relieves the strain and discharges the spore package"; "cause the membranes under the peridioles to swell and turn inside out"; "the inner cup inverts and violently ejects the spore mass" | 2016 / 2010 / 1997 |
+| 8b | Pantalla: tras el disparo queda la copa volteada brillante | ✅ | [CAES] | "the swollen, inner membranes remain visible as glossy protrusions in the basidiocarps" | 2010 |
+| 9 | Apunta a la luz y a lo claro, como coches blancos y casas color crema | ✅ | [CAES], [DAVIS], [PSU-M] | "the peridioles are projected towards light and light-colored objects (e.g., white cars, beige houses)"; "shoots towards the light or towards reflective objects such as light-colored automobiles or house siding" | 2010 / 2004 |
+| 10 | **Corregido.** «hasta unos seis metros de lejos» (medidor "hasta ~6 m"; antes: "más de 6 m") | ✅ | [CAES], [SAKES], [PSU-97], [HRI] | Las fuentes difieren: CAES "horizontally for over 6 m (20 ft)"; SAKES "reaching up to 6 m from its base"; PSU-97 "as far as 20 feet" (≈ 6.1 m); HRI: "18 feet in length". "Más de" solo lo dice CAES; "hasta unos 6 m" cabe en todas. | 2010 / 2016 / 1997 |
+| 11 | … y más de 2 m de alto (medidor "más de 2 m") | ✅ | [CAES], [HRI], [PSU-M] | "Peridioles can be projected vertically for more than 2 m (6 ft)"; HRI: "14 feet in height"; PSU-M: "as high as the second story of a house" | 2010 |
+| 12 | Seca, queda pegadísima | ✅ | [CAES] | "they readily adhere to objects upon which they are impacted"; "When the peridioles dry, they become very difficult to remove" | 2010 |
+| 13 | Rasparla puede dañar la pintura y dejar mancha | ✅ | [CAES], [PSU-M], [PSU-97] | "the removal process itself can often damage the substrate"; "Extensive staining can also remain"; "Pitting of the substrate has also occasionally been observed, especially on cars"; "very difficult to remove without damaging the surface"; "cannot be removed without damaging or staining the surface" | 2010 / 2025 / 1997 |
+| 13b | **Corregido.** Chip «quítala mojada, antes de que se seque» (antes: "no la raspes en seco") | ✅ | [CAES] | CAES no dice eso: "Peridioles should be removed … with a stiff water spray from a hose or by scrubbing with a wet cloth or stiff brush before they dry"; ya secas "must be physically scrubbed and scraped" con cuidado. El chip sugiere un consejo que la fuente no da. | 2010 |
+| 14 | **Corregido.** «Un estudio de Penn State, publicado en 2004 … veintisiete mantillos»; tarjeta "Penn State · EUA · publicado en 2004 · 27 mantillos" (antes: "En Pensilvania") | ✅ | [DAVIS], [PSU-A] | "We evaluated 27 different mulches in the field"; autores de Penn State, University Park, PA; publicado sept. 2004. El resumen no dice dónde estaba el campo (lo más probable, Penn State, pero no está escrito). | 2004 |
+| 15 | **Corregido.** «sembró el hongo en veintisiete mantillos: en unos cuatro años, todos los de madera o corteza lo dejaron disparar» (antes: "probó… casi todos… tuvieron el hongo") | ✅ | [DAVIS], [PSU-A] | "Each mulch type was inoculated in 1998 with the artillery fungus … determined annually until 2002, approximately 4 years after inoculation"; "All wood/bark landscape mulches will eventually support the artillery fungus over extended time periods (i.e., 3–4 years)"; PSU-A: "All mulches that we studied eventually supported the artillery fungus after being outside for several years." → Les **sembraron** el hongo (no llegó solo), y la fuente dice **todos**, no "casi todos". | 2004 (datos 1998–2002) |
+| 15b | Pantalla: cuadrícula de 27 parcelas que se llenan de puntitos en unos 4 años | ✅ | [DAVIS] | "the amount of sporulation (number of spore masses on targets) determined annually" (unas más que otras: "large bark nuggets, cypress mulch, and 100% spent mushroom substrate supported less") | 2004 |
+| 16 | **Corregido (recorte).** «Y pegada a tu coche, puede seguir viva más de diez años.» | ✅ | [CAES], [PSU-97], [HRI] | "they can remain viable for more than 10 years" (dicho de las bolitas pegadas al quitarlas de superficies); "viable for up to 12 years"; "viable for at least 10 years"; HRI: gleba seca 11 años que aún germinó | 2010 / 1997 |
+| 17 | Cierre: eran balas de un hongo apuntando a la luz | ✅ | [CAES] | (resume 1 y 9) | 2010 |
+
+**Re-verificación (29 oct 2026):** se revisó otra vez el texto final completo de `narracion.json` y `guion.md` contra las fuentes.
+Las 6 filas corregidas (3, 10, 13b, 14, 15, 16) ya coinciden con las frases textuales de arriba; lo demás no cambió.
+Nota menor, sin efecto en voz ni pantalla: en `## Fuentes` del guion, la paráfrasis de UMass dice "casi todos"; la fuente
+primaria (Davis 2004) dice "All wood/bark…", que es lo que usa la voz. Resumen: 20 de 20 afirmaciones ✅.
+
+
+## Revisión final (animación y publicación)
+
+29 oct 2026. Revisé `artillero.jsx`, `Shot Artillero base narrada.dc.html`, la columna «Lo que se ve» y la tabla de Robert en
+`guion.md`, y `publicacion.md`. Saqué 22 cuadros con `motor/preview.mjs` (0.3, 6, 9, 12, 13, 15, 18, 24, 26, 27.5, 29, 30, 36,
+40, 42, 44, 46, 48, 50, 54, 58 y 60 s) y los revisé uno por uno.
+
+| Elemento | Veredicto | Comentario / fuente |
+|---|---|---|
+| Etiquetas «hongo artillero» · *Sphaerobolus* · «(p. ej. *S. stellatus*)» | ✅ | Filas 3 y 3 corregida [CAES], [GEML] |
+| Barras de escala 50 cm, 10 cm, 2 mm, 1 mm, 0.5 mm, 1 m, «27 parcelas» | ✅ | Coherentes con lo dibujado: cuerpos de 1–2.5 mm [CAES]; bolita de ~1 mm [SAKES]; 0.5 mm en el corte ampliado; 1 m en la trayectoria, con una persona para escala |
+| Morfología: esferitas naranja → estrella de ~8 dientes con una sola bolita oscura sobre la copa interna clara → corte con la copa que se voltea → copa volteada brillante | ✅ | "splits radially from its apex, forming a toothed (star-shaped) cup" [SAKES]; "4-9 starlike rays" [ME]; "glossy protrusions" [CAES] |
+| Chips «se abre como estrella», «peridiolo: bolita con esporas», «pegajosa» | ✅ | Filas 5 y 6 |
+| Medidor «presión» (sube… / ¡al tope!), «agua», «capa interna», «juguete de goma», «capa interna volteada» | ✅ | Filas 7, 8 y 8b (esquemático) |
+| «apunta a la luz y a lo claro», «casa color crema», «coche blanco» | ✅ | Fila 9 |
+| «hasta ~6 m» y «más de 2 m de alto», con una sola trayectoria | ✅ | Filas 10 y 11. El arco es posible a ~10 m/s [SAKES] |
+| «seca, queda pegadísima», «mancha», «quítala mojada, antes de que se seque» | ✅ | Filas 12, 13 y 13b |
+| Tarjeta «2004 · Penn State · EUA · 27 mantillos · publicado en 2004», contador «año N de ~4», cuadrícula de 27 parcelas que se llenan, chip «madera o corteza: todos lo dejaron disparar» | ✅ | Filas 14, 15 y 15b |
+| «puede seguir viva más de 10 años» | ✅ | Fila 16 |
+| Subtítulo idx 9: decía «Raspar *daña la pintura.*» (afirmación absoluta) | ✅ **corregido** | Ahora dice «Raspar *puede dañar* la pintura.», como la voz y [CAES] "can often damage" |
+| Subtítulo idx 10: decía «Probó *27 mantillos.*» | ✅ **corregido** | Ahora dice «Sembró el hongo en *27 mantillos.*», como la voz y [DAVIS] "inoculated" |
+| Demás subtítulos (idx 0–8, 11, 12) | ✅ | Resumen fiel de la voz verificada |
+| `publicacion.md`, Instagram: decía «siempre hacia la luz» | ✅ **corregido** | Se quitó «siempre»: las fuentes dicen "phototropic" / "towards light" sin absoluto |
+| `publicacion.md`, YouTube: decía «se ha vuelto más común con el uso de mantillo» | ✅ **corregido** | Ahora dice «parece haberse vuelto más común, en parte, por el uso de mantillo de madera y corteza». [CAES]: "appears to be partly associated with the increased popularity and use of bark and wood chip mulches" |
+| `publicacion.md`, resto de las 7 redes y comentario fijado (2 mm, estrella, peridiolo 1–2 mm, agua/presión, juguete, 6 m / 2 m, pegajosa, 10 años, puede volver a crecer si cae al mantillo, agua a presión o trapo mojado, Penn State 2004, 3–4 años, «unos más que otros», fuentes y enlaces) | ✅ | Coinciden con las filas 1–16; «si cae al mantillo… puede volver a crecer»: [CAES] "if they fall into mulch… they can germinate and re-infest". Cada cifra va con su fuente y su enlace |
+| Tabla «Robert en pantalla» | ✅ | No afirma hechos |
+
+Nota de estilo, no de hechos: los subtítulos quedan a la altura de ~68 % del cuadro, justo en el borde del tercio inferior.
+
+Resumen: la voz, la pantalla y `publicacion.md` quedan fieles a las fuentes; 4 textos se corrigieron (2 subtítulos y 2 frases de publicación).
+
+VEREDICTO: APROBADO

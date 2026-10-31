@@ -1,0 +1,58 @@
+{
+  "voz_aprobada": true,
+  "velocidad": 1.117,
+  "dcHtml": "Shot AlphaFold base narrada.dc.html",
+  "salida": "Shot AlphaFold narrado.dc.html",
+  "nota": "Shot IA #01. Una línea por subtítulo (idx 0..11 del jsx). 28 oct 2026: líneas 2 y 9 corregidas por la verificación de hechos; la voz espera nueva aprobación de Robert (NO generar sin su visto bueno).",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es un estambre enredado: es una proteína, y su forma la adivinó una inteligencia artificial."
+    },
+    {
+      "escena": "Collar",
+      "texto": "Una proteína es una cadena de piezas, los aminoácidos, como un collar de cuentas."
+    },
+    {
+      "escena": "Dobla",
+      "texto": "La cadena se dobla en una forma precisa, y de esa forma depende su trabajo."
+    },
+    {
+      "escena": "Llave",
+      "texto": "Si la forma cambia, la llave ya no entra."
+    },
+    {
+      "escena": "Rayos",
+      "texto": "Antes, la forma se veía haciendo cristales de la proteína y bombardeándolos con rayos X."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si en vez de verla, la adivinas?"
+    },
+    {
+      "escena": "Red",
+      "texto": "AlphaFold, de Google DeepMind, aprendió a predecir la forma leyendo solo la cadena de letras."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2021, el equipo de John Jumper lo explicó en la revista Nature y liberó el programa."
+    },
+    {
+      "escena": "Base",
+      "texto": "Luego le dieron el catálogo mundial de proteínas: en 2022 ya eran 214 millones de formas, gratis."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: son predicciones. Cada una trae su nivel de confianza, y las dudosas hay que comprobarlas en el laboratorio."
+    },
+    {
+      "escena": "Pesa",
+      "texto": "Bajarlas todas pesa 23 tebibytes: no te caben en el celular."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese estambre no es un enredo: es una llave, y ya conocemos su forma."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

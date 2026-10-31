@@ -1,0 +1,92 @@
+# Shot Químico #50 · Este granito no es azúcar (los endulzantes que engañan a tu lengua)
+
+- **Serie:** Shot Químico · **Logo:** química (matraz) · **Badge:** #50 · rama `pedido300/qui`.
+- **Formato:** N2 "El número" (1 granito contra 600 granitos de azúcar; 8 gramos contra 40 miligramos) + N1 "Por dentro" (la taza de café → la papila → el receptor dulce de dos piezas → la misma taza, ya con su etiqueta).
+- **Gancho (de los 7):** #4 "Un número que contradice" (con forma de #1 "Esto no es X: es Y", sobre lo que se ve): "Este granito no es azúcar: es sucralosa, y endulza como unos 600 granitos de azúcar."
+- **Tono:** sin alarmismo y sin marcas comerciales. Lo de seguridad se dice como lo dicen la OMS (IARC + JECFA) y, en la descripción, la FDA. No se da consejo médico.
+- **Duración:** voz 953 caracteres / ≈ 173 palabras (≈ 58.2 s) + cierre 3.5 s → **≈ 61.7 s** (`estimar-escenas.mjs --outro 3.5`).
+- **Estado:** guion verificado (`verificacion.md`, 3 correcciones aplicadas), animación lista (`edulcorantes.jsx`, base sin voz 61.7 s), voz pendiente de aprobación de Robert (~953 créditos).
+
+## Versión narrada
+
+Tiempos estimados: Gancho 0–5.1 · Familia 5.1–8.5 · Receptor 8.5–12.1 · Llave 12.1–15.6 · Poquito 15.6–20.7 · Pregunta 20.7–22.4 · Schlatter 22.4–28.7 · Londres 28.7–35.4 · Estudio 35.4–43.3 · Limite 43.3–49.9 · Amargo 49.9–54.3 · Cierre 54.3–58.2 · Outro 58.2–61.7.
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Este granito no es azúcar: es sucralosa, y endulza como unos 600 granitos de azúcar. | Fondo amarillo. Desde el cuadro 0, una cucharita deja caer **un solo granito** blanco sobre una taza de café (plop, ondas). A la derecha, del cielo cae una montañita de granitos de azúcar que se apila con un contador que sube rápido "1 → ≈600". Etiquetas: "sucralosa · 1" y "azúcar · ≈600". Barra de escala "1 mm". |
+| 1 | Familia | El aspartamo, unas 200 veces; la stevia, de 200 a 400. | Entran dos granitos más con su chip: "aspartamo ×200" y "stevia ×200–400" (con una hojita de *Stevia rebaudiana* dibujada junto al chip). Barritas horizontales que crecen hasta su número; la de sucralosa ya marca "×600". |
+| 2 | Receptor | En tu lengua, lo dulce lo capta un receptor de dos piezas. | La cámara baja de la taza a una lengua que da un sorbo; zoom a una papila y luego a una célula (fondo noche). En su superficie aparece el receptor: dos piezas en forma de "atrapamoscas" con etiquetas chicas "T1R2" y "T1R3". Barra de escala pasa a "10 µm". |
+| 3 | Llave | El azúcar y estos lo encienden: tu cerebro recibe dulce. | Una molécula de azúcar (hexágonos) entra en el receptor, que se cierra y se ilumina; sale un rayito por un nervio hacia un cerebro pequeño en la esquina que dice "¡DULCE!". Luego entra la molécula de sucralosa (con 3 bolitas verdes de cloro) y pasa lo mismo. |
+| 4 | Poquito | Y con mucho menos: 8 gramos de azúcar endulzan como unos 40 miligramos de aspartamo. | Regreso a escala real: dos tazas. A la izquierda caen 2 cucharaditas de azúcar "8 g de azúcar"; a la derecha, una pizca casi invisible con lupa "≈ 40 mg". Encima de cada taza, un medidor de "dulzor" que se llena igual en las dos. Chip "mismo dulzor · cuenta con datos de la FDA". |
+| 5 | Pregunta | ¿Y cómo se descubrieron? | **Re-gancho.** "?" gigante sobre la pizca; zoom rápido. |
+| 6 | Schlatter | De chiripa: en 1965, James Schlatter buscaba un remedio para la úlcera, se lamió un dedo y le supo dulce. | Tarjeta "1965 · James Schlatter · laboratorio". Matraz con polvo blanco en el borde; un dedo lo toca sin querer; luego el dedo sube a la boca para agarrar una hoja de papel; aparecen chispitas "dulce" y un "¿?". |
+| 7 | Londres | En Londres, un estudiante creyó que le pedían probar azúcares con cloro, no analizarlos: así nació la sucralosa. | Tarjeta "Londres · años 70". Teléfono que suena; globo de diálogo "test" (analizar) que al llegar al estudiante se convierte en "taste" (probar); el estudiante prueba una pizca de un frasquito y abre los ojos. |
+| 8 | Estudio | ¿Y son seguros? En 2023, en Lyon, la agencia de cáncer de la OMS llamó al aspartamo posiblemente cancerígeno, por evidencia limitada. | Mapa simple de Francia con un pin en "Lyon"; tarjeta "2023 · IARC (OMS) · 25 expertos". Sello "Grupo 2B · posiblemente cancerígeno" con la leyenda chica "evidencia limitada". Escalera de 4 escalones (1, 2A, 2B, 3) con el sello en el tercero. |
+| 9 | Limite | Otro comité mantuvo su límite: alguien de 70 kilos tendría que tomar más de 9 latas de refresco light diarias. | Tarjeta "JECFA (FAO/OMS) · 2023 · 40 mg por kilo al día, sin cambios". Una silueta "70 kg" y latas sin marca, numeradas 1 a 9, que caen y se acomodan en 3 × 3; línea punteada "límite diario" y un "+" rojo. Chip "más de 9 latas light al día (OMS)". |
+| 10 | Amargo | En 2012 se vio que la stevia también enciende dos receptores de amargo. | Regreso a la célula (fondo noche): la molécula de stevia enciende el receptor dulce (luz rosa) y además dos receptores de amargo (luz verde) con etiquetas "TAS2R4" y "TAS2R14"; tarjeta chica "2012 · Alemania". Cara de Robert haciendo gesto de "¡guácala!" (se define en fase 2). |
+| 11 | Cierre | Ese granito no es azúcar: es una llave que engaña a tu lengua. | **Regreso a la taza del inicio**: el mismo granito sobre el café, ahora con un candadito-receptor dibujado al lado y la etiqueta "sucralosa = llave del receptor dulce". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de química y Robert señalando. |
+
+**Música:** cama grave continua y suave; efectos en el mismo cuadro (plop del granito, lluvia de granitos con tic del contador, "clic" del receptor que se cierra, chispa del nervio, cucharadas y la pizca, tono de teléfono, sello que golpea, latas que se apilan, nota disonante en lo amargo).
+
+## Robert en pantalla
+
+Tiempos de la base sin voz (atados a cada escena). Grande en «¿Y cómo se descubrieron?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` | «Este granito no es azúcar» |
+| 2 | 5.4 | 8.3 | 13_senalando_arriba | `arriba-der` | «unas 200 veces… de 200 a 400» (las barras) |
+| 3 | 12.4 | 15.4 | 06_pensativo_menton | `izq-alto` | «lo encienden: tu cerebro recibe dulce» |
+| 4 | 16.8 | 20.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «unos 40 miligramos de aspartamo» |
+| 5 | 20.75 | 22.6 | 07_pensativo_puno | `grande` | «¿Y cómo se descubrieron?» |
+| 6 | 25.4 | 28.4 | 11_sorprendido | `izq-alto` | «se lamió un dedo y le supo dulce» |
+| 7 | 30.9 | 35.1 | 04_bajando_lentes | `arriba-der` | «probar… no analizarlos» |
+| 8 | 39.0 | 43.0 | 12_perfil_serio | `izq-alto` | «posiblemente cancerígeno, por evidencia limitada» |
+| 9 | 45.1 | 49.6 | 05_sonriendo_dientes_uniformes | `izq-alto` | «más de 9 latas… diarias» |
+| 10 | 50.3 | 54.1 | 10_serio_molesto | `izq-alto` | «dos receptores de amargo» |
+| 11 | 54.6 | 58.1 | 02_apuntando_camara | `arriba-der` | «una llave que engaña a tu lengua» |
+| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | tarjeta de cierre |
+
+**Total:** 11 apariciones · ≈ 39 s en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.
+
+## Fuentes (abiertas el 29 oct 2026)
+
+1. **Cuántas veces más dulces (aspartamo ~200, sucralosa ~600, stevia 200–400), y que se necesita menos** — FDA. "Aspartame and Other Sweeteners in Food." Contenido vigente al 27 feb 2025. https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food
+   > "consumers will likely use less than they would of table sugar because it is about 200 times sweeter" (aspartamo) · "Sucralose is about 600 times sweeter than table sugar." · "Steviol glycosides are natural constituents of the leaves of Stevia rebaudiana (Bertoni) Bertoni, a plant native to parts of South America and commonly known as Stevia. They are reported to be 200 to 400 times sweeter than table sugar." · "Some sweeteners are much sweeter than table sugar, and smaller amounts are needed to achieve the same level of sweetness as sugar in food."
+2. **8 gramos de azúcar ≈ 40 miligramos de aspartamo** — misma página de la FDA (2025), tabla "Safe Levels of Sweeteners". Cuenta derivada de sus propios supuestos: ADI de la FDA 50 mg/kg × 60 kg = 3000 mg ÷ 75 sobres = 40 mg por sobre; y 8000 mg de azúcar ÷ 200 = 40 mg.
+   > "The FDA assumed a sweetener packet is as sweet as two teaspoons (approximately 8 grams) of sugar for these comparisons." · "Aspartame 75" (sobres al día para llegar a la ADI) · "Aspartame is 50 mg/kg bw/d" · "* Number of sweetener packets a 60 kg (132 pound) person would need to consume to reach the ADI."
+3. **Receptor de dos piezas (T1R2/T1R3) que reconoce azúcar, aspartamo y sucralosa** — Li X., Staszewski L., Xu H., Durick K., Zoller M., Adler E. "Human receptors for sweet and umami taste." *PNAS* 99(7):4692–6 (2002). PMID 11917125 · PMC123709.
+   > "Here we show that human T1R2/T1R3 recognizes diverse natural and synthetic sweeteners." · "Sucrose elicited transient intracellular calcium increases in Gα15 cells cotransfected with human T1R2 and T1R3" · "and the synthetic sweeteners acesulfame K, aspartame, cyclamate, dulcin, neotame, saccharin, and sucralose."
+4. **Stevia: también enciende dos receptores de amargo (2012)** — Hellfritsch C., Brockhoff A., Stähler F., Meyerhof W., Hofmann T. "Human psychometric and taste receptor responses to steviol glycosides." *J Agric Food Chem* 60(27):6782–93 (2012). PMID 22616809. (Technische Universität München, Alemania.)
+   > "A comprehensive screening of 25 human bitter taste receptors revealed that two receptors, hTAS2R4 and hTAS2R14, mediate the bitter off-taste of steviol glycosides." · "hTAS1R2/R3 sweet taste receptor"
+5. **Aspartamo: 1965, Schlatter, buscaba un remedio para la úlcera, se lamió el dedo** —
+   - Blakemore E. "Aspartame…" *National Geographic*, 2 ago 2023. https://www.nationalgeographic.com/premium/article/aspartame-artificial-sweetener-health-history
+     > "It was 1965, and the young scientist was attempting to synthesize a drug to treat ulcers." · "absentmindedly licked his finger to pick up a piece of paper more easily."
+   - University of Bristol, School of Chemistry, "Molecule of the Month: Aspartame" (2001). https://www.chm.bris.ac.uk/motm/aspartame/aspartameh.html
+     > "It was December, 1965." · "Schlatter accidentally got a small amount of the compound on his hands without noticing it." · "Later that morning, he licked his finger as he reached for a piece of paper, and noticed a sweet taste."
+   - Respaldo académico del año y el nombre: Chattopadhyay S., Raychaudhuri U., Chakraborty R. "Artificial sweeteners – a review." *J Food Sci Technol* 51(4):611–21 (2014). PMID 24741154 · PMC3982014.
+     > "Aspartame (Fig. 1a) was discovered in 1965 by James Schlatter a chemist"
+   - Mazur R.H. (jefe de Schlatter en G.D. Searle) "Aspartame—a sweet surprise." *J Toxicol Environ Health* 2(1):243–9 (1976). PMID 994241.
+     > "has been found to have a remarkably clean, sucrose-like taste with no off flavor and a potency 150-200 times sucrose."
+6. **Sucralosa: el estudiante que entendió "probar" en vez de "analizar" (Londres)** — Hough L. (uno de los dos descubridores) y Emsley J. "Sweetness." *New Scientist*, 19 jun 1986. https://www.johnemsley.com/articles/new_scientist/ns_sweetness.html
+   > "Curiously, these substances might still have been waiting to be tested for sweetness had not Shashikant Phadnis, a graduate researcher, misheard a telephone call requesting samples of the chlorinated sugars for testing. As the call came from a large sugar company it is perhaps understandable that Phadnis thought that the company had requested them for tasting and so he tried them himself." · "Queen Elizabeth College (now part of King's College London)"
+   - Artículo original: Hough L., Phadnis S.P. "Enhancement in the sweetness of sucrose." *Nature* 263:800 (28 oct 1976). DOI 10.1038/263800a0. (Por eso en pantalla dice "años 70" y no se da un día exacto.)
+7. **2023, Lyon: IARC clasifica el aspartamo como "posiblemente cancerígeno" (Grupo 2B) por evidencia limitada** — IARC/JECFA. "Summary of findings of the evaluation of aspartame…" (jul 2023). https://www.iarc.who.int/wp-content/uploads/2023/07/Summary_of_findings_Aspartame.pdf
+   > "An IARC Monographs working group of 25 independent experts from 12 different countries, all assessed as free from conflicts of interest, was convened in Lyon on 6–13 June 2023." · "The working group classified aspartame as possibly carcinogenic to humans (Group 2B) based on limited evidence for cancer in humans (for hepatocellular carcinoma, a type of liver cancer)."
+   - OMS, comunicado del 14 jul 2023. https://www.who.int/news/item/14-07-2023-aspartame-hazard-and-risk-assessment-results-released
+     > "Citing “limited evidence” for carcinogenicity in humans, IARC classified aspartame as possibly carcinogenic to humans (IARC Group 2B) and JECFA reaffirmed the acceptable daily intake of 40 mg/kg body weight." · "The strength-of-evidence classification in Group 2B is the third highest level out of 4 levels"
+8. **Otro comité (JECFA, FAO/OMS) mantuvo el límite; 70 kg → más de 9 latas** — mismo comunicado de la OMS (2023) y el resumen IARC/JECFA.
+   > "JECFA concluded that the data evaluated indicated no sufficient reason to change the previously established acceptable daily intake (ADI) of 0–40 mg/kg body weight for aspartame." · "For example, with a can of diet soft drink containing 200 or 300 mg of aspartame, an adult weighing 70kg would need to consume more than 9–14 cans per day to exceed the acceptable daily intake, assuming no other intake from other food sources." · (resumen) "The JECFA panel … was convened in Geneva on 27 June–6 July 2023."
+9. **Postura de la FDA (para la descripción, no para la voz)** — FDA, misma página (2025).
+   > "Aspartame being labeled by IARC as “possibly carcinogenic to humans” does not mean that aspartame is actually linked to cancer. The FDA disagrees with IARC’s conclusion that these studies support classifying aspartame as a possible carcinogen to humans." · "FDA scientists do not have safety concerns when aspartame is used under the approved conditions." · "People who have phenylketonuria (PKU) … should avoid or restrict aspartame" (aviso de fenilalanina en la etiqueta).
+
+## Notas
+- El dibujo es esquemático (el receptor como "atrapamoscas", la molécula como llave, el nervio y el cerebro).
+- "600 granitos": la FDA compara a igual cantidad (peso); el dibujo usa granitos del mismo tamaño para mostrar esa proporción. Las proporciones de dulzor son aproximadas y cambian según la concentración.
+- "40 miligramos" es una cuenta hecha con los supuestos de la propia FDA (sobre = 8 g de azúcar, aspartamo ×200), no una cifra de etiqueta; así se explica en la descripción.
+- "Más de 9 latas": la OMS da "más de 9 a 14" según si la lata trae 300 o 200 mg; la voz dice el número más bajo ("más de 9"), que es el caso más conservador.
+- "La agencia de cáncer de la OMS" = la IARC, que reunió a 25 expertos independientes de 12 países (corregido tras la verificación; antes decía "expertos de la OMS"). El Grupo 2B mide qué tan fuerte es la evidencia, no cuánto riesgo hay a la dosis normal (lo dice la OMS); también va en la descripción, junto con que la FDA no está de acuerdo con la clasificación.
+- Sucralosa: Phadnis era "graduate researcher" (estudiante de posgrado) en Queen Elizabeth College, Londres; la llamada venía de una empresa azucarera (sin nombre en el video). La llamada pedía "los azúcares clorados" y el compuesto aún no se llamaba "sucralosa"; por eso la voz dice "probar azúcares con cloro… así nació la sucralosa" (corregido tras la verificación).
+- "Relleno" de los sobres: no se encontró una fuente oficial abierta que diga la composición sin citar marcas; por eso NO se dice en la voz (solo se muestra la pizca contra las cucharaditas, que sí sale de las cuentas de la FDA).
+- Aviso de seguridad para la descripción: las personas con fenilcetonuria deben evitar o limitar el aspartamo (FDA). Sin marcas comerciales en pantalla ni en la voz.

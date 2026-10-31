@@ -1,0 +1,37 @@
+# Verificación de hechos · Shot Científico #46 · Saltar en un elevador que cae no te salvaría
+
+- **Fecha:** 29 oct 2026. **Quién verificó:** subagente verificador independiente (no escribió el guion).
+- Revisados: `guion.md` y `narracion.json` (11 líneas). La animación (`cie-piezas.jsx`) todavía no tiene textos en pantalla con datos; se revisó lo descrito en la columna «Lo que se ve».
+
+## Afirmaciones (voz y pantalla)
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 1 | (Voz 0, corregida) «Si un elevador se cayera, saltar justo antes del golpe **casi seguro** no te salvaría.» + sello «¿MITO?» sobre «saltar te salva» | ✅ (corregida; antes ⚠️ por absoluta) | C. Baird, *Science Questions with Surprising Answers*, West Texas A&M Univ. (wtamu.edu/~cbaird/sq/2012/12/05/…); L. Barnes, *The Conversation* (theconversation.com/…-99597) | Baird: "The bottom line is that “jumping” at the last moment would help, but not much." / Barnes (caída de 5 pisos, 15 m → equivale a 9 m con salto de 70 cm y tiempo perfecto): lo describe como la diferencia entre "probably dead" y "probably alive". | 2012; 2018 |
+| 2 | «En las películas suena lógico: si saltas en el último segundo, no vas cayendo.» | ✅ (encuadre, no es dato) | — | Es una opinión sobre el mito popular; no afirma un hecho medible. | — |
+| 3 | «Mientras el elevador cae, tú caes con él, a su misma velocidad.» (dos flechas iguales) | ✅ | Baird (wtamu.edu) | "because you are both in free fall, you would not really be “jumping” off the platform, but would be pushing it away." | 2012 |
+| 4 | «Al saltar, solo le quitas a esa velocidad la poquita que da tu salto.» | ✅ | L. Barnes, *The Conversation* / ScienceAlert (republicado) | "The speed at which you hit the floor of the (suddenly stopped) elevator is the elevator speed minus your jump speed." | 2018 |
+| 5 | «Una caída de unos treinta metros, como diez pisos…» | ✅ (aprox.) | Barnes, *The Conversation* (usa 3 m por piso) | Barnes toma 3 m por piso (3 pisos = 9 m; 5 pisos = 15 m) → 10 pisos × 3 m = 30 m. | 2018 |
+| 6 | «…termina a más de ochenta kilómetros por hora» (velocímetro «> 80 km/h») | ✅ (cálculo) | Física de caída libre, v = √(2gh); Barnes: la fricción del aire es despreciable a estas velocidades. Comprobación con Baird: 33 ft → 31 mph. | Cálculo: √(2 × 9.81 m/s² × 30 m) = 24.3 m/s × 3.6 = **87 km/h** (> 80 ✔). Control: 33 ft = 10.06 m → √(2×9.81×10.06) = 14.05 m/s = 31.4 mph = 50.6 km/h; Baird: "you would reduce your impact velocity from 31 mph to 25 mph" (31 mph ✔). Barnes: la resistencia del aire no importa hasta "over 200 km/h". | 2012; 2018 |
+| 7 | «…y un buen salto apenas le resta unos diez» (km/h) («− ≈ 10 km/h») | ✅ (cálculo) | Baird (velocidad máxima de salto humano); cálculo con salto vertical de 0.4 m | Baird: "Assuming the maximum human jump velocity to be 7 mph" → 7 × 1.609 = 11.3 km/h. Salto de 0.40 m: √(2×9.81×0.40) = 2.80 m/s × 3.6 = 10.1 km/h. Salto «de basquetbolista» de 0.70 m (Barnes): 3.71 m/s = 13.3 km/h. «Unos diez» es correcto para un buen salto normal. | 2012; 2018 |
+| 8 | «Encerrado y sin ver hacia afuera, sería casi imposible atinarle al momento exacto.» | ✅ | Barnes, *The Conversation* / ScienceAlert | "I assumed that your timing is perfect, despite probably being unable to see the ground." / "A moment too late, you've already hit the floor." | 2018 |
+| 9 | «¿Qué tan peligrosos son los elevadores? Muy poco.» | ✅ (cualitativo) | CPWR – The Center for Construction Research and Training, informe en CDC Stacks (stacks.cdc.gov/view/cdc/221302) | "kill 31 people and seriously injure about 17,000 people in the United States" (elevadores y escaleras eléctricas juntos, al año) · "Half of the annual deaths are to people working in or near elevators." (Datos BLS 1992–2009 y CPSC 1997–2010; el guion no usa la cifra). | 2013 (datos 1992–2010) |
+| 10 | «En 1854 Elisha Otis presentó su freno de seguridad en Nueva York» (tarjeta «1854 · Elisha Otis · Nueva York») | ✅ | Wikipedia «Elisha Otis» (con referencias); Indiana Public Media, *A Moment of Science* | "a public demonstration of his new invention at the New York Crystal Palace in 1854" / "Then, in 1854, an American engineer named Elisha Graves Otis staged a dramatic demonstration." | 1854 |
+| 11 | Freno «que se traba si la cabina se suelta» (en pantalla: freno que se traba en los rieles) | ✅ | Indiana Public Media, *A Moment of Science*; Wikipedia | "when the rope was cut, the spring flexed back so that its ends jammed into notches inside the guide rails, stopping the platform's fall." / "automatically comes to a halt if the hoisting rope breaks" | 1854 |
+| 12 | (Voz 7, corregida) «…y **hoy los elevadores de cable** traen frenos que se traban si la cabina se suelta.» | ✅ (corregida; antes ⚠️ por «desde 1854… los elevadores») | California Code of Regulations, Title 8, §3035 (dir.ca.gov/Title8/3035.html), basado en ASME A17.1; Baird | "The car of every elevator suspended by wire ropes shall be provided with one or more approved car safety devices" (se aplican sobre los rieles guía) / Baird: "For the past century, elevators have had a backup break that automatically engages when an elevator starts to fall." | vigente; 2012 |
+| 13 | (Voz 8, corregida) «Y además cuelgan de varios cables, no de uno solo.» (sujeto: los elevadores de cable de la frase anterior) (varios cables en pantalla) | ✅ | California Code of Regulations, Title 8, §3042(f)(1) (dir.ca.gov/Title8/3042.html), que sigue a ASME A17.1 §2.20.4; Barnes | "The minimum number of hoisting ropes used shall be three for traction elevators, and two for drum-type elevators." / "Modern elevators have a wide variety of safety backups, such as multiple cables and electromagnetic brakes." | vigente; 2018 |
+| 14 | «Si te quedas atorado, lo mejor es quedarte adentro, apretar el botón de alarma y esperar ayuda.» | ✅ | Otis Elevator Company, *Elevator Safety* (otis.com/…/elevator-safety) | "Push or pull the ALARM button to call for assistance." / "Do not force open the elevator doors. Do not attempt to leave the elevator." / "Be patient—help is on the way. You are safe and there is plenty of air. So relax and wait for help." | vigente |
+| 15 | (Voz 10, corregida) «Así que el salto de película **casi no sirve**, pero lo más seguro es que nunca lo vas a necesitar.» | ✅ (corregida; antes ⚠️) | Baird; Barnes | Baird: "would help, but not much." La segunda mitad ✅ (Barnes: "In conclusion, don’t worry." + respaldos múltiples). | 2012; 2018 |
+
+## Problemas encontrados
+
+Primera revisión (29 oct 2026): 3 ⚠️ (gancho «no te salvaría», frenos «desde 1854… los elevadores», cierre «no sirve»).
+Segunda revisión (29 oct 2026), tras las correcciones del guion:
+1. **Gancho:** «casi seguro no te salvaría» + sello «¿MITO?» coincide con Baird ("would help, but not much") y con el ejemplo de 30 m (de 87 a ~77 km/h, sigue siendo mortal). ✅
+2. **Frenos:** «en 1854 Elisha Otis presentó en Nueva York un freno de seguridad, y hoy los elevadores de cable traen frenos…» — el año y el lugar son del invento, y la obligación actual está en el código (Title 8 §3035, basado en ASME A17.1). ✅
+3. **Cables:** «Y además cuelgan de varios cables» — mínimo 3 cables en los de tracción (§3042). ✅
+4. **Cierre:** «casi no sirve». ✅
+
+Nota: los cálculos (#6 y #7) no cuentan la fricción del aire ni el colchón de aire del cubo; conviene decir «cálculo simplificado» en `publicacion.md`.
+
+VEREDICTO: APROBADO
