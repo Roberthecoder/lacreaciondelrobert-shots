@@ -1,13 +1,13 @@
-name: Render del largo (en paralelo)
+name: Render del pitch de Solve (4K, en paralelo)
 
-# Renderiza un video largo partido en pedazos, cada uno en su propia máquina a la vez,
-# y al final los une con el acabado de película (grano, viñeta y color).
-# Se lanza solo al hacer push a una rama "largo-render/…" que toque largos/.
-# El video final queda en Releases → "Largo · <rama>" (y como artifact por 3 días).
+# Renderiza el pitch de Fungi Mati partido en pedazos de 10 s, cada uno en su propia máquina a la vez,
+# a 3840×2160 (cada cuadro se dibuja al doble de resolución) y con acabado de película (grano, viñeta y color).
+# Al final une los pedazos sin volver a comprimir, mezcla la voz con la música y sube el MP4 a Releases.
+# Se lanza al cambiar largos/pitch-solve/render.txt (o a mano desde Actions).
 on:
   push:
-    branches: ['largo-render/**']
-    paths: ['largos/pitch-solve/video/**', 'largos/pitch-solve/*.dc.html']
+    branches: ['largo-render/pitch-solve']
+    paths: ['largos/pitch-solve/render.txt']
   workflow_dispatch:
 
 permissions:
@@ -18,14 +18,14 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  LARGO: largos/000-que-es-la-creacion
-  HTML: Largo 00.dc.html
-  FPS: '24'
-  PEDAZO: '20'   # segundos de video por máquina
+  LARGO: largos/pitch-solve
+  HTML: Pitch Solve.dc.html
+  FPS: '30'
+  PEDAZO: '10'   # segundos de video por máquina
+  ESCALA: '2'    # 2 = 4K
 
 jobs:
   partir:
-    # Solo corre en el repositorio público (máquinas más rápidas y minutos gratis); en el privado se salta.
     if: github.repository == 'Roberthecoder/lacreaciondelrobert-shots'
     runs-on: ubuntu-24.04
     timeout-minutes: 5
@@ -38,20 +38,18 @@ jobs:
           node -e '
             const fs = require("fs");
             globalThis.window = {};
-            new Function(fs.readFileSync(process.env.LARGO + "/video/escenas.js", "utf8"))();
-            let t = 0;
-            for (const c of window.CAPS) { if (c.tarjeta !== false) t += 3.2; for (const l of c.lineas) t += l.d || Math.max(2.2, l.t.length / 15 + 0.45); }
-            t += 1;
+            new Function(fs.readFileSync(process.env.LARGO + "/video/tiempos.js", "utf8"))();
+            const t = window.TIEMPOS_VOZ.reduce((a, b) => a + b, 0) + 1;
             const P = +process.env.PEDAZO, n = Math.ceil(t / P);
             const lista = Array.from({ length: n }, (_, i) => ({ i: String(i + 1).padStart(3, "0"), desde: i * P, hasta: +Math.min(t, (i + 1) * P).toFixed(3) }));
-            console.log(`Total ${t.toFixed(1)} s en ${n} pedazos`);
+            console.log(`Total ${t.toFixed(2)} s en ${n} pedazos`);
             fs.appendFileSync(process.env.GITHUB_OUTPUT, "pedazos=" + JSON.stringify(lista) + "\n");
           '
 
   render:
     needs: partir
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
+    timeout-minutes: 120
     strategy:
       fail-fast: false
       max-parallel: 20
@@ -70,19 +68,23 @@ jobs:
         run: |
           mkdir -p salida
           for intento in 1 2; do
-            node motor/render.mjs "$LARGO" "$HTML" "salida/tramo_${{ matrix.pedazo.i }}.mp4" --horizontal --fps "$FPS" --desde ${{ matrix.pedazo.desde }} --hasta ${{ matrix.pedazo.hasta }} && break
+            node motor/render.mjs "$LARGO" "$HTML" "salida/tramo_${{ matrix.pedazo.i }}.mp4" --horizontal --fps "$FPS" --escala "$ESCALA" --desde ${{ matrix.pedazo.desde }} --hasta ${{ matrix.pedazo.hasta }} && break
             echo "Reintento $intento"
           done
           test -f "salida/tramo_${{ matrix.pedazo.i }}.mp4"
-      - name: Acabado de película en este pedazo (grano, viñeta y color)
+      - name: Acabado de película (grano, viñeta y color)
         run: |
-          ffmpeg -y -loglevel error -i "salida/tramo_${{ matrix.pedazo.i }}.mp4"             -vf "colorbalance=rs=-0.03:bs=0.05:rm=0.01:bm=-0.01:rh=0.05:gh=0.015:bh=-0.04,eq=contrast=1.05:saturation=1.04,vignette=angle=PI/4.6,noise=c0s=10:c0f=t+u,format=yuv420p"             -c:v libx264 -preset medium -crf 20 -maxrate 9M -bufsize 18M -r "$FPS" -g 48 "salida/cine_${{ matrix.pedazo.i }}.mp4"
+          ffmpeg -y -loglevel error -i "salida/tramo_${{ matrix.pedazo.i }}.mp4" \
+            -vf "colorbalance=rs=-0.03:bs=0.05:rm=0.01:bm=-0.01:rh=0.05:gh=0.015:bh=-0.04,eq=contrast=1.05:saturation=1.05,vignette=angle=PI/4.6,noise=c0s=7:c0f=t+u,format=yuv420p" \
+            -c:v libx264 -preset slow -crf 17 -maxrate 45M -bufsize 90M -profile:v high -level 5.1 -r "$FPS" -g 60 -keyint_min 60 -sc_threshold 0 \
+            "salida/cine_${{ matrix.pedazo.i }}.mp4"
           mv "salida/cine_${{ matrix.pedazo.i }}.mp4" "salida/tramo_${{ matrix.pedazo.i }}.mp4"
       - uses: actions/upload-artifact@v4
         with:
           name: tramo-${{ matrix.pedazo.i }}
           path: salida/tramo_${{ matrix.pedazo.i }}.mp4
           retention-days: 3
+          compression-level: 0
 
   unir:
     needs: render
@@ -92,26 +94,38 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - uses: actions/download-artifact@v4
         with:
           pattern: tramo-*
           merge-multiple: true
           path: tramos
-      - name: Unir los pedazos (ya traen el acabado de película)
+      - name: Unir los pedazos (sin volver a comprimir)
         run: |
           ls tramos | sort | sed "s#^#file '$PWD/tramos/#; s#\$#'#" > lista.txt
           wc -l lista.txt
-          ffmpeg -y -loglevel error -f concat -safe 0 -i lista.txt -c copy -movflags +faststart largo00_cine_mudo.mp4
-          ffprobe -v error -show_entries format=duration,size -of default=nw=1 largo00_cine_mudo.mp4
-      - uses: actions/upload-artifact@v4
-        with:
-          name: largo00_cine_mudo
-          path: largo00_cine_mudo.mp4
-          retention-days: 3
-          compression-level: 0
+          ffmpeg -y -loglevel error -f concat -safe 0 -i lista.txt -c copy video.mp4
+          ffprobe -v error -show_entries format=duration -of default=nw=1 video.mp4
+      - name: Música y mezcla con la voz
+        run: |
+          V="$LARGO/video"
+          TOTAL=$(node -p 'require("./'"$V"'/voz_info.json").total')
+          RET=$(node -p 'Math.round(require("./'"$V"'/voz_info.json").retraso*1000)')
+          VEL=$(node -p 'require("./'"$V"'/voz_info.json").vel')
+          SOL=$(node -e 'const fs=require("fs");globalThis.window={};new Function(fs.readFileSync("'"$V"'/tiempos.js","utf8"))();console.log(window.TIEMPOS_VOZ.slice(0,4).reduce((a,b)=>a+b,0).toFixed(2))')
+          echo "total $TOTAL s · voz desde $RET ms · velocidad $VEL · solución desde $SOL s"
+          node "$V/musica.mjs" musica.wav "$TOTAL" "$SOL"
+          ffmpeg -y -loglevel error -i "$LARGO/voz/narracion@eleven_v3.mp3" -i musica.wav -filter_complex \
+            "[0:a]atempo=$VEL,aresample=48000,adelay=$RET:all=1,apad,asplit=2[vz][sc];[1:a]volume=0.55[m];[m][sc]sidechaincompress=threshold=0.04:ratio=4:attack=25:release=400[duck];[duck][vz]amix=inputs=2:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[o]" \
+            -map "[o]" -t "$TOTAL" -c:a pcm_s16le mezcla.wav
+          ffmpeg -y -loglevel error -i video.mp4 -i mezcla.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 320k -shortest -movflags +faststart pitch_fungi_mati_4k.mp4
+          ffmpeg -y -loglevel error -i pitch_fungi_mati_4k.mp4 -vf "scale=1920:1080:flags=lanczos" -c:v libx264 -preset slow -crf 18 -c:a copy -movflags +faststart pitch_fungi_mati_1080p.mp4
+          for f in pitch_fungi_mati_4k.mp4 pitch_fungi_mati_1080p.mp4; do ffprobe -v error -show_entries format=duration,size:stream=width,height -of default=nw=1 "$f"; done
       - name: Publicar en Releases
         run: |
-          TAG="largo-$(echo '${{ github.ref_name }}' | tr '/' '-')"
-          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --prerelease --title "Largo · ${{ github.ref_name }}" --notes "Video largo renderizado en la nube (sin voz). Se reemplaza en cada render."
-          gh release upload "$TAG" largo00_cine_mudo.mp4 --clobber
+          TAG="pitch-solve"
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --prerelease --title "Pitch de Fungi Mati · MIT Solve 2027" --notes "Video pitch en 4K (para YouTube) y en 1080p. Se reemplaza en cada render."
+          gh release upload "$TAG" pitch_fungi_mati_4k.mp4 pitch_fungi_mati_1080p.mp4 --clobber
