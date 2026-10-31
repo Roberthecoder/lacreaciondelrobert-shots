@@ -50,7 +50,7 @@
   .cant input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--rosa); }
   input[type=number], textarea, .search { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 0; box-sizing: border-box; }
   textarea { width: 100%; min-height: 80px; resize: vertical; }
-  .btn { font: inherit; font-weight: 700; border: 0; border-radius: 10px; padding: 10px 16px; cursor: pointer; background: var(--chip); color: var(--ink); text-decoration: none; display: inline-block; }
+  .btn { font: inherit; font-weight: 700; border: 0; border-radius: 10px; padding: 10px 16px; cursor: pointer; background: var(--chip); color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; justify-content: center; text-align: center; }
   .btn.go { background: var(--rosa); color: #fff; }
   .btn.sm { padding: 6px 10px; font-size: 13px; }
   .btn[disabled] { opacity: .5; cursor: default; }
@@ -106,12 +106,26 @@
   .card small { color: var(--muted); font-size: 12px; }
   .empty { color: var(--muted); padding: 32px 0; text-align: center; }
 
-  dialog { border: 0; padding: 0; background: transparent; max-width: min(1000px, 100vw - 24px); width: 100%; }
+  dialog { border: 0; padding: 0; background: transparent; max-width: min(1080px, 100vw - 24px); width: 100%; max-height: calc(100dvh - 24px); overflow: hidden; }
   dialog::backdrop { background: rgba(6, 8, 10, .78); }
-  .player { background: var(--panel); color: var(--ink); border-radius: 18px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 330px) minmax(0, 1fr); max-height: calc(100vh - 24px); }
-  .holder { position: relative; background: #000; }
-  .player video { width: 100%; aspect-ratio: 9 / 16; background: #000; display: block; max-height: calc(100vh - 24px); }
-  .info { padding: 20px; display: grid; gap: 12px; align-content: start; min-width: 0; overflow: auto; }
+  /* La ventana de un shot cabe siempre en la pantalla: el video a la izquierda y la info con su propio scroll (31 oct 2026) */
+  .player { background: var(--panel); color: var(--ink); border-radius: 18px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); height: min(920px, calc(100dvh - 24px)); }
+  .holder { position: relative; background: #000; display: flex; align-items: center; justify-content: center; min-height: 0; }
+  .player video { width: 100%; height: 100%; max-height: 100%; object-fit: contain; background: #000; display: block; }
+  .info { padding: 0 20px 20px; display: grid; gap: 12px; align-content: start; min-width: 0; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+  .info-top { position: sticky; top: 0; z-index: 3; background: var(--panel); display: flex; gap: 10px; align-items: flex-start; justify-content: space-between; padding: 16px 0 10px; border-bottom: 1px solid var(--line); }
+  .info-top h2 { font-size: 21px; font-weight: 800; line-height: 1.2; }
+  .cerrar2 { flex: none; min-width: 44px; min-height: 44px; border-radius: 12px; border: 1px solid var(--line); background: var(--chip); color: var(--ink); font-size: 22px; cursor: pointer; }
+  details.sec { border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); }
+  details.sec > summary { cursor: pointer; list-style: none; padding: 12px 14px; font-family: var(--f-display); font-weight: 800; font-size: 17px; display: flex; justify-content: space-between; align-items: center; min-height: 44px; }
+  details.sec > summary::-webkit-details-marker { display: none; }
+  details.sec > summary::after { content: "▾"; color: var(--muted); transition: transform .15s; }
+  details.sec:not([open]) > summary::after { transform: rotate(-90deg); }
+  details.sec > .cuerpo { padding: 0 14px 14px; display: grid; gap: 12px; }
+  .pub-bar { position: sticky; bottom: -14px; background: var(--panel); padding: 10px 0 6px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-top: 1px solid var(--line); }
+  .auto { background: color-mix(in srgb, var(--menta) 12%, var(--panel)); border: 1px solid var(--line); border-left: 6px solid var(--menta); border-radius: 12px; padding: 10px 12px; display: grid; gap: 8px; font-size: 14px; }
+  .auto p { margin: 0; }
+  .btn, .chip { min-height: 40px; }
   .info > h2 { font-size: 24px; font-weight: 800; }
   .kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; margin: 0; }
   .kv dt { color: var(--muted); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
@@ -188,7 +202,12 @@
   .player.horiz { grid-template-columns: 1fr; overflow: auto; }
   .player.horiz video { aspect-ratio: 16 / 9; max-height: 56vh; }
   .card .poster.horiz { aspect-ratio: 16 / 9; }
-  @media (max-width: 760px) { .player { grid-template-columns: 1fr; overflow: auto; } .player video { max-height: 58vh; } }
+  @media (max-width: 760px) {
+    dialog { max-width: 100vw; max-height: 100dvh; }
+    .player { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr); height: calc(100dvh - 8px); border-radius: 14px; }
+    .holder { max-height: 34dvh; } .player video { max-height: 34dvh; }
+    .info { padding: 0 14px 16px; }
+  }
   @media (prefers-reduced-motion: no-preference) { .card .poster { transition: transform .18s ease-out; } .card:hover .poster { transform: translateY(-3px); } }
 </style>
 
@@ -284,10 +303,11 @@
   <div class="player">
     <div class="holder"><video id="vid" controls playsinline preload="metadata"></video><button class="close" id="cerrar" aria-label="Cerrar">×</button></div>
     <div class="info">
-      <h2 id="d-titulo">—</h2>
+      <div class="info-top"><h2 id="d-titulo">—</h2><button class="cerrar2" id="cerrar2" type="button" aria-label="Cerrar">×</button></div>
       <dl class="kv">
         <dt>Serie</dt><dd id="d-serie">—</dd>
         <dt>Estado</dt><dd id="d-estado">—</dd>
+        <dt>Sale el</dt><dd id="d-sale">—</dd>
         <dt>Versión</dt><dd id="d-version">—</dd>
         <dt>Voz</dt><dd id="d-chars">—</dd>
         <dt>Clave</dt><dd class="key" id="d-key">—</dd>
@@ -295,14 +315,22 @@
       <div class="actions">
         <button class="btn go" id="aprobar" type="button">Aprobar voz</button>
         <a class="btn" id="hd" target="_blank" rel="noopener" href="#">Video en calidad completa</a>
+        <button class="btn" id="copiar-clave" type="button">Copiar clave</button>
       </div>
       <p class="costo" id="d-costo" hidden></p>
       <p class="msg" id="msg"></p>
-      <h3 style="font-size:17px">Textos para redes</h3>
+      <details class="sec" open><summary>Textos para redes</summary><div class="cuerpo">
       <div class="redes-tabs" id="redes-tabs" role="group" aria-label="Red social"></div>
       <div id="redes-cuerpo"></div>
-      <h3 style="font-size:17px">Publicar en redes</h3>
-      <p class="hint" id="pub-hint">Marca dónde quieres publicar este video y da clic en «Publicar». La nube lo sube con su texto de cada red. YouTube queda privado mientras Google revisa la app.</p>
+      </div></details>
+      <details class="sec" id="pub-sec"><summary>Publicar en redes</summary><div class="cuerpo">
+      <div class="auto">
+        <p><b>Los shots del calendario se publican solos</b> todos los días a las <b>9:07 am</b> en las 6 redes. No tienes que hacer nada.</p>
+        <p>¿Quieres publicar este video <b>ya</b>, sin esperar? Abre GitHub, toca <b>«Run workflow»</b> y pega la clave del video.</p>
+        <div class="actions"><a class="btn go" target="_blank" rel="noopener" href="https://github.com/Roberthecoder/lacreaciondelrobert-shots/actions/workflows/publicar.yml">Publicar ya en GitHub</a>
+          <button class="btn" id="copiar-clave2" type="button">Copiar clave</button></div>
+      </div>
+      <p class="hint" id="pub-hint">Opción 2: marca las redes y toca «Publicar». Se guarda el pedido y lo sube Claude la próxima vez que abras un chat y escribas «publica mis pedidos».</p>
       <div class="pub-redes" id="pub-redes" role="group" aria-label="Redes donde publicar"></div>
       <div class="tt" id="tt" hidden>
         <h4>Publicar en TikTok</h4>
@@ -337,15 +365,16 @@
         <p class="hint" id="yt-info"></p>
         <p class="aviso">Mientras Google no apruebe la auditoría de la app, YouTube lo deja privado aunque elijas otra opción. Si dura más de 15 min, tu canal debe estar verificado en YouTube.</p>
       </div>
-      <div class="actions"><button class="btn go" id="pub-enviar" type="button">Publicar</button></div>
-      <p class="msg" id="pub-msg"></p>
+      <div class="pub-bar"><button class="btn go" id="pub-enviar" type="button">Publicar</button><p class="msg" id="pub-msg"></p></div>
       <ul class="pedidos" id="pub-lista"></ul>
-      <h3 style="font-size:17px">Corregir este shot</h3>
+      </div></details>
+      <details class="sec"><summary>Corregir este shot</summary><div class="cuerpo">
       <p class="hint">Escribe qué cambiar: un dato, una frase, una escena, el ritmo, el título, los textos… La nube lo corrige, lo vuelve a verificar y reemplaza este video. Si cambia lo que se narra, te pedirá aprobar la voz otra vez.</p>
       <textarea id="c-texto" aria-label="Corrección" placeholder="Por ejemplo: en el segundo 20 la cifra es de 2023, no de 2021; quita el chiste del final; el título debe decir…"></textarea>
       <div class="actions"><button class="btn" id="c-enviar" type="button">Enviar corrección</button></div>
       <p class="msg" id="c-msg"></p>
       <ul class="pedidos" id="c-lista"></ul>
+      </div></details>
     </div>
   </div>
 </dialog>
@@ -378,9 +407,9 @@
   const estadoDe = (s) => (S.aprob[s.id] && s.estado === 'Por revisar') ? 'Voz aprobada' : s.estado;
   const seccionDe = (s) => SECCIONES.includes(s.serie) ? s.serie : 'Otro';
   const numerada = (s) => s.numero != null && (SERIES.includes(s.serie) || s.serie === 'Robert' || s.serie === 'Festivo');
-  const etiqueta = (s) => `${s.serie}${numerada(s) ? ' #' + String(s.numero).padStart(2, '0') : ''}${s.serie === 'Festivo' && s.serie_vinculada ? ` · vinculado a ${s.serie_vinculada}` : ''}${s.especial ? ` · ${s.especial}` : ''}`;
+  const etiqueta = (s) => `${s.serie}${numerada(s) ? ' ' + String(s.numero).padStart(2, '0') : ''}${s.serie === 'Festivo' && s.serie_vinculada ? ` · vinculado a ${s.serie_vinculada}` : ''}${s.especial ? ` · ${s.especial}` : ''}`;
   // Festivo: el título guardado ya trae «<Festividad> · <Serie vinculada>: …», así queda «Shot Festivo #NN · <Festividad> · <Serie>: <título>».
-  const tituloCompleto = (s) => numerada(s) ? `Shot ${s.serie} #${String(s.numero).padStart(2, '0')}${s.serie === 'Festivo' ? ' · ' : ': '}${s.titulo}` : s.titulo;
+  const tituloCompleto = (s) => numerada(s) ? `Shot ${s.serie} ${String(s.numero).padStart(2, '0')}${s.serie === 'Festivo' ? ' · ' : ': '}${s.titulo}` : s.titulo;
   const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
   const copiar = async (texto, boton) => {
     const ok = () => { const t = boton.textContent; boton.textContent = 'Copiado'; setTimeout(() => { boton.textContent = t; }, 1400); };
@@ -532,13 +561,12 @@
       if (!s) linea.textContent = 'Este shot todavía no está en la Sala.';
       else if (s.kind !== 'narrado') linea.textContent = 'Todavía no tiene su voz: aún no se puede publicar.';
       else if (hechas.length >= PUB_REDES.length) linea.append(el('b', null, '✓ Publicado en todas las redes'));
-      else if (pend.length) linea.textContent = `Publicación en camino (${pend[0].estado || 'pendiente'}). Llega en menos de 1 hora.`;
-      else linea.textContent = hechas.length ? `Ya está en: ${hechas.join(', ')}. Faltan las demás.` : 'Listo para publicar. Míralo y toca «Publicar».';
+      else if (pend.length) linea.textContent = `Publicación en camino (${pend[0].estado || 'pendiente'}).`;
+      else linea.textContent = hechas.length ? `Ya está en: ${hechas.join(', ')}. Faltan las demás.` : 'Listo. GitHub lo publica solo a las 9:07 am (hora CDMX). No tienes que hacer nada.';
       der.append(linea);
       if (s) {
-        const b = el('button', 'btn go', hechas.length >= PUB_REDES.length ? 'Ver' : 'Ver y publicar'); b.type = 'button';
-        const faltan = PUB_REDES.map((x) => x[0]).filter((r) => !hechas.includes(r));
-        b.addEventListener('click', () => abrir(s, s.kind === 'narrado' && !pend.length ? faltan : []));
+        const b = el('button', 'btn go', 'Ver'); b.type = 'button';
+        b.addEventListener('click', () => abrir(s, []));
         po.addEventListener('click', () => abrir(s, []));
         der.append(b);
       }
@@ -570,6 +598,9 @@
     $('yt-priv').value = '';
     $('d-chars').textContent = s.caracteres ? `${fmt(s.caracteres)} caracteres (~${fmt(s.caracteres)} créditos de ElevenLabs)` : '—';
     $('d-key').textContent = s.id;
+    const fs = fechaDe(s.id); $('d-sale').textContent = fs ? fechaTxt(fs) + ' · 9:07 am (automático)' : '—';
+    $('pub-sec').open = !!(preSel && preSel.length);
+    setTimeout(() => { const i = document.querySelector('#dlg .info'); if (i) i.scrollTop = 0; }, 0);
     const hd = $('hd'); if (s.hd) { hd.href = s.hd; hd.hidden = false; } else hd.hidden = true;
     $('msg').textContent = ''; $('pub-msg').textContent = ''; S.pubSel = new Set(preSel || []); S.pubConfirmar = null;
     $('tt-texto').dataset.shot = ''; $('tt-priv').value = ''; ['tt-com', 'tt-duo', 'tt-sti', 'tt-com-onoff', 'tt-propia', 'tt-pagada'].forEach((id) => { $(id).checked = false; }); $('tt-ia').checked = true;
@@ -633,9 +664,12 @@
       row.append(el('label', null, titulo), b); t.append(row, el('pre', null, texto)); return t;
     };
     // El título de YouTube es siempre el mismo que se ve en la Sala.
-    const tit = S.red === 'youtube' ? tituloCompleto(s) : r.titulo;
+    // Sin «#» en el número de serie (las redes lo vuelven hashtag; Robert, 31 oct 2026). YouTube: gancho primero y «| Shot <Serie> NN» al final.
+    const sinGato = (t) => String(t || '').replace(/(Shot [^\n#|]{2,30}?) #(\d{1,3})\b/g, '$1 $2');
+    const ytTit = () => { const g = String(r.titulo || s.titulo || '').replace(/\s*\|\s*Shot\b.*$/, '').trim(); return numerada(s) ? `${g} | Shot ${s.serie} ${String(s.numero).padStart(2, '0')}` : g; };
+    const tit = S.red === 'youtube' ? ytTit() : sinGato(r.titulo);
     if (tit) body.append(bloque('Título', tit));
-    body.append(bloque(tit ? 'Descripción' : 'Texto completo', r.texto));
+    body.append(bloque(tit ? 'Descripción' : 'Texto completo', sinGato(r.texto)));
   }
   $('aprobar').addEventListener('click', async () => {
     const s = S.actual; if (!s || !S.db) return;
@@ -921,6 +955,8 @@
   }
 
   $('cerrar').addEventListener('click', () => $('dlg').close());
+  $('cerrar2').addEventListener('click', () => $('dlg').close());
+  ['copiar-clave', 'copiar-clave2'].forEach((id) => $(id).addEventListener('click', () => S.actual && copiar(S.actual.id, $(id))));
   $('dlg').addEventListener('close', () => $('vid').pause());
   $('dlg').addEventListener('click', (e) => { if (e.target === $('dlg')) $('dlg').close(); });
   document.querySelectorAll('#filtros .chip').forEach((c) => c.addEventListener('click', () => {

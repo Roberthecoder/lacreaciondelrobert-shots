@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La marquita del brazo de tu abuela: la viruela que EE.UU. y la URSS ayudaron a borrar | Shot Festivo 07
+La marquita del brazo de tu abuela: la viruela que dos rivales ayudaron a borrar 💉 | Shot Festivo 07
 ```
 Descripción:
 ```text
