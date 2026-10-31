@@ -343,10 +343,10 @@ ILUSC.periodico = {
           <text x={0} y={-370} textAnchor="middle" fontFamily={FUENTE.serif} fontWeight={800} fontSize={110} fill="#1a1a1a" letterSpacing={6} style={{ fontVariationSettings: "'opsz' 144" }}>{medio}</text>
           <rect x={-520} y={-345} width={1040} height={3} fill="#1a1a1a" /><rect x={-520} y={-338} width={1040} height={1} fill="#1a1a1a" />
           <text x={-520} y={-312} fontFamily={FUENTE.serif} fontStyle="italic" fontSize={22} fill="#333">{fecha}</text>
-          <text x={520} y={-312} textAnchor="end" fontFamily={FUENTE.mono} fontSize={18} fill="#333">COMUNIDAD</text>
+          <text x={520} y={-312} textAnchor="end" fontFamily={FUENTE.mono} fontSize={18} fill="#333">MURAL / STAFF</text>
           <rect x={-520} y={-300} width={1040} height={1.5} fill="#1a1a1a" />
           <text x={-520} y={-210} fontFamily={FUENTE.serif} fontWeight={800} fontSize={70} fill="#111">Emprendedor, matemático…</text>
-          <text x={-520} y={-130} fontFamily={FUENTE.serif} fontWeight={800} fontSize={70} fill="#111">y sólo tiene 11 años</text>
+          <text x={-520} y={-130} fontFamily={FUENTE.serif} fontWeight={800} fontSize={70} fill="#111">y sólo tiene 11 años de edad</text>
           {/* foto en semitono */}
           <g transform="translate(-520 -90)">
             <rect x={0} y={0} width={480} height={380} fill="#cfc8b8" />
@@ -355,11 +355,14 @@ ILUSC.periodico = {
               <rect x={0} y={0} width={480} height={380} fill="#9a958a" />
               <Tablon x={0} y={250} w={480} prof={20} grosor={20} madera="clara" />
               {[0, 1, 2].map((k) => <MacetaC key={k} x={300 + k * 70} y={256} w={60} h={52}><Mammillaria x={0} y={-48} s={0.3} t={0} /></MacetaC>)}
-              <Nene x={160} y={430} s={0.95} edad={11} playera="#e9e9e9" rayas={false} boca="sonrisa" mira={[0.3, 0]} seed={14} brazoD={10} brazoI={-10}
-                detalle={<g>{[-1, 0, 1].map((d) => <g key={d}><path d={`M ${d * 22 - 20} -195 L ${d * 26} ${-120 + Math.abs(d) * 12} L ${d * 22 + 20} -195`} stroke="#555" strokeWidth={8} fill="none" /><circle cx={d * 26} cy={-104 + Math.abs(d) * 12} r={20} fill={d ? '#d9d9d9' : '#f0f0f0'} stroke="#777" strokeWidth={3} /></g>)}</g>} />
+              <rect x={0} y={0} width={480} height={380} fill="#b8c2b0" /><rect x={300} y={0} width={180} height={380} fill="#5f7a5a" /><rect x={0} y={0} width={140} height={380} fill="#e8e8e0" />
+              <Nene x={240} y={560} s={1.25} edad={11} playera="#f4f4f0" rayas={false} cuello="#f4f4f0" boca="risa" mira={[0, 0]} seed={14} brazoD={150} brazoI={150} />
+              {[[-1, '#c9ccd0', '#3f9a4a'], [1, '#e6c25a', '#f2d56a']].map(([d, c, cinta]) => <g key={d}>
+                <path d={`M ${240 + d * 40} 300 Q ${240 + d * 70} 250 ${240 + d * 120} 210`} stroke={cinta} strokeWidth={10} fill="none" />
+                <circle cx={240 + d * 125} cy={200} r={34} fill={c} stroke="#666" strokeWidth={3} /><circle cx={240 + d * 125} cy={200} r={22} fill="none" stroke="#777" strokeWidth={2} /></g>)}
             </g>
             {Array.from({ length: 48 }, (_, i) => <rect key={i} x={0} y={i * 8} width={480} height={2} fill="#000" opacity={0.05} />)}
-            <text x={0} y={406} fontFamily={FUENTE.serif} fontStyle="italic" fontSize={18} fill="#444">Recreación ilustrada.</text>
+            <text x={0} y={406} fontFamily={FUENTE.serif} fontStyle="italic" fontSize={16} fill="#444">Beto fue finalista del concurso El pequeño Gran Escritor 2016.</text>
           </g>
           {lin(0, -80, 240, 16)}{lin(270, -80, 240, 16)}
           {lin(-520, 330, 330, 6)}{lin(-170, 330, 330, 6)}{lin(180, 330, 330, 6)}
@@ -370,7 +373,7 @@ ILUSC.periodico = {
       {(() => { const o = cpr(p, 0.62, 0.72); const hay = (window.FOTOS || {})['video/img/extra/mural_nota.jpg']; return hay && o > 0 && <g>
         <rect x={0} y={0} width={1920} height={1080} fill="#0b0b0d" opacity={0.7 * o} />
         <FotoReal src="video/img/extra/mural_nota.jpg" x={960} y={480} maxW={1300} maxH={720} o={o} etiqueta="LA NOTA ORIGINAL · MURAL, 8 DE JULIO DE 2017" /></g>; })()}
-      {credito && <text x={1880} y={900} textAnchor="end" fontFamily={FUENTE.mono} fontSize={18} fill="#fff" opacity={0.8} style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.9))' }}>{credito}</text>}
+      {credito && p < 0.62 && <text x={1880} y={900} textAnchor="end" fontFamily={FUENTE.mono} fontSize={18} fill="#fff" opacity={0.8} style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.9))' }}>{credito}</text>}
     </g>;
   },
 };

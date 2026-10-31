@@ -62,7 +62,7 @@ ILUSC.toxicos = {
           {k % 4 === 3 && <rect x={x} y={y} width={14} height={14} fill={t4[2]} stroke="#6a4a2a" strokeWidth={2} transform={`rotate(${v * 90} ${x} ${y})`} />}
         </g>; })}
         {/* setas creciendo encima, absorbiendo */}
-        <g transform="translate(960 560)">
+        <g transform="translate(960 636)">
           <Racimo x={0} y={0} n={8} tam={210} color={mix('#ece2cc', '#c9b090', absorbe)} g={cpr(p, 0.2, 0.42)} t={tl} seed={81} />
           {absorbe > 0 && [0, 1, 2, 3].map((k) => { const ang = k * 1.57 + 0.7, q = ((tl * 0.5 + k / 4) % 1); return <circle key={k} cx={Math.cos(ang) * 300 * (1 - q)} cy={200 * (1 - q) + Math.sin(ang) * 80 * (1 - q)} r={10} fill={tox[k][2]} opacity={absorbe * Math.sin(q * Math.PI)} />; })}
         </g>
@@ -238,10 +238,10 @@ ILUSC.pda = {
           <g transform={`translate(0 ${lerp(-60, -330, abre)})`}>
             <rect x={-90} y={-220} width={180} height={220} rx={16} fill="#3a2a1a" opacity={0.9} /><rect x={-90} y={-220} width={180} height={220} rx={16} fill="url(#c-cilindro)" />
             <rect x={-80} y={-260} width={160} height={46} rx={6} fill="#f6f6f6" />
-            <rect x={-80} y={-170} width={160} height={120} fill="#f6f1e4" />
+            <rect x={-86} y={-172} width={172} height={124} rx={4} fill="#f6f1e4" />
             <text x={0} y={-130} textAnchor="middle" fontFamily={FUENTE.texto} fontWeight={900} fontSize={42} fill="#c0392b">PDA</text>
-            <text x={0} y={-100} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={17} fill="#333">Potato Dextrose Agar</text>
-            <text x={0} y={-74} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={12} letterSpacing={2} fill="#333">GRADO MICROBIOLÓGICO</text>
+            <text x={0} y={-100} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={14} fill="#333">Potato Dextrose Agar</text>
+            <text x={0} y={-74} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={9.5} letterSpacing={0.5} fill="#333">GRADO MICROBIOLÓGICO</text>
           </g>
         </g>
         {/* cajas Petri que se llenan de PDA */}
@@ -273,12 +273,12 @@ ILUSC.fungimati = {
           <rect x={-30} y={-380} width={60} height={800} fill="#000" opacity={0.12} filter="url(#c-b8)" />
           {Array.from({ length: 22 }, (_, k) => <rect key={k} x={-740} y={-330 + k * 34} width={1480} height={1.5} fill="#8fb0d0" opacity={0.5} />)}
           <rect x={-660} y={-380} width={2} height={800} fill="#e08080" opacity={0.6} />
-          {/* el nombre larguísimo, tachado */}
-          {[0, 1, 2].map((k) => <g key={k}>
-            <path d={`M -620 ${-290 + k * 68} ${Array.from({ length: 30 }, (_, j) => `q 10 ${(j % 2 ? -1 : 1) * 14} 18 0`).join(' ')}`} stroke="#2a3a6a" strokeWidth={3.5} fill="none" opacity={0.85} transform={`scale(${k === 2 ? 0.6 : 1} 1)`} />
-            <path d={`M -630 ${-290 + k * 68} L ${lerp(-630, k === 2 ? -280 : -80, tacha)} ${-292 + k * 68}`} stroke="#c0392b" strokeWidth={8} strokeLinecap="round" />
+          {/* el nombre larguísimo, escrito y tachado */}
+          {['De basura a comida,', 'los hongos: héroes que combaten', 'el hambre y la pobreza'].map((l, k) => <g key={k}>
+            <text x={-640} y={-282 + k * 68} fontFamily={FUENTE.mano} fontWeight={700} fontSize={46} fill="#2a3a6a">{l}</text>
+            <path d={`M -646 ${-296 + k * 68} L ${lerp(-646, -646 + l.length * 21, tacha)} ${-300 + k * 68}`} stroke="#c0392b" strokeWidth={7} strokeLinecap="round" />
           </g>)}
-          <text x={-620} y={-60} fontFamily={FUENTE.mano} fontWeight={700} fontSize={44} fill="#c0392b" opacity={tacha}>muy largo…</text>
+          <text x={-620} y={-60} fontFamily={FUENTE.mano} fontWeight={700} fontSize={44} fill="#c0392b" opacity={tacha}>larguísimo…</text>
           {/* el nombre nuevo */}
           <g opacity={nombre}>
             <text x={380} y={-120} textAnchor="middle" fontFamily={FUENTE.mano} fontWeight={700} fontSize={150} fill="#1d2a1a">Fungi Mati</text>

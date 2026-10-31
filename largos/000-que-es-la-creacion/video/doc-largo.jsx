@@ -272,8 +272,9 @@ function MarcaCapitulo({ T }) {
 const LADOS_H = { 'abajo-der': { left: 1500, top: 560, width: 420 }, 'abajo-izq': { left: 0, top: 560, width: 420 }, 'arriba-der': { left: 1560, top: 90, width: 330 } };
 function RobertLargo({ T }) {
   return <>{LINEA.lineas.filter((l) => l.robert).map((l) => {
-    const [pose, lado = 'abajo-der'] = l.robert;
-    const e = kprog(T, l.at, l.at + 0.45, (x) => 1 - Math.pow(1 - x, 3)) * (1 - kprog(T, l.at + l.dur - 0.35, l.at + l.dur));
+    const [pose, lado = 'abajo-der', hasta = 1] = l.robert;
+    const fin = l.at + l.dur * hasta;
+    const e = kprog(T, l.at, l.at + 0.45, (x) => 1 - Math.pow(1 - x, 3)) * (1 - kprog(T, fin - 0.35, fin));
     if (e <= 0) return null;
     const L = LADOS_H[lado];
     return <img key={l.n} src={'video/stickers/' + pose + '.png'} style={abs(L.left, L.top + (1 - e) * 160, { width: L.width, zIndex: 39, opacity: e,

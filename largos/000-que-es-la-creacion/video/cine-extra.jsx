@@ -161,4 +161,63 @@ ILUSC.plata_sasmo = {
   </g>,
 };
 
+/* ---------- el filtro de aire: joven inventor (foto) y el diploma de "Una idea" (recreado, el original es borroso) ---------- */
+ILUSC.reconocimientos = {
+  cam: { z0: 1.0, z1: 1.06, fx: 1240, fy: 520 },
+  dibuja: ({ p, tl, capa }) => {
+    const d = cpr(p, 0.35, 0.5, kEase.sale);
+    return <g>
+      <g transform={capa(0.4)}><rect x={-200} y={-200} width={2320} height={1500} fill="#17140f" /><Halo x={1240} y={420} r={800} color="#ffe2b0" o={0.4} /><Bokeh n={14} t={tl} seed={441} colores={['#ffd38a', '#fff1c9']} o={0.35} /></g>
+      <g transform={capa(1)}>
+        <FotoReal src="video/img/fotos_basis/cap5/joven_inventor_jalisco.jpg" x={520} y={500} maxW={640} maxH={560} rot={-2.5} o={cpr(p, 0.02, 0.15)} etiqueta="JOVEN INVENTOR · GOBIERNO DE JALISCO" />
+        <FotoReal src="video/img/extra/diploma_una_idea.jpg" x={1320} y={470} maxW={900} maxH={680} rot={2} o={d} etiqueta={'"UNA IDEA PARA CAMBIAR LA HISTORIA" · HISTORY'} />
+      </g>
+      <Polvo n={30} t={tl} seed={442} o={0.4} />
+      <Rotulo x={120} y={190} arriba="AQUEL FILTRO DE AIRE" texto="Siguió dando frutos" tl={tl} at={0.3} tam={56} />
+    </g>;
+  },
+};
+
+/* ---------- Ruta Azul: el curso con cincuenta estudiantes ---------- */
+ILUSC.curso = {
+  cam: { z0: 1.0, z1: 1.08, fx: 960, fy: 500, x0: 20, x1: -20 },
+  dibuja: ({ p, tl, capa }) => {
+    const filas = 5, porFila = 10;
+    return <g>
+      <g transform={capa(0.35)}>
+        <Pared color="#d9d3c4" luz={[0.5, 0.1]} />
+        <g transform="translate(200 0)">
+        {/* pantalla con la diapositiva */}
+        <rect x={560} y={70} width={800} height={460} fill="#1d1d22" /><rect x={576} y={86} width={768} height={428} fill="#f6f4ee" />
+        <text x={960} y={160} textAnchor="middle" fontFamily={FUENTE.serif} fontWeight={700} fontSize={50} fill="#1d2a1a">Cultivo de setas</text>
+        <text x={960} y={200} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={18} letterSpacing={4} fill="#14a37c">FUNGI MATI · RUTA AZUL</text>
+        <BolsaCultivo x={760} y={480} w={150} h={210}><Racimo x={20} y={-140} n={6} tam={70} color="#ef7fa6" g={1} t={tl} seed={451} /></BolsaCultivo>
+        <g transform="translate(1100 330)"><rect x={-150} y={-90} width={300} height={180} rx={14} fill="#e9f6f0" stroke="#14a37c" strokeWidth={3} /><text x={0} y={-50} textAnchor="middle" fontFamily={FUENTE.texto} fontWeight={800} fontSize={20} fill="#14a37c">TUTOR DE IA</text>
+          {[0, 1, 2].map((k) => <rect key={k} x={-120 + (k % 2) * 60} y={-30 + k * 36} width={180} height={24} rx={12} fill={k % 2 ? '#14a37c' : '#d9e6e0'} />)}</g>
+        </g>
+        <Halo x={960} y={300} r={600} color="#e8f6ff" o={0.35} />
+      </g>
+      <g transform={capa(0.7)}>
+        {/* Robert al frente, explicando */}
+        <Nene x={420} y={760} s={1.05} edad={19} lentes t={tl} playera="#2a2a30" rayas={false} pantalon="#1d1d22" brazoD={100 + 10 * Math.sin(tl * 2)} brazoI={10} mira={[1, -0.3]} boca={Math.sin(tl * 7) > 0 ? 'o' : 'sonrisa'} seed={461} />
+        <rect x={-200} y={700} width={2320} height={600} fill="#8f8577" />
+      </g>
+      <g transform={capa(1)}>
+        {/* cincuenta estudiantes, de espaldas, en filas */}
+        {Array.from({ length: filas }, (_, f) => Array.from({ length: porFila }, (_, c) => {
+          const r = R(4600 + f * 20 + c), s = 0.5 + f * 0.13, x = 960 + (c - (porFila - 1) / 2) * (150 + f * 34) + (r() - 0.5) * 30, y = 760 + f * 80;
+          return <g key={f * 20 + c} transform={`translate(${x} ${y}) scale(${s})`}>
+            <rect x={-80} y={-150} width={160} height={190} rx={50} fill={['#2a5aa8', '#c0392b', '#3a3a40', '#f4f2ec', '#3f8a3a', '#7a4fc0', '#d9774a'][Math.floor(r() * 7)]} />
+            <ellipse cx={0} cy={-200} rx={52} ry={58} fill={['#1d1410', '#3a2416', '#5a3a24', '#1a1311'][Math.floor(r() * 4)]} />
+            {r() < 0.4 && <path d="M -52 -200 Q -60 -120 -40 -100 L 40 -100 Q 60 -120 52 -200 Z" fill="#2a1a12" />}
+          </g>;
+        }))}
+        <rect x={-200} y={1060} width={2320} height={40} fill="url(#c-madera-media)" />
+      </g>
+      <Polvo n={30} t={tl} seed={462} o={0.4} />
+      <Rotulo x={120} y={190} arriba="RUTA AZUL · MAYO" texto="Cincuenta estudiantes" tl={tl} at={0.3} tam={58} />
+    </g>;
+  },
+};
+
 Object.assign(window, { Medalla });

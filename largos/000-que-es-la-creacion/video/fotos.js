@@ -1,5 +1,7 @@
 // Generado por preparar_fotos.py: tamaño de cada foto preparada.
 window.FOTOS = {
+"video/img/extra/diploma_una_idea.jpg": [798, 618],
+"video/img/extra/mural_nota.jpg": [969, 854],
 "video/img/fotos_restauradas/bata_premio.jpg": [
 808,
 1440
