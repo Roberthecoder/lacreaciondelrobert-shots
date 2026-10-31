@@ -1,12 +1,16 @@
 name: Publicación diaria automática
 
-# Cada día a las 2:43 pm hora de Ciudad de México (UTC−6) publica en las redes el/los shot(s) que tocan ese día según
+# Cada día a las 2:43 pm hora (con respaldos 3:13, 4:13 y 6:13 pm por si GitHub se salta la hora) de Ciudad de México (UTC−6) publica en las redes el/los shot(s) que tocan ese día según
 # calendario/fecha.py (1 shot diario; los festivos en su fecha). Permiso permanente de Robert (chat, 30 oct 2026).
 # Apagar: "activo": false en publicar/diario.json. Saltar un shot: su clave en publicar/pausa.txt.
 # No gasta tokens de Claude: lanza el workflow "Publicar en redes" (publicar.yml) una vez por shot y espera a que termine.
 on:
   schedule:
     - cron: '43 20 * * *'   # 20:43 UTC = 2:43 pm en CDMX (hora fija elegida por Robert: la de la primera publicación, 30 oct)
+    # Respaldos por si GitHub retrasa o se salta la de las 2:43 (pasó el 31 oct): si ya se publicó, no hacen nada.
+    - cron: '13 21 * * *'   # 3:13 pm CDMX
+    - cron: '13 22 * * *'   # 4:13 pm CDMX
+    - cron: '13 0 * * *'    # 6:13 pm CDMX (00:13 UTC del día siguiente; la fecha se calcula en hora de CDMX)
   workflow_dispatch:
     inputs:
       fecha:
@@ -45,6 +49,13 @@ jobs:
           KS=$(python3 calendario/fecha.py json | jq -r --arg f "$F" '.[$f][]?')
           if [ -z "$KS" ]; then echo "Nada que publicar el $F"; exit 0; fi
           REDES=$(jq -r '.redes | join(",")' $CFG); TT=$(jq -c .tiktok $CFG); MAL=0
+          # ¿Ya está todo publicado hoy? (bitácora refs/estado/publicaciones). Entonces este respaldo no hace nada.
+          git fetch -q origin refs/estado/publicaciones 2>/dev/null && git show FETCH_HEAD:publicaciones.json > bit.json 2>/dev/null || echo '[]' > bit.json
+          FALTA=0
+          for K in $KS; do for RED in $(jq -r '.redes[]' $CFG); do
+            jq -e --arg k "$K" --arg r "$RED" '[.[] | select(.clave==$k and .red==$r and .modo=="real" and .ok==true)] | length > 0' bit.json >/dev/null || FALTA=1
+          done; done
+          if [ "$FALTA" = 0 ] && [ "$MODO" = "real" ]; then echo "Lo de hoy ($F) ya está publicado en todas las redes."; exit 0; fi
           echo "## Publicación del $F ($MODO)" >> "$GITHUB_STEP_SUMMARY"
           for K in $KS; do
             if grep -v '^#' publicar/pausa.txt 2>/dev/null | grep -qxF "$K"; then echo "- $K: en pausa, no se publica" >> "$GITHUB_STEP_SUMMARY"; continue; fi
