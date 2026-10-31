@@ -269,7 +269,7 @@ ILUSC.gases = {
       </g>
       <g transform={capa(1.1)}>
         {mols.map(([k, x, at], i) => { const sube = cpr(p, at, at + 0.7, (q) => q), e = cpr(p, at, at + 0.08, ease) * (1 - cpr(p, 0.92, 1));
-          const y = 880 - sube * 640, rot = Math.sin(T * 0.8 + i) * 25, s = 1.25;
+          const y = 880 - sube * 370, rot = Math.sin(T * 0.8 + i) * 25, s = 1.25;
           return <g key={i} opacity={e}>
             {k === 'co2' && <CO2 x={x} y={y} s={s} rot={rot} />}{k === 'ch4' && <CH4 x={x} y={y} s={s} rot={rot} />}
             {k === 'pm' && Array.from({ length: 14 }, (_, j) => { const r = R(1500 + i * 20 + j); return <circle key={j} cx={x + (r() - 0.5) * 120} cy={y + (r() - 0.5) * 90} r={3 + r() * 5} fill="#2a2522" opacity={0.85} />; })}
@@ -585,15 +585,15 @@ ILUSC.tutor = {
           {burb.map((s, i) => { const e = cpr(p, 0.08 + i * 0.1, 0.14 + i * 0.1, ease); return <g key={i} opacity={e} transform={`translate(0 ${-110 + i * 80})`}>
             <rect x={0} y={0} width={280} height={56} rx={16} fill={i % 2 ? '#2c3b52' : '#3a5a86'} /><text x={14} y={35} fontFamily={FUENTE.texto} fontSize={17} fill="#fff">{s}</text></g>; })}
         </g>
-        {Array.from({ length: 25 }, (_, i) => <Alumno key={i} x={200 + (i % 9) * 70 + (Math.floor(i / 9) % 2) * 35} y={640 + Math.floor(i / 9) * 78} s={0.9} c={['#3a4a6a', '#6a3a4a', '#3a6a5a', '#6a5a3a'][i % 4]} luz={a} />).map((el, i) => <g key={i} opacity={cpr(p, 0.05 + i * 0.006, 0.1 + i * 0.006)}>{el}</g>)}
+        {Array.from({ length: 25 }, (_, i) => <Alumno key={i} x={200 + (i % 9) * 70 + (Math.floor(i / 9) % 2) * 35} y={680 + Math.floor(i / 9) * 74} s={0.9} c={['#3a4a6a', '#6a3a4a', '#3a6a5a', '#6a5a3a'][i % 4]} luz={a} />).map((el, i) => <g key={i} opacity={cpr(p, 0.05 + i * 0.006, 0.1 + i * 0.006)}>{el}</g>)}
         {/* pizarrón */}
         <g opacity={b} transform="translate(1440 400)">
           <rect x={-300} y={-150} width={600} height={300} rx={8} fill="#24402e" /><rect x={-300} y={-150} width={600} height={300} rx={8} fill="none" stroke="#8a6a3a" strokeWidth={14} />
           <text x={-250} y={-70} fontFamily={FUENTE.mano} fontSize={54} fill="#f2efe6">Pleurotus</text>
           <path d="M -250 -10 L 200 -10 M -250 50 L 120 50" stroke="#f2efe6" strokeWidth={4} opacity={0.6} />
         </g>
-        {Array.from({ length: 25 }, (_, i) => <g key={i} opacity={cpr(p, 0.3 + i * 0.006, 0.35 + i * 0.006)}><Alumno x={1160 + (i % 9) * 70 + (Math.floor(i / 9) % 2) * 35} y={640 + Math.floor(i / 9) * 78} s={0.9} c={['#4a4a6a', '#6a4a3a', '#3a5a6a', '#5a6a3a'][i % 4]} /></g>)}
-        <text x={480} y={600} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={30} fill={CREMA} opacity={a * 0.85}>built on ChatGPT with my own materials</text>
+        {Array.from({ length: 25 }, (_, i) => <g key={i} opacity={cpr(p, 0.3 + i * 0.006, 0.35 + i * 0.006)}><Alumno x={1160 + (i % 9) * 70 + (Math.floor(i / 9) % 2) * 35} y={680 + Math.floor(i / 9) * 74} s={0.9} c={['#4a4a6a', '#6a4a3a', '#3a5a6a', '#5a6a3a'][i % 4]} /></g>)}
+        <text x={480} y={596} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={30} fill={CREMA} opacity={a * 0.85}>built on ChatGPT with my own materials</text>
       </g>
       <Vineta o={0.6} />
     </g>;
@@ -651,7 +651,7 @@ ILUSC.cruza = {
         <text x={1360} y={300} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={22} letterSpacing={3} fill={CREMA} opacity={cpr(p, 0.12, 0.2)}>STRAIN B</text>
         <text x={1360} y={332} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={30} fill={CREMA} opacity={cpr(p, 0.14, 0.22)}>P. ostreatus var. columbinus</text>
         {/* lupa: hifa con fíbula (clamp connection) */}
-        <g opacity={lupa} transform={`translate(1560 760) scale(${0.8 + 0.2 * lupa})`}>
+        <g opacity={lupa} transform={`translate(1600 560) scale(${0.68 + 0.14 * lupa})`}>
           <circle r={190} fill="#0c1a1c" /><circle r={190} fill="none" stroke="url(#c-laton)" strokeWidth={16} />
           <path d="M -170 10 L 170 -10" stroke="#f6f3ea" strokeWidth={22} strokeLinecap="round" />
           <path d="M -20 0 Q -10 -50 30 -46 Q 54 -40 44 -6" stroke="#f6f3ea" strokeWidth={12} fill="none" strokeLinecap="round" />
@@ -777,10 +777,10 @@ ILUSC.metas = {
         <text x={720} y={700} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={34} fill={CREMA} opacity={m2}>mushrooms sold</text>
         <text x={720} y={742} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={34} fill={CREMA} opacity={m2}>(at least)</text>
         {/* red: granja → distribuidor → restaurantes */}
-        <path d={`M 1180 860 L ${lerp(1180, 1520, kclamp(red * 3, 0, 1))} ${lerp(860, 540, kclamp(red * 3, 0, 1))}`} stroke={ORO} strokeWidth={5} />
+        <path d={`M 1180 800 L ${lerp(1180, 1520, kclamp(red * 3, 0, 1))} ${lerp(800, 540, kclamp(red * 3, 0, 1))}`} stroke={ORO} strokeWidth={5} />
         {rest.map(([x, y], i) => { const k = cpr(red, 0.33 + i * 0.09, 0.45 + i * 0.09); return <g key={i}><path d={`M 1520 540 L ${lerp(1520, x, k)} ${lerp(540, y, k)}`} stroke="#efe8da" strokeWidth={3} opacity={0.8} />
           <g opacity={k} transform={`translate(${x} ${y})`}><circle r={26} fill="#0c0d10" /><circle r={26} fill="none" stroke="#efe8da" strokeWidth={3} /><path d="M -9 -10 L -9 10 M 8 -10 Q 14 0 8 4 L 8 10" stroke="#efe8da" strokeWidth={3} fill="none" /></g></g>; })}
-        <g transform="translate(1180 860)"><circle r={36} fill={ORO} /><text y={80} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={20} fill={CREMA}>FARM · ZAPOPAN</text></g>
+        <g transform="translate(1180 800)"><circle r={36} fill={ORO} /><text y={70} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={20} fill={CREMA}>FARM · ZAPOPAN</text></g>
         <g transform="translate(1520 540)" opacity={cpr(red, 0.25, 0.35)}><circle r={40} fill="#0c0d10" /><circle r={40} fill="none" stroke={ORO} strokeWidth={4} /><text y={-56} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={20} fill={CREMA}>DISTRIBUTOR</text></g>
         <text x={1520} y={170} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={22} letterSpacing={4} fill={CREMA} opacity={cpr(red, 0.4, 0.6) * 0.8}>GUADALAJARA METRO AREA · RESTAURANTS</text>
       </g>
