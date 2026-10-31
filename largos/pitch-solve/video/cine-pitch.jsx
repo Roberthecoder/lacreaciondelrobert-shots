@@ -27,15 +27,16 @@ function FotoS({ src, x = 0, y = 0, w = CW, h = CH, z = 1, fx = 0.5, fy = 0.5, o
 }
 // Velo oscuro en degradado para que el texto se lea sobre la foto.
 function Velo({ lado = 'izq', o = 0.85, color = '#07080b' }) {
-  const id = 'velo-' + lado;
+  const id = 'velo-' + lado + '-' + Math.round(o * 100);
   const [x1, x2, y1, y2] = lado === 'izq' ? [0, 1, 0, 0] : lado === 'der' ? [1, 0, 0, 0] : lado === 'abajo' ? [0, 0, 1, 0] : [0, 0, 0, 1];
   return <g><linearGradient id={id} x1={x1} x2={x2} y1={y1} y2={y2}><stop offset="0" stopColor={color} stopOpacity={o} /><stop offset=".55" stopColor={color} stopOpacity={o * 0.35} /><stop offset="1" stopColor={color} stopOpacity="0" /></linearGradient>
     <rect x={0} y={0} width={CW} height={CH} fill={`url(#${id})`} /></g>;
 }
 // Viñeta propia de cada escena (además de la de ffmpeg).
 function Vineta({ o = 0.55 }) {
-  return <g><radialGradient id="pv-vin" cx=".5" cy=".48" r=".72"><stop offset=".55" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity={o} /></radialGradient>
-    <rect x={0} y={0} width={CW} height={CH} fill="url(#pv-vin)" /></g>;
+  const id = 'pv-vin-' + Math.round(o * 100);
+  return <g><radialGradient id={id} cx=".5" cy=".48" r=".72"><stop offset=".55" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity={o} /></radialGradient>
+    <rect x={0} y={0} width={CW} height={CH} fill={`url(#${id})`} /></g>;
 }
 // Fondo oscuro de estudio con luz cálida.
 function Estudio({ color = '#1a1712', luz = [0.5, 0.35], halo = '#ffd9a0', o = 0.5 }) {
@@ -131,7 +132,7 @@ function Tarjeta({ x, y, w, h, e = 1, acento = ORO, children }) {
   </g>;
 }
 // Medidor circular.
-function Medidor({ x, y, r = 150, v = 1, color = ORO, grosor = 22 }) {
+function Medidor({ x = 0, y = 0, r = 150, v = 1, color = ORO, grosor = 22 }) {
   const C = 2 * Math.PI * r;
   return <g transform={`translate(${x} ${y}) rotate(-90)`}>
     <circle r={r} fill="none" stroke="#ffffff" strokeOpacity={0.12} strokeWidth={grosor} />
@@ -170,7 +171,7 @@ ILUSC.agave_intro = {
       </g>
       <Velo lado="izq" o={0.85} />
       <Polvo n={45} t={T} seed={11} o={0.45} />
-      <g opacity={1 - B}>
+      <g opacity={1 - cpr(p, 0.5, 0.58)}>
         <Rotulo x={130} y={300} arriba="TEQUILA, JALISCO · MEXICO" tl={tl} at={0.5} tam={10} />
         <Cuenta x={124} y={520} hasta={900000} tl={tl} at={1.6} dura={3.2} tam={176} prefijo="≈ " />
         <Txt x={132} y={600} tam={52} ital o={cpr(tl, 2.6, 3.4)}>tonnes of agave bagasse, every year</Txt>
@@ -376,8 +377,8 @@ ILUSC.proceso = {
           <path d="M -170 0 Q -170 -120 0 -130 Q 170 -120 170 0 Z" fill="#c49a5c" />
           {Array.from({ length: 50 }, (_, i) => { const r = R(840 + i); return <Pellet key={i} x={(r() - 0.5) * 280} y={-r() * 100} ang={r() * 180} s={0.7} />; })}
           {Array.from({ length: 36 }, (_, i) => { const r = R(860 + i), k = cpr(p, 0.48 + r() * 0.1, 0.56 + r() * 0.1, (z) => z * z);
-            return <ellipse key={i} cx={(r() - 0.5) * 200} cy={lerp(-380, -60 - r() * 60, k)} rx={9} ry={6} fill="#e8c77e" transform={`rotate(${r() * 180} ${(r() - 0.5) * 200} ${lerp(-380, -60, k)})`} opacity={k > 0 ? 1 : 0} />; })}
-          <g transform={`translate(40 ${-400 + 20 * Math.sin(T * 2)}) rotate(-25)`}><ellipse cx={0} cy={0} rx={70} ry={30} fill="url(#c-acero)" /><rect x={60} y={-8} width={160} height={16} rx={8} fill="url(#c-acero)" /></g>
+            return <ellipse key={i} cx={(r() - 0.5) * 200} cy={lerp(-250, -60 - r() * 60, k)} rx={9} ry={6} fill="#e8c77e" transform={`rotate(${r() * 180} ${(r() - 0.5) * 200} ${lerp(-380, -60, k)})`} opacity={k > 0 ? 1 : 0} />; })}
+          <g transform={`translate(150 ${-250 + 14 * Math.sin(T * 2)}) rotate(-25)`}><ellipse cx={0} cy={0} rx={70} ry={30} fill="url(#c-acero)" /><rect x={60} y={-8} width={160} height={16} rx={8} fill="url(#c-acero)" /></g>
         </g>
         {/* 4 inocular: frasco de grano colonizado y bolsa */}
         <g opacity={e[3]} transform={`translate(${X[3]} 780)`}>
@@ -436,8 +437,8 @@ ILUSC.micro = {
         <Micelio x={1700} y={300} r={900} g={kclamp(g * 1.2 - 0.2, 0, 1)} seed={94} n={16} o={0.85} ang0={120} abre={110} />
         {[[820, 395], [1240, 360], [1000, 600], [1420, 640], [760, 815], [1150, 840]].map(([x, y], i) => { const e = cpr(p, 0.25 + i * 0.06, 0.32 + i * 0.06, ease);
           return <g key={i} opacity={e}><Enzima x={x + Math.sin(T * 1.3 + i) * 12} y={y - 34} s={1.1} t={T + i} /></g>; })}
-        {haces.map(([x, y, len, ang, c, nom], i) => nom && <text key={i} x={x - len / 2 + 60} y={y - 46} fontFamily={FUENTE.mono} fontWeight={700} fontSize={24} letterSpacing={4} fill={CREMA} opacity={cpr(p, 0.08 + i * 0.08, 0.16 + i * 0.08)} transform={`rotate(${ang} ${x} ${y})`}>{nom}</text>)}
-        <text x={430} y={480} fontFamily={FUENTE.mono} fontWeight={700} fontSize={24} letterSpacing={4} fill="#ffffff" opacity={cpr(p, 0.2, 0.3)}>HYPHAE</text>
+        {haces.map(([x, y, len, ang, c, nom], i) => nom && <text key={i} x={x - len / 2 + (i === 1 ? 420 : 160)} y={y - 46} fontFamily={FUENTE.mono} fontWeight={700} fontSize={24} letterSpacing={4} fill={CREMA} opacity={cpr(p, 0.08 + i * 0.08, 0.16 + i * 0.08)} transform={`rotate(${ang} ${x} ${y})`}>{nom}</text>)}
+        <text x={150} y={700} fontFamily={FUENTE.mono} fontWeight={700} fontSize={24} letterSpacing={4} fill="#ffffff" opacity={cpr(p, 0.2, 0.3)}>HYPHAE</text>
         <text x={1360} y={300} fontFamily={FUENTE.mono} fontWeight={700} fontSize={24} letterSpacing={4} fill="#d8c2ff" opacity={cpr(p, 0.35, 0.45)}>ENZYMES</text>
       </g>
       {/* barra de escala */}
@@ -477,18 +478,18 @@ ILUSC.carrera = {
     const precio = cpr(p, 0.72, 0.82, ease);
     return <g>
       <g transform={capa(0.3)}><Estudio color="#11100e" luz={[0.5, 0.2]} o={0.45} /></g>
-      <rect x={958} y={160} width={4} height={760} fill={CREMA} opacity={0.25} />
+      <rect x={958} y={160} width={4} height={680} fill={CREMA} opacity={0.25} />
       <text x={960} y={120} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={34} letterSpacing={6} fill={ORO}>WEEK {Math.max(1, Math.ceil(sem))}</text>
       <g transform={capa(1)}>
         {/* izquierda: montón de composta que apenas se deshace */}
         <text x={480} y={240} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={28} letterSpacing={5} fill={CREMA}>COMPOST PILE</text>
-        <MontonBagazo x={480} y={760} w={640} h={200} n={120} seed={111} nivel={1 - comp * 0.5} oscuro={comp} />
-        <g transform="translate(220 840)"><rect x={0} y={0} width={520} height={22} rx={11} fill="#ffffff" opacity={0.12} /><rect x={0} y={0} width={520 * comp} height={22} rx={11} fill="#8a6a3a" />
+        <MontonBagazo x={480} y={690} w={640} h={200} n={120} seed={111} nivel={1 - comp * 0.5} oscuro={comp} />
+        <g transform="translate(220 750)"><rect x={0} y={0} width={520} height={22} rx={11} fill="#ffffff" opacity={0.12} /><rect x={0} y={0} width={520 * comp} height={22} rx={11} fill="#8a6a3a" />
           <text x={0} y={64} fontFamily={FUENTE.serif} fontStyle="italic" fontSize={32} fill={CREMA} opacity={0.85}>still half-broken down</text></g>
         {/* derecha: bolsa de Fungi Mati con setas */}
         <text x={1440} y={240} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={28} letterSpacing={5} fill={ORO}>FUNGI MATI</text>
-        <BolsaSetas x={1440} y={760} w={260} h={380} colonizado={cpr(sem, 0.3, 2.4)} setas={seta} t={T} seed={112} />
-        <g transform="translate(1180 840)"><rect x={0} y={0} width={520} height={22} rx={11} fill="#ffffff" opacity={0.12} /><rect x={0} y={0} width={520 * cpr(sem, 0, 5)} height={22} rx={11} fill={ORO} />
+        <BolsaSetas x={1440} y={690} w={250} h={360} colonizado={cpr(sem, 0.3, 2.4)} setas={seta} t={T} seed={112} />
+        <g transform="translate(1180 750)"><rect x={0} y={0} width={520} height={22} rx={11} fill="#ffffff" opacity={0.12} /><rect x={0} y={0} width={520 * cpr(sem, 0, 5)} height={22} rx={11} fill={ORO} />
           <text x={0} y={64} fontFamily={FUENTE.serif} fontStyle="italic" fontSize={32} fill={CREMA} opacity={0.85}>food, in four to six weeks</text></g>
         <g opacity={precio} transform={`translate(1660 ${380 - 10 * precio}) rotate(8)`}>
           <path d="M -90 -50 L 70 -50 L 110 0 L 70 50 L -90 50 Z" fill={ORO} /><circle cx={-60} cy={0} r={10} fill="#11100e" />
@@ -508,12 +509,12 @@ ILUSC.mitad = {
       <g transform={capa(0.3)}><Estudio color="#12110e" luz={[0.5, 0.3]} o={0.45} /></g>
       <g transform={capa(1)}>
         <text x={960} y={190} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={28} letterSpacing={6} fill={ORO}>SUBSTRATE COST PER TONNE</text>
-        <rect x={560} y={860 - 560 * a} width={300} height={560 * a} rx={10} fill="#6d6a64" /><rect x={560} y={860 - 560 * a} width={300} height={560 * a} rx={10} fill="url(#c-cilindro)" opacity={0.6} />
-        <rect x={1060} y={860 - 280 * b} width={300} height={280 * b} rx={10} fill={ORO} /><rect x={1060} y={860 - 280 * b} width={300} height={280 * b} rx={10} fill="url(#c-cilindro)" opacity={0.6} />
-        <rect x={420} y={858} width={1080} height={4} fill={CREMA} opacity={0.5} />
-        <text x={710} y={920} textAnchor="middle" fontFamily={FUENTE.serif} fontSize={36} fill={CREMA}>conventional</text>
-        <text x={1210} y={920} textAnchor="middle" fontFamily={FUENTE.serif} fontSize={36} fill={CREMA}>pelletized bagasse</text>
-        <text x={1210} y={540} textAnchor="middle" fontFamily={FUENTE.serif} fontWeight={700} fontSize={110} fill={CREMA} opacity={b}>≈ ½</text>
+        <rect x={560} y={760 - 480 * a} width={300} height={480 * a} rx={10} fill="#6d6a64" /><rect x={560} y={760 - 480 * a} width={300} height={480 * a} rx={10} fill="url(#c-cilindro)" opacity={0.6} />
+        <rect x={1060} y={760 - 240 * b} width={300} height={240 * b} rx={10} fill={ORO} /><rect x={1060} y={760 - 240 * b} width={300} height={240 * b} rx={10} fill="url(#c-cilindro)" opacity={0.6} />
+        <rect x={420} y={758} width={1080} height={4} fill={CREMA} opacity={0.5} />
+        <text x={710} y={815} textAnchor="middle" fontFamily={FUENTE.serif} fontSize={38} fill={CREMA}>conventional</text>
+        <text x={1210} y={815} textAnchor="middle" fontFamily={FUENTE.serif} fontSize={38} fill={CREMA}>pelletized bagasse</text>
+        <text x={1210} y={480} textAnchor="middle" fontFamily={FUENTE.serif} fontWeight={700} fontSize={110} fill={CREMA} opacity={b}>≈ ½</text>
       </g>
       <Vineta />
     </g>;
@@ -584,15 +585,15 @@ ILUSC.tutor = {
           {burb.map((s, i) => { const e = cpr(p, 0.08 + i * 0.1, 0.14 + i * 0.1, ease); return <g key={i} opacity={e} transform={`translate(0 ${-110 + i * 80})`}>
             <rect x={0} y={0} width={280} height={56} rx={16} fill={i % 2 ? '#2c3b52' : '#3a5a86'} /><text x={14} y={35} fontFamily={FUENTE.texto} fontSize={17} fill="#fff">{s}</text></g>; })}
         </g>
-        {Array.from({ length: 25 }, (_, i) => <Alumno key={i} x={200 + (i % 9) * 70 + (Math.floor(i / 9) % 2) * 35} y={680 + Math.floor(i / 9) * 90} s={0.95} c={['#3a4a6a', '#6a3a4a', '#3a6a5a', '#6a5a3a'][i % 4]} luz={a} />).map((el, i) => <g key={i} opacity={cpr(p, 0.05 + i * 0.006, 0.1 + i * 0.006)}>{el}</g>)}
+        {Array.from({ length: 25 }, (_, i) => <Alumno key={i} x={200 + (i % 9) * 70 + (Math.floor(i / 9) % 2) * 35} y={640 + Math.floor(i / 9) * 78} s={0.9} c={['#3a4a6a', '#6a3a4a', '#3a6a5a', '#6a5a3a'][i % 4]} luz={a} />).map((el, i) => <g key={i} opacity={cpr(p, 0.05 + i * 0.006, 0.1 + i * 0.006)}>{el}</g>)}
         {/* pizarrón */}
         <g opacity={b} transform="translate(1440 400)">
           <rect x={-300} y={-150} width={600} height={300} rx={8} fill="#24402e" /><rect x={-300} y={-150} width={600} height={300} rx={8} fill="none" stroke="#8a6a3a" strokeWidth={14} />
           <text x={-250} y={-70} fontFamily={FUENTE.mano} fontSize={54} fill="#f2efe6">Pleurotus</text>
           <path d="M -250 -10 L 200 -10 M -250 50 L 120 50" stroke="#f2efe6" strokeWidth={4} opacity={0.6} />
         </g>
-        {Array.from({ length: 25 }, (_, i) => <g key={i} opacity={cpr(p, 0.3 + i * 0.006, 0.35 + i * 0.006)}><Alumno x={1160 + (i % 9) * 70 + (Math.floor(i / 9) % 2) * 35} y={680 + Math.floor(i / 9) * 90} s={0.95} c={['#4a4a6a', '#6a4a3a', '#3a5a6a', '#5a6a3a'][i % 4]} /></g>)}
-        <text x={480} y={1000} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={30} fill={CREMA} opacity={a * 0.85}>built on ChatGPT with my own materials</text>
+        {Array.from({ length: 25 }, (_, i) => <g key={i} opacity={cpr(p, 0.3 + i * 0.006, 0.35 + i * 0.006)}><Alumno x={1160 + (i % 9) * 70 + (Math.floor(i / 9) % 2) * 35} y={640 + Math.floor(i / 9) * 78} s={0.9} c={['#4a4a6a', '#6a4a3a', '#3a5a6a', '#5a6a3a'][i % 4]} /></g>)}
+        <text x={480} y={600} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={30} fill={CREMA} opacity={a * 0.85}>built on ChatGPT with my own materials</text>
       </g>
       <Vineta o={0.6} />
     </g>;
@@ -606,7 +607,7 @@ ILUSC.chatbot = {
     return <g>
       <g transform={capa(0.3)}><Estudio color="#0e1016" luz={[0.4, 0.45]} halo="#d9c2ff" o={0.4} /><Bokeh n={14} t={T} seed={151} o={0.3} colores={['#d9c2ff', '#9fd3ff', '#ffe2b8']} /></g>
       <g transform={capa(1)}>
-        <g transform="translate(760 540)">
+        <g transform="translate(760 470) scale(0.86)">
           <rect x={-230} y={-430} width={460} height={860} rx={60} fill="#101114" /><rect x={-214} y={-414} width={428} height={828} rx={48} fill="#f6f3ec" />
           <rect x={-60} y={-400} width={120} height={22} rx={11} fill="#101114" />
           <text x={0} y={-330} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={22} fill="#3a3530">FUNGI MATI GROWER</text>
@@ -641,8 +642,8 @@ ILUSC.cruza = {
       <g transform={capa(1)}>
         <rect x={-300} y={820} width={CW + 600} height={500} fill="#1d2226" />
         <Petri x={960} y={600} r={460} medio="#e7d6a2" inclina={0.5} id="cz">
-          <Micelio x={-230} y={0} r={420} g={g * 0.55} seed={161} n={30} o={0.95} />
-          <Micelio x={230} y={0} r={420} g={g * 0.55} seed={162} n={30} o={0.95} color="#fff8ee" />
+          <Micelio x={-230} y={0} r={420} g={g * 0.6} seed={161} n={40} o={1} />
+          <Micelio x={230} y={0} r={420} g={g * 0.6} seed={162} n={40} o={1} color="#fff8ee" />
           <ellipse cx={0} cy={0} rx={50 * enc} ry={200 * enc} fill={ORO} opacity={0.35 * enc} />
         </Petri>
         <text x={560} y={300} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={22} letterSpacing={3} fill={CREMA} opacity={cpr(p, 0.08, 0.16)}>STRAIN A</text>
@@ -677,17 +678,17 @@ function IconoResiduo({ tipo, x, y, e, t }) {
 ILUSC.residuos = {
   cam: { z0: 1.0, z1: 1.05, fx: 960, fy: 540 },
   dibuja: ({ p, tl, T, capa }) => {
-    const items = [['agave', 'agave bagasse', 480, 320, 0.02], ['cafe', 'coffee pulp', 1440, 320, 0.25], ['maiz', 'corn stover', 480, 800, 0.4], ['cana', 'sugarcane bagasse', 1440, 800, 0.55]];
+    const items = [['agave', 'agave bagasse', 480, 260, 0.02], ['cafe', 'coffee pulp', 1440, 260, 0.25], ['maiz', 'corn stover', 480, 690, 0.4], ['cana', 'sugarcane bagasse', 1440, 690, 0.55]];
     return <g>
       <g transform={capa(0.3)}><Estudio color="#10120f" luz={[0.5, 0.5]} o={0.5} /><Bokeh n={16} t={T} seed={171} o={0.3} /></g>
       <g transform={capa(1)}>
-        {items.map(([k, , x, y, at], i) => { const e = cpr(p, at + 0.05, at + 0.15, ease); return <path key={i} d={`M 960 560 L ${x} ${y}`} stroke={ORO} strokeWidth={4} strokeDasharray="12 10" opacity={e * 0.8} strokeDashoffset={-T * 40} />; })}
-        <g transform="translate(960 560)"><circle r={150} fill="#0c0d10" opacity={0.9} /><circle r={150} fill="none" stroke={ORO} strokeWidth={5} style={{ filter: `drop-shadow(0 0 18px ${ORO})` }} />
+        {items.map(([k, , x, y, at], i) => { const e = cpr(p, at + 0.05, at + 0.15, ease); return <path key={i} d={`M 960 480 L ${x} ${y}`} stroke={ORO} strokeWidth={4} strokeDasharray="12 10" opacity={e * 0.8} strokeDashoffset={-T * 40} />; })}
+        <g transform="translate(960 480)"><circle r={150} fill="#0c0d10" opacity={0.9} /><circle r={150} fill="none" stroke={ORO} strokeWidth={5} style={{ filter: `drop-shadow(0 0 18px ${ORO})` }} />
           <SetasRepisa x={0} y={50} g={1} t={T} seed={172} tam={90} n={6} /></g>
         {items.map(([k, nom, x, y, at], i) => { const e = cpr(p, at, at + 0.1, ease); return <g key={i}><IconoResiduo tipo={k} x={x} y={y} e={e} t={T} />
-          <text x={x} y={y + 180} textAnchor="middle" fontFamily={FUENTE.serif} fontWeight={600} fontSize={40} fill={CREMA} opacity={e}>{nom}</text></g>; })}
+          <text x={x} y={y + 175} textAnchor="middle" fontFamily={FUENTE.serif} fontWeight={600} fontSize={40} fill={CREMA} opacity={e}>{nom}</text></g>; })}
       </g>
-      <g opacity={cpr(p, 0.65, 0.75)} transform="translate(960 120)"><rect x={-190} y={-42} width={380} height={64} rx={32} fill="none" stroke={CREMA} strokeOpacity={0.6} strokeWidth={2} />
+      <g opacity={cpr(p, 0.65, 0.75)} transform="translate(960 800)"><rect x={-190} y={-42} width={380} height={64} rx={32} fill="none" stroke={CREMA} strokeOpacity={0.6} strokeWidth={2} />
         <text x={0} y={2} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={26} letterSpacing={6} fill={CREMA}>EXPLORATORY</text></g>
       <Vineta o={0.6} />
     </g>;
@@ -781,7 +782,7 @@ ILUSC.metas = {
           <g opacity={k} transform={`translate(${x} ${y})`}><circle r={26} fill="#0c0d10" /><circle r={26} fill="none" stroke="#efe8da" strokeWidth={3} /><path d="M -9 -10 L -9 10 M 8 -10 Q 14 0 8 4 L 8 10" stroke="#efe8da" strokeWidth={3} fill="none" /></g></g>; })}
         <g transform="translate(1180 860)"><circle r={36} fill={ORO} /><text y={80} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={20} fill={CREMA}>FARM · ZAPOPAN</text></g>
         <g transform="translate(1520 540)" opacity={cpr(red, 0.25, 0.35)}><circle r={40} fill="#0c0d10" /><circle r={40} fill="none" stroke={ORO} strokeWidth={4} /><text y={-56} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={20} fill={CREMA}>DISTRIBUTOR</text></g>
-        <text x={1520} y={1000} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={22} letterSpacing={4} fill={CREMA} opacity={cpr(red, 0.4, 0.6) * 0.8}>GUADALAJARA METRO AREA · RESTAURANTS</text>
+        <text x={1520} y={170} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={22} letterSpacing={4} fill={CREMA} opacity={cpr(red, 0.4, 0.6) * 0.8}>GUADALAJARA METRO AREA · RESTAURANTS</text>
       </g>
       <Vineta o={0.6} />
     </g>;

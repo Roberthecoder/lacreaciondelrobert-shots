@@ -32,11 +32,12 @@ jobs:
       - name: Capturas a la mitad de cada escena
         run: |
           cd largos/pitch-solve
-          T=$(node -e '
+          F=$(cat revisar.txt 2>/dev/null || echo 0.62)
+          T=$(F=$F node -e '
             const fs=require("fs"); globalThis.window={};
             new Function(fs.readFileSync("video/tiempos.js","utf8"))(); new Function(fs.readFileSync("video/escenas.js","utf8"))();
             const ls=window.CAPS.flatMap(c=>c.lineas); let t=0, out=[];
-            ls.forEach((l,i)=>{ const d=window.TIEMPOS_VOZ[i]; if(l.v) out.push(+(t+d*0.62).toFixed(2)); else out[out.length-1]=+(t+d*0.5).toFixed(2); t+=d; });
+            ls.forEach((l,i)=>{ const d=window.TIEMPOS_VOZ[i]; const f=+process.env.F; if(l.v) out.push(+(t+d*f).toFixed(2)); else out[out.length-1]=+(t+d*f).toFixed(2); t+=d; });
             console.log(out.join(","))')
           echo "Tiempos: $T"
           mkdir -p revision
