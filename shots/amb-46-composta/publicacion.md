@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #46 · Esa cáscara no se vuelve tierra en el basurero: se pudre y se vuelve gas
+# Publicación · Shot Ambiental 46 · Esa cáscara no se vuelve tierra en el basurero: se pudre y se vuelve gas
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Receta: revuelve cáscaras con hojas secas, húmedo como esponja exprimida, y vo
 El dibujo es esquemático.
 Fuentes: SEMARNAT, IPCC, EPA, Pérez et al. 2023.
 ¿Tú ya separas tus orgánicos o haces composta? 👇
-Shot Ambiental #46 · La Creación del Robert
+Shot Ambiental 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Composta #Metano #Basura
 ```
@@ -25,7 +25,7 @@ Enterrada sin aire, bacterias y arqueas metanógenas la convierten en metano, qu
 Receta: cáscaras + hojas secas, húmedo como esponja exprimida, y voltéalo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú ya separas tus orgánicos o haces composta? 👇
-Shot Ambiental #46 · La Creación del Robert
+Shot Ambiental 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Composta #Metano #Basura
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu cáscara de plátano se vuelve gas en el basurero 🍌💨 | Shot Ambiental #46
+Tu cáscara de plátano se vuelve gas en el basurero 🍌💨 | Shot Ambiental 46
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - NMSU, Backyard Composting H-110: https://pubs.nmsu.edu/_h/H110/index.html
 - EPA, Composting at Home: https://www.epa.gov/recycle/composting-home
 ¿Tú ya separas tus orgánicos o haces composta? 👇
-Shot Ambiental #46 · La Creación del Robert
+Shot Ambiental 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Composta #Metano
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa cáscara de plátano no se vuelve tierra en el basurero: se pudre y se vuelve gas. 🍌💨 Sin aire, los microbios la convierten en metano; en una composta, con aire, se vuelve abono. Receta: cáscaras + hojas secas, húmedo como esponja exprimida, y voltéalo.
 ¿Tú ya separas tus orgánicos o haces composta? 👇
-Shot Ambiental #46 · La Creación del Robert
+Shot Ambiental 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Composta #Metano
 ```
@@ -72,7 +72,7 @@ En México, el 40.15 % de los residuos sólidos urbanos son orgánicos (SEMARNAT
 El compostaje cambia la química: con oxígeno, los productos son abono, CO₂, calor y agua. Una medición de 2018 en una composta comercial de Nicasio, California (Pérez, Vergara y Silver, Scientific Reports, 2023) encontró emisiones de 38 a 84 % menores que las estimadas para un relleno.
 Separar los orgánicos desde la fuente es una de las medidas de mitigación más accesibles para hogares, empresas y municipios.
 ¿Tu organización ya separa sus residuos orgánicos?
-Shot Ambiental #46 · La Creación del Robert
+Shot Ambiental 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Residuos #Composta #Metano #LaCreacionDelRobert
 ```

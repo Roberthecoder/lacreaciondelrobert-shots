@@ -1,4 +1,4 @@
-# Publicación · Shot IA #18 · Una IA ve en tu retina lo que los oftalmólogos no saben ver
+# Publicación · Shot IA 18 · Una IA ve en tu retina lo que los oftalmólogos no saben ver
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que esa foto de tu ojo cuenta de ti mucho más de lo que tú puedes ver.
 El dibujo es esquemático. Datos de 2018.
 Fuentes: Poplin et al., Nature Biomedical Engineering (2018); Korot et al., Scientific Reports (2021); Abràmoff et al., npj Digital Medicine (2018).
 ¿Alguna vez te tomaron una foto del fondo del ojo? 👇
-Shot IA #18 · La Creación del Robert
+Shot IA 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Retina #Oftalmologia #CienciaEnEspañol
 ```
@@ -27,7 +27,7 @@ En el fondo de tu ojo hay algo que tus ojos no saben ver: si es de hombre o de m
 En 2018, investigadores de Google entrenaron una IA con fotos de retina de 284,335 pacientes. Con solo la foto adivinó la edad con unos 3 años de error, y con una retina de hombre y una de mujer dijo cuál es cuál 97 de cada 100 veces. También estimó la presión y si la persona fuma, aunque ahí acertó menos. Un mapa mostró que miraba los vasos sanguíneos y el disco óptico. Es una pista, no un diagnóstico; lo que sí ya se usa es una IA autorizada en 2018 para detectar daño por diabetes en la retina.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez te tomaron una foto del fondo del ojo? 👇
-Shot IA #18 · La Creación del Robert
+Shot IA 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Retina #Oftalmologia #CienciaEnEspañol
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Una IA ve en tu retina lo que los oftalmólogos no saben ver 👁️ | Shot IA #18
+Una IA ve en tu retina lo que los oftalmólogos no saben ver 👁️ | Shot IA 18
 ```
 Descripción:
 ```text
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 En el fondo de tu ojo hay algo que tus ojos no saben ver: si es de hombre o de mujer. Una IA sí lo ve. 👁️ En 2018, una IA de Google entrenada con fotos de retina de 284,335 pacientes adivinó la edad con unos 3 años de error y el sexo 97 de cada 100 pares. Es una pista, no un diagnóstico, pero muestra que esa foto de tu ojo cuenta mucho más de lo que se ve.
 ¿Alguna vez te tomaron una foto del fondo del ojo? 👇
-Shot IA #18 · La Creación del Robert
+Shot IA 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Retina
 ```
@@ -70,7 +70,7 @@ El estudio (Poplin et al., Google Research y Verily, Nature Biomedical Engineeri
 Dos lecciones: el aprendizaje profundo puede encontrar señales que la medicina no conocía, y una señal no es todavía una herramienta clínica (los autores piden más validación). El ejemplo de lo que sí llegó a consulta: en 2018 la FDA autorizó IDx-DR, una IA autónoma para detectar retinopatía diabética en atención primaria.
 ¿Qué otras imágenes médicas crees que esconden información que aún no sabemos leer?
 Fuentes: Poplin et al., Nat Biomed Eng (2018); Korot et al., Sci Rep (2021); Abràmoff et al., npj Digit Med (2018). Datos de 2018.
-Shot IA #18 · La Creación del Robert
+Shot IA 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #SaludDigital #Oftalmologia #DeepLearning #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ En tu retina hay algo que tus ojos no saben ver: si es de hombre o de mujer. En 
 En el fondo de tu ojo hay algo que tus ojos no saben ver: si es de hombre o de mujer. Una IA sí lo ve. 👁️
 En 2018, una IA de Google entrenada con fotos de retina de 284,335 pacientes adivinó la edad con unos 3 años de error y el sexo 97 de cada 100 pares. Se fijaba en los vasos y el disco óptico.
 ¿Te han fotografiado el fondo del ojo?
-Shot IA #18 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 18 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

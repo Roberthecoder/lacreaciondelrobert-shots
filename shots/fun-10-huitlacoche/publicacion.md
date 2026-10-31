@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #10 · Ese elote no está podrido: el huitlacoche (Ustilago maydis)
+# Publicación · Shot Fungi Mati 10 · Ese elote no está podrido: el huitlacoche (Ustilago maydis)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En casi todo el mundo es una enfermedad del maíz; en México es un manjar con n
 El dibujo es esquemático.
 Fuentes: Pataky y Chandler 2003 (Mycologia); Villagrán et al. 2023 (Molecules); Extensión de la Universidad de Wisconsin; Ferris y Walbot 2021 (J. Fungi).
 ¿Cómo le dicen en tu región: huitlacoche o cuitlacoche? 👇
-Shot Fungi Mati #10 · La Creación del Robert
+Shot Fungi Mati 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Huitlacoche #Hongos #Maiz
 ```
@@ -25,7 +25,7 @@ Ese elote no está podrido: es un manjar. 🌽🍄
 El huitlacoche es el hongo Ustilago maydis: entra por los pelos del elote, sus hifas infectan el grano, y el maíz hace células más grandes y de más hasta que el grano se hincha. Luego el hongo lo llena de esporas oscuras con espinitas: por eso se pone negro. En 2003, investigadores de la Universidad de Illinois lo inocularon a propósito y sacaron hasta 131 g de huitlacoche por mazorca; cosechado a los 12–14 días no servía porque le faltaban esporas, que le dan color y sabor. En casi todo el mundo es una enfermedad; en México, un manjar con nombre en muchas lenguas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cómo le dicen en tu región: huitlacoche o cuitlacoche? 👇
-Shot Fungi Mati #10 · La Creación del Robert
+Shot Fungi Mati 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Huitlacoche #Hongos #ComidaMexicana
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese elote NO está podrido: es huitlacoche 🌽🍄 | Shot Fungi Mati #10
+Ese elote NO está podrido: es huitlacoche 🌽🍄 | Shot Fungi Mati 10
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Basse, C. W. y Steinberg, G. (2004). Ustilago maydis, model system for analysis of the molecular basis of fungal pathogenicity. Mol. Plant Pathol. 5(2): 83–92. https://pubmed.ncbi.nlm.nih.gov/20565585/
 - Brefort, T. et al. (2009). Ustilago maydis as a Pathogen. Annu. Rev. Phytopathol. 47: 423–445. https://pubmed.ncbi.nlm.nih.gov/19400641/
 ¿Cómo le dicen en tu región: huitlacoche o cuitlacoche? 👇
-Shot Fungi Mati #10 · La Creación del Robert
+Shot Fungi Mati 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Huitlacoche #FungiMati
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese elote no está podrido: es un manjar. 🌽🍄 El huitlacoche es el hongo Ustilago maydis: hace que el grano se hinche y lo llena de esporas negras con espinitas. En casi todo el mundo es una enfermedad del maíz; en México, un manjar que va directo a la quesadilla.
 ¿Cómo le dicen en tu región: huitlacoche o cuitlacoche? 👇
-Shot Fungi Mati #10 · La Creación del Robert
+Shot Fungi Mati 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Huitlacoche
 ```
@@ -72,7 +72,7 @@ Lo que en casi todo el mundo es una enfermedad del maíz, en México es un ingre
 El hongo infecta normalmente los pelos de elotes sin polinizar y hace que las células del grano crezcan y se dividan de más; la agalla resultante se llena de teliosporas negras. En 2003, un estudio de la Universidad de Illinois (Pataky y Chandler, Mycologia) mostró que inocular a propósito los pelos puede producirlo: hasta 131 g por mazorca. Un detalle de calidad: lo cosechado a los 12–14 días no era aceptable porque le faltaban teliosporas, que afectan el color y el sabor.
 Por qué importa: el mismo organismo es un modelo de laboratorio para entender cómo un hongo enferma a una planta, y a la vez un alimento con raíces en muchas culturas indígenas de México.
 ¿Conoces otro "problema" agrícola que sea un ingrediente en otro lugar?
-Shot Fungi Mati #10 · La Creación del Robert
+Shot Fungi Mati 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Huitlacoche #Agricultura #Ciencia
 ```
@@ -85,7 +85,7 @@ Ese elote no está podrido: es huitlacoche 🌽🍄 El hongo Ustilago maydis hin
 ### Threads
 ```text
 Ese elote no está podrido: es un manjar. 🌽🍄 El huitlacoche es el hongo Ustilago maydis: entra por los pelos del elote, hincha el grano y lo llena de esporas negras con espinitas. En casi todo el mundo es una enfermedad; en México, quesadilla. ¿Cómo le dicen en tu región?
-Shot Fungi Mati #10 · La Creación del Robert
+Shot Fungi Mati 10 · La Creación del Robert
 #Hongos
 ```
 

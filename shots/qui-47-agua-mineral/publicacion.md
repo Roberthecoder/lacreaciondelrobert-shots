@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #47 · Ese piquete casi no son las burbujas (el agua mineral con gas y tu lengua)
+# Publicación · Shot Químico 47 · Ese piquete casi no son las burbujas (el agua mineral con gas y tu lengua)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -12,7 +12,7 @@ El dióxido de carbono disuelto se une al agua y forma ácido carbónico, un ác
 ¿Y tus dientes? En 2001, en la Universidad de Birmingham (Inglaterra), en el laboratorio, las aguas minerales con gas disolvieron dientes unas 100 veces menos que los refrescos. Pero en 2007, las aguas con gas de sabor salieron tan erosivas como el jugo de naranja, o más.
 El dibujo es esquemático. Fuentes: Wise et al. 2013 · Chandrashekar et al. 2009 · Reddy et al. 2016 · Parry et al. 2001 · Brown et al. 2007.
 ¿Tú cómo le dices: agua mineral, agua con gas o soda? 👇
-Shot Químico #47 · La Creación del Robert
+Shot Químico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #AguaMineral #Ciencia #Sabor
 ```
@@ -23,7 +23,7 @@ Ese piquete del agua mineral casi no viene de las burbujas: es un ácido que se 
 El CO₂ con agua forma ácido carbónico; una enzima de tu boca, la anhidrasa carbónica, lo hace rápido dentro del tejido y ese ácido despierta nervios del dolor. En 2013, en una cámara a 2 atmósferas donde no se forman burbujas, picó casi igual. Y para tus dientes: en 2001, en el laboratorio, disolvió dientes unas 100 veces menos que los refrescos (las de sabor, en 2007, salieron tan erosivas como el jugo de naranja).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú cómo le dices: agua mineral, agua con gas o soda? 👇
-Shot Químico #47 · La Creación del Robert
+Shot Químico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #AguaMineral #Ciencia #Sabor
 ```
@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese piquete casi no son las burbujas 🫧 | Shot Químico #47
+Ese piquete casi no son las burbujas 🫧 | Shot Químico 47
 ```
 Descripción:
 ```text
@@ -46,7 +46,7 @@ Fuentes:
 - Brown C.J. et al. (2007). The erosive potential of flavoured sparkling water drinks. Int J Paediatr Dent 17(2):86–91. https://pubmed.ncbi.nlm.nih.gov/17263857/
 - NOAA. Ocean acidification (química del ácido carbónico). https://www.noaa.gov/education/resource-collections/ocean-coasts/ocean-acidification
 ¿Tú cómo le dices: agua mineral, agua con gas o soda? 👇
-Shot Químico #47 · La Creación del Robert
+Shot Químico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #AguaMineral
 ```
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese piquete del agua mineral casi no viene de las burbujas: es un ácido que se forma en tu lengua. 🫧 Una enzima de tu boca convierte el CO₂ en ácido carbónico y ese ácido despierta nervios del dolor. En 2013, en una cámara a presión donde no se forman burbujas, picó casi igual.
 ¿Tú cómo le dices: agua mineral, agua con gas o soda? 👇
-Shot Químico #47 · La Creación del Robert
+Shot Químico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #AguaMineral
 ```
@@ -66,14 +66,14 @@ El "piquete" del agua mineral con gas es, sobre todo, química, no tacto.
 El CO₂ disuelto forma ácido carbónico; en la boca, la anhidrasa carbónica acelera esa reacción y el ácido activa terminaciones nerviosas del dolor (Wise et al., PLoS One 2013). En ese mismo trabajo, con voluntarios en una cámara hiperbárica a 2 atmósferas (donde no se forman burbujas), el piquete fue prácticamente igual que a presión normal; las burbujas lo aumentan, pero no son necesarias. Y en 2009, Chandrashekar, Zuker y colegas (Science) mostraron en ratones que las células del sabor agrio, con la anhidrasa carbónica 4 en su superficie, son el sensor del gusto del CO₂.
 Para la salud dental, el contraste es claro: en el laboratorio, las aguas minerales con gas disolvieron unas 100 veces menos que los refrescos (Parry et al., 2001), mientras que las aguas con gas de sabor mostraron una erosión similar o mayor que el jugo de naranja (Brown et al., 2007).
 ¿Qué otra sensación "física" de la comida resulta ser química?
-Shot Químico #47 · La Creación del Robert
+Shot Químico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Ciencia #Neurociencia #SaludDental #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-El piquete del agua mineral casi no viene de las burbujas: una enzima de tu lengua convierte el CO₂ en ácido. En 2013, en una cámara a 2 atmósferas sin burbujas, picó casi igual. 🫧 Shot Químico #47 #Quimica
+El piquete del agua mineral casi no viene de las burbujas: una enzima de tu lengua convierte el CO₂ en ácido. En 2013, en una cámara a 2 atmósferas sin burbujas, picó casi igual. 🫧 Shot Químico 47 #Quimica
 ```
 
 ### Threads
@@ -81,7 +81,7 @@ El piquete del agua mineral casi no viene de las burbujas: una enzima de tu leng
 Ese piquete del agua mineral casi no viene de las burbujas: es un ácido que se forma en tu lengua. 🫧
 El CO₂ se vuelve ácido carbónico y despierta nervios del dolor. Y en el laboratorio, el agua mineral con gas disolvió dientes unas 100 veces menos que los refrescos; las de sabor, como el jugo de naranja.
 ¿Tú cómo le dices: agua mineral, agua con gas o soda?
-Shot Químico #47 · La Creación del Robert
+Shot Químico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

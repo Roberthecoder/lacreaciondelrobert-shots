@@ -1,4 +1,4 @@
-# Publicación · Shot IA #32 · El abogado que citó seis casos que inventó ChatGPT (Mata contra Avianca)
+# Publicación · Shot IA 32 · El abogado que citó seis casos que inventó ChatGPT (Mata contra Avianca)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -18,7 +18,7 @@ Usar IA no es el problema: revisar te toca a ti. Busca cada caso en la fuente.
 El dibujo es esquemático; el chat en pantalla es una paráfrasis.
 Fuentes: orden de sanciones, Mata v. Avianca (tribunal federal de Nueva York, 2023); base AI Hallucination Cases de Damien Charlotin (2026).
 ¿Tú revisas lo que te contesta una IA antes de usarlo? 👇
-Shot IA #32 · La Creación del Robert
+Shot IA 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT #Abogados #Avianca
 ```
@@ -32,7 +32,7 @@ Al 28 de octubre de 2026, una base de datos ya reúne 2,231 casos en tribunales 
 Usar IA no es el problema: revisar te toca a ti. Busca cada caso en la fuente.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú revisas lo que te contesta una IA antes de usarlo? 👇
-Shot IA #32 · La Creación del Robert
+Shot IA 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT #Abogados #Avianca
 ```
@@ -40,7 +40,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los multaron por citar 6 casos que inventó ChatGPT ⚖️ | Shot IA #32
+Los multaron por citar 6 casos que inventó ChatGPT ⚖️ | Shot IA 32
 ```
 Descripción:
 ```text
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Estos seis casos no existen: los inventó ChatGPT. Y unos abogados se los presentaron a un juez de Nueva York, en una demanda contra Avianca. ⚖️ Uno de ellos hasta le preguntó a ChatGPT si eran reales, y le dijo que sí. En junio de 2023, el juez los multó a ellos y a su despacho con 5,000 dólares. Y no fue el único: una base de datos ya reúne 2,231 casos así en tribunales (octubre de 2026). Usar IA no es el problema: revisar te toca a ti.
 ¿Tú revisas lo que te contesta una IA antes de usarlo? 👇
-Shot IA #32 · La Creación del Robert
+Shot IA 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT #Abogados
 ```
@@ -76,7 +76,7 @@ No es un caso aislado: al 28 de octubre de 2026, la base de datos de Damien Char
 La regla práctica: cada cita, cada caso y cada cifra que te dé una IA se busca en la fuente original antes de usarse.
 ¿Tu equipo tiene un paso de verificación para lo que produce con IA?
 Fuentes: Mata v. Avianca, Inc., Opinion and Order on Sanctions, S.D.N.Y. (2023); D. Charlotin, AI Hallucination Cases (2026).
-Shot IA #32 · La Creación del Robert
+Shot IA 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Derecho #ChatGPT #Verificacion #LaCreacionDelRobert
 ```
@@ -93,7 +93,7 @@ Uno de ellos le preguntó a ChatGPT si eran reales. Le dijo que sí.
 Multa en 2023: 5,000 dólares. Y al 28 oct 2026 ya hay 2,231 casos así en tribunales.
 Usar IA no es el problema: revisar te toca a ti.
 ¿Tú revisas lo que te contesta una IA?
-Shot IA #32 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 32 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

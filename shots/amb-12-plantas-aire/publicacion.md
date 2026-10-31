@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #12 · Tu planta no limpia el aire de tu casa
+# Publicación · Shot Ambiental 12 · Tu planta no limpia el aire de tu casa
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que quiere a tu planta porque es bonita; pero para el aire, abre la ventana
 El dibujo es esquemático.
 Fuentes: Cummings y Waring (2020), NASA (1989), EPA.
 ¿Cuántas plantas tienes en tu casa? 👇
-Shot Ambiental #12 · La Creación del Robert
+Shot Ambiental 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Plantas #CalidadDelAire #Mitos
 ```
@@ -27,7 +27,7 @@ El mito nació en 1989, cuando la NASA metió plantas en cajas selladas de menos
 Lo que sí sirve: quitar la fuente, abrir ventanas y usar la campana con salida afuera.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuántas plantas tienes en tu casa? 👇
-Shot Ambiental #12 · La Creación del Robert
+Shot Ambiental 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Plantas #CalidadDelAire #Mitos
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu planta NO limpia el aire de tu casa 🪴 | Shot Ambiental #12
+Tu planta NO limpia el aire de tu casa 🪴 | Shot Ambiental 12
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Wolverton, Johnson y Bounds, NASA-TM-101766 (1989): https://ntrs.nasa.gov/citations/19930073077
 - EPA, Improving Indoor Air Quality: https://www.epa.gov/indoor-air-quality-iaq/improving-indoor-air-quality
 ¿Cuántas plantas tienes en tu casa? 👇
-Shot Ambiental #12 · La Creación del Robert
+Shot Ambiental 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Plantas #CalidadDelAire
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu planta no limpia el aire de tu casa: para igualar la ventilación normal de un edificio harían falta de 10 a 1,000 plantas por metro cuadrado (Universidad Drexel, 2019). 🪴 El mito viene de cajas selladas de la NASA en 1989. Lo que sí sirve: abrir ventanas y usar la campana con salida afuera.
 ¿Cuántas plantas tienes en tu casa? 👇
-Shot Ambiental #12 · La Creación del Robert
+Shot Ambiental 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Plantas #CalidadDelAire
 ```
@@ -71,7 +71,7 @@ Las plantas de interior no limpian de forma apreciable el aire de una casa u ofi
 La idea viene de un reporte de la NASA de 1989: plantas en cámaras herméticas de menos de un metro cúbico reducían benceno, tricloroetileno y formaldehído en pruebas de 24 horas. En 2019, Cummings y Waring (Universidad Drexel) revisaron 12 estudios con 196 resultados y los convirtieron a tasa de entrega de aire limpio: la mediana por planta fue de 0.023 m³/h (23 litros por hora). Para igualar la renovación de aire de un edificio típico (~1 vez por hora) harían falta de 10 a 1,000 plantas por m² de piso.
 Para la calidad del aire interior, la EPA pone primero el control de fuentes, luego la ventilación (ventanas, extractores con salida al exterior) y la filtración. Las plantas pueden ser agradables, pero no sustituyen a la ventilación.
 ¿En tu oficina o escuela se mide la ventilación?
-Shot Ambiental #12 · La Creación del Robert
+Shot Ambiental 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #CalidadDelAire #Ventilacion #LaCreacionDelRobert
 ```
@@ -86,7 +86,7 @@ Tu planta no limpia el aire de tu casa 🪴 Para igualar la ventilación normal 
 Esa planta no es un purificador de aire: para igualar la ventilación normal, harían falta hasta mil por metro cuadrado. 🪴
 El mito salió de cajas selladas de la NASA en 1989. Pero tu casa no está sellada: el aire de afuera entra solo. Lo que sí sirve: abrir ventanas y usar la campana con salida afuera.
 ¿Cuántas plantas tienes en tu casa?
-Shot Ambiental #12 · La Creación del Robert
+Shot Ambiental 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CalidadDelAire
 ```

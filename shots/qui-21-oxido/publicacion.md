@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #21 · Esa reja no se está ensuciando: está regresando a ser óxido
+# Publicación · Shot Químico 21 · Esa reja no se está ensuciando: está regresando a ser óxido
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Dato extra: un estudio de 2016 (NACE IMPACT) estimó que la corrosión le cuesta
 El óxido de la reja es óxido de hierro hidratado (Fe₂O₃·nH₂O), pariente de la hematita de la mina, no exactamente el mismo mineral. El dibujo es esquemático.
 Fuentes: OpenStax Chemistry 2e · USGS 2019 · Alcántara et al. 2017 · Aykol y Persson 2018 · Balasubramaniam 2002 · NACE 2016.
 ¿Qué es lo que más se oxida en tu casa? 👇
-Shot Químico #21 · La Creación del Robert
+Shot Químico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Oxido #Corrosion #Hierro
 ```
@@ -26,7 +26,7 @@ Esa reja no se está ensuciando: está regresando a ser óxido, como la piedra d
 El hierro necesita oxígeno y agua juntos para oxidarse; la sal lo acelera, y el óxido se descarapela y deja hierro nuevo expuesto. El aluminio, en cambio, forma una capa delgadísima que lo protege (pasivación). En Delhi, un pilar de hierro de más de 1600 años resiste la corrosión: en 2002, Balasubramaniam (IIT Kanpur) explicó que su fósforo ayuda a formar una capa compacta protectora. Y en 2016 se estimó que la corrosión cuesta al mundo unos 2.5 billones de dólares al año.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué es lo que más se oxida en tu casa? 👇
-Shot Químico #21 · La Creación del Robert
+Shot Químico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Oxido #Corrosion #Hierro
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa reja no se está ensuciando 🟠 | Shot Químico #21
+Esa reja no se está ensuciando 🟠 | Shot Químico 21
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Balasubramaniam R. (2002). On the growth kinetics of the protective passive film of the Delhi iron pillar. Current Science 82(11):1357–1365. https://www.currentscience.ac.in/Volumes/82/11/1357.pdf
 - NACE International (2016). IMPACT: International Measures of Prevention, Application, and Economics of Corrosion Technologies Study. https://www.zerust.com/wp-content/uploads/2018/10/Nace-International-Report.pdf
 ¿Qué es lo que más se oxida en tu casa? 👇
-Shot Químico #21 · La Creación del Robert
+Shot Químico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Oxido
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa reja no se está ensuciando: está regresando a ser óxido, como la piedra de donde salió. 🟠 El hierro necesita oxígeno y agua para oxidarse, la sal lo acelera y el óxido se descarapela y sigue comiéndose el metal. El aluminio, en cambio, forma una capa delgadísima que lo protege.
 ¿Qué es lo que más se oxida en tu casa? 👇
-Shot Químico #21 · La Creación del Robert
+Shot Químico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Oxido
 ```
@@ -72,14 +72,14 @@ Para oxidarse, el hierro necesita oxígeno y agua juntos. Las sales marinas acel
 Hay excepciones instructivas: el pilar de hierro de Delhi, de más de 1600 años, resiste la corrosión. En 2002, R. Balasubramaniam (IIT Kanpur) explicó con un modelo cinético que el fósforo del hierro ayuda a formar una capa compacta de δ-FeOOH y fosfatos.
 Por qué importa: el estudio IMPACT de NACE International (2016) estimó el costo mundial de la corrosión en 2.5 billones de dólares al año (≈ 3.4 % del PIB mundial de 2013) y que las prácticas de control disponibles podrían ahorrar entre 15 y 35 % de ese costo.
 ¿En tu industria, la corrosión se gestiona como prevención o como reparación?
-Shot Químico #21 · La Creación del Robert
+Shot Químico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Corrosion #Materiales #Ingenieria #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esa reja no se está ensuciando: está regresando a ser óxido. El hierro necesita oxígeno y agua; la sal lo acelera. En 2016 se estimó que la corrosión cuesta al mundo 2.5 billones de dólares al año. 🟠 Shot Químico #21 #Quimica
+Esa reja no se está ensuciando: está regresando a ser óxido. El hierro necesita oxígeno y agua; la sal lo acelera. En 2016 se estimó que la corrosión cuesta al mundo 2.5 billones de dólares al año. 🟠 Shot Químico 21 #Quimica
 ```
 
 ### Threads
@@ -87,7 +87,7 @@ Esa reja no se está ensuciando: está regresando a ser óxido. El hierro necesi
 Esa reja no se está ensuciando: está regresando a ser óxido, como la piedra de donde salió. 🟠
 El óxido de hierro se agrieta y se descarapela, así que sigue comiéndose el metal; el aluminio forma una capa delgadísima que lo protege. Y en Delhi hay un pilar de hierro de más de 1600 años que resiste la corrosión.
 ¿Qué es lo que más se oxida en tu casa?
-Shot Químico #21 · La Creación del Robert
+Shot Químico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

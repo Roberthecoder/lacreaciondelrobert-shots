@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #22 · Esa estatua no nació verde (la pátina de la Estatua de la Libertad)
+# Publicación · Shot Químico 22 · Esa estatua no nació verde (la pátina de la Estatua de la Libertad)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ El cobre de tu casa que queda a la intemperie, como un tubo en la azotea, con lo
 El dibujo es esquemático.
 Fuentes: National Park Service · Bureš et al. 2019 · Matyi y Baboian 1986 · American Chemical Society 2017.
 ¿Tienes algo de cobre en tu casa que ya se puso verde? 👇
-Shot Químico #22 · La Creación del Robert
+Shot Químico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #EstatuaDeLaLibertad #Cobre #Patina
 ```
@@ -25,7 +25,7 @@ Esa estatua no nació verde: es de cobre, color moneda; lo verde es una costra q
 En 1886 era café, como un centavo. El oxígeno formó cuprita, una capa oscura; luego el azufre de la contaminación, en la lluvia, la volvió brochantita, un sulfato de cobre verde que casi no se disuelve y protege al cobre. Tardó unos 30 años. En 1986, con rayos X, vieron que un pedazo de 1905 era brochantita estable y uno de 1980 traía antlerita, menos estable. Y en 1906 planearon pintarla… pero hubo protestas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tienes algo de cobre que ya se puso verde? 👇
-Shot Químico #22 · La Creación del Robert
+Shot Químico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #EstatuaDeLaLibertad #Cobre #Patina
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa estatua no nació verde 🗽 | Shot Químico #22
+Esa estatua no nació verde 🗽 | Shot Químico 22
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Yuko E. (2025). The Statue of Liberty Wasn't Always Green. HISTORY. https://www.history.com/articles/statue-of-liberty-green-color-change
 - Periódicos de época (Library of Congress, Chronicling America): The Evening World, 19 jul 1906; The San Francisco Call, 12 ago 1906; The Evening Star and Newark Advertiser, 16 ago 1907.
 ¿Tienes algo de cobre en tu casa que ya se puso verde? 👇
-Shot Químico #22 · La Creación del Robert
+Shot Químico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #EstatuaDeLaLibertad
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa estatua no nació verde: es de cobre, color moneda; lo verde es una costra que la protege. 🗽 En 1886 era café como un centavo; el aire y el azufre de la contaminación la cubrieron de brochantita, un sulfato de cobre verde que protege al metal. Tardó unos 30 años.
 ¿Tienes algo de cobre que ya se puso verde? 👇
-Shot Químico #22 · La Creación del Robert
+Shot Químico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #EstatuaDeLaLibertad
 ```
@@ -72,14 +72,14 @@ La Estatua de la Libertad no nació verde: es de cobre, y lo verde es una pátin
 Su piel es cobre de 2.4 mm. Al aire, el cobre forma primero cuprita (Cu₂O); en atmósferas con dióxido de azufre, esa capa se transforma en brochantita, un sulfato básico de cobre verde e insoluble que funciona como barrera. A la estatua le tomó unos 30 años quedar cubierta.
 En 1986, como parte de la restauración, Matyi y Baboian analizaron la pátina con difracción de rayos X: una pieza retirada en 1905 era brochantita estable y una de 1980 contenía antlerita, menos estable, y se sospechó de la lluvia ácida. Es un buen ejemplo de cómo la ciencia de materiales apoya la conservación del patrimonio: a veces la corrosión es la que protege.
 ¿Conoces otros casos en que un producto de corrosión proteja al material?
-Shot Químico #22 · La Creación del Robert
+Shot Químico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeMateriales #Corrosion #Patrimonio #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-La Estatua de la Libertad no nació verde: es de cobre. En 1886 era café como un centavo; en unos 30 años la cubrió brochantita, un sulfato de cobre verde que la protege. 🗽 Shot Químico #22 #Quimica
+La Estatua de la Libertad no nació verde: es de cobre. En 1886 era café como un centavo; en unos 30 años la cubrió brochantita, un sulfato de cobre verde que la protege. 🗽 Shot Químico 22 #Quimica
 ```
 
 ### Threads
@@ -87,7 +87,7 @@ La Estatua de la Libertad no nació verde: es de cobre. En 1886 era café como u
 Esa estatua no nació verde: es de cobre, color moneda; lo verde es una costra que la protege. 🗽
 Primero se forma cuprita, oscura; luego el azufre de la contaminación, en la lluvia, la vuelve brochantita, un sulfato de cobre verde. Tardó unos 30 años. Y en 1906 planearon pintarla, pero hubo protestas.
 ¿Tienes algo de cobre que ya se puso verde?
-Shot Químico #22 · La Creación del Robert
+Shot Químico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

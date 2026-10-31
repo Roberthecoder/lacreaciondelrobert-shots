@@ -1,4 +1,4 @@
-# Publicación · Shot IA #41 · La imagen hecha con IA que ganó un concurso de arte
+# Publicación · Shot IA 41 · La imagen hecha con IA que ganó un concurso de arte
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ La pregunta no es cuál es más bonito, sino cuánto puso la mano humana.
 Las obras del video son dibujos nuestros que evocan las originales; no son las imágenes reales. El dibujo es esquemático.
 Fuentes: Junta de Revisión de la Oficina de Derechos de Autor de EE. UU. (2023); Smithsonian Magazine (2022); Boris Eldagsen (2023); U.S. Copyright Office, Parte 2 (2025).
 ¿Para ti, una imagen hecha con IA puede ganar un concurso de arte? 👇
-Shot IA #41 · La Creación del Robert
+Shot IA 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ArteConIA #DerechosDeAutor #Midjourney
 ```
@@ -26,7 +26,7 @@ Reto: una de estas tres obras ganó un concurso de arte, y se hizo con IA. ¿Cu�
 Théâtre D'opéra Spatial, de Jason M. Allen, ganó en 2022 el primer lugar de arte digital en la Feria Estatal de Colorado. La hizo con Midjourney (según él, unas 80 horas y más de 900 versiones). En 2023, la Oficina de Derechos de Autor de EE. UU. le negó el registro: la imagen base no tenía autoría humana, aunque él dijo haber dado instrucciones al menos 624 veces. Ese año, Boris Eldagsen ganó un premio de fotografía de Sony con una imagen de IA y lo rechazó: "La IA no es fotografía". En 2025 la Oficina lo resumió: la IA como herramienta sí, las instrucciones solas no bastan.
 Las obras del video son dibujos nuestros, no las originales. Fuentes en el primer comentario.
 ¿Para ti, una imagen hecha con IA puede ganar un concurso de arte? 👇
-Shot IA #41 · La Creación del Robert
+Shot IA 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ArteConIA #DerechosDeAutor #Midjourney
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La imagen hecha con IA que ganó un concurso de arte 🎨 | Shot IA #41
+La imagen hecha con IA que ganó un concurso de arte 🎨 | Shot IA 41
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Reto: una de estas tres obras ganó un concurso de arte, y se hizo con IA. ¿Cuál es? 🎨 En 2022 ganó en la Feria Estatal de Colorado una imagen hecha con Midjourney. En 2023, la Oficina de Derechos de Autor de EE. UU. le negó el registro porque la imagen base no tenía autoría humana. La pregunta no es cuál es más bonito, sino cuánto puso la mano humana.
 ¿Para ti, una imagen hecha con IA puede ganar un concurso de arte? 👇
-Shot IA #41 · La Creación del Robert
+Shot IA 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ArteConIA
 ```
@@ -72,7 +72,7 @@ Ese mismo año, Boris Eldagsen ganó un premio de fotografía de Sony con una im
 En enero de 2025, el informe de la Oficina (Parte 2) dejó un criterio útil para quien crea con estas herramientas: usar la IA como apoyo no quita la protección de lo que la persona crea, selecciona, ordena o modifica; las instrucciones por sí solas, con la tecnología actual, no bastan.
 Para equipos creativos y de marketing la pregunta práctica no es si se usó IA, sino cuánto aporte humano se puede demostrar.
 ¿Cómo documentan en tu equipo el aporte humano en trabajos hechos con IA?
-Shot IA #41 · La Creación del Robert
+Shot IA 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #DerechosDeAutor #PropiedadIntelectual #ArteConIA #LaCreacionDelRobert
 ```
@@ -87,7 +87,7 @@ Una imagen hecha con IA ganó un concurso de arte en Colorado (2022). En 2023, l
 Reto: una de estas tres obras ganó un concurso de arte, y se hizo con IA. ¿Cuál es? 🎨
 Ganó en 2022 en la Feria Estatal de Colorado. En 2023, la Oficina de Derechos de Autor de EE. UU. le negó el registro: la imagen base no tenía autoría humana. Ese año, Boris Eldagsen rechazó un premio de Sony: "La IA no es fotografía".
 ¿Para ti, una imagen hecha con IA puede ganar un concurso de arte?
-Shot IA #41 · La Creación del Robert
+Shot IA 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```

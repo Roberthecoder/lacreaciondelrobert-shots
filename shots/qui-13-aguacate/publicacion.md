@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #13 · Ese guacamole café no está podrido (polifenol oxidasa y el mito del hueso)
+# Publicación · Shot Químico 13 · Ese guacamole café no está podrido (polifenol oxidasa y el mito del hueso)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ El limón ayuda porque su ácido baja el pH y la enzima trabaja más lento; un p
 Un poco de café no es echado a perder; si huele mal, sabe agrio o tiene moho, eso sí. El dibujo es esquemático.
 Fuentes: Kahn 1975 · Hamdan et al. 2022 · Tilley et al. 2023 · Moon et al. 2020 · Live Science 2012 y 2025.
 ¿Tú le dejas el hueso al guacamole? 👇
-Shot Químico #13 · La Creación del Robert
+Shot Químico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Guacamole #Aguacate #CienciaEnLaCocina
 ```
@@ -24,7 +24,7 @@ Ese guacamole café no está podrido: es una enzima del aguacate pintándolo con
 Al machacarlo rompes sus células: la polifenol oxidasa junta los polifenoles con el oxígeno y salen pigmentos cafés (melaninas). Por eso solo se pone café arriba. En 1975, en Israel, la variedad con más de esa enzima fue la que más rápido se oscureció. El limón la frena (baja el pH), el plástico pegado le quita casi todo el aire y el hueso… solo protege lo que toca.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú le dejas el hueso al guacamole? 👇
-Shot Químico #13 · La Creación del Robert
+Shot Químico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Guacamole #Aguacate #CienciaEnLaCocina
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu guacamole café NO está podrido 🥑 | Shot Químico #13
+Tu guacamole café NO está podrido 🥑 | Shot Químico 13
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Live Science (2012). Can an Avocado Pit Really Keep Guacamole From Turning Brown? https://www.livescience.com/33660-guacamole-avocado-pit-prevent-brown.html
 - Live Science (2025). Why do avocados turn brown so quickly — and are they OK to eat at that point? https://www.livescience.com/chemistry/why-do-avocados-turn-brown-so-quickly-and-are-they-ok-to-eat-at-that-point
 ¿Tú le dejas el hueso al guacamole? 👇
-Shot Químico #13 · La Creación del Robert
+Shot Químico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Guacamole
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese guacamole café no está podrido: es una enzima del aguacate pintándolo con oxígeno del aire. 🥑 La polifenol oxidasa junta los polifenoles con el oxígeno y salen pigmentos cafés. El limón la frena, el plástico pegado le quita casi todo el aire… y el hueso solo protege lo que toca.
 ¿Tú le dejas el hueso al guacamole? 👇
-Shot Químico #13 · La Creación del Robert
+Shot Químico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Guacamole
 ```
@@ -69,14 +69,14 @@ Soy Robert, de La Creación del Robert 🌱
 El guacamole café no está podrido: es oscurecimiento enzimático. Al machacar el aguacate se rompen las células y la polifenol oxidasa (PPO), una enzima con dos átomos de cobre en su centro, oxida los polifenoles con el oxígeno del aire; las quinonas resultantes se encadenan en melaninas cafés.
 En 1975, Varda Kahn (Volcani Center, Israel) mostró que, entre tres variedades de aguacate, la rapidez del oscurecimiento iba de la mano con la actividad de PPO. Hoy se controla con lo mismo que hacemos en casa: acidificar (el ácido cítrico baja el pH y frena la enzima) y limitar el oxígeno. El famoso hueso solo protege la superficie que toca, porque tapa el aire.
 ¿Qué otro "truco de cocina" funciona, pero por una razón distinta a la que creemos?
-Shot Químico #13 · La Creación del Robert
+Shot Químico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeAlimentos #Enzimas #DivulgacionCientifica #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese guacamole café no está podrido: es la polifenol oxidasa del aguacate oxidando sus polifenoles con el aire. El limón la frena; el hueso solo protege lo que toca. 🥑 Shot Químico #13 #Quimica
+Ese guacamole café no está podrido: es la polifenol oxidasa del aguacate oxidando sus polifenoles con el aire. El limón la frena; el hueso solo protege lo que toca. 🥑 Shot Químico 13 #Quimica
 ```
 
 ### Threads
@@ -84,7 +84,7 @@ Ese guacamole café no está podrido: es la polifenol oxidasa del aguacate oxida
 Ese guacamole café no está podrido: es una enzima del aguacate pintándolo con oxígeno del aire. 🥑
 Por eso solo se pone café arriba. El limón la frena, el plástico pegado casi no deja llegar aire y el hueso… daría igual una pelota de golf.
 ¿Tú le dejas el hueso?
-Shot Químico #13 · La Creación del Robert
+Shot Químico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

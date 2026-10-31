@@ -14,7 +14,7 @@ El agave deja otro residuo, el bagazo: las fibras de la piña exprimida. En el C
 El dibujo es esquemático.
 Fuentes: CIATEJ (Enfoques Transdisciplinarios, 2025), Larios-Ulloa y Ramírez-Muñoz 2024, FDA (pH de alimentos).
 ¿En tu región qué se hace con lo que sobra del tequila o del mezcal? 👇
-Shot Ambiental #01 · La Creación del Robert
+Shot Ambiental 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Tequila #Jalisco #Biotecnologia
 ```
@@ -25,7 +25,7 @@ Un litro de tequila no deja solo una botella vacía: deja 12 litros de un líqui
 Es la vinaza, lo que queda en el alambique. Un solo litro puede contaminar 20 litros de agua: en un río, las bacterias se la comen, gastan el oxígeno y los peces se asfixian. En un reactor sin aire, otros microbios la convierten en biogás, y del bagazo del agave pueden crecer hongos seta (Pleurotus ostreatus). Yo estoy armando mi granja de hongos sobre bagazo: pronto se las enseño.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu región qué se hace con lo que sobra del tequila o del mezcal? 👇
-Shot Ambiental #01 · La Creación del Robert
+Shot Ambiental 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Tequila #Jalisco #Biotecnologia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un litro de tequila deja 12 litros de vinaza 🥃 | Shot Ambiental #01
+Un litro de tequila deja 12 litros de vinaza 🥃 | Shot Ambiental 01
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - FDA. Approximate pH of Foods and Food Products (jugo de naranja, 3.30–4.19).
 
 ¿En tu región qué se hace con lo que sobra del tequila o del mezcal? 👇
-Shot Ambiental #01 · La Creación del Robert
+Shot Ambiental 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CienciaAmbiental #Tequila
 ```
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Un litro de tequila no deja solo una botella vacía: deja 12 litros de vinaza, un líquido café y ácido; un solo litro de vinaza puede contaminar 20 litros de agua. 🥃 La biotecnología la convierte en biogás, y del bagazo del agave crecen hongos. ¿En tu región qué se hace con lo que sobra del tequila? 👇
-Shot Ambiental #01 · La Creación del Robert
+Shot Ambiental 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Tequila
 ```
@@ -67,7 +67,7 @@ La vinaza es lo que queda en el alambique al destilar: un líquido ácido (pH de
 Por qué importa: la misma revisión reúne rutas de valorización con enfoque de economía circular. En digestión anaerobia, los microbios la convierten en biogás (metano); también se estudia obtener hidrógeno, proteína unicelular y enzimas. Y el bagazo del agave sirve como sustrato para cultivar hongo seta (Pleurotus ostreatus), como mostró un estudio del Centro Universitario de los Lagos (UdeG, 2024).
 El residuo más grande de una industria emblemática puede ser materia prima.
 ¿Qué tendría que pasar para que tratar la vinaza sea negocio y no solo obligación?
-Shot Ambiental #01 · La Creación del Robert
+Shot Ambiental 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #EconomiaCircular #Tequila #Biotecnologia
 ```
@@ -94,7 +94,7 @@ La vinaza es lo que queda en el alambique: café, ácida (pH de 3 a 5) y tan car
 El dibujo es esquemático.
 Fuentes: CIATEJ (2025), Larios-Ulloa y Ramírez-Muñoz 2024.
 ¿Escuchaste cuándo se ahoga la música? 👇
-Shot Ambiental #01 · La Creación del Robert
+Shot Ambiental 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Tequila #Jalisco #Biotecnologia
 ```
@@ -105,7 +105,7 @@ Soy Robert, de La Creación del Robert 🌱
 La música se ahoga cuando el río se queda sin oxígeno y se libera cuando los microbios convierten la vinaza en biogás. Al final, cada hongo seta que crece sobre bagazo de agave es una nota.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Escuchaste cuándo se ahoga la música? 👇
-Shot Ambiental #01 · La Creación del Robert
+Shot Ambiental 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Tequila #Jalisco #Biotecnologia
 ```
@@ -126,7 +126,7 @@ Fuentes:
 - Larios-Ulloa y Ramírez-Muñoz. Rev. Mex. Cienc. Agríc. 15(7) (2024): https://doi.org/10.29312/remexca.v15i7.3394
 
 ¿Escuchaste cuándo se ahoga la música? 👇
-Shot Ambiental #01 · La Creación del Robert
+Shot Ambiental 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CienciaAmbiental #Tequila
 ```
@@ -134,7 +134,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 🎧 12 notas = los 12 litros de vinaza que deja, en promedio, cada litro de tequila. 🥃 La música se ahoga en el río sin oxígeno y se libera con el biogás. ¿Escuchaste cuándo cambia? 👇
-Shot Ambiental #01 · La Creación del Robert
+Shot Ambiental 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #41 · Tu cerebro no se congela: es tu paladar
+# Publicación · Shot Científico 41 · Tu cerebro no se congela: es tu paladar
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Así que no se congela tu cerebro: es tu paladar mandando la alarma a tu frente.
 El dibujo es esquemático.
 Fuentes: ICHD-3; Bonemazzi et al. 2023; Harvard Health 2026; Cleveland Clinic; Serrador et al. 2012 (Experimental Biology); Kaczorowski y Kaczorowski 2002 (BMJ).
 ¿A ti también te pasa con el helado o con las bebidas heladas? 👇
-Shot Científico #41 · La Creación del Robert
+Shot Científico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Helado
 ```
@@ -27,7 +27,7 @@ No es tu cerebro congelándose: la idea más aceptada es que el frío en tu pala
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti también te pasa con el helado o con las bebidas heladas? 👇
-Shot Científico #41 · La Creación del Robert
+Shot Científico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Helado
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu cerebro no se congela: es tu paladar 🍦 | Shot Científico #41
+Tu cerebro no se congela: es tu paladar 🍦 | Shot Científico 41
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Serrador, J. et al. (2012). Cerebral Vascular Blood Flow Changes During "Brain Freeze". Resumen presentado en Experimental Biology 2012 (comunicado de la American Physiological Society). https://www.eurekalert.org/news-releases/816505
 - Kaczorowski, M. y Kaczorowski, J. (2002). Ice cream evoked headaches (ICE-H) study: randomised trial of accelerated versus cautious ice cream eating regimen. BMJ 325: 1445–1446. https://pmc.ncbi.nlm.nih.gov/articles/PMC139031/
 ¿A ti también te pasa con el helado o con las bebidas heladas? 👇
-Shot Científico #41 · La Creación del Robert
+Shot Científico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese dolor de cabeza por comer helado rápido no es tu cerebro congelándose: el frío empieza en tu paladar y lo sientes en la frente. 🍦 Pega la lengua al techo de la boca o toma algo tibio; casi siempre se quita solo en menos de 2 minutos.
 ¿A ti también te pasa con el helado o con las bebidas heladas? 👇
-Shot Científico #41 · La Creación del Robert
+Shot Científico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -72,7 +72,7 @@ Soy Robert, de La Creación del Robert 🌱
 El llamado «brain freeze» tiene nombre clínico: cefalea por estímulo frío (ICHD-3, 4.5). El frío actúa en el paladar o la garganta, pero el dolor se siente en la frente o las sienes: un ejemplo cotidiano de dolor referido a través del nervio trigémino.
 Un resumen presentado en Experimental Biology 2012 (Serrador et al., Harvard) reportó que la arteria cerebral anterior se dilataba al empezar el dolor y se contraía al ceder. Y un ensayo aleatorizado con estudiantes en Canadá (BMJ, 2002) encontró que comer helado despacio reduce la probabilidad de que aparezca.
 ¿Qué otro fenómeno cotidiano te gustaría ver explicado por dentro?
-Shot Científico #41 · La Creación del Robert
+Shot Científico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

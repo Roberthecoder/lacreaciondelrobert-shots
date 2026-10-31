@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #10 · Tu suéter se deshace en plástico cada vez que lo lavas
+# Publicación · Shot Ambiental 10 · Tu suéter se deshace en plástico cada vez que lo lavas
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Ojo: también sueltas fibras solo con traer la ropa puesta.
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú lavas en frío o en caliente? 👇
-Shot Ambiental #10 · La Creación del Robert
+Shot Ambiental 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Microplasticos #Microfibras #Lavadora
 ```
@@ -27,7 +27,7 @@ Ese suéter no solo se ensucia: al lavarlo, se deshace en hilitos de plástico. 
 Qué ayuda: lavar en frío, ciclo corto, carga llena (el delicado suelta más) y un filtro en la salida de la lavadora (el mejor atrapó cerca del 78 % en 2020).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú lavas en frío o en caliente? 👇
-Shot Ambiental #10 · La Creación del Robert
+Shot Ambiental 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Microplasticos #Microfibras #Lavadora
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu suéter suelta 700 mil fibras de plástico en una lavada 🧶 | Shot Ambiental #10
+Tu suéter suelta 700 mil fibras de plástico en una lavada 🧶 | Shot Ambiental 10
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Kelly et al. (2019), Environmental Science & Technology: https://pubmed.ncbi.nlm.nih.gov/31460752/
 - Napper, Barrett y Thompson (2020), Science of the Total Environment: https://pubmed.ncbi.nlm.nih.gov/32682545/
 ¿Tú lavas en frío o en caliente? 👇
-Shot Ambiental #10 · La Creación del Robert
+Shot Ambiental 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Microplasticos #Microfibras
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu ropa sintética suelta fibras de plástico en cada lavada: 6 kg de ropa acrílica, más de 700 mil fibras (Universidad de Plymouth, 2016). 🧶 Lavar en frío, en ciclo corto y con la carga llena ayuda.
 ¿Tú lavas en frío o en caliente? 👇
-Shot Ambiental #10 · La Creación del Robert
+Shot Ambiental 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Microplasticos #Microfibras
 ```
@@ -73,7 +73,7 @@ Una carga de 6 kg de ropa acrílica puede soltar más de 700 mil microfibras de 
 El tratamiento de aguas no lo resuelve del todo: en un estudio de 2016 en una planta de Escocia se retenía el 98.41 % de los microplásticos, pero el volumen de agua hacía que aun así salieran unos 65 millones al día. Lo retenido se concentra en los lodos, que a menudo se aplican como abono agrícola; en lodos de Chile (2019), el 90 % de los microplásticos eran fibras.
 Hay palancas en varios puntos de la cadena: ciclos fríos y cortos (Leeds, 2020), cargas llenas y menos agua por kilo de ropa (Newcastle, 2019), y filtros a la salida de la lavadora (el mejor de 6 dispositivos redujo cerca del 78 % en 2020). Los autores también señalan que importan el diseño textil y que la ropa suelta fibras al usarse.
 ¿Quién debería mover primero: fabricantes de lavadoras, de ropa o las plantas de tratamiento?
-Shot Ambiental #10 · La Creación del Robert
+Shot Ambiental 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Microplasticos #Textiles #Agua #LaCreacionDelRobert
 ```

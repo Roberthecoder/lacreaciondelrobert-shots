@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #53 · El pelo y las uñas no crecen después de morir
+# Publicación · Shot Científico 53 · El pelo y las uñas no crecen después de morir
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Así que ese crecimiento es una ilusión: no crece el pelo, se retira la piel.
 El dibujo es esquemático.
 Fuentes: Vreeman y Carroll, BMJ (2007); Yaemsiri et al., JEADV (2010); Wolff et al., Dtsch Arztebl Int (2016); Live Science (2016).
 ¿Tú también habías escuchado este mito? 🤔 👇
-Shot Científico #53 · La Creación del Robert
+Shot Científico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Mitos #Biologia
 ```
@@ -27,7 +27,7 @@ Para crecer, el pelo y las uñas necesitan que sus células se dividan, y eso re
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú también habías escuchado este mito? 🤔 👇
-Shot Científico #53 · La Creación del Robert
+Shot Científico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Mitos #Biologia
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿El pelo y las uñas crecen después de morir? No 💅 | Shot Científico #53
+¿El pelo y las uñas crecen después de morir? No 💅 | Shot Científico 53
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Wolff, H., Fischer, T. W. y Blume-Peytavi, U. (2016). The diagnosis and treatment of hair and scalp diseases. Dtsch Arztebl Int 113: 377–386. https://pmc.ncbi.nlm.nih.gov/articles/PMC4908932/
 - Geggel, L. (2016). Do hair and nails keep growing after death? Live Science. https://www.livescience.com/32174-do-hair-and-nails-keep-growing-after-death.html
 ¿Tú también habías escuchado este mito? 🤔 👇
-Shot Científico #53 · La Creación del Robert
+Shot Científico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Mitos
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 El pelo y las uñas no siguen creciendo después de morir: es la piel la que se encoge. 💅 Para crecer necesitan células que se dividan, y eso requiere energía que llega con la sangre. Lo que pasa es que la piel pierde agua, se retrae y deja ver partes de pelo y uña que estaban bajo la piel. Parece que crecieron, pero no crecieron nada. En vida, las uñas de las manos crecen unos 3.5 mm al mes (estudio de 2010) y el pelo de la cabeza cerca de 1 cm al mes (revisión de 2016).
 El dibujo es esquemático.
 ¿Tú también habías escuchado este mito? 🤔 👇
-Shot Científico #53 · La Creación del Robert
+Shot Científico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -72,7 +72,7 @@ Soy Robert, de La Creación del Robert 🌱
 Un mito médico muy repetido: que el pelo y las uñas siguen creciendo después de la muerte. No es así. Su crecimiento depende de células que se dividen, y eso requiere energía que llega con la sangre (oxígeno y glucosa); sin circulación, esas células se detienen.
 Lo que ocurre es que la piel se deshidrata y se retrae, y deja expuestas partes del pelo y de las uñas que antes estaban bajo la piel: una ilusión óptica, como explicaron Vreeman y Carroll en el BMJ (2007).
 Como referencia, en vida las uñas de las manos crecen unos 3.5 mm al mes (Yaemsiri et al., 2010) y el pelo de la cabeza cerca de 1 cm al mes (Wolff et al., 2016).
-Shot Científico #53 · La Creación del Robert
+Shot Científico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

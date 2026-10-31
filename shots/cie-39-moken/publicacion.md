@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #39 · Los niños moken veían mejor bajo el agua
+# Publicación · Shot Científico 39 · Los niños moken veían mejor bajo el agua
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que ver bajo el agua no es un superpoder: es algo que los ojos de un niño 
 El dibujo es esquemático.
 Fuentes: Gislén et al. 2003 (Current Biology) y 2006 (Vision Research).
 ¿Tú abres los ojos bajo el agua? 👇
-Shot Científico #39 · La Creación del Robert
+Shot Científico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Ojos
 ```
@@ -28,7 +28,7 @@ Bajo el agua la córnea casi pierde su poder y todo se ve borroso. Pero en 2003,
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú abres los ojos bajo el agua? 👇
-Shot Científico #39 · La Creación del Robert
+Shot Científico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Ojos
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Niños que veían bajo el agua sin visor 🌊 | Shot Científico #39
+Niños que veían bajo el agua sin visor 🌊 | Shot Científico 39
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Gislén, A. et al. (2006). Visual training improves underwater vision in children. Vision Research 46(20): 3443–3450. https://pubmed.ncbi.nlm.nih.gov/16806388/
 - Moken (pueblo del mar de Andamán). Wikipedia. https://en.wikipedia.org/wiki/Moken
 ¿Tú abres los ojos bajo el agua? 👇
-Shot Científico #39 · La Creación del Robert
+Shot Científico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Ojos
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Hubo niños que veían bajo el agua mejor que tú, sin visor: los niños moken, del mar de Andamán. 🌊 Cierran mucho la pupila y acomodan el cristalino, como una cámara. Y en 2006, niños europeos entrenados un mes también lo lograron: se puede aprender.
 ¿Tú abres los ojos bajo el agua? 👇
-Shot Científico #39 · La Creación del Robert
+Shot Científico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -73,7 +73,7 @@ En 2003, Anna Gislén y su equipo (Universidad de Lund) midieron la vista bajo e
 En 2006, el mismo grupo entrenó a niños europeos durante un mes (11 sesiones) y alcanzaron la misma agudeza bajo el agua.
 Un buen recordatorio de lo mucho que se puede entrenar lo que creemos fijo.
 ¿Qué habilidad crees que se entrena más de lo que pensamos?
-Shot Científico #39 · La Creación del Robert
+Shot Científico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

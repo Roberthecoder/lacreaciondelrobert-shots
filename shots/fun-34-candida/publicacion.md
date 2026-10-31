@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #34 · La levadura que puedes compartir con tu pareja: Candida albicans
+# Publicación · Shot Fungi Mati 34 · La levadura que puedes compartir con tu pareja: Candida albicans
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Cuando crece de más en la boca aparece el algodoncillo (candidiasis oral): plac
 El dibujo es esquemático. No es consejo médico: si tienes placas blancas en la boca que no se van, consulta a tu médico o dentista.
 Fuentes: Gerós-Mesquita et al. 2020 (J. Oral Microbiol.); Mayer, Wilson y Hube 2013 (Virulence); Moyes et al. 2016 (Nature); CDC.
 ¿A ti o a alguien de tu casa le ha dado algodoncillo? 👇
-Shot Fungi Mati #34 · La Creación del Robert
+Shot Fungi Mati 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Candida #Microbiota
 ```
@@ -25,7 +25,7 @@ Tú y tu pareja pueden traer en la boca la misma cepa de levadura: Candida albic
 Vive en la boca, el intestino y la piel de mucha gente sana, casi siempre sin síntomas, y se cree que tus bacterias la mantienen a raya. Su truco es cambiar de forma: de levadura ovalada a hifa, la forma más invasora. En 2016, un estudio en Nature (Londres y Jena) halló que las hifas sueltan una toxina, la candidalisina, que daña tus células. Cuando crece de más aparece el algodoncillo: placas blancas en la lengua y los cachetes.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿A ti o a alguien de tu casa le ha dado algodoncillo? 👇
-Shot Fungi Mati #34 · La Creación del Robert
+Shot Fungi Mati 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Candida #Microbiota
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu pareja y tú pueden compartir este hongo de la boca 👄 | Shot Fungi Mati #34
+Tu pareja y tú pueden compartir este hongo de la boca 👄 | Shot Fungi Mati 34
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Moyes, D. L. et al. (2016). Candidalysin is a fungal peptide toxin critical for mucosal infection. Nature 532(7597): 64–68. https://pmc.ncbi.nlm.nih.gov/articles/PMC4851236/
 - CDC. About Candidiasis · Symptoms · Risk Factors. https://www.cdc.gov/candidiasis/about/index.html · https://www.cdc.gov/candidiasis/signs-symptoms/index.html · https://www.cdc.gov/candidiasis/risk-factors/index.html
 ¿A ti o a alguien de tu casa le ha dado algodoncillo? 👇
-Shot Fungi Mati #34 · La Creación del Robert
+Shot Fungi Mati 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Candida #FungiMati
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 Tú y tu pareja pueden traer en la boca la misma cepa de levadura: Candida albicans. 👄 Casi siempre no causa síntomas y tus bacterias la mantienen a raya, pero cuando crece de más puede aparecer el algodoncillo; sus hifas sueltan una toxina (la candidalisina) clave para infectar: placas blancas en la lengua y los cachetes.
 El dibujo es esquemático. No es consejo médico.
 ¿A ti o a alguien de tu casa le ha dado algodoncillo? 👇
-Shot Fungi Mati #34 · La Creación del Robert
+Shot Fungi Mati 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Candida
 ```
@@ -71,7 +71,7 @@ Un hongo que casi todos ignoramos vive con nosotros: Candida albicans.
 Forma parte de la microbiota normal de la boca, el intestino y la piel, y en la mayoría de las personas no causa daño (Mayer et al., Virulence, 2013). Un estudio en Portugal (2020) encontró el mismo genotipo en algunas parejas; los autores concluyen que la intimidad aumenta la probabilidad de colonización cruzada, aunque la transmisión no fue lo dominante. Su virulencia depende de cambiar de forma: la hifa invade el epitelio y secreta candidalisina, la primera toxina peptídica citolítica aislada de un hongo patógeno humano (Moyes et al., Nature, 2016, King's College London y Hans Knöll Institute, Jena). Sin ella, las cepas no causaban infección de mucosas en ratones.
 Por qué importa: los antibióticos de amplio espectro, la dentadura postiza y los corticoides inhalados aumentan el riesgo de candidiasis oral (CDC). Entender el equilibrio entre bacterias y hongos ayuda a prevenirla.
 ¿Conocías la candidalisina?
-Shot Fungi Mati #34 · La Creación del Robert
+Shot Fungi Mati 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Microbiologia #Microbiota #Ciencia
 ```
@@ -84,7 +84,7 @@ Tú y tu pareja pueden compartir la misma cepa de Candida albicans en la boca. C
 ### Threads
 ```text
 Tú y tu pareja pueden traer en la boca la misma cepa de levadura: Candida albicans. 👄 Casi siempre no causa síntomas y se cree que tus bacterias la mantienen a raya. Sus hifas sueltan una toxina y, cuando crece de más, aparece el algodoncillo. ¿A ti o a alguien de tu casa le ha dado?
-Shot Fungi Mati #34 · La Creación del Robert
+Shot Fungi Mati 34 · La Creación del Robert
 #Hongos
 ```
 

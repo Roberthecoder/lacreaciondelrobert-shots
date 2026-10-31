@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #34 · El limpiapeceras que se comió la pesca de El Infiernillo
+# Publicación · Shot Ambiental 34 · El limpiapeceras que se comió la pesca de El Infiernillo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Si tu limpiapeceras ya no cabe, no lo sueltes: busca un acuario que lo cambie.
 El dibujo es esquemático.
 Fuentes: CONABIO (Biodiversitas 70, 2007) y Ciência Rural (2021).
 ¿Tú has visto un pez diablo en algún río o presa? 👇
-Shot Ambiental #34 · La Creación del Robert
+Shot Ambiental 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #PezDiablo #EspeciesInvasoras #Michoacan
 ```
@@ -27,7 +27,7 @@ El pez diablo o pleco (Pterygoplichthys) viene del Amazonas, llega a medir medio
 Si tu limpiapeceras ya no cabe, no lo sueltes: busca un acuario que lo cambie.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú has visto un pez diablo en algún río o presa? 👇
-Shot Ambiental #34 · La Creación del Robert
+Shot Ambiental 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #PezDiablo #EspeciesInvasoras #Acuarios
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este "limpiapeceras" invadió los ríos de México 🐟 | Shot Ambiental #34
+Este "limpiapeceras" invadió los ríos de México 🐟 | Shot Ambiental 34
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Jiménez-Badillo 2004, Hidrobiológica 14(1): producción máxima de la presa en 1987.
 - Cano-Salgado et al. 2021, Ciência Rural 52(1): https://doi.org/10.1590/0103-8478cr20200801
 ¿Tú has visto un pez diablo en algún río o presa? 👇
-Shot Ambiental #34 · La Creación del Robert
+Shot Ambiental 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #PezDiablo #EspeciesInvasoras
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este limpiapeceras no es tu ayudante: es una de las mayores amenazas de los ríos de México. 🐟 En la presa El Infiernillo, CONABIO reportó en 2007 que del 70 al 80 % de la pesca de tilapia ya eran plecos. Si el tuyo ya no cabe en la pecera, no lo sueltes: busca un acuario que lo cambie.
 ¿Tú has visto un pez diablo en algún río o presa? 👇
-Shot Ambiental #34 · La Creación del Robert
+Shot Ambiental 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #PezDiablo #EspeciesInvasoras
 ```
@@ -70,7 +70,7 @@ Un pez que se vende como "limpiapeceras" es, según CONABIO, una de las mayores 
 Los plecos (Pterygoplichthys spp.) llegaron sobre todo por escapes de granjas de peces de ornato. Tienen placas óseas, respiran aire y cavan galerías de hasta 1.5 m que erosionan las orillas. En la presa El Infiernillo, que en los años ochenta producía cerca de 20 mil toneladas de tilapia y carpa al año y sostenía a 119 comunidades, CONABIO reportó en 2007 que entre el 70 y el 80 % de la captura de tilapia ya se había sustituido por plecos.
 La prevención (análisis de riesgo en granjas, no liberar mascotas) cuesta menos que el control. Y hay investigación para aprovecharlo: en 2021, un experimento en Tabasco mostró que su harina puede sustituir a la de sardina en el alimento de crías de tilapia.
 ¿Qué medida crees que funcionaría mejor contra las especies invasoras en México?
-Shot Ambiental #34 · La Creación del Robert
+Shot Ambiental 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #EspeciesInvasoras #Pesca #Biodiversidad #LaCreacionDelRobert
 ```

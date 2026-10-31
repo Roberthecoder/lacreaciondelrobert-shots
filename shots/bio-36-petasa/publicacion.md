@@ -13,7 +13,7 @@ Ojo: su planta industrial en Francia sigue en pausa y la planean para 2028. Y ni
 El dibujo es esquemático.
 Fuentes: Yoshida et al., Science 2016 · Tournier et al., Nature 2020 · Sulaiman et al., AEM 2012 · LPSN · Carbios 2026
 ¿En tu casa separan las botellas? 👇
-Shot Biotecnológico #36 · La Creación del Robert
+Shot Biotecnológico 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #reciclaje #plastico #bacterias
 ```
@@ -26,7 +26,7 @@ Pero es lenta: en 2016 tardó 6 semanas en deshacer casi toda una película de 0
 En 2020, en Francia, mejoraron una enzima de composta que partió el 90 % del PET en 10 horas, y con eso hicieron botellas nuevas. Su planta industrial sigue en pausa (meta: 2028). Y la enzima no recoge la basura: eso te toca a ti.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa separan las botellas? 👇
-Shot Biotecnológico #36 · La Creación del Robert
+Shot Biotecnológico 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #reciclaje #plastico #bacterias
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta bacteria se come el plástico PET ♻️ | Shot Biotecnológico #36
+Esta bacteria se come el plástico PET ♻️ | Shot Biotecnológico 36
 ```
 Descripción:
 ```text
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 Ese plástico no es basura: para una bacteria de Japón, es comida. ♻️🦠
 Ideonella sakaiensis parte el PET con dos enzimas, la PETasa y la MHETasa, y se come las piezas. Pero tardó 6 semanas con una película delgada. En 2020, en Francia, mejoraron una enzima de composta que partió el 90 % del PET en 10 horas. Aun así, el plástico tiene que llegar al reciclaje.
 ¿En tu casa separan las botellas? 👇
-Shot Biotecnológico #36 · La Creación del Robert
+Shot Biotecnológico 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #reciclaje
 ```
@@ -74,14 +74,14 @@ Su límite es la velocidad: a 30 °C tardó 6 semanas en degradar casi por compl
 Ahí entra la ingeniería de enzimas. En 2020, Toulouse Biotechnology Institute y Carbios publicaron en Nature una versión mejorada de una cutinasa hallada en composta (descrita en 2012) que despolimerizó al menos el 90 % del PET en 10 horas; con los monómeros recuperados se fabricaron botellas nuevas.
 El paso a escala industrial es otra historia: la planta de Carbios en Longlaville, Francia, sigue en pausa mientras cierra su financiamiento, con meta de arranque en 2028. Y el reciclaje enzimático depende de que el plástico se recolecte y se separe.
 ¿Qué crees que frena más al reciclaje: la tecnología o la recolección?
-Shot Biotecnológico #36 · La Creación del Robert
+Shot Biotecnológico 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Reciclaje #EconomiaCircular #Enzimas
 ```
 
 ### X
 ```text
-Ese plástico no es basura: para una bacteria de Japón, es comida. ♻️ Ideonella sakaiensis tardó 6 semanas en deshacer una película de PET; una enzima mejorada en 2020 partió el 90 % en 10 horas. Shot Biotecnológico #36 #Biotecnologia
+Ese plástico no es basura: para una bacteria de Japón, es comida. ♻️ Ideonella sakaiensis tardó 6 semanas en deshacer una película de PET; una enzima mejorada en 2020 partió el 90 % en 10 horas. Shot Biotecnológico 36 #Biotecnologia
 ```
 
 ### Threads
@@ -89,7 +89,7 @@ Ese plástico no es basura: para una bacteria de Japón, es comida. ♻️ Ideon
 Ese plástico no es basura: para una bacteria de Japón, es comida. ♻️
 Ideonella sakaiensis parte el PET con dos enzimas-tijera y se come las piezas, pero tardó 6 semanas con una película delgada. En 2020, en Francia, una enzima de composta mejorada partió el 90 % del PET en 10 horas. Su planta industrial sigue en pausa (meta 2028).
 ¿En tu casa separan las botellas? 👇
-Shot Biotecnológico #36 · La Creación del Robert
+Shot Biotecnológico 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #44 · Una lata reciclada gasta 5 % de la energía
+# Publicación · Shot Ambiental 44 · Una lata reciclada gasta 5 % de la energía
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que esa lata vacía no es basura: es una roca que ya no hay que volver a ex
 El dibujo es esquemático.
 Fuentes: International Aluminium Institute, The Aluminum Association.
 ¿Tú separas las latas en tu casa? 👇
-Shot Ambiental #44 · La Creación del Robert
+Shot Ambiental 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Reciclaje #Aluminio #Latas
 ```
@@ -27,7 +27,7 @@ Sacar aluminio de una lata vieja gasta solo el 5 % de la energía que sacarlo nu
 Hacer aluminio nuevo pide bauxita, química y una corriente eléctrica enorme que le arranca el oxígeno a la alúmina: 186 gigajulios por tonelada en 2019, contra unos 8 del reciclado (Instituto Internacional del Aluminio). Y se puede reciclar una y otra vez sin cambiar sus propiedades. Aun así, en 2023 en EE. UU. solo se reciclaron 43 de cada 100 latas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú separas las latas en tu casa? 👇
-Shot Ambiental #44 · La Creación del Robert
+Shot Ambiental 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Reciclaje #Aluminio #Latas
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta lata ahorra el 95 % de la energía ⚡ | Shot Ambiental #44
+Esta lata ahorra el 95 % de la energía ⚡ | Shot Ambiental 44
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Packaging Insights (20 mar 2025): https://www.packaginginsights.com/news/recycling-us-cans-circular-aluminum-sustainability.html
 - Aluminum Association y CMI, reporte KPI 2024: https://aluminum.org/sites/default/files/2024-12/2024_Aluminum-Can-KPI-Report_Final.pdf
 ¿Tú separas las latas en tu casa? 👇
-Shot Ambiental #44 · La Creación del Robert
+Shot Ambiental 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Reciclaje #Aluminio
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Sacar aluminio de una lata vieja gasta solo el 5 % de la energía que sacarlo nuevo de una roca de bauxita. 🥫⚡ Y se puede reciclar una y otra vez sin cambiar sus propiedades.
 ¿Tú separas las latas en tu casa? 👇
-Shot Ambiental #44 · La Creación del Robert
+Shot Ambiental 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Reciclaje #Aluminio
 ```
@@ -72,7 +72,7 @@ Sacar aluminio de una lata vieja gasta solo el 5 % de la energía que sacarlo nu
 Según el International Aluminium Institute, en 2019 la producción primaria de aluminio (de la mina a la fundición) consumía 186 GJ por tonelada, frente a unos 8.3 GJ del aluminio reciclado: alrededor de 95 % de ahorro. La diferencia está en la electrólisis Hall–Héroult, intensiva en electricidad. Para la lata completa, el reporte KPI 2024 de la industria estima un ahorro de cerca del 80 %.
 El aluminio se refunde sin cambiar sus propiedades, y un estudio de RRS (2025, pagado por la industria) calculó que en EE. UU. una lata vuelve a ser lata nueva en menos de 60 días. Aun así, la tasa de reciclaje de latas en EE. UU. fue de 43 % en 2023: más de 61 mil millones de latas no se reciclaron.
 ¿Qué crees que subiría más la tasa de reciclaje: sistemas de depósito, mejor recolección o diseño de envases?
-Shot Ambiental #44 · La Creación del Robert
+Shot Ambiental 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Reciclaje #EconomiaCircular #Aluminio #LaCreacionDelRobert
 ```

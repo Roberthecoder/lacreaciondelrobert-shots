@@ -1,4 +1,4 @@
-# Publicación · Shot IA #51 · Tu bocina inteligente se despierta sola con la tele
+# Publicación · Shot IA 51 · Tu bocina inteligente se despierta sola con la tele
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -17,7 +17,7 @@ Así que esa lucecita no siempre eres tú: a veces es la tele.
 El dibujo es esquemático. Datos de 2020: las bocinas cambian.
 Fuente: Dubois et al., PETS 2020.
 ¿A ti se te ha prendido sola la bocina o el asistente del celular? ¿Con qué palabra? 👇
-Shot IA #51 · La Creación del Robert
+Shot IA 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Alexa #Siri #Privacidad
 ```
@@ -28,7 +28,7 @@ Esa lucecita en tu bocina no siempre es que la llamaste: a veces la prende la te
 En 2020, en Boston y Londres, pusieron siete bocinas inteligentes a oír 134 horas de series. En el peor caso, una de ellas, con una sola serie, se prendió sola casi una vez por hora. A Siri la despertó un "I'm sorry"; a Alexa, un "I messed up". Casi siempre fueron unos segundos, pero en una bocina, 1 de cada 10 activaciones duró 10 s o más, y casi todas esas activaciones mandaron el audio a la nube. Lo bueno: no hallaron pruebas de que graben todo el tiempo ni de palabras secretas. Si te preocupa, apaga su micrófono con el botón.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti se te ha prendido sola? ¿Con qué palabra? 👇
-Shot IA #51 · La Creación del Robert
+Shot IA 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Alexa #Siri #Privacidad
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu bocina se prende sola… con la tele 🔵 | Shot IA #51
+Tu bocina se prende sola… con la tele 🔵 | Shot IA 51
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa lucecita en tu bocina no siempre es que la llamaste: a veces la prende la tele. 🔵 En un estudio de 2020, siete bocinas oyeron 134 horas de series: en el peor caso, una se prendió sola casi una vez por hora, con frases como "I'm sorry". No hallaron pruebas de que graben todo el tiempo, pero casi todas esas activaciones mandaron audio a la nube.
 ¿A ti se te ha prendido sola? 👇
-Shot IA #51 · La Creación del Robert
+Shot IA 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Privacidad
 ```
@@ -70,7 +70,7 @@ El estudio también da contexto: no encontró pruebas de grabación continua ni 
 Para quien usa o diseña asistentes de voz, la conclusión es de privacidad: una activación por error no es solo una molestia, es audio que puede salir de tu casa. Los autores mencionan una medida simple del lado del usuario: el botón para apagar el micrófono.
 ¿Tienes un asistente de voz en tu casa u oficina? ¿Revisas sus grabaciones?
 Fuente: Dubois et al., Proceedings on Privacy Enhancing Technologies 2020(4). Datos de 2020.
-Shot IA #51 · La Creación del Robert
+Shot IA 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Privacidad #AsistentesDeVoz #IoT #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Esa lucecita en tu bocina no siempre eres tú: a veces es la tele. En 2020, 7 bo
 Esa lucecita en tu bocina no siempre es que la llamaste: a veces la prende la tele. 🔵
 En 2020 pusieron siete bocinas a oír 134 horas de series: en el peor caso, una se prendió sola casi una vez por hora. A Alexa la despertó un "I messed up". Casi todas esas activaciones mandaron el audio a la nube, aunque no hallaron pruebas de que graben todo el tiempo.
 ¿A ti se te ha prendido sola?
-Shot IA #51 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 51 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

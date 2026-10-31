@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #05 · El agujero de ozono se está cerrando
+# Publicación · Shot Ambiental 05 · El agujero de ozono se está cerrando
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Ese agujero es la prueba: si le hacemos caso a la ciencia, se arregla.
 El dibujo es esquemático.
 Fuentes: WMO/UNEP (2023), EPA, NobelPrize.org, Molina y Rowland (Nature, 1974).
 ¿Sabías que el Nobel de Química de 1995 fue para un mexicano? 👇
-Shot Ambiental #05 · La Creación del Robert
+Shot Ambiental 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CapaDeOzono #MarioMolina #Mexico
 ```
@@ -24,7 +24,7 @@ Este agujero no se está agrandando: se está cerrando. Y la alarma la dio, en p
 Los gases CFC de refrigeradores y aerosoles suben, el sol los rompe y sueltan cloro: un solo átomo de cloro puede destruir más de 100,000 moléculas de ozono. Mario Molina (Ciudad de México) lo publicó con Sherwood Rowland en 1974 y ganaron el Nobel de Química en 1995. Con el Protocolo de Montreal (1987) y sus enmiendas se dejó de usar casi el 99 % de esos gases (dato de 2023), y el ozono volvería a como estaba antes del agujero hacia 2040 en casi todo el mundo y hacia 2066 en la Antártida.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que el Nobel de Química de 1995 fue para un mexicano? 👇
-Shot Ambiental #05 · La Creación del Robert
+Shot Ambiental 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CapaDeOzono #MarioMolina #Mexico
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este agujero se está cerrando 🌍 | Shot Ambiental #05
+Este agujero se está cerrando 🌍 | Shot Ambiental 05
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - Molina, M. J. y Rowland, F. S. (1974). Nature 249: 810–812. https://doi.org/10.1038/249810a0
 - UNEP Ozone Secretariat, The Montreal Protocol: https://ozone.unep.org/treaties/montreal-protocol
 ¿Sabías que el Nobel de Química de 1995 fue para un mexicano? 👇
-Shot Ambiental #05 · La Creación del Robert
+Shot Ambiental 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CapaDeOzono #MarioMolina
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este agujero no se está agrandando: se está cerrando. 🌍 Los gases CFC rompían la capa de ozono; Mario Molina, químico de la Ciudad de México, lo descubrió con Sherwood Rowland en 1974 y ganaron el Nobel. Con el Protocolo de Montreal se eliminó casi el 99 % de esos gases (dato de 2023).
 ¿Sabías que el Nobel de Química de 1995 fue para un mexicano? 👇
-Shot Ambiental #05 · La Creación del Robert
+Shot Ambiental 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CapaDeOzono
 ```
@@ -68,7 +68,7 @@ En 1974, Mario Molina (nacido en la Ciudad de México y formado en la UNAM) y Sh
 La respuesta fue un acuerdo internacional: el Protocolo de Montreal, firmado en 1987. En enero de 2023, la evaluación científica WMO/UNEP confirmó que se ha dejado de producir y consumir casi el 99 % de las sustancias prohibidas y que, si se mantienen las políticas actuales, la capa volverá a sus valores de 1980 hacia 2040 en casi todo el mundo y hacia 2066 sobre la Antártida.
 La lección para el clima y la industria: cuando la ciencia es clara y la regulación se cumple, los problemas globales sí se pueden revertir.
 ¿Qué otro problema ambiental crees que podría resolverse con un acuerdo así?
-Shot Ambiental #05 · La Creación del Robert
+Shot Ambiental 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #CapaDeOzono #MarioMolina #ProtocoloDeMontreal #LaCreacionDelRobert
 ```

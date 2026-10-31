@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #31 · Ese negro en tu plata no es mugre (sulfuro de plata y el truco del aluminio)
+# Publicación · Shot Químico 31 · Ese negro en tu plata no es mugre (sulfuro de plata y el truco del aluminio)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Ojo: no lo uses en piezas chapadas ni huecas o selladas, ni en ollas de aluminio
 El dibujo es esquemático.
 Fuentes: Instituto Canadiense de Conservación (CCI) · USDA Bulletin 449 (1916) · UC Davis · UW–Madison.
 ¿Tienes alguna joya o cubierto de plata que se haya puesto negro? 👇
-Shot Químico #31 · La Creación del Robert
+Shot Químico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Plata #Electroquimica #TrucosDeCasa
 ```
@@ -26,7 +26,7 @@ Ese negro en tu arete de plata no es mugre: es plata pegada a azufre. 💍
 Es sulfuro de plata: arriba de unos 100 nanómetros de grosor se ve negro. El azufre llega por el aire, de gases como el sulfuro de hidrógeno (el del huevo cocido). Pulir raspa lo negro y un poco de plata; con papel aluminio, bicarbonato y agua caliente, el aluminio le pasa electrones y el sulfuro vuelve a ser plata. En 1916, el USDA midió que pulir con pasta quitaba unas 25 veces más plata por limpieza.
 No lo uses en piezas chapadas ni huecas. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tienes alguna joya o cubierto de plata que se haya puesto negro? 👇
-Shot Químico #31 · La Creación del Robert
+Shot Químico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Plata #Electroquimica #TrucosDeCasa
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese negro en tu plata no es mugre 💍 | Shot Químico #31
+Ese negro en tu plata no es mugre 💍 | Shot Químico 31
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - UC Davis. Cleaning Silverware: Electrochemical Reaction (UCDemos, LibreTexts). https://chem.libretexts.org/Courses/University_of_California_Davis/UCDemos/Cleaning_Silverware__Electrochemical_Reaction
 - University of Wisconsin–Madison, Chemistry Demo Lab. Removing Tarnish from Silver using an Electrochemical Cell. https://www2.chem.wisc.edu/deptfiles/genchem/demonstrations/Gen_Chem_Pages/17electropage/removing_tarnish_from_silv.htm
 ¿Tienes alguna joya o cubierto de plata que se haya puesto negro? 👇
-Shot Químico #31 · La Creación del Robert
+Shot Químico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Plata
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese negro en tu arete de plata no es mugre: es plata pegada a azufre. 💍 Es sulfuro de plata, y el azufre llega por el aire, en gases como el del huevo cocido. Pulir raspa un poco de plata; con papel aluminio, bicarbonato y agua caliente, el aluminio le pasa electrones y vuelve a ser plata. Con cuidado: no en piezas chapadas ni huecas.
 ¿Tienes alguna joya o cubierto de plata que se haya puesto negro? 👇
-Shot Químico #31 · La Creación del Robert
+Shot Químico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Plata
 ```
@@ -72,14 +72,14 @@ El ennegrecido de la plata no es suciedad: es una reacción química, y se puede
 La plata reacciona con gases con azufre del aire, como el sulfuro de hidrógeno, y forma sulfuro de plata; arriba de unos 100 nm de grosor la capa se ve negra (Canadian Conservation Institute). Pulir la quita de forma mecánica y se lleva algo de metal. En cambio, con la plata en contacto con aluminio en una solución caliente de bicarbonato o carbonato de sodio se forma una celda galvánica: el aluminio se oxida y el sulfuro de plata se reduce a plata metálica.
 En 1916, el Departamento de Agricultura de EE. UU. lo cuantificó pesando cucharas: el pulido con pasta abrasiva quitó unas 25 veces más plata por limpieza que el método electrolítico.
 ¿Conocías este uso cotidiano de una pila galvánica?
-Shot Químico #31 · La Creación del Robert
+Shot Químico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Electroquimica #Conservacion #Ciencia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese negro en tu plata no es mugre: es sulfuro de plata. Pulir raspa plata; con papel aluminio, bicarbonato y agua caliente, el aluminio le pasa electrones y vuelve a ser plata. 💍 Shot Químico #31 #Quimica
+Ese negro en tu plata no es mugre: es sulfuro de plata. Pulir raspa plata; con papel aluminio, bicarbonato y agua caliente, el aluminio le pasa electrones y vuelve a ser plata. 💍 Shot Químico 31 #Quimica
 ```
 
 ### Threads
@@ -87,7 +87,7 @@ Ese negro en tu plata no es mugre: es sulfuro de plata. Pulir raspa plata; con p
 Ese negro en tu arete de plata no es mugre: es plata pegada a azufre. 💍
 Es sulfuro de plata. Pulir raspa lo negro y un poco de plata; con papel aluminio, bicarbonato y agua caliente, el aluminio le pasa electrones y el sulfuro vuelve a ser plata. En 1916 midieron que pulir con pasta quitaba unas 25 veces más plata por limpieza.
 ¿Te ha pasado con alguna joya?
-Shot Químico #31 · La Creación del Robert
+Shot Químico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

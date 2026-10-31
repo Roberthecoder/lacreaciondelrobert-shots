@@ -1,4 +1,4 @@
-# Publicación · Shot IA #50 · Detrás de tu IA hay personas etiquetando
+# Publicación · Shot IA 50 · Detrás de tu IA hay personas etiquetando
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Cuando tu IA reconozca un gato, acuérdate del cuadrito: alguien se lo enseñó.
 El dibujo es esquemático.
 Fuentes: Russakovsky et al., IJCV (2015); Perrigo, TIME (2023).
 ¿Sabías que detrás de la IA había tanta gente etiquetando? 👇
-Shot IA #50 · La Creación del Robert
+Shot IA 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ImageNet #ChatGPT #DatosDeEntrenamiento
 ```
@@ -26,7 +26,7 @@ Ese cuadrito que dice «gato» no lo puso una máquina: lo puso una persona. �
 Muchas IA aprenden con ejemplos etiquetados. En 2014, ImageNet ya tenía más de 14 millones de imágenes verificadas a mano, con varias personas votando cada foto. ¿Y lo horrible? Desde fines de 2021, en Nairobi, Kenia, unas tres docenas de personas de la contratista Sama etiquetaron textos de violencia y odio para OpenAI; según OpenAI, eso ayudó a crear un detector que terminó en ChatGPT. TIME reveló en 2023 que ganaban de 1.32 a 2 dólares por hora (Sama dice que hasta 3.74). Más segura y con un costo humano: ambas cosas pueden ser ciertas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que detrás de la IA había tanta gente etiquetando? 👇
-Shot IA #50 · La Creación del Robert
+Shot IA 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ImageNet #ChatGPT #DatosDeEntrenamiento
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese cuadrito «gato» lo puso una persona 🐱 | Shot IA #50
+Ese cuadrito «gato» lo puso una persona 🐱 | Shot IA 50
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese cuadrito que dice «gato» no lo puso una máquina: lo puso una persona. 🐱 Muchas IA aprenden con miles de ejemplos etiquetados a mano. Y lo más duro también lo etiquetan personas: en Kenia, entre 2021 y 2022, trabajadores leyeron textos violentos para hacer más segura una IA conversacional, ganando de 1.32 a 2 dólares por hora, según TIME.
 ¿Sabías que detrás de la IA había tanta gente etiquetando? 👇
-Shot IA #50 · La Creación del Robert
+Shot IA 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT
 ```
@@ -66,7 +66,7 @@ Detrás de muchos sistemas de IA hay un trabajo poco visible: personas que etiqu
 ImageNet, uno de los bancos de imágenes más influyentes, tenía en 2014 más de 14 millones de imágenes anotadas y verificadas por personas, con varias votaciones por imagen para controlar la calidad (Russakovsky et al., IJCV, 2015).
 El mismo trabajo se usa para hacer más seguros los modelos de lenguaje. Según TIME (2023), desde noviembre de 2021 unas tres docenas de personas de la contratista Sama, en Nairobi, Kenia, etiquetaron textos de violencia, odio y abuso para OpenAI; OpenAI confirmó que esto contribuyó a un detector de contenido tóxico integrado en ChatGPT. TIME reportó sueldos netos de 1.32 a 2 dólares por hora (Sama dice que de 1.46 a 3.74), trabajadores afectados por el contenido y la cancelación del trabajo ocho meses antes de lo planeado.
 La seguridad de la IA depende de este trabajo; la pregunta es en qué condiciones se hace. ¿Cómo debería reconocerse y protegerse a quienes etiquetan datos?
-Shot IA #50 · La Creación del Robert
+Shot IA 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #EticaDigital #DatosDeEntrenamiento #Trabajo #LaCreacionDelRobert
 ```
@@ -81,7 +81,7 @@ Ese cuadrito «gato» no lo puso una máquina: lo puso una persona. ImageNet ten
 Ese cuadrito que dice «gato» no lo puso una máquina: lo puso una persona. 🐱
 Muchas IA aprenden con ejemplos etiquetados a mano: ImageNet tenía más de 14 millones en 2014. Y lo horrible también lo etiquetan personas: en Kenia, según TIME (2023), por 1.32 a 2 dólares por hora, para hacer ChatGPT más seguro.
 ¿Lo sabías?
-Shot IA #50 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 50 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

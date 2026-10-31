@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #25 · Ese calentador no trae pilas: es hierro oxidándose a propósito (calentadores de manos)
+# Publicación · Shot Químico 25 · Ese calentador no trae pilas: es hierro oxidándose a propósito (calentadores de manos)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Ojo: en 2025, la agencia japonesa NITE advirtió que se dice que a 44 °C la pie
 El dibujo es esquemático.
 Fuentes: Kobayashi (hoja de seguridad, 2021) · Gobierno de Tokio · Univ. de Silesia (2024) · patente US 3,976,049 · NITE (2025).
 ¿Tú los usas en invierno o ni los conocías? 👇
-Shot Químico #25 · La Creación del Robert
+Shot Químico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #CalentadorDeManos #Oxidacion #Invierno
 ```
@@ -26,7 +26,7 @@ La mitad o más del relleno es hierro en polvo (hoja de seguridad de una marca, 
 Ojo: según NITE (Japón, 2025), a 44 °C la piel puede quemarse en 3 a 4 horas aunque solo se sienta tibio. Nunca directo en la piel ni para dormir.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú los usas en invierno? 👇
-Shot Químico #25 · La Creación del Robert
+Shot Químico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #CalentadorDeManos #Oxidacion #Invierno
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese calentador no trae pilas: es hierro oxidándose 🔥 | Shot Químico #25
+Ese calentador no trae pilas: es hierro oxidándose 🔥 | Shot Químico 25
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Yamashita I., Shimizu M. (Asahi Kasei). Structure of warmer. US 3,976,049 (1976). https://patents.google.com/patent/US3976049A/en
 - NITE (2025). 就寝時の"足元"暖房にご用心！ https://www.nite.go.jp/data/000156554.pdf
 ¿Tú los usas en invierno o ni los conocías? 👇
-Shot Químico #25 · La Creación del Robert
+Shot Químico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #CalentadorDeManos
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese calentador de manos no trae pilas ni fuego: es hierro oxidándose a propósito. 🔥 Al abrir el sobre entra oxígeno, el hierro en polvo se vuelve óxido y suelta calor. Ojo: aunque solo se sienta tibio, puede quemar la piel si se deja horas en el mismo lugar; nunca directo en la piel ni para dormir.
 ¿Tú los usas en invierno? 👇
-Shot Químico #25 · La Creación del Robert
+Shot Químico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #CalentadorDeManos
 ```
@@ -70,14 +70,14 @@ Un calentador de manos desechable es una reacción de corrosión diseñada a pro
 La formulación es química aplicada: la hoja de seguridad de una marca común (rev. 2021) declara 50–60 % de hierro en polvo y 30–40 % de agua, más carbón activado, vermiculita, sal y resina absorbente. La sal acelera la oxidación, el carbón activado concentra oxígeno, la vermiculita retiene el agua, y el sobre hermético detiene todo hasta que se abre. Una patente de Asahi Kasei de los años 70 (US 3,976,049, 1976) ya reportaba una prueba con 45–50 °C promedio durante 22 horas.
 El riesgo también es de diseño: NITE (Japón, 2025) advierte de quemaduras de baja temperatura (se dice que 3 a 4 horas a 44 °C) aunque el calor se sienta agradable.
 ¿Qué otros productos cotidianos funcionan gracias a una reacción que normalmente queremos evitar?
-Shot Químico #25 · La Creación del Robert
+Shot Químico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Corrosion #DivulgacionCientifica #SeguridadDeProductos #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese calentador de manos no trae pilas: es hierro en polvo oxidándose a propósito. Al abrirlo entra oxígeno y el óxido suelta calor. Ojo: a 44 °C la piel puede quemarse en horas (NITE, 2025). 🔥 Shot Químico #25 #Quimica
+Ese calentador de manos no trae pilas: es hierro en polvo oxidándose a propósito. Al abrirlo entra oxígeno y el óxido suelta calor. Ojo: a 44 °C la piel puede quemarse en horas (NITE, 2025). 🔥 Shot Químico 25 #Quimica
 ```
 
 ### Threads
@@ -85,7 +85,7 @@ Ese calentador de manos no trae pilas: es hierro en polvo oxidándose a propósi
 Ese calentador de manos no trae pilas ni fuego: es hierro oxidándose a propósito. 🔥
 Al abrir el sobre entra oxígeno; el hierro en polvo, con sal, se vuelve óxido mucho más rápido que un clavo y suelta calor. Pero aunque solo se sienta tibio, nunca lo pegues directo en la piel ni lo uses para dormir.
 ¿Tú los usas en invierno?
-Shot Químico #25 · La Creación del Robert
+Shot Químico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

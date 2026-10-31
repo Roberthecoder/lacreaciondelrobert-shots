@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #10 · Posadas · Científico: Lo que el hervor le hace al tejocote de tu ponche
+# Publicación · Shot Festivo 10 · Posadas · Científico: Lo que el hervor le hace al tejocote de tu ponche
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 16 dic 2026, primera posada.
 
@@ -15,7 +15,7 @@ Ojo: desde 2024, la FDA de Estados Unidos alerta que varios suplementos vendidos
 El dibujo es esquemático.
 Fuentes: CONABIO · CONAFOR · Głuchowski et al. 2026 (Foods) · Daher y Braybrook 2015 · Lozano-Grande et al. 2016 (Agrociencia) · FDA.
 ¿En tu casa el ponche lleva tejocote, caña y guayaba? ¿Qué más le ponen? 👇
-Shot Festivo #10 · Posadas · Científico · La Creación del Robert
+Shot Festivo 10 · Posadas · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Posadas #Ponche #Tejocote
 ```
@@ -26,7 +26,7 @@ Ese tejocote de tu ponche no se deshace: se despega, célula por célula. 🍊�
 Al hervir, el calor rompe las membranas de sus células: se sale el agua y lo disuelto pasa al ponche. Y el pegamento entre célula y célula, una capa rica en pectina, se rompe y se disuelve: las células se separan y la fruta se pone suavecita. El tejocote es tan rico en pectina que la industria la usa para cuajar jaleas y mermeladas. Es nativo de México y da fruto en noviembre y diciembre. En Chapingo (2016) hasta hicieron con ella una capa comestible para setas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa el ponche lleva tejocote, caña y guayaba? ¿Qué más le ponen? 👇
-Shot Festivo #10 · Posadas · Científico · La Creación del Robert
+Shot Festivo 10 · Posadas · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Posadas #Ponche #Tejocote
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu tejocote no se deshace: se despega 🍊 | Shot Festivo #10
+Tu tejocote no se deshace: se despega 🍊 | Shot Festivo 10
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Lozano-Grande et al. (2016), Agrociencia 50(7): https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-31952016000700849
 - FDA, alerta por adelfa amarilla: https://www.fda.gov/food/alerts-advisories-safety-information/fda-issues-warning-about-certain-products-containing-toxic-yellow-oleander
 ¿En tu casa el ponche lleva tejocote, caña y guayaba? ¿Qué más le ponen? 👇
-Shot Festivo #10 · Posadas · Científico · La Creación del Robert
+Shot Festivo 10 · Posadas · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Posadas
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese tejocote de tu ponche no se deshace: se despega, célula por célula. 🍊 Al hervir, el calor rompe las membranas de sus células y disuelve la pectina que las pega: las células se separan y la fruta se pone suavecita. Y el tejocote está tan cargado de pectina que la industria la usa para cuajar jaleas y mermeladas.
 ¿En tu casa el ponche lleva tejocote, caña y guayaba? ¿Qué más le ponen? 👇
-Shot Festivo #10 · Posadas · Científico · La Creación del Robert
+Shot Festivo 10 · Posadas · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Posadas
 ```
@@ -74,20 +74,20 @@ Cuando el tejocote hierve, el calor rompe las membranas de sus células: el agua
 El tejocote (Crataegus mexicana), árbol nativo de México, tiene un alto contenido de pectina, la que la industria usa para cuajar jaleas y mermeladas. En 2016, un equipo de la Universidad Autónoma Chapingo usó pectina de tejocote con cera de candelilla para hacer recubrimientos comestibles: con la mejor mezcla, las rebanadas de seta perdieron menos peso y firmeza en 20 días de refrigeración.
 Una fruta de temporada que también puede ser materia prima.
 ¿Qué otro ingrediente de temporada te gustaría ver explicado por dentro?
-Shot Festivo #10 · Posadas · Científico · La Creación del Robert
+Shot Festivo 10 · Posadas · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CienciaDeLosAlimentos #Posadas #DivulgacionCientifica
 ```
 
 ### X
 ```text
-Tu tejocote del ponche no se deshace: se despega 🍊 El hervor rompe sus membranas y disuelve la pectina que pega sus células. Shot Festivo #10 · Posadas · Científico #Ciencia #Posadas
+Tu tejocote del ponche no se deshace: se despega 🍊 El hervor rompe sus membranas y disuelve la pectina que pega sus células. Shot Festivo 10 · Posadas · Científico #Ciencia #Posadas
 ```
 
 ### Threads
 ```text
 Ese tejocote de tu ponche no se deshace: se despega, célula por célula. 🍊 El hervor rompe sus membranas y disuelve la pectina que pega sus células: se separan y la fruta se pone suavecita. Y tiene tanta pectina que la industria la usa para cuajar jaleas. ¿Qué más le ponen al ponche en tu casa? 👇
-Shot Festivo #10 · Posadas · Científico · La Creación del Robert
+Shot Festivo 10 · Posadas · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia
 ```

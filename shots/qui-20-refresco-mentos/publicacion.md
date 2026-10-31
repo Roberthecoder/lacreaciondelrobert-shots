@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #20 · Esa fuente no es una reacción química (refresco de dieta y Mentos)
+# Publicación · Shot Químico 20 · Esa fuente no es una reacción química (refresco de dieta y Mentos)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Si lo haces, que sea afuera y lejos de la cara.
 El dibujo es esquemático. Las fórmulas de los refrescos cambian por país.
 Fuente: Coffey, American Journal of Physics, 2008.
 ¿Tú ya lo hiciste alguna vez? ¿Con cuál refresco? 👇
-Shot Químico #20 · La Creación del Robert
+Shot Químico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Experimentos #Fisica #Refresco
 ```
@@ -25,7 +25,7 @@ Esa fuente no es una reacción química: es gas que ya estaba en tu refresco, sa
 El CO₂ disuelto necesita un rincón para formar burbujas, y la superficie áspera de la pastilla tiene muchos. En un estudio publicado en 2008 (Universidad Estatal Apalache, EE. UU.), el pH fue 3.0 antes y después: no fue ácido-base. El aspartamo y el benzoato del refresco de dieta facilitan las burbujas; la cafeína casi no influyó. Y molidas, las pastillas lanzaron el chorro a solo 30 cm.
 Si lo haces: afuera y lejos de la cara. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú ya lo hiciste? 👇
-Shot Químico #20 · La Creación del Robert
+Shot Químico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Experimentos #Fisica #Refresco
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa fuente no es química: es gas 🥤 | Shot Químico #20
+Esa fuente no es química: es gas 🥤 | Shot Químico 20
 ```
 Descripción:
 ```text
@@ -46,7 +46,7 @@ El dibujo es esquemático. El estudio usó el refresco de dieta de EE. UU.; las 
 Fuente:
 - Coffey T.S. (2008). Diet Coke and Mentos: What is really behind this physical reaction? American Journal of Physics 76(6):551–557. https://doi.org/10.1119/1.2888546 · PDF: https://blog.danallan.com/static/papers/Coffey-Diet-Coke-and-Mentos-What-is-really-behind-this-physical-reaction-2008.pdf
 ¿Tú ya lo hiciste alguna vez? ¿Con cuál refresco? 👇
-Shot Químico #20 · La Creación del Robert
+Shot Químico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Experimentos
 ```
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa fuente no es una reacción química: es gas que ya estaba en tu refresco, saliendo de golpe. 🥤 La superficie áspera de la pastilla le da al CO₂ muchos rincones para formar burbujas, y en unos 4 segundos sale más de un litro. El pH ni se mueve: 3.0 antes y después.
 ¿Tú ya lo hiciste? 👇
-Shot Químico #20 · La Creación del Robert
+Shot Químico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Experimentos
 ```
@@ -66,14 +66,14 @@ La fuente de Mentos y refresco no es una reacción química: es CO₂ que ya est
 En un estudio publicado en 2008 en American Journal of Physics, Tonya Coffey y estudiantes de física de Appalachian State University midieron el pH antes y después: 3.0 en ambos casos, lo que descarta una reacción ácido-base. La clave es la física de superficies: la rugosidad de la pastilla ofrece sitios donde crecen burbujas, y el aspartamo y el benzoato de potasio del refresco de dieta reducen el trabajo para formarlas (la cafeína casi no influyó). La combinación de superficie rugosa y un surfactante en la capa del dulce (goma arábiga) explica la erupción.
 Es un gran ejemplo de cómo un proyecto de laboratorio de licenciatura puede responder con datos una pregunta que todos dábamos por resuelta.
 ¿Qué otro "experimento casero" te gustaría ver medido en serio?
-Shot Químico #20 · La Creación del Robert
+Shot Químico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Fisica #EducacionCientifica #Ciencia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-La fuente de Mentos y refresco no es una reacción química: el pH fue 3.0 antes y después. Es CO₂ que ya estaba disuelto y encuentra rincones en la pastilla áspera para hacer burbujas (Coffey, 2008). 🥤 Shot Químico #20 #Quimica
+La fuente de Mentos y refresco no es una reacción química: el pH fue 3.0 antes y después. Es CO₂ que ya estaba disuelto y encuentra rincones en la pastilla áspera para hacer burbujas (Coffey, 2008). 🥤 Shot Químico 20 #Quimica
 ```
 
 ### Threads
@@ -81,7 +81,7 @@ La fuente de Mentos y refresco no es una reacción química: el pH fue 3.0 antes
 Esa fuente no es una reacción química: es gas que ya estaba en tu refresco, saliendo de golpe. 🥤
 La pastilla es áspera y le da al CO₂ rincones para hacer burbujas; el pH quedó en 3.0 antes y después. Y molidas, el chorro llegó a solo 30 cm.
 ¿Tú ya lo hiciste?
-Shot Químico #20 · La Creación del Robert
+Shot Químico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

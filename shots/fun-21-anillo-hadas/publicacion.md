@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #21 · Ese círculo en el pasto no es de hadas: es un hongo
+# Publicación · Shot Fungi Mati 21 · Ese círculo en el pasto no es de hadas: es un hongo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Antes lo explicaban con hadas bailando, con el diablo batiendo su mantequilla (H
 El dibujo es esquemático: un anillo real casi nunca es un círculo perfecto.
 Fuentes: Shantz y Piemeisel 1917 (J. Agric. Research); NC State Extension 2017; RHS; Choi et al. 2010 (ChemBioChem); Kawagishi 2019.
 ¿Has visto uno en tu parque o en tu rancho? 👇
-Shot Fungi Mati #21 · La Creación del Robert
+Shot Fungi Mati 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #AnilloDeHadas #Micelio
 ```
@@ -26,7 +26,7 @@ Ese círculo en el pasto no es de hadas: es un hongo que crece hacia afuera. �
 Nace de una espora en un punto y su micelio se abre en todas direcciones; adentro se acaba la comida y el borde vivo solo avanza hacia afuera. Ese borde suelta nitrógeno y el pasto se pone más verde; en otros anillos el micelio repele el agua y el pasto se seca. Con las lluvias, brotan setas como Marasmius oreades. En 1917, en Colorado, estimaron que avanzaban unos 12 cm al año: uno de 60 m tendría unos 250 años.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Has visto uno en tu parque o en tu rancho? 👇
-Shot Fungi Mati #21 · La Creación del Robert
+Shot Fungi Mati 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #AnilloDeHadas #Micelio
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese círculo en el pasto NO es de hadas 🍄 | Shot Fungi Mati #21
+Ese círculo en el pasto NO es de hadas 🍄 | Shot Fungi Mati 21
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Choi, J.-H. et al. (2010). Disclosure of the "fairy" of fairy-ring-forming fungus Lepista sordida. ChemBioChem 11(10): 1373–1377. https://doi.org/10.1002/cbic.201000112
 - Kawagishi, H. (2019). Are fairy chemicals a new family of plant hormones? Proc. Jpn. Acad., Ser. B 95(1): 29–38. https://pmc.ncbi.nlm.nih.gov/articles/PMC6395780/
 ¿Has visto uno en tu parque o en tu rancho? 👇
-Shot Fungi Mati #21 · La Creación del Robert
+Shot Fungi Mati 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #AnilloDeHadas #FungiMati
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese círculo en el pasto no es de hadas: es un hongo que crece hacia afuera. 🍄 Su micelio avanza desde un punto, suelta nitrógeno que pone el pasto más verde y, con las lluvias, saca setas en el borde. Uno de 60 metros podría tener unos 250 años.
 ¿Has visto uno en tu parque o en tu rancho? 👇
-Shot Fungi Mati #21 · La Creación del Robert
+Shot Fungi Mati 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #AnilloDeHadas
 ```
@@ -73,7 +73,7 @@ Un círculo en el pasto puede ser un organismo de siglos.
 Los "anillos de hadas" son colonias de hongos que crecen desde un punto hacia afuera: el borde activo del micelio descompone materia orgánica, libera amonio y el pasto se pone más verde; en otros casos el micelio vuelve el suelo repelente al agua y el pasto se seca (NC State Extension, 2017). En 1917, Shantz y Piemeisel estimaron en las praderas de Colorado un avance medio de unos 12 cm al año, de modo que un anillo de 60 m tendría unos 250 años. Y en 2010, un grupo de la Universidad de Shizuoka aisló del hongo Lepista sordida la 2-azahipoxantina, un estimulante del crecimiento del pasto que hoy se estudia en cultivos.
 Por qué importa: un fenómeno que el folclor atribuía a hadas es hoy un modelo de crecimiento de hongos, de manejo de pasto y hasta de nuevos reguladores del crecimiento vegetal.
 ¿Has visto uno en tu parque o en tu rancho?
-Shot Fungi Mati #21 · La Creación del Robert
+Shot Fungi Mati 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Suelos #Ciencia
 ```
@@ -86,7 +86,7 @@ Ese círculo en el pasto no es de hadas: es un hongo que crece hacia afuera. En 
 ### Threads
 ```text
 Ese círculo en el pasto no es de hadas: es un hongo que crece hacia afuera. 🍄 Su borde suelta nitrógeno (pasto más verde), a veces repele el agua (pasto seco) y con las lluvias saca setas. Uno de 60 metros tendría unos 250 años. ¿Has visto uno en tu parque o en tu rancho?
-Shot Fungi Mati #21 · La Creación del Robert
+Shot Fungi Mati 21 · La Creación del Robert
 #Hongos
 ```
 

@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #16 · Esa vacuna no trae el virus: trae instrucciones (vacunas de ARNm)
+# Publicación · Shot Biotecnológico 16 · Esa vacuna no trae el virus: trae instrucciones (vacunas de ARNm)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ El gran obstáculo era que el ARN hecho en laboratorio provocaba inflamación. E
 El dibujo es esquemático y no está a escala.
 Fuentes: Comité Nobel 2023 · Karikó et al. 2005 (Immunity) · CDC 2021 · Hou et al. 2021 · Nance y Meier 2021 · Röltgen et al. 2022.
 ¿Tú sabías que el mensaje no entra al núcleo? 👇
-Shot Biotecnológico #16 · La Creación del Robert
+Shot Biotecnológico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Vacunas #ARNm #PremioNobel
 ```
@@ -26,7 +26,7 @@ ARN mensajero envuelto en una burbujita de grasa: entra a tus células, tus ribo
 El truco: en 2005, Karikó y Weissman cambiaron algunas letras del ARN por versiones modificadas, como la pseudouridina, y la inflamación casi desapareció en sus pruebas. Nobel de Fisiología o Medicina 2023.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú sabías que el mensaje no entra al núcleo? 👇
-Shot Biotecnológico #16 · La Creación del Robert
+Shot Biotecnológico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Vacunas #ARNm #PremioNobel
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa vacuna no trae el virus: trae instrucciones 💉 | Shot Biotecnológico #16
+Esa vacuna no trae el virus: trae instrucciones 💉 | Shot Biotecnológico 16
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Nance K.D., Meier J.L. (2021). Modifications in an Emergency: The Role of N1-Methylpseudouridine in COVID-19 Vaccines. ACS Cent Sci. https://pmc.ncbi.nlm.nih.gov/articles/PMC8043204/
 - Röltgen K. et al. (2022). Immune imprinting, breadth of variant recognition, and germinal center response in human SARS-CoV-2 infection and vaccination. Cell. https://doi.org/10.1016/j.cell.2022.01.018
 ¿Tú sabías que el mensaje no entra al núcleo? 👇
-Shot Biotecnológico #16 · La Creación del Robert
+Shot Biotecnológico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Vacunas #ARNm
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa vacuna de COVID no trae el virus: trae instrucciones. 💉 Es ARN mensajero en una burbujita de grasa: tus células lo leen, fabrican la proteína espícula y tu sistema inmune aprende a reconocerla. El mensaje no entra al núcleo, donde está tu ADN, y la célula lo desarma.
 ¿Tú sabías que el mensaje no entra al núcleo? 👇
-Shot Biotecnológico #16 · La Creación del Robert
+Shot Biotecnológico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Vacunas
 ```
@@ -71,7 +71,7 @@ Las vacunas de ARNm contra COVID-19 llevan el mensaje para fabricar la proteína
 El obstáculo era la inflamación: el ARN producido in vitro activaba al sistema inmune innato. En 2005, Katalin Karikó y Drew Weissman (Universidad de Pensilvania) mostraron en Immunity que incorporar nucleósidos modificados, como la pseudouridina, casi suprimía esa respuesta en células dendríticas. La idea venía de observar que el ARN de mamíferos ya trae bases modificadas. Ese hallazgo les valió el Premio Nobel de Fisiología o Medicina 2023.
 Una lección de ciencia básica: un resultado publicado quince años antes de la pandemia terminó siendo la pieza clave.
 ¿Qué otros hallazgos "pequeños" crees que están esperando su momento?
-Shot Biotecnológico #16 · La Creación del Robert
+Shot Biotecnológico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Vacunas #ARNm #PremioNobel #LaCreacionDelRobert
 ```
@@ -86,7 +86,7 @@ Esa vacuna de COVID no trae el virus: trae instrucciones. Tus ribosomas leen el 
 Esa vacuna de COVID no trae el virus: trae instrucciones. 💉
 Es ARN mensajero en una burbujita de grasa: tus células lo leen y arman la proteína espícula, tu sistema inmune aprende, y el mensaje se desarma sin entrar al núcleo. Karikó y Weissman cambiaron algunas de sus letras para que no inflamara: Nobel 2023.
 ¿Tú sabías que no entra al núcleo?
-Shot Biotecnológico #16 · La Creación del Robert
+Shot Biotecnológico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Vacunas
 ```

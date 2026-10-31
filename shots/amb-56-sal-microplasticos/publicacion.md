@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #56 · Tu sal también trae plástico
+# Publicación · Shot Ambiental 56 · Tu sal también trae plástico
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que esa pizca es sal, y también un pedacito del mar con lo que le tiramos.
 El dibujo es esquemático.
 Fuentes: Kim et al. 2018 (Environ. Sci. Technol.), Universidad de Colima 2026 (Talanta), NOAA y OMS 2022.
 ¿Tú usas sal de mar o sal refinada? 👇
-Shot Ambiental #56 · La Creación del Robert
+Shot Ambiental 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Microplasticos #Sal #Mexico
 ```
@@ -26,7 +26,7 @@ Esa sal no es solo sal: en 2018 revisaron 39 marcas de sal del mundo y encontrar
 La sal de mar se obtiene evaporando agua de mar, y lo que traía el agua se queda: por eso refleja qué tan contaminado está su mar. En la sal de mina hubo como mucho 148 pedacitos por kilo; una de mar pasó de 13 mil. En 2026, la Universidad de Colima reportó unas 1,950 piezas por kilo en muestras de sal de mar mexicana (solo contó las de más de 0.2 mm). ¿Efectos en la salud? Todavía no se sabe (OMS 2022).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú usas sal de mar o sal refinada? 👇
-Shot Ambiental #56 · La Creación del Robert
+Shot Ambiental 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Microplasticos #Sal #Mexico
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu sal también trae plástico 🧂 | Shot Ambiental #56
+Tu sal también trae plástico 🧂 | Shot Ambiental 56
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Secretaría de Economía, Perfil de mercado de la sal (2013): https://www.economia.gob.mx/files/comunidad_negocios/industria_comercio/informacionSectorial/minero/pm_sal_1013.pdf
 - OMS (2022), Dietary and inhalation exposure to nano- and microplastic particles: https://www.who.int/publications/i/item/9789240054608
 ¿Tú usas sal de mar o sal refinada? 👇
-Shot Ambiental #56 · La Creación del Robert
+Shot Ambiental 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Microplasticos #Sal
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa sal no es solo sal: en 2018 revisaron 39 marcas de sal del mundo y encontraron plástico en sal de mar, de mina y de lago. 🧂 Y en 2026, la Universidad de Colima reportó unas 1,950 piezas de plástico por kilo en muestras de sal de mar mexicana. ¿Hace daño? Todavía no se sabe.
 ¿Tú usas sal de mar o sal refinada? 👇
-Shot Ambiental #56 · La Creación del Robert
+Shot Ambiental 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Microplasticos #Sal
 ```
@@ -71,7 +71,7 @@ La sal de mar funciona como un "termómetro" de la contaminación por plástico 
 Un estudio de 2018 (Kim et al., Environmental Science & Technology) analizó 39 marcas de sal: encontró de 0 a 148 microplásticos por kilo en sal de mina y de 0 a 1,674 en sal de mar (con un caso extremo de 13,629), y el contenido de la sal de mar sin refinar se relacionó con la contaminación del agua de alrededor. En 2026, un equipo de la Universidad de Colima reportó 1,950 ± 354 piezas por kilo en muestras de sal de mar mexicana, con un método accesible (estereomicroscopio, cámara de celular y aprendizaje automático) que solo cuenta partículas de 0.2–0.3 mm o más.
 Sobre la salud humana, la OMS (2022) señaló que los datos son limitados y dan poca evidencia de efectos dañinos en humanos. Medir mejor y reducir lo que llega al mar es el camino.
 ¿Qué crees que debería medirse primero en los alimentos de México?
-Shot Ambiental #56 · La Creación del Robert
+Shot Ambiental 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Microplasticos #Oceanos #Mexico #LaCreacionDelRobert
 ```

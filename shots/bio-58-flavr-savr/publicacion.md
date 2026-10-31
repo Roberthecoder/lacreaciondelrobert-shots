@@ -13,7 +13,7 @@ Lo que sí se quedó es el truco viejo: cortarlo verde y madurarlo con gas.
 El dibujo es esquemático.
 Fuentes: FDA, Federal Register (1994); Sheehy et al., PNAS (1988); Brummell y Labavitch, Plant Physiology (1997); UF/IFAS EDIS (2023); GEN (2016); Mother Jones (1997).
 ¿Tú compras el jitomate verde para que madure en tu casa o ya rojo? 👇
-Shot Biotecnológico #58 · La Creación del Robert
+Shot Biotecnológico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #transgenicos #jitomate #FlavrSavr
 ```
@@ -25,7 +25,7 @@ Se llamaba Flavr Savr (Calgene, Davis, California). Al madurar, una enzima, la p
 La FDA le dio el visto bueno en mayo de 1994. Pero en 1997, en UC Davis, jitomates con menos del 1 % de la enzima normal apenas eran un poco más firmes. Se maltrataba en el viaje, rendía poco y en menos de tres años desapareció. Hoy, en Florida, la mayoría se cortan verdes y se maduran con etileno.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú compras el jitomate verde o ya rojo? 👇
-Shot Biotecnológico #58 · La Creación del Robert
+Shot Biotecnológico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #transgenicos #jitomate #FlavrSavr
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El primer transgénico del súper fue un jitomate 🍅 | Shot Biotecnológico #58
+El primer transgénico del súper fue un jitomate 🍅 | Shot Biotecnológico 58
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - GEN, Mistakes Shorten First Approved GMO's Shelf Life (2016): https://www.genengnews.com/insights/mistakes-shorten-first-approved-gmos-shelf-life/
 - Mother Jones, Flavor Saved? (1997): https://www.motherjones.com/news/feature/1997/01/broydo.html
 ¿Tú compras el jitomate verde para que madure en tu casa o ya rojo? 👇
-Shot Biotecnológico #58 · La Creación del Robert
+Shot Biotecnológico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #transgenicos
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 El primer transgénico que llegó entero al súper no fue maíz: fue un jitomate. 🍅
 Flavr Savr llevaba una copia de un gen al revés para que no se ablandara. La FDA le dio el visto bueno en 1994… y en menos de tres años desapareció.
 ¿Tú compras el jitomate verde o ya rojo? 👇
-Shot Biotecnológico #58 · La Creación del Robert
+Shot Biotecnológico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #transgenicos
 ```
@@ -71,14 +71,14 @@ Flavr Savr, de Calgene (Davis, California), llevaba una copia antisentido del ge
 La ciencia de la técnica funcionó: la enzima casi desapareció. Pero el supuesto de fondo falló. En 1997, investigadores de UC Davis midieron frutos con menos del 1 % de la actividad normal de la enzima y apenas eran un poco más firmes. A eso se sumaron el daño en el transporte y una variedad de bajo rendimiento; en menos de tres años salió del mercado.
 La lección sirve fuera de la biotecnología: apagar el gen correcto no basta si la hipótesis sobre qué causa el problema está incompleta. Mientras tanto, la práctica que sigue vigente es la de siempre: en Florida la mayoría de los jitomates se cosechan verdes y se maduran con etileno.
 ¿Qué otro producto conoces que fue un éxito técnico y un fracaso comercial?
-Shot Biotecnológico #58 · La Creación del Robert
+Shot Biotecnológico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Agricultura #InnovacionAlimentaria #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-El primer transgénico que llegó entero al súper fue un jitomate: Flavr Savr (1994), con un gen al revés para no ablandarse. Jitomates con menos del 1 % de esa enzima apenas eran un poco más firmes. 🍅 Shot Biotecnológico #58 #Biotecnologia
+El primer transgénico que llegó entero al súper fue un jitomate: Flavr Savr (1994), con un gen al revés para no ablandarse. Jitomates con menos del 1 % de esa enzima apenas eran un poco más firmes. 🍅 Shot Biotecnológico 58 #Biotecnologia
 ```
 
 ### Threads
@@ -86,7 +86,7 @@ El primer transgénico que llegó entero al súper fue un jitomate: Flavr Savr (
 El primer transgénico que llegó entero al súper no fue maíz: fue un jitomate. 🍅
 Flavr Savr llevaba una copia al revés del gen de la enzima que ablanda el fruto. La FDA le dio el visto bueno en mayo de 1994, pero apagar esa enzima casi no lo endureció y en menos de tres años desapareció.
 ¿Tú compras el jitomate verde o ya rojo?
-Shot Biotecnológico #58 · La Creación del Robert
+Shot Biotecnológico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

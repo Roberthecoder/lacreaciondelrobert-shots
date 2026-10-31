@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #41 · Esto no es pollo: el hongo que se come un árbol (*Laetiporus*)
+# Publicación · Shot Fungi Mati 41 · Esto no es pollo: el hongo que se come un árbol (*Laetiporus*)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Dato extra: su naranja no es de carotenos, como el de la zanahoria: es ácido la
 El dibujo es esquemático. No es consejo médico.
 Fuentes: UF/IFAS 2020; Kuo 2017 (MushroomExpert); Appleton et al. 1988 (CMAJ); Davoli et al. 2005 (Phytochemistry). Lista completa en el comentario fijado.
 ¿Cómo le dicen en tu región? (En Xalapa le dicen "hongo de encino".) 👇
-Shot Fungi Mati #41 · La Creación del Robert
+Shot Fungi Mati 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Ciencia #Micologia
 ```
@@ -25,7 +25,7 @@ Esto no es pollo: es un hongo que se está comiendo un árbol por dentro. 🍄�
 El "pollo del bosque" (Laetiporus) forma repisas naranjas en troncos, sobre todo de encino. Sus hifas se comen la celulosa del corazón del tronco y dejan la lignina: la madera queda café y se rompe en cubitos. Bien cocido queda correoso y sabe parecido al pollo, aunque no tiene músculo: es una maraña de hifas. Ojo: crudo o mal cocido puede caer mal del estómago, hay personas alérgicas y en 1987 una niña en Canadá tuvo alucinaciones tras comerlo. Nunca comas un hongo silvestre que no haya identificado un experto.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Cómo le dicen en tu región? 👇
-Shot Fungi Mati #41 · La Creación del Robert
+Shot Fungi Mati 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Ciencia #Micologia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto NO es pollo: es un hongo que se come un árbol 🍄 | Shot Fungi Mati #41
+Esto NO es pollo: es un hongo que se come un árbol 🍄 | Shot Fungi Mati 41
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Fuentes:
 - Davoli, P. et al. (2005). Laetiporic acids, a family of non-carotenoid polyene pigments from fruit-bodies and liquid cultures of Laetiporus sulphureus. Phytochemistry 66(7): 817–823. https://pubmed.ncbi.nlm.nih.gov/15797608/
 - Peabody, E. K. (2004). Carrots With Character. Agricultural Research (USDA-ARS). https://agresearchmag.ars.usda.gov/2004/nov/carrott
 ¿Cómo le dicen en tu región? 👇
-Shot Fungi Mati #41 · La Creación del Robert
+Shot Fungi Mati 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es pollo: es un hongo que se está comiendo un árbol por dentro. 🍄 Le dicen "pollo del bosque" (Laetiporus): se come la celulosa del tronco y deja la madera café, en cubitos. Bien cocido sabe parecido al pollo, pero crudo o mal cocido puede caer mal y hay personas alérgicas. Nunca comas un hongo silvestre que no haya identificado un experto.
 ¿Cómo le dicen en tu región? 👇
-Shot Fungi Mati #41 · La Creación del Robert
+Shot Fungi Mati 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -76,7 +76,7 @@ Un hongo que "sabe a pollo" también es un descomponedor de madera muy eficaz.
 El complejo Laetiporus sulphureus ("pollo del bosque") causa pudrición café en el corazón de los árboles, sobre todo encinos: degrada de forma selectiva la celulosa y la hemicelulosa y deja un residuo de lignina modificada; la madera pierde resistencia, se agrieta en cubos y se desmorona (UF/IFAS, 2020). Por eso, en árboles urbanos, sus repisas son una señal para pedir una evaluación de riesgo a un arborista.
 Su pigmento naranja, el ácido laetipórico, no es un carotenoide y se ha propuesto como posible colorante alimentario (Davoli et al., 2005). Y aunque bien cocido es comestible para muchos, crudo o mal cocido causa problemas gastrointestinales, hay personas alérgicas y existe al menos un caso pediátrico publicado de alucinaciones y ataxia (CMAJ, 1988). La regla sigue siendo la misma: ningún hongo silvestre se come sin identificación experta.
 ¿En tu ciudad se revisan los árboles con hongos de repisa?
-Shot Fungi Mati #41 · La Creación del Robert
+Shot Fungi Mati 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Arboricultura #Ciencia
 ```
@@ -89,7 +89,7 @@ Esto no es pollo: es Laetiporus, un hongo que se come la celulosa de los árbole
 ### Threads
 ```text
 Esto no es pollo: es un hongo que se está comiendo un árbol por dentro. 🍄 El "pollo del bosque" (Laetiporus) se come la celulosa del tronco y deja la madera café, en cubitos. Bien cocido sabe parecido al pollo, pero crudo o mal cocido puede caer mal y hay personas alérgicas. ¿Cómo le dicen en tu región?
-Shot Fungi Mati #41 · La Creación del Robert
+Shot Fungi Mati 41 · La Creación del Robert
 #Hongos
 ```
 

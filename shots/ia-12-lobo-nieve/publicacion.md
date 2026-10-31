@@ -1,4 +1,4 @@
-# Publicación · Shot IA #12 · La IA no vio al lobo: vio la nieve
+# Publicación · Shot IA 12 · La IA no vio al lobo: vio la nieve
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Por eso una IA médica se prueba con datos de otros hospitales: si no, puede est
 El dibujo es esquemático.
 Fuentes: Ribeiro, Singh y Guestrin (KDD 2016); Zech et al., PLOS Medicine (2018); Winkler et al., JAMA Dermatology (2019).
 ¿Qué otro "atajo tramposo" crees que podría aprender una IA? 👇
-Shot IA #12 · La Creación del Robert
+Shot IA 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #IA #Medicina #Ciencia
 ```
@@ -26,7 +26,7 @@ En 2016 la entrenaron mal a propósito: todos los lobos con nieve, los huskies s
 Por eso una IA médica se prueba con datos de otros hospitales.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué otro "atajo tramposo" crees que podría aprender una IA? 👇
-Shot IA #12 · La Creación del Robert
+Shot IA 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #IA #Medicina #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA no vio al lobo: vio la nieve 🐺❄️ | Shot IA #12
+La IA no vio al lobo: vio la nieve 🐺❄️ | Shot IA 12
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta IA no vio al lobo: vio la nieve. Y fue a propósito. 🐺❄️ La entrenaron así en 2016 para ver si la gente lo notaba. Pero los atajos también aparecen sin querer: una red reconocía el hospital de casi cada radiografía, hasta por una ficha de metal, y una IA de lunares confundía con melanoma lunares sanos marcados con tinta. Por eso una IA médica se prueba con datos de otros hospitales.
 ¿Qué otro "atajo tramposo" crees que podría aprender una IA? 👇
-Shot IA #12 · La Creación del Robert
+Shot IA 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #IA
 ```
@@ -72,7 +72,7 @@ En medicina pasa sin querer. Zech et al. (PLOS Medicine, 2018): una red reconoc�
 La lección para quien compra o implementa IA clínica: exigir validación externa, con datos de otros hospitales, no solo del lugar donde se entrenó.
 ¿Tu organización pide validación externa antes de adoptar un modelo?
 Fuentes: Ribeiro et al., KDD 2016; Zech et al., PLOS Med 2018; Winkler et al., JAMA Dermatol 2019.
-Shot IA #12 · La Creación del Robert
+Shot IA 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #SaludDigital #IAenMedicina #MachineLearning #LaCreacionDelRobert
 ```
@@ -87,7 +87,7 @@ Esta IA no vio al lobo: vio la nieve (la entrenaron así a propósito en 2016). 
 Esta IA no vio al lobo: vio la nieve. Y fue a propósito. 🐺❄️
 En 2016 la entrenaron con lobos siempre en nieve y huskies sin nieve, para ver si la gente notaba el atajo. Lo grave es cuando pasa sin querer: con tinta de cirujano, una IA de lunares confundió con melanoma más de la mitad de los lunares sanos marcados (2019).
 ¿Qué otro atajo crees que aprendería una IA?
-Shot IA #12 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 12 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

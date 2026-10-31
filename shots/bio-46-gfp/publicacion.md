@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #46 · Esa medusa no fabrica luz verde (GFP)
+# Publicación · Shot Biotecnológico 46 · Esa medusa no fabrica luz verde (GFP)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Ojo con la diferencia: la luciérnaga hace bioluminiscencia, fabrica su propia l
 El dibujo es esquemático.
 Fuentes: Shimomura, conferencia Nobel 2008 · Chalfie et al., Science 1994 · Real Academia Sueca de Ciencias, Nobel de Química 2008.
 ¿Habías visto algo brillar bajo luz negra? 👇
-Shot Biotecnológico #46 · La Creación del Robert
+Shot Biotecnológico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #GFP #Fluorescencia #PremioNobel
 ```
@@ -24,7 +24,7 @@ Esa medusa no fabrica luz verde: hace energía azul, y una proteína la vuelve v
 En 1961, Shimomura y Johnson juntaron unas 10,000 medusas Aequorea victoria y hallaron la GFP. No hace luz sola: es fluorescente, absorbe azul o ultravioleta y la devuelve verde. Si pegas su gen al de otra proteína, ves dónde y cuándo se fabrica dentro de células vivas. En 1994 Chalfie hizo brillar seis neuronas de un gusano vivo; Tsien sacó azul, cian y amarillo. Nobel de Química 2008.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Habías visto algo brillar bajo luz negra? 👇
-Shot Biotecnológico #46 · La Creación del Robert
+Shot Biotecnológico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #GFP #Fluorescencia #PremioNobel
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa medusa no fabrica luz verde 🪼💚 | Shot Biotecnológico #46
+Esa medusa no fabrica luz verde 🪼💚 | Shot Biotecnológico 46
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - Chalfie M. et al. (1994). Green fluorescent protein as a marker for gene expression. Science 263:802–805. https://pubmed.ncbi.nlm.nih.gov/8303295/
 - Prasher D.C. et al. (1992). Primary structure of the Aequorea victoria green-fluorescent protein. Gene 111:229–233. https://pubmed.ncbi.nlm.nih.gov/1347277/
 ¿Habías visto algo brillar bajo luz negra? 👇
-Shot Biotecnológico #46 · La Creación del Robert
+Shot Biotecnológico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #GFP
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa medusa no fabrica luz verde: hace energía azul, y una proteína la vuelve verde. 🪼💚 Esa proteína, la GFP, es fluorescente: absorbe luz azul y la devuelve verde. Pegada a otra proteína, deja ver dónde trabaja dentro de células vivas. Nobel de Química 2008.
 ¿Habías visto algo brillar bajo luz negra? 👇
-Shot Biotecnológico #46 · La Creación del Robert
+Shot Biotecnológico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #GFP
 ```
@@ -67,14 +67,14 @@ Una medusa le dio a la biología una de sus herramientas más importantes: la pr
 En 1961, Osamu Shimomura y Frank Johnson procesaron unas 10,000 medusas Aequorea victoria en Friday Harbor para estudiar su luz. Junto a la aequorina (luz azul con calcio) apareció una "proteína verde". Décadas después, Douglas Prasher clonó su gen (1992) y Martin Chalfie demostró en 1994 que funcionaba en otros organismos: en el gusano C. elegans, seis neuronas del tacto brillaron en el animal vivo, sin añadir nada más. Roger Tsien explicó cómo se forma su cromóforo (3 aminoácidos y oxígeno) y amplió la paleta a azul, cian y amarillo.
 Por qué importa: al fusionar el gen de la GFP con el de otra proteína, se puede seguir dónde y cuándo se fabrica esa proteína en células vivas, en lugar de fijar y matar el tejido para verlo. El comité Nobel la llamó una de las herramientas más importantes de la biociencia contemporánea. Nobel de Química 2008.
 ¿Qué otra herramienta "pequeña" creen que cambió más la investigación de lo que parece?
-Shot Biotecnológico #46 · La Creación del Robert
+Shot Biotecnológico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #GFP #BiologiaCelular #PremioNobel #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esa medusa no fabrica luz verde: hace energía azul y una proteína, la GFP, la vuelve verde. Pegada a otra proteína, deja verla trabajar en células vivas. Nobel de Química 2008. 🪼 Shot Biotecnológico #46 #Biotecnologia
+Esa medusa no fabrica luz verde: hace energía azul y una proteína, la GFP, la vuelve verde. Pegada a otra proteína, deja verla trabajar en células vivas. Nobel de Química 2008. 🪼 Shot Biotecnológico 46 #Biotecnologia
 ```
 
 ### Threads
@@ -82,7 +82,7 @@ Esa medusa no fabrica luz verde: hace energía azul y una proteína, la GFP, la 
 Esa medusa no fabrica luz verde: hace energía azul, y una proteína la vuelve verde. 🪼💚
 Esa proteína, la GFP, es fluorescente: absorbe azul o ultravioleta y la devuelve verde. En 1994 hizo brillar seis neuronas de un gusano vivo. Nobel de Química 2008.
 ¿Habías visto algo brillar bajo luz negra?
-Shot Biotecnológico #46 · La Creación del Robert
+Shot Biotecnológico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

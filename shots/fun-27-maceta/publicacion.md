@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #27 · Ese hongo amarillo no está matando a tu planta: Leucocoprinus birnbaumii
+# Publicación · Shot Fungi Mati 27 · Ese hongo amarillo no está matando a tu planta: Leucocoprinus birnbaumii
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Arrancarlo no lo elimina: el micelio sigue en la tierra, y los fungicidas casi n
 El dibujo es esquemático. No es consejo médico.
 Fuentes: Iowa State University Extension; UMass Extension (2021); Bartsch y col. 2005 (Angewandte Chemie); Kew/Colombian Fungi; Volk 2002; Kuo 2016 (MushroomExpert).
 ¿A ti también te salieron en tus macetas? 👇
-Shot Fungi Mati #27 · La Creación del Robert
+Shot Fungi Mati 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Plantas #PlantasDeInterior
 ```
@@ -28,7 +28,7 @@ Es Leucocoprinus birnbaumii, el hongo amarillo de las macetas. Llega en la tierr
 Truco: deja un sombrero una noche sobre papel negro y amanece un dibujo blanco de esporas.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿A ti también te salieron en tus macetas? 👇
-Shot Fungi Mati #27 · La Creación del Robert
+Shot Fungi Mati 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Plantas #PlantasDeInterior
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese hongo amarillo NO mata a tu planta 🍄🪴 | Shot Fungi Mati #27
+Ese hongo amarillo NO mata a tu planta 🍄🪴 | Shot Fungi Mati 27
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - Volk, T. (2002). Fungus of the Month, February 2002: Leucocoprinus birnbaumii. http://botit.botany.wisc.edu/toms_fungi/feb2002.html
 - Kuo, M. (2016). Leucocoprinus birnbaumii. MushroomExpert.Com. https://www.mushroomexpert.com/leucocoprinus_birnbaumii.html
 ¿A ti también te salieron en tus macetas? 👇
-Shot Fungi Mati #27 · La Creación del Robert
+Shot Fungi Mati 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #PlantasDeInterior
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese hongo amarillo en tu maceta no está matando a tu planta: se come lo que ya está muerto. 🍄 Es Leucocoprinus birnbaumii: su micelio deshace los restos muertos de la tierra y no daña a las plantas vivas. Eso sí, se considera tóxico si se come: si hay niños o mascotas, quítalo.
 ¿A ti también te salieron en tus macetas? 👇
-Shot Fungi Mati #27 · La Creación del Robert
+Shot Fungi Mati 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #PlantasDeInterior
 ```
@@ -76,7 +76,7 @@ Leucocoprinus birnbaumii es un hongo saprobio común en macetas e invernaderos: 
 Un dato químico: en 2005, un grupo de la Universidad Ludwig-Maximilian de Múnich describió que su color amarillo se debe a dos alcaloides nuevos, las birnbauminas A y B (Angewandte Chemie).
 Por qué importa: entender que es un descomponedor evita tirar plantas sanas o usar fungicidas sin efecto, y enfoca la prevención en lo importante: que nadie se lo coma.
 ¿Te ha pasado en casa o en tu vivero?
-Shot Fungi Mati #27 · La Creación del Robert
+Shot Fungi Mati 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Horticultura #Ciencia
 ```
@@ -89,7 +89,7 @@ Ese hongo amarillo en tu maceta no está matando a tu planta: se come lo que ya 
 ### Threads
 ```text
 Ese hongo amarillo en tu maceta no está matando a tu planta: se come lo que ya está muerto. 🍄 Es Leucocoprinus birnbaumii; su micelio deshace los restos muertos de la tierra. Se considera tóxico si se come, así que con niños o mascotas, quítalo. Y arrancarlo no lo elimina: el micelio sigue abajo. ¿A ti también te salieron?
-Shot Fungi Mati #27 · La Creación del Robert
+Shot Fungi Mati 27 · La Creación del Robert
 #Hongos
 ```
 

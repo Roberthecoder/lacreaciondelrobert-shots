@@ -1,4 +1,4 @@
-# Publicación · Shot IA #03 · Un chatbot por dentro: no escribe de golpe, apuesta
+# Publicación · Shot IA 03 · Un chatbot por dentro: no escribe de golpe, apuesta
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 Verificado por un verificador independiente el 28 oct 2026 (ver `verificacion.md`).
@@ -15,7 +15,7 @@ Ojo: no es que no "piense" nada. En 2025, investigadores de Anthropic vieron por
 El dibujo es esquemático y el ejemplo del cielo es ilustrativo.
 Fuentes: repositorio de GPT-3 (OpenAI, 2020) · ficha de Llama 3 (Meta, 2024) · Anthropic (2025).
 ¿Te ha contestado una IA algo muy seguro… y mal? 👇
-Shot IA #03 · La Creación del Robert
+Shot IA 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT #ComoFunciona #Tokens
 ```
@@ -26,7 +26,7 @@ Lo que te contesta un chatbot no sale de golpe: es una apuesta, pedacito por ped
 Corta tu pregunta en tokens, los vuelve números, los pasa por capas de cálculos (GPT-3 tenía 175 mil millones de parámetros en 2020) y al final sale una lista: qué tan probable es cada token de ser el siguiente (Llama 3 escoge entre 128 mil). Escoge uno, lo pega y repite. Por eso escoge lo probable, no lo verdadero, y con un poco de azar puede contestar distinto cada vez.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te ha contestado una IA algo muy seguro… y mal? 👇
-Shot IA #03 · La Creación del Robert
+Shot IA 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT #ComoFunciona #Tokens
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un chatbot no escribe tu respuesta de golpe: la apuesta 🎲 | Shot IA #03
+Un chatbot no escribe tu respuesta de golpe: la apuesta 🎲 | Shot IA 03
 ```
 Descripción:
 ```text
@@ -46,7 +46,7 @@ Fuentes:
 - Meta, Llama 3 Model Card (2024): https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md
 - Anthropic, Tracing the thoughts of a large language model (2025): https://www.anthropic.com/research/tracing-thoughts-language-model
 ¿Te ha contestado una IA algo muy seguro… y mal? 👇
-Shot IA #03 · La Creación del Robert
+Shot IA 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #InteligenciaArtificial #ChatGPT
 ```
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Lo que te contesta un chatbot no sale de golpe: es una apuesta, pedacito por pedacito. 🎲 Calcula qué tan probable es cada pedazo de palabra de ser el siguiente, escoge uno, lo pega y repite. Por eso escoge lo probable, no lo verdadero.
 ¿Te ha contestado una IA algo muy seguro… y mal? 👇
-Shot IA #03 · La Creación del Robert
+Shot IA 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT
 ```
@@ -67,7 +67,7 @@ Un modelo de lenguaje corta el texto en tokens (palabras o trozos de palabra), l
 Matiz importante: en 2025, investigadores de Anthropic mostraron que un modelo puede planear varias palabras adelante, aunque escriba una a la vez.
 Por qué importa: el modelo optimiza lo probable, no lo verdadero. Por eso puede equivocarse con mucha seguridad, y con un poco de azar puede responder distinto a la misma pregunta. Entender esto ayuda a usar estas herramientas con criterio: verificar datos y no confundir fluidez con exactitud.
 ¿Cómo lo explicarías tú a alguien que nunca ha usado un chatbot?
-Shot IA #03 · La Creación del Robert
+Shot IA 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ModelosDeLenguaje #Tokens #AlfabetizacionDigital
 ```
@@ -82,7 +82,7 @@ Lo que te contesta un chatbot no sale de golpe: es una apuesta, pedacito por ped
 Lo que te contesta un chatbot no sale de golpe: es una apuesta, pedacito por pedacito. 🎲
 Corta el texto en tokens, calcula qué tan probable es cada uno de ser el siguiente, escoge uno, lo pega y repite. Por eso escoge lo probable, no lo verdadero, y si preguntas dos veces puede contestar distinto.
 ¿Te ha contestado una IA algo muy seguro… y mal?
-Shot IA #03 · La Creación del Robert
+Shot IA 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```

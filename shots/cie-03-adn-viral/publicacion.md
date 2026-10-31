@@ -13,7 +13,7 @@ Una hipótesis es que capturar estos genes ayudó a que la placenta evolucionara
 El dibujo es esquemático.
 Fuentes: Lyu et al. 2026 (Viruses), Mi et al. 2000 (Nature), Dupressoir et al. 2009 (PNAS), Lavialle et al. 2013.
 ¿Sabías que llevabas virus en tu ADN? 👇
-Shot Científico #03 · La Creación del Robert
+Shot Científico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #ADN #Virus #Placenta
 ```
@@ -24,7 +24,7 @@ Esto es tu ADN en cuadritos, y casi uno de cada doce no es humano: vino de virus
 Son retrovirus endógenos: infectaron óvulos y espermatozoides de nuestros antepasados y se heredaron hasta ti. Casi todos están rotos, pero uno se volvió la sincitina, la proteína que funde las células de tu placenta. En ratones sin ella, la placenta falla.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que llevabas virus en tu ADN? 👇
-Shot Científico #03 · La Creación del Robert
+Shot Científico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #ADN #Virus #Placenta
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Casi 1 de cada 12 pedacitos de tu ADN vino de virus 🧬 | Shot Científico #03
+Casi 1 de cada 12 pedacitos de tu ADN vino de virus 🧬 | Shot Científico 03
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - Lavialle, C. et al. Paleovirology of "syncytins", retroviral env genes exapted for a role in placentation. Phil. Trans. R. Soc. B 368: 20120507 (2013).
 
 ¿Sabías que llevabas virus en tu ADN? 👇
-Shot Científico #03 · La Creación del Robert
+Shot Científico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #ADN
 ```
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esto es tu ADN en cuadritos, y casi uno de cada doce no es humano: vino de virus. 🧬 Uno de esos virus se volvió la proteína que arma tu placenta. ¿Sabías que llevabas virus en tu ADN? 👇
-Shot Científico #03 · La Creación del Robert
+Shot Científico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #ADN
 ```
@@ -67,7 +67,7 @@ Cerca del 8 % del genoma humano son retrovirus endógenos: restos de infecciones
 Por qué importa: algunos se volvieron útiles. En el año 2000 se describió que la sincitina-1, clave en la placenta humana, es el gen de envoltura del retrovirus endógeno HERV-W (Mi et al., Nature). En 2009, ratones sin sincitina-A murieron en el útero porque no se formaba la capa de la placenta donde ocurre el intercambio madre-bebé (Dupressoir et al., PNAS). Distintos mamíferos capturaron, de forma independiente, genes virales distintos para la misma función. Una hipótesis es que esto fue clave para la aparición de la placenta.
 Es un buen recordatorio de que la evolución recicla piezas de donde puede, incluso de un virus.
 ¿Qué otra "pieza reciclada" de la evolución te sorprende?
-Shot Científico #03 · La Creación del Robert
+Shot Científico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Genetica #Evolucion #Placenta
 ```
@@ -94,7 +94,7 @@ Un retrovirus se mete en el ADN de una célula, llega a un óvulo y pasa de gene
 El dibujo es esquemático.
 Fuentes: Lyu et al. 2026, Mi et al. 2000, Ostrem-Niemcewicz et al. 2026.
 ¿Contaste las 8 notas? 👇
-Shot Científico #03 · La Creación del Robert
+Shot Científico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #ADN #Virus #Placenta
 ```
@@ -105,7 +105,7 @@ Soy Robert, de La Creación del Robert 🌱
 El latido del bebé va a 140 por minuto y las 7 células de la placenta se funden en un acorde, gracias a una proteína que antes fue de un virus.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Contaste las 8 notas? 👇
-Shot Científico #03 · La Creación del Robert
+Shot Científico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #ADN #Virus #Placenta
 ```
@@ -127,7 +127,7 @@ Fuentes:
 - Ostrem-Niemcewicz et al. Intermittent Auscultation for Intrapartum Fetal Heart Rate Surveillance. J. Midwifery Womens Health (2026), PMC13655190: frecuencia cardiaca fetal normal, 110–160 latidos por minuto.
 
 ¿Contaste las 8 notas? 👇
-Shot Científico #03 · La Creación del Robert
+Shot Científico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #ADN
 ```
@@ -135,7 +135,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 🎧 100 cuadritos = tu ADN; 8 suenan distinto, porque el 8 % vino de virus. 🧬 ¿Contaste las 8 notas? 👇
-Shot Científico #03 · La Creación del Robert
+Shot Científico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #39 · Esa pastilla no calma tu estómago: le hace química (antiácidos)
+# Publicación · Shot Químico 39 · Esa pastilla no calma tu estómago: le hace química (antiácidos)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Si tus agruras son frecuentes, ve al médico. Busca atención urgente si vomitas
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes: Engevik et al. 2020 · Dressman et al. 1990 · MedlinePlus · StatPearls 2023 · FDA 21 CFR 331 · OpenStax Chemistry 2e · Beaumont 1833.
 ¿Tú qué usas para las agruras? 👇
-Shot Químico #39 · La Creación del Robert
+Shot Químico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Antiacido #Agruras #AcidoBase
 ```
@@ -27,7 +27,7 @@ Tu estómago hace ácido clorhídrico (en ayunas, pH mediano de 1.7 en un estudi
 Si tus agruras son frecuentes, ve al médico.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú qué usas para las agruras? 👇
-Shot Químico #39 · La Creación del Robert
+Shot Químico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Antiacido #Agruras #AcidoBase
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa pastilla no calma tu estómago 💊 | Shot Químico #39
+Esa pastilla no calma tu estómago 💊 | Shot Químico 39
 ```
 Descripción:
 ```text
@@ -61,7 +61,7 @@ Fuentes:
 - Reseña de la edición de Edimburgo (1838). Br Foreign Med Rev. https://pmc.ncbi.nlm.nih.gov/articles/PMC5590289/
 - PubChem (NIH). Hydrochloric acid, CID 313. https://pubchem.ncbi.nlm.nih.gov/compound/313
 ¿Tú qué usas para las agruras? 👇
-Shot Químico #39 · La Creación del Robert
+Shot Químico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Antiacido
 ```
@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa pastilla para las agruras no calma tu estómago: es una base que choca con su ácido. 💊 Tu estómago hace ácido clorhídrico; el antiácido trae bases que lo neutralizan: ácido + base da sal y agua (y con carbonatos, CO₂: el eructo). El omeprazol es otra cosa: frena la fábrica del ácido. Si tus agruras son frecuentes, ve al médico.
 ¿Tú qué usas para las agruras? 👇
-Shot Químico #39 · La Creación del Robert
+Shot Químico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Antiacido
 ```
@@ -84,7 +84,7 @@ Y una historia que fundó la fisiología digestiva: en 1822, en la isla Mackinac
 Si las agruras son frecuentes, lo indicado es consultar al médico.
 El dibujo es esquemático. Fuentes: Engevik et al. (Physiol Rev, 2020); Dressman et al. (Pharm Res, 1990); MedlinePlus; StatPearls; FDA 21 CFR 331; OpenStax Chemistry 2e; Beaumont (1833).
 ¿Qué otra reacción química de todos los días te gustaría ver explicada por dentro?
-Shot Químico #39 · La Creación del Robert
+Shot Químico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Farmacologia #Divulgacion #Salud
 ```
@@ -99,7 +99,7 @@ Esa pastilla para las agruras no calma tu estómago: es una base que choca con s
 Esa pastilla para las agruras no calma tu estómago: es una base que choca con su ácido. 💊
 Tu estómago hace ácido clorhídrico; el antiácido trae bases (carbonato de calcio, hidróxido de magnesio, bicarbonato) y ácido + base da sal y agua. Con carbonatos sale CO₂: por eso puedes eructar. El omeprazol, en cambio, frena las bombas que fabrican el ácido.
 ¿Tú qué usas para las agruras?
-Shot Químico #39 · La Creación del Robert
+Shot Químico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #18 · El cacahuate arrugado del fondo de la bolsa: aflatoxinas
+# Publicación · Shot Fungi Mati 18 · El cacahuate arrugado del fondo de la bolsa: aflatoxinas
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Lo que sí sirve: secar bien el grano, guardarlo seco y fresco, y tirar lo que s
 El dibujo es esquemático. No es consejo médico.
 Fuentes: MMWR 2004 (CDC); OMS 2023; IARC; Singapore Food Agency 2022; Pickova et al. 2021 (Toxins).
 ¿A ti también te ha tocado el cacahuate arrugado del fondo? 👇
-Shot Fungi Mati #18 · La Creación del Robert
+Shot Fungi Mati 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Aflatoxinas #Cacahuates
 ```
@@ -27,7 +27,7 @@ Las hacen mohos como Aspergillus flavus en maíz, cacahuate, nueces y chiles gua
 Lo que sí sirve: secar bien el grano, guardarlo seco y fresco, y tirar lo mohoso, arrugado o descolorido.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿A ti también te ha tocado el cacahuate arrugado del fondo? 👇
-Shot Fungi Mati #18 · La Creación del Robert
+Shot Fungi Mati 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Aflatoxinas #Cacahuates
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El cacahuate arrugado del fondo de la bolsa 🥜⚠️ Aflatoxinas | Shot Fungi Mati #18
+El cacahuate arrugado del fondo de la bolsa 🥜⚠️ Aflatoxinas | Shot Fungi Mati 18
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - National Cancer Institute. Aflatoxins. https://www.cancer.gov/about-cancer/causes-prevention/risk/substances/aflatoxins
 - Pickova, D. et al. (2021). Aflatoxins: History, Significant Milestones, Recent Data on Their Toxicity and Ways to Mitigation. Toxins 13(6): 399. https://pmc.ncbi.nlm.nih.gov/articles/PMC8227755/
 ¿A ti también te ha tocado el cacahuate arrugado del fondo? 👇
-Shot Fungi Mati #18 · La Creación del Robert
+Shot Fungi Mati 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Aflatoxinas #FungiMati
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Por qué no debes comer el cacahuate arrugado del fondo de la bolsa? Porque puede traer aflatoxinas, un veneno de moho sin olor, sabor ni color que no se quita del todo al tostar o freír. ⚠️ Lo que sí sirve: secar bien el grano, guardarlo seco y fresco, y tirar lo mohoso, arrugado o descolorido.
 ¿A ti también te ha tocado el cacahuate arrugado del fondo? 👇
-Shot Fungi Mati #18 · La Creación del Robert
+Shot Fungi Mati 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Aflatoxinas
 ```
@@ -75,7 +75,7 @@ Mohos como Aspergillus flavus producen aflatoxinas en maíz, cacahuate, nueces y
 El brote de Kenia en 2004 lo muestra: maíz cosechado en plenas lluvias y guardado húmedo, muestras de comida de las casas con hasta 8,000 ppb de aflatoxina B1 (límite: 20 ppb), y al 20 de julio 317 casos de ictericia y 125 muertes (MMWR, CDC). La intervención clave fue reemplazar el maíz contaminado; a largo plazo, cosechar bien, secar por completo y almacenar de forma adecuada.
 Por qué importa: la prevención está antes de la cocina: en el secado y el almacenamiento.
 ¿En tu región cómo se seca y se guarda el maíz?
-Shot Fungi Mati #18 · La Creación del Robert
+Shot Fungi Mati 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #InocuidadAlimentaria #SaludPublica #Ciencia
 ```
@@ -88,7 +88,7 @@ El cacahuate arrugado del fondo de la bolsa puede traer aflatoxinas: veneno de m
 ### Threads
 ```text
 ¿Por qué no debes comer el cacahuate arrugado del fondo de la bolsa? Porque puede traer aflatoxinas: un veneno de moho sin olor, sabor ni color. En Kenia, en 2004, maíz guardado húmedo dejó 317 enfermos y 125 muertos. Lo que sí sirve: secar, guardar seco y fresco, y tirar lo mohoso. ¿A ti también te ha tocado?
-Shot Fungi Mati #18 · La Creación del Robert
+Shot Fungi Mati 18 · La Creación del Robert
 #Hongos
 ```
 

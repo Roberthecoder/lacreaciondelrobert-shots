@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #27 · Tu pie no se duerme: tus nervios hacen corto
+# Publicación · Shot Científico 27 · Tu pie no se duerme: tus nervios hacen corto
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Así que tu pie no se duerme: tus nervios hacen corto un ratito.
 El dibujo es esquemático.
 Fuentes: NHS; Cleveland Clinic; McGill OSS.
 ¿A ti se te «duerme» más el pie o la mano? 👇
-Shot Científico #27 · La Creación del Robert
+Shot Científico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Salud
 ```
@@ -27,7 +27,7 @@ Sentarte sobre tu pierna o cruzarla mucho rato aprieta los nervios del pie y les
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti se te «duerme» más el pie o la mano? 👇
-Shot Científico #27 · La Creación del Robert
+Shot Científico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Salud
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu pie no se duerme: tus nervios hacen corto 🦶⚡ | Shot Científico #27
+Tu pie no se duerme: tus nervios hacen corto 🦶⚡ | Shot Científico 27
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Cleveland Clinic. Ulnar Nerve. https://my.clevelandclinic.org/health/body/21664-ulnar-nerve
 - McGill Office for Science and Society (2022). The funny bone is not a bone. https://www.mcgill.ca/oss/article/did-you-know/funny-bone-not-bone
 ¿A ti se te «duerme» más el pie o la mano? 👇
-Shot Científico #27 · La Creación del Robert
+Shot Científico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu pie no se duerme: son tus nervios aplastados. 🦶⚡ Al sentarte sobre la pierna o cruzarla mucho rato, los nervios del pie quedan apretados y con menos sangre, y dejan de mandar bien sus mensajes: se siente entumido. Al moverte despiertan con señales desordenadas: el hormigueo, que los médicos llaman parestesia. Casi nunca es peligroso y se quita solo en unos minutos; si pasa seguido sin razón o no se quita, conviene ir al médico. Y el «hueso de la risa» es un nervio del codo, no un hueso.
 ¿A ti se te «duerme» más el pie o la mano? 👇
-Shot Científico #27 · La Creación del Robert
+Shot Científico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -71,7 +71,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Por qué se "duerme" el pie? No se duerme: al sentarnos sobre la pierna o cruzarla mucho rato, apretamos los nervios que van al pie y les llega menos sangre, así que dejan de mandar bien sus señales al cerebro (entumecimiento). Al cambiar de posición, la presión se va y los nervios se reactivan con señales desordenadas: el hormigueo, que en medicina se llama parestesia. Casi nunca es peligroso y pasa en unos minutos; si ocurre seguido sin razón o no se quita, conviene consultar a un médico. El famoso «hueso de la risa» funciona igual: es el nervio cubital, que pasa casi sin protección por el lado interno del codo.
 Fuentes: NHS; Cleveland Clinic; McGill Office for Science and Society.
-Shot Científico #27 · La Creación del Robert
+Shot Científico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

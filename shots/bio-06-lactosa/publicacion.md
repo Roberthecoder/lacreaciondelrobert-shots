@@ -15,7 +15,7 @@ Y hay una razón biológica para que un efecto así no sea permanente: el recubr
 El dibujo es esquemático.
 Fuentes: During et al., Nature Medicine 1998; The Thought Emporium (2018); Cellular Plasticity in Gut and Liver Regeneration (2024).
 ¿A ti te cae mal la leche o le aguantas todo? 👇
-Shot Biotecnológico #06 · La Creación del Robert
+Shot Biotecnológico 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Lactosa #TerapiaGenica #Intestino
 ```
@@ -28,7 +28,7 @@ En 1998 se probó en ratas adultas con poca lactasa, un virus adeno-asociado con
 Además el intestino cambia su recubrimiento cada 4 o 5 días, así que el efecto no sería para siempre.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti te cae mal la leche o le aguantas todo? 👇
-Shot Biotecnológico #06 · La Creación del Robert
+Shot Biotecnológico 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Lactosa #TerapiaGenica #Intestino
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El virus que te haría digerir la leche otra vez 🥛🧬 | Shot Biotecnológico #06
+El virus que te haría digerir la leche otra vez 🥛🧬 | Shot Biotecnológico 06
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - "Cellular Plasticity in Gut and Liver Regeneration" (2024): el recubrimiento del intestino se renueva cada 4 a 5 días. https://pmc.ncbi.nlm.nih.gov/articles/PMC11565004/
 
 ¿A ti te cae mal la leche o le aguantas todo? 👇
-Shot Biotecnológico #06 · La Creación del Robert
+Shot Biotecnológico 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Lactosa
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Ese virus no viene a enfermarte: trae un gen que te hace digerir la leche. 🥛🧬 En 1998 funcionó durante meses en ratas de laboratorio; en 2018 un divulgador lo intentó en sí mismo, pero fue un autoexperimento, no un tratamiento aprobado. Y tu intestino se renueva cada 4 o 5 días, así que no sería para siempre. ¿A ti te cae mal la leche? 👇
-Shot Biotecnológico #06 · La Creación del Robert
+Shot Biotecnológico 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia
 ```
@@ -76,7 +76,7 @@ En 2018, un divulgador, Justin Atkin (The Thought Emporium), lo intentó en sí 
 El límite es biológico: el recubrimiento del intestino se renueva cada 4 a 5 días. Si el gen no llega a las células madre de la cripta, se va con las células viejas. Por eso lo que sí existe es la enzima en pastilla.
 ¿Qué otras terapias génicas "en pastilla" te parecen viables?
 Fuentes: During et al., Nature Medicine 1998; Thomas Jefferson University 1998; Cellular Plasticity in Gut and Liver Regeneration, 2024.
-Shot Biotecnológico #06 · La Creación del Robert
+Shot Biotecnológico 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #TerapiaGenica #Lactosa
 ```

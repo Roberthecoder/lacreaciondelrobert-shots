@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #52 · Ese hielo no es agua apretada: es agua con huecos (por qué flota el hielo)
+# Publicación · Shot Químico 52 · Ese hielo no es agua apretada: es agua con huecos (por qué flota el hielo)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Esa misma hinchazón revienta tuberías cuando se congelan. Y lo curioso: el hie
 El dibujo es esquemático.
 Fuentes: CK-12/LibreTexts · USGS · Galileo 1612 · Maitra y Zare 2016.
 ¿Alguna vez se te reventó algo en el congelador? 👇
-Shot Químico #52 · La Creación del Robert
+Shot Químico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Hielo #Agua #CienciaEnCasa
 ```
@@ -25,7 +25,7 @@ Ese hielo de tu vaso no es agua apretada por el frío: es agua inflada, con huec
 Al congelarse, los puentes de hidrógeno acomodan las moléculas en hexágonos con huecos: la misma agua ocupa como 9 % más espacio y flota. Por eso los lagos se congelan por arriba y los peces pasan el invierno debajo, en agua líquida. Galileo ya lo defendía en 1612: el hielo flota por ser más ligero, no por ser plano. Y el hielo de agua pesada sí se hunde.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez se te reventó algo en el congelador? 👇
-Shot Químico #52 · La Creación del Robert
+Shot Químico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Hielo #Agua #CienciaEnCasa
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese hielo no es agua apretada: tiene huecos 🧊 | Shot Químico #52
+Ese hielo no es agua apretada: tiene huecos 🧊 | Shot Químico 52
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Museo Galileo. Lodovico delle Colombe. https://brunelleschi.imss.fi.it/itineraries/biography/LodovicoColombe.html
 - Maitra U., Zare R.N. (2016). Fall and Rise of a D2O Ice Cube in Liquid H2O. Resonance. https://web.stanford.edu/group/Zarelab/publinks/942.pdf
 ¿Alguna vez se te reventó algo en el congelador? 👇
-Shot Químico #52 · La Creación del Robert
+Shot Químico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Hielo
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 Ese hielo de tu vaso no es agua apretada por el frío: es agua inflada, con huecos por dentro. 🧊 Al congelarse, el agua se acomoda en hexágonos con huecos y ocupa como 9 % más espacio: por eso flota, por eso los peces sobreviven bajo el hielo y por eso revientan las tuberías.
 El dibujo es esquemático.
 ¿Alguna vez se te reventó algo en el congelador? 👇
-Shot Químico #52 · La Creación del Robert
+Shot Químico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Hielo
 ```
@@ -71,14 +71,14 @@ El hielo no es agua "apretada" por el frío: es agua con huecos.
 En casi todas las sustancias, el sólido es más denso que el líquido. El agua es una de las pocas excepciones: al congelarse, los puentes de hidrógeno quedan fijos y forman una red hexagonal abierta. A 0 °C, el agua líquida tiene 0.9998 g/cm³ y el hielo 0.917 g/cm³: la misma masa ocupa alrededor de 9 % más volumen.
 Esa anomalía tiene consecuencias enormes: los lagos se congelan por arriba y conservan agua líquida debajo (donde sobreviven los peces), y la expansión del hielo revienta tuberías. Galileo ya lo había defendido en 1612 frente a quienes atribuían la flotación a la forma del hielo, no a su densidad.
 ¿Qué otra "excepción" de la química cotidiana te parece más sorprendente?
-Shot Químico #52 · La Creación del Robert
+Shot Químico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Ciencia #Agua #DivulgacionCientifica #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese hielo no es agua apretada: es agua con huecos. Al congelarse arma hexágonos y ocupa como 9 % más espacio; por eso flota. Galileo ya lo defendía en 1612. 🧊 Shot Químico #52 #Quimica
+Ese hielo no es agua apretada: es agua con huecos. Al congelarse arma hexágonos y ocupa como 9 % más espacio; por eso flota. Galileo ya lo defendía en 1612. 🧊 Shot Químico 52 #Quimica
 ```
 
 ### Threads
@@ -86,7 +86,7 @@ Ese hielo no es agua apretada: es agua con huecos. Al congelarse arma hexágonos
 Ese hielo de tu vaso no es agua apretada por el frío: es agua inflada, con huecos por dentro. 🧊
 Al congelarse, el agua arma hexágonos con huecos y ocupa como 9 % más espacio: flota, deja a los peces vivir bajo el hielo y revienta tuberías. Y el hielo de agua pesada sí se hunde.
 ¿Alguna vez se te reventó algo en el congelador?
-Shot Químico #52 · La Creación del Robert
+Shot Químico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

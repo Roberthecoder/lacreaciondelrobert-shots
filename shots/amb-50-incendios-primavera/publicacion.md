@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #50 · De cada mil incendios en Jalisco, solo dos los prende la naturaleza (Bosque La Primavera)
+# Publicación · Shot Ambiental 50 · De cada mil incendios en Jalisco, solo dos los prende la naturaleza (Bosque La Primavera)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y sigue: en 2025 hubo alrededor de 50 incendios dentro del bosque, casi 2,000 he
 No quemes basura ni pastizal, y si ves humo en La Primavera, llama al 911.
 El dibujo es esquemático. Fuentes en el comentario fijado.
 ¿Has visto el humo de La Primavera desde tu casa? 👇
-Shot Ambiental #50 · La Creación del Robert
+Shot Ambiental 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #BosqueLaPrimavera #Guadalajara #Jalisco
 ```
@@ -26,7 +26,7 @@ El Bosque La Primavera, junto a Guadalajara, mide 30,500 hectáreas y capta unos
 Si ves humo, llama al 911.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Has visto el humo de La Primavera desde tu casa? 👇
-Shot Ambiental #50 · La Creación del Robert
+Shot Ambiental 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #BosqueLaPrimavera #Guadalajara #Jalisco
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-998 de cada 1,000 incendios los prendimos nosotros 🔥 | Shot Ambiental #50
+998 de cada 1,000 incendios los prendimos nosotros 🔥 | Shot Ambiental 50
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - CONAFOR, incendio de La Primavera (3 may 2012): https://idefor.cnf.gob.mx/documents/2078/download
 - Temporada 2025: Publimetro (11 mar 2026), Notisistema (7 ago 2025) y El Informador (22 mar 2026)
 ¿Has visto el humo de La Primavera desde tu casa? 👇
-Shot Ambiental #50 · La Creación del Robert
+Shot Ambiental 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #BosqueLaPrimavera #Guadalajara
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 De cada mil incendios forestales en Jalisco, solo dos los prendió un rayo o un volcán; los demás, personas (CONAFOR, 2005–2013). 🔥 Junto a Guadalajara, en 2025 se quemaron casi 2,000 hectáreas del Bosque La Primavera. No quemes basura ni pastizal, y si ves humo, llama al 911.
 ¿Has visto el humo de La Primavera desde tu casa? 👇
-Shot Ambiental #50 · La Creación del Robert
+Shot Ambiental 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #BosqueLaPrimavera #Guadalajara
 ```
@@ -74,7 +74,7 @@ Con datos de CONAFOR (2005–2013), el Plan Estatal de Manejo del Fuego de Jalis
 Un estudio de la Universidad de Guadalajara (2014) encontró que el 83 % de los pinitos en el área quemada en 2005 eran rebrotes de raíz, pero que se quedan bajos y ramosos y casi no llegan a reproducirse.
 Si casi todos los incendios los causamos personas, la prevención está en nuestras manos: no quemar basura ni pastizal y reportar el humo al 911.
 ¿Qué medida crees que reduciría más los incendios en La Primavera?
-Shot Ambiental #50 · La Creación del Robert
+Shot Ambiental 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #IncendiosForestales #BosqueLaPrimavera #Guadalajara #LaCreacionDelRobert
 ```

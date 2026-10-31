@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #09 · El atardecer azul de Marte
+# Publicación · Shot Científico 09 · El atardecer azul de Marte
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -13,7 +13,7 @@ El 15 de abril de 2015, el rover Curiosity de la NASA lo fotografió en el crát
 El dibujo es esquemático.
 Fuentes: NASA/JPL (PIA19400), NASA Space Place, NASA APOD.
 ¿Qué color tuvo el atardecer más bonito que has visto? 👇
-Shot Científico #09 · La Creación del Robert
+Shot Científico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Marte #Espacio #NASA
 ```
@@ -24,7 +24,7 @@ Hay un atardecer azul que nadie ha visto en persona: el de Marte. 🌅🔵
 En la Tierra el aire desvía más la luz azul: cielo azul de día y atardecer rojo. En Marte, un polvo finísimo pinta el cielo de rojizo, pero deja pasar mejor la luz azul cerca del Sol: al atardecer aparece un halo azul. Curiosity lo fotografió el 15 de abril de 2015 en el cráter Gale. Y desde allá, el Sol se ve de unos dos tercios del tamaño.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué color tuvo el atardecer más bonito que has visto? 👇
-Shot Científico #09 · La Creación del Robert
+Shot Científico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Marte #Espacio #NASA
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El atardecer azul que nadie ha visto en persona: Marte 🌅 | Shot Científico #09
+El atardecer azul que nadie ha visto en persona: Marte 🌅 | Shot Científico 09
 ```
 Descripción:
 ```text
@@ -45,7 +45,7 @@ Fuentes:
 - NASA Space Place. Why Is the Sky Blue? https://spaceplace.nasa.gov/blue-sky/en/
 - NASA APOD. Martian Sunset (2 mar 2014). https://science.nasa.gov/?p=1246638
 ¿Qué color tuvo el atardecer más bonito que has visto? 👇
-Shot Científico #09 · La Creación del Robert
+Shot Científico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Marte #Espacio
 ```
@@ -54,7 +54,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Hay un atardecer azul que nadie ha visto en persona: el de Marte. 🌅 Allá el polvo pinta el cielo de rojizo, pero deja pasar la luz azul cerca del Sol: al atardecer aparece un halo azul. Curiosity lo fotografió en 2015.
 ¿Qué color tuvo el atardecer más bonito que has visto? 👇
-Shot Científico #09 · La Creación del Robert
+Shot Científico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Marte
 ```
@@ -65,7 +65,7 @@ En Marte, junto al Sol, los atardeceres son azules, y entender por qué ayuda a 
 Aquí, las moléculas del aire dispersan más la luz azul que la roja: por eso el cielo es azul de día y, cuando la luz del atardecer atraviesa más atmósfera, nos llegan sobre todo el rojo y el amarillo. En Marte, en cambio, la atmósfera es delgada y está cargada de polvo muy fino: ese polvo tiñe el cielo de rojizo, pero deja pasar la luz azul con más eficiencia cerca de la dirección del Sol. Resultado: un halo azul al atardecer. El rover Curiosity de la NASA lo registró a color el 15 de abril de 2015 en el cráter Gale, con una cámara que ve los colores de forma muy parecida al ojo humano.
 Un mismo fenómeno físico (la dispersión de la luz) produce paisajes opuestos según qué partículas haya en el aire.
 ¿Qué otro fenómeno cotidiano crees que se vería al revés en otro planeta?
-Shot Científico #09 · La Creación del Robert
+Shot Científico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Fisica #Marte #Divulgacion #LaCreacionDelRobert
 ```

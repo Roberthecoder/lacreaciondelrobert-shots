@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #29 · El espejo no te invierte izquierda y derecha
+# Publicación · Shot Científico 29 · El espejo no te invierte izquierda y derecha
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que el espejo no confunde tu izquierda y tu derecha: eres tú quien se da l
 El dibujo es esquemático.
 Fuentes: BBC Science Focus; D. Darling; A Moment of Science (2019); KKK-A-1822 (GSA)
 ¿Ya probaste guiñar el ojo frente a dos espejos juntos? 👇
-Shot Científico #29 · La Creación del Robert
+Shot Científico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Física #Espejo #DatosCuriosos
 ```
@@ -28,7 +28,7 @@ Levanta tu mano derecha frente al espejo: tu reflejo levanta la mano que está d
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Ya probaste guiñar el ojo frente a dos espejos juntos? 👇
-Shot Científico #29 · La Creación del Robert
+Shot Científico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Física #Espejo #DatosCuriosos
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El espejo NO invierte izquierda y derecha 🪞 | Shot Científico #29
+El espejo NO invierte izquierda y derecha 🪞 | Shot Científico 29
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Fuentes:
 - Especificación federal KKK-A-1822E para ambulancias (GSA, EE. UU., 2002) y regla OAR 333-255-0060 de Oregon.
 - «Non-reversing mirror», Wikipedia (dos espejos unidos a 90°).
 ¿Ya probaste guiñar el ojo frente a dos espejos juntos? 👇
-Shot Científico #29 · La Creación del Robert
+Shot Científico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Física #Espejo
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 El espejo no te invierte izquierda y derecha: te invierte de adelante hacia atrás. 🪞 Tu reflejo levanta la mano del mismo lado que tú; la que "cambia" es la vuelta que tú imaginas. Por eso las ambulancias escriben su nombre al revés: para que se lea en el retrovisor. Y con dos espejos en ángulo recto te ves como te ven los demás. El dibujo es esquemático. Fuentes: BBC Science Focus; A Moment of Science (2019); especificación KKK-A-1822 (EE. UU.).
 ¿Ya probaste guiñar el ojo frente a dos espejos juntos? 👇
-Shot Científico #29 · La Creación del Robert
+Shot Científico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -74,7 +74,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un espejo plano no invierte izquierda y derecha: invierte el eje perpendicular a su superficie, adelante-atrás. La sensación de que "cambia" la izquierda viene de una rotación mental: imaginamos que el reflejo es otra persona que se dio la vuelta para vernos. Ese mismo principio explica por qué muchas ambulancias escriben su nombre en espejo en el frente (para leerse en el retrovisor) y por qué dos espejos unidos a 90° muestran tu cara como la ven los demás. Un buen ejemplo de cómo nuestra intuición mezcla física y percepción.
 Fuentes: BBC Science Focus; D. Darling, Encyclopedia of Science; A Moment of Science (Indiana Public Media, 2019); especificación federal KKK-A-1822 (GSA, EE. UU.).
-Shot Científico #29 · La Creación del Robert
+Shot Científico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

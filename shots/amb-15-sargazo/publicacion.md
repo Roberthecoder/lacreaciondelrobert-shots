@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #15 · El sargazo de Quintana Roo no es basura: viene de un cinturón de 8,850 km
+# Publicación · Shot Ambiental 15 · El sargazo de Quintana Roo no es basura: viene de un cinturón de 8,850 km
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Pero en mar abierto es casa de cientos de especies. No es basura: es un refugio 
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Te ha tocado ver sargazo en la playa? 👇
-Shot Ambiental #15 · La Creación del Robert
+Shot Ambiental 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Sargazo #QuintanaRoo #CaribeMexicano
 ```
@@ -25,7 +25,7 @@ Esto que apesta en las playas de Quintana Roo no es basura: es un alga que viaj�
 El sargazo flota con vesículas de gas y forma un cinturón que suele ir de África Occidental al Golfo de México: en junio de 2018 medía 8,850 km y tenía más de 20 millones de toneladas. Un estudio de 2025 propone que lo alimenta el fósforo que sube en el Atlántico ecuatorial. Al pudrirse en la playa suelta ácido sulfhídrico (olor a huevo podrido), pero en mar abierto es refugio de cientos de especies.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te ha tocado ver sargazo en la playa? 👇
-Shot Ambiental #15 · La Creación del Robert
+Shot Ambiental 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Sargazo #QuintanaRoo #CaribeMexicano
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El sargazo no es basura: viene de un cinturón de 8,850 km 🌊 | Shot Ambiental #15
+El sargazo no es basura: viene de un cinturón de 8,850 km 🌊 | Shot Ambiental 15
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Rodríguez-Martínez et al. (2019), Marine Pollution Bulletin: https://pubmed.ncbi.nlm.nih.gov/31426147/
 - NOAA, Sargassum: https://oceanservice.noaa.gov/news/sargassum/
 ¿Te ha tocado ver sargazo en la playa? 👇
-Shot Ambiental #15 · La Creación del Robert
+Shot Ambiental 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Sargazo #QuintanaRoo
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto que apesta en las playas de Quintana Roo no es basura: es un alga que viajó miles de kilómetros. 🌊 Viene de un cinturón de sargazo que en junio de 2018 medía 8,850 km. Al pudrirse suelta ácido sulfhídrico (olor a huevo podrido), pero en mar abierto es refugio de cientos de especies.
 ¿Te ha tocado ver sargazo en la playa? 👇
-Shot Ambiental #15 · La Creación del Robert
+Shot Ambiental 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Sargazo #QuintanaRoo
 ```
@@ -72,7 +72,7 @@ El sargazo que llega a Quintana Roo no es un problema local: viene del Gran Cint
 Desde 2011, los satélites lo ven a menudo de África Occidental al Golfo de México; en junio de 2018 medía 8,850 km y tenía más de 20 millones de toneladas (Science, 2019). En julio de 2025, la Universidad del Sur de Florida estimó unos 38 millones de toneladas en todo el Atlántico. Un estudio de 2025 en Nature Geoscience propone que lo impulsa el fósforo de la surgencia ecuatorial junto con microbios fijadores de nitrógeno, aunque las fuentes de nutrientes aún se discuten.
 El reto está en la costa: tras unas 48 horas varado, el sargazo produce ácido sulfhídrico y amoniaco, y en 2018 se estimó la muerte de animales de 78 especies en el Caribe mexicano. En mar abierto, en cambio, es hábitat de cientos de especies. Recogerlo a tiempo, sin dañar la playa, es parte de la solución.
 ¿Qué crees que debería priorizarse: monitoreo satelital, barreras en el mar o aprovechamiento del alga?
-Shot Ambiental #15 · La Creación del Robert
+Shot Ambiental 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Sargazo #QuintanaRoo #Océanos #LaCreacionDelRobert
 ```

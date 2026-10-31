@@ -1,4 +1,4 @@
-# Publicación · Shot IA #30 · Tu teclado aprende de ti sin llevarse lo que escribes
+# Publicación · Shot IA 30 · Tu teclado aprende de ti sin llevarse lo que escribes
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así, tus frases se quedan en tu celular. Lo que viaja es lo que aprendió.
 El dibujo es esquemático; "te quiero → mucho" y "nos vemos el lunes" son ejemplos ilustrativos.
 Fuentes: Hard et al. (Google, 2018); McMahan y Ramage (Google, 2017); Apple (2017); Zhu, Liu y Han (MIT, 2019).
 ¿Te ha sorprendido alguna vez lo bien que tu teclado adivina lo que vas a escribir? 👇
-Shot IA #30 · La Creación del Robert
+Shot IA 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Privacidad #AprendizajeFederado #Celular
 ```
@@ -27,7 +27,7 @@ Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti. ⌨
 Tu celular entrena el modelo del teclado con lo que escribes (cuando está cargando, sin usarse y con wifi) y solo manda una actualización chiquita y cifrada. Un servidor promedia las de cientos de celulares y regresa un modelo mejor. En 2018, Google lo probó en Gboard con 1.5 millones de celulares y 600 millones de frases: atinó igual o un poco más que un modelo entrenado en sus servidores. No es privacidad perfecta: en 2019, en el MIT, reconstruyeron frases a partir de cambios parecidos de un modelo, en laboratorio.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te ha sorprendido lo bien que tu teclado adivina lo que vas a escribir? 👇
-Shot IA #30 · La Creación del Robert
+Shot IA 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Privacidad #AprendizajeFederado #Celular
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu teclado aprende de ti sin llevarse lo que escribes ⌨️ | Shot IA #30
+Tu teclado aprende de ti sin llevarse lo que escribes ⌨️ | Shot IA 30
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti. ⌨️ Tu celular entrena el modelo del teclado con tus frases y solo manda una actualización chiquita y cifrada. En 2018, Google lo probó en Gboard con 1.5 millones de celulares y atinó igual o un poco más que entrenando en sus servidores. No es privacidad perfecta, pero tus frases se quedan en tu celular.
 ¿Te ha sorprendido lo bien que tu teclado adivina lo que vas a escribir? 👇
-Shot IA #30 · La Creación del Robert
+Shot IA 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Privacidad
 ```
@@ -70,7 +70,7 @@ Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti. Se 
 En lugar de juntar los textos de los usuarios en un servidor, cada celular entrena el modelo con sus propios datos y solo envía una actualización cifrada; el servidor promedia cientos de esas actualizaciones por ronda. En 2018, Google lo probó en Gboard con 1.5 millones de celulares y 600 millones de frases: el modelo federado atinó igual o un poco más que el entrenado en servidores (Hard et al., arXiv:1811.03604).
 No es una solución mágica. En 2019, investigadores del MIT reconstruyeron frases a partir de actualizaciones de un modelo en pruebas de laboratorio (Zhu, Liu y Han, NeurIPS 2019), y los autores de Google reconocen que hay que confiar en el servidor de agregación. Por eso puede combinarse con otras técnicas, como la agregación segura y la privacidad diferencial (Apple la describió en 2017 para contar emojis sin ver datos crudos).
 ¿En tu organización se podría entrenar un modelo sin centralizar los datos?
-Shot IA #30 · La Creación del Robert
+Shot IA 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Privacidad #AprendizajeFederado #MachineLearning #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti. Goo
 Hay teclados que no mandan lo que escribes: mandan lo que aprendieron de ti. ⌨️
 Tu celular entrena el modelo con tus frases y solo manda una actualización cifrada. Google, 2018: 1.5 millones de celulares, y atinó igual o un poco más que entrenando en servidores. No es perfecto: en 2019, en el MIT, reconstruyeron frases en laboratorio.
 ¿Te sorprende lo bien que adivina tu teclado?
-Shot IA #30 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 30 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

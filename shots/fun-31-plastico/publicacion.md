@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #31 · ¿Hongos que comen plástico? Lo que sí y lo que no
+# Publicación · Shot Fungi Mati 31 · ¿Hongos que comen plástico? Lo que sí y lo que no
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Lo que sí sirve hoy: usar menos plástico, reusarlo y separarlo para reciclar. 
 El dibujo es esquemático.
 Fuentes: Russell et al. 2011 (Appl. Environ. Microbiol.); Khan et al. 2017 (Environ. Pollut.); Lear et al. 2022 (Environ. Res. Lett.); Ekanayaka et al. 2022 (J. Fungi).
 ¿Tú separas tu basura en casa? 👇
-Shot Fungi Mati #31 · La Creación del Robert
+Shot Fungi Mati 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Plastico #Ciencia
 ```
@@ -25,7 +25,7 @@ Pestalotiopsis microspora, de la Amazonía de Ecuador, corta el poliuretano con 
 Lo que sí sirve: usar menos plástico, reusarlo y separarlo para reciclar.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú separas tu basura en casa? 👇
-Shot Fungi Mati #31 · La Creación del Robert
+Shot Fungi Mati 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Plastico #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Hongos que comen plástico? Lo que sí y lo que no 🍄🧪 | Shot Fungi Mati #31
+¿Hongos que comen plástico? Lo que sí y lo que no 🍄🧪 | Shot Fungi Mati 31
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Ekanayaka, A. H. et al. (2022). A Review of the Fungi That Degrade Plastic. J. Fungi 8(8): 772. https://pmc.ncbi.nlm.nih.gov/articles/PMC9330918/
 - Edwards, C. y Fry, J. M. (2011). Life cycle assessment of supermarket carrier bags. Environment Agency (Reino Unido). https://assets.publishing.service.gov.uk/media/5a7bff74ed915d01ba1ca7c7/scho0711buan-e-e.pdf
 ¿Tú separas tu basura en casa? 👇
-Shot Fungi Mati #31 · La Creación del Robert
+Shot Fungi Mati 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #Plastico #FungiMati
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 En un tubo, un hongo deshizo la mitad de un plástico en unos cinco días. ¿Adiós basura? No tan rápido. 🍄 Era poliuretano suspendido en agua, en el laboratorio; con el polietileno puro, el plástico de las bolsas del súper, no hay pruebas de que los microbios se lo coman mucho. Lo que sí sirve: usar menos plástico, reusarlo y separarlo para reciclar.
 ¿Tú separas tu basura en casa? 👇
-Shot Fungi Mati #31 · La Creación del Robert
+Shot Fungi Mati 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Plastico
 ```
@@ -69,7 +69,7 @@ Soy Robert, de La Creación del Robert 🌱
 En 2011, un equipo de Yale con estudiantes de licenciatura reportó que Pestalotiopsis microspora, un hongo endófito de la Amazonía ecuatoriana, degrada poliuretano con una serina hidrolasa, al mismo ritmo con y sin oxígeno (Appl. Environ. Microbiol.). El sustrato era una suspensión de poliuretano en agua. En 2017, Aspergillus tubingensis fragmentó una película de poliuretano en dos meses en medio líquido con glucosa (Environ. Pollut.). Pero una revisión de 664 reportes (Environ. Res. Lett., 2022) no encontró pruebas de degradación importante del polietileno, el polipropileno, el poliestireno o el PVC puros, y advierte que la pérdida de peso puede venir de aditivos que se salen del plástico.
 Por qué importa: la biodegradación es una línea de investigación prometedora, no un sustituto de reducir, reusar y reciclar.
 ¿Conoces otros proyectos de biodegradación de plásticos?
-Shot Fungi Mati #31 · La Creación del Robert
+Shot Fungi Mati 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Biotecnologia #Plasticos #Ciencia
 ```
@@ -82,7 +82,7 @@ Un hongo deshizo la mitad de un plástico en ~5 días… en un tubo, y era poliu
 ### Threads
 ```text
 En un tubo, un hongo deshizo la mitad de un plástico en unos cinco días. ¿Adiós basura? No tan rápido: era poliuretano suspendido en agua, y con el polietileno puro, el plástico de las bolsas del súper, no hay pruebas de que los microbios se lo coman mucho. Lo que sí sirve: usar menos, reusar y separar para reciclar. ¿Tú separas tu basura?
-Shot Fungi Mati #31 · La Creación del Robert
+Shot Fungi Mati 31 · La Creación del Robert
 #Hongos
 ```
 

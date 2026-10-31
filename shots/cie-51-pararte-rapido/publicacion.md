@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #51 · Por qué ves estrellitas al pararte rápido
+# Publicación · Shot Científico 51 · Por qué ves estrellitas al pararte rápido
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -17,7 +17,7 @@ Así que esas estrellitas no son del cielo: son tu sangre bajando en elevador.
 El dibujo es esquemático.
 Fuentes: Smit et al. 1999; Arnold y Shibao 2013; Harms et al. 2021; Cleveland Clinic; NHS.
 ¿A ti también te pasa al levantarte? 👇
-Shot Científico #51 · La Creación del Robert
+Shot Científico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Salud
 ```
@@ -29,7 +29,7 @@ Al pararte, la gravedad jala más de medio litro de sangre hacia tus piernas y t
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti también te pasa al levantarte? 👇
-Shot Científico #51 · La Creación del Robert
+Shot Científico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Salud
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué ves estrellitas al pararte rápido ✨ | Shot Científico #51
+Por qué ves estrellitas al pararte rápido ✨ | Shot Científico 51
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Fuentes:
 - NHS. Low blood pressure (hypotension) (2023). https://www.nhs.uk/conditions/low-blood-pressure-hypotension/
 - United Lincolnshire Hospitals NHS Trust. Postural hypotension (folleto ULHT-LFT-3373, 2025).
 ¿A ti también te pasa al levantarte? 👇
-Shot Científico #51 · La Creación del Robert
+Shot Científico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Salud
 ```
@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Ves estrellitas cuando te paras de golpe? ✨ Es tu sangre bajando: la gravedad jala más de medio litro hacia tus piernas y tu panza, y por un instante llega menos a tu cabeza. Unos sensores del cuello lo detectan y tu cuerpo lo corrige. Truco: si estás acostado, siéntate unos 20 segundos y luego párate despacio. Si te pasa muy seguido o te desmayas, ve al médico.
 ¿A ti también te pasa al levantarte? 👇
-Shot Científico #51 · La Creación del Robert
+Shot Científico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -78,14 +78,14 @@ Al ponernos de pie, la gravedad desplaza más de medio litro de sangre hacia las
 El cuerpo lo corrige con un reflejo: sensores en el cuello (barorreceptores) detectan la baja, aceleran el corazón y contraen los vasos sanguíneos.
 La deshidratación, el calor o pasar mucho tiempo acostado dificultan esa corrección. Cuando la presión baja de más al pararse se llama hipotensión ortostática; si pasa seguido o hay desmayos, conviene ver al médico.
 Consejo práctico: desde acostado, sentarse unos 20 segundos y luego levantarse despacio.
-Shot Científico #51 · La Creación del Robert
+Shot Científico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-¿Ves estrellitas al pararte rápido? ✨ La gravedad jala más de medio litro de sangre a tus piernas y panza, y por un instante llega menos a tu cabeza. Sensores del cuello lo corrigen. Truco: de acostado, siéntate ~20 s y luego párate despacio. Shot Científico #51
+¿Ves estrellitas al pararte rápido? ✨ La gravedad jala más de medio litro de sangre a tus piernas y panza, y por un instante llega menos a tu cabeza. Sensores del cuello lo corrigen. Truco: de acostado, siéntate ~20 s y luego párate despacio. Shot Científico 51
 ```
 
 ### Threads

@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #44 · Ese brillo de tu jarrito puede ser plomo (barro vidriado con greta)
+# Publicación · Shot Químico 44 · Ese brillo de tu jarrito puede ser plomo (barro vidriado con greta)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo bueno: desde 1994, el FONART capacita a alfareros para hacer barro sin plomo.
 El dibujo es esquemático. Si un niño comió seguido en barro que quizá tenga plomo, pregunta a su médico por una prueba de plomo en sangre.
 Fuentes: INSP (Téllez-Rojo et al. 2024) · Rodríguez-Hernández et al. 2025 · FDA · OMS · NOM-231-SSA1-2016.
 ¿En tu casa hay jarritos u ollas de barro? 👇
-Shot Químico #44 · La Creación del Robert
+Shot Químico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Plomo #BarroSinPlomo #Mexico
 ```
@@ -26,7 +26,7 @@ Mucho barro tradicional se vidria con greta (óxido de plomo). Si la pieza no se
 Lo bueno: desde 1994, el FONART capacita a alfareros para hacer barro sin plomo. Barro sí, plomo no.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa hay jarritos u ollas de barro? 👇
-Shot Químico #44 · La Creación del Robert
+Shot Químico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Plomo #BarroSinPlomo #Mexico
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese brillo de tu jarrito puede ser plomo ☕ | Shot Químico #44
+Ese brillo de tu jarrito puede ser plomo ☕ | Shot Químico 44
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - OMS. Lead poisoning and health. https://www.who.int/news-room/fact-sheets/detail/lead-poisoning-and-health
 - NOM-231-SSA1-2016 (DOF, 2016). https://dof.gob.mx/nota_detalle_popup.php?codigo=5458225
 ¿En tu casa hay jarritos u ollas de barro? 👇
-Shot Químico #44 · La Creación del Robert
+Shot Químico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Plomo
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese brillo de tu jarrito no es un barniz: puede ser vidrio hecho con plomo. ☕ Si la pieza se vidrió con greta y no se horneó bien, lo ácido y lo caliente sueltan plomo a la comida, y en niños daña sin dar síntomas claros. Curarlo con ajo y vinagre no se lo quita. Lo bueno: hay barro sin plomo (el FONART capacita a alfareros desde 1994). Barro sí, plomo no.
 ¿En tu casa hay jarritos u ollas de barro? 👇
-Shot Químico #44 · La Creación del Robert
+Shot Químico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #BarroSinPlomo
 ```
@@ -73,14 +73,14 @@ El barro vidriado con plomo sigue siendo un tema de salud pública en México, y
 Con datos de la Ensanut Continua 2022-2023, el Instituto Nacional de Salud Pública (Téllez-Rojo et al., Salud Publica Mex 2024) encontró que 44.3 % de los niños de 1 a 4 años que usaban con frecuencia loza de barro vidriado con plomo tenían 5 µg/dL o más de plomo en sangre, contra 9.8 % de quienes no la usaban; a nivel nacional, 17.2 %. La química es sencilla: si el esmalte con óxido de plomo (greta) no se hornea a la temperatura adecuada, el plomo no queda fijo y los alimentos ácidos o calientes lo liberan. Un estudio de laboratorio de 2025 (Rodríguez-Hernández et al., Processes) mostró que el curado tradicional no lo elimina.
 La alternativa existe: desde 1994, el FONART capacita a artesanos en alfarería libre de plomo y promueve su venta. La alfarería es patrimonio y sustento; el reto es el esmalte, no el barro.
 ¿Qué haría falta para que el barro sin plomo sea la opción de todos los días?
-Shot Químico #44 · La Creación del Robert
+Shot Químico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SaludPublica #Mexico #Artesanias #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese brillo de tu jarrito no es un barniz: puede ser vidrio hecho con plomo. Con datos de 2022-23, el INSP halló plomo de más en 44 de cada 100 niños que usaban seguido ese barro (vs. casi 10). Hay barro sin plomo. ☕ Shot Químico #44 #Quimica
+Ese brillo de tu jarrito no es un barniz: puede ser vidrio hecho con plomo. Con datos de 2022-23, el INSP halló plomo de más en 44 de cada 100 niños que usaban seguido ese barro (vs. casi 10). Hay barro sin plomo. ☕ Shot Químico 44 #Quimica
 ```
 
 ### Threads
@@ -88,7 +88,7 @@ Ese brillo de tu jarrito no es un barniz: puede ser vidrio hecho con plomo. Con 
 Ese brillo de tu jarrito no es un barniz: puede ser vidrio hecho con plomo. ☕
 Si el esmalte con greta no se hornea bien, lo ácido y lo caliente sueltan plomo a la comida, y curarlo con ajo y vinagre no se lo quita. Lo bueno: hay barro sin plomo. Barro sí, plomo no.
 ¿En tu casa hay jarritos u ollas de barro?
-Shot Químico #44 · La Creación del Robert
+Shot Químico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #22 · La IA que aprendió de otra IA y terminó hablando de liebres
+# Publicación · Shot IA 22 · La IA que aprendió de otra IA y terminó hablando de liebres
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Esas liebres no son locura: son una IA que aprendió de copias de copias de otra
 El dibujo es esquemático; los textos de las hojas están traducidos del inglés.
 Fuentes: Shumailov et al., Nature (2024); Gerstgrasser et al., arXiv (2024).
 ¿Tú ya notas en internet textos que suenan hechos por IA? 👇
-Shot IA #22 · La Creación del Robert
+Shot IA 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ColapsoDelModelo #ChatGPT #Ciencia
 ```
@@ -26,7 +26,7 @@ Esta IA no está obsesionada con las liebres: es la novena generación de una IA
 En un estudio publicado en Nature en 2024, cada generación de un modelo de lenguaje aprendió solo de los textos de la anterior. Le pidieron seguir un texto sobre torres de iglesias y, para la generación 9, hablaba de "liebres de cola negra, blanca, azul, roja, amarilla…". Lo raro se va perdiendo y se cuelan errores heredados: le llaman "colapso del modelo". Otro equipo (Stanford, 2024) mostró que si se guardan los textos humanos y se suman los nuevos, sin borrarlos, el colapso se evita.
 El dibujo es esquemático; la fotocopia es una analogía. Fuentes en el primer comentario.
 ¿Tú ya notas en internet textos que suenan hechos por IA? 👇
-Shot IA #22 · La Creación del Robert
+Shot IA 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ColapsoDelModelo #ChatGPT #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que aprendió de otra IA y terminó hablando de liebres 🐇 | Shot IA #22
+La IA que aprendió de otra IA y terminó hablando de liebres 🐇 | Shot IA 22
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta IA no está obsesionada con las liebres: es la novena generación de una IA entrenada con textos de IA. 🐇 Le pidieron seguir un texto sobre torres de iglesias (Nature, 2024). Lo raro se pierde en cada copia y se cuelan errores heredados. La buena noticia: si se guardan los textos humanos y se suman los nuevos, el colapso se evita (Stanford, 2024).
 ¿Tú ya notas en internet textos que suenan hechos por IA? 👇
-Shot IA #22 · La Creación del Robert
+Shot IA 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ColapsoDelModelo
 ```
@@ -68,7 +68,7 @@ Shumailov y colegas (Oxford, Cambridge, Imperial, Toronto y Edimburgo; Nature, 2
 El matiz importa: Gerstgrasser et al. (Stanford y otras instituciones, 2024) mostraron que acumular los datos reales junto con los sintéticos, en vez de reemplazarlos, evita el colapso. Los autores advierten que los datos de interacciones humanas reales valdrán cada vez más.
 ¿Tu organización sabe qué parte de sus datos ya fue generada por IA?
 Fuentes: Shumailov et al., Nature 631: 755–759 (2024); Gerstgrasser et al., arXiv:2404.01413 (2024).
-Shot IA #22 · La Creación del Robert
+Shot IA 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #DatosSinteticos #ColapsoDelModelo #MachineLearning #LaCreacionDelRobert
 ```
@@ -83,7 +83,7 @@ Una IA entrenada 9 generaciones con textos de la anterior: le pidieron seguir un
 Esta IA no está obsesionada con las liebres: es la novena generación de una IA entrenada con textos de IA. 🐇
 Nature, 2024: cada generación aprendió de la anterior; lo raro se perdió y se colaron errores heredados. La buena noticia (Stanford, 2024): si guardas los textos humanos y sumas los nuevos, el colapso se evita.
 ¿Tú ya notas textos que suenan hechos por IA?
-Shot IA #22 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 22 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

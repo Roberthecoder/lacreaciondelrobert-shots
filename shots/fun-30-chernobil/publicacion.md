@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #30 · Esa mancha negra no es hollín: los hongos de Chernóbil
+# Publicación · Shot Fungi Mati 30 · Esa mancha negra no es hollín: los hongos de Chernóbil
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Y en diciembre de 2018 subieron Cladosporium sphaerospermum a la Estación Espac
 El dibujo es esquemático.
 Fuentes: Zhdanova et al. 2000 (Mycological Research); Dadachova et al. 2007 (PLoS ONE); Averesch et al. 2022 (Frontiers in Microbiology).
 ¿Habías visto alguna vez una mancha negra así en tu casa? 👇
-Shot Fungi Mati #30 · La Creación del Robert
+Shot Fungi Mati 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Chernobil #Ciencia
 ```
@@ -27,7 +27,7 @@ Dentro del edificio que cubre el reactor 4 se encontraron 37 especies de hongos,
 En 2007, con radiación unas 500 veces más alta que la normal, los hongos con melanina crecieron más que los que no tenían. ¿Usan la radiación como energía? Es una hipótesis: no está comprobado.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Habías visto alguna vez una mancha negra así en tu casa? 👇
-Shot Fungi Mati #30 · La Creación del Robert
+Shot Fungi Mati 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Chernobil #Melanina
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los hongos negros del reactor de Chernóbil ☢️ | Shot Fungi Mati #30
+Los hongos negros del reactor de Chernóbil ☢️ | Shot Fungi Mati 30
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - Nosanchuk, J. D., Stark, R. E. y Casadevall, A. (2015). Fungal Melanin: What do We Know About Structure? Frontiers in Microbiology 6: 1463. https://doi.org/10.3389/fmicb.2015.01463
 - MedlinePlus (NIH). Melanin. https://medlineplus.gov/ency/article/002256.htm
 ¿Habías visto alguna vez una mancha negra así en tu casa? 👇
-Shot Fungi Mati #30 · La Creación del Robert
+Shot Fungi Mati 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Chernobil #FungiMati
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa mancha negra no es hollín: es un hongo, y vive en las paredes del reactor de Chernóbil. ☢️ Sus paredes están cargadas de melanina, de la misma familia de pigmentos que tu piel, y los protege como una armadura. ¿Usan la radiación como energía? Es una hipótesis: no está comprobado.
 ¿Habías visto alguna vez una mancha negra así en tu casa? 👇
-Shot Fungi Mati #30 · La Creación del Robert
+Shot Fungi Mati 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Chernobil
 ```
@@ -74,7 +74,7 @@ Hongos en el reactor de Chernóbil: lo que sí sabemos y lo que todavía es hip�
 En 1997–98, un equipo ucraniano encontró 37 especies de hongos dentro del edificio que cubre el reactor 4, con dominio de especies melanizadas en los sitios más contaminados (Mycological Research, 2000). En 2007, un estudio en PLoS ONE mostró que hongos con melanina crecían más bajo radiación ionizante unas 500 veces mayor que la de fondo. En 2018, Cladosporium sphaerospermum pasó ~26 días en la Estación Espacial Internacional y debajo de él se midió un poco menos de radiación (Frontiers in Microbiology, 2022).
 Por qué importa: la melanina podría inspirar materiales de protección contra la radiación. Pero la "radiosíntesis" (usar la radiación como energía) sigue sin demostrarse, y conviene comunicarla como hipótesis.
 ¿Qué otro organismo extremo te gustaría ver explicado?
-Shot Fungi Mati #30 · La Creación del Robert
+Shot Fungi Mati 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Radiacion #Ciencia
 ```
@@ -87,7 +87,7 @@ Esa mancha negra no es hollín: es un hongo del reactor de Chernóbil. Su pared 
 ### Threads
 ```text
 Esa mancha negra no es hollín: es un hongo, y vive en las paredes del reactor de Chernóbil. ☢️ Su pared tiene melanina, de la misma familia de pigmentos que tu piel. ¿Usa la radiación como energía? Es una hipótesis: no está comprobado. ¿Habías visto una mancha negra así en tu casa?
-Shot Fungi Mati #30 · La Creación del Robert
+Shot Fungi Mati 30 · La Creación del Robert
 #Hongos
 ```
 

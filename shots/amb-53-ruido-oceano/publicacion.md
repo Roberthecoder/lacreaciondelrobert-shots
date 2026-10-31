@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #53 · Este mar no está en silencio
+# Publicación · Shot Ambiental 53 · Este mar no está en silencio
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Este mar puede volver a estar más callado: basta con que los barcos levanten el
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Sabías que el mar era tan ruidoso? 👇
-Shot Ambiental #53 · La Creación del Robert
+Shot Ambiental 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Ballenas #Oceano #RuidoSubmarino
 ```
@@ -26,7 +26,7 @@ Este mar no está en silencio: abajo hay un ruido que puede subirles el estrés 
 El sonido viaja más de cuatro veces más rápido en el agua que en el aire, y el ruido grave de las hélices de los barcos grandes cae en las mismas notas con las que se hablan las ballenas con barbas. Tras el 11 de septiembre de 2001, con menos barcos en la Bahía de Fundy (Canadá), el ruido bajó 6 dB y bajaron las hormonas del estrés en las heces de las ballenas francas. ¿La solución más sencilla? Barcos más lentos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que el mar era tan ruidoso? 👇
-Shot Ambiental #53 · La Creación del Robert
+Shot Ambiental 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Ballenas #Oceano #RuidoSubmarino
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El 11-S dejó al mar callado… y las ballenas se relajaron 🐋 | Shot Ambiental #53
+El 11-S dejó al mar callado… y las ballenas se relajaron 🐋 | Shot Ambiental 53
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - DOSITS, Universidad de Rhode Island (velocidad del sonido). https://dosits.org/wp-content/uploads/2024/03/Stirring_up_Sound-DOSITS_Activity.pdf
 - Programa ECHO, Vancouver Fraser Port Authority (2019, resultados de 2017). https://wwwcdn.imo.org/localresources/en/OurWork/Environment/Documents/LC_LP/SCIENCE%20DAY%202019%20PRESENTATIONS/2019-03-12%20-%20IMO%20Science%20Day%202019_ECHO%20Program%20presentation.pdf
 ¿Sabías que el mar era tan ruidoso? 👇
-Shot Ambiental #53 · La Creación del Robert
+Shot Ambiental 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ballenas #RuidoSubmarino
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este mar no está en silencio: el ruido grave de las hélices de los barcos puede subirles el estrés a las ballenas. 🐋 Tras el 11 de septiembre de 2001, con menos barcos en la Bahía de Fundy (Canadá), el ruido bajó 6 decibeles y bajaron las hormonas del estrés de las ballenas francas.
 ¿Sabías que el mar era tan ruidoso? 👇
-Shot Ambiental #53 · La Creación del Robert
+Shot Ambiental 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ballenas #RuidoSubmarino
 ```
@@ -70,7 +70,7 @@ El 11 de septiembre de 2001 creó, sin quererlo, un experimento sobre el ruido d
 Con menos tráfico de barcos en la Bahía de Fundy (Canadá), el ruido bajo el agua bajó 6 dB, sobre todo por debajo de 150 Hz, y en las heces de las ballenas francas del Atlántico Norte bajaron las hormonas del estrés. Rolland et al. (2012, Proc. R. Soc. B) lo presentan como la primera evidencia de que el ruido de baja frecuencia de los barcos puede asociarse con estrés crónico en ballenas.
 El contexto: en un sitio frente a California, el ruido de fondo de 30–50 Hz subió de 2.5 a 3 dB por década entre los años sesenta y 2004 (McDonald et al., 2006), atribuido al tráfico comercial. Y hay medidas probadas: en 2017, el programa ECHO de Vancouver logró una baja de 2.5 dB en el ruido de fondo del estrecho de Haro con una reducción voluntaria de velocidad.
 ¿Qué tan dispuesta crees que está la industria naviera a ir más lento por las ballenas?
-Shot Ambiental #53 · La Creación del Robert
+Shot Ambiental 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Oceanos #TransporteMaritimo #Ballenas #LaCreacionDelRobert
 ```

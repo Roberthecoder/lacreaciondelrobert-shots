@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #47 · ¿Una pila contamina 600 mil litros de agua? De dónde salió el dato
+# Publicación · Shot Ambiental 47 · ¿Una pila contamina 600 mil litros de agua? De dónde salió el dato
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En México, la ley pide planes de manejo para las pilas, y las de mercurio o ní
 El número no tiene fuente clara, pero el consejo sí: no la tires, llévala a acopio.
 El dibujo es esquemático.
 ¿Dónde llevas tus pilas usadas en tu ciudad? 👇
-Shot Ambiental #47 · La Creación del Robert
+Shot Ambiental 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Pilas #Reciclaje #Mitos
 ```
@@ -25,7 +25,7 @@ Soy Robert, de La Creación del Robert 🌱
 Cada nota da un número distinto (3 mil, 167 mil, 175 mil) y no citan un estudio que puedas revisar. Las alcalinas comunes ya no llevan mercurio agregado (EE. UU., 1996) y el Convenio de Minamata fijó 2020 como límite para casi todas las pilas con mercurio. Aun así, no van a la basura: un estudio de 2009 en Tailandia vio que más pilas en la basura sueltan más manganeso y zinc, y las de litio pueden incendiarse si se dañan.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Dónde llevas tus pilas usadas en tu ciudad? 👇
-Shot Ambiental #47 · La Creación del Robert
+Shot Ambiental 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Pilas #Reciclaje #Mitos
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Una pila contamina 600 mil litros de agua? 🔋 | Shot Ambiental #47
+¿Una pila contamina 600 mil litros de agua? 🔋 | Shot Ambiental 47
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Karnchanawong y Limpiteeprakan (2009), Waste Management 29(2):550-8: https://pubmed.ncbi.nlm.nih.gov/18562190/
 - LGPGIR (México): https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPGIR.pdf
 ¿Dónde llevas tus pilas usadas en tu ciudad? 👇
-Shot Ambiental #47 · La Creación del Robert
+Shot Ambiental 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Pilas #Reciclaje
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Una pila contamina 600 mil litros de agua? 🔋 Cada nota da un número distinto y no citan un estudio que puedas revisar. Lo que sí está comprobado: las pilas no van a la basura. Llévalas a acopio.
 ¿Dónde llevas tus pilas usadas en tu ciudad? 👇
-Shot Ambiental #47 · La Creación del Robert
+Shot Ambiental 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Pilas #Reciclaje
 ```
@@ -72,7 +72,7 @@ Revisé las notas que lo repiten: cada una da una cifra distinta para la misma p
 Eso no vuelve inocua a la pila: un estudio de 2009 de la Universidad de Chiang Mai encontró que más pilas en la basura aumentan los metales en el lixiviado, sobre todo manganeso y zinc, y la EPA advierte del riesgo de incendio de las de litio dañadas. En México, la LGPGIR pide planes de manejo para pilas y considera peligrosas las de mercurio y níquel-cadmio.
 Comunicar con cifras sin fuente desgasta la confianza; el mensaje correcto se sostiene solo con evidencia.
 ¿Tu empresa o escuela tiene un punto de acopio de pilas?
-Shot Ambiental #47 · La Creación del Robert
+Shot Ambiental 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Residuos #Pilas #EconomíaCircular #LaCreacionDelRobert
 ```

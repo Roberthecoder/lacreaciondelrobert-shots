@@ -13,7 +13,7 @@ Hoy ya hay productos aprobados por la FDA de Estados Unidos para evitar que la i
 El dibujo es esquemático.
 Fuentes: van Nood et al., NEJM 2013 · FDA 2022 y 2023 · Feuerstadt et al., NEJM 2022 · Sender et al., PLoS Biol 2016.
 ¿Sabías que la caca podía ser medicina? 👇
-Shot Biotecnológico #49 · La Creación del Robert
+Shot Biotecnológico 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #microbiota #intestino #medicina
 ```
@@ -26,7 +26,7 @@ En 2013, en Ámsterdam, un ensayo dio heces de donantes sanos por una sonda nasa
 Hoy la FDA ya aprobó Rebyota (2022, una dosis rectal) y Vowst (2023, cápsulas de esporas purificadas) para evitar que la infección regrese.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que la caca podía ser medicina? 👇
-Shot Biotecnológico #49 · La Creación del Robert
+Shot Biotecnológico 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #microbiota #intestino #medicina
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Estas cápsulas están hechas a partir de caca 💩💊 | Shot Biotecnológico #49
+Estas cápsulas están hechas a partir de caca 💩💊 | Shot Biotecnológico 49
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ FDA, Vowst (26 abr 2023) — https://www.fda.gov/news-events/press-announcements
 Feuerstadt P et al. N Engl J Med 2022;386:220-229 — https://pubmed.ncbi.nlm.nih.gov/35045228/
 Sender R et al. PLoS Biol 2016 — https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002533
 ¿Sabías que la caca podía ser medicina? 👇
-Shot Biotecnológico #49 · La Creación del Robert
+Shot Biotecnológico 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #microbiota
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 Estas cápsulas no son vitaminas: están hechas a partir de caca humana, y son medicina. 💊
 Cuando un antibiótico desordena las bacterias de tu intestino, Clostridioides difficile puede apoderarse del hueco y volver una y otra vez. En 2013, un ensayo en Ámsterdam curó sin recaída al 81 % de los pacientes con heces de donantes sanos, contra el 31 % con vancomicina sola. Hoy la FDA ya aprobó dos productos así: Rebyota (2022) y Vowst (2023).
 ¿Sabías que la caca podía ser medicina? 👇
-Shot Biotecnológico #49 · La Creación del Robert
+Shot Biotecnológico 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #microbiota
 ```
@@ -74,7 +74,7 @@ En 2013, un ensayo aleatorizado del Academic Medical Center de Ámsterdam (van N
 De ahí salió una biotecnología: la FDA aprobó Rebyota en 2022 (primer producto de microbiota fecal aprobado) y Vowst en 2023, esporas de Firmicutes purificadas a partir de heces de donantes con alcohol y filtración, en cápsulas orales. Ambos están indicados para prevenir la recurrencia en adultos.
 Se cree que parte del efecto viene de cómo las bacterias sanas transforman los ácidos biliares, que frenan la germinación de las esporas.
 ¿Qué otras terapias con microbios vivos crees que veremos en la próxima década?
-Shot Biotecnológico #49 · La Creación del Robert
+Shot Biotecnológico 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Microbioma #Medicina #LaCreacionDelRobert
 ```
@@ -89,7 +89,7 @@ Estas cápsulas no son vitaminas: están hechas a partir de caca humana. 💊 En
 Estas cápsulas no son vitaminas: están hechas a partir de caca humana, y son medicina. 💊
 Un antibiótico puede desordenar las bacterias de tu intestino y dejar crecer a Clostridioides difficile. En 2013, en Ámsterdam, heces de donantes sanos curaron sin recaída al 81 % de los pacientes, contra 31 % con vancomicina. Hoy la FDA aprobó Rebyota (2022) y Vowst (2023).
 ¿Sabías que la caca podía ser medicina?
-Shot Biotecnológico #49 · Soy Robert, de La Creación del Robert 🌱
+Shot Biotecnológico 49 · Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```
 

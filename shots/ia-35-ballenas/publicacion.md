@@ -1,4 +1,4 @@
-# Publicación · Shot IA #35 · Los cachalotes tienen un "alfabeto" de clics (y ninguna IA lo tradujo)
+# Publicación · Shot IA 35 · Los cachalotes tienen un "alfabeto" de clics (y ninguna IA lo tradujo)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que no es Morse: se parece más a un alfabeto de piezas que apenas empezamo
 El dibujo es esquemático.
 Fuentes: Sharma et al., Nature Communications (2024); Beguš et al., Open Mind (2025).
 Si pudieras preguntarle algo a un cachalote, ¿qué le preguntarías? 👇
-Shot IA #35 · La Creación del Robert
+Shot IA 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Cachalotes #Ballenas #InteligenciaArtificial #Ciencia
 ```
@@ -28,7 +28,7 @@ En 2024, el MIT y el Proyecto CETI analizaron por computadora 8,719 codas (serie
 Ojo: nadie las tradujo. Aún no se sabe qué significa la mayoría de las codas; lo que se encontró es estructura.
 El dibujo es esquemático. Fuentes en el primer comentario.
 Si pudieras preguntarle algo a un cachalote, ¿qué le preguntarías? 👇
-Shot IA #35 · La Creación del Robert
+Shot IA 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Cachalotes #Ballenas #InteligenciaArtificial #Ciencia
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los cachalotes tienen un "alfabeto" de clics (y ninguna IA lo tradujo) 🐋 | Shot IA #35
+Los cachalotes tienen un "alfabeto" de clics (y ninguna IA lo tradujo) 🐋 | Shot IA 35
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es código Morse: son dos cachalotes contestándose con clics. 🐋 En 2024, el MIT y el Proyecto CETI analizaron por computadora 8,719 codas grabadas en Dominica y vieron que se arman con piezas que se combinan, como un alfabeto: al menos 143 combinaciones frecuentes. Ojo: nadie las tradujo; aún no se sabe qué significa la mayoría.
 Si pudieras preguntarle algo a un cachalote, ¿qué le preguntarías? 👇
-Shot IA #35 · La Creación del Robert
+Shot IA 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Cachalotes #InteligenciaArtificial
 ```
@@ -72,7 +72,7 @@ Lo que no hay: traducción. Los propios autores dicen que estudian la estructura
 La lección para cualquier proyecto de datos: encontrar estructura en datos desconocidos es un gran logro, aunque todavía no sepas qué significa. Y conviene decirlo así, sin inflarlo.
 ¿Has visto titulares de IA que dicen más que el estudio?
 Fuentes: Sharma et al., Nature Communications 15: 3617 (2024); Beguš et al., Open Mind 9 (2025).
-Shot IA #35 · La Creación del Robert
+Shot IA 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #CienciaDeDatos #Cachalotes #Divulgacion #LaCreacionDelRobert
 ```
@@ -87,7 +87,7 @@ Esto no es código Morse: son cachalotes contestándose con clics. En 2024, MIT 
 Esto no es código Morse: son dos cachalotes contestándose con clics. 🐋
 En 2024, MIT y el Proyecto CETI analizaron por computadora 8,719 codas y vieron que se arman con piezas: ritmo, tempo, rubato y ornamento. Al menos 143 combinaciones frecuentes, como un alfabeto. Ojo: nadie las tradujo.
 ¿Qué le preguntarías a un cachalote?
-Shot IA #35 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 35 · Soy Robert, de La Creación del Robert 🌱
 #Ciencia
 ```
 

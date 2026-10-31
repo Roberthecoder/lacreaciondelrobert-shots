@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #20 · Tienes un hoyo en tu vista y tu cerebro lo rellena
+# Publicación · Shot Científico 20 · Tienes un hoyo en tu vista y tu cerebro lo rellena
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que lo que ves no es una foto completa: tu cerebro también pone de su part
 El dibujo es esquemático.
 Fuentes: Mariotte 1668; Komatsu et al. 2000 (J. Neurosci.); Komatsu 2006 (Nat. Rev. Neurosci.); Purves et al., Neuroscience; Hanke y Kelber 2020 (Front. Physiol.).
 ¿Te desapareció el punto rojo? ¿A qué distancia? 👇
-Shot Científico #20 · La Creación del Robert
+Shot Científico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Ojos #PuntoCiego
 ```
@@ -28,7 +28,7 @@ Tápate el ojo izquierdo, mira la cruz con el derecho y acércate o aléjate de 
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Te desapareció el punto rojo? ¿A qué distancia? 👇
-Shot Científico #20 · La Creación del Robert
+Shot Científico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Ojos #PuntoCiego
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tienes un hoyo en tu vista (haz la prueba) 👁️ | Shot Científico #20
+Tienes un hoyo en tu vista (haz la prueba) 👁️ | Shot Científico 20
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Fuentes:
 - Mariotte, E. (1668). Nouvelle découverte touchant la veüe (vía Dictionary of Scientific Biography, «Mariotte, Edme», Encyclopedia.com).
 - Hanke, F. D. y Kelber, A. (2020). The Eye of the Common Octopus (Octopus vulgaris). Front. Physiol. 10: 1637.
 ¿Te desapareció el punto rojo? ¿A qué distancia? 👇
-Shot Científico #20 · La Creación del Robert
+Shot Científico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Ojos
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ahora mismo tienes un hoyo en tu vista. 👁️ Haz la prueba: tápate el ojo izquierdo, mira la cruz con el derecho y acércate o aléjate de la pantalla. El punto rojo desaparece… y tu cerebro rellena el hueco.
 ¿Te desapareció el punto rojo? ¿A qué distancia? 👇
-Shot Científico #20 · La Creación del Robert
+Shot Científico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -76,7 +76,7 @@ Cada uno de tus ojos tiene un punto ciego: donde sale el nervio óptico no hay f
 No lo notamos por dos razones: el otro ojo cubre ese hueco, y el cerebro lo "rellena" con el color, la luz y la textura de alrededor (filling-in perceptual, Komatsu 2006).
 Un buen recordatorio de que la percepción no es una copia fiel de lo que llega a la retina: el cerebro también completa la imagen.
 ¿Lograste que desapareciera el punto rojo?
-Shot Científico #20 · La Creación del Robert
+Shot Científico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

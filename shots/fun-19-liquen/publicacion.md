@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #19 · Esa mancha en la piedra no es una planta: el liquen
+# Publicación · Shot Fungi Mati 19 · Esa mancha en la piedra no es una planta: el liquen
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y algunos son durísimos: en 2005, dos especies (Rhizocarpon geographicum y Xant
 El dibujo es esquemático.
 Fuentes: Mitchell 2002 (Huntia); Spribille et al. 2016 (Science); Sancho et al. 2007 (Astrobiology); ESA 2005.
 ¿Qué color de liquen has visto cerca de tu casa? 👇
-Shot Fungi Mati #19 · La Creación del Robert
+Shot Fungi Mati 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Liquen #Hongos #Simbiosis
 ```
@@ -25,7 +25,7 @@ Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio. 
 Un liquen es un hongo que vive con algas o cianobacterias. Por dentro tiene pisos: una piel de hilos del hongo que lo protege del sol, una capa verde que hace fotosíntesis y le pasa azúcar al hongo, y una médula de hilos sueltos. En 1867, Simon Schwendener propuso que eran dos seres y muchos no le creyeron; en 2016 se hallaron levaduras en la piel de dos líquenes de Montana, y parientes de ellas en líquenes de seis continentes (qué hacen ahí, aún se estudia). Y en 2005, dos especies aguantaron casi 15 días expuestas al espacio.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué color de liquen has visto cerca de tu casa? 👇
-Shot Fungi Mati #19 · La Creación del Robert
+Shot Fungi Mati 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Liquen #Hongos #Simbiosis
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa mancha en la piedra NO es una planta 🍄 | Shot Fungi Mati #19
+Esa mancha en la piedra NO es una planta 🍄 | Shot Fungi Mati 19
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - British Lichen Society. What is a lichen? https://britishlichensociety.org.uk/learning/what-is-a-lichen
 - WSL SwissLichens. What is a lichen. https://swisslichens.wsl.ch/en/about-lichens/what-is-a-lichen
 ¿Qué color de liquen has visto cerca de tu casa? 👇
-Shot Fungi Mati #19 · La Creación del Robert
+Shot Fungi Mati 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Liquen #FungiMati
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio. 🍄 Un liquen es un hongo que vive con algas o cianobacterias: el hongo pone la casa y el socio, la comida. Y en 2005, dos especies aguantaron casi 15 días expuestas al espacio.
 ¿Qué color de liquen has visto cerca de tu casa? 👇
-Shot Fungi Mati #19 · La Creación del Robert
+Shot Fungi Mati 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Liquen
 ```
@@ -73,7 +73,7 @@ En 1867, Simon Schwendener propuso que los líquenes son hongos asociados con al
 En 2016, Spribille et al. (Science) encontraron levaduras basidiomicetas en el córtex de líquenes del género Bryoria de Montana, y linajes emparentados en líquenes de 52 géneros de seis continentes; su función exacta sigue en estudio. Y en 2005, el experimento LICHENS de la ESA mostró que Rhizocarpon geographicum y Xanthoria elegans conservaron casi la misma actividad fotosintética tras 14.6 días expuestos al espacio.
 Por qué importa: es un buen recordatorio de que las definiciones "cerradas" en biología pueden ocultar a los actores menos visibles.
 ¿Qué otra "verdad de libro" crees que todavía puede cambiar?
-Shot Fungi Mati #19 · La Creación del Robert
+Shot Fungi Mati 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Simbiosis #Micologia #Ciencia
 ```
@@ -86,7 +86,7 @@ Esa mancha en la piedra no es una planta: es un liquen, un hongo que vive con al
 ### Threads
 ```text
 Esa mancha en la piedra no es una planta ni un musgo: es un hongo con un socio. 🍄 El hongo pone la casa y el alga o cianobacteria, la comida. En 2016 se hallaron levaduras en la piel de algunos líquenes, y en 2005 dos especies aguantaron casi 15 días expuestas al espacio. ¿Qué color de liquen has visto cerca de tu casa?
-Shot Fungi Mati #19 · La Creación del Robert
+Shot Fungi Mati 19 · La Creación del Robert
 #Liquen
 ```
 

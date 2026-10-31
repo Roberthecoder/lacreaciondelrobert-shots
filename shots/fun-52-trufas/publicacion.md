@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #52 · Esto no es una piedra: es una trufa
+# Publicación · Shot Fungi Mati 52 · Esto no es una piedra: es una trufa
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En 2014, en Italia, vieron que las esporas de trufa que pasan por la tripa de un
 El dibujo es esquemático.
 Fuentes: Martin et al. 2010 (Nature); Elliott et al. 2022; Claus et al. 1981; Talou et al. 1990; Epping et al. 2022; Piattoni et al. 2014 (Fungal Ecology); Piña Páez et al. 2018 (MycoKeys).
 ¿Habías probado algo con trufa? 👇
-Shot Fungi Mati #52 · La Creación del Robert
+Shot Fungi Mati 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Trufas #Ciencia
 ```
@@ -25,7 +25,7 @@ Esto no es una piedra: es una trufa, un hongo que da su fruto bajo tierra. 🍄�
 Vive pegada a las raíces de encinos y avellanos (micorriza). Como sus esporas quedan encerradas bajo el suelo, sin viento, la trufa huele: suelta sustancias como el sulfuro de dimetilo, y los animales que comen hongos la desentierran, se la comen y dejan las esporas en su popó. Un estudio en Italia (2014) vio que las esporas salen vivas de la tripa de un cerdo. Y en México ya se contaban unas veinte especies de trufas silvestres en 2018.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Habías probado algo con trufa? 👇
-Shot Fungi Mati #52 · La Creación del Robert
+Shot Fungi Mati 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Trufas #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La trufa: el hongo que se deja encontrar por el olfato 🐖 | Shot Fungi Mati #52
+La trufa: el hongo que se deja encontrar por el olfato 🐖 | Shot Fungi Mati 52
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - Piattoni, F. et al. (2014). Viability and morphology of Tuber aestivum spores after passage through the gut of Sus scrofa. Fungal Ecology 9: 52–60. https://doi.org/10.1016/j.funeco.2014.03.002
 - Piña Páez, C. et al. (2018). Description and distribution of Tuber incognitum sp. nov. and Tuber anniae in the Transmexican Volcanic Belt. MycoKeys 41: 17–27. https://pmc.ncbi.nlm.nih.gov/articles/PMC6194138/
 ¿Habías probado algo con trufa? 👇
-Shot Fungi Mati #52 · La Creación del Robert
+Shot Fungi Mati 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Trufas #FungiMati
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es una piedra: es una trufa, un hongo que da su fruto bajo tierra. 🍄 Como bajo el suelo no hay viento para sus esporas, la trufa huele para que los animales la desentierren, se la coman y dejen sus esporas en otro lugar. ¡Hasta salen vivas de la tripa de un cerdo!
 ¿Habías probado algo con trufa? 👇
-Shot Fungi Mati #52 · La Creación del Robert
+Shot Fungi Mati 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Trufas
 ```
@@ -76,7 +76,7 @@ Las trufas (Tuber) fructifican bajo tierra y forman micorrizas con árboles como
 Un caso para pensar en evidencia: la hipótesis de 1981 sobre una feromona porcina (androstenol) fue cuestionada por un experimento francés publicado en 1990, que reportó que los animales iban al sulfuro de dimetilo; en 2022 se señaló que ese estudio no describió bien su método. Una idea popular necesita réplicas sólidas.
 En México, en 2018 ya se contaban unas veinte especies de trufas silvestres.
 ¿En tu campo, qué "dato conocido" se apoya en un solo estudio?
-Shot Fungi Mati #52 · La Creación del Robert
+Shot Fungi Mati 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Ecologia #Ciencia
 ```
@@ -89,7 +89,7 @@ Esto no es una piedra: es una trufa. Bajo tierra no hay viento para sus esporas,
 ### Threads
 ```text
 Esto no es una piedra: es una trufa, un hongo que da su fruto bajo tierra. 🍄 Sus esporas no tienen viento, así que la trufa huele para que los animales la desentierren, se la coman y dejen las esporas en su popó. En México ya se contaban unas veinte especies de trufas silvestres en 2018. ¿Habías probado algo con trufa?
-Shot Fungi Mati #52 · La Creación del Robert
+Shot Fungi Mati 52 · La Creación del Robert
 #Hongos
 ```
 

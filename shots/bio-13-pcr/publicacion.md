@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #13 · Una molécula de ADN, más de mil millones de copias (la PCR)
+# Publicación · Shot Biotecnológico 13 · Una molécula de ADN, más de mil millones de copias (la PCR)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ A Kary Mullis se le ocurrió la PCR en 1983, manejando de noche por las montaña
 El dibujo es esquemático.
 Fuentes: Brock y Freeze 1969 · Saiki et al. 1988 · Premio Nobel de Química 1993 · NHGRI · CDC.
 ¿Alguna vez te hiciste una prueba PCR? ¿Sabías que llevaba una enzima de una bacteria de Yellowstone? 👇
-Shot Biotecnológico #13 · La Creación del Robert
+Shot Biotecnológico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #PCR #ADN #Ciencia
 ```
@@ -25,7 +25,7 @@ Una sola molécula de ADN se puede volver más de mil millones de copias en unas
 La PCR repite tres pasos: separar a ~95 °C, pegar dos iniciadores a ~55 °C y copiar a ~72 °C. Cada ciclo duplica: 30 ciclos son, en teoría, 1,073,741,824 copias. La enzima que aguanta ese calor, la Taq, viene de Thermus aquaticus, una bacteria de las aguas termales de Yellowstone descrita en 1969 por Brock y Freeze. A Kary Mullis se le ocurrió la PCR en 1983 manejando de noche, y le dio el Nobel de Química 1993.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te has hecho una prueba PCR? 👇
-Shot Biotecnológico #13 · La Creación del Robert
+Shot Biotecnológico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #PCR #ADN #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-1 molécula de ADN → más de mil millones de copias 🧬 | Shot Biotecnológico #13
+1 molécula de ADN → más de mil millones de copias 🧬 | Shot Biotecnológico 13
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - CDC (2023). 2019-nCoV Real-Time RT-PCR Diagnostic Panel, instrucciones de uso. https://www.fda.gov/media/134922/download
 - National Geographic (2021). The eccentric scientist behind the 'gold standard' COVID-19 test. https://www.nationalgeographic.com/science/article/the-eccentric-scientist-behind-the-gold-standard-covid-19-pcr-test
 ¿Alguna vez te hiciste una prueba PCR? 👇
-Shot Biotecnológico #13 · La Creación del Robert
+Shot Biotecnológico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #PCR #Biotecnologia
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Una sola molécula de ADN se puede volver más de mil millones de copias en unas horas. 🧬 La PCR calienta, enfría y vuelve a calentar: cada ciclo duplica las copias. Y la enzima que aguanta el calor viene de una bacteria de las aguas termales de Yellowstone.
 ¿Te has hecho una prueba PCR? 👇
-Shot Biotecnológico #13 · La Creación del Robert
+Shot Biotecnológico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #PCR
 ```
@@ -71,14 +71,14 @@ Una sola molécula de ADN se puede volver más de mil millones de copias en unas
 El principio es simple: ciclos de calentar (94–98 °C) para separar las hebras, enfriar (típicamente 52–58 °C) para que se peguen los iniciadores y copiar (unos 72 °C) con una polimerasa. Cada ciclo duplica el producto; 30 ciclos equivalen, en teoría, a 2³⁰ ≈ 1,070 millones de copias.
 Lo interesante es de dónde salió la pieza clave. Al principio el calor de cada ciclo dañaba la enzima. La solución fue la polimerasa de Thermus aquaticus, una bacteria que Brock y Freeze describieron en 1969 en las aguas termales de Yellowstone. Su uso en la PCR se publicó en 1988 (Saiki et al., Science), y Kary Mullis, quien ideó la técnica en 1983, recibió medio Premio Nobel de Química en 1993.
 ¿Qué otra herramienta de uso diario conoces que haya salido de estudiar un microbio?
-Shot Biotecnológico #13 · La Creación del Robert
+Shot Biotecnológico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #PCR #Microbiologia #Diagnostico #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Una sola molécula de ADN se puede volver más de mil millones de copias en unas horas: 30 ciclos de PCR = 2³⁰ en teoría. La enzima que aguanta el calor viene de una bacteria de Yellowstone (1969). 🧬 Shot Biotecnológico #13 #PCR
+Una sola molécula de ADN se puede volver más de mil millones de copias en unas horas: 30 ciclos de PCR = 2³⁰ en teoría. La enzima que aguanta el calor viene de una bacteria de Yellowstone (1969). 🧬 Shot Biotecnológico 13 #PCR
 ```
 
 ### Threads
@@ -86,7 +86,7 @@ Una sola molécula de ADN se puede volver más de mil millones de copias en unas
 Una sola molécula de ADN se puede volver más de mil millones de copias en unas horas. 🧬
 La PCR separa a ~95 °C, pega guías a ~55 °C y copia a ~72 °C; cada ciclo duplica. La enzima que aguanta el calor, la Taq, viene de una bacteria de las aguas termales de Yellowstone.
 ¿Te has hecho una prueba PCR?
-Shot Biotecnológico #13 · La Creación del Robert
+Shot Biotecnológico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

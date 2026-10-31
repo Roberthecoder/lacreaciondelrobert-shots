@@ -1,4 +1,4 @@
-# Publicación · Shot IA #21 · La misma app de caras falla más con unas que con otras
+# Publicación · Shot IA 21 · La misma app de caras falla más con unas que con otras
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Si una app te reconoce, recuerda: quizá no te ve igual que al de al lado.
 El dibujo es esquemático; las caras son ilustrativas. Todos los datos tienen más de 2 años (2017–2020).
 Fuentes en el comentario fijado.
 ¿Alguna vez el desbloqueo con tu cara o un filtro no te reconoció? 👇
-Shot IA #21 · La Creación del Robert
+Shot IA 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ReconocimientoFacial #SesgoAlgoritmico #Ciencia
 ```
@@ -27,7 +27,7 @@ Tú y el de al lado le enseñaron su cara al mismo programa. A él casi nunca lo
 "Gender Shades" (Buolamwini y Gebru, 2018): tres programas comerciales que adivinan el género fallaron 0.8 % como máximo con hombres de piel clara y hasta 34.7 % con mujeres de piel oscura. En siete meses, las empresas sacaron versiones que fallaban menos. Pero en 2019 el NIST encontró que, según el grupo de la persona, confundir a dos personas podía ser de 10 a más de 100 veces más frecuente. Y en 2020, en Detroit, una coincidencia facial equivocada dejó a Robert Williams 30 horas detenido.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez el desbloqueo con tu cara o un filtro no te reconoció? 👇
-Shot IA #21 · La Creación del Robert
+Shot IA 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ReconocimientoFacial #SesgoAlgoritmico
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La misma app de caras falla más con unas que con otras 👀 | Shot IA #21
+La misma app de caras falla más con unas que con otras 👀 | Shot IA 21
 ```
 Descripción:
 ```text
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tú y el de al lado le enseñaron su cara al mismo programa. A él casi nunca lo confundió; a ti, una de cada tres veces. 👀 En el estudio "Gender Shades" (2018), tres programas comerciales fallaron hasta 34.7 % al adivinar el género de mujeres de piel oscura, y menos de 1 % con hombres de piel clara. Y en 2020, una coincidencia facial equivocada dejó a Robert Williams 30 horas detenido en Detroit.
 ¿Alguna vez el desbloqueo con tu cara o un filtro no te reconoció? 👇
-Shot IA #21 · La Creación del Robert
+Shot IA 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ReconocimientoFacial
 ```
@@ -73,7 +73,7 @@ Pero el problema es más amplio. En 2019, el NIST evaluó 189 algoritmos de reco
 Las consecuencias son reales: en 2020, Robert Williams pasó 30 horas detenido en Detroit por una coincidencia facial equivocada. Desde el acuerdo de 2024, esa policía no puede arrestar a nadie solo por un resultado de reconocimiento facial.
 ¿Tu organización mide el desempeño de sus modelos por grupo, o solo el promedio?
 Fuentes: Buolamwini y Gebru (2018); Raji y Buolamwini (2019); NISTIR 8280 (2019); ACLU (2024). Datos de 2017–2020.
-Shot IA #21 · La Creación del Robert
+Shot IA 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #ReconocimientoFacial #EticaDigital #SesgoAlgoritmico #LaCreacionDelRobert
 ```
@@ -88,7 +88,7 @@ Mismo programa, distinto error: en "Gender Shades" (2018), clasificar el género
 Tú y el de al lado le enseñaron su cara al mismo programa. A él casi nunca lo confundió; a ti, una de cada tres veces. 👀
 "Gender Shades", 2018: hasta 34.7 % de error al adivinar el género de mujeres de piel oscura, contra menos de 1 % con hombres de piel clara. Las empresas corrigieron, pero en 2019 el NIST seguía viendo diferencias de 10 a más de 100 veces.
 ¿A ti te ha fallado el desbloqueo con la cara?
-Shot IA #21 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 21 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

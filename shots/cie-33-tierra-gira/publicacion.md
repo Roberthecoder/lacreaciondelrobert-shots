@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #33 · Ahora mismo vas a más de 1,500 km/h
+# Publicación · Shot Científico 33 · Ahora mismo vas a más de 1,500 km/h
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Así que hoy, sin levantarte de la silla, en Guadalajara o en la Ciudad de Méxi
 El dibujo es esquemático.
 Fuentes: NASA NSSDC (Earth Fact Sheet); Linda Hall Library; Almanac.
 ¿Desde qué ciudad lo estás viendo? 👇
-Shot Científico #33 · La Creación del Robert
+Shot Científico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Tierra
 ```
@@ -27,7 +27,7 @@ La Tierra da una vuelta al día: en el ecuador el suelo va a unos 1,670 km/h; en
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Desde qué ciudad lo estás viendo? 👇
-Shot Científico #33 · La Creación del Robert
+Shot Científico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Tierra
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ahora mismo vas a más de 1,500 km/h 🌎 | Shot Científico #33
+Ahora mismo vas a más de 1,500 km/h 🌎 | Shot Científico 33
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Wikipedia, Vestibular system: https://en.wikipedia.org/wiki/Vestibular_system
 - Cálculo propio: velocidad ≈ 1,670 km/h × cos(latitud); distancia = velocidad × 24 h
 ¿Desde qué ciudad lo estás viendo? 👇
-Shot Científico #33 · La Creación del Robert
+Shot Científico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica #LaCreacionDelRobert
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Si estás en el centro de México, ahora mismo vas a más de 1,500 km/h y no lo sientes. 🌎 La Tierra da una vuelta al día: en Guadalajara vas a unos 1,560 km/h y en la CDMX a unos 1,570. Tu cuerpo no siente la velocidad, solo los frenones y arrancones. Hoy, sin levantarte de la silla, recorres más de 37,000 km.
 ¿Desde qué ciudad lo estás viendo? 👇
-Shot Científico #33 · La Creación del Robert
+Shot Científico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -73,21 +73,21 @@ Ahora mismo, en el centro de México, vas a más de 1,500 km/h.
 La Tierra da una vuelta al día: en el ecuador el suelo va a unos 1,670 km/h; en Guadalajara, unos 1,560; en la Ciudad de México, unos 1,570. ¿Por qué no lo sentimos? Porque el cuerpo detecta los cambios de velocidad (aceleraciones), no la velocidad constante, y la Tierra cambia de dirección muy despacio. Léon Foucault lo demostró en París en 1851 con un péndulo enorme.
 Resultado: sin levantarte de la silla, hoy recorres más de 37,000 km.
 Fuentes: NASA NSSDC (Earth Fact Sheet), Linda Hall Library.
-Shot Científico #33 · La Creación del Robert
+Shot Científico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Si estás en el centro de México, ahora mismo vas a más de 1,500 km/h y no lo sientes 🌎 Tu cuerpo solo siente los cambios de velocidad. Hoy, sin levantarte, recorres más de 37,000 km. Shot Científico #33 #Ciencia
+Si estás en el centro de México, ahora mismo vas a más de 1,500 km/h y no lo sientes 🌎 Tu cuerpo solo siente los cambios de velocidad. Hoy, sin levantarte, recorres más de 37,000 km. Shot Científico 33 #Ciencia
 ```
 
 ### Threads
 ```text
 Si estás en el centro de México, ahora mismo vas a más de 1,500 km/h y no lo sientes 🌎
 La Tierra da una vuelta al día: en Guadalajara vas a unos 1,560 km/h y en la CDMX a unos 1,570. No te mareas porque tu cuerpo solo siente los cambios de velocidad. Foucault lo demostró en París en 1851 con un péndulo enorme.
-¿Ya lo sabías? Shot Científico #33 · La Creación del Robert
+¿Ya lo sabías? Shot Científico 33 · La Creación del Robert
 ```
 
 ## Comentario fijado (fuentes)

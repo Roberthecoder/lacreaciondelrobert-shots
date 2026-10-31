@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #35 · Tu cuerpo es un poquito radiactivo
+# Publicación · Shot Científico 35 · Tu cuerpo es un poquito radiactivo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -17,7 +17,7 @@ Las chispitas del video son esquemáticas: la radiación no se ve.
 El dibujo es esquemático.
 Fuentes: Health Physics Society; Ministerio del Medio Ambiente de Japón / UNSCEAR 2008; NIST; MedlinePlus; EPA FGR 13; Nie et al. 2023 (Science).
 ¿Sabías que el plátano tenía fama de radiactivo? 🍌 👇
-Shot Científico #35 · La Creación del Robert
+Shot Científico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Radiactividad #CuerpoHumano
 ```
@@ -29,7 +29,7 @@ Una parte muy pequeña del potasio (más o menos 1 de cada 8,500 átomos) es pot
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Sabías que el plátano tenía fama de radiactivo? 🍌 👇
-Shot Científico #35 · La Creación del Robert
+Shot Científico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Radiactividad #CuerpoHumano
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu cuerpo es un poquito radiactivo ✨ | Shot Científico #35
+Tu cuerpo es un poquito radiactivo ✨ | Shot Científico 35
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Fuentes:
 - U.S. EPA (1999). Federal Guidance Report 13, p. 16; Eisenbud y Gesell (1997), Environmental Radioactivity — vía Wikipedia, Banana equivalent dose. https://en.wikipedia.org/wiki/Banana_equivalent_dose
 - Nie, N. X. et al. (2023). Meteorites have inherited nucleosynthetic anomalies of potassium-40 produced in supernovae. Science 379:372–376. https://doi.org/10.1126/science.abn1783
 ¿Sabías que el plátano tenía fama de radiactivo? 🍌 👇
-Shot Científico #35 · La Creación del Robert
+Shot Científico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica
 ```
@@ -69,7 +69,7 @@ Soy Robert, de La Creación del Robert 🌱
 Tu cuerpo es un poquito radiactivo: en un adulto, unos 4,000 átomos de potasio-40 se desintegran cada segundo. ✨ No es peligroso: es radiación natural, la has tenido toda tu vida y es una parte pequeña (7–10 %) de la radiación natural que recibes en un año. Comer plátanos no lo cambia: tu cuerpo mantiene su potasio estable. Y ese potasio-40 viene de estrellas que explotaron antes de que existiera la Tierra.
 El dibujo es esquemático: la radiación no se ve.
 ¿Sabías que el plátano tenía fama de radiactivo? 🍌 👇
-Shot Científico #35 · La Creación del Robert
+Shot Científico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -80,7 +80,7 @@ Todos somos un poquito radiactivos. Una pequeña fracción del potasio natural (
 No es motivo de alarma: es radiación natural, presente toda la vida, y representa entre 7 y 10 % de la dosis natural anual. Como el cuerpo mantiene su potasio bajo control homeostático, comer más plátanos no aumenta esa dosis (EPA, Federal Guidance Report 13).
 El dato más bonito: ese potasio-40 se formó en supernovas antes de que existiera la Tierra (Nie et al., Science, 2023).
 ¿Qué otro dato de física cotidiana te gustaría ver explicado?
-Shot Científico #35 · La Creación del Robert
+Shot Científico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

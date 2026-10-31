@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #08 · Las vaquitas que se vieron caben en tus dedos
+# Publicación · Shot Ambiental 08 · Las vaquitas que se vieron caben en tus dedos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que quedan pocas, pero siguen teniendo crías, y los científicos creen que
 El dibujo es esquemático.
 Fuentes: Informe del Crucero de Observación Vaquita Marina 2025; NOAA Fisheries; NOAA SWFSC.
 ¿Sabías que la vaquita solo vive en México? 👇
-Shot Ambiental #08 · La Creación del Robert
+Shot Ambiental 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #VaquitaMarina #GolfoDeCalifornia #Mexico
 ```
@@ -25,7 +25,7 @@ Las vaquitas marinas que se vieron el año pasado se cuentan con los dedos de tu
 Viven solo en el norte del Golfo de California y mueren enredadas en redes ilegales para la totoaba, un pez cuya vejiga natatoria se vende cara en China. En 1997 se calculaban 567; en 2015, 59. Pero el conteo de septiembre de 2025 encontró crías, una de ellas de Frida, la vaquita de la aleta doblada.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que la vaquita solo vive en México? 👇
-Shot Ambiental #08 · La Creación del Robert
+Shot Ambiental 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #VaquitaMarina #GolfoDeCalifornia #Mexico
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las vaquitas se cuentan con los dedos 🐬 | Shot Ambiental #08
+Las vaquitas se cuentan con los dedos 🐬 | Shot Ambiental 08
 ```
 Descripción:
 ```text
@@ -45,7 +45,7 @@ Fuentes:
 - NOAA Fisheries, Vaquita: https://www.fisheries.noaa.gov/species/vaquita
 - NOAA SWFSC, Vaquita: Abundance and Trends: https://swfsc.noaa.gov/MMTD-Vaquita/
 ¿Sabías que la vaquita solo vive en México? 👇
-Shot Ambiental #08 · La Creación del Robert
+Shot Ambiental 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #VaquitaMarina #GolfoDeCalifornia
 ```
@@ -54,7 +54,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Las vaquitas marinas que se vieron el año pasado se cuentan con los dedos de tus manos: entre 7 y 10. 🐬 Viven solo en el Golfo de California y mueren en redes ilegales para la totoaba. Pero en 2025 se vieron crías, una de Frida, la vaquita de la aleta doblada.
 ¿Sabías que la vaquita solo vive en México? 👇
-Shot Ambiental #08 · La Creación del Robert
+Shot Ambiental 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #VaquitaMarina #CienciaAmbiental
 ```
@@ -66,7 +66,7 @@ La vaquita, una marsopa que solo vive en el norte del Golfo de California, pasó
 El último crucero completo de observación (septiembre de 2025) combinó dos barcos con binoculares de 25 aumentos y una red de detectores acústicos. Además de entre 7 y 10 individuos, documentó crías y un hallazgo clave para la gestión: en 2025, el 80 % de los avistamientos fue dentro de la zona protegida con bloques de concreto que atrapan las redes (y el 20 %, fuera). El informe concluye que pueden recuperarse si se elimina la mortalidad en redes agalleras en su hábitat.
 Es un caso donde la tecnología de monitoreo, la aplicación de la ley y alternativas económicas para los pescadores deciden el futuro de una especie.
 ¿Qué crees que pesa más para salvarla: vigilancia, alternativas de pesca o frenar el mercado de la totoaba?
-Shot Ambiental #08 · La Creación del Robert
+Shot Ambiental 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #VaquitaMarina #Conservacion #Biodiversidad #LaCreacionDelRobert
 ```

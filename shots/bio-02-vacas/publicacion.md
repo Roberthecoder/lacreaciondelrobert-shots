@@ -14,7 +14,7 @@ Por eso una vaca es un biorreactor con patas: el pasto es el medio de cultivo y 
 El dibujo es esquemático.
 Fuentes: Bergman 1990 (Physiological Reviews), Santos et al. 2026 (PLOS ONE), Matthews et al. 2019 (Gut Microbes), Murray et al. 1976 (Br. J. Nutr.).
 ¿Cómo le dicen en tu región a "rumiar"? 👇
-Shot Biotecnológico #02 · La Creación del Robert
+Shot Biotecnológico 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #vacas #microbiologia #rumen
 ```
@@ -26,7 +26,7 @@ No puede digerir la celulosa, así que la fermentan bacterias, hongos, protozoar
 Una vaca es un biorreactor con patas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cómo le dicen en tu región a "rumiar"? 👇
-Shot Biotecnológico #02 · La Creación del Robert
+Shot Biotecnológico 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #vacas #microbiologia #rumen
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿De qué vive una vaca? No es del pasto 🐄 | Shot Biotecnológico #02
+¿De qué vive una vaca? No es del pasto 🐄 | Shot Biotecnológico 02
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Murray, R. M., Bryant, A. M. y Leng, R. A. (1976). Br. J. Nutr. 36: 1–14 (en borregos: el metano del rumen sale sobre todo por eructo).
 
 ¿Cómo le dicen en tu región a "rumiar"? 👇
-Shot Biotecnológico #02 · La Creación del Robert
+Shot Biotecnológico 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #vacas
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esa vaca no se alimenta de pasto: se alimenta de los microbios de su panza. 🐄 Ellos digieren la celulosa y le dan cerca del 70 % de su energía. A ti, cerca del 10 %. ¿Cómo le dicen en tu región a "rumiar"? 👇
-Shot Biotecnológico #02 · La Creación del Robert
+Shot Biotecnológico 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia
 ```
@@ -68,7 +68,7 @@ Esa vaca no se alimenta de pasto: se alimenta de los microbios de su panza.
 Los rumiantes no tienen enzimas para digerir la celulosa. La digieren bacterias, hongos, protozoarios y arqueas que viven en el rumen, un fermentador tibio y sin oxígeno. Los ácidos grasos volátiles que producen (acetato, propionato y butirato) aportan cerca del 70 % de la energía de vacas y borregos, frente a alrededor del 10 % en humanos (Bergman, Physiological Reviews, 1990). Y la proteína microbiana es la principal fuente de aminoácidos que absorbe el rumiante: entre 50 y 80 % (Santos et al., PLOS ONE, 2026).
 Por qué importa: el mismo sistema produce metano. Las arqueas del rumen son los únicos microbios de ahí que lo fabrican, y casi todo sale por eructo. Entender ese biorreactor es clave para producir alimento con menos emisiones.
 ¿Qué te parece más interesante: la eficiencia del rumen o su huella de metano?
-Shot Biotecnológico #02 · La Creación del Robert
+Shot Biotecnológico 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Microbioma #Ganaderia
 ```

@@ -14,7 +14,7 @@ Ojo: si las bolitas no se despegan al frotarlas y la raíz se ve hinchada, puede
 El dibujo es esquemático.
 Fuentes: Clúa et al., Genes 2018 · Hoffman et al., Chem Rev 2014 · Embrapa Soja, Circular Técnica 212 (2024) · Royal Society 2020 · World Food Prize 2025 · LPSN y DSMZ (R. etli) · UC IPM · NOAA.
 ¿Alguna vez arrancaste una mata de frijol y viste las bolitas? 👇
-Shot Biotecnológico #51 · La Creación del Robert
+Shot Biotecnológico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #frijol #nitrogeno #agricultura
 ```
@@ -28,7 +28,7 @@ En Brasil, Mariangela Hungria (Embrapa Soja) desarrolló inoculantes: bacterias 
 Dato extra: una bacteria de tu frijol se llama Rhizobium etli, del náhuatl etl, frijol.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez arrancaste una mata de frijol y viste las bolitas? 👇
-Shot Biotecnológico #51 · La Creación del Robert
+Shot Biotecnológico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #frijol #nitrogeno #agricultura
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas bolitas de tu frijol son fábricas de abono 🌱 | Shot Biotecnológico #51
+Esas bolitas de tu frijol son fábricas de abono 🌱 | Shot Biotecnológico 51
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Fuentes:
 - UC IPM, Dry Beans: Nematodes · https://ipm.ucanr.edu/agriculture/dry-beans/nematodes/
 - NOAA JetStream, The Atmosphere · https://www.noaa.gov/jetstream/atmosphere
 ¿Alguna vez arrancaste una mata de frijol y viste las bolitas? 👇
-Shot Biotecnológico #51 · La Creación del Robert
+Shot Biotecnológico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #frijol
 ```
@@ -67,7 +67,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esas bolitas que se despegan de la raíz de tu frijol no son plaga: son fábricas de abono. 🌱
 Adentro viven bacterias Rhizobium que, con la enzima nitrogenasa, convierten el nitrógeno del aire en amoníaco para la planta, a temperatura ambiente; las fábricas de abono necesitan 350 °C o más. En Brasil, los inoculantes que desarrolló el equipo de Mariangela Hungria van en el 85 % del área de soya. El dibujo es esquemático.
 ¿Alguna vez viste las bolitas en la raíz? 👇
-Shot Biotecnológico #51 · La Creación del Robert
+Shot Biotecnológico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #frijol
 ```
@@ -79,7 +79,7 @@ Las leguminosas (frijol, soya, haba) forman nódulos con bacterias del suelo, lo
 Por qué importa: esa simbiosis se vende como biotecnología. En Brasil, el equipo de Mariangela Hungria (Embrapa Soja) desarrolló inoculantes con Bradyrhizobium y otras bacterias que se aplican a la semilla; en 2025 las tecnologías de su grupo se usaban en el 85 % del área de soya del país, más de 30 millones de hectáreas, y la soya brasileña prácticamente no lleva abono nitrogenado. Por sus avances en fijación biológica de nitrógeno recibió el Premio Mundial de la Alimentación 2025.
 El dibujo del video es esquemático. Fuentes en el primer comentario.
 ¿Qué otros cultivos crees que podrían depender menos de fertilizantes con microbios?
-Shot Biotecnológico #51 · La Creación del Robert
+Shot Biotecnológico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Agricultura #FijacionDeNitrogeno #Bioinsumos
 ```
@@ -94,7 +94,7 @@ Esas bolitas de la raíz de tu frijol no son plaga: son fábricas de abono 🌱 
 Esas bolitas que se despegan de la raíz de tu frijol no son plaga: son fábricas de abono. 🌱
 Adentro, bacterias Rhizobium usan la nitrogenasa para volver amoníaco el nitrógeno del aire, a temperatura ambiente. En Brasil, los inoculantes que desarrolló el equipo de Mariangela Hungria van en el 85 % del área de soya.
 ¿Habías visto las bolitas? 👇
-Shot Biotecnológico #51 · La Creación del Robert
+Shot Biotecnológico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

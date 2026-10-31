@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #15 · Ese polvo no es solo jabón: trae enzimas de microbios
+# Publicación · Shot Biotecnológico 15 · Ese polvo no es solo jabón: trae enzimas de microbios
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo curioso: tu páncreas hace lo mismo con tu comida.
 El dibujo es esquemático.
 Fuentes: Callisen et al. 2006 · Flindt 1969 · Razzaq et al. 2019 · NIDDK.
 ¿Tú lavas con agua fría o caliente? 👇
-Shot Biotecnológico #15 · La Creación del Robert
+Shot Biotecnológico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Enzimas #Ciencia #Lavanderia
 ```
@@ -25,7 +25,7 @@ Ese polvo para lavar no es solo jabón: muchos detergentes traen enzimas hechas 
 Proteasa contra la proteína (huevo, sangre), amilasa contra el almidón y lipasa contra la grasa: cortan la mancha en pedacitos y el agua se los lleva. Las hacen bacterias como Bacillus en tanques de fermentación, y hay versiones mejoradas para el agua fría. En 1963 una proteasa de bacteria llegó a un polvo para remojar; en 1969 se publicó que el polvo de enzima enfermaba los pulmones de obreros en Inglaterra, y por eso hoy va en granitos que casi no sueltan polvo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú lavas con agua fría o caliente? 👇
-Shot Biotecnológico #15 · La Creación del Robert
+Shot Biotecnológico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Enzimas #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu detergente puede traer enzimas de bacterias 🧺 | Shot Biotecnológico #15
+Tu detergente puede traer enzimas de bacterias 🧺 | Shot Biotecnológico 15
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Antibiotics 13(12):1227 (2024). https://pmc.ncbi.nlm.nih.gov/articles/PMC11672837/
 - NIDDK: Your Digestive System & How It Works. https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works
 ¿Tú lavas con agua fría o caliente? 👇
-Shot Biotecnológico #15 · La Creación del Robert
+Shot Biotecnológico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Enzimas
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese polvo para lavar no es solo jabón: muchos detergentes traen enzimas hechas por microbios. 🧺 Proteasa, amilasa y lipasa cortan la proteína, el almidón y la grasa de la mancha, y el agua se lleva los pedacitos. Las fabrican bacterias como Bacillus en tanques de fermentación.
 ¿Tú lavas con agua fría o caliente? 👇
-Shot Biotecnológico #15 · La Creación del Robert
+Shot Biotecnológico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Enzimas
 ```
@@ -72,14 +72,14 @@ Muchos detergentes de ropa son un producto biotecnológico: traen enzimas produc
 Las proteasas de detergente son serinproteasas desarrolladas a partir de enzimas de Bacillus; las amilasas también vienen principalmente de Bacillus, y la lipasa más conocida (Lipolase, 1988) salió del hongo Thermomyces lanuginosus. Cortan proteínas, almidón y grasas de las manchas, y con ingeniería de proteínas hoy hay versiones activas a baja temperatura, lo que permite lavar en frío y ahorrar energía.
 La historia también deja una lección de seguridad industrial: la Alcalase llegó en 1963 al polvo de remojo Bio-tex, y en 1969 se publicó en The Lancet que obreros que inhalaban polvo de enzima desarrollaban enfermedad pulmonar. La respuesta fue formular la enzima en granulados que casi no sueltan polvo, aunque el aire de las fábricas se sigue vigilando.
 ¿Qué otro producto de uso diario es biotecnología sin que lo sepamos?
-Shot Biotecnológico #15 · La Creación del Robert
+Shot Biotecnológico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Enzimas #Fermentacion #SeguridadIndustrial #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese polvo para lavar no es solo jabón: muchos detergentes traen enzimas de bacterias que cortan la proteína, el almidón y la grasa de las manchas, incluso en agua fría. 🧺 Shot Biotecnológico #15 #Biotecnologia
+Ese polvo para lavar no es solo jabón: muchos detergentes traen enzimas de bacterias que cortan la proteína, el almidón y la grasa de las manchas, incluso en agua fría. 🧺 Shot Biotecnológico 15 #Biotecnologia
 ```
 
 ### Threads
@@ -87,7 +87,7 @@ Ese polvo para lavar no es solo jabón: muchos detergentes traen enzimas de bact
 Ese polvo para lavar no es solo jabón: muchos detergentes traen enzimas hechas por microbios. 🧺
 La proteasa corta la proteína, la amilasa el almidón y la lipasa la grasa. Y en 1969 se publicó que el polvo de enzima enfermaba a obreros en Inglaterra: por eso hoy va en granitos.
 ¿Tú lavas con agua fría o caliente?
-Shot Biotecnológico #15 · La Creación del Robert
+Shot Biotecnológico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #53 · ¿Un chatbot contesta mejor que tu médico?
+# Publicación · Shot IA 53 · ¿Un chatbot contesta mejor que tu médico?
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ El chatbot sonó más amable, pero la última palabra la tiene tu médico.
 El dibujo es esquemático. Datos de 2023: los chatbots cambian.
 Fuente: Ayers et al., JAMA Internal Medicine (2023).
 ¿Tú le has preguntado algo de salud a un chatbot? ¿Te sirvió? 👇
-Shot IA #53 · La Creación del Robert
+Shot IA 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT #Salud #Medicina
 ```
@@ -27,7 +27,7 @@ En 2023, investigadores de la Universidad de California, San Diego, compararon 1
 Pero ojo: las del chatbot eran unas 4 veces más largas, era un foro y no una consulta, la exactitud no se midió aparte y los evaluadores eran coautores. Los autores sugieren probar la IA como borrador que el médico corrige, no como reemplazo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú le has preguntado algo de salud a un chatbot? ¿Te sirvió? 👇
-Shot IA #53 · La Creación del Robert
+Shot IA 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT #Salud #Medicina
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Un chatbot contesta mejor que tu médico? Lo que sí dice el estudio 🩺 | Shot IA #53
+¿Un chatbot contesta mejor que tu médico? Lo que sí dice el estudio 🩺 | Shot IA 53
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu duda de salud la responde un médico y, al lado, un chatbot. Los evaluadores eligieron al chatbot casi 8 de cada 10 veces. 🩺 Fue un estudio de 2023 con 195 preguntas de un foro de Reddit. Pero las respuestas del chatbot eran 4 veces más largas, era un foro y no una consulta, y los evaluadores eran coautores. El chatbot sonó más amable, pero la última palabra la tiene tu médico.
 ¿Tú le has preguntado algo de salud a un chatbot? ¿Te sirvió? 👇
-Shot IA #53 · La Creación del Robert
+Shot IA 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Salud
 ```
@@ -69,7 +69,7 @@ Lo que vale la pena leer con calma son los límites que señalan los autores: re
 Su propuesta no es reemplazar al médico: es probar en clínicas que la IA escriba borradores que el médico revise y corrija.
 ¿En tu institución ya se usan borradores hechos con IA? ¿Quién los revisa?
 Fuente: Ayers et al., JAMA Intern Med 183(6): 589–596 (2023). Datos de 2023 (GPT-3.5).
-Shot IA #53 · La Creación del Robert
+Shot IA 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Salud #Medicina #ChatGPT #LaCreacionDelRobert
 ```
@@ -84,7 +84,7 @@ Médico vs. chatbot en un foro de Reddit: en 2023, evaluadores prefirieron al ch
 Tu duda de salud la responde un médico y, al lado, un chatbot. En un estudio de 2023, los evaluadores eligieron al chatbot casi 8 de cada 10 veces. 🩺
 Pero ojo: las del chatbot eran 4 veces más largas, era un foro y no una consulta, y los evaluadores eran coautores. La última palabra la tiene tu médico.
 ¿Tú le preguntas de salud a un chatbot?
-Shot IA #53 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 53 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

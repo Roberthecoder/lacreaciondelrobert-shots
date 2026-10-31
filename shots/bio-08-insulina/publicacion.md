@@ -15,7 +15,7 @@ En 2024 vivían con diabetes unos 589 millones de adultos de 20 a 79 años, y 1.
 El dibujo es esquemático.
 Fuentes: Riggs, Endocrine Reviews (2021); Goeddel et al., PNAS (1979); Novo Nordisk (Novolin, 1991); IDF Diabetes Atlas, 11ª edición (2025).
 ¿Conoces a alguien que use insulina? ¿Sabía de dónde sale? 👇
-Shot Biotecnológico #08 · La Creación del Robert
+Shot Biotecnológico 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Insulina #Diabetes #ADNRecombinante
 ```
@@ -27,7 +27,7 @@ Antes de los ochenta venía del páncreas de cerdos y reses: funcionaba, pero no
 Hoy no todo se hace en bacterias: mucha insulina se produce en levadura (Saccharomyces cerevisiae), que la secreta al caldo, mientras que en E. coli se queda adentro y hay que sacarla y replegarla.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Conoces a alguien que use insulina? 👇
-Shot Biotecnológico #08 · La Creación del Robert
+Shot Biotecnológico 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Insulina #Diabetes #ADNRecombinante
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu insulina no viene de un animal: viene de un tanque 💉🦠 | Shot Biotecnológico #08
+Tu insulina no viene de un animal: viene de un tanque 💉🦠 | Shot Biotecnológico 08
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - Federación Internacional de Diabetes, IDF Diabetes Atlas, 11ª edición (2025): https://idf.org/news-and-resources/news/idf-diabetes-atlas-11th-edition/
 
 ¿Conoces a alguien que use insulina? ¿Sabía de dónde sale? 👇
-Shot Biotecnológico #08 · La Creación del Robert
+Shot Biotecnológico 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Insulina
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esa insulina no salió de ningún animal: salió de un tanque lleno de microbios. 💉🦠 En 1978 escribieron en el laboratorio los genes de las dos cadenas de la insulina humana y se los dieron a bacterias, uno a cada una; hoy mucha se hace también en levadura, la misma del pan. ¿Conoces a alguien que use insulina? 👇
-Shot Biotecnológico #08 · La Creación del Robert
+Shot Biotecnológico 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia
 ```
@@ -75,7 +75,7 @@ Hoy la insulina recombinante se produce en E. coli o en levadura (Saccharomyces 
 Por qué importa: en 2024 vivían con diabetes unos 589 millones de adultos (IDF Diabetes Atlas, 11ª ed.).
 ¿En tu área se usa todavía biología sintética "escrita desde cero" o se parte de genes naturales?
 Fuentes: Riggs, Endocrine Reviews 2021; Goeddel et al., PNAS 1979; Baeshen et al., Microbial Cell Factories 2014.
-Shot Biotecnológico #08 · La Creación del Robert
+Shot Biotecnológico 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Insulina #ADNRecombinante
 ```

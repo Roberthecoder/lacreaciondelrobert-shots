@@ -1,4 +1,4 @@
-# Publicación · Shot IA #27 · La IA que le devolvió la voz a Ann
+# Publicación · Shot IA 27 · La IA que le devolvió la voz a Ann
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Ojo: cada estudio fue con una sola persona y todavía no es un tratamiento que s
 El dibujo es esquemático.
 Fuentes: Metzger et al., Nature (2023) · Willett et al., Nature (2023) · Card et al., NEJM (2024).
 ¿Qué es lo primero que le dirías a alguien que no ha podido hablar en años? 👇
-Shot IA #27 · La Creación del Robert
+Shot IA 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Neurociencia #ImplanteCerebral #ELA
 ```
@@ -28,7 +28,7 @@ Una lámina con 253 electrodos sobre su cerebro captaba las órdenes que mandaba
 Ojo: cada estudio fue con una sola persona; aún no es un tratamiento disponible.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué es lo primero que le dirías a alguien que no ha podido hablar en años? 👇
-Shot IA #27 · La Creación del Robert
+Shot IA 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Neurociencia #ImplanteCerebral #ELA
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa cara no habla sola: la mueve su cerebro 🧠 | Shot IA #27
+Esa cara no habla sola: la mueve su cerebro 🧠 | Shot IA 27
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa cara en la pantalla no habla sola: la mueve el cerebro de Ann, a quien un infarto cerebral dejó sin voz. 🧠 Un implante con 253 electrodos y una IA convirtieron su intento de hablar en palabras, voz y gestos, con una voz sacada del video de su boda. Todavía son ensayos con una persona por estudio, pero ya funcionó.
 ¿Qué es lo primero que le dirías a alguien que no ha podido hablar en años? 👇
-Shot IA #27 · La Creación del Robert
+Shot IA 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Neurociencia
 ```
@@ -71,7 +71,7 @@ La pieza clave es la inteligencia artificial: modelos de aprendizaje profundo qu
 El matiz importa: cada estudio fue con una sola persona, en ensayos clínicos, y todavía no hay un tratamiento disponible. Una conversación normal anda en unas 160 palabras por minuto. Pero el salto es real.
 ¿Qué tendría que pasar para que esto llegue a hospitales públicos?
 Fuentes: Metzger et al., Nature (2023); Willett et al., Nature (2023); Card et al., NEJM (2024).
-Shot IA #27 · La Creación del Robert
+Shot IA 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Neurociencia #InterfazCerebroComputadora #Salud #LaCreacionDelRobert
 ```
@@ -86,7 +86,7 @@ Esa cara no habla sola: la mueve el cerebro de Ann, que perdió el habla por un 
 Esa cara en la pantalla no habla sola: la mueve el cerebro de Ann, a quien un infarto cerebral dejó sin voz. 🧠
 Un implante con 253 electrodos y una IA convirtieron su intento de hablar en palabras, voz y gestos: unas 78 por minuto. Su voz salió del video de su boda. Aún son ensayos con una sola persona.
 ¿Qué le dirías tú?
-Shot IA #27 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 27 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

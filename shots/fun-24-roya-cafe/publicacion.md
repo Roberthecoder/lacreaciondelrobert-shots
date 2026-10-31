@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #24 · Ese polvo naranja no es óxido: la roya del café
+# Publicación · Shot Fungi Mati 24 · Ese polvo naranja no es óxido: la roya del café
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ La defensa: cafetos cruzados con el híbrido de Timor, como los Catimor… aunqu
 El dibujo es esquemático.
 Fuentes: Avelino et al. 2015 (Food Security); Talhinhas et al. 2017 (Molecular Plant Pathology); SENASICA 2019.
 ¿Tú tomas café de olla o de cafetera? 👇
-Shot Fungi Mati #24 · La Creación del Robert
+Shot Fungi Mati 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Cafe #RoyaDelCafe
 ```
@@ -25,7 +25,7 @@ Ese polvo naranja no es óxido: es un hongo, y vive de la planta de tu café. �
 La roya del café (Hemileia vastatrix) entra por los poros de la hoja, le roba comida a las células vivas y brota en un ramillete de esporas. La hoja se cae y la planta da menos café. En el siglo XIX, la roya y los precios bajos tumbaron el café de Ceilán (hoy Sri Lanka) y sus cafetaleros se pasaron al té. En 2012–13 golpeó Centroamérica y México: la producción centroamericana cayó 16 %. La defensa son variedades cruzadas con el híbrido de Timor, como los Catimor, aunque la roya ya venció a algunas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú tomas café de olla o de cafetera? 👇
-Shot Fungi Mati #24 · La Creación del Robert
+Shot Fungi Mati 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Cafe #RoyaDelCafe
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese polvo naranja NO es óxido: es la roya del café 🍂☕ | Shot Fungi Mati #24
+Ese polvo naranja NO es óxido: es la roya del café 🍂☕ | Shot Fungi Mati 24
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - McCook, S. (2020). Entrevista en Eat This Podcast, "Coffee leaf rust is bad news". https://www.eatthispodcast.com/wp-content/uploads/2020/10/coffee-leaf-rust-transcript.pdf
 - Mishra, M. K. et al. (2011). Variability in stomatal features… in Indian coffee (Coffea arabica L.) cultivars. Botanica Serbica 35(2): 111–119. https://botanicaserbica.bio.bg.ac.rs/arhiva/pdf/2011_35_2_539_full.pdf
 ¿Tú tomas café de olla o de cafetera? 👇
-Shot Fungi Mati #24 · La Creación del Robert
+Shot Fungi Mati 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #RoyaDelCafe #FungiMati
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese polvo naranja no es óxido: es un hongo, y vive de la planta de tu café. ☕ La roya del café entra por los poros de la hoja, la tumba antes de tiempo y la planta da menos café. En 2012–13 golpeó Centroamérica y México, y en el siglo XIX, junto con los precios bajos, hizo que en Ceilán (hoy Sri Lanka) se pasaran del café al té.
 ¿Tú tomas café de olla o de cafetera? 👇
-Shot Fungi Mati #24 · La Creación del Robert
+Shot Fungi Mati 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #RoyaDelCafe
 ```
@@ -70,7 +70,7 @@ Un hongo microscópico puede mover la economía de una región entera: la roya d
 Hemileia vastatrix infecta las hojas por los estomas, provoca su caída prematura y puede reducir la cosecha hasta 35 % (Talhinhas et al., 2017). En 2012–13, una epidemia en Centroamérica y México redujo 16 % la producción centroamericana frente a 2011–12 (Avelino et al., Food Security, 2015). Los autores identifican factores económicos (precios bajos que llevaron a descuidar el manejo) y del clima: una menor diferencia de temperatura entre el día y la noche, que probablemente aceleró el ciclo del hongo.
 Por qué importa: las variedades resistentes derivadas del híbrido de Timor (Catimor, Sarchimor) son clave, pero algunas ya perdieron su resistencia. Los autores proponen mejoramiento con resistencia más duradera, sistemas de alerta temprana y manejo adaptado al cambio climático.
 ¿En tu región se cultiva café?
-Shot Fungi Mati #24 · La Creación del Robert
+Shot Fungi Mati 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Cafe #Agricultura #CambioClimatico
 ```
@@ -83,7 +83,7 @@ Ese polvo naranja en la hoja del cafeto no es óxido: es la roya, un hongo. En 2
 ### Threads
 ```text
 Ese polvo naranja no es óxido: es un hongo, y vive de la planta de tu café. ☕ La roya entra por los poros de la hoja, la tumba antes de tiempo y la planta da menos café. En el siglo XIX, junto con los precios bajos, hizo que en Ceilán se pasaran del café al té. ¿Tú tomas café de olla o de cafetera?
-Shot Fungi Mati #24 · La Creación del Robert
+Shot Fungi Mati 24 · La Creación del Robert
 #Cafe
 ```
 

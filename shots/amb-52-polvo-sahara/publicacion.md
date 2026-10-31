@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #52 · El atardecer de Yucatán viene del Sahara
+# Publicación · Shot Ambiental 52 · El atardecer de Yucatán viene del Sahara
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que ese cielo rojizo viene del mismo desierto cuyo polvo abona la selva tro
 El dibujo es esquemático.
 Fuentes: NASA (2015); Yu et al. 2015, Geophysical Research Letters; Conagua/SMN.
 ¿Ya te tocó ver el cielo amarillento por el polvo del Sahara? 👇
-Shot Ambiental #52 · La Creación del Robert
+Shot Ambiental 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #PolvoDelSahara #Yucatan #Amazonas
 ```
@@ -25,7 +25,7 @@ Ese atardecer rojizo sobre Yucatán no es humo de un incendio: es polvo del Saha
 Con datos del satélite CALIPSO (2007–2013), la NASA calculó que en promedio salían del Sahara 182 millones de toneladas de polvo al año, y que casi 28 millones caían sobre la cuenca del Amazonas, con unas 22 mil toneladas de fósforo: casi lo mismo que la selva pierde con la lluvia. En primavera y verano, el SMN avisa cuando la nube llega a Yucatán y al Golfo de México.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya te tocó ver el cielo amarillento por el polvo del Sahara? 👇
-Shot Ambiental #52 · La Creación del Robert
+Shot Ambiental 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #PolvoDelSahara #Yucatan #Amazonas
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese atardecer rojo viene del Sahara 🌅 | Shot Ambiental #52
+Ese atardecer rojo viene del Sahara 🌅 | Shot Ambiental 52
 ```
 Descripción:
 ```text
@@ -46,7 +46,7 @@ Fuentes:
 - Yu, H. et al. (2015), Geophysical Research Letters, doi:10.1002/2015GL063040
 - Conagua/SMN, Comunicado de Prensa 0397-22 (2022): https://www.gob.mx/cms/uploads/attachment/file/731534/Comunicado_de_Prensa_0397-22.pdf
 ¿Ya te tocó ver el cielo amarillento por el polvo del Sahara? 👇
-Shot Ambiental #52 · La Creación del Robert
+Shot Ambiental 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #PolvoDelSahara #Yucatan
 ```
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese atardecer rojizo sobre Yucatán no es humo: es polvo del Sahara que cruzó el Atlántico. 🌅 Según la NASA, en promedio salían del Sahara 182 millones de toneladas de polvo al año (2007–2013), y casi 28 millones caían sobre el Amazonas, abonando la selva con fósforo.
 ¿Ya te tocó ver el cielo amarillento por el polvo del Sahara? 👇
-Shot Ambiental #52 · La Creación del Robert
+Shot Ambiental 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #PolvoDelSahara #Yucatan
 ```
@@ -67,7 +67,7 @@ Con siete años de datos del lidar del satélite CALIPSO (2007–2013), un equip
 En México, el Servicio Meteorológico Nacional emite avisos cuando la nube llega a la Península de Yucatán y al Golfo de México, sobre todo en primavera y verano, y señala que estas masas de aire seco pueden limitar temporalmente el desarrollo de ciclones tropicales.
 Un recordatorio de que los sistemas ambientales están conectados a escala de continentes: un desierto ayuda a nutrir una selva al otro lado del océano.
 ¿Qué otro ejemplo conoces de ecosistemas conectados a miles de kilómetros?
-Shot Ambiental #52 · La Creación del Robert
+Shot Ambiental 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Atmosfera #PolvoDelSahara #Amazonas #LaCreacionDelRobert
 ```

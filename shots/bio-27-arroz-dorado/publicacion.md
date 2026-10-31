@@ -14,7 +14,7 @@ En julio de 2021, Filipinas dio el primer permiso del mundo para sembrarlo comer
 El dibujo es esquemático.
 Fuentes: Ye et al., Science 2000 · Beyer et al., J Nutr 2002 · Paine et al., Nat Biotechnol 2005 · Tang et al., Am J Clin Nutr 2009 · OMS 2009 · PhilRice 2022 y 2024.
 ¿Tú te comerías un arroz amarillo? 👇
-Shot Biotecnológico #27 · La Creación del Robert
+Shot Biotecnológico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #ArrozDorado #VitaminaA #Transgenicos
 ```
@@ -27,7 +27,7 @@ Tu cuerpo convierte el betacaroteno en vitamina A según lo necesita, y un estud
 Filipinas aprobó sembrarlo en 2021; en 2024 un tribunal lo frenó y el caso pasó a la Corte Suprema.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú te comerías un arroz amarillo? 👇
-Shot Biotecnológico #27 · La Creación del Robert
+Shot Biotecnológico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #ArrozDorado #VitaminaA #Ciencia
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese arroz no está pintado: fabrica vitamina A 🍚 | Shot Biotecnológico #27
+Ese arroz no está pintado: fabrica vitamina A 🍚 | Shot Biotecnológico 27
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - OMS, Vitamin A deficiency · https://www.who.int/data/nutrition/nlis/info/vitamin-a-deficiency
 - PhilRice (2024) · https://www.philrice.gov.ph/philrice-acknowledges-court-of-appeals-decision-granting-the-writ-of-kalikasan-against-golden-rice-in-the-philippines/
 ¿Tú te comerías un arroz amarillo? 👇
-Shot Biotecnológico #27 · La Creación del Robert
+Shot Biotecnológico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #ArrozDorado
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 Ese arroz no está pintado: fabrica algo que tu arroz blanco no tiene. 🍚
 Le pusieron genes de narciso y de una bacteria (y luego de maíz) para que el grano haga betacaroteno, que tu cuerpo convierte en vitamina A. Filipinas lo aprobó en 2021 y en 2024 un tribunal lo frenó.
 ¿Tú te comerías un arroz amarillo? 👇
-Shot Biotecnológico #27 · La Creación del Robert
+Shot Biotecnológico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #ArrozDorado #LaCreacionDelRobert
 ```
@@ -76,14 +76,14 @@ La planta del arroz produce betacaroteno en sus hojas, pero no en el endospermo.
 Por qué importa: según la OMS, la deficiencia de vitamina A es la principal causa prevenible de ceguera infantil; con datos de 1995 a 2005, estimó 190 millones de niños en edad preescolar con retinol bajo en la sangre.
 Y el reto no es solo científico: Filipinas otorgó en 2021 el primer permiso del mundo para su siembra comercial, y en 2024 un tribunal de apelaciones lo revocó por falta de mecanismos de monitoreo; el gobierno apeló ante la Corte Suprema.
 ¿Qué debería pesar más en estas decisiones: la evidencia de seguridad, el principio precautorio o la urgencia nutricional?
-Shot Biotecnológico #27 · La Creación del Robert
+Shot Biotecnológico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Nutricion #SaludPublica #Agricultura #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese arroz no está pintado: fabrica betacaroteno, que tu cuerpo convierte en vitamina A. Genes de narciso y bacteria (2000), luego de maíz (2005). Filipinas lo aprobó en 2021; un tribunal lo frenó en 2024. 🍚 Shot Biotecnológico #27 #Biotecnologia
+Ese arroz no está pintado: fabrica betacaroteno, que tu cuerpo convierte en vitamina A. Genes de narciso y bacteria (2000), luego de maíz (2005). Filipinas lo aprobó en 2021; un tribunal lo frenó en 2024. 🍚 Shot Biotecnológico 27 #Biotecnologia
 ```
 
 ### Threads
@@ -91,7 +91,7 @@ Ese arroz no está pintado: fabrica betacaroteno, que tu cuerpo convierte en vit
 Ese arroz no está pintado: fabrica algo que tu arroz blanco no tiene. 🍚
 Con genes de narciso y de una bacteria (y en 2005, de maíz), el grano arma betacaroteno, que tu cuerpo convierte en vitamina A. Filipinas lo aprobó en 2021 y en 2024 un tribunal lo frenó.
 ¿Tú te lo comerías?
-Shot Biotecnológico #27 · La Creación del Robert
+Shot Biotecnológico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

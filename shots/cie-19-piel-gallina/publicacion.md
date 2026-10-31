@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #19 · La piel de gallina: músculos diminutos que jalan tus pelos
+# Publicación · Shot Científico 19 · La piel de gallina: músculos diminutos que jalan tus pelos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -14,7 +14,7 @@ Pero en 2020, en Harvard, vieron en ratones que el mismo nervio que eriza el pel
 El dibujo es esquemático.
 Fuentes: Shwartz et al. 2020 (Cell, Harvard); Gray's Anatomy (2016).
 ¿A ti con qué se te pone la piel de gallina? 👇
-Shot Científico #19 · La Creación del Robert
+Shot Científico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Evolucion
 ```
@@ -26,7 +26,7 @@ La piel de gallina la hacen músculos diminutos pegados a casi cada pelo. En ani
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti con qué se te pone la piel de gallina? 👇
-Shot Científico #19 · La Creación del Robert
+Shot Científico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Evolucion
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La piel de gallina: músculos que jalan tus pelos 🥶 | Shot Científico #19
+La piel de gallina: músculos que jalan tus pelos 🥶 | Shot Científico 19
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Harvard Stem Cell Institute (2020). The real reason behind goosebumps. https://hsci.harvard.edu/
 - Torkamani, N. et al. (2014). The arrector pili muscle, the bridge between the follicular stem cell niche and the interfollicular epidermis. Int. J. Trichology 6(3): 88–94. https://pubmed.ncbi.nlm.nih.gov/25210331/
 ¿A ti con qué se te pone la piel de gallina? 👇
-Shot Científico #19 · La Creación del Robert
+Shot Científico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 La piel de gallina son músculos diminutos jalando tus pelos 🥶. A un gato le sirve para abrigarse; a ti, casi de nada: es herencia de tus ancestros peludos.
 ¿A ti con qué se te pone la piel de gallina? 👇
-Shot Científico #19 · La Creación del Robert
+Shot Científico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -69,7 +69,7 @@ La piel de gallina parece un reflejo inútil, pero sigue enseñándonos biologí
 Cada pelo (salvo algunas zonas como la cara o las pestañas) tiene un pequeño músculo, el erector del pelo, que se contrae por señales del sistema nervioso simpático ante el frío o las emociones. En mamíferos con pelaje, eso mejora el aislamiento térmico.
 En 2020, el laboratorio de Ya-Chieh Hsu en Harvard (Shwartz et al., Cell) mostró en ratones que ese músculo y su nervio forman un "nicho" que regula a las células madre del folículo: con frío prolongado, el nervio promueve el crecimiento de pelo nuevo.
 ¿Te imaginabas que algo tan pequeño conectara frío y crecimiento de pelo?
-Shot Científico #19 · La Creación del Robert
+Shot Científico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

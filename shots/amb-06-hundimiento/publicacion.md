@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #06 · La Ciudad de México se hunde: los 14 escalones del Ángel
+# Publicación · Shot Ambiental 06 · La Ciudad de México se hunde: los 14 escalones del Ángel
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que cuando subas esos escalones, acuérdate: el Ángel no creció. La ciuda
 El dibujo es esquemático.
 Fuentes: NASA JPL (abril 2026); Yaemsiri et al. (2010) para las uñas.
 ¿En tu ciudad también se ven grietas en las calles? 👇
-Shot Ambiental #06 · La Creación del Robert
+Shot Ambiental 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CDMX #Hundimiento #AguaSubterranea
 ```
@@ -25,7 +25,7 @@ Estos escalones no siempre estuvieron aquí: al Ángel de la Independencia le ha
 La CDMX está sobre el fondo de un antiguo lago; al bombear el agua del subsuelo, y con el peso de los edificios, el lodo se aplasta. El satélite NISAR (NASA e India) midió que entre octubre de 2025 y enero de 2026 algunas zonas bajaron más de 2 cm por mes (dato preliminar): más de 5 veces lo que te crecen las uñas. Por eso se cuartean calles, tuberías y hasta el Metro.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu ciudad también se ven grietas en las calles? 👇
-Shot Ambiental #06 · La Creación del Robert
+Shot Ambiental 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CDMX #Hundimiento #AguaSubterranea
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Al Ángel le agregaron 14 escalones 🏙️ | Shot Ambiental #06
+Al Ángel le agregaron 14 escalones 🏙️ | Shot Ambiental 06
 ```
 Descripción:
 ```text
@@ -44,7 +44,7 @@ Fuentes:
 - NASA JPL (29 abr 2026). US-Indian Space Mission Maps Extreme Subsidence in Mexico City: https://www.jpl.nasa.gov/news/us-indian-space-mission-maps-extreme-subsidence-in-mexico-city/
 - Yaemsiri, S. et al. (2010). Growth rate of human fingernails and toenails in healthy American young adults. J Eur Acad Dermatol Venereol 24(4): 420–423. https://pubmed.ncbi.nlm.nih.gov/19744178/
 ¿En tu ciudad también se ven grietas en las calles? 👇
-Shot Ambiental #06 · La Creación del Robert
+Shot Ambiental 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CDMX #Hundimiento
 ```
@@ -53,7 +53,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Al Ángel de la Independencia le han agregado 14 escalones, porque la Ciudad de México se hunde. 🏙️ Un satélite de la NASA y la India midió que algunas zonas bajaron más de 2 cm por mes entre octubre de 2025 y enero de 2026 (dato preliminar).
 ¿En tu ciudad también se ven grietas en las calles? 👇
-Shot Ambiental #06 · La Creación del Robert
+Shot Ambiental 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CDMX
 ```
@@ -65,7 +65,7 @@ La ciudad, con unos 20 millones de habitantes, está sobre el fondo de un antigu
 En abril de 2026, la NASA publicó mediciones preliminares del satélite NISAR (misión conjunta NASA–ISRO): entre octubre de 2025 y enero de 2026, algunas zonas bajaron más de 2 cm por mes. El radar en banda L ve a través de las nubes y repite la medición varias veces al mes, lo que permite vigilar infraestructura crítica como el Metro, la red de agua y el aeropuerto.
 Para gestión del agua, ingeniería civil y planeación urbana, es un recordatorio de que el agua subterránea no es solo un recurso: también sostiene el suelo.
 ¿Qué medidas crees que deberían priorizarse: recarga de acuíferos, menos extracción o mejor monitoreo?
-Shot Ambiental #06 · La Creación del Robert
+Shot Ambiental 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #AguaSubterranea #CDMX #Ingenieria #LaCreacionDelRobert
 ```

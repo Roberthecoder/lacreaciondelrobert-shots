@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #22 · Las agujetas no son ácido láctico
+# Publicación · Shot Científico 22 · Las agujetas no son ácido láctico
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Así que ese dolor no es veneno acumulado: es tu músculo reparándose.
 El dibujo es esquemático.
 Fuentes: Schwane et al. 1983 (Phys. Sportsmed. y Med. Sci. Sports Exerc.); Cheung et al. 2003; Hotfiel et al. 2018; Hody et al. 2019; McHugh 2003.
 ¿A ti qué ejercicio te deja con más agujetas? 👇
-Shot Científico #22 · La Creación del Robert
+Shot Científico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Ejercicio #Agujetas
 ```
@@ -27,7 +27,7 @@ El lactato sube con el ejercicio intenso pero baja en cuestión de horas; las ag
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti qué ejercicio te deja con más agujetas? 👇
-Shot Científico #22 · La Creación del Robert
+Shot Científico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Ejercicio #Agujetas
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las agujetas NO son ácido láctico 💪 | Shot Científico #22
+Las agujetas NO son ácido láctico 💪 | Shot Científico 22
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Fuentes:
 - McHugh, M. P. (2003). Recent advances in the understanding of the repeated bout effect. Scand. J. Med. Sci. Sports 13: 88–97. https://pubmed.ncbi.nlm.nih.gov/12641640/
 - Sonkodi, B. (2022). Should We Void Lactate in the Pathophysiology of Delayed Onset Muscle Soreness? Not So Fast! Metabolites 12(9): 857. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9505902/
 ¿A ti qué ejercicio te deja con más agujetas? 👇
-Shot Científico #22 · La Creación del Robert
+Shot Científico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Ejercicio
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Las agujetas no son ácido láctico acumulado. 💪 En 1983, correr en bajada no subió el lactato y aun así fue lo que más dolió en los días siguientes. Lo más aceptado: es tu músculo reparando daños microscópicos.
 ¿A ti qué ejercicio te deja con más agujetas? 👇
-Shot Científico #22 · La Creación del Robert
+Shot Científico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -76,7 +76,7 @@ Un mito muy repetido: que las agujetas (dolor muscular de aparición tardía) so
 En 1983, Schwane y colaboradores compararon carrera en plano y en bajada: en bajada el lactato nunca se elevó, y aun así fue la que causó dolor significativo en los días siguientes. Además, el lactato vuelve a su nivel en poco tiempo, mientras que el dolor llega a su pico entre 24 y 72 h.
 Hoy lo más aceptado es el daño microscópico de las fibras por ejercicio no acostumbrado (sobre todo excéntrico), con inflamación y sensibilización de los nervios. Y el músculo se adapta: la siguiente sesión igual duele mucho menos.
 ¿Qué otro mito del gimnasio te gustaría revisar?
-Shot Científico #22 · La Creación del Robert
+Shot Científico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

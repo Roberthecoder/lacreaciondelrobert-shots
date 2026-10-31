@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #30 · Tu noche en la ciudad es más caliente que la del rancho (isla de calor)
+# Publicación · Shot Ambiental 30 · Tu noche en la ciudad es más caliente que la del rancho (isla de calor)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En la Ciudad de México, Ernesto Jáuregui (UNAM) comparó el Centro con Plan Te
 El dibujo es esquemático.
 Fuentes: EPA de EE. UU.; Jáuregui (1997), Atmospheric Environment.
 ¿A ti también te cuesta dormir de calor en la ciudad? 👇
-Shot Ambiental #30 · La Creación del Robert
+Shot Ambiental 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #IslaDeCalor #CDMX #Calor
 ```
@@ -25,7 +25,7 @@ Si vives en la ciudad, tu noche suele ser más caliente que la de tu primo del r
 Es la isla de calor: el asfalto, el concreto y los techos guardan el sol de día y lo sueltan lento de noche. En la CDMX, Ernesto Jáuregui (UNAM) midió que entre 1994 y 1995 tres de cada cuatro veces la isla de calor fue nocturna, con un máximo de 7.8 °C más en el Centro que en Texcoco. Lo que sí ayuda: techos claros y árboles (un bosque urbano está en promedio 1.6 °C más fresco, según una revisión de 2021).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti también te cuesta dormir de calor en la ciudad? 👇
-Shot Ambiental #30 · La Creación del Robert
+Shot Ambiental 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #IslaDeCalor #CDMX #Calor
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu noche es más caliente que la del rancho 🌡️ | Shot Ambiental #30
+Tu noche es más caliente que la del rancho 🌡️ | Shot Ambiental 30
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Jáuregui, E. (1997). Heat island development in Mexico City. Atmospheric Environment 31(22): 3821–3831. https://doi.org/10.1016/S1352-2310(97)00136-2
 - Knight et al. (2021). Environmental Evidence 10:12 (revisión de 308 estudios).
 ¿A ti también te cuesta dormir de calor en la ciudad? 👇
-Shot Ambiental #30 · La Creación del Robert
+Shot Ambiental 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #IslaDeCalor #CDMX
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Si vives en la ciudad, tu noche suele ser más caliente que la de tu primo del rancho. 🌡️ Es la isla de calor: el asfalto y el concreto guardan el sol de día y lo sueltan de noche. En la CDMX llegó a haber hasta 7.8 °C más en el Centro que en Texcoco (Jáuregui, UNAM, datos de 1994–1995). Techos claros y árboles ayudan a bajarla.
 ¿A ti también te cuesta dormir de calor en la ciudad? 👇
-Shot Ambiental #30 · La Creación del Robert
+Shot Ambiental 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #IslaDeCalor #CDMX
 ```
@@ -70,7 +70,7 @@ Si vives en la ciudad, tu noche suele ser más caliente que la del campo de alre
 Según la EPA de EE. UU., los materiales urbanos (pavimentos, techos, concreto) reflejan menos sol y absorben y emiten más calor que la vegetación, y la isla de calor suele notarse más después del atardecer. Una revisión de 2017 citada por la EPA estima en EE. UU. de 1.1 a 2.8 °C más de noche en las ciudades. En la Ciudad de México, Ernesto Jáuregui (UNAM) midió entre 1994 y 1995 que la isla de calor fue nocturna el 75 % del tiempo, con un máximo de 7.8 °C entre el Centro y Plan Texcoco.
 Las soluciones son conocidas: techos claros (que también reducen la carga de aire acondicionado) y más árboles; una revisión de 308 estudios (2021) encontró que los bosques urbanos están en promedio 1.6 °C más frescos que las zonas sin verde. Para la planeación urbana y los reglamentos de construcción, el calor nocturno también es un tema de salud.
 ¿Tu ciudad tiene algún programa de techos claros o arbolado?
-Shot Ambiental #30 · La Creación del Robert
+Shot Ambiental 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #IslaDeCalor #Urbanismo #CDMX #LaCreacionDelRobert
 ```

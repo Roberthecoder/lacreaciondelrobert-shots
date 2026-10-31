@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #29 · Esa penicilina no salió del moho de Fleming (el melón de Peoria)
+# Publicación · Shot Biotecnológico 29 · Esa penicilina no salió del moho de Fleming (el melón de Peoria)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Lo curioso: a quien halló el melón le dicen "Moldy Mary" (Mary la Mohosa), per
 El dibujo es esquemático.
 Fuentes: Gaynes 2017 (Emerg Infect Dis) · Jami et al. 2010 (Mol Cell Proteomics) · Quinn 2013 (Am J Public Health) · Museo Nacional de la 2.ª Guerra Mundial · USDA-ARS.
 ¿Tú sabías que la penicilina venía de un melón? 👇
-Shot Biotecnológico #29 · La Creación del Robert
+Shot Biotecnológico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Penicilina #Antibioticos #Hongos
 ```
@@ -24,7 +24,7 @@ Esa penicilina no salió del moho de Fleming: salió de un melón podrido. 🍈�
 El moho de Fleming hacía muy poca: en 1941, EE. UU. no tenía ni para un paciente. En 1943, un laboratorio del gobierno en Peoria, Illinois, encontró en un melón cantalupo mohoso una cepa que hacía más del doble y crecía hundida en tanques con aire y licor de maíz. Con rayos X y luz UV sacaron mutantes: de 150 µg por mililitro o menos a 300 y a 550. Para el Día D (junio de 1944) ya había 2.3 millones de dosis. ¿Quién halló el melón? "Moldy Mary"… pero nadie sabe bien.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú sabías que la penicilina venía de un melón? 👇
-Shot Biotecnológico #29 · La Creación del Robert
+Shot Biotecnológico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Penicilina #Antibioticos #Hongos
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu penicilina salió de un melón podrido 🍈 | Shot Biotecnológico #29
+Tu penicilina salió de un melón podrido 🍈 | Shot Biotecnológico 29
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - UW–Madison News (2017). D-Day invasion was bolstered by UW–Madison penicillin project. https://news.wisc.edu/?p=38190
 - Houbraken J. et al. (2011). Fleming's penicillin producing strain is not Penicillium chrysogenum but P. rubens. IMA Fungus 2(1):87–95. https://pmc.ncbi.nlm.nih.gov/articles/PMC3317369/
 ¿Tú sabías que la penicilina venía de un melón? 👇
-Shot Biotecnológico #29 · La Creación del Robert
+Shot Biotecnológico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Penicilina
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa penicilina no salió del moho de Fleming: salió de un melón podrido. 🍈 En 1943, un laboratorio en Peoria, Illinois, halló en un melón mohoso un moho que hacía más del doble de penicilina; con tanques, licor de maíz y mutantes de rayos X y luz UV, para el Día D ya había 2.3 millones de dosis.
 ¿Tú sabías que la penicilina venía de un melón? 👇
-Shot Biotecnológico #29 · La Creación del Robert
+Shot Biotecnológico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Penicilina
 ```
@@ -72,7 +72,7 @@ En 1941, Estados Unidos no tenía penicilina ni para tratar a un solo paciente: 
 Para el Día D, en junio de 1944, 21 compañías de Estados Unidos habían producido 2.3 millones de dosis. Las cepas industriales actuales descienden de la NRRL 1951 (en 2010 ya superaban los 50 000 µg/mL).
 La lección sigue vigente: un descubrimiento no cambia el mundo hasta que alguien logra producirlo a escala.
 ¿Qué otro descubrimiento crees que hoy espera su "melón de Peoria"?
-Shot Biotecnológico #29 · La Creación del Robert
+Shot Biotecnológico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Bioprocesos #Penicilina #Fermentacion
 ```

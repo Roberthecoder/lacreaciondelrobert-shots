@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #35 · El regalito de tu gato es solo una parte
+# Publicación · Shot Ambiental 35 · El regalito de tu gato es solo una parte
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Tu gato no es malo: es cazador. Cuando te deje un regalito, piensa en los que no
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tu gato sale de casa? ¿Qué te ha traído? 👇
-Shot Ambiental #35 · La Creación del Robert
+Shot Ambiental 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Gatos #Aves #Biodiversidad
 ```
@@ -27,7 +27,7 @@ Con cámaras en el collar de 55 gatos con dueño (Athens, Georgia), se vio que s
 Lo que sí sirve: tenerlo adentro o, si sale, una funda de colores en el collar (2.7 veces menos aves en un estudio de 2022).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tu gato sale de casa? ¿Qué te ha traído? 👇
-Shot Ambiental #35 · La Creación del Robert
+Shot Ambiental 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Gatos #Aves #Biodiversidad
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El regalito de tu gato es solo una parte 🐈🐦 | Shot Ambiental #35
+El regalito de tu gato es solo una parte 🐈🐦 | Shot Ambiental 35
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - Jensen, Willson y Powell 2022, Journal of Fish and Wildlife Management: https://pubs.usgs.gov/publication/70256715
 - The Wildlife Society, Issue Statement "Feral and Free-Ranging Domestic Cats" (2025): https://wildlife.org/tws-issue-statement-feral-and-free-ranging-domestic-cats/
 ¿Tu gato sale de casa? ¿Qué te ha traído? 👇
-Shot Ambiental #35 · La Creación del Robert
+Shot Ambiental 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Gatos #Aves
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese regalito que te deja tu gato en la puerta no es todo lo que cazó: es solo una parte. 🐈🐦 Con cámaras en el collar de 55 gatos se vio que solo el 23 % de sus presas llegaba a casa. Lo que sí ayuda: tenerlo adentro o ponerle una funda de colores en el collar.
 ¿Tu gato sale de casa? ¿Qué te ha traído? 👇
-Shot Ambiental #35 · La Creación del Robert
+Shot Ambiental 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Gatos #Aves
 ```
@@ -74,7 +74,7 @@ Ese regalito que te deja tu gato en la puerta no es todo lo que cazó: es solo u
 Un estudio de 2013 en Nature Communications (Loss, Will y Marra) estimó que en Estados Unidos los gatos domésticos sueltos matan de 1,300 a 4,000 millones de aves y de 6,300 a 22,300 millones de mamíferos al año; cerca del 69 % de las aves, por gatos sin dueño. Con cámaras en el collar de 55 gatos con dueño de Athens, Georgia, Loyd y colegas (2013) vieron que solo el 23 % de las presas llegaba a casa: las encuestas a dueños subestiman la caza.
 Lo útil está en el manejo: mantener a los gatos adentro elimina sus encuentros dañinos con la fauna (The Wildlife Society, 2025) y, para los que salen, una funda de colores en el collar redujo 2.7 veces las aves recuperadas en 94 gatos (Jensen et al., 2022). Es un buen ejemplo de cómo un problema de biodiversidad se atiende con hábitos cotidianos y datos bien medidos.
 ¿Qué medida crees que funcionaría mejor en tu ciudad?
-Shot Ambiental #35 · La Creación del Robert
+Shot Ambiental 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Biodiversidad #Conservacion #Gatos #LaCreacionDelRobert
 ```

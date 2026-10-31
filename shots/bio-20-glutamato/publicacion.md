@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #20 · El glutamato de tu sopa lo hace una bacteria
+# Publicación · Shot Biotecnológico 20 · El glutamato de tu sopa lo hace una bacteria
 
 ## Versión narrada
 
@@ -17,7 +17,7 @@ Hoy esta bacteria produce más de 3.5 millones de toneladas de glutamato de sodi
 El dibujo es esquemático.
 Fuentes: Kinoshita et al. 1957 (J Gen Appl Microbiol); Kurihara 2009 y Sano 2009 (Am J Clin Nutr); Nakayama 2021 (Microorganisms); FDA; VAAM 2025.
 ¿Sabías que tu sopa instantánea tenía algo hecho por bacterias? 👇
-Shot Biotecnológico #20 · La Creación del Robert
+Shot Biotecnológico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #umami #glutamato #fermentacion
 ```
@@ -32,7 +32,7 @@ La descubrieron en Japón: en un estudio publicado en 1957, Kinoshita y su equip
 
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que tu sopa tenía algo hecho por bacterias? 👇
-Shot Biotecnológico #20 · La Creación del Robert
+Shot Biotecnológico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #umami #glutamato #fermentacion
 ```
@@ -40,7 +40,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu sopa instantánea tiene algo hecho por bacterias 🍜🦠 | Shot Biotecnológico #20
+Tu sopa instantánea tiene algo hecho por bacterias 🍜🦠 | Shot Biotecnológico 20
 ```
 Descripción:
 ```text
@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 El glutamato de tu sopa instantánea no salió de un alga: lo hizo una bacteria. 🍜🦠
 Hoy se fabrica en tanques con Corynebacterium glutamicum, una bacteria con forma de mazo que come azúcar y suelta glutamato al caldo. La descubrieron en Japón (estudio publicado en 1957) en tierra con excremento de ave, y hoy hace más de 3.5 millones de toneladas al año.
 ¿Sabías que tu sopa tenía algo hecho por bacterias? 👇
-Shot Biotecnológico #20 · La Creación del Robert
+Shot Biotecnológico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #umami
 ```
@@ -87,14 +87,14 @@ Hoy se fabrica por fermentación de almidón, betabel, caña de azúcar o melaza
 
 ¿Qué otro ingrediente de tu cocina crees que sale de una fermentación industrial?
 
-Shot Biotecnológico #20 · La Creación del Robert
+Shot Biotecnológico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Fermentacion #Microbiologia #Alimentos
 ```
 
 ### X
 ```text
-El glutamato de tu sopa instantánea no salió de un alga: lo hizo una bacteria 🦠 Corynebacterium glutamicum hace más de 3.5 millones de toneladas al año. Shot Biotecnológico #20 #Biotecnologia
+El glutamato de tu sopa instantánea no salió de un alga: lo hizo una bacteria 🦠 Corynebacterium glutamicum hace más de 3.5 millones de toneladas al año. Shot Biotecnológico 20 #Biotecnologia
 ```
 
 ### Threads
@@ -102,7 +102,7 @@ El glutamato de tu sopa instantánea no salió de un alga: lo hizo una bacteria 
 El glutamato de tu sopa instantánea no salió de un alga: lo hizo una bacteria. 🍜🦠
 Corynebacterium glutamicum, con forma de mazo, come azúcar y suelta glutamato al caldo. Se descubrió en Japón (estudio publicado en 1957) en tierra con excremento de ave, y hoy hace más de 3.5 millones de toneladas al año.
 ¿Sabías que tu sopa tenía algo hecho por bacterias?
-Shot Biotecnológico #20 · La Creación del Robert
+Shot Biotecnológico 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

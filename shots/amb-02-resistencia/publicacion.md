@@ -13,7 +13,7 @@ Lo que sí ayuda (OMS): usar antibióticos solo con receta, tomarlos como te los
 El dibujo es esquemático.
 Fuentes: The Lancet 2024 (GRAM), informe O'Neill 2014, Fleming 1945, OMS.
 ¿A ti te han recetado antibióticos para una gripa? 👇
-Shot Ambiental #02 · La Creación del Robert
+Shot Ambiental 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Antibioticos #Bacterias #Salud
 ```
@@ -24,7 +24,7 @@ Ese antibiótico que tomaste no mató a todas tus bacterias: escogió a las más
 Las pocas que traen un gen de resistencia sobreviven, se multiplican y se lo pasan a otras, incluso de otras especies. Un estudio en The Lancet (2024) calculó 39 millones de muertes por bacterias resistentes entre 2025 y 2050 si no se hace nada más. Lo que sí ayuda: solo con receta, como te los indicaron, y nunca regalar los que sobran.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti te han recetado antibióticos para una gripa? 👇
-Shot Ambiental #02 · La Creación del Robert
+Shot Ambiental 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Antibioticos #Bacterias #Salud
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu antibiótico entrenó a las bacterias más duras 💊 | Shot Ambiental #02
+Tu antibiótico entrenó a las bacterias más duras 💊 | Shot Ambiental 02
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - OMS, nota descriptiva "Resistencia a los antimicrobianos".
 
 ¿A ti te han recetado antibióticos para una gripa? 👇
-Shot Ambiental #02 · La Creación del Robert
+Shot Ambiental 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CienciaAmbiental #Antibioticos
 ```
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Ese antibiótico que tomaste no mató a todas tus bacterias: escogió a las más duras. 💊 Las resistentes sobreviven, se multiplican y se pasan el gen. The Lancet calcula 39 millones de muertes entre 2025 y 2050. ¿A ti te han recetado antibióticos para una gripa? 👇
-Shot Ambiental #02 · La Creación del Robert
+Shot Ambiental 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Antibioticos
 ```
@@ -67,7 +67,7 @@ Entre millones de bacterias, unas pocas traen por azar genes de resistencia. El 
 Por qué importa: el estudio GRAM, publicado en The Lancet en 2024, pronostica 39.1 millones de muertes atribuibles a la resistencia entre 2025 y 2050 si no se hace nada más, y que las muertes anuales pasen de 1.14 millones (2021) a 1.91 millones (2050). Sin antibióticos eficaces, los trasplantes, la quimioterapia y las cirugías se vuelven más peligrosos (OMS). Alexander Fleming ya lo advirtió en su conferencia Nobel de 1945.
 Lo que sí ayuda (OMS): tomarlos solo con receta, seguir las indicaciones y no usar los que sobraron.
 ¿Qué papel crees que deben tener las farmacias en esto?
-Shot Ambiental #02 · La Creación del Robert
+Shot Ambiental 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Antibioticos #SaludPublica #Bacterias
 ```
@@ -94,7 +94,7 @@ Regla del juego: cada 20 minutos se duplican (Escherichia coli en condiciones id
 El dibujo es esquemático; el tiempo es simulado.
 Fuentes: The Lancet 2024 (GRAM), Son y Taylor 2021, OMS.
 ¿Cuántas notas aguantó la que sobrevivió? 👇
-Shot Ambiental #02 · La Creación del Robert
+Shot Ambiental 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Antibioticos #Bacterias #Salud
 ```
@@ -105,7 +105,7 @@ Soy Robert, de La Creación del Robert 🌱
 Llega el antibiótico, la música se ahoga y mueren todas… menos una con un gen de resistencia, que vuelve a llenar el plato. La segunda pastilla ya no hace nada.
 El dibujo es esquemático; el tiempo es simulado. Fuentes en el primer comentario.
 ¿Escuchaste la que sobrevivió? 👇
-Shot Ambiental #02 · La Creación del Robert
+Shot Ambiental 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Antibioticos #Bacterias #Salud
 ```
@@ -127,7 +127,7 @@ Fuentes:
 - OMS, nota descriptiva "Resistencia a los antimicrobianos".
 
 ¿Escuchaste la que sobrevivió? 👇
-Shot Ambiental #02 · La Creación del Robert
+Shot Ambiental 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CienciaAmbiental #Bacterias
 ```
@@ -135,7 +135,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 🎧 Una nota por bacteria: 1, 2, 4… 64. Llega el antibiótico y sobrevive una sola, que vuelve a llenar el plato. 💊 ¿La escuchaste? 👇
-Shot Ambiental #02 · La Creación del Robert
+Shot Ambiental 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental
 ```

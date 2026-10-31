@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #38 · Las estrellas no parpadean: es el aire
+# Publicación · Shot Científico 38 · Las estrellas no parpadean: es el aire
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que cuando una estrella parpadea, no te está guiñando: es tu cielo movié
 El dibujo es esquemático.
 Fuentes: EarthSky; Scientific American; ESO; NASA (Hubble).
 ¿Alguna vez has encontrado un planeta a simple vista? 👇
-Shot Científico #38 · La Creación del Robert
+Shot Científico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Astronomia #Estrellas #Fisica
 ```
@@ -28,7 +28,7 @@ Las estrellas están tan lejos que son puntitos de luz, y su luz cruza kilómetr
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Alguna vez has encontrado un planeta a simple vista? 👇
-Shot Científico #38 · La Creación del Robert
+Shot Científico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Astronomia #Estrellas #Fisica
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las estrellas no parpadean: es el aire ✨ | Shot Científico #38
+Las estrellas no parpadean: es el aire ✨ | Shot Científico 38
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - ESO, blog sobre sitios de observación altos y secos: https://eso.org/public/blog/climate-change/
 - NASA, «About Hubble»: https://science.nasa.gov/mission/hubble/overview/about-hubble/
 ¿Alguna vez has encontrado un planeta a simple vista? 👇
-Shot Científico #38 · La Creación del Robert
+Shot Científico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Astronomia #Estrellas
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Las estrellas no parpadean: es el aire que está encima de ti. ✨ Su luz cruza capas de aire que se mueven y la doblan; los planetas, más cercanos, casi no parpadean. Truco: si un punto brillante no parpadea, probablemente es un planeta.
 ¿Alguna vez has encontrado un planeta a simple vista? 👇
-Shot Científico #38 · La Creación del Robert
+Shot Científico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -73,7 +73,7 @@ Soy Robert, de La Creación del Robert 🌱
 El parpadeo de las estrellas (centelleo o scintillation) no viene de la estrella: lo produce la atmósfera terrestre. Las estrellas se ven como fuentes puntuales, y su luz se refracta de forma distinta en capas de aire de diferente temperatura y densidad que están en movimiento constante; el resultado son cambios rápidos de posición y de brillo.
 Los planetas se ven como discos pequeños: las variaciones de distintas partes del disco se compensan y su luz es más estable (aunque cerca del horizonte también pueden centellear).
 Por eso muchos observatorios se instalan en sitios altos y secos, y otros telescopios, como el Hubble, operan en órbita, fuera de la atmósfera.
-Shot Científico #38 · La Creación del Robert
+Shot Científico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #48 · Ese buche de agua se lleva tu flúor (cómo el flúor rehace tu esmalte)
+# Publicación · Shot Químico 48 · Ese buche de agua se lleva tu flúor (cómo el flúor rehace tu esmalte)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Ojo con los niños: si tragan flúor de más mientras se forman sus dientes, les
 El dibujo es esquemático. Esto no sustituye la indicación de tu dentista.
 Fuentes: NHS · CDC · Buzalaf et al. 2011 · Robinson 2009 · NIDCR (NIH) · ADA 2025 · CDC/NCHS 2010.
 ¿Tú eres de los que se enjuagan después de lavarse los dientes? 👇
-Shot Químico #48 · La Creación del Robert
+Shot Químico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Fluor #SaludDental #Esmalte
 ```
@@ -24,7 +24,7 @@ Ese buche de agua después de cepillarte no te ayuda: se lleva el flúor que te 
 Las bacterias hacen ácido que le quita minerales a tu esmalte; el flúor en tu saliva frena esa pérdida, ayuda a reconstruirlo y, al meterse al cristal en lugar de algunos hidroxilos, lo deja más resistente al ácido. Se descubrió por unos dientes manchados de Colorado (1901) y en 1945 Grand Rapids fue la primera ciudad con agua fluorada: más de 60 % menos caries en los niños nacidos después. En niños: pasta tamaño arroz (menores de 3) o chícharo (3 a 6).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú te enjuagas después de lavarte los dientes? 👇
-Shot Químico #48 · La Creación del Robert
+Shot Químico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Fluor #SaludDental #Esmalte
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese buche de agua se lleva tu flúor 🪥 | Shot Químico #48
+Ese buche de agua se lleva tu flúor 🪥 | Shot Químico 48
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - American Dental Association (2025). Fluoridation Facts. https://ebooks.ada.org/fluoridationfacts/13
 - Beltrán-Aguilar E.D. et al. (2010). Prevalence and Severity of Dental Fluorosis in the United States, 1999–2004. NCHS Data Brief 53. https://www.cdc.gov/nchs/products/databriefs/db53.htm
 ¿Tú eres de los que se enjuagan después de lavarse los dientes? 👇
-Shot Químico #48 · La Creación del Robert
+Shot Químico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Fluor
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese buche de agua después de cepillarte no te ayuda: se lleva el flúor que te protege. 🪥 El flúor que queda en tu saliva ayuda a reconstruir tu esmalte y lo deja más resistente al ácido. Escupe la pasta y no te enjuagues luego luego.
 ¿Tú te enjuagas después de lavarte los dientes? 👇
-Shot Químico #48 · La Creación del Robert
+Shot Químico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #SaludDental
 ```
@@ -71,14 +71,14 @@ El flúor actúa sobre todo de forma tópica: presente en bajas concentraciones 
 La historia también es de salud pública: las manchas color chocolate que Frederick McKay vio en Colorado Springs en 1901 llevaron, décadas después, a identificar el flúor natural del agua; en 1945 Grand Rapids fue la primera ciudad del mundo en fluorar su agua, y en los niños nacidos después la caries bajó más de 60 % (NIDCR).
 La dosis importa: en niños, el exceso mientras se forman los dientes causa fluorosis, y por eso la CDC recomienda una cantidad de pasta del tamaño de un grano de arroz antes de los 3 años y de un chícharo de 3 a 6.
 ¿Qué otro hábito diario hacemos por costumbre y no por evidencia?
-Shot Químico #48 · La Creación del Robert
+Shot Químico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SaludPublica #SaludDental #Fluor #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese buche de agua después de cepillarte no te ayuda: se lleva el flúor que te protege. El flúor rehace tu esmalte y lo deja más resistente al ácido. Escupe y no te enjuagues luego luego. 🪥 Shot Químico #48 #Quimica
+Ese buche de agua después de cepillarte no te ayuda: se lleva el flúor que te protege. El flúor rehace tu esmalte y lo deja más resistente al ácido. Escupe y no te enjuagues luego luego. 🪥 Shot Químico 48 #Quimica
 ```
 
 ### Threads
@@ -86,7 +86,7 @@ Ese buche de agua después de cepillarte no te ayuda: se lleva el flúor que te 
 Ese buche de agua después de cepillarte no te ayuda: se lleva el flúor que te protege. 🪥
 El flúor en tu saliva frena el ácido de las bacterias y, al rehacerse el esmalte, se mete al cristal y lo deja más resistente. En niños: pasta tamaño arroz (menores de 3) o chícharo (3 a 6).
 ¿Tú te enjuagas?
-Shot Químico #48 · La Creación del Robert
+Shot Químico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

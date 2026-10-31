@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #32 · De cada diez cubetas, unas cuatro se pierden en la calle
+# Publicación · Shot Ambiental 32 · De cada diez cubetas, unas cuatro se pierden en la calle
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Pero hay fugas que sí cierras tú: según la EPA de Estados Unidos, una llave q
 Las cuatro cubetas de la calle no dependen de ti. La que gotea en tu casa, sí.
 El dibujo es esquemático.
 ¿En tu colonia también hay fugas que tardan en arreglar? 👇
-Shot Ambiental #32 · La Creación del Robert
+Shot Ambiental 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Agua #CDMX #Guadalajara
 ```
@@ -25,7 +25,7 @@ De cada diez cubetas de agua que la Ciudad de México mete a sus tubos, unas cua
 Desgaste, exceso de presión y un suelo que se mueve disparejo agrietan los tubos. En Guadalajara, el gobierno de Jalisco estimó en 2025 que una cuarta parte del agua que trae de Chapala no llega a su destino. Y en tu casa: una llave que gotea una vez por segundo tira más de 11 mil litros al año (EPA).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu colonia también hay fugas que tardan en arreglar? 👇
-Shot Ambiental #32 · La Creación del Robert
+Shot Ambiental 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Agua #CDMX #Guadalajara
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-De cada 10 cubetas de agua, unas 4 se pierden en la calle 💧 | Shot Ambiental #32
+De cada 10 cubetas de agua, unas 4 se pierden en la calle 💧 | Shot Ambiental 32
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Liemberger y Wyatt (2018), Water Supply, doi:10.2166/ws.2018.129
 - EPA WaterSense, Fix a Leak Week: https://www.epa.gov/watersense/fix-leak-week
 ¿En tu colonia también hay fugas que tardan en arreglar? 👇
-Shot Ambiental #32 · La Creación del Robert
+Shot Ambiental 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Agua #CDMX
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 De cada diez cubetas de agua que la Ciudad de México mete a sus tubos, unas cuatro se pierden en fugas de la red antes de llegar a una casa (cálculos de la ciudad, 2022). 💧 Esas no dependen de ti, pero una llave que gotea una vez por segundo tira más de 11 mil litros al año (EPA). Esa sí.
 ¿En tu colonia también hay fugas que tardan en arreglar? 👇
-Shot Ambiental #32 · La Creación del Robert
+Shot Ambiental 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Agua #CDMX
 ```
@@ -71,7 +71,7 @@ De cada diez cubetas de agua que la Ciudad de México mete a su red, unas cuatro
 En 2022, SACMEX midió un 37 % de pérdidas por fugas tras avanzar en la sectorización de la red, y el indicador oficial del IPDP estimó 42 % ese mismo año. Las causas que señala SACMEX son conocidas: sobrepresión, desgaste natural de las tuberías y movimientos diferenciales del terreno. En Guadalajara, el gobierno de Jalisco estimó en 2025 que cerca de una cuarta parte del agua del sistema Chapala no llega a su destino.
 No es un problema solo mexicano: Liemberger y Wyatt (2018) estimaron el agua no facturada del mundo en 346 millones de m³ al día. Reducir pérdidas en la red (medición por sectores, control de presión, renovación de tuberías) es, en muchos casos, una fuente de agua "nueva" sin traerla de más lejos.
 ¿Qué debería priorizar una ciudad: buscar más agua o perder menos de la que ya tiene?
-Shot Ambiental #32 · La Creación del Robert
+Shot Ambiental 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Agua #Infraestructura #CDMX #LaCreacionDelRobert
 ```

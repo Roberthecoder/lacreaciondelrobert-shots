@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #47 · Uno de los venenos más potentes también es medicina (toxina botulínica)
+# Publicación · Shot Biotecnológico 47 · Uno de los venenos más potentes también es medicina (toxina botulínica)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Dato extra: entre 1817 y 1822 el médico alemán Justinus Kerner describió el "
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes: Kumar y Singh 2025 · EPA 2024 (Arnon et al. 2001) · Etiqueta oficial de BOTOX (FDA/DailyMed) · Scott et al. 2023 · Erbguth 2004.
 ¿Conocías algún uso médico de esta toxina? 👇
-Shot Biotecnológico #47 · La Creación del Robert
+Shot Biotecnológico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #ToxinaBotulinica #Medicina #Neurociencia
 ```
@@ -28,7 +28,7 @@ Actúa en la punta del nervio: corta la proteína SNAP-25, la acetilcolina ya no
 En los setenta, en San Francisco, Alan B. Scott la probó en monos y luego en ojos desviados; en 1989 Estados Unidos la aprobó para el estrabismo y el párpado que se cierra solo. Hoy también se usa en migraña crónica y sudor excesivo. La clave es la dosis: diminuta, solo en el músculo que se trata, y bajo indicación médica.
 Fuentes en el primer comentario. El dibujo es esquemático.
 ¿Conocías algún uso médico de esta toxina? 👇
-Shot Biotecnológico #47 · La Creación del Robert
+Shot Biotecnológico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #ToxinaBotulinica #Medicina #Neurociencia
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese frasquito no es solo para arrugas ☠️💉 | Shot Biotecnológico #47
+Ese frasquito no es solo para arrugas ☠️💉 | Shot Biotecnológico 47
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - Scott A.B., Honeychurch D., Brin M.F. (2023). Early development history of Botox (onabotulinumtoxinA). Medicine. https://pmc.ncbi.nlm.nih.gov/articles/PMC10374179/
 - Erbguth F.J. (2004). Historical notes on botulism… and the idea of the therapeutic use of the toxin. Mov Disord. https://pubmed.ncbi.nlm.nih.gov/15027048/
 ¿Conocías algún uso médico de esta toxina? 👇
-Shot Biotecnológico #47 · La Creación del Robert
+Shot Biotecnológico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #ToxinaBotulinica
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 Ese frasquito no es solo para arrugas: guarda uno de los venenos más potentes que se conocen. ☠️
 La toxina botulínica corta una proteína del nervio (SNAP-25) y el músculo deja de recibir la orden. En dosis diminutas, y solo bajo indicación médica, trata el estrabismo, el párpado que se cierra solo, la migraña crónica y el sudor excesivo.
 ¿Conocías algún uso médico de esta toxina? 👇
-Shot Biotecnológico #47 · La Creación del Robert
+Shot Biotecnológico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #ToxinaBotulinica
 ```
@@ -83,14 +83,14 @@ La lección: en farmacología, la dosis y el lugar lo son todo. Es un medicament
 
 ¿Qué otro "veneno" conoces que se haya vuelto medicamento?
 
-Shot Biotecnológico #47 · La Creación del Robert
+Shot Biotecnológico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Farmacologia #Neurociencia #Medicina
 ```
 
 ### X
 ```text
-Ese frasquito no es solo para arrugas: guarda uno de los venenos más potentes que se conocen. Corta la proteína SNAP-25 del nervio y el músculo se afloja; en dosis diminutas trata estrabismo y migraña crónica. ☠️💉 Shot Biotecnológico #47
+Ese frasquito no es solo para arrugas: guarda uno de los venenos más potentes que se conocen. Corta la proteína SNAP-25 del nervio y el músculo se afloja; en dosis diminutas trata estrabismo y migraña crónica. ☠️💉 Shot Biotecnológico 47
 #Biotecnologia #LaCreacionDelRobert
 ```
 
@@ -99,7 +99,7 @@ Ese frasquito no es solo para arrugas: guarda uno de los venenos más potentes q
 Ese frasquito no es solo para arrugas: guarda uno de los venenos más potentes que se conocen. ☠️
 La toxina botulínica corta la proteína SNAP-25 en la punta del nervio: la acetilcolina no sale y el músculo no recibe la orden. Aprobada en EE. UU. desde 1989 para el estrabismo; hoy también para la migraña crónica y el sudor excesivo.
 ¿Conocías algún uso médico? 👇
-Shot Biotecnológico #47 · La Creación del Robert
+Shot Biotecnológico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

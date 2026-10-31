@@ -1,4 +1,4 @@
-# Publicación · Shot IA #46 · La molécula para la diabetes que una IA convirtió en antibiótico
+# Publicación · Shot IA 46 · La molécula para la diabetes que una IA convirtió en antibiótico
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Ojo: ninguna de las dos es todavía una medicina aprobada para personas. La IA p
 El dibujo es esquemático.
 Fuentes: Stokes et al., Cell (2020); Liu et al., Nature Chemical Biology (2023).
 ¿Qué otra enfermedad te gustaría que una IA ayudara a resolver? 👇
-Shot IA #46 · La Creación del Robert
+Shot IA 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Antibioticos #Superbacterias #Ciencia
 ```
@@ -26,7 +26,7 @@ Esta molécula no se inventó para infecciones: se estudiaba para la diabetes. Y
 En 2020, en el MIT, una red neuronal entrenada con 2,335 moléculas revisó 6,111 que ya se estudiaban para otras enfermedades y eligió la halicina (por HAL, de "2001: odisea del espacio"). Funciona distinto a los antibióticos de siempre: deshace la diferencia de acidez de la membrana de la bacteria, su "batería". En ratones funcionó contra Acinetobacter baumannii y Clostridioides difficile, y en 30 días E. coli no se volvió resistente. En 2023 otra red encontró la abaucina, de espectro estrecho. Ninguna es todavía medicina aprobada para personas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué otra enfermedad te gustaría que una IA ayudara a resolver? 👇
-Shot IA #46 · La Creación del Robert
+Shot IA 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Antibioticos #Superbacterias #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Era para la diabetes y una IA predijo que mata bacterias 💊 | Shot IA #46
+Era para la diabetes y una IA predijo que mata bacterias 💊 | Shot IA 46
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta molécula no se inventó para infecciones: se estudiaba para la diabetes. Y una IA predijo que mata bacterias. 💊 En 2020, en el MIT, una red neuronal la eligió entre 6,111 moléculas; la llamaron halicina, por HAL. En ratones funcionó contra bacterias que resisten a casi todo. Todavía no es medicina aprobada para personas, pero es una buena pista.
 ¿Qué otra enfermedad te gustaría que una IA ayudara a resolver? 👇
-Shot IA #46 · La Creación del Robert
+Shot IA 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Antibioticos
 ```
@@ -68,7 +68,7 @@ En 2020 (Stokes et al., Cell), un equipo del MIT entrenó un modelo con 2,335 mo
 Lo valioso aquí no es "la IA lo hizo sola": el modelo redujo miles de opciones a unas cuantas, y el laboratorio hizo la comprobación. Ninguna de las dos moléculas es todavía medicina aprobada para personas.
 ¿En qué otro campo ves útil este modelo de "la IA propone, el laboratorio comprueba"?
 Fuentes: Stokes et al., Cell 180(4): 688–702 (2020); Liu et al., Nature Chemical Biology 19: 1342–1350 (2023).
-Shot IA #46 · La Creación del Robert
+Shot IA 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Antibioticos #DescubrimientoDeFarmacos #Ciencia #LaCreacionDelRobert
 ```
@@ -83,7 +83,7 @@ Se estudiaba para la diabetes y una IA predijo que mata bacterias: la halicina (
 Esta molécula no se inventó para infecciones: se estudiaba para la diabetes. Y una IA predijo que mata bacterias. 💊
 MIT, 2020: una red neuronal la eligió entre 6,111 moléculas; la llamaron halicina, por HAL. En ratones funcionó contra superbacterias. Aún no es medicina aprobada.
 ¿Qué otra enfermedad le pondrías a resolver a una IA?
-Shot IA #46 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 46 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

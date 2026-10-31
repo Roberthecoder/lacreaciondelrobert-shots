@@ -1,4 +1,4 @@
-# Publicación · Shot IA #20 · TikTok no te lee la mente: te mide
+# Publicación · Shot IA 20 · TikTok no te lee la mente: te mide
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -18,7 +18,7 @@ Así que no te lee la mente: tú se la enseñas con cada dedazo.
 El dibujo es esquemático; los puntajes de la escena del ranking son ilustrativos.
 Fuentes: TikTok, Recommendation system (página vigente); TikTok Newsroom (2020); Vombatkere et al., The Web Conference 2024.
 ¿Cuál de los tres pasos vas a probar primero? 👇
-Shot IA #20 · La Creación del Robert
+Shot IA 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #TikTok #Algoritmos #ParaTi
 ```
@@ -31,7 +31,7 @@ Para reiniciar tu Para ti: 1) deja presionado y elige «No me interesa», 2) fil
 Un estudio de 2024 con datos donados por 347 usuarios encontró que dar like y seguir cuentas era lo que más lo personalizaba.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuál de los tres pasos vas a probar primero? 👇
-Shot IA #20 · La Creación del Robert
+Shot IA 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #TikTok #Algoritmos #ParaTi
 ```
@@ -39,7 +39,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-TikTok no te lee la mente: te mide 📱 | Shot IA #20
+TikTok no te lee la mente: te mide 📱 | Shot IA 20
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Fuentes:
 - Vombatkere, Mousavi, Zannettou, Roesner y Gummadi, "TikTok and the Art of Personalization", The Web Conference 2024: https://doi.org/10.1145/3589334.3645600
 
 ¿Cuál de los tres pasos vas a probar primero? 👇
-Shot IA #20 · La Creación del Robert
+Shot IA 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #TikTok #InteligenciaArtificial
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 No es que TikTok te lea la mente: es que te mide. 📱 Cada video que terminas o saltas es una señal, y terminar un video largo pesa más que estar en el mismo país que su autor (TikTok, 2020). ¿Quieres reiniciar tu Para ti? Deja presionado y elige «No me interesa», filtra palabras o hashtags y refresca tu Para ti.
 ¿Cuál vas a probar primero? 👇
-Shot IA #20 · La Creación del Robert
+Shot IA 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #TikTok
 ```
@@ -77,21 +77,21 @@ TikTok explica en su página oficial que su sistema de recomendación usa señal
 Una auditoría académica presentada en The Web Conference 2024 (Vombatkere et al.), con datos donados por 347 usuarios, encontró que dar like y seguir cuentas eran los principales impulsores de la personalización, y estimó que entre 30 % y 50 % de los primeros mil videos explotaban intereses conocidos; muchos de los demás servían para explorar.
 Para cualquier usuario la lección es práctica: el feed responde a lo que haces, y hay controles oficiales para corregirlo («No me interesa», filtros de palabras y refrescar el Para ti).
 ¿Crees que los usuarios deberían tener más control sobre sus algoritmos de recomendación?
-Shot IA #20 · La Creación del Robert
+Shot IA 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #SistemasDeRecomendacion #TikTok #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-No es que TikTok te lea la mente: es que te mide. Terminar un video largo pesa más que estar en el mismo país que su autor (TikTok, 2020). Para reiniciar tu Para ti: «No me interesa», filtra palabras y refresca. 📱 Shot IA #20
+No es que TikTok te lea la mente: es que te mide. Terminar un video largo pesa más que estar en el mismo país que su autor (TikTok, 2020). Para reiniciar tu Para ti: «No me interesa», filtra palabras y refresca. 📱 Shot IA 20
 #InteligenciaArtificial #TikTok
 ```
 
 ### Threads
 ```text
 No es que TikTok te lea la mente: es que te mide. 📱 Usa lo que ves, terminas o saltas, a quién sigues, y el audio y los hashtags del video. Un estudio de 2024 con 347 usuarios encontró que dar like y seguir cuentas era lo que más personalizaba su Para ti. ¿Quieres reiniciarlo? Deja presionado y elige «No me interesa», filtra palabras o hashtags y refresca tu Para ti. ¿Cuál vas a probar?
-Shot IA #20 · La Creación del Robert
+Shot IA 20 · La Creación del Robert
 #InteligenciaArtificial
 ```
 

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #45 · La IA que hace el pronóstico de 10 días en menos de un minuto
+# Publicación · Shot IA 45 · La IA que hace el pronóstico de 10 días en menos de un minuto
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Ojo: estas IA aprenden de mapas que juntan mediciones, como las de satélites, c
 El dibujo es esquemático.
 Fuentes: Lam et al., Science (2023) · ECMWF (2025) · CENAPRED (2026).
 ¿Revisas el pronóstico antes de salir? ¿En qué app? 👇
-Shot IA #45 · La Creación del Robert
+Shot IA 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Clima #Huracanes #Ciencia
 ```
@@ -26,7 +26,7 @@ GraphCast (Google DeepMind, Science, 2023) aprendió de 39 años de mapas del ti
 Ojo: estas IA arrancan de mediciones y no las reemplazan. El minuto no incluye el entrenamiento (unas 4 semanas en 32 chips) ni la preparación de los datos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Revisas el pronóstico antes de salir? ¿En qué app? 👇
-Shot IA #45 · La Creación del Robert
+Shot IA 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Clima #Huracanes #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que hace el pronóstico de 10 días en menos de un minuto ⛅ | Shot IA #45
+La IA que hace el pronóstico de 10 días en menos de un minuto ⛅ | Shot IA 45
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Para el pronóstico de 10 días, una supercomputadora usa más de 11 mil núcleos durante casi una hora. Esta IA lo hace con un solo chip en menos de un minuto. ⛅ Con cuadritos más grandes, sí, pero fue mejor en el 90 % de 1,380 pruebas y siguió mejor el camino de los ciclones (Science, 2023). Eso sí: arranca de mediciones y no las reemplaza.
 ¿Revisas el pronóstico antes de salir? ¿En qué app? 👇
-Shot IA #45 · La Creación del Robert
+Shot IA 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Clima
 ```
@@ -70,7 +70,7 @@ La letra chica importa: GraphCast trabaja con menos detalle (0.25° contra 0.1°
 El cambio ya es operativo: desde el 25 de febrero de 2025, el ECMWF corre su modelo de IA (AIFS) lado a lado con su modelo físico.
 ¿Qué otras industrias podrían ganar con modelos así de rápidos, sin dejar de medir?
 Fuentes: Lam et al., Science 382: 1416–1421 (2023) · ECMWF (2025).
-Shot IA #45 · La Creación del Robert
+Shot IA 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Meteorologia #Clima #Ciencia #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Pronóstico de 10 días: una supercomputadora usa 11,664 núcleos casi una hora;
 Para el pronóstico de 10 días, una supercomputadora usa más de 11 mil núcleos durante casi una hora. Esta IA lo hace con un solo chip en menos de un minuto. ⛅
 GraphCast (Science, 2023) fue mejor en el 90 % de 1,380 pruebas y siguió mejor el camino de los ciclones. Pero arranca de mediciones: no las reemplaza.
 ¿Revisas el pronóstico antes de salir?
-Shot IA #45 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 45 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

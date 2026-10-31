@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #18 · El filtro de tu cigarro no es algodón: es plástico
+# Publicación · Shot Ambiental 18 · El filtro de tu cigarro no es algodón: es plástico
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que esa colilla en la arena no es basura que se deshace: es plástico que s
 El dibujo es esquemático.
 Fuentes: Ocean Conservancy (informe ICC 2026, datos de 2025); Slaughter et al. 2011, Tobacco Control; Secretariado del Convenio Marco de la OMS para el Control del Tabaco y PNUMA (2022).
 ¿En tu ciudad hay playas o parques sin humo? 👇
-Shot Ambiental #18 · La Creación del Robert
+Shot Ambiental 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Colillas #Microplasticos #Playas
 ```
@@ -25,7 +25,7 @@ Esto no es algodón: es plástico. El filtro de un cigarro está hecho de acetat
 Son más de 15,000 fibras que, ya fumadas, cargan nicotina, metales pesados y otras sustancias. Con el sol y la humedad se rompen en microplástico que puede durar años. En la Limpieza Internacional de Costas de 2025 se recogieron casi 1.2 millones de colillas (el segundo residuo más común), y en las playas limpiadas en México salieron más del doble de colillas que de botellas de plástico. En un estudio de 2011, el agua de una colilla fumada por litro mató a la mitad de los peces en cuatro días.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu ciudad hay playas o parques sin humo? 👇
-Shot Ambiental #18 · La Creación del Robert
+Shot Ambiental 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Colillas #Microplasticos #Playas
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El filtro de tu cigarro no es algodón: es plástico 🚬 | Shot Ambiental #18
+El filtro de tu cigarro no es algodón: es plástico 🚬 | Shot Ambiental 18
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Secretariado del Convenio Marco de la OMS para el Control del Tabaco y PNUMA (2022): https://fctc.who.int/newsroom/news/item/01-02-2022-unep-secretariat-of-the-who-fctc-partner-to-combat-microplastics-in-cigarettes
 - Fiocruz / WHO FCTC, Microplastics and the impacts of the tobacco production chain (2025): https://extranet.who.int/fctcapps/sites/default/files/inline-files/EN-Microplastics-and-Tobacco_1.pdf
 ¿En tu ciudad hay playas o parques sin humo? 👇
-Shot Ambiental #18 · La Creación del Robert
+Shot Ambiental 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Colillas #Microplasticos
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es algodón: es plástico. El filtro de un cigarro está hecho de acetato de celulosa. 🚬 Con el sol y la humedad se rompe en microplástico, y en la Limpieza Internacional de Costas de 2025 se recogieron casi 1.2 millones de colillas. En las playas limpiadas en México salieron más del doble de colillas que de botellas de plástico.
 ¿En tu ciudad hay playas o parques sin humo? 👇
-Shot Ambiental #18 · La Creación del Robert
+Shot Ambiental 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Colillas #Microplasticos
 ```
@@ -70,7 +70,7 @@ Cada filtro reúne más de 15,000 fibras de este polímero. Según el Secretaria
 La escala importa: en la Limpieza Internacional de Costas de 2025, Ocean Conservancy registró 1,197,920 colillas, el segundo residuo más común a nivel global. En las playas limpiadas en México, las colillas (20,571) superaron en más del doble a las botellas de plástico (7,978).
 Y su impacto es medible: en un estudio de 2011 de la Universidad Estatal de San Diego (Tobacco Control), el agua de aproximadamente una colilla fumada por litro mató a la mitad de los peces de prueba en 96 horas; incluso los filtros sin fumar resultaron tóxicos.
 ¿Qué medida crees que reduciría más este residuo: playas sin humo, más contenedores o responsabilidad del fabricante?
-Shot Ambiental #18 · La Creación del Robert
+Shot Ambiental 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Microplasticos #Residuos #Oceanos #LaCreacionDelRobert
 ```

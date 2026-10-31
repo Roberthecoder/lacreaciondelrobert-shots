@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #07 · Ciencia para la Paz · Biotecnológico: La viruela, la enfermedad que EE.UU. y la URSS ayudaron a borrar
+# Publicación · Shot Festivo 07 · Ciencia para la Paz · Biotecnológico: La viruela, la enfermedad que EE.UU. y la URSS ayudaron a borrar
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 10 nov 2026, Día Mundial de la Ciencia para la Paz y el Desarrollo.
 
@@ -15,7 +15,7 @@ Esa marquita (si tu abuela se vacunó antes de ~1975; la BCG también deja marca
 El dibujo es esquemático.
 Fuentes: OMS · CDC · Fenner et al., "Smallpox and its eradication" (OMS, 1988).
 ¿Alguien en tu familia tiene esa marquita? 👇
-Shot Festivo #07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
+Shot Festivo 07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Vacunas #Viruela #CienciaParaLaPaz #Biotecnologia
 ```
@@ -26,7 +26,7 @@ Esa marquita en el brazo de tu abuela no es un lunar: es la cicatriz de la vacun
 La vacuna traía vaccinia, un virus pariente y mucho más leve que la viruela: hace un granito en la piel, tus defensas aprenden su forma y, si llega la viruela, la atacan rápido. En plena Guerra Fría, la URSS propuso en 1958 erradicarla y donó más de 1,400 millones de dosis (1958–1979); EE.UU. puso expertos de sus CDC. Con una aguja de dos puntas y vacunando en anillo a los contactos de cada caso, el último caso natural fue en Somalia en 1977, y en 1980 se declaró al mundo libre de viruela: la única enfermedad humana erradicada.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguien en tu familia tiene esa marquita? 👇
-Shot Festivo #07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
+Shot Festivo 07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Vacunas #Viruela #CienciaParaLaPaz #Biotecnologia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La marquita del brazo de tu abuela: la viruela que EE.UU. y la URSS ayudaron a borrar | Shot Festivo #07
+La marquita del brazo de tu abuela: la viruela que EE.UU. y la URSS ayudaron a borrar | Shot Festivo 07
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Global Polio Eradication Initiative (2013), Ali Maow Maalin: https://polioeradication.org/news/the-world-loses-one-of-the-true-heroes-of-polio-eradication/
 - UNESCO, Día Mundial de la Ciencia para la Paz y el Desarrollo: https://www.unesco.org/en/days/science-peace-development
 ¿Alguien en tu familia tiene esa marquita? 👇
-Shot Festivo #07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
+Shot Festivo 07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Vacunas #Viruela
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa marquita en el brazo de tu abuela no es un lunar: es la cicatriz de la vacuna de la viruela. 💉 En plena Guerra Fría, la URSS y EE.UU. trabajaron juntos con la OMS: la URSS donó más de 1,400 millones de dosis (1958–1979) y EE.UU. puso expertos. En 1980 se declaró al mundo libre de viruela, la única enfermedad humana erradicada.
 ¿Alguien en tu familia tiene esa marquita? 👇
-Shot Festivo #07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
+Shot Festivo 07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Vacunas #CienciaParaLaPaz
 ```
@@ -72,20 +72,20 @@ En 1958, el viceministro soviético de Salud Víktor Zhdánov propuso en la Asam
 Detrás hubo biotecnología e ingenio: una vacuna liofilizada con virus vaccinia (pariente leve de la viruela) que se guardaba sin refrigerador, una aguja bifurcada que hacía rendir la vacuna cuatro veces más y una estrategia de vigilancia y contención que vacunaba en anillo a los contactos de cada caso. El último caso natural fue en Somalia en 1977; la erradicación se declaró el 8 de mayo de 1980.
 Este 10 de noviembre, Día Mundial de la Ciencia para la Paz y el Desarrollo, vale recordar que dos rivales pudieron ponerse de acuerdo cuando la meta era común.
 ¿Qué otro reto global crees que necesita esa misma cooperación?
-Shot Festivo #07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
+Shot Festivo 07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #SaludGlobal #Vacunas #CienciaParaLaPaz #DivulgacionCientifica
 ```
 
 ### X
 ```text
-Esa marquita en el brazo de tu abuela es la cicatriz de la vacuna de la viruela 💉 En plena Guerra Fría, la URSS donó más de 1,400 millones de dosis y EE.UU. puso expertos: en 1980 se declaró al mundo libre de viruela. Shot Festivo #07 #CienciaParaLaPaz
+Esa marquita en el brazo de tu abuela es la cicatriz de la vacuna de la viruela 💉 En plena Guerra Fría, la URSS donó más de 1,400 millones de dosis y EE.UU. puso expertos: en 1980 se declaró al mundo libre de viruela. Shot Festivo 07 #CienciaParaLaPaz
 ```
 
 ### Threads
 ```text
 Esa marquita en el brazo de tu abuela no es un lunar: es la cicatriz de la vacuna de la viruela. 💉 En plena Guerra Fría, la URSS propuso erradicarla (1958) y donó más de 1,400 millones de dosis; EE.UU. puso expertos de sus CDC. En 1980 se declaró al mundo libre de viruela. ¿Alguien en tu familia tiene esa marquita? 👇
-Shot Festivo #07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
+Shot Festivo 07 · Ciencia para la Paz · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Vacunas
 ```

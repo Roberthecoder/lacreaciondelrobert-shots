@@ -1,4 +1,4 @@
-# Publicación · Shot IA #33 · La IA que sabe a qué huele una molécula sin olerla
+# Publicación · Shot IA 33 · La IA que sabe a qué huele una molécula sin olerla
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Ojo: el estudio lo pagó Google, y tres de los autores se unieron a Osmo, una em
 El dibujo es esquemático; las zonas del mapa son ilustrativas.
 Fuente: Lee et al., Science (2023).
 ¿Qué olor te gustaría que una IA pudiera "leer"? 👇
-Shot IA #33 · La Creación del Robert
+Shot IA 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Olfato #Ciencia #Quimica
 ```
@@ -28,7 +28,7 @@ Una red neuronal de grafos aprendió con unas 5,000 moléculas ya descritas y ar
 El estudio lo financió Google y tres de los autores se unieron a Osmo, empresa que comercializa parte de esta tecnología.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué olor te gustaría que una IA pudiera "leer"? 👇
-Shot IA #33 · La Creación del Robert
+Shot IA 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Olfato #Ciencia #Quimica
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que sabe a qué huele una molécula sin olerla 👃 | Shot IA #33
+La IA que sabe a qué huele una molécula sin olerla 👃 | Shot IA 33
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tú hueles con la nariz. Esta IA nunca ha olido nada: ve una molécula dibujada y dice a qué huele. 👃 En una prueba publicada en 2023 (Google y Centro Monell), en el 53 % de 400 moléculas nuevas su descripción quedó más cerca del promedio de un panel entrenado que la del catador típico. Su punto débil: el almizcle.
 ¿Qué olor te gustaría que una IA pudiera "leer"? 👇
-Shot IA #33 · La Creación del Robert
+Shot IA 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Olfato
 ```
@@ -72,7 +72,7 @@ Lo interesante para la industria: el mapa ubicó unas 500,000 moléculas candida
 Transparencia: el trabajo lo financió Google y tres de los autores se unieron a Osmo, empresa que comercializa parte de esta tecnología.
 ¿Dónde ves más útil "digitalizar" olores: alimentos, perfumería, salud?
 Fuente: Lee et al., Science 381: 999–1006 (2023).
-Shot IA #33 · La Creación del Robert
+Shot IA 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Olfato #Quimica #Innovacion #LaCreacionDelRobert
 ```
@@ -87,7 +87,7 @@ Tú hueles con la nariz; esta IA solo ve el dibujo de la molécula. En 53 % de 4
 Tú hueles con la nariz. Esta IA nunca ha olido nada: ve una molécula dibujada y dice a qué huele. 👃
 En una prueba publicada en 2023, en el 53 % de 400 moléculas nuevas quedó más cerca del promedio de 15 catadores entrenados que el catador típico. Donde peor le fue: el almizcle.
 ¿Qué olor te gustaría que pudiera "leer"?
-Shot IA #33 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 33 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

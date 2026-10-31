@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #07 · Todas las monarcas caben en cuatro canchas de fútbol
+# Publicación · Shot Ambiental 07 · Todas las monarcas caben en cuatro canchas de fútbol
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que cuatro canchas suena a mucho, hasta que recuerdas que en 1996 eran vein
 El dibujo es esquemático.
 Fuentes: WWF/CONANP (2026), WWF/UNAM (2025), revisión científica 2026, FIFA.
 ¿Alguna vez has visitado un santuario de la monarca? 👇
-Shot Ambiental #07 · La Creación del Robert
+Shot Ambiental 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #MariposaMonarca #Michoacan #Biodiversidad
 ```
@@ -25,7 +25,7 @@ Todas las colonias de mariposa monarca del invierno pasado en México caben en u
 En 2025-2026 ocuparon 2.93 hectáreas (64 % más que el año anterior), pero en 1996-1997 llegaron a 18.19: unas 25 canchas. Sus orugas comen algodoncillo, que los herbicidas han ido acabando en sus zonas de cría; además les pegan el cambio climático y la tala. La meta de los científicos: unas 6 hectáreas, el doble de hoy.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez has visitado un santuario de la monarca? 👇
-Shot Ambiental #07 · La Creación del Robert
+Shot Ambiental 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #MariposaMonarca #Michoacan #Biodiversidad
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Todas las monarcas caben en 4 canchas 🦋 | Shot Ambiental #07
+Todas las monarcas caben en 4 canchas 🦋 | Shot Ambiental 07
 ```
 Descripción:
 ```text
@@ -46,7 +46,7 @@ Fuentes:
 - Eastern North American Monarch Butterfly Conservation Needs and Opportunities: What the Science Tells Us (2026): https://europepmc.org/article/PMC/PMC13027080
 - FIFA, Football Stadiums Guidelines (cancha de 105 × 68 m): https://publications.fifa.com/es/football-stadiums-guidelines/technical-guideline/stadium-guidelines/pitch-dimensions-and-surrounding-areas
 ¿Alguna vez has visitado un santuario de la monarca? 👇
-Shot Ambiental #07 · La Creación del Robert
+Shot Ambiental 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #MariposaMonarca #Michoacan
 ```
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Todas las colonias de mariposa monarca del invierno pasado en México caben en unas cuatro canchas de fútbol. 🦋 Ocuparon 2.93 hectáreas (64 % más que el año anterior), pero en 1996-1997 llegaron a 18.19: unas 25 canchas.
 ¿Alguna vez has visitado un santuario de la monarca? 👇
-Shot Ambiental #07 · La Creación del Robert
+Shot Ambiental 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #MariposaMonarca #CienciaAmbiental
 ```
@@ -67,7 +67,7 @@ El monitoreo anual de CONANP y WWF (desde 2004) mide la superficie de bosque que
 Las causas están repartidas en tres países: la pérdida de algodoncillo en las zonas agrícolas de cría por el uso de herbicidas, el cambio climático y la degradación del bosque de invierno (2.55 hectáreas dañadas entre 2024 y 2025 por tala, incendio y sequía, según WWF y la UNAM).
 Es un caso claro de conservación que depende de cadenas de valor agrícolas, de políticas forestales y de cooperación internacional.
 ¿Qué crees que tendría más impacto: proteger el bosque de invierno o recuperar el algodoncillo en las zonas de cría?
-Shot Ambiental #07 · La Creación del Robert
+Shot Ambiental 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #MariposaMonarca #Biodiversidad #Conservacion #LaCreacionDelRobert
 ```

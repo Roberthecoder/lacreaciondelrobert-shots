@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #26 · ¿Por qué NO comer shiitake crudo? La piel rayada a latigazos
+# Publicación · Shot Fungi Mati 26 · ¿Por qué NO comer shiitake crudo? La piel rayada a latigazos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que no le temas al shiitake: cocínalo bien. Y si te salen rayas raras, ve 
 El dibujo es esquemático. No es consejo médico.
 Fuentes: Boels et al. 2022 y 2014 (Clin Toxicol); Nguyen et al. 2017 (Int J Dermatol); Stephany et al. 2016 (Am J Clin Dermatol).
 ¿Tú lo has comido crudo, en ensalada o en sushi? 👇
-Shot Fungi Mati #26 · La Creación del Robert
+Shot Fungi Mati 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Shiitake #Dermatologia
 ```
@@ -25,7 +25,7 @@ Soy Robert, de La Creación del Robert 🌱
 Se llama dermatitis flagelada por shiitake: es rara, sale de horas a días después de comerlo y da rayas rojas con comezón. Se cree que la causa el lentinano, una cadena de azúcares de la pared del hongo que el calor fuerte desarma. En Francia, de 2014 a 2019, los centros de toxicología registraron 59 casos; todos se recuperaron, y entre más shiitake comieron, más les duró. Lo que sirve: cocinarlo bien.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Tú lo has comido crudo? 👇
-Shot Fungi Mati #26 · La Creación del Robert
+Shot Fungi Mati 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Shiitake #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué NO comer shiitake crudo? 🍄 La piel a latigazos | Shot Fungi Mati #26
+¿Por qué NO comer shiitake crudo? 🍄 La piel a latigazos | Shot Fungi Mati 26
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Netchiporouk, E. et al. (2015). Pustular flagellate dermatitis after consumption of shiitake mushrooms. JAAD Case Rep. 1(3): 117–119. https://pmc.ncbi.nlm.nih.gov/articles/PMC4808700/
 - Wang, X., Xu, X. y Zhang, L. (2008). Thermally induced conformation transition of triple-helical lentinan. J. Phys. Chem. B 112(33): 10343–10351. https://pubmed.ncbi.nlm.nih.gov/18661940/
 ¿Tú lo has comido crudo, en ensalada o en sushi? 👇
-Shot Fungi Mati #26 · La Creación del Robert
+Shot Fungi Mati 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Shiitake #FungiMati
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ¿Por qué no debes comer shiitake crudo? Porque te puede dejar la piel rayada, como a latigazos. 🍄 Es raro, se llama dermatitis flagelada por shiitake y se quita sola en días o semanas. Se cree que la causa el lentinano, que el calor fuerte desarma. Lo que sí sirve: cocinarlo bien.
 El dibujo es esquemático. No es consejo médico.
 ¿Tú lo has comido crudo? 👇
-Shot Fungi Mati #26 · La Creación del Robert
+Shot Fungi Mati 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Shiitake
 ```
@@ -73,7 +73,7 @@ Un hongo comestible muy común puede dar una reacción de piel muy llamativa si 
 Los centros de toxicología de Francia registraron 59 casos de dermatitis entre 125 personas expuestas al shiitake de 2014 a 2019 (Boels et al., Clin Toxicol, 2022). La reacción apareció de 1 hora a 7 días después de comer, todos los pacientes se recuperaron y la duración aumentó con la cantidad consumida (medianas de 4, 7 y 15 días). Se atribuye al lentinano, un β-glucano de la pared celular que se inactiva con el calor; su mecanismo exacto (tóxico o de hipersensibilidad) sigue sin aclararse.
 Por qué importa: el consumo de shiitake crece fuera de Asia y la reacción es poco conocida. La prevención es simple: cocinarlo bien. El dibujo es esquemático; no es consejo médico.
 ¿Lo habías visto en tu práctica o en tu cocina?
-Shot Fungi Mati #26 · La Creación del Robert
+Shot Fungi Mati 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Dermatologia #Toxicologia #Ciencia
 ```
@@ -86,7 +86,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Threads
 ```text
 ¿Por qué no debes comer shiitake crudo? Porque te puede dejar la piel rayada, como a latigazos. 🍄 Es raro, se llama dermatitis flagelada y se cree que la causa el lentinano, que el calor fuerte desarma. Así que no le temas al shiitake: cocínalo bien. ¿Tú lo has comido crudo?
-Shot Fungi Mati #26 · La Creación del Robert
+Shot Fungi Mati 26 · La Creación del Robert
 #Hongos
 ```
 

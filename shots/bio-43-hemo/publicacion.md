@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #43 · La hamburguesa vegetal que "sangra" (leghemoglobina de soya hecha en levadura)
+# Publicación · Shot Biotecnológico 43 · La hamburguesa vegetal que "sangra" (leghemoglobina de soya hecha en levadura)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En 2018, la FDA de Estados Unidos no tuvo objeciones a su uso para dar sabor (GR
 El dibujo es esquemático.
 Fuentes: FDA, Federal Register 2019 · Fraser et al. 2018 · NMSU 2015 · Devaere et al. 2022.
 ¿Ya probaste una hamburguesa vegetal? ¿Notaste el cambio de color? 👇
-Shot Biotecnológico #43 · La Creación del Robert
+Shot Biotecnológico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Ciencia #Soya #Levadura
 ```
@@ -25,7 +25,7 @@ Ese rojo no es sangre: es una proteína de la raíz de la soya, hecha por una le
 Es leghemoglobina: la soya la tiene en los nódulos de su raíz para controlar el oxígeno. Lleva hemo, el mismo anillo con hierro que hay en la carne y en tu sangre. Hoy la fabrica la levadura Pichia pastoris con el gen de la soya, por fermentación. Al cocinarse, la proteína se abre y su hemo ayuda a dar olor y sabor a carne. La FDA no objetó su uso para dar sabor en 2018 y la aprobó como colorante en 2019 (máx. 0.8 % en crudo).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya probaste una hamburguesa vegetal? 👇
-Shot Biotecnológico #43 · La Creación del Robert
+Shot Biotecnológico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Soya #Levadura #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La hamburguesa vegetal que "sangra" 🍔 | Shot Biotecnológico #43
+La hamburguesa vegetal que "sangra" 🍔 | Shot Biotecnológico 43
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Heme: The Lord of the Iron Ring (2023). https://pmc.ncbi.nlm.nih.gov/articles/PMC10215292/
 - Kurtzman C.P. (2009). J Ind Microbiol Biotechnol 36(11):1435–1438. https://pubmed.ncbi.nlm.nih.gov/19760441/
 ¿Ya probaste una hamburguesa vegetal? ¿Notaste el cambio de color? 👇
-Shot Biotecnológico #43 · La Creación del Robert
+Shot Biotecnológico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Ciencia
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese rojo no es sangre: es una proteína de la raíz de la soya, hecha por una levadura. 🍔 Se llama leghemoglobina y lleva hemo, el mismo anillo con hierro de la carne y de tu sangre. Una levadura con el gen de la soya la fabrica en tanques.
 ¿Ya probaste una hamburguesa vegetal? 👇
-Shot Biotecnológico #43 · La Creación del Robert
+Shot Biotecnológico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Ciencia
 ```
@@ -70,14 +70,14 @@ Ese rojo no es sangre: es leghemoglobina de soya producida por fermentación de 
 La leghemoglobina es una proteína con hemo que la soya tiene en los nódulos de su raíz, donde controla el oxígeno para las bacterias que fijan nitrógeno. Su hemo (hemo B) es idéntico al de la carne. Para producirla, se introdujo el gen de la soya en Pichia pastoris (hoy Komagataella phaffii), con las 8 enzimas de la vía del hemo de la levadura sobreexpresadas, y se produce en fermentación por lote alimentado.
 En lo regulatorio es un caso interesante: en 2018 la FDA respondió "sin preguntas" a su notificación GRAS para dar sabor, pero como también da color, necesitó una aprobación aparte como aditivo de color, que llegó en 2019 (máx. 0.8 % del producto crudo).
 ¿Qué otro ingrediente de la fermentación de precisión te parece que viene después?
-Shot Biotecnológico #43 · La Creación del Robert
+Shot Biotecnológico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #FermentacionDePrecision #Alimentos #Ciencia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese rojo no es sangre: es leghemoglobina, una proteína de la raíz de la soya hecha por una levadura. Su hemo es idéntico al de la carne. 🍔🌱 Shot Biotecnológico #43 #Biotecnologia
+Ese rojo no es sangre: es leghemoglobina, una proteína de la raíz de la soya hecha por una levadura. Su hemo es idéntico al de la carne. 🍔🌱 Shot Biotecnológico 43 #Biotecnologia
 ```
 
 ### Threads
@@ -85,7 +85,7 @@ Ese rojo no es sangre: es leghemoglobina, una proteína de la raíz de la soya h
 Ese rojo no es sangre: es una proteína de la raíz de la soya, hecha por una levadura. 🍔
 Se llama leghemoglobina, lleva hemo (un anillo con hierro, como el de tu sangre) y al cocinarse ayuda a dar olor y sabor a carne.
 ¿Ya la probaste?
-Shot Biotecnológico #43 · La Creación del Robert
+Shot Biotecnológico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

@@ -14,7 +14,7 @@ En México, desde marzo de 2025, la Constitución (artículos 4o. y 27) establec
 El dibujo es esquemático.
 Fuentes: NPIC (2022) · Health Canada (2022) · Baktavachalam et al., GM Crops & Food (2015) · EPA (2001) · Storer et al., J Econ Entomol (2010) · DOF 17/03/2025.
 ¿En tu región cómo combaten al gusano cogollero? 👇
-Shot Biotecnológico #25 · La Creación del Robert
+Shot Biotecnológico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #maiz #transgenicos #milpa
 ```
@@ -29,7 +29,7 @@ Pero las plagas se adaptan: en Puerto Rico el cogollero se volvió resistente a 
 Y en México, desde marzo de 2025, la Constitución prohíbe sembrar maíz transgénico.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu región cómo combaten al gusano cogollero? 👇
-Shot Biotecnológico #25 · La Creación del Robert
+Shot Biotecnológico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #maiz #transgenicos #milpa
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta hoja fabrica su propio insecticida 🌽 | Shot Biotecnológico #25
+Esta hoja fabrica su propio insecticida 🌽 | Shot Biotecnológico 25
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ EPA, Bt Plant-Incorporated Protectants BRAD (2001): https://archive.epa.gov/pest
 Storer et al., J Econ Entomol 103(4):1031–1038 (2010): https://pubmed.ncbi.nlm.nih.gov/20857709/
 DOF, decreto de reforma a los arts. 4o. y 27 constitucionales (17 mar 2025): https://gaceta.diputados.gob.mx/PDF/66/2025/feb/DOF17MAR2025-Arts4y27CPEUM.pdf
 ¿En tu región cómo combaten al gusano cogollero? 👇
-Shot Biotecnológico #25 · La Creación del Robert
+Shot Biotecnológico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #maiz
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esa hoja de maíz no está fumigada: el insecticida lo fabrica ella misma. 🌽
 El maíz Bt lleva un gen de una bacteria del suelo que fabrica proteínas Cry: dañan a ciertas orugas, como el gusano cogollero, porque se activan en su intestino alcalino y se pegan a receptores que los humanos no tenemos. En Puerto Rico el cogollero ya se volvió resistente, y en México la Constitución prohíbe sembrarlo desde 2025.
 ¿En tu región cómo combaten al gusano cogollero? 👇
-Shot Biotecnológico #25 · La Creación del Robert
+Shot Biotecnológico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #maiz
 ```
@@ -78,7 +78,7 @@ La misma bacteria se usa como bioinsecticida (registrada en EE. UU. desde 1961; 
 La lección de manejo: la resistencia llega. En Puerto Rico, el gusano cogollero se volvió resistente a la proteína Cry1F; un estudio de 2010 lo confirmó y se suspendió la venta de ese maíz en la isla.
 En México, desde marzo de 2025, la Constitución establece que el cultivo de maíz debe ser libre de modificaciones transgénicas; los demás usos se evalúan según la ley.
 ¿Qué estrategias conoces para retrasar la resistencia de las plagas?
-Shot Biotecnológico #25 · La Creación del Robert
+Shot Biotecnológico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Agricultura #Maiz #ManejoDePlagas
 ```
@@ -94,7 +94,7 @@ Esa hoja de maíz no está fumigada: el insecticida lo fabrica ella misma. 🌽
 Lleva un gen de una bacteria del suelo que fabrica proteínas Cry. En el intestino alcalino de ciertas orugas se activan y abren poros; tu estómago es ácido y no tienes esos receptores.
 En Puerto Rico el gusano cogollero ya se volvió resistente, y en México la Constitución prohíbe sembrarlo desde 2025.
 ¿En tu región cómo combaten al cogollero?
-Shot Biotecnológico #25 · La Creación del Robert
+Shot Biotecnológico 25 · La Creación del Robert
 #Biotecnologia
 ```
 

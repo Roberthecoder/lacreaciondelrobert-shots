@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #23 · La vainilla de tu helado casi nunca salió de una vaina (vainillina)
+# Publicación · Shot Biotecnológico 23 · La vainilla de tu helado casi nunca salió de una vaina (vainillina)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ La de vaina le debe mucho a un niño: en 1841, en la isla Reunión, Edmond Albiu
 El dibujo es esquemático.
 Fuentes: Schmid et al. 2026 · Converti et al. 2010 · Cabeza Sánchez et al. 2024 · Długosz et al. 2026 · Van Dyk et al. 2024 · Linnean Society 2019 · CICY 2016.
 ¿Tú sabías de dónde salía el sabor de tu helado? 👇
-Shot Biotecnológico #23 · La Creación del Robert
+Shot Biotecnológico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Vainilla #HechoEnMexico #CienciaDeLosAlimentos
 ```
@@ -25,7 +25,7 @@ Tu helado de vainilla quizá nunca tocó una vaina: menos del 1 % de la vainilli
 La vainilla es una orquídea de México (Papantla, Veracruz) y su aroma principal, la vainillina, es apenas el 1–2 % del peso de la vaina curada. Por eso la mayoría se fabrica con química (petróleo o madera), unas cien veces más barata. La ruta biotecnológica: microbios que transforman ácido ferúlico del salvado de arroz en vainillina con dos enzimas, y que se puede vender como "aroma natural". Y la de vaina le debe mucho a Edmond Albius, un niño esclavizado de 12 años que en 1841, en la isla Reunión, polinizó la flor a mano.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú sabías de dónde salía el sabor de tu helado? 👇
-Shot Biotecnológico #23 · La Creación del Robert
+Shot Biotecnológico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Vainilla #HechoEnMexico #CienciaDeLosAlimentos
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu helado de vainilla casi nunca tocó una vaina 🍦 | Shot Biotecnológico #23
+Tu helado de vainilla casi nunca tocó una vaina 🍦 | Shot Biotecnológico 23
 ```
 Descripción:
 ```text
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu helado de vainilla quizá nunca tocó una vaina: menos del 1 % de la vainillina del mundo sale de la planta. 🍦🌸 La mayoría se fabrica con química (petróleo o madera) y otra parte la hacen microbios a partir de ácido ferúlico del salvado de arroz. La vainilla es una orquídea de México, y la de vaina le debe mucho a Edmond Albius, un niño esclavizado de 12 años que en 1841 la polinizó a mano. El dibujo es esquemático.
 ¿Tú sabías de dónde salía el sabor de tu helado? 👇
-Shot Biotecnológico #23 · La Creación del Robert
+Shot Biotecnológico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Vainilla
 ```
@@ -73,7 +73,7 @@ Lo interesante es la tercera vía: biotransformación. Microorganismos convierte
 Y un recordatorio de dónde viene la vainilla "de verdad": su cultivo fuera de México despegó gracias a la polinización manual que en 1841 hizo Edmond Albius, un niño esclavizado de 12 años en la isla Reunión.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué otro sabor "natural" de tu despensa crees que sale de un tanque de fermentación?
-Shot Biotecnológico #23 · La Creación del Robert
+Shot Biotecnológico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #CienciaDeLosAlimentos #Fermentacion #LaCreacionDelRobert
 ```

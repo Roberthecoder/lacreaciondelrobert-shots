@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #05 · Esa masa no es solo maíz molido: la nixtamalización
+# Publicación · Shot Químico 05 · Esa masa no es solo maíz molido: la nixtamalización
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo curioso: no salió de un laboratorio; lo hacían los pueblos de Mesoamérica.
 El dibujo es esquemático.
 Fuentes: Kamau et al., Food Sci Nutr 2020 · Bressani et al. 2004 · Suri y Tanumihardjo 2016 · Front Nutr 2021 · Maris et al., Toxins 2025.
 ¿Tú compras tortillas de nixtamal o de harina? ¿Cómo se hace en tu casa? 👇
-Shot Químico #05 · La Creación del Robert
+Shot Químico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Nixtamal #Tortilla #Maiz
 ```
@@ -25,7 +25,7 @@ Esa masa no es solo maíz molido: es maíz cocido con cal, y sin esa química tu
 Nixtamalización: el maíz hierve con cal (hidróxido de calcio) y reposa la noche. Se afloja el pericarpio, el agua de desecho es el nejayote, el grano gana calcio y tu cuerpo aprovecha mejor la niacina. En Europa comieron maíz sin cal y apareció la pelagra. Y en 2025, en Soweto, la nixtamalización bajó 95 % la fumonisina B1 de un maíz con moho. Conocimiento de Mesoamérica.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cómo se hace el nixtamal en tu casa? 👇
-Shot Químico #05 · La Creación del Robert
+Shot Químico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Nixtamal #Tortilla #Maiz
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa masa no es solo maíz: es química con cal 🌽 | Shot Químico #05
+Esa masa no es solo maíz: es química con cal 🌽 | Shot Químico 05
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - From forgotten to frontier: vindicating Latin America's indigenous biotechnology (2025). J Ethnobiol Ethnomed. https://pmc.ncbi.nlm.nih.gov/articles/PMC12288233/
 - Maris E. et al. (2025). Nixtamalization of Maize to Reduce Mycotoxin Exposure… Soweto, South Africa. Toxins 17(11):527. https://pubmed.ncbi.nlm.nih.gov/41295842/
 ¿Cómo se hace el nixtamal en tu casa? 👇
-Shot Químico #05 · La Creación del Robert
+Shot Químico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Nixtamal
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa masa no es solo maíz molido: es maíz cocido con cal, y sin esa química tu tortilla se desmoronaría. 🌽 La cal afloja la cascarita, le da calcio al grano y ayuda a aprovechar la niacina. Donde comieron maíz sin cal apareció la pelagra.
 ¿Cómo se hace el nixtamal en tu casa? 👇
-Shot Químico #05 · La Creación del Robert
+Shot Químico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Nixtamal
 ```
@@ -68,14 +68,14 @@ Esa masa no es solo maíz molido: es maíz cocido con cal, y sin esa química la
 La nixtamalización —cocer el maíz en agua con hidróxido de calcio y dejarlo reposar— retira el pericarpio, aumenta el calcio del grano (Bressani et al., 2004) y mejora la biodisponibilidad de la niacina (Suri y Tanumihardjo, 2016). Cuando el maíz llegó a Europa sin este proceso, su adopción se asoció con la pelagra.
 Hoy sigue siendo tecnología útil: en 2025, Maris et al. (Toxins) nixtamalizaron maíz visiblemente enmohecido en Soweto, Sudáfrica, y la fumonisina B1 bajó 95 % en el grano.
 Es un ejemplo de ciencia de alimentos desarrollada por pueblos de Mesoamérica mucho antes de los laboratorios. ¿Qué otros procesos tradicionales crees que la ciencia todavía no termina de entender?
-Shot Químico #05 · La Creación del Robert
+Shot Químico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeAlimentos #Nixtamalizacion #SeguridadAlimentaria #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esa masa no es solo maíz molido: es maíz cocido con cal. Sin nixtamalizar, la masa no amarra y la niacina del maíz se aprovecha peor; en Europa así apareció la pelagra. 🌽 Shot Químico #05 #Quimica
+Esa masa no es solo maíz molido: es maíz cocido con cal. Sin nixtamalizar, la masa no amarra y la niacina del maíz se aprovecha peor; en Europa así apareció la pelagra. 🌽 Shot Químico 05 #Quimica
 ```
 
 ### Threads
@@ -83,7 +83,7 @@ Esa masa no es solo maíz molido: es maíz cocido con cal. Sin nixtamalizar, la 
 Esa masa no es solo maíz molido: es maíz cocido con cal, y sin esa química tu tortilla se desmoronaría. 🌽
 La cal afloja la cascarita, le da calcio al grano y ayuda a aprovechar la niacina. Donde comieron maíz sin cal apareció la pelagra. Conocimiento de Mesoamérica.
 ¿Cómo se hace el nixtamal en tu casa?
-Shot Químico #05 · La Creación del Robert
+Shot Químico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

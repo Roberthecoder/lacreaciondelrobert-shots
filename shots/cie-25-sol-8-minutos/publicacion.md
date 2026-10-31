@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #25 · El Sol que ves es el de hace 8 minutos
+# Publicación · Shot Científico 25 · El Sol que ves es el de hace 8 minutos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que cada vez que miras el cielo, estás viendo el pasado.
 El dibujo es esquemático.
 Fuentes: NASA; NIST; NRAO; NASA/Hubble; American Academy of Ophthalmology.
 ¿Qué es lo primero que harías en esos 8 minutos? 👇
-Shot Científico #25 · La Creación del Robert
+Shot Científico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Astronomia #Sol
 ```
@@ -28,7 +28,7 @@ El Sol está a ≈ 150 millones de km y su luz viaja a ≈ 300,000 km/s: tarda �
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Qué es lo primero que harías en esos 8 minutos? 👇
-Shot Científico #25 · La Creación del Robert
+Shot Científico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Astronomia #Sol
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El Sol que ves es el de hace 8 minutos ☀️ | Shot Científico #25
+El Sol que ves es el de hace 8 minutos ☀️ | Shot Científico 25
 ```
 Descripción:
 ```text
@@ -61,7 +61,7 @@ Fuentes:
 - NASA/Hubble (2005), Sirio: https://science.nasa.gov/missions/hubble/astronomers-use-hubble-to-weigh-dog-stars-companion
 - American Academy of Ophthalmology, no mirar el Sol: https://www.aao.org/eye-health/tips-prevention/solar-eclipse-eye-safety
 ¿Qué es lo primero que harías en esos 8 minutos? 👇
-Shot Científico #25 · La Creación del Robert
+Shot Científico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Astronomia #LaCreacionDelRobert
 ```
@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese Sol que ves es el de hace unos ocho minutos ☀️ Está a ≈ 150 millones de km y su luz, a ≈ 300,000 km/s, tarda ≈ 8 min 20 s en llegar. Si se apagara (experimento mental), lo verías brillar unos 8 minutos más. La Luna la ves como era hace ≈ 1.3 s, y a Sirio, hace casi 9 años. Ah, y nunca mires el Sol directo: puede dañar tus ojos. El dibujo es esquemático.
 ¿Qué es lo primero que harías en esos 8 minutos? 👇
-Shot Científico #25 · La Creación del Robert
+Shot Científico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -78,7 +78,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Todo lo que vemos en el cielo es el pasado. La luz del Sol recorre unos 150 millones de km a casi 300,000 km/s: tarda unos 8 min 20 s en llegar (NASA). La de la Luna, ≈ 1.3 s; la de Sirio, la estrella más brillante de la noche, unos 8.6 años (NASA/Hubble). Y si el Sol se apagara —experimento mental— lo seguiríamos viendo brillar unos ocho minutos más (NRAO). Un recordatorio de que la información también tarda en llegar.
-Shot Científico #25 · La Creación del Robert
+Shot Científico 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #04 · Lo que costó entrenar una IA: más de 700 años de una tarjeta (Llama 3)
+# Publicación · Shot IA 04 · Lo que costó entrenar una IA: más de 700 años de una tarjeta (Llama 3)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 Verificado por un verificador independiente el 28 oct 2026 (ver `verificacion.md`).
@@ -15,7 +15,7 @@ En todo ese tiempo leyó más de 15 billones de tokens (pedacitos de texto). Y e
 Cálculo: 6,400,000 h (modelo 70B) ÷ 8,766 h/año = 730 años; las dos versiones juntas, 7.7 M h.
 Fuente: ficha oficial de Llama 3 (Meta, 2024).
 ¿Sabías que entrenar una IA gastaba tanto? 👇
-Shot IA #04 · La Creación del Robert
+Shot IA 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #MedioAmbiente #HuellaDeCarbono #Llama3
 ```
@@ -27,7 +27,7 @@ Las dos versiones de Llama 3 (Meta, 2024) sumaron 7.7 millones de horas de tarje
 Cálculo: 6,400,000 h (modelo 70B) ÷ 8,766 h/año = 730 años; las dos versiones juntas, 7.7 M h.
 Fuentes en el primer comentario.
 ¿Sabías que entrenar una IA gastaba tanto? 👇
-Shot IA #04 · La Creación del Robert
+Shot IA 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #MedioAmbiente #HuellaDeCarbono #Llama3
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Entrenar esta IA con 1 tarjeta: más de 700 años ⏳ | Shot IA #04
+Entrenar esta IA con 1 tarjeta: más de 700 años ⏳ | Shot IA 04
 ```
 Descripción:
 ```text
@@ -45,7 +45,7 @@ Cálculo: 6,400,000 h (modelo 70B) ÷ 8,766 h/año = 730 años; las dos versione
 Fuente:
 - Meta, Llama 3 Model Card (abril 2024): https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md
 ¿Sabías que entrenar una IA gastaba tanto? 👇
-Shot IA #04 · La Creación del Robert
+Shot IA 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #InteligenciaArtificial #HuellaDeCarbono
 ```
@@ -54,7 +54,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Si a esta IA la hubiera entrenado una sola tarjeta de video, habría tardado más de 700 años. ⏳ Las dos versiones de Llama 3 (Meta, 2024) sumaron 7.7 millones de horas de tarjetas y unas 2,290 toneladas de CO2, según la propia Meta. Dice que lo compensó; pero compensar no es no emitir.
 ¿Sabías que entrenar una IA gastaba tanto? 👇
-Shot IA #04 · La Creación del Robert
+Shot IA 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #MedioAmbiente
 ```
@@ -66,7 +66,7 @@ La ficha oficial de Llama 3 (Meta, abril de 2024) reporta 7.7 millones de horas 
 Meta estima 2,290 toneladas de CO2 equivalente en total (1,900 de la versión de 70B y 390 de la de 8B) y afirma haber compensado el 100 %. Compensar no es lo mismo que no emitir: las emisiones ocurrieron y se financia su remoción o su reducción en otro lugar.
 Por qué importa: la huella del entrenamiento es solo una parte; cada consulta posterior también consume energía. Que las empresas publiquen estas cifras permite compararlas y exigir mejoras.
 ¿Debería ser obligatorio publicar la huella de carbono de cada modelo de IA?
-Shot IA #04 · La Creación del Robert
+Shot IA 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #HuellaDeCarbono #Sustentabilidad #Llama3
 ```
@@ -81,7 +81,7 @@ Si a esta IA la hubiera entrenado una sola tarjeta de video, habría tardado má
 Si a esta IA la hubiera entrenado una sola tarjeta de video, habría tardado más de 700 años. ⏳
 Las dos versiones de Llama 3 sumaron 7.7 millones de horas de tarjetas H100 y unas 2,290 toneladas de CO2, según la ficha de Meta. Meta dice que lo compensó todo, pero compensar no es no emitir.
 ¿Sabías que entrenar una IA gastaba tanto?
-Shot IA #04 · La Creación del Robert
+Shot IA 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```

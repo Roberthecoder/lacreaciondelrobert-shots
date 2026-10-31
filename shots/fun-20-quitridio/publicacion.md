@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #20 · La rana no está dormida: el quitridio
+# Publicación · Shot Fungi Mati 20 · La rana no está dormida: el quitridio
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ En 2019, un estudio en Science lo culpó del declive de al menos 501 especies de
 El dibujo es esquemático.
 Fuentes: Voyles et al. 2009 (Science); Van Rooij et al. 2015 (Vet. Res.); Scheele et al. 2019 y Lambert et al. 2020 (Science); Cheng et al. 2011 (PNAS); Martel et al. 2013 (PNAS).
 ¿Has visto ranas o ajolotes cerca de tu casa? 👇
-Shot Fungi Mati #20 · La Creación del Robert
+Shot Fungi Mati 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Ranas #Anfibios
 ```
@@ -24,7 +24,7 @@ Esta rana no está dormida: un hongo que tus ojos nunca van a ver le está paran
 El quitridio (Batrachochytrium dendrobatidis) nada en el agua como esporas con colita, se mete en la queratina de la piel y crece como bolsitas llenas de esporas. La piel se engruesa, el paso de sales cae a menos de la mitad y, en ranas infectadas (Voyles et al., 2009), bajaron el sodio y el potasio hasta que el corazón se detuvo. En 2019 lo culparon del declive de al menos 501 especies de anfibios y 90 presuntas extinciones (cifras debatidas). Y la ola salió del sur de México a inicios de los setenta.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Has visto ranas o ajolotes cerca de tu casa? 👇
-Shot Fungi Mati #20 · La Creación del Robert
+Shot Fungi Mati 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Ranas #Anfibios
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo invisible que le para el corazón a las ranas 🐸 | Shot Fungi Mati #20
+El hongo invisible que le para el corazón a las ranas 🐸 | Shot Fungi Mati 20
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Cheng, T. L. et al. (2011). Coincident mass extirpation of neotropical amphibians with the emergence of the infectious fungal pathogen Batrachochytrium dendrobatidis. PNAS 108(23): 9502–9507. https://pmc.ncbi.nlm.nih.gov/articles/PMC3111304/
 - Martel, A. et al. (2013). Batrachochytrium salamandrivorans sp. nov. causes lethal chytridiomycosis in amphibians. PNAS 110(38): 15325–15329. https://pmc.ncbi.nlm.nih.gov/articles/PMC3780879/
 ¿Has visto ranas o ajolotes cerca de tu casa? 👇
-Shot Fungi Mati #20 · La Creación del Robert
+Shot Fungi Mati 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ranas #FungiMati
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta rana no está dormida: un hongo que tus ojos nunca van a ver le está parando el corazón. 🐸 El quitridio se mete en la piel de ranas y sapos, la engruesa y les desbalancea las sales de la sangre hasta que el corazón se detiene. Se le culpa del declive de al menos 501 especies de anfibios (cifras en debate), y una ola del hongo salió del sur de México en los setenta.
 ¿Has visto ranas o ajolotes cerca de tu casa? 👇
-Shot Fungi Mati #20 · La Creación del Robert
+Shot Fungi Mati 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Anfibios
 ```
@@ -72,7 +72,7 @@ Batrachochytrium dendrobatidis infecta las capas con queratina de la piel de los
 Scheele et al. (Science, 2019) atribuyeron a la quitridiomicosis el declive de al menos 501 especies y 90 presuntas extinciones; Lambert et al. (2020) cuestionaron los datos, y el tamaño exacto del impacto sigue en debate. Muestras de museo indican que una ola del hongo salió del sur de México a inicios de los setenta (Cheng et al., PNAS 2011).
 Por qué importa: las colecciones de museo y la fisiología básica permitieron reconstruir y explicar esta epidemia.
 ¿Conoces otros casos en que una colección de museo resolvió un misterio?
-Shot Fungi Mati #20 · La Creación del Robert
+Shot Fungi Mati 20 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Biodiversidad #Conservacion #Ciencia
 ```
@@ -85,7 +85,7 @@ Esa rana no está dormida: el hongo quitridio engruesa su piel, le baja el sodio
 ### Threads
 ```text
 Esta rana no está dormida: un hongo que tus ojos nunca van a ver le está parando el corazón. 🐸 El quitridio se mete en la queratina de su piel, la engruesa y le desbalancea las sales hasta que el corazón se detiene. Y una ola del hongo salió del sur de México en los setenta. ¿Has visto ranas o ajolotes cerca de tu casa?
-Shot Fungi Mati #20 · La Creación del Robert
+Shot Fungi Mati 20 · La Creación del Robert
 #Anfibios
 ```
 

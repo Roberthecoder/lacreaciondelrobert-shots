@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #09 · Seis de cada diez litros de Guadalajara salen de un lago de 8 metros
+# Publicación · Shot Ambiental 09 · Seis de cada diez litros de Guadalajara salen de un lago de 8 metros
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que la próxima vez que abras la llave en Guadalajara, piensa en un lago en
 El dibujo es esquemático.
 Fuente: Comisión Estatal del Agua de Jalisco (CEA).
 ¿Tú de dónde recibes el agua de tu casa? 👇
-Shot Ambiental #09 · La Creación del Robert
+Shot Ambiental 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #LagoDeChapala #Guadalajara #Jalisco
 ```
@@ -25,7 +25,7 @@ Seis de cada diez litros de agua que llegan a Guadalajara salen de un lago que, 
 El Lago de Chapala es el más grande de México (79 × 28 km), pero tan plano que a escala de un metro tendría una décima de milímetro de hondo. En 1955 le quedaba menos de 1/8 de su agua, entre 1902 y 1910 perdió casi un tercio de su superficie para cultivo, y el 27 de octubre de 2026 la CEA Jalisco lo reporta al 70 %.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú de dónde recibes el agua de tu casa? 👇
-Shot Ambiental #09 · La Creación del Robert
+Shot Ambiental 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #LagoDeChapala #Guadalajara #Jalisco
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-6 de cada 10 litros de Guadalajara salen de aquí 💧 | Shot Ambiental #09
+6 de cada 10 litros de Guadalajara salen de aquí 💧 | Shot Ambiental 09
 ```
 Descripción:
 ```text
@@ -44,7 +44,7 @@ Fuentes:
 - Comisión Estatal del Agua de Jalisco, Lago de Chapala: https://www.ceajalisco.gob.mx/contenido/chapala/
 - CEA Jalisco, nivel diario del Lago de Chapala (27 oct 2026): https://www.ceajalisco.gob.mx/frontend_mods/minichapala.php
 ¿Tú de dónde recibes el agua de tu casa? 👇
-Shot Ambiental #09 · La Creación del Robert
+Shot Ambiental 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #LagoDeChapala #Guadalajara
 ```
@@ -53,7 +53,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Seis de cada diez litros de agua que llegan a Guadalajara salen del Lago de Chapala, que lleno mide apenas ocho metros en su parte más honda. 💧 Hoy (27 de octubre de 2026) está al 70 % de su capacidad, según la CEA Jalisco.
 ¿Tú de dónde recibes el agua de tu casa? 👇
-Shot Ambiental #09 · La Creación del Robert
+Shot Ambiental 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #LagoDeChapala #Guadalajara
 ```
@@ -64,7 +64,7 @@ Seis de cada diez litros de agua que llegan a Guadalajara salen de un lago que, 
 Según la Comisión Estatal del Agua de Jalisco, el Lago de Chapala aporta el 60 % del agua de la zona metropolitana. Es el lago más grande del país (79 × 28 km, 7,897 millones de m³), pero muy somero, y su almacenamiento depende del ciclo de lluvias y secas: en junio de 1955 llegó a un mínimo de 954 millones de m³, y al 27 de octubre de 2026 está al 70.18 %. Además, entre 1902 y 1910 perdió 50 mil hectáreas por la desecación de la Ciénega para cultivo.
 Para la planeación hídrica de una metrópoli, depender de un cuerpo de agua tan sensible al clima, compartido entre dos estados (86 % Jalisco, 14 % Michoacán), exige gestión de cuenca, monitoreo constante y fuentes complementarias.
 ¿Qué medida crees que fortalecería más la seguridad hídrica de Guadalajara?
-Shot Ambiental #09 · La Creación del Robert
+Shot Ambiental 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Agua #LagoDeChapala #Guadalajara #LaCreacionDelRobert
 ```

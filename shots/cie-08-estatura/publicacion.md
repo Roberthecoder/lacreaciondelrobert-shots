@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #08 · En la noche mides menos (y en el espacio, más)
+# Publicación · Shot Científico 08 · En la noche mides menos (y en el espacio, más)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -13,7 +13,7 @@ Así que si quieres saber tu estatura más alta, mídete en la mañana. 🚀
 El dibujo es esquemático (el cambio de estatura está exagerado para que se vea).
 Fuentes: Tyrrell et al. 1985 (Spine); Roberts et al. 1998 (Clinical Anatomy); NASA (Spinal Ultrasound, ISS).
 ¿Ya te habías medido en la mañana y en la noche? 👇
-Shot Científico #08 · La Creación del Robert
+Shot Científico 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Espacio #Astronautas
 ```
@@ -24,7 +24,7 @@ Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantast
 Los discos entre tus vértebras se aplastan con tu peso durante el día (en 1985, en promedio 19 mm, más de la mitad en la primera hora) y se vuelven a inflar mientras duermes. Sin gravedad que los aplaste, en la Estación Espacial los astronautas crecen hasta 3 % (NASA), y al volver regresan a su estatura normal.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya te habías medido en la mañana y en la noche? 👇
-Shot Científico #08 · La Creación del Robert
+Shot Científico 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Espacio #Astronautas
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-En la noche puedes medir 2 cm menos (y en el espacio, más) 📏 | Shot Científico #08
+En la noche puedes medir 2 cm menos (y en el espacio, más) 📏 | Shot Científico 08
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - NASA. Spinal Ultrasound Investigation (ISS). https://www.nasa.gov/?p=420143
 - Green, D. A. y Scott, J. P. R. (2017). Spinal health during unloading and reloading associated with spaceflight. Frontiers in Physiology 8: 1126. https://doi.org/10.3389/fphys.2017.01126
 ¿Ya te habías medido en la mañana y en la noche? 👇
-Shot Científico #08 · La Creación del Robert
+Shot Científico 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Espacio #Ciencia
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Hoy en la noche puedes medir casi dos centímetros menos que cuando te levantaste. 📏 Los discos entre tus vértebras se aplastan con tu peso y se recuperan mientras duermes. Y en la Estación Espacial, sin peso, los astronautas crecen hasta 3 %.
 ¿Ya te habías medido en la mañana y en la noche? 👇
-Shot Científico #08 · La Creación del Robert
+Shot Científico 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Espacio
 ```
@@ -67,7 +67,7 @@ Tu estatura no es un número fijo: cambia casi 2 cm a lo largo del día.
 En 1985, un estudio midió a ocho jóvenes con precisión de un milímetro: perdían en promedio 19.3 mm entre la mañana y la noche, el 54 % en la primera hora después de levantarse. La causa está en los discos intervertebrales, que se comprimen con la carga y, según estudios de resonancia magnética (Universidad de Liverpool, 1998), recuperan volumen durante la noche, muy probablemente por agua.
 En microgravedad el efecto se invierte: la NASA reporta que los astronautas crecen hasta 3 % en misiones largas en la Estación Espacial y vuelven a su estatura al regresar. Eso tiene consecuencias prácticas, desde el dolor de espalda hasta medir a la tripulación antes de ponerse el traje para una caminata espacial.
 ¿Qué otra "medida fija" de tu vida crees que en realidad cambia durante el día?
-Shot Científico #08 · La Creación del Robert
+Shot Científico 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Fisiologia #Espacio #Divulgacion #LaCreacionDelRobert
 ```

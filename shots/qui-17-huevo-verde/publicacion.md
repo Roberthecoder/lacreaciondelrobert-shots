@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #17 · Ese anillo verde no es huevo echado a perder (sulfuro ferroso en el huevo cocido)
+# Publicación · Shot Químico 17 · Ese anillo verde no es huevo echado a perder (sulfuro ferroso en el huevo cocido)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y tranquilo: el anillo no hace daño. También puede salir si el agua de cocció
 El dibujo es esquemático.
 Fuentes: Tinkler y Soar 1920 (Biochem J) · Extensión Univ. de Nebraska-Lincoln · Extensión Univ. de Arkansas · ATSDR/CDC.
 ¿A ti también te salen verdes? 👇
-Shot Químico #17 · La Creación del Robert
+Shot Químico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #HuevoCocido #QuimicaDeLaCocina #Cocina
 ```
@@ -26,7 +26,7 @@ Al hervir, la clara suelta sulfuro de hidrógeno; llega a la yema, se junta con 
 Consejo: no lo cuezas de más y enfríalo rápido.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti también te salen verdes? 👇
-Shot Químico #17 · La Creación del Robert
+Shot Químico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #HuevoCocido #QuimicaDeLaCocina #Cocina
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese anillo verde no es huevo echado a perder 🥚 | Shot Químico #17
+Ese anillo verde no es huevo echado a perder 🥚 | Shot Químico 17
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Takahashi M. et al. (2016). Anodic Oxidative Modification of Egg White for Heat Treatment. J Agric Food Chem 64(34):6503–7. https://pubmed.ncbi.nlm.nih.gov/27518910/
 - ATSDR/CDC. ToxFAQs: Hydrogen Sulfide. https://wwwn.cdc.gov/TSP/ToxFAQs/ToxFAQsDetails.aspx?faqid=388&toxid=67
 ¿A ti también te salen verdes? 👇
-Shot Químico #17 · La Creación del Robert
+Shot Químico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #HuevoCocido
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese anillo verde de tu huevo cocido no es que esté echado a perder: es sulfuro de hierro, hecho en tu olla. 🥚 El azufre de la clara se junta con el hierro de la yema. No hace daño; para evitarlo, no lo cuezas de más y enfríalo rápido.
 ¿A ti también te salen verdes? 👇
-Shot Químico #17 · La Creación del Robert
+Shot Químico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #HuevoCocido
 ```
@@ -70,14 +70,14 @@ El anillo verde-gris del huevo cocido es química de cocina en estado puro: sulf
 Al calentarse, la clara libera sulfuro de hidrógeno a partir de sus proteínas con azufre; el gas cruza la membrana de la yema y reacciona con su hierro. En 1920, Tinkler y Soar (King's College for Women, Londres; Biochemical Journal) lo demostraron con experimentos sencillos: con 15 minutos de hervor y enfriado inmediato en agua corriente casi no apareció color; con enfriado lento, sí. Con 30 minutos, el color fue mucho más intenso y enfriar rápido ya casi no cambió el resultado.
 Más de un siglo después, el consejo de las extensiones universitarias es el mismo: no cocerlo de más y enfriarlo rápido. Y el anillo no es dañino.
 ¿Qué otro "misterio" de la cocina te gustaría ver explicado con química?
-Shot Químico #17 · La Creación del Robert
+Shot Químico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeLosAlimentos #DivulgacionCientifica #Cocina #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese anillo verde de tu huevo cocido no es que esté echado a perder: es sulfuro de hierro. El azufre de la clara + el hierro de la yema. No hace daño; no lo cuezas de más y enfríalo rápido. 🥚 Shot Químico #17 #Quimica
+Ese anillo verde de tu huevo cocido no es que esté echado a perder: es sulfuro de hierro. El azufre de la clara + el hierro de la yema. No hace daño; no lo cuezas de más y enfríalo rápido. 🥚 Shot Químico 17 #Quimica
 ```
 
 ### Threads
@@ -85,7 +85,7 @@ Ese anillo verde de tu huevo cocido no es que esté echado a perder: es sulfuro 
 Ese anillo verde de tu huevo cocido no es que esté echado a perder: es sulfuro de hierro, hecho en tu olla. 🥚
 En 1920, en Londres, vieron que con 15 minutos y agua fría casi no sale; con 30 minutos sale mucho más intenso. Y un huevo hervido 7 horas quedó con una capa de hasta un milímetro.
 ¿A ti también te salen verdes?
-Shot Químico #17 · La Creación del Robert
+Shot Químico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #33 · La medicina de un solo bebé (KJ y la edición de bases)
+# Publicación · Shot Biotecnológico 33 · La medicina de un solo bebé (KJ y la edición de bases)
 
 ## Versión narrada
 
@@ -13,7 +13,7 @@ KJ recibió su primera dosis en febrero de 2025 y dos más en marzo y abril. Sin
 El dibujo es esquemático.
 Fuentes: Musunuru et al., NEJM 2025 · CHOP 2025 y 2026 · NIH/NCATS 2025 · Gaudelli et al., Nature 2017 · FDA 2023 (completas en el comentario fijado).
 ¿Tú qué enfermedad rara conoces que podría tratarse así? 👇
-Shot Biotecnológico #33 · La Creación del Robert
+Shot Biotecnológico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CRISPR #EdicionGenetica #EnfermedadesRaras
 ```
@@ -26,7 +26,7 @@ En Filadelfia (CHOP y Penn) le diseñaron en unos seis meses un editor de bases 
 Primera dosis: febrero de 2025. Tras tres dosis, sin efectos graves, aguantó más proteína y necesitó menos medicina. En 2026 ya caminaba y hablaba. Aún lo vigilan.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú qué enfermedad rara conoces que podría tratarse así? 👇
-Shot Biotecnológico #33 · La Creación del Robert
+Shot Biotecnológico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CRISPR #EdicionGenetica #EnfermedadesRaras
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta medicina se hizo para un solo bebé 🧬 | Shot Biotecnológico #33
+Esta medicina se hizo para un solo bebé 🧬 | Shot Biotecnológico 33
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - FDA, 8 dic 2023: https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease
 - Nature's 10 (2025): https://www.nature.com/immersive/d41586-025-03848-1/index.html
 ¿Tú qué enfermedad rara conoces que podría tratarse así? 👇
-Shot Biotecnológico #33 · La Creación del Robert
+Shot Biotecnológico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CRISPR #Biotecnologia
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa medicina no se hizo para millones: se hizo para un solo bebé. 🧬 A KJ le diseñaron en unos seis meses un editor de bases que cambia una letra equivocada de su ADN, directo en su hígado. Tras tres dosis aguantó más proteína y necesitó menos medicina; en 2026 ya caminaba y hablaba.
 ¿Tú qué enfermedad rara conoces que podría tratarse así? 👇
-Shot Biotecnológico #33 · La Creación del Robert
+Shot Biotecnológico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CRISPR
 ```
@@ -73,7 +73,7 @@ En 2025, un equipo del Hospital de Niños de Filadelfia (CHOP) y la Universidad 
 En unos seis meses diseñaron y fabricaron un editor de bases a su medida (k-abe), entregado en nanopartículas de lípidos a los hepatocitos. A diferencia de la edición con corte de doble hebra, la edición de bases cambia una letra del ADN sin cortar las dos hebras. Y a diferencia de Casgevy (FDA, 2023), que edita células de la sangre fuera del cuerpo y requiere quimioterapia de alta dosis, esta edición fue dentro del cuerpo.
 Resultados reportados: tres dosis entre febrero y abril de 2025, sin efectos adversos graves, mayor tolerancia a la proteína y menos medicamento. En febrero de 2026 el hospital informó que KJ camina y habla. El seguimiento a largo plazo sigue siendo necesario.
 ¿Qué hace falta para que las terapias hechas a la medida de un solo paciente sean rutina?
-Shot Biotecnológico #33 · La Creación del Robert
+Shot Biotecnológico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #EdicionGenetica #EnfermedadesRaras #MedicinaDePrecision
 ```

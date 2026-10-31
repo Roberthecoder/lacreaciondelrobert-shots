@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #33 · Ese crac no es el plástico (barras de luz y quimioluminiscencia)
+# Publicación · Shot Químico 33 · Ese crac no es el plástico (barras de luz y quimioluminiscencia)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ No abras ni calientes barras de luz en casa.
 El dibujo es esquemático.
 Fuentes: da Silva et al. 2021 · Cairns et al. 2018 · Hoffman et al. 2002 · Bodner (Purdue) · MIT OCW · CHOP.
 ¿Tú también las metías al congelador para que duraran más? 👇
-Shot Químico #33 · La Creación del Robert
+Shot Químico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #BarrasDeLuz #Quimioluminiscencia #Ciencia
 ```
@@ -26,7 +26,7 @@ Ese crac no es el plástico: es una ampolleta de vidrio que acabas de romper ade
 Al doblarla se mezclan agua oxigenada y un éster oxalato: se forma una molécula inestable que se parte en CO₂ y le pasa su energía a un colorante, que la suelta como luz. En hielo brilla poco pero dura más; en agua caliente brilla muchísimo y se apaga pronto: el frío frena la reacción. En 2021, en la Universidad de São Paulo dieron pruebas fuertes de que esa molécula es la 1,2-dioxetanodiona. Y si te cae el líquido: irrita, lávate con agua.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú también las metías al congelador? 👇
-Shot Químico #33 · La Creación del Robert
+Shot Químico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #BarrasDeLuz #Quimioluminiscencia #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese crac no es el plástico 💚 | Shot Químico #33
+Ese crac no es el plástico 💚 | Shot Químico 33
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - University of Washington. Kinetics of Light Sticks. https://chem.washington.edu/lecture-demos/kinetics-light-sticks
 - Children's Hospital of Philadelphia, Poison Control Center. Glow Sticks. https://www.chop.edu/centers-programs/poison-control-center/glow-sticks
 ¿Tú también las metías al congelador para que duraran más? 👇
-Shot Químico #33 · La Creación del Robert
+Shot Químico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #BarrasDeLuz
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese crac no es el plástico: es una ampolleta de vidrio que acabas de romper adentro. 💚 Al mezclarse agua oxigenada y un oxalato, la energía de la reacción pasa a un colorante que la suelta como luz. En frío brilla menos pero dura más; en caliente brilla más y se apaga pronto.
 ¿Tú también las metías al congelador? 👇
-Shot Químico #33 · La Creación del Robert
+Shot Químico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #BarrasDeLuz
 ```
@@ -74,14 +74,14 @@ En una barra de luz, el agua oxigenada oxida a un éster oxalato y se forma un i
 Lo interesante es que la identidad de ese intermediario seguía sin confirmarse: en 2021, un equipo de la Universidad de São Paulo (da Silva et al., J Org Chem) presentó pruebas de que es la 1,2-dioxetanodiona.
 Un dato de salud pública: el centro toxicológico de Nueva Gales del Sur (Cairns et al., Med J Aust, 2018) contó 2,918 exposiciones en 4 años, 94 % en niños, con pico en diciembre y complicaciones muy raras.
 ¿Qué otro objeto cotidiano esconde una reacción química que casi nadie conoce?
-Shot Químico #33 · La Creación del Robert
+Shot Químico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Quimioluminiscencia #DivulgacionCientifica #Ciencia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese crac no es el plástico: es una ampolleta de vidrio. Agua oxigenada + oxalato + colorante = luz. En hielo dura más; en agua caliente brilla más y se apaga pronto. 💚 Shot Químico #33 #Quimica
+Ese crac no es el plástico: es una ampolleta de vidrio. Agua oxigenada + oxalato + colorante = luz. En hielo dura más; en agua caliente brilla más y se apaga pronto. 💚 Shot Químico 33 #Quimica
 ```
 
 ### Threads
@@ -89,7 +89,7 @@ Ese crac no es el plástico: es una ampolleta de vidrio. Agua oxigenada + oxalat
 Ese crac no es el plástico: es una ampolleta de vidrio que acabas de romper adentro. 💚
 El agua oxigenada y un oxalato forman una molécula inestable que le pasa su energía a un colorante, y ese colorante brilla. En frío dura más; en caliente brilla más y se apaga pronto.
 ¿Tú también las metías al congelador?
-Shot Químico #33 · La Creación del Robert
+Shot Químico 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

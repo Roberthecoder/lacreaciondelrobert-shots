@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #37 · Esa milanesa no es de pollo: la "carne" de hongo (micoproteína)
+# Publicación · Shot Fungi Mati 37 · Esa milanesa no es de pollo: la "carne" de hongo (micoproteína)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Dato extra: un tercio de su fibra es quitina, la misma que hay en el caparazón 
 El dibujo es esquemático. No es consejo de nutrición ni publicidad.
 Fuentes: Finnigan et al. 2019; Wiebe 2004; Okeudo-Cogan et al. 2023; Monteyne et al. 2020; Izadi et al. 2025.
 ¿Tú te comerías una milanesa de hongo? 👇
-Shot Fungi Mati #37 · La Creación del Robert
+Shot Fungi Mati 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Micoproteina #CienciaDeLosAlimentos
 ```
@@ -26,7 +26,7 @@ Esa milanesa no es de pollo: es de hongo, hecha de hilos que tus ojos no pueden 
 La micoproteína sale de Fusarium venenatum, un hongo microscópico que se encontró en un campo de Inglaterra y hoy crece en tanques de fermentación. Sus hifas (3 a 5 milésimas de milímetro de grueso) se juntan en fibras parecidas a las del músculo: por eso se siente como carne. Y un tercio de su fibra es quitina, la misma del caparazón del camarón.
 El dibujo es esquemático. No es consejo de nutrición ni publicidad. Fuentes en el primer comentario.
 ¿Tú te comerías una milanesa de hongo? 👇
-Shot Fungi Mati #37 · La Creación del Robert
+Shot Fungi Mati 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Micoproteina #CienciaDeLosAlimentos
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta "carne" es un HONGO: así se hace la micoproteína 🍄 | Shot Fungi Mati #37
+Esta "carne" es un HONGO: así se hace la micoproteína 🍄 | Shot Fungi Mati 37
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Monteyne, A. J. et al. (2020). Mycoprotein ingestion stimulates protein synthesis rates to a greater extent than milk protein in rested and exercised skeletal muscle of healthy young men. Am J Clin Nutr 112(2): 318–333. https://pubmed.ncbi.nlm.nih.gov/32438401/
 - Izadi, H., Asadi, H. y Bemani, M. (2025). Chitin: a comparison between its main sources. Frontiers in Materials 12: 1537067. https://www.frontiersin.org/journals/materials/articles/10.3389/fmats.2025.1537067/full
 ¿Tú te comerías una milanesa de hongo? 👇
-Shot Fungi Mati #37 · La Creación del Robert
+Shot Fungi Mati 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Micoproteina #FungiMati
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa milanesa no es de pollo: es de hongo. 🍄 La micoproteína sale de Fusarium venenatum, un hongo microscópico que crece en tanques de fermentación; sus hilos (hifas) se juntan en fibras parecidas a las del músculo, y por eso se siente como carne.
 ¿Tú te comerías una milanesa de hongo? 👇
-Shot Fungi Mati #37 · La Creación del Robert
+Shot Fungi Mati 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micoproteina
 ```
@@ -72,7 +72,7 @@ Una proteína que no se cosecha ni se cría: se fermenta.
 La micoproteína se produce con el hongo filamentoso Fusarium venenatum, encontrado en un campo de Buckinghamshire (Reino Unido) tras analizar más de 3,000 organismos del suelo. Crece en fermentación continua con glucosa y amonio, se trata con calor para reducir su ARN (condición con la que las pruebas de seguridad mostraron que puede consumirse) y su textura viene de las propias hifas, filamentos de 3–5 µm que pueden ordenarse en fibras análogas a las del músculo (Okeudo-Cogan et al., 2023).
 En 2020, un ensayo de la Universidad de Exeter con 20 hombres jóvenes entrenados encontró que una toma de micoproteína aumentó la síntesis de proteína muscular más que una de proteína de leche con igual leucina (Monteyne et al., Am J Clin Nutr). Matiz importante: una sola toma, más proteína total en la de hongo y un coautor de la empresa productora.
 ¿Crees que las proteínas de fermentación van a llegar a la mesa en México?
-Shot Fungi Mati #37 · La Creación del Robert
+Shot Fungi Mati 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Biotecnologia #Alimentos #Ciencia
 ```
@@ -85,7 +85,7 @@ Esa milanesa no es de pollo: es de hongo. 🍄 La micoproteína son hifas de Fus
 ### Threads
 ```text
 Esa milanesa no es de pollo: es de hongo, hecha de hilos que tus ojos no pueden ver. 🍄 La micoproteína crece en tanques de fermentación y sus hifas se juntan en fibras parecidas a las del músculo. Y un tercio de su fibra es quitina, como el caparazón del camarón. ¿Te la comerías?
-Shot Fungi Mati #37 · La Creación del Robert
+Shot Fungi Mati 37 · La Creación del Robert
 #Hongos
 ```
 

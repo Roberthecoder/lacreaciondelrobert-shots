@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #16 · Tu salsa de soya la cocinó un hongo: el koji
+# Publicación · Shot Fungi Mati 16 · Tu salsa de soya la cocinó un hongo: el koji
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Un estudio de 2006 en Japón revisó 210 cepas de koji: tienen copias de los gen
 El dibujo es esquemático.
 Fuentes: Ito y Matsuyama 2021 (J. Fungi); Tominaga et al. 2006 (Appl. Environ. Microbiol.); Machida et al. 2005 (Nature); Yamashita 2021 (J. Fungi).
 ¿Tú con qué le pones salsa de soya? 👇
-Shot Fungi Mati #16 · La Creación del Robert
+Shot Fungi Mati 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Koji #SalsaDeSoya
 ```
@@ -24,7 +24,7 @@ Esa salsa negra que le pones al sushi no es solo soya: la cocinó un hongo. 🍣
 El koji (Aspergillus oryzae o A. sojae) crece 2–3 días sobre soya cocida y trigo tostado y suelta enzimas que cortan las proteínas en aminoácidos, como el glutamato (umami), y el almidón en azúcares. En la salmuera el hongo muere, pero sus enzimas, bacterias lácticas y levaduras siguen trabajando durante meses. El color sale de azúcares y aminoácidos que reaccionan. Y aunque es primo de Aspergillus flavus, el koji no hace aflatoxinas: sus genes del veneno están apagados o incompletos (estudio de 210 cepas, Japón, 2006). En 2006 la Brewing Society of Japan lo nombró hongo nacional.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú con qué le pones salsa de soya? 👇
-Shot Fungi Mati #16 · La Creación del Robert
+Shot Fungi Mati 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Koji #SalsaDeSoya
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu salsa de soya la cocinó un HONGO 🍄 | Shot Fungi Mati #16
+Tu salsa de soya la cocinó un HONGO 🍄 | Shot Fungi Mati 16
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - Yamashita, H. (2021). Koji Starter and Koji World in Japan. J. Fungi 7(7): 569. https://pmc.ncbi.nlm.nih.gov/articles/PMC8304044/
 - Kitamoto, K. (2015). Cell biology of the Koji mold Aspergillus oryzae. Biosci. Biotechnol. Biochem. 79(6): 863–869. https://pubmed.ncbi.nlm.nih.gov/25776568/
 ¿Tú con qué le pones salsa de soya? 👇
-Shot Fungi Mati #16 · La Creación del Robert
+Shot Fungi Mati 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Koji #FungiMati
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa salsa negra que le pones al sushi no es solo soya: la cocinó un hongo. 🍣🍄 El koji (Aspergillus oryzae) suelta enzimas que convierten la soya y el trigo en aminoácidos, umami y azúcares; luego muere en la salmuera y sus enzimas, bacterias y levaduras siguen trabajando durante meses. En Japón lo nombraron hongo nacional.
 ¿Tú con qué le pones salsa de soya? 👇
-Shot Fungi Mati #16 · La Creación del Robert
+Shot Fungi Mati 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Koji
 ```
@@ -68,7 +68,7 @@ La salsa de soya es biotecnología de enzimas, y el hongo que la hace es un micr
 En la elaboración japonesa (honjozo), el moho koji (Aspergillus oryzae o A. sojae) crece 2–3 días a 30 °C sobre soya cocida y trigo tostado y produce proteasas y amilasas. En la salmuera (22–23 % de sal) el moho muere, pero sus enzimas siguen liberando aminoácidos —el glutamato da el umami— y azúcares, que bacterias lácticas halófilas y levaduras tolerantes a la sal fermentan durante meses (Ito y Matsuyama, J. Fungi, 2021).
 Por qué importa la seguridad: A. oryzae es pariente cercano de A. flavus, productor de aflatoxinas, pero no las produce. Un análisis de 210 cepas (Tominaga et al., 2006) encontró los genes de la aflatoxina inactivos o incompletos, y el análisis de su genoma (Machida et al., Nature, 2005) recuerda que, a diferencia de A. flavus, no produce aflatoxinas y que su largo uso en alimentos ha probado su seguridad. En 2006 la Brewing Society of Japan lo nombró hongo nacional.
 ¿Qué otro alimento fermentado te gustaría ver por dentro?
-Shot Fungi Mati #16 · La Creación del Robert
+Shot Fungi Mati 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Biotecnologia #Fermentacion #Ciencia
 ```
@@ -81,7 +81,7 @@ Tu salsa de soya la cocinó un hongo: el koji (Aspergillus oryzae) suelta enzima
 ### Threads
 ```text
 Esa salsa negra que le pones al sushi no es solo soya: la cocinó un hongo. 🍄 El koji suelta enzimas que convierten proteínas en umami y almidón en azúcares; luego muere en la salmuera y su trabajo sigue durante meses. ¿Tú con qué le pones salsa de soya?
-Shot Fungi Mati #16 · La Creación del Robert
+Shot Fungi Mati 16 · La Creación del Robert
 #Hongos
 ```
 

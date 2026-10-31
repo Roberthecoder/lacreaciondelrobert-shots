@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #11 · La saliva del lagarto que abrió el camino al Ozempic (monstruo de Gila y exendina-4)
+# Publicación · Shot Biotecnológico 11 · La saliva del lagarto que abrió el camino al Ozempic (monstruo de Gila y exendina-4)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Dato extra: come pocas veces, pero hasta un tercio de su peso en una comida.
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes: Eng et al. 1992 · Göke et al. 1993 · Holst 2007 · etiqueta FDA de Byetta · EMA (Ozempic) · Christel et al. 2007.
 ¿Qué otro animal crees que esconde una medicina? 👇
-Shot Biotecnológico #11 · La Creación del Robert
+Shot Biotecnológico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Ozempic #GLP1 #MonstruoDeGila #Diabetes
 ```
@@ -28,7 +28,7 @@ Tu GLP-1 (la hormona que le pide insulina al páncreas cuando comes) dura unos 2
 Ojo: el Ozempic no sale del lagarto; es un GLP-1 humano retocado. El lagarto abrió el camino.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué otro animal crees que esconde una medicina? 👇
-Shot Biotecnológico #11 · La Creación del Robert
+Shot Biotecnológico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Ozempic #GLP1 #MonstruoDeGila
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La medicina que salió de la saliva de un lagarto 🦎 | Shot Biotecnológico #11
+La medicina que salió de la saliva de un lagarto 🦎 | Shot Biotecnológico 11
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - EMA, Ozempic: información de producto. https://www.ema.europa.eu/en/documents/product-information/ozempic-epar-product-information_en.pdf
 - Christel C.M., DeNardo D.F., Secor S.M. (2007). J Exp Biol 210:3430–9. https://pubmed.ncbi.nlm.nih.gov/17872997/
 ¿Qué otro animal crees que esconde una medicina? 👇
-Shot Biotecnológico #11 · La Creación del Robert
+Shot Biotecnológico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Ozempic
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este lagarto no es solo venenoso: su saliva trajo la primera medicina tipo Ozempic. 🦎 En 1992 se encontró en ella la exendina-4, parecida a tu hormona GLP-1 pero mucho más difícil de cortar. De ahí salió la exenatida (2005). Ojo: el Ozempic no sale del lagarto, es un GLP-1 humano retocado.
 ¿Sabías que también vive en Sonora? 👇
-Shot Biotecnológico #11 · La Creación del Robert
+Shot Biotecnológico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Ozempic
 ```
@@ -72,14 +72,14 @@ La familia de medicamentos GLP-1 tiene un antecesor inesperado: la saliva veneno
 El GLP-1 humano estimula la secreción de insulina, pero la DPP-4 lo inactiva en minutos. En 1992, John Eng (VA Medical Center, Bronx) aisló del veneno de Heloderma suspectum la exendina-4, un péptido de 39 aminoácidos que activa el receptor del GLP-1 (Göke et al., 1993) y que, por una glicina en la posición 2, resiste mucho más a la DPP-4. Esa molécula llevó a la exenatida (Byetta), aprobada por la FDA en 2005 como el primer agonista del receptor de GLP-1, hoy fabricada como péptido sintético.
 Precisión importante: la semaglutida (Ozempic) no deriva de la molécula del lagarto; es un análogo del GLP-1 humano (94 % de homología), aprobado en 2017. Lo que hizo el lagarto fue demostrar que una versión resistente a la DPP-4 podía funcionar como medicamento.
 ¿Qué otras moléculas de animales venenosos crees que lleguen a la farmacia?
-Shot Biotecnológico #11 · La Creación del Robert
+Shot Biotecnológico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Farmacologia #Diabetes #GLP1 #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Este lagarto no es solo venenoso: en su saliva estaba la exendina-4, de la que salió la exenatida (2005), la primera medicina tipo Ozempic. Ojo: el Ozempic es un GLP-1 humano retocado. 🦎 Shot Biotecnológico #11 #Biotecnologia
+Este lagarto no es solo venenoso: en su saliva estaba la exendina-4, de la que salió la exenatida (2005), la primera medicina tipo Ozempic. Ojo: el Ozempic es un GLP-1 humano retocado. 🦎 Shot Biotecnológico 11 #Biotecnologia
 ```
 
 ### Threads
@@ -87,7 +87,7 @@ Este lagarto no es solo venenoso: en su saliva estaba la exendina-4, de la que s
 Este lagarto no es solo venenoso: su saliva trajo la primera medicina tipo Ozempic. 🦎
 Tu GLP-1 dura unos 2 minutos; la exendina-4 del monstruo de Gila casi no se puede cortar. De ahí salió la exenatida en 2005. El Ozempic, en cambio, es un GLP-1 humano retocado.
 ¿Qué otro animal crees que esconde una medicina?
-Shot Biotecnológico #11 · La Creación del Robert
+Shot Biotecnológico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #34 · Una nube pesa como cien elefantes
+# Publicación · Shot Científico 34 · Una nube pesa como cien elefantes
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Así que esa nube no es algodón: es el agua de cien elefantes, flotando sobre t
 El dibujo es esquemático.
 Fuentes: USGS; Peggy LeMone vía Mental Floss (2013); Scientific American; Stull, Practical Meteorology; NASA Glenn.
 ¿Alguna vez pensaste que una nube pesaba algo? 🤔 👇
-Shot Científico #34 · La Creación del Robert
+Shot Científico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Nubes #Clima #Fisica
 ```
@@ -27,7 +27,7 @@ Una nube cúmulo típica tiene unas 500 toneladas de agua (la cuenta de la meteo
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Alguna vez pensaste que una nube pesaba algo? 🤔 👇
-Shot Científico #34 · La Creación del Robert
+Shot Científico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Nubes #Clima #Fisica
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Una nube pesa como cien elefantes ☁️ | Shot Científico #34
+Una nube pesa como cien elefantes ☁️ | Shot Científico 34
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Stull, R. Practical Meteorology, cap. 7: Collision and Collection (LibreTexts). https://geo.libretexts.org/Bookshelves/Meteorology_and_Climate_Science/Practical_Meteorology_(Stull)/07%3A_Precipitation_Processes/7.06%3A_Collision_and_Collection
 - NASA Glenn. Earth Atmosphere Model – Metric Units. https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html
 ¿Alguna vez pensaste que una nube pesaba algo? 🤔 👇
-Shot Científico #34 · La Creación del Robert
+Shot Científico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Nubes
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esa nube esponjosa pesa cientos de toneladas, y aun así flota. ☁️ Una nube cúmulo típica tiene unas 500 toneladas de agua: como cien elefantes sobre tu cabeza (la cuenta de la meteoróloga Peggy LeMone, 2013). No se cae porque está hecha de billones de gotitas diminutas que caen lentísimo, sostenidas por el aire que sube. Cuando se juntan y crecen, caen: eso es la lluvia.
 El dibujo es esquemático.
 ¿Alguna vez pensaste que una nube pesaba algo? 🤔 👇
-Shot Científico #34 · La Creación del Robert
+Shot Científico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -74,7 +74,7 @@ Una nube cúmulo típica, de más o menos un kilómetro por lado, contiene unas 
 No se cae porque esa masa está repartida en billones de gotitas diminutas que caen lentísimo y que las corrientes de aire ascendente bastan para sostener; además, el aire que ocupa ese mismo volumen pesa muchísimo más que el agua de la nube. La lluvia empieza cuando las gotitas chocan, se juntan y crecen hasta que el aire ya no las sostiene.
 Un buen ejemplo de cómo un número grande deja de asustar cuando se ve repartido en su volumen real.
 ¿Qué otro dato cotidiano te sorprendió cuando hiciste la cuenta?
-Shot Científico #34 · La Creación del Robert
+Shot Científico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

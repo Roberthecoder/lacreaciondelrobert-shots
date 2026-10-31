@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #28 · Esto no es gelatina (el polvo superabsorbente del pañal)
+# Publicación · Shot Químico 28 · Esto no es gelatina (el polvo superabsorbente del pañal)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Si haces el experimento: el polvo es poco tóxico pero irrita la piel y la nariz
 El dibujo es esquemático.
 Fuentes: Simões et al. 2025 (Gels) · Yang et al. 2021 (Front Chem) · Yang et al. 2024 (Polymers) · patente US 6,555,502 B1 · MIT OCW · USDA-ARS.
 ¿Tú ya sabías que lo de adentro del pañal es un polvo? 👇
-Shot Químico #28 · La Creación del Robert
+Shot Químico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Polimeros #Panal #ExperimentosCaseros
 ```
@@ -25,7 +25,7 @@ Esto no es gelatina: es un vaso de agua atrapada por el polvito de un pañal. �
 Ese polvo suele ser poliacrilato de sodio: una red de cadenas con cargas negativas y sodio. Las cargas se repelen, el sodio de adentro jala agua y los amarres impiden que se disuelva: queda gel. En 2025, en Coimbra (Portugal), el polvo de un pañal comercial absorbió unas 295 veces su peso en agua desionizada, pero solo unas 20 en orina sintética: la sal tapa las cargas. Y en 1973, en Peoria (EE. UU.), el USDA creó el Super Slurper injertando cadenas parecidas en almidón.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú ya sabías que lo de adentro del pañal es un polvo? 👇
-Shot Químico #28 · La Creación del Robert
+Shot Químico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Polimeros #Panal #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es gelatina: es el polvo de un pañal 💧 | Shot Químico #28
+Esto no es gelatina: es el polvo de un pañal 💧 | Shot Químico 28
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Cooke L. (1996). One Team, One Product — Many Uses. Agricultural Research (USDA-ARS). https://agresearchmag.ars.usda.gov/1996/may/starch
 - USDA-ARS. SuperSlurper (línea del tiempo). https://www.ars.usda.gov/oc/timeline/sslurp
 ¿Tú ya sabías que lo de adentro del pañal es un polvo? 👇
-Shot Químico #28 · La Creación del Robert
+Shot Químico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Polimeros
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es gelatina: es un vaso de agua atrapada por el polvito de un pañal. 💧 Es un polímero con cargas negativas que se repelen y estiran la red; el sodio de adentro jala el agua y los amarres impiden que se disuelva. En orina absorbe mucho menos: la sal tapa las cargas.
 ¿Tú ya sabías que lo de adentro del pañal es un polvo? 👇
-Shot Químico #28 · La Creación del Robert
+Shot Químico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Polimeros
 ```
@@ -73,14 +73,14 @@ Los superabsorbentes comerciales suelen ser poliacrilato de sodio: una red liger
 El matiz importante es la sal. En un estudio de 2025 de la Universidad de Coimbra, el polímero extraído de un pañal comercial absorbió ≈295 g/g en agua desionizada, pero ≈20 g/g en orina sintética. Los iones disueltos apantallan las cargas y eliminan el desbalance osmótico, el llamado "salt poisoning".
 La historia también es interesante: en 1973, el laboratorio del USDA en Peoria desarrolló el Super Slurper, almidón injertado con poliacrilonitrilo y saponificado; según el USDA, compuestos muy parecidos se usan hoy en productos absorbentes.
 ¿Qué otro material de uso diario esconde tanta química?
-Shot Químico #28 · La Creación del Robert
+Shot Químico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Polimeros #CienciaDeMateriales #Innovacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esto no es gelatina: es agua atrapada por el polvo de un pañal. En 2025, ese polvo absorbió ~295 veces su peso en agua pura, pero solo ~20 en orina sintética: la sal tapa sus cargas. 💧 Shot Químico #28 #Quimica
+Esto no es gelatina: es agua atrapada por el polvo de un pañal. En 2025, ese polvo absorbió ~295 veces su peso en agua pura, pero solo ~20 en orina sintética: la sal tapa sus cargas. 💧 Shot Químico 28 #Quimica
 ```
 
 ### Threads
@@ -88,7 +88,7 @@ Esto no es gelatina: es agua atrapada por el polvo de un pañal. En 2025, ese po
 Esto no es gelatina: es un vaso de agua atrapada por el polvito de un pañal. 💧
 Es poliacrilato de sodio: cadenas con cargas que se repelen y estiran la red, mientras el sodio de adentro jala el agua. En 2025, el polvo de un pañal absorbió ~295 veces su peso en agua pura y solo ~20 en orina sintética: la sal tapa las cargas.
 ¿Tú ya sabías que lo de adentro del pañal es un polvo?
-Shot Químico #28 · La Creación del Robert
+Shot Químico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

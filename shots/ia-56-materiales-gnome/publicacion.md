@@ -1,4 +1,4 @@
-# Publicación · Shot IA #56 · La IA que "descubrió" 2.2 millones de cristales
+# Publicación · Shot IA 56 · La IA que "descubrió" 2.2 millones de cristales
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Pero los críticos dicen que el método promete. Dos millones de cristales no so
 El dibujo es esquemático.
 Fuentes: Merchant et al., Nature (2023) · Szymanski et al., Nature (2023) y su corrección (2026) · Cheetham y Seshadri, Chemistry of Materials (2024).
 ¿Tú qué crees: la IA ya descubre materiales o todavía no? 👇
-Shot IA #56 · La Creación del Robert
+Shot IA 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Quimica #Materiales #CienciaEnEspañol
 ```
@@ -25,7 +25,7 @@ Una IA de Google propuso 2.2 millones de cristales nuevos. Unos químicos revisa
 GNoME (Google DeepMind, Nature 2023) calculó que unos 381,000 serían estables, y un laboratorio robot en Berkeley anunció 41 nuevos de 58 en 17 días. En 2024, químicos de Santa Bárbara encontraron muchas variaciones de lo conocido y más de 18,000 compuestos con elementos radiactivos rarísimos. En 2026, Berkeley corrigió: 36 de 57, nuevos para su base de datos, no necesariamente para la ciencia. Aun así, los críticos dicen que el método promete.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú qué crees: la IA ya descubre materiales o todavía no? 👇
-Shot IA #56 · La Creación del Robert
+Shot IA 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Quimica #Materiales #CienciaEnEspañol
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que "descubrió" 2.2 millones de cristales 💎 | Shot IA #56
+La IA que "descubrió" 2.2 millones de cristales 💎 | Shot IA 56
 ```
 Descripción:
 ```text
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Una IA de Google propuso 2.2 millones de cristales nuevos. Unos químicos revisaron 10 de los estables, al azar… y los 10 tenían la forma de cristales ya conocidos. 💎 Un laboratorio robot en Berkeley anunció 41 nuevos de 58, y en 2026 corrigió: 36 de 57, nuevos para su base de datos, no necesariamente para la ciencia. El método promete, pero falta que un químico los revise.
 ¿Tú qué crees: la IA ya descubre materiales o todavía no? 👇
-Shot IA #56 · La Creación del Robert
+Shot IA 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Quimica
 ```
@@ -71,7 +71,7 @@ La revisión de los expertos cambió el panorama. Cheetham y Seshadri (UC Santa 
 La lección no es "la IA no sirve": los críticos llaman al método prometedor. Es que la velocidad de cálculo no sustituye a la experiencia del dominio. Predecir no es descubrir hasta que alguien con criterio lo revisa.
 ¿En tu campo cómo se valida lo que propone una IA?
 Fuentes: Merchant et al., Nature 624 (2023) · Szymanski et al., Nature 624 (2023) y corrección, Nature 650 (2026) · Cheetham y Seshadri, Chem. Mater. 36 (2024).
-Shot IA #56 · La Creación del Robert
+Shot IA 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #CienciaDeMateriales #Quimica #Investigacion #LaCreacionDelRobert
 ```
@@ -86,7 +86,7 @@ Una IA de Google propuso 2.2 millones de cristales nuevos. Químicos revisaron 1
 Una IA de Google propuso 2.2 millones de cristales nuevos. Unos químicos revisaron 10 de los estables, al azar… y los 10 tenían la forma de cristales ya conocidos. 💎
 Un laboratorio robot en Berkeley anunció 41 nuevos de 58; en 2026 corrigió: 36 de 57, nuevos para su base de datos, no necesariamente para la ciencia. El método promete, pero falta química.
 ¿Tú qué crees?
-Shot IA #56 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 56 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

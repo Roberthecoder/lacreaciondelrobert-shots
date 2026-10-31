@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #35 · El mosco que trae una bacteria contra el dengue (Wolbachia)
+# Publicación · Shot Biotecnológico 35 · El mosco que trae una bacteria contra el dengue (Wolbachia)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Y no es un mosco transgénico: no se le cambian los genes, solo lleva una bacter
 El dibujo es esquemático.
 Fuentes: Utarini et al. 2021 (NEJM) · Walker et al. 2011 · Hoffmann et al. 2011 · Flores y O'Neill 2018 · Ferguson et al. 2015.
 ¿En tu colonia hay mucho mosco en temporada de lluvias? 👇
-Shot Biotecnológico #35 · La Creación del Robert
+Shot Biotecnológico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Dengue #Wolbachia #Mosquitos
 ```
@@ -28,7 +28,7 @@ Dentro del mosco, la bacteria le estorba al virus para multiplicarse. La hembra 
 En Yogyakarta, Indonesia, la soltaron en 12 de 24 zonas (2017). Resultado publicado en 2021: 77 % menos dengue con síntomas y 86 % menos hospitalizaciones por dengue. Y no es transgénico.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu colonia hay mucho mosco en temporada de lluvias? 👇
-Shot Biotecnológico #35 · La Creación del Robert
+Shot Biotecnológico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Dengue #Wolbachia #Mosquitos
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este mosco trae una bacteria que frena al dengue 🦟 | Shot Biotecnológico #35
+Este mosco trae una bacteria que frena al dengue 🦟 | Shot Biotecnológico 35
 ```
 Descripción:
 ```text
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 Ese mosco no viene a enfermarte: trae una bacteria que frena al dengue. 🦟
 Se llama Wolbachia: le estorba al virus para multiplicarse dentro del mosco y se hereda de madre a crías. En Yogyakarta, Indonesia, las zonas con estos moscos tuvieron 77 % menos dengue con síntomas (estudio publicado en 2021). Y no es transgénico.
 ¿En tu colonia hay mucho mosco en temporada de lluvias? 👇
-Shot Biotecnológico #35 · La Creación del Robert
+Shot Biotecnológico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Dengue #Biotecnologia #LaCreacionDelRobert
 ```
@@ -74,7 +74,7 @@ Wolbachia es una bacteria que vive de forma natural en muchos insectos, pero no 
 Dentro del mosco reduce la replicación del virus, y se extiende sola por la población: se hereda por vía materna y, por incompatibilidad citoplasmática, los cruces entre machos con Wolbachia y hembras sin ella no dejan descendencia.
 La prueba más fuerte es un ensayo aleatorizado por conglomerados en Yogyakarta, Indonesia: 24 zonas, 12 con liberaciones de huevos en 2017. Publicado en 2021 en NEJM: eficacia protectora de 77.1 % contra dengue sintomático confirmado y de 86.2 % contra hospitalizaciones por dengue.
 Es biocontrol sin modificar el genoma del mosco. ¿Qué otras enfermedades transmitidas por insectos crees que podrían atacarse así?
-Shot Biotecnológico #35 · La Creación del Robert
+Shot Biotecnológico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #SaludPublica #Dengue #Wolbachia
 ```
@@ -89,7 +89,7 @@ Ese mosco no viene a enfermarte: trae una bacteria (Wolbachia) que frena al deng
 Ese mosco no viene a enfermarte: trae una bacteria que frena al dengue. 🦟
 Wolbachia le estorba al virus para multiplicarse y la mamá la hereda a sus crías en el huevo. En Yogyakarta, Indonesia, las zonas con estos moscos tuvieron 77 % menos dengue con síntomas y 86 % menos hospitalizaciones por dengue (2021).
 ¿En tu colonia hay mucho mosco?
-Shot Biotecnológico #35 · La Creación del Robert
+Shot Biotecnológico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Dengue
 ```

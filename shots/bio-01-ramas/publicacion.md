@@ -22,7 +22,7 @@ En 2004, Edgar J. DaSilva (UNESCO) juntó estos 10 colores. Los significados cam
 El dibujo es esquemático.
 Fuentes: DaSilva 2004 (Electronic Journal of Biotechnology), Kafarski 2012 (CHEMIK), Thieman y Palladino 2010, Kuddus et al. 2024 (Microbial Biotechnology).
 ¿De qué color es la biotecnología que más usas tú? 👇
-Shot Biotecnológico #01 · La Creación del Robert
+Shot Biotecnológico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #ciencia #colores
 ```
@@ -34,7 +34,7 @@ Roja = salud. Verde = campo. Blanca = industria. Amarilla = comida. Azul = mar. 
 Edgar DaSilva (UNESCO) juntó estos colores en 2004; los significados cambian un poco según el autor. Casi nunca van solos: la insulina se hace con microbios (roja) en fábricas (blanca). Y hay uno más: naranja, contarlo (Thieman y Palladino, 2010).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿De qué color es la biotecnología que más usas tú? 👇
-Shot Biotecnológico #01 · La Creación del Robert
+Shot Biotecnológico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #ciencia #colores
 ```
@@ -42,7 +42,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿De qué color es tu medicina? La biotecnología tiene arcoíris 🌈 | Shot Biotecnológico #01
+¿De qué color es tu medicina? La biotecnología tiene arcoíris 🌈 | Shot Biotecnológico 01
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Fuentes:
 - Siew, Y. Y. y Zhang, W. (2021). Downstream processing of recombinant human insulin… Bioresources and Bioprocessing.
 
 ¿De qué color es la biotecnología que más usas tú? 👇
-Shot Biotecnológico #01 · La Creación del Robert
+Shot Biotecnológico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #ciencia
 ```
@@ -67,7 +67,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esto no es un arcoíris: es todo lo que la biotecnología ya hizo por ti hoy. 🌈 Roja es salud, verde es el campo, amarilla es la comida… y casi nunca van solos: la insulina se hace con microbios en fábricas. ¿De qué color es la que más usas tú? 👇
-Shot Biotecnológico #01 · La Creación del Robert
+Shot Biotecnológico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia
 ```
@@ -79,7 +79,7 @@ La biotecnología pone a trabajar a la vida (microbios, células o sus enzimas) 
 En 2004, Edgar J. DaSilva (UNESCO) juntó estos 10 colores en el Electronic Journal of Biotechnology. Los significados cambian según el autor: en su lista, gris era fermentación clásica y morada, patentes; aquí usamos los de listas posteriores (Kafarski 2012; Thieman y Palladino 2010).
 Lo interesante para la industria: casi ningún producto vive en un solo color. La insulina humana se produce con microbios (roja) en plantas industriales (blanca).
 ¿En qué color trabaja tu sector?
-Shot Biotecnológico #01 · La Creación del Robert
+Shot Biotecnológico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Bioeconomia #Ciencia
 ```

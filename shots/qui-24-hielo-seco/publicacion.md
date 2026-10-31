@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #24 · Ese humo no es humo (hielo seco y sublimación)
+# Publicación · Shot Químico 24 · Ese humo no es humo (hielo seco y sublimación)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Por eso: nunca en un frasco o botella cerrada, nunca con la mano sin guantes, y 
 El dibujo es esquemático.
 Fuentes: CDC MMWR 2004 · Univ. of Washington EH&S · Rutgers Chemistry · Thilorier, Comptes rendus 1835.
 ¿Alguna vez lo viste en una fiesta o en un postre? 👇
-Shot Químico #24 · La Creación del Robert
+Shot Químico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #HieloSeco #Sublimacion #CienciaEnCasa
 ```
@@ -27,7 +27,7 @@ El hielo seco es CO₂ sólido a −78.5 °C que pasa directo a gas, un gas sin 
 Nunca en frasco cerrado ni en la mano sin guantes.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez lo viste en una fiesta? 👇
-Shot Químico #24 · La Creación del Robert
+Shot Químico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #HieloSeco #Sublimacion #CienciaEnCasa
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese humo no es humo 🌫️ | Shot Químico #24
+Ese humo no es humo 🌫️ | Shot Químico 24
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Rutgers University, Chemistry. Fog Formation (demo 1029). https://chem.rutgers.edu/cldf-demos/1029-cldf-demo-fog-formation
 - Thilorier (1835). Solidification de l'Acide carbonique. Comptes rendus de l'Académie des sciences, t. 1, pp. 194–196. https://archive.org/details/comptesrendusheb01acad
 ¿Alguna vez lo viste en una fiesta o en un postre? 👇
-Shot Químico #24 · La Creación del Robert
+Shot Químico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #HieloSeco
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese humo no es humo: es el agua de tu propio aire, hecha nube por el frío del hielo seco. 🌫️ El hielo seco es CO₂ sólido a −78.5 °C que pasa directo a gas, un gas invisible que en lugares cerrados desplaza el oxígeno. Nunca en un frasco cerrado ni en la mano sin guantes.
 ¿Alguna vez lo viste en una fiesta? 👇
-Shot Químico #24 · La Creación del Robert
+Shot Químico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #HieloSeco
 ```
@@ -69,14 +69,14 @@ La "neblina" del hielo seco no es dióxido de carbono: es vapor de agua del aire
 El hielo seco (CO₂ sólido, −78.5 °C) se sublima: una libra libera unos 250 litros de gas, capaz de desplazar el oxígeno en espacios cerrados o sin ventilación. El CDC documentó en 2004, en Alabama, el caso de un hombre que perdió el conocimiento al transportar 100 libras de hielo seco en la cabina cerrada de su camioneta con el aire recirculando; despertó al abrirse la puerta. Y el riesgo de presión se conoce desde 1835, cuando Thilorier reportó a la Academia de Ciencias de París que el CO₂ sólido en un frasco hermético hacía saltar el tapón.
 Las reglas son simples: recipientes que ventilen (nunca herméticos), guantes térmicos o pinzas, poca cantidad y buena ventilación.
 ¿En tu trabajo o laboratorio se capacita sobre los riesgos del hielo seco?
-Shot Químico #24 · La Creación del Robert
+Shot Químico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SeguridadQuimica #HieloSeco #Laboratorio #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese humo no es humo: es el agua del aire hecha nube por el frío del hielo seco. El CO₂ no se ve, y en un lugar cerrado desplaza el oxígeno: en 2004 un hombre se desmayó en su camioneta. 🌫️ Shot Químico #24 #Quimica
+Ese humo no es humo: es el agua del aire hecha nube por el frío del hielo seco. El CO₂ no se ve, y en un lugar cerrado desplaza el oxígeno: en 2004 un hombre se desmayó en su camioneta. 🌫️ Shot Químico 24 #Quimica
 ```
 
 ### Threads
@@ -84,7 +84,7 @@ Ese humo no es humo: es el agua del aire hecha nube por el frío del hielo seco.
 Ese humo no es humo: es el agua de tu propio aire, hecha nube por el frío del hielo seco. 🌫️🧊
 El hielo seco es CO₂ sólido a −78.5 °C que pasa directo a gas. Ese gas no se ve, y casi medio kilo suelta unos 250 litros: nunca en un frasco cerrado ni en un carro sin ventilar.
 ¿Alguna vez lo viste en una fiesta?
-Shot Químico #24 · La Creación del Robert
+Shot Químico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

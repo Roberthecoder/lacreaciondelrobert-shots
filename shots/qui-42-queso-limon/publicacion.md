@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #42 · Esa leche no se echó a perder: es queso (leche + limón + calor)
+# Publicación · Shot Químico 42 · Esa leche no se echó a perder: es queso (leche + limón + calor)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Cuidado: la leche caliente quema; usa agarradera.
 El dibujo es esquemático.
 Fuentes: Głąb y Boratyński 2017 · Müller-Buschbaum et al. 2007 · Khan y Pal 2011 · Penniston et al. 2008 · Salque et al. 2013 (Nature).
 ¿Tú con qué cuajas la leche: limón o vinagre? 👇
-Shot Químico #42 · La Creación del Robert
+Shot Químico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Queso #Cocina #CienciaEnCasa
 ```
@@ -27,7 +27,7 @@ La caseína (el 80 % de las proteínas de la leche de vaca) viaja en micelas con
 Cuidado: la leche caliente quema.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú con qué cuajas la leche: limón o vinagre? 👇
-Shot Químico #42 · La Creación del Robert
+Shot Químico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Queso #Cocina #CienciaEnCasa
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa leche no se echó a perder: es queso 🍋🧀 | Shot Químico #42
+Esa leche no se echó a perder: es queso 🍋🧀 | Shot Químico 42
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - Salque M. et al. (2013). Earliest evidence for cheese making in the sixth millennium BC in northern Europe. Nature 493:522–525. https://pubmed.ncbi.nlm.nih.gov/23235824/
 - Science News (2012). Pots bear oldest signs of cheese making. https://www.sciencenews.org/article/pots-bear-oldest-signs-cheese-making
 ¿Tú con qué cuajas la leche: limón o vinagre? 👇
-Shot Químico #42 · La Creación del Robert
+Shot Químico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Queso
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa leche no se echó a perder: le pusiste limón y la convertiste en queso. 🍋🧀 La caseína de la leche viaja en bolitas con carga negativa que se repelen; el ácido les quita la carga y se pegan en cuajos. Lo que escurre es el suero.
 ¿Tú con qué cuajas la leche: limón o vinagre? 👇
-Shot Químico #42 · La Creación del Robert
+Shot Químico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Queso
 ```
@@ -74,14 +74,14 @@ Esa leche no se echó a perder: el limón la convirtió en queso. Detrás hay qu
 La caseína, el 80 % de las proteínas de la leche de vaca, forma micelas estabilizadas por una capa de κ-caseína con carga negativa. Al acidificar, esa carga se neutraliza y, cerca del punto isoeléctrico (pH 4.6–4.8), las micelas se agregan: así se forman los cuajos de los quesos de ácido. Con calor (80–85 °C), como en el paneer, la leche de vaca cuaja ya en pH 5.2 y las proteínas del suero, desnaturalizadas, precipitan con la caseína en vez de perderse, lo que aprovecha más sólidos de la leche (rendimiento de 17–18 %).
 Y no es nuevo: en 2012, un equipo de la Universidad de Bristol publicó en Nature residuos de grasa de leche en coladeras de barro neolíticas de Polonia, de unos 7 mil años, que interpretó como evidencia de elaboración de queso con menos lactosa.
 ¿Qué otro proceso de cocina diario es, en el fondo, química de proteínas?
-Shot Químico #42 · La Creación del Robert
+Shot Químico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeAlimentos #Lacteos #Queso #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esa leche no se echó a perder: es queso. El ácido del limón le quita la carga negativa a las micelas de caseína y, cerca de pH 4.6, se pegan en cuajos. 🍋🧀 Shot Químico #42 #Quimica
+Esa leche no se echó a perder: es queso. El ácido del limón le quita la carga negativa a las micelas de caseína y, cerca de pH 4.6, se pegan en cuajos. 🍋🧀 Shot Químico 42 #Quimica
 ```
 
 ### Threads
@@ -89,7 +89,7 @@ Esa leche no se echó a perder: es queso. El ácido del limón le quita la carga
 Esa leche no se echó a perder: le pusiste limón y la convertiste en queso. 🍋🧀
 La caseína viaja en micelas con carga negativa que se repelen; el ácido les quita la carga y, cerca de pH 4.6, se pegan en cuajos. Y en 2012, químicos de Bristol hallaron grasa de leche en coladeras de barro de unos 7 mil años.
 ¿Tú con qué cuajas la leche: limón o vinagre?
-Shot Químico #42 · La Creación del Robert
+Shot Químico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #01 · Día de Muertos · Ambiental: Las mariposas que llegan en Día de Muertos
+# Publicación · Shot Festivo 01 · Día de Muertos · Ambiental: Las mariposas que llegan en Día de Muertos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 1 nov 2026.
 
@@ -15,7 +15,7 @@ Esta nube naranja es una visita que hay que cuidar cada año.
 El dibujo es esquemático.
 Fuentes: WWF y CONANP (mar 2026) · EarthDate (Univ. de Texas en Austin) · Monarch Watch 2020 · Merlin et al., Science 2009.
 ¿Ya las viste en persona? ¿En tu pueblo también dicen que traen a los difuntos? 👇
-Shot Festivo #01 · Día de Muertos · Ambiental · La Creación del Robert
+Shot Festivo 01 · Día de Muertos · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #DiaDeMuertos #MariposaMonarca
 ```
@@ -26,7 +26,7 @@ Esta nube naranja no son hojas: son mariposas monarca, y llegan a México por D�
 Vienen de Canadá y Estados Unidos a los bosques de oyamel de Michoacán y el Estado de México, y ninguna ha hecho el viaje antes: suele ser bisnieta o tataranieta de las que se fueron en primavera. Se orientan con el Sol y un reloj en las antenas. En el invierno 2025–2026 cubrieron 2.93 hectáreas (64 % más que el año anterior), pero en 1996–1997 fueron 18.19: seis veces más. Las amenazan la tala ilegal, la pérdida del algodoncillo y el clima extremo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu pueblo también dicen que traen a los difuntos? 👇
-Shot Festivo #01 · Día de Muertos · Ambiental · La Creación del Robert
+Shot Festivo 01 · Día de Muertos · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #DiaDeMuertos #MariposaMonarca
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-No son hojas: son monarcas que llegan en Día de Muertos 🦋 | Shot Festivo #01
+No son hojas: son monarcas que llegan en Día de Muertos 🦋 | Shot Festivo 01
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Merlin, Gegear y Reppert (2009), Science: https://pmc.ncbi.nlm.nih.gov/articles/PMC2754321/
 - Monarch Watch (Chip Taylor, 2020), generaciones de la migración: "Most butterflies in the fall migration represent 3rd and 4th generations": https://monarchwatch.org/blog/?p=2254
 ¿Ya las viste en persona? 👇
-Shot Festivo #01 · Día de Muertos · Ambiental · La Creación del Robert
+Shot Festivo 01 · Día de Muertos · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #MariposaMonarca #DiaDeMuertos
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta nube naranja no son hojas: son mariposas monarca, y llegan a México por Día de Muertos. 🦋 En el invierno 2025–2026 cubrieron 2.93 hectáreas de bosque; en 1996–1997 fueron 18.19: seis veces más. Hay que cuidarlas.
 ¿En tu pueblo también dicen que traen a los difuntos? 👇
-Shot Festivo #01 · Día de Muertos · Ambiental · La Creación del Robert
+Shot Festivo 01 · Día de Muertos · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #DiaDeMuertos #MariposaMonarca
 ```
@@ -69,19 +69,19 @@ Las mariposas monarca llegan a México por Día de Muertos, y su conteo es un te
 Como son demasiadas para contarlas una por una, WWF y la CONANP miden cuánto bosque de oyamel cubren en Michoacán y el Estado de México. En el invierno 2025–2026 fueron 2.93 hectáreas, 64 % más que el año anterior. Es una buena noticia, pero lejana del máximo de 18.19 hectáreas de 1996–1997: seis veces más.
 Las amenazas están documentadas: tala ilegal en los bosques de invernación, pérdida del algodoncillo (el único tipo de planta que comen sus orugas) y clima extremo. Cuidar su viaje exige trabajo en tres países: Canadá, Estados Unidos y México.
 ¿Qué acciones locales crees que tienen más impacto para su conservación?
-Shot Festivo #01 · Día de Muertos · Ambiental · La Creación del Robert
+Shot Festivo 01 · Día de Muertos · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #MariposaMonarca #Conservacion #DiaDeMuertos
 ```
 
 ### X
 ```text
-Esta nube naranja no son hojas: son mariposas monarca 🦋 En el invierno 2025–26 cubrieron 2.93 ha de bosque en México; en 1996–97, 18.19 ha: seis veces más. Shot Festivo #01 #DiaDeMuertos #MariposaMonarca
+Esta nube naranja no son hojas: son mariposas monarca 🦋 En el invierno 2025–26 cubrieron 2.93 ha de bosque en México; en 1996–97, 18.19 ha: seis veces más. Shot Festivo 01 #DiaDeMuertos #MariposaMonarca
 ```
 
 ### Threads
 ```text
-Esta nube naranja no son hojas: son mariposas monarca, y llegan a México por Día de Muertos. 🦋 Ninguna ha hecho el viaje antes: suele ser bisnieta o tataranieta de las que se fueron en primavera. En el invierno 2025–2026 cubrieron 2.93 hectáreas; en 1996–1997, 18.19. ¿Ya las viste en persona? Shot Festivo #01 · Soy Robert, de La Creación del Robert 🌱 #MariposaMonarca
+Esta nube naranja no son hojas: son mariposas monarca, y llegan a México por Día de Muertos. 🦋 Ninguna ha hecho el viaje antes: suele ser bisnieta o tataranieta de las que se fueron en primavera. En el invierno 2025–2026 cubrieron 2.93 hectáreas; en 1996–1997, 18.19. ¿Ya las viste en persona? Shot Festivo 01 · Soy Robert, de La Creación del Robert 🌱 #MariposaMonarca
 ```
 
 ## Comentario fijado (fuentes)

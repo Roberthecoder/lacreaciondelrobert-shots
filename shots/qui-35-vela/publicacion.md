@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #35 · Esa vela no quema la cera que ves (quema cera hecha vapor)
+# Publicación · Shot Químico 35 · Esa vela no quema la cera que ves (quema cera hecha vapor)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo curioso: en microgravedad, sin aire caliente que suba, la llama de una vela e
 El dibujo es esquemático.
 Fuentes: Faraday, The Chemical History of a Candle (1861) · NASA (2020).
 ¿Tú ya sabías que lo que arde es el vapor? 👇
-Shot Químico #35 · La Creación del Robert
+Shot Químico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Vela #Faraday #Ciencia
 ```
@@ -26,7 +26,7 @@ La cera se derrite en una copita, sube por la mecha por capilaridad, se vuelve v
 ⚠️ Es fuego de verdad, no un juego.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú ya sabías que lo que arde es el vapor? 👇
-Shot Químico #35 · La Creación del Robert
+Shot Químico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Vela #Faraday #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa vela no quema la cera que ves 🕯️ | Shot Químico #35
+Esa vela no quema la cera que ves 🕯️ | Shot Químico 35
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - Faraday M. (1861/1865). A course of six lectures on the chemical history of a candle ("Delivered before a juvenile auditory at the Royal Institution of Great Britain during the Christmas holidays of 1860-1"). Internet Archive. https://archive.org/details/19991842.5823.emory.edu
 - NASA (2020). Candle Flame – 1g vs Microgravity. https://www.nasa.gov/image-article/candle-flame-1g-vs-microgravity/
 ¿Tú ya sabías que lo que arde es el vapor? 👇
-Shot Químico #35 · La Creación del Robert
+Shot Químico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Vela
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa vela no está quemando la cera sólida que ves: está quemando cera hecha vapor. 🕯️ La cera se derrite, sube por la mecha por capilaridad, se vuelve vapor y ese vapor es lo que arde. Lo amarillo es hollín que brilla de tan caliente. ⚠️ Es fuego de verdad, no un juego. El dibujo es esquemático.
 ¿Tú ya sabías que lo que arde es el vapor? 👇
-Shot Químico #35 · La Creación del Robert
+Shot Químico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Vela
 ```
@@ -68,14 +68,14 @@ La llama derrite la cera, la mecha la sube por capilaridad y el calor la evapora
 Y un contraste moderno: según la NASA, en microgravedad, sin convección, la llama de una vela es esférica, azul y sin hollín.
 ¿Qué objeto cotidiano usarías tú para explicar una idea científica?
 El dibujo es esquemático.
-Shot Químico #35 · La Creación del Robert
+Shot Químico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #DivulgacionCientifica #Faraday #Educacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esa vela no quema la cera sólida: quema cera hecha vapor. En 1860–61, Faraday sacó ese vapor de la llama con un tubito de vidrio y lo prendió en la otra punta. 🕯️ Shot Químico #35 #Quimica
+Esa vela no quema la cera sólida: quema cera hecha vapor. En 1860–61, Faraday sacó ese vapor de la llama con un tubito de vidrio y lo prendió en la otra punta. 🕯️ Shot Químico 35 #Quimica
 ```
 
 ### Threads
@@ -84,7 +84,7 @@ Esa vela no está quemando la cera sólida que ves: está quemando cera hecha va
 La cera se derrite, sube por la mecha por capilaridad y se vuelve vapor; ese vapor es lo que arde. Y en microgravedad, la llama es redonda, azul y sin hollín.
 ¿Tú ya sabías que lo que arde es el vapor?
 El dibujo es esquemático.
-Shot Químico #35 · La Creación del Robert
+Shot Químico 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

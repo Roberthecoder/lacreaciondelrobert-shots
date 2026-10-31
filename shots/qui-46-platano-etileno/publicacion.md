@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #46 · El plátano que madura a la fruta de al lado (etileno)
+# Publicación · Shot Químico 46 · El plátano que madura a la fruta de al lado (etileno)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Lo curioso: los plátanos de exportación se cortan verdes, y al llegar los madu
 El dibujo es esquemático.
 Fuentes: Hao et al. 2025 · Binder 2020 · Paul et al. 2012 · Kader et al. (UC) · EFSA 2021.
 ¿Tú también maduras el aguacate en bolsa de papel? 👇
-Shot Químico #46 · La Creación del Robert
+Shot Químico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Etileno #Platano #Aguacate #CienciaEnLaCocina
 ```
@@ -27,7 +27,7 @@ Es etileno (C₂H₄), la hormona vegetal más simple: la fruta de al lado lo re
 Neljubov (1901, San Petersburgo) lo descubrió en el gas de alumbrado; Gane (1934, Cambridge) probó que la fruta lo fabrica. Y los plátanos de exportación viajan verdes y los maduran en cuartos con etileno.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú también maduras el aguacate en bolsa de papel? 👇
-Shot Químico #46 · La Creación del Robert
+Shot Químico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Etileno #Platano #Aguacate
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu plátano está madurando a la fruta de al lado 🍌 | Shot Químico #46
+Tu plátano está madurando a la fruta de al lado 🍌 | Shot Químico 46
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - Gane R. (1934). Production of ethylene by some ripening fruits. Nature 134:1008. https://doi.org/10.1038/1341008a0
 - EFSA Panel on Plant Health (2021). Scientific opinion on the import of Musa fruits as a pathway for the entry of non-EU Tephritidae into the EU territory. EFSA Journal 19(3):e06426. https://pmc.ncbi.nlm.nih.gov/articles/PMC7938759/
 ¿Tú también maduras el aguacate en bolsa de papel? 👇
-Shot Químico #46 · La Creación del Robert
+Shot Químico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Etileno
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese plátano maduro no está quieto: suelta un gas que madura a la fruta de al lado. 🍌💨 Se llama etileno y es una hormona: por eso el aguacate madura antes en bolsa de papel con una manzana madura. Las uvas, en cambio, casi no maduran ya cortadas.
 ¿Tú también maduras el aguacate en bolsa de papel? 👇
-Shot Químico #46 · La Creación del Robert
+Shot Químico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Etileno
 ```
@@ -75,14 +75,14 @@ Las frutas climatéricas (plátano, manzana, aguacate) lo producen al madurar, y
 La historia es buen ejemplo de observación cuidadosa: en 1901, Neljubov (San Petersburgo) relacionó el crecimiento horizontal de plántulas de chícharo con el etileno del gas de alumbrado; en 1934, Gane (Cambridge) confirmó químicamente que la fruta lo fabrica.
 Hoy se aplica a escala industrial: los plátanos de exportación se cosechan verdes y se maduran a destino en cuartos con etileno (EFSA, 2021).
 ¿Qué otro proceso cotidiano depende de una molécula tan pequeña?
-Shot Químico #46 · La Creación del Robert
+Shot Químico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Postcosecha #Agricultura #Etileno #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese plátano maduro no está quieto: suelta etileno (C₂H₄), una hormona en forma de gas que madura a la fruta de al lado. Por eso el aguacate madura antes en bolsa de papel con una manzana. 🍌💨 Shot Químico #46 #Quimica
+Ese plátano maduro no está quieto: suelta etileno (C₂H₄), una hormona en forma de gas que madura a la fruta de al lado. Por eso el aguacate madura antes en bolsa de papel con una manzana. 🍌💨 Shot Químico 46 #Quimica
 ```
 
 ### Threads
@@ -90,7 +90,7 @@ Ese plátano maduro no está quieto: suelta etileno (C₂H₄), una hormona en f
 Ese plátano maduro no está quieto: suelta un gas que madura a la fruta de al lado. 🍌💨
 Es etileno, la hormona vegetal más simple. Por eso el aguacate madura antes en bolsa de papel con una manzana madura; las uvas, en cambio, casi no maduran ya cortadas.
 ¿Tú también usas la bolsa de papel?
-Shot Químico #46 · La Creación del Robert
+Shot Químico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

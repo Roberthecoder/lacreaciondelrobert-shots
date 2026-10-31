@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #12 · Cuando te truenas los dedos no se rompe nada: es una burbuja de gas
+# Publicación · Shot Científico 12 · Cuando te truenas los dedos no se rompe nada: es una burbuja de gas
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Ojo: en 2018, un modelo matemático propuso que el ruido sale cuando la burbuja 
 El dibujo es esquemático.
 Fuentes: Kawchuk et al. 2015 (PLOS ONE); Chandran Suja y Barakat 2018 (Sci. Rep.); Unger 1998 (Arthritis & Rheumatism); Ig Nobel 2009.
 ¿Te truenas los dedos? 👇
-Shot Científico #12 · La Creación del Robert
+Shot Científico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Articulaciones
 ```
@@ -27,7 +27,7 @@ El crac de tus dedos viene de una cavidad de gas que se forma en el líquido sin
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Te truenas los dedos? 👇
-Shot Científico #12 · La Creación del Robert
+Shot Científico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Articulaciones
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Cuando te truenas los dedos no se rompe nada 🫰 | Shot Científico #12
+Cuando te truenas los dedos no se rompe nada 🫰 | Shot Científico 12
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Unger, D. L. (1998). Does knuckle cracking lead to arthritis of the fingers? Arthritis & Rheumatism 41(5): 949–950.
 - Premio Ig Nobel de Medicina 2009. https://improbable.com/ig/winners/
 ¿Te truenas los dedos? 👇
-Shot Científico #12 · La Creación del Robert
+Shot Científico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese tronido de tus dedos no es un hueso que se rompe: es una burbuja de gas en el líquido de la articulación. 🫰 En 2015 lo filmaron con resonancia magnética.
 ¿Te truenas los dedos? 👇
-Shot Científico #12 · La Creación del Robert
+Shot Científico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -72,7 +72,7 @@ Soy Robert, de La Creación del Robert 🌱
 En 2015, un equipo de la Universidad de Alberta filmó el fenómeno en tiempo real con resonancia magnética: al separar la articulación, la presión del líquido sinovial cae y se forma una cavidad de gas (Kawchuk et al., PLOS ONE). En 2018, un modelo matemático (Chandran Suja y Barakat, Scientific Reports) propuso que el sonido viene del colapso parcial de esa burbuja: el debate sigue.
 Un buen ejemplo de cómo la ciencia sigue discutiendo preguntas cotidianas, incluso con tecnología de punta.
 ¿Te truenas los dedos? 👇
-Shot Científico #12 · La Creación del Robert
+Shot Científico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

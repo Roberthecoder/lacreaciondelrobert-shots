@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #54 · Tu basura de un año: casi 400 kilos, y a dónde van
+# Publicación · Shot Ambiental 54 · Tu basura de un año: casi 400 kilos, y a dónde van
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Tu pila de 400 kilos no desaparece al sacar la bolsa: casi siempre, solo cambia 
 El dibujo es esquemático.
 Fuente: SEMARNAT e INECC, Diagnóstico Básico para la Gestión Integral de los Residuos 2026.
 ¿En tu colonia pasa el camión todos los días? 👇
-Shot Ambiental #54 · La Creación del Robert
+Shot Ambiental 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Basura #Reciclaje #Mexico
 ```
@@ -25,7 +25,7 @@ Esta pila es la basura de un año de tu vida: casi 400 kilos. 🗑️
 En México tocamos a 1.076 kg de basura por persona al día (datos de 2022). El camión recoge 77 de cada 100 kilos, y de 2,250 sitios donde termina, solo 52 son rellenos sanitarios: de cada 100 kilos que llegan, solo 15 entran a uno. En todo el país, solo el 5 % de la basura recibe algún tratamiento.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu colonia pasa el camión todos los días? 👇
-Shot Ambiental #54 · La Creación del Robert
+Shot Ambiental 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Basura #Reciclaje #Mexico
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu basura de un año pesa casi 400 kilos 🗑️ ¿A dónde va? | Shot Ambiental #54
+Tu basura de un año pesa casi 400 kilos 🗑️ ¿A dónde va? | Shot Ambiental 54
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - SEMARNAT, Diagnóstico Básico para la Gestión Integral de los Residuos 2026: http://ceiba.org.mx/storage/app/media/publicaciones/semarnat/Diagn_stico_B_sico_Gesti_n_Integral_Residuos.pdf
 - SEMARNAT, comunicado del 20 de mayo de 2026: https://www.gob.mx/semarnat/prensa/semarnat-presenta-diagnostico-nacional-para-transformar-gestion-de-residuos-y-avanzar-hacia-la-economia-circular
 ¿En tu colonia pasa el camión todos los días? 👇
-Shot Ambiental #54 · La Creación del Robert
+Shot Ambiental 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Basura #Reciclaje
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu basura de un año pesa casi 400 kilos. 🗑️ En México el camión recoge 77 de cada 100 kilos, y de 2,250 sitios donde termina la basura, solo 52 son rellenos sanitarios (SEMARNAT, diagnóstico 2026 con datos de 2022).
 ¿En tu colonia pasa el camión todos los días? 👇
-Shot Ambiental #54 · La Creación del Robert
+Shot Ambiental 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Basura #Reciclaje
 ```
@@ -68,7 +68,7 @@ Cada persona en México genera, en promedio, 1.076 kg de residuos sólidos urban
 El Diagnóstico Básico para la Gestión Integral de los Residuos 2026 (SEMARNAT e INECC, con datos del Censo Nacional de Gobiernos Municipales 2023, año 2022) muestra dónde se rompe la cadena: se recolecta el 77.3 % de lo generado; de los 2,250 sitios de disposición final, solo 52 cumplen la NOM-083-SEMARNAT-2003 como rellenos sanitarios, y 84.4 % de lo que llega a disposición final va a sitios que no cumplen la regulación. Solo el 5 % de los residuos recibe algún tratamiento, aunque el 36.26 % son materiales susceptibles de aprovechamiento y el 40.15 % son orgánicos.
 Cerrar la brecha exige infraestructura regional de disposición, separación en la fuente y mercados para los materiales recuperables.
 ¿Qué eslabón crees que debería atenderse primero: recolección, separación o disposición?
-Shot Ambiental #54 · La Creación del Robert
+Shot Ambiental 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Residuos #EconomiaCircular #Mexico #LaCreacionDelRobert
 ```

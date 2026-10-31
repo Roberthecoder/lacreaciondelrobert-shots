@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #56 · Ese merengue no es solo azúcar (la espuma de proteínas de la clara)
+# Publicación · Shot Químico 56 · Ese merengue no es solo azúcar (la espuma de proteínas de la clara)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Dato curioso: el agua de cocer garbanzos (aquafaba) también hace espuma. En 202
 El dibujo es esquemático.
 Fuentes: Réhault-Godbert et al. 2019 · Alleoni 2006 · Lomakina y Míková 2006 · Berry et al. 2009 · Wang y Wang 2009 · Kargar y Hematian Sourki 2025.
 ¿A ti se te ha bajado un merengue por una gotita de yema? 👇
-Shot Químico #56 · La Creación del Robert
+Shot Químico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Merengue #CienciaEnLaCocina #Reposteria
 ```
@@ -24,7 +24,7 @@ Ese merengue no es solo azúcar: es aire atrapado por proteínas de la clara. �
 Al batir, las proteínas de la clara se pegan al borde de cada burbuja, se desdoblan en parte (lo que odia el agua hacia el aire) y se enganchan en una película elástica. El azúcar la estabiliza y el horno la deja firme. En 2009, en Iowa State, bastó 0.022 % de yema para que la clara hiciera menos espuma: la culpable es la grasa. Y el agua de cocer garbanzos también hace espuma: en Irán, un merengue con la mitad de la clara cambiada por esa agua salió igual de bueno en la cata.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti se te ha bajado un merengue por una gotita de yema? 👇
-Shot Químico #56 · La Creación del Robert
+Shot Químico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Merengue #CienciaEnLaCocina #Reposteria
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese merengue no es solo azúcar 🥚🫧 | Shot Químico #56
+Ese merengue no es solo azúcar 🥚🫧 | Shot Químico 56
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Wang T. (2009). Informe final al American Egg Board (Iowa State University). https://worldeggorganisation.com/app/uploads/2010/12/Effect-of-Yolk-Contamination-Shearing-and-Heating-on-Foaming-Properties-of-Egg-White_1.pdf
 - Kargar Z., Hematian Sourki A. (2025). Microwave-assisted extraction enhances Aquafaba functionality: A high value-added egg white replacer in vegan meringue production. Food Chem X 25:102176. https://pmc.ncbi.nlm.nih.gov/articles/PMC11786856/
 ¿A ti se te ha bajado un merengue por una gotita de yema? 👇
-Shot Químico #56 · La Creación del Robert
+Shot Químico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Merengue
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese merengue no es solo azúcar: es aire atrapado por proteínas de la clara. 🥚🫧 Al batir, las proteínas se desdoblan en la orilla de cada burbuja y se enganchan en una piel elástica. Y una pizca de yema la arruina: su grasa estorba.
 ¿A ti se te ha bajado un merengue por una gotita de yema? 👇
-Shot Químico #56 · La Creación del Robert
+Shot Químico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #CienciaEnLaCocina
 ```
@@ -71,14 +71,14 @@ Al batir, las proteínas de la clara se adsorben en la interfaz aire-agua, se de
 Lo interesante es lo frágil del sistema: Wang y Wang (Iowa State University, 2009) reportaron que una contaminación de yema de apenas 0.022 % ya reduce significativamente la capacidad y la velocidad de formar espuma; los lípidos neutros son los principales responsables. Su explicación: interfieren con las interacciones hidrofóbicas entre proteínas que forman la película.
 Y una alternativa vegetal: en 2025, en la Universidad de Jahrom (Irán), un merengue con 50 % de la clara sustituida por aquafaba (agua de cocer garbanzos) no mostró diferencias significativas en evaluación sensorial.
 ¿Qué otro proceso de cocina te gustaría ver explicado desde la química?
-Shot Químico #56 · La Creación del Robert
+Shot Químico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeAlimentos #Proteinas #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese merengue no es solo azúcar: es aire atrapado por proteínas de la clara que se desdoblan al batir. Y con solo 0.022 % de yema la clara ya hace menos espuma (Iowa State, 2009). 🥚🫧 Shot Químico #56 #Quimica
+Ese merengue no es solo azúcar: es aire atrapado por proteínas de la clara que se desdoblan al batir. Y con solo 0.022 % de yema la clara ya hace menos espuma (Iowa State, 2009). 🥚🫧 Shot Químico 56 #Quimica
 ```
 
 ### Threads
@@ -86,7 +86,7 @@ Ese merengue no es solo azúcar: es aire atrapado por proteínas de la clara que
 Ese merengue no es solo azúcar: es aire atrapado por proteínas de la clara. 🥚🫧
 Al batir, se desdoblan en el borde de cada burbuja y se enganchan en una piel elástica. Una pizca de yema la arruina: en 2009, con 0.022 % de yema la clara ya hizo menos espuma.
 ¿A ti se te ha bajado un merengue por una gotita de yema?
-Shot Químico #56 · La Creación del Robert
+Shot Químico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

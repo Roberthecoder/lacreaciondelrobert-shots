@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #15 · Tu estornudo no sale como bala
+# Publicación · Shot Científico 15 · Tu estornudo no sale como bala
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Fueron pocos voluntarios: es un estudio pequeño.
 El dibujo es esquemático.
 Fuentes: Tang et al. 2013 y 2011 (PLoS ONE); CDC.
 ¿Tú te tapas con la mano o con el codo? 👇
-Shot Científico #15 · La Creación del Robert
+Shot Científico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Salud
 ```
@@ -27,7 +27,7 @@ En 2013 filmaron con una técnica de sombras a seis voluntarios estornudando con
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú te tapas con la mano o con el codo? 👇
-Shot Científico #15 · La Creación del Robert
+Shot Científico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Salud
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu estornudo no sale como bala 🤧 | Shot Científico #15
+Tu estornudo no sale como bala 🤧 | Shot Científico 15
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Tang, J. W. et al. (2011). Qualitative real-time schlieren and shadowgraph imaging of human exhaled airflows: an aid to aerosol infection control. PLoS ONE 6(6): e21392. https://doi.org/10.1371/journal.pone.0021392
 - CDC. Coughing and Sneezing. https://www.cdc.gov/hygiene/about/coughing-and-sneezing.html
 ¿Tú te tapas con la mano o con el codo? 👇
-Shot Científico #15 · La Creación del Robert
+Shot Científico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Salud
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu estornudo no sale como bala: cuando lo filmaron, iba a lo mucho a 16 km/h. 🤧 Pero igual tápalo bien: con un pañuelo o con la parte de adentro del codo, no con la mano.
 ¿Tú te tapas con la mano o con el codo? 👇
-Shot Científico #15 · La Creación del Robert
+Shot Científico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -71,7 +71,7 @@ Un dato repetido durante décadas, que un estornudo sale a 100 m/s, venía de un
 En 2013, Tang y colaboradores filmaron estornudos con imágenes de sombras (shadowgraph): la velocidad máxima medida fue de 4.5 m/s y la nube visible llegó a 0.6 m. Su trabajo previo (2011) mostró que cubrirse con una mano contiene mal la tos y el estornudo.
 Un buen recordatorio de revisar de dónde salen los números que todos repiten, y de que la recomendación práctica (pañuelo o codo) sigue en pie.
 ¿Qué otro dato "de toda la vida" crees que nunca se midió?
-Shot Científico #15 · La Creación del Robert
+Shot Científico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

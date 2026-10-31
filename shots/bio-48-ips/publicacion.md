@@ -11,7 +11,7 @@ Lo chistoso: empezaron con 24 genes candidatos y los fueron quitando, primero a 
 El dibujo es esquemático.
 Fuentes: Takahashi y Yamanaka, Cell 2006 · Takahashi et al., Cell 2007 · Nobel 2012 · RIKEN 2014 · Sawamoto et al., Nature 2025 · Morimoto et al., Cell Stem Cell 2023.
 ¿Qué célula tuya te gustaría poder "reiniciar"? 👇
-Shot Biotecnológico #48 · La Creación del Robert
+Shot Biotecnológico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CelulasMadre #Yamanaka #Ciencia
 ```
@@ -23,7 +23,7 @@ En 2006, en Kioto, Shinya Yamanaka y Kazutoshi Takahashi metieron solo cuatro ge
 En 2014, en Kobe, a una mujer le pusieron en el ojo una lámina de retina hecha con su propia piel. En Kioto, siete pacientes con párkinson recibieron precursores de neuronas hechos con iPS: en 2025 se publicó que produjeron dopamina y no formaron tumores (ensayo pequeño, todavía no es tratamiento).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué célula tuya te gustaría poder "reiniciar"? 👇
-Shot Biotecnológico #48 · La Creación del Robert
+Shot Biotecnológico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CelulasMadre #Yamanaka #Ciencia
 ```
@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta célula de tu piel puede volverse neurona 🧬 | Shot Biotecnológico #48
+Esta célula de tu piel puede volverse neurona 🧬 | Shot Biotecnológico 48
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Mandai M. et al. (2017). NEJM 376:1038–1046. https://doi.org/10.1056/NEJMoa160
 Sawamoto N. et al. (2025). Nature 641:971–977. https://doi.org/10.1038/s41586-025-08700-0
 Morimoto S. et al. (2023). Cell Stem Cell 30:766–780. https://doi.org/10.1016/j.stem.2023.04.017
 ¿Qué célula tuya te gustaría poder "reiniciar"? 👇
-Shot Biotecnológico #48 · La Creación del Robert
+Shot Biotecnológico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #CelulasMadre
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esta célula de tu piel no es solo piel: puede volverse neurona, retina o músculo de corazón. 🧬
 En 2006, Shinya Yamanaka le metió solo cuatro genes a células de ratón y regresaron a ser como de embrión: células iPS. En 2014 ya pusieron en un ojo células de retina hechas con la propia piel de una paciente.
 ¿Qué célula tuya te gustaría poder "reiniciar"? 👇
-Shot Biotecnológico #48 · La Creación del Robert
+Shot Biotecnológico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CelulasMadre
 ```
@@ -72,14 +72,14 @@ Por qué importa:
 • Neurología: en un ensayo de fase I/II en la Universidad de Kioto, siete pacientes con párkinson recibieron precursores dopaminérgicos derivados de iPS; Nature (2025) reporta que sobrevivieron, produjeron dopamina y no formaron tumores. Es una muestra pequeña: la eficacia aún debe probarse.
 • Desarrollo de fármacos: las "enfermedades en un plato" con células de pacientes ya llevaron a ensayos clínicos, como el de ropinirol en ELA (Keio, 2023).
 ¿Qué aplicación de las iPS crees que llegue primero a la clínica en México?
-Shot Biotecnológico #48 · La Creación del Robert
+Shot Biotecnológico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #CelulasMadre #MedicinaRegenerativa #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esta célula de tu piel no es solo piel: con 4 genes (Oct4, Sox2, Klf4, c-Myc) regresa a ser como de embrión. Yamanaka, Kioto, 2006. Hoy ya se trasplantan retina y neuronas hechas así. 🧬 Shot Biotecnológico #48 #Biotecnologia
+Esta célula de tu piel no es solo piel: con 4 genes (Oct4, Sox2, Klf4, c-Myc) regresa a ser como de embrión. Yamanaka, Kioto, 2006. Hoy ya se trasplantan retina y neuronas hechas así. 🧬 Shot Biotecnológico 48 #Biotecnologia
 ```
 
 ### Threads
@@ -87,7 +87,7 @@ Esta célula de tu piel no es solo piel: con 4 genes (Oct4, Sox2, Klf4, c-Myc) r
 Esta célula de tu piel no es solo piel: puede volverse neurona, retina o músculo de corazón. 🧬
 En 2006, Shinya Yamanaka le metió solo cuatro genes y regresó a ser como de embrión: una célula iPS. Empezó con 24 genes y los fue quitando hasta dejar 4.
 ¿Qué célula tuya te gustaría "reiniciar"?
-Shot Biotecnológico #48 · La Creación del Robert
+Shot Biotecnológico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

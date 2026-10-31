@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #23 · Esta tierra no está muerta
+# Publicación · Shot Ambiental 23 · Esta tierra no está muerta
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ La próxima vez que pises tierra, acuérdate: no está muerta, está viva, y la 
 El dibujo es esquemático.
 Fuentes: FAO; Borrelli et al. 2017 (Nature Communications); Anthony et al. 2023 (PNAS).
 ¿Tú tienes plantas, huerto o milpa en casa? 👇
-Shot Ambiental #23 · La Creación del Robert
+Shot Ambiental 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Suelo #Milpa #Biodiversidad
 ```
@@ -26,7 +26,7 @@ Esta tierra no está muerta: en una cucharada hay más seres vivos que personas 
 Bacterias, hongos, ácaros, colémbolos y lombrices deshacen lo muerto y arman el suelo. Un centímetro tarda cientos de años en formarse (hasta mil, según la FAO), y se puede perder en minutos. En 2012, la lluvia arrastró unos 36 mil millones de toneladas de suelo (estimación de Borrelli et al., 2017), y en 2015 la FAO estimó que un tercio de las tierras ya estaba degradado. De ahí sale el 95 % de lo que comemos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú tienes plantas, huerto o milpa en casa? 👇
-Shot Ambiental #23 · La Creación del Robert
+Shot Ambiental 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Suelo #Milpa #Biodiversidad
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta tierra no está muerta 🌱 1 cm tarda hasta mil años | Shot Ambiental #23
+Esta tierra no está muerta 🌱 1 cm tarda hasta mil años | Shot Ambiental 23
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Anthony et al. (2023), PNAS: https://doi.org/10.1073/pnas.2304663120
 - FAO et al. (2020), State of knowledge of soil biodiversity: https://www.fao.org/3/cb1929en/cb1929en.pdf
 ¿Tú tienes plantas, huerto o milpa en casa? 👇
-Shot Ambiental #23 · La Creación del Robert
+Shot Ambiental 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Suelo #Milpa
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta tierra no está muerta: en una cucharada hay más seres vivos que personas en el planeta. 🌱 Un centímetro de suelo tarda cientos de años en formarse (hasta mil, según la FAO) y la lluvia se lo puede llevar en minutos. De ahí sale el 95 % de lo que comemos.
 ¿Tú tienes plantas, huerto o milpa en casa? 👇
-Shot Ambiental #23 · La Creación del Robert
+Shot Ambiental 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Suelo #Milpa
 ```
@@ -71,7 +71,7 @@ Esta tierra no está muerta: en una cucharada hay más seres vivos que personas 
 Según la FAO, el 95 % de nuestros alimentos viene del suelo, y formar un centímetro puede tomar cientos de años, hasta mil. Mientras tanto, la pérdida es rápida: un modelo global (Borrelli et al., Nature Communications, 2017) estimó unos 35.9 mil millones de toneladas de suelo erosionado por lluvia en 2012, y en 2015 la FAO y el ITPS reportaron que el 33 % de las tierras estaba de moderada a muy degradada.
 Además, un estudio de 2023 en PNAS estima que el suelo alberga cerca del 59 % (± 15 %) de las especies del planeta. Cuidar su biodiversidad (bacterias, hongos, ácaros, colémbolos, lombrices) es cuidar la producción de alimentos: en la milpa, por ejemplo, el frijol obtiene nitrógeno de bacterias fijadoras en los nódulos de sus raíces.
 ¿Qué práctica de manejo de suelos has visto funcionar en tu región?
-Shot Ambiental #23 · La Creación del Robert
+Shot Ambiental 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Suelo #SeguridadAlimentaria #Biodiversidad #LaCreacionDelRobert
 ```

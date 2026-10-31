@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #38 · Tu genoma en una pantalla (y lo que cuesta leerlo)
+# Publicación · Shot Biotecnológico 38 · Tu genoma en una pantalla (y lo que cuesta leerlo)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Ese mismo año, el consorcio Telómero a Telómero publicó en Science el primer
 El dibujo es esquemático: las letras son de ejemplo, no una secuencia real.
 Fuentes: NHGRI (costos de secuenciación, 2021–2023) · Nurk et al., Science 2022.
 ¿Te harías leer tu genoma? ¿Para qué lo usarías? 👇
-Shot Biotecnológico #38 · La Creación del Robert
+Shot Biotecnológico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Genoma #ADN #Genetica
 ```
@@ -25,7 +25,7 @@ Esto es tu genoma dibujado en una pantalla: unos 3,000 millones de letras. 🧬�
 Leerlo por primera vez tomó 13 años (Proyecto Genoma Humano, 1990–2003). En 2001, leer un genoma costaba casi 100 millones de dólares; desde 2008 los centros usan máquinas que leen millones de pedacitos a la vez, y en 2022 costaba unos 525 dólares (datos del NHGRI). Ese año, el consorcio Telómero a Telómero publicó en Science el primer genoma humano completo: el 8 % que faltaba, los tramos más repetidos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te harías leer tu genoma? 👇
-Shot Biotecnológico #38 · La Creación del Robert
+Shot Biotecnológico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Genoma #ADN #Genetica
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu genoma en una pantalla: de casi 100 millones a 525 dólares 🧬 | Shot Biotecnológico #38
+Tu genoma en una pantalla: de casi 100 millones a 525 dólares 🧬 | Shot Biotecnológico 38
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - NHGRI. Human Genome Project. https://www.genome.gov/human-genome-project
 - Nurk S. et al. (2022). The complete sequence of a human genome. Science 376:44–53. https://pmc.ncbi.nlm.nih.gov/articles/PMC9186530/
 ¿Te harías leer tu genoma? ¿Para qué lo usarías? 👇
-Shot Biotecnológico #38 · La Creación del Robert
+Shot Biotecnológico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Genoma #Biotecnologia
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto es tu genoma dibujado en una pantalla: unos 3,000 millones de letras. 🧬 En 2001, leer un genoma humano costaba casi 100 millones de dólares; en 2022, unos 525. La clave: máquinas que leen millones de pedacitos de ADN a la vez.
 ¿Te harías leer tu genoma? 👇
-Shot Biotecnológico #38 · La Creación del Robert
+Shot Biotecnológico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Genoma
 ```
@@ -68,14 +68,14 @@ Leer un genoma humano pasó de casi 100 millones de dólares (2001) a unos 525 (
 El Proyecto Genoma Humano (1990–2003) recibió cerca de 2,700 millones de dólares de EE. UU., pero esa cifra cubre todo el programa (mapas, tecnología, otros organismos), no el precio de un genoma. La caída vino en 2008, cuando los centros del NHGRI pasaron de la secuenciación de Sanger, un pedacito por capilar, a plataformas de nueva generación que leen millones de fragmentos en paralelo.
 Y la calidad también avanzó: en 2022 el consorcio Telómero a Telómero publicó en Science la primera secuencia completa de un genoma humano, con el 8 % que faltaba desde 2003, sobre todo regiones muy repetidas como los centrómeros, gracias a lecturas largas.
 ¿Qué usos de la secuenciación del genoma ves más cerca en tu campo?
-Shot Biotecnológico #38 · La Creación del Robert
+Shot Biotecnológico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Genomica #Secuenciacion #Ciencia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Leer un genoma humano costaba casi 100 millones de dólares en 2001. En 2022, unos 525 (NHGRI). La clave: máquinas que leen millones de pedacitos de ADN a la vez. 🧬 Shot Biotecnológico #38 #Biotecnologia
+Leer un genoma humano costaba casi 100 millones de dólares en 2001. En 2022, unos 525 (NHGRI). La clave: máquinas que leen millones de pedacitos de ADN a la vez. 🧬 Shot Biotecnológico 38 #Biotecnologia
 ```
 
 ### Threads
@@ -83,7 +83,7 @@ Leer un genoma humano costaba casi 100 millones de dólares en 2001. En 2022, un
 Esto es tu genoma dibujado en una pantalla: unos 3,000 millones de letras. 🧬
 En 2001, leerlo costaba casi 100 millones de dólares; en 2022, unos 525. Y ese año por fin se publicó el primer genoma humano completo, con el 8 % que faltaba.
 ¿Te harías leer el tuyo?
-Shot Biotecnológico #38 · La Creación del Robert
+Shot Biotecnológico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

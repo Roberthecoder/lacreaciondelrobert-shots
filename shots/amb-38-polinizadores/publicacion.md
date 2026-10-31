@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #38 · ¿Sin abejas nos morimos de hambre? Lo que le pasa a tu desayuno
+# Publicación · Shot Ambiental 38 · ¿Sin abejas nos morimos de hambre? Lo que le pasa a tu desayuno
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Sin polinizadores no te mueres de hambre: te quedan las tortillas. Pero tu plato
 El dibujo es esquemático.
 Fuentes: IPBES 2016; Klein et al. 2007; Cooley y Vallejo-Marín 2021; Dymond et al. 2021.
 ¿Qué le pondrías a tu desayuno que dependa de un polinizador? 👇
-Shot Ambiental #38 · La Creación del Robert
+Shot Ambiental 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Polinizadores #Abejas #ComidaMexicana
 ```
@@ -28,7 +28,7 @@ El maíz de tus tortillas se poliniza con el viento, pero el cacao y la calabaza
 IPBES (2016): más de tres cuartas partes de los principales cultivos de comida dependen en algún grado de los polinizadores, pero sin ellos se perdería del 5 al 8 % de la cosecha mundial. No es hambre: es un plato con menos sabor y vitaminas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué le pondrías a tu desayuno que dependa de un polinizador? 👇
-Shot Ambiental #38 · La Creación del Robert
+Shot Ambiental 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Polinizadores #Abejas #ComidaMexicana
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Sin abejas nos morimos de hambre? 🐝🌮 | Shot Ambiental #38
+¿Sin abejas nos morimos de hambre? 🐝🌮 | Shot Ambiental 38
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Cooley y Vallejo-Marín (2021), J. Econ. Entomol.: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8042731/
 - Dymond et al. (2021), J. Appl. Entomol.: https://centaur.reading.ac.uk/96129/1/jen.12869.pdf
 ¿Qué le pondrías a tu desayuno que dependa de un polinizador? 👇
-Shot Ambiental #38 · La Creación del Robert
+Shot Ambiental 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Polinizadores #Abejas
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Sin abejas nos morimos de hambre? No exactamente: tus tortillas se quedan, porque al maíz lo poliniza el viento. 🐝 Pero sin polinizadores te quedas casi sin chocolate ni calabaza, el café rinde menos y tu plato pierde sabor y vitaminas.
 ¿Qué le pondrías a tu desayuno que dependa de un polinizador? 👇
-Shot Ambiental #38 · La Creación del Robert
+Shot Ambiental 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Polinizadores #Abejas
 ```
@@ -73,7 +73,7 @@ La evaluación de polinizadores del IPBES (2016) concluye que más de tres cuart
 El impacto está en la calidad de la dieta: frutas, verduras, semillas y nueces que aportan buena parte de la vitamina A, el hierro y el folato. En un desayuno mexicano: el cacao y la calabaza son esenciales (Klein et al. 2007), el café gana en rendimiento o calidad, el jitomate necesita abejas que vibren (la abeja de la miel no puede) y el aguacate recibe visitas de abejas y moscas.
 Proteger a los polinizadores silvestres, no solo a la abeja de la miel, es una inversión en nutrición, no solo en calorías.
 ¿Qué cultivo de tu región depende más de los polinizadores?
-Shot Ambiental #38 · La Creación del Robert
+Shot Ambiental 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Polinizadores #SeguridadAlimentaria #Biodiversidad #LaCreacionDelRobert
 ```

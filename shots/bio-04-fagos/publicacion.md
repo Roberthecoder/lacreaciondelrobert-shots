@@ -14,7 +14,7 @@ Félix d'Hérelle describió los fagos en 1917 en París, 11 años antes de la p
 El dibujo es esquemático y el fago está agrandado.
 Fuentes: Schooley et al. 2017 (Antimicrob. Agents Chemother.), UC San Diego 2017, Criscuolo et al. 2017 (J. Immunol. Res.), Eigenfeld et al. 2026 (ACS Omega).
 ¿Habías escuchado de la fagoterapia? ¿Te la pondrías? 👇
-Shot Biotecnológico #04 · La Creación del Robert
+Shot Biotecnológico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #fagos #superbacterias #virus
 ```
@@ -25,7 +25,7 @@ Esto no es un robot de película: es un virus que solo ataca bacterias. 🦠
 Los fagos aterrizan con seis patas, inyectan su ADN y convierten a la bacteria en una fábrica de fagos hasta reventarla. A tus células no les hacen nada. En 2016, en San Diego, cócteles de fagos ayudaron a Tom Patterson a salir del coma por una bacteria contra la que ya no funcionaba ningún antibiótico.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te pondrías fagoterapia? 👇
-Shot Biotecnológico #04 · La Creación del Robert
+Shot Biotecnológico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #fagos #superbacterias #virus
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Virus que curan infecciones? Sí existen 🦠 | Shot Biotecnológico #04
+¿Virus que curan infecciones? Sí existen 🦠 | Shot Biotecnológico 04
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - Eigenfeld, M. et al. (2026). Phage-functionalized magnetic separation for rapid and selective detection of Escherichia coli. ACS Omega (periodo de latencia de T4: 20–45 min).
 
 ¿Habías escuchado de la fagoterapia? ¿Te la pondrías? 👇
-Shot Biotecnológico #04 · La Creación del Robert
+Shot Biotecnológico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #fagos
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esto no es un robot de película: es un virus que solo ataca bacterias. 🦠 Y puede ser la medicina cuando ya no sirven los antibióticos. ¿Te la pondrías? 👇
-Shot Biotecnológico #04 · La Creación del Robert
+Shot Biotecnológico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia
 ```
@@ -68,7 +68,7 @@ Los bacteriófagos (fagos) infectan solo a ciertas bacterias: inyectan su ADN, c
 El caso más citado: en 2016, en UC San Diego, Tom Patterson estaba en coma por una infección de Acinetobacter baumannii contra la que ya no funcionaba ningún antibiótico. Con aprobación de emergencia de la FDA, dos laboratorios identificaron nueve fagos y se le aplicaron cócteles personalizados; salió del coma a los tres días de empezar los fagos por vena (Schooley et al., 2017).
 No es un tratamiento de uso general todavía: se usa en casos compasivos y ensayos clínicos. Pero ante la resistencia antimicrobiana, es una línea de investigación que vale la pena seguir.
 ¿Crees que veremos fagoterapia en hospitales de México?
-Shot Biotecnológico #04 · La Creación del Robert
+Shot Biotecnológico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Fagoterapia #ResistenciaAntimicrobiana
 ```

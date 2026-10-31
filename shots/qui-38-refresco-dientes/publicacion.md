@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #38 · Ese refresco no solo es dulce: es ácido (el refresco y tu esmalte)
+# Publicación · Shot Químico 38 · Ese refresco no solo es dulce: es ácido (el refresco y tu esmalte)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Y el esmalte que se pierde por erosión ya no regresa.
 El dibujo es esquemático. Esto no sustituye la indicación de tu dentista.
 Fuentes: Reddy et al. 2016 (JADA) · Dawes 2003 (J Can Dent Assoc) · ADA 2025 · OMS 2025.
 ¿Cuál es el refresco que más tomas? 👇
-Shot Químico #38 · La Creación del Robert
+Shot Químico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Refresco #Dientes #pH
 ```
@@ -26,7 +26,7 @@ Ese refresco no solo es dulce: es ácido y disuelve el cristal de tus dientes. �
 Tu esmalte es hidroxiapatita, y empieza a disolverse cuando el pH baja de alrededor de 5.5. En 2016, en la Universidad de Alabama en Birmingham, midieron 379 bebidas: el 93 % tenía pH menor a 4 y las colas normales, cerca de 2.4. La ADA recomienda enjuagarte con agua en vez de cepillarte enseguida, y usar popote detrás de los dientes de enfrente. El esmalte que se va por erosión no regresa.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuál es el refresco que más tomas? 👇
-Shot Químico #38 · La Creación del Robert
+Shot Químico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Refresco #Dientes #pH
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese refresco no solo es dulce: es ácido 🥤🦷 | Shot Químico #38
+Ese refresco no solo es dulce: es ácido 🥤🦷 | Shot Químico 38
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - American Dental Association (2025). Dental Erosion. https://www.ada.org/resources/ada-library/oral-health-topics/dental-erosion
 - Organización Mundial de la Salud (2025). Oral health. https://www.who.int/news-room/fact-sheets/detail/oral-health
 ¿Cuál es el refresco que más tomas? 👇
-Shot Químico #38 · La Creación del Robert
+Shot Químico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Dientes
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese refresco no solo es dulce: es ácido y disuelve el cristal de tus dientes. 🥤🦷 En 2016 midieron 379 bebidas: el 93 % tenía pH menor a 4 y las colas normales, cerca de 2.4. Tip de la ADA: enjuágate con agua en vez de cepillarte enseguida.
 ¿Cuál es el refresco que más tomas? 👇
-Shot Químico #38 · La Creación del Robert
+Shot Químico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Dientes
 ```
@@ -70,14 +70,14 @@ Un refresco no solo aporta azúcar: también es un ácido capaz de disolver el m
 El esmalte es sobre todo hidroxiapatita y empieza a desmineralizarse por debajo de su pH crítico (alrededor de 5.5, variable según la saliva). En 2016, Reddy y colaboradores (Universidad de Alabama en Birmingham, JADA) midieron el pH de 379 bebidas comerciales en EUA: el 93 % tenía pH menor a 4, y las colas regulares rondaron 2.4. El ácido fosfórico y el ácido cítrico son los principales responsables de la erosión, que es irreversible; el azúcar suma otro mecanismo, porque la placa la convierte en ácido y causa caries.
 La recomendación práctica de la ADA es sencilla: enjuagar con agua en vez de cepillarse inmediatamente y beber con popote detrás de los dientes frontales.
 ¿Qué tanto pesa la acidez, y no solo el azúcar, en la forma en que hablamos de bebidas y salud?
-Shot Químico #38 · La Creación del Robert
+Shot Químico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SaludBucal #Odontologia #Nutricion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese refresco no solo es dulce: es ácido. En 2016 midieron 379 bebidas y el 93 % tenía pH menor a 4; las colas normales, cerca de 2.4. Tu esmalte empieza a disolverse bajo ~5.5. 🦷 Shot Químico #38 #Quimica
+Ese refresco no solo es dulce: es ácido. En 2016 midieron 379 bebidas y el 93 % tenía pH menor a 4; las colas normales, cerca de 2.4. Tu esmalte empieza a disolverse bajo ~5.5. 🦷 Shot Químico 38 #Quimica
 ```
 
 ### Threads
@@ -85,7 +85,7 @@ Ese refresco no solo es dulce: es ácido. En 2016 midieron 379 bebidas y el 93 %
 Ese refresco no solo es dulce: es ácido y disuelve el cristal de tus dientes. 🥤🦷
 Tu esmalte empieza a disolverse cuando el pH baja de alrededor de 5.5, y en un estudio de 2016 las colas normales dieron cerca de 2.4. La ADA recomienda enjuagarte con agua en vez de cepillarte enseguida.
 ¿Cuál es el refresco que más tomas?
-Shot Químico #38 · La Creación del Robert
+Shot Químico 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

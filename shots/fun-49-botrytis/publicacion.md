@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #49 · La pelusa gris de tus fresas: Botrytis cinerea entra por la flor y espera
+# Publicación · Shot Fungi Mati 49 · La pelusa gris de tus fresas: Botrytis cinerea entra por la flor y espera
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Dato extra: en uvas, con noches húmedas y días secos, el mismo hongo causa la 
 El dibujo es esquemático.
 Fuentes: Petrasch et al. 2019 (Mol. Plant Pathol.); Mertely et al. 2002 (Plant Disease); Bristow et al. 1986; UC IPM; Váczy et al. 2024 y Rienth et al. 2021 (Front. Plant Sci.).
 ¿A ti también se te echan a perder las fresas en el refri? 👇
-Shot Fungi Mati #49 · La Creación del Robert
+Shot Fungi Mati 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Fresas #Moho
 ```
@@ -25,7 +25,7 @@ Esa pelusa gris de tus fresas no llegó anoche: muchas veces entró cuando la fr
 Botrytis cinerea, el moho gris, puede entrar por la flor (un estudio apunta a los estambres como entrada principal), se queda quieto mientras la fresa está verde y despierta cuando madura. La pelusa son tallitos con esporas en racimitos, y por contacto y por el aire contagia a las fresas vecinas. En uvas, con noches húmedas y días secos, el mismo hongo da la "podredumbre noble" de vinos dulces como Sauternes y Tokaji.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti también se te echan a perder las fresas en el refri? 👇
-Shot Fungi Mati #49 · La Creación del Robert
+Shot Fungi Mati 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Fresas #Moho
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La pelusa gris de tus fresas entró desde la flor 🍓 | Shot Fungi Mati #49
+La pelusa gris de tus fresas entró desde la flor 🍓 | Shot Fungi Mati 49
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Váczy, K. Z. et al. (2024). Botrytis cinerea causes different plant responses in grape berries during noble and grey rot. Front. Plant Sci. 15: 1433161. https://pmc.ncbi.nlm.nih.gov/articles/PMC11333459/
 - Rienth, M. et al. (2021). Modifications of Grapevine Berry Composition Induced by Main Viral and Fungal Pathogens in a Climate Change Scenario. Front. Plant Sci. 12: 717223. https://pmc.ncbi.nlm.nih.gov/articles/PMC8693719/
 ¿A ti también se te echan a perder las fresas en el refri? 👇
-Shot Fungi Mati #49 · La Creación del Robert
+Shot Fungi Mati 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Fresas #FungiMati
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa pelusa gris de tus fresas no llegó anoche: muchas veces entró cuando la fresa era flor. 🍓 Es Botrytis cinerea, el moho gris: entra por la flor, espera sin síntomas mientras la fresa está verde y despierta cuando madura. Por eso una fresa contagia a sus vecinas.
 ¿A ti también se te echan a perder las fresas en el refri? 👇
-Shot Fungi Mati #49 · La Creación del Robert
+Shot Fungi Mati 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Fresas
 ```
@@ -74,7 +74,7 @@ Botrytis cinerea, el hongo del moho gris, ataca a cientos de especies de plantas
 Por qué importa: entender cuándo entra el hongo cambia cuándo conviene proteger el cultivo. Los autores recomiendan concentrar la protección en la floración.
 Dato extra: en uvas, el mismo hongo, con el clima justo, da la "podredumbre noble" de vinos dulces como Sauternes y Tokaji.
 ¿Cultivas fresas o conoces a alguien que lo haga?
-Shot Fungi Mati #49 · La Creación del Robert
+Shot Fungi Mati 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Fitopatologia #Agricultura #Ciencia
 ```
@@ -87,7 +87,7 @@ La pelusa gris de tus fresas no llegó anoche: muchas veces Botrytis cinerea ent
 ### Threads
 ```text
 Esa pelusa gris de tus fresas no llegó anoche: muchas veces entró cuando la fresa era flor. 🍓 Botrytis cinerea puede meterse por los estambres, espera sin síntomas mientras la fresa está verde y despierta cuando madura. ¿A ti también se te echan a perder las fresas en el refri?
-Shot Fungi Mati #49 · La Creación del Robert
+Shot Fungi Mati 49 · La Creación del Robert
 #Hongos
 ```
 

@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #30 · Esa crema no es un espejo: es una esponja (cómo funciona el protector solar)
+# Publicación · Shot Químico 30 · Esa crema no es un espejo: es una esponja (cómo funciona el protector solar)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Tu protector trae filtros, moléculas como la avobenzona o el octocrileno. Cuand
 El dibujo es esquemático.
 Fuentes: Breakell et al. 2024 · Cole, Shyr y Ou-Yang 2016 · AAD · FDA (21 CFR 201.327) · Bech-Thomsen y Wulf 1992 · Faurschou y Wulf 2007.
 ¿Tú cuánta crema te pones: una capa gruesa o una embarradita? 👇
-Shot Químico #30 · La Creación del Robert
+Shot Químico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #ProtectorSolar #Bloqueador #RayosUV
 ```
@@ -24,7 +24,7 @@ Esa crema en tu brazo no es un espejo que rebota el sol: es una esponja que se t
 Los filtros como la avobenzona y el octocrileno absorben el UV y sueltan la energía como un poquito de calor. Y el óxido de zinc y el dióxido de titanio tampoco son espejitos: un estudio de 2016 midió que solo reflejan del 4 al 5 % del UV; casi todo lo absorben. Un FPS 30 filtra el 97 % de los UVB… pero medido con 2 mg de crema por cm². En 1992, en un estudio de investigadores de Copenhague, 42 personas en la playa se pusieron en promedio la cuarta parte.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú cuánta crema te pones? 👇
-Shot Químico #30 · La Creación del Robert
+Shot Químico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #ProtectorSolar #RayosUV #Bloqueador
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu protector solar no es un espejo: es una esponja ☀️ | Shot Químico #30
+Tu protector solar no es un espejo: es una esponja ☀️ | Shot Químico 30
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 • Bech-Thomsen N., Wulf H.C. (1992). Sunbathers' application of sunscreen is probably inadequate to obtain the sun protection factor assigned to the preparation. Photodermatol Photoimmunol Photomed. https://pubmed.ncbi.nlm.nih.gov/1343224/
 • Faurschou A., Wulf H.C. (2007). The relation between sun protection factor and amount of suncreen applied in vivo. Br J Dermatol. https://pubmed.ncbi.nlm.nih.gov/17493070/
 ¿Tú cuánta crema te pones: una capa gruesa o una embarradita? 👇
-Shot Químico #30 · La Creación del Robert
+Shot Químico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #ProtectorSolar #Quimica
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esa crema en tu brazo no es un espejo que rebota el sol: es una esponja que se traga el ultravioleta. ☀️
 Sus filtros absorben el UV y lo sueltan como un poquito de calor; hasta el zinc y el titanio reflejan solo del 4 al 5 % del UV. Ojo: el FPS de la etiqueta se mide con 2 mg de crema por cm², y en un estudio de 1992 la gente en la playa se puso la cuarta parte.
 ¿Tú cuánta crema te pones? 👇
-Shot Químico #30 · La Creación del Robert
+Shot Químico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #ProtectorSolar #Quimica
 ```
@@ -72,7 +72,7 @@ Los filtros orgánicos (avobenzona, octocrileno) absorben la radiación UV y la 
 El dato con más consecuencias es otro: el FPS de la etiqueta se mide con 2 mg de producto por cm² de piel (21 CFR 201.327, FDA). Un FPS 30 filtra el 97 % de los UVB según la AAD, pero en 1992 investigadores de Copenhague midieron que 42 bañistas se aplicaron en promedio 0.5 mg/cm², la cuarta parte. En 2007, otro estudio en Copenhague (Faurschou y Wulf, 20 voluntarios) confirmó que con menos producto el FPS real baja.
 Para quien comunica salud o formula cosméticos: la cantidad aplicada pesa tanto como el número de la etiqueta.
 ¿Cómo comunicarías la "dosis" de protector para que la gente sí la use?
-Shot Químico #30 · La Creación del Robert
+Shot Químico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #ProtectorSolar #Dermatologia #Cosmetica
 ```
@@ -87,7 +87,7 @@ Tu protector solar no es un espejo: es una esponja que se traga el UV ☀️ Has
 Esa crema en tu brazo no es un espejo que rebota el sol: es una esponja que se traga el ultravioleta. ☀️
 Sus filtros absorben el UV y lo sueltan como un poquito de calor; el zinc y el titanio solo reflejan del 4 al 5 %. El FPS de la etiqueta se mide con 2 mg de crema por cm²… y en un estudio de 1992 la gente en la playa se puso la cuarta parte.
 ¿Tú cuánta te pones? 👇
-Shot Químico #30 · La Creación del Robert
+Shot Químico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #ProtectorSolar
 ```

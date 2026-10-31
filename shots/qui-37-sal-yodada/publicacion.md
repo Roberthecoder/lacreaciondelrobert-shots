@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #37 · Ese «yodada» en tu sal no es adorno (yodo, tiroides y bocio)
+# Publicación · Shot Químico 37 · Ese «yodada» en tu sal no es adorno (yodo, tiroides y bocio)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Ojo: esto no quiere decir que debas comer más sal. La OMS recomienda menos de 5
 El dibujo es esquemático.
 Fuentes: Marine y Kimball 1920 · NOM-040-SSA1-1993 · OMS 2026 · MedlinePlus · Lisco et al. 2023 · PubChem.
 ¿Tu sal dice «yodada» o «yodada fluorurada»? Revisa el paquete y cuéntame 👇
-Shot Químico #37 · La Creación del Robert
+Shot Químico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #SalYodada #Tiroides #Yodo
 ```
@@ -27,7 +27,7 @@ Tu tiroides atrapa el yodo y arma la tiroxina, una hormona con 4 átomos de yodo
 No se trata de comer más sal: la OMS pide menos de 5 g al día, y yodada.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tu sal dice «yodada» o «yodada fluorurada»? 👇
-Shot Químico #37 · La Creación del Robert
+Shot Químico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #SalYodada #Tiroides #Yodo
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese «yodada» en tu sal no es adorno 🧂 | Shot Químico #37
+Ese «yodada» en tu sal no es adorno 🧂 | Shot Químico 37
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - Leung A.M., Braverman L.E., Pearce E.N. (2012). History of U.S. Iodine Fortification and Supplementation. Nutrients 4(11):1740–1746. https://pmc.ncbi.nlm.nih.gov/articles/PMC3509517/
 - PubChem (NIH). Thyroxine, CID 5819. https://pubchem.ncbi.nlm.nih.gov/compound/5819
 ¿Tu sal dice «yodada» o «yodada fluorurada»? Revisa el paquete y cuéntame 👇
-Shot Químico #37 · La Creación del Robert
+Shot Químico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #SalYodada
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese «yodada» en tu sal no es adorno: es lo que tu cuello necesita para fabricar hormonas. 🧂 Tu tiroides usa el yodo para hacer la tiroxina, una hormona con 4 átomos de yodo. Sin yodo, la tiroides crece: eso es el bocio. Por eso en México la sal lleva de 20 a 40 mg de yodo por kilo.
 ¿Tu sal dice «yodada» o «yodada fluorurada»? 👇
-Shot Químico #37 · La Creación del Robert
+Shot Químico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #SalYodada
 ```
@@ -75,14 +75,14 @@ La palabra «yodada» en un paquete de sal es una de las medidas de salud públi
 La tiroxina (T4) lleva 4 átomos de yodo; sin suficiente yodo, la hipófisis eleva la TSH y la tiroides se agranda (bocio). La OMS señala que el yodo es esencial para el desarrollo del cerebro del feto y del niño pequeño, y recomienda que toda la sal que se consume sea yodada, a la vez que pide consumir menos de 5 g de sal al día.
 La evidencia temprana vino de Akron, Ohio: entre 1917 y 1919, Marine y Kimball dieron yoduro de sodio a miles de alumnas. Entre las que tenían la tiroides normal al inicio, el agrandamiento apareció en el 27.6 % de las que no lo tomaron y en el 0.2 % de las que sí (Arch Intern Med, 1920). En México, la NOM-040-SSA1-1993 fija 30 ± 10 mg de yodo por kilo de sal y, en la sal fluorurada, 250 ± 50 mg/kg de flúor contra la caries, salvo donde el agua ya trae más de 0.7 mg/L.
 ¿Qué otros nutrientes «invisibles» llegan a nosotros gracias a una norma que casi nadie lee?
-Shot Químico #37 · La Creación del Robert
+Shot Químico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SaludPublica #Nutricion #Tiroides #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese «yodada» en tu sal no es adorno: tu tiroides usa el yodo para hacer la tiroxina (4 átomos de yodo). Sin él crece: bocio. En Akron (1917–1919), con yodo se agrandó en 0.2 % de las niñas; sin yodo, en 27.6 %. 🧂 Shot Químico #37 #Quimica
+Ese «yodada» en tu sal no es adorno: tu tiroides usa el yodo para hacer la tiroxina (4 átomos de yodo). Sin él crece: bocio. En Akron (1917–1919), con yodo se agrandó en 0.2 % de las niñas; sin yodo, en 27.6 %. 🧂 Shot Químico 37 #Quimica
 ```
 
 ### Threads
@@ -90,7 +90,7 @@ Ese «yodada» en tu sal no es adorno: tu tiroides usa el yodo para hacer la tir
 Ese «yodada» en tu sal no es adorno: es lo que tu cuello necesita para fabricar hormonas. 🧂
 Tu tiroides atrapa el yodo y arma la tiroxina, con 4 átomos de yodo. Sin yodo, crece: eso es el bocio. En México la norma pide de 20 a 40 mg de yodo por kilo de sal.
 ¿Tu sal dice «yodada» o «yodada fluorurada»?
-Shot Químico #37 · La Creación del Robert
+Shot Químico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #48 · El hongo que apesta a muerto a propósito: Phallus impudicus
+# Publicación · Shot Fungi Mati 48 · El hongo que apesta a muerto a propósito: Phallus impudicus
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En México hay parientes con un velo de encaje (antes llamados Dictyophora): en 
 El dibujo es esquemático.
 Fuentes: Pudil y col. 2014 (European Scientific Journal); Sleeman y col. 1997 (J. Nat. Hist.); Guzmán y col. 1990 (Acta Botánica Mexicana); Volk 1999; Deacon 2005.
 ¿Ya te tocó olerlo en el bosque o en un jardín? 👇
-Shot Fungi Mati #48 · La Creación del Robert
+Shot Fungi Mati 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Moscas #Ciencia
 ```
@@ -25,7 +25,7 @@ Ese olor a carne podrida no viene de un animal muerto: viene de este hongo. 🍄
 El falo hediondo (Phallus impudicus) sale de un huevo que todavía no huele feo, crece en horas hasta 30 cm y se cubre de una baba con esporas que suelta gases con azufre. Las moscas llegan buscando carne podrida, comen la baba y riegan las esporas. En 1997, unos científicos de Irlanda vieron que con esa baba las moscas hacían popó más rápido que cuando comían estiércol o azúcar. En México hay parientes con velo de encaje.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya te tocó olerlo en el bosque o en un jardín? 👇
-Shot Fungi Mati #48 · La Creación del Robert
+Shot Fungi Mati 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Moscas #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo que huele a carne podrida (a propósito) 🪰 | Shot Fungi Mati #48
+El hongo que huele a carne podrida (a propósito) 🪰 | Shot Fungi Mati 48
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Volk, T. J. (1999). Tom Volk's Fungus of the Month: stinkhorns. https://botit.botany.wisc.edu/toms_fungi/july99.html
 - Deacon, J. (2005). Fungal Biology: Phallus impudicus, the stinkhorn. https://archive.bio.ed.ac.uk/jdeacon/FungalBiology/phallus.htm
 ¿Ya te tocó olerlo en el bosque o en un jardín? 👇
-Shot Fungi Mati #48 · La Creación del Robert
+Shot Fungi Mati 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese olor a carne podrida no viene de un animal muerto: viene de este hongo. 🍄🪰 El falo hediondo sale de un huevo, crece en horas y se cubre de una baba apestosa con esporas. Las moscas llegan buscando carne, comen la baba y riegan las esporas por el bosque.
 ¿Ya te tocó olerlo en el bosque o en un jardín? 👇
-Shot Fungi Mati #48 · La Creación del Robert
+Shot Fungi Mati 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -70,7 +70,7 @@ Un hongo que "contrata" moscas como repartidoras de esporas.
 Phallus impudicus produce, al madurar, oligosulfuros de dimetilo (sobre todo trisulfuro de dimetilo), los compuestos que más aportan a su olor fétido; en la etapa de huevo no aparecen (Pudil y col., 2014, HS-SPME/GC-MS). El olor atrae moscardas: en un estudio de University College Cork (Sleeman y col., 1997), las moscas que comían la gleba con esporas defecaban más rápido que cuando comían estiércol o sacarosa, y así depositaban muchas esporas; además, en los hongos había significativamente más hembras que machos.
 Por qué importa: es un ejemplo claro de dispersión de esporas por animales en hongos y de cómo la química del olor sirve para eso.
 ¿Conoces otro organismo que use el engaño para que lo dispersen?
-Shot Fungi Mati #48 · La Creación del Robert
+Shot Fungi Mati 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Ecologia #Ciencia
 ```
@@ -83,7 +83,7 @@ Ese olor a carne podrida puede ser un hongo: Phallus impudicus suelta gases con 
 ### Threads
 ```text
 Ese olor a carne podrida no viene de un animal muerto: viene de un hongo. 🪰 El falo hediondo sale de un huevo, crece en horas y se cubre de una baba con esporas que huele a podrido para engañar a las moscas: ellas riegan sus esporas. ¿Ya te tocó olerlo?
-Shot Fungi Mati #48 · La Creación del Robert
+Shot Fungi Mati 48 · La Creación del Robert
 #Hongos
 ```
 

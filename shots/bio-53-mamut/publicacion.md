@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #53 · ¿Quieres revivir un mamut? Sigue estos pasos
+# Publicación · Shot Biotecnológico 53 · ¿Quieres revivir un mamut? Sigue estos pasos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Paso 5: óvulos, una mamá elefanta y unos 22 meses de embarazo. Y puede salir m
 El dibujo es esquemático.
 Fuentes: Yamagata et al. 2019 · Dabney et al. 2013 · Palkopoulou et al. 2015 · Rohland et al. 2010 · Lueders et al. 2012 · Chen et al. 2025 (preprint) · Folch et al. 2009.
 ¿Tú revivirías un mamut o lo dejarías en paz? 👇
-Shot Biotecnológico #53 · La Creación del Robert
+Shot Biotecnológico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Mamut #CRISPR #Desextincion
 ```
@@ -28,7 +28,7 @@ Soy Robert, de La Creación del Robert 🌱
 Nadie ha revivido un mamut.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú lo revivirías? 👇
-Shot Biotecnológico #53 · La Creación del Robert
+Shot Biotecnológico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Mamut #CRISPR #Desextincion
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Quieres revivir un mamut? Sigue estos 5 pasos 🦣 | Shot Biotecnológico #53
+¿Quieres revivir un mamut? Sigue estos 5 pasos 🦣 | Shot Biotecnológico 53
 ```
 Descripción:
 ```text
@@ -58,7 +58,7 @@ Fuentes:
 - Folch J. et al. (2009). Theriogenology 71: 1026–1034. https://pubmed.ncbi.nlm.nih.gov/19167744/
 - Colossal Biosciences, página del mamut. https://colossal.com/mammoth/
 ¿Tú revivirías un mamut o lo dejarías en paz? 👇
-Shot Biotecnológico #53 · La Creación del Robert
+Shot Biotecnológico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Mamut #Biotecnologia
 ```
@@ -68,7 +68,7 @@ Soy Robert, de La Creación del Robert 🌱
 ¿Quieres revivir un mamut? Fácil: sigue estos cinco pasos. 🦣
 No hay células vivas de mamut, su ADN está en pedacitos y el plan es editar genes de elefante con CRISPR y esperar unos 22 meses de embarazo. Por ahora, lo único que nació fue un ratón lanudo (2025), sin ADN de mamut.
 ¿Tú lo revivirías? 👇
-Shot Biotecnológico #53 · La Creación del Robert
+Shot Biotecnológico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Mamut
 ```
@@ -83,21 +83,21 @@ Soy Robert, de La Creación del Robert 🌱
 5. Gametos, una madre sustituta y unos 22 meses de gestación: pendiente. El antecedente es duro: el bucardo clonado en 2003 murió a los minutos por defectos pulmonares.
 Separar lo logrado de lo prometido es la mejor forma de leer la biotecnología.
 ¿Qué paso crees que será el más difícil?
-Shot Biotecnológico #53 · La Creación del Robert
+Shot Biotecnológico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #CRISPR #Genomica #Desextincion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-¿Quieres revivir un mamut? Paso 1: una célula viva. No hay ninguna. 🦣 Lo más que ha nacido: un ratón lanudo (2025), con genes de ratón, sin ADN de mamut. Shot Biotecnológico #53 · Soy Robert 🌱 #Biotecnologia #Mamut
+¿Quieres revivir un mamut? Paso 1: una célula viva. No hay ninguna. 🦣 Lo más que ha nacido: un ratón lanudo (2025), con genes de ratón, sin ADN de mamut. Shot Biotecnológico 53 · Soy Robert 🌱 #Biotecnologia #Mamut
 ```
 
 ### Threads
 ```text
 ¿Quieres revivir un mamut? Fácil: sigue estos cinco pasos. 🦣
 No hay células vivas de mamut; su ADN está en pedacitos, aunque en 2015 ya se armaron genomas completos. El plan: editar genes de elefante con CRISPR y esperar unos 22 meses de embarazo. Por ahora solo nació un ratón lanudo (2025), sin ADN de mamut. ¿Tú lo revivirías? 👇
-Shot Biotecnológico #53 · La Creación del Robert
+Shot Biotecnológico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #09 · El detector de IA que acusa a quien escribe sencillo
+# Publicación · Shot IA 09 · El detector de IA que acusa a quien escribe sencillo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que si un detector acusa tu ensayo, recuerda: escribir sencillo no es hacer
 El dibujo es esquemático; las frases del medidor son ejemplos ilustrativos. Datos de 2023: los detectores cambian.
 Fuente: Liang et al., Patterns (2023).
 ¿A ti o a alguien que conoces lo acusaron de usar IA sin haberla usado? 👇
-Shot IA #09 · La Creación del Robert
+Shot IA 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #DetectoresDeIA #Estudiantes #ChatGPT
 ```
@@ -25,7 +25,7 @@ Escribiste tu ensayo en inglés tú solo, y un detector dice que lo hizo una IA.
 En 2023, en Stanford, siete detectores populares revisaron 91 ensayos del examen TOEFL escritos por personas: marcaron como IA el 61.3 % en promedio. Con estudiantes nativos de Estados Unidos casi no se equivocaron. La razón: medían qué tan predecible es el texto, y escribir sencillo lo hacía "predecible". Con palabras más rebuscadas, los errores bajaron a 11.6 %. Los autores recomiendan no usarlos para evaluar estudiantes.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti o a alguien que conoces lo acusaron de usar IA sin haberla usado? 👇
-Shot IA #09 · La Creación del Robert
+Shot IA 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #DetectoresDeIA #Estudiantes #ChatGPT
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El detector de IA que acusa a quien escribe sencillo 📝 | Shot IA #09
+El detector de IA que acusa a quien escribe sencillo 📝 | Shot IA 09
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Escribiste tu ensayo en inglés tú solo, y un detector dice que lo hizo una IA. En una prueba con no nativos, pasó 6 de cada 10 veces. 📝 En 2023, en Stanford, siete detectores populares casi no se equivocaron con nativos, pero marcaron como IA la mayoría de los ensayos de no nativos. Escribir sencillo no es hacer trampa.
 ¿A ti o a alguien que conoces lo acusaron de usar IA sin haberla usado? 👇
-Shot IA #09 · La Creación del Robert
+Shot IA 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #DetectoresDeIA
 ```
@@ -65,7 +65,7 @@ El estudio (Liang et al., Universidad de Stanford, Patterns, 2023) explica el se
 Para escuelas, universidades y empresas, la conclusión de los autores es directa: no usar estos detectores para evaluar estudiantes, sobre todo si no son nativos del inglés. Un falso positivo no es un error técnico menor: es una acusación.
 ¿Tu institución usa detectores de IA? ¿Con qué criterio?
 Fuente: Liang et al., Patterns 4(7): 100779 (2023). Datos de 2023.
-Shot IA #09 · La Creación del Robert
+Shot IA 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Educacion #DetectoresDeIA #EticaDigital #LaCreacionDelRobert
 ```
@@ -80,7 +80,7 @@ Escribiste tu ensayo en inglés tú solo y el detector dice "IA". En 2023, 7 det
 Escribiste tu ensayo en inglés tú solo, y un detector dice que lo hizo una IA. En una prueba con no nativos, pasó 6 de cada 10 veces. 📝
 Stanford, 2023: siete detectores populares casi no se equivocaron con nativos. La razón: premian las palabras rebuscadas y castigan lo sencillo.
 ¿A ti te ha pasado?
-Shot IA #09 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 09 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

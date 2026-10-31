@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #22 · Tu casa está hecha de arena: el sólido más extraído del mundo
+# Publicación · Shot Ambiental 22 · Tu casa está hecha de arena: el sólido más extraído del mundo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Con esa cifra de la ONU, nos tocan en promedio 18 kilos de arena y grava por per
 El dibujo es esquemático.
 Fuentes: PNUMA/ONU (2019 y 2022) y Hackney et al. 2020, Nature Sustainability.
 ¿Sabes de dónde sale la arena de las obras en tu ciudad? 👇
-Shot Ambiental #22 · La Creación del Robert
+Shot Ambiental 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Arena #Concreto #Rios
 ```
@@ -25,7 +25,7 @@ Esta pared no es concreto: es arena y piedra. 🧱
 Arena y grava son el material sólido más extraído del mundo: la ONU estimó en 2022 unos 50 mil millones de toneladas al año, suficiente para un muro de 27 × 27 metros alrededor de la Tierra. La del desierto casi no sirve: el viento la pule y en el concreto no se agarra. Por eso mucha sale de ríos, costas y del fondo del mar, y en el Mekong le sacaban unas 50 millones de toneladas al año cuando el río traía apenas unas 6.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabes de dónde sale la arena de las obras en tu ciudad? 👇
-Shot Ambiental #22 · La Creación del Robert
+Shot Ambiental 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Arena #Concreto #Rios
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu casa está hecha de arena (y se está acabando en los ríos) 🧱 | Shot Ambiental #22
+Tu casa está hecha de arena (y se está acabando en los ríos) 🧱 | Shot Ambiental 22
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Neumann y Curbach 2018, MATEC Web of Conferences 149: 01030: https://doi.org/10.1051/matecconf/201814901030
 - Hackney et al. 2020, Nature Sustainability 3: 217–225: https://doi.org/10.1038/s41893-019-0455-3
 ¿Sabes de dónde sale la arena de las obras en tu ciudad? 👇
-Shot Ambiental #22 · La Creación del Robert
+Shot Ambiental 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Arena #CienciaAmbiental
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta pared no es concreto: es arena y piedra. 🧱 Arena y grava son el material sólido más extraído del mundo: unos 50 mil millones de toneladas al año, según la ONU (2022). Y la del desierto no sirve: el viento pule sus granos y en el concreto no se agarran.
 ¿Sabes de dónde sale la arena de las obras en tu ciudad? 👇
-Shot Ambiental #22 · La Creación del Robert
+Shot Ambiental 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Arena #CienciaAmbiental
 ```
@@ -71,7 +71,7 @@ En 2022, el PNUMA estimó su uso en unos 50 mil millones de toneladas al año (u
 Un ejemplo medido: en el bajo Mekong (Hackney et al., Nature Sustainability, 2020) entraban al delta unos 6 millones de toneladas de arena al año frente a una extracción de unos 50 millones, con riesgo de inestabilidad en las orillas.
 Y la estamos usando más rápido de lo que la naturaleza la repone.
 ¿Qué tanto se considera el origen de los agregados en los proyectos de construcción donde trabajas?
-Shot Ambiental #22 · La Creación del Robert
+Shot Ambiental 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Construccion #EconomiaCircular #Arena #LaCreacionDelRobert
 ```

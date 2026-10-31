@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #37 · La Luna no es más grande en el horizonte
+# Publicación · Shot Científico 37 · La Luna no es más grande en el horizonte
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -17,7 +17,7 @@ Así que esa Luna gigante es real en tu cabeza, pero no en el cielo.
 El dibujo es esquemático.
 Fuentes: NASA Science (2023); Kaufman y Kaufman 2000 (PNAS); Ross 2019 (Vision); Wikipedia «Moon illusion».
 ¿Ya la tapaste con la uña del meñique? ¿Te funcionó? 👇
-Shot Científico #37 · La Creación del Robert
+Shot Científico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Luna #Astronomia #IlusionOptica #Cerebro
 ```
@@ -29,7 +29,7 @@ Mídela con una regla, o tómale fotos con el mismo zoom: abajo y arriba sale de
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Ya la tapaste con la uña del meñique? ¿Te funcionó? 👇
-Shot Científico #37 · La Creación del Robert
+Shot Científico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Luna #Astronomia #IlusionOptica #Cerebro
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La Luna NO es más grande en el horizonte 🌕 | Shot Científico #37
+La Luna NO es más grande en el horizonte 🌕 | Shot Científico 37
 ```
 Descripción:
 ```text
@@ -58,7 +58,7 @@ Fuentes:
 - Ross, H. E. (2019). The Sun/Moon Illusion in a Medieval Irish Astronomical Tract. Vision 3(3): 39 (resume a Ross y Plug 2002). https://doi.org/10.3390/vision3030039
 - Wikipedia, «Moon illusion» (consultada 29 oct 2026). https://en.wikipedia.org/wiki/Moon_illusion
 ¿Ya la tapaste con la uña del meñique? ¿Te funcionó? 👇
-Shot Científico #37 · La Creación del Robert
+Shot Científico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Luna #Astronomia #IlusionOptica
 ```
@@ -67,7 +67,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa Luna gigante que ves salir en el horizonte no es más grande: es un engaño de tu cerebro. 🌕 Con la misma cámara y el mismo zoom, sale del mismo ancho abajo que arriba, y la puedes tapar con la uña del meñique las dos veces. Por qué la vemos enorme nadie lo sabe con certeza; una hipótesis es que sentimos el cielo como un techo aplanado. Y en el horizonte, de hecho, está un poquito más lejos de ti.
 ¿Ya la tapaste con la uña del meñique? ¿Te funcionó? 👇
-Shot Científico #37 · La Creación del Robert
+Shot Científico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -77,7 +77,7 @@ Soy Robert, de La Creación del Robert 🌱
 La Luna en el horizonte no es más grande: es una ilusión de tu cerebro.
 Con la misma cámara y el mismo zoom, la Luna sale del mismo ancho cuando sale que cuando está alta (NASA). Se conoce desde hace más de 2,000 años y todavía no hay una explicación con consenso. Las hipótesis principales: percibimos el cielo como un domo aplanado, así que lo del horizonte nos parece más lejos y el cerebro lo agranda; y la comparación con árboles y edificios. De hecho, en el horizonte la Luna está como 1.5 % más lejos que arriba.
 Un buen recordatorio de que ver no es lo mismo que medir.
-Shot Científico #37 · La Creación del Robert
+Shot Científico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

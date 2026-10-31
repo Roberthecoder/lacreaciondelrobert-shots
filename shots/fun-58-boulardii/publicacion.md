@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #58 · Este sobrecito no trae bacterias: la levadura probiótica Saccharomyces boulardii
+# Publicación · Shot Fungi Mati 58 · Este sobrecito no trae bacterias: la levadura probiótica Saccharomyces boulardii
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ El riesgo: rara vez, en pacientes graves con catéter en la vena, la levadura pu
 El dibujo es esquemático. No es consejo médico: pregúntale a tu médico antes de tomar cualquier cosa.
 Fuentes: Szajewska y Kołodziej 2015 (Aliment Pharmacol Ther); McFarland 2010 (World J Gastroenterol); Edwards-Ingram et al. 2007 (Appl Environ Microbiol); Hennequin et al. 2000 (Eur J Clin Microbiol Infect Dis).
 ¿Sabías que ese sobrecito era un hongo? 👇
-Shot Fungi Mati #58 · La Creación del Robert
+Shot Fungi Mati 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Probioticos #Levadura
 ```
@@ -26,7 +26,7 @@ Este sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadu
 Saccharomyces boulardii es una cepa de la misma especie que la levadura del pan, pero crece mejor a 37 °C y en el laboratorio aguantó un ácido de pH 2. Como no es bacteria, los antibióticos no la matan. Una revisión de 2015 con 21 ensayos encontró que, en gente con antibióticos, la diarrea bajó de 18.7 a 8.5 de cada 100; pero contra Clostridium difficile en adultos no vio un efecto claro. Y rara vez, en pacientes graves con catéter, puede pasar a la sangre.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Sabías que ese sobrecito era un hongo? 👇
-Shot Fungi Mati #58 · La Creación del Robert
+Shot Fungi Mati 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Probioticos #Levadura
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este sobrecito para la diarrea es un HONGO vivo 🍄 | Shot Fungi Mati #58
+Este sobrecito para la diarrea es un HONGO vivo 🍄 | Shot Fungi Mati 58
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Hennequin, C. et al. (2000). Possible role of catheters in Saccharomyces boulardii fungemia. Eur J Clin Microbiol Infect Dis 19(1): 16–20. https://doi.org/10.1007/s100960050003
 - Enache-Angoulvant, A. y Hennequin, C. (2005). Invasive Saccharomyces infection: a comprehensive review. Clin Infect Dis 41(11): 1559–1568. https://doi.org/10.1086/497832
 ¿Sabías que ese sobrecito era un hongo? 👇
-Shot Fungi Mati #58 · La Creación del Robert
+Shot Fungi Mati 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Probioticos #FungiMati
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este sobrecito para la diarrea no trae bacterias: trae un hongo vivo, una levadura. 🍄 Saccharomyces boulardii es de la misma especie que la levadura del pan, aguanta 37 °C y el ácido, y los antibióticos no la matan. En gente con antibióticos, una revisión de 2015 vio que la diarrea bajó de 18.7 a 8.5 de cada 100. No es consejo médico.
 ¿Sabías que ese sobrecito era un hongo? 👇
-Shot Fungi Mati #58 · La Creación del Robert
+Shot Fungi Mati 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Probioticos
 ```
@@ -72,7 +72,7 @@ Un probiótico que no es bacteria: Saccharomyces boulardii, una levadura.
 Es una cepa de Saccharomyces cerevisiae (la levadura del pan) con rasgos que la hacen útil en el intestino: crece mejor a 37 °C y tolera pH ácido. Al ser un hongo, no la afectan los antibióticos antibacterianos, por eso se estudia para prevenir la diarrea asociada a antibióticos. Un metaanálisis de 2015 (21 ensayos, 4,780 participantes) encontró una reducción de 18.7 % a 8.5 %; contra Clostridium difficile, el efecto solo fue significativo en niños.
 También tiene límites: en casos raros, en pacientes graves con catéter venoso central, se han reportado fungemias, y en un hospital de París se documentó contaminación de manos y superficies al abrir los sobres (2000).
 Ciencia útil es contar lo que sí funciona, lo que no y el riesgo. ¿Conocías los probióticos de levadura?
-Shot Fungi Mati #58 · La Creación del Robert
+Shot Fungi Mati 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Microbiologia #Probioticos #Ciencia
 ```
@@ -85,7 +85,7 @@ Este sobrecito para la diarrea no trae bacterias: trae una levadura, Saccharomyc
 ### Threads
 ```text
 Este sobrecito para la diarrea no trae bacterias: trae un hongo vivo. 🍄 Saccharomyces boulardii es de la misma especie que la levadura del pan, pero aguanta 37 °C y el ácido, y los antibióticos no la matan. Rara vez, en pacientes graves con catéter, puede pasar a la sangre. ¿Sabías que era un hongo?
-Shot Fungi Mati #58 · La Creación del Robert
+Shot Fungi Mati 58 · La Creación del Robert
 #Hongos
 ```
 

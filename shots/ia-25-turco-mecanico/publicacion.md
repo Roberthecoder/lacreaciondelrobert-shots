@@ -1,4 +1,4 @@
-# Publicación · Shot IA #25 · El "robot" que jugaba ajedrez era una persona escondida
+# Publicación · Shot IA 25 · El "robot" que jugaba ajedrez era una persona escondida
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que si una IA te parece magia, acuérdate del Turco: detrás también hubo 
 El dibujo es esquemático; "gato / no es un gato" es un ejemplo ilustrativo.
 Fuentes: IEEE Spectrum (2019), Stephens en Cultural Studies (2022), blog de AWS (2005) y aviso de mturk.com (2026).
 ¿Tú sabías que detrás de la IA hay tanto trabajo de personas? 👇
-Shot IA #25 · La Creación del Robert
+Shot IA 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Ajedrez #Historia #MechanicalTurk
 ```
@@ -26,7 +26,7 @@ El Turco era un muñeco de madera con turbante, sentado tras una caja con el tab
 En 2005, Amazon llamó Mechanical Turk ("el Turco mecánico") a su página de tareas chiquitas hechas por personas; ahí mucha gente etiquetó datos para entrenar IA. Amazon la cerró el 30 de septiembre de 2026.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú sabías que detrás de la IA hay tanto trabajo de personas? 👇
-Shot IA #25 · La Creación del Robert
+Shot IA 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Ajedrez #Historia #MechanicalTurk
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El "robot" que jugaba ajedrez era una persona escondida ♟️ | Shot IA #25
+El "robot" que jugaba ajedrez era una persona escondida ♟️ | Shot IA 25
 ```
 Descripción:
 ```text
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es un robot que juega ajedrez: es una persona escondida. ♟️ El Turco engañó a medio mundo con un maestro de ajedrez escondido dentro de su caja. En 2005, Amazon llamó "Mechanical Turk" a su página de tareas hechas por personas, que ayudaron a entrenar inteligencia artificial, y la cerró el 30 de septiembre de 2026. Si una IA te parece magia, acuérdate del Turco.
 ¿Tú sabías que detrás de la IA hay tanto trabajo de personas? 👇
-Shot IA #25 · La Creación del Robert
+Shot IA 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Ajedrez
 ```
@@ -70,7 +70,7 @@ En 2005, Amazon tomó ese nombre para Mechanical Turk: una plataforma de microta
 La lección sigue vigente: cuando un sistema automático parece magia, vale la pena preguntar qué trabajo humano lo sostiene y en qué condiciones se hace.
 ¿En tu organización se reconoce el trabajo humano detrás de la IA que usan?
 Fuentes: IEEE Spectrum (2019); Stephens, Cultural Studies 37(1) (2022); AWS News Blog (2005); aviso de cierre de mturk.com (2026).
-Shot IA #25 · La Creación del Robert
+Shot IA 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #HistoriaDeLaTecnologia #DatosDeEntrenamiento #EticaDigital #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ El "robot" ajedrecista de 1770 tenía a un maestro de ajedrez escondido adentro.
 Esto no es un robot que juega ajedrez: es una persona escondida. ♟️
 El Turco escondía a un maestro de ajedrez dentro de su caja. En 2005, Amazon llamó Mechanical Turk a su página de tareas hechas por personas, que también etiquetaban datos para entrenar IA. La cerró el 30 de septiembre de 2026.
 ¿Tú sabías que detrás de la IA hay tanto trabajo de personas?
-Shot IA #25 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 25 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #36 · Tú contra el auto sin conductor
+# Publicación · Shot IA 36 · Tú contra el auto sin conductor
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que tú contra el auto sin nadie: en sus calles, él va ganando. Pero hay q
 El dibujo es esquemático.
 Fuentes: Waymo Safety Impact Hub (2026); Di Lillo et al., Swiss Re + Waymo (2024); NHTSA, recall 25E084000 (2025); OMS (2026).
 ¿Te subirías a un auto sin conductor? 👇
-Shot IA #36 · La Creación del Robert
+Shot IA 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #AutosAutonomos #Waymo #SeguridadVial
 ```
@@ -27,7 +27,7 @@ Tú manejando contra un auto sin nadie al volante. Según su empresa, Waymo, él
 Son 271.3 millones de millas sin conductor hasta junio de 2026, comparadas con el conductor promedio de sus ciudades. Un estudio de 2024 con la reaseguradora Swiss Re encontró 2 reclamos por lesiones en 25.3 millones de millas, contra 26 esperados con humanos (92 % menos). Pero Waymo es coautora, sus autos casi no van por autopista ni con nieve, y en 2025 tuvo que corregir el software de 3,067 autos que podían rebasar autobuses escolares detenidos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te subirías a un auto sin conductor? 👇
-Shot IA #36 · La Creación del Robert
+Shot IA 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #AutosAutonomos #Waymo #SeguridadVial
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tú contra el auto sin conductor: ¿quién choca más? 🚗 | Shot IA #36
+Tú contra el auto sin conductor: ¿quién choca más? 🚗 | Shot IA 36
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tú manejando contra un auto sin nadie al volante. Según su empresa, Waymo, él tiene 82 % menos choques con heridos. 🚗 Un estudio de 2024 con la reaseguradora Swiss Re también le salió bien: 2 reclamos por lesiones en 25.3 millones de millas, contra 26 esperados con humanos. Pero Waymo firmó el estudio, y en 2025 tuvo que corregir el software de 3,067 autos que podían rebasar autobuses escolares. Va ganando… pero hay que seguir revisando sus números.
 ¿Te subirías a un auto sin conductor? 👇
-Shot IA #36 · La Creación del Robert
+Shot IA 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #AutosAutonomos
 ```
@@ -72,7 +72,7 @@ Lo que hay que tener en cuenta: los datos los aporta la empresa y 4 de los 6 aut
 Con unas 1.16 millones de muertes viales al año en el mundo (OMS), la promesa es enorme. Por eso mismo los números necesitan revisión independiente y continua.
 ¿Qué evidencia te convencería de que un auto autónomo es más seguro?
 Fuentes: Waymo Safety Impact Hub (2026); Di Lillo et al. (2024); NHTSA (2025); OMS (2026).
-Shot IA #36 · La Creación del Robert
+Shot IA 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #AutosAutonomos #SeguridadVial #Movilidad #LaCreacionDelRobert
 ```
@@ -87,7 +87,7 @@ Tú contra un auto sin nadie al volante: Waymo dice que tiene 82 % menos choques
 Tú manejando contra un auto sin nadie al volante. Según Waymo, él tiene 82 % menos choques con heridos. 🚗
 Con la reaseguradora Swiss Re (2024): 2 reclamos por lesiones en 25.3 millones de millas, contra 26 esperados con humanos. Pero Waymo es coautora, casi no va por autopista y en 2025 corrigió el software de 3,067 autos por rebasar autobuses escolares.
 ¿Te subirías?
-Shot IA #36 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 36 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

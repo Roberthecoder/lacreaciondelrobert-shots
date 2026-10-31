@@ -13,7 +13,7 @@ En 1986, en la Universidad de California en San Diego, pusieron el gen de la luc
 El dibujo es esquemático.
 Fuentes: Kotlobay et al. 2018 (PNAS), Mitiouchkina et al. 2020 (Nat. Biotechnol.), Shakhova et al. 2024 (Nat. Methods), Ow et al. 1986 (Science), USDA APHIS 2023, NPR 2024.
 ¿Pondrías una en tu jardín? 👇
-Shot Biotecnológico #05 · La Creación del Robert
+Shot Biotecnológico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #plantas #bioluminiscencia #hongos
 ```
@@ -24,7 +24,7 @@ Esta flor no tiene pilas ni pintura: brilla porque lleva genes de hongos. 🌸�
 Cuatro enzimas del sistema de luz de un hongo convierten el ácido cafeico de la planta en luciferina, la queman con oxígeno para soltar luz verde y reciclan lo que sobra. En 1986 ya había plantas que brillaban, pero había que darles luciferina; uno de esos estudiantes, Keith Wood, cofundó la empresa de esta petunia. En 2023, EE. UU. determinó que no está regulada como plaga vegetal.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Pondrías una en tu jardín? 👇
-Shot Biotecnológico #05 · La Creación del Robert
+Shot Biotecnológico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #plantas #bioluminiscencia #hongos
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Una flor que brilla sin pilas? Sí existe 🌸 | Shot Biotecnológico #05
+¿Una flor que brilla sin pilas? Sí existe 🌸 | Shot Biotecnológico 05
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - NPR (abril de 2024), sobre la petunia luciérnaga y su venta.
 
 ¿Pondrías una en tu jardín? 👇
-Shot Biotecnológico #05 · La Creación del Robert
+Shot Biotecnológico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #bioluminiscencia
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esta flor no tiene pilas ni pintura: brilla porque lleva genes de hongos. 🌸✨ Tiene un hongo dando vueltas por dentro. ¿Pondrías una en tu jardín? 👇
-Shot Biotecnológico #05 · La Creación del Robert
+Shot Biotecnológico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia
 ```
@@ -69,7 +69,7 @@ La petunia "luciérnaga" de Light Bio produce su propia luz con el sistema biolu
 La historia viene de lejos: en 1986, un equipo de UC San Diego metió el gen de la luciferasa de luciérnaga en tabaco, pero la planta solo brillaba si se le daba luciferina. Keith Wood, estudiante de ese equipo, es hoy cofundador de Light Bio.
 En septiembre de 2023, APHIS (Departamento de Agricultura de EE. UU.) determinó que esta petunia no está regulada como plaga vegetal, y salió a la venta en 2024. Un ejemplo de cómo la biología sintética llega al consumidor.
 ¿Qué otra aplicación le ves a las plantas que brillan solas?
-Shot Biotecnológico #05 · La Creación del Robert
+Shot Biotecnológico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #BiologiaSintetica #Bioluminiscencia
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #53 · Esa ramita es una oruga: el hongo-oruga del Tíbet
+# Publicación · Shot Fungi Mati 53 · Esa ramita es una oruga: el hongo-oruga del Tíbet
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ En 2018, un estudio de Stanford y Colorado State (PNAS) juntó reportes de más 
 El dibujo es esquemático.
 Fuentes: Hopping et al. 2018 (PNAS); Guo et al. 2015 (PLoS ONE); Lista Roja de la UICN; Kew.
 ¿Habías visto uno? 👇
-Shot Fungi Mati #53 · La Creación del Robert
+Shot Fungi Mati 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Tibet #Cordyceps
 ```
@@ -24,7 +24,7 @@ Esa ramita no es una ramita: es una oruga momificada con un hongo saliéndole de
 Ophiocordyceps sinensis (yartsa gunbu) infecta orugas de polilla fantasma bajo el pasto del Tíbet y el Himalaya, las momifica y en primavera saca un tallo por su cabeza. En 2017, en Pekín, los mejores se vendían a más de 140,000 dólares el kilo, más del triple que el oro. Para cientos de miles de recolectores es fuente principal de ingreso, y cada vez hay menos: sobre todo por recolectar de más, y el calentamiento también influye. La UICN lo clasifica como vulnerable.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Habías visto uno? 👇
-Shot Fungi Mati #53 · La Creación del Robert
+Shot Fungi Mati 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Tibet #Cordyceps
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa "ramita" es una oruga con un hongo en la cabeza 🐛🍄 | Shot Fungi Mati #53
+Esa "ramita" es una oruga con un hongo en la cabeza 🐛🍄 | Shot Fungi Mati 53
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - UICN, Lista Roja: Ophiocordyceps sinensis, Vulnerable (evaluación del 31 oct 2019). https://www.iucnredlist.org/species/58514773/179197748
 - Catalogue of Fungi of Colombia (Royal Botanic Gardens, Kew), Ophiocordyceps sinensis. https://colfungi.org/taxon/urn:lsid:indexfungorum.org:names:504340/general-information
 ¿Habías visto uno? 👇
-Shot Fungi Mati #53 · La Creación del Robert
+Shot Fungi Mati 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa ramita no es una ramita: es una oruga momificada con un hongo saliéndole de la cabeza. 🐛🍄 Es el hongo-oruga del Tíbet (Ophiocordyceps sinensis), y en 2017 los mejores se vendían en Pekín a más de 140,000 dólares el kilo, más del triple que el oro.
 ¿Habías visto uno? 👇
-Shot Fungi Mati #53 · La Creación del Robert
+Shot Fungi Mati 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -68,7 +68,7 @@ Ophiocordyceps sinensis (yartsa gunbu) parasita orugas de polilla bajo los pasti
 El mismo estudio reúne reportes de más de 800 personas en China, Nepal, Bután e India: la mayoría observa que la producción baja, sobre todo por sobreexplotación, y los modelos indican que el calentamiento invernal también contribuye. La UICN lo clasifica como vulnerable.
 Por qué importa: como concluye el estudio, la cosecha no es la única amenaza para una especie valiosa: el calentamiento también cuenta, y de este hongo dependen cientos de miles de recolectores.
 ¿Conoces otro recurso silvestre que esté pasando por algo parecido?
-Shot Fungi Mati #53 · La Creación del Robert
+Shot Fungi Mati 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Biodiversidad #CambioClimatico #Ciencia
 ```
@@ -81,7 +81,7 @@ Esa "ramita" es una oruga momificada con un hongo saliéndole de la cabeza: Ophi
 ### Threads
 ```text
 Esa ramita no es una ramita: es una oruga momificada con un hongo saliéndole de la cabeza. 🐛🍄 El hongo-oruga del Tíbet se recolecta en la montaña, en 2017 los mejores valían más del triple que el oro y cada vez hay menos. ¿Habías visto uno?
-Shot Fungi Mati #53 · La Creación del Robert
+Shot Fungi Mati 53 · La Creación del Robert
 #Hongos
 ```
 

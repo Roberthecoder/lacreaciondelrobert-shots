@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #46 · Saltar en un elevador que cae (casi seguro) no te salvaría
+# Publicación · Shot Científico 46 · Saltar en un elevador que cae (casi seguro) no te salvaría
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Las velocidades del ejemplo son de un cálculo simplificado.
 El dibujo es esquemático.
 Fuentes: Baird (WTAMU, 2012); Barnes (The Conversation, 2018); Otis Elevator; Código de California, Título 8 (basado en ASME A17.1).
 ¿Alguna vez te has quedado atorado en un elevador? 👇
-Shot Científico #46 · La Creación del Robert
+Shot Científico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Elevador #Mitos
 ```
@@ -28,7 +28,7 @@ Si el elevador cae, tú caes con él a la misma velocidad: tu salto solo le rest
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Alguna vez te has quedado atorado en un elevador? 👇
-Shot Científico #46 · La Creación del Robert
+Shot Científico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Elevador #Mitos
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Saltar en un elevador que cae te salva? Casi seguro no 🛗 | Shot Científico #46
+¿Saltar en un elevador que cae te salva? Casi seguro no 🛗 | Shot Científico 46
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Fuentes:
 - Otis Elevator Company. Qué hacer si el elevador se detiene. https://www.otis.com/en/us/w/5-steps-to-take-if-your-elevator-stops
 - Velocidades del ejemplo: cálculo simplificado de caída libre, v = √(2gh), sin fricción del aire.
 ¿Alguna vez te has quedado atorado en un elevador? 👇
-Shot Científico #46 · La Creación del Robert
+Shot Científico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Saltar en el último segundo te salva si el elevador cae? Casi seguro no: caes con él, a su misma velocidad, y tu salto solo le resta un poquito (en un cálculo simplificado, de más de 80 km/h le quitas unos 10). La buena noticia: los elevadores de cable traen frenos que se traban en los rieles y cuelgan de varios cables. Si te quedas atorado, quédate adentro, aprieta la alarma y espera ayuda.
 ¿Alguna vez te has quedado atorado en un elevador? 👇
-Shot Científico #46 · La Creación del Robert
+Shot Científico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -74,19 +74,19 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un mito de película, explicado con física básica: si un elevador cayera, saltar justo antes del golpe casi seguro no te salvaría. Caes con la cabina a la misma velocidad y tu salto solo le resta la poquita velocidad que tú le das. En un cálculo simplificado, una caída de unos 30 m (10 pisos) llega a más de 80 km/h y un buen salto resta unos 10.
 Lo interesante es la ingeniería que hace que no lo necesites: el freno de seguridad que Elisha Otis presentó en Nueva York en 1854, los frenos que hoy se traban en los rieles guía y los varios cables de los que cuelga la cabina.
-Shot Científico #46 · La Creación del Robert
+Shot Científico 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Si un elevador cae, saltar al final casi seguro no te salva: caes con él y tu salto solo le resta un poquito (cálculo simplificado: de más de 80 km/h le quitas unos 10). Pero traen frenos que se traban en los rieles y varios cables. Shot Científico #46 🛗
+Si un elevador cae, saltar al final casi seguro no te salva: caes con él y tu salto solo le resta un poquito (cálculo simplificado: de más de 80 km/h le quitas unos 10). Pero traen frenos que se traban en los rieles y varios cables. Shot Científico 46 🛗
 ```
 
 ### Threads
 ```text
-¿Saltar en el último segundo te salva si el elevador cae? Casi seguro no: caes con él a la misma velocidad. En un cálculo simplificado, 10 pisos (unos 30 m) dan más de 80 km/h y un buen salto resta unos 10. Lo bueno: desde el freno de Otis (Nueva York, 1854), los elevadores de cable traen frenos que se traban en los rieles y cuelgan de varios cables. Si te atoras: quédate adentro, aprieta la alarma y espera ayuda. Shot Científico #46 🛗
+¿Saltar en el último segundo te salva si el elevador cae? Casi seguro no: caes con él a la misma velocidad. En un cálculo simplificado, 10 pisos (unos 30 m) dan más de 80 km/h y un buen salto resta unos 10. Lo bueno: desde el freno de Otis (Nueva York, 1854), los elevadores de cable traen frenos que se traban en los rieles y cuelgan de varios cables. Si te atoras: quédate adentro, aprieta la alarma y espera ayuda. Shot Científico 46 🛗
 ```
 
 ## Comentario fijado (fuentes)

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #39 · El dibujo escondido en el canto de un pájaro
+# Publicación · Shot IA 39 · El dibujo escondido en el canto de un pájaro
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Cuando cante un pájaro en tu ventana, recuerda: ahí hay una foto escondida.
 El dibujo es esquemático; las formas de canto y los sonidos son ilustrativos.
 Fuentes: Kahl et al., Ecological Informatics (2021); Wood et al., PLOS Biology (2022).
 ¿Qué pájaro canta afuera de tu ventana? ¿Cómo le dicen en tu región? 👇
-Shot IA #39 · La Creación del Robert
+Shot IA 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Aves #BirdNET #CienciaCiudadana
 ```
@@ -25,7 +25,7 @@ En el canto de ese pájaro hay un dibujo escondido. Tus oídos no lo ven. Tu cel
 Las apps que reconocen aves convierten el sonido en un espectrograma (agudo, fuerte y duración) y una IA lo "lee" como una foto. BirdNET, de Cornell y la Universidad Técnica de Chemnitz, es una red de 157 capas entrenada con millones de grabaciones de voluntarios: de 2018 a 2020 reconocía 984 especies de aves, a inicios de 2021 más de 3,000, y su modelo mundial de 2023 pasa de 6,000 especies (aves y otros animales), entre ellas el zanate. En 2020 la usaron más de 1.1 millones de personas, y con sus grabaciones se reconstruyó la ruta migratoria de la grulla común en Europa.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué pájaro canta afuera de tu ventana? 👇
-Shot IA #39 · La Creación del Robert
+Shot IA 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Aves #BirdNET #CienciaCiudadana
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu celular "ve" el canto de los pájaros 🐦 | Shot IA #39
+Tu celular "ve" el canto de los pájaros 🐦 | Shot IA 39
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 En el canto de ese pájaro hay un dibujo escondido. Tus oídos no lo ven. Tu celular, sí. 🐦 Las apps de aves convierten el canto en un espectrograma y una IA lo lee como una foto. BirdNET (Cornell + Univ. Técnica de Chemnitz) reconocía 984 especies de aves de 2018 a 2020; su modelo mundial de 2023 pasa de 6,000 especies, entre ellas el zanate de tu jardín.
 ¿Qué pájaro canta afuera de tu ventana? 👇
-Shot IA #39 · La Creación del Robert
+Shot IA 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Aves
 ```
@@ -68,7 +68,7 @@ Eso hace BirdNET (Laboratorio de Ornitología de Cornell + Universidad Técnica 
 Lo más interesante es el efecto en la ciencia ciudadana: en 2020 la app tuvo más de 1.1 millones de participantes, frente a 317,792 de eBird, porque no exige saber identificar aves. Con sus observaciones se reconstruyó la ruta migratoria conocida de la grulla común en Europa (Wood et al., PLOS Biology, 2022). Y todo eso existe gracias a millones de grabaciones de voluntarios.
 ¿Qué otra herramienta de IA ha bajado la barrera para participar en ciencia?
 Fuentes: Kahl et al. (2021); Wood et al. (2022).
-Shot IA #39 · La Creación del Robert
+Shot IA 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #CienciaCiudadana #Biodiversidad #Aves #LaCreacionDelRobert
 ```
@@ -83,7 +83,7 @@ Tu celular "ve" el canto de un pájaro: lo vuelve espectrograma y una IA lo lee 
 En el canto de ese pájaro hay un dibujo escondido. Tus oídos no lo ven. Tu celular, sí. 🐦
 Apps como BirdNET convierten el canto en un espectrograma y una IA lo lee como foto. En 2020 la usaron más de 1.1 millones de personas, y con sus grabaciones se reconstruyó la ruta de la grulla común en Europa.
 ¿Qué pájaro canta en tu ventana?
-Shot IA #39 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 39 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

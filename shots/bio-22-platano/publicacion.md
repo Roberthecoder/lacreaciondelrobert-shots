@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #22 · Ese plátano no es único: es un clon (Cavendish, Fusarium TR4 y QCAV-4)
+# Publicación · Shot Biotecnológico 22 · Ese plátano no es único: es un clon (Cavendish, Fusarium TR4 y QCAV-4)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Y ojo: el Cavendish ya tiene genes parecidos, pero unas 10 veces menos activos q
 El dibujo es esquemático.
 Fuentes: Dale et al. 2017 · Hippolyte et al. 2012 · FAO 2019 · SENASICA 2026 · FSANZ 2024 · OGTR 2024.
 ¿En tu casa qué plátano se come más: Tabasco, macho, dominico…? 👇
-Shot Biotecnológico #22 · La Creación del Robert
+Shot Biotecnológico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Platano #Cavendish #Fusarium
 ```
@@ -26,7 +26,7 @@ Ese plátano no es único: es un clon, casi idéntico al de tu vecino. 🍌🧬
 El Cavendish, la variedad de casi todo el plátano de exportación, es triploide, no da semillas útiles y se propaga por brotes o cultivo de tejidos: son copias casi idénticas. Por eso un hongo, Fusarium raza tropical 4 (TR4), los amenaza a todos: entra por la raíz, invade los tubos del agua y la planta se marchita. Ya pasó con el Gros Michel (raza 1). La TR4 llegó a Colombia en 2019 y luego a Perú, Venezuela y Ecuador; en México no hay registros (SENASICA, feb 2026). En Australia, un gen de un plátano silvestre protegió a la mejor línea durante 3 años de prueba en campo infectado, y en 2024 se aprobó otra línea con ese gen, QCAV-4.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué plátano se come más en tu casa? 👇
-Shot Biotecnológico #22 · La Creación del Robert
+Shot Biotecnológico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Platano #Cavendish #Fusarium
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese plátano no es único: es un clon 🍌 | Shot Biotecnológico #22
+Ese plátano no es único: es un clon 🍌 | Shot Biotecnológico 22
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - FSANZ (2024). Approval Report A1274: Food derived from disease resistant banana line QCAV-4. https://www.foodstandards.gov.au/sites/default/files/2024-02/A1274%20Approval%20report.pdf
 - OGTR (2024). DIR 199, licencia de liberación comercial de QCAV-4. https://www.ogtr.gov.au/sites/default/files/2024-02/dir199_notification_of_licence_decision.pdf
 ¿En tu casa qué plátano se come más: Tabasco, macho, dominico…? 👇
-Shot Biotecnológico #22 · La Creación del Robert
+Shot Biotecnológico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Platano
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese plátano no es único: es un clon, casi idéntico al de tu vecino. 🍌 Casi todo el plátano que se exporta es Cavendish, y como son copias, un hongo (Fusarium TR4) puede con todos. Ya llegó a Colombia, Perú, Venezuela y Ecuador; a México, aún no. En Australia aprobaron en 2024 una línea con un gen de defensa de un plátano silvestre.
 ¿Qué plátano se come más en tu casa? 👇
-Shot Biotecnológico #22 · La Creación del Robert
+Shot Biotecnológico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Platano
 ```
@@ -73,7 +73,7 @@ Más del 40 % de la producción mundial de plátano y casi todo el comercio de e
 La historia ya pasó una vez: la raza 1 sacó al Gros Michel de la exportación a mediados de los años 50 (FAO, 2019). La TR4 se detectó en América en 2019 (Colombia) y después en Perú, Venezuela y Ecuador (2025–2026). En México, SENASICA la reporta como plaga ausente (febrero de 2026).
 La biotecnología ofrece una salida: en una prueba de campo de 3 años en Australia, la mejor línea de Cavendish con el gen RGA2 de un plátano silvestre no se enfermó, y en 2024 los reguladores australianos aprobaron otra línea con ese gen, QCAV-4, para cultivo y consumo. Además, el Cavendish ya tiene genes parecidos, poco activos, que podrían encenderse con edición genética.
 ¿Cómo debería equilibrar la agricultura la eficiencia de un monocultivo con la diversidad genética que la protege?
-Shot Biotecnológico #22 · La Creación del Robert
+Shot Biotecnológico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #SeguridadAlimentaria #Fitosanidad #Agricultura #LaCreacionDelRobert
 ```
@@ -87,7 +87,7 @@ Ese plátano no es único: es un clon. 🍌 Casi todo el exportado es Cavendish,
 ```text
 Ese plátano no es único: es un clon, casi idéntico al de tu vecino. 🍌 El Cavendish no da semillas útiles: se copia por brotes. Por eso un hongo del suelo, Fusarium TR4, amenaza a todos. Ya pasó con el Gros Michel en los años 50. En 2024, Australia aprobó una línea con un gen de un plátano silvestre que detecta al hongo.
 ¿Qué plátano se come más en tu casa? 👇
-Shot Biotecnológico #22 · La Creación del Robert
+Shot Biotecnológico 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #57 · El cenote es una ventana al agua que bebe toda la península
+# Publicación · Shot Ambiental 57 · El cenote es una ventana al agua que bebe toda la península
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que ese hoyo no es un estanque: es una ventana al agua que bebe la penínsu
 El dibujo es esquemático.
 Fuentes: UNAM Internacional (2026); Kopczynski et al. 2025; Osburn et al. 2023; Cooney et al. 2023.
 ¿Ya nadaste en un cenote? ¿Cuál? 👇
-Shot Ambiental #57 · La Creación del Robert
+Shot Ambiental 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Cenotes #Yucatan #Agua
 ```
@@ -27,7 +27,7 @@ Ese hoyo con agua no es un estanque: es una ventana a un río que corre bajo tus
 En casi toda la península de Yucatán no hay ríos en la superficie: la lluvia, un poquito ácida por el dióxido de carbono, disuelve la caliza y forma cuevas llenas de agua; si el techo se derrumba, nace un cenote. Ese acuífero es la única fuente de agua potable de la región, y lo que se tira arriba (fosas sépticas, granjas) puede llegar abajo en horas o días. En 2022, la UNAM y Texas A&M hallaron bacterias fecales en 9 de 10 cenotes de la Riviera Maya. Lo bueno: en Puerto Morelos, al pasar de fosas a planta de tratamiento (2021), un pozo junto a la playa tuvo mucho menos bloqueador solar.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya nadaste en un cenote? ¿Cuál? 👇
-Shot Ambiental #57 · La Creación del Robert
+Shot Ambiental 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Cenotes #Yucatan #Agua
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es un estanque: es una ventana a un río 💧 | Shot Ambiental #57
+Esto no es un estanque: es una ventana a un río 💧 | Shot Ambiental 57
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Osburn et al. (2023). Microbial biogeography of the eastern Yucatán carbonate aquifer. Appl. Environ. Microbiol.: https://pmc.ncbi.nlm.nih.gov/articles/PMC10701671/
 - Cooney et al. (2023). Analysis of sunscreens and antibiotics in groundwater during the Covid-19 pandemic in the Riviera Maya. Sci. Total Environ.: https://pmc.ncbi.nlm.nih.gov/articles/PMC10259088/
 ¿Ya nadaste en un cenote? ¿Cuál? 👇
-Shot Ambiental #57 · La Creación del Robert
+Shot Ambiental 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Cenotes #Yucatan
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese hoyo con agua no es un estanque: es una ventana a un río que corre bajo tus pies. 💧 En la península de Yucatán, ese acuífero es la única fuente de agua potable, y lo que se tira arriba puede llegar abajo en horas o días: en 2022 se hallaron bacterias fecales en 9 de 10 cenotes revisados en la Riviera Maya.
 ¿Ya nadaste en un cenote? ¿Cuál? 👇
-Shot Ambiental #57 · La Creación del Robert
+Shot Ambiental 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Cenotes #Yucatan
 ```
@@ -70,7 +70,7 @@ En la península de Yucatán casi no hay ríos superficiales: la lluvia se infil
 El reto es que filtra muy poco: según la UNAM, la lluvia puede volverse agua subterránea en horas o días, y en muchas localidades las aguas residuales van a fosas sépticas que descargan al subsuelo. Un estudio de Texas A&M y la UNAM (muestreo de septiembre de 2022) encontró coliformes fecales en 9 de 10 cenotes de la Riviera Maya.
 También hay evidencia de que la infraestructura funciona: en Puerto Morelos, tras conectar la zona de playa a una planta de tratamiento en 2021, un pozo junto a la playa mostró mucho menos bloqueador solar en el agua subterránea.
 ¿Qué debería ir primero en la península: drenaje y tratamiento, o vigilancia de la calidad del agua?
-Shot Ambiental #57 · La Creación del Robert
+Shot Ambiental 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Agua #Yucatan #Cenotes #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Ese cenote no es un estanque: es una ventana al acuífero, la única fuente de a
 Ese hoyo con agua no es un estanque: es una ventana a un río que corre bajo tus pies. 💧
 En casi toda la península de Yucatán no hay ríos en la superficie: la lluvia disuelve la caliza y forma cuevas; si el techo se cae, nace un cenote. Ese acuífero es la única fuente de agua potable de la región, y lo que se tira arriba puede llegar abajo en horas o días.
 ¿Ya nadaste en un cenote?
-Shot Ambiental #57 · La Creación del Robert
+Shot Ambiental 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Cenotes
 ```

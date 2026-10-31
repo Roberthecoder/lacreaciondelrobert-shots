@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #27 · Esas bolitas de «no comer» no son veneno (sílica gel)
+# Publicación · Shot Químico 27 · Esas bolitas de «no comer» no son veneno (sílica gel)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Dato extra: la patente de la sílica gel es de 1919, de Walter A. Patrick, de Ba
 El dibujo es esquemático.
 Fuentes: Poison Control · Jacobs et al. 2023 (ACS Omega) · Lavon y Bentur 2015 (Isr Med Assoc J) · McGill OSS.
 ¿Tú los guardas o los tiras? 👇
-Shot Químico #27 · La Creación del Robert
+Shot Químico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #SilicaGel #QuimicaEnCasa #DatosCuriosos
 ```
@@ -27,7 +27,7 @@ Esas bolitas de «no comer» no son veneno: son una trampa para el agua, llena d
 Es sílica gel, dióxido de silicio lleno de poros: un gramo tiene por dentro más superficie que una cancha de básquetbol, y el vapor de agua se pega a sus paredes (adsorción, con d). Dice «no comer» porque un niño se puede atragantar y las azules traen cloruro de cobalto (tóxico, pero en muy poca cantidad). En Israel, un estudio publicado en 2015 contó 546 casos en un año, casi todos de niños menores de 6 años; solo el 2.7 % tuvo síntomas leves.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú los guardas o los tiras? 👇
-Shot Químico #27 · La Creación del Robert
+Shot Químico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #SilicaGel #QuimicaEnCasa #DatosCuriosos
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las bolitas de «no comer» no son veneno 💧 | Shot Químico #27
+Las bolitas de «no comer» no son veneno 💧 | Shot Químico 27
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - FIBA. Official Basketball Rules (2012), Regla 1 (cancha de 28 × 15 m).
 - Patrick W.A. (1919). Silica gel and process of making same. US1297724. https://patents.google.com/patent/US1297724A/en
 ¿Tú los guardas o los tiras? 👇
-Shot Químico #27 · La Creación del Robert
+Shot Químico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #SilicaGel
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas bolitas de «no comer» no son veneno: son una trampa para el agua, llena de túneles. 💧 Son sílica gel, dióxido de silicio con tantos poros que un gramo tiene por dentro más superficie que una cancha de básquetbol. Dice «no comer» porque un niño se puede atragantar y las azules traen cloruro de cobalto.
 ¿Tú los guardas o los tiras? 👇
-Shot Químico #27 · La Creación del Robert
+Shot Químico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #SilicaGel
 ```
@@ -75,14 +75,14 @@ Esas bolitas de «no comer» no son veneno: son un material con una superficie i
 La sílica gel es dióxido de silicio amorfo y poroso. En un estudio de 2023 (Jacobs et al., ACS Omega), tres sílica gel tenían entre 453 y 641 m² de superficie por gramo, más que una cancha de básquetbol. Sus paredes están cubiertas de grupos silanol (Si–OH) que retienen el agua por puentes de hidrógeno: adsorción, no absorción.
 La advertencia tiene sentido por otras razones: el riesgo de atragantamiento en niños pequeños y el indicador de cloruro de cobalto de las versiones azules, tóxico aunque en baja concentración. En un estudio israelí publicado en 2015 (Lavon y Bentur), un año de llamadas a un centro nacional de toxicología sumó 546 casos, el 91.4 % en menores de 6 años; solo el 2.7 % tuvo síntomas, casi todos leves. Los autores concluyen además que la ingesta de sílica gel causa visitas innecesarias a clínicas y urgencias, y que consultar primero al centro de toxicología puede evitarlas.
 ¿Qué otros materiales de uso diario tienen una química más interesante de lo que parece?
-Shot Químico #27 · La Creación del Robert
+Shot Químico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeMateriales #Toxicologia #SilicaGel #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esas bolitas de «no comer» no son veneno: son sílica gel, con tantos poros que 1 gramo tiene por dentro más superficie que una cancha de básquetbol. El agua se pega a sus paredes. 💧 Shot Químico #27 #Quimica
+Esas bolitas de «no comer» no son veneno: son sílica gel, con tantos poros que 1 gramo tiene por dentro más superficie que una cancha de básquetbol. El agua se pega a sus paredes. 💧 Shot Químico 27 #Quimica
 ```
 
 ### Threads
@@ -90,7 +90,7 @@ Esas bolitas de «no comer» no son veneno: son sílica gel, con tantos poros qu
 Esas bolitas de «no comer» no son veneno: son una trampa para el agua, llena de túneles. 💧
 Un gramo de sílica gel tiene por dentro más superficie que una cancha de básquetbol. Dice «no comer» por el riesgo de atragantamiento y porque las azules traen cloruro de cobalto.
 ¿Tú los guardas o los tiras?
-Shot Químico #27 · La Creación del Robert
+Shot Químico 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

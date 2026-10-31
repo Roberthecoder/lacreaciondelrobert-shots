@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #57 · El tronco de 8 metros que quizá no era hongo: Prototaxites
+# Publicación · Shot Fungi Mati 57 · El tronco de 8 metros que quizá no era hongo: Prototaxites
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Pero no está cerrado: otros expertos señalan que solo se revisó una especie, 
 El dibujo es esquemático.
 Fuentes: Loron et al. 2026 (Science Advances); Boyce et al. 2007 (Geology); Hueber 2001; Universidad de Aberdeen (Rhynie).
 ¿Tú qué crees que era: hongo o algo que ya no existe? 👇
-Shot Fungi Mati #57 · La Creación del Robert
+Shot Fungi Mati 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Fosiles #Paleontologia
 ```
@@ -26,7 +26,7 @@ Este tronco de ocho metros no es un árbol. Y quizá tampoco era un hongo. 🍄�
 Prototaxites vivió hace unos 400 millones de años y era el gigante de su paisaje: en Rhynie (Escocia), las plantas no pasaban de 40 cm. Por dentro es una maraña de tubos microscópicos. Por años se pensó que era un hongo gigante (Hueber 2001; isótopos de carbono, 2007). En 2026, un estudio en Science Advances no encontró en sus fósiles de Escocia la huella química de la quitina que sí dejan los hongos de la misma piedra, y propone que era un linaje extinto. Otros expertos dicen que solo se revisó una especie: el debate sigue abierto.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú qué crees que era? 👇
-Shot Fungi Mati #57 · La Creación del Robert
+Shot Fungi Mati 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Fosiles #Paleontologia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un tronco de 8 m que quizá NO era hongo 🍄❓ | Shot Fungi Mati #57
+Un tronco de 8 m que quizá NO era hongo 🍄❓ | Shot Fungi Mati 57
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - University of Aberdeen. The Rhynie Chert · Basic Facts. https://www.abdn.ac.uk/rhynie/basic.htm
 - Hunt, K. (2026). New analysis suggests puzzling fossil may have been an unknown life form. CNN. https://kvia.com/cnn-other/2026/02/05/new-analysis-suggests-puzzling-fossil-may-have-been-an-unknown-life-form/
 ¿Tú qué crees que era: hongo o algo que ya no existe? 👇
-Shot Fungi Mati #57 · La Creación del Robert
+Shot Fungi Mati 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Fosiles #FungiMati
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este tronco de ocho metros no es un árbol. Y quizá tampoco era un hongo. 🍄❓ Prototaxites vivió hace unos 400 millones de años y por años se pensó que era un hongo gigante. En 2026, un estudio no encontró en sus fósiles la huella química de la quitina de los hongos y propone que era un linaje extinto. El debate sigue abierto.
 ¿Tú qué crees que era? 👇
-Shot Fungi Mati #57 · La Creación del Robert
+Shot Fungi Mati 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Fosiles
 ```
@@ -72,7 +72,7 @@ Prototaxites (hace unos 420 a 370 millones de años) se interpretó sobre todo c
 En enero de 2026, Loron et al. (Science Advances) analizaron Prototaxites taiti del pedernal de Rhynie, Escocia (407 millones de años). Los hongos fósiles de la misma roca conservan señales químicas asociadas a paredes ricas en quitina; Prototaxites no. Además, su estructura no coincide con la de ningún hongo conocido. Los autores proponen que pertenecía a un linaje eucariota completamente extinto.
 Por qué importa: muestra cómo nuevas técnicas químicas pueden reabrir preguntas que parecían resueltas. Y también sus límites: el estudio revisó una sola especie, y otros especialistas consideran que la hipótesis del hongo sigue siendo viable.
 ¿Qué otro "caso cerrado" de la ciencia crees que merece revisarse?
-Shot Fungi Mati #57 · La Creación del Robert
+Shot Fungi Mati 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Paleontologia #Micologia #Ciencia
 ```
@@ -85,7 +85,7 @@ Este tronco fósil de 8 m no es un árbol, y quizá tampoco era hongo: en 2026, 
 ### Threads
 ```text
 Este tronco de ocho metros no es un árbol. Y quizá tampoco era un hongo. 🍄❓ Prototaxites vivió hace unos 400 millones de años; se pensaba que era un hongo gigante, pero en 2026 sus fósiles no mostraron la huella química de la quitina. Otros expertos dicen que el debate sigue abierto. ¿Tú qué crees que era?
-Shot Fungi Mati #57 · La Creación del Robert
+Shot Fungi Mati 57 · La Creación del Robert
 #Fosiles
 ```
 

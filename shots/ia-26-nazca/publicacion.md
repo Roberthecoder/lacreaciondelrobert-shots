@@ -1,4 +1,4 @@
-# Publicación · Shot IA #26 · La IA que encontró 303 figuras escondidas en Nazca
+# Publicación · Shot IA 26 · La IA que encontró 303 figuras escondidas en Nazca
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ La IA dice dónde mirar; caminar el desierto dice qué es real.
 El dibujo es esquemático (las ubicaciones exactas no son públicas, para proteger el sitio).
 Fuentes: Sakai et al., PNAS (2024); Universidad de Yamagata (2025).
 ¿Ya fuiste a Nazca o te gustaría ir? 👇
-Shot IA #26 · La Creación del Robert
+Shot IA 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Nazca #Arqueologia #Peru
 ```
@@ -26,7 +26,7 @@ En casi 100 años hallaron 430 figuras en el desierto de Nazca, Perú. Con ayuda
 Una IA revisó fotos aéreas de todo el desierto en cuadritos de unos 11 m y propuso dónde buscar; los arqueólogos filtraron (de cada 36 sugerencias, una prometía) y luego fueron a pie a 341 puntos. Resultado: 303 figuras nuevas, casi el doble (PNAS, 2024). En 2025 anunciaron 160 más: ya van 893. Ojo: 59 de las 303 las hallaron personas sin la IA.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya fuiste a Nazca o te gustaría ir? 👇
-Shot IA #26 · La Creación del Robert
+Shot IA 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Nazca #Arqueologia #Peru
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que encontró 303 figuras escondidas en Nazca 🏜️ | Shot IA #26
+La IA que encontró 303 figuras escondidas en Nazca 🏜️ | Shot IA 26
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 En casi 100 años hallaron 430 figuras en el desierto de Nazca, Perú. Con ayuda de una IA, 303 más en seis meses. 🏜️ La IA propuso dónde buscar en fotos aéreas; los arqueólogos fueron a pie a 341 puntos y las confirmaron (PNAS, 2024). En 2025 anunciaron 160 más. La IA dice dónde mirar; caminar dice qué es real.
 ¿Ya fuiste a Nazca o te gustaría ir? 👇
-Shot IA #26 · La Creación del Robert
+Shot IA 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Nazca
 ```
@@ -67,7 +67,7 @@ El estudio (Sakai et al., Universidad de Yamagata e IBM Research, con la Univers
 La IA no sustituyó la validación en campo: la hizo posible a otra escala. En 2025 la Universidad de Yamagata anunció 160 figuras más; el total llegó a 893.
 ¿En tu área, dónde está el "caminar en campo" que ninguna IA puede saltarse?
 Fuentes: Sakai et al., PNAS 121(40): e2407652121 (2024); Universidad de Yamagata, comunicado del 28 jul 2025.
-Shot IA #26 · La Creación del Robert
+Shot IA 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Arqueologia #Nazca #CienciaDeDatos #LaCreacionDelRobert
 ```
@@ -82,7 +82,7 @@ En casi 100 años hallaron 430 figuras en Nazca. Con ayuda de una IA, 303 más e
 En casi 100 años hallaron 430 figuras en el desierto de Nazca. Con ayuda de una IA, 303 más en seis meses. 🏜️
 La IA revisó fotos aéreas y propuso dónde buscar; los arqueólogos caminaron a 341 puntos para confirmarlas. Y en 2025 anunciaron 160 más.
 ¿Ya fuiste a Nazca o te gustaría ir?
-Shot IA #26 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 26 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

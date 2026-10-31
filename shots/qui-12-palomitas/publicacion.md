@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #12 · Tu palomita no revienta por quemarse (por qué revientan las palomitas)
+# Publicación · Shot Químico 12 · Tu palomita no revienta por quemarse (por qué revientan las palomitas)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ En 2015, dos investigadores en Francia (Virot y Ponomarenko) las calentaron en u
 El dibujo es esquemático.
 Fuentes: Virot y Ponomarenko 2015 · Tandjung et al. 2005.
 ¿Tú cómo les dices a las que no revientan? 👇
-Shot Químico #12 · La Creación del Robert
+Shot Químico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Palomitas #CienciaEnLaCocina #Maiz
 ```
@@ -24,7 +24,7 @@ Esa palomita no revienta porque se queme: revienta porque trae agua adentro. �
 Unos 20 mg de agua por grano se vuelven vapor; la cáscara (pericarpio) aguanta como olla exprés hasta que se rompe, y el almidón se infla como espuma: el doble de ancho y ocho veces menos denso. En 2015, en Francia, a 180 °C reventó el 96 % de los granos; con cámara superrápida vieron la "patita" de almidón que las hace brincar, y los autores proponen que el "pop" es el vapor al salir.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú cómo les dices a las que no revientan? 👇
-Shot Químico #12 · La Creación del Robert
+Shot Químico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Palomitas #CienciaEnLaCocina #Maiz
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu palomita no revienta por quemarse 🍿 | Shot Químico #12
+Tu palomita no revienta por quemarse 🍿 | Shot Químico 12
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - Tandjung A.S. et al. (2005). Role of the pericarp cellulose matrix as a moisture barrier in microwaveable popcorn. Biomacromolecules 6(3):1654–60. https://pubmed.ncbi.nlm.nih.gov/15877391/
 - Matsuoka Y. et al. (2002). A single domestication for maize shown by multilocus microsatellite genotyping. PNAS 99(9):6080–4. https://pubmed.ncbi.nlm.nih.gov/11983901/
 ¿Tú cómo les dices a las que no revientan? 👇
-Shot Químico #12 · La Creación del Robert
+Shot Químico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Palomitas
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa palomita no revienta porque se queme: revienta porque trae agua adentro. 🍿 El agua del grano se vuelve vapor, la cáscara aguanta como olla exprés hasta que se rompe, y el almidón se infla como espuma. En un estudio de 2015, a 180 °C reventó el 96 % de los granos.
 ¿Tú cómo les dices a las que no revientan? 👇
-Shot Químico #12 · La Creación del Robert
+Shot Químico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Palomitas
 ```
@@ -67,14 +67,14 @@ Una palomita no revienta porque se queme: es un recipiente a presión en miniatu
 Cada grano guarda unos 20 mg de agua bajo un pericarpio de ~0.16 mm. Al calentarlo, el agua se vuelve vapor y la presión sube hasta un valor crítico, que Virot y Ponomarenko (J. R. Soc. Interface, 2015) estiman en ~10 bar. Entonces la cáscara se rompe y el almidón se expande en una espuma esponjosa: el doble de ancho y ocho veces menos densa. En su experimento, a 170 °C reventó el 34 % de los granos y a 180 °C, el 96 %. Con cámara de alta velocidad (2,900 cuadros/s) describieron el brinco: una "patita" de almidón que se comprime contra la placa y rebota. Y como la mayoría de las fracturas fueron silenciosas, proponen que el "pop" es la liberación del vapor.
 Un estudio de 2005 (Tandjung et al., Biomacromolecules) relacionó los granos que no revientan con la capacidad de la cáscara para retener la humedad.
 ¿Qué otro fenómeno de la cocina te gustaría ver explicado con física y química?
-Shot Químico #12 · La Creación del Robert
+Shot Químico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Fisica #CienciaDeLosAlimentos #Divulgacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Tu palomita no revienta por quemarse: el agua de adentro se vuelve vapor y la cáscara aguanta hasta reventar. En 2015, a 180 °C reventó el 96 % de los granos. 🍿 Shot Químico #12 #Quimica
+Tu palomita no revienta por quemarse: el agua de adentro se vuelve vapor y la cáscara aguanta hasta reventar. En 2015, a 180 °C reventó el 96 % de los granos. 🍿 Shot Químico 12 #Quimica
 ```
 
 ### Threads
@@ -82,7 +82,7 @@ Tu palomita no revienta por quemarse: el agua de adentro se vuelve vapor y la c�
 Esa palomita no revienta porque se queme: revienta porque trae agua adentro. 🍿
 El vapor sube la presión, la cáscara aguanta como olla exprés y luego el almidón se infla como espuma. Y brinca gracias a una "patita" de almidón que rebota contra el fondo (estudio de 2015).
 ¿Tú cómo les dices a las que no revientan?
-Shot Químico #12 · La Creación del Robert
+Shot Químico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

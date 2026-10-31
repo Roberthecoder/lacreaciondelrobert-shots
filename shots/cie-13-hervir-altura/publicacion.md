@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #13 · En la Ciudad de México el agua hierve antes de llegar a 100 °C
+# Publicación · Shot Científico 13 · En la Ciudad de México el agua hierve antes de llegar a 100 °C
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -13,7 +13,7 @@ Por eso, en lo alto, cocer frijoles o un huevo tarda más: el agua hirviendo est
 Los grados exactos cambian un poco con el clima de cada día.
 Fuentes: USDA FSIS (High Altitude Cooking); NMSU Extension; NDSU Extension; INEGI.
 ¿A cuántos grados crees que hierve el agua en tu ciudad? 👇
-Shot Científico #13 · La Creación del Robert
+Shot Científico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Cocina #Mexico
 ```
@@ -24,7 +24,7 @@ En la Ciudad de México, el agua hierve sin llegar a cien grados: hierve a unos 
 El agua hierve cuando sus burbujas de vapor vencen el empuje del aire de encima. En la altura hay menos aire, así que hierve antes: unos 92 °C en la CDMX, cerca de 94 en Guadalajara y 100 en Veracruz o Cancún. Por eso los frijoles tardan más allá arriba, y la olla exprés sube a unos 120 °C.
 Fuentes en el primer comentario.
 ¿A cuántos grados crees que hierve el agua en tu ciudad? 👇
-Shot Científico #13 · La Creación del Robert
+Shot Científico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Cocina #Mexico
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-En la CDMX el agua hierve a 92 °C, no a 100 🌡️ | Shot Científico #13
+En la CDMX el agua hierve a 92 °C, no a 100 🌡️ | Shot Científico 13
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - INEGI. Altitudes de Guadalajara (1,536 m), Veracruz y Cancún.
 - LibreTexts Chemistry: en la cima del Everest el agua hierve a "only about 70 °C".
 ¿A cuántos grados crees que hierve el agua en tu ciudad? 👇
-Shot Científico #13 · La Creación del Robert
+Shot Científico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 En la Ciudad de México el agua hierve a unos 92 °C, no a 100. 🌡️ Hay menos aire empujando, así que las burbujas salen antes. Por eso los frijoles tardan más en lo alto.
 ¿A cuántos grados crees que hierve el agua en tu ciudad? 👇
-Shot Científico #13 · La Creación del Robert
+Shot Científico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -68,7 +68,7 @@ El "agua hierve a 100 °C" vale para el nivel del mar.
 La temperatura de ebullición depende de la presión atmosférica: con menos aire encima, las burbujas de vapor se forman antes. Según el USDA, a unos 7,500 pies (≈ 2,290 m) el agua hierve a unos 198 °F (≈ 92 °C), muy cerca de la altitud de la Ciudad de México. En Guadalajara (≈ 1,536 m) ronda los 94 °C.
 Tiene consecuencias prácticas: tiempos de cocción, procesos industriales, recetas y protocolos de laboratorio. Por eso existen las ollas a presión, que llevan el agua a unos 120 °C.
 ¿En tu ciudad has notado que la comida tarda más en cocerse?
-Shot Científico #13 · La Creación del Robert
+Shot Científico 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

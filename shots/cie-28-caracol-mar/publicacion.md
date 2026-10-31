@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #28 · El mar del caracol no es el mar
+# Publicación · Shot Científico 28 · El mar del caracol no es el mar
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que el mar del caracol lo traes tú: es el ruido de tu cuarto, con eco. Y a
 El dibujo es esquemático.
 Fuentes: G. Vermeij (UC Davis) en HuffPost 2018; Wikipedia «Seashell resonance»; California Magazine (UC Berkeley) 2007.
 ¿Ya probaste con un vaso? ¿A qué te suena tu mar? 👇
-Shot Científico #28 · La Creación del Robert
+Shot Científico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Sonido #Caracol
 ```
@@ -28,7 +28,7 @@ La concha es un hueco curvo: el ruido de tu alrededor (voces, el refri, el vient
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Ya probaste con un vaso? ¿A qué te suena tu mar? 👇
-Shot Científico #28 · La Creación del Robert
+Shot Científico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Sonido #Caracol
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El mar del caracol no es el mar: es tu ruido 🐚 | Shot Científico #28
+El mar del caracol no es el mar: es tu ruido 🐚 | Shot Científico 28
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - California Magazine (UC Berkeley), "Glad you asked" (jul–ago 2007): https://alumni.berkeley.edu/california-magazine/july-august-2007-summer-travel-issue/glad-you-asked/
 - Wikipedia, «Helmholtz resonance» (cavidad más grande, tono más grave): https://en.wikipedia.org/wiki/Helmholtz_resonance
 ¿Ya probaste con un vaso? ¿A qué te suena tu mar? 👇
-Shot Científico #28 · La Creación del Robert
+Shot Científico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica #Sonido
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 🐚 Ese mar que oyes dentro de un caracol no es el mar: es el ruido de donde estás, rebotando adentro. La concha es un hueco curvo que refuerza algunos tonos del ruido de tu alrededor, y ese shhh suena muy parecido a las olas. No es principalmente tu sangre: en un cuarto muy silencioso casi no suena. Haz la prueba con un vaso o tu mano ahuecada sobre la oreja: también vas a oír tu propio mar.
 ¿Ya probaste con un vaso? ¿A qué te suena tu mar? 👇
-Shot Científico #28 · La Creación del Robert
+Shot Científico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -71,7 +71,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 ¿Por qué un caracol "suena a mar"? La explicación aceptada es resonancia: la concha es una cavidad que refuerza algunas frecuencias del ruido ambiental y apaga otras. Por eso el sonido cambia con el lugar (más fuerte en una calle con tráfico que en una recámara), con el tamaño de la cavidad (más grande, más grave) y casi desaparece en un cuarto insonorizado. Un vaso o la mano ahuecada producen el mismo efecto. La idea popular de que es la sangre no es la explicación principal.
-Shot Científico #28 · La Creación del Robert
+Shot Científico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

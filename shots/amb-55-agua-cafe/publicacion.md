@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #55 · Tu taza de café esconde unos 130 litros de agua
+# Publicación · Shot Ambiental 55 · Tu taza de café esconde unos 130 litros de agua
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que tu taza sí trae agua escondida: casi toda es lluvia que cayó sobre un
 El dibujo es esquemático.
 Fuentes: Mekonnen y Hoekstra (2010, 2011); Chapagain y Hoekstra (2007); SADER (2022).
 ¿Cuántas tazas de café te tomas al día? 👇
-Shot Ambiental #55 · La Creación del Robert
+Shot Ambiental 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #HuellaHidrica #Cafe #Chiapas
 ```
@@ -26,7 +26,7 @@ Esta taza no tiene 125 mililitros de agua: detrás de ella hay unos 130 litros. 
 Es el agua que usó el cafeto para dar los 7 g de café de tu taza, y casi toda (unos 127 litros) es lluvia. Menos de un litro es riego y unos 4 litros, el agua para diluir el fertilizante. En Chiapas y Veracruz, con datos de 1996 a 2005, salía en casi 200 litros por taza, porque cada hectárea daba menos café.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuántas tazas de café te tomas al día? 👇
-Shot Ambiental #55 · La Creación del Robert
+Shot Ambiental 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #HuellaHidrica #Cafe #Veracruz
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu café esconde 130 litros de agua ☕💧 | Shot Ambiental #55
+Tu café esconde 130 litros de agua ☕💧 | Shot Ambiental 55
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Chapagain y Hoekstra (2007), Ecological Economics 64: 109–118: https://ayhoekstra.nl/pubs/Chapagain-Hoekstra-2007.pdf
 - SADER (2022), Cultivo de café en México: https://www.gob.mx/agricultura/articulos/cultivo-de-cafe-en-mexico
 ¿Cuántas tazas de café te tomas al día? 👇
-Shot Ambiental #55 · La Creación del Robert
+Shot Ambiental 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #HuellaHidrica #Cafe
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta taza no tiene 125 mililitros de agua: detrás de ella hay unos 130 litros. ☕💧 Casi toda es lluvia que cayó sobre un cafetal; menos de un litro es riego. En Chiapas y Veracruz, con datos de 1996 a 2005, salía en casi 200 litros por taza.
 ¿Cuántas tazas de café te tomas al día? 👇
-Shot Ambiental #55 · La Creación del Robert
+Shot Ambiental 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #HuellaHidrica #Cafe
 ```
@@ -70,7 +70,7 @@ Es la huella hídrica de una taza de café (7 g de café tostado), según Mekonn
 En México, el mismo modelo daba casi 200 litros por taza en Chiapas y Veracruz, que juntos aportan más de la mitad del café del país. La razón no es que la planta use más agua, sino el rendimiento: a finales de los noventa, 0.46 toneladas de café verde por hectárea frente a 0.80 del promedio mundial.
 La huella hídrica no es un solo número: separar lluvia, riego y contaminación cambia la conversación sobre qué cultivos presionan más el agua y dónde mejorar el rendimiento.
 ¿Qué indicador usarías para comparar el impacto hídrico de dos alimentos?
-Shot Ambiental #55 · La Creación del Robert
+Shot Ambiental 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #HuellaHidrica #Cafe #Agua #LaCreacionDelRobert
 ```

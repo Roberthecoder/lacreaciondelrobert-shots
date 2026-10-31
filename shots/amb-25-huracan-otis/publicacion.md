@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #25 · Un día antes, el pronóstico decía poco más de 100 km/h: Otis llegó con casi 260
+# Publicación · Shot Ambiental 25 · Un día antes, el pronóstico decía poco más de 100 km/h: Otis llegó con casi 260
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ En 2023, el gobierno de México reportó 52 muertes y 32 personas desaparecidas;
 El dibujo es esquemático.
 Fuente: National Hurricane Center (NOAA), reporte del huracán Otis (2024).
 ¿Tú o alguien que conoces vivió Otis o algún otro huracán? 👇
-Shot Ambiental #25 · La Creación del Robert
+Shot Ambiental 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #HuracanOtis #Acapulco #Guerrero
 ```
@@ -27,7 +27,7 @@ Un mar de hasta 31 °C (1–2 °C arriba de lo normal) y menos viento de altura 
 En 2023, el gobierno reportó 52 muertes y 32 desaparecidos; el total es incierto. Nuestro respeto a las víctimas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú o alguien que conoces vivió Otis o algún otro huracán? 👇
-Shot Ambiental #25 · La Creación del Robert
+Shot Ambiental 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #HuracanOtis #Acapulco #Guerrero
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El pronóstico decía 100 km/h… Otis llegó con 260 🌀 | Shot Ambiental #25
+El pronóstico decía 100 km/h… Otis llegó con 260 🌀 | Shot Ambiental 25
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - NHC, glosario y escala Saffir-Simpson: https://www.nhc.noaa.gov/aboutgloss.shtml · https://www.nhc.noaa.gov/aboutsshws.php
 - NOAA NESDIS, ¿Cómo se forma un huracán?: https://www.nesdis.noaa.gov/about/k-12-education/severe-weather/how-does-hurricane-form
 ¿Tú o alguien que conoces vivió Otis o algún otro huracán? 👇
-Shot Ambiental #25 · La Creación del Robert
+Shot Ambiental 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #HuracanOtis #Acapulco
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un día antes, el pronóstico decía que Otis llegaría a Acapulco con poco más de 100 km/h. Llegó con casi 260. 🌀 Un mar muy caliente lo hizo subir 167 km/h en solo 21 horas, y tocó tierra en categoría 5 (NHC, 2024). Nuestro respeto a las víctimas.
 ¿Tú o alguien que conoces vivió Otis o algún otro huracán? 👇
-Shot Ambiental #25 · La Creación del Robert
+Shot Ambiental 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #HuracanOtis #Acapulco
 ```
@@ -71,7 +71,7 @@ Un día antes, el pronóstico decía que Otis llegaría a Acapulco con poco más
 Según el reporte oficial del National Hurricane Center (2024), Otis se intensificó 90 nudos (167 km/h) en 21 horas, sobre aguas de 30–31 °C, 1–2 °C más calientes de lo normal, y con menos cizalladura de la esperada. Tocó tierra en Acapulco el 25 de octubre de 2023 como categoría 5, el huracán más fuerte en tocar tierra en el Pacífico oriental desde 1988. El propio NHC reconoce que ni sus pronosticadores ni los modelos de intensidad anticiparon esa intensificación rápida, y que casi todas las guías fallaron.
 La lección para la gestión de riesgos: los pronósticos de trayectoria han mejorado mucho, pero la intensidad sigue siendo difícil, sobre todo en tormentas pequeñas y con pocos datos de observación. Por eso hacen falta más mediciones en el mar y alertas que consideren el peor escenario.
 ¿Cómo crees que deberían comunicarse los pronósticos cuando hay tanta incertidumbre?
-Shot Ambiental #25 · La Creación del Robert
+Shot Ambiental 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Huracanes #GestionDeRiesgos #Acapulco #LaCreacionDelRobert
 ```

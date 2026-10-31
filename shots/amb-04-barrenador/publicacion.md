@@ -14,7 +14,7 @@ Pero desde 2023 la plaga cruzó la barrera y el 21 de noviembre de 2024 se detec
 El dibujo y el mapa son esquemáticos. Si ves un animal con una herida con gusanos, repórtalo a SENASICA.
 Fuentes: FAO (Novy 1991), SENASICA, Knipling 1955.
 ¿En tu región ya hubo casos? 👇
-Shot Ambiental #04 · La Creación del Robert
+Shot Ambiental 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #GusanoBarrenador #Chiapas #Ganaderia
 ```
@@ -25,7 +25,7 @@ Esta no es una mosca cualquiera: sus larvas se comen la carne viva. 🪰
 Contra el gusano barrenador no bastó el veneno: se usaron más moscas, esterilizadas con radiación y soltadas desde avionetas. Como la hembra se aparea una sola vez, con un macho estéril no hay crías. Funcionó en Curazao (1954) y en EE. UU. (1966), pero la plaga cruzó la barrera de Panamá y llegó a Chiapas en noviembre de 2024. En junio de 2026 se inauguró en Metapa una planta para 100 millones de moscas por semana.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu región ya hubo casos? 👇
-Shot Ambiental #04 · La Creación del Robert
+Shot Ambiental 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #GusanoBarrenador #Chiapas #Ganaderia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La plaga que se combate soltando más moscas 🪰 | Shot Ambiental #04
+La plaga que se combate soltando más moscas 🪰 | Shot Ambiental 04
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Baumhover, A. H. et al. Screw-worm control through release of sterilized flies. J. Econ. Entomol. 48: 462–466 (1955).
 
 ¿En tu región ya hubo casos? 👇
-Shot Ambiental #04 · La Creación del Robert
+Shot Ambiental 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CienciaAmbiental #GusanoBarrenador
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esta no es una mosca cualquiera: sus larvas se comen la carne viva. 🪰 Se combate soltando millones de moscas estériles, y en 2026 se inauguró en Metapa, Chiapas, una planta para 100 millones por semana. ¿En tu región ya hubo casos? 👇
-Shot Ambiental #04 · La Creación del Robert
+Shot Ambiental 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #GusanoBarrenador
 ```
@@ -70,7 +70,7 @@ El gusano barrenador del ganado (Cochliomyia hominivorax) pone cientos de huevos
 Por qué importa: funcionó en Curazao (1954) y Estados Unidos se declaró libre en 1966, con una barrera que bajó hasta Panamá. Desde 2023 la plaga cruzó esa barrera; el primer caso en México se detectó el 21 de noviembre de 2024 en Catazajá, Chiapas. En junio de 2026 se inauguró en Metapa, Chiapas, una planta con la meta de hasta 100 millones de moscas estériles por semana.
 Es un ejemplo de control biológico a escala continental que depende de producción, logística y vigilancia sanitaria.
 ¿Qué otra plaga crees que podría controlarse así?
-Shot Ambiental #04 · La Creación del Robert
+Shot Ambiental 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #GusanoBarrenador #Ganaderia #Chiapas
 ```
@@ -97,7 +97,7 @@ Es el cálculo de Edward Knipling (1955): 1,000,000 de moscas silvestres y 2,000
 Es un modelo (población que no crece), no datos de campo. El dibujo es esquemático.
 Fuentes: Knipling 1955, FAO (Novy 1991), SENASICA.
 ¿En qué generación dejaste de oír notas? 👇
-Shot Ambiental #04 · La Creación del Robert
+Shot Ambiental 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #GusanoBarrenador #Chiapas #Ganaderia
 ```
@@ -108,7 +108,7 @@ Soy Robert, de La Creación del Robert 🌱
 Es el cálculo de Knipling (1955): con 2 millones de moscas estériles por generación, 1 millón de moscas silvestres se acaba en 4 generaciones. Modelo de población que no crece.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En qué generación dejaste de oír notas? 👇
-Shot Ambiental #04 · La Creación del Robert
+Shot Ambiental 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #GusanoBarrenador #Chiapas #Ganaderia
 ```
@@ -130,7 +130,7 @@ Fuentes:
 - SENASICA, boletín DINESAGBG04 (2025).
 
 ¿En qué generación dejaste de oír notas? 👇
-Shot Ambiental #04 · La Creación del Robert
+Shot Ambiental 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CienciaAmbiental #GusanoBarrenador
 ```
@@ -138,7 +138,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 🎧 Cada nota es una mosca silvestre: 100 → 33 → 5 → 1 → silencio. Así se acaba una plaga soltando moscas estériles. 🪰 ¿En qué generación dejaste de oír notas? 👇
-Shot Ambiental #04 · La Creación del Robert
+Shot Ambiental 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #37 · Tu disco duro, en un gramo de ADN
+# Publicación · Shot Biotecnológico 37 · Tu disco duro, en un gramo de ADN
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ El récord de 215 petabytes por gramo se logró en 2017 (Erlich y Zielinski, Sci
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Qué archivo tuyo guardarías en ADN para dentro de mil años? 👇
-Shot Biotecnológico #37 · La Creación del Robert
+Shot Biotecnológico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #ADN #Ciencia #Tecnologia
 ```
@@ -24,7 +24,7 @@ Un gramo de ADN puede guardar 215 millones de gigas: más de un millón de celul
 Los ceros y unos se traducen a las letras A, C, G y T, una máquina escribe el ADN, se guarda seco y se lee con un secuenciador. El récord (215 petabytes por gramo) es de 2017; en 2013 guardaron los sonetos de Shakespeare y en Harvard un caballo galopando dentro de bacterias vivas. Dura muchísimo (hay ADN de mamut de más de un millón de años), pero aún es lento y caro: en 2019, escribir y leer HELLO tardó 21 horas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué archivo tuyo guardarías en ADN? 👇
-Shot Biotecnológico #37 · La Creación del Robert
+Shot Biotecnológico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #ADN #Ciencia
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un gramo de ADN guarda más que un millón de celulares 🧬 | Shot Biotecnológico #37
+Un gramo de ADN guarda más que un millón de celulares 🧬 | Shot Biotecnológico 37
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Takahashi C.N. et al. (2019). Demonstration of End-to-End Automation of DNA Data Storage. Sci Rep 9:4998. https://pmc.ncbi.nlm.nih.gov/articles/PMC6428863
 - Dong Y. et al. (2020). DNA storage: research landscape and future prospects. Natl Sci Rev 7:1092–1107. https://pmc.ncbi.nlm.nih.gov/articles/PMC8288837
 ¿Qué archivo tuyo guardarías en ADN para dentro de mil años? 👇
-Shot Biotecnológico #37 · La Creación del Robert
+Shot Biotecnológico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #ADN
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un gramo de ADN puede guardar 215 millones de gigas: más de un millón de celulares de 128. 🧬 Los ceros y unos se vuelven letras A, C, G y T, se escribe el ADN, se guarda seco y se lee con un secuenciador. Ya guardaron así sonetos de Shakespeare, una película y hasta un caballo galopando dentro de bacterias. El problema: todavía es lento y caro.
 ¿Qué archivo tuyo guardarías en ADN? 👇
-Shot Biotecnológico #37 · La Creación del Robert
+Shot Biotecnológico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #ADN
 ```
@@ -73,14 +73,14 @@ Un gramo de ADN puede almacenar 215 petabytes: el récord de densidad que Erlich
 El almacenamiento de datos en ADN traduce bits a las bases A, C, G y T, sintetiza oligonucleótidos, los conserva secos y los lee por secuenciación. Su atractivo es la densidad y la durabilidad: en 2021 se secuenció ADN de mamut de más de un millón de años, preservado en el frío de Siberia.
 Sus límites son el costo y la velocidad de escritura: en 2017, sintetizar 2 MB costó unos 7,000 dólares; en 2019, el primer sistema totalmente automatizado (Microsoft y la Universidad de Washington) tardó unas 21 horas en escribir y leer 5 bytes ("HELLO"). Una revisión de 2020 señala que el costo de escribir y leer sigue siendo prohibitivo.
 ¿Qué tendría que abaratarse primero para que el ADN se vuelva un archivo real: la síntesis o la secuenciación?
-Shot Biotecnológico #37 · La Creación del Robert
+Shot Biotecnológico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #ADN #AlmacenamientoDeDatos #Ciencia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Un gramo de ADN puede guardar 215 millones de gigas (récord de 2017). Ya guardaron sonetos de Shakespeare, una película y un caballo dentro de bacterias. ¿El problema? Escribir y leer "HELLO" tardó 21 horas (2019). 🧬 Shot Biotecnológico #37 #Biotecnologia
+Un gramo de ADN puede guardar 215 millones de gigas (récord de 2017). Ya guardaron sonetos de Shakespeare, una película y un caballo dentro de bacterias. ¿El problema? Escribir y leer "HELLO" tardó 21 horas (2019). 🧬 Shot Biotecnológico 37 #Biotecnologia
 ```
 
 ### Threads
@@ -88,7 +88,7 @@ Un gramo de ADN puede guardar 215 millones de gigas (récord de 2017). Ya guarda
 Un gramo de ADN puede guardar 215 millones de gigas: más de un millón de celulares de 128. 🧬
 Se traduce de ceros y unos a A, C, G y T, se escribe, se guarda seco y se lee. Dura muchísimo, pero aún es lento: en 2019, escribir y leer HELLO tardó 21 horas.
 ¿Qué archivo tuyo guardarías en ADN?
-Shot Biotecnológico #37 · La Creación del Robert
+Shot Biotecnológico 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

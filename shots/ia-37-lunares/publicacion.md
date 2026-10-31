@@ -1,4 +1,4 @@
-# Publicación · Shot IA #37 · La IA que revisa tus lunares ve peor la piel oscura
+# Publicación · Shot IA 37 · La IA que revisa tus lunares ve peor la piel oscura
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Tu piel no necesita una IA que adivine: si un lunar cambia, ve al dermatólogo.
 El dibujo es esquemático; el mosaico de fotos es ilustrativo. Datos de 2017 y 2022.
 Fuentes: Esteva et al., Nature (2017); Daneshjou et al., Science Advances (2022); Academia Americana de Dermatología.
 ¿Alguna vez te has revisado los lunares con el ABCDE? 👇
-Shot IA #37 · La Creación del Robert
+Shot IA 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Lunares #CancerDePiel #Dermatologia
 ```
@@ -26,7 +26,7 @@ En 2017, una IA de Stanford entrenada con 129,450 fotos de piel igualó a 21 der
 Revísate con el ABCDE (asimetría, bordes, colores, diámetro, evolución) y, en piel oscura, mira también palmas, plantas y uñas. Si un lunar cambia, ve al dermatólogo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez te has revisado los lunares con el ABCDE? 👇
-Shot IA #37 · La Creación del Robert
+Shot IA 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Lunares #CancerDePiel #Dermatologia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que revisa tus lunares ve peor la piel oscura 🔍 | Shot IA #37
+La IA que revisa tus lunares ve peor la piel oscura 🔍 | Shot IA 37
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Si tu piel es oscura, una IA que revisa lunares puede fallarte más que al güero de al lado. 🔍 En un estudio de Stanford (2022), una IA de lunares detectó el 69 % de los cánceres en piel clara y solo el 23 % en piel oscura. Reentrenada con pieles diversas, la brecha se cerró. Revísate con el ABCDE y, si un lunar cambia, ve al dermatólogo.
 ¿Alguna vez te has revisado los lunares con el ABCDE? 👇
-Shot IA #37 · La Creación del Robert
+Shot IA 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Lunares
 ```
@@ -72,7 +72,7 @@ La parte útil: al reentrenar los modelos con fotos diversas, la diferencia entr
 Antes de llevar una herramienta médica a una población, conviene preguntar: ¿con quién se probó?
 ¿Tu equipo revisa la diversidad de los datos con los que entrena o evalúa modelos?
 Fuentes: Esteva et al., Nature 542: 115–118 (2017); Daneshjou et al., Science Advances 8: eabq6147 (2022).
-Shot IA #37 · La Creación del Robert
+Shot IA 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #SaludDigital #Dermatologia #SesgoAlgoritmico #LaCreacionDelRobert
 ```
@@ -87,7 +87,7 @@ Una IA de lunares detectó el 69 % de los cánceres en piel clara y solo el 23 %
 Si tu piel es oscura, una IA que revisa lunares puede fallarte más que al güero de al lado. 🔍
 Stanford, 2022: con 656 fotos confirmadas por biopsia, una IA detectó el 69 % de los cánceres en piel clara y el 23 % en piel oscura. Con fotos de pieles diversas, la brecha se cerró.
 ¿Ya te revisaste los lunares con el ABCDE?
-Shot IA #37 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 37 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

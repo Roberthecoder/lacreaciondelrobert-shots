@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #19 · Casi una quinta parte de la comida del mundo se va a la basura
+# Publicación · Shot Ambiental 19 · Casi una quinta parte de la comida del mundo se va a la basura
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que esa quinta parte no está lejos: más de la mitad se tira en casas como
 El dibujo es esquemático.
 Fuentes: PNUMA (UNEP), Food Waste Index Report 2024; IPCC 2019.
 ¿Qué es lo que más se tira en tu casa? 👇
-Shot Ambiental #19 · La Creación del Robert
+Shot Ambiental 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #DesperdicioDeAlimentos #Comida #México
 ```
@@ -26,7 +26,7 @@ Si toda la comida que llega a tiendas, restaurantes y casas del mundo fuera un r
 En 2022 fueron 1,050 millones de toneladas (contando cáscaras y huesos), y seis de cada diez kilos se tiraron en los hogares: 79 kg por persona al año en promedio, y unos 105 kg por persona en México, según la estimación del PNUMA. No es cosa de países ricos: el promedio en casa cambia apenas 7 kg entre países ricos y de ingreso medio.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué es lo que más se tira en tu casa? 👇
-Shot Ambiental #19 · La Creación del Robert
+Shot Ambiental 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #DesperdicioDeAlimentos #Comida #México
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-1 de cada 5 partes de la comida, a la basura 🗑️ | Shot Ambiental #19
+1 de cada 5 partes de la comida, a la basura 🗑️ | Shot Ambiental 19
 ```
 Descripción:
 ```text
@@ -45,7 +45,7 @@ Fuentes:
 - UNEP (2024). Food Waste Index Report 2024: https://digitallibrary.un.org/record/4042857/files/1401794_EN.pdf
 - IPCC (2019). Climate Change and Land, Resumen para responsables de políticas (B.6.3): https://www.ipcc.ch/site/assets/uploads/sites/4/2022/11/SRCCL_SPM.pdf
 ¿Qué es lo que más se tira en tu casa? 👇
-Shot Ambiental #19 · La Creación del Robert
+Shot Ambiental 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #DesperdicioDeAlimentos #CienciaAmbiental
 ```
@@ -54,7 +54,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Casi una de cada cinco partes de la comida que llega a tiendas, restaurantes y casas del mundo se va a la basura. 🗑️ Y seis de cada diez kilos se tiran en los hogares: en México, el PNUMA estima 105 kg por persona al año, solo en casa.
 ¿Qué es lo que más se tira en tu casa? 👇
-Shot Ambiental #19 · La Creación del Robert
+Shot Ambiental 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #DesperdicioDeAlimentos #México
 ```
@@ -65,7 +65,7 @@ Casi una de cada cinco partes de la comida que llega a la etapa de consumo termi
 Según el Food Waste Index Report 2024 del PNUMA, en 2022 se desperdiciaron 1,050 millones de toneladas de comida (incluidas partes no comestibles) en tiendas, servicios de comida y hogares: hasta el 19 % de la comida disponible para consumo. Alrededor del 60 % ocurrió en los hogares (79 kg por persona al año en promedio; 105 kg estimados para México), 28 % en servicios de comida y 12 % en tiendas. El promedio en hogares varía apenas 7 kg entre países de ingreso alto, medio-alto y medio-bajo. Y según el IPCC, entre 2010 y 2016 la pérdida y el desperdicio de alimentos representaron entre 8 y 10 % de las emisiones de gases de efecto invernadero causadas por los humanos.
 Más de la mitad del problema está en las casas, así que las soluciones también pasan por la cocina de cada quien.
 ¿Qué acción concreta crees que reduciría más el desperdicio en los hogares?
-Shot Ambiental #19 · La Creación del Robert
+Shot Ambiental 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #DesperdicioDeAlimentos #Sostenibilidad #LaCreacionDelRobert
 ```

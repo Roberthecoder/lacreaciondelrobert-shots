@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #10 · El cuajo de tu queso lo hace un microbio (quimosina)
+# Publicación · Shot Biotecnológico 10 · El cuajo de tu queso lo hace un microbio (quimosina)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -12,7 +12,7 @@ Como los estómagos no alcanzaban, le metieron a una bacteria una copia del gen 
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿En tu casa hacen queso? ¿Con qué cuajo? 👇
-Shot Biotecnológico #10 · La Creación del Robert
+Shot Biotecnológico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Queso #Quimosina #Ciencia
 ```
@@ -23,7 +23,7 @@ Ese cuajo no salió del estómago de un becerro: lo hizo un microbio. 🧀🦠
 La quimosina corta los "pelitos" de kappa-caseína de las micelas de la leche (entre el aminoácido 105 y el 106) y, con el calcio, se forma la cuajada. Antes salía del cuarto estómago de becerros que aún maman; en marzo de 1990, Estados Unidos aprobó la quimosina hecha por bacterias con una copia del gen del becerro: el primer ingrediente hecho con ADN recombinante aprobado para su comida. Después también la hicieron levaduras y mohos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa hacen queso? 👇
-Shot Biotecnológico #10 · La Creación del Robert
+Shot Biotecnológico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Queso #Quimosina
 ```
@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu queso lo cuajó un microbio 🧀 | Shot Biotecnológico #10
+Tu queso lo cuajó un microbio 🧀 | Shot Biotecnológico 10
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - Han Y. et al. (2025). Front. Microbiol. 16:1605229. https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2025.1605229/full
 - Johnson M.E., Lucey J.A. (2006). Major technological advances and trends in cheese. J Dairy Sci 89(4):1174–8. https://pubmed.ncbi.nlm.nih.gov/16537950/
 ¿En tu casa hacen queso? ¿Con qué cuajo? 👇
-Shot Biotecnológico #10 · La Creación del Robert
+Shot Biotecnológico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Queso
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese cuajo no salió del estómago de un becerro: lo hizo un microbio. 🧀 La quimosina corta los "pelitos" de las micelas de la leche y la leche se cuaja. En 1990, Estados Unidos aprobó la que hacen bacterias con una copia del gen del becerro; después también la hicieron levaduras y mohos.
 ¿En tu casa hacen queso? 👇
-Shot Biotecnológico #10 · La Creación del Robert
+Shot Biotecnológico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Queso
 ```
@@ -67,14 +67,14 @@ Soy Robert, de La Creación del Robert 🌱
 El cuajo de muchos quesos ya no sale del estómago de un becerro: lo producen microbios.
 La quimosina, principal enzima del cuajo, corta la kappa-caseína entre la Phe105 y la Met106; sin esa capa, las micelas de caseína se agregan con ayuda del calcio y se forma la cuajada. Por la escasez de quimosina de becerro (desde los años sesenta), se expresó una copia del gen bovino en Escherichia coli K-12. En marzo de 1990, la FDA la reconoció como segura (21 CFR 184.1685): fue la primera regulación en Estados Unidos para el uso en alimentos de una sustancia producida con ADN recombinante. Después se sumaron Kluyveromyces marxianus var. lactis y Aspergillus niger var. awamori. La enzima es química y funcionalmente idéntica a la del becerro, y su uso hoy es muy común (Johnson y Lucey, J Dairy Sci 2006).
 ¿Qué otros ingredientes de todos los días vienen ya de la fermentación de precisión?
-Shot Biotecnológico #10 · La Creación del Robert
+Shot Biotecnológico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Alimentos #Fermentacion #Lacteos #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese cuajo no salió del estómago de un becerro: lo hizo un microbio. En 1990, EE. UU. aprobó la quimosina hecha por bacterias: el primer ingrediente hecho con ADN recombinante aprobado para su comida. 🧀 Shot Biotecnológico #10 #Biotecnologia
+Ese cuajo no salió del estómago de un becerro: lo hizo un microbio. En 1990, EE. UU. aprobó la quimosina hecha por bacterias: el primer ingrediente hecho con ADN recombinante aprobado para su comida. 🧀 Shot Biotecnológico 10 #Biotecnologia
 ```
 
 ### Threads
@@ -82,7 +82,7 @@ Ese cuajo no salió del estómago de un becerro: lo hizo un microbio. En 1990, E
 Ese cuajo no salió del estómago de un becerro: lo hizo un microbio. 🧀🦠
 La quimosina corta los "pelitos" de kappa-caseína de la leche y, con el calcio, se forma la cuajada. Desde 1990 también la hacen bacterias con una copia del gen del becerro; después, levaduras y mohos.
 ¿En tu casa hacen queso?
-Shot Biotecnológico #10 · La Creación del Robert
+Shot Biotecnológico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #29 · Las manchitas negras de tu coche: el hongo artillero
+# Publicación · Shot Fungi Mati 29 · Las manchitas negras de tu coche: el hongo artillero
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Un estudio de Penn State (EUA), publicado en 2004, sembró el hongo en 27 mantil
 El dibujo es esquemático.
 Fuentes: Connecticut Agricultural Experiment Station (2010); Penn State Extension; Davis et al. 2004 (J. Environ. Hort.); Sakes et al. 2016 (PLoS ONE).
 ¿A ti también te han salido estas manchitas en el coche o en la pared? 👇
-Shot Fungi Mati #29 · La Creación del Robert
+Shot Fungi Mati 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Jardin #Ciencia
 ```
@@ -26,7 +26,7 @@ El hongo artillero (Sphaerobolus) vive en el mantillo de astillas de los jardine
 Consejo: quítala mojada, antes de que se seque; rasparla en seco puede dañar la pintura y dejar mancha.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti también te han salido estas manchitas? 👇
-Shot Fungi Mati #29 · La Creación del Robert
+Shot Fungi Mati 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Jardin #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas manchitas negras en tu coche son DISPAROS de un hongo 🎯 | Shot Fungi Mati #29
+Esas manchitas negras en tu coche son DISPAROS de un hongo 🎯 | Shot Fungi Mati 29
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Sakes, A. et al. (2016). Shooting Mechanisms in Nature: A Systematic Review. PLoS ONE 11(7): e0158277. https://pmc.ncbi.nlm.nih.gov/articles/PMC4959704/
 - Geml, J., Davis, D. D. y Geiser, D. M. (2005). Systematics of the genus Sphaerobolus. Mycologia 97(3): 680–694. https://pubmed.ncbi.nlm.nih.gov/16392256/
 ¿A ti también te han salido estas manchitas en el coche o en la pared? 👇
-Shot Fungi Mati #29 · La Creación del Robert
+Shot Fungi Mati 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas manchitas negras en tu coche no son lodo: son disparos de un hongo. 🎯 El hongo artillero vive en el mantillo de los jardines, apunta a la luz y a lo claro, y lanza bolitas pegajosas de esporas hasta unos 6 m. Quítalas mojadas, antes de que se sequen.
 ¿A ti también te han salido? 👇
-Shot Fungi Mati #29 · La Creación del Robert
+Shot Fungi Mati 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -71,7 +71,7 @@ Un hongo de 2 mm puede manchar coches y fachadas a varios metros de distancia.
 Sphaerobolus, el "hongo artillero", crece en mantillo de madera y corteza. Al madurar, su capa interna se invierte de golpe y lanza una masa pegajosa de esporas hacia la luz y hacia superficies claras: hasta unos 6 m de distancia y más de 2 m de altura. Una vez seca, es muy difícil de quitar sin dañar la superficie y puede dejar mancha; además puede seguir viva más de 10 años.
 Un estudio de campo de Penn State (J. Environ. Hort., 2004) sembró el hongo en 27 mantillos: en 3–4 años, todos los de madera o corteza lo sostuvieron. Por qué importa: el tipo de mantillo junto a casas y estacionamientos sí cuenta.
 ¿Has visto este problema en tu ciudad?
-Shot Fungi Mati #29 · La Creación del Robert
+Shot Fungi Mati 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Jardineria #Ciencia
 ```
@@ -84,7 +84,7 @@ Esas manchitas negras en tu coche no son lodo: son disparos del hongo artillero 
 ### Threads
 ```text
 Esas manchitas negras en tu coche no son lodo: son disparos de un hongo. 🎯 El hongo artillero vive en el mantillo de los jardines; su capa interna se voltea de golpe y lanza una bolita pegajosa de esporas hacia lo claro, hasta unos 6 m. ¿A ti también te han salido?
-Shot Fungi Mati #29 · La Creación del Robert
+Shot Fungi Mati 29 · La Creación del Robert
 #Hongos
 ```
 

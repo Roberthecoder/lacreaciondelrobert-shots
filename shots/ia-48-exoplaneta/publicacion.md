@@ -1,4 +1,4 @@
-# Publicación · Shot IA #48 · El planeta escondido que encontró una red neuronal
+# Publicación · Shot IA 48 · El planeta escondido que encontró una red neuronal
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Ese parpadeo no es una falla: es un mundo entero pasando enfrente.
 El dibujo es esquemático: tamaños, distancias y la caída de brillo están exagerados.
 Fuentes: NASA (2017); Shallue y Vanderburg, The Astronomical Journal (2018); NASA Exoplanet Archive (2026).
 ¿Te imaginabas que una IA podía encontrar planetas? 👇
-Shot IA #48 · La Creación del Robert
+Shot IA 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Exoplanetas #Kepler #Astronomia
 ```
@@ -26,7 +26,7 @@ Este planeta tus ojos nunca lo van a ver: solo se nota porque su estrella se apa
 Así se encontró Kepler-90i: una red neuronal de Google y un astrónomo revisaron datos viejos del telescopio Kepler y en 2017 hallaron un planeta que se había pasado por alto. Probablemente es rocoso, da la vuelta a su estrella en 14.4 días y se cree que pasa de 400 °C. Con él, Kepler-90 tiene 8 planetas, igual que el Sol, y hoy ninguna otra estrella conocida tiene tantos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te imaginabas que una IA podía encontrar planetas? 👇
-Shot IA #48 · La Creación del Robert
+Shot IA 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Exoplanetas #Kepler #Astronomia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Una IA encontró un planeta que nadie había visto 🪐 | Shot IA #48
+Una IA encontró un planeta que nadie había visto 🪐 | Shot IA 48
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este planeta tus ojos nunca lo van a ver: solo se nota porque su estrella se apaga un poquito. 🪐 En 2017, una red neuronal entrenada con datos del telescopio Kepler encontró a Kepler-90i, un planeta que se había pasado por alto. Con él, la estrella Kepler-90 tiene 8 planetas, como el Sol, y hoy ninguna otra estrella conocida tiene tantos.
 ¿Te imaginabas que una IA podía encontrar planetas? 👇
-Shot IA #48 · La Creación del Robert
+Shot IA 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Exoplanetas
 ```
@@ -68,7 +68,7 @@ En 2017, Christopher Shallue (Google) y Andrew Vanderburg (Universidad de Texas 
 La lección va más allá de la astronomía: cuando hay más datos de los que una persona puede revisar, un modelo bien entrenado puede encontrar lo que quedó entre el ruido, y luego los científicos lo validan.
 ¿Qué datos "viejos" de tu área crees que esconden algo?
 Fuentes: NASA (2017); Shallue y Vanderburg, The Astronomical Journal 155: 94 (2018).
-Shot IA #48 · La Creación del Robert
+Shot IA 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Astronomia #Exoplanetas #DeepLearning #LaCreacionDelRobert
 ```
@@ -83,7 +83,7 @@ Este planeta nunca lo verás: solo se nota porque su estrella se apaga un poquit
 Este planeta tus ojos nunca lo van a ver: solo se nota porque su estrella se apaga un poquito. 🪐
 En 2017, una red neuronal entrenada con más de 15 000 señales del telescopio Kepler encontró a Kepler-90i. Con él, Kepler-90 tiene 8 planetas, como el Sol, y hoy ninguna otra estrella conocida tiene tantos.
 ¿Te imaginabas que una IA podía encontrar planetas?
-Shot IA #48 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 48 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

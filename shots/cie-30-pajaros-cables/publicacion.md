@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #30 · Por qué los pájaros en los cables no se electrocutan
+# Publicación · Shot Científico 30 · Por qué los pájaros en los cables no se electrocutan
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que el pájaro no es inmune: solo no le da a la electricidad por dónde pas
 El dibujo es esquemático.
 Fuentes: APLIC 2006; Universidad de Illinois (Física); BBC Science Focus; Eversource.
 ¿Cuántos pájaros ves en los cables de tu calle? 👇
-Shot Científico #30 · La Creación del Robert
+Shot Científico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Electricidad #Aves
 ```
@@ -28,7 +28,7 @@ La corriente solo fluye entre dos puntos con distinto voltaje. Las dos patas del
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Cuántos pájaros ves en los cables de tu calle? 👇
-Shot Científico #30 · La Creación del Robert
+Shot Científico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Electricidad #Aves
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué los pájaros en los cables no se electrocutan? ⚡ | Shot Científico #30
+¿Por qué los pájaros en los cables no se electrocutan? ⚡ | Shot Científico 30
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - Robert Matthews, BBC Science Focus: Why don't birds get electrocuted while perching on power lines? https://www.sciencefocus.com/science/why-dont-birds-get-electrocuted-while-perching-on-power-lines/
 - Eversource: Downed power lines (seguridad eléctrica). https://www.eversource.com/business/safety/electric-safety/downed-power-lines
 ¿Cuántos pájaros ves en los cables de tu calle? 👇
-Shot Científico #30 · La Creación del Robert
+Shot Científico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica #Electricidad #Aves
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese pájaro en el cable de luz no se electrocuta, y no es magia ⚡🐦 Sus dos patas están en el mismo cable, casi al mismo voltaje: la corriente no tiene por dónde pasar por él y sigue de largo por el cable. Si toca otro cable o el poste, sí le abre un camino (les pasa sobre todo a águilas y aguilillas). Y tú: nunca te acerques a un cable caído, porque estás parado en el suelo.
 ¿Cuántos pájaros ves en los cables de tu calle? 👇
-Shot Científico #30 · La Creación del Robert
+Shot Científico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -74,7 +74,7 @@ Soy Robert, de La Creación del Robert 🌱
 Porque la corriente solo fluye entre dos puntos con distinto voltaje. Sus dos patas están en el mismo cable, casi al mismo voltaje, y el cable conduce mucho mejor que el ave: la corriente sigue de largo.
 El riesgo aparece cuando el ave toca a la vez dos cables, o un cable y una parte del poste conectada a tierra. Les pasa sobre todo a aves grandes como águilas y aguilillas, y por eso existen guías para adaptar postes: separar los cables o cubrirlos (APLIC, 2006).
 La misma física explica por qué nunca hay que acercarse a un cable caído: estando en el suelo, uno sí le da camino a la corriente.
-Shot Científico #30 · La Creación del Robert
+Shot Científico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

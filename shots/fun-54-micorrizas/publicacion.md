@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #54 · Ese hilito blanco no es el internet del bosque que te contaron: es un mercado
+# Publicación · Shot Fungi Mati 54 · Ese hilito blanco no es el internet del bosque que te contaron: es un mercado
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que ese hilito blanco, seguro, es un mercado. Lo del internet del bosque, t
 El dibujo es esquemático.
 Fuentes: Karst et al. 2023 (Nature Ecology & Evolution); Simard et al. 1997 (Nature); Beiler et al. 2010 y Brundrett y Tedersoo 2018 (New Phytologist).
 ¿Tú habías escuchado lo del "árbol madre"? 👇
-Shot Fungi Mati #54 · La Creación del Robert
+Shot Fungi Mati 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Micorrizas #Bosques
 ```
@@ -29,7 +29,7 @@ Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es u
 🔴 Sin evidencia (según Karst et al. 2023): el "árbol madre" que alimenta a sus hijos por la red.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú habías escuchado lo del "árbol madre"? 👇
-Shot Fungi Mati #54 · La Creación del Robert
+Shot Fungi Mati 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Micorrizas #Bosques
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Internet del bosque? Lo que SÍ sabemos de los hongos y los árboles 🌲 | Shot Fungi Mati #54
+¿Internet del bosque? Lo que SÍ sabemos de los hongos y los árboles 🌲 | Shot Fungi Mati 54
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Fuentes:
 - Stuart, E. K. y Plett, K. L. (2020). Digging Deeper: In Search of the Mechanisms of Carbon and Nitrogen Exchange in Ectomycorrhizal Symbioses. Frontiers in Plant Science 10: 1658. https://pmc.ncbi.nlm.nih.gov/articles/PMC6971170/
 - Simard, S. W., Ryan, T. L. y Perry, D. A. (2025). Opinion: Response to questions about common mycorrhizal networks. Frontiers in Forests and Global Change 7: 1512518. https://doi.org/10.3389/ffgc.2024.1512518
 ¿Tú habías escuchado lo del "árbol madre"? 👇
-Shot Fungi Mati #54 · La Creación del Robert
+Shot Fungi Mati 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Micorrizas #FungiMati
 ```
@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es un mercado. 🍄 El hongo le da a la planta fósforo y nitrógeno, y la planta le paga con azúcares. Eso está comprobado. Que un "árbol madre" alimente a sus hijos por la red de hongos, no: una revisión de 2023 no encontró ningún estudio en bosques que lo demuestre.
 ¿Tú habías escuchado lo del "árbol madre"? 👇
-Shot Fungi Mati #54 · La Creación del Robert
+Shot Fungi Mati 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micorrizas
 ```
@@ -79,7 +79,7 @@ En debate: la transferencia de recursos entre árboles a través de esas redes. 
 Sin evidencia según esa revisión: que los árboles maduros favorezcan a su descendencia por la red (no hallaron estudios revisados por pares, hechos en bosques, que lo demuestren). Los autores además encontraron que las citas sin sustento a estudios sobre estas redes se duplicaron en 25 años. Simard y colegas respondieron en 2025.
 Lección para comunicar ciencia: decir el grado exacto de evidencia también es parte del dato.
 ¿Cómo comunicas tú una idea que todavía está en debate?
-Shot Fungi Mati #54 · La Creación del Robert
+Shot Fungi Mati 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Ecologia #Bosques #ComunicacionDeLaCiencia
 ```
@@ -92,7 +92,7 @@ Las micorrizas cambian fósforo y nitrógeno por azúcares: comprobado. ¿Un "á
 ### Threads
 ```text
 Ese hilito blanco en la raíz no es el internet del bosque que te contaron: es un mercado. 🍄 Hongo y raíz cambian fósforo y nitrógeno por azúcares (comprobado). Que un árbol madre alimente a sus hijos por la red: ni un estudio revisado en bosques que lo demuestre, según una revisión de 2023. ¿Tú habías escuchado lo del "árbol madre"?
-Shot Fungi Mati #54 · La Creación del Robert
+Shot Fungi Mati 54 · La Creación del Robert
 #Hongos
 ```
 

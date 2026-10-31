@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #32 · Cuántas esporas suelta una seta (y cómo verlas en tu casa)
+# Publicación · Shot Fungi Mati 32 · Cuántas esporas suelta una seta (y cómo verlas en tu casa)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ El color de la huella ayuda a identificar hongos (blanca, café, rosada…), per
 Son cálculos de hace un siglo: aproximados, pero enormes. El dibujo es esquemático.
 Fuentes: Buller, Researches on Fungi (1909 y 1922); Kuo, MushroomExpert.Com; ONU, World Population Prospects 2024.
 ¿Te animas a hacer tu huella de esporas? Cuéntame de qué color te salió 👇
-Shot Fungi Mati #32 · La Creación del Robert
+Shot Fungi Mati 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Esporas #CienciaEnCasa
 ```
@@ -24,7 +24,7 @@ Un champiñón de campo grande suelta unos 16 mil millones de esporas: casi el d
 Experimento en casa: pon boca abajo sobre un papel el sombrero de un champiñón del súper ya abierto, tápalo con un vaso y espera una noche. Si funcionó, verás su huella de esporas en café oscuro. Según los cálculos de Reginald Buller (1909 y 1922), un hongo de repisa soltaba unos 30 mil millones al día por seis meses y un bejín gigante tenía unos 7 billones. ¿Por qué tantas? Casi ninguna cae donde pueda crecer.
 El color de la huella ayuda a identificar hongos, pero nunca basta para saber si uno se come. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te animas a hacer tu huella de esporas? 👇
-Shot Fungi Mati #32 · La Creación del Robert
+Shot Fungi Mati 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Esporas #CienciaEnCasa
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un champiñón suelta 16 mil millones de esporas 🍄 (y puedes verlas) | Shot Fungi Mati #32
+Un champiñón suelta 16 mil millones de esporas 🍄 (y puedes verlas) | Shot Fungi Mati 32
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Kuo, M. (2018). Agaricus bisporus. MushroomExpert.Com. https://www.mushroomexpert.com/agaricus_bisporus.html
 - Naciones Unidas (2024). World Population Prospects 2024. https://www.un.org/sustainabledevelopment/blog/2024/07/press-release-wpp2024/
 ¿Te animas a hacer tu huella de esporas? Cuéntame de qué color te salió 👇
-Shot Fungi Mati #32 · La Creación del Robert
+Shot Fungi Mati 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un champiñón de campo grande suelta unos 16 mil millones de esporas: casi el doble de personas en la Tierra. 🍄 Pon boca abajo sobre un papel el sombrero de un champiñón del súper ya abierto, tápalo con un vaso y espera una noche: si funcionó, verás su huella de esporas. ¿Por qué tantas? Casi ninguna cae donde pueda crecer.
 ¿Te animas a hacer tu huella de esporas? 👇
-Shot Fungi Mati #32 · La Creación del Robert
+Shot Fungi Mati 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -70,7 +70,7 @@ A. H. Reginald Buller, profesor de botánica en la Universidad de Manitoba, esti
 La lección de fondo es de estrategia biológica: casi ninguna espora cae en un lugar donde pueda crecer. Buller estimó que, de unos 20 mil millones de esporas de champiñón, quizá solo una llega a formar un hongo capaz de reproducirse. Producir en enormes cantidades compensa esas probabilidades tan bajas.
 Además, cualquiera puede verlo en casa con una "huella de esporas", una técnica que los micólogos usan para identificar hongos.
 ¿Qué otro número de la naturaleza te parece difícil de creer?
-Shot Fungi Mati #32 · La Creación del Robert
+Shot Fungi Mati 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Ciencia #Biologia
 ```
@@ -83,7 +83,7 @@ Un champiñón de campo grande suelta unos 16 mil millones de esporas: casi el d
 ### Threads
 ```text
 Un champiñón de campo grande suelta unos 16 mil millones de esporas: casi el doble de personas en la Tierra. 🍄 Pon boca abajo sobre un papel el sombrero de un champiñón del súper ya abierto, tápalo con un vaso y espera una noche: si funcionó, verás su huella de esporas. ¿De qué color te salió?
-Shot Fungi Mati #32 · La Creación del Robert
+Shot Fungi Mati 32 · La Creación del Robert
 #Hongos
 ```
 

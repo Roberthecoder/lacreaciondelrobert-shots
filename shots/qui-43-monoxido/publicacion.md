@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #43 · Lo que mata no huele ni se ve (monóxido de carbono del anafre y el boiler)
+# Publicación · Shot Químico 43 · Lo que mata no huele ni se ve (monóxido de carbono del anafre y el boiler)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Si a varios en casa les duele la cabeza a la vez, o suena el detector, salgan al
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes: CDC 2026 · UKHSA 2022 · Santé publique France · Heckerling 1987 y 1988 · NHS.
 ¿En tu casa prenden anafre o calentador cuando hace frío? 👇
-Shot Químico #43 · La Creación del Robert
+Shot Químico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #MonoxidoDeCarbono #Anafre #Prevencion
 ```
@@ -26,7 +26,7 @@ Es monóxido de carbono: sale cuando el carbón o el gas arden sin suficiente ox
 Si a varios en casa les duele la cabeza a la vez o suena el detector: salgan al aire libre y llamen al 911.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa prenden anafre cuando hace frío? 👇
-Shot Químico #43 · La Creación del Robert
+Shot Químico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #MonoxidoDeCarbono #Anafre #Prevencion
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El gas del anafre que no huele ni se ve 🔥 | Shot Químico #43
+El gas del anafre que no huele ni se ve 🔥 | Shot Químico 43
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Heckerling P.S., Leikin J.B., Maturen A. (1988). Occult carbon monoxide poisoning: validation of a prediction model. Am J Med 84(2):251–6. https://pubmed.ncbi.nlm.nih.gov/3407653/
 - NHS. Carbon monoxide poisoning. https://www.nhs.uk/conditions/carbon-monoxide-poisoning/
 ¿En tu casa prenden anafre o calentador cuando hace frío? 👇
-Shot Químico #43 · La Creación del Robert
+Shot Químico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #MonoxidoDeCarbono
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Por qué NO prender el anafre dentro de tu casa? Porque lo que mata no huele ni se ve. 🔥 Es monóxido de carbono: tu sangre se pega a él más de 200 veces más fuerte que al oxígeno, y los síntomas parecen gripa. Si a varios en casa les duele la cabeza a la vez, salgan al aire libre y llamen al 911.
 ¿En tu casa prenden anafre cuando hace frío? 👇
-Shot Químico #43 · La Creación del Robert
+Shot Químico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Prevencion
 ```
@@ -72,14 +72,14 @@ El monóxido de carbono no huele ni se ve, y sus síntomas se confunden con grip
 Se forma cuando un combustible arde sin suficiente oxígeno (un anafre o un boiler en un cuarto cerrado). La hemoglobina lo une más de 200 veces más fuerte que al oxígeno (≈210–245 veces según la fuente), lo que reduce la capacidad de la sangre para transportar oxígeno. En 1987, Heckerling (Chicago) encontró que 7 de 37 pacientes atendidos en urgencias en invierno por dolor de cabeza tenían carboxihemoglobina mayor de 10 %, y en ninguno se había sospechado el diagnóstico. En 1988, el mismo grupo vio que la mejor pista era que otras personas de la casa tuvieran los mismos síntomas.
 La prevención es sencilla: ventilación, mantenimiento anual de los aparatos de gas, nunca quemar carbón en interiores y detectores de CO.
 ¿Qué tan comunes son los detectores de monóxido en las casas de tu ciudad?
-Shot Químico #43 · La Creación del Robert
+Shot Químico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SaludPublica #Prevencion #MonoxidoDeCarbono #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-El monóxido de carbono del anafre o el boiler no huele ni se ve, y tu hemoglobina se pega a él más de 200 veces más fuerte que al oxígeno. Si a varios en casa les duele la cabeza a la vez: salgan y llamen al 911. 🔥 Shot Químico #43 #Quimica
+El monóxido de carbono del anafre o el boiler no huele ni se ve, y tu hemoglobina se pega a él más de 200 veces más fuerte que al oxígeno. Si a varios en casa les duele la cabeza a la vez: salgan y llamen al 911. 🔥 Shot Químico 43 #Quimica
 ```
 
 ### Threads
@@ -87,7 +87,7 @@ El monóxido de carbono del anafre o el boiler no huele ni se ve, y tu hemoglobi
 ¿Por qué NO prender el anafre dentro de tu casa? Porque lo que mata no huele ni se ve. 🔥
 Es monóxido de carbono: sale cuando el carbón o el gas arden sin suficiente oxígeno, y sus síntomas parecen gripa. En 1987, en Chicago, 7 de 37 personas con dolor de cabeza en urgencias lo traían en la sangre y nadie lo sospechó.
 ¿En tu casa prenden anafre cuando hace frío?
-Shot Químico #43 · La Creación del Robert
+Shot Químico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

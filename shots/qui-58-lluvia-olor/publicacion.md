@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #58 · Ese olor no es la lluvia (geosmina y petricor)
+# Publicación · Shot Químico 58 · Ese olor no es la lluvia (geosmina y petricor)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Lo curioso: en 2020 vieron que la geosmina atrae a colémbolos, bichitos de unos
 El olor de la tierra mojada es una mezcla de muchas moléculas; la geosmina es la más característica. El dibujo es esquemático.
 Fuentes: Joung y Buie 2015 · Ball et al. 2024 · Becher et al. 2020 · Ghirardo et al. 2026.
 ¿A ti te gusta ese olor o no lo soportas? 👇
-Shot Químico #58 · La Creación del Robert
+Shot Químico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Petricor #Lluvia #Geosmina
 ```
@@ -24,7 +24,7 @@ Ese olor a tierra mojada no es la lluvia: es sobre todo una molécula que fabric
 Es la geosmina, de bacterias como Streptomyces al formar esporas. Tu nariz la nota a 4–10 nanogramos por litro de agua: una cucharadita en 200 albercas olímpicas. En 2015, en el MIT, vieron en cámara rápida que las gotas atrapan burbujitas que revientan y lanzan gotitas al aire con pedacitos de suelo; sospechan que así viaja el olor. Y en 2020 vieron que la geosmina atrae colémbolos que reparten sus esporas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti te gusta ese olor? 👇
-Shot Químico #58 · La Creación del Robert
+Shot Químico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Petricor #Lluvia #Geosmina
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese olor no es la lluvia 🌧️ | Shot Químico #58
+Ese olor no es la lluvia 🌧️ | Shot Químico 58
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - Becher P.G. et al. (2020). Developmentally regulated volatiles geosmin and 2-methylisoborneol attract a soil arthropod to Streptomyces bacteria promoting spore dispersal. Nature Microbiology 5:821–829. https://doi.org/10.1038/s41564-020-0697-x
 - Ghirardo A. et al. (2026). Dryland Soil Rewetting Induces Strong Volatile Organic Compound Emissions With Potential to Form Ozone and Aerosols. Global Change Biology. https://pmc.ncbi.nlm.nih.gov/articles/PMC13644907/
 ¿A ti te gusta ese olor o no lo soportas? 👇
-Shot Químico #58 · La Creación del Robert
+Shot Químico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Petricor
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese olor a tierra mojada no es la lluvia: es sobre todo una molécula que fabrican bacterias del suelo. 🌧️ Se llama geosmina, y tu nariz la nota aunque sea una cucharadita en 200 albercas olímpicas. Las gotas la sacan al aire con burbujitas que revientan (eso sospechan los científicos del MIT).
 ¿A ti te gusta ese olor? 👇
-Shot Químico #58 · La Creación del Robert
+Shot Químico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Petricor
 ```
@@ -67,14 +67,14 @@ El olor a tierra mojada no es la lluvia: su molécula más característica es la
 La nariz humana la detecta en agua a 4–10 ng/L (Ball et al., 2024), y su función ecológica tiene una respuesta elegante: atrae a colémbolos que comen las colonias y dispersan sus esporas (Becher et al., Nature Microbiology, 2020).
 El mecanismo físico también es notable: con cámaras de alta velocidad, Joung y Buie (MIT, Nature Communications, 2015) mostraron en unos 600 experimentos que las gotas atrapan burbujas de aire al chocar con suelos porosos; al reventar, lanzan aerosoles que pueden llevar material del suelo. Ocurrió con lluvia ligera y moderada, no con lluvia fuerte. Que así viaje el olor es su hipótesis.
 ¿Qué otro fenómeno cotidiano crees que esconde química así?
-Shot Químico #58 · La Creación del Robert
+Shot Químico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Microbiologia #Ciencia #DivulgacionCientifica #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese olor a tierra mojada no es la lluvia: es sobre todo geosmina, una molécula de bacterias del suelo. Tu nariz la nota a 4–10 nanogramos por litro de agua. 🌧️ Shot Químico #58 #Quimica
+Ese olor a tierra mojada no es la lluvia: es sobre todo geosmina, una molécula de bacterias del suelo. Tu nariz la nota a 4–10 nanogramos por litro de agua. 🌧️ Shot Químico 58 #Quimica
 ```
 
 ### Threads
@@ -82,7 +82,7 @@ Ese olor a tierra mojada no es la lluvia: es sobre todo geosmina, una molécula 
 Ese olor a tierra mojada no es la lluvia: es sobre todo una molécula que fabrican bacterias del suelo. 🌧️
 Se llama geosmina, y tu nariz la nota como una cucharadita en 200 albercas olímpicas. Y en 2020 vieron que atrae a colémbolos que reparten las esporas de esas bacterias.
 ¿A ti te gusta ese olor?
-Shot Químico #58 · La Creación del Robert
+Shot Químico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

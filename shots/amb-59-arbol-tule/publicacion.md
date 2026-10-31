@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #59 · No son varios árboles: es uno solo (el árbol del Tule)
+# Publicación · Shot Ambiental 59 · No son varios árboles: es uno solo (el árbol del Tule)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Es un ahuehuete (viejo del agua, en náhuatl): crece donde el agua del suelo est
 El dibujo es esquemático.
 Fuentes: Dorado et al. 1996 (Madroño); Guinness World Records; Gymnosperm Database.
 ¿Ya lo conoces en persona? 👇
-Shot Ambiental #59 · La Creación del Robert
+Shot Ambiental 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #ArbolDelTule #Oaxaca #Ahuehuete
 ```
@@ -25,7 +25,7 @@ Esto no son varios árboles pegados: es uno solo, y tiene el tronco más ancho d
 El árbol del Tule (Oaxaca) es un ahuehuete con 36 m de contorno (medido en 2005). En 1996, un estudio de la UAEM comparó 149 marcas de ADN de sus seis ramas principales: idénticas. Casi seguro, es un solo individuo. Su edad nunca se ha fechado de forma confiable: Conzatti calculó en 1921 que no pasaba de dos mil años. Creció en un antiguo pantano: los ahuehuetes gigantes viven donde el agua nunca falta.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya lo conoces en persona? 👇
-Shot Ambiental #59 · La Creación del Robert
+Shot Ambiental 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #ArbolDelTule #Oaxaca #Ahuehuete
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Parece un bosque… y es UN solo árbol 🌳 | Shot Ambiental #59
+Parece un bosque… y es UN solo árbol 🌳 | Shot Ambiental 59
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Conzatti (1921), Monografía del árbol de Santa María del Tule: https://archive.org/details/mobot31753000636644
 - Rodríguez-Trejo y Vázquez Soto, Taxodium huegelii (Semillas de especies forestales): https://rngr.net/publications/semillas-de-especies-forestales/monografias/taxodium-huegelii-hort.ex-cupressaceae/at_download/file
 ¿Ya lo conoces en persona? 👇
-Shot Ambiental #59 · La Creación del Robert
+Shot Ambiental 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #ArbolDelTule #Oaxaca
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no son varios árboles pegados: es uno solo. 🌳 El árbol del Tule, en Oaxaca, tiene 36 m de contorno, y un estudio de ADN de 1996 encontró que sus seis ramas principales son genéticamente idénticas. Es un ahuehuete, "viejo del agua": creció en un antiguo pantano.
 ¿Ya lo conoces en persona? 👇
-Shot Ambiental #59 · La Creación del Robert
+Shot Ambiental 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #ArbolDelTule #Oaxaca
 ```
@@ -71,7 +71,7 @@ Esto no son varios árboles pegados: es uno solo, y tiene el tronco más ancho d
 El árbol del Tule (Oaxaca) tiene el mayor contorno registrado en un árbol vivo: 36.18 m en 2005. Durante décadas se discutió si era un solo árbol o varios fusionados. En 1996, un equipo de la Universidad Autónoma del Estado de Morelos lo resolvió con marcadores moleculares: 149 marcas de ADN idénticas en sus seis ramas principales, frente a diferencias claras con ahuehuetes vecinos.
 Dos lecciones: una buena pregunta se contesta con datos, no con la apariencia; y lo que no se ha medido (como su edad, que nunca se ha fechado de forma confiable) se presenta como estimación. Además, este gigante creció en un antiguo pantano: los ahuehuetes de gran tamaño se asocian a un agua abundante y constante.
 ¿Qué otro "dato famoso" crees que merece revisarse con evidencia?
-Shot Ambiental #59 · La Creación del Robert
+Shot Ambiental 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Genetica #ArbolDelTule #Oaxaca #LaCreacionDelRobert
 ```

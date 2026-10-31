@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #11 · ¿Le quitas el moho y te comes el resto? Cuándo se corta y cuándo se tira
+# Publicación · Shot Fungi Mati 11 · ¿Le quitas el moho y te comes el resto? Cuándo se corta y cuándo se tira
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y no huelas la comida con moho: te puede dar problemas al respirar.
 El dibujo es esquemático.
 Fuentes: USDA FSIS, "Molds on Food: Are They Dangerous?"; Rychlik y Schieberle 2001 (Eur. Food Res. Technol.).
 ¿Tú le quitabas la mancha al pan? 👇
-Shot Fungi Mati #11 · La Creación del Robert
+Shot Fungi Mati 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Moho #Hongos #Cocina
 ```
@@ -25,7 +25,7 @@ Soy Robert, de La Creación del Robert 🌱
 Abajo, unos hilos como raíces se meten en la comida, y algunos mohos fabrican micotoxinas. La regla del USDA: lo blando, húmedo o poroso se tira (pan, mermelada, yogur, jitomate, queso crema). Lo duro, si la mancha es chica, se rescata (queso duro, zanahoria, pimiento) cortando al menos 2.5 cm alrededor y por debajo. Un estudio de 2001 lo midió: en la manzana, la patulina ya no aparecía a más de 2 cm del moho; en el jitomate llegó a todo el fruto. Y no lo huelas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú le quitabas la mancha al pan? 👇
-Shot Fungi Mati #11 · La Creación del Robert
+Shot Fungi Mati 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Moho #Hongos #Cocina
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Le quitas el moho al pan y te lo comes? 🍞 Cuándo cortar y cuándo tirar | Shot Fungi Mati #11
+¿Le quitas el moho al pan y te lo comes? 🍞 Cuándo cortar y cuándo tirar | Shot Fungi Mati 11
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - NC State Extension (2024). Moldy Foods: Use or Pitch? https://brunswick.ces.ncsu.edu/2024/09/moldy-foods-use-or-pitch
 - Rychlik, M. y Schieberle, P. (2001). Model studies on the diffusion behavior of the mycotoxin patulin in apples, tomatoes, and wheat bread. European Food Research and Technology 212(3): 274–278. https://doi.org/10.1007/s002170000255
 ¿Tú le quitabas la mancha al pan? 👇
-Shot Fungi Mati #11 · La Creación del Robert
+Shot Fungi Mati 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Moho #FungiMati
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Por qué no basta con quitarle el moho al pan? Porque esa mancha es solo la parte que se ve. 🍞 El pan, la mermelada, el yogur o el jitomate con moho se tiran; al queso duro, la zanahoria o el pimiento, si la mancha es chica, córtales al menos 2.5 cm alrededor y por debajo (USDA). Y no lo huelas.
 ¿Tú le quitabas la mancha al pan? 👇
-Shot Fungi Mati #11 · La Creación del Robert
+Shot Fungi Mati 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Moho
 ```
@@ -70,7 +70,7 @@ Cortar la parte con moho funciona en unos alimentos y en otros no: la diferencia
 La guía del USDA FSIS indica desechar los alimentos blandos, húmedos o porosos con moho (pan, mermeladas, yogur, frutas blandas, quesos blandos), porque pueden contaminarse por debajo de la superficie y tener bacterias junto al moho. En alimentos densos, como el queso duro o las verduras firmes, se puede cortar una mancha pequeña con al menos 1 pulgada (2.5 cm) de margen alrededor y por debajo.
 Un estudio de la Universidad Técnica de Múnich (Rychlik y Schieberle, 2001) lo ilustra con la micotoxina patulina: en manzanas no se detectó a más de 2 cm de la zona infectada, mientras que en jitomates llegó a todo el fruto.
 ¿En tu casa qué regla se seguía con el moho?
-Shot Fungi Mati #11 · La Creación del Robert
+Shot Fungi Mati 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #InocuidadAlimentaria #Micologia #Ciencia
 ```
@@ -83,7 +83,7 @@ La mancha de moho es solo lo que se ve. Pan, mermelada, yogur o jitomate: se tir
 ### Threads
 ```text
 ¿Por qué no basta con quitarle el moho al pan? Porque esa mancha es solo la parte que se ve. 🍞 Lo blando, húmedo o poroso se tira; lo duro, si la mancha es chica, se corta con al menos 2.5 cm de margen alrededor y por debajo. ¿Tú le quitabas la mancha al pan?
-Shot Fungi Mati #11 · La Creación del Robert
+Shot Fungi Mati 11 · La Creación del Robert
 #Moho
 ```
 

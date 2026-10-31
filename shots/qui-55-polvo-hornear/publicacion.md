@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #55 · Ese polvo no es un solo truco (polvo para hornear de doble acción)
+# Publicación · Shot Químico 55 · Ese polvo no es un solo truco (polvo para hornear de doble acción)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo curioso: una norma del gobierno de Estados Unidos de 1987 pedía que soltara 
 Ojo: no todos los polvos usan los mismos ácidos; revisa la etiqueta de tu bote. El dibujo es esquemático.
 Fuentes: Godefroidt et al. 2021 · USDA 1987 · Clabber Girl 2019 · fuentes en el comentario fijado.
 ¿Tú usas polvo para hornear o bicarbonato con limón? 👇
-Shot Químico #55 · La Creación del Robert
+Shot Químico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #PolvoParaHornear #Reposteria #CienciaEnLaCocina
 ```
@@ -25,7 +25,7 @@ Ese polvo para hornear no es un solo truco: son dos reacciones, una en tu tazón
 Al mojarse, un ácido reacciona con el bicarbonato y suelta CO₂; el segundo (como el sulfato de sodio y aluminio) espera al calor del horno. Un estudio de 2021 en la KU Leuven vio que con ácidos rápidos el gas se pierde al batir y el pastel sale más bajito, y que el gas que llega después de que la masa cuaja (cerca de 88 °C en su prueba) solo se escapa.
 No todos los polvos usan los mismos ácidos: revisa la etiqueta. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú usas polvo para hornear o bicarbonato con limón? 👇
-Shot Químico #55 · La Creación del Robert
+Shot Químico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #PolvoParaHornear #Reposteria #CienciaEnLaCocina
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese polvo no es un solo truco 🎂 | Shot Químico #55
+Ese polvo no es un solo truco 🎂 | Shot Químico 55
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - American Society of Baking. Sodium Aluminium Sulfate (SAS). https://asbe.org/article/sodium-aluminium-sulfate-sas/
 - Innograin, Universidad de Valladolid (2024). Leavening Agents or Baking Powders. https://innograin.uva.es/en/2024/06/17/leavening-agents-or-baking-powders/
 ¿Tú usas polvo para hornear o bicarbonato con limón? 👇
-Shot Químico #55 · La Creación del Robert
+Shot Químico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #PolvoParaHornear
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese polvo para hornear no es un solo truco: son dos reacciones, una en tu tazón y otra en tu horno. 🎂 Un ácido reacciona al mojarse y suelta CO₂; el otro espera al calor del horno. Así el pastel recibe gas en dos turnos. (No todos los polvos usan los mismos ácidos: revisa la etiqueta.)
 ¿Tú usas polvo para hornear o bicarbonato con limón? 👇
-Shot Químico #55 · La Creación del Robert
+Shot Químico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Reposteria
 ```
@@ -71,14 +71,14 @@ El polvo para hornear de doble acción es un buen ejemplo de química de liberac
 Godefroidt et al. (KU Leuven, LWT 2021) midieron el CO₂ liberado mientras horneaban pasteles con calentamiento óhmico: con ácidos de acción rápida, gran parte del gas se perdió durante el batido y los pasteles quedaron con menos volumen; y el CO₂ producido después de que la miga cuaja (la masa empezó a cuajar a unos 88 °C en su sistema) ya no aportó volumen. El momento importa tanto como la cantidad.
 Dato histórico: una especificación de compras del USDA de 1987 pedía al menos 12 % de CO₂ disponible por peso; se canceló en 2002.
 ¿Qué otro producto de tu cocina es, en el fondo, un sistema de liberación controlada?
-Shot Químico #55 · La Creación del Robert
+Shot Químico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeAlimentos #Reposteria #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese polvo para hornear no es un solo truco: un ácido reacciona al mojarse y otro con el calor del horno. Gas en dos turnos para que suba el pastel. 🎂 Shot Químico #55 #Quimica
+Ese polvo para hornear no es un solo truco: un ácido reacciona al mojarse y otro con el calor del horno. Gas en dos turnos para que suba el pastel. 🎂 Shot Químico 55 #Quimica
 ```
 
 ### Threads
@@ -86,7 +86,7 @@ Ese polvo para hornear no es un solo truco: un ácido reacciona al mojarse y otr
 Ese polvo para hornear no es un solo truco: son dos reacciones, una en tu tazón y otra en tu horno. 🎂
 Un ácido suelta CO₂ al mojarse; el otro despierta con el calor. Y en un estudio de 2021, con ácidos rápidos el gas se perdió al batir y el pastel salió más bajito.
 ¿Tú usas polvo para hornear o bicarbonato con limón?
-Shot Químico #55 · La Creación del Robert
+Shot Químico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #15 · Esas venas no son queso echado a perder: el queso azul (Penicillium roqueforti)
+# Publicación · Shot Fungi Mati 15 · Esas venas no son queso echado a perder: el queso azul (Penicillium roqueforti)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Y en 2024, en la Universidad de Nottingham (Inglaterra), hicieron versiones del 
 El dibujo es esquemático.
 Fuentes: Dumas et al. 2020 (Molecular Ecology); Cleere et al. 2024 (npj Science of Food); pliego de condiciones de la AOP Roquefort; USDA.
 ¿Te gusta el queso azul o no lo soportas? 👇
-Shot Fungi Mati #15 · La Creación del Robert
+Shot Fungi Mati 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #QuesoAzul #Roquefort
 ```
@@ -27,7 +27,7 @@ Esas venas azules no son queso echado a perder: son un moho sembrado a propósit
 Penicillium roqueforti se le echa a la leche, y luego pican el queso con agujas para que entre el aire: el moho necesita oxígeno y solo hace esporas en los huecos. Sus esporas dan el color azul verdoso, y al romper la grasa produce metilcetonas como la 2-heptanona, el olor del queso azul. En 2020 se descubrió que se domesticó dos veces: una población es la del Roquefort y la otra se usa en quesos azules de todo el mundo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te gusta el queso azul o no lo soportas? 👇
-Shot Fungi Mati #15 · La Creación del Robert
+Shot Fungi Mati 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #QuesoAzul #Roquefort
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las venas del queso azul son MOHO… sembrado a propósito 🧀 | Shot Fungi Mati #15
+Las venas del queso azul son MOHO… sembrado a propósito 🧀 | Shot Fungi Mati 15
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Fuentes:
 - USDA FSIS. Molds on Food: Are They Dangerous? https://ucfoodsafety.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/26438.pdf
 - Chávez, R., Vaca, I. y García-Estrada, C. (2023). J. Fungi 9(4): 459. https://pmc.ncbi.nlm.nih.gov/articles/PMC10144355/
 ¿Te gusta el queso azul o no lo soportas? 👇
-Shot Fungi Mati #15 · La Creación del Robert
+Shot Fungi Mati 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #QuesoAzul #FungiMati
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas venas azules no son queso echado a perder: son un moho sembrado a propósito. 🧀 Penicillium roqueforti se le echa a la leche, luego pican el queso con agujas para que entre el aire, y sus esporas pintan el queso de azul verdoso. Su olor típico viene de metilcetonas como la 2-heptanona, que el moho saca de la grasa de la leche.
 ¿Te gusta el queso azul o no lo soportas? 👇
-Shot Fungi Mati #15 · La Creación del Robert
+Shot Fungi Mati 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #QuesoAzul
 ```
@@ -76,7 +76,7 @@ El queso azul es un ejemplo de domesticación de un microorganismo.
 Penicillium roqueforti se inocula en la leche; como necesita oxígeno para esporular, el queso se pica para airear la pasta, y el color azul verdoso proviene de sus esporas pigmentadas. Su metabolismo de la grasa produce metilcetonas, como la 2-heptanona, responsables del aroma típico.
 En 2020, un estudio de genómica de poblaciones (34 genomas secuenciados, Molecular Ecology) mostró que este hongo se domesticó dos veces: una población asociada al Roquefort y otra usada en quesos azules de todo el mundo. En 2024, la Universidad de Nottingham obtuvo por mutagénesis UV cepas de otros colores y elaboró quesos con ellas.
 ¿Qué otro alimento conoces que dependa de un microorganismo domesticado?
-Shot Fungi Mati #15 · La Creación del Robert
+Shot Fungi Mati 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Microbiologia #Alimentos #Ciencia
 ```
@@ -89,7 +89,7 @@ Las venas del queso azul no son queso echado a perder: son Penicillium roquefort
 ### Threads
 ```text
 Esas venas azules no son queso echado a perder: son un moho sembrado a propósito. 🧀 Penicillium roqueforti necesita aire: por eso pican el queso con agujas, y sus esporas lo pintan de azul verdoso. ¿Te gusta el queso azul o no lo soportas?
-Shot Fungi Mati #15 · La Creación del Robert
+Shot Fungi Mati 15 · La Creación del Robert
 #Hongos
 ```
 

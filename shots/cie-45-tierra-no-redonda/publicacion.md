@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #45 · La Tierra no es una esfera perfecta
+# Publicación · Shot Científico 45 · La Tierra no es una esfera perfecta
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que la Tierra no es una esfera: es una pelota que de tanto girar se puso un
 El dibujo es esquemático.
 Fuentes: NASA Earth Fact Sheet; NOAA Ocean Service; medición China–Nepal 2020; gravedad normal WGS84.
 ¿Tú sabías cuál era la cima más lejana del centro de la Tierra? 👇
-Shot Científico #45 · La Creación del Robert
+Shot Científico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Tierra #Everest
 ```
@@ -28,7 +28,7 @@ Como gira, la Tierra se ensancha en el ecuador: mide unos 43 km más de ancho qu
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú sabías cuál era la cima más lejana del centro de la Tierra? 👇
-Shot Científico #45 · La Creación del Robert
+Shot Científico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Tierra #Everest
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El Everest NO es el punto más lejano del centro de la Tierra | Shot Científico #45
+El Everest NO es el punto más lejano del centro de la Tierra | Shot Científico 45
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - Gravedad de la Tierra por latitud (≈ 9.780 m/s² en el ecuador y ≈ 9.832 m/s² en los polos): https://en.wikipedia.org/wiki/Gravity_of_Earth y https://en.wikipedia.org/wiki/Theoretical_gravity
 - Chimborazo, volcán de Ecuador: https://en.wikipedia.org/wiki/Chimborazo
 ¿Tú sabías cuál era la cima más lejana del centro de la Tierra? 👇
-Shot Científico #45 · La Creación del Robert
+Shot Científico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica #Tierra #Everest #Chimborazo
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 La Tierra no es una pelota perfecta: está un poquito aplastada. 🌍 Por el giro, mide unos 43 km más de ancho en el ecuador que de polo a polo (apenas ≈ 0.3 %). Por eso la cima más lejana del centro de la Tierra no es el Everest, sino el Chimborazo, en Ecuador: unos 2 km más lejos. Y en el ecuador pesas alrededor de medio por ciento menos que en los polos. (El aplastamiento del dibujo está exagerado.)
 ¿Tú sabías cuál era la cima más lejana del centro de la Tierra? 👇
-Shot Científico #45 · La Creación del Robert
+Shot Científico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -76,7 +76,7 @@ La Tierra no es una esfera perfecta: por su rotación se ensancha en el ecuador.
 Desde el nivel del mar gana el Everest (8,848.86 m, medición China–Nepal de 2020). Pero desde el centro de la Tierra gana el Chimborazo, en Ecuador: está casi sobre el ecuador y su cima queda unos 2 km más lejos del centro.
 El mismo giro y la misma forma hacen que en el ecuador pesemos alrededor de medio por ciento menos que en los polos.
 Fuentes: NASA Earth Fact Sheet, NOAA Ocean Service.
-Shot Científico #45 · La Creación del Robert
+Shot Científico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

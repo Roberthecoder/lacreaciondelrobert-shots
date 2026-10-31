@@ -16,7 +16,7 @@ No es magia: antes hay que pasar por quimioterapia fuerte (busulfán) para vacia
 El dibujo es esquemático.
 Fuentes: Frangoul et al., NEJM (2024); FDA (2023); MHRA, Reino Unido (2023); ficha técnica de Casgevy (FDA, 2026); Vertex, SEC (2023); NPR (2019); MedlinePlus Genetics (NIH).
 ¿Habías oído de la anemia falciforme? ¿Conoces a alguien que la tenga? 👇
-Shot Biotecnológico #32 · La Creación del Robert
+Shot Biotecnológico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CRISPR #AnemiaFalciforme #EdicionGenetica
 ```
@@ -28,7 +28,7 @@ En la anemia falciforme, un solo cambio en un gen pega la hemoglobina en varilla
 Casgevy no arregla el gen dañado: saca células madre de la médula, CRISPR corta ese interruptor y, de vuelta en el cuerpo, hacen glóbulos rojos con hemoglobina fetal, que diluye a la dañada. En el estudio de 2024, 29 de 30 pacientes evaluados pasaron al menos un año sin crisis graves. Fue el primer medicamento con CRISPR aprobado (2023), pero exige quimioterapia fuerte y en 2023 su precio de lista en EE. UU. era de 2.2 millones de dólares.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Conoces a alguien con anemia falciforme? 👇
-Shot Biotecnológico #32 · La Creación del Robert
+Shot Biotecnológico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CRISPR #AnemiaFalciforme #EdicionGenetica
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa célula no está rota: está doblada 🩸✂️ | Shot Biotecnológico #32
+Esa célula no está rota: está doblada 🩸✂️ | Shot Biotecnológico 32
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Vertex, Form 8-K (SEC), 8 dic 2023: https://www.sec.gov/Archives/edgar/data/8753
 NPR, 29 jul 2019: https://www.tpr.org/science-technology/2019-07-29/doctors-in-the-u-s-use-crispr-technique-to-treat-a-genetic-disorder-for-the-1st-time
 MedlinePlus Genetics: https://medlineplus.gov/genetics/condition/sickle-cell-disease/
 ¿Habías oído de la anemia falciforme? 👇
-Shot Biotecnológico #32 · La Creación del Robert
+Shot Biotecnológico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CRISPR #AnemiaFalciforme
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esa célula no está rota: está doblada, como una hoz. 🩸
 En la anemia falciforme los glóbulos rojos se doblan y tapan los vasos. Casgevy, el primer medicamento con CRISPR aprobado (2023), no arregla el gen dañado: vuelve a prender la hemoglobina fetal, la que usabas antes de nacer. En el estudio de 2024, 29 de 30 pacientes evaluados pasaron al menos un año sin crisis graves.
 ¿Habías oído de esta enfermedad? 👇
-Shot Biotecnológico #32 · La Creación del Robert
+Shot Biotecnológico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CRISPR
 ```
@@ -77,7 +77,7 @@ Casgevy (exagamglogene autotemcel) parte de una observación genética: las pers
 Resultados: en el ensayo publicado en NEJM en 2024, 29 de 30 pacientes evaluados estuvieron al menos 12 meses seguidos sin crisis vasooclusivas graves. Reino Unido lo autorizó en noviembre de 2023 y la FDA en diciembre de 2023.
 Los límites también importan: requiere acondicionamiento mieloablativo con busulfán (quimioterapia de dosis alta, con riesgo de infertilidad), y en 2023 su precio de lista en EE. UU. era de 2.2 millones de dólares.
 ¿Qué tendría que cambiar para que una terapia así llegue a quienes más la necesitan?
-Shot Biotecnológico #32 · La Creación del Robert
+Shot Biotecnológico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CRISPR #TerapiaGenica #Salud
 ```
@@ -92,7 +92,7 @@ Esa célula no está rota: está doblada. 🩸 Casgevy, el 1.er medicamento con 
 Esa célula no está rota: está doblada, como una hoz. 🩸
 En la anemia falciforme la hemoglobina se pega en varillas y el glóbulo rojo se dobla y tapa los vasos. Casgevy, el primer medicamento con CRISPR aprobado (2023), corta el interruptor BCL11A para que vuelvas a hacer hemoglobina fetal, la de antes de nacer. 29 de 30 pacientes evaluados pasaron un año sin crisis graves (NEJM 2024).
 ¿Lo sabías? 👇
-Shot Biotecnológico #32 · La Creación del Robert
+Shot Biotecnológico 32 · La Creación del Robert
 #CRISPR
 ```
 

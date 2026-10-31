@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #53 · Este huevo no está pelado (el vinagre, el cascarón y la ósmosis)
+# Publicación · Shot Químico 53 · Este huevo no está pelado (el vinagre, el cascarón y la ósmosis)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Si lo metes en jarabe, el agua sale hacia el azúcar y el huevo se arruga; en ag
 El dibujo es esquemático.
 Fuentes: Gautron et al. 2021 · Hagiri y Suzuki 2026 · Australian National University · Imperial College London.
 ¿Ya lo hiciste en la escuela? ¿Te rebotó o se te reventó? 👇
-Shot Químico #53 · La Creación del Robert
+Shot Químico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #ExperimentosEnCasa #Osmosis #HuevoEnVinagre
 ```
@@ -26,7 +26,7 @@ El cascarón es 95 % mineral, casi todo carbonato de calcio; el ácido acético 
 Es un huevo crudo: no es para comerse y lávate las manos al terminar.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya lo hiciste en la escuela? 👇
-Shot Químico #53 · La Creación del Robert
+Shot Químico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #ExperimentosEnCasa #Osmosis #HuevoEnVinagre
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este huevo no está pelado 🥚🫧 | Shot Químico #53
+Este huevo no está pelado 🥚🫧 | Shot Químico 53
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Australian National University. Folding egg. https://science.anu.edu.au/engagement/science-lab-experiments-home-school/folding-egg
 - Imperial College London. Osmosis Activity (STEM in Action). https://www.imperial.ac.uk/be-inspired/schools-outreach/secondary-schools/stem-in-action/the-human-body/osmosis--activity/
 ¿Ya lo hiciste en la escuela? ¿Te rebotó o se te reventó? 👇
-Shot Químico #53 · La Creación del Robert
+Shot Químico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #ExperimentosEnCasa
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este huevo no está pelado: es un huevo crudo al que el vinagre le disolvió el cascarón. 🥚🫧 El ácido del vinagre convierte el carbonato de calcio del cascarón en CO₂ (las burbujas) y deja solo la membrana, que deja pasar el agua: en jarabe se arruga y en agua se infla.
 ¿Ya lo hiciste en la escuela? 👇
-Shot Químico #53 · La Creación del Robert
+Shot Químico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #ExperimentosEnCasa
 ```
@@ -69,14 +69,14 @@ Este huevo no está pelado: el vinagre le disolvió el cascarón y dejó a la vi
 El cascarón es 95 % mineral, casi todo carbonato de calcio (calcita), y el ácido acético lo convierte en acetato de calcio, agua y CO₂. Lo que queda es la membrana del cascarón: dos capas de fibras de proteína de 50 a 70 µm que dejan pasar el agua, por eso el huevo se arruga en jarabe y se infla en agua (ósmosis).
 Esa membrana no es solo un experimento escolar: en 2026, Hagiri y Suzuki (National Institute of Technology, Japón) validaron dos métodos para medir sus poros (permeación de agua a presión y filtración de partículas de 14 a 204 nm) y estimaron poros de unos 100–200 nm. Los autores la proponen como un residuo abundante con posibles usos en tecnologías de membranas.
 ¿Qué otro residuo de cocina crees que podría convertirse en material útil?
-Shot Químico #53 · La Creación del Robert
+Shot Químico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Biomateriales #DivulgacionCientifica #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Este huevo no está pelado: el vinagre convirtió su cascarón de carbonato de calcio en CO₂ y dejó solo la membrana, que deja pasar el agua. En jarabe se arruga; en agua se infla. 🥚🫧 Shot Químico #53 #Quimica
+Este huevo no está pelado: el vinagre convirtió su cascarón de carbonato de calcio en CO₂ y dejó solo la membrana, que deja pasar el agua. En jarabe se arruga; en agua se infla. 🥚🫧 Shot Químico 53 #Quimica
 ```
 
 ### Threads
@@ -84,7 +84,7 @@ Este huevo no está pelado: el vinagre convirtió su cascarón de carbonato de c
 Este huevo no está pelado: es un huevo crudo al que el vinagre le disolvió el cascarón. 🥚🫧
 Las burbujas son CO₂ del carbonato de calcio. Queda una membrana de fibras de proteína que deja pasar el agua: en jarabe se arruga y en agua se infla. Eso es ósmosis.
 ¿Ya lo hiciste en la escuela?
-Shot Químico #53 · La Creación del Robert
+Shot Químico 53 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

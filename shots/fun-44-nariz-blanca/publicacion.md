@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #44 · El hongo que no deja dormir a los murciélagos: síndrome de nariz blanca
+# Publicación · Shot Fungi Mati 44 · El hongo que no deja dormir a los murciélagos: síndrome de nariz blanca
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Si ves un murciélago enfermo, no lo toques.
 El dibujo es esquemático.
 Fuentes: Blehert et al. 2009 (Science); Reeder et al. 2012 (PLOS ONE); USGS 2025; Cheng et al. 2021 (Conservation Biology); Medina-Cruz et al. 2025 (PLOS ONE).
 ¿Hay murciélagos en alguna cueva cerca de donde vives? 👇
-Shot Fungi Mati #44 · La Creación del Robert
+Shot Fungi Mati 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Murcielagos #NarizBlanca
 ```
@@ -27,7 +27,7 @@ Eso blanco en la nariz de este murciélago no es escarcha: es un hongo que lo de
 Pseudogymnoascus destructans crece en el frío de las cuevas y se mete en la piel del hocico, las orejas y las alas mientras el murciélago hiberna. Lo hace despertar más seguido, y cada despertar cuesta grasa: el enfermo se queda sin reservas antes de la primavera. Desde 2006 ha matado a millones de murciélagos en Norteamérica, y en 2025 un estudio lo reportó en una cueva de Oaxaca.
 Si ves uno enfermo, no lo toques. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Hay murciélagos en alguna cueva cerca de donde vives? 👇
-Shot Fungi Mati #44 · La Creación del Robert
+Shot Fungi Mati 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Murcielagos #NarizBlanca
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo que NO deja dormir a los murciélagos 🦇 | Shot Fungi Mati #44
+El hongo que NO deja dormir a los murciélagos 🦇 | Shot Fungi Mati 44
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Fuentes:
 - Drees, K. P. et al. (2017). Phylogenetics of a fungal invasion. mBio 8(6): e01941-17. https://www.usgs.gov/publications/phylogenetics-a-fungal-invasion-origins-and-widespread-dispersal-white-nose-syndrome
 - Medina-Cruz, G. E. et al. (2025). Presence of white-nose syndrome in bats from Southern Mexico. PLOS ONE. https://pmc.ncbi.nlm.nih.gov/articles/PMC12088370/
 ¿Hay murciélagos en alguna cueva cerca de donde vives? 👇
-Shot Fungi Mati #44 · La Creación del Robert
+Shot Fungi Mati 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Murcielagos #FungiMati
 ```
@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Eso blanco en la nariz de este murciélago no es escarcha: es un hongo que lo despierta. 🦇 Lo hace despertar más seguido en pleno invierno y se queda sin grasa antes de la primavera. Ya mató a millones de murciélagos, y en 2025 un estudio lo reportó en una cueva de Oaxaca. Si ves uno enfermo, no lo toques.
 ¿Hay murciélagos en alguna cueva cerca de donde vives? 👇
-Shot Fungi Mati #44 · La Creación del Robert
+Shot Fungi Mati 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Murcielagos
 ```
@@ -78,7 +78,7 @@ Pseudogymnoascus destructans crece en el frío de las cuevas e infecta la piel d
 Desde su primer registro (Nueva York, 2006), la enfermedad ha matado a millones de murciélagos (USGS, 2025), y tres especies cayeron más del 90 % en sus refugios de invierno vigilados (Conservation Biology, 2021, conteos hasta 2018). En 2025 se reportó el hongo en una cueva de Oaxaca (PLOS ONE).
 Por qué importa: la evidencia apunta a un patógeno llegado de Europa a murciélagos que no lo conocían (PNAS, 2012; mBio, 2017), y los autores del estudio de Oaxaca piden vigilar la zona.
 ¿Conoces programas de monitoreo de murciélagos en tu región?
-Shot Fungi Mati #44 · La Creación del Robert
+Shot Fungi Mati 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Conservacion #Ciencia
 ```
@@ -91,7 +91,7 @@ Eso blanco en la nariz del murciélago no es escarcha: es un hongo que lo despie
 ### Threads
 ```text
 Eso blanco en la nariz de este murciélago no es escarcha: es un hongo que lo despierta. 🦇 Lo hace despertar más seguido durante la hibernación y se queda sin grasa antes de la primavera. Ya mató a millones, y en 2025 lo reportaron en una cueva de Oaxaca. ¿Hay murciélagos cerca de donde vives?
-Shot Fungi Mati #44 · La Creación del Robert
+Shot Fungi Mati 44 · La Creación del Robert
 #Murcielagos
 ```
 

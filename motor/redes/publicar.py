@@ -403,14 +403,16 @@ SERIE_DE = {'fun': 'Fungi Mati', 'bio': 'Biotecnológico', 'amb': 'Ambiental', '
 ESPECIALES_TIT = {'003-semillas-luna': ('Científico', 1)}
 
 
-def titulo_completo(clave, t):
-    """Título único en TODAS las redes y en la Sala (decisión de Robert, 31 oct 2026): «Shot <Serie> #NN: <título>»;
-    festivos: «Shot Festivo #NN · <Festividad> · <Serie vinculada>: <título>» (t ya trae «<Festividad> · <Serie>: …»)."""
+def titulo_completo(clave, gancho):
+    """Título para YouTube, Facebook y LinkedIn (reglas de Robert): primero el GANCHO y al final la serie y el número,
+    SIN «#» (las redes lo vuelven hashtag; 31 oct 2026): «<gancho> | Shot <Serie> NN»."""
     m = re.match(r'^([a-z]+)-(\d+)-', clave)
     serie, n = ESPECIALES_TIT.get(clave) or ((SERIE_DE.get(m.group(1)), int(m.group(2))) if m else (None, None))
+    gancho = re.sub(r'\s*\|\s*Shot\b.*$', '', gancho).strip()
     if not serie:
-        return t
-    return f'Shot {serie} #{n:02d}' + (' · ' if serie == 'Festivo' else ': ') + t
+        return titulo_corto(gancho, 100)
+    cola = f' | Shot {serie} {n:02d}'
+    return titulo_corto(gancho, 100 - len(cola)) + cola
 
 
 def titulo_corto(t, n):
@@ -421,9 +423,14 @@ def titulo_corto(t, n):
 def textos(clave):
     carpeta = os.path.join('shots', clave)
     r = redes_de(os.path.join(carpeta, 'publicacion.md'))
-    titulo = titulo_completo(clave, titulo_de(carpeta, clave))
+    gancho = ((r.get('youtube') or {}).get('titulo')) or titulo_de(carpeta, clave)
+    titulo = titulo_completo(clave, gancho)
     if r.get('youtube'):
-        r['youtube']['titulo'] = titulo_corto(titulo, 100)   # el título de YouTube es siempre el de la Sala
+        r['youtube']['titulo'] = titulo
+    # por si algún texto viejo trae «#NN» en el número de serie: nunca se publica como hashtag
+    for red in r.values():
+        if isinstance(red, dict) and red.get('texto'):
+            red['texto'] = re.sub(r'(Shot [^\n#|]{2,30}?) #(\d{1,3})\b', r'\1 \2', red['texto'])
     return r, titulo
 
 

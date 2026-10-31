@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #29 · Ese olor no es tu sudor (desodorante vs. antitranspirante)
+# Publicación · Shot Químico 29 · Ese olor no es tu sudor (desodorante vs. antitranspirante)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ El desodorante va contra eso: trae perfume y antimicrobianos contra esas bacteri
 El dibujo es esquemático.
 Fuentes: Natsch y Emter 2020 · James et al. 2013 · Rudden et al. 2020 · FDA (21 CFR 350) · NCI · American Cancer Society 2026.
 ¿Tú usas desodorante o antitranspirante? 👇
-Shot Químico #29 · La Creación del Robert
+Shot Químico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Desodorante #Antitranspirante #Bacterias
 ```
@@ -25,7 +25,7 @@ Ese olor de tu axila no es tu sudor: son bacterias comiéndoselo. 🦠
 El sudor fresco no huele; bacterias como Corynebacterium y Staphylococcus hominis cortan sus moléculas y sueltan ácidos y tioalcoholes (con azufre) que apestan. El desodorante lleva perfume y antimicrobianos; el antitranspirante tapa por un rato el conducto del sudor con sales de aluminio. En 2020, en la Universidad de York, hallaron la enzima de S. hominis que suelta el tioalcohol.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú usas desodorante o antitranspirante? 👇
-Shot Químico #29 · La Creación del Robert
+Shot Químico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Desodorante #Antitranspirante #Bacterias
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese olor no es tu sudor 🦠 | Shot Químico #29
+Ese olor no es tu sudor 🦠 | Shot Químico 29
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - National Cancer Institute. Antiperspirants/Deodorants and Breast Cancer. https://www.cancer.gov/about-cancer/causes-prevention/risk/myths/antiperspirants-fact-sheet
 - American Cancer Society (2026). Antiperspirants and Breast Cancer Risk. https://www.cancer.org/cancer/risk-prevention/chemicals/antiperspirants-and-breast-cancer-risk.html
 ¿Tú usas desodorante o antitranspirante? 👇
-Shot Químico #29 · La Creación del Robert
+Shot Químico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Desodorante
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese olor de tu axila no es tu sudor: son bacterias comiéndoselo. 🦠 El sudor fresco no huele; las bacterias cortan sus moléculas y sueltan ácidos y tioalcoholes. El desodorante va contra el olor y las bacterias; el antitranspirante tapa por un rato el conducto del sudor con aluminio.
 ¿Tú usas desodorante o antitranspirante? 👇
-Shot Químico #29 · La Creación del Robert
+Shot Químico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Desodorante
 ```
@@ -73,14 +73,14 @@ Las secreciones apocrinas frescas no huelen; llevan precursores sin olor unidos 
 En 2020, un equipo de la Universidad de York y Unilever identificó la enzima PatB de S. hominis que libera el tioalcohol 3M3SH, y la confirmó pasando su gen a otra bacteria.
 Sobre aluminio y cáncer de mama, la American Cancer Society (2026) considera que la evidencia es limitada.
 ¿Sabías que desodorante y antitranspirante no eran lo mismo?
-Shot Químico #29 · La Creación del Robert
+Shot Químico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Microbiologia #Cosmetica #Ciencia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese olor de tu axila no es tu sudor: son bacterias. Cortan moléculas sin olor y sueltan tioalcoholes con azufre. El desodorante va contra eso; el antitranspirante tapa el conducto con aluminio. 🦠 Shot Químico #29 #Quimica
+Ese olor de tu axila no es tu sudor: son bacterias. Cortan moléculas sin olor y sueltan tioalcoholes con azufre. El desodorante va contra eso; el antitranspirante tapa el conducto con aluminio. 🦠 Shot Químico 29 #Quimica
 ```
 
 ### Threads
@@ -88,7 +88,7 @@ Ese olor de tu axila no es tu sudor: son bacterias. Cortan moléculas sin olor y
 Ese olor de tu axila no es tu sudor: son bacterias comiéndoselo. 🦠
 El sudor fresco no huele; Corynebacterium y Staphylococcus hominis cortan sus moléculas y sueltan ácidos y tioalcoholes. El desodorante va contra el olor; el antitranspirante tapa por un rato el conducto del sudor con sales de aluminio.
 ¿Tú cuál usas?
-Shot Químico #29 · La Creación del Robert
+Shot Químico 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

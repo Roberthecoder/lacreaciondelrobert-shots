@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #04 · Dedos arrugados: no es piel aguada, es tu sistema nervioso
+# Publicación · Shot Científico 04 · Dedos arrugados: no es piel aguada, es tu sistema nervioso
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -13,7 +13,7 @@ Lo que pasa es esto: en el agua, tu sistema nervioso cierra los vasitos de la ye
 El dibujo es esquemático.
 Fuentes: Kareklas et al. 2013 (Biology Letters); Haseleu et al. 2014 (PLoS One); Wilder-Smith y Chow 2003 (Muscle & Nerve).
 ¿A qué edad descubriste que tus dedos se arrugan en la alberca? 👇
-Shot Científico #04 · La Creación del Robert
+Shot Científico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #SistemaNervioso #DatosCuriosos
 ```
@@ -24,7 +24,7 @@ Esas arrugas en tus dedos no son piel aguada: son tus nervios cerrando tus vasos
 En el agua, tu sistema nervioso cierra los vasitos de la yema: llega menos sangre, la yema pierde volumen y la piel se pliega. Si el nervio de un dedo está dañado, ese dedo no se arruga (por eso es una prueba médica de los nervios). ¿Para qué sirve? En 2013 (Newcastle) las arrugas ayudaron a pasar canicas bajo el agua 12 % más rápido; en 2014 (Berlín) no encontraron ventaja. Sigue en debate.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A qué edad descubriste que tus dedos se arrugan en la alberca? 👇
-Shot Científico #04 · La Creación del Robert
+Shot Científico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #SistemaNervioso #DatosCuriosos
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tus dedos arrugados no son piel aguada 🖐️ | Shot Científico #04
+Tus dedos arrugados no son piel aguada 🖐️ | Shot Científico 04
 ```
 Descripción:
 ```text
@@ -46,7 +46,7 @@ Fuentes:
 - Wilder-Smith, E. P. y Chow, A. (2003). Water-immersion wrinkling is due to vasoconstriction. Muscle & Nerve 27: 307–311. https://doi.org/10.1002/mus.10323
 - Fustes, O. J. H. et al. (2026). The skin-wrinkling test: principles and clinical applications. Arq. Neuropsiquiatr. 84(7). https://doi.org/10.1055/s-0046-1827046
 ¿A qué edad descubriste que tus dedos se arrugan en la alberca? 👇
-Shot Científico #04 · La Creación del Robert
+Shot Científico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CuerpoHumano #Ciencia
 ```
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas arrugas en tus dedos no son piel aguada: son tus nervios cerrando tus vasos sanguíneos. 🖐️ En el agua, tu sistema nervioso cierra los vasitos de la yema y la piel se pliega; si el nervio está dañado, el dedo no se arruga. Para qué sirve, todavía se discute.
 ¿A qué edad descubriste que tus dedos se arrugan en la alberca? 👇
-Shot Científico #04 · La Creación del Robert
+Shot Científico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano
 ```
@@ -66,7 +66,7 @@ Las arrugas de tus dedos en el agua no son piel hinchada: son una respuesta acti
 Durante años se pensó que la piel absorbía agua y se inflaba. Hoy se sabe que, al sumergir la mano, el sistema nervioso autónomo cierra los vasos de la yema; la pulpa pierde volumen y la piel de encima se pliega. Si el nervio de un dedo está dañado o anestesiado, ese dedo no se arruga, y por eso la prueba de arrugamiento se usa en clínica para evaluar los nervios: es rápida, barata y accesible.
 Su función sigue abierta: en 2013 (Universidad de Newcastle, 20 personas) los dedos arrugados movieron objetos bajo el agua en 12 % menos tiempo; en 2014 (Max Delbrück Center, Berlín, 40 personas) una prueba parecida no encontró ventaja. Un buen ejemplo de por qué la replicación importa.
 ¿Qué otro "dato de toda la vida" crees que merece revisarse con un experimento?
-Shot Científico #04 · La Creación del Robert
+Shot Científico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Fisiologia #SistemaNervioso #Divulgacion #LaCreacionDelRobert
 ```

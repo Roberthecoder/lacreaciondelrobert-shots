@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #51 · El hongo que se come el combustible de los aviones
+# Publicación · Shot Fungi Mati 51 · El hongo que se come el combustible de los aviones
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Por eso drenan el agua de los tanques y usan biocidas, en dosis exacta. En 2020,
 El dibujo es esquemático.
 Fuentes: Arnold 1983; Krohn et al. 2021 (Frontiers in Microbiology); AAIB 2021; JIG/IATA 2026.
 ¿Te imaginabas que un hongo viajara contigo en el avión? 👇
-Shot Fungi Mati #51 · La Creación del Robert
+Shot Fungi Mati 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Aviones #Ciencia
 ```
@@ -26,7 +26,7 @@ Esas manchas oscuras en un filtro de turbosina no siempre son mugre: pueden ser 
 Amorphotheca resinae, el "hongo del queroseno", vive en el agua que se condensa en el fondo de los tanques y come justo en la frontera con la turbosina. Forma tapetes cafés que tapan filtros, y sus ácidos corroen el aluminio. En 2021, en Hamburgo, leyeron el ADN de la mugre de seis tanques de aviones: el hongo más abundante fue Amorphotheca. Por eso drenan el agua y usan biocidas… en dosis exacta: en 2020, cerca de Londres, un avión recibió unas 38 veces la dosis y sus dos motores empezaron a fallar (aterrizó a salvo).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te imaginabas que un hongo viajara contigo en el avión? 👇
-Shot Fungi Mati #51 · La Creación del Robert
+Shot Fungi Mati 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Aviones #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo que se come la turbosina de los aviones ✈️🍄 | Shot Fungi Mati #51
+El hongo que se come la turbosina de los aviones ✈️🍄 | Shot Fungi Mati 51
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - JIG, IATA, A4A e IFQP (2026). Joint Notice to Industry: MBG in Aviation Fuel. https://www.iata.org/contentassets/b7d9bbf3fe334d52aa02d67cc2e51337/joint-notice-to-industry_mbg-in-aviation-fuel_may-2026.pdf
 - CRE (2016). NOM-016-CRE-2016, Especificaciones de calidad de los petrolíferos (DOF, 29 ago 2016).
 ¿Te imaginabas que un hongo viajara contigo en el avión? 👇
-Shot Fungi Mati #51 · La Creación del Robert
+Shot Fungi Mati 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas manchas oscuras en un filtro de turbosina no siempre son mugre: pueden ser un hongo que come combustible. ✈️🍄 Amorphotheca resinae vive en el agua que se junta en el fondo de los tanques de los aviones, tapa filtros y sus ácidos corroen el aluminio. Por eso drenan el agua y usan biocidas… en la dosis exacta.
 ¿Te imaginabas que un hongo viajara contigo en el avión? 👇
-Shot Fungi Mati #51 · La Creación del Robert
+Shot Fungi Mati 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -72,7 +72,7 @@ Un hongo en el combustible de avión: por qué el mantenimiento empieza por el a
 Amorphotheca resinae (Hormoconis resinae), el "kerosene fungus", crece en la interfase agua–combustible de los tanques. Sus biopelículas tapan filtros y sus ácidos orgánicos corroen las aleaciones de aluminio. En 2021, un estudio de la Universidad de Hamburgo y Lufthansa Technik (Frontiers in Microbiology) encontró que Amorphotheca era el hongo más abundante en el ADN de biopelículas de seis tanques de aviones.
 El control se basa en drenar el agua, vigilar la contaminación y, cuando hace falta, usar biocidas con la dosis correcta. El informe AAR 1/2021 de la AAIB sobre el A321 G-POWN (Gatwick, 2020) muestra el otro riesgo: tanques tratados con unas 38 veces la concentración recomendada de biocida provocaron fallas en ambos motores; la tripulación aterrizó a salvo. En mayo de 2026, JIG, IATA, A4A e IFQP emitieron un aviso conjunto por el aumento de reportes de contaminación microbiana en los sistemas de combustible de aviación de los aeropuertos.
 ¿En tu industria también hay "contaminantes vivos"?
-Shot Fungi Mati #51 · La Creación del Robert
+Shot Fungi Mati 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Aviacion #Microbiologia #Ciencia
 ```
@@ -85,7 +85,7 @@ Esas manchas oscuras en un filtro de turbosina pueden ser un hongo: Amorphotheca
 ### Threads
 ```text
 Esas manchas oscuras en un filtro de turbosina no siempre son mugre: pueden ser un hongo que come combustible. ✈️🍄 Amorphotheca resinae vive en el agua que se condensa en los tanques de los aviones, forma tapetes que tapan filtros y sus ácidos corroen el aluminio. ¿Te imaginabas que un hongo viajara contigo en el avión?
-Shot Fungi Mati #51 · La Creación del Robert
+Shot Fungi Mati 51 · La Creación del Robert
 #Hongos
 ```
 

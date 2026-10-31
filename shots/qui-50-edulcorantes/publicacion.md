@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #50 · Este granito no es azúcar (endulzantes que engañan a tu lengua)
+# Publicación · Shot Químico 50 · Este granito no es azúcar (endulzantes que engañan a tu lengua)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Dato extra: en 2012 se vio que la stevia también enciende dos receptores de lo 
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes: FDA 2025 · OMS/IARC/JECFA 2023 · Li et al. 2002 · Hellfritsch et al. 2012 · Hough y Emsley 1986.
 ¿Tú endulzas tu café con azúcar o con endulzante? 👇
-Shot Químico #50 · La Creación del Robert
+Shot Químico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Endulzantes #Aspartamo #Stevia
 ```
@@ -25,7 +25,7 @@ Este granito no es azúcar: es sucralosa, y endulza como unos 600 granitos de az
 Sucralosa ≈600 veces, aspartamo ≈200, stevia 200–400 (FDA). Encienden el mismo receptor dulce de tu lengua (T1R2/T1R3), así que basta muy poquito: unos 40 mg de aspartamo endulzan como 8 g de azúcar. El aspartamo se descubrió de chiripa en 1965 (un químico se lamió el dedo) y la sucralosa por una confusión entre "probar" y "analizar" en Londres. En 2023 la IARC lo llamó "posiblemente cancerígeno" por evidencia limitada, y el JECFA mantuvo su límite: más de 9 latas light al día para alguien de 70 kg. La FDA no está de acuerdo con la IARC.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú endulzas tu café con azúcar o con endulzante? 👇
-Shot Químico #50 · La Creación del Robert
+Shot Químico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Endulzantes #Aspartamo #Stevia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este granito no es azúcar 🍬 | Shot Químico #50
+Este granito no es azúcar 🍬 | Shot Químico 50
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Hough L., Emsley J. (1986). Sweetness. New Scientist. https://www.johnemsley.com/articles/new_scientist/ns_sweetness.html
 - University of Bristol (2001). Molecule of the Month: Aspartame. https://www.chm.bris.ac.uk/motm/aspartame/aspartameh.html
 ¿Tú endulzas tu café con azúcar o con endulzante? 👇
-Shot Químico #50 · La Creación del Robert
+Shot Químico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Endulzantes
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este granito no es azúcar: es sucralosa, y endulza como unos 600 granitos de azúcar. 🍬 Encienden el mismo receptor dulce de tu lengua con muchísimo menos: unos 40 mg de aspartamo endulzan como 8 g de azúcar. Y el aspartamo se descubrió porque un químico se lamió el dedo en 1965.
 ¿Tú endulzas tu café con azúcar o con endulzante? 👇
-Shot Químico #50 · La Creación del Robert
+Shot Químico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Endulzantes
 ```
@@ -72,14 +72,14 @@ Un granito de sucralosa endulza como unos 600 de azúcar: los endulzantes de alt
 Dos de ellos se descubrieron por accidente: el aspartamo en 1965, cuando James Schlatter se lamió un dedo mientras trabajaba en un fármaco para la úlcera, y la sucralosa en Londres, en los años 70, cuando un estudiante entendió "taste" (probar) en lugar de "test" (analizar).
 Sobre seguridad, conviene leer bien las clasificaciones: en 2023 la IARC puso al aspartamo en el Grupo 2B ("posiblemente cancerígeno") por evidencia limitada —una medida de la fuerza de la evidencia, no del riesgo a dosis habituales—, mientras el JECFA mantuvo la ingesta diaria admisible de 40 mg/kg. La FDA discrepa de la clasificación de la IARC.
 ¿Qué otros hallazgos importantes conoces que salieron de un error en el laboratorio?
-Shot Químico #50 · La Creación del Robert
+Shot Químico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeAlimentos #Serendipia #Salud #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Un granito de sucralosa endulza como unos 600 de azúcar. El aspartamo se descubrió en 1965 porque un químico se lamió el dedo. Y en 2023 el JECFA mantuvo su límite: más de 9 latas light al día para 70 kg. 🍬 Shot Químico #50 #Quimica
+Un granito de sucralosa endulza como unos 600 de azúcar. El aspartamo se descubrió en 1965 porque un químico se lamió el dedo. Y en 2023 el JECFA mantuvo su límite: más de 9 latas light al día para 70 kg. 🍬 Shot Químico 50 #Quimica
 ```
 
 ### Threads
@@ -87,7 +87,7 @@ Un granito de sucralosa endulza como unos 600 de azúcar. El aspartamo se descub
 Este granito no es azúcar: es sucralosa, y endulza como unos 600 granitos de azúcar. 🍬
 Enciende el mismo receptor dulce de tu lengua con muchísimo menos. Y la sucralosa nació porque un estudiante en Londres entendió "probar" en vez de "analizar".
 ¿Tú endulzas tu café con azúcar o con endulzante?
-Shot Químico #50 · La Creación del Robert
+Shot Químico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #14 · Esa sal no es un polvito inocente (sodio + cloro = sal)
+# Publicación · Shot Químico 14 · Esa sal no es un polvito inocente (sodio + cloro = sal)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ El sodio metálico y el cloro gaseoso son peligrosos: solo se manejan en laborat
 El dibujo es esquemático.
 Fuentes: PubChem (NIH) · CDC · OpenStax Chemistry 2e · Davy, Phil. Trans. 1808 · Grunden y Tuovinen 2025.
 ¿Sabías que tu sal tenía este pasado tan peligroso? 👇
-Shot Químico #14 · La Creación del Robert
+Shot Químico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Sal #Sodio #Cloro
 ```
@@ -27,7 +27,7 @@ Esa sal no es un polvito inocente: está hecha de un metal que reacciona violent
 El sodio le da su único electrón de afuera al cloro y quedan dos iones, Na⁺ y Cl⁻, que se atraen y se acomodan en cubos: cada sodio rodeado de seis cloruros. Por eso la sal ya no reacciona con el agua: solo se disuelve. Davy aisló el sodio en 1807 con electricidad; el cloro se usó como arma en Ypres en 1915; y hoy, con electricidad, a la sal disuelta en agua le sacan otra vez el cloro.
 El sodio metálico y el cloro gaseoso solo se manejan en laboratorio o industria. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que tu sal tenía este pasado tan peligroso? 👇
-Shot Químico #14 · La Creación del Robert
+Shot Químico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Sal #Sodio #Cloro
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa sal está hecha de un metal y un gas venenoso 🧂 | Shot Químico #14
+Esa sal está hecha de un metal y un gas venenoso 🧂 | Shot Químico 14
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Davy H. (1808). The Bakerian Lecture… decomposition of the fixed Alkalies. Phil. Trans. R. Soc. Lond. 98. https://doi.org/10.1098/rstl.1808.0001
 - Grunden W.E., Tuovinen O.H. (2025). Legacy and impact of the 1925 Geneva Protocol. Front Microbiol. https://pubmed.ncbi.nlm.nih.gov/41480101/
 ¿Sabías que tu sal tenía este pasado tan peligroso? 👇
-Shot Químico #14 · La Creación del Robert
+Shot Químico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Sal
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa sal no es un polvito inocente: está hecha de un metal que reacciona violento con el agua y un gas venenoso. 🧂 El sodio le da su electrón al cloro, quedan dos iones que se atraen y se acomodan en cubitos: por eso la sal ya no reacciona, solo se disuelve. El dibujo es esquemático.
 ¿Sabías que tu sal tenía este pasado tan peligroso? 👇
-Shot Químico #14 · La Creación del Robert
+Shot Químico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Sal
 ```
@@ -73,14 +73,14 @@ La sal de mesa está hecha de dos sustancias peligrosas: sodio, un metal que rea
 La clave es el enlace iónico: el sodio cede su único electrón de valencia al cloro, y los iones Na⁺ y Cl⁻ se ordenan en una red cúbica donde cada sodio queda rodeado de seis cloruros. El resultado ya no reacciona con el agua: solo se disuelve.
 La historia también enseña: Humphry Davy aisló el sodio por primera vez en 1807, en Londres, por electrólisis; el cloro se usó como arma química a gran escala en Ypres en 1915; y hoy la industria obtiene el cloro, sobre todo, por electrólisis de sal disuelta en agua (proceso cloro-álcali).
 ¿Qué otro ejemplo conoces donde la química cambie por completo las propiedades de sus ingredientes?
-Shot Químico #14 · La Creación del Robert
+Shot Químico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #EnlaceIonico #Ciencia #Divulgacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Tu sal está hecha de un metal que reacciona violento con el agua (sodio) y un gas venenoso (cloro). El sodio le da un electrón al cloro y quedan cubos de iones que solo se disuelven. 🧂 Shot Químico #14 #Quimica
+Tu sal está hecha de un metal que reacciona violento con el agua (sodio) y un gas venenoso (cloro). El sodio le da un electrón al cloro y quedan cubos de iones que solo se disuelven. 🧂 Shot Químico 14 #Quimica
 ```
 
 ### Threads
@@ -88,7 +88,7 @@ Tu sal está hecha de un metal que reacciona violento con el agua (sodio) y un g
 Esa sal no es un polvito inocente: está hecha de un metal que reacciona violento con el agua y un gas venenoso. 🧂
 El sodio le da su electrón al cloro y los iones se acomodan en cubos: cada sodio rodeado de seis cloruros. Y hoy, con electricidad, a la sal disuelta en agua le sacan otra vez el cloro.
 ¿Sabías que tu sal tenía este pasado?
-Shot Químico #14 · La Creación del Robert
+Shot Químico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

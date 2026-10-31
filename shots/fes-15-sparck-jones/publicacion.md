@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #15 · Mujer y Niña en la Ciencia · IA: La idea de una mujer de 1972 que usa tu buscador
+# Publicación · Shot Festivo 15 · Mujer y Niña en la Ciencia · IA: La idea de una mujer de 1972 que usa tu buscador
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 11 feb 2027, Día Internacional de la Mujer y la Niña en la Ciencia.
 
@@ -14,7 +14,7 @@ Y un dato: animaba a niñas y jóvenes a dedicarse a la computación. Su lema: "
 El dibujo es esquemático.
 Fuentes: Spärck Jones (1972) · Robertson (2004) · Tait (2007) · BCS · Ram et al. (2023).
 ¿Conoces a alguna científica que te haya inspirado? 👇
-Shot Festivo #15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
+Shot Festivo 15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #MujeresEnLaCiencia #11F #InteligenciaArtificial #Buscadores
 ```
@@ -25,7 +25,7 @@ Cuando buscas algo en internet, muy probablemente usas una idea de esta mujer. �
 En "receta de tamales de rajas", la palabra "de" sale en muchísimas páginas y casi no dice nada; "rajas" sale en pocas y sí te acerca a tu receta. Entre menos documentos tengan una palabra, más vale. En 1972, en Cambridge, Karen Spärck Jones propuso pesar cada palabra según qué tan rara es; la probó con tres colecciones de documentos y las búsquedas mejoraron bastante. Hoy se llama frecuencia inversa de documento (IDF) y entró en casi todas las fórmulas que califican palabras. Hay IA que busca documentos con BM25, heredera de su idea, antes de responder. Su lema: "la computación es demasiado importante para dejársela a los hombres".
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Conoces a alguna científica que te haya inspirado? 👇
-Shot Festivo #15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
+Shot Festivo 15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #MujeresEnLaCiencia #11F #InteligenciaArtificial #Buscadores
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La idea de 1972 que muy probablemente usa tu buscador 🔎 | Shot Festivo #15
+La idea de 1972 que muy probablemente usa tu buscador 🔎 | Shot Festivo 15
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Ram et al. (2023). In-Context Retrieval-Augmented Language Models. TACL 11. https://aclanthology.org/2023.tacl-1.75.pdf
 - Anthropic (2024). Introducing Contextual Retrieval: https://www.anthropic.com/news/contextual-retrieval
 ¿Conoces a alguna científica que te haya inspirado? 👇
-Shot Festivo #15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
+Shot Festivo 15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #MujeresEnLaCiencia #InteligenciaArtificial
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Cuando buscas algo en internet, muy probablemente usas una idea de esta mujer. 🔎 En 1972, Karen Spärck Jones propuso darle más peso a las palabras raras: "de" sale en casi todas las páginas y casi no dice nada; "rajas" sale en pocas y te lleva a tu receta. Hoy se llama IDF y entró en casi todas las fórmulas que califican palabras.
 ¿Conoces a alguna científica que te haya inspirado? 👇
-Shot Festivo #15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
+Shot Festivo 15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #MujeresEnLaCiencia #11F
 ```
@@ -70,20 +70,20 @@ Una idea muy duradera de la búsqueda de información cabe en una frase: una pal
 La propuso Karen Spärck Jones en 1972, en Cambridge, en el Journal of Documentation. Probó su peso estadístico con tres colecciones de documentos de prueba y la búsqueda mejoró de forma considerable. Esa medida hoy se llama frecuencia inversa de documento (IDF); combinada con la frecuencia del término (TF), entró en casi todas las fórmulas para ponderar palabras (Robertson, 2004). Su heredera BM25 se sigue usando hoy, por ejemplo en sistemas de IA que recuperan documentos antes de responder (Ram et al., 2023).
 Spärck Jones también trabajó en procesamiento de lenguaje y animaba activamente a niñas y jóvenes a estudiar computación. Su lema: "la computación es demasiado importante para dejársela a los hombres".
 Este 11 de febrero, Día Internacional de la Mujer y la Niña en la Ciencia: ¿qué científica cambió tu forma de trabajar?
-Shot Festivo #15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
+Shot Festivo 15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #MujeresEnLaCiencia #RecuperacionDeInformacion #InteligenciaArtificial #DivulgacionCientifica
 ```
 
 ### X
 ```text
-Cuando buscas algo en internet, muy probablemente usas una idea de Karen Spärck Jones (1972): la palabra rara pesa más. Hoy se llama IDF. 🔎 Shot Festivo #15 · Mujer y Niña en la Ciencia · IA #MujeresEnLaCiencia #11F
+Cuando buscas algo en internet, muy probablemente usas una idea de Karen Spärck Jones (1972): la palabra rara pesa más. Hoy se llama IDF. 🔎 Shot Festivo 15 · Mujer y Niña en la Ciencia · IA #MujeresEnLaCiencia #11F
 ```
 
 ### Threads
 ```text
 Cuando buscas algo en internet, muy probablemente usas una idea de esta mujer. 🔎 En 1972, Karen Spärck Jones propuso darle más peso a las palabras que salen en pocos documentos: "de" casi no dice nada, "rajas" sí. Hoy se llama IDF. ¿Conoces a alguna científica que te haya inspirado? 👇
-Shot Festivo #15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
+Shot Festivo 15 · Mujer y Niña en la Ciencia · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #MujeresEnLaCiencia
 ```

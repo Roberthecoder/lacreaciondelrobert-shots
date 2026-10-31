@@ -1,4 +1,4 @@
-# Publicación · Shot IA #55 · Seis semanas con un tutor de IA que valieron como hasta dos años de escuela
+# Publicación · Shot IA 55 · Seis semanas con un tutor de IA que valieron como hasta dos años de escuela
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Esas seis semanas no reemplazan a tu escuela: fue IA con un maestro al lado.
 El dibujo es esquemático; el diálogo del chat es ilustrativo.
 Fuente: De Simone et al., Banco Mundial, Policy Research Working Paper 11125 (2025).
 ¿Tú usarías un tutor de IA para estudiar inglés? 👇
-Shot IA #55 · La Creación del Robert
+Shot IA 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Educacion #Nigeria #AprenderIngles
 ```
@@ -27,7 +27,7 @@ Benin City, Nigeria, 2024: chavos de primero de prepa de nueve escuelas pública
 Ojo: "dos años" es una equivalencia estimada (1.5 a 2 años de escuela normal en Nigeria), no dos años de temario. Fue un piloto, el otro grupo no tuvo horas extra y falta ver si dura.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú usarías un tutor de IA para estudiar inglés? 👇
-Shot IA #55 · La Creación del Robert
+Shot IA 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Educacion #Nigeria #AprenderIngles
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un tutor de IA: 6 semanas que valieron como hasta 2 años de escuela 📚 | Shot IA #55
+Un tutor de IA: 6 semanas que valieron como hasta 2 años de escuela 📚 | Shot IA 55
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Seis semanas de tardes con un tutor de IA valieron como hasta dos años de escuela, según investigadores del Banco Mundial. 📚 Fue un piloto en Nigeria (2024), con sorteo y maestros guiando. Ojo: "dos años" es una equivalencia estimada, no dos años de temario. No reemplaza a tu escuela: fue IA con un maestro al lado.
 ¿Tú usarías un tutor de IA para estudiar inglés? 👇
-Shot IA #55 · La Creación del Robert
+Shot IA 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Educacion
 ```
@@ -70,7 +70,7 @@ Lo que hay que leer con cuidado: "años de escuela" es una equivalencia estimada
 La lección para escuelas y gobiernos no es "IA en lugar de maestros", sino IA bien diseñada, con maestros al lado.
 ¿Qué condiciones tendría que cumplir un programa así en tu país?
 Fuente: De Simone et al., World Bank Policy Research Working Paper 11125 (2025). Piloto de 2024.
-Shot IA #55 · La Creación del Robert
+Shot IA 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Educacion #EdTech #BancoMundial #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Soy Robert, de La Creación del Robert 🌱
 Seis semanas de tardes con un tutor de IA valieron como hasta dos años de escuela, según investigadores del Banco Mundial. 📚
 Nigeria, 2024: sorteo, mismo examen para los dos grupos y maestros guiando. Pero "dos años" es una equivalencia estimada, no dos años de temario, y fue un piloto.
 ¿Tú usarías un tutor de IA para estudiar inglés?
-Shot IA #55 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 55 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

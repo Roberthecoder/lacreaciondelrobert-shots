@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #21 · Ese foco no es una lámpara: es un calentador (focos LED)
+# Publicación · Shot Ambiental 21 · Ese foco no es una lámpara: es un calentador (focos LED)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que ese foco que te quema no es una lámpara: es un calentador que, de paso
 El dibujo es esquemático.
 Fuentes: Departamento de Energía de EE. UU. (2021), Premio Nobel de Física 2014 y NOM-028-ENER-2017.
 ¿En tu casa todavía queda algún foco de los de antes? 👇
-Shot Ambiental #21 · La Creación del Robert
+Shot Ambiental 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #FocosLED #AhorroDeEnergia #Ciencia
 ```
@@ -25,7 +25,7 @@ Ese foco no es una lámpara: es un calentador que, de paso, alumbra. 💡🔥
 El 90 % de la energía de un foco incandescente sale como calor y solo el 10 % como luz (Departamento de Energía de EE. UU.). Un LED convierte la electricidad directamente en luz: uno de 9 W puede alumbrar como un foco de 75 W y durar hasta 25 veces más. El LED azul que hizo posible la luz blanca ganó el Nobel de Física 2014.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa todavía queda algún foco de los de antes? 👇
-Shot Ambiental #21 · La Creación del Robert
+Shot Ambiental 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #FocosLED #AhorroDeEnergia #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese foco no es una lámpara: es un calentador 💡🔥 | Shot Ambiental #21
+Ese foco no es una lámpara: es un calentador 💡🔥 | Shot Ambiental 21
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Premio Nobel de Física 2014, información popular: https://www.nobelprize.org/prizes/physics/2014/popular-information/
 - NOM-028-ENER-2017, DOF 9 mar 2018: https://www.gob.mx/cms/uploads/attachment/file/614590/NOM_028_ENER_2017_.pdf
 ¿En tu casa todavía queda algún foco de los de antes? 👇
-Shot Ambiental #21 · La Creación del Robert
+Shot Ambiental 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #FocosLED #AhorroDeEnergia
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese foco no es una lámpara: es un calentador que, de paso, alumbra. 💡🔥 El 90 % de su energía sale como calor y solo el 10 % como luz. Un LED de 9 watts puede dar la misma luz que uno de 75 y durar hasta 25 veces más.
 ¿En tu casa todavía queda algún foco de los de antes? 👇
-Shot Ambiental #21 · La Creación del Robert
+Shot Ambiental 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FocosLED #AhorroDeEnergia
 ```
@@ -69,7 +69,7 @@ Un foco incandescente no es una lámpara: es un calentador que, de paso, alumbra
 Según el Departamento de Energía de EE. UU. (2021), el 90 % de su energía se libera como calor y solo el 10 % como luz. Los LED convierten la electricidad directamente en luz: un foco LED de 9 W puede entregar 1,100 lúmenes, lo mismo que un incandescente de 75 W, y dura hasta 25 veces más. Esa tecnología fue posible gracias al LED azul, Premio Nobel de Física 2014 (Akasaki, Amano y Nakamura).
 En México, la NOM-028-ENER-2017 fijó desde 2019 una eficacia mínima de 60 lúmenes por watt para los focos incandescentes y halógenos de uso general; un foco clásico da unos 16. Es un ejemplo de cómo una norma técnica traduce la eficiencia energética en decisiones de compra diarias.
 ¿Qué otro aparato de uso diario crees que tiene un "desperdicio oculto" parecido?
-Shot Ambiental #21 · La Creación del Robert
+Shot Ambiental 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #EficienciaEnergetica #LED #Energia #LaCreacionDelRobert
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #54 · Los imanes que le enseñaron a recordar a una máquina (Nobel de Física 2024)
+# Publicación · Shot IA 54 · Los imanes que le enseñaron a recordar a una máquina (Nobel de Física 2024)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Y Hinton advirtió en su discurso del banquete Nobel: si creamos máquinas más 
 El dibujo es esquemático (los retratos no son fotos).
 Fuente: nobelprize.org (Nobel de Física 2024).
 ¿Te sorprende que fuera un Nobel de Física y no de otra cosa? 👇
-Shot IA #54 · La Creación del Robert
+Shot IA 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #PremioNobel #Fisica #RedesNeuronales
 ```
@@ -26,7 +26,7 @@ Estas flechitas no son un dibujo: son átomos que funcionan como imanes. Y con s
 Nobel de Física 2024: John Hopfield y Geoffrey Hinton. Hopfield (1982) usó la física de los imanes para una memoria: una red de pixeles que guarda imágenes con baja energía y, si le das una imagen rota, rueda "al valle" y casi siempre la recupera. Hinton y Terrence Sejnowski usaron la física estadística y la ecuación de Boltzmann para una máquina que aprende con ejemplos (1985). De menos de 500 parámetros en 1982 a más de un billón en un modelo de lenguaje de hoy. Y Hinton advirtió: si creamos máquinas más inteligentes que nosotros, no sabemos si podremos mantener el control.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te sorprende que fuera un Nobel de Física y no de otra cosa? 👇
-Shot IA #54 · La Creación del Robert
+Shot IA 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #PremioNobel #Fisica #RedesNeuronales
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los imanes que le enseñaron a recordar a una máquina: el Nobel de Física 2024 🧲 | Shot IA #54
+Los imanes que le enseñaron a recordar a una máquina: el Nobel de Física 2024 🧲 | Shot IA 54
 ```
 Descripción:
 ```text
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Estas flechitas no son un dibujo: son átomos que funcionan como imanes. Y con su física se ganó un Nobel por la IA. 🧲 El Nobel de Física 2024 fue para John Hopfield y Geoffrey Hinton: Hopfield usó la física de los imanes para una memoria artificial (1982) y Hinton, con Terrence Sejnowski, la física estadística para una máquina que aprende con ejemplos (1985).
 ¿Te sorprende que fuera un Nobel de Física y no de otra cosa? 👇
-Shot IA #54 · La Creación del Robert
+Shot IA 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #PremioNobel
 ```
@@ -73,7 +73,7 @@ La escala también cuenta la historia: la red de 1982 tenía menos de 500 parám
 Y una advertencia del propio Hinton en el banquete Nobel: si creamos seres digitales más inteligentes que nosotros, "no tenemos idea de si podremos mantener el control".
 ¿Qué otras ideas de la física crees que terminarán en la tecnología de todos los días?
 Fuentes: nobelprize.org (comunicado, información popular y discurso de Hinton, 2024); Hopfield, PNAS 79(8), 1982.
-Shot IA #54 · La Creación del Robert
+Shot IA 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #PremioNobel #Fisica #AprendizajeAutomatico #LaCreacionDelRobert
 ```
@@ -88,7 +88,7 @@ Estas flechitas no son un dibujo: son átomos que funcionan como imanes. Con esa
 Estas flechitas no son un dibujo: son átomos que funcionan como imanes. Y con su física se ganó un Nobel por la IA. 🧲
 Nobel de Física 2024: Hopfield hizo una memoria con la física de los imanes (1982); Hinton y Sejnowski, una máquina que aprende con ejemplos usando la ecuación de Boltzmann (1985).
 ¿Te sorprende que fuera de Física?
-Shot IA #54 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 54 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

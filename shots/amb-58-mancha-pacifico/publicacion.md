@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #58 · La «isla de basura» del Pacífico no se puede pisar: es una sopa
+# Publicación · Shot Ambiental 58 · La «isla de basura» del Pacífico no se puede pisar: es una sopa
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ No es una isla que puedas pisar: es una sopa que el mar revuelve, y lo que más 
 El dibujo es esquemático.
 Fuentes: Lebreton et al. 2018 y 2022 (Scientific Reports) y NOAA.
 ¿Tú también pensabas que era una isla? 👇
-Shot Ambiental #58 · La Creación del Robert
+Shot Ambiental 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Plastico #Oceano #RedesFantasma
 ```
@@ -26,7 +26,7 @@ Esto no es una isla de basura: es una sopa de plástico que nunca podrías pisar
 La gran mancha de basura del Pacífico Norte, entre Hawái y California, ocupaba 1.6 millones de km² en 2015. Un giro oceánico (corrientes que dan vueltas) junta lo que flota, pero en promedio había menos de una pieza por metro cuadrado y casi todas eran diminutas. Lo que más pesa: de 79 mil toneladas de plástico, al menos el 46 % eran redes de pesca.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú también pensabas que era una isla? 👇
-Shot Ambiental #58 · La Creación del Robert
+Shot Ambiental 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Plastico #Oceano #RedesFantasma
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La «isla de basura» del Pacífico no se puede pisar 🌊 | Shot Ambiental #58
+La «isla de basura» del Pacífico no se puede pisar 🌊 | Shot Ambiental 58
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - NOAA Marine Debris Program, Garbage Patches: https://marinedebris.noaa.gov/info/patch.html
 - NOAA Ocean Service, What is the Great Pacific Garbage Patch?: https://oceanservice.noaa.gov/facts/garbagepatch.html
 ¿Tú también pensabas que era una isla? 👇
-Shot Ambiental #58 · La Creación del Robert
+Shot Ambiental 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Plastico #Oceano
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 La famosa «isla de basura» del Pacífico no es una isla: es una sopa de plástico dispersa entre Hawái y California. 🌊 Y de las 79 mil toneladas que se calcularon, al menos el 46 % eran redes de pesca.
 ¿Tú también pensabas que era una isla? 👇
-Shot Ambiental #58 · La Creación del Robert
+Shot Ambiental 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Plastico #Oceano
 ```
@@ -69,7 +69,7 @@ La «isla de basura» del Pacífico no es una isla que se pueda pisar: es una so
 Lebreton y colegas (Scientific Reports, 2018) la midieron con 18 barcos en 2015 y con fotos aéreas en 2016: al menos 79 mil toneladas de plástico en 1.6 millones de km². El 94 % de las piezas eran microplásticos, pero solo pesaban el 8 %; al menos el 46 % de la masa eran redes de pesca. En 2019, un segundo estudio revisó más de 6 mil objetos duros: entre los que tenían origen identificado, el 34 % venía de Japón y el 32 % de China.
 La imagen de «isla» lleva a pensar en soluciones equivocadas. Los datos apuntan a que, para lo que más pesa en esta zona, el equipo de pesca perdido o desechado tiene un papel central.
 ¿Qué medida crees que reduciría más las redes perdidas en el mar?
-Shot Ambiental #58 · La Creación del Robert
+Shot Ambiental 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Oceano #Plastico #Pesca #LaCreacionDelRobert
 ```

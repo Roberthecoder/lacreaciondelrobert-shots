@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #51 · Ese gel no te lava las manos (gel antibacterial y alcohol)
+# Publicación · Shot Químico 51 · Ese gel no te lava las manos (gel antibacterial y alcohol)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que el gel no te lava las manos: las desinfecta. Y si hay agua y jabón, me
 El dibujo es esquemático.
 Fuentes: CDC 2024 · CDC 2008/2023 · Liu et al. 2010 · FDA 2021.
 ¿Tú cargas gel en la mochila o prefieres lavarte? 👇
-Shot Químico #51 · La Creación del Robert
+Shot Químico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #GelAntibacterial #Alcohol #LavadoDeManos
 ```
@@ -26,7 +26,7 @@ El alcohol desnaturaliza (desdobla) las proteínas de los microbios. Por eso el 
 Y en 2021 la FDA puso en alerta de importación a EE. UU. todos los geles con alcohol hechos en México: más de la mitad de sus muestras traía tóxicos, como metanol.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú cargas gel en la mochila o prefieres lavarte? 👇
-Shot Químico #51 · La Creación del Robert
+Shot Químico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #GelAntibacterial #Alcohol #LavadoDeManos
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese gel no te lava las manos 🧴 | Shot Químico #51
+Ese gel no te lava las manos 🧴 | Shot Químico 51
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - FDA (26 ene 2021). FDA Takes Action to Place All Alcohol-Based Hand Sanitizers from Mexico on Import Alert. https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-fda-takes-action-place-all-alcohol-based-hand-sanitizers-mexico-import
 - CDC (2024). About Norovirus. https://www.cdc.gov/norovirus/about/index.html
 ¿Tú cargas gel en la mochila o prefieres lavarte? 👇
-Shot Químico #51 · La Creación del Robert
+Shot Químico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #GelAntibacterial
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese gel no te está lavando las manos: es alcohol desarmando a tus microbios. 🧴 El alcohol desdobla sus proteínas; por eso el gel necesita al menos 60 % de alcohol y hay que frotar hasta que seque. Pero contra el norovirus, las esporas o las manos sucias, ganan el agua y el jabón.
 ¿Tú cargas gel o prefieres lavarte? 👇
-Shot Químico #51 · La Creación del Robert
+Shot Químico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #GelAntibacterial
 ```
@@ -71,14 +71,14 @@ Su mecanismo es químico: el alcohol desnaturaliza las proteínas de los microbi
 Pero tiene límites claros. Contra norovirus, Cryptosporidium y Clostridioides difficile, el agua y el jabón son más eficaces, y el alcohol no destruye esporas bacterianas. En un estudio de la Universidad Emory (Liu et al., 2010) con 10 voluntarios y virus Norwalk en las yemas de los dedos, un gel con 62 % de etanol redujo el material genético del virus solo 0.14–0.34 log10, frente a 0.58–1.58 log10 del simple enjuague con agua. Con manos sucias o grasosas también pierde eficacia.
 Y la calidad del producto cuenta: en enero de 2021 la FDA puso en alerta de importación todos los geles con alcohol fabricados en México, tras encontrar ingredientes tóxicos como metanol en más de la mitad de las muestras analizadas en 2020; fue su primera alerta de importación de todo un país para una categoría de medicamento.
 ¿En tu lugar de trabajo hay más dispensadores de gel que lavabos con jabón?
-Shot Químico #51 · La Creación del Robert
+Shot Químico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SaludPublica #Higiene #DivulgacionCientifica #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese gel no te lava las manos: es alcohol desdoblando las proteínas de tus microbios. Necesita al menos 60 % de alcohol, y contra el norovirus o las esporas de C. difficile ganan el agua y el jabón. 🧴 Shot Químico #51 #Quimica
+Ese gel no te lava las manos: es alcohol desdoblando las proteínas de tus microbios. Necesita al menos 60 % de alcohol, y contra el norovirus o las esporas de C. difficile ganan el agua y el jabón. 🧴 Shot Químico 51 #Quimica
 ```
 
 ### Threads
@@ -86,7 +86,7 @@ Ese gel no te lava las manos: es alcohol desdoblando las proteínas de tus micro
 Ese gel no te está lavando las manos: es alcohol desarmando a tus microbios. 🧴
 El alcohol desdobla sus proteínas, y con agua mata mejor que puro. Pero contra el norovirus y las esporas de Clostridioides difficile, o con manos sucias, ganan el agua y el jabón.
 ¿Tú cargas gel o prefieres lavarte?
-Shot Químico #51 · La Creación del Robert
+Shot Químico 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

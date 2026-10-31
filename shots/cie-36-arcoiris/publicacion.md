@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #36 · Nadie ve el mismo arcoíris que tú
+# Publicación · Shot Científico 36 · Nadie ve el mismo arcoíris que tú
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -17,7 +17,7 @@ Así que ese arcoíris no está allá afuera, esperando a todos: está hecho par
 El dibujo es esquemático.
 Fuentes: HyperPhysics (GSU); Scientific American (1999); Met Office; BBC Science Focus; The Irish Times.
 ¿Has visto alguna vez el arcoíris doble? 👇
-Shot Científico #36 · La Creación del Robert
+Shot Científico 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Arcoiris
 ```
@@ -29,7 +29,7 @@ La luz entra a cada gota, rebota en el fondo y sale separada en colores; el rojo
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Has visto alguna vez el arcoíris doble? 👇
-Shot Científico #36 · La Creación del Robert
+Shot Científico 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Arcoiris
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Nadie ve el mismo arcoíris que tú 🌈 | Shot Científico #36
+Nadie ve el mismo arcoíris que tú 🌈 | Shot Científico 36
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Fuentes:
 - BBC Science Focus. Why do millions of raindrops only make one rainbow? https://www.sciencefocus.com/science/why-do-millions-of-raindrops-only-make-one-rainbow
 - The Irish Times. Over the rainbow is someone else's rainbow. https://www.irishtimes.com/news/over-the-rainbow-is-someone-else-s-rainbow-1.175877
 ¿Has visto alguna vez el arcoíris doble? 👇
-Shot Científico #36 · La Creación del Robert
+Shot Científico 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica
 ```
@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Nadie ve el mismo arcoíris que tú: el rojo te llega de las gotas que están a unos 42° de la sombra de TU cabeza, y la persona de al lado ve el suyo con otras gotas. 🌈 Cada quien, su propio arcoíris.
 ¿Has visto alguna vez el arcoíris doble? 👇
-Shot Científico #36 · La Creación del Robert
+Shot Científico 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -77,7 +77,7 @@ Un arcoíris no es un objeto que esté en un lugar del cielo: es una dirección.
 Por eso dos personas lado a lado ven arcoíris distintos, formados por gotas distintas. Y en realidad es un círculo completo: desde un avión a veces se ve entero. Con dos reflexiones dentro de la gota aparece un segundo arco, por fuera y con los colores invertidos.
 Un buen ejemplo de que lo que vemos depende de dónde estamos parados.
 ¿Has visto alguna vez el arcoíris doble?
-Shot Científico #36 · La Creación del Robert
+Shot Científico 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

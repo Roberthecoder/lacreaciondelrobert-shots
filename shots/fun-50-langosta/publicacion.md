@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #50 · La langosta con fiebre: el hongo que frena plagas
+# Publicación · Shot Fungi Mati 50 · La langosta con fiebre: el hongo que frena plagas
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En México, SENASICA desarrolló cómo usar este hongo contra la langosta centro
 El dibujo es esquemático.
 Fuentes: Mullié et al. 2021 (PLoS ONE); Li y Xia 2022 (J. Fungi); Elliot, Blanford y Thomas 2002 (Proc. R. Soc. B); SENASICA; OIRSA.
 ¿En tu región hay chapulines o langostas? ¿Cómo les dicen? 👇
-Shot Fungi Mati #50 · La Creación del Robert
+Shot Fungi Mati 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Langosta #ControlBiologico
 ```
@@ -25,7 +25,7 @@ Esta langosta no se calienta por gusto: se da fiebre para pelear contra un hongo
 Metarhizium acridum es un hongo especialista en langostas y chapulines: su espora perfora la cutícula con presión y enzimas y crece en la sangre del insecto. La fiebre lo frena, pero no lo elimina. En 2005, en Níger, rociado desde una avioneta, llegó al 80 % de eficacia a los 21 días, sin dañar hormigas ni aves. En México, SENASICA desarrolló cómo usarlo contra la langosta centroamericana.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu región hay chapulines o langostas? ¿Cómo les dicen? 👇
-Shot Fungi Mati #50 · La Creación del Robert
+Shot Fungi Mati 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Langosta #ControlBiologico
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La langosta que se da FIEBRE para pelear contra un hongo 🦗🔥 | Shot Fungi Mati #50
+La langosta que se da FIEBRE para pelear contra un hongo 🦗🔥 | Shot Fungi Mati 50
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - SENASICA (2020). Hongos entomopatógenos. https://www.gob.mx/senasica/documentos/hongos-entomopatogenos
 - OIRSA (2020). México dona controlador biológico a Costa Rica y la región del OIRSA para manejo integral de langosta. https://web.oirsa.org/archivos/4458
 ¿En tu región hay chapulines o langostas? ¿Cómo les dicen? 👇
-Shot Fungi Mati #50 · La Creación del Robert
+Shot Fungi Mati 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta langosta no se calienta por gusto: se da fiebre para pelear contra un hongo. 🦗🔥 Metarhizium acridum, un hongo especialista en langostas y chapulines, se usa como bioinsecticida: en Níger llegó al 80 % de eficacia a los 21 días sin dañar hormigas ni aves, y en México SENASICA desarrolló cómo usarlo contra la langosta centroamericana.
 ¿En tu región hay chapulines o langostas? ¿Cómo les dicen? 👇
-Shot Fungi Mati #50 · La Creación del Robert
+Shot Fungi Mati 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #ControlBiologico
 ```
@@ -74,7 +74,7 @@ Metarhizium acridum es un hongo que infecta langostas y chapulines. En un rociad
 Un límite posible: la temperatura. Las langostas infectadas elevan su temperatura con su comportamiento (fiebre), lo que frena al hongo, aunque no elimina la infección.
 En México, SENASICA desarrolló tecnología para usarlo contra la langosta centroamericana y en 2020 donó su cepa a Costa Rica.
 ¿Qué otros ejemplos de control biológico conoces?
-Shot Fungi Mati #50 · La Creación del Robert
+Shot Fungi Mati 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #ControlBiologico #Agricultura #Ciencia
 ```
@@ -87,7 +87,7 @@ Esta langosta no se calienta por gusto: se da fiebre contra un hongo. 🦗🔥 M
 ### Threads
 ```text
 Esta langosta no se calienta por gusto: se da fiebre para pelear contra un hongo. 🦗🔥 Metarhizium acridum perfora su cutícula y crece en su sangre; la fiebre lo frena, pero no lo elimina. Se ha usado como bioinsecticida en África, y en México SENASICA desarrolló cómo usarlo. ¿Cómo les dicen a los chapulines en tu región?
-Shot Fungi Mati #50 · La Creación del Robert
+Shot Fungi Mati 50 · La Creación del Robert
 #Hongos
 ```
 

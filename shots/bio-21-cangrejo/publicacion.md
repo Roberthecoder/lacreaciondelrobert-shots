@@ -13,7 +13,7 @@ La salida biotecnológica: copiar el gen del factor C, la proteína que arranca 
 El dibujo es esquemático.
 Fuentes: Federal Register 1977; Maloney et al., PLOS Biology 2018; Krisfalusi-Gannon et al., Front. Mar. Sci. 2018; ASMFC 2023; Anderson et al., Biol. Bull. 2013.
 ¿Sabías que tus vacunas pasaban por un cangrejo? 👇
-Shot Biotecnológico #21 · La Creación del Robert
+Shot Biotecnológico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CangrejoHerradura #Vacunas #SangreAzul
 ```
@@ -26,7 +26,7 @@ A los cangrejos les sacan cerca de un tercio de su sangre y los regresan al mar;
 La alternativa: el factor C recombinante, fabricado sin cangrejos. La farmacopea europea lo incluye desde 2020 y la de EE. UU. desde 2025.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Habías visto uno en la playa? 👇
-Shot Biotecnológico #21 · La Creación del Robert
+Shot Biotecnológico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CangrejoHerradura #Vacunas #SangreAzul
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta sangre azul revisa tus vacunas 💙🦀 | Shot Biotecnológico #21
+Esta sangre azul revisa tus vacunas 💙🦀 | Shot Biotecnológico 21
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Krisfalusi-Gannon et al., Front. Mar. Sci. (2018): https://www.frontiersin.org/j
 ASMFC, Biomedical BMPs (2023): https://asmfc.org/wp-content/uploads/2025/02/HSC_Biomedical_BMPs_2023.pdf
 Anderson et al., Biol. Bull. (2013): https://pmc.ncbi.nlm.nih.gov/articles/PMC4079546/
 ¿Sabías que tus vacunas pasaban por un cangrejo? 👇
-Shot Biotecnológico #21 · La Creación del Robert
+Shot Biotecnológico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #LaCreacionDelRobert
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esa sangre azul no es de otro planeta: revisa que tus vacunas estén limpias. 💙🦀 Es del cangrejo herradura, pariente de las arañas: sus células forman un coágulo cuando detectan restos de bacterias. Hoy ya hay una versión hecha sin cangrejos, el factor C recombinante. ¿Lo sabías? 👇
-Shot Biotecnológico #21 · La Creación del Robert
+Shot Biotecnológico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CangrejoHerradura
 ```
@@ -69,7 +69,7 @@ Sus amebocitos forman un coágulo al contacto con endotoxinas, restos de la pare
 El costo: los cangrejos se pescan, se les extrae cerca de un tercio de su sangre y se regresan al mar; en 2023 la ASMFC estimaba una mortalidad de 15 % de los liberados.
 La biotecnología ofrece una salida: el factor C recombinante (rFC), la proteína que inicia la cascada, producida sin cangrejos. La Farmacopea Europea lo incluye desde 2020 (capítulo 2.6.32) y la USP desde 2025 (capítulo <86>); la prueba LAL sigue vigente.
 ¿Qué tan rápido debería migrar la industria a métodos sin animales?
-Shot Biotecnológico #21 · La Creación del Robert
+Shot Biotecnológico 21 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #ControlDeCalidad #Farmaceutica #LaCreacionDelRobert
 ```

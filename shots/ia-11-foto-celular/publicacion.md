@@ -1,4 +1,4 @@
-# Publicación · Shot IA #11 · Tu foto de noche no es una foto: son hasta trece
+# Publicación · Shot IA 11 · Tu foto de noche no es una foto: son hasta trece
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Para el zoom, otro estudio de Google de 2019 aprovechó el temblor natural de tu
 Tu foto de noche no fue un clic: fueron muchas, unidas por matemática y, en los Pixel de hoy, por IA.
 El dibujo es esquemático. Fuentes: Liba et al. (2019), Hasinoff et al. (2016), Wronski et al. (2019) y blog de Google (2023).
 ¿Tu celular tiene modo noche? ¿Lo usas? 👇
-Shot IA #11 · La Creación del Robert
+Shot IA 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #FotografiaComputacional #Celular #ModoNoche
 ```
@@ -24,7 +24,7 @@ Esa foto que tomaste de noche no es una foto: pueden ser hasta 13, encimadas. �
 Así lo describió Google en 2019 para el modo noche de sus Pixel: una ráfaga de fotos cortas (hasta ⅓ de segundo cada una) que se alinean por pedacitos y se juntan para bajar el ruido. Esa parte era matemática clásica; lo aprendido fue el color, con un modelo entrenado con 5 000 fotos ajustadas por fotógrafos. Funcionaba hasta con 0.3 lux. Desde 2023, una red neuronal también quita el ruido.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tu celular tiene modo noche? ¿Lo usas? 👇
-Shot IA #11 · La Creación del Robert
+Shot IA 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #FotografiaComputacional #Celular #ModoNoche
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu foto de noche no es una foto: son hasta 13 📸 | Shot IA #11
+Tu foto de noche no es una foto: son hasta 13 📸 | Shot IA 11
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa foto que tomaste de noche no es una foto: pueden ser hasta 13, encimadas. 📸 Así lo describió Google en 2019 para sus Pixel: una ráfaga de fotos cortas que se alinean y se juntan con matemática clásica; lo aprendido era el color. Desde 2023, una red neuronal también quita el ruido.
 ¿Tu celular tiene modo noche? ¿Lo usas? 👇
-Shot IA #11 · La Creación del Robert
+Shot IA 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #FotografiaComputacional
 ```
@@ -67,7 +67,7 @@ Lo interesante para quien habla de "IA" a la ligera: en ese sistema, alinear y f
 En 2023 Google anunció que su modo noche ya usa una red neuronal para quitar el ruido. La fotografía computacional es una buena lección: no todo lo "inteligente" es aprendizaje automático, y conviene saber qué parte lo es.
 ¿En tu trabajo distinguen entre algoritmo clásico y modelo aprendido?
 Fuentes: Liba et al. (2019); Hasinoff et al. (2016); Wronski et al. (2019); blog de Google (abril de 2023).
-Shot IA #11 · La Creación del Robert
+Shot IA 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #FotografiaComputacional #AprendizajeAutomatico #Tecnologia #LaCreacionDelRobert
 ```
@@ -82,7 +82,7 @@ Tu foto de noche no es una foto: pueden ser hasta 13 encimadas. Así lo describi
 Esa foto que tomaste de noche no es una foto: pueden ser hasta 13, encimadas. 📸🌙
 Google lo describió en 2019 para sus Pixel: ráfaga de fotos cortas, alineadas por pedacitos y juntadas con matemática clásica. Lo aprendido era el color. Desde 2023, una red neuronal también quita el ruido.
 ¿Usas el modo noche?
-Shot IA #11 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 11 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

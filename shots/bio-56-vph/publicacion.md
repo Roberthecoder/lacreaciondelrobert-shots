@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #56 · La vacuna del VPH no trae un virus: trae su cáscara vacía
+# Publicación · Shot Biotecnológico 56 · La vacuna del VPH no trae un virus: trae su cáscara vacía
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ En México se pone en quinto de primaria (o a los 11 años), y desde 2025 tambi�
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes: OMS 2026 · DiGiuseppe et al. 2017 · Kirnbauer et al. 1992 · Palmer et al. 2024 · EMA (Cervarix) · Secretaría de Salud 2025.
 ¿Ya te pusieron esta vacuna? ¿Sabías qué traía adentro? 👇
-Shot Biotecnológico #56 · La Creación del Robert
+Shot Biotecnológico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #VPH #Vacunas #CancerCervicouterino
 ```
@@ -26,7 +26,7 @@ Lo que trae la vacuna del VPH no es un virus: es su cáscara vacía. 💉
 La cáscara del VPH está hecha sobre todo de 360 copias de una proteína, la L1. Si fabricas solo esa proteína, se arma sola en una bolita casi igual al virus, pero sin ADN: no puede infectar, y tu cuerpo aprende a reconocerla. En 2024, en Escocia, no hubo ni un caso de cáncer cervicouterino invasor en las vacunadas a los 12–13 años. Y esa vacuna la hacen células de polilla.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya te la pusieron? 👇
-Shot Biotecnológico #56 · La Creación del Robert
+Shot Biotecnológico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #VPH #Vacunas #CancerCervicouterino
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta vacuna no trae un virus: trae su cáscara vacía 💉 | Shot Biotecnológico #56
+Esta vacuna no trae un virus: trae su cáscara vacía 💉 | Shot Biotecnológico 56
 ```
 Descripción:
 ```text
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Lo que trae la vacuna del VPH no es un virus: es su cáscara vacía. 💉 Es una bolita hecha solo con la proteína de la cáscara del virus, sin su ADN: no puede infectar, pero tu cuerpo aprende a reconocerla. En Escocia, en 2024, no hubo ni un caso de cáncer cervicouterino invasor en las vacunadas a los 12–13 años.
 ¿Ya te la pusieron? 👇
-Shot Biotecnológico #56 · La Creación del Robert
+Shot Biotecnológico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #VPH #Vacunas
 ```
@@ -75,14 +75,14 @@ La cápside del virus del papiloma humano está formada sobre todo por 360 copia
 Hoy se producen en levadura (Saccharomyces cerevisiae, Gardasil) o en células de insecto Trichoplusia ni con baculovirus (Cervarix). El resultado en población: en 2024, Palmer et al. (JNCI) no registraron ningún caso de cáncer cervicouterino invasor en mujeres escocesas vacunadas a los 12–13 años con la vacuna bivalente.
 En México, desde 2025, la vacunación en quinto de primaria incluye también a los niños.
 ¿Qué otra plataforma de producción de proteínas te parece igual de subestimada?
-Shot Biotecnológico #56 · La Creación del Robert
+Shot Biotecnológico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Vacunas #VPH #SaludPublica #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-La vacuna del VPH no trae un virus: trae su cáscara vacía, sin ADN. En Escocia (2024) no hubo ni un caso de cáncer cervicouterino invasor en las vacunadas a los 12–13 años. 💉 Shot Biotecnológico #56 #VPH
+La vacuna del VPH no trae un virus: trae su cáscara vacía, sin ADN. En Escocia (2024) no hubo ni un caso de cáncer cervicouterino invasor en las vacunadas a los 12–13 años. 💉 Shot Biotecnológico 56 #VPH
 ```
 
 ### Threads
@@ -90,7 +90,7 @@ La vacuna del VPH no trae un virus: trae su cáscara vacía, sin ADN. En Escocia
 Lo que trae la vacuna del VPH no es un virus: es su cáscara vacía. 💉
 Es la proteína de la cáscara del virus, armada sola en una bolita sin ADN: no infecta, pero tu cuerpo aprende. Y la vacuna del estudio de Escocia la fabrican células de polilla.
 ¿Ya te la pusieron?
-Shot Biotecnológico #56 · La Creación del Robert
+Shot Biotecnológico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #VPH
 ```

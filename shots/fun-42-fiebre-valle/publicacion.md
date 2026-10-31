@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #42 · Ese polvo no es solo tierra: la fiebre del valle
+# Publicación · Shot Fungi Mati 42 · Ese polvo no es solo tierra: la fiebre del valle
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Pero ojo: cerca de 6 de cada 10 personas infectadas no sienten nada. Otras tiene
 El dibujo es esquemático. No es consejo médico: si vives o viajaste a zonas secas del norte de México o el suroeste de EE. UU. y tienes tos y fiebre que no se quitan, coméntaselo a tu médico.
 Fuentes: Hector y Laniado-Laborín 2005 (PLoS Medicine); Hernandez et al. 2019 (Curr Trop Med Rep); Schneider et al. 1997 (JAMA); CDC.
 ¿En tu región hay tolvaneras así? 👇
-Shot Fungi Mati #42 · La Creación del Robert
+Shot Fungi Mati 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #FiebreDelValle #Sonora
 ```
@@ -25,7 +25,7 @@ Ese polvo del desierto no es solo tierra: puede traer esporas de un hongo. 🌵�
 Coccidioides vive en el suelo seco del suroeste de EE. UU. y del norte de México, como Sonora. Al secarse la tierra, sus hilos se parten en esporas en forma de barril que el viento o una excavación levantan. En tus pulmones se vuelve una esfera de 100 micras o más, se llena de cientos de esporitas y revienta. En 1994, tras el terremoto de Northridge, las nubes de polvo de los deslaves dejaron 203 casos en el condado de Ventura, California. Cerca de 6 de cada 10 infectados no sienten nada; no se contagia entre personas, y los perros también pueden enfermar.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿En tu región hay tolvaneras así? 👇
-Shot Fungi Mati #42 · La Creación del Robert
+Shot Fungi Mati 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #FiebreDelValle #Sonora
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este polvo trae esporas de un hongo 🌵 La fiebre del valle | Shot Fungi Mati #42
+Este polvo trae esporas de un hongo 🌵 La fiebre del valle | Shot Fungi Mati 42
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - CDC (2025). Clinical Overview of Valley Fever. https://www.cdc.gov/valley-fever/hcp/clinical-overview/index.html
 - CDC Public Health Image Library, imagen 12197 (artroconidias). https://wwwn.cdc.gov/phil/Details.aspx?pid=12197
 ¿En tu región hay tolvaneras así? 👇
-Shot Fungi Mati #42 · La Creación del Robert
+Shot Fungi Mati 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #FiebreDelValle #FungiMati
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese polvo del desierto no es solo tierra: puede traer esporas de un hongo. 🌵 Coccidioides vive en suelo seco del norte de México y el suroeste de EE. UU.; al respirarlo, en tus pulmones se vuelve una esfera llena de esporitas. Cerca de 6 de cada 10 infectados no sienten nada, no se contagia entre personas, y los perros también pueden enfermar.
 ¿En tu región hay tolvaneras así? 👇
-Shot Fungi Mati #42 · La Creación del Robert
+Shot Fungi Mati 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #FiebreDelValle
 ```
@@ -72,7 +72,7 @@ Tras el terremoto de Northridge (California, enero de 1994), los deslaves levant
 El responsable es Coccidioides, un hongo dimórfico del suelo seco del suroeste de EE. UU. y del norte de México: en la tierra forma artroconidias en forma de barril que el viento o las excavaciones levantan; en el pulmón se vuelve una esférula de 30 a 100 µm o más con 100 a 300 endosporas.
 Por qué importa: cerca de 6 de cada 10 infecciones no dan síntomas, así que suele pasar desapercibida. En zonas endémicas, la obra, la excavación y las tolvaneras son parte del riesgo.
 ¿En tu región se habla de la fiebre del valle?
-Shot Fungi Mati #42 · La Creación del Robert
+Shot Fungi Mati 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #SaludPublica #Micologia #Ciencia
 ```
@@ -85,7 +85,7 @@ Ese polvo del desierto puede traer esporas de Coccidioides. En tu pulmón se vue
 ### Threads
 ```text
 Ese polvo del desierto no es solo tierra: puede traer esporas de un hongo. 🌵 Coccidioides vive en el suelo seco del norte de México y el suroeste de EE. UU.; al respirarlo, en tus pulmones se vuelve una esfera que revienta en cientos de esporitas. Cerca de 6 de cada 10 infectados no sienten nada. ¿En tu región hay tolvaneras así?
-Shot Fungi Mati #42 · La Creación del Robert
+Shot Fungi Mati 42 · La Creación del Robert
 #Hongos
 ```
 

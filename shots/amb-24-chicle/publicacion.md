@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #24 · Ese chicle no es chicle: es plástico
+# Publicación · Shot Ambiental 24 · Ese chicle no es chicle: es plástico
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y el chicle natural sigue: en Quintana Roo y Campeche, cooperativas de chicleros
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú dónde tiras tu chicle? 👇
-Shot Ambiental #24 · La Creación del Robert
+Shot Ambiental 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Chicle #Plastico #SelvaMaya
 ```
@@ -25,7 +25,7 @@ Ese chicle pegado en la banqueta no es chicle: es plástico. Bueno, su goma. �
 La goma base de los chicles comunes lleva polímeros sintéticos derivados del petróleo (la FDA permite, por ejemplo, acetato de polivinilo y poliisobutileno). El chicle original es el látex del chicozapote, un árbol de la selva maya, y en Quintana Roo y Campeche todavía hay cooperativas de chicleros que lo sacan.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú dónde tiras tu chicle? 👇
-Shot Ambiental #24 · La Creación del Robert
+Shot Ambiental 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Chicle #Plastico #SelvaMaya
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese chicle no es chicle: es plástico 🍬 | Shot Ambiental #24
+Ese chicle no es chicle: es plástico 🍬 | Shot Ambiental 24
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - IMPI, solicitud de Indicación Geográfica "Chicle Maya de Quintana Roo y Campeche", DOF 15 feb 2024
 - Chicza: https://www.chicza.com/
 ¿Tú dónde tiras tu chicle? 👇
-Shot Ambiental #24 · La Creación del Robert
+Shot Ambiental 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Chicle #CienciaAmbiental
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese chicle pegado en la banqueta no es chicle: es plástico. Bueno, su goma. 🍬 La goma base de los chicles comunes lleva polímeros sintéticos derivados del petróleo; el chicle original es el látex del chicozapote de la selva maya, y en Quintana Roo y Campeche todavía lo sacan cooperativas de chicleros.
 ¿Tú dónde tiras tu chicle? 👇
-Shot Ambiental #24 · La Creación del Robert
+Shot Ambiental 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Chicle #SelvaMaya
 ```
@@ -73,7 +73,7 @@ Ese chicle pegado en la banqueta no es chicle: es plástico. Bueno, su goma.
 La goma base, la parte que no se disuelve, puede llevar polímeros sintéticos permitidos por la FDA (21 CFR 172.615), como acetato de polivinilo y poliisobutileno; una patente de Wrigley reconoce que las gomas comunes usan polímeros derivados del petróleo. Esa fase insoluble no se descompone (Nciri et al., Polymers, 2021), y su limpieza tiene costo: en 2022 se estimaba en unos 7 millones de libras al año en el Reino Unido.
 Al mismo tiempo, existe una alternativa con historia: el chicle natural del chicozapote, que cooperativas de chicleros de Quintana Roo y Campeche siguen extrayendo de la selva maya.
 ¿Qué crees que funcione mejor contra los chicles en las calles: mejores materiales, más botes o que paguen los fabricantes?
-Shot Ambiental #24 · La Creación del Robert
+Shot Ambiental 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Plastico #Chicle #SelvaMaya #LaCreacionDelRobert
 ```

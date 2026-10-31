@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #28 · Novecientos litros por metro cuadrado: la lluvia de la CDMX que se va a la coladera
+# Publicación · Shot Ambiental 28 · Novecientos litros por metro cuadrado: la lluvia de la CDMX que se va a la coladera
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Desde 2019, la Sedema ha instalado más de 73 mil sistemas de Cosecha de Lluvia 
 El truco: los primeros litros de cada aguacero lavan el techo y se tiran (un separador de primeras lluvias), y un filtro detiene las hojas. No es para beber, pero sí para el baño, lavar y trapear.
 El dibujo es esquemático.
 ¿En tu casa ya juntan agua de lluvia? 👇
-Shot Ambiental #28 · La Creación del Robert
+Shot Ambiental 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CosechaDeLluvia #CDMX #Agua
 ```
@@ -25,7 +25,7 @@ A la Ciudad de México le han caído este año más de 900 litros de lluvia por 
 Un milímetro de lluvia es un litro sobre un metro cuadrado: de enero a septiembre de 2026 se midieron 925 mm. Pero casi toda la de techos y calles se va al drenaje, revuelta con aguas negras, mientras en 2025 había 284 colonias con tandeo. Un techo de 50 m² recibió, en teoría, más de 40 tinacos de agua. Con separador de primeras lluvias y filtro, sirve para el baño, lavar y trapear (no para beber).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa ya juntan agua de lluvia? 👇
-Shot Ambiental #28 · La Creación del Robert
+Shot Ambiental 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CosechaDeLluvia #CDMX #Agua
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-900 litros de lluvia por m² y se van a la coladera 🌧️ | Shot Ambiental #28
+900 litros de lluvia por m² y se van a la coladera 🌧️ | Shot Ambiental 28
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Columbia Climate School (2021), estudio de Tellman et al.: https://news.climate.columbia.edu/2021/01/14/study-rainwater-harvesting-mexico-city/
 - Isla Urbana, fichas técnicas: https://www.engineeringforchange.org/wp-content/uploads/2020/07/FICHA-TECNICA-KIT-TLALOC-ch.pdf
 ¿En tu casa ya juntan agua de lluvia? 👇
-Shot Ambiental #28 · La Creación del Robert
+Shot Ambiental 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CosechaDeLluvia #CDMX
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 A la Ciudad de México le han caído este año más de 900 litros de lluvia por metro cuadrado 🌧️, pero casi toda la de techos y calles se va al drenaje, junto con las aguas negras. Un techo de 50 m² recibió, en teoría, más de 40 tinacos de agua. Con un separador de primeras lluvias y un filtro, sirve para el baño, lavar y trapear.
 ¿En tu casa ya juntan agua de lluvia? 👇
-Shot Ambiental #28 · La Creación del Robert
+Shot Ambiental 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CosechaDeLluvia #CDMX
 ```
@@ -70,7 +70,7 @@ A la Ciudad de México le han caído este año más de 900 litros de lluvia por 
 SEGIAGUA reporta 925.38 mm acumulados del 1 de enero al 30 de septiembre de 2026, frente a un promedio histórico de 665.24 mm para ese periodo. Sin embargo, la red primaria de drenaje de la ciudad es combinada: la lluvia de techos y calles se mezcla con las aguas residuales. Al mismo tiempo, en 2025 había 284 colonias con suministro por tandeo.
 La captación pluvial descentralizada ya opera a escala: más de 73 mil sistemas del programa Cosecha de Lluvia (Sedema) desde 2019, y un estudio de 2020 (Tellman et al., con Isla Urbana y la UNAM) estimó que 105 mil sistemas en las comunidades con más falta de agua podrían ayudar a 415 mil personas. La clave técnica: separar las primeras lluvias, filtrar y destinar el agua a usos no potables.
 ¿Qué haría falta para que la captación de lluvia sea parte de la planeación hídrica de las ciudades?
-Shot Ambiental #28 · La Creación del Robert
+Shot Ambiental 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Agua #CosechaDeLluvia #CDMX #LaCreacionDelRobert
 ```

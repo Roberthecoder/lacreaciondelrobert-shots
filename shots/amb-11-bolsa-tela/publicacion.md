@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #11 · Siete mil cien compras: la bolsa de tela no es verde por arte de magia
+# Publicación · Shot Ambiental 11 · Siete mil cien compras: la bolsa de tela no es verde por arte de magia
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que la mejor bolsa es la que ya tienes: reúsala muchas veces, y la de plá
 El dibujo es esquemático.
 Fuentes en el comentario fijado.
 ¿Cuántos años tiene tu bolsa del mandado? 👇
-Shot Ambiental #11 · La Creación del Robert
+Shot Ambiental 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #BolsaDeTela #Plastico #Reciclaje
 ```
@@ -27,7 +27,7 @@ Ese número (Dinamarca, 2018) sale de un solo indicador, la capa de ozono. Si so
 La mejor bolsa es la que ya tienes: reúsala muchas veces.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuántos años tiene tu bolsa del mandado? 👇
-Shot Ambiental #11 · La Creación del Robert
+Shot Ambiental 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #BolsaDeTela #Plastico #Reciclaje
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu bolsa de tela necesita 7,100 compras 🛍️ | Shot Ambiental #11
+Tu bolsa de tela necesita 7,100 compras 🛍️ | Shot Ambiental 11
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Environment Agency, Life cycle assessment of supermarket carrier bags, Report SC030148 (2011): https://assets.publishing.service.gov.uk/media/5a7bff74ed915d01ba1ca7c7/scho0711buan-e-e.pdf
 - Chiba et al., Human footprint in the abyss: 30 year records of deep-sea plastic debris, Marine Policy 96 (2018): https://doi.org/10.1016/j.marpol.2018.03.022
 ¿Cuántos años tiene tu bolsa del mandado? 👇
-Shot Ambiental #11 · La Creación del Robert
+Shot Ambiental 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #BolsaDeTela #CienciaAmbiental
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Una bolsa de algodón tendría que usarse 7,100 veces para empatarle, en todos los indicadores, a una de plástico delgada. 🛍️ Pero si solo cuentas el clima, bastan 52. Y el plástico tirado es otro problema: hay una bolsa registrada a 10,898 m de hondo. La mejor bolsa es la que ya tienes.
 ¿Cuántos años tiene tu bolsa del mandado? 👇
-Shot Ambiental #11 · La Creación del Robert
+Shot Ambiental 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #BolsaDeTela #CienciaAmbiental
 ```
@@ -71,7 +71,7 @@ El dato viene del análisis de ciclo de vida que publicó en 2018 la Agencia de 
 Además, ninguno de los dos estudios consideró la basura tirada, y la basura plástica ya llegó a 10,898 m de profundidad en la Fosa de las Marianas (Chiba et al., Marine Policy, 2018).
 La lección para cualquier decisión de "producto verde": no basta con el material; cuentan los indicadores, los supuestos y, sobre todo, cuántas veces se reúsa.
 ¿Qué otro producto "verde" crees que merece un análisis así?
-Shot Ambiental #11 · La Creación del Robert
+Shot Ambiental 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #CicloDeVida #Sustentabilidad #Plastico #LaCreacionDelRobert
 ```

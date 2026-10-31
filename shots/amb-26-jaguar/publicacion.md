@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #26 · El jaguar que nunca vas a ver (y cuántos quedan en México)
+# Publicación · Shot Ambiental 26 · El jaguar que nunca vas a ver (y cuántos quedan en México)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Dato extra: su lado izquierdo y su lado derecho tienen manchas distintas, por es
 Sigue en peligro de extinción. Quizá nunca lo veas, pero ojalá la cámara lo siga encontrando.
 El dibujo es esquemático. Fuentes en el comentario fijado.
 ¿Alguna vez has visto un jaguar (o sus huellas) en tu región? 👇
-Shot Ambiental #26 · La Creación del Robert
+Shot Ambiental 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Jaguar #PantheraOnca #Mexico
 ```
@@ -26,7 +26,7 @@ A este jaguar nunca lo vas a ver, pero una cámara sí. Sus manchas no son adorn
 Cada jaguar tiene rosetas distintas, como una huella digital, y así se reconoce en las fotos de las cámaras trampa. Con 920 cámaras en 23 sitios durante 90 días, el tercer Censo Nacional del Jaguar estimó 5,326 jaguares en México para 2024 (4,800 en 2018). Casi un tercio vive en la Península de Yucatán. A inicios del siglo XX se estima que eran entre 20 y 25 mil, y sigue en peligro de extinción.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez has visto un jaguar (o sus huellas) en tu región? 👇
-Shot Ambiental #26 · La Creación del Robert
+Shot Ambiental 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Jaguar #PantheraOnca #Mexico
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Así se cuentan los jaguares de México 🐆📸 | Shot Ambiental #26
+Así se cuentan los jaguares de México 🐆📸 | Shot Ambiental 26
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - UNAM Global (8 nov 2021): https://unamglobal.unam.mx/global_revista/censo-nacional-de-jaguares-revela-buenas-noticias/
 - Silver et al. (2004), Oryx 38(2): 148–154: https://doi.org/10.1017/S0030605304000286
 ¿Alguna vez has visto un jaguar (o sus huellas) en tu región? 👇
-Shot Ambiental #26 · La Creación del Robert
+Shot Ambiental 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Jaguar #CienciaAmbiental
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 A este jaguar nunca lo vas a ver, pero una cámara sí. 🐆📸 Con 920 cámaras trampa y sus rosetas como "huella digital", el tercer Censo Nacional del Jaguar estimó 5,326 jaguares en México para 2024. Siguen en peligro de extinción.
 ¿Alguna vez has visto un jaguar (o sus huellas) en tu región? 👇
-Shot Ambiental #26 · La Creación del Robert
+Shot Ambiental 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Jaguar #Mexico
 ```
@@ -71,7 +71,7 @@ El tercer Censo Nacional del Jaguar, coordinado por la Alianza Nacional para la 
 El resultado: 5,326 jaguares estimados en México para 2024, frente a 4,800 en 2018. Es una buena noticia, pero la especie sigue en peligro de extinción: se estima que a inicios del siglo XX había entre 20 y 25 mil, y la pérdida de selva, la cacería, el tráfico de pieles y colmillos y los atropellos siguen pesando.
 Un buen ejemplo de cómo una tecnología sencilla, bien diseñada y aplicada a gran escala produce datos útiles para decidir dónde conservar.
 ¿Qué otra especie te gustaría que se monitoreara así en México?
-Shot Ambiental #26 · La Creación del Robert
+Shot Ambiental 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Conservacion #Jaguar #Biodiversidad #LaCreacionDelRobert
 ```

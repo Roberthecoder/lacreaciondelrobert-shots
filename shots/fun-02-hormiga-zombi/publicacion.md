@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #02 · La hormiga zombi (Ophiocordyceps)
+# Publicación · Shot Fungi Mati 02 · La hormiga zombi (Ophiocordyceps)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 Todo lo de aquí está verificado en `verificacion.md`.
@@ -17,7 +17,7 @@ No es nuevo: en 2010 describieron estas mismas mordidas en una hoja fósil de Me
 El dibujo es esquemático.
 Fuentes: Fredericksen et al., PNAS 2017 · Andersen et al., Am Nat 2009 · Hughes et al., BMC Ecology 2011 · Hughes, Wappler y Labandeira, Biology Letters 2010 · Robert y Casadevall, J Infect Dis 2009.
 ¿Habías visto una hormiga prendida de una hoja? 👇
-Shot Fungi Mati #02 · La Creación del Robert
+Shot Fungi Mati 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #HormigaZombi #Ophiocordyceps #Hongos
 ```
@@ -29,7 +29,7 @@ Una espora de Ophiocordyceps se le pega a una hormiga carpintera y se mete a su 
 ¿A ti? Tranquilo: es especialista en hormigas, y la mayoría de los hongos no aguanta tus 37 °C.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Habías visto una hormiga prendida de una hoja? 👇
-Shot Fungi Mati #02 · La Creación del Robert
+Shot Fungi Mati 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #HormigaZombi #Ophiocordyceps #Hongos
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa hormiga no está paseando: la maneja un hongo 🍄 | Shot Fungi Mati #02
+Esa hormiga no está paseando: la maneja un hongo 🍄 | Shot Fungi Mati 02
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Fuentes:
 - Robert, V. A. y Casadevall, A. (2009). J. Infect. Dis. 200(10): 1623–1626. https://doi.org/10.1086/644642
 - Bergman, A. y Casadevall, A. (2010). mBio 1(5): e00212-10. https://doi.org/10.1128/mBio.00212-10
 ¿Habías visto una hormiga prendida de una hoja? 👇
-Shot Fungi Mati #02 · La Creación del Robert
+Shot Fungi Mati 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #HormigaZombi #Hongos
 ```
@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa hormiga no está paseando: la maneja un hongo. 🐜🍄 El hongo Ophiocordyceps envuelve sus músculos (sin tocar su cerebro), la lleva a una planta a unos 25 cm del suelo y la hace morder una hoja cerca del mediodía. Ya muerta, de su nuca brota un tallo que suelta esporas. Tranquilo: es especialista en hormigas.
 ¿Habías visto una hormiga prendida de una hoja? 👇
-Shot Fungi Mati #02 · La Creación del Robert
+Shot Fungi Mati 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -79,7 +79,7 @@ El comportamiento es muy preciso: la hormiga infectada deja su colonia, sube a u
 Lo más sorprendente: en 2010 se describieron estas mismas cicatrices de mordida en una hoja fósil de Messel, Alemania, de unos 48 millones de años.
 ¿Por qué importa? Porque muestra cómo un microbio puede moldear la conducta de un animal, y abre preguntas para la biología, la ecología y el estudio de los hongos.
 ¿Qué otro parásito que controla a su huésped te parece fascinante?
-Shot Fungi Mati #02 · La Creación del Robert
+Shot Fungi Mati 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Ecologia #Ciencia
 ```
@@ -93,7 +93,7 @@ Esa hormiga no está paseando: la maneja un hongo 🍄 Ophiocordyceps envuelve s
 ```text
 Esa hormiga no está paseando: la maneja un hongo. 🐜🍄 Ophiocordyceps envuelve sus músculos (pero no su cerebro), la lleva a unos 25 cm del suelo y la hace morder una vena de una hoja cerca del mediodía. Ya muerta, de su nuca brota un tallo que suelta esporas. Y hay hojas fósiles con estas mordidas de hace 48 millones de años.
 ¿Habías visto una hormiga prendida de una hoja? 👇
-Shot Fungi Mati #02 · La Creación del Robert
+Shot Fungi Mati 02 · La Creación del Robert
 #Hongos
 ```
 

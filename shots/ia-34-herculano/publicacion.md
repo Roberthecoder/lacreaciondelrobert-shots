@@ -1,4 +1,4 @@
-# Publicación · Shot IA #34 · El libro quemado por un volcán que la IA leyó sin abrirlo
+# Publicación · Shot IA 34 · El libro quemado por un volcán que la IA leyó sin abrirlo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -17,7 +17,7 @@ Ese carbón sigue cerrado, pero ya no está mudo.
 El dibujo es esquemático; el texto griego de las columnas es de adorno.
 Fuentes: Vesuvius Challenge (2023 y 2024), Universidad de Kentucky (2019), Bodleian Libraries de Oxford vía CNN (2025).
 ¿Qué libro perdido te gustaría que leyeran? 👇
-Shot IA #34 · La Creación del Robert
+Shot IA 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Herculano #Vesubio #Arqueologia
 ```
@@ -28,7 +28,7 @@ Este carbón es un libro enrollado: lo que dice adentro, tus ojos nunca lo van a
 Los rollos de Herculano se quemaron con el Vesubio en el año 79 y no se pueden abrir sin romperlos. La tinta es de carbón, así que en rayos X casi no se distingue del papiro quemado. En 2023, un modelo de IA entrenado para hallar tinta en la tomografía hizo aparecer la primera palabra completa: «púrpura». Después, un equipo de tres sacó más de 2,000 caracteres y ganó 700,000 dólares. La IA marca la tinta; los papirólogos leen. En 2025 se leyó el título de otro rollo: «Sobre los vicios», de Filodemo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué libro perdido te gustaría que leyeran? 👇
-Shot IA #34 · La Creación del Robert
+Shot IA 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Herculano #Vesubio #Arqueologia
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El libro quemado por un volcán que la IA leyó sin abrirlo 📜 | Shot IA #34
+El libro quemado por un volcán que la IA leyó sin abrirlo 📜 | Shot IA 34
 ```
 Descripción:
 ```text
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este carbón es un libro enrollado: lo que dice adentro, tus ojos nunca lo van a ver. 📜 Lo quemó el Vesubio en el año 79. En 2023, una IA entrenada para encontrar tinta en una tomografía hizo aparecer su primera palabra: «púrpura». Los expertos en papiros hicieron el resto. Ese carbón sigue cerrado, pero ya no está mudo.
 ¿Qué libro perdido te gustaría que leyeran? 👇
-Shot IA #34 · La Creación del Robert
+Shot IA 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Herculano
 ```
@@ -72,7 +72,7 @@ El Vesuvius Challenge (2023) combinó tomografía de rayos X, "desenrollado" vir
 La lección para cualquier proyecto de IA: el modelo detecta la señal (dónde hay tinta) y los expertos humanos la interpretan (qué dice). Sin papirólogos, solo habría manchas.
 ¿En tu campo, quién hace de "papirólogo" de la IA?
 Fuentes: scrollprize.org (2023, 2024); Universidad de Kentucky (2019); Bodleian Libraries vía CNN (2025).
-Shot IA #34 · La Creación del Robert
+Shot IA 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Arqueologia #CienciaAbierta #Herculano #LaCreacionDelRobert
 ```
@@ -87,7 +87,7 @@ Un rollo quemado por el Vesubio no se puede abrir. En 2023, una IA que busca tin
 Este carbón es un libro enrollado: lo que dice adentro, tus ojos nunca lo van a ver. 📜
 En 2023, una IA entrenada para hallar tinta en la tomografía de un rollo de Herculano hizo aparecer la primera palabra completa: «púrpura». La IA marca la tinta; los expertos en papiros leen.
 ¿Qué libro perdido te gustaría que leyeran?
-Shot IA #34 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 34 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

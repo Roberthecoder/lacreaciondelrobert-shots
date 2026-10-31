@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #45 · Tú y cuatro vecinos: menos de uno confía en el agua de la llave
+# Publicación · Shot Ambiental 45 · Tú y cuatro vecinos: menos de uno confía en el agua de la llave
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Que tu llave sea segura depende de tu ciudad; pero tú y tus vecinos pueden toma
 El dibujo es esquemático. La encuesta mide lo que la gente opina, no un análisis del agua.
 Fuentes: INEGI (ENCIG 2025 y MOHOMA 2017), OMS, NOM-244-SSA1-2020.
 ¿Tú tomas agua de la llave, de garrafón o hervida? 👇
-Shot Ambiental #45 · La Creación del Robert
+Shot Ambiental 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Agua #AguaEmbotellada #Mexico
 ```
@@ -26,7 +26,7 @@ INEGI, fines de 2025: solo el 19 % de las personas en ciudades grandes la consid
 Qué sí sirve: garrafón retornable (19 L ≈ 32 botellas de 600 ml), hervirla a borbotones (OMS) o un filtro con certificado de Cofepris. Si tu llave es segura depende de tu ciudad.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú tomas agua de la llave, de garrafón o hervida? 👇
-Shot Ambiental #45 · La Creación del Robert
+Shot Ambiental 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Agua #AguaEmbotellada #Mexico
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Menos de 1 de cada 5 confía en el agua de su llave 🚰 | Shot Ambiental #45
+Menos de 1 de cada 5 confía en el agua de su llave 🚰 | Shot Ambiental 45
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - OMS (2015), Boil water: https://www.who.int/publications/i/item/WHO-FWC-WSH-15.02
 - NOM-244-SSA1-2020: https://platiica.economia.gob.mx/wp-content/uploads/sites/2/PDF_Normas_Publicas/244ssa12020.pdf
 ¿Tú tomas agua de la llave, de garrafón o hervida? 👇
-Shot Ambiental #45 · La Creación del Robert
+Shot Ambiental 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Agua #AguaEmbotellada
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tú y cuatro vecinos: menos de uno de ustedes cinco cree que el agua de la llave se puede beber sin enfermarse. 🚰 Según el INEGI (fines de 2025), solo el 19 % en ciudades grandes la considera bebible; en Jalisco, el 8.9 %. Qué sí sirve: garrafón retornable, hervirla a borbotones o un filtro con certificado de Cofepris.
 ¿Tú tomas agua de la llave, de garrafón o hervida? 👇
-Shot Ambiental #45 · La Creación del Robert
+Shot Ambiental 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Agua #AguaEmbotellada
 ```
@@ -74,7 +74,7 @@ Menos de una de cada cinco personas en las ciudades de México cree que el agua 
 La ENCIG 2025 del INEGI (nov–dic 2025, áreas urbanas de más de 100 mil habitantes) reporta que solo el 19.0 % considera bebible el agua del servicio público, con enormes diferencias entre estados: 44.2 % en Tlaxcala, 8.9 % en Jalisco y 3.5 % en Tabasco. Ya en 2017, según el MOHOMA del INEGI, el 76.3 % de los hogares bebía agua de garrafón o botella, sobre todo por motivos de salud (69.4 %), con un gasto promedio de unos 52 pesos semanales en los hogares que la compraban.
 La percepción no es lo mismo que la calidad medida, pero sí mueve el gasto de los hogares y la cantidad de envases. Opciones como el garrafón retornable, hervir el agua o filtros con certificado de efectividad bacteriológica (NOM-244-SSA1-2020) reducen las botellas desechables; recuperar la confianza en la red requiere información pública sobre la calidad del agua de cada ciudad.
 ¿Qué haría falta para que confiaras en el agua de tu llave?
-Shot Ambiental #45 · La Creación del Robert
+Shot Ambiental 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Agua #AguaPotable #Mexico #LaCreacionDelRobert
 ```

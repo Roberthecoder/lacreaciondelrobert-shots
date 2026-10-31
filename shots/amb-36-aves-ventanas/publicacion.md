@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #36 · Esa ventana no es una pared para un pájaro: es cielo
+# Publicación · Shot Ambiental 36 · Esa ventana no es una pared para un pájaro: es cielo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Para ti es una ventana. Con unas rayitas, para un pájaro, por fin es una pared.
 El dibujo es esquemático.
 Fuentes: Loss et al. 2014 (The Condor) y U.S. Fish and Wildlife Service.
 ¿A tu ventana ya le ha chocado algún pájaro? 👇
-Shot Ambiental #36 · La Creación del Robert
+Shot Ambiental 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Aves #Pajaros #Ventanas
 ```
@@ -27,7 +27,7 @@ Las aves muchas veces no ven el vidrio: vuelan hacia el reflejo del cielo y las 
 La silueta de halcón casi no sirve. Lo que sí: rayas por fuera del vidrio (acostadas a ≤ 5 cm o paradas a ≤ 10 cm) o un mosquitero.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A tu ventana ya le ha chocado algún pájaro? 👇
-Shot Ambiental #36 · La Creación del Robert
+Shot Ambiental 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Aves #Pajaros #Ventanas
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Para un pájaro, tu ventana es cielo 🐦 | Shot Ambiental #36
+Para un pájaro, tu ventana es cielo 🐦 | Shot Ambiental 36
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Loss, S. R., Will, T., Loss, S. S. y Marra, P. P. (2014). Bird–building collisions in the United States: Estimates of annual mortality and species vulnerability. The Condor 116(1): 8–23. https://academic.oup.com/condor/article/116/1/8/5153098
 - U.S. Fish and Wildlife Service (2021). You can easily stop birds from hitting your home's windows! https://www.fws.gov/carp/sites/default/files/documents/preventing-bird-glass-collisions-at-home.pdf
 ¿A tu ventana ya le ha chocado algún pájaro? 👇
-Shot Ambiental #36 · La Creación del Robert
+Shot Ambiental 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Aves #Ventanas
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa ventana no es una pared para un pájaro: es cielo. 🐦 Las aves muchas veces no ven el vidrio y vuelan hacia el reflejo. La calcomanía de halcón casi no sirve; rayas por fuera del vidrio (a no más de 5 cm acostadas o 10 cm paradas) o un mosquitero, sí.
 ¿A tu ventana ya le ha chocado algún pájaro? 👇
-Shot Ambiental #36 · La Creación del Robert
+Shot Ambiental 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Aves #Ventanas
 ```
@@ -69,7 +69,7 @@ Para un pájaro, una ventana no es una pared: es cielo.
 Según el U.S. Fish and Wildlife Service, las aves muchas veces no ven el vidrio y chocan al volar hacia los reflejos de cielo y vegetación. Un estudio publicado en 2014 en The Condor (Loss et al., Smithsonian y USFWS), con base en 23 estudios, estimó entre 365 y 988 millones de aves muertas al año en Estados Unidos por choques con edificios. Lo más llamativo: alrededor del 44 % ocurre en casas y departamentos de 1 a 3 pisos, el 56 % en otros edificios bajos y menos del 1 % en rascacielos.
 Para arquitectura, construcción y mantenimiento, la solución es sencilla y barata: patrones visibles por fuera del vidrio (rayas horizontales a no más de 5 cm o verticales a no más de 10 cm) o mosquiteros exteriores. Las siluetas de halcón aisladas casi no funcionan.
 ¿Tu edificio o tu empresa ya considera el diseño amigable con las aves?
-Shot Ambiental #36 · La Creación del Robert
+Shot Ambiental 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Arquitectura #Biodiversidad #Aves #LaCreacionDelRobert
 ```

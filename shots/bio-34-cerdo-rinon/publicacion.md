@@ -25,7 +25,7 @@ El dibujo es esquemático.
 Fuentes: Anand et al., Nature 2023 · Mass General Brigham 2024 · eGenesis 2025 · Harvard Medical School 2026 · CENATRA 2026 · Zhou et al., Front. Immunol. 2022.
 
 ¿Tú aceptarías un riñón de cerdo si estuvieras en la lista de espera? 👇
-Shot Biotecnológico #34 · La Creación del Robert
+Shot Biotecnológico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #xenotrasplante #trasplantederinon #CRISPR
 ```
@@ -45,7 +45,7 @@ eGenesis hizo un cerdo miniatura Yucatán con 69 cambios: borró con CRISPR los 
 El dibujo es esquemático. Fuentes en el primer comentario.
 
 ¿Tú aceptarías un riñón de cerdo si estuvieras en la lista de espera? 👇
-Shot Biotecnológico #34 · La Creación del Robert
+Shot Biotecnológico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #xenotrasplante #CRISPR #trasplantes
 ```
@@ -53,7 +53,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese riñón no es de una persona: es de un cerdo 🐷 | Shot Biotecnológico #34
+Ese riñón no es de una persona: es de un cerdo 🐷 | Shot Biotecnológico 34
 ```
 Descripción:
 ```text
@@ -74,7 +74,7 @@ Fuentes:
 - Zhou et al. (2022), Front. Immunol. — https://www.frontiersin.org/articles/10.3389/fimmu.2022.928173
 
 ¿Tú aceptarías un riñón de cerdo si estuvieras en la lista de espera? 👇
-Shot Biotecnológico #34 · La Creación del Robert
+Shot Biotecnológico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #xenotrasplante #Biotecnologia
 ```
@@ -84,7 +84,7 @@ Soy Robert, de La Creación del Robert 🌱
 Ese riñón no es de una persona: es de un cerdo, con 69 cambios en su ADN. 🐷
 Le borraron 3 genes, le pusieron 7 genes humanos y le apagaron 59 virus dormidos. Tim Andrews vivió 271 días sin diálisis con uno, y en 2026 recibió un riñón humano: el de cerdo fue su puente.
 ¿Tú aceptarías uno si estuvieras en la lista de espera? 👇
-Shot Biotecnológico #34 · La Creación del Robert
+Shot Biotecnológico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #xenotrasplante
 ```
@@ -102,7 +102,7 @@ Resultados en personas vivas: en marzo de 2024, Richard Slayman fue el primer pa
 Sigue siendo experimental, pero ya pasó del caso aislado al ensayo clínico.
 
 ¿Ves el xenotrasplante como solución de largo plazo o como puente mientras llega un órgano humano?
-Shot Biotecnológico #34 · La Creación del Robert
+Shot Biotecnológico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Xenotrasplante #CRISPR #Trasplantes #LaCreacionDelRobert
 ```
@@ -117,7 +117,7 @@ Ese riñón no es de una persona: es de un cerdo con 69 cambios en su ADN. Tim A
 Ese riñón no es de una persona: es de un cerdo, con 69 cambios en su ADN. 🐷
 Le borraron 3 genes de azúcares que tu cuerpo ataca, le pusieron 7 genes humanos y le apagaron 59 virus dormidos. Tim Andrews vivió 271 días sin diálisis con uno, y en 2026 recibió un riñón humano.
 ¿Tú aceptarías uno? 👇
-Shot Biotecnológico #34 · La Creación del Robert
+Shot Biotecnológico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #xenotrasplante
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #16 · Creían que la IA los hacía más rápidos: tardaron 19 % más
+# Publicación · Shot IA 16 · Creían que la IA los hacía más rápidos: tardaron 19 % más
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ La lección no es usar IA o no usarla: es medir con el reloj, no con la sensaci�
 El dibujo es esquemático.
 Fuentes: Becker et al. (METR), arXiv 2025; METR, 2026; Peng et al., arXiv 2023.
 ¿Tú has medido cuánto tiempo te ahorra la IA, o solo lo sientes? 👇
-Shot IA #16 · La Creación del Robert
+Shot IA 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Programacion #Productividad #IA
 ```
@@ -26,7 +26,7 @@ En 2025, el laboratorio METR sorteó 246 tareas reales de 16 programadores con e
 Ojo: es un estudio, con expertos en proyectos enormes; los autores aclaran que no vale para todos. En 2023, con Copilot, una tarea sencilla salió 55.8 % más rápido, y en 2026 METR dijo que probablemente ya van más rápido. La lección: medir, no sentir.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú has medido cuánto tiempo te ahorra la IA, o solo lo sientes? 👇
-Shot IA #16 · La Creación del Robert
+Shot IA 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Programacion #Productividad #IA
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Creían que la IA los hacía más rápidos: tardaron 19 % más ⏱️ | Shot IA #16
+Creían que la IA los hacía más rápidos: tardaron 19 % más ⏱️ | Shot IA 16
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Programadores expertos sintieron que la IA los hizo 20 % más rápidos. En realidad, tardaron 19 % más. ⏱️ Lo midió el laboratorio METR en 2025 con 246 tareas reales sorteadas con IA y sin IA. Es un estudio con sus límites: con otras tareas y herramientas más nuevas el resultado puede cambiar. La lección: medir con el reloj, no con la sensación.
 ¿Tú has medido cuánto tiempo te ahorra la IA, o solo lo sientes? 👇
-Shot IA #16 · La Creación del Robert
+Shot IA 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Programacion
 ```
@@ -70,7 +70,7 @@ Matices importantes: los autores aclaran que no representa a la mayoría del tra
 La lección para cualquier equipo: la percepción no es una métrica. Si vas a adoptar una herramienta, mide antes y después.
 ¿Tu equipo mide el impacto de la IA o se guía por cómo se siente?
 Fuentes: arXiv:2507.09089 (2025); metr.org (2026); arXiv:2302.06590 (2023).
-Shot IA #16 · La Creación del Robert
+Shot IA 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Productividad #DesarrolloDeSoftware #Datos #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Programadores expertos sintieron que la IA los hizo 20 % más rápidos. El reloj
 Programadores expertos sintieron que la IA los hizo 20 % más rápidos. En realidad, tardaron 19 % más. ⏱️
 METR, 2025: 246 tareas reales, sorteadas con IA y sin IA. Ojo: es un estudio de expertos en proyectos enormes, y en 2026 METR dijo que con herramientas nuevas probablemente ya van más rápido.
 ¿Tú mides o solo lo sientes?
-Shot IA #16 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 16 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

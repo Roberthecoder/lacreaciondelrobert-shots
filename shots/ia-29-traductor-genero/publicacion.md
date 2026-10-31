@@ -1,4 +1,4 @@
-# Publicación · Shot IA #29 · El traductor que convierte a la ingeniera en «él»
+# Publicación · Shot IA 29 · El traductor que convierte a la ingeniera en «él»
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Si el traductor te dice "él", pregúntate: ¿lo dijo la frase o lo aprendió?
 El dibujo del traductor es esquemático, no la app real. Datos de 2018 y 2019: los traductores cambian.
 Fuentes: Prates et al., Neural Computing and Applications (2019); Stanovsky et al., ACL (2019); blogs de Google (2018 y 2020).
 ¿Qué palabra te ha traducido raro el traductor? 👇
-Shot IA #29 · La Creación del Robert
+Shot IA 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Traductor #SesgoDeGenero #Ciencia
 ```
@@ -27,7 +27,7 @@ Ese "él" no fue un error de dedo: fue lo que el traductor aprendió. 🌐🤖
 En 2018, frases en húngaro sin género como "ő egy mérnök" (es ingeniero/a) salían en inglés como "he", y "enfermera" como "she". Un estudio de Brasil con 1,019 profesiones en 12 idiomas encontró que, en ciencia y tecnología, salía "él" el 72 % de las veces y "ella" el 4 %. Y no era solo copiar la realidad: en todas las profesiones salía "ella" 12 %, cuando las mujeres eran casi 36 % de esos trabajos en EE. UU. (2017). Google empezó a dar las dos versiones en algunos idiomas en 2018 y sumó el húngaro en 2020. En español, en 2019, acertó el género solo el 53 % de las veces.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué palabra te ha traducido raro el traductor? 👇
-Shot IA #29 · La Creación del Robert
+Shot IA 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Traductor #SesgoDeGenero #Ciencia
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El traductor que convierte a la ingeniera en «él» 🌐 | Shot IA #29
+El traductor que convierte a la ingeniera en «él» 🌐 | Shot IA 29
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese "él" no fue un error de dedo: fue lo que el traductor aprendió. 🌐 En 2018, frases en húngaro sin género como "es ingeniero/a" salían en inglés con "he", y "enfermera" con "she". En ciencia y tecnología salía "él" el 72 % de las veces y "ella" el 4 %. Google empezó a dar las dos versiones en algunos idiomas en 2018 y en 2020 sumó el húngaro.
 ¿Qué palabra te ha traducido raro el traductor? 👇
-Shot IA #29 · La Creación del Robert
+Shot IA 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Traductor
 ```
@@ -71,7 +71,7 @@ El estudio (Prates, Avelar y Lamb, UFRGS, Brasil; Neural Computing and Applicati
 Google respondió en diciembre de 2018 con traducciones femenina y masculina en algunos idiomas, y en 2020 sumó el húngaro, el finés y el persa. Pero el problema va más allá de un producto: en 2019, un estudio de la Universidad de Washington (ACL) encontró que Google acertó el género al traducir al español solo el 53 % de las veces, aun cuando la frase original lo dejaba claro.
 Si tu equipo usa traducción automática en documentos, ofertas de trabajo o atención a clientes, ¿alguien revisa el género?
 Fuentes: Prates et al. (2019); Stanovsky et al. (2019); blogs de Google (2018 y 2020).
-Shot IA #29 · La Creación del Robert
+Shot IA 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #TraduccionAutomatica #SesgoAlgoritmico #Diversidad #LaCreacionDelRobert
 ```
@@ -87,7 +87,7 @@ Ese "él" no fue un error de dedo: fue lo que el traductor aprendió. 🌐
 En 2018, frases en húngaro sin género salían en inglés con "he" si eran de ingeniería y con "she" si eran de enfermería. En ciencia y tecnología: "él" 72 %, "ella" 4 %.
 Google empezó a dar las dos versiones en algunos idiomas en 2018, y sumó el húngaro en 2020.
 ¿Qué palabra te ha traducido raro?
-Shot IA #29 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 29 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

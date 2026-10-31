@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #22 · Las arrieras no cargan hojas para comérselas: son granjeras
+# Publicación · Shot Fungi Mati 22 · Las arrieras no cargan hojas para comérselas: son granjeras
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En México, a las arrieras con alas les dicen chicatanas y hay quien se las come
 El dibujo es esquemático.
 Fuentes: Schultz et al. 2024 (Science); Currie et al. 1999 (Nature); Goes et al. 2020 (Front. Ecol. Evol.); van Huis 2025 (J. Insects as Food and Feed).
 ¿Cómo les dicen a estas hormigas en tu región? 👇
-Shot Fungi Mati #22 · La Creación del Robert
+Shot Fungi Mati 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hormigas #Hongos #Chicatanas
 ```
@@ -25,7 +25,7 @@ Esas arrieras no cargan las hojas para comérselas: son granjeras. 🐜🍄
 Las hojas son abono para un hongo que cultivan bajo tierra, y lo que comen las larvas y casi todas las adultas son unas bolitas que les da ese hongo. Sus ancestros ya cultivaban hongos hace unos 66 millones de años. Contra la plaga de su jardín (el hongo parásito Escovopsis) llevan en el cuerpo bacterias que fabrican antibióticos. Y cada futura reina se lleva un pedacito del hongo en una bolsita de la boca para fundar su nido. En México, a las arrieras con alas les dicen chicatanas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cómo les dicen a estas hormigas en tu región? 👇
-Shot Fungi Mati #22 · La Creación del Robert
+Shot Fungi Mati 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hormigas #Hongos #Chicatanas
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las arrieras NO cargan hojas para comérselas: son granjeras 🐜🍄 | Shot Fungi Mati #22
+Las arrieras NO cargan hojas para comérselas: son granjeras 🐜🍄 | Shot Fungi Mati 22
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Marsh, S. E. et al. (2013). Int. Microbiol. 16: 17–25. https://pubmed.ncbi.nlm.nih.gov/24151778
 - van Huis, A. (2025). Edible ants: exploring species and their utilisation. J. Insects as Food and Feed 11: 429–434. https://doi.org/10.1163/23524588-110301ED
 ¿Cómo les dicen a estas hormigas en tu región? 👇
-Shot Fungi Mati #22 · La Creación del Robert
+Shot Fungi Mati 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hormigas #FungiMati
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas arrieras no cargan las hojas para comérselas: son granjeras. 🐜🍄 Las hojas son abono para un hongo que cultivan bajo tierra, y de ese hongo comen. Sus ancestros ya cultivaban hongos hace unos 66 millones de años, y contra las plagas llevan en el cuerpo bacterias que hacen antibióticos.
 ¿Cómo les dicen a estas hormigas en tu región? 👇
-Shot Fungi Mati #22 · La Creación del Robert
+Shot Fungi Mati 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hormigas
 ```
@@ -73,7 +73,7 @@ Hay hormigas que practican agricultura con control biológico de plagas.
 Las hormigas cortadoras de hojas (Atta y Acromyrmex) no cargan las hojas para comérselas: las usan como sustrato para cultivar el hongo Leucoagaricus gongylophorus, del que se alimentan. El linaje de hormigas jardineras empezó a cultivar hongos hace unos 66 millones de años (Schultz et al., Science, 2024). Su cultivo tiene un parásito especializado, Escovopsis, y en 1999 Currie y colaboradores (Universidad de Toronto, trabajo de campo en Panamá) mostraron en Nature que las hormigas llevan en el cuerpo bacterias productoras de antibióticos contra ese parásito (hoy, Pseudonocardia).
 Por qué importa: es un monocultivo natural que se ha sostenido durante millones de años con ayuda de microbios defensores.
 ¿Conocías este caso de agricultura no humana?
-Shot Fungi Mati #22 · La Creación del Robert
+Shot Fungi Mati 22 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Microbiologia #Simbiosis #Ciencia
 ```
@@ -86,7 +86,7 @@ Las arrieras no cargan hojas para comérselas: cultivan con ellas un hongo, y de
 ### Threads
 ```text
 Esas arrieras no cargan las hojas para comérselas: son granjeras. 🐜🍄 Las hojas son abono para un hongo que cultivan bajo tierra, y cada futura reina se lleva un pedacito del hongo en una bolsita de la boca para empezar su propia granja. ¿Cómo les dicen a estas hormigas en tu región?
-Shot Fungi Mati #22 · La Creación del Robert
+Shot Fungi Mati 22 · La Creación del Robert
 #Hormigas
 ```
 

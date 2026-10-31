@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #10 · Tu voz grabada no suena rara: es tu voz sin tus huesos
+# Publicación · Shot Científico 10 · Tu voz grabada no suena rara: es tu voz sin tus huesos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Así que la voz del audio no está mal: es la que todos conocen.
 El dibujo es esquemático.
 Fuentes: Hughes y Harrison 2013 (Perception); Toya et al. 2020 (JSLHR); Reinfeldt et al. 2010 (JASA).
 ¿A ti también te choca oír tu voz en un audio? 👇
-Shot Científico #10 · La Creación del Robert
+Shot Científico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Voz #Sonido
 ```
@@ -27,7 +27,7 @@ Tu voz te llega por dos caminos: por el aire y por los huesos de tu cabeza. El c
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti también te choca oír tu voz en un audio? 👇
-Shot Científico #10 · La Creación del Robert
+Shot Científico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Voz #Sonido
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu voz grabada no suena rara: suena sin tus huesos 🎙️ | Shot Científico #10
+Tu voz grabada no suena rara: suena sin tus huesos 🎙️ | Shot Científico 10
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Reinfeldt, S. et al. (2010). Hearing one's own voice during phoneme vocalization—Transmission by air and bone conduction. J. Acoust. Soc. Am. 128(2): 751–762. https://doi.org/10.1121/1.3458855
 - Stenfelt, S. y Reinfeldt, S. (2007). A model of the occlusion effect with bone-conducted stimulation. Int. J. Audiol. 46(10): 595–608. https://doi.org/10.1080/14992020701545880
 ¿A ti también te choca oír tu voz en un audio? 👇
-Shot Científico #10 · La Creación del Robert
+Shot Científico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Voz
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa voz rara de tus grabaciones es la tuya, sin tus huesos. 🎙️ Tú te oyes por el aire y por dentro de tu cabeza; el micrófono solo capta el aire, y por eso te suena más aguda.
 ¿A ti también te choca oír tu voz en un audio? 👇
-Shot Científico #10 · La Creación del Robert
+Shot Científico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -72,7 +72,7 @@ La voz que oyes en una grabación es, en buena medida, la que oyen los demás.
 Al hablar, el sonido de tu voz te llega por dos vías: por el aire, como a cualquiera, y por conducción ósea, a través de los huesos del cráneo hasta el oído interno. Mediciones recientes (Toya, Birkholz y Unoki, 2020) muestran que esa vía ósea actúa como un filtro que apaga los agudos, por eso uno mismo se escucha más grave.
 Un estudio de Albright College (Hughes y Harrison, Perception, 2013) encontró algo curioso: cuando 80 personas calificaron grabaciones sin saber que incluían la suya, calificaron su propia voz como más atractiva de lo que la calificaron los demás.
 ¿Te has acostumbrado a escuchar tu voz en grabaciones por el trabajo (juntas, presentaciones, pódcast)?
-Shot Científico #10 · La Creación del Robert
+Shot Científico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

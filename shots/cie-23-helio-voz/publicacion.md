@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #23 · El helio no cambia tu nota: cambia tu timbre
+# Publicación · Shot Científico 23 · El helio no cambia tu nota: cambia tu timbre
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que con helio no cambias de nota: cambias de timbre.
 El dibujo es esquemático.
 Fuentes: UNSW (Wolfe), Speech and helium speech; Sprott, Physics Demonstrations (U. Wisconsin); HKUST Science Focus; Engineering ToolBox; Missouri Poison Center.
 ¿Sabías la diferencia entre tono y timbre? 👇
-Shot Científico #23 · La Creación del Robert
+Shot Científico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Sonido #Helio
 ```
@@ -28,7 +28,7 @@ El tono lo ponen tus cuerdas vocales; el timbre, el «tubo» de tu garganta y tu
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Sabías la diferencia entre tono y timbre? 👇
-Shot Científico #23 · La Creación del Robert
+Shot Científico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Sonido #Helio
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El helio no cambia tu nota: cambia tu timbre 🎈 | Shot Científico #23
+El helio no cambia tu nota: cambia tu timbre 🎈 | Shot Científico 23
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - Engineering ToolBox. Speed of Sound in Gases. https://www.engineeringtoolbox.com/speed-sound-gases-d_1160.html
 - Missouri Poison Center. Helium. https://missouripoisoncenter.org/is-this-a-poison/helium/
 ¿Sabías la diferencia entre tono y timbre? 👇
-Shot Científico #23 · La Creación del Robert
+Shot Científico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Con helio no cambias de nota: cambias de timbre. 🎈 El sonido viaja casi 3 veces más rápido en el helio y las resonancias de tu garganta suben. Pero no lo respires: desplaza el oxígeno y puede ser peligroso.
 ¿Sabías la diferencia entre tono y timbre? 👇
-Shot Científico #23 · La Creación del Robert
+Shot Científico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -75,7 +75,7 @@ Soy Robert, de La Creación del Robert 🌱
 Lo que cambia son las resonancias del tracto vocal (los formantes): en helio el sonido viaja casi 3 veces más rápido que en el aire, así que esas resonancias suben y cambia el timbre. Con hexafluoruro de azufre, un gas mucho más pesado, ocurre lo contrario.
 Un buen ejemplo de cómo separar tono y timbre. Y un aviso: inhalar helio desplaza el oxígeno y puede ser peligroso.
 ¿Sabías la diferencia entre tono y timbre?
-Shot Científico #23 · La Creación del Robert
+Shot Científico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

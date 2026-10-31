@@ -15,7 +15,7 @@ Y sí: en un frasco así vive la Escherichia coli con la que en 1978 se hizo la 
 El dibujo es esquemático.
 Fuentes: WDCM (World Data Centre for Microorganisms); revisiones de conservación de microorganismos.
 ¿Qué guardarías tú en un cepario? 👇
-Shot Biotecnológico #09 · La Creación del Robert
+Shot Biotecnológico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Cepario #Microbiologia #Laboratorio
 ```
@@ -27,7 +27,7 @@ Una cepa es un organismo aislado con su ficha; un cepario es la colección de to
 En el registro mundial (WDCM) hay 861 colecciones de microbios en 80 países (dato de agosto de 2024). Y en un frasco así vive la E. coli con la que en 1978 se hizo la insulina humana, a partir de genes sintéticos escritos en el laboratorio.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué guardarías tú en un cepario? 👇
-Shot Biotecnológico #09 · La Creación del Robert
+Shot Biotecnológico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Cepario #Microbiologia #Laboratorio
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este frasco no está vacío: tiene vida en pausa 🧫❄️ | Shot Biotecnológico #09
+Este frasco no está vacío: tiene vida en pausa 🧫❄️ | Shot Biotecnológico 09
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - Revisiones de conservación de microorganismos: liofilización (viabilidad reportada de 10 a más de 20 años), criopreservación en nitrógeno líquido a −196 °C o fase vapor a −150 °C (10 a 30 años), y el dato de que el metabolismo celular se detiene por completo a partir de unos −130 °C.
 
 ¿Qué guardarías tú en un cepario? 👇
-Shot Biotecnológico #09 · La Creación del Robert
+Shot Biotecnológico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Microbiologia
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Este frasco no está vacío: tiene vida en pausa. 🧫❄️ Un cepario guarda bacterias, levaduras, mohos y algas a −80 °C, en nitrógeno líquido a −196 °C o secas. Yo cuido uno. ¿Qué guardarías tú? 👇
-Shot Biotecnológico #09 · La Creación del Robert
+Shot Biotecnológico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia
 ```
@@ -75,7 +75,7 @@ Hay tres formas de guardarlas: a −80 °C con glicerol o DMSO como crioprotecto
 Escala del asunto: el registro mundial de colecciones de microbios (WDCM CCINFO) tenía 861 colecciones en 80 países en agosto de 2024 (Fan et al., Nucleic Acids Research 2025).
 Y sí: en un frasco así vive la Escherichia coli con la que en 1978 se hizo la insulina humana, a partir de genes sintéticos escritos en el laboratorio.
 ¿Tu organización tiene respaldo doble de sus cepas o sus muestras?
-Shot Biotecnológico #09 · La Creación del Robert
+Shot Biotecnológico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Microbiologia #Laboratorio
 ```

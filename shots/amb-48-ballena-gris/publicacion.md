@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #48 · Un año de ballena gris en un mapa: 16 mil km que dependen del Ártico
+# Publicación · Shot Ambiental 48 · Un año de ballena gris en un mapa: 16 mil km que dependen del Ártico
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Este mapa es su vida: 16 mil kilómetros que dependen de un Ártico lleno de com
 El dibujo es esquemático.
 Fuentes: NOAA Fisheries y UICN (fuentes completas en el comentario fijado).
 ¿Has visto ballenas grises en Baja California? 👇
-Shot Ambiental #48 · La Creación del Robert
+Shot Ambiental 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #BallenaGris #BajaCaliforniaSur #Ártico
 ```
@@ -25,7 +25,7 @@ Esto es un año en la vida de una ballena gris, en un mapa: unos 16,000 km, ida 
 Come en el Ártico (mares de Bering y Chukchi) y tiene a sus crías en lagunas de Baja California Sur como Ojo de Liebre, San Ignacio y Bahía Magdalena. De 2019 a 2023 hubo 690 varadas (316 en México), muchas desnutridas por cambios en su comida del Ártico. En 2025 se estimaron apenas 85 crías, la cifra más baja desde 1994, y la población bajó a unas 13 mil. En 2026 el conteo subió a casi 18 mil, y nadie sabe todavía por qué.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Has visto ballenas grises en Baja California? 👇
-Shot Ambiental #48 · La Creación del Robert
+Shot Ambiental 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #BallenaGris #BajaCaliforniaSur #Ártico
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un año de ballena gris en un mapa: 16,000 km 🐋 | Shot Ambiental #48
+Un año de ballena gris en un mapa: 16,000 km 🐋 | Shot Ambiental 48
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - NOAA Fisheries (18 jun 2025): https://www.fisheries.noaa.gov/feature-story/eastern-north-pacific-gray-whales-continue-decline-after-downturn-during-unusual
 - NOAA Fisheries (15 jul 2026): https://www.fisheries.noaa.gov/feature-story/west-coast-gray-whale-estimate-shows-increase-new-count-determines
 ¿Has visto ballenas grises en Baja California? 👇
-Shot Ambiental #48 · La Creación del Robert
+Shot Ambiental 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #BallenaGris #BajaCaliforniaSur
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto es un año en la vida de una ballena gris, en un mapa: unos 16,000 km, del Ártico a las lagunas de Baja California Sur y de regreso. 🐋 En 2025 se estimaron apenas 85 crías, la cifra más baja desde 1994, y su comida en el Ártico es la clave.
 ¿Has visto ballenas grises en Baja California? 👇
-Shot Ambiental #48 · La Creación del Robert
+Shot Ambiental 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #BallenaGris #BajaCaliforniaSur
 ```
@@ -69,7 +69,7 @@ La ballena gris del Pacífico nororiental come en verano en los mares de Bering 
 En 2025 se estimaron apenas 85 crías, la cifra más baja desde 1994, y unas 13,000 ballenas, frente a un pico de unas 27,000 hacia 2016. La estimación de julio de 2026 subió a unas 17,750, pero NOAA advierte que la subida probablemente supera la capacidad reproductiva de la población y que su causa sigue abierta.
 Es un buen ejemplo de por qué el monitoreo de largo plazo, y la cooperación entre México, Estados Unidos y Canadá, importa para leer bien un dato.
 ¿Qué otra especie compartida entre países crees que necesita más monitoreo?
-Shot Ambiental #48 · La Creación del Robert
+Shot Ambiental 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #BallenaGris #Biodiversidad #Ártico #LaCreacionDelRobert
 ```

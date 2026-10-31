@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #55 · Ese polvo verde de tu naranja no es polvo: el moho verde (*Penicillium digitatum*)
+# Publicación · Shot Fungi Mati 55 · Ese polvo verde de tu naranja no es polvo: el moho verde (*Penicillium digitatum*)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Sus esporas viajan por el aire hasta otras frutas con heridas. Si ves una naranj
 El dibujo es esquemático.
 Fuentes: Silva et al. 2026 y 2025 (J. Agric. Food Chem.); Zakaria 2026 (J. Fungi); UF/IFAS 2026–2029; UC IPM; Smilanick et al. 1997 (Plant Disease).
 ¿A ti te ha salido el moho verde o el azul? 👇
-Shot Fungi Mati #55 · La Creación del Robert
+Shot Fungi Mati 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Moho #Naranja
 ```
@@ -26,7 +26,7 @@ Ese polvo verde de tu naranja no es polvo: son esporas del hongo Penicillium dig
 Entra por un golpe o un raspón, ablanda la cáscara con enzimas y primero sale una pelusa blanca; el verde olivo del centro son sus esporas. Si es azul, es su primo Penicillium italicum, que aguanta mejor el frío y se pasa más fácil a la naranja de junto. Por eso en las empacadoras las lavan, sacan las podridas y les ponen fungicida en agua o en la cera.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti te ha salido el moho verde o el azul? 👇
-Shot Fungi Mati #55 · La Creación del Robert
+Shot Fungi Mati 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Moho #Naranja
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese polvo verde de tu naranja NO es polvo 🍊 | Shot Fungi Mati #55
+Ese polvo verde de tu naranja NO es polvo 🍊 | Shot Fungi Mati 55
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - UC IPM. Blue and Green Mold of Citrus. https://ipm.ucanr.edu/home-and-landscape/blue-and-green-mold-of-citrus
 - Smilanick, J. L. et al. (1997). Influence of Concentration of Soda Ash, Temperature, and Immersion Period on the Control of Postharvest Green Mold of Oranges. Plant Disease 81(4): 379–382. https://europepmc.org/article/MED/30861819
 ¿A ti te ha salido el moho verde o el azul? 👇
-Shot Fungi Mati #55 · La Creación del Robert
+Shot Fungi Mati 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese polvo verde de tu naranja no es polvo: son esporas del hongo Penicillium digitatum. 🍊 Entra por un golpe o un raspón, ablanda la cáscara y llena de esporas el centro. Si es azul, es su primo, que aguanta mejor el frío. Sus esporas viajan por el aire: sácala del frutero.
 ¿A ti te ha salido el moho verde o el azul? 👇
-Shot Fungi Mati #55 · La Creación del Robert
+Shot Fungi Mati 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Moho
 ```
@@ -73,7 +73,7 @@ El moho verde de los cítricos (Penicillium digitatum) entra por las heridas de 
 Golpes y raspones al cosechar y empacar son la principal vía de infección (UF/IFAS). En la herida, el hongo acidifica el tejido y secreta enzimas que degradan la pared celular y ablandan la cáscara. El moho azul (P. italicum) es otro patógeno de herida que crece incluso a 0 °C y se propaga entre frutas de la misma caja.
 En las empacadoras se combinan sanidad (separar la fruta podrida, lavar), fungicidas en agua o en cera y cera para reducir la pérdida de agua. Un estudio del USDA en Fresno (1997) mostró que un baño tibio de 1–2 minutos con carbonato de sodio controló infecciones de 24 horas en naranjas.
 ¿En tu trabajo has visto estas pérdidas poscosecha?
-Shot Fungi Mati #55 · La Creación del Robert
+Shot Fungi Mati 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Poscosecha #Fitopatologia #Ciencia
 ```
@@ -86,7 +86,7 @@ Ese polvo verde de tu naranja no es polvo: son esporas de Penicillium digitatum.
 ### Threads
 ```text
 Ese polvo verde de tu naranja no es polvo: son esporas del hongo Penicillium digitatum. 🍊 Entra por un golpe o un raspón, ablanda la cáscara y primero sale una pelusa blanca. Si el polvo es azul, es su primo P. italicum. ¿A ti te ha salido el verde o el azul?
-Shot Fungi Mati #55 · La Creación del Robert
+Shot Fungi Mati 55 · La Creación del Robert
 #Hongos
 ```
 

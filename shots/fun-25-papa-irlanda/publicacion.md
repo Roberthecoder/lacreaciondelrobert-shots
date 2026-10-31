@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #25 · Ese hongo de la papa no es un hongo: Phytophthora infestans
+# Publicación · Shot Fungi Mati 25 · Ese hongo de la papa no es un hongo: Phytophthora infestans
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y sigue atacando papas y jitomates en todo el mundo.
 El dibujo es esquemático.
 Fuentes: Yoshida et al. 2013 (eLife); Goss et al. 2014 (PNAS); Coomber et al. 2025 (PLoS ONE); Fry 2008; Kamoun 2003; MSU Extension 2004. Lista completa en el comentario fijado.
 ¿En tu casa a las papas o jitomates les ha salido esa mancha? 👇
-Shot Fungi Mati #25 · La Creación del Robert
+Shot Fungi Mati 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Papa #Ciencia #Irlanda
 ```
@@ -25,7 +25,7 @@ Ese hongo que pudre la papa no es un hongo: es un moho de agua, y también ataca
 Phytophthora infestans, el tizón tardío, es un oomiceto: su pared casi no tiene quitina, sino celulosa, y es más pariente de las algas pardas y las diatomeas que de los hongos. Suelta nadadores con dos flagelos y una sola mancha puede producir hasta 300,000 esporangios. Desde 1845 desató la Gran Hambruna de Irlanda: cerca de un millón de muertos y más de un millón emigró. ¿Su origen? Un estudio de 2014 apunta a México; otros, a los Andes. Aún se discute.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa a las papas o jitomates les ha salido esa mancha? 👇
-Shot Fungi Mati #25 · La Creación del Robert
+Shot Fungi Mati 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Papa #Ciencia #Irlanda
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El "hongo" de la papa NO es un hongo 🥔 | Shot Fungi Mati #25
+El "hongo" de la papa NO es un hongo 🥔 | Shot Fungi Mati 25
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Fuentes:
 - Ivanov, A. A. et al. (2021). Phytophthora infestans: An Overview of Methods and Attempts to Combat Late Blight. J. Fungi 7(12): 1071. https://pmc.ncbi.nlm.nih.gov/articles/PMC8707485/
 - Crowley, J. (2020). How 'a truly modern famine' devastated Ireland – and changed the world forever. RTÉ History. https://www.rte.ie/history/the-great-irish-famine/2020/0629/1150367-the-great-irish-famine
 ¿En tu casa a las papas o jitomates les ha salido esa mancha? 👇
-Shot Fungi Mati #25 · La Creación del Robert
+Shot Fungi Mati 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #FungiMati #Papa
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese hongo que pudre la papa no es un hongo: es un moho de agua, y también ataca tu jitomate. 🥔 Es más pariente de las algas pardas que de los hongos, desató la Gran Hambruna de Irlanda desde 1845, y todavía se discute si salió de México o de los Andes.
 ¿En tu casa a las papas o jitomates les ha salido esa mancha? 👇
-Shot Fungi Mati #25 · La Creación del Robert
+Shot Fungi Mati 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Papa
 ```
@@ -76,7 +76,7 @@ El patógeno de la hambruna irlandesa no era un hongo, y su origen sigue en deba
 Phytophthora infestans, causante del tizón tardío de papa y jitomate, es un oomiceto: crece en hilos como un hongo, pero su pared casi no tiene quitina y lleva celulosa, y pertenece a los estramenopilos, junto con algas pardas y diatomeas. Desde 1845 desató la Gran Hambruna de Irlanda (≈ 1 millón de muertos y más de 1 millón de emigrantes). La secuenciación de hojas de herbario (Yoshida et al., eLife, 2013) identificó el linaje HERB-1; en 2014 se halló el rastro de su linaje mitocondrial en muestras actuales de América. Sobre el origen, Goss et al. (PNAS, 2014) apuntan al centro de México y Coomber et al. (PLoS ONE, 2025), a los Andes.
 Por qué importa: hoy sigue causando grandes pérdidas en papa y jitomate en todo el mundo.
 ¿Te enseñaron en la escuela que era un hongo?
-Shot Fungi Mati #25 · La Creación del Robert
+Shot Fungi Mati 25 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Fitopatologia #Agricultura #Ciencia
 ```
@@ -89,7 +89,7 @@ El "hongo" de la papa no es un hongo: Phytophthora infestans es un oomiceto, má
 ### Threads
 ```text
 Ese hongo que pudre la papa no es un hongo: es un moho de agua, y también ataca tu jitomate. 🥔 Más pariente de las algas pardas que de los hongos, desató la Gran Hambruna de Irlanda y aún se discute si salió de México o de los Andes. ¿A tus papas les ha salido esa mancha?
-Shot Fungi Mati #25 · La Creación del Robert
+Shot Fungi Mati 25 · La Creación del Robert
 #Ciencia
 ```
 

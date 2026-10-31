@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #07 · El cañón de esporas que vive en la caca de vaca (Pilobolus)
+# Publicación · Shot Fungi Mati 07 · El cañón de esporas que vive en la caca de vaca (Pilobolus)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Es el hongo Pilobolus, que vive en el estiércol de animales que comen pasto. Di
 El dibujo es esquemático.
 Fuentes: Yafetto et al. 2008 (PLoS ONE); Viriato 2008 (Acta Bot. Bras.); Souza et al. 2017 (Braz. J. Microbiol.).
 ¿Habías visto estas gotitas en el campo? 👇
-Shot Fungi Mati #07 · La Creación del Robert
+Shot Fungi Mati 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Pilobolus #Esporas
 ```
@@ -26,7 +26,7 @@ Esa gotita sobre la caca de vaca no es rocío: es un cañón que dispara esporas
 Pilobolus apunta con una ampolla que funciona como lente, la carga de presión y ¡dispara! su bolsita de esporas. Filmado en 2008 a 50,000 cuadros por segundo: hasta 13 m/s (unos 47 km/h), más de 20,000 veces la gravedad y, según un dato publicado en 1934, hasta 2.5 metros de vuelo, al pasto limpio. Ahí se la come una vaca y las esporas despiertan al pasar por su panza.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Habías visto estas gotitas en el campo? 👇
-Shot Fungi Mati #07 · La Creación del Robert
+Shot Fungi Mati 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Pilobolus #Esporas
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo cañón que dispara a 47 km/h 💥 | Shot Fungi Mati #07
+El hongo cañón que dispara a 47 km/h 💥 | Shot Fungi Mati 07
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - Souza, C. A. et al. (2017). Coprophilous Mucorales from three areas in the semi-arid of Pernambuco, Brazil. Brazilian Journal of Microbiology 48(1): 79–86. https://pmc.ncbi.nlm.nih.gov/articles/PMC5220632/
 - Eysker, M. (1991). Direct measurement of dispersal of Dictyocaulus viviparus in sporangia of Pilobolus species. Research in Veterinary Science 50(1): 29–32.
 ¿Habías visto estas gotitas en el campo? 👇
-Shot Fungi Mati #07 · La Creación del Robert
+Shot Fungi Mati 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa gotita sobre la caca de vaca no es rocío: es un cañón que dispara esporas. 💥 El hongo Pilobolus apunta al sol con una ampolla-lente y lanza su bolsita de esporas hasta a 13 m/s (unos 47 km/h) y hasta 2.5 metros (dato publicado en 1934), al pasto que se comerá una vaca.
 ¿Habías visto estas gotitas en el campo? 👇
-Shot Fungi Mati #07 · La Creación del Robert
+Shot Fungi Mati 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -68,7 +68,7 @@ Un hongo del estiércol dispara sus esporas a 13 metros por segundo.
 En 2008, un equipo de Miami University (Ohio) filmó a Pilobolus kleinii a 50,000 cuadros por segundo. Su tallo, presurizado por ósmosis, lanzó la bolsita de esporas hasta a 13 m/s, con aceleraciones de unos 210,000 m/s² (más de 20,000 veces la gravedad) y alcances de hasta 2.5 metros (medición de Buller, 1934). Una ampolla que actúa como lente orienta el disparo hacia la luz.
 Por qué importa: es ingeniería biológica pura. Con presiones similares a las de cualquier hifa, el hongo resuelve un problema logístico preciso: salir de la zona del estiércol y caer en pasto que un herbívoro sí comerá, porque sus esporas necesitan pasar por el aparato digestivo para germinar.
 ¿Qué otro "diseño" de la naturaleza te parece digno de ingeniería?
-Shot Fungi Mati #07 · La Creación del Robert
+Shot Fungi Mati 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Biomecanica #Ciencia
 ```
@@ -81,7 +81,7 @@ Esa gotita sobre la caca de vaca no es rocío: es un cañón. El hongo Pilobolus
 ### Threads
 ```text
 Esa gotita sobre la caca de vaca no es rocío: es un cañón que dispara esporas. 💥 Pilobolus apunta al sol con una ampolla que funciona como lente y lanza su bolsita hasta a 13 m/s (unos 47 km/h) y 2.5 metros (dato publicado en 1934), al pasto que se comerá una vaca. ¿Habías visto estas gotitas en el campo?
-Shot Fungi Mati #07 · La Creación del Robert
+Shot Fungi Mati 07 · La Creación del Robert
 #Hongos
 ```
 

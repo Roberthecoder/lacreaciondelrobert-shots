@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #41 · El polvo de la ciudad que tus ojos nunca van a ver (PM2.5)
+# Publicación · Shot Ambiental 41 · El polvo de la ciudad que tus ojos nunca van a ver (PM2.5)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Una por una no las vas a ver nunca, pero con un número en tu celular ya sabes c
 El dibujo es esquemático.
 Fuentes: EPA, OMS, SEDEMA CDMX, CAMe.
 ¿Tú revisas la calidad del aire antes de salir? 👇
-Shot Ambiental #41 · La Creación del Robert
+Shot Ambiental 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CalidadDelAire #PM25 #CDMX
 ```
@@ -27,7 +27,7 @@ Más de treinta caben en fila a lo ancho de un granito de arena fina. Se meten m
 Qué sí sirve: revisar el índice Aire y Salud y, en contingencia, cerrar ventanas y no hacer ejercicio afuera.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú revisas la calidad del aire antes de salir? 👇
-Shot Ambiental #41 · La Creación del Robert
+Shot Ambiental 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CalidadDelAire #PM25 #CDMX
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El polvo que respiras y nunca vas a ver 🌫️ | Shot Ambiental #41
+El polvo que respiras y nunca vas a ver 🌫️ | Shot Ambiental 41
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - SEDEMA CDMX, Informe anual de calidad del aire 2023: http://www.aire.cdmx.gob.mx/descargas/publicaciones/informe-anual-calidad-del-aire-2023.pdf
 - CAMe, contingencia por PM2.5 (1 ene 2026): https://www.gob.mx/comisionambiental/prensa/se-activa-contingencia-ambiental-atmosferica-regional-por-particulas-pm2-5-en-la-zona-sureste-del-valle-de-mexico-415991
 ¿Tú revisas la calidad del aire antes de salir? 👇
-Shot Ambiental #41 · La Creación del Robert
+Shot Ambiental 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CalidadDelAire #PM25
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 En el aire de tu ciudad flotan partículas que tus ojos nunca van a ver una por una: las PM2.5. 🌫️ La OMS recomienda no más de 5 µg/m³ al año; en 2023 la Ciudad de México promedió 20, cuatro veces más. Revisa el índice Aire y Salud antes de salir.
 ¿Tú revisas la calidad del aire antes de salir? 👇
-Shot Ambiental #41 · La Creación del Robert
+Shot Ambiental 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CalidadDelAire #CDMX
 ```
@@ -71,7 +71,7 @@ En el aire que respiras flotan partículas que tus ojos nunca van a ver una por 
 En 2021, la OMS redujo a la mitad su guía anual de PM2.5: de 10 a 5 µg/m³. Según el Informe anual de calidad del aire 2023 de SEDEMA, el promedio anual de PM2.5 en la Ciudad de México fue de 20 µg/m³, cuatro veces la guía, y el valor diario más alto del año ocurrió el 1 de enero, con contingencia por pirotecnia y fogatas.
 Buena parte de estas partículas no sale directo de una chimenea: se forma en la atmósfera a partir de gases de transporte, industria y generación eléctrica. Por eso reducirlas pide medidas en varios sectores a la vez, y mientras tanto, información útil para la gente: el índice AIRE y SALUD y las recomendaciones en contingencia.
 ¿Qué medida crees que bajaría más las PM2.5 en tu ciudad?
-Shot Ambiental #41 · La Creación del Robert
+Shot Ambiental 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #CalidadDelAire #SaludPública #CDMX #LaCreacionDelRobert
 ```

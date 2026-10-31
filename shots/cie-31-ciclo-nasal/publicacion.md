@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #31 · Respiras más por un lado de la nariz, y se turnan
+# Publicación · Shot Científico 31 · Respiras más por un lado de la nariz, y se turnan
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que tu nariz casi nunca trabaja pareja: tiene turnos, como si fueran dos na
 El dibujo es esquemático.
 Fuentes: Pendolino et al. 2018 (Rhinology Online); Hasegawa y Kern 1977 (Mayo Clin. Proc.); Eccles et al. 1996 (Acta Otolaryngol.).
 ¿Por cuál lado respiras mejor ahorita? 👇
-Shot Científico #31 · La Creación del Robert
+Shot Científico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Nariz
 ```
@@ -28,7 +28,7 @@ Dentro de tu nariz, los cornetes están forrados de un tejido que se llena y se 
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Por cuál lado respiras mejor ahorita? 👇
-Shot Científico #31 · La Creación del Robert
+Shot Científico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Nariz
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Respiras más por un lado de la nariz 👃 | Shot Científico #31
+Respiras más por un lado de la nariz 👃 | Shot Científico 31
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - Eccles, R., Reilly, M. y Eccles, K. S. (1996). Changes in the amplitude of the nasal cycle associated with symptoms of acute upper respiratory tract infection. Acta Oto-Laryngologica 116: 77–81. https://pubmed.ncbi.nlm.nih.gov/8820355/
 - Eccles, R. (1996). A role for the nasal cycle in respiratory defence. European Respiratory Journal 9: 371–376. https://pubmed.ncbi.nlm.nih.gov/8777979/
 ¿Por cuál lado respiras mejor ahorita? 👇
-Shot Científico #31 · La Creación del Robert
+Shot Científico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano #LaCreacionDelRobert
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Sabías que tu nariz trabaja por turnos? 👃 Lo más seguro es que ahora mismo respires más por un lado que por el otro. Dentro, los cornetes están forrados de un tejido que se llena de sangre: un lado se hincha mientras el otro se deshincha, y luego cambian. Es el ciclo nasal, y cada turno dura de media hora a varias horas. No lo notas porque el aire total casi no cambia. Se cree que así cada lado descansa, se humedece y se limpia. Con gripa se nota mucho más. El dibujo es esquemático.
 ¿Por cuál lado respiras mejor ahorita? 👇
-Shot Científico #31 · La Creación del Robert
+Shot Científico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -77,7 +77,7 @@ El ciclo nasal es la congestión y descongestión alterna de cada lado de la nar
 Casi nadie lo nota porque la resistencia total al paso del aire se mantiene bastante constante (Hasegawa y Kern, Mayo Clin. Proc., 1977). Su función no está demostrada: se cree que permite que cada lado descanse, se humedezca y se limpie. Con una infección respiratoria, la amplitud de los cambios aumenta (Eccles et al., 1996).
 
 Un buen ejemplo de cómo el cuerpo reparte el trabajo sin que nos demos cuenta.
-Shot Científico #31 · La Creación del Robert
+Shot Científico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

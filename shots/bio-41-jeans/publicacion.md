@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #41 · Tus jeans quizá los deslavó un hongo (celulasas en la mezclilla)
+# Publicación · Shot Biotecnológico 41 · Tus jeans quizá los deslavó un hongo (celulasas en la mezclilla)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo curioso: Trichoderma reesei se encontró en las Islas Salomón en la Segunda 
 El dibujo es esquemático.
 Fuentes: Periyasamy y Periyasami 2023 · Heikinheimo 2002 · Manian et al. 2022 · Campos et al. 2001 · Ma et al. 2023.
 ¿Tus jeans favoritos son deslavados u oscuros? 👇
-Shot Biotecnológico #41 · La Creación del Robert
+Shot Biotecnológico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Jeans #Mezclilla #Enzimas #Hongos
 ```
@@ -25,7 +25,7 @@ Ese deslavado de tus jeans quizá no lo hizo una piedra: lo hizo un hongo. 👖�
 El índigo solo pinta la orilla del hilo y el centro queda blanco. Antes se raspaba con piedra pómez; desde los años ochenta se usan celulasas de hongos como Trichoderma, que muerden la superficie de las fibras y sueltan el azul. Unos gramos de enzima reemplazan kilos de piedra. Y Trichoderma reesei se descubrió en la Segunda Guerra Mundial… comiéndose tiendas de algodón.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tus jeans favoritos son deslavados u oscuros? 👇
-Shot Biotecnológico #41 · La Creación del Robert
+Shot Biotecnológico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Jeans #Enzimas #Hongos
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tus jeans quizá los deslavó un hongo 👖🍄 | Shot Biotecnológico #41
+Tus jeans quizá los deslavó un hongo 👖🍄 | Shot Biotecnológico 41
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - Campos R. et al. (2001). Indigo degradation with purified laccases from Trametes hirsuta and Sclerotium rolfsii. J Biotechnol. https://pubmed.ncbi.nlm.nih.gov/11500206/
 - Ma C. et al. (2023). Current genetic strategies to investigate gene functions in Trichoderma reesei. Microb Cell Fact. https://pmc.ncbi.nlm.nih.gov/articles/PMC10170752/
 ¿Tus jeans favoritos son deslavados u oscuros? 👇
-Shot Biotecnológico #41 · La Creación del Robert
+Shot Biotecnológico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Jeans
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese deslavado de tus jeans quizá no lo hizo una piedra: lo hizo un hongo. 👖🍄 El índigo solo pinta la orilla del hilo; las celulasas de hongos como Trichoderma muerden esa orilla y el azul se suelta. Unos gramos de enzima reemplazan kilos de piedra pómez.
 ¿Tus jeans favoritos son deslavados u oscuros? 👇
-Shot Biotecnológico #41 · La Creación del Robert
+Shot Biotecnológico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Jeans
 ```
@@ -67,14 +67,14 @@ El deslavado de unos jeans es, muchas veces, biotecnología industrial.
 El índigo tiñe solo la orilla del hilo de urdimbre y deja el centro blanco ("teñido en anillo"); el deslavado consiste en quitar esa orilla. Durante años se hizo con piedra pómez, que daña el equipo, genera polvo y hay que retirar de cada prenda. Desde los años ochenta, las celulasas de hongos como Trichoderma reesei hacen ese trabajo junto con el roce en la lavadora ("biostoning"): unos gramos de enzima reemplazan kilos de piedra. La misma cadena usa amilasas para el desengomado y lacasas para aclarar el índigo (Campos et al., Universidad del Minho, 2001).
 Dato histórico: T. reesei se aisló en las Islas Salomón durante la Segunda Guerra Mundial porque destruía tiendas y ropa de algodón del ejército. Un problema militar terminó siendo una fábrica de enzimas.
 ¿Qué otros procesos textiles conocen que se hayan pasado de químicos o abrasivos a enzimas?
-Shot Biotecnológico #41 · La Creación del Robert
+Shot Biotecnológico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Textiles #Enzimas #Sostenibilidad #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese deslavado de tus jeans quizá no lo hizo una piedra: lo hizo un hongo. Las celulasas de Trichoderma muerden la orilla del hilo y sueltan el índigo; unos gramos reemplazan kilos de piedra pómez. 👖🍄 Shot Biotecnológico #41 #Biotecnologia
+Ese deslavado de tus jeans quizá no lo hizo una piedra: lo hizo un hongo. Las celulasas de Trichoderma muerden la orilla del hilo y sueltan el índigo; unos gramos reemplazan kilos de piedra pómez. 👖🍄 Shot Biotecnológico 41 #Biotecnologia
 ```
 
 ### Threads
@@ -82,7 +82,7 @@ Ese deslavado de tus jeans quizá no lo hizo una piedra: lo hizo un hongo. Las c
 Ese deslavado de tus jeans quizá no lo hizo una piedra: lo hizo un hongo. 👖🍄
 El índigo solo pinta la orilla del hilo; las celulasas de hongos la muerden y el azul se suelta. Y el hongo Trichoderma reesei se descubrió comiéndose tiendas de algodón en la Segunda Guerra Mundial.
 ¿Tus jeans favoritos son deslavados u oscuros?
-Shot Biotecnológico #41 · La Creación del Robert
+Shot Biotecnológico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

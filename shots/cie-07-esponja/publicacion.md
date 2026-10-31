@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #07 · La esponja de tu cocina por dentro
+# Publicación · Shot Científico 07 · La esponja de tu cocina por dentro
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -13,7 +13,7 @@ Hervirla o el micro sí bajan las bacterias, pero creen que las que sobreviven v
 El dibujo es esquemático.
 Fuente: Cardinale et al. 2017, Scientific Reports.
 ¿Cada cuánto cambias la esponja en tu casa? 👇
-Shot Científico #07 · La Creación del Robert
+Shot Científico 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Bacterias #Cocina #Higiene
 ```
@@ -24,7 +24,7 @@ Esto no es una esponja: es un edificio de departamentos para bacterias. 🧽🦠
 Un estudio en Alemania (2017) analizó 14 esponjas usadas: en algunas zonas calcularon hasta 54 mil millones de bacterias por centímetro cúbico, y por su ADN, 362 grupos. En las cuatro que compararon, las que se limpiaban con agua caliente o en el micro no tenían menos bacterias; y en el ADN de las 14, las que se limpiaban seguido tenían más Moraxella osloensis, la sospechosa del mal olor. Su consejo: cámbiala seguido, por ejemplo cada semana.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cada cuánto cambias la esponja en tu casa? 👇
-Shot Científico #07 · La Creación del Robert
+Shot Científico 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Bacterias #Cocina #Higiene
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu esponja de cocina es un edificio de bacterias 🧽 | Shot Científico #07
+Tu esponja de cocina es un edificio de bacterias 🧽 | Shot Científico 07
 ```
 Descripción:
 ```text
@@ -44,7 +44,7 @@ El dibujo es esquemático.
 Fuente:
 - Cardinale, M., Kaiser, D., Lueders, T., Schnell, S. y Egert, M. (2017). Microbiome analysis and confocal microscopy of used kitchen sponges reveal massive colonization by Acinetobacter, Moraxella and Chryseobacterium species. Scientific Reports 7: 5791. https://doi.org/10.1038/s41598-017-06055-9
 ¿Cada cuánto cambias la esponja en tu casa? 👇
-Shot Científico #07 · La Creación del Robert
+Shot Científico 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Bacterias #Ciencia
 ```
@@ -53,7 +53,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es una esponja: es un edificio de departamentos para bacterias. 🧽 En algunas zonas calcularon hasta 54 mil millones por centímetro cúbico (Alemania, 2017). El micro sí baja las bacterias, pero los autores creen que las que sobreviven vuelven a llenarla. Su consejo: cámbiala seguido, por ejemplo cada semana.
 ¿Cada cuánto cambias la esponja en tu casa? 👇
-Shot Científico #07 · La Creación del Robert
+Shot Científico 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Bacterias
 ```
@@ -64,7 +64,7 @@ La esponja de cocina es un "punto caliente" de bacterias en la casa (así la lla
 Un estudio publicado en 2017 en Scientific Reports (Universidad de Giessen y Universidad de Furtwangen, Alemania) analizó 14 esponjas usadas con secuenciación de ADN y microscopía confocal: encontró 362 grupos de bacterias y densidades locales de hasta 5.4 × 10¹⁰ células por cm³, organizadas en estructuras tipo biopelícula. En la comparación al microscopio (pocas esponjas), las que sus dueños desinfectaban seguido no tenían menos bacterias, y sí una mayor proporción de Moraxella osloensis, asociada al mal olor de la ropa lavada. La hipótesis de los autores: las sobrevivientes recolonizan rápido.
 Su recomendación es simple y barata: reemplazar la esponja con regularidad, por ejemplo cada semana.
 ¿Qué otro objeto cotidiano crees que merece un estudio así?
-Shot Científico #07 · La Creación del Robert
+Shot Científico 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Microbiologia #Ciencia #Higiene #Divulgacion #LaCreacionDelRobert
 ```

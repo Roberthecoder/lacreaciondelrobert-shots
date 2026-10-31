@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #18 · Esa sal no calienta el hielo: lo obliga a robarle calor a tu helado (helado casero con hielo y sal)
+# Publicación · Shot Químico 18 · Esa sal no calienta el hielo: lo obliga a robarle calor a tu helado (helado casero con hielo y sal)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Ojo: la mezcla de hielo y sal está muy por debajo de cero; no la tengas mucho r
 El dibujo es esquemático.
 Fuentes: Johnson et al. 2022 (J Chem Educ) · Blagden 1788 · Fahrenheit 1724 · OpenStax 2019 · FDA · Univ. de Minnesota.
 ¿Alguna vez hiciste helado o nieve con hielo y sal? 👇
-Shot Químico #18 · La Creación del Robert
+Shot Químico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Helado #CienciaEnLaCocina #PuntoDeCongelacion
 ```
@@ -26,7 +26,7 @@ Esa sal no derrite el hielo con calor: lo obliga a robarle el calor a tu helado.
 La sal disuelta baja el punto de congelación del agua, así que el hielo se derrite aunque esté bajo cero; y derretirse cuesta calor, que sale del bote y de tu crema. Con suficiente sal se llega hasta unos −21 °C, más frío que un congelador de casa (−18 °C). Blagden lo midió en 1788: más sal, más baja. Y el cero de Fahrenheit (1724) salió de hielo, agua y sal.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez hiciste helado o nieve con hielo y sal? 👇
-Shot Químico #18 · La Creación del Robert
+Shot Químico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Helado #CienciaEnLaCocina #PuntoDeCongelacion
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La sal no calienta el hielo: le roba calor a tu helado 🍦 | Shot Químico #18
+La sal no calienta el hielo: le roba calor a tu helado 🍦 | Shot Químico 18
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - MnLTAP, University of Minnesota. SmartWinterSalt: Deicing use. https://mnltap.umn.edu/guides/smartwintersalt/homeowners/pavement/deicing-use
 - Fahrenheit D.G. (1724). Experimenta & observationes de congelatione aquae in vacuo factae. Phil Trans 33:78–84. https://doi.org/10.1098/rstl.1724.0016
 ¿Alguna vez hiciste helado o nieve con hielo y sal? 👇
-Shot Químico #18 · La Creación del Robert
+Shot Químico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Helado
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa sal no derrite el hielo con calor: lo obliga a robarle el calor a tu helado. 🍦🧂 La sal hace que el hielo se derrita bajo cero, y para derretirse le roba calor a la crema. Con suficiente sal se llega a unos −21 °C, más frío que tu congelador.
 ¿Alguna vez hiciste helado o nieve con hielo y sal? 👇
-Shot Químico #18 · La Creación del Robert
+Shot Químico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Helado
 ```
@@ -75,14 +75,14 @@ La sal no "calienta" el hielo. Lo que hace es más interesante: baja el punto de
 El límite para el agua con sal común es el punto eutéctico, de unos −21 °C (Johnson et al., J Chem Educ, 2022), por debajo de los −18 °C de un congelador doméstico. La relación entre cantidad de sal y descenso del punto de congelación ya la había medido Charles Blagden en 1788 ("nearly in a simple ratio"), y el cero de la escala Fahrenheit (1724) se definió con una mezcla de hielo, agua y sal.
 La misma química explica un límite práctico: la sal común en carreteras casi no derrite hielo con el pavimento abajo de unos −9 °C (15 °F), según la guía SmartWinterSalt de la Universidad de Minnesota.
 ¿Qué otro fenómeno de la cocina usarías para enseñar termodinámica?
-Shot Químico #18 · La Creación del Robert
+Shot Químico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Termodinamica #DivulgacionCientifica #CienciaEnLaCocina #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-La sal no calienta el hielo: lo hace derretirse bajo cero, y para derretirse le roba calor a tu helado. Con suficiente sal, hasta unos −21 °C. 🍦🧂 Shot Químico #18 #Quimica
+La sal no calienta el hielo: lo hace derretirse bajo cero, y para derretirse le roba calor a tu helado. Con suficiente sal, hasta unos −21 °C. 🍦🧂 Shot Químico 18 #Quimica
 ```
 
 ### Threads
@@ -90,7 +90,7 @@ La sal no calienta el hielo: lo hace derretirse bajo cero, y para derretirse le 
 Esa sal no derrite el hielo con calor: lo obliga a robarle el calor a tu helado. 🍦
 La sal baja el punto de congelación, el hielo se derrite bajo cero y ese calor sale de la crema. Y el cero de Fahrenheit, en 1724, salió de una mezcla de hielo, agua y sal.
 ¿Alguna vez hiciste helado con hielo y sal?
-Shot Químico #18 · La Creación del Robert
+Shot Químico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

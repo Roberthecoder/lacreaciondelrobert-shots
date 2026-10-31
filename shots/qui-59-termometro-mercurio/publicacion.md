@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #59 · ¿Por qué NO barrer ni aspirar el mercurio de un termómetro roto?
+# Publicación · Shot Químico 59 · ¿Por qué NO barrer ni aspirar el mercurio de un termómetro roto?
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Lo curioso: el vapor de mercurio pesa más que el aire y se junta cerca del piso
 El dibujo es esquemático.
 Fuentes: EPA · ATSDR 1999 y 2024 · MPCA 2020 · Salud de Michigan/ATSDR 2004.
 ¿Tú qué hacías cuando se rompía un termómetro? 👇
-Shot Químico #59 · La Creación del Robert
+Shot Químico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Mercurio #Termometro #Seguridad
 ```
@@ -27,7 +27,7 @@ El mercurio suelta un vapor que no ves ni hueles, y al respirarlo un adulto abso
 Qué hacer (EPA): que salgan todos y las mascotas, abre ventanas, ponte guantes, junta las gotas con cartón y gotero, bolsa con cierre y ventila al menos 24 horas. Nunca al drenaje. Si es más que lo de un termómetro, llama a las autoridades de salud de tu localidad o a los bomberos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú qué hacías cuando se rompía uno? 👇
-Shot Químico #59 · La Creación del Robert
+Shot Químico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Mercurio #Termometro #Seguridad
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué NO barrer el mercurio de un termómetro? 🌡️ | Shot Químico #59
+¿Por qué NO barrer el mercurio de un termómetro? 🌡️ | Shot Químico 59
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Minnesota Pollution Control Agency (2020). Cleaning up home mercury spills (w-hhw1-38). https://www.pca.state.mn.us/document/w-hhw1-38pdf
 - Michigan Department of Community Health / ATSDR (2004). Health Consultation: St. Louis Residential Mercury Spill. https://www.atsdr.cdc.gov/HAC/pha/StLouisResidentialMercury050604-MI/StLouisResidentialMercuryHC050604.pdf
 ¿Tú qué hacías cuando se rompía un termómetro? 👇
-Shot Químico #59 · La Creación del Robert
+Shot Químico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Mercurio
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Se te rompió un termómetro de mercurio: ¿por qué NO debes barrer ni aspirar esas bolitas? 🌡️ El peligro es el vapor que no ves: la escoba hace gotitas que se evaporan más rápido y la aspiradora lo calienta y lo echa al aire. La EPA dice: que salgan todos, abre ventanas, ponte guantes, junta las gotas con cartón y gotero, y ventila al menos 24 horas.
 ¿Tú qué hacías cuando se rompía uno? 👇
-Shot Químico #59 · La Creación del Robert
+Shot Químico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Seguridad
 ```
@@ -73,14 +73,14 @@ Cuando se rompe un termómetro de mercurio, el riesgo no son las bolitas platead
 La ATSDR (2024) estima que un adulto absorbe entre 69 y 85 % del vapor de mercurio que inhala. Por eso las guías oficiales dicen que nunca hay que barrer (las gotitas más chicas se evaporan más rápido) y aspirar (el motor calienta el mercurio, lo dispersa y la aspiradora queda contaminada). Un caso documentado por el Departamento de Salud de Michigan y la ATSDR en 2004: un mes después de aspirar el mercurio de un termómetro, la aspiradora seguía emitiendo vapor en un garaje helado, y se recomendó inutilizarla y desecharla.
 La guía de la EPA es sencilla: evacuar el área, ventilar hacia afuera, usar guantes, juntar las gotas con cartón y gotero, embolsar y ventilar al menos 24 horas; si el derrame es mayor que el de un termómetro, llamar a las autoridades de salud locales.
 ¿Cuántos procedimientos de seguridad del hogar aprendimos al revés?
-Shot Químico #59 · La Creación del Robert
+Shot Químico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SaludAmbiental #Seguridad #Mercurio #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Se te rompió un termómetro de mercurio: NO lo barras ni lo aspires. El vapor no se ve ni se huele, y en 2004 en Michigan una aspiradora que lo recogió seguía soltándolo un mes después. 🌡️ Shot Químico #59 #Quimica
+Se te rompió un termómetro de mercurio: NO lo barras ni lo aspires. El vapor no se ve ni se huele, y en 2004 en Michigan una aspiradora que lo recogió seguía soltándolo un mes después. 🌡️ Shot Químico 59 #Quimica
 ```
 
 ### Threads
@@ -88,7 +88,7 @@ Se te rompió un termómetro de mercurio: NO lo barras ni lo aspires. El vapor n
 Se te rompió un termómetro de mercurio: ¿por qué NO debes barrer ni aspirar esas bolitas? 🌡️
 El peligro es el vapor que no ves: la escoba hace gotitas que se evaporan más rápido y la aspiradora lo calienta y lo echa al aire. La EPA: que salgan todos, abre ventanas, guantes, cartón y gotero, y ventila al menos 24 horas.
 ¿Tú qué hacías cuando se rompía uno?
-Shot Químico #59 · La Creación del Robert
+Shot Químico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

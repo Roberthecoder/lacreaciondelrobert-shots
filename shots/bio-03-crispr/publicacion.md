@@ -13,7 +13,7 @@ En 2007, un equipo de Danisco (Francia y EE. UU.) y la Universidad Laval (Quebec
 El dibujo es esquemático y los fagos están agrandados.
 Fuentes: Barrangou et al. 2007 (Science), Horvath et al. 2008 (J. Bacteriol.), Jinek et al. 2012 (Science), Gasiunas et al. 2012 (PNAS), Pourcel et al. 2020 (NAR).
 ¿Qué yogur te gusta más? 👇
-Shot Biotecnológico #03 · La Creación del Robert
+Shot Biotecnológico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CRISPR #bacterias #yogur
 ```
@@ -24,7 +24,7 @@ Este yogur no solo tiene bacterias: tiene bacterias vacunadas contra virus. 🧫
 Cuando un virus las ataca, algunas le roban un pedacito de ADN y lo guardan en una fila de recuerdos: CRISPR (la mayoría de esos recuerdos son de virus). Si el virus vuelve, unas tijeras (Cas) lo reconocen y lo cortan. Así lo probaron Danisco y la Universidad Laval en 2007, y en 2012 Charpentier y Doudna convirtieron unas tijeras así, de otra bacteria (Streptococcus pyogenes), en la herramienta que ganó el Nobel 2020.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué yogur te gusta más? 👇
-Shot Biotecnológico #03 · La Creación del Robert
+Shot Biotecnológico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CRISPR #bacterias #yogur
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Quién inventó CRISPR? No fuimos nosotros 🧫 | Shot Biotecnológico #03
+¿Quién inventó CRISPR? No fuimos nosotros 🧫 | Shot Biotecnológico 03
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Pourcel, C. et al. (2020). CRISPRCasdb. Nucleic Acids Research 48: D535–D544.
 
 ¿Qué yogur te gusta más? 👇
-Shot Biotecnológico #03 · La Creación del Robert
+Shot Biotecnológico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #CRISPR
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Este yogur no solo tiene bacterias: tiene bacterias vacunadas contra virus. 🧫 Las tijeras genéticas CRISPR no las inventamos nosotros: las inventaron ellas. ¿Qué yogur te gusta más? 👇
-Shot Biotecnológico #03 · La Creación del Robert
+Shot Biotecnológico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia
 ```
@@ -69,7 +69,7 @@ Streptococcus thermophilus, una bacteria del yogur, guarda pedacitos de ADN de l
 Lo demostró en 2007 un equipo de Danisco (Francia y EE. UU.) y la Universidad Laval (Science 315): era investigación aplicada a cultivos lácteos que resisten virus. En 2012, Charpentier y Doudna mostraron que la Cas9 de otra bacteria (Streptococcus pyogenes) se puede programar para cortar el ADN que uno elija, y en 2020 recibieron el Nobel de Química. También en 2012, el grupo de Šikšnys lo mostró con la Cas9 de la bacteria del yogur.
 Una lección para la innovación: una de las herramientas más importantes de la biología moderna salió de entender un problema de la industria de alimentos.
 ¿Conoces otro invento que hayamos copiado de los microbios?
-Shot Biotecnológico #03 · La Creación del Robert
+Shot Biotecnológico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CRISPR #Innovacion
 ```

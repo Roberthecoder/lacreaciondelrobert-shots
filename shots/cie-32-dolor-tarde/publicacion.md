@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #32 · Por qué el dolor del dedo golpeado llega tarde
+# Publicación · Shot Científico 32 · Por qué el dolor del dedo golpeado llega tarde
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -17,7 +17,7 @@ Las velocidades están redondeadas: los valores exactos varían según la fibra.
 El dibujo es esquemático.
 Fuentes: Yap et al. 2020 (Front. Neurosci.); Introduction to Neuroscience (MSU); Melzack y Wall 1965 (Science); Mancini et al. 2015 (Pain).
 ¿A ti también te pasa: primero el piquete y luego el dolor que se queda? 👇
-Shot Científico #32 · La Creación del Robert
+Shot Científico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Dolor
 ```
@@ -29,7 +29,7 @@ Primero llega un piquete agudo por fibras forradas de grasa, rápidas (hasta dec
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti también te pasa: primero el piquete y luego el dolor que se queda? 👇
-Shot Científico #32 · La Creación del Robert
+Shot Científico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Dolor
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué el dolor del dedo del pie llega tarde 🦶 | Shot Científico #32
+Por qué el dolor del dedo del pie llega tarde 🦶 | Shot Científico 32
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Fuentes:
 - Melzack, R. y Wall, P. D. (1965). Pain mechanisms: a new theory. Science 150(3699): 971–979.
 - Mancini, F. et al. (2015). Touch inhibits subcortical and cortical nociceptive responses. Pain 156(10): 1936–1944. https://pmc.ncbi.nlm.nih.gov/articles/PMC4579551/
 ¿A ti también te pasa: primero el piquete y luego el dolor que se queda? 👇
-Shot Científico #32 · La Creación del Robert
+Shot Científico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano #Dolor #LaCreacionDelRobert
 ```
@@ -71,7 +71,7 @@ Primero un piquete agudo, que viaja por fibras nerviosas forradas de grasa, ráp
 Y sobarte sí ayuda un poco: según una teoría de 1965, las señales del tacto pueden bajarle el volumen al dolor en tu médula espinal.
 El dibujo es esquemático.
 ¿A ti también te pasa: primero el piquete y luego el dolor que se queda? 👇
-Shot Científico #32 · La Creación del Robert
+Shot Científico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -82,7 +82,7 @@ Soy Robert, de La Creación del Robert 🌱
 El primer dolor, agudo y casi instantáneo, viaja por fibras Aδ, que tienen mielina (una capa rica en lípidos) y conducen a unos 3–30 m/s. El segundo, sordo y que arde, viaja por fibras C, delgadas y sin mielina, a unos 0.5–2 m/s. Con más de un metro de recorrido del pie al cerebro, la diferencia se percibe.
 Y sobarse ayuda un poco: la teoría de la compuerta (Melzack y Wall, 1965) propuso que el tacto modula el dolor en la médula espinal; estudios como el de Mancini et al. (2015) encontraron que el tacto inhibe la señal de dolor a nivel espinal.
 Fuentes: Yap et al. 2020 (Front. Neurosci.); Introduction to Neuroscience, MSU; Melzack y Wall 1965 (Science); Mancini et al. 2015 (Pain).
-Shot Científico #32 · La Creación del Robert
+Shot Científico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

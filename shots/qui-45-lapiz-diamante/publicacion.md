@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #45 · La punta de tu lápiz no es plomo: es el mismo carbono que un diamante
+# Publicación · Shot Químico 45 · La punta de tu lápiz no es plomo: es el mismo carbono que un diamante
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo curioso: un milímetro de grafito trae unos 3 millones de capas, y al escribi
 El dibujo es esquemático.
 Fuentes: McGill OSS 2017 · Royal Society of Chemistry · Chemguide · Nobel Prize 2010 · Novoselov et al., Science 2004.
 ¿Tú también creías que los lápices tenían plomo? 👇
-Shot Químico #45 · La Creación del Robert
+Shot Químico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Grafito #Diamante #Grafeno
 ```
@@ -25,7 +25,7 @@ La punta de tu lápiz no es plomo: es grafito, el mismo carbono que forma un dia
 La mina es grafito con arcilla, sin nada de plomo. El grafito son hojas de hexágonos de carbono que se resbalan entre sí y se quedan en el papel; en el diamante, cada carbono se une a otros 4 en una red 3D, y por eso es durísimo. En 2004, en Manchester, Geim y Novoselov despegaron capas de grafito con cinta adhesiva hasta llegar al grafeno, de un solo átomo de grosor: Nobel de Física 2010. Y un milímetro de grafito trae unos 3 millones de capas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú también creías que tenían plomo? 👇
-Shot Químico #45 · La Creación del Robert
+Shot Químico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Grafito #Diamante #Grafeno
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu lápiz no es plomo: es lo mismo que un diamante ✏️💎 | Shot Químico #45
+Tu lápiz no es plomo: es lo mismo que un diamante ✏️💎 | Shot Químico 45
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - The Royal Swedish Academy of Sciences (2010). Graphene, information for the public. https://www.nobelprize.org/uploads/2018/06/popular-physicsprize2010.pdf
 - Novoselov K.S., Geim A.K. et al. (2004). Electric field effect in atomically thin carbon films. Science 306(5696):666–9. https://pubmed.ncbi.nlm.nih.gov/15499015/
 ¿Tú también creías que los lápices tenían plomo? 👇
-Shot Químico #45 · La Creación del Robert
+Shot Químico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Grafeno
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 La punta de tu lápiz no es plomo: es grafito, el mismo carbono que forma un diamante. ✏️💎 En el grafito, el carbono forma hojas que se resbalan y se quedan en el papel; en el diamante, cada carbono se une a otros 4 en una red 3D, y por eso es durísimo.
 ¿Tú también creías que tenían plomo? 👇
-Shot Químico #45 · La Creación del Robert
+Shot Químico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Grafeno
 ```
@@ -69,14 +69,14 @@ La punta de un lápiz y un diamante son el mismo elemento: carbono. Lo único qu
 En el grafito, cada carbono se enlaza con 3 vecinos y forma hojas planas de hexágonos unidas débilmente entre sí: se deslizan, y por eso el grafito es blando y deja marca (la "mina" es grafito con arcilla; nunca ha llevado plomo). En el diamante, cada carbono se enlaza con otros 4 en una red tridimensional de enlaces muy fuertes: por eso se usa en la industria para cortar roca y perforar.
 De esa misma estructura en capas salió uno de los materiales más estudiados de este siglo. En 2004, en la Universidad de Manchester, Andre Geim y Konstantin Novoselov separaron capas de grafito con cinta adhesiva común y publicaron en Science películas de carbono de pocos átomos de grosor. La capa única, el grafeno, les valió el Nobel de Física 2010. Un milímetro de grafito contiene unos 3 millones de esas capas.
 ¿Qué otro material cotidiano crees que esconde una estructura así de sorprendente?
-Shot Químico #45 · La Creación del Robert
+Shot Químico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeMateriales #Grafeno #Nanotecnologia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-La punta de tu lápiz no es plomo: es grafito, el mismo carbono que un diamante. Cambia el acomodo: hojas que se resbalan vs. una red 3D. De esas hojas, con cinta adhesiva, salió el grafeno: Nobel 2010. ✏️💎 Shot Químico #45 #Quimica
+La punta de tu lápiz no es plomo: es grafito, el mismo carbono que un diamante. Cambia el acomodo: hojas que se resbalan vs. una red 3D. De esas hojas, con cinta adhesiva, salió el grafeno: Nobel 2010. ✏️💎 Shot Químico 45 #Quimica
 ```
 
 ### Threads
@@ -84,7 +84,7 @@ La punta de tu lápiz no es plomo: es grafito, el mismo carbono que un diamante.
 La punta de tu lápiz no es plomo: es grafito, el mismo carbono que forma un diamante. ✏️💎
 En el grafito, el carbono forma hojas de hexágonos que se resbalan y se quedan en el papel; en el diamante, cada carbono se une a otros 4 en una red 3D. Y una sola de esas hojas, el grafeno, ganó el Nobel de Física 2010.
 ¿Tú también creías que tenían plomo?
-Shot Químico #45 · La Creación del Robert
+Shot Químico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

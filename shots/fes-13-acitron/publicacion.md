@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #13 · Día de Reyes · Ambiental: El acitrón de la rosca sale de un cactus protegido
+# Publicación · Shot Festivo 13 · Día de Reyes · Ambiental: El acitrón de la rosca sale de un cactus protegido
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 6 ene 2027.
 
@@ -15,7 +15,7 @@ Hay roscas que traen ate o papaya en lugar de acitrón.
 El dibujo es esquemático.
 Fuentes: Jiménez Sierra, tesis UNAM (2008) · Acta Botanica Mexicana (2016) · revista Ciencias, UNAM (2018) · DOF (2019).
 ¿Tu rosca trae acitrón, ate o papaya? 👇
-Shot Festivo #13 · Día de Reyes · Ambiental · La Creación del Robert
+Shot Festivo 13 · Día de Reyes · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #RoscaDeReyes #DiaDeReyes #Biznaga #Cactus
 ```
@@ -26,7 +26,7 @@ Ese cuadrito de tu rosca, el acitrón, no es fruta: es un cactus. 🌵👑
 Sale sobre todo de la biznaga de dulce (Echinocactus platyacanthus), que solo vive en México. Se escogen biznagas de más de medio metro, se les quitan las costillas y la pulpa se remoja en almíbar cada vez más espeso: el azúcar le saca el agua a las células hasta dejarla con 70 a 75 % de azúcar. Para sacar la pulpa se arranca la planta entera y muere. Una tesis de la UNAM (2008) estimó que tarda cerca de 25 años en medir medio metro, y en 2019 México la subió de categoría en su lista oficial de especies en riesgo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tu rosca trae acitrón, ate o papaya? 👇
-Shot Festivo #13 · Día de Reyes · Ambiental · La Creación del Robert
+Shot Festivo 13 · Día de Reyes · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #RoscaDeReyes #DiaDeReyes #Biznaga #Cactus
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El acitrón de tu rosca no es fruta: es un cactus 🌵 | Shot Festivo #13
+El acitrón de tu rosca no es fruta: es un cactus 🌵 | Shot Festivo 13
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - López Escamilla, Olguín Santo y Vercamer (2018). Ciencias 129–130, UNAM: https://www.new.revistacienciasunam.com/images/stories/Articles/129/pdf129/129B08.pdf
 - DOF 14/11/2019, modificación del Anexo III de la NOM-059-SEMARNAT-2010: https://dof.gob.mx/nota_detalle.php?codigo=5578808&fecha=14/11/2019
 ¿Tu rosca trae acitrón, ate o papaya? 👇
-Shot Festivo #13 · Día de Reyes · Ambiental · La Creación del Robert
+Shot Festivo 13 · Día de Reyes · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #RoscaDeReyes #Cactus
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese cuadrito de tu rosca, el acitrón, no es fruta: es un cactus. 🌵👑 Sale sobre todo de la biznaga de dulce, que solo vive en México. Para hacerlo se arranca la planta entera, y una biznaga tarda cerca de 25 años en medir medio metro (tesis UNAM, 2008). En 2019 México la subió de categoría en su lista oficial de especies en riesgo.
 ¿Tu rosca trae acitrón, ate o papaya? 👇
-Shot Festivo #13 · Día de Reyes · Ambiental · La Creación del Robert
+Shot Festivo 13 · Día de Reyes · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #RoscaDeReyes #Cactus
 ```
@@ -68,20 +68,20 @@ El acitrón de la rosca de Reyes es un caso de estudio de conservación.
 El acitrón tradicional se hace sobre todo con la pulpa de la biznaga de dulce (Echinocactus platyacanthus), un cactus endémico de México. La pulpa se cristaliza en almíbar cada vez más concentrado: el agua de las células se reemplaza por azúcar hasta llegar a 70–75 %. El problema está en la materia prima: para obtenerla se arranca la planta entera, y una tesis doctoral de la UNAM (2008) estimó que una biznaga tarda cerca de 25 años en medir medio metro, el tamaño que se busca. En 2019, México la subió de categoría en la NOM-059-SEMARNAT, su lista oficial de especies en riesgo.
 Hay alternativas en el mercado, como las tiras de ate o de papaya para la rosca.
 ¿Qué otro ingrediente tradicional crees que deberíamos revisar con ojos de conservación?
-Shot Festivo #13 · Día de Reyes · Ambiental · La Creación del Robert
+Shot Festivo 13 · Día de Reyes · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Conservacion #Biodiversidad #DiaDeReyes #DivulgacionCientifica
 ```
 
 ### X
 ```text
-El acitrón de tu rosca no es fruta: es un cactus 🌵 Sale sobre todo de la biznaga de dulce; se arranca entera y tarda cerca de 25 años en medir medio metro (tesis UNAM, 2008). Shot Festivo #13 · Día de Reyes · Ambiental #RoscaDeReyes
+El acitrón de tu rosca no es fruta: es un cactus 🌵 Sale sobre todo de la biznaga de dulce; se arranca entera y tarda cerca de 25 años en medir medio metro (tesis UNAM, 2008). Shot Festivo 13 · Día de Reyes · Ambiental #RoscaDeReyes
 ```
 
 ### Threads
 ```text
 Ese cuadrito de tu rosca, el acitrón, no es fruta: es un cactus. 🌵 Sale sobre todo de la biznaga de dulce, que solo vive en México. Para hacerlo se arranca la planta entera, y tarda cerca de 25 años en medir medio metro (tesis UNAM, 2008). ¿Tu rosca trae acitrón, ate o papaya? 👇
-Shot Festivo #13 · Día de Reyes · Ambiental · La Creación del Robert
+Shot Festivo 13 · Día de Reyes · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #RoscaDeReyes
 ```

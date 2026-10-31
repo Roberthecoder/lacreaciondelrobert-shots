@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #49 · La abeja maya que no pica
+# Publicación · Shot Ambiental 49 · La abeja maya que no pica
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que esa abeja que no pica es una tradición maya de siglos que necesita qui
 El dibujo es esquemático.
 Fuentes: Pat Fernández et al. 2018 (ECOSUR, Estudios de Cultura Maya); Villanueva-Gutiérrez et al. 2013 (J. Kansas Entomol. Soc.).
 ¿En tu región todavía hay quien cría abejas meliponas? 👇
-Shot Ambiental #49 · La Creación del Robert
+Shot Ambiental 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #AbejasSinAguijon #Melipona #Yucatan
 ```
@@ -27,7 +27,7 @@ Esta abeja no pica: su aguijón está atrofiado. Si la molestas, a lo mucho te m
 La xunán kab (Melipona beecheii) vive en jobones, troncos huecos donde guarda su miel en ollitas de cera. Los mayas la crían desde antes de que llegaran los españoles, pero su crianza está desapareciendo: en Los Petenes, Campeche, cada tronco dio como un kilo de miel al año (2015), y en la zona maya de Quintana Roo los meliponarios pasaron, en promedio, de unas 11 colonias a unas 4 (estudio de 2011).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu región todavía hay quien cría abejas meliponas? 👇
-Shot Ambiental #49 · La Creación del Robert
+Shot Ambiental 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #AbejasSinAguijon #Melipona #Yucatan
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La abeja maya que NO pica 🐝 | Shot Ambiental #49
+La abeja maya que NO pica 🐝 | Shot Ambiental 49
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Moreno y Cardozo (2003), LRRD 15(2): https://lrrd.org/lrrd15/2/more152.htm
 - Diego de Landa, Relación de las cosas de Yucatán (hacia 1566).
 ¿En tu región todavía hay quien cría abejas meliponas? 👇
-Shot Ambiental #49 · La Creación del Robert
+Shot Ambiental 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #AbejasSinAguijon #Melipona
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta abeja no pica: su aguijón está atrofiado. 🐝 Es la xunán kab, la abeja de los mayas, y guarda su miel en ollitas de cera dentro de un tronco. Su crianza tradicional está desapareciendo en la península de Yucatán.
 ¿En tu región todavía hay quien cría abejas meliponas? 👇
-Shot Ambiental #49 · La Creación del Robert
+Shot Ambiental 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #AbejasSinAguijon #Yucatan
 ```
@@ -71,7 +71,7 @@ Esta abeja no pica: su aguijón está atrofiado.
 La xunán kab (Melipona beecheii) es la abeja sin aguijón que los mayas de la península de Yucatán crían en troncos huecos (jobones) desde antes de la llegada de los europeos. Su meliponicultura está en vías de desaparición: en la reserva Los Petenes, Campeche, cada jobón dio en promedio 1.02 kg de miel al año (2015) y la edad promedio de quienes la cuidan rondaba los 63 años (Pat Fernández et al., 2018). En la zona maya de Quintana Roo, una encuesta de 2011 encontró que los meliponarios pasaron, en promedio, de unas 11 a unas 4 colonias (Villanueva-Gutiérrez et al., 2013).
 Conservar esta práctica no es solo cuestión de abejas: es conocimiento biocultural, ingreso familiar y relevo generacional.
 ¿Qué crees que haría más atractiva la meliponicultura para los jóvenes?
-Shot Ambiental #49 · La Creación del Robert
+Shot Ambiental 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Biodiversidad #AbejasSinAguijon #Yucatan #LaCreacionDelRobert
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #26 · La papaya que se salvó con un pedacito del virus
+# Publicación · Shot Biotecnológico 26 · La papaya que se salvó con un pedacito del virus
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Ojo: Rainbow es una defensa a la medida del virus de Hawái; con aislados de Bra
 El dibujo es esquemático.
 Fuentes: Gonsalves C. et al. 2004 (APSnet) · Ferreira et al. 2002 (Plant Disease) · Tripathi et al. 2008 (Mol Plant Pathol) · Hernández-Castro et al. 2004 (Rev Mex Fitopatol).
 ¿En tu casa se come papaya? ¿Sabías que tenía su propio virus? 👇
-Shot Biotecnológico #26 · La Creación del Robert
+Shot Biotecnológico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Papaya #Transgenicos #Virus
 ```
@@ -25,7 +25,7 @@ Esa papaya no se salvó con insecticida: la salvó un pedacito del virus. 🍈�
 En 1992 el virus de la mancha anular, que cargan los pulgones, llegó a Puna, Hawái; en cinco años la papaya fresca del estado cayó más de un tercio. El equipo de Dennis Gonsalves le puso a la papaya el gen de la cubierta del virus: su defensa de silenciamiento corta el ARN del virus. En el ensayo de 1995, al año todas las papayas normales de control enfermaron y ninguna con el gen. En 1998 salió Rainbow. Pero es a la medida: con virus de Brasil o Tailandia, Rainbow se enferma. Y el virus también está en México.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que la papaya tenía su propio virus? 👇
-Shot Biotecnológico #26 · La Creación del Robert
+Shot Biotecnológico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Papaya #Transgenicos #Virus
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa papaya la salvó un pedacito del virus 🍈 | Shot Biotecnológico #26
+Esa papaya la salvó un pedacito del virus 🍈 | Shot Biotecnológico 26
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Tripathi S. et al. (2008). Papaya ringspot virus-P: characteristics, pathogenicity, sequence variability and control. Mol Plant Pathol 9:269–280. https://pmc.ncbi.nlm.nih.gov/articles/PMC6640413/
 - Hernández-Castro E. et al. (2004). Efecto de la erradicación de plantas enfermas por el PRSV-P… en Veracruz, México. Rev Mex Fitopatol 22:382–388. https://www.redalyc.org/pdf/612/61222311.pdf
 ¿Sabías que la papaya tenía su propio virus? 👇
-Shot Biotecnológico #26 · La Creación del Robert
+Shot Biotecnológico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Papaya
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa papaya no se salvó con insecticida: la salvó un pedacito del virus. 🍈 En Hawái, a la papaya le pusieron el gen de la cubierta del virus de la mancha anular; su propia defensa corta el ARN del virus. En el ensayo de 1995, ninguna papaya con el gen se enfermó.
 ¿Sabías que la papaya tenía su propio virus? 👇
-Shot Biotecnológico #26 · La Creación del Robert
+Shot Biotecnológico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Papaya
 ```
@@ -70,14 +70,14 @@ En 1992, el virus de la mancha anular de la papaya (PRSV), transmitido por pulgo
 La respuesta vino de la biotecnología: el equipo de Dennis Gonsalves (Cornell, Universidad de Hawái, USDA) insertó en la papaya el gen de la proteína de la cubierta del propio virus. La resistencia funciona por silenciamiento postranscripcional de ARN. En el ensayo de campo de Puna (1995), al año el 100 % de las plantas de control estaba infectado y ninguna transgénica. Rainbow y SunUp se liberaron en 1998, y en 2000 Rainbow ya ocupaba la mitad de la superficie de papaya en cosecha del estado.
 La lección de diseño: esta resistencia depende del parecido de secuencia. Rainbow protege contra los virus de Hawái, pero se enferma con aislados de Brasil, Jamaica o Tailandia. El virus también está en México.
 ¿Qué otros cultivos podrían defenderse con una solución hecha a la medida de su patógeno local?
-Shot Biotecnológico #26 · La Creación del Robert
+Shot Biotecnológico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Agricultura #Fitopatologia #Transgenicos #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esa papaya no se salvó con insecticida: la salvó un pedacito del virus. Con el gen de la cubierta del virus, ninguna papaya del ensayo de Hawái (1995) se enfermó; las de control, todas. 🍈 Shot Biotecnológico #26 #Biotecnologia
+Esa papaya no se salvó con insecticida: la salvó un pedacito del virus. Con el gen de la cubierta del virus, ninguna papaya del ensayo de Hawái (1995) se enfermó; las de control, todas. 🍈 Shot Biotecnológico 26 #Biotecnologia
 ```
 
 ### Threads
@@ -85,7 +85,7 @@ Esa papaya no se salvó con insecticida: la salvó un pedacito del virus. Con el
 Esa papaya no se salvó con insecticida: la salvó un pedacito del virus. 🍈
 En Hawái le pusieron el gen de la cubierta del virus de la mancha anular, y su defensa de silenciamiento corta el ARN del virus. Pero es a la medida: con virus de Brasil o Tailandia, Rainbow se enferma.
 ¿Sabías que la papaya tenía su propio virus?
-Shot Biotecnológico #26 · La Creación del Robert
+Shot Biotecnológico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

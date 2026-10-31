@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #44 · La medicina contra la malaria que también empieza en una levadura
+# Publicación · Shot Biotecnológico 44 · La medicina contra la malaria que también empieza en una levadura
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Sanofi empezó a producirla así en Italia en 2013… y en 2015 no produjo nada:
 El dibujo es esquemático.
 Fuentes: Tu Youyou, Conferencia Nobel 2015 · Paddon et al., Nature 2013 · Ro et al., Nature 2006 · PATH/Sanofi 2013 · Peplow, Nature 2016 · OMS, Informe mundial sobre el paludismo 2025.
 ¿Sabías que una medicina podía empezar en una levadura? 👇
-Shot Biotecnológico #44 · La Creación del Robert
+Shot Biotecnológico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Malaria #Levadura #Artemisinina
 ```
@@ -25,7 +25,7 @@ Esta medicina contra la malaria no solo sale de una planta: también la puede em
 La artemisinina sale de Artemisia annua; Tu Youyou encontró la pista en un libro chino de más de 1,600 años y ganó el Nobel 2015. En 2013, una levadura del pan con genes de la planta logró 25 g de ácido artemisínico por litro, y la química lo vuelve artemisinina. Sanofi la produjo en Italia… y en 2015 no hizo nada: en parte, la de la planta salió más barata.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que una medicina podía empezar en una levadura? 👇
-Shot Biotecnológico #44 · La Creación del Robert
+Shot Biotecnológico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Malaria #Levadura #Artemisinina
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta medicina contra la malaria también la empieza una levadura 🍞 | Shot Biotecnológico #44
+Esta medicina contra la malaria también la empieza una levadura 🍞 | Shot Biotecnológico 44
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ PATH y Sanofi (11 abr 2013): https://www.path.org/our-impact/media-center/sanofi
 Peplow M. (2016). Synthetic biology's first malaria drug meets market resistance. Nature 530:389–390: https://www.scientificamerican.com/article/synthetic-biology-s-first-malaria-drug-meets-market-resistance/
 OMS, nota descriptiva "Malaria" (4 dic 2025): https://www.who.int/news-room/fact-sheets/detail/malaria
 ¿Sabías que una medicina podía empezar en una levadura? 👇
-Shot Biotecnológico #44 · La Creación del Robert
+Shot Biotecnológico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Malaria
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta medicina contra la malaria no solo sale de una planta: también la puede empezar una levadura. 🦟🍞
 La artemisinina sale de la planta Artemisia annua. En 2013, una levadura del pan con genes de la planta produjo 25 gramos de ácido artemisínico por litro, y la química lo vuelve artemisinina. ¿Sabías que una medicina podía empezar en una levadura? 👇
-Shot Biotecnológico #44 · La Creación del Robert
+Shot Biotecnológico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Malaria
 ```
@@ -71,21 +71,21 @@ La molécula viene de Artemisia annua; Tu Youyou la aisló con su equipo en 1972
 Sanofi lanzó la producción a gran escala en Italia en 2013, pero en 2015 no produjo nada: en parte, porque la artemisinina vegetal se vendía por debajo de su margen sin ganancia (Peplow, Nature 2016). Un recordatorio de que el éxito técnico de la biología sintética no garantiza el éxito en el mercado.
 En 2024 hubo unos 282 millones de casos de malaria y 610 mil muertes (OMS).
 ¿Qué hace falta para que una buena tecnología también sea competitiva?
-Shot Biotecnológico #44 · La Creación del Robert
+Shot Biotecnológico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #BiologiaSintetica #Malaria #SaludGlobal #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esta medicina contra la malaria no solo sale de una planta: también la puede empezar una levadura. En 2013, una levadura del pan con genes de Artemisia annua logró 25 g de ácido artemisínico por litro. 🍞 Shot Biotecnológico #44 #Biotecnologia
+Esta medicina contra la malaria no solo sale de una planta: también la puede empezar una levadura. En 2013, una levadura del pan con genes de Artemisia annua logró 25 g de ácido artemisínico por litro. 🍞 Shot Biotecnológico 44 #Biotecnologia
 ```
 
 ### Threads
 ```text
 Esta medicina contra la malaria no solo sale de una planta: también la puede empezar una levadura. 🦟🍞
 La artemisinina sale de Artemisia annua, pero en 2013 una levadura del pan con genes de la planta produjo su precursor y la química hizo el resto. ¿Sabías que una medicina podía empezar en una levadura?
-Shot Biotecnológico #44 · La Creación del Robert
+Shot Biotecnológico 44 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

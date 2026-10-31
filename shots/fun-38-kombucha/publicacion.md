@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #38 · La «madre» de la kombucha no es un hongo: es una tela de bacterias
+# Publicación · Shot Fungi Mati 38 · La «madre» de la kombucha no es un hongo: es una tela de bacterias
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Una de esas bacterias, Komagataeibacter, usa azúcar para hilar fibras finísima
 El dibujo es esquemático. No es consejo médico: la kombucha no sustituye ningún tratamiento.
 Fuentes: May et al. 2019 (PeerJ); Landis et al. 2022 (mSystems); Kapp y Sumner 2019 (Ann. Epidemiol.); Mendelson et al. 2023 (Front. Nutr.).
 ¿Tú haces kombucha en casa o la compras? 👇
-Shot Fungi Mati #38 · La Creación del Robert
+Shot Fungi Mati 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Kombucha #Fermentacion #Levaduras
 ```
@@ -25,7 +25,7 @@ Las levaduras convierten el azúcar del té en alcohol y burbujas; las bacterias
 ¿Te cura? Casi todo lo que se presume se probó en animales o en laboratorio. En un estudio piloto de 2023 con personas con diabetes tipo 2, el azúcar en ayunas bajó con kombucha… y también con placebo, y solo se analizaron 7 personas: es una pista, no una prueba.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Tú haces kombucha en casa o la compras? 👇
-Shot Fungi Mati #38 · La Creación del Robert
+Shot Fungi Mati 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Kombucha #Fermentacion #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La «madre» de la kombucha NO es un hongo 🍵 | Shot Fungi Mati #38
+La «madre» de la kombucha NO es un hongo 🍵 | Shot Fungi Mati 38
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Ecklu-Mensah, G. et al. (2024). Modulating the human gut microbiome and health markers through kombucha consumption: a controlled clinical study. Scientific Reports 14: 31647. https://pmc.ncbi.nlm.nih.gov/articles/PMC11686376/
 - Mendelson, C. et al. (2023). Kombucha tea as an anti-hyperglycemic agent in humans with diabetes – a randomized controlled pilot investigation. Frontiers in Nutrition 10: 1190248. https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2023.1190248/full
 ¿Tú haces kombucha en casa o la compras? 👇
-Shot Fungi Mati #38 · La Creación del Robert
+Shot Fungi Mati 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Kombucha #FungiMati
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa «madre» que flota en tu kombucha no es un hongo: es una tela de celulosa que tejen bacterias, con levaduras (hongos) adentro. 🍵 ¿Y te cura? Casi todo lo que se presume se probó en animales o en laboratorio; el estudio en personas con diabetes que mostramos es una pista, no una prueba (con placebo también bajó el azúcar).
 ¿Tú haces kombucha en casa o la compras? 👇
-Shot Fungi Mati #38 · La Creación del Robert
+Shot Fungi Mati 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Kombucha
 ```
@@ -71,7 +71,7 @@ La «madre» de la kombucha es un buen ejemplo de un ecosistema microbiano que f
 Levaduras como Brettanomyces convierten el azúcar del té en etanol y CO₂; bacterias del ácido acético oxidan ese etanol a ácido acético, y algunas, del género Komagataeibacter, producen nanofibras de celulosa que forman una biopelícula flotante. La celulosa bacteriana tiene la misma estructura molecular que la vegetal, pero pura, sin lignina ni hemicelulosa, y con ella ya se han desarrollado apósitos para heridas.
 Sobre la salud, la evidencia es escasa: una revisión sistemática de 2019 halló un solo estudio en humanos, y desde entonces solo hay unos pocos ensayos chicos. Un piloto aleatorizado y cruzado de Georgetown (2023) en adultos con diabetes tipo 2 vio bajar la glucosa en ayunas con kombucha, pero también con placebo, sin diferencia significativa y con solo 7 personas analizadas. Es una hipótesis para probar, no una conclusión.
 ¿Qué otro alimento fermentado te gustaría ver por dentro?
-Shot Fungi Mati #38 · La Creación del Robert
+Shot Fungi Mati 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Microbiologia #Biomateriales #Ciencia
 ```
@@ -84,7 +84,7 @@ La «madre» de la kombucha no es un hongo: es una tela de celulosa que tejen ba
 ### Threads
 ```text
 Esa «madre» que flota en tu kombucha no es un hongo: es una tela que tejen bacterias, con hongos adentro. 🍵 Las levaduras hacen alcohol, las bacterias lo vuelven ácido y una de ellas hila celulosa, la molécula del papel y del algodón. ¿Tú haces kombucha en casa?
-Shot Fungi Mati #38 · La Creación del Robert
+Shot Fungi Mati 38 · La Creación del Robert
 #Kombucha
 ```
 

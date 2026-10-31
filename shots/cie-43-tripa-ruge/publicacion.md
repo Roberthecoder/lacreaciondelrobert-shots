@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #43 · Por qué te ruge la tripa (y no siempre es hambre)
+# Publicación · Shot Científico 43 · Por qué te ruge la tripa (y no siempre es hambre)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Que tu panza haga ruido es normal y señal de que está trabajando. Así que tu 
 El dibujo es esquemático.
 Fuentes: Scientific American (2002); MedlinePlus (2024); Deloose et al. 2012; Takahashi 2013; Tack et al. 2016 (Gut).
 ¿A ti también te ruge la panza en el peor momento? 👇
-Shot Científico #43 · La Creación del Robert
+Shot Científico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Digestion
 ```
@@ -27,7 +27,7 @@ Tu estómago y tus intestinos son tubos de músculo que se aprietan en ondas y r
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti también te ruge la panza en el peor momento? 👇
-Shot Científico #43 · La Creación del Robert
+Shot Científico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Digestion
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu panza no ruge solo de hambre 🫃 | Shot Científico #43
+Tu panza no ruge solo de hambre 🫃 | Shot Científico 43
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - Wang, X. et al. (2025). Nutrients 17: 3519. https://doi.org/10.3390/nu17223519
 - Tack, J. et al. (2016). Motilin-induced gastric contractions signal hunger in man. Gut 65: 214–224. https://pubmed.ncbi.nlm.nih.gov/25539673/
 ¿A ti también te ruge la panza en el peor momento? 👇
-Shot Científico #43 · La Creación del Robert
+Shot Científico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano #Digestion #LaCreacionDelRobert
 ```
@@ -66,7 +66,7 @@ Ese rugido de tu panza no siempre es hambre: tu intestino puede hacer ruido a cu
 Son tus tubos de músculo apretándose en ondas y revolviendo líquido y gas (se llama borborigmo). Con el estómago vacío suena más fuerte, porque no hay comida que lo apague. Y tras horas sin comer, una onda de limpieza barre los restos más o menos cada hora y media o dos horas; la pone en marcha la motilina, una hormona de tu intestino que además te avisa que tienes hambre. Es normal: tu panza está trabajando.
 El dibujo es esquemático.
 ¿A ti también te ruge la panza en el peor momento? 👇
-Shot Científico #43 · La Creación del Robert
+Shot Científico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -77,7 +77,7 @@ Soy Robert, de La Creación del Robert 🌱
 En ayunas aparece además un patrón cíclico, el complejo motor migratorio: una onda que barre restos por el estómago y el intestino delgado más o menos cada 90 a 120 minutos. La motilina, una hormona del intestino, la pone en marcha y, según un estudio de Tack y colaboradores (Gut, 2016), también funciona como señal de hambre.
 Gran parte del ruido viene del intestino delgado, y en la mayoría de los casos es normal: significa que el tubo digestivo está trabajando.
 Fuentes: Scientific American (2002), MedlinePlus (2024), Deloose et al. 2012, Takahashi 2013, Tack et al. 2016.
-Shot Científico #43 · La Creación del Robert
+Shot Científico 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

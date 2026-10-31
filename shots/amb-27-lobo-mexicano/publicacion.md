@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #27 · Todos los lobos mexicanos vienen de solo siete
+# Publicación · Shot Ambiental 27 · Todos los lobos mexicanos vienen de solo siete
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Hoy hay más de trescientos lobos libres, y todos descienden de solo siete.
 El dibujo es esquemático.
 Fuentes: U.S. Fish and Wildlife Service, CONABIO.
 ¿Sabías que en México había lobos? 👇
-Shot Ambiental #27 · La Creación del Robert
+Shot Ambiental 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #LoboMexicano #Chihuahua #Conservacion
 ```
@@ -26,7 +26,7 @@ Todos los lobos mexicanos que viven hoy, en el monte o en cautiverio, vienen de 
 Casi lo borraron en el siglo XX. Con tres fundadores capturados en México (1977–1980) y cuatro de dos linajes de cautiverio se empezó de nuevo: en 1998 soltaron tres familias en Arizona, y al cierre de 2025 el conteo oficial halló al menos 319 en Arizona y Nuevo México. En 2014 nacieron en Chihuahua los primeros cachorros libres de México en más de 30 años.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que en México había lobos? 👇
-Shot Ambiental #27 · La Creación del Robert
+Shot Ambiental 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #LoboMexicano #Chihuahua #Conservacion
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Todos los lobos mexicanos vienen de solo 7 🐺 | Shot Ambiental #27
+Todos los lobos mexicanos vienen de solo 7 🐺 | Shot Ambiental 27
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Lara-Díaz et al. (2015), "¡Nacidos libres!", Biodiversitas 119, CONABIO: https://www.telematica.icat.unam.mx/antologias/biodiversidad/Introduccion/pdf/lobomexicano.pdf
 - Hedrick et al. (1997), Zoo Biology 16:47–69: https://www.tau.ac.il/~geffene/PDFs/23-Zoo_Biol_1997.pdf
 ¿Sabías que en México había lobos? 👇
-Shot Ambiental #27 · La Creación del Robert
+Shot Ambiental 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #LoboMexicano #Conservacion
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Todos los lobos mexicanos que viven hoy vienen de solo siete. 🐺 Casi desaparecieron en el siglo XX y hoy hay al menos 319 libres en Arizona y Nuevo México (conteo oficial al cierre de 2025), además de los de Chihuahua.
 ¿Sabías que en México había lobos? 👇
-Shot Ambiental #27 · La Creación del Robert
+Shot Ambiental 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #LoboMexicano #Conservacion
 ```
@@ -70,7 +70,7 @@ Todos los lobos mexicanos que viven hoy, en el monte o en cautiverio, vienen de 
 El programa binacional de recuperación del lobo gris mexicano empezó con cinco lobos capturados en México entre 1977 y 1980 y se completó con dos linajes de cautiverio: siete fundadores. Desde la primera liberación en Arizona (1998), la población silvestre en Estados Unidos llegó a un mínimo de 319 lobos al 31 de diciembre de 2025, según el U.S. Fish and Wildlife Service, y en 2014 se documentó en Chihuahua la primera camada nacida en vida libre en México en más de 30 años.
 El reto ahora es genético: la población en cautiverio conserva más diversidad que la silvestre, y una de las herramientas es la "adopción" de cachorros de cautiverio en madrigueras salvajes. Es un buen ejemplo de cómo la conservación combina cooperación entre países, zoológicos, trabajo de campo y genética.
 ¿Qué otro caso de recuperación de especies conoces?
-Shot Ambiental #27 · La Creación del Robert
+Shot Ambiental 27 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Conservacion #Biodiversidad #LoboMexicano #LaCreacionDelRobert
 ```

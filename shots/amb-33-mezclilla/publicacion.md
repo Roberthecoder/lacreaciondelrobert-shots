@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #33 · Tu pantalón de mezclilla lleva 189 garrafones de agua
+# Publicación · Shot Ambiental 33 · Tu pantalón de mezclilla lleva 189 garrafones de agua
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Y úsalo muchos años: esos litros ya se gastaron, y entre más lo uses, más va
 El dibujo es esquemático.
 Fuentes: Levi Strauss & Co. (2015), "The Life Cycle of a Jean"; Chapagain et al. (2006), Ecological Economics.
 ¿Cada cuántas puestas lavas tus jeans? 👇
-Shot Ambiental #33 · La Creación del Robert
+Shot Ambiental 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Mezclilla #Agua #ModaSostenible
 ```
@@ -28,7 +28,7 @@ Lo calculó la propia Levi Strauss & Co. en 2015 para sus jeans 501: casi 7 de c
 Lo que sí sirve: lavarlo cada 10 puestas (hasta −80 % de agua y energía del lavado), secarlo al aire (−67 % del carbono de cuidarlo, en Estados Unidos, según el mismo estudio de Levi's) y usarlo muchos años.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cada cuántas puestas lavas tus jeans? 👇
-Shot Ambiental #33 · La Creación del Robert
+Shot Ambiental 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Mezclilla #Agua #ModaSostenible
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu pantalón de mezclilla lleva 189 garrafones de agua 👖💧 | Shot Ambiental #33
+Tu pantalón de mezclilla lleva 189 garrafones de agua 👖💧 | Shot Ambiental 33
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Levi Strauss & Co. (2015), "The Life Cycle of a Jean": https://www.levistrauss.com/wp-content/uploads/2015/03/Full-LCA-Results-Deck-FINAL.pdf
 - Chapagain, Hoekstra, Savenije y Gautam (2006), "The water footprint of cotton consumption", Ecological Economics 60: 186–203: https://ayhoekstra.nl/pubs/Chapagain-et-al-2006a.pdf
 ¿Cada cuántas puestas lavas tus jeans? 👇
-Shot Ambiental #33 · La Creación del Robert
+Shot Ambiental 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Mezclilla #Agua
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu pantalón de mezclilla gasta en toda su vida unos 3,781 litros de agua: como 189 garrafones. 👖💧 Casi 7 de cada 10 litros se van en el cultivo del algodón y casi una cuarta parte en lavarlo en casa (estudio de la propia Levi Strauss & Co., 2015). Lavarlo menos, secarlo al aire y usarlo más años sí ayuda.
 ¿Cada cuántas puestas lavas tus jeans? 👇
-Shot Ambiental #33 · La Creación del Robert
+Shot Ambiental 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Mezclilla #Agua
 ```
@@ -72,7 +72,7 @@ Es un estudio de la propia empresa (revisado por un panel según ISO 14040/14044
 Un cálculo académico de la UNESCO-IHE (Chapagain et al., 2006, con datos de 1997–2001) llega a 10,850 litros por jeans de 1 kg porque también cuenta la lluvia y el agua de dilución: las cifras dependen de qué se mide.
 Las palancas están en ambos extremos de la cadena: en el origen, el cultivo del algodón; en el uso, lavar cada 10 puestas (hasta −80 % de agua y energía del lavado) y secar al aire (−67 % del impacto climático del cuidado en Estados Unidos, según el mismo estudio).
 ¿Qué parte de la cadena crees que debería atenderse primero?
-Shot Ambiental #33 · La Creación del Robert
+Shot Ambiental 33 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Agua #ModaSostenible #AnalisisDeCicloDeVida #LaCreacionDelRobert
 ```

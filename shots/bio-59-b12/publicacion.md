@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #59 · Tu B12 la hicieron bacterias
+# Publicación · Shot Biotecnológico 59 · Tu B12 la hicieron bacterias
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Hoy la B12 industrial se hace por fermentación con bacterias como Pseudomonas d
 El dibujo es esquemático.
 Fuentes: Linus Pauling Institute 2023 · Martens et al. 2002 · Croft et al. 2005 · Hodgkin et al. 1956 · Dudko et al. 2022 · Ojala et al. 2017.
 ¿Tú sabías que tu B12 venía de bacterias? 👇
-Shot Biotecnológico #59 · La Creación del Robert
+Shot Biotecnológico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #VitaminaB12 #Bacterias #Vegano
 ```
@@ -24,7 +24,7 @@ Esa vitamina B12 de tu pastilla no la hizo una planta ni un animal: la hicieron 
 Solo ciertas bacterias y arqueas la fabrican; la vaca la saca de los microbios de su panza. Es la vitamina más compleja: un anillo con un átomo de cobalto al centro (Hodgkin la descifró con rayos X en 1956; Nobel 1964). En 1972, casi cien científicos de 19 países lograron sintetizarla, pero nunca se usó para producirla: hoy sale de tanques de fermentación con bacterias, como la que le hace los hoyos al queso suizo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú sabías que tu B12 venía de bacterias? 👇
-Shot Biotecnológico #59 · La Creación del Robert
+Shot Biotecnológico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #VitaminaB12 #Bacterias #Vegano
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu vitamina B12 la hicieron bacterias 💊🦠 | Shot Biotecnológico #59
+Tu vitamina B12 la hicieron bacterias 💊🦠 | Shot Biotecnológico 59
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Dudko D. et al. (2022). Antonie van Leeuwenhoek. https://pmc.ncbi.nlm.nih.gov/articles/PMC9925536/
 - Ojala T. et al. (2017). Int J Food Microbiol 241:39–48. https://pubmed.ncbi.nlm.nih.gov/27744211/
 ¿Tú sabías que tu B12 venía de bacterias? 👇
-Shot Biotecnológico #59 · La Creación del Robert
+Shot Biotecnológico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #VitaminaB12
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa vitamina B12 de tu pastilla no la hizo una planta ni un animal: la hicieron bacterias. 💊🦠 Solo ciertas bacterias y arqueas la fabrican, y hoy toda la B12 industrial sale de tanques de fermentación. Una de esas bacterias es la misma que le hace los hoyos al queso suizo.
 ¿Tú sabías que tu B12 venía de bacterias? 👇
-Shot Biotecnológico #59 · La Creación del Robert
+Shot Biotecnológico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #VitaminaB12
 ```
@@ -72,14 +72,14 @@ La vitamina B12 de suplementos y alimentos fortificados no la produce ninguna pl
 Solo ciertas bacterias y arqueas tienen la ruta para sintetizar cobalamina, una molécula con un anillo de corrina y un átomo de cobalto al centro; NobelPrize.org la describe como la vitamina de estructura más compleja (Hodgkin la resolvió con rayos X en 1956; Nobel de Química 1964). La síntesis química de Woodward y Eschenmoser (1972) fue un hito: casi cien científicos de 19 países y 11 años de trabajo. Aun así, nunca se usó para producirla: la producción industrial es exclusivamente microbiana, hoy con Pseudomonas denitrificans y Propionibacterium freudenreichii (Dudko et al., 2022).
 Un buen ejemplo de que, para ciertas moléculas, la biotecnología no es una alternativa a la química: es la única ruta viable.
 ¿Qué otra molécula de uso diario crees que depende por completo de microbios?
-Shot Biotecnológico #59 · La Creación del Robert
+Shot Biotecnológico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Fermentacion #Nutricion #Microbiologia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Tu vitamina B12 no la hizo una planta ni un animal: la hicieron bacterias. Una de ellas es la misma que le hace los hoyos al queso suizo. 💊🦠 Shot Biotecnológico #59 #Biotecnologia
+Tu vitamina B12 no la hizo una planta ni un animal: la hicieron bacterias. Una de ellas es la misma que le hace los hoyos al queso suizo. 💊🦠 Shot Biotecnológico 59 #Biotecnologia
 ```
 
 ### Threads
@@ -87,7 +87,7 @@ Tu vitamina B12 no la hizo una planta ni un animal: la hicieron bacterias. Una d
 Esa vitamina B12 de tu pastilla no la hizo una planta ni un animal: la hicieron bacterias. 💊🦠
 Solo ciertas bacterias y arqueas la fabrican. En 1972 la sintetizaron casi cien científicos, pero nunca se usó para producirla: hoy sale de tanques de fermentación.
 ¿Tú sabías?
-Shot Biotecnológico #59 · La Creación del Robert
+Shot Biotecnológico 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

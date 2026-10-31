@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #14 · La prueba de embarazo por dentro
+# Publicación · Shot Biotecnológico 14 · La prueba de embarazo por dentro
 
 ## Versión narrada
 
@@ -13,7 +13,7 @@ La FDA recomienda, para la mejor confiabilidad, hacer la prueba 1 a 2 semanas de
 El dibujo es esquemático y no está a escala.
 Fuentes: Koczula y Gallotta, Essays in Biochemistry 2016 · FDA (pruebas caseras, 2019, y registros 510(k)) · Köhler y Milstein, Nature 1975 · Universidad de Cambridge · Makrigiannakis et al., Int J Mol Sci 2017.
 ¿Sabías qué había dentro de esa tira? 👇
-Shot Biotecnológico #14 · La Creación del Robert
+Shot Biotecnológico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #anticuerpos #pruebadeembarazo #ciencia
 ```
@@ -26,7 +26,7 @@ La línea de control atrapa los anticuerpos que pasan de largo, haya hormona o n
 Son anticuerpos monoclonales: Köhler y Milstein idearon cómo hacerlos en 1975, en Cambridge, fusionando células de ratón. Nobel de Fisiología o Medicina en 1984.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías qué había dentro de esa tira? 👇
-Shot Biotecnológico #14 · La Creación del Robert
+Shot Biotecnológico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #anticuerpos #pruebadeembarazo
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa rayita no es tinta: es oro y anticuerpos 🧪 | Shot Biotecnológico #14
+Esa rayita no es tinta: es oro y anticuerpos 🧪 | Shot Biotecnológico 14
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Universidad de Cambridge, César Milstein 1927-2002: https://www.cam.ac.uk/news/cesar-milstein-1927-2002
 - Makrigiannakis et al. (2017), Int J Mol Sci 18: 1305
 ¿Sabías qué había dentro de esa tira? 👇
-Shot Biotecnológico #14 · La Creación del Robert
+Shot Biotecnológico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #anticuerpos
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esa rayita no es tinta: es oro pegado a anticuerpos que atraparon una hormona. 🧪
 La orina sube sola por la tira y arrastra anticuerpos con oro que atrapan la hCG, la hormona que el embrión suelta a la sangre de la madre al implantarse. Otros anticuerpos la agarran del otro lado y el sándwich pinta la rayita. La línea de control sale haya hormona o no.
 ¿Sabías qué había dentro de esa tira? 👇
-Shot Biotecnológico #14 · La Creación del Robert
+Shot Biotecnológico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #anticuerpos
 ```
@@ -73,14 +73,14 @@ La prueba de embarazo casera es el ensayo de flujo lateral más usado (Koczula y
 Todo eso depende de un invento de 1975: los hibridomas de Georges Köhler y César Milstein, en el Laboratorio de Biología Molecular del MRC en Cambridge, que permitieron fabricar un mismo anticuerpo sin límite. En 1984 compartieron el Nobel de Fisiología o Medicina con Niels Jerne.
 El dibujo del video es esquemático.
 ¿Qué otro objeto de uso diario esconde biotecnología?
-Shot Biotecnológico #14 · La Creación del Robert
+Shot Biotecnológico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #AnticuerposMonoclonales #Diagnostico
 ```
 
 ### X
 ```text
-Esa rayita no es tinta: es oro pegado a anticuerpos que atraparon la hormona hCG. Los anticuerpos monoclonales se inventaron en 1975 (Köhler y Milstein, Cambridge) 🧪 Shot Biotecnológico #14 #LaCreacionDelRobert #Biotecnologia
+Esa rayita no es tinta: es oro pegado a anticuerpos que atraparon la hormona hCG. Los anticuerpos monoclonales se inventaron en 1975 (Köhler y Milstein, Cambridge) 🧪 Shot Biotecnológico 14 #LaCreacionDelRobert #Biotecnologia
 ```
 
 ### Threads
@@ -88,7 +88,7 @@ Esa rayita no es tinta: es oro pegado a anticuerpos que atraparon la hormona hCG
 Esa rayita no es tinta: es oro pegado a anticuerpos que atraparon una hormona. 🧪
 La orina sube sola por la tira, arrastra anticuerpos con oro que agarran la hCG, y otros anticuerpos fijos la atrapan del otro lado. La línea de control sale haya hormona o no.
 ¿Sabías qué había dentro de esa tira? 👇
-Shot Biotecnológico #14 · La Creación del Robert
+Shot Biotecnológico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

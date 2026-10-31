@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #17 · El mapa de los sabores de la lengua es un mito
+# Publicación · Shot Científico 17 · El mapa de los sabores de la lengua es un mito
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -14,7 +14,7 @@ Las diferencias que midió Hänig sí existen, pero son pequeñitas.
 El dibujo es esquemático.
 Fuentes: Hänig 1901; Boring 1942; Chandrashekar et al. 2006 (Nature); Spence 2022.
 ¿Te enseñaron el mapa de la lengua en la escuela? 👇
-Shot Científico #17 · La Creación del Robert
+Shot Científico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Sabores #Mitos
 ```
@@ -26,7 +26,7 @@ Todas las zonas de la lengua con papilas gustativas detectan los cinco sabores. 
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Te enseñaron el mapa de la lengua en la escuela? 👇
-Shot Científico #17 · La Creación del Robert
+Shot Científico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Sabores #Mitos
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El mapa de los sabores de la lengua es un mito 👅 | Shot Científico #17
+El mapa de los sabores de la lengua es un mito 👅 | Shot Científico 17
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Wolfe, J. et al. Sensation & Perception (Oxford University Press), ensayo «The tongue map». https://learninglink.oup.com/public/files/cdn/wolfe4e/essay15.01.html
 - Kurihara, K. (2015). Umami the fifth basic taste. BioMed Research International. https://pmc.ncbi.nlm.nih.gov/articles/PMC4515277/
 ¿Te enseñaron el mapa de la lengua en la escuela? 👇
-Shot Científico #17 · La Creación del Robert
+Shot Científico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Mitos
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 El mapa de la lengua de la escuela está mal 👅: todas las zonas con papilas detectan los cinco sabores. Pon azúcar en un lado de tu lengua y compruébalo.
 ¿Te enseñaron el mapa de la lengua en la escuela? 👇
-Shot Científico #17 · La Creación del Robert
+Shot Científico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -70,7 +70,7 @@ El "mapa de la lengua" es un caso clásico de cómo una mala visualización de d
 En 1901, David Hänig midió diferencias pequeñas de sensibilidad entre zonas de la lengua. En 1942, Edwin Boring las graficó de una forma que las hacía parecer grandes, y los libros de texto las convirtieron en zonas separadas. Hoy sabemos que las células receptoras de los cinco sabores básicos están en todas las zonas de la lengua con papilas gustativas.
 Una lección para cualquiera que comunique datos: la escala de una gráfica puede cambiar la historia que cuenta.
 ¿Te lo enseñaron así en la escuela?
-Shot Científico #17 · La Creación del Robert
+Shot Científico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

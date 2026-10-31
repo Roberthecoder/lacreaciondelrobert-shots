@@ -1,4 +1,4 @@
-# Publicación · Shot IA #31 · AlphaZero: revisaba mil veces menos y aun así ganaba
+# Publicación · Shot IA 31 · AlphaZero: revisaba mil veces menos y aun así ganaba
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que revisar más no lo es todo: a veces gana quien sabe dónde mirar.
 El dibujo y las gráficas son esquemáticos. Datos de 2018.
 Fuente: Silver et al., Science (2018).
 ¿Tú juegas ajedrez? ¿Le ganarías a una IA que empezó jugando al azar? 👇
-Shot IA #31 · La Creación del Robert
+Shot IA 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Ajedrez #AlphaZero #DeepMind
 ```
@@ -26,7 +26,7 @@ Esta IA revisaba mil veces menos posiciones que el campeón de ajedrez de las m�
 AlphaZero solo conocía las reglas y empezó jugando al azar. Jugó contra sí misma 44 millones de partidas, y a las 4 horas de entrenamiento ya superaba a Stockfish. En el duelo publicado en Science en 2018 (DeepMind), de 1,000 partidas ganó 155, perdió 6 y empató el resto, revisando 60 mil posiciones por segundo contra 60 millones de Stockfish. Para entrenar usó 5,000 chips de Google.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú juegas ajedrez? ¿Le ganarías a una IA que empezó jugando al azar? 👇
-Shot IA #31 · La Creación del Robert
+Shot IA 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Ajedrez #AlphaZero #DeepMind
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-AlphaZero: revisaba mil veces menos posiciones y aun así ganaba ♟️ | Shot IA #31
+AlphaZero: revisaba mil veces menos posiciones y aun así ganaba ♟️ | Shot IA 31
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta IA revisaba mil veces menos posiciones que el campeón de ajedrez de las máquinas… y aun así le ganó. ♟️ AlphaZero solo conocía las reglas, jugó contra sí misma 44 millones de partidas y, en 1,000 partidas contra Stockfish, ganó 155 y perdió 6 (Science, 2018). Revisar más no lo es todo: a veces gana quien sabe dónde mirar.
 ¿Tú juegas ajedrez? ¿Le ganarías a una IA que empezó jugando al azar? 👇
-Shot IA #31 · La Creación del Robert
+Shot IA 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Ajedrez
 ```
@@ -65,7 +65,7 @@ En 2018, DeepMind publicó en Science los resultados de AlphaZero: un solo algor
 Dos lecturas: la búsqueda selectiva guiada por una red neuronal puede valer más que la fuerza bruta (los autores lo proponen como explicación); y "unas horas" de entrenamiento también costaron 5,000 TPU de Google para generar las partidas. La eficiencia en el juego no es lo mismo que la eficiencia en el cómputo.
 ¿En tu trabajo gana más quien revisa más opciones o quien sabe cuáles revisar?
 Fuente: Silver et al., Science 362(6419): 1140–1144 (2018). Datos de 2018.
-Shot IA #31 · La Creación del Robert
+Shot IA 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #AprendizajePorRefuerzo #Ajedrez #DeepMind #LaCreacionDelRobert
 ```
@@ -80,7 +80,7 @@ AlphaZero revisaba 60 mil posiciones por segundo; Stockfish, 60 millones. Aun as
 Esta IA revisaba mil veces menos posiciones que el campeón de ajedrez de las máquinas… y aun así le ganó. ♟️
 AlphaZero solo sabía las reglas, jugó contra sí misma 44 millones de partidas y en 1,000 partidas contra Stockfish ganó 155 y perdió 6 (Science, 2018). Eso sí: entrenó con 5,000 chips de Google.
 ¿Le ganarías tú?
-Shot IA #31 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 31 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

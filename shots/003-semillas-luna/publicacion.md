@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #01 · Semillas que le dieron la vuelta a la Luna
+# Publicación · Shot Científico 01 · Semillas que le dieron la vuelta a la Luna
 
 Textos listos para copiar (botón de copiar en cada bloque). Plantilla y reglas: `motor/plantillas/publicacion.md`.
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
@@ -15,7 +15,7 @@ Al volver, las bolsas reventaron durante la limpieza y las semillas quedaron exp
 El dibujo es esquemático.
 Fuentes: NASA NSSDC (The Moon Trees), NASA (Apolo 14, 50 años), NASA/USDA (Artemis I Moon Trees).
 ¿Sabías que había árboles lunares? ¿Hay uno cerca de ti? 👇
-Shot Científico #01 · La Creación del Robert
+Shot Científico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #ArbolesLunares #Apolo14 #NASA
 ```
@@ -26,7 +26,7 @@ Este no es un árbol cualquiera: su semilla le dio 34 vueltas a la Luna. 🌲�
 En el Apolo 14 (1971), Stuart Roosa, exbombero forestal, llevó cientos de semillas de cinco árboles en su equipaje. No pisaron la Luna: Roosa daba vueltas solo mientras sus compañeros bajaban. Al volver, las bolsas reventaron y las semillas quedaron expuestas al vacío; temieron que ya no germinaran… y germinaron. Sembradas junto a semillas que nunca salieron de la Tierra, más de 40 años después no se ve diferencia.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que había árboles lunares? 👇
-Shot Científico #01 · La Creación del Robert
+Shot Científico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #ArbolesLunares #Apolo14 #NASA
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta semilla le dio 34 vueltas a la Luna 🌙🌲 | Shot Científico #01
+Esta semilla le dio 34 vueltas a la Luna 🌙🌲 | Shot Científico 01
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - NASA / USDA Forest Service, Artemis I Moon Trees (2022).
 
 ¿Sabías que había árboles lunares? 👇
-Shot Científico #01 · La Creación del Robert
+Shot Científico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #ArbolesLunares
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este no es un árbol cualquiera: su semilla le dio 34 vueltas a la Luna. 🌲🌙 Viajó en el Apolo 14 (1971), se expuso al vacío y temieron que ya no germinara… pero germinó, y más de 40 años después no se distingue de sus gemelos terrestres.
 ¿Sabías que había árboles lunares? 👇
-Shot Científico #01 · La Creación del Robert
+Shot Científico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #ArbolesLunares
 ```
@@ -70,7 +70,7 @@ En 1971, el astronauta Stuart Roosa, exbombero forestal del Servicio Forestal de
 Al regresar, las bolsas reventaron durante la descontaminación y las semillas quedaron expuestas al vacío; se temió que ya no fueran viables. Aun así germinaron, y algunas se sembraron junto a semillas de control que nunca salieron de la Tierra: más de 40 años después no se ve diferencia.
 Por qué importa: es un experimento sencillo con controles, un buen ejemplo de cómo una semilla seca y en reposo resiste condiciones extremas. Y una lección de gestión de datos: se plantaron en unos 40 estados, pero nadie llevó un registro sistemático de dónde quedaron. En 2022, la misión Artemis I repitió la idea.
 ¿Qué otro experimento con seres vivos te gustaría ver en el espacio?
-Shot Científico #01 · La Creación del Robert
+Shot Científico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #NASA #Botanica #Apolo14
 ```
@@ -85,7 +85,7 @@ Este no es un árbol cualquiera: su semilla le dio 34 vueltas a la Luna en el Ap
 Este no es un árbol cualquiera: su semilla le dio 34 vueltas a la Luna. 🌲🌙
 Viajó con Stuart Roosa en el Apolo 14 (1971). Al volver, las bolsas reventaron y las semillas quedaron al vacío; temieron que ya no germinaran. Germinaron, y más de 40 años después no se distinguen de sus gemelos terrestres.
 ¿Hay un árbol lunar cerca de ti?
-Shot Científico #01 · La Creación del Robert
+Shot Científico 01 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #ArbolesLunares
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #54 · Ese encendedor no está lleno de gas (butano líquido a presión)
+# Publicación · Shot Químico 54 · Ese encendedor no está lleno de gas (butano líquido a presión)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Lo curioso: la piedrita no es pedernal. Es ferrocerio, hierro con cerio y otros 
 El dibujo es esquemático. Guarda los encendedores lejos de niños, no los perfores ni los acerques al fuego.
 Fuentes: NIST WebBook · 16 CFR 1210 · Smith et al. 2002 · BIC (hoja de seguridad, 2010) · patente FR6502E (1903).
 ¿Alguna vez se te congeló el dedo con un encendedor? 👇
-Shot Químico #54 · La Creación del Robert
+Shot Químico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Encendedor #Butano #CienciaEnCasa
 ```
@@ -26,7 +26,7 @@ Ese encendedor no está lleno de gas: trae un líquido que hierve al salir. 🔥
 Butano (o isobutano, o mezcla con propano) apretado: a 20 °C el butano puro empuja con unas 2 atmósferas y sigue líquido. El botón baja la presión, hierve, sale el gas y la chispa lo prende. Hervir roba calor: por eso se enfría. Y al sol la presión sube: a 50 °C, más del doble. En 2002, la CPSC de EE. UU. calculó que su norma de encendedores resistentes a niños evitó unos 3,300 incendios en 1998. Y la piedrita es ferrocerio, no pedernal (Auer von Welsbach, Austria, 1903).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez se te congeló el dedo con un encendedor? 👇
-Shot Químico #54 · La Creación del Robert
+Shot Químico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Encendedor #Butano #CienciaEnCasa
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese encendedor no está lleno de gas 🔥 | Shot Químico #54
+Ese encendedor no está lleno de gas 🔥 | Shot Químico 54
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Auer von Welsbach C. Patente FR6502E, "Alliages métalliques pyrophores pouvant servir à l'allumage et à l'éclairage" (prioridad 31 oct 1903). https://patents.google.com/patent/FR6502E/fr
 - Austria-Forum. Auer-Licht. https://austria-forum.org/af/Wissenssammlungen/Essays/Technik/Auer-Licht
 ¿Alguna vez se te congeló el dedo con un encendedor? 👇
-Shot Químico #54 · La Creación del Robert
+Shot Químico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Encendedor
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese encendedor no está lleno de gas: trae un líquido que hierve al salir. 🔥 Es butano (o isobutano) apretado: al apretar el botón baja la presión, hierve, sale el gas y la chispa lo prende. Por eso se enfría si lo usas mucho, y por eso no se deja al sol.
 ¿Alguna vez se te congeló el dedo con un encendedor? 👇
-Shot Químico #54 · La Creación del Robert
+Shot Químico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Encendedor
 ```
@@ -73,14 +73,14 @@ Contiene butano, isobutano o mezclas con propano: gases a temperatura ambiente q
 La seguridad también se puede medir: en 2002, un estudio de la CPSC (Smith, Greene y Singh, Injury Prevention) estimó que la norma estadounidense de encendedores resistentes a niños, vigente desde 1994, evitó unos 3,300 incendios, 100 muertes y 660 lesiones solo en 1998.
 Y la "piedra" que da la chispa es ferrocerio, una aleación pirofórica patentada por Carl Auer von Welsbach en 1903.
 ¿Qué otro objeto cotidiano esconde tanta química?
-Shot Químico #54 · La Creación del Robert
+Shot Químico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Termodinamica #SeguridadDeProductos #CienciaEnCasa #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese encendedor no está lleno de gas: trae butano líquido, apretado. Al abrir la válvula baja la presión, hierve y sale el gas. Por eso se enfría… y por eso no se deja al sol. 🔥 Shot Químico #54 #Quimica
+Ese encendedor no está lleno de gas: trae butano líquido, apretado. Al abrir la válvula baja la presión, hierve y sale el gas. Por eso se enfría… y por eso no se deja al sol. 🔥 Shot Químico 54 #Quimica
 ```
 
 ### Threads
@@ -88,7 +88,7 @@ Ese encendedor no está lleno de gas: trae butano líquido, apretado. Al abrir l
 Ese encendedor no está lleno de gas: trae un líquido que hierve al salir. 🔥
 A 20 °C el butano puro empuja con el doble de la presión del aire y sigue líquido; a 50 °C, más del doble que a 20. Y la piedrita no es pedernal: es ferrocerio.
 ¿Alguna vez se te congeló el dedo con un encendedor?
-Shot Químico #54 · La Creación del Robert
+Shot Químico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

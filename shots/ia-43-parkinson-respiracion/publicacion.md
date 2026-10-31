@@ -1,4 +1,4 @@
-# Publicación · Shot IA #43 · La IA que busca Parkinson en cómo respiras dormido
+# Publicación · Shot IA 43 · La IA que busca Parkinson en cómo respiras dormido
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Ojo: es investigación, no una prueba aprobada para diagnosticarte. Quizá un d�
 El dibujo es esquemático. Datos de 2022.
 Fuente: Yang et al., Nature Medicine (2022).
 ¿Te dejarías medir la respiración en tu cuarto si ayudara a detectar una enfermedad? 👇
-Shot IA #43 · La Creación del Robert
+Shot IA 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Parkinson #Salud #Ciencia
 ```
@@ -27,7 +27,7 @@ Esta rayita que sube y baja eres tú respirando dormido. Y ahí una IA busca se�
 En el MIT probaron una IA con 11,964 noches de respiración de 7,671 personas, medidas con un cinturón en el pecho o con un aparato tipo módem que lee tu respiración con ondas de radio, sin tocarte. Entre la noche de alguien con Parkinson y la de alguien sin, distinguía cuál era cuál 9 de cada 10 veces; en un hospital que no conocía, más de 8. También estimaba qué tan avanzado iba. Es investigación de 2022, no una prueba aprobada.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te dejarías medir la respiración en tu cuarto si ayudara a detectar una enfermedad? 👇
-Shot IA #43 · La Creación del Robert
+Shot IA 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Parkinson #Salud #Ciencia
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que busca Parkinson en cómo respiras dormido 😴 | Shot IA #43
+La IA que busca Parkinson en cómo respiras dormido 😴 | Shot IA 43
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta rayita que sube y baja eres tú respirando dormido. Y ahí una IA busca señales de Parkinson. 😴 En 2022, en el MIT, una IA que lee la respiración con ondas de radio, sin tocarte, distinguía la noche de alguien con Parkinson de la de alguien sin 9 de cada 10 veces. Es investigación, no una prueba aprobada.
 ¿Te dejarías medir la respiración en tu cuarto si ayudara a detectar una enfermedad? 👇
-Shot IA #43 · La Creación del Robert
+Shot IA 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Parkinson
 ```
@@ -71,7 +71,7 @@ En Nature Medicine (2022), Yang, Katabi y colegas desarrollaron y evaluaron un m
 Lo interesante para salud digital: es una medición pasiva, en casa y noche tras noche. Lo que falta: los propios autores piden más estudios, y no es una prueba aprobada para diagnosticar.
 ¿Qué te parece un monitoreo así en casa: útil o invasivo?
 Fuente: Yang et al., Nature Medicine 28: 2207–2215 (2022). Datos de 2022.
-Shot IA #43 · La Creación del Robert
+Shot IA 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #SaludDigital #Parkinson #Neurologia #LaCreacionDelRobert
 ```
@@ -86,7 +86,7 @@ Una IA del MIT leyó tu respiración dormido con ondas de radio, sin tocarte, y 
 Esta rayita que sube y baja eres tú respirando dormido. Y ahí una IA busca señales de Parkinson. 😴
 MIT, 2022: un aparato tipo módem lee tu respiración con ondas de radio, sin tocarte. Distinguía la noche de alguien con Parkinson de la de alguien sin 9 de cada 10 veces. Es investigación, no diagnóstico.
 ¿Te lo pondrías en tu cuarto?
-Shot IA #43 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 43 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

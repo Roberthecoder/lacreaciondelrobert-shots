@@ -1,4 +1,4 @@
-# Publicación · Shot IA #28 · La IA de sepsis que no vio 2 de cada 3 casos
+# Publicación · Shot IA 28 · La IA de sepsis que no vio 2 de cada 3 casos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ La lección: una IA médica se prueba por fuera antes de creerle a quien la vend
 El dibujo es esquemático. El estudio de Michigan es de 2021 (datos de 2018–2019); no habla de versiones posteriores del modelo.
 Fuentes: Wong et al., JAMA Internal Medicine (2021); OMS, "Sepsis"; Adams et al., Nature Medicine (2022).
 ¿Confiarías en una alarma de hospital hecha con IA? 👇
-Shot IA #28 · La Creación del Robert
+Shot IA 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Sepsis #SaludDigital #IAenMedicina
 ```
@@ -26,7 +26,7 @@ Esta IA vigilaba pacientes en cientos de hospitales para avisar de sepsis. En un
 La sepsis es cuando tu defensa contra una infección daña tus propios órganos. En 2021, la Universidad de Michigan probó por fuera el modelo de sepsis de Epic con 38,455 hospitalizaciones: calificación de 0.63 (el fabricante reportaba 0.76–0.83), no detectó al 67 % de los casos y mandó alertas por el 18 % de todos los hospitalizados. Otra IA, TREWS (Johns Hopkins, 2022), se asoció con menos muertes, pero ese estudio lo hicieron sus creadores. Lección: una IA médica se prueba por fuera.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Confiarías en una alarma de hospital hecha con IA? 👇
-Shot IA #28 · La Creación del Robert
+Shot IA 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Sepsis #SaludDigital #IAenMedicina
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA de hospital que no vio 2 de cada 3 casos de sepsis 🏥 | Shot IA #28
+La IA de hospital que no vio 2 de cada 3 casos de sepsis 🏥 | Shot IA 28
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta IA vigilaba pacientes en cientos de hospitales para avisar de sepsis. En una prueba, no detectó 2 de cada 3 casos. 🏥 En 2021, la Universidad de Michigan la probó por fuera: sacó 0.63 cuando el fabricante reportaba hasta 0.83, y mandó alertas por casi 1 de cada 5 hospitalizados. Una IA médica se prueba por fuera antes de creerle a quien la vende.
 ¿Confiarías en una alarma de hospital hecha con IA? 👇
-Shot IA #28 · La Creación del Robert
+Shot IA 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Sepsis
 ```
@@ -70,7 +70,7 @@ Hay sistemas con resultados más alentadores: TREWS (Johns Hopkins, Nature Medic
 Para hospitales, reguladores y empresas de salud digital, la conclusión es la misma: validar de forma externa e independiente antes de adoptar, y medir el resultado clínico, no solo la promesa del proveedor.
 ¿Cómo evalúa tu organización una herramienta de IA antes de usarla con pacientes?
 Fuentes: Wong et al., JAMA Intern Med 181(8):1065–1070 (2021); Adams et al., Nat Med 28:1455–1460 (2022). Datos de Michigan de 2018–2019.
-Shot IA #28 · La Creación del Robert
+Shot IA 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #SaludDigital #Sepsis #IAenMedicina #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Una IA de sepsis usada en cientos de hospitales no detectó 2 de cada 3 casos al
 Esta IA vigilaba pacientes en cientos de hospitales para avisar de sepsis. En una prueba, no detectó 2 de cada 3 casos. 🏥
 Universidad de Michigan, 2021: alertó por casi 1 de cada 5 hospitalizados y solo en 7 de cada 100 casos avisó de alguien sin antibióticos a tiempo.
 ¿Le creerías a una alarma así?
-Shot IA #28 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 28 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

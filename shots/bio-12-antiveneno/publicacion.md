@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #12 · Los anticuerpos del suero contra el alacrán los hizo un caballo (faboterápicos)
+# Publicación · Shot Biotecnológico 12 · Los anticuerpos del suero contra el alacrán los hizo un caballo (faboterápicos)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Si te pica un alacrán, no uses remedios caseros: ve de inmediato al centro de s
 El dibujo es esquemático.
 Fuentes: ficha FDA de Anascorp · Boyer et al., NEJM 2009 · Chippaux et al., Toxicon 2020 · Boletín Epidemiológico SSA 2025 · IBt-UNAM.
 ¿En tu casa salen alacranes? ¿Cómo les dicen en tu región? 👇
-Shot Biotecnológico #12 · La Creación del Robert
+Shot Biotecnológico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Alacran #Antiveneno #HechoEnMexico
 ```
@@ -26,7 +26,7 @@ Los anticuerpos de tu suero contra el alacrán no los hizo una máquina: los hiz
 Al caballo le inyectan poquito veneno, cada vez más; su sangre se llena de anticuerpos. Se separa el plasma, la pepsina deshace la base de cada anticuerpo en Y y quedan los brazos que atrapan las toxinas: el faboterápico. En Tucson (2004–2005), los 8 niños graves que lo recibieron se aliviaron en menos de 4 horas; con placebo, solo 1 de 7. La FDA lo aprobó en 2011: es mexicano. En 2025 México registró más de 300 mil intoxicaciones por alacrán (casi 48 mil en Jalisco, cifras preliminares).
 Si te pica un alacrán, ve de inmediato al centro de salud. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa salen alacranes? 👇
-Shot Biotecnológico #12 · La Creación del Robert
+Shot Biotecnológico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Alacran #Antiveneno #HechoEnMexico
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu suero contra el alacrán lo empezó un caballo 🦂🐴 | Shot Biotecnológico #12
+Tu suero contra el alacrán lo empezó un caballo 🦂🐴 | Shot Biotecnológico 12
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Chippaux et al., Toxicon 2020: https://pubmed.ncbi.nlm.nih.gov/33065199/
 - Boletín Epidemiológico SSA, semana 53 de 2025: https://epidemiologia.salud.gob.mx/gobmx/salud/documentos/boletin/2025.zip
 ¿En tu casa salen alacranes? ¿Cómo les dicen en tu región? 👇
-Shot Biotecnológico #12 · La Creación del Robert
+Shot Biotecnológico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Alacran
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 Los anticuerpos de tu suero contra el alacrán no los hizo una máquina: los hizo un caballo. 🦂🐴
 Al caballo le inyectan poquito veneno y su sangre se llena de anticuerpos; con una enzima les cortan la base y quedan los "brazos" que atrapan las toxinas. En un ensayo en Arizona, los 8 niños graves que lo recibieron se aliviaron en menos de 4 horas. Y es mexicano.
 ¿En tu casa salen alacranes? 👇
-Shot Biotecnológico #12 · La Creación del Robert
+Shot Biotecnológico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Alacran
 ```
@@ -71,7 +71,7 @@ Los faboterápicos son un caso de biotecnología mexicana con impacto medible. C
 La evidencia: en un ensayo doble ciego en Tucson, Arizona (2004–2005; NEJM 2009), los 8 niños graves tratados se recuperaron en menos de 4 horas, contra 1 de 7 con placebo. En 2011 la FDA aprobó el producto (Anascorp), fabricado en México.
 El problema sigue siendo enorme: en 2025 el Boletín Epidemiológico registró más de 300 mil intoxicaciones por picadura de alacrán en México (casi 48 mil en Jalisco; cifras preliminares). La mortalidad, en cambio, bajó de unas 500 muertes al año a fines de los setenta a menos de 50 (Toxicon, 2020), por mejor atención hospitalaria, faboterápicos purificados y más acceso a servicios de salud.
 ¿Qué otro desarrollo biotecnológico mexicano merece más reconocimiento?
-Shot Biotecnológico #12 · La Creación del Robert
+Shot Biotecnológico 12 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #SaludPublica #CienciaMexicana #LaCreacionDelRobert
 ```
@@ -86,7 +86,7 @@ Los anticuerpos de tu suero contra el alacrán los hizo un caballo 🐴🦂 En u
 Los anticuerpos de tu suero contra el alacrán no los hizo una máquina: los hizo un caballo. 🦂🐴
 Le inyectan poquito veneno, su sangre se llena de anticuerpos y con pepsina les cortan la base: quedan los brazos que atrapan las toxinas. En Arizona, los 8 niños graves que lo recibieron se aliviaron en menos de 4 horas. Es mexicano.
 ¿En tu casa salen alacranes? 👇
-Shot Biotecnológico #12 · La Creación del Robert
+Shot Biotecnológico 12 · La Creación del Robert
 #Biotecnologia
 ```
 

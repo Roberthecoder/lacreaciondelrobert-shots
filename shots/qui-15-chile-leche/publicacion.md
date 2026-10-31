@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #15 · Ese ardor no es calor (el chile, el agua y la leche)
+# Publicación · Shot Químico 15 · Ese ardor no es calor (el chile, el agua y la leche)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Lo curioso: usando capsaicina, David Julius descubrió el sensor TRPV1 en 1997, 
 El dibujo es esquemático.
 Fuentes: Nolden, Lenart y Hayes 2019 · Caterina et al. 1997 · Nobel 2021 · Merck Index.
 ¿Tú con qué te apagas la salsa? 👇
-Shot Químico #15 · La Creación del Robert
+Shot Químico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Chile #Picante #Capsaicina
 ```
@@ -24,7 +24,7 @@ Ese ardor del habanero no es calor: es la capsaicina engañando a tu sensor de c
 La capsaicina prende TRPV1, el sensor de tus nervios que se enciende con el calor que quema, y casi no se disuelve en agua. En 2019, en Penn State, 72 personas probaron siete bebidas después de un jugo de tomate picante: todas ayudaron algo, pero solo la leche (entera o descremada, igual) y un agua de sabor con azúcar le ganaron al agua. Y con capsaicina, David Julius descubrió TRPV1 en 1997: Nobel compartido en 2021.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú con qué te apagas la salsa? 👇
-Shot Químico #15 · La Creación del Robert
+Shot Químico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Chile #Picante #Capsaicina
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese ardor del chile no es calor 🌶️ | Shot Químico #15
+Ese ardor del chile no es calor 🌶️ | Shot Químico 15
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - Nobel Assembly at Karolinska Institutet (2021). Press release: The Nobel Prize in Physiology or Medicine 2021. https://www.nobelprize.org/prizes/medicine/2021/press-release/
 - The Merck Index, 15.ª ed. (2013), vía PubChem: Capsaicin (solubilidad). https://pubchem.ncbi.nlm.nih.gov/compound/1548943
 ¿Tú con qué te apagas la salsa? 👇
-Shot Químico #15 · La Creación del Robert
+Shot Químico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Chile
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese ardor del habanero no es calor: es la capsaicina engañando a tu sensor de calor. 🌶️ Casi no se disuelve en agua, y en un estudio de 2019 con 72 personas, la leche le ganó al agua para bajar el ardor.
 ¿Tú con qué te apagas la salsa? 👇
-Shot Químico #15 · La Creación del Robert
+Shot Químico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Picante
 ```
@@ -67,14 +67,14 @@ El ardor del chile no es calor: es química. La capsaicina activa TRPV1, el mism
 En 2019, un equipo del Sensory Evaluation Center de Penn State (Nolden, Lenart y Hayes, Physiology & Behavior) comparó siete bebidas en 72 personas tras un jugo de tomate picante. Todas redujeron el ardor frente a no tomar nada, pero solo la leche (entera o descremada) y una bebida de fruta con azúcar superaron al agua. Que la entera no fuera mejor que la descremada sugiere, según los autores, que la proteína podría importar más que la grasa: una hipótesis que aún hay que probar.
 Y un dato de historia de la ciencia: con esa misma molécula, David Julius identificó TRPV1 en 1997, trabajo que lo llevó a compartir el Nobel de Fisiología o Medicina 2021.
 ¿Qué otra "sabiduría de cocina" te gustaría ver puesta a prueba?
-Shot Químico #15 · La Creación del Robert
+Shot Químico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeLosAlimentos #Neurociencia #Divulgacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese ardor del chile no es calor: la capsaicina prende TRPV1, tu sensor de calor que quema. En 2019, con 72 personas, la leche le ganó al agua para apagarlo. 🌶️🥛 Shot Químico #15 #Quimica
+Ese ardor del chile no es calor: la capsaicina prende TRPV1, tu sensor de calor que quema. En 2019, con 72 personas, la leche le ganó al agua para apagarlo. 🌶️🥛 Shot Químico 15 #Quimica
 ```
 
 ### Threads
@@ -82,7 +82,7 @@ Ese ardor del chile no es calor: la capsaicina prende TRPV1, tu sensor de calor 
 Ese ardor del habanero no es calor: es la capsaicina engañando a tu sensor de calor. 🌶️
 Casi no se disuelve en agua, y en un estudio de 2019 con 72 personas, solo la leche y un agua de sabor con azúcar le ganaron al agua. La descremada funcionó igual que la entera.
 ¿Tú con qué te apagas la salsa?
-Shot Químico #15 · La Creación del Robert
+Shot Químico 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

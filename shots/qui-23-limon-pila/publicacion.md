@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #23 · Ese limón no te da electricidad (la pila de limón)
+# Publicación · Shot Químico 23 · Ese limón no te da electricidad (la pila de limón)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Por eso, para prender un foquito LED se ponen 4 o 5 limones en fila. Y ojo: ese 
 El dibujo es esquemático.
 Fuentes: Goodisman, J Chem Educ 2001 · ANU College of Science · OpenStax Chemistry 2e.
 ¿Tú hiciste la pila de limón en la escuela? 👇
-Shot Químico #23 · La Creación del Robert
+Shot Químico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #PilaDeLimon #Electroquimica #ExperimentosCaseros
 ```
@@ -24,7 +24,7 @@ Ese limón no te está dando electricidad: el que se está gastando es el clavo.
 El zinc del clavo galvanizado se oxida y suelta electrones que viajan por el cable hasta el cobre; el jugo ácido es el electrolito que cierra el circuito. En 2001, Jerry Goodisman (Syracuse) mostró con limones simulados que en el cobre se forma gas hidrógeno, y midió 0.91 volts con zinc y cobre en ácido cítrico: ni un volt. Por eso un LED pide 4 o 5 limones en fila. Y ese limón ya no se come.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú la hiciste en la escuela? 👇
-Shot Químico #23 · La Creación del Robert
+Shot Químico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #PilaDeLimon #Electroquimica
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese limón no te da electricidad 🍋⚡ | Shot Químico #23
+Ese limón no te da electricidad 🍋⚡ | Shot Químico 23
 ```
 Descripción:
 ```text
@@ -44,7 +44,7 @@ Fuentes:
 - ANU College of Science. How to make a lemon battery. https://science.anu.edu.au/engagement/science-lab-experiments-home-school/how-make-lemon-battery
 - OpenStax (2019). Chemistry 2e, 17.2 Galvanic Cells. https://openstax.org/books/chemistry-2e/pages/17-2-galvanic-cells
 ¿Tú hiciste la pila de limón en la escuela? 👇
-Shot Químico #23 · La Creación del Robert
+Shot Químico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #PilaDeLimon
 ```
@@ -53,7 +53,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese limón no te está dando electricidad: el que se está gastando es el clavo. 🍋⚡ El zinc del clavo suelta electrones que viajan por el cable hasta el cobre; el jugo ácido solo cierra el circuito. Una sola pila de limón da menos de un volt: un LED pide 4 o 5.
 ¿Tú la hiciste en la escuela? 👇
-Shot Químico #23 · La Creación del Robert
+Shot Químico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #PilaDeLimon
 ```
@@ -64,14 +64,14 @@ La pila de limón no saca su energía del limón: la saca del zinc del clavo gal
 Es el experimento escolar más clásico de electroquímica y casi siempre se explica a medias. En 2001, Jerry Goodisman (Syracuse University, J Chem Educ) lo estudió con limones simulados hechos con ácido: el zinc se oxida y se disuelve (pierde masa), los electrones viajan por el circuito externo al cobre, y en el cobre los iones hidrógeno del ácido se reducen a gas hidrógeno. El cobre no pierde masa. Con zinc y cobre en ácido cítrico midió 0.91 V, por eso hacen falta 4 o 5 limones en serie para encender un LED.
 Un buen recordatorio de que un experimento conocido no siempre es un experimento bien entendido.
 ¿Qué otro experimento escolar crees que se explica mal?
-Shot Químico #23 · La Creación del Robert
+Shot Químico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Electroquimica #EducacionCientifica #Ciencia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese limón no te da electricidad: se gasta el zinc del clavo. El jugo solo cierra el circuito, y en el cobre se forma hidrógeno. Una pila de limón da 0.91 V: ni un volt (Goodisman, 2001). 🍋⚡ Shot Químico #23 #Quimica
+Ese limón no te da electricidad: se gasta el zinc del clavo. El jugo solo cierra el circuito, y en el cobre se forma hidrógeno. Una pila de limón da 0.91 V: ni un volt (Goodisman, 2001). 🍋⚡ Shot Químico 23 #Quimica
 ```
 
 ### Threads
@@ -79,7 +79,7 @@ Ese limón no te da electricidad: se gasta el zinc del clavo. El jugo solo cierr
 Ese limón no te está dando electricidad: el que se está gastando es el clavo. 🍋⚡
 El zinc del clavo galvanizado suelta electrones que viajan por el cable hasta el cobre; el jugo ácido es el electrolito. Una sola da menos de un volt, por eso un LED pide 4 o 5 limones en fila.
 ¿Tú la hiciste en la escuela?
-Shot Químico #23 · La Creación del Robert
+Shot Químico 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

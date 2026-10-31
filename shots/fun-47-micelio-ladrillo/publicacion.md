@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #47 · Esto no es unicel: es un hongo
+# Publicación · Shot Fungi Mati 47 · Esto no es unicel: es un hongo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Pero tiene trampa: es mucho más débil que la madera (no sirve para cargar una 
 El dibujo es esquemático.
 Fuentes: Aiduang et al. 2022 (Journal of Fungi); Holcim Foundation; Arup; Elsacker et al. 2019 (PLoS ONE).
 ¿Tú cambiarías el unicel por empaques de hongo? 👇
-Shot Fungi Mati #47 · La Creación del Robert
+Shot Fungi Mati 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Micelio #Unicel
 ```
@@ -24,7 +24,7 @@ Esto no es unicel: es un hongo que se comió basura del campo. 🍄📦
 Rastrojo de maíz o cascarilla + micelio de hongo, en un molde: las hifas amarran los pedacitos y en días es una pieza sólida; luego la secan con calor para que deje de crecer. En 2014, en el MoMA PS1 de Nueva York, levantaron una torre de más de 12 m con 10,000 ladrillos así, y al final se hicieron composta. Pero es mucho más débil que la madera y chupa agua, así que hoy se usa en empaques, aislantes y paneles de interior.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú cambiarías el unicel por empaques de hongo? 👇
-Shot Fungi Mati #47 · La Creación del Robert
+Shot Fungi Mati 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Micelio #Unicel
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto NO es unicel: es un HONGO 🍄📦 | Shot Fungi Mati #47
+Esto NO es unicel: es un HONGO 🍄📦 | Shot Fungi Mati 47
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - Autodesk Research. Hy-Fi. https://www-pt.autodesk.com/research/projects/hy-fi
 - Elsacker, E. et al. (2019). Mechanical, physical and chemical characterisation of mycelium-based composites with different types of lignocellulosic substrates. PLoS ONE 14(7): e0213954. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0213954
 ¿Tú cambiarías el unicel por empaques de hongo? 👇
-Shot Fungi Mati #47 · La Creación del Robert
+Shot Fungi Mati 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Micelio #FungiMati
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es unicel: es un hongo que se comió basura del campo. 🍄 Rastrojo de maíz + micelio, en un molde: las hifas lo amarran y en días es una pieza sólida. En 2014 hicieron con eso una torre de más de 12 m en Nueva York. Eso sí: es más débil que la madera y chupa agua, así que se usa en empaques, aislantes y paneles de interior.
 ¿Tú cambiarías el unicel por empaques de hongo? 👇
-Shot Fungi Mati #47 · La Creación del Robert
+Shot Fungi Mati 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micelio
 ```
@@ -68,7 +68,7 @@ Materiales de micelio: qué sí pueden hacer y qué no.
 Los compuestos de micelio se fabrican cultivando hongos sobre residuos agrícolas en moldes; las hifas unen las partículas y el secado con calor detiene el crecimiento. En 2014, Hy-Fi (The Living, MoMA PS1, Nueva York) demostró la idea a escala: una torre de más de 12 m con 10,000 ladrillos de tallos de maíz y micelio, compostados al desmontarla.
 Los límites, según una revisión de 2022 (Journal of Fungi): resistencia a la compresión de 0.03–4.44 MPa (madera blanda: 35–43 MPa), por lo que no sustituyen a la madera en usos estructurales; y alta absorción de agua (24–560 % de su peso, contra 0.03–9 % del poliestireno). Su nicho actual: empaques, aislamiento y paneles de interior, en lugares secos.
 ¿Ves aplicaciones de este tipo de materiales en tu industria?
-Shot Fungi Mati #47 · La Creación del Robert
+Shot Fungi Mati 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Biomateriales #Sustentabilidad #Ciencia
 ```
@@ -81,7 +81,7 @@ Esto no es unicel: es un hongo. Rastrojo + micelio en un molde = empaques y hast
 ### Threads
 ```text
 Esto no es unicel: es un hongo que se comió basura del campo. 🍄 Las hifas amarran el rastrojo dentro de un molde y en días es una pieza sólida. Con eso hasta levantaron una torre de 10,000 ladrillos en Nueva York (2014). Pero es más débil que la madera y chupa agua. ¿Tú lo usarías?
-Shot Fungi Mati #47 · La Creación del Robert
+Shot Fungi Mati 47 · La Creación del Robert
 #Hongos
 ```
 

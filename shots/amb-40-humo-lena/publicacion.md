@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #40 · El humo de la leña: partículas que llegan a tus pulmones
+# Publicación · Shot Ambiental 40 · El humo de la leña: partículas que llegan a tus pulmones
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ El humo sigue ahí, pero la mayor parte sale por la chimenea, arriba del techo, 
 El dibujo es esquemático.
 Fuentes: OMS, EPA, INEGI y Zuk et al. 2007.
 ¿En tu familia cocinan o cocinaron con leña? 👇
-Shot Ambiental #40 · La Creación del Robert
+Shot Ambiental 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Leña #CalidadDelAire #Michoacan
 ```
@@ -26,7 +26,7 @@ Miden menos de 2.5 micras (unas 30 veces más finas que un pelo), llegan al fond
 La salida no es culpar a nadie: en Michoacán, la estufa Patsari, con chimenea, bajó 71 % las partículas finas junto a la estufa y a la mitad lo que respiraba cada persona al día (Zuk et al., 2007).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu familia cocinan o cocinaron con leña? 👇
-Shot Ambiental #40 · La Creación del Robert
+Shot Ambiental 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Leña #CalidadDelAire #Michoacan
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese humo de la cocina no es solo olor 🔥 | Shot Ambiental #40
+Ese humo de la cocina no es solo olor 🔥 | Shot Ambiental 40
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Zuk M. et al. (2007), J Expo Sci Environ Epidemiol 17:224-32: https://pubmed.ncbi.nlm.nih.gov/16721411/
 - Gaceta UNAM (2024), estufas Patsari: https://www.gaceta.unam.mx/ahora-cuando-cocino-el-aire-se-siente-ligero-huele-limpio/
 ¿En tu familia cocinan o cocinaron con leña? 👇
-Shot Ambiental #40 · La Creación del Robert
+Shot Ambiental 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CalidadDelAire #Leña
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese humo de la cocina no es solo olor: son partículas tan finas que llegan al fondo de tus pulmones. 🔥 En México, en 2025, casi 1 de cada 10 viviendas cocinaba con leña o carbón. En Michoacán, la estufa Patsari, con chimenea, bajó a la mitad lo que respiraba cada persona al día.
 ¿En tu familia cocinan o cocinaron con leña? 👇
-Shot Ambiental #40 · La Creación del Robert
+Shot Ambiental 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CalidadDelAire #Leña
 ```
@@ -72,7 +72,7 @@ La OMS estima que unos 2,100 millones de personas cocinan con fuego abierto o es
 La evidencia mexicana muestra que hay soluciones que no dependen de dejar la leña de un día para otro: en un estudio publicado en 2007 (Zuk, Masera y colegas) en 53 casas de Michoacán, la estufa Patsari, con chimenea, redujo 71 % (mediana) las partículas finas junto a la estufa y a la mitad la exposición personal diaria, aun con uso mixto del fogón.
 Las políticas de cocción limpia funcionan mejor cuando parten de la realidad de cada hogar, no de culpar a quien no tiene opción.
 ¿Qué crees que ayudaría más a que estas estufas lleguen a quien las necesita?
-Shot Ambiental #40 · La Creación del Robert
+Shot Ambiental 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #SaludPublica #CalidadDelAire #LaCreacionDelRobert
 ```

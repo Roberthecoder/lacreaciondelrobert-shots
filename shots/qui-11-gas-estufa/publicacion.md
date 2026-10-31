@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #11 · Ese olor no es el gas de tu estufa (mercaptanos: la alarma que le agregan)
+# Publicación · Shot Químico 11 · Ese olor no es el gas de tu estufa (mercaptanos: la alarma que le agregan)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -17,7 +17,7 @@ Si huele a gas (guía oficial de CDMX): cierra la llave de paso, no enciendas ce
 El dibujo es esquemático.
 Fuentes: NOM-016-CRE-2016 · Guía gas LP Alcaldía Coyoacán · NOAA 2015 · Railroad Commission of Texas · Nagata 2003.
 ¿A qué te huele a ti el gas? 👇
-Shot Químico #11 · La Creación del Robert
+Shot Químico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #GasLP #Seguridad #Mercaptano
 ```
@@ -29,7 +29,7 @@ El gas LP (propano y butano) es esencialmente inodoro; le añaden mercaptanos, m
 Si huele a gas (guía oficial de CDMX): cierra la llave de paso, abre puertas y ventanas, no prendas ni apagues la luz ni aparatos, nada de cerillos ni chispas, y reporta al 911.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A qué te huele a ti el gas? 👇
-Shot Químico #11 · La Creación del Robert
+Shot Químico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #GasLP #Seguridad #Mercaptano
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese olor no es el gas de tu estufa 🔔 | Shot Químico #11
+Ese olor no es el gas de tu estufa 🔔 | Shot Químico 11
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - 49 CFR 173.315(b)(1). https://www.ecfr.gov/current/title-49/section-173.315
 - PubChem: ethanethiol (CID 6343). https://pubchem.ncbi.nlm.nih.gov/compound/6343
 ¿A qué te huele a ti el gas? 👇
-Shot Químico #11 · La Creación del Robert
+Shot Químico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #GasLP
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 Ese olor no es el gas de tu estufa: es una alarma que le agregan a propósito. 🔔 El gas LP casi no huele; le añaden mercaptanos, moléculas con azufre que tu nariz detecta en cantidades diminutas.
 Si huele a gas: cierra la llave de paso, abre puertas y ventanas, no prendas ni apagues la luz ni aparatos y reporta al 911 (guía oficial de CDMX).
 ¿A qué te huele a ti el gas? 👇
-Shot Químico #11 · La Creación del Robert
+Shot Químico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #GasLP
 ```
@@ -77,14 +77,14 @@ El gas LP (principalmente propano y butano) es esencialmente inodoro, según la 
 La regla nació de una tragedia: en 1937, en New London, Texas, gas residual sin olor se acumuló bajo una escuela y una chispa, al parecer de una lijadora eléctrica, lo encendió; murieron casi 300 personas. Ese mismo año, Texas facultó a la Railroad Commission para reglamentar la odorización del gas natural y del gas LP.
 Un buen ejemplo de diseño de seguridad: convertir un riesgo invisible en una señal que cualquiera detecta.
 ¿Qué otras "alarmas" químicas usamos sin darnos cuenta?
-Shot Químico #11 · La Creación del Robert
+Shot Químico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Seguridad #GasLP #ProteccionCivil #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese olor no es el gas de tu estufa: es una alarma que le agregan. El gas LP casi no huele; el etil mercaptano se nota en cantidades ~170 millones de veces menores que el propano. Si huele a gas: cierra la llave, ventila y no toques la luz. 🔔 Shot Químico #11 #Quimica
+Ese olor no es el gas de tu estufa: es una alarma que le agregan. El gas LP casi no huele; el etil mercaptano se nota en cantidades ~170 millones de veces menores que el propano. Si huele a gas: cierra la llave, ventila y no toques la luz. 🔔 Shot Químico 11 #Quimica
 ```
 
 ### Threads
@@ -92,7 +92,7 @@ Ese olor no es el gas de tu estufa: es una alarma que le agregan. El gas LP casi
 Ese olor no es el gas de tu estufa: es una alarma que le agregan a propósito. 🔔
 El gas LP es esencialmente inodoro; le ponen mercaptanos, con azufre, que tu nariz detecta en cantidades diminutas. Si huele a gas: cierra la llave, abre ventanas, no prendas ni apagues la luz y reporta al 911.
 ¿A qué te huele a ti el gas?
-Shot Químico #11 · La Creación del Robert
+Shot Químico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

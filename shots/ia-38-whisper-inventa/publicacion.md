@@ -1,4 +1,4 @@
-# Publicación · Shot IA #38 · La IA que transcribe tu voz a veces escribe lo que nadie dijo
+# Publicación · Shot IA 38 · La IA que transcribe tu voz a veces escribe lo que nadie dijo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que si una IA transcribe tu consulta, pide revisarla: eso quizá no lo dijo
 El dibujo es esquemático. Datos de 2023 (pruebas) y 2024 (publicación y reportaje).
 Fuentes: Koenecke et al., ACM FAccT 2024 · AP, oct 2024.
 ¿Has usado una app que transcribe tu voz? ¿Te ha escrito algo que no dijiste? 👇
-Shot IA #38 · La Creación del Robert
+Shot IA 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Whisper #Transcripcion #Salud
 ```
@@ -27,7 +27,7 @@ En 2023, investigadoras de Cornell y otras universidades le pasaron más de 13 m
 Si una IA transcribe tu consulta, pide revisarla.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Has usado una app que transcribe tu voz? ¿Te ha escrito algo que no dijiste? 👇
-Shot IA #38 · La Creación del Robert
+Shot IA 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Whisper #Transcripcion #Salud
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que transcribe tu voz a veces inventa frases que nadie dijo 🎙️ | Shot IA #38
+La IA que transcribe tu voz a veces inventa frases que nadie dijo 🎙️ | Shot IA 38
 ```
 Descripción:
 ```text
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Eso no lo dijo nadie: lo escribió la IA. 🎙️ En 2023, un estudio con más de 13 mil audios encontró que Whisper, la IA de OpenAI que transcribe voz, inventó frases enteras en cerca de 1 de cada 100 transcripciones, y casi 4 de cada 10 de esos inventos eran dañinos. Si una IA transcribe tu consulta, pide revisarla.
 ¿Has usado una app que transcribe tu voz? ¿Te ha escrito algo que no dijiste? 👇
-Shot IA #38 · La Creación del Robert
+Shot IA 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Whisper
 ```
@@ -70,7 +70,7 @@ En 2023, Koenecke, Choi, Mei, Schellmann y Sloane (Cornell y otras universidades
 Esto importa porque la transcripción ya entró al consultorio: en 2024, AP reportó que más de 30,000 clínicos usaban una herramienta basada en Whisper (Nabla). Si el texto se vuelve parte de un expediente, alguien tiene que revisarlo contra el audio.
 ¿En tu organización quién revisa lo que transcribe la IA?
 Fuentes: Koenecke et al., ACM FAccT '24 (doi 10.1145/3630106.3658996); AP, 26 oct 2024. Datos de 2023–2024.
-Shot IA #38 · La Creación del Robert
+Shot IA 38 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Salud #Transcripcion #EticaDigital #LaCreacionDelRobert
 ```
@@ -86,7 +86,7 @@ Eso no lo dijo nadie: lo escribió la IA. 🎙️
 En 2023, Whisper (OpenAI) inventó frases enteras en cerca de 1 de cada 100 transcripciones, y el 38 % de esos inventos eran dañinos. Pasó más con personas que hablan con pausas largas.
 Si una IA transcribe tu consulta, pide revisarla.
 ¿Te ha pasado con alguna app?
-Shot IA #38 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 38 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

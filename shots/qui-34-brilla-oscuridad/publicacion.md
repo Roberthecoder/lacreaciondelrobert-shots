@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #34 · Esas estrellitas no son radiactivas (fosforescencia: luz guardada en trampas)
+# Publicación · Shot Químico 34 · Esas estrellitas no son radiactivas (fosforescencia: luz guardada en trampas)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ La pintura que brilla en la oscuridad ya no lleva material radiactivo. Si tienes
 El dibujo es esquemático.
 Fuentes: EPA · Coursey 2021 (J Res NIST) · Matsuzawa et al. 1996 · Van den Eeckhout et al. 2010 · Happek y Setlur 2010.
 ¿Tú tenías estrellitas en el techo de tu cuarto? 👇
-Shot Químico #34 · La Creación del Robert
+Shot Químico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Fosforescencia #BrillaEnLaOscuridad #RadiumGirls
 ```
@@ -25,7 +25,7 @@ Esas estrellitas de tu techo no son radiactivas: sueltan la luz que les diste de
 Las que brillan horas suelen ser aluminato de estroncio con europio y disprosio: la luz mueve cargas que quedan atrapadas en "trampas" del cristal, y el calor del cuarto las suelta poco a poco como luz verde. Antes, los relojes brillaban con radio y sulfuro de zinc, y las pintoras de carátulas de Nueva Jersey tragaban radio al afinar el pincel con los labios. En 1996, la empresa japonesa Nemoto publicó el aluminato con disprosio: más de 10 veces más brillante que el sulfuro de zinc sin radio de entonces.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú tenías estrellitas en el techo? 👇
-Shot Químico #34 · La Creación del Robert
+Shot Químico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Fosforescencia #BrillaEnLaOscuridad #RadiumGirls
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas estrellitas no son radiactivas ✨ | Shot Químico #34
+Esas estrellitas no son radiactivas ✨ | Shot Químico 34
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Van den Eeckhout K., Smet P.F., Poelman D. (2010). Persistent Luminescence in Eu2+-Doped Compounds: A Review. Materials 3(4):2536–2566. https://doi.org/10.3390/ma3042536
 - Happek U., Setlur A. (2010). Persistent Phosphors Based on Alkaline-Earth Aluminate Hosts. Electrochem Soc Interface 19(1):53–54. https://www.electrochem.org/dl/interface/spr/spr10/spr10_p053-054.pdf
 ¿Tú tenías estrellitas en el techo de tu cuarto? 👇
-Shot Químico #34 · La Creación del Robert
+Shot Químico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Fosforescencia
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas estrellitas de tu techo no son radiactivas: sueltan la luz que les diste de día. ✨ La luz deja cargas atrapadas en "trampas" del cristal, y el calor del cuarto las suelta poco a poco como luz verde. Antes los relojes brillaban con radio; hoy esta pintura ya no lleva material radiactivo.
 ¿Tú tenías estrellitas en el techo? 👇
-Shot Químico #34 · La Creación del Robert
+Shot Químico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Fosforescencia
 ```
@@ -69,14 +69,14 @@ Las estrellitas que brillan en la oscuridad no son radiactivas: guardan luz.
 Los pigmentos fosforescentes de larga duración suelen ser aluminato de estroncio con europio y disprosio. La luz deja cargas atrapadas en niveles de "trampa" del cristal, y la energía térmica a temperatura ambiente las libera poco a poco; al recombinarse en el europio, emiten luz verde. Aún se discute si lo atrapado son electrones o huecos.
 Este material lo publicaron en 1996 Matsuzawa et al. (Nemoto & Co., Tokio): más de 10 veces más brillante que el ZnS:Cu,Co, muy usado hasta entonces, con luz detectable a las 24 horas. Antes, la pintura luminosa de relojes llevaba radio, y lo pagaron con su salud las pintoras de carátulas de Nueva Jersey, las "Radium Girls".
 ¿Qué otro material cotidiano esconde una historia así?
-Shot Químico #34 · La Creación del Robert
+Shot Químico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeMateriales #Luminiscencia #HistoriaDeLaCiencia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esas estrellitas del techo no son radiactivas: guardan luz en "trampas" de su cristal y el calor del cuarto la suelta poco a poco. El aluminato de estroncio con disprosio se publicó en 1996 en Japón. ✨ Shot Químico #34 #Quimica
+Esas estrellitas del techo no son radiactivas: guardan luz en "trampas" de su cristal y el calor del cuarto la suelta poco a poco. El aluminato de estroncio con disprosio se publicó en 1996 en Japón. ✨ Shot Químico 34 #Quimica
 ```
 
 ### Threads
@@ -84,7 +84,7 @@ Esas estrellitas del techo no son radiactivas: guardan luz en "trampas" de su cr
 Esas estrellitas de tu techo no son radiactivas: sueltan la luz que les diste de día. ✨
 La luz deja cargas atrapadas en el cristal, y el calor del cuarto las suelta poco a poco como luz verde. Hace 100 años los relojes sí brillaban con radio; hoy esta pintura ya no lleva material radiactivo.
 ¿Tú tenías estrellitas en el techo?
-Shot Químico #34 · La Creación del Robert
+Shot Químico 34 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

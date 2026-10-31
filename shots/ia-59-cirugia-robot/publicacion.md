@@ -1,4 +1,4 @@
-# Publicación · Shot IA #59 · El robot que cosió un intestino (y quién lo vigilaba)
+# Publicación · Shot IA 59 · El robot que cosió un intestino (y quién lo vigilaba)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que sí: esas puntadas las hizo un robot… con una persona al lado, vigila
 El dibujo es esquemático.
 Fuentes: Saeidi et al., Science Robotics (2022); Kim et al., Science Robotics (2025).
 ¿Te dejarías operar por un robot si un cirujano lo vigila? 👇
-Shot IA #59 · La Creación del Robert
+Shot IA 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Robotica #Cirugia #Ciencia
 ```
@@ -27,7 +27,7 @@ El robot STAR planea cada puntada con cámaras 3D y sigue el movimiento de la re
 En 2025, otro robot (SRT-H) puso clips y cortó los tubos de ocho vesículas de cerdo fuera del cuerpo él solo. Falta probarlo con sangrado y movimiento. Ninguno se probó en personas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Te dejarías operar por un robot si un cirujano lo vigila? 👇
-Shot IA #59 · La Creación del Robert
+Shot IA 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Robotica #Cirugia
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un robot cosió el intestino de un cerdo vivo 🤖🪡 | Shot IA #59
+Un robot cosió el intestino de un cerdo vivo 🤖🪡 | Shot IA 59
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas puntadas no las hizo un cirujano: las hizo un robot, en el intestino de un cerdo vivo. 🤖 El robot STAR (Johns Hopkins, estudio publicado en 2022) separó sus puntadas más parejo que cirujanos expertos en intestino de práctica. Pero una de cada tres puntadas en los cerdos la corrigió una persona, y tardó 62 minutos contra 26. Un robot… con una persona al lado, vigilando.
 ¿Te dejarías operar por un robot si un cirujano lo vigila? 👇
-Shot IA #59 · La Creación del Robert
+Shot IA 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Robotica
 ```
@@ -70,7 +70,7 @@ En 2025, SRT-H (Johns Hopkins y Stanford) completó sin intervención humana la 
 La lección: más consistencia, sí; autonomía total, todavía no. Por ahora el modelo es robot + supervisión humana, y ninguno de los dos estudios incluyó personas.
 ¿Qué tendría que demostrar un robot para que confiaras en él en un quirófano?
 Fuentes: Saeidi et al., Science Robotics 7(62): eabj2908 (2022); Kim et al., Science Robotics (2025).
-Shot IA #59 · La Creación del Robert
+Shot IA 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Robotica #Cirugia #Salud #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Un robot cosió el intestino de cerdos vivos (STAR, Science Robotics 2022): sepa
 Esas puntadas no las hizo un cirujano: las hizo un robot, en el intestino de un cerdo vivo. 🤖🪡
 STAR (estudio de 2022) separó sus puntadas más parejo que cirujanos expertos en tejido de práctica. Pero una de cada tres puntadas en los cerdos la corrigió una persona, y tardó 62 minutos contra 26.
 ¿Te dejarías operar por un robot si un cirujano lo vigila?
-Shot IA #59 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 59 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

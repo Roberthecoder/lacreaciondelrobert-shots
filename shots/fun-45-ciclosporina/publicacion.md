@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #45 · El puñado de tierra que hizo posibles los trasplantes: la ciclosporina
+# Publicación · Shot Fungi Mati 45 · El puñado de tierra que hizo posibles los trasplantes: la ciclosporina
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo más raro: en la naturaleza, este moho es un parásito de larvas de escarabaj
 El dibujo es esquemático. No es consejo médico.
 Fuentes: Bushley et al. 2013 (PLoS Genetics); NEJM 1983; Borel et al. 1976; Heusler y Pletscher 2001.
 ¿Conoces a alguien que viva con un trasplante? 👇
-Shot Fungi Mati #45 · La Creación del Robert
+Shot Fungi Mati 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Trasplantes #Ciencia
 ```
@@ -25,7 +25,7 @@ Este puñado de tierra no es solo tierra: de aquí salió la medicina que volvi�
 Un moho de una muestra de suelo de Noruega, Tolypocladium inflatum, fabrica la ciclosporina. Dentro de los linfocitos T, la ciclosporina apaga la calcineurina, un interruptor que enciende las señales del ataque contra el órgano nuevo. En 1983, en Canadá, con 209 trasplantes de riñón, se estimó que al año funcionaban 80 de cada 100 con ciclosporina, contra 64 con el tratamiento de antes. Y en la naturaleza, este moho es un parásito de larvas de escarabajo.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Conoces a alguien que viva con un trasplante? 👇
-Shot Fungi Mati #45 · La Creación del Robert
+Shot Fungi Mati 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Trasplantes
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El moho de la tierra que salvó los trasplantes 🍄 | Shot Fungi Mati #45
+El moho de la tierra que salvó los trasplantes 🍄 | Shot Fungi Mati 45
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Matsuda, S. y Koyasu, S. (2000). Mechanisms of action of cyclosporine. Immunopharmacology 47: 119–125. https://pubmed.ncbi.nlm.nih.gov/10878286/
 - Canadian Multicentre Transplant Study Group (1983). A randomized clinical trial of cyclosporine in cadaveric renal transplantation. N Engl J Med 309(14): 809–815. https://pubmed.ncbi.nlm.nih.gov/6350878/
 ¿Conoces a alguien que viva con un trasplante? 👇
-Shot Fungi Mati #45 · La Creación del Robert
+Shot Fungi Mati 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #Trasplantes #FungiMati
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este puñado de tierra no es solo tierra: de aquí salió la medicina que volvió casi rutina los trasplantes. 🍄 Un moho de una muestra de suelo de Noruega fabrica la ciclosporina, que apaga el interruptor (la calcineurina) que arma el ataque de tus defensas contra un órgano nuevo.
 ¿Conoces a alguien que viva con un trasplante? 👇
-Shot Fungi Mati #45 · La Creación del Robert
+Shot Fungi Mati 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Trasplantes
 ```
@@ -72,7 +72,7 @@ Uno de los grandes avances de la medicina de trasplantes salió de una muestra d
 La ciclosporina, descubierta en los años 70 en los laboratorios de Sandoz (Basilea), la produce el moho Tolypocladium inflatum; la cepa original venía de suelo de Noruega. Su efecto: unida a la ciclofilina, inhibe la calcineurina en los linfocitos T y frena la respuesta que causa el rechazo. En 1983, un ensayo aleatorizado en Canadá con 209 trasplantes de riñón estimó una sobrevida del injerto al año de 80.4 % con ciclosporina contra 64.0 % con la terapia estándar (NEJM).
 Una lección: el descubrimiento fue de un equipo, dentro de un programa de búsqueda sistemática de compuestos (Heusler y Pletscher, 2001).
 ¿Qué otra medicina crees que salió de un ser vivo?
-Shot Fungi Mati #45 · La Creación del Robert
+Shot Fungi Mati 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Trasplantes #Inmunologia #Ciencia
 ```
@@ -85,7 +85,7 @@ De un puñado de tierra de Noruega salió la ciclosporina, del moho Tolypocladiu
 ### Threads
 ```text
 Este puñado de tierra no es solo tierra: de aquí salió la medicina que volvió casi rutina los trasplantes. 🍄 La ciclosporina, de un moho del suelo de Noruega, apaga el interruptor que arma el rechazo. Y en la naturaleza, ese moho parasita larvas de escarabajo. ¿Conoces a alguien que viva con un trasplante?
-Shot Fungi Mati #45 · La Creación del Robert
+Shot Fungi Mati 45 · La Creación del Robert
 #Hongos
 ```
 

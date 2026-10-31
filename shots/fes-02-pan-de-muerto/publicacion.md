@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #02 · Día de Muertos · Biotecnológico: El hongo que infla el pan de muerto
+# Publicación · Shot Festivo 02 · Día de Muertos · Biotecnológico: El hongo que infla el pan de muerto
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Sale el 1 nov 2026.
 
@@ -14,7 +14,7 @@ Así que este pan no se infló solo: cada hoyito es el suspiro de un hongo.
 El dibujo es esquemático.
 Fuentes: Goffeau et al., Science 1996 · Kachroo et al., Science 2015 · Gorgus et al., J Anal Toxicol 2016.
 ¿Cómo se llama el pan de muerto en tu región y con qué lo acompañas? 👇
-Shot Festivo #02 · Día de Muertos · Biotecnológico · La Creación del Robert
+Shot Festivo 02 · Día de Muertos · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #DiaDeMuertos #PanDeMuerto #Levadura
 ```
@@ -25,7 +25,7 @@ Este pan de muerto no se infló con aire: lo infló un hongo vivo de una sola c�
 La levadura Saccharomyces cerevisiae se come el azúcar de la masa y suelta dióxido de carbono y alcohol. El gas queda atrapado en la red del gluten y la masa se infla como globo. En el horno el calor mata a las levaduras, pero queda algo de alcohol (en panes dulces de leche empacados se midió más de 1.2 g por cada 100 g, Alemania, 2016) y las burbujas se quedan fijas: son los hoyitos de la miga. En 1996, unos 600 científicos leyeron todo su ADN: el primer genoma completo de un ser con núcleo, unos 6,000 genes (tú tienes unos 20,000).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cómo se llama el pan de muerto en tu región? 👇
-Shot Festivo #02 · Día de Muertos · Biotecnológico · La Creación del Robert
+Shot Festivo 02 · Día de Muertos · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #DiaDeMuertos #PanDeMuerto #Levadura
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este pan de muerto lo infló un hongo vivo 💀 | Shot Festivo #02
+Este pan de muerto lo infló un hongo vivo 💀 | Shot Festivo 02
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - OIV, Resolución OENO 16/2003 (levadura seca activa, ≥10^10 UFC/g).
 - GENCODE, estadísticas del genoma humano: https://www.gencodegenes.org/human/stats.html
 ¿Cómo se llama el pan de muerto en tu región? 👇
-Shot Festivo #02 · Día de Muertos · Biotecnológico · La Creación del Robert
+Shot Festivo 02 · Día de Muertos · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #DiaDeMuertos #PanDeMuerto
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este pan de muerto no se infló con aire: lo infló un hongo vivo de una sola célula. 🍞💀 La levadura se come el azúcar y suelta gas; el gluten lo atrapa y la masa se infla. Cada hoyito de la miga es una burbuja de CO₂ que dejó una levadura.
 ¿Cómo se llama el pan de muerto en tu región? 👇
-Shot Festivo #02 · Día de Muertos · Biotecnológico · La Creación del Robert
+Shot Festivo 02 · Día de Muertos · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #DiaDeMuertos
 ```
@@ -69,7 +69,7 @@ Saccharomyces cerevisiae, la levadura de panadería, fermenta los azúcares de l
 Por qué importa: esta misma levadura fue, en 1996, el primer organismo con núcleo cuyo genoma se secuenció completo, gracias a unos 600 científicos de Europa, Norteamérica y Japón. Hoy es un modelo central de la biotecnología: en 2015 se mostró que casi la mitad de 414 genes esenciales de levadura pueden sustituirse por sus equivalentes humanos y siguen funcionando.
 Una tradición de Día de Muertos que también es un biorreactor.
 ¿Qué otro alimento tradicional te parece un buen ejemplo de biotecnología?
-Shot Festivo #02 · Día de Muertos · Biotecnológico · La Creación del Robert
+Shot Festivo 02 · Día de Muertos · Biotecnológico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #DiaDeMuertos #Levadura #Ciencia
 ```
@@ -82,7 +82,7 @@ Este pan de muerto no se infló con aire: lo infló un hongo vivo. 🍞💀 Cada
 ### Threads
 ```text
 Este pan de muerto no se infló con aire: lo infló un hongo vivo de una sola célula. 🍞💀 La levadura se come el azúcar, suelta gas y el gluten lo atrapa. En el horno mueren las levaduras y las burbujas se quedan como hoyitos (algo de alcohol queda). ¿Cómo se llama en tu región?
-Shot Festivo #02 · La Creación del Robert
+Shot Festivo 02 · La Creación del Robert
 #DiaDeMuertos
 ```
 

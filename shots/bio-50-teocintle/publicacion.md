@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #50 · Tu tortilla era un pasto: del teocintle al maíz
+# Publicación · Shot Biotecnológico 50 · Tu tortilla era un pasto: del teocintle al maíz
 
 ## Versión narrada
 
@@ -15,7 +15,7 @@ Eso también es biotecnología: sin laboratorio, escogiendo semillas.
 El dibujo es esquemático.
 Fuentes: Matsuoka et al., PNAS 2002 · Doebley, Annu Rev Genet 2004 · Wang et al., Nature 2005 · Doebley et al., Nature 1997 · Studer et al., Nat Genet 2011 · Piperno et al. y Ranere et al., PNAS 2009 (completas en el comentario fijado).
 ¿En tu casa las tortillas son de maíz blanco, amarillo o azul? 👇
-Shot Biotecnológico #50 · La Creación del Robert
+Shot Biotecnológico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #maiz #teocintle #Mexico
 ```
@@ -29,7 +29,7 @@ En Guerrero, un estudio de 2009 halló almidón de maíz en piedras de moler de 
 Hoy el maíz no sobrevive solo: sus granos no se sueltan de la mazorca. Eso también es biotecnología.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa las tortillas son de maíz blanco, amarillo o azul? 👇
-Shot Biotecnológico #50 · La Creación del Robert
+Shot Biotecnológico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #maiz #teocintle #Mexico
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese pasto es el abuelo de tu tortilla 🌽 | Shot Biotecnológico #50
+Ese pasto es el abuelo de tu tortilla 🌽 | Shot Biotecnológico 50
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Studer et al. (2011) Nat Genet 43:1160 · https://pmc.ncbi.nlm.nih.gov/articles/
 Piperno et al. (2009) PNAS 106:5019 · https://pmc.ncbi.nlm.nih.gov/articles/PMC2664021/
 Ranere et al. (2009) PNAS 106:5014 · https://pmc.ncbi.nlm.nih.gov/articles/PMC2664064
 ¿En tu casa las tortillas son de maíz blanco, amarillo o azul? 👇
-Shot Biotecnológico #50 · La Creación del Robert
+Shot Biotecnológico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #maiz #Biotecnologia
 ```
@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 Ese pasto parece maleza, pero es el abuelo de tu tortilla. 🌽
 El teocintle, un pasto silvestre de la cuenca del río Balsas, tiene mazorquitas de 5 a 12 granos en cáscara de piedra. Hace unos 9,000 años la gente empezó a sembrarlo y a escoger semillas, y pocos genes (tga1 y tb1) hicieron gran parte del cambio hasta el maíz.
 ¿En tu casa las tortillas son de maíz blanco, amarillo o azul? 👇
-Shot Biotecnológico #50 · La Creación del Robert
+Shot Biotecnológico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #maiz
 ```
@@ -82,19 +82,19 @@ Lo que lo vuelve un caso de estudio:
 • La variante clave de tb1 ya existía en el teocintle silvestre al menos 10,000 años antes de la domesticación (Studer et al., Nat Genet 2011): la selección actuó sobre variación que ya estaba ahí.
 Es biotecnología tradicional: selección humana, sin laboratorio, con resultados que hoy dependen por completo de nosotros, porque el maíz ya no dispersa sus semillas solo.
 ¿Qué otros cultivos crees que esconden una historia así?
-Shot Biotecnológico #50 · La Creación del Robert
+Shot Biotecnológico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Genetica #Agricultura #Maiz #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese pasto parece maleza, pero es el abuelo de tu tortilla 🌽 El teocintle tiene 5 a 12 granos en cáscara de piedra; un solo gen, tga1, liberó el grano. Domesticado hace ~9,000 años en el sur de México. Shot Biotecnológico #50 #maiz #Biotecnologia
+Ese pasto parece maleza, pero es el abuelo de tu tortilla 🌽 El teocintle tiene 5 a 12 granos en cáscara de piedra; un solo gen, tga1, liberó el grano. Domesticado hace ~9,000 años en el sur de México. Shot Biotecnológico 50 #maiz #Biotecnologia
 ```
 
 ### Threads
 ```text
-Ese pasto parece maleza, pero es el abuelo de tu tortilla. 🌽 El teocintle, de la cuenca del río Balsas, tiene mazorquitas de 5 a 12 granos en cáscara de piedra. Hace unos 9,000 años la gente empezó a escoger sus semillas; un gen, tga1, liberó el grano y otro, tb1, dejó una sola caña. ¿Tus tortillas son de maíz blanco, amarillo o azul? Shot Biotecnológico #50 · Soy Robert, de La Creación del Robert 🌱 #maiz
+Ese pasto parece maleza, pero es el abuelo de tu tortilla. 🌽 El teocintle, de la cuenca del río Balsas, tiene mazorquitas de 5 a 12 granos en cáscara de piedra. Hace unos 9,000 años la gente empezó a escoger sus semillas; un gen, tga1, liberó el grano y otro, tb1, dejó una sola caña. ¿Tus tortillas son de maíz blanco, amarillo o azul? Shot Biotecnológico 50 · Soy Robert, de La Creación del Robert 🌱 #maiz
 ```
 
 ## Comentario fijado (fuentes)

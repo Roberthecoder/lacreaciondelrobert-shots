@@ -1,4 +1,4 @@
-# Publicación · Shot IA #19 · ¿La IA puede predecir sismos? Lo que sí y lo que no
+# Publicación · Shot IA 19 · ¿La IA puede predecir sismos? Lo que sí y lo que no
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que si te llega ese mensaje, bórralo. La IA no adivina sismos: aprende a e
 El dibujo es esquemático y el mensaje del celular es un ejemplo inventado.
 Fuentes: USGS · CENAPRED · Mousavi et al., Nature Communications (2020) · Rouet-Leduc et al., GRL (2017) · DeVries et al., Nature (2018) · Mignan y Broccardo, Nature (2019).
 ¿Alguna vez te llegó una cadena de "mañana tiembla"? ¿De dónde eres? 👇
-Shot IA #19 · La Creación del Robert
+Shot IA 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Sismos #AlertaSismica #Ciencia
 ```
@@ -27,7 +27,7 @@ Soy Robert, de La Creación del Robert 🌱
 La alerta sísmica tampoco predice: detecta el sismo cuando ya empezó y avisa antes de que llegue la sacudida. Lo que sí hace la IA es escuchar mejor: en 2020, una red de Stanford encontró el doble de sismos en cinco semanas de datos de Japón (21 092 contra 8 521). En un laboratorio (Los Álamos, 2017), una IA calculó cuánto faltaba para cada sismo de laboratorio oyendo un ruido que creían inútil. Y en 2018 una red neuronal de Harvard y Google ubicaba réplicas mejor que el método clásico… hasta que en 2019 una fórmula de 2 parámetros la igualó (la red usaba 13 451).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez te llegó una cadena de "mañana tiembla"? 👇
-Shot IA #19 · La Creación del Robert
+Shot IA 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Sismos #AlertaSismica #Ciencia
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿La IA puede predecir sismos? Lo que sí y lo que no 🌎 | Shot IA #19
+¿La IA puede predecir sismos? Lo que sí y lo que no 🌎 | Shot IA 19
 ```
 Descripción:
 ```text
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Por qué no debes creerle a quien jura que mañana tiembla? Ningún científico ha predicho nunca un sismo grande. Ni con IA. 📱🌎 La alerta sísmica tampoco predice: detecta el sismo cuando ya empezó y avisa antes de la sacudida. La IA sí ayuda a escuchar: en 2020 encontró el doble de sismos en datos de Japón. Si te llega la cadena, bórrala.
 ¿Alguna vez te llegó una cadena de "mañana tiembla"? 👇
-Shot IA #19 · La Creación del Robert
+Shot IA 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Sismos
 ```
@@ -76,7 +76,7 @@ La lección: en 2018, una red neuronal de Harvard y Google (Nature) ubicaba rép
 Y la alerta sísmica mexicana no predice: detecta el sismo ya iniciado y avisa segundos antes de que llegue la sacudida.
 ¿En tu área se compara la IA contra un modelo simple antes de adoptarla?
 Fuentes: USGS · CENAPRED (2019) · Mousavi et al. (2020) · Rouet-Leduc et al. (2017) · DeVries et al. (2018) · Mignan y Broccardo (2019).
-Shot IA #19 · La Creación del Robert
+Shot IA 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Sismologia #CienciaDeDatos #MachineLearning #LaCreacionDelRobert
 ```
@@ -91,7 +91,7 @@ Nadie ha predicho un sismo grande, ni con IA (USGS). La alerta sísmica tampoco 
 ¿Por qué no debes creerle a quien jura que mañana tiembla? Ningún científico ha predicho nunca un sismo grande. Ni con IA. 📱🌎
 La alerta sísmica tampoco predice: detecta el sismo ya iniciado y avisa antes de la sacudida. La IA sí ayuda a escuchar: en 2020 encontró el doble de sismos en datos de Japón.
 ¿Te ha llegado esa cadena?
-Shot IA #19 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 19 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

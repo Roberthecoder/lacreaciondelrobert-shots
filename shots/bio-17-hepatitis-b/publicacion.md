@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #17 · La vacuna que hizo una levadura (hepatitis B)
+# Publicación · Shot Biotecnológico 17 · La vacuna que hizo una levadura (hepatitis B)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ La solución: tomar un solo gen del virus, el de su proteína de superficie, y m
 Según la Secretaría de Salud, la vacuna se fabrica con levaduras modificadas. Como lleva rastros de proteína de levadura (menos del 1 %), su instructivo pide no aplicarla a quien tuvo una alergia grave (anafilaxia) a la levadura.
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 ¿Tienes tu cartilla de vacunación? ¿Sabías qué te pusieron el primer día? 👇
-Shot Biotecnológico #17 · La Creación del Robert
+Shot Biotecnológico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Vacunas #HepatitisB #Levadura
 ```
@@ -24,7 +24,7 @@ Esa vacuna del primer día de vida no trae ni un virus: la fabricó una levadura
 En México se pone en las primeras 24 horas, en el muslo, contra la hepatitis B. La primera vacuna (1981) se purificaba del plasma de personas infectadas; la de levadura usa un solo gen del virus: la levadura fabrica la proteína de superficie y esta se arma en bolitas de 22 nm, vacías, sin material genético. En 1986, Recombivax HB fue la primera vacuna hecha con ADN recombinante.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías qué te pusieron el primer día? 👇
-Shot Biotecnológico #17 · La Creación del Robert
+Shot Biotecnológico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Vacunas #HepatitisB #Levadura
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La vacuna que te ponen al nacer la hizo una levadura 💉 | Shot Biotecnológico #17
+La vacuna que te ponen al nacer la hizo una levadura 💉 | Shot Biotecnológico 17
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Huzair F., Sturdy S. (2017). Biotechnology and the transformation of vaccine innovation: the case of the hepatitis B vaccines 1968–2000. https://pmc.ncbi.nlm.nih.gov/articles/PMC5541201/
 - Ficha de RECOMBIVAX HB (Merck/FDA, rev. 2023).
 ¿Tienes tu cartilla? ¿Sabías qué te pusieron el primer día? 👇
-Shot Biotecnológico #17 · La Creación del Robert
+Shot Biotecnológico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Vacunas
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa vacuna del primer día de vida no trae ni un virus: la fabricó una levadura. 💉🍞 Un solo gen del virus de la hepatitis B, metido en levadura, fabrica la proteína de superficie, que se arma en bolitas vacías de 22 nanómetros: parecen el virus, pero no pueden infectar. En 1986 fue la primera vacuna hecha con ADN recombinante.
 ¿Sabías qué te pusieron el primer día? 👇
-Shot Biotecnológico #17 · La Creación del Robert
+Shot Biotecnológico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Vacunas
 ```
@@ -71,14 +71,14 @@ La vacuna contra la hepatitis B que en México se aplica en las primeras 24 hora
 La primera vacuna (EE. UU., 1981) dependía del plasma de portadores crónicos, lo que limitaba el suministro y generaba temor por otros patógenos, aunque ese temor no tenía evidencia. En 1982, Valenzuela, Rutter, Hall y colegas (UCSF y Universidad de Washington) expresaron el antígeno de superficie (HBsAg) en Saccharomyces cerevisiae y vieron que se ensamblaba en partículas de 22 nm sin genoma. En 1986, Recombivax HB fue la primera vacuna producida con ADN recombinante, y las partículas tipo virus se volvieron el modelo para otras vacunas, como la del VPH.
 Un caso claro de cómo una herramienta de biología molecular resolvió a la vez un problema de seguridad percibida y uno de escala.
 ¿Qué otra plataforma biotecnológica crees que cambiará la producción de vacunas?
-Shot Biotecnológico #17 · La Creación del Robert
+Shot Biotecnológico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Vacunas #SaludPublica #DivulgacionCientifica #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-La vacuna de hepatitis B que te ponen al nacer no trae virus: una levadura fabrica su proteína de superficie, que se arma en bolitas vacías de 22 nm. 1986: la primera vacuna de ADN recombinante. 💉🍞 Shot Biotecnológico #17 #Biotecnologia
+La vacuna de hepatitis B que te ponen al nacer no trae virus: una levadura fabrica su proteína de superficie, que se arma en bolitas vacías de 22 nm. 1986: la primera vacuna de ADN recombinante. 💉🍞 Shot Biotecnológico 17 #Biotecnologia
 ```
 
 ### Threads
@@ -86,7 +86,7 @@ La vacuna de hepatitis B que te ponen al nacer no trae virus: una levadura fabri
 Esa vacuna del primer día de vida no trae ni un virus: la fabricó una levadura. 💉🍞
 Un solo gen del virus de la hepatitis B en levadura: la proteína se arma en bolitas de 22 nm, vacías, que no pueden infectar. En 1986 fue la primera vacuna hecha con ADN recombinante.
 ¿Sabías qué te pusieron el primer día?
-Shot Biotecnológico #17 · La Creación del Robert
+Shot Biotecnológico 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

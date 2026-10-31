@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #32 · Ese cerillo no trae el fuego en la cabeza (el fósforo está en la caja)
+# Publicación · Shot Químico 32 · Ese cerillo no trae el fuego en la cabeza (el fósforo está en la caja)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Por eso la cabeza y la tira van separadas: no mezcles nunca esos polvos, la mezc
 El dibujo es esquemático.
 Fuentes: Univ. de Washington · Royal Society of Chemistry · The National Archives (Reino Unido) · Royal College of Surgeons of England · Convención de Berna 1906 · Pollock et al. 2015.
 ¿Cómo le dicen en tu región: cerillos, fósforos o cerillas? 👇
-Shot Químico #32 · La Creación del Robert
+Shot Químico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Cerillos #Fosforo #HistoriaDeLaCiencia
 ```
@@ -25,7 +25,7 @@ Ese cerillo no trae el fuego en la cabeza: el fósforo está en la tira de la ca
 Al frotar, el calor convierte una pizca del fósforo rojo de la tira en fósforo blanco, que se prende solo en el aire; luego el clorato de potasio de la cabeza suelta oxígeno y arden el azufre y la madera. Antes, los cerillos llevaban fósforo blanco: en la fábrica londinense de la huelga de 1888, su humo podía dañar el hueso de la quijada, y en 1906 varios países firmaron en Berna prohibirlos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cómo le dicen en tu región: cerillos, fósforos o cerillas? 👇
-Shot Químico #32 · La Creación del Robert
+Shot Químico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Cerillos #Fosforo #HistoriaDeLaCiencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese cerillo no trae el fuego en la cabeza 🔥 | Shot Químico #32
+Ese cerillo no trae el fuego en la cabeza 🔥 | Shot Químico 32
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - International Convention signed at Berne, September 26, 1906, prohibiting the use of white (yellow) phosphorus in the manufacture of matches. UK Treaty Series 1909 No. 4. https://treaties.fcdo.gov.uk/data/Library2/pdf/1909-TS0004.pdf
 - Pollock R.A., Brown T.W. Jr, Rubin D.M. (2015). "Phossy Jaw" and "Bis-phossy Jaw" of the 19th and the 21st Centuries. Craniomaxillofac Trauma Reconstr 8(3):262–70. https://pmc.ncbi.nlm.nih.gov/articles/PMC4812794/
 ¿Cómo le dicen en tu región: cerillos, fósforos o cerillas? 👇
-Shot Químico #32 · La Creación del Robert
+Shot Químico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Cerillos
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese cerillo no trae el fuego en la cabeza: el fósforo está en la tira de la caja. 🔥 Al frotar, el calor convierte una pizca de fósforo rojo en fósforo blanco, que se prende solo en el aire y enciende el clorato y el azufre de la cabeza. Antes se usaba fósforo blanco en la cabeza… y enfermaba a quienes hacían los cerillos.
 ¿Cómo le dicen en tu región: cerillos, fósforos o cerillas? 👇
-Shot Químico #32 · La Creación del Robert
+Shot Químico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Cerillos
 ```
@@ -70,14 +70,14 @@ Un cerillo de seguridad no trae el fuego en la cabeza: el fósforo está en la t
 El diseño separa los reactivos. La cabeza lleva clorato de potasio (oxidante) y azufre; la tira, fósforo rojo y vidrio molido. Al frotar, el calor de la fricción convierte una cantidad diminuta de fósforo rojo en fósforo blanco, que se enciende en contacto con el aire y desencadena la descomposición del clorato y la combustión del azufre y la madera.
 Esa separación tiene una historia de salud laboral detrás. Los cerillos con fósforo blanco causaban necrosis de la mandíbula en quienes los fabricaban: en la fábrica Bryant & May de Londres, escenario de la huelga de 1888, un informe de 1882 a 1897 registró una mortalidad del 19.15 % entre los casos. En 1906, la Convención de Berna comprometió a sus países firmantes a prohibir los cerillos con fósforo blanco.
 ¿Qué otros productos cotidianos cambiaron su química por la salud de quienes los fabrican?
-Shot Químico #32 · La Creación del Robert
+Shot Químico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SaludLaboral #HistoriaDeLaCiencia #Cerillos #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese cerillo no trae el fuego en la cabeza: el fósforo está en la tira de la caja. Al frotar, una pizca de fósforo rojo se vuelve blanco y se prende solo en el aire. 🔥 Shot Químico #32 #Quimica
+Ese cerillo no trae el fuego en la cabeza: el fósforo está en la tira de la caja. Al frotar, una pizca de fósforo rojo se vuelve blanco y se prende solo en el aire. 🔥 Shot Químico 32 #Quimica
 ```
 
 ### Threads
@@ -85,7 +85,7 @@ Ese cerillo no trae el fuego en la cabeza: el fósforo está en la tira de la ca
 Ese cerillo no trae el fuego en la cabeza: el fósforo está en la tira de la caja. 🔥
 Al frotar, una pizca de fósforo rojo se vuelve fósforo blanco y se prende solo en el aire. Antes el fósforo blanco iba en la cabeza, y su humo enfermaba la quijada de quienes hacían los cerillos.
 ¿Cómo le dicen en tu región?
-Shot Químico #32 · La Creación del Robert
+Shot Químico 32 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

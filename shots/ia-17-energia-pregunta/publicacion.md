@@ -1,4 +1,4 @@
-# Publicación · Shot IA #17 · Tu pregunta a una IA: nueve segundos de tele
+# Publicación · Shot IA 17 · Tu pregunta a una IA: nueve segundos de tele
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que una pregunta típica cuesta 9 segundos de tele. Lo que pesa es que hace
 El dibujo es esquemático.
 Fuentes: Elsworth et al. (Google), arXiv 2508.15734 (2025); Agencia Internacional de Energía, Energy and AI (2025).
 ¿Cuántas preguntas le haces a una IA al día? 👇
-Shot IA #17 · La Creación del Robert
+Shot IA 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Energia #CentrosDeDatos #Gemini
 ```
@@ -26,7 +26,7 @@ Google lo midió en 2025 con Gemini: 0.24 Wh, 0.26 mL de agua y 0.03 g de CO₂e
 Y lo que pesa es la suma: la Agencia Internacional de Energía calcula que para 2030 los centros de datos del mundo gastarán un poco más que todo Japón hoy (proyección). La IA es una de las grandes razones.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuántas preguntas le haces a una IA al día? 👇
-Shot IA #17 · La Creación del Robert
+Shot IA 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Energia #CentrosDeDatos #Gemini
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Cuánta energía gasta una pregunta a la IA? Menos que 9 s de tele 📺 | Shot IA #17
+¿Cuánta energía gasta una pregunta a la IA? Menos que 9 s de tele 📺 | Shot IA 17
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Una pregunta típica a la IA de Google gasta menos energía que ver la tele 9 segundos, y como 5 gotas de agua. 📺💧 Lo midió Google en 2025 con Gemini (pregunta de texto típica, datos de la propia empresa). Pero lo que pesa es la suma: para 2030, los centros de datos del mundo gastarían un poco más que todo Japón hoy, según la Agencia Internacional de Energía.
 ¿Cuántas preguntas le haces a una IA al día? 👇
-Shot IA #17 · La Creación del Robert
+Shot IA 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Energia
 ```
@@ -68,7 +68,7 @@ Lo valioso del estudio (Elsworth et al., arXiv 2508.15734) es la metodología: i
 Los límites también importan: es la mediana, solo texto, y la reporta la propia empresa sin revisión externa. Y lo que pesa es la escala: la Agencia Internacional de Energía proyecta que para 2030 los centros de datos del mundo consumirán un poco más electricidad que todo Japón hoy, con la IA como uno de los grandes motores.
 Medir completo y publicar es el primer paso. ¿Tu organización sabe cuánto consume su uso de IA?
 Fuentes: Google, arXiv 2508.15734 (2025); AIE, Energy and AI (2025).
-Shot IA #17 · La Creación del Robert
+Shot IA 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Energia #Sostenibilidad #CentrosDeDatos #LaCreacionDelRobert
 ```
@@ -83,7 +83,7 @@ Una pregunta típica a la IA de Google: 0.24 Wh, menos que 9 s de tele, y 5 gota
 Una pregunta típica a la IA de Google gasta menos energía que ver la tele 9 segundos. Y como 5 gotas de agua. 📺💧
 Dato de Google (2025), solo texto. Lo que pesa es la suma: para 2030, los centros de datos del mundo gastarían un poco más que todo Japón hoy, según la Agencia Internacional de Energía.
 ¿Cuántas preguntas le haces a una IA al día?
-Shot IA #17 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 17 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

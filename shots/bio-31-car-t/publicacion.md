@@ -10,7 +10,7 @@ En 2012, en el Hospital de Niños de Filadelfia, Emily Whitehead, de 6 años, co
 El dibujo es esquemático.
 Fuentes: CHOP 2022 y 2023, NCI 2025, ficha de Kymriah de la FDA, AABB 2025.
 ¿Conocías los fármacos vivos? ¿Qué otra enfermedad te gustaría que pudieran cazar? 👇
-Shot Biotecnológico #31 · La Creación del Robert
+Shot Biotecnológico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CART #Leucemia #Inmunoterapia
 ```
@@ -22,7 +22,7 @@ Terapia CAR-T: te sacan sangre, separan tus linfocitos T y un virus modificado l
 En 2012, Emily Whitehead, de 6 años, fue la primera niña en recibirla contra la leucemia, en el Hospital de Niños de Filadelfia. Casi muere por un síndrome de liberación de citocinas; la salvó el tocilizumab, un medicamento para la artritis. Su leucemia desapareció, en 2017 la FDA aprobó la terapia (Kymriah) y en 2025, trece años después, Emily seguía sin cáncer.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Conocías los fármacos vivos? 👇
-Shot Biotecnológico #31 · La Creación del Robert
+Shot Biotecnológico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CART #Leucemia #Inmunoterapia
 ```
@@ -30,7 +30,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa bolsa trae tus propias células cazando cáncer 🩸 | Shot Biotecnológico #31
+Esa bolsa trae tus propias células cazando cáncer 🩸 | Shot Biotecnológico 31
 ```
 Descripción:
 ```text
@@ -44,7 +44,7 @@ NCI (2025): https://www.cancer.gov/about-cancer/treatment/research/car-t-cells
 FDA, ficha de Kymriah: https://www.fda.gov/media/107296/download
 AABB (2025): https://www.aabb.org/news-resources/news/aabb-news/article/june-2025/2025-aabb-annual-meeting-to-feature-tom-whitehead-as-keynote-speaker
 ¿Conocías los fármacos vivos? ¿Qué otra enfermedad te gustaría que pudieran cazar? 👇
-Shot Biotecnológico #31 · La Creación del Robert
+Shot Biotecnológico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #CART
 ```
@@ -52,7 +52,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esa bolsa no trae un medicamento común: trae tus propias células, entrenadas para cazar cáncer. 🩸 En la terapia CAR-T, a tus linfocitos T les meten un gen para que reconozcan la proteína CD19 de la leucemia B; luego los multiplican y te los regresan. En 2012, Emily Whitehead, de 6 años, fue la primera niña en recibirla contra la leucemia, y en 2025 seguía sin cáncer. ¿Conocías los fármacos vivos? 👇
-Shot Biotecnológico #31 · La Creación del Robert
+Shot Biotecnológico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CART
 ```
@@ -63,7 +63,7 @@ Esa bolsa no trae un medicamento común: trae las propias células del paciente,
 La terapia CAR-T es un medicamento hecho a la medida de cada persona. Se toman sus linfocitos T por aféresis; en un laboratorio, un vector de lentivirus les introduce el gen de un receptor quimérico de antígeno (CAR) dirigido contra CD19, una proteína de la superficie de las células de la leucemia B (y de los linfocitos B sanos). Las células se expanden hasta cientos de millones y se infunden de vuelta; dentro del cuerpo siguen multiplicándose y eliminan las células con CD19. El proceso completo tarda unas 3 a 5 semanas.
 El primer caso pediátrico marcó el campo: en 2012, en el Hospital de Niños de Filadelfia, Emily Whitehead, de 6 años, con leucemia linfoblástica aguda en recaída, recibió la terapia en un ensayo clínico de fase 1/2. Sufrió un síndrome de liberación de citocinas grave que se controló con tocilizumab, un medicamento para la artritis que bloquea el receptor de la IL-6 y que hoy forma parte del manejo estándar de esa reacción. La FDA aprobó el producto, Kymriah (tisagenlecleucel), el 30 de agosto de 2017. En 2025, trece años después, Emily seguía sin cáncer.
 ¿Qué retos ves para llevar terapias celulares personalizadas a más hospitales?
-Shot Biotecnológico #31 · La Creación del Robert
+Shot Biotecnológico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Inmunoterapia #TerapiaCelular #CART #LaCreacionDelRobert
 ```
@@ -76,7 +76,7 @@ Esa bolsa no trae un medicamento común: trae tus propias células, entrenadas p
 ### Threads
 ```text
 Esa bolsa no trae un medicamento común: trae tus propias células, entrenadas para cazar cáncer. 🩸 En la terapia CAR-T, un virus modificado les mete a tus linfocitos T un gen para reconocer la proteína CD19 de la leucemia B. En 2012, Emily Whitehead, de 6 años, fue la primera niña en recibirla contra la leucemia; en 2025, trece años después, seguía sin cáncer. ¿Conocías los fármacos vivos? 👇
-Shot Biotecnológico #31 · La Creación del Robert
+Shot Biotecnológico 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

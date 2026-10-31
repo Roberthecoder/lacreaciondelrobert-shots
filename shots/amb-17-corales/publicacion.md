@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #17 · Esto no es una roca: es un animal (corales y blanqueamiento)
+# Publicación · Shot Ambiental 17 · Esto no es una roca: es un animal (corales y blanqueamiento)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Esto no es una roca: es un animal que se muere de hambre si el mar se calienta d
 El dibujo es esquemático.
 Fuentes: NOAA, Healthy Reefs for Healthy People (GCRMN).
 ¿Ya habías visto un coral blanqueado en persona? 👇
-Shot Ambiental #17 · La Creación del Robert
+Shot Ambiental 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Corales #Arrecifes #CaribeMexicano
 ```
@@ -26,7 +26,7 @@ Esto no es una roca ni una planta: es un animal, con algas viviendo adentro. �
 Los corales son colonias de pólipos que fabrican un esqueleto de caliza. Dentro de sus células viven algas microscópicas (zooxantelas) que les pasan hasta el 90 % de lo que producen con la fotosíntesis y les dan su color. Con el agua demasiado caliente, el coral las expulsa y se blanquea: no está muerto, pero se queda sin su comida principal. De 2023 a mediados de 2025, el 84 % de los arrecifes del mundo tuvo calor suficiente para blanquearse (NOAA).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya habías visto un coral blanqueado en persona? 👇
-Shot Ambiental #17 · La Creación del Robert
+Shot Ambiental 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Corales #Arrecifes #CaribeMexicano
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es una roca: es un animal 🪸 | Shot Ambiental #17
+Esto no es una roca: es un animal 🪸 | Shot Ambiental 17
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - GCRMN (8 jun 2026): https://gcrmn.net/2026/06/08/4gbe-ended/
 - GCRMN, Mesoamerican Report Card 2024 (Healthy Reefs for Healthy People): https://gcrmn.net/2024/11/08/mesoamerican-report-card-2024/
 ¿Ya habías visto un coral blanqueado en persona? 👇
-Shot Ambiental #17 · La Creación del Robert
+Shot Ambiental 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Corales #Arrecifes
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es una roca ni una planta: es un animal, con algas viviendo adentro. 🪸 Cuando el mar se calienta demasiado, el coral expulsa a sus algas, se queda blanco y, si el calor sigue, se muere de hambre. De 2023 a mediados de 2025, el 84 % de los arrecifes del mundo tuvo calor suficiente para blanquearse (NOAA).
 ¿Ya habías visto un coral blanqueado en persona? 👇
-Shot Ambiental #17 · La Creación del Robert
+Shot Ambiental 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Corales #Arrecifes
 ```
@@ -73,7 +73,7 @@ Esto no es una roca ni una planta: es un animal, con algas viviendo adentro.
 Los corales que forman arrecifes son colonias de pólipos que viven en simbiosis con algas microscópicas (zooxantelas) alojadas dentro de sus células. Esas algas les transfieren hasta el 90 % de la materia orgánica que producen por fotosíntesis. Cuando el agua se calienta demasiado, el coral las expulsa y se blanquea: sigue vivo, pero sin su principal fuente de energía, y si el estrés se prolonga, muere.
 Según NOAA Coral Reef Watch, de inicios de 2023 a mediados de 2025, el 84 % del área de arrecifes del mundo tuvo calor de nivel de blanqueamiento, frente al 21 % del primer evento global (1998). En el Arrecife Mesoamericano, que México comparte con Belice, Guatemala y Honduras, 2023 fue el blanqueamiento más severo registrado.
 ¿Qué acciones locales crees que ayudan más a que resistan?
-Shot Ambiental #17 · La Creación del Robert
+Shot Ambiental 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Corales #CambioClimatico #CaribeMexicano #LaCreacionDelRobert
 ```

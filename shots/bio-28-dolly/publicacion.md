@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #28 · Dolly: la oveja que salió de una célula de ubre
+# Publicación · Shot Biotecnológico 28 · Dolly: la oveja que salió de una célula de ubre
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Su nombre es por Dolly Parton, porque las células venían de tejido mamario. Do
 El dibujo es esquemático.
 Fuentes: Wilmut et al. 1997 (Nature) · Instituto Roslin, "The Life of Dolly" · Sinclair et al. 2016 (Nature Communications) · Evans et al. 1999 (Nature Genetics) · Scientific American 2016.
 Si pudieras clonar a un animal, ¿cuál sería y por qué? 👇
-Shot Biotecnológico #28 · La Creación del Robert
+Shot Biotecnológico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #OvejaDolly #Clonacion #Genetica
 ```
@@ -26,7 +26,7 @@ Esa oveja que ves no vino de ningún espermatozoide: vino de una célula de ubre
 Dolly, del Instituto Roslin (Escocia), fue el primer mamífero clonado de una célula adulta. Tomaron células de ubre de una oveja Finn Dorset, a un óvulo de una Scottish Blackface le quitaron el núcleo, los juntaron con pulsos eléctricos y el embrión creció en una madre sustituta. Nació en 1996: de 277 células fusionadas, solo ella llegó a nacer. Tenía el ADN del núcleo de la donadora, no el de la madre que la parió. Su nombre es por Dolly Parton. Y en 2016, cuatro clones suyos de 8 años estaban sanos para su edad.
 El dibujo es esquemático. Fuentes en el primer comentario.
 Si pudieras clonar a un animal, ¿cuál sería? 👇
-Shot Biotecnológico #28 · La Creación del Robert
+Shot Biotecnológico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #OvejaDolly #Clonacion #Genetica
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta oveja salió de una célula de ubre 🐑🧬 | Shot Biotecnológico #28
+Esta oveja salió de una célula de ubre 🐑🧬 | Shot Biotecnológico 28
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Universidad de Nottingham (2016). Nottingham Dollies prove cloned sheep can live long and healthy lives. https://www.nottingham.ac.uk/news/pressreleases/2016/july/nottingham-dollies-prove-cloned-sheep-can-live-long-and-healthy-lives.aspx
 - Scientific American (2016). Dolly at 20: The Inside Story on the World's Most Famous Sheep. https://www.scientificamerican.com/article/dolly-at-20-the-inside-story-on-the-world-s-most-famous-sheep
 Si pudieras clonar a un animal, ¿cuál sería y por qué? 👇
-Shot Biotecnológico #28 · La Creación del Robert
+Shot Biotecnológico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #OvejaDolly
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa oveja que ves no vino de ningún espermatozoide: vino de una célula de ubre. 🐑🧬 Dolly (Escocia, 1996) fue el primer mamífero clonado de una célula adulta: el núcleo de una célula de ubre, metido en un óvulo sin núcleo y despertado con pulsos eléctricos. De 277 células fusionadas, solo nació ella.
 Si pudieras clonar a un animal, ¿cuál sería? 👇
-Shot Biotecnológico #28 · La Creación del Robert
+Shot Biotecnológico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #OvejaDolly
 ```
@@ -73,20 +73,20 @@ En el Instituto Roslin (Escocia), el equipo de Ian Wilmut tomó células de glá
 La conclusión del artículo en Nature (1997) es la clave: la diferenciación de una célula adulta no implica una modificación irreversible del material genético. El costo también fue claro: de 277 células fusionadas, 29 llegaron a embrión y nació un solo cordero.
 Años después, la duda era si los clones envejecen antes. En 2016, la Universidad de Nottingham evaluó a 13 ovejas clonadas de 7 a 9 años, cuatro de ellas clones de Dolly, y no encontró signos clínicos de enfermedad: glucosa, sensibilidad a la insulina y presión normales, con artritis leve en algunas (Sinclair et al., Nature Communications).
 ¿Qué otras "reglas" de la biología crees que estamos dando por hechas sin haberlas probado?
-Shot Biotecnológico #28 · La Creación del Robert
+Shot Biotecnológico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Clonacion #Genetica #OvejaDolly #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esa oveja no vino de ningún espermatozoide: vino de una célula de ubre. 🐑 Dolly (1996): de 277 células de ubre fusionadas con óvulos, nació una sola corderita. Shot Biotecnológico #28 #Biotecnologia #OvejaDolly
+Esa oveja no vino de ningún espermatozoide: vino de una célula de ubre. 🐑 Dolly (1996): de 277 células de ubre fusionadas con óvulos, nació una sola corderita. Shot Biotecnológico 28 #Biotecnologia #OvejaDolly
 ```
 
 ### Threads
 ```text
 Esa oveja que ves no vino de ningún espermatozoide: vino de una célula de ubre. 🐑🧬 Dolly, del Instituto Roslin, fue el primer mamífero clonado de una célula adulta. De 277 células fusionadas, solo ella nació, y su nombre es por Dolly Parton. Si pudieras clonar a un animal, ¿cuál sería? 👇
-Shot Biotecnológico #28 · La Creación del Robert
+Shot Biotecnológico 28 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

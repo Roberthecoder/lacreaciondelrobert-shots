@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #23 · Esa madera no está embrujada: hongos que brillan
+# Publicación · Shot Fungi Mati 23 · Esa madera no está embrujada: hongos que brillan
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Se calcula que este sistema de luz nació hace unos 160 millones de años, en el
 El dibujo es esquemático.
 Fuentes: Kotlobay et al. 2018 (PNAS); Oliveira et al. 2015 (Current Biology); Ke et al. 2020 (PNAS); Cortés-Pérez et al. 2019 (Mycologia).
 ¿Has visto algún hongo brillar en el bosque? 👇
-Shot Fungi Mati #23 · La Creación del Robert
+Shot Fungi Mati 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Bioluminiscencia #Ciencia
 ```
@@ -26,7 +26,7 @@ Esa madera no está embrujada: la hace brillar un hongo que vive adentro. 🍄�
 Solo unas cien especies de hongos brillan. Su truco: ácido cafeico → hispidina → luciferina, y la luciferasa la junta con oxígeno para soltar luz verde. ¿Para qué? En Brasil, hongos falsos con foco verde atraparon 42 insectos contra 12 de los apagados; la hipótesis es que los insectos llevan sus esporas. Su brillo sigue un reloj de casi un día, y se calcula que esta luz nació hace unos 160 millones de años. En México se describieron seis Mycena nuevas que brillan.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Has visto algún hongo brillar en el bosque? 👇
-Shot Fungi Mati #23 · La Creación del Robert
+Shot Fungi Mati 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Bioluminiscencia #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa madera no está embrujada: brilla un HONGO ✨🍄 | Shot Fungi Mati #23
+Esa madera no está embrujada: brilla un HONGO ✨🍄 | Shot Fungi Mati 23
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Blanchette, R. A. (2024). Bioluminescent fungi. Fungi 17(1). https://www.fungimag.com/v17i1/V17I1-Blanchette.pdf
 - Cortés-Pérez, A. et al. (2019). New species and records of bioluminescent Mycena from Mexico. Mycologia 111(2): 319–338. https://doi.org/10.1080/00275514.2018.1554172
 ¿Has visto algún hongo brillar en el bosque? 👇
-Shot Fungi Mati #23 · La Creación del Robert
+Shot Fungi Mati 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #Bioluminiscencia
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa madera no está embrujada: la hace brillar un hongo que vive adentro. ✨ Solo unas cien especies de hongos brillan: convierten ácido cafeico en luciferina y la juntan con oxígeno para soltar luz verde. En Brasil, hongos falsos con foco verde atraparon 42 insectos contra 12 de los apagados: quizá así reparten sus esporas.
 ¿Has visto algún hongo brillar en el bosque? 👇
-Shot Fungi Mati #23 · La Creación del Robert
+Shot Fungi Mati 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Bioluminiscencia
 ```
@@ -72,7 +72,7 @@ Alrededor de 100 especies de hongos producen luz con la misma reacción. En 2018
 ¿Para qué le sirve al hongo? Oliveira et al. (Current Biology, 2015) colocaron en un bosque de Brasil hongos de acrílico con LED verde: atraparon 42 insectos contra 12 de las trampas apagadas. La hipótesis es que los insectos ayudan a dispersar esporas. El mismo estudio mostró que el brillo sigue un reloj circadiano de unas 22 h.
 Y en México, en 2019 se describieron seis especies nuevas de Mycena luminosas en bosques de niebla: biodiversidad que apenas estamos conociendo.
 ¿Qué otro fenómeno natural te gustaría ver explicado por dentro?
-Shot Fungi Mati #23 · La Creación del Robert
+Shot Fungi Mati 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Bioluminiscencia #Micologia #Ciencia
 ```
@@ -85,7 +85,7 @@ Esa madera no está embrujada: brilla un hongo. Ácido cafeico → luciferina + 
 ### Threads
 ```text
 Esa madera no está embrujada: la hace brillar un hongo que vive adentro. ✨ Solo unas cien especies de hongos brillan, con una reacción que empieza en el ácido cafeico y termina en luz verde. Y quizá la usan para llamar insectos que les lleven las esporas. ¿Has visto alguno en el bosque?
-Shot Fungi Mati #23 · La Creación del Robert
+Shot Fungi Mati 23 · La Creación del Robert
 #Hongos
 ```
 

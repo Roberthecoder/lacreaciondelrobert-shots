@@ -1,4 +1,4 @@
-# Publicación · Shot IA #13 · Estudiar con ChatGPT: mejor en la tarea, peor en el examen
+# Publicación · Shot IA 13 · Estudiar con ChatGPT: mejor en la tarea, peor en el examen
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que cuando estudies con IA, pídele pistas, no la respuesta: el examen lo h
 Es un solo estudio, en una escuela y en mate. El dibujo es esquemático; los ejercicios y los chats son ilustrativos.
 Fuente: Bastani et al., PNAS (2025).
 ¿Tú cómo usas la IA para estudiar: le pides la respuesta o pistas? 👇
-Shot IA #13 · La Creación del Robert
+Shot IA 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT #Estudiantes #Matematicas
 ```
@@ -27,7 +27,7 @@ En el otoño de 2023, en una prepa de Turquía, casi mil estudiantes de mate pra
 Consejo: pídele pistas a la IA, no la respuesta.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú cómo usas la IA para estudiar: le pides la respuesta o pistas? 👇
-Shot IA #13 · La Creación del Robert
+Shot IA 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT #Estudiantes #Matematicas
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Estudiar con ChatGPT: +48 % en la tarea, −17 % en el examen 📚 | Shot IA #13
+Estudiar con ChatGPT: +48 % en la tarea, −17 % en el examen 📚 | Shot IA 13
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Con un chat tipo ChatGPT, unos estudiantes sacaron 48 % más en la práctica… y 17 % menos en el examen (comparados con quienes estudiaron sin IA). 📚 Fue un experimento con casi mil estudiantes de prepa en Turquía, en 2023: la mayoría solo pedía la respuesta y la copiaba. Con un tutor de IA que daba pistas, el daño casi desapareció. Pídele pistas, no respuestas.
 ¿Tú cómo usas la IA para estudiar? 👇
-Shot IA #13 · La Creación del Robert
+Shot IA 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ChatGPT
 ```
@@ -70,7 +70,7 @@ La diferencia la hizo el diseño: una versión con "barandales" (pistas en lugar
 Para escuelas, universidades y equipos que capacitan con IA: la pregunta no es solo si se usa, sino cómo está diseñada la herramienta.
 ¿En tu institución hay reglas sobre cómo usar la IA para aprender?
 Fuente: Bastani et al., PNAS 122(26): e2422633122 (2025). Datos de 2023, un solo estudio y una materia.
-Shot IA #13 · La Creación del Robert
+Shot IA 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Educacion #ChatGPT #Aprendizaje #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Practicar mate con un chat tipo ChatGPT: +48 % en la práctica y −17 % en el e
 Con un chat tipo ChatGPT, unos estudiantes sacaron 48 % más en la práctica… y 17 % menos en el examen (comparados con quienes estudiaron sin IA). 📚
 Turquía, 2023, casi mil estudiantes de mate: la mayoría solo pedía la respuesta y la copiaba. Con un tutor que daba pistas, el daño casi desapareció.
 ¿Tú le pides a la IA respuestas o pistas?
-Shot IA #13 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 13 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

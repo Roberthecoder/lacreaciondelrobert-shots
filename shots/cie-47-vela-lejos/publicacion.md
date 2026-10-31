@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #47 · ¿A qué distancia puedes ver una vela?
+# Publicación · Shot Científico 47 · ¿A qué distancia puedes ver una vela?
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Así que una vela se ve lejos, pero no a 50 kilómetros.
 El dibujo es esquemático.
 Fuentes: Krisciunas y Carona 2015 (arXiv:1507.06270, Texas A&M); MIT Technology Review 2015; Physics World 2015.
 ¿Tú a qué distancia creías que se veía una vela? 👇
-Shot Científico #47 · La Creación del Robert
+Shot Científico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Astronomia #Vela
 ```
@@ -27,7 +27,7 @@ En 2015, dos físicos de Texas A&M pusieron una vela a 338 m, la compararon con 
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú a qué distancia creías que se veía una vela? 👇
-Shot Científico #47 · La Creación del Robert
+Shot Científico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Astronomia #Vela
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Hasta dónde puedes ver una vela de noche? 🕯️ | Shot Científico #47
+¿Hasta dónde puedes ver una vela de noche? 🕯️ | Shot Científico 47
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - IFAB, Reglas de Juego, Regla 1 (largo de la cancha, 100–110 m en partidos internacionales). https://www.thefa.com/football-rules-governance/lawsandrules/laws/football-11-11/law-1---the-field-of-play
 - Tinsley, J. N. et al. (2016). Direct detection of a single photon by humans. Nature Communications 7:12172. https://pmc.ncbi.nlm.nih.gov/articles/PMC4960318/
 ¿Tú a qué distancia creías que se veía una vela? 👇
-Shot Científico #47 · La Creación del Robert
+Shot Científico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Astronomia #Shorts
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Hasta dónde se ve la llama de una vela de noche? En internet dicen que casi 50 km. Un estudio de Texas A&M (2015) la puso a 338 m, la comparó con la estrella Vega y midió su luz con una cámara CCD: calcularon que se vería a unos 2.6 km, en condiciones ideales. Como 25 canchas de fútbol en fila: lejos, pero no a 50 km. 🕯️ El dibujo es esquemático.
 ¿Tú a qué distancia creías que se veía una vela? 👇
-Shot Científico #47 · La Creación del Robert
+Shot Científico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -73,7 +73,7 @@ Una pregunta sencilla con respuestas muy dispares en internet: ¿a qué distanci
 Krisciunas y Carona (Texas A&M, 2015) la abordaron con un método de astrónomos: midieron una vela a 338 m, la compararon con Vega y con una cámara CCD, y calcularon a qué distancia brillaría como una estrella de magnitud 6, el límite práctico a simple vista con cielo oscuro. Resultado: unos 2.6 km, en condiciones ideales (sin contar la extinción atmosférica a ras de suelo).
 Un buen ejemplo de cómo una medición pequeña y bien hecha, más un cálculo claro, pone en su lugar un dato inflado.
 ¿Qué otro dato "de internet" te gustaría ver medido?
-Shot Científico #47 · La Creación del Robert
+Shot Científico 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

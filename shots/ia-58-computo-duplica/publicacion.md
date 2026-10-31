@@ -1,4 +1,4 @@
-# Publicación · Shot IA #58 · El vaso que se llena cinco veces más cada año: el cómputo de la IA
+# Publicación · Shot IA 58 · El vaso que se llena cinco veces más cada año: el cómputo de la IA
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ En 2022, el equipo de Epoch AI lo mostró en un congreso en Padua, Italia: antes
 Así que ese vaso no se llena solo: cada vez que crece, alguien paga la cuenta y la luz.
 El dibujo es esquemático. Fuentes: Epoch AI (2026), Sevilla et al. (2022), Intel, EIA.
 ¿Crees que este ritmo puede seguir muchos años más? 👇
-Shot IA #58 · La Creación del Robert
+Shot IA 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #LeyDeMoore #CentrosDeDatos #Ciencia
 ```
@@ -24,7 +24,7 @@ Esto no es un vaso de agua: es el cómputo para entrenar las IA más grandes. Y 
 La ley de Moore duplica los transistores de un chip cada dos años. El cómputo para entrenar los modelos de lenguaje más grandes se duplica cada ~5 meses desde 2020, y su tendencia ya creció unas 10,000 veces. Sale de más chips a la vez, entrenamientos más largos y chips más potentes. La consecuencia: entrenarlas cuesta ~3.5 veces más cada año, y los centros de datos de IA más grandes ya rondan un gigavatio (la luz de unas 800,000 casas en EE. UU.).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Crees que este ritmo puede seguir muchos años más? 👇
-Shot IA #58 · La Creación del Robert
+Shot IA 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #LeyDeMoore #CentrosDeDatos #Ciencia
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El cómputo de la IA crece 5 veces cada año 🥤 | Shot IA #58
+El cómputo de la IA crece 5 veces cada año 🥤 | Shot IA 58
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es un vaso de agua: es el cómputo para entrenar las IA más grandes. Y cada año necesita unas 5 veces más. 🥤 La ley de Moore duplica los transistores cada dos años; el cómputo de entrenamiento de la IA se duplica cada ~5 meses. Por eso entrenarlas cuesta ~3.5 veces más cada año, y los centros de datos más grandes ya rondan un gigavatio. Alguien paga la cuenta y la luz.
 ¿Crees que este ritmo puede seguir muchos años más? 👇
-Shot IA #58 · La Creación del Robert
+Shot IA 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #LeyDeMoore
 ```
@@ -69,7 +69,7 @@ Sevilla et al. (IJCNN 2022) lo pusieron en perspectiva histórica: antes de 2010
 Ese crecimiento no viene de que los chips mejoren 5 veces al año (su rendimiento por dólar crece ~49 % anual), sino de usar más chips en paralelo y entrenar por más tiempo. Las implicaciones son concretas: el costo de entrenar modelos de frontera crece ~3.5 veces al año, y el centro de datos de IA más grande registrado por Epoch ya consume alrededor de un gigavatio (1,037 MW, octubre 2026).
 ¿Qué límite llegará primero: el dinero, la electricidad o los chips?
 Fuentes: Epoch AI (Trends in AI, 2026; Frontier Data Centers, 2026); Sevilla et al., IJCNN 2022; Intel.
-Shot IA #58 · La Creación del Robert
+Shot IA 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Computo #CentrosDeDatos #Energia #LaCreacionDelRobert
 ```
@@ -84,7 +84,7 @@ La ley de Moore: transistores ×2 cada 2 años. El cómputo para entrenar las IA
 Esto no es un vaso de agua: es el cómputo para entrenar las IA más grandes. Cada año necesita unas 5 veces más. 🥤
 La ley de Moore duplica transistores cada 2 años; este cómputo se duplica cada ~5 meses (Epoch AI). Costo: ~3.5 veces más cada año.
 ¿Puede seguir así?
-Shot IA #58 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 58 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

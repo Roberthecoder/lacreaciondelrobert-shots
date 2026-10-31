@@ -1,4 +1,4 @@
-# Publicación · Shot IA #23 · La IA que lee labios mejor que los expertos
+# Publicación · Shot IA 23 · La IA que lee labios mejor que los expertos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ A la máquina también se le llegan a cruzar la pe y la be: para decidir, se ayu
 El dibujo es esquemático; el globo "tengo sed" es un ejemplo ilustrativo. Datos de 2017 y 2018.
 Fuentes: Chung et al., CVPR (2017) · Shillingford et al., arXiv (2018) · Fernandez-Lopez y Sukno, arXiv (2017).
 ¿Tú sabes leer labios? ¿Qué palabra te confunde siempre? 👇
-Shot IA #23 · La Creación del Robert
+Shot IA 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #LecturaDeLabios #Ciencia #IA
 ```
@@ -25,7 +25,7 @@ Tus ojos nunca van a ver si unos labios sin sonido dijeron «peso» o «beso»: 
 A esas formas de boca que comparten varios sonidos se les llama visemas. En 2017, un lector profesional descifró menos de 1 de cada 4 palabras en videos de la BBC; la IA de ese estudio, la mitad. En 2018, otra IA de DeepMind y Google, entrenada con 3,886 horas de video de YouTube, tuvo 40.9 % de error de palabras; los lectores profesionales, entre 86.4 % y 92.9 %. Una de sus metas: ayudar a quien perdió la voz. Y sus autores avisan: solo funciona bien de frente, de cerca y con buen video.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú sabes leer labios? ¿Qué palabra te confunde siempre? 👇
-Shot IA #23 · La Creación del Robert
+Shot IA 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #LecturaDeLabios #Ciencia #IA
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que lee labios mejor que los expertos 👄 | Shot IA #23
+La IA que lee labios mejor que los expertos 👄 | Shot IA 23
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tus ojos nunca van a ver si unos labios sin sonido dijeron «peso» o «beso»: la pe y la be se ven iguales. 👄 En 2018, una IA de DeepMind y Google tuvo 40.9 % de error leyendo labios en videos de YouTube; lectores profesionales, entre 86.4 % y 92.9 %. Una de sus metas: ayudar a quien perdió la voz.
 ¿Tú sabes leer labios? ¿Qué palabra te confunde siempre? 👇
-Shot IA #23 · La Creación del Robert
+Shot IA 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #LecturaDeLabios
 ```
@@ -68,7 +68,7 @@ La clave no fue solo "ver mejor": muchos sonidos comparten la misma forma de boc
 Lo interesante para quien evalúa tecnología: los autores dicen con claridad dónde NO funciona (si la persona no está de frente, está lejos o el video es de baja calidad) y ponen como motivación clave a pacientes que perdieron la voz.
 ¿Qué otras tareas "imposibles" para el ojo humano crees que se resuelven con contexto y no solo con más resolución?
 Fuentes: Chung et al., CVPR (2017); Shillingford et al., arXiv:1807.05162 (2018). Datos de 2017–2018.
-Shot IA #23 · La Creación del Robert
+Shot IA 23 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Accesibilidad #VisionPorComputadora #Salud #LaCreacionDelRobert
 ```
@@ -83,7 +83,7 @@ La p y la b se ven iguales en los labios. Aun así, en 2018 una IA de DeepMind y
 Tus ojos nunca van a ver si unos labios sin sonido dijeron «peso» o «beso». 👄🔇
 En 2018, una IA de DeepMind y Google tuvo 40.9 % de error de palabras leyendo labios; lectores profesionales, entre 86.4 % y 92.9 %. Sus autores avisan: solo va bien de frente, de cerca y con buen video.
 ¿Tú sabes leer labios?
-Shot IA #23 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 23 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

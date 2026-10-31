@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #58 · Tus venas no son azules
+# Publicación · Shot Científico 58 · Tus venas no son azules
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -11,7 +11,7 @@ La sangre de tus venas lleva menos oxígeno, por eso es de un rojo más oscuro, 
 El dibujo es esquemático.
 Fuentes: Kienle et al. 1996 (Applied Optics); C. Baird, West Texas A&M University.
 ¿Tú también creías que la sangre de las venas era azul? 👇
-Shot Científico #58 · La Creación del Robert
+Shot Científico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #venas #sangre #ciencia #cuerpohumano #luz #divulgacion #LaCreacionDelRobert
 ```
@@ -23,7 +23,7 @@ La sangre de tus venas es roja oscura (lleva menos oxígeno). Se ven azuladas po
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú también creías que la sangre de las venas era azul? 👇
-Shot Científico #58 · La Creación del Robert
+Shot Científico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #venas #sangre #ciencia #cuerpohumano #luz #divulgacion #LaCreacionDelRobert
 ```
@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tus venas no son azules: tu sangre es roja oscura 🩸 | Shot Científico #58
+Tus venas no son azules: tu sangre es roja oscura 🩸 | Shot Científico 58
 ```
 Descripción:
 ```text
@@ -42,7 +42,7 @@ Fuentes:
 - Kienle A, Lilge L, Vitkin IA, Patterson MS, Wilson BC, Hibst R, Steiner R (1996). Why do veins appear blue? A new look at an old question. Applied Optics 35(7): 1151–1160. https://opg.optica.org/ao/abstract.cfm?uri=ao-35-7-1151
 - C. Baird, West Texas A&M University (2012). Why are veins blue? https://wtamu.edu/~cbaird/sq/2012/12/18/why-are-veins-blue/
 ¿Tú también creías que la sangre de las venas era azul? 👇
-Shot Científico #58 · La Creación del Robert
+Shot Científico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #venas #sangre #ciencia #cuerpohumano #LaCreacionDelRobert
 ```
@@ -51,7 +51,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tus venas se ven azules… pero tu sangre nunca es azul, ni dentro de ti: es roja oscura. Lo azul es un truco de la luz y de tu piel: la luz roja entra más hondo, la vena se traga buena parte de ella, y tu cerebro compara ese punto con la piel de alrededor. 🩸
 ¿Tú también creías que la sangre de las venas era azul? 👇
-Shot Científico #58 · La Creación del Robert
+Shot Científico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 ¿Por qué las venas se ven azules si la sangre es roja? En 1996, un equipo de Alemania y Canadá (Alwin Kienle y colegas, Applied Optics) lo explicó midiendo cómo viaja la luz en la piel: la luz roja penetra más profundo, la sangre de la vena absorbe buena parte de ella, y de ese punto regresa menos rojo que de la piel de alrededor. Por comparación, el cerebro percibe ese tono como azulado, aunque no sea azul. La profundidad también cuenta: una vena muy honda casi no se distingue. Un buen ejemplo de que lo que vemos depende de la física y de la percepción.
-Shot Científico #58 · La Creación del Robert
+Shot Científico 58 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

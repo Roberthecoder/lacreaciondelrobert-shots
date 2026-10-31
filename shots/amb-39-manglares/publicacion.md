@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #39 · Este lodo es una bodega de carbono (manglares)
+# Publicación · Shot Ambiental 39 · Este lodo es una bodega de carbono (manglares)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que la próxima vez que pises este lodo, piénsalo: estás parado sobre una
 El dibujo es esquemático.
 Fuentes: Donato et al. 2011 (Nature Geoscience) y CONABIO.
 ¿Has visto un manglar? ¿Dónde? 👇
-Shot Ambiental #39 · La Creación del Robert
+Shot Ambiental 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Manglares #CarbonoAzul #Mexico
 ```
@@ -25,7 +25,7 @@ Este lodo no es suciedad: es una bodega de carbono, y la construyó el manglar q
 En el suelo empapado del manglar casi no hay oxígeno, así que las hojas y raíces muertas se descomponen lentísimo y su carbono se queda enterrado, capa sobre capa, a veces por miles de años. Un estudio de 2011 en 25 manglares del Indo-Pacífico encontró en promedio 1,023 toneladas de carbono por hectárea, y del 49 al 98 % estaba en el suelo. En México hay 877,464 hectáreas de manglar (CONABIO, 2025).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Has visto un manglar? ¿Dónde? 👇
-Shot Ambiental #39 · La Creación del Robert
+Shot Ambiental 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Manglares #CarbonoAzul #Mexico
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este lodo es una bodega de carbono 🌱 | Shot Ambiental #39
+Este lodo es una bodega de carbono 🌱 | Shot Ambiental 39
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - CONABIO, Manglares: https://www.biodiversidad.gob.mx/ecosistemas/manglares
 - NOAA, What is Blue Carbon?: https://oceanservice.noaa.gov/facts/bluecarbon.html
 ¿Has visto un manglar? ¿Dónde? 👇
-Shot Ambiental #39 · La Creación del Robert
+Shot Ambiental 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Manglares #CarbonoAzul
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este lodo no es suciedad: es una bodega de carbono. 🌱 En el suelo de los manglares casi no hay oxígeno, así que el carbono de hojas y raíces se queda enterrado por miles de años. En promedio, más de mil toneladas de carbono por hectárea (estudio de 2011), y casi todo en el suelo.
 ¿Has visto un manglar? ¿Dónde? 👇
-Shot Ambiental #39 · La Creación del Robert
+Shot Ambiental 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Manglares #CarbonoAzul
 ```
@@ -67,7 +67,7 @@ Este lodo no es suciedad: es una bodega de carbono.
 Un estudio de 2011 en Nature Geoscience (Donato et al.) midió 25 manglares del Indo-Pacífico: en promedio guardaban 1,023 toneladas de carbono por hectárea, entre los bosques más ricos en carbono de los trópicos, y del 49 al 98 % de ese carbono estaba en el suelo. La razón: el suelo inundado y con poco oxígeno hace que la materia orgánica se descomponga muy despacio, y el carbono se acumula capa sobre capa.
 México tiene 877,464 hectáreas de manglar (CONABIO, 2025), que además sirven de barrera contra huracanes y sostienen buena parte de la pesca como zona de crianza. Cuidar un manglar es cuidar una bodega de carbono que ya existe.
 ¿Qué crees que haría falta para proteger mejor los manglares de tu región?
-Shot Ambiental #39 · La Creación del Robert
+Shot Ambiental 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #CarbonoAzul #Manglares #CambioClimatico #LaCreacionDelRobert
 ```

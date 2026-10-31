@@ -22,7 +22,7 @@ El dibujo es esquemático.
 Fuentes: Guthrie y Susi, Pediatrics 1963 · Millington, J Mass Spectrom Adv Clin Lab 2024 · Cochrane 2020 · MedlinePlus Genetics · NOM-034-SSA2-2013 · IMSS · Acuerdo de aditivos, DOF 2026.
 
 ¿Sabías que te habían hecho esta prueba? ¿Todavía tienes tu comprobante del tamiz? 👇
-Shot Biotecnológico #39 · La Creación del Robert
+Shot Biotecnológico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #TamizNeonatal #Fenilcetonuria #PruebaDelTalon
 ```
@@ -40,7 +40,7 @@ Hoy la espectrometría de masas en tándem puede buscar más de 30 enfermedades 
 El dibujo es esquemático. Fuentes en el primer comentario.
 
 ¿Sabías que te habían hecho esta prueba? 👇
-Shot Biotecnológico #39 · La Creación del Robert
+Shot Biotecnológico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #TamizNeonatal #Fenilcetonuria #PruebaDelTalon
 ```
@@ -48,7 +48,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas gotas de tu talón cazaban enfermedades 🩸👣 | Shot Biotecnológico #39
+Esas gotas de tu talón cazaban enfermedades 🩸👣 | Shot Biotecnológico 39
 ```
 Descripción:
 ```text
@@ -75,7 +75,7 @@ Fuentes:
 - Acuerdo de aditivos, DOF 21 ago 2026: https://sidof.segob.gob.mx/notas/5796825
 
 ¿Sabías que te habían hecho esta prueba? ¿Todavía tienes tu comprobante del tamiz? 👇
-Shot Biotecnológico #39 · La Creación del Robert
+Shot Biotecnológico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #TamizNeonatal #Biotecnologia
 ```
@@ -85,7 +85,7 @@ Soy Robert, de La Creación del Robert 🌱
 Estas gotas de tu sangre no son un simple análisis: cazan enfermedades invisibles. 🩸👣
 Es el tamiz neonatal: unas gotas del talón en un papel filtro para encontrar enfermedades como la fenilcetonuria antes de que hagan daño. En 1963, Robert Guthrie lo hizo con bacterias; hoy un espectrómetro de masas puede buscar más de 30 enfermedades con una sola prueba.
 ¿Sabías que te habían hecho esta prueba? 👇
-Shot Biotecnológico #39 · La Creación del Robert
+Shot Biotecnológico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #TamizNeonatal
 ```
@@ -102,7 +102,7 @@ En México, la NOM-034-SSA2-2013 obliga a tomar la muestra en todo establecimien
 
 ¿Qué otra prueba sencilla crees que ha tenido tanto impacto en la salud pública?
 
-Shot Biotecnológico #39 · La Creación del Robert
+Shot Biotecnológico 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #SaludPublica #TamizNeonatal
 ```
@@ -117,7 +117,7 @@ Esas gotas de tu talón de bebé cazaban enfermedades invisibles 🩸 En 1963 Ro
 Estas gotas de tu sangre no son un simple análisis: cazan enfermedades invisibles. 🩸
 A los pocos días de nacer, probablemente te picaron el talón para el tamiz neonatal. Busca enfermedades como la fenilcetonuria, que una dieta puede controlar si se detecta a tiempo. En 1963 Robert Guthrie lo hacía con bacterias; hoy, con espectrometría de masas.
 ¿Sabías que te la hicieron? 👇
-Shot Biotecnológico #39 · La Creación del Robert
+Shot Biotecnológico 39 · La Creación del Robert
 #Biotecnologia
 ```
 

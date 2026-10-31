@@ -15,7 +15,7 @@ Sirve para biosensores que se puedan leer a través del tejido, porque los campo
 No es telequinesis ni control mental. El dibujo es esquemático.
 Fuentes: Abrahams, G. et al., Nature 649: 1172–1179 (21 de enero de 2026).
 ¿Qué otra cosa crees que la vida hace con física cuántica? 👇
-Shot Científico #02 · La Creación del Robert
+Shot Científico 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #BiologiaCuantica #MagLOV #Fisica
 ```
@@ -28,7 +28,7 @@ La luz azul deja dos electrones desapareados (un par radical): si sus giros qued
 El mismo mecanismo se propone, como hipótesis, para la brújula de las aves migratorias.
 No es telequinesis. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué otra cosa crees que la vida hace con física cuántica? 👇
-Shot Científico #02 · La Creación del Robert
+Shot Científico 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #BiologiaCuantica #MagLOV #Fisica
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un imán apaga esta proteína sin tocarla 🧲🔵 | Shot Científico #02
+Un imán apaga esta proteína sin tocarla 🧲🔵 | Shot Científico 02
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Genetic Engineering & Biotechnology News, 21 de enero de 2026 (las proteínas de partida vienen de la avena común).
 
 ¿Qué otra cosa crees que la vida hace con física cuántica? 👇
-Shot Científico #02 · La Creación del Robert
+Shot Científico 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #BiologiaCuantica
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Ese imán no mueve la proteína: le cambia el giro a sus electrones. 🧲🔵 Se llama MagLOV, salió de un pedazo de avena y con un campo magnético su luz baja a la mitad, dentro de bacterias vivas. No es telequinesis: es física cuántica. ¿Qué otra cosa crees que la vida hace con cuántica? 👇
-Shot Científico #02 · La Creación del Robert
+Shot Científico 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -74,7 +74,7 @@ El mecanismo es el del par radical: la luz azul deja dos electrones desapareados
 Por qué importa: abre la puerta a biosensores leídos con campos magnéticos, que atraviesan tejido donde la luz no llega. Y el mismo mecanismo es la hipótesis principal de la brújula de las aves migratorias: hipótesis, no hecho comprobado.
 ¿Dónde usarías un sensor biológico que se lee con un imán?
 Fuente: Abrahams, G. et al., Nature 649: 1172–1179 (2026), doi 10.1038/s41586-025-09971-3.
-Shot Científico #02 · La Creación del Robert
+Shot Científico 02 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #BiologiaCuantica #Biosensores
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #47 · La IA que sacó oro en la Olimpiada de Matemáticas (y el problema que no pudo)
+# Publicación · Shot IA 47 · La IA que sacó oro en la Olimpiada de Matemáticas (y el problema que no pudo)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -17,7 +17,7 @@ Ojo: estos problemas ya tenían solución; en la investigación matemática, nad
 En 2026 se reportó que varias IA sacaron 42 de 42, pero no hay confirmación oficial de la olimpiada.
 El dibujo es esquemático. Fuentes en el comentario fijado.
 ¿Tú le ganarías a la IA? ¿Alguna vez participaste en una olimpiada de mate? 👇
-Shot IA #47 · La Creación del Robert
+Shot IA 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Matematicas #OlimpiadaDeMatematicas #IMO
 ```
@@ -29,7 +29,7 @@ Olimpiada 2025 (Australia): Gemini Deep Think, de Google DeepMind, resolvió 5 d
 En 2026 se reportó que varias IA sacaron 42 de 42, pero no hay confirmación oficial de la olimpiada.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú le ganarías a la IA? 👇
-Shot IA #47 · La Creación del Robert
+Shot IA 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Matematicas #OlimpiadaDeMatematicas #IMO
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que sacó oro en la Olimpiada de Matemáticas (y el problema que no pudo) 🧮 | Shot IA #47
+La IA que sacó oro en la Olimpiada de Matemáticas (y el problema que no pudo) 🧮 | Shot IA 47
 ```
 Descripción:
 ```text
@@ -68,7 +68,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Si compitieras contra esta IA en la Olimpiada Internacional de Matemáticas, casi seguro te gana: superó a 558 de 630 concursantes. 🧮 En 2025, Gemini Deep Think sacó 35 de 42, justo el corte de oro, calificada por la olimpiada. Pero 26 jóvenes sacaron más, y el problema seis solo lo resolvieron seis humanos: ninguna de las dos IA. México: dos platas y cuatro bronces. 🇲🇽 En 2026 se reportó que varias IA sacaron 42 de 42, pero no hay confirmación oficial de la olimpiada.
 ¿Tú le ganarías a la IA? 👇
-Shot IA #47 · La Creación del Robert
+Shot IA 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Matematicas
 ```
@@ -80,7 +80,7 @@ Gemini Deep Think (Google DeepMind) resolvió 5 de 6 problemas en lenguaje natur
 Los matices importan: 26 jóvenes sacaron más que las IA, el problema más difícil solo lo resolvieron 6 de 630 humanos y ninguna de las dos IA, y un problema de olimpiada (con solución conocida) no es investigación matemática. En 2026 se reportó que varias IA sacaron 42 de 42, pero no hay confirmación oficial de la olimpiada.
 ¿Qué cambia para la enseñanza de las matemáticas cuando una IA llega a este nivel?
 Fuentes: imo-official.org (2025); blogs de Google DeepMind (2024 y 2025); A. Wei, OpenAI (2025).
-Shot IA #47 · La Creación del Robert
+Shot IA 47 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Matematicas #Educacion #IMO #LaCreacionDelRobert
 ```
@@ -95,7 +95,7 @@ Olimpiada de Matemáticas 2025: una IA de Google sacó 35/42, el corte de oro, y
 Si compitieras contra esta IA en la Olimpiada Internacional de Matemáticas, casi seguro te gana: superó a 558 de 630 concursantes. 🧮
 Pero en 2025, 26 jóvenes sacaron más, y el problema seis solo lo resolvieron seis humanos. En 2026 se reportó que varias IA sacaron 42 de 42, sin confirmación oficial.
 ¿Tú le ganarías?
-Shot IA #47 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 47 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

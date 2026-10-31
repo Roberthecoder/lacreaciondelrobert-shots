@@ -1,4 +1,4 @@
-# Publicación · Shot IA #24 · Tu cerebro piensa con 20 watts; una tarjeta de IA, con 700
+# Publicación · Shot IA 24 · Tu cerebro piensa con 20 watts; una tarjeta de IA, con 700
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que tu foquito de 20 watts aún le da clases de ahorro a las máquinas.
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú cuánto crees que gasta tu cerebro en un examen? 👇
-Shot IA #24 · La Creación del Robert
+Shot IA 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Cerebro #Neurociencia #Energia
 ```
@@ -28,7 +28,7 @@ Pesa como el 2 % de tu cuerpo, usa el 20 % de tu energía y mueve unas 86 mil mi
 Una tarjeta de IA de centro de datos (H100 SXM) puede jalar hasta 700 W, lo de unos 35 cerebros, y en 2024 Llama 3 se entrenó con hasta 16 mil a la vez. No se comparan uno a uno: hacen trabajos distintos. Y la ingeniería ya intenta copiar al cerebro: en 2024 Intel presentó Hala Point, un prototipo inspirado en el cerebro: 1,150 millones de neuronas artificiales y hasta 2,600 W.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú cuánto crees que gasta tu cerebro en un examen? 👇
-Shot IA #24 · La Creación del Robert
+Shot IA 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Cerebro #Neurociencia #Energia
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu cerebro piensa con 20 watts; una tarjeta de IA, con 700 💡 | Shot IA #24
+Tu cerebro piensa con 20 watts; una tarjeta de IA, con 700 💡 | Shot IA 24
 ```
 Descripción:
 ```text
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Mientras me escuchas, tu cerebro gasta unos 20 watts: lo de un foco. 💡 Una tarjeta de IA de centro de datos puede jalar hasta 700 W, lo de unos 35 cerebros, y en 2024 Llama 3 se entrenó con hasta 16 mil a la vez. No se comparan uno a uno, pero tu foquito de 20 watts aún le da clases de ahorro a las máquinas.
 ¿Tú cuánto crees que gasta tu cerebro en un examen? 👇
-Shot IA #24 · La Creación del Robert
+Shot IA 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Cerebro
 ```
@@ -76,7 +76,7 @@ La comparación no es uno a uno: hacen trabajos distintos y el cerebro no es una
 La computación neuromórfica intenta imitarlo. En 2024, Intel presentó Hala Point, un prototipo de investigación con 1,150 millones de neuronas artificiales y un consumo máximo de 2,600 W.
 ¿Crees que la próxima gran mejora de la IA vendrá de la eficiencia más que del tamaño?
 Fuentes: Balasubramanian, PNAS (2021); Azevedo et al. (2009); NVIDIA (ficha H100); Llama Team, arXiv:2407.21783 (2024); Levy y Calvert, PNAS (2021); Intel (2024).
-Shot IA #24 · La Creación del Robert
+Shot IA 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Neurociencia #EficienciaEnergetica #ComputacionNeuromorfica #LaCreacionDelRobert
 ```
@@ -91,7 +91,7 @@ Tu cerebro piensa con unos 20 W, lo de un foco. Una tarjeta de IA H100 puede jal
 Mientras me escuchas, tu cerebro gasta unos 20 watts: lo de un foco. 💡🧠
 Una tarjeta de IA de centro de datos puede jalar hasta 700 W, lo de unos 35 cerebros. No se comparan uno a uno, y la ingeniería ya intenta copiarlo: en 2024 Intel presentó Hala Point, un prototipo inspirado en el cerebro.
 ¿Tú cuánto crees que gasta tu cerebro en un examen?
-Shot IA #24 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 24 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

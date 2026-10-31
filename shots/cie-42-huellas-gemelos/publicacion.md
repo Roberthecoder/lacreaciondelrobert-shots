@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #42 · Los gemelos idénticos no tienen las mismas huellas
+# Publicación · Shot Científico 42 · Los gemelos idénticos no tienen las mismas huellas
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -14,7 +14,7 @@ Así que hasta dos gemelos idénticos dejan su propia firma en todo lo que tocan
 El dibujo es esquemático.
 Fuentes: Wertheim 2011 (Fingerprint Sourcebook, NIJ); MedlinePlus 2022; Jain, Prabhakar y Pankanti 2002; Henneberg, Lambert y Leigh 1997.
 ¿Conoces gemelos? ¿Alguien los confunde? 👇
-Shot Científico #42 · La Creación del Robert
+Shot Científico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Gemelos #Huellas #HuellasDigitales #Ciencia #Biologia #Koalas #CienciaEnEspañol #LaCreacionDelRobert
 ```
@@ -26,7 +26,7 @@ Vienen del mismo óvulo y del mismo espermatozoide, pero sus huellas se forman a
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Conoces gemelos? ¿Alguien los confunde? 👇
-Shot Científico #42 · La Creación del Robert
+Shot Científico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Gemelos #Huellas #HuellasDigitales #Ciencia #Biologia #Koalas #CienciaEnEspañol #LaCreacionDelRobert
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los gemelos idénticos NO tienen las mismas huellas 🔍 | Shot Científico #42
+Los gemelos idénticos NO tienen las mismas huellas 🔍 | Shot Científico 42
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Tao, X. et al. (2012). Fingerprint Recognition with Identical Twin Fingerprints. PLoS ONE 7(4): e35704. https://pmc.ncbi.nlm.nih.gov/articles/PMC3338710/
 - Henneberg, M., Lambert, K. M. y Leigh, C. M. (1997). Fingerprint homoplasy: koalas and humans. Natural Science 1: 4. https://hdl.handle.net/2440/5433
 ¿Conoces gemelos? ¿Alguien los confunde? 👇
-Shot Científico #42 · La Creación del Robert
+Shot Científico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Gemelos #Huellas #Ciencia #Biologia
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Los gemelos idénticos tienen casi el mismo ADN, pero no las mismas huellas digitales. 🔍 Las huellas se forman antes de nacer, según cómo crece y se estira la yema del dedo dentro del útero, y esas condiciones nunca son idénticas. El dibujo general se parece; los detalles finos, no. Por eso las huellas sí distinguen a dos gemelos, aunque una prueba común de ADN no lo logre. Dato raro: los koalas tienen huellas casi idénticas a las nuestras.
 ¿Conoces gemelos? ¿Alguien los confunde? 👇
-Shot Científico #42 · La Creación del Robert
+Shot Científico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -72,7 +72,7 @@ Soy Robert, de La Creación del Robert 🌱
 Dos gemelos idénticos comparten casi todo su ADN, y aun así sus huellas digitales son distintas.
 La razón está en el desarrollo: las crestas de la piel se forman en los primeros meses del embarazo y se doblan según cómo crece y se estira la yema del dedo, algo que depende del ambiente dentro del útero. El dibujo general suele parecerse entre gemelos, pero los detalles finos (finales y bifurcaciones de las crestas) son diferentes. Por eso un sistema de huellas puede distinguirlos, aunque una prueba común de ADN no lo logre.
 Un dato extra: los koalas tienen huellas casi idénticas a las nuestras, hasta vistas al microscopio (Henneberg y colegas, 1997).
-Shot Científico #42 · La Creación del Robert
+Shot Científico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

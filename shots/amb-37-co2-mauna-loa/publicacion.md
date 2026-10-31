@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #37 · La línea que mide el aire que respiras (curva de Keeling)
+# Publicación · Shot Ambiental 37 · La línea que mide el aire que respiras (curva de Keeling)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que esta línea no es un dibujo: es el aire que respiras, con más CO2 cada
 El dibujo es esquemático; la curva usa los datos mensuales reales de NOAA.
 Fuentes: NOAA (Global Monitoring Laboratory y Climate.gov) y Scripps (UC San Diego).
 ¿Sabías que el aire tiene "temporadas" de CO2? 👇
-Shot Ambiental #37 · La Creación del Robert
+Shot Ambiental 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CurvaDeKeeling #CambioClimatico #CO2
 ```
@@ -27,7 +27,7 @@ Esta línea es el aire que respiras, medido en lo alto de un volcán de Hawái d
 Es la curva de Keeling, del observatorio de Mauna Loa (3,400 m). El primer día marcó 313 partes por millón de CO2; en 2025 el promedio del año fue de 427. Antes de la industria, el hielo marca unas 280. Y cada año la línea "respira": baja en el verano del norte, cuando crecen las plantas, y sube en invierno.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que el aire tiene "temporadas" de CO2? 👇
-Shot Ambiental #37 · La Creación del Robert
+Shot Ambiental 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #CurvaDeKeeling #CambioClimatico #CO2
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta línea es el aire que respiras 🌋 | Shot Ambiental #37
+Esta línea es el aire que respiras 🌋 | Shot Ambiental 37
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Scripps CO2 Program, The Early Keeling Curve: https://scrippsco2.ucsd.edu/history-and-legacy/the-early-keeling-curve/
 - NOAA Climate.gov, Climate Change: Atmospheric Carbon Dioxide: https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide
 ¿Sabías que el aire tiene "temporadas" de CO2? 👇
-Shot Ambiental #37 · La Creación del Robert
+Shot Ambiental 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CurvaDeKeeling #CambioClimatico
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta línea es el aire que respiras, medido en lo alto de un volcán de Hawái desde 1958. 🌋 Empezó en 313 partes por millón de CO2; en 2025 el promedio del año fue de 427. Antes de la industria era de unas 280.
 ¿Sabías que el aire tiene "temporadas" de CO2? 👇
-Shot Ambiental #37 · La Creación del Robert
+Shot Ambiental 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CurvaDeKeeling #CambioClimatico
 ```
@@ -73,7 +73,7 @@ Esta línea es el aire que respiras, medido en lo alto de un volcán de Hawái d
 La curva de Keeling, del observatorio de Mauna Loa, es el registro de mediciones directas de CO2 atmosférico más largo que existe (NOAA). Empezó en marzo de 1958 con 313 ppm el primer día; en 2025, el promedio anual fue de 427.35 ppm. Antes de la Revolución Industrial, los núcleos de hielo marcan 280 ppm o menos. Desde 1959, cada promedio anual ha sido mayor que el anterior.
 Dos lecciones de un solo instrumento: medir bien y sin interrupciones (incluso con una erupción de por medio, cuando se midió desde Maunakea) permite ver tanto la "respiración" anual de la vegetación del hemisferio norte como la tendencia de fondo, impulsada sobre todo por los combustibles fósiles.
 ¿Qué otro registro de largo plazo crees que deberíamos estar cuidando igual?
-Shot Ambiental #37 · La Creación del Robert
+Shot Ambiental 37 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #CambioClimatico #CurvaDeKeeling #Datos #LaCreacionDelRobert
 ```

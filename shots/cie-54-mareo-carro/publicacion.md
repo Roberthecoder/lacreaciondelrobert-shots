@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #54 · Por qué te mareas en el carro
+# Publicación · Shot Científico 54 · Por qué te mareas en el carro
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -18,7 +18,7 @@ Así que el mareo no está en tu panza: es una pelea entre tus ojos y tus oídos
 El dibujo es esquemático.
 Fuentes: CDC Yellow Book 2026; Golding 2006; Treisman 1977 (Science); NHS.
 ¿A ti también te pasa cuando vas leyendo? 👇
-Shot Científico #54 · La Creación del Robert
+Shot Científico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Mareo
 ```
@@ -30,7 +30,7 @@ Tu oído interno siente que el carro se mueve; tus ojos ven el libro quieto. Ese
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti también te pasa cuando vas leyendo? 👇
-Shot Científico #54 · La Creación del Robert
+Shot Científico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Mareo
 ```
@@ -38,7 +38,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué te mareas en el carro (no es tu estómago) | Shot Científico #54
+Por qué te mareas en el carro (no es tu estómago) | Shot Científico 54
 ```
 Descripción:
 ```text
@@ -60,7 +60,7 @@ Fuentes:
 - NIDCD (NIH), Balance Disorders: https://www.nidcd.nih.gov/health/balance-disorders
 - NHS, Motion sickness: https://www.nhs.uk/conditions/motion-sickness/
 ¿A ti también te pasa cuando vas leyendo? 👇
-Shot Científico #54 · La Creación del Robert
+Shot Científico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano #Mareo
 ```
@@ -69,7 +69,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Te mareas cuando lees en el carro? No es tu estómago: tu oído interno siente el movimiento y tus ojos ven el libro quieto. Ese choque de mensajes es la explicación más aceptada. Por qué da náuseas no se sabe con certeza (una hipótesis: el cerebro lo confunde con un envenenamiento). Quien maneja casi nunca se marea porque controla el carro. Ayuda mirar al horizonte, ir adelante y soltar el celular.
 ¿A ti también te pasa cuando vas leyendo? 👇
-Shot Científico #54 · La Creación del Robert
+Shot Científico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -80,7 +80,7 @@ Soy Robert, de La Creación del Robert 🌱
 La explicación más aceptada es la teoría del conflicto sensorial (Reason y Brand, 1975): el sistema vestibular del oído interno detecta movimiento mientras los ojos, fijos en un libro o en el celular, ven todo quieto.
 Por qué ese conflicto produce náuseas sigue sin saberse con certeza; una hipótesis evolutiva (Treisman, 1977) propone que el cerebro lo interpreta como un envenenamiento.
 Dato útil: quien maneja casi nunca se marea porque controla el vehículo y anticipa cada curva. Mirar al horizonte, ir adelante y no leer ayudan (CDC Yellow Book).
-Shot Científico #54 · La Creación del Robert
+Shot Científico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

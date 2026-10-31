@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #41 · Esa capa blanca no es moho (el "bloom" del chocolate)
+# Publicación · Shot Químico 41 · Esa capa blanca no es moho (el "bloom" del chocolate)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Según la agencia de inocuidad de alimentos de Canadá, el chocolate con bloom s
 El dibujo es esquemático.
 Fuentes: Wille y Lutton 1966 · Chen et al. 2021 · Barišić et al. 2019 · Heuler et al. 2020 · CFIA 2020 · Popular Science 2026.
 ¿A ti también te ha tocado un chocolate así? ¿Te lo comiste? 👇
-Shot Químico #41 · La Creación del Robert
+Shot Químico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Chocolate #CienciaEnLaCocina #Cristales
 ```
@@ -27,7 +27,7 @@ Esa capa blanca en tu chocolate no es moho: es su propia grasa o su azúcar, en 
 Se llama bloom. La manteca de cacao (cerca del 30 % del chocolate) puede cristalizar en 6 formas; la buena es la V, que da brillo y crack, y se logra templando. Con calor, la manteca sube a la superficie y recristaliza en blanco; al sacarlo del refri, el agua que se condensa disuelve el azúcar y al secarse deja polvito. En 1966, Wille y Lutton (Cincinnati) describieron las 6 formas con rayos X. Y se puede comer: puede cambiar el sabor, pero no es riesgo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti también te ha tocado un chocolate así? 👇
-Shot Químico #41 · La Creación del Robert
+Shot Químico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Chocolate #CienciaEnLaCocina #Cristales
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa capa blanca no es moho 🍫 | Shot Químico #41
+Esa capa blanca no es moho 🍫 | Shot Químico 41
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Canadian Food Inspection Agency (2020). White coating on chocolate (chocolate bloom). https://inspection.canada.ca/en/food-safety-consumers/fact-sheets/specific-products-and-risks/commonly-occurring-issues-food/chocolate-bloom
 - Popular Science (2026). Why does chocolate turn white? (con Richard Hartel, Univ. de Wisconsin-Madison). https://www.popsci.com/science/why-chocolate-turns-white/
 ¿A ti también te ha tocado un chocolate así? 👇
-Shot Químico #41 · La Creación del Robert
+Shot Químico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Chocolate
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa capa blanca en tu chocolate no es moho: es su propia grasa o su azúcar, en cristales nuevos. 🍫 Con calor, la manteca de cacao sube y recristaliza en blanco; con la humedad del refri, el azúcar se disuelve y queda como polvito. Se puede comer: puede cambiar el sabor, pero no es riesgo.
 ¿Te lo comiste o lo tiraste? 👇
-Shot Químico #41 · La Creación del Robert
+Shot Químico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Chocolate
 ```
@@ -71,14 +71,14 @@ La manteca de cacao, cerca del 30 % del chocolate, puede cristalizar en 6 formas
 Wille y Lutton describieron las 6 formas con rayos X en 1966, en Procter & Gamble, Cincinnati. Y en 2020, investigadores de la Universidad del Sur de Florida mostraron que un espectrómetro Raman de mano puede detectar el tipo de bloom, e incluso borrar parcialmente el de grasa con su láser infrarrojo.
 Según la CFIA de Canadá, el chocolate con bloom no representa un riesgo para la salud, aunque puede afectar su sabor. El reto es de calidad, almacenamiento y cadena de frío.
 ¿Cuántos productos desechamos por apariencia y no por seguridad?
-Shot Químico #41 · La Creación del Robert
+Shot Químico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeAlimentos #Chocolate #CalidadAlimentaria #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esa capa blanca en tu chocolate no es moho: es su grasa o su azúcar, recristalizados. Se llama bloom, y según la agencia de alimentos de Canadá se puede comer. 🍫 Shot Químico #41 #Quimica
+Esa capa blanca en tu chocolate no es moho: es su grasa o su azúcar, recristalizados. Se llama bloom, y según la agencia de alimentos de Canadá se puede comer. 🍫 Shot Químico 41 #Quimica
 ```
 
 ### Threads
@@ -86,7 +86,7 @@ Esa capa blanca en tu chocolate no es moho: es su grasa o su azúcar, recristali
 Esa capa blanca en tu chocolate no es moho: es su propia grasa o su azúcar, en cristales nuevos. 🍫
 Con calor, la manteca de cacao sube a la superficie y recristaliza; con la humedad del refri, el azúcar se disuelve y queda como polvito. Se puede comer: puede cambiar el sabor, pero no es riesgo.
 ¿Te lo comiste o lo tiraste?
-Shot Químico #41 · La Creación del Robert
+Shot Químico 41 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #06 · Esto no es un panda: es un gibón (para la IA)
+# Publicación · Shot IA 06 · Esto no es un panda: es un gibón (para la IA)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que si una IA te dice que está segurísima, recuerda: tú sigues viendo un
 El dibujo es esquemático (el ruido está exagerado para que se vea).
 Fuentes: Goodfellow, Shlens y Szegedy (2014), arXiv:1412.6572 · Eykholt et al. (2017), arXiv:1707.08945.
 ¿Tú habrías visto la diferencia? 👇
-Shot IA #06 · La Creación del Robert
+Shot IA 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #EjemplosAdversarios #VisionArtificial #Ciencia
 ```
@@ -26,7 +26,7 @@ Para una IA de Google, esto no es un panda: es un gibón. Y está 99 % segura. �
 Antes del truco decía "panda" con 57.7 %. Solo le sumaron un ruido que tus ojos nunca van a ver, y pasó a "gibón" con 99.3 %. La IA no ve un animal: suma miles de números, y muchos empujoncitos al mismo lado hacen un brinco enorme (Goodfellow y colegas, Google, 2014). En 2017, unas estampas blancas y negras en un alto hicieron que una IA de señales lo leyera como "límite 45" en el 100 % de las fotos de laboratorio y en el 84.8 % de los cuadros desde un auto en marcha. Entrenarla con engaños ayuda (errores de 89.4 % a 17.9 % en una prueba), pero no llegan a cero.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú habrías visto la diferencia? 👇
-Shot IA #06 · La Creación del Robert
+Shot IA 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #EjemplosAdversarios #VisionArtificial #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es un panda: para la IA es un gibón 🐼 | Shot IA #06
+Esto no es un panda: para la IA es un gibón 🐼 | Shot IA 06
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Para una IA de Google, esto no es un panda: es un gibón. Y está 99 % segura. 🐼 Le sumaron un ruido que tus ojos nunca van a ver, y bastó. En 2017, unas estampas en un alto hicieron que una IA lo leyera como "límite 45". Entrenarla con engaños ayuda, pero no lo arregla del todo.
 ¿Tú habrías visto la diferencia? 👇
-Shot IA #06 · La Creación del Robert
+Shot IA 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #VisionArtificial
 ```
@@ -68,7 +68,7 @@ Por qué importa: en 2017, un equipo de Michigan, Washington, Berkeley y Stony B
 Para quien diseña o compra sistemas de visión: la confianza alta de un modelo no es prueba de que acierte.
 ¿Tu equipo prueba sus modelos contra este tipo de ataques?
 Fuentes: arXiv:1412.6572 (2014) · arXiv:1707.08945 (2017).
-Shot IA #06 · La Creación del Robert
+Shot IA 06 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #VisionArtificial #Ciberseguridad #MachineLearning #LaCreacionDelRobert
 ```
@@ -83,7 +83,7 @@ Para una IA de Google, esto no es un panda: es un gibón, 99.3 % segura 🐼 Bas
 Para una IA de Google, esto no es un panda: es un gibón, 99.3 % segura. 🐼
 Bastó sumarle un ruido que tus ojos nunca verían (Goodfellow y colegas, 2014). En 2017, unas estampas blancas y negras hicieron que una IA leyera un alto como "límite 45" en casi 85 de cada 100 cuadros desde un auto en marcha.
 ¿Tú habrías visto la diferencia?
-Shot IA #06 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 06 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

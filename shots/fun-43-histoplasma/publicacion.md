@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #43 · La enfermedad de las cuevas: Histoplasma capsulatum
+# Publicación · Shot Fungi Mati 43 · La enfermedad de las cuevas: Histoplasma capsulatum
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Lo chistoso: le pusieron "capsulatum" por una cápsula que no tiene; su descubri
 El dibujo es esquemático. No es consejo médico: si después de entrar a una cueva o cenote con murciélagos tienes fiebre y tos, ve al médico y dile dónde estuviste.
 Fuentes: CDC; Kauffman 2007 (Clin. Microbiol. Rev.); Shen y Rappleye 2020; MacBain et al. 2025 (CCDR); Mahajan 2021 (Emerg. Infect. Dis.).
 ¿Has entrado a una cueva o cenote con murciélagos? 👇
-Shot Fungi Mati #43 · La Creación del Robert
+Shot Fungi Mati 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Histoplasmosis #Cenotes
 ```
@@ -26,7 +26,7 @@ Ese polvo de la cueva no es solo tierra: puede tener caca de murciélago, y con 
 Histoplasma capsulatum crece como moho en suelo con guano y suelta esporas invisibles. Al respirarlas, el calor de tu cuerpo lo vuelve levadura, y esa levadura sobrevive y se multiplica dentro de tus macrófagos. A casi todos no les pasa nada o se enferman leve (fiebre, tos, cansancio). En abril de 2024, cuatro turistas canadienses que nadaron en un cenote de la península de Yucatán con murciélagos enfermaron: tres casos confirmados y uno sospechoso.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Has entrado a una cueva o cenote con murciélagos? 👇
-Shot Fungi Mati #43 · La Creación del Robert
+Shot Fungi Mati 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Histoplasmosis #Cenotes
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo que respiras en las cuevas con murciélagos 🦇 | Shot Fungi Mati #43
+El hongo que respiras en las cuevas con murciélagos 🦇 | Shot Fungi Mati 43
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - MacBain et al. (2025). Acute histoplasmosis in four immunocompetent Canadian travellers to a cenote in Yucatán. CCDR 51(5): 187–190. doi:10.14745/ccdr.v51i05a05
 - Mahajan, M. (2021). Etymologia: Histoplasma capsulatum. Emerg. Infect. Dis. 27(3): 969. https://wwwnc.cdc.gov/eid/article/27/3/ET-2703_article.htm
 ¿Has entrado a una cueva o cenote con murciélagos? 👇
-Shot Fungi Mati #43 · La Creación del Robert
+Shot Fungi Mati 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Histoplasmosis #FungiMati
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese polvo de la cueva no es solo tierra: puede tener caca de murciélago, y con ella, un hongo que respiras. 🦇 Histoplasma capsulatum crece como moho en el guano; al respirar sus esporas, tu calor lo vuelve levadura y sobrevive dentro de tus defensas. En 2024, cuatro turistas que nadaron en un cenote de la península de Yucatán con murciélagos enfermaron.
 ¿Has entrado a una cueva o cenote con murciélagos? 👇
-Shot Fungi Mati #43 · La Creación del Robert
+Shot Fungi Mati 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Histoplasmosis
 ```
@@ -74,7 +74,7 @@ Histoplasma capsulatum es un hongo dimórfico: en suelos con guano de murciélag
 En abril de 2024, cuatro viajeros canadienses enfermaron dos o tres semanas después de nadar en un cenote con murciélagos (tres casos confirmados y uno sospechoso; CCDR, 2025). El reporte menciona que otro cenote de la zona estaba cerrado desde 2019 por casos en turistas.
 Por qué importa: preguntar por la exposición (cuevas, guano, obras que remueven tierra) acorta el diagnóstico.
 ¿En tu trabajo se habla de riesgos biológicos del turismo de naturaleza?
-Shot Fungi Mati #43 · La Creación del Robert
+Shot Fungi Mati 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #SaludPublica #Ciencia
 ```
@@ -87,7 +87,7 @@ Ese polvo de cueva puede tener guano de murciélago y esporas de Histoplasma: al
 ### Threads
 ```text
 Ese polvo de la cueva no es solo tierra: puede tener caca de murciélago, y con ella, un hongo que respiras. 🦇 Histoplasma capsulatum es moho en el guano y levadura dentro de tu cuerpo, donde sobrevive dentro de tus defensas. ¿Has entrado a una cueva o cenote con murciélagos?
-Shot Fungi Mati #43 · La Creación del Robert
+Shot Fungi Mati 43 · La Creación del Robert
 #Hongos
 ```
 

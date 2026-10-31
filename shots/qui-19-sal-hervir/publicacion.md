@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #19 · La sal no hace que tu agua hierva antes (5 centésimas de grado)
+# Publicación · Shot Químico 19 · La sal no hace que tu agua hierva antes (5 centésimas de grado)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ La sal es para el sabor, no para la prisa.
 El dibujo es esquemático.
 Fuentes: OpenStax Chemistry 2e · FDA · Hakuta et al. 1974 · Nichols (LibreTexts) · SEP · USDA FSIS.
 ¿Tú le echas la sal antes o después de que hierva? 👇
-Shot Químico #19 · La Creación del Robert
+Shot Químico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Cocina #PuntoDeEbullicion #MitosDeCocina
 ```
@@ -26,7 +26,7 @@ Esa cucharadita de sal no hace que tu agua hierva antes: en una olla de 2 litros
 Los iones de sodio y cloruro bajan la presión de vapor del agua, así que necesita calentarse un poquito más: 0.512 °C por mol de partículas en un kilo de agua. Las burbujas al echarla son nucleación: los granitos son puntos donde el vapor forma burbujas (cuidado si el agua está muy caliente: puede saltar). En 1974, en Japón, con 0.96 % de sal el agua hirvió solo 0.151 °C más caliente. Lo que sí cambia el hervor es la altura: en la CDMX hierve a unos 92 °C.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú le echas la sal antes o después? 👇
-Shot Químico #19 · La Creación del Robert
+Shot Químico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Cocina #PuntoDeEbullicion #MitosDeCocina
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La sal NO hace que tu agua hierva antes 🧂 | Shot Químico #19
+La sal NO hace que tu agua hierva antes 🧂 | Shot Químico 19
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 7. USDA FSIS (2011), High Altitude Cooking and Food Safety: https://www.govinfo.gov/content/pkg/GOVPUB-A110-PURL-gpo62705/pdf/GOVPUB-A110-PURL-gpo62705.pdf
 8. NIST Chemistry WebBook, propiedades de saturación del agua: https://webbook.nist.gov/chemistry/fluid/
 ¿Tú le echas la sal antes o después de que hierva? 👇
-Shot Químico #19 · La Creación del Robert
+Shot Químico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Cocina
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esa cucharadita de sal no hace que tu agua hierva antes: en una olla de 2 litros, le sube el hervor unas 5 centésimas de grado. 🧂
 Las burbujas al echarla son nucleación, no hervor más rápido. Lo que sí cambia el hervor es la altura: en la CDMX el agua hierve a unos 92 °C.
 ¿Tú le echas la sal antes o después? 👇
-Shot Químico #19 · La Creación del Robert
+Shot Químico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Cocina
 ```
@@ -76,14 +76,14 @@ Una cucharadita de sal en 2 litros de agua sube su punto de ebullición unas 5 c
 Es un ejemplo cotidiano de una propiedad coligativa: los iones de sodio y cloruro bajan la presión de vapor del agua, y el punto de ebullición sube según ΔT = i · Kb · m (Kb del agua = 0.512 °C·kg/mol). En 1974, en Japón, Hakuta, Goto e Ishizaka lo midieron con un ebullómetro doble: con 0.96 % de NaCl en peso, el aumento fue de 0.151 °C.
 En la práctica, la altitud pesa mucho más: en la Ciudad de México, a 2 240 m, el agua hierve a unos 92 °C. Y el burbujeo al echar sal no es química: los cristales funcionan como puntos de nucleación, igual que las piedras de ebullición del laboratorio (por eso se recomienda no añadirlas a líquidos casi hirviendo).
 ¿Qué otro "truco de cocina" te gustaría ver explicado con química?
-Shot Químico #19 · La Creación del Robert
+Shot Químico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #DivulgacionCientifica #Termodinamica
 ```
 
 ### X
 ```text
-Esa cucharadita de sal no hace que tu agua hierva antes: en 2 litros le sube el hervor unas 5 centésimas de grado. La altura pesa más: en la CDMX el agua hierve a unos 92 °C. 🧂 Shot Químico #19 #Quimica
+Esa cucharadita de sal no hace que tu agua hierva antes: en 2 litros le sube el hervor unas 5 centésimas de grado. La altura pesa más: en la CDMX el agua hierve a unos 92 °C. 🧂 Shot Químico 19 #Quimica
 ```
 
 ### Threads
@@ -91,7 +91,7 @@ Esa cucharadita de sal no hace que tu agua hierva antes: en 2 litros le sube el 
 Esa cucharadita de sal no hace que tu agua hierva antes: en una olla de 2 litros, le sube el hervor unas 5 centésimas de grado. 🧂
 Las burbujas al echarla son nucleación (cuidado si el agua está muy caliente: puede saltar). En 1974, en Japón, con 0.96 % de sal el agua hirvió solo 0.151 °C más caliente.
 ¿Tú le echas la sal antes o después?
-Shot Químico #19 · La Creación del Robert
+Shot Químico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

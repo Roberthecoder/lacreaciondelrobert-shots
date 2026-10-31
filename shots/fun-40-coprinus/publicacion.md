@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #40 · El hongo que se derrite en tinta: Coprinus comatus
+# Publicación · Shot Fungi Mati 40 · El hongo que se derrite en tinta: Coprinus comatus
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -12,7 +12,7 @@ Se llama Coprinus comatus, la barbuda, y sale en pastos y jardines. Bajo su somb
 El dibujo es esquemático.
 Fuentes: Volk 2004 (U. Wisconsin–La Crosse); Emberger 2025 y Kuo 2008 (MushroomExpert); Luo et al. 2004 (Mycologia) y 2007 (Appl. Environ. Microbiol.).
 ¿Alguna vez viste una barbuda derretida en tu jardín? 👇
-Shot Fungi Mati #40 · La Creación del Robert
+Shot Fungi Mati 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Coprinus #Ciencia
 ```
@@ -23,7 +23,7 @@ Ese charco de tinta negra no es un hongo podrido: es un hongo digiriéndose a s�
 Coprinus comatus, la barbuda, suelta sus esporas desde la orilla de abajo de sus laminillas y luego sus propias enzimas disuelven la parte vacía, de abajo hacia arriba, hasta que todo el sombrero es tinta: esporas negras en tejido derretido. Se llegó a usar para escribir. Y en el laboratorio también caza nematodos: bolitas con espinas, toxinas que los dejan inmóviles en horas e hifas que se los comen por dentro en días.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez viste una barbuda derretida en tu jardín? 👇
-Shot Fungi Mati #40 · La Creación del Robert
+Shot Fungi Mati 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Coprinus #Ciencia
 ```
@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo que se derrite en TINTA 🖋️ (y caza gusanos) | Shot Fungi Mati #40
+El hongo que se derrite en TINTA 🖋️ (y caza gusanos) | Shot Fungi Mati 40
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - New Forest National Park Authority. Shaggy inkcap. https://www.newforestnpa.gov.uk/discover/plants-fungi/fungi/shaggy-inkcap/
 - Fungipedia. Coprinus comatus. https://www.fungipedia.org/hongos/coprinus-comatus.html
 ¿Alguna vez viste una barbuda derretida en tu jardín? 👇
-Shot Fungi Mati #40 · La Creación del Robert
+Shot Fungi Mati 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese charco de tinta negra no es un hongo podrido: es un hongo digiriéndose a sí mismo. 🍄 La barbuda (Coprinus comatus) disuelve sus laminillas de abajo hacia arriba para soltar sus esporas, y esa tinta se llegó a usar para escribir. En el laboratorio, además, caza gusanitos microscópicos.
 ¿Alguna vez viste una barbuda derretida en tu jardín? 👇
-Shot Fungi Mati #40 · La Creación del Robert
+Shot Fungi Mati 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -68,7 +68,7 @@ Un hongo que se autodigiere para reproducirse, y que además caza nematodos.
 Coprinus comatus tiene laminillas tan delgadas y juntas que las esporas no salen con facilidad. La solución es secuencial: las esporas maduran desde el borde inferior, se liberan, y el tejido ya vacío se autodigiere (delicuescencia), exponiendo la siguiente zona. El resultado es una "tinta" de esporas negras que en los siglos XVII y XVIII se usó para escribir.
 Además, Luo et al. (Universidad de Yunnan; Mycologia 2004 y Appl. Environ. Microbiol. 2007) mostraron en laboratorio que su micelio forma estructuras espinosas que dañan mecánicamente la cutícula de nematodos y produce toxinas que los inmovilizan; después, las hifas los colonizan y los digieren. Un mismo organismo vive de restos de plantas y, en el laboratorio, también caza.
 ¿Conocías algún hongo depredador?
-Shot Fungi Mati #40 · La Creación del Robert
+Shot Fungi Mati 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Biologia #Ciencia
 ```
@@ -81,7 +81,7 @@ Ese charco de tinta negra es un hongo digiriéndose a sí mismo: Coprinus comatu
 ### Threads
 ```text
 Ese charco de tinta negra no es un hongo podrido: es un hongo digiriéndose a sí mismo. La barbuda (Coprinus comatus) se vuelve tinta para soltar sus esporas, y en el laboratorio también caza gusanitos microscópicos. ¿Alguna vez viste una derretida en tu jardín?
-Shot Fungi Mati #40 · La Creación del Robert
+Shot Fungi Mati 40 · La Creación del Robert
 #Hongos
 ```
 

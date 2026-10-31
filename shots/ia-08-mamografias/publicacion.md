@@ -1,4 +1,4 @@
-# Publicación · Shot IA #08 · Menos lecturas, más cáncer encontrado: la IA en las mamografías
+# Publicación · Shot IA 08 · Menos lecturas, más cáncer encontrado: la IA en las mamografías
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ La IA no trabajó sola: menos lecturas para los médicos y más cánceres hallad
 El dibujo es esquemático; las mamografías no son del estudio.
 Fuentes: ensayo MASAI (Lancet Oncology 2023, Lancet Digital Health 2025, The Lancet 2026).
 ¿Ya te tocó hacerte una mamografía, o a alguien de tu familia? 👇
-Shot IA #08 · La Creación del Robert
+Shot IA 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #CancerDeMama #Mamografia #Salud
 ```
@@ -26,7 +26,7 @@ Con una IA, los radiólogos hicieron 44 % menos lecturas de mamografías. Y enco
 En el ensayo MASAI (Suecia, 105,934 mujeres), la IA calificó cada estudio del 1 al 10: del 1 al 9 lo leyó un radiólogo y los de 10, dos. Con IA encontraron 6.4 cánceres por cada mil mujeres; sin IA, 5.0. Los de más eran sobre todo pequeños, las falsas alarmas quedaron casi iguales y, en 2026, los cánceres entre revisiones no aumentaron. Ojo: fue en cuatro centros de Suecia y con un solo programa de IA.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya te tocó hacerte una mamografía, o a alguien de tu familia? 👇
-Shot IA #08 · La Creación del Robert
+Shot IA 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #CancerDeMama #Mamografia #Salud
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que encontró más cáncer con 44 % menos trabajo 🩺 | Shot IA #08
+La IA que encontró más cáncer con 44 % menos trabajo 🩺 | Shot IA 08
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Con una IA, los radiólogos hicieron 44 % menos lecturas de mamografías. Y encontraron más cáncer, no menos. 🩺 En un ensayo con más de 100 mil mujeres en Suecia, la IA decidía qué estudios leía uno o dos radiólogos. Encontraron 6.4 cánceres por cada mil mujeres contra 5.0, sin más falsas alarmas.
 ¿Ya te tocó hacerte una mamografía, o a alguien de tu familia? 👇
-Shot IA #08 · La Creación del Robert
+Shot IA 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #CancerDeMama
 ```
@@ -70,7 +70,7 @@ Por qué importa: el cribado depende de especialistas escasos. Aquí la IA no tr
 El límite: cuatro centros de un solo país y un solo programa de IA.
 ¿Qué haría falta para probar algo así en los sistemas de salud de México?
 Fuentes: Lancet Oncol 2023; Lancet Digit Health 2025; Lancet 2026 (ensayo MASAI).
-Shot IA #08 · La Creación del Robert
+Shot IA 08 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Salud #CancerDeMama #Radiologia #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Con una IA, los radiólogos hicieron 44 % menos lecturas de mamografías y encon
 Con una IA, los radiólogos hicieron 44 % menos lecturas de mamografías. Y encontraron más cáncer, no menos. 🩺
 Ensayo MASAI, Suecia: 6.4 cánceres por cada mil mujeres con IA contra 5.0 sin IA, sin más falsas alarmas. Ojo: un solo país y un solo programa de IA.
 ¿Ya te tocó hacerte una mamografía?
-Shot IA #08 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 08 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

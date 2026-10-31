@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #46 · La primera estatina la hizo un moho: Akira Endo y la compactina
+# Publicación · Shot Fungi Mati 46 · La primera estatina la hizo un moho: Akira Endo y la compactina
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Y lo raro: el arroz de levadura roja, fermentado con el moho Monascus, puede tra
 El dibujo es esquemático. No es consejo médico: no cambies ni dejes tu tratamiento sin hablar con tu médico, y los productos de arroz de levadura roja no son inocentes: su contenido varía, pueden tener los mismos efectos secundarios que una estatina y algunos traen citrinina.
 Fuentes: Endo 2010 (Proc. Jpn. Acad.); Goldstein y Brown 2015 (Cell); Alberts et al. 1980 (PNAS); NCCIH (NIH) 2022.
 ¿Sabías que esta medicina había salido de un moho? 👇
-Shot Fungi Mati #46 · La Creación del Robert
+Shot Fungi Mati 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Colesterol #HistoriaDeLaCiencia
 ```
@@ -26,7 +26,7 @@ La primera estatina, la medicina para el colesterol, no la inventó un químico:
 Akira Endo y su equipo probaron miles de hongos buscando uno que frenara la enzima con la que tu hígado fabrica colesterol (la HMG-CoA reductasa). Tras 3,800, el primero era tóxico; luego apareció Penicillium citrinum, un moho azul verdoso de una muestra de arroz de una tienda de Kioto. En 1973 aislaron la compactina. Después Merck sacó una prima de Aspergillus terreus: la lovastatina. Y la monacolina K del arroz de levadura roja (moho Monascus) es la misma molécula que la lovastatina.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Sabías que esta medicina había salido de un moho? 👇
-Shot Fungi Mati #46 · La Creación del Robert
+Shot Fungi Mati 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Colesterol #HistoriaDeLaCiencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La primera estatina salió de un MOHO escondido en arroz 🍄 | Shot Fungi Mati #46
+La primera estatina salió de un MOHO escondido en arroz 🍄 | Shot Fungi Mati 46
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - NCCIH (NIH) (2022). Red Yeast Rice: Usefulness and Safety. https://www.nccih.nih.gov/health/red-yeast-rice
 - Lass-Flörl, C. et al. (2021). Aspergillus terreus Species Complex. Clin. Microbiol. Rev. 34(4): e00311-20. https://pmc.ncbi.nlm.nih.gov/articles/PMC8404697/
 ¿Sabías que esta medicina había salido de un moho? 👇
-Shot Fungi Mati #46 · La Creación del Robert
+Shot Fungi Mati 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Colesterol #FungiMati
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 La primera estatina, la medicina para el colesterol, no la inventó un químico: la hizo un moho. 🍄 Akira Endo probó miles de hongos hasta encontrar Penicillium citrinum en una muestra de arroz de Kioto, y en 1973 aisló la compactina. Y la monacolina K del arroz de levadura roja es la misma molécula que la lovastatina. El dibujo es esquemático; no es consejo médico.
 ¿Sabías que esta medicina había salido de un moho? 👇
-Shot Fungi Mati #46 · La Creación del Robert
+Shot Fungi Mati 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Colesterol
 ```
@@ -72,7 +72,7 @@ Una familia de medicamentos contra el colesterol empezó con una búsqueda pacie
 En 1971, Akira Endo (Sankyo, Tokio) planteó que algunos hongos producirían inhibidores de la HMG-CoA reductasa, la enzima que marca el ritmo de la síntesis de colesterol en el hígado. Tras probar caldos de miles de hongos (el primer hallazgo, tras 3,800 cepas, fue la citrinina, descartada por toxicidad renal), su equipo encontró Penicillium citrinum en una muestra de arroz de Kioto y en 1973 aisló la compactina, un inhibidor competitivo. Merck aisló después la lovastatina de Aspergillus terreus, aprobada en 1987 como la primera estatina comercial (Endo, 2010; Alberts et al., 1980). El mecanismo: menos síntesis en el hígado → más receptores de LDL → menos LDL en la sangre (Goldstein y Brown, 2015).
 Por qué importa: el cribado de productos naturales sigue siendo una fuente de fármacos, y la constancia ante resultados negativos fue clave.
 ¿Qué otro medicamento conoces que venga de un hongo?
-Shot Fungi Mati #46 · La Creación del Robert
+Shot Fungi Mati 46 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Farmacologia #HistoriaDeLaCiencia #Ciencia
 ```
@@ -85,7 +85,7 @@ La primera estatina no la inventó un químico: la hizo un moho. Akira Endo prob
 ### Threads
 ```text
 La primera estatina, la medicina para el colesterol, no la inventó un químico: la hizo un moho. 🍄 Akira Endo probó miles de hongos y lo encontró en arroz de una tienda de Kioto. Y la monacolina K del arroz de levadura roja es la misma molécula que la lovastatina. ¿Sabías que esta medicina había salido de un moho?
-Shot Fungi Mati #46 · La Creación del Robert
+Shot Fungi Mati 46 · La Creación del Robert
 #Hongos
 ```
 

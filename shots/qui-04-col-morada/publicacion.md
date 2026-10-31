@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #04 · Esto no es agua de jamaica: es un medidor de pH (col morada)
+# Publicación · Shot Químico 04 · Esto no es agua de jamaica: es un medidor de pH (col morada)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Pruébalo: licúa col morada con agua, cuélala y ponle limón o bicarbonato.
 El dibujo es esquemático.
 Fuentes: Huțuțui et al., Molecules 2026 · Dong et al., Food Chemistry: X 2026 · Nguyen et al., J Food Sci 2026.
 ¿Qué otra cosa de tu cocina le pondrías? 👇
-Shot Químico #04 · La Creación del Robert
+Shot Químico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #pH #ColMorada #CienciaEnCasa
 ```
@@ -27,7 +27,7 @@ Su color son las antocianinas (la col tiene más de 30). Con limón, que es áci
 Pruébalo: licúa col morada con agua, cuélala y ponle limón o bicarbonato.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué otra cosa de tu cocina le pondrías? 👇
-Shot Químico #04 · La Creación del Robert
+Shot Químico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #pH #ColMorada #CienciaEnCasa
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es agua de jamaica: es un medidor de pH 🥬 | Shot Químico #04
+Esto no es agua de jamaica: es un medidor de pH 🥬 | Shot Químico 04
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - Dong Y. et al. (2026). A pH-responsive intelligent active film for monitoring and preserving fish freshness. Food Chemistry: X 36:104058. https://pubmed.ncbi.nlm.nih.gov/42291809/
 - Nguyen T.V. et al. (2026). pH-Sensitive Bacterial Cellulose Films … Roselle (Hibiscus sabdariffa L.) … Chicken Meat Spoilage. J Food Sci 91(4). https://pubmed.ncbi.nlm.nih.gov/41891571/
 ¿Qué otra cosa de tu cocina le pondrías? 👇
-Shot Químico #04 · La Creación del Robert
+Shot Químico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #pH
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es agua de jamaica: es jugo de col morada, y es un detector de ácidos. 🥬 Con limón se pone roja, con bicarbonato azul: sus antocianinas cambian de forma y de color según la acidez. Pruébalo en tu cocina.
 ¿Qué otra cosa le pondrías? 👇
-Shot Químico #04 · La Creación del Robert
+Shot Químico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #CienciaEnCasa
 ```
@@ -68,14 +68,14 @@ Esto no es agua de jamaica: es jugo de col morada, y es un detector de ácidos.
 Las antocianinas de la col morada (más de 30 distintas) cambian de estructura según el pH: catión flavilio rojo en medio ácido, base quinoidal violeta y azul cerca de neutro, verde en medio básico y chalcona amarilla en medio muy básico.
 Esa química de cocina ya se está llevando a empaques inteligentes. En 2026, Dong et al. (Food Chemistry: X) incorporaron antocianinas de col morada a una película de empaque de colágeno y quitosano, colocada en el espacio de aire de una caja con pescado (guardado 9 días a 4 °C): al descomponerse, el pescado libera compuestos alcalinos y la película cambia de color, lo que permite vigilar la frescura a simple vista. Nguyen et al. (J Food Sci, 2026) probaron lo mismo con jamaica (Hibiscus sabdariffa) en pollo.
 Indicadores naturales, baratos y sin colorantes sintéticos: ¿los ves llegando al súper?
-Shot Químico #04 · La Creación del Robert
+Shot Químico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeAlimentos #EmpaquesInteligentes #Antocianinas #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esto no es agua de jamaica: es jugo de col morada, un medidor de pH. Con limón se pone roja; con bicarbonato, azul. Sus antocianinas cambian de forma según la acidez. 🥬 Shot Químico #04 #Quimica
+Esto no es agua de jamaica: es jugo de col morada, un medidor de pH. Con limón se pone roja; con bicarbonato, azul. Sus antocianinas cambian de forma según la acidez. 🥬 Shot Químico 04 #Quimica
 ```
 
 ### Threads
@@ -83,7 +83,7 @@ Esto no es agua de jamaica: es jugo de col morada, un medidor de pH. Con limón 
 Esto no es agua de jamaica: es jugo de col morada, y es un detector de ácidos. 🥬
 Con limón se pone roja; con bicarbonato, azul. Sus antocianinas cambian de forma según la acidez, y ya las usan en películas que avisan si el pescado se echó a perder.
 ¿Qué otra cosa de tu cocina le pondrías?
-Shot Químico #04 · La Creación del Robert
+Shot Químico 04 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

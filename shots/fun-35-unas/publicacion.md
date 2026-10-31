@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #35 · La pastilla dura semanas; tu uña nueva, hasta año y medio
+# Publicación · Shot Fungi Mati 35 · La pastilla dura semanas; tu uña nueva, hasta año y medio
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y ojo: según una revisión de 2021, entre 20 y 25 % de las veces el hongo regre
 El tratamiento lo indica un dermatólogo. El dibujo es esquemático. No es consejo médico.
 Fuentes: Yaemsiri et al. 2010 (JEADV); AAD 2025; Frazier et al. 2021 (Am Fam Physician); Leung et al. 2020; StatPearls 2023; NHS.
 ¿A ti o a alguien de tu casa le ha pasado? 👇
-Shot Fungi Mati #35 · La Creación del Robert
+Shot Fungi Mati 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #HongosEnLasUñas #Onicomicosis
 ```
@@ -25,7 +25,7 @@ La pastilla más eficaz para el hongo de tu uña del pie se toma 12 semanas. Per
 El hongo (por lo general un dermatofito, como Trichophyton rubrum) suele entrar por la punta y digiere la queratina de la uña. Aunque se vaya, la parte dañada tiene que crecer hasta salir: hay que esperar a que la raíz fabrique uña nueva y la empuje. Y las uñas de los pies crecen lento: unos 1.62 mm al mes (estudio de 2010), contra 3.47 mm de las manos. Renovar una uña del pie toma de 12 a 18 meses.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿A ti o a alguien de tu casa le ha pasado? 👇
-Shot Fungi Mati #35 · La Creación del Robert
+Shot Fungi Mati 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #HongosEnLasUñas #Onicomicosis
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué el hongo de la uña tarda TANTO en irse? 🦶 | Shot Fungi Mati #35
+¿Por qué el hongo de la uña tarda TANTO en irse? 🦶 | Shot Fungi Mati 35
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Kamrani, P. y Pillarisetty, L. S. (2023). Anatomy, Bony Pelvis and Lower Limb: Toe Nails. StatPearls. https://www.ncbi.nlm.nih.gov/sites/books/n/statpearls/article-43222/
 - NHS (2024). Fungal nail infection. https://www.nhs.uk/conditions/fungal-nail-infection/
 ¿A ti o a alguien de tu casa le ha pasado? 👇
-Shot Fungi Mati #35 · La Creación del Robert
+Shot Fungi Mati 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Onicomicosis #FungiMati
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 La pastilla más eficaz para el hongo de tu uña del pie se toma 12 semanas… pero tu uña puede tardar un año o más en verse sana. 🦶 La parte dañada tiene que crecer hasta salir: sale uña nueva desde la raíz, y las uñas de los pies crecen apenas 1.62 mm al mes. Renovarlas toma de 12 a 18 meses.
 ¿A ti o a alguien de tu casa le ha pasado? 👇
-Shot Fungi Mati #35 · La Creación del Robert
+Shot Fungi Mati 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Onicomicosis
 ```
@@ -71,7 +71,7 @@ Por qué el tratamiento del hongo en las uñas "parece" no funcionar: es un prob
 La terbinafina oral para la onicomicosis de las uñas de los pies se toma 12 semanas (AAD), pero la parte dañada tiene que crecer hasta salir, reemplazada por uña nueva que fabrica la matriz. Las uñas de los pies crecen en promedio 1.62 mm al mes, contra 3.47 mm de las de las manos (Yaemsiri et al., 2010), así que renovarlas toma de 12 a 18 meses. Además, la recaída ronda el 20–25 %, por lo general en los 2 años siguientes (Frazier et al., 2021).
 Por qué importa: la mejoría visible puede tardar más de un año, aunque el hongo se haya ido en semanas.
 ¿Sabías que las uñas de los pies crecen menos de la mitad de rápido que las de las manos?
-Shot Fungi Mati #35 · La Creación del Robert
+Shot Fungi Mati 35 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Dermatologia #Micologia #Ciencia
 ```
@@ -84,7 +84,7 @@ La pastilla más eficaz para el hongo de la uña del pie se toma 12 semanas, per
 ### Threads
 ```text
 La pastilla más eficaz para el hongo de tu uña del pie se toma 12 semanas. Pero tu uña puede tardar un año o más en verse sana: la parte dañada tiene que crecer hasta salir, empujada por uña nueva desde la raíz, y las uñas de los pies crecen apenas 1.62 mm al mes. ¿A ti o a alguien de tu casa le ha pasado?
-Shot Fungi Mati #35 · La Creación del Robert
+Shot Fungi Mati 35 · La Creación del Robert
 #Hongos
 ```
 

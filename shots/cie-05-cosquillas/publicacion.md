@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #05 · Por qué no te puedes hacer cosquillas
+# Publicación · Shot Científico 05 · Por qué no te puedes hacer cosquillas
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -14,7 +14,7 @@ Así que para las cosquillas, necesitas a alguien más.
 El dibujo es esquemático.
 Fuentes: Blakemore, Frith y Wolpert 1999 (J. Cogn. Neurosci.); Blakemore et al. 1998 (Nature Neuroscience); Ishiyama y Brecht 2016 (Science) y 2019 (Current Biology).
 ¿Dónde te dan más cosquillas a ti? 👇
-Shot Científico #05 · La Creación del Robert
+Shot Científico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Cerebro #Cosquillas #DatosCuriosos
 ```
@@ -25,7 +25,7 @@ Intenta hacerte cosquillas. No puedes, y no es falta de técnica: tu cerebro te 
 Tu cerebro predice lo que va a sentir tu propia mano y le baja el volumen. En 1999, en Londres, lo engañaron con dos robots: si el robot copiaba tu movimiento al instante, se sentía como tu propio toque; con un retraso, las cosquillas regresaban. El cerebelo parece ser el que hace esa predicción. Y las ratas casi no chillan cuando se tocan solas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Dónde te dan más cosquillas a ti? 👇
-Shot Científico #05 · La Creación del Robert
+Shot Científico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Cerebro #Cosquillas #DatosCuriosos
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué no te puedes hacer cosquillas 🤭 | Shot Científico #05
+Por qué no te puedes hacer cosquillas 🤭 | Shot Científico 05
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - Ishiyama, S. y Brecht, M. (2016). Neural correlates of ticklishness in the rat somatosensory cortex. Science 354: 757–760. https://doi.org/10.1126/science.aah5114
 - Ishiyama, S., Kaufmann, L. V. y Brecht, M. (2019). Current Biology 29: 3153–3164. https://doi.org/10.1016/j.cub.2019.07.085
 ¿Dónde te dan más cosquillas a ti? 👇
-Shot Científico #05 · La Creación del Robert
+Shot Científico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Cerebro #Ciencia
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Intenta hacerte cosquillas. No puedes, y no es falta de técnica: tu cerebro te está ganando. 🤭 Tu cerebro predice lo que va a sentir tu propia mano y le baja el volumen. En 1999 lo engañaron con dos robots: con un retraso, las cosquillas regresaban.
 ¿Dónde te dan más cosquillas a ti? 👇
-Shot Científico #05 · La Creación del Robert
+Shot Científico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Cerebro
 ```
@@ -67,7 +67,7 @@ Soy Robert, de La Creación del Robert 🌱
 No te puedes hacer cosquillas, y la razón dice mucho de cómo funciona el cerebro: predice las consecuencias de sus propios movimientos.
 Cuando mueves la mano, el sistema motor genera una predicción de lo que vas a sentir y la usa para atenuar esa sensación. En 1999, en el University College London, Sarah-Jayne Blakemore y sus colegas (Frith y Wolpert) lo probaron con dos robots: si el toque copiaba el movimiento de la persona al instante, se sentía como el propio; con retraso o desviación, se volvía más cosquilludo. Un estudio de resonancia magnética funcional de 1998 sugirió que el cerebelo participa en esa predicción. Y en 2019, en Berlín, se vio que las ratas casi no chillan cuando se tocan solas.
 ¿Qué otra cosa de tu cuerpo crees que funciona por predicción?
-Shot Científico #05 · La Creación del Robert
+Shot Científico 05 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Neurociencia #Ciencia #Cerebro #Divulgacion #LaCreacionDelRobert
 ```

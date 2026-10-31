@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #50 · No bostezas por falta de oxígeno
+# Publicación · Shot Científico 50 · No bostezas por falta de oxígeno
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Lo que sí está claro es que el bostezo se contagia: hasta leer sobre bostezos 
 El dibujo es esquemático.
 Fuentes: Provine et al. 1987 (Behavioral and Neural Biology); Gallup y Gallup 2007 (Evolutionary Psychology); Provine 2005 (American Scientist).
 ¿Bostezaste viendo este video? 👇
-Shot Científico #50 · La Creación del Robert
+Shot Científico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Bostezo
 ```
@@ -28,7 +28,7 @@ En 1987, Robert Provine puso a voluntarios a respirar más oxígeno o más dióx
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Bostezaste viendo este video? 👇
-Shot Científico #50 · La Creación del Robert
+Shot Científico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Bostezo
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-No bostezas por falta de oxígeno 🥱 | Shot Científico #50
+No bostezas por falta de oxígeno 🥱 | Shot Científico 50
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Gallup, A. C. y Gallup, G. G. (2007). Yawning as a brain cooling mechanism. Evolutionary Psychology 5(1). https://www.albany.edu/campusnews/releases_368.htm
 - Provine, R. R. (2005). Yawning. American Scientist 93: 532–539. https://www.americanscientist.org/sites/americanscientist.org/files/200510314450_646.pdf
 ¿Bostezaste viendo este video? 👇
-Shot Científico #50 · La Creación del Robert
+Shot Científico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 No bostezas por falta de oxígeno: en 1987 dieron a voluntarios aire con más oxígeno y siguieron bostezando igual. 🥱 Lo que sí está claro: el bostezo se contagia, hasta leyendo sobre él.
 ¿Bostezaste viendo este video? 👇
-Shot Científico #50 · La Creación del Robert
+Shot Científico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -73,14 +73,14 @@ Soy Robert, de La Creación del Robert 🌱
 En 1987, Provine, Tate y Geldmacher la pusieron a prueba: voluntarios respiraron oxígeno puro o aire con 3–5 % de CO₂, y también hicieron ejercicio. Ninguna condición cambió la frecuencia de sus bostezos: el bostezo no tiene una función respiratoria primaria.
 Su función real sigue en discusión (hay hipótesis, como enfriar el cerebro o facilitar cambios de estado), pero el experimento descartó la explicación más popular.
 ¿Qué otra explicación "de toda la vida" crees que nunca se puso a prueba?
-Shot Científico #50 · La Creación del Robert
+Shot Científico 50 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-No bostezas por falta de oxígeno 🥱 En 1987 dieron a voluntarios oxígeno puro o más CO₂, y los pusieron a hacer ejercicio: bostezaron igual. Para qué sirve aún no se sabe con certeza, pero sí que se contagia. ¿Ya bostezaste? Shot Científico #50
+No bostezas por falta de oxígeno 🥱 En 1987 dieron a voluntarios oxígeno puro o más CO₂, y los pusieron a hacer ejercicio: bostezaron igual. Para qué sirve aún no se sabe con certeza, pero sí que se contagia. ¿Ya bostezaste? Shot Científico 50
 ```
 
 ### Threads
@@ -89,7 +89,7 @@ No bostezas porque te falte oxígeno 🥱
 En 1987, Robert Provine puso a voluntarios a respirar más oxígeno o más dióxido de carbono, y a subir y bajar un escalón: nada de eso cambió cuánto bostezaban.
 ¿Para qué sirve? Nadie lo sabe con certeza: una hipótesis dice que enfría el cerebro; otra, que ayuda a pasar de despierto a dormido y al revés.
 Lo seguro: se contagia, hasta leyendo sobre bostezos. ¿Ya bostezaste?
-Shot Científico #50 · La Creación del Robert
+Shot Científico 50 · La Creación del Robert
 ```
 
 ## Comentario fijado (fuentes)

@@ -1,4 +1,4 @@
-# Publicación · Shot IA #15 · Tu voz se clona con segundos: así funciona la estafa del "familiar en problemas"
+# Publicación · Shot IA 15 · Tu voz se clona con segundos: así funciona la estafa del "familiar en problemas"
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Porque una voz se copia con segundos. Su palabra secreta, si no la comparten, no
 El dibujo es esquemático.
 Fuentes: Wang et al. (Microsoft, 2023); Mai et al., PLOS ONE (2023); FTC (2023); FBI (2024); Guardia Nacional y SEP (2026).
 ¿Ya tienen palabra clave en tu familia? 👇
-Shot IA #15 · La Creación del Robert
+Shot IA 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ClonacionDeVoz #Estafas #Fraude
 ```
@@ -29,7 +29,7 @@ Cómo defenderte: no confíes solo en la voz, inventen en familia una palabra cl
 Dato honesto: la voz de mis videos es mi voz clonada, con mi permiso.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya tienen palabra clave en tu familia? 👇
-Shot IA #15 · La Creación del Robert
+Shot IA 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ClonacionDeVoz #Estafas #Fraude
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu voz se clona con 3 segundos: así es la estafa del familiar 📞 | Shot IA #15
+Tu voz se clona con 3 segundos: así es la estafa del familiar 📞 | Shot IA 15
 ```
 Descripción:
 ```text
@@ -67,7 +67,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa no es la voz de tu hijo pidiéndote dinero: es una copia hecha por una IA. 📞 Con un audio corto de un video en redes, un programa puede imitar su voz; en 2023, un modelo de Microsoft lo hizo con solo 3 segundos de grabación. Si te llaman con prisa pidiendo dinero: cuelga y marca tú al número que ya conoces, y pongan en familia una palabra clave. Compártelo con tus papás y abuelos.
 ¿Ya tienen palabra clave en tu familia? 👇
-Shot IA #15 · La Creación del Robert
+Shot IA 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ClonacionDeVoz #Estafas
 ```
@@ -80,7 +80,7 @@ Vale para familias y para empresas: si una "voz conocida" pide dinero con prisa,
 Dato honesto: la voz de mis videos es mi voz clonada, usada con mi permiso.
 ¿Tu equipo o tu familia ya tienen un protocolo para esto?
 Fuentes: Wang et al., arXiv:2301.02111 (2023); Mai et al., PLOS ONE 18(8): e0285333 (2023); FTC (2023); FBI/IC3 (2024); Guardia Nacional/SEP (2026).
-Shot IA #15 · La Creación del Robert
+Shot IA 15 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Ciberseguridad #ClonacionDeVoz #Fraude #LaCreacionDelRobert
 ```
@@ -96,7 +96,7 @@ Esa no es la voz de tu hijo pidiéndote dinero: es una copia hecha por una IA. �
 Les basta un audio corto de un video en redes. En 2023, un modelo de Microsoft lo hizo con 3 segundos de grabación.
 Defensa: palabra clave en familia, y si te llaman con prisa, cuelga y marca tú al número que ya conoces.
 ¿Ya tienen palabra clave en tu familia?
-Shot IA #15 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 15 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

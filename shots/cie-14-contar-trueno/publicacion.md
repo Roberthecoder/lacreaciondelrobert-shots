@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #14 · Cuenta los segundos entre el rayo y el trueno
+# Publicación · Shot Científico 14 · Cuenta los segundos entre el rayo y el trueno
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -13,7 +13,7 @@ Pero cuidado: un rayo puede caer a unos 16 kilómetros de la tormenta, o incluso
 El dibujo es esquemático.
 Fuentes: NOAA / National Weather Service (Lightning Science y Lightning Safety).
 ¿Tú cuentas los segundos cuando hay tormenta? 👇
-Shot Científico #14 · La Creación del Robert
+Shot Científico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Rayos #Tormentas
 ```
@@ -25,7 +25,7 @@ Cuenta los segundos entre el rayo y el trueno y divide entre 3: son los kilómet
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú cuentas los segundos cuando hay tormenta? 👇
-Shot Científico #14 · La Creación del Robert
+Shot Científico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Rayos #Tormentas
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Cuenta los segundos entre el rayo y el trueno ⚡ | Shot Científico #14
+Cuenta los segundos entre el rayo y el trueno ⚡ | Shot Científico 14
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 - NOAA / National Weather Service. Lightning Safety: "lightning can strike outward 10 miles from a thunderstorm"; "When thunder roars, go indoors"; esperar 30 minutos después del último trueno. https://www.weather.gov/safety/lightning
 - Velocidad del sonido en el aire a 20 °C ≈ 343 m/s (NASA Glenn Research Center). https://www.grc.nasa.gov/www/k-12/airplane/sound.html
 ¿Tú cuentas los segundos cuando hay tormenta? 👇
-Shot Científico #14 · La Creación del Robert
+Shot Científico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Rayos
 ```
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Cuenta los segundos entre el rayo y el trueno: cada 3 segundos, un kilómetro. ⚡ Pero si oyes el trueno, ya estás al alcance de un rayo: si truena, métete.
 ¿Tú cuentas los segundos cuando hay tormenta? 👇
-Shot Científico #14 · La Creación del Robert
+Shot Científico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -67,7 +67,7 @@ Una regla de física que cabe en una tormenta: cuenta los segundos entre el dest
 Funciona porque la luz llega casi al instante y el sonido viaja a unos 340 m/s. El trueno es la onda que produce el aire calentado de golpe por el rayo, hasta unos 50,000 °F (≈ 28,000 °C), según el Servicio Meteorológico de EE. UU.
 Lo práctico: los rayos pueden caer a 16 km de la tormenta o más, por eso la recomendación es entrar a un lugar cerrado en cuanto se oye el primer trueno y esperar 30 minutos después del último.
 ¿Tu lugar de trabajo o escuela tiene un protocolo para tormentas eléctricas?
-Shot Científico #14 · La Creación del Robert
+Shot Científico 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #10 · Esta gelatina no se echó a perder (la piña fresca y la bromelina)
+# Publicación · Shot Químico 10 · Esta gelatina no se echó a perder (la piña fresca y la bromelina)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Si la quieres con piña: usa de lata o cuece la fresca antes (tibia no basta).
 El dibujo es esquemático.
 Fuentes: Jutamongkon y Charoenrein 2010 · Nishiyama 2002 · McGee 2004 · Kaur et al. 2015.
 ¿Alguna vez se te hizo agua la gelatina con fruta? ¿Con cuál? 👇
-Shot Químico #10 · La Creación del Robert
+Shot Químico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Gelatina #Piña #Enzimas
 ```
@@ -25,7 +25,7 @@ Esta gelatina no se echó a perder: la piña fresca la está cortando en pedacit
 La gelatina cuaja porque sus cadenas de proteína (del colágeno) se enroscan en hélices y forman una red que atrapa el agua. La bromelina de la piña fresca son enzimas que cortan esas cadenas, y sin red se queda líquida. En 2010, en Tailandia, la bromelina aguantó una hora a 40 °C, pero a 80 °C perdió casi toda su actividad en 8 minutos: por eso la piña de lata, que se procesa con calor, sí deja cuajar. Y en 2002, en Japón, el jugo de la mayoría de 13 variedades de kiwi también deshizo la gelatina.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez se te hizo agua la gelatina con fruta? 👇
-Shot Químico #10 · La Creación del Robert
+Shot Químico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Gelatina #Piña #Enzimas
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta gelatina no se echó a perder 🍍 | Shot Químico #10
+Esta gelatina no se echó a perder 🍍 | Shot Químico 10
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Mirmusavi M.H. et al. (2026). Gelatin-based porous scaffolds. Mater Today Bio. https://pmc.ncbi.nlm.nih.gov/articles/PMC12813337/
 - FDA, 21 CFR § 145.180 Canned pineapple. https://www.ecfr.gov/current/title-21/section-145.180
 ¿Alguna vez se te hizo agua la gelatina con fruta? ¿Con cuál? 👇
-Shot Químico #10 · La Creación del Robert
+Shot Químico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Gelatina
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta gelatina no se echó a perder: la piña fresca la está cortando en pedacitos. 🍍 La bromelina de la piña son enzimas que cortan la gelatina en pedazos tan cortos que ya no forman la red que atrapa el agua. La de lata sí cuaja: el calor del enlatado apaga esas enzimas.
 ¿Alguna vez se te hizo agua la gelatina con fruta? 👇
-Shot Químico #10 · La Creación del Robert
+Shot Químico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Gelatina
 ```
@@ -72,14 +72,14 @@ Un postre que no cuaja es un buen ejemplo de química de proteínas en la cocina
 La gelatina gelifica porque, al enfriarse, sus cadenas (colágeno parcialmente hidrolizado) se reorganizan en triples hélices que actúan como uniones físicas de una red que retiene agua. La piña fresca contiene bromelina, un conjunto de proteasas que hidrolizan la gelatina; con cadenas demasiado cortas, la red no se forma.
 La temperatura lo resuelve: en un estudio de la Universidad Kasetsart (Tailandia, 2010), la bromelina de la fruta no perdió actividad tras 60 min a 40 °C, pero a 80 °C perdió casi toda en 8 min. Por eso la piña enlatada, procesada con calor, sí permite una gelatina firme. Y en Japón (2002), el jugo de la mayoría de 13 variedades de kiwi también impidió la gelificación, por su proteasa, la actinidina.
 ¿Qué otro fenómeno de cocina te gustaría ver explicado a nivel molecular?
-Shot Químico #10 · La Creación del Robert
+Shot Químico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #CienciaDeLosAlimentos #Enzimas #Divulgacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esta gelatina no se echó a perder: la bromelina de la piña fresca corta sus cadenas y ya no cuaja. La de lata sí: el calor apaga la enzima (a 80 °C, casi toda en 8 min). 🍍 Shot Químico #10 #Quimica
+Esta gelatina no se echó a perder: la bromelina de la piña fresca corta sus cadenas y ya no cuaja. La de lata sí: el calor apaga la enzima (a 80 °C, casi toda en 8 min). 🍍 Shot Químico 10 #Quimica
 ```
 
 ### Threads
@@ -87,7 +87,7 @@ Esta gelatina no se echó a perder: la bromelina de la piña fresca corta sus ca
 Esta gelatina no se echó a perder: la piña fresca la está cortando en pedacitos. 🍍
 La bromelina son enzimas que cortan las cadenas de la gelatina; sin red, se queda líquida. Con piña de lata sí cuaja: el calor del enlatado apaga esas enzimas. Y el kiwi fresco hace lo mismo.
 ¿Alguna vez se te hizo agua la gelatina con fruta?
-Shot Químico #10 · La Creación del Robert
+Shot Químico 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

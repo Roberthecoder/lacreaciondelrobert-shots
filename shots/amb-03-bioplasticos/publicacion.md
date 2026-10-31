@@ -14,7 +14,7 @@ No es una estafa: es una tecnología que va a medio camino.
 El dibujo es esquemático.
 Fuentes: Bagheri et al. 2017 (Global Challenges), Mayekar y Auras 2024, revisiones de 2025 y 2026 sobre el PLA.
 ¿En tu ciudad hay composta industrial? 👇
-Shot Ambiental #03 · La Creación del Robert
+Shot Ambiental 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Bioplasticos #Reciclaje #Plastico
 ```
@@ -25,7 +25,7 @@ Este vaso dice compostable, pero en tu jardín no se va a deshacer: necesita una
 Es PLA: para romperse necesita humedad y unos 58 °C por semanas (composta industrial). En agua de mar de laboratorio duró un año sin degradarse. Además, si se cuela puede dañar el reciclaje del PET, cuesta más que el plástico normal y se ablanda con café muy caliente. No es estafa: es una tecnología a medio camino.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu ciudad hay composta industrial? 👇
-Shot Ambiental #03 · La Creación del Robert
+Shot Ambiental 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Bioplasticos #Reciclaje #Plastico
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este vaso "compostable" no se deshace en tu jardín 🥤 | Shot Ambiental #03
+Este vaso "compostable" no se deshace en tu jardín 🥤 | Shot Ambiental 03
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Recycling of Poly(lactic acid) (Saygin et al., Polymers, 2026): https://doi.org/10.3390/polym18141731
 
 ¿En tu ciudad hay composta industrial? 👇
-Shot Ambiental #03 · La Creación del Robert
+Shot Ambiental 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CienciaAmbiental #Bioplasticos
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Este vaso dice compostable, pero en tu jardín no se va a deshacer: necesita una fábrica a 58 °C. 🥤 En agua de mar duró un año sin degradarse. ¿En tu ciudad hay composta industrial? 👇
-Shot Ambiental #03 · La Creación del Robert
+Shot Ambiental 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Bioplasticos
 ```
@@ -69,7 +69,7 @@ Muchos vasos "compostables" son de PLA (ácido poliláctico), hecho con ácido l
 Por qué importa: el PLA se parece al PET y, si se cuela en el reciclaje, aun en fracciones pequeñas puede bajar la calidad del plástico reciclado (revisión de 2026). Además cuesta más producirlo que un plástico de petróleo y el PLA puro se deforma con bebidas muy calientes.
 No es una estafa: es una tecnología a medio camino, que solo funciona si existe la infraestructura de composta industrial.
 ¿Tu ciudad tiene dónde compostar estos envases?
-Shot Ambiental #03 · La Creación del Robert
+Shot Ambiental 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Bioplasticos #EconomiaCircular #Reciclaje
 ```
@@ -97,7 +97,7 @@ La respuesta: 58 °C + humedad + semanas.
 El dibujo es esquemático.
 Fuentes: Bagheri et al. 2017, revisión de 2026 (PMC13568370).
 ¿Habías visto vasos "compostables"? 👇
-Shot Ambiental #03 · La Creación del Robert
+Shot Ambiental 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Bioplasticos #Reciclaje #Plastico
 ```
@@ -108,7 +108,7 @@ Soy Robert, de La Creación del Robert 🌱
 En la composta industrial el vaso de PLA se rompe pedazo a pedazo (cada pedazo, una nota). En tu jardín y en el mar no pasa nada y la música se queda tapada. Respuesta: 58 °C + humedad + semanas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Habías visto vasos "compostables"? 👇
-Shot Ambiental #03 · La Creación del Robert
+Shot Ambiental 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Bioplasticos #Reciclaje #Plastico
 ```
@@ -129,7 +129,7 @@ Fuentes:
 - Assessing Polymer Biodegradability (revisión, 2026, PMC13568370): composta industrial a 58 ± 2 °C.
 
 ¿Habías visto vasos "compostables"? 👇
-Shot Ambiental #03 · La Creación del Robert
+Shot Ambiental 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CienciaAmbiental #Bioplasticos
 ```
@@ -137,7 +137,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 🎧 La nota es la temperatura: 25 °C grave, 58 °C aguda. En la composta industrial el vaso se rompe; en tu jardín, no. 🥤 ¿Habías visto vasos "compostables"? 👇
-Shot Ambiental #03 · La Creación del Robert
+Shot Ambiental 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental
 ```

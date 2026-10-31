@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #18 · El glucómetro por dentro
+# Publicación · Shot Biotecnológico 18 · El glucómetro por dentro
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo curioso: las abejas ponen su propia glucosa oxidasa en la miel, donde forma a
 El dibujo es esquemático y el número de la pantalla es un ejemplo. Esto no sustituye la indicación de tu médico.
 Fuentes: Yoo y Lee 2010 · Clark y Lyons 1962 · Dubey et al. 2017 · Bauer et al. 2022 · Reyes-García et al. 2025 (Ensanut) · Bucekova et al. 2014.
 ¿Tú o alguien en tu casa usa glucómetro? 👇
-Shot Biotecnológico #18 · La Creación del Robert
+Shot Biotecnológico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Diabetes #Glucometro #Enzimas
 ```
@@ -25,7 +25,7 @@ Ese aparatito no mide tu sangre: mide los electrones que suelta una enzima. 🩸
 En la tira, la glucosa oxidasa (casi siempre de un hongo, Aspergillus niger) le quita electrones a la glucosa; el mediador los lleva al electrodo y la corriente se vuelve mg/dL. Más azúcar, más corriente. La idea es de 1962: Clark y Lyons, el primer biosensor de enzima. En México, 17 de cada 100 adultos tienen diabetes tipo 2 y casi uno de cada tres no lo sabía (Ensanut 2021–2024).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú o alguien en tu casa usa glucómetro? 👇
-Shot Biotecnológico #18 · La Creación del Robert
+Shot Biotecnológico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Diabetes #Glucometro #Enzimas
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu glucómetro no mide tu sangre 🩸⚡ | Shot Biotecnológico #18
+Tu glucómetro no mide tu sangre 🩸⚡ | Shot Biotecnológico 18
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Reyes-García A., Basto-Abreu A. et al. (2025). Prevalencia de diabetes y control glucémico en México, Ensanut 2021-2024. Salud Publica Mex 67(6):622–632. https://doi.org/10.21149/17286
 - Bucekova M. et al. (2014). Honeybee glucose oxidase. Naturwissenschaften 101:661–670. https://pubmed.ncbi.nlm.nih.gov/24969731/
 ¿Tú o alguien en tu casa usa glucómetro? 👇
-Shot Biotecnológico #18 · La Creación del Robert
+Shot Biotecnológico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Diabetes
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese aparatito no mide tu sangre: mide los electrones que suelta una enzima. 🩸⚡ En la tira, una enzima de hongo le quita electrones a la glucosa; un mediador los lleva al electrodo y la corriente se convierte en tu número. Más azúcar, más corriente.
 ¿Tú o alguien en tu casa usa glucómetro? 👇
-Shot Biotecnológico #18 · La Creación del Robert
+Shot Biotecnológico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Diabetes
 ```
@@ -71,14 +71,14 @@ Un glucómetro no "mide la sangre": es un biosensor enzimático. La tira lleva g
 El concepto lo propusieron Clark y Lyons en 1962 con un electrodo de oxígeno cubierto de glucosa oxidasa, el origen del campo de los biosensores.
 Su relevancia en México es enorme: la Ensanut 2021–2024 estima diabetes tipo 2 en el 17.0 % de los adultos de 20 años o más, y 5.4 puntos de ese 17.0 corresponden a personas sin diagnóstico previo.
 ¿Qué otra tecnología cotidiana es, en el fondo, una enzima trabajando?
-Shot Biotecnológico #18 · La Creación del Robert
+Shot Biotecnológico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Biosensores #Diabetes #SaludPublica #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Tu glucómetro no mide tu sangre: mide los electrones que una enzima de hongo le quita a la glucosa. Más azúcar, más corriente, y esa corriente se vuelve tu número. 🩸⚡ Shot Biotecnológico #18 #Biotecnologia
+Tu glucómetro no mide tu sangre: mide los electrones que una enzima de hongo le quita a la glucosa. Más azúcar, más corriente, y esa corriente se vuelve tu número. 🩸⚡ Shot Biotecnológico 18 #Biotecnologia
 ```
 
 ### Threads
@@ -86,7 +86,7 @@ Tu glucómetro no mide tu sangre: mide los electrones que una enzima de hongo le
 Ese aparatito no mide tu sangre: mide los electrones que suelta una enzima. 🩸⚡
 La glucosa oxidasa de la tira le quita electrones a la glucosa, un mediador los lleva al electrodo y la corriente se vuelve mg/dL. La idea es de 1962.
 ¿Tú o alguien en tu casa usa glucómetro?
-Shot Biotecnológico #18 · La Creación del Robert
+Shot Biotecnológico 18 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

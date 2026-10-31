@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #39 · Los puntos del hongo de los cuentos son un cascarón roto: Amanita muscaria
+# Publicación · Shot Fungi Mati 39 · Los puntos del hongo de los cuentos son un cascarón roto: Amanita muscaria
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Admíralo, pero no te lo comas.
 El dibujo es esquemático. No es consejo médico.
 Fuentes: MMWR 2019 (CDC); Toxins 2025; Rev. Mex. Biodiversidad 2006; Woodland Trust.
 ¿Lo has visto en algún bosque? ¿Cómo le dicen en tu región? 👇
-Shot Fungi Mati #39 · La Creación del Robert
+Shot Fungi Mati 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #HongosVenenosos #Amanita
 ```
@@ -26,7 +26,7 @@ Amanita muscaria nace envuelto en un velo blanco. Al crecer, el sombrero se infl
 Admíralo, pero no te lo comas.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Lo has visto en algún bosque? ¿Cómo le dicen en tu región? 👇
-Shot Fungi Mati #39 · La Creación del Robert
+Shot Fungi Mati 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #HongosVenenosos #Amanita
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los puntos del hongo de los cuentos son un cascarón ROTO 🍄 | Shot Fungi Mati #39
+Los puntos del hongo de los cuentos son un cascarón ROTO 🍄 | Shot Fungi Mati 39
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - Woodland Trust. Fly agaric (Amanita muscaria). https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/fungi-and-lichens/fly-agaric/
 - Kuo, M. (2013). Amanita muscaria var. flavivolvata. MushroomExpert.Com. https://www.mushroomexpert.com/amanita_muscaria_flavivolvata.html
 ¿Lo has visto en algún bosque? ¿Cómo le dicen en tu región? 👇
-Shot Fungi Mati #39 · La Creación del Robert
+Shot Fungi Mati 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esos puntos blancos del hongo de los cuentos no son manchas: son pedazos de un cascarón roto. 🍄 Amanita muscaria nace envuelto en un velo blanco que se rompe al crecer; la lluvia puede lavar los puntos. Crece en bosques de pino y encino de México, y es venenoso: cocinarlo puede no quitarle el peligro. Admíralo, pero no te lo comas.
 ¿Lo has visto en algún bosque? 👇
-Shot Fungi Mati #39 · La Creación del Robert
+Shot Fungi Mati 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -75,7 +75,7 @@ En Amanita muscaria, el cuerpo joven está envuelto por completo en un velo blan
 Es una especie ectomicorrízica (en México, registrada en bosques de pino y encino de Oaxaca) y es tóxica: contiene ácido iboténico y muscimol, termoestables. En 2018, en Minnesota, un caso por confusión requirió ventilación mecánica cuatro días y el paciente se recuperó (MMWR, 2019).
 Por qué importa: los rasgos "de cuento" no siempre están, y cocinar no garantiza seguridad. La identificación debe hacerla un experto.
 ¿En tu región se recolectan hongos silvestres?
-Shot Fungi Mati #39 · La Creación del Robert
+Shot Fungi Mati 39 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #Toxicologia #Ciencia
 ```
@@ -88,7 +88,7 @@ Los puntos blancos del hongo de los cuentos (Amanita muscaria) son pedazos del v
 ### Threads
 ```text
 Esos puntos blancos del hongo de los cuentos no son manchas: son pedazos de un cascarón roto. 🍄 Amanita muscaria nace envuelto en un velo que se rompe al crecer. Crece en bosques de pino y encino de México y es venenoso. Admíralo, pero no te lo comas. ¿Lo has visto en algún bosque?
-Shot Fungi Mati #39 · La Creación del Robert
+Shot Fungi Mati 39 · La Creación del Robert
 #Hongos
 ```
 

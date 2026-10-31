@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #57 · Lo blanco de tu leche no es un pigmento (micelas de caseína, grasa y luz rebotando)
+# Publicación · Shot Químico 57 · Lo blanco de tu leche no es un pigmento (micelas de caseína, grasa y luz rebotando)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Ojo: la leche sí trae un poquito de pigmento (beta-caroteno en la grasa y ribof
 El dibujo es esquemático.
 Fuentes: Fiege et al. 2023 · Schwarcz (McGill) 2017 · Gedzelman et al. 2008 · Frisvad et al. 2007.
 ¿Tú tomas leche entera o descremada? ¿Ya le habías notado lo azul? 👇
-Shot Químico #57 · La Creación del Robert
+Shot Químico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Leche #Luz #CienciaEnCasa
 ```
@@ -26,7 +26,7 @@ Lo blanco de tu leche no es un pigmento: es luz rebotando en bolitas que tus ojo
 Gotitas de grasa y micelas de caseína (proteína con calcio y fosfato) desvían la luz de todos los colores, y juntos se ven blancos. En la descremada quedan sobre todo las micelas, más chiquitas, que desvían más el azul: por eso se ve azulada. En 2008, un equipo de la Universidad de Granada con colegas de EE. UU. comprobó que la leche descremada en un tanque de agua dio luz azul de lado y rojiza al cruzar, como el cielo y el atardecer. Y en una simulación de 2007, un rayo rebotaba miles de veces dentro de la leche.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Entera o descremada? 👇
-Shot Químico #57 · La Creación del Robert
+Shot Químico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Leche #Luz #CienciaEnCasa
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Lo blanco de tu leche no es un pigmento 🥛 | Shot Químico #57
+Lo blanco de tu leche no es un pigmento 🥛 | Shot Químico 57
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 • Frisvad J.R., Christensen N.J., Jensen H.W. (2007). Computing the scattering properties of participating media using Lorenz-Mie theory. ACM Transactions on Graphics 26(3), SIGGRAPH 2007. https://doi.org/10.1145/1276377.1276452
 
 ¿Tú tomas leche entera o descremada? ¿Ya le habías notado lo azul? 👇
-Shot Químico #57 · La Creación del Robert
+Shot Químico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Leche
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 Lo blanco de tu leche no es un pigmento: es luz rebotando en bolitas que tus ojos no alcanzan a ver. 🥛
 Gotitas de grasa y micelas de caseína desvían la luz de todos los colores, y juntos se ven blancos. En la descremada quedan sobre todo las micelas, más chiquitas, que desvían más el azul: por eso se ve azulada. El dibujo es esquemático.
 ¿Entera o descremada en tu casa? 👇
-Shot Químico #57 · La Creación del Robert
+Shot Químico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Leche
 ```
@@ -75,14 +75,14 @@ Dos trabajos lo cuantifican. En 2008, un equipo de la Universidad de Granada con
 La óptica de los coloides no es solo curiosidad: así se relaciona lo que se ve con lo que contiene un alimento.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué otro alimento de tu cocina te gustaría ver "por dentro"?
-Shot Químico #57 · La Creación del Robert
+Shot Químico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #CienciaDeAlimentos #Optica #Leche
 ```
 
 ### X
 ```text
-Lo blanco de tu leche no es un pigmento: es luz rebotando en gotitas de grasa y micelas de caseína. En la descremada quedan las micelas, más chicas, que desvían más el azul: por eso se ve azulada. 🥛 Shot Químico #57
+Lo blanco de tu leche no es un pigmento: es luz rebotando en gotitas de grasa y micelas de caseína. En la descremada quedan las micelas, más chicas, que desvían más el azul: por eso se ve azulada. 🥛 Shot Químico 57
 #Quimica #LaCreacionDelRobert
 ```
 
@@ -91,7 +91,7 @@ Lo blanco de tu leche no es un pigmento: es luz rebotando en gotitas de grasa y 
 Lo blanco de tu leche no es un pigmento: es luz rebotando en bolitas que no alcanzas a ver. 🥛
 Gotitas de grasa y micelas de caseína desvían la luz de todos los colores, y juntos se ven blancos. En la descremada quedan sobre todo las micelas, más chiquitas, que desvían más el azul. En 2008, un equipo de la Universidad de Granada comprobó que la leche descremada en un tanque daba luz azul de lado y rojiza al cruzar, como el cielo y el atardecer.
 ¿Entera o descremada? 👇
-Shot Químico #57 · La Creación del Robert
+Shot Químico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

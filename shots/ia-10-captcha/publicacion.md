@@ -1,4 +1,4 @@
-# Publicación · Shot IA #10 · Tú contra un bot: ¿quién resuelve mejor los captchas?
+# Publicación · Shot IA 10 · Tú contra un bot: ¿quién resuelve mejor los captchas?
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ El bot te gana leyendo; tu prueba es cómo te portas en la página.
 El dibujo es esquemático. Las cifras de bots son de ataques publicados por otros autores (2014–2021) que reúne el estudio de 2023.
 Fuentes: Searles et al., USENIX Security (2023); Goodfellow et al. (2014); von Ahn et al., Science (2008).
 ¿Cuál es el captcha que más odias? 👇
-Shot IA #10 · La Creación del Robert
+Shot IA 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Captcha #Bots #Ciberseguridad
 ```
@@ -26,7 +26,7 @@ Un estudio de la Universidad de California en Irvine (2023) puso a 1,400 persona
 Y antes tú trabajaste para ellas: reCAPTCHA usaba palabras de libros escaneados que la computadora no leía (más de 440 millones de palabras para 2008). Hoy la prueba es cómo usas la página.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuál es el captcha que más odias? 👇
-Shot IA #10 · La Creación del Robert
+Shot IA 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Captcha #Bots #Ciberseguridad
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tú contra un bot: ¿quién resuelve mejor los captchas? 🤖 | Shot IA #10
+Tú contra un bot: ¿quién resuelve mejor los captchas? 🤖 | Shot IA 10
 ```
 Descripción:
 ```text
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tú contra un bot resolviendo captchas: casi siempre gana él, y más rápido. 🤖 Según un estudio de la Universidad de California en Irvine (2023), las personas atinaron de 50 a 85 %; la mayoría de los bots publicados entre 2014 y 2021, más de 96 %. Por eso hoy la prueba ya no es leer letras chuecas: es cómo te portas en la página.
 ¿Cuál es el captcha que más odias? 👇
-Shot IA #10 · La Creación del Robert
+Shot IA 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Captcha
 ```
@@ -74,7 +74,7 @@ La respuesta de la industria fue cambiar de examen: menos texto que teclear y m�
 Para quien diseña productos digitales, el dato pesa: cada captcha visible es fricción para personas que, además, lo resuelven peor que un bot.
 ¿Tu equipo sigue usando captchas visibles? ¿Con qué criterio?
 Fuentes: Searles et al., USENIX Security (2023); Goodfellow et al., arXiv:1312.6082 (2014); documentación de reCAPTCHA v3.
-Shot IA #10 · La Creación del Robert
+Shot IA 10 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Ciberseguridad #UX #Captcha #LaCreacionDelRobert
 ```
@@ -89,7 +89,7 @@ Tú contra un bot resolviendo captchas: las personas atinaron de 50 a 85 %; la m
 Tú contra un bot resolviendo captchas: casi siempre gana él, y más rápido. 🤖
 UC Irvine, 2023: las personas atinaron de 50 a 85 %; la mayoría de los bots publicados entre 2014 y 2021, más de 96 %. Y si usaste internet hace años, tecleaste palabras de libros escaneados para reCAPTCHA.
 ¿Cuál es el captcha que más odias?
-Shot IA #10 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 10 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #55 · La pieza que le falta a tu sangre: el factor VIII (hemofilia A)
+# Publicación · Shot Biotecnológico 55 · La pieza que le falta a tu sangre: el factor VIII (hemofilia A)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Y hoy hasta existe un anticuerpo, el emicizumab (aprobado en 2017), que imita al
 El dibujo es esquemático.
 Fuentes: CDC · CDC/MMWR 1987 · Institute of Medicine 1995 · Infected Blood Inquiry 2024 · Nature 1984 · Mannucci 2023 · etiquetas FDA de Recombinate y Hemlibra.
 ¿Conocías esta historia? ¿Conoces a alguien con hemofilia? 👇
-Shot Biotecnológico #55 · La Creación del Robert
+Shot Biotecnológico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Hemofilia #Sangre #CienciaEnEspañol
 ```
@@ -27,7 +27,7 @@ Al cortarte, las proteínas de la coagulación se activan en cadena y la trombin
 Durante años se sacó de plasma de miles de donantes, y en los ochenta esos concentrados transmitieron VIH y hepatitis C: en 1987, cerca de 7 de cada 10 personas con hemofilia A analizadas en Estados Unidos tenían VIH. En 1984 se publicó en Nature su gen (186,000 letras); células de hámster aprendieron a fabricarlo, y en 1992 la FDA aprobó el primer factor VIII recombinante. Hoy hasta un anticuerpo, el emicizumab, lo imita.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Conoces a alguien con hemofilia? 👇
-Shot Biotecnológico #55 · La Creación del Robert
+Shot Biotecnológico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Hemofilia #Sangre #FactorVIII
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La pieza que le falta a tu sangre: el factor VIII 🩸 | Shot Biotecnológico #55
+La pieza que le falta a tu sangre: el factor VIII 🩸 | Shot Biotecnológico 55
 ```
 Descripción:
 ```text
@@ -58,7 +58,7 @@ Fuentes:
 - FDA. Etiqueta de Hemlibra (emicizumab) (DailyMed). https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2483adba-fab6-4d1b-96c5-c195577ed071
 - Antibody Therapeutics (2025). Structure and function of therapeutic antibodies approved by the US FDA in 2024 (cascada y fibrina). https://pmc.ncbi.nlm.nih.gov/articles/PMC12454936/
 ¿Conocías esta historia? ¿Conoces a alguien con hemofilia? 👇
-Shot Biotecnológico #55 · La Creación del Robert
+Shot Biotecnológico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Hemofilia
 ```
@@ -67,7 +67,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa curita no cierra tu herida: la cierra una red que teje tu sangre. 🩸 En la hemofilia A falla una pieza de esa red: el factor VIII. Por años se sacó de plasma de miles de donantes, y en los ochenta eso trajo VIH y hepatitis C. Desde 1992 lo fabrican células de hámster, y hoy hasta un anticuerpo lo imita. El dibujo es esquemático.
 ¿Conoces a alguien con hemofilia? 👇
-Shot Biotecnológico #55 · La Creación del Robert
+Shot Biotecnológico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Hemofilia
 ```
@@ -79,7 +79,7 @@ En la hemofilia A falta o hay poco factor VIII, una proteína de la cascada de l
 La respuesta llegó desde la biología molecular: en 1984, Genentech y Genetics Institute publicaron en Nature el gen del factor VIII (unos 186,000 pares de bases), y en 1992 la FDA aprobó Recombinate, el primer factor VIII recombinante, producido en células de ovario de hámster chino. En 2017 llegó el emicizumab, un anticuerpo biespecífico que imita la función del factor VIII.
 Es una lección sobre la seguridad del suministro de productos biológicos y sobre el valor de producir proteínas terapéuticas sin depender de donantes.
 ¿Qué otro medicamento crees que cambió tanto gracias a la ingeniería genética?
-Shot Biotecnológico #55 · La Creación del Robert
+Shot Biotecnológico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Hemofilia #ProteinasRecombinantes #SaludPublica #LaCreacionDelRobert
 ```
@@ -94,7 +94,7 @@ Esa curita no cierra tu herida: la cierra una red que teje tu sangre. 🩸 En la
 Esa curita no cierra tu herida: la cierra una red que teje tu sangre. 🩸
 En la hemofilia A falla una pieza: el factor VIII. Por años salió de plasma de miles de donantes, y en los ochenta esos concentrados transmitieron VIH y hepatitis C. En 1984 se publicó su gen, y en 1992 se aprobó el primer factor VIII hecho por células de hámster.
 ¿Conoces a alguien con hemofilia? 👇
-Shot Biotecnológico #55 · La Creación del Robert
+Shot Biotecnológico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Hemofilia
 ```

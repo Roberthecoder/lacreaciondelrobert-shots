@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #56 · El "hongo negro" no es negro: mucormicosis
+# Publicación · Shot Fungi Mati 56 · El "hongo negro" no es negro: mucormicosis
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y algo importante: es rara y no se contagia de persona a persona.
 El dibujo es esquemático. No es consejo médico.
 Fuentes: CDC; Patel et al. 2021 (Emerging Infectious Diseases); Sen et al. 2021 (Indian J. Ophthalmol.); Gupta et al. 2022; Alqarihi et al. 2023.
 ¿Tú también creías que el hongo era negro? 👇
-Shot Fungi Mati #56 · La Creación del Robert
+Shot Fungi Mati 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Mucormicosis #Ciencia
 ```
@@ -25,7 +25,7 @@ Esa mancha negra no es el hongo: es tejido muerto. 🍄
 Le dijeron "hongo negro", pero las hifas de los Mucorales (Rhizopus, Mucor) son transparentes. Se meten en los vasos sanguíneos, los tapan y el tejido sin sangre se muere y se pone negro. En India, en la pandemia, los casos se dispararon: en 10 hospitales pasaron de 112 (sept–dic 2019) a 231 (sept–dic 2020), y en un estudio de 2,826 pacientes con mucormicosis asociada a COVID, 78 % tenía diabetes y 87 % recibió corticoides. Es rara y no se contagia de persona a persona.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Tú también creías que el hongo era negro? 👇
-Shot Fungi Mati #56 · La Creación del Robert
+Shot Fungi Mati 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Mucormicosis
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El "hongo negro" NO es negro: es tejido muerto | Shot Fungi Mati #56
+El "hongo negro" NO es negro: es tejido muerto | Shot Fungi Mati 56
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Vinay, K. et al. (2021). Emergence of Mucormycosis during COVID-19 Pandemic and Dermatological Manifestations. Indian Dermatol. Online J. 12(4). https://pmc.ncbi.nlm.nih.gov/articles/PMC8354408/
 - Alqarihi, A., Kontoyiannis, D. P. e Ibrahim, A. S. (2023). Mucormycosis in 2023: an update on pathogenesis and management. Front. Cell. Infect. Microbiol. 13. https://pmc.ncbi.nlm.nih.gov/articles/PMC10552646/
 ¿Tú también creías que el hongo era negro? 👇
-Shot Fungi Mati #56 · La Creación del Robert
+Shot Fungi Mati 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Mucormicosis #FungiMati
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esa mancha negra no es el hongo: es tejido muerto. 🍄 Le dijeron "hongo negro" a la mucormicosis, pero sus hifas son transparentes: tapan los vasos sanguíneos y el tejido sin sangre se pone negro. Es rara, no se contagia de persona a persona y casi siempre afecta a personas con defensas bajas o diabetes sin control.
 El dibujo es esquemático. No es consejo médico.
 ¿Tú también creías que el hongo era negro? 👇
-Shot Fungi Mati #56 · La Creación del Robert
+Shot Fungi Mati 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Mucormicosis
 ```
@@ -73,7 +73,7 @@ El "hongo negro" de la pandemia no era negro: el nombre es equivocado.
 La mucormicosis la causan mohos del orden Mucorales (Rhizopus, Mucor), cuyas hifas son hialinas. Lo negro es la necrosis: las hifas invaden los vasos sanguíneos, se forman trombos y el tejido muere (CDC). En India, un estudio multicéntrico encontró 2.1 veces más casos en septiembre–diciembre de 2020 que en el mismo periodo de 2019 (Patel et al., Emerg. Infect. Dis., 2021), y el estudio COSMIC, con 2,826 pacientes con mucormicosis asociada a COVID, reportó diabetes en 78 % y corticoides en 87 % (Sen et al., 2021).
 Por qué importa: el control de la glucosa y el uso de corticoides con juicio, en la dosis y el tiempo recomendados, fueron las lecciones que señalaron los autores. Y un dato clave contra el pánico: no se contagia de persona a persona.
 ¿Recuerdas cómo se habló de esto en las noticias?
-Shot Fungi Mati #56 · La Creación del Robert
+Shot Fungi Mati 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #SaludPublica #Micologia #Ciencia
 ```
@@ -86,7 +86,7 @@ El "hongo negro" no es negro: sus hifas son transparentes. Lo negro es tejido mu
 ### Threads
 ```text
 Esa mancha negra no es el hongo: es tejido muerto. 🍄 A la mucormicosis le dijeron "hongo negro", pero sus hifas son transparentes: tapan los vasos y el tejido sin sangre se pone negro. Es rara y no se contagia de persona a persona. ¿Tú también creías que el hongo era negro?
-Shot Fungi Mati #56 · La Creación del Robert
+Shot Fungi Mati 56 · La Creación del Robert
 #Hongos
 ```
 

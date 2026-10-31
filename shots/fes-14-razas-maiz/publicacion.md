@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #14 · Candelaria · Ambiental: Tu tamal puede salir de una de 64 razas de maíz
+# Publicación · Shot Festivo 14 · Candelaria · Ambiental: Tu tamal puede salir de una de 64 razas de maíz
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 2 feb 2027 (Día de la Candelaria).
 
@@ -15,7 +15,7 @@ Hoy muchas se guardan en bancos de semillas, y los maíces criollos podrían ser
 El dibujo es esquemático.
 Fuentes: CONABIO · Wellhausen et al. (1951) · Salinas-Moreno et al. (2021) · Hellin et al. (2014).
 ¿De qué maíz son los tamales de tu región? 👇
-Shot Festivo #14 · Candelaria · Ambiental · La Creación del Robert
+Shot Festivo 14 · Candelaria · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Maiz #MaicesNativos #Candelaria #Tamales
 ```
@@ -26,7 +26,7 @@ Tu tamal no es de maíz a secas: en México se reportan 64 razas de maíz. 🌽�
 Cacahuacintle para pozole, Zapalote Chico para totopos, Palomero Toluqueño para palomitas, y una variante del Chalqueño para harina de tamal (sus hojas envuelven tamales). Hay tantas porque los agricultores las adaptaron a cada lugar, del nivel del mar a 3,400 m, y su polen viaja libre. El azul y el morado son antocianinas en la cáscara del grano, en la capa de abajo o en las dos. En 1951 se describieron 25 razas; hoy CONABIO reporta 64.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿De qué maíz son los tamales de tu región? 👇
-Shot Festivo #14 · Candelaria · Ambiental · La Creación del Robert
+Shot Festivo 14 · Candelaria · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Maiz #MaicesNativos #Candelaria #Tamales
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu tamal puede salir de una de 64 razas de maíz 🌽 | Shot Festivo #14
+Tu tamal puede salir de una de 64 razas de maíz 🌽 | Shot Festivo 14
 ```
 Descripción:
 ```text
@@ -54,7 +54,7 @@ Fuentes:
 - CGIAR Genebanks, CIMMYT: https://genebanks.cgiar.org/genebanks/cimmyt/
 - Hellin, Bellon y Hearne (2014), Journal of Crop Improvement: https://www.gov.uk/research-for-development-outputs/maize-landraces-and-adaptation-to-climate-change-in-mexico
 ¿De qué maíz son los tamales de tu región? 👇
-Shot Festivo #14 · Candelaria · Ambiental · La Creación del Robert
+Shot Festivo 14 · Candelaria · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Maiz #MaicesNativos #Candelaria
 ```
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu tamal no es de maíz a secas: en México se reportan 64 razas de maíz. 🌽🫔 Cacahuacintle para pozole, Zapalote Chico para totopos, Palomero Toluqueño para palomitas y una variante del Chalqueño para harina de tamal. Los agricultores las han adaptado a cada lugar, del nivel del mar a 3,400 metros.
 ¿De qué maíz son los tamales de tu región? 👇
-Shot Festivo #14 · Candelaria · Ambiental · La Creación del Robert
+Shot Festivo 14 · Candelaria · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Maiz #Candelaria
 ```
@@ -74,20 +74,20 @@ En México no hay "un" maíz: CONABIO reporta 64 razas, y 59 se consideran nativ
 Esa diversidad no es un accidente. Los agricultores han adaptado sus maíces a cada lugar, del nivel del mar a los 3,400 metros, y la mantienen al guardar, intercambiar y probar su propia semilla. Cada raza tiene usos propios: Cacahuacintle para pozole, Zapalote Chico para totopos, Palomero Toluqueño para palomitas, una variante del Chalqueño para harina de tamal.
 En 1951, Wellhausen y su equipo publicaron «Razas de maíz en México»: describieron 25 razas a partir de unas 2,000 muestras. Hoy esa diversidad se guarda también en bancos de semillas, y hay investigadores que proponen que algunos maíces criollos podrían ser clave para adaptarse a los climas que vienen.
 ¿Qué otro cultivo de tu región crees que merece ser conservado?
-Shot Festivo #14 · Candelaria · Ambiental · La Creación del Robert
+Shot Festivo 14 · Candelaria · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Agrobiodiversidad #Maiz #Conservacion #DivulgacionCientifica
 ```
 
 ### X
 ```text
-Tu tamal no es de maíz a secas: en México se reportan 64 razas 🌽 Cacahuacintle para pozole, Zapalote Chico para totopos, Palomero Toluqueño para palomitas. Shot Festivo #14 · Candelaria · Ambiental #Maiz #Candelaria
+Tu tamal no es de maíz a secas: en México se reportan 64 razas 🌽 Cacahuacintle para pozole, Zapalote Chico para totopos, Palomero Toluqueño para palomitas. Shot Festivo 14 · Candelaria · Ambiental #Maiz #Candelaria
 ```
 
 ### Threads
 ```text
 Tu tamal no es de maíz a secas: en México se reportan 64 razas de maíz. 🌽 Cacahuacintle para pozole, Zapalote Chico para totopos, Palomero Toluqueño para palomitas y una variante del Chalqueño para harina de tamal. ¿De qué maíz son los tamales de tu región? 👇
-Shot Festivo #14 · Candelaria · Ambiental · La Creación del Robert
+Shot Festivo 14 · Candelaria · Ambiental · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Maiz
 ```

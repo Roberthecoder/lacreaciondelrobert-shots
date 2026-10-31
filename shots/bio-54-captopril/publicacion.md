@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #54 · La pastilla de la presión es nieta de un veneno de víbora (captopril)
+# Publicación · Shot Biotecnológico 54 · La pastilla de la presión es nieta de un veneno de víbora (captopril)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así nació el captopril, el primer inhibidor de la ECA que se toma por la boca,
 El dibujo es esquemático. No cambies ni dejes tu medicina sin hablar con tu médico.
 Fuentes: Ferreira 1965 · Cushman y Ondetti 1991 · Péterfi et al. 2019 · FDA (Capoten, 1981) · OMS.
 ¿Alguien en tu casa toma una pastilla que termina en "pril"? 👇
-Shot Biotecnológico #54 · La Creación del Robert
+Shot Biotecnológico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Captopril #PresionAlta #Serpientes
 ```
@@ -25,7 +25,7 @@ Esa pastilla de la presión de tu abuela no es cualquiera: es nieta de un veneno
 El captopril nació del veneno de la jararaca de Brasil. En 1965, Sérgio Ferreira halló ahí péptidos que potencian a la bradicinina; luego se vio que frenan la ECA, la enzima que hace angiotensina II, la que aprieta tus vasos. Pero solo servían inyectados. En 1974, en Squibb, Cushman y Ondetti dibujaron el hueco de la ECA con su zinc, copiaron la punta del veneno y, con azufre, su copia se hizo 2,000 veces más potente. La FDA aprobó el captopril en 1981. Hoy toda la familia termina en "-pril".
 El dibujo es esquemático. No cambies tu medicina sin hablar con tu médico. Fuentes en el primer comentario.
 ¿Alguien en tu casa toma un "pril"? 👇
-Shot Biotecnológico #54 · La Creación del Robert
+Shot Biotecnológico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Captopril #PresionAlta #Serpientes
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La pastilla de la presión salió de un veneno de víbora 🐍 | Shot Biotecnológico #54
+La pastilla de la presión salió de un veneno de víbora 🐍 | Shot Biotecnológico 54
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - FDA, Drugs@FDA: Capoten (captopril), NDA 018343, aprobado el 06/04/1981. https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=018343
 - OMS (2025). Hypertension, nota descriptiva. https://www.who.int/news-room/fact-sheets/detail/hypertension
 ¿Alguien en tu casa toma una pastilla que termina en "pril"? 👇
-Shot Biotecnológico #54 · La Creación del Robert
+Shot Biotecnológico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Captopril
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa pastilla de la presión de tu abuela no es cualquiera: es nieta de un veneno de víbora. 🐍💊 El captopril se diseñó copiando péptidos del veneno de la jararaca de Brasil, que frenan la enzima que aprieta tus vasos. Lo aprobó la FDA en 1981 y hoy toda su familia termina en "-pril".
 ¿Alguien en tu casa toma un "pril"? 👇
-Shot Biotecnológico #54 · La Creación del Robert
+Shot Biotecnológico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #PresionAlta
 ```
@@ -70,14 +70,14 @@ Uno de los medicamentos para la presión alta más conocidos se diseñó a parti
 En 1965, Sérgio Ferreira describió en el veneno de la jararaca (Bothrops jararaca) un factor que potencia a la bradicinina. Esos péptidos resultaron ser inhibidores de la enzima convertidora de angiotensina (ECA), pero solo funcionaban inyectados. En 1974, en Squibb, David Cushman y Miguel Ondetti construyeron un modelo del sitio activo de la ECA (una metalopeptidasa de zinc, por analogía con la carboxipeptidasa A) y tomaron de los péptidos del veneno la secuencia Ala-Pro. Cambiar el carboxilo de su compuesto por un sulfhidrilo multiplicó su potencia unas 2,000 veces. Después de unos 2,000 compuestos probados al azar, el diseño racional necesitó solo unos 60 para llegar al captopril, aprobado por la FDA en 1981: el primer inhibidor de la ECA activo por vía oral, y premio Lasker en 1999.
 Hoy la OMS estima que en 2024 unos 1,400 millones de adultos de 30 a 79 años tenían hipertensión, y los "-pril" siguen entre los tratamientos que relajan los vasos.
 ¿Qué otras moléculas de la naturaleza crees que todavía esperan su "captopril"?
-Shot Biotecnológico #54 · La Creación del Robert
+Shot Biotecnológico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #DiseñoDeFarmacos #Hipertension #Toxinas #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esa pastilla de la presión de tu abuela es nieta de un veneno de víbora: el captopril (FDA, 1981) se diseñó copiando péptidos del veneno de la jararaca que frenan la ECA. 🐍💊 Shot Biotecnológico #54 #Biotecnologia
+Esa pastilla de la presión de tu abuela es nieta de un veneno de víbora: el captopril (FDA, 1981) se diseñó copiando péptidos del veneno de la jararaca que frenan la ECA. 🐍💊 Shot Biotecnológico 54 #Biotecnologia
 ```
 
 ### Threads
@@ -85,7 +85,7 @@ Esa pastilla de la presión de tu abuela es nieta de un veneno de víbora: el ca
 Esa pastilla de la presión de tu abuela no es cualquiera: es nieta de un veneno de víbora. 🐍💊
 El captopril se diseñó copiando péptidos del veneno de la jararaca, que frenan la ECA, la enzima que aprieta tus vasos. Con un gancho de azufre, su copia se hizo 2,000 veces más potente. Hoy toda la familia termina en "-pril".
 ¿Alguien en tu casa toma un "pril"?
-Shot Biotecnológico #54 · La Creación del Robert
+Shot Biotecnológico 54 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

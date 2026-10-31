@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #36 · Esto no es soya prensada: el tempeh lo amarra un hongo
+# Publicación · Shot Fungi Mati 36 · Esto no es soya prensada: el tempeh lo amarra un hongo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y es blanco porque, tapado y con poco aire, el hongo casi no hace esporas; si la
 El dibujo es esquemático.
 Fuentes: Nout y Kiers 2005 (J. Appl. Microbiol.); Liem, Steinkraus y Cronk 1977 (Appl. Environ. Microbiol.); Jurus y Sundberg 1976.
 ¿Ya probaste el tempeh? ¿Cómo te lo comiste? 👇
-Shot Fungi Mati #36 · La Creación del Robert
+Shot Fungi Mati 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Tempeh #Fermentacion
 ```
@@ -25,7 +25,7 @@ Esto no es soya prensada: es soya amarrada por un hongo vivo. 🍄🫘
 El tempeh, muy probablemente nacido en Java (Indonesia), se hace con soya cocida y esporas del moho Rhizopus. En uno o dos días, a 25–30 °C, sus hilos blancos (micelio) crecen entre los granos, se meten en ellos y los pegan en un bloque. Sus enzimas parten proteínas y grasas, y en la fermentación baja el ácido fítico. Dato raro: un estudio de 1977 encontró que la vitamina B12 del tempeh no la hace el hongo, sino una bacteria que crece junto a él.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya probaste el tempeh? ¿Cómo te lo comiste? 👇
-Shot Fungi Mati #36 · La Creación del Robert
+Shot Fungi Mati 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Tempeh #Fermentacion
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El tempeh no es soya prensada: lo amarra un hongo 🍄 | Shot Fungi Mati #36
+El tempeh no es soya prensada: lo amarra un hongo 🍄 | Shot Fungi Mati 36
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Jurus, A. M. y Sundberg, W. J. (1976). Penetration of Rhizopus oligosporus into soybeans in tempeh. Applied and Environmental Microbiology 32: 284–287. https://pmc.ncbi.nlm.nih.gov/articles/PMC170049/
 - Keuth, S. y Bisping, B. (1994). Vitamin B12 production by Citrobacter freundii or Klebsiella pneumoniae during tempeh fermentation. Applied and Environmental Microbiology 60(5): 1495–1499. https://pmc.ncbi.nlm.nih.gov/articles/PMC201508/
 ¿Ya probaste el tempeh? ¿Cómo te lo comiste? 👇
-Shot Fungi Mati #36 · La Creación del Robert
+Shot Fungi Mati 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Tempeh #FungiMati
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es soya prensada: es soya amarrada por un hongo vivo. 🍄 El tempeh se hace con soya cocida y esporas del moho Rhizopus: en uno o dos días sus hilos blancos pegan los granos en un bloque. Y su vitamina B12 no la hace el hongo, sino una bacteria que crece junto a él.
 ¿Ya probaste el tempeh? 👇
-Shot Fungi Mati #36 · La Creación del Robert
+Shot Fungi Mati 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Tempeh
 ```
@@ -70,7 +70,7 @@ El tempeh es un buen ejemplo de fermentación en estado sólido: un moho convier
 El micelio de Rhizopus crece entre los granos de soya cocidos en 1–2 días a 25–30 °C y entra hasta cerca de una cuarta parte del grosor de cada cotiledón (Jurus y Sundberg, 1976). Sus proteasas, lipasas y otras enzimas parten las macromoléculas, y la fermentación reduce el ácido fítico, que limita la disponibilidad de minerales (Nout y Kiers, 2005). Un hallazgo curioso: en 1977 se mostró que la vitamina B12 del tempeh no la produce el moho, sino bacterias que lo acompañan (Liem et al., 1977).
 Por qué importa: en el tempeh, el resultado depende de una comunidad de microbios (mohos y bacterias que los acompañan), no de una sola especie (Nout y Kiers, 2005).
 ¿Conoces otro alimento que dependa de más de un microbio?
-Shot Fungi Mati #36 · La Creación del Robert
+Shot Fungi Mati 36 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Microbiologia #Alimentos #Ciencia
 ```
@@ -83,7 +83,7 @@ El tempeh no es soya prensada: es soya amarrada por el micelio del moho Rhizopus
 ### Threads
 ```text
 Esto no es soya prensada: es soya amarrada por un hongo vivo. 🍄 El micelio de Rhizopus crece entre los granos y los pega en un bloque en uno o dos días. Y la B12 del tempeh la hace una bacteria, no el hongo. ¿Ya lo probaste?
-Shot Fungi Mati #36 · La Creación del Robert
+Shot Fungi Mati 36 · La Creación del Robert
 #Hongos
 ```
 

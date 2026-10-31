@@ -11,7 +11,7 @@ En 1917, el químico de alimentos James Currie publicó que todas las cepas de A
 El dibujo es esquemático.
 Fuentes: Currie, J. Biol. Chem. 1917 · Cairns et al., Fungal Biol Biotechnol 2018 · Max et al., Braz J Microbiol 2010 · Fekete et al., Microbiol Spectr 2024.
 ¿Cuál es tu dulce ácido favorito? Revisa su etiqueta y cuéntame 👇
-Shot Biotecnológico #52 · La Creación del Robert
+Shot Biotecnológico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #moho #fermentacion #acidocitrico
 ```
@@ -24,7 +24,7 @@ Dentro de cada célula arma citrato, la primera pieza de su ciclo de energía. C
 En 1917, James Currie publicó que todas las cepas que probó lo hacían en agua azucarada y muy ácida. Dos años después Pfizer abrió una planta piloto, y con los años el moho le ganó al limón. En 2010, una revisión dijo que cerca del 99 % del ácido cítrico del mundo salía de microbios.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuál es tu dulce ácido favorito? 👇
-Shot Biotecnológico #52 · La Creación del Robert
+Shot Biotecnológico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #moho #fermentacion #acidocitrico
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu gomita ácida no es de limón: es de moho 🍬 | Shot Biotecnológico #52
+Tu gomita ácida no es de limón: es de moho 🍬 | Shot Biotecnológico 52
 ```
 Descripción:
 ```text
@@ -47,7 +47,7 @@ Fuentes:
 · Fekete E et al. Manganese deficiency triggers citrate export in Aspergillus niger. Microbiol Spectr (2024). https://pmc.ncbi.nlm.nih.gov/articles/PMC11537073/
 · Silva JJ et al. Black aspergilli in Brazilian onions. Int J Food Microbiol (2021).
 ¿Cuál es tu dulce ácido favorito? 👇
-Shot Biotecnológico #52 · La Creación del Robert
+Shot Biotecnológico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #moho
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 El ácido cítrico de tu gomita casi seguro no salió de un limón: salió de un moho. 🍬🖤
 Lo hace Aspergillus niger en tanques con agua y mucha azúcar: sin manganeso, el citrato se le acumula adentro y una bomba lo saca al caldo. En 2010, una revisión dijo que cerca del 99 % del ácido cítrico del mundo salía de microbios.
 ¿Cuál es tu dulce ácido favorito? 👇
-Shot Biotecnológico #52 · La Creación del Robert
+Shot Biotecnológico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #moho
 ```
@@ -68,7 +68,7 @@ El ácido cítrico de tu gomita casi seguro no salió de un limón: salió de un
 Es uno de los ejemplos más antiguos de biotecnología industrial. Hasta principios del siglo XX se extraía de limones, muchos importados de Italia. En 1917, el químico de alimentos James Currie publicó que las cepas del moho Aspergillus niger que probó producían mucho ácido cítrico en medios con azúcar y pH bajo; dos años después, Pfizer abrió una planta piloto, y con los años la fermentación desplazó a los limones. En 2010, una revisión estimaba que cerca del 99 % de la producción mundial se hacía con microbios.
 El mecanismo sigue estudiándose: con muy poco manganeso en el caldo (menos de 5 ppb), el citrato se acumula dentro de la célula y se activa CexA, la proteína que lo exporta (Fekete et al., 2024). Un siglo después, el control de metales traza sigue siendo clave para el rendimiento.
 ¿Qué otro ingrediente cotidiano crees que sale de un microbio?
-Shot Biotecnológico #52 · La Creación del Robert
+Shot Biotecnológico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Fermentacion #IndustriaAlimentaria #Microbiologia #LaCreacionDelRobert
 ```
@@ -83,7 +83,7 @@ El ácido cítrico de tu gomita casi seguro no salió de un limón: lo hace el m
 El ácido cítrico de tu gomita casi seguro no salió de un limón: salió de un moho. 🍬🖤
 Aspergillus niger, en tanques con agua y mucha azúcar: sin manganeso, el citrato se le acumula adentro y una bomba lo saca. En 1917 James Currie lo publicó; con los años el moho le ganó al limón.
 ¿Cuál es tu dulce ácido favorito? 👇
-Shot Biotecnológico #52 · La Creación del Robert
+Shot Biotecnológico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

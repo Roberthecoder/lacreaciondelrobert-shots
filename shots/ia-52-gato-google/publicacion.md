@@ -1,4 +1,4 @@
-# Publicación · Shot IA #52 · El gato que una computadora aprendió sola
+# Publicación · Shot IA 52 · El gato que una computadora aprendió sola
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y era chiquita: según Google, un cerebro adulto tiene unas cien mil veces más 
 El dibujo es esquemático: la imagen original del "gato" la calcularon los investigadores con optimización numérica (la imagen que más enciende a esa neurona).
 Fuentes: Le et al., ICML 2012; blog de Google (2012).
 ¿Qué crees que aprendería hoy una red viendo tus videos? 👇
-Shot IA #52 · La Creación del Robert
+Shot IA 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #RedesNeuronales #Gatos #Google
 ```
@@ -25,7 +25,7 @@ Esta cara borrosa no es un fantasma: es un gato. Lo dibujó una computadora a la
 En un estudio publicado en 2012, una red de Google con mil millones de conexiones vio 10 millones de imágenes de YouTube sin etiquetas, en 1,000 computadoras durante tres días. Una de sus neuronas terminó encendiéndose con caras de gato; otras, con caras humanas y cuerpos. Su tarea solo era resumir cada imagen y volver a dibujarla.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué crees que aprendería hoy una red viendo tus videos? 👇
-Shot IA #52 · La Creación del Robert
+Shot IA 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #RedesNeuronales #Gatos #Google
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La computadora que aprendió sola qué es un gato 🐱 | Shot IA #52
+La computadora que aprendió sola qué es un gato 🐱 | Shot IA 52
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta cara borrosa no es un fantasma: es un gato. Lo dibujó una computadora a la que nadie le dijo qué es un gato. 🐱 En un estudio de Google publicado en 2012, una red vio 10 millones de imágenes de YouTube sin etiquetas y una de sus neuronas aprendió sola a encenderse con caras de gato.
 ¿Qué crees que aprendería hoy una red viendo tus videos? 👇
-Shot IA #52 · La Creación del Robert
+Shot IA 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Gatos
 ```
@@ -67,7 +67,7 @@ La escala: mil millones de conexiones, 1,000 computadoras (16,000 núcleos) y tr
 El lado honesto: la mejor neurona de gato acertó 74.8 % frente a 64.8 % de adivinar al azar, y en ImageNet (22,000 categorías), ya ajustada con fotos etiquetadas, llegó a 15.8 % de aciertos: 70 % más que el mejor resultado anterior, pero lejos de ser perfecta.
 ¿En tu trabajo hay datos que nadie ha etiquetado y podrían enseñar algo?
 Fuentes: Le et al., ICML 2012 (arXiv:1112.6209); blog de Google, 26 jun 2012.
-Shot IA #52 · La Creación del Robert
+Shot IA 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #AprendizajeAutomatico #RedesNeuronales #Datos #LaCreacionDelRobert
 ```
@@ -82,7 +82,7 @@ Esta cara borrosa es un gato que nadie le enseñó a una computadora. En un estu
 Esta cara borrosa no es un fantasma: es un gato. Lo dibujó una computadora a la que nadie le dijo qué es un gato. 🐱
 Estudio de Google publicado en 2012: 10 millones de imágenes de YouTube sin etiquetas, 1,000 computadoras, tres días… y una neurona que se encendía con caras de gato.
 ¿Qué aprendería hoy una red viendo tus videos?
-Shot IA #52 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 52 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

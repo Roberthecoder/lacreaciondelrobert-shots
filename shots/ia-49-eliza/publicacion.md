@@ -1,4 +1,4 @@
-# Publicación · Shot IA #49 · ELIZA: el "psicólogo" de unas cuantas reglas al que le contaban secretos
+# Publicación · Shot IA 49 · ELIZA: el "psicólogo" de unas cuantas reglas al que le contaban secretos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Lo curioso: su código original no se vio en al menos 50 años. En 2021 apareci�
 Hoy pasa igual con los chatbots: es fácil sentir que te entienden.
 El dibujo es esquemático; el chat del celular es ilustrativo. Fuentes en el primer comentario.
 ¿Alguna vez sentiste que un chat "te entendía"? 👇
-Shot IA #49 · La Creación del Robert
+Shot IA 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ELIZA #Chatbots #HistoriaDeLaComputacion
 ```
@@ -26,7 +26,7 @@ Este no es un psicólogo: son unas cuantas reglas. Y aun así, la gente le conta
 ELIZA (Joseph Weizenbaum, MIT, 1966) buscaba palabras clave, cambiaba «mi» por «tu» y te regresaba tu frase: «Mi novio me hizo venir aquí» → «Tu novio te hizo venir aquí». Su secretaria, que la vio programarla por meses, a los pocos mensajes le pidió que saliera del cuarto. A eso le dicen efecto ELIZA: ver comprensión donde solo hay símbolos. Su código original no se vio en al menos 50 años, hasta que en 2021 apareció impreso en el MIT.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Alguna vez sentiste que un chat "te entendía"? 👇
-Shot IA #49 · La Creación del Robert
+Shot IA 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ELIZA #Chatbots #HistoriaDeLaComputacion
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-ELIZA: el "psicólogo" de unas cuantas reglas al que le contaban secretos 🛋️ | Shot IA #49
+ELIZA: el "psicólogo" de unas cuantas reglas al que le contaban secretos 🛋️ | Shot IA 49
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este no es un psicólogo: son unas cuantas reglas. Y aun así, la gente le contaba secretos. 🛋️ ELIZA (MIT, 1966) solo cambiaba «mi» por «tu» y te regresaba tu frase… y su propia secretaria le pidió a su creador que saliera del cuarto para platicar con ella. A eso le dicen efecto ELIZA.
 ¿Alguna vez sentiste que un chat "te entendía"? 👇
-Shot IA #49 · La Creación del Robert
+Shot IA 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #ELIZA
 ```
@@ -71,7 +71,7 @@ En su libro de 1976 contó que su secretaria, que lo vio programarla durante mes
 Al fenómeno se le llama efecto ELIZA: leer en los símbolos que arma una computadora mucha más comprensión de la que hay. Ya en 1966 Weizenbaum advertía lo fácil que es crear "the illusion of understanding".
 Hoy los chatbots son muchísimo más capaces que ELIZA, y por eso la pregunta es más actual que nunca: cuando una herramienta "suena" empática, ¿cómo diseñamos y comunicamos para que la gente no confunda fluidez con comprensión?
 Fuentes: Weizenbaum, Communications of the ACM 9(1) (1966); Weizenbaum, Computer Power and Human Reason (1976); Hofstadter (1995); Lane et al., arXiv:2501.06707 (2025).
-Shot IA #49 · La Creación del Robert
+Shot IA 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Chatbots #EticaDigital #HistoriaDeLaComputacion #LaCreacionDelRobert
 ```
@@ -86,7 +86,7 @@ ELIZA (MIT, 1966) solo cambiaba «mi» por «tu» y te regresaba tu frase. Aun a
 Este no es un psicólogo: son unas cuantas reglas. Y aun así, la gente le contaba secretos. 🛋️
 ELIZA (MIT, 1966) buscaba palabras clave y te regresaba tu frase: «Mi novio me hizo venir aquí» → «Tu novio te hizo venir aquí». A eso le dicen efecto ELIZA: ver comprensión donde solo hay símbolos.
 ¿Alguna vez sentiste que un chat "te entendía"?
-Shot IA #49 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 49 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #17 · Ese grano negro no es centeno quemado: el cornezuelo (Claviceps purpurea)
+# Publicación · Shot Fungi Mati 17 · Ese grano negro no es centeno quemado: el cornezuelo (Claviceps purpurea)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo curioso: de esos alcaloides salen medicinas para la migraña y para frenar el
 El dibujo es esquemático.
 Fuentes: Haarmann et al. 2009 (Mol. Plant Pathol.); Urga et al. 2002 (Ethiop. J. Health Dev.); BfR 2024.
 ¿Habías visto un cornezuelo en una espiga? 👇
-Shot Fungi Mati #17 · La Creación del Robert
+Shot Fungi Mati 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Cornezuelo #Centeno
 ```
@@ -25,7 +25,7 @@ Ese grano negro no es centeno quemado: es un hongo venenoso. 🌾🍄
 El cornezuelo (Claviceps purpurea) entra por la flor del centeno, sigue el camino del polen y, en lugar del grano, deja un cuernito lleno de alcaloides. En el pan, esos alcaloides estrechan los vasos y causan gangrena: el "fuego de San Antonio" de la Edad Media. En 2001, en Arsi, Etiopía, 18 personas tuvieron gangrena y 3 murieron. Y de esos mismos alcaloides salen medicinas para la migraña y para el sangrado después del parto.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Habías visto un cornezuelo en una espiga? 👇
-Shot Fungi Mati #17 · La Creación del Robert
+Shot Fungi Mati 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Cornezuelo #Centeno
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese grano negro NO es centeno quemado: es un hongo 🌾 | Shot Fungi Mati #17
+Ese grano negro NO es centeno quemado: es un hongo 🌾 | Shot Fungi Mati 17
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Alderman, S. (USDA-ARS). Ergot: Biology and Control. https://www.ars.usda.gov/ARSUserFiles/81/ErgotDVDtranscript.pdf
 - Vogel, J. P. et al. (2019). WHO recommendations on uterotonics for postpartum haemorrhage prevention. BMJ Global Health 4(2): e001466. https://pmc.ncbi.nlm.nih.gov/articles/PMC6509591
 ¿Habías visto un cornezuelo en una espiga? 👇
-Shot Fungi Mati #17 · La Creación del Robert
+Shot Fungi Mati 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese grano negro no es centeno quemado: es un hongo venenoso. 🌾 El cornezuelo (Claviceps purpurea) reemplaza el grano del centeno por un cuernito lleno de alcaloides: en la Edad Media causó el "fuego de San Antonio" y hoy de esos mismos alcaloides salen medicinas.
 ¿Habías visto un cornezuelo en una espiga? 👇
-Shot Fungi Mati #17 · La Creación del Robert
+Shot Fungi Mati 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Cornezuelo
 ```
@@ -71,7 +71,7 @@ Un hongo que fue veneno y hoy también es medicina: el cornezuelo del centeno.
 Claviceps purpurea infecta solo el ovario de la flor y, en lugar del grano, forma un esclerocio con alcaloides que estrechan los vasos sanguíneos. Comer cereal contaminado causa ergotismo: en la Edad Media, el "fuego de San Antonio"; en 2001, en Arsi (Etiopía), un brote con 18 casos de gangrena y 3 muertes, atribuido a cebada con avena silvestre infectada (Urga et al., 2002).
 Esos mismos alcaloides dieron fármacos para la migraña (dihidroergotamina) y para prevenir la hemorragia posparto (ergometrina). Hoy la prevención es industrial y regulatoria: los molinos separan el cornezuelo y la Unión Europea fija límites máximos de esclerocios y alcaloides (BfR, 2024).
 ¿Conocías el origen de estos medicamentos?
-Shot Fungi Mati #17 · La Creación del Robert
+Shot Fungi Mati 17 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #SeguridadAlimentaria #Ciencia
 ```
@@ -84,7 +84,7 @@ Ese grano negro no es centeno quemado: es un hongo, el cornezuelo. En la Edad Me
 ### Threads
 ```text
 Ese grano negro no es centeno quemado: es un hongo venenoso, el cornezuelo (Claviceps purpurea). 🌾 Deja un cuernito lleno de alcaloides en lugar del grano: fue el "fuego de San Antonio" y hoy también da medicinas para la migraña y el sangrado del parto. ¿Habías visto uno?
-Shot Fungi Mati #17 · La Creación del Robert
+Shot Fungi Mati 17 · La Creación del Robert
 #Hongos
 ```
 

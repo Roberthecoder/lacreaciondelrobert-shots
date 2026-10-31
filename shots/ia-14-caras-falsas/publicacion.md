@@ -1,4 +1,4 @@
-# Publicación · Shot IA #14 · ¿Cuál de estas caras es real? La IA ya engaña a tus ojos
+# Publicación · Shot IA 14 · ¿Cuál de estas caras es real? La IA ya engaña a tus ojos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En 2023, un equipo dirigido desde la Universidad Nacional Australiana vio que la
 No le creas a "se ve real": fíjate quién publicó la foto y de dónde salió.
 ¿Y la respuesta del reto? Ninguna: las dos caras del video las dibujamos. 😅 El dibujo es esquemático. Datos de 2022 y 2023, con caras de StyleGAN2.
 ¿En cuál confiaste tú, en la A o en la B? 👇
-Shot IA #14 · La Creación del Robert
+Shot IA 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Deepfakes #CarasFalsas #Ciencia
 ```
@@ -26,7 +26,7 @@ En 2022, 315 personas intentaron distinguir caras reales de caras hechas con la 
 Consejo: no le creas a "se ve real"; fíjate quién publicó la foto y de dónde salió.
 La respuesta del reto: ninguna, las dos las dibujamos. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En cuál confiaste tú, en la A o en la B? 👇
-Shot IA #14 · La Creación del Robert
+Shot IA 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Deepfakes #CarasFalsas #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Cuál de estas caras es real? La IA ya engaña a tus ojos 👀 | Shot IA #14
+¿Cuál de estas caras es real? La IA ya engaña a tus ojos 👀 | Shot IA 14
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Cuál de estas dos caras es real? Ojo: la IA ya inventa caras. 👀 En 2022, 315 personas intentaron distinguir caras reales de caras de IA y atinaron 48.2 %, casi como echar un volado. Y las caras de la IA les parecieron más confiables. Así que no le creas a "se ve real": fíjate quién publicó la foto. (La respuesta del reto: ninguna, las dos las dibujamos 😅).
 ¿En cuál confiaste tú, en la A o en la B? 👇
-Shot IA #14 · La Creación del Robert
+Shot IA 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Deepfakes
 ```
@@ -67,7 +67,7 @@ El estudio (Nightingale y Farid, PNAS, 2022) añadió dos resultados incómodos.
 Para quien revisa perfiles, contrata, verifica identidades o modera contenido, la conclusión es práctica: "se ve real" ya no es evidencia. Lo que sirve es verificar la fuente: quién publicó la imagen y de dónde salió.
 ¿Tu equipo tiene un proceso para verificar imágenes?
 Fuentes: Nightingale y Farid, PNAS 119(8) (2022); Miller et al., Psychological Science 34(12) (2023).
-Shot IA #14 · La Creación del Robert
+Shot IA 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Deepfakes #VerificacionDigital #Ciberseguridad #LaCreacionDelRobert
 ```
@@ -83,7 +83,7 @@ Soy Robert, de La Creación del Robert 🌱
 En 2022, 315 personas atinaron 48.2 % (casi como echar un volado) y las caras de IA les parecieron más confiables. En 2023, quienes más fallaban eran los más seguros.
 Respuesta del reto: ninguna, las dos las dibujamos 😅
 ¿En cuál confiaste tú?
-Shot IA #14 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 14 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

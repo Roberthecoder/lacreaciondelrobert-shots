@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #29 · El mar no se vuelve ácido: se vuelve menos básico
+# Publicación · Shot Ambiental 29 · El mar no se vuelve ácido: se vuelve menos básico
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ El mar sigue siendo básico, pero para quien vive en una concha, ese poquito ya 
 El dibujo es esquemático.
 Fuentes: NOAA, Agencia Europea de Medio Ambiente, Bednaršek y colegas (2012).
 ¿Sabías que el mar sigue siendo básico? 👇
-Shot Ambiental #29 · La Creación del Robert
+Shot Ambiental 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #AcidificacionDelOceano #Mar #CO2
 ```
@@ -26,7 +26,7 @@ El mar no se está volviendo ácido: sigue siendo básico. Pero cada vez menos, 
 El mar absorbe cerca de 1/4 del CO₂ que emitimos y se forma ácido carbónico. El pH promedio de la superficie bajó de 8.11 (1985) a 8.04 (2024): como la escala es logarítmica, son cerca de 18 % más acidez. Menos carbonato para ostiones, corales y mariposas de mar; en 2012 se encontraron conchas de mariposas de mar muy disueltas junto a la Antártida.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que el mar sigue siendo básico? 👇
-Shot Ambiental #29 · La Creación del Robert
+Shot Ambiental 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #AcidificacionDelOceano #Mar #CO2
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El mar no se vuelve ácido… y aun así deshace conchas 🐚 | Shot Ambiental #29
+El mar no se vuelve ácido… y aun así deshace conchas 🐚 | Shot Ambiental 29
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - NOAA PMEL, A primer on pH: https://www.pmel.noaa.gov/co2/story/A+primer+on+pH
 - Bednaršek et al. (2012), Nature Geoscience: https://www.nature.com/articles/ngeo1635
 ¿Sabías que el mar sigue siendo básico? 👇
-Shot Ambiental #29 · La Creación del Robert
+Shot Ambiental 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #AcidificacionDelOceano #CienciaAmbiental
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 El mar no se está volviendo ácido: sigue siendo básico. Pero cada vez menos: entre 1985 y 2024 su pH promedio bajó de 8.11 a 8.04, cerca de 18 % más acidez. Y eso ya se nota en las conchas de las mariposas de mar. 🐚
 ¿Sabías que el mar sigue siendo básico? 👇
-Shot Ambiental #29 · La Creación del Robert
+Shot Ambiental 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #AcidificacionDelOceano #CienciaAmbiental
 ```
@@ -70,7 +70,7 @@ El mar no se está volviendo ácido: sigue siendo básico. Pero cada vez menos.
 Según la Agencia Europea de Medio Ambiente (2026), el océano absorbe cerca de una cuarta parte de las emisiones humanas de CO₂, y el pH promedio de su superficie bajó de 8.11 en 1985 a 8.04 en 2024: cerca de 18 % más acidez, porque la escala de pH es logarítmica. El exceso de iones de hidrógeno reduce los iones carbonato que ostiones, corales y parte del plancton necesitan para sus conchas y esqueletos.
 No es solo una proyección: en 2012, un estudio en Nature Geoscience encontró disolución severa en conchas de mariposas de mar vivas del océano Austral. Para la pesca, la acuicultura de moluscos y los arrecifes, medir el pH del mar ya es tan importante como medir su temperatura.
 ¿Conocías la diferencia entre "ácido" y "menos básico"?
-Shot Ambiental #29 · La Creación del Robert
+Shot Ambiental 29 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Oceanos #CambioClimatico #AcidificacionDelOceano #LaCreacionDelRobert
 ```

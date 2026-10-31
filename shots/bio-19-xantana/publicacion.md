@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #19 · Lo espeso de tu aderezo también es obra de una bacteria (goma xantana)
+# Publicación · Shot Biotecnológico 19 · Lo espeso de tu aderezo también es obra de una bacteria (goma xantana)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En 1961, Allene Jeanes y su equipo, del Departamento de Agricultura de EE. UU. e
 El dibujo es esquemático.
 Fuentes: Federal Register 1969 · 21 CFR 172.695 · Jeanes et al. 1961 · Berninger et al. 2021 · Abdul et al. 2026 · Jelušić y Popović Milovanović 2026.
 ¿Ya habías visto "goma xantana" en alguna etiqueta de tu cocina? 👇
-Shot Biotecnológico #19 · La Creación del Robert
+Shot Biotecnológico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #GomaXantana #CienciaDeLosAlimentos #Bacterias
 ```
@@ -25,7 +25,7 @@ Lo espeso de ese aderezo no es solo crema: también es obra de una bacteria. �
 La goma xantana la hace Xanthomonas campestris, de la especie que pudre las coles. En la fábrica se cultiva en tanques con azúcar, se eliminan las bacterias y la goma se saca con alcohol. Sus cadenas de azúcares se enredan en reposo (espeso) y se alinean al agitar (corre). Se describió en 1961 en Peoria, EE. UU., y se aprobó para alimentos en 1969. También espesa el lodo para perforar pozos de petróleo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Ya la habías visto en una etiqueta? 👇
-Shot Biotecnológico #19 · La Creación del Robert
+Shot Biotecnológico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #GomaXantana #CienciaDeLosAlimentos #Bacterias
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Lo espeso de tu aderezo lo hizo una bacteria 🥗🦠 | Shot Biotecnológico #19
+Lo espeso de tu aderezo lo hizo una bacteria 🥗🦠 | Shot Biotecnológico 19
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Lo espeso de ese aderezo no es solo crema: también es obra de una bacteria. 🥗🦠 La goma xantana la fabrica Xanthomonas campestris en tanques con azúcar; sus cadenas se enredan en reposo y se alinean al agitar, por eso el aderezo corre cuando lo sacudes y espesa cuando lo dejas quieto. El dibujo es esquemático.
 ¿Ya la habías visto en una etiqueta? 👇
-Shot Biotecnológico #19 · La Creación del Robert
+Shot Biotecnológico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #GomaXantana
 ```
@@ -72,7 +72,7 @@ Por qué importa: con muy poca concentración da mucha viscosidad, y es pseudopl
 Es biotecnología de origen público: Allene Jeanes y su equipo del Departamento de Agricultura de EE. UU. en Peoria la describieron en 1961, y la FDA la autorizó como aditivo de alimentos en 1969, tras una petición de Kelco.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué otro ingrediente "de laboratorio" de tu cocina viene de un microbio?
-Shot Biotecnológico #19 · La Creación del Robert
+Shot Biotecnológico 19 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #CienciaDeLosAlimentos #Fermentacion #LaCreacionDelRobert
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #43 · Tu taco de res contra el de frijol: más de 50 veces más gases, kilo por kilo
+# Publicación · Shot Ambiental 43 · Tu taco de res contra el de frijol: más de 50 veces más gases, kilo por kilo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -16,7 +16,7 @@ Así que en tu próxima taquiza, importa menos de dónde viene tu taco que de qu
 El dibujo es esquemático.
 Fuentes: Poore y Nemecek (2018, Science) vía Our World in Data; Weber y Matthews (2008).
 ¿De qué es tu taco favorito? 👇
-Shot Ambiental #43 · La Creación del Robert
+Shot Ambiental 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #HuellaDeCarbono #Tacos #CambioClimatico
 ```
@@ -27,7 +27,7 @@ Tu taco de bistec contra el de frijol de tu amigo: kilo por kilo, el tuyo calien
 Res: 99.5 kg de CO₂e por kilo (promedio mundial). Legumbres secas: 1.8. Queso 23.9, cerdo 12.3, pollo 9.9. Y el transporte es apenas el 0.5 % de la huella de la res: pesa más el metano de la vaca y la tierra que se desmonta. Datos de 38,700 granjas (Poore y Nemecek, Science, 2018).
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿De qué es tu taco favorito? 👇
-Shot Ambiental #43 · La Creación del Robert
+Shot Ambiental 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #HuellaDeCarbono #Tacos #CambioClimatico
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu taco de res vs. el de frijol: 50 veces más gases 🌮 | Shot Ambiental #43
+Tu taco de res vs. el de frijol: 50 veces más gases 🌮 | Shot Ambiental 43
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Hannah Ritchie (2020), Our World in Data: https://ourworldindata.org/food-choice-vs-eating-local
 - Weber y Matthews (2008), Environmental Science & Technology. https://doi.org/10.1021/es702969f
 ¿De qué es tu taco favorito? 👇
-Shot Ambiental #43 · La Creación del Robert
+Shot Ambiental 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #HuellaDeCarbono #Tacos
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu taco de bistec contra el de frijol de tu amigo: kilo por kilo, el tuyo calienta el planeta más de cincuenta veces más. 🌮 Y que la carne venga de cerca casi no cambia nada: el transporte es el 0.5 % de su huella. Importa más de qué es tu taco que de dónde viene.
 ¿De qué es tu taco favorito? 👇
-Shot Ambiental #43 · La Creación del Robert
+Shot Ambiental 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #HuellaDeCarbono #Tacos
 ```
@@ -72,7 +72,7 @@ Kilo por kilo, la carne de res emite más de 50 veces más gases de efecto inver
 El análisis de Poore y Nemecek (Science, 2018), con datos de 38,700 granjas, da en promedio mundial 99.5 kg de CO₂e por kilo de res de ganado de carne y 1.8 kg por kilo de legumbres secas; el queso, el cerdo y el pollo quedan en medio (23.9, 12.3 y 9.9). El transporte es solo el 0.5 % de la huella de la res: el grueso está en la granja (metano entérico) y en el cambio de uso de suelo.
 La consecuencia práctica es contraintuitiva: Weber y Matthews (2008) estimaron que, en hogares de Estados Unidos, cambiar menos de un día a la semana de calorías de carne roja y lácteos por otras fuentes reduce más emisiones que comprar toda la comida local. Para empresas de alimentos, comedores y políticas públicas, el "qué" pesa más que el "de dónde".
 ¿Qué cambio en el menú crees que sería más fácil de adoptar en tu comunidad o empresa?
-Shot Ambiental #43 · La Creación del Robert
+Shot Ambiental 43 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #HuellaDeCarbono #Alimentacion #CambioClimatico #LaCreacionDelRobert
 ```

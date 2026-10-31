@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #13 · A esta tortuga no la deciden sus cromosomas: la decide la arena
+# Publicación · Shot Ambiental 13 · A esta tortuga no la deciden sus cromosomas: la decide la arena
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En Oaxaca, entre 2014 y 2017, la temperatura de los nidos de dos criaderos de to
 Por eso, en playas que se calientan, ya se prueba enfriar nidos con sombra o agua.
 El dibujo es esquemático.
 ¿Has ido a una liberación de tortugas en algún campamento? 👇
-Shot Ambiental #13 · La Creación del Robert
+Shot Ambiental 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #TortugasMarinas #Oaxaca #CambioClimatico
 ```
@@ -25,7 +25,7 @@ Si naciste niño o niña, lo decidieron tus cromosomas. A esta tortuga la decide
 En las tortugas marinas, la temperatura del nido decide el sexo: cerca de 29 °C, mitad y mitad; más caliente, más hembras. En la Gran Barrera de Coral, el 99 % de las tortugas verdes jóvenes nacidas en las playas calientes del norte eran hembras (estudio publicado en 2018). Y en dos criaderos de tortuga laúd de Oaxaca (2014–2017), el calor de los nidos dio un cálculo de 96 % de hembras.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Has ido a una liberación de tortugas en algún campamento? 👇
-Shot Ambiental #13 · La Creación del Robert
+Shot Ambiental 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #TortugasMarinas #Oaxaca #CambioClimatico
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-A esta tortuga la decide la arena, no sus cromosomas 🐢 | Shot Ambiental #13
+A esta tortuga la decide la arena, no sus cromosomas 🐢 | Shot Ambiental 13
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - García-Grajales et al. 2019, Animal Biodiversity and Conservation 42(1):143-152: https://doi.org/10.32800/abc.2019.42.0143
 - WWF-Australia 2018: https://wwf.org.au/news/2018/increasing-temperatures-in-queenslands-north-are-turning-green-turtle-populations-female/
 ¿Has ido a una liberación de tortugas en algún campamento? 👇
-Shot Ambiental #13 · La Creación del Robert
+Shot Ambiental 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #TortugasMarinas #CienciaAmbiental
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 En las tortugas marinas, el sexo no lo deciden los cromosomas: lo decide la temperatura de la arena. 🐢🌡️ Cerca de 29 °C nacen mitad y mitad; más caliente, más hembras. En la Gran Barrera de Coral, el 99 % de las tortugas verdes jóvenes de las playas calientes del norte eran hembras.
 ¿Has ido a una liberación de tortugas en algún campamento? 👇
-Shot Ambiental #13 · La Creación del Robert
+Shot Ambiental 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #TortugasMarinas #CienciaAmbiental
 ```
@@ -70,7 +70,7 @@ En las tortugas marinas, el sexo de las crías lo decide la temperatura de incub
 La temperatura pivote ronda los 29 °C: por encima nacen más hembras y, sobre 31 °C, solo hembras. Un estudio publicado en 2018 en Current Biology (NOAA, Queensland y WWF-Australia) encontró que las tortugas verdes de la Gran Barrera de Coral nacidas en las playas más calientes del norte eran 99.1 % hembras entre las juveniles, frente a 65–69 % en las playas más frescas del sur; los autores concluyen que esas colonias del norte llevan más de dos décadas produciendo sobre todo hembras.
 En México, en dos criaderos de tortuga laúd de Oaxaca (2014–2017), la temperatura de los nidos dio un cálculo de 96.3 % de hembras. Por eso se prueban medidas como la sombra y el riego para enfriar nidos, junto con el monitoreo de la temperatura.
 ¿Qué otras especies crees que sean igual de sensibles al calentamiento?
-Shot Ambiental #13 · La Creación del Robert
+Shot Ambiental 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #TortugasMarinas #CambioClimatico #Conservacion #LaCreacionDelRobert
 ```

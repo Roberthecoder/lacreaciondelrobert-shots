@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #42 · Si tienes menos de 20 años, nunca has visto un septiembre ártico como los de antes
+# Publicación · Shot Ambiental 42 · Si tienes menos de 20 años, nunca has visto un septiembre ártico como los de antes
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y ojo: como el hielo marino ya flota, al derretirse no sube el nivel del mar (lo
 El dibujo es esquemático.
 Fuentes: NSIDC y NASA Earth Observatory.
 ¿Tú has visto hielo de verdad alguna vez? 👇
-Shot Ambiental #42 · La Creación del Robert
+Shot Ambiental 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Artico #CambioClimatico #HieloMarino
 ```
@@ -25,7 +25,7 @@ Si tienes menos de veinte años, nunca has vivido un septiembre con tanto hielo 
 Medido en Méxicos: entre 1981 y 2010 el mínimo de septiembre dejaba en promedio más de tres Méxicos de hielo; en 2026, poco más de dos (4.60 millones de km²). El hielo refleja del 50 al 70 % del sol y el mar oscuro solo el 6 %: menos hielo, más calor, más deshielo. Y como ya flota, al derretirse no sube el nivel del mar.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú has visto hielo de verdad alguna vez? 👇
-Shot Ambiental #42 · La Creación del Robert
+Shot Ambiental 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #Artico #CambioClimatico #HieloMarino
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hielo del Ártico, medido en Méxicos 🧊 | Shot Ambiental #42
+El hielo del Ártico, medido en Méxicos 🧊 | Shot Ambiental 42
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - NASA Earth Observatory, Sea Ice: https://earthobservatory.nasa.gov/features/SeaIce/page1.php
 - SRE, datos generales de México (INEGI): https://consulmex.sre.gob.mx/austin/index.php/avisos/6-documentacion/54-acerca-de-mexico
 ¿Tú has visto hielo de verdad alguna vez? 👇
-Shot Ambiental #42 · La Creación del Robert
+Shot Ambiental 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Artico #CambioClimatico
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Si tienes menos de veinte años, nunca has vivido un septiembre con tanto hielo ártico como los de antes de 2007. 🧊 Medido en Méxicos: antes eran más de tres; en septiembre de 2026, poco más de dos (NSIDC). Y como ya flota, al derretirse no sube el nivel del mar.
 ¿Tú has visto hielo de verdad alguna vez? 👇
-Shot Ambiental #42 · La Creación del Robert
+Shot Ambiental 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Artico #CambioClimatico
 ```
@@ -71,7 +71,7 @@ Si tienes menos de veinte años, nunca has vivido un septiembre con tanto hielo 
 Según el NSIDC (Universidad de Colorado Boulder), el mínimo de 2026 fue de 4.60 millones de km² (12 de septiembre), 1.62 millones por debajo del promedio de 1981–2010: una pérdida comparable a más de tres cuartas partes de la superficie de México. Los 20 mínimos más bajos del registro satelital son los de 2007 a 2026, aunque el propio NSIDC señala que en las dos últimas décadas la caída se ha aplanado, y que sus causas siguen en debate.
 La relevancia climática está en el albedo: el hielo marino refleja del 50 al 70 % de la energía solar y el océano abierto solo el 6 %, lo que alimenta un ciclo de calentamiento. Un matiz que suele confundirse: el hielo marino ya flota, así que su deshielo no eleva directamente el nivel del mar; eso lo hace el hielo sobre tierra.
 ¿Qué indicador climático crees que deberíamos comunicar mejor al público?
-Shot Ambiental #42 · La Creación del Robert
+Shot Ambiental 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #CambioClimatico #Artico #DivulgacionCientifica #LaCreacionDelRobert
 ```

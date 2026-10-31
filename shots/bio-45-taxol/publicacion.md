@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #45 · La quimio que escondía un árbol (Taxol)
+# Publicación · Shot Biotecnológico 45 · La quimio que escondía un árbol (Taxol)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ El problema: en 1992, tratar a una paciente durante un año pedía la corteza de
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes: Weaver 2014 · GAO 1992 · Schiff, Fant y Horwitz 1979 · EPA 2004 · Wilson y Roberts 2012.
 ¿Sabías que una quimio salió de un árbol? ¿Conoces otra medicina que venga de una planta? 👇
-Shot Biotecnológico #45 · La Creación del Robert
+Shot Biotecnológico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Cancer #Taxol #Plantas
 ```
@@ -25,7 +25,7 @@ Esa quimio que ves no la diseñó ningún químico: la tenía escondida un árbo
 El paclitaxel (Taxol) salió de la corteza del tejo del Pacífico (1962). Congela los microtúbulos, los cables que reparten los cromosomas, y la célula del tumor se divide mal y muere. En 1992, tratar a una paciente un año pedía la corteza de unos tres tejos, y pelarlos los mataba. Hoy también se arma desde hojas de tejo europeo y, desde 2002, se cultiva con células de tejo en tanques de hasta 75,000 litros.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Conoces otra medicina que venga de una planta? 👇
-Shot Biotecnológico #45 · La Creación del Robert
+Shot Biotecnológico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Cancer #Taxol #Plantas
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta quimio la escondía un árbol 🌲 | Shot Biotecnológico #45
+Esta quimio la escondía un árbol 🌲 | Shot Biotecnológico 45
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Wilson S.A., Roberts S.C. (2012). Plant Biotechnol J 10:249–268. https://pmc.ncbi.nlm.nih.gov/articles/PMC3288596/
 - Phyton Biotech. History & Ownership. https://phytonbiotech.com/history-ownership/
 ¿Conoces otra medicina que venga de una planta? 👇
-Shot Biotecnológico #45 · La Creación del Robert
+Shot Biotecnológico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Cancer
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa quimio que ves no la diseñó ningún químico: la tenía escondida un árbol. 🌲 El Taxol salió de la corteza del tejo del Pacífico y congela los cables con los que la célula reparte sus cromosomas. En 1992, cada paciente necesitaba la corteza de unos tres árboles; hoy también se hace en tanques con células de tejo.
 ¿Conoces otra medicina que venga de una planta? 👇
-Shot Biotecnológico #45 · La Creación del Robert
+Shot Biotecnológico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Taxol
 ```
@@ -72,7 +72,7 @@ El paclitaxel (Taxol) salió de la corteza del tejo del Pacífico, recolectada e
 El reto fue de suministro. En 1992, la GAO estimaba que tratar a una paciente durante un año requería la corteza de unos tres tejos, y pelarlos los mataba. La solución llegó por etapas: semisíntesis a partir de hojas de tejo europeo, que rebrotan (aprobada por la FDA en 1994), y desde 2002, cultivo de células vegetales de tejo en biorreactores de hasta 75,000 litros, el mayor uso comercial del cultivo de células vegetales según Wilson y Roberts (2012). En 2004, la EPA premió ese proceso.
 Es un caso de biotecnología que resolvió un problema de salud y otro ambiental al mismo tiempo.
 ¿Qué otros productos naturales crees que deberían fabricarse en biorreactores?
-Shot Biotecnológico #45 · La Creación del Robert
+Shot Biotecnológico 45 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Oncologia #Bioprocesos #ProductosNaturales #LaCreacionDelRobert
 ```
@@ -85,7 +85,7 @@ Esa quimio no la diseñó ningún químico: la tenía un árbol. 🌲 En 1992, t
 ### Threads
 ```text
 Esa quimio que ves no la diseñó ningún químico: la tenía escondida un árbol. 🌲 El Taxol salió de la corteza del tejo del Pacífico y congela los microtúbulos, los cables que reparten los cromosomas. En 1992, cada paciente necesitaba la corteza de unos tres tejos al año; hoy también se cultiva con células de tejo en tanques de hasta 75,000 litros. ¿Conoces otra medicina que venga de una planta?
-Shot Biotecnológico #45 · La Creación del Robert
+Shot Biotecnológico 45 · La Creación del Robert
 #Biotecnologia
 ```
 

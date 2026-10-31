@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #57 · El agua es azul (y no por el cielo)
+# Publicación · Shot Científico 57 · El agua es azul (y no por el cielo)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -15,7 +15,7 @@ Así que el mar no le copia el color al cielo: el agua ya es azul.
 El dibujo es esquemático.
 Fuentes: Braun y Smirnov 1993 (J. Chem. Educ.); NOAA; USGS.
 ¿Sabías que el agua era azul por sí misma? 👇
-Shot Científico #57 · La Creación del Robert
+Shot Científico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Fisica #Agua #Mar #LaCreacionDelRobert
 ```
@@ -27,7 +27,7 @@ La luz del Sol trae todos los colores; al atravesar el agua, el rojo se absorbe 
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Sabías que el agua era azul por sí misma? 👇
-Shot Científico #57 · La Creación del Robert
+Shot Científico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Fisica #Agua #Mar #LaCreacionDelRobert
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El agua es azul por sí misma (y no solo por el cielo) 🌊 | Shot Científico #57
+El agua es azul por sí misma (y no solo por el cielo) 🌊 | Shot Científico 57
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - NOAA Ocean Exploration: Why are so many deep-sea animals red? https://oceanexplorer.noaa.gov/facts/red-color.html
 - USGS: Water may appear clear in small amounts, has a blue tint. https://www.usgs.gov/media/images/water-may-appear-clear-small-amounts-has-a-blue-tint
 ¿Sabías que el agua era azul por sí misma? 👇
-Shot Científico #57 · La Creación del Robert
+Shot Científico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica #Agua
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 El mar no es azul solo porque refleja el cielo: el agua, por sí misma, es azul. 🌊 Absorbe el rojo un poco más que el azul, y con metros de agua lo que regresa a tus ojos es luz azulada. Por eso una alberca honda con fondo blanco se ve azul aunque esté techada, y el hielo grueso de los glaciares también. En 1993, Charles Braun y Sergei Smirnov explicaron que ese rojo se absorbe por cómo vibran las moléculas de agua. El reflejo del cielo también ayuda, según el ángulo desde donde miras.
 ¿Sabías que el agua era azul por sí misma? 👇
-Shot Científico #57 · La Creación del Robert
+Shot Científico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -71,7 +71,7 @@ Soy Robert, de La Creación del Robert 🌱
 El agua es azul por sí misma, no solo por el reflejo del cielo.
 En 1993, Charles L. Braun y Sergei N. Smirnov (Dartmouth College) explicaron en el Journal of Chemical Education que el agua absorbe selectivamente la parte roja del espectro visible, por transiciones vibracionales de sus moléculas: un caso casi único en la naturaleza de color que nace de vibraciones.
 Por eso un vaso se ve transparente (es poca agua) pero una alberca honda con fondo blanco se ve azul aunque esté techada, y el hielo grueso de los glaciares también. El reflejo del cielo contribuye, y cuánto depende del ángulo de observación.
-Shot Científico #57 · La Creación del Robert
+Shot Científico 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

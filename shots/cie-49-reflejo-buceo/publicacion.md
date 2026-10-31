@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #49 · El reflejo de buceo: tu corazón se frena con agua fría
+# Publicación · Shot Científico 49 · El reflejo de buceo: tu corazón se frena con agua fría
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -17,7 +17,7 @@ Así que tienes un modo submarino de fábrica, y se enciende con un poco de agua
 El dibujo es esquemático.
 Fuentes: Panneton 2013 y 2020; Goksör et al. 2002; Arnold 1999; Schagatay (Univ. de Lund); CDC 2015.
 ¿Sabías que traías un modo submarino de fábrica? 👇
-Shot Científico #49 · La Creación del Robert
+Shot Científico 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Focas
 ```
@@ -29,7 +29,7 @@ Se llama reflejo de inmersión (o de buceo): con agua fría en la frente, los oj
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Sabías que traías un modo submarino de fábrica? 👇
-Shot Científico #49 · La Creación del Robert
+Shot Científico 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Focas
 ```
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu corazón se frena con agua fría 🦭 | Shot Científico #49
+Tu corazón se frena con agua fría 🦭 | Shot Científico 49
 ```
 Descripción:
 ```text
@@ -59,7 +59,7 @@ Fuentes:
 - Andersson, J. P. A., Linér, M. H., Rünow, E. y Schagatay, E. K. A. (2002). Journal of Applied Physiology 93(3): 882–886. https://doi.org/10.1152/japplphysiol.00863.2001
 - CDC (2015). Fatal and Nonfatal Drowning Outcomes Related to Dangerous Underwater Breath-Holding Behaviors — New York State, 1988–2011. MMWR 64(19).
 ¿Sabías que traías un modo submarino de fábrica? 👇
-Shot Científico #49 · La Creación del Robert
+Shot Científico 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Shorts
 ```
@@ -68,7 +68,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Si mojas tu cara con agua fría y aguantas la respiración, tu corazón se frena solo. 🦭 Es el reflejo de buceo: el corazón late más despacio y los vasos de manos y pies se angostan para guardar oxígeno para el cerebro y el corazón. Las focas lo tienen muchísimo más fuerte, y los bebés también lo tienen. Ojo: no hagas pruebas bajo el agua, y nunca a solas. Lo médico, solo con indicación médica. El dibujo es esquemático.
 ¿Sabías que traías un modo submarino de fábrica? 👇
-Shot Científico #49 · La Creación del Robert
+Shot Científico 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -79,7 +79,7 @@ Un reflejo que traemos de fábrica: el reflejo de inmersión (o de buceo).
 Con agua fría en la cara (sobre todo frente, ojos y nariz) y la respiración aguantada, el corazón late más despacio y los vasos de manos y pies se hacen más angostos. Así el cuerpo ahorra oxígeno para el cerebro y el corazón.
 En focas y otros mamíferos buceadores es muchísimo más fuerte; en bebés también está presente (Goksör et al., 2002). En clínica, a veces se usa para calmar ciertas taquicardias, siempre con indicación médica.
 Fuentes: Panneton 2013 (Physiology); Panneton y Gan 2020 (Front. Neurosci.); Goksör et al. 2002 (Acta Paediatrica); Arnold 1999 (Yale J Biol Med).
-Shot Científico #49 · La Creación del Robert
+Shot Científico 49 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

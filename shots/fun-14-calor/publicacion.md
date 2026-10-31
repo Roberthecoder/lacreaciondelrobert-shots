@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #14 · Tu escudo de 37 grados: por qué casi ningún hongo te toca
+# Publicación · Shot Fungi Mati 14 · Tu escudo de 37 grados: por qué casi ningún hongo te toca
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Tu escudo es doble: calor y defensas. Si los dos funcionan, las infecciones grav
 El dibujo es esquemático (las 50 cajas representan la idea, no los datos del estudio).
 Fuentes: Robert y Casadevall 2009 (J Infect Dis); Casadevall, Kontoyiannis y Robert 2019 (mBio); Satoh et al. 2009 (Microbiol Immunol).
 ¿Sabías que tu temperatura te protege de los hongos? 👇
-Shot Fungi Mati #14 · La Creación del Robert
+Shot Fungi Mati 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #HongoZombi #Ciencia
 ```
@@ -25,7 +25,7 @@ Esa hormiga trae un hongo zombi. A ti, casi ningún hongo: tu calor frena a la m
 Tú vives cerca de 37 °C y la mayoría de los hongos no crece a esa temperatura. En 2009 revisaron datos de 4,802 cepas: entre 30 y 40 °C, cada grado de más dejaba fuera a otro 6 %. La hipótesis: la sangre caliente protegió a los mamíferos de muchos hongos. Ojo: Candida auris crece bien a 40 °C, y se propuso (hipótesis) que el calentamiento global la hizo adaptarse. Tu escudo es doble: calor y defensas.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías que tu temperatura te protege de los hongos? 👇
-Shot Fungi Mati #14 · La Creación del Robert
+Shot Fungi Mati 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #HongoZombi #Ciencia
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué casi ningún hongo te puede atacar: tu escudo de 37 °C 🌡️ | Shot Fungi Mati #14
+Por qué casi ningún hongo te puede atacar: tu escudo de 37 °C 🌡️ | Shot Fungi Mati 14
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Satoh, K. et al. (2009). Candida auris sp. nov. Microbiol Immunol 53: 41–44. https://pubmed.ncbi.nlm.nih.gov/19161556/
 - MedlinePlus (NIH). Body temperature norms. https://medlineplus.gov/ency/article/001982.htm
 ¿Sabías que tu temperatura te protege de los hongos? 👇
-Shot Fungi Mati #14 · La Creación del Robert
+Shot Fungi Mati 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #FungiMati
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa hormiga trae un hongo zombi. A ti, casi ningún hongo: tu calor frena a la mayoría. 🌡️ Vives cerca de 37 °C, y la mayoría de los hongos no crece a esa temperatura (estudio de 4,802 cepas, 2009). Ojo: Candida auris sí aguanta 40 °C. Tu escudo es doble: calor y defensas.
 ¿Sabías que tu temperatura te protege de los hongos? 👇
-Shot Fungi Mati #14 · La Creación del Robert
+Shot Fungi Mati 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos
 ```
@@ -69,7 +69,7 @@ Soy Robert, de La Creación del Robert 🌱
 Robert y Casadevall (J Infect Dis, 2009) analizaron la tolerancia térmica de 4,802 cepas de hongos de 144 géneros: la mayoría no crece a temperatura de mamífero, y cada grado entre 30 y 40 °C excluía a otro 6 % de las cepas. Proponen que la endotermia es una defensa inespecífica contra la mayoría de los hongos. En 2019 (mBio), Casadevall, Kontoyiannis y Robert plantearon la hipótesis de que Candida auris —una levadura que crece bien a 40 °C— sería el primer patógeno fúngico surgido por el calentamiento global, con la advertencia de que otros factores pudieron intervenir.
 Por qué importa: si los hongos se adaptan a temperaturas más altas, la barrera térmica que nos protege podría reducirse; la vigilancia de hongos emergentes es parte de la salud pública.
 ¿Conocías esta hipótesis?
-Shot Fungi Mati #14 · La Creación del Robert
+Shot Fungi Mati 14 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Micologia #SaludPublica #Ciencia
 ```
@@ -82,7 +82,7 @@ Tu calor es un escudo: la mayoría de los hongos no crece a 37 °C. En un estudi
 ### Threads
 ```text
 Esa hormiga trae un hongo zombi. A ti, casi ningún hongo: tu calor frena a la mayoría. 🌡️ La mayoría de los hongos no crece a 37 °C; la hipótesis es que la sangre caliente protegió a los mamíferos. Pero Candida auris ya crece bien a 40 °C. ¿Sabías que tu temperatura te protege de los hongos?
-Shot Fungi Mati #14 · La Creación del Robert
+Shot Fungi Mati 14 · La Creación del Robert
 #Hongos
 ```
 

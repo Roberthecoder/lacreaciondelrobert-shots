@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #56 · En el espacio nadie oye las explosiones
+# Publicación · Shot Científico 56 · En el espacio nadie oye las explosiones
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que en el espacio, una explosión se vería enorme, y sería totalmente sil
 El dibujo es esquemático.
 Fuentes: NASA Science; Boyle 1660; NASA 2022 (sonificación de Perseo).
 ¿Qué otra película crees que tiene este error? 👇
-Shot Científico #56 · La Creación del Robert
+Shot Científico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Espacio #Fisica #NASA
 ```
@@ -28,7 +28,7 @@ El sonido viaja empujando partículas, y el espacio entre los planetas está cas
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Qué otra película crees que tiene este error? 👇
-Shot Científico #56 · La Creación del Robert
+Shot Científico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Espacio #Fisica #NASA
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué en el espacio no se oyen las explosiones? | Shot Científico #56
+¿Por qué en el espacio no se oyen las explosiones? | Shot Científico 56
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Fuentes:
 - Boyle, R. (1660). New Experiments Physico-Mechanicall, Touching the Spring of the Air, Experimento 27; Royal Society, Making waves (2024): https://royalsociety.org/blog/2024/11/making-waves
 - NASA (2022). New NASA Black Hole Sonifications with a Remix: https://www.nasa.gov/universe/new-nasa-black-hole-sonifications-with-a-remix/ ; Chandra: https://chandra.si.edu/sound/perseus.html
 ¿Qué otra película crees que tiene este error? 👇
-Shot Científico #56 · La Creación del Robert
+Shot Científico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Espacio #Fisica #LaCreacionDelRobert
 ```
@@ -67,7 +67,7 @@ Soy Robert, de La Creación del Robert 🌱
 Las explosiones espaciales de las películas tienen un error: en el espacio no se oiría nada. 💥🔇
 El sonido necesita partículas que empujar, y el espacio entre los planetas está casi vacío. Por eso los astronautas hablan por radio, cuyas ondas son de la misma familia que la luz y sí cruzan el vacío. Robert Boyle lo probó en 1660: sacó el aire de un frasco con un reloj adentro y su tic tac casi dejó de oírse.
 ¿Qué otra película crees que tiene este error? 👇
-Shot Científico #56 · La Creación del Robert
+Shot Científico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -77,7 +77,7 @@ Soy Robert, de La Creación del Robert 🌱
 Un error clásico del cine: las explosiones en el espacio no harían ruido.
 El sonido es una onda mecánica: necesita un medio (aire, agua o sólido) que empujar. El espacio entre los planetas está casi vacío, así que el sonido no tiene por dónde viajar. Las ondas de radio, en cambio, son electromagnéticas como la luz y cruzan el vacío: por eso los astronautas se comunican por radio.
 La prueba es antigua: en 1660 Robert Boyle sacó el aire de un recipiente con un reloj adentro y su tic tac casi dejó de oírse. Y en 2022 la NASA convirtió en sonido ondas del gas del cúmulo de galaxias de Perseo, subiéndolas 57 y 58 octavas para hacerlas audibles.
-Shot Científico #56 · La Creación del Robert
+Shot Científico 56 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

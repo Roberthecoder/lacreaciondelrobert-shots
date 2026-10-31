@@ -16,7 +16,7 @@ Hoy ese experimento es EL ejemplo de la investigación de doble uso: lo mismo qu
 Este video no explica ningún procedimiento: es historia de la ciencia y bioseguridad. El dibujo es esquemático.
 Fuentes: Cello, Paul y Wimmer, Science 297:1016-1018 (2002); informe CRS RS21369 (2002); informe Fink, NRC (2004).
 ¿Tú qué opinas: se debió publicar o no? 👇
-Shot Biotecnológico #07 · La Creación del Robert
+Shot Biotecnológico 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Bioseguridad #DobleUso #Virus
 ```
@@ -28,7 +28,7 @@ En 2002, el equipo de Eckard Wimmer (Stony Brook, Nueva York) armó un polioviru
 Es el ejemplo clásico de investigación de doble uso, y de ahí salieron reglas: el informe Fink (2004), el consejo NSABB y la revisión voluntaria de pedidos por las grandes empresas que venden ADN sintético.
 Este video no explica ningún procedimiento. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú qué opinas: se debió publicar o no? 👇
-Shot Biotecnológico #07 · La Creación del Robert
+Shot Biotecnológico 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Bioseguridad #DobleUso #Virus
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un virus entero escrito en una pantalla: 7,500 letras 🧬🔒 | Shot Biotecnológico #07
+Un virus entero escrito en una pantalla: 7,500 letras 🧬🔒 | Shot Biotecnológico 07
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - NSABB (National Science Advisory Board for Biosecurity), creado en 2004.
 
 ¿Tú qué opinas: se debió publicar o no? 👇
-Shot Biotecnológico #07 · La Creación del Robert
+Shot Biotecnológico 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #Bioseguridad
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esto es un virus entero escrito en una pantalla: unas 7,500 letras. 🧬🔒 En 2002 un equipo de Nueva York armó un poliovirus partiendo solo de su secuencia publicada. El mundo se asustó, y después vinieron las reglas de bioseguridad que, desde 2009 y por su cuenta, aplican muchas empresas que venden ADN. ¿Se debió publicar o no? 👇
-Shot Biotecnológico #07 · La Creación del Robert
+Shot Biotecnológico 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Bioseguridad
 ```
@@ -74,7 +74,7 @@ Por qué importa: es el caso clásico de investigación de doble uso, y marcó l
 Este texto no describe ningún procedimiento: es historia de la ciencia y política de bioseguridad.
 ¿Dónde pondrías tú el límite entre publicar y proteger?
 Fuentes: Cello, Paul y Wimmer, Science 297: 1016–1018 (2002); CRS RS21369 (2002) y RL33342 (2006); GEN (2009).
-Shot Biotecnológico #07 · La Creación del Robert
+Shot Biotecnológico 07 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #Bioseguridad #DobleUso
 ```

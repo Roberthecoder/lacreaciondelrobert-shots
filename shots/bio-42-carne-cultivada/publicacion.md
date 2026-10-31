@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #42 · Esta carne no se cortó de un animal: creció en un tanque (carne cultivada)
+# Publicación · Shot Biotecnológico 42 · Esta carne no se cortó de un animal: creció en un tanque (carne cultivada)
 
 Solo datos verificados (`verificacion.md`). El dibujo es esquemático.
 
@@ -20,7 +20,7 @@ El dibujo es esquemático.
 Fuentes: Univ. de Maastricht; NBC News 2013; FoodNavigator 2020 y 2023; USDA 2023; Ley 172/2023 de Italia; Food Safety Magazine 2025; revisiones en PMC (2022, 2025). Completas en el comentario fijado.
 
 ¿Tú la probarías? 👇
-Shot Biotecnológico #42 · La Creación del Robert
+Shot Biotecnológico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CarneCultivada #Ciencia #Alimentos
 ```
@@ -36,7 +36,7 @@ Por años el caldo llevó suero fetal bovino (de fetos de vacas sacrificadas); e
 El dibujo es esquemático. Fuentes en el primer comentario.
 
 ¿Tú la probarías? 👇
-Shot Biotecnológico #42 · La Creación del Robert
+Shot Biotecnológico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CarneCultivada #Ciencia #Alimentos
 ```
@@ -44,7 +44,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta carne no se cortó de un animal: creció en un tanque 🥩 | Shot Biotecnológico #42
+Esta carne no se cortó de un animal: creció en un tanque 🥩 | Shot Biotecnológico 42
 ```
 Descripción:
 ```text
@@ -78,7 +78,7 @@ Fuentes:
 - Revisión, Khan et al. (2025): https://pmc.ncbi.nlm.nih.gov/articles/PMC12469421/
 
 ¿Tú la probarías? 👇
-Shot Biotecnológico #42 · La Creación del Robert
+Shot Biotecnológico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #CarneCultivada #Biotecnologia
 ```
@@ -88,7 +88,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esta carne no se cortó de un animal: creció en un tanque, desde pocas células. 🥩
 Se empieza con una biopsia de un animal vivo; sus células madre del músculo se multiplican en un biorreactor y luego forman músculo y grasa. Singapur aprobó su venta en 2020 y EE. UU. en 2023; Italia, Hungría y varios estados de EE. UU. la prohibieron.
 El dibujo es esquemático. ¿Tú la probarías? 👇
-Shot Biotecnológico #42 · La Creación del Robert
+Shot Biotecnológico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #CarneCultivada
 ```
@@ -108,7 +108,7 @@ De la primera hamburguesa (Mark Post, Londres, 2013: unos 250 mil euros) a hoy, 
 
 ¿Crees que llegue a competir en precio con la carne convencional?
 
-Shot Biotecnológico #42 · La Creación del Robert
+Shot Biotecnológico 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #CarneCultivada #Alimentos #Innovacion #LaCreacionDelRobert
 ```

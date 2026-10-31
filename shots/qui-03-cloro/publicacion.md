@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #03 · ¿Por qué NO se mezcla el cloro con vinagre?
+# Publicación · Shot Químico 03 · ¿Por qué NO se mezcla el cloro con vinagre?
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Si ya lo mezclaste: sal al aire libre y pide ayuda médica o llama al 911 (o a u
 El dibujo es esquemático.
 Fuentes: Atalla et al., Clinical Toxicology 2024 · Gharpure et al., MMWR 2020 · World J Clin Cases 2022 · Das y Blanc 1993.
 ¿Tú sabías que no se mezclan? ¿Con qué limpias en tu casa? 👇
-Shot Químico #03 · La Creación del Robert
+Shot Químico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Cloro #Limpieza #SeguridadEnCasa
 ```
@@ -27,7 +27,7 @@ El cloro de casa es hipoclorito de sodio. Con un ácido como el vinagre suelta c
 Si ya pasó: sal al aire libre y pide ayuda médica o llama al 911; los síntomas pueden tardar. Un producto a la vez.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú sabías que no se mezclan? 👇
-Shot Químico #03 · La Creación del Robert
+Shot Químico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Cloro #Limpieza #SeguridadEnCasa
 ```
@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué NO mezclar cloro con vinagre? ⚠️ | Shot Químico #03
+¿Por qué NO mezclar cloro con vinagre? ⚠️ | Shot Químico 03
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - Chlorine poisoning caused by improper mixing of household disinfectants during the COVID-19 pandemic: case series. World J Clin Cases (2022). https://pmc.ncbi.nlm.nih.gov/articles/PMC9477020/
 - Das R., Blanc P.D. (1993). Chlorine gas exposure and the lung: a review. Toxicol Ind Health 9(3):439–55. https://pubmed.ncbi.nlm.nih.gov/8367885/
 ¿Tú sabías que no se mezclan? 👇
-Shot Químico #03 · La Creación del Robert
+Shot Químico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Cloro
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Por qué NO se mezcla el cloro con vinagre? Porque tu cubeta se vuelve una fábrica de gas. ⚠️ El vinagre hace que el cloro suelte cloro gaseoso, y con amoniaco salen cloraminas: los dos irritan tus vías respiratorias. Si ya pasó, sal al aire libre y pide ayuda (911). Un producto a la vez.
 ¿Tú sabías que no se mezclan? 👇
-Shot Químico #03 · La Creación del Robert
+Shot Químico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Limpieza
 ```
@@ -69,14 +69,14 @@ El blanqueador doméstico es hipoclorito de sodio. Con un ácido como el vinagre
 No es un caso raro: Atalla et al. (Clinical Toxicology, 2024) contaron 85,104 exposiciones a cloro y cloraminas reportadas a los centros de toxicología de EE. UU. entre 2015 y 2022, 84.9 % en casa, con un aumento del 61 % de 2015 a 2022. Y en una encuesta de 2020 publicada en el MMWR de los CDC, solo 35 % de 502 adultos sabía que el cloro no se mezcla con vinagre.
 Es un buen recordatorio de que la comunicación de riesgos químicos en el hogar todavía tiene mucho espacio para mejorar: un producto a la vez, y si alguien se expone, aire libre y ayuda médica de inmediato, porque los síntomas pueden tardar.
 ¿Cómo comunicarías tú este riesgo en tu casa o en tu trabajo?
-Shot Químico #03 · La Creación del Robert
+Shot Químico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SeguridadQuimica #SaludPublica #Toxicologia #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-¿Por qué NO se mezcla el cloro con vinagre? El ácido hace que el hipoclorito suelte cloro gaseoso. En EE. UU. hubo 85,104 exposiciones a cloro y cloraminas de 2015 a 2022, casi 85 % en casa. ⚠️ Shot Químico #03 #Quimica
+¿Por qué NO se mezcla el cloro con vinagre? El ácido hace que el hipoclorito suelte cloro gaseoso. En EE. UU. hubo 85,104 exposiciones a cloro y cloraminas de 2015 a 2022, casi 85 % en casa. ⚠️ Shot Químico 03 #Quimica
 ```
 
 ### Threads
@@ -84,7 +84,7 @@ Soy Robert, de La Creación del Robert 🌱
 ¿Por qué NO se mezcla el cloro con vinagre? Porque tu cubeta se vuelve una fábrica de gas. ⚠️
 El vinagre hace que el hipoclorito suelte cloro gaseoso; con amoniaco salen cloraminas. En EE. UU., casi 85 de cada 100 exposiciones a estos gases fueron en casa. Si ya pasó: aire libre y pide ayuda (911); los síntomas pueden tardar.
 ¿Tú sabías que no se mezclan?
-Shot Químico #03 · La Creación del Robert
+Shot Químico 03 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

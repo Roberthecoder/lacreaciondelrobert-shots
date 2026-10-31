@@ -1,4 +1,4 @@
-# Publicación · Shot IA #57 · Tu celular no te ve la cara: te la mide
+# Publicación · Shot IA 57 · Tu celular no te ve la cara: te la mide
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Tu cara no es una llave: es un mapa. Y si tienes un gemelo, mejor usa un código
 El dibujo es esquemático: la luz infrarroja no se ve. Cifras de Apple.
 Fuentes: Apple Support "About Face ID advanced technology" (2026) y "About Touch ID advanced security technology" (2023); Apple Platform Security Guide (2024); comunicado del iPhone X (2017).
 ¿Conoces a unos gemelos que se abran el celular entre ellos? 👇
-Shot IA #57 · La Creación del Robert
+Shot IA 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #FaceID #Celular #Ciencia
 ```
@@ -26,7 +26,7 @@ Una cámara lee esos puntos infrarrojos y arma un mapa de profundidad de tu cara
 Apple calcula menos de 1 en 1,000,000 de que alguien al azar lo abra; con la huella da 1 en 50,000 (un dedo registrado). Pero avisa que sube con gemelos, hermanos parecidos y niños menores de 13. Si te preocupa, recomienda usar un código.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Conoces a unos gemelos que se abran el celular entre ellos? 👇
-Shot IA #57 · La Creación del Robert
+Shot IA 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #FaceID #Celular #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu celular no te ve la cara: te la mide 📱 | Shot IA #57
+Tu celular no te ve la cara: te la mide 📱 | Shot IA 57
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu celular no te ve la cara: te la mide, con miles de puntos de luz que tus ojos no pueden ver. 📱 Apple calcula menos de 1 en 1,000,000 de que alguien al azar lo abra con su cara, pero avisa que sube con gemelos, hermanos parecidos y niños menores de 13. Tu cara no es una llave: es un mapa.
 ¿Conoces a unos gemelos que se abran el celular entre ellos? 👇
-Shot IA #57 · La Creación del Robert
+Shot IA 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #FaceID
 ```
@@ -69,7 +69,7 @@ Apple declara una probabilidad de menos de 1 en 1,000,000 de que alguien al azar
 Lo interesante es que la misma Apple publica los límites: la probabilidad sube con gemelos, hermanos parecidos y menores de 13 años, y para esos casos recomienda un código. Una buena práctica de comunicación de riesgos: dar la cifra y también decir dónde falla.
 ¿En qué otros sistemas de tu trabajo se publican los casos en que fallan?
 Fuentes: Apple Support (2026, 2023), Apple Platform Security Guide (2024), comunicado del iPhone X (2017). Cifras de Apple.
-Shot IA #57 · La Creación del Robert
+Shot IA 57 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Ciberseguridad #Biometria #FaceID #LaCreacionDelRobert
 ```
@@ -84,7 +84,7 @@ Tu celular no te ve la cara: te la mide con miles de puntos infrarrojos. Apple c
 Tu celular no te ve la cara: te la mide, con miles de puntos de luz que tus ojos no pueden ver. 📱
 Apple calcula menos de 1 en 1,000,000 de que alguien al azar lo abra con su cara. Pero avisa que sube con gemelos, hermanos parecidos y niños menores de 13: para ellos recomienda un código.
 ¿Conoces a unos gemelos que se abran el celular entre ellos?
-Shot IA #57 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 57 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

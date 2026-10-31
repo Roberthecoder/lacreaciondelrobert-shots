@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #09 · Esa espuma no es tu herida sanando (agua oxigenada y catalasa)
+# Publicación · Shot Químico 09 · Esa espuma no es tu herida sanando (agua oxigenada y catalasa)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Lo curioso: en 1948, el médico japonés Takahara la puso en la llaga de un paci
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes: Nandi et al. 2019 · Lineaweaver et al. 1985 · Hengy et al. 2026 · Shih et al. 2025.
 ¿En tu casa también la usaban en los raspones? 👇
-Shot Químico #09 · La Creación del Robert
+Shot Químico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #AguaOxigenada #PrimerosAuxilios #Catalasa
 ```
@@ -24,7 +24,7 @@ Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agu
 La catalasa de tus células la parte en agua y oxígeno; el oxígeno es la espuma. En cultivo, al 3 % mató al 100 % de los fibroblastos (1985); una revisión de 2026 la desaconseja tras cirugías de piel, y en un metaanálisis de 2025 con 12 ensayos el agua potable de la llave igualó al suero. Y en 1948 Takahara descubrió la acatalasemia porque en un paciente no hizo espuma.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu casa también la usaban? 👇
-Shot Químico #09 · La Creación del Robert
+Shot Químico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #AguaOxigenada #PrimerosAuxilios #Catalasa
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa espuma no es tu herida sanando 🫧 | Shot Químico #09
+Esa espuma no es tu herida sanando 🫧 | Shot Químico 09
 ```
 Descripción:
 ```text
@@ -45,7 +45,7 @@ Fuentes:
 - Hengy M. et al. (2026). Postoperative Wound Care in Mohs Micrographic Surgery: Tradition, Variation, and the Evidence. Int J Dermatol. https://pubmed.ncbi.nlm.nih.gov/42873063/
 - Shih P.R. et al. (2025). Tap Water Versus Normal Saline for Wound Cleansing. World J Surg. https://pubmed.ncbi.nlm.nih.gov/40890906/
 ¿En tu casa también la usaban en los raspones? 👇
-Shot Químico #09 · La Creación del Robert
+Shot Químico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #AguaOxigenada
 ```
@@ -54,7 +54,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agua oxigenada. 🫧 Una enzima de tus células, la catalasa, la parte en agua y oxígeno: el oxígeno son las burbujas. La espuma solo dice que hay catalasa.
 ¿En tu casa también la usaban? 👇
-Shot Químico #09 · La Creación del Robert
+Shot Químico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #PrimerosAuxilios
 ```
@@ -65,14 +65,14 @@ Esa espuma no es la herida sanando: es la catalasa de nuestras propias células 
 La espuma no es un indicador de eficacia. En 1985, Lineaweaver et al. mostraron que el H₂O₂ al 3 % mataba al 100 % de los fibroblastos humanos en cultivo (aunque en su modelo animal no empeoró la cicatrización), y una revisión de 2026 sobre cuidado postoperatorio en cirugía de Mohs desaconseja los antisépticos citotóxicos como el agua oxigenada. Al mismo tiempo, un metaanálisis de 12 ensayos (Shih et al., 2025) no encontró más infecciones al irrigar heridas con agua potable que con solución salina.
 Y un dato histórico: en 1948, Takahara describió la acatalasemia justamente porque el agua oxigenada no hizo espuma en la llaga de un paciente.
 ¿Qué otras prácticas de botiquín seguimos por costumbre más que por evidencia?
-Shot Químico #09 · La Creación del Robert
+Shot Químico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #Salud #MedicinaBasadaEnEvidencia #PrimerosAuxilios #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esa espuma no es tu herida sanando: es la catalasa de tus células partiendo el agua oxigenada en agua y oxígeno. En 1948, Takahara descubrió personas sin catalasa porque no hizo espuma. 🫧 Shot Químico #09 #Quimica
+Esa espuma no es tu herida sanando: es la catalasa de tus células partiendo el agua oxigenada en agua y oxígeno. En 1948, Takahara descubrió personas sin catalasa porque no hizo espuma. 🫧 Shot Químico 09 #Quimica
 ```
 
 ### Threads
@@ -80,7 +80,7 @@ Esa espuma no es tu herida sanando: es la catalasa de tus células partiendo el 
 Esa espuma no es tu herida sanando: es la catalasa de tu sangre rompiendo el agua oxigenada. 🫧
 La catalasa de tus células la parte en agua y oxígeno: las burbujas son oxígeno. Y en un metaanálisis de 2025 con 12 ensayos, lavar con agua potable de la llave igualó al suero.
 ¿En tu casa también la usaban?
-Shot Químico #09 · La Creación del Robert
+Shot Químico 09 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

@@ -13,7 +13,7 @@ Hasta 2026 se contaban 36 casos en Estados Unidos (sin casos nuevos desde 2024),
 El dibujo es esquemático.
 Fuentes: CDC MMWR 1985; NIDDK (2024 y 2026); Ribeiro et al., Emerg Infect Dis 2025; Genentech 1985; CDC 2026.
 ¿Sabías de dónde sale hoy la hormona de crecimiento? 👇
-Shot Biotecnológico #30 · La Creación del Robert
+Shot Biotecnológico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #HormonaDeCrecimiento #Priones #HistoriaDeLaMedicina
 ```
@@ -25,7 +25,7 @@ Desde 1958, la hormona de crecimiento para quienes casi no la producían se saca
 En 1985 se supo que tres pacientes tratados en Estados Unidos murieron de esa enfermedad, y se suspendió. En octubre de ese año, la FDA aprobó una hormona hecha por bacterias con el gen de la hormona humana: sin tejido humano, sin de dónde llegara el prión. Hasta 2026 van 36 casos en EE. UU.; en uno, los síntomas llegaron unos 51 años después. Nuestro respeto a los pacientes y sus familias.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías de dónde sale hoy la hormona de crecimiento? 👇
-Shot Biotecnológico #30 · La Creación del Robert
+Shot Biotecnológico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #HormonaDeCrecimiento #Priones
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta hormona ya no sale de cadáveres: sale de bacterias 🧬 | Shot Biotecnológico #30
+Esta hormona ya no sale de cadáveres: sale de bacterias 🧬 | Shot Biotecnológico 30
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Genentech (1985): https://www.biospace.com/fda-approves-genentech-s-drug-to-trea
 Ayyar (2011): https://pmc.ncbi.nlm.nih.gov/articles/PMC3183530
 CDC, CJD (2026): https://www.cdc.gov/creutzfeldt-jakob/hcp/clinical-overview/index.html
 ¿Sabías de dónde sale hoy la hormona de crecimiento? 👇
-Shot Biotecnológico #30 · La Creación del Robert
+Shot Biotecnológico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #HormonaDeCrecimiento
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esta hormona de crecimiento no salió de un cadáver: salió de una bacteria. 🧬
 Hasta 1985 se sacaba de hipófisis de personas fallecidas, y en algunos lotes venían priones que causan la enfermedad de Creutzfeldt-Jakob. Ese mismo año se suspendió, y en octubre la FDA aprobó una hormona hecha por bacterias, sin tejido humano.
 ¿Sabías de dónde sale hoy la hormona de crecimiento? 👇
-Shot Biotecnológico #30 · La Creación del Robert
+Shot Biotecnológico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #HormonaDeCrecimiento #LaCreacionDelRobert
 ```
@@ -75,7 +75,7 @@ En octubre de 1985, la FDA aprobó Protropin, de Genentech: hormona hecha en Esc
 El riesgo fue lento y largo: hasta 2026, el NIDDK cuenta 36 casos en la cohorte de EE. UU., y en uno los síntomas empezaron unos 51 años después del tratamiento.
 Una lección de biotecnología y de seguridad de los productos biológicos: el origen del material importa tanto como su pureza.
 ¿Qué otro medicamento crees que cambió por completo al pasar a producción recombinante?
-Shot Biotecnológico #30 · La Creación del Robert
+Shot Biotecnológico 30 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #ADNRecombinante #SeguridadDelPaciente #LaCreacionDelRobert
 ```

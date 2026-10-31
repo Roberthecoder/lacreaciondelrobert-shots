@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #11 · Las manchitas que flotan en tu vista están dentro de tu ojo
+# Publicación · Shot Científico 11 · Las manchitas que flotan en tu vista están dentro de tu ojo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -14,7 +14,7 @@ Este video no sustituye una consulta médica.
 El dibujo es esquemático.
 Fuentes: Webb et al. 2013 (Int. J. Ophthalmol.); Ivanova et al. 2016 (Eye); National Eye Institute; American Academy of Ophthalmology.
 ¿Tú también las ves cuando miras el cielo? 👇
-Shot Científico #11 · La Creación del Robert
+Shot Científico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Ojos #Vision
 ```
@@ -26,7 +26,7 @@ Las moscas volantes son grumitos de colágeno dentro del gel de tu ojo (el humor
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú también las ves cuando miras el cielo? 👇
-Shot Científico #11 · La Creación del Robert
+Shot Científico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Ojos #Vision
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas manchitas que flotan están dentro de tu ojo 👁️ | Shot Científico #11
+Esas manchitas que flotan están dentro de tu ojo 👁️ | Shot Científico 11
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - National Eye Institute. Floaters. https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/floaters
 - American Academy of Ophthalmology. What Are Floaters and Flashes? https://www.aao.org/eye-health/diseases/what-are-floaters-flashes
 ¿Tú también las ves cuando miras el cielo? 👇
-Shot Científico #11 · La Creación del Robert
+Shot Científico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Ojos
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas manchitas que flotan cuando miras el cielo están dentro de tu ojo: son sombras de grumitos del gel que lo rellena. 👁️ Si de pronto aparecen muchas, con destellos o una sombra como cortina, ve al oftalmólogo ese mismo día.
 ¿Tú también las ves cuando miras el cielo? 👇
-Shot Científico #11 · La Creación del Robert
+Shot Científico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -70,7 +70,7 @@ Las "moscas volantes" que muchos vemos al mirar un fondo claro no están en el a
 Con la edad, ese gel se licúa y sus fibras se agregan. En un estudio publicado en 2013 (Webb et al., International Journal of Ophthalmology), el 76 % de 603 personas encuestadas en una app dijo verlas.
 Lo importante para la salud: la aparición súbita de muchas moscas, con destellos de luz o una sombra como cortina, es motivo de consulta oftalmológica el mismo día.
 ¿Sabías que eran sombras dentro de tu propio ojo?
-Shot Científico #11 · La Creación del Robert
+Shot Científico 11 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

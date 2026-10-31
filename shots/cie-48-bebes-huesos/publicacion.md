@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #48 · Los bebés tienen más piezas de hueso que tú
+# Publicación · Shot Científico 48 · Los bebés tienen más piezas de hueso que tú
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que no perdiste huesos al crecer: se fueron uniendo.
 El dibujo es esquemático.
 Fuentes: Cleveland Clinic (2024); MedlinePlus (2025); Belcastro et al. 2008; Ogden 1984.
 ¿Tú sabías que los bebés tienen puntos blanditos en la cabeza? 👇
-Shot Científico #48 · La Creación del Robert
+Shot Científico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Bebés #Huesos
 ```
@@ -28,7 +28,7 @@ Al nacer tenemos cerca de 300 piezas de hueso, muchas en parte de cartílago. Al
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú sabías que los bebés tienen puntos blanditos en la cabeza? 👇
-Shot Científico #48 · La Creación del Robert
+Shot Científico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Bebés #Huesos
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los bebés tienen más piezas de hueso que tú 🦴 | Shot Científico #48
+Los bebés tienen más piezas de hueso que tú 🦴 | Shot Científico 48
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Fuentes:
 - Keibel y Mall (1910). Tabla de osificación del miembro inferior (UNSW Embryology). https://embryology.med.unsw.edu.au/embryology/index.php/Template:Lower_limb_ossification_table
 - Ogden, J. A. (1984). Radiology of postnatal skeletal development. X. Patella and tibial tuberosity. Skeletal Radiology. https://pubmed.ncbi.nlm.nih.gov/6729496
 ¿Tú sabías que los bebés tienen puntos blanditos en la cabeza? 👇
-Shot Científico #48 · La Creación del Robert
+Shot Científico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano
 ```
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un bebé tiene cerca de 300 piezas de hueso; casi todos los adultos, 206. 🦴 No perdiste huesos al crecer: se fueron uniendo, como las placas del cráneo que al nacer están separadas por las fontanelas.
 ¿Tú sabías que los bebés tienen puntos blanditos en la cabeza? 👇
-Shot Científico #48 · La Creación del Robert
+Shot Científico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -76,14 +76,14 @@ Un recién nacido tiene entre 275 y 300 piezas óseas; la mayoría de los adulto
 La diferencia no es pérdida, es fusión: muchas piezas empiezan como cartílago y se unen al osificarse. Las fontanelas del cráneo se cierran en meses (la anterior, por lo general entre los 7 y 19 meses), mientras que la cadera y el sacro siguen fusionándose hasta la edad adulta.
 Un buen ejemplo de que el cuerpo no solo crece: también se reorganiza.
 ¿Qué otro cambio del cuerpo al crecer te parece sorprendente?
-Shot Científico #48 · La Creación del Robert
+Shot Científico 48 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Un bebé tiene cerca de 300 piezas de hueso; casi todos los adultos, 206. 🦴 No los perdiste: se fueron uniendo. Las fontanelas del cráneo se cierran en meses, y la cadera y la base de la columna siguen uniéndose hasta la edad adulta. Shot Científico #48
+Un bebé tiene cerca de 300 piezas de hueso; casi todos los adultos, 206. 🦴 No los perdiste: se fueron uniendo. Las fontanelas del cráneo se cierran en meses, y la cadera y la base de la columna siguen uniéndose hasta la edad adulta. Shot Científico 48
 ```
 
 ### Threads
@@ -91,7 +91,7 @@ Un bebé tiene cerca de 300 piezas de hueso; casi todos los adultos, 206. 🦴 N
 Un bebé recién nacido tiene cerca de 300 piezas de hueso; casi todos los adultos, 206. 🦴
 No perdiste huesos al crecer: se fueron uniendo. Muchas piezas empiezan en parte como cartílago; las placas del cráneo están separadas por las fontanelas (los puntos blanditos), y la cadera y la base de la columna siguen uniéndose hasta la edad adulta.
 ¿Sabías que la rótula de un bebé es casi toda cartílago?
-Shot Científico #48 · La Creación del Robert
+Shot Científico 48 · La Creación del Robert
 ```
 
 ## Comentario fijado (fuentes)

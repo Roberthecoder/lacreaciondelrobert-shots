@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #31 · La Vía Láctea que tus ojos nunca van a ver desde tu casa
+# Publicación · Shot Ambiental 31 · La Vía Láctea que tus ojos nunca van a ver desde tu casa
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Lo que sí sirve: lámparas que alumbren solo hacia abajo, con luz cálida, y ap
 El dibujo es esquemático.
 Fuentes: Falchi et al. 2016 (Science Advances), Kyba et al. 2023 (Science), FWC Florida, Van Doren et al. 2017 (PNAS).
 ¿Tú alguna vez has visto la Vía Láctea? ¿Dónde? 👇
-Shot Ambiental #31 · La Creación del Robert
+Shot Ambiental 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #ContaminacionLuminica #ViaLactea #Estrellas
 ```
@@ -25,7 +25,7 @@ Esto es la Vía Láctea sobre tu casa. Si vives en una ciudad, lo más probable 
 Más de un tercio de la humanidad ya no la ve, y en México 58 de cada 100 personas (atlas mundial de 2016). Con más de 50 mil conteos de estrellas entre 2011 y 2022, el brillo del cielo sube de 7 a 10 % al año. La luz también desorienta a tortugas recién nacidas y a aves migratorias. Lo que sirve: luz hacia abajo, cálida y apagada si nadie la usa.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú alguna vez has visto la Vía Láctea? ¿Dónde? 👇
-Shot Ambiental #31 · La Creación del Robert
+Shot Ambiental 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #ContaminacionLuminica #ViaLactea #Estrellas
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La Vía Láctea que ya no ves desde tu casa 🌌 | Shot Ambiental #31
+La Vía Láctea que ya no ves desde tu casa 🌌 | Shot Ambiental 31
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - FWC Florida, Artificial Lighting: https://myfwc.com/research/wildlife/sea-turtles/threats/artificial-lighting/
 - Van Doren et al. 2017, PNAS: https://www.pnas.org/doi/10.1073/pnas.1708574114
 ¿Tú alguna vez has visto la Vía Láctea? ¿Dónde? 👇
-Shot Ambiental #31 · La Creación del Robert
+Shot Ambiental 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #ContaminacionLuminica #ViaLactea
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto es la Vía Láctea sobre tu casa. Si vives en una ciudad, lo más probable es que tus ojos nunca la vean desde ahí. 🌌 En México, 58 de cada 100 personas ya no la ven, y el cielo se aclara de 7 a 10 % cada año.
 ¿Tú alguna vez has visto la Vía Láctea? ¿Dónde? 👇
-Shot Ambiental #31 · La Creación del Robert
+Shot Ambiental 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #ContaminacionLuminica #ViaLactea
 ```
@@ -69,7 +69,7 @@ Más de un tercio de la humanidad ya no puede ver la Vía Láctea desde donde vi
 El atlas mundial del brillo artificial del cielo nocturno (Falchi et al., Science Advances, 2016) estimó que alrededor del 83 % de la población mundial vive bajo cielos contaminados por luz; en México, el 58.3 % vive donde la Vía Láctea ya no se ve. Con 51,351 observaciones ciudadanas entre 2011 y 2022, Kyba et al. (Science, 2023) calcularon que el brillo del cielo aumenta de 7 a 10 % al año, más rápido de lo que indican los satélites.
 La contaminación lumínica también afecta a la fauna (crías de tortuga marina, aves migratorias), pero a diferencia de otros contaminantes se puede reducir de inmediato: iluminación totalmente apantallada hacia abajo, temperaturas de color más cálidas, menos flujo instalado y apagado cuando no se usa.
 ¿Tu ciudad o tu empresa ya toma en cuenta la contaminación lumínica en su alumbrado?
-Shot Ambiental #31 · La Creación del Robert
+Shot Ambiental 31 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #ContaminacionLuminica #Alumbrado #Sustentabilidad #LaCreacionDelRobert
 ```

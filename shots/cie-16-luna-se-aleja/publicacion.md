@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #16 · La Luna se aleja de ti casi 4 cm cada año
+# Publicación · Shot Científico 16 · La Luna se aleja de ti casi 4 cm cada año
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -14,7 +14,7 @@ El alejamiento en el dibujo está exagerado.
 El dibujo es esquemático.
 Fuentes: NASA/LPI; experimento de alcance láser lunar (Apolo 11); Yaemsiri et al. 2010.
 ¿Te imaginabas que la Luna se estaba yendo? 👇
-Shot Científico #16 · La Creación del Robert
+Shot Científico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Luna #Espacio #Astronomia
 ```
@@ -26,7 +26,7 @@ Gracias a los reflectores que dejó el Apolo 11 en 1969 y a más de 40 años de 
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Te imaginabas que la Luna se estaba yendo? 👇
-Shot Científico #16 · La Creación del Robert
+Shot Científico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Luna #Espacio #Astronomia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La Luna se aleja de ti casi 4 cm cada año 🌙 | Shot Científico #16
+La Luna se aleja de ti casi 4 cm cada año 🌙 | Shot Científico 16
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Dickey, J. O. et al. (1994). Lunar Laser Ranging: a continuing legacy of the Apollo program. Science 265: 482–490. https://doi.org/10.1126/science.265.5171.482
 - Yaemsiri, S. et al. (2010). Growth rate of human fingernails and toenails in healthy American young adults. J. Eur. Acad. Dermatol. Venereol. 24: 420–423. https://doi.org/10.1111/j.1468-3083.2009.03426.x
 ¿Te imaginabas que la Luna se estaba yendo? 👇
-Shot Científico #16 · La Creación del Robert
+Shot Científico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Luna #Espacio
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 La Luna se aleja de ti casi 4 cm cada año 🌙: lo midieron disparándole láser a los reflectores que dejó el Apolo 11. Es más o menos lo que crecen tus uñas en un año.
 ¿Te imaginabas que la Luna se estaba yendo? 👇
-Shot Científico #16 · La Creación del Robert
+Shot Científico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -69,7 +69,7 @@ Uno de los experimentos más longevos de la ciencia sigue funcionando: los refle
 Observatorios en la Tierra les disparan láseres y miden el tiempo de ida y vuelta de la luz (unos 2.5 s). Con décadas de datos, la distancia se conoce con precisión milimétrica, y muestra que la Luna se aleja unos 3.8 cm por año debido a la interacción de mareas, que a la vez frena muy ligeramente la rotación terrestre.
 Un ejemplo de cómo una inversión de 1969 sigue dando datos útiles más de medio siglo después.
 ¿Qué otro experimento "viejo" crees que sigue dando resultados?
-Shot Científico #16 · La Creación del Robert
+Shot Científico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

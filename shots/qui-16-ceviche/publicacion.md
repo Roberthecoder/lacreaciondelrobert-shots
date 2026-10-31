@@ -1,4 +1,4 @@
-# Publicación · Shot Químico #16 · Ese ceviche no está cocido (el limón desdobla proteínas, pero no esteriliza)
+# Publicación · Shot Químico 16 · Ese ceviche no está cocido (el limón desdobla proteínas, pero no esteriliza)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -13,7 +13,7 @@ Por eso la FDA recomienda que el pescado para comer crudo se congele a 20 °C ba
 El dibujo es esquemático. Esto no sustituye la indicación de tu médico.
 Fuentes: Herrera et al. 2010 · Šimat y Trumbić 2019 · Robert et al. 2025 · FDA, guía de pescados y mariscos (cap. 5).
 ¿Cómo preparan el ceviche en tu casa: con pescado fresco o congelado? 👇
-Shot Químico #16 · La Creación del Robert
+Shot Químico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Ceviche #Anisakis #SeguridadAlimentaria
 ```
@@ -24,7 +24,7 @@ Ese ceviche no está cocido: el limón solo le desdobló las proteínas, y lo qu
 El ácido abre (desnaturaliza) las proteínas del pescado y por eso se ve blanco, como cocido. Pero no esteriliza: en Lima (2010), 30 minutos de ceviche casi no bajaron las bacterias; en Croacia (2019), larvas de Anisakis aguantaron unos 5 días en jugo de limón; y en Francia (2025) a una señora le sacaron 40 larvas tras un ceviche casero de merluza. La FDA recomienda congelar el pescado para comer crudo a −20 °C por 7 días para matar parásitos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Con pescado fresco o congelado en tu casa? 👇
-Shot Químico #16 · La Creación del Robert
+Shot Químico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Ceviche #Anisakis #SeguridadAlimentaria
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese ceviche no está cocido 🍋🐟 | Shot Químico #16
+Ese ceviche no está cocido 🍋🐟 | Shot Químico 16
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - Kristinsson H.G., Hultin H.O. (2003). Changes in conformation and subunit assembly of cod myosin at low and high pH. J Agric Food Chem. https://pubmed.ncbi.nlm.nih.gov/14611192/
 - Zakrzewski A.J. et al. (2022). Ceviche—Natural Preservative. Foods 11(6):860. https://pmc.ncbi.nlm.nih.gov/articles/PMC8950590/
 ¿Cómo preparan el ceviche en tu casa: con pescado fresco o congelado? 👇
-Shot Químico #16 · La Creación del Robert
+Shot Químico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #Ceviche
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese ceviche no está cocido: el limón solo le desdobló las proteínas, y lo que traía puede seguir vivo. 🍋 El ácido abre las proteínas y el pescado se ve blanco, pero no mata todo: larvas de Anisakis aguantaron unos 5 días en jugo de limón (Croacia, 2019). La FDA recomienda congelar el pescado para crudo a −20 °C por 7 días.
 ¿Con pescado fresco o congelado en tu casa? 👇
-Shot Químico #16 · La Creación del Robert
+Shot Químico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #Ceviche
 ```
@@ -68,14 +68,14 @@ El ceviche no está cocido: el ácido del limón desnaturaliza las proteínas de
 Al bajar el pH, las proteínas del músculo se desdoblan por repulsión de cargas y la superficie se vuelve blanca y opaca, con una textura parecida a la cocción. Eso no equivale a un tratamiento térmico: en 2010, Herrera et al. (Lima, Perú) observaron poca reducción de Vibrio parahaemolyticus, E. coli y Aeromonas tras 30 minutos de preparación; en 2019, Šimat y Trumbić (Universidad de Split) reportaron que larvas de Anisakis sobrevivían alrededor de 5 días en jugo de limón; y en 2025 se publicó en Francia un caso con 40 larvas retiradas tras un ceviche casero de merluza sin congelar.
 La medida de control que propone la FDA para pescado que se comerá crudo es la congelación (−20 °C o menos por 7 días, entre otras opciones), que se dirige a parásitos, no a todas las bacterias.
 ¿Qué otras técnicas tradicionales confundimos con "cocinar" sin que lo sean?
-Shot Químico #16 · La Creación del Robert
+Shot Químico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica #SeguridadAlimentaria #CienciaDeAlimentos #Ceviche #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese ceviche no está cocido: el limón solo desdobla sus proteínas. En Croacia (2019), larvas de Anisakis aguantaron unos 5 días en jugo de limón. La FDA recomienda congelar a −20 °C por 7 días. 🍋 Shot Químico #16 #Quimica
+Ese ceviche no está cocido: el limón solo desdobla sus proteínas. En Croacia (2019), larvas de Anisakis aguantaron unos 5 días en jugo de limón. La FDA recomienda congelar a −20 °C por 7 días. 🍋 Shot Químico 16 #Quimica
 ```
 
 ### Threads
@@ -83,7 +83,7 @@ Ese ceviche no está cocido: el limón solo desdobla sus proteínas. En Croacia 
 Ese ceviche no está cocido: el limón solo le desdobló las proteínas, y lo que traía puede seguir vivo. 🍋🐟
 Se ve blanco porque el ácido abre las proteínas, pero en Lima (2010) 30 minutos de ceviche casi no bajaron las bacterias, y larvas de Anisakis aguantaron unos 5 días en jugo de limón.
 ¿Fresco o congelado en tu casa?
-Shot Químico #16 · La Creación del Robert
+Shot Químico 16 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

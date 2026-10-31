@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #52 · Las luces que ves al tallarte los ojos
+# Publicación · Shot Científico 52 · Las luces que ves al tallarte los ojos
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que esas luces no vienen de afuera: son tu ojo hablándole a tu cerebro sin
 El dibujo es esquemático.
 Fuentes: Grüsser et al. 1989 (Vision Research); Science Norway 2022; NASA 2012; National Eye Institute; American Academy of Ophthalmology.
 ¿Tú qué figuras ves cuando te tallas los ojos? 👇
-Shot Científico #52 · La Creación del Robert
+Shot Científico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Ojos #Fosfenos #CuerpoHumano
 ```
@@ -28,7 +28,7 @@ Se llaman fosfenos, y los más comunes salen apretando el ojo: la presión estim
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú qué figuras ves cuando te tallas los ojos? 👇
-Shot Científico #52 · La Creación del Robert
+Shot Científico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Ojos #Fosfenos #CuerpoHumano
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las luces que ves al tallarte los ojos ✨ | Shot Científico #52
+Las luces que ves al tallarte los ojos ✨ | Shot Científico 52
 ```
 Descripción:
 ```text
@@ -56,7 +56,7 @@ Fuentes:
 - National Eye Institute, «How the Eyes Work» y «Retinal Detachment» (destellos y manchas nuevas: ir al médico). https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/how-eyes-work · https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/retinal-detachment
 - American Academy of Ophthalmology, «Is it OK to rub and touch your eyes?». https://www.aao.org/eye-health/tips-prevention/is-it-ok-to-rub-touch-your-eyes
 ¿Tú qué figuras ves cuando te tallas los ojos? 👇
-Shot Científico #52 · La Creación del Robert
+Shot Científico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Ojos #Fosfenos #LaCreacionDelRobert
 ```
@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 Esas luces de colores que ves al tallarte los ojos cerrados no vienen de afuera: las fabrica tu propio ojo. ✨ Se llaman fosfenos: la presión estimula a las células de la retina aunque no haya luz, y tu cerebro lo interpreta como luz. Un golpe en la cabeza también los produce, y muchos astronautas han visto destellos con los ojos cerrados por partículas del espacio. No te talles fuerte ni seguido, y si ves destellos sin tocarte, sobre todo con manchas nuevas, ve al oftalmólogo.
 El dibujo es esquemático.
 ¿Tú qué figuras ves cuando te tallas los ojos? 👇
-Shot Científico #52 · La Creación del Robert
+Shot Científico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -76,7 +76,7 @@ Soy Robert, de La Creación del Robert 🌱
 Las luces que vemos al tallarnos los ojos cerrados se llaman fosfenos, y los más comunes son los de presión. La presión sobre el ojo estimula mecánicamente a las células de la retina; un estudio en gatos de Grüsser y colegas (Vision Research, 1989) mostró que las activa de forma parecida a la luz. El cerebro no distingue el origen: si recibe una señal de la retina, la interpreta como luz.
 Otros ejemplos: las 'estrellitas' tras un golpe en la cabeza y los destellos que muchos astronautas han visto con los ojos cerrados, atribuidos por la NASA a rayos cósmicos que atraviesan sus ojos (reportados desde las misiones Apolo; el mecanismo exacto sigue en estudio).
 Un aviso práctico: tallarse los ojos fuerte o seguido puede lastimarlos, y los destellos sin tocarse, sobre todo con manchas nuevas, son motivo para ir al oftalmólogo.
-Shot Científico #52 · La Creación del Robert
+Shot Científico 52 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

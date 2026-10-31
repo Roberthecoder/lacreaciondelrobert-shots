@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #59 · Ese frasco de reishi no siempre trae lo que dice
+# Publicación · Shot Fungi Mati 59 · Ese frasco de reishi no siempre trae lo que dice
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Así que ese frasco no siempre trae lo que dice, ni lo que promete está probado
 El dibujo es esquemático. No es consejo médico: si tomas medicamentos o estás en tratamiento, platícalo con tu médico.
 Fuentes: Cochrane 2016; Wu et al. 2017 (Scientific Reports); Loyd et al. 2018 (Frontiers in Microbiology); NCI; Manual Merck.
 ¿Tú o alguien de tu casa ha tomado suplementos de hongos? 👇
-Shot Fungi Mati #59 · La Creación del Robert
+Shot Fungi Mati 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Reishi #Suplementos
 ```
@@ -26,7 +26,7 @@ Ese frasco de reishi no siempre trae lo que dice: de 19 suplementos analizados, 
 MITO: que cura el cáncer. Una revisión Cochrane (2016) no encontró pruebas suficientes para usarlo solo como tratamiento, y los estudios fueron pocos y de baja calidad. Dentro de los frascos: 13 de 19 traían polisacáridos tipo almidón (relleno) y solo 5 el betaglucano del reishi (2017). Y en 2018, con ADN, en ninguno de 20 productos apareció Ganoderma lucidum: la mayoría eran Ganoderma lingzhi, el más usado en la medicina china.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Tú o alguien de tu casa ha tomado suplementos de hongos? 👇
-Shot Fungi Mati #59 · La Creación del Robert
+Shot Fungi Mati 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Reishi #Suplementos
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Tu reishi trae lo que dice? Lo que SÍ dice la ciencia 🍄 | Shot Fungi Mati #59
+¿Tu reishi trae lo que dice? Lo que SÍ dice la ciencia 🍄 | Shot Fungi Mati 59
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - National Cancer Institute. Medicinal Mushrooms (PDQ®) – Patient Version (2024). https://www.cancer.gov/about-cancer/treatment/cam/patient/mushrooms-pdq
 - Shane-McWhorter, L. (2025). Reishi. Manual Merck, versión para el público. https://www.merckmanuals.com/home/special-subjects/dietary-supplements-and-vitamins/reishi
 ¿Tú o alguien de tu casa ha tomado suplementos de hongos? 👇
-Shot Fungi Mati #59 · La Creación del Robert
+Shot Fungi Mati 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Reishi #FungiMati
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese frasco de reishi no siempre trae lo que dice: de 19 suplementos analizados, solo 5 cumplían su etiqueta. 🍄 No hay pruebas suficientes de que cure el cáncer, muchos frascos traían almidón, que suele ser relleno, y en ninguno de 20 productos apareció Ganoderma lucidum (la mayoría eran Ganoderma lingzhi). No es consejo médico.
 ¿Tú o alguien de tu casa ha tomado suplementos de hongos? 👇
-Shot Fungi Mati #59 · La Creación del Robert
+Shot Fungi Mati 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Reishi
 ```
@@ -74,7 +74,7 @@ Soy Robert, de La Creación del Robert 🌱
 3) Identidad: en 2018, el análisis de ADN de 20 productos no encontró Ganoderma lucidum en sentido estricto; la mayoría eran G. lingzhi.
 Por qué importa: sin control de calidad ni nombres correctos, ni el consumidor ni la investigación saben qué se está evaluando.
 ¿Qué controles crees que deberían exigirse a los suplementos?
-Shot Fungi Mati #59 · La Creación del Robert
+Shot Fungi Mati 59 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Suplementos #ControlDeCalidad #Ciencia
 ```
@@ -87,7 +87,7 @@ Ese frasco de reishi no siempre trae lo que dice: de 19 suplementos, solo 5 cump
 ### Threads
 ```text
 Ese frasco de reishi no siempre trae lo que dice: de 19 suplementos analizados, solo 5 cumplían su etiqueta. 🍄 No hay pruebas suficientes de que cure el cáncer, y con ADN, en ninguno de 20 productos apareció Ganoderma lucidum: la mayoría eran Ganoderma lingzhi. ¿Tú has tomado suplementos de hongos?
-Shot Fungi Mati #59 · La Creación del Robert
+Shot Fungi Mati 59 · La Creación del Robert
 #Hongos
 ```
 

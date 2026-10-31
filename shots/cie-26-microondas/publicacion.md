@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #26 · Tu microondas no calienta de adentro hacia afuera
+# Publicación · Shot Científico 26 · Tu microondas no calienta de adentro hacia afuera
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -19,7 +19,7 @@ Así que no calienta de adentro hacia afuera: calienta por fuera, y lo demás lo
 El dibujo es esquemático.
 Fuentes: FDA; NC State Extension 2024; Tang 2015 (J. Food Sci.); USDA FSIS.
 ¿Tú respetas el tiempo de reposo o te lo saltas? 👇
-Shot Científico #26 · La Creación del Robert
+Shot Científico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Cocina
 ```
@@ -31,7 +31,7 @@ Las microondas mueven el agua de la comida y eso es calor, pero solo entran unos
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿Tú respetas el tiempo de reposo o te lo saltas? 👇
-Shot Científico #26 · La Creación del Robert
+Shot Científico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Fisica #Cocina
 ```
@@ -39,7 +39,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu microondas no calienta de adentro hacia afuera 🍲 | Shot Científico #26
+Tu microondas no calienta de adentro hacia afuera 🍲 | Shot Científico 26
 ```
 Descripción:
 ```text
@@ -62,7 +62,7 @@ Fuentes:
 - NASA Science. Microwaves. https://science.nasa.gov/ems/06_microwaves/
 - Zarikoff, B. y Leith, D. (2011). Measured Interference of Microwave Ovens with WiFi. arXiv:1107.5468. https://arxiv.org/abs/1107.5468
 ¿Tú respetas el tiempo de reposo o te lo saltas? 👇
-Shot Científico #26 · La Creación del Robert
+Shot Científico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Fisica
 ```
@@ -71,7 +71,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Tu microondas no calienta de adentro hacia afuera: calienta por fuera, unos pocos centímetros, y el centro se calienta después, poco a poco. 🍲 Por eso una pieza gruesa queda fría en medio y por eso hay que dejarla reposar.
 ¿Tú respetas el tiempo de reposo o te lo saltas? 👇
-Shot Científico #26 · La Creación del Robert
+Shot Científico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -82,7 +82,7 @@ Un mito muy común: que el microondas cocina "de adentro hacia afuera". La FDA l
 Las microondas calientan las capas de afuera; según la comida, entran de unos milímetros a unos pocos centímetros (Tang, 2015; NC State Extension, 2024). El interior se calienta por conducción desde esas capas calientes, por eso el tiempo de reposo no es un detalle: es parte de la cocción.
 Además, dentro del horno se forman ondas estacionarias con puntos calientes y fríos; el plato giratorio ayuda a repartir el calor.
 ¿Tú respetas el tiempo de reposo o te lo saltas?
-Shot Científico #26 · La Creación del Robert
+Shot Científico 26 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```

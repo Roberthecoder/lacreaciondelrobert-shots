@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #40 · Ese suero no salió de un gallo (ácido hialurónico hecho por bacterias)
+# Publicación · Shot Biotecnológico 40 · Ese suero no salió de un gallo (ácido hialurónico hecho por bacterias)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Y ojo: en 2015, en Reims, Francia, siguieron el hialurónico aplicado sobre piel
 El dibujo es esquemático.
 Fuentes: Liu et al. 2011 · Serra et al. 2023 · Widner et al. 2005 · Essendoubi et al. 2015 (completas en el comentario fijado).
 ¿Tú usas algo con ácido hialurónico? ¿Sabías de dónde salía? 👇
-Shot Biotecnológico #40 · La Creación del Robert
+Shot Biotecnológico 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #AcidoHialuronico #Bacterias #CuidadoDeLaPiel
 ```
@@ -25,7 +25,7 @@ Ese suero no salió de un gallo: lo más probable es que lo hizo una bacteria. �
 El ácido hialurónico ya está en tu piel, tus articulaciones y tus ojos, y atrapa agua. Antes se sacaba de crestas de gallo; hoy sale sobre todo de tanques con bacterias, donde una sola enzima de la membrana une dos azúcares, uno y otro, y saca la cadena como hilo. En 2005, Novozymes (California) pasó el gen de la enzima a Bacillus subtilis, una bacteria que no enferma. Y en 2015, en piel humana donada en laboratorio (Reims, Francia), el hialurónico de cadena grande no cruzó la capa más externa.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú usas algo con ácido hialurónico? 👇
-Shot Biotecnológico #40 · La Creación del Robert
+Shot Biotecnológico 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #AcidoHialuronico #Bacterias #CuidadoDeLaPiel
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese suero no salió de un gallo 🧴🦠 | Shot Biotecnológico #40
+Ese suero no salió de un gallo 🧴🦠 | Shot Biotecnológico 40
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - Essendoubi M. et al. (2015/2016). Human skin penetration of hyaluronic acid of different molecular weights as probed by Raman spectroscopy. Skin Res Technol 22(1):55–62. https://pubmed.ncbi.nlm.nih.gov/25877232/
 - Ang B.C.H. et al. (2017). Sodium Hyaluronate in the Treatment of Dry Eye Syndrome: A Systematic Review and Meta-Analysis. Sci Rep 7:9013. https://pmc.ncbi.nlm.nih.gov/articles/PMC5567178/
 ¿Tú usas algo con ácido hialurónico? ¿Sabías de dónde salía? 👇
-Shot Biotecnológico #40 · La Creación del Robert
+Shot Biotecnológico 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #AcidoHialuronico
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese suero no salió de un gallo: lo más probable es que lo hizo una bacteria. 🧴🦠 El ácido hialurónico ya está en tu piel, tus articulaciones y tus ojos, y atrapa agua. Antes se sacaba de crestas de gallo; hoy sale sobre todo de tanques donde bacterias lo fabrican como un hilo larguísimo.
 ¿Tú usas algo con ácido hialurónico? 👇
-Shot Biotecnológico #40 · La Creación del Robert
+Shot Biotecnológico 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #AcidoHialuronico
 ```
@@ -73,14 +73,14 @@ Ese suero probablemente no salió de un gallo: lo fabricó una bacteria.
 El ácido hialurónico se extraía tradicionalmente de crestas de gallo; hoy se produce principalmente por fermentación microbiana, con menor costo. El productor industrial más usado, Streptococcus zooepidemicus, es patógeno, y por eso la industria buscó hospederos seguros: en 2005, Novozymes (Davis, California) expresó el gen de la hialuronano sintasa (hasA, de S. equisimilis) en Bacillus subtilis y obtuvo hialurónico secretado y de alta calidad, comparable al comercial.
 Del lado del consumidor, conviene separar la química del marketing: la molécula atrapa y retiene agua, pero un estudio de 2015 en piel humana donada y analizada en laboratorio (Reims, Francia; con un coautor de una empresa del ramo) encontró que el hialurónico de alto peso molecular no atraviesa el estrato córneo.
 ¿Qué otros ingredientes de uso diario ya salen de un fermentador sin que lo sepamos?
-Shot Biotecnológico #40 · La Creación del Robert
+Shot Biotecnológico 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Fermentacion #BiologiaSintetica #Cosmetica #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Ese suero no salió de un gallo: lo más probable es que lo hizo una bacteria. El ácido hialurónico antes salía de crestas de gallo; hoy, sobre todo de tanques con bacterias. 🧴🦠 Shot Biotecnológico #40 #Biotecnologia
+Ese suero no salió de un gallo: lo más probable es que lo hizo una bacteria. El ácido hialurónico antes salía de crestas de gallo; hoy, sobre todo de tanques con bacterias. 🧴🦠 Shot Biotecnológico 40 #Biotecnologia
 ```
 
 ### Threads
@@ -88,7 +88,7 @@ Ese suero no salió de un gallo: lo más probable es que lo hizo una bacteria. E
 Ese suero no salió de un gallo: lo más probable es que lo hizo una bacteria. 🧴🦠
 El ácido hialurónico ya está en tu piel y atrapa agua. Antes se sacaba de crestas de gallo; hoy sale sobre todo de tanques con bacterias, y en 2005 lo lograron en Bacillus subtilis, una bacteria que no enferma.
 ¿Tú usas algo con ácido hialurónico?
-Shot Biotecnológico #40 · La Creación del Robert
+Shot Biotecnológico 40 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

@@ -1,4 +1,4 @@
-# Publicación · Shot Ambiental #51 · Esto no es nieve: es espuma del río Santiago
+# Publicación · Shot Ambiental 51 · Esto no es nieve: es espuma del río Santiago
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -15,7 +15,7 @@ Ya ampliada, la planta de tratamiento El Ahogado puede tratar hasta 3,250 litros
 El dibujo es esquemático.
 Fuentes: CNDH (Recomendación 134/2022), CIDH (Resolución 7/2020), Gobierno de Jalisco.
 ¿Tú has visto la espuma del río Santiago? 👇
-Shot Ambiental #51 · La Creación del Robert
+Shot Ambiental 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #RioSantiago #Jalisco #ElSalto
 ```
@@ -26,7 +26,7 @@ Esto no es nieve: es espuma del río Santiago, en Jalisco. ❄️🫧
 El río sale del Lago de Chapala y, en El Salto y Juanacatlán, recibe aguas residuales de la ciudad y de un corredor industrial. Trae detergentes, que atrapan burbujas, y la cascada que llamaban "el Niágara mexicano" lo bate como lavadora. En 2011 el IMTA halló 1,090 sustancias y metales en el río y sus descargas. Ya ampliada, la planta El Ahogado puede tratar hasta 3,250 litros por segundo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú has visto la espuma del río Santiago? 👇
-Shot Ambiental #51 · La Creación del Robert
+Shot Ambiental 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #CienciaAmbiental #RioSantiago #Jalisco #ElSalto
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es nieve: es espuma del río Santiago 🫧 | Shot Ambiental #51
+Esto no es nieve: es espuma del río Santiago 🫧 | Shot Ambiental 51
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - Gobierno de Jalisco, Río Santiago: https://riosantiago.jalisco.gob.mx/rio-santiago/
 - Gobierno de Jalisco, Revivamos el Río Santiago 2050: https://riosantiago.jalisco.gob.mx/revivamos-el-rio-santiago-2050/
 ¿Tú has visto la espuma del río Santiago? 👇
-Shot Ambiental #51 · La Creación del Robert
+Shot Ambiental 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #RioSantiago #Jalisco
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esto no es nieve: es espuma del río Santiago, en El Salto y Juanacatlán, Jalisco. 🫧 El agua trae detergentes y la cascada la bate como lavadora. En 2011 un estudio federal halló 1,090 sustancias y metales en el río y sus descargas.
 ¿Tú has visto la espuma del río Santiago? 👇
-Shot Ambiental #51 · La Creación del Robert
+Shot Ambiental 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #RioSantiago #Jalisco
 ```
@@ -71,7 +71,7 @@ Esto no es nieve: es espuma del río Santiago, en Jalisco.
 El río nace del Lago de Chapala y, a su paso por El Salto y Juanacatlán, recibe aguas residuales urbanas y del corredor industrial de El Salto. La CNDH documentó en 2021 grandes cantidades de espuma blanca en la caída de la cascada El Salto de Juanacatlán. En 2011, el IMTA identificó 1,090 sustancias tóxicas, productos químicos y metales en descargas y en el agua del río, con arsénico y plomo por encima de la norma vigente entonces.
 La planta El Ahogado amplió su capacidad de 2,250 a 3,250 litros por segundo. Sanear una cuenca así exige tratar tanto las descargas municipales como las industriales, y vigilar que se cumpla la norma.
 ¿Qué acción crees que tendría más impacto para recuperar el río Santiago?
-Shot Ambiental #51 · La Creación del Robert
+Shot Ambiental 51 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #CienciaAmbiental #Agua #RioSantiago #Jalisco #LaCreacionDelRobert
 ```

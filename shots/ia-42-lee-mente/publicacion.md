@@ -1,4 +1,4 @@
-# Publicación · Shot IA #42 · ¿Una IA puede leer tu mente? Solo si tú te dejas
+# Publicación · Shot IA 42 · ¿Una IA puede leer tu mente? Solo si tú te dejas
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Así que hoy, desde afuera, tu mente sigue siendo tuya, y los autores piden regl
 Sin cirugía: solo el escáner. El dibujo es esquemático. Estudio de 2023.
 Fuente: Tang, LeBel, Jain y Huth, Nature Neuroscience (2023).
 ¿Tú dejarías que una máquina leyera tus pensamientos si te ayudara a hablar? 👇
-Shot IA #42 · La Creación del Robert
+Shot IA 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Cerebro #Neurociencia #PrivacidadMental
 ```
@@ -25,7 +25,7 @@ Soy Robert, de La Creación del Robert 🌱
 En 2023, en la Universidad de Texas en Austin, una IA aprendió a convertir en texto la actividad del cerebro, medida con resonancia magnética, después de 16 horas de historias en audio por persona. No sacaba las palabras exactas, sino la idea: «todavía no tengo licencia de manejo» se volvió «ella ni siquiera ha empezado a aprender a manejar». Pero con alguien con quien no se entrenó apenas superó al azar, y quien sí la entrenó la saboteó con solo nombrar animales en su mente.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú dejarías que una máquina leyera tus pensamientos si te ayudara a hablar? 👇
-Shot IA #42 · La Creación del Robert
+Shot IA 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Cerebro #Neurociencia #PrivacidadMental
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Una IA puede leer tu mente? Solo si tú te dejas 🧠 | Shot IA #42
+¿Una IA puede leer tu mente? Solo si tú te dejas 🧠 | Shot IA 42
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 ¿Por qué una máquina todavía no puede leer tu mente desde afuera? Porque, por ahora, necesita que tú te dejes. 🧠 En 2023, en Texas, una IA convirtió en texto la idea de lo que oían tres personas dentro de una resonancia. Pero con alguien con quien no se entrenó casi no le atinó, y bastaba pensar en animales para sabotearla.
 ¿Tú dejarías que una máquina leyera tus pensamientos si te ayudara a hablar? 👇
-Shot IA #42 · La Creación del Robert
+Shot IA 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #Neurociencia
 ```
@@ -65,7 +65,7 @@ En 2023, un equipo de la Universidad de Texas en Austin (Tang, LeBel, Jain y Hut
 Lo que más me interesa es su análisis de privacidad: un decodificador entrenado con otras personas apenas superó al azar, y quienes sí lo entrenaron pudieron sabotearlo (nombrar animales mentalmente bajó los aciertos a 0–3 %). Los autores concluyen que hoy se necesita la cooperación de la persona para entrenar y para usar el decodificador, y piden políticas que protejan la privacidad mental.
 La tecnología avanza más rápido que las reglas. ¿Debería tu actividad cerebral tener la misma protección que tus datos médicos?
 Fuente: Tang et al., Nature Neuroscience 26: 858–866 (2023). Datos de 2023.
-Shot IA #42 · La Creación del Robert
+Shot IA 42 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial #Neurociencia #PrivacidadMental #EticaDigital #LaCreacionDelRobert
 ```
@@ -80,7 +80,7 @@ Soy Robert, de La Creación del Robert 🌱
 ¿Por qué una máquina todavía no puede leer tu mente desde afuera? Porque, por ahora, necesita que tú te dejes. 🧠🔒
 Texas, 2023: una IA convirtió en texto la idea de lo que oían tres personas en una resonancia. Con alguien con quien no se entrenó, apenas superó al azar; y pensar en animales la saboteaba.
 ¿Tú la dejarías entrar?
-Shot IA #42 · Soy Robert, de La Creación del Robert 🌱
+Shot IA 42 · Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```
 

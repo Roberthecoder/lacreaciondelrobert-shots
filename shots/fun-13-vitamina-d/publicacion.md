@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati #13 · Champiñones al sol: la fábrica de vitamina D
+# Publicación · Shot Fungi Mati 13 · Champiñones al sol: la fábrica de vitamina D
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ Truco: rebanados producen más que enteros, y en el refri la vitamina se conserv
 El dibujo es esquemático. No es consejo médico.
 Fuentes: Urbain y Jakobsen 2015 (J. Agric. Food Chem.); Cardwell et al. 2018 (Nutrients); Keegan et al. 2013 (Dermato-Endocrinology); MedlinePlus.
 ¿Tú los has puesto al sol antes de cocinarlos? 👇
-Shot Fungi Mati #13 · La Creación del Robert
+Shot Fungi Mati 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #VitaminaD #Champiñones
 ```
@@ -25,7 +25,7 @@ Ese champiñón no es solo comida: es una fábrica de vitamina D que se prende c
 Casi todos crecen a oscuras y casi no traen vitamina D, pero su ergosterol (parecido al colesterol) se vuelve vitamina D2 con luz ultravioleta. En 2015, champiñones rebanados al sol de mediodía llegaron en 15 minutos a 17.6 µg de vitamina D2 por cada 100 g: comparable al salmón. Más sol no es mejor: después de una hora se estanca y luego baja. Rebanados producen más que enteros.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Tú los has puesto al sol antes de cocinarlos? 👇
-Shot Fungi Mati #13 · La Creación del Robert
+Shot Fungi Mati 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #VitaminaD #Champiñones
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-15 minutos de sol de mediodía y tu champiñón fabrica vitamina D ☀️🍄 | Shot Fungi Mati #13
+15 minutos de sol de mediodía y tu champiñón fabrica vitamina D ☀️🍄 | Shot Fungi Mati 13
 ```
 Descripción:
 ```text
@@ -50,7 +50,7 @@ Fuentes:
 - Jordá, T. y Puig, S. (2020). Regulation of Ergosterol Biosynthesis in Saccharomyces cerevisiae. Genes 11(7): 795. https://pmc.ncbi.nlm.nih.gov/articles/PMC7397035/
 - MedlinePlus. Vitamin D. https://medlineplus.gov/ency/article/002405.htm
 ¿Tú los has puesto al sol antes de cocinarlos? 👇
-Shot Fungi Mati #13 · La Creación del Robert
+Shot Fungi Mati 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #VitaminaD #FungiMati
 ```
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese champiñón no es solo comida: es una fábrica de vitamina D que se prende con sol. ☀️🍄 Con luz ultravioleta, su ergosterol se vuelve vitamina D2. En un estudio de 2015, 15 minutos de sol bastaron para que champiñones rebanados llegaran a 17.6 µg por cada 100 g, comparable al salmón.
 ¿Tú los has puesto al sol antes de cocinarlos? 👇
-Shot Fungi Mati #13 · La Creación del Robert
+Shot Fungi Mati 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #VitaminaD
 ```
@@ -70,7 +70,7 @@ Un alimento que fabrica su propia vitamina D con 15 minutos de sol de mediodía.
 Casi todos los champiñones se cultivan a oscuras y casi no tienen vitamina D, pero sus membranas tienen ergosterol, que la luz ultravioleta convierte en vitamina D2 (Keegan et al., 2013). En 2015, Urbain y Jakobsen expusieron champiñones rebanados al sol: tras 15 minutos llegaron al equivalente de 17.6 µg de vitamina D2 por cada 100 g de champiñón fresco, comparable al salmón; después de una hora el aumento se estancó y con exposición extra bajó.
 Por qué importa: es una forma casera de sumar vitamina D a un alimento común, sin suplementos ni pescado.
 ¿Conocías este truco?
-Shot Fungi Mati #13 · La Creación del Robert
+Shot Fungi Mati 13 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Nutricion #VitaminaD #Ciencia
 ```
@@ -83,7 +83,7 @@ Champiñones rebanados + 15 min de sol de mediodía = 17.6 µg de vitamina D2 po
 ### Threads
 ```text
 Ese champiñón no es solo comida: es una fábrica de vitamina D que se prende con sol. ☀️ Con luz UV, su ergosterol se vuelve vitamina D2; en un estudio de 2015, 15 minutos de sol bastaron para que champiñones rebanados llegaran a 17.6 µg por cada 100 g. ¿Tú los has puesto al sol?
-Shot Fungi Mati #13 · La Creación del Robert
+Shot Fungi Mati 13 · La Creación del Robert
 #Hongos
 ```
 

@@ -1,4 +1,4 @@
-# Publicación · Shot Biotecnológico #24 · Esas células no son de un laboratorio: son de Henrietta Lacks (células HeLa)
+# Publicación · Shot Biotecnológico 24 · Esas células no son de un laboratorio: son de Henrietta Lacks (células HeLa)
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -14,7 +14,7 @@ En 2013, los NIH acordaron con la familia que el acceso al genoma de HeLa lo rev
 El dibujo es esquemático.
 Fuentes: Hudson y Collins 2013 · Scherer, Syverton y Gey 1953 · Landry et al. 2013 · DeFilippis et al. 2003 · Turner 2012 · Boshart et al. 1984 · Nobel 2008 · Smithsonian 2023.
 ¿Sabías de dónde salen las células que se usan en los laboratorios? 👇
-Shot Biotecnológico #24 · La Creación del Robert
+Shot Biotecnológico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #HenriettaLacks #CelulasHeLa #Bioetica
 ```
@@ -25,7 +25,7 @@ Esas células no son de un laboratorio: son de una mujer a la que nunca le pidie
 En 1951, en el hospital Johns Hopkins, le tomaron una biopsia a Henrietta Lacks, de 30 años, sin su permiso ni su conocimiento. Fueron la primera línea de células humanas de cáncer que crece sin fin en cultivo: las HeLa. El secreto: el VPH 18 metió su ADN en su cromosoma 8 y sus genes E6 y E7 sueltan los frenos de la célula. Sirvieron para evaluar la vacuna de la polio y para descubrir el VPH 18 (Nobel 2008). En 2013 su familia entró al grupo que revisa quién usa su genoma, y en 2023 llegó a un acuerdo con Thermo Fisher.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Sabías de dónde salen las células de los laboratorios? 👇
-Shot Biotecnológico #24 · La Creación del Robert
+Shot Biotecnológico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #HenriettaLacks #CelulasHeLa #Bioetica
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas células son de una mujer, no de un laboratorio 🔬 | Shot Biotecnológico #24
+Esas células son de una mujer, no de un laboratorio 🔬 | Shot Biotecnológico 24
 ```
 Descripción:
 ```text
@@ -55,7 +55,7 @@ Fuentes:
 - Smithsonian Magazine (2023). Henrietta Lacks' Family Settles Lawsuit Over the Use of Her Cells Without Consent. https://www.smithsonianmag.com/smart-news/henrietta-lacks-family-settles-lawsuit-over-the-use-of-her-cells-without-consent-180982644/
 - ASU Embryo Project (2020). Henrietta Lacks (1920–1951). https://embryo.asu.edu/pages/henrietta-lacks-1920-1951
 ¿Sabías de dónde salen las células que se usan en los laboratorios? 👇
-Shot Biotecnológico #24 · La Creación del Robert
+Shot Biotecnológico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Biotecnologia #HenriettaLacks
 ```
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esas células no son de un laboratorio: son de una mujer a la que nunca le pidieron permiso. 🔬 En 1951 le tomaron una biopsia a Henrietta Lacks sin su permiso ni su conocimiento, y sus células, las HeLa, fueron las primeras células humanas que crecieron sin fin en cultivo. Ayudaron a evaluar la vacuna de la polio y a descubrir el VPH 18.
 ¿Sabías de dónde salen las células de los laboratorios? 👇
-Shot Biotecnológico #24 · La Creación del Robert
+Shot Biotecnológico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Biotecnologia #HenriettaLacks
 ```
@@ -76,20 +76,20 @@ En 1951, médicos del hospital Johns Hopkins tomaron una biopsia de su tumor cer
 Su "inmortalidad" tiene explicación: llevan ADN del VPH 18 integrado en el cromosoma 8, y los genes virales E6 y E7 desactivan las vías de p53 y Rb y sostienen la telomerasa (DeFilippis et al., 2003). Hasta 1955, el Instituto Tuskegee envió unos 600 mil cultivos para evaluar la vacuna de Salk; en 1984, el equipo de Harald zur Hausen halló en ellas el VPH 18; y para 2013 ya sumaban más de 70 mil publicaciones.
 La parte ética también avanzó: en 2013, los NIH acordaron con la familia un acceso controlado al genoma de HeLa, con dos integrantes de la familia en el grupo que revisa las solicitudes; en 2023, la familia llegó a un acuerdo confidencial con Thermo Fisher.
 ¿Cómo debería reconocerse hoy a quienes donan (o donaron sin saberlo) las muestras que hacen posible la investigación?
-Shot Biotecnológico #24 · La Creación del Robert
+Shot Biotecnológico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia #Bioetica #InvestigacionBiomedica #HenriettaLacks #LaCreacionDelRobert
 ```
 
 ### X
 ```text
-Esas células no son de un laboratorio: son de Henrietta Lacks, a quien nunca le pidieron permiso. Las HeLa (1951) fueron las primeras células humanas que crecen sin fin en cultivo. 🔬 Shot Biotecnológico #24 #Biotecnologia
+Esas células no son de un laboratorio: son de Henrietta Lacks, a quien nunca le pidieron permiso. Las HeLa (1951) fueron las primeras células humanas que crecen sin fin en cultivo. 🔬 Shot Biotecnológico 24 #Biotecnologia
 ```
 
 ### Threads
 ```text
 Esas células no son de un laboratorio: son de una mujer a la que nunca le pidieron permiso. 🔬 En 1951 le tomaron una biopsia a Henrietta Lacks, de 30 años, y sus células, las HeLa, fueron las primeras humanas que crecen sin fin en cultivo, gracias al ADN del VPH 18. ¿Sabías su historia? 👇
-Shot Biotecnológico #24 · La Creación del Robert
+Shot Biotecnológico 24 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Biotecnologia
 ```

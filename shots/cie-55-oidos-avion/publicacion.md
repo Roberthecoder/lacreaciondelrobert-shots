@@ -1,4 +1,4 @@
-# Publicación · Shot Científico #55 · Por qué se te tapan los oídos en el avión
+# Publicación · Shot Científico 55 · Por qué se te tapan los oídos en el avión
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Plantilla: `motor/plantillas/publicacion.md`.
 
@@ -16,7 +16,7 @@ Así que ese oído tapado no es el ruido: es tu tímpano esperando que el aire s
 El dibujo es esquemático.
 Fuentes: Mayo Clinic; MedlinePlus; ENT Health (AAO-HNS); 14 CFR §25.841; Manual MSD.
 ¿A ti también se te tapan los oídos al aterrizar? 👇
-Shot Científico #55 · La Creación del Robert
+Shot Científico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Avion
 ```
@@ -28,7 +28,7 @@ Detrás del tímpano hay una cajita de aire (el oído medio) unida a la garganta
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti también se te tapan los oídos al aterrizar? 👇
-Shot Científico #55 · La Creación del Robert
+Shot Científico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #CuerpoHumano #Avion
 ```
@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué se te tapan los oídos en el avión ✈️ | Shot Científico #55
+Por qué se te tapan los oídos en el avión ✈️ | Shot Científico 55
 ```
 Descripción:
 ```text
@@ -57,7 +57,7 @@ Fuentes:
 - Smith ME, Bance ML et al. (2019). Advances in Eustachian tube function testing. World J Otorhinolaryngol Head Neck Surg. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6849358/
 - Stony Brook Medicine. Ears and Altitude. https://www.stonybrookmedicine.edu/sites/default/files/ears_and_altitude.pdf
 ¿A ti también se te tapan los oídos al aterrizar? 👇
-Shot Científico #55 · La Creación del Robert
+Shot Científico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #CuerpoHumano
 ```
@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Cuando se te tapan los oídos en el avión no es por el ruido: es aire atrapado detrás de tu tímpano. Al bajar, la presión de la cabina sube y empuja el tímpano hacia adentro; al tragar o bostezar, la trompa de Eustaquio se abre un instante, pasa aire y la presión se iguala: ese es el pop. Masticar chicle, tragar seguido o bostezar ayuda, sobre todo al empezar a bajar.
 ¿A ti también se te tapan los oídos al aterrizar? 👇
-Shot Científico #55 · La Creación del Robert
+Shot Científico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia
 ```
@@ -74,7 +74,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 ¿Por qué se tapan los oídos al aterrizar? No es el ruido: es una diferencia de presión. El oído medio es una cavidad con aire detrás del tímpano, unida a la garganta por la trompa de Eustaquio, que normalmente está cerrada. La cabina de un avión va presurizada, pero con menos presión que a nivel del mar; en el descenso la presión sube y empuja el tímpano hacia adentro. Tragar o bostezar abre la trompa un instante y la presión se iguala: ese es el «pop». Con gripa o alergia la trompa se inflama y cuesta más.
-Shot Científico #55 · La Creación del Robert
+Shot Científico 55 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia #Divulgacion #LaCreacionDelRobert
 ```
