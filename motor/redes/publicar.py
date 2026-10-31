@@ -398,10 +398,33 @@ def subir_youtube_largo(video, r, modo, clave, meta, yt, iv):
             'idioma': idioma}
 
 
+SERIE_DE = {'fun': 'Fungi Mati', 'bio': 'Biotecnológico', 'amb': 'Ambiental', 'cie': 'Científico', 'qui': 'Químico', 'ia': 'IA',
+            'fes': 'Festivo', 'robert': 'Robert'}
+ESPECIALES_TIT = {'003-semillas-luna': ('Científico', 1)}
+
+
+def titulo_completo(clave, t):
+    """Título único en TODAS las redes y en la Sala (decisión de Robert, 31 oct 2026): «Shot <Serie> #NN: <título>»;
+    festivos: «Shot Festivo #NN · <Festividad> · <Serie vinculada>: <título>» (t ya trae «<Festividad> · <Serie>: …»)."""
+    m = re.match(r'^([a-z]+)-(\d+)-', clave)
+    serie, n = ESPECIALES_TIT.get(clave) or ((SERIE_DE.get(m.group(1)), int(m.group(2))) if m else (None, None))
+    if not serie:
+        return t
+    return f'Shot {serie} #{n:02d}' + (' · ' if serie == 'Festivo' else ': ') + t
+
+
+def titulo_corto(t, n):
+    """Recorta a n caracteres sin partir palabras (YouTube admite 100)."""
+    return t if len(t) <= n else t[:n - 1].rsplit(' ', 1)[0].rstrip(' ·:,;—-') + '…'
+
+
 def textos(clave):
     carpeta = os.path.join('shots', clave)
     r = redes_de(os.path.join(carpeta, 'publicacion.md'))
-    return r, titulo_de(carpeta, clave)
+    titulo = titulo_completo(clave, titulo_de(carpeta, clave))
+    if r.get('youtube'):
+        r['youtube']['titulo'] = titulo_corto(titulo, 100)   # el título de YouTube es siempre el de la Sala
+    return r, titulo
 
 
 def revisar_texto(red, r, tt=None):
