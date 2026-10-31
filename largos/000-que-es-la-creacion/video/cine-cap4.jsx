@@ -54,13 +54,16 @@ ILUSC.recamara = {
         <g opacity={ap(0)}><OllaExpres x={760} y={762} s={0.62} vapor={1} t={tl} /></g>
         <g opacity={ap(1)}><CajaAire x={1150} y={762} w={460} h={260} /></g>
         <g opacity={ap(2)}>
-          <g transform="translate(1500 762)"><Sombra x={0} y={4} rx={50} ry={8} o={0.5} /><rect x={-36} y={-150} width={72} height={150} rx={10} fill="#e8f3f6" opacity={0.6} /><rect x={-36} y={-110} width={72} height={110} fill="#bfe0ff" opacity={0.35} /><rect x={-22} y={-196} width={44} height={50} fill="#f6f6f6" /><path d="M 22 -190 L 64 -196 L 64 -182 L 22 -176 Z" fill="#f6f6f6" /><text x={0} y={-60} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={16} fill="#1d4f9c">OH 70%</text></g>
+          <g transform="translate(1500 762)"><Sombra x={0} y={4} rx={50} ry={8} o={0.5} /><rect x={-36} y={-150} width={72} height={150} rx={10} fill="#e8f3f6" opacity={0.6} /><rect x={-36} y={-110} width={72} height={110} fill="#bfe0ff" opacity={0.35} /><rect x={-22} y={-196} width={44} height={50} fill="#f6f6f6" /><path d="M 22 -190 L 64 -196 L 64 -182 L 22 -176 Z" fill="#f6f6f6" /><text x={0} y={-60} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={11} fill="#1d4f9c">ETANOL 70 %</text></g>
           {[0, 1, 2].map((k) => <g key={k} transform={`translate(${1610 + k * 40} 760)`}><ellipse cx={0} cy={-k * 14} rx={60} ry={14} fill="#dff0ee" opacity={0.6} /><ellipse cx={0} cy={-k * 14} rx={60} ry={14} fill="none" stroke="#fff" strokeOpacity={0.6} strokeWidth={2} /></g>)}
         </g>
         <g opacity={ap(4)} transform="translate(960 600)"><rect x={-6} y={-200} width={12} height={160} fill="#2a2a30" /><g transform="translate(0 -210)"><path d="M -60 0 L 60 0 L 36 -60 L -36 -60 Z" fill="#e9e9e9" /><ellipse cx={0} cy={0} rx={60} ry={12} fill="#dff4ff" /><Rayos x={0} y={0} ang={90} abre={50} largo={500} n={4} ancho={60} color="#dff4ff" o={0.6} t={tl} seed={221} /></g></g>
       </g>
       <Polvo n={50} t={tl} seed={222} o={0.5} />
       <Tinte color="#7fb0ff" o={0.08} />
+      {(() => { const o = cpr(p, 0.6, 0.7); const hay = (window.FOTOS || {})['video/img/extra/librero_lab.jpg']; return hay && o > 0 && <g>
+        <rect x={0} y={0} width={1920} height={1080} fill="#0b0b0d" opacity={0.65 * o} />
+        <FotoReal src="video/img/extra/librero_lab.jpg" x={1080} y={500} maxW={1100} maxH={700} rot={1.5} o={o} etiqueta="MI LIBRERO-LABORATORIO" /></g>; })()}
       <Rotulo x={120} y={190} arriba="POCO A POCO" texto="De recámara a laboratorio" sub="casero e improvisado" tl={tl} at={0.4} tam={58} />
     </g>;
   },

@@ -52,7 +52,7 @@ window.DURACION_LARGO = LINEA.total;
 // Precarga: fotos, texturas, logos y stickers se descargan y decodifican antes del primer cuadro (render.mjs y preview.mjs esperan esta promesa).
 const TEXTURAS = ['papel', 'papel_a', 'tierra', 'aserrin', 'madera_clara', 'madera_media', 'madera_oscura', 'madera_pino'].concat([0, 1, 2, 3, 4, 5, 6, 7].map((i) => 'grano_' + i)).map((n) => 'video/tex/' + n + '.png');
 window.__imgsLargo = [];
-window.__precarga = Promise.all([...new Set(LINEA.bloques.flatMap((b) => (b.v.foto ? [b.v.foto] : b.v.fotos || [])).map(fotoSrc).concat(['video/logo_color.svg'], TEXTURAS, LINEA.bloques.filter((b) => b.v.logo).map((b) => b.v.logo), LINEA.lineas.filter((l) => l.robert).map((l) => 'video/stickers/' + l.robert[0] + '.png')))]
+window.__precarga = Promise.all([...new Set(LINEA.bloques.flatMap((b) => (b.v.foto ? [b.v.foto] : b.v.fotos || [])).map(fotoSrc).concat(['video/logo_color.svg'], TEXTURAS, Object.keys(window.FOTOS || {}).filter((k) => k.includes('/extra/')), LINEA.bloques.filter((b) => b.v.logo).map((b) => b.v.logo), LINEA.lineas.filter((l) => l.robert).map((l) => 'video/stickers/' + l.robert[0] + '.png')))]
   .map((src) => { const im = new Image(); im.src = src; window.__imgsLargo.push(im); return im.decode().catch(() => null); }))
   .then(() => (document.fonts && document.fonts.ready) || null).then(() => window.__imgsLargo.length);
 

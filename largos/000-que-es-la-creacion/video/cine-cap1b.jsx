@@ -171,9 +171,11 @@ ILUSC.papaya = {
   cam: { z0: 1.0, z1: 1.12, fx: 1000, fy: 640 },
   dibuja: ({ p, tl, capa }) => {
     const L2 = 0.72;                                  // empieza "la pasión no te salva…"
-    const camina = cpr(p, 0, L2 - 0.04);
-    const kx = lerp(560, 1080, camina), bam = Math.sin(tl * 6) * (p < L2 ? 1 : 0.2);
-    const papas = cpr(p, 0.32, 0.42), duele = cpr(p, L2, L2 + 0.08), rx = cpr(p, L2 + 0.06, L2 + 0.14);
+    // a empujones: avanza a tirones (empuja rápido, se detiene, vuelve a empujar)
+    const camina = cpr(p, 0, L2 - 0.04), N = 7, f = camina * N, k = Math.min(N - 1, Math.floor(f)), fr = f - k;
+    const tiron = (k + (fr < 0.35 ? kEase.suave(fr / 0.35) : 1)) / N, empujando = p < L2 && fr < 0.35;
+    const kx = lerp(420, 980, tiron);
+    const papas = cpr(p, 0.32, 0.42), cansado = cpr(p, L2, L2 + 0.08);
     return <g>
       {/* patio: pared con bugambilia, tendedero, piso de cemento */}
       <g transform={capa(0.45)}>
@@ -190,32 +192,24 @@ ILUSC.papaya = {
         <rect x={60} y={300} width={300} height={640} fill="#3a2a1e" />
         <g opacity={papas} transform={`translate(${(1 - papas) * -40} 0)`}>
           <Adulto x={170} y={940} s={0.95} camisa="#2f6a8f" boca="o" mira={[1, 0.4]} brazoD={20} t={tl} seed={5} />
-          <Adulto x={290} y={940} s={0.92} camisa="#6a4c9c" mujer boca="o" mira={[1, 0.4]} brazoI={60} brazoD={10} t={tl} seed={2} />
+          <Adulto x={290} y={940} s={0.92} camisa="#6a4c9c" mujer piel="#eccdb2" boca="o" mira={[1, 0.4]} brazoI={60} brazoD={10} t={tl} seed={2} />
         </g>
         <rect x={40} y={290} width={340} height={20} fill="#8a5a33" /><rect x={40} y={290} width={20} height={650} fill="#8a5a33" /><rect x={360} y={290} width={20} height={650} fill="#8a5a33" />
       </g>
       <g transform={capa(1)}>
         <rect x={-200} y={930} width={2320} height={300} fill="#b9b3a6" /><rect x={-200} y={930} width={2320} height={300} fill="url(#c-papel-a)" />
         {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${-200 + i * 420} 930 L ${-320 + i * 420} 1230`} stroke="#000" strokeOpacity={0.12} strokeWidth={3} />)}
-        <g transform={`translate(${kx} ${1010}) rotate(${p < L2 ? -4 + bam * 2 : lerp(-4, 14, duele)})`}>
-          <Nene x={0} y={0} s={1.1} edad={6} t={tl} playera="#e8742a" brazoD={-30} brazoI={30} mira={[-0.8, -0.3]} boca={p < L2 ? 'sonrisa' : 'ay'} seed={6} />
-          <g transform="translate(46 -36)"><Cubeta x={0} y={0} s={0.52}><g transform="rotate(12)"><Papayo x={0} y={-300} s={1.25} t={tl} seed={4} /></g></Cubeta></g>
-          {[-1, 1].map((d) => <g key={d}><ellipse cx={46 + d * 72} cy={-120} rx={17} ry={19} fill="#b77a52" /><ellipse cx={46 + d * 72} cy={-120} rx={17} ry={19} fill="url(#c-esfera)" opacity={0.6} /></g>)}
-          {/* rayos X de la espalda */}
-          {rx > 0 && <g opacity={rx}>
-            <rect x={-70} y={-330} width={140} height={210} rx={40} fill="#0d2440" opacity={0.75} />
-            {Array.from({ length: 9 }, (_, i) => <g key={i}><rect x={-14} y={-318 + i * 22} width={28} height={16} rx={5} fill="#cfe9ff" opacity={0.9} /><rect x={-26} y={-312 + i * 22} width={52} height={5} rx={2} fill="#cfe9ff" opacity={0.6} /></g>)}
-            <ellipse cx={0} cy={-170} rx={40} ry={52} fill="#ff3b2f" opacity={0.45 + 0.25 * Math.sin(tl * 8)} filter="url(#c-b8)" />
-          </g>}
-          {duele > 0 && [0, 1, 2].map((k) => <path key={k} d={`M ${-90 - k * 14} ${-430 + k * 20} q -12 -18 -4 -34`} stroke="#bfe6ff" strokeWidth={6} fill="none" strokeLinecap="round" opacity={duele} />)}
+        {/* la cubeta con la papaya, en el piso, y el niño empujándola */}
+        <g transform={`translate(${kx + 250} 1010)`}><Cubeta x={0} y={0} s={0.62}><g transform={`rotate(${empujando ? 4 : 0})`}><Papayo x={0} y={-300} s={1.25} t={tl} seed={4} /></g></Cubeta>
+          {empujando && [0, 1, 2, 3].map((d) => <circle key={d} cx={-70 - d * 30} cy={-6 - d * 4} r={14 + d * 8} fill="#d9cdb8" opacity={0.5 - d * 0.1} />)}</g>
+        <g transform={`translate(${kx} 1010) rotate(${p < L2 ? (empujando ? 16 : 9) : lerp(9, 0, cansado)} 0 0)`}>
+          <Nene x={0} y={0} s={1.1} edad={6} t={tl} playera="#e8742a" brazoD={p < L2 ? 84 : 20} brazoI={p < L2 ? -64 : -20} mira={[1, p < L2 ? 0 : -0.5]} boca={p < L2 ? (empujando ? 'ay' : 'sonrisa') : 'o'} cejas={empujando ? 1 : 0} seed={6} />
+          {cansado > 0 && [0, 1, 2].map((d) => <path key={d} d={`M ${-90 - d * 14} ${-430 + d * 20} q -12 -18 -4 -34`} stroke="#bfe6ff" strokeWidth={6} fill="none" strokeLinecap="round" opacity={cansado} />)}
         </g>
       </g>
       <Tinte color="#ffcf8a" o={0.12} />
       <Polvo n={40} t={tl} seed={71} o={0.5} />
       <Rotulo x={120} y={190} arriba="A LOS CINCO O SEIS AÑOS" texto="Una papaya de 20 litros" tl={tl} at={0.5} tam={52} />
-      {rx > 0 && <g opacity={rx}><path d={`M ${kx + 70} 660 L ${kx + 260} 560`} stroke="#fff" strokeWidth={2.5} />
-        <text x={kx + 270} y={556} fontFamily={FUENTE.mono} fontWeight={700} fontSize={24} letterSpacing={4} fill="#ff9c8a">ZONA LUMBAR</text>
-        <text x={kx + 270} y={600} fontFamily={FUENTE.serif} fontStyle="italic" fontSize={36} fill="#fff">pura pasión… y dolor</text></g>}
     </g>;
   },
 };
@@ -281,8 +275,8 @@ function Etiq({ x, y, nombre, comun, rot = -3 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot})`}>
     <path d="M -12 0 L -12 60 L 0 74 L 12 60 L 12 0 Z" fill="#f6f1e4" />
     <rect x={-80} y={-70} width={160} height={74} rx={4} fill="#f6f1e4" /><rect x={-80} y={-70} width={160} height={74} rx={4} fill="url(#c-papel-a)" />
-    <text x={0} y={-40} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontWeight={600} fontSize={22} fill="#1d2a1a">{nombre}</text>
-    <text x={0} y={-12} textAnchor="middle" fontFamily={FUENTE.mano} fontWeight={700} fontSize={22} fill="#5a4a3a">{comun}</text>
+    <text x={0} y={-40} textAnchor="middle" fontFamily={FUENTE.serif} fontStyle="italic" fontWeight={600} fontSize={Math.min(22, 250 / nombre.length)} fill="#1d2a1a">{nombre}</text>
+    <text x={0} y={-12} textAnchor="middle" fontFamily={FUENTE.mano} fontWeight={700} fontSize={Math.min(22, 300 / comun.length)} fill="#5a4a3a">{comun}</text>
   </g>;
 }
 ILUSC.coleccion = {

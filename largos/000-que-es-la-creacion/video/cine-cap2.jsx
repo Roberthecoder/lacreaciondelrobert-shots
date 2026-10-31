@@ -125,7 +125,7 @@ ILUSC.tablet = {
 };
 
 /* ---------- numismático (a nivel niño): el bote de monedas, la de plata y el imán ---------- */
-function Moneda2({ x, y, r = 40, tipo = 'cobre', rot = 0, inclina = 1, brillo = 0, t = 0, seed = 1 }) {
+function Moneda2({ x, y, r = 40, tipo = 'cobre', rot = 0, inclina = 1, brillo = 0, t = 0, seed = 1, diseno }) {
   const col = { cobre: ['#b46a3a', '#e3a372', '#7a3f1e'], niquel: ['#9aa1a8', '#e3e8ec', '#5d646b'], plata: ['#c9d0d8', '#ffffff', '#7d8690'], acero: ['#7d8389', '#c9ced3', '#4a4f55'], bronce: ['#a8823a', '#e8c878', '#6a4c18'] }[tipo];
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(1 ${inclina})`}>
     <ellipse cx={3} cy={6} rx={r} ry={r} fill="#000" opacity={0.35} filter="url(#c-b2)" />
@@ -135,12 +135,20 @@ function Moneda2({ x, y, r = 40, tipo = 'cobre', rot = 0, inclina = 1, brillo = 
     <circle r={r * 0.94} fill={`url(#c-mon-${tipo})`} opacity={0.85} />
     <circle r={r * 0.8} fill="none" stroke={col[2]} strokeWidth={r * 0.04} opacity={0.6} />
     {Array.from({ length: 28 }, (_, i) => <circle key={i} cx={Math.cos((i / 28) * 6.28) * r * 0.87} cy={Math.sin((i / 28) * 6.28) * r * 0.87} r={r * 0.03} fill={col[1]} opacity={0.7} />)}
+    {diseno === 'resplandor' ? <g transform={`scale(${r / 40})`}>
+      {Array.from({ length: 23 }, (_, i) => { const a = (-170 + i * 7.7) * Math.PI / 180; return <path key={i} d={`M ${Math.cos(a) * 8} ${Math.sin(a) * 8 - 2} L ${Math.cos(a) * 26} ${Math.sin(a) * 26 - 2}`} stroke={col[2]} strokeWidth={1.1} opacity={0.75} />; })}
+      <path d="M -11 8 Q -14 -6 -4 -12 Q 6 -16 10 -8 Q 14 -2 12 6 Q 0 10 -11 8 Z" fill={col[1]} stroke={col[2]} strokeWidth={0.8} />
+      <path d="M -11 3 Q 0 0 12 2" stroke={col[2]} strokeWidth={0.8} fill="none" />
+      <text x={0} y={7} textAnchor="middle" fontFamily={FUENTE.texto} fontWeight={800} fontSize={3.6} fill={col[2]}>LIBERTAD</text>
+      <path id={`c-arco-${seed}`} d="M -30 6 A 30 30 0 0 0 30 6" fill="none" />
+      <text fontFamily={FUENTE.serif} fontWeight={700} fontSize={6} fill={col[2]} opacity={0.85}><textPath href={`#c-arco-${seed}`} startOffset="50%" textAnchor="middle">50 CENTAVOS</textPath></text>
+    </g> : <g>
     {/* águila en relieve (simplificada) */}
     <g transform={`scale(${r / 40})`} opacity={0.75}>
       <path d="M -14 8 Q -20 -6 -8 -14 Q -2 -22 6 -16 Q 18 -14 16 0 Q 22 6 12 10 Q 2 18 -14 8 Z" fill={col[2]} opacity={0.5} />
       <path d="M -13 6 Q -18 -6 -7 -13 Q -1 -20 6 -15" stroke={col[1]} strokeWidth={1.6} fill="none" />
       <path d="M -18 16 Q 0 24 18 16" stroke={col[2]} strokeWidth={2} fill="none" />
-    </g>
+    </g></g>}
     {brillo > 0 && <g><path d={`M ${-r * 1.6} 0 L ${r * 1.6} 0 M 0 ${-r * 1.6} L 0 ${r * 1.6}`} stroke="#fff" strokeWidth={3} opacity={brillo * (0.6 + 0.4 * Math.sin(t * 6))} filter="url(#c-b2)" /><circle r={r * 0.6} fill="#fff" opacity={brillo * 0.35} filter="url(#c-b8)" /></g>}
   </g>;
 }
@@ -159,21 +167,26 @@ ILUSC.monedas = {
         <Halo x={700} y={300} r={700} color="#ffd9a0" o={0.5} />
       </g>
       <g transform={capa(1)}>
-        {/* el bote de lata volteado */}
-        <g transform="translate(360 470) rotate(-74)">
-          <rect x={-130} y={-180} width={260} height={360} fill="url(#c-acero)" />
-          {Array.from({ length: 6 }, (_, i) => <rect key={i} x={-130} y={-160 + i * 60} width={260} height={6} fill="#000" opacity={0.15} />)}
-          <rect x={-130} y={-60} width={260} height={140} fill="#c0392b" opacity={0.85} /><text x={0} y={30} textAnchor="middle" fontFamily={FUENTE.serif} fontWeight={700} fontSize={56} fill="#f3ead6">CAFÉ</text>
-          <ellipse cx={0} cy={180} rx={130} ry={36} fill="#2a2a30" />
+        {/* la taza de bronce volteada */}
+        <g transform="translate(400 560) rotate(-68)">
+          <ellipse cx={0} cy={-190} rx={150} ry={40} fill="#3a2410" />
+          <path d="M -150 -190 Q -160 60 -60 120 L 60 120 Q 160 60 150 -190 Z" fill="url(#c-laton)" />
+          <path d="M -150 -190 Q -160 60 -60 120 L 60 120 Q 160 60 150 -190 Z" fill="#7a4a1a" opacity={0.35} />
+          <path d="M -150 -190 Q -160 60 -60 120 L 60 120 Q 160 60 150 -190 Z" fill="url(#c-cilindro)" />
+          {[0, 1, 2].map((k) => <path key={k} d={`M ${-146 + k * 4} ${-150 + k * 40} Q 0 ${-130 + k * 40} ${146 - k * 4} ${-150 + k * 40}`} stroke="#5a3410" strokeWidth={3} fill="none" opacity={0.5} />)}
+          <path d="M 150 -120 Q 250 -110 240 -20 Q 230 50 140 40" stroke="url(#c-laton)" strokeWidth={26} fill="none" />
+          <ellipse cx={0} cy={-190} rx={150} ry={40} fill="none" stroke="#e8c070" strokeWidth={8} />
+          <rect x={-70} y={120} width={140} height={22} rx={6} fill="url(#c-laton)" />
+          <path d="M -120 -160 Q -130 0 -60 90" stroke="#fff" strokeWidth={12} opacity={0.3} fill="none" />
         </g>
         {pila.map((m) => { const imantada = m.tipo === 'acero' || (m.tipo === 'niquel' && m.i % 4 === 0);
           const k = imantada ? pega : 0, mx = lerp(m.x, ix + ((m.i % 7) - 3) * 30, k), my = lerp(m.y, iy + 120 + ((m.i % 5) - 2) * 12, k);
           return <Moneda2 key={m.i} x={mx} y={my} r={m.rad} tipo={m.tipo} rot={m.rot} inclina={lerp(m.inc, 1, k)} />; })}
         {/* la moneda de plata */}
         <g opacity={1}>
-          <Moneda2 x={lerp(1100, 1300, plata)} y={lerp(700, 520, plata)} r={lerp(44, 120, plata)} tipo="plata" rot={lerp(20, -8, plata) + Math.sin(tl) * 3} inclina={lerp(0.45, 1, plata)} brillo={cpr(p, 0.3, 0.36)} t={tl} />
+          <Moneda2 x={lerp(1100, 1300, plata)} y={lerp(700, 520, plata)} r={lerp(44, 120, plata)} tipo="plata" diseno="resplandor" seed={501} rot={lerp(20, -8, plata) + Math.sin(tl) * 3} inclina={lerp(0.45, 1, plata)} brillo={cpr(p, 0.3, 0.36)} t={tl} />
           {plata > 0.9 && <g opacity={cpr(p, 0.45, 0.5)} style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,.7))' }}>
-            <path d="M 1340 640 L 1430 750" stroke="#fff" strokeWidth={2.5} /><text x={1440} y={782} fontFamily={FUENTE.mono} fontWeight={700} fontSize={24} letterSpacing={4} fill="#e8eef4">PLATA</text>
+            <path d="M 1340 640 L 1430 750" stroke="#fff" strokeWidth={2.5} /><text x={1440} y={782} fontFamily={FUENTE.mono} fontWeight={700} fontSize={24} letterSpacing={4} fill="#e8eef4">50 CENTAVOS · PLATA</text>
             <text x={1440} y={822} fontFamily={FUENTE.serif} fontStyle="italic" fontSize={34} fill="#fff">no se pega al imán</text></g>}
         </g>
         {/* imán de herradura */}
@@ -189,7 +202,7 @@ ILUSC.monedas = {
       <Polvo n={50} t={tl} seed={141} o={0.6} />
       <Tinte color="#ffb35a" o={0.12} />
       <g opacity={1 - cpr(p, 0.27, 0.31)}><Rotulo x={120} y={190} arriba="EL CAMINO QUE POCOS CONOCEN" texto="Numismático" sub="a nivel niño, claro" tl={tl} at={0.4} tam={64} /></g>
-      <g opacity={cpr(p, 0.3, 0.34) * (1 - cpr(p, 0.58, 0.62))}><Rotulo x={120} y={190} arriba="EN EL BOTE DE MI PAPÁ" texto="Una moneda de plata" tl={tl} at={0} tam={58} /></g>
+      <g opacity={cpr(p, 0.3, 0.34) * (1 - cpr(p, 0.58, 0.62))}><Rotulo x={120} y={190} arriba="ENTRE LAS MONEDAS DE MI PAPÁ" texto="Una moneda de plata" tl={tl} at={0} tam={58} /></g>
       <g opacity={cpr(p, 0.62, 0.66)}><Rotulo x={120} y={190} arriba="EL TRUCO DEL IMÁN" texto="El acero se pega; la plata, no" tl={tl} at={0} tam={52} /></g>
     </g>;
   },
@@ -225,7 +238,7 @@ ILUSC.tianguis = {
         <rect x={-200} y={140} width={1000} height={900} fill="#ff5a8a" opacity={0.06} />
         <rect x={-200} y={880} width={2320} height={300} fill="#8d8476" /><rect x={-200} y={880} width={2320} height={300} fill="url(#c-papel-a)" />
         {/* Don Joaquín detrás de su mesa de antigüedades */}
-        <Adulto x={330} y={890} s={1.0} piel="#a87048" camisa="#d9cbb0" pantalon="#4a4036" canas={0.85} bigote sombrero="gorra" boca="sonrisa" mira={[1, 0.4]} brazoD={30 + 10 * Math.sin(tl * 1.5)} t={tl} seed={21} />
+        <Adulto x={330} y={890} s={1.0} piel="#a87048" camisa="#d9cbb0" pantalon="#4a4036" canas={0.85} bigote boca="sonrisa" mira={[1, 0.4]} brazoD={30 + 10 * Math.sin(tl * 1.5)} t={tl} seed={21} />
         <rect x={60} y={700} width={720} height={26} fill="url(#c-madera-media)" /><rect x={60} y={726} width={720} height={170} fill="#3a2a22" />
         {/* terciopelo con monedas, llaves antiguas, radio y discos */}
         <rect x={100} y={660} width={300} height={46} fill="#5a1a2a" /><rect x={100} y={660} width={300} height={46} fill="url(#c-arriba)" />
@@ -291,8 +304,10 @@ ILUSC.jardin_vertical = {
         {/* la familia ayudando */}
         <g transform="translate(330 0)"><rect x={-70} y={330} width={14} height={590} fill="url(#c-acero)" /><rect x={56} y={330} width={14} height={590} fill="url(#c-acero)" />{Array.from({ length: 7 }, (_, k) => <rect key={k} x={-70} y={400 + k * 80} width={140} height={10} fill="url(#c-acero)" />)}</g>
         <Adulto x={330} y={830} s={0.92} camisa="#2f6a8f" brazoD={150 + 10 * Math.sin(tl * 2)} brazoI={30} mira={[1, -0.6]} t={tl} seed={5} />
-        <Adulto x={1720} y={960} s={0.95} camisa="#6a4c9c" mujer brazoD={20} brazoI={70} mira={[-1, -0.3]} t={tl} seed={2}
+        <Adulto x={1720} y={960} s={0.95} camisa="#6a4c9c" mujer piel="#eccdb2" brazoD={20} brazoI={70} mira={[-1, -0.3]} t={tl} seed={2}
           carga={<g transform="translate(-60 -200)"><Huacal x={0} y={0} w={180} h={90}>{[0, 1, 2].map((k) => <HierbaOlor key={k} x={-50 + k * 50} y={-70} s={0.3} t={tl + k} seed={k + 30} />)}</Huacal></g>} />
+        <Nene x={1300} y={1000} s={0.8} edad={7} t={tl} nina piel="#e6c3a5" pelo="#3a2416" playera="#e8467c" rayas={false} brazoD={100} brazoI={20} mira={[1, -0.6]} boca="risa" seed={19}
+          detalle={<g transform="translate(10 -210)"><HierbaOlor x={0} y={0} s={0.24} t={tl} seed={45} /></g>} />
         <Nene x={1500} y={990} s={0.95} edad={11} t={tl} playera="#f4c23a" brazoD={110} brazoI={100} mira={[-1, -0.8]} boca="risa" seed={13}
           detalle={<g transform="translate(-10 -230)"><HierbaOlor x={0} y={0} s={0.3} t={tl} seed={44} /></g>} />
       </g>
@@ -340,7 +355,8 @@ ILUSC.periodico = {
               <rect x={0} y={0} width={480} height={380} fill="#9a958a" />
               <Tablon x={0} y={250} w={480} prof={20} grosor={20} madera="clara" />
               {[0, 1, 2].map((k) => <MacetaC key={k} x={300 + k * 70} y={256} w={60} h={52}><Mammillaria x={0} y={-48} s={0.3} t={0} /></MacetaC>)}
-              <Nene x={160} y={430} s={0.95} edad={11} playera="#e9e9e9" rayas={false} boca="sonrisa" mira={[0.3, 0]} seed={14} brazoD={10} brazoI={-10} />
+              <Nene x={160} y={430} s={0.95} edad={11} playera="#e9e9e9" rayas={false} boca="sonrisa" mira={[0.3, 0]} seed={14} brazoD={10} brazoI={-10}
+                detalle={<g>{[-1, 0, 1].map((d) => <g key={d}><path d={`M ${d * 22 - 20} -195 L ${d * 26} ${-120 + Math.abs(d) * 12} L ${d * 22 + 20} -195`} stroke="#555" strokeWidth={8} fill="none" /><circle cx={d * 26} cy={-104 + Math.abs(d) * 12} r={20} fill={d ? '#d9d9d9' : '#f0f0f0'} stroke="#777" strokeWidth={3} /></g>)}</g>} />
             </g>
             {Array.from({ length: 48 }, (_, i) => <rect key={i} x={0} y={i * 8} width={480} height={2} fill="#000" opacity={0.05} />)}
             <text x={0} y={406} fontFamily={FUENTE.serif} fontStyle="italic" fontSize={18} fill="#444">Recreación ilustrada.</text>
@@ -351,6 +367,9 @@ ILUSC.periodico = {
       </g>
       <Tinte color="#ffcf8a" o={0.1} />
       <Polvo n={40} t={tl} seed={171} o={0.5} />
+      {(() => { const o = cpr(p, 0.62, 0.72); const hay = (window.FOTOS || {})['video/img/extra/mural_nota.jpg']; return hay && o > 0 && <g>
+        <rect x={0} y={0} width={1920} height={1080} fill="#0b0b0d" opacity={0.7 * o} />
+        <FotoReal src="video/img/extra/mural_nota.jpg" x={960} y={480} maxW={1300} maxH={720} o={o} etiqueta="LA NOTA ORIGINAL · MURAL, 8 DE JULIO DE 2017" /></g>; })()}
       {credito && <text x={1880} y={900} textAnchor="end" fontFamily={FUENTE.mono} fontSize={18} fill="#fff" opacity={0.8} style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.9))' }}>{credito}</text>}
     </g>;
   },

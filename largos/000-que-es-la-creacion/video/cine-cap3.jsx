@@ -124,7 +124,7 @@ ILUSC.kits = {
       <EscritorioNoche capa={capa} tl={tl} lampara={[1600, 120]} pared="#3a2f45" />
       <g transform={capa(1)}>
         <KitCaja x={640} y={820} color="#e8467c" nombre="Seta rosa" cientifico="Pleurotus djamor" t={tl} seed={3} abierta={cpr(p, 0.5, 0.7)} />
-        <KitCaja x={1220} y={830} color="#5b7aa8" nombre={'Seta "azul"'} cientifico="Pleurotus ostreatus" t={tl} seed={7} abierta={cpr(p, 0.6, 0.8)} />
+        <KitCaja x={1220} y={830} color="#5b7aa8" nombre={'Seta "azul"'} cientifico="P. ostreatus var. columbinus" t={tl} seed={7} abierta={cpr(p, 0.6, 0.8)} />
         {/* atomizador */}
         <g transform="translate(1630 830)"><Sombra x={0} y={4} rx={70} ry={10} o={0.5} /><path d="M -50 0 L -50 -170 Q -50 -200 -20 -200 L 20 -200 Q 50 -200 50 -170 L 50 0 Z" fill="#dff1f5" opacity={0.55} /><rect x={-50} y={-140} width={100} height={140} fill="#7fc4ff" opacity={0.35} /><path d="M -50 0 L -50 -170 Q -50 -200 -20 -200 L 20 -200 Q 50 -200 50 -170 L 50 0 Z" fill="url(#c-vidrio)" />
           <rect x={-22} y={-250} width={44} height={50} fill="#f6f6f6" /><path d="M 22 -244 L 70 -250 L 70 -236 L 22 -230 Z" fill="#f6f6f6" /><path d="M -10 -250 L -30 -200" stroke="#f6f6f6" strokeWidth={8} /></g>
@@ -191,19 +191,19 @@ ILUSC.seta_azul = {
               <Halo x={cx} y={150} r={520} color={luz} o={k ? 0.75 : 0.5} />
               <BolsaCultivo x={cx} y={1000} w={420} h={520}>
                 <Primordios x={-70} y={-380} n={22} r0={11} color={k ? '#4f73a8' : '#8f8d88'} seed={31} g={1} />
-                <Racimo x={60} y={-300} n={6} tam={130} color={k ? '#7d90a8' : gris} g={0.9} t={tl} seed={32} />
+                <Racimo x={60} y={-300} n={6} tam={130} color={k ? '#9a9da2' : gris} g={0.9} t={tl} seed={32} />
               </BolsaCultivo>
               {k === 1 && <Rayos x={cx} y={120} ang={90} abre={50} largo={900} n={5} ancho={90} color="#e8f2ff" o={0.6} t={tl} seed={33} />}
             </g>
             <rect x={cx - 400} y={170} width={800} height={720} rx={8} fill="none" stroke="#fff" strokeOpacity={0.25} strokeWidth={2} />
             <text x={cx} y={140} textAnchor="middle" fontFamily={FUENTE.mono} fontWeight={700} fontSize={26} letterSpacing={6} fill={k ? '#bfe0ff' : '#ffcf8a'}>{k ? 'LUZ IDEAL' : 'EN CASA'}</text>
             <g opacity={cpr(p, 0.45 + k * 0.08, 0.5 + k * 0.08)}><path d={`M ${cx - 70} 400 L ${cx - 200} 300`} stroke="#fff" strokeWidth={2.5} />
-              <text x={cx - 210} y={290} textAnchor="end" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={30} fill="#fff">{k ? 'primordios azulados' : 'primordios grises'}</text></g>
+              <text x={cx - 210} y={290} textAnchor="end" fontFamily={FUENTE.serif} fontStyle="italic" fontSize={30} fill="#fff">{k ? 'primordios azulados; la seta adulta, gris' : 'primordios grises'}</text></g>
           </g>; })}
       </g>
       <g opacity={fin}><rect x={0} y={0} width={1920} height={1080} fill="#07080b" opacity={0.6} /><Rotulo x={960} y={430} arriba="EN CASA, CASI NUNCA HAY LUZ IDEAL" texto="Funciona, pero no es óptima" alinear="middle" tl={tl} at={0} tam={72} /></g>
       <Polvo n={40} t={tl} seed={211} o={0.5} />
-      <g opacity={1 - compara}><Rotulo x={120} y={190} arriba="PLEUROTUS OSTREATUS" texto={'La seta "azul"'} tl={tl} at={0.3} tam={64} acento="#9fc4ff" /></g>
+      <g opacity={1 - compara}><Rotulo x={120} y={190} arriba="PLEUROTUS OSTREATUS VAR. COLUMBINUS" texto={'La seta "azul"'} tl={tl} at={0.3} tam={64} acento="#9fc4ff" /></g>
     </g>;
   },
 };

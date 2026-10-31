@@ -30,7 +30,7 @@ Hasta que los convencí. En ese entonces tenía muchas plántulas de jitomate en
 Así que sacamos una mesa con mis plantas, casi todas de jitomate… y cuál fue nuestra sorpresa cuando pasó un señor y las compró todas.
 Ese fue mi comienzo como emprendedor.
 Para ayudarme a cumplir mi sueño, y la demanda, empezamos a comprar plantas de olor al mayoreo y a revenderlas al menudeo.
-Además, yo seguí sembrando lo mío. Sin embargo, un día, con cinco o seis años, mis papás me vieron cargando una planta de papaya en un bote reusado de detergente de veinte litros.
+Además, yo seguí sembrando lo mío. Sin embargo, un día, con cinco o seis años, mis papás me vieron moviendo a empujones una planta de papaya en un bote reusado de detergente de veinte litros.
 Era pura pasión, pero la pasión no te salva de lastimarte la espalda.
 Así que, para cuidarme de macetas tan grandes, me encaminaron hacia las plantas de colección: cactus, suculentas y plantas carnívoras, mucho más manejables para un niño.
 
@@ -42,10 +42,11 @@ En segundo de primaria gané una tablet en un concurso de escritura de Librería
 [EN PANTALLA: "ups"]
 Hice dos videos: uno de jitomate, que todavía existe, y uno de maíz pozolero morado, que se perdió para siempre cuando pasamos el canal a mi propia cuenta.
 Ese canal, que existe desde enero de 2015, es el mismo que estás viendo. Nunca murió: solo se durmió.
-El segundo camino, las letras. En 2016 quedé entre los finalistas del concurso Pequeño Gran Escritor con un cuento, La bellota abandonada, y lo publicaron en un librito junto con los cuentos de otros cincuenta niños y niñas.
+El segundo camino, las letras. En 2016, con un cuento, La bellota abandonada, quedé entre los finalistas del concurso Pequeño Gran Escritor, y después entre los ganadores: lo publicaron en el libro de los ganadores.
 El tercero, los números. Gracias a lo bien que me preparó mi mamá desde el kínder, las matemáticas se me daban.
 En 2016, en quinto de primaria, fui a mi primera olimpiada, la ONMAPS, y gané oro estatal. Al año siguiente, otra vez oro. Eso sí: nunca logré pasar a la ONMAPS nacional.
-En 2017, en la primera Olimpiada Mexicana de Matemáticas para Educación Básica, me quedé a un punto del oro: plata nacional. Eso me llevó a entrenar en Monterrey como preselección para una competencia en Bulgaria.
+En 2017, en la primera Olimpiada Mexicana de Matemáticas para Educación Básica, me quedé a un punto del oro: plata nacional.
+Eso me llevó a entrenar en Monterrey como preselección para una competencia en Bulgaria.
 Y un camino que poca gente conoce: fui numismático. A nivel niño, claro.
 Entre cientos de monedas antiguas que mi papá guardaba en un bote, un día encontré una de plata. Quedé fascinado, y empecé a recorrer los tianguis cazando más monedas, sobre todo de plata… con un imán.
 En el tianguis Miramar me hice amigo de Don Joaquín, un señor que vendía monedas, entre otras antigüedades. Iba casi cada fin de semana a ver qué monedas nuevas había traído.
@@ -70,10 +71,12 @@ Ahí empezó todo. Aprendí y aprendí, hasta llegar a técnicas de laboratorio,
 
 En secundaria, las olimpiadas me llevaron más lejos, aunque no todo fue perfecto.
 En 2018 quedé en segundo lugar estatal en la ONMAPS. Me desanimé. Pero ante un fallo, lo que toca es esforzarse y probar suerte de nuevo.
-En primero de secundaria gané bronce internacional en SASMO, una olimpiada de Singapur. Su primera etapa es remota: la presenté en la Torre de Educación de la Secretaría de Educación Jalisco, junto con muchos otros estudiantes. La segunda es presencial, y en esa ocasión me llevó a competir en Vietnam, en una competencia llamada SINGA, donde obtuve una mención honorífica para México.
-En segundo gané plata. Y ese mismo año, en la ONMAPS, aquel segundo lugar por fin se convirtió en primer lugar estatal.
+En primero de secundaria gané bronce internacional en SASMO, una olimpiada de Singapur. Su primera etapa es remota: la presenté en la Torre de Educación de la Secretaría de Educación Jalisco, junto con muchos otros estudiantes.
+La segunda es presencial, y en esa ocasión me llevó a competir en Vietnam, en una competencia llamada SINGA, donde obtuve una mención honorífica para México.
+En segundo gané plata en SASMO.
+Y ese mismo año volví a ganar el primer lugar estatal en la ONMAPS… aunque por ese lado nunca pasé a la nacional.
 En tercero, oro en SASMO. Ese oro me habría llevado a Singapur… pero estábamos en plena pandemia.
-Ese mismo año probé por primera vez VANDA, una competencia de ciencias: bronce en la primera etapa y plata internacional en la segunda, a distancia por la pandemia.
+Ese mismo año probé por primera vez VANDA, una competencia de ciencias. Gané bronce en la primera etapa; la segunda tenía dos partes, una individual y otra en equipo, y en la primera gané plata internacional, a distancia por la pandemia.
 Y tengo que reconocer que no soy el más brillante en matemáticas. En mi tiempo en las olimpiadas conocí verdaderos titanes.
 Pero también tengo que reconocer que trabajar solamente con matemáticas nunca fue mi pasión; quizá, si lo fuera, habría llegado más lejos en ese ámbito.
 Lo que sí puedo decir es que me ayudaron a entender los números como un medio, no como un fin, para llegar a mis objetivos. Y la investigación está llena de ellos.

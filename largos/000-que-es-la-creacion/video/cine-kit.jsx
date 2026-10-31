@@ -429,7 +429,7 @@ function Maceta({ x, y, w = 160, h = 140, tipo = 'barro', color = '#2b6fd6', s =
 // Robert de niño (y otros niños). (x,y) = pies. s = escala (1 ≈ 3 años, 360 px).
 // cuerpo: 'completo' | 'busto' (solo de pecho para arriba). brazoD/brazoI en grados (0 = abajo, 90 = al frente/arriba).
 function Nene({ x, y, s = 1, piel = '#b77a52', pelo = '#1a1311', playera = '#e8742a', pantalon = '#2e4d84', zapatos = '#3b2a22', brazoD = 10, brazoI = -10,
-  boca = 'sonrisa', mira = [0, 0], cejas = 0, t = 0, lentes = false, edad = 3, detalle, cuerpo = 'completo', parpadeo = true, seed = 1, rayas = true, espalda = false, mochila = null, cuello = null }) {
+  boca = 'sonrisa', mira = [0, 0], cejas = 0, t = 0, lentes = false, edad = 3, detalle, cuerpo = 'completo', parpadeo = true, seed = 1, rayas = true, espalda = false, mochila = null, cuello = null, nina = false }) {
   const k = edad <= 4 ? 1 : edad <= 8 ? 1.15 : 1.3; // cuerpo más largo con la edad
   const cab = edad <= 4 ? 78 : edad <= 8 ? 72 : 66;
   const hT = -150 * k, hC = hT - 40 - cab; // altura del torso y del centro de la cabeza
@@ -472,6 +472,7 @@ function Nene({ x, y, s = 1, piel = '#b77a52', pelo = '#1a1311', playera = '#e87
     {/* cabeza */}
     <g transform={`rotate(${rot} 0 ${hC + cab})`}>
       <rect x={-16} y={hC + cab - 16} width={32} height={40} fill={osc(piel, 0.15)} />
+      {nina && <path d={`M ${-cab * 1.02} ${hC - cab * 0.2} Q ${-cab * 1.18} ${hC + cab * 1.1} ${-cab * 0.7} ${hC + cab * 1.5} L ${cab * 0.7} ${hC + cab * 1.5} Q ${cab * 1.18} ${hC + cab * 1.1} ${cab * 1.02} ${hC - cab * 0.2} Z`} fill={pelo} />}
       {[-1, 1].map((d) => <g key={d}><ellipse cx={d * cab * 0.98} cy={hC + 6} rx={14} ry={20} fill={piel} /><ellipse cx={d * cab * 0.98} cy={hC + 6} rx={7} ry={11} fill={osc(piel, 0.25)} /></g>)}
       <ellipse cx={0} cy={hC} rx={cab * 0.95} ry={cab} fill={piel} />
       <ellipse cx={0} cy={hC} rx={cab * 0.95} ry={cab} fill="url(#c-cara)" />
@@ -571,6 +572,21 @@ function Adulto({ x, y, s = 1, piel = '#a86f48', pelo = '#241a14', canas = 0, ca
   </g>;
 }
 
+/* ============ foto real (opcional) ============ */
+// Muestra una foto real si existe en fotos.js (video/img/extra/...). Si todavía no está, no dibuja nada.
+function FotoReal({ src, x = 960, y = 500, maxW = 1100, maxH = 700, rot = -1.5, o = 1, etiqueta, acento = '#F4C25A' }) {
+  const dim = (window.FOTOS || {})[src];
+  if (!dim || o <= 0) return null;
+  const k = Math.min(maxW / dim[0], maxH / dim[1]), w = dim[0] * k, h = dim[1] * k;
+  return <g opacity={o} transform={`translate(${x} ${y + (1 - o) * 30}) rotate(${rot})`}>
+    <rect x={-w / 2 - 18} y={-h / 2 - 18} width={w + 36} height={h + 36} fill="#000" opacity={0.5} transform="translate(14 22)" />
+    <rect x={-w / 2 - 14} y={-h / 2 - 14} width={w + 28} height={h + 28} fill="#f3efe6" />
+    <image href={src} x={-w / 2} y={-h / 2} width={w} height={h} preserveAspectRatio="none" />
+    {etiqueta && <g transform={`translate(${-w / 2} ${h / 2 + 64})`}><rect x={0} y={-30} width={6} height={42} fill={acento} />
+      <text x={20} y={0} fontFamily={FUENTE.mono} fontWeight={700} fontSize={24} letterSpacing={4} fill="#fff" style={{ filter: 'drop-shadow(0 2px 6px rgba(0,0,0,.8))' }}>{etiqueta}</text></g>}
+  </g>;
+}
+
 /* ============ rótulos de documental ============ */
 // Rótulo tipo documental: línea pequeña en mayúsculas + texto en serif, con una raya que se dibuja.
 function Rotulo({ x = 120, y = 150, arriba, texto, sub, tl, at = 0.3, color = '#fff', acento = '#F4C25A', alinear = 'start', tam = 64 }) {
@@ -596,6 +612,6 @@ function NotaMano({ x, y, texto, tl, at = 0, tam = 54, color = '#fff', rot = -4,
 Object.assign(window, {
   CineDefs, CW, CH, FUENTE, cpr, cpop, suave3, mix, osc, cla, R, lerp, TEX,
   Sombra, Rayos, Polvo, Bokeh, Desenfoque, Papel, Tinte, Halo, Tablon, Puerta, Azulejo, Pared,
-  Semilla, Monton, Frasco, Tapa, Trapito, Hoja, Tallo, PlantulaFrijol, MataJitomate, HierbaOlor, MacetaC: Maceta, Nene, Adulto, Rotulo, NotaMano,
+  Semilla, Monton, Frasco, Tapa, Trapito, Hoja, Tallo, PlantulaFrijol, MataJitomate, HierbaOlor, MacetaC: Maceta, Nene, Adulto, Rotulo, NotaMano, FotoReal,
   ILUSC: window.ILUSC || {},
 });

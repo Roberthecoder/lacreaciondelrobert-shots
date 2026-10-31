@@ -12,6 +12,8 @@ const ilus = [...fs.readFileSync(path.join(AQUI, 'ilustraciones.jsx'), 'utf8').m
   ...fs.readFileSync(path.join(AQUI, 'ilustraciones2.jsx'), 'utf8').matchAll(/^\s{2}(\w+): \(\{/gm)].map((m) => m[1]);
 for (const f of fs.readdirSync(AQUI).filter((f) => /^ilustraciones\d+\.jsx$/.test(f) && f !== 'ilustraciones2.jsx'))
   ilus.push(...[...fs.readFileSync(path.join(AQUI, f), 'utf8').matchAll(/^\s{2}(\w+): \(\{/gm)].map((m) => m[1]));
+for (const f of fs.readdirSync(AQUI).filter((f) => /^cine-.*\.jsx$/.test(f)))
+  ilus.push(...[...fs.readFileSync(path.join(AQUI, f), 'utf8').matchAll(/ILUSC\.(\w+) = /g)].map((m) => m[1]));
 
 const guion = fs.readFileSync(path.join(AQUI, '..', 'guion_final.md'), 'utf8').split('---').slice(1).join('---');
 const caps = guion.split(/^## /m).slice(1).map((b) => b.split('\n').slice(1).map((l) => l.trim()).filter((l) => l && !l.startsWith('[')));
