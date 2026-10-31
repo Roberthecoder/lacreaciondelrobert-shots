@@ -28,7 +28,7 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - Sala casi llena (1 GB): si se suben más videos, borrar los viejos al mismo tiempo.
 
 ## PUBLICACIÓN AUTOMÁTICA (30 oct, permiso PERMANENTE de Robert: «Apruebo tu permiso de GitHub»)
-- `.github/workflows/publicar-diario.yml`: cada día 2:43 pm CDMX (respaldos cada hora hasta 11:13 pm, reintenta redes caídas, recupera el día anterior, correo si algo no salió) publica en las 6 redes lo que toque según calendario/fecha.py,
+- `.github/workflows/publicar-diario.yml`: cada día 2:43 pm CDMX (revisión previa 7 am en modo prueba; respaldos cada 30 min hasta 11:43 pm; reintenta redes caídas; recupera el día anterior; correo si algo falla) publica en las 6 redes lo que toque según calendario/fecha.py,
   con publicar.yml y el Release borradores-voces-v4. Sin tokens de Claude. Config: `publicar/diario.json` (activo, redes, TikTok);
   saltar un shot: su clave en `publicar/pausa.txt`. Prueba en seco del 30 oct (fun-01): las 6 redes OK.
 - Robert quiere depender lo mínimo de Claude (pasará a plan Pro): el trabajador horario se apaga cuando terminen las voces.

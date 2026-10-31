@@ -3,23 +3,34 @@ name: Publicación diaria automática
 # Publica cada día en las 6 redes el/los shot(s) que tocan según calendario/fecha.py (1 shot diario; festivos en su fecha).
 # Permiso permanente de Robert (chat, 30 oct 2026). Hora: 2:43 pm de Ciudad de México (UTC−6), FIJA.
 # Blindaje (31 oct 2026, Robert: "SIEMPRE tiene que publicarse sin mi intervención"):
-#  - GitHub a veces retrasa o se salta tareas programadas: hay un intento cada hora de 3:13 a 11:13 pm. Si ya está todo
+#  - 7:00 am: revisión previa en modo prueba (no publica); si algo está roto, GitHub manda correo temprano.
+#  - GitHub a veces retrasa o se salta tareas programadas: además de las 2:43 hay 18 respaldos, cada media hora hasta 11:43 pm. Si ya está todo
 #    publicado no hacen nada (0 duplicados); si falta algo (o una red falló), lo publican / lo reintentan.
 #  - Recuperación: si el shot normal de AYER no salió, se publica hoy también (los festivos no se recuperan: perderían su fecha).
-#  - Aviso: si en el último intento (11:13 pm) algo sigue sin publicarse, el run falla y GitHub le manda un correo a Robert.
+#  - Aviso: si en el último intento (11:43 pm) algo sigue sin publicarse, el run falla y GitHub le manda un correo a Robert.
 # Apagar: "activo": false en publicar/diario.json. Saltar un shot: su clave en publicar/pausa.txt.
 on:
   schedule:
-    - cron: '43 20 * * *'   # 2:43 pm CDMX: la hora oficial
-    - cron: '13 21 * * *'   # 3:13 pm  ┐
-    - cron: '13 22 * * *'   # 4:13 pm  │
-    - cron: '13 23 * * *'   # 5:13 pm  │ respaldos: solo actúan si falta algo
-    - cron: '13 0 * * *'    # 6:13 pm  │ (las horas UTC de después de medianoche siguen siendo
-    - cron: '13 1 * * *'    # 7:13 pm  │  el mismo día en CDMX; la fecha se calcula en CDMX)
-    - cron: '13 2 * * *'    # 8:13 pm  │
-    - cron: '13 3 * * *'    # 9:13 pm  │
-    - cron: '13 4 * * *'    # 10:13 pm │
-    - cron: '13 5 * * *'    # 11:13 pm ┘ último intento: si algo falta, avisa por correo
+    - cron: '0 13 * * *'    # 7:00 am CDMX: REVISIÓN PREVIA (modo prueba, no publica): si algo está roto, correo temprano
+    - cron: '43 20 * * *'   # 2:43 pm CDMX: la hora oficial (fija)
+    - cron: '13 21 * * *'   # respaldo 3:13 pm CDMX
+    - cron: '43 21 * * *'   # respaldo 3:43 pm CDMX
+    - cron: '13 22 * * *'   # respaldo 4:13 pm CDMX
+    - cron: '43 22 * * *'   # respaldo 4:43 pm CDMX
+    - cron: '13 23 * * *'   # respaldo 5:13 pm CDMX
+    - cron: '43 23 * * *'   # respaldo 5:43 pm CDMX
+    - cron: '13 0 * * *'   # respaldo 6:13 pm CDMX
+    - cron: '43 0 * * *'   # respaldo 6:43 pm CDMX
+    - cron: '13 1 * * *'   # respaldo 7:13 pm CDMX
+    - cron: '43 1 * * *'   # respaldo 7:43 pm CDMX
+    - cron: '13 2 * * *'   # respaldo 8:13 pm CDMX
+    - cron: '43 2 * * *'   # respaldo 8:43 pm CDMX
+    - cron: '13 3 * * *'   # respaldo 9:13 pm CDMX
+    - cron: '43 3 * * *'   # respaldo 9:43 pm CDMX
+    - cron: '13 4 * * *'   # respaldo 10:13 pm CDMX
+    - cron: '43 4 * * *'   # respaldo 10:43 pm CDMX
+    - cron: '13 5 * * *'   # respaldo 11:13 pm CDMX
+    - cron: '43 5 * * *'   # respaldo 11:43 pm CDMX
   workflow_dispatch:
     inputs:
       fecha:
@@ -57,7 +68,10 @@ jobs:
           HOY="${FECHA:-$(TZ=America/Mexico_City date +%F)}"
           AYER=$(date -d "$HOY -1 day" +%F)
           HORA=$(TZ=America/Mexico_City date +%H)
-          ULTIMO=0; [ -z "$FECHA" ] && [ "$HORA" -ge 23 ] && ULTIMO=1
+          HM=$(TZ=America/Mexico_City date +%H%M)
+          ULTIMO=0; [ -z "$FECHA" ] && [ "$HM" -ge 2340 ] && ULTIMO=1
+          # Antes de las 2:43 pm nunca se publica (la hora es fija): la corrida temprana solo revisa en modo prueba.
+          if [ -z "$FECHA" ] && [ "$HM" -lt 1443 ]; then MODO=prueba; ULTIMO=1; echo "Revisión previa de la mañana (modo prueba)"; fi
           REDES=$(jq -r '.redes | join(",")' $CFG); TT=$(jq -c .tiktok $CFG)
           python3 calendario/fecha.py json > cal.json
           git fetch -q origin refs/estado/publicaciones 2>/dev/null && git show FETCH_HEAD:publicaciones.json > bit.json 2>/dev/null || echo '[]' > bit.json
