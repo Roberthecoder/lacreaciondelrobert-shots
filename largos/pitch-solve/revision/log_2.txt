@@ -1,3 +1,1 @@
-Errores de página:
-Error: <g> attribute transform: Expected number, "translate(undefined undefi…".
-Listo: revision/hoja_2.png · tiempos: 65.04, 71.27, 77.93, 82.01, 87.72, 93.99, 100.1, 106.28, 112.45, 116.75, 121.57, 125.3, 132.04, 143.34, 150.48, 154.99, 159.95
+Listo: revision/hoja_2.png · tiempos: 66.1, 73.44, 79.61, 82.82, 89.8, 95.55, 101.91, 107.96, 114.21, 117.62, 123.21, 125.98, 134.66, 146.84, 151.56, 156.36, 161.35
