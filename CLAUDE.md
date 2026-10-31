@@ -78,6 +78,7 @@ En la Sala de Shots hay una caja "Pedir videos" que guarda documentos en la coll
     `largos/doc-<NNN>-<tema>/` con `window.K_ANCHO = 1920; window.K_ALTO = 1080` en el `.dc.html` (modelo: `largos/000-que-es-la-creacion/`
     en la rama `largo/000`). Además, **3 a 5 cortos verticales** de 61–62 s con sus momentos clave, en `shots/doc-<NNN>-corte-<K>-<tema>/`,
     cada uno con gancho propio y un cierre que invite a ver el documental completo. Capítulos de YouTube en su `publicacion.md`.
+    Para que se pueda publicar con el botón de la Sala (ADMIN.md, «Documentales y videos largos 16:9»): `verificacion.md` aprobado, `publicacion.md` con `## YouTube` (título + descripción con capítulos), MP4 `<clave>.mp4` (y opcional `<clave>_portada.jpg`) en un Release, y en su ficha de la Sala `largo: true` e `idioma`.
   - `libre`: mismo estilo del canal, cualquier tema, sin numeración de serie: `shots/libre-<NN>-<tema>/`. Si no dura 61–62 s,
     `"duracion_libre": true`.
   - `formal`: sin numerar, para trabajos universitarios y convocatorias: `shots/formal-<NN>-<tema>/`. Estética sobria y profesional:
