@@ -18,7 +18,8 @@ for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.txt'))) {
   if (solo && nombre !== solo) continue;
   // "prueba@eleven_multilingual_v2.txt" usa ese modelo; sin "@", Eleven v4
   const MODEL = nombre.includes('@') ? nombre.split('@')[1] : MODELO_BASE;
-  const texto = fs.readFileSync(path.join(dir, f), 'utf8').trim().replace(/\s+/g, ' ');
+  // los párrafos se respetan (pausa natural); los espacios repetidos se juntan
+  const texto = fs.readFileSync(path.join(dir, f), 'utf8').replace(/\r/g, '').trim().replace(/[ \t]+/g, ' ').replace(/ *\n */g, '\n').replace(/\n{3,}/g, '\n\n');
   const hash = crypto.createHash('sha1').update(`${VOICE_ID}|${MODEL}|${texto}`).digest('hex').slice(0, 12);
   const mp3 = path.join(dir, nombre + '.mp3'), js = path.join(dir, nombre + '.json');
   if (fs.existsSync(js) && fs.existsSync(mp3) && JSON.parse(fs.readFileSync(js, 'utf8')).hash === hash) {
