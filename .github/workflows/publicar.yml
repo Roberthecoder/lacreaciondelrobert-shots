@@ -141,6 +141,23 @@ jobs:
           echo "VIDEO=video/$ARCH" >> "$GITHUB_ENV"
           echo "VIDEO_URL=https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/$ARCH" >> "$GITHUB_ENV"
           echo "Video: $TAG / $ARCH"
+      # Repo privado (1 nov 2026): Instagram y Threads bajan el video de una URL pública. Se sube una copia temporal al Release
+      # «publicar-tmp» del repo público Roberthecoder/roberthecoder.github.io y se borra al terminar (paso «Borrar copia pública»).
+      # Requiere el secreto PUBLICO_TOKEN (token fino con Contents: read & write solo sobre ese repo). Sin él, se usa el enlace de este repo.
+      - name: Copia pública temporal del video
+        env:
+          PUBLICO_TOKEN: ${{ secrets.PUBLICO_TOKEN }}
+        run: |
+          [ -n "$PUBLICO_TOKEN" ] || { echo "Sin PUBLICO_TOKEN: se usa el enlace del Release de este repo"; exit 0; }
+          PUB=Roberthecoder/roberthecoder.github.io
+          NOMBRE="tmp-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-$(basename "$VIDEO")"
+          cp "$VIDEO" "/tmp/$NOMBRE"
+          GH_TOKEN="$PUBLICO_TOKEN" gh release view publicar-tmp -R "$PUB" >/dev/null 2>&1 || \
+            GH_TOKEN="$PUBLICO_TOKEN" gh release create publicar-tmp -R "$PUB" --title "Copias temporales para publicar" \
+              --notes "Videos temporales que Instagram y Threads bajan al publicar; se borran solos al terminar cada publicación."
+          GH_TOKEN="$PUBLICO_TOKEN" gh release upload publicar-tmp "/tmp/$NOMBRE" -R "$PUB" --clobber
+          echo "VIDEO_URL=https://github.com/$PUB/releases/download/publicar-tmp/$NOMBRE" >> "$GITHUB_ENV"
+          echo "VIDEO_TMP=$NOMBRE" >> "$GITHUB_ENV"
       - name: Publicar
         run: |
           EXTRA=()
@@ -148,3 +165,8 @@ jobs:
           python3 motor/redes/publicar.py publicar --clave "$P_CLAVE" --redes "${P_REDES:-todas}" --modo "${P_MODO:-prueba}" \
             --video "$VIDEO" --video-url "$VIDEO_URL" --confirmar "$P_CONFIRMAR" --autorizo "$P_AUTORIZO" \
             --tiktok "$P_TIKTOK" --youtube "$P_YOUTUBE" "${EXTRA[@]}"
+      - name: Borrar copia pública
+        if: always() && env.VIDEO_TMP != ''
+        env:
+          PUBLICO_TOKEN: ${{ secrets.PUBLICO_TOKEN }}
+        run: GH_TOKEN="$PUBLICO_TOKEN" gh release delete-asset publicar-tmp "$VIDEO_TMP" -R Roberthecoder/roberthecoder.github.io -y || true

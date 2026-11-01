@@ -6,6 +6,13 @@ GitHub Pages de este repo (https://roberthecoder.github.io/lacreaciondelrobert-s
 privado, y Meta, Google/YouTube, LinkedIn y TikTok tienen registradas esas URL (y el redirect de TikTok); (2) Instagram y Threads
 publican bajando el MP4 de una **URL pública** (hoy, el Release del repo).
 
+## Estado (1 nov 2026)
+- HECHO: repo público `Roberthecoder/roberthecoder.github.io` creado (solo README). Workflow `sitio-publico.yml` (copia `docs/` a
+  `lacreaciondelrobert-shots/` del repo público) y paso «Copia pública temporal del video» en `publicar.yml` (Instagram/Threads).
+  Ambos esperan el secreto `PUBLICO_TOKEN`; sin él, `publicar.yml` funciona igual que antes.
+- FALTA (Robert): crear `PUBLICO_TOKEN`. Luego (maestro): correr `sitio-publico.yml`, revisar las páginas, publicar en modo `prueba`,
+  presupuesto de Actions en $0 y pasar a privado.
+
 ## Plan (no cambia ninguna URL registrada en las API)
 1. **Repo público nuevo `Roberthecoder/roberthecoder.github.io`** (sitio de usuario de GitHub Pages, sirve en `https://roberthecoder.github.io/`).
    Dentro, la carpeta **`lacreaciondelrobert-shots/`** con una copia exacta de `docs/` de este repo (index, privacidad, términos,
