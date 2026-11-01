@@ -1,0 +1,39 @@
+name: Voz del pitch de Solve
+
+# Genera con la voz clonada de Robert los textos de largos/pitch-solve/voz/*.txt que aún no tengan voz
+# y guarda el mp3 y los tiempos en la misma rama (caché: si el texto no cambia, no gasta créditos).
+on:
+  push:
+    branches: ['largo-render/pitch-solve']
+    paths: ['largos/pitch-solve/voz/*.txt']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: voz-pitch
+  cancel-in-progress: false
+
+jobs:
+  voz:
+    if: github.repository == 'Roberthecoder/lacreaciondelrobert-shots'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generar voz
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node largos/pitch-solve/voz/voz.mjs
+      - name: Guardar en la rama
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add largos/pitch-solve/voz
+          git diff --cached --quiet && exit 0
+          git commit -m "Voz del pitch generada [sin render]"
+          git push
