@@ -12,8 +12,9 @@
 3. **Entorno local temporal, solo si es indispensable** (algo que exige correr programas en la PC: Real-ESRGAN/GFPGAN, archivos que solo
    están en la PC, una herramienta que la nube no tiene). Reglas:
    - Lo pide el maestro con un **encargo cerrado** escrito en `maestro/encargos/<AAAAMMDD>-<tema>.md` (qué hacer, qué entregar, dónde).
-   - Robert lo abre en la app de escritorio (o el maestro lo arranca con el control del escritorio si está activo): nueva sesión de Code
-     en el clon del repo con el texto "Haz el encargo maestro/encargos/<archivo>.md".
+   - Lo toma solo el **puente local**: tarea programada de la app de escritorio que cada 20 min abre una sesión local nueva, revisa
+     `maestro/encargos/` y, si hay un `ESTADO: PENDIENTE`, lo hace (detalle y texto en `maestro/encargos/LEEME.md` y
+     `PUENTE-tarea-programada.md`). Para que sea inmediato, el maestro (con `remote-devices` computer) o Robert pulsa «Ejecutar ahora».
    - El entorno hace SOLO eso, entrega el resultado en git (rama propia o el lugar que diga el encargo) o en la Sala, escribe al final
      del encargo `ESTADO: HECHO` + una línea de resultado, hace push y **se archiva solo** (`archive_session` "self"). Sin Remote
      Control, sin fijarse, sin quedarse abierto.
