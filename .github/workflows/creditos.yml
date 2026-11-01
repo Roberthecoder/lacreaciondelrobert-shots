@@ -5,7 +5,7 @@ name: Créditos de voz
 # La nube copia ese JSON al doc estado/creditos de la Sala de Shots.
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '17 */6 * * *'   # cada 6 h (repo privado: ahorra minutos)
   workflow_dispatch:
   workflow_run:
     workflows: ['Render automático']

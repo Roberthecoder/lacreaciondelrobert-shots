@@ -3,7 +3,8 @@ name: Publicación diaria automática
 # Publica cada día en las 6 redes el/los shot(s) que tocan según calendario/fecha.py (1 shot diario; festivos en su fecha).
 # Permiso permanente de Robert (chat, 30 oct 2026). Hora oficial: 9:07 am de Ciudad de México (UTC−6) (Robert, 31 oct 2026).
 # Blindaje (31 oct 2026, Robert: "SIEMPRE tiene que publicarse sin mi intervención"):
-#  - GitHub a veces retrasa o se salta tareas programadas: 20 intentos, cada media hora de 9:07 am a 6:37 pm. Si ya está todo
+#  - GitHub a veces retrasa o se salta tareas programadas: 8 intentos de 9:07 am a 6:37 pm (eran 20; se bajaron el 1 nov 2026
+#    porque el repo pasó a privado y cada corrida gasta minutos del plan gratis). Si ya está todo
 #    publicado no hacen nada (0 duplicados); si falta algo (o una red falló), lo publican / lo reintentan.
 #  - Recuperación: si el shot normal de AYER no salió, se publica hoy también (los festivos no se recuperan: perderían su fecha).
 #  - Aviso: si en el último intento (6:37 pm) algo sigue sin publicarse, el run falla y GitHub le manda un correo a Robert.
@@ -13,22 +14,10 @@ on:
     - cron: '7 15 * * *'   # 9:07 am CDMX · hora oficial
     - cron: '37 15 * * *'   # 9:37 am CDMX · respaldo
     - cron: '7 16 * * *'   # 10:07 am CDMX · respaldo
-    - cron: '37 16 * * *'   # 10:37 am CDMX · respaldo
     - cron: '7 17 * * *'   # 11:07 am CDMX · respaldo
-    - cron: '37 17 * * *'   # 11:37 am CDMX · respaldo
-    - cron: '7 18 * * *'   # 12:07 pm CDMX · respaldo
-    - cron: '37 18 * * *'   # 12:37 pm CDMX · respaldo
     - cron: '7 19 * * *'   # 1:07 pm CDMX · respaldo
-    - cron: '37 19 * * *'   # 1:37 pm CDMX · respaldo
-    - cron: '7 20 * * *'   # 2:07 pm CDMX · respaldo
-    - cron: '37 20 * * *'   # 2:37 pm CDMX · respaldo
     - cron: '7 21 * * *'   # 3:07 pm CDMX · respaldo
-    - cron: '37 21 * * *'   # 3:37 pm CDMX · respaldo
-    - cron: '7 22 * * *'   # 4:07 pm CDMX · respaldo
-    - cron: '37 22 * * *'   # 4:37 pm CDMX · respaldo
     - cron: '7 23 * * *'   # 5:07 pm CDMX · respaldo
-    - cron: '37 23 * * *'   # 5:37 pm CDMX · respaldo
-    - cron: '7 0 * * *'   # 6:07 pm CDMX · respaldo
     - cron: '37 0 * * *'   # 6:37 pm CDMX · último intento: si algo falta, correo
   workflow_dispatch:
     inputs:
