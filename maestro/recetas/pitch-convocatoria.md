@@ -59,7 +59,7 @@ YouTube como **no listado**, enlace pegado en la solución 122850 de solve.mit.e
   cruzados; fade-in 2.5 s, fade-out 4 s; normaliza a pico 0.7.
 - **Mezcla** (job `unir`): `[voz] atempo=vel, aresample=48000, adelay=retraso, apad` → sidechain sobre la música
   `volume=0.55, sidechaincompress=threshold=0.04:ratio=4:attack=25:release=400` → `amix normalize=0` →
-  **`loudnorm=I=-14:TP=-1.5:LRA=11`** (estándar YouTube) → AAC 320 kbps.
+  `loudnorm=I=-14:TP=-1.5:LRA=11` → AAC 320 kbps. **Ojo:** ese −14 LUFS fue un error que Robert corrigió; para videos nuevos usar `motor/mezcla.json` (final −7.1 LUFS).
 
 ## 5. Render
 - `render-largo.yml` de la rama (copia `workflows/pitch-render-largo.yml`): se lanza al cambiar `render.txt`; pedazos de **10 s**,
