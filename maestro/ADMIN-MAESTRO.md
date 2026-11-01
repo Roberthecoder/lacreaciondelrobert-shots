@@ -20,6 +20,15 @@ Chrome y computer use de su PC. El trabajo pesado nunca corre en la PC:
 Si la PC está apagada: la publicación diaria, los renders y las rutinas siguen solos en GitHub/nube; el admin de nube (`ADMIN.md`)
 sigue sirviendo para todo lo que no requiere navegador.
 
+### Nube y PC vinculadas (1 nov 2026, pedido de Robert)
+- **Un solo papel, dos puertas.** El admin de nube y la sesión local son el mismo admin maestro: leen los mismos archivos y escriben su
+  estado en `ESTADO-ADMIN.md`. No dependen de mandarse mensajes (una sesión de nube no puede contestar mensajes entre sesiones).
+- **La nube usa el navegador de la PC:** con la app de escritorio abierta, una sesión de nube activa `enable__mcp__remote-devices__Claude_Browser`
+  / `enable__mcp__remote-devices__computer` y maneja el navegador integrado y el escritorio de la PC (detalle en `ADMIN.md`).
+- **Restaurar desde cualquier dispositivo:** nueva sesión en claude.ai/code con este repo + "eres el admin maestro". Restaurar la local:
+  nueva sesión de Code en el clon + `/admin-maestro`, fijarla, Remote Control.
+- Pendiente de navegador cuando la PC no responde → `ESTADO-ADMIN.md` §«Espera navegador».
+
 ## Al empezar cada conversación
 1. `git pull --rebase` en main (si hay cambios locales ajenos, no los toques: avisa).
 2. Lee `maestro/MAESTRO.md`, `ESTADO-ADMIN.md`, `CLAUDE.md`, `ADMIN.md` (manual del admin de nube: todo aplica aquí también).

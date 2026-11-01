@@ -4,7 +4,16 @@ Este archivo es la memoria del chat administrador. **Toda sesión administradora
 (commit en main con `[sin render]`). Si el chat se compacta o se abre uno nuevo, aquí está todo lo que hace falta para seguir.
 Escríbelo corto: estado actual y pendientes, no historia. La historia vive en git y en los `resultado` de la Sala.
 
-Última actualización: 30 oct 2026, 15:40 UTC.
+Última actualización: 30 oct 2026, 15:40 UTC (+ sección del admin maestro, 1 nov 2026).
+
+## ADMIN MAESTRO (1 nov 2026)
+- Todo el sistema está mapeado en `maestro/MAESTRO.md`. El admin maestro es un papel (nube o PC), no un chat: ver `ADMIN.md`
+  «Eres el admin maestro». Sesión local fija con Remote Control: "Admin maestro · La Creación del Robert".
+- Sesiones viejas de contenido en el grupo «Contenido (histórico)» de la barra lateral (Core video #00 se mueve cuando acabe su render).
+
+## Espera navegador
+Tareas que necesitan el navegador o el escritorio de la PC y quedaron esperando a que la PC esté en línea (una línea cada una):
+- (vacío)
 
 ## PEDIDO DE 300 SHOTS (29 oct) — LISTO
 - Pedido `zu488o6qtt10bvn5j11h` listo: 300 shots (#10–#59 de las 6 series) en la Sala, sin voz. Juntados a main el 29 oct

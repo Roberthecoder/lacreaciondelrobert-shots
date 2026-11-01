@@ -35,6 +35,9 @@ solo en GitHub → Settings → Secrets (nombres en `INVENTARIO.md`). Las fotos 
    "publica…", "revisa cómo va el render". El admin decide qué va a GitHub (render pesado), qué hace en la Sala y qué hace con el
    navegador (iniciar sesión en redes, formularios, Facebook, OneDrive).
 3. Tú solo: contraseñas e inicios de sesión, pagar, y aprobar voces y publicaciones.
+4. **Desde la nube también es el maestro:** tu chat de nube en claude.ai/code usa el navegador de tu PC cuando la app de Claude está
+   abierta, y si se pierde cualquier chat, una sesión nueva con este repo + "eres el admin maestro" lo restaura (ver `ADMIN.md`,
+   «Eres el admin maestro»).
 
 ## 3. Respuestas con evidencia (1 nov 2026)
 
