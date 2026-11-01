@@ -24,6 +24,7 @@ solo en GitHub → Settings → Secrets (nombres en `INVENTARIO.md`). Las fotos 
 | Calendario y numeración | `calendario/` | `CLAUDE.md` §Numeración |
 | Banco de temas | `historial/temas.json` + `historial/nuevos/` | `CLAUDE.md` §Reglas de contenido |
 | Memoria del administrador | `ESTADO-ADMIN.md` (estado), `ADMIN.md` (manual del admin de nube) | — |
+| Pasar el repo a privado sin romper las API | — | `maestro/recetas/repo-privado.md` |
 | Correcciones de Robert (lo que no debe repetirse) | — | `maestro/recetas/correcciones-de-robert.md` |
 | Inventario de sesiones, ramas, carpetas, secretos y rutinas | — | `maestro/INVENTARIO.md` |
 | Manual del **admin maestro** (sesión local con navegador + Remote Control) | — | `maestro/ADMIN-MAESTRO.md` |
