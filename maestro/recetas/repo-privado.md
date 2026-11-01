@@ -6,12 +6,14 @@ GitHub Pages de este repo (https://roberthecoder.github.io/lacreaciondelrobert-s
 privado, y Meta, Google/YouTube, LinkedIn y TikTok tienen registradas esas URL (y el redirect de TikTok); (2) Instagram y Threads
 publican bajando el MP4 de una **URL pública** (hoy, el Release del repo).
 
-## Estado (1 nov 2026)
-- HECHO: repo público `Roberthecoder/roberthecoder.github.io` creado (solo README). Workflow `sitio-publico.yml` (copia `docs/` a
-  `lacreaciondelrobert-shots/` del repo público) y paso «Copia pública temporal del video» en `publicar.yml` (Instagram/Threads).
-  Ambos esperan el secreto `PUBLICO_TOKEN`; sin él, `publicar.yml` funciona igual que antes.
-- FALTA (Robert): crear `PUBLICO_TOKEN`. Luego (maestro): correr `sitio-publico.yml`, revisar las páginas, publicar en modo `prueba`,
-  presupuesto de Actions en $0 y pasar a privado.
+## Estado (1 nov 2026, 20:10 UTC)
+- HECHO: repo público `Roberthecoder/roberthecoder.github.io` con las páginas (https://roberthecoder.github.io/ en línea), secreto
+  `PUBLICO_TOKEN` (solo ese repo, Contents R/W), `sitio-publico.yml` probado, `publicar.yml` con copia pública temporal probado en modo
+  prueba (fes-01: copia, 6 redes revisadas, copia borrada). Corridas programadas reducidas (diaria: 8 intentos; créditos: cada 6 h).
+- FALTA: el clic de "Change visibility → private". NO hacerlo mientras corra o esté en cola «Render del largo» (Core video #00): en privado
+  gastaría miles de minutos de golpe y, con presupuesto $0, dejaría sin minutos a la publicación diaria.
+- DECISIÓN DE ROBERT pendiente: renders de documentales en privado (plan gratis 2,000 min/mes; un documental de ~25 min en paralelo usa
+  ~4,000). Opciones: presupuesto de Actions (p. ej. $20–40/mes, ~$0.008/min), o renders ligeros/menos máquinas.
 
 ## Plan (no cambia ninguna URL registrada en las API)
 1. **Repo público nuevo `Roberthecoder/roberthecoder.github.io`** (sitio de usuario de GitHub Pages, sirve en `https://roberthecoder.github.io/`).
