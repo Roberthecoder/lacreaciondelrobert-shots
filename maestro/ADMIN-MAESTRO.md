@@ -31,6 +31,12 @@
 | Navegador: iniciar sesión, formularios, Facebook/OneDrive, paneles de developers | Maestro de nube con `remote-devices` (PC encendida con la app abierta) |
 | Programas que solo corren en la PC | Entorno local temporal (encargo → hacer → push → archivarse) |
 
+**PC de Robert = Windows (DESKTOP-9O42QPK), confirmado el 1 nov 2026.** En Windows la nube NO puede usar su navegador ni su
+pantalla (`remote-devices` no aparece y sus carpetas salen como «no disponibles»). La vía que sí funciona: Robert activó en la app
+de escritorio «Permitir que tu celular y claude.ai inicien sesiones aquí», «Mantener esta computadora activa» y las herramientas
+del navegador. Para trabajo de PC el maestro escribe el encargo en `maestro/encargos/` y le da a Robert UNA línea para pegar en una
+sesión nueva que él abre desde el celular o claude.ai sobre su PC; esa sesión usa el navegador de la PC, entrega en git y se archiva.
+
 Si la PC no está disponible, lo que necesite navegador o PC se anota en `ESTADO-ADMIN.md` §«Espera navegador».
 
 ## Al empezar cada conversación (maestro de nube)

@@ -12,6 +12,7 @@ El "admin maestro" no es una sesión: es este papel, y todo lo que necesita vive
   para esta conversación, con herramientas `mcp__remote-devices__Claude_Browser__*` / `mcp__remote-devices__computer_*`. Funciona
   mientras la app de escritorio de Claude esté abierta y en línea. Si un sitio no está permitido, usa `request_access`. Lee antes el skill
   `built-in-browser` (o `computer-use`). Contraseñas y captchas: siempre Robert.
+- **La PC de Robert es Windows:** esas herramientas no aparecen en la nube. Usa encargos locales temporales (ver `maestro/ADMIN-MAESTRO.md`).
 - **Si la PC no responde** (apagada o sin la app): todo lo demás sigue igual desde la nube (Sala, git, GitHub Actions, rutinas). Lo que
   requiera navegador se anota en `ESTADO-ADMIN.md` §«Espera navegador» y se hace cuando la PC vuelva.
 - **No hay chats locales permanentes** (Robert, 1 nov). Si algo exige correr programas en la PC, crea un **encargo local temporal**
