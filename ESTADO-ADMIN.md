@@ -13,6 +13,25 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   se archivó.
 - Sesiones viejas de contenido en el grupo «Contenido (histórico)» de la barra lateral (Core video #00 se mueve cuando acabe su render).
 
+## PENDIENTES DEL MAESTRO (1 nov 2026, 20:30 UTC) — en este orden
+Decisiones de Robert: repo de producción PRIVADO; presupuesto de Actions **$0**; documentales largos se renderizan en un repo
+PÚBLICO aparte (`Roberthecoder/lacreaciondelrobert-largos`, ya creado, vacío) porque ahí los minutos son gratis.
+1. Esperar a que termine «Render del largo (en paralelo)» de `largo-render/largo00-cine` (Core video #00; no cancelarlo).
+2. Robert (navegador): GitHub → Settings → Developer settings → Fine-grained tokens → PUBLICO_TOKEN → Edit → Repository access:
+   agregar `lacreaciondelrobert-largos` (el valor del token no cambia). Agregar en ESE repo público los secretos que usen los renders
+   (no hace falta ElevenLabs: la voz se genera en el repo privado).
+3. En cada rama `largo-render/*` del repo privado: agregar un workflow espejo (on push a esa rama → `git push --force` de la rama a
+   `https://x-access-token:${PUBLICO_TOKEN}@github.com/Roberthecoder/lacreaciondelrobert-largos.git`, fetch-depth 0) y cambiar en
+   `render-largo.yml` la condición `github.repository == 'Roberthecoder/lacreaciondelrobert-shots'` por `…-largos` (para que el render
+   corra solo en el público). El Release con el MP4 queda en el repo público; la Sala y «Videos al chat» lo toman de ahí.
+   Plantillas: `maestro/plantillas/documental/workflows/`.
+4. Pasar el repo de producción a privado (Settings → General → Danger Zone; GitHub pide la contraseña de Robert). Verificar
+   https://roberthecoder.github.io/lacreaciondelrobert-shots/privacidad.html y una publicación en modo `prueba`.
+5. Después del 3 nov 01:00 UTC (último festivo, fes-06): archivar el chat de nube «Administrador Sala de Shots» y sus sesiones hijas
+   (Pedido 300 ×7, Mantenimiento, Voces nuevas, Correcciones de datos). Robert quiere ver solo la Sala de Shots y el Admin maestro fijados.
+6. No archivar «Core video #00» hasta que su carpeta local tenga commit y push (tiene cambios sin guardar), ni «MIT Solve» / «Sistema
+   de shots científicos» sin preguntarle a Robert.
+
 ## Espera navegador
 Tareas que necesitan el navegador o el escritorio de la PC y quedaron esperando a que la PC esté en línea (una línea cada una):
 - (vacío)
