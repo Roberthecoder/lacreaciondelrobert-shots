@@ -32,6 +32,15 @@ PÚBLICO aparte (`Roberthecoder/lacreaciondelrobert-largos`, ya creado, vacío) 
 6. No archivar «Core video #00» hasta que su carpeta local tenga commit y push (tiene cambios sin guardar), ni «MIT Solve» / «Sistema
    de shots científicos» sin preguntarle a Robert.
 
+## BLINDAJE EXTERNO DE LA PUBLICACIÓN (1 nov 2026, hecho)
+- cron-job.org (cuenta de Robert) lanza `publicar-diario.yml` por la API de GitHub todos los días a las 9:20, 12:20 y 16:20 CDMX,
+  además de los 8 horarios propios de GitHub. Si ya se publicó, no hace nada. Prueba del 1 nov 23:43 UTC: run 17 OK.
+- Usa el token fino `disparador-publicacion` (solo Actions del repo shots). **Vence ~1 nov 2027: renovarlo y pegarlo en cron-job.org.**
+- `ELEVENLABS_API_KEY` ya tiene `user_read`: créditos se leen solos (1 nov: 42,306 de 231,000; renueva 28 nov).
+- PUBLICO_TOKEN ya tiene acceso a `lacreaciondelrobert-largos` (paso 2 hecho).
+- Paso 3 (espejo de ramas largo-render al repo público): el filtro de seguridad de la sesión maestra bloqueó crear el workflow que copia
+  el repo privado a uno público con token. Falta que Robert lo autorice o lo haga otra sesión con su permiso explícito.
+
 ## Espera navegador
 Tareas que necesitan el navegador o el escritorio de la PC y quedaron esperando a que la PC esté en línea (una línea cada una):
 - (vacío)
