@@ -1,10 +1,10 @@
 # Tarea programada "Puente local del admin maestro"
 
-**CREADA el 1 nov 2026** (id `puente-local-maestro`, modo Auto, cada 20 min; se administra en «Programadas» de la barra lateral). Se crea UNA vez en la app de escritorio de Claude (PC de Robert): Tareas programadas → Nueva tarea, o pidiéndoselo a una sesión local
+**CREADA el 1 nov 2026** (id `puente-local-maestro`, modo Auto, **SIN horario: solo bajo pedido** con «Ejecutar ahora»; Robert no quiere revisiones periódicas). Se crea UNA vez en la app de escritorio de Claude (PC de Robert): Tareas programadas → Nueva tarea, o pidiéndoselo a una sesión local
 con permiso para `create_scheduled_task`. Datos:
 - **Título:** Puente local del admin maestro (encargos temporales)
 - **Id:** `puente-local-maestro`
-- **Frecuencia:** cada 20 minutos (`*/20 * * * *`), sin notificación al terminar.
+- **Frecuencia:** ninguna (apagada); se lanza con «Ejecutar ahora».
 - **Instrucciones (pegar tal cual):**
 
 ```

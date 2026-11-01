@@ -5,10 +5,10 @@ PC, navegador cuando la nube no tiene `remote-devices`), deja aquí un encargo. 
 contesta en el mismo archivo y se archiva solo. No hay chats locales permanentes.
 
 ## Cómo llega el encargo a la PC
-1. **Puente automático (preferido):** la tarea programada de la app de escritorio "Puente local del admin maestro" (texto completo en
-   `maestro/encargos/PUENTE-tarea-programada.md`). Cada 20 min abre una sesión local nueva; si no hay encargos `PENDIENTE`, se archiva
-   en segundos; si hay, toma uno, lo hace y se archiva. Solo corre mientras la app de Claude está abierta en la PC.
-2. **Inmediato:** si el maestro de nube tiene `enable__mcp__remote-devices__computer`, puede abrir la app de escritorio y pulsar
+1. **Puente bajo pedido:** la tarea de la app de escritorio "Puente local del admin maestro" (sin horario; texto en
+   `maestro/encargos/PUENTE-tarea-programada.md`). Al pulsar «Ejecutar ahora» abre una sesión local nueva; si no hay encargos `PENDIENTE`, se archiva
+   en segundos; si hay, toma uno, lo hace y se archiva. Nunca corre sola (Robert, 1 nov: nada de revisiones periódicas).
+2. **Quién la lanza:** si el maestro de nube tiene `enable__mcp__remote-devices__computer`, puede abrir la app de escritorio y pulsar
    «Ejecutar ahora» en esa tarea programada (o Robert lo hace a mano).
 
 ## Formato (archivo `<AAAAMMDD-HHMM>-<tema>.md`, push a main con `[sin render]`)
