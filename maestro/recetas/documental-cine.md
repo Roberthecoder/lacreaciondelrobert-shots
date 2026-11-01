@@ -97,9 +97,55 @@ Robert, 30 oct: "súbele la calidad casi casi como si fuera un documental cinema
   se reacomoda solo. Sin voz, cada frase dura `caracteres/15 + 0.45 s` (mín. 2.2 s).
 - Música generada por código (nada de catálogo), cama baja que sigue la historia; mezcla con sidechain para que la voz mande
   (ver `pitch-convocatoria.md` §Audio). Robert pidió usar el cálculo de volumen del sistema de shots (`motor/mezcla.json`: voz −16
-  LUFS, pensado para escuchar con el volumen del celular al 50–70 %). Para YouTube horizontal, master a **−14 LUFS, pico −1.5 dB**.
+  LUFS, pensado para escuchar con el volumen del celular al 50–70 %). **El master es el de `motor/mezcla.json` (final −7.1 LUFS), también en documentales**: Robert corrigió el −14 LUFS que se había
+  inventado (el pitch de MIT Solve usó −14; no repetirlo). Siempre revisar las pautas de la Sala antes de poner un valor.
 
-## 7. Estado del #00 al 1 nov 2026
+## 7. Lecciones del #00 (reporte de la sesión Core video #00, 1 nov 2026) — obligatorias para todo documental largo
+Archivos en `largo-render/largo00-cine`, `largos/000-que-es-la-creacion/video/`: `escenas.js` + `guion_final.md` (los cuadra
+`validar.mjs`), `cine-*.jsx` (ILUSC) y `cine-monologos.jsx` (dibujos de monólogos), `narrar_largo.mjs`, `tiempos_voz.mjs`,
+`musica_largo.mjs`, `audio-kit.mjs`, `mezcla.json`. Workflows `render-largo.yml` y `voz-largo.yml`.
+
+**Guion y animación (pedidos de Robert)**
+- Todo monólogo (escena de texto largo) lleva un dibujo, aunque sea sencillo (`v.dibujo` en `EscenaTexto`); nunca texto solo varios segundos.
+- Transiciones siempre con fundido suave (~0.55 s), nunca cortes; si dos títulos se cruzan, el que sale también se desvanece.
+- Cero bugs: nada se repite en bucle. Al arreglar algo no cambiar su forma (el último salto debía medir igual que los demás).
+- Nada encimado: ni objetos flotando o superpuestos, ni etiquetas ilegibles (fondo oscuro detrás), ni logos tapados.
+- Stickers de Robert nunca tapan el subtítulo: con sticker abajo, el subtítulo se angosta (64 caracteres, 1040 px). Sobre fondos claros
+  (logos), franja oscura detrás del subtítulo.
+- Micología: el sustrato se coloniza completo (blanco) antes de que broten setas; el inóculo/grano se ve blanco; nada de micelio sobre
+  líquidos (vinazas); nombres científicos en cursiva.
+- Biografía: familia de 4 (hermana menor, mamá de piel clara). Fotos y certificados reales que da Robert van a `video/img/extra/` y se
+  registran a mano en `fotos.js`.
+- Partir una frase en dos líneas (para cambiar de imagen a media frase) no gasta créditos si el texto unido del capítulo queda idéntico.
+
+**Render (nunca en la PC de Robert)**
+- GitHub Actions en repo público: pedazos de 20 s en paralelo (máx. 20), acabado de película en ffmpeg por pedazo, unión `concat -c copy`,
+  resultado a un Release (asset < 2 GB). ~25 min por render.
+- apt-get se cuelga a veces: límite de 45 min por pedazo; instalación con límite de 10 min y 3 reintentos.
+- Un commit vacío NO lanza el render (el filtro de rutas pide cambios en `largos/`).
+- Pushes grandes: `git -c http.postBuffer=524288000 push`. Descargas que se cortan: `curl -C -` y comparar con el tamaño del asset.
+- Con el repo de producción privado, los renders largos van al repo público `lacreaciondelrobert-largos` (ver `ESTADO-ADMIN.md`).
+
+**Voz (ElevenLabs, Voice ID `uiCk6APPfsjnw3oUQzVo`, Eleven v4)**
+- Una petición por capítulo, con `previous_text`/`next_text` y `with-timestamps`, en caché por hash. Corre en el repo privado.
+  `voz/pedido.txt` = "saldo" o "generar" (cualquier otra cosa se rechaza). El paso que guarda la voz lleva `if: always()`.
+- **Nunca cancelar una generación a medias** (se perdieron ~5,170 créditos así).
+- La clave del repo no tiene `user_read` ni `speech_history_read`: el saldo se revisa en el navegador.
+- Al 1 nov 2026: plan Creator, 231k créditos/mes, renueva el 28 nov. Un documental de 20 min ≈ 19,300 créditos (≈1 por carácter):
+  avisar el costo antes de generar.
+
+**Tiempos**: la animación se ajusta a la voz real con `window.TIEMPOS_VOZ` (alineación por carácter). Tarjetas de capítulo de 3.2 s en
+silencio; 0.9 s de pausa al final de cada capítulo.
+
+**Audio**
+- Mezcla oficial `motor/mezcla.json` (sonido «5»): voz −16 LUFS, cama −6 dB por bandas, presencia +2.5 dB a 3 kHz, final −7.1 LUFS.
+- Música con el mismo `audio-kit.mjs` de los shots: cama con un acorde por capítulo + arpegio pentatónico suave y continuo con un motivo
+  distinto por capítulo + una nota en cada escena nueva. Solo la cama sonó "plano y aburrido" (Robert).
+- Efectos por tipo de escena: golpe y subida en tarjetas de capítulo, clic de cámara en fotos, tics en contadores, brillo metálico en
+  medallas y monedas, gotas en líquidos, notas que suben cuando algo crece.
+- No usar `aevalsrc` de ffmpeg con expresiones largas (lentísimo): sintetizar en Node.
+
+## 8. Estado del #00 al 1 nov 2026
 Render v5 relanzado en Actions (31 oct). Robert mandó la última ronda de correcciones el 1 nov 17:41 (calzones a la vista en 0:59,
 capítulo "concursos" con subcapítulo matemáticas, salto repetido en 8:57, frascos encimados en 9:07, nombre completo del proyecto
 "De basura a comida: los hongos, héroes que combaten el hambre y la pobreza", "residuos como coco y olote", logo de Ruta Azul tapado).
