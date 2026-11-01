@@ -1,7 +1,7 @@
 # Shots de La Creación del Robert
 
 **Mapa de TODO el sistema (shots, documentales de cine, pitches, Sala, publicador, sesiones, ramas, secretos): `maestro/MAESTRO.md`.**
-El admin maestro (sesión local con navegador y Remote Control) sigue `maestro/ADMIN-MAESTRO.md` y el skill `admin-maestro`.
+El admin maestro (sesión de nube; la PC solo vía herramientas remotas o encargos locales temporales) sigue `maestro/ADMIN-MAESTRO.md` y el skill `admin-maestro`.
 Antes de entregar cualquier video, coteja `maestro/recetas/correcciones-de-robert.md`.
 
 Lee primero `ESTADO.md` (qué está hecho y qué sigue) y `CANAL.md` (series, numeración, video largo semanal y presupuesto de voz).

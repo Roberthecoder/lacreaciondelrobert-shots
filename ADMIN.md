@@ -14,13 +14,11 @@ El "admin maestro" no es una sesión: es este papel, y todo lo que necesita vive
   `built-in-browser` (o `computer-use`). Contraseñas y captchas: siempre Robert.
 - **Si la PC no responde** (apagada o sin la app): todo lo demás sigue igual desde la nube (Sala, git, GitHub Actions, rutinas). Lo que
   requiera navegador se anota en `ESTADO-ADMIN.md` §«Espera navegador» y se hace cuando la PC vuelva.
-- **Sesión local fija** "Admin maestro · La Creación del Robert" (Remote Control encendido) en la PC: es la otra puerta al mismo papel;
-  úsala cuando la nube no tenga las herramientas remotas.
+- **No hay chats locales permanentes** (Robert, 1 nov). Si algo exige correr programas en la PC, crea un **encargo local temporal**
+  (`maestro/encargos/`, reglas en `maestro/ADMIN-MAESTRO.md` §3): el entorno local lo hace, entrega en git, marca `ESTADO: HECHO` y se archiva solo.
 - **Restaurar el maestro desde cualquier dispositivo** (celular, otra PC, navegador): abre una sesión nueva en claude.ai/code con el repo
   `Roberthecoder/lacreaciondelrobert-shots` (entorno con red completa) y escribe "eres el admin maestro". Esa sesión lee `CLAUDE.md` →
   `maestro/` → este archivo y retoma con `ESTADO-ADMIN.md`. Nada se pierde porque nada importante vive solo en un chat.
-- **Restaurar la sesión local** (si se borró o la PC es nueva): en la app de escritorio, nueva sesión de Code en la carpeta del clon
-  (`C:\Users\winusr\lacreacion-lotes\nuevo` o `git clone` nuevo), escribir "/admin-maestro", fijarla y encender Remote Control.
 
 ## Al empezar cada conversación
 1. Carga las herramientas: `ToolSearch` con `select:Artifact,ArtifactData,RemoteTrigger,WebFetch,WebSearch` (y prueba

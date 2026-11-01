@@ -29,15 +29,13 @@ solo en GitHub → Settings → Secrets (nombres en `INVENTARIO.md`). Las fotos 
 | Manual del **admin maestro** (sesión local con navegador + Remote Control) | — | `maestro/ADMIN-MAESTRO.md` |
 
 ## 2. Cómo se usa (para Robert, en corto)
-1. Abre la sesión fijada **"Admin maestro · La Creación del Robert"** (barra lateral de Claude, sección fijadas). Desde el teléfono o
-   claude.ai/code entra con el botón de **Remote Control** de esa sesión (tu PC debe estar prendida con la app de Claude abierta).
+1. Abre el **"Admin maestro · La Creación del Robert" en la nube** (claude.ai/code, desde cualquier dispositivo; funciona con la PC apagada).
 2. Pídele lo que sea en una línea: "hazme 5 shots de IA", "atiende mis pedidos", "corrige el shot X", "hazme un documental de…",
-   "publica…", "revisa cómo va el render". El admin decide qué va a GitHub (render pesado), qué hace en la Sala y qué hace con el
-   navegador (iniciar sesión en redes, formularios, Facebook, OneDrive).
-3. Tú solo: contraseñas e inicios de sesión, pagar, y aprobar voces y publicaciones.
-4. **Desde la nube también es el maestro:** tu chat de nube en claude.ai/code usa el navegador de tu PC cuando la app de Claude está
-   abierta, y si se pierde cualquier chat, una sesión nueva con este repo + "eres el admin maestro" lo restaura (ver `ADMIN.md`,
-   «Eres el admin maestro»).
+   "publica…", "revisa cómo va el render". Él decide qué va a GitHub (render), qué hace en la Sala, qué reparte a otras sesiones de nube
+   y qué hace con el navegador de tu PC (si la app de Claude está abierta allá).
+3. Solo si algo exige correr programas en tu PC, te deja un **encargo local temporal** que se hace y se archiva solo. Nada de chats locales fijos.
+4. Tú solo: contraseñas e inicios de sesión, pagar, y aprobar voces y publicaciones.
+5. Si se pierde cualquier chat: sesión nueva en claude.ai/code con este repo + "eres el admin maestro".
 
 ## 3. Respuestas con evidencia (1 nov 2026)
 
@@ -92,6 +90,6 @@ el skill `.claude/skills/admin-maestro/` + sección nueva al inicio de `CLAUDE.m
 - Respuestas a Robert: español, cortas, sin jerga. Videos al chat (no enlaces).
 
 ## 5. El admin maestro
-Ver `maestro/ADMIN-MAESTRO.md`. Resumen: sesión local de Claude Code en `C:\Users\winusr\lacreacion-lotes\nuevo` (rama main),
-fijada en la barra lateral, con Remote Control encendido. Lee este archivo al empezar. Delega el render a GitHub, la producción
-masiva a sesiones de nube (sin navegador), y se queda con lo que necesita navegador o la PC.
+Ver `maestro/ADMIN-MAESTRO.md`. Resumen: sesión de NUBE (claude.ai/code) con este repo. Usa el navegador/escritorio de la PC con las
+herramientas `remote-devices` cuando la app está abierta; entornos locales solo temporales (encargo → hacer → push → archivarse).
+Render en GitHub; producción masiva en sesiones de nube.

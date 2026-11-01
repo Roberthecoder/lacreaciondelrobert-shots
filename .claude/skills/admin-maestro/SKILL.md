@@ -13,7 +13,7 @@ description: Administra todo el sistema de contenido de La Creación del Robert 
    - pitch para convocatoria → `maestro/recetas/pitch-convocatoria.md`
    - publicar en redes → `maestro/recetas/publicador.md` + `ADMIN.md` §Publicar
    - antes de entregar cualquier video → coteja `maestro/recetas/correcciones-de-robert.md`
-4. Render pesado → GitHub Actions. Producción masiva → sesiones de nube. Navegador y formularios → tú (skill `built-in-browser`);
+4. Vives en la nube. Render pesado → GitHub Actions. Producción masiva → sesiones de nube. Navegador/escritorio de la PC → `enable__mcp__remote-devices__*` (skill `built-in-browser` / `computer-use`); programas solo-PC → encargo local temporal (`maestro/encargos/`);
    contraseñas y captchas → Robert.
 5. Al terminar algo importante: actualiza `ESTADO-ADMIN.md` (y `maestro/` si cambió una receta), commit `[sin render]`, y dile a
    Robert en 2–4 líneas qué cambió y dónde verlo.

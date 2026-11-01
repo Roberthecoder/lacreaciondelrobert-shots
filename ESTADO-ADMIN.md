@@ -8,7 +8,9 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 
 ## ADMIN MAESTRO (1 nov 2026)
 - Todo el sistema está mapeado en `maestro/MAESTRO.md`. El admin maestro es un papel (nube o PC), no un chat: ver `ADMIN.md`
-  «Eres el admin maestro». Sesión local fija con Remote Control: "Admin maestro · La Creación del Robert".
+  «Eres el admin maestro». Vive en la NUBE ("Admin maestro · La Creación del Robert", claude.ai/code). Robert NO quiere chats locales
+  permanentes: lo local solo como encargo temporal (`maestro/encargos/`) que se archiva solo. La sesión local fija que se creó el 1 nov
+  se archivó.
 - Sesiones viejas de contenido en el grupo «Contenido (histórico)» de la barra lateral (Core video #00 se mueve cuando acabe su render).
 
 ## Espera navegador
