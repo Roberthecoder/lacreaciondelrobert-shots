@@ -1,0 +1,59 @@
+name: Subir el pitch de Solve a YouTube (no listado)
+
+# Toma el MP4 4K del Release "pitch-solve" y lo sube al canal con la app de YouTube del publicador de la sala,
+# como NO LISTADO, con el título, la descripción (capítulos + guion) y las etiquetas de largos/pitch-solve/youtube/.
+# Se lanza al poner "subir" en largos/pitch-solve/youtube/subir.txt. Si ya se subió (youtube.json en el Release), no repite,
+# salvo que el archivo diga "repetir".
+on:
+  push:
+    branches: ['largo-render/pitch-solve']
+    paths: ['largos/pitch-solve/youtube/subir.txt']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-pitch
+  cancel-in-progress: false
+
+jobs:
+  subir:
+    if: github.repository == 'Roberthecoder/lacreaciondelrobert-shots'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      GH_TOKEN: ${{ github.token }}
+      Y: largos/pitch-solve/youtube
+    steps:
+      - uses: actions/checkout@v4
+      - name: ¿Toca subir?
+        id: ok
+        run: |
+          ORDEN=$(tr -d '[:space:]' < "$Y/subir.txt")
+          echo "Orden: $ORDEN"
+          if [ "$ORDEN" != "subir" ] && [ "$ORDEN" != "repetir" ]; then echo "seguir=no" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if gh release view pitch-solve --json assets -q '.assets[].name' | grep -qx youtube.json && [ "$ORDEN" != "repetir" ]; then
+            echo "Ya está subido (youtube.json en el Release); no se repite."; echo "seguir=no" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "seguir=si" >> "$GITHUB_OUTPUT"
+      - name: Bajar el video y hacer la portada
+        if: steps.ok.outputs.seguir == 'si'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          gh release download pitch-solve -p pitch_fungi_mati_4k.mp4
+          S=$(python3 -c "import json;print(json.load(open('$Y/meta.json'))['portada_segundo'])")
+          ffmpeg -y -loglevel error -ss "$S" -i pitch_fungi_mati_4k.mp4 -frames:v 1 -vf "scale=1280:720:flags=lanczos" -q:v 2 portada.jpg
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 pitch_fungi_mati_4k.mp4; ls -la portada.jpg
+      - name: Subir a YouTube
+        if: steps.ok.outputs.seguir == 'si'
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          pip install -q requests
+          python3 "$Y/subir.py" pitch_fungi_mati_4k.mp4 portada.jpg youtube.json
+          cat youtube.json
+          gh release upload pitch-solve youtube.json portada.jpg --clobber
+          { echo "### Pitch en YouTube"; echo; python3 -c "import json;d=json.load(open('youtube.json'));print(f\"- {d['url']} ({d['privacidad']})\n- Portada: {d['portada']}\")"; } >> "$GITHUB_STEP_SUMMARY"
