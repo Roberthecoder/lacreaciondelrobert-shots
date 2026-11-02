@@ -545,5 +545,16 @@
   "id": "v_inbox_file~v2.7703596255764252692",
   "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
   "borrador": true
+ },
+ {
+  "clave": "fes-04-esqueleto",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-02T15:52:10Z",
+  "run": "41475632675",
+  "autorizo": "Robert: reenviar borrador de TikTok de fes-04 (2 nov 2026)",
+  "ok": true,
+  "id": "v_inbox_file~v2.7703602286258259975",
+  "nota": "BORRADOR en la bandeja de TikTok (SEND_TO_USER_INBOX): Robert lo abre en la app, pega el texto y publica él"
  }
 ]
