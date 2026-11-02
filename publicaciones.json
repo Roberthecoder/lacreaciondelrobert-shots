@@ -407,5 +407,74 @@
   "id": "v_inbox_file~v2.7703236848579168257",
   "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
   "borrador": true
+ },
+ {
+  "clave": "fes-03-podredumbre-blanca",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-02T01:03:33Z",
+  "run": "41370338224",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "988521813692562",
+  "url": "https://www.facebook.com/reel/988521813692562",
+  "nota": "ready"
+ },
+ {
+  "clave": "fes-03-podredumbre-blanca",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-02T01:04:25Z",
+  "run": "41370338224",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "17933139285166167",
+  "url": "https://www.instagram.com/reel/DfOFeiPkVLb/"
+ },
+ {
+  "clave": "fes-03-podredumbre-blanca",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-02T01:05:48Z",
+  "run": "41370338224",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "18115225520520571",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/DfOFkEACbQO"
+ },
+ {
+  "clave": "fes-03-podredumbre-blanca",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-11-02T01:06:46Z",
+  "run": "41370338224",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "dvMOfZeOK9E",
+  "url": "https://youtube.com/shorts/dvMOfZeOK9E",
+  "nota": "public"
+ },
+ {
+  "clave": "fes-03-podredumbre-blanca",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-11-02T01:06:48Z",
+  "run": "41370338224",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7522826588099346432",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7522826588099346432/"
+ },
+ {
+  "clave": "fes-03-podredumbre-blanca",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-02T01:07:06Z",
+  "run": "41370338224",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "v_inbox_file~v2.7703374277298702357",
+  "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
+  "borrador": true
  }
 ]
