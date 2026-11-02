@@ -556,5 +556,74 @@
   "ok": true,
   "id": "v_inbox_file~v2.7703602286258259975",
   "nota": "BORRADOR en la bandeja de TikTok (SEND_TO_USER_INBOX): Robert lo abre en la app, pega el texto y publica él"
+ },
+ {
+  "clave": "fes-05-fotos-ofrenda",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-02T20:02:56Z",
+  "run": "41515385339",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "1746553719751782",
+  "url": "https://www.facebook.com/reel/1746553719751782",
+  "nota": "ready"
+ },
+ {
+  "clave": "fes-05-fotos-ofrenda",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-02T20:03:43Z",
+  "run": "41515385339",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "18106457390570125",
+  "url": "https://www.instagram.com/reel/DfQH2aEjNKo/"
+ },
+ {
+  "clave": "fes-05-fotos-ofrenda",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-02T20:05:09Z",
+  "run": "41515385339",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "18100618004397454",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/DfQH8unGcbW"
+ },
+ {
+  "clave": "fes-05-fotos-ofrenda",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-11-02T20:06:05Z",
+  "run": "41515385339",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "W90SmPGjhZI",
+  "url": "https://youtube.com/shorts/W90SmPGjhZI",
+  "nota": "public"
+ },
+ {
+  "clave": "fes-05-fotos-ofrenda",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-11-02T20:06:07Z",
+  "run": "41515385339",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7523113293591347200",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7523113293591347200/"
+ },
+ {
+  "clave": "fes-05-fotos-ofrenda",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-02T20:06:22Z",
+  "run": "41515385339",
+  "autorizo": "Robert: festivos espaciados a mano (1 nov 2026)",
+  "ok": true,
+  "id": "v_inbox_file~v2.7703667657002698773",
+  "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
+  "borrador": true
  }
 ]
