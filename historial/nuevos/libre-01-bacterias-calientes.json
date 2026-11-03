@@ -1,0 +1,24 @@
+{
+ "temas": [
+  {
+   "id": "bacterias-calientes-37c",
+   "titulo": "Bacterias calientes: a 37 °C la E. coli se multiplica (y ni pareja necesita) — chiste mudo",
+   "serie": "Shot Libre",
+   "numero": 1,
+   "estado": "guion",
+   "carpeta": "shots/libre-01-bacterias-calientes",
+   "rama": "claude/great-hopper-o7cj63",
+   "fuentes": [
+    "Son y Taylor 2021, Current Protocols 1:e20 (PMC8006063)",
+    "FDA 2023, Are You Storing Food Safely?",
+    "Ratkowsky et al. 1982, J Bacteriol (PMC217594)"
+   ],
+   "fecha": "2026-11-03",
+   "derivados": [
+    "Conjugación: las bacterias se pasan genes por contacto (y así se reparte la resistencia a antibióticos)",
+    "Bacterias que aman el calor extremo: Thermus aquaticus y la PCR",
+    "¿Por qué la comida dura más en el refri pero no para siempre? (bacterias que crecen en frío, como Listeria)"
+   ]
+  }
+ ]
+}
