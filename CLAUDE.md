@@ -78,7 +78,7 @@ En la Sala de Shots hay una caja "Pedir videos" que guarda documentos en la coll
     `calendario/festividades.json`). Siguiente número de festivo, 61–75 s.
   - `robert`: serie Shot Robert (`series/shot-robert/CLAUDE.md`), carpeta `shots/robert-NN-<tema>/`. Solo datos ✅ de `datos.md`; si
     falta un dato: `estado: "pregunta"` y en `resultado` la pregunta concreta. (Es manual: solo cuando Robert lo pide.)
-  - `documental`: el tema lo dicta Robert en `idea`. **Principal horizontal 16:9 para YouTube**, 8–15 min, en
+  - `documental`: **sigue `maestro/recetas/protocolo-documental.md` (fases con candado y lista de rigor)**. El tema lo dicta Robert en `idea`. **Principal horizontal 16:9 para YouTube**, 8–15 min, en
     `largos/doc-<NNN>-<tema>/` con `window.K_ANCHO = 1920; window.K_ALTO = 1080` en el `.dc.html` (modelo: `largos/000-que-es-la-creacion/`
     en la rama `largo/000`). Además, **3 a 5 cortos verticales** de 61–62 s con sus momentos clave, en `shots/doc-<NNN>-corte-<K>-<tema>/`,
     cada uno con gancho propio y un cierre que invite a ver el documental completo. Capítulos de YouTube en su `publicacion.md`.
