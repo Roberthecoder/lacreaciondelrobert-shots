@@ -22,7 +22,11 @@ Todo lo de `CLAUDE.md` raíz aplica (duración, ganchos, Robert en pantalla, `pu
 - **Logo:** `logo_color.svg` (sin tema), o el del tema si el dato es de ciencia (hongos → biología, filtro → física).
 - **Nada de salud ni de dinero personal**, salvo bromas de laboratorio de bajo presupuesto. Nada de datos privados
   (dirección, escuela actual con horario, familia por nombre). La sátira sí.
-- Numeración: **Shot Robert #01, #02…** Carpeta: `shots/robert-NN-<tema>/`.
+- Numeración: **Shot Robert 01, 02…** Carpeta: `shots/robert-NN-<tema>/`. Título en redes: «<gancho> <emoji> | Shot Robert NN» (sin «#»).
+- **Ya usados: Shot Robert 01–13** (3 nov 2026): los 13 cortes verticales del documental #00 «¿Qué es La Creación del Robert?»
+  (rama `shots-largo/largo00`, carpeta `largos/000-que-es-la-creacion/verticales/`), programados en YouTube del 4 al 16 nov 2026
+  a las 19:00 y registrados en la Sala (`shots/rob-01` … `shots/rob-13`). **El siguiente shot de esta serie es el Shot Robert 14.**
+  Formato «cortes del documental»: fragmentos de 61–72 s del largo, en orden, con su gancho como título y el enlace al documental en la descripción.
 
 ## Formatos que mejor le van (del RECETARIO)
 | Formato | Cómo se usa aquí |
