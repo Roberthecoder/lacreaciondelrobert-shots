@@ -18,6 +18,7 @@ solo en GitHub → Settings → Secrets (nombres en `INVENTARIO.md`). Las fotos 
 | Sonido oficial (volúmenes) | `motor/mezcla.json` | `maestro/recetas/shot-vertical.md` §Sonido |
 | Render automático de shots | `.github/workflows/auto-render.yml`, `renderizar.yml`, `videos-al-chat.yml` | `PRODUCCION_NUBE.md` |
 | **Protocolo de creación documental (manda en todo documental o pitch)** | — | `maestro/recetas/protocolo-documental.md` |
+| **Kit de animación de cine (documentales, pitches)** | `motor/cine/` | `motor/cine/TECNICA.md` |
 | **Documentales de cine (Core video #00)** | rama `largo-render/largo00-cine` (+ cambios locales sin commit de la sesión Core) · copia de plantilla en `maestro/plantillas/documental/` | `maestro/recetas/documental-cine.md` |
 | **Pitch para convocatorias (MIT Solve)** | rama `largo-render/pitch-solve` · copia en `maestro/plantillas/documental/` | `maestro/recetas/pitch-convocatoria.md` |
 | Sala de Shots (panel de Robert) | https://claude.ai/artifact/KBt7kaF2DPUjT5HBiQZMBv · código `sala/index.html` | `sala/LEEME.md` |

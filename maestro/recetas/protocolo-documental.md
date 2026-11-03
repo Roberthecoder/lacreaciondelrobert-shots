@@ -5,8 +5,14 @@ videos que Robert aprobó: el **Core video #00** «¿Qué es La Creación del Ro
 5 rondas de correcciones de historia y 15+ de imagen) y el **pitch de Fungi Mati para MIT Solve 2027** (rama `largo-render/pitch-solve`,
 enviado el 2 nov 2026). «Constelaciones» fue un experimento: no es modelo.
 
-Detalle técnico (código, filtros, fórmulas): `documental-cine.md` (documental) y `pitch-convocatoria.md` (pitch). Hechos fijos de la
-vida de Robert: `correcciones-de-robert.md` §Core #00. Plantillas de código: `maestro/plantillas/documental/`.
+**Sirve para cualquier documental de cualquier tema** (ciencia, historia, un proyecto, una persona). Los dos modelos aportan la
+técnica; su contenido (la vida de Robert, Fungi Mati) no se copia.
+
+- **Motor y técnica de animación de cine (lo más valioso): `motor/cine/`** — kit con la versión más nueva y su manual
+  `motor/cine/TECNICA.md`. Todo documental se anima con este kit, **no** con el kit infantil de los shots (`motor/kit/`).
+- Detalle de producción (filtros, fórmulas, render): `documental-cine.md` y `pitch-convocatoria.md`.
+- Solo si el documental es sobre Robert: hechos fijos en `correcciones-de-robert.md` §Core #00.
+- `maestro/plantillas/documental/` es una copia vieja (1 nov); manda `motor/cine/`.
 
 Regla de oro de Robert: **"Prefiero que quede bien de una a tener que volver a iterar."** Cada ronda de correcciones que se evita es
 el objetivo. Por eso cada fase tiene un **candado**: no se pasa a la siguiente sin cumplirlo.
@@ -61,7 +67,7 @@ el objetivo. Por eso cada fase tiene un **candado**: no se pasa a la siguiente s
 - Repo público: solo las fotos que salen en el video.
 
 ## 5. Animación (candado: revisión cuadro por cuadro sin defectos)
-Estilo "documental de cine": `documental-cine.md` §3 (ilustraciones SVG con volumen, luz y texturas; cámara con paralaje; fotos en
+Con el kit `motor/cine/` y su manual `TECNICA.md`. Estilo "documental de cine": `documental-cine.md` §3 (ilustraciones SVG con volumen, luz y texturas; cámara con paralaje; fotos en
 marco con Ken Burns; tipografías Fraunces/Space Mono/Caveat/Archivo; acabado de película en ffmpeg).
 
 **Lista de rigor contra errores de imagen** (sale de las 15+ rondas del #00; revisar TODA antes de mostrarle algo a Robert):

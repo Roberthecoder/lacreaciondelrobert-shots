@@ -1,0 +1,113 @@
+name: Render de los shots verticales del largo (en paralelo)
+
+# Renderiza los shots verticales (1080×1920) hechos con fragmentos del largo: cada shot se parte en pedazos
+# de 20 s, cada pedazo en su propia máquina; luego se unen, se les pone su audio (verticales/audio/vertical_NN.m4a)
+# y quedan en Releases → "Verticales · <rama>".
+# Se lanza solo al hacer push a una rama "shots-largo/…" que toque largos/.
+on:
+  push:
+    branches: ['shots-largo/**']
+    paths: ['largos/**', '.github/workflows/render-verticales.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-verticales-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  LARGO: largos/000-que-es-la-creacion
+  FPS: '30'
+  PEDAZO: '20'
+
+jobs:
+  partir:
+    if: github.repository == 'Roberthecoder/lacreaciondelrobert-shots'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      pedazos: ${{ steps.p.outputs.pedazos }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        run: |
+          node -e '
+            const fs = require("fs");
+            const cortes = JSON.parse(fs.readFileSync(process.env.LARGO + "/verticales/cortes_tiempos.json", "utf8"));
+            const P = +process.env.PEDAZO, lista = [];
+            for (const c of cortes) {
+              const n = Math.ceil((c.hasta - c.desde) / P - 1e-6);
+              for (let k = 0; k < n; k++) lista.push({ s: c.i, p: String(k + 1).padStart(2, "0"), desde: +(c.desde + k * P).toFixed(3), hasta: +Math.min(c.hasta, c.desde + (k + 1) * P).toFixed(3) });
+            }
+            console.log(`${cortes.length} shots en ${lista.length} pedazos`);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, "pedazos=" + JSON.stringify(lista) + "\n");
+          '
+
+  render:
+    needs: partir
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        pedazo: ${{ fromJson(needs.partir.outputs.pedazos) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar ffmpeg y Chromium
+        run: |
+          for intento in 1 2 3; do
+            timeout 600 bash -c 'sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji && cd motor && npm install --no-audit --no-fund && npx playwright install --with-deps chromium' && exit 0
+            echo "Instalación colgada o fallida, reintento $intento"; sleep 10
+          done
+          exit 1
+      - name: Renderizar shot ${{ matrix.pedazo.s }} · pedazo ${{ matrix.pedazo.p }} (${{ matrix.pedazo.desde }}–${{ matrix.pedazo.hasta }} s)
+        run: |
+          mkdir -p salida
+          F="salida/v${{ matrix.pedazo.s }}_${{ matrix.pedazo.p }}.mp4"
+          for intento in 1 2; do
+            node motor/render.mjs "$LARGO" "Vertical ${{ matrix.pedazo.s }}.dc.html" "$F" --fps "$FPS" --desde ${{ matrix.pedazo.desde }} --hasta ${{ matrix.pedazo.hasta }} && break
+            echo "Reintento $intento"
+          done
+          test -f "$F"
+          ffmpeg -y -loglevel error -i "$F" -vf "colorbalance=rs=-0.03:bs=0.05:rm=0.01:bm=-0.01:rh=0.05:gh=0.015:bh=-0.04,eq=contrast=1.05:saturation=1.04,noise=c0s=8:c0f=t+u,format=yuv420p" \
+            -c:v libx264 -preset medium -crf 19 -maxrate 10M -bufsize 20M -r "$FPS" -g 60 cine.mp4 && mv cine.mp4 "$F"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v${{ matrix.pedazo.s }}_${{ matrix.pedazo.p }}
+          path: salida/v${{ matrix.pedazo.s }}_${{ matrix.pedazo.p }}.mp4
+          retention-days: 3
+
+  unir:
+    needs: render
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v*
+          merge-multiple: true
+          path: pedazos
+      - name: Unir cada shot y ponerle su audio
+        run: |
+          mkdir -p final
+          for s in $(ls pedazos | sed -E 's/^v([0-9]+)_.*/\1/' | sort -u); do
+            ls pedazos | grep "^v${s}_" | sort | sed "s#^#file '$PWD/pedazos/#; s#\$#'#" > lista_$s.txt
+            ffmpeg -y -loglevel error -f concat -safe 0 -i lista_$s.txt -c copy mudo_$s.mp4
+            ffmpeg -y -loglevel error -i mudo_$s.mp4 -i "$LARGO/verticales/audio/vertical_$s.m4a" -map 0:v -map 1:a -c:v copy -c:a copy -shortest -movflags +faststart "final/vertical_$s.mp4"
+            ffprobe -v error -show_entries format=duration,size -of csv=p=0 "final/vertical_$s.mp4" | sed "s/^/shot $s: /"
+          done
+      - name: Publicar en Releases
+        run: |
+          TAG="verticales-$(echo '${{ github.ref_name }}' | tr '/' '-')"
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --prerelease --title "Verticales · ${{ github.ref_name }}" --notes "Shots verticales (1080×1920) hechos con fragmentos del largo. Se reemplazan en cada render."
+          gh release upload "$TAG" final/*.mp4 --clobber
