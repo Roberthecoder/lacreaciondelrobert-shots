@@ -1,0 +1,28 @@
+name: Mover documentales al repo de documentales (una vez)
+
+# Robert (3 nov 2026): los documentales no deben pesar en el repo de shots. Copia COMPLETAS (con historial) las ramas
+# del Core #00 y del pitch de MIT Solve a Roberthecoder/lacreaciondelrobert-largos. Constelaciones NO se copia (se borra).
+# Después de verificar la copia, el admin borra esas ramas de este repo y este workflow.
+on:
+  workflow_dispatch:
+
+jobs:
+  mover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Copiar ramas
+        env:
+          PUBLICO_TOKEN: ${{ secrets.PUBLICO_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -n "$PUBLICO_TOKEN" ] || { echo "Falta PUBLICO_TOKEN"; exit 1; }
+          git init -q m && cd m
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git remote add largos "https://x-access-token:${PUBLICO_TOKEN}@github.com/Roberthecoder/lacreaciondelrobert-largos.git"
+          RAMAS="largo-render/largo00-cine shots-largo/largo00 largo-render/pitch-solve largo/000"
+          for r in $RAMAS; do git fetch -q origin "refs/heads/$r:refs/heads/$r"; done
+          for r in $RAMAS; do
+            git push --force largos "refs/heads/$r:refs/heads/$r"
+            [ "$(git ls-remote largos "refs/heads/$r" | cut -f1)" = "$(git rev-parse "refs/heads/$r")" ] && echo "OK $r" || { echo "FALLO $r"; exit 1; }
+          done
