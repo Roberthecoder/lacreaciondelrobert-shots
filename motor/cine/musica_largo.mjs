@@ -19,7 +19,9 @@ const hz = (m) => 440 * Math.pow(2, (m - 69) / 12);
 
 // ---- carácter de cada capítulo ----
 // acordes: [raíz MIDI, tipo]; tipos: M, m, M7, m7, sus, add9
-const CUES = [
+// Ejemplo: el arco emocional del Core #00 (un cue por capítulo). Un documental nuevo pone el suyo en
+// `cues_musica.json` junto a este archivo (misma forma); si no existe, se usa este como base genérica.
+const CUES_BASE = [
   { nombre: 'Gancho',       energia: 0.35, celesta: 1, piano: 0.6, pizz: 0,   perc: 0,   acordes: [[50, 'add9'], [47, 'm7'], [43, 'M7'], [45, 'sus']] },
   { nombre: 'La semilla',   energia: 0.45, celesta: 0.5, piano: 1, pizz: 0.3, perc: 0,   acordes: [[43, 'M'], [50, 'M'], [52, 'm'], [48, 'M7'], [43, 'add9'], [50, 'sus'], [48, 'M'], [50, 'M']] },
   { nombre: 'Primaria',     energia: 0.6,  celesta: 0.3, piano: 0.8, pizz: 1, perc: 0.6, acordes: [[48, 'M'], [43, 'M'], [45, 'm'], [41, 'M7'], [45, 'm'], [41, 'M'], [48, 'M'], [43, 'sus']] },
@@ -31,6 +33,7 @@ const CUES = [
   { nombre: 'Qué es LCR',   energia: 0.6,  celesta: 0.5, piano: 1, pizz: 0, perc: 0.3, acordes: [[43, 'M7'], [50, 'M'], [52, 'm7'], [45, 'sus']] },
   { nombre: 'Cierre',       energia: 0.5,  celesta: 0.8, piano: 1, pizz: 0, perc: 0,   acordes: [[43, 'M'], [45, 'sus'], [50, 'add9'], [50, 'add9']] },
 ];
+const CUES = (() => { try { return JSON.parse(fs.readFileSync(new URL('./cues_musica.json', import.meta.url), 'utf8')); } catch { return CUES_BASE; } })();
 const TIPOS = { M: [0, 4, 7, 12], m: [0, 3, 7, 12], M7: [0, 4, 7, 11], m7: [0, 3, 7, 10], sus: [0, 5, 7, 12], add9: [0, 4, 7, 14] };
 
 export function generarMusica(bloques, total, salida) {

@@ -428,7 +428,7 @@ function VerticalLargo() {
       <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 18 }}>
         <img src="video/logo_color.svg" style={{ width: 50, height: 50, filter: 'drop-shadow(0 2px 8px rgba(0,0,0,.6))' }} />
         <div style={{ fontFamily: KF.mono, fontWeight: 700, fontSize: 21, letterSpacing: 4, color: 'rgba(246,243,236,.82)' }}>
-          MI HISTORIA&nbsp;&nbsp;<span style={{ color: pal.acento }}>{String(C.n).padStart(2, '0')}/{String(C.de).padStart(2, '0')}</span></div>
+          {window.SERIE_DOC || 'DOCUMENTAL'}&nbsp;&nbsp;<span style={{ color: pal.acento }}>{String(C.n).padStart(2, '0')}/{String(C.de).padStart(2, '0')}</span></div>
       </div>
       <div style={{ fontFamily: SERIF, fontWeight: 650, fontSize: C.titulo.length > 34 ? 62 : 72, lineHeight: 1.06, color: BLANCO, letterSpacing: '-0.01em', textShadow: '0 4px 24px rgba(0,0,0,.55)' }}>{C.titulo}</div>
       <div style={{ width: 120, height: 5, borderRadius: 3, background: pal.acento, marginTop: 20 }} />

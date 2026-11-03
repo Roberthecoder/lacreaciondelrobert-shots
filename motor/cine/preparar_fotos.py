@@ -13,7 +13,8 @@ from PIL import Image, ImageOps
 
 AQUI = Path(__file__).resolve().parent
 FUENTES = AQUI.parent / "fuentes"
-CARPETAS = ["fotos_restauradas", "fotos_facebook", "fotos_basis"]
+# Toma todas las carpetas fuentes/fotos_* (en el Core: fotos_restauradas, fotos_facebook, fotos_basis)
+CARPETAS = sorted(d.name for d in FUENTES.iterdir() if d.is_dir() and d.name.startswith("fotos"))
 LADO_MAX = 2000
 EXT = {".jpg", ".jpeg", ".png", ".webp"}
 

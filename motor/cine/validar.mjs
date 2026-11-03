@@ -8,9 +8,8 @@ const AQUI = path.dirname(fileURLToPath(import.meta.url));
 globalThis.window = {};
 new Function(fs.readFileSync(path.join(AQUI, 'fotos.js'), 'utf8'))();
 new Function(fs.readFileSync(path.join(AQUI, 'escenas.js'), 'utf8'))();
-const ilus = [...fs.readFileSync(path.join(AQUI, 'ilustraciones.jsx'), 'utf8').matchAll(/^\s{2}(\w+): \(\{/gm),
-  ...fs.readFileSync(path.join(AQUI, 'ilustraciones2.jsx'), 'utf8').matchAll(/^\s{2}(\w+): \(\{/gm)].map((m) => m[1]);
-for (const f of fs.readdirSync(AQUI).filter((f) => /^ilustraciones\d+\.jsx$/.test(f) && f !== 'ilustraciones2.jsx'))
+const ilus = [];
+for (const f of fs.readdirSync(AQUI).filter((f) => /^ilustraciones\d*\.jsx$/.test(f)))
   ilus.push(...[...fs.readFileSync(path.join(AQUI, f), 'utf8').matchAll(/^\s{2}(\w+): \(\{/gm)].map((m) => m[1]));
 for (const f of fs.readdirSync(AQUI).filter((f) => /^cine-.*\.jsx$/.test(f)))
   ilus.push(...[...fs.readFileSync(path.join(AQUI, f), 'utf8').matchAll(/ILUSC\.(\w+) = /g)].map((m) => m[1]));

@@ -36,7 +36,7 @@ function uno(t) {
   return new Promise((res) => {
     const tmp = t.f.replace(/\.mp4$/, '.parcial.mp4');
     const log = fs.openSync(t.f.replace(/\.mp4$/, '.log'), 'w');
-    const pr = spawn('node', ['render.mjs', LARGO, 'Largo 00.dc.html', tmp, '--horizontal', '--gpu', '--fps', String(FPS), '--desde', String(t.desde), '--hasta', String(t.hasta)], { cwd: MOTOR, stdio: ['ignore', log, log] });
+    const pr = spawn('node', ['render.mjs', LARGO, opt('html', 'Largo 00.dc.html'), tmp, '--horizontal', '--gpu', '--fps', String(FPS), '--desde', String(t.desde), '--hasta', String(t.hasta)], { cwd: MOTOR, stdio: ['ignore', log, log] });
     pr.on('close', (code) => {
       fs.closeSync(log);
       if (code === 0) { fs.renameSync(tmp, t.f); hechos++; const min = (Date.now() - t0) / 60000; console.log(`Tramo ${t.i + 1}/${n} listo · ${hechos}/${pendientes.length} en ${min.toFixed(0)} min · faltan ~${((min / hechos) * (pendientes.length - hechos)).toFixed(0)} min`); }

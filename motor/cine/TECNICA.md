@@ -721,3 +721,13 @@ esperan `window.__precarga`**. En la rama del documental reemplaza `motor/render
 - `render-con-escala-desde-gpu.mjs` y `preview-largo.mjs` (con `--desde`, `--escala`, `--gpu` y espera de `__precarga`) ya están
   en `motor/cine/`; úsalos en lugar de `motor/render.mjs`/`preview.mjs` de main para documentales.
 Las demás deudas de §8 siguen abiertas: el que haga el siguiente documental las resuelve al empezar.
+
+## Separado de la biografía (3 nov 2026)
+El kit ya no trae nada de la historia del Core fijo en el código:
+- Cortos verticales: la etiqueta de arriba sale de `window.SERIE_DOC` (por defecto «DOCUMENTAL»; el Core usaba «MI HISTORIA»).
+- Música: `musica_largo.mjs` lee `cues_musica.json` (un cue por capítulo: `nombre, energia, celesta, piano, pizz, perc, acordes`)
+  si existe junto a él; si no, usa el arco del Core como base. Cada documental escribe el suyo según su historia.
+- `preparar_fotos.py` toma todas las carpetas `fuentes/fotos_*`; `render_largo.mjs` acepta `--html "<archivo>.dc.html"`;
+  `validar.mjs` ya no exige `ilustraciones.jsx` ni `ilustraciones2.jsx`.
+- `cine-monologos.jsx` (dibujos de la vida de Robert) se movió a `ejemplos/core00/`.
+- `EscenaMarca` sigue mostrando «La Creación del Robert» por defecto: es la marca del canal, no la biografía.
