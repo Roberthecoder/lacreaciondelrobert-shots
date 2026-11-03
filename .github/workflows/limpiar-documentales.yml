@@ -1,0 +1,30 @@
+name: Limpiar documentales del repo de shots (una vez)
+
+# Robert (3 nov 2026): los documentales ya están copiados completos en Roberthecoder/lacreaciondelrobert-largos
+# (verificado: mismas puntas). Se borran de aquí para que el repo de shots vuelva a su tamaño.
+# Constelaciones fue un experimento: se borra de todos lados (rama y releases), sin respaldo.
+on:
+  push:
+    branches: ['claude/great-hopper-o7cj63']
+    paths: ['.github/workflows/limpiar-documentales.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  limpiar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Borrar ramas y releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          R: ${{ github.repository }}
+        run: |
+          for b in largo-render/largo00-cine shots-largo/largo00 largo-render/pitch-solve largo/000 largo-render/constelaciones; do
+            gh api -X DELETE "repos/$R/git/refs/heads/$b" && echo "borrada $b" || echo "NO se pudo borrar $b"
+          done
+          gh release list -R "$R" -L 200 --json tagName,name -q '.[] | select((.tagName+" "+.name) | test("constelaciones";"i")) | .tagName' | while read t; do
+            gh release delete "$t" -R "$R" -y --cleanup-tag && echo "release borrado $t"
+          done
+          echo "Ramas que quedan con largo/doc:"; gh api "repos/$R/branches?per_page=100" --paginate -q '.[].name' | grep -iE "largo|constel|pitch" || echo "(ninguna)"
