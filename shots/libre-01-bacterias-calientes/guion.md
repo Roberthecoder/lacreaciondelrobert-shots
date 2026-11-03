@@ -40,3 +40,22 @@ Total ≈ 33.5 s en pantalla, 7 apariciones, 5 poses distintas.
 - En condiciones ideales de laboratorio, *E. coli* duplica su número cada ~20 min.
 - 30 duplicaciones (10 h a 20 min) = 2^30 ≈ 1,070 millones (cálculo teórico; en la práctica se frena por falta de nutrientes).
 - Las incubadoras de laboratorio para cultivar bacterias se ponen a 37 °C.
+
+## Robert en pantalla (tiempos reales de la animación, `bacterias.jsx`)
+Duración total 61.5 s (escenas: Gancho 0–4 · Frío 4–12 · Incubadora 12–20 · Calientes 20–30 · Giro 30–40 · Explosión 40–52 ·
+Remate 52–58 · Cierre 58–61.5). Ningún sticker tapa letreros, el termómetro ni la acción principal (revisado cuadro por cuadro).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 (ya en cuadro 0) | 3.9 | 10_serio_molesto | `arriba-der` (gancho) | Bacterias tiritando a 4 °C |
+| 2 | 7.0 | 10.4 | 03_aburrido_manos_mejillas | `abajo-der` | «En el refri casi no crecen» (nadie se divide) |
+| 3 | 12.4 | 18.0 | 13_senalando_arriba | `abajo-der` | Mete la caja a la incubadora; sube a 37 °C |
+| 4 | 20.6 | 23.5 | 04_bajando_lentes | `abajo-der` | Se quitan la bufanda y se sonrojan (pícaro) |
+| 5 | 24.0 | 29.9 | 05_sonriendo_dientes_uniformes | `presentador-bajo` (**grande**) | «Ya están calientes» |
+| 6 | 32.0 | 38.0 | 11_sorprendido | `abajo-der` | Se parten solas (fisión binaria) |
+| 7 | 44.0 | 50.0 | 06_pensativo_menton | `abajo-der` | El contador explota (1 → mil millones) |
+| 8 | 52.4 | 57.7 | 13_senalando_arriba | `abajo-der` | Abre la incubadora y las regresa al refri |
+| 9 | 58.0 | 61.5 | 02_apuntando_camara | `CierreMarca robert=` | Tarjeta de cierre |
+
+Total ≈ 42.5 s en pantalla (69 %), 9 apariciones, 8 poses distintas, nunca la misma dos veces seguidas.
+Las acciones de "Robert mete/saca la caja" las hace una mano con guante morado (los stickers son de medio cuerpo).

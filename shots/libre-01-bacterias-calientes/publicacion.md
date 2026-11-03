@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Estas bacterias se ponen calientes a 37 °C 🔥🎧 | Shot Libre 01
+Estas bacterias se ponen calientes a 37 °C 🔥🎧 | Shot Libre
 ```
 Descripción:
 ```text
