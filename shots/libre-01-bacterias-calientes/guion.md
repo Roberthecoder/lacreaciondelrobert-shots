@@ -17,8 +17,8 @@ medio de cultivo. La broma es que las bacterias a su temperatura ideal están ca
 | 3 Incubadora | 12–20 s | Robert mete la caja a la incubadora, cierra la puerta; el termómetro sube 4 → 37 °C | **Incubadora: 37 °C** |
 | 4 Calientes | 20–30 s | Las bacterias se sonrojan, sudan, se quitan la bufanda; música "romántica"; corazones; Robert pícaro | **37 °C: su temperatura ideal** · **Ya están calientes 🔥** |
 | 5 Giro | 30–40 s | Una bacteria guiña… y se parte sola en dos (fisión binaria); las demás también, sin buscar pareja; Robert sorprendido | **Ni siquiera necesitan pareja** · **Fisión binaria: una se parte en dos** |
-| 6 Explosión | 40–52 s | Contador 1 → 2 → 4 → 8 … ; reloj con "cada ~20 min"; la colonia crece hasta verse a simple vista | **Cada ~20 min se duplican** · **De 1 a más de mil millones en 10 h (en teoría)** |
-| 7 Remate y loop | 52–58 s | Robert abre la incubadora, ve la caja llena, la regresa al refri; vuelven a tiritar (loop al inicio) | **Al refri, que se enfríen** |
+| 6 Explosión | 40–52 s | Contador 1 → 2 → 4 → 8 … ; reloj con "cada ~20 min"; la colonia crece y, tras una noche en la incubadora, se ve a simple vista | **En condiciones ideales, se duplican cada ~20 min** · **De 1 a más de mil millones en 10 h (en teoría)** |
+| 7 Remate y loop | 52–58 s | Robert abre la incubadora a la mañana siguiente, ve la caja llena de colonias, la regresa al refri; vuelven a tiritar (loop al inicio) | **Al refri, que se enfríen** |
 | 8 Cierre | 58–61.5 s | Tarjeta con logo y Robert | — |
 
 ## Robert en pantalla
