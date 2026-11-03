@@ -25,7 +25,7 @@ jobs:
   detectar:
     if: ${{ !contains(github.event.head_commit.message, '[sin render]') }}
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 15   # el repo pasa de 1 GB por las ramas de documentales
     outputs:
       shots: ${{ steps.cambios.outputs.shots }}
       textos: ${{ steps.cambios.outputs.textos }}
@@ -37,6 +37,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          filter: blob:none   # historia completa sin bajar los archivos pesados de todas las ramas (3 nov 2026)
 
       - name: Qué shots cambiaron
         id: cambios

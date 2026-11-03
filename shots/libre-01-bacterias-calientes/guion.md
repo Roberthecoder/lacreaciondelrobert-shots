@@ -59,3 +59,5 @@ Remate 52–58 · Cierre 58–61.5). Ningún sticker tapa letreros, el termómet
 
 Total ≈ 42.5 s en pantalla (69 %), 9 apariciones, 8 poses distintas, nunca la misma dos veces seguidas.
 Las acciones de "Robert mete/saca la caja" las hace una mano con guante morado (los stickers son de medio cuerpo).
+
+_Render relanzado el 3 nov 2026 (la detección se trababa al bajar el repo)._
