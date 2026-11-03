@@ -23,7 +23,7 @@ function CineDefs() {
   const tex = (id, src, w, h) => <pattern id={id} patternUnits="userSpaceOnUse" width={w} height={h}><image href={TEX(src)} width={w} height={h} preserveAspectRatio="none" /></pattern>;
   return <svg width="0" height="0" style={{ position: 'absolute', width: 0, height: 0 }} aria-hidden="true">
     <defs>
-      {blur('c-b1', 1)}{blur('c-b2', 2)}{blur('c-b4', 4)}{blur('c-b8', 8)}{blur('c-b14', 14)}{blur('c-b24', 24)}{blur('c-b40', 40)}
+      {blur('c-b1', 1)}{blur('c-b2', 2)}{blur('c-b3', 3)}{blur('c-b4', 4)}{blur('c-b6', 6)}{blur('c-b8', 8)}{blur('c-b10', 10)}{blur('c-b12', 12)}{blur('c-b18', 18)}{blur('c-b14', 14)}{blur('c-b24', 24)}{blur('c-b40', 40)}
       {tex('c-madera-clara', 'madera_clara', 2048, 640)}{tex('c-madera-media', 'madera_media', 2048, 640)}
       {tex('c-madera-oscura', 'madera_oscura', 2048, 640)}{tex('c-madera-pino', 'madera_pino', 1536, 512)}
       {tex('c-tierra', 'tierra', 1024, 512)}{tex('c-papel-a', 'papel_a', 1920, 1080)}{tex('c-aserrin', 'aserrin', 1024, 512)}{tex('c-papel', 'papel', 1920, 1080)}
