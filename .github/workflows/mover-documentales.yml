@@ -4,6 +4,9 @@ name: Mover documentales al repo de documentales (una vez)
 # del Core #00 y del pitch de MIT Solve a Roberthecoder/lacreaciondelrobert-largos. Constelaciones NO se copia (se borra).
 # Después de verificar la copia, el admin borra esas ramas de este repo y este workflow.
 on:
+  push:
+    branches: ['claude/great-hopper-o7cj63']
+    paths: ['.github/workflows/mover-documentales.yml']
   workflow_dispatch:
 
 jobs:
