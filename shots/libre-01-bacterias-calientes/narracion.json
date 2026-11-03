@@ -1,0 +1,16 @@
+{
+  "dcHtml": "Shot Bacterias calientes.dc.html",
+  "nota": "Shot libre 01 (pedido de Robert en la Sala, 3 nov 2026). MUDO con efectos y música generada: no lleva voz ni voz_aprobada. Las líneas son los letreros en pantalla.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "4 °C" },
+    { "escena": "Frío", "texto": "En el refri casi no crecen" },
+    { "escena": "Incubadora", "texto": "Incubadora: 37 °C" },
+    { "escena": "Calientes", "texto": "37 °C: su temperatura ideal" },
+    { "escena": "Calientes", "texto": "Ya están calientes 🔥" },
+    { "escena": "Giro", "texto": "Ni siquiera necesitan pareja" },
+    { "escena": "Giro", "texto": "Fisión binaria: una se parte en dos" },
+    { "escena": "Explosión", "texto": "Cada ~20 min se duplican" },
+    { "escena": "Explosión", "texto": "De 1 a más de mil millones en 10 h (en teoría)" },
+    { "escena": "Remate", "texto": "Al refri, que se enfríen" }
+  ]
+}
