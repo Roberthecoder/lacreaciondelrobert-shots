@@ -45,7 +45,9 @@ el objetivo. Por eso cada fase tiene un **candado**: no se pasa a la siguiente s
 - Datos científicos que se DIBUJAN también se verifican (no solo los que se dicen): germinación epígea del frijol (cotiledones arriba,
   epicótilo entre cotiledones y hojas verdaderas), sustrato colonizado completo (blanco) antes de que broten setas, inóculo blanco,
   nada de micelio sobre líquidos (vinazas), *Pleurotus ostreatus* var. *columbinus* gris de adulto, nombres científicos en cursiva.
-- **Falla registrada:** el #00 no tiene `verificacion.md` en el repo (se verificó en el chat). A partir de hoy, sin archivo no hay render.
+- **Biografía de Robert:** él mismo es la fuente y el verificador de sus hechos (así se hizo el #00, ronda por ronda). Se anotan en
+  `verificacion.md` como «✅ confirmado por Robert, <fecha>». Todo lo demás (ciencia, cifras, instituciones, historia) pasa por el
+  verificador independiente, para descartar alucinaciones del que escribió el guion. Sin `verificacion.md` no hay render.
 
 ## 4. Storyboard y material (candado: Robert aprueba el storyboard)
 - `storyboard.md`: escena por escena, qué se ve en cada frase. Robert lo aprueba ANTES de animar (en el pitch esto evitó rondas).
@@ -124,5 +126,5 @@ cuadro en las escenas tocadas. Cada corrección de Robert se convierte en una re
 - Nuevas lecciones → este archivo; nuevos hechos de Robert → `correcciones-de-robert.md`.
 
 ## Estado de los modelos (3 nov 2026)
-- **Core video #00:** aprobado por Robert. Falta en el repo: `verificacion.md`. Voz eleven_v4 generada; 13 verticales hechos.
+- **Core video #00:** aprobado por Robert; su biografía la verificó él mismo (exento de `verificacion.md`). Voz eleven_v4 generada; 13 verticales hechos.
 - **Pitch MIT Solve:** aprobado y enviado (2 nov 2026). Video 4K en YouTube no listado. Respuestas finales en la rama.
