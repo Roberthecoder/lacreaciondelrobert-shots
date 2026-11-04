@@ -12,6 +12,13 @@ Sacadas textualmente de sus mensajes (26 oct–1 nov 2026). Cada una es una regl
 - No usar su PC para render pesado ("estás crasheando mi máquina"). Render en GitHub.
 - Contraseñas: él las escribe. Nunca leer secretos que deja visibles ("por favor no las leas").
 
+## Música (nov 2026, «Constelaciones»; detalle en `composicion-musical.md`)
+- Pidió la música del Core "como obra maestra" y recibió una pieza nueva de 3 min: "me sacaste la jalada de 3 minutos". Rehacer ESA música, completa.
+- A 72 BPM "duerme"; a 1.5× "sonaba wow" → la orquesta va a 108 BPM.
+- "Eso no es rock, es música clásica todavía": un género pedido va al 100 %, sin la orquesta encima.
+- "Extremadamente repetitivo": nunca el mismo patrón más de 4 compases; cada parte con su riff, su batería y sus frases.
+- Camino de puntos dorados uniendo constelaciones: "estuvo terrible".
+
 ## Shots
 - Moho del pan (*Rhizopus*): el micelio coloniza el pan **radialmente** con geometría natural; los rizoides salen **directo del micelio**
   donde llega a la superficie, sin conexiones en parábola entre ellos; el estolón sale después; los esporangios **no explotan ni se
