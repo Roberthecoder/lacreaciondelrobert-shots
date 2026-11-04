@@ -18,4 +18,9 @@ Verificador independiente (subagente que no escribió el guion), 3 nov 2026, má
 Notas de dibujo para no inducir error: no dibujar dos bacterias unidas antes de partirse; cada una se divide sola por la mitad
 (se estrecha al centro y se separa en dos bacilos iguales). El dibujo es esquemático (caras y bufandas).
 
+## v2 (4 nov 2026): chiste directo de ~20 s
+Letreros nuevos: «4 °C», «37 °C», «Ya están calientes 🔥», «…y ni pareja necesitan». Todos son un subconjunto de lo ya verificado
+arriba (refri a 4 °C, 37 °C temperatura ideal de *E. coli*, se reproducen solas por fisión binaria). Se quitaron el contador, los
+~20 min y las explicaciones. Sin afirmaciones nuevas.
+
 VEREDICTO: APROBADO

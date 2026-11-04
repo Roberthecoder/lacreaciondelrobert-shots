@@ -1,16 +1,23 @@
 {
   "dcHtml": "Shot Bacterias calientes.dc.html",
-  "nota": "Shot libre 01 (pedido de Robert en la Sala, 3 nov 2026). MUDO con efectos y música generada: no lleva voz ni voz_aprobada. Las líneas son los letreros en pantalla.",
+  "nota": "Shot libre 01, v2 (corrección de Robert, 4 nov 2026: «más directo, no tanto divulgación»). Chiste MUDO de ~20 s con efectos y música, sin voz. Las líneas son los letreros.",
   "lineas": [
-    { "escena": "Gancho", "texto": "4 °C" },
-    { "escena": "Frío", "texto": "En el refri casi no crecen" },
-    { "escena": "Incubadora", "texto": "Incubadora: 37 °C" },
-    { "escena": "Calientes", "texto": "37 °C: su temperatura ideal" },
-    { "escena": "Calientes", "texto": "Ya están calientes 🔥" },
-    { "escena": "Giro", "texto": "Ni siquiera necesitan pareja" },
-    { "escena": "Giro", "texto": "Fisión binaria: una se parte en dos" },
-    { "escena": "Explosión", "texto": "En condiciones ideales, se duplican cada ~20 min" },
-    { "escena": "Explosión", "texto": "De 1 a más de mil millones en 10 h (en teoría)" },
-    { "escena": "Remate", "texto": "Al refri, que se enfríen" }
-  ]
+    {
+      "escena": "Refri",
+      "texto": "4 °C"
+    },
+    {
+      "escena": "Incubadora",
+      "texto": "37 °C"
+    },
+    {
+      "escena": "Calientes",
+      "texto": "Ya están calientes 🔥"
+    },
+    {
+      "escena": "Remate",
+      "texto": "…y ni pareja necesitan"
+    }
+  ],
+  "duracion_libre": true
 }
