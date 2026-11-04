@@ -420,7 +420,20 @@ def titulo_corto(t, n):
     return t if len(t) <= n else t[:n - 1].rsplit(' ', 1)[0].rstrip(' ·:,;—-') + '…'
 
 
+def programado(clave):
+    """Videos especiales con horario propio (publicar/programados.json; p. ej. Shot Robert 01–13). No viven en shots/,
+    así que el calendario diario nunca los ve. Devuelve su ficha o None."""
+    try:
+        items = json.load(open('publicar/programados.json', encoding='utf-8')).get('items') or []
+    except (OSError, ValueError):
+        return None
+    return next((x for x in items if x.get('clave') == clave), None)
+
+
 def textos(clave):
+    pr = programado(clave)
+    if pr:
+        return redes_de(os.path.join('publicar', 'programados', clave, 'publicacion.md')), pr['titulo']
     carpeta = os.path.join('shots', clave)
     r = redes_de(os.path.join(carpeta, 'publicacion.md'))
     gancho = ((r.get('youtube') or {}).get('titulo')) or titulo_de(carpeta, clave)
@@ -799,10 +812,19 @@ def cmd_publicar(a):
         raise SystemExit('Modo real: escribe la clave del shot en "confirmar" (y solo con permiso de Robert).')
     if es_largo(a.clave):
         return publicar_largo(a, redes)
+    pr = programado(a.clave)
+    if pr:
+        # Candado: un video programado solo va a las redes de su ficha (Shot Robert 01–13: nunca YouTube ni TikTok).
+        fuera = [x for x in redes if x not in (pr.get('redes') or [])]
+        if fuera:
+            raise SystemExit(f'{a.clave} es un video programado: no se publica en {", ".join(fuera)} '
+                             f'(solo {", ".join(pr.get("redes") or [])}).')
+        if not os.path.exists(os.path.join('publicar', 'programados', a.clave, 'publicacion.md')):
+            raise SystemExit(f'Falta publicar/programados/{a.clave}/publicacion.md')
     carpeta = os.path.join('shots', a.clave)
-    if not os.path.isdir(carpeta):
+    if not pr and not os.path.isdir(carpeta):
         raise SystemExit(f'No existe {carpeta} en esta rama')
-    ver = open(os.path.join(carpeta, 'verificacion.md'), encoding='utf-8').read() if os.path.exists(
+    ver = 'VEREDICTO: APROBADO (video del documental, aprobado por Robert)' if pr else open(os.path.join(carpeta, 'verificacion.md'), encoding='utf-8').read() if os.path.exists(
         os.path.join(carpeta, 'verificacion.md')) else ''
     if a.clave not in open('.github/verificacion-exentos.txt', encoding='utf-8').read() and \
             'VEREDICTO: APROBADO' not in ver:

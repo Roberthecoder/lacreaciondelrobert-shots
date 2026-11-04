@@ -1,0 +1,85 @@
+name: Publicar videos programados
+
+# Videos especiales con horario propio (publicar/programados.json). Primer uso: Shot Robert 01–13 (pedido de Robert, 3 nov 2026),
+# 2 al día a las 12:00 y 19:00 CDMX del 4 al 10 nov, SOLO en Facebook, Instagram, Threads y LinkedIn.
+# Seguridad contra publicar doble:
+#  - Estos videos no viven en shots/: el calendario y la publicación diaria nunca los ven.
+#  - Cada corrida publica a lo más UNO: el más viejo cuya hora ya llegó y que todavía no está en todas sus redes (bitácora).
+#  - publicar.py se salta las redes donde ya salió (bitácora) y se niega a publicarlos en una red fuera de su ficha
+#    (nunca YouTube ni TikTok).
+#  - Mismo grupo de concurrencia que la publicación diaria: nunca corren las dos a la vez.
+# Apagar: "activo": false en publicar/programados.json.
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: 'real o prueba (prueba: no publica nada)'
+        default: 'real'
+      clave:
+        description: 'Opcional, solo para probar: una clave (rob-01). Vacío = lo que toque por horario.'
+        default: ''
+  schedule:
+    - cron: '2 18 * * *'    # 12:02 pm CDMX
+    - cron: '32 18 * * *'   # 12:32 pm CDMX · respaldo
+    - cron: '17 19 * * *'   # 1:17 pm CDMX · respaldo
+    - cron: '2 1 * * *'     # 7:02 pm CDMX
+    - cron: '32 1 * * *'    # 7:32 pm CDMX · respaldo
+    - cron: '17 2 * * *'    # 8:17 pm CDMX · respaldo
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: publicacion-diaria
+  cancel-in-progress: false
+
+jobs:
+  programados:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publicar el que toque
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MODO: ${{ inputs.modo || 'real' }}
+          CLAVE: ${{ inputs.clave }}
+        run: |
+          set -u
+          CFG=publicar/programados.json
+          if [ "$MODO" = "real" ] && [ "$(jq -r .activo $CFG)" != "true" ]; then echo "Programados apagados en $CFG"; exit 0; fi
+          AHORA=$(TZ=America/Mexico_City date +%Y-%m-%dT%H:%M)
+          git fetch -q origin refs/estado/publicaciones 2>/dev/null && git show FETCH_HEAD:publicaciones.json > bit.json 2>/dev/null || echo '[]' > bit.json
+          completo() {
+            for RED in $(jq -r --arg k "$1" '.items[] | select(.clave==$k) | .redes[]' $CFG); do
+              jq -e --arg k "$1" --arg r "$RED" '[.[] | select(.clave==$k and .red==$r and .modo=="real" and .ok==true)] | length > 0' bit.json >/dev/null || return 1
+            done; }
+          if [ -n "$CLAVE" ]; then
+            [ "$MODO" = "prueba" ] || { echo "::error::Con clave a mano solo se permite modo prueba"; exit 1; }
+            K="$CLAVE"
+          else
+            K=""
+            for C in $(jq -r --arg a "$AHORA" '.items | sort_by(.cuando) | .[] | select(.cuando <= $a) | .clave' $CFG); do
+              completo "$C" || { K="$C"; break; }
+            done
+          fi
+          if [ -z "$K" ]; then echo "Nada pendiente a las $AHORA."; exit 0; fi
+          IT=$(jq -c --arg k "$K" '.items[] | select(.clave==$k)' $CFG)
+          [ -n "$IT" ] || { echo "::error::$K no está en $CFG"; exit 1; }
+          # YouTube y TikTok jamás desde aquí, aunque alguien los agregue a la ficha
+          REDES=$(jq -r '[.redes[] | select(. != "youtube" and . != "tiktok")] | join(",")' <<<"$IT")
+          echo "## $K ($MODO) · $(jq -r .cuando <<<"$IT") · $REDES" >> "$GITHUB_STEP_SUMMARY"
+          ANTES=$(gh run list -R "$GITHUB_REPOSITORY" -w publicar.yml -L 1 --json databaseId --jq '.[0].databaseId // 0')
+          gh workflow run publicar.yml -R "$GITHUB_REPOSITORY" --ref main -f clave="$K" -f redes="$REDES" -f modo="$MODO" \
+            -f confirmar="$K" -f autorizo="Robert: Shot Robert 01–13 programados (pedido del 3 nov 2026)" \
+            -f release="$(jq -r .release <<<"$IT")" -f video="$(jq -r .video <<<"$IT")"
+          RID=""; for i in $(seq 1 30); do sleep 10
+            RID=$(gh run list -R "$GITHUB_REPOSITORY" -w publicar.yml -e workflow_dispatch -L 1 --json databaseId --jq '.[0].databaseId // 0')
+            [ "$RID" != "$ANTES" ] && [ "$RID" != "0" ] && break; RID=""; done
+          [ -n "$RID" ] || { echo "::error::No arrancó la publicación de $K (lo reintenta el siguiente horario)"; exit 1; }
+          if gh run watch "$RID" -R "$GITHUB_REPOSITORY" --interval 30 --exit-status >/dev/null; then
+            echo "- listo ([detalle](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RID))" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::Alguna red falló en $K; el siguiente horario reintenta solo esa red ([detalle](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RID))"; exit 1
+          fi
