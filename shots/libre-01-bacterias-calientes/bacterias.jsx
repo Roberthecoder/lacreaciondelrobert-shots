@@ -1,5 +1,6 @@
 // Shot Libre 01 · Bacterias calientes — CHISTE MUDO (sin voz: efectos y música generada en gen-audio.mjs). Formato M4 · Ciclo (loop).
 // Guion, letreros y fuentes: guion.md / narracion.json / verificacion.md. El dibujo es esquemático (caritas, bufandas y corazones).
+// v2 (4 nov 2026, corrección de Robert «más directo»): chiste de 20.5 s, solo 4 letreros, sin contador, reloj ni barra de escala.
 // Regla de dibujo (verificacion.md): cada bacteria se parte SOLA por la mitad (se alarga, se estrecha al centro y se separa en dos
 // bacilos iguales); nunca se dibujan dos bacterias unidas o juntándose antes de partirse.
 const AGAR = '#f1d27a', BAC = '#7fd88a', BAC_FRIO = '#a6dcef', BAC_CAL = '#ffb3a8', TINTA = KC.ink, GUANTE = '#8b6cff', GUANTE2 = '#6a4fe0';
@@ -268,7 +269,7 @@ function BarraUm({ x, y, pxUm, texto = '1 µm', o = 1 }) {
 }
 
 /* ---------- TERMÓMETRO (escala real de 0 a 40 °C) ---------- */
-function Termo({ T, valor, o = 1, ideal = 0 }) {
+function Termo({ T, valor, o = 1, ideal = 0, simple = false }) {
   if (o <= 0.01) return null;
   const x = 92, y0 = 660, alto = 470, max = 40, t2y = (c) => y0 + alto - (kclamp(c, 0, max) / max) * alto;
   const col = mixHex('#3fa9ff', '#ff3b2f', kclamp((valor - 4) / 33, 0, 1));
@@ -280,11 +281,11 @@ function Termo({ T, valor, o = 1, ideal = 0 }) {
       <rect x={x - 15} y={t2y(valor)} width={30} height={y0 + alto + 20 - t2y(valor)} rx={15} fill={col} />
       <circle cx={x} cy={y0 + alto + 52} r={52} fill={col} stroke={TINTA} strokeWidth={7} />
       <circle cx={x - 16} cy={y0 + alto + 36} r={12} fill="#fff" opacity=".5" />
-      {[0, 10, 20, 30, 40].filter((c) => !(ideal > 0.1 && c === 40)).map((c) => <g key={c}><line x1={x + 32} y1={t2y(c)} x2={x + 52} y2={t2y(c)} stroke={TINTA} strokeWidth={5} />
+      {!simple && [0, 10, 20, 30, 40].filter((c) => !(ideal > 0.1 && c === 40)).map((c) => <g key={c}><line x1={x + 32} y1={t2y(c)} x2={x + 52} y2={t2y(c)} stroke={TINTA} strokeWidth={5} />
         <text x={x + 58} y={t2y(c) + 9} style={{ font:`700 26px ${KF.mono}` }} fill={TINTA} stroke="#fff" strokeWidth={5} paintOrder="stroke">{c}°</text></g>)}
     </svg>
-    <div style={{ position:'absolute', left:x, top:y0 - 62, transform:'translate(-50%,-50%)', background:'rgba(14,15,18,.88)', border:`4px solid ${col}`, borderRadius:16,
-      padding:'4px 14px', font:`700 34px ${KF.mono}`, color:KC.texto, whiteSpace:'nowrap' }}>{Math.round(valor)} °C</div>
+    {!simple && <div style={{ position:'absolute', left:x, top:y0 - 62, transform:'translate(-50%,-50%)', background:'rgba(14,15,18,.88)', border:`4px solid ${col}`, borderRadius:16,
+      padding:'4px 14px', font:`700 34px ${KF.mono}`, color:KC.texto, whiteSpace:'nowrap' }}>{Math.round(valor)} °C</div>}
   </div>;
 }
 
@@ -305,7 +306,7 @@ function Llama({ T, s = 1 }) {
 }
 
 /* ---------- EXPLOSIÓN: microcolonia que se duplica (rejilla por generación) ---------- */
-const EL = 200, EW = 88;
+const EL = 200, EW = 88, CAJA = [1000, 600];
 function gridPos(g, idx) {
   const horiz = g % 2 === 0;
   const cols = 2 ** Math.ceil(g / 2), rows = 2 ** Math.floor(g / 2);
@@ -318,23 +319,20 @@ function zGen(g) {
   const horiz = g % 2 === 0, cols = 2 ** Math.ceil(g / 2), rows = 2 ** Math.floor(g / 2);
   const sx = horiz ? EL * 1.15 : EW * 1.45, sy = horiz ? EW * 1.45 : EL * 1.15;
   const W = (cols - 1) * sx + (horiz ? EL : EW), H = (rows - 1) * sy + (horiz ? EW : EL);
-  return Math.min(1, 860 / W, 480 / H);
+  return Math.min(1, CAJA[0] / W, CAJA[1] / H);
 }
-// Tiempos de la explosión (relativos al inicio de la escena Explosion). Los copia gen-audio.mjs.
-const EXP = { t0: 0.7, paso: 0.9, D: 0.82, gens: 5, rapido: [5.6, 9.6], zoom: [5.4, 9.2] };
+// Tiempos del remate (relativos al inicio de la escena Remate). Los copia gen-audio.mjs.
+const EXP = { t0: 0.9, paso: 0.42, D: 0.4, gens: 6 };
 const tGen = (E, g) => E + EXP.t0 + g * EXP.paso;                 // empieza la división g → g+1
-const tSepGen = (E, g) => tGen(E, g) + EXP.D * 0.5;               // se separan (plop) → el contador sube
-function tRapido(E, n) { const q = (n - EXP.gens) / (30 - EXP.gens); return E + EXP.rapido[0] + (EXP.rapido[1] - EXP.rapido[0]) * (1 - Math.pow(1 - q, 2)); }
-function nEn(T, E) {
-  let n = 0;
-  for (let g = 0; g < EXP.gens; g++) if (T >= tSepGen(E, g)) n = g + 1;
-  for (let k = EXP.gens + 1; k <= 30; k++) if (T >= tRapido(E, k)) n = k;
-  return n;
-}
+const tSepGen = (E, g) => tGen(E, g) + EXP.D * 0.5;               // se separan (plop)
 function Microcolonia({ T, E }) {
   // generación actual o transición
   let cells = [], z = 1;
-  if (T < tGen(E, 0)) { cells = [<BacCara key="0" T={T} x={0} y={0} L={EL} W={EW} seed={3} calor={0.7} corazones={1} />]; z = zGen(0); }
+  if (T < tGen(E, 0)) {   // pausa cómica: se queda sola, mira a los lados… ¿eh?
+    const mira = Math.sin((T - E) * 7) * kprog(T, E + 0.1, E + 0.3) * (1 - kprog(T, E + 0.55, E + 0.65));
+    cells = [<BacCara key="0" T={T} x={0} y={0} L={EL} W={EW} seed={2} calor={0.7} corazones={1 - kprog(T, E - 0.2, E + 0.2)} mira={mira} sorpresa={kprog(T, E + 0.55, E + 0.6)} />];
+    if (T > E + 0.45) cells.push(<text key="q" x={0} y={-EW * 1.0} textAnchor="middle" style={{ font:`400 ${150 * kEase.rebote(kprog(T, E + 0.45, E + 0.7))}px ${KF.titulo}` }} fill={KC.yellow} stroke={TINTA} strokeWidth={8} paintOrder="stroke">?</text>);
+    z = zGen(0); }
   else {
     let g = 0; while (g < EXP.gens - 1 && T >= tGen(E, g + 1)) g++;
     const a = tGen(E, g), u = kprog(T, a, a + EXP.D);
@@ -354,209 +352,3 @@ function Microcolonia({ T, E }) {
   return { cells, z };
 }
 
-/* ---------- SHOT ---------- */
-function BacteriasCalientes() {
-  const { T, CUES } = useComposition();
-  const K = { G: CUES.Gancho, F: CUES.Frio, I: CUES.Incubadora, C: CUES.Calientes, Gi: CUES.Giro, E: CUES.Explosion, R: CUES.Remate, O: CUES.Outro };
-  const FIN = K.O + 3.5;
-  // temperatura de la placa: 4 °C → 37 °C (incubadora) → 4 °C (de vuelta al refri)
-  const temp = T < K.R + 3.6 ? klerp(4, 37, kprog(T, K.I + 3.5, K.I + 7.2, kEase.suave)) : klerp(37, 4, kprog(T, K.R + 3.6, K.R + 5.0, kEase.suave));
-  const termoO = Math.min(1 - kprog(T, K.Gi - 0.2, K.Gi + 0.3), 1) + kprog(T, K.R + 3.3, K.R + 3.8);
-  // mano y puertas
-  const manoI = (() => {   // escena Incubadora: del refri a la incubadora
-    const a = K.I;
-    if (T < a + 0.2 || T > a + 3.3) return null;
-    if (T < a + 0.75) { const p = kprog(T, a + 0.2, a + 0.75, kEase.sale); return { x: PLACA_REFRI.x, y: klerp(KH + 120, PLACA_REFRI.y, p), placa: false }; }
-    if (T < a + 0.9) return { x: PLACA_REFRI.x, y: PLACA_REFRI.y, placa: true };
-    if (T < a + 2.5) { const p = kprog(T, a + 0.9, a + 2.4, kEase.suave); return { x: klerp(PLACA_REFRI.x, PLACA_INCU.x, p), y: klerp(PLACA_REFRI.y, PLACA_INCU.y, p) - Math.sin(Math.PI * p) * 170, placa: true }; }
-    const p = kprog(T, a + 2.6, a + 3.2, kEase.suave); return { x: PLACA_INCU.x, y: klerp(PLACA_INCU.y, KH + 120, p), placa: false };
-  })();
-  const manoR = (() => {   // escena Remate: de la incubadora al refri
-    const a = K.R;
-    if (T < a + 0.9 || T > a + 3.6) return null;
-    if (T < a + 1.4) { const p = kprog(T, a + 0.9, a + 1.4, kEase.sale); return { x: PLACA_INCU.x, y: klerp(KH + 120, PLACA_INCU.y, p), placa: false }; }
-    if (T < a + 1.6) return { x: PLACA_INCU.x, y: PLACA_INCU.y, placa: true };
-    if (T < a + 2.9) { const p = kprog(T, a + 1.6, a + 2.8, kEase.suave); return { x: klerp(PLACA_INCU.x, PLACA_REFRI.x, p), y: klerp(PLACA_INCU.y, PLACA_REFRI.y, p) - Math.sin(Math.PI * p) * 170, placa: true }; }
-    const p = kprog(T, a + 2.95, a + 3.5, kEase.suave); return { x: PLACA_REFRI.x, y: klerp(PLACA_REFRI.y, KH + 120, p), placa: false };
-  })();
-  const placaI = T < K.I + 0.9 ? 'refri' : T < K.I + 2.5 ? 'mano' : 'incu';
-  const placaR = T < K.R + 1.6 ? 'incu' : T < K.R + 2.9 ? 'mano' : 'refri';
-  const refriI = kprog(T, K.I + 0.3, K.I + 0.7, kEase.sale) * (1 - kprog(T, K.I + 1.6, K.I + 2.0, kEase.suave));
-  const incuI = kprog(T, K.I + 1.2, K.I + 1.6, kEase.sale) * (1 - kprog(T, K.I + 3.0, K.I + 3.4, kEase.suave));
-  const incuR = kprog(T, K.R + 0.3, K.R + 0.8, kEase.sale) * (1 - kprog(T, K.R + 3.1, K.R + 3.5, kEase.suave));
-  const refriR = kprog(T, K.R + 1.9, K.R + 2.3, kEase.sale) * (1 - kprog(T, K.R + 3.1, K.R + 3.5, kEase.suave));
-  const calientaI = kprog(T, K.I + 3.5, K.I + 7.2);
-
-  // bacterias de la vista al microscopio en el refri (gancho, frío y remate) y en la incubadora (calientes)
-  const MV = { cx: 570, cy: 965, r: 290 };
-  const tresFrio = (T2, extra = {}) => <>
-    <BacCara T={T2} x={MV.cx - 150} y={MV.cy + 150} L={190} W={84} rot={18} seed={5} frio={1} bufanda={1} {...extra} />
-    <BacCara T={T2} x={MV.cx + 140} y={MV.cy - 160} L={190} W={84} rot={-22} seed={8} frio={1} bufanda={1} {...extra} />
-    <BacCara T={T2} x={MV.cx + 10} y={MV.cy + 10} L={260} W={114} rot={-6} seed={2} frio={1} bufanda={1} {...extra} />
-  </>;
-  // vaho (aliento frío) que sale cada ~2 s
-  const Vaho = ({ T2, x, y, fase = 0 }) => { const u = ((T2 + fase) % 2) / 2; if (u > 0.6) return null; const k = u / 0.6;
-    return <g opacity={0.8 * Math.sin(Math.PI * k)}>{[0, 1, 2].map((i) => <circle key={i} cx={x + k * 60 + i * 18} cy={y + k * 30 + i * 6} r={10 + k * 22 - i * 3} fill="#fff" />)}</g>; };
-
-  // escena Calientes
-  const C = K.C;
-  const quita = kprog(T, C + 0.4, C + 1.2, kEase.sale);
-  const calor = kprog(T, C + 0.9, C + 2.2);
-  const MVc = { cx: klerp(570, 540, kprog(T, C + 9.2, C + 10.2, kEase.suave)), cy: klerp(965, 900, kprog(T, C + 9.2, C + 10.2, kEase.suave)), r: Math.exp(klerp(Math.log(290), Math.log(1500), kprog(T, C + 9.2, C + 10.2, kEase.suave))) };
-  const baile = (k) => Math.sin(T * 4 + k) * 6 * kprog(T, C + 6.5, C + 7.2);
-  const tresCalor = (cx, cy) => <>
-    <BacCara T={T} x={cx - 150} y={cy + 150 + baile(1)} L={190} W={84} rot={18 + baile(2)} seed={5} frio={1 - calor} calor={calor} quita={quita} bufanda={1} sudor={kprog(T, C + 2.0, C + 2.6)} corazones={kprog(T, C + 2.8, C + 3.4)} mira={0.6} />
-    <BacCara T={T} x={cx + 140} y={cy - 160 + baile(3)} L={190} W={84} rot={-22 + baile(4)} seed={8} frio={1 - calor} calor={calor} quita={kprog(T, C + 0.6, C + 1.4, kEase.sale)} bufanda={1} sudor={kprog(T, C + 2.2, C + 2.8)} corazones={kprog(T, C + 3.0, C + 3.6)} guino={T > C + 7.5 && T < C + 8.2 ? 1 : 0} />
-    <BacCara T={T} x={cx + 10} y={cy + 10 + baile(5)} L={260} W={114} rot={-6 + baile(6)} seed={2} frio={1 - calor} calor={calor} quita={kprog(T, C + 0.5, C + 1.3, kEase.sale)} bufanda={1} sudor={kprog(T, C + 1.8, C + 2.4)} corazones={kprog(T, C + 2.6, C + 3.2)} guino={T > C + 5.2 && T < C + 5.8 ? 1 : 0} />
-  </>;
-
-  // escena Giro (pantalla completa al microscopio)
-  const Gi = K.Gi;
-  const GI = { M: [Gi + 1.0, Gi + 3.6], B: [Gi + 5.0, Gi + 6.8], Cc: [Gi + 5.8, Gi + 7.6], D: [Gi + 6.6, Gi + 8.4] };
-  // escena Explosión
-  const E = K.E;
-  const n = nEn(T, E);
-  const mc = Microcolonia({ T, E });
-  const S = Math.exp(klerp(Math.log(16), Math.log(0.85), kprog(T, E + EXP.zoom[0], E + EXP.zoom[1], kEase.suave)));   // zoom de la placa
-  const zc = mc.z * kclamp(S / 16, 0, 1);
-  const agarO = kprog(T, E + 5.9, E + 6.7);
-  const coloniasE = Array.from({ length: 52 }, (_, i) => { const g = krng(i * 7 + 3); const a = g() * 6.283, d = Math.sqrt(g()) * 255; return [i === 0 ? 0 : Math.cos(a) * d, i === 0 ? 0 : Math.sin(a) * d, 7 + g() * 10, g()]; });
-  const horas = (n * 20) / 60;
-
-  // escena Remate: de regreso al refri (la vista al microscopio se vuelve a abrir)
-  const R = K.R;
-  const irisR = kprog(T, R + 4.1, R + 4.7, kEase.sale);
-  const ponR = kprog(T, R + 4.5, R + 5.0);
-
-  const svg = (c, z = 10) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
-  return (
-    <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 1–2 · gancho y frío: dentro del refri, la vista al microscopio muestra a las bacterias tiritando */}
-      <Escena T={T} a={K.G - 1} b={K.I} zoom={0.05} origen="55% 50%">
-        <RefriDentro T={T} />
-        <MicroVista T={T} cx={MV.cx} cy={MV.cy} r={MV.r} fx={300} fy={1372}>
-          {tresFrio(T)}
-          <Vaho T2={T} x={MV.cx + 20} y={MV.cy + 50} />
-          <Vaho T2={T} x={MV.cx - 140} y={MV.cy + 175} fase={0.7} />
-          <Vaho T2={T} x={MV.cx + 150} y={MV.cy - 135} fase={1.3} />
-          {/* ráfaga de frío con copos (escena Frío) */}
-          {T > K.F + 3.6 && T < K.F + 5.4 && Array.from({ length: 14 }, (_, i) => { const u = kprog(T, K.F + 3.6 + i * 0.04, K.F + 5.2); return <path key={i} d="M -12 0 L 12 0 M 0 -12 L 0 12 M -8 -8 L 8 8 M -8 8 L 8 -8" transform={`translate(${klerp(240, 940, u)} ${640 + i * 40 + Math.sin(u * 9 + i) * 30})`} stroke="#fff" strokeWidth={4} opacity={Math.sin(Math.PI * u)} />; })}
-        </MicroVista>
-        <BarraUm x={MV.cx + 40} y={MV.cy + MV.r - 120} pxUm={130} />
-      </Escena>
-
-      {/* 3 · incubadora: la mano lleva la caja del refri a la incubadora; sube a 37 °C */}
-      <Escena T={T} a={K.I} b={K.C} zoom={0.03}>
-        <FondoMarca color={KC.yellow} patron="puntos" T={T} />
-        <Laboratorio T={T} dia={false} refriAbre={refriI} incuAbre={incuI} placaEn={placaI} temp={temp} calienta={calientaI} />
-        {manoI && svg(<ManoPlaca x={manoI.x} y={manoI.y} />, 12)}
-        {manoI && manoI.placa === false && null}
-      </Escena>
-
-      {/* 4 · calientes: dentro de la incubadora a 37 °C */}
-      <Escena T={T} a={K.C} b={K.Gi + 0.6} zoom={0.04}>
-        <FondoMarca color={KC.orange} patron="puntos" T={T} />
-        <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 10%, rgba(255,80,40,.55), rgba(255,80,40,0) 45%)' }}></div>
-        {svg(<>
-          <path d={`M 40 120 ${Array.from({ length: 13 }, (_, k) => `L ${80 + k * 80} ${120 + (k % 2 ? 40 : 0)}`).join(' ')}`} stroke="#ff3b2f" strokeWidth={14} fill="none" strokeLinejoin="round" opacity={0.75 + 0.25 * Math.sin(T * 5)} />
-          <rect x={-10} y={1400} width={KW + 20} height={26} rx={10} fill="#ffe2c4" stroke={TINTA} strokeWidth={6} />
-          <PlacaMacro x={300} y={1372} rx={170} seed={4} />
-          {[0, 1, 2, 3, 4].map((k) => { const u = (T * 0.5 + k * 0.2) % 1; return <path key={k} d={`M ${120 + k * 200} ${1340 - u * 260} q 20 -24 0 -48 q -20 -24 0 -48`} stroke="#fff" strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.6 * Math.sin(Math.PI * u)} />; })}
-        </>, 2)}
-        <MicroVista T={T} id="mvC" cx={MVc.cx} cy={MVc.cy} r={MVc.r} fx={300} fy={1372}>
-          {tresCalor(MVc.cx, MVc.cy)}
-        </MicroVista>
-        {MVc.r < 400 && <BarraUm x={MVc.cx + 40} y={MVc.cy + MVc.r - 120} pxUm={130} />}
-      </Escena>
-
-      {/* 5 · giro: ni siquiera necesitan pareja — cada una se parte sola (fisión binaria) */}
-      <Escena T={T} a={K.Gi} b={K.E} zoom={0.03}>
-        {svg(<>
-          <FondoMicro T={T} id="fmGi" />
-          <Divide T={T} a={GI.D[0]} b={GI.D[1]} x={560} y={600} L={210} W={92} seed={21} cara={{ calor: 1, sudor: 1 }} hijas={{ calor: 0.8 }} />
-          <Divide T={T} a={GI.B[0]} b={GI.B[1]} x={150} y={900} L={210} W={92} rot={90} seed={31} cara={{ calor: 1 }} hijas={{ calor: 0.8 }} />
-          <Divide T={T} a={GI.Cc[0]} b={GI.Cc[1]} x={930} y={900} L={210} W={92} rot={90} seed={41} cara={{ calor: 1, sudor: 1 }} hijas={{ calor: 0.8 }} />
-          <Divide T={T} a={GI.M[0]} b={GI.M[1]} x={540} y={880} L={270} W={118} seed={2} cara={{ calor: 1, corazones: 1, guino: T > Gi + 0.2 && T < Gi + 0.8 ? 1 : 0 }} hijas={{ calor: 0.8 }} />
-        </>, 2)}
-        <BarraUm x={70} y={1230} pxUm={135} />
-      </Escena>
-
-      {/* 6 · explosión: 1 → 2 → 4 → … y la colonia se ve a simple vista */}
-      <Escena T={T} a={K.E} b={K.R} zoom={0.0}>
-        {svg(<>
-          <defs><radialGradient id="agarE" cx="45%" cy="40%" r="75%"><stop offset="0" stopColor="#f8e4a6" /><stop offset="1" stopColor={AGAR} /></radialGradient></defs>
-          <FondoMicro T={T} id="fmE" />
-          {/* placa a simple vista (aparece al alejarse) */}
-          <g opacity={agarO}>
-            <rect x={0} y={0} width={KW} height={KH} fill={KC.mint} />
-            <g transform={`translate(540 1010) scale(${S})`}>
-              <circle r={300} fill="#dfeef2" stroke={TINTA} strokeWidth={9 / Math.max(1, S * 0.6)} />
-              <circle r={286} fill="url(#agarE)" />
-              {coloniasE.map(([x, y, r, f], i) => { const cr = i === 0 ? 16 : r * kprog(T, E + 6.6 + f * 2.2, E + 8.6 + f * 2.2, kEase.sale);
-                return cr > 0.3 && <circle key={i} cx={x} cy={y} r={cr} fill="#fff6dc" stroke="#a88a3a" strokeWidth={2 / Math.max(1, S * 0.5)} />; })}
-              <circle r={286} fill="none" stroke="rgba(255,255,255,.6)" strokeWidth={6} />
-            </g>
-          </g>
-          {/* microcolonia (al microscopio) */}
-          <g transform={`translate(540 ${klerp(990, 1010, agarO)}) scale(${zc})`} opacity={1 - kprog(T, E + 6.1, E + 6.9)}>{mc.cells}</g>
-        </>, 2)}
-        {T < E + 5.4 && <Escala T={T} z={1} pxPorMm={1e5 * mc.z} x={70} y={1250} />}
-        {T > E + 9.0 && <Escala T={T} z={1} pxPorMm={300 / 45 * S} x={70} y={1320} />}
-        {/* contador */}
-        {T > E + 0.2 && <div style={{ position:'absolute', left:KW / 2, top:625, transform:'translate(-50%,-50%)', zIndex:41, textAlign:'center', background:'rgba(14,15,18,.82)', borderRadius:30, padding:'14px 36px 16px', border:`4px solid ${KC.yellow}` }}>
-          <div style={{ font:`400 ${n >= 10 ? 112 : 132}px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}`, whiteSpace:'nowrap',
-            transform:`scale(${n === 0 ? 1 : 1 + 0.12 * Math.exp(-Math.max(0, T - (n <= EXP.gens ? tSepGen(E, n - 1) : tRapido(E, n))) * 9)})` }}>{kformato(2 ** n)}</div>
-          <div style={{ marginTop:8, font:`700 32px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA, whiteSpace:'nowrap' }}>bacterias · {Math.floor(horas)} h {String(Math.round((horas % 1) * 60)).padStart(2, '0')} min</div>
-        </div>}
-      </Escena>
-
-      {/* 7 · remate: a la mañana siguiente, la caja llena de colonias regresa al refri */}
-      <Escena T={T} a={K.R} b={K.R + 4.0} zoom={0.03}>
-        <FondoMarca color={KC.yellow} patron="puntos" T={T} />
-        <Laboratorio T={T} dia={true} refriAbre={refriR} incuAbre={incuR} placaEn={placaR} colonias={1} temp={temp} calienta={1 - kprog(T, K.R + 3.6, K.R + 5)} />
-        {manoR && svg(<ManoPlaca x={manoR.x} y={manoR.y} colonias={manoR.placa ? 1 : 0} />, 12)}
-      </Escena>
-      <Escena T={T} a={K.R + 4.0} b={FIN + 1} zoom={0.04} origen="55% 50%">
-        <RefriDentro T={T} colonias={1} />
-        <MicroVista T={T} id="mvR" cx={MV.cx} cy={MV.cy} r={MV.r * irisR} fx={300} fy={1372}>
-          {tresFrio(T, { bufanda: ponR })}
-          <Vaho T2={T} x={MV.cx + 20} y={MV.cy + 50} />
-        </MicroVista>
-        {irisR > 0.9 && <BarraUm x={MV.cx + 40} y={MV.cy + MV.r - 120} pxUm={130} />}
-      </Escena>
-
-      {/* termómetro con escala real */}
-      <Termo T={T} valor={temp} o={termoO} ideal={kprog(T, C + 0.3, C + 0.8) * (1 - kprog(T, C + 9, C + 9.5))} />
-
-      {/* letreros (narracion.json) */}
-      <NumeroGigante T={T} at={K.G - 1} until={K.F - 0.2} valor={4} desde={4} sufijo=" °C" x={330} y={440} tam={210} color={KC.white} />
-      <Letrero T={T} at={K.F + 0.2} until={K.I - 0.3} borde={KC.cyan}>En el refri casi no crecen</Letrero>
-      <Letrero T={T} at={K.I + 3.4} until={K.C - 0.3} borde={KC.orange}>Incubadora: 37 °C</Letrero>
-      <Letrero T={T} at={K.C + 0.3} until={K.C + 4.8} borde={KC.gold}>37 °C: su temperatura ideal</Letrero>
-      <Letrero T={T} at={K.C + 5.0} until={K.Gi - 0.3} borde={KC.pink}>Ya están calientes<Llama T={T} /></Letrero>
-      <Letrero T={T} at={K.Gi + 0.3} until={K.Gi + 4.8} borde={KC.pink}>Ni siquiera necesitan pareja</Letrero>
-      <Letrero T={T} at={K.Gi + 5.0} until={K.E - 0.3} borde={KC.mint} tam={46}>Fisión binaria: una se parte en dos</Letrero>
-      <Letrero T={T} at={K.E + 0.3} until={K.E + 5.6} borde={KC.mint} tam={46} y={390}>En condiciones ideales,<br />se duplican cada ~20 min</Letrero>
-      <Letrero T={T} at={K.E + 5.8} until={K.R - 0.3} borde={KC.yellow} tam={46} y={390}>De 1 a más de mil millones<br />en 10 h (en teoría)</Letrero>
-      <Letrero T={T} at={K.R + 0.6} until={K.O - 0.2} borde={KC.cyan}>Al refri, que se enfríen</Letrero>
-
-      <Robert T={T} apariciones={[
-        [K.G - 0.5, K.F - 0.1, 'avatar_10_serio_molesto', 'arriba-der'],
-        [K.F + 3.0, K.F + 6.4, 'avatar_03_aburrido_manos_mejillas', 'abajo-der'],
-        [K.I + 0.4, K.I + 6.0, 'avatar_13_senalando_arriba', 'abajo-der'],
-        [K.C + 0.6, K.C + 3.5, 'avatar_04_bajando_lentes', 'abajo-der'],
-        [K.C + 4.0, K.Gi - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'presentador-bajo'],
-        [K.Gi + 2.0, K.Gi + 8.0, 'avatar_11_sorprendido', 'abajo-der'],
-        [K.E + 4.0, K.E + 10.0, 'avatar_06_pensativo_menton', 'abajo-der'],
-        [K.R + 0.4, K.O - 0.3, 'avatar_13_senalando_arriba', 'abajo-der']]} />
-      <MarcaAgua T={T} tema="biologia" serie="Libre" num="01" hasta={K.O} />
-      <CierreMarca T={T} at={K.O} tema="biologia" robert={'assets/stickers/avatar_02_apuntando_camara.png'} />
-      <AudioPista src={window.AUDIO_SRC} />
-    </div>
-  );
-}
-
-function BacteriasCalientesApp() {
-  return <div style={{ position:'fixed', inset:0, background:'#000' }}><CompositionStage width={1080} height={1920} scenes={window.OM_SCENES} playback={window.OM_PLAYBACK} bg="#0E0F12"><BacteriasCalientes /></CompositionStage></div>;
-}
-window.BacteriasCalientesApp = BacteriasCalientesApp;
