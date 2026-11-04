@@ -1,0 +1,175 @@
+{
+ "activo": false,
+ "nota": "Shot Robert 01–13 (pedido de Robert, 3 nov 2026). Hora CDMX. Solo estas 4 redes; YouTube y TikTok NUNCA desde aquí.",
+ "items": [
+  {
+   "clave": "rob-01",
+   "titulo": "Todo empezó con un frijol en un frasco | Shot Robert 01",
+   "video": "vertical_01.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-04T12:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-02",
+   "titulo": "Mi primer negocio: vender plantas de niño | Shot Robert 02",
+   "video": "vertical_02.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-04T19:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-03",
+   "titulo": "Este canal existe desde 2015 | Shot Robert 03",
+   "video": "vertical_03.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-05T12:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-04",
+   "titulo": "Cazaba monedas de plata… con un imán | Shot Robert 04",
+   "video": "vertical_04.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-05T19:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-05",
+   "titulo": "«Emprendedor, matemático… y sólo tiene 11 años» | Shot Robert 05",
+   "video": "vertical_05.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-06T12:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-06",
+   "titulo": "El hongo que no quiso crecer | Shot Robert 06",
+   "video": "vertical_06.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-06T19:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-07",
+   "titulo": "No soy el más brillante en matemáticas | Shot Robert 07",
+   "video": "vertical_07.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-07T12:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-08",
+   "titulo": "Mi recámara olía a paleta de cereza | Shot Robert 08",
+   "video": "vertical_08.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-07T19:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-09",
+   "titulo": "Hongos que crecen sobre basura | Shot Robert 09",
+   "video": "vertical_09.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-08T12:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-10",
+   "titulo": "No tenían ni 5 pesos para entrar a un baño | Shot Robert 10",
+   "video": "vertical_10.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-08T19:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-11",
+   "titulo": "Un hongo y una bacteria brillando junto a mi cama | Shot Robert 11",
+   "video": "vertical_11.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-09T12:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-12",
+   "titulo": "Fungi Mati ganó 5,000 dólares | Shot Robert 12",
+   "video": "vertical_12.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-09T19:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  },
+  {
+   "clave": "rob-13",
+   "titulo": "¿Qué es La Creación del Robert? | Shot Robert 13",
+   "video": "vertical_13.mp4",
+   "release": "verticales-shots-largo-largo00",
+   "cuando": "2026-11-10T12:00",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "linkedin"
+   ]
+  }
+ ]
+}
