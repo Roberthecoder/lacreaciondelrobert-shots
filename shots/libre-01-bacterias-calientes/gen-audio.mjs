@@ -1,6 +1,6 @@
 // gen-audio.mjs — música y efectos del Shot Libre 01 · Bacterias calientes (chiste MUDO: sin voz). Nada grabado: todo se calcula aquí.
-// La música cuenta la historia: fría y temblorosa (refri) → sube la temperatura → tema "romántico" juguetón (órgano + sax sintetizado)
-// → se corta (¡giro!) → "plop" de cada fisión con tono que sube → pulso que se acelera (crecimiento exponencial) → vuelve lo frío (loop).
+// v2 (4 nov 2026): chiste directo de 20.5 s. Fría y temblorosa (refri) → bip 37 °C → tema "romántico" juguetón (órgano + sax)
+// → rayón y silencio ("¿eh?") → "plop" de cada fisión con tono que sube → golpe musical de remate → cierre.
 // Cada acción en pantalla tiene su efecto en el mismo cuadro (los tiempos copian los de bacterias.jsx).
 // Uso (lo llama .github/workflows/auto-render.yml desde la carpeta del shot):
 //   node gen-audio.mjs "Shot Bacterias calientes.dc.html" assets/mezcla.wav
@@ -14,7 +14,7 @@ const src = fs.readFileSync(path.join(HERE, HTML), 'utf8');
 const scenes = JSON.parse(src.match(/window\.OM_SCENES = '(.*?)';/)[1]);
 const K = {}; let acc = 0; for (const s of scenes) { K[s.name] = acc; acc += s.dur; }
 const TOTAL = acc, SR = 48000, N = Math.ceil((TOTAL + 0.2) * SR);
-const G = K.Gancho, F = K.Frio, I = K.Incubadora, C = K.Calientes, Gi = K.Giro, E = K.Explosion, R = K.Remate, O = K.Outro;
+const I = K.Incubadora, C = K.Calientes, R = K.Remate, O = K.Outro;
 
 const mus = new Float32Array(N), sfx = new Float32Array(N);
 let seed = 11; const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
@@ -61,83 +61,60 @@ const sax = (t, m, d, g = 0.06) => { const f = lp(); let ph = 0; add(mus, t, d, 
 const escobilla = (t, g = 0.03) => { const h = hp(); add(mus, t, 0.12, (u, i) => h(NOISE[(i * 11) % NOISE.length], 4000) * Math.exp(-u * 30) * g); };
 const bombo = (t, g = 0.16) => { let ph = 0; add(mus, t, 0.3, (u) => { ph += 2 * Math.PI * (50 + 70 * Math.exp(-u * 40)) / SR; return Math.sin(ph) * Math.exp(-u * 12) * g; }); };
 
-/* ===================== LÍNEA DE TIEMPO ===================== */
-// 1–2 · REFRI (frío): trémolo agudo, pizzicato ahogado, castañeteo de dientes, zumbido del refri
-padFrio(0, I + 3.6, 0.045);
+/* ===================== LÍNEA DE TIEMPO (copia los tiempos de bacterias.jsx) ===================== */
+// 1 · REFRI 0–4: trémolo agudo, pizzicato ahogado, castañeteo de dientes, zumbido del refri, ráfaga con copos
+padFrio(0, I + 0.6, 0.045);
 zumbidoRefri(0, I + 0.4);
 tiriteo(0, I + 0.3);
-const frioMel = [69, 72, 71, 69, 64, 67, 69, 64, 72, 71, 69, 67];
-for (let k = 0; k < 12; k++) pluck(0.15 + k * 1.0, frioMel[k], 0.07, 0.6, 1600);
-for (let k = 0; k < 6; k++) bajo(k * 2, 45, 1.2, 0.06);
-for (let k = 0; k < 6; k++) castaneo(0.05 + k * 2, 0.9, 0.05);           // dientes castañeteando
-golpe(0.05, 0.25, 70); whoosh(0.0, 0.7, 0.12, 1800);                      // arranca: golpe de frío
-whoosh(F + 3.6, 1.6, 0.22, 4200);                                          // ráfaga con copos
-for (let k = 0; k < 6; k++) tic(F + 3.7 + k * 0.22, 0.05, 5200 + k * 300); // copitos
-// 3 · INCUBADORA
-succion(I + 0.3, 0.3); whoosh(I + 0.3, 0.6, 0.12, 1200);                  // se abre el refri
-whoosh(I + 0.9, 1.5, 0.18, 2200);                                          // la mano lleva la caja
-rechina(I + 1.2, 0.45, 0.06);                                              // se abre la incubadora
-golpe(I + 2.0, 0.3, 95); tic(I + 2.0, 0.12, 1800);                        // se cierra el refri
-metal(I + 2.5, 0.12, 1400);                                                // deja la caja en la repisa
-golpe(I + 3.4, 0.5, 70); tic(I + 3.42, 0.2, 1200);                        // ¡pum! se cierra la incubadora (y el seguro)
-for (let k = 0; k <= 33; k++) beep(I + 3.5 + (3.7 * k) / 33, 1200 + k * 18, 0.03, 0.035);  // el display cuenta 4 → 37
-{ let ph = 0; add(mus, I + 3.5, 3.8, (u) => { ph += 2 * Math.PI * hz(45 + 12 * (u / 3.8)) / SR; return (Math.sin(ph) + 0.5 * Math.sin(2 * ph)) * Math.sin(Math.PI * Math.min(1, u / 3.8) * 0.5) * 0.07; }); } // calienta
-beep(I + 7.3, 1760, 0.1, 0.12); beep(I + 7.48, 2350, 0.16, 0.12);        // bip-bip: 37 °C
-// 4 · CALIENTES: tema "romántico" juguetón (84 bpm): ii–V–I–VI en Do
-const BEAT = 60 / 84, t0 = C + 0.2;
-const acordes = [[62, 65, 69, 72], [55, 59, 62, 65], [60, 64, 67, 71], [57, 61, 64, 67]];  // Dm7 · G7 · Cmaj7 · A7
+const frioMel = [69, 72, 71, 69, 64, 67, 69, 64];
+for (let k = 0; k < 8; k++) pluck(0.1 + k * 0.5, frioMel[k], 0.07, 0.5, 1600);
+for (let k = 0; k < 2; k++) bajo(k * 2, 45, 1.2, 0.06);
+for (let k = 0; k < 4; k++) castaneo(0.05 + k * 1.0, 0.6, 0.05);
+golpe(0.05, 0.25, 70); whoosh(0.0, 0.7, 0.12, 1800);
+whoosh(1.6, 1.6, 0.2, 4200); for (let k = 0; k < 6; k++) tic(1.7 + k * 0.22, 0.05, 5200 + k * 300);
+// 2 · INCUBADORA 4–8
+succion(I + 0.15, 0.3);                                                    // se abre el refri
+whoosh(I + 0.55, 1.0, 0.18, 2200);                                         // la mano lleva la caja
+rechina(I + 0.7, 0.35, 0.06);                                              // se abre la incubadora
+golpe(I + 1.3, 0.3, 95); tic(I + 1.3, 0.12, 1800);                         // se cierra el refri
+metal(I + 1.5, 0.12, 1400);                                                // deja la caja en la repisa
+golpe(I + 2.1, 0.5, 70); tic(I + 2.12, 0.2, 1200);                         // ¡pum! se cierra la incubadora
+for (let k = 0; k <= 16; k++) beep(I + 2.2 + (1.2 * k) / 16, 1200 + k * 36, 0.03, 0.035);   // el display cuenta 4 → 37
+{ let ph = 0; add(mus, I + 2.2, 1.4, (u) => { ph += 2 * Math.PI * hz(45 + 12 * (u / 1.4)) / SR; return (Math.sin(ph) + 0.5 * Math.sin(2 * ph)) * Math.sin(Math.PI * Math.min(1, u / 1.4) * 0.5) * 0.07; }); }
+beep(I + 3.45, 1760, 0.1, 0.12); beep(I + 3.62, 2350, 0.16, 0.12);        // bip-bip: 37 °C
+// 3 · CALIENTES 8–13: tema "romántico" juguetón (96 bpm): ii–V–I–VI en Do
+const BEAT = 60 / 96, t0 = C + 0.05;
+const acordes = [[62, 65, 69, 72], [55, 59, 62, 65], [60, 64, 67, 71], [57, 61, 64, 67]];
 const bajos = [[38, 45, 41, 45], [31, 38, 35, 38], [36, 43, 40, 43], [33, 40, 37, 40]];
-const nBeats = Math.floor((Gi + 0.9 - t0) / BEAT);
+const finTema = R - 0.08;
+const nBeats = Math.floor((finTema - t0) / BEAT);
 for (let b = 0; b < nBeats; b++) {
   const bar = Math.floor(b / 4) % 4, tb = t0 + b * BEAT;
-  if (b % 4 === 0) organo(tb, BEAT * 4, acordes[bar], 0.032);
+  if (b % 4 === 0) organo(tb, Math.min(BEAT * 4, finTema - tb), acordes[bar], 0.032);
   bajo(tb, bajos[bar][b % 4], BEAT * 0.9, 0.12);
   escobilla(tb + BEAT * 0.5, 0.025); if (b % 2 === 1) escobilla(tb, 0.04);
 }
-// melodía del sax (beats desde t0): frase pícara
-const frase = [[2, 74, 1], [3, 76, 0.5], [3.5, 77, 0.5], [4, 79, 2.5], [7, 77, 0.5], [7.5, 76, 0.5], [8, 74, 1.5], [10, 72, 0.5], [10.5, 74, 0.5], [11, 76, 2],
-  [14, 79, 0.5], [14.5, 81, 0.5], [15, 79, 1], [16, 77, 0.75], [16.75, 76, 0.75], [17.5, 74, 1.5], [19.5, 72, 0.5], [20, 69, 2.5]];
-for (const [bt, m, d] of frase) if (t0 + bt * BEAT < Gi + 0.6) sax(t0 + bt * BEAT, m, Math.min(d * BEAT, Gi + 0.8 - (t0 + bt * BEAT)), 0.065);
-whoosh(C + 0.4, 0.6, 0.14, 2600); whoosh(C + 0.55, 0.6, 0.12, 2900); whoosh(C + 0.65, 0.6, 0.12, 3200);   // salen volando las bufandas
-{ const f = lp(); add(sfx, C + 1.8, 7.5, (u, i) => f(NOISE[(i * 13) % NOISE.length], 5000) * ventana(u, 7.5, 1, 1) * 0.012); }       // chisporroteo (sudor)
-for (let k = 0; k < 11; k++) boing(C + 2.7 + k * 0.62, 72 + (k % 3) * 2, 0.07);                          // corazones
-ting(C + 5.2, 96, 0.07); ting(C + 7.5, 98, 0.07);                                                         // guiños
-whoosh(C + 9.2, 1.0, 0.2, 3500);                                                                          // entramos al microscopio
-// 5 · GIRO: guiño, se corta la música, se estira… ¡plop!
-ting(Gi + 0.2, 100, 0.09);
-rayon(Gi + 0.9, 0.16);
-const kSepara = (a, b) => a + 0.8 * (b - a);
-const fis = [[Gi + 1.0, Gi + 3.6, 60], [Gi + 5.0, Gi + 6.8, 64], [Gi + 5.8, Gi + 7.6, 67], [Gi + 6.6, Gi + 8.4, 72]];
-for (const [a, b, m] of fis) { estira(a, (b - a) * 0.6, m - 12, m - 5, 0.06); plop(kSepara(a, b), m, 0.32); }
-// música juguetona que vuelve tras el primer plop
-const juego = [60, 64, 67, 72, 67, 64];
-for (let k = 0; k * 0.25 < E - (Gi + 3.4); k++) { const t = Gi + 3.4 + k * 0.25; pluck(t, juego[k % 6] + (k >= 16 ? 2 : 0), 0.045, 0.3, 2600); if (k % 2 === 0) bajo(t, 36 + (k >= 16 ? 2 : 0), 0.25, 0.09); }
-// 6 · EXPLOSIÓN: cada duplicación es un plop más agudo; luego un pulso que se acelera hasta mil millones
-const EXP = { t0: 0.7, paso: 0.9, D: 0.82, gens: 5, rapido: [5.6, 9.6], zoom: [5.4, 9.2] };   // = bacterias.jsx
-const tGen = (g) => E + EXP.t0 + g * EXP.paso, tSepGen = (g) => tGen(g) + EXP.D * 0.5;
-const tRapido = (n) => { const q = (n - EXP.gens) / (30 - EXP.gens); return E + EXP.rapido[0] + (EXP.rapido[1] - EXP.rapido[0]) * (1 - Math.pow(1 - q, 2)); };
-for (let g = 0; g < EXP.gens; g++) { estira(tGen(g), EXP.D * 0.45, 52 + g * 2, 60 + g * 2, 0.04); plop(tSepGen(g), 62 + g * 2, 0.3); bombo(tSepGen(g), 0.14); tic(tSepGen(g) + 0.02, 0.1, 2000); }
-for (let n = EXP.gens + 1; n <= 30; n++) { const t = tRapido(n); plop(t, 72 + (n - EXP.gens) * 0.8, 0.12); tic(t, 0.14, 2600 + n * 40); if (n % 2 === 0) bombo(t, 0.12); }
-whoosh(E + EXP.zoom[0], EXP.zoom[1] - EXP.zoom[0], 0.16, 1500);                                          // la cámara se aleja hasta la placa
-{ let ph = 0; const a = E + EXP.rapido[0], d = EXP.rapido[1] - EXP.rapido[0]; add(mus, a, d, (u) => { ph += 2 * Math.PI * hz(48 + 24 * Math.pow(u / d, 1.6)) / SR; return Math.sin(ph) * Math.sin(Math.PI * 0.5 * u / d) * 0.06; }); }
-const tFin = tRapido(30);
-golpe(tFin, 0.55, 60); metal(tFin, 0.12, 700); organo(tFin, 2.2, [60, 64, 67, 72, 76], 0.05); bajo(tFin, 36, 1.6, 0.16);
-for (let k = 0; k < 6; k++) ting(tFin + 0.4 + k * 0.25, 84 + k * 2, 0.03);                             // colonias que brillan
-// 7 · REMATE: a la mañana siguiente… y de vuelta al refri
-rechina(R + 0.3, 0.5, 0.06);
-organo(R + 0.35, 1.6, [67, 72, 76, 79], 0.04); ting(R + 0.4, 91, 0.06); ting(R + 0.55, 95, 0.05);          // "¡ta-dá!" (mañana)
-whoosh(R + 1.6, 1.3, 0.18, 2200);                                                                         // la mano lleva la caja
-succion(R + 1.9, 0.25);                                                                                    // se abre el refri
-golpe(R + 3.5, 0.5, 75); tic(R + 3.52, 0.18, 1200);                                                      // ¡pum! se cierra el refri
-for (let k = 0; k < 8; k++) pluck(R + 3.6 + k * 0.18, 79 - k * 2, 0.05, 0.4, 2000);                      // la temperatura baja
-whoosh(R + 4.0, 0.7, 0.14, 2000);                                                                         // vuelve la vista al microscopio
-for (let k = 0; k < 3; k++) { plop(R + 4.5 + k * 0.12, 79 + k * 3, 0.12); }                              // ¡puf! vuelven las bufandas
-padFrio(R + 3.6, TOTAL, 0.045);
-zumbidoRefri(R + 3.6, TOTAL, 0.02);
-tiriteo(R + 4.0, TOTAL);
-for (let k = 0; R + 4.4 + k * 1.0 < TOTAL - 0.3; k++) castaneo(R + 4.4 + k * 1.0, 0.6, 0.045);
-for (let k = 0; R + 4.2 + k * 1.0 < O; k++) pluck(R + 4.2 + k * 1.0, frioMel[k], 0.06, 0.6, 1600);
-// 8 · CIERRE
+const frase = [[1, 74, 1], [2, 76, 0.5], [2.5, 77, 0.5], [3, 79, 2.5], [6, 77, 0.5], [6.5, 76, 0.5], [7, 74, 1]];
+for (const [bt, m, d] of frase) { const t = t0 + bt * BEAT; if (t < finTema - 0.1) sax(t, m, Math.min(d * BEAT, finTema - t), 0.065); }
+whoosh(C + 0.2, 0.6, 0.14, 2600); whoosh(C + 0.3, 0.6, 0.12, 2900); whoosh(C + 0.35, 0.6, 0.12, 3200);   // salen volando las bufandas
+golpe(C + 1.2, 0.2, 90);                                                                                    // entra «Ya están calientes»
+{ const f = lp(); add(sfx, C + 1.0, 3.2, (u, i) => f(NOISE[(i * 13) % NOISE.length], 5000) * ventana(u, 3.2, 0.5, 0.5) * 0.012); }   // chisporroteo (sudor)
+for (let k = 0; k < 5; k++) boing(C + 1.6 + k * 0.4, 72 + (k % 3) * 2, 0.07);                             // corazones
+ting(C + 2.2, 96, 0.07); ting(C + 2.6, 98, 0.07);                                                         // guiños
+whoosh(C + 3.4, 0.8, 0.16, 2400); whoosh(C + 3.5, 0.8, 0.14, 2800);                                       // las otras dos se van
+whoosh(C + 4.0, 0.8, 0.2, 3500);                                                                          // la vista llena la pantalla
+// 4 · REMATE 13–17: rayón, silencio, "¿eh?"… plop, plop, plop (cada uno más agudo) y golpe musical
+rayon(R - 0.08, 0.2);
+boing(R + 0.47, 64, 0.09);                                                                                // "¿eh?"
+const EXP = { t0: 0.9, paso: 0.42, D: 0.4, gens: 6 };   // = bacterias.jsx
+const tGen = (g) => R + EXP.t0 + g * EXP.paso, tSepGen = (g) => tGen(g) + EXP.D * 0.5;
+for (let g = 0; g < EXP.gens; g++) { estira(tGen(g), EXP.D * 0.45, 50 + g * 3, 58 + g * 3, 0.04); plop(tSepGen(g), 60 + g * 3, 0.32); bombo(tSepGen(g), 0.14); tic(tSepGen(g) + 0.02, 0.1, 2000 + g * 200); }
+for (let k = 0; k * 0.105 < tSepGen(EXP.gens - 1) - tSepGen(0); k++) { const t = tSepGen(0) + k * 0.105; pluck(t, [60, 64, 67, 72][k % 4] + Math.floor(k / 4) * 2, 0.04, 0.25, 2600); }
+golpe(R + 1.3, 0.3, 80);                                                                                  // entra «…y ni pareja necesitan»
+const tFin = tSepGen(EXP.gens - 1) + 0.05;
+golpe(tFin, 0.55, 60); metal(tFin, 0.12, 700); organo(tFin, 1.6, [60, 64, 67, 72, 76], 0.05); bajo(tFin, 36, 1.4, 0.16);   // ¡ta-dá!
+for (let k = 0; k < 4; k++) ting(tFin + 0.25 + k * 0.15, 88 + k * 2, 0.03);
+// 5 · CIERRE
 golpe(O + 0.15, 0.25, 70); organo(O + 0.25, 3.0, [57, 64, 69, 76], 0.035); ting(O + 0.3, 93, 0.06);
 
 /* ---------- mezcla ---------- */
