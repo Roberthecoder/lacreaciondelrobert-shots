@@ -6,6 +6,17 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 
 Última actualización: 30 oct 2026, 15:40 UTC (+ sección del admin maestro, 1 nov 2026).
 
+## REPO PRIVADO Y DOCUMENTALES APARTE (3–4 nov 2026) — HECHO
+- `lacreaciondelrobert-shots` es PRIVADO desde el 4 nov (Robert). Página de privacidad sigue en línea; prueba de publicación
+  (modo prueba, 4 nov) OK en las 6 redes.
+- Las ramas de documentales (Core #00: `largo-render/largo00-cine`, `shots-largo/largo00`, `largo/000`; pitch: `largo-render/pitch-solve`)
+  viven SOLO en el repo público `lacreaciondelrobert-largos` (copiadas completas, verificadas, y borradas de aquí). Constelaciones
+  borrada de todos lados (Robert: experimento, sin respaldo). Futuros documentales: trabajar en `lacreaciondelrobert-largos`, nunca en
+  este repo (lo hacían pesar >1 GB y trababan el render de los shots).
+- Se quitó la casilla «Restrict deletions» de la regla del repo. Queda `temporal/demo-tiktok` (borrar solo si Robert lo pide).
+- Kit de animación de cine en `motor/cine/` + protocolo `maestro/recetas/protocolo-documental.md` (en main).
+- Shot libre 01 «Bacterias calientes» (mudo con sonidos, 61.5 s) hecho y en la Sala; pedido cerrado.
+
 ## ADMIN MAESTRO (1 nov 2026)
 - Todo el sistema está mapeado en `maestro/MAESTRO.md`. El admin maestro es un papel (nube o PC), no un chat: ver `ADMIN.md`
   «Eres el admin maestro». Vive en la NUBE ("Admin maestro · La Creación del Robert", claude.ai/code). Robert NO quiere chats locales
