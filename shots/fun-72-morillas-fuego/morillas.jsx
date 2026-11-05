@@ -354,7 +354,7 @@ function MorillasShot() {
       <Subtitulo T={T} idx={7} at={K.U + 0.1} until={K.E - 0.1} texto="Sin comida, *un último esfuerzo.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.Mx - 0.1} texto="Yosemite: *≈ 1,700* por hectárea." />
       <Subtitulo T={T} idx={9} at={K.Mx + 0.1} until={K.F - 0.1} texto="En México: *pancitas* o *elotitos.*" />
-      <Subtitulo T={T} idx={10} at={K.F + 0.1} until={K.C - 0.1} texto="La falsa morilla: *combustible de cohete.*" />
+      <Subtitulo T={T} idx={10} at={K.F + 0.1} until={K.C - 0.1} texto="Falsa morilla: su toxina da *químico de cohete.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Quizá el hongo *ya estaba esperando.*" />
 
       <Robert T={T} apariciones={[

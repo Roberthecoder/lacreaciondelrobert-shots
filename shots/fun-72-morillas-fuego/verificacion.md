@@ -32,4 +32,30 @@ Verificador independiente (subagente que no escribió el guion), 5 nov 2026. Fue
 
 Correcciones (filas 1, 1b, 5, 6, 10, 12, 14, 18b, 21, 22) aplicadas y revisadas contra las mismas frases textuales. Voz final: 958 caracteres.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la primera verificación). Abrí y busqué en el texto completo: Pilz et al. 2007, USDA PNW-GTR-710 (PDF de 170 pp., https://www.fs.usda.gov/pnw/pubs/pnw_gtr710.pdf); Miller et al. 2017, *Mycologia* (PDF, https://par.nsf.gov/servlets/purl/10051127); resumen de Larson et al. 2016, *For. Ecol. Manage.* 377 (https://umimpact.umt.edu/en/publications/post-fire-morel-morchella-mushroom-abundance-spatial-structure-an/); nota de la U. de Montana en ScienceDaily (https://www.sciencedaily.com/releases/2016/07/160726123852.htm); nota de la U. de Washington (https://sefs.uw.edu/2016/07/researchers-study-morel-abundance-after-2013-rim-fire/); Kuo, MushroomExpert (https://www.mushroomexpert.com/gyromitra.html).
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| El bosque quemado puede llenarse de morillas la primavera siguiente | ✅ | Pilz 2007 | "the mycelia of burn morels must be present in the soil before a fire in order to grow during the following winter and fruit in the spring" | 2007 |
+| Sombrero con hoyitos como panal, hueca por dentro | ✅ | Kuo | "the true morels, which are hollow" | 2012 |
+| Oeste de Norteamérica: cinco especies, sobre todo el primer año tras el incendio, en bosques de coníferas | ✅ | Miller 2017 | "Five fire-adapted species of true morels (Morchella) fruit abundantly in western North America, especially the first season after a forest fire"; "one of five fire-adapted morels from conifer burn sites documented from western North America" | 2017 |
+| Primer año: común 2,500 o más por hectárea (1,000/acre = 2,471/ha) | ✅ | Pilz 2007 | "it appears common to find 1,000 or more morels per acre the first year after a forest fire." | 2007 |
+| Al segundo año casi desaparecen | ✅ | Pilz 2007 | "Fruiting likely restricted to burned soils the first spring or early summer after an autumn fire, but in very small quantities, if at all, thereafter."; "in reduced numbers the second postfire year" | 2007 |
+| Todavía es un misterio | ✅ | Pilz 2007 | "large crops of fire morels in western forests remain somewhat of an ecological mystery" | 2007 |
+| Hipótesis 1: menos microbios que compiten y comida fácil | ✅ (dicha como hipótesis) | Pilz 2007 | "Reduced competition from other soil microbes and flushes of easily decomposable organic matter following soil heating are plausible contributors" | 2007 |
+| Hipótesis 2: el fuego le quemó su comida → último esfuerzo por reproducirse | ✅ (dicha como hipótesis) | Pilz 2007 | "theorized that such mass fruiting represents a last-ditch effort to reproduce when the morel's food source disappears"; "as could incinerated duff on the forest floor or burned organic matter" | 2007 |
+| Esclerocios (esquema) | ✅ | Pilz 2007 | "If fire morels persist in forest soils as sclerotia…" | 2007 |
+| Incendio Rim de 2013, Yosemite; estudio dirigido por la U. de Montana; muestreo mayo 2014 | ✅ | SEFS UW; ScienceDaily | "after the Rim Fire … burned through parts of Yosemite National Park from August to October 2013"; "Led by Professor Andrew Larson … from the University of Montana"; "surveyed for morels in May 2014 in 1,119 small sample plots" | 2016 |
+| Estimaron en promedio casi 1,700 por hectárea (1,693); parcelas de 3.14 m² | ✅ | Larson 2016 (resumen) | "We estimated a mean standing crop of 1693 morels ha−1 (SE = 155.4 morels ha−1)"; "n = 1119 contiguous circular 3.14 m2 plots" | 2016 |
+| México: bosques de oyamel; Edomex, CDMX, Hidalgo, Michoacán, Tlaxcala, Veracruz | ✅ | Pilz 2007 | "Mexican morels occur more commonly with true fir than with pines … oyamel fir (Abies religiosa)"; "coniferous forests around Mexico City, and the states of Mexico, Hidalgo, Michoacán, Tlaxcala, and Veracruz" | 2007 |
+| Les dicen pancitas o elotitos | ✅ | Pilz 2007 (cita a Guzmán y Tapia 1998) | "'elotitos' (little ears of green corn), and 'pancitas' (little paunches)" | 1998/2007 |
+| La toxina de la falsa morilla se rompe en un ingrediente de combustible de cohete (monometilhidrazina) | ✅ | Pilz 2007 | "breaks down during digestion into a variety of toxic hydrazines including monomethylhydrazine (MMH), a component of rocket fuel" | 2007 |
+| Falsa morilla: sombrero como cerebro, no del todo hueca | ✅ | Kuo | "Cap brainlike, convoluted, reddish"; "When sliced open, they are not completely hollow" | 2012 |
+| Subtítulo en pantalla "La falsa morilla: combustible de cohete." | ⚠️ acortado de más: parece decir que el hongo ES combustible → **corregido** a "Falsa morilla: su toxina da químico de cohete." | Pilz 2007 | (misma frase de arriba) | 2007 |
+| "Quizá el hongo ya estaba esperando" | ✅ (dicho como hipótesis, con "quizá") | Pilz 2007 | "it seems that the mycelia of burn morels must be present in the soil before a fire" | 2007 |
+
+**Cambios hechos:** solo el subtítulo idx 10 en `morillas.jsx` ("La falsa morilla: \*combustible de cohete.\*" → "Falsa morilla: su toxina da \*químico de cohete.\*"). El texto narrado de `narracion.json` NO cambió; `guion.md` y `publicacion.md` ya decían lo correcto ("su toxina se rompe … en monometilhidrazina, un ingrediente de combustible de cohete").
+
 VEREDICTO: APROBADO
