@@ -79,7 +79,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un hallazgo que nadie buscaba: el LSD nació en un programa farmacéutico sobre un hongo del centeno.
 En los años 30, Sandoz (Basilea) investigaba los alcaloides del cornezuelo (Claviceps purpurea), que comparten un núcleo: el ácido lisérgico. De ese programa salieron medicamentos reales, como la metilergometrina (Methergine). En 1938, Albert Hofmann sintetizó el derivado número 25, la LSD-25, buscando un analéptico (estimulante respiratorio y circulatorio). No despertó interés y se archivó.
-En 1943 lo resintetizó por una "corazonada"; una exposición accidental y un autoexperimento el 19 de abril revelaron sus efectos. Sandoz lo distribuyó como fármaco experimental (Delysid) a institutos de investigación y médicos.
+En 1943 lo resintetizó por una "corazonada"; el 16 de abril sintió efectos raros (él sospechó que una traza le entró por la piel) y el 19 de abril los confirmó con un autoexperimento. Sandoz lo distribuyó como fármaco experimental (Delysid) a institutos de investigación y médicos.
 Desde 1971 está en la Lista I del Convenio de la ONU sobre Sustancias Sicotrópicas, y en México en el grupo I del art. 245 de la Ley General de Salud. Hoy vuelve a evaluarse en ensayos clínicos controlados, pero no es un medicamento aprobado, y el NIDA documenta sus riesgos.
 Por qué importa: la historia muestra cómo se construye (y se regula) el conocimiento farmacológico: hipótesis, serendipia, controles y, al final, evidencia clínica rigurosa.
 ¿Qué otros descubrimientos conoces que salieron buscando otra cosa?

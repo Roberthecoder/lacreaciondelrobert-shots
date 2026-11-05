@@ -110,3 +110,13 @@ Revisado el 5 nov 2026 contra `narracion.json`, `guion.md`, `lsd.jsx` (todos los
    «En 1943 lo resintetizó por una "corazonada"; el 16 de abril sintió efectos raros (él sospechó que una traza le entró por la piel) y el 19 de abril los confirmó con un autoexperimento.»
 
 Todo lo demás queda ✅. Al aplicar esa frase, el shot puede aprobarse sin nueva búsqueda (el dato ya está verificado en R18).
+
+### Corrección aplicada (cierre de la segunda ronda)
+
+| # | Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| R33 bis | publicacion.md (LinkedIn), ya corregido: «el 16 de abril sintió efectos raros (él sospechó que una traza le entró por la piel) y el 19 de abril los confirmó con un autoexperimento» | ✅ | https://www.psychedelic-library.org/child1.htm | "Last Friday, April 16, 1943, I was forced to interrupt my work"; "a trace of the substance was absorbed through the skin"; "my laboratory journal of April 19, 1943" | 1943 |
+
+Revisado el 5 nov 2026: no queda ninguna ❌ ni ⚠️ en voz, pantalla ni publicación.
+
+VEREDICTO: APROBADO

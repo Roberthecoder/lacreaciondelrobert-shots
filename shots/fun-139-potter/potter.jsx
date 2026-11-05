@@ -389,7 +389,7 @@ function PotterShot() {
           {[0, 1, 2].map((i) => <Manuscrito key={i} x={330 + i * 210} y={1000 + (i % 2) * 20} rot={-8 + i * 7} s={1.5 * kprog(T, K.E + 0.8 + i * 0.2, K.E + 1.2 + i * 0.2, kEase.rebote)} />)}
         </>)}
       </Escena>
-      {/* 9–10 · la Sociedad Linneana: no admitía mujeres; lo lee Massee; ella lo retira; se pierde */}
+      {/* 9–10 · la Sociedad Linneana (aún sin socias mujeres); lo lee Massee, como era costumbre; ella lo retira; se pierde */}
       <Escena T={T} a={K.Ms} b={K.En} zoom={0.03}>
         <FondoLunares color={KC.lilac} punto="rgba(255,255,255,.18)" />
         {psvg(<>
