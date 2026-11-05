@@ -1,0 +1,12 @@
+{ "temas": [
+  { "id": "fun-90-fosil-hongo", "titulo": "El hongo más viejo que conocemos: un fósil de unos mil millones de años (Ourasphaira giraldae, Ártico canadiense, 2019)", "serie": "Shot Fungi Mati", "numero": 90,
+    "estado": "idea", "carpeta": "shots/fun-90-fosil-hongo", "rama": "claude/fun-90-94-records", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+  { "id": "fun-91-especies-ocultas", "titulo": "Conocemos menos de 1 de cada 10 hongos: cuántas especies de hongos hay (millones estimadas vs. las descritas)", "serie": "Shot Fungi Mati", "numero": 91,
+    "estado": "idea", "carpeta": "shots/fun-91-especies-ocultas", "rama": "claude/fun-90-94-records", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+  { "id": "fun-92-microsporidios", "titulo": "El hongo más pequeño dispara un arpón: microsporidios y su tubo polar", "serie": "Shot Fungi Mati", "numero": 92,
+    "estado": "idea", "carpeta": "shots/fun-92-microsporidios", "rama": "claude/fun-90-94-records", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+  { "id": "fun-93-hongo-sal", "titulo": "El hongo que vive en salmuera: Wallemia ichthyophaga y los hongos de las salinas", "serie": "Shot Fungi Mati", "numero": 93,
+    "estado": "idea", "carpeta": "shots/fun-93-hongo-sal", "rama": "claude/fun-90-94-records", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+  { "id": "fun-94-hongo-antartida", "titulo": "El hongo que vive dentro de las rocas de la Antártida y aguantó el espacio (Cryomyces antarcticus)", "serie": "Shot Fungi Mati", "numero": 94,
+    "estado": "idea", "carpeta": "shots/fun-94-hongo-antartida", "rama": "claude/fun-90-94-records", "fuentes": [], "fecha": "2026-11-05", "derivados": [] }
+] }
