@@ -14,8 +14,10 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   generarla tras la renovación del 28 nov (unos 5,100 créditos).
 - Lección: NO relanzar automáticamente jobs fallidos de render con voz: si falla «Guardar caché de voz», el relanzamiento vuelve a
   pagar la voz (se perdieron ~4,000 créditos así). Los jobs que se traban en «Instalar ffmpeg y Chromium» sí se pueden relanzar.
-- Falta: subir los narrados a la Sala (reemplazando los sin voz; límite 1 GB: borrar antes de subir), programar Fungi Mati martes y
-  sábado 1:07 pm (espera confirmación de Robert) y regresar el repo a privado (Robert, en Settings).
+- HECHO (5 nov): los 84 narrados (#60–#143) ya están en la Sala como «Narrado listo» (sin voz reemplazados, assets viejos borrados).
+  La Sala quedó llena al tope (1 GB): desde #119 los videos de la Sala van a crf 31 / audio 48k para caber. Antes de subir el grupo 07
+  hay que borrar sus sin voz primero (y quizá recomprimir).
+- Falta: programar Fungi Mati martes y sábado 1:07 pm (espera confirmación de Robert) y regresar el repo a privado (Robert, en Settings).
 
 ## REPO PRIVADO Y DOCUMENTALES APARTE (3–4 nov 2026) — HECHO
 - `lacreaciondelrobert-shots` es PRIVADO desde el 4 nov (Robert). Página de privacidad sigue en línea; prueba de publicación
