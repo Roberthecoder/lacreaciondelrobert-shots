@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Hongo Ceniza base narrada.dc.html",
+  "salida": "Shot Hongo Ceniza narrado.dc.html",
+  "nota": "Shot Fungi Mati #121. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Pyronema va en cursiva en pantalla.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este bosque quemado no está muerto: aquí brota un hongo que se come parte del carbón."
+    },
+    {
+      "escena": "Tu",
+      "texto": "Como tu anafre, o un cerro tras la temporada de incendios."
+    },
+    {
+      "escena": "Carbon",
+      "texto": "Cuando un bosque arde, no todo se hace humo: mucha madera queda como carbón."
+    },
+    {
+      "escena": "Siglos",
+      "texto": "Ese carbón puede durar siglos en el suelo: se creía muy difícil de comer."
+    },
+    {
+      "escena": "Pyronema",
+      "texto": "Pero en semanas o meses aparece Pyronema: tapetes de copitas naranjas de un milímetro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿De qué vive, si todo está quemado?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2021, en Berkeley y Wisconsin, estudiaron este hongo, sacado del incendio Rim de 2013, en California."
+    },
+    {
+      "escena": "Alimento",
+      "texto": "Le dieron de único alimento carbón de pino hecho a setecientos cincuenta grados, y creció."
+    },
+    {
+      "escena": "Isotopo",
+      "texto": "Marcaron ese carbón con carbono trece, más pesado, y el hongo soltó parte como dióxido de carbono."
+    },
+    {
+      "escena": "Genes",
+      "texto": "Y encendió genes para desarmar los anillos que forman ese carbón."
+    },
+    {
+      "escena": "Poquito",
+      "texto": "Ojo: fue poco y en laboratorio; la mayor parte de su gas vino de otras fuentes."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese bosque quemado no está muerto: un hongo puede regresar su carbono al ciclo."
+    }
+  ]
+}
