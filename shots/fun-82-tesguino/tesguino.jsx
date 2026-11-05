@@ -484,7 +484,6 @@ function TesguinoShot() {
 
       <Rotulo T={T} at={K.A + 0.2} until={K.A + 1.4} x={540} y={760} texto={TX.metate} tam={36} centro color={KC.ink} fondo="rgba(255,255,255,.8)" />
       <Rotulo T={T} at={K.A + 1.6} until={K.A + 2.9} x={540} y={470} texto={TX.horas} tam={32} centro color={KC.ink} fondo="rgba(255,255,255,.8)" />
-      <NumeroGigante T={T} at={K.A + 3.1} until={K.L - 0.3} valor={0} sufijo="" etiqueta="" x={-999} y={0} tam={10} />
       <Rotulo T={T} at={K.A + 3.1} until={K.L - 0.3} x={540} y={470} texto={TX.nombre.toUpperCase()} tam={90} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
 
       <Chip T={T} at={K.L + 0.1} until={K.B - 0.3} texto={TX.porDentroOlla} x={430} y={470} tam={30} borde={KC.cyan} mono />
