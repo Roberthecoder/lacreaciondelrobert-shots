@@ -46,4 +46,28 @@ Otros detalles revisados al construir la animación: la cuadrícula del público
 
 Todas las afirmaciones quedan ✅.
 
+
+## Verificación independiente de publicacion.md (5 nov 2026)
+
+| # | Afirmación (red) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | Cuatro de los violines eran de Michael Rhonheimer: dos con madera tratada con hongos y dos sin tratar (YouTube) | ✅ | https://www.sciencedaily.com/releases/2009/09/090914111418.htm | "the Swiss violin maker Michael Rhonheimer" … "two with fungally-treated wood, the other two with untreated wood." | 2009 |
+| 2 | "Opus 58" fue el violín tratado nueve meses (YouTube) | ✅ (Scienceline 2022 dice "seis meses", pero Empa es la fuente primaria y dice nueve) | ScienceDaily 2009 | "treated with fungus for the longest time, nine months." | 2009 |
+| 3 | Votaron el público y un jurado (YouTube) | ✅ | ScienceDaily 2009 | "A jury of experts, together with the conference participants, judged the tone quality of the violins." | 2009 |
+| 4 | Fecha de la prueba: 1 sep 2009, Osnabrück (comentario fijado) | ✅ | ScienceDaily 2009 | "September 1st 2009" / "27th 'Osnabrücker Baumpflegetagen'" | 2009 |
+| 5 | Mínimo de Maunder; anillos angostos, baja densidad y mucha rigidez (YouTube) | ✅ (dicho como hipótesis) | Schwarze 2008, resumen (ya citado en verificacion.md n.º 16) | "Maunder Minimum… narrow annual rings, resulting in a high modulus of elasticity and low density." | 2008 |
+| 6 | Schwarze trató madera de violín con *P. vitreus* (pícea) y *X. longipes* (arce), y luego un violín con madera tratada ganó la votación de 2009 (LinkedIn) | ⚠️ da a entender que el violín ganador llevó *Xylaria*; no dice que esos hongos se probaron en el laboratorio | ScienceDaily 2012 · Scienceline 2022 | "He discovered two species of fungi (Physisporinus vitreus and Xylaria longipes)" / "had to eliminate one fungus, Xylaria longipes, from consideration for aesthetic reasons" / "the sycamore maple plate was treated with Schizophyllum commune" | 2012 / 2022 |
+| 7 | "Francis Schwarze probó hongos… (*P. vitreus* en pícea y *X. longipes* en arce)… un violín con madera tratada" (Instagram) | ⚠️ el mismo problema que el n.º 6, aunque más leve: falta "en el laboratorio" | igual que el n.º 6 | igual que el n.º 6 | 2012 / 2022 |
+| 8 | La calidad del sonido no tiene una sola medida (LinkedIn) | ✅ (es una paráfrasis) | ScienceDaily 2012 | "There is no clear-cut, scientific method for measuring tonal quality." | 2012 |
+| 9 | Madera tratada: "queda más ligera y radia mejor el sonido" (Facebook, Threads) | ✅ (dicho en general de la madera tratada; respaldado por Schwarze 2008) | Schwarze 2008 | "reduction in density… radiation ratio was increased from 'poor' to 'good'" | 2008 |
+| 10 | Cita: "Empa (2009). Biotech violin outdoes Stradivarius" (YouTube, comentario fijado) | ⚠️ ese no es el título de la página en ScienceDaily | ScienceDaily 2009 | Título de la página: "Fungus-treated Violin Outdoes Stradivarius" | 2009 |
+| 11 | Cita: Schwarze, Spycher y Fink 2008, *New Phytologist* 179: 1095–1104, DOI 10.1111/j.1469-8137.2008.02524.x | ✅ | Crossref | "Superior wood for violins – wood decay fungi as a substitute for cold climate", New Phytologist 179(4) 1095-1104 | 2008 |
+| 12 | Cita: Sedighi Gilani, Boone, Mader y Schwarze 2014, *J. Struct. Biol.* 187: 149–157, DOI 10.1016/j.jsb.2014.06.003 | ✅ | Crossref | autores: Marjan Sedighi Gilani, Matthieu N. Boone, Kevin Mader, F. W. M. R. Schwarze; 187(2) 149-157 | 2014 |
+| 13 | Cita: "Empa (2012). Treatment with fungi makes a modern violin sound like a Stradivarius" | ✅ | https://www.sciencedaily.com/releases/2012/09/120908081611.htm | Título de la página idéntico | 2012 |
+| 14 | Cita: "Havimo et al. (2008). Tracheid cross-sectional dimensions in Scots pine (Pinus sylvestris) – distributions and comparison with Norway spruce (Picea abies). Silva Fennica 42(1)" (comentario fijado) | ❌ el título es de OTRO artículo (2009, *Silva Fennica* 43(4), sf.188). El de 2008, 42(1) (pdf/266, el que se usó para los ≈30 µm) se llama distinto | Crossref, DOI 10.14214/sf.266 y 10.14214/sf.188 | sf.266: "Distributions of tracheid cross-sectional dimensions in different parts of Norway spruce stems", Silva Fennica 42(1), 2008 / sf.188: "Tracheid cross-sectional dimensions in Scots pine… comparison with Norway spruce", 43(4), 2009 | 2008 / 2009 |
+| 15 | Empa es un laboratorio de materiales en St. Gallen; el congreso era de cuidado de árboles; Trusler; Stradivarius de 1711; 2 millones de dólares; 90 / 39 / 113 / más de 180; "no fue un experimento controlado" (todas las redes) | ✅ (ya cubierto en verificacion.md, n.º 8, 17–22; el texto de publicacion.md coincide) | ScienceDaily 2009 / 2012 | ver verificacion.md | 2009 / 2012 |
+| 16 | Unos 30 µm de ancho por célula de pícea (YouTube) | ✅ (ya cubierto en verificacion.md, n.º 7) | Havimo 2008 | "averages of 32 µm in earlywood and 31 µm in latewood" | 2008 |
+
+Correcciones aplicadas en publicacion.md: cita correcta de Havimo et al. 2008 (Norway spruce), título de ScienceDaily «Fungus-treated violin outdoes Stradivarius», LinkedIn e Instagram dicen «probó en el laboratorio» y «madera tratada con hongos nueve meses». Todo lo demás ✅.
+
 VEREDICTO: APROBADO
