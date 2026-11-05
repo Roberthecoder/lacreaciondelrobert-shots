@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #95 · rama `claude/fun-95-99-insectos`.
 - **Formato:** N1 "Por dentro" (la cigarra volando en un árbol → bajo tierra con las ninfas → dentro del abdomen → el tapón de esporas → la misma cigarra volando, ya vista como hongo) + N5 "El experimento" (se recrea el playback de cantos de Cooley et al. (datos de 2002) con bocina, cigarras en jaula y marcador 23/25).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" — «Esa cigarra no está volando entera: la parte de atrás de su cuerpo ya es un hongo.»
-- **Duración:** voz 939 caracteres / 163 palabras (≈ 58.2 s) + cierre 3.5 s → **61.7 s** en la base (`estimar-escenas.mjs`).
+- **Duración:** voz 938 caracteres / 164 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** en la base (`estimar-escenas.mjs`, después de las correcciones del verificador; «¿Pero cómo…?» quedó «¿Cómo…?» para no pasar de 62.0 s).
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **No repite fun-02** (hormiga zombi, *Ophiocordyceps*, que mata y luego esporula) **ni fun-53** (hongo-oruga): aquí el hongo deja **viva** a la cigarra y la usa volando ("transmisión activa"), más el truco del aleteo y las drogas. Sin comparación en la voz.
 
@@ -12,28 +12,45 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa cigarra no está volando entera: la parte de atrás de su cuerpo ya es un hongo. | Fondo menta, rama de árbol; cuadro 0.3: una cigarra periódica (cuerpo negro, ojos rojos, alas transparentes con venas anaranjadas) despega de la rama. La cámara la sigue y gira: la punta del abdomen no está; en su lugar, un tapón blanco-crema que suelta polvito. Tarjeta "cigarra entera" que se tacha; etiquetas "cigarra viva" y "hongo (tapón de esporas)". |
-| 1 | Nombre | Es *Massospora cicadina*: ataca a cigarras que salen cada trece o diecisiete años. | Chip "*Massospora cicadina*"; etiqueta "cigarra periódica · *Magicicada*"; dos relojitos/calendarios "13 años" y "17 años" que giran. |
-| 2 | Suelo | Sus esporas esperan en la tierra y contagian a las ninfas al salir. | Corte del suelo bajo el árbol (fondo café/oscuro): esporas de reposo redondas, de pared gruesa y superficie en red (reticulada), en la tierra; ninfas excavando hacia arriba por sus túneles; al pasar, una espora se les pega. Chip "esporas de reposo". |
-| 3 | Adentro | El hongo crece dentro de su abdomen y lo infla. | **Por dentro** (fondo oscuro, `Lupa` rayos X sobre la cigarra adulta): masa de hongo que llena la parte de atrás del abdomen; el abdomen se hincha. Chip "POR DENTRO · esquemático". |
-| 4 | Tapon | Se le caen los últimos anillos, genitales incluidos, y queda un tapón de esporas. | Los últimos anillos del abdomen se desprenden uno por uno (caen con "clic"); queda al aire el tapón blanco-crema de esporas (conidios, al microscopio: ovaladas o casi redondas). Etiquetas "anillos del abdomen" y "tapón de esporas (conidios)". |
-| 5 | Salero | Aun así sigue volando y buscando pareja: un salero con alas. | De vuelta al árbol (fondo menta): la cigarra vuela y va sacudiendo esporas como un salero; un salero dibujado con alas aparece un segundo junto a ella. |
-| 6 | Pregunta | ¿Pero cómo contagia a más cigarras? | **Re-gancho.** Coro de cigarras en ramas; "?" gigante; Robert grande, pensativo. |
-| 7 | Estudio | En dos mil dos les pusieron cantos de macho a cigarras enfermas. | **N5, experimento:** `TarjetaEstudio` "Cooley, Marshall y Hill · *Scientific Reports* 2018 · cantos de 2002, EE. UU."; bocina que toca un canto (ondas) frente a una cigarra infectada en una rama/jaula. |
-| 8 | Aleteo | Veintitrés de veinticinco machos con el tapón respondieron con el aleteo de las hembras. | La cigarra macho infectada da un "aleteo" (alas que chasquean, golpe de sonido a tiempo); marcador que se llena: 23 de 25 (cuadritos), chip "aleteo de hembra receptiva". Comparación chica: "machos con la otra fase: 0 de 17". |
-| 9 | Machos | Otros machos intentaban aparearse con ellos, y así, al parecer, se contagiaban. | Un macho sano llega y se le acerca al infectado; esporas que pasan de uno a otro (puntitos). Chip "al parecer, por contacto". |
-| 10 | Catinona | En dos mil diecinueve, un equipo halló en los tapones catinona, una anfetamina de planta. | `TarjetaEstudio` "Boyce, Kasson y col. · *Fungal Ecology* 2019 · West Virginia University"; molécula de catinona dibujada (anillo + cadena) saliendo del tapón; etiqueta "catinona · *M. cicadina*" y hojita de khat (*Catha edulis*) chiquita "también en esta planta". |
-| 11 | Psilocibina | Y en otras *Massospora*, psilocibina, la de los hongos mágicos. | Segunda cigarra distinta (anual, más chica: "cigarras anuales") con su tapón; molécula de psilocibina; etiqueta "psilocibina · *M. platypediae* / *M. levispora*". |
-| 12 | Hipotesis | Proponen que eso cambia su conducta: aún es hipótesis. | Sello "HIPÓTESIS" que se pone sobre una flecha "droga → conducta"; signo "?" chico. |
-| 13 | Cierre | Así que esa cigarra no vuela entera: vuela con un hongo. | **Regreso a la imagen del inicio:** la misma cigarra en la misma rama, despegando; ahora la parte de atrás se ve como hongo en rayos X, y deja una estela de esporas. |
+| 1 | Nombre | Es *Massospora cicadina*: ataca a cigarras que salen cada trece o diecisiete años. | La misma cigarra sigue volando. Caja "*Massospora cicadina*"; etiqueta "cigarra periódica · *Magicicada*"; dos calendarios "13 años" y "17 años" que saltan. |
+| 2 | Suelo | Sus esporas esperan en la tierra y contagian a las ninfas al salir. | Corte del suelo bajo el árbol (fondo café/oscuro): esporas de reposo redondas, de pared gruesa y superficie en red (reticulada), en la tierra; ninfas excavando hacia arriba por sus túneles; al pasar, una espora se les pega. Chip "BAJO TIERRA · esquemático"; etiquetas "esporas de reposo", "ninfa de cigarra", "se contagia al salir". |
+| 3 | Adentro | El hongo crece dentro de su abdomen y lo infla. | **Por dentro** (fondo oscuro, abdomen transparente, alas levantadas): hifas y masa de hongo que llenan el abdomen; el abdomen se hincha. Chip "POR DENTRO · esquemático"; etiquetas "hongo dentro del abdomen" y "se infla". |
+| 4 | Tapon | Se le caen los últimos anillos, genitales incluidos, y queda un tapón de esporas. | Los últimos anillos del abdomen se desprenden uno por uno (caen con "clic"); queda al aire el tapón blanco-crema de esporas (conidios, al microscopio: ovaladas o casi redondas). Fondo amarillo. Etiquetas "anillos que se caen" y "tapón de esporas"; `Lupa` "conidios (esporas)" con esporas ovaladas o casi redondas. |
+| 5 | Salero | Aun así sigue volando y buscando pareja: un salero con alas. | De vuelta a la rama (fondo cian): la cigarra vuela y va sacudiendo esporas como un salero; un salero dibujado con alas aparece junto a ella. Chip "sigue viva y volando", etiqueta «salero con alas». |
+| 6 | Pregunta | ¿Cómo contagia a más cigarras? | **Re-gancho.** Coro de cigarras en ramas; "?" gigante; Robert grande, pensativo. |
+| 7 | Estudio | En dos mil dos les pusieron cantos de macho a cigarras enfermas. | **N5, experimento:** `TarjetaEstudio` "2002 · cantos en EE. UU. · Cooley, Marshall y Hill · Scientific Reports 2018" (sin "Connecticut"); bocina que toca un canto (ondas) frente a un macho con tapón en una rama. Etiquetas "canto de macho" y "macho con tapón". |
+| 8 | Aleteo | Veintitrés de veinticinco machos con el tapón respondieron con el aleteo de las hembras. | La cigarra macho infectada da un "aleteo" (alas que chasquean, golpe de sonido a tiempo); marcador que se llena: 23 de 25 (cuadritos, 2 con ✗); textos "23 de 25 machos con tapón", "…respondieron con el aleteo de hembra" y "machos con la otra fase: 0 de 17". |
+| 9 | Machos | Otros machos intentaban aparearse con ellos, y así, al parecer, se contagiaban. | Un macho sano llega volando y se le pega cola con cola al infectado (como se aparean las cigarras); esporas que pasan de uno a otro. Etiqueta "macho sano". Chip "al parecer, por contacto". |
+| 10 | Catinona | En dos mil diecinueve, un equipo halló en los tapones catinona, una anfetamina de planta. | `TarjetaEstudio` "Boyce, Kasson y col. · *Fungal Ecology* 2019 · West Virginia University"; molécula de catinona dibujada (anillo + cadena) saliendo del tapón; cajas "catinona", "una anfetamina de planta", "tapón de *M. cicadina*" y hojas de khat con "khat · *Catha edulis*". |
+| 11 | Psilocibina | Y en otras *Massospora*, psilocibina, la de los hongos mágicos. | Segunda cigarra distinta (anual, café y sin ojos rojos: "cigarra anual") con su tapón; molécula de psilocibina; cajas "psilocibina", "la de los hongos mágicos" y "*M. platypediae* / *M. levispora*". |
+| 12 | Hipotesis | Proponen que eso cambia su conducta: aún es hipótesis. | Molécula de catinona → flecha → cigarra que aletea ("catinona" → "conducta"); cae el sello "HIPÓTESIS". |
+| 13 | Cierre | Así que esa cigarra no vuela entera: vuela con un hongo. | **Regreso a la imagen del inicio:** la misma cigarra en la misma rama, despegando; el tapón brilla y deja una estela de esporas. Caja "cigarra + *Massospora*" y etiqueta "vuela con un hongo". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave y continua, con un zumbido suave de coro de cigarras al fondo (sintetizado, nunca dominante); efectos en el mismo cuadro: despegue (aleteo), tachado, tierra al bajar al suelo, latido/hinchazón por dentro, "clic" de cada anillo que cae, polvito de esporas (salero), canto de la bocina, chasquido del aleteo, marcador 23/25, sello de hipótesis.
+**Música** (`gen-audio.mjs`, todo calculado): cama grave continua que cambia de acorde en cada escena con una progresión en la menor (Am – F – Dm – E – Am – C – E7 – Am – G – F – Dm – B♭ – Esus – Fmaj7 – Am), «tapada» bajo tierra y por dentro, bajo que marca cada cambio y un motivo de 4 notas (la–do–mi–re) que abre, regresa transportado en el vuelo y vuelve en el cierre; zumbido suave de alas en los vuelos; efectos en el mismo cuadro: despegue (aleteo), tachado, tierra al bajar al suelo, latido/hinchazón por dentro, "clic" de cada anillo que cae, polvito de esporas (salero), canto de la bocina, chasquido del aleteo, marcador 23/25, sello de hipótesis.
 
-Barras de escala: «esquemático» en todas las escenas (fase 2: si se consigue el largo real del cuerpo de *Magicicada* en una fuente verificada, se agrega barra de 1 cm en la escena del gancho y del cierre). Esporas: conidios ovalados, esporas de reposo redondas de pared gruesa (Boyce et al. 2019, Fig. 1). No se dice ningún tamaño en la voz.
+**Escala:** barra «esquemático» fija abajo a la izquierda en todo el video (y = 1430, bajo el subtítulo): no hay en las fuentes verificadas un largo del cuerpo de *Magicicada* ni de las esporas que se use, así que nada se dibuja «a escala». Morfología: *Magicicada* negra, ojos rojos, venas de las alas y patas rojo-naranja; tapón blanco-crema/amarillento al final del abdomen; conidios ovalados o casi redondos; esporas de reposo redondas, de pared gruesa y superficie en red. No se dice ningún tamaño en la voz.
 
 ## Robert en pantalla
 
-(Se completa en la fase 2.)
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Cómo contagia a más cigarras?». En este shot `grande` entra y sale de lado (cambio en la copia local de `kit-robert.jsx`) para no cruzar el subtítulo.
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «la parte de atrás de su cuerpo ya es un hongo» (cuadro 0) |
+| 2 | 5.6 | 9.7 | 12_perfil_serio | `arriba-der` | el nombre y los 13 o 17 años |
+| 3 | 10.5 | 13.9 | 06_pensativo_menton | `arriba-der` | las esporas que esperan en la tierra |
+| 4 | 22.4 | 25.7 | 13_senalando_arriba | `arriba-der` | «aun así sigue volando… un salero con alas» |
+| 5 | 25.8 | 27.75 | 07_pensativo_puno | `grande` | «¿cómo contagia a más cigarras?» |
+| 6 | 35.0 | 37.2 | 11_sorprendido | `arriba-der` | «23 de 25… el aleteo de las hembras» |
+| 7 | 37.9 | 42.0 | 12_perfil_serio | `arriba-der` | «otros machos intentaban aparearse con ellos» |
+| 8 | 44.6 | 47.4 | 04_bajando_lentes | `arriba-der` | «catinona, una anfetamina de planta» |
+| 9 | 48.0 | 51.2 | 13_senalando_arriba | `arriba-der` | «psilocibina, la de los hongos mágicos» |
+| 10 | 51.6 | 54.6 | 10_serio_molesto | `arriba-der` | «aún es hipótesis» |
+| 11 | 55.1 | 58.2 | 02_apuntando_camara | `arriba-der` | «vuela con un hongo» |
+| — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 11 · **35.8 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 5 nov 2026)
 
