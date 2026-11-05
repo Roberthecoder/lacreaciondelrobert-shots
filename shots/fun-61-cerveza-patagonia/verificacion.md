@@ -38,4 +38,30 @@ Fuentes abiertas:
 Resumen: se aplicaron los 4 cambios del verificador: "clara" → "lager"; Tíbet como comparación; Irlanda 2022; sin la cifra de 89 %.
 La voz queda en 978 caracteres (base 61.5 s). Todas las afirmaciones de la voz, la pantalla y `publicacion.md` quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion). Revisé la voz (`narracion.json`, idx 0–12), los letreros del `cerveza.jsx` y `publicacion.md`; abrí cada fuente con WebFetch. Sin cambios necesarios.
+
+| Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|
+| La lager la hicieron dos levaduras en una sola célula; *S. pastorianus* es un híbrido de dos especies | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3167505/ | "appears to be an allotetraploid hybrid species of S. cerevisiae and an unidentified species" / fusion of an ale yeast "with an unknown cryotolerant Saccharomyces species" | 2011 |
+| Una es *S. cerevisiae*, la del pan («y la cerveza ale» en pantalla) | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3167505/ | "the same species involved in producing wine and leavened bread" | 2011 |
+| «¿Y la otra? Fue un misterio» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3167505/ | "an unknown cryotolerant Saccharomyces species" | 2011 |
+| La malta suelta azúcares y la levadura se los come | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC5596070/ | "Maltose and maltotriose represent over 70% of the total sugar content of wort" (verificado en la 1.ª ronda; afirmación general de fermentación) | 2017 |
+| Los parte en alcohol y CO₂: las burbujas | ✅ | https://fermentation.wsu.edu/alcohol-fermentation-products/ | "conversion of a sugar source to ethanol and carbon dioxide" (1.ª ronda; hecho de libro de texto) | vigente |
+| Se multiplica sacando yemas | ✅ | https://www.kent.ac.uk/ims/personal/msr/prion/biology/biology6/biology6.htm | "reproduces by an asymmetrical budding process." (1.ª ronda) | vigente |
+| En 2011, equipo de Argentina, EE. UU. y Portugal | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3167505/ | Afiliaciones: Libkind (Argentina); Hittinger, Dover, Johnston (EE. UU.); Valério, Gonçalves, Gonçalves, Sampaio (Portugal) | 2011 |
+| La halló en bosques de *Nothofagus* de la Patagonia (corteza, suelo, *Cyttaria*) | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3167505/ | samples of "Nothofagus bark, soil from underneath the trees, and Cyttaria stromata" … "within and near Lanin and Nahuel Huapi National Parks (Argentina)" | 2011 (muestreo 2006–2008) |
+| Genoma 99.5 % idéntico a la parte que faltaba / «borrador de su genoma · 2011» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3167505/ | "The draft genome sequence of S. eubayanus is 99.5% identical to the non-S. cerevisiae portion" | 2011 |
+| «Ella aguanta el frío» | ✅ | https://academic.oup.com/femsyr/article/15/3/fov005/575534 | "S. eubayanus was more cryotolerant than S. cerevisiae." / "The hybrid's S. eubayanus subgenome conferred better growth rates and biomass yields at low temperature" | 2015 |
+| *cerevisiae* se come un azúcar de la malta que ella no (maltotriosa) | ✅ | https://academic.oup.com/femsyr/article/15/3/fov005/575534 ; https://www.glbrc.org/industry/technologies/non-gmo-maltotriose-consuming-strains-saccharomyces-eubayanus | "S. eubayanus did not utilize the maltotriose present in the culture medium" / "all known wild strains lack the ability to consume maltotriose." | 2015 / vigente |
+| Juntas fermentan entre 10 y 15 °C | ✅ | https://academic.oup.com/femsyr/article/15/3/fov005/575534 | "Lager-beer production with S. pastorianus is performed under anaerobiosis at low temperatures (10–15°C)." | 2015 |
+| Su parte silvestre se parece más a levaduras del Tíbet que a las de la Patagonia | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC4934787/ | "more closely related to the representative strain from Tibet than to known strains from North Carolina or Patagonia." | 2016 |
+| «en 2022, también en Irlanda» (primeras cepas europeas) | ✅ | https://academic.oup.com/femsyr/article/doi/10.1093/femsyr/foac053/6835568 | "the first European strains UCD646 and UCD650, isolated from a wooded area on a university campus in Dublin, Ireland." (muestras de sep 2021; publicado 2022) / "isolates from Tibet made a larger contribution" | 2022 |
+| publicacion.md: también en Norteamérica, Asia y Oceanía | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC4934787/ | "rare strains of S. eubayanus have been isolated in North America, Asia, and New Zealand" | 2016 |
+| La gran mayoría de la cerveza que se vende en el mundo es lager | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC4934787/ | "Lager-style beers constitute the vast majority of the beer market." | 2016 |
+| Dibujo: *Cyttaria* en ramas de *Nothofagus*; maltotriosa de 3 anillos; cromosomas esquemáticos | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3167505/ | "Cyttaria hariotii (an obligate ascomycete parasite of Nothofagus spp.)"; maltotriosa = trisacárido de glucosa; rotulado «esquemático» | 2011 |
+
+Resultado: 0 ❌, 0 ⚠️. Sin cambios en guion, voz, `.jsx` ni `publicacion.md`.
+
 VEREDICTO: APROBADO

@@ -52,4 +52,33 @@
 
 Todas las afirmaciones quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la primera verificación). Revisé `narracion.json` (12 líneas), `guion.md`, letreros y subtítulos de `esporotricosis.jsx` y `publicacion.md`. Páginas abiertas el 5 nov 2026.
+
+| Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|
+| Una espina de rosal te puede meter un hongo | ✅ | https://www.cdc.gov/sporotrichosis/about/index.html | "infections can be caused by pricks from rose thorns or scratches from an infected cat" | 2024 (act. 24 abr 2024) |
+| Se llama *Sporothrix*; vive en tierra, musgo (esfagno), paja y rosales | ✅ | ídem | "lives in the environment on soil and plants like sphagnum moss, rose bushes, and hay" | 2024 |
+| Entra por una cortada o un raspón | ✅ | ídem | "People get infected when Sporothrix gets in cuts or scrapes." | 2024 |
+| Con el calor del cuerpo cambia de forma: moho a 25 °C, levadura a 37 °C | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC4295339/ | "exist as a mold at 25°C (room temperature) and as yeast at 37°C (in host tissues)" | 2014 |
+| Levadura "con forma de puro" | ✅ | ídem | "cigar shaped yeast cells" | 2014 |
+| Pantalla: "conidios en forma de flor" | ⚠️ (impreciso: los conidios son piriformes; lo que parece flor es cómo se agrupan) | ídem | "pyriform conidia in a flower-like arrangement" | 2014 |
+| ↳ Corregido: etiqueta "conidios agrupados en flor" (y en guion/publicación "agrupados en forma de flor") | ✅ | ídem | "flower-like arrangement" | 2014 |
+| Entre 1 y 12 semanas después sale un bultito donde te picaste | ✅ | https://www.cdc.gov/sporotrichosis/about/index.html · PMC4295339 | "Symptoms start anytime from 1 to 12 weeks after exposure." · lesiones "at the inoculation site" | 2024 / 2014 |
+| «Y **casi siempre** salen otros, en fila… siguen tus vasos linfáticos» | ⚠️ (exagerado: la forma linfocutánea es 70–80 % de los casos cutáneos, "la más común", no "casi siempre") | https://pmc.ncbi.nlm.nih.gov/articles/PMC4295339/ | "It is the most common variety and accounts for 70–80% of the cases of cutaneous sporotrichosis." · "a string of similar nodules along the proximal lymphatics" | 2014 |
+| ↳ Corregido: «Y **muchas veces** salen otros, en fila, subiendo por el brazo: siguen tus vasos linfáticos.» (voz, guion, TikTok; mismo número de palabras) | ✅ | ídem | ídem | 2014 |
+| En Brasil, *S. brasiliensis* pasa de gatos enfermos a personas por arañazos y mordidas | ✅ | https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1006077 | "In Brazil, S. brasiliensis is repeatedly associated with feline infection" · "mostly associated with scratches or bites from infected cats" | 2017 |
+| Fiocruz, Río de Janeiro: 4,188 casos humanos entre 1997 y 2011 | ✅ | ídem | "From 1997 to 2011, 4,188 human cases were recorded at Oswaldo Cruz Foundation (Fiocruz), Rio de Janeiro" | 2017 (datos 1997–2011) |
+| En México es de las micosis bajo la piel más frecuentes | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC7966611/ | "one of the most frequent subcutaneous mycoses in Mexico" | 2020 |
+| Hasta 2019, Jalisco con más casos publicados; barras Jalisco 1,698 · CDMX 162 · Puebla 123 (son los 3 primeros); 1,698 de 2,762 | ✅ | ídem | "in descending precedence, in Jalisco (n = 1698), Mexico City (n = 162), Puebla (n = 123), Guerrero (n = 84), and Guanajuato (n = 66)"; periodo 1914–2019; total 2,762 | 2020 |
+| LinkedIn: no es de notificación obligatoria en México | ✅ | ídem | "it is not considered a reportable disease according to the Mexican epidemiological national system" | 2020 |
+| Años cuarenta: más de 3,000 mineros de oro en Sudáfrica, hongo en la madera de las minas | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3194828/ | "The largest outbreak occurred in Witwatersrand, South Africa." "Between 1941 and 1944, more than 3,000 gold miners were infected by the fungus, which was present in the timber of these mines" | 2011 (hecho 1941–1944) |
+| Tiene tratamiento (antifúngicos, por meses; itraconazol 3–6 meses o más) | ✅ | https://www.cdc.gov/sporotrichosis/hcp/clinical-overview/index.html | "typically treated with oral itraconazole" · "Prolonged treatment of 3–6 months or longer is often needed" | 2024 |
+| Guantes y manga larga al podar | ✅ | https://www.cdc.gov/sporotrichosis/about/index.html | "Wear gloves, pants, and long sleeves when touching plant matter." | 2024 |
+| `publicacion.md` TikTok: «Por eso le dicen "la enfermedad del jardinero de rosas"» (tras hablar de los bultos en fila) | ⚠️ (causa falsa: el apodo viene de los rosales/jardineros, no de los bultos en fila) | https://www.cdc.gov/sporotrichosis/about/index.html | "Sporotrichosis ("rose gardener's disease")" | 2024 |
+| ↳ Corregido: «A esta infección le dicen "la enfermedad del jardinero de rosas".» | ✅ | ídem | ídem | 2024 |
+
+**Resultado:** 3 ⚠️ encontradas y corregidas (1 en la voz, 1 letrero, 1 en `publicacion.md`). 0 ❌. Todo queda ✅.
+
 VEREDICTO: APROBADO

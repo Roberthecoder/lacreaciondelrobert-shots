@@ -197,7 +197,7 @@ function AurisShot() {
               {u > 0 && u < 1 && <rect x={xx - 18} y={yy - 18} width={36} height={36} transform={`rotate(45 ${xx} ${yy})`} fill={c} stroke={KC.ink} strokeWidth={4} />}</g>; })}
         </>)}
       </Escena>
-      {/* 9 · las pruebas comunes la confunden */}
+      {/* 9 · las pruebas comunes pueden confundirla */}
       <Escena T={T} a={K.Cf} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
@@ -270,7 +270,7 @@ function AurisShot() {
       <Chip T={T} at={K.P + 0.2} until={K.Re - 0.2} texto="“superhongo” (apodo)" x={420} y={470} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.Re + 0.2} until={K.Tr - 0.3} texto="resistentes en EE. UU. · CDC" x={540} y={470} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Tr + 2.2} until={K.Cf - 0.3} texto="algunas cepas: resisten a las 3" x={540} y={470} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Cf + 2.6} until={K.E - 0.3} texto="se confunde con otras levaduras" x={540} y={1165} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Cf + 2.6} until={K.E - 0.3} texto="se puede confundir con otras levaduras" x={540} y={1165} tam={30} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 3.5} anio="2020" quien="Monterrey · 12 pacientes de terapia intensiva" revista="Villanueva-Lozano et al., Clin Microbiol Infect, 2021" y={480} />
       <Etq T={T} at={K.E + 3.9} until={K.D - 0.3} x={560} y={1190} texto="3 muestras + en los cuartos" tam={26} color={KC.ink} />
       <Etq T={T} at={K.E + 0.6} until={K.D - 0.3} x={150} y={1010} texto="Monterrey" tam={28} color={KC.ink} />
@@ -297,7 +297,7 @@ function AurisShot() {
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Re - 0.1} texto="¿Por qué *superhongo?*" />
       <Subtitulo T={T} idx={7} at={K.Re + 0.1} until={K.Tr - 0.1} texto="*~90 %* resiste al fluconazol" />
       <Subtitulo T={T} idx={8} at={K.Tr + 0.1} until={K.Cf - 0.1} texto="Algunas resisten *las tres*" />
-      <Subtitulo T={T} idx={9} at={K.Cf + 0.1} until={K.E - 0.1} texto="Las pruebas *la confunden*" />
+      <Subtitulo T={T} idx={9} at={K.Cf + 0.1} until={K.E - 0.1} texto="Las pruebas *pueden confundirla*" />
       <Subtitulo T={T} idx={10} at={K.E + 0.1} until={K.D - 0.1} texto="Monterrey: *12 pacientes*" />
       <Subtitulo T={T} idx={11} at={K.D + 0.1} until={K.C - 0.1} texto="Solo amonio *no la elimina*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Hay que *limpiar su cama*" />

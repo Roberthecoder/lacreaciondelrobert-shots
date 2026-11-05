@@ -215,7 +215,7 @@ function EsporoShot() {
       <Chip T={T} at={K.En + 2.2} until={K.Di - 0.3} texto="con tu calor, cambia de forma" x={540} y={470} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Di + 0.2} until={K.Bu - 0.3} texto="afuera · 25 °C · moho" x={280} y={640} tam={28} borde={SP.hifa} />
       <Chip T={T} at={K.Di + 1.9} until={K.Bu - 0.3} texto="adentro · 37 °C · levadura" x={800} y={640} tam={28} borde={SP.lev} />
-      <Etq T={T} at={K.Di + 1.2} until={K.Bu - 0.3} x={60} y={1130} texto="conidios en forma de flor" tam={24} color={SP.hifa} />
+      <Etq T={T} at={K.Di + 1.2} until={K.Bu - 0.3} x={60} y={1130} texto="conidios agrupados en flor" tam={24} color={SP.hifa} />
       <Etq T={T} at={K.Di + 2.8} until={K.Bu - 0.3} x={1030} y={1130} lado="izq" texto="forma de puro" tam={26} color={SP.lev} />
       <Etq T={T} at={K.Bu + 2.6} until={K.Ca - 0.3} x={60} y={1060} texto="donde te picaste" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Ca + 1.2} until={K.P - 0.3} x={60} y={1060} texto="vaso linfático" tam={30} color="#147a4a" />

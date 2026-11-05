@@ -41,4 +41,30 @@ Fuentes abiertas:
 
 Resumen: 26 afirmaciones; la única ⚠️ (#15, «cada espora») se corrigió a «casi cada espora» y el chip a «≈ 9 de cada 10 esporas», respaldado por [S2021] y [S2017]. Se queda 1925 (Hagley). Todas las afirmaciones de la voz y la pantalla quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion). Revisé la voz (`narracion.json`, idx 0–12), los letreros del `portobello.jsx` y `publicacion.md`; abrí cada fuente con WebFetch. Sin cambios necesarios.
+
+| Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|
+| Blanco, café (cremini) y portobello son una sola especie, *Agaricus bisporus* | ✅ | https://botit.botany.wisc.edu/toms_fungi/apr2001.html | "The three mushrooms you see to the right are all actually the same species." | 2001 |
+| El portobello es el champiñón café que dejaron madurar / «un cremini que nadie cortó a tiempo» | ✅ | https://www.mushroomexpert.com/agaricus_bisporus.html | "the distinction is simply that the portobellos have been allowed to mature past the button stage." | 2018 |
+| Cremini = café cosechado cerrado | ✅ | https://botit.botany.wisc.edu/toms_fungi/apr2001.html | "crimini is actually the same brown strain that is not allowed to open before it is harvested." | 2001 |
+| Composta de paja y estiércol de caballo | ✅ | https://botit.botany.wisc.edu/toms_fungi/apr2001.html | "The basic ingredients of mushroom compost are wheat straw and horse manure." | 2001 |
+| «bajo una capa de tierra» / «capa de cobertura (tierra / turba)» | ✅ | https://botit.botany.wisc.edu/toms_fungi/apr2001.html | "casing soil is added as a surface layer (1.5 - 2 inches deep)" | 2001 |
+| Sombrero «hasta quince centímetros» / medidor 3→15 cm | ✅ | https://www.mushroomcouncil.com/varieties/portabella/ | "the portabella cap can measure up to 6 inches in diameter." (6 in ≈ 15.2 cm; Kuo da 2.5–14 cm: rango compatible con «hasta 15 cm») | s/f (consultada 2026) |
+| Láminas de rosadas a café oscuro | ✅ | https://www.mushroomexpert.com/agaricus_bisporus.html | "pinkish to pink at first, becoming dark brown to nearly black." | 2018 |
+| Dibujo: anillo delgado; esporas café oscuro, ovaladas y lisas | ✅ | https://www.mushroomexpert.com/agaricus_bisporus.html | "a thin ring that sometimes disappears in maturity." / "Dark brown" / "6–8 x 5–6 µm; ellipsoid; smooth" | 2018 |
+| «casi todos cargan solo dos esporas, no cuatro como sus parientes» / «≈ 9 de cada 10 basidios: 2 esporas» | ✅ | https://www.frontiersin.org/journals/fungal-biology/articles/10.3389/ffunb.2021.711330/full ; https://www.mushroomexpert.com/agaricus_bisporus.html | "Approximately 90% of the var. bisporus basidia bear two spores each receiving non-sister nuclei after meiosis" / "unlike most other species of Agaricus, its basidia bear two spores each, instead of four." | 2021 / 2018 |
+| «Casi cada espora se lleva dos núcleos distintos» / «≈ 9 de cada 10 esporas: 2 núcleos distintos» | ✅ | https://www.frontiersin.org/journals/fungal-biology/articles/10.3389/ffunb.2021.711330/full | "the number of expected homokaryotic SSI among all spores is 10% … for var. bisporus" (≈90 % heterocariontes; valor esperado, Horst U1 observado 9.5 % homocariontes) | 2021 |
+| «la pareja que necesita para dar champiñones» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC5309338/ | heterokaryons "containing nuclei with different mating types" — "a prerequisite to produce fruiting bodies" | 2017 |
+| 1925, granja de Pensilvania (Keystone, Coatesville): champiñón blanco entre cafés | ✅ | https://hagley.org/node/778 | "That white mushroom was discovered one morning in 1925 growing among a bed of brown mushrooms" … "at the Keystone Mushroom Farm in Coatesville, Pennsylvania." | 2011 (dato 1925) |
+| «Su dueño, Louis Lambert, lo cultivó desde sus esporas» / «cepa Snow White» | ✅ | https://hagley.org/node/778 | "Louis Ferdinand Lambert, the farm's owner and a mycologist by training" … "he selected spores from its cap and cultured the[m] in a sterile medium" / "Lambert dubbed his new mushroom strain "Snow White,"" | 2011 |
+| «para 1933 dominaba el mercado» | ✅ | https://hagley.org/node/778 | "By 1933, "Snow White" had become the leading commercial mushroom" | 2011 (dato 1933) |
+| «Antes se cultivaban cafés o crema: el blanco era el raro» | ✅ | https://hagley.org/node/778 | "other farmers were buying and planting Lambert's white spawn instead of brown or cream spawn." | 2011 |
+| «portobello es nombre de mercadotecnia» | ✅ | https://botit.botany.wisc.edu/toms_fungi/apr2001.html | "Portabella is a marketing name the mushroom industry came up with" (for more flavorful brown strains) | 2001 |
+| publicacion.md: mismos datos (1925, Lambert, 1933, ~90 % basidios bispóricos, «hasta unos 15 cm») | ✅ | (las mismas) | consistente con voz y pantalla | — |
+
+Resultado: 0 ❌, 0 ⚠️. Sin cambios en guion, voz, `.jsx` ni `publicacion.md`.
+
 VEREDICTO: APROBADO

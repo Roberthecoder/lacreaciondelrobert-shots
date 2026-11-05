@@ -7,8 +7,8 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ### TikTok
 ```text
 Esa espina de rosal no solo te picó: te pudo meter un hongo. 🌹🍄
-Se llama Sporothrix y vive en la tierra, en el musgo esfagno, en la paja y en los rosales. Entra por una cortada o un raspón, y con el calor de tu cuerpo cambia de forma: afuera, a unos 25 °C, es un moho de hilos finos con esporas en forma de flor; adentro, a 37 °C, se vuelve levadura, con células alargadas como puros.
-Entre una y doce semanas después sale un bultito donde te picaste, y casi siempre salen otros en fila, subiendo por el brazo: siguen tus vasos linfáticos. Por eso le dicen "la enfermedad del jardinero de rosas".
+Se llama Sporothrix y vive en la tierra, en el musgo esfagno, en la paja y en los rosales. Entra por una cortada o un raspón, y con el calor de tu cuerpo cambia de forma: afuera, a unos 25 °C, es un moho de hilos finos con esporas agrupadas en forma de flor; adentro, a 37 °C, se vuelve levadura, con células alargadas como puros.
+Entre una y doce semanas después sale un bultito donde te picaste, y muchas veces salen otros en fila, subiendo por el brazo: siguen tus vasos linfáticos. A esta infección le dicen "la enfermedad del jardinero de rosas".
 ¿Y si no tienes rosales? En Brasil, Sporothrix brasiliensis pasa de gatos enfermos a personas por arañazos y mordidas. Solo en la Fiocruz, en Río de Janeiro, registraron 4,188 casos humanos entre 1997 y 2011.
 En México es una de las micosis bajo la piel más frecuentes, y hasta 2019 Jalisco tenía más casos publicados que cualquier otra entidad (1,698 de 2,762). Y en los años cuarenta, más de tres mil mineros de oro en Sudáfrica se infectaron con el hongo que vivía en la madera de las minas.
 Tiene tratamiento con antifúngicos, por meses. Si podas rosales o trabajas con plantas, usa guantes y manga larga.
@@ -39,7 +39,7 @@ Esa espina de rosal te pudo meter un hongo 🌹 | Shot Fungi Mati 67
 Descripción:
 ```text
 Esa espina de rosal no solo te picó: te pudo meter un hongo.
-La esporotricosis ("enfermedad del jardinero de rosas") es una infección por el hongo Sporothrix, que vive en el suelo y en plantas como el musgo esfagno, los rosales y la paja; entra por cortadas o raspones (CDC). Es dimórfico: en el ambiente, a 25 °C, crece como moho con conidios en forma de flor; en el tejido, a 37 °C, como levadura con células en forma de puro (Mahajan, 2014).
+La esporotricosis ("enfermedad del jardinero de rosas") es una infección por el hongo Sporothrix, que vive en el suelo y en plantas como el musgo esfagno, los rosales y la paja; entra por cortadas o raspones (CDC). Es dimórfico: en el ambiente, a 25 °C, crece como moho con conidios agrupados en forma de flor; en el tejido, a 37 °C, como levadura con células en forma de puro (Mahajan, 2014).
 Los síntomas aparecen entre 1 y 12 semanas después (CDC): primero un nódulo donde fue la herida y, en la forma más común, otros en cadena a lo largo de los vasos linfáticos del brazo (Mahajan, 2014).
 En Sudamérica, Sporothrix brasiliensis se transmite de gatos a personas por arañazos o mordidas (CDC). En la Fundación Oswaldo Cruz (Fiocruz), en Río de Janeiro, se registraron 4,188 casos humanos entre 1997 y 2011 (Gremião et al., 2017). En México es una de las micosis subcutáneas más frecuentes; de 2,762 casos publicados entre 1914 y 2019, 1,698 eran de Jalisco (Toriello et al., 2020). Y en las minas de oro de Sudáfrica, en los años cuarenta, más de 3,000 mineros se infectaron con el hongo presente en la madera de las minas (Barros et al., 2011).
 Tiene tratamiento: suele usarse itraconazol durante 3 a 6 meses o más (CDC). Para prevenirla: guantes, pantalón y manga larga al manipular plantas (CDC).

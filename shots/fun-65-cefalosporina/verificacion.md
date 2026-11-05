@@ -59,4 +59,29 @@ Notas menores (no obligan a cambiar): en #3 Treccani habla de *Salmonella* en ge
 
 Todas las afirmaciones quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la primera verificación). Fuentes descargadas y leídas en texto completo: Treccani (HTML), catálogo de los papeles de E. P. Abraham (PDF → texto), Klein et al. 2018 y PMC9963991, PMC9712332, PMC12653179, PMC13471034 (texto completo de Europe PMC). Se revisaron las 13 líneas de `narracion.json`, los letreros y subtítulos de `cefalosporina.jsx` y las 7 redes de `publicacion.md`.
+
+| Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|
+| Gancho: «empezó junto a un desagüe de aguas negras» · «todo empezó junto a un desagüe» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC9963991/ | «the isolation by Brotzu in 1945—from the Mediterranean Sea, near a sewage outfall located at Cagliari, Sardinia—of the Cephalosporium acremonium fungus» | 2023 (dato 1945) |
+| «En 1945, en Cerdeña, Giuseppe Brotzu sacó agua de mar junto a una descarga de drenaje» · chip «1945 · Cagliari, Cerdeña» | ✅ (Treccani da el rango 1943–45; 1945 es el año del aislamiento según PMC9963991 y el catálogo de Abraham) | PMC9963991 · https://centreforscientificarchives.co.uk/wp-content/uploads/2024/01/ABRAHAM_EDWARD_PENLEY_Vol1_v2.pdf | «first discovered in Sardinia by Giuseppe Brotzu in 1945» | 2002 / 2023 |
+| «Estudiaba la tifoidea, y notó que su bacteria desaparecía rápido del agua de la costa» | ✅ | https://www.treccani.it/enciclopedia/giuseppe-brotzu_(Dizionario-Biografico)/ | «studi da lui condotti sull'endemia tifica a Cagliari nel 1923 … e alla osservazione della scomparsa piuttosto rapida dalle acque marine costiere delle Salmonelle. convogliate a mare con le acque fognarie urbane» | 1988 |
+| «Sospechó que otro microbio la estaba combatiendo» · sello «HIPÓTESIS» | ✅ | Treccani | «Ipotizzando che questo fenomeno di autodepurazione delle acque marine fosse legato a un meccanismo di lotta biologica tra specie viventi» | 1988 |
+| «*Cephalosporium acremonium*, hoy llamado *Acremonium chrysogenum*» · etiqueta «(nombre antiguo)» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC13471034/ · Treccani | «Acremonium chrysogenum—previously known as Cephalosporium acremonium»; «una moniliacea del genere Cephalosporium, in seguito identificata come Cephalosporium acremonium» | 2026 / 1988 |
+| «Su extracto frenaba bacterias, y lo probó en enfermos, también de tifoidea» | ✅ | Treccani | «ricavò un estratto non tossico che mostrò in vitro un largo spettro d'azione antibatterica … e si rivelò efficace anche in vivo, nell'uomo, … tifo addominale e paratifo» | 1988 |
+| «En Italia no le dieron fondos, así que mandó el hongo a Oxford» | ✅ (además Florey se lo pidió) | Treccani | «Non trovando ascolto alle sue istanze di finanziamento di ricerca … e sollecitato da sir Howard Florey dell'università di Oxford» | 1988 |
+| Chip «Oxford · 1948» | ✅ | catálogo Abraham | «…reached the Sir William Dunn School of Pathology in September 1948.» | 2002 |
+| «en 1953, Edward Abraham y Guy Newton hallaron la molécula clave: la cefalosporina C» · tarjeta «Newton y Abraham, Nature, 1955» | ✅ | catálogo Abraham · https://doi.org/10.1038/175548a0 | «The discovery of Cephalosporin C, a substance detected in minute quantities in partially purified Cephalosporin N in September 1953, was epoch making.» | 2002 (dato 1953) / 1955 |
+| «Su truco: resistía la penicilinasa» | ✅ | catálogo Abraham · PMC13471034 | «active against certain bacteria unaffected by penicillin, while being resistant to penicillinase»; «relatively resistant to penicillinases» | 2002 / 2026 |
+| «…la enzima con la que muchas bacterias destruyen la penicilina» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC9712332/ | «Bacterial beta-lactamases … capable of disrupting the beta-lactam ring structure by hydrolysis, are the most frequently reported source of penicillin antibiotic resistance» | 2022 |
+| «Su anillo beta-lactámico impide que la bacteria arme su pared, y revienta» · «albañiles» PBP | ✅ (simplificación aceptable) | PMC9712332 · https://pmc.ncbi.nlm.nih.gov/articles/PMC4258230/ | «cephalosporins bind to PBPs … irreversibly inhibiting bacterial cell wall production»; «loss of wall integrity accompanied by cell lysis» | 2022 / 2014 |
+| «En 2015, las cefalosporinas fueron una de cada cinco dosis diarias de antibiótico en 76 países» · chip «Klein et al., PNAS, 2018 (datos de 2015)» | ✅ (el 20 % va en la misma frase que «39% of total DDDs in 2015» y en el ranking de clases de ese año; «dosis diarias» = dosis diarias definidas) | https://pmc.ncbi.nlm.nih.gov/articles/PMC5899442/ | «broad-spectrum penicillins, the most commonly consumed class of antibiotics (39% of total DDDs in 2015) … the next three most consumed classes—cephalosporins (20% of total DDDs)…»; «We obtained data for 76 countries from 2000 through 2015.» | 2018 (dato 2015) |
+| «Y la mayoría todavía nace de ese mismo hongo, mejorado» · chip «materia prima: cefalosporina C» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC12653179/ · PMC9712332 | «Acremonium chrysogenum is the only industrial producer of the antibiotic cephalosporin C (CPC), the starting substance for manufacturing…»; «7-ACA is the fundamental substrate of most of the semi-synthetic cephalosporins» | 2025 / 2022 |
+| Dibujos: hifas hialinas con fiálides en punzón y gotitas de conidios; bacilos; molécula con anillo de 4 lados; tijeras de penicilinasa | ✅ (esquemáticos; ver tabla anterior, Mycology Online Adelaida) | ver tabla anterior | — | — |
+| publicacion.md (7 redes y comentario fijado): mismas afirmaciones; «profesor de higiene en Cagliari» | ✅ | Treccani | «fu poi professore di igiene … e in seguito a Cagliari fino al suo collocamento a riposo» | 1988 |
+
+Resultado: 0 ❌ · 0 ⚠️. Sin cambios en voz, pantalla ni publicacion.md.
+
 VEREDICTO: APROBADO

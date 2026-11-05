@@ -306,13 +306,14 @@ function PneumoShot() {
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="a raya" x={250} y={470} tam={44} borde={KC.mint} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ai} texto="20 cm" largo={110} />
-      <BarraEscala T={T} at={K.Ai} until={K.Al} texto="50 cm" largo={130} />
+      <BarraEscala T={T} at={K.G} until={K.Ai} texto="20 cm" largo={240} />
+      <BarraEscala T={T} at={K.Ai} until={K.Al} texto="50 cm" largo={290} />
       <BarraEscala T={T} at={K.Al} until={K.Fo} texto="0.2 mm" largo={100} />
-      <BarraEscala T={T} at={K.Fo} until={K.Di} texto="5 µm" largo={90} />
-      <BarraEscala T={T} at={K.Co} until={K.An} texto="5 nm" largo={90} />
-      <BarraEscala T={T} at={K.R} until={K.C} texto="10 cm" largo={90} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="20 cm" largo={110} />
+      <BarraEscala T={T} at={K.Fo} until={K.Sa} texto="5 µm" largo={180} />
+      <BarraEscala T={T} at={K.Sa} until={K.Di} texto="5 µm" largo={90} />
+      <BarraEscala T={T} at={K.Co} until={K.An} texto="5 nm" largo={130} />
+      <BarraEscala T={T} at={K.R} until={K.C} texto="dibujos no a escala" largo={0} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="20 cm" largo={240} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ai - 0.1} texto="Tus pulmones ya tuvieron *un hongo*" />

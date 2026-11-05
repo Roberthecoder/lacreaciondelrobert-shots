@@ -4,7 +4,7 @@
 - **Ángulo del lote:** hongos en la naturaleza (hongos de México y simbiosis).
 - **Formato:** N1 «Por dentro» (el hongo en un puesto de mercado → corte con hifas lactíferas y el pigmento → bajo el suelo: la micorriza con el encino → el mismo hongo del inicio, ahora con su árbol).
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre lo que se ve: «Ese hongo no está pintado: si lo cortas, suelta una leche azul como tinta.»
-- **Duración:** voz 965 caracteres (≈ 59 s) + cierre 3.5 s → **61–62 s**.
+- **Duración:** voz 966 caracteres (≈ 59 s) + cierre 3.5 s → **61–62 s**.
 - **Voz:** pendiente de aprobación de Robert (~970 créditos de ElevenLabs).
 
 ## Versión narrada
@@ -20,7 +20,7 @@
 | 6 | Pregunta | ¿Y qué hace un hongo azul en el bosque? | **Re-gancho.** Fondo rosa, "?" gigante; Robert grande, pensativo. |
 | 7 | Micorriza | Envuelve las puntitas de las raíces de pinos y encinos: es un hongo ectomicorrízico. | Bajo el suelo (corte): un pino y un encino con raíces; las puntitas de raíz se cubren de un manto de hifas azuladas. Etiqueta "ectomicorriza". |
 | 8 | Trato | El árbol le pasa azúcares de su fotosíntesis, y el hongo le consigue nitrógeno y fósforo del suelo. | Flechas de intercambio: azúcares (hexágonos dorados) bajan del árbol al hongo; N y P (bolitas) suben del suelo al árbol por las hifas. |
-| 9 | Estudio | En 2012, leyendo ADN en un bosque de niebla de Veracruz, lo hallaron unido a raíces de encinos. | TarjetaEstudio "2012 · bosque de niebla, Veracruz · Mycologia". Hebra de ADN que se lee sobre una raíz de encino con su manto de hifas. |
+| 9 | Estudio | En 2012, leyendo ADN en un bosque de niebla de Veracruz, lo hallaron unido a raíces de un carpe. | TarjetaEstudio "2012 · bosque de niebla, Veracruz · Mycologia". Hebra de ADN que se lee sobre una raíz de carpe (*Carpinus caroliniana*) con su manto de hifas. |
 | 10 | Extra | Y en 2023, por primera vez, químicos fabricaron su pigmento azul en el laboratorio. | Matraz que se pinta de azul; TarjetaEstudio "2023 · U. de Tohoku, Japón · J. Agric. Food Chem."; chip "candidato a colorante azul natural". |
 | 11 | Cierre | Así que ese azul no es pintura: es la leche de un hongo que vive en sociedad con los árboles. | **Regreso a la imagen del inicio:** el mismo hongo cortado con su leche (ya verdosa en la orilla), ahora con el encino detrás y las hifas que lo unen a sus raíces. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
@@ -39,7 +39,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué hac
 | 4 | 25.9 | 28.3 | 04_bajando_lentes | `arriba-der` | «los pigmentos azules naturales son escasos» |
 | 5 | 28.5 | 31.2 | 07_pensativo_puno | `grande` | «¿Y qué hace un hongo azul en el bosque?» |
 | 6 | 36.3 | 41.7 | 12_perfil_serio | `arriba-der` | «azúcares … nitrógeno y fósforo» |
-| 7 | 43.4 | 47.3 | 13_senalando_arriba | `arriba-der` | «lo hallaron unido a raíces de encinos» |
+| 7 | 43.4 | 47.3 | 13_senalando_arriba | `arriba-der` | «lo hallaron unido a raíces de un carpe» |
 | 8 | 48.0 | 52.3 | 11_sorprendido | `arriba-der` | «por primera vez, fabricaron su pigmento» |
 | 9 | 52.9 | 57.9 | 02_apuntando_camara | `izq-alto` | «un hongo que vive en sociedad con los árboles» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
@@ -58,7 +58,9 @@ Apariciones 9 · **33.1 s** en pantalla (+ cierre 3.5 s) · 6 poses distintas ·
 3. Merriam-Webster. *Lactarius*. https://www.merriam-webster.com/dictionary/lactarius — "New Latin, from Latin, milky".
 4. De Crop, E. et al. (2021). *Fungal Systematics and Evolution* 7: 133–164. https://pmc.ncbi.nlm.nih.gov/articles/PMC8166210/ — "Lactarius species exude a milk-like solution (latex) when sporocarps are bruised"; "lactiferous hyphae".
 5. Maruoka, K., Suzuki, R., … Kasai, H. (2023). Total Synthesis of Azulene Derivative, a Blue Pigment Isolated from *Lactarius indigo*, and Colorant Application of Its Aqueous Dispersion. *J. Agric. Food Chem.* 71(30): 11607–11614 (Universidad de Tohoku, Japón; PubMed 37437259) — "We developed its first total synthesis" — "a fat-soluble azulene derivative isolated from the mushroom Lactarius indigo as a potential candidate for a natural blue colorant"; los colorantes azules naturales "are scarce in nature".
-6. Lamus, V., Montoya, L. et al. (2012). *Mycologia* 104(6): 1261–1266 (PubMed 22675052) — "we discovered the EM symbiosis of Lactarius indigo … with Carpinus caroliniana, Quercus xalapensis and Quercus spp."
+6. Lamus, V., Montoya, L. et al. (2012). *Mycologia* 104(6): 1261–1266 (PubMed 22675052) — "we discovered the EM symbiosis of Lactarius indigo, L. areolatus and L. strigosipes with Carpinus caroliniana, Quercus xalapensis and Quercus spp." — el socio de *L. indigo* en ese estudio fue el carpe (*Carpinus caroliniana*); los encinos fueron de las otras dos especies: Montoya et al. 2018, *Mycologia* (doi:10.1080/00275514.2018.1521685): "Quercus sp. + Lactairus areolatus, Quercus xalapensis + L. strigosipes (Lamus et al. 2012)"
 7. Stuart, E. K. y Plett, K. L. (2020). *Frontiers in Plant Science* 10: 1658 — "Carbon (C) resources from the host are transferred to the fungus in return for limiting nutrients" (nitrógeno y fósforo).
 
 El dibujo es esquemático. No comas hongos silvestres sin la identificación de un experto.
+
+> Re-verificado y corregido el 5 nov 2026 (ver la sección «Re-verificación independiente» de verificacion.md).
