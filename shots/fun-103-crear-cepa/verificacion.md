@@ -2,6 +2,7 @@
 
 5 nov 2026. **Verificación independiente (subagente que no escribió el guion).** Cada fuente se descargó y se leyó en texto
 completo (PDF o XML de Europe PMC / página PMC), no el resumen del buscador; las frases textuales se copiaron del texto descargado.
+**Segunda ronda (5 nov 2026):** se reverificaron las correcciones de voz (`narracion.json`), los textos de pantalla (bloque `TX` de `cepa.jsx` y sus tiempos) y `publicacion.md` completo.
 
 Fuentes abiertas:
 - **[UF]** Liao, H.-L., Hsu, C.-M., Hameed, K. y Cotter, V. T. (2018, rev. 2022/2025). *Isolation of Mother Cultures and Preparation of Spawn for Oyster Mushroom Cultivation*. UF/IFAS EDIS SL449. https://edis.ifas.ufl.edu/publication/SS663/pdf
@@ -57,3 +58,28 @@ Fuentes abiertas:
 | 32 | Robert: «mis primeras cajas Petri fueron tuppers» (tupper con agar) | ✅ | [DATOS] | "✅ Una olla de presión fue su autoclave y los tuppers sus cajas de Petri." Correcciones: "Cajas Petri de vidrio: 2024" (antes, tuppers). | — |
 | 33 | Cierre: «esa seta no nació de una semilla: es una copia o una cruza» (chips «copia ← tejido», «cruza ← esporas») | ✅ | [PSU], [LIU], [RAM] | [PSU]: cinco vías "hybridization, monospore, multispore, mycelial transfer, or tissue culture". La cruza con esporas es la vía general: [LIU] "single-spore cultures, which can be employed as units for hybridization breeding of mushroom species, including the successful breeding of improved Pleurotus ostreatus"; [RAM]: el dicarión "will fruit". (El estudio de Oaxaca usó otra vía, y la pantalla lo aclara en #24.) | 2016 / 2000 |
 
+
+### `publicacion.md` (leído completo)
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| P1 | Todas las redes: copia por tejido, campana de flujo o caja sin corrientes, PDA, hifas por la punta, colonia en círculo, clon, impresión de esporas "en unas horas", monocarión/dicarión/fíbulas, 56 híbridas, una creció más que sus dos padres, código, agua estéril/congelada/resiembra, liofilizar no, seta rosa tropical no va al refri, datos de Robert | ✅ | ver #3–#33 | Mismas frases de la tabla de arriba. | — |
+| P2 | YouTube: «Los hongos no tienen semillas: se multiplican con esporas o con su micelio» | ✅ | [PSU], [ANBG] | [PSU]: "monospore, multispore, mycelial transfer, or tissue culture"; [ANBG]: "a mass of hundreds of thousands or millions of spores". | s/f |
+| P3 | YouTube: «Separaron los dos núcleos de cada micelio (sin usar esporas), cruzaron los monocariones compatibles…»; «recolectadas en 2010 en troncos de cazahuate en Huajuapan de León» | ✅ | [OAX] | "chemically dedikaryotized"; "Pairing of compatible neohaplonts resulted in 56 hybrid strains"; "during August and September 2010". | 2014 |
+| P4 | YouTube: «El estudio: **en 2014**, un equipo … trabajó con dos cepas…»; LinkedIn: «**En 2014**, un equipo … obtuvo 56 híbridos» | ⚠️ | [OAX] | El trabajo se hizo entre 2010 y 2014; 2014 es el año de publicación ("Copyright © 2014"). Es la misma imprecisión que se corrigió en la voz. | 2010–2014 |
+| P5 | Instagram: «Cruza: de una impresión de esporas salen micelios de un solo tipo de núcleo; … En Oaxaca, un estudio de 2014 obtuvo **así** 56 cepas híbridas» | ❌ | [OAX] | "así" dice que usaron esporas; el estudio NO las usó: "Both strains were chemically dedikaryotized to obtain their symmetrical monokaryotic components (neohaplonts)". | 2014 |
+| P6 | Facebook: «…o cruzar dos micelios nacidos de esporas … En Oaxaca, un estudio de 2014 sacó **así** 56 cepas híbridas» | ❌ | [OAX] | Igual que P5. | 2014 |
+| P7 | X: «…o se cruzan dos micelios de esporas para una seta nueva. En Oaxaca (2014) **así** salieron 56 híbridas.» | ❌ | [OAX] | Igual que P5. | 2014 |
+| P8 | LinkedIn: «[La clonación por tejido] Es el método más usado por su baja tasa de contaminación.» | ✅ | [LIU] | "Of the three methods, tissue isolation is practiced most frequently because of the low contamination rate, high reliability, and ease of manipulation." | 2016 |
+| P9 | Fuentes: UF/IFAS "(2018, rev. 2022)" | ✅ | [UF] | "Original publication date January 2018. Revised February 2022." (y "Reviewed: 04/2025"). | 2018–2025 |
+
+Resumen (segunda ronda): voz y pantalla todo ✅. En `publicacion.md` quedan 3 ❌ y 1 ⚠️.
+
+## Correcciones necesarias (solo en `publicacion.md`)
+
+1. **Instagram (P5):** «En Oaxaca, un estudio de 2014 obtuvo así 56 cepas híbridas de seta silvestre.» → «Un estudio mexicano de 2014 cruzó micelios de dos setas silvestres de Oaxaca (sin usar esporas: separaron los dos núcleos de cada micelio) y obtuvo 56 cepas híbridas.»
+2. **Facebook (P6):** «En Oaxaca, un estudio de 2014 sacó así 56 cepas híbridas de seta silvestre.» → «Un estudio mexicano de 2014 cruzó micelios de dos setas silvestres de Oaxaca y obtuvo 56 cepas híbridas.»
+3. **X (P7):** «En Oaxaca (2014) así salieron 56 híbridas.» → «Un estudio de 2014 cruzó micelios de dos setas de Oaxaca: 56 híbridas.»
+4. **YouTube y LinkedIn (P4):** «El estudio: en 2014, un equipo de…» → «El estudio, publicado en 2014: un equipo de…»; «En 2014, un equipo de la U. Tecnológica de la Mixteca…» → «Un estudio publicado en 2014 por la U. Tecnológica de la Mixteca, el IPN y la UNAM obtuvo…».
+
+VEREDICTO: CORREGIR

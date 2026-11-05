@@ -60,15 +60,36 @@ function Bisturi({ x, y, ang = -40, s = 1 }) {
     <rect x={106} y={-18} width={320} height={26} rx={10} fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />
   </g>;
 }
-// Seta partida por la mitad (corte), vista de frente: sombrero en abanico con la cara del corte. c = centro.
-function SetaPartida({ x, y, s = 1, abre = 0 }) {
-  const mitad = (lado) => <g transform={`translate(${lado * (20 + abre * 120)} 0) rotate(${lado * abre * 10})`}>
-    <path d={`M 0 -190 Q ${lado * 230} -200 ${lado * 300} -40 Q ${lado * 250} 40 ${lado * 120} 50 L ${lado * 30} 220 L 0 220 Z`} fill={CP.rosa} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    {[0, 1, 2, 3, 4, 5].map((i) => <path key={i} d={`M ${lado * (40 + i * 40)} ${40 - i * 4} L ${lado * 30} 200`} stroke={CP.rosa2} strokeWidth={4} opacity=".8" />)}
-    {/* cara del corte: carne interior */}
-    <path d={`M 0 -170 Q ${lado * 40} -60 ${lado * 18} 60 L 0 210 Z`} fill={CP.carne} stroke={KC.ink} strokeWidth={5} opacity={abre > 0.05 ? 1 : 0} />
+// Seta ostra (Pleurotus djamor) partida a lo largo, vista de lado: sombrero en abanico/concha, láminas por debajo que bajan
+// por un pie corto y lateral. abre 0..1: la mitad de atrás se separa y la de adelante muestra la cara del corte (carne maciza).
+// hueco 0..1: falta el cuadrito que se llevaron las pinzas (centro de la carne, en (40, -70) del dibujo).
+const SP_CONT = 'M -262 172 Q -236 90 -176 18 Q -130 -140 50 -160 Q 236 -152 302 8 Q 150 -14 -58 12 Q -98 60 -196 184 Z';
+const spU = (x) => 10 - 26 * Math.sin(Math.PI * kclamp((x + 60) / 362, 0, 1));
+function SPLaminas({ color }) {
+  return <g>{Array.from({ length: 11 }, (_, i) => { const x0 = -60 + i * 33, yu = spU(x0), yu2 = spU(x0 + 33), d = 62 * (1 - i / 13) + 8;
+    return <path key={i} d={`M ${x0} ${yu} L ${x0 + 16} ${yu + d} L ${x0 + 33} ${yu2} Z`} fill={color} stroke={KC.ink} strokeWidth={3} strokeLinejoin="round" />; })}
+    {/* láminas decurrentes: bajan por el pie */}
+    {[0, 1, 2].map((k) => { const ax = -70 - k * 34, ay = 26 + k * 40; return <path key={'d' + k} d={`M ${ax} ${ay} L ${ax + 22} ${ay + 18} L ${ax - 8} ${ay + 34} Z`} fill={color} stroke={KC.ink} strokeWidth={3} />; })}
   </g>;
-  return <g transform={`translate(${x} ${y}) scale(${s})`}>{mitad(-1)}{mitad(1)}</g>;
+}
+function SetaPartida({ x, y, s = 1, abre = 0, hueco = 0 }) {
+  const exterior = (o) => <g opacity={o}><path d={SP_CONT} fill={CP.rosa} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" /><SPLaminas color={CP.rosa2} />
+    <path d="M -110 -112 Q 40 -150 200 -110" stroke="#fff" strokeWidth={12} fill="none" opacity=".4" strokeLinecap="round" /></g>;
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {/* mitad de atrás: se separa hacia arriba a la derecha */}
+    <g transform={`translate(${abre * 70} ${-abre * 90}) rotate(${abre * 8})`}>{exterior(1)}</g>
+    {/* mitad de adelante: primero se ve por fuera, luego la cara del corte */}
+    {exterior(1 - abre)}
+    <g opacity={abre}>
+      <SPLaminas color="#f7b9c8" />
+      <path d={SP_CONT} fill={CP.carne} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+      {/* piel rosa del sombrero (solo una capa delgada arriba) */}
+      <path d="M -176 18 Q -130 -140 50 -160 Q 236 -152 302 8" stroke={CP.rosa} strokeWidth={14} fill="none" strokeLinecap="round" />
+      {/* fibras de la carne, a lo largo */}
+      {[[-200, 150, -120, 20], [-150, 140, -80, 0], [-120, -60, 120, -110], [-100, -20, 200, -60], [-40, 0, 240, -20]].map(([a, b, c, d], k) => <path key={k} d={`M ${a} ${b} Q ${(a + c) / 2} ${Math.min(b, d) - 20} ${c} ${d}`} stroke="#f2c6d2" strokeWidth={4} fill="none" />)}
+      {hueco > 0 && <rect x={26} y={-84} width={28} height={28} rx={4} fill="#e9b3c3" stroke={KC.ink} strokeWidth={3} opacity={hueco} />}
+    </g>
+  </g>;
 }
 // Colonia de micelio con borde algodonoso. r en px.
 function ColoniaHifas({ cx = 0, cy = 0, r, seed = 1, color = CP.micelio }) {
@@ -201,11 +222,11 @@ function CepaShot() {
       <Escena T={T} a={K.Co} b={K.A} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <SetaPartida x={470} y={860} s={1.15} abre={kprog(T, K.Co + 0.2, K.Co + 1.2, kEase.sale)} />
+          <SetaPartida x={440} y={860} s={1.3} abre={kprog(T, K.Co + 0.2, K.Co + 1.2, kEase.sale)} hueco={kprog(T, K.Co + 2.4, K.Co + 2.6)} />
           {/* polvo y microbios en la superficie de afuera */}
           {T > K.Co + 1.6 && [[180, 700], [260, 640], [700, 620], [820, 700], [150, 820], [860, 820], [330, 600]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={7 + (i % 3) * 3} fill={i % 2 ? '#6b8f3a' : '#8a6a4a'} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.Co + 1.6 + i * 0.06, K.Co + 1.9 + i * 0.06)} />)}
           {(() => { const ent = kprog(T, K.Co + 1.3, K.Co + 2.2, kEase.sale), sale = kprog(T, K.Co + 2.6, K.Co + 3.6, kEase.suave);
-            const px = klerp(980, 600, ent) + sale * 200, py = klerp(560, 830, ent) - sale * 260;
+            const px = klerp(980, 492, ent) + sale * 200, py = klerp(560, 769, ent) - sale * 260;
             return <>{T > K.Co + 2.4 && <Cubito x={px - 2} y={py} s={1} />}<Pinzas x={px} y={py} ang={-35} a={T > K.Co + 2.4 ? 0 : 1 - ent * 0.6} s={1} /></>; })()}
         </>)}
       </Escena>
@@ -218,12 +239,12 @@ function CepaShot() {
           {Array.from({ length: 10 }, (_, i) => <line key={i} x1={330 + i * 70} y1={374} x2={330 + i * 70} y2={416} stroke="#9aa4ae" strokeWidth={5} />)}
           {Array.from({ length: 6 }, (_, i) => { const yy = 460 + ((T * 160 + i * 60) % 300); return <g key={i} opacity=".6"><line x1={380 + i * 110} y1={yy} x2={380 + i * 110} y2={yy + 50} stroke="#fff" strokeWidth={6} strokeLinecap="round" /><path d={`M ${368 + i * 110} ${yy + 38} L ${380 + i * 110} ${yy + 54} L ${392 + i * 110} ${yy + 38}`} stroke="#fff" strokeWidth={5} fill="none" /></g>; })}
           <Mechero T={T} x={150} y={1170} s={0.85} />
-          {flamea > 0 && <g opacity={flamea}><Pinzas x={150} y={880} ang={-40} a={0.2} /><circle cx={150} cy={880} r={26} fill={KC.orange} opacity={0.4 + 0.2 * Math.sin(T * 20)} /></g>}
+          {flamea > 0 && <g opacity={flamea}><Pinzas x={150} y={880} ang={-150} a={0.2} /><circle cx={150} cy={880} r={26} fill={KC.orange} opacity={0.4 + 0.2 * Math.sin(T * 20)} /></g>}
           <PlacaPetri x={640} y={930} r={250} agar={CP.agar} id="pA" tapa={0}>
             {caeCubo >= 1 && <Cubito x={0} y={0} s={1.2} />}
           </PlacaPetri>
           {/* tapa que se levanta apenas */}
-          {tapaA > 0 && <ellipse cx={640 + tapaA * 60} cy={930 - tapaA * 120} rx={262} ry={262} fill="rgba(220,240,246,.35)" stroke={KC.ink} strokeWidth={6} />}
+          {tapaA > 0 && <ellipse cx={640 + tapaA * 150} cy={930 - tapaA * 30} rx={262} ry={262} fill="rgba(220,240,246,.35)" stroke={KC.ink} strokeWidth={6} />}
           {caeCubo > 0 && caeCubo < 1 && <><Cubito x={klerp(860, 640, caeCubo)} y={klerp(600, 930, caeCubo)} s={1.2} /><Pinzas x={klerp(860, 640, caeCubo) + 6} y={klerp(600, 930, caeCubo)} ang={-40} a={caeCubo > 0.9 ? 1 : 0} /></>}
         </>)}
       </Escena>
@@ -347,9 +368,9 @@ function CepaShot() {
       <Chip T={T} at={K.Co + 1.4} until={K.A - 0.3} texto={TX.adentro} x={470} y={1170} tam={34} borde={KC.mint} />
       <Chip T={T} at={K.Co + 1.9} until={K.A - 0.3} texto={TX.afuera} x={470} y={480} tam={30} borde={KC.red} />
       <Chip T={T} at={K.Co + 2.6} until={K.A - 0.3} texto={TX.mm} x={800} y={1060} tam={32} borde={KC.gold} mono />
-      <Etq T={T} at={K.A + 0.4} until={K.A + 1.8} x={40} y={650} texto={TX.flama} tam={28} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.0} until={K.H - 0.3} x={330} y={560} texto={TX.sinAire} tam={24} color={KC.ink} />
-      <Chip T={T} at={K.A + 0.6} until={K.H - 0.3} texto={TX.flujo} x={660} y={490} tam={28} borde={KC.ink} />
+      <Etq T={T} at={K.A + 0.4} until={K.A + 1.8} x={40} y={720} texto={TX.flama} tam={26} color={KC.ink} />
+      <Chip T={T} at={K.A + 1.0} until={K.H - 0.3} texto={TX.sinAire} x={660} y={560} tam={24} borde={KC.ink} />
+      <Chip T={T} at={K.A + 0.6} until={K.H - 0.3} texto={TX.flujo} x={660} y={485} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.A + 2.2} until={K.H - 0.3} texto={TX.pda} x={640} y={1215} tam={30} borde={KC.gold} />
       {T > K.H + 0.2 && T < K.Pa - 0.2 && <div style={{ position:'absolute', left:880, top:800, transform:'translate(-50%,-50%)', zIndex:42, font:`700 52px ${KF.mono}`, color:KC.texto, background:'rgba(0,0,0,.6)', border:`3px solid ${KC.texto}`, borderRadius:14, padding:'2px 22px', opacity:kprog(T, K.H + 0.2, K.H + 0.5) }}>{TX.dia} {dia}</div>}
       <Lupa T={T} at={K.H + 0.8} until={K.Pa - 0.4} x={300} y={540} r={170} fx={560 - 0.7 * (rH + 4)} fy={990 - 0.7 * (rH + 4)} interior={(t, r) => LupaHifas(t, r, K.H + 0.9)} etiqueta={TX.lupaHifas} tinte={KC.mint} />
