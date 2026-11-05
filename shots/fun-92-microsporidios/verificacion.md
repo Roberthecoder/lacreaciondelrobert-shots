@@ -54,4 +54,15 @@ velocidad máxima promedio 235 µm/s en *A. algerae* (290 en *E. intestinalis*, 
 
 Revisión de correcciones (5 nov 2026): se volvieron a verificar las filas 4, 7, 10, 12, 13, 15, 16, 16b, 17, 19 y 26 contra el texto nuevo de narracion.json y guion.md y contra las fuentes abiertas. Todas las afirmaciones quedan ✅.
 
+## Textos para redes (publicacion.md)
+
+Revisión independiente (5 nov 2026) de las 7 redes y el comentario fijado. Todo lo demás ya está respaldado en la tabla de arriba.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| YouTube: el tubo «se evierte» | ✅ | [HW] | "the polar tube rapidly everts, forming a hollow tube"; "full eversion occurring within 2 s" | 2017 |
+| LinkedIn: «infectan desde insectos hasta personas» | ✅ | [HW] | "infect almost all invertebrates and vertebrates, as well as some protists"; "most infections in humans are zoonotic and/or waterborne" | 2017 |
+| LinkedIn: «Entender su arpón ayuda a pensar cómo bloquear la infección» | ⚠️ (la fuente no lo dice) → corregido a «es la base para entender cómo infectan» | [JAR] | Resumen del autor: los resultados dan bases para entender la infección por microsporidios (no habla de tratamientos). | 2020 |
+| «un glóbulo rojo mide unas 8» (milésimas de mm) | ✅ | [BIO] | "Diameter of erythrocytes 7.81 µm" | 1981 |
+
 VEREDICTO: APROBADO

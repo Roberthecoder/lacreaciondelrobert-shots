@@ -45,4 +45,15 @@ Fuentes abiertas:
 
 Revisión de correcciones (5 nov 2026): se volvieron a verificar contra las fuentes abiertas las filas 1, 3, 4, 7, 9, 11, 12, 13, 14, 15, 17, 19 y 22 con el texto nuevo de `narracion.json` y `guion.md` (que ahora coinciden). Todas las afirmaciones quedan ✅.
 
+## Textos para redes (publicacion.md)
+
+Revisión independiente (5 nov 2026) de las 7 redes y el comentario fijado. Todo lo demás ya está respaldado en la tabla de arriba.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| LinkedIn: «10 % de sal: casi tres veces la salinidad del mar» | ✅ (10 ÷ 3.5 ≈ 2.9) | [ZAJC13], [NOAA] | "It requires at least 10% NaCl"; "about 3.5 percent of the weight of seawater comes from the dissolved salts" | 2013 / 2026 |
+| LinkedIn: «Su estrategia no es exótica en lo químico» | ⚠️ (vago, sin respaldo) → cambiado a «Su estrategia se ve al microscopio» (pared y agregados, filas 11–12) | [ZAJC13], [KK10] | "a three-fold thickening of the cell wall" | 2013 / 2010 |
+| LinkedIn: «este tipo de hongos estropea alimentos salados y secos» | ✅ | [ZAJC18] | Título: "The genus Wallemia—From contamination of food to health threat" | 2018 |
+| LinkedIn: «es un modelo para entender… el estrés osmótico, con aplicaciones en conservación de alimentos y biotecnología» | ⚠️ (la fuente no lo llama modelo ni habla de conservación de alimentos) → corregido a «es un organismo muy interesante para estudiar cómo la vida se adapta a ambientes con muchísima sal; algunas de sus moléculas podrían interesar a la biotecnología» | [ZAJC13] | "make it a very interesting organism for studies of adaptation to hypersaline environments"; "might be of interest in biotechnology and other fields" | 2013 |
+
 VEREDICTO: APROBADO

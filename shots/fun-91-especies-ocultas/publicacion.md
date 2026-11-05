@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Más del 90 % de las especies de hongos del planeta todavía no tienen nombre.
-La mejor estimación actual es de unos 2.5 millones de especies (Niskanen et al. 2023; Kew 2023) y hasta 2023 se habían descrito unas 155,000. Hoy el ADN ambiental del suelo revela miles de linajes que solo conocemos por su secuencia, y se describen más de 2,500 especies al año: a ese ritmo, terminar tomaría entre 750 y 1,000 años.
+La mejor estimación actual es de unos 2.5 millones de especies (Niskanen et al. 2023; Kew 2023) y hasta 2023 se habían descrito unas 155,000. Hoy el ADN ambiental del suelo revela muchísimos hongos que solo conocemos por su secuencia, y se describen más de 2,500 especies al año: a ese ritmo, terminar tomaría entre 750 y 1,000 años.
 Por qué importa: los hongos sostienen suelos, bosques y cultivos, producen medicinas y enzimas industriales, y no podemos proteger ni aprovechar lo que no hemos nombrado. Hasta un paquete de hongos secos comprado en Londres escondía tres especies nuevas (PeerJ 2014).
 ¿Qué haría falta para acelerar la descripción de especies: más taxónomos, más secuenciación o ambas?
 Shot Fungi Mati 91 · La Creación del Robert

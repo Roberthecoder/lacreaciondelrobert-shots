@@ -37,4 +37,14 @@ Revisión de correcciones (5 nov 2026): el mismo verificador volvió a revisar c
 11, 12, 13, 14, 15, 16 y 17 con el texto nuevo de narracion.json y guion.md, más la escala nueva de 100 µm. Todas las
 afirmaciones quedan ✅.
 
+## Textos para redes (publicacion.md)
+
+Revisión independiente (5 nov 2026) de las 7 redes y el comentario fijado. Todo lo demás ya está respaldado en la tabla de arriba.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| YouTube: hifas «de 3 a 6 milésimas de milímetro, contra unas 60 de un pelo» | ✅ | [LEH], [MAY] | "ranged from 2.7 to 6.5 µm"; "average diameter of 65µm" / "55µm" | 2019 / 2021 |
+| LinkedIn: «el ADN ambiental del suelo revela miles de linajes…» | ⚠️ (no se halló la cifra «miles») → corregido a «muchísimos hongos que solo conocemos por su secuencia» | [KEW], [NISK] | [KEW]: "‘dark taxa’ – those only known from their DNA sequence"; [NISK]: "we propose recognition of species known only from DNA data" | 2023 |
+| LinkedIn: «los hongos sostienen suelos, bosques y cultivos, producen medicinas y enzimas industriales» | ✅ | [NISK] | "Fungi underpin nearly all life on Earth, being vitally important to land plants"; "a source of bioactive compounds, such as antibiotics, immunosuppressants, statins"; "The digestive enzymes secreted by fungi are used in food and livestock feed, textile and paper manufacturing" | 2023 |
+
 VEREDICTO: APROBADO

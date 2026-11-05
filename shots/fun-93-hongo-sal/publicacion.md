@@ -64,8 +64,8 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Hay un hongo que no puede crecer con menos de 10 % de sal: casi tres veces la salinidad del mar.
-Wallemia ichthyophaga, uno de los hongos más halófilos conocidos, crece hasta en salmuera saturada. Su estrategia no es exótica en lo químico: su pared celular se vuelve unas 3 veces más gruesa y sus células forman agregados hasta 4 veces más grandes con más sal (AEM 2010). Su genoma es compacto, unos 9.6 Mb (BMC Genomics 2013).
-Por qué importa: este tipo de hongos estropea alimentos salados y secos (desde el bacalao noruego de 1887) y es un modelo para entender cómo la vida tolera el estrés osmótico, con aplicaciones en conservación de alimentos y biotecnología.
+Wallemia ichthyophaga, uno de los hongos más halófilos conocidos, crece hasta en salmuera saturada. Su estrategia se ve al microscopio: su pared celular se vuelve unas 3 veces más gruesa y sus células forman agregados hasta 4 veces más grandes con más sal (AEM 2010). Su genoma es compacto, unos 9.6 Mb (BMC Genomics 2013).
+Por qué importa: este tipo de hongos estropea alimentos salados y secos (desde el bacalao noruego de 1887) y W. ichthyophaga es un organismo muy interesante para estudiar cómo la vida se adapta a ambientes con muchísima sal; algunas de sus moléculas podrían interesar a la biotecnología.
 ¿Qué otro organismo extremo te gustaría conocer?
 Shot Fungi Mati 93 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

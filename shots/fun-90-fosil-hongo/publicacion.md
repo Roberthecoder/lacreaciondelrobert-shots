@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Una roca de lodo del Ártico canadiense podría guardar uno de los hongos más viejos conocidos: unos mil millones de años.
 En 2019, un equipo de la Universidad de Lieja publicó en Nature a Ourasphaira giraldae: microfósiles de la Formación Grassy Bay (1,010–890 millones de años) con hilos ramificados y tabicados, esferas como esporas y señales infrarrojas de quitina en la pared. Hasta entonces, los fósiles de hongo aceptados no llegaban a 500 millones de años.
-Por qué importa: si la identificación se confirma, la rama que comparten hongos y animales ya existía hace casi mil millones de años, y los hongos habrían vivido en ambientes de transición río-mar mucho antes que las plantas terrestres. Otros especialistas piden más pruebas, y hay candidatos aún más antiguos (2,400 millones de años, en basalto de Sudáfrica) también en debate.
+Por qué importa: si la identificación se confirma, la rama que comparten hongos y animales ya existía hace casi mil millones de años, y los hongos ya existirían mucho antes que las plantas terrestres (este quizá vivía donde un río llega al mar, o el agua lo arrastró ahí). Otros especialistas piden más pruebas, y hay candidatos aún más antiguos (2,400 millones de años, en basalto de Sudáfrica) también en debate.
 ¿Cómo decidirías tú si un fósil microscópico es de verdad un hongo?
 Shot Fungi Mati 90 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱

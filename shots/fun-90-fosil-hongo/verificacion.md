@@ -49,4 +49,15 @@ Re-verificación (5 nov 2026): se revisaron contra las fuentes las filas cambiad
 
 Cierre de la re-verificación (5 nov 2026): los dos rótulos pedidos para las filas 1 y 24 ya están en `fosil.jsx`; con eso todas las filas quedan ✅.
 
+## Textos para redes (publicacion.md)
+
+Revisión independiente (5 nov 2026) de las 7 redes y el comentario fijado. Todo lo demás ya está respaldado en la tabla de arriba.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «miden centésimas de milímetro» / «los fósiles reales miden centésimas de milímetro» | ✅ | [LORON] Fig. 1; Futura-Sciences (pie de la figura de Loron et al.) https://www.futura-sciences.com/planete/actualites/paleontologie-milliard-annees-plus-ancien-champignon-terre-vient-etre-decouvert-76212/ | "Scale bars, 20 μm (h) … 30 µm (b–g)"; "spore d'Ourasphaira giraldae, mesurant entre 33 et 80 μm de diamètre" | 2019 |
+| «410 en Escocia, unos 450–460 en Wisconsin» (YouTube) | ✅ | [SCINEWS], [REDECKER] | "410-million-year-old specimens from Scotland and spores of glomeromycotan fungi from Wisconsin that date to 450 million years ago"; "about 460 million years" | 2019 / 2000 |
+| LinkedIn: «los hongos habrían vivido en ambientes de transición río-mar mucho antes que las plantas» | ⚠️ → corregido a «ya existirían mucho antes que las plantas terrestres (este quizá vivía donde un río llega al mar, o el agua lo arrastró ahí)» | [SCINEWS] | "this fungus may have lived in an estuarine environment. The fungus may also have been transported into this estuarine setting" | 2019 |
+| Datos bibliográficos del comentario fijado (Nature 570: 232–235; NEE 1: 0141; Science 289: 1920–1921; Molecules 25: 5961) | ✅ | [LORON], [BENGTSON], [REDECKER], [SATITSRI] | Coinciden con las referencias de arriba. | — |
+
 VEREDICTO: APROBADO

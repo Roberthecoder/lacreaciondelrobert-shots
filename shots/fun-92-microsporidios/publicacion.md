@@ -67,7 +67,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Un parásito de 1 a 4 milésimas de milímetro dispara un tubo unas 20 veces más largo que su propia espora, en menos de un segundo.
 Los microsporidios (hongos o sus parientes más cercanos) invaden células con su tubo polar. En 2020, un equipo de NYU School of Medicine lo filmó con microscopía de alta velocidad: velocidades máximas promedio de 235 a 336 µm/s en tres especies que infectan humanos (PLoS Pathogens).
-Por qué importa: infectan desde insectos hasta personas; en el siglo XIX, Nosema bombycis redujo la cosecha francesa de capullos de seda a la cuarta parte (de 26,000 a 6,500 toneladas). Entender su "arpón" ayuda a pensar cómo bloquear la infección.
+Por qué importa: infectan desde insectos hasta personas; en el siglo XIX, Nosema bombycis redujo la cosecha francesa de capullos de seda a la cuarta parte (de 26,000 a 6,500 toneladas). Entender su "arpón" es la base para entender cómo infectan.
 ¿Qué otra máquina biológica te parece igual de sorprendente?
 Shot Fungi Mati 92 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
