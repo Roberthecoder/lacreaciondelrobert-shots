@@ -30,6 +30,9 @@ export function mezcla(dir, html, semilla = 7) {
     tic: (t, g = 0.3, f = 2400) => add(sfx, t, (u, i) => (NOISE[(i * 5) % NOISE.length] * 0.5 + Math.sin(2 * Math.PI * f * u)) * Math.exp(-u * 90) * g, 0.06),
     // nota limpia; filtro = 0..1 la "tapa" (sonido ahogado mientras dura el problema)
     nota: (t, mm, g = 0.1, d = 0.6, tapa = 0) => { const f = hz(mm), F = lp(); add(mus, t, (u) => { const x = (Math.sin(2 * Math.PI * f * u) + 0.25 * Math.sin(4 * Math.PI * f * u) + 0.1 * Math.sin(6 * Math.PI * f * u)) * env(u, 0.006, d * 0.4) * g; return tapa ? F(x, 2400 - 2100 * tapa) * (1 + tapa * 0.4) : x; }, d); },
+    // cuerda pulsada (pizzicato suave) y campana (para el tema). Copia local ampliada para el #137.
+    pluck: (t, mm, g = 0.08, d = 0.7) => { const f = hz(mm); add(mus, t, (u) => ((2 * ((u * f) % 1) - 1) * Math.exp(-u * 11) * 0.35 + Math.sin(2 * Math.PI * f * u) * Math.exp(-u * 5) * 0.7) * Math.min(1, u * 400) * g, d); },
+    campana: (t, mm, g = 0.06, d = 1.6) => { const f = hz(mm); add(mus, t, (u) => [1, 2.0, 3.01, 4.2].reduce((a, k, j) => a + Math.sin(2 * Math.PI * f * k * u + (j ? 0 : 0.3 * Math.sin(2 * Math.PI * 5.2 * u) * Math.min(1, u * 3))) * [1, 0.35, 0.15, 0.06][j], 0) * env(u, 0.005, d * 0.35) * g, d); },
     // pulso grave con golpe suave (para los mudos: el ritmo de la historia)
     bajo: (t, mm, g = 0.12, d = 0.5) => { const f = hz(mm); add(mus, t, (u) => Math.sin(2 * Math.PI * f * u + 0.6 * Math.sin(2 * Math.PI * f * 2 * u) * Math.exp(-u * 8)) * env(u, 0.004, d * 0.35) * g, d); },
     sube: (t, d, m0, m1, g = 0.08) => { let ph = 0; add(mus, t, (u) => { ph += 2 * Math.PI * hz(m0 + (m1 - m0) * (u / d)) / SR; return Math.sin(ph) * Math.sin(Math.PI * Math.min(1, u / d)) * g; }, d); },
