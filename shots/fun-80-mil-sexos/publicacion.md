@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Este hongo no tiene dos sexos: tiene más de 23 mil. Y en México se lo comen. 🍄 Es la oreja de palo (Schizophyllum commune): su "sexo" es un tipo de apareamiento que deciden dos zonas de su ADN, y hay unas 23,328 combinaciones posibles. En Oaxaca y Tabasco se vende en los mercados y en Tabasco se come en mone, envuelta en hoja de plátano.
+Este hongo no tiene dos sexos: tiene más de 23 mil. Y en México se lo comen. 🍄 Es la oreja de palo (Schizophyllum commune): su "sexo" es un tipo de apareamiento que deciden dos zonas de su ADN, y, según una estimación de 1966, hay unas 23,328 combinaciones posibles. En Oaxaca y Tabasco se vende en los mercados y en Tabasco se come en mone, envuelta en hoja de plátano.
 ¿Cómo le dicen a este hongo en tu región? 👇
 Shot Fungi Mati 80 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -88,7 +88,7 @@ Este hongo no tiene dos sexos: tiene más de 23 mil (tipos de apareamiento: 288 
 
 ### Threads
 ```text
-Este hongo no tiene dos sexos: tiene más de 23 mil. 🍄 Es la oreja de palo (Schizophyllum commune): dos hifas solo hacen pareja si son distintas en dos zonas de su ADN, y hay unas 23,328 combinaciones. En Tabasco se come en mone, envuelta en hoja de plátano. ¿Cómo le dicen en tu región?
+Este hongo no tiene dos sexos: tiene más de 23 mil. 🍄 Es la oreja de palo (Schizophyllum commune): dos hifas solo hacen pareja si son distintas en dos zonas de su ADN, y, según una estimación de 1966, hay unas 23,328 combinaciones. En Tabasco se come en mone, envuelta en hoja de plátano. ¿Cómo le dicen en tu región?
 Shot Fungi Mati 80 · La Creación del Robert
 #Hongos
 ```
