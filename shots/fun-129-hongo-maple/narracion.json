@@ -1,0 +1,22 @@
+{
+  "dcHtml": "Shot Hongo Maple base narrada.dc.html",
+  "salida": "Shot Hongo Maple narrado.dc.html",
+  "nota": "Shot Fungi Mati #129. Una línea por subtítulo. Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es guía de recolección: no comer hongos silvestres sin un experto.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Eso que huele a hot cakes con miel de maple no es miel: es un hongo seco." },
+    { "escena": "Hongo", "texto": "Le dicen candy cap, Lactarius rubidus." },
+    { "escena": "Fresco", "texto": "Fresco, casi no huele." },
+    { "escena": "Seco", "texto": "Seco, huele tanto que en California lo usan en galletas y helado." },
+    { "escena": "Pregunta", "texto": "¿De dónde sale ese olor?" },
+    { "escena": "Estudiante", "texto": "En 1985, un estudiante se lo preguntó a su profesor de química." },
+    { "escena": "Anios", "texto": "La respuesta tardó veintisiete años." },
+    { "escena": "Gas", "texto": "En 2012 atraparon el gas del hongo seco y hallaron una molécula: la quabalactona tres." },
+    { "escena": "Hipotesis", "texto": "Creen que nace al secarse, de aminoácidos del hongo." },
+    { "escena": "Gemela", "texto": "Es casi gemela del sotolón: solo cambia un grupito de átomos." },
+    { "escena": "Sotolon", "texto": "El sotolón da el olor al fenogreco, una especia, y también está en el jarabe de maple." },
+    { "escena": "Primo", "texto": "Su primo europeo, Lactarius helvus, huele así por el sotolón, pero ese puede intoxicarte." },
+    { "escena": "Orina", "texto": "Dato raro: en 1999, un té de hierbas hizo que la orina oliera a maple y causó un falso diagnóstico." },
+    { "escena": "Cuidado", "texto": "Ojo: nunca comas hongos silvestres sin un experto." },
+    { "escena": "Cierre", "texto": "Así que ese olor a hot cakes con miel de maple, a veces, sale de un hongo." }
+  ]
+}
