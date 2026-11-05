@@ -45,8 +45,8 @@ m.whoosh(I - 0.2, 0.7, 0.08);                                                   
 for (let i = 0; i < 16; i++) m.burbuja(I + 0.6 + i * 0.22, 0.07, 380 + (i % 6) * 60);                  // agua que entra a las células
 m.sube(I + 0.6, 3.2, 50, 57, 0.03);                                                                   // las células se estiran
 m.sube(A + 0.3, 1.7, 48, 60, 0.04); for (let i = 0; i < 8; i++) m.gota(A + 0.3 + i * 0.2, 0.06, 600 + i * 70); // se llena la barra de agua
-m.golpe(E + 0.2, 0.3, 80);                                                                             // tarjeta 1956
-for (let i = 0; i < 6; i++) m.tic(E + 1.6 + i * 0.25, 0.18, 2200);                                    // seis puntitos de carmín
+m.golpe(E + 0.2, 0.3, 80);                                                                             // tarjeta 1977
+for (let i = 0; i < 6; i++) m.tic(E + 1.6 + i * 0.25, 0.18, 2200);                                    // seis marcas en el pie
 m.sube(E + 3.8, 6.0, 45, 57, 0.025);                                                                  // el pie se estira (puntitos que se separan)
 m.tic(Es + 0.5, 0.15, 1300); m.tic(Es + 2.4, 0.15, 1500);                                             // chips
 for (let i = 0; i < 6; i++) m.burbuja(Al + 0.2 + i * 0.45, 0.06, 420 + i * 30);                       // agua y alimento que suben
