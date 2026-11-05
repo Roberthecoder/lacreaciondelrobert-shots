@@ -19,7 +19,7 @@ function Tabla({ T = 0, x, y, w = 760, h = 420, verde = 1, adentro = 1, rot = 0,
     {/* canto (grosor): el verde sigue adentro */}
     <path d={`M 0 ${h - 4} L ${w} ${h - 4} L ${w - 18} ${h + 60} L 18 ${h + 60} Z`} fill={MV.madera2} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     {adentro > 0 && [0.18, 0.55, 0.3, 0.78, 0.72].map((a, i) => <rect key={i} x={w * a - 34} y={h + 6} width={68 * adentro} height={46} rx={10} fill={MV.verde3} opacity={0.9 * adentro} />)}
-    {copita > 0 && <Copita T={T} x={w - 70} y={34} s={0.55} crece={copita} />}
+    {copita > 0 && <Copita T={T} x={130} y={30} s={0.9} crece={copita} />}
   </g>;
 }
 // Una copita (apotecio) de Chlorociboria vista de lado y un poco desde arriba: platito con pie corto. Base en (x, y). 1 = ~5 mm a escala de la rama.
@@ -232,7 +232,7 @@ function MaderaVerdeShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Tabla T={T} x={90} y={640 - giro * 40} w={720} h={400} rot={-3 + giro * 2} adentro={giro} />
+          <Tabla T={T} x={60} y={660 - giro * 40} w={660} h={400} rot={-3 + giro * 2} adentro={giro} />
           {/* brocha que entra y se tacha */}
           <g transform={`translate(${klerp(1200, 640, brocha)} ${klerp(500, 760, brocha)}) rotate(${klerp(-50, -30, brocha)})`} opacity={1 - kprog(T, K.G + 1.6, K.G + 2.0)}>
             <rect x={-30} y={-260} width={60} height={200} rx={18} fill="#c83a2a" stroke={KC.ink} strokeWidth={7} />
@@ -256,19 +256,19 @@ function MaderaVerdeShot() {
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          <MaderaMicro T={T} x={60} y={560} hifas={kprog(T, K.Hi + 0.2, K.Pi + 0.6)} tinte={kprog(T, K.Pi + 0.1, K.Pi + 1.8)} />
-          {T > K.Pi + 0.4 && <Xilindeina x={720} y={1010} s={0.8} p={kprog(T, K.Pi + 0.4, K.Pi + 1.4)} rot={Math.sin(T) * 4} />}
+          <MaderaMicro T={T} x={156} y={570} s={0.8} hifas={kprog(T, K.Hi + 0.2, K.Pi + 0.6)} tinte={kprog(T, K.Pi + 0.1, K.Pi + 1.8)} />
+          {T > K.Pi + 0.4 && <Xilindeina x={700} y={1100} s={0.42} p={kprog(T, K.Pi + 0.4, K.Pi + 1.4)} rot={Math.sin(T) * 4} />}
         </>)}
       </Escena>
       {/* 5 · en el bosque: mucha madera verde, pocas copitas */}
       <Escena T={T} a={K.Co} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1040} width={KW} height={260} fill="#7a5a34" opacity=".55" />
-          {[[60, 720, 520, 0.9, -6], [520, 800, 480, 1, 5], [140, 930, 600, 0.8, 3], [600, 1010, 420, 0.9, -4], [40, 1090, 460, 1, 2]].map(([rx, ry, rw, v, rr], i) =>
+          <rect x={0} y={980} width={KW} height={190} fill="#7a5a34" opacity=".55" />
+          {[[60, 680, 520, 0.9, -6], [520, 760, 480, 1, 5], [140, 870, 600, 0.8, 3], [600, 950, 420, 0.9, -4], [40, 1020, 460, 1, 2]].map(([rx, ry, rw, v, rr], i) =>
             <g key={i} opacity={kprog(T, K.Co + 0.1 + i * 0.15, K.Co + 0.4 + i * 0.15)}><Rama x={rx} y={ry} w={rw} h={86} verde={v} rot={rr} /></g>)}
-          <Copita T={T} x={720} y={1013} s={0.9} crece={kprog(T, K.Co + 1.2, K.Co + 1.6)} />
-          <Copita T={T} x={770} y={1016} s={0.6} crece={kprog(T, K.Co + 1.35, K.Co + 1.75)} />
+          <Copita T={T} x={720} y={953} s={0.9} crece={kprog(T, K.Co + 1.2, K.Co + 1.6)} />
+          <Copita T={T} x={770} y={956} s={0.6} crece={kprog(T, K.Co + 1.35, K.Co + 1.75)} />
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿cuánto dura ese verde? */}
@@ -281,7 +281,7 @@ function MaderaVerdeShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           <g opacity={kprog(T, K.E + 2.4, K.E + 2.9)}><Taracea x={80} y={700} s={0.95} /></g>
-          <g opacity={kprog(T, K.E + 3.4, K.E + 3.9)}><Microscopio x={800} y={1180} s={1.15} /></g>
+          <g opacity={kprog(T, K.E + 3.4, K.E + 3.9)}><Microscopio x={800} y={1110} s={1.1} /></g>
         </>)}
       </Escena>
       {/* 8 · el verde era álamo con hifas; sin tintes minerales (al microscopio, fondo oscuro) */}
@@ -289,8 +289,8 @@ function MaderaVerdeShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <MaderaMicro T={T} x={60} y={640} hifas={kprog(T, K.M + 1.2, K.M + 2.6)} tinte={kprog(T, K.M + 1.6, K.M + 3.0)} antigua />
-          <MedidorMetales T={T} x={330} y={1300 - 210} at={K.M + 3.4} />
+          <MaderaMicro T={T} x={204} y={660} s={0.7} hifas={kprog(T, K.M + 1.2, K.M + 2.6)} tinte={kprog(T, K.M + 1.6, K.M + 3.0)} antigua />
+          <MedidorMetales T={T} x={330} y={1010} at={K.M + 3.4} />
         </>)}
       </Escena>
       {/* 9 · el mismo patrón: madera de hoy vs. panel antiguo */}
@@ -326,15 +326,15 @@ function MaderaVerdeShot() {
           <g transform={`translate(540 560)`}><path d="M -160 0 L 160 0 L 110 -90 L -110 -90 Z" fill="#3b4150" stroke={KC.ink} strokeWidth={7} />
             <rect x={-150} y={-4} width={300} height={22} rx={10} fill="#fff7c2" stroke={KC.ink} strokeWidth={5} />
             <path d="M -150 30 L -330 520 L 330 520 L 150 30 Z" fill="#fff7c2" opacity={0.28 + 0.06 * Math.sin(T * 6)} /></g>
-          <Vial x={250} y={1080} s={1.05} color="#3d6be0" destine={kprog(T, K.L + 0.45, K.L + 0.75)} etiqueta="TIPS-Pn" />
-          <Vial x={540} y={1080} s={1.05} color="#c83a8a" destine={kprog(T, K.L + 0.9, K.L + 2.4)} etiqueta="diF TES-ADT" />
-          <Vial x={830} y={1080} s={1.05} color={MV.verde} destine={0} etiqueta="xilindeína" />
+          <Vial x={250} y={1000} s={1.05} color="#3d6be0" destine={kprog(T, K.L + 0.45, K.L + 0.75)} etiqueta="TIPS-Pn" />
+          <Vial x={540} y={1000} s={1.05} color="#c83a8a" destine={kprog(T, K.L + 0.9, K.L + 2.4)} etiqueta="diF TES-ADT" />
+          <Vial x={830} y={1000} s={1.05} color={MV.verde} destine={0} etiqueta="xilindeína" />
         </>)}
       </Escena>
       {/* 13 · no le gana al silicio */}
       <Escena T={T} a={K.S} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Bascula T={T} x={540} y={900} s={1.1} inc={-8 * kprog(T, K.S + 0.3, K.S + 1.2, kEase.rebote)} />)}
+        {fsvg(<Bascula T={T} x={540} y={840} s={1.1} inc={-8 * kprog(T, K.S + 0.3, K.S + 1.2, kEase.rebote)} />)}
       </Escena>
       {/* 14 · cierre: la misma tabla del inicio, ya explicada */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
@@ -349,38 +349,37 @@ function MaderaVerdeShot() {
       <Etq T={T} at={K.H + 1.7} until={K.Hi - 0.3} x={60} y={620} texto="Chlorociboria" it tam={42} color={KC.ink} />
       <Etq T={T} at={K.H + 2.4} until={K.Hi - 0.3} x={60} y={700} texto="2–8 mm · pie corto" tam={30} color={KC.ink} />
       <Etq T={T} at={K.H + 2.9} until={K.Hi - 0.3} x={60} y={1160} texto="madera muerta, sin corteza" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Hi + 0.05} until={K.Co - 0.3} texto="AL MICROSCOPIO · LA MADERA" x={400} y={470} tam={32} borde={MV.verde2} mono />
-      <Etq T={T} at={K.Hi + 0.8} until={K.Pi - 0.2} x={60} y={1240 - 30} texto="hifas = hilos del hongo" tam={28} color={MV.hifa} />
-      <Etq T={T} at={K.Pi + 0.6} until={K.Co - 0.3} x={60} y={1080} texto="xilindeína" tam={40} color={MV.verde2} />
-      <Etq T={T} at={K.Pi + 0.9} until={K.Co - 0.3} x={60} y={1130} texto="pigmento · esquemático" tam={24} color={KC.texto} />
-      <Etq T={T} at={K.Pi + 0.3} until={K.Co - 0.3} x={60} y={530} texto="se tiñen las células por donde pasan las hifas" tam={22} color={KC.texto} />
-      <Etq T={T} at={K.Pi + 0.5} until={K.Co - 0.3} x={60} y={565} texto="(vasos, fibras y parénquima)" tam={22} color={KC.texto} />
+      <Chip T={T} at={K.Hi + 0.05} until={K.Pi - 0.2} texto="AL MICROSCOPIO · LA MADERA" x={400} y={470} tam={32} borde={MV.verde2} mono />
+      <Etq T={T} at={K.Hi + 0.8} until={K.Pi - 0.2} x={60} y={1120} texto="hifas = hilos del hongo" tam={28} color={MV.hifa} />
+      <Etq T={T} at={K.Pi + 0.6} until={K.Co - 0.3} x={60} y={1115} texto="xilindeína" tam={38} color={MV.verde2} />
+      <Etq T={T} at={K.Pi + 0.9} until={K.Co - 0.3} x={60} y={1160} texto="pigmento · esquemático" tam={22} color={KC.texto} />
+      <Etq T={T} at={K.Pi + 0.1} until={K.Co - 0.3} x={60} y={440} texto="se tiñen las células" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Pi + 0.2} until={K.Co - 0.3} x={60} y={478} texto="por donde pasan las hifas" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Pi + 0.3} until={K.Co - 0.3} x={60} y={516} texto="(vasos, fibras y parénquima)" tam={26} color={KC.texto} />
       <Chip T={T} at={K.Co + 1.0} until={K.P - 0.2} texto="se ve más la madera que el hongo" x={430} y={560} tam={34} borde={MV.verde3} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="1992" quien="Blanchette, Wilmering y Baumeister" revista="U. de Minnesota · Holzforschung, 1992" x={540} y={820} />
-      <Etq T={T} at={K.E + 2.6} until={K.M - 0.3} x={560} y={760} texto="taracea =" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 2.8} until={K.M - 0.3} x={560} y={800} texto="dibujo con piezas" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 2.9} until={K.M - 0.3} x={560} y={840} texto="de madera" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 4.2} until={K.M - 0.3} texto="Renacimiento italiano · siglo XV" x={430} y={560} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.E + 2.6} until={K.E + 4.1} texto="taracea = dibujo con piezas de madera" x={480} y={560} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.E + 4.2} until={K.M - 0.3} texto="Renacimiento italiano · siglo XV" x={400} y={470} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.M + 0.1} until={K.Pa - 0.3} texto="studiolo de Gubbio · Met, Nueva York" x={420} y={470} tam={28} borde={KC.gold} />
       <Chip T={T} at={K.M + 0.6} until={K.Pa - 0.3} texto="Fra Giovanni da Verona · c. 1500" x={420} y={550} tam={28} borde={KC.gold} />
-      <Etq T={T} at={K.M + 1.4} until={K.Pa - 0.3} x={60} y={612} texto="madera: álamo (Populus)" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.M + 3.5} until={K.Pa - 0.3} x={60} y={1125} texto="metales: casi nada" tam={26} color={KC.cyan} />
-      <Chip T={T} at={K.M + 4.1} until={K.Pa - 0.3} texto="→ no es tinte mineral" x={540} y={1190} tam={32} borde={KC.cyan} />
+      <Etq T={T} at={K.M + 1.4} until={K.M + 3.9} x={60} y={612} texto="madera: álamo (Populus)" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.M + 3.5} until={K.Pa - 0.3} x={240} y={985} texto="metales: casi nada" tam={26} color={KC.cyan} />
+      <Chip T={T} at={K.M + 4.1} until={K.Pa - 0.3} texto="→ no es tinte mineral" x={420} y={625} tam={32} borde={KC.cyan} />
       <Etq T={T} at={K.Pa + 0.2} until={K.Tu - 0.3} x={60} y={680} texto="hoy" tam={34} color={MV.verde2} />
       <Etq T={T} at={K.Pa + 0.7} until={K.Tu - 0.3} x={570} y={680} texto="panel del siglo XV" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.Pa + 1.2} until={K.Tu - 0.3} texto="mismo patrón" x={540} y={1110} tam={40} borde={KC.gold} />
       <NumeroGigante T={T} at={K.Pa + 2.0} until={K.Tu - 0.3} valor={500} dur={1.2} sufijo=" años" etiqueta="obras de" x={360} y={500} tam={130} color={MV.verde2} />
       <Chip T={T} at={K.Tu + 0.3} until={K.R - 0.3} texto="Tunbridge Wells, Inglaterra · siglos XVIII y XIX" x={540} y={470} tam={28} borde={KC.ink} />
       <Etq T={T} at={K.Tu + 1.6} until={K.R - 0.3} x={600} y={1000} texto="roble caído teñido" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Tu + 2.2} until={K.R - 0.3} x={600} y={1200} texto="mosaico de madera" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Tu + 2.2} until={K.R - 0.3} x={560} y={640} texto="mosaico de madera" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.R + 0.2} until={K.L - 0.3} anio="2018–19" quien="Universidad Estatal de Oregon" revista="MRS Advances 2018 · ACS Omega 2019" x={420} y={560} />
       <Etq T={T} at={K.R + 2.4} until={K.L - 0.3} x={440} y={1060} texto="semiconductor" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.L + 0.8} until={K.S - 0.3} x={110} y={1180} texto="se degrada en 3 días" tam={20} color={KC.ink} />
-      <Etq T={T} at={K.L + 2.1} until={K.S - 0.3} x={420} y={1180} texto="en semanas" tam={20} color={KC.ink} />
+      <Etq T={T} at={K.L + 0.8} until={K.S - 0.3} x={110} y={1110} texto="se degrada en 3 días" tam={20} color={KC.ink} />
+      <Etq T={T} at={K.L + 2.1} until={K.S - 0.3} x={420} y={1110} texto="en semanas" tam={20} color={KC.ink} />
       <Chip T={T} at={K.L + 0.1} until={K.S - 0.3} texto="en solución · luz y aire" x={330} y={470} tam={32} borde={KC.ink} />
-      <Contador T={T} at={K.L + 0.4} hasta={25} dur={3.0} sufijo=" semanas" x={330} y={720 - 160} tam={58} color={KC.ink} />
-      <Chip T={T} at={K.S + 0.2} until={K.C - 0.2} texto="funciona, pero no es un gran semiconductor" x={540} y={1140} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.S + 0.5} until={K.C - 0.2} x={60} y={700} texto="silicio" tam={32} color={KC.ink} />
+      {T < K.S - 0.2 && <Contador T={T} at={K.L + 0.4} hasta={25} dur={3.0} sufijo=" semanas" x={540} y={690} tam={64} color={KC.ink} />}
+      <Chip T={T} at={K.S + 0.2} until={K.C - 0.2} texto="funciona, pero no es un gran semiconductor" x={540} y={1110} tam={28} borde={KC.ink} />
+      <Etq T={T} at={K.S + 0.5} until={K.C - 0.2} x={60} y={640} texto="silicio" tam={32} color={KC.ink} />
       <Etq T={T} at={K.C + 1.2} until={K.Ou} x={60} y={1080} texto="hifas · xilindeína · 500 años" tam={30} color={KC.ink} />
       <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="no es pintura: es un hongo" x={360} y={520} tam={38} borde={MV.verde3} />
 
@@ -419,9 +418,9 @@ function MaderaVerdeShot() {
         [K.H + 1.0, K.Hi - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.Pi + 0.1, K.Co + 0.9, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.P + 0.05, K.E + 0.15, 'avatar_06_pensativo_menton', 'grande'],
-        [K.M + 2.6, K.Pa - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
+        [K.E + 4.3, K.M - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.Pa + 0.3, K.Pa + 4.2, 'avatar_11_sorprendido', 'arriba-der'],
-        [K.R + 2.3, K.L + 0.0, 'avatar_07_pensativo_puno', 'arriba-der'],
+        [K.R + 2.3, K.L + 0.8, 'avatar_07_pensativo_puno', 'arriba-der'],
         [K.L + 3.3, K.C - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.C + 0.4, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="biologia" num="126" hasta={K.Ou} />
