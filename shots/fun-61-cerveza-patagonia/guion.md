@@ -80,3 +80,5 @@ Apariciones 9 · **32.6 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas ·
    > "reproduces by an asymmetrical budding process." / "When the daughter cell separates from the mother, it leaves a 'bud scar'"
 
 El dibujo es esquemático.
+
+_Versión de revisión renderizada en la rama `claude/fun-60-64-cocina`._
