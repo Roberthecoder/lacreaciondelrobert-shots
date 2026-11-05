@@ -369,7 +369,7 @@ function SemillaShot() {
       <Chip T={T} at={K.Es + 0.3} until={E2 - 0.2} texto="esporas de champiñón" x={420} y={470} tam={34} borde={KC.gold} mono />
       <Etq T={T} at={K.Es + 0.6} until={E2 - 0.2} x={60} y={545} texto="Agaricus bisporus" it tam={34} />
       <Chip T={T} at={K.Es + 2.2} until={E2 - 0.2} texto="germinan muy mal" x={420} y={760} tam={40} borde={KC.red} />
-      <Chip T={T} at={E2 + 0.5} until={K.Cl - 0.3} texto="cada espora: una cepa nueva" x={540} y={470} tam={40} borde={KC.ink} />
+      <Chip T={T} at={E2 + 0.5} until={K.Cl - 0.3} texto="cada espora: posible cepa nueva" x={540} y={470} tam={40} borde={KC.ink} />
       <Chip T={T} at={E2 + 1.4} until={K.Cl - 0.3} texto="resultado impredecible" x={540} y={565} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Cl + 2.8} until={K.R - 0.3} texto="cultivo de tejido ≈ clon" x={600} y={540} tam={38} borde="#118a3a" />
       <Chip T={T} at={K.R + 0.4} until={K.Lo - 0.3} texto="35 min · 121 °C" x={360} y={480} tam={50} borde={KC.ink} />
@@ -409,7 +409,7 @@ function SemillaShot() {
       <Subtitulo T={T} idx={1} at={K.S + 0.1} until={K.L - 0.1} texto="Spawn: grano esterilizado *cubierto de micelio.*" />
       <Subtitulo T={T} idx={2} at={K.L + 0.1} until={K.Es - 0.1} texto="Cada grano, *forrado de hifas.*" />
       <Subtitulo T={T} idx={3} at={K.Es + 0.1} until={E2 - 0.1} texto="¿Esporas? *Germinan muy mal.*" />
-      <Subtitulo T={T} idx={4} at={E2 + 0.1} until={K.Cl - 0.1} texto="Cada una, *una cepa nueva.*" />
+      <Subtitulo T={T} idx={4} at={E2 + 0.1} until={K.Cl - 0.1} texto="Cada una, *puede ser cepa nueva.*" />
       <Subtitulo T={T} idx={5} at={K.Cl + 0.1} until={K.R - 0.1} texto="Cultivo de tejido: *casi un clon.*" />
       <Subtitulo T={T} idx={6} at={K.R + 0.1} until={K.Lo - 0.1} texto="Autoclave: *35 min a 121 °C.*" />
       <Subtitulo T={T} idx={7} at={K.Lo + 0.1} until={K.P - 0.1} texto="Cada lote *siembra otro más grande.*" />

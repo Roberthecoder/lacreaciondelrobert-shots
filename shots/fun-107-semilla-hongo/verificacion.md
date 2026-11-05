@@ -63,4 +63,33 @@ Revisadas en `guion.md` y `narracion.json` las partes corregidas por el coordina
 
 Las demás afirmaciones no cambiaron y siguen ✅.
 
+## Textos en pantalla (5 nov 2026)
+
+Revisados todos los `Chip`, `Etq`, `<text>`, `TarjetaEstudio`, `NumeroGigante`, `BarraEscala` y `Subtitulo` de `semilla.jsx`.
+
+| Texto en pantalla | Veredicto | Fuente · frase textual |
+|---|---|---|
+| "hifa con septos" (dibujo de hifa tabicada de *A. bisporus*) | ✅ | https://en.wikipedia.org/wiki/Dolipore_septum : los septos doliporo están "found in almost all species of fungi in the phylum Basidiomycota" (*Agaricus* es Basidiomycota); Wikipedia *Hypha*: hifas "divided into cells by internal cross-walls called" septa. |
+| "¿echados a perder?" (tachado) / "semilla de hongo" | ✅ | Filas 1–2. |
+| "SPAWN" · "grano + esterilizado + micelio = spawn" · "esporas: 0" | ✅ | Filas 2–3. |
+| "esporas de champiñón" · *Agaricus bisporus* · "germinan muy mal" | ✅ | Filas 5 y 7 (la voz dice "en la naturaleza"). |
+| "cada espora: una cepa nueva" → **corregido a "cada espora: posible cepa nueva"**; subtítulo "Cada una, una cepa nueva." → **"Cada una, *puede ser cepa nueva.*"** | ✅ (tras corregir) | Penn State Extension: "each spore is **likely** to yield a new strain" — no es seguro para cada espora. |
+| "resultado impredecible" | ✅ | Fila 6. |
+| "cultivo de tejido ≈ clon" / subtítulo "Cultivo de tejido: casi un clon." | ✅ | Fila 8. |
+| "35 min · 121 °C" + "frasco de 250 ml" / subtítulo "Autoclave: 35 min a 121 °C." (el chip de 250 ml está a la vez en pantalla) | ✅ | Fila 10. |
+| "placa · 1 frasco · 3 frascos · bolsas" · "cada lote siembra uno más grande" | ✅ | Fila 11. |
+| "spawn de estiércol · hasta los años 30" | ✅ | Fila 12. |
+| Carrera estiércol vs. grano (el de grano se blanquea antes), con barra "esquemático" en toda la escena | ✅ (esquemático) | Sinden: "The mycelium from the new medium immediately grew faster and more vigorously" (Penn State News 2024). No se muestran tiempos ni cifras inventadas. |
+| "James Sinden · Penn State" · "creció más rápido" | ✅ | Filas 13–14. |
+| TarjetaEstudio "1932 · James Sinden · Penn State · patente de EE. UU. 1,869,517" | ✅ | Fila 15 (Google Patents US1869517A: concedida 2 ago 1932, cedida a Pennsylvania State College). |
+| "hoy: casi todo el spawn comercial" / subtítulo "Patente de 1932: hoy, casi todo." | ✅ | Fila 16. |
+| "olla de presión = autoclave" · "PDA · mi cepa" | ✅ | Filas 17–18 (`datos.md`). |
+| "seta rosa · *Pleurotus djamor*" + esporas elípticas angostas (rx 10 × ry 4.5) rosa pálido | ✅ | Filas 19 y 24. |
+| "esporas → cepas nuevas" | ✅ | Fila 20 (frase general; las esporas son la vía para obtener cepas nuevas). |
+| "40,000,000 esporas por hora" · "3 pulgadas ≈ 7.6 cm" · *Agaricus bisporus* | ✅ | Fila 21. |
+| "para cosechar: el clon" | ✅ | Fila 22. |
+| Barras: 5 cm, "5 mm (dentro de la lupa)", "10 µm (esporas, esquemáticas)", 50 cm (autoclave), 10 cm, "dibujo esquemático"/"esquemático" | ✅ (esquemático) | Fila 23; las escenas sin medida real llevan la leyenda de esquemático. |
+
+Cambios hechos en `semilla.jsx` (solo texto): chip de la línea 372 y subtítulo idx 4 (línea 412).
+
 VEREDICTO: APROBADO
