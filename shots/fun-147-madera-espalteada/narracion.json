@@ -13,7 +13,7 @@
     },
     {
       "escena": "Entran",
-      "texto": "Todo empieza cuando varios hongos, cada uno por su lado, entran al mismo tronco."
+      "texto": "Todo empieza cuando varios hongos distintos entran al mismo tronco."
     },
     {
       "escena": "Hifas",
@@ -21,7 +21,7 @@
     },
     {
       "escena": "Choque",
-      "texto": "Cuando dos colonias chocan, ninguna deja pasar a la otra:"
+      "texto": "Cuando dos colonias chocan y ninguna logra vencer,"
     },
     {
       "escena": "Melanina",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Blanqueo",
-      "texto": "Otros, de pudrición blanca, como Trametes versicolor, se comen la lignina y aclaran la madera."
+      "texto": "Y los de pudrición blanca, como Trametes versicolor, se comen la lignina y aclaran la madera."
     },
     {
       "escena": "Verde",
@@ -49,7 +49,7 @@
     },
     {
       "escena": "Xylaria",
-      "texto": "Lo más raro: Xylaria polymorpha, los dedos de muerto, hace líneas sin rival: se pone fronteras a sí mismo."
+      "texto": "Lo más raro: Xylaria polymorpha, los dedos de muerto, hace líneas aunque esté solo, sin otro hongo enfrente: se las pone a sí mismo."
     },
     {
       "escena": "Cierre",
