@@ -1,0 +1,21 @@
+{
+  "dcHtml": "Shot Camembert base narrada.dc.html",
+  "salida": "Shot Camembert narrado.dc.html",
+  "nota": "Shot Fungi Mati #63. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa cáscara blanca no es queso: es un hongo, y te lo comes." },
+    { "escena": "Nombre", "texto": "Se llama Penicillium camemberti, y viste al camembert y al brie." },
+    { "escena": "Siembra", "texto": "Al queso fresco le ponen sus esporas, y encima crece una pelusa blanca." },
+    { "escena": "Pinceles", "texto": "De cerca son hifas que terminan en pinceles de esporas." },
+    { "escena": "Acido", "texto": "Se come el ácido de la orilla y suelta amoniaco: la orilla deja de ser ácida." },
+    { "escena": "Enzimas", "texto": "Y sus enzimas cortan las proteínas de la leche." },
+    { "escena": "AfueraAdentro", "texto": "Por eso madura de afuera hacia adentro: la orilla cremosa, el centro todavía firme." },
+    { "escena": "Pregunta", "texto": "¿Y si te digo que este hongo está en peligro?" },
+    { "escena": "Estudio", "texto": "En 2020, en Francia, leyeron su ADN: el hongo blanco es un clon." },
+    { "escena": "Mutante", "texto": "Viene de un mutante blanco, escogido para el brie en 1898 y para el camembert en 1902." },
+    { "escena": "Esporas", "texto": "Desde entonces solo se copia, y ya casi no hace esporas." },
+    { "escena": "Biforme", "texto": "Su pariente, Penicillium biforme, vive en la leche cruda y podría reemplazarlo." },
+    { "escena": "Cierre", "texto": "Así que esa cáscara blanca no es queso: es un hongo clonado que madura tu queso desde afuera." }
+  ],
+  "mezcla": "oficial-30oct"
+}
