@@ -13,7 +13,7 @@
     },
     {
       "escena": "Malta",
-      "texto": "Al brotar, el grano hace enzimas que cortan su almidón en azúcar: es malta."
+      "texto": "Al brotar, sus enzimas cortan el almidón en azúcar: es malta."
     },
     {
       "escena": "Atole",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 1981, cerca de Creel, Patricia Lappe, de la UNAM, halló que la principal fuente de levaduras era el sedimento de la olla."
+      "texto": "En 1981, cerca de Creel, Patricia Lappe, de la UNAM, halló que venían sobre todo del sedimento de la olla."
     },
     {
       "escena": "Pasto",
@@ -49,11 +49,11 @@
     },
     {
       "escena": "Robert",
-      "texto": "Dato curioso: las primeras muestras las mandó a la UNAM un tal Robert."
+      "texto": "Dato curioso: las muestras donde se describió su primera levadura las mandó a la UNAM un tal Robert."
     },
     {
       "escena": "Cierre",
-      "texto": "Esa olla no es solo maíz con agua: es una fábrica de hongos heredada por generaciones."
+      "texto": "Esa olla no es solo maíz con agua: es una fábrica de hongos que se hereda de tanda en tanda."
     }
   ],
   "mezcla": "oficial-30oct"

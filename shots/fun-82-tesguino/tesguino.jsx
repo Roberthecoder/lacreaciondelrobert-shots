@@ -25,8 +25,8 @@ const TX = {
   lacticas: 'y bacterias lácticas: lo agrio',
   co2: 'CO₂',
   etanol: 'alcohol',
-  fases: 'las burbujas marcan 4 fases',
-  fasesLista: ['lento', 'rápido', 'otra vez', 'quieto'],
+  fases: '4 fases: cuánto burbujea y qué le agregan',
+  fasesLista: ['lento', 'rápido: se agrega el pasto', 'leve → fuerte: atole nuevo', 'quieto'],
   noSeLavan: 'no se lavan',
   costra: 'sedimento de tandas anteriores',
   ciclo: 'tanda anterior → tanda nueva',
@@ -43,12 +43,12 @@ const TX = {
   hipotesis: 'hipótesis: ¿factores de crecimiento?',
   sagrada: 'bebida sagrada',
   pago: 'pago del trabajo en comunidad',
-  sobreDe: 'Robert Bye · Harvard',
-  sobrePara: 'Lab. de Micología · UNAM',
-  sobreAnio: '1973',
+  sobreDe: 'R. Bye · Harvard',
+  sobrePara: 'Micología · UNAM',
+  sobreAnio: 'publicado en 1973',
   noSoyYo: '(no soy yo)',
   fabrica: 'fábrica de hongos',
-  generaciones: 'de generación en generación',
+  tandas: 'de tanda en tanda',
 };
 // Subtítulos (idx = línea de narracion.json)
 const SUBT = [
@@ -60,11 +60,11 @@ const SUBT = [
   'Quien cuida las ollas *lee las burbujas.*',
   '¿De dónde salen *esas levaduras?*',
   'Las ollas *no se lavan.*',
-  '1981: la fuente era *el sedimento de la olla.*',
+  '1981: venían sobre todo *del sedimento de la olla.*',
   'El pasto _Bromus:_ *¿para qué sirve?*',
   'Bebida sagrada y *pago del trabajo en comunidad.*',
-  'Las primeras muestras… *las mandó un Robert.*',
-  'Una fábrica de hongos *heredada por generaciones.*',
+  'Las muestras de su primera levadura… *las mandó un Robert.*',
+  'Una fábrica de hongos *que se hereda de tanda en tanda.*',
 ];
 
 /* ===================== COLORES Y PIEZAS ===================== */
@@ -102,7 +102,7 @@ function Rotulo({ T, at, until, x, y, texto, tam = 34, color = KC.texto, it = fa
 
 // Olla tesgüinera de barro (panzona, boca ancha). Base en (x, y), alto ≈ 380·s.
 // burb = burbujas por segundo en la superficie · lienzo 0..1 = tapada con un lienzo blanco · corte = vista en corte (vacía, con costra).
-function Olla({ T = 0, x, y, s = 1, burb = 0, lienzo = 0, corte = false, costra = 0, id = 'o1', liquido = true }) {
+function Olla({ T = 0, x, y, s = 1, burb = 0, lienzo = 0, lienzoSube = 0, corte = false, costra = 0, id = 'o1', liquido = true }) {
   const cuerpo = 'M -130 -368 Q -150 -320 -205 -272 Q -268 -195 -236 -100 Q -205 -12 -110 0 L 110 0 Q 205 -12 236 -100 Q 268 -195 205 -272 Q 150 -320 130 -368 Z';
   const dentro = 'M -112 -360 Q -130 -312 -182 -264 Q -238 -192 -210 -108 Q -184 -34 -100 -24 L 100 -24 Q 184 -34 210 -108 Q 238 -192 182 -264 Q 130 -312 112 -360 Z';
   const g = krng(7), bur = [];
@@ -131,7 +131,7 @@ function Olla({ T = 0, x, y, s = 1, burb = 0, lienzo = 0, corte = false, costra 
     <ellipse cx={0} cy={-370} rx={150} ry={32} fill={TG.barro} stroke={KC.ink} strokeWidth={8} />
     <ellipse cx={0} cy={-370} rx={124} ry={22} fill={corte ? '#2a1408' : (liquido ? TG.atole : '#3a1d0e')} stroke={TG.borde} strokeWidth={4} />
     {bur}
-    {lienzo > 0 && <g opacity={lienzo} transform={`translate(0 ${-(1 - lienzo) * 60})`}>
+    {lienzo > 0 && <g opacity={lienzo * (1 - kclamp(lienzoSube * 1.6 - 0.6, 0, 1))} transform={`translate(${lienzoSube * 160} ${-lienzoSube * 260}) rotate(${lienzoSube * 25} 0 -370)`}>
       <path d="M -168 -372 Q -120 -410 -40 -398 Q 20 -414 80 -400 Q 140 -410 170 -372 Q 180 -320 160 -300 Q 120 -330 80 -312 Q 30 -336 -20 -312 Q -80 -334 -120 -310 Q -170 -322 -168 -372 Z" fill={TG.lienzo} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
       <path d="M -80 -396 Q -86 -350 -96 -320 M 30 -404 Q 34 -360 30 -322 M 120 -398 Q 130 -350 124 -318" stroke="#d8d2c2" strokeWidth={4} fill="none" />
     </g>}
@@ -211,21 +211,26 @@ function Etanol({ x, y, s = 1, o = 1 }) {
     <circle cx={46} cy={-20} r={13} fill={KC.red} stroke={KC.texto} strokeWidth={3} />
   </g>;
 }
-// Pasto Bromus: espiga que cuelga (panícula) con espiguillas aplanadas y aristas. Base en (x, y).
+// Pasto Bromus arizonicus: tallo erguido con panícula contraída; espiguillas ERGUIDAS (ascendentes), elípticas y muy aplanadas,
+// con aristas rectas (ficha: «Seedhead droops: No», «strongly laterally compressed», arista subapical recta). Base en (x, y).
 function Bromus({ T, x, y, s = 1, seed = 2 }) {
-  const m = mece(T, seed, 0.25) * 8;
-  const ramas = [[-0.95, -40, 1], [-0.8, 40, 0.9], [-0.65, -50, 0.8], [-0.5, 50, 0.75], [-0.38, -40, 0.6]];
-  return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d={`M 0 0 Q ${10 + m} -260 ${30 + m * 2} -520`} stroke={TG.pasto2} strokeWidth={9} fill="none" strokeLinecap="round" />
-    <path d="M 0 -60 Q -70 -120 -90 -200" stroke="#7fa04a" strokeWidth={12} fill="none" strokeLinecap="round" />
-    <path d="M 6 -140 Q 70 -200 90 -280" stroke="#7fa04a" strokeWidth={10} fill="none" strokeLinecap="round" />
-    {ramas.map(([u, dx, k], i) => { const bx = 30 * (-u) + m * 2 * -u, by = 520 * u; const ex = bx + dx * 1.8 + m, ey = by + 110 * k;
+  const m = mece(T, seed, 0.25) * 6;
+  const esp = [[-520, 0, 0], [-470, -1, 22], [-470, 1, 22], [-405, -1, 40], [-405, 1, 40], [-340, -1, 30], [-340, 1, 30], [-280, -1, 18]];
+  return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${m * 0.4})`}>
+    <path d="M 0 0 L 0 -540" stroke={TG.pasto2} strokeWidth={9} fill="none" strokeLinecap="round" />
+    <path d="M 0 -40 Q -70 -110 -96 -210" stroke="#7fa04a" strokeWidth={12} fill="none" strokeLinecap="round" />
+    <path d="M 4 -120 Q 70 -190 92 -280" stroke="#7fa04a" strokeWidth={10} fill="none" strokeLinecap="round" />
+    {esp.map(([yy, lado, dx], i) => { const bx = lado * dx, ang = lado * 16;
       return <g key={i}>
-        <path d={`M ${bx} ${by} Q ${bx + dx} ${by - 10} ${ex} ${ey}`} stroke={TG.pasto2} strokeWidth={4} fill="none" />
-        <g transform={`translate(${ex} ${ey}) rotate(${dx > 0 ? -15 : 15})`}>
-          <path d="M 0 -6 Q 22 30 0 96 Q -22 30 0 -6 Z" fill={TG.pasto} stroke={KC.ink} strokeWidth={4} />
-          {[16, 36, 56, 76].map((yy) => <g key={yy}><path d={`M ${-9 + yy * 0.05} ${yy} L 0 ${yy + 10} L ${9 - yy * 0.05} ${yy}`} stroke={TG.pasto2} strokeWidth={3} fill="none" />
-            <line x1={dx > 0 ? 10 : -10} y1={yy + 4} x2={dx > 0 ? 34 : -34} y2={yy + 14} stroke={TG.pasto2} strokeWidth={2} /></g>)}
+        {lado !== 0 && <line x1={0} y1={yy + 40} x2={bx} y2={yy} stroke={TG.pasto2} strokeWidth={4} />}
+        <g transform={`translate(${bx} ${yy}) rotate(${ang})`}>
+          <path d="M 0 0 Q 17 -48 0 -104 Q -17 -48 0 0 Z" fill={TG.pasto} stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" />
+          <line x1={0} y1={-6} x2={0} y2={-98} stroke={TG.pasto2} strokeWidth={3} />
+          {[-22, -44, -66, -86].map((q) => <g key={q}>
+            <path d={`M -11 ${q + 8} L 0 ${q} L 11 ${q + 8}`} stroke={TG.pasto2} strokeWidth={3} fill="none" />
+            <line x1={lado >= 0 ? 6 : -6} y1={q} x2={lado >= 0 ? 16 : -16} y2={q - 26} stroke={TG.pasto2} strokeWidth={2.5} />
+          </g>)}
+          <line x1={0} y1={-104} x2={0} y2={-136} stroke={TG.pasto2} strokeWidth={2.5} />
         </g>
       </g>; })}
   </g>;
@@ -259,9 +264,9 @@ function Sobre({ x, y, s = 1, rot = 0 }) {
     <path d="M -210 -130 L 0 20 L 210 -130" fill="none" stroke={KC.ink} strokeWidth={6} />
     <rect x={120} y={-110} width={70} height={84} rx={4} fill={KC.coral} stroke={KC.ink} strokeWidth={4} strokeDasharray="6 4" />
     <circle cx={110} cy={-50} r={44} fill="none" stroke="#3a3a8a" strokeWidth={4} opacity=".7" />
-    <text x={110} y={-38} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#3a3a8a" opacity=".8">{TX.sobreAnio}</text>
-    <text x={-180} y={70} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>de: {TX.sobreDe}</text>
-    <text x={-180} y={108} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>a: {TX.sobrePara}</text>
+    <text x={-180} y={-80} style={{ font:`700 24px ${KF.mono}` }} fill="#3a3a8a">{TX.sobreAnio}</text>
+    <text x={-180} y={70} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>de: {TX.sobreDe}</text>
+    <text x={-180} y={108} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>a: {TX.sobrePara}</text>
   </g>;
 }
 // Interior de la olla al microscopio, para la Lupa (cuadro de 2r × 2r): levaduras con yemas, azúcar y burbujas.
@@ -286,14 +291,14 @@ function TesguinoShot() {
   const GR = Array.from({ length: 11 }, (_, i) => [230 + (i % 6) * 120 + (i >= 6 ? 60 : 0), i < 6 ? 960 : 1060, (i * 37) % 50 - 25]);
   const germ = kprog(T, K.Ge + 0.3, K.M - 0.2, kEase.suave);
   const fase = (() => { const t = T - K.B; let f = -1; FASES.forEach((a, i) => { if (t >= a) f = i; }); return f; })();
-  const burbFase = [0.8, 3.2, 2.2, 0][Math.max(0, fase)];
+  const burbFase = fase === 2 ? klerp(0.6, 3.4, kprog(T, K.B + FASES[2] + 0.2, K.B + FASES[3] - 0.1)) : [0.8, 3.2, 0, 0][Math.max(0, fase)];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la olla de barro que burbujea y, por dentro, levaduras */}
       <Escena T={T} a={K.G} b={K.Ge} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Olla T={T} x={330} y={1110} s={1.2} burb={1.4 + Math.sin(T * 3)} lienzo={1 - kprog(T, K.G + 0.1, K.G + 0.7, kEase.sale)} id="og" />
+          <Olla T={T} x={330} y={1110} s={1.2} burb={1.4 + Math.sin(T * 3)} lienzo={T < K.G + 0.9 ? 1 : 0} lienzoSube={kprog(T, K.G + 0.1, K.G + 0.8, kEase.sale)} id="og" />
           {T > K.G + 0.15 && T < K.G + 0.8 && <circle cx={360} cy={662} r={10 + (T - K.G) * 60} fill="none" stroke="#fff" strokeWidth={6} opacity={1 - (T - K.G - 0.15) / 0.65} />}
         </>)}
       </Escena>
@@ -325,7 +330,7 @@ function TesguinoShot() {
           {Array.from({ length: 9 }, (_, i) => <rect key={i} x={90 + i * 102} y={560} width={96} height={70} rx={14} fill="#c9a86a" stroke={KC.ink} strokeWidth={5} />)}
           {/* granos de almidón poliédricos del endospermo (fondo) */}
           {Array.from({ length: 12 }, (_, i) => { const cx = 140 + (i % 6) * 160, cy = 690 + Math.floor(i / 6) * 420; return <path key={'p' + i} d={Array.from({ length: 6 }, (_, k) => { const a = k * Math.PI / 3 + i; return `${k ? 'L' : 'M'} ${(cx + 44 * Math.cos(a)).toFixed(0)} ${(cy + 38 * Math.sin(a)).toFixed(0)}`; }).join(' ') + ' Z'} fill="rgba(244,239,228,.12)" stroke="rgba(244,239,228,.35)" strokeWidth={4} />; })}
-          {[0, 1, 2, 3].map((i) => <CadenaAlmidon key={i} T={T} x={200} y={770 + i * 95} n={11} paso={66} seed={i + 1} corte={kprog(T, K.M + 0.8 + i * 0.35, K.M + 2.8 + i * 0.35)} />)}
+          {[0, 1, 2, 3].map((i) => <CadenaAlmidon key={i} T={T} x={200} y={770 + i * 95} n={11} paso={66} seed={i + 1} corte={kprog(T, K.M + 0.4 + i * 0.25, K.M + 2.1 + i * 0.25)} />)}
         </>)}
       </Escena>
 
@@ -357,8 +362,8 @@ function TesguinoShot() {
           {Array.from({ length: 12 }, (_, i) => <circle key={'s' + i} cx={140 + ((i * 83) % 820) + mece(T, i, 0.3) * 20} cy={620 + ((i * 59) % 480)} r={10} fill={TG.azucar} stroke={KC.ink} strokeWidth={2} opacity={1 - kprog(T, K.L + 1.0 + i * 0.08, K.L + 2.0 + i * 0.08)} />)}
           {[[330, 820, 0], [660, 760, 1], [520, 1010, 2], [800, 1000, 3]].map(([lx, ly, i]) =>
             <Levadura key={i} x={lx} y={ly} r={i === 0 ? 105 : 72} rot={i * 40} T={T} seed={i + 2} brote={kprog(T, K.L + 0.4 + i * 0.5, K.L + 3.4 + i * 0.4)} />)}
-          {[0, 1, 2, 3, 4].map((i) => { const ph = kprog(T, K.L + 2.2 + i * 0.5, K.L + 4.2 + i * 0.5); return ph > 0 && ph < 1 ? <Etanol key={'e' + i} x={360 + i * 110 + ph * 60} y={700 - ph * 180} s={0.9} o={Math.sin(Math.PI * ph)} /> : null; })}
-          {[[180, 1080, 20], [920, 640, -30], [870, 1110, 60]].map(([bx, by, r], i) => <BacteriaC key={'b' + i} x={bx} y={by} rot={r + mece(T, i, 0.2) * 10} s={0.55} color={KC.mint} T={T} seed={i} />)}
+          {[0, 1, 2, 3, 4].map((i) => { const ph = kprog(T, K.L + 2.2 + i * 0.5, K.L + 4.2 + i * 0.5); return ph > 0 && ph < 1 ? <Etanol key={'e' + i} x={150 + i * 90 + ph * 40} y={1000 - ph * 200} s={0.9} o={Math.sin(Math.PI * ph)} /> : null; })}
+          {[[620, 640, 20], [960, 920, -30], [880, 1120, 60]].map(([bx, by, r], i) => <BacteriaC key={'b' + i} x={bx} y={by} rot={r + mece(T, i, 0.2) * 10} s={0.55} color={KC.mint} T={T} seed={i} />)}
         </>)}
       </Escena>
 
@@ -366,12 +371,12 @@ function TesguinoShot() {
       <Escena T={T} a={K.B} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Olla T={T} x={620} y={1110} s={1.25} burb={burbFase} lienzo={0} id="of" />
+          <Olla T={T} x={810} y={1110} s={0.9} burb={burbFase} lienzo={0} id="of" />
           {TX.fasesLista.map((f, i) => { const on = fase >= i; const yy = 640 + i * 110;
             return <g key={i} opacity={kprog(T, K.B + FASES[i], K.B + FASES[i] + 0.2) * 0.75 + 0.25}>
               <circle cx={110} cy={yy} r={34} fill={on ? (fase === i ? KC.pink : KC.gold2) : '#fff'} stroke={KC.ink} strokeWidth={6} />
               <text x={110} y={yy + 14} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text>
-              <text x={160} y={yy + 12} style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>{f}</text>
+              <text x={160} y={yy + 12} style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>{f}</text>
             </g>; })}
         </>)}
       </Escena>
@@ -415,10 +420,10 @@ function TesguinoShot() {
       <Escena T={T} a={K.Pa} b={K.Te} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Bromus T={T} x={280} y={1140} s={1.05} />
+          <Bromus T={T} x={230} y={1150} s={0.62} />
           <g opacity={kprog(T, K.Pa + 1.6, K.Pa + 2.0)}>
-            <Tubo x={760} y={1120} s={1.0} color={TG.yodo} nivel={0.55} />
-            <Goteo T={T} x={760} y0={760} y1={950} cada={0.4} color="#6a3a9a" desde={K.Pa + 1.9} hasta={K.Pa + 2.8} />
+            <Tubo x={760} y={1150} s={1.0} color={TG.yodo} nivel={0.55} />
+            <Goteo T={T} x={760} y0={790} y1={980} cada={0.4} color="#6a3a9a" desde={K.Pa + 1.9} hasta={K.Pa + 2.8} />
           </g>
         </>)}
       </Escena>
@@ -460,8 +465,8 @@ function TesguinoShot() {
         {fsvg(<>
           <Olla T={T} x={330} y={1110} s={1.2} burb={2.2 + Math.sin(T * 2)} id="oz" />
           <g opacity={kprog(T, K.C + 2.4, K.C + 2.9)}>
-            <path d="M 470 560 Q 640 430 820 560" stroke={KC.ink} strokeWidth={10} fill="none" strokeDasharray="20 12" strokeDashoffset={-T * 40} strokeLinecap="round" />
-            <path d="M 820 560 l -44 -8 m 44 8 l -18 -40" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" fill="none" />
+            <path d="M 150 600 A 180 50 0 1 1 510 600" fill="none" stroke={KC.ink} strokeWidth={10} strokeDasharray="20 12" strokeDashoffset={-T * 40} strokeLinecap="round" />
+            <path d="M 510 600 l -40 -14 m 40 14 l -6 -42" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" fill="none" />
           </g>
         </>)}
       </Escena>
@@ -474,13 +479,13 @@ function TesguinoShot() {
 
       <Chip T={T} at={K.Ge + 0.5} until={K.M - 0.3} texto={TX.lugar} x={540} y={370} tam={30} borde={KC.mint} />
       <Rotulo T={T} at={K.Ge + 0.3} until={K.M - 0.3} x={150} y={850} texto={germ < 0.5 ? TX.dias[0] : TX.dias[1]} tam={40} color={KC.texto} />
-      <Etq T={T} at={K.Ge + 1.8} until={K.M - 0.3} x={560} y={800} texto={TX.brote} tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ge + 1.8} until={K.M - 0.3} x={300} y={850} texto={TX.brote} tam={26} color={KC.texto} />
 
-      <Chip T={T} at={K.M + 0.1} until={K.A - 0.3} texto={TX.porDentroGrano} x={540} y={470} tam={32} borde={KC.cyan} mono />
+      <Chip T={T} at={K.M + 0.1} until={K.M + 2.1} texto={TX.porDentroGrano} x={540} y={470} tam={32} borde={KC.cyan} mono />
       <Rotulo T={T} at={K.M + 0.5} until={K.A - 0.3} x={90} y={700} texto={TX.almidon} tam={30} color={TG.almidon} />
       <Rotulo T={T} at={K.M + 0.9} until={K.A - 0.3} x={540} y={700} texto={TX.enzimas} tam={30} color={TG.enzima} />
-      <Rotulo T={T} at={K.M + 2.4} until={K.A - 0.3} x={760} y={1150} texto={TX.azucar} tam={34} color={TG.azucar} />
-      <Chip T={T} at={K.M + 3.2} until={K.A - 0.3} texto={TX.malta} x={540} y={560} tam={40} borde={KC.gold} />
+      <Rotulo T={T} at={K.M + 1.6} until={K.A - 0.3} x={760} y={1150} texto={TX.azucar} tam={34} color={TG.azucar} />
+      <Chip T={T} at={K.M + 2.4} until={K.A - 0.2} texto={TX.malta} x={400} y={470} tam={44} borde={KC.gold} />
 
       <Rotulo T={T} at={K.A + 0.2} until={K.A + 1.4} x={540} y={760} texto={TX.metate} tam={36} centro color={KC.ink} fondo="rgba(255,255,255,.8)" />
       <Rotulo T={T} at={K.A + 1.6} until={K.A + 2.9} x={540} y={470} texto={TX.horas} tam={32} centro color={KC.ink} fondo="rgba(255,255,255,.8)" />
@@ -489,8 +494,8 @@ function TesguinoShot() {
       <Chip T={T} at={K.L + 0.1} until={K.B - 0.3} texto={TX.porDentroOlla} x={430} y={470} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.L + 0.6} until={K.B - 0.3} x={60} y={600} texto={TX.levadura} it tam={34} color={KC.texto} />
       <Rotulo T={T} at={K.L + 1.0} until={K.B - 0.3} x={150} y={650} texto={TX.levaduraComun} tam={26} color={KC.gold2} />
-      <Rotulo T={T} at={K.L + 2.4} until={K.B - 0.3} x={600} y={560} texto={TX.etanol} tam={28} color={KC.texto} />
-      <Rotulo T={T} at={K.L + 2.0} until={K.B - 0.3} x={880} y={690} texto={TX.co2} tam={34} color="#e8f7ff" />
+      <Rotulo T={T} at={K.L + 2.4} until={K.B - 0.3} x={250} y={1060} texto={TX.etanol} tam={28} color={KC.texto} />
+      <Rotulo T={T} at={K.L + 2.0} until={K.B - 0.3} x={880} y={800} texto={TX.co2} tam={34} color="#e8f7ff" />
       <Rotulo T={T} at={K.L + 3.6} until={K.B - 0.3} x={60} y={1150} texto={TX.otras} tam={24} color={KC.texto} it />
       <Rotulo T={T} at={K.L + 4.2} until={K.B - 0.3} x={60} y={1190} texto={TX.lacticas} tam={24} color={KC.mint} />
 
@@ -507,8 +512,8 @@ function TesguinoShot() {
 
       <Etq T={T} at={K.Pa + 0.4} until={K.Te - 0.3} x={60} y={470} texto={TX.pastoComun} tam={38} color={KC.ink} />
       <Etq T={T} at={K.Pa + 0.8} until={K.Te - 0.3} x={60} y={530} texto={TX.pasto} it tam={32} color={KC.ink} />
-      <Rotulo T={T} at={K.Pa + 1.7} until={K.Te - 0.3} x={760} y={1150} texto={TX.yodo} tam={24} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
-      <Chip T={T} at={K.Pa + 2.6} until={K.Te - 0.3} texto={TX.sinEnzimas} x={420} y={620} tam={34} borde={KC.red} />
+      <Rotulo T={T} at={K.Pa + 1.7} until={K.Te - 0.3} x={760} y={800} texto={TX.yodo} tam={24} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
+      <Chip T={T} at={K.Pa + 2.6} until={K.Te - 0.3} texto={TX.sinEnzimas} x={560} y={620} tam={34} borde={KC.red} />
       <Rotulo T={T} at={K.Pa + 3.3} until={K.Te - 0.3} x={60} y={700} texto={TX.hipotesis} tam={24} color={KC.ink} fondo="rgba(255,255,255,.8)" />
 
       <Chip T={T} at={K.Te + 0.4} until={K.R - 0.3} texto={TX.sagrada} x={330} y={470} tam={36} borde={KC.gold} />
@@ -516,8 +521,8 @@ function TesguinoShot() {
 
       <Chip T={T} at={K.R + 2.4} until={K.C - 0.3} texto={TX.noSoyYo} x={800} y={470} tam={34} borde={KC.pink} />
 
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.fabrica} x={330} y={470} tam={40} borde={KC.gold} />
-      <Rotulo T={T} at={K.C + 2.6} until={K.Ou} x={640} y={420} texto={TX.generaciones} tam={26} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.fabrica} x={290} y={390} tam={40} borde={KC.gold} />
+      <Rotulo T={T} at={K.C + 2.4} until={K.Ou} x={330} y={480} centro texto={TX.tandas} tam={30} color={KC.ink} fondo="rgba(255,255,255,.85)" />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Ge} texto="20 cm" largo={190} />
@@ -542,7 +547,7 @@ function TesguinoShot() {
         [K.L + 0.6, K.L + 5.1, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.P + 0.05, K.O + 0.2, 'avatar_07_pensativo_puno', 'grande'],
         [K.E + 0.7, K.E + 6.2, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [K.Pa + 0.8, K.Pa + 4.3, 'avatar_12_perfil_serio', 'arriba-der'],
+        [K.Pa + 0.8, K.Pa + 4.3, 'avatar_12_perfil_serio', 'bajo-der'],
         [K.Te + 0.6, K.Te + 3.8, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [K.R + 0.1, K.C - 0.1, 'avatar_11_sorprendido', 'grande-izq'],
         [K.C + 0.6, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
