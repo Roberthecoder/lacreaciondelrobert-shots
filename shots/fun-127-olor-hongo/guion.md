@@ -1,11 +1,11 @@
-# Shot Fungi Mati #127 · Ese olor a hongo no es tierra: es una molécula
+# Shot Fungi Mati #127 · Ese olor a hongo no es tierra: lo firma una molécula
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #127 · rama `claude/fun-125-129-colores`.
-- **Formato:** N1 Por dentro (viaje champiñón entero → corte → células y moléculas en fondo oscuro → el mismo champiñón, ya rebanado y "oliendo").
+- **Formato:** N1 Por dentro (viaje champiñón entero → machacado → células y moléculas en fondo oscuro → el mismo champiñón, ya machacado y "oliendo").
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo que se ve en pantalla: «Ese olor a hongo no es olor a tierra: lo firma, sobre todo, una molécula de ocho carbonos.»
 - **Duración (estimada):** voz 954 caracteres / 183 palabras (≈ 58.3 s con `estimar-escenas.mjs`) + cierre 3.5 s → **≈ 61.8 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
-- **Estado:** verificado (1ª pasada, 5 ⚠️ corregidas; re-verificación de las líneas corregidas pendiente).
+- **Estado:** verificado (`VEREDICTO: APROBADO`; 5 ⚠️ corregidas y re-verificadas).
 - **No repetir:** el olor a tierra mojada (geosmina) ya está en `qui-58-lluvia-olor`; aquí solo se contrasta en una frase. El matsutake como comercio está en `fun-81`.
 
 ## Versión narrada
@@ -25,10 +25,10 @@
 | 10 | Formas | La R huele más a hongo; la S, a moho y a pasto. Los hongos hacen sobre todo la R. | La R con ícono de champiñón; la S con íconos de moho y pasto. Chip "los hongos hacen sobre todo la R". |
 | 11 | Estudio | En 1984, buscando qué atrae a la mosca tsetsé en África, la encontraron en el olor de las vacas. | Fondo naranja. `TarjetaEstudio` "1984 · olor de ganado · moscas tsetsé (*Glossina*)". Una vaca esquemática, nube de olor y moscas tsetsé que se acercan. |
 | 12 | Moscos | También sale en tu sudor y, con el dióxido de carbono de tu aliento, atrae a algunos moscos: hay trampas con ella. | Fondo lila. Brazo con gotas de sudor + nube de CO₂ del aliento; unos moscos se acercan (otros no). Una trampa de moscos con frasquito "octenol + CO₂". Chip "a algunas especies". |
-| 13 | Cierre | Así que ese olor a hongo es, sobre todo, una molécula que el champiñón arma cuando rompes sus células. | **Regreso a la imagen del inicio:** el mismo champiñón, ya rebanado, con la nubecita convertida en la molécula dibujada. Chip "1-octen-3-ol". |
+| 13 | Cierre | Así que ese olor a hongo es, sobre todo, una molécula que el champiñón arma cuando rompes sus células. | **Regreso a la imagen del inicio:** el mismo champiñón, ya machacado, con la nubecita convertida en la molécula dibujada. Chip "1-octen-3-ol". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música (planeada):** cama grave y continua, cálida y curiosa (cocina → laboratorio), sin golpe marcado, debajo de la voz; se abre un poco en «la R huele más a hongo». Efectos en el mismo cuadro: cuchillo que corta, golpes del mortero, chasquido de cada enzima, "pop" del oxígeno, tijeretazo de la liasa, brillo del pedazo de 8 carbonos, zumbido de moscas tsetsé y moscos, clic de la trampa.
+**Música (planeada):** cama grave y continua, cálida y curiosa (cocina → laboratorio), sin golpe marcado, debajo de la voz; se abre un poco en «la R huele más a hongo». Efectos en el mismo cuadro: golpes del mortero, chasquido de cada enzima, "pop" del oxígeno, tijeretazo de la liasa, brillo del pedazo de 8 carbonos, zumbido de moscas tsetsé y moscos, clic de la trampa.
 
 Barra de escala: 2 cm (champiñón), 10 µm (hifas), 1 nm (moléculas, esquemáticas). En las tarjetas (estudio, cuadrícula) no hay objeto que medir.
 

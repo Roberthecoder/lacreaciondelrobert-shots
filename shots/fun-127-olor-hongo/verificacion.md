@@ -1,7 +1,6 @@
 # Verificación de hechos · Shot Fungi Mati #127 · fun-127-olor-hongo
 
 Verificador independiente (subagente que no escribió el guion), 5 nov 2026. Primera pasada: 0 ❌, 5 ⚠️ → corregidas abajo.
-Pendiente: re-verificación independiente de las líneas corregidas.
 
 | Afirmación | Veredicto | Fuente | Frase textual | Año |
 |---|---|---|---|---|
@@ -37,3 +36,7 @@ Pendiente: re-verificación independiente de las líneas corregidas.
 5. **Cierre** ⚠️ (igual que el gancho) → «Así que ese olor a hongo es, sobre todo, una molécula que el champiñón arma cuando rompes sus células.»
 - Menores: escena Grasa → «Un ácido graso de sus células, el linoleico, toca unas enzimas.»; no se dice ningún país (Zimbabue) en voz ni tarjeta; se citan Combet et al. 2009, Su et al. 2022 y Winder 2026.
 - Ajuste de duración (sin datos nuevos): «Se llama uno-octen-tres-ol, y le dicen alcohol de hongo.» · «¿Y por qué esa molécula huele tanto a hongo?» · «Tiene dos formas, como tu mano izquierda y tu mano derecha.» · «La R huele más a hongo; la S, a moho y a pasto. Los hongos hacen sobre todo la R.» (la última frase ya está en la tabla: ✅ Su 2022).
+
+Re-verificación de las líneas corregidas: OK (verificador independiente)
+
+VEREDICTO: APROBADO

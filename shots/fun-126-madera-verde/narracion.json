@@ -3,20 +3,62 @@
   "salida": "Shot Madera Verde narrado.dc.html",
   "nota": "Shot Fungi Mati #126. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Nombres científicos en cursiva en pantalla.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esa madera verde no está pintada: la tiñó un hongo, desde adentro." },
-    { "escena": "Hongo", "texto": "Se llama Chlorociboria: copitas verde azulado de unos milímetros, sobre troncos muertos." },
-    { "escena": "Hifas", "texto": "Sus hilos, las hifas, avanzan por las células de la madera." },
-    { "escena": "Pigmento", "texto": "Y dejan un pigmento azul verdoso: la xilindeína." },
-    { "escena": "Comun", "texto": "Lo más común es ver la madera teñida, no las copitas." },
-    { "escena": "Pregunta", "texto": "¿Y cuánto dura ese verde?" },
-    { "escena": "Estudio", "texto": "En 1992, en la Universidad de Minnesota, vieron al microscopio dos taraceas del Renacimiento italiano." },
-    { "escena": "Met", "texto": "Una está en el Museo Metropolitano de Nueva York: el verde era álamo con hifas, sin tintes minerales." },
-    { "escena": "Patron", "texto": "El mismo patrón de Chlorociboria: un hongo coloreando obras de quinientos años." },
-    { "escena": "Tunbridge", "texto": "En Inglaterra, en Tunbridge Wells, hacían mosaicos con roble caído teñido por este hongo." },
-    { "escena": "Raro", "texto": "Lo más raro: en Oregon probaron ese pigmento como semiconductor." },
-    { "escena": "Luz", "texto": "En solución aguantó unas veinticinco semanas de luz y aire sin degradarse." },
-    { "escena": "Silicio", "texto": "No le gana al silicio, pero es de un hongo." },
-    { "escena": "Cierre", "texto": "Así que esa madera verde no está pintada: es un hongo que lleva siglos dándole color." }
+    {
+      "escena": "Gancho",
+      "texto": "Esa madera verde no está pintada: la tiñó un hongo, desde adentro."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Se llama Chlorociboria: copitas verde azulado de milímetros, sobre troncos muertos."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Sus hilos, las hifas, avanzan por las células de la madera."
+    },
+    {
+      "escena": "Pigmento",
+      "texto": "Y dejan un pigmento azul verdoso: la xilindeína."
+    },
+    {
+      "escena": "Comun",
+      "texto": "Lo más común es ver la madera teñida, no las copitas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto dura ese verde?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1992, el equipo de Robert Blanchette, de la Universidad de Minnesota, vio al microscopio dos taraceas del Renacimiento italiano."
+    },
+    {
+      "escena": "Met",
+      "texto": "Una está en el Museo Metropolitano de Nueva York: el verde era álamo con hifas, sin tintes minerales."
+    },
+    {
+      "escena": "Patron",
+      "texto": "El mismo patrón de Chlorociboria: un hongo coloreando obras de quinientos años."
+    },
+    {
+      "escena": "Tunbridge",
+      "texto": "En Inglaterra, en Tunbridge Wells, hacían mosaicos con roble caído teñido por este hongo."
+    },
+    {
+      "escena": "Raro",
+      "texto": "Lo más raro: en Oregon probaron ese pigmento como semiconductor."
+    },
+    {
+      "escena": "Luz",
+      "texto": "En solución aguantó unas veinticinco semanas de luz y aire sin degradarse."
+    },
+    {
+      "escena": "Silicio",
+      "texto": "No le gana al silicio, pero es de un hongo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa madera verde no está pintada: es un hongo que lleva siglos dándole color."
+    }
   ],
   "mezcla": "oficial-30oct"
 }
