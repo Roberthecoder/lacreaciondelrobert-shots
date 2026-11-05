@@ -372,7 +372,7 @@ function MohoShot() {
           <line x1={-150} y1={190} x2={150} y2={190} stroke="#fff" strokeWidth={6} /><line x1={-150} y1={175} x2={-150} y2={205} stroke="#fff" strokeWidth={6} /><line x1={150} y1={175} x2={150} y2={205} stroke="#fff" strokeWidth={6} />
         </g>, 26)}
       </Escena>
-      {/* 12 · no la huelas: envuélvela y tírala */}
+      {/* 12 · no la huelas; si está aguada o cubierta, a la basura */}
       <Escena T={T} a={K.Se} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>

@@ -2,56 +2,56 @@
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #103 · rama `claude/fun-100-104-microscopico`.
 - **Formato:** N1 "Por dentro" con pasos de laboratorio (N5 "El experimento": se recrea el aislamiento como si lo vieras en la campana). Viaje seta en la mano (macro) → caja de agar → hifas y núcleos al microscopio (fondo oscuro) → la misma seta del inicio, ahora con su "acta de nacimiento" (código de cepa).
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre la seta que se ve en pantalla: «Esta seta no nació de una semilla: su cepa empezó con un pedacito de otra.»
-- **Duración:** voz 936 caracteres / 180 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** en la base (`estimar-escenas.mjs`).
-- **Voz:** pendiente de aprobación de Robert (~940 créditos de ElevenLabs).
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre la seta que se ve en pantalla: «Esta seta no nació de una semilla: nació de una cepa, y una cepa se crea a mano.»
+- **Duración:** voz 942 caracteres / 180 palabras (≈ 58.3 s) + cierre 3.5 s → **61.8 s** en la base (`estimar-escenas.mjs`).
+- **Voz:** pendiente de aprobación de Robert (~942 créditos de ElevenLabs).
+- **Archivos:** `cepa.jsx` (todos los textos en pantalla en el bloque `TX`), `Shot Cepa base narrada.dc.html`, `gen-audio.mjs` → `assets/mezcla.wav`, `publicacion.md`.
+- **Correcciones de la verificación (5 nov 2026):** gancho nuevo; flama solo para flamear las pinzas (se trabaja en campana de flujo o caja sin corrientes de aire); chip «pedacito de 2–5 mm» (Liu 2016); estudio dicho como «un estudio mexicano de 2014» y sin esporas (separaron los núcleos del micelio); «una creció más rápido que sus dos padres»; **la seta rosa no va al refri** (cepa tropical): se guarda en agua estéril, congelada o resembrándola.
 - **No repite:** `qui-01-agar` (química del agar), `qui-02-estriado` (estriado de bacterias), `bio-09-cepario` (las tres formas de congelar; aquí guardar es solo un paso de 4 s). Sin *Trichoderma* y sin "la semilla de hongo es grano".
 - **Seta protagonista:** seta rosa, *Pleurotus djamor* (la misma especie del estudio de Oaxaca y la que Robert sacó desde una impresión de esporas).
 
 ## Versión narrada
 
-Tiempos estimados de la base (con la voz real se recorren solos).
+Tiempos de la base (con la voz real se recorren solos).
 
 | # | Escena (s) | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho (0.0–4.6) | Esta seta no nació de una semilla: su cepa empezó con un pedacito de otra. | Fondo rosa de lunares. **Cuadro 0.2:** una mano sostiene un racimo de seta rosa (*Pleurotus djamor*: sombreros en abanico/concha, rosa salmón, láminas que bajan por un pie corto y lateral) y el racimo gira. Una "semilla" de caricatura con signo ✗ se tacha; aparece un pedacito rosa diminuto con flecha → racimo. Etiqueta "seta rosa · *Pleurotus djamor*". Barra de escala 5 cm. |
-| 1 | Corte (4.6–8.8) | Se abre y, con pinzas estériles, se toma tejido de adentro, limpio. | La seta se abre con las manos (se ve el interior blanco-rosado, sin tocar). Pinzas de punta fina (brillan: "flameadas") pellizcan un cuadrito del **interior**. Lupa sobre el corte: "tejido de adentro = limpio" y fuera, sobre la superficie, puntitos de polvo/bacterias "afuera: contaminantes". Chip "≤ 3 × 3 mm". Barra 1 cm. |
-| 2 | Agar (8.8–12.8) | Junto a una flama o en campana de flujo, va a una caja con agar. | Fondo menta. Mesa de laboratorio: a la izquierda un mechero de alcohol encendido, a la derecha una campana de flujo laminar (flechas de aire que bajan, "aire filtrado"). Se levanta apenas la tapa de una caja Petri con agar ámbar (PDA) y el cuadrito cae al centro. Chip "agar de papa y dextrosa". Barra 1 cm. |
-| 3 | Hifas (12.8–17.6) | Salen hilos, las hifas, que crecen por la punta: la colonia avanza en círculo. | Time-lapse "días 1 → 7" (cronómetro): del cuadrito sale micelio blanco algodonoso que avanza **en círculo** hacia la orilla. Lupa (fondo oscuro, "AL MICROSCOPIO") en la orilla: hifas tubulares con tabiques, **solo las puntas se alargan** (la punta brilla) y salen ramas detrás. Chip "crecen solo por la punta". Etiqueta "esquema · no a escala" en la lupa; barra 1 cm en la caja. |
-| 4 | Pasar (17.6–22.7) | Si sale limpia, un cuadrito del micelio nuevo pasa a otra caja: un clon de la seta. | Dos cajas: una con un punto verde-azul de moho intruso → se tacha y va al bote "se tira"; la otra, limpia: un bisturí corta un cuadrito del micelio nuevo (no del centro, donde estaba el tejido original) y lo pasa a una caja nueva. Chip "clon = misma genética". Chip chico "las cajas se sellan con película". Barra 1 cm. |
-| 5 | Pregunta (22.7–24.7) | ¿Y si quieres una seta nueva? | **Re-gancho.** Fondo amarillo: dos racimos iguales (clones) y un "?" gigante entre ellos. Robert grande, pensativo. |
-| 6 | Esporas (24.7–28.7) | La pones boca abajo sobre un papel y suelta un polvo de esporas. | Fondo cian. Sombrero sin pie, **láminas hacia abajo** sobre papel negro, tapado con un tazón. Time-lapse "unas horas": al levantarlo queda el dibujo radial de las láminas en polvo claro (crema a rosado pálido). Lupa: esporas **oblongo-cilíndricas, lisas y transparentes**, unas dos veces más largas que anchas (no redondas). Chip "impresión de esporas". |
-| 7 | Monocarion (28.7–32.9) | En estas setas, cada espora da un micelio de un solo tipo de núcleo. | Fondo oscuro (microscopio). Una espora germina en una hifa delgada; adentro, núcleos todos del **mismo color** (azul). Etiqueta "monocarión · un tipo de núcleo" y "sin grapas". Otra espora, al lado, germina con núcleos de otro color (dorado). "esquema · no a escala". |
-| 8 | Dicarion (32.9–37.5) | Dos compatibles se fusionan en un dicarión: el micelio doble que da setas. | Las dos hifas se tocan y se fusionan; a partir de ahí cada compartimento lleva **un núcleo azul y uno dorado**, y en cada tabique aparece una **fíbula** (grapa: un ganchito lateral que pasa un núcleo al compartimento de al lado). Etiquetas "dicarión · 2 núcleos", "fíbula (conexión en grapa)". Chip "reparte los dos núcleos". Al final, zoom out: de ese micelio brota un primordio de seta. |
-| 9 | Estudio (37.5–44.0) | En 2014, en México, cruzaron micelios de dos setas silvestres de Oaxaca: salieron cincuenta y seis híbridas. | Fondo naranja. Mapa esquemático de México con Oaxaca marcado (Mixteca, Huajuapan de León). TarjetaEstudio "2014 · Brazilian Journal of Microbiology · U. Tecnológica de la Mixteca, IPN y UNAM". Dos cepas: blanca (*P. djamor* var. *djamor*) y rosa (*P. djamor* var. *roseus*), colectadas en troncos podridos de cazahuate en 2010. Una cuadrícula de 56 cajitas Petri se llena una por una; número grande "56 cepas híbridas". Chip chico "algunas crecían más rápido que sus padres". |
-| 10 | Guardar (44.0–48.4) | Cada cepa lleva código y se guarda en frío, en agua estéril o congelada. | Fondo lila. La caja limpia recibe una etiqueta con código ("PDJ-R-01", inventado, esquemático). Tres íconos que se encienden: refri "4 °C · se resiembra cada 6–12 meses", tubito con agua "agua estéril", vial con escarcha "congelada". Chip "liofilizar: no sirve para la mayoría de estos hongos". |
-| 11 | Robert (48.4–53.8) | Yo saqué seta rosa de una impresión de esporas; mis primeras cajas Petri fueron tuppers. | Fondo rosa. Robert grande (presentador) junto a una impresión de esporas y un tupper con agar y micelio (tapa de plástico, esquinas redondas). Chip "laboratorio casero". |
-| 12 | Cierre (53.8–58.0) | Así que esa seta no nació de una semilla: es una copia o una cruza. | **Regreso a la imagen del inicio:** la misma mano con el mismo racimo de seta rosa, ahora con una etiquetita colgando "cepa · código", y a sus lados dos flechas: "copia (tejido)" y "cruza (esporas)". Chip "no nació de una semilla". |
-| — | Outro (58.0–61.5) | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
+| 0 | Gancho (0.0–4.9) | Esta seta no nació de una semilla: nació de una cepa, y una cepa se crea a mano. | Fondo rosa de lunares. **Cuadro 0:** una mano sostiene un racimo de seta rosa (*Pleurotus djamor*: sombreros en abanico, rosa, con láminas que bajan por un pie corto y lateral) que se mece. Una semilla de caricatura (chip «semilla») recibe un tache rojo (0.6 s); aparece una cajita Petri con micelio rosado (chip «una cepa · hecha a mano») con flecha punteada al racimo. Etiquetas «seta rosa» y *Pleurotus djamor*. Barra 5 cm. |
+| 1 | Corte (4.9–9.1) | Se abre y, con pinzas estériles, se toma tejido de adentro, limpio. | Fondo amarillo. La seta se abre en dos mitades y se ve la carne clara del interior. Puntitos de polvo y microbios en la superficie de afuera (chip «afuera: polvo y microbios»); chip «adentro: limpio». Unas pinzas de punta fina entran y sacan un cuadrito de tejido. Chip «pedacito de 2–5 mm». Barra 1 cm. |
+| 2 | Agar (9.1–14.1) | En una campana de flujo o una caja sin corrientes de aire, va a una caja con agar. | Fondo menta. Arriba, el filtro de la campana de flujo laminar con aire que baja (chip «campana de flujo · aire filtrado», etiqueta «o una caja sin corrientes de aire»). A la izquierda un mechero: **solo se flamean las pinzas** (etiqueta «se flamean las pinzas»). Se levanta apenas la tapa de una caja Petri con agar y el cuadrito cae al centro. Barra 1 cm. |
+| 3 | Hifas (14.1–18.3) | Salen hifas, que crecen por la punta: la colonia avanza en círculo. | Fondo cian. Time-lapse «DÍA 1 → 7»: del cuadrito sale micelio blanco algodonoso que avanza **en círculo**. Lupa («HIFAS · AL MICROSCOPIO», fondo oscuro) en la orilla: hifas con tabiques; solo las puntas (que brillan) se alargan y salen ramas detrás. |
+| 4 | Pasar (18.3–22.3) | Si sale limpia, un cuadrito de micelio pasa a otra caja: un clon. | Fondo naranja. Una caja con moho verde intruso recibe tache y va al bote (chip «contaminada: se tira»). De la caja limpia, un bisturí corta un cuadrito de micelio nuevo (no del centro) y lo pasa a una caja nueva, donde empieza otra colonia. Chip «clon = misma genética». |
+| 5 | Pregunta (22.3–24.3) | ¿Y si quieres una seta nueva? | **Re-gancho.** Fondo amarillo: dos racimos iguales (clones) y un «?» gigante rosa. Robert grande, pensativo. |
+| 6 | Esporas (24.3–28.3) | La pones boca abajo sobre un papel y suelta un polvo de esporas. | Fondo cian. Papel negro; un tazón tapa el sombrero (chip «unas horas»); se levantan el tazón y el sombrero y queda la **impresión en abanico** de rayitas claras (crema a rosado pálido). Chip «impresión de esporas». Lupa «ESPORAS»: esporas oblongo-cilíndricas, lisas, unas dos veces más largas que anchas (no redondas). Barra 1 cm. |
+| 7 | Monocarion (28.3–32.5) | En estas setas, cada espora da un micelio de un solo tipo de núcleo. | Fondo oscuro. Dos esporas germinan en hifas: una con núcleos todos azules y otra con núcleos todos dorados. Etiqueta «monocarión · un tipo de núcleo», chip «sin grapas». «esquema · no a escala». |
+| 8 | Dicarion (32.5–37.1) | Dos compatibles se fusionan en un dicarión: el micelio doble que da setas. | Las puntas de las dos hifas se curvan y se fusionan (destello). Crece una hifa ancha con **un núcleo azul y uno dorado en cada compartimento** y una **fíbula** (ganchito lateral) en cada tabique. Etiquetas «dicarión · 2 núcleos», «fíbula (conexión en grapa)»; chip «reparte los dos núcleos». Al final brota una seta rosa chiquita («→ da setas»). |
+| 9 | Estudio (37.1–43.9) | Un estudio mexicano de 2014 cruzó micelios de dos setas silvestres de Oaxaca: salieron cincuenta y seis híbridas. | Fondo naranja. TarjetaEstudio «2014 · U. Tecnológica de la Mixteca · IPN · UNAM · Brazilian Journal of Microbiology». Mapa esquemático de México con un punto en Huajuapan de León, Oaxaca. Dos cajitas: blanca (*var. djamor*) × rosa (*var. roseus*), «silvestres · 2010». Chip «separaron los dos núcleos del micelio, sin esporas» (**no se dibujan esporas**). Se llena una cuadrícula de 56 cajitas, cada una con un cuadrito de micelio blanco y uno rosa; número «56 · cepas híbridas»; chip «una creció más rápido que sus dos padres». |
+| 10 | Guardar (43.9–48.7) | Cada cepa lleva código y se guarda en agua estéril, congelada o resembrándola. | Fondo lila. La caja con la colonia rosa recibe la etiqueta «PDJ-R-01» (código inventado, esquemático). Chip «liofilizar: no sirve para la mayoría de estos hongos». Íconos que se encienden: tubo con agua y un cuadrito de micelio («agua estéril»), vial con escarcha («congelada»), caja nueva («resembrar»). Chip **«la rosa es tropical: no va al refri»**. Barra 1 cm. |
+| 11 | Robert (48.7–54.1) | Yo saqué seta rosa de una impresión de esporas; mis primeras cajas Petri fueron tuppers. | Fondo rosa. Chip «mi laboratorio casero». Una impresión de esporas en papel negro y un tupper con agar donde crece micelio. Robert grande, sonriendo. |
+| 12 | Cierre (54.1–58.3) | Así que esa seta no nació de una semilla: es una copia o una cruza. | **Regreso a la imagen del inicio:** la misma mano con el mismo racimo de seta rosa, ahora con una etiqueta colgante «PDJ-R-01». Chips «copia ← tejido», «cruza ← esporas» y «no nació de una semilla». |
+| — | Outro (58.3–61.8) | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave y continua, cálida y de "taller" (madera, cuerdas graves con dedos), sin golpe marcado; se abre un poco (armonía mayor) cuando las dos hifas se fusionan en el dicarión. Efectos en el mismo cuadro: tela/papel de la seta que se abre, fwoosh suave del mechero, zumbido bajito del flujo laminar, "tic" de la tapa de la caja, crujido suave del micelio que avanza (granulado), tachón grave al tirar la caja contaminada, polvillo que cae al levantar el tazón, "plop" de cada núcleo, clic de la fusión, 56 notas rápidas (una por caja híbrida), clic de la puerta del refri, tapa de tupper.
+**Música (`gen-audio.mjs`):** cama de «taller» a 100 BPM, grave y continua, sin golpe marcado: progresión la menor → fa → do → sol (un acorde por compás) con un bajo pulsado suave que cambia la nota de paso cada 4 compases; desde la fusión (dicarión) pasa a mayor (do → sol → la menor → fa) y se abre el filtro. Efectos en el mismo cuadro: tache de la semilla, la seta que se abre, polvo, pinzas al flamearse, zumbido del flujo laminar, tapa de la caja, cubito que cae, una campanita por cada día del time-lapse, granulado del micelio, tache y caída al bote, bisturí, «clon», tazón que se levanta y polvillo de esporas, una nota por núcleo, fusión (dos campanas), un tic por fíbula, 56 notas rápidas (una por híbrida), tubo, vial, resiembra, tupper y la etiqueta del cierre.
 
-Barras de escala: 5 cm (racimo), 1 cm (corte, cajas Petri, tupper). En las escenas al microscopio (hifas, esporas, núcleos, fíbulas) va "esquema · no a escala" porque no usé un ancho de hifa verificado para *Pleurotus*. En el mapa, "mapa esquemático".
-
-Dato breve opcional en pantalla (escena 4, chip chico): "se incuban boca abajo para que el agua de la tapa no gotee" (Royal Society of Biology). No va en la voz.
+Barras de escala: 5 cm (racimo), 1 cm (corte, cajas Petri, impresión, tupper). En las escenas al microscopio va «esquema · no a escala» (no usé un ancho de hifa verificado para *Pleurotus*). En el estudio, «mapa esquemático».
 
 ## Robert en pantalla
 
-Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si quieres una seta nueva?» y en el dato propio.
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si quieres una seta nueva?» y en su dato propio.
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «Esta seta no nació de una semilla» (cuadro 0) |
-| 2 | 5.0 | 8.0 | 13_senalando_arriba | `arriba-der` | «se toma tejido de adentro» (señala la pinza) |
-| 3 | 13.5 | 17.0 | 06_pensativo_menton | `arriba-der` | «crecen por la punta: la colonia avanza en círculo» |
-| 4 | 22.7 | 24.7 | 07_pensativo_puno | `grande` | «¿Y si quieres una seta nueva?» |
-| 5 | 29.5 | 32.5 | 04_bajando_lentes | `arriba-der` | «un solo tipo de núcleo» |
-| 6 | 38.5 | 43.5 | 11_sorprendido | `arriba-der` | «salieron cincuenta y seis híbridas» |
-| 7 | 48.4 | 53.6 | 05_sonriendo_dientes_uniformes | `presentador` | «mis primeras cajas Petri fueron tuppers» |
-| 8 | 54.5 | 57.8 | 02_apuntando_camara | `arriba-der` | «es una copia o una cruza» |
-| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 2 | 5.3 | 8.3 | 13_senalando_arriba | `arriba-der` | «se toma tejido de adentro» (señala la pinza) |
+| 3 | 14.8 | 17.7 | 06_pensativo_menton | `arriba-der` | «crecen por la punta: la colonia avanza en círculo» |
+| 4 | 22.35 | 24.25 | 07_pensativo_puno | `grande` | «¿Y si quieres una seta nueva?» |
+| 5 | 29.1 | 32.1 | 04_bajando_lentes | `arriba-der` | «un solo tipo de núcleo» |
+| 6 | 38.1 | 43.1 | 11_sorprendido | `bajo-der` | «salieron cincuenta y seis híbridas» (abajo, para no tapar la cuadrícula) |
+| 7 | 48.75 | 53.9 | 05_sonriendo_dientes_uniformes | `grande` | «mis primeras cajas Petri fueron tuppers» |
+| 8 | 54.8 | 58.1 | 02_apuntando_camara | `arriba-der` | «es una copia o una cruza» |
+| — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 8 · **28.2 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · nunca tapa la caja, las etiquetas ni el subtítulo (en las escenas 3, 7 y 8 se pone arriba a la derecha, lejos de la lupa).
+Apariciones 8 · **27.3 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · revisado en la hoja de cuadros: no tapa cajas, etiquetas ni subtítulos.
 
 ## Fuentes (cada una abierta en el texto completo el 5 nov 2026)
 
@@ -62,6 +62,7 @@ Apariciones 8 · **28.2 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas ·
    > Materiales: "Sterilization flame of alcohol lamp or propane burner." · "Agar medium such as potato dextrose agar (PDA) medium or malt extract agar (MEA) medium."
    > "when it becomes evident growing out of the transferred mushroom pieces without any contamination, then the new isolate is sub-cultured onto new growth medium under aseptic conditions."
    > "Maintain clean cultures by discarding contaminated plates." · "agar plates used for fungal growth should be sealed by parafilm or tape"
+   > "The stored strain can be maintained stably on media or as spawn stocks at 4°C for non-tropical Pleurotus strains." · "however, cultures of tropical strains of Pleurotus should not be refrigerated." (la seta rosa, *P. djamor*, es tropical: no va al refri)
    > "New cultures are assigned unique numbers or codes and maintained as mother cultures (pure cultures). Store the obtained mother cultures at 4°C (39°F) and sub-culture every 6–12 months."
 2. Royse, D. J. y Wilkinson, V. *Care and handling of cultures of the cultivated mushroom (Agaricus bisporus)*. Penn State, Department of Plant Pathology (sin año en el PDF). https://plantpath.psu.edu/about/facilities/mushroom/cultures-spawn/care-handling.pdf
    > "Isolates of the cultivated mushroom used to make spawn are obtained by one of five basic means: hybridization, monospore, multispore, mycelial transfer, or tissue culture."

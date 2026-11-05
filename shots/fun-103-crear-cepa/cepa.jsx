@@ -377,7 +377,7 @@ function CepaShot() {
       <Chip T={T} at={K.Gu + 0.9} until={K.Gu + 3.1} texto={TX.liofilizar} x={560} y={440} tam={24} borde={KC.red} />
       <Chip T={T} at={K.R + 0.3} until={K.C - 0.3} texto={TX.casero} x={270} y={450} tam={32} borde={KC.gold} />
       <Etq T={T} at={K.R + 0.8} until={K.C - 0.3} x={70} y={860} texto={TX.impresion} tam={24} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.4} until={K.C - 0.3} x={70} y={1180} texto={TX.tupperEtq} tam={24} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.4} until={K.C - 0.3} x={70} y={950} texto={TX.tupperEtq} tam={24} color={KC.ink} />
       <Chip T={T} at={K.C + 1.0} until={K.Ou} texto={TX.copia} x={250} y={480} tam={30} borde={KC.mint} />
       <Chip T={T} at={K.C + 1.5} until={K.Ou} texto={TX.cruza} x={250} y={790} tam={30} borde={KC.gold} />
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto={TX.noSemilla} x={540} y={1200} tam={32} borde={KC.red} />

@@ -5,7 +5,7 @@
 const TX = {
   sub: [
     'No está hecho de hilos: *son tubos.*',
-    'Hifa: *≈ 10 µm.* Pelo: *≈ 70.*',
+    'Hifa: *≈10 µm.* Pelo: *≈70 µm.*',
     'Solo crece *por la punta.*',
     'Unas *38,000 vesículas* por minuto.',
     'El río *arrastra a los núcleos.*',

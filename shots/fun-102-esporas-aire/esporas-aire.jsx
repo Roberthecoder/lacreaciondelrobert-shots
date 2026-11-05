@@ -291,8 +291,8 @@ function EsporasAireShot() {
               <path d={`M ${172 + i * 184} ${770 + i * 20} q 14 20 0 30 q -14 -10 0 -30 Z`} fill="#8fd8ff" opacity={kprog(T, K.E + 1.2 + i * 0.2, K.E + 1.4 + i * 0.2)} /></g>)}
             {Array.from({ length: 24 }, (_, i) => <rect key={i} x={84 + i * 39} y={736} width={18} height={10} fill="#fff" opacity=".8" />)}
           </g>}
-          <GotaLluvia x={480} y0={300} y1={1040} u={caeU} splash={splash} />
-          <Vortice T={T} x={480} y={1040} p={vort} R={150} />
+          <GotaLluvia x={430} y0={300} y1={1040} u={caeU} splash={splash} />
+          <Vortice T={T} x={430} y={1040} p={vort} R={150} />
         </>)}
       </Escena>
       {/* 10 · a otros continentes */}
@@ -346,9 +346,9 @@ function EsporasAireShot() {
       <Etq T={T} at={K.E + 1.2} until={K.A - 0.4} x={120} y={1000} texto="trigo con roya" tam={26} color={KC.ink} />
       <Etq T={T} at={K.E + 1.5} until={K.A - 0.4} x={520} y={1000} texto="Puccinia triticina" it tam={26} color={KC.ink} />
       <Chip T={T} at={K.E + 1.0} until={K.A - 0.4} texto="cámara rápida" x={540} y={935} tam={30} borde={KC.ink} mono />
-      <Etq T={T} at={K.A + 1.4} until={K.Co - 0.3} x={700} y={760} texto="anillo de aire" lado="der" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.A + 1.7} until={K.Co - 0.3} x={700} y={810} texto="(vórtice)" lado="der" tam={26} color={KC.macro} />
-      <Chip T={T} at={K.A + 2.4} until={K.Co - 0.3} texto="miles de esporas · una sola gota" x={540} y={990} tam={30} borde={EA.roya2} />
+      <Etq T={T} at={K.A + 1.4} until={K.Co - 0.3} x={60} y={780} texto="anillo de aire" lado="der" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.A + 1.7} until={K.Co - 0.3} x={60} y={830} texto="(vórtice)" lado="der" tam={26} color={KC.macro} />
+      <Chip T={T} at={K.A + 3.0} until={K.Co - 0.3} texto="miles de esporas · una sola gota" x={540} y={990} tam={30} borde={EA.roya2} />
       <Chip T={T} at={K.Co + 0.6} until={K.To - 0.3} texto="dispersión a larga distancia" x={540} y={470} tam={34} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.To + 0.3} until={K.I - 0.3} valor={50000000} dur={2.0} etiqueta="toneladas de esporas al año" x={460} y={740} tam={110} color={KC.yellow} />
       <Chip T={T} at={K.To + 2.2} until={K.I - 0.3} texto="estimación global · Elbert y col., 2007" x={380} y={470} tam={28} borde={KC.ink} />
