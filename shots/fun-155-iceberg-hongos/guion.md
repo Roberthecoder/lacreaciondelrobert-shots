@@ -34,22 +34,22 @@ masa, brillo de los hongos, crujido de la mordida, apretón de los lazos, tics d
 
 ## Robert en pantalla
 
-Tiempos de la base estimada (con la voz real se recorren solos).
+Tiempos de la base (61.8 s) (con la voz real se recorren solos).
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es el hongo: es la punta del iceberg» (cuadro 0) |
-| 2 | 5.2 | 9.8 | 02_apuntando_camara | `arriba-der` | «lo que todos saben» |
-| 3 | 13.4 | 17.0 | 04_bajando_lentes | `arriba-der` | «el mismo material del caparazón de un escarabajo» |
-| 4 | 22.5 | 27.5 | 11_sorprendido | `arriba-der` | «casi diez kilómetros cuadrados» |
-| 5 | 28.0 | 30.8 | 07_pensativo_puno | `grande` | «¿Crees que ya es raro?» |
-| 6 | 31.2 | 35.8 | 10_serio_molesto | `arriba-der` | «y ya muerta, le brota de la nuca» |
-| 7 | 41.0 | 45.6 | 06_pensativo_menton | `arriba-der` | «más de veintitrés mil» |
-| 8 | 50.5 | 54.0 | 12_perfil_serio | `arriba-der` | «¿Se alimentan de ella? Es hipótesis.» |
-| 9 | 54.4 | 57.7 | 13_senalando_arriba | `arriba-der` | «empezó con ese champiñón» (señala la punta) |
-| — | 57.8 | 61.3 | 13_senalando_arriba | CierreMarca | cierre |
+| 2 | 5.2 | 9.5 | 02_apuntando_camara | `arriba-der` | «lo que todos saben» |
+| 3 | 13.4 | 16.9 | 04_bajando_lentes | `arriba-der` | «el mismo material del caparazón de un escarabajo» |
+| 4 | 22.5 | 27.8 | 11_sorprendido | `arriba-der` | «casi diez kilómetros cuadrados» |
+| 5 | 28.35 | 31.1 | 07_pensativo_puno | `grande` | «¿Crees que ya es raro?» |
+| 6 | 31.6 | 36.3 | 10_serio_molesto | `arriba-der` | «y ya muerta, le brota de la nuca» |
+| 7 | 41.3 | 46.8 | 06_pensativo_menton | `arriba-der` | «más de veintitrés mil» |
+| 8 | 50.5 | 54.9 | 12_perfil_serio | `arriba-der` | «¿Se alimentan de ella? Es hipótesis.» |
+| 9 | 55.4 | 58.5 | 13_senalando_arriba | `arriba-der` | «empezó con ese champiñón» (señala la punta) |
+| — | 58.6 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **≈ 35 s** en pantalla (+ cierre) · 8 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 9 · **≈ 36.5 s** en pantalla (+ cierre) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes
 
