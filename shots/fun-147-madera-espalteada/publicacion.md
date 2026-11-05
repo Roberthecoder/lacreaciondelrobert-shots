@@ -99,9 +99,9 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Fuentes:
 Robinson, S. C. (2012). Developing fungal pigments for "painting" vascular plants. Appl. Microbiol. Biotechnol. 93: 1389–1394. https://doi.org/10.1007/s00253-011-3858-2
-Robinson, S. C., Tudor, D. y Cooper, P. A. (2012). Utilizing pigment-producing fungi to add commercial value to American beech. Appl. Microbiol. Biotechnol. 93: 1041–1048. https://doi.org/10.1007/s00253-011-3576-9
+Robinson, S. C., Tudor, D. y Cooper, P. A. (2012). Utilizing pigment-producing fungi to add commercial value to American beech (Fagus grandifolia). Appl. Microbiol. Biotechnol. 93: 1041–1048. https://doi.org/10.1007/s00253-011-3576-9
 Blanchette, R. A., Wilmering, A. M. y Baumeister, M. (1992). The use of green-stained wood caused by the fungus Chlorociboria in intarsia masterpieces from the 15th century. Holzforschung 46(3): 225–232. https://doi.org/10.1515/hfsg.1992.46.3.225
 Morris, H. et al. (2021). The dark side of fungal competition and resource capture in wood: Zone line spalting from science to application. Materials & Design 201: 109480. https://doi.org/10.1016/j.matdes.2021.109480
-Saikawa, Y. et al. (2000). Xylindein, a blue-green pigment of Chlorociboria species. Phytochemistry 55: 237–240.
+Saikawa, Y. et al. (2000). Absolute configuration and tautomeric structure of xylindein, a blue-green pigment of Chlorociboria species. Phytochemistry 55: 237–240.
 El dibujo es esquemático.
 ```

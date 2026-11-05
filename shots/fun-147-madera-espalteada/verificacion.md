@@ -47,4 +47,30 @@ Fuentes abiertas:
 Notas: el dibujo es esquemático (territorios, colores de cada hongo y células). Las fuentes son de 2012 o anteriores salvo Morris 2021;
 en la voz no se dice ninguna cifra, así que no aplica la regla de "en 20XX…" para números.
 
+
+## Segunda verificación independiente (5 nov 2026): filas 26–27, publicacion.md y «varios hongos distintos»
+
+| # | Afirmación (publicacion.md / verificacion.md) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| A | Seri Robinson antes en la Universidad de Toronto | ✅ | [R1389], [R1041] | "Faculty of Forestry, University of Toronto"; "e-mail: seri.robinson@utoronto.ca" | 2012 |
+| B | Hoy en Oregon State University | ✅ | [OSU] | "Professor in the Oregon State University College of Forestry's Wood Science and Engineering program" | 2025 |
+| C | Estudian cómo inducir el color en condiciones controladas sin perder demasiada resistencia | ✅ | [R1389] | "research into the induction of spalting under controlled conditions in order to minimize strength loss and maximize pigment production" | 2012 |
+| D | Para dar valor a maderas poco aprovechadas | ✅ | [R1041] | "American beech (Fagus grandifolia) is an abundant, underutilized tree"; "help establish a market for this currently underutilized" | 2012 |
+| E | Blanchette, Universidad de Minnesota | ✅ | [BLA] | Publicación listada en experts.umn.edu (University of Minnesota) | 1992 |
+| F | Panel del *studiolo* de Gubbio | ✅ | [BLA] | Abstract: madera verde de un panel del studiolo de Gubbio (s. XV, Metropolitan Museum of Art) y una taracea de Fra Giovanni da Verona (hacia 1500) | 1992 |
+| G | Sin metales: no era tinte mineral | ✅ | [BLA] | Abstract: el microanálisis de rayos X no encontró concentraciones altas de iones metálicos, lo que descarta tintes inorgánicos | 1992 |
+| H | La madera verde era álamo (*Populus*); con hifas dentro de sus células | ✅ | [BLA] | Abstract: "identified as Populus sp."; hifas en "vessels, fibers and parenchyma cells"; la madera de al lado (Quercus, Juglans) sin hongos | 1992 |
+| I | «Taraceas italianas del siglo XV» (YouTube, LinkedIn) | ✅ | [BLA] | Título: "…in Intarsia Masterpieces from the 15th Century" (Fra Giovanni hacia 1500, dentro de lo razonable) | 1992 |
+| J | LinkedIn: álamo «teñido por *Chlorociboria*» | ✅ | [BLA] | Título: "Green-Stained Wood Caused by the Fungus Chlorociboria"; misma colonización que madera teñida reciente | 1992 |
+| K | YouTube/LinkedIn: el espalteado se divide en tres: líneas de zona, blanqueo y pigmentación | ✅ | [R1389] | "The definition is further broken down into three [categories] … bleaching … zone lines, produced due to inter- or intrafungal antagonism. The third category is defined simply as pigmentation" | 2012 |
+| L | *Trametes versicolor* = «cola de pavo» | ✅ | NCI (cancer.gov/espanol) | Nombre común en español del políporo T. versicolor (en inglés "turkey tail") | actual |
+| M | LinkedIn: «sobreprecio en tiendas de madera» | ✅ (ya cubierto por #3) | [R1041] | "sold at a high markup by mills and lumber stores" | 2012 |
+| N | Instagram/Facebook/X: en el Renacimiento italiano ya usaban madera teñida de verde por un hongo | ✅ | [BLA], [R1389] | "the first noted use of fungal-pigmented wood is from the 1400 s in Renaissance Italy" | 2012 |
+| O | Citas con DOI de Robinson 2012 (93:1389–1394), Robinson-Tudor-Cooper 2012 (93:1041–1048), Blanchette 1992 (46(3):225–232), Morris 2021 (201:109480) | ✅ | Crossref | Los 4 DOI resuelven a esos títulos, volúmenes, páginas y autores (R1041 salió en línea en 2011; volumen de 2012) | — |
+| P | Comentario fijado: Saikawa et al. (2000) «Xylindein, a blue-green pigment of Chlorociboria species.» Phytochemistry 55: 237–240 | ⚠️ cita mal | Crossref, doi:10.1016/S0031-9422(00)00282-X | El título real es "Absolute configuration and tautomeric structure of xylindein, a blue–green pigment of Chlorociboria species" (vol. 55, págs. 237–240, 2000 ✅). En el comentario quedó recortado como si fuera el título completo | 2000 |
+| Q | Comentario fijado: título de Robinson, Tudor y Cooper sin "(Fagus grandifolia)" | ⚠️ leve | Crossref | Título real termina en "American beech (Fagus grandifolia)" | 2012 |
+| R | narracion.json: «Todo empieza cuando varios hongos distintos entran al mismo tronco» | ✅ | [R1389], [MOR] | Las líneas de zona se forman "due to inter- or intrafungal antagonism" (entre especies distintas o entre individuos distintos de la misma especie; Morris: cada línea encierra madera de "a single genetic individual"). «Hongos distintos» = individuos distintos: es correcto en los dos casos. «Todo empieza» generaliza, pero la excepción (*Xylaria* sola) se dice explícitamente después en la voz, así que el contexto queda bien | 2012 / 2021 |
+
+Correcciones aplicadas: P y Q (títulos completos de Saikawa 2000 y Robinson, Tudor y Cooper 2012 en el comentario fijado). Todo lo demás ✅.
+
 VEREDICTO: APROBADO
