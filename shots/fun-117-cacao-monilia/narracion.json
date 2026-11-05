@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Cacao base narrada.dc.html",
   "salida": "Shot Cacao narrado.dc.html",
-  "nota": "Shot Fungi Mati #117. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. GUION SIN VERIFICAR: falta verificador independiente.",
+  "nota": "Shot Fungi Mati #117. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
     {
       "escena": "Gancho",
@@ -9,7 +9,7 @@
     },
     {
       "escena": "Hongo",
-      "texto": "Es Moniliophthora roreri, y solo ataca los frutos del cacao."
+      "texto": "Es Moniliophthora roreri, y solo ataca los frutos: del cacao y de sus parientes."
     },
     {
       "escena": "Entra",
@@ -37,11 +37,11 @@
     },
     {
       "escena": "Numero",
-      "texto": "Hasta siete mil millones en una sola mazorca, y el viento se las lleva."
+      "texto": "Millones en una sola mazorca, y el viento se las lleva."
     },
     {
       "escena": "Estudio",
-      "texto": "Llegó a Chiapas y Tabasco en 2005. Entre 2011 y 2012, un equipo de Tabasco siguió más de diez mil mazorcas: en promedio, más del setenta y cinco por ciento se enfermaron."
+      "texto": "Llegó a Chiapas y Tabasco en 2005. Entre 2011 y 2012, un equipo de investigadores siguió en Tabasco y Chiapas más de diez mil mazorcas: en promedio, más del setenta y cinco por ciento se enfermaron."
     },
     {
       "escena": "Manejo",
