@@ -307,7 +307,7 @@ function CortinariusShot() {
       <NumeroGigante T={T} at={K.R + 3.6} until={K.Su - 0.3} valor={8.5} dec={1} dur={0.8} sufijo=" días" etiqueta="riñón: en la mitad, después de…" x={540} y={660} tam={150} color={KC.red} />
       <Chip T={T} at={K.R + 4.6} until={K.Su - 0.3} texto="mediana · fase renal" x={540} y={820} tam={30} borde={KC.ink} mono />
       <Chip T={T} at={K.Su + 0.2} until={K.Fa - 0.2} texto="oeste de Suecia · 1979–2012" x={380} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Su + 0.5} until={K.Fa - 0.2} x={60} y={560} texto="BMC Nephrology, 2017" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Su + 0.5} until={K.Fa - 0.2} x={60} y={560} texto="estudio · BMC Nephrology, 2017" tam={26} color={KC.ink} />
       <NumeroGigante T={T} at={K.Su + 1.6} until={K.Fa - 0.2} valor={22} dur={1.3} sufijo=" de 28" etiqueta="necesitaron diálisis" x={380} y={690} tam={110} color={CX.dial} />
       <NumeroGigante T={T} at={K.Fa + 0.3} until={K.An - 0.3} valor={75} dur={1.3} sufijo=" %" etiqueta="falla renal más grave" x={380} y={690} tam={130} color={KC.red} />
       <Chip T={T} at={K.Fa + 1.4} until={K.An - 0.3} texto="etapa 5 de enfermedad renal crónica" x={380} y={470} tam={28} borde={KC.red} />
