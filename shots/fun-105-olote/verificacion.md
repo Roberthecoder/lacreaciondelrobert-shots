@@ -87,3 +87,27 @@ Revisé `olote.jsx` (chips, etiquetas, subtítulos, barras de escala, Lupa) y `p
 **Cambio aplicado (mínimo):** en `publicacion.md`, las 2 apariciones de «UF/IFAS EDIS SL448 (2018). Cultivation of oyster mushrooms.» pasan a «Liao, H.-L. et al. (2018, rev. 2025). D.I.Y. FunGuide: Grow Your Own Oyster Mushrooms at Home. UF/IFAS EDIS SL448.» No hubo que cambiar nada en `olote.jsx`.
 
 VEREDICTO: APROBADO
+
+## Re-verificación independiente (5 nov 2026)
+Verificador independiente (no escribió el guion). Se releyeron `narracion.json` (13 líneas), los letreros de `olote.jsx`, `guion.md` y `publicacion.md`, y se volvió a abrir el PDF completo de López-López et al. 2026 (métodos, tablas 3 y 4) y las demás fuentes.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Estudio publicado en 2026, en Hidalgo | ✅ | López-López et al., *Agroind. Sci.* 16(3): 373–379 | "Mineral de la Reforma, Hidalgo, México"; sustratos de "Epazoyucan, Hidalgo"; "Published: 20 July 2026" | 2026 |
+| Por cada kilo de olote seco, hasta 850 g de setas frescas (letrero «850 g de setas por kilo», «eficiencia biológica 85 %») | ✅ | López-López et al. 2026 | "BE (%) = [Fresh weight (g) / Initial dry weight (g)] x 100"; olote "85 ± 2.5"; "achieved the highest biological efficiency at 85%" | 2026 |
+| Se remoja (48 h) y se pasteuriza: 1 h en agua a 70 °C (letreros «1 · remojo (48 h)», «70 °C · 1 hora») | ✅ | López-López et al. 2026 | "submerging it in water for 48 h"; "submerged in water at 70 °C for 1 h" | 2026 |
+| Pasteurizar, no esterilizar | ✅ | Sánchez, *Appl. Microbiol. Biotechnol.* | "does not require sterilization, only pasteurization, which is less expensive" | 2010 |
+| Semilla = granos con micelio, ~5 % | ✅ | López-López et al. 2026 | "wheat grains colonized by mycelium"; "at a ratio of 5% of the substrate's wet weight" | 2026 |
+| En bolsa, a oscuras, ~25 °C | ✅ | UF/IFAS EDIS SL448; López-López 2026 | "Incubate the filled bags inside a clean, dark place"; "incubated at 25°C" | 2018 / 2026 |
+| Las hifas cubren el olote en unas dos semanas | ✅ | López-López et al. 2026, tabla | olote: "Colonization time (days) 15 ± 1.2" | 2026 |
+| Hongo de pudrición blanca; enzimas (lacasas, peroxidasas) que desarman la fibra | ✅ | Knop, Yarden y Hadar, *Appl. Microbiol. Biotechnol.* | "Like other white-rot fungi (WRF), they are able to grow on a variety of lignocellulosic biomass substrates … lacasses, versatile peroxidases (VPs), and short manganese peroxidases" | 2015 |
+| Fructifica con aire fresco, luz y mucha humedad (18–22 °C, 85–90 %, luz 12 h) | ✅ | López-López 2026; UF/IFAS 2018 | "18 – 22°C and a relative humidity of 85% – 90%"; "12-hour light/12-hour dark photoperiod"; "triggered by light and lower temperatures" | 2026 / 2018 |
+| Racimos que salen por los cortes de la bolsa | ✅ | López-López et al. 2026 | "The bags were perforated with a sterilized blade" | 2026 |
+| El olote rindió más que la paja de cebada (85 % vs 65 %) y dio cosecha en 19 días; la paja, en 26 | ✅ | López-López et al. 2026 | "Corn cobs … achieved the highest biological efficiency at 85% and enabled harvesting in 19 days … Barley straw … 65% and extending the time to harvest to 26 days" | 2026 |
+| Robert probó olotes: mal desgranados fermentan; los buenos dieron setas enormes; cal de nixtamal | ✅ | `maestro/recetas/correcciones-de-robert.md` (hechos fijos de Robert) | "Olotes (por un video de YouTube): fermentan si no están bien desgranados; los que funcionaron dieron setas enormes. Cal de nixtamal." | 2026 |
+| Lo que sobra sirve de composta o alimento para animales | ✅ | Grimm y Wösten, *Appl. Microbiol. Biotechnol.* | "SMS can be used as compost, as a substrate for other mushroom-forming fungi, as animal feed" | 2018 |
+| Meta a futuro: una tonelada de bagazo de agave en hongos para comer (dicho como futuro) | ✅ | `series/shot-robert/datos.md` | "✅ Lo que viene: convertir una tonelada de bagazo de agave en hongos para comer (contarlo como futuro, no como hecho)." | 2026 |
+
+Nota del verificador (no cambia el veredicto): en el artículo, los tratamientos de la sección 2.3 se describen como mezclas, pero las tablas de resultados reportan cada sustrato por separado; el shot solo repite lo que reportan el resumen y las tablas ("Corn cobs"), sin añadir nada. Sin ❌ ni ⚠️. No se cambió ningún archivo del shot.
+
+VEREDICTO: APROBADO

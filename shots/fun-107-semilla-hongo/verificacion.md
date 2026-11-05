@@ -92,4 +92,36 @@ Revisados todos los `Chip`, `Etq`, `<text>`, `TarjetaEstudio`, `NumeroGigante`, 
 
 Cambios hechos en `semilla.jsx` (solo texto): chip de la línea 372 y subtítulo idx 4 (línea 412).
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni hizo la primera verificación). Fuentes abiertas de nuevo; la patente se leyó en el PDF original de la USPTO (image-ppubs.uspto.gov, US 1,869,517, 4 págs.). Revisados: las 14 líneas de `narracion.json`, todos los letreros de `semilla.jsx`, `guion.md` y `publicacion.md`.
+
+| Afirmación (voz / pantalla / publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Es la semilla de un hongo» | ✅ (metáfora) | Penn State Extension, *Seeding Substrate and Management of Growing Agaricus Bisporus* (act. 23 dic 2025); Penn State Spawn Lab | "spawn is used to 'seed' mushroom compost" | 2025 |
+| «Se llama spawn … es grano esterilizado cubierto de micelio» | ✅ | Penn State Extension 2025 | "propagated on a base of steam-sterilized cereal grain (usually rye or millet). This cereal grain/mycelium mixture is called spawn." | 2025 |
+| «y no trae esporas» ("esporas: 0") | ✅ | Penn State Extension 2025 | "Most spawn is made with mycelium from a stored culture, rather than mycelium whose parent was a spore." (el spawn es grano + micelio) | 2025 |
+| «Cada grano está forrado de hifas, hilos vivos del hongo» | ✅ | Penn State Extension 2025 | "The mushroom mycelium (threadlike filaments that become interwoven)" | 2025 |
+| «En la naturaleza germinan muy mal» | ✅ | Penn State Extension 2025 | "In nature, spores germinate and grow very poorly" | 2025 |
+| «y cada una puede dar una cepa nueva, impredecible» ("cada espora: posible cepa nueva") | ✅ | Penn State Extension 2025 | "each spore is likely to yield a new strain, and its performance would be unpredictable." | 2025 |
+| «El micelio de un cultivo de tejido … es casi un clon del hongo» | ✅ | Penn State Extension 2025 | "A tissue culture is essentially a clone of a mushroom." | 2025 |
+| «El grano va al autoclave: en frascos chicos, 35 minutos a 121 grados» ("frasco de 250 ml") | ✅ | Penn State Mushroom Spawn Lab, *Spawn preparation* | "Rye Grain Spawn 250 ml Flasks … Autoclave 35 minutes at 121°C"; "1000 ml Flasks … Autoclave 45 minutes at 121°C" | vigente 2026 |
+| «Recibe micelio, y cada lote colonizado siembra otro más grande» | ✅ | Penn State Spawn Lab | "As small batches are fully colonized by the mycelium, they are in turn used to further inoculate larger batches." | vigente 2026 |
+| «¿Y antes…? Ladrillos de estiércol con micelio» ("hasta los años 30") | ✅ | Penn State Extension 2025 | "flat bricks of moist horse and cow manure that were stacked together with bits of mushroom mycelium. Manure spawn was used worldwide until the 1930s" | 2025 |
+| «En Penn State, James Sinden probó granos, y el micelio creció más rápido» | ✅ | Penn State News, *Fungi of the future* (29 ene 2024) | "inconsistent yields led Penn State plant pathologist James Sinden to begin experimenting with cereal grains"; "The mycelium from the new medium immediately grew faster and more vigorously" | 2024 (cita de Sinden) |
+| «Lo patentó en 1932» (tarjeta "1932 · James Sinden · Penn State · patente de EE. UU. 1,869,517") | ✅ | PDF original USPTO US 1,869,517 | "Patented Aug. 2, 1932 · 1,869,517 · James W. Sinden, of State College, Pennsylvania, assignor to the Pennsylvania State College … Mushroom spawn and method of making same" | 1932 |
+| Citas de la patente en `guion.md` ("cereal substrate inoculated with mycelium") y `publicacion.md` ("cereal substrate overgrown with mycelium") | ✅ | PDF USPTO, reivindicaciones | Reiv. 1: "Mushroom spawn comprising a cereal substrate inoculated with mycelium." Reiv. 2: "Mushroom spawn comprising a cereal substrate overgrown with mycelium." (las dos frases existen) | 1932 |
+| «hoy casi todo el spawn comercial se hace así» | ✅ | Penn State News 2024 | "Almost all commercial spawn is now produced by this method." | 2024 |
+| «Yo usé una olla de presión como autoclave» | ✅ | `series/shot-robert/datos.md` | "✅ Una olla de presión fue su autoclave y los tuppers sus cajas de Petri." | — |
+| «de esporas de mi seta rosa saqué mi propia cepa» ("PDA · mi cepa") | ✅ | `series/shot-robert/datos.md` | "✅ De ese cultivo salieron las esporas con las que después creó su propia cepa, por germinación multiespórica en PDA." | 2026 |
+| "seta rosa · *Pleurotus djamor*", esporas elípticas angostas rosa pálido | ✅ | Wikipedia *Pleurotus djamor* (ya cotejado en la 1.ª ronda) | "commonly known as the pink oyster mushroom"; "The spore print is pink … ellipsoid. They measure 7-8 ×3-4.5 μm." | 2026 (consulta) |
+| «Las esporas crean cepas nuevas, y abundan: un champiñón de unos ocho centímetros suelta 40 millones por hora» ("3 pulgadas ≈ 7.6 cm") | ✅ | Penn State Extension 2025 | "a three-inch mushroom produces 40 million spores per hour." (3 in = 7.62 cm → "unos ocho") | 2025 |
+| Esporas de *Agaricus bisporus* ovaladas y cafés | ✅ | MushroomExpert (1.ª ronda) | "Spores 6–8 x 5–6 µm; ellipsoid; smooth" | s. f. |
+| «Pero para cosechar, se siembra el clon: este grano blanco» | ✅ | Penn State Extension 2025 | "Most spawn is made with mycelium from a stored culture…"; "A tissue culture is essentially a clone of a mushroom." | 2025 |
+| `publicacion.md` (YouTube): «un cultivo de tejido es prácticamente un clon del hongo: **sale igual cada vez**» | ⚠️ → ✅ | Penn State Extension 2025 | La fuente dice "essentially a clone"; "sale igual cada vez" promete más de lo que dice (el resultado también depende del sustrato y del ambiente). **Corregido:** se quitó "sale igual cada vez". | 2025 |
+| `publicacion.md` (LinkedIn): «es prácticamente un clon: **consistencia de lote a lote**» | ⚠️ → ✅ | ídem | Misma exageración. **Corregido** a «es prácticamente un clon del hongo.» | 2025 |
+| Resto de `publicacion.md` (35 min/250 ml y frascos grandes más tiempo, centeno o mijo, ladrillos de caballo y vaca, "casi un siglo", 40 millones/hora) | ✅ | mismas fuentes | Coinciden con las frases textuales de arriba. | — |
+
+Cambios: solo dos frases de `publicacion.md` (no cambia la voz, la pantalla ni la duración). Todo queda ✅.
+
 VEREDICTO: APROBADO

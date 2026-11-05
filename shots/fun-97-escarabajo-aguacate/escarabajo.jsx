@@ -371,7 +371,7 @@ function EscarabajoShot() {
       <Caja T={T} at={K.G + 4.2} until={K.N - 0.4} x={50} y={1000} texto="siembra un hongo" tam={30} />
       <Caja T={T} at={K.N + 0.2} until={K.B - 0.3} x={50} y={420} texto="Xyleborus glabratus" it tam={36} />
       <Caja T={T} at={K.N + 0.7} until={K.B - 0.3} x={50} y={500} texto="escarabajo ambrosial" tam={30} />
-      <Caja T={T} at={K.N + 1.4} until={K.B - 0.3} x={50} y={580} texto="madera de embalaje" tam={30} />
+      <Caja T={T} at={K.N + 1.4} until={K.B - 0.3} x={50} y={580} texto="¿en madera de embalaje?" tam={30} />
       <Chip T={T} at={K.N + 3.3} until={K.B - 0.3} texto="Georgia, EUA · 2002" x={640} y={790} tam={34} borde={KC.ink} />
       <Caja T={T} at={K.B + 0.2} until={K.Tu - 0.3} x={50} y={420} texto="AL MICROSCOPIO · esquemático" tam={28} />
       <Etq T={T} at={K.B + 1.2} until={K.Tu - 0.3} x={60} y={600} texto="la hembra, de frente" tam={30} />
@@ -424,7 +424,7 @@ function EscarabajoShot() {
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No es basura: *es un escarabajo.*" />
-      <Subtitulo T={T} idx={1} at={K.N + 0.1} until={K.B - 0.1} texto="Llegó de Asia *en madera.*" />
+      <Subtitulo T={T} idx={1} at={K.N + 0.1} until={K.B - 0.1} texto="De Asia, *quizá en madera.*" />
       <Subtitulo T={T} idx={2} at={K.B + 0.1} until={K.Tu - 0.1} texto="Esporas en *bolsitas junto a la boca.*" />
       <Subtitulo T={T} idx={3} at={K.Tu + 0.1} until={K.D - 0.1} texto="Siembra el hongo *y se lo comen.*" />
       <Subtitulo T={T} idx={4} at={K.D + 0.1} until={K.Ma - 0.1} texto="El árbol *tapa sus tubos de agua.*" />

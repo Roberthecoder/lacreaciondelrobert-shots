@@ -40,7 +40,7 @@ Descripción:
 ```text
 Esto no son granos echados a perder: es la semilla de un hongo.
 Quienes cultivan hongos no siembran esporas: siembran spawn, una mezcla de grano de cereal y micelio. El micelio de un cultivo del hongo se propaga sobre grano esterilizado con vapor, casi siempre centeno o mijo. De cerca, cada grano está forrado de hifas, los hilos vivos del hongo.
-¿Por qué no esporas? En la naturaleza, las esporas germinan y crecen muy mal, y cada espora probablemente dé una cepa nueva, con un rendimiento impredecible. En cambio, un cultivo de tejido es prácticamente un clon del hongo: sale igual cada vez.
+¿Por qué no esporas? En la naturaleza, las esporas germinan y crecen muy mal, y cada espora probablemente dé una cepa nueva, con un rendimiento impredecible. En cambio, un cultivo de tejido es prácticamente un clon del hongo.
 Cómo se hace: el grano se esteriliza en autoclave (en matraces de 250 ml, 35 minutos a 121 °C; los frascos grandes necesitan más tiempo), recibe micelio de un cultivo, y cuando cada lote chico está totalmente colonizado sirve para inocular lotes más grandes.
 ¿Y antes? Hasta los años 30 se usaba spawn de estiércol: ladrillos planos de estiércol húmedo de caballo y vaca, apilados con pedacitos de micelio. Las cosechas eran irregulares, y el fitopatólogo James Sinden, de Penn State, empezó a experimentar con granos de cereal: el micelio creció más rápido y con más vigor. Su método se patentó por primera vez en 1932, y hoy casi todo el spawn comercial se produce así.
 Yo, para empezar, usé una olla de presión como autoclave, y de las esporas de mi seta rosa saqué mi propia cepa. Las esporas sirven para crear cepas nuevas, y abundan: un champiñón de 3 pulgadas (unos 7.6 cm) suelta 40 millones de esporas por hora. Pero para cosechar, se siembra el clon.
@@ -68,7 +68,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 La "semilla" de un hongo no es semilla ni esporas: es grano esterilizado colonizado por micelio (spawn).
-Por qué la industria no siembra esporas: según Penn State Extension, en la naturaleza germinan muy mal y cada espora probablemente dé una cepa nueva de rendimiento impredecible. Un cultivo de tejido, en cambio, es prácticamente un clon: consistencia de lote a lote.
+Por qué la industria no siembra esporas: según Penn State Extension, en la naturaleza germinan muy mal y cada espora probablemente dé una cepa nueva de rendimiento impredecible. Un cultivo de tejido, en cambio, es prácticamente un clon del hongo.
 El proceso escala por etapas: grano esterilizado (35 min a 121 °C en matraces de 250 ml) → inoculación con micelio de un cultivo → cada lote colonizado inocula lotes mayores.
 La innovación tiene casi un siglo: hasta los años 30 se usaban ladrillos de estiércol con micelio; James Sinden (Penn State) cambió a granos de cereal, el micelio creció más rápido y con más vigor, y el método se patentó en 1932. Hoy casi todo el spawn comercial se produce así.
 Una lección de biotecnología: la reproducibilidad vale más que la abundancia (un champiñón de 3 pulgadas suelta 40 millones de esporas por hora, y aun así se siembra el clon).

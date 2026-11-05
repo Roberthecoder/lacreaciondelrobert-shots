@@ -49,4 +49,32 @@ Dibujo: conidios en forma de campana ("campanulate", [E18]); bandas blancas entr
 `publicacion.md` solo usa datos de las filas 1–22 y de las frases textuales citadas en ellas (p. ej. ~80 % muere en 4–7 días, ~92 % levanta las alas, "mechanical and enzymatic force", "neurosecretory systems", 37 %/44 % "modesto", 73.3 % vs 15.4 %, compuestos volátiles). No se añadió ningún dato nuevo.
 Duración: `estimar-escenas.mjs` da 61.9 s con la voz aprobada; no hizo falta recortar.
 
+## Re-verificación independiente (5 nov 2026)
+Segundo verificador (no escribió el guion ni la verificación de arriba). Se descargó y leyó el **texto completo** de cada fuente
+(Europe PMC fullTextXML de [E18] PMC6067884; PMC de [E23] y [N22]; página de [UW]) y se buscó cada frase. Se revisaron las 13 líneas
+de `narracion.json`, todos los letreros de `mosca-ventana.jsx` (31 cadenas de texto) y las 7 redes + comentario de `publicacion.md`.
+No apareció ninguna afirmación que no esté en la tabla de arriba.
+
+| Afirmación (voz / pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Mosca pegada al vidrio, con bandas o halo: la mató *E. muscae*, que le cambió la conducta | ✅ | [UW] | "glued to the window in your house, maybe with a puffy white-striped abdomen or a white halo … it was most likely killed by the fungus Entomophthora muscae" | 2025 |
+| Ataca moscas como la casera y la de la fruta | ✅ | [E18] | "almost exclusively been observed and studied in muscoid flies (especially the house fly, Musca domestica)"; el artículo trata de "wild Drosophila" infectadas | 2018 |
+| Espora pegajosa, perfora la cubierta y entra | ✅ | [E18] | "surrounded by a sticky 'halo' that serves to adhere the conidium … using both mechanical and enzymatic force to bore through the cuticle and into the fly's hemolymph" | 2018 |
+| Se la come por dentro (hemolinfa, grasa) | ✅ | [E18] | "initially sustained by nutrients in the hemolymph and then later consumes the fat body as an energy source" | 2018 |
+| En dos días llega a su sistema nervioso | ✅ | [E18] | "At 48 hr after exposure, fungal cells are consistently observed in the brain and/or ventral nerve cord (VNC; 4 out of 5 samples)" (mosca de la fruta, laboratorio; así lo dice `publicacion.md`) | 2018 |
+| Días después (día 4 a 7), antes del atardecer, se agita y sube | ✅ | [E18], [E23] | "~80% of CantonS flies are killed four to seven days (96–168 hr) after exposure"; "final movement between 0 and 5 hr before sunset"; "summiting behavior is characterized by a burst of locomotion" | 2018 / 2023 |
+| Estira la trompa, se pega, levanta las alas… y muere | ✅ | [E18] | "hours before death, they climb upward, extend their proboscides, affixing in place, then raise their wings"; "most (~92%) of flies then begin to raise their wings" | 2018 |
+| 2023, Harvard: la subida necesita neuronas del reloj (DN1p) | ✅ | [E23] | Afiliación: "Department of Organismic and Evolutionary Biology, Harvard University"; "requires the host circadian and neurosecretory systems, specifically DN1p circadian neurons" | 2023 |
+| Pantalla: la subida "empieza ~2.5 h antes de morir" | ✅ | [E23] | "an increase in locomotion beginning ~2.5 hr before death" | 2023 |
+| Algo en su sangre *parece* provocarla; pasada a otras moscas, caminaron más | ✅ | [E23] | "Transfusing the hemolymph of summiting flies into non-summiting recipients induced a burst of locomotion, demonstrating that factor(s) in the hemolymph likely cause summiting behavior"; "a modest (37%) but significant increase in the distance traveled" | 2023 |
+| Ya muerta, sale en bandas blancas | ✅ | [E18] | "Conidiophores emerge through … the intersegmental membranes of the dorsal abdomen, giving the cadavers a distinct banding pattern" | 2018 |
+| Dispara esporas a unos 10 m/s | ✅ | [E18] | "conidia leave the conidiophore at an initial velocity of ~20 miles per hour (~10 meters/second)" | 2018 |
+| Dibujo: esporas en forma de campana | ✅ | [E18] | "Launched primary conidia are polynucleated, campanulate (bell-shaped)" | 2018 |
+| Halo blanco alrededor, en el vidrio | ✅ | [UW] | "often leaving a halo of conidia that can be seen on the glass surface of windows around where the fly remains" | 2025 |
+| 2022, Copenhague: su olor atrae machos a aparearse con hembras muertas | ✅ | [N22] | Afiliación "University of Copenhagen, København, Denmark"; "Healthy male houseflies respond to the fungal compounds and are enticed into mating with female cadavers" | 2022 |
+| …y muchos se contagian; pantalla "73 % (cadáveres de 25–30 h)" | ✅ | [N22] | "73.3% became infected after exposure to late sporulation cadavers compared to 15.4%"; "late (25–30 h post death)" | 2022 |
+| Cierre: la hora, el lugar y la pose que le marcó el hongo | ✅ | [E18] | "shortly before sunset on its final day of life, the fly climbs to a high location"; pose "thought to be ideal for fungal dispersal" (no se afirma intención) | 2018 |
+
+Resultado: todo ✅; no hizo falta cambiar nada (ni voz, ni pantalla, ni `publicacion.md`).
+
 VEREDICTO: APROBADO

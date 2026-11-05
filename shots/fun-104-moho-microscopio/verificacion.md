@@ -71,3 +71,31 @@ Fuentes abiertas:
 Revisión de correcciones (5 nov 2026, 2.ª ronda): se re-verificaron las líneas de voz 3, 5, 7, 8, 10, 12 y 13, los chips de seguridad, las esporas ovaladas de *Penicillium*, la vesícula de 25 µm y el conidio de 2.75 µm de *A. fumigatus*, y que *P. italicum* es terverticilado ([Abastabar] 2016: "Terverticillate"). Ya no hay «sacerdote» en voz, guion, pantalla ni publicacion.md. Todas las afirmaciones quedan ✅.
 
 VEREDICTO: APROBADO
+
+## Re-verificación independiente (5 nov 2026)
+Verificador independiente (no escribió el guion). Se releyeron `narracion.json` (14 líneas), todos los letreros de `moho-microscopio.jsx`, `guion.md` y `publicacion.md`, y se volvieron a abrir las fuentes (PMC, Mycology Online de la U. de Adelaide, CDC-EID, Frontiers, PDF del USDA FSIS).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| La pelusa azul de la naranja es *Penicillium italicum*; el azul son sus esporas | ✅ | Kanashiro et al., *Front. Microbiol.* | "As the white mycelium grows and extend deeper into the infected tissue, it later sporulates into blue conidia" | 2020 |
+| El color del moho es el de sus esporas (letrero «el color = sus esporas») | ✅ | USDA FSIS, *Molds on Food* | "The spores give mold the color you see." | 2005 |
+| Al cultivo le pegan cinta transparente y la ponen en un vidrio con azul de lactofenol (letreros «portaobjetos + cubreobjetos», «EN EL LABORATORIO») | ✅ | Mycology Online (Adelaide), *Penicillium* | "Microscopic mounts are best made using a cellotape flag or a slide culture preparation mounted in lactophenol cotton blue." | consultada 2026 |
+| El azul de algodón tiñe la quitina de las paredes | ✅ | Leck, *Community Eye Health* | "cotton blue which stains the chitin in the fungal cell walls" | 1999 |
+| Un tallo que se abre en ramitas (ramas, métulas, fiálides) con aspecto de pincel | ✅ | Mycology Online (Adelaide), *Penicillium* | "phialides may be produced singly, in groups or from branched metulae, giving a brush-like appearance (a penicillus)" | consultada 2026 |
+| *Penicillium* significa pincel (Link, 1809) | ✅ | Visagie et al., *Stud. Mycol.* 78 | "Link (1809) introduced the generic name Penicillium, meaning 'brush'" | 2014 |
+| Tallo de *Penicillium* con tabiques; el de *Aspergillus*, sin tabiques | ✅ | Visagie et al. 2014 | "they have septa in the stipes unlike species of the latter genus" | 2014 |
+| Cada punta hace una cadena; la espora nueva nace abajo y empuja a las viejas | ✅ | Mycology Online (Adelaide), *Penicillium* | "chains of single-celled conidia are produced in basipetal succession … the youngest conidium is at the basal or proximal end of the chain" | consultada 2026 |
+| *Aspergillus* termina en una punta hinchada (vesícula) cubierta de fiálides y cadenas | ✅ | Mycology Online (Adelaide), *Aspergillus* | "Conidiophores terminate in a vesicle covered with either a single palisade-like layer of phialides (uniseriate)…"; "produced in long dry chains" | consultada 2026 |
+| *A. fumigatus*: fiálides en una fila; vesícula de 20–30 µm | ✅ | Latgé, *Clin. Microbiol. Rev.*; Adelaide | "The chains of conidia are borne directly on broadly clavate vesicles (20 to 30 μm in diameter)"; "a single row of phialides on the upper two thirds of the vesicle" | 1999 / 2026 |
+| Cada cabeza de *A. fumigatus* hace miles de esporas de unas 3 micras (2.5–3 µm) | ✅ | Latgé 1999; Adelaide | "every conidial head producing thousands of conidia"; "globose to subglobose (2.5-3.0 µm in diameter), green and finely roughened" | 1999 / 2026 |
+| En 1729, en Florencia, Pier Antonio Micheli le puso el nombre *Aspergillus* | ✅ | *Emerg. Infect. Dis.* 12(3); aspergillus.org.uk | "Aspergillus was first described in 1729 by Pier Antonio Micheli"; "Nova plantarum genera … (Florentiae) 1729" | 2006 |
+| Micheli como «botánico» | ✅ | Treccani (citado en la verificación previa); aspergillus.org.uk | La EID lo llama "priest and biologist"; «botánico» es la descripción conservadora y correcta | 2010 |
+| Le recordó el aspergillum, el rociador del agua bendita (del latín *aspergere*) | ✅ | *Emerg. Infect. Dis.* 2006 | "reminded him of an aspergillum (from the Latin aspergere, "to scatter"), a device used for sprinkling holy water" | 2006 |
+| Sembró esporas: salía el mismo hongo, no nacía de la nada | ✅ | *Emerg. Infect. Dis.* 2006 | "Micheli opposed the idea of "spontaneous generation" by showing that fungal spores grown on a medium would produce the same kind of fungus." | 2006 |
+| Si tu naranja tiene moho, no la huelas | ✅ | USDA FSIS | "Don't sniff the moldy item. This can cause respiratory trouble." | 2005 |
+| Si está aguada o cubierta, a la basura (en bolsa, bote con tapa) | ✅ | USDA FSIS; Kanashiro 2020 | "SOFT Fruits and vegetables with high moisture content can be contaminated below the surface"; "If food is covered with mold, discard it. Put it into a small paper bag…"; moho azul: "watery soaked fruit appearance, soft" | 2005 / 2020 |
+| Gota de alcohol en la preparación (publicación de YouTube) | ✅ | Mycology Online (Adelaide) | "A drop of alcohol is usually needed to remove bubbles" | consultada 2026 |
+
+Sin ❌ ni ⚠️. No se cambió ningún archivo del shot.
+
+VEREDICTO: APROBADO
