@@ -1,0 +1,7 @@
+{ "temas": [
+ { "id": "hongos-lavar", "titulo": "¿Los hongos se lavan o no? No son esponjas (cuánta agua absorben de verdad)", "serie": "Shot Fungi Mati", "numero": 140, "estado": "idea", "carpeta": "shots/fun-140-lavar", "rama": "claude/fun-140-144-mitos", "fecha": "2026-11-05", "derivados": [] },
+ { "id": "hongos-crudos", "titulo": "¿Los hongos se comen crudos? Champiñón, morilla y por qué algunos sí y otros no", "serie": "Shot Fungi Mati", "numero": 141, "estado": "idea", "carpeta": "shots/fun-141-crudos", "rama": "claude/fun-140-144-mitos", "fecha": "2026-11-05", "derivados": [] },
+ { "id": "hongos-no-plantas", "titulo": "Los hongos no son plantas: son más parientes tuyos que de la lechuga (opistocontos)", "serie": "Shot Fungi Mati", "numero": 142, "estado": "idea", "carpeta": "shots/fun-142-plantas", "rama": "claude/fun-140-144-mitos", "fecha": "2026-11-05", "derivados": [] },
+ { "id": "hongos-tras-lluvia", "titulo": "¿Por qué salen hongos después de la lluvia? No nacieron anoche: el micelio ya estaba", "serie": "Shot Fungi Mati", "numero": 143, "estado": "idea", "carpeta": "shots/fun-143-lluvia", "rama": "claude/fun-140-144-mitos", "fecha": "2026-11-05", "derivados": [] },
+ { "id": "hongos-recalentar", "titulo": "¿Se pueden recalentar los hongos? El mito de la abuela y lo que sí importa (refrigerar rápido)", "serie": "Shot Fungi Mati", "numero": 144, "estado": "idea", "carpeta": "shots/fun-144-recalentar", "rama": "claude/fun-140-144-mitos", "fecha": "2026-11-05", "derivados": [] }
+] }
