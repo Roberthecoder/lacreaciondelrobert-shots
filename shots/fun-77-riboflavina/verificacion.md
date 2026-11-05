@@ -75,4 +75,30 @@ Se revisó `guion.md` después de aplicar las correcciones:
 - **C3 aplicada:** las esporas miden ~30 µm, unas 3 veces la barra de 10 µm; la tabla de escalas dice «10 µm (esporas; agujas de ~30 µm)». ✅
 - La voz (`narracion.json`, 14 líneas) no cambió y coincide con la tabla del guion. No hay afirmaciones nuevas, salvo la etiqueta "fibra manchada", que está respaldada (fila 14).
 
+## Re-verificación independiente (5 nov 2026)
+
+Segunda verificación, hecha por otro subagente que no escribió el guion ni la primera verificación. Se revisaron las 14 líneas de
+`narracion.json`, los letreros y tarjetas de `riboflavina.jsx` y la tabla de Fuentes del guion. Se abrieron de nuevo: Hoff 2021 (PDF
+completo), Wendland 2020 y Herron 2012 (texto completo de PMC), Revuelta 2017 (texto completo en OUP) y Stahmann 2001 (resumen en Europe PMC).
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| «Ese amarillo de tu pipí tras la vitamina no es colorante: es vitamina B2 que te sobró» | ✅ | Linus Pauling Institute; PubChem CID 493570 | "High-dose riboflavin therapy has been found to intensify urine color to a bright yellow (flavinuria), but this is a harmless side effect." | 2021 |
+| «Lo que sobra, tus riñones lo mandan a la orina, casi todo el primer día» | ✅ | Herron et al. 2012, PMC3556739 (texto completo) | "is eliminated in urine, with more than 91% of the total excretion of riboflavin taking place during the first 24 hours" (dato de Zempleni 1996; en pantalla sin cifra) | 2012 (dato de 1996) |
+| «es amarilla y, con luz ultravioleta, brilla» | ✅ | Herron 2012; PubChem | "excreted in urine where it fluoresces under UV light"; "yellow, fluorescent compound" | 2012 |
+| «Hoy la fabrican microbios, como el hongo *Ashbya gossypii*» (y *Bacillus subtilis*) | ✅ | Revuelta et al. 2017; Hoff 2021 | Revuelta: "the synthetic process was abandoned and the chemical plant closed down in 1996"; Hoff: otros fabricantes pasaron a "ausschließlich fermentative Produktion … unter Verwendung des Bakteriums Bacillus subtilis" | 2017 / 2021 |
+| «En el campo enferma al algodón: lo meten las chinches» | ✅ | Wendland 2020, PMC7558398 | "causes a yeast spot disease termed stigmatomycosis e.g., on cotton, pistachio or soybean. Ashbya is dependent on insect vectors belonging to stinkbug families (Coreidae, Pentatomidae)." | 2020 |
+| «Es pariente de la levadura del pan, pero crece en hilos» (Saccharomycetaceae; puntas que se parten; núcleos y tabiques) | ✅ | Wendland 2020 | "a filamentous ascomycete belonging to the yeast family of Saccharomycetaceae"; "hyphal tips start a tip splitting process"; "Ashbya cell compartments harbor several nuclei." | 2020 |
+| «Al dejar de crecer, se llena de riboflavina y la guarda en vacuolas» | ✅ | Stahmann 2001; Wendland 2020; Revuelta 2017 | "In batch culture, both were elevated when growth ceased."; "At the end of its growth phase Ashbya generates abundant amounts of riboflavin and spores"; "Riboflavin is also stored in the vacuolar compartment" | 2001 / 2020 / 2017 |
+| Esporas en aguja de ~30 µm con filamentos en la punta (dibujo, barra 10 µm) | ✅ | Wendland 2020 | "Ashbya forms needle-shaped spores of about 30 µm in length."; "Needle-shaped Ashbya spores aggregate via terminal filaments." | 2020 |
+| «En 2001, un equipo europeo iluminó sus esporas con ultravioleta: con riboflavina, aguantaban más» (tarjeta "2001 · Alemania, Reino Unido y España · *Environmental Microbiology*") | ✅ | Stahmann et al. 2001, *Environ. Microbiol.* 3: 545 | "Here, we report an ultraviolet (UV) protective effect of riboflavin. … The addition of riboflavin to suspensions improves the UV resistance of both spore types." (afiliaciones ya comprobadas en OpenAlex en la primera verificación) | 2001 |
+| «Sería su bloqueador solar» (chip "hipótesis: protector UV") | ✅ como hipótesis | Stahmann 2001 | "A question, unanswered for decades, is whether riboflavin overproducers can benefit from this property." Va en condicional y marcado como hipótesis. | 2001 |
+| «En 1990, BASF empezó a cultivarlo en tanques, y en 1996 dejó la síntesis química» | ✅ | Revuelta 2017; Hoff 2021 | "BASF implemented, in 1990, the production of vitamin B2 at industrial scale"; "the chemical plant closed down in 1996"; Hoff: "führte BASF bereits 1990 die Vitamin B2-Fermentation im industriellen Maßstab ein" | 2017 / 2021 |
+| «Le metieron copias extra de los genes que arman la vitamina» (chip "6 genes de la vía, en un paquete") | ✅ | Hoff 2021 | "Analoge Ansätze führten wir mit A. gossypii durch, indem die sechs terminalen Biosynthesegene als synthetische Gencluster assembliert und mittels homologer Rekombination genomisch integriert wurden." | 2021 |
+| «Según la empresa, el costo bajó cerca de cuarenta por ciento, y el CO2, treinta» | ✅ (atribuido a BASF) | Hoff 2021 (BASF SE), citando a Saling 2005 | "einer um 30 Prozent reduzierten CO2-Emission"; "konnten die Produktionskosten um ca. 40 Prozent reduziert werden" | 2021 (análisis de 2005) |
+| «también se usa como colorante» (E101) | ✅ | Hoff 2021 | "30 Prozent als Lebensmittelzusatz, Farbstoff (E101) oder in der Pharmaindustrie" | 2021 |
+| Cierre «ese amarillo de tu pipí puede ser el bloqueador solar de un hongo» | ✅ (con "puede ser") | Stahmann 2001; Hoff 2021 | La B2 de una pastilla puede venir de *Ashbya* o de *B. subtilis*, y lo del bloqueador es hipótesis: "puede ser" lo cubre. | 2001 / 2021 |
+
+**Cambios hechos:** ninguno. Todo quedó ✅ con fuentes abiertas de nuevo; la voz, los letreros y la tabla de Fuentes del guion coinciden.
+
 VEREDICTO: APROBADO
