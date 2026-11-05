@@ -82,4 +82,37 @@ Se revisaron `narracion.json` (13 líneas), `guion.md` y **toda** la constante `
 
 Resumen: las 4 correcciones están aplicadas en la voz, la pantalla (`TXT`, números, subtítulos) y en `guion.md`. Las 5 líneas recortadas no cambian ningún dato. Todos los textos de `TXT` están cubiertos. Todas las afirmaciones quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Tercer verificador, que no escribió el guion ni las vueltas anteriores. Se releyeron `narracion.json` (13 líneas), `guion.md`,
+`TXT` de `matsutake.jsx` y **todo** `publicacion.md`. Se volvieron a descargar y leer en texto completo [YAM] (PDF J-STAGE),
+[RIN] (página y PDF de la Agencia Forestal), [PAC] (PDF *Ciencias*), [BAN] (SciELO) e [IUCN]; además se buscó (japonés e inglés)
+si en 2023–2026 alguien logró cultivar matsutake y si hay tabla de importación por país posterior a 2022.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| «Este hongo blanco no es un champiñón: es matsutake» · *Tricholoma mesoamericanum* | ✅ | [BAN] | "the "matsutake" mushrooms in the country represent T. mesoamericanum"; "the recorded matsutake species in Mexico, which also occurs in the southwestern USA, is T. mesoamericanum" | 2022 |
+| «y de México viaja a Japón» (presente) | ✅ | [MAFF22], [PAC] | [MAFF22]: importación desde メキシコ 4 t en 令和４年 (2022). No hay tabla por país más nueva publicada en e-Stat (la búsqueda solo devuelve la de 令和４年); el chip de pantalla dice «2022: 4 t», con año. | 2022 |
+| «Sale entre las hojas de pino; le dicen hongo blanco, de ocote o canela» | ✅ | [BAN] | "basidiomes often arising partially or totally covered by pine needles, in conifer forests under pines"; "“hongo blanco de ocote” or simply “hongo blanco” (white mushroom), “hongo canela” (cinnamon mushroom)" | 2022 |
+| «a inicios de los cuarenta cosechaban doce mil toneladas al año» | ✅ | [YAM] | "In the early 1940s, about 12,000 tons of matsutake were harvested annually (Fig. 2)." | 1940s (publ. 2020) |
+| «En dos mil veinticinco, solo quince» | ✅ | [RIN] | "令和7年の生産量は15トンで、前年比70.6％減となっています。" Tabla まつたけの需給表: 令和７年 15 t. | 2025 |
+| «sus pinos enfermaron y los bosques se descuidaron» | ✅ (con nota) | [YAM], [RIN] | [YAM]: "the pine forests were no longer managed adequately and pine wilt disease damaged pine trees and, subsequently, decreased the production of Tr. matsutake". Explica la caída de largo plazo (12 000 → decenas). Nota: [RIN] "生産量は気象条件に大きく影響を受けます": el salto 51 t (2024) → 15 t (2025) es del clima; la frase compara contra los años 40, así que se acepta. | 2020 / 2025 |
+| «Por eso, en mil novecientos ochenta y cinco, empresas japonesas empezaron a llevárselo de México» | ✅ | [PAC] | "La exportación desde México la iniciaron compañías japonesas en 1985 con hongos provenientes del Estado de México; pocos años después la explotación se extendió a Michoacán, Hidalgo, Puebla y Veracruz" | 1985 (publ. 2019) |
+| «sus hilos envuelven las raíces vivas del pino… agua y minerales a cambio de azúcar» · «Sin árbol vivo no hay hongo» | ✅ | [YAM], [PO] | [YAM]: "this species forms a symbiotic association with the roots of living trees". [PO]: "proveen nutrimentos y agua a cambio del carbono fijado fotosintéticamente". | 2020 / 2024 |
+| «cultivarlo casi no ha funcionado» (revisado contra 2023–2026) | ✅ | [YAM], [RIN] | [YAM]: "In spite of vast research, the cultivation of matsutake has been mostly unsuccessful." [RIN] (página vigente con datos 2025): "現在のところ実用的な人工栽培技術がなく". Sin reportes de fructificación cultivada en 2023–2026. | 2020 / 2025 |
+| «En dos mil quince, en el Cofre de Perote, enseñaron su foto a unos cien estudiantes» · «Gritaron: ¡takechi!» | ✅ | [PAC] | "en verano de 2015 durante un ejercicio en el que, para su identificación, mostramos una imagen del hongo a alrededor de cien estudiantes de telesecundaria: al verla corearon al unísono: takechi." | 2015 (publ. 2019) |
+| «Por un comerciante japonés parecido a Takeshi, de la Señorita Cometa» | ✅ | [PAC] | "comenzaron a identificarlo con el nombre de uno de los hermanos menores de la Señorita Cometa, ya que decían que el comerciante japonés con el que negociaban se le parecía: Takeshi, que castellanizado como “takechi”" | 2019 |
+| «no se rastrilla la hojarasca: eso mata su micelio» | ✅ | [IUCN] | "the bad practice of racking the leaf litter in search for the mushroom buttons. This expose and kills the mycelia." | 2018 |
+| publicacion.md (YouTube): «bosques de pino y encino»; *T. magnivelare* «del este de Estados Unidos y Canadá» | ✅ | [BAN] | "forests of pines or mixed pines-oaks"; "T. magnivelare s. str. occurs in eastern USA and Canada. So far, it has not been recorded in Mexico" | 2022 |
+| publicacion.md (TikTok): «Le dicen hongo blanco, hongo blanco de ocote o hongo canela, **por su olor especiado**» | ⚠️ → ✅ corregido | [BAN] | El olor sí es "intense, fragrant, agreeable, spicy… with sweetish cinnamon to chocolate notes", pero ninguna fuente dice que los nombres vengan del olor («hongo blanco» es por el color). Ahora: «…o hongo canela; su olor es intenso y especiado.» | 2022 |
+| publicacion.md (Instagram): «**Desde** 1985, empresas japonesas **se lo llevan** de México» (presente) | ⚠️ → ✅ corregido | [PAC], [EDO] | Mismo problema que la vuelta 1 corrigió en la voz: hoy consta una empresa mexicana con brokers japoneses ([EDO]). Ahora: «En 1985, empresas japonesas empezaron a llevárselo de México.» | 1985 / 2003 |
+| publicacion.md (Facebook y Threads): «no se puede sembrar» | ⚠️ → ✅ corregido | [RIN], [YAM] | Las fuentes dicen que no hay técnica práctica todavía ("現在のところ"; "mostly unsuccessful"), no que sea imposible. Ahora: «todavía no se ha logrado cultivar». | 2025 / 2020 |
+
+**Cambios hechos en esta re-verificación:** solo en `publicacion.md` (no cambia la voz, ni `narracion.json`, ni la animación):
+1. TikTok: «…o hongo canela, por su olor especiado.» → «…o hongo canela; su olor es intenso y especiado.»
+2. Instagram: «Desde 1985, empresas japonesas se lo llevan de México.» → «En 1985, empresas japonesas empezaron a llevárselo de México.»
+3. Facebook: «…y no se puede sembrar.» → «…y todavía no se ha logrado cultivar.»
+4. Threads: «y aquí no se puede sembrar: vive abrazado…» → «y todavía no se ha logrado cultivar: vive abrazado…»
+Con esto todas las afirmaciones de voz, pantalla y textos de redes quedan ✅.
+
 VEREDICTO: APROBADO

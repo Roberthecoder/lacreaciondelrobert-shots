@@ -66,4 +66,36 @@ tal cual se propusieron:
 - Escena 11: voz «Para protegerlo, la mayoría en venta lleva una capa de poliuretano, un plástico, que estorba su degradación.» → fila 21 ✅ ([ELS]: "These synthetic polymers are added to protect and or reinforce the mycelium material, but hinders the biodegradability").
 Las otras 11 líneas de voz y el resto de las escenas no cambiaron, y no hay afirmaciones nuevas. Las 30 afirmaciones quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador, que no escribió el guion ni hizo la verificación anterior. Revisé la voz (`narracion.json`), los letreros,
+tarjetas, subtítulos y dibujos de `cuero-micelio.jsx`, el `guion.md` y el `publicacion.md`. Fuentes reabiertas hoy: Frontiers (HTML
+completo), *Coatings* (PDF completo de MDPI), MaterialDistrict, FashionUnited, comunicado de EurekAlert, Global Textile Times y
+MycoStories (Ecotextile y Just Style devolvieron bloqueo de Cloudflare/403; su dato se confirmó con las otras dos).
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| Gancho «Esa cartera no es de piel de vaca: es de hongo» (hay sustitutos de cuero de hongo) | ✅ | Comunicado U. de Viena sobre Jones et al., EurekAlert | "Leather substitutes can be produced from fungi by upcycling low-cost agricultural and forestry by-products (e.g. sawdust)." | 2020 |
+| «Hasta Hermès presentó un bolso con este material en 2021» · tarjeta «Hermès + MycoWorks · bolso con micelio «Sylvania», curtido en Francia» · «también lleva lona y piel de becerro» | ✅ | MaterialDistrict, 16 mar 2021 | "teamed up with French luxury fashion house Hermès to create a high-end handbag"; "a new Fine Mycelium material called Sylvania. The material is tanned and finished in France by the Hermès tanners"; "The resulting bag Victoria also contains canvas and calfskin." | 2021 |
+| «Se cultiva micelio de hongos como *Ganoderma*…» | ✅ | Elsacker et al., *Front. Bioeng. Biotechnol.* 11:1204861 | "Ganoderma (mentioned in 5 patents) and Trametes (mentioned in 4 patents) are the most commonly listed genera in patent descriptions" | 2023 |
+| «…sobre aserrín o restos del campo» | ✅ | EurekAlert (Jones et al.) | "low-cost agricultural and forestry by-products (e.g. sawdust)" | 2020 |
+| «En un par de semanas crece un tapete…» (contador día 1 → 14) | ✅ | EurekAlert (Jones et al.) | "Within a couple of weeks, the fungal biomass can be harvested" | 2020 |
+| «Por dentro: hifas de quitina y glucanos» | ✅ | EurekAlert (Jones et al.) | "typically contain completely biodegradable chitin" … "and other polysaccharides such as glucans" | 2020 |
+| «El cuero de vaca también es una red, pero de colágeno» · «vaca: colágeno (una proteína)» | ✅ | Meyer et al., *Coatings* 11:226 (PDF) | "the animal skin is composed of collagen, a structure‐forming protein. Leather is built from intertwined fibrils and fibers, which are additionally cross‐linked by leather tanning." | 2021 |
+| «Lo ablandan con glicerina…» | ✅ | Elsacker et al. 2023 | "treated with a plasticizer, such as a 20 g/L glycerin or sorbitol solution in water, to achieve the desired softness and flexibility" | 2023 |
+| «…lo curten…» | ✅ | Elsacker et al. 2023; MaterialDistrict 2021 | "The crosslinking agents can be polycarboxylic acid, tricarboxylic acid, dicarboxylic acid, glutaraldehyde, and tannin"; "The material is tanned and finished in France" | 2023 / 2021 |
+| «…y lo prensan con calor» | ✅ | Elsacker et al. 2023 | "heat treatment ranging from 90°C to 150°C …, for example, by pressing the mycelium sheets between hot plates" | 2023 |
+| «Sin ese ablandador, se seca tieso y quebradizo» | ✅ | Elsacker et al. 2023 | "If left untreated, mycelium materials will become stiff and brittle when fully dried … Therefore, a plasticizing agent is applied to keep the sheets flexible." | 2023 |
+| «En 2021, en Freiberg, Alemania, compararon nueve alternativas con cuero de zapato» · tarjeta «Instituto FILK · Coatings, 2021» | ✅ | Meyer et al. 2021 (publicado 13 feb 2021) | "FILK Freiberg Institute gGmbH, … 09599 Freiberg, Germany"; "a shoe upper leather and an artificial leather, and nine alternative materials (Desserto®, Kombucha, Pinatex®, Noani®, Apple‐skin®, Vegea®, SnapPap®, Teak Leaf®, and Muskin®) were investigated" | 2021 |
+| «Ninguna lo igualó en todo» | ✅ | Meyer et al. 2021 | "None of the leather alternatives showed the universal performance of leather. Nevertheless, some materials achieved high values in selected properties." | 2021 |
+| «una de hongo no aguantó que la doblaran y doblaran» · «prueba de doblado: insuficiente» | ✅ | Meyer et al. 2021 | "The flex resistance of Teak Leaf®, SnapPap®, and Muskin® material was found to be insufficient for the aimed applications." Muskin: "trama, the bulk material of some mushroom fruitbodies (e.g., … Phellinus ellipsoideus)" | 2021 |
+| «Para protegerlo, la mayoría en venta lleva una capa de poliuretano, un plástico, que estorba su degradación» · escala 500 µm | ✅ | Elsacker et al. 2023 | "most mycelium products now available on the market feature some sort of PU coating that ranges in thickness from 10 to 500 μm. These synthetic polymers are added to protect and or reinforce the mycelium material, but hinders the biodegradability in a natural environment." | 2023 |
+| «Bolt Threads pausó Mylo en 2023 por falta de dinero» | ✅ | FashionUnited, 4 jul 2023 | "The production was paused after the company was unable to secure financing in order to scale up, Bolt Threads chief executive Dan Widmaier told Vogue Business" | 2023 |
+| «MycoWorks anunció en 2025 que cerraba su fábrica» · tarjeta «(Carolina del Sur): costo de capital demasiado alto» | ✅ | Global Textile Times (oct 2025); MycoStories, 19 nov 2025 | "This will result in the closure of the company's plant in South Carolina."; "cost of capital that is too high to warrant" continued operation; MycoStories: "MycoWorks is shutting its South Carolina biomanufacturing plant" | 2025 |
+| Cierre «sí es de hongo… pero muchas veces con su capita de plástico» | ✅ | Elsacker et al. 2023 | "most mycelium products now available on the market feature some sort of PU coating" | 2023 |
+| `publicacion.md` (todas las redes) | ✅ | las mismas | Repite los datos de arriba sin añadir afirmaciones nuevas; dice que Muskin sale «de un hongo de árbol» y que algunas alternativas «sí sacaron buenos valores en pruebas sueltas», ambos textuales en Meyer et al. 2021. | 2021–2025 |
+
+**Cambios hechos en esta re-verificación:** ninguno. La voz, el `.jsx`, los `.dc.html`, el `guion.md` y el `publicacion.md` quedan
+igual: todas las afirmaciones coinciden con la fuente original abierta hoy.
+
 VEREDICTO: APROBADO

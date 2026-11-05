@@ -87,4 +87,30 @@ Se aplicaron las correcciones C1–C4 (la opcional de la escena 9 no se usó). R
 - **C4** en el matraz, micelio sumergido en pellets sin esporangios; esporangios solo en el recuadro "así se ve en una superficie" y en el pan → ✅.
 - No hay afirmaciones nuevas: el texto nuevo de la ficha de la patente en `## Fuentes` del guion (cepas *R. nigricans* ATCC 6227b y *R. arrhizus* ATCC 11145) coincide con [PAT]. Las demás líneas de voz no cambiaron. Todas las filas quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segunda verificación, hecha por otro subagente que no escribió el guion ni la primera verificación. Se revisaron las 12 líneas de
+`narracion.json` (versión ya corregida), los letreros, chips y tarjetas de `cortisona.jsx` y la tabla de Fuentes del guion.
+Las fuentes se abrieron de nuevo (memoria de la NAS en su página; resúmenes de PubMed vía E-utilities de NCBI; Crossref para los
+dos artículos de 1952; página del NHS).
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| «Trae hidrocortisona, un esteroide que baja la hinchazón de una picadura» | ✅ | NHS, *Hydrocortisone for skin* | "Hydrocortisone is a type of medicine called a steroid (corticosteroid)."; "reactions to insect bites and stings"; "help reduce inflammation and swelling" | 2025 |
+| «Es la misma molécula que el cortisol que fabrica tu cuerpo» | ✅ | Timmermans et al., *Front. Immunol.* 10: 1545; PubChem CID 5754 | "endogenous GCs (cortisol/hydrocortisone)"; CID 5754 "Cortisol", sinónimo "hydrocortisone" | 2019 |
+| «Se parece a la progesterona, pero con tres oxígenos más; uno … en el carbono once» (+3 oxígenos en 11, 17, 21) | ✅ | PubChem CID 5994 y 5754 | Progesterona C21H30O2; hidrocortisona C21H30O5 (11β,17α,21-trihidroxi) | 2026 (base de datos) |
+| «uno, difícil de poner» | ✅ | Petrič et al., *J. Biotechnol.* 150: 428 (resumen, E-utilities) | "To overcome the chemically laborious stereo- and regioselective hydroxylation steps in the pharmaceutical production of corticosteroids" | 2010 |
+| «En los cuarenta, en Merck, … desde un ácido de la bilis … casi cuarenta pasos para sacar dieciocho miligramos» (tarjeta "años 40 · Merck · Lewis Sarett") | ✅ | Patchett, *Biographical Memoirs* 81, NAS (página abierta) | "nearly 40 chemical steps from desoxycholic acid"; "to produce 18 milligrams of cortisone"; "begin working in early 1942 at Merck on the synthesis of cortisone" | 2002 (hechos de 1942–1946) |
+| «En 1952, en Kalamazoo, Michigan, Durey Peterson y Herbert Murray, de la farmacéutica Upjohn, publicaron que le dieron progesterona a un moho *Rhizopus*» (tarjeta "1952 · Peterson y Murray · Upjohn · publicado en J. Am. Chem. Soc. · patente desde 1950") | ✅ | Crossref: Peterson y Murray, "Microbiological oxygenation of steroids at carbon 11", *JACS* 74: 1871–1872, doi 10.1021/ja01127a531; Peterson et al., *JACS* 74: 5933–5936, doi 10.1021/ja01143a033; patente US 2,602,769 | Comunicación de solo Peterson y Murray publicada en abril de 1952 (fechas Crossref "1952-4", págs. 1871–1872), y artículo completo en dic. 1952; la patente es "a continuation-in-part of … application … filed August 19, 1950" | 1952 / 1950 |
+| Moho del género *Rhizopus*, una enzima que pone el oxígeno en el carbono 11 «de un jalón» (chip "11α-hidroxiprogesterona · 1 paso") | ✅ | Hogg, *Steroids* 57: 593 (resumen, E-utilities) | "A common mold of the genus Rhizopus was found to introduce enzymatically an 11 alpha-hydroxyl group directly into the female hormone progesterone … a one-step solution to the known multistep alternatives for 11-oxygenation." | 1992 |
+| «enzima P450 del hongo» (letrero) | ✅ | Petrič 2010 | "Here we report for the first time the identification and expression of a fungal 11α-steroid hydroxylase, CYP509C12." | 2010 |
+| «Con unos pasos químicos más, eso acortó la ruta y bajó el costo de la cortisona» | ✅ | Fernández-Cabezón et al., *Front. Microbiol.* 9: 958; Wipperman et al. 2014 | "The incorporation of a biotransformation step with Rhizopus arrhizus … markedly reduced the number of required chemical steps … and production costs"; "followed by several chemical steps to ultimately give hydrocortisone" | 2018 / 2014 |
+| «ese moho es pariente del moho negro que le sale a tu pan» (*Rhizopus stolonifer*) | ✅ | Barros Tiburcio et al. 2025, PMC12029260 | "Rhizopus stolonifer, commonly known as black bread mold" (mismo género) | 2025 |
+| «Hoy, hongos así siguen haciendo ese paso para fabricar corticoides» | ✅ | Petrič 2010; Fernández-Cabezón 2018 | "certain fungal species, e.g. Rhizopus spp. and Aspergillus spp., are employed to perform the 11α-hydroxylation of the steroid skeleton"; "currently performed by a combination of microbiological and chemical processes" | 2010 / 2018 |
+| Gancho y cierre «no es pura química: un moho le abrió el camino» | ✅ (como historia de la ruta) | Hogg 1992; Fernández-Cabezón 2018 | Ver las dos filas de arriba: la ruta industrial es hongo + química. | 1992 / 2018 |
+| Dibujo: 11α punteado (moho), 11β en cuña (hidrocortisona), cortisona con C=O en 11; pellets sumergidos en el matraz | ✅ | PubChem CID 92730, 222786, 5754 | Ya revisado en la primera verificación; los letreros del `.jsx` ("11α-OH (moho)", "C=O (cortisona)", "11β-OH (hidrocortisona)") coinciden. | 2026 |
+
+**Cambios hechos:** ninguno. Todo quedó ✅ con fuentes abiertas de nuevo. Nota menor sin cambio: en abril de 1952 salió la comunicación
+corta de Peterson y Murray solos (*JACS* 74: 1871), lo que hace aún más exacta la frase «Peterson y Murray … publicaron» en 1952.
+
 VEREDICTO: APROBADO

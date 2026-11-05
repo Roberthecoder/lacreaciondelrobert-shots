@@ -52,4 +52,41 @@ Ninguna. Revisión del 5 nov 2026: el guionista aplicó las 4 correcciones (fila
 (filas 6 y 19); se volvieron a cotejar contra [LAPPE], [HU73] y [BROMUS], junto con `guion.md`, `narracion.json` y los bloques
 `TX` y `SUBT` de `tesguino.jsx` (fila 30), más los textos nuevos de las filas 31–32. Todas las afirmaciones quedan ✅. Falta solo medir que la voz nueva dé 61–62 s.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segunda verificación pedida por Robert antes de generar la voz, hecha por un verificador que no escribió el guion ni la primera
+verificación. Se descargaron y leyeron otra vez en texto completo la tesis de Lappe (PDF de 168 pp. del repositorio UNAM; las
+pp. 7–8 se cotejaron contra la imagen escaneada) y el artículo de Herrera y Ulloa (1973). Se revisaron las 13 líneas de
+`narracion.json`, todo el objeto `TX` de `tesguino.jsx` y `publicacion.md`.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| «Esa olla no es solo maíz con agua: es una fábrica de hongos» (levaduras fermentan en la olla) | ✅ | Lappe 1988, resumen | «las levaduras fermentadoras activas fueron las especies de *Saccharomyces*, que produjeron un incremento en el contenido de alcohol» | 1988 |
+| Etiqueta «en rarámuri: suguiki o bátari» | ✅ | Lappe 1988, p. 8 (imagen) | «el tipo más común de tesgüino, el denominado *suguiki* (maíz) o *bátari* (corteza), se elabora con granos de maíz germinados» | 1988 |
+| «Los rarámuri germinan el maíz a oscuras, varios días»; brote pálido; día 1 → día 5 | ✅ | Lappe 1988, resumen y p. 27–28 | «generalmente se hace con granos de maíz germinados en la oscuridad»; «brotes amarillentos, carentes de clorofila»; «Después de cinco días bajo tales condiciones» | 1981 (tesis 1988) |
+| «Al brotar, sus enzimas cortan el almidón en azúcar: es malta»; «enzimas (amilasas)» | ✅ | Lappe 1988 | «el ácido giberélico producido en el embrión promueve la síntesis de enzimas hidrolíticas (α-amilasa, β-amilasa, α-glucosidasa)» | 1988 |
+| «como la de la cerveza de cebada» | ✅ | Herrera y Ulloa 1973 | «un malteado de maíz»; «El aroma del tesgüino, semejante al de la cerveza de cebada» | 1973 |
+| «Lo muelen, lo cuecen y ese atole va a ollas de barro»; «metate», «se cuece por horas» | ✅ | Lappe 1988, resumen | «molidos en metate y cocidos en suficiente agua durante varias horas hasta obtener un atole amarillento que, una vez frío, se cuela. El líquido recuperado se vacía en ollas tesgüineras» | 1988 |
+| «levaduras como *Saccharomyces cerevisiae* comen azúcar y sueltan alcohol y burbujas» | ✅ | Herrera y Ulloa 1973; Lappe 1988 | Fermentación de glucosa, sacarosa y maltosa con «ácido y gas»; Lappe: CO₂ en la superficie y aumento de alcohol por *Saccharomyces* | 1973 / 1988 |
+| «también *Candida*, *Hansenula*…»; «bacterias lácticas: lo agrio» | ✅ | Lappe 1988, resumen | «*Candida guilliermondii*, *Hansenula anomala*, *Saccharomyces cerevisiae* y *S. kluyveri*»; bacterias lácticas: «A ellas se debió primordialmente la producción de ácido láctico… sabor refrescante, ligeramente ácido» | 1988 |
+| «Quien cuida las ollas lee esas burbujas»; «4 fases: cuánto burbujea y qué le agregan» (lento / rápido: pasto / leve → fuerte: atole nuevo / quieto) | ✅ | Lappe 1988, p. 28–29 | «sólo distinguieron cuatro fases, que quedaron delimitadas por el grado de producción de CO₂ en la superficie del líquido y por la adición de diversos sustratos»: «burbujeo lento»; liga «que aceleró e incrementó el proceso»; atole nuevo: «leve producción de CO₂, seguida de una producción elevada»; «cese en la producción activa del gas» | 1981 (tesis 1988) |
+| Olla tapada con lienzo blanco | ✅ | Lappe 1988, p. 28 | «las ollas tesgüineras, cubiertas con un lienzo blanco y limpio» | 1981 (tesis 1988) |
+| «Las ollas tesgüineras no se lavan: guardan levaduras de la tanda anterior» | ✅ | Lappe 1988, resumen | «las ollas tesgüineras nunca se lavan por lo que presentan adheridos a sus paredes residuos de fermentaciones previas»; del sedimento se aislaron *Brettanomyces*, *H. anomala* y *S. cerevisiae* | 1988 |
+| «En 1981, cerca de Creel, Patricia Lappe, de la UNAM…»; tarjeta «Gonogochi, cerca de Creel · tesis de 1988» | ✅ | Lappe 1988, p. 27 y portada | «elaborado a finales de octubre y principios de noviembre de 1981 en Gonogochi… a unos 10 Km al sureste de Creel». Los aislamientos se hacen de muestras frescas de esa tanda; el resultado se publicó en 1988 y la tarjeta lo dice. | 1981 / 1988 |
+| «…halló que venían sobre todo del sedimento de la olla»; «principal fuente: el sedimento» | ✅ | Lappe 1988, discusión y conclusión 2 | «La principal fuente de inóculo, de acuerdo al presente estudio, la constituye el sedimento de la olla tesgüinera»; «La principal fuente de inóculo para la fermentación se halla en la olla tesgüinera» | 1988 |
+| Chip «a las 50 h: 3.7 % de alcohol» | ✅ | Lappe 1988, Cuadro 22 y resumen | «ácido láctico, ácido acético y etanol… alcanzaron concentraciones de 0.46, 0.10 y 3.73%»; Cuadro 22: tesgüino de 50 horas, etanol 3.730 | 1981 (tesis 1988) |
+| «Y el pasto que le agregan, *Bromus*, no mostró enzimas: su papel sigue en duda»; «basiawi · *Bromus arizonicus*»; «hipótesis: ¿factores de crecimiento?» | ✅ | Lappe 1988, discusión y conclusión 3 | «En ninguno de los casos se detectó actividad enzimática (amilolítica o proteolítica), por lo que la liga posiblemente contenga las fenilaminas o los factores de crecimiento, lo que sin embargo no fue investigado» | 1988 |
+| «Para los rarámuri es bebida sagrada y pago del trabajo en comunidad» | ✅ | Lappe 1988, p. 7 (imagen) | «representa una forma de pago del trabajo comunitario (tesgüinada de trabajo), y a nivel religioso, ya que es considerado una bebida sagrada, donada a los tarahumaras por el dios *onoruame*» | 1988 |
+| «las muestras donde se describió su primera levadura las mandó a la UNAM un tal Robert»; sobre «R. Bye · Harvard → Micología · UNAM · publicado en 1973»; «R. Bye trabajaba con los rarámuri» | ✅ | Herrera y Ulloa 1973 | «Agradecemos al señor Robert Bye, de la Universidad de Harvard… quien actualmente trabaja en aspectos antropológicos de los indios tarahumares, el envío de las muestras de tesgüino»; «Este es el primer microorganismo descrito de la microflora de dicha bebida» (Laboratorio de Micología, Instituto de Biología, UNAM; «Bol. Soc. Mex. Mic. 7, dic. 1973») | 1973 |
+| Levadura ovalada con yemas, barra 5 µm | ✅ (esquemático) | Herrera y Ulloa 1973 | «de 2.5 a 8.0 × 4.0 a 10–15 µ, con brote polar o subpolar» | 1973 |
+| Cierre «…una fábrica de hongos que se hereda de tanda en tanda» | ✅ | Lappe 1988; Herrera y Ulloa 1973 | Ollas que «nunca se lavan» y sedimento como «principal fuente de inóculo»; «utilizan repetidamente los mismos utensilios y ollas de barro» | 1988 / 1973 |
+| publicacion.md (YouTube): «bebida… de varios pueblos del norte y occidente de México» | ✅ | Lappe 1988, p. 6 | grupos étnicos «del norte, noroeste, oeste y, en menor proporción, del sur de México»; «tepehuanes de Chihuahua, Durango y Nayarit, los huicholes de Jalisco» | 1988 |
+| publicacion.md (LinkedIn): «ya se describía en 1777» | ✅ | Lappe 1988, p. 7 | «según la relación Guaguachic de 1777 (en Pennington, 1963)… dicha bebida era preparada y consumida frecuentemente» | 1988 (dato de 1777) |
+| publicacion.md: resto (fermentación láctica-alcohólica, alfa y beta amilasas, Lappe siguió una tanda completa, Bye etnobotánico en Harvard) | ✅ | Lappe 1988; Herrera y Ulloa 1973 | Conclusión 4: «La fermentación es láctica - alcohólica, seguida de una alcohólica - acética»; Bye, R. A. 1976, «Ethnoecology of the Tarahumara of Chihuahua, Mexico» (tesis, Harvard) | 1973–1988 |
+
+**Cambios hechos:** ninguno. Todas las afirmaciones de la voz, la pantalla y `publicacion.md` se encontraron textuales en las
+fuentes abiertas. La tabla «## Fuentes» de `guion.md` coincide con lo verificado. Nota cultural: la grafía de los nombres
+rarámuri varía entre fuentes (*sugí*, *suwíki*, *batári*); las dos de la etiqueta están escritas así en Lappe 1988. El tono es
+respetuoso (sin nadie bebiendo en primer plano y el dato de etanol chico y fechado).
+
 VEREDICTO: APROBADO

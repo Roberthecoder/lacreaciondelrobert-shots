@@ -7,7 +7,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ### TikTok
 ```text
 Este hongo blanco no es un champiñón: es matsutake, y de México viaja a Japón. 🍄✈️
-Sale entre las hojas de pino, en bosques de pino y encino. Le dicen hongo blanco, hongo blanco de ocote o hongo canela, por su olor especiado. Su nombre científico es Tricholoma mesoamericanum (descrito en 2017).
+Sale entre las hojas de pino, en bosques de pino y encino. Le dicen hongo blanco, hongo blanco de ocote o hongo canela; su olor es intenso y especiado. Su nombre científico es Tricholoma mesoamericanum (descrito en 2017).
 En Japón, su primo Tricholoma matsutake es un manjar. A inicios de los años 40 se cosechaban unas 12,000 toneladas al año; en 2025, solo 15. El marchitamiento del pino (por un nematodo) y los bosques sin manejo acabaron con su casa.
 Por eso, en 1985, empresas japonesas empezaron a llevárselo de México. En 2022 Japón todavía importó 4 toneladas de matsutake mexicano.
 ¿Y por qué no lo siembran? Porque es micorrízico: sus hilos envuelven las raíces vivas del pino y le dan agua y minerales a cambio de azúcar. Sin árbol vivo no hay hongo: en Japón llevan décadas intentando cultivarlo, casi sin éxito.
@@ -25,7 +25,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Este hongo blanco no es un champiñón: es matsutake, y de México viaja a Japón. 🍄✈️
-Tricholoma mesoamericanum, el hongo blanco de ocote u hongo canela, sale entre las hojas de pino. En Japón su primo es un manjar, pero allá la cosecha cayó de unas 12,000 toneladas al año (inicios de los 40) a solo 15 en 2025. Desde 1985, empresas japonesas se lo llevan de México. No se cultiva: vive pegado a las raíces vivas del pino. Y en el Cofre de Perote le dicen «takechi», por un comerciante que se parecía a Takeshi, de la Señorita Cometa.
+Tricholoma mesoamericanum, el hongo blanco de ocote u hongo canela, sale entre las hojas de pino. En Japón su primo es un manjar, pero allá la cosecha cayó de unas 12,000 toneladas al año (inicios de los 40) a solo 15 en 2025. En 1985, empresas japonesas empezaron a llevárselo de México. No se cultiva: vive pegado a las raíces vivas del pino. Y en el Cofre de Perote le dicen «takechi», por un comerciante que se parecía a Takeshi, de la Señorita Cometa.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cómo le dicen a este hongo en tu región? 👇
 Shot Fungi Mati 81 · La Creación del Robert
@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Este hongo blanco no es un champiñón: es matsutake, y de México viaja a Japón. 🍄✈️ En Japón su primo es un manjar, pero allá la cosecha cayó de unas 12,000 toneladas al año (años 40) a solo 15 en 2025. Aquí crece pegado a las raíces de los pinos y no se puede sembrar. Y en el Cofre de Perote le dicen «takechi», por la Señorita Cometa.
+Este hongo blanco no es un champiñón: es matsutake, y de México viaja a Japón. 🍄✈️ En Japón su primo es un manjar, pero allá la cosecha cayó de unas 12,000 toneladas al año (años 40) a solo 15 en 2025. Aquí crece pegado a las raíces de los pinos y todavía no se ha logrado cultivar. Y en el Cofre de Perote le dicen «takechi», por la Señorita Cometa.
 ¿Cómo le dicen a este hongo en tu región? 👇
 Shot Fungi Mati 81 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -93,7 +93,7 @@ Este hongo blanco no es un champiñón: es matsutake, y de México viaja a Japó
 
 ### Threads
 ```text
-Este hongo blanco no es un champiñón: es matsutake, y de México viaja a Japón. 🍄 En Japón la cosecha cayó a solo 15 toneladas en 2025, y aquí no se puede sembrar: vive abrazado a las raíces del pino. En el Cofre de Perote le dicen «takechi». ¿Cómo le dicen en tu región?
+Este hongo blanco no es un champiñón: es matsutake, y de México viaja a Japón. 🍄 En Japón la cosecha cayó a solo 15 toneladas en 2025, y todavía no se ha logrado cultivar: vive abrazado a las raíces del pino. En el Cofre de Perote le dicen «takechi». ¿Cómo le dicen en tu región?
 Shot Fungi Mati 81 · La Creación del Robert
 #Hongos
 ```

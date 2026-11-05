@@ -60,4 +60,31 @@ Solo queda un ajuste en publicacion.md (no toca voz ni animación):
 - **Facebook Reels:** «…y hay unas 23,328 combinaciones posibles.» → «…y, según una estimación de 1966, hay unas 23,328 combinaciones posibles.»
 - **Threads:** «…y hay unas 23,328 combinaciones.» → «…y, según una estimación de 1966, hay unas 23,328 combinaciones.»
 
+## Re-verificación independiente (5 nov 2026)
+
+Tercer verificador, que no escribió el guion ni las vueltas anteriores. Se releyeron `narracion.json` (13 líneas), `guion.md`,
+los textos de `milsexos.jsx` y `publicacion.md`, y se volvieron a descargar y leer en texto completo [RF] (HTML), [CHU] (PDF de MDPI)
+y [RS04] (PDF de la *Rev. Mex. Micología*); las frases de abajo se copiaron de esos textos descargados.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| «tiene más de veintitrés mil» (contador 23,328, «estimación de Raper, 1966») | ✅ | [CHU], [RF] | [CHU]: "Raper et al. [10] estimated that S. commune has approximately nine specificities at Aα …, about 32 at Aβ, and nine at both Bα and Bβ. This diversity results in an estimated 23,328 possible mating types". 23,328 > 23,000. Es una estimación de la población mundial; el chip con año lo dice. | 1966 (reseña 2025) |
+| «La A tiene unas doscientas ochenta y ocho versiones; la B, ochenta y una» | ✅ | [CHU], [RF] | [CHU]: "natural populations containing up to 288 alleles at the A locus and 81 at the B locus". [RF]: "nine different versions of A alpha, 32 A betas and nine each of B alpha and B beta (Raper, J.R. 1966)" (9×32 = 288; 9×9 = 81). «Unas» lo presenta como aproximado. | 1966 |
+| «lo deciden dos zonas de su ADN: A y B» | ✅ | [CHU] | "multiple incompatible alleles located on two independent genetic loci … known as the A and B loci" | 2025 |
+| «Dos hifas solo hacen pareja fértil si difieren en la A y en la B» | ✅ | [RF] | "Compatibility between any two mates requires a minimal difference between either A alpha or A beta AND either B alpha or B beta." | 2004 |
+| «cada célula lleva dos núcleos y un ganchito, la fíbula, los reparte» | ✅ | [CHU], [KW] | [CHU]: "When compatible mating types meet, these monokaryotic strains can fuse to form fertile dikaryons. This fusion process is marked by the development of clamp connections". [KW] (fila 13b): "the new apical compartment contains one nucleus of each mating type". | 2025 |
+| «Con un extraño, casi siempre hay pareja; con un hermano, una de cada cuatro» (medidores «hasta 98 %», «25–30 %») | ✅ | [RF] | "Cross fertility among siblings is restricted to 25-30 percent but outbreeding is possible up to 98 percent." | 2004 (dato de Raper) |
+| «Y en México se lo comen» | ✅ | [RS04] | "Entre las orejas comestibles, Schizophyllum commune fue la preferida en toda la región (con excepción del estado de Veracruz donde no se consume)" | 2000–2002 (publ. 2004) |
+| «Entre dos mil y dos mil dos, un equipo mexicano recorrió veinticinco mercados de Oaxaca, Tabasco y Veracruz» | ✅ | [RS04], [RS06] | [RS04]: "Se visitaron veinticinco mercados en doce municipios de tres estados (Veracruz, Tabasco y Oaxaca)"; "291 personas". [RS06]: "Field work was done from 2000 to 2002". Autores de ECOSUR y UNAM. | 2000–2002 |
+| «Le dicen oreja de palo y estaba en los seis mercados que vendían hongos» | ✅ | [RS04] | "Schizophyllum commune tiene en español el mismo nombre en toda la región: "oreja de palo" u "oreja de palo mulato""; "fue la especie más frecuente ya que apareció en los seis mercados donde se encontró venta de hongos" | 2004 |
+| «Hay quien la come más de una vez por semana» (chip simultáneo «en temporada de lluvias») | ✅ | [RS04] | "Los vendedores comentan que durante su temporada, la gente lo come más de una vez por semana." «Hay quien» no generaliza y el chip en pantalla da la temporada; publicacion.md ya dice «en temporada». | 2000–2002 |
+| «en Tabasco, envuelta en hoja de plátano» (mone) | ✅ | [RS04] | "En Macuspana y Teapa, Schizophyllum commune … se preparan en "mone" … para posteriormente envolverlo en hoja de plátano y ponerlo sobre el comal o al vapor" | 2004 |
+| Abanico blanco y peludo de troncos muertos; laminillas «partidas»; seco se encoge y espera la lluvia | ✅ | [KUO], [LUC] | Filas 4–7 de arriba (sin cambios en voz ni dibujo). | 2021 |
+| publicacion.md: Facebook y Threads con «según una estimación de 1966» | ✅ | [RF] | La corrección pedida en la vuelta anterior ya está aplicada (líneas de Facebook y Threads). | 1966 |
+
+**Cambios hechos en esta re-verificación:** ninguno. Todas las afirmaciones de la voz, la pantalla y `publicacion.md` quedan ✅;
+la corrección pendiente de Facebook/Threads ya estaba aplicada. Nota: una página de divulgación vieja (Tom Volk, 2000) da «más de
+28,000» combinaciones; la cifra del shot (23,328) es la que reproducen la reseña de C. Raper (2004) y Chu et al. (2025) a partir de
+Raper (1966), así que se mantiene.
+
 VEREDICTO: APROBADO

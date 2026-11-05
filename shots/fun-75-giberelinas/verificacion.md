@@ -57,4 +57,24 @@ Fila 25: la voz y el guion ahora dicen «Muchas uvas así no crecieron solas: la
 arroz.» ✅ ([ACH]: "routinely used"; "muchas", no "todas"). Las otras 12 líneas de voz siguen igual y no hay afirmaciones nuevas.
 Todas las afirmaciones quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la primera verificación). Revisé las 13 líneas de `narracion.json`, los letreros de `giberelinas.jsx` (chips, tarjetas 1926/1935/1957/1962, "+50 a +90 %", "116 µm / 124 µm", "DELLA = freno"), los dos `.dc.html` (no conservan la frase de cierre vieja) y `publicacion.md`. Fuentes abiertas en texto completo: Hedden y Sponsel 2015 (XML completo de Europe PMC, PMC4622167), Casanova et al. 2009 (PDF de Dialnet), Peacock 2000 (PDF de UC ANR) y Shakeel et al. 2023 (XML completo, PMC10151534).
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| *Fusarium fujikuroi* causa en el arroz la "plántula boba" (bakanae) | ✅ | Hedden y Sponsel; Shakeel | "Gibberella fujikuroi (now reclassified as Fusarium fujikuroi)"; bakanae "means "bad," "kinky," or "stupid" seedling" | 2015 / 2023 |
+| Altas, flacas, amarillentas; muchas quedan estériles | ✅ | Shakeel | "Tall, gangly, and fewer tillers with yellowish green flag leaves, sterility, and grain discoloration are the characteristic symptoms"; "high sterility of spikelets" | 2023 |
+| 1926, Eiichi Kurosawa: el caldo filtrado del hongo rociado en arroz sano lo estira | ✅ | Hedden y Sponsel; Peacock | "Eiichi Kurosawa, who published a paper in 1926 showing that the symptoms of the disease could be reproduced by application of sterile fungal cultures"; "When a pure culture filtrate was sprayed onto rice seedlings, it produced the same excessive growth" | 2015 / 2000 |
+| 1935, Teijiro Yabuta la purificó y la llamó giberelina | ✅ | Hedden y Sponsel | "in 1935, the chemist Teijiro Yabuta … obtained a purified sample with high biological activity, which was called gibberellin after its fungal source" | 2015 |
+| Las plantas también la hacen; destruye proteínas que frenan el crecimiento; la célula se estira | ✅ | Hedden y Sponsel | "they induce the degradation of the growth-inhibiting DELLA proteins"; "Internode growth is promoted through enhanced cell elongation" | 2015 |
+| Sin semillas, la uva trae poca giberelina y suele quedarse chica | ✅ | Casanova et al. | "the application of GA3 compensates for the low gibberellins berry concentrations"; "their small size represents a problem for commercialization" | 2009 |
+| Estudio publicado en 2009 en España: rociadas con ácido giberélico pesaron de 50 a 90 % más | ✅ (es el resultado principal del estudio, con 80 mg/L del cuajado a 21 días después; la pantalla dice "según el año") | Casanova et al. | "80 mg L–1 GA3 increased commercial berry weight by 50%-90%, depending on the year"; "Treatments were sprayed by handgun on whole vines"; "grown at Novelda, Alicante" | 2009 |
+| No tenían más células: células más grandes (116 → 124 µm) | ✅ | Casanova et al. | "GA3 does not affect berry pericarp cell number but increases pericarp cell diameter"; "treated berries averaged 124 µm diameter" | 2009 |
+| Hoy se fabrica criando el mismo hongo en tanques, como la penicilina | ✅ | Peacock; Wang 2022 (resumen PubMed, ver arriba) | "commercially produced by mass cultures of selected fungus strains and with fermentation and purification, similar to the way penicillin is produced" | 2000 / 2022 |
+| 1957 Weaver (UC Davis); para 1962 casi todas las Thompson Seedless de mesa de California se rociaban | ✅ | Peacock | "by 1962, only five years after the first testing was done at Davis, nearly all Thompson Seedless for table fruit in California were being sprayed at berry set with gibberellin" | 2000 |
+| Cierre: "Muchas uvas así no crecieron solas…" | ✅ | Acheampong et al. 2017 (fila 25) | "GA application is routinely used in the table grape industry to increase berry size" | 2017 |
+
+**Cambios hechos:** ninguno. Las dos correcciones de la primera verificación (chip de Kurosawa y frase de cierre con "muchas") ya están aplicadas en `narracion.json`, `guion.md`, el `.jsx` y `publicacion.md`. Todo queda ✅.
+
 VEREDICTO: APROBADO
