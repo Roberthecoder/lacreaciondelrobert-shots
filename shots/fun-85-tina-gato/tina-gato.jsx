@@ -1,4 +1,4 @@
-// Shot Fungi Mati #85 · Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato — NARRADO (N1 Por dentro + N2 El número).
+// Shot Fungi Mati #85 · Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato — NARRADO (N1 Por dentro + N2 El número).
 // La tiña (ringworm), Microsporum canis. Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico ni veterinario.
 
 const TG = { naranja:'#f29a3a', naranja2:'#c8661c', crema:'#ffe3b8', rosa:'#ff8fa3', piel:'#f2c29b', piel2:'#e3a983', anillo:'#d63a3a', anillo2:'#f07a6e',

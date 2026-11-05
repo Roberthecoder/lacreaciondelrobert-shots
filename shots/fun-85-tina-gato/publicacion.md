@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati 85 · Ese anillo rojo no es un gusano: es un hongo que te pasó tu gato
+# Publicación · Shot Fungi Mati 85 · Ese anillo rojo no es un gusano: es un hongo que te pudo pasar tu gato
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
@@ -6,7 +6,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 
 ### TikTok
 ```text
-Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato. 🍄🐱
+Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato. 🍄🐱
 Es la tiña. En inglés le dicen ringworm, "gusano de anillo", solo por la forma de la roncha, que da comezón. La roncha crece hacia afuera y el centro muchas veces se aclara.
 Al microscopio, sus hifas se alimentan de queratina: la de tu pelo y la capa de afuera de tu piel. Según las guías veterinarias de 2013, más del 90 % de las tiñas de gato en el mundo son de Microsporum canis ("canis" quiere decir "de perro", pero su anfitrión natural es el gato). Sus esporas forman un manguito por fuera del pelo y se pegan muy fuerte a la queratina.
 ¿Y si tu gato se ve sano? Muchos gatos adultos lo cargan sin síntomas. Con luz ultravioleta (lámpara de Wood), muchos pelos infectados brillan verde manzana por una sustancia llamada pteridina, pero no todos brillan.
@@ -24,7 +24,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Instagram Reels
 ```text
-Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato. 🍄🐱
+Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato. 🍄🐱
 Es la tiña ("ringworm" en inglés, por la forma de la roncha). Sus hifas se alimentan de queratina y sus esporas forran el pelo por fuera. Según guías veterinarias de 2013, más del 90 % de las tiñas de gato son de Microsporum canis, y muchos gatos adultos lo cargan sin síntomas. En un estudio de 2016 en la Ciudad de México, 43 de 57 tiñas humanas de origen animal eran de este hongo. Sus esporas viajan en el polvo y aguantan un año o más. Lo que sí sirve: veterinario para el gato, lavarte las manos, aspirar y desinfectar su cama. Tu gato no tiene la culpa: los dos se curan.
 El dibujo es esquemático. No es consejo médico ni veterinario. Fuentes en el primer comentario.
 ¿Tu gato o tú ya han tenido tiña? 👇
@@ -36,11 +36,11 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese anillo rojo NO es un gusano: es un hongo que te pasó tu gato 🐱🍄 | Shot Fungi Mati 85
+Ese anillo rojo NO es un gusano: es un hongo que te pudo pasar tu gato 🐱🍄 | Shot Fungi Mati 85
 ```
 Descripción:
 ```text
-Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato.
+Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato.
 Es la tiña. El CDC explica que la causan hongos, no un gusano, y que su nombre en inglés (ringworm, "gusano de anillo") viene de la roncha en forma de anillo que da comezón. La roncha crece hacia afuera y, al avanzar, el centro muchas veces se aclara (American Family Physician, 2018).
 Al microscopio, estos hongos (dermatofitos) se alimentan de queratina: la del pelo y la de la capa de afuera de la piel. Según las guías ABCD de 2013, más del 90 % de las tiñas de gato en el mundo son de Microsporum canis. Por fuera del pelo, sus esporas forman un manguito (ectótrix) y se pegan muy fuerte a la queratina. Muchos gatos adultos son portadores sin síntomas.
 Con luz ultravioleta (lámpara de Wood), muchos pelos infectados con M. canis brillan verde manzana por una sustancia llamada pteridina, pero no todos brillan: que no brille no quiere decir que esté sano.
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato. 🐱🍄 Es la tiña: sus esporas forran el pelo, viajan en el polvo y aguantan un año o más. Muchos gatos adultos la cargan sin síntomas. Lo que sí sirve: veterinario para el gato, lavarte las manos, aspirar y desinfectar su cama. Tu gato no tiene la culpa: los dos se curan.
+Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato. 🐱🍄 Es la tiña: sus esporas forran el pelo, viajan en el polvo y aguantan un año o más. Muchos gatos adultos la cargan sin síntomas. Lo que sí sirve: veterinario para el gato, lavarte las manos, aspirar y desinfectar su cama. Tu gato no tiene la culpa: los dos se curan.
 No es consejo médico ni veterinario.
 ¿Tu gato o tú ya han tenido tiña? 👇
 Shot Fungi Mati 85 · La Creación del Robert
@@ -91,7 +91,7 @@ Ese anillo rojo no es un gusano: es un hongo (tiña) y te lo pudo pasar tu gato.
 
 ### Threads
 ```text
-Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato. 🐱🍄 Muchos gatos lo cargan sin síntomas, y con luz UV algunos pelos brillan verde manzana (no todos). Lo que sí sirve: veterinario, lavarte las manos, aspirar y desinfectar su cama. ¿Tu gato o tú ya han tenido tiña?
+Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato. 🐱🍄 Muchos gatos lo cargan sin síntomas, y con luz UV algunos pelos brillan verde manzana (no todos). Lo que sí sirve: veterinario, lavarte las manos, aspirar y desinfectar su cama. ¿Tu gato o tú ya han tenido tiña?
 Shot Fungi Mati 85 · La Creación del Robert
 #Hongos
 ```
