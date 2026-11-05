@@ -159,7 +159,6 @@ function LavarShot() {
   const flota = T > K.G + 0.55 ? Math.sin((T - K.G) * 3) * 6 * Math.exp(-(T - K.G - 0.55) * 0.6) : 0;
   const champY = klerp(260, 850, caida) + flota;
   const moja = kprog(T, K.G + 0.6, K.G + 3.2, kEase.suave);
-  const pesoBlanco = Math.round(250 + 1 * kprog(T, K.Ce + 0.8, K.Ce + 2.2));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el champiñón cae al tazón; la esponja sí se empapa */}
@@ -189,19 +188,19 @@ function LavarShot() {
       <Escena T={T} a={K.E} b={K.Ce} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Bascula x={540} y={900} valor={T < K.E + 3.4 ? '250 g' : '¿después?'} />
+          <Bascula x={540} y={900} valor={T < K.E + 3.4 ? 'antes' : '¿después?'} />
           {[[-140, 0, LV.blanco, 0.1], [-60, -10, LV.cafe, 0.1], [20, 0, LV.portob, 1], [100, -6, '#9a6a44', 0.9]].map(([dx, dy, c, ab], i) =>
             <Champinon key={i} x={540 + dx} y={892 + dy} s={0.42} crece={kprog(T, K.E + 2.4 + i * 0.15, K.E + 2.9 + i * 0.15)} abre={ab} sombrero={c} />)}
           {/* seis tipos de hongos probados (íconos) */}
           {[LV.blanco, LV.cafe, LV.portob, '#8a5a3a', '#c9c3b6', '#a7895e'].map((c, i) => { const on = kprog(T, K.E + 4.0 + i * 0.1, K.E + 4.3 + i * 0.1, kEase.rebote);
-            return on > 0 ? <g key={i} transform={`translate(${150 + i * 156} 1150) scale(${on})`}><circle r={46} fill={c} stroke={KC.ink} strokeWidth={6} /></g> : null; })}
+            return on > 0 ? <g key={i} transform={`translate(${150 + i * 156} 1095) scale(${on})`}><circle r={46} fill={c} stroke={KC.ink} strokeWidth={6} /></g> : null; })}
         </>)}
       </Escena>
       {/* 4 · laminillas tapadas: casi nada de agua */}
       <Escena T={T} a={K.Ce} b={K.Ex} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Bascula x={330} y={960} w={460} valor={`${pesoBlanco} g`} />
+          <Bascula x={330} y={960} w={460} valor={T < K.Ce + 1.6 ? 'después' : '≈ igual'} />
           <Champinon x={330} y={954} s={1.05} crece={1} abre={0.1} />
           <Perlas x={330} y={970} s={1.05} pts={PERLAS} />
           <VistaAbajo x={790} y={830} r={150} velo={1} />
@@ -294,7 +293,7 @@ function LavarShot() {
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 3.6} anio="2018" quien="America's Test Kitchen (EE. UU.)" revista="prueba publicada en 2018" x={540} y={620} />
       <Chip T={T} at={K.E + 3.6} until={K.Ce - 0.3} texto="pesar · 1 min en agua · pesar" x={540} y={520} tam={38} borde={KC.ink} />
       <Cronometro T={T} at={K.E + 3.8} until={K.Ce - 0.3} factor={33} x={540} y={680} etiqueta="SUMERGIDOS" />
-      <Etq T={T} at={K.E + 4.4} until={K.Ce - 0.3} x={60} y={1070} texto="6 tipos de hongos" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.E + 4.4} until={K.Ce - 0.3} x={670} y={960} texto="6 tipos de hongos" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Ce + 0.3} until={K.Ex - 0.3} texto="laminillas tapadas" x={330} y={470} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Ce + 0.8} until={K.Ex - 0.3} x={60} y={590} texto="champiñón blanco" tam={32} color={KC.texto} />
       <Etq T={T} at={K.Ce + 1.1} until={K.Ex - 0.3} x={60} y={640} texto="Agaricus bisporus" it tam={32} color={KC.texto} />

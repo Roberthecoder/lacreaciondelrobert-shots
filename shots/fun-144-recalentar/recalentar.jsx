@@ -307,14 +307,14 @@ function RecalentarShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Microondas T={T} x={470} y={900} on={1} gira={gira} display="0:45" />
-          <Vapor T={T} x={420} y={660} o={0.9} />
+          <Microondas T={T} x={470} y={960} on={1} gira={gira} display="0:45" />
+          <Vapor T={T} x={420} y={720} o={0.9} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.Ab - 0.3} texto="¿veneno?" x={300} y={560} tam={64} />
-      <Chip T={T} at={K.G + 2.6} until={K.Ab - 0.3} texto="el peligro: horas tibio" x={330} y={690} tam={40} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.Ab - 0.3} texto="¿veneno?" x={300} y={520} tam={64} />
+      <Chip T={T} at={K.G + 2.6} until={K.Ab - 0.3} texto="el peligro: horas tibio" x={330} y={630} tam={40} borde={KC.red} />
       <Etq T={T} at={K.G + 1.0} until={K.Ab - 0.3} x={60} y={1290 - 70} texto="champiñón · Agaricus bisporus" tam={26} color={KC.ink} />
       <Globo T={T} at={K.Ab + 0.3} until={K.Or - 0.3} x={420} y={700} w={600} texto="«Los hongos no se recalientan»" tam={50} />
       <Sello T={T} at={K.Ab + 2.2} x={200} y={560} texto="MITO" color={KC.red} r={95} />
@@ -332,7 +332,7 @@ function RecalentarShot() {
       <Chip T={T} at={K.To + 0.5} until={K.Ca - 0.3} texto="ejemplo: arroz" x={720} y={1060} tam={30} borde={KC.yellow} />
       <Etq T={T} at={K.To + 1.3} until={K.En - 0.3} x={400} y={720} texto="cereulida · toxina del vómito" tam={28} color={RC.toxina2} />
       <NumeroGigante T={T} at={K.To + 2.3} until={K.Ca - 0.3} valor={121} dur={2.0} sufijo=" °C" x={420} y={530} tam={120} color={KC.red} />
-      <Chip T={T} at={K.To + 4.4} until={K.Ca - 0.3} texto="30 min a 121 °C: sigue intacta" x={540} y={830} tam={34} borde={RC.toxina} />
+      <Chip T={T} at={K.To + 4.4} until={K.Ca - 0.3} texto="30 min a 121 °C: sigue intacta" x={400} y={420} tam={34} borde={RC.toxina} />
       <Chip T={T} at={K.Ca + 0.4} until={K.En - 0.3} texto="bacterias: mueren" x={540} y={440} tam={40} borde={RC.bac} />
       <Chip T={T} at={K.Ca + 1.4} until={K.En - 0.3} texto="toxina ya hecha: se queda" x={540} y={540} tam={40} borde={RC.toxina} />
       <NumeroGigante T={T} at={K.En + 0.2} until={K.Rf - 0.3} valor={2} dur={0.4} sufijo=" h" etiqueta="al refri antes de" x={330} y={560} tam={170} color={KC.yellow} />
@@ -345,8 +345,8 @@ function RecalentarShot() {
       <Chip T={T} at={K.Rc + 3.3} until={K.Ar - 0.3} texto="1 sola vez" x={330} y={620} tam={44} borde={KC.gold} />
       <Etq T={T} at={K.Rc + 3.5} until={K.Ar - 0.3} x={60} y={700} texto="Verbraucherzentrale Bremen, 2025" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Ar + 0.2} until={K.C - 0.3} texto="todas las sobras" x={340} y={500} tam={48} borde={KC.ink} />
-      <MitoTachado T={T} at={K.C + 0.1} tacharEn={K.C + 0.5} until={K.Ou} texto="¿veneno?" x={300} y={470} tam={52} />
-      {['2 h · al refri', '≤ 4 °C · 24 h', '74 °C · 1 vez'].map((t, i) => <Chip key={i} T={T} at={K.C + 1.0 + i * 0.5} until={K.Ou} texto={t} x={300} y={580 + i * 84} tam={34} borde={[KC.yellow, KC.cyan, KC.red][i]} />)}
+      <MitoTachado T={T} at={K.C + 0.1} tacharEn={K.C + 0.5} until={K.Ou} texto="¿veneno?" x={300} y={450} tam={52} />
+      {['2 h · al refri', '≤ 4 °C · 24 h', '74 °C · 1 vez'].map((t, i) => <Chip key={i} T={T} at={K.C + 1.0 + i * 0.5} until={K.Ou} texto={t} x={300} y={545 + i * 70} tam={30} borde={[KC.yellow, KC.cyan, KC.red][i]} />)}
       <Etq T={T} at={K.C + 2.6} until={K.Ou} x={60} y={1500} texto="Reglas generales de inocuidad. Dibujo esquemático." tam={22} color={KC.ink} />
 
       {/* barras de escala */}
@@ -373,7 +373,7 @@ function RecalentarShot() {
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Lo peligroso es *dejarlos tibios.*" />
 
       <Robert T={T} apariciones={[
-        [K.G - 0.45, K.G + 3.0, 'avatar_11_sorprendido', 'gancho'],
+        [K.G - 0.45, K.G + 2.7, 'avatar_11_sorprendido', 'gancho'],
         [K.Ab + 0.2, K.Or - 0.2, 'avatar_02_apuntando_camara', 'arriba-der'],
         [K.Bq + 0.2, K.Tb - 0.2, 'avatar_06_pensativo_menton', 'izq-alto'],
         [K.P + 0.05, K.To + 0.1, 'avatar_07_pensativo_puno', 'grande'],

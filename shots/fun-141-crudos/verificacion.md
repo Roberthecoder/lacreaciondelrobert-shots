@@ -48,3 +48,12 @@ Resultado de la ronda 1: 25 ✅, 1 ⚠️ (#9), 0 ❌.
 | 0 | Voz, escena Gancho (solo estilo, para compensar palabras) | «…Porque ese champiñón de tu ensalada no es lo mismo que una morilla cruda.» | «…Porque el champiñón de tu ensalada no es igual que una morilla cruda.» | Mismo sentido (fila 26 ✅). |
 
 Pendiente: re-verificación independiente de las filas 9, 9b, 19 y 19b (las que cambiaron de texto). Hasta entonces el shot no lleva veredicto.
+
+## Re-verificación de lo corregido (coordinador del lote, no escribió el guion; 5 nov 2026)
+- «Cocinar la baja: en Praga, en 2002, freír cinco minutos en aceite otro champiñón de cultivo le quitó dos tercios.» ✅ Schulzová et al. 2002 (*Food Addit. Contam.*): tras freír 5 min en aceite la agaritina se redujo al 34.3 % (≈ dos tercios menos), medido en *Agaricus hortensis* comprado en Praga; la frase ya no lo atribuye a *A. bisporus*.
+- «En Francia, entre 2010 y 2020, se reportaron cuatrocientos cuarenta y seis casos solo por morillas.» ✅ Vodovar et al. 2024 (*Clin Toxicol* 62(6):391–395): "We found 446 cases of exposure in which morels were the sole mushroom species involved" (base nacional de intoxicaciones, 2010–2020).
+- Gancho reescrito («¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda.»): sin afirmaciones nuevas; ✅ con las filas de champiñón crudo y morilla cruda de la tabla.
+
+Todas las afirmaciones del texto final: ✅.
+
+VEREDICTO: APROBADO

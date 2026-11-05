@@ -260,7 +260,7 @@ function CrudosShot() {
       <Escena T={T} a={K.P} b={K.Mo} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Morilla x={300} y={1180} s={1.45} rot={Math.sin(T * 3) * 4} corte={kprog(T, K.P + 0.9, K.P + 1.5)} id="p" />
+          <Morilla x={300} y={1220} s={1.4} rot={Math.sin(T * 3) * 4} corte={kprog(T, K.P + 0.9, K.P + 1.5)} id="p" />
         </>)}
       </Escena>
       {/* 7–9 · Montana 2023: sushi con morillas crudas o apenas cocidas; 51 enfermos */}
@@ -297,7 +297,7 @@ function CrudosShot() {
       <Escena T={T} a={K.F} b={K.Sh}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <MapaFrancia x={540} y={760} s={1.25} />
+          <MapaFrancia x={540} y={800} s={1.2} />
           {Array.from({ length: 40 }, (_, i) => { const on = kprog(T, K.F + 2.6 + i * 0.05, K.F + 2.8 + i * 0.05); const g = krng(i + 7);
             return on > 0 ? <circle key={i} cx={640 + g() * 260} cy={850 + g() * 300} r={9 * on} fill={KC.red} stroke={KC.ink} strokeWidth={2} /> : null; })}
         </>)}
@@ -342,10 +342,11 @@ function CrudosShot() {
       <Chip T={T} at={K.G3 + 3.8} until={K.S - 0.3} texto="la agaritina, no el hongo" x={330} y={700} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 2.9} anio="2002" quien="Praga, Chequia" revista="Schulzová et al., Food Addit. Contam." x={540} y={470} />
       <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1110} texto="otro champiñón de cultivo: Agaricus hortensis" it tam={31} color={KC.ink} />
-      <Cronometro T={T} at={K.S + 3.0} until={K.S + 5.6} factor={300 / 3.2} x={300} y={500} etiqueta="FRITO EN ACEITE" />
+      <Cronometro T={T} at={K.S + 3.0} until={K.S + 5.6} factor={300 / 3.2} x={300} y={505} />
+      <Chip T={T} at={K.S + 3.0} until={K.S + 5.6} texto="frito en aceite" x={300} y={432} tam={26} borde={KC.yellow} />
       <Medidor T={T} at={K.S + 3.0} until={K.P - 0.3} x={60} y={590} ancho={600} etiqueta="agaritina que queda" valor={(t) => klerp(1, 0.343, kprog(t, K.S + 3.1, K.S + 5.6, kEase.suave))} texto={(v) => Math.round(v * 100) + ' %'} color={KC.yellow} />
-      <Etq T={T} at={K.P + 0.3} until={K.Mo - 0.2} x={60} y={470} texto="morilla" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.P + 0.6} until={K.Mo - 0.2} x={60} y={530} texto="Morchella" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.P + 0.3} until={K.Mo - 0.2} x={60} y={450} texto="morilla" tam={44} color={KC.ink} />
+      <Etq T={T} at={K.P + 0.6} until={K.Mo - 0.2} x={60} y={510} texto="Morchella" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.P + 1.2} until={K.Mo - 0.2} x={60} y={1260} texto="hueca por dentro" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Mo + 0.2} until={K.E - 0.3} anio="2023" quien="Bozeman, Montana (EE. UU.)" revista="CDC · MMWR, 2024" x={540} y={490} />
       <Chip T={T} at={K.Mo + 2.0} until={K.E - 0.3} texto="crudas" x={830} y={1010} tam={36} borde={KC.red} />
@@ -357,7 +358,7 @@ function CrudosShot() {
       <Etq T={T} at={K.Cr + 0.6} until={K.Cu - 0.3} x={620} y={1160} texto="cocidas o a medias" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Cu + 0.2} until={K.F - 0.3} texto="morillas de cultivo · importadas" x={330} y={760} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Cu + 2.0} until={K.F - 0.3} texto="toxina: no identificada" x={540} y={1340} tam={36} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.F + 0.2} until={K.F + 2.6} anio="2010–2020" quien="centros antitóxicos de Francia" revista="Vodovar et al., Clin. Toxicol., 2024" x={540} y={520} />
+      <TarjetaEstudio T={T} at={K.F + 0.2} until={K.F + 2.6} anio="Francia" quien="2010–2020 · centros antitóxicos" revista="Vodovar et al., Clin. Toxicol., 2024" x={540} y={520} />
       <NumeroGigante T={T} at={K.F + 2.6} until={K.Sh - 0.3} valor={446} dur={1.8} etiqueta="casos reportados" x={330} y={520} tam={170} color={KC.red} />
       <Chip T={T} at={K.F + 3.2} until={K.Sh - 0.3} texto="solo morillas" x={330} y={700} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Sh + 0.4} until={K.C - 0.3} x={560} y={760} texto="shiitake" tam={44} color={KC.ink} />
