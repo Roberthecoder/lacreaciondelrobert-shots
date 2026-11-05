@@ -76,10 +76,10 @@ function Bicapa({ T, x, y, w = 900, ergo = false, n = 7, quitados = [], salida =
   const paso = 34, k = Math.floor(w / paso);
   return <g>
     {Array.from({ length: k }, (_, i) => <g key={i} transform={`translate(0 ${Math.sin(i * 1.7 + T * 2) * 3 * (1 + debil * 3)})`}>
-      <Lipido x={x + i * paso + 17} y={y} arriba={false} color={color} /><Lipido x={x + i * paso + 17} y={y + 124} arriba color={color} />
+      <Lipido x={x + i * paso + 17} y={y} arriba color={color} /><Lipido x={x + i * paso + 17} y={y + 124} arriba={false} color={color} />
     </g>)}
     {Array.from({ length: n }, (_, i) => { const q = quitados.indexOf(i), sal = q >= 0 ? kclamp(salida * 1.6 - q * 0.15, 0, 1) : 0;
-      return <Esterol key={i} x={x + 40 + i * (w - 120) / (n - 1)} y={y + 52 - sal * 170} s={0.42} rot={90} color={ergo ? AF.ergo : AF.col} ergo={ergo} o={1 - sal * 0.2} />; })}
+      return <Esterol key={i} x={x + 40 + i * (w - 120) / (n - 1)} y={y + 14 - sal * 170} s={0.5} rot={90} color={ergo ? AF.ergo : AF.col} ergo={ergo} o={1 - sal * 0.2} />; })}
   </g>;
 }
 // Célula esquemática con núcleo (ADN) y organelos. pared = 0..1 (fibras de glucano y quitina alrededor).
@@ -186,9 +186,9 @@ function AntifungicosShot() {
         {fsvg((() => { const p1 = kprog(T, K.Ar + 0.1, K.Ar + 0.9), p2 = kprog(T, K.Ar + 0.8, K.Ar + 1.6), p3 = kprog(T, K.Ar + 1.5, K.Ar + 2.4);
           const L = (x1, y1, x2, y2, p) => <line x1={x1} y1={y1} x2={klerp(x1, x2, p)} y2={klerp(y1, y2, p)} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />;
           return <>
-            {L(360, 1150, 360, 1040, p1)}{L(360, 1040, 130, 860, p2)}{L(360, 1040, 450, 930, p2)}
+            {L(360, 1150, 360, 1040, p1)}{L(360, 1040, 110, 900, p2)}{L(360, 1040, 450, 930, p2)}
             {L(450, 930, 300, 730, p3)}{L(450, 930, 600, 730, p3)}
-            {p2 >= 1 && <g transform="translate(130 850)"><path d="M 0 0 L 0 -90" stroke="#3fbf4a" strokeWidth={10} /><ellipse cx={-30} cy={-70} rx={34} ry={16} fill="#3fbf4a" stroke={KC.ink} strokeWidth={4} transform="rotate(-25 -30 -70)" /><ellipse cx={30} cy={-90} rx={34} ry={16} fill="#3fbf4a" stroke={KC.ink} strokeWidth={4} transform="rotate(25 30 -90)" /></g>}
+            {p2 >= 1 && <g transform="translate(110 890)"><path d="M 0 0 L 0 -90" stroke="#3fbf4a" strokeWidth={10} /><ellipse cx={-30} cy={-70} rx={34} ry={16} fill="#3fbf4a" stroke={KC.ink} strokeWidth={4} transform="rotate(-25 -30 -70)" /><ellipse cx={30} cy={-90} rx={34} ry={16} fill="#3fbf4a" stroke={KC.ink} strokeWidth={4} transform="rotate(25 30 -90)" /></g>}
             {p3 >= 1 && <Seta x={300} y={720} s={0.9} crece={kprog(T, K.Ar + 2.4, K.Ar + 3.0)} />}
             {p3 >= 1 && <g transform={`translate(600 720) scale(${kEase.rebote(kprog(T, K.Ar + 2.5, K.Ar + 3.0))})`}><circle cx={0} cy={-130} r={34} fill={AF.piel} stroke={KC.ink} strokeWidth={6} /><rect x={-36} y={-92} width={72} height={92} rx={26} fill={KC.blue} stroke={KC.ink} strokeWidth={6} /></g>}
             {T > K.Ar + 3.0 && <path d={`M 300 540 Q 450 ${470 - 20 * Math.sin(T * 3)} 600 540`} stroke={KC.pink} strokeWidth={8} fill="none" strokeDasharray="16 12" />}
@@ -199,12 +199,12 @@ function AntifungicosShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
-          <Celula T={T} x={290} y={860} r={200} color="rgba(255,138,31,.16)" borde={AF.col} brillo={kprog(T, K.Ce + 0.6, K.Ce + 1.0) * (1 - kprog(T, K.Po, K.Po + 0.5))} seed={4} />
-          <Celula T={T} x={790} y={860} r={200} brillo={kprog(T, K.Ce + 0.6, K.Ce + 1.0) * (1 - kprog(T, K.Po, K.Po + 0.5))} seed={7} />
+          <Celula T={T} x={290} y={900} r={180} color="rgba(255,138,31,.16)" borde={AF.col} brillo={kprog(T, K.Ce + 0.6, K.Ce + 1.0) * (1 - kprog(T, K.Po, K.Po + 0.5))} seed={4} />
+          <Celula T={T} x={790} y={900} r={180} brillo={kprog(T, K.Ce + 0.6, K.Ce + 1.0) * (1 - kprog(T, K.Po, K.Po + 0.5))} seed={7} />
           {T > K.Po + 0.2 && (() => { const [ox, oy] = OBJ[iObj], hit = kprog(T, K.Po + 0.3 + iObj, K.Po + 0.75 + iObj);
             return <>
-              <Diana x={790 + ox} y={860 + oy} r={58} o={0.9} s={klerp(1.4, 1, kEase.sale(hit))} />
-              {hit > 0.6 && <Diana x={290 + ox} y={860 + oy} r={58} o={0.5} color={KC.gold} />}
+              <Diana x={790 + ox} y={900 + oy} r={58} o={0.9} s={klerp(1.4, 1, kEase.sale(hit))} />
+              {hit > 0.6 && <Diana x={290 + ox} y={900 + oy} r={58} o={0.5} color={KC.gold} />}
             </>; })()}
         </>)}
       </Escena>
@@ -248,8 +248,8 @@ function AntifungicosShot() {
           <g opacity={1 - azolStop}><Esterol x={700} y={690} s={0.55} color={AF.ergo} ergo /></g>
           <Azol x={klerp(360, 360, 1)} y={klerp(480, 655, kprog(T, K.Az + 0.8, K.Az + 1.3, kEase.sale))} s={1.1} rot={T * 40 * (1 - azolStop)} />
           {/* membrana del hongo y esponja */}
-          <Bicapa T={T} x={90} y={930} w={900} ergo n={7} quitados={[2, 3, 4]} salida={kprog(T, K.Az + 2.4, K.Az + 3.8)} debil={kprog(T, K.Az + 2.8, K.Az + 4)} />
-          <Esponja T={T} x={540} y={klerp(1300, 800, kprog(T, K.Az + 2.0, K.Az + 2.6, kEase.sale))} s={1.1} o={kprog(T, K.Az + 2.0, K.Az + 2.3)} />
+          <Bicapa T={T} x={90} y={930} w={900} ergo n={7} quitados={[4, 5, 6]} salida={kprog(T, K.Az + 2.4, K.Az + 3.8)} debil={kprog(T, K.Az + 2.8, K.Az + 4)} />
+          <Esponja T={T} x={820} y={klerp(1300, 850, kprog(T, K.Az + 2.0, K.Az + 2.6, kEase.sale))} s={1.1} o={kprog(T, K.Az + 2.0, K.Az + 2.3)} />
         </>)}
       </Escena>
       {/* 8 · pared: β-glucano y quitina; equinocandinas frenan la glucano sintasa */}
@@ -271,9 +271,9 @@ function AntifungicosShot() {
             <circle cx={130 + 545 * 1.05} cy={420 + 315 * 1.05} r={16} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
             <circle cx={130 + 520 * 1.05} cy={420 + 170 * 1.05} r={16} fill={KC.blue} stroke={KC.ink} strokeWidth={4} />
             {jar > 0 && jar < 1 && <FrascoVidrio x={klerp(130 + 545 * 1.05, 130 + 520 * 1.05, jar)} y={klerp(420 + 300 * 1.05, 420 + 150 * 1.05, jar) - Math.sin(jar * Math.PI) * 80} s={0.6} rot={Math.sin(jar * 12) * 10} />}
-            {Array.from({ length: 8 }, (_, i) => <Tubo key={i} x={110 + i * 66} y={1150} s={0.9} on={kEase.rebote(kprog(T, K.Es + 0.6 + i * 0.12, K.Es + 0.9 + i * 0.12))} tierra={['#7a4a22', '#5b3a22', '#8a5a2a', '#6a4426'][i % 4]} />)}
-            {T > K.Es + 4.3 && <Streptomyces x={600} y={1000} s={0.9} p={kprog(T, K.Es + 4.3, K.Es + 5.6)} />}
-            {T > K.Es + 6.3 && <g transform="translate(560 1120)"><Esterol x={0} y={0} s={0.8} color={AF.ergo} ergo /><g transform={`translate(${klerp(260, 120, kprog(T, K.Es + 6.4, K.Es + 7.2, kEase.sale))} -20)`}><rect x={0} y={-12} width={130} height={24} rx={12} fill={AF.amb} stroke={KC.ink} strokeWidth={4} /></g></g>}
+            {Array.from({ length: 7 }, (_, i) => <Tubo key={i} x={730 + i * 48} y={1150} s={0.9} on={kEase.rebote(kprog(T, K.Es + 0.6 + i * 0.12, K.Es + 0.9 + i * 0.12))} tierra={['#7a4a22', '#5b3a22', '#8a5a2a', '#6a4426'][i % 4]} />)}
+            {T > K.Es + 4.3 && <Streptomyces x={540} y={960} s={0.75} p={kprog(T, K.Es + 4.3, K.Es + 5.6)} />}
+            {T > K.Es + 6.3 && <g transform="translate(200 1100)"><Esterol x={0} y={0} s={0.8} color={AF.ergo} ergo /><g transform={`translate(${klerp(260, 120, kprog(T, K.Es + 6.4, K.Es + 7.2, kEase.sale))} -20)`}><rect x={0} y={-12} width={130} height={24} rx={12} fill={AF.amb} stroke={KC.ink} strokeWidth={4} /></g></g>}
           </>; })())}
       </Escena>
       {/* 10 · 2023: la anfotericina también jala colesterol de células de riñón; AM-2-19 no */}
@@ -283,8 +283,8 @@ function AntifungicosShot() {
         {fsvg((() => { const nueva = kprog(T, K.Ri + 4.6, K.Ri + 5.4);
           return <>
             <Rinon x={180} y={560} s={1.1} alerta={kprog(T, K.Ri + 1.6, K.Ri + 2.2) * (1 - nueva)} />
-            <Bicapa T={T} x={90} y={760} w={900} n={7} color="#ffb27a" quitados={nueva > 0 ? [] : [1, 3, 5]} salida={kprog(T, K.Ri + 0.6, K.Ri + 2.0) * (1 - nueva)} />
-            <g opacity={1 - nueva}><Esponja T={T} x={540} y={660} s={1.0} /></g>
+            <g opacity={1 - nueva}><Bicapa T={T} x={90} y={760} w={900} n={7} color="#ffb27a" quitados={nueva > 0 ? [] : [1, 3, 5]} salida={kprog(T, K.Ri + 0.6, K.Ri + 2.0) * (1 - nueva)} /></g>
+            <g opacity={1 - nueva}><Esponja T={T} x={540} y={680} s={1.0} /></g>
             <g opacity={nueva}><Bicapa T={T} x={90} y={1040} w={900} n={7} ergo quitados={[1, 3, 5]} salida={kprog(T, K.Ri + 5.4, K.Ri + 6.6)} /><Esponja T={T} x={540} y={960} s={1.0} color={KC.cyan} /></g>
           </>; })())}
       </Escena>
@@ -311,51 +311,51 @@ function AntifungicosShot() {
       </Escena>
 
       {/* capítulos chicos */}
-      <Capitulo T={T} caps={[{ at: K.Me, titulo:'MEMBRANA' }, { at: K.Pa, titulo:'PARED' }, { at: K.Es + 6.2, titulo:'POLIENOS' }]} hasta={K.Ri - 0.1} x={40} y={330} />
+      <Capitulo T={T} caps={[{ at: K.Me, titulo:'MEMBRANA' }, { at: K.Pa, titulo:'PARED' }, { at: K.Es, titulo:'POLIENOS' }]} hasta={K.Ri - 0.1} x={40} y={330} />
 
       {/* textos */}
       <Etq T={T} at={K.G + 1.0} until={K.Ar - 0.3} x={120} y={640} texto="moho (un hongo)" tam={34} color={KC.ink} />
       <Etq T={T} at={K.G + 1.4} until={K.Ar - 0.3} x={500} y={760} texto="tú" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Ar + 1.0} until={K.Ce - 0.3} x={60} y={700} texto="plantas" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ar + 2.5} until={K.Ce - 0.3} x={160} y={500} texto="hongos" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ar + 2.6} until={K.Ce - 0.3} x={560} y={520} texto="animales" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ar + 1.0} until={K.Ce - 0.3} x={20} y={700} texto="plantas" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ar + 2.5} until={K.Ce - 0.3} x={230} y={640} texto="hongos" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ar + 2.6} until={K.Ce - 0.3} x={650} y={670} texto="animales" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ar + 3.0} until={K.Ce - 0.3} texto="grupos hermanos" x={450} y={430} tam={34} borde={KC.pink} />
       <Chip T={T} at={K.Ce + 0.1} until={K.Fa - 0.3} texto="POR DENTRO" x={330} y={440} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ce + 0.3} until={K.Fa - 0.3} x={150} y={620} texto="tu célula" tam={32} color={AF.col} />
-      <Etq T={T} at={K.Ce + 0.5} until={K.Fa - 0.3} x={430} y={580} texto="célula del hongo" tam={32} color={AF.lipido} />
-      <Chip T={T} at={K.Ce + 0.8} until={K.Po - 0.1} texto="las dos: con núcleo" x={540} y={1110} tam={34} borde={KC.lilac} />
-      {[0, 1, 2].map((i) => <Chip key={i} T={T} at={K.Po + 0.75 + i} until={i < 2 ? K.Po + 1.7 + i : K.Fa - 0.3} texto={`${OBJ[i][2]}: ✗ también tú`} x={540} y={1110} tam={34} borde={KC.red} />)}
+      <Etq T={T} at={K.Ce + 0.3} until={K.Fa - 0.3} x={150} y={680} texto="tu célula" tam={32} color={AF.col} />
+      <Etq T={T} at={K.Ce + 0.5} until={K.Fa - 0.3} x={560} y={680} texto="célula del hongo" tam={32} color={AF.lipido} />
+      <Chip T={T} at={K.Ce + 0.8} until={K.Po - 0.1} texto="las dos: con núcleo" x={540} y={1130} tam={34} borde={KC.lilac} />
+      {[0, 1, 2].map((i) => <Chip key={i} T={T} at={K.Po + 0.75 + i} until={i < 2 ? K.Po + 1.7 + i : K.Fa - 0.3} texto={`${OBJ[i][2]}: ✗ también tú`} x={540} y={1130} tam={34} borde={KC.red} />)}
       <NumeroGigante T={T} at={K.Fa + 0.2} until={K.Pr - 0.3} valor={5} dur={0.5} etiqueta="familias de antifúngicos" x={850} y={860} tam={220} color={KC.yellow} />
       <Chip T={T} at={K.Fa + 0.4} until={K.Pr - 0.3} texto="aprobadas para infecciones graves · OMS 2025" x={540} y={470} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Fa + 2.4} until={K.Pr - 0.3} x={640} y={1060} texto="4 de uso clínico" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Fa + 2.4} until={K.Pr - 0.3} x={600} y={1090} texto="4 de uso clínico" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Me + 0.6} until={K.Az - 0.3} x={60} y={590} texto="tu membrana: colesterol" tam={32} color="#ffb27a" />
       <Etq T={T} at={K.Me + 2.2} until={K.Az - 0.3} x={60} y={910} texto="la del hongo: ergosterol" tam={32} color={AF.ergo} />
       <Chip T={T} at={K.Me + 3.0} until={K.Az - 0.3} texto="casi igual, con unos átomos distintos" x={540} y={1160} tam={30} borde={AF.ergo} />
       <Etq T={T} at={K.Az + 0.3} until={K.Pa - 0.3} x={60} y={560} texto="fábrica de ergosterol" tam={28} color={AF.ergo} />
       <Etq T={T} at={K.Az + 1.0} until={K.Pa - 0.3} x={410} y={470} texto="azol" tam={32} color={AF.azol} />
-      <Chip T={T} at={K.Az + 1.5} until={K.Pa - 0.3} texto="enzima 14-α-desmetilasa: frenada" x={400} y={800} tam={26} borde={AF.azol} />
-      <Etq T={T} at={K.Az + 2.4} until={K.Pa - 0.3} x={640} y={780} texto="anfotericina B" tam={30} color={AF.amb} />
+      <Chip T={T} at={K.Az + 1.5} until={K.Pa - 0.3} texto="enzima 14-α-desmetilasa: frenada" x={360} y={815} tam={26} borde={AF.azol} />
+      <Etq T={T} at={K.Az + 2.4} until={K.Pa - 0.3} x={560} y={770} texto="anfotericina B" tam={30} color={AF.amb} />
       <Etq T={T} at={K.Pa + 0.4} until={K.Es - 0.3} x={110} y={760} texto="tú: sin pared" tam={28} color={AF.col} />
-      <Etq T={T} at={K.Pa + 1.0} until={K.Es - 0.3} x={560} y={620} texto="β-glucano" tam={30} color={AF.glucano} />
-      <Etq T={T} at={K.Pa + 1.3} until={K.Es - 0.3} x={560} y={665} texto="quitina" tam={30} color={AF.quitina} />
-      <Etq T={T} at={K.Pa + 2.0} until={K.Es - 0.3} x={760} y={1140} texto="equinocandina → glucano sintasa" tam={26} color={KC.pink} lado="izq" />
+      <Etq T={T} at={K.Pa + 1.0} until={K.Es - 0.3} x={560} y={560} texto="β-glucano" tam={30} color={AF.glucano} />
+      <Etq T={T} at={K.Pa + 1.3} until={K.Es - 0.3} x={560} y={605} texto="quitina" tam={30} color={AF.quitina} />
+      <Etq T={T} at={K.Pa + 2.0} until={K.Es - 0.3} x={830} y={1160} texto="equinocandina → glucano sintasa" tam={26} color={KC.pink} lado="izq" />
       <Chip T={T} at={K.Pa + 3.0} until={K.Es - 0.3} texto="quitina: aún sin medicamento que funcione bien" x={540} y={470} tam={26} borde={AF.quitina} />
-      <Etq T={T} at={K.Es + 0.4} until={K.Es + 4.0} x={600} y={1210} texto="ciudad de Nueva York" tam={24} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.Es + 0.6} until={K.Es + 4.0} x={760} y={540} texto="Albany" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 4.1} anio="1950" quien="Hazen y Brown" revista="Depto. de Salud del Edo. de Nueva York · Science, 1950" x={420} y={940} />
-      <Etq T={T} at={K.Es + 4.6} until={K.Ri - 0.3} x={600} y={850} texto="Streptomyces noursei" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.4} until={K.Es + 4.0} x={680} y={800} texto="ciudad de Nueva York" tam={24} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.Es + 0.6} until={K.Es + 4.0} x={640} y={560} texto="Albany" lado="izq" tam={26} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 4.1} anio="1950" quien="Hazen y Brown" revista="Depto. de Salud del Edo. de Nueva York · Science, 1950" x={400} y={990} />
+      <Etq T={T} at={K.Es + 4.6} until={K.Ri - 0.3} x={520} y={870} texto="Streptomyces noursei" lado="izq" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.Es + 5.2} until={K.Ri - 0.3} texto="nistatina = New York State" x={540} y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Es + 6.6} until={K.Ri - 0.3} x={560} y={1050} texto="se pega al ergosterol" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Es + 6.6} until={K.Ri - 0.3} x={180} y={1040} texto="se pega al ergosterol" tam={26} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Ri + 2.2} until={K.Ri + 4.5} anio="2023" quien="U. de Illinois" revista="Nature, 2023" x={540} y={1040} />
       <Etq T={T} at={K.Ri + 0.3} until={K.Ri + 4.5} x={300} y={470} texto="célula de riñón" tam={30} color="#ffb27a" />
-      <Etq T={T} at={K.Ri + 1.0} until={K.Ri + 4.5} x={640} y={600} texto="jala colesterol" tam={30} color={AF.amb} />
-      <Etq T={T} at={K.Ri + 4.9} until={K.Di - 0.3} x={640} y={900} texto="AM-2-19" tam={34} color={KC.cyan} />
-      <Chip T={T} at={K.Ri + 5.4} until={K.Di - 0.3} texto="en ratones y células de riñón en laboratorio" x={540} y={640} tam={26} borde={KC.cyan} />
-      <Chip T={T} at={K.Ri + 6.0} until={K.Di - 0.3} texto="todavía no es medicamento" x={540} y={730} tam={28} borde={KC.yellow} />
-      <NumeroGigante T={T} at={K.Di + 0.3} until={K.Ci - 0.3} valor={4} dur={1.4} etiqueta="antifúngicos nuevos" x={540} y={600} tam={220} color={KC.pink} />
-      <Chip T={T} at={K.Di + 0.8} until={K.Ci - 0.3} texto="aprobados 2014–2024 · OMS 2025" x={540} y={1180} tam={28} borde={KC.ink} />
+      <Etq T={T} at={K.Ri + 1.0} until={K.Ri + 4.5} x={620} y={700} texto="jala colesterol" tam={30} color={AF.amb} />
+      <Etq T={T} at={K.Ri + 4.9} until={K.Di - 0.3} x={640} y={965} texto="AM-2-19" tam={34} color={KC.cyan} />
+      <Chip T={T} at={K.Ri + 5.4} until={K.Di - 0.3} texto="en ratones y células de riñón en laboratorio" x={540} y={790} tam={26} borde={KC.cyan} />
+      <Chip T={T} at={K.Ri + 6.0} until={K.Di - 0.3} texto="todavía no es medicamento" x={540} y={870} tam={28} borde={KC.yellow} />
+      <NumeroGigante T={T} at={K.Di + 0.3} until={K.Ci - 0.3} valor={4} dur={1.4} etiqueta="antifúngicos nuevos" x={360} y={660} tam={220} color={KC.pink} />
+      <Chip T={T} at={K.Di + 0.8} until={K.Ci - 0.3} texto="aprobados 2014–2024 · OMS 2025" x={380} y={470} tam={28} borde={KC.ink} />
       <Etq T={T} at={K.Ci + 1.0} until={K.Ou} x={70} y={560} texto="ergosterol · β-glucano · quitina" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 1.6} until={K.Ou} x={640} y={760} texto="colesterol ✓ tuyo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 1.6} until={K.Ou} x={560} y={1420} texto="colesterol ✓ tuyo" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={60} y={1520} texto="El dibujo es esquemático. No es consejo médico." tam={22} color={KC.ink} />
 
       {/* barras de escala */}
@@ -391,7 +391,7 @@ function AntifungicosShot() {
         [K.Pr + 0.05, K.Me + 0.3, 'avatar_07_pensativo_puno', 'grande'],
         [K.Az + 0.5, K.Pa - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.Es + 0.4, K.Es + 4.6, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [K.Ri + 0.4, K.Ri + 5.8, 'avatar_11_sorprendido', 'arriba-der'],
+        [K.Ri + 0.4, K.Ri + 5.2, 'avatar_11_sorprendido', 'arriba-der'],
         [K.Di + 0.3, K.Ci - 0.1, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.Ci + 0.5, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="bioquimica" num="154" hasta={K.Ou} />

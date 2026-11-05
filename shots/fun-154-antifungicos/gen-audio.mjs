@@ -47,7 +47,7 @@ for (let i = 0; i < 3; i++) m.burbuja(Az + 2.5 + i * 0.3, 0.12, 700);           
 m.whoosh(Pa + 0.2, 1.1, 0.08);                                                  // aparece la pared
 m.golpe(Pa + 2.4, 0.3, 80);                                                     // equinocandina tapa la sintasa
 m.sube(Pa + 2.6, 1.2, 60, 50, 0.04);                                            // la pared se adelgaza
-for (let i = 0; i < 8; i++) m.tic(Es + 0.6 + i * 0.12, 0.12, 900 + i * 60);     // 8 tubos de tierra
+for (let i = 0; i < 7; i++) m.tic(Es + 0.6 + i * 0.12, 0.12, 900 + i * 60);     // 7 tubos de tierra
 for (let i = 0; i < 4; i++) m.metal(Es + 2.4 + i * 0.3, 0.06, 1500 + i * 120);  // frasco de vidrio por correo
 m.sube(Es + 4.3, 1.3, 55, 64, 0.04);                                            // crece la bacteria
 m.golpe(Es + 7.0, 0.25, 110);                                                   // la nistatina se pega

@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** bioquímica (ADN + matraz: el tema es la química de los antifúngicos) · **Badge:** #154 · rama `claude/fun-150-154-quimica`.
 - **Formato:** N1 · POR DENTRO (con piezas de N3: tres "blancos" numerados como capítulos chicos 1 · 2 · 3). Viaje: caja Petri con moho junto a tu mano → por dentro (célula del hongo vs. tu célula, membranas, pared) → la misma caja Petri y la misma mano, ahora con las tres "dianas" marcadas.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" en su variante de comparación directa sobre lo que se ve («Para un medicamento, ese hongo y tú son casi lo mismo»): la mano y el moho, lado a lado, con un signo "≈" entre los dos.
-- **Duración:** voz 999 caracteres / 173 palabras (≈ 58 s a la velocidad de fun-59) + cierre 3–3.5 s → **61–62 s** en la base.
+- **Duración:** voz 999 caracteres / 173 palabras; base estimada 57.7 s de voz + cierre 3.7 s → **61.4 s** (`assets/mezcla.wav` · 61.40 s). Con la voz real, `narrar.mjs` recorre las escenas; el cierre (3.7 s) se puede mover entre 3.5 y 4 s para quedar en 61–62 s.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** de química y de evolución, sin miedo ni consejo médico. No se repiten shots viejos: nada de pie de atleta (#08), uñas (#35), *Candida* (#34) ni *C. auris*; el foco es **por qué es químicamente difícil** matar a un hongo sin dañarte. El ergosterol ya salió en #13 (vitamina D) solo como provitamina; aquí es el blanco del medicamento.
 
@@ -34,22 +34,22 @@ Aviso en pantalla (pequeño, al final): «No es consejo médico.»
 
 ## Robert en pantalla
 
-Tiempos estimados de la base (≈ 17.3 caracteres/s; con la voz real se recorren solos). Grande en «¿Entonces cómo le atinan?».
+Tiempos de la base (`Shot Antifungicos base narrada.dc.html`, total 61.40 s; con la voz real se recorren solos). Grande en «¿Entonces cómo le atinan?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.3 | 11_sorprendido | `gancho` | «ese hongo y tú son casi lo mismo» (cuadro 0) |
-| 2 | 5.5 | 8.6 | 13_senalando_arriba | `arriba-der` | «el moho es más pariente tuyo que de una planta» |
-| 3 | 11.2 | 14.3 | 10_serio_molesto | `arriba-der` | «pocos blancos que dañen al hongo y no a ti» |
-| 4 | 18.8 | 21.6 | 07_pensativo_puno | `grande` | «¿Entonces cómo le atinan?» |
-| 5 | 25.0 | 29.3 | 13_senalando_arriba | `arriba-izq` | «la anfotericina B se lo arranca» |
-| 6 | 34.4 | 38.6 | 04_bajando_lentes | `arriba-der` | «Elizabeth Hazen y Rachel Brown… probaron cientos de muestras de tierra» |
-| 7 | 44.0 | 49.5 | 11_sorprendido | `arriba-der` | «también jala tu colesterol… daña células de riñón» |
-| 8 | 52.0 | 54.7 | 12_perfil_serio | `arriba-der` | «solo cuatro antifúngicos nuevos» |
-| 9 | 55.0 | 59.0 | 02_apuntando_camara | `arriba-der` | «ese hongo y tú son casi lo mismo» (regreso) |
-| — | 59.0 | 62.0 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.0 | 2.9 | 11_sorprendido | `gancho` | «ese hongo y tú son casi lo mismo» (cuadro 0) |
+| 2 | 5.4 | 10.5 | 13_senalando_arriba | `arriba-der` | «el moho es más pariente tuyo que de una planta» · «células con núcleo» |
+| 3 | 11.0 | 13.9 | 10_serio_molesto | `arriba-der` | «pocos blancos que dañen al hongo y no a ti» |
+| 4 | 18.5 | 20.5 | 07_pensativo_puno | `grande` | «¿Entonces cómo le atinan?» |
+| 5 | 24.9 | 28.7 | 13_senalando_arriba | `arriba-der` | «la anfotericina B se lo arranca» |
+| 6 | 34.1 | 38.3 | 04_bajando_lentes | `arriba-der` | «Elizabeth Hazen y Rachel Brown… probaron cientos de muestras de tierra» |
+| 7 | 42.6 | 47.4 | 11_sorprendido | `arriba-der` | «también jala tu colesterol… daña células de riñón» |
+| 8 | 50.4 | 52.9 | 12_perfil_serio | `arriba-der` | «solo cuatro antifúngicos nuevos» |
+| 9 | 53.5 | 57.6 | 02_apuntando_camara | `arriba-der` | «ese hongo y tú son casi lo mismo» (regreso) |
+| — | 57.7 | 61.4 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **≈ 32.6 s** en pantalla (+ cierre 3 s) · 7 poses distintas (11, 13, 10, 07, 04, 12, 02) · nunca la misma dos veces seguidas · nunca tapa membranas, etiquetas ni subtítulos (en Azoles cambia a la izquierda porque la esponja ocupa la derecha).
+Apariciones 9 · **≈ 32.3 s** en pantalla (+ cierre 3.7 s) · 7 poses distintas (11, 13, 10, 07, 04, 12, 02) · nunca la misma dos veces seguidas · revisado cuadro por cuadro con `motor/preview.mjs`: no tapa membranas, etiquetas ni subtítulos.
 
 ## Fuentes (cada dato abierto en su texto original el 5 nov 2026)
 

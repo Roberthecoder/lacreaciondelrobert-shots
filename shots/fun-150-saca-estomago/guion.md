@@ -4,7 +4,7 @@
 - **Logo:** bioquímica (ADN + matraz), porque el tema es la química de las enzimas (`motor/kit/logo.mjs`). Si el coordinador prefiere, biología (ADN).
 - **Formato:** N1 · POR DENTRO (macro → micro → macro): una tortilla con moho en tu cocina → por dentro (hifa, enzimas como tijeras, moléculas) → la misma tortilla, ya "digerida" alrededor del moho.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera.»
-- **Duración:** voz 928 caracteres / 167 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
+- **Duración:** voz 928 caracteres / 167 palabras (≈ 58 s) + cierre 3.5 s → **61.6 s** en la base (`Shot Estomago base narrada.dc.html`; la versión sin voz dura 61.6 s).
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **Foco:** la QUÍMICA de la digestión externa (osmotrofia), no la especie. Ya hay shots de moho de pan (*Rhizopus*, 002), "qué es un hongo" (fun-01), cortar el moho (fun-11) y moho del baño (fun-33): aquí no se repite el ciclo de esporas ni el "se tira o se corta".
 - **Matiz que se respeta:** el estudio de 1991 vio la glucoamilasa solo en las puntas; el propio estudio de 1991 (colonia de 5 días) y revisiones posteriores (Cairns et al. 2018) muestran que la secreción también puede ocurrir en zonas más céntricas de la colonia. Por eso la voz dice **«sobre todo en la punta»** y el estudio se cuenta como lo que *ellos* vieron.
@@ -34,22 +34,22 @@ Barra de escala: 2 cm (tortilla), 10 µm (hifa y almidón; ancho de hifa 5–10 
 
 ## Robert en pantalla
 
-Tiempos de la base (estimados a ~3 palabras/s; con la voz real se recorren solos). Grande en «¿Pero cómo saben que las suelta en la punta?».
+Tiempos de la base (escenas de `Shot Estomago base narrada.dc.html`, 61.6 s; con la voz real se recorren solos). Grande (`grande`, medio cuerpo arriba del subtítulo) en «¿Pero cómo saben que las suelta en la punta?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «la está digiriendo por fuera» (cuadro 0) |
-| 2 | 5.0 | 8.5 | 13_senalando_arriba | `arriba-der` | «es como si lo sacara» |
-| 3 | 15.5 | 19.5 | 04_bajando_lentes | `arriba-der` | «tijeras químicas, una para cada cosa» |
-| 4 | 24.5 | 28.5 | 12_perfil_serio | `arriba-der` | «la hifa las absorbe» |
-| 5 | 29.2 | 32.4 | 07_pensativo_puno | `presentador` (grande) | «¿Pero cómo saben…?» |
-| 6 | 38.5 | 42.5 | 06_pensativo_menton | `arriba-der` | «marcaron con oro su glucoamilasa» |
-| 7 | 43.0 | 47.0 | 11_sorprendido | `arriba-der` | «apareció en la punta…» |
-| 8 | 47.5 | 51.5 | 02_apuntando_camara | `arriba-der` | «tú también usas ese truco» |
-| 9 | 53.0 | 57.8 | 13_senalando_arriba | `arriba-der` | «la digiere por fuera» |
-| — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | cierre |
+| 2 | 5.0 | 8.1 | 13_senalando_arriba | `bajo-der` | «es como si lo sacara» |
+| 3 | 14.7 | 18.8 | 04_bajando_lentes | `izq-alto` | «tijeras químicas, una para cada cosa» |
+| 4 | 24.6 | 29.2 | 12_perfil_serio | `izq-alto` | «la hifa las absorbe» |
+| 5 | 29.5 | 32.6 | 07_pensativo_puno | `grande` | «¿Pero cómo saben…?» |
+| 6 | 39.4 | 43.6 | 06_pensativo_menton | `bajo-der` | «marcaron con oro su glucoamilasa» |
+| 7 | 44.2 | 47.8 | 11_sorprendido | `izq-alto` | «apareció en la punta…» |
+| 8 | 48.3 | 52.3 | 02_apuntando_camara | `arriba-der` | «tú también usas ese truco» |
+| 9 | 53.5 | 58.0 | 13_senalando_arriba | `arriba-der` | «la digiere por fuera» |
+| — | 58.1 | 61.6 | 02_apuntando_camara | CierreMarca | cierre |
 
-Apariciones 9 · **≈ 34.5 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas. Nunca tapa la hifa, las tijeras ni el subtítulo (si estorba, pasa a `arriba-izq`).
+Apariciones 9 · **≈ 34.3 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas. Nunca tapa la hifa, las tijeras, las etiquetas ni el subtítulo (por eso cambia de lado según la escena).
 
 ## Fuentes (cada una se abrió el 5 nov 2026; frase textual copiada del texto)
 
