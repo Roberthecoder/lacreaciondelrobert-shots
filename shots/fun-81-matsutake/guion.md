@@ -96,3 +96,5 @@ Apariciones 9 · **31.8 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas ·
    > Importación de Japón desde México: 8 t (2019), 6 t (2020), 4 t (2021), 4 t (2022) → chip «2022: 4 t de México a Japón» (por eso se puede decir que sigue viajando a Japón).
 
 El dibujo es esquemático.
+
+_Estado: verificado (VEREDICTO: APROBADO) y revisado cuadro por cuadro el 5 nov 2026; listo para render._
