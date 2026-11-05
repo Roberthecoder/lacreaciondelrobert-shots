@@ -38,7 +38,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y para qu�
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.3 | 11_sorprendido | `gancho` | «tiene más de veintitrés mil» (cuadro 0) |
+| 1 | 0.0 | 4.9 | 11_sorprendido | `gancho` | «tiene más de veintitrés mil» (cuadro 0) |
 | 2 | 9.8 | 13.4 | 13_senalando_arriba | `arriba-der` | «seco, se encoge y espera la lluvia» |
 | 3 | 18.6 | 22.6 | 04_bajando_lentes | `arriba-der` | «doscientas ochenta y ocho… ochenta y una» |
 | 4 | 26.9 | 31.0 | 06_pensativo_menton | `arriba-der` | «un ganchito, la fíbula, los reparte» |
@@ -49,7 +49,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y para qu�
 | 9 | 53.9 | 58.0 | 02_apuntando_camara | `arriba-der` | «también llega al plato» |
 | — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **33.5 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · una vez grande (#5).
+Apariciones 9 · **35.1 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · una vez grande (#5).
 Robert nunca tapa el contador, las ruedas, las etiquetas ni el subtítulo (va arriba a la derecha; en escenas 4 y 9 se espera a que entre el número o la tarjeta).
 
 ## Fuentes (abiertas en texto completo el 5 nov 2026)

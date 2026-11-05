@@ -516,7 +516,7 @@ function OrquideaShot() {
       <Subtitulo T={T} idx={9} at={K.Es + 0.1} until={K.Re - 0.1} texto="UNAM: *de vuelta al Pedregal.*" />
       <Subtitulo T={T} idx={10} at={K.Re + 0.1} until={K.Va - 0.1} texto="Seis años: *cerca de la mitad.*" />
       <Subtitulo T={T} idx={11} at={K.Va + 0.1} until={K.C - 0.1} texto="La vainilla *también es orquídea.*" />
-      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Un bosque *esperando a su hongo.*" />
+      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Un bosque *esperando su hongo.*" />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 2.8, 'avatar_11_sorprendido', 'gancho'],

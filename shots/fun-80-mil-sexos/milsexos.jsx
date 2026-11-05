@@ -33,7 +33,7 @@ const TXT = {
   quien: 'Ruán-Soto, Garibay-Orijel y Cifuentes',
   revista: 'UNAM · ECOSUR · Rev. Mex. Micología, 2004',
   entrevistas: '25 mercados · 291 personas',
-  estados: [['VERACRUZ', -96.7, 19.3], ['OAXACA', -96.4, 17.15], ['TABASCO', -92.5, 17.35]],
+  estados: [['VERACRUZ', -96.9, 19.6], ['OAXACA', -96.4, 17.15], ['TABASCO', -92.5, 17.35]],
   orejaPalo: 'oreja de palo',
   orejaMulato: 'u «oreja de palo mulato»',
   seisChip: 'en los 6 mercados con hongos',
@@ -171,6 +171,29 @@ function Paquete({ abierto = 1, s = 1, pHongos = 1, pSofrito = 1, T = 0 }) {
     </g>}
   </g>;
 }
+// Pastilla de texto legible en celular (fondo oscuro). Opcional: puntero {lx, ly, px, py} = línea desde la pastilla hasta lo que señala.
+function Pastilla({ T, at, until, x, y, texto, tam = 34, it = false, color = KC.texto, borde = 'rgba(0,0,0,0)', centro = false, puntero }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube'), l = kprog(T, at, at + 0.45, kEase.sale);
+  return <>
+    {puntero && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:40, opacity:e.o, overflow:'visible' }}>
+      <line x1={puntero.lx} y1={puntero.ly} x2={klerp(puntero.lx, puntero.px, l)} y2={klerp(puntero.ly, puntero.py, l)} stroke={KC.ink} strokeWidth={9} strokeLinecap="round" />
+      <line x1={puntero.lx} y1={puntero.ly} x2={klerp(puntero.lx, puntero.px, l)} y2={klerp(puntero.ly, puntero.py, l)} stroke={KC.texto} strokeWidth={4} strokeLinecap="round" />
+      {l >= 1 && <circle cx={puntero.px} cy={puntero.py} r={10} fill={KC.texto} stroke={KC.ink} strokeWidth={4} />}
+    </svg>}
+    <div style={{ position:'absolute', left:x, top:y, zIndex:42, opacity:e.o, transform:`translate(${centro ? '-50%' : '0'}, -50%) translateY(${e.y * 0.4}px)`,
+      background:'rgba(14,15,18,.84)', border:`3px solid ${borde}`, borderRadius:16, padding:'6px 16px 8px', font:`800 ${tam}px/1.15 ${KF.texto}`, fontStyle: it ? 'italic' : 'normal', color, whiteSpace:'nowrap' }}>{texto}</div>
+  </>;
+}
+// Medidor con letra grande (la del kit es chica para celular).
+function MedidorG({ T, at, until, valor, etiqueta, texto, x = 90, y = 740, ancho = 900, color = KC.mint }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube'), v = kclamp(valor(T), 0, 1);
+  return <div style={{ position:'absolute', left:x, top:y, width:ancho, zIndex:42, opacity:e.o, transform:`translateY(${e.y * 0.5}px)` }}>
+    <div style={{ display:'flex', justifyContent:'space-between', font:`900 40px ${KF.texto}`, color:KC.texto, marginBottom:10 }}><span>{etiqueta}</span><span style={{ color }}>{texto}</span></div>
+    <div style={{ height:40, borderRadius:20, background:'rgba(255,255,255,.12)', border:`4px solid ${KC.texto}`, overflow:'hidden' }}><div style={{ width:`${v * 100}%`, height:'100%', background:color }}></div></div>
+  </div>;
+}
 // Subtítulo con *dorado* y _cursiva_ (para los nombres científicos).
 function SubIt({ T, at, until, texto, idx, color = KC.gold2, tam = 62 }) {
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
@@ -247,8 +270,8 @@ function MilSexosShot() {
           {ABS.map(([px, py, k, r], i) => <Abanico key={i} T={T} x={TRON.x + px} y={TRON.y + 20 + py} s={k} rot={r} seed={i + 1} seco={i === 2 ? 1 - abreGota : 0} />)}
           {caeGota < 1 && <path d="M 0 -26 Q 11 0 0 11 Q -11 0 0 -26 Z" transform={`translate(${TRON.x + 430} ${klerp(380, TRON.y - 40, caeGota * caeGota)})`} fill="#7fd0ff" stroke={KC.ink} strokeWidth={3} />}
           {T < K.G + 1.4 && <g opacity={1 - kprog(T, K.G + 1.1, K.G + 1.4)}>
-            <SimbSexo x={170} y={500} tipo="f" s={kEase.rebote(kprog(T, K.G, K.G + 0.3))} color={KC.pink} />
-            <SimbSexo x={400} y={520} tipo="m" s={kEase.rebote(kprog(T, K.G + 0.1, K.G + 0.4))} color={KC.blue} />
+            <SimbSexo x={170} y={500} tipo="f" s={1 + 0.06 * Math.sin(T * 9)} color={KC.pink} />
+            <SimbSexo x={400} y={520} tipo="m" s={1 + 0.06 * Math.sin(T * 9 + 1)} color={KC.blue} />
             <path d="M 70 640 L 520 400" stroke={KC.red} strokeWidth={22} strokeLinecap="round" strokeDasharray="520" strokeDashoffset={520 * (1 - kprog(T, K.G + 0.6, K.G + 0.9))} />
           </g>}
           <Plato x={850} y={1090} s={0.9} p={kprog(T, K.G + 3.6, K.G + 4.0)} />
@@ -269,7 +292,7 @@ function MilSexosShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           <Laminillas T={T} x={470} y={1120} R={370} seco={seco} />
-          <Sol x={560} y={610} T={T} p={kprog(T, K.L + 0.3, K.L + 0.7) * (1 - kprog(T, K.L + 2.2, K.L + 2.6))} />
+          <Sol x={590} y={690} T={T} p={kprog(T, K.L + 0.3, K.L + 0.7) * (1 - kprog(T, K.L + 2.2, K.L + 2.6))} />
           <Lluvia T={T} t0={K.L + 2.3} t1={K.L + 3.7} x0={80} x1={660} y0={420} y1={1100} />
         </>)}
       </Escena>
@@ -395,7 +418,7 @@ function MilSexosShot() {
             <g transform="translate(540 1030)"><Paquete T={T} abierto={kprog(T, K.M + 0.1, K.M + 0.7, kEase.sale) * (1 - dobla)} s={1.05} pHongos={kprog(T, K.M + 0.8, K.M + 1.8)} pSofrito={kprog(T, K.M + 1.9, K.M + 2.8)} /></g>
             {T > K.M + 3.4 && [0, 1, 2].map((i) => { const u = ((T - K.M - 3.4) * 0.6 + i / 3) % 1; return <path key={i} d={`M ${470 + i * 70} ${950 - u * 260} q 22 -30 0 -60 q -22 -30 0 -60`} stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.6 * Math.sin(u * Math.PI)} />; })}
             {/* calendario: más de una vez por semana */}
-            <g transform="translate(70 560)" opacity={kprog(T, K.M + 0.6, K.M + 1.0)}>
+            <g transform="translate(70 545)" opacity={kprog(T, K.M + 0.6, K.M + 1.0)}>
               <rect x={0} y={0} width={560} height={150} rx={20} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
               <rect x={0} y={0} width={560} height={40} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
               {TXT.dias.map((d, i) => <g key={i}><text x={40 + i * 80} y={95} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>{d}</text>
@@ -417,42 +440,42 @@ function MilSexosShot() {
 
       {/* ---------- textos ---------- */}
       <NumeroGigante T={T} at={K.G + 1.2} until={K.H - 0.3} valor={TXT.numero} dur={1.6} x={300} y={480} tam={150} color={KC.pink} />
-      <Etq T={T} at={K.G + 1.6} until={K.H - 0.3} x={40} y={600} texto={TXT.numEtq[0]} tam={24} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.9} until={K.H - 0.3} x={40} y={640} texto={TXT.numEtq[1]} tam={24} color={KC.ink} />
-      <Chip T={T} at={K.G + 3.5} until={K.H - 0.3} texto={TXT.comen} x={290} y={725} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={370} texto={TXT.comun} tam={46} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.3} until={K.L - 0.3} x={60} y={420} texto={TXT.cient} it tam={42} color={KC.ink} />
-      <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto={TXT.tam} x={790} y={860} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.H + 2.8} until={K.L - 0.3} x={560} y={960} texto={TXT.pegado} tam={24} color={KC.ink} />
-      <Etq T={T} at={K.L + 0.2} until={K.S - 0.3} x={60} y={430} texto={TXT.laminas} tam={40} color={KC.ink} />
-      <Chip T={T} at={K.L + 1.0} until={K.L + 2.4} texto={TXT.seco} x={300} y={690} tam={34} borde={KC.yellow} />
-      <Chip T={T} at={K.L + 2.6} until={K.S - 0.3} texto={TXT.lluvia} x={330} y={690} tam={34} borde={KC.cyan} />
+      <Pastilla T={T} at={K.G + 1.6} until={K.H - 0.3} x={40} y={605} texto={TXT.numEtq[0]} tam={30} />
+      <Pastilla T={T} at={K.G + 1.9} until={K.H - 0.3} x={40} y={665} texto={TXT.numEtq[1]} tam={30} color={KC.gold2} />
+      <Chip T={T} at={K.G + 3.5} until={K.H - 0.3} texto={TXT.comen} x={290} y={750} tam={38} borde={KC.ink} />
+      <Pastilla T={T} at={K.H + 0.9} until={K.L - 0.3} x={560} y={600} texto={TXT.comun} tam={44} puntero={{ lx: 560, ly: 600, px: 440, py: 640 }} />
+      <Pastilla T={T} at={K.H + 1.3} until={K.L - 0.3} x={560} y={690} texto={TXT.cient} it tam={36} color={KC.gold2} puntero={{ lx: 560, ly: 690, px: 470, py: 720 }} />
+      <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto={TXT.tam} x={790} y={1030} tam={36} borde={KC.ink} />
+      <Pastilla T={T} at={K.H + 2.8} until={K.L - 0.3} x={560} y={900} texto={TXT.pegado} tam={30} puntero={{ lx: 560, ly: 900, px: 262, py: 860 }} />
+      <Pastilla T={T} at={K.L + 0.2} until={K.S - 0.3} x={60} y={540} texto={TXT.laminas} tam={36} puntero={{ lx: 200, ly: 570, px: 300, py: 905 }} />
+      <Chip T={T} at={K.L + 1.0} until={K.L + 2.4} texto={TXT.seco} x={300} y={440} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.L + 2.6} until={K.S - 0.3} texto={TXT.lluvia} x={320} y={440} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.S + 0.1} until={K.V - 0.3} texto={TXT.porDentro} x={540} y={410} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.S + 0.3} until={K.S + 1.6} x={80} y={1075} texto={TXT.espora} tam={28} />
-      <Etq T={T} at={K.S + 0.9} until={K.S + 1.6} x={600} y={1075} texto={TXT.hifa} tam={28} color={KC.mint} />
+      <Etq T={T} at={K.S + 0.3} until={K.S + 1.6} x={80} y={1075} texto={TXT.espora} tam={32} />
+      <Etq T={T} at={K.S + 0.9} until={K.S + 1.6} x={600} y={1075} texto={TXT.hifa} tam={32} color={KC.mint} />
       <Chip T={T} at={K.S + 1.6} until={K.V - 0.3} texto={TXT.sexoChip} x={540} y={490} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.S + 2.3} until={K.V - 0.3} x={380} y={700} lado="izq" texto={TXT.zonaA} tam={32} color={KC.gold2} />
-      <Etq T={T} at={K.S + 2.9} until={K.V - 0.3} x={700} y={820} texto={TXT.zonaB} tam={32} color={KC.cyan} />
-      <Etq T={T} at={K.V + 0.5} until={K.R - 0.3} x={110} y={1170} texto={TXT.ruedaA} tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.V + 1.6} until={K.R - 0.3} x={660} y={1150} texto={TXT.ruedaB} tam={30} color={KC.cyan} />
+      <Etq T={T} at={K.S + 2.3} until={K.V - 0.3} x={380} y={700} lado="izq" texto={TXT.zonaA} tam={38} color={KC.gold2} />
+      <Etq T={T} at={K.S + 2.9} until={K.V - 0.3} x={700} y={820} texto={TXT.zonaB} tam={38} color={KC.cyan} />
+      <Pastilla T={T} at={K.V + 0.5} until={K.R - 0.3} x={290} y={1175} centro texto={TXT.ruedaA} tam={36} color={KC.gold2} borde={KC.gold2} />
+      <Pastilla T={T} at={K.V + 1.6} until={K.R - 0.3} x={790} y={1150} centro texto={TXT.ruedaB} tam={36} color={KC.cyan} borde={KC.cyan} />
       <Chip T={T} at={K.V + 2.5} until={K.R - 0.3} texto={TXT.cuenta} x={350} y={520} tam={52} borde={KC.pink} />
-      <Etq T={T} at={K.V + 3.0} until={K.R - 0.3} x={60} y={620} texto={TXT.raper} tam={26} color={KC.texto} />
+      <Pastilla T={T} at={K.V + 3.0} until={K.R - 0.3} x={60} y={620} texto={TXT.raper} tam={30} />
       <Chip T={T} at={K.R + 0.1} until={K.F - 0.3} texto={TXT.reglaChip} x={540} y={470} tam={36} borde={KC.gold} />
-      <Chip T={T} at={K.F + 0.2} until={K.P - 0.3} texto={TXT.dosNucleos} x={430} y={1080} tam={28} borde={KC.mint} />
+      <Chip T={T} at={K.F + 0.2} until={K.P - 0.3} texto={TXT.dosNucleos} x={540} y={1080} tam={32} borde={KC.mint} />
       <Etq T={T} at={K.F + 1.4} until={K.P - 0.3} x={700} y={780} lado="izq" texto={TXT.fibula} tam={40} color={KC.gold2} />
       <NumeroGigante T={T} at={K.P + 0.05} until={K.X - 0.2} valor={TXT.numero} dur={0.01} desde={TXT.numero} x={290} y={500} tam={130} color={KC.yellow} />
-      <Medidor T={T} at={K.X + 0.3} until={K.E - 0.3} valor={(t) => 0.98 * kprog(t, K.X + 0.5, K.X + 1.6, kEase.sale)} etiqueta={TXT.extrano} texto={() => TXT.extranoV} x={90} y={740} />
-      <Medidor T={T} at={K.X + 2.2} until={K.E - 0.3} valor={(t) => 0.275 * kprog(t, K.X + 2.4, K.X + 3.2, kEase.sale)} etiqueta={TXT.hermano} texto={() => TXT.hermanoV} x={90} y={900} color={KC.yellow} />
+      <MedidorG T={T} at={K.X + 0.3} until={K.E - 0.3} valor={(t) => 0.98 * kprog(t, K.X + 0.5, K.X + 1.6, kEase.sale)} etiqueta={TXT.extrano} texto={TXT.extranoV} x={90} y={730} />
+      <MedidorG T={T} at={K.X + 2.2} until={K.E - 0.3} valor={(t) => 0.275 * kprog(t, K.X + 2.4, K.X + 3.2, kEase.sale)} etiqueta={TXT.hermano} texto={TXT.hermanoV} x={90} y={895} color={KC.yellow} />
       <Chip T={T} at={K.X + 3.4} until={K.E - 0.3} texto={TXT.extranoChip} x={540} y={1120} tam={34} borde={KC.ink} />
-      <TarjetaCorta T={T} at={K.E + 0.3} until={K.E + 3.4} anio={TXT.anio} quien={TXT.quien} revista={TXT.revista} x={540} y={470} />
+      <TarjetaCorta T={T} at={K.E + 0.3} until={K.E + 3.4} anio={TXT.anio} quien={TXT.quien} revista={TXT.revista} x={540} y={440} />
       <Chip T={T} at={K.E + 3.6} until={K.O - 0.2} texto={TXT.entrevistas} x={540} y={470} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.O + 0.2} until={K.M - 0.3} x={60} y={420} texto={TXT.orejaPalo} tam={44} color={KC.ink} />
-      <Etq T={T} at={K.O + 0.7} until={K.M - 0.3} x={60} y={480} texto={TXT.orejaMulato} tam={28} color={KC.ink} />
-      <Chip T={T} at={K.O + 1.9} until={K.M - 0.3} texto={TXT.seisChip} x={340} y={580} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.M + 1.0} until={K.C - 0.3} x={70} y={790} texto={TXT.semana} tam={30} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.5} until={K.C - 0.3} x={70} y={835} texto={TXT.temporada} tam={26} color={KC.ink} />
-      <Chip T={T} at={K.M + 3.6} until={K.C - 0.3} texto={`${TXT.mone} · ${TXT.moneEtq}`} x={830} y={905} tam={34} borde={KC.leaf} />
-      <Etq T={T} at={K.M + 0.4} until={K.C - 0.3} x={70} y={460} texto={TXT.moneLugar} tam={28} color={KC.ink} />
+      <Pastilla T={T} at={K.O + 0.2} until={K.M - 0.3} x={60} y={400} texto={TXT.orejaPalo} tam={44} color={KC.gold2} />
+      <Pastilla T={T} at={K.O + 0.7} until={K.M - 0.3} x={60} y={475} texto={TXT.orejaMulato} tam={32} />
+      <Chip T={T} at={K.O + 1.9} until={K.M - 0.3} texto={TXT.seisChip} x={340} y={560} tam={34} borde={KC.gold} />
+      <Pastilla T={T} at={K.M + 1.0} until={K.C - 0.3} x={70} y={770} texto={TXT.semana} tam={32} />
+      <Pastilla T={T} at={K.M + 1.5} until={K.C - 0.3} x={70} y={835} texto={TXT.temporada} tam={30} color={KC.gold2} />
+      <Chip T={T} at={K.M + 3.6} until={K.C - 0.3} texto={`${TXT.mone} · ${TXT.moneEtq}`} x={830} y={920} tam={34} borde={KC.leaf} />
+      <Pastilla T={T} at={K.M + 0.4} until={K.C - 0.3} x={70} y={470} texto={TXT.moneLugar} tam={32} />
       <Chip T={T} at={K.C + 0.8} until={K.Ou} texto={TXT.cierreChip} x={330} y={500} tam={40} borde={KC.pink} />
       <NumeroGigante T={T} at={K.C + 1.6} until={K.Ou} valor={TXT.numero} desde={TXT.numero} dur={0.01} x={330} y={660} tam={100} color={KC.pink} />
 
@@ -483,7 +506,7 @@ function MilSexosShot() {
       <SubIt T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="No tiene dos sexos: *tiene miles.*" />
 
       <Robert T={T} apariciones={[
-        [K.G - 0.45, K.G + 3.3, 'avatar_11_sorprendido', 'gancho'],
+        [K.G - 0.45, K.H - 0.2, 'avatar_11_sorprendido', 'gancho'],
         [K.L + 0.3, K.S - 0.3, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.V + 0.3, K.R - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.F + 0.1, K.P - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
