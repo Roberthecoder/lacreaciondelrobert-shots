@@ -1,0 +1,47 @@
+# Verificación de hechos · Shot Fungi Mati #136
+
+Verificador independiente (no escribió el guion). Revisados `guion.md` y `narracion.json` (13 líneas de voz + lo que se ve en pantalla).
+Fecha de la verificación: 5 nov 2026.
+
+| # | Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | La nistatina es una medicina para el algodoncillo (infección por hongos de la boca) | ✅ | https://medlineplus.gov/druginfo/meds/a682758.html | "Nystatin is used to treat fungal infections of the inside of the mouth and lining of the stomach and intestines." | consulta 2026 |
+| 2 | La nistatina "salió de un microbio de la tierra" | ✅ | https://www.sciencehistory.org/education/scientific-biographies/elizabeth-lee-hazen-and-rachel-fuller-brown/ | "originally found in soil from the garden of Hazen's friends, the Walter B. Nourses" | dato 1948–1950 |
+| 3 | Ese microbio "viajó por correo" (en frascos) | ✅ | misma (SHI) · https://www.invent.org/blog/inventors/nystatin | "she would mail the particular culture to Albany in a mason jar" · "she would mail that culture to Brown in a jar" | 1948–1950 |
+| 4 | Algodoncillo = candidiasis oral; manchas blancas en la boca por el hongo *Candida* | ✅ | https://webarchive.library.unt.edu/web/20121017211525/http://www.cdc.gov/fungal/Candidiasis/thrush · https://www.cdc.gov/candidiasis/about/index.html | CDC: thrush = "Oropharyngeal … Candidiasis"; síntoma: "white patches, redness or soreness" | 2012 / consulta 2026 |
+| 5 | *Candida* suele vivir en ti (comensal) y a veces crece de más | ✅ | https://www.cdc.gov/candidiasis/about/index.html | "Most of the time it does not cause any symptoms." · candidiasis ocurre cuando Candida "grows out of control" | consulta 2026 |
+| 6 | En pantalla: levaduras ovaladas que geman y pseudohifas de *C. albicans* | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3910951 (micrografías) · CDC | levaduras ovaladas con yemas y pseudohifas (blastosporas y pseudohifas son las formas típicas de *Candida*) | — |
+| 7 | En pantalla: tamaño "~4–6 µm" de las levaduras | ⚠️ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3910951 | Las fuentes encontradas dan "~3 μm" en una micrografía y 2–8 µm de rango general; "vary widely". No encontré "4–6 µm" textual | — |
+| 8 | Hongo y humano: las dos son células eucariontes, se parecen; por eso es difícil matar al hongo sin dañarte | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC1304795/ | La selectividad de los polienos se explica por "their stronger affinity toward ergosterol, present in the fungal membranes" (es decir, el blanco es una diferencia pequeña entre membranas eucariontes) | 2004 |
+| 9 | La nistatina se pega al ergosterol de la membrana del hongo y abre poros (sale K⁺) | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC1304795/ (Coutinho et al., *Biophys J* 87:3264) | "stoichiometric antibiotic-sterol complexes organized as barrel-like membrane-spanning channels" · "a leakage of ions and small molecules, ultimately causing cell destruction" · se mide "K+ efflux" | 2004 |
+| 10 | Nistatina = polieno | ✅ | https://medlineplus.gov/druginfo/meds/a682758.html | "a class of antifungal medications called polyenes" | consulta 2026 |
+| 11 | Tus células usan colesterol y "a ese se pega **mucho** menos" | ⚠️ | https://pmc.ncbi.nlm.nih.gov/articles/PMC1304795/ · https://en.wikipedia.org/wiki/Nystatin | La fuente dice "stronger affinity toward ergosterol" (sin cuantificar); además la nistatina sí permeabiliza membranas con colesterol ("permeabilization of cholesterol-containing membranes") y es tóxica si se inyecta. "Mucho menos" exagera | 2004 |
+| 12 | Hazen era microbióloga; trabajaba en la oficina de Nueva York (ciudad) | ✅ | SHI | "Hazen came to work at the New York City office of the division in the 1930s." | 1930s–1950 |
+| 13 | "En 1948… Hazen buscaba en la tierra microbios que mataran hongos" | ✅ | SHI · NIHF | SHI: "she had by 1948 identified new antifungal agents among the filamentous bacteria called actinomycetes" · NIHF: "Using a soil sample technique, Hazen had identified new antifungal agents by 1948." (la búsqueda ya estaba en marcha en 1948; la colaboración con Brown empieza ese año) | 1948 |
+| 14 | En pantalla: tarjeta "1948–1950 · Departamento de Salud del Estado de Nueva York" | ✅ | SHI | "Nystatin … was discovered in 1950"; ambas trabajaban en la Division of Laboratories and Research del NY State Department of Health | 1948–1950 |
+| 15 | Rachel Brown era química y trabajaba en Albany | ✅ | SHI | "Brown accepted a job at the Albany headquarters of the division." · Brown usó "painstaking solvent extractions" | 1940s |
+| 16 | Estaban a unos 240 km (≈150 millas) | ✅ | NIHF · https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/hazen-elizabeth-lee-and-rachel-fuller-brown | "Though they lived about 150 miles apart" · "Hazen and Brown would continue to work 150 miles away from each other" (150 mi = 241 km; es distancia por carretera, en línea recta son ~220 km: "unos" lo cubre) | 1948–1950 |
+| 17 | Hazen cultivaba y probaba; Brown aislaba la sustancia y se la regresaba para probarla | ✅ | SHI | "Hazen cultured organisms found in soil samples and tested them in vitro for activity against two fungi." · "Brown employed painstaking solvent extractions to isolate the active agent" · "Brown would send it to Hazen in New York, where it was tested against the two test fungi." | 1948–1950 |
+| 18 | En pantalla: halo en la caja Petri donde no crece la levadura | ✅ | SHI | pruebas "in vitro for activity against two fungi" (el halo es la representación estándar de inhibición; esquemático) | — |
+| 19 | La ganadora vino de la tierra de un amigo (Nourse) | ✅ | SHI | "soil from the garden of Hazen's friends, the Walter B. Nourses" (otras fuentes: granja lechera en Virginia; "la tierra de un amigo" es correcto en ambos casos) | 1948 |
+| 20 | *Streptomyces noursei* es una bacteria (actinomiceto), no un hongo; nombrada por Nourse | ✅ | SHI · NIHF | "filamentous bacteria called actinomycetes" · "and hence named Streptomyces noursei" · "She named the agent Streptomyces noursei after Nourse." | 1948–1950 |
+| 21 | En pantalla: filamentos ramificados de ~1 µm de ancho con cadenas de esporas | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC1249576/ | "Substrate mycelium … has a mean diameter of 0.7 μm" (en *Streptomyces*, hifas de 0.5–2 µm, ramificadas, esporas en cadenas) | 2005 |
+| 22 | Se llamó nistatina por New York State | ✅ | SHI · NIHF | "They then renamed the substance nystatin (for New York State)." · NIHF: "named 'nystatin' for the New York State Department of Health" | 1950 |
+| 23 | Regalías: más de 13 millones de dólares | ✅ | https://lemelson.mit.edu/resources/rachel-brown · encyclopedia.com (Women in World History) | "Hazen and Brown invested all their royalties from Nystatin (over $13 million) in the nonprofit Research Corporation" · "a total of $13.4 million in royalties were paid to The Research Corporation between 1955 and 1976" | 1955–1976 |
+| 24 | Las regalías "fueron para la ciencia"; en pantalla "Research Corporation · Fondo Brown-Hazen" | ✅ | encyclopedia.com · SHI | "The other half, some $6.7 million over the next 20 years, was designated to be used to support the Brown-Hazen Fund" · SHI: "Royalties from these activities were funneled back into the scientific world." | 1955–1976 |
+| 25 | En pantalla: "regalías 1955–1976" | ✅ | encyclopedia.com | "paid to The Research Corporation between 1955 and 1976" | 1955–1976 |
+| 26 | Chip «1954 aprobación de la FDA» (si se usa en pantalla) | ✅ | NIHF · encyclopedia.com | "Introduced in practical form in 1954 following Food and Drug Administration approval, nystatin was patented in 1957." · "In 1954, Federal Drug Agency (FDA) approval was given for sale of Mycostatin" | 1954 |
+| 27 | En pantalla (gancho y escena 8): un **sobre** con estampilla que contiene un frasco **con tierra** | ⚠️ | SHI · NIHF | Lo que viajaba era el **cultivo** en un frasco tipo mason ("mail the particular culture to Albany in a mason jar"), no tierra suelta, y un frasco mason no cabe en un sobre | 1948–1950 |
+| 28 | Cierre: "dos científicas contra un hongo" (frasquito = tierra, correo, Hazen y Brown) | ✅ | SHI | "discovered in 1950 by two women scientists" | 1950 |
+
+**Resumen:** 28 afirmaciones · 25 ✅ · 3 ⚠️ · 0 ❌.
+
+## Correcciones necesarias
+
+1. **#11 (voz, escena 5 «Colesterol»)** — "mucho menos" exagera; la fuente solo dice afinidad "más fuerte" por ergosterol y la nistatina sí daña membranas con colesterol (por eso no se inyecta).
+   Texto propuesto: **«Tus células usan colesterol, y a ese se pega menos.»** Chip en pantalla: "se pega menos" (en vez de "se pega mucho menos").
+   Si se quiere conservar la tensión: «…y a ese se pega menos; por eso se usa en la boca y no inyectada.» (si se agrega, verificar esa parte).
+2. **#7 (pantalla, escena 2)** — quitar la cifra "~4–6 µm" o cambiarla a "**~3–6 µm**" no verificada textual; lo más seguro: dejar solo la barra de escala de 5 µm y dibujar levaduras de 3–5 µm, sin número escrito.
+3. **#27 (pantalla, escenas 0, 8, 9 y 12)** — cambiar el "sobre con frasco de tierra" por un **paquete/caja de correo con estampilla que contiene un frasco de vidrio con el cultivo** (líquido o tierra con cultivo, sin decir "tierra"). La voz «Se los mandaba en frascos, por correo» queda bien (los = los microbios). En la escena 12, la etiqueta "tierra · correo · Hazen y Brown" está bien.
+
+Nota: la voz no menciona la FDA; si se agrega el chip «1954 aprobación de la FDA», está verificado (#26).
